@@ -1,0 +1,51 @@
+{
+  "build": {
+    "content": [
+      {
+        "files": [
+          "**/*.md",
+          "**/*.yml"
+        ],
+        "exclude": [
+          "**/obj/**",
+          "**/includes/**",
+          "README.md",
+          "LICENSE",
+          "LICENSE-CODE",
+          "ThirdPartyNotices"
+        ]
+      }
+    ],
+    "resource": [
+      {
+        "files": [
+          "**/*.png",
+          "**/*.jpg",
+          "**/*.svg",
+          "**/*.gif"
+        ],
+        "exclude": [
+          "**/obj/**",
+          "**/includes/**"
+        ]
+      }
+    ],
+    "overwrite": [],
+    "externalReference": [],
+    "globalMetadata": {
+      "uhfHeaderId": "MSDocsHeader-Dev_Office",
+      "searchScope": ["Office Add-ins"],
+      "breadcrumb_path": "/office/dev/add-ins/breadcrumb/toc.json",
+      "extendBreadcrumb": true,
+      "ms.suite": "office365",
+      "ms.author": "o365devx",
+      "author": "o365devx",
+      "ms.topic": "conceptual",
+      "ms.prod": "office",
+      "ms.technology": "office-add-ins"
+    },
+    "fileMetadata": {},
+    "template": [],
+    "dest": "office-js-docs-pr"
+  }
+}
