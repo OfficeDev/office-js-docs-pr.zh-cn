@@ -1,0 +1,273 @@
+# <a name="work-with-worksheets-using-the-excel-javascript-api"></a>使用 Excel JavaScript API 处理工作表
+
+本文提供了代码示例，介绍如何使用 Excel JavaScript API 对工作表执行常见任务。 有关 **Worksheet** 和 **WorksheetCollection** 对象支持的属性和方法的完整列表，请参阅 [Worksheet 对象 (Excel JavaScript API)](../../reference/excel/worksheet.md) 和 [WorksheetCollection 对象 (Excel JavaScript API)](../../reference/excel/worksheetcollection.md)。
+
+**注意**：本文中的信息仅适用于常规工作表；不适用于“图表”或“宏”表。
+
+## <a name="get-worksheets"></a>获取工作表
+
+下面的代码示例获取工作表集合，加载每个工作表的 **name** 属性，并向控制台写入一条消息。
+
+```js
+Excel.run(function (context) {
+    var sheets = context.workbook.worksheets;
+    sheets.load("items/name");
+
+    return context.sync()
+        .then(function () {
+            if (sheets.items.length > 1) {
+                console.log(`There are ${sheets.items.length} worksheets in the workbook:`);
+            } else {
+                console.log(`There is one worksheet in the workbook:`);
+            }
+            for (var i in sheets.items) {
+                console.log(sheets.items[i].name);
+            }
+        });
+}).catch(errorHandlerFunction);
+```
+
+**注意**：工作表的 **id** 属性用于唯一标识指定工作簿中的工作表，即使工作表被重命名或移动，其值仍然相同。 在 Excel for Mac 工作簿中删除工作表时，已删除工作表的 **id** 可能会重新分配到后续创建的新工作表。
+
+## <a name="get-the-active-worksheet"></a>获取活动工作表
+
+下面的代码示例获取活动工作表，加载其 **name** 属性，并向控制台写入一条消息。
+
+```js
+Excel.run(function (context) {
+    var sheet = context.workbook.worksheets.getActiveWorksheet();
+    sheet.load("name");
+    
+    return context.sync()
+        .then(function () {
+            console.log(`The active worksheet is "${sheet.name}"`);
+        });
+}).catch(errorHandlerFunction);
+```
+
+## <a name="set-the-active-worksheet"></a>设置活动工作表
+
+下面的代码示例将活动工作表设置为名为 **Sample** 的工作表，加载其 **name** 属性，并向控制台写入一条消息。 如果没有使用该名称的工作表，**activate()** 方法将引发 **ItemNotFound** 错误。
+
+```js
+Excel.run(function (context) {
+    var sheet = context.workbook.worksheets.getItem("Sample");
+    sheet.activate();
+    sheet.load("name");
+
+    return context.sync()
+        .then(function () {
+            console.log(`The active worksheet is "${sheet.name}"`);
+        });
+}).catch(errorHandlerFunction);
+```
+
+## <a name="reference-worksheets-by-relative-position"></a>通过相对位置引用工作表
+
+这些示例演示如何通过相对位置来引用工作表。
+
+### <a name="get-the-first-worksheet"></a>获取第一个工作表
+
+下面的代码示例获取工作簿中的第一个工作表，加载其 **name** 属性，并向控制台中写入一条消息。
+
+```js
+Excel.run(function (context) {
+    var firstSheet = context.workbook.worksheets.getFirst();
+    firstSheet.load("name");
+
+    return context.sync()
+        .then(function () {
+            console.log(`The name of the first worksheet is "${firstSheet.name}"`);
+        });
+}).catch(errorHandlerFunction);
+```
+
+### <a name="get-the-last-worksheet"></a>获取最后一个工作表
+
+下面的代码示例获取工作簿中的最后一个工作表，加载其 **name** 属性，并向控制台写入一条消息。
+
+```js
+Excel.run(function (context) {
+    var lastSheet = context.workbook.worksheets.getLast();
+    lastSheet.load("name");
+
+    return context.sync()
+        .then(function () {
+            console.log(`The name of the last worksheet is "${lastSheet.name}"`);
+        });
+}).catch(errorHandlerFunction);
+```
+
+### <a name="get-the-next-worksheet"></a>获取下一个工作表
+
+下面的代码示例获取工作簿中活动工作表后面的工作表，加载其 **name** 属性，并向控制台写入一条消息。 如果活动工作表后没有工作表，**getNext()** 方法将引发 **ItemNotFound** 错误。
+
+```js
+ Excel.run(function (context) {
+    var currentSheet = context.workbook.worksheets.getActiveWorksheet();
+    var nextSheet = currentSheet.getNext();
+    nextSheet.load("name");
+
+    return context.sync()
+        .then(function () {
+            console.log(`The name of the sheet that follows the active worksheet is "${nextSheet.name}"`);
+        });
+}).catch(errorHandlerFunction);
+```
+
+### <a name="get-the-previous-worksheet"></a>获取上一个工作表
+
+下面的代码示例获取工作簿中活动工作表前面的工作表，加载其 **name** 属性，并向控制台写入一条消息。 如果活动工作表前没有工作表，**getPrevious()** 方法将引发 **ItemNotFound** 错误。
+
+```js
+Excel.run(function (context) {
+    var currentSheet = context.workbook.worksheets.getActiveWorksheet();
+    var previousSheet = currentSheet.getPrevious();
+    previousSheet.load("name");
+
+    return context.sync()
+        .then(function () {
+            console.log(`The name of the sheet that precedes the active worksheet is "${previousSheet.name}"`);
+        });
+}).catch(errorHandlerFunction);
+```
+
+## <a name="add-a-worksheet"></a>添加工作表
+
+下面的代码示例向工作簿添加名为 **Sample** 的新工作表，加载其 **name** 和 **position** 属性，并向控制台写入一条消息。 在所有现有工作表后添加新工作表。
+
+```js
+Excel.run(function (context) {
+    var sheets = context.workbook.worksheets;
+
+    var sheet = sheets.add("Sample");
+    sheet.load("name, position");
+    
+    return context.sync()
+        .then(function () {
+            console.log(`Added worksheet named "${sheet.name}" in position ${sheet.position}`);
+        });
+}).catch(errorHandlerFunction);
+```
+
+## <a name="delete-a-worksheet"></a>删除工作表
+
+下面的代码示例删除工作簿中的最后一个工作表（前提是它不是工作簿中的唯一工作表），并向控制台写入一条消息。
+
+```js
+Excel.run(function (context) {
+    var sheets = context.workbook.worksheets;
+    sheets.load("items/name");
+
+    return context.sync()
+        .then(function () {
+            if (sheets.items.length === 1) {
+                console.log("Unable to delete the only worksheet in the workbook");
+            } else {
+                var lastSheet = sheets.items[sheets.items.length - 1];
+
+                console.log(`Deleting worksheet named "${lastSheet.name}"`);
+                lastSheet.delete();
+
+                return context.sync();
+            };
+        });
+}).catch(errorHandlerFunction);
+```
+
+## <a name="rename-a-worksheet"></a>重命名工作表
+
+下面的代码示例将活动工作表的名称更改为**新名称**。
+
+```js
+Excel.run(function (context) {
+    var currentSheet = context.workbook.worksheets.getActiveWorksheet();
+    currentSheet.name = "New Name";
+
+    return context.sync();
+}).catch(errorHandlerFunction);
+```
+
+## <a name="move-a-worksheet"></a>移动工作表
+
+下面的代码示例将工作表从工作簿中的最后一个位置移动到工作簿中的第一个位置。
+
+```js
+Excel.run(function (context) {
+    var sheets = context.workbook.worksheets;
+    sheets.load("items");
+
+    return context.sync()
+        .then(function () {
+            var lastSheet = sheets.items[sheets.items.length - 1];
+            lastSheet.position = 0;
+
+            return context.sync();
+        });
+}).catch(errorHandlerFunction);
+```
+
+## <a name="set-worksheet-visibility"></a>设置工作表可见性
+
+以下示例显示如何设置工作表的可见性。
+
+### <a name="hide-a-worksheet"></a>隐藏工作表
+
+下面的代码示例将名为 **Sample** 的工作表的可见性设置为隐藏，加载其 **name** 属性，并向控制台写入一条消息。
+
+```js
+Excel.run(function (context) {
+    var sheet = context.workbook.worksheets.getItem("Sample");
+    sheet.visibility = Excel.SheetVisibility.hidden;
+    sheet.load("name");
+
+    return context.sync()
+        .then(function () {
+            console.log(`Worksheet with name "${sheet.name}" is hidden`);
+        });
+}).catch(errorHandlerFunction);
+```
+
+### <a name="unhide-a-worksheet"></a>取消隐藏工作表
+
+下面的代码示例将名为 **Sample** 的工作表的可见性设置为可见，加载其 **name** 属性，并向控制台写入一条消息。
+
+```js
+Excel.run(function (context) {
+    var sheet = context.workbook.worksheets.getItem("Sample");
+    sheet.visibility = Excel.SheetVisibility.visible;
+    sheet.load("name");
+
+    return context.sync()
+        .then(function () {
+            console.log(`Worksheet with name "${sheet.name}" is visible`);
+        });
+}).catch(errorHandlerFunction);
+```
+
+## <a name="get-a-cell-within-a-worksheet"></a>获取工作表中的单元格
+
+下面的代码示例从名为 **Sample** 的工作表获取位于第 2 行第 5 列的单元格，加载其 **address** 和 **values** 属性，并向控制台写入一条消息。 传递给 **getCell(row: number, column:number)** 方法的值是要检索的单元格的零索引行号和列号。
+
+```js
+Excel.run(function (context) {
+    var sheet = context.workbook.worksheets.getItem("Sample");
+    var cell = sheet.getCell(1, 4);
+    cell.load("address, values");
+    
+    return context.sync()
+        .then(function() {
+            console.log(`The value of the cell in row 2, column 5 is "${cell.values[0][0]}" and the address of that cell is "${cell.address}"`);
+        })
+}).catch(errorHandlerFunction);
+```
+
+## <a name="get-a-range-within-a-worksheet"></a>获取工作表中的区域
+
+有关介绍如何获取工作表中某个区域的示例，请参阅[使用 Excel JavaScript API 对区域执行操作](excel-add-ins-ranges.md)。
+
+## <a name="additional-resources"></a>其他资源
+
+- [Excel JavaScript API 核心概念](excel-add-ins-core-concepts.md)
+- [Worksheet 对象 (Excel JavaScript API)](../../reference/excel/worksheet.md)
+- [WorksheetCollection 对象 (Excel JavaScript API)](../../reference/excel/worksheetcollection.md)
