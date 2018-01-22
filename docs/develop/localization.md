@@ -419,7 +419,7 @@ UIStrings.js 资源文件将创建一个对象  **UIStrings**，其中包含加�
 [DisplayName]:           http://dev.office.com/reference/add-ins/manifest/displayname
 [IconUrl]:               http://dev.office.com/reference/add-ins/manifest/iconurl
 [HighResolutionIconUrl]: http://dev.office.com/reference/add-ins/manifest/highresolutioniconurl
-[Resources]:             ../../reference/manifest/resources
+[Resources]:             https://dev.office.com/reference/add-ins/manifest/resources
 [SourceLocation]:        http://dev.office.com/reference/add-ins/manifest/sourcelocation
 [替代]:              http://dev.office.com/reference/add-ins/manifest/override
 [DesktopSettings]:       http://dev.office.com/reference/add-ins/manifest/desktopsettings
