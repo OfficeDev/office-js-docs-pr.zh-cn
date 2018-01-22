@@ -36,7 +36,7 @@
 /** @type {Excel.Range} */
 var subsetRange;
 ```
-![变量的 Intellisense](../../images/IntellisenseVS17Var.png)
+![变量的 Intellisense](../images/IntellisenseVS17Var.png)
 
 ### <a name="parameter"></a>参数
 
@@ -46,7 +46,7 @@ function myFunc(paragraphs){
 
 }
 ```
-![参数的 Intellisense](../../images/IntellisenseVS17Param.png)
+![参数的 Intellisense](../images/IntellisenseVS17Param.png)
 
 ### <a name="return-value"></a>返回值
 
@@ -56,7 +56,7 @@ function myFunc() {
 
 }
 ```
-![返回值的 Intellisense](../../images/IntellisenseVS17Return.png)
+![返回值的 Intellisense](../images/IntellisenseVS17Return.png)
 
 ### <a name="complex-types"></a>复杂类型
 
@@ -68,7 +68,7 @@ function myFunc() {
 
 }
 ```
-![复杂类型的 Intellisense](../../images/IntellisenseVS17ComplexType.png)
+![复杂类型的 Intellisense](../images/IntellisenseVS17ComplexType.png)
 
 ##<a name="additional-resources"></a>其他资源
 

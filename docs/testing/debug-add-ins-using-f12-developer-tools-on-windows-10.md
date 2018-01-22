@@ -38,7 +38,7 @@ Windows 10 中随附的 F12 开发人员工具可帮助您调试、测试和加�
     
     例如，选择 **home.html**。 
     
-    ![F12Chooser 屏幕，指向气泡外接程序](../../images/4f8823a3-595a-4657-83ac-8b235a7ba087.png)
+    ![F12Chooser 屏幕，指向气泡外接程序](../images/4f8823a3-595a-4657-83ac-8b235a7ba087.png)
 
 4. 在 F12 窗口中，选择您想要调试的文件。
     
@@ -48,13 +48,13 @@ Windows 10 中随附的 F12 开发人员工具可帮助您调试、测试和加�
     
     To set the breakpoint in home.js, choose line 144, which is in the  _textChanged_ function. You will see a red dot to the left of the line and a corresponding line in the **Callstack and Breakpoints** (bottom right) pane. For other ways to set a breakpoint, see [Inspect running JavaScript with the Debugger](https://msdn.microsoft.com/library/dn255007%28v=vs.85%29.aspx). 
     
-    ![断点位于 home.js 文件中的调试程序](../../images/e3cbc7ca-8b21-4ebb-b7a1-93e2364f1d16.png)
+    ![断点位于 home.js 文件中的调试程序](../images/e3cbc7ca-8b21-4ebb-b7a1-93e2364f1d16.png)
 
 6. 运行外接程序以触发断点。
     
     选择 QR4Office 窗格上半部分中的 URL 文本框更改文本。在调试器的“**调用堆栈和断点**”窗格中，你将看到该断点已触发，并显示了各种信息。你可能需要刷新 F12 工具以查看结果。
     
-    ![结果来自触发断点的调试程序](../../images/e0bcd036-91ce-4509-ae98-6c10b593d61b.png)
+    ![结果来自触发断点的调试程序](../images/e0bcd036-91ce-4509-ae98-6c10b593d61b.png)
 
 
 ## <a name="additional-resources"></a>其他资源

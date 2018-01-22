@@ -9,11 +9,11 @@
 
 **命令在 Excel Desktop 中运行的加载项**
 
-![Excel 中的外接程序命令屏幕截图](../../images/addincommands1.png)
+![Excel 中的外接程序命令屏幕截图](../images/addincommands1.png)
 
 **命令在 Excel Online 中运行的外接程序**
 
-![Excel Online 中的外接程序命令屏幕截图](../../images/addincommands2.png)
+![Excel Online 中的外接程序命令屏幕截图](../images/addincommands2.png)
 
 ## <a name="command-capabilities"></a>命令功能
 目前支持下列命令功能。
@@ -62,7 +62,7 @@
 - 对于所有图标，请遵循[图标设计准则](../design/design-icons.md)。
 - 提供也可以在不支持命令的主机上运行的外接程序的版本。单个外接程序清单可以在命令感知（带有命令）和非命令感知（作为任务窗格）的主机中工作。
 
-    ![显示 Office 2013 中的任务窗格外接程序，以及 Office 2016 中使用外接程序命令的相同外接程序的屏幕截图](../../images/4f90a3cc-8cc4-4879-9a03-0bb2b6079026.png)
+    ![显示 Office 2013 中的任务窗格外接程序，以及 Office 2016 中使用外接程序命令的相同外接程序的屏幕截图](../images/4f90a3cc-8cc4-4879-9a03-0bb2b6079026.png)
 
 
 ## <a name="next-steps-to-get-started"></a>入门所需的后续步骤

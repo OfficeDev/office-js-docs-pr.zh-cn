@@ -8,11 +8,11 @@
    - 目前，仅支持使用 [Visual Studio 2015](https://www.visualstudio.com/downloads/) [Update 3](https://msdn.microsoft.com/en-us/library/mt752379.aspx) 或更高版本作为调试器工具。 如果没有安装 Visual Studio，选择“附加调试器”****选项不会有任何效果。   
    - 只能使用“附加调试器”****工具调试客户端 JavaScript。 要调试服务器端代码（例如 Node.js 服务器），可选择多种方式。 有关如何使用 Visual Studio Code 进行调试的信息，请参阅 [VS Code 中的 Node.js 调试](https://code.visualstudio.com/docs/nodejs/nodejs-debugging)。 如果没有使用 Visual Studio Code，请搜索“debug Node.js”或“debug {name-of-server}”。
 
-![“附加调试器”菜单的屏幕截图](../../images/attach-debugger.png)
+![“附加调试器”菜单的屏幕截图](../images/attach-debugger.png)
 
 选择“附加调试器”****。 这会启动“Visual Studio 实时调试器”****对话框，如下图所示。 
 
-![“Visual Studio JIT 调试器”对话框的屏幕截图](../../images/visual-studio-debugger.png)
+![“Visual Studio JIT 调试器”对话框的屏幕截图](../images/visual-studio-debugger.png)
 
 Visual Studio 中的“解决方案资源管理器”****会显示代码文件。   可以在要使用 Visual Studio 调试的代码行处设置断点。
 

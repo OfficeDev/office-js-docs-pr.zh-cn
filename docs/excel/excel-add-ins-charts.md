@@ -24,7 +24,7 @@ Excel.run(function (context) {
 
 **新建折线图**
 
-![Excel 中的新折线图](../../images/Excel-chart-create-line.png)
+![Excel 中的新折线图](../images/Excel-chart-create-line.png)
 
 
 ## <a name="add-a-data-series-to-a-chart"></a>向图表添加数据系列
@@ -48,11 +48,11 @@ Excel.run(function (context) {
 
 **添加 2016 数据系列之前的图表**
 
-![Excel 中添加 2016 数据系列之前的图表](../../images/Excel-chart-data-series-before.png)
+![Excel 中添加 2016 数据系列之前的图表](../images/Excel-chart-data-series-before.png)
 
 **添加 2016 数据系列之后的图表**
 
-![Excel 中添加 2016 数据系列之后的图表](../../images/Excel-chart-data-series-after.png)
+![Excel 中添加 2016 数据系列之后的图表](../images/Excel-chart-data-series-after.png)
 
 ## <a name="set-chart-title"></a>设置图表标题
 
@@ -71,7 +71,7 @@ Excel.run(function (context) {
 
 **设置标题后的图表**
 
-![Excel 中带标题的图表](../../images/Excel-chart-title-set.png)
+![Excel 中带标题的图表](../images/Excel-chart-title-set.png)
 
 ## <a name="set-properties-of-an-axis-in-a-chart"></a>在图表中设置轴属性
 
@@ -94,7 +94,7 @@ Excel.run(function (context) {
 
 **设置分类轴标题后的图表**
 
-![Excel 中带轴标题的图表](../../images/Excel-chart-axis-title-set.png)
+![Excel 中带轴标题的图表](../images/Excel-chart-axis-title-set.png)
 
 ### <a name="set-axis-display-unit"></a>设置轴的显示单位
 
@@ -115,7 +115,7 @@ Excel.run(function (context) {
 
 **设置数值轴显示单位后的图表**
 
-![Excel 中带轴显示单位的图表](../../images/Excel-chart-axis-display-unit-set.png)
+![Excel 中带轴显示单位的图表](../images/Excel-chart-axis-display-unit-set.png)
 
 ## <a name="set-visibility-of-gridlines-in-a-chart"></a>在图表中设置网格线的可见性
 
@@ -134,7 +134,7 @@ Excel.run(function (context) {
 
 **隐藏了网格线的图表**
 
-![Excel 中隐藏了网格线的图表](../../images/Excel-chart-gridlines-removed.png)
+![Excel 中隐藏了网格线的图表](../images/Excel-chart-gridlines-removed.png)
 
 ## <a name="chart-trendlines"></a>图表趋势线
 
@@ -158,7 +158,7 @@ Excel.run(function (context) {
 
 **带移动均线的图表**
 
-![Excel 中带移动均线的图表](../../images/Excel-chart-create-trendline.png)
+![Excel 中带移动均线的图表](../images/Excel-chart-create-trendline.png)
 
 ### <a name="update-a-trendline"></a>更新趋势线
 
@@ -181,7 +181,7 @@ Excel.run(function (context) {
 
 **带线性趋势线的图表**
 
-![Excel 中带线性趋势线的图表](../../images/Excel-chart-trendline-linear.png)
+![Excel 中带线性趋势线的图表](../images/Excel-chart-trendline-linear.png)
 
 ## <a name="additional-resources"></a>其他资源
 

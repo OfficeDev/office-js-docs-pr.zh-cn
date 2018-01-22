@@ -35,15 +35,15 @@
 
 2. 在 iTunes 中，选择菜单栏下的“**iPad**”图标。
     
-    ![iTunes 中的 iPad 图标](../../images/4ea35904-252e-45b4-88ad-14840d502bad.png)
+    ![iTunes 中的 iPad 图标](../images/4ea35904-252e-45b4-88ad-14840d502bad.png)
 
 3. 在 iTunes 左侧的“**设置**”下，选择“**应用**”。
     
-    ![iTunes 应用程序设置](../../images/a12d1bb6-b39f-496b-83de-6ac00b0b97a5.png)
+    ![iTunes 应用程序设置](../images/a12d1bb6-b39f-496b-83de-6ac00b0b97a5.png)
 
 4. 在 iTunes 右侧，向下滚动到“**文件共享**”，然后在“**外接程序**”列下选择“**Excel**”或“**Word**”。
     
-    ![iTunes 文件共享](../../images/3b2a53a2-e164-4ff0-ba42-83a8dc1a069f.png)
+    ![iTunes 文件共享](../images/3b2a53a2-e164-4ff0-ba42-83a8dc1a069f.png)
 
 5. 在“**Excel**”或“**Word 文档**”列底部，选择“**添加文件**”，然后选择你要旁加载的外接程序的清单 .xml 文件。 
     
@@ -53,7 +53,7 @@
     
 8. 选择“**插入**”选项卡上的“**外接程序**”。旁加载的外接程序可在“**外接程序**”UI 中的“**开发人员**”标题下插入。
     
-    ![在 Excel 应用程序中插入的加载项](../../images/ed6033b0-ecec-4853-8ee7-9ef0884cb237.PNG)
+    ![在 Excel 应用程序中插入的加载项](../images/ed6033b0-ecec-4853-8ee7-9ef0884cb237.PNG)
 
 
 ## <a name="sideload-an-add-in-on-office-for-mac"></a>将外接程序旁加载到 Office for Mac 上
@@ -68,19 +68,19 @@
     
 2. 在“**查找程序**”中使用命令 `open .`（包括句点或点）打开该文件夹。将你的外接程序的清单文件复制到该文件夹中。
     
-    ![Office for Mac 中的 Wef 文件夹](../../images/bca689f8-bff4-421d-bc36-92c8ae0ddfba.png)
+    ![Office for Mac 中的 Wef 文件夹](../images/bca689f8-bff4-421d-bc36-92c8ae0ddfba.png)
 
 3. 打开 Word，然后打开一个文档。如果 Word 已运行，则重新启动它。
     
 4. 在 Word 中，选择“**插入**” > “**外接程序**” > “**我的外接程序**”（下拉菜单），然后选择外接程序。
     
-    ![Office for Mac 中的“我的外接程序”](../../images/4593430c-b33e-4895-b2be-63fe3c4d08bc.png)
+    ![Office for Mac 中的“我的外接程序”](../images/4593430c-b33e-4895-b2be-63fe3c4d08bc.png)
 
   > **重要说明：**旁加载的外接程序不会出现在“我的外接程序”对话框中。它们仅在下拉菜单内可见（“插入”****选项卡上“我的外接程序”右侧的小向下箭头）。旁加载的外接程序在本菜单中的“开发人员外接程序”****标题下列出。 
     
 5. 验证外接程序是否显示在 Word 中。
     
-    ![显示在 Office for Mac 中的 Office 外接程序](../../images/a5cb2efc-1180-45b4-85a6-13df817b9d2c.png)
+    ![显示在 Office for Mac 中的 Office 外接程序](../images/a5cb2efc-1180-45b4-85a6-13df817b9d2c.png)
     
 > **注意：**出于性能方面考虑，外接程序通常在 Office for Mac 中缓存。开发外接程序时，如果需要强制对其进行重新加载，则可以清除 Users/<usr>/Library/Containers/com.Microsoft.OsfWebHost/Data/ 文件夹。 
 

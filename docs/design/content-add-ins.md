@@ -4,7 +4,7 @@
 
 **示例：内容外接程序**
 
-![显示内容外接程序的典型布局的示例图像。](../../images/overview_withApp_content.png)
+![显示内容外接程序的典型布局的示例图像。](../images/overview_withApp_content.png)
 
 ## <a name="best-practices"></a>最佳做法
 
@@ -23,13 +23,13 @@ Office 2016 桌面和 Office 365 中的 Word、Excel 和 PowerPoint 的内容外
 
 对于 Windows，“个性”菜单尺寸为 12 x 32 像素，如下所示。
 
-![显示 Windows 桌面上的“个性”菜单的图像](../../images/personalityMenu_Win.png)
+![显示 Windows 桌面上的“个性”菜单的图像](../images/personalityMenu_Win.png)
 
 **Mac 上的“个性”菜单**
 
 对于 Mac，“个性”菜单尺寸为 26x26 像素，但是从右侧浮动 8 个像素，再从顶部浮动 6 个像素，能将占用空间增加至 34x32 像素，如下所示。
 
-![显示 Mac 桌面上的“个性”菜单的图像](../../images/personalityMenu_Mac.png)
+![显示 Mac 桌面上的“个性”菜单的图像](../images/personalityMenu_Mac.png)
 
 ## <a name="implementation"></a>实现
 

@@ -28,7 +28,7 @@
 1.  打开 Visual Studio，再依次转到“文件”**** > “新建”**** > “项目”****。 
 2.  在“Office/SharePoint”****下，依次选择“Excel 外接程序”****和“确定”****。
 
-    ![Visual Studio Excel 外接程序模板](../../images/visual-studio-addin-template.png)
+    ![Visual Studio Excel 外接程序模板](../images/visual-studio-addin-template.png)
 
 3.  在应用创建向导中，依次选择“将新功能添加到 Excel”****和“完成”****。
 4.  按 F5 或绿色的“开始”****按钮，启动新建的 Excel 外接程序，从而快速测试此外接程序。 此外接程序将本地托管在 IIS 上，Excel 将在外接程序加载时打开。
@@ -39,13 +39,13 @@
 2. 当系统询问是否确定要更改文件扩展名时，请选择“是”****。  
 3. 当系统询问是否要在 nuget 上搜索 TypeScript 键入时，请选择“是”****，如下面的屏幕截图所示。 此时，“Nuget 包管理器”****会打开。
 
-    ![“搜索 TypeScript 键入”对话框](../../images/search-typescript-typings.png)
+    ![“搜索 TypeScript 键入”对话框](../images/search-typescript-typings.png)
 
 4. 选择“Nuget 包管理器”****中的“浏览”****。  
 5. 在搜索框中，键入“office-js tag:typescript”****。
 6. 安装“office.js.TypeScript.DefinitelyTyped”****和“jquery.TypeScript.DefinitelyTyped”****，如下面的屏幕截图所示。
 
-    ![TypeScript DefinitelyTyped NuGet](../../images/typescript-definitelytyped-nugets.png)
+    ![TypeScript DefinitelyTyped NuGet](../images/typescript-definitelytyped-nugets.png)
 
 7. 打开 Home.ts（前身为 Home.js）。从 Home.ts 文件顶部删除以下引用：
 

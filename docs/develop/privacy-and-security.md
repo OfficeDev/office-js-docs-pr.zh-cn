@@ -35,14 +35,14 @@ Office 外接程序受到外接程序运行时环境、多层权限模型和性�
 
 **图 1.基于 Windows 的台式机和平板电脑客户端中的 Office 外接程序运行时环境**
 
-![富客户端基础结构](../../images/DK2_AgaveOverview02.png)
+![富客户端基础结构](../images/DK2_AgaveOverview02.png)
 
 如图 2 中所示，在 OS X Mac 台式机上，加载项网页托管在沙盒 WebKit 运行时主机进程内部，这有助于提供同一级别的安全和性能保护。 
 
 
 **图 2.OS X Mac 客户端中的 Office 外接程序运行时环境**
 
-![OS X Mac 上的 Office 相关应用程序运行时环境](../../images/DK2_AgaveOverview_Mac_02.png)
+![OS X Mac 上的 Office 相关应用程序运行时环境](../images/DK2_AgaveOverview_Mac_02.png)
 
 Office 外接程序运行时管理进程间通信、JavaScript API 调用和事件到本机调用和事件的转换以及 UI 远程处理支持，从而使加载项能够呈现在文档内、任务窗格中或电子邮件、会议请求或约会旁边。
 
@@ -54,7 +54,7 @@ Office 外接程序运行时管理进程间通信、JavaScript API 调用和事�
 
 **图 3：支持 Office Web 客户端中的 Office 外接程序的基础结构**
 
-![Web 客户端基础结构](../../images/DK2_AgaveOverview03.png)
+![Web 客户端基础结构](../images/DK2_AgaveOverview03.png)
 
 
 ## <a name="add-in-integrity-in-the-office-store"></a>Office 应用商店中的加载项完整性

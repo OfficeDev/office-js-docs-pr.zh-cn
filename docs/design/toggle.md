@@ -5,7 +5,7 @@
 #### <a name="example-toggle-in-a-task-pane"></a>示例：任务窗格中的切换
 
 
-![显示切换组件的图像](../../images/overview_withApp_toggle.png)
+![显示切换组件的图像](../images/overview_withApp_toggle.png)
 
 <br/>
 
@@ -13,17 +13,17 @@
 
 |**允许事项**|**不应做**|
 |:------------|:--------------|
-|如果更改会立即应用，应对二项设置使用切换组件。<br/><br/>![“应做”切换组件示例](../../images/toggleDo.png)<br/>|如果用户必须执行额外步骤，更改才能生效，不应使用切换组件。<br/><br/>![“不应做”切换组件示例](../../images/toggleDont.png)<br/>|
+|如果更改会立即应用，应对二项设置使用切换组件。<br/><br/>![“应做”切换组件示例](../images/toggleDo.png)<br/>|如果用户必须执行额外步骤，更改才能生效，不应使用切换组件。<br/><br/>![“不应做”切换组件示例](../images/toggleDont.png)<br/>|
 |只有当要对设置使用多个特定标签时，才应替换“开”****和“关”****标签。 应使用短（3-4 个字符）标签表示相反的选项。| |
 
 ## <a name="variants"></a>变量
 
 |**变体**|**说明**|**示例**|
 |:------------|:--------------|:----------|
-|**已启用并选中**|当切换的状态处于活动时使用。|![已启用并选中图像](../../images/toggleEnabledOn.png)<br/>|
-|**已启用但取消选中**|当切换的状态处于非活动时使用。|![已启用但取消选中图像](../../images/toggleEnabledOff.png)<br/>|
-|**已禁用并选中**|不能更改活动状态时使用。|![已禁用并选中图像](../../images/toggleDisabledOn.png)<br/>|
-|**已禁用但取消选中**|无法更改非活动状态时使用。|![已禁用但取消选中图像](../../images/toggleDisabledOff.png)<br/>|
+|**已启用并选中**|当切换的状态处于活动时使用。|![已启用并选中图像](../images/toggleEnabledOn.png)<br/>|
+|**已启用但取消选中**|当切换的状态处于非活动时使用。|![已启用但取消选中图像](../images/toggleEnabledOff.png)<br/>|
+|**已禁用并选中**|不能更改活动状态时使用。|![已禁用并选中图像](../images/toggleDisabledOn.png)<br/>|
+|**已禁用但取消选中**|无法更改非活动状态时使用。|![已禁用但取消选中图像](../images/toggleDisabledOff.png)<br/>|
 
 ## <a name="implementation"></a>实现
 

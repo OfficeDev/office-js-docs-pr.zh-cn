@@ -74,19 +74,19 @@ Visual Studio Office 开发人员工具包含 Project 2013 任务窗格外接程
     
     **创建 Office 外接程序**
 
-    ![创建 Office 2013 相关应用程序](../../images/pj15_HelloProjectOData_CreatingApp.png)
+    ![创建 Office 2013 相关应用程序](../images/pj15_HelloProjectOData_CreatingApp.png)
 
 5. 在“**选择外接程序类型**”对话框中，选择“**任务窗格**”，然后选择“**下一步**”（请参阅下一个屏幕截图）。
     
     **选择要创建的外接程序类型**
 
-    ![选择要创建的应用程序类型](../../images/pj15_HelloProjectOData_ChooseProject.png)
+    ![选择要创建的应用程序类型](../images/pj15_HelloProjectOData_ChooseProject.png)
 
 6. 在“**选择主机应用程序**”对话框中，清除除“**项目**”复选框以外的所有复选框（请参阅下一个屏幕截图），然后选择“**完成**”。
     
     **选择主机应用程序**
 
-    ![选择 Project 作为唯一主机应用程序](../../images/b2144f2c-51f6-4e61-bc0d-972125c57031.png)
+    ![选择 Project 作为唯一主机应用程序](../images/b2144f2c-51f6-4e61-bc0d-972125c57031.png)
     
     Visual Studio 创建 **HelloProjectOdata** 项目和 **HelloProjectODataWeb** 项目。
     
@@ -94,7 +94,7 @@ Visual Studio Office 开发人员工具包含 Project 2013 任务窗格外接程
 
 **在解决方案资源管理器中查看默认 Web 项目文件**
 
-![在解决方案资源管理器中查看 Web 项目文件](../../images/pj15_HelloProjectOData_InitialSolutionExplorer.png)
+![在解决方案资源管理器中查看 Web 项目文件](../images/pj15_HelloProjectOData_InitialSolutionExplorer.png)
 
 **HelloProjectOData** 项目的清单是 HelloProjectOData.xml 文件。你可以根据需要修改该清单，以添加有关加载项的描述、对图标的引用、其他语言的信息和其他设置。过程 3 只修改了加载项显示名称和描述，并添加了一个图标。
 
@@ -118,7 +118,7 @@ Visual Studio Office 开发人员工具包含 Project 2013 任务窗格外接程
     
 2. 若要显示在“**Office 外接程序**”下拉列表中，图标的像素必须为 32 x 32。例如，安装 Project 2013 SDK，然后选择“**图像**”文件夹并添加 SDK 的以下文件：`\Samples\Apps\HelloProjectOData\HelloProjectODataWeb\Images\NewIcon.png`
     
-    Alternately, use your own 32 x 32 icon; or, copy the following image to a file named NewIcon.png, and then add that file to the  `HelloProjectODataWeb\Images` folder: ![HelloProjectOData 应用程序的图标](../../images/pj15_HelloProjectData_NewIcon.jpg)
+    Alternately, use your own 32 x 32 icon; or, copy the following image to a file named NewIcon.png, and then add that file to the  `HelloProjectODataWeb\Images` folder: ![HelloProjectOData 应用程序的图标](../images/pj15_HelloProjectData_NewIcon.jpg)
 
 3. 在 HelloProjectOData.xml 清单中，在 **Description** 元素下面添加一个 **IconUrl** 元素，其中图标 URL 的值是指向 32x32 图标文件的相对路径。例如，添加以下行：**<IconUrl DefaultValue="~remoteAppUrl/Images/NewIcon.png" />**。HelloProjectOData.xml 清单文件现在包含以下内容（你的 **Id** 值将不同）：
 
@@ -578,7 +578,7 @@ HelloProjectOData.js 文件的剩余部分包含两个函数：当用户选择�
     
     **图 4.启动 HelloProjectOData 外接程序**
 
-    ![测试 HelloProjectOData 应用程序](../../images/pj15_HelloProjectData_TestTheApp.png)
+    ![测试 HelloProjectOData 应用程序](../images/pj15_HelloProjectData_TestTheApp.png)
 
 4. 在“**Hello ProjectData**”任务窗格中，选择“**获取 ProjectData 终结点**”。**projectDataEndPoint** 行应显示 **ProjectData** 服务的 URL，且“**比较所有项目**”按钮应启用（见图 5）。
     
@@ -586,7 +586,7 @@ HelloProjectOData.js 文件的剩余部分包含两个函数：当用户选择�
     
     **图 5.查看 REST 查询的结果**
 
-    ![查看 REST 查询的结果](../../images/pj15_HelloProjectData_RESTresults.gif)
+    ![查看 REST 查询的结果](../images/pj15_HelloProjectData_RESTresults.gif)
 
 6. 查看文本框中的输出。该输出应当显示来自对  **ajax** 和 **parseODataResult** 的调用的文档路径、REST 查询、状态信息和 JSON 结果。该输出有助于了解、创建和调试 **parseODataResult** 方法中的代码，如 `projCost += Number(res.d.results[i].ProjectCost);`。
     
@@ -644,7 +644,7 @@ HelloProjectOData.js 文件的剩余部分包含两个函数：当用户选择�
     
     **图 6.使用没有 Project Web App 连接的外接程序**
 
-    ![使用没有 Project Web App 连接的应用程序](../../images/pj15_HelloProjectData_NoConnection.gif)
+    ![使用没有 Project Web App 连接的应用程序](../images/pj15_HelloProjectData_NoConnection.gif)
 
 8. 停止调试，然后再次按  **F5**。登录 Project Web App，然后创建一个包含成本和工作数据的项目。您可以保存该项目，但不发布它。
     
@@ -653,7 +653,7 @@ HelloProjectOData.js 文件的剩余部分包含两个函数：当用户选择�
 
     **图 7.将未发布的项目与其他项目进行比较**
 
-    ![将未发布的项目与其他项目进行比较](../../images/pj15_HelloProjectData_NotPublished.gif)
+    ![将未发布的项目与其他项目进行比较](../images/pj15_HelloProjectData_NotPublished.gif)
 
 即使您的加载项在上述测试中运行正常，也应运行其他测试。例如：
 

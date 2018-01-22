@@ -43,7 +43,7 @@ ng new my-addin
     ```bash
     yo office
     ```
-    ![Yeoman 生成器](../../images/yo-office.png)
+    ![Yeoman 生成器](../images/yo-office.png)
     > **注意**：如果提示覆盖 **package.json**，则回答 **No**（不覆盖）。
 
 3. 打开清单文件（即应用程序根目录中名称以“manifest.xml”结尾的文件）。 将所有 `https://localhost:3000` 都替换为 `http://localhost:4200`，再保存此文件。
@@ -180,11 +180,11 @@ ng new my-addin
 
 2. 在 Excel 中，依次选择“开始”****选项卡和功能区中的“显示任务窗格”****按钮，打开加载项任务窗格。
 
-    ![Excel 加载项按钮](../../images/excel_quickstart_addin_2a.png)
+    ![Excel 加载项按钮](../images/excel_quickstart_addin_2a.png)
 
 3. 在此任务窗格中，选择“为我设置颜色”****按钮，将选定区域的颜色设置为绿色。
 
-    ![Excel 加载项](../../images/excel_quickstart_addin_2b.png)
+    ![Excel 加载项](../images/excel_quickstart_addin_2b.png)
 
 ## <a name="next-steps"></a>后续步骤
 

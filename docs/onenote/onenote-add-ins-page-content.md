@@ -2,7 +2,7 @@
 
 在 OneNote 外接程序 JavaScript API 中，页面内容由以下对象模型表示。
 
-  ![OneNote 页面对象模型图](../../images/OneNoteOM-page.png)
+  ![OneNote 页面对象模型图](../images/OneNoteOM-page.png)
 
 - Page 对象包含一组 PageContent 对象。
 - PageContent 对象包含类型为 Outline、Image 或 Other 的内容。

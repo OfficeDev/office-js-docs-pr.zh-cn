@@ -18,7 +18,7 @@
 
 下图是一个对话框示例：
 
-![加载项命令](../../images/Auth0DialogOpen.PNG)
+![加载项命令](../images/Auth0DialogOpen.PNG)
 
 请注意，对话框总是在屏幕的中心打开。 用户可以移动并重设对话框的大小。 对话框是*非模式*窗口。也就是说，用户可以继续同时与主机 Office 应用程序中的文档以及任务窗格中的主机页（若有）进行交互。
 
@@ -362,7 +362,7 @@ Office.context.ui.displayDialogAsync('https://myAddinDomain/myDialog.html?client
 
 有关在对话框中显示视频的示例，请参阅 [Office 外接程序的用户体验设计模式](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code)存储库中的[视频展示位置设计模式](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code/tree/master/templates/first-run/video-placemat)。
 
-![在加载项对话框中显示的视频的屏幕截图。](../../images/VideoPlacematDialogOpen.PNG)
+![在加载项对话框中显示的视频的屏幕截图。](../images/VideoPlacematDialogOpen.PNG)
 
 ## <a name="use-the-dialog-apis-in-an-authentication-flow"></a>在身份验证流中使用 Dialog API
 

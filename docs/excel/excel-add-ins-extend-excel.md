@@ -8,7 +8,7 @@
 
 **加载项命令**
 
-![Excel 中的加载项命令](../../images/Excel_add-in_commands_Script-Lab.png)
+![Excel 中的加载项命令](../images/Excel_add-in_commands_Script-Lab.png)
 
 有关命令功能、受支持的平台和开发加载项命令第最佳做法的详细信息，请参阅[适用于 Excel、Word 和 Powerpoint 的加载项命令](../design/add-in-commands.md)。
 
@@ -18,7 +18,7 @@
 
 **任务窗格**
 
-![Excel 中的任务窗格加载项](../../images/Excel_add-in_task_pane_Insights.png)
+![Excel 中的任务窗格加载项](../images/Excel_add-in_task_pane_Insights.png)
 
 有关任务窗格的详细信息，请参阅 [Office 加载项中的任务窗格](../design/task-pane-add-ins.md)。有关在 Excel 中实现任务窗格的示例，请参阅 [Excel 加载项 JS WoodGrove Expense Trends](https://github.com/OfficeDev/Excel-Add-in-WoodGrove-Expense-Trends)。
 
@@ -28,7 +28,7 @@
 
 **对话框**
 
-![Excel 中的加载项对话框](../../images/Excel_add-in_dialog_choose-number.png)
+![Excel 中的加载项对话框](../images/Excel_add-in_dialog_choose-number.png)
 
 有关对话框和对话框 API 的详细信息，请参阅 [Office 加载项中的对话框](../design/dialog-boxes.md)和[在 Office 加载项中使用对话框 API](../develop/dialog-api-in-office-add-ins.md)。
 
@@ -38,7 +38,7 @@
 
 **内容加载项**
 
-![Excel 中的内容加载项](../../images/Excel_add-in_content_map.png)
+![Excel 中的内容加载项](../images/Excel_add-in_content_map.png)
 
 有关内容加载项的详细信息，请参阅 [Office 内容加载项](../design/content-add-ins.md)。有关在 Excel 中实现内容加载项的示例，请参阅 GitHub 中的 [ Excel 内容加载项 Humongous Insurance](https://github.com/OfficeDev/Excel-Content-Add-in-Humongous-Insurance)。
 

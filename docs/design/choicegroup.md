@@ -4,7 +4,7 @@ ChoiceGroup 组件也称为单选按钮，向用户提供两个或多个互相�
   
 #### <a name="example-choicegroup-in-a-task-pane"></a>示例：任务窗格中的 ChoiceGroup
 
- ![显示 ChoiceGroup 的图像](../../images/overview_withApp_choicegroup.png)
+ ![显示 ChoiceGroup 的图像](../images/overview_withApp_choicegroup.png)
 
 <br/>
 
@@ -12,7 +12,7 @@ ChoiceGroup 组件也称为单选按钮，向用户提供两个或多个互相�
 
 |**允许事项**|**禁止事项**|
 |:------------|:--------------|
-|应让 ChoiceGroup 选项处于同一级。<br/><br/>![“应做”ChoiceGroup 示例](../../images/choiceDo.png)<br/>|不应使用嵌套的 ChoiceGroup 或复选框。<br/><br/>![“不应做”ChoiceGroup 示例](../../images/choiceDont.png)<br/>|
+|应让 ChoiceGroup 选项处于同一级。<br/><br/>![“应做”ChoiceGroup 示例](../images/choiceDo.png)<br/>|不应使用嵌套的 ChoiceGroup 或复选框。<br/><br/>![“不应做”ChoiceGroup 示例](../images/choiceDont.png)<br/>|
 |应使用具有 2-7 个选项的 ChoiceGroup，同时确保屏幕空间足以显示所有选项。 否则，请使用复选框或下拉列表。|如果选项为步长固定的数字（例如，10、20、30 等），不应使用 ChoiceGroup。 请改用幻灯片组件。|
 |如果用户可能不会选择任何选项，应考虑添加诸如“无”****或“不应用”****之类的选项。|不应将两个 ChoiceGroup 按钮用于一个二项选择。|
 |如果可能，请垂直对齐 ChoiceGroup 按钮而非水平对齐。水平对齐会加大读取和本地化的难度。||
@@ -22,8 +22,8 @@ ChoiceGroup 组件也称为单选按钮，向用户提供两个或多个互相�
 
 |**变体**|**说明**|**示例**|
 |:------------|:--------------|:----------|
-|**ChoiceGroup**|当做选择不需要图像时使用。|![ChoiceGroup 变量图像](../../images/radio.png)<br/>|
-|**ChoiceGroup 使用图像**|当做选择需要图像时使用。|![带图像的 ChoiceGroup 变量](../../images/radioImage.png)<br/>|
+|**ChoiceGroup**|当做选择不需要图像时使用。|![ChoiceGroup 变量图像](../images/radio.png)<br/>|
+|**ChoiceGroup 使用图像**|当做选择需要图像时使用。|![带图像的 ChoiceGroup 变量](../images/radioImage.png)<br/>|
 
 ## <a name="implementation"></a>实现
 

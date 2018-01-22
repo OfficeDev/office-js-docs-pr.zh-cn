@@ -724,19 +724,19 @@ function manageViewEventHandler(docMethod) {
     
     **图 1.为外接程序清单添加网络文件共享**
 
-    ![为应用程序清单添加网络文件共享](../../images/pj15_CreateSimpleAgave_ManageCatalogs.png)
+    ![为应用程序清单添加网络文件共享](../images/pj15_CreateSimpleAgave_ManageCatalogs.png)
 
 6. 添加新的外接程序或更改源代码后，重新启动项目。在“**项目**”功能区，选择“**Office 外接程序**”下拉菜单，然后选择“**查看所有**”。在“**插入外接程序**”对话框中，选择“**共享文件夹**”（见图 2），选择“**Project OM Test**”，然后选择“**插入**”。Project OM Test 外接程序在任务窗格启动。
     
     **图 2.启动文件共享上的 Project OM Test 外接程序**
 
-    ![插入应用程序](../../images/pj15_CreateSimpleAgave_StartAgaveApp.png)
+    ![插入应用程序](../images/pj15_CreateSimpleAgave_StartAgaveApp.png)
 
 7. 在 Project 中，创建并保存具有至少两个任务的简单项目。例如，创建名为 T1、T2 的任务和名为 M1 的里程碑，然后将任务工期和前置任务设置为与图 3 中的类似。选择功能区上的“**项目**”选项卡，选择任务 T2 的整个行，然后在任务窗格中选择“**getSelectedDataAsync**”按钮。图 3 显示在 **Project OM Test** 外接程序的文本框中选择的数据。
     
     **图 3.使用 Project OM Test 外接程序**
 
-    ![使用 Project OM Test 应用程序](../../images/pj15_CreateSimpleAgave_ProjectOMTest.gif)
+    ![使用 Project OM Test 应用程序](../images/pj15_CreateSimpleAgave_ProjectOMTest.gif)
 
 8. 选择第一项任务的“**工期**”列中的单元格，然后选择 **Project OM Test** 外接程序中的“**getSelectedDataAsync**”按钮。**getSelectedDataAsync** 函数将文本框值设置为显示 `2 days`。 
     
@@ -1122,7 +1122,7 @@ function logMethodError(methodName, errorName, errorMessage, actionMessage) {
 
 **图 4.SurfaceErrors.js 文件中的函数可以显示“toast”通知**
 
-![使用 SurfaceError 例程以显示错误](../../images/pj15_CreateSimpleAgave_SurfaceError.gif)
+![使用 SurfaceError 例程以显示错误](../images/pj15_CreateSimpleAgave_SurfaceError.gif)
 
 
 ## <a name="additional-resources"></a>其他资源

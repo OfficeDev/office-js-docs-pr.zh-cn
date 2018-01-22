@@ -25,7 +25,7 @@
     ```bash
     yo office
     ```
-    ![Yeoman 生成器](../../images/yo-office-jquery.png)
+    ![Yeoman 生成器](../images/yo-office-jquery.png)
 
 
 4. 在代码编辑器中，打开项目根目录中的 **index.html**。 该文件指定将在加载项的任务窗格中呈现的 HTML。 
@@ -147,13 +147,13 @@ Office Web 加载项应使用 HTTPS，而不是 HTTP，即使在开发时也是�
 
 3. 在 Excel 中，选择“主页”****选项卡，然后选择功能区中的“显示任务窗格”****按钮，以打开加载项任务窗格。
 
-    ![Excel 加载项按钮](../../images/excel_quickstart_addin_2a.png)
+    ![Excel 加载项按钮](../images/excel_quickstart_addin_2a.png)
 
 4. 选择工作表中的任意单元格区域。
 
 5. 在此任务窗格中，选择“为我设置颜色”****窗格按钮，将所选区域的颜色设置为绿色。
 
-    ![Excel 加载项](../../images/excel_quickstart_addin_2b.png)
+    ![Excel 加载项](../images/excel_quickstart_addin_2b.png)
 
 ## <a name="next-steps"></a>后续步骤
 

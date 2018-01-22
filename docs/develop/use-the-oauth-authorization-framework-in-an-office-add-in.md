@@ -11,7 +11,7 @@ OAuth 是授权的开放式标准，Office 365、Facebook、Google、SalesForce�
 
 下图显示了所需的组件和在您的外接程序中实施身份验证时所发生的事件流。
 
-![在 Office 外接程序中执行 OAuth 身份验证](../../images/OAuthInOfficeAddin.png)
+![在 Office 外接程序中执行 OAuth 身份验证](../images/OAuthInOfficeAddin.png)
 
 该图显示了如何使用以下所需的组件：
 

@@ -6,7 +6,7 @@
 
 <br/>
 
-![显示透视组件的图像](../../images/overview_withApp_pivot.png)
+![显示透视组件的图像](../images/overview_withApp_pivot.png)
 
 <br/>
 
@@ -24,8 +24,8 @@
 
 |**变体**|**说明**|**示例**|
 |:------------|:--------------|:----------|
-|**基本示例**|用作默认透视组件选项。|![基本示例图像](../../images/pivotBasic.png)<br/>|
-|**选项卡样式链接**|当首选选项卡样式透视按钮时使用。|![选项卡样式的链接图像](../../images/pivotTab.png)<br/>|
+|**基本示例**|用作默认透视组件选项。|![基本示例图像](../images/pivotBasic.png)<br/>|
+|**选项卡样式链接**|当首选选项卡样式透视按钮时使用。|![选项卡样式的链接图像](../images/pivotTab.png)<br/>|
 
 ## <a name="implementation"></a>实现
 

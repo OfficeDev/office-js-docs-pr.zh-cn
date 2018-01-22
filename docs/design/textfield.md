@@ -4,7 +4,7 @@
   
 #### <a name="example-textfield-in-a-task-pane"></a>示例：任务窗格中的 TextField
 
-![显示 TextField 的图像](../../images/overview_withApp_textField.png)
+![显示 TextField 的图像](../images/overview_withApp_textField.png)
 
 <br/>
 
@@ -23,11 +23,11 @@
 
 |**变体**|**说明**|**示例**|
 |:------------|:--------------|:----------|
-|**默认 TextField**|用作默认的文本字段。|![默认 TextField 图像](../../images/textfieldDefault.png)<br/>|
-|**已禁用 TextField**|当文本字段处于禁用状态时使用。|![已禁用 TextField 图像](../../images/textfieldDisabled.png)<br/>|
-|**必填 TextField**|当必须在文本字段中输入内容时使用。|![必填 TextField 图像](../../images/textfieldRequired.png)<br/>|
-|**带有占位符的 TextField**|当需要占位符文本时使用。|![带有占位符的 TextField 图像](../../images/textfieldPlaceholder.png)<br/>|
-|**多行的 TextField**|当需要多行文本时使用。|![带有占位符的 TextField 图像](../../images/textfieldMulti.png)<br/>|
+|**默认 TextField**|用作默认的文本字段。|![默认 TextField 图像](../images/textfieldDefault.png)<br/>|
+|**已禁用 TextField**|当文本字段处于禁用状态时使用。|![已禁用 TextField 图像](../images/textfieldDisabled.png)<br/>|
+|**必填 TextField**|当必须在文本字段中输入内容时使用。|![必填 TextField 图像](../images/textfieldRequired.png)<br/>|
+|**带有占位符的 TextField**|当需要占位符文本时使用。|![带有占位符的 TextField 图像](../images/textfieldPlaceholder.png)<br/>|
+|**多行的 TextField**|当需要多行文本时使用。|![带有占位符的 TextField 图像](../images/textfieldMulti.png)<br/>|
 
 ## <a name="implementation"></a>实现
 

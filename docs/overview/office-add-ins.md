@@ -32,7 +32,7 @@ Office 外接程序通过使用 VBA、COM 或 VSTO 生成的外接程序提供�
 Office 外接程序包括两个基本组件：XML 清单文件和你自己的 Web 应用程序。此清单定义各种设置，包括将外接程序与 Office 客户端集成的方式。需要在 Web 服务器或 Web 托管服务上托管 Web 应用程序，例如 Microsoft Azure。
 
 **清单 + 网页 = Office 外接程序**
-![Manifest plus webpage equals Office Add-in](../../images/DK2_AgaveOverview01.png)
+![Manifest plus webpage equals Office Add-in](../images/DK2_AgaveOverview01.png)
 
 ### <a name="manifest"></a>清单 
 
@@ -50,7 +50,7 @@ Office 外接程序包括两个基本组件：XML 清单文件和你自己的 We
 
 **Hello World Office 外接程序的组件**
 
-![Hello World 外接程序的组件](../../images/DK2_AgaveOverview07.png)
+![Hello World 外接程序的组件](../images/DK2_AgaveOverview07.png)
 
 ## <a name="extending-and-interacting-with-office-clients"></a>扩展并与 Office 客户端交互 
 
@@ -75,14 +75,14 @@ Office 外接程序可以在 Office 主机应用程序中执行下列操作：
 可以向 Office for Windows Desktop 和 Office Online 中的功能区添加自定义功能区按钮和菜单项。这便于用户直接从他们的 Office 应用程序访问外接程序。命令按钮可以启动不同操作，如显示带有自定义 HTML 的任务窗格或执行一个 JavaScript 函数。  
 
 **在 Excel Desktop 上运行的外接程序命令**
-![Custom buttons and menu commands](../../images/add-in-commands-overview..png)
+![Custom buttons and menu commands](../images/add-in-commands-overview..png)
 
 #### <a name="task-panes"></a>任务窗格  
 
 除了外接程序命令，还可以使用任务窗格来使用户与解决方案进行交互。不支持外接程序命令（Office 2013 和 Office for iPad）的客户端会将外接程序作为任务窗格运行。用户通过“插入”选项卡上的“我的外接程序”****按钮启动任务窗格外接程序。 
 
 **任务窗格**
-![Task pane](../../images/task-pane-overview.jpg)
+![Task pane](../images/task-pane-overview.jpg)
 
 ### <a name="extend-outlook-functionality"></a>扩展 Outlook 功能 
 
@@ -98,7 +98,7 @@ Outlook 外接程序可以从该项目中访问上下文信息，如地址或跟
 
 **内容外接程序**
 
-![在内容外接程序中](../../images/DK2_AgaveOverview05.png)
+![在内容外接程序中](../images/DK2_AgaveOverview05.png)
 
 ## <a name="office-javascript-apis"></a>Office JavaScript API 
 

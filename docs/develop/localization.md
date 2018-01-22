@@ -260,7 +260,7 @@
 
 **图 3：外接程序 UI**
 
-![具有突出显示部分的应用程序用户界面。](../../images/off15App_HowToLocalize_fig03.png)
+![具有突出显示部分的应用程序用户界面。](../images/off15App_HowToLocalize_fig03.png)
 
 ### <a name="add-the-resource-file-that-contains-the-localized-strings"></a>添加包含本地化后字符串的资源文件
 
@@ -395,7 +395,7 @@ UIStrings.js 资源文件将创建一个对象  **UIStrings**，其中包含加�
     
     **图 4：“Word 2013 选项”对话框中的“语言”选项**
 
-    ![“Word 2013 选项”对话框。](../../images/off15App_HowToLocalize_fig04.png)
+    ![“Word 2013 选项”对话框。](../images/off15App_HowToLocalize_fig04.png)
 
 2. 在“**选择用户界面和帮助语言**”下，选择想要显示的语言，例如西班牙语，然后选择向上箭头键将西班牙语移至列表中的第一个位置。或者，若要更改编辑时使用的语言，在“**选择编辑语言**下，选择编辑时想要使用的语言，例如西班牙语，然后选择“**设置为默认值**。
     
@@ -406,7 +406,7 @@ UIStrings.js 资源文件将创建一个对象  **UIStrings**，其中包含加�
 
 **图 5.使用本地化文本的外接程序 UI**
 
-![具有本地化 UI 文本的应用程序。](../../images/off15App_HowToLocalize_fig05.png)
+![具有本地化 UI 文本的应用程序。](../images/off15App_HowToLocalize_fig05.png)
 
 ## <a name="additional-resources"></a>其他资源
 

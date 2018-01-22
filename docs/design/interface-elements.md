@@ -4,7 +4,7 @@
 
 下图显示了可以创建的 Office UI 元素的类型。
 
-![在 Office 文档的功能区、任务窗格和对话框上显示外接程序命令的图像](../../images/overview_withApp_interfaceElements.png)
+![在 Office 文档的功能区、任务窗格和对话框上显示外接程序命令的图像](../images/overview_withApp_interfaceElements.png)
 
 ## <a name="add-in-commands"></a>外接程序命令
 

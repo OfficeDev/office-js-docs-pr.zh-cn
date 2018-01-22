@@ -6,7 +6,7 @@
 
 <br/>
 
-![显示按钮的图像](../../images/overview_withApp_button.png)
+![显示按钮的图像](../images/overview_withApp_button.png)
 
 <br/>
 
@@ -24,9 +24,9 @@
 
 |**变体**|**说明**|**示例**|
 |:------------|:--------------|:----------|
-|**主按钮**|主按钮继承静止状态下的主题颜色。主按钮可用于突出显示主号召性用语。|![主按钮图像](../../images/button_primary.png)|
-|**默认按钮**|默认按钮应始终执行安全操作，不得执行删除操作。|![默认按钮图像](../../images/button_default.png)|
-|**复合按钮**|复合按钮可用于执行完成任务所需的操作或执行过渡任务。|![复合按钮图像](../../images/button_compound.png)|
+|**主按钮**|主按钮继承静止状态下的主题颜色。主按钮可用于突出显示主号召性用语。|![主按钮图像](../images/button_primary.png)|
+|**默认按钮**|默认按钮应始终执行安全操作，不得执行删除操作。|![默认按钮图像](../images/button_default.png)|
+|**复合按钮**|复合按钮可用于执行完成任务所需的操作或执行过渡任务。|![复合按钮图像](../images/button_compound.png)|
 
 ## <a name="implementation"></a>实现
 

@@ -12,7 +12,7 @@ Word 外接程序是 [Office 外接程序平台](../overview/office-add-ins.md)�
 
 **图 1：在 Word 的任务窗格中运行的外接程序**
 
-![在 Word 的任务窗格中运行的外接程序](../../images/WordAddinShowHostClient.png)
+![在 Word 的任务窗格中运行的外接程序](../images/WordAddinShowHostClient.png)
 
 Word 外接程序 (1) 可以将请求发送到 Word 文档 (2) 可以使用 JavaScript 来访问段落对象和更新、删除或移动段落。例如，下面的代码演示如何将一个新句子附加到该段落。
 

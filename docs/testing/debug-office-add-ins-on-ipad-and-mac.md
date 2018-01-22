@@ -79,7 +79,7 @@ Vorlon.JS 是网页调试程序，类似于 F12 工具。 它旨在实现远程�
 
 外接程序将在 Vorlon.JS（在 Vorlon.JS 界面左侧）的客户端列表中显示为 **{OS} - n**，*n* 代表数字，而 *{OS}* 表示设备类型，例如“Macintosh”。 
 
-![显示 Vorlon.js 界面的屏幕截图](../../images/vorlon_interface.png)
+![显示 Vorlon.js 界面的屏幕截图](../images/vorlon_interface.png)
 
 Vorlon 工具具有多种插件。当前已启用的插件显示为工具顶部的选项卡。 （可以通过选择左侧的齿轮图标启用更多插件。）这些插件类似于 F12 工具中的功能。 例如，可以突出显示 DOM 元素，执行命令等。 有关详细信息，请参阅 [Vorlon 文档核心插件](http://vorlonjs.com/documentation/#console) 
 

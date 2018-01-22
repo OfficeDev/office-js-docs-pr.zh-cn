@@ -44,19 +44,19 @@ Web 应用程序可以托管在任何 Web 服务器上，并且可以使用客�
 
 **自定义功能区按钮**
 
-![加载项命令](../../images/Excel_add-in_commands_Script-Lab.png)
+![加载项命令](../images/Excel_add-in_commands_Script-Lab.png)
 
 **任务窗格**
 
-![加载项任务窗格](../../images/Excel_add-in_task_pane_Insights.png)
+![加载项任务窗格](../images/Excel_add-in_task_pane_Insights.png)
 
 **对话框**
 
-![加载项对话框](../../images/Excel_add-in_dialog_choose-number.png)
+![加载项对话框](../images/Excel_add-in_dialog_choose-number.png)
 
 **内容加载项**
 
-![内容加载项](../../images/Excel_add-in_content_map.png)
+![内容加载项](../images/Excel_add-in_content_map.png)
 
 ## <a name="javascript-apis-to-interact-with-workbook-content"></a>JavaScript API 与工作簿内容交互
 

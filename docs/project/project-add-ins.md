@@ -169,13 +169,13 @@ Project 的加载项方案包括以下几种：
 
     **图 1.使用信任中心添加外接程序清单的目录**
 
-    ![使用信任中心添加应用程序清单](../../images/pj15_AgaveOverview_TrustCenter.PNG)
+    ![使用信任中心添加应用程序清单](../images/pj15_AgaveOverview_TrustCenter.PNG)
 
 7. 在“**项目**”功能区，选择“**Office 外接程序**”下拉菜单，然后选择“**查看所有**”。在“**插入外接程序**”对话框中，选择“**共享文件夹**”（见图 2）。
     
     **图 2.启动文件共享上的外接程序**
 
-    ![启动文件共享上的 Office 应用程序](../../images/pj15_AgaveOverview_StartAgaveApp.PNG)
+    ![启动文件共享上的 Office 应用程序](../images/pj15_AgaveOverview_StartAgaveApp.PNG)
 
 8. 选择必应搜索外接程序，然后选择“**插入**”。
     
@@ -183,7 +183,7 @@ Bing 搜索加载项显示在任务窗格中，如图 3 所示。可以手动调
 
 **图 3.使用必应搜索应用程序**
 
-![使用 Bing 搜索应用程序](../../images/pj15_AgaveOverview_BingSearch.gif)
+![使用 Bing 搜索应用程序](../images/pj15_AgaveOverview_BingSearch.gif)
 
 
 ## <a name="distributing-project-add-ins"></a>分发 Project 加载项

@@ -5,7 +5,7 @@
 * 授权用户登录加载项。
 * 授权加载项访问 [Microsoft Graph](https://developer.microsoft.com/graph/docs)。
 
-![显示加载项登录过程的图像](../../images/OfficeHostTitleBarLogin.png)
+![显示加载项登录过程的图像](../images/OfficeHostTitleBarLogin.png)
 
 >**注意：**目前，Word、Excel 和 PowerPoint 支持单一登录 API。 若要详细了解目前单一登录 API 的受支持情况，请参阅 [Identity API 要求集](../../reference/requirement-sets/identity-api-requirement-sets.md)。
 > Outlook 的单一登录当前处于预览阶段。 如果使用的是 Outlook 加载项，请务必为 Office 365 租赁启用新式验证。 若要了解如何这样做，请参阅 [Exchange Online：如何为租户启用新式验证](https://social.technet.microsoft.com/wiki/contents/articles/32711.exchange-online-how-to-enable-your-tenant-for-modern-authentication.aspx)。
@@ -22,7 +22,7 @@
 
 以下关系图显示了 SSO 流程的工作方式。
 <!-- Minor fixes to the text in the diagram - change V2 to v2.0, and change "(e.g. Word, Excel, etc.)" to "(for example, Word, Excel)". -->
-![SSO 过程关系图](../../images/SSOOverviewDiagram.png)
+![SSO 过程关系图](../images/SSOOverviewDiagram.png)
 
 1. 在加载项中，JavaScript 调用新的 Office.js API `getAccessTokenAsync`。 这会指示 Office 主机应用程序获取对加载项的访问令牌。 （以下称为**加载项令牌**。）
 1. 如果用户未登录，Office 主机应用程序会打开弹出窗口，以供用户登录。

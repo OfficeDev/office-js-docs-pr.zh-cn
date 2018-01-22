@@ -15,7 +15,7 @@ OneNote 引入了适用于 OneNote Online 外接程序的 JavaScript API。你�
 
 **Office 加载项 = 清单 + 网页**
 
-![Office 外接程序包含清单和网页](../../images/onenote-add-in.png)
+![Office 外接程序包含清单和网页](../images/onenote-add-in.png)
 
 ## <a name="using-the-javascript-api"></a>使用 JavaScript API
 
@@ -111,7 +111,7 @@ OneNote 外接程序仅支持以下通用 API：
 ## <a name="onenote-object-model-diagram"></a>OneNote 对象模型图 
 下图表示了 OneNote JavaScript API 中当前可用的内容。
 
-  ![OneNote 对象模型图](../../images/onenote-om.png)
+  ![OneNote 对象模型图](../images/onenote-om.png)
 
 
 ## <a name="additional-resources"></a>其他资源

@@ -13,7 +13,7 @@
 
 **图 1.内容和任务窗格外接程序的 5 级权限模型**
 
-![任务窗格应用程序的权限级别](../../images/off15appsdk_TaskPaneAppPermission.gif)
+![任务窗格应用程序的权限级别](../images/off15appsdk_TaskPaneAppPermission.gif)
 
 
 

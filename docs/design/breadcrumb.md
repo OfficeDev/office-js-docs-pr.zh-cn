@@ -6,7 +6,7 @@
 
 <br/>
 
-![显示痕迹导航组件的图像](../../images/overview_withApp_breadcrumb.png)
+![显示痕迹导航组件的图像](../images/overview_withApp_breadcrumb.png)
 
 <br/>
 
@@ -14,7 +14,7 @@
 
 |**允许事项**|**不应做**|
 |:------------|:--------------|
-|应将痕迹导航组件置于加载项布局顶部、位于项列表之上或位于布局的主内容之上。<br/><br/>![“应做”痕迹导航组件图像](../../images/breadcrumbDo.png) |不应将痕迹导航组件用作转到其他页面的主要方法。<br/><br/>![“不应做”痕迹导航组件图像](../../images/breadcrumbDont.png)|
+|应将痕迹导航组件置于加载项布局顶部、位于项列表之上或位于布局的主内容之上。<br/><br/>![“应做”痕迹导航组件图像](../images/breadcrumbDo.png) |不应将痕迹导航组件用作转到其他页面的主要方法。<br/><br/>![“不应做”痕迹导航组件图像](../images/breadcrumbDont.png)|
 
 <br/>
 

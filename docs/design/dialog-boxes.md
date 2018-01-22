@@ -4,7 +4,7 @@
 
 **示例：对话框**
 
-![显示对话框的典型布局的示例图像](../../images/overview_withApp_dialog.png)
+![显示对话框的典型布局的示例图像](../images/overview_withApp_dialog.png)
 
 ### <a name="best-practices"></a>最佳做法
 

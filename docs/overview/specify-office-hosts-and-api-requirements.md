@@ -56,7 +56,7 @@
 指定 Office 主机或 API 要求时，有几个决策因素需要考虑。下图显示了如何确定要在外接程序中使用的技术。
 
 
-![指定 Office 主机或 API 要求时，选择用于外接程序的最佳选项](../../images/e3498f8f-7c7c-461c-84f3-b93910b088b9.png)
+![指定 Office 主机或 API 要求时，选择用于外接程序的最佳选项](../images/e3498f8f-7c7c-461c-84f3-b93910b088b9.png)
 
 - 如果外接程序运行在一个 Office 主机中，那么在清单中设置 **Hosts** 元素。有关详细信息，请参阅 [设置 Hosts 元素](../../docs/overview/specify-office-hosts-and-api-requirements.md#set-the-hosts-element)。
     

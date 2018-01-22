@@ -6,7 +6,7 @@
 
 <br/>
 
-![显示标签的图像](../../images/overview_withApp_label.png)
+![显示标签的图像](../images/overview_withApp_label.png)
 
 <br/>
 
@@ -22,9 +22,9 @@
 
 |**变体**|**说明**|**示例**|
 |:------------|:--------------|:----------|
-|**默认标签**|用于标准标签。|![默认标签图像](../../images/label.png)<br/>|
-|**禁用的标签**|当相关组件禁用时使用。|![禁用的标签图像](../../images/labelDisabled.png)<br/>|
-|**需要的标签**|当需要相关组件时使用。|![需要的标签图像](../../images/labelRequired.png)<br/>|
+|**默认标签**|用于标准标签。|![默认标签图像](../images/label.png)<br/>|
+|**禁用的标签**|当相关组件禁用时使用。|![禁用的标签图像](../images/labelDisabled.png)<br/>|
+|**需要的标签**|当需要相关组件时使用。|![需要的标签图像](../images/labelRequired.png)<br/>|
 
 ## <a name="implementation"></a>实现
 

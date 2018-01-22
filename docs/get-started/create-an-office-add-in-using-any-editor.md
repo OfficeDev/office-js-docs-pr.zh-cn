@@ -61,7 +61,7 @@ yo office
 >- 添加 [TypeScript](https://www.typescriptlang.org/) - 使用 _Y_
 >- 选择框架 - 使用 _React_
 
-![Yeoman 生成器提示输入项目相关信息的 gif](../../images/gettingstarted-fast.gif)
+![Yeoman 生成器提示输入项目相关信息的 gif](../images/gettingstarted-fast.gif)
 
 这会为外接程序创建结构和基本文件。
 
@@ -80,7 +80,7 @@ npm start
 Browsersync 会启动 HTTPS 服务器，并在项目中启动 index.html 文件。你会看到错误消息“此网站的安全证书有问题”。
 
 
-![显示跳过错误并查看默认 index.html 文件的过程的 gif](../../images/ssl-chrome-bypass.gif)
+![显示跳过错误并查看默认 index.html 文件的过程的 gif](../images/ssl-chrome-bypass.gif)
 
 发生此错误是因为 Browsersync 包括开发环境必须信任的自签名 SSL 证书。若要了解如何解决此错误，请参阅[添加自签名证书](https://github.com/OfficeDev/generator-office/blob/master/src/docs/ssl.md)。
 

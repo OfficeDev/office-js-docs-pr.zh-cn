@@ -4,7 +4,7 @@
 
 下图显示将创建的外接程序。
 
-   ![构建自此演练的 OneNote 外接程序](../../images/onenote-first-add-in.png)
+   ![构建自此演练的 OneNote 外接程序](../images/onenote-first-add-in.png)
 
 <a name="setup"></a>
 ## <a name="step-1-set-up-your-dev-environment-and-create-an-add-in-project"></a>步骤 1：设置开发环境并创建外接程序项目
@@ -113,7 +113,7 @@ function addOutlineToPage() {
   
   下图显示消费者笔记本的“**我的外接程序**”选项卡。
 
-  ![显示“我的外接程序”选项卡的 Office 外接程序对话框](../../images/onenote-office-add-ins-dialog.png)
+  ![显示“我的外接程序”选项卡的 Office 外接程序对话框](../images/onenote-office-add-ins-dialog.png)
 
 5 - 在“上载外接程序”对话框中，转到项目文件夹中的 **onenote-add-in-manifest.xml**，然后选择“**上载**”。测试时，清单文件会存储在浏览器的本地存储中。
 
@@ -124,7 +124,7 @@ function addOutlineToPage() {
 
 -检查 OneNote 对象时，目前可用的属性显示实际值。需要加载的属性显示“*未定义*”。展开 `_proto_` 节点以查看在对象上被定义但未加载的属性。
 
-![在调试程序中上载 OneNote 对象](../../images/onenote-debug.png)
+![在调试程序中上载 OneNote 对象](../images/onenote-debug.png)
 
 -如果你的外接程序使用任何 HTTP 资源，则需启用浏览器中的混合内容。生产外接程序应仅使用安全 HTTPS 资源。
 

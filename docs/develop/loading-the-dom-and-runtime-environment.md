@@ -9,7 +9,7 @@
 
 下图显示了在 Excel、PowerPoint、Project、Word 或 Access 中启动内容或任务窗格外接程序所涉及的事件流。
 
-![启动内容/任务窗格外接程序时的事件流](../../images/off15appsdk_LoadingDOMAgaveRuntime.png)
+![启动内容/任务窗格外接程序时的事件流](../images/off15appsdk_LoadingDOMAgaveRuntime.png)
 
 启动内容/任务窗格外接程序时，将发生以下事件： 
 
@@ -36,7 +36,7 @@
 
 下图显示了启动在台式机、平板电脑或智能手机上运行的 Outlook 外接程序所涉及的事件流。
 
-![启动 Outlook 外接程序时的事件流](../../images/olowawecon15_LoadingDOMAgaveRuntime.png)
+![启动 Outlook 外接程序时的事件流](../images/olowawecon15_LoadingDOMAgaveRuntime.png)
 
 启动 Outlook 外接程序时，将发生以下事件： 
 

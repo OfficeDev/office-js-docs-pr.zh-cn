@@ -17,28 +17,28 @@
 **图 1.直接设置格式的文本。**
 
 
-![应用直接格式的文本。](../../images/off15app_CreateWdAppUsingOOXML_fig01.png)
+![应用直接格式的文本。](../images/off15app_CreateWdAppUsingOOXML_fig01.png)
 
 无论用户文档中的现有格式如何，都可以使用直接格式精确指定文本的外观。
 
 **图 2.使用样式格式化的文本。**
 
 
-![使用段落样式格式化的文本。](../../images/off15app_CreateWdAppUsingOOXML_fig02.png)
+![使用段落样式格式化的文本。](../images/off15app_CreateWdAppUsingOOXML_fig02.png)
 
 可以使用样式自动协调插入到用户文档中的文本外观。
 
 **图 3.简单图像。**
 
 
-![徽标图像。](../../images/off15app_CreateWdAppUsingOOXML_fig03.png)
+![徽标图像。](../images/off15app_CreateWdAppUsingOOXML_fig03.png)
 
 可以使用相同的方法插入所有 Office 支持的图像格式。
 
 **图 4.使用图片样式和效果格式化的图像。**
 
 
-![Word 2013 中的格式化图像。](../../images/off15app_CreateWdAppUsingOOXML_fig04.png)
+![Word 2013 中的格式化图像。](../images/off15app_CreateWdAppUsingOOXML_fig04.png)
 
 
 为图像添加其他高质量格式和效果所需标记比预想中的更少。
@@ -46,49 +46,49 @@
 **图 5.内容控制。**
 
 
-![绑定内容控件中的文本。](../../images/off15app_CreateWdAppUsingOOXML_fig05.png)
+![绑定内容控件中的文本。](../images/off15app_CreateWdAppUsingOOXML_fig05.png)
 
 可以在外接程序中使用内容控件将内容添加到指定的（绑定）位置，而不是根据选择添加内容。
 
 **图 6.WordArt 格式的文本框。**
 
 
-![具有艺术字文本效果的格式化文本。](../../images/off15app_CreateWdAppUsingOOXML_fig06.png)
+![具有艺术字文本效果的格式化文本。](../images/off15app_CreateWdAppUsingOOXML_fig06.png)
 
 文本效果可用于 Word 中文本框内的文本（如此处所示）或常规文本正文。
 
 **图 7.形状。**
 
 
-![Word 2013 中的 Office 2013 绘图形状。](../../images/off15app_CreateWdAppUsingOOXML_fig07.png)
+![Word 2013 中的 Office 2013 绘图形状。](../images/off15app_CreateWdAppUsingOOXML_fig07.png)
 
 可以插入带/不带文本和格式效果的内置或自定义绘图形状。
 
 **图 8.直接设置格式的表格。**
 
 
-![Word 2013 中的格式表。](../../images/off15app_CreateWdAppUsingOOXML_fig08.png)
+![Word 2013 中的格式表。](../images/off15app_CreateWdAppUsingOOXML_fig08.png)
 
 可以包括文本格式、边框、阴影、单元格尺寸调整，或所需的任何表格格式。
 
 **图 9.使用表格样式格式化的表格。**
 
 
-![Word 2013 中的格式表。](../../images/off15app_CreateWdAppUsingOOXML_fig09.png)
+![Word 2013 中的格式表。](../images/off15app_CreateWdAppUsingOOXML_fig09.png)
 
 可以使用内置或自定义表格样式，就像使用文本的段落样式一样简单。
 
 **图 10.SmartArt 图表。**
 
 
-![Word 2013 中的动态 SmartArt 图。](../../images/off15app_CreateWdAppUsingOOXML_fig10.png)
+![Word 2013 中的动态 SmartArt 图。](../images/off15app_CreateWdAppUsingOOXML_fig10.png)
 
 Office 2013 提供了大量 SmartArt 图表布局（可以使用 Office Open XML 创建自己的 SmartArt 图表布局）。
 
 **图 11.图表。**
 
 
-![Word 2013 中的图表。](../../images/off15app_CreateWdAppUsingOOXML_fig11.png)
+![Word 2013 中的图表。](../images/off15app_CreateWdAppUsingOOXML_fig11.png)
 
 你可以在 Word 文档中插入 Excel 图表作为实时图表，这也意味着你可以在 Word 外接程序中使用这些图表。如上述示例中所示，你可以使用 Office Open XML 强制转换，以插入用户可以插入其自己的文档中的几乎任何类型的内容。获取所需的 Office Open XML 标记有两种简单的方法。将多种格式的内容添加到一个原本空白的 Word 2013 文档中，然后将文件保存为 Word XML 文档格式，或通过 [getSelectedDataAsync](http://msdn.microsoft.com/en-us/library/fp142294.aspx) 方法，使用测试外接程序来捕捉标记。两种方法都可以获得几乎相同的结果。
 
@@ -112,11 +112,11 @@ Office 2013 提供了大量 SmartArt 图表布局（可以使用 Office Open XML
 
 **图 12.折叠和展开包部件，在 Visual Studio 2015 中更轻松地进行编辑**
 
-![包部件的 Office Open XML 代码段。](../../images/off15app_CreateWdAppUsingOOXML_fig12.png)
+![包部件的 Office Open XML 代码段。](../images/off15app_CreateWdAppUsingOOXML_fig12.png)
 
 **图 13.基本 Word Office Open XML 文档包中包含的部件**
 
-![包部件的 Office Open XML 代码段。](../../images/off15app_CreateWdAppUsingOOXML_fig13.png)
+![包部件的 Office Open XML 代码段。](../images/off15app_CreateWdAppUsingOOXML_fig13.png)
 
 通过所有标记，您会惊奇地发现您真正需要插入格式化文本示例的元素就是 .rels 部件和 document.xml 部件的片段。
 
@@ -324,7 +324,7 @@ function writeContent() {
 
 **图 14.document.xml 中的常见标记如何与 Word 文档的内容和布局关联。**
 
-![Word 文档中的 Office Open XML 元素。](../../images/off15app_CreateWdAppUsingOOXML_fig14.png)
+![Word 文档中的 Office Open XML 元素。](../images/off15app_CreateWdAppUsingOOXML_fig14.png)
     
 **提示：**在创建的标记中，可能会在多个标记中看到包含字符 **w:rsid** 的另一个属性（你在本主题使用的示例中没有看到该属性）。存在修订标识符。这些标识符在 Word 的“组合文档”功能中使用，且默认为开启状态。使用外接程序插入标记时无需这些标识符，可将其关闭以使标记更干净。可以轻松地删除现有 RSID 标记，或禁用此功能（如以下过程所述），以便它们不会被添加到新内容的标记。
  
@@ -385,7 +385,7 @@ function writeContent() {
 
 **图 15.Word 中“开发人员”选项卡上的“控件”组。**
 
-![Word 2013 功能区上的内容控件组。](../../images/off15app_CreateWdAppUsingOOXML_fig15.png)
+![Word 2013 功能区上的内容控件组。](../images/off15app_CreateWdAppUsingOOXML_fig15.png)
 
 Word 中的内容控件类型包括格式文本、纯文本、图片、构建基块库、复选框、下拉列表、组合框、日期选取器，以及重复节。 
 

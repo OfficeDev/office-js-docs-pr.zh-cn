@@ -4,7 +4,7 @@
 
 **示例：任务窗格**
 
-![显示典型任务窗格布局的图像](../../images/overview_withApp_taskPane.png)
+![显示典型任务窗格布局的图像](../images/overview_withApp_taskPane.png)
 
 ## <a name="best-practices"></a>最佳做法
 
@@ -22,7 +22,7 @@
 
 **Office 2016 桌面任务窗格大小**
 
-![显示大小为 1366x768 的桌面任务窗格的图像](../../images/addinTaskpaneSizes_desktop.png)
+![显示大小为 1366x768 的桌面任务窗格的图像](../images/addinTaskpaneSizes_desktop.png)
 
 - Excel - 320 x 455
 - PowerPoint - 320 x 531
@@ -31,7 +31,7 @@
 
 **Office 365 任务窗格大小**
 
-![显示大小为 1366x768 的桌面任务窗格的图像](../../images/addinTaskpaneSizes_online.png)
+![显示大小为 1366x768 的桌面任务窗格的图像](../images/addinTaskpaneSizes_online.png)
 
 - Excel - 350 x 378
 - PowerPoint - 348x391
@@ -46,13 +46,13 @@
 
 对于 Windows，“个性”菜单尺寸为 12 x 32 像素，如下所示。
 
-![显示 Windows 桌面上的“个性”菜单的图像](../../images/personalityMenu_Win.png)
+![显示 Windows 桌面上的“个性”菜单的图像](../images/personalityMenu_Win.png)
 
 **Windows 上的“个性”菜单**
 
 对于 Mac，“个性”菜单尺寸为 26x26 像素，但是从右侧浮动 8 个像素，再从顶部浮动 6 个像素，能将空间增加至 34x32 像素，如下所示。
 
-![显示 Mac 桌面上的“个性”菜单的图像](../../images/personalityMenu_Mac.png)
+![显示 Mac 桌面上的“个性”菜单的图像](../images/personalityMenu_Mac.png)
 
 ## <a name="implementation"></a>实现
 

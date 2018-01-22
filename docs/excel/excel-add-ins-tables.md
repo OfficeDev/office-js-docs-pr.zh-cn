@@ -39,7 +39,7 @@ Excel.run(function (context) {
 
 **新建表**
 
-![Excel 中的新表](../../images/Excel-table-create.png)
+![Excel 中的新表](../images/Excel-table-create.png)
 
 ## <a name="add-rows-to-a-table"></a>向表添加行
 
@@ -73,7 +73,7 @@ Excel.run(function (context) {
 
 **包含新行的表**
 
-![Excel 中包含新行的表](../../images/Excel-table-add-rows.png)
+![Excel 中包含新行的表](../images/Excel-table-add-rows.png)
 
 ## <a name="add-a-column-to-a-table"></a>向表添加列
 
@@ -112,7 +112,7 @@ Excel.run(function (context) {
 
 **包含新列的表**
 
-![Excel 中包含新列的表](../../images/Excel-table-add-column.png)
+![Excel 中包含新列的表](../images/Excel-table-add-column.png)
 
 ### <a name="add-a-column-that-contains-formulas"></a>添加包含公式的列
 
@@ -145,7 +145,7 @@ Excel.run(function (context) {
 
 **包含新的计算列的表**
 
-![Excel 中包含新的计算列的表](../../images/Excel-table-add-calculated-column.png)
+![Excel 中包含新的计算列的表](../images/Excel-table-add-calculated-column.png)
 
 ## <a name="update-column-name"></a>更新列名称
 
@@ -174,7 +174,7 @@ Excel.run(function (context) {
 
 **包含新的列名称的表**
 
-![Excel 中包含新的列名称的表](../../images/Excel-table-update-column-name.png)
+![Excel 中包含新的列名称的表](../images/Excel-table-update-column-name.png)
 
 ## <a name="get-data-from-a-table"></a>从表中获取数据
 
@@ -220,7 +220,7 @@ Excel.run(function (context) {
 
 **表和数据输出**
 
-![Excel 中的表数据](../../images/Excel-table-get-data.png)
+![Excel 中的表数据](../images/Excel-table-get-data.png)
 
 ## <a name="sort-data-in-a-table"></a>在表中对数据进行排序
 
@@ -247,7 +247,7 @@ Excel.run(function (context) {
 
 **按金额排序的表数据（降序）**
 
-![Excel 中的表数据](../../images/Excel-table-sort.png)
+![Excel 中的表数据](../images/Excel-table-sort.png)
 
 ## <a name="apply-filters-to-a-table"></a>将筛选器应用于表
 
@@ -279,7 +279,7 @@ Excel.run(function (context) {
 
 **将筛选器应用于类别和金额的表数据**
 
-![Excel 中经过筛选的表数据](../../images/Excel-table-filters-apply.png)
+![Excel 中经过筛选的表数据](../images/Excel-table-filters-apply.png)
 
 ## <a name="clear-table-filters"></a>清除表筛选器
 
@@ -298,7 +298,7 @@ Excel.run(function (context) {
 
 **没有应用任何筛选器的表数据**
 
-![Excel 中未经筛选的表数据](../../images/Excel-table-filters-clear.png)
+![Excel 中未经筛选的表数据](../images/Excel-table-filters-clear.png)
 
 ## <a name="get-the-visible-range-from-a-filtered-table"></a>从筛选表中获取可见区域
 
@@ -339,7 +339,7 @@ Excel.run(function (context) {
 
 **应用格式设置的表**
 
-![Excel 中应用了格式设置的表](../../images/Excel-table-formatting-after.png)
+![Excel 中应用了格式设置的表](../images/Excel-table-formatting-after.png)
 
 ## <a name="convert-a-range-to-a-table"></a>将区域转换为表
 
@@ -379,11 +379,11 @@ Excel.run(function (context) {
 
 **内的数据（在区域转换为表之前）**
 
-![Excel 中区域内的数据](../../images/Excel-range.png)
+![Excel 中区域内的数据](../images/Excel-range.png)
 
 **表中的数据（在区域转换为表之后）**
 
-![Excel 中表的数据](../../images/Excel-table-from-range.png)
+![Excel 中表的数据](../images/Excel-table-from-range.png)
 
 ## <a name="import-json-data-into-a-table"></a>将 JSON 数据导入表
 
@@ -430,7 +430,7 @@ Excel.run(function (context) {
 
 **新建表**
 
-![Excel 中的新表](../../images/Excel-table-create-from-json.png)
+![Excel 中的新表](../images/Excel-table-create-from-json.png)
 
 ## <a name="additional-resources"></a>其他资源
 

@@ -10,7 +10,7 @@ API 中所有这些异步方法的名称均以“Async”结尾，如 [Document.
 **图 1.异步编程执行流**
 
 
-![异步编程线程执行流](../../images/off15appAsyncProgFig01.png)
+![异步编程线程执行流](../images/off15appAsyncProgFig01.png)
 
 在富客户端和 Web 客户端中支持此异步设计是 Office 外接程序开发模型"写入一次，跨平台运行"设计目标的一部分。例如，您可以使用将在 Excel 2013 和 Excel Online 中运行的单一基本代码创建一个内容应用程序或任务窗格外接程序。
 

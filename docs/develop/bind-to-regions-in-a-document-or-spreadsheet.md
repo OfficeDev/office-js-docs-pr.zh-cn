@@ -94,7 +94,7 @@ function write(message){
 
 **图 1.Excel 选择数据 UI**
 
-![Excel 选择数据 UI](../../images/AgaveAPIOverview_ExcelSelectionUI.png)
+![Excel 选择数据 UI](../images/AgaveAPIOverview_ExcelSelectionUI.png)
 
 
 ## <a name="add-a-binding-to-a-named-item"></a>向已命名项目添加绑定

@@ -6,7 +6,7 @@
 
 <br/>
 
-![显示下拉组件的图像](../../images/overview_withApp_dropdown.png)
+![显示下拉组件的图像](../images/overview_withApp_dropdown.png)
 
 <br/>
 
@@ -22,9 +22,9 @@
 
 |**变体**|**说明**|**示例**|
 |:------------|:--------------|:----------|
-|**不受控的基本下拉组件**|当多个选项可供选择时使用。|![不受控的基本下拉组件图像](../../images/dropdownUncontrolled.png)<br/>|
-|**具有 defaultSelectedKey 且已禁用的不受控下拉组件**|状态为已禁用的下拉组件。|![具有 defaultSelectedKey 且已禁用的不受控下拉组件图像](../../images/dropdownDisabled.png)<br/>|
-|**受控下拉组件**|当默认选定项受 UI 中其他位置影响，且必须保持选定项在下拉组件中的位置时使用。|![受控下拉组件图像](../../images/dropdownControlled.png)<br/>|
+|**不受控的基本下拉组件**|当多个选项可供选择时使用。|![不受控的基本下拉组件图像](../images/dropdownUncontrolled.png)<br/>|
+|**具有 defaultSelectedKey 且已禁用的不受控下拉组件**|状态为已禁用的下拉组件。|![具有 defaultSelectedKey 且已禁用的不受控下拉组件图像](../images/dropdownDisabled.png)<br/>|
+|**受控下拉组件**|当默认选定项受 UI 中其他位置影响，且必须保持选定项在下拉组件中的位置时使用。|![受控下拉组件图像](../images/dropdownControlled.png)<br/>|
 
 ## <a name="implementation"></a>实现
 

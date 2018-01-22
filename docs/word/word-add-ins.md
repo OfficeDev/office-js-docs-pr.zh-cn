@@ -187,7 +187,7 @@ Word 加载项在 Word 中运行，并且可以使用 Word JavaScript API 与文
 
 2. 在右侧任务窗格中，选择任意按钮以将样本文字添加到文档。
 
-![加载了样本加载项的 Word 应用程序的图片](../../images/boilerplateAddin.png)
+![加载了样本加载项的 Word 应用程序的图片](../images/boilerplateAddin.png)
 
 ## <a name="next-steps"></a>后续步骤
 

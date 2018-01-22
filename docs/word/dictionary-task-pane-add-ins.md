@@ -11,7 +11,7 @@
 **图 1.显示选定字词的定义的字典外接程序**
 
 
-![显示定义的字典应用程序](../../images/DictionaryAgave01.jpg)
+![显示定义的字典应用程序](../images/DictionaryAgave01.jpg)
 
 由您来确定是单击字典外接程序的 HTML 用户界面中的**查看更多**链接以显示任务窗格中的详细信息，还是打开一个单独的浏览器窗口以显示所选的单词或短语的整个网页。图 2 显示了**定义**上下文菜单命令，它允许用户快速启动安装的字典。图 3 至 5 显示了 Office 用户界面中使用字典 XML 服务提供 Word 2013 定义的位置。
 
@@ -19,22 +19,22 @@
 
 
 
-![定义上下文菜单](../../images/DictionaryAgave02.jpg)
+![定义上下文菜单](../images/DictionaryAgave02.jpg)
 
 **图 3.“拼写”和“语法”窗格中的定义**
 
 
-![“拼写”和“语法”窗格中的定义](../../images/DictionaryAgave03.jpg)
+![“拼写”和“语法”窗格中的定义](../images/DictionaryAgave03.jpg)
 
 **图 4.“同义词库”窗格中的定义**
 
 
-![“同义词库”窗格中的定义](../../images/DictionaryAgave04.jpg)
+![“同义词库”窗格中的定义](../images/DictionaryAgave04.jpg)
 
 **图 5.“阅读模式”中的定义**
 
 
-![“阅读模式”中的定义](../../images/DictionaryAgave05.jpg)
+![“阅读模式”中的定义](../images/DictionaryAgave05.jpg)
 
 若要创建可提供字典查找的任务窗格外接程序，需创建两个主要组件： 
 
@@ -533,7 +533,7 @@ a:hover, a:active
 
 **图 6.演示词典 UI**
 
-![演示字典 UI](../../images/DictionaryAgave06.jpg)
+![演示字典 UI](../images/DictionaryAgave06.jpg)
 
 
 ### <a name="writing-the-javascript-implementation"></a>编写 JavaScript 实现
