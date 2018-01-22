@@ -136,4 +136,4 @@ Office 和 SharePoint 的外接程序基于 Web。加载项代码必须承载在
 
 - [了解外接程序的 JavaScript API](../develop/understanding-the-javascript-api-for-office.md)
 
-- [适用于 Office 的 JavaScript API](../../reference/javascript-api-for-office.md)
+- [适用于 Office 的 JavaScript API](http://dev.office.com/reference/add-ins/javascript-api-for-office)

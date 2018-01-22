@@ -21,7 +21,7 @@ Office 加载项平台提供框架和 Office.js JavaScript API，使你能够创
 
 Excel 加载项包括两个基本组件：Web 应用程序和称为“清单文件”的配置文件。 
 
-Web 应用程序使用 [Office JavaScript API](../../reference/javascript-api-for-office.md) 与 Excel 中的对象进行交互，并且还有助于与在线资源进行交互。 例如，加载项可以执行下列任意任务：
+Web 应用程序使用 [Office JavaScript API](http://dev.office.com/reference/add-ins/javascript-api-for-office) 与 Excel 中的对象进行交互，并且还有助于与在线资源进行交互。 例如，加载项可以执行下列任意任务：
 
 * 创建、读取、更新和删除工作簿中的数据（工作表、区域、表、图表、已命名项等）。
 * 使用标准 OAuth 2.0 流通过在线服务执行用户身份验证。
@@ -60,9 +60,9 @@ Web 应用程序可以托管在任何 Web 服务器上，并且可以使用客�
 
 ## <a name="javascript-apis-to-interact-with-workbook-content"></a>JavaScript API 与工作簿内容交互
 
-Excel 加载项通过使用 [Office JavaScript API](../../reference/javascript-api-for-office.md) 与 Excel 中的对象进行交互，其中包括两个 JavaScript 对象模型：
+Excel 加载项通过使用 [Office JavaScript API](http://dev.office.com/reference/add-ins/javascript-api-for-office) 与 Excel 中的对象进行交互，其中包括两个 JavaScript 对象模型：
 
-* **Excel JavaScript API**：[Excel JavaScript API](../../reference/excel/excel-add-ins-reference-overview.md) 随 Office 2016 引入，提供强类型的 Excel 对象，可用于访问工作表、区域、表、图表等。 
+* **Excel JavaScript API**：[Excel JavaScript API](http://dev.office.com/reference/add-ins/excel/excel-add-ins-reference-overview) 随 Office 2016 引入，提供强类型的 Excel 对象，可用于访问工作表、区域、表、图表等。 
 
 * **共享 API**：共享 API 随 Office 2013 引入，使用它可以访问多种类型的主机应用程序（如 Word、Excel 和 PowerPoint ）中常见的 UI、对话框和客户端设置等功能。 由于共享 API 确实为 Excel 交互提供了有限的功能，因此，如果加载项需要在 Excel 2013 上运行，则可以使用它。
 
@@ -76,4 +76,4 @@ Excel 加载项通过使用 [Office JavaScript API](../../reference/javascript-a
 - [开发 Office 加载项的最佳做法](../overview/add-in-development-best-practices.md)
 - [Office 加载项的设计准则](../design/add-in-design.md)
 - [Excel JavaScript API 核心概念](excel-add-ins-core-concepts.md)
-- [Excel JavaScript API 参考](../../reference/excel/excel-add-ins-reference-overview.md)
+- [Excel JavaScript API 参考](http://dev.office.com/reference/add-ins/excel/excel-add-ins-reference-overview)

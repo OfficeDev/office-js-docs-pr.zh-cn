@@ -93,7 +93,7 @@ Project OM Test 示例加载项可以获得任务的 GUID 以及应用程序和�
     
 2. 在与 JSOMCall.html 文件相同的目录中创建一个名为 JSOM_Sample.js 的 JavaScript 文件。下面的代码使用 Office.js 文件中的函数来获取应用程序上下文和文档信息。**text** 对象是 HTML 文件中 ** textarea** 控件的 ID。
     
-    使用 **ProjectDocument** 对象初始化 **_projDoc** 变量。代码包含一些简单的错误处理函数以及获取应用程序上下文和项目文档上下文属性的 **getContextValues** 函数。有关 Project 的 JavaScript 对象模型的详细信息，请参阅 [适用于 Office 的 JavaScript API](../../reference/javascript-api-for-office.md)。
+    使用 **ProjectDocument** 对象初始化 **_projDoc** 变量。代码包含一些简单的错误处理函数以及获取应用程序上下文和项目文档上下文属性的 **getContextValues** 函数。有关 Project 的 JavaScript 对象模型的详细信息，请参阅 [适用于 Office 的 JavaScript API](http://dev.office.com/reference/add-ins/javascript-api-for-office)。
     
 
 
@@ -158,11 +158,11 @@ function getApplicationDisplayLanguage() {
 ```
 
 
-    For information about the functions in the Office.debug.js file, see [JavaScript API for Office](../../reference/javascript-api-for-office.md). For example, the  **getDocumentUrl** function gets the URL or file path of the open project.
+    For information about the functions in the Office.debug.js file, see [JavaScript API for Office](http://dev.office.com/reference/add-ins/javascript-api-for-office). For example, the  **getDocumentUrl** function gets the URL or file path of the open project.
     
 3. 添加调用 Office.js 和 Project-15.js 中异步函数的 JavaScript 函数来获取选定数据：
     
-      - 例如，**getSelectedDataAsync** 是 Office.js 中的一个普通函数，用于获取选定数据的无格式文本。有关详细信息，请参阅 [AsyncResult 对象](../../reference/shared/asyncresult.md)。
+      - 例如，**getSelectedDataAsync** 是 Office.js 中的一个普通函数，用于获取选定数据的无格式文本。有关详细信息，请参阅 [AsyncResult 对象](http://dev.office.com/reference/add-ins/shared/asyncresult)。
     
   - Project-15.js 中的 **getSelectedTaskAsync** 函数获取选定任务的 GUID。类似，**getSelectedResourceAsync** 函数获取选定资源的 GUID。如果在未选定任务或资源时调用这些函数，函数将显示未定义错误。
     
@@ -175,7 +175,7 @@ function getApplicationDisplayLanguage() {
     
   - 如果项目与 SharePoint 任务列表同步，则 **getWSSUrlAsync** 函数获取任务列表的 URL 和名称。如果项目不与 SharePoint 任务列表同步，则 **getWSSUrlAsync** 函数错误关闭。
     
-     >**注意**  若要获取 SharePoint URL 和任务列表名称，我们建议你在 [ProjectProjectFields](../../reference/shared/projectprojectfields-enumeration.md) 枚举中使用带有 **WSSUrl** 和 **WSSList** 常量的 **getProjectFieldAsync** 函数。
+     >**注意**  若要获取 SharePoint URL 和任务列表名称，我们建议你在 [ProjectProjectFields](http://dev.office.com/reference/add-ins/shared/projectprojectfields-enumeration) 枚举中使用带有 **WSSUrl** 和 **WSSList** 常量的 **getProjectFieldAsync** 函数。
 
     以下代码的每个函数中都包含由 `function (asyncResult)` 指定的匿名函数，该函数是获取异步结果的回叫。你可以使用命名函数，而不是匿名函数，前者有助于实现复杂外接程序的可维护性。
     
@@ -1133,7 +1133,7 @@ function logMethodError(methodName, errorName, errorMessage, actionMessage) {
     
 - [了解外接程序的 JavaScript API](../develop/understanding-the-javascript-api-for-office.md)
     
-- [适用于 Office 的 JavaScript API 外接程序](../../reference/javascript-api-for-office.md)
+- [适用于 Office 的 JavaScript API 外接程序](http://dev.office.com/reference/add-ins/javascript-api-for-office)
 
 - [Office 外接程序清单的架构参考 (v1.1)](../overview/add-in-manifests.md)     
     

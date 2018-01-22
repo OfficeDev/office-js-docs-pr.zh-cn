@@ -7,7 +7,7 @@
 
 ![显示加载项登录过程的图像](../images/OfficeHostTitleBarLogin.png)
 
->**注意：**目前，Word、Excel 和 PowerPoint 支持单一登录 API。 若要详细了解目前单一登录 API 的受支持情况，请参阅 [Identity API 要求集](../../reference/requirement-sets/identity-api-requirement-sets.md)。
+>**注意：**目前，Word、Excel 和 PowerPoint 支持单一登录 API。 若要详细了解目前单一登录 API 的受支持情况，请参阅 [Identity API 要求集](http://dev.office.com/reference/add-ins/requirement-sets/identity-api-requirement-sets)。
 > Outlook 的单一登录当前处于预览阶段。 如果使用的是 Outlook 加载项，请务必为 Office 365 租赁启用新式验证。 若要了解如何这样做，请参阅 [Exchange Online：如何为租户启用新式验证](https://social.technet.microsoft.com/wiki/contents/articles/32711.exchange-online-how-to-enable-your-tenant-for-modern-authentication.aspx)。
 
 对于用户，这样可以方便他们顺畅地运行加载项，因为只需登录一次。 对于开发者，这意味着加载项可以验证用户身份，并使用用户已提供给 Office 应用程序的凭据，通过 Microsoft Graph 获取对用户数据的访问权限。

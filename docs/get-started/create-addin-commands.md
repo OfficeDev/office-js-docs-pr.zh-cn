@@ -2,7 +2,7 @@
 
 **适用于：**Excel 2016 |Office 加载项 | PowerPoint 2016 | Word 2016
 
-在清单中使用 **[VersionOverrides](../../reference/manifest/versionoverrides.md)** 定义 Excel、Word 和 PowerPoint 的加载项命令。 加载项命令提供了使用执行操作的特定 UI 元素来自定义默认的 Office 用户界面 (UI) 的简单方法。 可以使用加载项命令执行以下操作：
+在清单中使用 **[VersionOverrides](http://dev.office.com/reference/add-ins/manifest/versionoverrides)** 定义 Excel、Word 和 PowerPoint 的加载项命令。 加载项命令提供了使用执行操作的特定 UI 元素来自定义默认的 Office 用户界面 (UI) 的简单方法。 可以使用加载项命令执行以下操作：
 - 创建 UI 元素或入口点，以便能够更易于使用你的外接程序功能。  
   
 - 向功能区中添加按钮或下拉列表按钮。    

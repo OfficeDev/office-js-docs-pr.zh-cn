@@ -2,7 +2,7 @@
 # <a name="referencing-the-javascript-api-for-office-library-from-its-content-delivery-network-cdn"></a>从 适用于 Office 的 JavaScript API 的内容传送网络 (CDN) 引用 适用于 Office 的 JavaScript API 库
 
 
-[适用于 Office 的 JavaScript API](../../reference/javascript-api-for-office.md) 库包含 Office.js 文件和关联的主机应用程序专有 .js 文件（如 Excel-15.js 和 Outlook-15.js）。 
+[适用于 Office 的 JavaScript API](http://dev.office.com/reference/add-ins/javascript-api-for-office) 库包含 Office.js 文件和关联的主机应用程序专有 .js 文件（如 Excel-15.js 和 Outlook-15.js）。 
 
 
 引用 API 的最简单方法是，通过向页面的 `<head>` 标记添加以下 `<script>` 来使用我们的 CDN：  
@@ -22,5 +22,5 @@
 
 
 - [了解适用于 Office 的 JavaScript API](../../docs/develop/understanding-the-javascript-api-for-office.md)    
-- [适用于 Office 的 JavaScript API](../../reference/javascript-api-for-office.md)
+- [适用于 Office 的 JavaScript API](http://dev.office.com/reference/add-ins/javascript-api-for-office)
     

@@ -164,4 +164,4 @@ Office Web 加载项应使用 HTTPS，而不是 HTTP，即使在开发时也是�
 * [Excel JavaScript API 核心概念](excel-add-ins-core-concepts.md)
 * [通过脚本实验室探索代码段](https://store.office.com/en-001/app.aspx?assetid=WA104380862&ui=en-US&rs=en-001&ad=US&appredirect=false)
 * [Excel 加载项代码示例](http://dev.office.com/code-samples#?filters=excel,office%20add-ins)
-* [Excel JavaScript API 参考](../../reference/excel/excel-add-ins-reference-overview.md)
+* [Excel JavaScript API 参考](http://dev.office.com/reference/add-ins/excel/excel-add-ins-reference-overview)

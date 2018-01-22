@@ -3,14 +3,14 @@
 
 
 
-本文提供了有关适用于 Office 的 JavaScript API 的信息以及使用方法。有关参考信息，请参阅 [适用于 Office 的 JavaScript API](../../reference/javascript-api-for-office.md)。有关将 Visual Studio 项目文件更新到适用于 Office 的 JavaScript API 的最新当前版本的信息，请参阅 [更新适用于 Office 的 JavaScript API 版本和清单架构文件](../../docs/develop/update-your-javascript-api-for-office-and-manifest-schema-version.md)。
+本文提供了有关适用于 Office 的 JavaScript API 的信息以及使用方法。有关参考信息，请参阅 [适用于 Office 的 JavaScript API](http://dev.office.com/reference/add-ins/javascript-api-for-office)。有关将 Visual Studio 项目文件更新到适用于 Office 的 JavaScript API 的最新当前版本的信息，请参阅 [更新适用于 Office 的 JavaScript API 版本和清单架构文件](../../docs/develop/update-your-javascript-api-for-office-and-manifest-schema-version.md)。
 
 >
   **注意：**生成外接程序时，如果计划将外接程序[发布](../publish/publish.md)到 Office 应用商店，请务必遵循 [Office 应用商店验证策略](https://msdn.microsoft.com/en-us/library/jj220035.aspx)。例如，外接程序必须适用于支持你定义的方法的所有平台，才能通过验证（有关详细信息，请参阅[第 4.12 部分](https://msdn.microsoft.com/en-us/library/jj220035.aspx#Anchor_3)以及 [Office 外接程序主机和可用性](https://dev.office.com/add-in-availability)页）。
 
 ## <a name="referencing-the-javascript-api-for-office-library-in-your-add-in"></a>在外接程序中引用适用于 Office 的 JavaScript API 库
 
-[适用于 Office 的 JavaScript](../../reference/javascript-api-for-office.md) 库包含 Office.js 文件和关联的特定于主机应用程序的 .js 文件，例如 Excel-15.js 和 Outlook-15.js。引用该 API 最简单的方法是通过添加以下 `<script>` 到你的页面的 `<head>` 标记来使用我们的 CDN：  
+[适用于 Office 的 JavaScript](http://dev.office.com/reference/add-ins/javascript-api-for-office) 库包含 Office.js 文件和关联的特定于主机应用程序的 .js 文件，例如 Excel-15.js 和 Outlook-15.js。引用该 API 最简单的方法是通过添加以下 `<script>` 到你的页面的 `<head>` 标记来使用我们的 CDN：  
 
 ```html
 <script src="https://appsforoffice.microsoft.com/lib/1/hosted/Office.js" type="text/javascript"></script>
@@ -59,17 +59,17 @@ Office.initialize = function (reason) {
     }
 }
 ```
-有关详细信息，请参阅 [Office.initialize 事件](../../reference/shared/office.initialize.md)和 [InitializationReason 枚举](../../reference/shared/initializationreason-enumeration.md) 
+有关详细信息，请参阅 [Office.initialize 事件](../../reference/shared/office.initialize.md)和 [InitializationReason 枚举](http://dev.office.com/reference/add-ins/shared/initializationreason-enumeration) 
 
 ## <a name="context-object"></a>Context 对象
 
  **适用于：**所有加载项类型
 
-加载项初始化时，它有许多可以在运行时环境中交互的不同对象。加载项运行时上下文通过 [Context](../../reference/shared/office.context.md) 对象反映在 API 中。**Context** 是提供对于最重要 API 对象（例如 [Document](../../reference/shared/document.md) 和 [Mailbox](../../reference/outlook/Office.context.mailbox.md) 对象）的访问权限的主对象，这些对象继而提供对文档和邮箱内容的访问权限。
+加载项初始化时，它有许多可以在运行时环境中交互的不同对象。加载项运行时上下文通过 [Context](../../reference/shared/office.context.md) 对象反映在 API 中。**Context** 是提供对于最重要 API 对象（例如 [Document](http://dev.office.com/reference/add-ins/shared/document) 和 [Mailbox](../../reference/outlook/Office.context.mailbox.md) 对象）的访问权限的主对象，这些对象继而提供对文档和邮箱内容的访问权限。
 
 例如，在任务窗格或内容外接程序中，可以使用 [Context](../../reference/shared/office.context.document.md) 对象的 **document** 属性访问 **Document** 对象的属性和方法，以便与 Word 文档、Excel 工作表或 Project 计划的内容交互。类似地，在 Outlook 外接程序中，可以使用 [Context](../../reference/outlook/Office.context.mailbox.md) 对象的 **mailbox** 属性访问 **Mailbox** 对象的属性和方法，以便与邮件、会议请求或约会内容交互。
 
-**Context** 对象还提供对 [contentLanguage](../../reference/shared/office.context.contentlanguage.md) 和 [displayLanguage](../../reference/shared/office.context.displaylanguage.md) 属性的访问权限，这些属性允许你确定文档或项目中或由宿主应用程序使用的区域设置（语言）。另外，[roamingSettings](../../reference/outlook/Office.context.md) 属性允许你访问 [RoamingSettings](../../reference/outlook/RoamingSettings.md) 对象的成员。最后，**Context** 对象提供一个允许你的外接程序启动弹出对话框的 [ui](../../reference/shared/officeui.md) 属性。
+**Context** 对象还提供对 [contentLanguage](../../reference/shared/office.context.contentlanguage.md) 和 [displayLanguage](../../reference/shared/office.context.displaylanguage.md) 属性的访问权限，这些属性允许你确定文档或项目中或由宿主应用程序使用的区域设置（语言）。另外，[roamingSettings](../../reference/outlook/Office.context.md) 属性允许你访问 [RoamingSettings](http://dev.office.com/reference/add-ins/outlook/RoamingSettings) 对象的成员。最后，**Context** 对象提供一个允许你的外接程序启动弹出对话框的 [ui](http://dev.office.com/reference/add-ins/shared/officeui) 属性。
 
 
 ## <a name="document-object"></a>Document 对象
@@ -77,7 +77,7 @@ Office.initialize = function (reason) {
 
  **适用于：**内容和任务窗格加载项类型
 
-为了与 Excel、PowerPoint 和 Word 中的文档数据交互，API 提供 [Document](../../reference/shared/document.md) 对象。您可以使用 **Document** 对象成员通过以下方法访问数据：
+为了与 Excel、PowerPoint 和 Word 中的文档数据交互，API 提供 [Document](http://dev.office.com/reference/add-ins/shared/document) 对象。您可以使用 **Document** 对象成员通过以下方法访问数据：
 
 
 - 读取和写入文本形式、连续单元格（矩阵）或表格中的活动选区。
@@ -127,16 +127,16 @@ Office.initialize = function (reason) {
 |:-----|:-----|:-----|
 |文本|提供选区或绑定中数据的字符串表示形式。|在 Excel 2013、Project 2013 和 PowerPoint 2013 中，仅支持纯文本。在 Word 2013 中，支持三种文本格式：纯文本、HTML 和 Office Open XML (OOXML)。当选中 Excel 单元格中的文本时，基于选区的方法会读取和写入单元格的整个内容，即使仅选择了单元格中的部分文本也是如此。当选中 Word 和 PowerPoint 中的文本时，基于选区的方法会仅读取和写入选中的一系列字符。Project 2013 和 PowerPoint 2013 仅支持基于选区的数据访问。|
 |Matrix|将选区或绑定中的数据作为双维的 **Array** 提供，这在 JavaScript 中作为数组的数组来实现。例如，两行 **string** 值以两列表示则为 ` [['a', 'b'], ['c', 'd']]`，而单列三行则为 `[['a'], ['b'], ['c']]`。|矩阵数据访问仅在 Excel 2013 和 Word 2013 中受支持。|
-|Table|将选区或绑定中的数据作为 [TableData](../../reference/shared/tabledata.md) 对象提供。**TableData** 对象通过 **headers** 和 **rows** 属性公开数据。|表格数据访问仅在 Excel 2013 和 Word 2013 中受支持。|
+|Table|将选区或绑定中的数据作为 [TableData](http://dev.office.com/reference/add-ins/shared/tabledata) 对象提供。**TableData** 对象通过 **headers** 和 **rows** 属性公开数据。|表格数据访问仅在 Excel 2013 和 Word 2013 中受支持。|
 
 #### <a name="data-type-coercion"></a>数据类型强制转换
 
-**Document** 和 [Binding](../../reference/shared/binding.md) 对象上的数据访问方法支持使用这些方法的 _coercionType_ 参数以及相应的 [CoercionType](../../reference/shared/coerciontype-enumeration.md) 枚举值指定所需的数据类型。不管绑定的实际形状如何，不同的 Office 应用程序都通过尝试将数据强制转换为请求的数据类型来支持通用的数据类型。例如，如果选中了某个 Word 表格或段落，开发人员可以指定将其读取为纯文本、HTML、Office Open XML 或表格，而 API 实现处理必要的转换和数据转换。
+**Document** 和 [Binding](http://dev.office.com/reference/add-ins/shared/binding) 对象上的数据访问方法支持使用这些方法的 _coercionType_ 参数以及相应的 [CoercionType](http://dev.office.com/reference/add-ins/shared/coerciontype-enumeration) 枚举值指定所需的数据类型。不管绑定的实际形状如何，不同的 Office 应用程序都通过尝试将数据强制转换为请求的数据类型来支持通用的数据类型。例如，如果选中了某个 Word 表格或段落，开发人员可以指定将其读取为纯文本、HTML、Office Open XML 或表格，而 API 实现处理必要的转换和数据转换。
 
 
  >**提示**   **你应该在何时使用矩阵和表格 coercionType 进行数据访问？**若你需要在添加行和列时使表格数据动态增大，且必须使用表格标题，则应该使用表格数据类型（通过将 **Document** 或 **Binding** 对象数据访问方法的 _coercionType_ 参数指定为 `"table"` 或 **Office.CoercionType.Table**）。表格数据和矩阵数据中都支持在数据结构内添加行和列，但仅支持对表格数据追加行和列。若你不计划添加行和列，且数据不需要标题功能，则应使用矩阵数据类型（通过将数据访问方法的 _coercionType_ 参数指定为 `"matrix"` 或 **Office.CoercionType.Matrix**），它提供了与数据交互更简单的模型。
 
-如果无法将数据强制转换为指定的类型，那么回调中的 [AsyncResult.status](../../reference/shared/asyncresult.error.md) 属性返回 `"failed"`，并且你可以使用 [AsyncResult.error](../../reference/shared/asyncresult.context.md) 属性访问 [Error](../../reference/shared/error.md) 对象，其中包括方法调用失败原因的信息。
+如果无法将数据强制转换为指定的类型，那么回调中的 [AsyncResult.status](../../reference/shared/asyncresult.error.md) 属性返回 `"failed"`，并且你可以使用 [AsyncResult.error](../../reference/shared/asyncresult.context.md) 属性访问 [Error](http://dev.office.com/reference/add-ins/shared/error) 对象，其中包括方法调用失败原因的信息。
 
 
 ## <a name="working-with-selections-using-the-document-object"></a>使用 Document 对象处理选择内容
@@ -171,7 +171,7 @@ Office.initialize = function (reason) {
 |:-----|:-----|:-----|
 |文本绑定|绑定到可以文本形式表示的文档区域。|在 Word 中，大多数连续选区都是有效的，而在 Excel 中，只有单个单元格选区才能作为文本绑定的目标。在 Excel 中，只支持纯文本。在 Word 中，支持以下三种格式：纯文本、HTML 和 Open XML for Office。|
 |矩阵绑定|绑定到包含没有标题的表格数据的文档的某个固定区域。矩阵绑定中的数据作为二维  **Array** 写入和读取（在 JavaScript 中作为数组的数组实现）。例如，两列中的两行 **string** 值可以作为 ` [['a', 'b'], ['c', 'd']]` 写入或读取，而包含三行的单列可以作为 `[['a'], ['b'], ['c']]` 写入或读取。|在 Excel 中，任何连续的单元格选区都可用于建立矩阵绑定。在 Word 中，只有表格支持矩阵绑定。|
-|表格绑定|绑定到包含带标题的表格的文档区域。表格绑定中的数据作为 [TableData](../../reference/shared/tabledata.md) 对象写入或读取。**TableData** 对象通过 **headers** 和 **rows** 属性公开数据。|任何 Excel 或 Word 表格均可作为表格绑定的基础。建立表格绑定后，用户添加到表格中的每个新行或新列都自动包含在绑定中。 |
+|表格绑定|绑定到包含带标题的表格的文档区域。表格绑定中的数据作为 [TableData](http://dev.office.com/reference/add-ins/shared/tabledata) 对象写入或读取。**TableData** 对象通过 **headers** 和 **rows** 属性公开数据。|任何 Excel 或 Word 表格均可作为表格绑定的基础。建立表格绑定后，用户添加到表格中的每个新行或新列都自动包含在绑定中。 |
 使用 **Bindings** 对象的三个“add”方法之一创建绑定后，可以通过相应对象的方法处理绑定的数据和属性：[MatrixBinding](../../reference/shared/binding.matrixbinding.md)、[TableBinding](../../reference/shared/binding.tablebinding.md) 或 [TextBinding](../../reference/shared/binding.textbinding.md)。这三个对象全部继承 [Binding](../../reference/shared/binding.getdataasync.md) 对象的 [getDataAsync](../../reference/shared/binding.setdataasync.md) 和 **setDataAsync** 方法，使你能够与绑定的数据交互。
 
 有关演示如何使用绑定执行任务的代码示例，请参阅[绑定到文档或电子表格中的区域](../../docs/develop/bind-to-regions-in-a-document-or-spreadsheet.md)。
@@ -190,7 +190,7 @@ API 的 [CustomXmlParts](../../reference/shared/customxmlparts.customxmlparts.md
 
  **适用于：**Word 和 PowerPoint 的任务窗格加载项
 
-[Document.getFileAsync](../../reference/shared/document.getfileasync.md) 方法以及 [File](../../reference/shared/file.md) 和 [Slice](../../reference/shared/slice.md) 对象的成员可提供以达 4 MB 的切块（块）形式一次性获取整个 Word 和 PowerPoint 文档文件的功能。有关详细信息，请参阅[操作方法：获取某加载项中文档的全部文件内容](../../docs/develop/get-the-whole-document-from-an-add-in-for-powerpoint-or-word.md)。
+[Document.getFileAsync](../../reference/shared/document.getfileasync.md) 方法以及 [File](http://dev.office.com/reference/add-ins/shared/file) 和 [Slice](http://dev.office.com/reference/add-ins/shared/slice) 对象的成员可提供以达 4 MB 的切块（块）形式一次性获取整个 Word 和 PowerPoint 文档文件的功能。有关详细信息，请参阅[操作方法：获取某加载项中文档的全部文件内容](../../docs/develop/get-the-whole-document-from-an-add-in-for-powerpoint-or-word.md)。
 
 
 ## <a name="mailbox-object"></a>Mailbox 对象

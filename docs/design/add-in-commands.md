@@ -69,7 +69,7 @@
 
 外接程序命令的最佳入门方式是参照 GitHub 上的 [Office 外接程序命令示例](https://github.com/OfficeDev/Office-Add-in-Commands-Samples/)。
 
-若要详细了解如何在清单中指定外接程序命令，请参阅[在清单中定义外接程序命令](../develop/define-add-in-commands.md)和 [VersionOverrides](../../reference/manifest/versionoverrides.md) 参考内容。
+若要详细了解如何在清单中指定外接程序命令，请参阅[在清单中定义外接程序命令](../develop/define-add-in-commands.md)和 [VersionOverrides](http://dev.office.com/reference/add-ins/manifest/versionoverrides) 参考内容。
 
 
 

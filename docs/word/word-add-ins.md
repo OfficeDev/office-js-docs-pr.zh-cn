@@ -198,4 +198,4 @@ Word 加载项在 Word 中运行，并且可以使用 Word JavaScript API 与文
 * [Word 加载项概述](word-add-ins-programming-overview.md)
 * [通过脚本实验室探索代码段](https://store.office.com/en-001/app.aspx?assetid=WA104380862&ui=en-US&rs=en-001&ad=US&appredirect=false)
 * [Word 加载项代码示例](http://dev.office.com/code-samples#?filters=word,office%20add-ins)
-* [Word JavaScript API 参考](../../reference/word/word-add-ins-reference-overview.md)
+* [Word JavaScript API 参考](http://dev.office.com/reference/add-ins/word/word-add-ins-reference-overview)

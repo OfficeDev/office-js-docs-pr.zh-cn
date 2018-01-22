@@ -17,7 +17,7 @@ API 中所有这些异步方法的名称均以“Async”结尾，如 [Document.
 ## <a name="writing-the-callback-function-for-an-async-method"></a>编写"Async"方法的回调函数
 
 
-作为  _callback_ 参数传递给"Async"方法的回调函数必须声明单个参数，在执行回调函数时，加载项运行时将使用该参数提供对 [AsyncResult](../../reference/shared/asyncresult.md) 对象的访问。您可以编写以下内容：
+作为  _callback_ 参数传递给"Async"方法的回调函数必须声明单个参数，在执行回调函数时，加载项运行时将使用该参数提供对 [AsyncResult](http://dev.office.com/reference/add-ins/shared/asyncresult) 对象的访问。您可以编写以下内容：
 
 
 - 必须要编写并作为"Async"方法的  _callback_ 参数与调用一起直接传递给"Async"方法的匿名函数。
@@ -61,7 +61,7 @@ function write(message){
 }
 ```
 
-你也可以使用回调函数的参数访问 **AsyncResult** 对象的其他属性。可以使用 [AsyncResult.status](../../reference/shared/asyncresult.error.md) 属性，以确定调用是成功还是失败。如果调用失败，你可以使用 [AsyncResult.error](../../reference/shared/asyncresult.context.md) 属性访问 [Error](../../reference/shared/error.md) 对象，以获取错误信息。
+你也可以使用回调函数的参数访问 **AsyncResult** 对象的其他属性。可以使用 [AsyncResult.status](../../reference/shared/asyncresult.error.md) 属性，以确定调用是成功还是失败。如果调用失败，你可以使用 [AsyncResult.error](../../reference/shared/asyncresult.context.md) 属性访问 [Error](http://dev.office.com/reference/add-ins/shared/error) 对象，以获取错误信息。
 
 有关使用  **getSelectedDataAsync** 方法的详细信息，请参阅 [在文档或电子表格的活动选择内容中读取和写入数据](../../docs/develop/read-and-write-data-to-the-active-selection-in-a-document-or-spreadsheet.md)。 
 
@@ -92,11 +92,11 @@ function write(message){
 
 **AsyncResult** 对象的 **asyncContext**、**status** 和 **error** 属性将同种类型的信息返回到已传递给所有“Async”方法的回调函数中。但是，返回到 **AsyncResult.value** 属性的内容因“Async”方法的功能不同而不同。
 
-例如，（**Binding**、[CustomXmlPart](../../reference/shared/binding.md)、[Document](../../reference/shared/customxmlpart.customxmlpart.md)、[RoamingSettings](../../reference/shared/document.md) 和 [Settings](../../reference/outlook/RoamingSettings.md) 对象的）[addHandlerAsync](../../reference/shared/settings.md) 方法用于将事件处理程序函数添加到这些对象表示的项。你可以从传递给任何 **addHandlerAsync** 方法的回调函数访问 **AsyncResult.value** 属性，但由于添加事件处理程序时没有访问任何数据或对象，如果尝试访问 **value** 属性，它始终会返回 **undefined**。
+例如，（**Binding**、[CustomXmlPart](http://dev.office.com/reference/add-ins/shared/binding)、[Document](../../reference/shared/customxmlpart.customxmlpart.md)、[RoamingSettings](http://dev.office.com/reference/add-ins/shared/document) 和 [Settings](http://dev.office.com/reference/add-ins/outlook/RoamingSettings) 对象的）[addHandlerAsync](http://dev.office.com/reference/add-ins/shared/settings) 方法用于将事件处理程序函数添加到这些对象表示的项。你可以从传递给任何 **addHandlerAsync** 方法的回调函数访问 **AsyncResult.value** 属性，但由于添加事件处理程序时没有访问任何数据或对象，如果尝试访问 **value** 属性，它始终会返回 **undefined**。
 
 另一方面，如果您调用  **Document.getSelectedDataAsync** 方法，则它会将用户在文档中所选的数据返回到回调的 **AsyncResult.value** 属性中。或者，如果您调用 [Bindings.getAllAsync](../../reference/shared/bindings.getallasync.md) 方法，它会返回文档中所有 **Binding** 对象的数组。并且，如果您调用 [Bindings.getByIdAsync](../../reference/shared/bindings.getbyidasync.md) 方法，则返回单个的 **Binding** 对象。
 
-有关返回到“Async”方法 **AsyncResult.value** 属性的内容的说明，请参阅相关方法参考主题的“回调值”一节。有关所有提供“Async”方法的对象的汇总，请参阅 [AsyncResult](../../reference/shared/asyncresult.md) 对象主题底部的表格。
+有关返回到“Async”方法 **AsyncResult.value** 属性的内容的说明，请参阅相关方法参考主题的“回调值”一节。有关所有提供“Async”方法的对象的汇总，请参阅 [AsyncResult](http://dev.office.com/reference/add-ins/shared/asyncresult) 对象主题底部的表格。
 
 
 ## <a name="asynchronous-programming-patterns"></a>异步编程模式
@@ -206,7 +206,7 @@ function write(message){
 
 在继续执行之前，承诺编程模式会立即返回表示其预期结果的承诺对象，而不是传递回调函数并等待函数返回。然而，与真正同步编程不同的是，在 Office 外接程序运行时环境完成请求之前，承诺结果的实现在后台实际上是延迟的。提供 _onError_ 处理程序来覆盖请求无法满足的情况。
 
-适用于 Office 的 JavaScript API 提供了一种 [Office.select](../../reference/shared/office.select.md) 方法，支持承诺模式与现有绑定对象一起使用。返回到 **Office.select** 方法的承诺对象只支持可通过 [Binding](../../reference/shared/binding.md) 对象直接访问的四种方法：[getDataAsync](../../reference/shared/binding.getdataasync.md)、[setDataAsync](../../reference/shared/binding.setdataasync.md)、[addHandlerAsync](../../reference/shared/asyncresult.value.md) 和 [removeHandlerAsync](../../reference/shared/binding.removehandlerasync.md)。
+适用于 Office 的 JavaScript API 提供了一种 [Office.select](../../reference/shared/office.select.md) 方法，支持承诺模式与现有绑定对象一起使用。返回到 **Office.select** 方法的承诺对象只支持可通过 [Binding](http://dev.office.com/reference/add-ins/shared/binding) 对象直接访问的四种方法：[getDataAsync](../../reference/shared/binding.getdataasync.md)、[setDataAsync](../../reference/shared/binding.setdataasync.md)、[addHandlerAsync](../../reference/shared/asyncresult.value.md) 和 [removeHandlerAsync](../../reference/shared/binding.removehandlerasync.md)。
 
 与绑定一起使用的承诺模式采用以下形式：
 
@@ -317,7 +317,7 @@ var options = {
 
 ```
 
-用于指定 [ValueFormat](../../reference/shared/valueformat-enumeration.md) 和 [FilterType](../../reference/shared/filtertype-enumeration.md) 参数时与以下示例类似。
+用于指定 [ValueFormat](http://dev.office.com/reference/add-ins/shared/valueformat-enumeration) 和 [FilterType](http://dev.office.com/reference/add-ins/shared/filtertype-enumeration) 参数时与以下示例类似。
 
 
 
@@ -388,5 +388,5 @@ function write(message){
 
 - [了解适用于 Office 的 JavaScript API](../../docs/develop/understanding-the-javascript-api-for-office.md)
     
-- [适用于 Office 的 JavaScript API](../../reference/javascript-api-for-office.md)
+- [适用于 Office 的 JavaScript API](http://dev.office.com/reference/add-ins/javascript-api-for-office)
      

@@ -26,8 +26,8 @@
 
 若要了解 API 要求集对应的各个平台的最低产品内部版本，请参阅以下资源：
 
-- [Word JavaScript API 要求集](../../reference/requirement-sets/word-api-requirement-sets.md)
-- [Excel JavaScript API 要求集](../../reference/requirement-sets/excel-api-requirement-sets.md)
-- [OneNote JavaScript API 要求集](../../reference/requirement-sets/onenote-api-requirement-sets.md)
-- [Dialog API 要求集](../../reference/requirement-sets/dialog-api-requirement-sets.md)
-- [Office 通用 API 要求集](../../reference/requirement-sets/office-add-in-requirement-sets.md)
+- [Word JavaScript API 要求集](http://dev.office.com/reference/add-ins/requirement-sets/word-api-requirement-sets)
+- [Excel JavaScript API 要求集](http://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets)
+- [OneNote JavaScript API 要求集](http://dev.office.com/reference/add-ins/requirement-sets/onenote-api-requirement-sets)
+- [Dialog API 要求集](http://dev.office.com/reference/add-ins/requirement-sets/dialog-api-requirement-sets)
+- [Office 通用 API 要求集](http://dev.office.com/reference/add-ins/requirement-sets/office-add-in-requirement-sets)

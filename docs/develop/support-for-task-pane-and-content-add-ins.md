@@ -2,24 +2,24 @@
 # <a name="office-javascript-api-support-for-content-and-task-pane-add-ins-in-office-2013"></a>对 Office 2013 中内容和任务窗格外接程序的 Office JavaScript API 支持
 
 
-您可以使用 [Office JavaScript API](../../reference/javascript-api-for-office.md) 创建 Office 2013 主机应用程序的任务窗格或内容外接程序。已对内容和任务窗格外接程序支持的对象和方法进行如下分类：
+您可以使用 [Office JavaScript API](http://dev.office.com/reference/add-ins/javascript-api-for-office) 创建 Office 2013 主机应用程序的任务窗格或内容外接程序。已对内容和任务窗格外接程序支持的对象和方法进行如下分类：
 
 
-1. **与其他 Office 外接程序共享的常见对象。** 这些对象包括 [Office](../../reference/shared/office.md)、[Context](../../reference/shared/office.context.md) 和 [AsyncResult](../../reference/shared/asyncresult.md)。**Office** 对象是 Office JavaScript API 的根对象。**Context** 对象表示外接程序的运行时环境。**Office** 和 **Context** 都是适用于任何 Office 外接程序的基础对象。**AsyncResult** 对象表示异步操作的结果，比如返回到 **getSelectedDataAsync** 方法的数据，其中该方法可以读取用户在文档中选择的内容。
+1. **与其他 Office 外接程序共享的常见对象。** 这些对象包括 [Office](http://dev.office.com/reference/add-ins/shared/office)、[Context](../../reference/shared/office.context.md) 和 [AsyncResult](http://dev.office.com/reference/add-ins/shared/asyncresult)。**Office** 对象是 Office JavaScript API 的根对象。**Context** 对象表示外接程序的运行时环境。**Office** 和 **Context** 都是适用于任何 Office 外接程序的基础对象。**AsyncResult** 对象表示异步操作的结果，比如返回到 **getSelectedDataAsync** 方法的数据，其中该方法可以读取用户在文档中选择的内容。
     
-2.  **Document 对象。** 大部分适用于内容和任务窗格外接程序的 API 通过 [Document](../../reference/shared/document.md) 对象的方法、属性和事件来公开。内容或任务窗格外接程序可以使用 [Office.context.document](../../reference/shared/office.context.document.md) 属性访问 **Document** 对象，并可以通过它访问可共同使用文档中数据的 API 的主要成员，比如 [Bindings](../../reference/shared/bindings.bindings.md) 和 [CustomXmlParts](../../reference/shared/customxmlparts.customxmlparts.md) 对象、[getSelectedDataAsync](../../reference/shared/document.getselecteddataasync.md)、[setSelectedDataAsync](../../reference/shared/document.setselecteddataasync.md) 和 [getFileAsync](../../reference/shared/document.getfileasync.md) 方法。**Document** 对象还提供用于确定文档是只读模式还是编辑模式的 [mode](../../reference/shared/document.mode.md) 属性，[url](../../reference/shared/document.url.md) 属性可以获取当前文档的 URL，并访问 [Settings](../../reference/shared/settings.md) 对象。**Document** 对象还支持为 [SelectionChanged](../../reference/shared/document.selectionchanged.event.md) 事件添加事件处理程序，以便当用户在文档中更改自己的选择内容时，您可以检测到。
+2.  **Document 对象。** 大部分适用于内容和任务窗格外接程序的 API 通过 [Document](http://dev.office.com/reference/add-ins/shared/document) 对象的方法、属性和事件来公开。内容或任务窗格外接程序可以使用 [Office.context.document](../../reference/shared/office.context.document.md) 属性访问 **Document** 对象，并可以通过它访问可共同使用文档中数据的 API 的主要成员，比如 [Bindings](../../reference/shared/bindings.bindings.md) 和 [CustomXmlParts](../../reference/shared/customxmlparts.customxmlparts.md) 对象、[getSelectedDataAsync](../../reference/shared/document.getselecteddataasync.md)、[setSelectedDataAsync](../../reference/shared/document.setselecteddataasync.md) 和 [getFileAsync](../../reference/shared/document.getfileasync.md) 方法。**Document** 对象还提供用于确定文档是只读模式还是编辑模式的 [mode](../../reference/shared/document.mode.md) 属性，[url](../../reference/shared/document.url.md) 属性可以获取当前文档的 URL，并访问 [Settings](http://dev.office.com/reference/add-ins/shared/settings) 对象。**Document** 对象还支持为 [SelectionChanged](../../reference/shared/document.selectionchanged.event.md) 事件添加事件处理程序，以便当用户在文档中更改自己的选择内容时，您可以检测到。
     
    内容或任务窗格外接程序只能在加载 DOM 和运行时环境后访问 **Document** 对象，通常是在 [Office.initialize](../../reference/shared/office.initialize.md) 事件的事件处理程序中加载。有关应用程序初始化时的事件流以及如何检查 DOM 和运行时是否成功加载的信息，请参阅[加载 DOM 和运行时环境](../../docs/develop/loading-the-dom-and-runtime-environment.md)。
     
 3.  **使用特定的功能的对象。**若要使用 API 的特定功能，请使用下面的对象和方法：
     
-    - 创建或获取绑定的 [Bindings](../../reference/shared/bindings.bindings.md) 对象的方法，以及使用数据的 [Binding](../../reference/shared/binding.md) 对象的方法和属性。
+    - 创建或获取绑定的 [Bindings](../../reference/shared/bindings.bindings.md) 对象的方法，以及使用数据的 [Binding](http://dev.office.com/reference/add-ins/shared/binding) 对象的方法和属性。
     
     - 创建和操控 Word 文档中自定义的 XML 部件的 [CustomXmlParts](../../reference/shared/customxmlparts.customxmlparts.md)、[CustomXmlPart](../../reference/shared/customxmlpart.customxmlpart.md) 和关联的对象。
     
-    - 创建整个文档的副本，将它分解成多个块或“切片”，然后读取或传输这些切片中数据的 [File](../../reference/shared/file.md) 和 [Slice](../../reference/shared/slice.md) 对象。
+    - 创建整个文档的副本，将它分解成多个块或“切片”，然后读取或传输这些切片中数据的 [File](http://dev.office.com/reference/add-ins/shared/file) 和 [Slice](http://dev.office.com/reference/add-ins/shared/slice) 对象。
     
-    - 保存自定义数据（例如，用户首选项）和外接程序状态的 [Settings](../../reference/shared/settings.md) 对象。
+    - 保存自定义数据（例如，用户首选项）和外接程序状态的 [Settings](http://dev.office.com/reference/add-ins/shared/settings) 对象。
     
 
  >**重要说明** 并不是所有能够托管内容和任务窗格外接程序的 Office 应用程序都支持一些 API 成员。要确定支持哪些成员，请参阅以下任一资源：
@@ -29,7 +29,7 @@
 
 ## <a name="reading-and-writing-to-an-active-selection"></a>在活动的选择内容中读取和写入
 
-您可以在文档、电子表格或演示文稿的用户当前选定内容中读取和写入。根据加载项的主机应用程序，您可以在 [Document](../../reference/shared/document.getselecteddataasync.md) 对象的 [getSelectedDataAsync](../../reference/shared/document.setselecteddataasync.md) 和 [setSelectedDataAsync](../../reference/shared/document.md) 方法中指定要作为参数来读取或写入的数据结构类型。例如，您可以指定任何用于 Word 的数据类型（文本、HTML、表格数据或 Office Open XML）、用于 Excel 的文本和表格数据，以及用于 PowerPoint 和 Project 的文本。您还可以创建事件处理程序来检测对用户选择内容的更改。以下示例使用 **getSelectedDataAsync** 方法从作为文本的选择内容中获取数据。
+您可以在文档、电子表格或演示文稿的用户当前选定内容中读取和写入。根据加载项的主机应用程序，您可以在 [Document](../../reference/shared/document.getselecteddataasync.md) 对象的 [getSelectedDataAsync](../../reference/shared/document.setselecteddataasync.md) 和 [setSelectedDataAsync](http://dev.office.com/reference/add-ins/shared/document) 方法中指定要作为参数来读取或写入的数据结构类型。例如，您可以指定任何用于 Word 的数据类型（文本、HTML、表格数据或 Office Open XML）、用于 Excel 的文本和表格数据，以及用于 PowerPoint 和 Project 的文本。您还可以创建事件处理程序来检测对用户选择内容的更改。以下示例使用 **getSelectedDataAsync** 方法从作为文本的选择内容中获取数据。
 
 
 ```js
@@ -87,7 +87,7 @@ function write(message){
 
 如果任务窗格外接程序在 PowerPoint 或 Word 中运行，您可以使用 [Document.getFileAsync](../../reference/shared/document.getfileasync.md)、[File.getSliceAsync](../../reference/shared/file.getsliceasync.md) 和 [File.closeAsync](../../reference/shared/file.closeasync.md) 方法获取整个演示文稿或文档。
 
-您在调用 **Document.getFileAsync** 时，获取了 [File](../../reference/shared/file.md) 对象中的文档副本。**File** 对象提供对表示为 [Slice](../../reference/shared/document.md) 对象的“块”中文档的访问。当调用 **getFileAsync** 时，您可以指定文件类型（文本或压缩的 Open Office XML 格式）和切片的大小（高达 4MB）。若要访问 **File** 对象的内容，您可以调用在 **Slice.data** 属性中返回原始数据的 [File.getSliceAsync](../../reference/shared/slice.data.md)。如果您指定了压缩格式，则获取作为字节数组的文件数据。如果您在将文件传输给 Web 服务，则可以在提交前将压缩的原始数据转换为 base64 编码的字符串。最后，在完成获取文件切片后，使用 **File.closeAsync** 方法关闭文档。
+您在调用 **Document.getFileAsync** 时，获取了 [File](http://dev.office.com/reference/add-ins/shared/file) 对象中的文档副本。**File** 对象提供对表示为 [Slice](http://dev.office.com/reference/add-ins/shared/document) 对象的“块”中文档的访问。当调用 **getFileAsync** 时，您可以指定文件类型（文本或压缩的 Open Office XML 格式）和切片的大小（高达 4MB）。若要访问 **File** 对象的内容，您可以调用在 **Slice.data** 属性中返回原始数据的 [File.getSliceAsync](../../reference/shared/slice.data.md)。如果您指定了压缩格式，则获取作为字节数组的文件数据。如果您在将文件传输给 Web 服务，则可以在提交前将压缩的原始数据转换为 base64 编码的字符串。最后，在完成获取文件切片后，使用 **File.closeAsync** 方法关闭文档。
 
 有关详细信息，请参阅如何[从 PowerPoint 或 Word 外接程序中获取整个文档](../../docs/develop/get-the-whole-document-from-an-add-in-for-powerpoint-or-word.md)。 
 
@@ -108,7 +108,7 @@ function write(message){
 ## <a name="persisting-add-in-settings"></a>保留加载项设置
 
 
-通常需要保存外接程序的自定义数据，例如用户的首选项或外接程序的状态，并在下一次打开外接程序时访问该数据。可以使用通用的 Web 编程技术保存该数据，例如浏览器 cookie 或 HTML 5 Web 存储。或者，如果你的外接程序在 Excel、PowerPoint 或 Word 中运行，则可以使用 [设置](../../reference/shared/settings.md) 对象的方法。使用**设置**对象创建的数据存储在电子表格、演示文档或植入和保存外接程序的文档中。此数据仅用于创建它的外接程序。
+通常需要保存外接程序的自定义数据，例如用户的首选项或外接程序的状态，并在下一次打开外接程序时访问该数据。可以使用通用的 Web 编程技术保存该数据，例如浏览器 cookie 或 HTML 5 Web 存储。或者，如果你的外接程序在 Excel、PowerPoint 或 Word 中运行，则可以使用 [设置](http://dev.office.com/reference/add-ins/shared/settings) 对象的方法。使用**设置**对象创建的数据存储在电子表格、演示文档或植入和保存外接程序的文档中。此数据仅用于创建它的外接程序。
 
 为了避免往返于存储文档的服务器，使用 **Settings** 对象创建的数据运行时在内存中进行管理。之前保存的设置数据在初始化外接程序时加载到内存中，并在调用 [Settings.saveAsync](../../reference/shared/settings.saveasync.md) 方法时，仅将对数据的更改保存回文档。在内部，将该数据作为名称/值对存储在序列化的 JSON 对象中。可以使用 [Settings](../../reference/shared/settings.get.md) 对象的 [get](../../reference/shared/settings.set.md)、[set](../../reference/shared/settings.removehandlerasync.md) 和 **remove** 方法从数据的内存副本中读取、写入和删除项目。以下代码行显示如何创建名为 `themeColor` 的设置，并将它的值设置为“green”。
 
@@ -154,7 +154,7 @@ Office.context.document.settings.set('themeColor', 'green');
 ## <a name="additional-resources"></a>其他资源
 
 
-- [Office JavaScript API](../../reference/javascript-api-for-office.md)
+- [Office JavaScript API](http://dev.office.com/reference/add-ins/javascript-api-for-office)
     
 - [Office 外接程序清单的架构参考](http://msdn.microsoft.com/en-us/library/7e0cadc3-f613-8eb9-57ef-9032cbb97f92.aspx)
     

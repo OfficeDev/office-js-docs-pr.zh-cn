@@ -200,7 +200,7 @@ Bing 搜索加载项显示在任务窗格中，如图 3 所示。可以手动调
     
 - [Office 外接程序 XML 清单](../../docs/overview/add-in-manifests.md)
     
-- [适用于 Office 的 JavaScript API](../../reference/javascript-api-for-office.md)
+- [适用于 Office 的 JavaScript API](http://dev.office.com/reference/add-ins/javascript-api-for-office)
     
 - [使用文本编辑器创建 Project 2013 的第一个任务窗格外接程序](../project/create-your-first-task-pane-add-in-for-project-by-using-a-text-editor.md)
     

@@ -168,4 +168,4 @@ create-react-app my-addin
 
 * [Excel JavaScript API 核心概念](excel-add-ins-core-concepts.md)
 * [Excel 加载项代码示例](http://dev.office.com/code-samples#?filters=excel,office%20add-ins)
-* [Excel JavaScript API 参考](../../reference/excel/excel-add-ins-reference-overview.md)
+* [Excel JavaScript API 参考](http://dev.office.com/reference/add-ins/excel/excel-add-ins-reference-overview)

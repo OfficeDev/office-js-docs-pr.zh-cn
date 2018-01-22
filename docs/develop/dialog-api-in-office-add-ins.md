@@ -1,10 +1,10 @@
 # <a name="use-the-dialog-api-in-your-office-add-ins"></a>在 Office 外接程序中使用对话框 API
 
-可以在 Office 外接程序中使用[对话框 API](../../reference/shared/officeui.md) 打开对话框。本文提供了有关如何在 Office 外接程序中使用对话框 API 的指南。
+可以在 Office 外接程序中使用[对话框 API](http://dev.office.com/reference/add-ins/shared/officeui) 打开对话框。本文提供了有关如何在 Office 外接程序中使用对话框 API 的指南。
 
 > **注意：**
 
-> 若要了解 Dialog API 目前的受支持情况，请参阅 [Dialog API 要求集](../../reference/requirement-sets/dialog-api-requirement-sets.md)。 目前，Word、Excel、PowerPoint 和 Outlook 支持 Dialog API。
+> 若要了解 Dialog API 目前的受支持情况，请参阅 [Dialog API 要求集](http://dev.office.com/reference/add-ins/requirement-sets/dialog-api-requirement-sets)。 目前，Word、Excel、PowerPoint 和 Outlook 支持 Dialog API。
 
 > Dialog API 的主要应用场景是，为 Google 或 Facebook 等资源启用身份验证。 如果加载项要求可通过 Microsoft Graph 访问 Office 用户数据或资源数据（如 Office 365 或 OneDrive），建议尽可能使用单一登录 API。 如果使用单一登录 API，则不需要使用 Dialog API。 有关详细信息，请参阅[为 Office 加载项启用单一登录](http://dev.office.com/docs/add-ins/develop/sso-in-office-add-ins)。
 
@@ -24,7 +24,7 @@
 
 ## <a name="dialog-api-scenarios"></a>Dialog API 应用场景
 
-Office JavaScript API 支持以下应用场景，其在 [Office.context.ui 命名空间](../../reference/shared/officeui.md)中使用 [Dialog](../../reference/shared/officeui.dialog.md) 对象和两个函数。
+Office JavaScript API 支持以下应用场景，其在 [Office.context.ui 命名空间](http://dev.office.com/reference/add-ins/shared/officeui)中使用 [Dialog](../../reference/shared/officeui.dialog.md) 对象和两个函数。
 
 ### <a name="open-a-dialog-box"></a>打开对话框
 

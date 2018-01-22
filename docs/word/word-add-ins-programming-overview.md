@@ -44,7 +44,7 @@ Word.run(function (context) {
 
 有两组 JavaScript Api 可用于与 Word 文档中的对象和元数据进行交互。第一组是[适用于 Office 的 JavaScript API](https://dev.office.com/reference/add-ins/javascript-api-for-office?product=word)，在 Office 2013 进行了引入。这是一个共享 API --许多对象可以在由两个或多个 Office 客户端托管的外接程序中使用。此 API 广泛使用回调。 
 
-第二组是 [Word JavaScript API](../../reference/word/word-add-ins-reference-overview.md)。这是强类型对象模型，可用于创建面向适用于 Mac 和 Windows 的 Word 2016 的 Word 外接程序。此对象模型使用承诺模式，并提供对特定于 Word 对象（如[正文](../../reference/word/body.md)、[内容控件](../../reference/word/contentcontrol.md)、[内联图片](../../reference/word/inlinepicture.md)和[段落](../../reference/word/paragraph.md)）的访问权限。Word JavaScript API 包括 TypeScript 定义和 vsdoc 文件，这样，您可以在 IDE 中获得代码提示。
+第二组是 [Word JavaScript API](http://dev.office.com/reference/add-ins/word/word-add-ins-reference-overview)。这是强类型对象模型，可用于创建面向适用于 Mac 和 Windows 的 Word 2016 的 Word 外接程序。此对象模型使用承诺模式，并提供对特定于 Word 对象（如[正文](http://dev.office.com/reference/add-ins/word/body)、[内容控件](http://dev.office.com/reference/add-ins/word/contentcontrol)、[内联图片](http://dev.office.com/reference/add-ins/word/inlinepicture)和[段落](http://dev.office.com/reference/add-ins/word/paragraph)）的访问权限。Word JavaScript API 包括 TypeScript 定义和 vsdoc 文件，这样，您可以在 IDE 中获得代码提示。
 
 目前，所有 Word 客户端均支持共享的适用于 Office 的 JavaScript API，大多数客户端支持 Word JavaScript API。有关受支持的客户端的详细信息，请参阅 [API 参考文档](https://dev.office.com/reference/add-ins/javascript-api-for-office?product=word)。
 
@@ -72,12 +72,12 @@ Word.run(function (context) {
 
 ## <a name="whats-coming-up-for-word-add-ins"></a>Word 外接程序未来发展趋势如何？
 
-在我们设计和开发用于 Word 外接程序的新 API 时，我们将使它们可在[开放 API 规范](../../reference/openspec.md)页面上接收您的反馈。了解面向 Word JavaScript API 的管道中的新增功能，并在我们的设计规范中提供您的输入。
+在我们设计和开发用于 Word 外接程序的新 API 时，我们将使它们可在[开放 API 规范](http://dev.office.com/reference/add-ins/openspec)页面上接收您的反馈。了解面向 Word JavaScript API 的管道中的新增功能，并在我们的设计规范中提供您的输入。
 
 您还可以在[更改日志](http://dev.office.com/changelog)页查看 Word JavaScript API 中的新增功能。
 
 ## <a name="additional-resources"></a>其他资源
 
 * [Office 外接程序平台概述](../overview/office-add-ins.md)
-* [Word JavaScript API 参考](../../reference/word/word-add-ins-reference-overview.md)
+* [Word JavaScript API 参考](http://dev.office.com/reference/add-ins/word/word-add-ins-reference-overview)
 

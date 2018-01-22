@@ -25,7 +25,7 @@
     
 4. 浏览器控件加载 DOM 和 HTML 正文，并调用  **window.onload** 事件的事件处理程序。
     
-5. Office 主机应用程序加载运行时环境，这将从内容分发网络 (CDN) 服务器中为 JavaScript 库文件下载并缓存 JavaScript API，然后为 [Office](../../reference/shared/office.initialize.md) 对象的 [initialize](../../reference/shared/office.md) 事件调用加载项的事件处理程序。
+5. Office 主机应用程序加载运行时环境，这将从内容分发网络 (CDN) 服务器中为 JavaScript 库文件下载并缓存 JavaScript API，然后为 [Office](../../reference/shared/office.initialize.md) 对象的 [initialize](http://dev.office.com/reference/add-ins/shared/office) 事件调用加载项的事件处理程序。
     
 6. 当 DOM 和 HTML 正文加载完毕并且加载项完成初始化后，加载项的主函数就可以继续进行。
     
@@ -52,7 +52,7 @@
     
 5. 浏览器控件加载 DOM 和 HTML 正文，并调用  **onload** 事件的事件处理程序。
     
-6. Outlook 调用加载项的 [Office](../../reference/shared/office.initialize.md) 对象的 [initialize](../../reference/shared/office.md) 事件的事件处理程序。
+6. Outlook 调用加载项的 [Office](../../reference/shared/office.initialize.md) 对象的 [initialize](http://dev.office.com/reference/add-ins/shared/office) 事件的事件处理程序。
     
 7. 当 DOM 和 HTML 正文加载完毕并且加载项完成初始化后，加载项的主函数就可以继续进行。
     

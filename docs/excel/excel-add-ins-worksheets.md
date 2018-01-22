@@ -1,6 +1,6 @@
 # <a name="work-with-worksheets-using-the-excel-javascript-api"></a>使用 Excel JavaScript API 处理工作表
 
-本文提供了代码示例，介绍如何使用 Excel JavaScript API 对工作表执行常见任务。 有关 **Worksheet** 和 **WorksheetCollection** 对象支持的属性和方法的完整列表，请参阅 [Worksheet 对象 (Excel JavaScript API)](../../reference/excel/worksheet.md) 和 [WorksheetCollection 对象 (Excel JavaScript API)](../../reference/excel/worksheetcollection.md)。
+本文提供了代码示例，介绍如何使用 Excel JavaScript API 对工作表执行常见任务。 有关 **Worksheet** 和 **WorksheetCollection** 对象支持的属性和方法的完整列表，请参阅 [Worksheet 对象 (Excel JavaScript API)](http://dev.office.com/reference/add-ins/excel/worksheet) 和 [WorksheetCollection 对象 (Excel JavaScript API)](http://dev.office.com/reference/add-ins/excel/worksheetcollection)。
 
 **注意**：本文中的信息仅适用于常规工作表；不适用于“图表”或“宏”表。
 
@@ -269,5 +269,5 @@ Excel.run(function (context) {
 ## <a name="additional-resources"></a>其他资源
 
 - [Excel JavaScript API 核心概念](excel-add-ins-core-concepts.md)
-- [Worksheet 对象 (Excel JavaScript API)](../../reference/excel/worksheet.md)
-- [WorksheetCollection 对象 (Excel JavaScript API)](../../reference/excel/worksheetcollection.md)
+- [Worksheet 对象 (Excel JavaScript API)](http://dev.office.com/reference/add-ins/excel/worksheet)
+- [WorksheetCollection 对象 (Excel JavaScript API)](http://dev.office.com/reference/add-ins/excel/worksheetcollection)

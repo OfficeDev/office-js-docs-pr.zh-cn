@@ -79,8 +79,8 @@ Excel.run(function(ctx) {
 -   `helpUrl`：当用户针对某个函数请求帮助时，Excel 将打开任务窗格并显示位于此 URL 的网页。
 -   `result`：定义该函数向 Excel 返回的信息的类型。
 
-    -   `resultType`：函数可以返回 `"string"` 或 `"number"`（也适用于日期和币种）。 有关详细信息，请参阅[自定义函数枚举](../../reference/excel/customfunctionsenumerations.md)。
-    -   `resultDimensionality`：函数可以返回单个（`"scalar"`）值或值的`"matrix"`。 返回值的矩阵时，函数返回一个数组，其中每个数组元素均是表示一组值的另一个数组。 有关详细信息，请参阅[自定义函数枚举](../../reference/excel/customfunctionsenumerations.md)。 以下示例从自定义函数返回 3 行 2 列的值矩阵。
+    -   `resultType`：函数可以返回 `"string"` 或 `"number"`（也适用于日期和币种）。 有关详细信息，请参阅[自定义函数枚举](http://dev.office.com/reference/add-ins/excel/customfunctionsenumerations)。
+    -   `resultDimensionality`：函数可以返回单个（`"scalar"`）值或值的`"matrix"`。 返回值的矩阵时，函数返回一个数组，其中每个数组元素均是表示一组值的另一个数组。 有关详细信息，请参阅[自定义函数枚举](http://dev.office.com/reference/add-ins/excel/customfunctionsenumerations)。 以下示例从自定义函数返回 3 行 2 列的值矩阵。
 
 ```js
 return [["first","row"],["second","row"],["third","row"]];

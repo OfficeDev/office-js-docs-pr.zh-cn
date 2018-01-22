@@ -58,19 +58,19 @@ Office 外接程序的 XML 清单文件描述，当最终用户安装外接程�
 
 - 确保外接程序 ID 有效且具有唯一 GUID。Web 上提供可用于创建唯一 GUID 的各种 GUID 生成器工具。 
 
-- 所有 URL（例如 [SourceLocation](../../reference/manifest/sourcelocation.md) 元素中指定的源文件位置）必须采用 **SSL 保护 (HTTPS)**。
+- 所有 URL（例如 [SourceLocation](http://dev.office.com/reference/add-ins/manifest/sourcelocation) 元素中指定的源文件位置）必须采用 **SSL 保护 (HTTPS)**。
 
 - 所有图标 URL（例如在命令界面上使用的 URL）必须**允许缓存**。Web 服务器不应返回类似不缓存/不存储的 HTTP 头。 
 
-- 提交到 Office 应用商店的外接程序还必须包括 [SupportUrl](../../reference/manifest/supporturl.md) 元素。有关详细信息，请参阅 [要避免的一些常见提交错误是什么？](http://msdn.microsoft.com/library/0ceb385c-a608-40cc-8314-78e39d6c75d0%28Office.15%29.aspx#bk_q2)
+- 提交到 Office 应用商店的外接程序还必须包括 [SupportUrl](http://dev.office.com/reference/add-ins/manifest/supporturl) 元素。有关详细信息，请参阅 [要避免的一些常见提交错误是什么？](http://msdn.microsoft.com/library/0ceb385c-a608-40cc-8314-78e39d6c75d0%28Office.15%29.aspx#bk_q2)
 
-- 作为一种最佳做法，仅使用 [AppDomain](../../reference/manifest/appdomains.md) 元素指定身份验证方案除在 [SourceLocation](../../reference/manifest/sourcelocation.md) 元素中指定的域之外的域。
+- 作为一种最佳做法，仅使用 [AppDomain](http://dev.office.com/reference/add-ins/manifest/appdomains) 元素指定身份验证方案除在 [SourceLocation](http://dev.office.com/reference/add-ins/manifest/sourcelocation) 元素中指定的域之外的域。
 
 ## <a name="specify-domains-you-want-to-open-in-the-add-in-window"></a>指定想要在外接程序窗口中打开的域
 
-默认情况下，如果外接程序尝试转到托管起始页（如清单文件的 [SourceLocation](../../reference/manifest/sourcelocation.md) 元素中所指定的）的域之外的域中的 URL，则该 URL 将在 Office 主机应用程序的外接程序窗格外的新浏览器窗口中打开。此默认行为将防止用户在外接程序窗格从嵌入的 **iframe** 元素中进行意外页面导航。
+默认情况下，如果外接程序尝试转到托管起始页（如清单文件的 [SourceLocation](http://dev.office.com/reference/add-ins/manifest/sourcelocation) 元素中所指定的）的域之外的域中的 URL，则该 URL 将在 Office 主机应用程序的外接程序窗格外的新浏览器窗口中打开。此默认行为将防止用户在外接程序窗格从嵌入的 **iframe** 元素中进行意外页面导航。
 
-若要重写此操作，请在清单文件的 [AppDomains](../../reference/manifest/appdomains.md) 元素中指定的域列表中指定要在外接程序窗口中打开的每个域。如果外接程序尝试转至在列表之外的域的 URL，则该 URL 将在新的浏览器窗口中（外接程序窗格之外）打开。
+若要重写此操作，请在清单文件的 [AppDomains](http://dev.office.com/reference/add-ins/manifest/appdomains) 元素中指定的域列表中指定要在外接程序窗口中打开的每个域。如果外接程序尝试转至在列表之外的域的 URL，则该 URL 将在新的浏览器窗口中（外接程序窗格之外）打开。
 
 以下 XML 清单示例在 **SourceLocation** 元素中指定的 `https://www.contoso.com` 域中托管其外接程序主页。它还指定 [AppDomain](http://msdn.microsoft.com/en-us/library/2a0353ec-5e09-6fbf-1636-4bb5dcebb9bf%28Office.15%29.aspx) 元素列表内的 **AppDomains** 元素中的 `https://www.northwindtraders.com` 域。如果外接程序转至 www.northwindtraders.com 域中的页面，则在外接程序窗格中打开该页面。
 

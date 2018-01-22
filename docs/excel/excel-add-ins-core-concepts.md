@@ -1,6 +1,6 @@
 # <a name="excel-javascript-api-core-concepts"></a>Excel JavaScript API 核心概念
  
-本文介绍如何使用 [Excel JavaScript API](../../reference/excel/excel-add-ins-reference-overview.md) 生成适用于 Excel 2016 的加载项。 它引入了一些核心概念，这些概念是使用 API 的基础，并为执行特定任务提供指导，如读取或写入较大区域、更新区域内的所有单元格等等。
+本文介绍如何使用 [Excel JavaScript API](http://dev.office.com/reference/add-ins/excel/excel-add-ins-reference-overview) 生成适用于 Excel 2016 的加载项。 它引入了一些核心概念，这些概念是使用 API 的基础，并为执行特定任务提供指导，如读取或写入较大区域、更新区域内的所有单元格等等。
 
 ## <a name="asynchronous-nature-of-excel-apis"></a>Excel API 的异步特性
 
@@ -127,8 +127,8 @@ object.load({ loadOption });
  
 _其中：_
  
-* `properties` 列出了要加载的属性和/或关系名称，指定为逗号分隔的字符串或名称数组。 有关详细信息，请参阅 [Excel JavaScript API 参考](../../reference/excel/excel-add-ins-reference-overview.md)中为对象定义的 **load()** 方法。
-* `loadOption` 指定的对象描述了选择、展开、置顶和跳过选项。有关详细信息，请参阅对象加载 [选项](../../reference/excel/loadoption.md)。
+* `properties` 列出了要加载的属性和/或关系名称，指定为逗号分隔的字符串或名称数组。 有关详细信息，请参阅 [Excel JavaScript API 参考](http://dev.office.com/reference/add-ins/excel/excel-add-ins-reference-overview)中为对象定义的 **load()** 方法。
+* `loadOption` 指定的对象描述了选择、展开、置顶和跳过选项。有关详细信息，请参阅对象加载 [选项](http://dev.office.com/reference/add-ins/excel/loadoption)。
 
 有关 **load()** 方法的详细信息，请参阅 [Excel JavaScript API 高级概念](excel-add-ins-advanced-concepts.md)。
 
@@ -271,4 +271,4 @@ Excel.run(function (context) {
  
 * [开始使用 Excel 加载项](excel-add-ins-get-started-overview.md)
 * [Excel 加载项代码示例](http://dev.office.com/code-samples#?filters=excel,office%20add-ins)
-* [Excel JavaScript API 参考](../../reference/excel/excel-add-ins-reference-overview.md)
+* [Excel JavaScript API 参考](http://dev.office.com/reference/add-ins/excel/excel-add-ins-reference-overview)

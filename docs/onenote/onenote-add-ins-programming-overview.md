@@ -72,7 +72,7 @@ OneNote 引入了适用于 OneNote Online 外接程序的 JavaScript API。你�
     }
 ```
 
-您可以在 [API 参考](../../reference/onenote/onenote-add-ins-javascript-reference.md) 中找到受支持的 OneNote 对象和操作。
+您可以在 [API 参考](http://dev.office.com/reference/add-ins/onenote/onenote-add-ins-javascript-reference) 中找到受支持的 OneNote 对象和操作。
 
 ### <a name="accessing-the-common-api-through-the-document-object"></a>通过 *Document* 对象访问通用 API
 
@@ -117,6 +117,6 @@ OneNote 外接程序仅支持以下通用 API：
 ## <a name="additional-resources"></a>其他资源
 
 - [生成第一个 OneNote 外接程序](onenote-add-ins-getting-started.md)
-- [OneNote JavaScript API 参考](../../reference/onenote/onenote-add-ins-javascript-reference.md)
+- [OneNote JavaScript API 参考](http://dev.office.com/reference/add-ins/onenote/onenote-add-ins-javascript-reference)
 - [Rubric Grader 示例](https://github.com/OfficeDev/OneNote-Add-in-Rubric-Grader)
 - [Office 外接程序平台概述](https://dev.office.com/docs/add-ins/overview/office-add-ins)

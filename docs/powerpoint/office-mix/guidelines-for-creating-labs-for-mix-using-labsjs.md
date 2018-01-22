@@ -5,7 +5,7 @@
 
 LabsJS 库 (labs.js) 支持编写与 Office Mix 集成的专门 Office 外接程序（称为实验室）。然后 Office Mix 使用 Microsoft PowerPoint 呈现实验室。我们将这些组件称为"实验室"，但我们应该明确我们创建的是特殊 Office 外接程序，即 Office Mix 外接程序。
 
-LabsJS 内容提供了指导和示例，有助您实施 labs.js JavaScript API。此库在 [适用于 Office 的 JavaScript API](../../../reference/javascript-api-for-office.md) (Office.js) 的基础上构建，并提供了针对 Office Mix 中嵌入的外接程序优化的抽象层。
+LabsJS 内容提供了指导和示例，有助您实施 labs.js JavaScript API。此库在 [适用于 Office 的 JavaScript API](http://dev.office.com/reference/add-ins/javascript-api-for-office) (Office.js) 的基础上构建，并提供了针对 Office Mix 中嵌入的外接程序优化的抽象层。
 
 
 ## <a name="general-guidelines"></a>通用准则

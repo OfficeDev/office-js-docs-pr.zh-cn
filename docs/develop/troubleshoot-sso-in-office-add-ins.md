@@ -20,7 +20,7 @@
 加载项或 Office 版本不支持 [getAccessTokenAsync](../../reference/shared/office.context.auth.getAccessTokenAsync.md) API。 
 
 - Office 版本不支持 SSO。 版本必须为 Office 2016 版本 1710（生成号 8629.nnnn）或更高版本（Office 365 订阅版本，有时称为“即点即用版本”）。 可能需要成为 Office 预览体验成员，才能获取此版本。 有关详细信息，请参阅[成为 Office 预览体验成员](https://products.office.com/en-us/office-insider?tab=tab-1)。 
-- 加载项清单缺少适当的 [WebApplicationInfo](../../reference/manifest/webapplicationinfo.md) 部分。
+- 加载项清单缺少适当的 [WebApplicationInfo](http://dev.office.com/reference/add-ins/manifest/webapplicationinfo) 部分。
 
 ### <a name="13001"></a>13001
 
@@ -78,7 +78,7 @@ Office 主机无法获取对加载项 Web 服务的访问令牌。
 ### <a name="invalid-or-missing-scope-permission-errors"></a>范围（权限）无效或缺失错误
 
 - 服务器端代码应向客户端发送 `403 Forbidden` 响应，向用户显示易记消息。 如果可能，请在控制台或日志中记录此错误。
-- 请确保加载项清单[范围](../../reference/manifest/scopes.md)部分指定了所需的全部权限。 此外，还请确保加载项 Web 服务注册指定了相同的权限。 同时检查是否有拼写错误。 有关详细信息，请参阅[向 Azure AD v2.0 终结点注册加载项](../../docs/develop/create-sso-office-add-ins-aspnet.md#register-the-add-in-with-azure-ad-v2-0-endpoint) (ASP.NET) 或[向 Azure AD v2.0 终结点注册加载项](../../docs/develop/create-sso-office-add-ins-nodejs.md#register-the-add-in-with-azure-ad-v2-0-endpoint) (Node JS)，以及[配置加载项](../../docs/develop/create-sso-office-add-ins-aspnet.md#configure-the-add-in) (ASP.NET) 或[配置加载项](../../docs/develop/create-sso-office-add-ins-nodejs.md#configure-the-add-in) (Node JS)。
+- 请确保加载项清单[范围](http://dev.office.com/reference/add-ins/manifest/scopes)部分指定了所需的全部权限。 此外，还请确保加载项 Web 服务注册指定了相同的权限。 同时检查是否有拼写错误。 有关详细信息，请参阅[向 Azure AD v2.0 终结点注册加载项](../../docs/develop/create-sso-office-add-ins-aspnet.md#register-the-add-in-with-azure-ad-v2-0-endpoint) (ASP.NET) 或[向 Azure AD v2.0 终结点注册加载项](../../docs/develop/create-sso-office-add-ins-nodejs.md#register-the-add-in-with-azure-ad-v2-0-endpoint) (Node JS)，以及[配置加载项](../../docs/develop/create-sso-office-add-ins-aspnet.md#configure-the-add-in) (ASP.NET) 或[配置加载项](../../docs/develop/create-sso-office-add-ins-nodejs.md#configure-the-add-in) (Node JS)。
 
 ### <a name="expired-or-invalid-token-errors-when-calling-microsoft-graph"></a>调用 Microsoft Graph 时令牌过期或无效错误
 

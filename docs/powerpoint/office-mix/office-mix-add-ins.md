@@ -16,7 +16,7 @@ Microsoft Office Mix 是用于创建您在 PowerPoint 中嵌入的 Office 外接
 
 LabsJS 扩展了 Office Mix 的概念。Office Mix 会将 PowerPoint 演示文稿转换为动态课程，而使用 LabsJS，您可以使用户能够以增强方式与课程交互。这种交互性表现为演示文稿、测验、模拟以及很多其他交互式内容类型。这些新的交互式教育组件称为实验室。实际上，这些实验室就是使用 HTML5 和 JavaScript 创建的 Office Mix 外接程序。
 
-这些实验室实际上是使用 labs.js API ([LabsJS JavaScript API 引用](../../../reference/office-mix/labsjs-javascript-api-reference.md)) 以 JavaScript 编写的外接程序。Labs.js 充当除 office.js 库以外的抽象层。总的来说，labs.js 允许创建这些实验室并将其插入到 Office Mix 实例，然后 Mix 将呈现在 PowerPoint 中。
+这些实验室实际上是使用 labs.js API ([LabsJS JavaScript API 引用](http://dev.office.com/reference/add-ins/office-mix/labsjs-javascript-api-reference)) 以 JavaScript 编写的外接程序。Labs.js 充当除 office.js 库以外的抽象层。总的来说，labs.js 允许创建这些实验室并将其插入到 Office Mix 实例，然后 Mix 将呈现在 PowerPoint 中。
 
 
 ## <a name="take-a-look"></a>请查看

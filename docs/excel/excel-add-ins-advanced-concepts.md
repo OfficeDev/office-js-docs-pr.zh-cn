@@ -6,19 +6,19 @@
 
 Excel 加载项通过使用适用于 Office 的 JavaScript API 与 Excel 中的对象进行交互，适用于 Office 的 JavaScript API包括两个 JavaScript 对象模型：
 
-* **Excel JavaScript API**：[Excel JavaScript API](../../reference/excel/excel-add-ins-reference-overview.md) 随 Office 2016 一起引入，提供了强类型的对象，可用于访问工作表、区域、表格、图表等。 
+* **Excel JavaScript API**：[Excel JavaScript API](http://dev.office.com/reference/add-ins/excel/excel-add-ins-reference-overview) 随 Office 2016 一起引入，提供了强类型的对象，可用于访问工作表、区域、表格、图表等。 
 
-* **公用 API**：公用 API（也称为[共享 API](../../reference/javascript-api-for-office.md)）随 Office 2013 一起引入，可用于访问诸如 Word、Excel 和 PowerPoint 等多种主机应用程序通用的 UI、对话框和客户端设置等功能。
+* **公用 API**：公用 API（也称为[共享 API](http://dev.office.com/reference/add-ins/javascript-api-for-office)）随 Office 2013 一起引入，可用于访问诸如 Word、Excel 和 PowerPoint 等多种主机应用程序通用的 UI、对话框和客户端设置等功能。
 
 你可能会使用 Excel JavaScript API 开发面向 Excel 2016 的加载项中的大部分功能，同时还可以使用共享 API 中的对象。 例如：
 
-- [Context](../../reference/shared/context.md)：**Context** 对象表示加载项的运行时环境，并提供对 API 的关键对象的访问。 它由工作簿配置详细信息（如 `contentLanguage` 和 `officeTheme`）组成，并提供有关加载项的运行时环境（如 `host` 和 `platform`）的信息。 此外，它还提供了 `requirements.isSetSupported()` 方法，可用于检查运行加载项的 Excel 应用程序是否支持指定的要求集。 
+- [Context](http://dev.office.com/reference/add-ins/shared/context)：**Context** 对象表示加载项的运行时环境，并提供对 API 的关键对象的访问。 它由工作簿配置详细信息（如 `contentLanguage` 和 `officeTheme`）组成，并提供有关加载项的运行时环境（如 `host` 和 `platform`）的信息。 此外，它还提供了 `requirements.isSetSupported()` 方法，可用于检查运行加载项的 Excel 应用程序是否支持指定的要求集。 
 
-- [Document](../../reference/shared/document.md)：**Document** 对象提供 `getFileAsync()` 方法，用于下载运行加载项的 Excel 文件。 
+- [Document](http://dev.office.com/reference/add-ins/shared/document)：**Document** 对象提供 `getFileAsync()` 方法，用于下载运行加载项的 Excel 文件。 
 
 ## <a name="requirement-sets"></a>要求集
 
-要求集是指各组已命名的 API 成员。 Office 加载项可以执行运行时检查或使用清单中指定的要求集确定 Office 主机是否支持加载项所需的 API。 要确定每个受支持平台上可用的具体要求集，请参阅 [Excel JavaScript API 要求集](../../reference/requirement-sets/excel-api-requirement-sets.md)。
+要求集是指各组已命名的 API 成员。 Office 加载项可以执行运行时检查或使用清单中指定的要求集确定 Office 主机是否支持加载项所需的 API。 要确定每个受支持平台上可用的具体要求集，请参阅 [Excel JavaScript API 要求集](http://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets)。
 
 ### <a name="checking-for-requirement-set-support-at-runtime"></a>在运行时检查要求集支持
 
@@ -35,7 +35,7 @@ else {
 
 ### <a name="defining-requirement-set-support-in-the-manifest"></a>在清单中定义要求集支持
 
-可以在加载项清单中使用[要求元素](../../reference/manifest/requirements.md)指定加载项要求激活的最小要求集和/或 API 方法。 如果 Office 主机或平台不支持清单的 **Requirements** 元素中指定的要求集或 API 方法，该加载项不会在该主机或平台中运行，而且不会显示在“我的加载项”****中显示的加载项列表中。 
+可以在加载项清单中使用[要求元素](http://dev.office.com/reference/add-ins/manifest/requirements)指定加载项要求激活的最小要求集和/或 API 方法。 如果 Office 主机或平台不支持清单的 **Requirements** 元素中指定的要求集或 API 方法，该加载项不会在该主机或平台中运行，而且不会显示在“我的加载项”****中显示的加载项列表中。 
 
 以下代码示例显示加载项清单中的 **Requirements** 元素，该元素指定应在支持 ExcelApi 要求集版本 1.3 或更高版本的所有 Office 主机应用程序中加载该加载项。
 
@@ -51,7 +51,7 @@ else {
 
 ### <a name="requirement-sets-for-the-officejs-common-api"></a>Office.js 公用 API 的要求集
 
-有关公用 API 要求集的信息，请参阅 [Office 公用 API 要求集](../../reference/requirement-sets/office-add-in-requirement-sets.md)。
+有关公用 API 要求集的信息，请参阅 [Office 公用 API 要求集](http://dev.office.com/reference/add-ins/requirement-sets/office-add-in-requirement-sets)。
 
 ## <a name="loading-the-properties-of-an-object"></a>加载对象的属性
 
@@ -131,7 +131,7 @@ myWorksheets.load({
 
 ## <a name="scalar-and-navigation-properties"></a>标量和导航属性 
 
-在 Excel JavaScript API 参考文档中，你可能会注意到，对象成员分为两类：**属性**和**关系**。 对象的属性是一个标量成员（如字符串、整数或布尔值），而对象的关系（也称为“导航属性”）是一个对象/对象集合成员。 例如，[Worksheet](../../reference/excel/worksheet.md) 对象中的 `name` 和 `position` 成员是标量属性，而 `protection` 和 `tables` 是关系（导航属性）。 
+在 Excel JavaScript API 参考文档中，你可能会注意到，对象成员分为两类：**属性**和**关系**。 对象的属性是一个标量成员（如字符串、整数或布尔值），而对象的关系（也称为“导航属性”）是一个对象/对象集合成员。 例如，[Worksheet](http://dev.office.com/reference/add-ins/excel/worksheet) 对象中的 `name` 和 `position` 成员是标量属性，而 `protection` 和 `tables` 是关系（导航属性）。 
 
 ### <a name="scalar-properties-and-navigation-properties-with-objectload"></a>使用 `object.load()` 的标量属性和导航属性
 
@@ -221,4 +221,4 @@ dataSheet.position = 1;
  
 * [Excel JavaScript API 核心概念](excel-add-ins-core-concepts.md)
 * [Excel 加载项代码示例](http://dev.office.com/code-samples#?filters=excel,office%20add-ins)
-* [Excel JavaScript API 参考](../../reference/excel/excel-add-ins-reference-overview.md)
+* [Excel JavaScript API 参考](http://dev.office.com/reference/add-ins/excel/excel-add-ins-reference-overview)

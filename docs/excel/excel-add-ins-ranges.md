@@ -1,6 +1,6 @@
 # <a name="work-with-ranges-using-the-excel-javascript-api"></a>使用 Excel JavaScript API 对区域执行操作
 
-本文提供了代码示例，介绍如何使用 Excel JavaScript API 对区域执行常见任务。 有关 **Range** 对象支持的属性和方法的完整列表，请参阅 [Range 对象 (Excel JavaScript API)](../../reference/excel/range.md)。
+本文提供了代码示例，介绍如何使用 Excel JavaScript API 对区域执行常见任务。 有关 **Range** 对象支持的属性和方法的完整列表，请参阅 [Range 对象 (Excel JavaScript API)](http://dev.office.com/reference/add-ins/excel/range)。
 
 ## <a name="get-a-range"></a>获取区域
 
@@ -527,4 +527,4 @@ Excel.run(function (context) {
 ## <a name="additional-resources"></a>其他资源
 
 - [Excel JavaScript API 核心概念](excel-add-ins-core-concepts.md)
-- [Range 对象 (Excel JavaScript API)](../../reference/excel/range.md)
+- [Range 对象 (Excel JavaScript API)](http://dev.office.com/reference/add-ins/excel/range)

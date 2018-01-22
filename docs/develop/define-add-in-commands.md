@@ -1,6 +1,6 @@
 # <a name="define-add-in-commands-in-your-manifest"></a>在清单中定义外接程序命令
 
-外接程序命令提供了一种简单方法可以使用执行操作的 UI 元素来自定义默认的 Office UI。例如，可以在功能区上添加自定义按钮。若要创建命令，可以向现有清单添加 **[VersionOverrides](../../reference/manifest/versionoverrides.md)** 节点。 
+外接程序命令提供了一种简单方法可以使用执行操作的 UI 元素来自定义默认的 Office UI。例如，可以在功能区上添加自定义按钮。若要创建命令，可以向现有清单添加 **[VersionOverrides](http://dev.office.com/reference/add-ins/manifest/versionoverrides)** 节点。 
 
 当清单中包含 **VersionOverrides** 元素时，支持外接程序命令的 Word、Excel、Outlook 和 PowerPoint 版本将使用该元素内的信息加载外接程序。不支持外接程序命令的早期版本的 Office 产品将忽略此元素。
 
@@ -8,7 +8,7 @@
  
 ## <a name="versionoverrides"></a>VersionOverrides
 
-[VersionOverrides](../../reference/manifest/versionoverrides.md) 元素是包含由外接程序实施的外接程序命令信息的根元素。它在清单架构 v1.1 和更高版本中受到支持。
+[VersionOverrides](http://dev.office.com/reference/add-ins/manifest/versionoverrides) 元素是包含由外接程序实施的外接程序命令信息的根元素。它在清单架构 v1.1 和更高版本中受到支持。
 
 **VersionOverrides** 架构有两个版本。
 
@@ -21,11 +21,11 @@
 
 **VersionOverrides** 元素包括以下子元素：
 
-- [说明](../../reference/manifest/description.md)
-- [Requirements](../../reference/manifest/requirements.md)
-- [Hosts](../../reference/manifest/hosts.md)
-- [资源](../../reference/manifest/resources.md)
-- [VersionOverrides](../../reference/manifest/versionoverrides.md)
+- [说明](http://dev.office.com/reference/add-ins/manifest/description)
+- [Requirements](http://dev.office.com/reference/add-ins/manifest/requirements)
+- [Hosts](http://dev.office.com/reference/add-ins/manifest/hosts)
+- [资源](http://dev.office.com/reference/add-ins/manifest/resources)
+- [VersionOverrides](http://dev.office.com/reference/add-ins/manifest/versionoverrides)
 
 下图显示了用于定义外接程序命令的元素的层次结构。 
 

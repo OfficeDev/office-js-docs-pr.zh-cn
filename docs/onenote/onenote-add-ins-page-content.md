@@ -16,9 +16,9 @@
 
 然后使用以下对象中的方法处理页面内容，如 Page.addOutline 和 Outline.appendHtml。 
 
-- [Page](../../reference/onenote/page.md)
-- [Outline](../../reference/onenote/outline.md)
-- [Paragraph](../../reference/onenote/paragraph.md)
+- [Page](http://dev.office.com/reference/add-ins/onenote/page)
+- [Outline](http://dev.office.com/reference/add-ins/onenote/outline)
+- [Paragraph](http://dev.office.com/reference/add-ins/onenote/paragraph)
 
 OneNote 页面的内容和结构由 HTML 进行表示。只有一部分 HTML 可用于创建或更新页面内容，如下所述。
 
@@ -44,6 +44,6 @@ OneNote 外接程序 JavaScript API 支持使用以下 HTML 创建和更新页�
 ## <a name="additional-resources"></a>其他资源
 
 - [OneNote JavaScript API 编程概述](onenote-add-ins-programming-overview.md)
-- [OneNote JavaScript API 参考](../../reference/onenote/onenote-add-ins-javascript-reference.md)
+- [OneNote JavaScript API 参考](http://dev.office.com/reference/add-ins/onenote/onenote-add-ins-javascript-reference)
 - [Rubric Grader 示例](https://github.com/OfficeDev/OneNote-Add-in-Rubric-Grader)
 - [Office 外接程序平台概述](https://dev.office.com/docs/add-ins/overview/office-add-ins)

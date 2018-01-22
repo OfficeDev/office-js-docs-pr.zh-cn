@@ -15,15 +15,15 @@ Office 外接程序实质上是运行在浏览器控件的无状态环境中的 
 ## <a name="persisting-add-in-state-and-settings-with-the-javascript-api-for-office"></a>使用适用于 Office 的 JavaScript API 保留加载项状态和设置
 
 
-适用于 Office 的 JavaScript API 为在各个会话中保存外接程序状态提供了 [Settings](../../reference/shared/settings.md)、 [RoamingSettings](../../reference/outlook/RoamingSettings.md) 和 [CustomProperties](../../reference/outlook/CustomProperties.md) 对象，如下表中所述。在所有情况下，保存的设置值仅与创建它们的外接程序 [Id](http://msdn.microsoft.com/en-us/library/67c4344a-935c-09d6-1282-55ee61a2838b%28Office.15%29.aspx) 相关联。
+适用于 Office 的 JavaScript API 为在各个会话中保存外接程序状态提供了 [Settings](http://dev.office.com/reference/add-ins/shared/settings)、 [RoamingSettings](http://dev.office.com/reference/add-ins/outlook/RoamingSettings) 和 [CustomProperties](http://dev.office.com/reference/add-ins/outlook/CustomProperties) 对象，如下表中所述。在所有情况下，保存的设置值仅与创建它们的外接程序 [Id](http://msdn.microsoft.com/en-us/library/67c4344a-935c-09d6-1282-55ee61a2838b%28Office.15%29.aspx) 相关联。
 
 
 
 |**对象**|**外接程序类型支持**|**存储位置**|**Office 主机支持**|
 |:-----|:-----|:-----|:-----|
-|[设置](../../reference/shared/settings.md)|内容和任务窗格|加载项使用的文档、电子表格或演示文稿。内容和任务窗格加载项设置供创建它们的加载项使用，且能从保存它们的文档访问。**重要说明：**不要使用 **Settings** 对象保存密码和其他敏感的个人身份信息 (PII)。保存的数据对最终用户不可见，但它作为文档的一部分存储，可通过直接读取文档的文件格式进行访问。你应限制加载项对 PII 的使用，并仅将加载项所需的任何 PII 存储在将加载项作为用户保护的资源托管的服务器上。|Word、Excel 或 PowerPoint **注意：**Project 2013 的任务窗格外接程序不支持 **Settings** API 存储外接程序状态或设置。但对于在 Project（及其他 Office 主机应用程序）中运行的外接程序，可以使用浏览器 Cookies 或 Web 存储等技术。有关详细信息，请参阅 [Excel-Add-in-JavaScript-PersistCustomSettings](https://github.com/OfficeDev/Excel-Add-in-JavaScript-PersistCustomSettings)。 |
-|[RoamingSettings](../../reference/outlook/RoamingSettings.md)|Outlook|安装了加载项的用户 Exchange 服务器邮箱。由于这些设置存储在用户的服务器邮箱中，因此当加载项运行在任何访问该用户邮箱的受支持客户端主机应用程序或浏览器的上下文中时，这些设置可随用户"漫游"且可供加载项使用。 Outlook 外接程序漫游设置仅供创建它们的外接程序使用，并且只能从安装了外接程序的邮箱使用。|Outlook|
-|[CustomProperties](../../reference/outlook/CustomProperties.md)|Outlook|加载项使用的邮件、约会或会议请求项目。 Outlook 外接程序项目自定义属性仅供创建它们的外接程序使用，并且只能从保存它们的项目使用。|Outlook|
+|[设置](http://dev.office.com/reference/add-ins/shared/settings)|内容和任务窗格|加载项使用的文档、电子表格或演示文稿。内容和任务窗格加载项设置供创建它们的加载项使用，且能从保存它们的文档访问。**重要说明：**不要使用 **Settings** 对象保存密码和其他敏感的个人身份信息 (PII)。保存的数据对最终用户不可见，但它作为文档的一部分存储，可通过直接读取文档的文件格式进行访问。你应限制加载项对 PII 的使用，并仅将加载项所需的任何 PII 存储在将加载项作为用户保护的资源托管的服务器上。|Word、Excel 或 PowerPoint **注意：**Project 2013 的任务窗格外接程序不支持 **Settings** API 存储外接程序状态或设置。但对于在 Project（及其他 Office 主机应用程序）中运行的外接程序，可以使用浏览器 Cookies 或 Web 存储等技术。有关详细信息，请参阅 [Excel-Add-in-JavaScript-PersistCustomSettings](https://github.com/OfficeDev/Excel-Add-in-JavaScript-PersistCustomSettings)。 |
+|[RoamingSettings](http://dev.office.com/reference/add-ins/outlook/RoamingSettings)|Outlook|安装了加载项的用户 Exchange 服务器邮箱。由于这些设置存储在用户的服务器邮箱中，因此当加载项运行在任何访问该用户邮箱的受支持客户端主机应用程序或浏览器的上下文中时，这些设置可随用户"漫游"且可供加载项使用。 Outlook 外接程序漫游设置仅供创建它们的外接程序使用，并且只能从安装了外接程序的邮箱使用。|Outlook|
+|[CustomProperties](http://dev.office.com/reference/add-ins/outlook/CustomProperties)|Outlook|加载项使用的邮件、约会或会议请求项目。 Outlook 外接程序项目自定义属性仅供创建它们的外接程序使用，并且只能从保存它们的项目使用。|Outlook|
 
 ## <a name="settings-data-is-managed-in-memory-at-runtime"></a>运行时设置数据在内存中托管
 
@@ -52,9 +52,9 @@ Office 外接程序实质上是运行在浏览器控件的无状态环境中的 
 ## <a name="how-to-save-add-in-state-and-settings-per-document-for-content-and-task-pane-add-ins"></a>如何按文档保留内容和任务窗格加载项的加载项状态和设置
 
 
-要保留 Word、Excel 或 PowerPoint 的内容或任务窗格加载项的状态或自定义设置，可使用 [Settings](../../reference/shared/settings.md) 对象及其方法。使用 **Settings** 对象的方法创建的属性包仅供创建它的内容或任务窗格加载项的实例使用，并且只能从保存它的文档使用。
+要保留 Word、Excel 或 PowerPoint 的内容或任务窗格加载项的状态或自定义设置，可使用 [Settings](http://dev.office.com/reference/add-ins/shared/settings) 对象及其方法。使用 **Settings** 对象的方法创建的属性包仅供创建它的内容或任务窗格加载项的实例使用，并且只能从保存它的文档使用。
 
-**Settings** 对象自动加载为 [Document](../../reference/shared/document.md) 对象的一部分，并在任务窗格或内容加载项激活时可用。实例化 **Document** 对象后，你可以使用 **Document** 对象的 [settings ](../../reference/shared/document.settings.md)属性访问 **Settings** 对象。在该会话的生命周期中，你只能使用 **Settings.get**、**Settings.set** 和 **Settings.remove** 方法从属性包的内存副本中读取、写入或删除保留的设置和加载项状态。
+**Settings** 对象自动加载为 [Document](http://dev.office.com/reference/add-ins/shared/document) 对象的一部分，并在任务窗格或内容加载项激活时可用。实例化 **Document** 对象后，你可以使用 **Document** 对象的 [settings ](../../reference/shared/document.settings.md)属性访问 **Settings** 对象。在该会话的生命周期中，你只能使用 **Settings.get**、**Settings.set** 和 **Settings.remove** 方法从属性包的内存副本中读取、写入或删除保留的设置和加载项状态。
 
 由于 set 和 remove 方法仅针对设置属性包的内存副本，若要将新的或更改的设置保存回加载项关联的文档，必须调用 [Settings.saveAsync](../../reference/shared/settings.saveasync.md) 方法。
 
@@ -125,7 +125,7 @@ function write(message){
 ## <a name="how-to-save-settings-in-the-users-mailbox-for-outlook-add-ins-as-roaming-settings"></a>如何将 Outlook 外接程序用户邮箱中的设置保存为漫游设置
 
 
-Outlook 外接程序可以使用 [RoamingSettings](../../reference/outlook/RoamingSettings.md) 对象保存特定于用户邮箱的外接程序状态和设置数据。此数据只能由该 Outlook 外接程序代表运行外接程序的用户访问。此数据存储在用户的 Exchange Server 邮箱上，并可供该用户登录其帐户并运行 Outlook 外接程序时访问。
+Outlook 外接程序可以使用 [RoamingSettings](http://dev.office.com/reference/add-ins/outlook/RoamingSettings) 对象保存特定于用户邮箱的外接程序状态和设置数据。此数据只能由该 Outlook 外接程序代表运行外接程序的用户访问。此数据存储在用户的 Exchange Server 邮箱上，并可供该用户登录其帐户并运行 Outlook 外接程序时访问。
 
 
 ### <a name="loading-roaming-settings"></a>加载漫游设置
@@ -155,7 +155,7 @@ Office.initialize = function (reason) {
 ### <a name="creating-or-assigning-a-roaming-setting"></a>创建或分配漫游设置
 
 
-紧接着前面的示例，下面的  `setAppSetting` 函数演示如何使用 [RoamingSettings.set](../../reference/outlook/RoamingSettings.md) 方法通过当天的日期设置或更新名为 `cookie` 的设置。然后使用 [RoamingSettings.saveAsync](../../reference/outlook/RoamingSettings.md) 方法将所有漫游设置保存回 Exchange Server。
+紧接着前面的示例，下面的  `setAppSetting` 函数演示如何使用 [RoamingSettings.set](http://dev.office.com/reference/add-ins/outlook/RoamingSettings) 方法通过当天的日期设置或更新名为 `cookie` 的设置。然后使用 [RoamingSettings.saveAsync](http://dev.office.com/reference/add-ins/outlook/RoamingSettings) 方法将所有漫游设置保存回 Exchange Server。
 
 
 ```
@@ -173,13 +173,13 @@ function saveMyAppSettingsCallback(asyncResult) {
 }
 ```
 
-**saveAsync** 方法可异步保存漫游设置，并采用一个可选的回调函数。此代码示例将名为 `saveMyAppSettingsCallback` 的回调函数传递到 **saveAsync** 方法。异步调用返回时，`saveMyAppSettingsCallback` 函数的 _asyncResult_ 参数提供对 [AsyncResult](../../reference/outlook/simple-types.md) 对象的访问权限，该对象用于确定通过 **AsyncResult.status** 属性的操作是成功还是失败。
+**saveAsync** 方法可异步保存漫游设置，并采用一个可选的回调函数。此代码示例将名为 `saveMyAppSettingsCallback` 的回调函数传递到 **saveAsync** 方法。异步调用返回时，`saveMyAppSettingsCallback` 函数的 _asyncResult_ 参数提供对 [AsyncResult](http://dev.office.com/reference/add-ins/outlook/simple-types) 对象的访问权限，该对象用于确定通过 **AsyncResult.status** 属性的操作是成功还是失败。
 
 
 ### <a name="removing-a-roaming-setting"></a>删除漫游设置
 
 
-进一步展开前面的示例，以下  `removeAppSetting` 函数演示了如何使用 [RoamingSettings.remove](../../reference/outlook/RoamingSettings.md) 方法删除 `cookie` 设置并将所有漫游设置保存回 Exchange Server。
+进一步展开前面的示例，以下  `removeAppSetting` 函数演示了如何使用 [RoamingSettings.remove](http://dev.office.com/reference/add-ins/outlook/RoamingSettings) 方法删除 `cookie` 设置并将所有漫游设置保存回 Exchange Server。
 
 
 ```
@@ -197,7 +197,7 @@ function removeAppSetting()
 
 自定义属性允许 Outlook 外接程序存储其使用的有关项目的信息。例如，如果 Outlook 外接程序根据邮件中的会议建议创建约会，则可以使用自定义属性存储创建了会议的事实。这确保了如果再次打开邮件，Outlook 外接程序不再可供创建约会。
 
-在您将自定义属性用于特定邮件、约会或会议请求项目之前，必须通过调用  [Item](../../reference/outlook/Office.context.mailbox.item.md) 对象的 **loadCustomPropertiesAsync** 方法将属性加载到内存中。如果为当前项目设置了任何自定义属性，此时会从 Exchanger Server 加载这些属性。在您加载了属性以后，可以使用 [CustomProperties](../../reference/outlook/CustomProperties.md) 对象的 [set](../../reference/outlook/RoamingSettings.md) 和 **get** 方法添加、更新和检索内存中的属性。要保存对于项目的自定义属性所做的任何更改，必须使用 [saveAsync](../../reference/outlook/CustomProperties.md) 方法在 Exchanger Server上保留对项目所做的更改。
+在您将自定义属性用于特定邮件、约会或会议请求项目之前，必须通过调用  [Item](../../reference/outlook/Office.context.mailbox.item.md) 对象的 **loadCustomPropertiesAsync** 方法将属性加载到内存中。如果为当前项目设置了任何自定义属性，此时会从 Exchanger Server 加载这些属性。在您加载了属性以后，可以使用 [CustomProperties](http://dev.office.com/reference/add-ins/outlook/CustomProperties) 对象的 [set](http://dev.office.com/reference/add-ins/outlook/RoamingSettings) 和 **get** 方法添加、更新和检索内存中的属性。要保存对于项目的自定义属性所做的任何更改，必须使用 [saveAsync](http://dev.office.com/reference/add-ins/outlook/CustomProperties) 方法在 Exchanger Server上保留对项目所做的更改。
 
 
 ### <a name="custom-properties-example"></a>自定义属性示例

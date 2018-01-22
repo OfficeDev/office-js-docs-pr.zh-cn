@@ -27,7 +27,7 @@
 
     在 Excel 中，任何连续的单元格选区都可用于建立矩阵绑定。在 Word 中，只有表格支持矩阵绑定。
 
-3. **[表格绑定][TableBinding]** - 绑定到包含带标题的表格的文档区域。表格绑定中的数据作为 [TableData](../../reference/shared/tabledata.md) 对象写入或读取。`TableData` 对象通过 `headers` 和 `rows` 属性公开数据。
+3. **[表格绑定][TableBinding]** - 绑定到包含带标题的表格的文档区域。表格绑定中的数据作为 [TableData](http://dev.office.com/reference/add-ins/shared/tabledata) 对象写入或读取。`TableData` 对象通过 `headers` 和 `rows` 属性公开数据。
 
     任何 Excel 或 Word 表格均可作为表格绑定的基础。建立表格绑定后，用户添加到表格中的每个新行或新列都自动包含在绑定中。
 
