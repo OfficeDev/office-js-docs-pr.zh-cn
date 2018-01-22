@@ -6,7 +6,7 @@
 - 外接程序内容
 - 品牌元素（可选）
 
-![内容外接程序、内容和命令栏的布局](../../../images/layouts_content_v0.02.png)
+![内容外接程序、内容和命令栏的布局](../../images/layouts_content_v0.02.png)
 
 你还可以向内容外接程序添加[基于 HTML 的自定义 UI](ui-elements.md#custom-HTML-based-UI)。
 

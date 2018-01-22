@@ -7,7 +7,7 @@
 - 外接程序内容
 - 品牌元素（可选）
 
-![任务窗格的布局，显示品牌、导航和内容元素](../../../images/layouts_taskpane_v0.02.png)
+![任务窗格的布局，显示品牌、导航和内容元素](../../images/layouts_taskpane_v0.02.png)
 
 你还可以向任务窗格添加[基于 HTML 的自定义 UI](ui-elements.md#custom-HTML-based-UI)。
 

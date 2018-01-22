@@ -8,13 +8,13 @@
 ## <a name="add-in-commands"></a>外接程序命令
 命令在[外接程序 XML 清单](../../../docs/develop/define-add-in-commands.md)中定义，并作为本机 UX 扩展向 Office UI 呈现。例如，您可以使用外接程序命令将按钮添加到 Office 功能区。 
 
-![显式外接程序命令以及外接程序中的自定义 HTML UI 元素的图片](../../../images/layouts_addInCommands_v0.03.png)
+![显式外接程序命令以及外接程序中的自定义 HTML UI 元素的图片](../../images/layouts_addInCommands_v0.03.png)
 
 目前，仅邮件外接程序支持外接程序命令。有关详细信息，请参阅[邮件外接程序命令](../../outlook/add-in-commands-for-outlook.md)。 
 
 Excel、PowerPoint 和 Word 已在 Office 功能区的“插入”选项卡上预定义了任务窗格和内容外接程序的入口点。内容和任务窗格外接程序的自定义命令功能将很快提供。 
 
-![显示 Word 功能区上的“插入”选项卡的图片](../../../images/Word-insert-tab.png)
+![显示 Word 功能区上的“插入”选项卡的图片](../../images/Word-insert-tab.png)
 
 ## <a name="custom-html-based-ui"></a>基于 HTML 的自定义 UI
 外接程序可以在 Office 客户端内嵌入基于 HTML 的自定义 UI。可用于显示 UI 的容器因外接程序类型而异。例如，任务窗格外接程序在文档的右窗格中显示基于 HTML 的自定义 UI，内容外接程序直接在 Office 文档内显示自定义 UI。

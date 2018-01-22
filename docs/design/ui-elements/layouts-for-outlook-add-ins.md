@@ -16,7 +16,7 @@
 
 下图显示了 [上下文邮件外接程序](https://msdn.microsoft.com/EN-US/library/office/dn893542.aspx) 的建议布局。
 
-![上下文邮件外接程序的布局](../../../images/mail-add-in-contextual-card.png)
+![上下文邮件外接程序的布局](../../images/mail-add-in-contextual-card.png)
 
 ##<a name="functions-with-infobar-notifications"></a>功能与信息栏通知
 
