@@ -544,13 +544,13 @@ a:hover, a:active
 从此实现中调用的 JavaScript API for Office (Office.js) 的主要成员如下：
 
 
-- **Office** 对象的 [initialize](../../reference/shared/office.initialize.md) 事件，该事件在初始化外接程序上下文时引发，并提供对 [Document](http://dev.office.com/reference/add-ins/shared/document) 对象实例（表示外接程序与之交互的文档）的访问权限。
+- **Office** 对象的 [initialize](http://dev.office.com/reference/add-ins/shared/office.initialize) 事件，该事件在初始化外接程序上下文时引发，并提供对 [Document](http://dev.office.com/reference/add-ins/shared/document) 对象实例（表示外接程序与之交互的文档）的访问权限。
     
-- **Document** 对象的 [addHandlerAsync](../../reference/shared/document.addhandlerasync.md) 方法，在 **initialize** 函数中调用该方法，以便为文档的 [SelectionChanged](../../reference/shared/document.selectionchanged.event.md) 事件添加事件处理程序，从而侦听用户选择更改。
+- **Document** 对象的 [addHandlerAsync](http://dev.office.com/reference/add-ins/shared/document.addhandlerasync) 方法，在 **initialize** 函数中调用该方法，以便为文档的 [SelectionChanged](http://dev.office.com/reference/add-ins/shared/document.selectionchanged.event) 事件添加事件处理程序，从而侦听用户选择更改。
     
-- **Document** 对象的 [getSelectedDataAsync](../../reference/shared/document.getselecteddataasync.md) 方法，在引发 **SelectionChanged** 事件处理程序时会在 `tryUpdatingSelectedWord()` 函数中调用该方法，以获取用户选择的字词或短语，将其强制为纯文本，然后执行 `selectedTextCallback` 异步回调函数。
+- **Document** 对象的 [getSelectedDataAsync](http://dev.office.com/reference/add-ins/shared/document.getselecteddataasync) 方法，在引发 **SelectionChanged** 事件处理程序时会在 `tryUpdatingSelectedWord()` 函数中调用该方法，以获取用户选择的字词或短语，将其强制为纯文本，然后执行 `selectedTextCallback` 异步回调函数。
     
-- 当 `selectTextCallback` 异步回调函数（作为 **getSelectedDataAsync** 方法的 _callback_ 参数传递）执行时，它在回调返回时获取所选文本的值。它通过使用返回的 [AsyncResult](http://dev.office.com/reference/add-ins/shared/asyncresult) 对象的 [value](../../reference/shared/asyncresult.status.md) 属性从回调的 _selectedText_ 参数（类型为 **AsyncResult**）获取该值。
+- 当 `selectTextCallback` 异步回调函数（作为 **getSelectedDataAsync** 方法的 _callback_ 参数传递）执行时，它在回调返回时获取所选文本的值。它通过使用返回的 [AsyncResult](http://dev.office.com/reference/add-ins/shared/asyncresult) 对象的 [value](http://dev.office.com/reference/add-ins/shared/asyncresult.status) 属性从回调的 _selectedText_ 参数（类型为 **AsyncResult**）获取该值。
     
 - `selectedTextCallback` 函数中剩余的代码查询定义的 XML Web 服务。它还调入 Microsoft Translator API，以提供具有所选字词拼音的 .wav 文件的 URL。
     

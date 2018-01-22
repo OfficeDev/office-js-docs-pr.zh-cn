@@ -305,7 +305,7 @@ HelloProjectOData.js 文件的剩余部分包含两个函数：当用户选择�
     }
 ```
 
-2. 添加 **setOdataUrl** 和相关函数。**setOdataUrl** 函数调用 **getProjectGuid** 和 **getDocumentUrl** 以初始化全局变量。在 [getProjectFieldAsync method](../../reference/shared/projectdocument.getprojectfieldasync.md) 中，_callback_ 参数的匿名函数通过使用 jQuery 库中的 **removeAttr** 方法启用“**比较所有项目**”按钮，并显示 **ProjectData** 服务的 URL。如果 Project 未连接 Project Web App，则函数会提示错误，该错误会显示一个弹出错误消息。SurfaceErrors.js 文件中包括 **throwError** 方法。
+2. 添加 **setOdataUrl** 和相关函数。**setOdataUrl** 函数调用 **getProjectGuid** 和 **getDocumentUrl** 以初始化全局变量。在 [getProjectFieldAsync method](http://dev.office.com/reference/add-ins/shared/projectdocument.getprojectfieldasync) 中，_callback_ 参数的匿名函数通过使用 jQuery 库中的 **removeAttr** 方法启用“**比较所有项目**”按钮，并显示 **ProjectData** 服务的 URL。如果 Project 未连接 Project Web App，则函数会提示错误，该错误会显示一个弹出错误消息。SurfaceErrors.js 文件中包括 **throwError** 方法。
     
      >**注意**  如果在装有 Project Server 的计算机上运行 Visual Studio，若要使用 **F5** 调试，请取消注释初始化 **_pwa** 全局变量的行后的代码。若要在装有 Project Server 计算机上进行调试时使用 jQuery **ajax** 方法启用，必须设置 PWA URL 的 **ocalhost** 值。如果在远程计算机上运行 Visual Studio，那么 **localhost** URL 不是必需的。在部署外接程序前，请注释该代码。
 

@@ -17,7 +17,7 @@
 
 ### <a name="13000"></a>13000
 
-加载项或 Office 版本不支持 [getAccessTokenAsync](../../reference/shared/office.context.auth.getAccessTokenAsync.md) API。 
+加载项或 Office 版本不支持 [getAccessTokenAsync](http://dev.office.com/reference/add-ins/shared/office.context.auth.getAccessTokenAsync) API。 
 
 - Office 版本不支持 SSO。 版本必须为 Office 2016 版本 1710（生成号 8629.nnnn）或更高版本（Office 365 订阅版本，有时称为“即点即用版本”）。 可能需要成为 Office 预览体验成员，才能获取此版本。 有关详细信息，请参阅[成为 Office 预览体验成员](https://products.office.com/en-us/office-insider?tab=tab-1)。 
 - 加载项清单缺少适当的 [WebApplicationInfo](http://dev.office.com/reference/add-ins/manifest/webapplicationinfo) 部分。

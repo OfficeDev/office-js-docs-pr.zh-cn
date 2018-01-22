@@ -76,7 +76,7 @@
 
 
 
-- 使用 [Context.touchEnabled](../../reference/shared/office.context.touchenabled.md) 属性检测运行你的外接程序的主机应用程序是否已启用触控。
+- 使用 [Context.touchEnabled](http://dev.office.com/reference/add-ins/shared/office.context.touchenabled) 属性检测运行你的外接程序的主机应用程序是否已启用触控。
 
      >**注意**  该属性在 Outlook 中不受支持。
 - 确保所有控件都相应符合触控交互的尺寸大小。例如，按钮有足够大的触摸目标，且输入框要足够大，方便用户输入。

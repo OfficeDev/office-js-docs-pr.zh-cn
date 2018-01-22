@@ -5,17 +5,17 @@
 您可以使用 [Office JavaScript API](http://dev.office.com/reference/add-ins/javascript-api-for-office) 创建 Office 2013 主机应用程序的任务窗格或内容外接程序。已对内容和任务窗格外接程序支持的对象和方法进行如下分类：
 
 
-1. **与其他 Office 外接程序共享的常见对象。** 这些对象包括 [Office](http://dev.office.com/reference/add-ins/shared/office)、[Context](../../reference/shared/office.context.md) 和 [AsyncResult](http://dev.office.com/reference/add-ins/shared/asyncresult)。**Office** 对象是 Office JavaScript API 的根对象。**Context** 对象表示外接程序的运行时环境。**Office** 和 **Context** 都是适用于任何 Office 外接程序的基础对象。**AsyncResult** 对象表示异步操作的结果，比如返回到 **getSelectedDataAsync** 方法的数据，其中该方法可以读取用户在文档中选择的内容。
+1. **与其他 Office 外接程序共享的常见对象。** 这些对象包括 [Office](http://dev.office.com/reference/add-ins/shared/office)、[Context](http://dev.office.com/reference/add-ins/shared/office.context) 和 [AsyncResult](http://dev.office.com/reference/add-ins/shared/asyncresult)。**Office** 对象是 Office JavaScript API 的根对象。**Context** 对象表示外接程序的运行时环境。**Office** 和 **Context** 都是适用于任何 Office 外接程序的基础对象。**AsyncResult** 对象表示异步操作的结果，比如返回到 **getSelectedDataAsync** 方法的数据，其中该方法可以读取用户在文档中选择的内容。
     
-2.  **Document 对象。** 大部分适用于内容和任务窗格外接程序的 API 通过 [Document](http://dev.office.com/reference/add-ins/shared/document) 对象的方法、属性和事件来公开。内容或任务窗格外接程序可以使用 [Office.context.document](../../reference/shared/office.context.document.md) 属性访问 **Document** 对象，并可以通过它访问可共同使用文档中数据的 API 的主要成员，比如 [Bindings](../../reference/shared/bindings.bindings.md) 和 [CustomXmlParts](../../reference/shared/customxmlparts.customxmlparts.md) 对象、[getSelectedDataAsync](../../reference/shared/document.getselecteddataasync.md)、[setSelectedDataAsync](../../reference/shared/document.setselecteddataasync.md) 和 [getFileAsync](../../reference/shared/document.getfileasync.md) 方法。**Document** 对象还提供用于确定文档是只读模式还是编辑模式的 [mode](../../reference/shared/document.mode.md) 属性，[url](../../reference/shared/document.url.md) 属性可以获取当前文档的 URL，并访问 [Settings](http://dev.office.com/reference/add-ins/shared/settings) 对象。**Document** 对象还支持为 [SelectionChanged](../../reference/shared/document.selectionchanged.event.md) 事件添加事件处理程序，以便当用户在文档中更改自己的选择内容时，您可以检测到。
+2.  **Document 对象。** 大部分适用于内容和任务窗格外接程序的 API 通过 [Document](http://dev.office.com/reference/add-ins/shared/document) 对象的方法、属性和事件来公开。内容或任务窗格外接程序可以使用 [Office.context.document](http://dev.office.com/reference/add-ins/shared/office.context.document) 属性访问 **Document** 对象，并可以通过它访问可共同使用文档中数据的 API 的主要成员，比如 [Bindings](http://dev.office.com/reference/add-ins/shared/bindings.bindings) 和 [CustomXmlParts](http://dev.office.com/reference/add-ins/shared/customxmlparts.customxmlparts) 对象、[getSelectedDataAsync](http://dev.office.com/reference/add-ins/shared/document.getselecteddataasync)、[setSelectedDataAsync](http://dev.office.com/reference/add-ins/shared/document.setselecteddataasync) 和 [getFileAsync](http://dev.office.com/reference/add-ins/shared/document.getfileasync) 方法。**Document** 对象还提供用于确定文档是只读模式还是编辑模式的 [mode](http://dev.office.com/reference/add-ins/shared/document.mode) 属性，[url](http://dev.office.com/reference/add-ins/shared/document.url) 属性可以获取当前文档的 URL，并访问 [Settings](http://dev.office.com/reference/add-ins/shared/settings) 对象。**Document** 对象还支持为 [SelectionChanged](http://dev.office.com/reference/add-ins/shared/document.selectionchanged.event) 事件添加事件处理程序，以便当用户在文档中更改自己的选择内容时，您可以检测到。
     
-   内容或任务窗格外接程序只能在加载 DOM 和运行时环境后访问 **Document** 对象，通常是在 [Office.initialize](../../reference/shared/office.initialize.md) 事件的事件处理程序中加载。有关应用程序初始化时的事件流以及如何检查 DOM 和运行时是否成功加载的信息，请参阅[加载 DOM 和运行时环境](../../docs/develop/loading-the-dom-and-runtime-environment.md)。
+   内容或任务窗格外接程序只能在加载 DOM 和运行时环境后访问 **Document** 对象，通常是在 [Office.initialize](http://dev.office.com/reference/add-ins/shared/office.initialize) 事件的事件处理程序中加载。有关应用程序初始化时的事件流以及如何检查 DOM 和运行时是否成功加载的信息，请参阅[加载 DOM 和运行时环境](../../docs/develop/loading-the-dom-and-runtime-environment.md)。
     
 3.  **使用特定的功能的对象。**若要使用 API 的特定功能，请使用下面的对象和方法：
     
-    - 创建或获取绑定的 [Bindings](../../reference/shared/bindings.bindings.md) 对象的方法，以及使用数据的 [Binding](http://dev.office.com/reference/add-ins/shared/binding) 对象的方法和属性。
+    - 创建或获取绑定的 [Bindings](http://dev.office.com/reference/add-ins/shared/bindings.bindings) 对象的方法，以及使用数据的 [Binding](http://dev.office.com/reference/add-ins/shared/binding) 对象的方法和属性。
     
-    - 创建和操控 Word 文档中自定义的 XML 部件的 [CustomXmlParts](../../reference/shared/customxmlparts.customxmlparts.md)、[CustomXmlPart](../../reference/shared/customxmlpart.customxmlpart.md) 和关联的对象。
+    - 创建和操控 Word 文档中自定义的 XML 部件的 [CustomXmlParts](http://dev.office.com/reference/add-ins/shared/customxmlparts.customxmlparts)、[CustomXmlPart](http://dev.office.com/reference/add-ins/shared/customxmlpart.customxmlpart) 和关联的对象。
     
     - 创建整个文档的副本，将它分解成多个块或“切片”，然后读取或传输这些切片中数据的 [File](http://dev.office.com/reference/add-ins/shared/file) 和 [Slice](http://dev.office.com/reference/add-ins/shared/slice) 对象。
     
@@ -29,7 +29,7 @@
 
 ## <a name="reading-and-writing-to-an-active-selection"></a>在活动的选择内容中读取和写入
 
-您可以在文档、电子表格或演示文稿的用户当前选定内容中读取和写入。根据加载项的主机应用程序，您可以在 [Document](../../reference/shared/document.getselecteddataasync.md) 对象的 [getSelectedDataAsync](../../reference/shared/document.setselecteddataasync.md) 和 [setSelectedDataAsync](http://dev.office.com/reference/add-ins/shared/document) 方法中指定要作为参数来读取或写入的数据结构类型。例如，您可以指定任何用于 Word 的数据类型（文本、HTML、表格数据或 Office Open XML）、用于 Excel 的文本和表格数据，以及用于 PowerPoint 和 Project 的文本。您还可以创建事件处理程序来检测对用户选择内容的更改。以下示例使用 **getSelectedDataAsync** 方法从作为文本的选择内容中获取数据。
+您可以在文档、电子表格或演示文稿的用户当前选定内容中读取和写入。根据加载项的主机应用程序，您可以在 [Document](http://dev.office.com/reference/add-ins/shared/document.getselecteddataasync) 对象的 [getSelectedDataAsync](http://dev.office.com/reference/add-ins/shared/document.setselecteddataasync) 和 [setSelectedDataAsync](http://dev.office.com/reference/add-ins/shared/document) 方法中指定要作为参数来读取或写入的数据结构类型。例如，您可以指定任何用于 Word 的数据类型（文本、HTML、表格数据或 Office Open XML）、用于 Excel 的文本和表格数据，以及用于 PowerPoint 和 Project 的文本。您还可以创建事件处理程序来检测对用户选择内容的更改。以下示例使用 **getSelectedDataAsync** 方法从作为文本的选择内容中获取数据。
 
 
 ```js
@@ -57,7 +57,7 @@ function write(message){
 
 您可以使用 **getSelectedDataAsync** 和 **setSelectedDataAsync** 方法在文档、电子表格或演示文稿中的用户*当前*选定内容中读取和写入。但是，如果您想在不要求用户选定内容的情况下，在运行您外接程序的各个会话中访问文档中的同一区域，您应首先绑定到该区域。您还可以订阅该绑定区域的数据和选定内容更改事件。
 
-可以使用 [Bindings](../../reference/shared/bindings.addfromnameditemasync.md) 对象的 [addFromNamedItemAsync](../../reference/shared/bindings.addfrompromptasync.md)、[addFromPromptAsync](../../reference/shared/bindings.addfromselectionasync.md) 或 [addFromSelectionAsync](../../reference/shared/bindings.bindings.md) 方法添加绑定。这些方法可以返回一个标识符，您可以用它访问绑定中的数据或者订阅数据更改或选择更改事件。
+可以使用 [Bindings](http://dev.office.com/reference/add-ins/shared/bindings.addfromnameditemasync) 对象的 [addFromNamedItemAsync](http://dev.office.com/reference/add-ins/shared/bindings.addfrompromptasync)、[addFromPromptAsync](http://dev.office.com/reference/add-ins/shared/bindings.addfromselectionasync) 或 [addFromSelectionAsync](http://dev.office.com/reference/add-ins/shared/bindings.bindings) 方法添加绑定。这些方法可以返回一个标识符，您可以用它访问绑定中的数据或者订阅数据更改或选择更改事件。
 
 以下是使用 **Bindings.addFromSelectionAsync** 方法添加绑定到文档中当前选定文本的示例。
 
@@ -85,22 +85,22 @@ function write(message){
 
 ## <a name="getting-entire-documents"></a>获取整个文档
 
-如果任务窗格外接程序在 PowerPoint 或 Word 中运行，您可以使用 [Document.getFileAsync](../../reference/shared/document.getfileasync.md)、[File.getSliceAsync](../../reference/shared/file.getsliceasync.md) 和 [File.closeAsync](../../reference/shared/file.closeasync.md) 方法获取整个演示文稿或文档。
+如果任务窗格外接程序在 PowerPoint 或 Word 中运行，您可以使用 [Document.getFileAsync](http://dev.office.com/reference/add-ins/shared/document.getfileasync)、[File.getSliceAsync](http://dev.office.com/reference/add-ins/shared/file.getsliceasync) 和 [File.closeAsync](http://dev.office.com/reference/add-ins/shared/file.closeasync) 方法获取整个演示文稿或文档。
 
-您在调用 **Document.getFileAsync** 时，获取了 [File](http://dev.office.com/reference/add-ins/shared/file) 对象中的文档副本。**File** 对象提供对表示为 [Slice](http://dev.office.com/reference/add-ins/shared/document) 对象的“块”中文档的访问。当调用 **getFileAsync** 时，您可以指定文件类型（文本或压缩的 Open Office XML 格式）和切片的大小（高达 4MB）。若要访问 **File** 对象的内容，您可以调用在 **Slice.data** 属性中返回原始数据的 [File.getSliceAsync](../../reference/shared/slice.data.md)。如果您指定了压缩格式，则获取作为字节数组的文件数据。如果您在将文件传输给 Web 服务，则可以在提交前将压缩的原始数据转换为 base64 编码的字符串。最后，在完成获取文件切片后，使用 **File.closeAsync** 方法关闭文档。
+您在调用 **Document.getFileAsync** 时，获取了 [File](http://dev.office.com/reference/add-ins/shared/file) 对象中的文档副本。**File** 对象提供对表示为 [Slice](http://dev.office.com/reference/add-ins/shared/document) 对象的“块”中文档的访问。当调用 **getFileAsync** 时，您可以指定文件类型（文本或压缩的 Open Office XML 格式）和切片的大小（高达 4MB）。若要访问 **File** 对象的内容，您可以调用在 **Slice.data** 属性中返回原始数据的 [File.getSliceAsync](http://dev.office.com/reference/add-ins/shared/slice.data)。如果您指定了压缩格式，则获取作为字节数组的文件数据。如果您在将文件传输给 Web 服务，则可以在提交前将压缩的原始数据转换为 base64 编码的字符串。最后，在完成获取文件切片后，使用 **File.closeAsync** 方法关闭文档。
 
 有关详细信息，请参阅如何[从 PowerPoint 或 Word 外接程序中获取整个文档](../../docs/develop/get-the-whole-document-from-an-add-in-for-powerpoint-or-word.md)。 
 
 
 ## <a name="reading-and-writing-custom-xml-parts-of-a-word-document"></a>读取和写入 Word 文档的自定义 XML 部件
 
-通过使用 Open Office XML 文件格式和内容控件，您可以将自定义 XML 部件添加到 Word 文档，并将 XML 部件中的元素绑定到文档的内容控件。打开文档时，Word 读取并自动使用自定义 XML 部件中的数据填充绑定的内容控件。用户还可以将数据写入内容控件，且在用户保存文档时，控件中的数据也将保存到绑定的 XML 部件。适用于 Word 的任务窗格外接程序可以使用 [Document.customXmlParts](../../reference/shared/document.customxmlparts.md) 属性、[CustomXmlParts](../../reference/shared/customxmlparts.customxmlparts.md)、[CustomXmlPart](../../reference/shared/customxmlpart.customxmlpart.md) 和 [CustomXmlNode](../../reference/shared/customxmlnode.customxmlnode.md) 对象来动态读取文档中的数据和将数据写入文档中。
+通过使用 Open Office XML 文件格式和内容控件，您可以将自定义 XML 部件添加到 Word 文档，并将 XML 部件中的元素绑定到文档的内容控件。打开文档时，Word 读取并自动使用自定义 XML 部件中的数据填充绑定的内容控件。用户还可以将数据写入内容控件，且在用户保存文档时，控件中的数据也将保存到绑定的 XML 部件。适用于 Word 的任务窗格外接程序可以使用 [Document.customXmlParts](http://dev.office.com/reference/add-ins/shared/document.customxmlparts) 属性、[CustomXmlParts](http://dev.office.com/reference/add-ins/shared/customxmlparts.customxmlparts)、[CustomXmlPart](http://dev.office.com/reference/add-ins/shared/customxmlpart.customxmlpart) 和 [CustomXmlNode](http://dev.office.com/reference/add-ins/shared/customxmlnode.customxmlnode) 对象来动态读取文档中的数据和将数据写入文档中。
 
-自定义 XML 部件可能与命名空间相关联。若要从命名空间的自定义 XML 部件获取数据，请使用 [CustomXmlParts.getByNamespaceAsync](../../reference/shared/customxmlparts.getbynamespaceasync.md) 方法。
+自定义 XML 部件可能与命名空间相关联。若要从命名空间的自定义 XML 部件获取数据，请使用 [CustomXmlParts.getByNamespaceAsync](http://dev.office.com/reference/add-ins/shared/customxmlparts.getbynamespaceasync) 方法。
 
-您还可以使用 [CustomXmlParts.getByIdAsync](../../reference/shared/customxmlparts.getbyidasync.md) 方法通过其 GUID 访问自定义 XML 部件。在获取自定义 XML 部件后，使用 [CustomXmlPart.getXmlAsync](../../reference/shared/customxmlpart.getxmlasync.md) 方法获取 XML 数据。
+您还可以使用 [CustomXmlParts.getByIdAsync](http://dev.office.com/reference/add-ins/shared/customxmlparts.getbyidasync) 方法通过其 GUID 访问自定义 XML 部件。在获取自定义 XML 部件后，使用 [CustomXmlPart.getXmlAsync](http://dev.office.com/reference/add-ins/shared/customxmlpart.getxmlasync) 方法获取 XML 数据。
 
-若要将新的自定义 XML 部件添加到文档，请使用 **Document.customXmlParts** 属性获取文档中的自定义 XML 部件，并调用 [CustomXmlParts.addAsync](../../reference/shared/customxmlparts.addasync.md) 方法。
+若要将新的自定义 XML 部件添加到文档，请使用 **Document.customXmlParts** 属性获取文档中的自定义 XML 部件，并调用 [CustomXmlParts.addAsync](http://dev.office.com/reference/add-ins/shared/customxmlparts.addasync) 方法。
 
 有关如何使用含有任务窗格外接程序的自定义 XML 部件的详细信息，请参阅[使用 Office Open XML 创建更好的 Word 外接程序](../../docs/word/create-better-add-ins-for-word-with-office-open-xml.md)。
 
@@ -110,7 +110,7 @@ function write(message){
 
 通常需要保存外接程序的自定义数据，例如用户的首选项或外接程序的状态，并在下一次打开外接程序时访问该数据。可以使用通用的 Web 编程技术保存该数据，例如浏览器 cookie 或 HTML 5 Web 存储。或者，如果你的外接程序在 Excel、PowerPoint 或 Word 中运行，则可以使用 [设置](http://dev.office.com/reference/add-ins/shared/settings) 对象的方法。使用**设置**对象创建的数据存储在电子表格、演示文档或植入和保存外接程序的文档中。此数据仅用于创建它的外接程序。
 
-为了避免往返于存储文档的服务器，使用 **Settings** 对象创建的数据运行时在内存中进行管理。之前保存的设置数据在初始化外接程序时加载到内存中，并在调用 [Settings.saveAsync](../../reference/shared/settings.saveasync.md) 方法时，仅将对数据的更改保存回文档。在内部，将该数据作为名称/值对存储在序列化的 JSON 对象中。可以使用 [Settings](../../reference/shared/settings.get.md) 对象的 [get](../../reference/shared/settings.set.md)、[set](../../reference/shared/settings.removehandlerasync.md) 和 **remove** 方法从数据的内存副本中读取、写入和删除项目。以下代码行显示如何创建名为 `themeColor` 的设置，并将它的值设置为“green”。
+为了避免往返于存储文档的服务器，使用 **Settings** 对象创建的数据运行时在内存中进行管理。之前保存的设置数据在初始化外接程序时加载到内存中，并在调用 [Settings.saveAsync](http://dev.office.com/reference/add-ins/shared/settings.saveasync) 方法时，仅将对数据的更改保存回文档。在内部，将该数据作为名称/值对存储在序列化的 JSON 对象中。可以使用 [Settings](http://dev.office.com/reference/add-ins/shared/settings.get) 对象的 [get](http://dev.office.com/reference/add-ins/shared/settings.set)、[set](http://dev.office.com/reference/add-ins/shared/settings.removehandlerasync) 和 **remove** 方法从数据的内存副本中读取、写入和删除项目。以下代码行显示如何创建名为 `themeColor` 的设置，并将它的值设置为“green”。
 
 
 
@@ -126,7 +126,7 @@ Office.context.document.settings.set('themeColor', 'green');
 
 ## <a name="reading-properties-of-a-project-document"></a>读取项目文档的属性
 
-如果您的任务窗格外接程序在 Project 中运行，则它可以从活动项目的某些项目字段、资源和任务字段中读取数据。为此，可以使用将 [Document](../../reference/shared/projectdocument.projectdocument.md) 对象扩展为提供其他特定于 Project 功能的 **ProjectDocument** 对象的方法和事件。
+如果您的任务窗格外接程序在 Project 中运行，则它可以从活动项目的某些项目字段、资源和任务字段中读取数据。为此，可以使用将 [Document](http://dev.office.com/reference/add-ins/shared/projectdocument.projectdocument) 对象扩展为提供其他特定于 Project 功能的 **ProjectDocument** 对象的方法和事件。
 
 有关读取 Project 数据的示例，请参阅[使用文本编辑器创建您第一个用于 Project 2013 的任务窗格外接程序](../../docs/project/create-your-first-task-pane-add-in-for-project-by-using-a-text-editor.md)。
 

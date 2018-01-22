@@ -3,7 +3,7 @@
 
 为什么 Office 外接程序 API 使用异步编程？因为 JavaScript 是单线程语言，如果脚本调用长时间运行的同步进程，则会阻止所有后续脚本执行，直至该进程完成。针对 Office Web 客户端（但也包括富客户端）执行的操作在同步运行时会阻止执行，因此适用于 Office 的 JavaScript API 中的大多数方法都适于异步执行。这就确保了 Office 外接程序可以做出响应并且性能很高。使用这些异步方法时，也通常会要求您编写回调函数。
 
-API 中所有这些异步方法的名称均以“Async”结尾，如 [Document.getSelectedDataAsync](../../reference/shared/document.getselecteddataasync.md)、[Binding.getDataAsync](../../reference/shared/binding.getdataasync.md) 或 [Item.loadCustomPropertiesAsync](../../reference/outlook/Office.context.mailbox.item.md) 方法。调用某个“Async”方法时，该方法会立即执行，并且任何后续脚本执行都可以继续。传递给“Async”方法的可选回调函数在数据或请求操作准备就绪后便会立即执行。虽然是立即执行，但在它返回之前可能会略有延迟。
+API 中所有这些异步方法的名称均以“Async”结尾，如 [Document.getSelectedDataAsync](http://dev.office.com/reference/add-ins/shared/document.getselecteddataasync)、[Binding.getDataAsync](http://dev.office.com/reference/add-ins/shared/binding.getdataasync) 或 [Item.loadCustomPropertiesAsync](http://dev.office.com/reference/add-ins/outlook/Office.context.mailbox.item) 方法。调用某个“Async”方法时，该方法会立即执行，并且任何后续脚本执行都可以继续。传递给“Async”方法的可选回调函数在数据或请求操作准备就绪后便会立即执行。虽然是立即执行，但在它返回之前可能会略有延迟。
 
 下图显示了一个调用"Async"方法的执行流，该方法可读取用户在基于服务器的 Word Online 或 Excel Online 中打开的文档中选择的数据。"Async"调用开始时，JavaScript 执行线程空闲，可以执行任何额外的客户端处理。（但图中没有显示。）当"Async"方法返回时，回调在线程上恢复执行，外接程序可以访问数据、处理数据并显示结果。当使用 Office 富客户端主机应用程序（如，Word 2013 或 Excel 2013）时，可保持同样的异步执行模式。
 
@@ -29,7 +29,7 @@ API 中所有这些异步方法的名称均以“Async”结尾，如 [Document.
 
 ### <a name="writing-an-anonymous-callback-function"></a>编写匿名回调函数
 
-以下匿名回调函数声明名为 `result` 的单个参数，该参数用于在回调返回时从 [AsyncResult.value](../../reference/shared/asyncresult.status.md) 属性检索数据。
+以下匿名回调函数声明名为 `result` 的单个参数，该参数用于在回调返回时从 [AsyncResult.value](http://dev.office.com/reference/add-ins/shared/asyncresult.status) 属性检索数据。
 
 
 ```js
@@ -61,7 +61,7 @@ function write(message){
 }
 ```
 
-你也可以使用回调函数的参数访问 **AsyncResult** 对象的其他属性。可以使用 [AsyncResult.status](../../reference/shared/asyncresult.error.md) 属性，以确定调用是成功还是失败。如果调用失败，你可以使用 [AsyncResult.error](../../reference/shared/asyncresult.context.md) 属性访问 [Error](http://dev.office.com/reference/add-ins/shared/error) 对象，以获取错误信息。
+你也可以使用回调函数的参数访问 **AsyncResult** 对象的其他属性。可以使用 [AsyncResult.status](http://dev.office.com/reference/add-ins/shared/asyncresult.error) 属性，以确定调用是成功还是失败。如果调用失败，你可以使用 [AsyncResult.error](http://dev.office.com/reference/add-ins/shared/asyncresult.context) 属性访问 [Error](http://dev.office.com/reference/add-ins/shared/error) 对象，以获取错误信息。
 
 有关使用  **getSelectedDataAsync** 方法的详细信息，请参阅 [在文档或电子表格的活动选择内容中读取和写入数据](../../docs/develop/read-and-write-data-to-the-active-selection-in-a-document-or-spreadsheet.md)。 
 
@@ -92,9 +92,9 @@ function write(message){
 
 **AsyncResult** 对象的 **asyncContext**、**status** 和 **error** 属性将同种类型的信息返回到已传递给所有“Async”方法的回调函数中。但是，返回到 **AsyncResult.value** 属性的内容因“Async”方法的功能不同而不同。
 
-例如，（**Binding**、[CustomXmlPart](http://dev.office.com/reference/add-ins/shared/binding)、[Document](../../reference/shared/customxmlpart.customxmlpart.md)、[RoamingSettings](http://dev.office.com/reference/add-ins/shared/document) 和 [Settings](http://dev.office.com/reference/add-ins/outlook/RoamingSettings) 对象的）[addHandlerAsync](http://dev.office.com/reference/add-ins/shared/settings) 方法用于将事件处理程序函数添加到这些对象表示的项。你可以从传递给任何 **addHandlerAsync** 方法的回调函数访问 **AsyncResult.value** 属性，但由于添加事件处理程序时没有访问任何数据或对象，如果尝试访问 **value** 属性，它始终会返回 **undefined**。
+例如，（**Binding**、[CustomXmlPart](http://dev.office.com/reference/add-ins/shared/binding)、[Document](http://dev.office.com/reference/add-ins/shared/customxmlpart.customxmlpart)、[RoamingSettings](http://dev.office.com/reference/add-ins/shared/document) 和 [Settings](http://dev.office.com/reference/add-ins/outlook/RoamingSettings) 对象的）[addHandlerAsync](http://dev.office.com/reference/add-ins/shared/settings) 方法用于将事件处理程序函数添加到这些对象表示的项。你可以从传递给任何 **addHandlerAsync** 方法的回调函数访问 **AsyncResult.value** 属性，但由于添加事件处理程序时没有访问任何数据或对象，如果尝试访问 **value** 属性，它始终会返回 **undefined**。
 
-另一方面，如果您调用  **Document.getSelectedDataAsync** 方法，则它会将用户在文档中所选的数据返回到回调的 **AsyncResult.value** 属性中。或者，如果您调用 [Bindings.getAllAsync](../../reference/shared/bindings.getallasync.md) 方法，它会返回文档中所有 **Binding** 对象的数组。并且，如果您调用 [Bindings.getByIdAsync](../../reference/shared/bindings.getbyidasync.md) 方法，则返回单个的 **Binding** 对象。
+另一方面，如果您调用  **Document.getSelectedDataAsync** 方法，则它会将用户在文档中所选的数据返回到回调的 **AsyncResult.value** 属性中。或者，如果您调用 [Bindings.getAllAsync](http://dev.office.com/reference/add-ins/shared/bindings.getallasync) 方法，它会返回文档中所有 **Binding** 对象的数组。并且，如果您调用 [Bindings.getByIdAsync](http://dev.office.com/reference/add-ins/shared/bindings.getbyidasync) 方法，则返回单个的 **Binding** 对象。
 
 有关返回到“Async”方法 **AsyncResult.value** 属性的内容的说明，请参阅相关方法参考主题的“回调值”一节。有关所有提供“Async”方法的对象的汇总，请参阅 [AsyncResult](http://dev.office.com/reference/add-ins/shared/asyncresult) 对象主题底部的表格。
 
@@ -122,9 +122,9 @@ function write(message){
 以下代码示例内嵌两个异步调用。 
 
 
-- 首先，调用 [Bindings.getByIdAsync](../../reference/shared/bindings.getbyidasync.md) 方法，以访问名为“MyBinding”的文档中的绑定。返回给该回调的 `result` 参数的 **AsyncResult** 对象会提供对来自 **AsyncResult.value** 属性的指定绑定对象的访问。
+- 首先，调用 [Bindings.getByIdAsync](http://dev.office.com/reference/add-ins/shared/bindings.getbyidasync) 方法，以访问名为“MyBinding”的文档中的绑定。返回给该回调的 `result` 参数的 **AsyncResult** 对象会提供对来自 **AsyncResult.value** 属性的指定绑定对象的访问。
     
-- 然后，从第一个 `result` 参数访问的绑定对象用于调用 [Binding.getDataAsync](../../reference/shared/binding.getdataasync.md) 方法。
+- 然后，从第一个 `result` 参数访问的绑定对象用于调用 [Binding.getDataAsync](http://dev.office.com/reference/add-ins/shared/binding.getdataasync) 方法。
     
 - 最后，传递给  **Binding.getDataAsync** 方法的回调的 `result2` 参数用于显示绑定中的数据。
     
@@ -206,7 +206,7 @@ function write(message){
 
 在继续执行之前，承诺编程模式会立即返回表示其预期结果的承诺对象，而不是传递回调函数并等待函数返回。然而，与真正同步编程不同的是，在 Office 外接程序运行时环境完成请求之前，承诺结果的实现在后台实际上是延迟的。提供 _onError_ 处理程序来覆盖请求无法满足的情况。
 
-适用于 Office 的 JavaScript API 提供了一种 [Office.select](../../reference/shared/office.select.md) 方法，支持承诺模式与现有绑定对象一起使用。返回到 **Office.select** 方法的承诺对象只支持可通过 [Binding](http://dev.office.com/reference/add-ins/shared/binding) 对象直接访问的四种方法：[getDataAsync](../../reference/shared/binding.getdataasync.md)、[setDataAsync](../../reference/shared/binding.setdataasync.md)、[addHandlerAsync](../../reference/shared/asyncresult.value.md) 和 [removeHandlerAsync](../../reference/shared/binding.removehandlerasync.md)。
+适用于 Office 的 JavaScript API 提供了一种 [Office.select](http://dev.office.com/reference/add-ins/shared/office.select) 方法，支持承诺模式与现有绑定对象一起使用。返回到 **Office.select** 方法的承诺对象只支持可通过 [Binding](http://dev.office.com/reference/add-ins/shared/binding) 对象直接访问的四种方法：[getDataAsync](http://dev.office.com/reference/add-ins/shared/binding.getdataasync)、[setDataAsync](http://dev.office.com/reference/add-ins/shared/binding.setdataasync)、[addHandlerAsync](http://dev.office.com/reference/add-ins/shared/asyncresult.value) 和 [removeHandlerAsync](http://dev.office.com/reference/add-ins/shared/binding.removehandlerasync)。
 
 与绑定一起使用的承诺模式采用以下形式：
 
@@ -234,7 +234,7 @@ function write(message){
 
 **Binding** 对象承诺实现后，便可像绑定（加载项运行时不会异步重试实现承诺）那样在链式方法调用中重复使用。如果 **Binding** 对象承诺不能实现，加载项运行时将在下次调用某一异步方法时再次尝试访问绑定对象。
 
-以下代码示例使用 **select** 方法从 **Bindings** 集合检索 **id** 为“`cities`”的绑定，然后调用 [addHandlerAsync](../../reference/shared/asyncresult.value.md) 方法以便为绑定的 [dataChanged](../../reference/shared/binding.bindingdatachangedevent.md) 事件添加事件处理程序。
+以下代码示例使用 **select** 方法从 **Bindings** 集合检索 **id** 为“`cities`”的绑定，然后调用 [addHandlerAsync](http://dev.office.com/reference/add-ins/shared/asyncresult.value) 方法以便为绑定的 [dataChanged](http://dev.office.com/reference/add-ins/shared/binding.bindingdatachangedevent) 事件添加事件处理程序。
 
 
 
@@ -250,7 +250,7 @@ function addBindingDataChangedEventHandler() {
 ```
 
 
- >**重要说明：****Office.select** 方法返回的 **Binding** 对象承诺仅提供对 **Binding** 对象的四种方法的访问权限。如果需要访问 **Binding** 对象的任何其他成员，则必须使用 **Document.bindings** 属性和 **Bindings.getByIdAsync** 或 **Bindings.getAllAsync** 方法检索 **Binding** 对象。例如，如果需要访问 **Binding** 对象的任意一种属性（**document**、**id** 或 **type** 属性）或需要访问 [MatrixBinding](../../reference/shared/binding.matrixbinding.md) 或 [TableBinding](../../reference/shared/binding.tablebinding.md) 对象的属性，则必须使用 **getByIdAsync** 或 **getAllAsync** 方法检索 **Binding** 对象。
+ >**重要说明：****Office.select** 方法返回的 **Binding** 对象承诺仅提供对 **Binding** 对象的四种方法的访问权限。如果需要访问 **Binding** 对象的任何其他成员，则必须使用 **Document.bindings** 属性和 **Bindings.getByIdAsync** 或 **Bindings.getAllAsync** 方法检索 **Binding** 对象。例如，如果需要访问 **Binding** 对象的任意一种属性（**document**、**id** 或 **type** 属性）或需要访问 [MatrixBinding](http://dev.office.com/reference/add-ins/shared/binding.matrixbinding) 或 [TableBinding](http://dev.office.com/reference/add-ins/shared/binding.tablebinding) 对象的属性，则必须使用 **getByIdAsync** 或 **getAllAsync** 方法检索 **Binding** 对象。
 
 
 ## <a name="passing-optional-parameters-to-asynchronous-methods"></a>向异步方法传递可选参数
@@ -267,7 +267,7 @@ function addBindingDataChangedEventHandler() {
 
 ### <a name="passing-optional-parameters-inline"></a>传递可选参数内嵌
 
-例如，用可选参数内嵌调用 [Document.setSelectedDataAsync](../../reference/shared/document.setselecteddataasync.md) 方法的语法类似如下：
+例如，用可选参数内嵌调用 [Document.setSelectedDataAsync](http://dev.office.com/reference/add-ins/shared/document.setselecteddataasync) 方法的语法类似如下：
 
 ```js
  Office.context.document.setSelectedDataAsync(data, {coercionType: 'coercionType', asyncContext:' asyncContext},callback);

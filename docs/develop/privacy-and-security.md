@@ -120,7 +120,7 @@ Outlook 外接程序通过特定的资源使用率监视提供额外安全和性
 
 ### <a name="permissions-choices"></a>权限选择
 
-加载项平台提供了一种权限模型，你的加载项可以使用它来声明对功能所需用户数据的访问权限级别。每个权限级别对应适用于 Office 的 JavaScript API 子集，你的加载项可以将其用于自己的功能。例如，对内容加载项和任务窗格加载项的 **WriteDocument** 权限允许访问 [Document.setSelectedDataAsync](../../reference/shared/document.setselecteddataasync.md) 方法，此方法使加载项可以写入到用户文档，但不允许访问从文档读取数据的任何方法。此权限级别对仅需写入到文档的加载项有效，例如用户可以查询数据以插入到其文档中的加载项。
+加载项平台提供了一种权限模型，你的加载项可以使用它来声明对功能所需用户数据的访问权限级别。每个权限级别对应适用于 Office 的 JavaScript API 子集，你的加载项可以将其用于自己的功能。例如，对内容加载项和任务窗格加载项的 **WriteDocument** 权限允许访问 [Document.setSelectedDataAsync](http://dev.office.com/reference/add-ins/shared/document.setselecteddataasync) 方法，此方法使加载项可以写入到用户文档，但不允许访问从文档读取数据的任何方法。此权限级别对仅需写入到文档的加载项有效，例如用户可以查询数据以插入到其文档中的加载项。
 
 最佳做法是应该基于“_最小特权_”原则请求权限。即应该请求外接程序正常运行所需的 API 的最小子集的访问权限。例如，如果外接程序只需要读取其功能的用户文档中的数据，则应仅请求“**ReadDocument**”权限。（但是，请注意如果请求权限不足，则会导致外接程序平台阻止外接程序使用部分 API 并将生成运行时错误。）
 

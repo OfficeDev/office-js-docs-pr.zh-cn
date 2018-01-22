@@ -15,7 +15,7 @@
 |使外接程序无商务内容。|外接程序不得包括应用程序内购买、试用、旨在追加支付的 UI 或指向任何在线商店（在商店中用户可以购买或获取其他内容、应用程序或外接程序）的链接。隐私策略和使用条款页也不得包含任何商务 UI或商店链接。|[验证策略 3.4](http://msdn.microsoft.com/library/cd90836a-523e-42f5-ab02-5123cdf9fefe%28Office.15%29.aspx)|
 |将外接程序重新提交到 Office 应用商店。|在卖家面板中，选中“将此外接程序设为在 iPad 上的 Office 外接程序目录中可用”****复选框，并在 Apple ID 框中提供你的 Apple 开发人员 ID。查看 [Office 应用商店应用程序提供商协议](https://sellerdashboard.microsoft.com/Assets/Content/Agreements/en-US/Office_Store_Seller_Agreement_20120927.htm)，以确保你了解协议。|[将 Office 与 SharePoint 外接程序和 Office 365 Web 应用提交到 Office 应用商店](http://msdn.microsoft.com/library/ff075782-1303-4517-91cc-b3d730e9b9ae%28Office.15%29.aspx)|
 
-对于正在其他平台上运行的 Office 应用程序，您的外接程序可以保持原样。您还可以基于您的外接程序所运行的浏览器/设备提供不同的 UI 服务。若要检测您的外接程序是否正在 iPad 上运行，您可以使用以下 API：<ul><li>var isTouchEnabled = [Office.context.touchEnabled](../../reference/shared/office.context.touchenabled.md)</li><li>var allowCommerce = [Office.context.commerceAllowed](../../reference/shared/office.context.commerceallowed.md)</li></ul>
+对于正在其他平台上运行的 Office 应用程序，您的外接程序可以保持原样。您还可以基于您的外接程序所运行的浏览器/设备提供不同的 UI 服务。若要检测您的外接程序是否正在 iPad 上运行，您可以使用以下 API：<ul><li>var isTouchEnabled = [Office.context.touchEnabled](http://dev.office.com/reference/add-ins/shared/office.context.touchenabled)</li><li>var allowCommerce = [Office.context.commerceAllowed](http://dev.office.com/reference/add-ins/shared/office.context.commerceallowed)</li></ul>
     
 
 ## <a name="best-practices-for-developing-office-add-ins-for-ios-and-mac"></a>开发适用于 iOS 和 Mac 的 Office 外接程序的最佳实践

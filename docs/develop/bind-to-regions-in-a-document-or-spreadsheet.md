@@ -326,7 +326,7 @@ myBinding.setDataAsync('Hello World!', function (asyncResult) { });
 ## <a name="detect-changes-to-data-or-the-selection-in-a-binding"></a>检测绑定中数据或所选内容的更改
 
 
-以下示例显示如何向 ID 为“MyBinding”的绑定的 [DataChanged](../../reference/shared/binding.bindingdatachangedevent.md) 事件中附加事件处理程序。
+以下示例显示如何向 ID 为“MyBinding”的绑定的 [DataChanged](http://dev.office.com/reference/add-ins/shared/binding.bindingdatachangedevent) 事件中附加事件处理程序。
 
 
 ```js

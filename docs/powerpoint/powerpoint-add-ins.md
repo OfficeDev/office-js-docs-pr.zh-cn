@@ -22,11 +22,11 @@
 若要生成内容外接程序，则需要获取演示文稿的活动视图，并在 Office.Initialize 处理程序期间处理 ActiveViewChanged 事件。
 
 
-- `getActiveFileView` 函数将调用 [Document.getActiveViewAsync](../../reference/shared/document.getactiveviewasync.md) 方法，以返回演示文稿的当前视图是“编辑”（你可在其中编辑幻灯片的任何视图，如**普通**或**大纲视图**）还是“阅读”（**幻灯片放映**或**阅读视图**）视图。
+- `getActiveFileView` 函数将调用 [Document.getActiveViewAsync](http://dev.office.com/reference/add-ins/shared/document.getactiveviewasync) 方法，以返回演示文稿的当前视图是“编辑”（你可在其中编辑幻灯片的任何视图，如**普通**或**大纲视图**）还是“阅读”（**幻灯片放映**或**阅读视图**）视图。
 
 
-- `registerActiveViewChanged` 函数调用 [addHandlerAsync](../../reference/shared/document.addhandlerasync.md) 方法，注册 [Document.ActiveViewChanged](../../reference/shared/document.activeviewchanged.md) 事件的处理程序。 
-> 注意：在 PowerPoint Online 中，[Document.ActiveViewChanged](../../reference/shared/document.activeviewchanged.md) 事件永远不会触发，因为幻灯片放映模式被视为新会话。在这种情况下，外接程序必须在加载时提取活动视图，如下所述。
+- `registerActiveViewChanged` 函数调用 [addHandlerAsync](http://dev.office.com/reference/add-ins/shared/document.addhandlerasync) 方法，注册 [Document.ActiveViewChanged](http://dev.office.com/reference/add-ins/shared/document.activeviewchanged) 事件的处理程序。 
+> 注意：在 PowerPoint Online 中，[Document.ActiveViewChanged](http://dev.office.com/reference/add-ins/shared/document.activeviewchanged) 事件永远不会触发，因为幻灯片放映模式被视为新会话。在这种情况下，外接程序必须在加载时提取活动视图，如下所述。
 
 
 
@@ -79,7 +79,7 @@ function registerActiveViewChanged() {
 
 ## <a name="navigate-to-a-particular-slide-in-the-presentation"></a>转到演示文稿中的特定幻灯片
 
-`getSelectedRange` 函数将调用 [Document.getSelectedDataAsync](../../reference/shared/document.getselecteddataasync.md) 方法，以获取 `asyncResult.value` 返回的、包含名为“slides”的阵列的 JSON 对象，该阵列中包含所选幻灯片范围（或仅当前幻灯片）的 ID、标题和索引。它还会将所选范围内第一张幻灯片的 ID 保存到一个全局变量。
+`getSelectedRange` 函数将调用 [Document.getSelectedDataAsync](http://dev.office.com/reference/add-ins/shared/document.getselecteddataasync) 方法，以获取 `asyncResult.value` 返回的、包含名为“slides”的阵列的 JSON 对象，该阵列中包含所选幻灯片范围（或仅当前幻灯片）的 ID、标题和索引。它还会将所选范围内第一张幻灯片的 ID 保存到一个全局变量。
 
 
 ```js
@@ -99,7 +99,7 @@ function getSelectedRange() {
 }
 ```
 
-`goToFirstSlide` 函数将调用 [Document.goToByIdAsync](../../reference/shared/document.gotobyidasync.md) 方法，以转到上述 `getSelectedRange` 函数存储的第一张幻灯片的 ID。
+`goToFirstSlide` 函数将调用 [Document.goToByIdAsync](http://dev.office.com/reference/add-ins/shared/document.gotobyidasync) 方法，以转到上述 `getSelectedRange` 函数存储的第一张幻灯片的 ID。
 
 
 
@@ -143,7 +143,7 @@ function goToSlideByIndex() {
 
 ## <a name="get-the-url-of-the-presentation"></a>获取演示文稿的 URL
 
-`getFileUrl` 函数调用 [Document.getFileProperties](../../reference/shared/document.getfilepropertiesasync.md) 方法，获取演示文稿文件的 URL。
+`getFileUrl` 函数调用 [Document.getFileProperties](http://dev.office.com/reference/add-ins/shared/document.getfilepropertiesasync) 方法，获取演示文稿文件的 URL。
 
 
 ```js

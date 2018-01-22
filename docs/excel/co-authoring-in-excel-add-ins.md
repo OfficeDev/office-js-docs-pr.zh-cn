@@ -34,13 +34,13 @@ Excel 外接程序可以读取工作簿内容（通过隐藏工作表和设置�
 - 用户 A 的隐藏工作表更新为新值橙色。
 - 用户 A 的自定义可视化效果仍然为蓝色。 
 
-如果想要用户 A 的自定义可视化效果响应合著者对隐藏工作表的更改，请使用 [BindingDataChanged](../../reference/shared/binding.bindingdatachangedevent.md) 事件。 它可确保合著者对工作簿内容的更改反映到外接程序状态中。
+如果想要用户 A 的自定义可视化效果响应合著者对隐藏工作表的更改，请使用 [BindingDataChanged](http://dev.office.com/reference/add-ins/shared/binding.bindingdatachangedevent) 事件。 它可确保合著者对工作簿内容的更改反映到外接程序状态中。
 
 ## <a name="caveats-to-using-events-with-co-authoring"></a>使用事件进行共同创作的注意事项 
 
 如上文所述，在某些情况下，针对所有合著者触发事件可改进用户体验。 但是，请注意在一些应用场景下，此行为可能会导致不良的用户体验。 
 
-例如，在数据验证应用场景下，通常通过显示 UI 来响应事件。 本地用户或合著者（远程）通过绑定更改工作簿内容时，会运行前面部分中所述的 [BindingDataChanged](../../reference/shared/binding.bindingdatachangedevent.md) 事件。 如果 **BindingDataChanged** 事件的事件处理程序显示 UI，用户就会看到与他们在工作簿中进行的更改无关的 UI，从而导致不良的用户体验。 在外接程序中使用事件时，请避免显示 UI。
+例如，在数据验证应用场景下，通常通过显示 UI 来响应事件。 本地用户或合著者（远程）通过绑定更改工作簿内容时，会运行前面部分中所述的 [BindingDataChanged](http://dev.office.com/reference/add-ins/shared/binding.bindingdatachangedevent) 事件。 如果 **BindingDataChanged** 事件的事件处理程序显示 UI，用户就会看到与他们在工作簿中进行的更改无关的 UI，从而导致不良的用户体验。 在外接程序中使用事件时，请避免显示 UI。
 
 ## <a name="see-also"></a>另请参阅 
 

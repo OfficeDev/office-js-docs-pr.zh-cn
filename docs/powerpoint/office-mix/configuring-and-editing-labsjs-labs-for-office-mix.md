@@ -7,7 +7,7 @@ Office Mix 提供用于获取和设置实验室配置的 office.js 方法。配�
 
 ## <a name="getting-the-lab-editor"></a>获取实验室编辑器
 
-实验室编辑器 [Labs.LabEditor](../../../reference/office-mix/labs.labeditor.md) 对象允许您编辑实验室并获取和设置您的实验室配置。当您编辑完实验室之后，必须调用 **Done** 方法。但是，调用 **Done** 方法并非必需的，除非您尝试使用或运行您正在编辑的实验室。请注意，一次只能打开实验室的一个实例。
+实验室编辑器 [Labs.LabEditor](http://dev.office.com/reference/add-ins/office-mix/labs.labeditor) 对象允许您编辑实验室并获取和设置您的实验室配置。当您编辑完实验室之后，必须调用 **Done** 方法。但是，调用 **Done** 方法并非必需的，除非您尝试使用或运行您正在编辑的实验室。请注意，一次只能打开实验室的一个实例。
 
 以下代码显示如何获取实验室编辑器。
 
@@ -24,7 +24,7 @@ Labs.editLab((err, labEditor) => {
 });
 ```
 
-使用 **Labs.LabEditor** 上的 **getConfiguration** 和 [setConfiguration](../../../reference/office-mix/labs.labeditor.md) 方法存储指定实验室的配置。配置 ([Labs.Core.IConfiguration](../../../reference/office-mix/labs.core.iconfiguration.md)) 向 Office Mix 指明实验室将收集和处理哪些数据。配置包含关于实验室的常规信息，包括名称、版本和其他配置选项。配置最重要的部分是实验室组件的定义。
+使用 **Labs.LabEditor** 上的 **getConfiguration** 和 [setConfiguration](http://dev.office.com/reference/add-ins/office-mix/labs.labeditor) 方法存储指定实验室的配置。配置 ([Labs.Core.IConfiguration](http://dev.office.com/reference/add-ins/office-mix/labs.core.iconfiguration)) 向 Office Mix 指明实验室将收集和处理哪些数据。配置包含关于实验室的常规信息，包括名称、版本和其他配置选项。配置最重要的部分是实验室组件的定义。
 
 以下代码演示如何设置和获取配置。要设置配置，只需创建配置对象，然后调用  **setConfiguration** 方法。要检索配置，您可以对实验室编辑器对象调用 **getConfiguration** 方法。
 
@@ -79,7 +79,7 @@ labEditor.getConfiguration((err, configuration) => {
 
 ### <a name="getting-the-lab-instance"></a>获取实验室实例
 
-您可使用 [Labs.LabInstance](../../../reference/office-mix/labs.labinstance.md) 对象与实验室交互，该对象是为当前用户配置的实验室的实例。要运行（或使用）实验室，请调用 [Labs.takeLab](../../../reference/office-mix/labs.takelab.md) 函数。
+您可使用 [Labs.LabInstance](http://dev.office.com/reference/add-ins/office-mix/labs.labinstance) 对象与实验室交互，该对象是为当前用户配置的实验室的实例。要运行（或使用）实验室，请调用 [Labs.takeLab](http://dev.office.com/reference/add-ins/office-mix/labs.takelab) 函数。
 
 
 ```js
@@ -90,7 +90,7 @@ Labs.takeLab((err, labInstance) => {
 });
 ```
 
-实例对象包含一系列组件实例（ [Labs.ComponentInstanceBase](../../../reference/office-mix/labs.componentinstancebase.md)、 [Labs.ComponentInstance](../../../reference/office-mix/labs.componentinstance.md)），这些实例会映射到您在配置中指定的组件。实际上，实例就是配置的转换版本，用于将服务器端 ID 附加到实例对象，以及在必要时对用户隐藏某些字段（例如提示、答案等）。
+实例对象包含一系列组件实例（ [Labs.ComponentInstanceBase](http://dev.office.com/reference/add-ins/office-mix/labs.componentinstancebase)、 [Labs.ComponentInstance](http://dev.office.com/reference/add-ins/office-mix/labs.componentinstance)），这些实例会映射到您在配置中指定的组件。实际上，实例就是配置的转换版本，用于将服务器端 ID 附加到实例对象，以及在必要时对用户隐藏某些字段（例如提示、答案等）。
 
 
 ### <a name="managing-state"></a>管理状态

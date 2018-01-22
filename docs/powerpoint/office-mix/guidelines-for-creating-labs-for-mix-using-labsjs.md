@@ -86,7 +86,7 @@ Labs.DefaultHostBuilder = function () {
 Labs.connect((err, connectionResponse) => {});
 ```
 
-初始化之后，您可以调用 labs.js API 的其他方法。 _connectionResponse_ 参数包含关于主机和用户的信息以及其他与连接相关的信息。有关返回值的详细信息，请参阅 [Labs.Core.IConnectionResponse](../../../reference/office-mix/labs.core.iconnectionresponse.md)。
+初始化之后，您可以调用 labs.js API 的其他方法。 _connectionResponse_ 参数包含关于主机和用户的信息以及其他与连接相关的信息。有关返回值的详细信息，请参阅 [Labs.Core.IConnectionResponse](http://dev.office.com/reference/add-ins/office-mix/labs.core.iconnectionresponse)。
 
 
 ### <a name="time-format"></a>时间格式

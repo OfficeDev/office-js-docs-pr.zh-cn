@@ -59,17 +59,17 @@ Office.initialize = function (reason) {
     }
 }
 ```
-有关详细信息，请参阅 [Office.initialize 事件](../../reference/shared/office.initialize.md)和 [InitializationReason 枚举](http://dev.office.com/reference/add-ins/shared/initializationreason-enumeration) 
+有关详细信息，请参阅 [Office.initialize 事件](http://dev.office.com/reference/add-ins/shared/office.initialize)和 [InitializationReason 枚举](http://dev.office.com/reference/add-ins/shared/initializationreason-enumeration) 
 
 ## <a name="context-object"></a>Context 对象
 
  **适用于：**所有加载项类型
 
-加载项初始化时，它有许多可以在运行时环境中交互的不同对象。加载项运行时上下文通过 [Context](../../reference/shared/office.context.md) 对象反映在 API 中。**Context** 是提供对于最重要 API 对象（例如 [Document](http://dev.office.com/reference/add-ins/shared/document) 和 [Mailbox](../../reference/outlook/Office.context.mailbox.md) 对象）的访问权限的主对象，这些对象继而提供对文档和邮箱内容的访问权限。
+加载项初始化时，它有许多可以在运行时环境中交互的不同对象。加载项运行时上下文通过 [Context](http://dev.office.com/reference/add-ins/shared/office.context) 对象反映在 API 中。**Context** 是提供对于最重要 API 对象（例如 [Document](http://dev.office.com/reference/add-ins/shared/document) 和 [Mailbox](http://dev.office.com/reference/add-ins/outlook/Office.context.mailbox) 对象）的访问权限的主对象，这些对象继而提供对文档和邮箱内容的访问权限。
 
-例如，在任务窗格或内容外接程序中，可以使用 [Context](../../reference/shared/office.context.document.md) 对象的 **document** 属性访问 **Document** 对象的属性和方法，以便与 Word 文档、Excel 工作表或 Project 计划的内容交互。类似地，在 Outlook 外接程序中，可以使用 [Context](../../reference/outlook/Office.context.mailbox.md) 对象的 **mailbox** 属性访问 **Mailbox** 对象的属性和方法，以便与邮件、会议请求或约会内容交互。
+例如，在任务窗格或内容外接程序中，可以使用 [Context](http://dev.office.com/reference/add-ins/shared/office.context.document) 对象的 **document** 属性访问 **Document** 对象的属性和方法，以便与 Word 文档、Excel 工作表或 Project 计划的内容交互。类似地，在 Outlook 外接程序中，可以使用 [Context](http://dev.office.com/reference/add-ins/outlook/Office.context.mailbox) 对象的 **mailbox** 属性访问 **Mailbox** 对象的属性和方法，以便与邮件、会议请求或约会内容交互。
 
-**Context** 对象还提供对 [contentLanguage](../../reference/shared/office.context.contentlanguage.md) 和 [displayLanguage](../../reference/shared/office.context.displaylanguage.md) 属性的访问权限，这些属性允许你确定文档或项目中或由宿主应用程序使用的区域设置（语言）。另外，[roamingSettings](../../reference/outlook/Office.context.md) 属性允许你访问 [RoamingSettings](http://dev.office.com/reference/add-ins/outlook/RoamingSettings) 对象的成员。最后，**Context** 对象提供一个允许你的外接程序启动弹出对话框的 [ui](http://dev.office.com/reference/add-ins/shared/officeui) 属性。
+**Context** 对象还提供对 [contentLanguage](http://dev.office.com/reference/add-ins/shared/office.context.contentlanguage) 和 [displayLanguage](http://dev.office.com/reference/add-ins/shared/office.context.displaylanguage) 属性的访问权限，这些属性允许你确定文档或项目中或由宿主应用程序使用的区域设置（语言）。另外，[roamingSettings](http://dev.office.com/reference/add-ins/outlook/Office.context) 属性允许你访问 [RoamingSettings](http://dev.office.com/reference/add-ins/outlook/RoamingSettings) 对象的成员。最后，**Context** 对象提供一个允许你的外接程序启动弹出对话框的 [ui](http://dev.office.com/reference/add-ins/shared/officeui) 属性。
 
 
 ## <a name="document-object"></a>Document 对象
@@ -90,11 +90,11 @@ Office.initialize = function (reason) {
     
 - 文档上按加载项保留的设置或加载项状态。
     
-也可以使用 **Document** 对象与 Project 文档中的数据交互。特定于 Project 的 API 功能记录在成员 [ProjectDocument](../../reference/shared/projectdocument.projectdocument.md) 抽象类中。有关为 Project 创建任务窗格加载项的详细信息，请参阅[适用于 Project 的任务窗格加载项](../project/project-add-ins.md)。
+也可以使用 **Document** 对象与 Project 文档中的数据交互。特定于 Project 的 API 功能记录在成员 [ProjectDocument](http://dev.office.com/reference/add-ins/shared/projectdocument.projectdocument) 抽象类中。有关为 Project 创建任务窗格加载项的详细信息，请参阅[适用于 Project 的任务窗格加载项](../project/project-add-ins.md)。
 
 所有这些形式的数据访问都起始于抽象 **Document** 对象的实例。
 
-可以在使用 **Context** 对象的 [document](../../reference/shared/office.context.document.md) 属性初始化任务窗格或内容加载项时访问 **Document** 对象的实例。**Document** 对象定义跨 Word 和 Excel 文档共享的通用数据访问函数，还提供对 Word 文档的 **CustomXmlParts** 对象的访问权限。
+可以在使用 **Context** 对象的 [document](http://dev.office.com/reference/add-ins/shared/office.context.document) 属性初始化任务窗格或内容加载项时访问 **Document** 对象的实例。**Document** 对象定义跨 Word 和 Excel 文档共享的通用数据访问函数，还提供对 Word 文档的 **CustomXmlParts** 对象的访问权限。
 
 **Document** 对象支持四种方式以供开发人员访问文档内容：
 
@@ -136,7 +136,7 @@ Office.initialize = function (reason) {
 
  >**提示**   **你应该在何时使用矩阵和表格 coercionType 进行数据访问？**若你需要在添加行和列时使表格数据动态增大，且必须使用表格标题，则应该使用表格数据类型（通过将 **Document** 或 **Binding** 对象数据访问方法的 _coercionType_ 参数指定为 `"table"` 或 **Office.CoercionType.Table**）。表格数据和矩阵数据中都支持在数据结构内添加行和列，但仅支持对表格数据追加行和列。若你不计划添加行和列，且数据不需要标题功能，则应使用矩阵数据类型（通过将数据访问方法的 _coercionType_ 参数指定为 `"matrix"` 或 **Office.CoercionType.Matrix**），它提供了与数据交互更简单的模型。
 
-如果无法将数据强制转换为指定的类型，那么回调中的 [AsyncResult.status](../../reference/shared/asyncresult.error.md) 属性返回 `"failed"`，并且你可以使用 [AsyncResult.error](../../reference/shared/asyncresult.context.md) 属性访问 [Error](http://dev.office.com/reference/add-ins/shared/error) 对象，其中包括方法调用失败原因的信息。
+如果无法将数据强制转换为指定的类型，那么回调中的 [AsyncResult.status](http://dev.office.com/reference/add-ins/shared/asyncresult.error) 属性返回 `"failed"`，并且你可以使用 [AsyncResult.error](http://dev.office.com/reference/add-ins/shared/asyncresult.context) 属性访问 [Error](http://dev.office.com/reference/add-ins/shared/error) 对象，其中包括方法调用失败原因的信息。
 
 
 ## <a name="working-with-selections-using-the-document-object"></a>使用 Document 对象处理选择内容
@@ -150,7 +150,7 @@ Office.initialize = function (reason) {
 ## <a name="working-with-bindings-using-the-bindings-and-binding-objects"></a>使用 Bindings 和 Binding 对象处理绑定
 
 
-基于绑定的数据访问使内容和任务窗格加载项能够通过与绑定相关联的标识符一致地访问文档或电子表格的特定区域。加载项首先需要通过调用将文档的某一部分与唯一标识符相关联的以下某个方法来建立绑定：[addFromPromptAsync](../../reference/shared/bindings.addfrompromptasync.md)、[addFromSelectionAsync](../../reference/shared/bindings.addfromselectionasync.md) 或 [addFromNamedItemAsync](../../reference/shared/bindings.addfromnameditemasync.md)。建立绑定后，加载项可以使用提供的标识符访问文档或电子表格的关联区域中包含的数据。创建绑定可为加载项提供以下值：
+基于绑定的数据访问使内容和任务窗格加载项能够通过与绑定相关联的标识符一致地访问文档或电子表格的特定区域。加载项首先需要通过调用将文档的某一部分与唯一标识符相关联的以下某个方法来建立绑定：[addFromPromptAsync](http://dev.office.com/reference/add-ins/shared/bindings.addfrompromptasync)、[addFromSelectionAsync](http://dev.office.com/reference/add-ins/shared/bindings.addfromselectionasync) 或 [addFromNamedItemAsync](http://dev.office.com/reference/add-ins/shared/bindings.addfromnameditemasync)。建立绑定后，加载项可以使用提供的标识符访问文档或电子表格的关联区域中包含的数据。创建绑定可为加载项提供以下值：
 
 
 - 允许访问跨支持的 Office 应用程序的通用数据结构，例如：表、区域或文本（一系列连续字符）。
@@ -161,7 +161,7 @@ Office.initialize = function (reason) {
     
 建立绑定还允许您订阅仅限文档或电子表格的特定区域的数据和选择更改事件。这意味着，加载项只会收到绑定区域内发生的更改的通知，而不是收到整个文档或电子表格内的常规更改的通知。
 
-[Bindings](../../reference/shared/bindings.bindings.md) 对象公开 [getAllAsync](../../reference/shared/bindings.getallasync.md) 方法，通过该方法可以访问在文档或电子表格中建立的所有绑定的集合。可使用 [Bindings.getBindingByIdAsync](../../reference/shared/bindings.getbyidasync.md) 或 [Office.select](../../reference/shared/office.select.md) 方法按 ID 访问单个绑定。可使用 **Bindings** 对象的以下方法之一建立新绑定和删除现有绑定：[addFromSelectionAsync](../../reference/shared/bindings.addfromselectionasync.md)、[addFromPromptAsync](../../reference/shared/bindings.addfrompromptasync.md)、[addFromNamedItemAsync](../../reference/shared/bindings.addfromnameditemasync.md) 或 [releaseByIdAsync](../../reference/shared/bindings.releasebyidasync.md)。
+[Bindings](http://dev.office.com/reference/add-ins/shared/bindings.bindings) 对象公开 [getAllAsync](http://dev.office.com/reference/add-ins/shared/bindings.getallasync) 方法，通过该方法可以访问在文档或电子表格中建立的所有绑定的集合。可使用 [Bindings.getBindingByIdAsync](http://dev.office.com/reference/add-ins/shared/bindings.getbyidasync) 或 [Office.select](http://dev.office.com/reference/add-ins/shared/office.select) 方法按 ID 访问单个绑定。可使用 **Bindings** 对象的以下方法之一建立新绑定和删除现有绑定：[addFromSelectionAsync](http://dev.office.com/reference/add-ins/shared/bindings.addfromselectionasync)、[addFromPromptAsync](http://dev.office.com/reference/add-ins/shared/bindings.addfrompromptasync)、[addFromNamedItemAsync](http://dev.office.com/reference/add-ins/shared/bindings.addfromnameditemasync) 或 [releaseByIdAsync](http://dev.office.com/reference/add-ins/shared/bindings.releasebyidasync)。
 
 在使用  _addFromSelectionAsync_ 、 **addFromPromptAsync** 或 **addFromNamedItemAsync** 方法创建绑定时，可通过 **bindingType** 参数指定三种不同的绑定类型：
 
@@ -172,7 +172,7 @@ Office.initialize = function (reason) {
 |文本绑定|绑定到可以文本形式表示的文档区域。|在 Word 中，大多数连续选区都是有效的，而在 Excel 中，只有单个单元格选区才能作为文本绑定的目标。在 Excel 中，只支持纯文本。在 Word 中，支持以下三种格式：纯文本、HTML 和 Open XML for Office。|
 |矩阵绑定|绑定到包含没有标题的表格数据的文档的某个固定区域。矩阵绑定中的数据作为二维  **Array** 写入和读取（在 JavaScript 中作为数组的数组实现）。例如，两列中的两行 **string** 值可以作为 ` [['a', 'b'], ['c', 'd']]` 写入或读取，而包含三行的单列可以作为 `[['a'], ['b'], ['c']]` 写入或读取。|在 Excel 中，任何连续的单元格选区都可用于建立矩阵绑定。在 Word 中，只有表格支持矩阵绑定。|
 |表格绑定|绑定到包含带标题的表格的文档区域。表格绑定中的数据作为 [TableData](http://dev.office.com/reference/add-ins/shared/tabledata) 对象写入或读取。**TableData** 对象通过 **headers** 和 **rows** 属性公开数据。|任何 Excel 或 Word 表格均可作为表格绑定的基础。建立表格绑定后，用户添加到表格中的每个新行或新列都自动包含在绑定中。 |
-使用 **Bindings** 对象的三个“add”方法之一创建绑定后，可以通过相应对象的方法处理绑定的数据和属性：[MatrixBinding](../../reference/shared/binding.matrixbinding.md)、[TableBinding](../../reference/shared/binding.tablebinding.md) 或 [TextBinding](../../reference/shared/binding.textbinding.md)。这三个对象全部继承 [Binding](../../reference/shared/binding.getdataasync.md) 对象的 [getDataAsync](../../reference/shared/binding.setdataasync.md) 和 **setDataAsync** 方法，使你能够与绑定的数据交互。
+使用 **Bindings** 对象的三个“add”方法之一创建绑定后，可以通过相应对象的方法处理绑定的数据和属性：[MatrixBinding](http://dev.office.com/reference/add-ins/shared/binding.matrixbinding)、[TableBinding](http://dev.office.com/reference/add-ins/shared/binding.tablebinding) 或 [TextBinding](http://dev.office.com/reference/add-ins/shared/binding.textbinding)。这三个对象全部继承 [Binding](http://dev.office.com/reference/add-ins/shared/binding.getdataasync) 对象的 [getDataAsync](http://dev.office.com/reference/add-ins/shared/binding.setdataasync) 和 **setDataAsync** 方法，使你能够与绑定的数据交互。
 
 有关演示如何使用绑定执行任务的代码示例，请参阅[绑定到文档或电子表格中的区域](../../docs/develop/bind-to-regions-in-a-document-or-spreadsheet.md)。
 
@@ -182,7 +182,7 @@ Office.initialize = function (reason) {
 
  **适用于：**Word 的任务窗格加载项
 
-API 的 [CustomXmlParts](../../reference/shared/customxmlparts.customxmlparts.md) 和 [CustomXmlPart](../../reference/shared/customxmlpart.customxmlpart.md) 对象提供访问 Word 文档中自定义 XML 部件的权限，从而启用文档内容的 XML 驱动操作。有关使用 **CustomXmlParts** 和 **CustomXmlPart** 对象的演示，请参阅 [Word-Add-in-Work-with-custom-XML-parts](https://github.com/OfficeDev/Word-Add-in-Work-with-custom-XML-parts) 代码示例。
+API 的 [CustomXmlParts](http://dev.office.com/reference/add-ins/shared/customxmlparts.customxmlparts) 和 [CustomXmlPart](http://dev.office.com/reference/add-ins/shared/customxmlpart.customxmlpart) 对象提供访问 Word 文档中自定义 XML 部件的权限，从而启用文档内容的 XML 驱动操作。有关使用 **CustomXmlParts** 和 **CustomXmlPart** 对象的演示，请参阅 [Word-Add-in-Work-with-custom-XML-parts](https://github.com/OfficeDev/Word-Add-in-Work-with-custom-XML-parts) 代码示例。
 
 
 ## <a name="working-with-the-entire-document-using-the-getfileasync-method"></a>使用 getFileAsync 方法处理整个文档
@@ -190,7 +190,7 @@ API 的 [CustomXmlParts](../../reference/shared/customxmlparts.customxmlparts.md
 
  **适用于：**Word 和 PowerPoint 的任务窗格加载项
 
-[Document.getFileAsync](../../reference/shared/document.getfileasync.md) 方法以及 [File](http://dev.office.com/reference/add-ins/shared/file) 和 [Slice](http://dev.office.com/reference/add-ins/shared/slice) 对象的成员可提供以达 4 MB 的切块（块）形式一次性获取整个 Word 和 PowerPoint 文档文件的功能。有关详细信息，请参阅[操作方法：获取某加载项中文档的全部文件内容](../../docs/develop/get-the-whole-document-from-an-add-in-for-powerpoint-or-word.md)。
+[Document.getFileAsync](http://dev.office.com/reference/add-ins/shared/document.getfileasync) 方法以及 [File](http://dev.office.com/reference/add-ins/shared/file) 和 [Slice](http://dev.office.com/reference/add-ins/shared/slice) 对象的成员可提供以达 4 MB 的切块（块）形式一次性获取整个 Word 和 PowerPoint 文档文件的功能。有关详细信息，请参阅[操作方法：获取某加载项中文档的全部文件内容](../../docs/develop/get-the-whole-document-from-an-add-in-for-powerpoint-or-word.md)。
 
 
 ## <a name="mailbox-object"></a>Mailbox 对象
@@ -198,7 +198,7 @@ API 的 [CustomXmlParts](../../reference/shared/customxmlparts.customxmlparts.md
 
  **适用于：**Outlook 外接程序
 
-Outlook 外接程序主要使用通过 [Mailbox](../../reference/outlook/Office.context.mailbox.md) 对象公开的 API 的子集。要访问专用于 Outlook 外接程序的对象和成员（例如 [Item](../../reference/outlook/Office.context.mailbox.item.md) 对象），可以使用 [Context](../../reference/outlook/Office.context.mailbox.md) 对象的 **mailbox** 属性访问 **Mailbox** 对象，如下面的代码行所示。
+Outlook 外接程序主要使用通过 [Mailbox](http://dev.office.com/reference/add-ins/outlook/Office.context.mailbox) 对象公开的 API 的子集。要访问专用于 Outlook 外接程序的对象和成员（例如 [Item](http://dev.office.com/reference/add-ins/outlook/Office.context.mailbox.item) 对象），可以使用 [Context](http://dev.office.com/reference/add-ins/outlook/Office.context.mailbox) 对象的 **mailbox** 属性访问 **Mailbox** 对象，如下面的代码行所示。
 
 
 

@@ -54,14 +54,14 @@ Office 外接程序实质上是运行在浏览器控件的无状态环境中的 
 
 要保留 Word、Excel 或 PowerPoint 的内容或任务窗格加载项的状态或自定义设置，可使用 [Settings](http://dev.office.com/reference/add-ins/shared/settings) 对象及其方法。使用 **Settings** 对象的方法创建的属性包仅供创建它的内容或任务窗格加载项的实例使用，并且只能从保存它的文档使用。
 
-**Settings** 对象自动加载为 [Document](http://dev.office.com/reference/add-ins/shared/document) 对象的一部分，并在任务窗格或内容加载项激活时可用。实例化 **Document** 对象后，你可以使用 **Document** 对象的 [settings ](../../reference/shared/document.settings.md)属性访问 **Settings** 对象。在该会话的生命周期中，你只能使用 **Settings.get**、**Settings.set** 和 **Settings.remove** 方法从属性包的内存副本中读取、写入或删除保留的设置和加载项状态。
+**Settings** 对象自动加载为 [Document](http://dev.office.com/reference/add-ins/shared/document) 对象的一部分，并在任务窗格或内容加载项激活时可用。实例化 **Document** 对象后，你可以使用 **Document** 对象的 [settings ](http://dev.office.com/reference/add-ins/shared/document.settings)属性访问 **Settings** 对象。在该会话的生命周期中，你只能使用 **Settings.get**、**Settings.set** 和 **Settings.remove** 方法从属性包的内存副本中读取、写入或删除保留的设置和加载项状态。
 
-由于 set 和 remove 方法仅针对设置属性包的内存副本，若要将新的或更改的设置保存回加载项关联的文档，必须调用 [Settings.saveAsync](../../reference/shared/settings.saveasync.md) 方法。
+由于 set 和 remove 方法仅针对设置属性包的内存副本，若要将新的或更改的设置保存回加载项关联的文档，必须调用 [Settings.saveAsync](http://dev.office.com/reference/add-ins/shared/settings.saveasync) 方法。
 
 
 ### <a name="creating-or-updating-a-setting-value"></a>创建或更新设置值
 
-以下代码示例演示如何使用 [Settings.set](../../reference/shared/settings.set.md) 方法创建名为 `'themeColor'` 且值为 `'green'` 的设置。set 方法的第一个参数是要设置或创建的设置的 _name_ (Id)（区分大小写）。第二个参数是设置的 _value_。
+以下代码示例演示如何使用 [Settings.set](http://dev.office.com/reference/add-ins/shared/settings.set) 方法创建名为 `'themeColor'` 且值为 `'green'` 的设置。set 方法的第一个参数是要设置或创建的设置的 _name_ (Id)（区分大小写）。第二个参数是设置的 _value_。
 
 
 ```
@@ -73,7 +73,7 @@ Office.context.document.settings.set('themeColor', 'green');
 
 ### <a name="getting-the-value-of-a-setting"></a>获取设置的值
 
-下面的示例演示如何使用 [Settings.get](../../reference/shared/settings.get.md) 方法获取名为“themeColor”的设置值。**get** 方法的唯一参数是设置的 _name_（区分大小写）。
+下面的示例演示如何使用 [Settings.get](http://dev.office.com/reference/add-ins/shared/settings.get) 方法获取名为“themeColor”的设置值。**get** 方法的唯一参数是设置的 _name_（区分大小写）。
 
 
 ```js
@@ -90,7 +90,7 @@ function write(message){
 
 ### <a name="removing-a-setting"></a>删除设置
 
-下面的示例演示如何使用 [Settings.remove](../../reference/shared/settings.removehandlerasync.md) 方法删除名为“themeColor”的设置。**remove** 方法的唯一参数是设置的 _name_（区分大小写）。
+下面的示例演示如何使用 [Settings.remove](http://dev.office.com/reference/add-ins/shared/settings.removehandlerasync) 方法删除名为“themeColor”的设置。**remove** 方法的唯一参数是设置的 _name_（区分大小写）。
 
 
 ```
@@ -102,7 +102,7 @@ Office.context.document.settings.remove('themeColor');
 
 ### <a name="saving-your-settings"></a>保存设置
 
-若要保存当前会话中加载项对设置属性包内存副本所做的任何添加、更改或删除操作，必须调用 [Settings.saveAsync](../../reference/shared/settings.saveasync.md) 方法，将它们存储在文档中。**saveAsync** 方法的唯一参数是使用单个参数的回调函数 _callback_。 
+若要保存当前会话中加载项对设置属性包内存副本所做的任何添加、更改或删除操作，必须调用 [Settings.saveAsync](http://dev.office.com/reference/add-ins/shared/settings.saveasync) 方法，将它们存储在文档中。**saveAsync** 方法的唯一参数是使用单个参数的回调函数 _callback_。 
 
 
 ```js
@@ -131,7 +131,7 @@ Outlook 外接程序可以使用 [RoamingSettings](http://dev.office.com/referen
 ### <a name="loading-roaming-settings"></a>加载漫游设置
 
 
-Outlook 外接程序通常在 [Office.initialize](../../reference/shared/office.initialize.md) 事件处理程序中加载漫游设置。以下 JavaScript 代码示例演示了如何加载现有漫游设置。
+Outlook 外接程序通常在 [Office.initialize](http://dev.office.com/reference/add-ins/shared/office.initialize) 事件处理程序中加载漫游设置。以下 JavaScript 代码示例演示了如何加载现有漫游设置。
 
 
 ```
@@ -197,7 +197,7 @@ function removeAppSetting()
 
 自定义属性允许 Outlook 外接程序存储其使用的有关项目的信息。例如，如果 Outlook 外接程序根据邮件中的会议建议创建约会，则可以使用自定义属性存储创建了会议的事实。这确保了如果再次打开邮件，Outlook 外接程序不再可供创建约会。
 
-在您将自定义属性用于特定邮件、约会或会议请求项目之前，必须通过调用  [Item](../../reference/outlook/Office.context.mailbox.item.md) 对象的 **loadCustomPropertiesAsync** 方法将属性加载到内存中。如果为当前项目设置了任何自定义属性，此时会从 Exchanger Server 加载这些属性。在您加载了属性以后，可以使用 [CustomProperties](http://dev.office.com/reference/add-ins/outlook/CustomProperties) 对象的 [set](http://dev.office.com/reference/add-ins/outlook/RoamingSettings) 和 **get** 方法添加、更新和检索内存中的属性。要保存对于项目的自定义属性所做的任何更改，必须使用 [saveAsync](http://dev.office.com/reference/add-ins/outlook/CustomProperties) 方法在 Exchanger Server上保留对项目所做的更改。
+在您将自定义属性用于特定邮件、约会或会议请求项目之前，必须通过调用  [Item](http://dev.office.com/reference/add-ins/outlook/Office.context.mailbox.item) 对象的 **loadCustomPropertiesAsync** 方法将属性加载到内存中。如果为当前项目设置了任何自定义属性，此时会从 Exchanger Server 加载这些属性。在您加载了属性以后，可以使用 [CustomProperties](http://dev.office.com/reference/add-ins/outlook/CustomProperties) 对象的 [set](http://dev.office.com/reference/add-ins/outlook/RoamingSettings) 和 **get** 方法添加、更新和检索内存中的属性。要保存对于项目的自定义属性所做的任何更改，必须使用 [saveAsync](http://dev.office.com/reference/add-ins/outlook/CustomProperties) 方法在 Exchanger Server上保留对项目所做的更改。
 
 
 ### <a name="custom-properties-example"></a>自定义属性示例

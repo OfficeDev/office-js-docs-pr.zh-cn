@@ -71,7 +71,7 @@
 3. 输入错误消息中显示的 URL，然后选择“**添加**”。
 4. 再次尝试使用外接程序。如果问题仍然存在，请验证其他安全区域的设置，并确保外接程序域与 Office 应用程序地址栏中显示的 URL 处于同一区域。
 
-在弹出模式中使用对话框 API 时，会出现此问题。若要避免出现此问题，请使用 [displayInFrame](../../reference/shared/officeui.displaydialogasync.md) 标记。这要求页面支持在 iframe 中进行显示。以下示例演示如何使用此标记。
+在弹出模式中使用对话框 API 时，会出现此问题。若要避免出现此问题，请使用 [displayInFrame](http://dev.office.com/reference/add-ins/shared/officeui.displaydialogasync) 标记。这要求页面支持在 iframe 中进行显示。以下示例演示如何使用此标记。
 
 ```js
 

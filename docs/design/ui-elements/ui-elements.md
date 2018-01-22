@@ -50,7 +50,7 @@ Office UI Fabric 提供下列 UI 元素：
 无论您决定采用 Office 配色方案还是使用您自己的方案，我们都建议您使用我们的主题 API。属于 Office 主题体验的外接程序与 Office 的集成程度更高。
 
 
-- 对于邮件和任务窗格外接程序，请使用 [Context.officeTheme](../../../reference/shared/office.context.officetheme.md) 元素匹配 Office 应用程序的主题。此 API 当前仅在 Office 2016 中可用。  
+- 对于邮件和任务窗格外接程序，请使用 [Context.officeTheme](http://dev.office.com/reference/add-ins/shared/office.context.officetheme) 元素匹配 Office 应用程序的主题。此 API 当前仅在 Office 2016 中可用。  
 - 对于 PowerPoint 内容外接程序，请参阅[在 PowerPoint 外接程序中使用 Office 主题](../../powerpoint/use-document-themes-in-your-powerpoint-add-ins.md)。
 
 <!-- Link to theming API docs and Humberto's seed sample. Add screenshot of themed add-in. -->

@@ -24,11 +24,11 @@
 
 ## <a name="dialog-api-scenarios"></a>Dialog API 应用场景
 
-Office JavaScript API 支持以下应用场景，其在 [Office.context.ui 命名空间](http://dev.office.com/reference/add-ins/shared/officeui)中使用 [Dialog](../../reference/shared/officeui.dialog.md) 对象和两个函数。
+Office JavaScript API 支持以下应用场景，其在 [Office.context.ui 命名空间](http://dev.office.com/reference/add-ins/shared/officeui)中使用 [Dialog](http://dev.office.com/reference/add-ins/shared/officeui.dialog) 对象和两个函数。
 
 ### <a name="open-a-dialog-box"></a>打开对话框
 
-为了打开对话框，任务窗格中的代码会调用 [displayDialogAsync](../../reference/shared/officeui.displaydialogasync.md) 方法，再将要打开的资源 URL 传递给它。 这通常是一个页面，但也可能是 MVC 应用程序中的控制器方法、路由、Web 服务方法或其他任何资源。 在本文中，“页面”或“网站”是指对话框中的资源。 下面的代码就是一个非常简单的示例：
+为了打开对话框，任务窗格中的代码会调用 [displayDialogAsync](http://dev.office.com/reference/add-ins/shared/officeui.displaydialogasync) 方法，再将要打开的资源 URL 传递给它。 这通常是一个页面，但也可能是 MVC 应用程序中的控制器方法、路由、Web 服务方法或其他任何资源。 在本文中，“页面”或“网站”是指对话框中的资源。 下面的代码就是一个非常简单的示例：
 
 ```js
 Office.context.ui.displayDialogAsync('https://myAddinDomain/myDialog.html');
