@@ -4,7 +4,7 @@
 
 下图演示了自定义函数在 Excel UI 中的工作方式。
 
-<img src="../../images/custom-function.gif" width="579" height="383" />
+<img src="../images/custom-function.gif" width="579" height="383" />
 
 以下是将 42 添加到一对数字的自定义函数示例的代码。
 

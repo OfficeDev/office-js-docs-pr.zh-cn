@@ -17,7 +17,7 @@
 | 1.0 | 支持 Office 应用的桌面版本的外接程序命令。 | 
 | 1.1 | 添加对[可固定的任务窗格](https://docs.microsoft.com/outlook/add-ins/pinnable-taskpane)和移动外接程序的支持。**注意：**当前仅受 Outlook 2016 for Windows 和 Outlook for iOS 的支持 |
 
-外接程序可支持多个版本的 **VersionOverrides** 架构，具体方法是将较新的版本嵌套到以前版本内部。这使客户端能够在支持较新版本以利用新功能的同时允许较旧客户端加载较旧的版本。有关详细信息，请参阅[实现多个版本](../../reference/manifest/versionoverrides.md#implementing-multiple-versions)。
+外接程序可支持多个版本的 **VersionOverrides** 架构，具体方法是将较新的版本嵌套到以前版本内部。这使客户端能够在支持较新版本以利用新功能的同时允许较旧客户端加载较旧的版本。有关详细信息，请参阅[实现多个版本](http://dev.office.com/reference/add-ins/manifest/versionoverrides#implementing-multiple-versions)。
 
 **VersionOverrides** 元素包括以下子元素：
 

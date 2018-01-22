@@ -414,17 +414,17 @@ UIStrings.js 资源文件将创建一个对象  **UIStrings**，其中包含加�
     
 - [Office 2013 中的语言标识符和 OptionState Id 值](http://technet.microsoft.com/en-us/library/cc179219%28Office.15%29.aspx)
 
-[DefaultLocale]:         ../../reference/manifest/defaultlocale.md
-[说明]:           ../../reference/manifest/description.md
-[DisplayName]:           ../../reference/manifest/displayname.md
-[IconUrl]:               ../../reference/manifest/iconurl.md
-[HighResolutionIconUrl]: ../../reference/manifest/highresolutioniconurl.md
+[DefaultLocale]:         http://dev.office.com/reference/add-ins/manifest/defaultlocale
+[说明]:           http://dev.office.com/reference/add-ins/manifest/description
+[DisplayName]:           http://dev.office.com/reference/add-ins/manifest/displayname
+[IconUrl]:               http://dev.office.com/reference/add-ins/manifest/iconurl
+[HighResolutionIconUrl]: http://dev.office.com/reference/add-ins/manifest/highresolutioniconurl
 [Resources]:             ../../reference/manifest/resources
-[SourceLocation]:        ../../reference/manifest/sourcelocation.md
-[替代]:              ../../reference/manifest/override.md
-[DesktopSettings]:       ../../reference/manifest/desktopsettings.md
-[TabletSettings]:        ../../reference/manifest/tabletsettings.md
-[PhoneSettings]:         ../../reference/manifest/phonesettings.md
-[displayLanguage]:  ../../reference/shared/office.context.displaylanguage.md 
-[contentLanguage]:  ../../reference/shared/office.context.contentlanguage.md 
+[SourceLocation]:        http://dev.office.com/reference/add-ins/manifest/sourcelocation
+[替代]:              http://dev.office.com/reference/add-ins/manifest/override
+[DesktopSettings]:       http://dev.office.com/reference/add-ins/manifest/desktopsettings
+[TabletSettings]:        http://dev.office.com/reference/add-ins/manifest/tabletsettings
+[PhoneSettings]:         http://dev.office.com/reference/add-ins/manifest/phonesettings
+[displayLanguage]:  http://dev.office.com/reference/add-ins/shared/office.context.displaylanguage 
+[contentLanguage]:  http://dev.office.com/reference/add-ins/shared/office.context.contentlanguage 
 [RFC 3066]: https://www.rfc-editor.org/info/rfc3066

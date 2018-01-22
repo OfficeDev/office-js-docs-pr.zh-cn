@@ -24,7 +24,7 @@
 
 ### <a name="13001"></a>13001
 
-用户未登录 Office。 代码应重新调用 `getAccessTokenAsync` 方法，并在 [options](../../reference/shared/office.context.auth.getAccessTokenAsync.md#parameters) 参数中传递选项 `forceAddAccount: true`。 
+用户未登录 Office。 代码应重新调用 `getAccessTokenAsync` 方法，并在 [options](http://dev.office.com/reference/add-ins/shared/office.context.auth.getAccessTokenAsync#parameters) 参数中传递选项 `forceAddAccount: true`。 
 
 ### <a name="13002"></a>13002
 
@@ -64,7 +64,7 @@ Office 主机无法获取对加载项 Web 服务的访问令牌。
  
 在特定 AAD 和 Office 365 标识配置中，一些可通过 Microsoft Graph 访问的资源可以要求进行多重身份验证 (MFA)，即使用户的 Office 365 租赁并不要求此验证。 通过代表流收到对 MFA 保护资源的令牌请求时，AAD 会向加载项 Web 服务返回包含 `claims` 属性的 JSON 消息。 claims 属性指明需要进一步执行哪几重身份验证。 
 
-服务器端代码应测试此消息是否有错，并将 claims 值中继到客户端代码。 客户端需要此信息，因为 Office 处理 SSO 加载项的身份验证。发送到客户端的消息可以是错误（如 `500 Server Error` 或 `401 Unauthorized`），也可以是成功响应的正文部分（如 `200 OK`）。 无论属于上述哪种情况，代码对加载项 Web API 的客户端 AJAX 调用的（失败或成功）回调都应测试此响应是否有错。 如果已中继 claims 值，代码应重新调用 `getAccessTokenAsync`，并在 [options](../../reference/shared/office.context.auth.getAccessTokenAsync.md#parameters) 参数中传递选项 `authChallenge: CLAIMS-STRING-HERE`。 如果 AAD 看到此字符串，它会先提示用户进行多重身份验证，再返回将在代表流中接受的新访问令牌。
+服务器端代码应测试此消息是否有错，并将 claims 值中继到客户端代码。 客户端需要此信息，因为 Office 处理 SSO 加载项的身份验证。发送到客户端的消息可以是错误（如 `500 Server Error` 或 `401 Unauthorized`），也可以是成功响应的正文部分（如 `200 OK`）。 无论属于上述哪种情况，代码对加载项 Web API 的客户端 AJAX 调用的（失败或成功）回调都应测试此响应是否有错。 如果已中继 claims 值，代码应重新调用 `getAccessTokenAsync`，并在 [options](http://dev.office.com/reference/add-ins/shared/office.context.auth.getAccessTokenAsync#parameters) 参数中传递选项 `authChallenge: CLAIMS-STRING-HERE`。 如果 AAD 看到此字符串，它会先提示用户进行多重身份验证，再返回将在代表流中接受的新访问令牌。
 
 下面的一些示例展示了这种 MFA 处理方法： 
 

@@ -11,8 +11,8 @@
 
 若要创建空的 OneNote 页面，请使用下列方法之一：
 
-- [Section.addPage](../../reference/onenote/section.md#addpagetitle-string)
-- [Page.insertPageAsSibling](../../reference/onenote/page.md#insertpageassiblinglocation-string-title-string)
+- [Section.addPage](http://dev.office.com/reference/add-ins/onenote/section#addpagetitle-string)
+- [Page.insertPageAsSibling](http://dev.office.com/reference/add-ins/onenote/page#insertpageassiblinglocation-string-title-string)
 
 然后使用以下对象中的方法处理页面内容，如 Page.addOutline 和 Outline.appendHtml。 
 

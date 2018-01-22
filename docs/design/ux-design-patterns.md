@@ -49,8 +49,8 @@ UX 设计模式项目用于：
 
 <table>
  <tr><th>登录</th><th>品牌栏</th></tr>
- <tr><td><A href="https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code/tree/master/templates/generic/landing-page"><img src="../../images/landing.page.PNG" alt="landing page" style="width: 264px;"/></A></td>
-<td><A href="https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code/tree/master/templates/generic/brand-bar"><img src="../../images/brand.bar.PNG" alt="brand bar" style="width: 264px;"/></A></td></tr>
+ <tr><td><A href="https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code/tree/master/templates/generic/landing-page"><img src="../images/landing.page.PNG" alt="landing page" style="width: 264px;"/></A></td>
+<td><A href="https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code/tree/master/templates/generic/brand-bar"><img src="../images/brand.bar.PNG" alt="brand bar" style="width: 264px;"/></A></td></tr>
  </table>
  
 ### <a name="first-run-experience"></a>首次运行体验
@@ -90,17 +90,17 @@ UX 设计模式项目用于：
  <table>
  <tr><th>启动的步骤</th><th>值</th><th>视频</th></tr>
  <tr>
-<td><A href="https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code/tree/master/templates/first-run/instruction-step"><img src="../../images/instruction.step.PNG" alt="instruction steps" style="width: 264px;"/></A></td>
-<td><A href="https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code/tree/master/templates/first-run/value-placemat"><img src="../../images/value.placemat.PNG" alt="value placemat" style="width: 264px;"/></A></td>
-<td><A href="https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code/tree/master/templates/first-run/video-placemat"><img src="../../images/video.placemat.PNG" alt="video placemat" style="width: 264px;"/></A></td></tr>
+<td><A href="https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code/tree/master/templates/first-run/instruction-step"><img src="../images/instruction.step.PNG" alt="instruction steps" style="width: 264px;"/></A></td>
+<td><A href="https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code/tree/master/templates/first-run/value-placemat"><img src="../images/value.placemat.PNG" alt="value placemat" style="width: 264px;"/></A></td>
+<td><A href="https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code/tree/master/templates/first-run/video-placemat"><img src="../images/video.placemat.PNG" alt="video placemat" style="width: 264px;"/></A></td></tr>
  </table>
 
  <table>
  <tr><th>演练第一页</th><th>试用</th><th>试用版功能</th></tr>
  <tr>
-<td><A href="https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code/tree/master/templates/first-run/walkthrough"><img src="../../images/walkthrough1.PNG" alt="walkthrough 1" style="width: 264px;"/></A></td>
-<td><A href="https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code/tree/master/templates/first-run/trial-placemat"><img src="../../images/trial.placemat.PNG" alt="trial placemat" style="width: 264px;"/></A></td>
-<td><A href="https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code/tree/master/templates/first-run/trial-placemat-feature"><img src="../../images/trial.placemat.feature.PNG" alt="trial placemat feature" style="width: 264px;"/></A></td></tr>
+<td><A href="https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code/tree/master/templates/first-run/walkthrough"><img src="../images/walkthrough1.PNG" alt="walkthrough 1" style="width: 264px;"/></A></td>
+<td><A href="https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code/tree/master/templates/first-run/trial-placemat"><img src="../images/trial.placemat.PNG" alt="trial placemat" style="width: 264px;"/></A></td>
+<td><A href="https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code/tree/master/templates/first-run/trial-placemat-feature"><img src="../images/trial.placemat.feature.PNG" alt="trial placemat feature" style="width: 264px;"/></A></td></tr>
  </table> 
 
 ### <a name="navigation"></a>导航
@@ -128,15 +128,15 @@ UX 设计模式项目用于：
 <tr>
     <td>
         <A href="https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code/tree/master/templates/navigation/back-button">
-        <img src="../../images/back.button.png" alt="back button" style="width: 264px;"/></A>
+        <img src="../images/back.button.png" alt="back button" style="width: 264px;"/></A>
     </td>
     <td>
         <A href="https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code/tree/master/templates/navigation/navigation">
-        <img src="../../images/navigation.png" alt="navigation" style="width: 264px;"/></A>
+        <img src="../images/navigation.png" alt="navigation" style="width: 264px;"/></A>
     </td>
     <td>
         <A href="https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code/tree/master/templates/navigation/navigation-commands">
-        <img src="../../images/navigation.commands.png" alt="navigation with commands" style="width: 264px;"/></A>
+        <img src="../images/navigation.commands.png" alt="navigation with commands" style="width: 264px;"/></A>
     </td>
 </tr>
  </table>
@@ -144,9 +144,9 @@ UX 设计模式项目用于：
 <table>
 <tr><th>透视</th><th>选项卡栏</th></tr>
 <tr><td><A href="https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code/tree/master/templates/navigation/pivot">
-<img src="../../images/pivot.png" alt="pivot navigation" style="width: 264px;"/></A></td>
+<img src="../images/pivot.png" alt="pivot navigation" style="width: 264px;"/></A></td>
 <td><A href="https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code/tree/master/templates/navigation/tab-bar">
-<img src="../../images/tab.bar.png" alt="tab bar" style="width: 264px;"/></A></td>
+<img src="../images/tab.bar.png" alt="tab bar" style="width: 264px;"/></A></td>
 </tr>
  </table>
 
@@ -177,16 +177,16 @@ UX 设计模式项目用于：
 
  <table>
  <tr><th>嵌入式对话框</th><th>内联消息</th><th>消息横幅</th></tr>
- <tr><td><A href="https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code/tree/master/templates/notifications/embedded-dialog"><img src="../../images/embedded.dialog.PNG" alt="embedded dialog" style="width: 264px;"/></A></td>
-<td><A href="https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code/tree/master/templates/notifications/inline-message"><img src="../../images/inline.message.PNG" alt="inline message" style="width: 264px;"/></A></td>
-<td><A href="https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code/tree/master/templates/notifications/message-banner"><img src="../../images/message.banner.PNG" alt="message banner" style="width: 264px;"/></A></td></tr>
+ <tr><td><A href="https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code/tree/master/templates/notifications/embedded-dialog"><img src="../images/embedded.dialog.PNG" alt="embedded dialog" style="width: 264px;"/></A></td>
+<td><A href="https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code/tree/master/templates/notifications/inline-message"><img src="../images/inline.message.PNG" alt="inline message" style="width: 264px;"/></A></td>
+<td><A href="https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code/tree/master/templates/notifications/message-banner"><img src="../images/message.banner.PNG" alt="message banner" style="width: 264px;"/></A></td></tr>
  </table>
 
  <table>
  <tr><th>进度栏</th><th>微调框</th><th>Toast</th></tr>
- <tr><td><A href="https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code/tree/master/templates/notifications/progress-bar"><img src="../../images/progress.bar.PNG" alt="progress bar" style="width: 264px;"/></A></td>
-<td><A href="https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code/tree/master/templates/notifications/spinner"><img src="../../images/spinner.PNG" alt="spinner" style="width: 264px;"/></A></td>
-<td><A href="https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code/tree/master/templates/notifications/toast"><img src="../../images/toast.PNG" alt="toast" style="width: 264px;"/></A></td></tr>
+ <tr><td><A href="https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code/tree/master/templates/notifications/progress-bar"><img src="../images/progress.bar.PNG" alt="progress bar" style="width: 264px;"/></A></td>
+<td><A href="https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code/tree/master/templates/notifications/spinner"><img src="../images/spinner.PNG" alt="spinner" style="width: 264px;"/></A></td>
+<td><A href="https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code/tree/master/templates/notifications/toast"><img src="../images/toast.PNG" alt="toast" style="width: 264px;"/></A></td></tr>
  </table>
  
 
@@ -213,14 +213,14 @@ UX 设计模式项目用于：
 <table>
  <tr><th>Typeramp 对话框</th><th>警报对话框</th></tr>
 <tr>
-<td><A href="https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code/tree/master/templates/dialog/typeramp"><img src="../../images/typeramp.dialog.png" alt="typeramp dialog" style="width: 300px;"/></A></td>
-<td><A href="https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code/tree/master/templates/dialog/alert"><img src="../../images/alert.dialog.png" alt="alert dialog" style="width: 264px;"/></A></td>
+<td><A href="https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code/tree/master/templates/dialog/typeramp"><img src="../images/typeramp.dialog.png" alt="typeramp dialog" style="width: 300px;"/></A></td>
+<td><A href="https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code/tree/master/templates/dialog/alert"><img src="../images/alert.dialog.png" alt="alert dialog" style="width: 264px;"/></A></td>
 </tr></tr>
  </table>
  
  <table>
  <tr><th>导航对话框</th></tr>
-<tr><td><A href="https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code/tree/master/templates/dialog/navigation"><img src="../../images/navigation.dialog.png" alt="navigation dialog" style="width: 300px;"/></A></td></tr>
+<tr><td><A href="https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code/tree/master/templates/dialog/navigation"><img src="../images/navigation.dialog.png" alt="navigation dialog" style="width: 300px;"/></A></td></tr>
 </tr>
  </table>
 
@@ -242,7 +242,7 @@ UX 设计模式项目用于：
 
  <table>
  <tr><th>反馈和评级</th></tr>
-<tr><td><A href="https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code/tree/master/templates/feedback/office-store"><img src="../../images/feedback.ratings.PNG" alt="Feedback and Ratings" style="width: 264px;"/></A></td></tr>
+<tr><td><A href="https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code/tree/master/templates/feedback/office-store"><img src="../images/feedback.ratings.PNG" alt="Feedback and Ratings" style="width: 264px;"/></A></td></tr>
 </tr>
  </table>
 
@@ -261,8 +261,8 @@ UX 设计模式项目用于：
 <table>
  <tr><th>设置</th><th>隐私策略</th></tr>
 <tr>
-<td><A href="https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code/tree/master/templates/settings"><img src="../../images/settings.png" alt="settings" style="width: 300px;"/></A></td>
-<td><A href="https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code/tree/master/templates/settings"><img src="../../images/privacy.policy.png" alt="privacy" style="width: 264px;"/></A></td>
+<td><A href="https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code/tree/master/templates/settings"><img src="../images/settings.png" alt="settings" style="width: 300px;"/></A></td>
+<td><A href="https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code/tree/master/templates/settings"><img src="../images/privacy.policy.png" alt="privacy" style="width: 264px;"/></A></td>
 </tr></tr>
  </table>
 

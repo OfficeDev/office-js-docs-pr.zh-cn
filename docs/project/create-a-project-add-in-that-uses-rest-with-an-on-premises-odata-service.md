@@ -263,7 +263,7 @@ Visual Studio Office 开发人员工具包含 Project 2013 任务窗格外接程
           </tr>
         </table>
       </div>
-      <img alt="Corporation" class="logo" src="../../images/NewLogo.png" />
+      <img alt="Corporation" class="logo" src="../images/NewLogo.png" />
       <br />
       <textarea id="odataText" rows="12" cols="40"></textarea>
     </body>
@@ -750,7 +750,7 @@ HelloProjectOData.js 文件的剩余部分包含两个函数：当用户选择�
           </tr>
         </table>
       </div>
-      <img alt="Corporation" class="logo" src="../../images/NewLogo.png" />
+      <img alt="Corporation" class="logo" src="../images/NewLogo.png" />
       <br />
       <textarea id="odataText" rows="12" cols="40"></textarea>
     </body>

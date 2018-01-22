@@ -379,30 +379,30 @@ function removeEventHandlerFromBinding() {
     
 - [读取数据并将其写入文档或电子表格中的活动选择区](../../docs/develop/read-and-write-data-to-the-active-selection-in-a-document-or-spreadsheet.md)
     
-[Binding]:               ../../reference/shared/binding.md
-[MatrixBinding]:         ../../reference/shared/binding.matrixbinding.md
-[TableBinding]:          ../../reference/shared/binding.tablebinding.md
-[TextBinding]:           ../../reference/shared/binding.textbinding.md
-[getDataAsync]:          ../../reference/shared/binding.getdataasync.md
-[setDataAsync]:          ../../reference/shared/binding.setdataasync.md
-[SelectionChanged]:      ../../reference/shared/binding.bindingselectionchangedevent.md
-[addHandlerAsync]:       ../../reference/shared/binding.addhandlerasync.md
-[removeHandlerAsync]:    ../../reference/shared/binding.removehandlerasync.md
+[Binding]:               http://dev.office.com/reference/add-ins/shared/binding
+[MatrixBinding]:         http://dev.office.com/reference/add-ins/shared/binding.matrixbinding
+[TableBinding]:          http://dev.office.com/reference/add-ins/shared/binding.tablebinding
+[TextBinding]:           http://dev.office.com/reference/add-ins/shared/binding.textbinding
+[getDataAsync]:          http://dev.office.com/reference/add-ins/shared/binding.getdataasync
+[setDataAsync]:          http://dev.office.com/reference/add-ins/shared/binding.setdataasync
+[SelectionChanged]:      http://dev.office.com/reference/add-ins/shared/binding.bindingselectionchangedevent
+[addHandlerAsync]:       http://dev.office.com/reference/add-ins/shared/binding.addhandlerasync
+[removeHandlerAsync]:    http://dev.office.com/reference/add-ins/shared/binding.removehandlerasync
 
-[Bindings]:              ../../reference/shared/bindings.bindings.md
-[getByIdAsync]:          ../../reference/shared/bindings.getbyidasync.md 
-[getAllAsync]:           ../../reference/shared/bindings.getallasync.md
-[addFromNamedItemAsync]: ../../reference/shared/bindings.addfromnameditemasync.md
-[addFromSelectionAsync]: ../../reference/shared/bindings.addfromselectionasync.md
-[addFromPromptAsync]:    ../../reference/shared/bindings.addfrompromptasync.md
-[releaseByIdAsync]:      ../../reference/shared/bindings.releasebyidasync.md
+[Bindings]:              http://dev.office.com/reference/add-ins/shared/bindings.bindings
+[getByIdAsync]:          http://dev.office.com/reference/add-ins/shared/bindings.getbyidasync 
+[getAllAsync]:           http://dev.office.com/reference/add-ins/shared/bindings.getallasync
+[addFromNamedItemAsync]: http://dev.office.com/reference/add-ins/shared/bindings.addfromnameditemasync
+[addFromSelectionAsync]: http://dev.office.com/reference/add-ins/shared/bindings.addfromselectionasync
+[addFromPromptAsync]:    http://dev.office.com/reference/add-ins/shared/bindings.addfrompromptasync
+[releaseByIdAsync]:      http://dev.office.com/reference/add-ins/shared/bindings.releasebyidasync
 
-[AsyncResult]:          ../../reference/shared/asyncresult.md
-[Office.BindingType]:   ../../reference/shared/bindingtype-enumeration.md
-[Office.select]:        ../../reference/shared/office.select.md 
-[Office.EventType]:     ../../reference/shared/eventtype-enumeration.md 
-[Document.bindings]:    ../../reference/shared/document.bindings.md
+[AsyncResult]:          http://dev.office.com/reference/add-ins/shared/asyncresult
+[Office.BindingType]:   http://dev.office.com/reference/add-ins/shared/bindingtype-enumeration
+[Office.select]:        http://dev.office.com/reference/add-ins/shared/office.select 
+[Office.EventType]:     http://dev.office.com/reference/add-ins/shared/eventtype-enumeration 
+[Document.bindings]:    http://dev.office.com/reference/add-ins/shared/document.bindings
 
 
-[TableBinding.rowCount]: ../../reference/shared/binding.tablebinding.rowcount.1md
-[BindingSelectionChangedEventArgs]: ../../reference/shared/binding.bindingselectionchangedeventargs.md
+[TableBinding.rowCount]: http://dev.office.com/reference/add-ins/shared/binding.tablebinding.rowcount
+[BindingSelectionChangedEventArgs]: http://dev.office.com/reference/add-ins/shared/binding.bindingselectionchangedeventargs
