@@ -14,7 +14,7 @@
 
 这些示例依赖 `app.showNotification` 函数来显示信息，该函数包含在 Visual Studio Office 外接程序项目模板中。如果你没打算使用 Visual Studio 开发外接程序，则需要将 `showNotification` 函数替换为你自己的代码。其中一些示例还依赖在这些函数的作用域外声明的 `globals` 对象：`var globals = {activeViewHandler:0, firstSlideId:0};`
 
-这些代码示例要求项目[引用 Office.js v1.1 库或更高版本](../../docs/develop/referencing-the-javascript-api-for-office-library-from-its-cdn.md)。
+这些代码示例要求项目[引用 Office.js v1.1 库或更高版本](../develop/referencing-the-javascript-api-for-office-library-from-its-cdn.md)。
 
 
 ## <a name="detect-the-presentations-active-view-and-handle-the-activeviewchanged-event"></a>检测演示文稿的活动视图并处理 ActiveViewChanged 事件
@@ -166,11 +166,11 @@ function getFileUrl() {
 ## <a name="additional-resources"></a>其他资源
 - [PowerPoint 代码示例](https://dev.office.com/code-samples#?filters=powerpoint)
 
-- [如何按文档保留内容和任务窗格外接程序的外接程序状态和设置](../../docs/develop/persisting-add-in-state-and-settings.md#how-to-save-add-in-state-and-settings-per-document-for-content-and-task-pane-add-ins)
+- [如何按文档保留内容和任务窗格外接程序的外接程序状态和设置](../develop/persisting-add-in-state-and-settings.md#how-to-save-add-in-state-and-settings-per-document-for-content-and-task-pane-add-ins)
 
-- [读取数据并将其写入文档或电子表格中的活动选择区](../../docs/develop/read-and-write-data-to-the-active-selection-in-a-document-or-spreadsheet.md)
+- [读取数据并将其写入文档或电子表格中的活动选择区](../develop/read-and-write-data-to-the-active-selection-in-a-document-or-spreadsheet.md)
     
-- [从 PowerPoint 或 Word 相关外接程序中获取整个文档](../../docs/develop/get-the-whole-document-from-an-add-in-for-powerpoint-or-word.md)
+- [从 PowerPoint 或 Word 相关外接程序中获取整个文档](../develop/get-the-whole-document-from-an-add-in-for-powerpoint-or-word.md)
     
 - [在 PowerPoint 外接程序中使用文档主题](../powerpoint/use-document-themes-in-your-powerpoint-add-ins.md)
     

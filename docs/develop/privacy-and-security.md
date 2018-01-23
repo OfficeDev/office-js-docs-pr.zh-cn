@@ -96,7 +96,7 @@ Office 外接程序使用在浏览器控件或 **iframe** 中运行的 Web 技�
 
   - 在 Web 浏览器控件中运行可允许加载项完成在浏览器中运行的常规网页可执行的所有操作，但同时将限制加载项遵守针对域隔离和安全区域的同源策略。
 
-Outlook 外接程序通过特定的资源使用率监视提供额外安全和性能功能。有关详细信息，请参阅 [Outlook 外接程序的隐私、权限和安全性](../../docs/outlook/privacy-and-security.md)。
+Outlook 外接程序通过特定的资源使用率监视提供额外安全和性能功能。有关详细信息，请参阅 [Outlook 外接程序的隐私、权限和安全性](../outlook/privacy-and-security.md)。
 
 
 ### <a name="developer-guidelines-to-handle-pii"></a>开发人员处理 PII 的准则
@@ -148,9 +148,9 @@ Outlook 外接程序通过特定的资源使用率监视提供额外安全和性
 
 有关此 Outlook 外接程序的详细信息，请参阅以下主题：
 
-- [Outlook 外接程序的隐私、权限和安全性](../../docs/outlook/privacy-and-security.md)
+- [Outlook 外接程序的隐私、权限和安全性](../outlook/privacy-and-security.md)
 
-- [了解 Outlook 外接程序权限](../../docs/outlook/understanding-outlook-add-in-permissions.md)
+- [了解 Outlook 外接程序权限](../outlook/understanding-outlook-add-in-permissions.md)
 
 
 ### <a name="same-origin-policy"></a>同源策略
@@ -175,7 +175,7 @@ function loadVideoDetails(videoIndex) {
 }
 ```
 
-Exchange 和 SharePoint 提供了客户端代理以实现跨域访问。通常，Intranet 上的同源策略没有 Internet 上的同源策略那样严格。有关详细信息，请参阅[同源策略第 1 部分：不准偷看](http://blogs.msdn.com/b/ieinternals/archive/2009/08/28/explaining-same-origin-policy-part-1-deny-read.aspx)和[解决 Office 加载项中的同源策略限制](../../docs/develop/addressing-same-origin-policy-limitations.md)。
+Exchange 和 SharePoint 提供了客户端代理以实现跨域访问。通常，Intranet 上的同源策略没有 Internet 上的同源策略那样严格。有关详细信息，请参阅[同源策略第 1 部分：不准偷看](http://blogs.msdn.com/b/ieinternals/archive/2009/08/28/explaining-same-origin-policy-part-1-deny-read.aspx)和[解决 Office 加载项中的同源策略限制](../develop/addressing-same-origin-policy-limitations.md)。
 
 
 ### <a name="tips-to-prevent-malicious-cross-site-scripting"></a>防止恶意跨站点脚本的提示

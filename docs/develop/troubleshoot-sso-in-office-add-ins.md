@@ -42,7 +42,7 @@
 
 ### <a name="13005"></a>13005
 
-授权无效。 这通常意味着，Office 尚未获得对加载项 Web 服务的预授权。 有关详细信息，请参阅[创建服务应用程序](../../docs/develop/sso-in-office-add-ins.md#create-the-service-application)和[向 Azure AD v2.0 终结点注册加载项](../../docs/develop/create-sso-office-add-ins-aspnet.md#register-the-add-in-with-azure-ad-v2-0-endpoint) (ASP.NET) 或[向 Azure AD v2.0 终结点注册加载项](../../docs/develop/create-sso-office-add-ins-nodejs.md#register-the-add-in-with-azure-ad-v2-0-endpoint) (Node JS)。 如果用户未授权服务应用程序访问他/她的 `profile`，也可能会生成此错误。
+授权无效。 这通常意味着，Office 尚未获得对加载项 Web 服务的预授权。 有关详细信息，请参阅[创建服务应用程序](../develop/sso-in-office-add-ins.md#create-the-service-application)和[向 Azure AD v2.0 终结点注册加载项](../develop/create-sso-office-add-ins-aspnet.md#register-the-add-in-with-azure-ad-v2-0-endpoint) (ASP.NET) 或[向 Azure AD v2.0 终结点注册加载项](../develop/create-sso-office-add-ins-nodejs.md#register-the-add-in-with-azure-ad-v2-0-endpoint) (Node JS)。 如果用户未授权服务应用程序访问他/她的 `profile`，也可能会生成此错误。
 
 ### <a name="13006"></a>13006
 
@@ -51,7 +51,7 @@
 ### <a name="13007"></a>13007
 
 Office 主机无法获取对加载项 Web 服务的访问令牌。
-- 请确保加载项注册和加载项清单指定 `openid` 和 `profile` 权限。 有关详细信息，请参阅[向 Azure AD v2.0 终结点注册加载项](../../docs/develop/create-sso-office-add-ins-aspnet.md#register-the-add-in-with-azure-ad-v2-0-endpoint) (ASP.NET) 或[向 Azure AD v2.0 终结点注册加载项](../../docs/develop/create-sso-office-add-ins-nodejs.md#register-the-add-in-with-azure-ad-v2-0-endpoint) (Node JS)，以及[配置加载项](../../docs/develop/create-sso-office-add-ins-aspnet.md#configure-the-add-in) (ASP.NET) 或[配置加载项](../../docs/develop/create-sso-office-add-ins-nodejs.md#configure-the-add-in) (Node JS)。
+- 请确保加载项注册和加载项清单指定 `openid` 和 `profile` 权限。 有关详细信息，请参阅[向 Azure AD v2.0 终结点注册加载项](../develop/create-sso-office-add-ins-aspnet.md#register-the-add-in-with-azure-ad-v2-0-endpoint) (ASP.NET) 或[向 Azure AD v2.0 终结点注册加载项](../develop/create-sso-office-add-ins-nodejs.md#register-the-add-in-with-azure-ad-v2-0-endpoint) (Node JS)，以及[配置加载项](../develop/create-sso-office-add-ins-aspnet.md#configure-the-add-in) (ASP.NET) 或[配置加载项](../develop/create-sso-office-add-ins-nodejs.md#configure-the-add-in) (Node JS)。
 - 代码应提示用户稍后重试操作。
 
 ### <a name="13008"></a>13008
@@ -78,7 +78,7 @@ Office 主机无法获取对加载项 Web 服务的访问令牌。
 ### <a name="invalid-or-missing-scope-permission-errors"></a>范围（权限）无效或缺失错误
 
 - 服务器端代码应向客户端发送 `403 Forbidden` 响应，向用户显示易记消息。 如果可能，请在控制台或日志中记录此错误。
-- 请确保加载项清单[范围](http://dev.office.com/reference/add-ins/manifest/scopes)部分指定了所需的全部权限。 此外，还请确保加载项 Web 服务注册指定了相同的权限。 同时检查是否有拼写错误。 有关详细信息，请参阅[向 Azure AD v2.0 终结点注册加载项](../../docs/develop/create-sso-office-add-ins-aspnet.md#register-the-add-in-with-azure-ad-v2-0-endpoint) (ASP.NET) 或[向 Azure AD v2.0 终结点注册加载项](../../docs/develop/create-sso-office-add-ins-nodejs.md#register-the-add-in-with-azure-ad-v2-0-endpoint) (Node JS)，以及[配置加载项](../../docs/develop/create-sso-office-add-ins-aspnet.md#configure-the-add-in) (ASP.NET) 或[配置加载项](../../docs/develop/create-sso-office-add-ins-nodejs.md#configure-the-add-in) (Node JS)。
+- 请确保加载项清单[范围](http://dev.office.com/reference/add-ins/manifest/scopes)部分指定了所需的全部权限。 此外，还请确保加载项 Web 服务注册指定了相同的权限。 同时检查是否有拼写错误。 有关详细信息，请参阅[向 Azure AD v2.0 终结点注册加载项](../develop/create-sso-office-add-ins-aspnet.md#register-the-add-in-with-azure-ad-v2-0-endpoint) (ASP.NET) 或[向 Azure AD v2.0 终结点注册加载项](../develop/create-sso-office-add-ins-nodejs.md#register-the-add-in-with-azure-ad-v2-0-endpoint) (Node JS)，以及[配置加载项](../develop/create-sso-office-add-ins-aspnet.md#configure-the-add-in) (ASP.NET) 或[配置加载项](../develop/create-sso-office-add-ins-nodejs.md#configure-the-add-in) (Node JS)。
 
 ### <a name="expired-or-invalid-token-errors-when-calling-microsoft-graph"></a>调用 Microsoft Graph 时令牌过期或无效错误
 

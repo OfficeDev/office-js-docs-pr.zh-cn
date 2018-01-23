@@ -253,7 +253,7 @@ public class WebService : System.Web.Services.WebService {
 </OfficeApp>
 ```
 
-以下各节介绍了创建字典外接程序的清单文件时特定的 **Dictionary** 元素及其子元素。有关清单文件中的其他元素的信息，请参阅 [Office 外接程序 XML 清单](../../docs/overview/add-in-manifests.md)。
+以下各节介绍了创建字典外接程序的清单文件时特定的 **Dictionary** 元素及其子元素。有关清单文件中的其他元素的信息，请参阅 [Office 外接程序 XML 清单](../overview/add-in-manifests.md)。
 
 
 ### <a name="dictionary-element"></a>Dictionary 元素
@@ -379,7 +379,7 @@ public class WebService : System.Web.Services.WebService {
 
 此元素指定将在从 Web 服务返回的内容之下的行中显示的引文文本的开头（例如，“Results by:”或“Powered by:”）。
 
-对于此元素，可以使用 **Override** 元素指定其他区域设置的值。例如，如果用户正在运行 Office 的西班牙语 SKU，但使用的是英语字典，则允许引文行读取“Resultados por: Bing”，而不是“Results by: Bing”。有关如何指定其他区域设置的值的详细信息，请参阅 [Office 外接程序 XML 清单](../../docs/overview/add-in-manifests.md)中的“为不同区域设置提供设置”一节。
+对于此元素，可以使用 **Override** 元素指定其他区域设置的值。例如，如果用户正在运行 Office 的西班牙语 SKU，但使用的是英语字典，则允许引文行读取“Resultados por: Bing”，而不是“Results by: Bing”。有关如何指定其他区域设置的值的详细信息，请参阅 [Office 外接程序 XML 清单](../overview/add-in-manifests.md)中的“为不同区域设置提供设置”一节。
 
  **示例**
 

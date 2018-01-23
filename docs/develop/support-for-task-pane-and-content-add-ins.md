@@ -9,7 +9,7 @@
     
 2.  **Document 对象。** 大部分适用于内容和任务窗格外接程序的 API 通过 [Document](http://dev.office.com/reference/add-ins/shared/document) 对象的方法、属性和事件来公开。内容或任务窗格外接程序可以使用 [Office.context.document](http://dev.office.com/reference/add-ins/shared/office.context.document) 属性访问 **Document** 对象，并可以通过它访问可共同使用文档中数据的 API 的主要成员，比如 [Bindings](http://dev.office.com/reference/add-ins/shared/bindings.bindings) 和 [CustomXmlParts](http://dev.office.com/reference/add-ins/shared/customxmlparts.customxmlparts) 对象、[getSelectedDataAsync](http://dev.office.com/reference/add-ins/shared/document.getselecteddataasync)、[setSelectedDataAsync](http://dev.office.com/reference/add-ins/shared/document.setselecteddataasync) 和 [getFileAsync](http://dev.office.com/reference/add-ins/shared/document.getfileasync) 方法。**Document** 对象还提供用于确定文档是只读模式还是编辑模式的 [mode](http://dev.office.com/reference/add-ins/shared/document.mode) 属性，[url](http://dev.office.com/reference/add-ins/shared/document.url) 属性可以获取当前文档的 URL，并访问 [Settings](http://dev.office.com/reference/add-ins/shared/settings) 对象。**Document** 对象还支持为 [SelectionChanged](http://dev.office.com/reference/add-ins/shared/document.selectionchanged.event) 事件添加事件处理程序，以便当用户在文档中更改自己的选择内容时，您可以检测到。
     
-   内容或任务窗格外接程序只能在加载 DOM 和运行时环境后访问 **Document** 对象，通常是在 [Office.initialize](http://dev.office.com/reference/add-ins/shared/office.initialize) 事件的事件处理程序中加载。有关应用程序初始化时的事件流以及如何检查 DOM 和运行时是否成功加载的信息，请参阅[加载 DOM 和运行时环境](../../docs/develop/loading-the-dom-and-runtime-environment.md)。
+   内容或任务窗格外接程序只能在加载 DOM 和运行时环境后访问 **Document** 对象，通常是在 [Office.initialize](http://dev.office.com/reference/add-ins/shared/office.initialize) 事件的事件处理程序中加载。有关应用程序初始化时的事件流以及如何检查 DOM 和运行时是否成功加载的信息，请参阅[加载 DOM 和运行时环境](../develop/loading-the-dom-and-runtime-environment.md)。
     
 3.  **使用特定的功能的对象。**若要使用 API 的特定功能，请使用下面的对象和方法：
     
@@ -24,7 +24,7 @@
 
  >**重要说明** 并不是所有能够托管内容和任务窗格外接程序的 Office 应用程序都支持一些 API 成员。要确定支持哪些成员，请参阅以下任一资源：
 
-有关对各 Office 主机应用程序的 Office JavaScript API 支持的摘要信息，请参阅[了解适用于 Office 的 JavaScript API](../../docs/develop/understanding-the-javascript-api-for-office.md)。
+有关对各 Office 主机应用程序的 Office JavaScript API 支持的摘要信息，请参阅[了解适用于 Office 的 JavaScript API](../develop/understanding-the-javascript-api-for-office.md)。
 
 
 ## <a name="reading-and-writing-to-an-active-selection"></a>在活动的选择内容中读取和写入
@@ -50,7 +50,7 @@ function write(message){
 
 ```
 
-有关详细信息和示例，请参阅[将数据读取和写入到文档或电子表格中的活动选择区](../../docs/develop/read-and-write-data-to-the-active-selection-in-a-document-or-spreadsheet.md)。
+有关详细信息和示例，请参阅[将数据读取和写入到文档或电子表格中的活动选择区](../develop/read-and-write-data-to-the-active-selection-in-a-document-or-spreadsheet.md)。
 
 
 ## <a name="binding-to-a-region-in-a-document-or-spreadsheet"></a>绑定到文档或电子表格中的区域
@@ -80,7 +80,7 @@ function write(message){
 }
 ```
 
-有关详细信息和示例，请参阅[绑定到文档或电子表格中的区域](../../docs/develop/bind-to-regions-in-a-document-or-spreadsheet.md)。
+有关详细信息和示例，请参阅[绑定到文档或电子表格中的区域](../develop/bind-to-regions-in-a-document-or-spreadsheet.md)。
 
 
 ## <a name="getting-entire-documents"></a>获取整个文档
@@ -89,7 +89,7 @@ function write(message){
 
 您在调用 **Document.getFileAsync** 时，获取了 [File](http://dev.office.com/reference/add-ins/shared/file) 对象中的文档副本。**File** 对象提供对表示为 [Slice](http://dev.office.com/reference/add-ins/shared/document) 对象的“块”中文档的访问。当调用 **getFileAsync** 时，您可以指定文件类型（文本或压缩的 Open Office XML 格式）和切片的大小（高达 4MB）。若要访问 **File** 对象的内容，您可以调用在 **Slice.data** 属性中返回原始数据的 [File.getSliceAsync](http://dev.office.com/reference/add-ins/shared/slice.data)。如果您指定了压缩格式，则获取作为字节数组的文件数据。如果您在将文件传输给 Web 服务，则可以在提交前将压缩的原始数据转换为 base64 编码的字符串。最后，在完成获取文件切片后，使用 **File.closeAsync** 方法关闭文档。
 
-有关详细信息，请参阅如何[从 PowerPoint 或 Word 外接程序中获取整个文档](../../docs/develop/get-the-whole-document-from-an-add-in-for-powerpoint-or-word.md)。 
+有关详细信息，请参阅如何[从 PowerPoint 或 Word 外接程序中获取整个文档](../develop/get-the-whole-document-from-an-add-in-for-powerpoint-or-word.md)。 
 
 
 ## <a name="reading-and-writing-custom-xml-parts-of-a-word-document"></a>读取和写入 Word 文档的自定义 XML 部件
@@ -102,7 +102,7 @@ function write(message){
 
 若要将新的自定义 XML 部件添加到文档，请使用 **Document.customXmlParts** 属性获取文档中的自定义 XML 部件，并调用 [CustomXmlParts.addAsync](http://dev.office.com/reference/add-ins/shared/customxmlparts.addasync) 方法。
 
-有关如何使用含有任务窗格外接程序的自定义 XML 部件的详细信息，请参阅[使用 Office Open XML 创建更好的 Word 外接程序](../../docs/word/create-better-add-ins-for-word-with-office-open-xml.md)。
+有关如何使用含有任务窗格外接程序的自定义 XML 部件的详细信息，请参阅[使用 Office Open XML 创建更好的 Word 外接程序](../word/create-better-add-ins-for-word-with-office-open-xml.md)。
 
 
 ## <a name="persisting-add-in-settings"></a>保留加载项设置
@@ -121,14 +121,14 @@ Office.context.document.settings.set('themeColor', 'green');
 
 因为使用 **set** 和 **remove** 方法创建或删除的设置数据对数据的内存副本有影响，您必须调用 **saveAsync** 将对设置数据的更改保存到外接程序的工作文档。
 
-有关通过 **Settings** 对象的方法使用自定义数据的详细信息，请参阅[保留外接程序的状态和设置](../../docs/develop/persisting-add-in-state-and-settings.md)。
+有关通过 **Settings** 对象的方法使用自定义数据的详细信息，请参阅[保留外接程序的状态和设置](../develop/persisting-add-in-state-and-settings.md)。
 
 
 ## <a name="reading-properties-of-a-project-document"></a>读取项目文档的属性
 
 如果您的任务窗格外接程序在 Project 中运行，则它可以从活动项目的某些项目字段、资源和任务字段中读取数据。为此，可以使用将 [Document](http://dev.office.com/reference/add-ins/shared/projectdocument.projectdocument) 对象扩展为提供其他特定于 Project 功能的 **ProjectDocument** 对象的方法和事件。
 
-有关读取 Project 数据的示例，请参阅[使用文本编辑器创建您第一个用于 Project 2013 的任务窗格外接程序](../../docs/project/create-your-first-task-pane-add-in-for-project-by-using-a-text-editor.md)。
+有关读取 Project 数据的示例，请参阅[使用文本编辑器创建您第一个用于 Project 2013 的任务窗格外接程序](../project/create-your-first-task-pane-add-in-for-project-by-using-a-text-editor.md)。
 
 
 ## <a name="permissions-model-and-governance"></a>权限模型和管治
@@ -148,7 +148,7 @@ Office.context.document.settings.set('themeColor', 'green');
 
 ```
 
-有关详细信息，请参阅[请求 API 在内容和任务窗格外接程序中使用的权限](../../docs/develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md)。
+有关详细信息，请参阅[请求 API 在内容和任务窗格外接程序中使用的权限](../develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md)。
 
 
 ## <a name="additional-resources"></a>其他资源
@@ -158,5 +158,5 @@ Office.context.document.settings.set('themeColor', 'green');
     
 - [Office 外接程序清单的架构参考](http://msdn.microsoft.com/en-us/library/7e0cadc3-f613-8eb9-57ef-9032cbb97f92.aspx)
     
-- [解决 Office 外接程序中的用户错误](../../docs/testing/testing-and-troubleshooting.md)
+- [解决 Office 外接程序中的用户错误](../testing/testing-and-troubleshooting.md)
     

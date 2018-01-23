@@ -24,6 +24,6 @@ Visual Studio 中的“解决方案资源管理器”****会显示代码文件�
 
 ## <a name="additional-resources"></a>其他资源
 
-- [在 Visual Studio 中创建和调试 Office 外接程序](../../docs/get-started/create-and-debug-office-add-ins-in-visual-studio.md)
-- [使用任意编辑器创建 Office 外接程序](../../docs/get-started/create-an-office-add-in-using-any-editor.md)
+- [在 Visual Studio 中创建和调试 Office 外接程序](../get-started/create-and-debug-office-add-ins-in-visual-studio.md)
+- [使用任意编辑器创建 Office 外接程序](../get-started/create-an-office-add-in-using-any-editor.md)
 - [发布 Office 外接程序](../publish/publish.md)

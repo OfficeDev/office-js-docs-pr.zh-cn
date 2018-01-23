@@ -58,11 +58,11 @@
 
 ![指定 Office 主机或 API 要求时，选择用于外接程序的最佳选项](../images/e3498f8f-7c7c-461c-84f3-b93910b088b9.png)
 
-- 如果外接程序运行在一个 Office 主机中，那么在清单中设置 **Hosts** 元素。有关详细信息，请参阅 [设置 Hosts 元素](../../docs/overview/specify-office-hosts-and-api-requirements.md#set-the-hosts-element)。
+- 如果外接程序运行在一个 Office 主机中，那么在清单中设置 **Hosts** 元素。有关详细信息，请参阅 [设置 Hosts 元素](../overview/specify-office-hosts-and-api-requirements.md#set-the-hosts-element)。
     
-- 若要设置 Office 主机必须支持的用以运行外接程序的最低要求集或 API 成员，请在清单中设置 **Requirements** 元素。有关详细信息，请参阅[在清单中设置 Requirements 元素](../../docs/overview/specify-office-hosts-and-api-requirements.md#set-the-requirements-element-in-the-manifest)。
+- 若要设置 Office 主机必须支持的用以运行外接程序的最低要求集或 API 成员，请在清单中设置 **Requirements** 元素。有关详细信息，请参阅[在清单中设置 Requirements 元素](../overview/specify-office-hosts-and-api-requirements.md#set-the-requirements-element-in-the-manifest)。
     
-- 如果特定要求集或 API 成员可在 Office 主机中使用，在这种情况下如果你想要提供其他功能，请在外接程序的 JavaScript 代码中执行运行时检查。例如，如果外接程序在 Excel 2016 中运行，你可能想要使用新的适用于 Excel 的 JavaScript API 中的 API 成员以提供附加功能。有关详细信息，请参阅[在你的 JavaScript 代码中使用运行时检查](../../docs/overview/specify-office-hosts-and-api-requirements.md#use-runtime-checks-in-your-javascript-code)。
+- 如果特定要求集或 API 成员可在 Office 主机中使用，在这种情况下如果你想要提供其他功能，请在外接程序的 JavaScript 代码中执行运行时检查。例如，如果外接程序在 Excel 2016 中运行，你可能想要使用新的适用于 Excel 的 JavaScript API 中的 API 成员以提供附加功能。有关详细信息，请参阅[在你的 JavaScript 代码中使用运行时检查](../overview/specify-office-hosts-and-api-requirements.md#use-runtime-checks-in-your-javascript-code)。
     
 
 ## <a name="set-the-hosts-element"></a>设置 Hosts 元素
@@ -159,10 +159,10 @@ if (Office.context.requirements.isSetSupported(RequirementSetName , VersionNumbe
     
 -  _VersionNumber_（可选）是要求集的版本。
     
-在 Excel 2016 或 Word 2016 中，将 **isSetSupported** 和 **ExcelAPI** 或 **WordAPI** 要求集结合使用。**isSetSupported** 方法和 **ExcelAPI** 及 **WordAPI** 要求集可从 CDN 的最新 Office.js 文件中获取。如果未使用 CDN 中的 Office.js，则外接程序可能产生异常，因为 **isSetSupported** 将属于未定义的内容。有关详细信息，请参阅 [指定最新的适用于 Office 的 JavaScript API 库](../../docs/overview/specify-office-hosts-and-api-requirements.md#specify-the-latest-javascript-api-for-office-library)。 
+在 Excel 2016 或 Word 2016 中，将 **isSetSupported** 和 **ExcelAPI** 或 **WordAPI** 要求集结合使用。**isSetSupported** 方法和 **ExcelAPI** 及 **WordAPI** 要求集可从 CDN 的最新 Office.js 文件中获取。如果未使用 CDN 中的 Office.js，则外接程序可能产生异常，因为 **isSetSupported** 将属于未定义的内容。有关详细信息，请参阅 [指定最新的适用于 Office 的 JavaScript API 库](../overview/specify-office-hosts-and-api-requirements.md#specify-the-latest-javascript-api-for-office-library)。 
 
 
- >**注意：**   **isSetSupported** 不能用于 Outlook 或 Outlook Web App 中。若要在 Outlook 或 Outlook Web App 中使用运行时检查，请利用 [使用不属于要求集的方法的运行时检查](../../docs/overview/specify-office-hosts-and-api-requirements.md#runtime-checks-using-methods-not-in-a-requirement-set) 中所述的技术。
+ >**注意：**   **isSetSupported** 不能用于 Outlook 或 Outlook Web App 中。若要在 Outlook 或 Outlook Web App 中使用运行时检查，请利用 [使用不属于要求集的方法的运行时检查](../overview/specify-office-hosts-and-api-requirements.md#runtime-checks-using-methods-not-in-a-requirement-set) 中所述的技术。
 
 以下代码示例演示外接程序如何向支持不同要求集或 API 成员的不同 Office 主机提供不同功能。
 
@@ -211,7 +211,7 @@ if (Office.context.document.setSelectedDataAsync)
 
 
 
-- [Office 外接程序 XML 清单](../../docs/overview/add-in-manifests.md)
+- [Office 外接程序 XML 清单](../overview/add-in-manifests.md)
     
 - [Office 外接程序要求集](http://dev.office.com/reference/add-ins/requirement-sets/office-add-in-requirement-sets)
     

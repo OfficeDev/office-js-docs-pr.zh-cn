@@ -17,7 +17,7 @@
 |应用程序错误：无法访问目录|验证防火墙设置。"目录"指 Office 应用商店。此消息指示用户无法访问 Office 应用商店。|
 |应用程序错误： 无法启动此应用程序。 关闭此对话框 忽略此问题或单击 "重新启动"以重试。|确认已安装最新的 Office 更新，或下载 [Office 2013 更新](https://support.microsoft.com/en-us/kb/2986156/)。|
 |错误：对象不 支持此属性或方法 "defineProperty"|确认 Internet Explorer 不是在兼容模式下运行。转到“工具”>“**兼容性视图设置**”。|
-|很抱歉，我们无法加载 该应用程序，因为您的浏览器 版本不受支持。 单击此处查看 支持的浏览器版本的列表。|确保浏览器支持 HTML5 本地存储，或重置您的 Internet Explorer 设置。有关受支持的浏览器的信息，请参阅 [运行 Office 加载项的要求](../../docs/overview/requirements-for-running-office-add-ins.md)。|
+|很抱歉，我们无法加载 该应用程序，因为您的浏览器 版本不受支持。 单击此处查看 支持的浏览器版本的列表。|确保浏览器支持 HTML5 本地存储，或重置您的 Internet Explorer 设置。有关受支持的浏览器的信息，请参阅 [运行 Office 加载项的要求](../overview/requirements-for-running-office-add-ins.md)。|
 
 ## <a name="outlook-add-in-doesnt-work-correctly"></a>Outlook 外接程序不能正常工作
 

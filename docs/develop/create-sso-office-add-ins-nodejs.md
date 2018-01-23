@@ -1,10 +1,10 @@
 # <a name="create-a-nodejs-office-add-in-that-uses-single-sign-on"></a>创建使用单一登录的 Node.js Office 加载项
 
-用户可以登录到 Office，并且你的 Office Web 外接程序可以利用此登录过程来授权用户访问你的外接程序和 Microsoft Graph，而无需要求用户再次登录。有关概述，请参阅[在 Office 外接程序中启用 SSO](../../docs/develop/sso-in-office-add-ins.md)。
+用户可以登录到 Office，并且你的 Office Web 外接程序可以利用此登录过程来授权用户访问你的外接程序和 Microsoft Graph，而无需要求用户再次登录。有关概述，请参阅[在 Office 外接程序中启用 SSO](../develop/sso-in-office-add-ins.md)。
 
 本文将引导你完成在使用 Node.js 和 Express 构建的外接程序中启用单一登录 (SSO) 的过程。 
 
-> **注意：**有关基于 ASP.NET 的外接程序的类似文章，请参阅[创建使用单一登录的 ASP.NET Office 外接程序](../../docs/develop/create-sso-office-add-ins-aspnet.md)。
+> **注意：**有关基于 ASP.NET 的外接程序的类似文章，请参阅[创建使用单一登录的 ASP.NET Office 外接程序](../develop/create-sso-office-add-ins-aspnet.md)。
 
 ## <a name="prerequisites"></a>先决条件
 

@@ -65,5 +65,5 @@ function loadVideoDetails(videoIndex) {
 ## <a name="additional-resources"></a>其他资源
 
 
-- [Office 外接程序的隐私和安全性](../../docs/develop/privacy-and-security.md)
+- [Office 外接程序的隐私和安全性](../develop/privacy-and-security.md)
     

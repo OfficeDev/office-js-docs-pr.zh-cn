@@ -106,15 +106,15 @@ Office JavaScript API 包含的对象和成员适用于生成加载项，并与 
 
 ## <a name="next-steps"></a>后续步骤 
 
-若要了解有关如何开始生成 Office 外接程序的详细信息，请尝试[入门](https://dev.office.com/getting-started/addins)体验。可以使用 [Visual Studio](../../docs/get-started/create-and-debug-office-add-ins-in-visual-studio.md) 或[自己的工具](../../docs/get-started/create-an-office-add-in-using-any-editor)马上开始生成外接程序。 
+若要了解有关如何开始生成 Office 外接程序的详细信息，请尝试[入门](https://dev.office.com/getting-started/addins)体验。可以使用 [Visual Studio](../get-started/create-and-debug-office-add-ins-in-visual-studio.md) 或[自己的工具](../get-started/create-an-office-add-in-using-any-editor)马上开始生成外接程序。 
 
-若要开始规划创建高效且引人注目的用户体验的解决方案，请熟悉 Office 外接程序的[设计指南](../../docs/design/add-in-design)和[最佳做法](../../docs/add-ins/overview/add-in-development-best-practices)。    
+若要开始规划创建高效且引人注目的用户体验的解决方案，请熟悉 Office 外接程序的[设计指南](../design/add-in-design)和[最佳做法](../add-ins/overview/add-in-development-best-practices)。    
    
 ## <a name="additional-resources"></a>其他资源
 
 - [Office 外接程序示例](https://dev.office.com/code-samples)
     
-- [了解适用于 Office 的 JavaScript API](../../docs/develop/understanding-the-javascript-api-for-office.md)
+- [了解适用于 Office 的 JavaScript API](../develop/understanding-the-javascript-api-for-office.md)
 
 - [Office 外接程序主机和平台可用性](https://dev.office.com/add-in-availability)
 

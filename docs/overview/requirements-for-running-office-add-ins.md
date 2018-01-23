@@ -75,6 +75,6 @@
 
 ## <a name="additional-resources"></a>其他资源
 
-- [Office 外接程序平台概述](../../docs/overview/office-add-ins.md)
+- [Office 外接程序平台概述](../overview/office-add-ins.md)
 - [Office 外接程序主机和平台可用性](http://dev.office.com/add-in-availability)
 

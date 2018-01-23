@@ -105,7 +105,7 @@
 
 - 请按照标准 Web 实践来优化您的网页。在生产中，仅使用库的缩小版本。仅加载所需的资源，并优化加载资源的方式。
 
-- 如果操作需要执行时间，请为用户提供反馈。请注意下表中列出的阈值。另请参阅 [Office 外接程序的资源限制和性能优化](../../docs/develop/resource-limits-and-performance-optimization.md)
+- 如果操作需要执行时间，请为用户提供反馈。请注意下表中列出的阈值。另请参阅 [Office 外接程序的资源限制和性能优化](../develop/resource-limits-and-performance-optimization.md)
 
 
 |**交互类**|**目标**|**上限**|**人类感知**|

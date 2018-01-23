@@ -9,7 +9,7 @@
 |:-----|:-----|:-----|
 |更新外接程序以支持 Office.js 版本 1.1。|将 Office 外接程序项目中使用的 JavaScript 文件（Office.js 和特定于应用的 .js 文件）和外接程序清单验证文件更新到版本 1.1。|[JavaScript API 中的更改内容](https://dev.office.com/reference/add-ins/what's-changed-in-the-javascript-api-for-office)|
 |应用 UI 设计最佳实践。|将外接程序 UI 与 iOS 体验无缝集成。|[针对 iOS 进行设计](https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/MobileHIG/)|
-|应用外接程序设计最佳实践。|确保外接程序提供明确值、正常运行并持续执行。|[开发 Office 外接程序的最佳做法](../../docs/overview/add-in-development-best-practices.md)|
+|应用外接程序设计最佳实践。|确保外接程序提供明确值、正常运行并持续执行。|[开发 Office 外接程序的最佳做法](../overview/add-in-development-best-practices.md)|
 |针对触摸优化外接程序。|使 UI 响应触摸输入以及鼠标和键盘。|[应用 UX 设计原则](https://msdn.microsoft.com/EN-US/library/mt590883.aspx#Anchor_3)|
 |使外接程序免费。|Office on iPad 是一个通道，通过它您可以接触到更多用户并提升您的服务。这些新用户可能成为您的客户。|[验证策略 10.8](http://msdn.microsoft.com/library/cd90836a-523e-42f5-ab02-5123cdf9fefe%28Office.15%29.aspx)|
 |使外接程序无商务内容。|外接程序不得包括应用程序内购买、试用、旨在追加支付的 UI 或指向任何在线商店（在商店中用户可以购买或获取其他内容、应用程序或外接程序）的链接。隐私策略和使用条款页也不得包含任何商务 UI或商店链接。|[验证策略 3.4](http://msdn.microsoft.com/library/cd90836a-523e-42f5-ab02-5123cdf9fefe%28Office.15%29.aspx)|
@@ -29,16 +29,16 @@
     
 -  **在外接程序清单中或通过运行时检查指定 API 要求。**
     
-    在外接程序清单中指定 API 要求时，Office 将确定主机应用程序是否支持这些 API 成员。如果 API 成员在主机中可用，则外接程序在该主机应用程序中可用。或者，在外接程序中使用某方法前，可以执行运行时检查以确定该方法是否在主机中可用。运行时检查确保外接程序始终在主机中可用，并在方法可用时提供其他功能。有关详细信息，请参阅 [指定 Office 主机和 API 要求](../../docs/overview/specify-office-hosts-and-api-requirements.md)。
+    在外接程序清单中指定 API 要求时，Office 将确定主机应用程序是否支持这些 API 成员。如果 API 成员在主机中可用，则外接程序在该主机应用程序中可用。或者，在外接程序中使用某方法前，可以执行运行时检查以确定该方法是否在主机中可用。运行时检查确保外接程序始终在主机中可用，并在方法可用时提供其他功能。有关详细信息，请参阅 [指定 Office 主机和 API 要求](../overview/specify-office-hosts-and-api-requirements.md)。
     
-有关常规的外接程序开发最佳实践，请参阅[开发 Office 外接程序的最佳实践](../../docs/overview/add-in-development-best-practices.md)。
+有关常规的外接程序开发最佳实践，请参阅[开发 Office 外接程序的最佳实践](../overview/add-in-development-best-practices.md)。
 
 
 ## <a name="additional-resources"></a>其他资源
 <a name="bk_addresources"> </a>
 
 
-- [将 Office 外接程序旁加载到 iPad 和 Mac 上](../../docs/testing/sideload-an-office-add-in-on-ipad-and-mac.md)
+- [将 Office 外接程序旁加载到 iPad 和 Mac 上](../testing/sideload-an-office-add-in-on-ipad-and-mac.md)
     
-- [在 iPad 和 Mac 上调试 Office 外接程序](../../docs/testing/debug-office-add-ins-on-ipad-and-mac.md)
+- [在 iPad 和 Mac 上调试 Office 外接程序](../testing/debug-office-add-ins-on-ipad-and-mac.md)
     

@@ -43,8 +43,8 @@
 
 此部分介绍了创建启用 SSO 的 Office 加载项所需完成的任务。 其中介绍的这些任务与语言和框架无关。 有关详细演练的示例，请参阅：
 
-* [创建使用单一登录的 Node.js Office 加载项](../../docs/develop/create-sso-office-add-ins-nodejs.md)
-* [创建使用单一登录的 ASP.NET Office 加载项](../../docs/develop/create-sso-office-add-ins-aspnet.md)
+* [创建使用单一登录的 Node.js Office 加载项](../develop/create-sso-office-add-ins-nodejs.md)
+* [创建使用单一登录的 ASP.NET Office 加载项](../develop/create-sso-office-add-ins-aspnet.md)
 
 ### <a name="create-the-service-application"></a>创建服务应用程序
 

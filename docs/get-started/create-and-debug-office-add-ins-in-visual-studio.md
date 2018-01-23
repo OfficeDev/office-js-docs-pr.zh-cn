@@ -41,7 +41,7 @@
 ## <a name="modify-your-add-in-settings"></a>修改您的外接程序设置
 
 
-若要修改外接程序设置，请编辑项目的 XML 清单文件。在“**解决方案资源管理器**”中，展开外接程序项目节点、展开包含 XML 清单的文件夹并选择 XML 清单。你可以指向该文件中的任何元素以查看说明该元素用途的工具提示。有关清单文件的详细信息，请参阅 [Office 外接程序 XML 清单](../../docs/overview/add-in-manifests.md)。
+若要修改外接程序设置，请编辑项目的 XML 清单文件。在“**解决方案资源管理器**”中，展开外接程序项目节点、展开包含 XML 清单的文件夹并选择 XML 清单。你可以指向该文件中的任何元素以查看说明该元素用途的工具提示。有关清单文件的详细信息，请参阅 [Office 外接程序 XML 清单](../overview/add-in-manifests.md)。
 
 
 ## <a name="develop-the-contents-of-your-add-in"></a>开发外接程序的内容
@@ -159,7 +159,7 @@ Visual Studio 生成项目并执行以下操作：
     
 - [有关 CSS，请参阅验证、CSS、文本编辑器和“选项”对话框](http://go.microsoft.com/fwlink/?LinkID=238780)
     
-若要查看项目中 XML 清单文件的验证规则，请参阅 [Office 外接程序 XML 清单](../../docs/overview/add-in-manifests.md)。
+若要查看项目中 XML 清单文件的验证规则，请参阅 [Office 外接程序 XML 清单](../overview/add-in-manifests.md)。
 
 
 ### <a name="show-an-add-in-in-excel-word-or-project-and-step-through-your-code"></a>在 Excel、Word 或 Project 中显示加载项并单步调试代码

@@ -4,7 +4,7 @@
 
 ## <a name="using-the-most-up-to-date-project-files"></a>使用最新的项目文件
 
-如果您使用 Visual Studio 来开发您的外接程序，以使用适用于 Office 的 JavaScript API 的 [最新 API 成员](https://dev.office.com/reference/add-ins/what's-changed-in-the-javascript-api-for-office)和 [外接程序清单 v1.1 功能](../../docs/overview/add-in-manifests.md)（根据 offappmanifest-1.1.xsd 进行了验证），则您需要下载并安装 [Visual Studio 2015 和最新的 Office 开发人员工具](https://www.visualstudio.com/features/office-tools-vs)。
+如果您使用 Visual Studio 来开发您的外接程序，以使用适用于 Office 的 JavaScript API 的 [最新 API 成员](https://dev.office.com/reference/add-ins/what's-changed-in-the-javascript-api-for-office)和 [外接程序清单 v1.1 功能](../overview/add-in-manifests.md)（根据 offappmanifest-1.1.xsd 进行了验证），则您需要下载并安装 [Visual Studio 2015 和最新的 Office 开发人员工具](https://www.visualstudio.com/features/office-tools-vs)。
 
 如果您使用文本编辑器或 Visual Studio 以外的 IDE 开发您的 外接程序，则您需要针对在 外接程序 的清单中引用的 Office.js 和架构版本，将引用更新到 CDN。
 
@@ -65,7 +65,7 @@
 </OfficeApp>
 ```
 
-> **注意：**在将外接程序清单架构的版本更新为 1.1 之后，你将需要删除 **Capabilities** 和 **Capability** 元素，并将其替换为 [Hosts](http://dev.office.com/reference/add-ins/manifest/hosts) 和 [Host](http://dev.office.com/reference/add-ins/manifest/hosts) 元素或 [Requirements 和 Requirement 元素](../../docs/overview/specify-office-hosts-and-api-requirements.md)。
+> **注意：**在将外接程序清单架构的版本更新为 1.1 之后，你将需要删除 **Capabilities** 和 **Capability** 元素，并将其替换为 [Hosts](http://dev.office.com/reference/add-ins/manifest/hosts) 和 [Host](http://dev.office.com/reference/add-ins/manifest/hosts) 元素或 [Requirements 和 Requirement 元素](../overview/specify-office-hosts-and-api-requirements.md)。
 
 ## <a name="updating-an-office-add-in-project-created-with-a-text-editor-or-other-ide"></a>更新使用文本编辑器或其他 IDE 创建的 Office 加载项项目
 
@@ -105,14 +105,14 @@
 </OfficeApp>
 ```
 
-> **注意：**在将外接程序清单架构的版本更新为 1.1 之后，你将需要删除 **Capabilities** 和 **Capability** 元素，并将其替换为 [Hosts](http://dev.office.com/reference/add-ins/manifest/hosts) 和 [Host](http://dev.office.com/reference/add-ins/manifest/hosts) 元素或 [Requirements 和 Requirement 元素](../../docs/overview/specify-office-hosts-and-api-requirements.md)。
+> **注意：**在将外接程序清单架构的版本更新为 1.1 之后，你将需要删除 **Capabilities** 和 **Capability** 元素，并将其替换为 [Hosts](http://dev.office.com/reference/add-ins/manifest/hosts) 和 [Host](http://dev.office.com/reference/add-ins/manifest/hosts) 元素或 [Requirements 和 Requirement 元素](../overview/specify-office-hosts-and-api-requirements.md)。
     
 
 ## <a name="additional-resources"></a>其他资源
 
-- [指定 Office 主机和 API 要求](../../docs/overview/specify-office-hosts-and-api-requirements.md)
+- [指定 Office 主机和 API 要求](../overview/specify-office-hosts-and-api-requirements.md)
     
-- [了解适用于 Office 的 JavaScript API](../../docs/develop/understanding-the-javascript-api-for-office.md)
+- [了解适用于 Office 的 JavaScript API](../develop/understanding-the-javascript-api-for-office.md)
     
 - [适用于 Office 的 JavaScript API](http://dev.office.com/reference/add-ins/javascript-api-for-office)
     

@@ -98,5 +98,5 @@ Office.initialize = function () {
 
 
 
-- [了解适用于 Office 的 JavaScript API](../../docs/develop/understanding-the-javascript-api-for-office.md)
+- [了解适用于 Office 的 JavaScript API](../develop/understanding-the-javascript-api-for-office.md)
     

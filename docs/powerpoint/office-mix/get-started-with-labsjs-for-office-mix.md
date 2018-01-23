@@ -57,7 +57,7 @@ labs.js 库充当除 office.js 库（Office 外接程序 的 API）以外的抽�
 
 应用程序清单是描述您的 LabJS 实验室的 XML 文档。它提供了对托管实验室的 URL 的引用，并包含有关实验室的详细信息，包括显示名称、描述、图标、大小等。
 
-我们包含了示例清单"SampleManifest.xml"。有关清单架构的详细信息以及架构定义链接，请参阅 [Office 外接程序 XML 清单](../../../docs/overview/add-in-manifests.md)。
+我们包含了示例清单"SampleManifest.xml"。有关清单架构的详细信息以及架构定义链接，请参阅 [Office 外接程序 XML 清单](../../overview/add-in-manifests.md)。
 
 若要将清单上载到 SharePoint 网站，首先导航到应用程序目录，通常可以通过此 URL <code>https://\<your site\>/sites/AppCatalog</code> 查找到该目录。然后，选择“**新的应用**”按钮，然后按照步骤上载应用程序清单。
 
@@ -92,7 +92,7 @@ labs.js 库充当除 office.js 库（Office 外接程序 的 API）以外的抽�
 
 - [Office Mix 外接程序](../../powerpoint/office-mix/office-mix-add-ins.md)
     
-- [Office 外接程序](../../../docs/overview/office-add-ins.md)
+- [Office 外接程序](../../overview/office-add-ins.md)
     
 - [创建第一个 Office Mix 实验室](../../powerpoint/office-mix/creating-your-first-lab-for-office-mix.md)
     

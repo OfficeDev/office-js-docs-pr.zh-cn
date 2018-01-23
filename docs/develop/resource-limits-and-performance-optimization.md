@@ -106,7 +106,7 @@ Office 提供了遥测日志，以保留本地计算机上运行的 Office 解�
 
 
 
-- [Office 外接程序的隐私和安全性](../../docs/develop/privacy-and-security.md)
+- [Office 外接程序的隐私和安全性](../develop/privacy-and-security.md)
     
 - [Outlook 外接程序的激活和 JavaScript API 限制](../outlook/limits-for-activation-and-javascript-api-for-outlook-add-ins.md)
     

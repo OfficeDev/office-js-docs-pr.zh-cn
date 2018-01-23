@@ -320,7 +320,7 @@ myBinding.setDataAsync('Hello World!', function (asyncResult) { });
 
 传入函数的匿名函数是在操作完成时执行的回调。该函数用单个参数 `asyncResult` 来调用，其中包含结果的状态。
 
- > **注意：**从 Excel 2013 SP1 的发行版及相应的 Excel Online 内部版本开始，你现在可以 [在绑定表中写入和更新数据时设置格式](../../docs/excel/format-tables-in-add-ins-for-excel.md)。
+ > **注意：**从 Excel 2013 SP1 的发行版及相应的 Excel Online 内部版本开始，你现在可以 [在绑定表中写入和更新数据时设置格式](../excel/format-tables-in-add-ins-for-excel.md)。
 
 
 ## <a name="detect-changes-to-data-or-the-selection-in-a-binding"></a>检测绑定中数据或所选内容的更改
@@ -373,11 +373,11 @@ function removeEventHandlerFromBinding() {
 
 ## <a name="additional-resources"></a>其他资源
 
-- [了解适用于 Office 的 JavaScript API](../../docs/develop/understanding-the-javascript-api-for-office.md)
+- [了解适用于 Office 的 JavaScript API](../develop/understanding-the-javascript-api-for-office.md)
     
-- [Office 外接程序中的异步编程](../../docs/develop/asynchronous-programming-in-office-add-ins.md)
+- [Office 外接程序中的异步编程](../develop/asynchronous-programming-in-office-add-ins.md)
     
-- [读取数据并将其写入文档或电子表格中的活动选择区](../../docs/develop/read-and-write-data-to-the-active-selection-in-a-document-or-spreadsheet.md)
+- [读取数据并将其写入文档或电子表格中的活动选择区](../develop/read-and-write-data-to-the-active-selection-in-a-document-or-spreadsheet.md)
     
 [Binding]:               http://dev.office.com/reference/add-ins/shared/binding
 [MatrixBinding]:         http://dev.office.com/reference/add-ins/shared/binding.matrixbinding

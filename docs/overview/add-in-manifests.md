@@ -426,14 +426,14 @@ Office 外接程序的 XML 清单文件描述，当最终用户安装外接程�
 
 ## <a name="validate-and-troubleshoot-issues-with-your-manifest"></a>验证并排查清单问题
 
-如需排查清单问题，请参阅[验证并排查清单问题](../../docs/testing/troubleshoot-manifest.md)。其中介绍了如何针对 [XML 架构定义 (XSD)](https://github.com/OfficeDev/office-js-docs/tree/master/docs/overview/schemas) 验证清单，以及如何使用运行时日志记录功能调试清单。
+如需排查清单问题，请参阅[验证并排查清单问题](../testing/troubleshoot-manifest.md)。其中介绍了如何针对 [XML 架构定义 (XSD)](https://github.com/OfficeDev/office-js-docs/tree/master/docs/overview/schemas) 验证清单，以及如何使用运行时日志记录功能调试清单。
 
 ## <a name="additional-resources"></a>其他资源
 
 
-- [在清单中定义外接程序命令](../../docs/develop/define-add-in-commands.md)
-- [指定 Office 主机和 API 要求](../../docs/overview/specify-office-hosts-and-api-requirements.md)
-- [Office 外接程序的本地化](../../docs/develop/localization.md)
+- [在清单中定义外接程序命令](../develop/define-add-in-commands.md)
+- [指定 Office 主机和 API 要求](../overview/specify-office-hosts-and-api-requirements.md)
+- [Office 外接程序的本地化](../develop/localization.md)
 - [Office 外接程序清单的架构参考](https://github.com/OfficeDev/office-js-docs/tree/master/docs/overview/schemas)
-- [验证并排查清单问题](../../docs/testing/troubleshoot-manifest.md)
+- [验证并排查清单问题](../testing/troubleshoot-manifest.md)
 

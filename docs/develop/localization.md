@@ -410,7 +410,7 @@ UIStrings.js 资源文件将创建一个对象  **UIStrings**，其中包含加�
 
 ## <a name="additional-resources"></a>其他资源
 
-- [Office 外接程序的设计准则](../../docs/design/add-in-design.md)
+- [Office 外接程序的设计准则](../design/add-in-design.md)
     
 - [Office 2013 中的语言标识符和 OptionState Id 值](http://technet.microsoft.com/en-us/library/cc179219%28Office.15%29.aspx)
 

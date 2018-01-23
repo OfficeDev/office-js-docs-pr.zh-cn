@@ -3,7 +3,7 @@
 
 可以使用 Visual Studio 中的 Office 外接程序 JavaScript 模板来创建 TypeScript 外接程序。在 Visual Studio 中新建外接程序后，可以将项目转换成 TypeScript。这样，便不必从头开始创建 Office 外接程序 TypeScript 项目。  
 
-   > **注意：**若要了解如何在不使用 Visual Studio 的情况下创建 Office 加载项 TypeScript 项目，请参阅[使用任意编辑器创建 Office 加载项](../../docs/get-started/create-an-office-add-in-using-any-editor.md)。
+   > **注意：**若要了解如何在不使用 Visual Studio 的情况下创建 Office 加载项 TypeScript 项目，请参阅[使用任意编辑器创建 Office 加载项](../get-started/create-an-office-add-in-using-any-editor.md)。
 
 在 TypeScript 项目中，可以混合使用 TypeScript 和 JavaScript 文件，项目都可以进行编译。这是因为 TypeScript 是键入的 JavaScript 超集，可以编译 JavaScript。 
 

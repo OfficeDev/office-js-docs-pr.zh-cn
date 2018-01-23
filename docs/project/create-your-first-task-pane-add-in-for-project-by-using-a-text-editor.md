@@ -5,13 +5,13 @@
 
 Project 2013 使用与其他 Microsoft Office 2013 客户端相同的加载项清单架构，以及大部分相同的 JavaScript API。可从 Project 2013 SDK 下载的 `Samples\Apps` 子目录获取本文中描述的加载项的完整代码。
 
-Project OM Test 示例加载项可以获得任务的 GUID 以及应用程序和活动项目的属性。如果 Project Professional 2013 打开 SharePoint 库中的一个项目，则该加载项可以显示该项目的 URL。[Project 2013 SDK 下载](https://www.microsoft.com/en-us/download/details.aspx?id=30435%20)包括完整的源代码。当提取并安装 SDK 和 Project2013SDK.msi 文件中的示例时，请查看 `\Samples\Apps\Copy_to_AppManifests_FileShare` 子目录下的指令清单文件，以及 `\Samples\Apps\Copy_to_AppSource_FileShare` 子目录下的源代码。JSOMCall.html 样本使用所包括的 office.js 文件和 project-15.js 文件中的 JavaScript 函数。可以使用相应的调试文件（office.debug.js 和project-15.debug.js）来检查这些函数。有关在 Office 外接程序中使用 JavaScript 的说明，请参见[了解适用于 Office 的 JavaScript API](../../docs/develop/understanding-the-javascript-api-for-office.md)。
+Project OM Test 示例加载项可以获得任务的 GUID 以及应用程序和活动项目的属性。如果 Project Professional 2013 打开 SharePoint 库中的一个项目，则该加载项可以显示该项目的 URL。[Project 2013 SDK 下载](https://www.microsoft.com/en-us/download/details.aspx?id=30435%20)包括完整的源代码。当提取并安装 SDK 和 Project2013SDK.msi 文件中的示例时，请查看 `\Samples\Apps\Copy_to_AppManifests_FileShare` 子目录下的指令清单文件，以及 `\Samples\Apps\Copy_to_AppSource_FileShare` 子目录下的源代码。JSOMCall.html 样本使用所包括的 office.js 文件和 project-15.js 文件中的 JavaScript 函数。可以使用相应的调试文件（office.debug.js 和project-15.debug.js）来检查这些函数。有关在 Office 外接程序中使用 JavaScript 的说明，请参见[了解适用于 Office 的 JavaScript API](../develop/understanding-the-javascript-api-for-office.md)。
 
 ## <a name="procedure-1-to-create-the-add-in-manifest-file"></a>过程 1. 创建加载项清单文件
 
 
 
-- 在本地目录中创建一个 XML 文件。该 XML 文件包括 **Office 外接程序 XML 清单**中描述的 [OfficeApp](../../docs/overview/add-in-manifests.md) 元素和子元素。例如，创建一个名为 JSOM_SimpleOMCalls.xml 并包含以下 XML 的文件（更改 **Id** 元素的 GUID 值）。
+- 在本地目录中创建一个 XML 文件。该 XML 文件包括 **Office 外接程序 XML 清单**中描述的 [OfficeApp](../overview/add-in-manifests.md) 元素和子元素。例如，创建一个名为 JSOM_SimpleOMCalls.xml 并包含以下 XML 的文件（更改 **Id** 元素的 GUID 值）。
     
 ```XML
      <?xml version="1.0" encoding="utf-8"?>

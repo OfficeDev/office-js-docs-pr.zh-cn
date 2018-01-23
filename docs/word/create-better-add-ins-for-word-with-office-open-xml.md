@@ -7,7 +7,7 @@
 
 因此，当您需要向文档添加多种格式的内容（如图像、格式化表格、图表，甚至仅为格式化文本）时，会进行什么选择？你可以使用 HTML 来插入一些多种格式内容的类型，例如图片。HTML 强制转换可能有一些缺点，例如对内容可用的格式设置和定位选项的限制，具体取决于你的方案。由于 Office Open XML 是用于编写 Word 文档（例如 .docx 和 .dotx）的语言，因此您可以使用用户可以应用的几乎任何类型的格式设置插入用户可以添加到 Word 文档中的几乎任何类型的内容。确定需要完成的 Office Open XML 标记比你想象的容易。
 
- >**注意** Office Open XML 也是 PowerPoint 和 Excel（以及 Office 2013 及以上版本中的 Visio）文档的语言。然而，您当前仅可在为 Word 创建的 Office 外接程序中将内容强制转换为 Office Open XML。有关 Office Open XML 的详细信息，包括完整语言参考文档，请参阅[其他资源](../../docs/word/create-better-add-ins-for-word-with-office-open-xml.md#additional-resources)。
+ >**注意** Office Open XML 也是 PowerPoint 和 Excel（以及 Office 2013 及以上版本中的 Visio）文档的语言。然而，您当前仅可在为 Word 创建的 Office 外接程序中将内容强制转换为 Office Open XML。有关 Office Open XML 的详细信息，包括完整语言参考文档，请参阅[其他资源](../word/create-better-add-ins-for-word-with-office-open-xml.md#additional-resources)。
 
 开始之前，请查看可以使用 Office Open XML 强制转换插入的内容类型。下载代码示例 [Word-Add-in-Load-and-write-Open-XML](https://github.com/OfficeDev/Word-Add-in-Load-and-write-Open-XML)，其中包含在 Word 中插入以下任何示例所需的 Office Open XML 标记和 Office.js 代码。
 
@@ -134,7 +134,7 @@ Office 2013 提供了大量 SmartArt 图表布局（可以使用 Office Open XML
     
 
     
- >**重要说明**  数据包中的 .rels 文件（如顶级 .rels、document.xml.rels 以及可以看到的特定内容类型的其他文件）是一个非常重要的工具，您可以将其作为指南，帮助您快速编辑 Office Open XML 数据包。若要了解有关如何使用此工具的详细信息，请参阅本主题后面的[创建您自己的标记：最佳做法](../../docs/word/create-better-add-ins-for-word-with-office-open-xml.md#creating-your-own-markup-best-practices)。
+ >**重要说明**  数据包中的 .rels 文件（如顶级 .rels、document.xml.rels 以及可以看到的特定内容类型的其他文件）是一个非常重要的工具，您可以将其作为指南，帮助您快速编辑 Office Open XML 数据包。若要了解有关如何使用此工具的详细信息，请参阅本主题后面的[创建您自己的标记：最佳做法](../word/create-better-add-ins-for-word-with-office-open-xml.md#creating-your-own-markup-best-practices)。
 
 
 
@@ -142,7 +142,7 @@ Office 2013 提供了大量 SmartArt 图表布局（可以使用 Office Open XML
     
 - 在使用 Office Open XML 强制转换将内容插入到文档中时，很多部件会自动被 Set 方法忽略，因此您可能还要删除它们。这些部件包括 theme1.xml 文件（文档的格式主题）、文档属性部件（核心、外接程序和缩略图），以及设置文件（包括设置、webSettings 和 fontTable）。
     
-- 在图 1 示例中，直接应用文本格式（即单独应用每个字体和段落格式设置）。但是，如果按前面的图 2 中所示使用样式（例如，如果您想让文本在目标文档中自动呈现“Heading 1”样式），则您可能需要部分 styles.xml 部件及其关系定义。有关详细信息，请参阅主题节“[添加使用其他 Office Open XML 部件的对象](../../docs/word/create-better-add-ins-for-word-with-office-open-xml.md#adding-objects-that-use-additional-office-open-xml-parts)”。
+- 在图 1 示例中，直接应用文本格式（即单独应用每个字体和段落格式设置）。但是，如果按前面的图 2 中所示使用样式（例如，如果您想让文本在目标文档中自动呈现“Heading 1”样式），则您可能需要部分 styles.xml 部件及其关系定义。有关详细信息，请参阅主题节“[添加使用其他 Office Open XML 部件的对象](../word/create-better-add-ins-for-word-with-office-open-xml.md#adding-objects-that-use-additional-office-open-xml-parts)”。
     
 
 ## <a name="inserting-document-content-at-the-selection"></a>在选定内容插入文档内容
@@ -350,7 +350,7 @@ function writeContent() {
 
 几种类型的多种格式的内容仅需要前面示例中显示的 .rels 和 document.xml 组件，包括内容控件、Office 绘图形状、文本框及表格（除非将样式应用于表格）。事实上，您可以重用已编辑过的相同数据包部件，并仅为内容标记置换出 document.xml 中的 **body** 内容。
 
-若要检查前面图 5 到图 8 中所示的每个内容类型示例的 Office Open XML 标记，可以浏览[概述](https://github.com/OfficeDev/Word-Add-in-Load-and-write-Open-XML)一节中引用的 [Word-Add-in-Load-and-write-Open-XML](../../docs/word/create-better-add-ins-for-word-with-office-open-xml.md#bk_Overview) 代码示例。
+若要检查前面图 5 到图 8 中所示的每个内容类型示例的 Office Open XML 标记，可以浏览[概述](https://github.com/OfficeDev/Word-Add-in-Load-and-write-Open-XML)一节中引用的 [Word-Add-in-Load-and-write-Open-XML](../word/create-better-add-ins-for-word-with-office-open-xml.md#bk_Overview) 代码示例。
 
 在继续本主题内容之前，我们来看看几个内容类型要注意的差别，以及如何置换出所需的片段。
 
@@ -403,7 +403,7 @@ Word 中的内容控件类型包括格式文本、纯文本、图片、构建基
     
  >**注意**  请勿将 Word 中的 XML 数据绑定与通过外接程序绑定到控件的功能混淆。它们是完全独立的功能。但是，您可以将已命名内容控件加入您通过使用 OOXML 强制转换的外接程序插入的内容中，然后使用外接程序中的代码绑定到这些控件。
 
-还要注意 XML 数据绑定和 Office.js 都可以与您应用程序中的自定义 XML 部件交互，因此可以集成这些强大的工具。若要了解有关如何使用 Office JavaScript API 中的自定义 XML 部件的信息，请参阅本主题的[其他资源](../../docs/word/create-better-add-ins-for-word-with-office-open-xml.md#additional-resources)一节。
+还要注意 XML 数据绑定和 Office.js 都可以与您应用程序中的自定义 XML 部件交互，因此可以集成这些强大的工具。若要了解有关如何使用 Office JavaScript API 中的自定义 XML 部件的信息，请参阅本主题的[其他资源](../word/create-better-add-ins-for-word-with-office-open-xml.md#additional-resources)一节。
 
 本主题的下一节介绍如何在 Word 外接程序中使用绑定。首先，我们来看看插入可以使用外接程序绑定到的格式文本内容控件所需的 Office Open XML 示例。
 
@@ -810,7 +810,7 @@ SmartArt 图表具有四个关联的部件，但始终需要的只有两个。�
 
 如果您创建的是可独立使用（即从应用商店或专有服务器位置插入的），也可在预先创建的模板（设计为与外接程序一起使用）中使用的外接程序，您还需要了解什么内容？答案应该是，您已经了解了所有所需的内容。
 
-无论外接程序是设计为独立使用，还是与模板一起使用，给定内容类型和插入方法的标记都相同。如果您使用的模板是设计为与外接程序一起使用，请确保 JavaScript 包括回退，该回退用于说明引用的内容可能存在于文档中的方案（如“[添加并绑定到命名内容控件](../../docs/word/create-better-add-ins-for-word-with-office-open-xml.md#add-and-bind-to-a-named-content-control)”一节中所示的绑定示例中所演示的）。
+无论外接程序是设计为独立使用，还是与模板一起使用，给定内容类型和插入方法的标记都相同。如果您使用的模板是设计为与外接程序一起使用，请确保 JavaScript 包括回退，该回退用于说明引用的内容可能存在于文档中的方案（如“[添加并绑定到命名内容控件](../word/create-better-add-ins-for-word-with-office-open-xml.md#add-and-bind-to-a-named-content-control)”一节中所示的绑定示例中所演示的）。
 
 通过应用使用模板时，无论外接程序是在用户创建文档时常驻在模板中，还是外接程序将插入模板，您都可能还想结合 API 的其他元素，以帮助您创建更可靠的交互式体验。例如，您可能想要在自定义 XML 部件中包括标识数据，以便可以使用此标识数据确定模板类型，从而为用户提供特定于模板的选项。若要了解有关如何在外接程序中使用自定义 XML 的详细信息，请参阅下面的“其他资源”部分。
 

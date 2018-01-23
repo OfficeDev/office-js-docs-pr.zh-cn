@@ -63,7 +63,7 @@ function write(message){
 
 你也可以使用回调函数的参数访问 **AsyncResult** 对象的其他属性。可以使用 [AsyncResult.status](http://dev.office.com/reference/add-ins/shared/asyncresult.error) 属性，以确定调用是成功还是失败。如果调用失败，你可以使用 [AsyncResult.error](http://dev.office.com/reference/add-ins/shared/asyncresult.context) 属性访问 [Error](http://dev.office.com/reference/add-ins/shared/error) 对象，以获取错误信息。
 
-有关使用  **getSelectedDataAsync** 方法的详细信息，请参阅 [在文档或电子表格的活动选择内容中读取和写入数据](../../docs/develop/read-and-write-data-to-the-active-selection-in-a-document-or-spreadsheet.md)。 
+有关使用  **getSelectedDataAsync** 方法的详细信息，请参阅 [在文档或电子表格的活动选择内容中读取和写入数据](../develop/read-and-write-data-to-the-active-selection-in-a-document-or-spreadsheet.md)。 
 
 
 ### <a name="writing-a-named-callback-function"></a>编写命名回调函数
@@ -111,7 +111,7 @@ function write(message){
     
 使用回调函数的异步编程通常需要您将回调返回的结果嵌套在两个或更多回调中。如果您需要这么做，则可以使用来自 API 的所有"Async"方法的嵌套回调。
 
-使用嵌套回调是大多数 JavaScript 开发人员都熟知的编程模式，但使用了深层嵌套回调的代码难以阅读和理解。作为嵌套回调的替代，适用于 Office 的 JavaScript API 也支持实施承诺模式。但是，在适用于 Office 的 JavaScript API 的当前版本中，承诺模式仅可与 [Excel 电子表格和 Word 文档中的绑定](../../docs/develop/bind-to-regions-in-a-document-or-spreadsheet.md)的代码一起使用。
+使用嵌套回调是大多数 JavaScript 开发人员都熟知的编程模式，但使用了深层嵌套回调的代码难以阅读和理解。作为嵌套回调的替代，适用于 Office 的 JavaScript API 也支持实施承诺模式。但是，在适用于 Office 的 JavaScript API 的当前版本中，承诺模式仅可与 [Excel 电子表格和 Word 文档中的绑定](../develop/bind-to-regions-in-a-document-or-spreadsheet.md)的代码一起使用。
 
 <a name="AsyncProgramming_NestedCallbacks" />
 ### <a name="asynchronous-programming-using-nested-callback-functions"></a>使用嵌套回调函数的异步编程
@@ -230,7 +230,7 @@ function write(message){
 }
 ```
 
-将占位符 _BindingObjectAsyncMethod_ 替换为对由承诺对象支持的四个 **Binding** 对象方法中之一的调用：**getDataAsync**、**setDataAsync**、**addHandlerAsync** 或 **emoveHandlerAsync**。对这些方法的调用不支持其他的承诺。你必须使用[嵌套回调函数模式](../../docs/develop/asynchronous-programming-in-office-add-ins.md#AsyncProgramming_NestedCallbacks)来调用它们。
+将占位符 _BindingObjectAsyncMethod_ 替换为对由承诺对象支持的四个 **Binding** 对象方法中之一的调用：**getDataAsync**、**setDataAsync**、**addHandlerAsync** 或 **emoveHandlerAsync**。对这些方法的调用不支持其他的承诺。你必须使用[嵌套回调函数模式](../develop/asynchronous-programming-in-office-add-ins.md#AsyncProgramming_NestedCallbacks)来调用它们。
 
 **Binding** 对象承诺实现后，便可像绑定（加载项运行时不会异步重试实现承诺）那样在链式方法调用中重复使用。如果 **Binding** 对象承诺不能实现，加载项运行时将在下次调用某一异步方法时再次尝试访问绑定对象。
 
@@ -386,7 +386,7 @@ function write(message){
 ## <a name="additional-resources"></a>其他资源
 
 
-- [了解适用于 Office 的 JavaScript API](../../docs/develop/understanding-the-javascript-api-for-office.md)
+- [了解适用于 Office 的 JavaScript API](../develop/understanding-the-javascript-api-for-office.md)
     
 - [适用于 Office 的 JavaScript API](http://dev.office.com/reference/add-ins/javascript-api-for-office)
      

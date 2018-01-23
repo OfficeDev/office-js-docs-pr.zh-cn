@@ -6,7 +6,7 @@ Project Standard 2013 和 Project Professional 2013 都支持任务窗格加载�
 
  >**注释**[Project 2013 SDK 下载](https://www.microsoft.com/en-us/download/details.aspx?id=30435%20)中包括的示例加载项演示如何使用 Project 加载项对象模型以及如何在 Project Server 2013 中使用用于报告数据的 OData 服务。在提取和安装 SDK 时，请查看  `\Samples\Apps\` 子目录。
 
-有关 Office 外接程序的简介，请参阅 [Office 加载项平台概述](../../docs/overview/office-add-ins.md)。
+有关 Office 外接程序的简介，请参阅 [Office 加载项平台概述](../overview/office-add-ins.md)。
 
 ## <a name="add-in-scenarios-for-project"></a>用于 Project 的加载项方案
 
@@ -43,7 +43,7 @@ Project 的加载项方案包括以下几种：
 
 用于 Project 外接程序的 JavaScript 库包括  **Office** 命名空间别名的扩展，使开发人员可以访问 Project 应用程序的属性以及项目中的任务、资源和视图。Project-15.js 文件中的 JavaScript 库扩展用于用 Visual Studio 2015 创建的 Project 外接程序中。Project 2013 SDK 下载中还提供了 Office.js、Office.debug.js、Project-15.js、Project-15.debug.js 和相关文件。
 
-若要创建外接程序，可以使用简单的文本编辑器来创建 HTML 网页和相关的 JavaScript 文件、CSS 文件以及 REST 查询。除了 HTML 页或 Web 应用程序外，外接程序还需要 XML 清单文件以用于配置。项目可以使用包含 **type** 属性指定为 **TaskPaneExtension** 的清单文件。清单文件可由多个 Office 2013 客户端应用程序使用，或者可以创建一个特定于 Project 2013 的清单文件。有关详细信息，请参阅 [Office 外接程序平台概述](../../docs/overview/office-add-ins.md) 中的_开发基础_。
+若要创建外接程序，可以使用简单的文本编辑器来创建 HTML 网页和相关的 JavaScript 文件、CSS 文件以及 REST 查询。除了 HTML 页或 Web 应用程序外，外接程序还需要 XML 清单文件以用于配置。项目可以使用包含 **type** 属性指定为 **TaskPaneExtension** 的清单文件。清单文件可由多个 Office 2013 客户端应用程序使用，或者可以创建一个特定于 Project 2013 的清单文件。有关详细信息，请参阅 [Office 外接程序平台概述](../overview/office-add-ins.md) 中的_开发基础_。
 
 对于复杂的自定义应用程序，为了便于调试，建议你使用 Visual Studio 2015 为外接程序开发网站。Visual Studio 2015 包括用于外接程序项目的模板，你可以在其中选择外接程序的类型（任务窗格、内容或邮件）和主机应用程序（Project、Word、Excel 或 Outlook）。有关与 Project Online 中的数据集成的示例，请参阅 MSDN 上“Project 编程功能”博客中的[将 Project 任务窗格外接程序连接到 PWA](http://blogs.msdn.com/b/project_programmability/archive/2012/11/02/connecting-a-project-task-pane-app-to-pwa.aspx)。
 
@@ -66,7 +66,7 @@ Project 的加载项方案包括以下几种：
 ### <a name="procedure-1-to-create-the-add-in-manifest-file-for-bing-search"></a>过程 1. 创建用于 Bing 搜索的加载项清单文件
 
 
-- 在本地目录中创建一个 XML 文件。该 XML 文件包括  **OfficeApp** 元素和子元素， [Office 外接程序 XML 清单](../../docs/overview/add-in-manifests.md)中对其进行了介绍。例如，创建一个名为 BingSearch.xml 的文件，其中包含以下 XML。
+- 在本地目录中创建一个 XML 文件。该 XML 文件包括  **OfficeApp** 元素和子元素， [Office 外接程序 XML 清单](../overview/add-in-manifests.md)中对其进行了介绍。例如，创建一个名为 BingSearch.xml 的文件，其中包含以下 XML。
     
 ```XML
    <?xml version="1.0" encoding="utf-8"?>
@@ -196,9 +196,9 @@ Bing 搜索加载项显示在任务窗格中，如图 3 所示。可以手动调
 
 
 
-- [Office 外接程序平台概述](../../docs/overview/office-add-ins.md)
+- [Office 外接程序平台概述](../overview/office-add-ins.md)
     
-- [Office 外接程序 XML 清单](../../docs/overview/add-in-manifests.md)
+- [Office 外接程序 XML 清单](../overview/add-in-manifests.md)
     
 - [适用于 Office 的 JavaScript API](http://dev.office.com/reference/add-ins/javascript-api-for-office)
     

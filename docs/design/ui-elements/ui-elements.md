@@ -6,7 +6,7 @@
 - 基于 HTML 的自定义界面
 
 ## <a name="add-in-commands"></a>外接程序命令
-命令在[外接程序 XML 清单](../../../docs/develop/define-add-in-commands.md)中定义，并作为本机 UX 扩展向 Office UI 呈现。例如，您可以使用外接程序命令将按钮添加到 Office 功能区。 
+命令在[外接程序 XML 清单](../../develop/define-add-in-commands.md)中定义，并作为本机 UX 扩展向 Office UI 呈现。例如，您可以使用外接程序命令将按钮添加到 Office 功能区。 
 
 ![显式外接程序命令以及外接程序中的自定义 HTML UI 元素的图片](../../images/layouts_addInCommands_v0.03.png)
 

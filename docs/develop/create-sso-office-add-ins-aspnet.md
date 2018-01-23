@@ -1,10 +1,10 @@
 # <a name="create-an-aspnet-office-add-in-that-uses-single-sign-on"></a>创建使用单一登录的 ASP.NET Office 加载项
 
-如果用户已登录 Office，加载项可以使用相同的凭据，这样用户无需重新登录，即可访问多个应用程序。 有关概述，请参阅[在 Office 加载项中启用 SSO](../../docs/develop/sso-in-office-add-ins.md)。
+如果用户已登录 Office，加载项可以使用相同的凭据，这样用户无需重新登录，即可访问多个应用程序。 有关概述，请参阅[在 Office 加载项中启用 SSO](../develop/sso-in-office-add-ins.md)。
 
 本文将引导你完成在使用 ASP.NET、OWIN 和适用于 .NET 的 Microsoft 验证库 (MSAL) 生成的外接程序中启用单一登录 (SSO) 的过程。
 
-> **注意：**有关基于 Node.js 的外接程序的类似文章，请参阅[创建使用单一登录的 Node.js Office 外接程序](../../docs/develop/create-sso-office-add-ins-nodejs.md)。
+> **注意：**有关基于 Node.js 的外接程序的类似文章，请参阅[创建使用单一登录的 Node.js Office 外接程序](../develop/create-sso-office-add-ins-nodejs.md)。
 
 ## <a name="prerequisites"></a>先决条件
 

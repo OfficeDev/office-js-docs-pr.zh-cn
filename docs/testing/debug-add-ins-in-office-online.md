@@ -23,7 +23,7 @@
     
      >**注意：**我们建议使用 [Yeoman 生成器](https://github.com/OfficeDev/generator-office)以创建和托管外接程序。
      
-2. 在你的 [外接程序清单文件](../../docs/overview/add-in-manifests.md)中，将 **SourceLocation** 元素值更新为包括绝对 URI，而非相对 URI。 例如：
+2. 在你的 [外接程序清单文件](../overview/add-in-manifests.md)中，将 **SourceLocation** 元素值更新为包括绝对 URI，而非相对 URI。 例如：
     
     ```xml
     <SourceLocation DefaultValue="https://localhost:44300/App/Home/Home.html" />

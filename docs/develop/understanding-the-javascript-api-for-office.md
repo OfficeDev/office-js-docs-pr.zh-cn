@@ -3,7 +3,7 @@
 
 
 
-本文提供了有关适用于 Office 的 JavaScript API 的信息以及使用方法。有关参考信息，请参阅 [适用于 Office 的 JavaScript API](http://dev.office.com/reference/add-ins/javascript-api-for-office)。有关将 Visual Studio 项目文件更新到适用于 Office 的 JavaScript API 的最新当前版本的信息，请参阅 [更新适用于 Office 的 JavaScript API 版本和清单架构文件](../../docs/develop/update-your-javascript-api-for-office-and-manifest-schema-version.md)。
+本文提供了有关适用于 Office 的 JavaScript API 的信息以及使用方法。有关参考信息，请参阅 [适用于 Office 的 JavaScript API](http://dev.office.com/reference/add-ins/javascript-api-for-office)。有关将 Visual Studio 项目文件更新到适用于 Office 的 JavaScript API 的最新当前版本的信息，请参阅 [更新适用于 Office 的 JavaScript API 版本和清单架构文件](../develop/update-your-javascript-api-for-office-and-manifest-schema-version.md)。
 
 >
   **注意：**生成外接程序时，如果计划将外接程序[发布](../publish/publish.md)到 Office 应用商店，请务必遵循 [Office 应用商店验证策略](https://msdn.microsoft.com/en-us/library/jj220035.aspx)。例如，外接程序必须适用于支持你定义的方法的所有平台，才能通过验证（有关详细信息，请参阅[第 4.12 部分](https://msdn.microsoft.com/en-us/library/jj220035.aspx#Anchor_3)以及 [Office 外接程序主机和可用性](https://dev.office.com/add-in-availability)页）。
@@ -45,7 +45,7 @@ Office.initialize = function () {
 ```
 Office 外接程序中的所有页面需要向 initialize 事件 (**Office.initialize**) 分配一个事件处理程序。如果未能分配一个事件处理程序，则外接程序可能会在启动时出现错误。而且，如果某个用户尝试通过 Office Online Web 客户端（例如 Excel Online、PowerPoint Online 或 Outlook Web App）使用你的外接程序，则外接程序会无法运行。如果无需任何初始化代码，则向 **Office.initialize** 分配的函数的正文可以如同上述第一个示例中一样为空。
 
-有关初始化外接程序时的事件顺序的详细信息，请参阅 [加载 DOM 和运行时环境](../../docs/develop/loading-the-dom-and-runtime-environment.md)。
+有关初始化外接程序时的事件顺序的详细信息，请参阅 [加载 DOM 和运行时环境](../develop/loading-the-dom-and-runtime-environment.md)。
 
 #### <a name="initialization-reason"></a>Initialization Reason
 Office.initialize 为任务窗格和内容外接程序提供其他“_reason_”参数。此参数可用于确定如何将外接程序添加到当前文档。你可以使用此参数针对首次插入加载项时和加载项已存在于文档中时实施不同的逻辑。 
@@ -144,7 +144,7 @@ Office.initialize = function (reason) {
 
 **Document** 对象显示方法，使用户可以采用“获取和设置”方式读取和写入用户的当前选择内容。要执行此操作，**Document** 对象提供 **getSelectedDataAsync** 和 **setSelectedDataAsync** 方法。
 
-有关演示如何使用选区执行任务的代码示例，请参阅[在文档或电子表格的活动选区中读取和写入数据](../../docs/develop/read-and-write-data-to-the-active-selection-in-a-document-or-spreadsheet.md)。
+有关演示如何使用选区执行任务的代码示例，请参阅[在文档或电子表格的活动选区中读取和写入数据](../develop/read-and-write-data-to-the-active-selection-in-a-document-or-spreadsheet.md)。
 
 
 ## <a name="working-with-bindings-using-the-bindings-and-binding-objects"></a>使用 Bindings 和 Binding 对象处理绑定
@@ -174,7 +174,7 @@ Office.initialize = function (reason) {
 |表格绑定|绑定到包含带标题的表格的文档区域。表格绑定中的数据作为 [TableData](http://dev.office.com/reference/add-ins/shared/tabledata) 对象写入或读取。**TableData** 对象通过 **headers** 和 **rows** 属性公开数据。|任何 Excel 或 Word 表格均可作为表格绑定的基础。建立表格绑定后，用户添加到表格中的每个新行或新列都自动包含在绑定中。 |
 使用 **Bindings** 对象的三个“add”方法之一创建绑定后，可以通过相应对象的方法处理绑定的数据和属性：[MatrixBinding](http://dev.office.com/reference/add-ins/shared/binding.matrixbinding)、[TableBinding](http://dev.office.com/reference/add-ins/shared/binding.tablebinding) 或 [TextBinding](http://dev.office.com/reference/add-ins/shared/binding.textbinding)。这三个对象全部继承 [Binding](http://dev.office.com/reference/add-ins/shared/binding.getdataasync) 对象的 [getDataAsync](http://dev.office.com/reference/add-ins/shared/binding.setdataasync) 和 **setDataAsync** 方法，使你能够与绑定的数据交互。
 
-有关演示如何使用绑定执行任务的代码示例，请参阅[绑定到文档或电子表格中的区域](../../docs/develop/bind-to-regions-in-a-document-or-spreadsheet.md)。
+有关演示如何使用绑定执行任务的代码示例，请参阅[绑定到文档或电子表格中的区域](../develop/bind-to-regions-in-a-document-or-spreadsheet.md)。
 
 
 ## <a name="working-with-custom-xml-parts-using-the-customxmlparts-and-customxmlpart-objects"></a>使用 CustomXmlParts 和 CustomXmlPart 对象处理自定义 XML 部件
@@ -190,7 +190,7 @@ API 的 [CustomXmlParts](http://dev.office.com/reference/add-ins/shared/customxm
 
  **适用于：**Word 和 PowerPoint 的任务窗格加载项
 
-[Document.getFileAsync](http://dev.office.com/reference/add-ins/shared/document.getfileasync) 方法以及 [File](http://dev.office.com/reference/add-ins/shared/file) 和 [Slice](http://dev.office.com/reference/add-ins/shared/slice) 对象的成员可提供以达 4 MB 的切块（块）形式一次性获取整个 Word 和 PowerPoint 文档文件的功能。有关详细信息，请参阅[操作方法：获取某加载项中文档的全部文件内容](../../docs/develop/get-the-whole-document-from-an-add-in-for-powerpoint-or-word.md)。
+[Document.getFileAsync](http://dev.office.com/reference/add-ins/shared/document.getfileasync) 方法以及 [File](http://dev.office.com/reference/add-ins/shared/file) 和 [Slice](http://dev.office.com/reference/add-ins/shared/slice) 对象的成员可提供以达 4 MB 的切块（块）形式一次性获取整个 Word 和 PowerPoint 文档文件的功能。有关详细信息，请参阅[操作方法：获取某加载项中文档的全部文件内容](../develop/get-the-whole-document-from-an-add-in-for-powerpoint-or-word.md)。
 
 
 ## <a name="mailbox-object"></a>Mailbox 对象
@@ -224,7 +224,7 @@ var item = Office.context.mailbox.item;
 ## <a name="api-support-matrix"></a>API 支持矩阵
 
 
-此表总结了当使用[受适用于 Office 的 v1.1 JavaScript API 支持的 1.1 外接程序清单架构和功能](http://msdn.microsoft.com/library/cff9fbdf-a530-4f6e-91ca-81bcacd90dcd%28Office.15%29.aspx)指定[您的外接程序支持的 Office 主机应用程序](../../docs/develop/update-your-javascript-api-for-office-and-manifest-schema-version.md)时，在各种外接程序类型（内容、任务窗格和 Outlook）之间均受支持的 API 和功能以及可以托管它们的 Office 应用程序。
+此表总结了当使用[受适用于 Office 的 v1.1 JavaScript API 支持的 1.1 外接程序清单架构和功能](http://msdn.microsoft.com/library/cff9fbdf-a530-4f6e-91ca-81bcacd90dcd%28Office.15%29.aspx)指定[您的外接程序支持的 Office 主机应用程序](../develop/update-your-javascript-api-for-office-and-manifest-schema-version.md)时，在各种外接程序类型（内容、任务窗格和 Outlook）之间均受支持的 API 和功能以及可以托管它们的 Office 应用程序。
 
 
 |||||||||

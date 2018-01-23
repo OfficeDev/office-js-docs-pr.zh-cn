@@ -2,7 +2,7 @@
 
 _适用于：Word 2016、Word for iPad、Word for Mac_
 
-Word 加载项在 Word 中运行，并且可以使用 Word JavaScript API 与文档的内容进行交互，该 API 是用于扩展 Office 应用程序的 Office 加载项编程模型的一部分。 在此加载项编程模型中，可以使用所选的平台和语言来创建将扩展托管到 Word 的 Web 应用程序，然后使用加载项的[清单](../../docs/overview/add-in-manifests.md)来定义其设置和功能。
+Word 加载项在 Word 中运行，并且可以使用 Word JavaScript API 与文档的内容进行交互，该 API 是用于扩展 Office 应用程序的 Office 加载项编程模型的一部分。 在此加载项编程模型中，可以使用所选的平台和语言来创建将扩展托管到 Word 的 Web 应用程序，然后使用加载项的[清单](../overview/add-in-manifests.md)来定义其设置和功能。
 
 本文将逐步演示使用 jQuery 和 Word JavaScript API 生成 Word 加载项的过程。 
 
