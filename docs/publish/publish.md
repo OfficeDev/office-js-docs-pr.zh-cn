@@ -62,7 +62,7 @@ Outlook 外接程序部署需要以下内容：
 - Office 365、Exchange Online 或 Exchange Server 2013 或更高版本
 - Outlook 2013 或更高版本
 
-若要将外接程序分配给租户，请使用 Exchange 管理中心从文件或 URL直接上载清单，或从 Office 应用商店添加外接程序。 若要将外接程序分配给单个用户，则必须使用 Exchange PowerShell。 有关详细信息，请参阅 TechNet 上的[安装或删除组织的 Outlook 外接程序](https://technet.microsoft.com/en-us/library/jj943752(v=exchg.150).aspx)。
+若要将外接程序分配给租户，请使用 Exchange 管理中心从文件或 URL直接上载清单，或从 Office 应用商店添加外接程序。 若要将外接程序分配给单个用户，则必须使用 Exchange PowerShell。 有关详细信息，请参阅 TechNet 上的[安装或删除组织的 Outlook 外接程序](https://technet.microsoft.com/zh-cn/library/jj943752(v=exchg.150).aspx)。
 
 ## <a name="additional-resources"></a>其他资源
 

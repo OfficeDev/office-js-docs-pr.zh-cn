@@ -47,7 +47,7 @@ function loadVideoDetails(videoIndex) {
 
 有关使用 OAuth 进行身份验证的示例，请参阅[使用 OAuth 的 Twitter SharePoint Web 部件](http://aidangarnish.net/post/Twitter-SharePoint-Web-Part-With-OAuth)。
 
-有关演示如何使用 `System.Net` 中的 `Cookie` 对象获取和设置 cookie 值的服务器端代码示例，请参阅 [Value](http://msdn2.microsoft.com/EN-US/library/4f772twc)(#value) 属性。
+有关演示如何使用 `System.Net` 中的 `Cookie` 对象获取和设置 cookie 值的服务器端代码示例，请参阅 [Value](http://msdn2.microsoft.com/zh-cn/library/4f772twc)(#value) 属性。
 
 
 ## <a name="using-cross-origin-resource-sharing-cors"></a>使用跨源资源共享 (CORS)

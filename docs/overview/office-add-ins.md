@@ -90,7 +90,7 @@ Outlook 外接程序可扩展 Office 功能区，还可以在查看或撰写 Out
 
 Outlook 外接程序可以从该项目中访问上下文信息，如地址或跟踪 ID，然后使用该数据访问有关服务器的其他信息并从 Web 服务创建最佳用户体验。在大多数情况下，Outlook 外接程序在各种支持的主机应用程序上运行而无需进行任何修改，包括 Outlook、Outlook for Mac、Outlook Web App，以及适用于设备的 Outlook Web App，从而在桌面、Web 和平板电脑以及移动设备上提供无缝体验。 
 
-有关 Outlook 外接程序的概述，请参阅 [Outlook 外接程序概述](https://docs.microsoft.com/en-us/outlook/add-ins/)。 
+有关 Outlook 外接程序的概述，请参阅 [Outlook 外接程序概述](https://docs.microsoft.com/zh-cn/outlook/add-ins/)。 
 
 ### <a name="create-new-objects-in-office-documents"></a>在 Office 文档中创建新对象 
 

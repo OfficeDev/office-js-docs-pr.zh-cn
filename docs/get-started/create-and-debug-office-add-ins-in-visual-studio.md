@@ -36,7 +36,7 @@
 |**项目**|**说明**|
 |:-----|:-----|
 |外接程序项目|仅包含一个 XML 清单文件，该文件包含描述您加载项的所有设置。这些设置可帮助 Office 主机确定应何时激活加载项，以及在何处显示加载项。Visual Studio 会为您生成此文件的内容，以便您能够立即运行项目并使用加载项。您可以通过使用清单编辑器来随时更改这些设置。|
-|Web 应用程序项目|包含加载项的内容页面，包括开发可识别 Office 的 HTML 和 JavaScript 页面所需的所有文件和文件引用。在您开发加载项时，Visual Studio 会在本地 IIS 服务器上承载 Web 应用程序。准备好进行发布后，必须找出一个服务器来承载此项目。如果要了解有关 ASP.NET Web 应用程序项目的更多信息，请参阅 [ASP.NET Web 项目](http://msdn.microsoft.com/en-us/library/cdcd712f-96b0-4165-8b5d-9d0566650a28%28Office.15%29.aspx)。|
+|Web 应用程序项目|包含加载项的内容页面，包括开发可识别 Office 的 HTML 和 JavaScript 页面所需的所有文件和文件引用。在您开发加载项时，Visual Studio 会在本地 IIS 服务器上承载 Web 应用程序。准备好进行发布后，必须找出一个服务器来承载此项目。如果要了解有关 ASP.NET Web 应用程序项目的更多信息，请参阅 [ASP.NET Web 项目](http://msdn.microsoft.com/zh-cn/library/cdcd712f-96b0-4165-8b5d-9d0566650a28%28Office.15%29.aspx)。|
 
 ## <a name="modify-your-add-in-settings"></a>修改您的外接程序设置
 
@@ -143,7 +143,7 @@ Visual Studio 生成项目并执行以下操作：
 接下来，Visual Studio 会执行以下操作：
 
 
-1. 通过将 ~remoteAppUrl 令牌替换为起始页的完全限定地址（例如，http://localhost/MyAgave.html）修改 XML 清单文件的 [SourceLocation](http://msdn.microsoft.com/en-us/library/e6ea8cd4-7c8b-1da7-d8f8-8d3c80a088bc%28Office.15%29.aspx) 元素。
+1. 通过将 ~remoteAppUrl 令牌替换为起始页的完全限定地址（例如，http://localhost/MyAgave.html）修改 XML 清单文件的 [SourceLocation](http://msdn.microsoft.com/zh-cn/library/e6ea8cd4-7c8b-1da7-d8f8-8d3c80a088bc%28Office.15%29.aspx) 元素。
     
 2. 在 IIS Express 中启动 Web 应用程序项目。
     
@@ -155,7 +155,7 @@ Visual Studio 生成项目并执行以下操作：
 - [选项、文本编辑器、JavaScript 和 IntelliSense](http://go.microsoft.com/fwlink/?LinkID=238779)
     
 - 
-  [操作方法：为 Visual Web Developer 中的 HTML 编辑设置验证选项](http://msdn.microsoft.com/en-us/library/vstudio/0byxkfet%28v=vs.100%29.aspx)
+  [操作方法：为 Visual Web Developer 中的 HTML 编辑设置验证选项](http://msdn.microsoft.com/zh-cn/library/vstudio/0byxkfet%28v=vs.100%29.aspx)
     
 - [有关 CSS，请参阅验证、CSS、文本编辑器和“选项”对话框](http://go.microsoft.com/fwlink/?LinkID=238780)
     

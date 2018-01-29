@@ -9,7 +9,7 @@
 
 1. 安装 [Visual Studio 2017](https://www.visualstudio.com/downloads) 并选择包含 **Azure 开发**工作负载。
 
-    >**注意：**如果之前已安装 Visual Studio 2017，请[使用 Visual Studio 安装程序](https://docs.microsoft.com/en-us/visualstudio/install/modify-visual-studio)，以确保安装 **Azure 开发**工作负载。 
+    >**注意：**如果之前已安装 Visual Studio 2017，请[使用 Visual Studio 安装程序](https://docs.microsoft.com/zh-cn/visualstudio/install/modify-visual-studio)，以确保安装 **Azure 开发**工作负载。 
 
 2. 安装 Office 2016。 
     

@@ -13,7 +13,7 @@
 你只需五名参与者即可发现设计中的大多数可用性问题。在整个开发周期内定期进行小型测试，以确保产品以用户为中心。
 
 > 
-  **注意：**我们建议在多个平台上测试外接程序的可用性。若要[将外接程序发布到 Office 应用商店](https://msdn.microsoft.com/en-us/library/office/jj220037.aspx)，其必须适用于所有[支持你所定义的方法的平台](https://dev.office.com/add-in-availability)。
+  **注意：**我们建议在多个平台上测试外接程序的可用性。若要[将外接程序发布到 Office 应用商店](https://msdn.microsoft.com/zh-cn/library/office/jj220037.aspx)，其必须适用于所有[支持你所定义的方法的平台](https://dev.office.com/add-in-availability)。
 
 ## <a name="1----sign-up-for-a-testing-service"></a>1.  注册测试服务
 

@@ -51,7 +51,7 @@
 |[SourceLocation]   |指定的每个区域设置中的用户都可以看到专门针对该区域设置为该外接程序设计的网页。 |
 
 
- > **注意：**你只能本地化 Office 支持的区域设置的说明和显示名称。请参阅 [ Office 2013 中的语言标识符和 OptionState ID 值](http://technet.microsoft.com/en-us/library/cc179219.aspx)获取 Office 最新版本的语言和区域设置列表。
+ > **注意：**你只能本地化 Office 支持的区域设置的说明和显示名称。请参阅 [ Office 2013 中的语言标识符和 OptionState ID 值](http://technet.microsoft.com/zh-cn/library/cc179219.aspx)获取 Office 最新版本的语言和区域设置列表。
 
 
 ### <a name="examples"></a>示例
@@ -412,7 +412,7 @@ UIStrings.js 资源文件将创建一个对象  **UIStrings**，其中包含加�
 
 - [Office 外接程序的设计准则](../design/add-in-design.md)
     
-- [Office 2013 中的语言标识符和 OptionState Id 值](http://technet.microsoft.com/en-us/library/cc179219%28Office.15%29.aspx)
+- [Office 2013 中的语言标识符和 OptionState Id 值](http://technet.microsoft.com/zh-cn/library/cc179219%28Office.15%29.aspx)
 
 [DefaultLocale]:         http://dev.office.com/reference/add-ins/manifest/defaultlocale
 [说明]:           http://dev.office.com/reference/add-ins/manifest/description

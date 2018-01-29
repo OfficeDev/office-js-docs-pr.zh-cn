@@ -4,7 +4,7 @@
 
 本文介绍了如何使用 Visual Studio 2015 开发定目标到 Access Web 应用程序的 Office 加载项。
 
->**注意：**有关使用 VBA 开发 Access 解决方案的信息，请参阅 MSDN 上的 [Access](https://msdn.microsoft.com/en-us/library/fp179695.aspx)。
+>**注意：**有关使用 VBA 开发 Access 解决方案的信息，请参阅 MSDN 上的 [Access](https://msdn.microsoft.com/zh-cn/library/fp179695.aspx)。
 
 ## <a name="prerequisites"></a>先决条件
 

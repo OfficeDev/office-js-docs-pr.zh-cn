@@ -156,7 +156,7 @@ Office.context.document.settings.set('themeColor', 'green');
 
 - [Office JavaScript API](http://dev.office.com/reference/add-ins/javascript-api-for-office)
     
-- [Office 外接程序清单的架构参考](http://msdn.microsoft.com/en-us/library/7e0cadc3-f613-8eb9-57ef-9032cbb97f92.aspx)
+- [Office 外接程序清单的架构参考](http://msdn.microsoft.com/zh-cn/library/7e0cadc3-f613-8eb9-57ef-9032cbb97f92.aspx)
     
 - [解决 Office 外接程序中的用户错误](../testing/testing-and-troubleshooting.md)
     

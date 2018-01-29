@@ -90,7 +90,7 @@ Office 2013 提供了大量 SmartArt 图表布局（可以使用 Office Open XML
 
 ![Word 2013 中的图表。](../images/off15app_CreateWdAppUsingOOXML_fig11.png)
 
-你可以在 Word 文档中插入 Excel 图表作为实时图表，这也意味着你可以在 Word 外接程序中使用这些图表。如上述示例中所示，你可以使用 Office Open XML 强制转换，以插入用户可以插入其自己的文档中的几乎任何类型的内容。获取所需的 Office Open XML 标记有两种简单的方法。将多种格式的内容添加到一个原本空白的 Word 2013 文档中，然后将文件保存为 Word XML 文档格式，或通过 [getSelectedDataAsync](http://msdn.microsoft.com/en-us/library/fp142294.aspx) 方法，使用测试外接程序来捕捉标记。两种方法都可以获得几乎相同的结果。
+你可以在 Word 文档中插入 Excel 图表作为实时图表，这也意味着你可以在 Word 外接程序中使用这些图表。如上述示例中所示，你可以使用 Office Open XML 强制转换，以插入用户可以插入其自己的文档中的几乎任何类型的内容。获取所需的 Office Open XML 标记有两种简单的方法。将多种格式的内容添加到一个原本空白的 Word 2013 文档中，然后将文件保存为 Word XML 文档格式，或通过 [getSelectedDataAsync](http://msdn.microsoft.com/zh-cn/library/fp142294.aspx) 方法，使用测试外接程序来捕捉标记。两种方法都可以获得几乎相同的结果。
 
     
  >**注意** Office Open XML 文档实际上是表示文档内容的文件压缩包。以 Word XML 文档格式保存文件提供了平展到一个 XML 文件的整个 Office Open XML 数据包，也是使用 **getSelectedDataAsync** 检索 Office Open XML 标记时获取的内容。
@@ -100,7 +100,7 @@ Office 2013 提供了大量 SmartArt 图表布局（可以使用 Office Open XML
 ## <a name="exploring-the-office-open-xml-document-package"></a>探讨 Office Open XML 文档包
 
 
-在使用 [getSelectedDataAsync](http://msdn.microsoft.com/en-us/library/fp142294.aspx) 检索选定内容的 Office Open XML 时（或在将文档保存为 Word XML 文档格式时），获取的内容不仅仅是描述选定内容的标记；它是带有您几乎肯定不需要的多个选项和设置的整个文档。事实上，如果对包含任务窗格外接程序的文档使用此方法，则获取的标记甚至包括您的任务窗格。
+在使用 [getSelectedDataAsync](http://msdn.microsoft.com/zh-cn/library/fp142294.aspx) 检索选定内容的 Office Open XML 时（或在将文档保存为 Word XML 文档格式时），获取的内容不仅仅是描述选定内容的标记；它是带有您几乎肯定不需要的多个选项和设置的整个文档。事实上，如果对包含任务窗格外接程序的文档使用此方法，则获取的标记甚至包括您的任务窗格。
 
 即使是简单的 Word 文档包，除了实际内容的部件之外，还包括文档属性、样式、主题（格式设置）、Web 设置、字体等的部件。
 
@@ -201,7 +201,7 @@ Office 2013 提供了大量 SmartArt 图表布局（可以使用 Office Open XML
 
 将前面的 Office Open XML 保存为解决方案可访问的 XML 文件后，就可以使用以下函数设置使用 Office Open XML 强制转换的文档中的格式化文本内容。 
 
-在此函数中，请注意除了最后一行，其他都用于获取已保存的标记，以用于函数末尾的 [setSelectedDataAsync](http://msdn.microsoft.com/en-us/library/fp142145.aspx) 方法调用。**setSelectedDataASync** 仅要求您指定要插入的内容以及强制类型。
+在此函数中，请注意除了最后一行，其他都用于获取已保存的标记，以用于函数末尾的 [setSelectedDataAsync](http://msdn.microsoft.com/zh-cn/library/fp142145.aspx) 方法调用。**setSelectedDataASync** 仅要求您指定要插入的内容以及强制类型。
 
 
  >**注意**  保存到解决方案中后，将 _yourXMLfilename_ 替换为 XML 文件的名称和路径。如果您无法确认在解决方案的何处包括 XML 文件，或如何在代码中进行引用，请参阅 [Word-Add-in-Load-and-write-Open-XML](https://github.com/OfficeDev/Word-Add-in-Load-and-write-Open-XML) 代码示例作为示例，同时也作为此处所示的标记和 JavaScript 的可用示例。
@@ -528,7 +528,7 @@ function addAndBindControl() {
 此处所示的代码执行以下步骤：
 
 
-- 尝试使用 [addFromNamedItemAsync](http://msdn.microsoft.com/en-us/library/fp123590.aspx) 绑定到命名内容控件。 
+- 尝试使用 [addFromNamedItemAsync](http://msdn.microsoft.com/zh-cn/library/fp123590.aspx) 绑定到命名内容控件。 
     
     如果你的外接程序有可能出现这样一种情况，在执行代码时，文档中已存在命名控件，那么请先执行此步骤。例如，如果外接程序已插入并使用已设计为与该外接程序一起使用的模板进行保存，其中事先放置了该控件，那么你需要执行此操作。如果你需要绑定到该外接程序之前放置的控件，那么你也需要执行此操作。
     
@@ -819,7 +819,7 @@ SmartArt 图表具有四个关联的部件，但始终需要的只有两个。�
 
 
 
-- [适用于 Office 的 JavaScript API](http://msdn.microsoft.com/en-us/library/fp142185.aspx)
+- [适用于 Office 的 JavaScript API](http://msdn.microsoft.com/zh-cn/library/fp142185.aspx)
     
 - [标准 ECMA-376：Office Open XML 文件格式](http://www.ecma-international.org/publications/standards/Ecma-376.md)（在此处访问有关 Open XML 的完整语言参考和相关文档）
     

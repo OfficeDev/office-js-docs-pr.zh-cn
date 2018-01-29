@@ -106,7 +106,7 @@
 
 4. 对于 `audience` 属性，将占位符 `{audience GUID}` 替换为注册外接程序时保存的应用程序 ID。（即分配给 `client_id` 属性的同一值）。
   
-3. 在分配给 `issuer` 属性的字符串中，你将看到占位符 *{O365 tenant GUID}*。将此替换为在最后一个过程结束时保存的 Office 365 租户 ID。如果出于任何原因，你以前没有获得 ID，请使用[查找 Office 365 租户 ID](https://support.office.com/en-us/article/Find-your-Office-365-tenant-ID-6891b561-a52d-4ade-9f39-b492285e2c9b)中的一种方法来获取 ID。完成后，`issuer` 属性值应如下所示：
+3. 在分配给 `issuer` 属性的字符串中，你将看到占位符 *{O365 tenant GUID}*。将此替换为在最后一个过程结束时保存的 Office 365 租户 ID。如果出于任何原因，你以前没有获得 ID，请使用[查找 Office 365 租户 ID](https://support.office.com/zh-cn/article/Find-your-Office-365-tenant-ID-6891b561-a52d-4ade-9f39-b492285e2c9b)中的一种方法来获取 ID。完成后，`issuer` 属性值应如下所示：
 
     `https://login.microsoftonline.com/12345678-1234-1234-1234-123456789012/v2.0`
 
@@ -444,7 +444,7 @@
 
 现在，你需要让 Office 知道在哪里可以找到该外接程序。
 
-1. 创建网络共享，或[将文件夹共享到网络](https://technet.microsoft.com/en-us/library/cc770880.aspx)。
+1. 创建网络共享，或[将文件夹共享到网络](https://technet.microsoft.com/zh-cn/library/cc770880.aspx)。
 
 2. 将 Office-Add-in-NodeJS-SSO.xml 清单文件从项目根目录复制到共享文件夹。
 

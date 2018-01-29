@@ -11,5 +11,5 @@
 - **乐于帮助用户并为用户设身处地着想。**使您的文本积极、礼貌、鼓舞人心且能提供支持。强调用户能够完成的 - 而不是不能完成的。
 - **了解你的客户。**当你使用惯用语或口语时，请注意文化和全球化因素。
 
-如果你计划在 [Office 应用商店](https://msdn.microsoft.com/EN-US/library/dn708487.aspx)中提供你的外接程序，请确保你的语言和内容符合[验证策略](https://msdn.microsoft.com/EN-US/library/office/jj220035.aspx)。
+如果你计划在 [Office 应用商店](https://msdn.microsoft.com/zh-cn/library/dn708487.aspx)中提供你的外接程序，请确保你的语言和内容符合[验证策略](https://msdn.microsoft.com/zh-cn/library/office/jj220035.aspx)。
 

@@ -1,7 +1,7 @@
 # <a name="use-document-themes-in-your-powerpoint-add-ins"></a>在您的 PowerPoint 外接程序中使用文档主题
 
 
-[Office 主题](https://support.office.com/en-US/Article/What-is-a-theme--7528ccc2-4327-4692-8bf5-9b5a3f2a5ef5) 一部分包括视觉协调的字体和颜色集，可将其应用于演示文稿、文档、工作表以及电子邮件。要在 PowerPoint 中应用或自定义演示文稿的主题，请使用功能区的“**设计**”选项卡上的“**主题**”和“**变量**”组。PowerPoint 通过默认的“**Office 主题**”分配新的空白演示文稿，但也可以选择“**设计**”选项卡上可用的其他主题，从 Office.com 下载其他主题，或创建并自定义自己的主题。
+[Office 主题](https://support.office.com/zh-cn/Article/What-is-a-theme--7528ccc2-4327-4692-8bf5-9b5a3f2a5ef5) 一部分包括视觉协调的字体和颜色集，可将其应用于演示文稿、文档、工作表以及电子邮件。要在 PowerPoint 中应用或自定义演示文稿的主题，请使用功能区的“**设计**”选项卡上的“**主题**”和“**变量**”组。PowerPoint 通过默认的“**Office 主题**”分配新的空白演示文稿，但也可以选择“**设计**”选项卡上可用的其他主题，从 Office.com 下载其他主题，或创建并自定义自己的主题。
 
 使用 OfficeThemes.css，有助于你以两种方式设计与 PowerPoint 相协调的外接程序：
 

@@ -63,5 +63,5 @@ Windows 10 中随附的 F12 开发人员工具可帮助您调试、测试和加�
 
 - [使用调试器检查正在运行的 JavaScript](https://msdn.microsoft.com/library/dn255007%28v=vs.85%29.aspx)
     
-- [使用 F12 开发人员工具](https://msdn.microsoft.com/en-us/library/bg182326%28v=vs.85%29.aspx)
+- [使用 F12 开发人员工具](https://msdn.microsoft.com/zh-cn/library/bg182326%28v=vs.85%29.aspx)
     

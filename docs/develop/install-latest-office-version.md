@@ -3,7 +3,7 @@
 新的开发人员功能，包括那些仍处于预览状态的功能，会先发送给选择获取最新 Office 版本的订阅者。选择使用 Office 2016 的最新版本： 
 
 - 如果您是 Office 365 家庭版、个人版或大专院校版的订阅者，请参阅[成为 Office Insider](https://products.office.com/en-us/office-insider)。
-- 如果你是 Office 365 商业版客户，请参阅 [为 Office 365 商业版客户安装首次发布](https://support.office.com/en-us/article/Install-the-First-Release-build-for-Office-365-for-business-customers-4dd8ba40-73c0-4468-b778-c7b744d03ead?ui=en-US&rs=en-US&ad=US)。
+- 如果你是 Office 365 商业版客户，请参阅 [为 Office 365 商业版客户安装首次发布](https://support.office.com/zh-cn/article/Install-the-First-Release-build-for-Office-365-for-business-customers-4dd8ba40-73c0-4468-b778-c7b744d03ead?ui=en-US&rs=en-US&ad=US)。
 - 如果在 Mac 上运行 Office 2016：
     - 启动 Office 2016 for Mac 程序。
     - 选择“帮助”菜单上的“**检查更新**”。

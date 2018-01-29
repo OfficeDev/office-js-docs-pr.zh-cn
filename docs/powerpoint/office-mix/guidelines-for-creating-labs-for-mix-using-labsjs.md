@@ -91,7 +91,7 @@ Labs.connect((err, connectionResponse) => {});
 
 ### <a name="time-format"></a>时间格式
 
-Labs.js 将数字存储为自 UTC 时间 1970 年 1 月 1 日以来经过的毫秒数。这与 JavaScript [Date 对象](http://msdn.microsoft.com/en-us/library/ie/cd9w2te4%28v=vs.94%29.aspx)的日期格式匹配。
+Labs.js 将数字存储为自 UTC 时间 1970 年 1 月 1 日以来经过的毫秒数。这与 JavaScript [Date 对象](http://msdn.microsoft.com/zh-cn/library/ie/cd9w2te4%28v=vs.94%29.aspx)的日期格式匹配。
 
 
 ### <a name="timeline"></a>时间线

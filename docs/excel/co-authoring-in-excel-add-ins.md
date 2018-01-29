@@ -1,6 +1,6 @@
 # <a name="coauthoring-in-excel-add-ins"></a>在 Excel 外接程序中共同创作  
 
-借助[共同创作功能](https://support.office.com/en-US/article/Collaborate-on-Excel-workbooks-at-the-same-time-with-co-authoring-7152aa8b-b791-414c-a3bb-3024e46fb104)，多个人可以共同协作，并可以同时编辑同一个 Excel 工作簿。 其他合著者保存工作簿后，此工作簿的所有合著者均可立即看到此合著者的更改。 若要共同创作 Excel 工作簿，必须将工作簿存储在 OneDrive、OneDrive for Business 或 SharePoint Online 中。
+借助[共同创作功能](https://support.office.com/zh-cn/article/Collaborate-on-Excel-workbooks-at-the-same-time-with-co-authoring-7152aa8b-b791-414c-a3bb-3024e46fb104)，多个人可以共同协作，并可以同时编辑同一个 Excel 工作簿。 其他合著者保存工作簿后，此工作簿的所有合著者均可立即看到此合著者的更改。 若要共同创作 Excel 工作簿，必须将工作簿存储在 OneDrive、OneDrive for Business 或 SharePoint Online 中。
 
 > **重要说明：**在 Excel 2016 for Office 365 中，可在左上角看到“自动保存”功能。 启用“自动保存”后，将实时向合著者显示你的更改。 请考虑此行为对 Excel 外接程序设计的影响。 用户可以通过 Excel 窗口左上方的开关禁用“自动保存”。
 
@@ -44,5 +44,5 @@ Excel 外接程序可以读取工作簿内容（通过隐藏工作表和设置�
 
 ## <a name="see-also"></a>另请参阅 
 
-- [Excel 中的共同创作功能的相关信息 (VBA)](https://msdn.microsoft.com/en-us/vba/excel-vba/articles/about-coauthoring-in-excel) 
-- [自动保存如何影响外接程序和宏 (VBA)](https://msdn.microsoft.com/en-us/vba/office-shared-vba/articles/how-autosave-impacts-addins-and-macros) 
+- [Excel 中的共同创作功能的相关信息 (VBA)](https://msdn.microsoft.com/zh-cn/vba/excel-vba/articles/about-coauthoring-in-excel) 
+- [自动保存如何影响外接程序和宏 (VBA)](https://msdn.microsoft.com/zh-cn/vba/office-shared-vba/articles/how-autosave-impacts-addins-and-macros) 

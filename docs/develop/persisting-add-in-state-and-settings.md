@@ -8,14 +8,14 @@ Office 外接程序实质上是运行在浏览器控件的无状态环境中的 
 
 - 使用适用于 Office 的 JavaScript API 的成员，在加载项类型决定的位置中存储的属性包中，它们将数据作为名称/值对存储。
     
-- 使用基础浏览器控件（浏览器 cookies 或 HTML5 Web 存储）提供的技术（ [localStorage](http://msdn.microsoft.com/en-us/library/cc848902%28v=vs.85%29.aspx) 或 [sessionStorage](http://msdn.microsoft.com/en-us/library/cc197020%28v=vs.85%29.aspx)）。
+- 使用基础浏览器控件（浏览器 cookies 或 HTML5 Web 存储）提供的技术（ [localStorage](http://msdn.microsoft.com/zh-cn/library/cc848902%28v=vs.85%29.aspx) 或 [sessionStorage](http://msdn.microsoft.com/zh-cn/library/cc197020%28v=vs.85%29.aspx)）。
     
 本文重点介绍如何使用适用于 Office 的 JavaScript API 保留外接程序状态。有关使用浏览器 Cookie 和 Web 存储的示例，请参阅 [Excel-Add-in-JavaScript-PersistCustomSettings](https://github.com/OfficeDev/Excel-Add-in-JavaScript-PersistCustomSettings)。
 
 ## <a name="persisting-add-in-state-and-settings-with-the-javascript-api-for-office"></a>使用适用于 Office 的 JavaScript API 保留加载项状态和设置
 
 
-适用于 Office 的 JavaScript API 为在各个会话中保存外接程序状态提供了 [Settings](http://dev.office.com/reference/add-ins/shared/settings)、 [RoamingSettings](http://dev.office.com/reference/add-ins/outlook/RoamingSettings) 和 [CustomProperties](http://dev.office.com/reference/add-ins/outlook/CustomProperties) 对象，如下表中所述。在所有情况下，保存的设置值仅与创建它们的外接程序 [Id](http://msdn.microsoft.com/en-us/library/67c4344a-935c-09d6-1282-55ee61a2838b%28Office.15%29.aspx) 相关联。
+适用于 Office 的 JavaScript API 为在各个会话中保存外接程序状态提供了 [Settings](http://dev.office.com/reference/add-ins/shared/settings)、 [RoamingSettings](http://dev.office.com/reference/add-ins/outlook/RoamingSettings) 和 [CustomProperties](http://dev.office.com/reference/add-ins/outlook/CustomProperties) 对象，如下表中所述。在所有情况下，保存的设置值仅与创建它们的外接程序 [Id](http://msdn.microsoft.com/zh-cn/library/67c4344a-935c-09d6-1282-55ee61a2838b%28Office.15%29.aspx) 相关联。
 
 
 

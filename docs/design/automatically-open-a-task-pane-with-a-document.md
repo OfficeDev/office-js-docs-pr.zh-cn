@@ -104,7 +104,7 @@ webextension 部件还包括对具有 `id`、 `storeType`、 `store` 和 `versio
 
 >\*若要查找 Office 应用商店中外接程序的资产 ID 和版本，请转到外接程序的 Office 应用商店登陆页面。资产 ID 将在浏览器的地址栏中显示。版本在页面的“详细信息”****部分列出。
 
-有关 webextension 标记的详细信息，请参阅 [[MS-OWEXML] 2.2.5。WebExtensionReference](https://msdn.microsoft.com/en-us/library/hh695383(v=office.12).aspx)。
+有关 webextension 标记的详细信息，请参阅 [[MS-OWEXML] 2.2.5。WebExtensionReference](https://msdn.microsoft.com/zh-cn/library/hh695383(v=office.12).aspx)。
 
 以下示例演示如何添加 taskpane 部件。
 

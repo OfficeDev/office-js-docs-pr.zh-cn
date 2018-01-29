@@ -2,8 +2,8 @@
 
 OneNote 引入了适用于 OneNote Online 外接程序的 JavaScript API。你可以创建任务窗格外接程序、内容外接程序和与 OneNote 对象交互并连接至 Web 服务或其他基于 Web 的资源的外接程序命令。
 
->
-  **注意：**生成外接程序时，如果计划将外接程序[发布](../publish/publish.md)到 Office 应用商店，请务必遵循 [Office 应用商店验证策略](https://msdn.microsoft.com/en-us/library/jj220035.aspx)。例如，外接程序必须适用于支持你定义的方法的所有平台，才能通过验证（有关详细信息，请参阅[第 4.12 部分](https://msdn.microsoft.com/en-us/library/jj220035.aspx#Anchor_3)以及 [Office 外接程序主机和可用性](https://dev.office.com/add-in-availability)页）。
+> [!NOTE]
+> 生成外接程序时，如果计划将外接程序[发布](../publish/publish.md)到 Office 应用商店，请务必遵循 [Office 应用商店验证策略](https://msdn.microsoft.com/zh-cn/library/jj220035.aspx)。例如，外接程序必须适用于支持你定义的方法的所有平台，才能通过验证（有关详细信息，请参阅[第 4.12 部分](https://msdn.microsoft.com/zh-cn/library/jj220035.aspx#Anchor_3)以及 [Office 外接程序主机和可用性](https://dev.office.com/add-in-availability)页）。
 
 ## <a name="components-of-an-office-add-in"></a>Office 加载项的组件
 
@@ -98,10 +98,10 @@ OneNote 外接程序仅支持以下通用 API：
 
 | API | 注释 |
 |:------|:------|
-| [Office.context.document.getSelectedDataAsync](https://msdn.microsoft.com/en-us/library/office/fp142294.aspx) | 仅限 **Office.CoercionType.Text** 和 **Office.CoercionType.Matrix** |
-| [Office.context.document.setSelectedDataAsync](https://msdn.microsoft.com/en-us/library/office/fp142145.aspx) | 仅限 **Office.CoercionType.Text**、**Office.CoercionType.Image** 和 **Office.CoercionType.Html** | 
-| [var mySetting = Office.context.document.settings.get(name);](https://msdn.microsoft.com/en-us/library/office/fp142180.aspx) | 设置仅受内容外接程序支持 | 
-| [Office.context.document.settings.set(name, value);](https://msdn.microsoft.com/en-us/library/office/fp161063.aspx) | 设置仅受内容外接程序支持 | 
+| [Office.context.document.getSelectedDataAsync](https://msdn.microsoft.com/zh-cn/library/office/fp142294.aspx) | 仅限 **Office.CoercionType.Text** 和 **Office.CoercionType.Matrix** |
+| [Office.context.document.setSelectedDataAsync](https://msdn.microsoft.com/zh-cn/library/office/fp142145.aspx) | 仅限 **Office.CoercionType.Text**、**Office.CoercionType.Image** 和 **Office.CoercionType.Html** | 
+| [var mySetting = Office.context.document.settings.get(name);](https://msdn.microsoft.com/zh-cn/library/office/fp142180.aspx) | 设置仅受内容外接程序支持 | 
+| [Office.context.document.settings.set(name, value);](https://msdn.microsoft.com/zh-cn/library/office/fp161063.aspx) | 设置仅受内容外接程序支持 | 
 | [Office.EventType.DocumentSelectionChanged](https://dev.office.com/reference/add-ins/shared/document.selectionchanged.event) ||
 
 一般情况下，仅使用通用 API 执行丰富 API 不支持的操作。 若要详细了解如何使用通用 API，请参阅 Office 加载项[文档](https://dev.office.com/docs/add-ins/overview/office-add-ins)和[参考](https://dev.office.com/reference/add-ins/javascript-api-for-office)。

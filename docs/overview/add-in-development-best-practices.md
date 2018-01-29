@@ -4,8 +4,8 @@
 
 有效的外接程序提供独特且极具吸引力的功能，采用具有视觉吸引力的方式扩展 Office 应用程序。若要创建出色的外接程序，需为用户提供极具吸引力的首次使用体验、设计一流的 UI 体验和优化外接程序的性能。将本文中描述的最佳实践应用于创建有助于您的用户快速有效地完成其任务的外接程序。
 
->
-  **注意：**生成外接程序时，如果计划将外接程序[发布](../publish/publish.md)到 Office 应用商店，请务必遵循 [Office 应用商店验证策略](https://msdn.microsoft.com/en-us/library/jj220035.aspx)。例如，外接程序必须适用于支持你定义的方法的所有平台，才能通过验证（有关详细信息，请参阅[第 4.12 部分](https://msdn.microsoft.com/en-us/library/jj220035.aspx#Anchor_3)以及 [Office 外接程序主机和可用性](https://dev.office.com/add-in-availability)页）。
+> [!NOTE]
+> 生成外接程序时，如果计划将外接程序[发布](../publish/publish.md)到 Office 应用商店，请务必遵循 [Office 应用商店验证策略](https://msdn.microsoft.com/zh-cn/library/jj220035.aspx)。例如，外接程序必须适用于支持你定义的方法的所有平台，才能通过验证（有关详细信息，请参阅[第 4.12 部分](https://msdn.microsoft.com/zh-cn/library/jj220035.aspx#Anchor_3)以及 [Office 外接程序主机和可用性](https://dev.office.com/add-in-availability)页）。
 
 ## <a name="provide-clear-value"></a>提供明确值
 
@@ -36,7 +36,7 @@
 
     ![显示没有数据的内容外接程序旁边具有数据的内容外接程序的屏幕截图](../images/7de2215f-ccef-4f82-aa9d-babcbddae0c6.png)
 
-- 提供 [免费试用版](https://msdn.microsoft.com/en-us/library/dn456317.aspx#Anchor_1)。如果外接程序需要订阅，那么让某些功能在不订阅的情况下也可使用。
+- 提供 [免费试用版](https://msdn.microsoft.com/zh-cn/library/dn456317.aspx#Anchor_1)。如果外接程序需要订阅，那么让某些功能在不订阅的情况下也可使用。
 
 - 让注册非常简单。预先填充某些信息（如电子邮件、显示名称），并跳过电子邮件验证。
 

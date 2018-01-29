@@ -14,7 +14,7 @@
 
 ## <a name="sso-add-in-architecture"></a>SSO 外接程序体系结构
 
-除了托管 Web 应用程序的页面和 JavaScript 之外，外接程序还必须以相同的[完全限定的域名](https://msdn.microsoft.com/en-us/library/windows/desktop/ms682135.aspx#_dns_fully_qualified_domain_name_fqdn__gly)托管一个或多个 Web API，这些 API 可获取 Microsoft Graph 的访问令牌，并向它发出请求。
+除了托管 Web 应用程序的页面和 JavaScript 之外，外接程序还必须以相同的[完全限定的域名](https://msdn.microsoft.com/zh-cn/library/windows/desktop/ms682135.aspx#_dns_fully_qualified_domain_name_fqdn__gly)托管一个或多个 Web API，这些 API 可获取 Microsoft Graph 的访问令牌，并向它发出请求。
 
 外接程序清单包含标记，用于指定外接程序在 Azure Active Directory (Azure AD) v2.0 终结点中的注册方式，并指定外接程序需要的 Microsoft Graph 的任何权限。
 
@@ -32,7 +32,7 @@
 1. Office 主机应用程序在 `getAccessTokenAsync` 调用返回的结果对象中，将**加载项令牌**发送给加载项。
 1. 加载项中的 JavaScript 向 Web API（与加载项托管在同一完全限定的域中）发出 HTTP 请求，并添加**加载项令牌**作为授权证明。  
 1. 服务器端代码验证传入的**加载项令牌**。
-1. 服务器端代码使用“代表”流（在 [OAuth2 令牌交换](https://tools.ietf.org/html/draft-ietf-oauth-token-exchange-02)和 [Web API Azure 应用场景的守护程序或服务器应用程序](https://docs.microsoft.com/en-us/azure/active-directory/develop/active-directory-authentication-scenarios#daemon-or-server-application-to-web-api)中定义），获取对 Microsoft Graph 的访问令牌（以下称为 **MSG 令牌**），以交换加载项令牌。
+1. 服务器端代码使用“代表”流（在 [OAuth2 令牌交换](https://tools.ietf.org/html/draft-ietf-oauth-token-exchange-02)和 [Web API Azure 应用场景的守护程序或服务器应用程序](https://docs.microsoft.com/zh-cn/azure/active-directory/develop/active-directory-authentication-scenarios#daemon-or-server-application-to-web-api)中定义），获取对 Microsoft Graph 的访问令牌（以下称为 **MSG 令牌**），以交换加载项令牌。
 1. Azure AD 将 **MSG 令牌**（如果加载项请求获取 *offline_access* 权限，则同时返回刷新令牌）返回给加载项。
 1. 服务器端代码缓存 **MSG 令牌**。
 1. 服务器端代码向 Microsoft Graph 发出请求，并添加 **MSG 令牌**。

@@ -102,7 +102,7 @@
 
 ## <a name="configure-the-add-in"></a>配置外接程序
 
-1. 在下面的字符串中，将占位符“{tenant_ID}”替换为之前获得的 Office 365 租户 ID。如果出于任何原因，你以前没有获得 ID，请使用[查找 Office 365 租户 ID](https://support.office.com/en-us/article/Find-your-Office-365-tenant-ID-6891b561-a52d-4ade-9f39-b492285e2c9b) 中的一种方法来获取 ID。
+1. 在下面的字符串中，将占位符“{tenant_ID}”替换为之前获得的 Office 365 租户 ID。如果出于任何原因，你以前没有获得 ID，请使用[查找 Office 365 租户 ID](https://support.office.com/zh-cn/article/Find-your-Office-365-tenant-ID-6891b561-a52d-4ade-9f39-b492285e2c9b) 中的一种方法来获取 ID。
 
     `https://login.microsoftonline.com/{tenant_ID}/v2.0`
 
