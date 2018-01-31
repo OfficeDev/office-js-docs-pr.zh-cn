@@ -1,18 +1,18 @@
-- name: Office Add-ins Documentation
+- name: Office 加载项文档
   href: index.yml
   displayName: Excel, Word, Outlook, PowerPoint, OneNote, Project
 - name: 概述
   items:
-  - name: About Office Add-ins
+  - name: 关于 Office 加载项
     href: overview/office-add-ins.md
     displayName: Excel, Word, Outlook, PowerPoint, OneNote, Project
   - name: 主机和平台可用性
     href: overview/office-add-in-availability.md
     displayName: Excel, Word, Outlook, PowerPoint, OneNote, Project
 
-- name: Quickstarts
+- name: 快速入门
   items:
-  - name: Create Excel add-in
+  - name: 创建 Excel 加载项
     items:
     - name: 使用 React
       href: quickstarts/excel-quickstart-react.md
@@ -23,28 +23,28 @@
     - name: 使用 jQuery
       href: quickstarts/excel-quickstart-jquery.md
       displayName: Excel
-  - name: Create Word add-in
+  - name: 创建 Word 加载项
     href: quickstarts/word-quickstart.md
     displayName: Word
-  - name: Create OneNote add-in
+  - name: 创建 OneNote 加载项
     href: quickstarts/onenote-quickstart.md
     displayName: OneNote
-  - name: Create Outlook add-in
-    href: https://docs.microsoft.com/en-us/outlook/add-ins/quick-start
+  - name: 创建 Outlook 加载项
+    href: https://docs.microsoft.com/zh-cn/outlook/add-ins/quick-start
     displayName: Outlook
-  - name: Create PowerPoint add-in
+  - name: 创建 PowerPoint 加载项
     href: quickstarts/powerpoint-quickstart.md
     displayName: PowerPoint
-  - name: Create Project add-in
+  - name: 创建 Project 加载项
     href: quickstarts/project-quickstart.md
     displayName: Project
 
-- name: Tutorials
+- name: 教程
   items:
-  - name: Excel add-in tutorial
+  - name: Excel 加载项教程
     href: tutorials/excel-tutorial.yml
     
-- name: Concepts
+- name: 概念
   items:
   - name: 运行外接程序的要求
     href: concepts/requirements-for-running-office-add-ins.md
@@ -52,15 +52,15 @@
     href: concepts/add-in-development-best-practices.md
   - name: 外接程序开发生命周期
     href: concepts/add-in-development-lifecycle.md
-  - name: 隐私和安全
+  - name: 隐私和安全性
     href: concepts/privacy-and-security.md
   - name: 性能
     href: concepts/resource-limits-and-performance-optimization.md
 
-- name: How-to guides
+- name: 操作说明指南
   items:
 
-  - name: Design the User Interface
+  - name: 设计用户界面
     href: design/add-in-design.md
     items:
     - name: 准则
@@ -111,7 +111,7 @@
         href: design/dropdown.md
       - name: 标签
         href: design/label.md
-      - name: 列表
+      - name: 列出
         href: design/list.md
       - name: 透视
         href: design/pivot.md
@@ -141,7 +141,7 @@
     - name: 清单
       href: develop/add-in-manifests.md
       items:
-      - name: Create add-in commands
+      - name: 创建加载项命令
         href: develop/create-addin-commands.md
       - name: 指定 Office 主机
         href: develop/specify-office-hosts-and-api-requirements.md
@@ -159,7 +159,7 @@
           href: develop/create-sso-office-add-ins-aspnet.md
         - name: 使用 Node.js 创建 SSO 加载项
           href: develop/create-sso-office-add-ins-nodejs.md
-        - name: Troubleshoot error messages for single sign-on (SSO)
+        - name: 排查单一登录 (SSO) 错误消息
           href: develop/troubleshoot-sso-in-office-add-ins.md
       - name: 授权外部服务
         href: develop/auth-external-add-ins.md
@@ -171,9 +171,9 @@
     - name: 本地化
       href: develop/localization.md
 
-    - name: Develop add-ins with Visual Studio
+    - name: 使用 Visual Studio 开发加载项
       items:
-      - name: Create and debug Office Add-ins in Visual Studio
+      - name: 在 Visual Studio 中创建和调试 Office 外接程序
         href: develop/create-and-debug-office-add-ins-in-visual-studio.md
         items:
       - name: 在 Visual Studio 中获取 JavaScript IntelliSense
@@ -183,14 +183,14 @@
 
     - name: 开发适用于 iPad 的外接程序
       href: develop/develop-office-add-ins-for-the-ipad.md
-    - name: Develop add-ins with Angular
+    - name: 使用 Angular 开发加载项
       href: develop/add-ins-with-angular2.md
 
-  - name: Excel add-ins
+  - name: Excel 外接程序
     href: excel/excel-add-ins-overview.md
     displayName: Excel
     items:
-    - name: Build your first Excel add-in
+    - name: 构建您的第一个 Excel 外接程序
       href: excel/excel-add-ins-get-started-overview.md
       displayName: Excel
       items:
@@ -207,29 +207,29 @@
       href: excel/excel-add-ins-core-concepts.md
       displayName: Excel
       items:
-      - name: Custom functions
+      - name: 自定义函数
         href: excel/custom-functions-overview.md
         displayName: Excel
-      - name: Charts
+      - name: 图表
         href: excel/excel-add-ins-charts.md
         displayName: Excel
-      - name: Events
+      - name: 活动
         href: excel/excel-add-ins-events.md
         displayName: Excel
-      - name: Ranges
+      - name: 范围
         href: excel/excel-add-ins-ranges.md
         displayName: Excel
-      - name: Tables
+      - name: Table
         href: excel/excel-add-ins-tables.md
         displayName: Excel
-      - name: Worksheets
+      - name: 工作表
         href: excel/excel-add-ins-worksheets.md
         displayName: Excel
     - name: 高级概念
       href: excel/excel-add-ins-advanced-concepts.md
       displayName: Excel
       items:
-      - name: Calling built-in functions
+      - name: 调用内置函数
         href: excel/excel-add-ins-worksheet-functions.md
         displayName: Excel
       - name: 使用 Excel 加载项共同创作
@@ -242,11 +242,11 @@
       href: https://dev.office.com/reference/add-ins/excel/excel-add-ins-reference-overview
       displayName: Excel
 
-  - name: Word add-ins
+  - name: Word 外接程序
     href: word/word-add-ins-programming-overview.md
     displayName: Word
     items:
-    - name: 构建您的第一个 Word 外接程序
+    - name: 生成首个 Word 加载项
       href: word/word-add-ins.md
       displayName: Word
     - name: 通过 Office Open XML 创建适用于 Word 的更好的外接程序
@@ -255,38 +255,38 @@
     - name: 字典任务窗格外接程序
       href: word/dictionary-task-pane-add-ins.md
       displayName: Word
-    - name: Get the whole document from an add-in
+    - name: 通过加载项获取整个文档
       href: word/get-the-whole-document-from-an-add-in-for-word.md
       displayName: Word
-    - name: Read and write data to the active selection
+    - name: 读取并将数据写入活动选择
       href: develop/read-and-write-data-to-the-active-selection-in-a-document-or-spreadsheet.md
       displayName: Word
-    - name: Bind to regions in a document
+    - name: 绑定到文档中的区域
       href: develop/bind-to-regions-in-a-document-or-spreadsheet.md
       displayName: Word
-    - name: Word JavaScript API reference
+    - name: Word JavaScript API 参考
       href: https://dev.office.com/reference/add-ins/word/word-add-ins-reference-overview
       displayName: Word
 
-  - name: Outlook add-ins
-    href: https://docs.microsoft.com/en-us/outlook/add-ins/
+  - name: Outlook 外接程序
+    href: https://docs.microsoft.com/zh-cn/outlook/add-ins/
     displayName: Outlook
 
-  - name: PowerPoint add-ins
+  - name: PowerPoint 外接程序
     href: powerpoint/powerpoint-add-ins.md
     displayName: PowerPoint
     items:
-    - name: Build your first PowerPoint add-in
+    - name: 生成首个 PowerPoint 加载项
       href: powerpoint/powerpoint-add-ins-get-started.md
       displayName: PowerPoint
     - name: 在 PowerPoint 外接程序中使用文档主题
       href: powerpoint/use-document-themes-in-your-powerpoint-add-ins.md
       displayName: PowerPoint
-    - name: Get the whole document from an add-in
+    - name: 通过加载项获取整个文档
       href: powerpoint/get-the-whole-document-from-an-add-in-for-powerpoint.md
       displayName: PowerPoint
 
-  - name: OneNote add-ins
+  - name: OneNote 加载项
     href: onenote/onenote-add-ins-programming-overview.md
     displayName: OneNote
     items:
@@ -296,7 +296,7 @@
     - name: 处理 OneNote 页面内容
       href: onenote/onenote-add-ins-page-content.md
       displayName: OneNote
-    - name: OneNote JavaScript API reference
+    - name: OneNote JavaScript API 参考
       href: https://dev.office.com/reference/add-ins/onenote/onenote-add-ins-javascript-reference
       displayName: OneNote
 
@@ -304,7 +304,7 @@
     href: project/project-add-ins.md
     displayName: Project
     items:
-    - name: Build your first Project add-in
+    - name: 生成首个 Project 加载项
       href: project/project-add-ins-get-started.md
       displayName: Project
     - name: 使用带有本地 OData 服务的 REST 创建一个 Project 外接程序
@@ -319,7 +319,7 @@
     items:
     - name: Windows
       items: 
-      - name: Sideload Office Add-ins on Windows
+      - name: 在 Windows 上旁加载 Office 加载项
         href: testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md
       - name: 从任务窗格附加调试器
         href: testing/attach-debugger-from-task-pane.md
@@ -327,19 +327,19 @@
         href: testing/debug-add-ins-using-f12-developer-tools-on-windows-10.md
     - name: Office Online
       items: 
-      - name: Sideload Office Add-ins in Office Online
+      - name: 在 Office Online 中旁加载 Office 加载项
         href: testing/sideload-office-add-ins-for-testing.md
       - name: 在 Office Onlie 中调试
         href: testing/debug-add-ins-in-office-online.md
-    - name: iPad and Mac
+    - name: iPad 和 Mac
       items:
-      - name: Sideload Office Add-ins on iPad and Mac
+      - name: 在 iPad 和 Mac 上旁加载 Office 加载项
         href: testing/sideload-an-office-add-in-on-ipad-and-mac.md
       - name: 在 iPad 和 Mac 上进行调试
         href: testing/debug-office-add-ins-on-ipad-and-mac.md
     - name: 用户错误疑难解答
       href: testing/testing-and-troubleshooting.md
-    - name: Validate an add-in manifest and troubleshoot issues
+    - name: 验证加载项清单并排查问题
       href: testing/troubleshoot-manifest.md
 
   - name: 发布
@@ -353,14 +353,14 @@
       href: publish/centralized-deployment.md
     - name: 将加载项发布到 SharePoint 目录
       href: publish/publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md
-    - name: Publish add-ins to AppSource
-      href: https://docs.microsoft.com/en-us/office/dev/store/submit-to-the-office-store
-    - name: AppSource validation policies
-      href: https://docs.microsoft.com/en-us/office/dev/store/validation-policies
+    - name: 将加载项发布到 AppSource
+      href: https://docs.microsoft.com/zh-cn/office/dev/store/submit-to-the-office-store
+    - name: AppSource 验证策略
+      href: https://docs.microsoft.com/zh-cn/office/dev/store/validation-policies
 
-- name: Reference
+- name: 参考
   items:
-  - name: Office Add-in Manifest
+  - name: Office 加载项清单
     href: https://dev.office.com/reference/add-ins/manifest/allowsnapshot
     displayName: Excel, Word, Outlook, PowerPoint, OneNote, Project
   - name: Office JavaScript API
@@ -378,10 +378,10 @@
   - name: Outlook JavaScript API
     href: https://dev.office.com/reference/add-ins/outlook/tutorial-api-requirement-sets
     displayName: Outlook
-  - name: API open specifications
+  - name: API 开放性规范
     href: https://dev.office.com/reference/add-ins/openspec
     displayName: Excel, Word
 
-- name: Resources
+- name: 资源
   href: resources/resources-links-help.md
   displayName: Excel, Word, Outlook, PowerPoint, OneNote, Project

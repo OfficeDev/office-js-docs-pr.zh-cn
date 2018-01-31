@@ -2,6 +2,13 @@
   tocHref: /office/
   topicHref: /office/index
   items:
-  - name: Add-ins
+  - name: 加载项
     tocHref: /office/dev/add-ins/
-    topicHref: /office/dev/add-ins/overview/office-add-ins
+    topicHref: /office/dev/add-ins
+    items:
+    - name: 教程
+      tocHref: /office/dev/add-ins
+      items: 
+      - name: Excel 加载项教程
+        tocHref: /office/dev/add-ins/tutorials/excel-tutorial
+        topicHref: /office/dev/add-ins/tutorials/excel-tutorial
