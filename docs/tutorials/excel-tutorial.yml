@@ -1,44 +1,44 @@
 ### YamlMime:Tutorial
-documentType: 教程
+documentType: Tutorial
 title: Excel 外接程序教程
 metadata:
   title: Excel 外接程序教程
   description: 在本教程中，你将学习如何构建一个 Excel 外接程序，用于创建、填充、筛选和排序表格、创建图表、冻结表格标题、保护工作表并打开对话框。
   audience: 开发人员
   level: 初学者
-  displayType: 一列
+  displayType: one-column
   ms.date: 01/18/2018
 items:
 - durationInMinutes: 1
   content: |
-         此教程介绍如何构建一个 Excel 外接程序，用于与 Excel 工作簿中的表格、图表、工作表和对话框进行交互。你将首先学习构建一个用于创建、填充和设置表格格式的 Excel 外接程序。随着教程的深入，你将在后续的每个步骤中向外接程序添加更多功能。如果在创建过程中遇到任何问题，请<a href="https://github.com/OfficeDev/office-js-docs-pr/issues">联系我们</a>。
+    此教程介绍如何构建一个 Excel 外接程序，用于与 Excel 工作簿中的表格、图表、工作表和对话框进行交互。你将首先学习构建一个用于创建、填充和设置表格格式的 Excel 外接程序。随着教程的深入，你将在后续的每个步骤中向外接程序添加更多功能。如果在创建过程中遇到任何问题，请<a href="https://github.com/OfficeDev/office-js-docs-pr/issues">联系我们</a>。
 - title: 创建外接程序项目
   durationInMinutes: 5
   content: |
-         [!INCLUDE [](../includes/excel-tutorial-setup.md)]
+    [!INCLUDE [](../includes/excel-tutorial-setup.md)]
 - title: 创建表格
   durationInMinutes: 15
   content: |
-         [!INCLUDE [](../includes/excel-tutorial-create-table.md)]
+    [!INCLUDE [](../includes/excel-tutorial-create-table.md)]
 - title: 筛选和排序表格
   durationInMinutes: 10
   content: |
-         [!INCLUDE [](../includes/excel-tutorial-filter-and-sort-table.md)]
+    [!INCLUDE [](../includes/excel-tutorial-filter-and-sort-table.md)]
 - title: 创建图表
   durationInMinutes: 7
   content: |
-         [!INCLUDE [](../includes/excel-tutorial-create-chart.md)]
+    [!INCLUDE [](../includes/excel-tutorial-create-chart.md)]
 - title: 冻结表格标题
   durationInMinutes: 6
   content: |
-         [!INCLUDE [](../includes/excel-tutorial-freeze-header.md)]
+    [!INCLUDE [](../includes/excel-tutorial-freeze-header.md)]
 - title: 保护工作表
   durationInMinutes: 20
   content: |
-         [!INCLUDE [](../includes/excel-tutorial-protect-worksheet.md)]
+    [!INCLUDE [](../includes/excel-tutorial-protect-worksheet.md)]
 - title: 打开对话框
   durationInMinutes: 7
   content: |
-         [!INCLUDE [](../includes/excel-tutorial-open-dialog.md)]
+    [!INCLUDE [](../includes/excel-tutorial-open-dialog.md)]
 - content: |
-         你已完成 Excel 外接程序教程。若要详细了解 Excel 外接程序的构建，请参阅 <a href="../excel/excel-add-ins-overview.md">Excel 外接程序概述</a>。
+    你已完成 Excel 外接程序教程。若要详细了解 Excel 外接程序的构建，请参阅 <a href="../excel/excel-add-ins-overview.md">Excel 外接程序概述</a>。
