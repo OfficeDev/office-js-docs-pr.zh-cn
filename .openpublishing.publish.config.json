@@ -19,7 +19,8 @@
       "template_folder": "_themes"
     }
   ],
-  "notification_subscribers": [],
+  "notification_subscribers": [
+  "mor-oitac-eng@moravia.com"],
   "branches_to_filter": [
     "live-sxs",
     "master-sxs"
