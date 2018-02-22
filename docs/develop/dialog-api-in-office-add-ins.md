@@ -1,42 +1,47 @@
-# <a name="use-the-dialog-api-in-your-office-add-ins"></a>在 Office 外接程序中使用对话框 API
+---
+title: 在 Office 加载项中使用对话框 API
+description: ''
+ms.date: 12/04/2017
+---
 
-可以在 Office 外接程序中使用[对话框 API](http://dev.office.com/reference/add-ins/shared/officeui) 打开对话框。本文提供了有关如何在 Office 外接程序中使用对话框 API 的指南。
+# <a name="use-the-dialog-api-in-your-office-add-ins"></a>在 Office 加载项中使用对话框 API
 
-> **注意：**
+可以在 Office 外接程序中使用[对话框 API](https://dev.office.com/reference/add-ins/shared/officeui) 打开对话框。本文提供了有关如何在 Office 外接程序中使用对话框 API 的指南。
 
-> 若要了解 Dialog API 目前的受支持情况，请参阅 [Dialog API 要求集](http://dev.office.com/reference/add-ins/requirement-sets/dialog-api-requirement-sets)。 目前，Word、Excel、PowerPoint 和 Outlook 支持 Dialog API。
+> [!NOTE]
+> 若要了解对话框 API 目前的受支持情况，请参阅[对话框 API 要求集](https://dev.office.com/reference/add-ins/requirement-sets/dialog-api-requirement-sets)。目前，Word、Excel、PowerPoint 和 Outlook 支持对话框 API。
 
-> Dialog API 的主要应用场景是，为 Google 或 Facebook 等资源启用身份验证。 如果加载项要求可通过 Microsoft Graph 访问 Office 用户数据或资源数据（如 Office 365 或 OneDrive），建议尽可能使用单一登录 API。 如果使用单一登录 API，则不需要使用 Dialog API。 有关详细信息，请参阅[为 Office 加载项启用单一登录](http://dev.office.com/docs/add-ins/develop/sso-in-office-add-ins)。
+> 对话框 API 的主要应用场景是为 Google 或 Facebook 等资源启用身份验证。 如果加载项要求可通过 Microsoft Graph 访问 Office 用户数据或资源数据（如 Office 365 或 OneDrive），建议尽可能使用单一登录 API。 如果使用单一登录 API，则不需要使用 Dialog API。 有关详细信息，请参阅[为 Office 加载项启用单一登录](sso-in-office-add-ins.md)。
 
-不妨通过任务窗格/内容加载项/[加载项命令](https://dev.office.com/docs/add-ins/design/add-in-commands)打开对话框，以便执行下列操作：
+不妨通过任务窗格/内容加载项/[加载项命令](../design/add-in-commands.md)打开对话框，以便执行下列操作：
 
 - 显示无法直接在任务窗格中打开的登录页。
 - 为加载项中的某些任务提供更多屏幕空间，或甚至整个屏幕。
 - 托管在任务窗格中显得太小的视频。
 
->**注意：**由于重叠的 UI 元素可能会令用户生厌，因此除非应用场景需要，否则不要通过任务窗格打开对话框。 考虑如何使用任务窗格区域时，请注意任务窗格中可以有选项卡。 有关示例，请参阅 [Excel 加载项 JavaScript SalesTracker](https://github.com/OfficeDev/Excel-Add-in-JavaScript-SalesTracker) 样本。
+> [!NOTE]
+> 由于不赞成重叠 UI 元素，因此除非应用场景需要，否则请勿从任务窗格打开对话框。考虑如何使用任务窗格的区域时，请注意任务窗格可以是选项卡式。有关示例，请参阅 [Excel 加载项 JavaScript SalesTracker](https://github.com/OfficeDev/Excel-Add-in-JavaScript-SalesTracker) 示例。
 
-下图是一个对话框示例：
+下图展示了对话框示例。
 
-![加载项命令](../images/Auth0DialogOpen.PNG)
+![加载项命令](../images/auth-o-dialog-open.png)
 
-请注意，对话框总是在屏幕的中心打开。 用户可以移动并重设对话框的大小。 对话框是*非模式*窗口。也就是说，用户可以继续同时与主机 Office 应用程序中的文档以及任务窗格中的主机页（若有）进行交互。
+请注意，对话框总是在屏幕中央打开。用户可以移动它，并重设大小。对话框是*非模式*窗口。也就是说，用户可以继续与主机 Office 应用中的文档，以及与任务窗格中的主机页（若有）进行交互。
 
-## <a name="dialog-api-scenarios"></a>Dialog API 应用场景
+## <a name="dialog-api-scenarios"></a>对话框 API 应用场景
 
-Office JavaScript API 支持以下应用场景，其在 [Office.context.ui 命名空间](http://dev.office.com/reference/add-ins/shared/officeui)中使用 [Dialog](http://dev.office.com/reference/add-ins/shared/officeui.dialog) 对象和两个函数。
+Office JavaScript API 支持以下应用场景，其在 [Office.context.ui 命名空间](https://dev.office.com/reference/add-ins/shared/officeui)中使用 [Dialog](https://dev.office.com/reference/add-ins/shared/officeui.dialog) 对象和两个函数。
 
 ### <a name="open-a-dialog-box"></a>打开对话框
 
-为了打开对话框，任务窗格中的代码会调用 [displayDialogAsync](http://dev.office.com/reference/add-ins/shared/officeui.displaydialogasync) 方法，再将要打开的资源 URL 传递给它。 这通常是一个页面，但也可能是 MVC 应用程序中的控制器方法、路由、Web 服务方法或其他任何资源。 在本文中，“页面”或“网站”是指对话框中的资源。 下面的代码就是一个非常简单的示例：
+为了打开对话框，任务窗格中的代码调用 [displayDialogAsync](https://dev.office.com/reference/add-ins/shared/officeui.displaydialogasync) 方法，并将要打开的资源 URL 传递到此方法。这通常是页面，但也可以是 MVC 应用中的控制器方法、路由、Web 服务方法或其他任何资源。在本文中，“页面”或“网站”是指对话框中的资源。下面的代码就是一个简单示例：
 
 ```js
 Office.context.ui.displayDialogAsync('https://myAddinDomain/myDialog.html');
 ```
 
-> **注意：**
-
-> - URL 使用 HTTP**S** 协议。对话框中加载的所有页面都必须要遵循此要求，而不仅仅是加载的第一个页面。
+> [!NOTE]
+> - URL 使用 HTTP**S** 协议。对话框中加载的所有页面都必须遵循此要求，而不仅仅是加载的第一个页面。
 > - 域与主机页的域相同，主机页可以是任务窗格中的页面，也可以是外接程序命令的[函数文件](https://dev.office.com/reference/add-ins/manifest/functionfile)。这要求：传递到 `displayDialogAsync` 方法的页面、控制器方法或其他资源必须与主机页位于相同的域。
 
 在第一个页面（或其他资源）加载后，用户可以转到使用 HTTPS 的任意网站（或其他资源）。还可以将第一个页面设计为直接重定向到另一个站点。
@@ -51,11 +56,12 @@ Office.context.ui.displayDialogAsync('https://myDomain/myDialog.html', {height: 
 
 将两个值均设置为 100% 可有效提供全屏体验。（有效最大值为 99.5%，窗口仍可移动和调整大小。）
 
->**注意：**只能从主机窗口打开一个对话框。 尝试打开另一个对话框会生成错误。 比方说，如果用户通过任务窗格打开一个对话框，便无法通过任务窗格中的其他页面打开第二个对话框。 不过，如果是通过[加载项命令](https://dev.office.com/docs/add-ins/design/add-in-commands)打开对话框，那么只要选择此命令，就会打开一个新的 HTML 文件（但不可见）。 这会新建一个（不可见的）主机窗口，所以每个这样的窗口都可以启动自己的对话框。 有关详细信息，请参阅 [displayDialogAsync 返回的错误](#errors-from-displaydialogAsync)。
+> [!NOTE]
+> 只能从主机窗口打开一个对话框。如果尝试再打开一个对话框，就会生成错误。比方说，如果用户从任务窗格打开一个对话框，她就无法再从任务窗格中的其他页面打开第二个对话框。不过，如果对话框是通过[加载项命令](../design/add-in-commands.md)打开，那么只要选择此命令，就会打开新 HTML 文件（但不可见）。这会新建（不可见的）主机窗口，所以每个这样的窗口都可以启动自己的对话框。有关详细信息，请参阅 [displayDialogAsync 返回的错误](#errors-from-displaydialogasync)。
 
-### <a name="take-advantage-of-a-performance-option-in-office-online"></a>使用 Office Online 中的性能选项
+### <a name="take-advantage-of-a-performance-option-in-office-online"></a>利用 Office Online 中的性能选项
 
-`displayInIframe` 属性是配置对象中另一个可以传递到 `displayDialogAsync` 的属性。 如果将此属性设置为 `true`，且加载项在 Office Online 打开的文档中运行，对话框将作为浮动 iframe（而非独立窗口）打开，这样可以加快打开对话框。 示例如下：
+`displayInIframe` 属性是可以传递到 `displayDialogAsync` 的配置对象中的附加属性。如果将此属性设置为 `true`，且加载项在 Office Online 打开的文档中运行，对话框就会以浮动 iframe（而不是独立窗口）的形式打开，从而加快对话框的打开速度。示例如下：
 
 ```js
 Office.context.ui.displayDialogAsync('https://myDomain/myDialog.html', {height: 30, width: 20, displayInIframe: true});
@@ -63,16 +69,17 @@ Office.context.ui.displayDialogAsync('https://myDomain/myDialog.html', {height: 
 
 默认值为 `false`，与完全省略此属性时相同。 如果加载项没有在 Office Online 中运行，`displayInIframe` 将被忽略。
 
-> **注意：**如果对话框将随时重定向至 iframe 无法打开的页面，则***不***应使用 `displayInIframe: true`。例如，许多热门 Web 服务的登录页（如 Google 和 Microsoft 帐户）都无法在 iframe 中打开。
+> [!NOTE]
+> 如果对话框始终重定向到无法在 iframe 中打开的页面，**不**得使用 `displayInIframe: true`。例如，许多热门 Web 服务（如 Google 和 Microsoft 帐户）的登录页都无法在 iframe 中打开。
 
 ### <a name="send-information-from-the-dialog-box-to-the-host-page"></a>将信息从对话框发送到主机页
 
 对话框无法与任务窗格中的主机页进行通信，除非：
 
 - 对话框中的当前页面与主机页在同一个域中。
-- Office JavaScript 库已在页面中加载。（与使用 Office JavaScript 库的所有页面一样，页面脚本必须为 `Office.initialize` 属性分配方法，尽管方法可以是空的。有关详细信息，请参阅[初始化外接程序](http://dev.office.com/docs/add-ins/develop/understanding-the-javascript-api-for-office#initializing-your-add-in)。）
+- Office JavaScript 库已在页面中加载。（与使用 Office JavaScript 库的所有页面一样，页面脚本必须为 `Office.initialize` 属性分配方法，尽管方法可以是空的。有关详细信息，请参阅[初始化外接程序](understanding-the-javascript-api-for-office.md#initializing-your-add-in)。）
 
-对话框页中的代码使用 `messageParent` 函数向主机页发送布尔值或字符串消息。 字符串可以是单词、句子、XML blob、字符串化 JSON 或其他任何能够序列化成字符串的内容。 示例如下：
+对话框页中的代码使用 `messageParent` 函数，向主机页发送布尔值或字符串消息。字符串可以是字词、句子、XML blob、字符串化 JSON 或其他任何能够串行化为字符串的内容。示例如下：
 
 ```js
 if (loginSuccess) {
@@ -80,12 +87,11 @@ if (loginSuccess) {
 }
 ```
 
->**注意：**
-
-> - *只有*两个 Office API 可以在对话框中调用，`messageParent` 函数就是其中一个。 另一个是 `Office.context.requirements.isSetSupported`。 有关详细信息，请参阅[指定 Office 主机和 API 要求](https://github.com/OfficeDev/office-js-docs/blob/master/docs/overview/specify-office-hosts-and-api-requirements.md)。
+> [!NOTE]
+> - `messageParent` 函数是*唯一*可以在对话框中调用的两个 Office API 之一。另一个是 `Office.context.requirements.isSetSupported`。有关详细信息，请参阅[指定 Office 主机和 API 要求](specify-office-hosts-and-api-requirements.md)。
 > - `messageParent` 函数只能在与主机页位于同一域（包括协议和端口）的页面上调用。
 
-在下一个示例中，`googleProfile` 是用户 Google 个人资料的字符串化版本。
+在下一个示例中，`googleProfile` 是用户 Google 配置文件的字符串化版本。
 
 ```js
 if (loginSuccess) {
@@ -93,7 +99,7 @@ if (loginSuccess) {
 }
 ```
 
-必须将主机页配置为接收消息。 为此，可以向 `displayDialogAsync` 的原始调用添加回调参数。 回调会为 `DialogMessageReceived` 事件分配处理程序。 示例如下：
+必须将主机页配置为接收消息。为此，可以向 `displayDialogAsync` 的原始调用添加回调参数。回调向 `DialogMessageReceived` 事件分配处理程序。示例如下：
 
 ```js
 var dialog;
@@ -105,14 +111,13 @@ Office.context.ui.displayDialogAsync('https://myDomain/myDialog.html', {height: 
 );
 ```
 
->**注意：**
-
-> - Office 将 [AsyncResult ](https://dev.office.com/reference/add-ins/shared/asyncresult) 对象传递给回叫。表示尝试打开对话框的结果，不表示对话框中任何事件的结果。若要详细了解此区别，请参阅[处理错误和事件](#handling-errors-and-events)部分。
-> - `asyncResult` 的 `value` 属性设置为 [Dialog](https://dev.office.com/reference/add-ins/shared/officeui.dialog) 对象，该对象位于主机页（而不是对话框的执行上下文）中。
+> [!NOTE]
+> - Office 将 [AsyncResult](https://dev.office.com/reference/add-ins/shared/asyncresult) 对象传递给回调。它表示尝试打开对话框的结果，不表示对话框中任何事件的结果。若要详细了解此区别，请参阅[处理错误和事件](#handle-errors-and-events)部分。
+> - `asyncResult` 的 `value` 属性设置为 [Dialog](https://dev.office.com/reference/add-ins/shared/officeui.dialog) 对象，此对象位于主机页（而不是对话框的执行上下文）中。
 > - `processMessage` 是用于处理事件的函数。可以根据需要任意命名。
 > - `dialog` 变量的声明范围比回调更广，因为 `processMessage` 中也会引用此变量。
 
-下面是一个非常简单的示例，展示了 `DialogMessageReceived` 事件的处理程序：
+下面展示了 `DialogMessageReceived` 事件处理程序的简单示例：
 
 ```js
 function processMessage(arg) {
@@ -121,12 +126,11 @@ function processMessage(arg) {
 }
 ```
 
-> **注意：**
-
+> [!NOTE]
 > - Office 将 `arg` 对象传递给处理程序。它的 `message` 属性是对话框中的 `messageParent` 调用发送的布尔值或字符串。在此示例中，它是 Microsoft 帐户或 Google 等服务的用户配置文件的字符串化表示。因此，使用 `JSON.parse` 将其反序列化回对象。
 > - 未显示 `showUserName` 实现。它可能在任务窗格上显示定制的欢迎消息。
 
-在用户完成与对话框的交互后，消息处理程序应关闭对话框，如以下示例所示。
+在用户完成与对话框的交互后，消息处理程序应关闭对话框，如下面的示例所示。
 
 ```js
 function processMessage(arg) {
@@ -135,14 +139,13 @@ function processMessage(arg) {
 }
 ```
 
-> **注意：**
-
+> [!NOTE]
 > - `dialog` 对象必须是 `displayDialogAsync` 调用返回的对象。
 > - `dialog.close` 调用指示 Office 立即关闭对话框。
 
-有关使用这些技术的示例外接程序，请参阅 [Office 外接程序对话框 API 示例](https://github.com/OfficeDev/Office-Add-in-Dialog-API-Simple-Example)。
+有关使用这些技术的示例加载项，请参阅 [Office 加载项对话框 API 示例](https://github.com/OfficeDev/Office-Add-in-Dialog-API-Simple-Example)。
 
-如果加载项在收到消息后需要打开任务窗格的其他页面，可以在处理程序的最后一行中使用 `window.location.replace` 方法（或 `window.location.href`）。 示例如下：
+如果加载项在收到消息后需要打开任务窗格的其他页面，可以使用 `window.location.replace` 方法（或 `window.location.href`）作为处理程序的最后一行。示例如下：
 
 ```js
 function processMessage(arg) {
@@ -153,10 +156,10 @@ function processMessage(arg) {
 }
 ```
 
-有关实现这一点的加载项示例，请参阅[在 PowerPoint 加载项中使用 Microsoft Graph 插入 Excel 图表](https://github.com/OfficeDev/PowerPoint-Add-in-Microsoft-Graph-ASPNET-InsertChart)样本。
+有关具有此用途的加载项示例，请参阅[在 PowerPoint 加载项中使用 Microsoft Graph 插入 Excel 图表](https://github.com/OfficeDev/PowerPoint-Add-in-Microsoft-Graph-ASPNET-InsertChart)示例。
 
 #### <a name="conditional-messaging"></a>条件消息
-因为可以从对话框发送多个 `messageParent` 调用，但在 `DialogMessageReceived` 事件的主机页中只有一个处理程序，所以处理程序必须使用条件逻辑来区分不同的消息。 例如，如果对话框提示用户登录标识提供程序（如 Microsoft 帐户或 Google），则会以消息形式发送用户配置文件。 如果身份验证失败，对话框将错误消息发送给主机页，如以下示例所示：
+由于可以从对话框发送多个 `messageParent` 调用，但在主机页中只有一个 `DialogMessageReceived` 事件处理程序，因此处理程序必须使用条件逻辑来区分不同的消息。比方说，如果对话框提示用户登录标识提供程序（如 Microsoft 帐户或 Google），则会以消息形式发送用户配置文件。如果身份验证失败，对话框会将错误消息发送到主机页，如下面的示例所示：
 
 ```js
 if (loginSuccess) {
@@ -172,9 +175,8 @@ if (loginSuccess) {
 }
 ```
 
-> **注意：**
-
-> - `loginSuccess` 变量通过读取标识提供程序的 HTTP 响应进行初始化。
+> [!NOTE]
+> - `loginSuccess` 变量通过读取标识提供程序返回的 HTTP 响应进行初始化。
 > - 未显示 `getProfile` 和 `getError` 函数的实现。这两个函数均从查询参数或 HTTP 响应的正文获取数据。
 > - 根据登录是否成功，发送不同类型的匿名对象。两者都有 `messageType` 属性。不同之处在于，一个有 `profile` 属性，另一个有 `error` 属性。
 
@@ -182,7 +184,7 @@ if (loginSuccess) {
 - [使用 Auth0 服务简化社交登录的 Office 加载项](https://github.com/OfficeDev/Office-Add-in-Auth0)
 - [使用 OAuth.io 服务简化热门在线服务访问的 Office 加载项](https://github.com/OfficeDev/Office-Add-in-OAuth.io)
 
-主机页中的处理程序代码使用 `messageType` 属性的值设置分支，如以下示例所示。 请注意，`showUserName` 函数的用法与上面的示例相同，`showNotification` 函数在主机页的 UI 中显示错误。
+主机页中的处理程序代码使用 `messageType` 属性的值设置分支，如下面的示例所示。请注意，`showUserName` 函数的用法与之前的示例相同，`showNotification` 函数在主机页的 UI 中显示错误。
 
 ```js
 function processMessage(arg) {
@@ -200,7 +202,7 @@ function processMessage(arg) {
 
 ### <a name="closing-the-dialog-box"></a>关闭对话框
 
-可以在对话框中实现一个用于关闭对话框的按钮。 为此，按钮的单击事件处理程序应使用 `messageParent`，通知主机页按钮已获得单击。 示例如下：
+可以在对话框中实现对话框关闭按钮。为此，关闭按钮的单击事件处理程序应使用 `messageParent` 通知主机页，关闭按钮已获单击。示例如下：
 
 ```js
 function closeButtonClick() {
@@ -210,7 +212,7 @@ function closeButtonClick() {
 }
 ```
 
-`DialogMessageReceived` 的主机页处理程序将调用 `dialog.close`，如以下示例所示。 （请参阅前面的示例，其中展示了对话框对象的初始化方式。）
+`DialogMessageReceived` 的主机页处理程序会调用 `dialog.close`，如下面的示例所示。（请参阅之前的示例，其中展示了对话框对象的初始化方式。）
 
 
 ```js
@@ -222,7 +224,7 @@ function processMessage(arg) {
 }
 ```
 
-有关使用此技术的样本，请参阅 [Office 加载项的用户体验设计模式](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code)存储库中的[对话框导航设计模式](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code/tree/master/templates/dialog/navigation)。
+有关使用此技术的示例，请参阅 [Office 加载项的用户体验设计模式](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code)存储库中的[对话框导航设计模式](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code/tree/master/templates/dialog/navigation)。
 
 即使你没有自己的关闭对话框 UI，最终用户也可以通过选择右上角的 **X** 关闭对话框。此操作将触发 `DialogEventReceived` 事件。如果主机窗格需要知道此事件何时发生，应为此事件声明一个处理程序。有关详细信息，请参阅[对话框窗口中的错误和事件](#errors-and-events-in-the-dialog-window)部分。
 
@@ -243,7 +245,7 @@ function processMessage(arg) {
 |12005|传递给 `displayDialogAsync` 的 URL 使用 HTTP 协议。需要使用 HTTPS。（在 Office 的某些版本中，返回 12005 的错误消息与返回 12004 错误消息是相同的。）|
 |<span id="12007">12007</span>|已从此主机窗口打开了一个对话框。主机窗口（如任务窗格）一次只能打开一个对话框。|
 
-调用 `displayDialogAsync` 时，总是将 [AsyncResult](https://dev.office.com/reference/add-ins/shared/asyncresult) 对象传递给它的回调函数。 如果调用成功（即对话框窗口已打开），`AsyncResult` 对象的 `value` 属性是 [Dialog](https://dev.office.com/reference/add-ins/shared/officeui.dialog) 对象。 有关示例，请参阅[将信息从对话框发送到主机页](#sending-information-from-the-dialog-to-the-host-page)部分。 如果调用 `displayDialogAsync` 失败，不会创建窗口，`AsyncResult` 对象的 `status` 属性设置为“failed”，并且会填充对象的 `error` 属性。 应始终有用于测试 `status` 并在出错时进行响应的回调。 有关仅报告错误消息（无论代码编号是什么）的示例，请参阅下面的代码：
+调用 `displayDialogAsync` 后，它总是将 [AsyncResult](https://dev.office.com/reference/add-ins/shared/asyncresult) 对象传递给它的回调函数。如果调用成功（即对话框窗口已打开），`AsyncResult` 对象的 `value` 属性是 [Dialog](https://dev.office.com/reference/add-ins/shared/officeui.dialog) 对象。有关示例，请参阅[将信息从对话框发送到主机页](#send-information-from-the-dialog-box-to-the-host-page)部分。如果调用 `displayDialogAsync` 失败，不会创建窗口，`AsyncResult` 对象的 `status` 属性设置为“failed”，并且会填充对象的 `error` 属性。应始终有回调可用于测试 `status`，并在出错时进行响应。有关仅报告错误消息的示例（无论代码编号是什么），请参阅以下代码：
 
 ```js
 var dialog;
@@ -268,7 +270,7 @@ function (asyncResult) {
 |12003|对话框定向到使用 HTTP 协议的 URL。必须使用 HTTPS。|
 |12006|对话框已关闭，通常是因为用户选择了 **X** 按钮。|
 
-代码可以在调用 `displayDialogAsync` 时为 `DialogEventReceived` 事件分配处理程序。 下面展示了一个非常简单的示例：
+代码可以在调用 `displayDialogAsync` 时分配 `DialogEventReceived` 事件处理程序。下面展示了一个简单示例：
 
 ```js
 var dialog;
@@ -280,7 +282,7 @@ Office.context.ui.displayDialogAsync('https://myDomain/myDialog.html',
 );
 ```
 
-下面的示例展示了 `DialogEventReceived` 事件的处理程序，其为每个错误代码创建自定义错误消息：
+有关为每个错误代码创建自定义错误消息的 `DialogEventReceived` 事件处理程序示例，请参阅下面的示例：
 
 ```js
 function processDialogEvent(arg) {
@@ -341,38 +343,42 @@ Office.context.ui.displayDialogAsync('https://myAddinDomain/myDialog.html?client
 
 有关使用此技术的样本，请参阅[在 PowerPoint 加载项中使用 Microsoft Graph 插入 Excel 图表](https://github.com/OfficeDev/PowerPoint-Add-in-Microsoft-Graph-ASPNET-InsertChart)。
 
-对话框窗口中的代码可以解析 URL 并读取参数值。
+对话框窗口中的代码可以分析 URL，并读取参数值。
 
-> **注意**：Office 会自动向传递给 `displayDialogAsync` 的 URL 添加查询参数 `_host_info`。（附加在自定义查询参数（若有）之后，不会附加到对话框导航到的任何后续 URL。）Microsoft 可能会更改此值的内容，或者将来会将其全部删除，因此代码不得读取此值。将相同的值添加到对话框的会话存储中。同样，*代码不得读取此值，也不得写入此值*。
+> [!NOTE]
+> Office 会自动向传递给 `displayDialogAsync` 的 URL 添加查询参数 `_host_info`。（附加在自定义查询参数（若有）后面，不会附加到对话框导航到的任何后续 URL。）Microsoft 可能会更改此值的内容，或者将来会将其全部删除，因此代码不得读取此值。相同的值会被添加到对话框的会话存储中。同样，*代码不得对此值执行读取和写入操作*。
 
-## <a name="use-the-dialog-apis-to-show-a-video"></a>使用 Dialog API 显示视频
+## <a name="use-the-dialog-apis-to-show-a-video"></a>使用对话框 API 显示视频
 
 若要在对话框中显示视频，请执行以下操作：
 
-1.  创建内容仅有 iframe 的页面。 iframe 的 `src` 属性指向在线视频。 视频 URL 必须使用 HTTP**S** 协议。 本文将此页面称为“video.dialogbox.html”。 下面是一个标记示例：
+1.  创建内容仅有 iframe 的页面。iframe 的 `src` 属性指向联机视频。视频 URL 必须使用 HTTP**S** 协议。本文将此页面称为“video.dialogbox.html”。下面展示了标记示例：
 
-        <iframe class="ms-firstrun-video__player"  width="640" height="360"
-            src="https://www.youtube.com/embed/XVfOe5mFbAE?rel=0&autoplay=1"
-            frameborder="0" allowfullscreen>
-        </iframe>
+    ```HTML
+    <iframe class="ms-firstrun-video__player"  width="640" height="360"
+        src="https://www.youtube.com/embed/XVfOe5mFbAE?rel=0&autoplay=1"
+        frameborder="0" allowfullscreen>
+    </iframe>
+    ```
 
-2.  video.dialogbox.html 页面必须与主机页位于同一域。
+2.  video.dialogbox.html 页面必须与主机页位于同一域中。
 3.  在主机页中调用 `displayDialogAsync`，打开 video.dialogbox.html。
 4.  如果外接程序需要知道用户何时关闭对话框，请为 `DialogEventReceived` 事件注册处理程序，并处理 12006 事件。有关详细信息，请参阅[对话框窗口中的错误和事件](#errors-and-events-in-the-dialog-window)部分。
 
 有关在对话框中显示视频的示例，请参阅 [Office 外接程序的用户体验设计模式](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code)存储库中的[视频展示位置设计模式](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code/tree/master/templates/first-run/video-placemat)。
 
-![在加载项对话框中显示的视频的屏幕截图。](../images/VideoPlacematDialogOpen.PNG)
+![在加载项对话框中显示的视频的屏幕截图](../images/video-placemats-dialog-open.png)
 
-## <a name="use-the-dialog-apis-in-an-authentication-flow"></a>在身份验证流中使用 Dialog API
+## <a name="use-the-dialog-apis-in-an-authentication-flow"></a>在身份验证流中使用对话框 API
 
 对话框 API 的主要应用场景是为不允许在 Iframe 中打开登录页的资源或标识提供程序（如 Microsoft 帐户、Office 365、Google 和 Facebook）启用身份验证。
 
->**注意：**将 Dialog API 用于此应用场景时，请*不*要在 `displayDialogAsync` 调用中使用 `displayInIframe: true` 选项。 有关此选项的详细信息，请参阅本文前面的[使用 Office Online 中的性能选项](#take-advantage-of-a-performance-option-in-Office-Online)。
+> [!NOTE]
+> 若要将对话框 API 用于此应用场景，请*勿*在调用 `displayDialogAsync` 时使用 `displayInIframe: true` 选项。请参阅本文前面的[使用 Office Online 中的性能选项](#take-advantage-of-a-performance-option-in-office-online)，详细了解此选项。
 
-下面是一个非常简单的典型身份验证流：
+下面展示了简单的典型身份验证流：
 
-1. 对话框中打开的第一个页面是加载项的域（即主机窗口的域）中托管的本地页面（或其他资源）。 此页面可以显示简单的 UI，提示用户“请稍候，正在重定向到可以登录 *NAME-OF-PROVIDER* 的页面。” 此页面中的代码使用传递给对话框的信息，构造标识提供程序的登录页 URL，如[向对话框传递信息](#pass-information-to-the-dialog-box)中所述。
+1. 对话框中打开的第一个页面是加载项域（即主机窗口域）中托管的本地页面（或其他资源）。此页面可以显示简单的 UI，提示用户“请稍候，我们正在将你重定向到可以登录 *NAME-OF-PROVIDER* 的页面。”此页面中的代码使用传递给对话框的信息，构造标识提供程序的登录页 URL，如[向对话框传递信息](#pass-information-to-the-dialog-box)中所述。
 2. 然后，对话框窗口重定向到登录页。URL 包含一个查询参数，用于提示标识提供程序在用户登录特定页面后重定向对话框窗口。在本文中，我们将此页面称为 "redirectPage.html"。（*此页面必须与主机窗口位于相同域中*，因为对话框窗口传递登录尝试结果的唯一方法就是调用 `messageParent`，而它只能在与主机窗口位于同一域的页面上调用）。
 2. 标识提供程序的服务处理来自对话框窗口的传入 GET 请求。如果用户已经登录，它会立即将窗口重定向到 redirectPage.html，并将用户数据作为查询参数添加。如果用户尚未登录，提供程序的登录页会显示在窗口中，以便用户登录。对于大多数提供程序，如果用户无法成功登录，提供程序会在对话框窗口中显示错误页面，而不会重定向到 redirectPage.html。用户必须通过选择右上角的 **X** 来关闭窗口。如果用户成功登录，则对话框窗口会重定向到 redirectPage.html，并且用户数据会作为查询参数添加。
 3. 当 redirectPage.html 页面打开时，它会调用 `messageParent` 向主机页报告登录是否成功，而且还会视情况报告用户数据或错误数据。
@@ -394,11 +400,11 @@ Office.context.ui.displayDialogAsync('https://myAddinDomain/myDialog.html?client
 在现代网络中，Web 应用程序是安全主体（就像用户一样），拥有自己的标识以及对联机资源（如 Office 365、Google Plus、Facebook 或 LinkedIn）的权限。在部署前，需要先向资源提供程序注册应用程序。注册内容包括：
 
 - 应用程序访问用户资源所需的权限的列表。
-- 当应用程序访问服务时，资源服务应向其返回访问令牌的 URL。  
+- 当应用访问服务时，资源服务应向其返回访问令牌的 URL。  
 
-如果用户在应用程序中调用函数来访问用户在资源服务中的数据，系统会提示他们登录服务，并授予应用程序对用户资源的访问权限。 然后，服务将登录窗口重定向到先前注册的 URL，并传递访问令牌。 应用程序使用访问令牌访问用户资源。
+如果用户在应用中调用访问资源服务中用户数据的函数，系统会先提示用户登录相应服务，再提示用户向应用授予访问用户资源所需的权限。然后，服务将登录窗口重定向到先前注册的 URL，并传递访问令牌。应用使用访问令牌访问用户资源。
 
-你可以使用对话框 API 来管理此过程，方法是使用与用户登录流类似的流，或使用[处理慢速网络](#addressing-a-slow-network)中介绍的其他流。唯一的区别是：
+可以使用对话框 API 来管理此过程，具体方法是使用与用户登录流类似的流。只有下面两处不同：
 
 - 如果用户先前未向应用程序授予所需的权限，则登录后会在对话框中看到这样做的提示。
 - 对话框窗口使用 `messageParent` 发送字符串化访问令牌，或将访问令牌存储在主机窗口可以检索到的位置，从而将访问令牌发送给主机窗口。令牌具有时间限制，但在持续期间，主机窗口可以使用它直接访问用户资源，而无需进一步提示。
@@ -408,11 +414,13 @@ Office.context.ui.displayDialogAsync('https://myAddinDomain/myDialog.html?client
 - [使用 OAuth.io 服务简化热门在线服务访问的 Office 加载项](https://github.com/OfficeDev/Office-Add-in-OAuth.io)
 
 若要详细了解加载项中的身份验证和授权，请参阅：
-- [在 Office 加载项中授权外部服务](https://dev.office.com/docs/add-ins/develop/auth-external-add-ins)
+- [在 Office 加载项中授权外部服务](auth-external-add-ins.md)
 - [Office JavaScript API 帮助程序库](https://github.com/OfficeDev/office-js-helpers)
 
 
 ## <a name="use-the-office-dialog-api-with-single-page-applications-and-client-side-routing"></a>将 Office Dialog API 与单页应用程序和客户端路由结合使用
+
 如果外接程序使用客户端路由（单页应用程序通常这样做），则可以选择将路由 URL 传递给 [ displayDialogAsync ](http://dev.office.com/reference/add-ins/shared/officeui.displaydialogasync) 方法，而不是传递各个完整 HTML 页面的 URL。
 
-> **重要说明：**对话框位于新窗口中，其中包含它自己的执行上下文。如果你传递路由，则基本页及其所有初始化和引导代码会在这个新的上下文中再次运行，且所有变量都会在对话框中设置为各自的初始值。因此，此技术会在对话框窗口中启动应用程序的第二个实例。在对话框窗口中更改变量的代码不会更改相同变量的任务窗格版本。同样，对话框窗口有其自己的会话存储，任务窗格中的代码无法访问此类存储。
+> [!IMPORTANT]
+>对话框位于有自己执行上下文的新窗口中。如果传递路由，基页面及其所有初始化和启动代码都会在这个新上下文中再次运行，且所有变量都会在对话框中设置为各自的初始值。所以，此技术会在对话框窗口中启动应用的第二个实例。更改对话框窗口中变量的代码不会更改任务窗格版本的相同变量。同样，对话框窗口有自己的会话存储，任务窗格中的代码无法访问此类存储。

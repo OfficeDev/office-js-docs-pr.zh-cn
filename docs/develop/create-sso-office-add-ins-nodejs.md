@@ -1,36 +1,48 @@
-# <a name="create-a-nodejs-office-add-in-that-uses-single-sign-on"></a>创建使用单一登录的 Node.js Office 加载项
+---
+title: 创建使用单一登录的 Node.js Office 加载项
+description: 2018 年 1 月23 日
+---
 
-用户可以登录到 Office，并且你的 Office Web 外接程序可以利用此登录过程来授权用户访问你的外接程序和 Microsoft Graph，而无需要求用户再次登录。有关概述，请参阅[在 Office 外接程序中启用 SSO](../develop/sso-in-office-add-ins.md)。
+# <a name="create-a-nodejs-office-add-in-that-uses-single-sign-on-preview"></a>创建使用单一登录的 Node.js Office 加载项（预览）
 
-本文将引导你完成在使用 Node.js 和 Express 构建的外接程序中启用单一登录 (SSO) 的过程。 
+用户可以登录 Office，Office Web 加载项能够利用此登录进程，授权用户访问加载项和 Microsoft Graph，而无需要求用户再登录一次。有关概述，请参阅[在 Office 加载项中启用 SSO](sso-in-office-add-ins.md)。
 
-> **注意：**有关基于 ASP.NET 的外接程序的类似文章，请参阅[创建使用单一登录的 ASP.NET Office 外接程序](../develop/create-sso-office-add-ins-aspnet.md)。
+本文将逐步介绍如何在使用 Node.js 和 Express 生成的加载项中启用单一登录 (SSO) 。 
+
+> [!NOTE]
+> 有关与此类似的 ASP.NET 加载项文章，请参阅[创建使用单一登录的 ASP.NET Office 加载项](create-sso-office-add-ins-aspnet.md)。
 
 ## <a name="prerequisites"></a>先决条件
 
-* [节点和 npm](https://nodejs.org/en/)，版本 6.9.4 或更高版本。
-* [Git Bash](https://git-scm.com/downloads)（或其他 git 客户端）。
-* TypeScript 版本 2.2.2 或更高版本。
-* Office 2016，版本 1708，内部版本 8424.nnnn 或更高版本（Office 365 订阅版本，有时称为“即点即用”）。可能需要成为 Office 预览体验成员才能获取此版本。有关详细信息，请参阅[成为 Office 预览体验成员](https://products.office.com/en-us/office-insider?tab=tab-1)。
+* [节点和 npm](https://nodejs.org/en/) 版本 6.9.4 或更高版本
 
-## <a name="set-up-the-starter-project"></a>设置初学者项目
+* [Git Bash](https://git-scm.com/downloads)（或其他 git 客户端）
 
-1. 在 [Office 外接程序 NodeJS SSO](https://github.com/officedev/office-add-in-nodejs-sso) 中克隆或下载存储库。 
+* TypeScript 版本 2.2.2 或更高版本
 
+* Office 2016 版本 1708（生成号 8424.nnnn）或更高版本（Office 365 订阅版本，有时亦称为“即点即用”）
 
-    > **注意：**该示例有两个版本。 
-    > 
+  可能必须成为 Office 预览体验成员，才能获取此版本。有关详细信息，请参阅[成为 Office 预览体验成员](https://products.office.com/en-us/office-insider?tab=tab-1)。
+
+## <a name="set-up-the-starter-project"></a>创建起始项目
+
+1. 克隆或下载 [Office 加载项 NodeJS SSO](https://github.com/officedev/office-add-in-nodejs-sso) 中的存储库。 
+
+    > [!NOTE]
+    > 示例项目有两个版本：  
     > * **Before** 文件夹是初学者项目。未直接连接到 SSO 或授权的外接程序的 UI 和其他方面已经完成。本文后续章节将引导你完成此过程。 
     > * 如果完成了本文中的过程，该示例的**已完成**版本会与所生成的外接程序类似，只不过完成的项目具有对本文文本冗余的代码注释。若要使用已完成的版本，请按照本文中的说明进行操作即可，但需要将“Before”替换为“Completed”，并跳过**编写客户端代码**和**编写服务器端代码**部分。
 
-1. 在 **Before** 文件夹中打开 Git bash 控制台。
+2. 在 **Before** 文件夹中打开 Git bash 控制台。
 
-2. 在该控制台中输入 `npm install` 以安装 package.json 文件中列出明细的所有依赖项。
+3. 在该控制台中输入 `npm install` 以安装 package.json 文件中列出明细的所有依赖项。
 
-3. 在控制台中输入 `npm run build ` 以生成该项目。 
-     > 注意：你可能会看到一些生成错误，指出声明了某些变量但未使用。 请忽略这些错误。 这是“旧”版样本缺少稍后将添加的一些代码带来的负面影响。
+4. 在控制台中输入 `npm run build `，以生成项目。 
 
-## <a name="register-the-add-in-with-azure-ad-v2-endpoint"></a>向 Azure AD V2 终结点注册加载项
+    > [!NOTE]
+    > 可能会看到一些生成错误，提示某些变量已声明但未使用。请忽略这些错误。之所以会看到这些错误是因为，示例项目的“之前”版本缺少某代码，将在后续步骤中添加。
+
+## <a name="register-the-add-in-with-azure-ad-v20-endpoint"></a>向 Azure AD v2.0 终结点注册加载项
 
 1. 转到 [https://apps.dev.microsoft.com](https://apps.dev.microsoft.com)。 
 
@@ -40,9 +52,10 @@
 
 1. 出现提示时，使用“Office-Add-in-NodeJS-SSO”作为应用名称，然后按“创建应用程序”****。
 
-1. 当应用的配置页面打开时，复制**应用程序 ID** 并保存。你将在后续过程中使用它。 
+1. 当应用的配置页面打开时，复制并保存“应用 ID”****。将在后续过程中用到它。 
 
-    > 注意：当其他应用程序（例如 PowerPoint、Word、Excel 等 Office 主机应用程序）寻求对应用程序的授权访问权限时，此 ID 是“受众”值。当它反过来寻求 Microsoft Graph 的授权访问权限时，它同时也是应用程序的“客户端 ID”。
+    > [!NOTE]
+    > 如果其他应用（如 PowerPoint、Word、Excel 等 Office 主机应用）寻求对应用的授权访问权限，此 ID 是“受众”值。反过来，如果它寻求对 Microsoft Graph 的授权访问权限，此 ID 同时也是应用的“客户端 ID”。
 
 1. 在“应用程序机密”****部分中，按“生成新密码”****。将打开弹出对话框，并显示一个新密码（也称为“应用机密”）。*立即复制密码并使用应用程序 ID 进行保存。*你将在后续过程中需要它。然后关闭此对话框。
 
@@ -50,27 +63,32 @@
 
 1. 在打开的对话框中，选择“Web API”****。
 
-1. “应用程序 ID URI”****已生成，格式为“api://{App ID GUID}”。在双正斜线和 GUID 之间插入字符串“localhost:3000”。完整 ID 应为 `api://localhost:3000/{App ID GUID}`。（位于“应用程序 ID URI”****下方的“作用域”****名称的域部分将自动更改以匹配。应显示 `api://localhost:3000/{App ID GUID}/access_as_user`。）
+1. 此时，生成了“api://{应用 ID GUID}”形式的“应用 ID URI”****。在双斜杠和 GUID 之间插入字符串“localhost:3000”。整个 ID 应为 `api://localhost:3000/{App ID GUID}`。 
 
-1. 这一步和下一步将授予 Office 主机应用程序对加载项的访问权限。 在“预授权应用程序”****部分中，确定要授权给加载项 Web 应用程序的应用程序。 下面每个 ID 都需要进行预授权。 每次输入一个 ID，都会看到新的空文本框。 （仅输入 GUID）。
+    > [!NOTE]
+    > “应用 ID URI”****正下方的“范围”****名称的域部分会自动更改为与之匹配。 它应为 `api://localhost:3000/{App ID GUID}/access_as_user`。
 
- * `d3590ed6-52b3-4102-aeff-aad2292ab01c` (Microsoft Office)
- * `57fb890c-0dab-4253-a5e0-7188c88b2bb4` (Office Online)
- * `bc59ab01-8403-45c6-8796-ac3ef710b3e3` (Office Online) 
+1. 这一步和下一步授予 Office 主机应用对加载项的访问权限。 在“预授权应用程序”****部分中，确定要授权给加载项 Web 应用程序的应用程序。 下面每个 ID 都需要进行预授权。 每次输入一个 ID，都会看到新的空文本框。 （仅输入 GUID）。
 
-1. 打开每个“应用程序 ID”****旁边的“作用域”****下拉列表，并选中 `api://localhost:44355/{App ID GUID}/access_as_user` 对应的框。
+    * `d3590ed6-52b3-4102-aeff-aad2292ab01c` (Microsoft Office)
+    * `57fb890c-0dab-4253-a5e0-7188c88b2bb4` (Office Online)
+    * `bc59ab01-8403-45c6-8796-ac3ef710b3e3` (Office Online) 
 
-1. 在“平台”****部分顶部附近，再次单击“添加平台”****并选择“Web”****。
+1. 打开每个“应用 ID”****旁边的“范围”****下拉列表，并选中 `api://localhost:3000/{App ID GUID}/access_as_user` 对应的框。
 
-1. 在“平台”****下的新“Web”****部分中，输入以下内容作为“重定向 URL”****：`https://localhost:3000`。 
+1. 在“平台”****部分顶部附近，再次单击“添加平台”****，并选择“Web”****。
 
-    > 注意：在撰写本文时，“Web API”****平台有时会从“平台”****部分消失，特别是在添加“Web”****平台以及“保存注册页面”**后，如果刷新页面就会出现上述情况。为了确保“Web API”****平台仍然是注册的一部分，请单击页面底部附近的“编辑应用程序清单”****按钮。应该会看到清单的 **identifierUris** 属性中的 `api://localhost:3000/{App ID GUID}` 字符串。还有一个 **oauth2Permissions** 属性，它的 **value** 子属性的值为 `access_as_user`。
+1. 在“平台”****下的新“Web”****部分中，输入下列内容作为“重定向 URL”****：`https://localhost:3000`。 
 
-1. 向下滚动到“Microsoft Graph 权限”****部分，“委派的权限”****小节。使用“添加”****按钮打开“选择权限”****对话框。
+1. 向下滚动到“Microsoft Graph 权限”****部分的“委派的权限”****子部分。使用“添加”****按钮，打开“选择权限”****对话框。
 
 1. 在对话框中，选中以下权限对应的框： 
+
     * Files.Read.All
-    * 配置文件
+    * profile
+
+    > [!NOTE]
+    > `User.Read` 权限可能已默认列出。 根据最佳做法，最好不请求授予不需要的权限，因此建议取消选中此权限对应的框。
 
 1. 单击对话框底部的“确定”****。
 
@@ -78,9 +96,10 @@
 
 ## <a name="grant-admin-consent-to-the-add-in"></a>向加载项授予管理员许可
 
-> **注意：**仅在开发加载项时，才需要执行此过程。 将生产加载项部署到 Office 应用商店或加载项目录时，用户会在安装时独自信任它。
+> [!NOTE]
+> 仅在开发加载项时，才需要执行此过程。 将生产加载项部署到 AppSource 或加载项目录后，用户需要在安装时单独信任它。
 
-1. 在以下字符串中，将占位符“{application_ID}”替换为注册加载项时复制的应用程序 ID。
+1. 在以下字符串中，将占位符“{application_ID}”替换为注册加载项时复制的应用 ID。
 
     `https://login.microsoftonline.com/common/adminconsent?client_id={application_ID}&state=12345`
 
@@ -88,9 +107,9 @@
 
 1. 出现提示时，使用管理员凭据登录 Office 365 租户。
 
-1. 然后系统提示你授予外接程序访问 Microsoft Graph 数据的权限。单击“接受”****。 
+1. 然后，系统提示向加载项授予对 Microsoft Graph 数据的访问权限。单击“接受”****。 
 
-1. 然后，浏览器窗口/选项卡会重定向到注册加载项时指定的**重定向 URL**；因此，如果加载项正在运行，那么浏览器中会打开加载项的主页。 如果加载项未在运行，将会看到错误消息，指明找不到或打不开 localhost:3000 处的资源。 *不过，尝试进行重定向便意味着管理员许可过程成功完成*。 所以，无论是打开了主页，还是看到错误，都可以继续执行下一步。
+1. 然后，浏览器窗口/选项卡重定向到注册加载项时指定的**重定向 URL**。因此，如果加载项正在运行，加载项的主页将在浏览器中打开。如果加载项未在运行，将看到错误消息，提示找不到或打不开 localhost:3000 处的资源。*不过，尝试执行重定向即表示管理员许可过程已成功完成*。所以，无论是打开了主页还是看到了错误消息，都可以继续执行下一步。
 
 2. 在浏览器的地址栏中，你将看到一个带有 GUID 值的“租户”查询参数。这是 Office 365 租户的 ID。复制并保存此值。你将在后续步骤中使用它。
 
@@ -116,7 +135,7 @@
 
 1. 滚动到文件底部。
 
-1. 在结束 `</VersionOverrides>` 标记的正上方，你会发现以下标记：
+1. 结束 `</VersionOverrides>` 标记的正上方为以下标记：
 
     ```xml
     <WebApplicationInfo>
@@ -129,12 +148,11 @@
     </WebApplicationInfo>
     ```
 
-1. 将标记中的*两处*占位符“{application_GUID here}”均替换成在注册加载项时复制的应用程序 ID。 （由于 ID 并不包含“{}”，因此请勿添加它们。）这与在 web.config 中对 ClientID 和 Audience 使用的 ID 相同。
+1. 将标记中的*两处*占位符“{此为 application_GUID }”均替换为在注册加载项时复制的应用 ID。（由于“{}”不属于 ID，因此请勿添加。）这与在 web.config 中对 ClientID 和 Audience 使用的 ID 相同。
 
-    >注意： 
-    >
-    >* **Resource** 值是将 Web API 平台添加到外接程序注册时设置的“应用程序 ID URI”****。
-    >* 如果通过 Office 应用商店销售该外接程序，则 **Scopes** 部分仅用于生成同意对话框。
+    > [!NOTE]
+    > * **Resource** 值是向注册的加载项添加 Web API 平台时设置的**应用 ID URI**。
+    > * 仅在通过 AppSource 销售加载项时，才使用 **Scopes** 部分生成许可对话框。
 
 1. 保存并关闭文件。
 
@@ -143,99 +161,287 @@
 1. 打开 **public** 文件夹中的 program.js 文件。其中已存在一些代码：
 
     * 针对 `Office.initialize` 方法的分配，反过来又将一个处理程序分配给 `getGraphAccessTokenButton` 按钮的 Click 事件。
-    * 在任务窗格底部，显示从 Microsoft Graph（或错误消息）返回的数据的 `showResult` 方法。
+    * `showResult` 方法，用于在任务窗格底部显示从 Microsoft Graph 返回的数据（或错误消息）。
+    * `logErrors` 方法，用于记录最终用户不应看到的控制台错误。
 
-1. 在针对 `Office.initialize` 的分配下面，添加下面的代码。关于此代码，请注意以下几点： 
+11. 在向 `Office.initialize` 分配函数下方，添加下列代码。关于此代码，请注意以下几点：
 
-    * 首次尝试使用“代表”流时，便会调用 `getDataWithoutAuthChallenge` 函数。 假设只需要单一身份验证。 将在稍后的步骤中添加代码，以处理需要多重身份验证的情况。
-    * `getAccessTokenAsync` 是 Office.js 中新增的 API，支持加载项向 Office 主机应用程序（Excel、PowerPoint、Word 等）请求获取对加载项的访问令牌（对于已登录 Office 的用户）。 反过来，Office 主机应用程序会向 Azure AD 2.0 终结点请求获取令牌。 由于已在注册加载项时将 Office 主机预授权给加载项，因此 Azure AD 将会发送令牌。 
-     * 如果没有用户登录 Office，则 Office 主机将提示用户登录。 
-     * options 参数将 `forceConsent` 设置为 false，因此将不会提示用户同意为 Office 主机提供访问外接程序的权限。
+    * 加载项中的错误处理有时会自动尝试使用一组不同的选项，重新获取访问令牌。 计数器变量 `timesGetOneDriveFilesHasRun` 以及标志变量 `triedWithoutForceConsent` 和 `timesMSGraphErrorReceived` 用于确保用户不会重复循环失败的尝试来获取令牌。 
+    * `getDataWithToken` 方法将在下一步中创建，但请注意，它会将 `forceConsent` 选项设置为 `false`。 有关详细信息，请参阅下一步。
 
-    ```js
-    function getOneDriveItems() {
-        getDataWithoutAuthChallenge();
+    ```javascript
+    var timesGetOneDriveFilesHasRun = 0;
+    var triedWithoutForceConsent = false;
+    var timesMSGraphErrorReceived = false;
+
+    function getOneDriveFiles() {
+        timesGetOneDriveFilesHasRun++;
+        triedWithoutForceConsent = true;
+        getDataWithToken({ forceConsent: false });
     }   
-    
-    function getDataWithoutAuthChallenge() {       
-        Office.context.auth.getAccessTokenAsync({forceConsent: false},
-            function (result) {
-                if (result.status === "succeeded") {
-                    // TODO1: Use the access token to get Microsoft Graph data.
-                }
-                else {
-                    console.log("Code: " + result.error.code);
-                    console.log("Message: " + result.error.message);
-                    console.log("name: " + result.error.name);
-                    document.getElementById("getGraphAccessTokenButton").disabled = true;
-                }
-            });
+    ```
+
+1. 在 `getOneDriveFiles` 方法下方，添加下列代码。关于此代码，请注意以下几点：
+
+    * `getAccessTokenAsync` 是 Office.js 中的新 API，可便于加载项要求 Office 主机应用（Excel、PowerPoint、Word 等）提供加载项访问令牌（对于已登录 Office 的用户）。反过来，Office 主机应用会向 Azure AD 2.0 终结点请求获取令牌。由于已在注册加载项时将 Office 主机预授权给加载项，因此 Azure AD 会发送访问令牌。
+    * 如果用户未登录 Office，Office 主机会提示用户登录。
+    * options 参数将 `forceConsent` 设置为 `false`，因此用户不会在每次使用加载项时都看到提示，要求其许可向 Office 主机授予对加载项的访问权限。 用户首次运行加载项时，`getAccessTokenAsync` 调用会失败，但在后续步骤中添加的错误处理逻辑会自动重新调用（`forceConsent` 选项设置为 `true`），并提示用户许可，但仅限首次运行。
+    * `handleClientSideErrors` 方法将在后续步骤中创建。
+
+    ```javascript
+    function getDataWithToken(options) {
+    Office.context.auth.getAccessTokenAsync(options,
+        function (result) {
+            if (result.status === "succeeded") {
+                TODO1: Use the access token to get Microsoft Graph data.
+            }
+            else {
+                handleClientSideErrors(result);
+            }
+        });
     }
     ```
 
-1. 将 TODO1 替换为以下代码行。 可以在稍后的步骤中创建 `getData` 方法和服务器端“/api/onedriveitems”路由。 相对 URL 适用于终结点，因为它必须与加载项托管在同一域中。
+1. 用以下行替换 TODO1。可以在后续步骤中创建 `getData` 方法和服务器端“/api/values”路由。相对 URL 用于终结点，因为它必须与外接程序托管在相同的域中。
 
-    ```
+    ```javascript
     accessToken = result.value;
-    getData("/api/onedriveitems", accessToken);
+    getData("/api/values", accessToken);
     ```
 
-1. 在 `getOneDriveFiles` 方法下面添加以下内容。此实用程序方法调用指定的 Web API 终结点，并向其传递与 Office 主机应用程序用于获取外接程序访问权限的令牌相同的访问令牌。在服务器端，此访问令牌将用于“代表”流，以获取 Microsoft Graph 的访问令牌。 
+1. 在 `getOneDriveFiles` 方法下方，添加下列代码。 关于此代码，请注意以下几点：
 
-    ```
+    * 此方法调用指定 Web API 终结点，并向它传递访问令牌，这也是 Office 主机应用用于获取对加载项的访问权限的令牌。在服务器端，此访问令牌将用于“代表”流，以获取对 Microsoft Graph 的访问令牌。
+    * `handleServerSideErrors` 方法将在后续步骤中创建。
+
+    ```javascript
     function getData(relativeUrl, accessToken) {
         $.ajax({
             url: relativeUrl,
             headers: { "Authorization": "Bearer " + accessToken },
-            type: "GET",
+            type: "GET"
         })
         .done(function (result) {
-            TODO2: Display data and handle demand for multi-factor authentication.
+            showResult(result);
         })
         .fail(function (result) {
-            console.log(result.error);
-       });
+            handleServerSideErrors(result);
+        }); 
     }
     ```
 
-1. 用以下代码替换 TODO2。关于此代码，请注意以下几点：
-    * 如果 Microsoft Graph 目标要求有其他身份验证因素，就不会生成数据。 而是生成声明 JSON，指示 AAD 必须提示用户提供什么其他身份验证因素。 在这种情况下，客户端必须启动新登录，将此 Claims 字符串传递到 AAD，这样 AAD 才能提供所需的提示。
-    * 如果生成声明 JSON，将包含字符串“capolids”。
-    * 将在稍后的步骤中创建 `getDataUsingAuthChallenge` 函数。
+### <a name="create-the-error-handling-methods"></a>创建错误处理方法
 
-    ```
-    if (result[0].indexOf('capolids') !== -1) {                
-        result[0] = JSON.parse(result[0])
-        getDataUsingAuthChallenge(result[0]);
-    } else {  
-        showResult(result);
+1. 在 `getData` 方法下方，添加下列方法。 当 Office 主机无法获取对加载项 Web 服务的访问令牌时，此方法便会处理加载项客户端中的错误。 这些错误通过错误代码进行报告，因此下面的方法使用 `switch` 语句区分它们。
+
+    ```javascript
+    function handleClientSideErrors(result) {
+
+        switch (result.error.code) {
+    
+            // TODO2: Handle the case where user is not logged in, or the user cancelled, without responding, a
+            //        prompt to provide a 2nd authentication factor. 
+    
+            // TODO3: Handle the case where the user's sign-in or consent was aborted.
+    
+            // TODO4: Handle the case where the user is logged in with an account that is neither work or school, 
+            //        nor Micrososoft Account.
+    
+            // TODO5: Handle an unspecified error from the Office host.
+    
+            // TODO6: Handle the case where the Office host cannot get an access token to the add-ins 
+            //        web service/application.
+    
+            // TODO7: Handle the case where the user tiggered an operation that calls `getAccessTokenAsync` 
+            //        before a previous call of it completed.
+    
+            // TODO8: Handle the case where the add-in does not support forcing consent.
+    
+            // TODO9: Log all other client errors.
+        }
     }
     ```
 
-1. 在文件中 `getData` 函数的正下方，添加以下函数。 关于此函数，请注意以下几点：
-    * 在 AAD 要求提供其他身份验证因素时，使用此函数。 
-    * 此函数会触发第二次登录，以提示用户提供其他身份验证因素。 
-    * `authChallenge` 选项包含的字符串可指示 AAD 应提示提供什么身份验证因素。 请求获取对加载项的加载项令牌时，Office 主机会将此字符串传递给 AAD。
+1. 将 `TODO2` 替换为以下代码。 如果用户未登录或用户取消（未响应）提供辅助身份验证因素的提示，错误 13001 发生。 无论属于上述哪种情况，代码都会重新运行 `getDataWithToken` 方法，并设置强制登录提示选项。
 
+    ```javascript
+    case 13001:
+        getDataWithToken({ forceAddAccount: true });
+        break;
     ```
-    function getDataUsingAuthChallenge(authChallengeString) {       
-        Office.context.auth.getAccessTokenAsync({authChallenge: authChallengeString},
-            function (result) {
-                if (result.status === "succeeded") {
-                    accessToken = result.value;
-                    getData("/api/onedriveitems", accessToken);
-                }
-                else {
-                    console.log("Code: " + result.error.code);
-                    console.log("Message: " + result.error.message);
-                    console.log("name: " + result.error.name);
-                    document.getElementById("getGraphAccessTokenButton").disabled = true;
-                }
-            });
+
+1. 将 `TODO3` 替换为以下代码。 如果用户登录或许可被中止，错误 13002 发生。 建议用户重试一次，但只能重试一次。
+
+    ```javascript
+    case 13002:
+        if (timesGetOneDriveFilesHasRun < 2) {
+            showResult(['Your sign-in or consent was aborted before completion. Please try that operation again.']);
+        } else {
+            logError(result);
+        }          
+        break; 
+    ```
+
+1. 将 `TODO4` 替换为以下代码。 如果用户用于登录的帐户既不是工作帐户或学校帐户，也不是 Microsoft 帐户，错误 13003 发生。 建议用户注销，再使用受支持的帐户类型重新登录。
+
+    ```javascript
+    case 13003: 
+        showResult(['Please sign out of Office and sign in again with a work or school account, or Microsoft Account. Other kinds of accounts, like corporate domain accounts do not work.']);
+        break;   
+    ```
+
+    > [!NOTE]
+    > 此方法不处理错误 13004 和 13005，因为它们只在开发期间出现。 无法通过运行时代码进行修复，并且向最终用户报告这两个错误也没有意义。
+
+1. 将 `TODO5` 替换为以下代码。 如果 Office 主机中出现未指定错误，可能表明主机处于不稳定状态，错误 13006 发生。 建议用户重启 Office。
+
+    ```javascript
+    case 13006:
+        showResult(['Please save your work, sign out of Office, close all Office applications, and restart this Office application.']);
+        break;        
+    ```
+
+1. 将 `TODO6` 替换为以下代码。 如果 Office 主机与 AAD 之间的交互出现问题，导致主机无法获得对加载项 Web 服务/应用的访问令牌，错误 13007 发生。 这可能由于暂时网络问题所致。 建议用户稍后重试。
+
+    ```javascript
+    case 13007:
+        showResult(['That operation cannot be done at this time. Please try again later.']);
+        break;      
+    ```
+
+1. 将 `TODO7` 替换为以下代码。 如果用户触发的操作未等到上一次调用完成就调用了 `getAccessTokenAsync`，错误 13008 发生。
+
+    ```javascript
+    case 13008:
+        showResult(['Please try that operation again after the current operation has finished.']);
+        break;
+    ```      
+
+1. 将 `TODO8` 替换为以下代码。 如果加载项不支持强制许可，但调用 `getAccessTokenAsync` 时 `forceConsent` 选项设置为 `true`，错误 13009 发生。 通常情况下，如果发生这种情况，代码应自动重新运行 `getAccessTokenAsync`，同时将许可选项设置为 `false`。 不过，在某些情况下，调用将 `forceConsent` 设置为 `true` 的方法本身就是在自动响应调用将选项设置为 `false` 的方法时出现的错误。 此时，不得重试代码，而是应建议用户注销并重新登录。
+
+    ```javascript
+    case 13009:
+        if (triedWithoutForceConsent) {
+            showResult(['Please sign out of Office and sign in again with a work or school account, or Microsoft Account.']);
+        } else {
+            getDataWithToken({ forceConsent: false });
+        }
+        break;
+    ```      
+    
+1. 将 `TODO9` 替换为以下代码。
+
+    ```javascript
+    default:
+        logError(result);
+        break;
+    ```  
+
+1. 在 `handleClientSideErrors` 方法下方，添加下列方法。 如果无法执行代表流或从 Microsoft Graph 获取数据，此方法可处理加载项 Web 服务中出现的错误。
+
+    ```javascript
+    function handleServerSideErrors(result) {
+    
+        // TODO10: Handle the case where AAD asks for an additional form of authentication.
+
+        // TODO11: Handle the case where consent has not been granted, or has been revoked.
+
+        // TODO12: Handle the case where an invalid scope (permission) was used in the on-behalf-of flow
+
+        // TODO13: Handle the case where the token that the add-in's client-side sends to it's 
+        //         server-side is not valid because it is missing `access_as_user` scope (permission).
+
+        // TODO14: Handle the case where the token sent to Microsoft Graph in the request for 
+        //         data is expired or invalid.
+
+        // TODO15: Log all other server errors.
     }
     ```
 
-1. 保存并关闭文件。
+1. 将 `TODO10` 替换为以下代码。关于此代码，请注意以下几点：
+
+    * 一些 Azure Active Directory 配置要求用户，必须提供其他一个或多个身份验证因素，才能访问一些 Microsoft Graph 目标（例如 OneDrive），即使用户仅使用密码就能登录 Office，也不例外。在这种情况下，AAD 将发送包含错误 50076 的响应（具有 `Claims` 属性）。 
+    * Office 主机应获取新令牌（使用 **Claims** 值作为 `authChallenge` 选项）。 这就指示 AAD 提示用户进行所有必需形式的身份验证。 
+
+    ```javascript
+    if (result.responseJSON.error.innerError
+            && result.responseJSON.error.innerError.error_codes
+            && result.responseJSON.error.innerError.error_codes[0] === 50076){
+        getDataWithToken({ authChallenge: result.responseJSON.error.innerError.claims });
+    }
+    ```
+
+1. *在上一步添加的代码的最后一个右大括号正下方*，将 `TODO11` 替换为以下代码。 关于此代码，请注意以下几点：
+
+    * 错误 65001 表示未许可授予（或已撤消）一个或多个对 Microsoft Graph 的访问权限。 
+    * 加载项应获取新令牌（`forceConsent` 选项设置为 `true`）。
+
+    ```javascript
+    else if (result.responseJSON.error.innerError
+            && result.responseJSON.error.innerError.error_codes
+            && result.responseJSON.error.innerError.error_codes[0] === 65001){
+        showResult(['Please grant consent to this add-in to access your Microsoft Graph data.']);        
+        /*
+            THE FORCE CONSENT OPTION IS NOT AVAILABLE IN DURING PREVIEW. WHEN SSO FOR
+            OFFICE ADD-INS IS RELEASED, REMOVE THE showResult LINE ABOVE AND UNCOMMENT
+            THE FOLLOWING LINE.
+        */
+        // getDataWithToken({ forceConsent: true });
+    }
+    ```
+
+1. *在上一步添加的代码的最后一个右大括号正下方*，将 `TODO12` 替换为以下代码。 关于此代码，请注意以下几点：
+
+    * 错误 70011 表示已请求获取的范围（权限）无效。 加载项应报告此错误。
+    * 代码使用 AAD 错误号记录其他任何错误。
+
+    ```javascript
+    else if (result.responseJSON.error.innerError
+            && result.responseJSON.error.innerError.error_codes
+            && result.responseJSON.error.innerError.error_codes[0] === 70011){
+        showResult(['The add-in is asking for a type of permission that is not recognized.']);
+    }
+    ```
+
+1. *在上一步添加的代码的最后一个右大括号正下方*，将 `TODO13` 替换为以下代码。 关于此代码，请注意以下几点：
+
+    * 如果 `access_as_user` 范围（权限）不在访问令牌中，此令牌由加载项客户端发送到 AAD 以便在代表流中使用，那么在后续步骤中创建的服务器端代码将发送以 `... expected access_as_user` 结尾的消息。
+    * 加载项应报告此错误。
+
+    ```javascript
+    else if (result.responseJSON.error.name
+            && result.responseJSON.error.name.indexOf('expected access_as_user') !== -1){
+        showResult(['Microsoft Office does not have permission to get Microsoft Graph data on behalf of the current user.']);
+    }
+    ```
+
+1. *在上一步添加的代码的最后一个右大括号正下方*，将 `TODO14` 替换为以下代码。 关于此代码，请注意以下几点：
+
+    * 不太可能将到期或无效令牌发送到 Microsoft Graph，但如果这种情况确实发生，在后续步骤中创建的服务器端代码将以字符串 `Microsoft Graph error` 结尾。
+    * 在这种情况下，加载项应重置 `timesGetOneDriveFilesHasRun` 计数器和 `timesGetOneDriveFilesHasRun` 标志变量，再重新调用按钮处理程序方法，以从头开始执行整个身份验证流程。 但它只能执行此操作一次。 如果再次发生，它应只记录此错误。
+    * 如果连续两次出现这种情况，代码会记录此错误。
+
+    ```javascript
+    else if (result.responseJSON.error.name
+            && result.responseJSON.error.name.indexOf('Microsoft Graph error') !== -1) {
+        if (!timesMSGraphErrorReceived) {
+            timesMSGraphErrorReceived = true;
+            timesGetOneDriveFilesHasRun = 0;
+            triedWithoutForceConsent = false;
+            getOneDriveFiles();
+        } else {
+            logError(result);
+        }        
+    }
+    ```
+
+1. *在上一步添加的代码的最后一个右大括号正下方*，将 `TODO15` 替换为以下代码。
+
+    ```javascript
+    else {
+        logError(result);
+    }
+    ```
 
 ## <a name="code-the-server-side"></a>编写服务器端代码
 
@@ -246,55 +452,58 @@
 ### <a name="create-a-method-to-exchange-tokens"></a>创建交换令牌的方法
 
 1. 打开 \src\auth.ts 文件。将下面的方法添加到 `AuthModule` 类。关于此代码，请注意以下几点：
-    * jwt 参数是该应用程序的访问令牌。在“代表”流中，它与 AAD 进行交换，以获取资源的访问令牌。
-    * scopes 参数具有默认值，但在此示例中，它将被调用代码覆盖。
-    * resource 参数是可选的。它不应在 STS 是 AAD V2 终结点时使用。后者从作用域推断资源，如果在 HTTP 请求中发送资源，则它将返回错误。 
+
+    * `jwt` 参数是对应用的访问令牌。在“代表”流中，它与 AAD 进行交换，以获取对资源的访问令牌。
+    * 虽然 scopes 参数有默认值，但在此示例中，它将被调用代码覆盖。
+    * resource 是可选参数。不得在 STS 是 AAD V 2.0 终结点时使用它。V 2.0 终结点通过范围推断资源。如果在 HTTP 请求中发送资源，它会返回错误。 
+    * `catch` 信息块中抛出异常*不会*导致立即向客户端发送“500 内部服务器错误”。 server.js 文件中的调用代码会捕获此异常，并将它变成发送到客户端的错误消息。
+
     
-
-    ```
-    private async exchangeForToken(jwt: string, scopes: string[] = ['openid'], resource?: string) {
-        try {
-            // TODO3: Construct the parameters that will be sent in the body of the 
-            //        HTTP Request to the STS that starts the "on behalf of" flow.
-            // TODO4: Send the request to the STS.
-            // TODO5: Process the response and persist the access token to resource.
+        ```javascript
+        private async exchangeForToken(jwt: string, scopes: string[] = ['openid'], resource?: string) {
+            try {
+                // TODO3: Construct the parameters that will be sent in the body of the 
+                //        HTTP Request to the STS that starts the "on behalf of" flow.
+                // TODO4: Send the request to the STS.
+                // TODO5: Catch errors from the STS and relay them to the client.
+                // TODO6: Process the response and persist the access token to resource.
+            }
+            catch (exception) {
+                throw new UnauthorizedError('Unable to obtain an access token to the resource' 
+                                            + JSON.stringify(exception), 
+                                            exception);
+            }
         }
-        catch (exception) {
-            throw new UnauthorizedError('Unable to obtain an access token to the resource' 
-                                        + JSON.stringify(exception), 
-                                        exception);
-        }
-    }
-    ```
+        ```
 
-2. 将 TODO3 替换为以下代码行。 关于此代码，请注意以下几点：
+2. 将 `TODO3` 替换为以下代码。关于此代码，请注意以下几点：
     * 支持“代表”流的 STS 需要 HTTP 请求正文中的某些属性/值对。此代码构造一个可成为请求正文的对象。 
-    * 仅当资源传递给方法时，才会将资源属性添加到正文。
+    * 仅当资源传递到方法时，才将 resource 属性添加到正文。
 
-    ```
-    const v2Params = {
-            client_id: this.clientId,
-            client_secret: this.clientSecret,
-            grant_type: 'urn:ietf:params:oauth:grant-type:jwt-bearer',
-            assertion: jwt,
-            requested_token_use: 'on_behalf_of',
-            scope: scopes.join(' ')
-        };
-        let finalParams = {};
-        if (resource) {
-            // In JavaScript we could just add the resource property to the v2Params
-            // object, but that won't compile in TypeScript.
-            let v1Params  = { resource: resource };  
-            for(var key in v2Params) { v1Params[key] = v2Params[key]; }
-            finalParams = v1Params;
-        } else {
-            finalParams = v2Params;
-        } 
-    ```
+        ```javascript
+        const v2Params = {
+                client_id: this.clientId,
+                client_secret: this.clientSecret,
+                grant_type: 'urn:ietf:params:oauth:grant-type:jwt-bearer',
+                assertion: jwt,
+                requested_token_use: 'on_behalf_of',
+                scope: scopes.join(' ')
+            };
+            let finalParams = {};
+            if (resource) {
+                // In JavaScript we could just add the resource property to the v2Params
+                // object, but that won't compile in TypeScript.
+                let v1Params  = { resource: resource };  
+                for(var key in v2Params) { v1Params[key] = v2Params[key]; }
+                finalParams = v1Params;
+            } else {
+                finalParams = v2Params;
+            } 
+        ```
 
-3. 将 TODO4 替换为以下代码行，可将 HTTP 请求发送到 STS 的令牌终结点。
+3. 将 `TODO4` 替换为以下代码，用于将 HTTP 请求发送到 STS 的令牌终结点。
 
-    ```
+    ```javascript
     const res = await fetch(`${this.stsDomain}/${this.tenant}/${this.tokenURLsegment}`, {
         method: 'POST',
         body: form(finalParams),
@@ -305,15 +514,19 @@
     }); 
     ```
 
-4. 将 TODO5 替换为以下代码行。 请注意，此代码除了返回对资源的访问令牌之外，还将保留它及其到期时间。 调用代码通过重用资源未到期的访问令牌来避免对 STS 的不必要的调用。 下一部分将介绍如何执行此操作。
+4. 将 `TODO5` 替换为以下代码。 请注意，抛出异常*不会*导致立即向客户端发送“500 内部服务器错误”。 server.js 文件中的调用代码会捕获此异常，并将它变成发送到客户端的错误消息。
 
+    ```javascript
+     if (res.status !== 200) {
+        const exception = await res.json();
+        throw exception;                
+    } 
     ```
-    if (res.status !== 200) {
-        TODO6: Handle failure and the case where AAD asks for additional
-               authentication factors.
-    }
+
+5. 将 `TODO6` 替换为以下代码。请注意，代码会返回并保留对资源的访问令牌及其到期时间。调用代码可以重用对资源的未到期访问令牌，避免了对 STS 执行不必要的调用。下一部分将介绍如何执行此操作。
+
+    ```javascript  
     const json = await res.json();
-    // Persist the token and it's expiration time.
     const resourceToken = json['access_token'];
     ServerStorage.persist('ResourceToken', resourceToken);
     const expiresIn = json['expires_in'];  // seconds until token expires.
@@ -322,37 +535,16 @@
     return resourceToken; 
     ```
 
-5. 将 TODO6 替换为以下代码行。 关于此代码，请注意以下几点：
-
-    * 一些 Azure Active Directory 配置要求用户，必须提供其他身份验证因素，才能访问一些 Microsoft Graph 目标（例如 OneDrive），即使用户仅使用密码就能登录 Office。 在这种情况下，AAD 将发送包含 `Claims` 属性的响应。 
-    * 此 `Claims` 值需要传递回客户端，它应为用户启动第二次登录，并在 AAD 调用中添加 `Claims` 值。 AAD 将提示用户提供其他身份验证因素。
-    * 作为预防措施，此代码清除在用户仅使用密码登录时所获取的任何访问令牌缓存。  
-
-    ```
-    const exception = await res.json();
-    // Check if AAD is the STS.
-    if (this.stsDomain === 'https://login.microsoftonline.com') {
-        if (JSON.stringify(exception.claims)) {                       
-            ServerStorage.clear();
-            return JSON.stringify(exception.claims);    
-        } else {                    
-            throw exception;
-        }
-    }
-    else {                    
-        throw exception;
-    }
-    ```
-
-5. 保存但不关闭文件。
+6. 保存但不关闭文件。
 
 ### <a name="create-a-method-to-get-access-to-the-resource-using-the-on-behalf-of-flow"></a>使用“代表”流创建一个获取资源访问权限的方法
 
 1. 还是在 src/auth.ts 中，将下面的方法添加到 `AuthModule` 类。关于此代码，请注意以下几点：
-    * 上面关于 `exchangeForToken` 方法参数的注释也适用于此方法的参数。
-    * 此方法先检查永久性存储中是否有尚未过期且下一分钟也不会过期的资源访问令牌。 仅在需要时，它才会调用在上一部分中创建的 `exchangeForToken` 方法。
 
-    ```
+    * 上面关于 `exchangeForToken` 方法参数的注释也适用于此方法的参数。
+    * 方法先检查对资源（尚未到期且不会在下一分钟到期）的访问令牌是否有永久性存储。仅在需要的情况下，它才会调用在上一部分中创建的 `exchangeForToken` 方法。
+
+    ```javascript
     async acquireTokenOnBehalfOf(jwt: string, scopes: string[] = ['openid'], resource?: string) {
         const resourceTokenExpirationTime = ServerStorage.retrieve('ResourceTokenExpiresAt');
         if (moment().add(1, 'minute').diff(resourceTokenExpirationTime) < 1 ) {
@@ -373,63 +565,66 @@
 
 2. 将以下方法添加到文件底部。此方法将为外接程序的主页提供服务。外接程序清单指定主页 URL。
 
-    ```
+    ```javascript
     app.get('/index.html', handler(async (req, res) => {
         return res.sendfile('index.html');
     })); 
     ```
 
-3. 将以下方法添加到文件底部。此方法将处理 `onedriveitems` API 的任何请求。
-    ```
+3. 将以下方法添加到文件底部。此方法将处理任何 `onedriveitems` API 请求。
+    ```javascript
     app.get('/api/onedriveitems', handler(async (req, res) => {
         // TODO7: Initialize the AuthModule object and validate the access token 
         //        that the client-side received from the Office host.
         // TODO8: Get a token to Microsoft Graph from either persistent storage 
         //        or the "on behalf of" flow.
         // TODO9: Use the token to get data from Microsoft Graph.
-        // TODO10: Send to the client only the data that it actually needs.
+        // TODO10: Relay any errors from Microsoft Graph to the client.
+        // TODO11: Send to the client only the data that it actually needs.
     })); 
     ```
 
-4. 将 TODO7 替换为以下代码行，可验证从 Office 主机应用程序收到的访问令牌。 `verifyJWT` 方法在 src\auth.ts 文件中进行定义。 它始终验证受众和颁发者。 此可选参数可用于指定是否还要它验证访问令牌中的作用域是否为 `access_as_user`。 这是用户和 Office 主机通过“代表”流获取对 Microsoft Graph 的访问令牌时，唯一需要拥有的对加载项的权限。 
+4. 将 `TODO7` 替换为以下代码，用于验证从 Office 主机应用收到的访问令牌。`verifyJWT` 方法是在 src\auth.ts 文件中定义。它始终验证受众和颁发者。使用可选参数是为了指定，还希望它验证访问令牌中的范围是否为 `access_as_user`。这是用户和 Office 主机唯一需要的对加载项的权限，以便通过“代表”流获取对 Microsoft Graph 的访问令牌。 
 
-    ```
+    ```javascript
     await auth.initialize();
     const { jwt } = auth.verifyJWT(req, { scp: 'access_as_user' }); 
     ```
 
-> **注意：**只可使用 `access_as_user` 作用域授权 API 为 Office 加载项处理代表流。服务中的其他 API 应有自己的作用域要求。 这就限制了使用 Office 获得的令牌可以访问的内容。
+    > [!NOTE]
+    > 只能使用 `access_as_user` 范围授权 API 为 Office 加载项处理代表流。服务中的其他 API 应有自己的范围要求。这就限制了使用 Office 获得的令牌可以访问的内容。
 
-5. 将 TODO8 替换为以下代码。 关于此代码，请注意以下几点：
+5. 将 `TODO8` 替换为以下代码。关于此代码，请注意以下几点：
 
     * `acquireTokenOnBehalfOf` 调用中不包括 resource 参数，因为 `AuthModule` 对象 (`auth`) 是使用不支持 resource 属性的 AAD V2.0 终结点进行构造。
     * 调用的第二个参数指定了加载项获取 OneDrive 上用户文件和文件夹列表时所需的权限。 （之所以不需要 `profile` 权限是因为，只有当 Office 主机获取对加载项的访问令牌时，才需要此权限，用此令牌交换对 Microsoft Graph 的访问令牌时并不需要。）
-    * 如果响应是包含“capolids”的字符串，表明这是来自 AAD 的声明消息，要求进行多重身份验证。 此消息会被传递给客户端，再用它来启动第二次登录。 此字符串指示 AAD，应提示用户提供什么其他身份验证因素。
 
-    ```
-    let graphToken = null;
-    const tokenAcquisitionResponse = await auth.acquireTokenOnBehalfOf(jwt, ['Files.Read.All']);
-    if (tokenAcquisitionResponse.includes('capolids')) {
-        const claims: string[] = [];
-        claims.push(tokenAcquisitionResponse);
-        return res.json(claims);
-    } else {
-        // The response is the token to Microsoft Graph itself. Rename it so remaining code
-        // is self-documenting.
-        graphToken = tokenAcquisitionResponse;
-    }
+
+    ```javascript
+    const graphToken = await auth.acquireTokenOnBehalfOf(jwt, ['Files.Read.All']);
     ```
 
-6. 将 TODO9 替换为以下代码行。 关于此代码，请注意以下几点：
+6. 将 `TODO9` 替换为以下代码行。关于此代码，请注意以下几点：
 
-    * MSGraphHelper 类在 Src\msgraph helper.ts 中定义。 
+    * MSGraphHelper 类是在 Src\msgraph helper.ts 中定义。 
     * 通过指定只需要 name 属性和前 3 项，可以最大限度地减少必须返回的数据。
 
     `const graphData = await MSGraphHelper.getGraphData(graphToken, "/me/drive/root/children", "?$select=name&$top=3");`
 
-7. 将 TODO10 替换为以下代码行。 请注意，Microsoft Graph 会为每一项都返回一些 OData 元数据和 **eTag** 属性，即使 `name` 是所请求的唯一属性，也是如此。 该代码仅向客户端发送项目名称。
+7. 将 `TODO10` 替换为以下代码。 请注意，此代码处理 Microsoft Graph 返回的“401 未授权”错误，此错误表示令牌到期或无效。 由于令牌暂留逻辑应该会阻止，因此这种情况不太可能会发生。 （请参阅上面的**使用“代表”流创建方法以获取对资源的访问权限**部分。）如果这种情况确实发生，此代码会将错误中继到客户端，并在错误名称中显示“Microsoft Graph 错误”。 （请参阅在之前步骤中在 program.js 文件内创建的 `handleClientSideErrors` 方法。）在后续步骤中添加到 ODataHelper.js 文件的代码有助于处理 Microsoft Graph 返回的错误。
 
+    ```javascript
+    if (graphData.code) {
+        if (graphData.code === 401) {
+            throw new UnauthorizedError('Microsoft Graph error', graphData);
+        }
+    }
     ```
+
+
+1. 将 `TODO11` 替换为以下代码。请注意，Microsoft Graph 对每项返回某 OData 元数据和 **eTag** 属性，即使 `name` 是所请求的唯一属性，也不例外。代码仅向客户端发送项名称。
+
+    ```javascript
     const itemNames: string[] = [];
     const oneDriveItems: string[] = graphData['value'];
     for (let item of oneDriveItems){
@@ -439,6 +634,49 @@
     ```
 
 8. 保存并关闭文件。
+
+### <a name="add-response-handling-to-the-odatahelper"></a>向 ODataHelper 添加响应处理
+
+1. 打开文件 src\odata-helper.ts。 文件几乎已完成。 缺少的是，请求“结束”事件处理程序的回调主体。 将 `TODO` 替换为以下代码。 关于此代码，请注意以下几点：
+
+    * OData 终结点返回的响应可能是错误（如 401）。如果终结点需要访问令牌，但令牌无效或到期，就会生成 401 错误。 不过，错误消息仍是*消息*，而不是 `https.get` 调用中的错误，因此不会触发 `https.get` 末尾的 `on('error', reject)` 代码行。 所以，代码区分成功 (200) 消息和错误消息，并向调用方发送 JSON 对象，其中包含请求获取的 OData 或错误消息。
+
+
+    ```javascript
+    var error;
+    if (response.statusCode === 200) {
+        // TODO1: Return the data to the caller and resolve the Promise.
+    } else {
+       // TODO2: Return an error object to the caller and resolve the Promise.
+    }
+    ```
+
+1.  将 `TODO1` 替换为以下代码。 请注意，此代码假设数据是以 JSON 形式返回。
+
+    ```javascript
+    let parsedBody = JSON.parse(body);
+    resolve(parsedBody);
+    ```
+
+1.  将 `TODO2` 替换为以下代码。关于此代码，请注意以下几点：
+
+    * OData 源返回的错误响应将始终包含 statusCode，通常是 statusMessage。 一些 OData 源还向主体添加错误属性，以提供更多信息，如内部或更具体的代码和消息。
+    * Promise 对象已解析，未被拒绝。 Web 服务在服务器间调用 OData 终结点时，`https.get` 运行。 但这种调用出现的上下文是，客户端在 Web 服务中调用 Web API。 如果此“内部”请求被拒绝，客户端向 Web 服务发送的“外部”请求永不会完成。 此外，如果 `http.get` 的调用方需要将 OData 终结点返回的错误中继到客户端，必须解析具有自定义 `Error` 对象的请求。
+
+    ```javascript
+    error = new Error();
+    error.code = response.statusCode;
+    error.message = response.statusMessage;
+    
+    // The error body sometimes includes an empty space
+    // before the first character, remove it or it causes an error.
+    body = body.trim();
+    error.bodyCode = JSON.parse(body).error.code;
+    error.bodyMessage = JSON.parse(body).error.message;
+    resolve(error);
+    ```
+
+1. 保存并关闭文件。
 
 ## <a name="deploy-the-add-in"></a>部署外接程序
 
@@ -496,9 +734,11 @@
 
 2. 单击“显示加载项”****按钮，打开此加载项。
 
-2. 此加载项打开，并显示欢迎页。 单击“从 OneDrive 获取我的文件”****按钮。
+2. 此时，加载项打开并显示欢迎页。单击“从 OneDrive 获取我的文件”****按钮。
 
 2. 如果你已登录 Office，则 OneDrive 上的文件和文件夹列表将显示在该按钮的下方。首次操作需要的时间可能会超过 15 秒。
 
 3. 如过没有登录 Office，弹出窗口将打开并提示进行登录。完成登录后，文件和文件夹的列表将在几秒钟后显示。*请勿再次按下此按钮。*
-> **注意：**如果先前使用其他 ID 登录过 Office，并且当时打开的一些 Office 应用程序现在仍处于打开状态，Office 可能无法可靠地更改 ID，即使看似已在 PowerPoint 中更改过。 在这种情况下，可能无法调用 Microsoft Graph，或者可能返回以前 ID 的数据。 为了防止发生这种情况，请务必先*关闭其他所有 Office 应用程序*，然后再按“从 OneDrive 获取我的文件”****。
+
+> [!NOTE]
+> 如果先前使用其他 ID 登录过 Office，并且当时打开的一些 Office 应用现在仍处于打开状态，Office 可能无法可靠地更改 ID，即使看似已在 PowerPoint 中更改过，也不例外。 在这种情况下，可能无法调用 Microsoft Graph，或者可能返回以前 ID 的数据。 为了防止发生这种情况，请务必先*关闭其他所有 Office 应用程序*，然后再按“从 OneDrive 获取我的文件”****。
