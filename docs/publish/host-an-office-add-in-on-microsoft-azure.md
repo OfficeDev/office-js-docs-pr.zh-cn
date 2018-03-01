@@ -1,5 +1,12 @@
+---
+title: 在 Microsoft Azure 上托管 Office 加载项
+description: ''
+ms.date: 01/25/2018
+---
 
-# <a name="host-an-office-add-in-on-microsoft-azure"></a>在 Microsoft Azure 上托管 Office 外接程序
+
+
+# <a name="host-an-office-add-in-on-microsoft-azure"></a>在 Microsoft Azure 上托管 Office 加载项
 
 最简单的 Office 外接程序由 XML 清单文件和 HTML 页构成。XML 清单文件描述了外接程序的特性，例如它的名称、可以运行它的 Office 客户端应用程序以及外接程序 HTML 页的 URL。HTML 页包含在一个 Web 应用中，用户在 Office 客户端应用程序中安装和运行外接程序时将与此 Web 应用进行交互。可以将 Office 外接程序的 Web 应用托管在任意 Web 托管平台（包括 Azure）上。
 
@@ -7,19 +14,22 @@
 
 ## <a name="prerequisites"></a>先决条件 
 
-1. 安装 [Visual Studio 2017](https://www.visualstudio.com/downloads) 并选择包含 **Azure 开发**工作负载。
+1. 安装 [Visual Studio 2017](https://www.visualstudio.com/downloads)，并选择添加 **Azure 开发**工作负载。
 
-    >**注意：**如果之前已安装 Visual Studio 2017，请[使用 Visual Studio 安装程序](https://docs.microsoft.com/zh-cn/visualstudio/install/modify-visual-studio)，以确保安装 **Azure 开发**工作负载。 
+    > [!NOTE]
+    > 如果之前已安装 Visual Studio 2017，请[使用 Visual Studio 安装程序](https://docs.microsoft.com/zh-cn/visualstudio/install/modify-visual-studio)，以确保安装 **Azure 开发**工作负载。 
 
 2. 安装 Office 2016。 
     
-     >**注意：**如果尚未安装 Office 2016，可以[注册 1 个月免费试用版](http://office.microsoft.com/en-us/try/?WT%2Eintid1=ODC%5FENUS%5FFX101785584%5FXT104056786)。
+    > [!NOTE]
+    > 如果尚未安装 Office 2016，可以[注册 1 个月免费试用版](http://office.microsoft.com/en-us/try/?WT%2Eintid1=ODC%5FENUS%5FFX101785584%5FXT104056786)。
 
 3.  获取 Azure 订阅。
     
-     >**注意：**如果还没有 Azure 订阅，可以[通过 MSDN 订阅获取 Azure 订阅](http://www.windowsazure.com/en-us/pricing/member-offers/msdn-benefits/)或[注册免费试用版](https://azure.microsoft.com/en-us/pricing/free-trial)。 
+    > [!NOTE]
+    > 如果还没有 Azure 订阅，可以[通过 MSDN 订阅获取 Azure 订阅](http://www.windowsazure.com/en-us/pricing/member-offers/msdn-benefits/)，也可以[注册免费试用版](https://azure.microsoft.com/en-us/pricing/free-trial)。 
 
-## <a name="step-1-create-a-shared-folder-to-host-your-add-in-xml-manifest-file"></a>步骤 1：创建一个共享文件夹，用于托管外接程序 XML 清单文件
+## <a name="step-1-create-a-shared-folder-to-host-your-add-in-xml-manifest-file"></a>第 1 步：创建用于托管加载项 XML 清单文件的共享文件夹
 
 1. 打开开发计算机的文件资源管理器。
     
@@ -29,15 +39,17 @@
     
 4. 右键单击 AddinManifests 文件夹，然后选择“共享”**** > “特定用户”****。
     
-5. 在“文件共享”****中，选择下拉箭头，然后选择“所有人”**** > “添加”**** > “共享”****。
+5. 在“文件共享”****中，选择下拉箭头，再依次选择“所有人”**** > “添加”**** > “共享”****。
     
-> **注意：**在本演练中，将本地文件共享作为存储外接程序 XML 清单文件的受信任目录。在实际方案中，可以改为选择[将 XML 清单文件部署到 SharePoint 目录](../publish/publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md)或[将外接程序发布到 Office 应用商店](https://dev.office.com/officestore/docs/submit-to-the-office-store)。
+> [!NOTE]
+> 本演练要将本地文件共享用作受信任的目录，用来存储加载项 XML 清单文件。在实际方案中，可以改为选择[将 XML 清单文件部署到 SharePoint 目录](../publish/publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md)，或[将加载项发布到 AppSource](https://docs.microsoft.com/zh-cn/office/dev/store/submit-to-the-office-store)。
 
-## <a name="step-2-add-the-file-share-to-the-trusted-add-ins-catalog"></a>第 2 步：将文件共享添加到受信任的外接程序目录
+## <a name="step-2-add-the-file-share-to-the-trusted-add-ins-catalog"></a>第 2 步：将文件共享添加到受信任的加载项目录
 
 1.  启动 Word 2016 并创建文档。
 
-    >**注意：**尽管本示例使用的是 Word 2016，但你可以使用任何支持 Office 外接程序的 Office 应用程序，如 Excel、Outlook、PowerPoint 或 Project 2016。
+    > [!NOTE]
+    > 尽管本示例使用的是 Word 2016，但也可以使用任何支持 Office 加载项的 Office 应用（如 Excel、Outlook、PowerPoint 或 Project 2016）。
     
 2.  选择“文件”**** > “选项”****。
     
@@ -47,7 +59,8 @@
     
 5. 选中“在菜单中显示”****复选框。 
 
-    >**注意：**将外接程序 XML 清单文件存储在已指定为受信任的 Web 外接程序目录的共享中时，如果用户导航到功能区中的“插入”****选项卡并选择“我的外接程序”****，则外接程序显示在“Office 外接程序”****对话框中的“共享文件夹”****下。
+    > [!NOTE]
+    > 如果将加载项 XML 清单文件存储到已指定为受信任的 Web 加载项目录的共享中，用户可以转到功能区中的“插入”****选项卡，并选择“我的加载项”****，此时加载项就会显示在“Office 加载项”****对话框中的“共享文件夹”****下。
 
 6. 关闭 Word 2016。
 
@@ -79,7 +92,10 @@
     
 4. 右键单击新的 Web 应用，然后选择“在浏览器中查看”****。随即打开浏览器，并显示包含“应用服务应用已创建”消息的网页。
     
-5. 在浏览器地址栏中，更改 Web 应用的 URL，以便其使用 HTTPS，并按 **Enter** 确认已启用 HTTPS 协议。Office 外接程序模型要求外接程序使用 HTTPS 协议。
+5. 在浏览器地址栏中，将 Web 应用 URL 更改为使用 HTTPS，并按 **Enter** 确认已启用 HTTPS 协议。 
+
+    > [!IMPORTANT]
+    > [!include[HTTPS guidance](../includes/https-guidance.md)] Azure 网站自动提供 HTTPS 终结点。
     
 ### <a name="using-the-azure-portal"></a>使用 Azure 门户
 
@@ -105,13 +121,17 @@
 
 4. 选择“通知”****（Azure 门户顶部边缘的钟形图标），然后选择“部署成功”****通知，以打开 Azure 门户中的站点“概述”****页。
 
-    >**注意：**站点部署完成后，通知从“正在部署”****更改为“部署成功”****。
+    > [!NOTE]
+    > 网站部署完成后，通知会从“正在部署”****更改为“部署成功”****。
 
 5. 在 Azure 门户的站点“概述”****页的“基本信息”****部分中，选择“URL”****下显示的 URL。随即打开浏览器，并显示包含“应用服务应用已创建”消息的网页。 
     
-6. 在浏览器地址栏中，更改 Web 应用的 URL，以便其使用 HTTPS，并按 **Enter** 确认已启用 HTTPS 协议。Office 外接程序模型要求外接程序使用 HTTPS 协议。    
+6. 在浏览器地址栏中，将 Web 应用 URL 更改为使用 HTTPS，并按 **Enter** 确认已启用 HTTPS 协议。 
 
-## <a name="step-4-create-an-office-add-in-in-visual-studio"></a>步骤 4：在 Visual Studio 中创建 Office 外接程序
+    > [!IMPORTANT]
+    > [!include[HTTPS guidance](../includes/https-guidance.md)] Azure 网站自动提供 HTTPS 终结点。
+
+## <a name="step-4-create-an-office-add-in-in-visual-studio"></a>第 4 步：在 Visual Studio 中创建 Office 加载项
 
 1. 以管理员身份启动 Visual Studio。
     
@@ -171,11 +191,10 @@ Visual Studio 将创建基本的 Word 外接程序，你可以按原样发布，
 
 5. 在“主页”****选项卡的功能区上，选择“显示任务窗格”****按钮。外接程序在当前文档右侧的任务窗格中打开。
     
-6. 通过选中文档中的一些文本并在任务窗格中选择“高亮颜色!”****按钮来验证外接程序是否可正常工作。 
+6. 选中文档中的某文本，并选择任务窗格中的“突出显示!”****按钮，验证加载项是否正常运行。 
 
-## <a name="additional-resources"></a>其他资源
+## <a name="see-also"></a>另请参阅
 
-- [发布 Office 外接程序](../publish/publish.md)
-    
+- [发布 Office 加载项](../publish/publish.md)
 - [使用 Visual Studio 打包外接程序以准备发布](../publish/package-your-add-in-using-visual-studio.md)
     

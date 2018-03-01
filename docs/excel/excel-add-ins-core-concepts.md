@@ -1,6 +1,13 @@
+---
+title: Excel JavaScript API 核心概念
+description: ''
+ms.date: 12/04/2017
+---
+
+
 # <a name="excel-javascript-api-core-concepts"></a>Excel JavaScript API 核心概念
  
-本文介绍如何使用 [Excel JavaScript API](http://dev.office.com/reference/add-ins/excel/excel-add-ins-reference-overview) 生成适用于 Excel 2016 的加载项。 它引入了一些核心概念，这些概念是使用 API 的基础，并为执行特定任务提供指导，如读取或写入较大区域、更新区域内的所有单元格等等。
+本文介绍如何使用 [Excel JavaScript API](https://dev.office.com/reference/add-ins/excel/excel-add-ins-reference-overview) 生成适用于 Excel 2016 的加载项。 它引入了一些核心概念，这些概念是使用 API 的基础，并为执行特定任务提供指导，如读取或写入较大区域、更新区域内的所有单元格等等。
 
 ## <a name="asynchronous-nature-of-excel-apis"></a>Excel API 的异步特性
 
@@ -27,7 +34,7 @@ Excel.run(function (context) {
 
 ## <a name="request-context"></a>请求上下文
  
-Excel 和加载项在两个不同的进程中运行。 由于它们使用不同的运行时环境，因此 Excel 加载项需要 **RequestContext** 对象将加载项连接到 Excel 中的对象，如工作表、区域、图表和表。
+Excel 和加载项在两个不同的进程中运行。由于它们使用不同的运行时环境，因此 Excel 加载项需要使用 **RequestContext** 对象，将加载项连接到 Excel 中的对象，如工作表、区域、图表和表格。
  
 ## <a name="proxy-objects"></a>代理对象
  
@@ -44,9 +51,10 @@ selectedRange.format.autofitColumns();
  
 ### <a name="sync"></a>sync()
  
-在请求上下文中调用 **sync()** 方法将在 Excel 文档中同步代理对象与对象之间的状态。 **Sync()** 方法运行在请求上下文中加入队列的所有命令，并检索应该在代理对象上加载的任何属性的值。 **Sync()** 方法以异步方式执行并返回 [promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)，在 **sync()** 方法完成后实现。
+在请求上下文中调用 **sync()** 方法将在 Excel 文档中同步代理对象与对象之间的状态。 **Sync()** 方法运行在请求上下文中加入队列的所有命令，并检索应该在代理对象上加载的任何属性的值。 **sync()** 方法以异步方式执行并返回 [promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)（在 **sync()** 方法完成后解析）。
  
->**注意**：在 Excel JavaScript API 中，**sync()** 是唯一的异步操作。 若要优化性能，在调用 **sync()** 之前，应尽可能多地将更改加入队列，并尽可能减少调用 **sync()** 的次数。
+> [!NOTE]
+> 在 Excel JavaScript API 中，**sync()** 是唯一一个异步操作。为了优化性能，应在调用 **sync()** 前，将尽可能多的更改加入队列，并最大限度地减少 **sync()** 调用次数。
  
 下面的示例演示了一个批处理函数，它定义本地 JavaScript 代理对象 (**selectedRange**)，加载该对象的属性，然后使用 JavaScript Promises 模式调用 **context.sync()** 以同步 Excel 文档中代理对象与对象之间的状态。
  
@@ -72,13 +80,14 @@ Excel.run(function (context) {
  
 ### <a name="load"></a>load()
  
-在可以读取代理对象的属性之前，必须显式加载这些属性，以便使用 Excel 文档中的数据填充代理对象，然后调用 **context.sync()**。 例如，如果创建代理对象来引用选定的区域，然后希望读取所选区域的 **address** 属性，需要首先加载 **address** 属性，然后才可以读取它。 若要请求加载的代理对象的属性，请在对象上调用 **load()** 方法并指定要加载的属性。 
+在可以读取代理对象的属性之前，必须显式加载这些属性，以便使用 Excel 文档中的数据填充代理对象，然后调用 **context.sync()**。 例如，如果创建代理对象来引用选定的区域，然后希望读取所选区域的 **address** 属性，需要首先加载 **address** 属性，然后才可以读取它。 若要请求获取加载的代理对象的属性，请对对象调用 **load()** 方法，并指定要加载的属性。 
 
->**注意**：如果只在代理对象上调用方法或设置属性，则不需要调用 **load()** 方法。 只有在想要读取代理对象上的属性时才需要 **load()** 方法。
+> [!NOTE]
+> 如果只要对代理对象调用方法或设置属性，无需调用 **load()** 方法。 只在要读取代理对象属性时，才需要调用 **load()** 方法。
  
-类似于请求在代理对象上设置属性或调用方法，在代理对象上加载属性的请求会被添加到请求上下文的挂起命令队列中，这将在下一次调用 **sync()** 方法时运行。 可以根据需要在请求上下文中将一定数量的 **load()** 调用加入队列。
+类似于对代理对象设置属性或调用方法的请求，加载代理对象属性的请求会被添加到请求上下文的挂起命令队列中，将在下一次调用 **sync()** 方法时运行。必要时，可以将请求上下文中尽可能多的 **load()** 调用排入队列。
  
-在以下示例中，仅加载区域的特定属性。
+下面的示例仅加载区域的特定属性。
  
 ```js
 Excel.run(function (context) {
@@ -127,8 +136,8 @@ object.load({ loadOption });
  
 _其中：_
  
-* `properties` 列出了要加载的属性和/或关系名称，指定为逗号分隔的字符串或名称数组。 有关详细信息，请参阅 [Excel JavaScript API 参考](http://dev.office.com/reference/add-ins/excel/excel-add-ins-reference-overview)中为对象定义的 **load()** 方法。
-* `loadOption` 指定的对象描述了选择、展开、置顶和跳过选项。有关详细信息，请参阅对象加载 [选项](http://dev.office.com/reference/add-ins/excel/loadoption)。
+* `properties` 列出了要加载的属性和/或关系名称，指定为逗号分隔的字符串或名称数组。 有关详细信息，请参阅 [Excel JavaScript API 参考](https://dev.office.com/reference/add-ins/excel/excel-add-ins-reference-overview)中为对象定义的 **load()** 方法。
+* `loadOption` 指定的对象描述了选择、展开、置顶和跳过选项。有关详细信息，请参阅对象加载[选项](https://dev.office.com/reference/add-ins/excel/loadoption)。
 
 有关 **load()** 方法的详细信息，请参阅 [Excel JavaScript API 高级概念](excel-add-ins-advanced-concepts.md)。
 
@@ -147,13 +156,13 @@ range.numberFormat = [[null, null, null, 'm/d/yyyy;@']];
  
 ### <a name="null-input-for-a-property"></a>属性的 null 输入
  
-`null` 不是单个属性的有效输入。 例如，下面的代码段是无效的，因为区域的 **values** 属性不能设置为 `null`。
+`null` 不是单个属性的有效输入。例如，下面的代码片段无效，因为区域的 **values** 属性不能设置为 `null`。
  
 ```js
 range.values = null;
 ```
  
-同样，下面的代码段也是无效的，因为 `null` 不是 **color** 属性的一个有效值。
+同样，下面的代码片段也无效，因为 `null` 不是 **color** 属性的有效值。
  
 ```js
 range.format.fill.color =  null;
@@ -168,9 +177,9 @@ range.format.fill.color =  null;
  
 ### <a name="blank-input-for-a-property"></a>属性的空白输入
  
-指定属性的空值（即两个引号之间没有空格 `''`）时，它将被解释为一条清除或重置属性的指令。 例如：
+如果为属性指定空白值（即两个引号之间没有空格 `''`），它会被解释为属性清除或重置指令。例如：
  
-* 如果为某个区域的 `values` 属性指定一个空值，该区域的内容将被清除。
+* 如果为区域的 `values` 属性指定空白值，此区域的内容会被清除。
  
 * 如果为 `numberFormat` 属性指定一个空值，则数字格式会重置为 `General`。
  
@@ -190,11 +199,11 @@ range.formula = [['', '', '=Rand()']];
  
 ## <a name="read-or-write-to-an-unbounded-range"></a>读取或写入无限区域
  
-### <a name="read-an-unbounded-range"></a>读取一个无限区域
+### <a name="read-an-unbounded-range"></a>读取无限区域
  
-无限区域地址是指定整个列或整个行的区域地址。 例如：
+无限区域地址是指定整个列（一列或多列）或整个行（一行或多行）的区域地址。例如：
  
-* 包含整个列的区域地址：<ul><li>`C:C`</li><li>`A:F`</li></ul>
+* 包含整个列（一列或多列）的区域地址：<ul><li>`C:C`</li><li>`A:F`</li></ul>
 * 包含整个行的区域地址：<ul><li>`2:2`</li><li>`1:4`</li></ul>
  
 API 发出请求以检索无限区域时（例如，`getRange('C:C')`），该响应将包含单元格级别属性（如 `values`、`text`、`numberFormat` 和 `formula`）的 `null` 值。 其他区域属性（如 `address` 和 `cellCount`）将包含无限区域的有效值。
@@ -267,8 +276,8 @@ Excel.run(function (context) {
 |InsertDeleteConflict|尝试的插入或删除操作导致冲突。|
 |InvalidOperation|尝试的操作对于对象无效。|
  
-## <a name="additional-resources"></a>其他资源
+## <a name="see-also"></a>另请参阅
  
 * [开始使用 Excel 加载项](excel-add-ins-get-started-overview.md)
 * [Excel 加载项代码示例](http://dev.office.com/code-samples#?filters=excel,office%20add-ins)
-* [Excel JavaScript API 参考](http://dev.office.com/reference/add-ins/excel/excel-add-ins-reference-overview)
+* [Excel JavaScript API 参考](https://dev.office.com/reference/add-ins/excel/excel-add-ins-reference-overview)

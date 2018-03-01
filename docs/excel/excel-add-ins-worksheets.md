@@ -1,12 +1,20 @@
+---
+title: 使用 Excel JavaScript API 处理工作表
+description: ''
+ms.date: 12/04/2017
+---
+
+
 # <a name="work-with-worksheets-using-the-excel-javascript-api"></a>使用 Excel JavaScript API 处理工作表
 
-本文提供了代码示例，介绍如何使用 Excel JavaScript API 对工作表执行常见任务。 有关 **Worksheet** 和 **WorksheetCollection** 对象支持的属性和方法的完整列表，请参阅 [Worksheet 对象 (Excel JavaScript API)](http://dev.office.com/reference/add-ins/excel/worksheet) 和 [WorksheetCollection 对象 (Excel JavaScript API)](http://dev.office.com/reference/add-ins/excel/worksheetcollection)。
+本文提供了代码示例，介绍如何使用 Excel JavaScript API 对工作表执行常见任务。 有关 **Worksheet** 和 **WorksheetCollection** 对象支持的属性和方法的完整列表，请参阅 [Worksheet 对象 (Excel JavaScript API)](https://dev.office.com/reference/add-ins/excel/worksheet) 和 [WorksheetCollection 对象 (Excel JavaScript API)](https://dev.office.com/reference/add-ins/excel/worksheetcollection)。
 
-**注意**：本文中的信息仅适用于常规工作表；不适用于“图表”或“宏”表。
+> [!NOTE]
+> 本文中的信息仅适用于常规工作表；不适用于“图表”或“宏”表。
 
 ## <a name="get-worksheets"></a>获取工作表
 
-下面的代码示例获取工作表集合，加载每个工作表的 **name** 属性，并向控制台写入一条消息。
+下面的代码示例获取工作表集合，加载每个工作表的 **name** 属性，并向控制台写入消息。
 
 ```js
 Excel.run(function (context) {
@@ -27,7 +35,8 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
-**注意**：工作表的 **id** 属性用于唯一标识指定工作簿中的工作表，即使工作表被重命名或移动，其值仍然相同。 在 Excel for Mac 工作簿中删除工作表时，已删除工作表的 **id** 可能会重新分配到后续创建的新工作表。
+> [!NOTE]
+> 工作表的 **id** 属性用于唯一标识指定工作簿中的工作表，即使工作表被重命名或移动，其值仍不变。 在 Excel for Mac 工作簿中删除工作表时，已删除工作表的 **id** 可能会重新分配到后续创建的新工作表。
 
 ## <a name="get-the-active-worksheet"></a>获取活动工作表
 
@@ -134,7 +143,7 @@ Excel.run(function (context) {
 
 ## <a name="add-a-worksheet"></a>添加工作表
 
-下面的代码示例向工作簿添加名为 **Sample** 的新工作表，加载其 **name** 和 **position** 属性，并向控制台写入一条消息。 在所有现有工作表后添加新工作表。
+下面的代码示例向工作簿添加新工作表 **Sample**，加载它的 **name** 和 **position** 属性，并向控制台写入消息。新工作表添加在现有全部工作表的后面。
 
 ```js
 Excel.run(function (context) {
@@ -264,10 +273,10 @@ Excel.run(function (context) {
 
 ## <a name="get-a-range-within-a-worksheet"></a>获取工作表中的区域
 
-有关介绍如何获取工作表中某个区域的示例，请参阅[使用 Excel JavaScript API 对区域执行操作](excel-add-ins-ranges.md)。
+有关介绍如何获取工作表中区域的示例，请参阅[使用 Excel JavaScript API 处理区域](excel-add-ins-ranges.md)。
 
-## <a name="additional-resources"></a>其他资源
+## <a name="see-also"></a>另请参阅
 
 - [Excel JavaScript API 核心概念](excel-add-ins-core-concepts.md)
-- [Worksheet 对象 (Excel JavaScript API)](http://dev.office.com/reference/add-ins/excel/worksheet)
-- [WorksheetCollection 对象 (Excel JavaScript API)](http://dev.office.com/reference/add-ins/excel/worksheetcollection)
+- [Worksheet 对象 (Excel JavaScript API)](https://dev.office.com/reference/add-ins/excel/worksheet)
+- [WorksheetCollection 对象 (Excel JavaScript API)](https://dev.office.com/reference/add-ins/excel/worksheetcollection)

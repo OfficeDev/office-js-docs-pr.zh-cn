@@ -1,12 +1,19 @@
-# <a name="office-ui-elements-for-office-add-ins"></a>Office 外接程序的 Office UI 元素
+---
+title: Office 加载项的 Office UI 元素
+description: ''
+ms.date: 12/04/2017
+---
+
+
+# <a name="office-ui-elements-for-office-add-ins"></a>Office 加载项的 Office UI 元素
 
 可以使用几种类型的 UI 元素来扩展 Office UI，包括外接程序命令和 HTML 容器。这些 UI 元素类似于 Office 的自然扩展，并且跨平台工作。可以将基于 Web 的自定义代码插入上述任一元素。
 
 下图显示了可以创建的 Office UI 元素的类型。
 
-![在 Office 文档的功能区、任务窗格和对话框上显示外接程序命令的图像](../images/overview_withApp_interfaceElements.png)
+![在 Office 文档的功能区、任务窗格和对话框上显示外接程序命令的图像](../images/overview-with-app-interface-elements.png)
 
-## <a name="add-in-commands"></a>外接程序命令
+## <a name="add-in-commands"></a>加载项命令
 
 使用[外接程序命令](add-in-commands.md)将外接程序的入口点添加到 Office 功能区。命令通过运行 JavaScript 代码，或启动 HTML 容器开始在外接程序中操作。可以创建以下两种类型的外接程序命令。
 
@@ -22,12 +29,12 @@
 |**HTML 容器**|**说明**|
 |:-----------------|:--------------|
 |[任务窗格](task-pane-add-ins.md)|在 Office 文档右侧窗格中显示自定义 UI。使用任务窗格以便用户与 Office 文档并行的外接程序进行交互。|
-|[内容外接程序](content-add-ins.md)|显示 Office 文档内嵌入的自定义 UI。使用内容外接程序以便用户直接与 Office 文档中的外接程序进行交互。例如，你可能想要显示外部内容，如其他来源的视频或数据可视化。 |
+|[内容加载项](content-add-ins.md)|显示 Office 文档内嵌入的自定义 UI。使用内容外接程序以便用户直接与 Office 文档中的外接程序进行交互。例如，你可能想要显示外部内容，如其他来源的视频或数据可视化。 |
 |[对话框](dialog-boxes.md)|在覆盖 Office 文档的对话框中显示自定义 UI。对需要焦点和更多空间的交互，但不需要与文档进行并行交互的交互使用对话框。|
 
-## <a name="related-resources"></a>相关资源
+## <a name="see-also"></a>另请参阅
 
-- [Excel、Word 和 PowerPoint 的外接程序命令](add-in-commands.md)
+- [Excel、Word 和 PowerPoint 加载项命令](add-in-commands.md)
 - [任务窗格](task-pane-add-ins.md)
 - [内容外接程序](content-add-ins.md)
 - [对话框](dialog-boxes.md)

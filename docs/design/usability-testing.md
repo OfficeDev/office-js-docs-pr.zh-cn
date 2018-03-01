@@ -1,4 +1,12 @@
-# <a name="usability-testing-for-office-add-ins"></a>Office 外接程序的可用性测试
+---
+title: Office 加载项的可用性测试
+description: ''
+ms.date: 01/23/2018
+---
+
+
+
+# <a name="usability-testing-for-office-add-ins"></a>Office 加载项的可用性测试
 
 出色的外接程序设计会考虑到用户行为。因为自己的预想会影响设计决策，所以务必要通过实际用户测试设计来确保客户可正常使用外接程序。 
 
@@ -12,12 +20,12 @@
 
 你只需五名参与者即可发现设计中的大多数可用性问题。在整个开发周期内定期进行小型测试，以确保产品以用户为中心。
 
-> 
-  **注意：**我们建议在多个平台上测试外接程序的可用性。若要[将外接程序发布到 Office 应用商店](https://msdn.microsoft.com/zh-cn/library/office/jj220037.aspx)，其必须适用于所有[支持你所定义的方法的平台](https://dev.office.com/add-in-availability)。
+> [!NOTE]
+> 建议跨多个平台测试加载项的可用性。若要[将加载项发布到 AppSource](https://docs.microsoft.com/zh-cn/office/dev/store/submit-to-the-office-store)，加载项必须适用于[支持已定义方法的所有平台](../overview/office-add-in-availability.md)。
 
-## <a name="1----sign-up-for-a-testing-service"></a>1.  注册测试服务
+## <a name="1---sign-up-for-a-testing-service"></a>1. 注册测试服务
 
-有关详细信息，请参阅[选择联机工具进行未加管制的远程用户测试](https://www.nngroup.com/articles/unmoderated-user-testing-tools/)。
+有关详细信息，请参阅[选择在线工具进行不受监管的远程用户测试](https://www.nngroup.com/articles/unmoderated-user-testing-tools/)。
 
 ## <a name="2-develop-your-research-questions"></a>2.制定研究问题
  
@@ -25,7 +33,7 @@
  
 以下是研究问题的一些示例：
   
- **具体**  
+**具体**  
 
  - 用户是否注意到了登陆页面上的“免费试用版”链接？
  - 用户将内容从外接程序插入他们的文档时，用户是否知道内容在文档何处插入？
@@ -38,8 +46,8 @@
 
 获取从发现外接程序到安装并使用外接程序的整个用户操作体验的相关数据至关重要。考虑可解决外接程序用户体验以下方面的研究问题：
  
- - 在应用商店中找到外接程序
- - 选择安装外接程序
+ - 在 AppSource 中查找加载项
+ - 选择安装加载项
  - 初次运行体验
  - 功能区命令
  - 外接程序 UI
@@ -58,26 +66,25 @@
  
 例如，想要找出熟悉 GitHub 的参与者，要筛选出对自己进行了不当描述的用户，包括可能的答案列表中的不实之处。
 
-**你熟悉以下哪些源代码存储库？**  
- a.  SourceShelf  [*拒绝*]  
- b.  CodeContainer  [*拒绝*]  
- c.  GitHub  [*必选*]  
- d.  BitBucket  [*可选*]  
- e.  CloudForge  [*可选*]  
-
+**熟悉下面哪些源代码存储库？**  
+ a. SourceShelf  [*拒绝*]  
+ b. CodeContainer  [*拒绝*]  
+ c. GitHub  [*必选*]  
+ d. BitBucket  [*可选*]  
+ e. CloudForge  [*可选*]  
 
 如果计划测试外接程序的实时生成，以下问题可以筛选出可以执行此任务的用户。 
 
-   **此测试要求安装 Microsoft PowerPoint 2016。你是否已安装 PowerPoint 2016？**  
-   a.  是 [*必选*]  
-   b.  否 [*拒绝*]  
-   c.  不知道 [*拒绝*]  
+**此测试要求安装 Microsoft PowerPoint 2016。是否已安装 PowerPoint 2016？**  
+ a. 是 [*必选*]  
+ b. 否 [*拒绝*]  
+ c. 不知道 [*拒绝*]  
 
-   **此测试要求安装适用于 PowerPoint 2016 的免费外接程序，并创建免费帐户以进行使用。是否愿意安装外接程序并创建免费帐户？**  
-    a.  是 [*必选*]  
-    b.  否 [*拒绝*]  
+**此测试要求安装适用于 PowerPoint 2016 的免费外接程序，并创建免费帐户以进行使用。是否愿意安装外接程序并创建免费帐户？**  
+ a. 是 [*必选*]  
+ b. 否 [*拒绝*]  
 
-有关详细信息，请参阅[筛选程序问题最佳实践](http://help.usertesting.com/customer/en/portal/articles/2077835-screener-question-best-practices)。
+有关详细信息，请参阅[筛选器问题最佳做法](http://help.usertesting.com/customer/en/portal/articles/2077835-screener-question-best-practices)。
  
 ## <a name="5-create-tasks-and-questions-for-participants"></a>5.创建针对参与者的任务和问题
  
@@ -127,7 +134,7 @@
 通常，要谨慎对待使用数据作出结论的方式。不要陷入尝试将数据匹配特定叙述的困境；对数据实际证明、驳斥或者无法提供任何相关见解的内容实事求是。保持开放的心态；用户行为经常会违背设计人员的预期。
  
 
-## <a name="additional-resources"></a>其他资源
+## <a name="see-also"></a>另请参阅
  
  - [如何执行可用性测试](http://whatpixel.com/howto-conduct-usability-testing/)  
  - [最佳实践](http://help.usertesting.com/customer/en/portal/articles/1680726-best-practices)  

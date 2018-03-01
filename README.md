@@ -1,19 +1,19 @@
-# Office JavaScript APIs
+# <a name="office-javascript-apis"></a>Office JavaScript API
 
-Welcome to the Office JavaScript API conceptual documentation. In this repository, you can find the documentation source files for Office JavaScript API concepts, quickstarts, tutorials, and how-to guides. For the best experience, we recommend you view this content on [docs.microsoft.com](https://docs.microsoft.com/zh-cn/office/dev/add-ins/).
+欢迎阅读 Office JavaScript API 概念文档。 此存储库包含 Office JavaScript API 概念、快速入门、教程和操作说明指南方面的文档源文件。 为获得最佳体验，建议在 [docs.microsoft.com](https://docs.microsoft.com/zh-cn/office/dev/add-ins/) 上查看此类内容。
 
-> **Note**: You can find the Office JavaScript API Reference documentation source files in the [office-js-docs](https://github.com/OfficeDev/office-js-docs) repository.
+> **注意**：[office-js-docs](https://github.com/OfficeDev/office-js-docs) 存储库包含 Office JavaScript API 参考文档源文件。
 
-## Give us your feedback
+## <a name="give-us-your-feedback"></a>提供反馈
 
-Your feedback is important to us. 
-* To let us know about any questions or issues you find in the docs, [submit an issue](https://github.com/OfficeDev/office-js-docs-pr/issues) in this repository. Make sure you state the version+build number of the client you are using, and provide repro steps, console output, and error messages, as appropriate. 
-* We also encourage you to fork, make the fix, and do a pull request of your proposed changes. For details, see [Contribute to this documentation](Contributing.md). 
-* To let us know about your programming experience, what you would like to see in future versions, code samples, and so on, enter your suggestions and ideas at [Office Developer Platform UserVoice](https://officespdev.uservoice.com/).
+你的反馈对我们意义重大。 
+* 如果想让我们知道你在文档中发现的任何问题，请在该存储库中 [提交问题](https://github.com/OfficeDev/office-js-docs-pr/issues)(#提交问题)。确保对所使用的客户端的版本号+内部版本号 进行声明，并提供相应的重现步骤、控制台输出和错误消息。 
+* 我们也鼓励你对所建议的更改进行分叉、修补及创建拉取请求。有关详细信息，请参阅 [归入该文档](Contributing.md)(#归入该文档)。 
+* 如果想让我们知道你的编程体验、希望在未来版本中看到哪些内容、代码示例等，请在 [Office 开发人员平台 UserVoice](https://officespdev.uservoice.com/)(#office-开发人员平台-uservoice) 中输入你的建议和想法。
 
-## Copyright
+## <a name="copyright"></a>版权
 
-Copyright (c) 2016 Microsoft Corporation. All rights reserved.
+版权所有 © 2016 Microsoft Corporation。保留所有权利。
 
 
-This project has adopted the [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/). For more information, see the [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) or contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any additional questions or comments.
+此项目已采用 [Microsoft 开放源代码行为准则](https://opensource.microsoft.com/codeofconduct/)。有关详细信息，请参阅[行为准则 FAQ](https://opensource.microsoft.com/codeofconduct/faq/)。如有其他任何问题或意见，也可联系 [opencode@microsoft.com](mailto:opencode@microsoft.com)。

@@ -1,16 +1,23 @@
-# <a name="use-office-ui-fabric-react-in-office-add-ins"></a>在 Office 外接程序中使用 Office UI Fabric React
+---
+title: 在 Office 加载项中使用 Office UI Fabric React
+description: ''
+ms.date: 12/04/2017
+---
+
+# <a name="use-office-ui-fabric-react-in-office-add-ins"></a>在 Office 加载项中使用 Office UI Fabric React
 
 Office UI Fabric 是用于生成 Office 和 Office 365 用户体验的 JavaScript 前端框架。如果使用 React 生成外接程序，请考虑使用 Fabric React 来创建用户体验。Fabric 提供了多个可在外接程序中使用的基于 React 的 UX 组件，如按钮或复选框。 
 
-若要开始在外接程序中使用 Fabric React 组件，请执行以下步骤。
+若要开始在加载项中使用 Fabric React 组件，请执行以下步骤。
 
-> **注意：**如果你按照此部分中的步骤，也可在外接程序中使用 Fabric Core。
+> [!NOTE]
+> 如果按照本文中的步骤操作，也可以在加载项中使用 Fabric Core。
 
-## <a name="step-1---create-your-project-with-the-yeoman-generator-for-office"></a>第 1 步 - 使用 Office 的 Yeoman 生成器创建项目
+## <a name="step-1---create-your-project-with-the-yeoman-generator-for-office"></a>第 1 步 - 使用适用于 Office 的 Yeoman 生成器创建项目
 
 若要创建使用 Fabric React 的外接程序，我们建议使用 Office 的 Yeoman 生成器。Office 的 Yeoman 生成器提供开发 Office 外接程序所需的项目基架和版本管理。 
 
-若要创建项目，请使用 **Windows PowerShell**（而非命令提示符）执行以下来自[使用任意编辑器创建 Office 外接程序](https://dev.office.com/docs/add-ins/get-started/create-an-office-add-in-using-any-editor)的步骤： 
+若要创建项目，请使用 **Windows PowerShell**（而不是命令提示符）执行以下步骤： 
 
 1. 安装必备组件。
 2. 运行 `yo office`，为外接程序创建项目文件。 
@@ -26,7 +33,7 @@ Office UI Fabric 是用于生成 Office 和 Office 365 用户体验的 JavaScrip
 2. 创建 **button.tsx**。
 3. 在 **button.tsx** 中，输入以下代码以创建 `ButtonPrimaryExample` 组件。 
 
-```
+```javascript
 import * as React from 'react';
 import { PrimaryButton, IButtonProps } from 'office-ui-fabric-react/lib/Button';
 import { Label } from 'office-ui-fabric-react/lib/Label';
@@ -63,6 +70,7 @@ export class ButtonPrimaryExample extends React.Component<IButtonProps, {}> {
   }
 }
 ```
+
 此代码将执行以下操作：
 
 - 引用使用 `import * as React from 'react';` 的 React 库。
@@ -76,31 +84,34 @@ export class ButtonPrimaryExample extends React.Component<IButtonProps, {}> {
 通过打开 **src\components\app.tsx** 并执行下列操作将 `ButtonPrimaryExample` 添加到外接程序： 
 
 - 添加以下导入语句以引用来自步骤 2 中创建的 **button.tsx** 的引用 `ButtonPrimaryExample`（不需要文件扩展名）。 
-`
-import {ButtonPrimaryExample} from './button';
-` 
+
+    ```javascript
+    import {ButtonPrimaryExample} from './button';
+    ``` 
 
 - 将默认 `render()` 函数替换为以下使用 `<ButtonPrimaryExample />` 的代码。 
-```
-render() {
-        return (
-            <div className='ms-welcome'>
-                <Header logo='assets/logo-filled.png' title={this.props.title} message='Welcome' />
-                <HeroList message='Discover what this add-in can do for you today!' items={this.state.listItems}>                    
-                    <ButtonPrimaryExample />
-                </HeroList>
-            </div>
-        );
-    };
-```
+
+  ```javascript
+  render() {
+      return (
+          <div className='ms-welcome'>
+              <Header logo='assets/logo-filled.png' title={this.props.title} message='Welcome' />
+              <HeroList message='Discover what this add-in can do for you today!' items={this.state.listItems}>                    
+                  <ButtonPrimaryExample />
+              </HeroList>
+          </div>
+      );
+  };
+  ```
 
 保存所做的更改。所有打开的浏览器实例（包括外接程序）将自动更新和显示 `ButtonPrimaryExample` React 组件。请注意，默认文本和按钮将替换为 `ButtonPrimaryExample` 中定义的文本和主按钮。 
     
-### <a name="recommended-components"></a>建议使用的组件
+## <a name="recommended-components"></a>建议使用的组件
 
-下面列出了我们建议用于外接程序的 Fabric React UX 组件。  
+下面列出了建议用于加载项的 Fabric React 用户体验组件。  
 
-> **注意：**随着时间的推移，我们将逐渐添加其他组件。 
+> [!NOTE]
+> 随着时间的推移，我们将逐渐添加其他组件。 
 
 - [痕迹导航](breadcrumb.md)
 - [按钮](button.md)
@@ -113,13 +124,13 @@ render() {
 - [TextField](textfield.md)
 - [切换](toggle.md)
 
-## <a name="related-resources"></a>相关资源
+## <a name="see-also"></a>另请参阅
 
 - [Office UI Fabric React](https://dev.office.com/fabric#/)
 - [Fabric React 代码示例入门](https://github.com/OfficeDev/Word-Add-in-GettingStartedFabricReact)
 - [用户体验设计模式（使用 Fabric 2.6.1）](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code) 
 - [Office 外接程序 Fabric UI 示例（使用 Fabric 1.0）](https://github.com/OfficeDev/Office-Add-in-Fabric-UI-Sample) 
-- [在 Office 外接程序中使用 Fabric 2.6.1](https://dev.office.com/docs/add-ins/design/ui-elements/using-office-ui-fabric)
+- [在 Office 加载项中使用 Fabric 2.6.1](ui-elements/using-office-ui-fabric.md)
 - [Office 的 yeoman 生成器](https://github.com/OfficeDev/generator-office)
  
 

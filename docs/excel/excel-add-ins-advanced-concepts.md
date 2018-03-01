@@ -1,3 +1,11 @@
+---
+title: Excel JavaScript API 高级概念
+description: ''
+ms.date: 1/18/2018
+---
+
+
+
 # <a name="excel-javascript-api-advanced-concepts"></a>Excel JavaScript API 高级概念
 
 本文根据 [Excel JavaScript API 核心概念](excel-add-ins-core-concepts.md)中的信息，介绍了生成适用于 Excel 2016 的复杂加载项所必需的一些更高级的概念。 
@@ -6,19 +14,19 @@
 
 Excel 加载项通过使用适用于 Office 的 JavaScript API 与 Excel 中的对象进行交互，适用于 Office 的 JavaScript API包括两个 JavaScript 对象模型：
 
-* **Excel JavaScript API**：[Excel JavaScript API](http://dev.office.com/reference/add-ins/excel/excel-add-ins-reference-overview) 随 Office 2016 一起引入，提供了强类型的对象，可用于访问工作表、区域、表格、图表等。 
+* **Excel JavaScript API**：[Excel JavaScript API](https://dev.office.com/reference/add-ins/excel/excel-add-ins-reference-overview) 随 Office 2016 一起引入，提供了强类型的对象，可用于访问工作表、区域、表格、图表等。 
 
-* **公用 API**：公用 API（也称为[共享 API](http://dev.office.com/reference/add-ins/javascript-api-for-office)）随 Office 2013 一起引入，可用于访问诸如 Word、Excel 和 PowerPoint 等多种主机应用程序通用的 UI、对话框和客户端设置等功能。
+* **公用 API**：公用 API（也称为[共享 API](https://dev.office.com/reference/add-ins/javascript-api-for-office)）随 Office 2013 一起引入，可用于访问诸如 Word、Excel 和 PowerPoint 等多种主机应用程序通用的 UI、对话框和客户端设置等功能。
 
-你可能会使用 Excel JavaScript API 开发面向 Excel 2016 的加载项中的大部分功能，同时还可以使用共享 API 中的对象。 例如：
+尽管很可能会使用 Excel JavaScript API 开发定目标到 Excel 2016 的加载项的大部分功能，但还可以使用共享 API 中的对象。例如：
 
-- [Context](http://dev.office.com/reference/add-ins/shared/context)：**Context** 对象表示加载项的运行时环境，并提供对 API 的关键对象的访问。 它由工作簿配置详细信息（如 `contentLanguage` 和 `officeTheme`）组成，并提供有关加载项的运行时环境（如 `host` 和 `platform`）的信息。 此外，它还提供了 `requirements.isSetSupported()` 方法，可用于检查运行加载项的 Excel 应用程序是否支持指定的要求集。 
+- [Context](https://dev.office.com/reference/add-ins/shared/context)：**Context** 对象表示加载项的运行时环境，并提供对 API 关键对象的访问权限。 它由工作簿配置详细信息（如 `contentLanguage` 和 `officeTheme`）组成，并提供有关加载项的运行时环境（如 `host` 和 `platform`）的信息。 此外，它还提供了 `requirements.isSetSupported()` 方法，可用于检查运行加载项的 Excel 应用程序是否支持指定的要求集。 
 
-- [Document](http://dev.office.com/reference/add-ins/shared/document)：**Document** 对象提供 `getFileAsync()` 方法，用于下载运行加载项的 Excel 文件。 
+- [Document](https://dev.office.com/reference/add-ins/shared/document)：**Document** 对象提供 `getFileAsync()` 方法，用于下载运行加载项的 Excel 文件。 
 
 ## <a name="requirement-sets"></a>要求集
 
-要求集是指各组已命名的 API 成员。 Office 加载项可以执行运行时检查或使用清单中指定的要求集确定 Office 主机是否支持加载项所需的 API。 要确定每个受支持平台上可用的具体要求集，请参阅 [Excel JavaScript API 要求集](http://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets)。
+要求集是指各组已命名的 API 成员。 Office 加载项可以执行运行时检查或使用清单中指定的要求集确定 Office 主机是否支持加载项所需的 API。 要确定每个受支持平台上可用的具体要求集，请参阅 [Excel JavaScript API 要求集](https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets)。
 
 ### <a name="checking-for-requirement-set-support-at-runtime"></a>在运行时检查要求集支持
 
@@ -35,7 +43,7 @@ else {
 
 ### <a name="defining-requirement-set-support-in-the-manifest"></a>在清单中定义要求集支持
 
-可以在加载项清单中使用[要求元素](http://dev.office.com/reference/add-ins/manifest/requirements)指定加载项要求激活的最小要求集和/或 API 方法。 如果 Office 主机或平台不支持清单的 **Requirements** 元素中指定的要求集或 API 方法，该加载项不会在该主机或平台中运行，而且不会显示在“我的加载项”****中显示的加载项列表中。 
+可以在加载项清单中使用[要求元素](https://dev.office.com/reference/add-ins/manifest/requirements)指定加载项要求激活的最小要求集和/或 API 方法。 如果 Office 主机或平台不支持清单的 **Requirements** 元素中指定的要求集或 API 方法，该加载项不会在该主机或平台中运行，而且不会显示在“我的加载项”****中显示的加载项列表中。 
 
 以下代码示例显示加载项清单中的 **Requirements** 元素，该元素指定应在支持 ExcelApi 要求集版本 1.3 或更高版本的所有 Office 主机应用程序中加载该加载项。
 
@@ -47,17 +55,19 @@ else {
 </Requirements>
 ```
 
-> **注意**：要使加载项可用于 Office 主机的所有平台，如 Excel for Windows、Excel Online 和 Excel for iPad，建议在运行时检查要求支持，而不是在清单中定义要求集支持。
+> [!NOTE]
+> 若要让加载项适用于 Office 主机的所有平台（如 Excel for Windows、Excel Online 和 Excel for iPad），建议在运行时检查是否有要求支持，而不是在清单中定义要求集支持。
 
 ### <a name="requirement-sets-for-the-officejs-common-api"></a>Office.js 公用 API 的要求集
 
-有关公用 API 要求集的信息，请参阅 [Office 公用 API 要求集](http://dev.office.com/reference/add-ins/requirement-sets/office-add-in-requirement-sets)。
+有关公用 API 要求集的信息，请参阅 [Office 公用 API 要求集](https://dev.office.com/reference/add-ins/requirement-sets/office-add-in-requirement-sets)。
 
 ## <a name="loading-the-properties-of-an-object"></a>加载对象的属性
 
 在 Excel JavaScript 对象上调用 `load()` 方法指示 API 在 `sync()` 方法运行时将对象加载到 JavaScript 内存中。 `load()` 方法接受字符串（其中包含要加载的以逗号分隔的属性名称）或对象（指定要加载的属性、分页选项等）。 
 
-> **注意**：如果在不指定任何参数的情况下在对象（或集合）上调用 `load()` 方法，则会加载对象的所有标量属性（或集合中所有对象的所有标量属性）。 为了减少 Excel 主机应用程序和加载项之间的数据传输量，应避免在没有明确指定要加载的属性的情况下调用 `load()` 方法。
+> [!NOTE]
+> 如果对对象（或集合）调用 `load()` 方法，而未指定任何参数，将会加载对象的所有标量属性（或集合中全部对象的所有标量属性）。 为了减少 Excel 主机应用程序和加载项之间的数据传输量，应避免在没有明确指定要加载的属性的情况下调用 `load()` 方法。
 
 ### <a name="method-details"></a>方法详细信息
 
@@ -113,10 +123,10 @@ Excel.run(function (ctx) {
 
 |**属性**|**类型**|**说明**|
 |:-----------|:-------|:----------|
-|`select`|object|包含逗号分隔的列表或参数/关系名称的数组。 可选。|
-|`expand`|object|包含逗号分隔的列表或关系名称的数组。 可选。|
+|`select`|object|包含参数/关系名称的逗号分隔列表或数组。可选。|
+|`expand`|object|包含关系名称的逗号分隔列表或数组。可选。|
 |`top`|int| 指定结果中可以包含的集合项最大数量。可选。使用对象表示法选项时，仅可使用此选项。|
-|`skip`|int|指定要跳过且不包含在结果中的集合中的项数目。 如果指定 `top`，跳过指定数目的项目后将会启动结果集。 可选。 只有在使用对象表示法选项时，才能使用此选项。|
+|`skip`|int|指定要跳过且不包含在结果中的集合中的项数目。如果指定 `top`，跳过指定数目的项目后将会启动结果集。可选。使用对象表示法选项时，仅可使用此选项。|
 
 以下代码示例通过为集合中的每个工作表的所用区域选择 `name` 属性和 `address` 来加载工作表集合。 它还指定只能加载集合中的前五个工作表。 可以通过将 `top: 10` 和 `skip: 5` 指定为属性值来处理下一组五个工作表。 
 
@@ -131,7 +141,7 @@ myWorksheets.load({
 
 ## <a name="scalar-and-navigation-properties"></a>标量和导航属性 
 
-在 Excel JavaScript API 参考文档中，你可能会注意到，对象成员分为两类：**属性**和**关系**。 对象的属性是一个标量成员（如字符串、整数或布尔值），而对象的关系（也称为“导航属性”）是一个对象/对象集合成员。 例如，[Worksheet](http://dev.office.com/reference/add-ins/excel/worksheet) 对象中的 `name` 和 `position` 成员是标量属性，而 `protection` 和 `tables` 是关系（导航属性）。 
+在 Excel JavaScript API 参考文档中，你可能会注意到，对象成员分为两类：**属性**和**关系**。 对象的属性是一个标量成员（如字符串、整数或布尔值），而对象的关系（也称为“导航属性”）是一个对象/对象集合成员。 例如，[Worksheet](https://dev.office.com/reference/add-ins/excel/worksheet) 对象中的 `name` 和 `position` 成员是标量属性，而 `protection` 和 `tables` 是关系（导航属性）。 
 
 ### <a name="scalar-properties-and-navigation-properties-with-objectload"></a>使用 `object.load()` 的标量属性和导航属性
 
@@ -141,17 +151,19 @@ myWorksheets.load({
 someRange.load("format/font/name")
 ```
 
-> **注意**：使用 Excel JavaScript API，可以通过遍历路径来设置导航属性的标量属性。 例如，可以使用 `someRange.format.font.size = 10;` 设置区域的字体大小。 在设置之前，不需要加载该属性。 
+> [!NOTE]
+> 使用 Excel JavaScript API，可以通过遍历路径来设置导航属性的标量属性。 例如，可以使用 `someRange.format.font.size = 10;` 设置区域的字体大小。 在设置之前，不需要加载该属性。 
 
 ## <a name="setting-properties-of-an-object"></a>设置对象的属性
 
 在具有嵌套导航属性的对象上设置属性可能很麻烦。 作为使用如上所述导航路径设置单个属性的替代方法，可以使用 Excel JavaScript API 中所有对象上可用的 `object.set()` 方法。 使用此方法，可以通过传递相同 Office.js 类型的另一个对象或 JavaScript 对象（其属性结构类似于调用该方法的对象的属性）一次设置对象的多个属性。
 
-> **注意**：`set()` 方法仅适用于特定于主机的 Office JavaScript API（如 Excel JavaScript API）中的对象。 公用（共享）API 不支持此方法。 
+> [!NOTE]
+> `set()` 方法只对主机专用 Office JavaScript API（如 Excel JavaScript API）中的对象实现。 通用（共享）API 不支持此方法。 
 
 ### <a name="set-properties-object-options-object"></a>set (properties: object, options: object)
 
-将在其上调用方法的对象的属性设置为由传入对象的相应属性指定的值。 如果 `properties` 参数是一个 JavaScript 对象，则传入对象的任何与在其上调用方法的对象中的只读属性相对应的属性将被忽略或导致抛出异常，具体取决于 `options` 参数的值。
+对其调用此方法的对象的属性被设置为，由传入对象的相应属性所指定的值。当 `properties` 参数为 JavaScript 对象时，如果传入对象的任何属性与对其调用此方法的对象中的只读属性对应，属性会遭忽略或抛出异常，具体取决于 `options` 参数的值。
 
 #### <a name="syntax"></a>语法
 
@@ -172,7 +184,7 @@ void
 
 #### <a name="example"></a>示例
 
-以下代码示例通过调用 `set()` 方法并传入具有可反映 **Range** 对象中属性结构的属性名称和类型的 JavaScript 对象来设置区域的多个格式属性。 此示例假定区域 **B2:E2** 中包含数据。
+下面的代码示例设置区域的多个格式属性，具体方法是调用 `set()` 方法，并传入 JavaScript 对象，其中包含可反映 **Range** 对象中属性结构的属性名称和类型。此示例假定区域 **B2:E2** 中有数据。
 
 ```js
 Excel.run(function (ctx) { 
@@ -205,20 +217,24 @@ Excel.run(function (ctx) {
 
 可以使用可用于 Excel JavaScript API 中的多种方法的 `*OrNullObject` 方法变量，而不是为此类应用场景实现复杂的异常处理逻辑。 `*OrNullObject` 方法将返回 null 对象（不是 JavaScript `null`），而不是在指定项不存在的情况下引发异常。 例如，可以在集合（如 **Worksheets**）上调用 `getItemOrNullObject()` 方法，尝试从集合中检索某个项。 `getItemOrNullObject()` 方法返回指定的项（如果存在）；否则，它将返回 null 对象。 返回的 null 对象包含布尔属性 `isNullObject`，可以对其进行评估以确定该对象是否存在。
 
-下面的代码示例尝试使用 `getItemOrNullObject()` 方法检索名为“Data”的工作表。 如果该方法返回 null 对象，则需要创建新工作表之后，才能在该工作表上执行操作。
+下面的代码示例尝试使用 `getItemOrNullObject()` 方法检索名为“Data”的工作表。 如果此方法返回 null 对象，需要先新建工作表，然后才能对工作表执行操作。
 
 ```js
-let dataSheet = context.workbook.worksheets.getItemOrNullObject("Data"); 
-if (dataSheet.isNullObject) { 
-    // Create the sheet
-}
+var dataSheet = context.workbook.worksheets.getItemOrNullObject("Data"); 
 
-dataSheet.position = 1;
-//...
+return context.sync()
+  .then(function() {
+    if (dataSheet.isNullObject) { 
+        // Create the sheet
+    }
+
+    dataSheet.position = 1;
+    //...
+  })
 ```
 
-## <a name="additional-resources"></a>其他资源
+## <a name="see-also"></a>另请参阅
  
 * [Excel JavaScript API 核心概念](excel-add-ins-core-concepts.md)
 * [Excel 加载项代码示例](http://dev.office.com/code-samples#?filters=excel,office%20add-ins)
-* [Excel JavaScript API 参考](http://dev.office.com/reference/add-ins/excel/excel-add-ins-reference-overview)
+* [Excel JavaScript API 参考](https://dev.office.com/reference/add-ins/excel/excel-add-ins-reference-overview)

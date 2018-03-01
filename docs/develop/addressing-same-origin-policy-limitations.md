@@ -1,3 +1,9 @@
+---
+title: 解决 Office 加载项中的同源策略限制
+description: ''
+ms.date: 12/04/2017
+---
+
 
 # <a name="addressing-same-origin-policy-limitations-in-office-add-ins"></a>解决 Office 加载项中的同源策略限制
 
@@ -47,7 +53,7 @@ function loadVideoDetails(videoIndex) {
 
 有关使用 OAuth 进行身份验证的示例，请参阅[使用 OAuth 的 Twitter SharePoint Web 部件](http://aidangarnish.net/post/Twitter-SharePoint-Web-Part-With-OAuth)。
 
-有关演示如何使用 `System.Net` 中的 `Cookie` 对象获取和设置 cookie 值的服务器端代码示例，请参阅 [Value](http://msdn2.microsoft.com/zh-cn/library/4f772twc)(#value) 属性。
+有关演示如何使用 `System.Net` 中的 `Cookie` 对象获取和设置 cookie 值的服务器端代码示例，请参阅 [Value](https://msdn.microsoft.com/zh-cn/library/4f772twc)(#value) 属性。
 
 
 ## <a name="using-cross-origin-resource-sharing-cors"></a>使用跨源资源共享 (CORS)
@@ -59,11 +65,10 @@ function loadVideoDetails(videoIndex) {
 ## <a name="building-your-own-proxy-using-iframe-and-post-message"></a>使用 IFRAME 和 POST MESSAGE 生成您自己的代理
 
 
-有关如何使用 IFRAME 和 POST MESSAGE 生成您自己代理的示例，请参阅 [跨 Window 消息传送功能](http://ejohn.org/blog/cross-window-messaging/)。
+有关如何使用 IFRAME 和 POST MESSAGE 生成自己代理的示例，请参阅[跨窗口消息传送](http://ejohn.org/blog/cross-window-messaging/)。
 
 
-## <a name="additional-resources"></a>其他资源
+## <a name="see-also"></a>另请参阅
 
-
-- [Office 外接程序的隐私和安全性](../develop/privacy-and-security.md)
+- [Office 加载项的隐私和安全](../concepts/privacy-and-security.md)
     

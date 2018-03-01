@@ -1,3 +1,9 @@
+---
+title: 绑定到文档或电子表格中的区域
+description: ''
+ms.date: 12/04/2017
+---
+
 
 # <a name="bind-to-regions-in-a-document-or-spreadsheet"></a>绑定到文档或电子表格中的区域
 
@@ -27,12 +33,13 @@
 
     在 Excel 中，任何连续的单元格选区都可用于建立矩阵绑定。在 Word 中，只有表格支持矩阵绑定。
 
-3. **[表格绑定][TableBinding]** - 绑定到包含带标题的表格的文档区域。表格绑定中的数据作为 [TableData](http://dev.office.com/reference/add-ins/shared/tabledata) 对象写入或读取。`TableData` 对象通过 `headers` 和 `rows` 属性公开数据。
+3. **[表格绑定][TableBinding]** - 绑定到包含带标题的表格的文档区域。表格绑定中的数据作为 [TableData](https://dev.office.com/reference/add-ins/shared/tabledata) 对象写入或读取。`TableData` 对象通过 `headers` 和 `rows` 属性公开数据。
 
     任何 Excel 或 Word 表格均可作为表格绑定的基础。建立表格绑定后，用户添加到表格中的每个新行或新列都自动包含在绑定中。
 
 使用 `Bindings` 对象的三个“addFrom”方法之一创建绑定后，可以通过相应对象的方法处理绑定的数据和属性：[MatrixBinding]、[TableBinding] 或 [TextBinding]。这三个对象全部继承 `Binding` 对象的 [getDataAsync] 和 [setDataAsync] 方法，使你能够与绑定的数据交互。
 
+> [!NOTE]
 > **应该何时使用矩阵和表格绑定？**当使用的表格数据包含一个总计行时，如果外接程序的脚本需要访问总计行中的值，或检测用户的选区是否在总计行中，则必须使用矩阵绑定。如果为包含总计行的表格数据建立了表格绑定，那么 [TableBinding.rowCount] 属性和事件处理程序中 [BindingSelectionChangedEventArgs] 对象的 `rowCount` 和 `startRow` 属性将不会在值中反映总计行。要解决此限制，必须建立矩阵绑定以使用总计行。
 
 ## <a name="add-a-binding-to-the-users-current-selection"></a>向用户当前所选内容中添加绑定
@@ -92,9 +99,9 @@ function write(message){
 图 1 显示 Excel 中内置的范围选择提示。
 
 
-**图 1.Excel 选择数据 UI**
+*图 1.Excel 选择数据 UI*
 
-![Excel 选择数据 UI](../images/AgaveAPIOverview_ExcelSelectionUI.png)
+![Excel 选择数据 UI](../images/agave-api-overview-excel-selection-ui.png)
 
 
 ## <a name="add-a-binding-to-a-named-item"></a>向已命名项目添加绑定
@@ -121,10 +128,11 @@ function write(message){
 
 ```
 
- **对于 Excel**，[addFromNamedItemAsync] 方法的 `itemName` 参数可以引用一个现有的已命名区域（使用 `A1` 参考样式 `("A1:A3")` 指定的范围）或表。默认情况下，在 Excel 中添加表会为你添加的第一个表分配名称“Table1”，为你添加的第二个表分配名称“Table2”，以此类推。若要在 Excel UI 中为表分配有意义的名称，请使用功能区的“**表格工具 | 设计**”选项卡上的“**表单名称**”属性。
+**对于 Excel**，[addFromNamedItemAsync] 方法的 `itemName` 参数可以引用一个现有的已命名区域（使用 `A1` 参考样式 `("A1:A3")` 指定的范围）或表。默认情况下，在 Excel 中添加表会为你添加的第一个表分配名称“Table1”，为你添加的第二个表分配名称“Table2”，以此类推。若要在 Excel UI 中为表分配有意义的名称，请使用功能区的“**表格工具 | 设计**”选项卡上的“**表单名称**”属性。
 
 
- >**注意**  在 Excel 中，在指定表格作为命名项目时，必须完全限定该名称以便在表格名称中包括工作表名称，格式如下：`"Sheet1!Table1"`
+> [!NOTE]
+> 在 Excel 中，将表格指定为命名项时，必须将名称完全限定为，在表格名称中添加工作表名称，格式如下：`"Sheet1!Table1"`
 
 以下示例将为 Excel 中 A 列的前三个单元格 (`"A1:A3"`) 创建一个绑定，分配 id `"MyCities"`，然后写入三个城市名称到此绑定。
 
@@ -153,7 +161,7 @@ function write(message){
 }
 ```
 
- **对于 Word**，[addFromNamedItemAsync] 方法的 `itemName` 参数引用 `Rich Text` 内容控件的 `Title` 属性。（无法绑定除 `Rich Text` 内容控件之外的其他内容控件。）
+**对于 Word**，[addFromNamedItemAsync] 方法的 `itemName` 参数引用 `Rich Text` 内容控件的 `Title` 属性。（无法绑定除 `Rich Text` 内容控件之外的其他内容控件。）
 
 默认情况下不会向内容控件分配 `Title*` 值。若要在 Word UI 中分配有意义的名称，请从功能区的“**开发人员**”选项卡上的“**控件**”组中插入一个“**格式文本**”内容控件，并使用“**控件**”组中的“**属性**”命令显示“**内容控件属性**”对话框。然后将内容控件的“**标题**”属性设置为需要从代码中引用的名称。
 
@@ -252,7 +260,8 @@ function write(message){
 ```
 
 
- > **注意：**如果 `select` 方法目标成功返回一个 [Binding] 对象，该对象将只公开 Binding 对象的以下四个方法：[getDataAsync]、[setDataAsync]、[addHandlerAsync] 和 [removeHandlerAsync]。如果该目标无法返回 Binding 对象，则可以使用 `onError` 回调访问 [asyncResult].error 对象以获取详细信息。如果需要调用 Binding 对象的成员而不是 `select` 方法返回的 Binding 对象目标公开的四个方法，则应通过 [Document.bindings] 属性和 Bindings.[getByIdAsync] 方法来使用 [getByIdAsync] 方法，以检索 Binding** 对象。
+> [!NOTE]
+> 如果 `select` 方法承诺成功返回 [Binding] 对象，此对象只公开其以下四个方法：[getDataAsync]、[setDataAsync]、[addHandlerAsync] 和 [removeHandlerAsync]。如果承诺无法返回 Binding 对象，可以使用 `onError` 回调访问 [asyncResult].error 对象，以获取详细信息。如果需要调用 Binding 对象的成员，而不是 `select` 方法返回的 Binding 对象承诺公开的四个方法，应改用 [getByIdAsync] 方法，具体操作是使用 [Document.bindings] 属性和 Bindings.[getByIdAsync] 方法检索 Binding** 对象。
 
 ## <a name="release-a-binding-by-id"></a>按 ID 释放绑定
 
@@ -320,13 +329,14 @@ myBinding.setDataAsync('Hello World!', function (asyncResult) { });
 
 传入函数的匿名函数是在操作完成时执行的回调。该函数用单个参数 `asyncResult` 来调用，其中包含结果的状态。
 
- > **注意：**从 Excel 2013 SP1 的发行版及相应的 Excel Online 内部版本开始，你现在可以 [在绑定表中写入和更新数据时设置格式](../excel/format-tables-in-add-ins-for-excel.md)。
+> [!NOTE]
+> 自 Excel 2013 SP1 发行版及相应的 Excel Online 版本起，现在可以[在对绑定表格执行数据写入和更新时设置格式](../excel/excel-add-ins-tables.md)。
 
 
-## <a name="detect-changes-to-data-or-the-selection-in-a-binding"></a>检测绑定中数据或所选内容的更改
+## <a name="detect-changes-to-data-or-the-selection-in-a-binding"></a>检测绑定中数据或选择内的更改
 
 
-以下示例显示如何向 ID 为“MyBinding”的绑定的 [DataChanged](http://dev.office.com/reference/add-ins/shared/binding.bindingdatachangedevent) 事件中附加事件处理程序。
+下面的示例展示了如何向 ID 为“MyBinding”的绑定的 [DataChanged](https://dev.office.com/reference/add-ins/shared/binding.bindingdatachangedevent) 事件附加事件处理程序。
 
 
 ```js
@@ -343,7 +353,7 @@ function write(message){
 }
 ```
 
- `myBinding` 是包含文档中的现有文本绑定的变量。
+`myBinding` 是包含文档中现有文本绑定的变量。
 
 [addHandlerAsync] 方法的第一个 `eventType` 参数指定要订阅的事件的名称。[Office.EventType] 是可用事件类型值的枚举。`Office.EventType.BindingDataChanged evaluates to the string `“bindingDataChanged”。
 
@@ -360,7 +370,7 @@ function write(message){
 若要删除事件的事件处理程序，请调用 [removeHandlerAsync] 方法将事件类型作为第一个 _eventType_ 参数传入，将要删除的事件处理程序函数的名称作为第二个 _handler_ 参数传入。例如，以下函数将删除在上一节的示例中添加的 `dataChanged` 事件处理程序函数。
 
 
-```
+```js
 function removeEventHandlerFromBinding() {
     Office.select("bindings#MyBinding").removeHandlerAsync(
         Office.EventType.BindingDataChanged, {handler:dataChanged});
@@ -368,41 +378,40 @@ function removeEventHandlerFromBinding() {
 ```
 
 
- >**重要说明：**如果调用 [removeHandlerAsync] 方法时省略可选的 _handler_ 参数，则会移除指定的 `eventType` 的所有事件处理程序。
+> [!IMPORTANT]
+> 如果调用 [removeHandlerAsync] 方法时省略了可选的 _handler_ 参数，将会删除指定 `eventType` 的所有事件处理程序。
 
 
-## <a name="additional-resources"></a>其他资源
+## <a name="see-also"></a>另请参阅
 
-- [了解适用于 Office 的 JavaScript API](../develop/understanding-the-javascript-api-for-office.md)
+- [了解适用于 Office 的 JavaScript API](understanding-the-javascript-api-for-office.md) 
+- [Office 外接程序中的异步编程](asynchronous-programming-in-office-add-ins.md)
+- [读取数据并将其写入文档或电子表格中的活动选择区](read-and-write-data-to-the-active-selection-in-a-document-or-spreadsheet.md)
     
-- [Office 外接程序中的异步编程](../develop/asynchronous-programming-in-office-add-ins.md)
-    
-- [读取数据并将其写入文档或电子表格中的活动选择区](../develop/read-and-write-data-to-the-active-selection-in-a-document-or-spreadsheet.md)
-    
-[Binding]:               http://dev.office.com/reference/add-ins/shared/binding
-[MatrixBinding]:         http://dev.office.com/reference/add-ins/shared/binding.matrixbinding
-[TableBinding]:          http://dev.office.com/reference/add-ins/shared/binding.tablebinding
-[TextBinding]:           http://dev.office.com/reference/add-ins/shared/binding.textbinding
-[getDataAsync]:          http://dev.office.com/reference/add-ins/shared/binding.getdataasync
-[setDataAsync]:          http://dev.office.com/reference/add-ins/shared/binding.setdataasync
-[SelectionChanged]:      http://dev.office.com/reference/add-ins/shared/binding.bindingselectionchangedevent
-[addHandlerAsync]:       http://dev.office.com/reference/add-ins/shared/binding.addhandlerasync
-[removeHandlerAsync]:    http://dev.office.com/reference/add-ins/shared/binding.removehandlerasync
+[Binding]:               https://dev.office.com/reference/add-ins/shared/binding
+[MatrixBinding]:         https://dev.office.com/reference/add-ins/shared/binding.matrixbinding
+[TableBinding]:          https://dev.office.com/reference/add-ins/shared/binding.tablebinding
+[TextBinding]:           https://dev.office.com/reference/add-ins/shared/binding.textbinding
+[getDataAsync]:          https://dev.office.com/reference/add-ins/shared/binding.getdataasync
+[setDataAsync]:          https://dev.office.com/reference/add-ins/shared/binding.setdataasync
+[SelectionChanged]:      https://dev.office.com/reference/add-ins/shared/binding.bindingselectionchangedevent
+[addHandlerAsync]:       https://dev.office.com/reference/add-ins/shared/binding.addhandlerasync
+[removeHandlerAsync]:    https://dev.office.com/reference/add-ins/shared/binding.removehandlerasync
 
-[Bindings]:              http://dev.office.com/reference/add-ins/shared/bindings.bindings
-[getByIdAsync]:          http://dev.office.com/reference/add-ins/shared/bindings.getbyidasync 
-[getAllAsync]:           http://dev.office.com/reference/add-ins/shared/bindings.getallasync
-[addFromNamedItemAsync]: http://dev.office.com/reference/add-ins/shared/bindings.addfromnameditemasync
-[addFromSelectionAsync]: http://dev.office.com/reference/add-ins/shared/bindings.addfromselectionasync
-[addFromPromptAsync]:    http://dev.office.com/reference/add-ins/shared/bindings.addfrompromptasync
-[releaseByIdAsync]:      http://dev.office.com/reference/add-ins/shared/bindings.releasebyidasync
+[Bindings]:              https://dev.office.com/reference/add-ins/shared/bindings.bindings
+[getByIdAsync]:          https://dev.office.com/reference/add-ins/shared/bindings.getbyidasync 
+[getAllAsync]:           https://dev.office.com/reference/add-ins/shared/bindings.getallasync
+[addFromNamedItemAsync]: https://dev.office.com/reference/add-ins/shared/bindings.addfromnameditemasync
+[addFromSelectionAsync]: https://dev.office.com/reference/add-ins/shared/bindings.addfromselectionasync
+[addFromPromptAsync]:    https://dev.office.com/reference/add-ins/shared/bindings.addfrompromptasync
+[releaseByIdAsync]:      https://dev.office.com/reference/add-ins/shared/bindings.releasebyidasync
 
-[AsyncResult]:          http://dev.office.com/reference/add-ins/shared/asyncresult
-[Office.BindingType]:   http://dev.office.com/reference/add-ins/shared/bindingtype-enumeration
-[Office.select]:        http://dev.office.com/reference/add-ins/shared/office.select 
-[Office.EventType]:     http://dev.office.com/reference/add-ins/shared/eventtype-enumeration 
-[Document.bindings]:    http://dev.office.com/reference/add-ins/shared/document.bindings
+[AsyncResult]:          https://dev.office.com/reference/add-ins/shared/asyncresult
+[Office.BindingType]:   https://dev.office.com/reference/add-ins/shared/bindingtype-enumeration
+[Office.select]:        https://dev.office.com/reference/add-ins/shared/office.select 
+[Office.EventType]:     https://dev.office.com/reference/add-ins/shared/eventtype-enumeration 
+[Document.bindings]:    https://dev.office.com/reference/add-ins/shared/document.bindings
 
 
-[TableBinding.rowCount]: http://dev.office.com/reference/add-ins/shared/binding.tablebinding.rowcount
-[BindingSelectionChangedEventArgs]: http://dev.office.com/reference/add-ins/shared/binding.bindingselectionchangedeventargs
+[TableBinding.rowCount]: https://dev.office.com/reference/add-ins/shared/binding.tablebinding.rowcount
+[BindingSelectionChangedEventArgs]: https://dev.office.com/reference/add-ins/shared/binding.bindingselectionchangedeventargs

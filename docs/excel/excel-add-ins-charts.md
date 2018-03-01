@@ -1,6 +1,14 @@
+---
+title: 使用 Excel JavaScript API 处理图表
+description: ''
+ms.date: 12/04/2017
+---
+
+
+
 # <a name="work-with-charts-using-the-excel-javascript-api"></a>使用 Excel JavaScript API 处理图表
 
-本文提供了代码示例，介绍如何使用 Excel JavaScript API 对图表执行常见任务。 有关 **Chart** 和 **ChartCollection** 对象支持的属性和方法的完整列表，请参阅 [Chart 对象 (Excel JavaScript API)](http://dev.office.com/reference/add-ins/excel/chart) 和 [Chart Collection 对象 (Excel JavaScript API)](http://dev.office.com/reference/add-ins/excel/chartcollection)。
+本文提供了代码示例，介绍如何使用 Excel JavaScript API 对图表执行常见任务。 有关 **Chart** 和 **ChartCollection** 对象支持的属性和方法的完整列表，请参阅 [Chart 对象 (Excel JavaScript API)](https://dev.office.com/reference/add-ins/excel/chart) 和 [Chart Collection 对象 (Excel JavaScript API)](https://dev.office.com/reference/add-ins/excel/chartcollection)。
 
 ## <a name="create-a-chart"></a>创建图表
 
@@ -24,14 +32,15 @@ Excel.run(function (context) {
 
 **新建折线图**
 
-![Excel 中的新折线图](../images/Excel-chart-create-line.png)
+![Excel 中的新折线图](../images/excel-charts-create-line.png)
 
 
 ## <a name="add-a-data-series-to-a-chart"></a>向图表添加数据系列
 
-下面的代码示例向工作表中的第一个图表添加数据系列。 新的数据系列对应名为 **2016** 的列，并且基于区域 **D2:D5** 中的数据。
+下面的代码示例向工作表中的第一个图表添加数据系列。 新的数据系列对应于“2016 年”****列，并以区域 **D2:D5** 中的数据为依据。
 
-**注意**：本示例使用的 API 当前仅提供公共预览版（beta 版本）。 若要运行此示例，必须使用 Office.js CDN 的 beta 库：https://appsforoffice.microsoft.com/lib/beta/hosted/office.js.
+> [!NOTE]
+> 此示例使用的 API 暂仅为公共预览版 (beta)。 若要运行此示例，必须使用 Office.js CDN 的 beta 库：https://appsforoffice.microsoft.com/lib/beta/hosted/office.js.
 
 ```js
 Excel.run(function (context) {
@@ -48,11 +57,11 @@ Excel.run(function (context) {
 
 **添加 2016 数据系列之前的图表**
 
-![Excel 中添加 2016 数据系列之前的图表](../images/Excel-chart-data-series-before.png)
+![Excel 中添加 2016 数据系列之前的图表](../images/excel-charts-data-series-before.png)
 
 **添加 2016 数据系列之后的图表**
 
-![Excel 中添加 2016 数据系列之后的图表](../images/Excel-chart-data-series-after.png)
+![Excel 中添加 2016 数据系列之后的图表](../images/excel-charts-data-series-after.png)
 
 ## <a name="set-chart-title"></a>设置图表标题
 
@@ -71,7 +80,7 @@ Excel.run(function (context) {
 
 **设置标题后的图表**
 
-![Excel 中带标题的图表](../images/Excel-chart-title-set.png)
+![Excel 中带标题的图表](../images/excel-charts-title-set.png)
 
 ## <a name="set-properties-of-an-axis-in-a-chart"></a>在图表中设置轴属性
 
@@ -94,13 +103,14 @@ Excel.run(function (context) {
 
 **设置分类轴标题后的图表**
 
-![Excel 中带轴标题的图表](../images/Excel-chart-axis-title-set.png)
+![Excel 中带轴标题的图表](../images/excel-charts-axis-title-set.png)
 
 ### <a name="set-axis-display-unit"></a>设置轴的显示单位
 
-下面的代码示例将工作表中第一个图表的数值轴显示单位设置为**百**。
+下面的代码示例将工作表中首个图表的数值轴显示单位设置为“百”****。
 
-**注意**：本示例使用的 API 当前仅提供公共预览版（beta 版本）。 若要运行此示例，必须使用 Office.js CDN 的 beta 库：https://appsforoffice.microsoft.com/lib/beta/hosted/office.js.
+> [!NOTE]
+> 此示例使用的 API 暂仅为公共预览版 (beta)。 若要运行此示例，必须使用 Office.js CDN 的 beta 库：https://appsforoffice.microsoft.com/lib/beta/hosted/office.js.
 
 ```js
 Excel.run(function (context) {
@@ -115,7 +125,7 @@ Excel.run(function (context) {
 
 **设置数值轴显示单位后的图表**
 
-![Excel 中带轴显示单位的图表](../images/Excel-chart-axis-display-unit-set.png)
+![Excel 中带轴显示单位的图表](../images/excel-charts-axis-display-unit-set.png)
 
 ## <a name="set-visibility-of-gridlines-in-a-chart"></a>在图表中设置网格线的可见性
 
@@ -134,15 +144,16 @@ Excel.run(function (context) {
 
 **隐藏了网格线的图表**
 
-![Excel 中隐藏了网格线的图表](../images/Excel-chart-gridlines-removed.png)
+![Excel 中隐藏了网格线的图表](../images/excel-charts-gridlines-removed.png)
 
 ## <a name="chart-trendlines"></a>图表趋势线
 
 ### <a name="add-a-trendline"></a>添加趋势线
 
-下面的代码示例在名为 **Sample** 的工作表中，向第一个图表的第一个系列添加移动均线。 趋势线显示超过 5 个周期的移动平均值。
+下面的代码示例向 **Sample** 工作表中首个图表的第一个系列添加移动均线。趋势线显示超过 5 个周期的移动平均。
 
-**注意**：本示例使用的 API 当前仅提供公共预览版（beta 版本）。 若要运行此示例，必须使用 Office.js CDN 的 beta 库：https://appsforoffice.microsoft.com/lib/beta/hosted/office.js.
+> [!NOTE]
+> 此示例使用的 API 暂仅为公共预览版 (beta)。 若要运行此示例，必须使用 Office.js CDN 的 beta 库：https://appsforoffice.microsoft.com/lib/beta/hosted/office.js.
 
 ```js
 Excel.run(function (context) {
@@ -158,13 +169,14 @@ Excel.run(function (context) {
 
 **带移动均线的图表**
 
-![Excel 中带移动均线的图表](../images/Excel-chart-create-trendline.png)
+![Excel 中带移动均线的图表](../images/excel-charts-create-trendline.png)
 
 ### <a name="update-a-trendline"></a>更新趋势线
 
-下面的代码示例在名为 **Sample** 的工作表中，针对第一个图表的第一个系列，将趋势线设置为**线性**类型。
+下面的代码示例将 **Sample** 工作表中首个图表的第一个系列的趋势线设置为“线性”****类型。
 
-**注意**：本示例使用的 API 当前仅提供公共预览版（beta 版本）。 若要运行此示例，必须使用 Office.js CDN 的 beta 库：https://appsforoffice.microsoft.com/lib/beta/hosted/office.js.
+> [!NOTE]
+> 此示例使用的 API 暂仅为公共预览版 (beta)。 若要运行此示例，必须使用 Office.js CDN 的 beta 库：https://appsforoffice.microsoft.com/lib/beta/hosted/office.js.
 
 ```js
 Excel.run(function (context) {
@@ -181,10 +193,10 @@ Excel.run(function (context) {
 
 **带线性趋势线的图表**
 
-![Excel 中带线性趋势线的图表](../images/Excel-chart-trendline-linear.png)
+![Excel 中带线性趋势线的图表](../images/excel-charts-trendline-linear.png)
 
-## <a name="additional-resources"></a>其他资源
+## <a name="see-also"></a>另请参阅
 
 - [Excel JavaScript API 核心概念](excel-add-ins-core-concepts.md)
-- [Chart 对象 (Excel JavaScript API)](http://dev.office.com/reference/add-ins/excel/chart) 
-- [Chart Collection 对象 (Excel JavaScript API)](http://dev.office.com/reference/add-ins/excel/chartcollection)
+- [Chart 对象 (Excel JavaScript API)](https://dev.office.com/reference/add-ins/excel/chart) 
+- [Chart Collection 对象 (Excel JavaScript API)](https://dev.office.com/reference/add-ins/excel/chartcollection)

@@ -1,32 +1,40 @@
-# <a name="sideload-office-add-ins-in-office-online-for-testing"></a>用于测试的 Office Online 中的旁加载 Office 外接程序
+---
+title: 在 Office Online 中旁加载 Office 加载项以供测试
+description: ''
+ms.date: 12/04/2017
+---
+
+# <a name="sideload-office-add-ins-in-office-online-for-testing"></a>在 Office Online 中旁加载 Office 加载项以供测试
 
 您可以安装 Office 外接程序进行测试，而无需首先使用旁加载将其放在外接程序目录中。在 Office 365 或 Office Online 中都可以进行旁加载。该过程对两个平台略有不同。 
 
 当旁加载外接程序时，外接程序清单存储在浏览器的本地存储区中，因此如果清除浏览器的缓存，或切换到另一个浏览器，就必须再次旁加载该外接程序。
 
 
- >**注意：**如本文所述，Word、Excel 和 PowerPoint 支持旁加载。若要旁加载 Outlook 外接程序，请参阅[旁加载 Outlook 外接程序并进行测试](sideload-outlook-add-ins-for-testing.md)。
+> [!NOTE]
+> 如本文所述，Word、Excel 和 PowerPoint 支持旁加载。若要旁加载 Outlook 外接程序，请参阅[旁加载 Outlook 外接程序进行测试](https://docs.microsoft.com/zh-cn/outlook/add-ins/sideload-outlook-add-ins-for-testing)。
 
-下面的视频演示将外接程序旁加载到 Office 桌面或 Office Online 上的流程。
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/XXsAw2UUiQo" frameborder="0" allowfullscreen></iframe>
-
-## <a name="sideload-an-office-add-in-on-office-365"></a>在 Office 365 上旁加载 Office 外接程序
+下面的视频逐步展示了如何在 Office 桌面或 Office Online 上旁加载加载项。  
 
 
-1. 登录到您的 Office 365 帐户。
+> [!VIDEO https://www.youtube.com/embed/XXsAw2UUiQo]
+
+## <a name="sideload-an-office-add-in-on-office-365"></a>在 Office 365 上旁加载 Office 加载项
+
+
+1. 登录 Office 365 帐户。
     
-2. 打开工具栏最左侧的应用启动器并选择 **Excel**、**Word** 或 **PowerPoint**，然后创建一个新文档。
+2. 打开工具栏最左端的应用启动器，选择“Excel”****、“Word”****或“PowerPoint”****，再新建文档。
     
 3. 打开功能区上的“**插入**”选项卡，然后在“**外接程序**”部分中，选择“**Office 外接程序**”。
     
-4. 在“**Office 外接程序**”对话框中，选择“**我的组织**”选项卡，然后选择“**上载我的外接程序**”。
+4. 在“Office 加载项”****对话框中，依次选择“我的组织”****选项卡和“上传我的加载项”****。
     
-    ![标题为“Office 外接程序”的对话框，左上角附近的链接指示“上载我的外接程序”。](../images/0e49f780-019a-4d97-9310-0eaddfa0c4dc.png)
+    ![标题为“Office 加载项”的对话框，左上角附近有链接“上传我的加载项”](../images/office-add-ins.png)
 
-5.  “**浏览**”到外接程序清单文件，然后选择“**上载**”。
+5.  **转到**加载项清单文件，再选择“上传”****。
     
-    ![带浏览、上载和取消按钮的上载外接程序对话框。](../images/039aef16-b12f-4d01-ad46-f13e01dd3162.png)
+    ![包含“浏览”、“上传”和“取消”按钮的“上传加载项”对话框](../images/upload-add-in.png)
 
 6. 验证是否已安装外接程序。例如，如果它是一个外接程序命令，它应显示在功能区或上下文菜单上。如果它是一个任务窗格外接程序，则应显示窗格。
     
@@ -40,13 +48,13 @@
     
 3. 打开功能区上的“**插入**”选项卡，然后在“**外接程序**”部分中，选择“**Office 外接程序**”。
     
-4. 在“**Office 外接程序**”对话框中，选择“**我的外接程序**”选项卡，选择“**管理我的外接程序**”，然后选择“**上载我的外接程序**”。
+4. 在“Office 加载项”****对话框中，依次选择“我的加载项”****选项卡、“管理我的加载项”****和“上传我的加载项”****。
     
-    ![Office 外接程序对话框，右上方有一个下拉菜单，显示“管理我的外接程序”，其下方的下拉菜单中有“上载我的外接程序”选项](../images/d630d9d1-7dd5-45e3-860d-0ab069882548.png)
+    ![“Office 加载项”对话框，右上方有“管理我的加载项”下拉列表，其中有下拉选项“上传我的加载项”](../images/office-add-ins-my-account.png)
 
-5.  “**浏览**”到外接程序清单文件，然后选择“**上载**”。
+5.  **转到**加载项清单文件，再选择“上传”****。
     
-    ![带浏览、上载和取消按钮的上载外接程序对话框。](../images/039aef16-b12f-4d01-ad46-f13e01dd3162.png)
+    ![带浏览、上载和取消按钮的上载外接程序对话框。](../images/upload-add-in.png)
 
 6. 验证是否已安装外接程序。例如，如果它是一个外接程序命令，它应显示在功能区或上下文菜单上。如果它是一个任务窗格外接程序，则应显示窗格。
 
@@ -58,6 +66,6 @@
 
 例如： 
 
-    ```xml
-    <SourceLocation DefaultValue="https://localhost:44300/App/Home/Home.html" />
-    ```
+```xml
+<SourceLocation DefaultValue="https://localhost:44300/App/Home/Home.html" />
+```

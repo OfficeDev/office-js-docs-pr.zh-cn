@@ -1,6 +1,13 @@
-# <a name="work-with-ranges-using-the-excel-javascript-api"></a>使用 Excel JavaScript API 对区域执行操作
+---
+title: 使用 Excel JavaScript API 处理区域
+description: ''
+ms.date: 12/04/2017
+---
 
-本文提供了代码示例，介绍如何使用 Excel JavaScript API 对区域执行常见任务。 有关 **Range** 对象支持的属性和方法的完整列表，请参阅 [Range 对象 (Excel JavaScript API)](http://dev.office.com/reference/add-ins/excel/range)。
+
+# <a name="work-with-ranges-using-the-excel-javascript-api"></a>使用 Excel JavaScript API 处理区域
+
+本文中的代码示例展示了如何使用 Excel JavaScript API 对区域执行常见任务。 有关 **Range** 对象支持的属性和方法的完整列表，请参阅 [Range 对象 (Excel JavaScript API)](https://dev.office.com/reference/add-ins/excel/range)。
 
 ## <a name="get-a-range"></a>获取区域
 
@@ -91,11 +98,11 @@ Excel.run(function (context) {
 
 **插入区域之前的数据**
 
-![Excel 中插入区域之前的数据](../images/Excel-range-start.png)
+![Excel 中插入区域之前的数据](../images/excel-ranges-start.png)
 
 **插入区域之后的数据**
 
-![Excel 中插入区域之后的数据](../images/Excel-range-after-insert.png)
+![Excel 中插入区域之后的数据](../images/excel-ranges-after-insert.png)
 
 ## <a name="clear-a-range-of-cells"></a>清除多个单元格内容
 
@@ -114,11 +121,11 @@ Excel.run(function (context) {
 
 **清除区域之前的数据**
 
-![Excel 中清除区域之前的数据](../images/Excel-range-start.png)
+![Excel 中清除区域之前的数据](../images/excel-ranges-start.png)
 
 **清除区域之后的数据**
 
-![Excel 中清除区域之后的数据](../images/Excel-range-after-clear.png)
+![Excel 中清除区域之后的数据](../images/excel-ranges-after-clear.png)
 
 ## <a name="delete-a-range-of-cells"></a>删除多个单元格
 
@@ -137,11 +144,11 @@ Excel.run(function (context) {
 
 **删除区域之前的数据**
 
-![Excel 中删除区域之前的数据](../images/Excel-range-start.png)
+![Excel 中删除区域之前的数据](../images/excel-ranges-start.png)
 
 **删除区域之后的数据**
 
-![Excel 中删除区域之后的数据](../images/Excel-range-after-delete.png)
+![Excel 中删除区域之后的数据](../images/excel-ranges-after-delete.png)
 
 ## <a name="set-the-selected-range"></a>设置所选区域
 
@@ -160,7 +167,7 @@ Excel.run(function (context) {
 
 **选定的区域 B2:E6**
 
-![Excel 中选定的区域](../images/Excel-range-set-selection.png)
+![Excel 中选定的区域](../images/excel-ranges-set-selection.png)
 
 ## <a name="get-the-selected-range"></a>获取所选区域
 
@@ -200,11 +207,11 @@ Excel.run(function (context) {
 
 **更新单元格值之前的数据**
 
-![Excel 中更新单元格值之前的数据](../images/Excel-range-set-start.png)
+![Excel 中更新单元格值之前的数据](../images/excel-ranges-set-start.png)
 
 **更新单元格值之后的数据**
 
-![Excel 中更新单元格值之后的数据](../images/Excel-range-set-cell-value.png)
+![Excel 中更新单元格值之后的数据](../images/excel-ranges-set-cell-value.png)
 
 ### <a name="set-values-for-a-range-of-cells"></a>设置多个单元格的值
 
@@ -228,11 +235,11 @@ Excel.run(function (context) {
 
 **更新多个单元格值之前的数据**
 
-![Excel 中更新多个单元格值之前的数据](../images/Excel-range-set-start.png)
+![Excel 中更新多个单元格值之前的数据](../images/excel-ranges-set-start.png)
 
 **更新多个单元格值之后的数据**
 
-![Excel 中更新多个单元格值之后的数据](../images/Excel-range-set-cell-values.png)
+![Excel 中更新多个单元格值之后的数据](../images/excel-ranges-set-cell-values.png)
 
 ### <a name="set-formula-for-a-single-cell"></a>设置单个单元格的公式
 
@@ -252,11 +259,11 @@ Excel.run(function (context) {
 
 **设置单元格公式之前的数据**
 
-![Excel 中设置单元格公式之前的数据](../images/Excel-range-start-set-formula.png)
+![Excel 中设置单元格公式之前的数据](../images/excel-ranges-start-set-formula.png)
 
 **设置单元格公式之后的数据**
 
-![Excel 中设置单元格公式之后的数据](../images/Excel-range-set-formula.png)
+![Excel 中设置单元格公式之后的数据](../images/excel-ranges-set-formula.png)
 
 ### <a name="set-formulas-for-a-range-of-cells"></a>设置多个单元格的公式
 
@@ -283,11 +290,11 @@ Excel.run(function (context) {
 
 **设置多个单元格公式之前的数据**
 
-![Excel 中设置多个单元格公式之前的数据](../images/Excel-range-start-set-formula.png)
+![Excel 中设置多个单元格公式之前的数据](../images/excel-ranges-start-set-formula.png)
 
 **设置多个单元格公式之后的数据**
 
-![Excel 中设置多个单元格公式之后的数据](../images/Excel-range-set-formulas.png)
+![Excel 中设置多个单元格公式之后的数据](../images/excel-ranges-set-formulas.png)
 
 ## <a name="get-values-text-or-formulas"></a>获取值、文本或公式
 
@@ -312,7 +319,7 @@ Excel.run(function (context) {
 
 **区域中的数据（E 列中的值为公式的结果）**
 
-![Excel 中设置多个单元格公式之后的数据](../images/Excel-range-set-formulas.png)
+![Excel 中设置多个单元格公式之后的数据](../images/excel-ranges-set-formulas.png)
 
 **range.values（通过上面的代码示例记录到控制台）**
 
@@ -370,7 +377,7 @@ Excel.run(function (context) {
 
 **区域中的数据（E 列中的值为公式的结果）**
 
-![Excel 中设置多个单元格公式之后的数据](../images/Excel-range-set-formulas.png)
+![Excel 中设置多个单元格公式之后的数据](../images/excel-ranges-set-formulas.png)
 
 **range.text（通过上面的代码示例记录到控制台）**
 
@@ -428,7 +435,7 @@ Excel.run(function (context) {
 
 **区域中的数据（E 列中的值为公式的结果）**
 
-![Excel 中设置多个单元格公式之后的数据](../images/Excel-range-set-formulas.png)
+![Excel 中设置多个单元格公式之后的数据](../images/excel-ranges-set-formulas.png)
 
 **range.formulas（通过上面的代码示例记录到控制台）**
 
@@ -489,11 +496,11 @@ Excel.run(function (context) {
 
 **区域中设置字体颜色和填充颜色之前的数据**
 
-![Excel 中设置格式之前的数据](../images/Excel-range-format-before.png)
+![Excel 中设置格式之前的数据](../images/excel-ranges-format-before.png)
 
 **区域中设置字体颜色和填充颜色之后的数据**
 
-![Excel 中设置格式之后的数据](../images/Excel-range-format-font-and-fill.png)
+![Excel 中设置格式之后的数据](../images/excel-ranges-format-font-and-fill.png)
 
 ### <a name="set-number-format"></a>设置数字格式
 
@@ -518,13 +525,13 @@ Excel.run(function (context) {
 
 **区域中设置数字格式之前的数据**
 
-![Excel 中设置格式之前的数据](../images/Excel-range-format-font-and-fill.png)
+![Excel 中设置格式之前的数据](../images/excel-ranges-format-font-and-fill.png)
 
 **区域中设置数字格式之后的数据**
 
-![Excel 中设置格式之后的数据](../images/Excel-range-format-numbers.png)
+![设置格式后的 Excel 数据](../images/excel-ranges-format-numbers.png)
 
-## <a name="additional-resources"></a>其他资源
+## <a name="see-also"></a>另请参阅
 
 - [Excel JavaScript API 核心概念](excel-add-ins-core-concepts.md)
-- [Range 对象 (Excel JavaScript API)](http://dev.office.com/reference/add-ins/excel/range)
+- [Range 对象 (Excel JavaScript API)](https://dev.office.com/reference/add-ins/excel/range)

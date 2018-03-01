@@ -1,3 +1,10 @@
+---
+title: 随文档自动打开任务窗格
+description: ''
+ms.date: 01/23/2018
+---
+
+
 # <a name="automatically-open-a-task-pane-with-a-document"></a>随文档自动打开任务窗格
 
 可以使用 Office 外接程序中的外接程序命令，通过将按钮添加到 Office 功能区来扩展 Office UI。当用户单击命令按钮时，会执行一个操作，如打开任务窗格。 
@@ -16,7 +23,7 @@ Autoopen 功能目前<!-- in **developer preview** and it is only -->在以下�
 
 |**产品**|**平台**|
 |:-----------|:------------|
-|<ul><li>Word</li><li>Excel</li><li>PowerPoint</li></ul>|<ul><li>Office for Windows Desktop。 生成号 16.0.8121.1000+</li><li>Office for Mac。 生成号 15.34.17051500+</li><li>Office Online</li></ul>|
+|<ul><li>Word</li><li>Excel</li><li>PowerPoint</li></ul>|<ul><li>Office for Windows Desktop（生成号 16.0.8121.1000+）</li><li>Office for Mac（生成号 15.34.17051500+）</li><li>Office Online</li></ul>|
 
 
 ## <a name="best-practices"></a>最佳做法
@@ -30,7 +37,8 @@ Autoopen 功能目前<!-- in **developer preview** and it is only -->在以下�
 - 使用要求集检测来确定 Autoopen 功能是否可用，如果不可用则提供回退行为。
 - 不要使用 Autoopen 功能来人为地增加外接程序的使用率。如果外接程序在某些文档中自动打开没有任何意义，那么这个功能就会令用户生厌。 
 
-    >**注意：**如果 Microsoft 检测到滥用 AutoOpen 功能，外接程序可能会从 Office 应用商店下架。 
+    > [!NOTE]
+    > 如果 Microsoft 检测到滥用 AutoOpen 功能，加载项可能会从 AppSource 下架。 
 
 - 请勿使用此功能来固定多个任务窗格。只能设置一个外接程序窗格随文档自动打开。  
 
@@ -40,7 +48,8 @@ Autoopen 功能目前<!-- in **developer preview** and it is only -->在以下�
 - 指定要自动打开的任务窗格。
 - 标记要自动打开任务窗格的文档。
 
->**重要说明：**如果用户设备上已安装外接程序，将仅打开指定要自动打开的窗格。如果用户未在打开文档时安装外接程序，那么 AutoOpen 功能将不起作用，而且设置也会被忽略。如果还要求外接程序与文档一起分发，需要将 visibility 属性设置为 1；此设置只能使用 OpenXML 完成，本文后面提供了示例。 
+> [!IMPORTANT]
+> 只有在用户设备上已安装加载项时，才能打开指定为自动打开的窗格。如果在打开文档时用户未安装加载项，那么 AutoOpen 功能将不起作用，而且设置也会被忽略。如果还要求加载项与文档一起分发，需要将“visibility”属性设置为 1；只能使用 OpenXML 完成此操作，本文稍后将提供示例。 
 
 ### <a name="step-1-specify-the-task-pane-to-open"></a>第 1 步：指定要打开的任务窗格
 若要指定要自动打开的任务窗格，请将 [TaskpaneId](https://dev.office.com/reference/add-ins/manifest/action#taskpaneid) 值设置为 **Office.AutoShowTaskpaneWithDocument**。只能在一个任务窗格上设置此值。如果在多个任务窗格上设置此值，将识别值的第一个匹配项，而忽略其他。 
@@ -81,7 +90,7 @@ Office.context.document.settings.saveAsync();
 
 ```xml
 <we:webextension xmlns:we="http://schemas.microsoft.com/office/webextensions/webextension/2010/11" id="[ADD-IN ID PER MANIFEST]">
-  <we:reference id="[GUID or Office Store asset ID]" version="[your add-in version]" store="[Pointer to store or catalog]" storeType="[Store or catalog type]"/>
+  <we:reference id="[GUID or AppSource asset ID]" version="[your add-in version]" store="[Pointer to store or catalog]" storeType="[Store or catalog type]"/>
   <we:alternateReferences/>
   <we:properties>
     <we:property name="Office.AutoShowTaskpaneWithDocument" value="true"/>
@@ -97,14 +106,15 @@ webextension 部件还包括对具有 `id`、 `storeType`、 `store` 和 `versio
 
 | **`storeType` 值** | **`id` 值**    |**`store` 值** | **`version` 值**|
 |:---------------|:---------------|:---------------|:---------------|
-|OMEX（Office 应用商店）|外接程序的 Office 应用商店资产 ID。\*|Office 应用商店的区域设置；例如，“en-us”。|Office 应用商店目录中的版本。\*|
+|OMEX (AppSource)|加载项的 AppSource 资产 ID（请参阅“注意”）|AppSource 的区域设置；例如，“en-us”。|AppSource 目录中的版本（请参阅“注意”）|
 |FileSystem（网络共享）|外接程序清单中外接程序的 GUID。|网络共享路径。例如，“\\\\MyComputer\\MySharedFolder”。|外接程序清单中的版本。|
 |EXCatalog（通过 Exchange 服务器部署） |外接程序清单中外接程序的 GUID。|“EXCatalog”|外接程序清单中的版本。
-|Registry（系统注册表）|外接程序清单中外接程序的 GUID。|“developer”|外接程序清单中的版本。|
+|Registry（系统注册表）|外接程序清单中外接程序的 GUID。|“developer”|加载项清单中的版本。|
 
->\*若要查找 Office 应用商店中外接程序的资产 ID 和版本，请转到外接程序的 Office 应用商店登陆页面。资产 ID 将在浏览器的地址栏中显示。版本在页面的“详细信息”****部分列出。
+> [!NOTE]
+> 若要查找 AppSource 中加载项的资产 ID 和版本，请转到加载项的 AppSource 登陆页面。资产 ID 显示在浏览器的地址栏中。版本在页面的“详细信息”****部分中列出。
 
-有关 webextension 标记的详细信息，请参阅 [[MS-OWEXML] 2.2.5。WebExtensionReference](https://msdn.microsoft.com/zh-cn/library/hh695383(v=office.12).aspx)。
+若要详细了解 webextension 标记，请参阅 [[MS-OWEXML] 2.2.5. WebExtensionReference](https://msdn.microsoft.com/zh-cn/library/hh695383(v=office.12).aspx)。
 
 以下示例演示如何添加 taskpane 部件。
 
@@ -120,11 +130,12 @@ webextension 部件还包括对具有 `id`、 `storeType`、 `store` 和 `versio
 
 当外接程序和模板或文档内容紧密集成以致用户不会选择退出 Autoopen 功能时，将 `visibility` 设置为“1”是一个不错的选择。 
 
->**注意：**如果想要对外接程序分发文档以便提示用户进行安装，则必须将“visibility”属性设置为 1。只能通过 Open XML 执行此操作。
+> [!NOTE]
+> 若要将加载项与文档一起分发，以便提示用户进行安装，必须将“visibility”属性设置为 1。只能通过 Open XML 执行此操作。
 
 编写 XML 的一个简单方法是首先运行外接程序并[标记客户端上的文档](#tag-the-document-on-the-client-side)以写入值，然后保存该文档并检查生成的 XML。Office 将检测并提供适当的属性值。还可以使用 [Open XML SDK 2.5 Productivity Tool](https://www.microsoft.com/en-us/download/details.aspx?id=30425) 工具生成 C# 代码以编程方式添加基于生成的 XML 的标记。
 
-## <a name="additional-resources"></a>其他资源
+## <a name="see-also"></a>另请参阅
 
-有关演示如何使用 Autoopen 功能的示例，请参阅 [Office 外接程序命令示例](https://github.com/OfficeDev/Office-Add-in-Commands-Samples/tree/master/AutoOpenTaskpane)。 
+有关展示了如何使用 AutoOpen 功能的示例，请参阅 [Office 加载项命令示例](https://github.com/OfficeDev/Office-Add-in-Commands-Samples/tree/master/AutoOpenTaskpane)。 
 

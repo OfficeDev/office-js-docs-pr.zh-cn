@@ -1,8 +1,16 @@
-# <a name="data-visualization-style-guidelines-for-office-add-ins"></a>Office 外接程序的数据可视化样式指南
+---
+title: Office 加载项的数据可视化样式指南
+description: ''
+ms.date: 12/04/2017
+---
+
+
+
+# <a name="data-visualization-style-guidelines-for-office-add-ins"></a>Office 加载项的数据可视化样式指南
 
 良好的数据可视化效果可帮助用户找到数据见解。他们可以使用这些见解来讲述具有说服力的故事。本文提供了准则，以帮助你在适用于 Excel 和其他 Office 应用的外接程序中设计有效的数据可视化。
 
-建议使用 [Office UI Fabric](http://dev.office.com/fabric) 创建数据可视化的镶边。 Office UI Fabric 包含可与 Office 外观无缝集成的样式和组件。 
+我们建议使用 [Office UI Fabric](http://dev.office.com/fabric) 来创建数据可视化的镶边。Office UI Fabric 包含可与 Office 外观无缝集成的样式和组件。 
 
 <!--The following figure shows a data visualization in an add-in that uses Fabric.
 
@@ -14,8 +22,8 @@
 
 数据可视化共享一个通用框架、常见的视觉对象和交互式元素，包括标题、标签和数据绘图，如下图所示。
 
-![标记了标题、轴、图例和绘图区的折线图的图像](../images/data_visualization_line_chart.png)
-![标记了轴、网格线、图例和数据绘图的柱形图的图像](../images/data_visualization_column_chart.png)
+![标记了标题、轴、图例和绘图区的折线图的图像](../images/data-visualization-line-chart.png)
+![标记了轴、网格线、图例和数据绘图的柱形图的图像](../images/data-visualization-column-chart.png)
 
 ### <a name="chart-titles"></a>图表标题
 
@@ -23,19 +31,19 @@
 
 - 使图表标题便于阅读。设定其位置以创建相对于其余图表的清晰视觉对象层次结构。
 - 一般情况下，使用句子大写（大写第一个字词）。若要创建对比度或强化层次结构，可以全部使用大写，但应谨慎使用全部大写。
-- 纳入 [Office UI Fabric 类型校正](http://dev.office.com/fabric#/styles/typography)，让图表与使用 Segoe 的 Office UI 保持一致。 你还可以使用不同的字样来区分图表内容和 UI。
+- 纳入 [Office UI Fabric 类型校正](http://dev.office.com/fabric#/styles/typography)使图表与使用 Segoe 的 Office UI 保持一致。你还可以使用不同的字样来区分图表内容和 UI。
 - 使用带有大型计数器的 sans-serif 字样。
 
 下面的示例显示图表标题中使用的 serif 和 sans-serif 字样。请留意如何通过缩放对比度和空白的有效使用来构建强大的可视化层次结构。
 
-![采用 serif 字体的数据可视化的图像](../images/data_visualization_serif.png)
-![采用 sans-serif 字体的数据可视化的图像](../images/data_visualization_san_serif.png)
+![采用 serif 字体的数据可视化的图像](../images/data-visualization-serif.png)
+![采用 sans-serif 字体的数据可视化的图像](../images/data-visualization-sans-serif.png)
 
 ### <a name="axis-labels"></a>轴标签
 
 请确保轴标签颜色足够深，以便可以清楚地阅读，并且具有足够的文本和背景色对比度。请确保颜色不要过深，避免比数据墨迹更加突出。
 
-浅灰色轴标签效果最佳。 如果使用的是 Fabric，请参阅[中性色调色板](http://dev.office.com/fabric#/styles/colors)。
+浅灰色轴标签效果最佳。如果使用的是 Fabric，请参阅[中性色调色板](http://dev.office.com/fabric#/styles/colors)。
 
 ### <a name="data-ink"></a>数据墨迹
 
@@ -56,11 +64,11 @@
 
 要准确读取图表，通常网格线是必不可少的，但应显示为辅助可视元素，用于增强数据墨迹效果，但不会影响数据显示。确保静态网格线较细且颜色较淡，除非专门将其设计用于高对比度的情况。还可以使用交互作用创建在用户与图表交互时上下文中显示的动态、实时网格线。
 
-浅灰色网格线效果最佳。 如果使用的是 Fabric，请参阅[中性色调色板](http://dev.office.com/fabric#/styles/colors)。
+浅灰色网格线效果最佳。如果使用的是 Fabric，请参阅[中性色调色板](http://dev.office.com/fabric#/styles/colors)。
 
 下图显示了带有网格线的数据可视化。
 
-![带有网格线的数据可视化的图像](../images/data_visualization_gridlines.png)
+![带有网格线的数据可视化的图像](../images/data-visualization-gridlines.png)
 
 ### <a name="legends"></a>图例
 
@@ -134,10 +142,10 @@ Office Design 团队创建了以下设计原则集，我们可在为 Office 产�
 
 - 请勿将颜色用作传达信息的唯一方式。色盲者将无法解读结果。在可以传达信息的前提下，除使用颜色外，还使用形状、大小和纹理。
 - 确保所有交互式元素（如按钮或选择列表）均可通过键盘访问。
-- 将可访问性事件发送到屏幕阅读器来通知焦点更改、工具提示等。
+- 将辅助功能事件发送到屏幕阅读器，以通知焦点更改、工具提示等。
 
-## <a name="additional-resources"></a>其他资源 
+## <a name="see-also"></a>另请参阅 
 
-- [数据 + 设计：准备并实现信息可视化的简单介绍](https://infoactive.co/data-design)
+- [数据和设计：关于准备和可视化信息的简单介绍](https://infoactive.co/data-design)
 - [构建数据可视化效果的五个最佳库](http://www.fastcompany.com/3029760/the-five-best-libraries-for-building-data-vizualizations)
 - [定量信息的视觉显示](https://www.edwardtufte.com/tufte/books_vdqi)

@@ -1,18 +1,25 @@
-# <a name="enable-single-sign-on-for-office-add-ins"></a>为 Office 加载项启用单一登录
+---
+title: 为 Office 加载项启用单一登录
+description: ''
+ms.date: 12/04/2017
+---
+
+# <a name="enable-single-sign-on-for-office-add-ins-preview"></a>为 Office 加载项启用单一登录（预览）
 
 用户可以使用自己的个人 Microsoft 帐户/工作或学校 (Office 365) 帐户，登录 Office（在线、移动和桌面平台）。 可以利用这一点，使用 SSO 执行以下操作（用户无需再次登录）：
 
 * 授权用户登录加载项。
 * 授权加载项访问 [Microsoft Graph](https://developer.microsoft.com/graph/docs)。
 
-![显示加载项登录过程的图像](../images/OfficeHostTitleBarLogin.png)
+![显示加载项登录过程的图像](../images/office-host-title-bar-sign-in.png)
 
->**注意：**目前，Word、Excel 和 PowerPoint 支持单一登录 API。 若要详细了解目前单一登录 API 的受支持情况，请参阅 [Identity API 要求集](http://dev.office.com/reference/add-ins/requirement-sets/identity-api-requirement-sets)。
-> Outlook 的单一登录当前处于预览阶段。 如果使用的是 Outlook 加载项，请务必为 Office 365 租赁启用新式验证。 若要了解如何这样做，请参阅 [Exchange Online：如何为租户启用新式验证](https://social.technet.microsoft.com/wiki/contents/articles/32711.exchange-online-how-to-enable-your-tenant-for-modern-authentication.aspx)。
+> [!NOTE]
+> 目前，Word、Excel、Outlook 和 PowerPoint 预览版支持单一登录 API。 若要详细了解目前支持单一登录 API 的平台，请参阅 [IdentityAPI 要求集](https://dev.office.com/reference/add-ins/requirement-sets/identity-api-requirement-sets)。
+> 如果使用的是 Outlook 加载项，请务必为 Office 365 租赁启用新式验证。 若要了解如何这样做，请参阅 [Exchange Online：如何为租户启用新式验证](https://social.technet.microsoft.com/wiki/contents/articles/32711.exchange-online-how-to-enable-your-tenant-for-modern-authentication.aspx)。
 
-对于用户，这样可以方便他们顺畅地运行加载项，因为只需登录一次。 对于开发者，这意味着加载项可以验证用户身份，并使用用户已提供给 Office 应用程序的凭据，通过 Microsoft Graph 获取对用户数据的访问权限。
+对于用户，这意味着提供流畅的加载项运行体验，即只需登录一次。对于开发人员，这意味着加载项可以验证用户，并借助用户已提供给 Office 应用的凭据，通过 Microsoft Graph 获取对用户数据的授权访问权限。
 
-## <a name="sso-add-in-architecture"></a>SSO 外接程序体系结构
+## <a name="sso-add-in-architecture"></a>SSO 加载项体系结构
 
 除了托管 Web 应用程序的页面和 JavaScript 之外，外接程序还必须以相同的[完全限定的域名](https://msdn.microsoft.com/zh-cn/library/windows/desktop/ms682135.aspx#_dns_fully_qualified_domain_name_fqdn__gly)托管一个或多个 Web API，这些 API 可获取 Microsoft Graph 的访问令牌，并向它发出请求。
 
@@ -22,10 +29,11 @@
 
 以下关系图显示了 SSO 流程的工作方式。
 <!-- Minor fixes to the text in the diagram - change V2 to v2.0, and change "(e.g. Word, Excel, etc.)" to "(for example, Word, Excel)". -->
-![SSO 过程关系图](../images/SSOOverviewDiagram.png)
 
-1. 在加载项中，JavaScript 调用新的 Office.js API `getAccessTokenAsync`。 这会指示 Office 主机应用程序获取对加载项的访问令牌。 （以下称为**加载项令牌**。）
-1. 如果用户未登录，Office 主机应用程序会打开弹出窗口，以供用户登录。
+![SSO 过程关系图](../images/sso-overview-diagram.png)
+
+1. 在加载项中，JavaScript 调用新的 Office.js API `getAccessTokenAsync`。这指示 Office 主机应用获取对加载项的访问令牌（以下称为“加载项令牌”****）。
+1. 如果用户未登录，Office 主机应用会打开弹出窗口，以供用户登录。
 1.  如果当前用户是首次使用加载项，则会看到同意提示。
 1. Office 主机应用程序从当前用户的 Azure AD v2.0 终结点请求获取**加载项令牌**。
 1. Azure AD 将加载项令牌发送给 Office 主机应用程序。
@@ -43,8 +51,8 @@
 
 此部分介绍了创建启用 SSO 的 Office 加载项所需完成的任务。 其中介绍的这些任务与语言和框架无关。 有关详细演练的示例，请参阅：
 
-* [创建使用单一登录的 Node.js Office 加载项](../develop/create-sso-office-add-ins-nodejs.md)
-* [创建使用单一登录的 ASP.NET Office 加载项](../develop/create-sso-office-add-ins-aspnet.md)
+* [创建使用单一登录的 Node.js Office 加载项](create-sso-office-add-ins-nodejs.md)
+* [创建使用单一登录的 ASP.NET Office 加载项](create-sso-office-add-ins-aspnet.md)
 
 ### <a name="create-the-service-application"></a>创建服务应用程序
 
@@ -89,7 +97,7 @@ function mytokenHandler(asyncResult) {
 
 ### <a name="add-server-side-code"></a>添加服务器端代码
 
-创建可获取 Microsoft Graph 数据的一个或多个 Web API 方法。 可以使用一些库简化需要编写的代码，具体视语言和框架而定。 服务器端代码应执行以下操作：
+创建可获取 Microsoft Graph 数据的一个或多个 Web API 方法。根据所用的语言和框架，可能存在一些库，可简化必须编写的代码。服务器端代码应执行以下操作：
 
 * 验证从之前创建的令牌处理程序收到的加载项令牌。
 * 通过调用 Azure AD v2.0 终结点启动“代表”流，该终结点包括外接程序访问令牌、关于用户的一些元数据以及外接程序的凭据（其 ID 和机密）。

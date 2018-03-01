@@ -1,3 +1,9 @@
+---
+title: 在 Office 外接程序中使用 OAuth 授权框架
+description: ''
+ms.date: 12/04/2017
+---
+
 
 # <a name="use-the-oauth-authorization-framework-in-an-office-add-in"></a>在 Office 外接程序中使用 OAuth 授权框架
 
@@ -7,11 +13,12 @@ OAuth 是授权的开放式标准，Office 365、Facebook、Google、SalesForce�
 
 本主题介绍如何在您的外接程序中实施身份验证流程以执行用户身份验证。本主题中包括的代码段采用的是 [Office-Add-in-NodeJS-ServerAuth](https://github.com/OfficeDev/Office-Add-in-NodeJS-ServerAuth) 代码示例。
 
- **注意** 出于安全考虑，不允许浏览器在 IFrame 中显示登录页。根据您的客户所采用的 Office 版本，特别是基于 Web 的版本，您的外接程序将显示在 IFrame 中。这样需要考虑如何管理身份验证流程。 
+> [!NOTE]
+> 出于安全考虑，不允许浏览器在 IFrame 中显示登录页。根据您的客户所采用的 Office 版本，特别是基于 Web 的版本，您的外接程序将显示在 IFrame 中。这样需要考虑如何管理身份验证流程。  
 
 下图显示了所需的组件和在您的外接程序中实施身份验证时所发生的事件流。
 
-![在 Office 外接程序中执行 OAuth 身份验证](../images/OAuthInOfficeAddin.png)
+![在 Office 外接程序中执行 OAuth 身份验证](../images/oauth-in-office-add-in.png)
 
 该图显示了如何使用以下所需的组件：
 
@@ -24,10 +31,11 @@ OAuth 是授权的开放式标准，Office 365、Facebook、Google、SalesForce�
     
 
     
- **重要说明** 无法将访问令牌返回到任务窗格，但可以在服务器上使用它们。在此代码示例中，访问令牌在数据库中存储时长为 2 分钟。2 分钟之后，数据库中的令牌会被清除，并且系统会提示用户重新进行身份验证。在自身实现中更改此时间段之前，请考虑将访问令牌存储在数据库中的时长超过 2 分钟会带来的相关安全风险。
+> [!IMPORTANT]
+> 无法将访问令牌返回到任务窗格，但可以在服务器上使用它们。在此代码示例中，访问令牌在数据库中存储时长为 2 分钟。2 分钟之后，数据库中的令牌会被清除，并且系统会提示用户重新进行身份验证。在自身实现中更改此时间段之前，请考虑将访问令牌存储在数据库中的时长超过 2 分钟会带来的相关安全风险。
 
 
-## <a name="step-1---start-socket-and-open-a-pop-up-window"></a>步骤 1 - 启动套接字并打开一个弹出窗口
+## <a name="step-1---start-socket-and-open-a-pop-up-window"></a>第 1 步 - 启动套接字并打开弹出窗口
 
 当您运行此代码示例时，任务窗格外接程序显示在 Office 中。当用户选择要登录到的 OAuth 提供程序时，外接程序首先创建套接字。此示例使用套接字提供良好的外接程序用户体验。外接程序使用套接字与用户沟通身份验证的成功或失败。通过使用套接字，外接程序的主页可轻松地更新身份验证状态，并不需要用户交互或轮询。下面的代码段来自 routes/connect.js，显示了如何启动套接字。套接字使用 **decodedNodeCookie**（外接程序的会话 ID）命名。此代码示例通过使用 [socket.io](http://socket.io/) 创建套接字。
 
@@ -114,9 +122,7 @@ router.get('/azure/:sessionID', function(req, res, next) {
 ```
 
 
-## <a name="additional-resources"></a>其他资源
-<a name="bk_addresources"> </a>
+## <a name="see-also"></a>另请参阅
 
-
-- [Node.js 的 Office 外接程序服务器身份验证示例](https://github.com/OfficeDev/Office-Add-in-Nodejs-ServerAuth/blob/master/README.md)
+- [Node.js 的 Office 加载项服务器身份验证示例](https://github.com/OfficeDev/Office-Add-in-Nodejs-ServerAuth/blob/master/README.md)
     

@@ -1,13 +1,20 @@
-# <a name="testing-script-lab-integration"></a>测试脚本实验室集成
+---
+title: 测试 Script Lab 集成
+description: ''
+ms.date: 12/04/2017
+---
+
+
+# <a name="testing-script-lab-integration"></a>测试 Script Lab 集成
 
 这是一个示例测试文件，旨在演示即将推出的 ScriptLab 功能，这将使开发人员能够在 Excel、Word、PowerPoint 中试用他们的片段。  
 
-## <a name="pre-reqs"></a>必备组件：
-- 将需要 ScriptLab 片段的视图 URL
-- 注意：我们*应该*指出 ScriptLab 需要 Office 365 来探索最新的片段。开发人员可以通过 [Office 365 开发人员计划](https://dev.office.com/devprogram)获取 Office 365 订阅，仅用于开发目的。  
+## <a name="prerequisites"></a>先决条件
+- 需要 ScriptLab 代码片段提供的查看 URL
+- 注意：*应*指出 ScriptLab 需要使用 Office 365，才能探索最新代码片段。开发人员可以通过 [Office 365 开发人员计划](https://dev.office.com/devprogram)，获取仅用于开发的 Office 365 订阅。  
 
 
-## <a name="try-it-out-button"></a>试用“按钮”
+## <a name="try-it-out-button"></a>“试用”按钮
 这样，我们将添加一个“试用”按钮，建议将其与代码片段相关联。为实现此操作，我们使用 Office UI Fabric 类将链接设置为按钮。在链接本身上，请务必设置 *aria label* 属性。
 
 **演示：**
@@ -40,3 +47,5 @@
 我们需要验证非 Office 365 移动订阅（我们具有针对 office js docs 的反馈，其中很多开发人员使用的是 2013 的一个版本或更早版本。  
 
 对于嵌入路径，我们需要进行最终签署，并且需要确保在查看梗概页面中显示的内容符合我们的辅助功能准则。
+
+## <a name="see-also"></a>另请参阅

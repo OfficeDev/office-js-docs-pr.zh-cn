@@ -1,4 +1,11 @@
-#<a name="layout-for-task-pane-containers"></a>任务窗格容器的布局
+---
+title: 任务窗格容器的布局
+description: ''
+ms.date: 12/04/2017
+---
+
+
+# <a name="layout-for-task-pane-containers"></a>任务窗格容器的布局
 
 
 使用建议的设计布局为任务窗格容器创建一致的外观和风格。任务窗格的建议布局包括以下元素： 
@@ -7,10 +14,14 @@
 - 外接程序内容
 - 品牌元素（可选）
 
-![任务窗格的布局，显示品牌、导航和内容元素](../../images/layouts_taskpane_v0.02.png)
+![任务窗格的布局，显示品牌、导航和内容元素](../../images/layouts-taskpane-v0.02.png)
 
-你还可以向任务窗格添加[基于 HTML 的自定义 UI](ui-elements.md#custom-HTML-based-UI)。
+你还可以向任务窗格添加[基于 HTML 的自定义 UI](ui-elements.md#custom-html-based-ui)。
 
-有关演示如何在 Office 外接程序中使用 Office UI Fabric 的示例，请参见 [Office 外接程序结构 UI 示例](https://github.com/OfficeDev/Office-Add-in-Fabric-UI-Sample)。
+有关展示了如何在 Office 加载项中使用 Office UI Fabric 的示例，请参阅 [Office 加载项 Fabric UI 示例](https://github.com/OfficeDev/Office-Add-in-Fabric-UI-Sample)。
 
 <!-- Add sample template for content add-in and individual building blocks - Branding, Navigation bar or pivot, input, layout components -->
+
+## <a name="see-also"></a>另请参阅
+
+- [Office 加载项设计指南](../add-in-design.md)

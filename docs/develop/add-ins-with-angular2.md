@@ -1,17 +1,28 @@
-# <a name="tips-for-creating-office-add-ins-with-angular"></a>使用 Angular 创建 Office 外接程序的技巧
+---
+title: 使用 Angular 开发 Office 加载项
+description: ''
+ms.date: 12/04/2017
+---
 
-本文介绍了如何使用 Angular 2+ 将 Office 外接程序创建为单页应用程序。
+# <a name="develop-office-add-ins-with-angular"></a>使用 Angular 开发 Office 加载项
 
->**注意：**根据自身体验，是否要参与有关使用 Angular 创建 Office 外接程序的文章？可以在 [GitHub](https://github.com/OfficeDev/office-js-docs) 中参与本文，也可以通过在存储库中提交[问题](https://github.com/OfficeDev/office-js-docs/issues)来提供反馈。 
+本文介绍了如何使用 Angular 2+ 将 Office 加载项创建为单页应用。
 
-有关使用 Angular 框架生成的 Office 外接程序示例，请参阅[使用 Angular 生成的 Word 样式检查外接程序](https://github.com/OfficeDev/Word-Add-in-Angular2-StyleChecker)。
+> [!NOTE]
+> 根据自身体验，是否要参与有关使用 Angular 创建 Office 加载项的文章？可以在 [GitHub](https://github.com/OfficeDev/office-js-docs) 中参与本文，也可以通过在存储库中提交[问题](https://github.com/OfficeDev/office-js-docs-pr/issues)来提供反馈。 
 
-## <a name="install-the-typescript-type-definitions"></a>安装 TypeScript 键入定义
-打开 nodejs 窗口，然后在命令行输入以下命令：`npm install --save-dev @types/office-js`。
+有关使用 Angular 框架生成的 Office 加载项示例，请参阅[使用 Angular 生成的 Word 样式检查加载项](https://github.com/OfficeDev/Word-Add-in-Angular2-StyleChecker)。
 
-## <a name="bootstrapping-must-be-inside-officeinitialize"></a>Bootstrapping 必须在 Office.initialize 内
+## <a name="install-the-typescript-type-definitions"></a>安装 TypeScript 类型定义
+打开 nodejs 窗口，并在命令行处输入以下命令： 
 
-在任意调用 Office、Word 或 Excel JavaScript API 的页面上，代码必须首先向 `Office.initialize` 属性分配一个方法。（如果没有初始化代码，则方法主体可以仅为空的“`{}`”符号，但必须对 `Office.initialize` 属性进行定义。有关详细信息，请参阅 [初始化外接程序](http://dev.office.com/docs/add-ins/develop/understanding-the-javascript-api-for-office#initializing-your-add-in)。）Office 在该方法初始化 Office JavaScript 库后立即对其调用。
+```bash
+npm install --save-dev @types/office-js`
+```
+
+## <a name="bootstrapping-must-be-inside-officeinitialize"></a>启动代码必须位于 Office.initialize 内
+
+在任意调用 Office、Word 或 Excel JavaScript API 的页面上，代码必须首先向 `Office.initialize` 属性分配一个方法。（如果没有初始化代码，则方法主体可以仅为空的“`{}`”符号，但必须对 `Office.initialize` 属性进行定义。有关详细信息，请参阅 [初始化外接程序](understanding-the-javascript-api-for-office.md#initializing-your-add-in)。）Office 在该方法初始化 Office JavaScript 库后立即对其调用。
 
 **Angular bootstrapping 代码必须在你分配到 `Office.initialize` 的方法内调用**，以确保 Office JavaScript 库首先进行了初始化。以下是演示如何执行该操作的简单示例。此代码应在项目的 main.ts 文件中。
 
@@ -77,7 +88,7 @@ Office 外接程序对话框 API 可使外接程序打开半模态对话框中�
 
 在 Angular 应用中，UI 有时不更新。这是因为部分代码在 Angular 区域外运行。解决方案将代码放在该区域中，如下面的示例所示。
 
-```ts
+```js
 import { NgZone } from '@angular/core';
 
 export class MyComponent {

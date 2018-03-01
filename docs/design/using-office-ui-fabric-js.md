@@ -1,16 +1,23 @@
+---
+title: 在 Office 加载项中使用 Office UI Fabric JS
+description: ''
+ms.date: 12/04/2017
+---
 
-# <a name="use-office-ui-fabric-js-in-office-add-ins"></a>在 Office 外接程序中使用 Office UI Fabric JS
+# <a name="use-office-ui-fabric-js-in-office-add-ins"></a>在 Office 加载项中使用 Office UI Fabric JS
 
 Office UI Fabric 是用于生成 Office 和 Office 365 用户体验的 JavaScript 前端框架。如果仅使用 JavaScript，而不使用 Angular 或 React 等框架，可考虑使用 Fabric JS 创建用户体验。有关详细信息，请参阅 [Office UI Fabric JS](https://dev.office.com/fabric-js)
 
-本文逐步展示了使用 Fabric JS 的基础知识。  
+本文逐步介绍了使用 Fabric JS 的基础知识。  
 
 ## <a name="add-the-fabric-cdn-references"></a>添加 Fabric CDN 引用
 若要从 CDN 引用 Fabric，请在页面中添加以下 HTML 代码。
 
-    <link rel="stylesheet" href="https://static2.sharepointonline.com/files/fabric/office-ui-fabric-js/1.4.0/css/fabric.min.css">
-    <link rel="stylesheet" href="https://static2.sharepointonline.com/files/fabric/office-ui-fabric-js/1.4.0/css/fabric.components.min.css">
-    <script src="https://static2.sharepointonline.com/files/fabric/office-ui-fabric-js/1.4.0/js/fabric.min.js"></script>
+```html
+<link rel="stylesheet" href="https://static2.sharepointonline.com/files/fabric/office-ui-fabric-js/1.4.0/css/fabric.min.css">
+<link rel="stylesheet" href="https://static2.sharepointonline.com/files/fabric/office-ui-fabric-js/1.4.0/css/fabric.components.min.css">
+<script src="https://static2.sharepointonline.com/files/fabric/office-ui-fabric-js/1.4.0/js/fabric.min.js"></script>
+```
 
 ## <a name="use-fabric-js-ux-components"></a>使用 Fabric JS 用户体验组件
 
@@ -45,16 +52,16 @@ Fabric JS 提供了多个可在外接程序中使用的用户体验组件，如�
 - 更新了某些图标类名和样式。
 - 最明显的变化是在多个组件中使用 `<label>` 元素。`<label>` 元素控制组件样式。可能需要更新用户体验代码，才能使用 `<label>` 元素。例如，更改 Fabric JS 复选框上 `<input>` 元素的 checked 属性值对复选框不会产生任何影响。请改用 `check`、`unCheck` 或 `toggle` 函数。   
 
-## <a name="next-steps"></a>后续步骤
+## <a name="implementation"></a>实现
 若要获得端到端代码示例以了解如何使用 Fabric JS，我们已经为你准备好了。请参阅以下资源：
 
-- [Excel 销售额跟踪程序](https://github.com/OfficeDev/Excel-Add-in-JavaScript-SalesTracker) 
+- [Excel 销售额跟踪器](https://github.com/OfficeDev/Excel-Add-in-JavaScript-SalesTracker) 
 
-## <a name="related-resources"></a>相关资源
-若要获得有关旧版 Fabric 的代码示例或文档，请参阅以下资源：
+## <a name="see-also"></a>另请参阅
+有关旧版 Fabric 的代码示例或文档，请参阅以下资源：
 
 - [用户体验设计模式（使用 Fabric 2.6.1）](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code) 
 - [Office 外接程序 Fabric UI 示例（使用 Fabric 1.0）](https://github.com/OfficeDev/Office-Add-in-Fabric-UI-Sample) 
-- [在 Office 外接程序中使用 Fabric 2.6.1](https://dev.office.com/docs/add-ins/design/ui-elements/using-office-ui-fabric)
+- [在 Office 加载项中使用 Fabric 2.6.1](ui-elements/using-office-ui-fabric.md)
  
 

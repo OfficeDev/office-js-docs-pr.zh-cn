@@ -1,10 +1,16 @@
-# <a name="troubleshoot-user-errors-with-office-add-ins"></a>解决 Office 外接程序中的用户错误
+---
+title: 排查 Office 加载项中的用户错误
+description: ''
+ms.date: 01/23/2018
+---
+
+# <a name="troubleshoot-user-errors-with-office-add-ins"></a>排查 Office 加载项中的用户错误
 
 有时，您的用户在使用您开发的 Office 外接程序时可能会遇到问题。例如，外接程序无法加载或无法访问。使用本文中的信息有助于解决您的用户在使用 Office 外接程序时遇到的常见问题。 
 
-您还可以使用 [Fiddler](http://www.telerik.com/fiddler) 识别和调试外接程序中的问题。
+还可以使用 [Fiddler](http://www.telerik.com/fiddler) 发现和调试加载项问题。
 
-解决用户的问题后，您可以 [在 Office 应用商店中直接回复客户评论](https://msdn.microsoft.com/library/jj635874.aspx)。
+解决用户的问题后，可以[在 AppSource 中直接回复客户评论](https://docs.microsoft.com/zh-cn/office/dev/store/create-effective-office-store-listings)。
 
 ## <a name="common-errors-and-troubleshooting-steps"></a>常见错误和故障排除步骤
 
@@ -14,10 +20,11 @@
 
 |**错误消息**|**解决方案**|
 |:-----|:-----|
-|应用程序错误：无法访问目录|验证防火墙设置。"目录"指 Office 应用商店。此消息指示用户无法访问 Office 应用商店。|
-|应用程序错误： 无法启动此应用程序。 关闭此对话框 忽略此问题或单击 "重新启动"以重试。|确认已安装最新的 Office 更新，或下载 [Office 2013 更新](https://support.microsoft.com/en-us/kb/2986156/)。|
+|应用错误：无法访问目录|验证防火墙设置。“目录”是指 AppSource。此消息表明用户无法访问 AppSource。|
+|应用错误：无法启动此应用。若要忽略此问题，请关闭这个对话框。若要重试，请单击“重启”。|确认已安装最新的 Office 更新，或下载 [Office 2013 更新](https://support.microsoft.com/en-us/kb/2986156/)。|
 |错误：对象不 支持此属性或方法 "defineProperty"|确认 Internet Explorer 不是在兼容模式下运行。转到“工具”>“**兼容性视图设置**”。|
-|很抱歉，我们无法加载 该应用程序，因为您的浏览器 版本不受支持。 单击此处查看 支持的浏览器版本的列表。|确保浏览器支持 HTML5 本地存储，或重置您的 Internet Explorer 设置。有关受支持的浏览器的信息，请参阅 [运行 Office 加载项的要求](../overview/requirements-for-running-office-add-ins.md)。|
+|很抱歉，我们无法加载 该应用程序，因为您的浏览器 版本不受支持。 单击此处查看 支持的浏览器版本的列表。|确保浏览器支持 HTML5 本地存储，或重置您的 Internet Explorer 设置。有关受支持的浏览器的信息，请参阅 [运行 Office 加载项的要求](../concepts/requirements-for-running-office-add-ins.md)。|
+
 
 ## <a name="outlook-add-in-doesnt-work-correctly"></a>Outlook 外接程序不能正常工作
 
@@ -44,9 +51,11 @@
     
 确认是否已安装最新的 Office 更新程序，或下载 [Office 2013 更新程序](https://support.microsoft.com/en-us/kb/2986156/)。
 
+
 ## <a name="add-in-doesnt-load-in-task-pane-or-other-issues-with-the-add-in-manifest"></a>外接程序无法在任务窗格中加载，或外接程序清单存在其他问题
 
 请参阅[验证并排查清单问题](troubleshoot-manifest.md)，针对外接程序清单问题进行调试。
+
 
 ## <a name="add-in-dialog-box-cannot-be-displayed"></a>无法显示外接程序对话框
 
@@ -62,7 +71,8 @@
 
 若要解决此问题，最终用户或管理员可以向 Internet Explorer 中的受信任站点列表添加外接程序的域。无论使用的是 Internet Explorer 还是 Microsoft Edge 浏览器，请使用相同过程。
 
->**重要说明：**如果不信任某个外接程序，请不要将该外接程序的 URL 添加到受信任站点的列表中。
+> [!IMPORTANT]
+> 请勿将不信任的加载项的 URL 添加到受信任网站列表中。
 
 要将 URL 添加到受信任站点的列表中，请执行以下操作：
 
@@ -71,15 +81,15 @@
 3. 输入错误消息中显示的 URL，然后选择“**添加**”。
 4. 再次尝试使用外接程序。如果问题仍然存在，请验证其他安全区域的设置，并确保外接程序域与 Office 应用程序地址栏中显示的 URL 处于同一区域。
 
-在弹出模式中使用对话框 API 时，会出现此问题。若要避免出现此问题，请使用 [displayInFrame](http://dev.office.com/reference/add-ins/shared/officeui.displaydialogasync) 标记。这要求页面支持在 iframe 中进行显示。以下示例演示如何使用此标记。
+在弹出模式中使用对话框 API 时，会出现此问题。若要避免出现此问题，请使用 [displayInFrame](https://dev.office.com/reference/add-ins/shared/officeui.displaydialogasync) 标记。这要求页面支持在 iframe 中进行显示。以下示例演示如何使用此标记。
 
 ```js
 
 Office.context.ui.displayDialogAsync(startAddress, {displayInFrame:true}, callback);
 ```
 
-## <a name="changes-to-add-in-commands-including-ribbon-buttons-and-menu-items-do-not-take-effect"></a>对外接程序命令的更改（包括功能区按钮和菜单项）未生效
-有时，对外接程序命令的更改（例如功能区按钮的图标或菜单项的文本）看上去未生效。 请清除旧版本的 Office 缓存。
+## <a name="changes-to-add-in-commands-including-ribbon-buttons-and-menu-items-do-not-take-effect"></a>对加载项命令（包括功能区按钮和菜单项）的更改未生效
+有时，对加载项命令（如功能区按钮图标或菜单项文本）的更改似乎未生效。请清除旧版的 Office 缓存。
 
 #### <a name="for-windows"></a>对于 Windows：
 删除文件夹 `%LOCALAPPDATA%\Microsoft\Office\16.0\Wef\` 的内容。
@@ -88,12 +98,12 @@ Office.context.ui.displayDialogAsync(startAddress, {displayInFrame:true}, callba
 删除文件夹 `/Users/{your_name_on_the_device}/Library/Containers/com.Microsoft.OsfWebHost/Data/` 的内容。
 
 #### <a name="for-ios"></a>对于 iOS：
-从外接程序中的 JavaScript 调用 `window.location.reload(true)` 来强制重载。或者，可以重新安装 Office。
+在加载项中通过 JavaScript 调用 `window.location.reload(true)`，以强制重载。也可以重新安装 Office。
 
-## <a name="additional-resources"></a>其他资源
+## <a name="see-also"></a>另请参阅
 
-- [调试 Office Online 中的外接程序](../testing/debug-add-ins-in-office-online.md) 
-- [将 Office 外接程序旁加载到 iPad 和 Mac 上](../testing/sideload-an-office-add-in-on-ipad-and-mac.md)  
-- [在 iPad 和 Mac 上调试 Office 外接程序](../testing/debug-office-add-ins-on-ipad-and-mac.md)  
+- [在 Office Online 中调试加载项](debug-add-ins-in-office-online.md) 
+- [将 Office 外接程序旁加载到 iPad 和 Mac 上](sideload-an-office-add-in-on-ipad-and-mac.md)  
+- [在 iPad 和 Mac 上调试 Office 外接程序](debug-office-add-ins-on-ipad-and-mac.md)  
 - [验证并排查清单问题](troubleshoot-manifest.md)
     

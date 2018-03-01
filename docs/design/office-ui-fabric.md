@@ -1,4 +1,11 @@
-# <a name="office-ui-fabric-in-office-add-ins"></a>Office 外接程序中的 Office UI Fabric 
+---
+title: Office 加载项中的 Office UI Fabric
+description: ''
+ms.date: 12/04/2017
+---
+
+
+# <a name="office-ui-fabric-in-office-add-ins"></a>Office 加载项中的 Office UI Fabric 
 
 Office UI Fabric 是用于生成 Office 和 Office 365 用户体验的 JavaScript 前端框架。Fabric 提供了以视觉对象为中心的组件，可在 Office 外接程序中进行扩展、返工和使用。由于 Fabric 使用的是 Office 设计语言，因此 Fabric 的用户体验组件看起来像是 Office 的自然扩展。 
 
@@ -13,24 +20,28 @@ Fabric Core 包含设计语言的基本元素，如图标、颜色、类型和�
 
 1. 向页面上的 HTML 添加 CDN 参考。  
 
-    `<link rel="stylesheet" href="https://static2.sharepointonline.com/files/fabric/office-ui-fabric-js/1.4.0/css/fabric.min.css">`   
+    ```html
+    <link rel="stylesheet" href="https://static2.sharepointonline.com/files/fabric/office-ui-fabric-js/1.4.0/css/fabric.min.css">
+    ```   
     
 2. 使用 Fabric 图标和字体。 
 
-若要使用 Fabric 图标，在页面上包括“i”元素，然后引用适当的类。可以通过更改字号来控制图标的大小。例如，下面的代码展示了如何制作使用 themePrimary (#0078d7) 颜色的超大表图标。 
+    若要使用 Fabric 图标，在页面上包括“i”元素，然后引用适当的类。可以通过更改字号来控制图标的大小。例如，下面的代码展示了如何制作使用 themePrimary (#0078d7) 颜色的超大表图标。 
    
-`<i class="ms-Icon ms-font-xl ms-Icon--Table ms-fontColor-themePrimary"></i>`
+    ```html
+    <i class="ms-Icon ms-font-xl ms-Icon--Table ms-fontColor-themePrimary"></i>
+    ```
 
-若要查找 Office UI Fabric 中可用的更多图标，请在“[图标](https://dev.office.com/fabric#/styles/icons)”页上使用搜索功能。找到要在外接程序中使用的图标后，请务必在图标名称前加上前缀 `ms-Icon--`。 
+    若要查找 Office UI Fabric 中可用的更多图标，请在“[图标](https://dev.office.com/fabric#/styles/icons)”页上使用搜索功能。找到要在外接程序中使用的图标后，请务必在图标名称前加上前缀 `ms-Icon--`。 
 
-若要了解 Office UI Fabric 中可用的字号和颜色，请参阅[版式](https://dev.office.com/fabric#/styles/typography)和[颜色](https://dev.office.com/fabric#/styles/colors)。
+    若要了解 Office UI Fabric 中可用的字号和颜色，请参阅[版式](https://dev.office.com/fabric#/styles/typography)和[颜色](https://dev.office.com/fabric#/styles/colors)。
  
 ## <a name="use-fabric-components"></a>使用 Fabric 组件 
 Fabric 提供了多种可用于生成外界程序的 UX 组件，包括以下类型的组件：
 
 - 输入组件 - 如按钮、复选框和切换
 - 导航组件 - 如透视、痕迹
-- 通知组件 - 如消息栏、标注  
+- 通知组件 - 例如，消息栏和标注  
 
 并不建议在外接程序中使用所有 Fabric 组件。我们在本节中提供了有关如何使用推荐组件的指南。例如，有关在外接程序中使用 Fabric 按钮的指南，请参阅[按钮](button.md)。 
 
@@ -40,4 +51,4 @@ Fabric 提供了多种可用于生成外界程序的 UX 组件，包括以下类
 |:------------|:----------|
 |**仅 JavaScript**（无框架）|[在 Office 外接程序中使用 Office UI Fabric JS](using-office-ui-fabric-js.md)。|
 |**React**|[在 Office 外接程序中使用 Office UI Fabric React](using-office-ui-fabric-react.md )|
-|**Angular**| 请参阅 [ngOfficeUIFabric](http://ngofficeuifabric.com/)，此社区项目具有 Angular 1.5 指令，并[考虑使用 Angular 2 组件打包 Fabric 组件](https://dev.office.com/docs/add-ins/develop/add-ins-with-angular2#consider-wrapping-fabric-components-with-angular-2-components)|
+|**Angular**| 请参阅包含 Angular 1.5 指令的社区项目 [ngOfficeUIFabric](http://ngofficeuifabric.com/)，以及[考虑使用 Angular 2 组件包装 Fabric 组件](../develop/add-ins-with-angular2.md#consider-wrapping-fabric-components-with-angular-components)|

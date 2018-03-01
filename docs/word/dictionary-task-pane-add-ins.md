@@ -1,40 +1,43 @@
+---
+title: 创建字典任务窗格加载项
+description: ''
+ms.date: 12/04/2017
+---
 
-# <a name="create-a-dictionary-task-pane-add-in"></a>创建字典任务窗格外接程序
+
+# <a name="create-a-dictionary-task-pane-add-in"></a>创建字典任务窗格加载项
 
 
-本文显示任务窗格加载项和伴随的 Web 服务的示例，该 Web 服务为用户在 Word 2013 文档中的当前选择提供字典定义或同义词库同义词。 
+本文中的示例展示了任务窗格加载项和随附 Web 服务，用于提供用户当前在 Word 2013 文档中选择的内容的字典定义或同义词库同义词。 
 
 字典 Office 外接程序基于标准任务窗格外接程序，它具有附加功能来支持在 Office 应用程序的 UI 中的其他位置查询和显示字典 XML Web 服务的定义。 
 
-在典型的字典任务窗格外接程序中，用户在其文档中选择一个单词或短语，然后外接程序后面的 JavaScript 逻辑将此选项传递给字典提供程序的 XML Web 服务。然后，字典提供程序的网页更新，以向用户显示所选内容的定义。XML Web 服务组件最多以 OfficeDefinitions XML 架构定义的格式返回三个定义，然后会在宿主 Office 应用程序的 UI 中的其他位置向用户显示这些定义。图 1 显示所选内容并显示 Word 2013 中运行的必应品牌字典外接程序体验。
+在典型的字典任务窗格加载项中，用户在文档中选择某字词或短语，加载项依据的 JavaScript 逻辑将此选定内容传递给字典提供程序的 XML Web 服务。然后，字典提供程序的网页更新为，向用户显示选定内容的定义。XML Web 服务组件最多以 OfficeDefinitions XML 架构定义的格式返回三个定义，然后会在主机 Office 应用的 UI 中的其他位置向用户显示这些定义。图 1 展示了用户选择的内容，以及 Word 2013 中运行的必应品牌字典加载项显示的内容。
 
-**图 1.显示选定字词的定义的字典外接程序**
+*图 1：显示选定字词的定义的字典加载项*
 
+![显示定义的字典应用](../images/dictionary-agave-01.jpg)
 
-![显示定义的字典应用程序](../images/DictionaryAgave01.jpg)
+至于单击字典加载项 HTML UI 中的“了解详情”****链接后是在任务窗格中显示详细信息，还是打开单独的浏览器窗口来显示选定字词或短语的整个网页由你自己决定。图 2 展示了“定义”****上下文菜单命令，用于方便用户快速启动已安装的字典。图 3 至 5 展示了在哪些 Office UI 位置上可以使用字典 XML 服务在 Word 2013 中显示定义。
 
-由您来确定是单击字典外接程序的 HTML 用户界面中的**查看更多**链接以显示任务窗格中的详细信息，还是打开一个单独的浏览器窗口以显示所选的单词或短语的整个网页。图 2 显示了**定义**上下文菜单命令，它允许用户快速启动安装的字典。图 3 至 5 显示了 Office 用户界面中使用字典 XML 服务提供 Word 2013 定义的位置。
+*图 2：上下文菜单中的“定义”命令*
 
-**图 2.定义上下文菜单中的命令**
-
-
-
-![定义上下文菜单](../images/DictionaryAgave02.jpg)
-
-**图 3.“拼写”和“语法”窗格中的定义**
+![定义上下文菜单](../images/dictionary-agave-02.jpg)
 
 
-![“拼写”和“语法”窗格中的定义](../images/DictionaryAgave03.jpg)
+*图 3：拼写和语法窗格中的定义*
 
-**图 4.“同义词库”窗格中的定义**
-
-
-![“同义词库”窗格中的定义](../images/DictionaryAgave04.jpg)
-
-**图 5.“阅读模式”中的定义**
+![“拼写”和“语法”窗格中的定义](../images/dictionary-agave-03.jpg)
 
 
-![“阅读模式”中的定义](../images/DictionaryAgave05.jpg)
+*图 4：同义词库窗格中的定义*
+
+![“同义词库”窗格中的定义](../images/dictionary-agave-04.jpg)
+
+
+*图 5：阅读模式中的定义*
+
+![“阅读模式”中的定义](../images/dictionary-agave-05.jpg)
 
 若要创建可提供字典查找的任务窗格外接程序，需创建两个主要组件： 
 
@@ -87,9 +90,6 @@ XML Web 服务必须将对 Web 服务的查询作为符合 OfficeDefinitions XML
 
 返回的符合 OfficeDefinitions 架构的 XML 包含一个根 **Result** 元素，该元素包含一个 **Definitions** 元素，具有零到三个 **Definition** 子元素，每个子元素包含长度不超过 400 个字符的定义。此外，必须在 **SeeMoreURL** 元素中提供字典网站上完整网页的 URL。以下示例演示返回的符合 OfficeDefinitions 架构的 XML 的结构。
 
-
-
-
 ```XML
 <?xml version="1.0" encoding="utf-8"?>
 <Result xmlns="http://schemas.microsoft.com/NLG/2011/OfficeDefinitions">
@@ -109,7 +109,7 @@ XML Web 服务必须将对 Web 服务的查询作为符合 OfficeDefinitions XML
 以下 C# 代码提供了一个有关如何为 XML Web 服务编写代码的简单示例，该服务以 OfficeDefinitions XML 格式返回字典查询的结果。
 
 
-```C#
+```cs
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -172,8 +172,6 @@ public class WebService : System.Web.Services.WebService {
 
         return doc;
     }
-   
-
 }
 ```
 
@@ -181,7 +179,7 @@ public class WebService : System.Web.Services.WebService {
 ## <a name="creating-the-components-of-a-dictionary-add-in"></a>创建字典加载项的组件
 
 
-字典加载项包含三个主要组件文件。
+字典加载项包含三个主要组件文件：
 
 
 - 描述加载项的 XML 清单文件。
@@ -253,7 +251,7 @@ public class WebService : System.Web.Services.WebService {
 </OfficeApp>
 ```
 
-以下各节介绍了创建字典外接程序的清单文件时特定的 **Dictionary** 元素及其子元素。有关清单文件中的其他元素的信息，请参阅 [Office 外接程序 XML 清单](../overview/add-in-manifests.md)。
+以下各节介绍了创建字典外接程序的清单文件时特定的 **Dictionary** 元素及其子元素。有关清单文件中的其他元素的信息，请参阅 [Office 外接程序 XML 清单](../develop/add-in-manifests.md)。
 
 
 ### <a name="dictionary-element"></a>Dictionary 元素
@@ -277,7 +275,7 @@ public class WebService : System.Web.Services.WebService {
 #### <a name="targetdialects-element"></a>TargetDialects 元素
 
 
-指定此字典支持的多种区域语言。必需（字典外接程序）。
+指定此字典支持的区域语言集。对于字典加载项，此为必需元素。
 
  **父元素**
 
@@ -289,12 +287,9 @@ public class WebService : System.Web.Services.WebService {
 
  **备注**
 
- **TargetDialects** 元素及其子元素指定字典包含的区域语言集。例如，如果字典同时应用于西班牙语（墨西哥）和西班牙语（秘鲁），而不是西班牙语（西班牙），则可以在此元素中进行指定。不要在此清单中指定多种语言（例如西班牙语和英语）。将各语言发布为单独的字典。
+**TargetDialects** 元素及其子元素指定字典包含的区域语言集。例如，如果字典同时适用于西班牙语（墨西哥）和西班牙语（秘鲁），但不适用于西班牙语（西班牙），可以在此元素中进行指定。请勿在此清单中指定多种语言（例如，西班牙语和英语）。请将各种语言发布为单独的字典。
 
  **示例**
-
-
-
 
 ```XML
 <TargetDialects>
@@ -323,7 +318,7 @@ public class WebService : System.Web.Services.WebService {
 #### <a name="targetdialect-element"></a>TargetDialect 元素
 
 
-指定此字典支持的一种区域语言。必需（字典外接程序）。
+指定此字典支持的一种区域语言。对于字典加载项，此为必需元素。
 
  **父元素**
 
@@ -336,8 +331,6 @@ public class WebService : System.Web.Services.WebService {
  **示例**
 
 
-
-
 ```XML
 <TargetDialect>EN-US</TargetDialect>
 ```
@@ -346,7 +339,7 @@ public class WebService : System.Web.Services.WebService {
 #### <a name="queryuri-element"></a>QueryUri 元素
 
 
-为字典查询服务指定端点。必需（字典外接程序）。
+指定字典查询服务的终结点。对于字典加载项，此为必需元素。
 
  **父元素**
 
@@ -359,8 +352,6 @@ public class WebService : System.Web.Services.WebService {
  **示例**
 
 
-
-
 ```XML
 <QueryUri DefaultValue="http://msranlc-lingo1/proof.aspx?q="/>
 ```
@@ -369,7 +360,7 @@ public class WebService : System.Web.Services.WebService {
 #### <a name="citationtext-element"></a>CitationText 元素
 
 
-指定要在引文中使用的文本。必需（字典外接程序）。
+指定要在引文中使用的文本。对于字典加载项，此为必需元素。
 
  **父元素**
 
@@ -379,11 +370,9 @@ public class WebService : System.Web.Services.WebService {
 
 此元素指定将在从 Web 服务返回的内容之下的行中显示的引文文本的开头（例如，“Results by:”或“Powered by:”）。
 
-对于此元素，可以使用 **Override** 元素指定其他区域设置的值。例如，如果用户正在运行 Office 的西班牙语 SKU，但使用的是英语字典，则允许引文行读取“Resultados por: Bing”，而不是“Results by: Bing”。有关如何指定其他区域设置的值的详细信息，请参阅 [Office 外接程序 XML 清单](../overview/add-in-manifests.md)中的“为不同区域设置提供设置”一节。
+对于此元素，可以使用 **Override** 元素指定其他区域设置的值。例如，如果用户正在运行 Office 的西班牙语 SKU，但使用的是英语字典，则允许引文行读取“Resultados por: Bing”，而不是“Results by: Bing”。有关如何指定其他区域设置的值的详细信息，请参阅 [Office 外接程序 XML 清单](../develop/add-in-manifests.md)中的“为不同区域设置提供设置”一节。
 
  **示例**
-
-
 
 
 ```XML
@@ -394,7 +383,7 @@ public class WebService : System.Web.Services.WebService {
 #### <a name="dictionaryname-element"></a>DictionaryName 元素
 
 
-指定此字典的名称。必需（字典外接程序）。
+指定此字典的名称。对于字典加载项，此为必需元素。
 
  **父元素**
 
@@ -408,9 +397,6 @@ public class WebService : System.Web.Services.WebService {
 
  **示例**
 
-
-
-
 ```XML
 <DictionaryName DefaultValue="Bing Dictionary" />
 ```
@@ -419,7 +405,7 @@ public class WebService : System.Web.Services.WebService {
 #### <a name="dictionaryhomepage-element"></a>DictionaryHomePage 元素
 
 
-指定字典主页的 URL。必需（字典外接程序）。
+指定字典的主页 URL。对于字典加载项，此为必需元素。
 
  **父元素**
 
@@ -434,8 +420,6 @@ public class WebService : System.Web.Services.WebService {
  **示例**
 
 
-
-
 ```XML
 <DictionaryHomePage DefaultValue="http://www.bing.com" />
 ```
@@ -443,9 +427,7 @@ public class WebService : System.Web.Services.WebService {
 
 ### <a name="creating-a-dictionary-add-ins-html-user-interface"></a>创建字典外接程序的 HTML 用户界面
 
-
 以下两个示例演示用于演示字典外接程序的 UI 的 HTML 和 CSS 文件。若要查看 UI 在外接程序的任务窗格中如何显示，请参阅代码之后的图 6。若要查看 Dictionary.js 文件中 JavaScript 的实现如何为此 HTML UI 提供编程逻辑，请参阅本节后面紧接着的“编写 JavaScript 实现”。
-
 
 ```HTML
 <!DOCTYPE html>
@@ -488,10 +470,7 @@ public class WebService : System.Web.Services.WebService {
 
 以下示例显示 Style.css 的内容。
 
-
-
-
-```
+```CSS
 #mainContainer
 {
     font-family: Segoe UI;
@@ -530,10 +509,9 @@ a:hover, a:active
 }
 ```
 
+*图 6：演示字典 UI*
 
-**图 6.演示词典 UI**
-
-![演示字典 UI](../images/DictionaryAgave06.jpg)
+![演示字典 UI](../images/dictionary-agave-06.jpg)
 
 
 ### <a name="writing-the-javascript-implementation"></a>编写 JavaScript 实现
@@ -544,13 +522,13 @@ a:hover, a:active
 从此实现中调用的 JavaScript API for Office (Office.js) 的主要成员如下：
 
 
-- **Office** 对象的 [initialize](http://dev.office.com/reference/add-ins/shared/office.initialize) 事件，该事件在初始化外接程序上下文时引发，并提供对 [Document](http://dev.office.com/reference/add-ins/shared/document) 对象实例（表示外接程序与之交互的文档）的访问权限。
+- **Office** 对象的 [initialize](https://dev.office.com/reference/add-ins/shared/office.initialize) 事件，该事件在初始化外接程序上下文时引发，并提供对 [Document](https://dev.office.com/reference/add-ins/shared/document) 对象实例（表示外接程序与之交互的文档）的访问权限。
     
-- **Document** 对象的 [addHandlerAsync](http://dev.office.com/reference/add-ins/shared/document.addhandlerasync) 方法，在 **initialize** 函数中调用该方法，以便为文档的 [SelectionChanged](http://dev.office.com/reference/add-ins/shared/document.selectionchanged.event) 事件添加事件处理程序，从而侦听用户选择更改。
+- **Document** 对象的 [addHandlerAsync](https://dev.office.com/reference/add-ins/shared/document.addhandlerasync) 方法，在 **initialize** 函数中调用该方法，以便为文档的 [SelectionChanged](https://dev.office.com/reference/add-ins/shared/document.selectionchanged.event) 事件添加事件处理程序，从而侦听用户选择更改。
     
-- **Document** 对象的 [getSelectedDataAsync](http://dev.office.com/reference/add-ins/shared/document.getselecteddataasync) 方法，在引发 **SelectionChanged** 事件处理程序时会在 `tryUpdatingSelectedWord()` 函数中调用该方法，以获取用户选择的字词或短语，将其强制为纯文本，然后执行 `selectedTextCallback` 异步回调函数。
+- **Document** 对象的 [getSelectedDataAsync](https://dev.office.com/reference/add-ins/shared/document.getselecteddataasync) 方法，在引发 **SelectionChanged** 事件处理程序时会在 `tryUpdatingSelectedWord()` 函数中调用该方法，以获取用户选择的字词或短语，将其强制为纯文本，然后执行 `selectedTextCallback` 异步回调函数。
     
-- 当 `selectTextCallback` 异步回调函数（作为 **getSelectedDataAsync** 方法的 _callback_ 参数传递）执行时，它在回调返回时获取所选文本的值。它通过使用返回的 [AsyncResult](http://dev.office.com/reference/add-ins/shared/asyncresult) 对象的 [value](http://dev.office.com/reference/add-ins/shared/asyncresult.status) 属性从回调的 _selectedText_ 参数（类型为 **AsyncResult**）获取该值。
+- 当 `selectTextCallback` 异步回调函数（作为 **getSelectedDataAsync** 方法的 _callback_ 参数传递）执行时，它在回调返回时获取所选文本的值。它通过使用返回的 [AsyncResult](https://dev.office.com/reference/add-ins/shared/asyncresult) 对象的 [value](https://dev.office.com/reference/add-ins/shared/asyncresult.status) 属性从回调的 _selectedText_ 参数（类型为 **AsyncResult**）获取该值。
     
 - `selectedTextCallback` 函数中剩余的代码查询定义的 XML Web 服务。它还调入 Microsoft Translator API，以提供具有所选字词拼音的 .wav 文件的 URL。
     
@@ -559,7 +537,7 @@ a:hover, a:active
 
 
 
-```
+```javascript
 // The document the dictionary add-in is interacting with.
 var _doc; 
 // The last looked-up word, which is also the currently displayed word.

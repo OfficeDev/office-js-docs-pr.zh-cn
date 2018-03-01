@@ -1,14 +1,17 @@
-# <a name="powerpoint-add-ins"></a>PowerPoint 外接程序
+---
+title: PowerPoint 加载项
+description: ''
+ms.date: 12/04/2017
+---
+
+# <a name="powerpoint-add-ins"></a>PowerPoint 加载项
 
 你可以使用 PowerPoint 外接程序为用户演示文稿构建跨平台（包括 Windows、iOS、Office Online 和 Mac）出色解决方案。可以创建以下两种类型的外接程序：
 
 - 使用**内容外接程序**向演示文稿添加动态 HTML5 内容。有关示例，请参阅可用于将交互关系图从 LucidChart 插入面板的 [PowerPoint 的 LucidChart 关系图](https://store.office.com/en-us/app.aspx?assetid=WA104380117&ui=en-US&rs=en-US&ad=US&clickedfilter=OfficeProductFilter%3APowerPoint&productgroup=PowerPoint&homprd=PowerPoint&sourcecorrid=950950b7-aa6c-4766-95fa-e75d37266c21&homappcat=Productivity&homapppos=3&homchv=2&appredirect=false)外接程序。
 - 使用**任务窗格外界程序**引入参考信息或通过服务将数据插入幻灯片。有关示例，请参阅可用于在演示文稿中添加专业照片的 [Shutterstock 图像](https://store.office.com/en-us/app.aspx?assetid=WA104380169&ui=en-US&rs=en-US&ad=US&clickedfilter=OfficeProductFilter%3APowerPoint&productgroup=PowerPoint&homprd=PowerPoint&sourcecorrid=950950b7-aa6c-4766-95fa-e75d37266c21&homappcat=Editor%2527s%2BPicks&homapppos=0&homchv=1&appredirect=false)外接程序。 
 
-> [!NOTE]
-> 生成外接程序时，如果计划将外接程序[发布](../publish/publish.md)到 Office 应用商店，请务必遵循 [Office 应用商店验证策略](https://msdn.microsoft.com/zh-cn/library/jj220035.aspx)。例如，外接程序必须适用于支持你定义的方法的所有平台，才能通过验证（有关详细信息，请参阅[第 4.12 部分](https://msdn.microsoft.com/zh-cn/library/jj220035.aspx#Anchor_3)以及 [Office 外接程序主机和可用性](https://dev.office.com/add-in-availability)页）。
-
-## <a name="powerpoint-add-in-scenarios"></a>PowerPoint 外接程序应用场景
+## <a name="powerpoint-add-in-scenarios"></a>PowerPoint 加载项方案
 
 本文中的代码示例展示了开发 PowerPoint 内容外接程序涉及的一些基本任务。 
 
@@ -22,16 +25,15 @@
 若要生成内容外接程序，则需要获取演示文稿的活动视图，并在 Office.Initialize 处理程序期间处理 ActiveViewChanged 事件。
 
 
-- `getActiveFileView` 函数将调用 [Document.getActiveViewAsync](http://dev.office.com/reference/add-ins/shared/document.getactiveviewasync) 方法，以返回演示文稿的当前视图是“编辑”（你可在其中编辑幻灯片的任何视图，如**普通**或**大纲视图**）还是“阅读”（**幻灯片放映**或**阅读视图**）视图。
+- `getActiveFileView` 函数将调用 [Document.getActiveViewAsync](https://dev.office.com/reference/add-ins/shared/document.getactiveviewasync) 方法，以返回演示文稿的当前视图是“编辑”（你可在其中编辑幻灯片的任何视图，如**普通**或**大纲视图**）还是“阅读”（**幻灯片放映**或**阅读视图**）视图。
 
 
-- `registerActiveViewChanged` 函数调用 [addHandlerAsync](http://dev.office.com/reference/add-ins/shared/document.addhandlerasync) 方法，注册 [Document.ActiveViewChanged](http://dev.office.com/reference/add-ins/shared/document.activeviewchanged) 事件的处理程序。 
-> 注意：在 PowerPoint Online 中，[Document.ActiveViewChanged](http://dev.office.com/reference/add-ins/shared/document.activeviewchanged) 事件永远不会触发，因为幻灯片放映模式被视为新会话。在这种情况下，外接程序必须在加载时提取活动视图，如下所述。
+- `registerActiveViewChanged` 函数调用 [addHandlerAsync](https://dev.office.com/reference/add-ins/shared/document.addhandlerasync) 方法，以注册 [Document.ActiveViewChanged](https://dev.office.com/reference/add-ins/shared/document.activeviewchanged) 事件的事件处理程序。 
 
-
+> [!NOTE]
+> 在 PowerPoint Online 中，[Document.ActiveViewChanged](https://dev.office.com/reference/add-ins/shared/document.activeviewchanged) 事件永远不会触发，因为幻灯片放映模式被视为新会话。在这种情况下，加载项必须在加载时提取活动视图，如下所述。
 
 ```js
-
 //general Office.initialize function. Fires on load of the add-in.
 Office.initialize = function(){
 
@@ -58,7 +60,6 @@ function getActiveFileView()
 
 }
 
-
 function registerActiveViewChanged() {
     Globals.activeViewHandler = function (args) {
         app.showNotification(JSON.stringify(args));
@@ -79,7 +80,7 @@ function registerActiveViewChanged() {
 
 ## <a name="navigate-to-a-particular-slide-in-the-presentation"></a>转到演示文稿中的特定幻灯片
 
-`getSelectedRange` 函数将调用 [Document.getSelectedDataAsync](http://dev.office.com/reference/add-ins/shared/document.getselecteddataasync) 方法，以获取 `asyncResult.value` 返回的、包含名为“slides”的阵列的 JSON 对象，该阵列中包含所选幻灯片范围（或仅当前幻灯片）的 ID、标题和索引。它还会将所选范围内第一张幻灯片的 ID 保存到一个全局变量。
+`getSelectedRange` 函数将调用 [Document.getSelectedDataAsync](https://dev.office.com/reference/add-ins/shared/document.getselecteddataasync) 方法，以获取 `asyncResult.value` 返回的、包含名为“slides”的阵列的 JSON 对象，该阵列中包含所选幻灯片范围（或仅当前幻灯片）的 ID、标题和索引。它还会将所选范围内第一张幻灯片的 ID 保存到一个全局变量。
 
 
 ```js
@@ -99,7 +100,7 @@ function getSelectedRange() {
 }
 ```
 
-`goToFirstSlide` 函数将调用 [Document.goToByIdAsync](http://dev.office.com/reference/add-ins/shared/document.gotobyidasync) 方法，以转到上述 `getSelectedRange` 函数存储的第一张幻灯片的 ID。
+`goToFirstSlide` 函数调用 [Document.goToByIdAsync](https://dev.office.com/reference/add-ins/shared/document.gotobyidasync) 方法，以转到上述 `getSelectedRange` 函数存储的第一张幻灯片的 ID。
 
 
 
@@ -143,7 +144,7 @@ function goToSlideByIndex() {
 
 ## <a name="get-the-url-of-the-presentation"></a>获取演示文稿的 URL
 
-`getFileUrl` 函数调用 [Document.getFileProperties](http://dev.office.com/reference/add-ins/shared/document.getfilepropertiesasync) 方法，获取演示文稿文件的 URL。
+`getFileUrl` 函数调用 [Document.getFileProperties](https://dev.office.com/reference/add-ins/shared/document.getfilepropertiesasync) 方法，以获取演示文稿文件 URL。
 
 
 ```js
@@ -163,14 +164,10 @@ function getFileUrl() {
 
 
 
-## <a name="additional-resources"></a>其他资源
+## <a name="see-also"></a>另请参阅
 - [PowerPoint 代码示例](https://dev.office.com/code-samples#?filters=powerpoint)
-
-- [如何按文档保留内容和任务窗格外接程序的外接程序状态和设置](../develop/persisting-add-in-state-and-settings.md#how-to-save-add-in-state-and-settings-per-document-for-content-and-task-pane-add-ins)
-
-- [读取数据并将其写入文档或电子表格中的活动选择区](../develop/read-and-write-data-to-the-active-selection-in-a-document-or-spreadsheet.md)
-    
-- [从 PowerPoint 或 Word 相关外接程序中获取整个文档](../develop/get-the-whole-document-from-an-add-in-for-powerpoint-or-word.md)
-    
-- [在 PowerPoint 外接程序中使用文档主题](../powerpoint/use-document-themes-in-your-powerpoint-add-ins.md)
+- [如何每文档保存内容和任务窗格加载项的加载项状态和设置](../develop/persisting-add-in-state-and-settings.md#how-to-save-add-in-state-and-settings-per-document-for-content-and-task-pane-add-ins)
+- [对文档或电子表格中的活动选择执行数据读取和写入操作](../develop/read-and-write-data-to-the-active-selection-in-a-document-or-spreadsheet.md)
+- [通过 PowerPoint 或 Word 加载项获取整个文档](../powerpoint/get-the-whole-document-from-an-add-in-for-powerpoint.md)
+- [在 PowerPoint 加载项中使用文档主题](use-document-themes-in-your-powerpoint-add-ins.md)
     
