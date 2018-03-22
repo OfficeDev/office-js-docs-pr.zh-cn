@@ -12,7 +12,7 @@ Project 2013 使用与其他 Microsoft Office 2013 客户端相同的加载项�
 
 “Project OM 测试”示例加载项可以获取任务的 GUID，以及应用和有效项目的属性。 如果 Project Professional 2013 打开 SharePoint 库中的项目，加载项可以显示项目的 URL。 
 
-[Project 2013 SDK 下载内容](https://www.microsoft.com/en-us/download/details.aspx?id=30435%20)中包含完整源代码。 提取和安装 Project2013SDK.msi 文件中包含的 SDK 和示例时，请查看清单文件的 `\Samples\Apps\Copy_to_AppManifests_FileShare` 子目录和源代码的 `\Samples\Apps\Copy_to_AppSource_FileShare` 子目录。 
+[Project 2013 SDK 下载内容](https://www.microsoft.com/en-us/download/details.aspx?id=30435%20)包含完整源代码。提取和安装 Project2013SDK.msi 文件中的 SDK 和示例时，请在 `\Samples\Apps\Copy_to_AppManifests_FileShare` 子目录中查找清单文件，并在 `\Samples\Apps\Copy_to_AppSource_FileShare` 子目录中查找源代码。 
 
 JSOMCall.html 示例使用 office.js 文件和 project-15.js 文件中包含的 JavaScript 函数。 可以使用相应的调试文件（office.debug.js 和 project-15.debug.js）检查这些函数。
 

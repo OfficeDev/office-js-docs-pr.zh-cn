@@ -179,7 +179,7 @@ create-react-app my-addin
 
 ## <a name="next-steps"></a>后续步骤
 
-恭喜！已使用 React 成功创建 Excel 加载项！ 接下来，请详细了解 Excel 加载项功能，并跟着 Excel 加载项教程一起操作，生成更复杂的加载项。
+恭喜！已使用 React 成功创建 Excel 加载项！接下来，请详细了解 Excel 加载项功能，并跟着 Excel 加载项教程一起操作，生成更复杂的加载项。
 
 > [!div class="nextstepaction"]
 > [Excel 加载项教程](../tutorials/excel-tutorial-create-table.md)

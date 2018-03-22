@@ -22,7 +22,7 @@
 
 4. 在“创建 Office 加载项”****对话框窗口中，选择“将新功能添加到 PowerPoint”****，再选择“完成”****以创建项目。
 
-5. 此时，Visual Studio 创建解决方案，且它的两个项目显示在“解决方案资源管理器”****中。 **Home.html** 文件在 Visual Studio 中打开。
+5. 此时，Visual Studio 创建解决方案，且它的两个项目显示在“解决方案资源管理器”****中。**Home.html** 文件在 Visual Studio 中打开。
     
 ### <a name="explore-the-visual-studio-solution"></a>探索 Visual Studio 解决方案
 
@@ -52,7 +52,7 @@
     </body>
     ```
 
-2. 打开 Web 应用项目的根目录中的文件“Home.js”****。 此文件指定加载项脚本。 将整个内容替换为以下代码，并保存文件。
+2. 打开 Web 应用项目根目录中的文件“Home.js”****。 此文件指定加载项脚本。 将整个内容替换为以下代码，并保存文件。
 
     ```js
     'use strict';
@@ -97,7 +97,7 @@
     })();
     ```
 
-3. 打开 Web 应用项目的根目录中的文件“Home.css”****。 此文件指定加载项自定义样式。 将整个内容替换为以下代码，并保存文件。
+3. 打开 Web 应用项目根目录中的文件“Home.css”****。 此文件指定加载项自定义样式。 将整个内容替换为以下代码，并保存文件。
 
     ```css
     #content-header {
@@ -150,7 +150,7 @@
 
 ### <a name="try-it-out"></a>试用
 
-1. 使用 Visual Studio 的同时，按 F5 或选择“开始”****按钮启动 PowerPoint，以测试新建的 PowerPoint 加载项，功能区中显示有“显示任务窗格”****加载项按钮。 加载项本地托管在 IIS 上。
+1. 使用 Visual Studio 的同时，按 F5 或选择“开始”****按钮启动 PowerPoint，以测试新建的 PowerPoint 加载项，功能区中显示有“显示任务窗格”****加载项按钮。加载项本地托管在 IIS 上。
 
 2. 在 PowerPoint 中，插入新的空白幻灯片，再依次选择“主页”****选项卡和功能区中的“显示任务窗格”****按钮，以打开加载项任务窗格。
 
@@ -354,7 +354,7 @@
 
 ## <a name="next-steps"></a>后续步骤
 
-恭喜！已成功创建 PowerPoint 加载项！ 接下来，详细了解 PowerPoint 加载项功能，并探索常见方案的代码示例。
+恭喜！已成功创建 PowerPoint 加载项！接下来，详细了解 PowerPoint 加载项功能，并探索常见方案的代码示例。
 
 > [!div class="nextstepaction"]
 > [PowerPoint 加载项](../powerpoint/powerpoint-add-ins.md)

@@ -1,6 +1,9 @@
 如果表格很长，导致用户必须滚动才能看到一些行，那么标题行可能会在滚动时不可见。 本教程的这一步是，冻结以前创建的表格的标题行，让它在用户向下滚动工作表时依然可见。 
 
-## <a name="freeze-the-tables-header-row"></a>冻结表格的标题行
+> [!NOTE]
+> 此为 Excel 加载项分步教程页面。 如果是通过搜索引擎结果或其他直接链接到达此页面，请转到 [Excel 加载项教程](../tutorials/excel-tutorial.yml)介绍性页面，从头开始学习本教程。
+
+## <a name="freeze-the-tables-header-row"></a>冻结表的标题行
 
 1. 在代码编辑器中打开项目。 
 2. 打开文件 index.html。
@@ -40,8 +43,8 @@
     ``` 
 
 7. 将 `TODO1` 替换为以下代码。请注意以下几点：
-   - `Worksheet.freezePanes` 集合是工作表中一组在工作表滚动时就地固定或冻结的窗格。
-   - `freezeRows` 方法需要使用要就地固定的行数（自顶部算起）作为参数。 传递 `1` 以就地固定第一行。
+   - `Worksheet.freezePanes` 集合是工作表中的一组窗格，在工作表滚动时就地固定或冻结。
+   - `freezeRows` 方法需要使用要就地固定的行数（自顶部算起）作为参数。传递 `1` 可以就地固定第一行。
 
     ```js
     const currentWorksheet = context.workbook.worksheets.getActiveWorksheet();

@@ -12,3 +12,6 @@
       - name: Excel 加载项教程
         tocHref: /office/dev/add-ins/tutorials/excel-tutorial
         topicHref: /office/dev/add-ins/tutorials/excel-tutorial
+      - name: PowerPoint 加载项教程
+        tocHref: /office/dev/add-ins/tutorials/powerpoint-tutorial
+        topicHref: /office/dev/add-ins/tutorials/powerpoint-tutorial

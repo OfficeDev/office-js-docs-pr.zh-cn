@@ -48,7 +48,7 @@ Office 加载项包包含 XML [清单文件](../develop/add-in-manifests.md)，�
 
     此时，Visual Studio 生成发布加载项所需的文件，并打开发布输出文件夹。 
     
-如果计划将加载项提交到 AppSource，可以选择“执行验证检查”****链接，以发现任何可能会导致加载项遭拒的问题。 应先解决所有问题，再将加载项提交到 Microsoft Store。
+如果计划将加载项提交到 AppSource，可以选择“执行验证检查”****链接，以发现将会导致加载项被拒绝的任何问题。应先解决所有问题，再将加载项提交到应用商店。
 
 现在，可以将 XML 清单上传到适当位置，以[发布加载项](../publish/publish.md)。XML 清单位于 `app.publish` 文件夹的 `OfficeAppManifests` 中。例如：
 

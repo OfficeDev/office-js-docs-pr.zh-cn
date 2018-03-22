@@ -1,7 +1,7 @@
 在本教程中，请先设置开发项目。 
 
-> [!TIP]
-> 如果尚未设置，请阅读[使用 jQuery 的 Excel 加载项快速入门](../quickstarts/excel-quickstart-jquery.md?tabs=visual-studio-code)。 特别是，请务必了解如何旁加载 Excel 加载项以供测试。
+> [!NOTE]
+> 此为 Excel 加载项分步教程页面。 如果是通过搜索引擎结果或其他直接链接到达此页面，请转到 [Excel 加载项教程](../tutorials/excel-tutorial.yml)介绍性页面，从头开始学习本教程。
 
 ## <a name="prerequisites"></a>先决条件
 

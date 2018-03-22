@@ -1,10 +1,13 @@
 本教程的最后一步是，在加载项中打开对话框，将消息从对话框进程传递到任务窗格进程，再关闭对话框。 Office 加载项对话框是*非模式*窗口。也就是说，用户可以继续与主机 Office 应用中的文档，以及与任务窗格中的主机页进行交互。
 
+> [!NOTE]
+> 此为 Excel 加载项分步教程页面。 如果是通过搜索引擎结果或其他直接链接到达此页面，请转到 [Excel 加载项教程](../tutorials/excel-tutorial.yml)介绍性页面，从头开始学习本教程。
+
 ## <a name="create-the-dialog-page"></a>创建对话框页面
 
 1. 在代码编辑器中打开项目。
 2. 在项目的根目录（其中包含 index.html）中，创建 popup.html 文件。
-3. 将下面的标记添加到 popup.html 中。 注意：
+3. 将下面的标记添加到 popup.html 中。请注意以下几点：
    - 此页面包含可供用户输入用户名的 `<input>`，并包含将用户名发送到任务窗格中用户名显示页面的按钮。
    - 此标记加载在后续步骤中创建的 popup.js 脚本。
    - 此标记还加载 Office.JS 库和 jQuery，因为 popup.js 将使用它们。
@@ -41,9 +44,9 @@
     ```
 
 4. 在项目的根目录中，创建 popup.js 文件。
-5. 将下面的代码添加到 popup.js 中。 注意：
+5. 将下面的代码添加到 popup.js 中。请注意以下几点：
    - *所有调用 Office.JS 库中 API 的页面都必须向 `Office.initialize` 属性分配函数。* 如果不需要初始化，函数可以主体是空的，但此属性既不得未定义，也不得分配到空值或非函数值。 有关示例，请参阅项目根目录中的 app.js 文件。 分配代码必须先于任何 Office.JS 调用运行，因此分配代码位于页面加载的脚本文件中，正如本例所示。
-   - jQuery `ready` 函数在 `initialize` 方法内调用。 应在 `Office.initialize` 函数内加载、初始化或启动其他 JavaScript 库的代码，这几乎就是一条普遍性规则。
+   - jQuery `ready` 函数在 `initialize` 方法内调用。应在 `Office.initialize` 函数内加载、初始化或启动其他 JavaScript 库的代码，这几乎就是一条普遍性规则。
 
     ```js
     (function () {
@@ -62,7 +65,7 @@
     }());    
     ```
 
-6. 将 `TODO1` 替换为以下代码。 将在下一步中创建 `sendStringToParentPage` 函数。
+6. 将 `TODO1` 替换为下列代码。 将在下一步中创建 `sendStringToParentPage` 函数。
 
     ```js
     $('#ok-button').click(sendStringToParentPage);
@@ -104,13 +107,13 @@
 
 4. 打开 app.js 文件。
 
-5. 在向 `freeze-header` 按钮分配单击处理程序的代码行下方，添加下列代码。 `openDialog` 方法将在后续步骤中创建。
+5. 在向 `freeze-header` 按钮分配单击处理程序的代码行下方，添加下列代码。 `openDialog` 方法是在后续步骤中创建。
 
     ```js
     $('#open-dialog').click(openDialog);
     ```
 
-6. 在 `freezeHeader` 函数下方，添加下列声明。 此变量用于保留父页面执行上下文中的对象，以用作对话框页面执行上下文的中间对象。
+6. 在 `freezeHeader` 函数下方，添加下列声明。此变量用于保留父页面执行上下文中的对象，以用作对话框页面执行上下文的中间对象。
 
     ```js
     let dialog = null;
@@ -127,7 +130,7 @@
 8. 将 `TODO1` 替换为以下代码。注意：
    - `displayDialogAsync` 方法在屏幕中央打开对话框。
    - 第一个参数是要打开的页面 URL。
-   - 第二个参数用于传递选项。 `height` 和 `width` 是 Office 应用窗口大小百分比。 
+   - 第二个参数用于传递选项。`height` 和 `width` 是 Office 应用程序窗口大小百分比。 
    
     ```js
     Office.context.ui.displayDialogAsync(
@@ -140,8 +143,8 @@
 
 ## <a name="process-the-message-from-the-dialog-and-close-the-dialog"></a>处理对话框发送的消息并关闭对话框
 
-1. 继续使用 app.js 文件，将 `TODO2` 替换为以下代码。 注意：
-   - 回调在对话框成功打开后和用户在对话框中执行任何操作前立即执行。
+1. 继续使用 app.js 文件，将 `TODO2` 替换为下列代码。请注意以下几点：
+   - 回调在对话框成功打开后，且当用户在对话框中执行任何操作前立即执行。
    - `result.value` 对象用作父页面执行上下文和对话框页面执行上下文的中间对象。
    - `processMessage` 函数将在后续步骤中创建。 此处理程序将处理通过 `messageParent` 函数调用从对话框页面发送的任何值。
 
@@ -169,7 +172,7 @@
      > 虽然只要更改任意文件（包括 app.js 文件），浏览器同步服务器就会在任务窗格中重新加载加载项，但它不会重新转换 JavaScript。因此，必须重复执行生成命令，这样对 app.js 做出的更改才会生效。 为此，需要终止服务器进程，这样就可以通提示符输入生成命令。 生成后，重启服务器。 接下来的几步执行的就是此进程。
 
 1. 运行命令 `npm run build`，将 ES6 源代码转换为 Internet Explorer 支持的旧版 JavaScript（Excel 在后台用来运行 Excel 加载项）。
-2. 运行命令 `npm start`，启动在本地主机上运行的 Web 服务器。
+2. 运行命令 `npm start`，启动在 localhost 上运行的 Web 服务器。
 4. 通过关闭任务窗格来重新加载它，再选择“主页”****菜单上的“显示任务窗格”****，重新打开加载项。
 6. 选择任务窗格中的“打开对话框”****按钮。 
 7. 对话框打开后，拖动它并重设大小。 请注意，既可以与工作表进行交互，也可以按任务窗格上的其他按钮。 不过，无法从相同的任务窗格页面启动第二个对话框。

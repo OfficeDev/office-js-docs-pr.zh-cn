@@ -213,7 +213,7 @@ Excel.run(function (ctx) {
 ```
 ## <a name="42ornullobject-methods"></a>&#42;OrNullObject 方法
 
-如果不符合 API 的条件，许多 Excel JavaScript API 方法将返回异常。 例如，如果你尝试通过指定工作簿中不存在的工作表名称来获取工作表，则 `getItem()` 方法将返回 `ItemNotFound` 异常。 
+许多 Excel JavaScript API 方法都会在不符合 API 条件时返回异常。 例如，如果尝试通过指定工作簿中没有的工作表名称来获取工作表，`getItem()` 方法返回 `ItemNotFound` 异常。 
 
 可以使用可用于 Excel JavaScript API 中的多种方法的 `*OrNullObject` 方法变量，而不是为此类应用场景实现复杂的异常处理逻辑。 `*OrNullObject` 方法将返回 null 对象（不是 JavaScript `null`），而不是在指定项不存在的情况下引发异常。 例如，可以在集合（如 **Worksheets**）上调用 `getItemOrNullObject()` 方法，尝试从集合中检索某个项。 `getItemOrNullObject()` 方法返回指定的项（如果存在）；否则，它将返回 null 对象。 返回的 null 对象包含布尔属性 `isNullObject`，可以对其进行评估以确定该对象是否存在。
 

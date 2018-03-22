@@ -58,7 +58,7 @@ Office Online 中绝不会出现此错误。 如果用户的 Cookie 到期，Off
 
 ### <a name="13006"></a>13006
 
-客户端错误。 代码应提示用户注销并重启 Office，或重启 Office Online 会话。
+客户端错误。代码应提示用户注销并重启 Office，或重启 Office Online 会话。
 
 ### <a name="13007"></a>13007
 

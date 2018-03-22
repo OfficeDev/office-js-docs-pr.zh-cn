@@ -187,9 +187,9 @@ function incrementValue(increment, caller){
 可以取消流式处理函数和异步函数。 对于减少带宽消耗、工作内存和 CPU 负载，取消函数调用非常重要。 Excel 在以下情况下取消函数调用：
 - 用户编辑或删除引用函数的单元格。
 - 函数的参数（输入）之一发生变化。 在这种情况下，除了取消之外，还会触发新的函数调用。
-- 用户手动触发重新计算。 与上述情况一样，除了取消之外，还会触发新的函数调用。
+- 用户手动触发重新计算。与上述情况一样，除了取消之外，还会触发新的函数调用。
 
-下面的代码展示了已实现取消的上一个示例。 在此代码中，`caller` 对象包含应为每个自定义函数定义的 `onCanceled` 函数。
+下面的代码展示了已实现取消的上一个示例。 在此代码中，`caller` 对象包含应为每个自定义函数定义的 `onCanceled` 属性。 若要让 Excel 调用 `onCanceled` 函数，必须在注册函数期间将参数 `cancelable` 设置为 `true`，以声明支持取消。
 
 ```js
 function incrementValue(increment, caller){ 
@@ -246,7 +246,7 @@ function refreshTemperature(thermometerID){
 
 自定义函数可以将数据区域用作参数，或者可以从自定义函数返回数据区域。
 
-例如，假设函数从 Excel 中存储的温度值区域返回第二个最高温度。 以下函数需要使用参数 `temperatures`，即 `Excel.CustomFunctionDimensionality.matrix` 参数类型。
+例如，假设函数从 Excel 中存储的温度值区域返回第二个最高温度。 下面的函数需要使用参数 `temperatures`，即 `Excel.CustomFunctionDimensionality.matrix` 参数类型。
 
 ```js
 function secondHighestTemp(temperatures){ 
@@ -266,7 +266,7 @@ function secondHighestTemp(temperatures){
  }
 ```
 
-如果创建返回数据范围的函数，需要在 Excel 中输入数组公式，以查看整个值范围。 有关详细信息，请参阅[数组公式准则和示例](https://support.office.com/zh-cn/article/Guidelines-and-examples-of-array-formulas-7d94a64e-3ff3-4686-9372-ecfd5caa57c7)。
+如果创建返回数据范围的函数，必须在 Excel 中输入数组公式，才能查看整个值范围。有关详细信息，请参阅[数组公式指南和示例](https://support.office.com/zh-cn/article/Guidelines-and-examples-of-array-formulas-7d94a64e-3ff3-4686-9372-ecfd5caa57c7)。
 
 ## <a name="known-issues"></a>已知问题
 

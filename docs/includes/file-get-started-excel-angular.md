@@ -26,9 +26,9 @@
 ng new my-addin
 ```
 
-## <a name="generate-the-manifest-file-and-sideload-the-add-in"></a>生成清单文件并旁加载加载项
+## <a name="generate-the-manifest-file"></a>生成清单文件
 
-加载项的清单文件定义其设置和功能。
+加载项清单文件定义加载项的设置和功能。
 
 1. 转到应用程序文件夹。
 
@@ -36,7 +36,7 @@ ng new my-addin
     cd my-addin
     ```
 
-2. 使用 Yeoman 生成器生成加载项的清单文件。 运行下面的命令，再回答提示问题，如以下屏幕截图所示：
+2. 使用 Yeoman 生成器生成加载项清单文件。 运行下面的命令，再回答如下所示的提示问题。
 
     ```bash
     yo office
@@ -53,26 +53,53 @@ ng new my-addin
     > [!NOTE]
     > 如果系统提示覆盖 **package.json**，请回答“否”****（不覆盖）。
 
-3. 打开清单文件（即应用根目录中名称以“manifest.xml”结尾的文件）。将所有 `https://localhost:3000` 都替换为 `http://localhost:4200`，再保存此文件。
+## <a name="secure-the-app"></a>保护应用程序
 
-    > [!TIP]
-    > 除了将端口号更改为 **4200** 外，还请务必将协议更改为 **http**。
+[!include[HTTPS guidance](../includes/https-guidance.md)]
 
-4. 请按照运行加载项所用平台对应的说明操作，以在 Excel 中旁加载加载项。
+对于本快速入门，可以使用**适用于 Office 加载项的 Yeoman 生成器**提供的证书。 由于已全局安装生成器（在满足本快速入门的**先决条件**期间），因此只需将证书从全局安装位置复制到应用程序文件夹即可。 下面逐步介绍了如何完成此过程。
 
-    - Windows：[在 Windows 上旁加载 Office 加载项](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)
-    - Excel Online：[在 Office Online 中旁加载 Office 加载项](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-on-office-online)
-    - iPad 和 Mac：[在 iPad 和 Mac 上旁加载 Office 加载项](../testing/sideload-an-office-add-in-on-ipad-and-mac.md)
+1. 在终端运行以下命令，以确定其中安装了全局 **npm** 库的文件夹：
 
-## <a name="update-the-app"></a>更新应用
+    ```bash 
+    npm list -g 
+    ``` 
+    
+    > [!TIP]    
+    > 由该命令生成的第一行输出指定在其中安装全局 **npm** 库的文件夹。          
+    
+2. 使用文件资源管理器转到 `{global libraries folder}/node_modules/generator-office/generators/app/templates/js/base` 文件夹。 从此位置将 `certs` 文件夹复制到剪贴板。
 
-1. 打开“src/index.html”****，紧靠 `</head>` 标记前面添加以下 `<script>` 标记，再保存此文件。
+3. 转到在上一部分中的第 1 步创建的 Angular 应用程序的根文件夹，并将 `certs` 文件夹从剪贴板粘贴到此文件夹中。
+
+## <a name="update-the-app"></a>更新应用程序
+
+1. 在代码编辑器中，打开项目根目录中的 **package.json**。 将 `start` 脚本修改为指定服务器应使用 SSL 和端口 3000 运行，并保存文件。
+
+    ```json
+    "start": "ng serve --ssl true --port 3000"
+    ```
+
+2. 打开项目根目录中的 **.angular-cli.json**。 将 **defaults** 对象修改为指定证书文件位置，并保存文件。
+
+    ```json
+    "defaults": {
+      "styleExt": "css",
+      "component": {},
+      "serve": {
+        "sslKey": "certs/server.key",
+        "sslCert": "certs/server.crt"
+      }
+    }
+    ```
+
+3. 打开 **src/index.html**，紧靠 `</head>` 标记前面添加以下 `<script>` 标记，再保存此文件。
 
     ```html
     <script src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js"></script>
     ```
 
-2. 打开“src/main.ts”****，将 `platformBrowserDynamic().bootstrapModule(AppModule).catch(err => console.log(err));` 替换为以下代码，再保存此文件。 
+4. 打开“src/main.ts”****，将 `platformBrowserDynamic().bootstrapModule(AppModule).catch(err => console.log(err));` 替换为以下代码，再保存此文件。 
 
     ```typescript 
     declare const Office: any;
@@ -83,13 +110,13 @@ ng new my-addin
     };
     ```
 
-3. 打开“src/polyfills.ts”****，在其他所有现有 `import` 语句上方添加以下代码行，再保存此文件。
+5. 打开“src/polyfills.ts”****，在其他所有现有 `import` 语句上方添加以下代码行，再保存此文件。
 
     ```typescript
     import 'core-js/client/shim';
     ```
 
-4. 在“src/polyfills.ts”****中，取消注释以下代码行，再保存此文件。
+6. 在“src/polyfills.ts”****中，取消注释以下代码行，再保存此文件。
 
     ```typescript
     import 'core-js/es6/symbol';
@@ -108,7 +135,7 @@ ng new my-addin
     import 'core-js/es6/set';
     ```
 
-5. 打开“src/app/app.component.html”****，将文件内容替换为以下 HTML，再保存此文件。 
+7. 打开“src/app/app.component.html”****，将文件内容替换为以下 HTML，再保存此文件。 
 
     ```html
     <div id="content-header">
@@ -126,7 +153,7 @@ ng new my-addin
     </div>
     ```
 
-6. 打开“src/app/app.component.css”****，将文件内容替换为以下 CSS 代码，再保存此文件。
+8. 打开“src/app/app.component.css”****，将文件内容替换为以下 CSS 代码，再保存此文件。
 
     ```css
     #content-header {
@@ -155,7 +182,7 @@ ng new my-addin
     }
     ```
 
-7. 打开“src/app/app.component.ts”****，将文件内容替换为以下代码，再保存此文件。 
+9. 打开 **src/app/app.component.ts**，将文件内容替换为下列代码，再保存此文件。 
 
     ```typescript
     import { Component } from '@angular/core';
@@ -178,15 +205,31 @@ ng new my-addin
     }
     ```
 
-## <a name="try-it-out"></a>试用
+## <a name="start-the-dev-server"></a>启动开发人员服务器
 
-1. 通过终端运行以下命令，启动开发服务器。
+1. 通过终端运行下面的命令，以启动开发人员服务器。
 
     ```bash
-    npm start
+    npm run start
     ```
+
+2. 在 Web 浏览器中，转到 `https://localhost:3000`。如果浏览器指明网站证书不受信任，需要将此证书添加为受信任的证书。有关详细信息，请参阅[将自签名证书添加为受信任的根证书](https://github.com/OfficeDev/generator-office/blob/master/src/docs/ssl.md)。
+
+    > [!NOTE]
+    > Chrome（Web 浏览器）可能会继续指明网站证书不受信任，即使已完成[将自签名证书添加为受信任的根证书](https://github.com/OfficeDev/generator-office/blob/master/src/docs/ssl.md)中所述的过程，也是如此。 可以忽略 Chrome 中的此警告，并转到 Internet Explorer 或 Microsoft Edge 中的 `https://localhost:3000`，以验证证书是否受信任。 
+
+3. 如果浏览器在加载加载项页面后没有显示任何证书错误，就可以准备测试加载项了。 
+
+## <a name="try-it-out"></a>试用
+
+1. 请按照运行加载项和在 Excel 中旁加载加载项时所用平台对应的说明操作。
+
+    - Windows：[在 Windows 上旁加载 Office 加载项](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)
+    - Excel Online：[在 Office Online 中旁加载 Office 加载项](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-on-office-online)
+    - iPad 和 Mac：[在 iPad 和 Mac 上旁加载 Office 加载项](../testing/sideload-an-office-add-in-on-ipad-and-mac.md)
+
    
-2. 在 Excel 中，依次选择“开始”****选项卡和功能区中的“显示任务窗格”****按钮，打开加载项任务窗格。
+2. 在 Excel 中，依次选择“主页”****选项卡和功能区中的“显示任务窗格”****按钮，以打开加载项任务窗格。
 
     ![Excel 加载项按钮](../images/excel-quickstart-addin-2a.png)
 
@@ -198,7 +241,7 @@ ng new my-addin
 
 ## <a name="next-steps"></a>后续步骤
 
-恭喜！已使用 Angular 成功创建 Excel 加载项！ 接下来，请详细了解 Excel 加载项功能，并跟着 Excel 加载项教程一起操作，生成更复杂的加载项。
+恭喜！已使用 Angular 成功创建 Excel 加载项！接下来，请详细了解 Excel 加载项功能，并跟着 Excel 加载项教程一起操作，生成更复杂的加载项。
 
 > [!div class="nextstepaction"]
 > [Excel 加载项教程](../tutorials/excel-tutorial-create-table.md)
@@ -209,4 +252,3 @@ ng new my-addin
 * [Excel JavaScript API 核心概念](../excel/excel-add-ins-core-concepts.md)
 * [Excel 加载项代码示例](http://dev.office.com/code-samples#?filters=excel,office%20add-ins)
 * [Excel JavaScript API 参考](https://dev.office.com/reference/add-ins/excel/excel-add-ins-reference-overview)
-

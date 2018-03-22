@@ -17,7 +17,7 @@ ms.date: 01/23/2018
 
 * 最新版 Visual Studio 2017 Preview。
 
-* Office 2016，版本 1708，内部版本 8424.nnnn 或更高版本（Office 365 订阅版本，有时称为“即点即用”）。可能需要成为 Office 预览体验成员才能获取此版本。有关详细信息，请参阅[成为 Office 预览体验成员](https://products.office.com/en-us/office-insider?tab=tab-1)。
+* Office 2016，版本 1708，内部版本 8424.nnnn 或更高版本（Office 365 订阅版本，有时称为“即点即用”）。可能需要成为 Office 预览体验成员才能获取此版本。有关详细信息，请参阅[成为 Office 预览体验成员](https://products.office.com/zh-cn/office-insider?tab=tab-1)。
 
 ## <a name="set-up-the-starter-project"></a>设置初学者项目
 
@@ -41,7 +41,7 @@ ms.date: 01/23/2018
 
    >    `Install-Package Microsoft.Identity.Client -Version 1.1.1-alpha0393 -Source https://www.myget.org/F/aad-clients-nightly/api/v3/index.json`
 
-   > 3. 在“解决方案资源管理器”****中，右键单击“引用”****。 验证是否列出了“Microsoft.Identity.Client”****。 如果没有列出或它的条目上有警告图标，请先删除此条目，再使用“Visual Studio 添加引用向导”，添加对 **... \[Begin | Complete]\packages\Microsoft.Identity.Client.1.1.1-alpha0393\lib\net45\Microsoft.Identity.Client.dll** 处程序集的引用。
+   > 3. 在“解决方案资源管理器”****中，右键单击“引用”****。验证是否列出了“Microsoft.Identity.Client”****。如果没有列出或它的条目上有警告图标，请先删除此条目，再使用“Visual Studio 添加引用”向导，添加对 **... \[Begin | Complete]\packages\Microsoft.Identity.Client.1.1.1-alpha0393\lib\net45\Microsoft.Identity.Client.dll** 处程序集的引用。
 
 1. 重新生成此项目。
 
@@ -94,7 +94,7 @@ ms.date: 01/23/2018
     * profile
 
     > [!NOTE]
-    > `User.Read` 权限可能已默认列出。 根据最佳做法，最好不请求授予不需要的权限，因此建议取消选中此权限对应的框。
+    > `User.Read` 权限可能已默认列出。根据最佳做法，最好不要请求授予不需要的权限，因此建议取消选中此权限对应的框。
 
 1. 单击对话框底部的“确定”****。
 
@@ -103,7 +103,7 @@ ms.date: 01/23/2018
 ## <a name="grant-admin-consent-to-the-add-in"></a>向加载项授予管理员许可
 
 > [!NOTE]
-> 仅在开发加载项时，才需要执行此过程。 将生产加载项部署到 AppSource 或加载项目录时，用户需要单独信任它，否则管理员会在安装时授予组织许可。
+> 仅在开发加载项时，才需要执行此过程。将生产加载项部署到 AppSource 或加载项目录时，用户需要单独信任它，否则管理员会在安装时授予组织许可。
 
 1. 如果加载项未在 Visual Studio 中运行，请按 **F5** 运行它。必须在 IIS 中运行它，才能顺利完成此过程。
 
@@ -223,7 +223,7 @@ ms.date: 01/23/2018
 1. 在向 `Office.initialize` 分配函数下方，添加下列代码。关于此代码，请注意以下几点：
 
     * 加载项中的错误处理有时会自动尝试使用一组不同的选项，重新获取访问令牌。 计数器变量 `timesGetOneDriveFilesHasRun` 和标志变量 `triedWithoutForceConsent` 用于确保用户不会重复循环失败的尝试来获取令牌。 
-    * `getDataWithToken` 方法将在下一步中创建，但请注意，它会将 `forceConsent` 选项设置为 `false`。 有关详细信息，请参阅下一步。
+    * 虽然 `getDataWithToken` 方法是在下一步中创建，但请注意，它会将 `forceConsent` 选项设置为 `false`。有关详细信息，请参阅下一步。
 
     ```javascript
     var timesGetOneDriveFilesHasRun = 0;
@@ -264,7 +264,7 @@ ms.date: 01/23/2018
     getData("/api/values", accessToken);
     ```
 
-1. 在 `getOneDriveFiles` 方法下方，添加下列代码。 关于此代码，请注意以下几点：
+1. 在 `getOneDriveFiles` 方法下方，添加下列代码。关于此代码，请注意以下几点：
 
     * 此方法调用指定 Web API 终结点，并向它传递访问令牌，这也是 Office 主机应用用于获取对加载项的访问权限的令牌。在服务器端，此访问令牌将用于“代表”流，以获取对 Microsoft Graph 的访问令牌。
     * `handleServerSideErrors` 方法将在后续步骤中创建。
@@ -348,7 +348,7 @@ ms.date: 01/23/2018
     > [!NOTE]
     > 此方法不处理错误 13004 和 13005，因为它们只在开发期间出现。 无法通过运行时代码进行修复，并且向最终用户报告这两个错误也没有意义。
 
-1. 将 `TODO5` 替换为以下代码。 如果 Office 主机中出现未指定错误，可能表明主机处于不稳定状态，错误 13006 发生。 建议用户重启 Office。
+1. 将 `TODO5` 替换为下列代码。如果 Office 主机中出现可能表明主机处于不稳定状态的未指定错误，就会发生错误 13006。建议用户重启 Office。
 
     ```javascript
     case 13006:
@@ -364,7 +364,7 @@ ms.date: 01/23/2018
         break;      
     ```
 
-1. 将 `TODO7` 替换为以下代码。 如果用户触发的操作未等到上一次调用完成就调用了 `getAccessTokenAsync`，错误 13008 发生。
+1. 将 `TODO7` 替换为下列代码。如果用户触发的操作未等到上一次调用完成就调用了 `getAccessTokenAsync`，就会发生错误 13008。
 
     ```javascript
     case 13008:
@@ -393,7 +393,7 @@ ms.date: 01/23/2018
     ```  
 
 
-1. 在 `handleClientSideErrors` 方法下方，添加下列方法。 如果无法执行代表流或从 Microsoft Graph 获取数据，此方法可处理加载项 Web 服务中出现的错误。
+1. 在 `handleClientSideErrors` 方法下方，添加下列方法。此方法可处理加载项 Web 服务中发生的以下错误：无法执行代表流，或无法从 Microsoft Graph 获取数据。
 
     ```javascript
     function handleServerSideErrors(result) {
@@ -456,9 +456,9 @@ ms.date: 01/23/2018
     }    
     ```
 
-1. 将 `TODO13` 替换为以下代码。关于此代码，请注意以下几点：
+1. 将 `TODO13` 替换为下列代码。关于此代码，请注意以下几点：
 
-    * 错误 70011 有多重含义。 对于此加载项而言，最重要的含义是已请求获取的范围（权限）无效。因此，代码会检查完整的错误说明，而不仅仅是数字。
+    * 错误 70011 有多重含义。对于此加载项而言，最重要的含义是已请求获取的范围（权限）无效。因此，代码会检查是否有完整错误说明，而不仅仅是数字。
     * 加载项应报告此错误。
 
     ```javascript
@@ -478,9 +478,9 @@ ms.date: 01/23/2018
     }    
     ```
 
-1. 将 `TODO15` 替换为以下代码。关于此代码，请注意以下几点：
+1. 将 `TODO15` 替换为下列代码。关于此代码，请注意以下几点：
 
-    * 要在服务器端代码中使用的标识库（Microsoft 身份验证库 (MSAL)）应确保没有向 Microsoft Graph 发送任何到期或无效令牌；但如果这种情况确实发生，从 Microsoft Graph 返回到加载项 Web 服务的错误包含代码 `InvalidAuthenticationToken`。 将在后续步骤中创建的服务器端代码会将此消息中继到加载项客户端。
+    * 要在服务器端代码中使用的标识库（Microsoft 身份验证库 (MSAL)）应确保没有向 Microsoft Graph 发送任何到期或无效令牌；但如果这种情况确实发生，从 Microsoft Graph 返回到加载项 Web 服务的错误包含代码 `InvalidAuthenticationToken`。在后续步骤中创建的服务器端代码会将此消息中继到加载项客户端。
     * 在这种情况下，加载项应重置计数器和标志变量，再重新调用按钮处理程序方法，以从头开始执行整个身份验证流程。
 
     ```javascript
@@ -554,7 +554,7 @@ ms.date: 01/23/2018
 
     * 代码指示 OWIN 以确保在来自 Office 主机（并通过客户端调用 `getData` 进行传递）的访问令牌中指定的受众和令牌颁发者必须与 web.config 中指定的值相匹配。
     * 将 `SaveSigninToken` 设置为 `true` 将导致 OWIN 从 Office 主机保存原始令牌。外接程序需要它来获取具有“代表”流的 Microsoft Graph 的访问令牌。
-    * OWIN 中间件不验证作用域。应包括 `access_as_user` 的访问令牌的作用域在控制器中进行验证。
+    * OWIN 中间件不验证范围。应包括 `access_as_user` 的访问令牌范围是在控制器中进行验证。
 
     ```csharp
     var tvps = new TokenValidationParameters
@@ -565,7 +565,7 @@ ms.date: 01/23/2018
         };
     ```
 
-1. 将 TODO4 替换为以下代码行。 关于此代码，请注意以下几点：
+1. 将 TODO4 替换为下列代码。关于此代码，请注意以下几点：
 
     * 调用的是方法 `UseOAuthBearerAuthentication`，而不是更常见的 `UseWindowsAzureActiveDirectoryBearerAuthentication`，因为后者与 Azure AD V2 终结点不兼容。
     * 传递给该方法的发现 URL 是 OWIN 中间件获得用于获取所需密钥说明的位置，以验证从 Office 主机接收到的访问令牌上的签名。
@@ -671,10 +671,10 @@ ms.date: 01/23/2018
     }
     ```
 
-8. 将 `TODO3a` 替换为以下代码。关于此代码，请注意以下几点：
+8. 将 `TODO3a` 替换为下列代码。关于此代码，请注意以下几点：
 
-    * 如果 MS Graph 资源要求进行多重身份验证，但用户尚未提供，AAD 就会返回包含错误 AADSTS50076 和 **Claims** 属性的“400 错误请求”。 MSAL 抛出包含此信息的 **MsalUiRequiredException**（继承自 **MsalServiceException**）。 
-    * 必须将 **Claims** 属性值传递到客户端，接着客户端应将它传递到 Office 主机，然后主机会将它添加到新令牌请求中。 AAD 将提示用户进行所有必需形式的身份验证。
+    * 如果 MS Graph 资源要求进行多重身份验证，但用户尚未提供，AAD 就会返回包含错误 AADSTS50076 和 **Claims** 属性的“400 错误请求”。MSAL 会抛出包含此信息的 **MsalUiRequiredException**（继承自 **MsalServiceException**）。 
+    * 必须将 **Claims** 属性值传递到客户端，接着客户端应将它传递到 Office 主机，然后主机会将它添加到新令牌请求中。AAD 会提示用户进行所有必需形式的身份验证。
     * 由于创建异常 HTTP Response 的 API 并不知道 **Claims** 属性，因此它们不会在 Response 对象中添加这个属性。 必须手动创建消息来添加它。 不过，自定义 **Message** 属性会阻止创建 **ExceptionMessage** 属性，因此向客户端发送错误 ID `AADSTS50076` 的唯一方法是，将它添加到自定义 **Message** 中。 客户端中的 JavaScript 需要发现响应是否包含 **Message** 或 **ExceptionMessage**，这样才能了解要读取的内容。
     * 自定义消息被格式化为 JSON，以便客户端 JavaScript 能够使用已知的 `JSON` 对象方法分析它。
     * `SendErrorToClient` 方法将在后续步骤中创建。 它的第二个参数是 **Exception** 对象。 在此示例中，代码传递 `null`，因为添加 **Exception** 对象会阻止在生成的 HTTP Response 中添加 **Message** 属性。
@@ -686,12 +686,12 @@ ms.date: 01/23/2018
     }
     ```
 
-9. 将 `TODO3b` 和 `TODO3c` 替换为以下代码。 关于此代码，请注意以下几点：
+9. 将 `TODO3b` 和 `TODO3c` 替换为下列代码。关于此代码，请注意以下几点：
 
     * 如果 AAD 调用包含至少一个范围（权限）未获用户和租户管理员的许可（或许可被撤消）， AAD 返回“400 错误请求”和错误 `AADSTS65001`。 MSAL 抛出包含此信息的 **MsalUiRequiredException**。 客户端应通过选项 `{ forceConsent: true }` 重新调用 `getAccessTokenAsync`。
     *  如果 AAD 调用包含至少一个 AAD 无法识别的范围，AAD 返回“400 错误请求”和错误 `AADSTS70011`。 MSAL 抛出包含此信息的 **MsalUiRequiredException**。 客户端应通知用户。
     *  包含完整说明，因为 70011 也会在其他情况下返回，只有在表示存在无效范围时，才需要在此加载项中处理它。 
-    *  **MsalUiRequiredException** 对象传递给 `SendErrorToClient`。 这样可确保 HTTP Response 中有包含错误消息的 **ExceptionMessage** 属性。
+    *  **MsalUiRequiredException** 对象传递给 `SendErrorToClient`。这样可确保 HTTP 响应中有包含错误消息的 **ExceptionMessage** 属性。
     *  由于没有自定义消息，因此会对第三个参数传递 `null`。
 
     ```csharp

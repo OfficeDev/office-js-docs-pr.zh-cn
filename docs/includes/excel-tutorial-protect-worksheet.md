@@ -1,5 +1,8 @@
 本教程的这一步是，向功能区添加另一个按钮。如果用户选择此按钮，便会执行所定义的函数，从而启用和禁用工作表保护。
 
+> [!NOTE]
+> 此为 Excel 加载项分步教程页面。 如果是通过搜索引擎结果或其他直接链接到达此页面，请转到 [Excel 加载项教程](../tutorials/excel-tutorial.yml)介绍性页面，从头开始学习本教程。
+
 ## <a name="configure-the-manifest-to-add-a-second-ribbon-button"></a>将清单配置为添加第二个功能区按钮
 
 1. 打开清单文件 **my-office-add-in-manifest.xml**。
@@ -144,7 +147,7 @@
 
 只要代码需要从 Office 文档*读取*信息，就必须完成这些步骤。
 
-1. 在 `toggleProtection` 函数中，将 `TODO2` 替换为以下代码。 注意：
+1. 在 `toggleProtection` 函数中，将 `TODO2` 替换为下列代码。请注意以下几点：
    - 每个 Excel 对象都有 `load` 方法。 对于要在参数中读取的对象属性，将它们指定为逗号分隔名称字符串。 在此示例中，需要读取的属性为 `protection` 属性的子属性。 引用子属性的方法与在代码中的其他任何地方引用属性几乎完全一样，不同之处在于使用的是正斜杠（“/”）字符，而不是“.”字符。
    - 为了确保切换逻辑 `sheet.protection.protected` 只在 `sync` 完成后且 `sheet.protection.protected` 分配有从文档提取的正确值后才运行，（在下一步中）它会被移到 `then` 函数中，此函数在 `sync` 完成前不会运行。 
 
@@ -220,7 +223,7 @@
     - Excel Online：[在 Office Online 中旁加载 Office 加载项](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-on-office-online)
     - iPad 和 Mac：[在 iPad 和 Mac 上旁加载 Office 加载项](../testing/sideload-an-office-add-in-on-ipad-and-mac.md)
 7. 打开 Excel 中的任意工作表。
-8. 在“主页”****功能区上，选择“切换工作表保护”****。 请注意，功能区上的大部分控件都处于禁用状态（灰显），如下面的屏幕截图所示。 
+8. 在“开始”****功能区上，选择“切换工作表保护”****。请注意，功能区上的大部分控件都处于禁用状态（灰显），如下面的屏幕截图所示。 
 9. 选择要更改其内容的单元格。 此时，将会看到一条错误消息，提示工作表受保护。
 10. 再次选择“切换工作表保护”****，此时控件重新启用，可以再次更改单元格值了。
 

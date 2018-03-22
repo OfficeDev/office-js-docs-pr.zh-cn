@@ -1,6 +1,9 @@
-本教程的这一步是，筛选并排序之前创建的表格。
+本教程的这一步是，筛选并排序之前创建的表。
 
-## <a name="filter-the-table"></a>筛选表格
+> [!NOTE]
+> 此为 Excel 加载项分步教程页面。 如果是通过搜索引擎结果或其他直接链接到达此页面，请转到 [Excel 加载项教程](../tutorials/excel-tutorial.yml)介绍性页面，从头开始学习本教程。
+
+## <a name="filter-the-table"></a>筛选表
 
 1. 在代码编辑器中打开项目。 
 2. 打开文件 index.html。

@@ -1,0 +1,40 @@
+### YamlMime:Tutorial
+documentType: Tutorial
+title: PowerPoint 加载项教程
+metadata:
+  title: PowerPoint 加载项教程
+  description: 在本教程中，将生成 PowerPoint 加载项，用于插入图像、插入文本、获取幻灯片元数据，以及在幻灯片之间导航。
+  audience: 开发人员
+  level: 初学者
+  displayType: one-column
+  ms.date: 02/28/2018
+items:
+- durationInMinutes: 1
+  content: |
+    本教程介绍了如何生成 PowerPoint 任务窗格加载项，用于将一天中的<a href="https://www.bing.com">必应</a>照片添加到幻灯片、将文本添加到幻灯片、获取幻灯片元数据，以及在幻灯片之间导航。如果在创建过程中遇到任何问题，请<a href="https://github.com/OfficeDev/office-js-docs-pr/issues">告知我们</a>。
+- title: 创建加载项项目
+  durationInMinutes: 5
+  content: |
+    [!INCLUDE [](../includes/powerpoint-tutorial-setup.md)]
+- title: 插入图像
+  durationInMinutes: 8
+  content: |
+    [!INCLUDE [](../includes/powerpoint-tutorial-insert-image.md)]
+- title: 自定义用户界面 (UI) 元素
+  durationInMinutes: 3
+  content: |
+    [!INCLUDE [](../includes/powerpoint-tutorial-customize-ui.md)]
+- title: 插入文本
+  durationInMinutes: 4
+  content: |
+    [!INCLUDE [](../includes/powerpoint-tutorial-insert-text.md)]
+- title: 获取幻灯片元数据
+  durationInMinutes: 4
+  content: |
+    [!INCLUDE [](../includes/powerpoint-tutorial-get-slide-metadata.md)]
+- title: 在幻灯片之间导航
+  durationInMinutes: 5
+  content: |
+    [!INCLUDE [](../includes/powerpoint-tutorial-navigate-slides.md)]
+- content: |
+    已完成 PowerPoint 加载项教程。若要详细了解如何生成 PowerPoint 加载项，请参阅 <a href="../powerpoint/powerpoint-add-ins.md">PowerPoint 加载项概述</a>。

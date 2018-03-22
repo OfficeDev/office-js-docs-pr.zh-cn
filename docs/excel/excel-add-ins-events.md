@@ -36,11 +36,11 @@ Excel 工作簿内的事件可以通过下列方式触发：
 
 ### <a name="lifecycle-of-an-event-handler"></a>事件处理程序的生命周期
 
-事件处理程序在加载项注册事件处理程序时创建完成，并在加载项取消注册事件处理程序或加载项关闭时销毁。 事件处理程序不会暂留为 Excel 文件的一部分。
+事件处理程序在加载项注册事件处理程序时创建完成，并在加载项取消注册事件处理程序或加载项关闭时销毁。事件处理程序不会暂留为 Excel 文件的一部分。
 
 ### <a name="events-and-coauthoring"></a>事件和共同创作
 
-借助[共同创作](co-authoring-in-excel-add-ins.md)，多个人可以共同协作，并能同时编辑同一个 Excel 工作簿。 对于可由共同创作者触发的事件（如 `onDataChanged`），相应的 **Event** 对象会包含 **source** 属性，以指示事件是由当前用户在本地触发 (`event.source = Local`)，还是由远程共同创作者触发 (`event.source = Remote`)。
+借助[共同创作功能](co-authoring-in-excel-add-ins.md)，多个人可以共同协作，同时编辑同一个 Excel 工作簿。对于可由共同创作者触发的事件（如 `onDataChanged`），相应的 **Event** 对象会包含 **source** 属性，以指示事件是由当前用户在本地触发 (`event.source = Local`)，还是由远程共同创作者触发 (`event.source = Remote`)。
 
 ## <a name="register-an-event-handler"></a>注册事件处理程序
 

@@ -37,7 +37,7 @@ ms.date: 01/19/2018
 
 4. 在“创建 Office 加载项”****对话框窗口中，选择“将新功能添加到 Excel”****，再选择“完成”****以创建项目。
 
-5. 此时，Visual Studio 创建解决方案，且它的两个项目显示在“解决方案资源管理器”****中。 **Home.html** 文件在 Visual Studio 中打开。
+5. 此时，Visual Studio 创建解决方案，且它的两个项目显示在“解决方案资源管理器”****中。**Home.html** 文件在 Visual Studio 中打开。
 
 ## <a name="convert-the-add-in-project-to-typescript"></a>将加载项项目转换为使用 TypeScript
 
@@ -87,9 +87,9 @@ ms.date: 01/19/2018
 
 ## <a name="run-the-converted-add-in-project"></a>运行转换后的加载项项目
 
-1. 在 Visual Studio 中，按 F5 或选择“开始”****按钮以启动 Excel，功能区中显示有“显示任务窗格”****加载项按钮。 加载项本地托管在 IIS 上。
+1. 在 Visual Studio 中，按 F5 或选择“开始”****按钮以启动 Excel，功能区中显示有“显示任务窗格”****加载项按钮。加载项本地托管在 IIS 上。
 
-2. 在 Excel 中，依次选择“主页”****选项卡和功能区中的“显示任务窗格”****按钮，以打开加载项任务窗格。
+2. 在 Excel 中，依次选择“开始”****选项卡和功能区中的“显示任务窗格”****按钮，打开加载项任务窗格。
 
 3. 在工作表中，选择九个包含数字的单元格。
 

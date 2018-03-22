@@ -1,6 +1,9 @@
 本教程的这一步是，使用先前创建的表中的数据创建图表，再设置图表格式。
 
-## <a name="chart-table-data"></a>将表格数据绘制成图表
+> [!NOTE]
+> 此为 Excel 加载项分步教程页面。 如果是通过搜索引擎结果或其他直接链接到达此页面，请转到 [Excel 加载项教程](../tutorials/excel-tutorial.yml)介绍性页面，从头开始学习本教程。
+
+## <a name="chart-table-data"></a>将表数据绘制成图表
 
 1. 在代码编辑器中打开项目。 
 2. 打开文件 index.html。
@@ -43,7 +46,7 @@
     }
     ``` 
 
-7. 将 `TODO1` 替换为以下代码。 请注意，为了排除标题行，此代码使用 `Table.getDataBodyRange` 方法（而不是 `getRange` 方法），获取要绘制成图表的数据的范围。
+7. 将 `TODO1` 替换为下列代码。请注意，为了排除标题行，此代码使用 `Table.getDataBodyRange` 方法（而不是 `getRange` 方法），获取要绘制成图表的数据的范围。
 
     ```js
     const currentWorksheet = context.workbook.worksheets.getActiveWorksheet();
@@ -51,8 +54,8 @@
     const dataRange = expensesTable.getDataBodyRange();
     ``` 
 
-8. 将 `TODO2` 替换为以下代码。 请注意以下参数：
-   - `add` 方法的第一个参数指定图表类型。 有几十种类型。 
+8. 将 `TODO2` 替换为下列代码。 请注意以下参数：
+   - `add` 方法的第一个参数指定图表类型。有几十种类型。 
    - 第二个参数指定要在图表中添加的数据的范围。 
    - 第三个参数确定是按行方向还是按列方向绘制表格中的一系列数据点。 选项 `auto` 指示 Excel 确定最佳方法。
 

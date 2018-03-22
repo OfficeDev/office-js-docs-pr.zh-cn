@@ -22,7 +22,7 @@ description: 2018 年 1 月23 日
 
 * Office 2016 版本 1708（生成号 8424.nnnn）或更高版本（Office 365 订阅版本，有时亦称为“即点即用”）
 
-  可能必须成为 Office 预览体验成员，才能获取此版本。有关详细信息，请参阅[成为 Office 预览体验成员](https://products.office.com/en-us/office-insider?tab=tab-1)。
+  可能必须成为 Office 预览体验成员，才能获取此版本。有关详细信息，请参阅[成为 Office 预览体验成员](https://products.office.com/zh-cn/office-insider?tab=tab-1)。
 
 ## <a name="set-up-the-starter-project"></a>创建起始项目
 
@@ -88,7 +88,7 @@ description: 2018 年 1 月23 日
     * profile
 
     > [!NOTE]
-    > `User.Read` 权限可能已默认列出。 根据最佳做法，最好不请求授予不需要的权限，因此建议取消选中此权限对应的框。
+    > `User.Read` 权限可能已默认列出。根据最佳做法，最好不要请求授予不需要的权限，因此建议取消选中此权限对应的框。
 
 1. 单击对话框底部的“确定”****。
 
@@ -167,7 +167,7 @@ description: 2018 年 1 月23 日
 11. 在向 `Office.initialize` 分配函数下方，添加下列代码。关于此代码，请注意以下几点：
 
     * 加载项中的错误处理有时会自动尝试使用一组不同的选项，重新获取访问令牌。 计数器变量 `timesGetOneDriveFilesHasRun` 以及标志变量 `triedWithoutForceConsent` 和 `timesMSGraphErrorReceived` 用于确保用户不会重复循环失败的尝试来获取令牌。 
-    * `getDataWithToken` 方法将在下一步中创建，但请注意，它会将 `forceConsent` 选项设置为 `false`。 有关详细信息，请参阅下一步。
+    * 虽然 `getDataWithToken` 方法是在下一步中创建，但请注意，它会将 `forceConsent` 选项设置为 `false`。有关详细信息，请参阅下一步。
 
     ```javascript
     var timesGetOneDriveFilesHasRun = 0;
@@ -209,7 +209,7 @@ description: 2018 年 1 月23 日
     getData("/api/values", accessToken);
     ```
 
-1. 在 `getOneDriveFiles` 方法下方，添加下列代码。 关于此代码，请注意以下几点：
+1. 在 `getOneDriveFiles` 方法下方，添加下列代码。关于此代码，请注意以下几点：
 
     * 此方法调用指定 Web API 终结点，并向它传递访问令牌，这也是 Office 主机应用用于获取对加载项的访问权限的令牌。在服务器端，此访问令牌将用于“代表”流，以获取对 Microsoft Graph 的访问令牌。
     * `handleServerSideErrors` 方法将在后续步骤中创建。
@@ -293,7 +293,7 @@ description: 2018 年 1 月23 日
     > [!NOTE]
     > 此方法不处理错误 13004 和 13005，因为它们只在开发期间出现。 无法通过运行时代码进行修复，并且向最终用户报告这两个错误也没有意义。
 
-1. 将 `TODO5` 替换为以下代码。 如果 Office 主机中出现未指定错误，可能表明主机处于不稳定状态，错误 13006 发生。 建议用户重启 Office。
+1. 将 `TODO5` 替换为下列代码。如果 Office 主机中出现可能表明主机处于不稳定状态的未指定错误，就会发生错误 13006。建议用户重启 Office。
 
     ```javascript
     case 13006:
@@ -309,7 +309,7 @@ description: 2018 年 1 月23 日
         break;      
     ```
 
-1. 将 `TODO7` 替换为以下代码。 如果用户触发的操作未等到上一次调用完成就调用了 `getAccessTokenAsync`，错误 13008 发生。
+1. 将 `TODO7` 替换为下列代码。如果用户触发的操作未等到上一次调用完成就调用了 `getAccessTokenAsync`，就会发生错误 13008。
 
     ```javascript
     case 13008:
@@ -337,7 +337,7 @@ description: 2018 年 1 月23 日
         break;
     ```  
 
-1. 在 `handleClientSideErrors` 方法下方，添加下列方法。 如果无法执行代表流或从 Microsoft Graph 获取数据，此方法可处理加载项 Web 服务中出现的错误。
+1. 在 `handleClientSideErrors` 方法下方，添加下列方法。此方法可处理加载项 Web 服务中发生的以下错误：无法执行代表流，或无法从 Microsoft Graph 获取数据。
 
     ```javascript
     function handleServerSideErrors(result) {
@@ -358,7 +358,7 @@ description: 2018 年 1 月23 日
     }
     ```
 
-1. 将 `TODO10` 替换为以下代码。关于此代码，请注意以下几点：
+1. 将 `TODO10` 替换为下列代码。关于此代码，请注意以下几点：
 
     * 一些 Azure Active Directory 配置要求用户，必须提供其他一个或多个身份验证因素，才能访问一些 Microsoft Graph 目标（例如 OneDrive），即使用户仅使用密码就能登录 Office，也不例外。在这种情况下，AAD 将发送包含错误 50076 的响应（具有 `Claims` 属性）。 
     * Office 主机应获取新令牌（使用 **Claims** 值作为 `authChallenge` 选项）。 这就指示 AAD 提示用户进行所有必需形式的身份验证。 
@@ -371,7 +371,7 @@ description: 2018 年 1 月23 日
     }
     ```
 
-1. *在上一步添加的代码的最后一个右大括号正下方*，将 `TODO11` 替换为以下代码。 关于此代码，请注意以下几点：
+1. *在上一步添加的代码的最后一个右大括号正下方*，将 `TODO11` 替换为下列代码。关于此代码，请注意以下几点：
 
     * 错误 65001 表示未许可授予（或已撤消）一个或多个对 Microsoft Graph 的访问权限。 
     * 加载项应获取新令牌（`forceConsent` 选项设置为 `true`）。
@@ -390,7 +390,7 @@ description: 2018 年 1 月23 日
     }
     ```
 
-1. *在上一步添加的代码的最后一个右大括号正下方*，将 `TODO12` 替换为以下代码。 关于此代码，请注意以下几点：
+1. *在上一步添加的代码的最后一个右大括号正下方*，将 `TODO12` 替换为下列代码。关于此代码，请注意以下几点：
 
     * 错误 70011 表示已请求获取的范围（权限）无效。 加载项应报告此错误。
     * 代码使用 AAD 错误号记录其他任何错误。
@@ -403,7 +403,7 @@ description: 2018 年 1 月23 日
     }
     ```
 
-1. *在上一步添加的代码的最后一个右大括号正下方*，将 `TODO13` 替换为以下代码。 关于此代码，请注意以下几点：
+1. *在上一步添加的代码的最后一个右大括号正下方*，将 `TODO13` 替换为下列代码。关于此代码，请注意以下几点：
 
     * 如果 `access_as_user` 范围（权限）不在访问令牌中，此令牌由加载项客户端发送到 AAD 以便在代表流中使用，那么在后续步骤中创建的服务器端代码将发送以 `... expected access_as_user` 结尾的消息。
     * 加载项应报告此错误。
@@ -415,7 +415,7 @@ description: 2018 年 1 月23 日
     }
     ```
 
-1. *在上一步添加的代码的最后一个右大括号正下方*，将 `TODO14` 替换为以下代码。 关于此代码，请注意以下几点：
+1. *在上一步添加的代码的最后一个右大括号正下方*，将 `TODO14` 替换为下列代码。关于此代码，请注意以下几点：
 
     * 不太可能将到期或无效令牌发送到 Microsoft Graph，但如果这种情况确实发生，在后续步骤中创建的服务器端代码将以字符串 `Microsoft Graph error` 结尾。
     * 在这种情况下，加载项应重置 `timesGetOneDriveFilesHasRun` 计数器和 `timesGetOneDriveFilesHasRun` 标志变量，再重新调用按钮处理程序方法，以从头开始执行整个身份验证流程。 但它只能执行此操作一次。 如果再次发生，它应只记录此错误。
@@ -651,14 +651,14 @@ description: 2018 年 1 月23 日
     }
     ```
 
-1.  将 `TODO1` 替换为以下代码。 请注意，此代码假设数据是以 JSON 形式返回。
+1.  将 `TODO1` 替换为下列代码。请注意，此代码假设数据是以 JSON 形式返回。
 
     ```javascript
     let parsedBody = JSON.parse(body);
     resolve(parsedBody);
     ```
 
-1.  将 `TODO2` 替换为以下代码。关于此代码，请注意以下几点：
+1.  将 `TODO2` 替换为下列代码。关于此代码，请注意以下几点：
 
     * OData 源返回的错误响应将始终包含 statusCode，通常是 statusMessage。 一些 OData 源还向主体添加错误属性，以提供更多信息，如内部或更具体的代码和消息。
     * Promise 对象已解析，未被拒绝。 Web 服务在服务器间调用 OData 终结点时，`https.get` 运行。 但这种调用出现的上下文是，客户端在 Web 服务中调用 Web API。 如果此“内部”请求被拒绝，客户端向 Web 服务发送的“外部”请求永不会完成。 此外，如果 `http.get` 的调用方需要将 OData 终结点返回的错误中继到客户端，必须解析具有自定义 `Error` 对象的请求。
