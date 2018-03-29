@@ -91,7 +91,7 @@ UX 设计模式项目用于：
     * [试用版功能代码](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code/tree/master/templates/first-run/trial-placemat-feature)
 
 > [!IMPORTANT]
-> 如果决定管理自己的试用版，而不是使用 AppSource 进行管理，请务必在卖家面板中的测试说明中添加“可能需要额外购买”****标记。
+> 如果决定管理自己的试用版，而不是使用 AppSource 进行管理，请务必在卖家面板中的测试说明中添加“可能需要额外购买”标记。
 
 考虑一次或多次向用户显示首次运行体验是否对你的方案非常重要。例如，如果用户定期使用你的外接程序，他们可能会忘记如何使用外接程序，多次查看首次运行体验很有帮助。 
 

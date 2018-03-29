@@ -72,19 +72,19 @@ Visual Studio Office 开发人员工具包含 Project 2013 任务窗格外接程
 ### <a name="procedure-2-to-create-the-helloprojectodata-add-in-for-project"></a>过程 2. 为 Project 创建 HelloProjectOData 加载项
 
 
-1. 以管理员身份运行 Visual Studio 2015，再选择起始页上的“新建项目”****。
+1. 以管理员身份运行 Visual Studio 2015，再选择起始页上的“新建项目”。
     
-2. 在“新建项目”****对话框中，依次展开“模板”****、“Visual C#”****和“Office/SharePoint”****节点，再选择“Office 加载项”****。在中心窗格顶部的目标框架下拉列表中，依次选择“.NET Framework 4.5.2”****和“Office 加载项”****（见接下来的屏幕截图）。
+2. 在“新建项目”对话框中，依次展开“模板”、“Visual C#”和“Office/SharePoint”节点，再选择“Office 加载项”。在中心窗格顶部的目标框架下拉列表中，依次选择“.NET Framework 4.5.2”和“Office 加载项”（见接下来的屏幕截图）。
     
 3. 若要将这两个 Visual Studio 项目置于同一目录中，请选择“**创建解决方案的目录**”，然后浏览到所需位置。
     
-4. 在“名称”****字段中，键入“HelloProjectOData”，再选择“确定”****。
+4. 在“名称”字段中，键入“HelloProjectOData”，再选择“确定”。
     
     *图 1：创建 Office 加载项*
 
     ![创建 Office 加载项](../images/pj15-hello-project-o-data-creating-app.png)
 
-5. 在“选择加载项类型”对话框中****，选中“任务窗格”****，再选择“下一步”****（见接下来的屏幕截图）。
+5. 在“选择加载项类型”对话框中，选中“任务窗格”，再选择“下一步”（见接下来的屏幕截图）。
     
     *图 2：选择要创建的加载项类型*
 
@@ -574,13 +574,13 @@ HelloProjectOData.js 文件的剩余部分包含两个函数：当用户选择�
     
 2. 在 Visual Studio 中，按  **F5**。登录 Project Web App，然后打开在上一步中创建的项目。您可以只读模式或编辑模式打开该项目。
     
-3. 在功能区的“项目”****选项卡上的“Office 加载项”****下拉列表中，选择“Hello ProjectData”****（见图 5）。“比较所有项目”****按钮应处于禁用状态。
+3. 在功能区的“项目”选项卡上的“Office 加载项”下拉列表中，选择“Hello ProjectData”（见图 5）。“比较所有项目”按钮应处于禁用状态。
     
     *图 5：启动 HelloProjectOData 加载项*
 
     ![测试 HelloProjectOData 应用](../images/pj15-hello-project-data-test-the-app.png)
 
-4. 在“Hello ProjectData”****任务窗格中，选择“获取 ProjectData 终结点”****。此时，**projectDataEndPoint** 行应显示 **ProjectData** 服务 URL，并且“比较所有项目”****按钮应处于启用状态（见图 6）。
+4. 在“Hello ProjectData”任务窗格中，选择“获取 ProjectData 终结点”。此时，**projectDataEndPoint** 行应显示 **ProjectData** 服务 URL，并且“比较所有项目”按钮应处于启用状态（见图 6）。
     
 5. 选择“**比较所有项目**”。外接程序在从 **ProjectData** 服务中检索数据时可能会暂停，然后会在表格中显示带有格式的平均值和当前值。
     
@@ -638,7 +638,7 @@ HelloProjectOData.js 文件的剩余部分包含两个函数：当用户选择�
     ]}}
     ```
 
-7. 停止调试（按 **Shift + F5**），再重新按 **F5**，以运行新的 Project 实例。在“登录”****对话框中，选择本地的“计算机”****配置文件，而不是 Project Web App。创建或打开本地项目 .mpp 文件，打开“Hello ProjectData”****任务窗格，再选择“获取 ProjectData 终结点”****。此时，加载项应显示“无连接!”****错误（见图 7），并且“比较所有项目”****按钮应继续处于禁用状态。
+7. 停止调试（按 **Shift + F5**），再重新按 **F5**，以运行新的 Project 实例。在“登录”对话框中，选择本地的“计算机”配置文件，而不是 Project Web App。创建或打开本地项目 .mpp 文件，打开“Hello ProjectData”任务窗格，再选择“获取 ProjectData 终结点”。此时，加载项应显示“无连接!”错误（见图 7），并且“比较所有项目”按钮应继续处于禁用状态。
     
    *图 7：在未连接 Project Web App 的情况下使用加载项*
 
@@ -646,7 +646,7 @@ HelloProjectOData.js 文件的剩余部分包含两个函数：当用户选择�
 
 8. 停止调试，然后再次按  **F5**。登录 Project Web App，然后创建一个包含成本和工作数据的项目。您可以保存该项目，但不发布它。
     
-   在“Hello ProjectData”****任务窗格中，选择“比较所有项目”****后，应该会看到“当前”****列的字段显示蓝色的“NA”****（见图 8）。
+   在“Hello ProjectData”任务窗格中，选择“比较所有项目”后，应该会看到“当前”列的字段显示蓝色的“NA”（见图 8）。
     
    *图 8：比较未发布的项目和其他项目*
 

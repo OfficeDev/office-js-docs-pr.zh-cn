@@ -16,13 +16,13 @@ _适用于：Word 2016、Word for iPad、Word for Mac_
 
 ### <a name="create-the-add-in-project"></a>创建加载项项目
 
-1. 在 Visual Studio 菜单栏中，依次选择“文件”**** > “新建”**** > “项目”****。
+1. 在 Visual Studio 菜单栏中，依次选择“文件” > “新建” > “项目”。
     
-2. 在“Visual C#”****或“Visual Basic”****下的项目类型列表中，展开“Office/SharePoint”****，选择“加载项”****，再选择“Word Web 加载项”****作为项目类型。 
+2. 在“Visual C#”或“Visual Basic”下的项目类型列表中，展开“Office/SharePoint”，选择“加载项”，再选择“Word Web 加载项”作为项目类型。 
 
-3. 命名此项目，再选择“确定”****。
+3. 命名此项目，再选择“确定”。
 
-4. 此时，Visual Studio 创建解决方案，且它的两个项目显示在“解决方案资源管理器”****中。**Home.html** 文件在 Visual Studio 中打开。
+4. 此时，Visual Studio 创建解决方案，且它的两个项目显示在“解决方案资源管理器”中。**Home.html** 文件在 Visual Studio 中打开。
     
 ### <a name="explore-the-visual-studio-solution"></a>探索 Visual Studio 解决方案
 
@@ -56,7 +56,7 @@ _适用于：Word 2016、Word for iPad、Word for Mac_
     </body>
     ```
 
-2. 打开 Web 应用项目根目录中的文件“Home.js”****。 此文件指定加载项脚本。 将整个内容替换为以下代码，并保存文件。
+2. 打开 Web 应用项目根目录中的文件“Home.js”。 此文件指定加载项脚本。 将整个内容替换为以下代码，并保存文件。
 
     ```js
     'use strict';
@@ -157,7 +157,7 @@ _适用于：Word 2016、Word for iPad、Word for Mac_
     })();
     ```
 
-3. 打开 Web 应用项目根目录中的文件“Home.css”****。 此文件指定加载项自定义样式。 将整个内容替换为以下代码，并保存文件。
+3. 打开 Web 应用项目根目录中的文件“Home.css”。 此文件指定加载项自定义样式。 将整个内容替换为以下代码，并保存文件。
 
     ```css
     #content-header {
@@ -192,9 +192,9 @@ _适用于：Word 2016、Word for iPad、Word for Mac_
 
 2. `ProviderName` 元素具有占位符值。 将其替换为你的姓名。
 
-3. `DisplayName` 元素的 `DefaultValue` 属性有占位符。 将它替换为“My Office Add-in”****。
+3. `DisplayName` 元素的 `DefaultValue` 属性有占位符。 将它替换为“My Office Add-in”。
 
-4. `Description` 元素的 `DefaultValue` 属性有占位符。 将它替换为“A task pane add-in for Word”****。
+4. `Description` 元素的 `DefaultValue` 属性有占位符。 将它替换为“A task pane add-in for Word”。
 
 5. 保存文件。
 
@@ -210,9 +210,9 @@ _适用于：Word 2016、Word for iPad、Word for Mac_
 
 ### <a name="try-it-out"></a>试用
 
-1. 使用 Visual Studio 的同时，按 F5 或选择“开始”****按钮启动 Word，以测试新建的 Word 加载项，功能区中显示有“显示任务窗格”****加载项按钮。加载项本地托管在 IIS 上。
+1. 使用 Visual Studio 的同时，按 F5 或选择“开始”按钮启动 Word，以测试新建的 Word 加载项，功能区中显示有“显示任务窗格”加载项按钮。加载项本地托管在 IIS 上。
 
-2. 在 Word 中，依次选择“主页”****选项卡和功能区中的“显示任务窗格”****按钮，以打开加载项任务窗格。
+2. 在 Word 中，依次选择“主页”选项卡和功能区中的“显示任务窗格”按钮，以打开加载项任务窗格。
 
     ![突出显示了“显示任务窗格”按钮的 Word 应用屏幕截图](../images/word-quickstart-addin-0.png)
 
@@ -255,13 +255,13 @@ _适用于：Word 2016、Word for iPad、Word for Mac_
     - **是否要使用 TypeScript?:** `No`
     - **选择框架：**`Jquery`
 
-    然后，生成器会询问是否要打开“resource.html”****。在本教程中，无需打开此文件。不过，如果感兴趣，也可以自行打开。选择“是”或“否”完成向导，并允许生成器执行它的工作。
+    然后，生成器会询问是否要打开“resource.html”。在本教程中，无需打开此文件。不过，如果感兴趣，也可以自行打开。选择“是”或“否”完成向导，并允许生成器执行它的工作。
 
     ![有关 Yeoman 生成器提示和回答的屏幕截图](../images/yo-office-word-jquery.png)
 
 ### <a name="update-the-code"></a>更新代码
 
-1. 在代码编辑器中，打开项目根目录中的“index.html”****。 此文件包含在加载项任务窗格中呈现的 HTML。 将整个内容替换为以下代码，并保存文件。 此加载项将显示三个按钮，在用户选择其中任一按钮后，样本文字就会添加到文档中。
+1. 在代码编辑器中，打开项目根目录中的“index.html”。 此文件包含在加载项任务窗格中呈现的 HTML。 将整个内容替换为以下代码，并保存文件。 此加载项将显示三个按钮，在用户选择其中任一按钮后，样本文字就会添加到文档中。
 
     ```html
     <!DOCTYPE html>
@@ -299,7 +299,7 @@ _适用于：Word 2016、Word for iPad、Word for Mac_
     </html>
     ```
 
-2. 打开文件“app.js”****，以指定加载项脚本。 将整个内容替换为以下代码，并保存文件。 此脚本包含初始化代码以及用于更改 Word 文档的代码（具体方法是通过选择某个按钮将文本插入文档）。 
+2. 打开文件“app.js”，以指定加载项脚本。 将整个内容替换为以下代码，并保存文件。 此脚本包含初始化代码以及用于更改 Word 文档的代码（具体方法是通过选择某个按钮将文本插入文档）。 
 
     ```js
     'use strict';
@@ -400,7 +400,7 @@ _适用于：Word 2016、Word for iPad、Word for Mac_
     })();
     ```
 
-3. 打开项目根目录中的文件“app.css”****，以指定加载项自定义样式。 将整个内容替换为以下内容，并保存文件。
+3. 打开项目根目录中的文件“app.css”，以指定加载项自定义样式。 将整个内容替换为以下内容，并保存文件。
 
     ```css
     #content-header {
@@ -431,11 +431,11 @@ _适用于：Word 2016、Word for iPad、Word for Mac_
 
 ### <a name="update-the-manifest"></a>更新清单
 
-1. 打开文件“my-office-add-in-manifest.xml”****，以定义加载项的设置和功能。
+1. 打开文件“my-office-add-in-manifest.xml”，以定义加载项的设置和功能。
 
 2. `ProviderName` 元素具有占位符值。 将其替换为你的姓名。
 
-3. `Description` 元素的 `DefaultValue` 属性有占位符。 将它替换为“A task pane add-in for Word”****。
+3. `Description` 元素的 `DefaultValue` 属性有占位符。 将它替换为“A task pane add-in for Word”。
 
 4. 保存文件。
 
@@ -461,7 +461,7 @@ _适用于：Word 2016、Word for iPad、Word for Mac_
     - Word Online：[在 Office Online 中旁加载 Office 加载项](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-on-office-online)
     - iPad 和 Mac：[在 iPad 和 Mac 上旁加载 Office 加载项](../testing/sideload-an-office-add-in-on-ipad-and-mac.md)
 
-2. 在 Word 中，依次选择“主页”****选项卡和功能区中的“显示任务窗格”****按钮，以打开加载项任务窗格。
+2. 在 Word 中，依次选择“主页”选项卡和功能区中的“显示任务窗格”按钮，以打开加载项任务窗格。
 
     ![突出显示了“显示任务窗格”按钮的 Word 应用屏幕截图](../images/word-quickstart-addin-2.png)
 

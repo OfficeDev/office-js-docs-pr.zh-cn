@@ -46,12 +46,12 @@ ng new my-addin
     - **要支持哪一个 Office 客户端应用程序?:** `Excel`
     - **是否要新建加载项?：**`No`
 
-    然后，生成器会询问是否要打开“resource.html”****。在本教程中，无需打开此文件。不过，如果感兴趣，也可以自行打开。选择“是”或“否”完成向导，并允许生成器执行它的工作。
+    然后，生成器会询问是否要打开“resource.html”。在本教程中，无需打开此文件。不过，如果感兴趣，也可以自行打开。选择“是”或“否”完成向导，并允许生成器执行它的工作。
 
     ![Yeoman 生成器](../images/yo-office.png)
     
     > [!NOTE]
-    > 如果系统提示覆盖 **package.json**，请回答“否”****（不覆盖）。
+    > 如果系统提示覆盖 **package.json**，请回答“否”（不覆盖）。
 
 ## <a name="secure-the-app"></a>保护应用程序
 
@@ -99,7 +99,7 @@ ng new my-addin
     <script src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js"></script>
     ```
 
-4. 打开“src/main.ts”****，将 `platformBrowserDynamic().bootstrapModule(AppModule).catch(err => console.log(err));` 替换为以下代码，再保存此文件。 
+4. 打开“src/main.ts”，将 `platformBrowserDynamic().bootstrapModule(AppModule).catch(err => console.log(err));` 替换为以下代码，再保存此文件。 
 
     ```typescript 
     declare const Office: any;
@@ -110,13 +110,13 @@ ng new my-addin
     };
     ```
 
-5. 打开“src/polyfills.ts”****，在其他所有现有 `import` 语句上方添加以下代码行，再保存此文件。
+5. 打开“src/polyfills.ts”，在其他所有现有 `import` 语句上方添加以下代码行，再保存此文件。
 
     ```typescript
     import 'core-js/client/shim';
     ```
 
-6. 在“src/polyfills.ts”****中，取消注释以下代码行，再保存此文件。
+6. 在“src/polyfills.ts”中，取消注释以下代码行，再保存此文件。
 
     ```typescript
     import 'core-js/es6/symbol';
@@ -135,7 +135,7 @@ ng new my-addin
     import 'core-js/es6/set';
     ```
 
-7. 打开“src/app/app.component.html”****，将文件内容替换为以下 HTML，再保存此文件。 
+7. 打开“src/app/app.component.html”，将文件内容替换为以下 HTML，再保存此文件。 
 
     ```html
     <div id="content-header">
@@ -153,7 +153,7 @@ ng new my-addin
     </div>
     ```
 
-8. 打开“src/app/app.component.css”****，将文件内容替换为以下 CSS 代码，再保存此文件。
+8. 打开“src/app/app.component.css”，将文件内容替换为以下 CSS 代码，再保存此文件。
 
     ```css
     #content-header {
@@ -229,13 +229,13 @@ ng new my-addin
     - iPad 和 Mac：[在 iPad 和 Mac 上旁加载 Office 加载项](../testing/sideload-an-office-add-in-on-ipad-and-mac.md)
 
    
-2. 在 Excel 中，依次选择“主页”****选项卡和功能区中的“显示任务窗格”****按钮，以打开加载项任务窗格。
+2. 在 Excel 中，依次选择“主页”选项卡和功能区中的“显示任务窗格”按钮，以打开加载项任务窗格。
 
     ![Excel 加载项按钮](../images/excel-quickstart-addin-2a.png)
 
 3. 选择工作表中的任何一系列单元格。
 
-4. 在任务窗格中，选择“设置颜色”****按钮，将选定区域的颜色设置为绿色。
+4. 在任务窗格中，选择“设置颜色”按钮，将选定区域的颜色设置为绿色。
 
     ![Excel 加载项](../images/excel-quickstart-addin-2c.png)
 

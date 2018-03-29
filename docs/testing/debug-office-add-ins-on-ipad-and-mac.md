@@ -29,7 +29,7 @@ Vorlon.JS 是网页调试程序，类似于 F12 工具。它旨在实现远程�
 > [!IMPORTANT]
 > [!include[HTTPS guidance](../includes/https-guidance.md)]
 
-1.  在**查找器**中，转到 `/usr/local/lib/node_modules/vorlon`，打开 `/Server` 文件夹的上下文菜单（右键单击），再选择“获取信息”****。
+1.  在**查找器**中，转到 `/usr/local/lib/node_modules/vorlon`，打开 `/Server` 文件夹的上下文菜单（右键单击），再选择“获取信息”。
 
 2.  在“**服务器信息**”窗口的右下角选择挂锁图标来解锁该文件夹。
 
@@ -53,12 +53,12 @@ Vorlon.JS 是网页调试程序，类似于 F12 工具。它旨在实现远程�
     
 12. 在“**终端**”窗口中，输入 `sudo vorlon`。系统将提示你输入管理员密码。Vorlon 服务器将启动。使“**终端**”窗口保持打开状态。
 
-13. 打开浏览器窗口，再转到 Vorlon.JS 界面 `https://localhost:1337`。当出现提示时，选择“始终”****，以信任安全证书。 
+13. 打开浏览器窗口，再转到 Vorlon.JS 界面 `https://localhost:1337`。当出现提示时，选择“始终”，以信任安全证书。 
 
     > [!NOTE]
     > 如果没有看到提示，可能需要手动信任安全证书。证书文件是 `/usr/local/lib/node_modules/vorlon/Server/cert/server.crt`。请尝试执行以下步骤。如有疑问，请咨询 Macintosh 或 iPad 帮助人员。 
     >
-    > 1. 关闭浏览器窗口，在运行 Vorlon 服务器的“终端”****窗口中，按 Control-C 停止服务器。
+    > 1. 关闭浏览器窗口，在运行 Vorlon 服务器的“终端”窗口中，按 Control-C 停止服务器。
     > 2. 在**查找器**中，右键单击 `server.crt` 文件并选择“**钥匙链访问**”。“**钥匙链访问**”窗口将打开。
     > 3. 在左侧的“**钥匙链**”列表中，如果尚未选择“**登录**”，请进行选择，然后再选择“**类别**”部分中的“**证书**”。将列出证书 **localhost**。
     > 4. 右键单击证书 **localhost**，并选择“**获取信息**”。**localhost** 窗口将打开。

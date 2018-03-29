@@ -23,11 +23,11 @@
 
 ## <a name="test-the-add-in"></a>测试加载项
 
-1. 使用 Visual Studio 的同时，按 `F5` 或选择“开始”****按钮启动 PowerPoint，以测试 PowerPoint 加载项，功能区中显示有“显示任务窗格”****加载项按钮。加载项本地托管在 IIS 上。
+1. 使用 Visual Studio 的同时，按 `F5` 或选择“开始”按钮启动 PowerPoint，以测试 PowerPoint 加载项，功能区中显示有“显示任务窗格”加载项按钮。加载项本地托管在 IIS 上。
 
     ![突出显示“开始”按钮的 Visual Studio 屏幕截图](../images/powerpoint-tutorial-start.png)
 
-2. 在 PowerPoint 中，选择功能区中的“显示任务窗格”****按钮，以打开加载项任务窗格。
+2. 在 PowerPoint 中，选择功能区中的“显示任务窗格”按钮，以打开加载项任务窗格。
 
     ![“开始”功能区中突出显示“显示任务窗格”按钮的 Visual Studio 屏幕截图](../images/powerpoint-tutorial-show-taskpane-button.png)
 
@@ -35,7 +35,7 @@
 
     ![突出显示“插入图像”按钮的 PowerPoint 加载项屏幕截图](../images/powerpoint-tutorial-new-task-pane-ui.png)
 
-4. 在 Visual Studio 中，按 `Shift + F5` 或选择“停止”****按钮，以停止加载项。 PowerPoint 在加载项停止时自动关闭。
+4. 在 Visual Studio 中，按 `Shift + F5` 或选择“停止”按钮，以停止加载项。 PowerPoint 在加载项停止时自动关闭。
 
     ![突出显示“停止”按钮的 Visual Studio 屏幕截图](../images/powerpoint-tutorial-stop.png)
 

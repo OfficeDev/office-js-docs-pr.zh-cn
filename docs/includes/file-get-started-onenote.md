@@ -35,14 +35,14 @@
     - **是否要使用 TypeScript?:** `No`
     - **选择框架：**`Jquery`
 
-    然后，生成器会询问是否要打开“resource.html”****。在本教程中，无需打开此文件。不过，如果感兴趣，也可以自行打开。选择“是”或“否”完成向导，并允许生成器执行它的工作。
+    然后，生成器会询问是否要打开“resource.html”。在本教程中，无需打开此文件。不过，如果感兴趣，也可以自行打开。选择“是”或“否”完成向导，并允许生成器执行它的工作。
 
     ![有关 Yeoman 生成器提示和回答的屏幕截图](../images/yo-office-onenote-jquery.png)
 
 
 ## <a name="update-the-code"></a>更新代码
 
-1. 在代码编辑器中，打开项目根目录中的“index.html”****。 此文件包含在加载项任务窗格中呈现的 HTML。
+1. 在代码编辑器中，打开项目根目录中的“index.html”。 此文件包含在加载项任务窗格中呈现的 HTML。
 
 2. 将 `<body>` 元素内的 `<main>` 元素替换为以下标记，并保存文件。 这会使用 [Office UI Fabric 组件](http://dev.office.com/fabric/components)添加文本区域和按钮。
 
@@ -61,7 +61,7 @@
     </main>
     ```
 
-3. 打开文件“app.js”****，以指定加载项脚本。 将整个内容替换为以下代码，并保存文件。
+3. 打开文件“app.js”，以指定加载项脚本。 将整个内容替换为以下代码，并保存文件。
 
     ```js
     'use strict';
@@ -110,11 +110,11 @@
 
 ## <a name="update-the-manifest"></a>更新清单
 
-1. 打开文件“one-note-add-in-manifest.xml”****，以定义加载项的设置和功能。
+1. 打开文件“one-note-add-in-manifest.xml”，以定义加载项的设置和功能。
 
 2. `ProviderName` 元素具有占位符值。 将其替换为你的姓名。
 
-3. `Description` 元素的 `DefaultValue` 属性有占位符。 将它替换为“A task pane add-in for OneNote”****。
+3. `Description` 元素的 `DefaultValue` 属性有占位符。 将它替换为“A task pane add-in for OneNote”。
 
 4. 保存文件。
 
@@ -136,19 +136,19 @@
 
 1. 在 [OneNote Online](https://www.onenote.com/notebooks) 中，打开一个笔记本。
 
-2. 依次选择“插入”>“Office 加载项”****，打开“Office 加载项”对话框。
+2. 依次选择“插入”>“Office 加载项”，打开“Office 加载项”对话框。
 
-    - 如果使用使用者帐户登录，请依次选择“我的加载项”****选项卡和“上传我的加载项”****。
+    - 如果使用使用者帐户登录，请依次选择“我的加载项”选项卡和“上传我的加载项”。
 
-    - 如果使用工作或学校帐户登录，请依次选择“我的组织”****选项卡和“上传我的加载项”****。 
+    - 如果使用工作或学校帐户登录，请依次选择“我的组织”选项卡和“上传我的加载项”。 
 
-    下图展示了使用者笔记本的“我的加载项”****选项卡。
+    下图展示了使用者笔记本的“我的加载项”选项卡。
 
     <img alt="The Office Add-ins dialog showing the MY ADD-INS tab" src="../images/onenote-office-add-ins-dialog.png" width="500">
 
-3. 在“上传加载项”对话框中，转到项目文件夹中的“one-note-add-in-manifest.xml”****，再选择“上传”****。 
+3. 在“上传加载项”对话框中，转到项目文件夹中的“one-note-add-in-manifest.xml”，再选择“上传”。 
 
-4. 此时，加载项在 OneNote 页面旁边的 iFrame 中打开。在文本区域中输入一些文本，再选择“添加边框”****。此时，输入的文本会添加到页面中。 
+4. 此时，加载项在 OneNote 页面旁边的 iFrame 中打开。在文本区域中输入一些文本，再选择“添加边框”。此时，输入的文本会添加到页面中。 
 
     ![通过此演练生成的 OneNote 加载项](../images/onenote-first-add-in.png)
 

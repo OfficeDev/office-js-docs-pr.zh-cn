@@ -35,7 +35,7 @@ ms.date: 12/04/2017
 ### <a name="update-the-javascript-api-for-office-library-files-in-your-project-to-the-newest-release"></a>将项目中适用于 Office 的 JavaScript API 库文件更新到最新版本
 
 
-1. 在 Visual Studio 2015 中，打开或新建“Office 加载项”****项目。
+1. 在 Visual Studio 2015 中，打开或新建“Office 加载项”项目。
     
       - 在左侧窗格中，选择“**更新**”并完成程序包更新过程。
     
@@ -45,7 +45,7 @@ ms.date: 12/04/2017
     
 3. 在“**NuGet 程序包管理器**”中，为“**程序包源**”选择“**nuget.org**”并为“**筛选器**”选择“**可用升级**”。并选择 Microsoft.Office.js。
     
-4. 在左侧窗格中，选择“更新”****，并完成包更新过程。
+4. 在左侧窗格中，选择“更新”，并完成包更新过程。
     
 5. 在加载项 HTML 页面的 **head** 标记中，注释掉或删除任何现有 office.js 脚本引用，再引用更新后的适用于 Office 的 JavaScript API 库，如下所示：
     

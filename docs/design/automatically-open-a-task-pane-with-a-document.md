@@ -112,7 +112,7 @@ webextension 部件还包括对具有 `id`、 `storeType`、 `store` 和 `versio
 |Registry（系统注册表）|外接程序清单中外接程序的 GUID。|“developer”|加载项清单中的版本。|
 
 > [!NOTE]
-> 若要查找 AppSource 中加载项的资产 ID 和版本，请转到加载项的 AppSource 登陆页面。资产 ID 显示在浏览器的地址栏中。版本在页面的“详细信息”****部分中列出。
+> 若要查找 AppSource 中加载项的资产 ID 和版本，请转到加载项的 AppSource 登陆页面。资产 ID 显示在浏览器的地址栏中。版本在页面的“详细信息”部分中列出。
 
 若要详细了解 webextension 标记，请参阅 [[MS-OWEXML] 2.2.5. WebExtensionReference](https://msdn.microsoft.com/zh-cn/library/hh695383(v=office.12).aspx)。
 
@@ -124,7 +124,7 @@ webextension 部件还包括对具有 `id`、 `storeType`、 `store` 和 `versio
 </wetp:taskpane>
 ```
 
-请注意，在本例中，`visibility` 属性设置为“0”。这意味着在添加 webextension 部件和任务窗格部件之后，第一次打开文档时，用户还必须从功能区上的“外接程序”****按钮安装该外接程序。此后，外接程序任务窗格将在打开该文件时自动打开。此外，在将 `visibility` 设置为“0”时，可以使用 Office.js 让用户打开或关闭 Autoopen 功能。具体来说，脚本会将 **Office.AutoShowTaskpaneWithDocument** 文档设置为 `true` 或 `false`。（有关详细信息，请参阅[在客户端上标记文档](#tag-the-document-on-the-client-side)。） 
+请注意，在本例中，`visibility` 属性设置为“0”。这意味着在添加 webextension 部件和任务窗格部件之后，第一次打开文档时，用户还必须从功能区上的“外接程序”按钮安装该外接程序。此后，外接程序任务窗格将在打开该文件时自动打开。此外，在将 `visibility` 设置为“0”时，可以使用 Office.js 让用户打开或关闭 Autoopen 功能。具体来说，脚本会将 **Office.AutoShowTaskpaneWithDocument** 文档设置为 `true` 或 `false`。（有关详细信息，请参阅[在客户端上标记文档](#tag-the-document-on-the-client-side)。） 
 
 如果 `visibility` 设置为“1”，任务窗格将在文件第一次打开时自动打开。系统会提示用户信任该外接程序，授予信任后，将打开外接程序。此后，外接程序任务窗格将在打开该文件时自动打开。但是，当 `visibility` 设置为“1”时，则不能使用 Office.js 让用户打开或关闭 Autoopen 功能。 
 

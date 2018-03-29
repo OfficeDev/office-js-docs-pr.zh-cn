@@ -32,7 +32,7 @@ ms.date: 12/04/2017
 
 ![SSO 过程关系图](../images/sso-overview-diagram.png)
 
-1. 在加载项中，JavaScript 调用新的 Office.js API `getAccessTokenAsync`。这指示 Office 主机应用获取对加载项的访问令牌（以下称为“加载项令牌”****）。
+1. 在加载项中，JavaScript 调用新的 Office.js API `getAccessTokenAsync`。这指示 Office 主机应用获取对加载项的访问令牌（以下称为“加载项令牌”）。
 1. 如果用户未登录，Office 主机应用会打开弹出窗口，以供用户登录。
 1.  如果当前用户是首次使用加载项，则会看到同意提示。
 1. Office 主机应用程序从当前用户的 Azure AD v2.0 终结点请求获取**加载项令牌**。

@@ -173,19 +173,19 @@ ms.date: 01/23/2018
 
 您可以使用 Office 2013 语言包安装其他语言。有关语言包及其获取位置的详细信息，请参阅 [Office 2013 语言选项](http://office.microsoft.com/en-us/language-packs/)。
 
-> **注意**：若为 MSDN 订阅者，可能已有可用的 Office 2013 语言包。若要确定订阅是否提供可供下载的 Office 2013 语言包，请转到 [MSDN 订阅主页](https://msdn.microsoft.com/subscriptions/manage/)，在“软件下载”****中输入“Office 2013 语言包”，再依次选择“搜索”****和“我的订阅提供的产品”****。在“语言”****下，选中要下载的语言包的复选框，再选择“转到”****。 
+> **注意**：若为 MSDN 订阅者，可能已有可用的 Office 2013 语言包。若要确定订阅是否提供可供下载的 Office 2013 语言包，请转到 [MSDN 订阅主页](https://msdn.microsoft.com/subscriptions/manage/)，在“软件下载”中输入“Office 2013 语言包”，再依次选择“搜索”和“我的订阅提供的产品”。在“语言”下，选中要下载的语言包的复选框，再选择“转到”。 
 
 安装语言包后，您可以配置 Office 2013 以使用安装的语言在 UI 中显示或编辑文档内容，或同时用于两者。本文中的示例使用的是应用了西班牙语语言包的 Office 2013 的安装。
 
 ### <a name="create-an-office-add-in-project"></a>创建 Office 加载项项目
 
-1. 在 Visual Studio 中，依次选择“文件”**** > “新建项目”****。
+1. 在 Visual Studio 中，依次选择“文件” > “新建项目”。
     
-2. 在“新建项目”****对话框中的“模版”****下，展开“Visual Basic”****或“Visual C#”****，展开“Office/SharePoint”****，再选择“Office 加载项”****。
+2. 在“新建项目”对话框中的“模版”下，展开“Visual Basic”或“Visual C#”，展开“Office/SharePoint”，再选择“Office 加载项”。
     
-3. 选择“Office 加载项”****，再为加载项命名（例如，WorldReadyAddIn）。选择“确定”****。
+3. 选择“Office 加载项”，再为加载项命名（例如，WorldReadyAddIn）。选择“确定”。
     
-4. 在“创建 Office 加载项”****对话框中，依次选择“任务窗格”****和“下一步”****。在下一个页面上，清除所有主机应用的复选框，Word 除外。选择“完成”****，以创建项目。
+4. 在“创建 Office 加载项”对话框中，依次选择“任务窗格”和“下一步”。在下一个页面上，清除所有主机应用的复选框，Word 除外。选择“完成”，以创建项目。
     
 
 ### <a name="localize-the-text-used-in-your-add-in"></a>本地化加载项中使用的文本
@@ -198,7 +198,7 @@ ms.date: 01/23/2018
     
 若要本地化加载项显示名称和说明，请执行以下操作：
 
-1. 在“解决方案资源管理器”****中，展开“WorldReadyAddIn”****、“WorldReadyAddInManifest”****，再选择“WorldReadyAddIn.xml”****。
+1. 在“解决方案资源管理器”中，展开“WorldReadyAddIn”、“WorldReadyAddInManifest”，再选择“WorldReadyAddIn.xml”。
     
 2. 在 WorldReadyAddInManifest.xml 中，将“DisplayName”[]和“Description”[]元素替换为以下代码块：
     
@@ -217,7 +217,7 @@ ms.date: 01/23/2018
     
 若要设计加载项 UI 的布局，请执行以下操作：
 
-1. 在 Visual Studio 的“解决方案资源管理器”****中，选择“Home.html”****。
+1. 在 Visual Studio 的“解决方案资源管理器”中，选择“Home.html”。
     
 2. 将 Home.html 中的 HTML 替换为以下 HTML。
     
@@ -259,7 +259,7 @@ ms.date: 01/23/2018
     </html>
     ```
 
-3. 在 Visual Studio 中，依次选择“文件”****和“保存 AddIn\Home\Home.html”****。
+3. 在 Visual Studio 中，依次选择“文件”和“保存 AddIn\Home\Home.html”。
     
 下图展示了在示例加载项运行时显示本地化文本的 heading (h1) 元素和 paragraph (p) 元素。
 
@@ -275,9 +275,9 @@ JavaScript 资源文件包含用于加载项 UI 的字符串。示例加载项 U
 
 若要将资源文件添加到加载项项目，请执行以下操作：
 
-1. 在 Visual Studio 的“解决方案资源管理器”****中，选择示例加载项 Web 项目中的“加载项”****文件夹，再依次选择“添加”**** > “JavaScript 文件”****。
+1. 在 Visual Studio 的“解决方案资源管理器”中，选择示例加载项 Web 项目中的“加载项”文件夹，再依次选择“添加” > “JavaScript 文件”。
     
-2. 在“指定项名称”****对话框中，输入“UIStrings.js”。
+2. 在“指定项名称”对话框中，输入“UIStrings.js”。
     
 3. 将以下代码添加到 UIStrings.js 文件。
 
@@ -395,15 +395,15 @@ UIStrings.js 资源文件创建对象 **UIStrings**，其中包含加载项 UI �
 
 若要更改加载项中的显示或编辑语言，请执行以下操作：
 
-1. 在 Word 2013 中，依次选择“文件”**** > “选项”**** > “语言”****。下图展示了打开了“语言”选项卡的“Word 选项”****对话框。
+1. 在 Word 2013 中，依次选择“文件” > “选项” > “语言”。下图展示了打开了“语言”选项卡的“Word 选项”对话框。
     
     *图 2：“Word 2013 选项”对话框中的“语言”选项*
 
     ![“Word 2013 选项”对话框](../images/office15-app-how-to-localize-fig04.png)
 
-2. 在“选择用户界面和帮助语言”****下，选择要使用的显示语言（例如，西班牙语），再选择向上箭头键将西班牙语移到列表中的首位。或者，若要更改编辑语言，在“选择编辑语言”****下，选择要使用的编辑语言（例如，西班牙语），再选择“设置为默认值”****。
+2. 在“选择用户界面和帮助语言”下，选择要使用的显示语言（例如，西班牙语），再选择向上箭头键将西班牙语移到列表中的首位。或者，若要更改编辑语言，在“选择编辑语言”下，选择要使用的编辑语言（例如，西班牙语），再选择“设置为默认值”。
     
-3. 选择“确定”****确认选择，再关闭 Word。
+3. 选择“确定”确认选择，再关闭 Word。
     
 运行示例加载项。此时，任务窗格加载项在 Word 2013 中加载，同时加载项 UI 字符串更改为与主机应用使用的语言一致，如下图所示。
 

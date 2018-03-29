@@ -6,7 +6,7 @@ ms.date: 12/04/2017
 
 # <a name="use-document-themes-in-your-powerpoint-add-ins"></a>在 PowerPoint 加载项中使用文档主题
 
-[Office 主题](https://support.office.com/zh-cn/article/What-is-a-theme--7528ccc2-4327-4692-8bf5-9b5a3f2a5ef5)在某种程度上包括一组视觉协调的字体和颜色，可应用于演示文稿、文档、工作表和电子邮件。若要在 PowerPoint 中应用或自定义演示文稿的主题，请使用功能区上“设计”****选项卡中的“主题”****和“变量”****组。虽然 PowerPoint 向新空白演示文稿分配默认的“Office 主题”****，但也可以选择“设计”****选项卡上的其他主题、从 Office.com 下载其他主题，或创建并自定义自己的主题。
+[Office 主题](https://support.office.com/zh-cn/article/What-is-a-theme--7528ccc2-4327-4692-8bf5-9b5a3f2a5ef5)在某种程度上包括一组视觉协调的字体和颜色，可应用于演示文稿、文档、工作表和电子邮件。若要在 PowerPoint 中应用或自定义演示文稿的主题，请使用功能区上“设计”选项卡中的“主题”和“变量”组。虽然 PowerPoint 向新空白演示文稿分配默认的“Office 主题”，但也可以选择“设计”选项卡上的其他主题、从 Office.com 下载其他主题，或创建并自定义自己的主题。
 
 使用 OfficeThemes.css，有助于以两种方式设计与 PowerPoint 相协调的加载项：
 
@@ -20,7 +20,7 @@ ms.date: 12/04/2017
 
 ![调色板](../images/office15-app-color-palette.png)
 
-若要在 PowerPoint 中查看或自定义一套完整的 12 种主题颜色，请在“设计”****选项卡的“变量”****组中，单击“更多”****下拉菜单，指向“颜色”****，再单击“自定义颜色”****，以调出“新建主题颜色”****对话框。
+若要在 PowerPoint 中查看或自定义一套完整的 12 种主题颜色，请在“设计”选项卡的“变量”组中，单击“更多”下拉菜单，指向“颜色”，再单击“自定义颜色”，以调出“新建主题颜色”对话框。
 
 ![“新建主题颜色”对话框](../images/office15-app-create-new-theme-colors.png)
 
@@ -54,9 +54,9 @@ OfficeThemes.css 包含您可在 PowerPoint 任务窗格加载项中使用的类
 
 #### <a name="to-add-officethemescss-to-your-visual-studio-project"></a>将 OfficeThemes.css 添加到 Visual Studio 项目中的具体步骤
 
-1. 在“解决方案资源管理器”****中，右键单击“project_name Web”_****_****项目中的“内容”****文件夹，指向“添加”****，再选择“样式表”****。
+1. 在“解决方案资源管理器”中，右键单击“project_name Web”__项目中的“内容”文件夹，指向“添加”，再选择“样式表”。
     
-2. 将新的样式表命名为“OfficeThemes”****。
+2. 将新的样式表命名为“OfficeThemes”。
     
    > [!IMPORTANT]
    > 必须将样式表命名为 OfficeThemes，否则在用户更改主题时动态更新加载项字体和颜色的功能将无法正常运行。
@@ -81,7 +81,7 @@ OfficeThemes.css 包含您可在 PowerPoint 任务窗格加载项中使用的类
 
 #### <a name="to-reference-officethemescss-in-your-add-in-for-powerpoint"></a>在 PowerPoint 加载项中引用 OfficeThemes.css 的具体步骤
 
-1. 在 Visual Studio 2015 中，打开或新建“Office 加载项”****项目。
+1. 在 Visual Studio 2015 中，打开或新建“Office 加载项”项目。
     
 2. 在实现加载项 UI 的 HTML 页面（如默认模板中的 Home.html）中，在 `<head>` 标记内添加以下引用 OfficeThemes.css 文件的 `<link>` 标记：
     
@@ -99,7 +99,7 @@ OfficeThemes.css 包含您可在 PowerPoint 任务窗格加载项中使用的类
     <body> <div id="themeSample" class="office-docTheme-primary-fontColor "> <h1 class="office-headerFont-latin">Hello world!</h1> <h1 class="office-headerFont-latin office-contentAccent1-bgColor">Hello world!</h1> <h1 class="office-headerFont-latin office-contentAccent2-bgColor">Hello world!</h1> <h1 class="office-headerFont-latin office-contentAccent3-bgColor">Hello world!</h1> <h1 class="office-headerFont-latin office-contentAccent4-bgColor">Hello world!</h1> <h1 class="office-headerFont-latin office-contentAccent5-bgColor">Hello world!</h1> <h1 class="office-headerFont-latin office-contentAccent6-bgColor">Hello world!</h1> <p class="office-bodyFont-latin office-docTheme-secondary-fontColor">Hello world!</p> </div> </body>
 ```
 
-在运行时，如果插入到的演示文稿使用默认“Office 主题”****，内容加载项如下所示：
+在运行时，如果插入到的演示文稿使用默认“Office 主题”，内容加载项如下所示：
 
 ![运行 Office 主题的内容应用](../images/office15-app-content-app-office-theme.png)
 
@@ -110,7 +110,7 @@ OfficeThemes.css 包含您可在 PowerPoint 任务窗格加载项中使用的类
 
 ### <a name="using-officethemescss-office-ui-theme-classes-in-your-task-pane-add-ins-html-page"></a>在任务窗格加载项的 HTML 页面中使用 OfficeThemes.css Office UI 主题类
 
-除文档主题之外，用户还可以为所有 Office 应用的 Office 用户界面自定义颜色主题，具体方法是使用“文件”**** > “帐户”**** > “Office 主题”****下拉框。
+除文档主题之外，用户还可以为所有 Office 应用的 Office 用户界面自定义颜色主题，具体方法是使用“文件” > “帐户” > “Office 主题”下拉框。
 
 以下演示了 HTML 的简单示例，该示例在任务窗格 外接程序 中使用 OfficeTheme.css 类指定字体颜色和背景色。有关与 Office UI 主题字体和颜色对应的 OfficeThemes.css 类的详细信息，请参阅 [适用于任务窗格加载项的主题类](#theme-classes-for-task-pane-add-ins)。
 
@@ -120,7 +120,7 @@ OfficeThemes.css 包含您可在 PowerPoint 任务窗格加载项中使用的类
 
 <br/>
 
-当在 PowerPoint 中运行时，如果“文件”**** > “帐户”**** > “Office 主题”****设置为“白色”****，任务窗格加载项如下所示。
+当在 PowerPoint 中运行时，如果“文件” > “帐户” > “Office 主题”设置为“白色”，任务窗格加载项如下所示。
 
 ![使用 Office 白色主题的任务窗格](../images/office15-app-task-pane-theme-white.png)
 

@@ -236,7 +236,7 @@ var item = Office.context.mailbox.item;
 |||||||||
 |:-----|:-----|:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|
 ||**主机名**|数据库|工作簿|邮箱|演示文稿|文档|Project|
-||**支持的****主机应用程序**|Access Web App|Excel、<br/>Excel Online|Outlook、<br/>Outlook Web App、<br/>适用于设备的 OWA|PowerPoint、<br/>PowerPoint Online|Word|项目|
+||**支持的主机应用程序**|Access Web App|Excel、<br/>Excel Online|Outlook、<br/>Outlook Web App、<br/>适用于设备的 OWA|PowerPoint、<br/>PowerPoint Online|Word|项目|
 |**支持的外接程序类型**|内容|Y|Y||Y|||
 ||任务窗格||Y||Y|Y|Y|
 ||Outlook|||Y||||

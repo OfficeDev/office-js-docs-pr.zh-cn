@@ -37,7 +37,7 @@ Excel.run(function (context) {
 
 ## <a name="add-a-data-series-to-a-chart"></a>向图表添加数据系列
 
-下面的代码示例向工作表中的第一个图表添加数据系列。 新的数据系列对应于“2016 年”****列，并以区域 **D2:D5** 中的数据为依据。
+下面的代码示例向工作表中的第一个图表添加数据系列。 新的数据系列对应于“2016 年”列，并以区域 **D2:D5** 中的数据为依据。
 
 > [!NOTE]
 > 此示例使用的 API 暂仅为公共预览版 (beta)。 若要运行此示例，必须使用 Office.js CDN 的 beta 库：https://appsforoffice.microsoft.com/lib/beta/hosted/office.js.
@@ -107,7 +107,7 @@ Excel.run(function (context) {
 
 ### <a name="set-axis-display-unit"></a>设置轴的显示单位
 
-下面的代码示例将工作表中首个图表的数值轴显示单位设置为“百”****。
+下面的代码示例将工作表中首个图表的数值轴显示单位设置为“百”。
 
 > [!NOTE]
 > 此示例使用的 API 暂仅为公共预览版 (beta)。 若要运行此示例，必须使用 Office.js CDN 的 beta 库：https://appsforoffice.microsoft.com/lib/beta/hosted/office.js.
@@ -173,7 +173,7 @@ Excel.run(function (context) {
 
 ### <a name="update-a-trendline"></a>更新趋势线
 
-下面的代码示例将 **Sample** 工作表中首个图表的第一个系列的趋势线设置为“线性”****类型。
+下面的代码示例将 **Sample** 工作表中首个图表的第一个系列的趋势线设置为“线性”类型。
 
 > [!NOTE]
 > 此示例使用的 API 暂仅为公共预览版 (beta)。 若要运行此示例，必须使用 Office.js CDN 的 beta 库：https://appsforoffice.microsoft.com/lib/beta/hosted/office.js.

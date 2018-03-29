@@ -45,12 +45,12 @@ create-react-app my-addin
     - **要支持哪一个 Office 客户端应用程序?:** `Excel`
     - **是否要新建加载项?：**`No`
 
-    然后，生成器会询问是否要打开“resource.html”****。在本教程中，无需打开此文件。不过，如果感兴趣，也可以自行打开。选择“是”或“否”完成向导，并允许生成器执行它的工作。
+    然后，生成器会询问是否要打开“resource.html”。在本教程中，无需打开此文件。不过，如果感兴趣，也可以自行打开。选择“是”或“否”完成向导，并允许生成器执行它的工作。
 
     ![Yeoman 生成器](../images/yo-office.png)
     
     > [!NOTE]
-    > 如果系统提示覆盖 **package.json**，请回答“否”****（不覆盖）。
+    > 如果系统提示覆盖 **package.json**，请回答“否”（不覆盖）。
 
 3. 请按照运行加载项所用平台对应的说明操作，以在 Excel 中旁加载加载项。
 
@@ -60,13 +60,13 @@ create-react-app my-addin
 
 ## <a name="update-the-app"></a>更新应用
 
-1. 打开“public/index.html”****，紧靠 `</head>` 标记前面添加以下 `<script>` 标记，再保存此文件。
+1. 打开“public/index.html”，紧靠 `</head>` 标记前面添加以下 `<script>` 标记，再保存此文件。
 
     ```html
     <script src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js"></script>
     ```
 
-2. 打开“src/index.js”****，将 `ReactDOM.render(<App />, document.getElementById('root'));` 替换为以下代码，再保存此文件。 
+2. 打开“src/index.js”，将 `ReactDOM.render(<App />, document.getElementById('root'));` 替换为以下代码，再保存此文件。 
 
     ```typescript
     const Office = window.Office;
@@ -76,7 +76,7 @@ create-react-app my-addin
     };
     ```
 
-3. 打开“src/App.js”****，将文件内容替换为以下代码，再保存此文件。 
+3. 打开“src/App.js”，将文件内容替换为以下代码，再保存此文件。 
 
     ```js
     import React, { Component } from 'react';
@@ -121,7 +121,7 @@ create-react-app my-addin
     export default App;
     ```
 
-4. 打开“src/App.css”****，将文件内容替换为以下 CSS 代码，再保存此文件。 
+4. 打开“src/App.css”，将文件内容替换为以下 CSS 代码，再保存此文件。 
 
     ```css
     #content-header {
@@ -167,13 +167,13 @@ create-react-app my-addin
    > [!NOTE]
    > 此时，浏览器窗口打开，其中包含加载项。请关闭此窗口。
 
-2. 在 Excel 中，依次选择“主页”****选项卡和功能区中的“显示任务窗格”****按钮，以打开加载项任务窗格。
+2. 在 Excel 中，依次选择“主页”选项卡和功能区中的“显示任务窗格”按钮，以打开加载项任务窗格。
 
     ![Excel 加载项按钮](../images/excel-quickstart-addin-2b.png)
 
 3. 选择工作表中的任何一系列单元格。
 
-4. 在任务窗格中，选择“设置颜色”****按钮，将选定区域的颜色设置为绿色。
+4. 在任务窗格中，选择“设置颜色”按钮，将选定区域的颜色设置为绿色。
 
     ![Excel 加载项](../images/excel-quickstart-addin-2c.png)
 

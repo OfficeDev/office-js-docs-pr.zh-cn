@@ -117,7 +117,7 @@ Office 2013 提供了大量 SmartArt 图表布局（可以使用 Office Open XML
 
 
 > [!TIP]
-> 可以在记事本等文本编辑器中编辑 Office Open XML 标记。如果在 Visual Studio 2015 中打开它，可以使用“编辑 > 高级 > 格式化文档”****（Ctrl+K、Ctrl+D）设置包格式，以简化编辑。然后，可以折叠或展开其中的文档部分，如图 12 所示，以便更轻松地查看和编辑 Office Open XML 包内容。每个文档部分都是以 **pkg:part** 标记开头。
+> 可以在记事本等文本编辑器中编辑 Office Open XML 标记。如果在 Visual Studio 2015 中打开它，可以使用“编辑 > 高级 > 格式化文档”（Ctrl+K、Ctrl+D）设置包格式，以简化编辑。然后，可以折叠或展开其中的文档部分，如图 12 所示，以便更轻松地查看和编辑 Office Open XML 包内容。每个文档部分都是以 **pkg:part** 标记开头。
 
 
 *图 12：折叠和展开包部分以便在 Visual Studio 2015 中更轻松地编辑*
@@ -206,7 +206,7 @@ Office 2013 提供了大量 SmartArt 图表布局（可以使用 Office Open XML
 
 
 > [!NOTE]
-> 如果将此处所示的标记与 version XML 声明标记和 mso-application 一起添加到 XML 文件（如图 13 所示，后两行标记位于文件顶部），可以在 Word 中将它打开为 Word 文档。如果没有添加后两行标记，也仍可以通过依次单击 Word 中的“文件”>“打开”****打开它。此时，Word 2013 标题栏上显示“兼容性模式”****，因为已删除指示 Word 这是 2013 文档的设置。由于要将此标记添加到现有 Word 2013 文档，因此内容完全不会受影响。
+> 如果将此处所示的标记与 version XML 声明标记和 mso-application 一起添加到 XML 文件（如图 13 所示，后两行标记位于文件顶部），可以在 Word 中将它打开为 Word 文档。如果没有添加后两行标记，也仍可以通过依次单击 Word 中的“文件”>“打开”打开它。此时，Word 2013 标题栏上显示“兼容性模式”，因为已删除指示 Word 这是 2013 文档的设置。由于要将此标记添加到现有 Word 2013 文档，因此内容完全不会受影响。
 
 
 ### <a name="javascript-for-using-setselecteddataasync"></a>使用 setSelectedDataAsync 所需的 JavaScript
@@ -833,7 +833,7 @@ SmartArt 图表具有四个关联的部件，但始终需要的只有两个。�
 
 
 > [!TIP]
-> 如果在开发期间更新现有解决方案中的 Office Open XML 代码片段，请先清除 Internet 临时文件，再重新运行解决方案，以更新代码使用的 Office Open XML。解决方案中 XML 文件包含的标记会缓存到计算机。当然，可以从默认 Web 浏览器中清除 Internet 临时文件。若要在 Visual Studio 2015 中访问 Internet 选项并删除这些设置，请选择“调试”****菜单中的“选项和设置”****。然后在“环境”****下，依次选择“Web 浏览器”****和“Internet Explorer 选项”****。
+> 如果在开发期间更新现有解决方案中的 Office Open XML 代码片段，请先清除 Internet 临时文件，再重新运行解决方案，以更新代码使用的 Office Open XML。解决方案中 XML 文件包含的标记会缓存到计算机。当然，可以从默认 Web 浏览器中清除 Internet 临时文件。若要在 Visual Studio 2015 中访问 Internet 选项并删除这些设置，请选择“调试”菜单中的“选项和设置”。然后在“环境”下，依次选择“Web 浏览器”和“Internet Explorer 选项”。
 
 
 ## <a name="creating-an-add-in-for-both-template-and-stand-alone-use"></a>创建用于模板和独立使用的加载项

@@ -16,4 +16,4 @@ ms.date: 11/29/2017
 |**社区支持** | 可以使用 `office-js` 标签在 [Stack Overflow](https://stackoverflow.com/questions/tagged/office-js) 中发布问题。 请注意，Stack Overflow 规定了相关准则，如必须有描述性标题、完整简明的问题陈述，以及重现问题所需的足够多详细信息。 功能请求或过于宽泛的问题属于离题；新用户应访问 [Stack Overflow 帮助中心](https://stackoverflow.com/help/how-to-ask)，了解详细信息。
 |**Office JavaScript API 功能请求**| 通过 <a href="https://officespdev.uservoice.com/" target="_blank">Office 开发人员平台 UserVoice 页面</a>提交反馈。
 |**文档问题**| 将<a href="https://github.com/officedev/office-js-docs-pr/issues" target="_blank">问题</a>提交到 Office 加载项文档 GitHub 存储库。
-|**文档更新**| 选择文章上的“编辑”****链接，并将拉取请求提交到 <a href="https://github.com/officedev/office-js-docs-pr" target="_blank">Office 加载项文档 GitHub 存储库</a>。
+|**文档更新**| 选择文章上的“编辑”链接，并将拉取请求提交到 <a href="https://github.com/officedev/office-js-docs-pr" target="_blank">Office 加载项文档 GitHub 存储库</a>。

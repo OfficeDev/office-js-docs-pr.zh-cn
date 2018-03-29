@@ -21,7 +21,7 @@ ms.date: 01/23/2018
   [验证策略 10.8](https://docs.microsoft.com/zh-cn/office/dev/store/validation-policies#10-apps-and-add-ins-utilize-supported-capabilities)|
 |确保加载项无商业内容。|加载项不得包括应用内购买、试用优惠、追加销售付费加载项的 UI 或任何在线商店（方便用户购买或获取其他内容、应用或加载项）链接。隐私策略和使用条款页面也不得包含任何商业 UI 或 AppSource 链接。|
   [验证策略 3.4](https://docs.microsoft.com/zh-cn/office/dev/store/validation-policies#3-apps-and-add-ins-can-sell-additional-features-or-content-through-purchases-within-the-app-or-add-in)|
-|将加载项重新提交到 AppSource。|在卖家面板中，选中“将此加载项添加到 iPad 上的 Office 加载项目录中”****复选框，并在“Apple ID”框中输入 Apple 开发人员 ID。请查看[应用提供商协议](https://sellerdashboard.microsoft.com/Assets/Content/Agreements/en-US/Office_Store_Seller_Agreement_20120927.htm)，以确保了解协议。|
+|将加载项重新提交到 AppSource。|在卖家面板中，选中“将此加载项添加到 iPad 上的 Office 加载项目录中”复选框，并在“Apple ID”框中输入 Apple 开发人员 ID。请查看[应用提供商协议](https://sellerdashboard.microsoft.com/Assets/Content/Agreements/en-US/Office_Store_Seller_Agreement_20120927.htm)，以确保了解协议。|
   [将解决方案提交到 AppSource 和 Office 应用商店](https://docs.microsoft.com/zh-cn/office/dev/store/submit-to-the-office-store)|
 
 对于正在其他平台上运行的 Office 应用程序，您的外接程序可以保持原样。您还可以基于您的外接程序所运行的浏览器/设备提供不同的 UI 服务。若要检测您的外接程序是否正在 iPad 上运行，您可以使用以下 API：

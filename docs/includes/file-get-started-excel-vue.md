@@ -53,12 +53,12 @@ vue init webpack my-add-in
     - **要支持哪一个 Office 客户端应用程序?:** `Excel`
     - **是否要新建加载项?：**`No`
 
-    然后，生成器会询问是否要打开“resource.html”****。在本教程中，无需打开此文件。不过，如果感兴趣，也可以自行打开。选择“是”或“否”完成向导，并允许生成器执行它的工作。
+    然后，生成器会询问是否要打开“resource.html”。在本教程中，无需打开此文件。不过，如果感兴趣，也可以自行打开。选择“是”或“否”完成向导，并允许生成器执行它的工作。
 
     ![Yeoman 生成器](../images/yo-office.png)
     
     > [!NOTE]
-    > 如果系统提示覆盖 **package.json**，请回答“否”****（不覆盖）。
+    > 如果系统提示覆盖 **package.json**，请回答“否”（不覆盖）。
 
 ## <a name="secure-the-app"></a>保护应用程序
 
@@ -189,13 +189,13 @@ vue init webpack my-add-in
     - Excel Online：[在 Office Online 中旁加载 Office 加载项](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-on-office-online)
     - iPad 和 Mac：[在 iPad 和 Mac 上旁加载 Office 加载项](../testing/sideload-an-office-add-in-on-ipad-and-mac.md)
 
-2. 在 Excel 中，依次选择“主页”****选项卡和功能区中的“显示任务窗格”****按钮，以打开加载项任务窗格。
+2. 在 Excel 中，依次选择“主页”选项卡和功能区中的“显示任务窗格”按钮，以打开加载项任务窗格。
 
     ![Excel 加载项按钮](../images/excel-quickstart-addin-2a.png)
 
 3. 选择工作表中的任何一系列单元格。
 
-4. 在任务窗格中，选择“设置颜色”****按钮，将选定区域的颜色设置为绿色。
+4. 在任务窗格中，选择“设置颜色”按钮，将选定区域的颜色设置为绿色。
 
     ![Excel 加载项](../images/excel-quickstart-addin-2c.png)
 

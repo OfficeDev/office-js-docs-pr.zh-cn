@@ -35,13 +35,13 @@ ms.date: 01/23/2018
 
 1. 目前，SSO 所需的 MSAL 库 (Microsoft.Identity.Client) 版本（`1.1.1-alpha0393` 版本）没有在标准 NuGet 目录中列出，因此也没有在 package.config 中列出，必须单独进行安装。 
 
-   > 1. 在“工具”****菜单上，依次转到“NuGet 包管理器”**** > “包管理器控制台”****。 
+   > 1. 在“工具”菜单上，依次转到“NuGet 包管理器” > “包管理器控制台”。 
 
    > 2. 在控制台中，运行以下命令。 即使 Internet 连接速度很快，也可能需要一分钟或更长时间才能完成。 完成后，应该会在控制台输出末尾处附近看到**已成功安装“Microsoft.Identity.Client 1.1.1-alpha0393”...**。
 
    >    `Install-Package Microsoft.Identity.Client -Version 1.1.1-alpha0393 -Source https://www.myget.org/F/aad-clients-nightly/api/v3/index.json`
 
-   > 3. 在“解决方案资源管理器”****中，右键单击“引用”****。验证是否列出了“Microsoft.Identity.Client”****。如果没有列出或它的条目上有警告图标，请先删除此条目，再使用“Visual Studio 添加引用”向导，添加对 **... \[Begin | Complete]\packages\Microsoft.Identity.Client.1.1.1-alpha0393\lib\net45\Microsoft.Identity.Client.dll** 处程序集的引用。
+   > 3. 在“解决方案资源管理器”中，右键单击“引用”。验证是否列出了“Microsoft.Identity.Client”。如果没有列出或它的条目上有警告图标，请先删除此条目，再使用“Visual Studio 添加引用”向导，添加对 **... \[Begin | Complete]\packages\Microsoft.Identity.Client.1.1.1-alpha0393\lib\net45\Microsoft.Identity.Client.dll** 处程序集的引用。
 
 1. 重新生成此项目。
 
@@ -51,41 +51,41 @@ ms.date: 01/23/2018
 
 1. 使用管理员凭据登录 Office 365 租户。例如，MyName@contoso.onmicrosoft.com
 
-1. 单击“添加应用”****。
+1. 单击“添加应用”。
 
-1. 当出现提示时，为应用命名“Office-Add-in-ASPNET-SSO”，再按“创建应用”****。
+1. 当出现提示时，为应用命名“Office-Add-in-ASPNET-SSO”，再按“创建应用”。
 
-1. 当应用的配置页面打开时，复制并保存“应用 ID”****。将在后续过程中用到它。
+1. 当应用的配置页面打开时，复制并保存“应用 ID”。将在后续过程中用到它。
 
     > [!NOTE]
     > 如果其他应用（如 PowerPoint、Word、Excel 等 Office 主机应用）寻求对应用的授权访问权限，此 ID 是“受众”值。反过来，如果它寻求对 Microsoft Graph 的授权访问权限，此 ID 同时也是应用的“客户端 ID”。
 
-1. 在“应用机密”****部分中，按“生成新密码”****。此时，弹出式对话框打开，并显示新密码（亦称为“应用密码”）。*立即复制密码，并将它与应用 ID 一起保存。*将需要在后续过程中用到它。然后，关闭对话框。
+1. 在“应用机密”部分中，按“生成新密码”。此时，弹出式对话框打开，并显示新密码（亦称为“应用密码”）。*立即复制密码，并将它与应用 ID 一起保存。*将需要在后续过程中用到它。然后，关闭对话框。
 
-1. 在“平台”****部分中，单击“添加平台”****。
+1. 在“平台”部分中，单击“添加平台”。
 
-1. 在随即打开的对话框中，选择“Web API”****。
+1. 在随即打开的对话框中，选择“Web API”。
 
-1. 此时，生成了“api://{应用 ID GUID}”形式的“应用 ID URI”****。在双斜杠和 GUID 之间插入字符串“localhost:44355/”。整个 ID 应为 `api://localhost:44355/{App ID GUID}`。 
+1. 此时，生成了“api://{应用 ID GUID}”形式的“应用 ID URI”。在双斜杠和 GUID 之间插入字符串“localhost:44355/”。整个 ID 应为 `api://localhost:44355/{App ID GUID}`。 
 
     > [!NOTE]
-    > “应用 ID URI”****正下方的“范围”****名称的域部分会自动更改为与之匹配。 它应为 `api://localhost:44355/{App ID GUID}/access_as_user`。
+    > “应用 ID URI”正下方的“范围”名称的域部分会自动更改为与之匹配。 它应为 `api://localhost:44355/{App ID GUID}/access_as_user`。
 
-1. 在“预授权应用”****部分中，确定要授权给加载项 Web 应用的应用。 下面每个 ID 都需要进行预授权。 每次输入一个 ID，都会看到新的空文本框。 （仅输入 GUID）。
+1. 在“预授权应用”部分中，确定要授权给加载项 Web 应用的应用。 下面每个 ID 都需要进行预授权。 每次输入一个 ID，都会看到新的空文本框。 （仅输入 GUID）。
     * `d3590ed6-52b3-4102-aeff-aad2292ab01c` (Microsoft Office)
     * `57fb890c-0dab-4253-a5e0-7188c88b2bb4` (Office Online)
     * `bc59ab01-8403-45c6-8796-ac3ef710b3e3` (Office Online)
 
-1. 打开每个“应用程序 ID”****旁边的“作用域”****下拉列表，并选中 `api://localhost:44355/{App ID GUID}/access_as_user` 对应的框。
+1. 打开每个“应用程序 ID”旁边的“作用域”下拉列表，并选中 `api://localhost:44355/{App ID GUID}/access_as_user` 对应的框。
 
-1. 在“平台”****部分顶部附近，再次单击“添加平台”****并选择“Web”****。
+1. 在“平台”部分顶部附近，再次单击“添加平台”并选择“Web”。
 
-1. 在“平台”****下的新“Web”****部分中，输入下列内容作为“重定向 URL”****：`https://localhost:44355`。
+1. 在“平台”下的新“Web”部分中，输入下列内容作为“重定向 URL”：`https://localhost:44355`。
 
     > [!NOTE]
-    > 截至本文撰写之时，“Web API”****平台有时会从“平台”****部分中消失，特别是在添加“Web”****平台和*保存注册页面*后刷新页面时。为了确保仍可以在注册期间选择“Web API”****平台，请单击页面底部附近的“编辑应用清单”****按钮。应该会看到清单的 **identifierUris** 属性中的 `api://localhost:44355/{App ID GUID}` 字符串。还有 **oauth2Permissions** 属性，它的 **value** 子属性的值为 `access_as_user`。
+    > 截至本文撰写之时，“Web API”平台有时会从“平台”部分中消失，特别是在添加“Web”平台和*保存注册页面*后刷新页面时。为了确保仍可以在注册期间选择“Web API”平台，请单击页面底部附近的“编辑应用清单”按钮。应该会看到清单的 **identifierUris** 属性中的 `api://localhost:44355/{App ID GUID}` 字符串。还有 **oauth2Permissions** 属性，它的 **value** 子属性的值为 `access_as_user`。
 
-1. 向下滚动到“Microsoft Graph 权限”****部分的“委派的权限”****子部分。使用“添加”****按钮，打开“选择权限”****对话框。
+1. 向下滚动到“Microsoft Graph 权限”部分的“委派的权限”子部分。使用“添加”按钮，打开“选择权限”对话框。
 
 1. 在对话框中，选中以下权限对应的框。 加载项本身真正需要的只是第一项权限，但服务器端代码使用的 MSAL 库需要有 `offline_access` 和 `openid`。 Office 主机必须有 `profile` 权限，才能获取对加载项 Web 应用程序的令牌。
     * Files.Read.All
@@ -96,9 +96,9 @@ ms.date: 01/23/2018
     > [!NOTE]
     > `User.Read` 权限可能已默认列出。根据最佳做法，最好不要请求授予不需要的权限，因此建议取消选中此权限对应的框。
 
-1. 单击对话框底部的“确定”****。
+1. 单击对话框底部的“确定”。
 
-1. 单击注册页底部的“保存”****。
+1. 单击注册页底部的“保存”。
 
 ## <a name="grant-admin-consent-to-the-add-in"></a>向加载项授予管理员许可
 
@@ -113,7 +113,7 @@ ms.date: 01/23/2018
 
 1. 看到提示时，使用管理员凭据登录 Office 365 租户。
 
-1. 然后系统提示你授予外接程序访问 Microsoft Graph 数据的权限。单击“接受”****。
+1. 然后系统提示你授予外接程序访问 Microsoft Graph 数据的权限。单击“接受”。
 
 1. 然后，将浏览器窗口/选项卡重定向到注册外接程序时指定的**重定向 URL**；因此，外接程序的主页将在浏览器中打开。
 
@@ -181,27 +181,27 @@ ms.date: 01/23/2018
     > * **Resource** 值是向注册的加载项添加 Web API 平台时设置的**应用 ID URI**。
     > * 仅在通过 AppSource 销售加载项时，才使用 **Scopes** 部分生成许可对话框。
 
-1. 在 Visual Studio 中，打开“错误列表”****的“警告”****选项卡。 如果存在关于 `<WebApplicationInfo>` 不是 `<VersionOverrides>` 的有效子级的警告，则该 Visual Studio 2017 Preview 版本无法识别 SSO 标记。 作为解决方法，请对 Word、Excel 或 PowerPoint 外接程序执行以下操作。 （如果使用的是 Outlook 外接程序，请参阅下面的解决方法。）
+1. 在 Visual Studio 中，打开“错误列表”的“警告”选项卡。 如果存在关于 `<WebApplicationInfo>` 不是 `<VersionOverrides>` 的有效子级的警告，则该 Visual Studio 2017 Preview 版本无法识别 SSO 标记。 作为解决方法，请对 Word、Excel 或 PowerPoint 外接程序执行以下操作。 （如果使用的是 Outlook 外接程序，请参阅下面的解决方法。）
 
    - **Word、Excel 和 Powerpoint 的解决方法**
 
         1. 在结束 `</VersionOverrides>` 标记正上方的清单中，注释掉 `<WebApplicationInfo>` 部分。
 
-        2. 按 F5 启动调试会话。此操作会在下列文件夹（相比 Visual Studio，在“文件资源管理器”****中访问此文件夹更方便）中创建清单副本：`Office-Add-in-ASP.NET-SSO\Complete\Office-Add-in-ASPNET-SSO\bin\Debug\OfficeAppManifests`
+        2. 按 F5 启动调试会话。此操作会在下列文件夹（相比 Visual Studio，在“文件资源管理器”中访问此文件夹更方便）中创建清单副本：`Office-Add-in-ASP.NET-SSO\Complete\Office-Add-in-ASPNET-SSO\bin\Debug\OfficeAppManifests`
 
         3. 在清单副本中，删除 `<WebApplicationInfo>` 部分周围的注释语法。
 
         4. 保存此清单副本。
 
-        5. 现在，必须阻止 Visual Studio 在用户下次按 F5 时重写此清单副本。右键单击“解决方案资源管理器”****顶部的解决方案节点（而不是任何项目节点）。
+        5. 现在，必须阻止 Visual Studio 在用户下次按 F5 时重写此清单副本。右键单击“解决方案资源管理器”顶部的解决方案节点（而不是任何项目节点）。
 
-        6. 选择上下文菜单中的“属性”****，随后“解决方案属性页”****对话框打开。
+        6. 选择上下文菜单中的“属性”，随后“解决方案属性页”对话框打开。
 
-        7. 展开“配置属性”****，并选择“配置”****。
+        7. 展开“配置属性”，并选择“配置”。
 
-        8. 在 **Office-Add-in-ASPNET-SSO** 项目（*不是* **Office-Add-in-ASPNET-SSO-WebAPI** 项目）行中取消选择“生成”****和“部署”****。
+        8. 在 **Office-Add-in-ASPNET-SSO** 项目（*不是* **Office-Add-in-ASPNET-SSO-WebAPI** 项目）行中取消选择“生成”和“部署”。
 
-        9. 按“确定”****关闭对话框。
+        9. 按“确定”关闭对话框。
 
    - **Outlook 的解决方法**
 
@@ -518,9 +518,9 @@ ms.date: 01/23/2018
 
 1. 保存并关闭文件。
 
-1. 右键单击“App_Start”****文件夹，并依次选择“添加”>“类”****。
+1. 右键单击“App_Start”文件夹，并依次选择“添加”>“类”。
 
-1. 在“添加新项”****对话框中，命名文件“Startup.Auth.cs”****，再单击“添加”****。
+1. 在“添加新项”对话框中，命名文件“Startup.Auth.cs”，再单击“添加”。
 
 1. 将新文件中的命名空间名称缩短为 `Office_Add_in_ASPNET_SSO_WebAPI`。
 
@@ -776,13 +776,13 @@ ms.date: 01/23/2018
 
 1. 请确保 OneDrive 中有一些文件，以便可以验证结果。
 
-1. 在 Visual Studio 中，按 F5。PowerPoint 将打开，“主页”****功能区上会有一个“SSO ASP.NET”****组。
+1. 在 Visual Studio 中，按 F5。PowerPoint 将打开，“主页”功能区上会有一个“SSO ASP.NET”组。
 
-1. 按此组中的“显示加载项”****按钮，在任务窗格中查看此加载项的 UI。
+1. 按此组中的“显示加载项”按钮，在任务窗格中查看此加载项的 UI。
 
-1. 按“从 OneDrive 获取我的文件”****按钮。如果尚未登录 Office，便会看到登录提示。
+1. 按“从 OneDrive 获取我的文件”按钮。如果尚未登录 Office，便会看到登录提示。
     
     > [!NOTE]
-    > 如果先前使用其他 ID 登录过 Office，并且当时打开的一些 Office 应用现在仍处于打开状态，Office 可能无法可靠地更改 ID，即使看似已在 PowerPoint 中更改过，也不例外。 在这种情况下，可能无法调用 Microsoft Graph，或者可能返回以前 ID 的数据。 为了防止发生这种情况，请务必先*关闭其他所有 Office 应用*，再按“从 OneDrive 获取我的文件”****。
+    > 如果先前使用其他 ID 登录过 Office，并且当时打开的一些 Office 应用现在仍处于打开状态，Office 可能无法可靠地更改 ID，即使看似已在 PowerPoint 中更改过，也不例外。 在这种情况下，可能无法调用 Microsoft Graph，或者可能返回以前 ID 的数据。 为了防止发生这种情况，请务必先*关闭其他所有 Office 应用*，再按“从 OneDrive 获取我的文件”。
 
 1. 登录后，便会在按钮下方看到 OneDrive 文件和文件夹列表。此过程可能需要超过 15 秒才能完成，特别是首次使用时。

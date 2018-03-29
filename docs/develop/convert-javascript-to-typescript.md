@@ -23,30 +23,30 @@ ms.date: 01/19/2018
 - TypeScript 2.3 for Visual Studio 2017
 
     > [!NOTE]
-    > 虽然 TypeScript 应该会随 Visual Studio 2017 一起默认安装，但可以[使用 Visual Studio 安装程序](https://docs.microsoft.com/zh-cn/visualstudio/install/modify-visual-studio)确认它是否已安装。 在 Visual Studio 安装程序中，选择“单个组件”****选项卡，再确认是否已在“SDK、库和框架”****下选中“TypeScript 2.3 SDK”****。
+    > 虽然 TypeScript 应该会随 Visual Studio 2017 一起默认安装，但可以[使用 Visual Studio 安装程序](https://docs.microsoft.com/zh-cn/visualstudio/install/modify-visual-studio)确认它是否已安装。 在 Visual Studio 安装程序中，选择“单个组件”选项卡，再确认是否已在“SDK、库和框架”下选中“TypeScript 2.3 SDK”。
 
 - Excel 2016
 
 ## <a name="create-the-add-in-project"></a>创建加载项项目
 
-1. 打开 Visual Studio，在 Visual Studio 菜单栏中，依次选择“文件”**** > “新建”**** > “项目”****。
+1. 打开 Visual Studio，在 Visual Studio 菜单栏中，依次选择“文件” > “新建” > “项目”。
 
-2. 在“Visual C#”****或“Visual Basic”****下的项目类型列表中，展开“Office/SharePoint”****，选择“加载项”****，再选择“Excel Web 加载项”****作为项目类型。 
+2. 在“Visual C#”或“Visual Basic”下的项目类型列表中，展开“Office/SharePoint”，选择“加载项”，再选择“Excel Web 加载项”作为项目类型。 
 
-3. 命名此项目，再选择“确定”****。
+3. 命名此项目，再选择“确定”。
 
-4. 在“创建 Office 加载项”****对话框窗口中，选择“将新功能添加到 Excel”****，再选择“完成”****以创建项目。
+4. 在“创建 Office 加载项”对话框窗口中，选择“将新功能添加到 Excel”，再选择“完成”以创建项目。
 
-5. 此时，Visual Studio 创建解决方案，且它的两个项目显示在“解决方案资源管理器”****中。**Home.html** 文件在 Visual Studio 中打开。
+5. 此时，Visual Studio 创建解决方案，且它的两个项目显示在“解决方案资源管理器”中。**Home.html** 文件在 Visual Studio 中打开。
 
 ## <a name="convert-the-add-in-project-to-typescript"></a>将加载项项目转换为使用 TypeScript
 
-1. 在“解决方案资源管理器”****中，将 **Home.js** 文件重命名为 **Home.ts**。
+1. 在“解决方案资源管理器”中，将 **Home.js** 文件重命名为 **Home.ts**。
 
     > [!NOTE]
     > 在 TypeScript 项目中，可以混合使用 TypeScript 和 JavaScript 文件，项目都可以进行编译。这是因为 TypeScript 是键入的 JavaScript 超集，可以编译 JavaScript。 
 
-2. 当出现提示时，选择“是”****，以确认要更改文件扩展名。
+2. 当出现提示时，选择“是”，以确认要更改文件扩展名。
 
 3. 在 Web 应用项目根目录中，新建 **Office.d.ts** 文件。
 
@@ -87,13 +87,13 @@ ms.date: 01/19/2018
 
 ## <a name="run-the-converted-add-in-project"></a>运行转换后的加载项项目
 
-1. 在 Visual Studio 中，按 F5 或选择“开始”****按钮以启动 Excel，功能区中显示有“显示任务窗格”****加载项按钮。加载项本地托管在 IIS 上。
+1. 在 Visual Studio 中，按 F5 或选择“开始”按钮以启动 Excel，功能区中显示有“显示任务窗格”加载项按钮。加载项本地托管在 IIS 上。
 
-2. 在 Excel 中，依次选择“开始”****选项卡和功能区中的“显示任务窗格”****按钮，打开加载项任务窗格。
+2. 在 Excel 中，依次选择“开始”选项卡和功能区中的“显示任务窗格”按钮，打开加载项任务窗格。
 
 3. 在工作表中，选择九个包含数字的单元格。
 
-4. 按任务窗格上的“突出显示”****按钮，以突出显示选定范围内所含数字最大的单元格。
+4. 按任务窗格上的“突出显示”按钮，以突出显示选定范围内所含数字最大的单元格。
 
 ## <a name="homets-code-file"></a>Home.ts 代码文件
 

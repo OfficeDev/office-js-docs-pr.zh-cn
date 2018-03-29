@@ -85,12 +85,12 @@
     ``` 
 
 10. 将 `TODO6` 替换为以下代码。请注意以下几点：
-   - 此代码将从零开始编制的索引传递给表格的列集合的 `getItemAt` 方法，以获取对“金额”****列的引用。 
+   - 此代码将从零开始编制的索引传递给表格的列集合的 `getItemAt` 方法，以获取对“金额”列的引用。 
 
      > [!NOTE]
      > Excel.js 集合对象（如 `TableCollection`、`WorksheetCollection` 和 `TableColumnCollection`）有 `items` 属性，此属性是子对象类型的数组（如 `Table`、`Worksheet` 或 `TableColumn`），但 `*Collection` 对象本身并不是数组。
 
-   - 然后，此代码将“金额”****列的范围格式化为欧元（精确到小数点后两位）。 
+   - 然后，此代码将“金额”列的范围格式化为欧元（精确到小数点后两位）。 
    - 最后，它确保了列宽和行高足以容纳最长（或最高）的数据项。 请注意，此代码必须获取要格式化的 `Range` 对象。 `TableColumn` 和 `TableRow` 对象没有格式属性。
 
         ```js
@@ -101,14 +101,14 @@
 
 ## <a name="test-the-add-in"></a>测试加载项
 
-1. 打开 Git Bash 窗口或已启用 Node.JS 的系统命令提示符，并转到项目的“开始”****文件夹。
+1. 打开 Git Bash 窗口或已启用 Node.JS 的系统命令提示符，并转到项目的“开始”文件夹。
 2. 运行命令 `npm run build`，将 ES6 源代码转换为 Internet Explorer 支持的旧版 JavaScript（Excel 在后台用来运行 Excel 加载项）。
 3. 运行命令 `npm start`，启动在 localhost 上运行的 Web 服务器。   
 4. 通过以下方法之一旁加载加载项：
     - Windows：[在 Windows 上旁加载 Office 加载项](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)
     - Excel Online：[在 Office Online 中旁加载 Office 加载项](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-on-office-online)
     - iPad 和 Mac：[在 iPad 和 Mac 上旁加载 Office 加载项](../testing/sideload-an-office-add-in-on-ipad-and-mac.md)
-5. 在“主页”****菜单上，选择“显示任务窗格”****。
-6. 在任务窗格中，选择“创建表格”****。
+5. 在“主页”菜单上，选择“显示任务窗格”。
+6. 在任务窗格中，选择“创建表格”。
 
     ![Excel 教程 - 创建表格](../images/excel-tutorial-create-table.png)

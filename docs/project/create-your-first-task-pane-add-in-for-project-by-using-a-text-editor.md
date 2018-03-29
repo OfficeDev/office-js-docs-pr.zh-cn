@@ -709,13 +709,13 @@ JSOMCall.html 示例使用 office.js 文件和 project-15.js 文件中包含的 
     
     `net share AppSource=C:\Project\AppSource`
 
-3. 在 Project 中，打开“Project 选项”****对话框，再依次选择“信任中心”****和“信任中心设置”****。
+3. 在 Project 中，打开“Project 选项”对话框，再依次选择“信任中心”和“信任中心设置”。
     
    [Project 任务窗格加载项](../project/project-add-ins.md)中还介绍了加载项注册过程和其他详细信息。
     
-4. 在“信任中心”****对话框的左侧窗格中，选择“受信任的加载项目录”****。
+4. 在“信任中心”对话框的左侧窗格中，选择“受信任的加载项目录”。
     
-5. 如果已添加必应搜索加载项的 `\\ServerName\AppManifests` 路径，请跳过这一步。否则，在“受信任的加载项目录”****窗格中，向“目录 URL”****文本框添加 `\\ServerName\AppManifests` 路径，选择“添加目录”****，将网络共享启用为默认源（见图 1），再选择“确定”****。
+5. 如果已添加必应搜索加载项的 `\\ServerName\AppManifests` 路径，请跳过这一步。否则，在“受信任的加载项目录”窗格中，向“目录 URL”文本框添加 `\\ServerName\AppManifests` 路径，选择“添加目录”，将网络共享启用为默认源（见图 1），再选择“确定”。
     
    *图 1：添加加载项清单的网络文件共享*
 
@@ -743,7 +743,7 @@ JSOMCall.html 示例使用 office.js 文件和 project-15.js 文件中包含的 
     
 10. 选择任务 T2 行中的任何单元格，或任务 T2 的整行，然后选择 **getSelectedTaskAsync**。文本框显示任务 GUID 值，例如，`{25D3E03B-9A7D-E111-92FC-00155D3BA208}`。Project 在 **Project OM Test** 加载项的全局 **taskGuid** 变量中存储该值。
     
-11. 选择“getTaskAsync”****。如果 **taskGuid** 变量包含任务 T2 的 GUID，文本框中会显示任务信息。**ResourceNames** 值为空。
+11. 选择“getTaskAsync”。如果 **taskGuid** 变量包含任务 T2 的 GUID，文本框中会显示任务信息。**ResourceNames** 值为空。
     
     创建两个本地资源 R1 和 R2，将其分配给任务 T2（每个分配 50%），然后重新选择 **getTaskAsync**。文本框中的结果包含资源信息。如果任务位于同步的 SharePoint 任务列表中，那么结果还会包含 SharePoint 任务 ID。
     
@@ -752,7 +752,7 @@ JSOMCall.html 示例使用 office.js 文件和 project-15.js 文件中包含的 
     - WSS ID：`0`
     - ResourceNames: `R1[50%],R2[50%]`
 
-12. 选择“获取任务字段”****按钮。**getTaskFields** 函数会多次调用 **getTaskfieldAsync** 函数，以获取任务名称、索引、开始日期、持续时间、优先级和任务备注。
+12. 选择“获取任务字段”按钮。**getTaskFields** 函数会多次调用 **getTaskfieldAsync** 函数，以获取任务名称、索引、开始日期、持续时间、优先级和任务备注。
 
     - 名称：`T2`
     - ID：`2`
@@ -761,13 +761,13 @@ JSOMCall.html 示例使用 office.js 文件和 project-15.js 文件中包含的 
     - 优先级：`500`
     - 备注：此为任务 T2 的备注。 仅为测试备注。 若为实际备注，应包含一些真实信息。
 
-13. 选择“getWSSUrlAsync”****按钮。如果项目是以下类型之一，结果中显示任务列表 URL 和名称。
+13. 选择“getWSSUrlAsync”按钮。如果项目是以下类型之一，结果中显示任务列表 URL 和名称。
     
     - 导入到 Project Server 的 SharePoint 任务列表。
     - 导入到 Project Professional，再保存回 SharePoint（未使用 Project Server）的 SharePoint 任务列表。
     
     > [!NOTE]
-    > 如果 Project Professional 安装在 Windows Server 计算机上，若要将项目保存回 SharePoint，可使用“服务器管理器”****添加“桌面体验”****功能。
+    > 如果 Project Professional 安装在 Windows Server 计算机上，若要将项目保存回 SharePoint，可使用“服务器管理器”添加“桌面体验”功能。
 
     如果项目是本地项目，或者如果你使用 Project Professional 打开由 Project Server 管理的项目，那么 **getWSSUrlAsync** 方法会显示一个未定义错误。
 
@@ -775,7 +775,7 @@ JSOMCall.html 示例使用 office.js 文件和 project-15.js 文件中包含的 
     - 列表名称：`Test task list`
     
 
-14. 选择“TaskSelectionChanged 事件”****部分中的“添加”****按钮，这会调用 **manageTaskEventHandler** 函数，以注册任务选择更改事件，并在文本框中返回 `In onComplete function for addHandlerAsync Status: succeeded`。选择其他任务；此时，文本框会显示 `In task selection changed event handler`，这是任务选择更改事件的回调函数输出。选择“删除”****按钮可以取消注册事件处理程序。
+14. 选择“TaskSelectionChanged 事件”部分中的“添加”按钮，这会调用 **manageTaskEventHandler** 函数，以注册任务选择更改事件，并在文本框中返回 `In onComplete function for addHandlerAsync Status: succeeded`。选择其他任务；此时，文本框会显示 `In task selection changed event handler`，这是任务选择更改事件的回调函数输出。选择“删除”按钮可以取消注册事件处理程序。
     
 15. 若要使用资源方法，首先选择视图（如“**资源工作表**”、“**资源使用状况**”或“**资源窗体**”），然后选择该视图中的资源。选择 **getSelectedResourceAsync** 以初始化 **resourceGuid** 变量，然后选择“**获取资源域**”以对资源属性的 **getResourceFieldAsync** 进行多次调用。还可以添加或删除资源选择更改事件处理程序。
     
@@ -786,12 +786,12 @@ JSOMCall.html 示例使用 office.js 文件和 project-15.js 文件中包含的 
     - 实际工时：`0h`
     - 单位：`100%`
 
-16. 选择“getSelectedViewAsync”****，显示活动视图的类型和名称。还可以添加或删除视图选择更改事件处理程序。例如，如果“资源表单”****是活动视图，**getSelectedViewAsync** 函数会在文本框中显示以下内容：
+16. 选择“getSelectedViewAsync”，显示活动视图的类型和名称。还可以添加或删除视图选择更改事件处理程序。例如，如果“资源表单”是活动视图，**getSelectedViewAsync** 函数会在文本框中显示以下内容：
     
     - 视图类型：`6`
     - 名称：`Resource Form`
     
-17. 选择“获取项目字段”****，以多次调用 **getProjectFieldAsync** 函数来获取有效项目的不同属性。如果项目是从 Project Web App 打开，**getProjectFieldAsync** 函数可以获取 Project Web App 实例的 URL。
+17. 选择“获取项目字段”，以多次调用 **getProjectFieldAsync** 函数来获取有效项目的不同属性。如果项目是从 Project Web App 打开，**getProjectFieldAsync** 函数可以获取 Project Web App 实例的 URL。
     
     - 项目 GUID：`9845922E-DAB4-E111-8AF3-00155D3BA208`
     - 开始日期：`Tue 6/12/12`
@@ -801,7 +801,7 @@ JSOMCall.html 示例使用 office.js 文件和 project-15.js 文件中包含的 
     - 符号位置：`0`
     - Project Web App URL：`http://servername/pwa`
   
-18. 选择“获取上下文值”****按钮，获取 **Office.Context.document** 对象和 **Office.context.application** 对象的属性，从而获取运行加载项的文档和应用的属性。例如，如果 Project1.mpp 文件位于本地计算机桌面上，文档 URL 为 `C:\Users\UserAlias\Desktop\Project1.mpp`。如果 .mpp 文件位于 SharePoint 库中，值为文档的 URL。如果使用 Project Professional 2013 从 Project Web App 打开 Project1 项目，文档 URL 为 `<>\Project1`。
+18. 选择“获取上下文值”按钮，获取 **Office.Context.document** 对象和 **Office.context.application** 对象的属性，从而获取运行加载项的文档和应用的属性。例如，如果 Project1.mpp 文件位于本地计算机桌面上，文档 URL 为 `C:\Users\UserAlias\Desktop\Project1.mpp`。如果 .mpp 文件位于 SharePoint 库中，值为文档的 URL。如果使用 Project Professional 2013 从 Project Web App 打开 Project1 项目，文档 URL 为 `<>\Project1`。
     
     - 文档 URL：`<>\Project1`
     - 文档模式：`readWrite`

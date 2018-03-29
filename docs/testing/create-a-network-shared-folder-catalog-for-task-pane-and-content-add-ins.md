@@ -56,11 +56,11 @@ ms.date: 01/25/2018
     > [!IMPORTANT]
     > [!include[HTTPS guidance](../includes/https-guidance.md)]
 
-2. 在 Excel、Word 或 PowerPoint 中，选择功能区上“插入”****选项卡中的“我的加载项”****。
+2. 在 Excel、Word 或 PowerPoint 中，选择功能区上“插入”选项卡中的“我的加载项”。
 
 3. 在“**Office 外接程序**”对话框的顶部，选择“**共享文件夹**”。
 
-4. 依次选择加载项名称和“确定”****，以插入加载项。
+4. 依次选择加载项名称和“确定”，以插入加载项。
 
 
 ## <a name="see-also"></a>另请参阅
