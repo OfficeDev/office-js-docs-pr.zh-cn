@@ -45,12 +45,16 @@ Office 2016 桌面和 Office 365 中的 Word、Excel 和 PowerPoint 的内容外
 有关实现内容加载项的示例，请参阅 GitHub 上的 [Excel 内容加载项 Humongous Insurance](https://github.com/OfficeDev/Excel-Content-Add-in-Humongous-Insurance)。
 
 ## <a name="support-considerations"></a>支持注意事项
-- 检查 Office 加载项是否适用于[特定 Office 主机平台](/overview/office-add-in-availability.md)。 
-- 一些内容加载项可能会要求用户“信任”加载项对 Excel 或 PowerPoint 执行读取和写入操作。 可以在加载项清单中声明要拥有的[权限级别](/develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md)。  
+- 检查 Office 加载项是否适用于[特定 Office 主机平台](https://docs.microsoft.com/zh-cn/office/dev/add-ins/overview/office-add-in-availability)。 
+- 一些内容加载项可能会要求用户“信任”加载项对 Excel 或 PowerPoint 执行读取和写入操作。 可以在加载项清单中声明要拥有的[权限级别](https://docs.microsoft.com/zh-cn/office/dev/add-ins/develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins)。  
 - Office 2013 版本及更高版本中的 Excel 和 PowerPoint 支持内容加载项。 如果在不支持 Office Web 加载项的 Office 版本中打开加载项，加载项会显示为图像。
 
 ## <a name="see-also"></a>另请参阅
-- [Office 加载项主机和平台可用性](/overview/office-add-in-availability.md)
-- [Office 加载项中的 Office UI Fabric](office-ui-fabric.md) 
-- [Office 加载项的用户体验设计模式](ux-design-patterns.md)
-- [在内容加载项和任务窗格加载项中请求获取 API 使用权限](/develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md)
+- 
+  [Office 加载项主机和平台可用性](https://docs.microsoft.com/zh-cn/office/dev/add-ins/overview/office-add-in-availability)
+- 
+  [Office 加载项中的 Office UI Fabric](https://docs.microsoft.com/zh-cn/office/dev/add-ins/design/office-ui-fabric) 
+- 
+  [Office 加载项的用户体验设计模式](https://docs.microsoft.com/zh-cn/office/dev/add-ins/design/ux-design-patterns)
+- 
+  [在内容加载项和任务窗格加载项中请求获取 API 使用权限](https://docs.microsoft.com/zh-cn/office/dev/add-ins/develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins)

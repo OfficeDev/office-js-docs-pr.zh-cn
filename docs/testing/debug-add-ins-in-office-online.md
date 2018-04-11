@@ -1,7 +1,7 @@
 ---
 title: 在 Office Online 中调试加载项
-description: ''
-ms.date: 01/23/2018
+description: 如何使用 Office Online 测试和调试加载项。
+ms.date: 03/14/2018
 ---
 
 # <a name="debug-add-ins-in-office-online"></a>在 Office Online 中调试加载项
@@ -16,12 +16,12 @@ ms.date: 01/23/2018
 - 获取 Office 365 开发人员帐户（如果还没有的话），或获取对 SharePoint 网站的访问权限。
     
   > [!NOTE]
-  > 若要注册免费的 Office 365 开发人员帐户，请加入 [Office 365 开发人员计划](https://dev.office.com/devprogram)。
+  > 若要注册免费 Office 365 开发人员订阅，请加入 [Office 365 开发人员计划](https://developer.microsoft.com/en-us/office/dev-program)。 请参阅 [Office 365 开发人员计划文档](https://docs.microsoft.com/zh-cn/office/developer-program/office-365-developer-program)，逐步了解如何加入 Office 365 开发人员计划并注册和配置订阅。
      
-- 在 Office 365 (SharePoint Online) 上设置外接程序目录。外接程序目录是 SharePoint Online 中的专用网站集，它托管 Office 外接程序的文档库。如果你有自己的 SharePoint 站点，则可以设置外接程序目录文档库。有关详细信息，请参阅 [向 SharePoint 上的外接程序目录发布任务窗格和内容外接程序](../publish/publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md)。
+- 对 Office 365 (SharePoint Online) 设置加载项目录。加载项目录是 SharePoint Online 中的专用网站集，用于托管 Office 加载项的文档库。如果有自己的 SharePoint 网站，可以设置加载项目录文档库。有关详细信息，请参阅[向 SharePoint 上的加载项目录发布任务窗格和内容加载项](../publish/publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md)。
     
 
-## <a name="debug-your-add-in-from-excel-online-or-word-online"></a>从 Excel Online 或 Word Online 调试外接程序
+## <a name="debug-your-add-in-from-excel-online-or-word-online"></a>通过 Excel Online 或 Word Online 调试加载项
 
 要使用 Office Online 调试您的外接程序，请执行以下操作：
 

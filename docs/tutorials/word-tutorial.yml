@@ -1,0 +1,40 @@
+### YamlMime:Tutorial
+documentType: Tutorial
+title: Word 加载项教程
+metadata:
+  title: Word 加载项教程
+  description: 本教程将介绍如何生成 Word 加载项，用于插入（和替换）文本区域、段落、图像、HTML、表格和内容控件。此外，还将介绍如何设置文本格式，以及如何插入（和替换）内容控件中的内容。
+  audience: 开发人员
+  level: 初学者
+  displayType: one-column
+  ms.date: 03/10/2018
+items:
+- durationInMinutes: 1
+  content: |
+    本教程将介绍如何生成 Word 加载项，用于插入和替换文本、图像和其他内容。首先，生成用于插入段落的 Word 加载项。本教程的每个后续步骤都会向加载项添加更多功能。如果在创建过程中遇到任何问题，请<a href="https://github.com/OfficeDev/office-js-docs-pr/issues">联系我们</a>。
+- title: 创建加载项项目
+  durationInMinutes: 5
+  content: |
+    [!INCLUDE [](../includes/word-tutorial-setup.md)]
+- title: 插入文本区域
+  durationInMinutes: 10
+  content: |
+    [!INCLUDE [](../includes/word-tutorial-insert-text.md)]
+- title: 设置文本格式和样式
+  durationInMinutes: 15
+  content: |
+    [!INCLUDE [](../includes/word-tutorial-format-text.md)]
+- title: 替换文本并在各个位置插入文本
+  durationInMinutes: 20
+  content: |
+    [!INCLUDE [](../includes/word-tutorial-replace-text.md)]
+- title: 插入图像、HTML 和表格
+  durationInMinutes: 6
+  content: |
+    [!INCLUDE [](../includes/word-tutorial-insert-image-html-table.md)]
+- title: 创建内容控件并替换其中内容
+  durationInMinutes: 8
+  content: |
+    [!INCLUDE [](../includes/word-tutorial-content-control.md)]
+- content: |
+    已完成 Word 加载项教程。若要详细了解如何生成 Word 加载项，请参阅 <a href="../word/word-add-ins-programming-overview.md">Word 加载项概述</a>。

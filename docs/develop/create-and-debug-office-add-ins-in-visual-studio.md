@@ -1,7 +1,7 @@
 ---
 title: 在 Visual Studio 中创建和调试 Office 加载项
 description: ''
-ms.date: 12/04/2017
+ms.date: 03/14/2018
 ---
 
 
@@ -15,16 +15,16 @@ ms.date: 12/04/2017
 ## <a name="create-an-office-add-in-project-in-visual-studio"></a>在 Visual Studio 中创建 Office 加载项项目
 
 
-开始使用前，确保已安装 [Office 开发人员工具](https://www.visualstudio.com/features/office-tools-vs.aspx)和 Microsoft Office 的某个版本。可以加入 [Office 365 开发人员计划](https://dev.office.com/devprogram)，或按照以下说明获取[最新版本](../develop/install-latest-office-version.md)。
+首先，请确保已安装 [Office 开发人员工具](https://www.visualstudio.com/features/office-tools-vs.aspx)和一版 Microsoft Office。可以加入 [Office 365 开发人员计划](https://developer.microsoft.com/en-us/office/dev-program)，也可以按照下面的说明操作，以获取[最新版](../develop/install-latest-office-version.md)。
 
 
-1. 在 Visual Studio 菜单栏中，依次选择“文件” > “新建” > “项目”。
+1. 在 Visual Studio 菜单栏中，依次选择“文件”**** > “新建”**** > “项目”****。
     
 2. 在“**Visual C#**”或“**Visual Basic**”下的项目类型列表中，展开“**Office/SharePoint**”，选择“**Web 外接程序**”，然后选择外接程序项目之一。  
     
-3. 命名此项目，再选择“确定”以创建项目。
+3. 命名此项目，再选择“确定”****以创建项目。
     
-4. 此时，Visual Studio 创建解决方案，且它的两个项目显示在“解决方案资源管理器”中。默认的 Home.html 页面在 Visual Studio 中打开。
+4. 此时，Visual Studio 创建解决方案，且它的两个项目显示在“解决方案资源管理器”****中。默认的 Home.html 页面在 Visual Studio 中打开。
     
 在 Visual Studio 2015 中，部分加载项项目模板已更新为反映其他功能：
 
@@ -35,7 +35,7 @@ ms.date: 12/04/2017
     
 
 > [!NOTE]
-> 在 Visual Studio 中，大多数选项的含义都可以根据说明进行理解，但“电子邮件”复选框除外。若要创建 Outlook 加载项，不仅会与邮件项一起出现，还会与会议请求、响应和取消一起出现，请选中此复选框。
+> 在 Visual Studio 中，大多数选项的含义都可以根据说明进行理解，但“电子邮件”****复选框除外。若要创建 Outlook 加载项，不仅会与邮件项一起出现，还会与会议请求、响应和取消一起出现，请选中此复选框。
 
 完成向导后，Visual Studio 便会创建解决方案，其中包含两个项目。
 
@@ -70,7 +70,7 @@ Web 应用程序项目包含一个可用于入门的默认 HTML 页和 Javascrip
 |**App.js**|位于项目的**外接程序**文件夹中，此为整个外接程序的默认 JavaScript 文件。你可以将对你外接程序的多个页面的行为通用的代码置于 App.js 文件中。App.js 文件包含一些可帮你入门的示例代码。|
 
 > [!NOTE]
-> 不一定要使用这些文件。可以随意向项目中添加其他文件，并改用这些文件。若要让其他 HTML 文件显示为加载项的初始网页，请打开清单编辑器，再将“SourceLocation”属性指向相应的文件名称。
+> 不一定要使用这些文件。可以随意向项目中添加其他文件，并改用这些文件。若要让其他 HTML 文件显示为加载项的初始网页，请打开清单编辑器，再将“SourceLocation”****属性指向相应的文件名称。
 
 
 ## <a name="debug-your-add-in"></a>调试加载项
@@ -101,9 +101,9 @@ Web 应用程序项目包含一个可用于入门的默认 HTML 页和 Javascrip
 |**启动文档**（仅限内容和任务窗格加载项）|指定要在启动项目时打开的文档。|
 |**Web 项目**|指定与外接程序关联的 Web 项目的名称。|
 |**电子邮件地址**（仅限 Outlook 外接程序）|指定 Exchange Server 或 Exchange Online 中您想用来测试您的 Outlook 外接程序的用户帐户的电子邮件地址。|
-|**EWS Url**（仅限 Outlook 外接程序）|Exchange Web 服务 URL（例如：https://www.contoso.com/ews/exchange.aspx）。 |
-|**OWA Url**（仅限 Outlook 外接程序）|Outlook Web App URL（例如：https://www.contoso.com/owa）。|
-|**用户名**（仅限 Outlook 外接程序）|指定 Exchange Server 或 Exchange Online 中的用户帐户名称。|
+|**EWS URL**（仅限 Outlook 加载项）|Exchange Web 服务 URL（例如：https://www.contoso.com/ews/exchange.aspx)。 |
+|**OWA URL**（仅限 Outlook 加载项）|Outlook Web App URL（例如，https://www.contoso.com/owa)。|
+|**用户名**（仅限 Outlook 加载项）|指定 Exchange Server 或 Exchange Online 中的用户帐户名称。|
 |**项目文件**|指定包含生成、配置和有关项目的其他信息的文件名称。|
 |**项目文件夹**|项目文件的位置。|
 
@@ -116,12 +116,12 @@ Web 应用程序项目包含一个可用于入门的默认 HTML 页和 Javascrip
 ### <a name="to-use-an-existing-document-to-debug-the-add-in"></a>使用现有文档调试加载项
 
 
-1. 在“解决方案资源管理器”中，选择加载项项目文件夹。
+1. 在“解决方案资源管理器”****中，选择加载项项目文件夹。
     
     > [!NOTE]
     > 选择加载项项目，而不是 Web 应用项目。
 
-2. 在“项目”菜单中，选择“添加现有项”。
+2. 在“项目”****菜单中，选择“添加现有项”****。
     
 3. 在“**添加现有项**”对话框中，找到并选择要添加的文档。
     
@@ -141,7 +141,7 @@ Web 应用程序项目包含一个可用于入门的默认 HTML 页和 Javascrip
 
 
 > [!NOTE]
-> 如果 Internet Explorer 中未启用脚本调试，将无法在 Visual Studio 中启动调试器。若要启用脚本调试，可以打开“Internet 选项”对话框，选择“高级”选项卡，再清除“禁用脚本调试(Internet Explorer)”和“禁用脚本调试(其他)”复选框。
+> 如果 Internet Explorer 中未启用脚本调试，将无法在 Visual Studio 中启动调试器。若要启用脚本调试，可以打开“Internet 选项”****对话框，选择“高级”****选项卡，再清除“禁用脚本调试(Internet Explorer)”****和“禁用脚本调试(其他)”****复选框。
 
 此时，Visual Studio 生成项目，并执行以下操作：
 

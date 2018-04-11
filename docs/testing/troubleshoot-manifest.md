@@ -38,7 +38,9 @@ ms.date: 12/04/2017
 
 ## <a name="validate-your-manifest-against-the-xml-schema"></a>根据 XML 架构验证清单
 
-为了确保清单文件采用正确的架构，请根据 [XML 架构定义 (XSD)](https://github.com/OfficeDev/office-js-docs-pr/tree/master/docs/overview/schemas) 文件验证清单。可以使用 XML 架构验证工具执行此验证。 
+为了有助于确保清单文件采用正确架构，请为要使用的元素添加任何命名空间。 如果从其他示例清单中复制了元素，请仔细检查是否还**添加了相应命名空间**。 可以根据 [XML 架构定义 (XSD)](https://github.com/OfficeDev/office-js-docs-pr/tree/master/docs/overview/schemas) 文件验证清单。 若要执行此验证，可以使用 XML 架构验证工具。 
+
+
 
 ### <a name="to-use-a-command-line-xml-schema-validation-tool-to-validate-your-manifest"></a>使用命令行 XML 架构验证工具验证清单的具体步骤
 

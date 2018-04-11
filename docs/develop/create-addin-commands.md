@@ -34,7 +34,7 @@ ms.date: 12/04/2017
 
 ## <a name="step-2-create-a-task-pane-add-in"></a>第 2 步：创建任务窗格加载项
 
-若要开始使用外接程序命令，必须首先创建任务窗格外接程序，然后按照本文所述的方法修改此外接程序的清单。不能将外接程序命令用于内容外接程序。如果更新的是已有清单，可以将 **VersionOverrides** 元素添加到此清单中（按照[步骤 3：添加 VersionOverrides 元素](#step-3-add-versionoverrides-element)中的方法操作）。
+若要开始使用加载项命令，必须先创建任务窗格加载项，再按照本文所述来修改加载项清单。无法对内容加载项使用加载项命令。若要更新现有清单，必须将相应 **XML 命名空间**和 **VersionOverrides** 元素添加到清单中（如[第 3 步：添加 VersionOverrides 元素](#step-3-add-versionoverrides-element)所述）。
    
 以下示例显示了 Office 2013 外接程序的清单。此清单中没有任何外接程序命令，因为没有 **VersionOverrides** 元素。Office 2013 不支持外接程序命令，但是通过将 **VersionOverrides** 添加到此清单，外接程序可同时在 Office 2013 和 Office 2016 中运行。在 Office 2013 中，外接程序不会显示外接程序命令，并且使用 **SourceLocation** 的值运行外接程序作为单一任务窗格外接程序。在 Office 2016 中，如果未包含 **VersionOverrides** 元素，则使用 **SourceLocation** 运行外接程序。但是，如果包含了 **VersionOverrides**，外接程序将只显示外接程序命令，并且不会将外接程序显示为单一任务窗格外接程序。
   
@@ -71,7 +71,7 @@ ms.date: 12/04/2017
 
 |**属性**|**说明**|
 |:-----|:-----|
-|**xmlns** <br/> | 必需。架构的位置，必须是"http://schemas.microsoft.com/office/taskpaneappversionoverrides"。 <br/> |
+|**xmlns** <br/> | 必需。架构位置，必须是“http://schemas.microsoft.com/office/taskpaneappversionoverrides”。 <br/> |
 |**xsi:type** <br/> |必需。架构版本。本文中所述的版本为"VersionOverridesV1_0"。  <br/> |
    
 下表标识了 **VersionOverrides** 的子元素。
