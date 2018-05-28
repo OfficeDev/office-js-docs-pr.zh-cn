@@ -1,0 +1,130 @@
+---
+title: Office ????????
+description: ''
+ms.date: 01/23/2018
+ms.openlocfilehash: f0f20371eee759a449773effaff1ce365e32bf48
+ms.sourcegitcommit: 17f60431644b448a4816913039aaebfa328f9b0a
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 05/25/2018
+---
+# <a name="office-add-ins-platform-overview"></a><span data-ttu-id="14036-102">Office ???????</span><span class="sxs-lookup"><span data-stu-id="14036-102">Office Add-ins platform overview</span></span>
+
+<span data-ttu-id="14036-p101">???? Office ?????????????????????? Office ??????? Office ????????????? Office ???????????? Web ????? HTML?CSS ? JavaScript ??? Word?Excel?PowerPoint?OneNote?Project ? Outlook????????????????????? Office ?????? Office for Windows?Office Online?Office for Mac ? Office for iPad?</span><span class="sxs-lookup"><span data-stu-id="14036-p101">You can use the Office Add-ins platform to build solutions that extend Office applications and interact with content in Office documents. With Office Add-ins, you can use familiar web technologies such as HTML, CSS, and JavaScript to extend and interact with Word, Excel, PowerPoint, OneNote, Project, and Outlook. Your solution can run in Office across multiple platforms, including Office for Windows, Office Online, Office for the Mac, and Office for the iPad.</span></span>
+
+<span data-ttu-id="14036-p102">??????????????Office ????????????? Office ??????????????</span><span class="sxs-lookup"><span data-stu-id="14036-p102">Office Add-ins can do almost anything a webpage can do inside a browser. Use the Office Add-ins platform to:</span></span>
+
+-  <span data-ttu-id="14036-p103">**??????? Office ???** - ??????? Office????? Office ???? Office ?????????????????? Microsoft Graph API????????????????</span><span class="sxs-lookup"><span data-stu-id="14036-p103">**Add new functionality to Office clients** - Bring external data into Office, automate Office documents, expose third-party functionality in Office clients, and more. For example, use Microsoft Graph API to connect to data that drives productivity.</span></span> 
+    
+-  <span data-ttu-id="14036-110">**?????? Office ???????????** - ?????????? Excel ????? PowerPoint ???????????????????????</span><span class="sxs-lookup"><span data-stu-id="14036-110">**Create new rich, interactive objects that can be embedded in Office documents** - Embed maps, charts, and interactive visualizations that users can add to their own Excel spreadsheets and PowerPoint presentations.</span></span> 
+    
+## <a name="how-are-office-add-ins-different-than-com-and-vsto-add-ins"></a><span data-ttu-id="14036-111">Office ???? COM ? VSTO ????????</span><span class="sxs-lookup"><span data-stu-id="14036-111">How are Office Add-ins different than COM and VSTO add-ins?</span></span> 
+
+<span data-ttu-id="14036-p104">COM ? VSTO ????? Office ????????? Office for Windows ????? COM ??????Office ???????????? Office ???????????? Office ??????????? Excel????????????? UI ??????????????????????????????? JavaScript ? HTML ???????????????????????</span><span class="sxs-lookup"><span data-stu-id="14036-p104">COM or VSTO add-ins are earlier Office integration solutions that run only on Office for Windows. Unlike COM add-ins, Office Add-ins don't involve code that runs on the user's device or in the Office client. For an Office Add-in, the host application, for example Excel, reads the add-in manifest and hooks up the add-in?s custom ribbon buttons and menu commands in the UI. When needed, it loads the add-in's JavaScript and HTML code, which executes in the context of a browser in a sandbox.</span></span> 
+
+<span data-ttu-id="14036-116">????? VBA?COM ? VSTO ???????Office ??????????</span><span class="sxs-lookup"><span data-stu-id="14036-116">Office Add-ins provide the following advantages over add-ins built using VBA, COM, or VSTO:</span></span> 
+
+- <span data-ttu-id="14036-p105">??????Office ???? Office for Windows?Mac?iOS ? Office Online ????</span><span class="sxs-lookup"><span data-stu-id="14036-p105">Cross-platform support. Office Add-ins run in Office for Windows, Mac, iOS, and Office Online.</span></span> 
+
+- <span data-ttu-id="14036-p106">???? (SSO)?Office ????????? Office 365 ???????</span><span class="sxs-lookup"><span data-stu-id="14036-p106">Single sign-on (SSO). Office Add-ins integrate easily with users' Office 365 accounts.</span></span> 
+
+- <span data-ttu-id="14036-p107">??????????????????????? Office ????</span><span class="sxs-lookup"><span data-stu-id="14036-p107">Centralized deployment and distribution. Admins can deploy Office Add-ins centrally across an organization.</span></span> 
+
+- <span data-ttu-id="14036-p108">??? AppSource ??????????????? AppSource?????????</span><span class="sxs-lookup"><span data-stu-id="14036-p108">Easy access via AppSource. You can make your solution available to a broad audience by submitting it to AppSource.</span></span> 
+
+- <span data-ttu-id="14036-p109">??? Web ??????????????????? Office ????</span><span class="sxs-lookup"><span data-stu-id="14036-p109">Based on standard web technology. You can use any library you like to build Office Add-ins.</span></span> 
+
+## <a name="components-of-an-office-add-in"></a><span data-ttu-id="14036-127">Office ???????</span><span class="sxs-lookup"><span data-stu-id="14036-127">Components of an Office Add-in</span></span> 
+
+<span data-ttu-id="14036-p110">Office ?????????????XML ????????? Web ??????????????????????? Office ???????????? Web ???? Web ??????? Web ??????? Microsoft Azure?</span><span class="sxs-lookup"><span data-stu-id="14036-p110">An Office Add-in includes two basic components: an XML manifest file, and your own web application. The manifest defines various settings, including how your add-in integrates with Office clients. Your web application needs to be hosted on a web server, or web hosting service, such as Microsoft Azure.</span></span>
+
+<span data-ttu-id="14036-131">*? 1??? + ?? = Office ???*</span><span class="sxs-lookup"><span data-stu-id="14036-131">*Figure 1. Manifest + webpage = an Office Add-in*</span></span>
+
+![?? + ?? = Office ???](../images/dk2-agave-overview-01.png)
+
+### <a name="manifest"></a><span data-ttu-id="14036-133">??</span><span class="sxs-lookup"><span data-stu-id="14036-133">Manifest</span></span> 
+
+<span data-ttu-id="14036-134">????? XML ????????????????????</span><span class="sxs-lookup"><span data-stu-id="14036-134">The manifest is an XML file that specifies settings and capabilities of the add-in, such as:</span></span> 
+
+- <span data-ttu-id="14036-135">?????????????ID???????????</span><span class="sxs-lookup"><span data-stu-id="14036-135">The add-in's display name, description, ID, version, and default locale.</span></span> 
+
+- <span data-ttu-id="14036-136">???????? Office ???</span><span class="sxs-lookup"><span data-stu-id="14036-136">How the add-in integrates with Office.</span></span>  
+
+- <span data-ttu-id="14036-137">?????????????????</span><span class="sxs-lookup"><span data-stu-id="14036-137">The permission level and data access requirements for the add-in.</span></span> 
+
+### <a name="web-app"></a><span data-ttu-id="14036-138">Web ??</span><span class="sxs-lookup"><span data-stu-id="14036-138">Web app</span></span> 
+
+<span data-ttu-id="14036-p111">???? Office ?????? Office ???????? HTML ?????????? Office ??????? Internet ????????????? Office ????????????????? Office ?????????????????????????????????????????? ASP.NET?PHP ? Node.js????? Office ????????????? Office.js JavaScript API?</span><span class="sxs-lookup"><span data-stu-id="14036-p111">The most basic Office Add-in consists of a static HTML page that is displayed inside an Office application, but that doesn't interact with either the Office document or any other Internet resource. However, to create an experience that interacts with Office documents or allows the user to interact with online resources from an Office host application, you can use any technologies, both client and server side, that your hosting provider supports (such as ASP.NET, PHP, or Node.js). To interact with Office clients and documents, you use the Office.js JavaScript APIs.</span></span> 
+
+<span data-ttu-id="14036-142">*? 2?Hello World Office ??????*</span><span class="sxs-lookup"><span data-stu-id="14036-142">*Figure 2. Components of a Hello World Office Add-in*</span></span>
+
+![Hello World ??????](../images/dk2-agave-overview-07.png)
+
+## <a name="extending-and-interacting-with-office-clients"></a><span data-ttu-id="14036-144">???? Office ?????</span><span class="sxs-lookup"><span data-stu-id="14036-144">Extending and interacting with Office clients</span></span> 
+
+<span data-ttu-id="14036-145">Office ??????? Office ??????????????</span><span class="sxs-lookup"><span data-stu-id="14036-145">Office Add-ins can do the following within an Office host application:</span></span> 
+
+-  <span data-ttu-id="14036-146">??????? Office ?????</span><span class="sxs-lookup"><span data-stu-id="14036-146">Extend functionality (any Office application)</span></span> 
+
+-  <span data-ttu-id="14036-147">???????Excel ? PowerPoint?</span><span class="sxs-lookup"><span data-stu-id="14036-147">Create new objects (Excel or PowerPoint)</span></span> 
+ 
+### <a name="extend-office-functionality"></a><span data-ttu-id="14036-148">?? Office ??</span><span class="sxs-lookup"><span data-stu-id="14036-148">Extend Office functionality</span></span> 
+
+<span data-ttu-id="14036-149">????????? Office ??????????</span><span class="sxs-lookup"><span data-stu-id="14036-149">You can add new functionality to Office applications via the following:</span></span>  
+
+-  <span data-ttu-id="14036-150">??????????????????????????</span><span class="sxs-lookup"><span data-stu-id="14036-150">Custom ribbon buttons and menu commands (collectively called ?add-in commands?)</span></span> 
+
+-  <span data-ttu-id="14036-151">????????</span><span class="sxs-lookup"><span data-stu-id="14036-151">Insertable task panes</span></span> 
+
+<span data-ttu-id="14036-152">??? UI ??????????????????</span><span class="sxs-lookup"><span data-stu-id="14036-152">Custom UI and task panes are specified in the add-in manifest.</span></span>  
+
+#### <a name="custom-buttons-and-menu-commands"></a><span data-ttu-id="14036-153">??????????</span><span class="sxs-lookup"><span data-stu-id="14036-153">Custom buttons and menu commands</span></span>  
+
+<span data-ttu-id="14036-p112">??? Office for Windows Desktop ? Office Online ??????????????????????????????? Office ???????????????????????????????? HTML ?????????? JavaScript ???</span><span class="sxs-lookup"><span data-stu-id="14036-p112">You can add custom ribbon buttons and menu items to the ribbon in Office for Windows Desktop and Office Online. This makes it easy for users to access your add-in directly from their Office application. Command buttons can launch different actions such as showing a task pane with custom HTML or executing a JavaScript function.</span></span>  
+
+<span data-ttu-id="14036-157">*? 3?? Excel Desktop ?????????*</span><span class="sxs-lookup"><span data-stu-id="14036-157">*Figure 3. Add-in commands running in Excel Desktop*</span></span>
+
+![??????????](../images/add-in-commands-overview.png)
+
+#### <a name="task-panes"></a><span data-ttu-id="14036-159">????</span><span class="sxs-lookup"><span data-stu-id="14036-159">Task panes</span></span>  
+
+<span data-ttu-id="14036-p113">??????????????????????????????????????????????Office 2013 ? Office for iPad????????????????????????****????????????****?????????????</span><span class="sxs-lookup"><span data-stu-id="14036-p113">You can use task panes in addition to add-in commands to enable users to interact with your solution. Clients that do not support add-in commands (Office 2013 and Office for iPad) run your add-in as a task pane. Users launch task pane add-ins via the **My Add-ins** button on the **Insert** tab.</span></span> 
+
+<span data-ttu-id="14036-163">*? 4?????*</span><span class="sxs-lookup"><span data-stu-id="14036-163">*Figure 4. Task pane*</span></span>
+
+![????](../images/task-pane-overview.jpg)
+
+### <a name="extend-outlook-functionality"></a><span data-ttu-id="14036-165">?? Outlook ??</span><span class="sxs-lookup"><span data-stu-id="14036-165">Extend Outlook functionality</span></span> 
+
+<span data-ttu-id="14036-p114">Outlook ??????? Office ????????????? Outlook ????????????????????????????????????????????????????????????????????</span><span class="sxs-lookup"><span data-stu-id="14036-p114">Outlook add-ins can extend the Office ribbon and also display contextually next to an Outlook item when you're viewing or composing it. They can work with an email message, meeting request, meeting response, meeting cancellation, or appointment when a user is viewing a received item or replying or creating a new item.</span></span> 
+
+<span data-ttu-id="14036-p115">Outlook ?????????????????????? ID??????????????? Web ?????????????????????????????Outlook ????????????????????????? Outlook?Outlook for Mac?Outlook Web App????????? Outlook Web App?????????????Web ????????????????????</span><span class="sxs-lookup"><span data-stu-id="14036-p115">Outlook add-ins can access contextual information from the item, such as an address or tracking ID, and then use that data to access additional information on the server and from web services to create compelling user experiences. In most cases, an Outlook add-in runs without modification on the various supporting host applications, including Outlook, Outlook for Mac, Outlook Web App, and Outlook Web App for devices, to provide a seamless experience on the desktop, web, and tablet and mobile devices.</span></span> 
+
+<span data-ttu-id="14036-170">?? Outlook ?????????? [Outlook ?????](https://docs.microsoft.com/en-us/outlook/add-ins/)?</span><span class="sxs-lookup"><span data-stu-id="14036-170">For an overview of Outlook add-ins, see [Outlook add-ins overview](https://docs.microsoft.com/en-us/outlook/add-ins/).</span></span> 
+
+### <a name="create-new-objects-in-office-documents"></a><span data-ttu-id="14036-171">? Office ???????</span><span class="sxs-lookup"><span data-stu-id="14036-171">Create new objects in Office documents</span></span> 
+
+<span data-ttu-id="14036-p116">??? Excel ? PowerPoint ??????? Web ????????????????????????????? Web ????????????? YouTube ??????????????????</span><span class="sxs-lookup"><span data-stu-id="14036-p116">You can embed web-based objects called content add-ins within Excel and PowerPoint documents. With content add-ins, you can integrate rich, web-based data visualizations, media (such as a YouTube video player or a picture gallery), and other external content.</span></span>
+
+<span data-ttu-id="14036-174">*? 5??????*</span><span class="sxs-lookup"><span data-stu-id="14036-174">*Figure 5. Content add-in*</span></span>
+
+![?????](../images/dk2-agave-overview-05.png)
+
+## <a name="office-javascript-apis"></a><span data-ttu-id="14036-176">Office JavaScript API</span><span class="sxs-lookup"><span data-stu-id="14036-176">Office JavaScript APIs</span></span> 
+
+<span data-ttu-id="14036-p117">Office JavaScript API ??????????????????? Office ??? Web ?????Excel?Outlook?Word?PowerPoint?OneNote ? Project ????????????? Excel ? Word???????????????? API ??????????????????????????????????????????</span><span class="sxs-lookup"><span data-stu-id="14036-p117">The Office JavaScript APIs contain objects and members for building add-ins and interacting with Office content and web services. There is a common object model that is shared by Excel, Outlook, Word, PowerPoint, OneNote and Project. There are also more extensive host-specific object models for Excel and Word. These APIs provide access to well-known objects such as paragraphs and workbooks, which makes it easier to create an add-in for a specific host.</span></span>  
+
+## <a name="next-steps"></a><span data-ttu-id="14036-181">????</span><span class="sxs-lookup"><span data-stu-id="14036-181">Next steps</span></span> 
+
+<span data-ttu-id="14036-182">??????????? Office ?????????????????? [5 ??????](https://docs.microsoft.com/en-us/office/dev/add-ins/)?</span><span class="sxs-lookup"><span data-stu-id="14036-182">To learn more about how to start building your Office Add-in, try out our [5-minute Quickstarts](https://docs.microsoft.com/en-us/office/dev/add-ins/). You can start building add-ins right away using Visual Studio or any other editor.</span></span> <span data-ttu-id="14036-183">????? Visual Studio ???????????????????</span><span class="sxs-lookup"><span data-stu-id="14036-183">To learn more about how to start building your Office Add-in, try out our 5-minute Quickstarts. You can start building add-ins right away using Visual Studio or any other editor.</span></span> 
+
+<span data-ttu-id="14036-184">???????????????????????????? Office ?????[????](../design/add-in-design.md)?[????](../concepts/add-in-development-best-practices.md)?</span><span class="sxs-lookup"><span data-stu-id="14036-184">To start planning solutions that create effective and compelling user experiences, get familiar with the [design guidelines](../design/add-in-design.md) and [best practices](../concepts/add-in-development-best-practices.md) for Office Add-ins.</span></span>    
+   
+## <a name="see-also"></a><span data-ttu-id="14036-185">????</span><span class="sxs-lookup"><span data-stu-id="14036-185">See also</span></span>
+
+- [<span data-ttu-id="14036-186">Office ?????</span><span class="sxs-lookup"><span data-stu-id="14036-186">Office Add-in samples</span></span>](https://developer.microsoft.com/en-us/office/gallery/?filterBy=Samples)
+- [<span data-ttu-id="14036-187">????? Office ? JavaScript API</span><span class="sxs-lookup"><span data-stu-id="14036-187">Understanding the JavaScript API for Office</span></span>](../develop/understanding-the-javascript-api-for-office.md)
+- [<span data-ttu-id="14036-188">Office ????????????</span><span class="sxs-lookup"><span data-stu-id="14036-188">Office Add-in host and platform availability</span></span>](../overview/office-add-in-availability.md)
+
+
+    
