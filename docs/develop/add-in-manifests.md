@@ -1,45 +1,49 @@
 ---
-title: Office 加载项 XML 清单
+title: Office ???? XML ??
 description: ''
 ms.date: 02/09/2018
+ms.openlocfilehash: 24c212335fa50feb4d13b6069a24cacbd9849715
+ms.sourcegitcommit: c72c35e8389c47a795afbac1b2bcf98c8e216d82
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 05/23/2018
 ---
+# <a name="office-add-ins-xml-manifest"></a>Office ??? XML ??
 
-# <a name="office-add-ins-xml-manifest"></a>Office 加载项 XML 清单
+Office ????? XML ?????????????????????? Office ???????????????????????
 
-Office 外接程序的 XML 清单文件描述，当最终用户安装外接程序并将其与 Office 文档和应用程序配合使用时，应如何激活外接程序。
+?????? XML ?????? Office ???????????
 
-基于此架构的 XML 清单文件允许 Office 外接程序执行以下内容：
+* ???? ID?????????????????????????
 
-* 通过提供 ID、版本、说明、显示名称和默认区域设置进行自我描述。
+* ???????????????????? Office ????[?????][]????
 
-* 指定用于为加载项塑造品牌的图像，以及用于 Office 功能区中[加载项命令][]的图标。
+* ???????? Office ?????????? UI??????????????
 
-* 指定加载项如何与 Office 集成，包括任何自定义 UI，如加载项创建的功能区按钮。
+* ???????????????? Outlook ??????????
 
-* 指定内容外接程序请求的默认尺寸和 Outlook 外接程序请求的高度。
+* ?? Office ????????????????????
 
-* 声明 Office 外接程序所需的权限，例如读取或写入文档。
-
-* 对于 Outlook 外接程序，定义一个或多个规则，以指定将在其中激活规则并与邮件、约会或会议请求项目交互的上下文。
+* ?? Outlook ???????????????????????????????????????????????
 
 > [!NOTE]
-> 如果计划将加载项[发布](../publish/publish.md)到 AppSource 并适用于 Office 体验，请务必遵循 [AppSource 验证策略](https://docs.microsoft.com/zh-cn/office/dev/store/validation-policies)。例如，加载项必须适用于支持已定义方法的所有平台，才能通过验证（有关详细信息，请参阅[第 4.12 部分](https://docs.microsoft.com/zh-cn/office/dev/store/validation-policies#4-apps-and-add-ins-behave-predictably)以及 [Office 加载项主机和可用性](../overview/office-add-in-availability.md)页面）。
+> ????????[??](../publish/publish.md)? AppSource ???? Office ???????? [AppSource ????](https://docs.microsoft.com/en-us/office/dev/store/validation-policies)??????????????????????????????????????????[? 4.12 ??](https://docs.microsoft.com/en-us/office/dev/store/validation-policies#4-apps-and-add-ins-behave-predictably)?? [Office ?????????](../overview/office-add-in-availability.md)????
 
-## <a name="required-elements"></a>必需元素
+## <a name="required-elements"></a>????
 
-下表指定了三种类型 Office 加载项的必需元素。
+????????? Office ?????????
 
-### <a name="required-elements-by-office-add-in-type"></a>Office 加载项类型的必需元素
+### <a name="required-elements-by-office-add-in-type"></a>Office ??????????
 
-| 元素                                                                                      | 内容 | 任务窗格 | Outlook |
+| ??                                                                                      | ?? | ???? | Outlook |
 | :------------------------------------------------------------------------------------------- | :-----: | :-------: | :-----: |
 | [OfficeApp][]                                                                                |    X    |     X     |    X    |
 | [Id][]                                                                                       |    X    |     X     |    X    |
-| [version][]                                                                                  |    X    |     X     |    X    |
+| [??][]                                                                                  |    X    |     X     |    X    |
 | [ProviderName][]                                                                             |    X    |     X     |    X    |
 | [DefaultLocale][]                                                                            |    X    |     X     |    X    |
 | [DisplayName][]                                                                              |    X    |     X     |    X    |
-| [description][]                                                                              |    X    |     X     |    X    |
+| [??][]                                                                              |    X    |     X     |    X    |
 | [IconUrl][]                                                                                  |    X    |     X     |    X    |
 | [HighResolutionIconUrl][]                                                                    |    X    |     X     |    X    |
 | [DefaultSettings (ContentApp)][]<br/>[DefaultSettings (TaskPaneApp)][]                       |    X    |     X     |         |
@@ -50,87 +54,63 @@ Office 外接程序的 XML 清单文件描述，当最终用户安装外接程�
 | [Rule (RuleCollection)][]<br/>[Rule (MailApp)][]                                             |         |           |    X    |
 | [Requirements (MailApp)*][]                                                                  |         |           |    X    |
 | [Set*][]<br/>[Sets (MailAppRequirements)*][]                                                 |         |           |    X    |
-| [Form*][]<br/>[FormSettings*][]                                                              |         |           |    X    |
+| [Form*][]<br/>[formsettings*][]                                                              |         |           |    X    |
 | [Sets (Requirements)*][]                                                                     |    X    |     X     |         |
 | [Hosts*][]                                                                                   |    X    |     X     |         |
 
-_\*Office 加载项清单架构版本 1.1 中新增_
+_\*Office ????????? 1.1 ???_
 
 <!-- Links for above table -->
 
-
-  [officeapp]: http://msdn.microsoft.com/zh-cn/library/68f1cada-66f8-4341-45f5-14e0634c24fb%28Office.15%29.aspx
-
-  [id]: http://msdn.microsoft.com/zh-cn/library/67c4344a-935c-09d6-1282-55ee61a2838b%28Office.15%29.aspx
-
-  [version]: http://msdn.microsoft.com/zh-cn/library/6a8bbaa5-ee8c-6824-4aba-cb1a804269f6%28Office.15%29.aspx
-
-  [providername]: http://msdn.microsoft.com/zh-cn/library/0062693a-fafa-ea2d-051a-75dac0f6c323%28Office.15%29.aspx
-
-  [defaultlocale]: http://msdn.microsoft.com/zh-cn/library/04796a3a-3afa-dc85-db66-4677560c185c%28Office.15%29.aspx
-
-  [displayname]: http://msdn.microsoft.com/zh-cn/library/529159ca-53bf-efcf-c245-e572dab0ef57%28Office.15%29.aspx
-
-  [description]: http://msdn.microsoft.com/zh-cn/library/bcce6bad-23d0-7631-7d8c-1064b8453b5a%28Office.15%29.aspx
+[officeapp]: http://msdn.microsoft.com/en-us/library/68f1cada-66f8-4341-45f5-14e0634c24fb%28Office.15%29.aspx
+[id]: http://msdn.microsoft.com/en-us/library/67c4344a-935c-09d6-1282-55ee61a2838b%28Office.15%29.aspx
+[version]: http://msdn.microsoft.com/en-us/library/6a8bbaa5-ee8c-6824-4aba-cb1a804269f6%28Office.15%29.aspx
+[providername]: http://msdn.microsoft.com/en-us/library/0062693a-fafa-ea2d-051a-75dac0f6c323%28Office.15%29.aspx
+[defaultlocale]: http://msdn.microsoft.com/en-us/library/04796a3a-3afa-dc85-db66-4677560c185c%28Office.15%29.aspx
+[displayname]: http://msdn.microsoft.com/en-us/library/529159ca-53bf-efcf-c245-e572dab0ef57%28Office.15%29.aspx
+[description]: http://msdn.microsoft.com/en-us/library/bcce6bad-23d0-7631-7d8c-1064b8453b5a%28Office.15%29.aspx
 [iconurl]: http://msdn.microsoft.com/library/c7dac2d4-4fda-6fc7-3774-49f02b2d3e1e%28Office.15%29.aspx
 [highresolutioniconurl]: http://msdn.microsoft.com/library/ff7b2647-ec8e-70dc-4e4a-e1a1377ff3f2%28Office.15%29.aspx
-
-  [defaultsettings (contentapp)]: http://msdn.microsoft.com/zh-cn/library/f7edc689-551f-1a17-ea81-ffd58f534557%28Office.15%29.aspx
-
-  [defaultsettings (taskpaneapp)]: http://msdn.microsoft.com/zh-cn/library/36e3d139-56a4-fb3d-0a21-cbd14e606765%28Office.15%29.aspx
-
-  [sourcelocation (contentapp)]: http://msdn.microsoft.com/zh-cn/library/00d95bb0-e8f5-647f-790a-0aa3aabc8141%28Office.15%29.aspx
-
-  [sourcelocation (taskpaneapp)]: http://msdn.microsoft.com/zh-cn/library/e6ea8cd4-7c8b-1da7-d8f8-8d3c80a088bc%28Office.15%29.aspx
-
-  [desktopsettings]: http://msdn.microsoft.com/zh-cn/library/da9fd085-b8cc-2be0-d329-2aa1ef5d3f1c%28Office.15%29.aspx
-
-  [sourcelocation (mailapp)]: http://msdn.microsoft.com/zh-cn/library/3792d389-bebd-d19a-9d90-35b7a0bfc623%28Office.15%29.aspx
-
-  [permissions (contentapp)]: http://msdn.microsoft.com/zh-cn/library/9f3dcf9c-fced-c115-4f0d-38d60fb7c583%28Office.15%29.aspx
-
-  [permissions (taskpaneapp)]: http://msdn.microsoft.com/zh-cn/library/d4cfe645-353d-8240-8495-f76fb36602fe%28Office.15%29.aspx
-
-  [permissions (mailapp)]: http://msdn.microsoft.com/zh-cn/library/c20cdf29-74b0-564c-e178-b75d148b36d1%28Office.15%29.aspx
-
-  [rule (rulecollection)]: http://msdn.microsoft.com/zh-cn/library/c6ce9d52-4b53-c6a6-de7e-c64106135c81%28Office.15%29.aspx
-
-  [rule (mailapp)]: http://msdn.microsoft.com/zh-cn/library/56dfc32e-2b8c-1724-05be-5595baf38aa3%28Office.15%29.aspx
-
-  [requirements (mailapp)*]: http://msdn.microsoft.com/zh-cn/library/9536ea30-34f7-76b5-7f30-1508626840e4%28Office.15%29.aspx
-
-  [set*]: http://msdn.microsoft.com/zh-cn/library/1506daa1-332c-30e1-6402-3371bcd0b895%28Office.15%29.aspx
-
-  [sets (mailapprequirements)*]: http://msdn.microsoft.com/zh-cn/library/2a6a2484-eeee-37e4-43bc-c185e8ae0d1d%28Office.15%29.aspx
-
-  [form*]: http://msdn.microsoft.com/zh-cn/library/77a8ac83-c22b-1225-4fc4-ba4038b68648%28Office.15%29.aspx
-
-  [formsettings*]: http://msdn.microsoft.com/zh-cn/library/0d1a311d-939d-78c1-e968-89ddf7ebc4b4%28Office.15%29.aspx
-
-  [sets (requirements)*]: http://msdn.microsoft.com/zh-cn/library/509be287-b532-87c6-71ac-64f3a4bbd3af%28Office.15%29.aspx
+[defaultsettings (contentapp)]: http://msdn.microsoft.com/en-us/library/f7edc689-551f-1a17-ea81-ffd58f534557%28Office.15%29.aspx
+[defaultsettings (taskpaneapp)]: http://msdn.microsoft.com/en-us/library/36e3d139-56a4-fb3d-0a21-cbd14e606765%28Office.15%29.aspx
+[sourcelocation (contentapp)]: http://msdn.microsoft.com/en-us/library/00d95bb0-e8f5-647f-790a-0aa3aabc8141%28Office.15%29.aspx
+[sourcelocation (taskpaneapp)]: http://msdn.microsoft.com/en-us/library/e6ea8cd4-7c8b-1da7-d8f8-8d3c80a088bc%28Office.15%29.aspx
+[desktopsettings]: http://msdn.microsoft.com/en-us/library/da9fd085-b8cc-2be0-d329-2aa1ef5d3f1c%28Office.15%29.aspx
+[sourcelocation (mailapp)]: http://msdn.microsoft.com/en-us/library/3792d389-bebd-d19a-9d90-35b7a0bfc623%28Office.15%29.aspx
+[permissions (contentapp)]: http://msdn.microsoft.com/en-us/library/9f3dcf9c-fced-c115-4f0d-38d60fb7c583%28Office.15%29.aspx
+[permissions (taskpaneapp)]: http://msdn.microsoft.com/en-us/library/d4cfe645-353d-8240-8495-f76fb36602fe%28Office.15%29.aspx
+[permissions (mailapp)]: http://msdn.microsoft.com/en-us/library/c20cdf29-74b0-564c-e178-b75d148b36d1%28Office.15%29.aspx
+[rule (rulecollection)]: http://msdn.microsoft.com/en-us/library/c6ce9d52-4b53-c6a6-de7e-c64106135c81%28Office.15%29.aspx
+[rule (mailapp)]: http://msdn.microsoft.com/en-us/library/56dfc32e-2b8c-1724-05be-5595baf38aa3%28Office.15%29.aspx
+[requirements (mailapp)*]: http://msdn.microsoft.com/en-us/library/9536ea30-34f7-76b5-7f30-1508626840e4%28Office.15%29.aspx
+[set*]: http://msdn.microsoft.com/en-us/library/1506daa1-332c-30e1-6402-3371bcd0b895%28Office.15%29.aspx
+[sets (mailapprequirements)*]: http://msdn.microsoft.com/en-us/library/2a6a2484-eeee-37e4-43bc-c185e8ae0d1d%28Office.15%29.aspx
+[form*]: http://msdn.microsoft.com/en-us/library/77a8ac83-c22b-1225-4fc4-ba4038b68648%28Office.15%29.aspx
+[formsettings*]: http://msdn.microsoft.com/en-us/library/0d1a311d-939d-78c1-e968-89ddf7ebc4b4%28Office.15%29.aspx
+[sets (requirements)*]: http://msdn.microsoft.com/en-us/library/509be287-b532-87c6-71ac-64f3a4bbd3af%28Office.15%29.aspx
 [hosts*]: http://msdn.microsoft.com/library/f9a739c1-3daf-c03a-2bd9-4a2a6b870101%28Office.15%29.aspx
 
-## <a name="hosting-requirements"></a>托管要求
+## <a name="hosting-requirements"></a>????
 
-所有图像 URI（如用于[加载项命令][]的 URI）都必须支持缓存。 托管图像的服务器不得返回在 HTTP 响应中指定 `no-cache`、`no-store` 或类似选项的 `Cache-Control` 头。
+???? URI????[?????][]? URI????????? ????????????? HTTP ????? `no-cache`?`no-store` ?????? `Cache-Control` ??
 
-所有 URL（如 [SourceLocation](https://dev.office.com/reference/add-ins/manifest/sourcelocation) 元素中指定的源文件位置）都应**受 SSL 保护 (HTTPS)**。 [!include[HTTPS guidance](../includes/https-guidance.md)]
+?? URL?? [SourceLocation](https://dev.office.com/reference/add-ins/manifest/sourcelocation) ??????????????**? SSL ?? (HTTPS)**? [!include[HTTPS guidance](../includes/https-guidance.md)]
 
-## <a name="best-practices-for-submitting-to-appsource"></a>关于提交到 AppSource 的最佳做法
+## <a name="best-practices-for-submitting-to-appsource"></a>????? AppSource ?????
 
-确保外接程序 ID 有效且具有唯一 GUID。Web 上提供可用于创建唯一 GUID 的各种 GUID 生成器工具。
+?????? ID ??????? GUID?Web ?????????? GUID ??? GUID ??????
 
-提交到 AppSource 的加载项还必须包括 [SupportUrl](https://dev.office.com/reference/add-ins/manifest/supporturl) 元素。 有关详细信息，请参阅[提交到 AppSource 的应用和加载项的验证策略](https://docs.microsoft.com/office/dev/store/validation-policies)。
+??? AppSource ????????? [SupportUrl](https://dev.office.com/reference/add-ins/manifest/supporturl) ??? ??????????[??? AppSource ????????????](https://docs.microsoft.com/office/dev/store/validation-policies)?
 
-仅使用 [AppDomain](https://dev.office.com/reference/add-ins/manifest/appdomains) 元素指定域（除了在 [SourceLocation](https://dev.office.com/reference/add-ins/manifest/sourcelocation) 元素中指定的用于身份验证方案的域）。
+??? [AppDomain](https://dev.office.com/reference/add-ins/manifest/appdomains) ????????? [SourceLocation](https://dev.office.com/reference/add-ins/manifest/sourcelocation) ??????????????????
 
-## <a name="specify-domains-you-want-to-open-in-the-add-in-window"></a>指定要在加载项窗口中打开的域
+## <a name="specify-domains-you-want-to-open-in-the-add-in-window"></a>??????????????
 
-默认情况下，如果外接程序尝试转到托管起始页（如清单文件的 [SourceLocation](https://dev.office.com/reference/add-ins/manifest/sourcelocation) 元素中所指定的）的域之外的域中的 URL，则该 URL 将在 Office 主机应用程序的外接程序窗格外的新浏览器窗口中打开。此默认行为将防止用户在外接程序窗格从嵌入的 **iframe** 元素中进行意外页面导航。
+???????????????????????????? [SourceLocation](https://dev.office.com/reference/add-ins/manifest/sourcelocation) ???????????????? URL??? URL ?? Office ?????????????????????????????????????????????? **iframe** ????????????
 
-若要重写此操作，请在清单文件的 [AppDomains](https://dev.office.com/reference/add-ins/manifest/appdomains) 元素中指定的域列表中指定要在外接程序窗口中打开的每个域。如果外接程序尝试转至在列表之外的域的 URL，则该 URL 将在新的浏览器窗口中（外接程序窗格之外）打开。
+??????????????? [AppDomains](https://dev.office.com/reference/add-ins/manifest/appdomains) ?????????????????????????????????????????????? URL??? URL ???????????????????????
 
-下面的 XML 清单示例在 **SourceLocation** 元素中指定的 `https://www.contoso.com` 域中托管加载项主页。它还在 **AppDomains** 元素列表内的 [AppDomain](http://msdn.microsoft.com/zh-cn/library/2a0353ec-5e09-6fbf-1636-4bb5dcebb9bf%28Office.15%29.aspx) 元素中指定 `https://www.northwindtraders.com` 域。如果加载项转到 www.northwindtraders.com 域中的页面，此页面就会在加载项窗格中打开。
+??? XML ????? **SourceLocation** ?????? `https://www.contoso.com` ????????????? **AppDomains** ?????? [AppDomain](http://msdn.microsoft.com/en-us/library/2a0353ec-5e09-6fbf-1636-4bb5dcebb9bf%28Office.15%29.aspx) ????? `https://www.northwindtraders.com` ????????? www.northwindtraders.com ?????????????????????
 
 ```XML
 <?xml version="1.0" encoding="UTF-8"?>
@@ -151,12 +131,12 @@ _\*Office 加载项清单架构版本 1.1 中新增_
 </OfficeApp>
 ```
 
-## <a name="manifest-v11-xml-file-examples-and-schemas"></a>清单 v1.1 XML 文件示例和架构
-下面各部分展示了内容加载项、任务窗格加载项和 Outlook 加载项的清单 v1.1 XML 文件示例。
+## <a name="manifest-v11-xml-file-examples-and-schemas"></a>?? v1.1 XML ???????
+?????????????????????? Outlook ?????? v1.1 XML ?????
 
-# <a name="task-panetabtabid-1"></a>[任务窗格](#tab/tabid-1)
+# <a name="task-panetabtabid-1"></a>[????](#tab/tabid-1)
 
-[任务窗格应用程序清单架构](https://github.com/OfficeDev/office-js-docs-pr/tree/master/docs/overview/schemas/taskpane)
+[????????????](https://github.com/OfficeDev/office-js-docs-pr/tree/master/docs/overview/schemas/taskpane)
 
 ```XML
 <?xml version="1.0" encoding="utf-8"?>
@@ -351,9 +331,9 @@ _\*Office 加载项清单架构版本 1.1 中新增_
 </OfficeApp>
 ```
 
-# <a name="contenttabtabid-2"></a>[内容](#tab/tabid-2)
+# <a name="contenttabtabid-2"></a>[??](#tab/tabid-2)
 
-[内容应用程序清单架构](https://github.com/OfficeDev/office-js-docs-pr/tree/master/docs/overview/schemas/content)
+[??????????](https://github.com/OfficeDev/office-js-docs-pr/tree/master/docs/overview/schemas/content)
 
 ```XML
 <?xml version="1.0" encoding="utf-8"?>
@@ -388,9 +368,9 @@ _\*Office 加载项清单架构版本 1.1 中新增_
 </OfficeApp>
 ```
 
-# <a name="mailtabtabid-3"></a>[邮件](#tab/tabid-3)
+# <a name="mailtabtabid-3"></a>[??](#tab/tabid-3)
 
-[邮件应用程序清单架构](https://github.com/OfficeDev/office-js-docs-pr/tree/master/docs/overview/schemas/mail)
+[??????????](https://github.com/OfficeDev/office-js-docs-pr/tree/master/docs/overview/schemas/mail)
 
 ```XML
 <?xml version="1.0" encoding="utf-8"?>
@@ -481,16 +461,16 @@ _\*Office 加载项清单架构版本 1.1 中新增_
 
 ---
 
-## <a name="validate-and-troubleshoot-issues-with-your-manifest"></a>验证并排查清单问题
+## <a name="validate-and-troubleshoot-issues-with-your-manifest"></a>?????????
 
-如需排查清单问题，请参阅[验证并排查清单问题](../testing/troubleshoot-manifest.md)。其中介绍了如何针对 [XML 架构定义 (XSD)](https://github.com/OfficeDev/office-js-docs-pr/tree/master/docs/overview/schemas) 验证清单，以及如何使用运行时日志记录功能调试清单。
+????????????[?????????](../testing/troubleshoot-manifest.md)?????????? [XML ???? (XSD)](https://github.com/OfficeDev/office-js-docs-pr/tree/master/docs/overview/schemas) ?????????????????????????
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>????
 
-* [在清单中创建加载项命令][加载项命令]
-* [指定 Office 主机和 API 要求](specify-office-hosts-and-api-requirements.md)
-* [Office 外接程序的本地化](localization.md)
-* [Office 外接程序清单的架构参考](https://github.com/OfficeDev/office-js-docs-pr/tree/master/docs/overview/schemas)
-* [验证并排查清单问题](../testing/troubleshoot-manifest.md)
+* [???????????][?????]
+* [?? Office ??? API ??](specify-office-hosts-and-api-requirements.md)
+* [Office ????????](localization.md)
+* [Office ???????????](https://github.com/OfficeDev/office-js-docs-pr/tree/master/docs/overview/schemas)
+* [?????????](../testing/troubleshoot-manifest.md)
 
-[加载项命令]: create-addin-commands.md
+[?????]: create-addin-commands.md
