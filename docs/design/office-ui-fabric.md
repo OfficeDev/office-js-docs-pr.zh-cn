@@ -2,9 +2,13 @@
 title: Office 加载项中的 Office UI Fabric
 description: ''
 ms.date: 12/04/2017
+ms.openlocfilehash: 8fafe8a68c477868c12bff61c7f9ff23fc7314e0
+ms.sourcegitcommit: c72c35e8389c47a795afbac1b2bcf98c8e216d82
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 05/23/2018
+ms.locfileid: "19437365"
 ---
-
-
 # <a name="office-ui-fabric-in-office-add-ins"></a>Office 加载项中的 Office UI Fabric 
 
 Office UI Fabric 是用于生成 Office 和 Office 365 用户体验的 JavaScript 前端框架。Fabric 提供了以视觉对象为中心的组件，可在 Office 外接程序中进行扩展、返工和使用。由于 Fabric 使用的是 Office 设计语言，因此 Fabric 的用户体验组件看起来像是 Office 的自然扩展。 
@@ -49,6 +53,5 @@ Fabric 提供了多种可用于生成外界程序的 UX 组件，包括以下类
 
 |**框架**|**示例**|
 |:------------|:----------|
-|**仅 JavaScript**（无框架）|[在 Office 外接程序中使用 Office UI Fabric JS](using-office-ui-fabric-js.md)。|
 |**React**|[在 Office 外接程序中使用 Office UI Fabric React](using-office-ui-fabric-react.md )|
 |**Angular**| 请参阅包含 Angular 1.5 指令的社区项目 [ngOfficeUIFabric](http://ngofficeuifabric.com/)，以及[考虑使用 Angular 2 组件包装 Fabric 组件](../develop/add-ins-with-angular2.md#consider-wrapping-fabric-components-with-angular-components)|

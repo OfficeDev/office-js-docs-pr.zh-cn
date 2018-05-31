@@ -2,38 +2,43 @@
 title: Word 加载项教程
 metadata:
   title: Word 加载项教程
-  description: 本教程将介绍如何生成 Word 加载项，用于插入（和替换）文本区域、段落、图像、HTML、表格和内容控件。此外，还将介绍如何设置文本格式，以及如何插入（和替换）内容控件中的内容。
-  audience: 开发人员
-  level: 初学者
+  description: 在本教程中，你将构建可插入（并替换）文本范围、段落、图像、HTML、表格和内容控件的 Word 加载项。 你还将学习如何格式化文本以及如何插入（并替换）内容控件中的内容。
+  audience: Developer
+  level: Beginner
   displayType: one-column
   ms.date: 03/10/2018
+  ms.openlocfilehash: c5aace1acd90a1edfa27415c0446b7421b734a1b
+  ms.sourcegitcommit: c72c35e8389c47a795afbac1b2bcf98c8e216d82
+  ms.translationtype: HT
+  ms.contentlocale: zh-CN
+  ms.lasthandoff: 05/23/2018
+  ms.locfileid: "19439640"
 items:
 - durationInMinutes: 1
-  content: |
-    本教程将介绍如何生成 Word 加载项，用于插入和替换文本、图像和其他内容。首先，生成用于插入段落的 Word 加载项。本教程的每个后续步骤都会向加载项添加更多功能。如果在创建过程中遇到任何问题，请<a href="https://github.com/OfficeDev/office-js-docs-pr/issues">联系我们</a>。
+  content: >
+    本教程将教你如何构建可插入并替换文本、图像和其他内容的 Word 加载项。 你将首先构建一个插入段落的 Word 加载项。 在本教程后续的每一步骤中，你都将为该加载项添加更多功能。 如果你遇到任何问题，请与我们联系 <a href="https://github.com/OfficeDev/office-js-docs-pr/issues">让我们知道</a>。
 - title: 创建加载项项目
   durationInMinutes: 5
-  content: |
+  content: >
     [!INCLUDE [](../includes/word-tutorial-setup.md)]
-- title: 插入文本区域
+- title: 插入文本范围
   durationInMinutes: 10
-  content: |
+  content: >
     [!INCLUDE [](../includes/word-tutorial-insert-text.md)]
-- title: 设置文本格式和样式
+- title: 格式化和样式化文本
   durationInMinutes: 15
-  content: |
+  content: >
     [!INCLUDE [](../includes/word-tutorial-format-text.md)]
-- title: 替换文本并在各个位置插入文本
+- title: 在不同位置替换文本和插入文本
   durationInMinutes: 20
-  content: |
+  content: >
     [!INCLUDE [](../includes/word-tutorial-replace-text.md)]
-- title: 插入图像、HTML 和表格
+- title: 插入图片、HTML 和表格
   durationInMinutes: 6
-  content: |
+  content: >
     [!INCLUDE [](../includes/word-tutorial-insert-image-html-table.md)]
-- title: 创建内容控件并替换其中内容
+- title: 创建内容控件并替换其内容
   durationInMinutes: 8
-  content: |
+  content: >
     [!INCLUDE [](../includes/word-tutorial-content-control.md)]
-- content: |
-    已完成 Word 加载项教程。若要详细了解如何生成 Word 加载项，请参阅 <a href="../word/word-add-ins-programming-overview.md">Word 加载项概述</a>。
+- content: 你已经完成了 Word 加载项教程。 要了解有关构建 Word 加载项的更多信息，请参阅 <a href="../word/word-add-ins-programming-overview.md">Word 加载项概述</a>。

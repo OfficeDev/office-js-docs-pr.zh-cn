@@ -2,15 +2,19 @@
 title: 了解适用于 Office 的 JavaScript API
 description: ''
 ms.date: 01/23/2018
+ms.openlocfilehash: 1ff65e8cf081330c0ce5fe8d048f703b259a5ef3
+ms.sourcegitcommit: c72c35e8389c47a795afbac1b2bcf98c8e216d82
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 05/23/2018
+ms.locfileid: "19437680"
 ---
-
-
 # <a name="understanding-the-javascript-api-for-office"></a>了解适用于 Office 的 JavaScript API
 
 本文提供了有关适用于 Office 的 JavaScript API 的信息以及使用方法。有关参考信息，请参阅 [适用于 Office 的 JavaScript API](https://dev.office.com/reference/add-ins/javascript-api-for-office)。有关将 Visual Studio 项目文件更新到适用于 Office 的 JavaScript API 的最新当前版本的信息，请参阅 [更新适用于 Office 的 JavaScript API 版本和清单架构文件](update-your-javascript-api-for-office-and-manifest-schema-version.md)。
 
 > [!NOTE]
-> 如果计划将加载项[发布](../publish/publish.md)到 AppSource 并适用于 Office 体验，请务必遵循 [AppSource 验证策略](https://docs.microsoft.com/zh-cn/office/dev/store/validation-policies)。例如，加载项必须适用于支持已定义方法的所有平台，才能通过验证（有关详细信息，请参阅[第 4.12 部分](https://docs.microsoft.com/zh-cn/office/dev/store/validation-policies#4-apps-and-add-ins-behave-predictably)以及 [Office 加载项主机和可用性](../overview/office-add-in-availability.md)页面）。 
+> 如果计划将加载项[发布](../publish/publish.md)到 AppSource 并适用于 Office 体验，请务必遵循 [AppSource 验证策略](https://docs.microsoft.com/en-us/office/dev/store/validation-policies)。例如，加载项必须适用于支持已定义方法的所有平台，才能通过验证（有关详细信息，请参阅[第 4.12 部分](https://docs.microsoft.com/en-us/office/dev/store/validation-policies#4-apps-and-add-ins-behave-predictably)以及 [Office 加载项主机和可用性](../overview/office-add-in-availability.md)页面）。 
 
 ## <a name="referencing-the-javascript-api-for-office-library-in-your-add-in"></a>在加载项中引用适用于 Office 的 JavaScript API 库
 
@@ -22,11 +26,11 @@ ms.date: 01/23/2018
 
 这将在加载项首次加载时下载并缓存适用于 Office 的 JavaScript API 文件，以确保对特定版本使用 Office.js 及其关联文件的最新实现。
 
-有关 Office.js CDN 的详细信息，包括如何处理版本控制和向后兼容性，请参阅[从适用于 Office 的 JavaScript API 的内容传送网络 (CDN) 引用适用于 Office 的 JavaScript API 库](referencing-the-javascript-api-for-office-library-from-its-cdn.md)。
+有关 Office.js CDN 的更多详细信息（包括如何处理版本控制和向后兼容性），请参阅[从适用于 Office 的 JavaScript API 库的内容交付网络 (CDN) 对其引用](referencing-the-javascript-api-for-office-library-from-its-cdn.md)。
 
 ## <a name="initializing-your-add-in"></a>初始化加载项
 
-**适用于：**所有加载项类型
+**适用于：** 所有加载项类型
 
 Office.js 提供初始化事件，API 完全加载并准备与用户开始交互时会触发该事件。你可以使用 **initialize** 事件处理程序实现常见的外接程序初始化方案，例如，可以提示用户选择 Excel 中的一些单元格，然后插入使用选定值初始化的图表。还可以使用 initialize 事件处理程序初始化外接程序的其他自定义逻辑，例如建立绑定、提示默认外接程序设置值等。
 
@@ -67,7 +71,7 @@ Office.initialize = function (reason) {
 
 ## <a name="context-object"></a>Context 对象
 
-**适用于：**所有加载项类型
+**适用于：** 所有加载项类型
 
 加载项初始化时，它有许多可以在运行时环境中交互的不同对象。加载项运行时上下文通过 [Context](https://dev.office.com/reference/add-ins/shared/office.context) 对象反映在 API 中。**Context** 是提供对于最重要 API 对象（例如 [Document](https://dev.office.com/reference/add-ins/shared/document) 和 [Mailbox](https://dev.office.com/reference/add-ins/outlook/Office.context.mailbox) 对象）的访问权限的主对象，这些对象继而提供对文档和邮箱内容的访问权限。
 
@@ -78,7 +82,7 @@ Office.initialize = function (reason) {
 
 ## <a name="document-object"></a>Document 对象
 
-**适用于：**内容和任务窗格加载项类型
+**适用于：** 内容和任务窗格加载项类型
 
 为了与 Excel、PowerPoint 和 Word 中的文档数据交互，API 提供 [Document](https://dev.office.com/reference/add-ins/shared/document) 对象。您可以使用 **Document** 对象成员通过以下方法访问数据：
 
@@ -114,7 +118,7 @@ Office.initialize = function (reason) {
 
 ### <a name="consistent-data-access-across-office-applications"></a>跨 Office 应用程序的一致数据访问
 
- **适用于：**内容和任务窗格加载项类型
+ **适用于：** 内容和任务窗格加载项类型
 
 为了创建跨不同 Office 文档无缝工作的扩展，适用于 Office 的 JavaScript API 通过通用数据类型和强制将不同文档内容划分为三种通用数据类型的功能抽象出每个 Office 应用程序的细节。
 
@@ -129,7 +133,7 @@ Office.initialize = function (reason) {
 |:-----|:-----|:-----|
 |文本|提供选定范围或绑定中数据的字符串表示形式。|在 Excel 2013、Project 2013 和 PowerPoint 2013 中，仅支持纯文本。在 Word 2013 中，支持三种文本格式：纯文本、HTML 和 Office Open XML (OOXML)。如果选中的是 Excel 单元格中的文本，基于选定范围的方法会对单元格的全部内容执行读取和写入操作，即使仅选中了单元格中的部分文本，也不例外。如果选中的是 Word 和 PowerPoint 中的文本，基于选定范围的方法只会对选中的一系列字符执行读取和写入操作。Project 2013 和 PowerPoint 2013 仅支持基于选定范围的数据访问。|
 |矩阵|将选定范围或绑定中的数据作为二维 **Array** 提供，这在 JavaScript 中实现为一组数组。例如，两行两列 **string** 值为 ` [['a', 'b'], ['c', 'd']]`，而三行一列则为 `[['a'], ['b'], ['c']]`。|仅 Excel 2013 和 Word 2013 支持矩阵数据访问。|
-|Table|将选区或绑定中的数据作为 [TableData](https://dev.office.com/reference/add-ins/shared/tabledata) 对象提供。**TableData** 对象通过 **headers** 和 **rows** 属性公开数据。|表格数据访问仅在 Excel 2013 和 Word 2013 中受支持。|
+|表格|将选区或绑定中的数据作为 [TableData](https://dev.office.com/reference/add-ins/shared/tabledata) 对象提供。**TableData** 对象通过 **headers** 和 **rows** 属性公开数据。|表格数据访问仅在 Excel 2013 和 Word 2013 中受支持。|
 
 #### <a name="data-type-coercion"></a>数据类型强制转换
 
@@ -137,7 +141,7 @@ Office.initialize = function (reason) {
 
 
 > [!TIP]
-> **何时应使用矩阵与表格 coercionType 数据访问？**如果需要表格数据在添加行和列时动态增长，且必须处理表格标题，应使用表格数据类型（具体操作是将 **Document** 或 **Binding** 对象数据访问方法的 _coercionType_ 参数指定为 `"table"` 或 **Office.CoercionType.Table**）。虽然表格数据和矩阵数据都支持在数据结构内添加行和列，但只有表格数据支持追加行和列。如果不打算添加行和列，且数据不需要使用标题功能，应使用矩阵数据类型（具体操作是将数据访问方法的 _coercionType_ 参数指定为 `"matrix"` 或 **Office.CoercionType.Matrix**），它提供了更简单的数据交互模型。
+> **何时应使用矩阵与表格 coercionType 数据访问？** 如果需要表格数据在添加行和列时动态增长，且必须处理表格标题，应使用表格数据类型（具体操作是将 **Document** 或 **Binding** 对象数据访问方法的 _coercionType_ 参数指定为 `"table"` 或 **Office.CoercionType.Table**）。虽然表格数据和矩阵数据都支持在数据结构内添加行和列，但只有表格数据支持追加行和列。如果不打算添加行和列，且数据不需要使用标题功能，应使用矩阵数据类型（具体操作是将数据访问方法的 _coercionType_ 参数指定为 `"matrix"` 或 **Office.CoercionType.Matrix**），它提供了更简单的数据交互模型。
 
 如果无法将数据强制转换为指定的类型，那么回调中的 [AsyncResult.status](https://dev.office.com/reference/add-ins/shared/asyncresult.error) 属性返回 `"failed"`，并且你可以使用 [AsyncResult.error](https://dev.office.com/reference/add-ins/shared/asyncresult.context) 属性访问 [Error](https://dev.office.com/reference/add-ins/shared/error) 对象，其中包括方法调用失败原因的信息。
 
@@ -186,7 +190,7 @@ Office.initialize = function (reason) {
 ## <a name="working-with-custom-xml-parts-using-the-customxmlparts-and-customxmlpart-objects"></a>使用 CustomXmlParts 和 CustomXmlPart 对象处理自定义 XML 部件
 
 
- **适用于：**Word 的任务窗格加载项
+ **适用于：** Word 的任务窗格加载项
 
 API 的 [CustomXmlParts](https://dev.office.com/reference/add-ins/shared/customxmlparts.customxmlparts) 和 [CustomXmlPart](https://dev.office.com/reference/add-ins/shared/customxmlpart.customxmlpart) 对象提供访问 Word 文档中自定义 XML 部件的权限，从而启用文档内容的 XML 驱动操作。有关使用 **CustomXmlParts** 和 **CustomXmlPart** 对象的演示，请参阅 [Word-Add-in-Work-with-custom-XML-parts](https://github.com/OfficeDev/Word-Add-in-Work-with-custom-XML-parts) 代码示例。
 
@@ -194,7 +198,7 @@ API 的 [CustomXmlParts](https://dev.office.com/reference/add-ins/shared/customx
 ## <a name="working-with-the-entire-document-using-the-getfileasync-method"></a>使用 getFileAsync 方法处理整个文档
 
 
- **适用于：**Word 和 PowerPoint 任务窗格加载项
+ **适用于：** Word 和 PowerPoint 任务窗格加载项
 
 [Document.getFileAsync](https://dev.office.com/reference/add-ins/shared/document.getfileasync) 方法以及 [File](https://dev.office.com/reference/add-ins/shared/file) 和 [Slice](https://dev.office.com/reference/add-ins/shared/slice) 对象的成员可用于一次性获取整个 Word 和 PowerPoint 文档文件，所有切片（区块）的总大小上限为 4MB。有关详细信息，请参阅[通过 PowerPoint 或 Word 加载项获取整个文档](../word/get-the-whole-document-from-an-add-in-for-word.md)。
 
@@ -202,7 +206,7 @@ API 的 [CustomXmlParts](https://dev.office.com/reference/add-ins/shared/customx
 ## <a name="mailbox-object"></a>Mailbox 对象
 
 
- **适用于：**Outlook 外接程序
+ **适用于：** Outlook 外接程序
 
 Outlook 外接程序主要使用通过 [Mailbox](https://dev.office.com/reference/add-ins/outlook/Office.context.mailbox) 对象公开的 API 的子集。要访问专用于 Outlook 外接程序的对象和成员（例如 [Item](https://dev.office.com/reference/add-ins/outlook/Office.context.mailbox.item) 对象），可以使用 [Context](https://dev.office.com/reference/add-ins/outlook/Office.context.mailbox) 对象的 **mailbox** 属性访问 **Mailbox** 对象，如下面的代码行所示。
 
@@ -224,7 +228,7 @@ var item = Office.context.mailbox.item;
     
 -  **RoamingSettings** 对象：用于将 Outlook 加载项专用自定义设置保存到安装了加载项的用户邮箱。
     
-若要了解如何在 Outlook 加载项中使用 JavaScript，请参阅 [Outlook 加载项](https://docs.microsoft.com/zh-cn/outlook/add-ins/)。
+若要了解如何在 Outlook 加载项中使用 JavaScript，请参阅 [Outlook 加载项](https://docs.microsoft.com/en-us/outlook/add-ins/)。
 
 
 ## <a name="api-support-matrix"></a>API 支持矩阵
@@ -235,28 +239,28 @@ var item = Office.context.mailbox.item;
 
 |||||||||
 |:-----|:-----|:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|
-||**主机名**|数据库|工作簿|邮箱|演示文稿|文档|Project|
-||**支持的主机应用程序**|Access Web App|Excel、<br/>Excel Online|Outlook、<br/>Outlook Web App、<br/>适用于设备的 OWA|PowerPoint、<br/>PowerPoint Online|Word|项目|
-|**支持的外接程序类型**|内容|Y|Y||Y|||
-||任务窗格||Y||Y|Y|Y|
-||Outlook|||Y||||
-|**支持的 API 功能**|读/写文本||Y||Y|Y|是<br/>（只读）|
-||读/写矩阵||Y|||Y||
-||读/写表||Y|||Y||
+||**主机名**|数据库|工作簿|邮箱|演示文稿|文档|项目|
+||**支持的****主机应用程序**|Access Web App|Excel、<br/>Excel 在线|Outlook、<br/>Outlook Web App、<br/>适用于设备的 OWA|PowerPoint、<br/>PowerPoint 联机|Word|项目|
+|**支持的外接程序类型**|内容|是|是||是|||
+||任务窗格||是||是|是|是|
+||Outlook|||是||||
+|**支持的 API 功能**|读/写文本||是||是|是|是<br/>（只读）|
+||读/写矩阵||是|||是||
+||读/写表||是|||是||
 ||读/写 HTML|||||是||
 ||读/写<br/>Office Open XML|||||是||
-||读取任务、资源、视图和字段属性||||||Y|
-||选择已更改事件||Y|||Y||
-||获取整个文档||||Y|是||
+||读取任务、资源、视图和字段属性||||||是|
+||选择已更改事件||是|||是||
+||获取整个文档||||是|是||
 ||绑定和绑定事件|是<br/>（仅限完全和部分表格绑定）|是|||是||
 ||读/写自定义 XML 部分|||||是||
 ||暂留加载项状态数据（设置）|是<br/>（每主机加载项）|是<br/>（每文档）|是<br/>（每邮箱）|是<br/>（每文档）|是<br/>（每文档）||
-||设置更改事件|Y|Y||Y|是||
+||设置更改事件|是|是||是|是||
 ||获取活动视图模式<br/>和视图更改事件||||是|||
-||转到文档中<br/>的相应位置||是||Y|是||
-||使用规则和 RegEx <br/>执行上下文式激活|||是||||
-||读取项目属性|||Y||||
-||读取用户配置文件|||Y||||
-||获取附件|||Y||||
-||获取用户标识令牌|||Y||||
-||调用 Exchange Web 服务|||Y||||
+||转到文档中<br/>的相应位置||是||是|是||
+||使用规则和 RegEx<br/>执行上下文式激活|||是||||
+||读取项目属性|||是||||
+||读取用户配置文件|||是||||
+||获取附件|||是||||
+||获取用户标识令牌|||是||||
+||调用 Exchange Web 服务|||是||||
