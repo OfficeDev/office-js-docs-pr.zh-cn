@@ -1,0 +1,44 @@
+### YamlMime:Tutorial
+title: <span data-ttu-id="f25ed-101">Word 加载项教程</span><span class="sxs-lookup"><span data-stu-id="f25ed-101">Word add-in tutorial</span></span>
+metadata:
+  title: Word 加载项教程
+  description: 在本教程中，你将构建可插入（并替换）文本范围、段落、图像、HTML、表格和内容控件的 Word 加载项。 你还将学习如何格式化文本以及如何插入（并替换）内容控件中的内容。
+  audience: Developer
+  level: Beginner
+  displayType: one-column
+  ms.date: 03/10/2018
+  ms.openlocfilehash: c5aace1acd90a1edfa27415c0446b7421b734a1b
+  ms.sourcegitcommit: c72c35e8389c47a795afbac1b2bcf98c8e216d82
+  ms.translationtype: HT
+  ms.contentlocale: zh-CN
+  ms.lasthandoff: 05/23/2018
+  ms.locfileid: "19439640"
+items:
+- durationInMinutes: 1
+  content: >
+    <span data-ttu-id="f25ed-105">本教程将教你如何构建可插入并替换文本、图像和其他内容的 Word 加载项。</span><span class="sxs-lookup"><span data-stu-id="f25ed-105">This tutorial teaches you how to build a Word add-in that inserts and replaces text, images, and other content.</span></span> <span data-ttu-id="f25ed-106">你将首先构建一个插入段落的 Word 加载项。</span><span class="sxs-lookup"><span data-stu-id="f25ed-106">You'll start by building a Word add-in that inserts a paragraph.</span></span> <span data-ttu-id="f25ed-107">在本教程后续的每一步骤中，你都将为该加载项添加更多功能。</span><span class="sxs-lookup"><span data-stu-id="f25ed-107">In each subsequent step of the tutorial, you'll add more functionality to the add-in.</span></span> <span data-ttu-id="f25ed-108">如果你遇到任何问题，请与我们联系 <a href="https://github.com/OfficeDev/office-js-docs-pr/issues">让我们知道</a>。</span><span class="sxs-lookup"><span data-stu-id="f25ed-108">If you run into any issues along the way, please <a href="https://github.com/OfficeDev/office-js-docs-pr/issues">let us know</a>.</span></span>
+- title: <span data-ttu-id="f25ed-109">创建加载项项目</span><span class="sxs-lookup"><span data-stu-id="f25ed-109">Create your add-in project</span></span>
+  durationInMinutes: 5
+  content: >
+    [!INCLUDE [](../includes/word-tutorial-setup.md)]
+- title: <span data-ttu-id="f25ed-110">插入文本范围</span><span class="sxs-lookup"><span data-stu-id="f25ed-110">Insert a range of cells</span></span>
+  durationInMinutes: 10
+  content: >
+    [!INCLUDE [](../includes/word-tutorial-insert-text.md)]
+- title: <span data-ttu-id="f25ed-111">格式化和样式化文本</span><span class="sxs-lookup"><span data-stu-id="f25ed-111">Format and style text</span></span>
+  durationInMinutes: 15
+  content: >
+    [!INCLUDE [](../includes/word-tutorial-format-text.md)]
+- title: <span data-ttu-id="f25ed-112">在不同位置替换文本和插入文本</span><span class="sxs-lookup"><span data-stu-id="f25ed-112">Replace text and insert text in various locations</span></span>
+  durationInMinutes: 20
+  content: >
+    [!INCLUDE [](../includes/word-tutorial-replace-text.md)]
+- title: <span data-ttu-id="f25ed-113">插入图片、HTML 和表格</span><span class="sxs-lookup"><span data-stu-id="f25ed-113">Insert images, HTML, and tables</span></span>
+  durationInMinutes: 6
+  content: >
+    [!INCLUDE [](../includes/word-tutorial-insert-image-html-table.md)]
+- title: <span data-ttu-id="f25ed-114">创建内容控件并替换其内容</span><span class="sxs-lookup"><span data-stu-id="f25ed-114">Create content controls and replace content in them</span></span>
+  durationInMinutes: 8
+  content: >
+    [!INCLUDE [](../includes/word-tutorial-content-control.md)]
+- content: <span data-ttu-id="f25ed-115">你已经完成了 Word 加载项教程。</span><span class="sxs-lookup"><span data-stu-id="f25ed-115">You've completed the Word add-in tutorial.</span></span> <span data-ttu-id="f25ed-116">要了解有关构建 Word 加载项的更多信息，请参阅 <a href="../word/word-add-ins-programming-overview.md">Word 加载项概述</a>。</span><span class="sxs-lookup"><span data-stu-id="f25ed-116">To learn more about building Word add-ins, see <a href="../word/word-add-ins-programming-overview.md">Word add-ins overview</a>.</span></span>

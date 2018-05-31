@@ -1,0 +1,88 @@
+### YamlMime:YamlDocument
+documentType: LandingData
+title: Office 外接程序文档
+metadata:
+  title: Office 外接程序文档 - 快速入门、API 参考
+  meta.description: Learn how to build Office Add-ins.
+  author: o365devx
+  ms.topic: landing-page
+  ms.date: 12/04/2017
+  ms.author: o365devx
+  ms.openlocfilehash: 4e5d08869ab343abe6915d4039a7124ac10b386a
+  ms.sourcegitcommit: 17f60431644b448a4816913039aaebfa328f9b0a
+  ms.translationtype: HT
+  ms.contentlocale: zh-CN
+  ms.lasthandoff: 05/25/2018
+  ms.locfileid: "19476443"
+abstract:
+  description: <a href="https://docs.microsoft.com/en-us/office/dev/add-ins/overview/office-add-ins">Office 外接程序平台</a> 允许你构建扩展 Office 应用程序并与 Office 文档中的内容进行交互的解决方案。 通过 Office 外接程序，可以使用熟悉的 Web 技术，例如 HTML、CSS 和 JavaScript 来扩展 Word、Excel、PowerPoint、OneNote，Project 和 Outlook，并与其进行交互。 解决方案可以跨多个平台在 Office 中运行，包括 Office for Windows、Office Online、Office for Mac 和 Office for iPad。 通过我们的快速入门、操作指南和 API 参考文档创建 Office 外接程序。<br/><br/><b>注意：</b>有关 COM 或 VSTO 外接程序的信息，请参阅 <a href="https://msdn.microsoft.com/en-us/library/fp161347.aspx" target="_blank">MSDN 文档</a>。
+  aside:
+    image:
+      alt: 
+      height: 130
+      src: https://docs.microsoft.com/en-us/office/dev/add-ins/images/office-add-ins-video-thumbnail.png
+      width: 250
+    title: 开始使用 Office 外接程序。 （14:10）
+    href: https://channel9.msdn.com/Events/Connect/2017/T192
+    width: 250
+sections:
+- title: 5 分钟快速入门
+  items:
+  - type: paragraph
+    text: 了解如何创建你的第一个 Office 外接程序：
+  - type: list
+    style: icon48
+    items:
+    - image:
+        src: https://docs.microsoft.com/en-us/office/dev/add-ins/images/index/ExcelLogoColor.svg
+      text: Excel
+      href: https://docs.microsoft.com/en-us/office/dev/add-ins/quickstarts/excel-quickstart-jquery
+    - image:
+        src: https://docs.microsoft.com/en-us/office/dev/add-ins/images/index/WordLogoColor.svg
+      text: Word
+      href: https://docs.microsoft.com/en-us/office/dev/add-ins/quickstarts/word-quickstart
+    - image:
+        src: https://docs.microsoft.com/en-us/office/dev/add-ins/images/index/OneNoteLogoColor.svg
+      text: OneNote
+      href: https://docs.microsoft.com/en-us/office/dev/add-ins/quickstarts/onenote-quickstart
+    - image:
+        src: https://docs.microsoft.com/en-us/office/dev/add-ins/images/index/OutlookLogoColor.svg
+      text: Outlook
+      href: https://docs.microsoft.com/en-us/outlook/add-ins/quick-start
+    - image:
+        src: https://docs.microsoft.com/en-us/office/dev/add-ins/images/index/PowerPointLogoColor.svg
+      text: PowerPoint
+      href: https://docs.microsoft.com/en-us/office/dev/add-ins/quickstarts/powerpoint-quickstart
+    - image:
+        src: https://docs.microsoft.com/en-us/office/dev/add-ins/images/index/ProjectLogoColor.svg
+      text: Project
+      href: https://docs.microsoft.com/en-us/office/dev/add-ins/quickstarts/project-quickstart
+- title: 操作指南
+  items:
+  - type: paragraph
+    text: 操作指南
+  - type: list
+    style: unordered
+    className: spaced bullet
+    items:
+    - html: <a href="/en-us/office/dev/add-ins/design/add-in-design">设计 Office 外接程序的用户界面</a>
+    - html: <a href="/en-us/office/dev/add-ins/excel/excel-add-ins-overview">Excel 外接程序开发</a>
+    - html: <a href="/en-us/office/dev/add-ins/word/word-add-ins-programming-overview">Word 外接程序开发</a>
+    - html: <a href="/en-us/office/dev/add-ins/onenote/onenote-add-ins-programming-overview">OneNote 外接程序开发</a>
+    - html: <a href="https://docs.microsoft.com/outlook/add-ins">Outlook 外接程序开发</a>
+    - html: <a href="/en-us/office/dev/add-ins/powerpoint/powerpoint-add-ins">PowerPoint 外接程序开发</a>
+    - html: <a href="/en-us/office/dev/add-ins/project/project-add-ins">Project 外接程序开发</a>
+    - html: <a href="/en-us/office/dev/add-ins/testing/test-debug-office-add-ins">测试和调试 Office 外接程序</a>
+    - html: <a href="/en-us/office/dev/add-ins/publish/publish">发布 Office 外接程序</a>
+- title: 参考
+  items:
+  - type: list
+    style: cards
+    className: cardsD
+    items:
+    - title: 常用 API (2013)
+      html: <p><a href="https://dev.office.com/reference/add-ins/javascript-api-for-office" target="_blank">适用于 Office 的 JavaScript API</a></p>
+    - title: 主机特定的 API (2016)
+      html: <p><a href="https://dev.office.com/reference/add-ins/excel/excel-add-ins-reference-overview" target="_blank">Excel JavaScript API</a></p><p><a href="https://dev.office.com/reference/add-ins/word/word-add-ins-reference-overview" target="_blank">Word JavaScript API</a></p><p><a href="https://dev.office.com/reference/add-ins/onenote/onenote-add-ins-javascript-reference" target="_blank">OneNote JavaScript API</a></p><p><a href="https://dev.office.com/reference/add-ins/outlook/tutorial-api-requirement-sets" target="_blank">Outlook JavaScript API</a></p>
+    - title: 其他
+      html: <p><a href="https://dev.office.com/reference/add-ins/openspec" target="_blank">API 开放性规范</a></p><p><a href="https://dev.office.com/reference/add-ins/manifest/allowsnapshot" target="_blank">Office 外接程序清单</a></p>

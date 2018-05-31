@@ -1,0 +1,48 @@
+### YamlMime:Tutorial
+title: <span data-ttu-id="7101f-101">Excel 加载项教程</span><span class="sxs-lookup"><span data-stu-id="7101f-101">Excel add-in tutorial</span></span>
+metadata:
+  title: Excel 加载项教程
+  description: 本教程中将构建一个 Excel 插件，用于创建、填充、过滤和排序表格、创建图表、冻结表头、保护工作表以及打开对话框。
+  audience: Developer
+  level: Beginner
+  displayType: one-column
+  ms.date: 01/18/2018
+  ms.openlocfilehash: 97e7fb4340060c527d8dae9b360818cb2bc35625
+  ms.sourcegitcommit: c72c35e8389c47a795afbac1b2bcf98c8e216d82
+  ms.translationtype: HT
+  ms.contentlocale: zh-CN
+  ms.lasthandoff: 05/23/2018
+  ms.locfileid: "19438653"
+items:
+- durationInMinutes: 1
+  content: >
+    <span data-ttu-id="7101f-104">本教程将教你如何构建与 Excel 工作簿中的表格、图表、工作表和对话框交互的 Excel 加载项。</span><span class="sxs-lookup"><span data-stu-id="7101f-104">This tutorial teaches you how to build an Excel add-in that interacts with tables, charts, worksheets, and dialogs in an Excel workbook.</span></span> <span data-ttu-id="7101f-105">首先要构建一个可创建、填充和格式化表格的 Excel 加载项。</span><span class="sxs-lookup"><span data-stu-id="7101f-105">You'll start by building an Excel add-in that creates, populates, and formats a table.</span></span> <span data-ttu-id="7101f-106">本教程后续的每一步骤都将为那些加载项添加更多功能。</span><span class="sxs-lookup"><span data-stu-id="7101f-106">In each subsequent step of the tutorial, you'll add more functionality to the add-in.</span></span> <span data-ttu-id="7101f-107">如果遇到任何问题，请与我们联系 <a href="https://github.com/OfficeDev/office-js-docs-pr/issues">让我们知道</a>。</span><span class="sxs-lookup"><span data-stu-id="7101f-107">If you run into any issues along the way, please <a href="https://github.com/OfficeDev/office-js-docs-pr/issues">let us know</a>.</span></span>
+- title: <span data-ttu-id="7101f-108">创建加载项项目</span><span class="sxs-lookup"><span data-stu-id="7101f-108">Create your add-in project</span></span>
+  durationInMinutes: 5
+  content: >
+    [!INCLUDE [](../includes/excel-tutorial-setup.md)]
+- title: <span data-ttu-id="7101f-109">创建表</span><span class="sxs-lookup"><span data-stu-id="7101f-109">Create a table</span></span>
+  durationInMinutes: 15
+  content: >
+    [!INCLUDE [](../includes/excel-tutorial-create-table.md)]
+- title: <span data-ttu-id="7101f-110">筛选和排序表格</span><span class="sxs-lookup"><span data-stu-id="7101f-110">Filter and sort a table</span></span>
+  durationInMinutes: 10
+  content: >
+    [!INCLUDE [](../includes/excel-tutorial-filter-and-sort-table.md)]
+- title: <span data-ttu-id="7101f-111">创建图表</span><span class="sxs-lookup"><span data-stu-id="7101f-111">Create a chart</span></span>
+  durationInMinutes: 7
+  content: >
+    [!INCLUDE [](../includes/excel-tutorial-create-chart.md)]
+- title: <span data-ttu-id="7101f-112">冻结表头</span><span class="sxs-lookup"><span data-stu-id="7101f-112">Freeze a table header in place</span></span>
+  durationInMinutes: 6
+  content: >
+    [!INCLUDE [](../includes/excel-tutorial-freeze-header.md)]
+- title: <span data-ttu-id="7101f-113">保护工作表</span><span class="sxs-lookup"><span data-stu-id="7101f-113">Protect a worksheet from changes</span></span>
+  durationInMinutes: 20
+  content: >
+    [!INCLUDE [](../includes/excel-tutorial-protect-worksheet.md)]
+- title: <span data-ttu-id="7101f-114">打开对话框</span><span class="sxs-lookup"><span data-stu-id="7101f-114">Open a dialog box.</span></span>
+  durationInMinutes: 7
+  content: >
+    [!INCLUDE [](../includes/excel-tutorial-open-dialog.md)]
+- content: <span data-ttu-id="7101f-115">你已完成 Excel 加载项教程。</span><span class="sxs-lookup"><span data-stu-id="7101f-115">You've completed the Excel add-in tutorial.</span></span> <span data-ttu-id="7101f-116">要了解有关构建 Excel 加载项的更多信息，请参阅 <a href="../excel/excel-add-ins-overview.md">Excel加载项概述</a>。</span><span class="sxs-lookup"><span data-stu-id="7101f-116">To learn more about building Excel add-ins, see <a href="../excel/excel-add-ins-overview.md">Excel add-ins overview</a>.</span></span>
