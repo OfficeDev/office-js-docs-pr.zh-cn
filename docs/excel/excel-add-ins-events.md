@@ -1,20 +1,17 @@
 ---
 title: 使用 Excel JavaScript API 处理事件
 description: ''
-ms.date: 01/29/2018
-ms.openlocfilehash: 4e04b31e7a130f21d6a9c94d041dc2a122a5890e
-ms.sourcegitcommit: c72c35e8389c47a795afbac1b2bcf98c8e216d82
+ms.date: 05/25/2018
+ms.openlocfilehash: b928910cc673cfe8ff99906259b51fa2c3afdca4
+ms.sourcegitcommit: 17f60431644b448a4816913039aaebfa328f9b0a
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/23/2018
-ms.locfileid: "19437470"
+ms.lasthandoff: 05/25/2018
+ms.locfileid: "19476478"
 ---
 # <a name="work-with-events-using-the-excel-javascript-api"></a>使用 Excel JavaScript API 处理事件 
 
 本文介绍了与处理 Excel 中事件相关的重要概念，并提供了代码示例，以展示如何使用 Excel JavaScript API 注册事件处理程序、处理事件和删除事件处理程序。 
-
-> [!IMPORTANT]
-> 本文中介绍的 API 暂仅为公共预览版 (beta)，不适用于生产环境。 若要运行本文中的代码示例，必须使用最新版 Office，并参考 Office.js CDN 的 beta 库：https://appsforoffice.microsoft.com/lib/beta/hosted/office.js。
 
 ## <a name="events-in-excel"></a>Excel 中的事件
 
@@ -22,11 +19,13 @@ ms.locfileid: "19437470"
 
 | 事件 | 说明 | 支持的对象 |
 |:---------------|:-------------|:-----------|
-| `onAdded` | 添加对象时发生的事件。 | [**WorksheetCollection**](https://github.com/OfficeDev/office-js-docs/blob/master/reference/excel/worksheetaddedeventargs.md) |
-| `onActivated` | 启用对象时发生的事件。 | [**WorksheetCollection**](https://github.com/OfficeDev/office-js-docs/blob/master/reference/excel/worksheetactivatedeventargs.md)、[**Worksheet**](https://github.com/OfficeDev/office-js-docs/blob/master/reference/excel/worksheetactivatedeventargs.md) |
-| `onDeactivated` | 停用对象时发生的事件。 | [**WorksheetCollection**](https://github.com/OfficeDev/office-js-docs/blob/master/reference/excel/worksheetdeactivatedeventargs.md)、[**Worksheet**](https://github.com/OfficeDev/office-js-docs/blob/master/reference/excel/worksheetdeactivatedeventargs.md) |
-| `onChanged` | 更改单元格内数据时发生的事件。 | [**Worksheet**](https://github.com/OfficeDev/office-js-docs/blob/master/reference/excel/worksheetchangedeventargs.md)、[**Table**](https://github.com/OfficeDev/office-js-docs/blob/master/reference/excel/tablechangedeventargs.md)、[**TableCollection**](https://github.com/OfficeDev/office-js-docs/blob/master/reference/excel/tablechangedeventargs.md)、[**Binding**](https://github.com/OfficeDev/office-js-docs/blob/master/reference/excel/bindingdatachangedeventargs.md) |
-| `onSelectionChanged` | 更改活动单元格或选定范围时发生的事件。 | [**Worksheet**](https://github.com/OfficeDev/office-js-docs/blob/master/reference/excel/worksheetselectionchangedeventargs.md)、[**Table**](https://github.com/OfficeDev/office-js-docs/blob/master/reference/excel/tableselectionchangedeventargs.md)、[**Binding**](https://github.com/OfficeDev/office-js-docs/blob/master/reference/excel/bindingselectionchangedeventargs.md) |
+| `onAdded` | 添加对象时发生的事件。 | [**WorksheetCollection**](https://dev.office.com/reference/add-ins/excel/worksheetcollection) |
+| `onDeleted` | 删除对象时发生的事件。 | [**WorksheetCollection**](https://dev.office.com/reference/add-ins/excel/worksheetcollection) |
+| `onActivated` | 启用对象时发生的事件。 | [**WorksheetCollection**](https://dev.office.com/reference/add-ins/excel/worksheetcollection)、[**工作表**](https://dev.office.com/reference/add-ins/excel/worksheet) |
+| `onDeactivated` | 停用对象时发生的事件。 | [**WorksheetCollection**](https://dev.office.com/reference/add-ins/excel/worksheetcollection)、[**工作表**](https://dev.office.com/reference/add-ins/excel/worksheet) |
+| `onChanged` | 更改单元格内数据时发生的事件。 | [**工作表**](https://dev.office.com/reference/add-ins/excel/worksheet)、[**表**](https://dev.office.com/reference/add-ins/excel/table)[**、TableCollection**](https://dev.office.com/reference/add-ins/excel/tablecollection) |
+| `onDataChanged` | 更改捆绑中的数据或格式时发生的事件。 | [**捆绑**](https://dev.office.com/reference/add-ins/excel/binding) |
+| `onSelectionChanged` | 更改活动单元格或选定范围时发生的事件。 | [**工作表**](https://dev.office.com/reference/add-ins/excel/worksheet)、[**表**](https://dev.office.com/reference/add-ins/excel/table)、[**捆绑**](https://dev.office.com/reference/add-ins/excel/binding) |
 
 ### <a name="event-triggers"></a>事件触发器
 
@@ -124,4 +123,3 @@ function remove() {
 
 - [Excel JavaScript API 核心概念](excel-add-ins-core-concepts.md)
 - [Excel JavaScript API 开放性规范](https://github.com/OfficeDev/office-js-docs/tree/ExcelJs_OpenSpec)
-- [Excel 事件功能简介（预览）](https://github.com/OfficeDev/office-js-docs/blob/ExcelJs_OpenSpec/Event_README.md)

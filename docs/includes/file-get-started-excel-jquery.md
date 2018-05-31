@@ -10,7 +10,7 @@
 
 ### <a name="prerequisites"></a>先决条件
 
-[!include[Quickstart prerequisites](../includes/quickstart-vs-prerequisites.md)]
+[!include[Quick Start prerequisites](../includes/quickstart-vs-prerequisites.md)]
 
 ### <a name="create-the-add-in-project"></a>创建加载项项目
 
