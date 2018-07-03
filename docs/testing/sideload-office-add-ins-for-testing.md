@@ -2,8 +2,13 @@
 title: 在 Office Online 中旁加载 Office 加载项以供测试
 description: ''
 ms.date: 12/04/2017
+ms.openlocfilehash: 69b255545525ff667618c9f8bd1e1b7953592967
+ms.sourcegitcommit: 58af795c3d0393a4b1f6425fa1cbdca1e48fb473
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/29/2018
+ms.locfileid: "20138847"
 ---
-
 # <a name="sideload-office-add-ins-in-office-online-for-testing"></a>在 Office Online 中旁加载 Office 加载项以供测试
 
 您可以安装 Office 外接程序进行测试，而无需首先使用旁加载将其放在外接程序目录中。在 Office 365 或 Office Online 中都可以进行旁加载。该过程对两个平台略有不同。 
@@ -12,7 +17,7 @@ ms.date: 12/04/2017
 
 
 > [!NOTE]
-> 如本文所述，Word、Excel 和 PowerPoint 支持旁加载。若要旁加载 Outlook 外接程序，请参阅[旁加载 Outlook 外接程序进行测试](https://docs.microsoft.com/zh-cn/outlook/add-ins/sideload-outlook-add-ins-for-testing)。
+> 如本文所述，Word、Excel 和 PowerPoint 支持旁加载。若要旁加载 Outlook 外接程序，请参阅[旁加载 Outlook 外接程序进行测试](https://docs.microsoft.com/en-us/outlook/add-ins/sideload-outlook-add-ins-for-testing)。
 
 下面的视频逐步展示了如何在 Office 桌面或 Office Online 上旁加载加载项。  
 
@@ -24,15 +29,15 @@ ms.date: 12/04/2017
 
 1. 登录 Office 365 帐户。
     
-2. 打开工具栏最左端的应用启动器，选择“Excel”、“Word”或“PowerPoint”，再新建文档。
+2. 打开工具栏最左端的应用启动器，选择“Excel”****、“Word”**** 或“PowerPoint”****，再新建文档。
     
 3. 打开功能区上的“**插入**”选项卡，然后在“**外接程序**”部分中，选择“**Office 外接程序**”。
     
-4. 在“Office 加载项”对话框中，依次选择“我的组织”选项卡和“上传我的加载项”。
+4. 在“Office 加载项”**** 对话框中，依次选择“我的组织”**** 选项卡和“上传我的加载项”****。
     
     ![标题为“Office 加载项”的对话框，左上角附近有链接“上传我的加载项”](../images/office-add-ins.png)
 
-5.  **转到**加载项清单文件，再选择“上传”。
+5.  **转到**加载项清单文件，再选择“上传”****。
     
     ![包含“浏览”、“上传”和“取消”按钮的“上传加载项”对话框](../images/upload-add-in.png)
 
@@ -48,15 +53,20 @@ ms.date: 12/04/2017
     
 3. 打开功能区上的“**插入**”选项卡，然后在“**外接程序**”部分中，选择“**Office 外接程序**”。
     
-4. 在“Office 加载项”对话框中，依次选择“我的加载项”选项卡、“管理我的加载项”和“上传我的加载项”。
+4. 在“Office 加载项”**** 对话框中，依次选择“我的加载项”**** 选项卡、“管理我的加载项”**** 和“上传我的加载项”****。
     
     ![“Office 加载项”对话框，右上方有“管理我的加载项”下拉列表，其中有下拉选项“上传我的加载项”](../images/office-add-ins-my-account.png)
 
-5.  **转到**加载项清单文件，再选择“上传”。
+5.  **转到**加载项清单文件，再选择“上传”****。
     
     ![带浏览、上载和取消按钮的上载外接程序对话框。](../images/upload-add-in.png)
 
 6. 验证是否已安装外接程序。例如，如果它是一个外接程序命令，它应显示在功能区或上下文菜单上。如果它是一个任务窗格外接程序，则应显示窗格。
+
+> [!NOTE]
+>要使用 Edge 测试您的 Office 加载项，请在 Edge 搜索栏中输入 "**about:flags**" 以调出“开发者设置”选项。  选中“** 允许本地主机环回**”选项并重启 Edge。
+
+>    ![选中此框后，Edge 将允许本地主机环回。](../images/allow-localhost-loopback.png)
 
 ## <a name="sideload-an-add-in-when-using-visual-studio"></a>使用 Visual Studio 时旁加载外接程序
 
