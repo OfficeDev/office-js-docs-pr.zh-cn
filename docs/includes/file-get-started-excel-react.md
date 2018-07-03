@@ -1,6 +1,6 @@
 # <a name="build-an-excel-add-in-using-react"></a>使用 React 生成 Excel 加载项
 
-在文将说明如何使用 React 和 Excel JavaScript API 构建 Excel 加载项的过程。
+本文将逐步介绍如何使用 React 和 Excel JavaScript API 生成 Excel 加载项。
 
 ## <a name="environment"></a>环境
 
@@ -43,16 +43,16 @@ create-react-app my-addin
 2. 使用 Yeoman 生成器生成加载项的清单文件。 运行下面的命令，再回答提示问题，如以下屏幕截图所示：
 
     ```bash
-    yo office
+    yo office 
     ```
 
-    - **是否要为项目新建子文件夹?：** `No`
+    - **选择一个项目类型：** `Manifest`
     - **要将你的外接程序命名为什么?:** `My Office Add-in`
     - **要支持哪一个 Office 客户端应用程序?:** `Excel`
-    - **是否要新建加载项?：** `No`
 
-    然后，生成器会询问是否要打开“resource.html”****。在本教程中，无需打开此文件。不过，如果感兴趣，也可以自行打开。选择“是”或“否”完成向导，并允许生成器执行它的工作。
 
+    完成向导后，可以使用清单文件和资源文件来构建项目。
+    
     ![Yeoman 生成器](../images/yo-office.png)
     
     > [!NOTE]

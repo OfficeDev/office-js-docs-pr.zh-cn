@@ -27,7 +27,7 @@ vue init webpack my-add-in
 回答上一个命令生成的提示问题时，请覆盖以下 3 个提示问题的默认回答。 可以接受其他所有提示问题的默认回答。
 
 - **是否安装 vue-router?** `No`
-- **设置单元测试：**`No`
+- **设置单元测试：** `No`
 - **是否设置包含 Nightwatch 的 e2e 测试?** `No`
 
 ![Vue CLI 提示问题](../images/vue-cli-prompts.png)
@@ -45,20 +45,20 @@ vue init webpack my-add-in
 2. 使用 Yeoman 生成器生成加载项清单文件。 运行下面的命令，再回答如下所示的提示问题。
 
     ```bash
-    yo office
+    yo office 
     ```
 
-    - **是否要为项目新建子文件夹?：**`No`
+    - **选择一个项目类型：** `Manifest`
     - **要将你的外接程序命名为什么?:** `My Office Add-in`
     - **要支持哪一个 Office 客户端应用程序?:** `Excel`
-    - **是否要新建加载项?：**`No`
 
-    然后，生成器会询问是否要打开“resource.html”。在本教程中，无需打开此文件。不过，如果感兴趣，也可以自行打开。选择“是”或“否”完成向导，并允许生成器执行它的工作。
+
+    完成向导后，可以使用清单文件和资源文件来构建项目。
 
     ![Yeoman 生成器](../images/yo-office.png)
     
     > [!NOTE]
-    > 如果系统提示覆盖 **package.json**，请回答“否”（不覆盖）。
+    > 如果系统提示覆盖 **package.json**，请回答“否”****（不覆盖）。
 
 ## <a name="secure-the-app"></a>保护应用程序
 
@@ -189,13 +189,13 @@ vue init webpack my-add-in
     - Excel Online：[在 Office Online 中旁加载 Office 加载项](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-on-office-online)
     - iPad 和 Mac：[在 iPad 和 Mac 上旁加载 Office 加载项](../testing/sideload-an-office-add-in-on-ipad-and-mac.md)
 
-2. 在 Excel 中，依次选择“主页”选项卡和功能区中的“显示任务窗格”按钮，以打开加载项任务窗格。
+2. 在 Excel 中，依次选择“主页”**** 选项卡和功能区中的“显示任务窗格”**** 按钮，以打开加载项任务窗格。
 
     ![Excel 加载项按钮](../images/excel-quickstart-addin-2a.png)
 
 3. 选择工作表中的任何一系列单元格。
 
-4. 在任务窗格中，选择“设置颜色”按钮，将选定区域的颜色设置为绿色。
+4. 在任务窗格中，选择“设置颜色”**** 按钮，将选定区域的颜色设置为绿色。
 
     ![Excel 加载项](../images/excel-quickstart-addin-2c.png)
 
@@ -204,7 +204,7 @@ vue init webpack my-add-in
 恭喜！已使用 Vue 成功创建 Excel 加载项！接下来，请详细了解 Excel 加载项功能，并跟着 Excel 加载项教程一起操作，生成更复杂的加载项。
 
 > [!div class="nextstepaction"]
-> [Excel 加载项教程](../tutorials/excel-tutorial-create-table.md)
+> [Excel 加载项教程](../tutorials/excel-tutorial.yml)
 
 ## <a name="see-also"></a>另请参阅
 
