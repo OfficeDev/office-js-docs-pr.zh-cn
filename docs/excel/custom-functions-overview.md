@@ -1,6 +1,6 @@
 # <a name="create-custom-functions-in-excel-preview"></a>在 Excel 中创建自定义函数（预览）
 
-借助自定义函数（类似于用户定义的函数 [UDF]），开发人员可以使用外接程序向 Excel 添加任何 JavaScript 函数。 然后，用户可以像使用 Excel 中的其他本机功能一样访问自定义功能（例如 `=SUM()`）。 本文介绍了如何在 Excel 中创建自定义函数。
+借助自定义函数（类似于用户定义的函数 [UDF]），开发人员可以使用外接程序向 Excel 添加任何 JavaScript 函数。 然后，用户可以像使用 Excel 中的其他本地函数（例如 `=SUM()`）一样访问自定义函数。 本文介绍了如何在 Excel 中创建自定义函数。
 
 下图显示了最终用户如何将自定义函数插入到单元格中。 将 42 添加到一对数字的函数。
 
@@ -18,7 +18,7 @@ function ADD42(a, b) {
 
 1.  安装 Office（Windows 的内部版本 9325 或 Mac 上的内部版本 13.329）并加入 [Office 预览体验成员](https://products.office.com/en-us/office-insider)计划。 （请注意，仅仅获取最新版本是不够的；在加入预览体验成员计划之前，任何版本的功能都将禁用）
 2.  制作 [Excel-Custom-Functions](https://github.com/OfficeDev/Excel-Custom-Functions) 的副本，并按照 README.md 中的说明在 Excel 中启动外接程序，更改代码并进行调试。
-3.  在任意单元格中键入 `=CONTOSO.ADD42(1,2)`，再按 **Enter** 运行自定义函数。
+3.  在任意单元格中键入“`=CONTOSO.ADD42(1,2)`”，再按 **Enter** 运行自定义函数。
 
 请参阅本文末尾的**已知问题**部分，其中包括自定义函数的当前限制，该部分将随时间进行更新。
 
@@ -27,8 +27,8 @@ function ADD42(a, b) {
 在克隆的示例存储库中，将看到以下文件：
 
 - **customfunctions.js**，其中包含自定义功能代码（请参阅上面的简单代码示例 `ADD42` 功能）。
-- **customfunctions.json**，其中包含注册JSON，告知Excel您的自定义功能。 注册使您的自定义功能显示在用户键入单元格时显示的可用功能列表中。
-- **customfunctions.html**，它提供了一个 &lt;脚本&gt; 引用JS文件。 该文件不在 Excel 中显示 UI。
+- **customfunctions.json**，其中包含注册JSON，告知Excel您的自定义功能。 注册会使自定义函数显示在用户键入单元格时显示的可用函数列表中。
+- **customfunctions.html**，它提供了 JS 文件的一个&lt;脚本&gt;引用。 该文件不在 Excel 中显示 UI。
 - **customfunctions.xml**，它告诉Excel HTML，JavaScript和JSON文件的位置;还为与该加载项一起安装的所有自定义函数指定一个名称空间。
 
 ### <a name="json-file-customfunctionsjson"></a>JSON文件（customfunctions.json）
@@ -36,15 +36,15 @@ function ADD42(a, b) {
 customfunctions.json中的以下代码相同的 `ADD42` 功能指定元数据。
 
 > [!NOTE]
-> JSON文件的详细参考信息（包括本示例中未使用的选项）位于 [自定义函数注册JSON](https://dev.office.com/reference/add-ins/custom-functions-json)。
+> JSON文件的详细参考信息（包括本示例中未使用的选项）位于 [自定义函数注册JSON](custom-functions-json.md)。
 
 请注意，对于这个例子：
 
 - 只有一个自定义函数，所以只有 `functions` 阵列的一个成员。
-- 该 `name` 属性定义了函数名称。 正如您在前面的动画gif中看到的，名称空间（`CONTOSO`）预先添加到Excel自动完成菜单中的函数名称。 此前缀在加载项清单中定义，如下所述。 前缀和函数名使用句点分隔，按照惯例，前缀和函数名都是大写。 要使用自定义函数，用户键入名称空间，后跟该函数的名称（`ADD42`）进入一个单元格，在这种情况下 `=CONTOSO.ADD42`。 前缀将用作贵公司或加载项的标识符。 
+- 该 `name` 属性定义了函数名称。 正如您在前面的动画gif中看到的，名称空间（`CONTOSO`）预先添加到Excel自动完成菜单中的函数名称。 此前缀在加载项清单中定义，如下所述。 前缀和函数名使用句点分隔，按照惯例，前缀和函数名都是大写。 要使用自定义函数，用户键入名称空间，后跟该函数的名称（`ADD42`）进入一个单元格，在这种情况下 `=CONTOSO.ADD42`。 前缀将用作公司或外接程序的标识符。 
 - `description` 将在 Excel 的自动完成菜单中显示。
-- 当用户针对某个函数请求帮助时，Excel 将打开任务窗格并显示位于此`helpUrl`指定 URL 的网页。
-- 该 `result` 属性指定函数返回给Excel之信息的类型。 该 `type` 子属性可以 `"string"`， `"number"`， 或 `"boolean"`。 该 `dimensionality` 属性可以 `scalar` 或 `matrix` （指定 `type`值的二维数组。）
+- 当用户针对某个函数请求帮助时，Excel 将打开任务窗格并显示位于 `helpUrl` 所指定 URL 的网页。
+- `result` 属性指定函数返回给 Excel 之信息的类型。 该 `type` 子属性可以 `"string"`， `"number"`， 或 `"boolean"`。 该 `dimensionality` 属性可以 `scalar` 或 `matrix` （指定 `type`值的二维数组。）
 - 该 `parameters` 数组 *按顺序*指定了传递给函数的每个参数中的数据类型。 该 `name` 和 `description` 在Excel智能感知中使用子属性。 该 `type` 和 `dimensionality` 子属性与上述 `result` 属性之子属性相同。
 - 该 `options` 属性使您可以自定义Excel执行功能之方式和时间的某些方面。 本文后面有关于这些选项的更多信息。
 
@@ -177,11 +177,10 @@ function getTemperature(thermometerID){
 
 ## <a name="streamed-functions"></a>流式处理函数
 
-异步功能可以流式处理。 借助流式处理自定义函数，可以随着时间将数据重复输出到单元格，而无需等待 Excel 或用户请求重新计算。 以下示例是一个自定义函数，它每秒向结果添加一个数字。 注意关于这编码的的以下方面：
-
+异步功能可以流式处理。 借助流式处理自定义函数，可以随时间推移将数据重复输出到单元格，而无需等待 Excel 或用户请求重新计算。 以下示例是一个自定义函数，它每秒向结果添加一个数字。 关于此代码，请注意以下几点：
 
 - Excel会自动使用 `setResult` 回调来显示每个新值。
-- 始终不会在注册代码中指定最后参数 `caller`，且当用户输入此函数时，该参数不会在 Excel 用户的自动完成菜单中显示。 它是包含`setResult` 回调函数的对象，用于将数据从函数传递到 Excel，以更新单元格值。
+- 始终不会在注册代码中指定最后的 `caller` 参数，且当用户输入此函数时，该参数不会在 Excel 用户的自动完成菜单中显示。 它是包含`setResult` 回调函数的对象，用于将数据从函数传递到 Excel，以更新单元格值。
 - 为了让Excel通过 `setResult` 功能在 `caller` 对象，您必须通过设置 `"stream": true` 选项在注册JSON文件中自定义函数的 `options` 属性里，来声明在函数注册期间支持流式处理。
 
 ```js
@@ -206,7 +205,7 @@ function incrementValue(increment, caller){
 
 要使功能可取消，请设置选项 `"cancelable": true` 在注册JSON文件中自定义函数的 `options` 属性里面。
 
-下面的代码展示了已实现取消的上一个示例。 在此代码中，`caller` 对象包含一个为每个可取消的自定义函数定义的 `onCanceled` 函数。
+下面的代码展示了已实现取消的上一个示例。 在此代码中，`caller` 对象包含一个 `onCanceled` 函数，它必须在每个可取消的自定义函数定义中定义。
 
 ```js
 function incrementValue(increment, caller){ 
@@ -226,10 +225,9 @@ function incrementValue(increment, caller){
 
 异步自定义函数可以将数据保存在全局 JavaScript 变量中。 在后续调用中，自定义函数可以使用保存在这些变量中的值。 当用户将相同的自定义函数添加到多个单元格时，保存状态很有用，因为该函数的所有实例都可以共享该状态。 例如，可以保存调用某个 Web 资源时返回的数据，以避免再次调用同一个 Web 资源。
 
-下面的代码演示之前的温度流式处理函数的实施过程，该函数使用整体保存状态。 注意关于这编码的的以下方面：
+下面的代码演示之前的温度流式处理函数的实施过程，该函数将状态保存在全局作用域。 关于此代码，请注意以下几点：
 
-
-- `refreshTemperature` 是一个流式处理函数，它会在每一秒读取特定温度计的温度。 新的温度保存在 `savedTemperatures` 变量，但不直接更新单元格值。 它不应该直接从工作表单元格中调用， *所以它没有在JSON文件中注册*。
+- `refreshTemperature` 是一个流式处理函数，它会在每一秒内读取特定温度计的温度。 新的温度保存在 `savedTemperatures` 变量，但不直接更新单元格值。 它不应该直接从工作表单元格中调用， *所以它没有在JSON文件中注册*。
 - `streamTemperature` 每秒钟更新单元格中显示的温度值并使用 `savedTemperatures` 变量作为其数据源。 它必须在JSON文件中注册，并用所有大写字母命名， `STREAMTEMPERATURE`。
 - 用户可以从 Excel UI 的多个单元格中调用 `streamTemperature`。 每次调用都从相同的 `savedTemperatures` 变量读取数据。
 
@@ -265,7 +263,7 @@ function refreshTemperature(thermometerID){
 
 自定义函数可以将数据区域用作参数，或者可以从自定义函数返回数据区域。
 
-例如，假设您的函数返回Excel中存储的一系列数字的第二高值。 下面的函数需要使用参数 `values`，即 `Excel.CustomFunctionDimensionality.matrix` 参数类型。 请注意，在此函数的注册JSON中，您可以设置参数的 `type` 属性给 `matrix`。
+例如，假设您的函数返回 Excel 中存储的一系列数字的第二个最大值。 下面的函数需要使用参数 `values`，即 `Excel.CustomFunctionDimensionality.matrix` 参数类型。 请注意，在此函数的注册JSON中，您可以设置参数的 `type` 属性给 `matrix`。
 
 ```js
 function secondHighest(values){ 
@@ -291,7 +289,7 @@ function secondHighest(values){
 
 - Excel 暂未使用帮助 URL 和参数说明。
 - 自定义功能目前不适用于移动客户的Excel。
-- 目前，加载项依赖隐藏的浏览器进程来运行异步自定义函数。 将来，JavaScript 将直接在某些平台上运行，以确保自定义函数运行速度更快并占用更少的内存。 此外，大多数平台将不再需要清单的 `<Page>` 元素所引用的 HTML 页面，因为 Excel 将直接运行 JavaScript。 若要为这一更改做准备，请确保自定义函数未使用网页 DOM。 使用GET或POST，用于访问网络所支持的主机APIs将会是 [WebSocket](https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API) 和 [XHR](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest) 。
+- 目前，外接程序依赖隐藏的浏览器进程来运行异步自定义函数。 将来，JavaScript 将直接在某些平台上运行，以确保自定义函数运行速度更快并占用更少的内存。 此外，大多数平台将不再需要清单的 `<Page>` 元素所引用的 HTML 页面，因为 Excel 将直接运行 JavaScript。 若要为这一更改做准备，请确保自定义函数未使用网页 DOM。 使用GET或POST，用于访问网络所支持的主机APIs将会是 [WebSocket](https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API) 和 [XHR](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest) 。
 - 易失性函数（当电子表格中不相关数据发生变化时自动重新计算的函数）尚不受支持。
 - 调试仅适用于Excel for Windows上的异步功能。
 - 尚未启用通过Office 365管理门户和AppSource进行的部署。
@@ -301,5 +299,5 @@ function secondHighest(values){
 
 - **2017 年 11 月 7 日**：发布了自定义函数（预览）和示例
 - **2017 年 11 月 20 日**：修复了使用内部版本 8801 及更高版本的函数的兼容性问题
-- **2017年11月28日**：发布了对取消异步函数的支持（需要对流式处理函数进行更改）
+- **2017 年 11 月 28 日**：发布了对取消异步函数的支持（需要对流式处理函数进行相应更改）
 - **2018年5月7日**：提供对Mac、Excel Online和进程运行中的同步功能的支持

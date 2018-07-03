@@ -248,16 +248,14 @@ _适用于：Word 2016、Word for iPad、Word for Mac_
     yo office
     ```
 
-    - **是否要为你的项目新建子文件夹?:** `No`
+    - **选择一个项目类型：** `Jquery`
+    - **选择一个脚本类型：** `Javascript`
     - **要将你的外接程序命名为什么?:** `My Office Add-in`
     - **要支持哪一个 Office 客户端应用程序?:** `Word`
-    - **是否要新建外接程序?:** `Yes`
-    - **是否要使用 TypeScript?:** `No`
-    - **选择框架：** `Jquery`
-
-    然后，生成器会询问是否要打开“resource.html”****。在本教程中，无需打开此文件。不过，如果感兴趣，也可以自行打开。选择“是”或“否”完成向导，并允许生成器执行它的工作。
 
     ![有关 Yeoman 生成器提示和回答的屏幕截图](../images/yo-office-word-jquery.png)
+    
+    完成向导后，生成器将创建项目并安装 Node 支持组件。
 
 ### <a name="update-the-code"></a>更新代码
 
@@ -473,7 +471,7 @@ _适用于：Word 2016、Word for iPad、Word for Mac_
 
 ## <a name="next-steps"></a>后续步骤
 
-恭喜！已使用 jQuery 成功创建 Word 外接程序！ 接下来，请详细了解 Excel 外接程序的功能，并跟着 Excel 外接程序教程一起操作，生成更复杂的外接程序。
+恭喜！已使用 jQuery 成功创建 Word 外接程序！ 接下来，请详细了解 Word 外接程序的功能，并跟着 Word 外接程序教程一起操作，生成更复杂的外接程序。
 
 > [!div class="nextstepaction"]
 > [Word 外接程序教程](../tutorials/word-tutorial.yml)

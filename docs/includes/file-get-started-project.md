@@ -28,20 +28,18 @@
     yo office
     ```
 
-    - **是否要为你的项目新建子文件夹?:** `No`
+    - **选择一个项目类型：** `Jquery`
+    - **选择一个脚本类型：** `Javascript`
     - **要将你的外接程序命名为什么?:** `My Office Add-in`
     - **要支持哪一个 Office 客户端应用程序?:** `Project`
-    - **是否要新建外接程序?:** `Yes`
-    - **是否要使用 TypeScript?:** `No`
-    - **选择框架：**`Jquery`
-
-    然后，生成器会询问是否要打开“resource.html”。在本教程中，无需打开此文件。不过，如果感兴趣，也可以自行打开。选择“是”或“否”完成向导，并允许生成器执行它的工作。
 
     ![有关 Yeoman 生成器提示和回答的屏幕截图](../images/yo-office-project-jquery.png)
+    
+    完成向导后，生成器将创建项目并安装 Node 支持组件。
 
 ## <a name="update-the-code"></a>更新代码
 
-1. 在代码编辑器中，打开项目根目录中的“index.html”。 此文件包含在加载项任务窗格中呈现的 HTML。
+1. 在代码编辑器中，打开项目根目录中的“index.html”****。 此文件包含在加载项任务窗格中呈现的 HTML。
 
 2. 将 `<body>` 元素内的 `<header>` 元素替换为以下标记。
 
@@ -70,7 +68,7 @@
     </div>
     ```
 
-4. 打开文件“app.js”，以指定加载项脚本。 将整个内容替换为以下代码，并保存文件。
+4. 打开文件“app.js”****，以指定加载项脚本。 将整个内容替换为以下代码，并保存文件。
 
     ```js
     'use strict';
@@ -123,7 +121,7 @@
     })();
     ```
 
-4. 打开项目根目录中的文件“app.css”，以指定加载项自定义样式。 将整个内容替换为以下内容，并保存文件。
+4. 打开项目根目录中的文件“app.css”****，以指定加载项自定义样式。 将整个内容替换为以下内容，并保存文件。
 
     ```css
     #content-header {
@@ -154,11 +152,11 @@
 
 ## <a name="update-the-manifest"></a>更新清单
 
-1. 打开文件“my-office-add-in-manifest.xml”，以定义加载项的设置和功能。
+1. 打开文件“my-office-add-in-manifest.xml”****，以定义加载项的设置和功能。
 
-2. `ProviderName` 元素具有占位符值。 将其替换为你的姓名。
+2. 元素具有占位符值。`ProviderName` 将其替换为你的姓名。
 
-3. `Description` 元素的 `DefaultValue` 属性有占位符。 将它替换为“A task pane add-in for Project”。
+3. 元素的 `DefaultValue` 属性有占位符。`Description` 将它替换为“A task pane add-in for Project”****。
 
 4. 保存文件。
 
@@ -190,11 +188,11 @@
 
     ![Project 中已选择一个任务的项目计划的屏幕截图](../images/project_quickstart_addin_1.png)
 
-4. 在任务窗格中，选择“获取任务 GUID”按钮，将任务 GUID 写入到“结果”文本框。
+4. 在任务窗格中，选择“获取任务 GUID”**** 按钮，将任务 GUID 写入到“结果”**** 文本框。
 
     ![Project 中已选择一个任务的项目计划，且任务 GUID 写入到任务窗格中文本框的屏幕截图](../images/project_quickstart_addin_2.png)
 
-5. 在任务窗格中，选择“获取任务数据”按钮，将选定任务的多个属性写入到“结果”文本框。
+5. 在任务窗格中，选择“获取任务数据”**** 按钮，将选定任务的多个属性写入到“结果”**** 文本框。
 
     ![Project 中已选择一个任务的项目计划，且多个任务属性写入到任务窗格中文本框的屏幕截图](../images/project_quickstart_addin_3.png)
 
