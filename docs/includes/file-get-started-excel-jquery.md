@@ -150,7 +150,6 @@
 - [Node.js](https://nodejs.org)
 
 - 全局安装最新版 [Yeoman](https://github.com/yeoman/yo) 和 [Office 加载项的 Yeoman 生成器](https://github.com/OfficeDev/generator-office)。
-
     ```bash
     npm install -g yo generator-office
     ```
@@ -171,17 +170,16 @@
     yo office
     ```
 
-    - **是否要为项目新建子文件夹?：** `No`
+    - **选择一个项目类型：** `Jquery`
+    - **选择一个脚本类型：** `Javascript`
     - **要将你的外接程序命名为什么?:** `My Office Add-in`
     - **要支持哪一个 Office 客户端应用程序?:** `Excel`
-    - **是否要新建外接程序?:** `Yes`
-    - **是否要使用 TypeScript?:** `No`
-    - **选择框架：** `Jquery`
-
-    然后，生成器会询问是否要打开“resource.html”****。在本教程中，无需打开此文件。不过，如果感兴趣，也可以自行打开。选择“是”或“否”完成向导，并允许生成器执行它的工作。
 
     ![Yeoman 生成器](../images/yo-office-jquery.png)
+    
+    完成向导后，生成器将创建项目并安装提供支持的 Node 组件。
 
+    
 
 4. 在代码编辑器中，打开项目根目录中的 **index.html**。 此文件指定在加载项任务窗格中呈现的 HTML。 
  

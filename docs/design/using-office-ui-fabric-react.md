@@ -2,12 +2,12 @@
 title: 在 Office 加载项中使用 Office UI Fabric React
 description: ''
 ms.date: 12/04/2017
-ms.openlocfilehash: 8ae8bac8c8043b51188d765dd7170922dcc1c84e
-ms.sourcegitcommit: c72c35e8389c47a795afbac1b2bcf98c8e216d82
+ms.openlocfilehash: e078640cbcc6217e9ed0a1ad99ef02afbfd317a8
+ms.sourcegitcommit: 4e4f7c095e8f33b06bd8a02534ee901125eb1d17
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/23/2018
-ms.locfileid: "19437596"
+ms.lasthandoff: 06/28/2018
+ms.locfileid: "20084075"
 ---
 # <a name="use-office-ui-fabric-react-in-office-add-ins"></a>在 Office 加载项中使用 Office UI Fabric React
 
@@ -108,23 +108,7 @@ export class ButtonPrimaryExample extends React.Component<IButtonProps, {}> {
 
 保存所做的更改。所有打开的浏览器实例（包括外接程序）将自动更新和显示 `ButtonPrimaryExample` React 组件。请注意，默认文本和按钮将替换为 `ButtonPrimaryExample` 中定义的文本和主按钮。
 
-## <a name="recommended-components"></a>建议使用的组件
 
-下面列出了建议用于加载项的 Fabric React 用户体验组件：
-
-- [痕迹导航](breadcrumb.md)
-- [按钮](button.md)
-- [复选框](checkbox.md)
-- [选择组](choicegroup.md)
-- [下拉列表](dropdown.md)
-- [标签](label.md)
-- [列表](list.md)
-- [透视](pivot.md)
-- [文字框](textfield.md)
-- [切换](toggle.md)
-
-> [!NOTE]
-> 今后，我们将陆续添加其他组件。
 
 ## <a name="see-also"></a>另请参阅
 
@@ -132,4 +116,4 @@ export class ButtonPrimaryExample extends React.Component<IButtonProps, {}> {
 - [Fabric React 代码示例入门](https://github.com/OfficeDev/Word-Add-in-GettingStartedFabricReact)
 - [用户体验设计模式（使用 Fabric 2.6.1）](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code)
 - [Office 外接程序 Fabric UI 示例（使用 Fabric 1.0）](https://github.com/OfficeDev/Office-Add-in-Fabric-UI-Sample)
-- [Office 的 Yeoman 生成器](https://github.com/OfficeDev/generator-office)
+- [Office 的 yeoman 生成器](https://github.com/OfficeDev/generator-office)

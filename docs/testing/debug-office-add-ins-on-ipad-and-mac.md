@@ -1,19 +1,45 @@
 ---
 title: 在 iPad 和 Mac 上调试 Office 外接程序
 description: ''
-ms.date: 01/25/2018
+ms.date: 03/21/2018
+ms.openlocfilehash: e9efae76aa3341eacfd73d6afcc3a3274536aa9d
+ms.sourcegitcommit: 6fbf42723f9c1b72095700c20458fd0e8c572794
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "19722329"
 ---
-
 # <a name="debug-office-add-ins-on-ipad-and-mac"></a>在 iPad 和 Mac 上调试 Office 外接程序
 
 您可以使用 Visual Studio 开发和调试 Windows 上的外接程序。但是，无法使用它调试 iPad 或 Mac 上的外接程序。由于外接程序使用 HTML 和 Javascript 开发，它们应旨在跨平台工作，但不同浏览器呈现您的 HTML 的方式可能存在细微差异。本文介绍如何调试在 iPad 或 Mac 上运行的外接程序。 
 
-## <a name="debugging-with-vorlonjs"></a>使用 Vorlon.JS 进行调试 
+## <a name="debugging-with-safari-web-inspector-on-a-mac"></a>使用 Mac 上的 Safari Web Inspector 进行调试
 
-Vorlon.JS 是网页调试程序，类似于 F12 工具。它旨在实现远程工作，使你能够在不同设备上调试网页。有关详细信息，请参阅 [Vorlon 网站](http://www.vorlonjs.com)。  
+如果您拥有在任务窗格或内容加载项中显示 UI 的加载项，则可以使用 Safari Web Inspector 调试 Office 加载项。 
+
+要能够在 Mac上调试 Office 外接程序，您必须具有 Mac OS 高级 Sierra 和 16.9.1 版本（内部版本 18012504）或更高版本的 Mac Office。 如果您没有 Office Mac 版本，可以通过加入 [Office 365 开发人员计划](https://aka.ms/o365devprogram)来获得。
+
+要开始，打开一个终端并设置`OfficeWebAddinDeveloperExtras` 相关 Office 应用的属性如下：
+
+- `defaults write com.microsoft.Word OfficeWebAddinDeveloperExtras -bool true`
+
+- `defaults write com.microsoft.Excel OfficeWebAddinDeveloperExtras -bool true`
+
+- `defaults write com.microsoft.Powerpoint OfficeWebAddinDeveloperExtras -bool true`
+
+- `defaults write com.microsoft.Outlook OfficeWebAddinDeveloperExtras -bool true`
+
+然后，打开 Office 应用程序并插入您的加载项。 用鼠标右键单击该加载项，您应该在上下文菜单中看到一个**检查元素**的选项。  选择该选项，会有检查器弹出，您可以在其中设置断点并调试加载项。
+
+> [!NOTE]
+> 请注意，这是一项实验性功能，我们无法保证未来版本的 Office 应用程序中一定保留此功能。
+
+## <a name="debugging-with-vorlonjs-on-a-ipad-or-mac"></a>在 iPad 或 Mac 上使用 Vorlon.JS 进行调试
+
+要在 iPad 或 Mac 上调试加载项，可以使用 Vorlon.JS，这是一个类似于 F12 工具的网页调试器。 它旨在实现远程工作，使您能够在不同设备上调试网页。 有关详细信息，请参阅 [Vorlon 网站](http://www.vorlonjs.com)。  
 
 
-### <a name="install-and-set-up-up-vorlonjs-on-a-mac-or-ipad"></a>在 Mac 或 iPad 上安装和设置 Vorlon.JS 
+### <a name="install-and-set-up-vorlonjs"></a>安装并设置 Vorlon.JS  
 
 1.  以管理员身份登录到设备。
 
@@ -29,7 +55,7 @@ Vorlon.JS 是网页调试程序，类似于 F12 工具。它旨在实现远程�
 > [!IMPORTANT]
 > [!include[HTTPS guidance](../includes/https-guidance.md)]
 
-1.  在**查找器**中，转到 `/usr/local/lib/node_modules/vorlon`，打开 `/Server` 文件夹的上下文菜单（右键单击），再选择“获取信息”。
+1.  在**查找器**中，转到 `/usr/local/lib/node_modules/vorlon`，打开 `/Server` 文件夹的上下文菜单（右键单击），再选择“获取信息”****。
 
 2.  在“**服务器信息**”窗口的右下角选择挂锁图标来解锁该文件夹。
 
@@ -53,12 +79,12 @@ Vorlon.JS 是网页调试程序，类似于 F12 工具。它旨在实现远程�
     
 12. 在“**终端**”窗口中，输入 `sudo vorlon`。系统将提示你输入管理员密码。Vorlon 服务器将启动。使“**终端**”窗口保持打开状态。
 
-13. 打开浏览器窗口，再转到 Vorlon.JS 界面 `https://localhost:1337`。当出现提示时，选择“始终”，以信任安全证书。 
+13. 打开浏览器窗口，再转到 Vorlon.JS 界面 `https://localhost:1337`。当出现提示时，选择“始终”****，以信任安全证书。 
 
     > [!NOTE]
     > 如果没有看到提示，可能需要手动信任安全证书。证书文件是 `/usr/local/lib/node_modules/vorlon/Server/cert/server.crt`。请尝试执行以下步骤。如有疑问，请咨询 Macintosh 或 iPad 帮助人员。 
     >
-    > 1. 关闭浏览器窗口，在运行 Vorlon 服务器的“终端”窗口中，按 Control-C 停止服务器。
+    > 1. 关闭浏览器窗口，在运行 Vorlon 服务器的“终端”**** 窗口中，按 Control-C 停止服务器。
     > 2. 在**查找器**中，右键单击 `server.crt` 文件并选择“**钥匙链访问**”。“**钥匙链访问**”窗口将打开。
     > 3. 在左侧的“**钥匙链**”列表中，如果尚未选择“**登录**”，请进行选择，然后再选择“**类别**”部分中的“**证书**”。将列出证书 **localhost**。
     > 4. 右键单击证书 **localhost**，并选择“**获取信息**”。**localhost** 窗口将打开。
@@ -89,7 +115,7 @@ Vorlon.JS 是网页调试程序，类似于 F12 工具。它旨在实现远程�
 
 3.  打开浏览器窗口，然后转到 Vorlon.JS 界面 `https://localhost:1337`。
 
-4. 旁加载外接程序。如果是针对 Excel、PowerPoint 或 Word，请按[在 iPad 和 Mac 上旁加载 Office 外接程序](sideload-an-office-add-in-on-ipad-and-mac.md)中所述进行旁加载。如果是 Outlook 外接程序，请按[旁加载 Outlook 外接程序用于测试](https://docs.microsoft.com/zh-cn/outlook/add-ins/sideload-outlook-add-ins-for-testing)进行旁加载。如果外接程序不使用外接程序命令，它将立即打开。否则，请选择按钮以打开外接程序。按钮位于“**主页**”选项卡或“**外接程序**”选项卡上，具体取决于 Office 主机应用程序版本。
+4. 旁加载外接程序。如果是针对 Excel、PowerPoint 或 Word，请按[在 iPad 和 Mac 上旁加载 Office 外接程序](sideload-an-office-add-in-on-ipad-and-mac.md)中所述进行旁加载。如果是 Outlook 外接程序，请按[旁加载 Outlook 外接程序用于测试](https://docs.microsoft.com/en-us/outlook/add-ins/sideload-outlook-add-ins-for-testing)进行旁加载。如果外接程序不使用外接程序命令，它将立即打开。否则，请选择按钮以打开外接程序。按钮位于“**主页**”选项卡或“**外接程序**”选项卡上，具体取决于 Office 主机应用程序版本。
 
 外接程序将在 Vorlon.JS（在 Vorlon.JS 界面左侧）的客户端列表中显示为 **{OS} - n**，*n* 代表数字，而 *{OS}* 表示设备类型，例如“Macintosh”。 
 

@@ -192,16 +192,14 @@
     yo office
     ```
 
-    - **是否要为你的项目新建子文件夹?:** `No`
+    - **选择一个项目类型：** `Jquery`
+    - **选择一个脚本类型：** `Javascript`
     - **要将你的外接程序命名为什么?:** `My Office Add-in`
-    - **要支持哪一个 Office 客户端应用程序?:** `PowerPoint`
-    - **是否要新建外接程序?:** `Yes`
-    - **是否要使用 TypeScript?:** `No`
-    - **选择框架：** `Jquery`
-
-    然后，生成器会询问是否要打开“resource.html”****。在本教程中，无需打开此文件。不过，如果感兴趣，也可以自行打开。选择“是”或“否”完成向导，并允许生成器执行它的工作。
+    - **要支持哪一个 Office 客户端应用程序?:** `Powerpoint`
 
     ![有关 Yeoman 生成器提示和回答的屏幕截图](../images/yo-office-powerpoint-jquery.png)
+    
+    完成向导后，生成器将创建项目并安装提供支持的 Node 组件。
 
 ### <a name="update-the-code"></a>更新代码
 
@@ -354,7 +352,7 @@
 
 ## <a name="next-steps"></a>后续步骤
 
-恭喜！已成功创建 PowerPoint 外接程序！ 接下来，请详细了解 PowerPoint 外接程序的功能，并跟着 PowerPoint 外接程序教程一起操作，生成更复杂的外接程序。
+恭喜！已成功创建 PowerPoint 加载项！ 接下来，请详细了解 PowerPoint 加载项的功能，并跟着 PowerPoint 加载项教程一起操作，生成更复杂的加载项。
 
 > [!div class="nextstepaction"]
 > [PowerPoint 外接程序教程](../tutorials/powerpoint-tutorial.yml)
