@@ -2,12 +2,12 @@
 title: Excel、Word 和 PowerPoint 的外接程序命令
 description: ''
 ms.date: 01/23/2018
-ms.openlocfilehash: 42a46bf88cc3f72f94ff5f9162a247d90b33e5c7
-ms.sourcegitcommit: c72c35e8389c47a795afbac1b2bcf98c8e216d82
+ms.openlocfilehash: 68eee18233b6b874f237ded41009561dbde774de
+ms.sourcegitcommit: 4e4f7c095e8f33b06bd8a02534ee901125eb1d17
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/23/2018
-ms.locfileid: "19437414"
+ms.lasthandoff: 06/28/2018
+ms.locfileid: "20084061"
 ---
 # <a name="add-in-commands-for-excel-word-and-powerpoint"></a>Excel、Word 和 PowerPoint 加载项命令
 
@@ -72,7 +72,7 @@ ms.locfileid: "19437414"
      > [!NOTE]
      > 占用过多空间的加载项可能无法通过 [AppSource 验证](https://docs.microsoft.com/en-us/office/dev/store/validation-policies)。
 
-- 对于所有图标，请遵循[图标设计指南](design-icons.md)。
+- 对于所有图标，请遵循[图标设计指南](add-in-icons.md)。
 - 提供也可以在不支持命令的主机上运行的外接程序的版本。单个外接程序清单可以在命令感知（带有命令）和非命令感知（作为任务窗格）的主机中工作。
 
    *图 3：Office 2013 中的任务窗格加载项，以及 Office 2016 中使用加载项命令的相同加载项*

@@ -48,7 +48,7 @@
     }
     ``` 
 
-7. 将 `TODO1` 替换为以下代码。注意：
+7. 将 `TODO1` 替换为下面的代码。请注意以下几点：
    - 此代码用于在内容控件中包装短语“Office 365”。 它做了一个简化假设，即存在字符串，且用户已选择它。
    - 属性指定内容控件的可见标题。`ContentControl.title` 
    - 属性指定标记，可用于通过 `ContentControlCollection.getByTag` 方法获取对内容控件的引用，将用于稍后出现的函数。`ContentControl.tag` 
@@ -67,24 +67,27 @@
 ## <a name="replace-the-content-of-the-content-control"></a>替换内容控件的内容
 
 1. 打开文件 index.html。
-3. 在包含 `create-content-control` 按钮的 `div` 下方，添加下列标记：
+2. 在包含 `create-content-control` 按钮的 `div` 下方，添加下列标记：
+
     ```html
     <div class="padding">            
         <button class="ms-Button" id="replace-content-in-control">Rename Service</button>            
     </div>
     ```
 
-4. 打开 app.js 文件。
+3. 打开 app.js 文件。
 
-5. 在向 `create-content-control` 按钮分配单击处理程序的代码行下方，添加下列代码：
+4. 在向 `create-content-control` 按钮分配单击处理程序的代码行下方，添加下列代码：
 
     ```js
     $('#replace-content-in-control').click(replaceContentInControl);
     ```
 
-6. 在 `createContentControl` 函数下方，添加下列函数：
+5. 在 `createContentControl` 函数下方，添加下列函数：
 
-    ```js    function replaceContentInControl() {      Word.run(function (context) {
+    ```js
+    function replaceContentInControl() {
+        Word.run(function (context) {
             
             // TODO1: Queue commands to replace the text in the Service Name
             //        content control.
@@ -100,16 +103,16 @@
     }
     ``` 
 
-7. Replace `TODO1` with the following code. 
+7. 将 `TODO1` 替换为以下代码。 
     > [!NOTE]
-    > The `ContentControlCollection.getByTag` method returns a `ContentControlCollection` of all content controls of the specified tag. We use `getFirst` to get a reference to the desired control.
+    > `ContentControlCollection.getByTag` 方法返回指定标记的所有内容控件的一个 `ContentControlCollection`。 我们用 `getFirst` 获得对所需控件的引用。
 
     ```js
     const serviceNameContentControl = context.document.contentControls.getByTag("serviceName").getFirst();
     serviceNameContentControl.insertText("Fabrikam Online Productivity Suite", "Replace");
     ``` 
 
-## <a name="test-the-add-in"></a>测试加载项
+## <a name="test-the-add-in"></a>测试外接程序
 
 1. 如果上一阶段教程中的 Git Bash 窗口或已启用 Node.JS 的系统命令提示符仍处于打开状态，请按 Ctrl+C 两次，停止正在运行的 Web 服务器。 否则，打开 Git Bash 窗口或已启用 Node.JS 的系统命令提示符，并转到项目的“开始”**** 文件夹。
      > [!NOTE]
