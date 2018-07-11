@@ -2,16 +2,19 @@
 title: Office 加载项开发最佳做法
 description: ''
 ms.date: 01/23/2018
+ms.openlocfilehash: abb04439d40d412acba51d62bcc7544d01810f52
+ms.sourcegitcommit: 376a80e8bc740a80802af81cabcdabe099217b3e
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 07/10/2018
+ms.locfileid: "20246085"
 ---
-
-
-
 # <a name="best-practices-for-developing-office-add-ins"></a>Office 加载项开发最佳做法
 
 有效的外接程序提供独特且极具吸引力的功能，采用具有视觉吸引力的方式扩展 Office 应用程序。若要创建出色的外接程序，需为用户提供极具吸引力的首次使用体验、设计一流的 UI 体验和优化外接程序的性能。将本文中描述的最佳实践应用于创建有助于您的用户快速有效地完成其任务的外接程序。
 
 > [!NOTE]
-> 如果计划将加载项[发布](../publish/publish.md)到 AppSource 并适用于 Office 体验，请务必遵循 [AppSource 验证策略](https://docs.microsoft.com/zh-cn/office/dev/store/validation-policies)。例如，加载项必须适用于支持已定义方法的所有平台，才能通过验证（有关详细信息，请参阅[第 4.12 部分](https://docs.microsoft.com/zh-cn/office/dev/store/validation-policies#4-apps-and-add-ins-behave-predictably)以及 [Office 加载项主机和可用性](../overview/office-add-in-availability.md)页面）。 
+> 如果计划将加载项[发布](../publish/publish.md)到 AppSource 并适用于 Office 体验，请务必遵循 [AppSource 验证策略](https://docs.microsoft.com/en-us/office/dev/store/validation-policies)。例如，加载项必须适用于支持已定义方法的所有平台，才能通过验证（有关详细信息，请参阅[第 4.12 部分](https://docs.microsoft.com/en-us/office/dev/store/validation-policies#4-apps-and-add-ins-behave-predictably)以及 [Office 加载项主机和可用性](../overview/office-add-in-availability.md)页面）。 
 
 ## <a name="provide-clear-value"></a>提供明确值
 
@@ -21,7 +24,7 @@ ms.date: 01/23/2018
  - 在 Office 主机内嵌入补充服务。
  - 改善 Office 体验来提高工作效率。
 - 通过[创建极具吸引力的首次运行体验](#create-an-engaging-first-run-experience)，确保用户能够快速明确加载项的价值。
-- 创建[有效的 AppSource 一览](https://docs.microsoft.com/zh-cn/office/dev/store/create-effective-office-store-listings)。在标题和说明中明确介绍加载项的优势。请勿依赖品牌来传达加载项的用途。
+- 创建[有效的 AppSource 一览](https://docs.microsoft.com/en-us/office/dev/store/create-effective-office-store-listings)。在标题和说明中明确介绍加载项的优势。请勿依赖品牌来传达加载项的用途。
 
 
 ## <a name="create-an-engaging-first-run-experience"></a>创建极具吸引力的首次运行体验
@@ -40,13 +43,13 @@ ms.date: 01/23/2018
 
    ![显示没有数据的内容外接程序旁边具有数据的内容外接程序的屏幕截图](../images/add-in-title.png)
 
-- 提供[免费试用版](https://docs.microsoft.com/zh-cn/office/dev/store/decide-on-a-pricing-model#office-store-pricing-options)。如果加载项需要订阅，请让某些功能无需订阅也可使用。
+- 提供[免费试用版](https://docs.microsoft.com/en-us/office/dev/store/decide-on-a-pricing-model#office-store-pricing-options)。如果加载项需要订阅，请让某些功能无需订阅也可使用。
 
 - 让注册非常简单。预先填充某些信息（如电子邮件、显示名称），并跳过电子邮件验证。
 
 - 避免弹出窗口。如果您必须使用它们，请引导用户启用您的弹出窗口。
 
-- 使用[单一登录 (SSO) 身份验证](https://docs.microsoft.com/zh-cn/outlook/add-ins/authenticate-a-user-with-an-identity-token)。
+- 使用[单一登录 (SSO) 身份验证](https://docs.microsoft.com/en-us/outlook/add-ins/authenticate-a-user-with-an-identity-token)。
 
 对于说明你在开发首次运行体验时可以应用的模式的模板，请参阅[适用于 Office 外接程序的 UX 设计模式](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code)。
 
@@ -56,7 +59,7 @@ ms.date: 01/23/2018
 
 ## <a name="apply-ux-design-principles"></a>应用用户体验设计原则
 
-- 确保你的外接程序的外观和功能很好地补充了 Office 体验。使用 [Office UI Fabric](https://dev.office.com/fabric)。
+- 确保你的外接程序的外观和功能很好地补充了 Office 体验。使用 [Office UI Fabric](https://developer.microsoft.com/en-us/fabric)。
 
 - 支持内容胜过支持部件版式。避免使用对用户体验毫无价值的不必要的 UI 元素。
 
@@ -68,11 +71,11 @@ ms.date: 01/23/2018
 
 - 不包含未授权的图像。
 
-- 在加载项中使用[简单明确的语言](../design/add-in-design-guidelines.md#voice-guidelines)。
+- 在加载项中使用[简单明确的语言](../design/voice-guidelines.md)。
 
-- 考虑[辅助功能](../design/ui-elements/accessibility-guidelines.md) - 方便所有用户都可以与加载项轻松交互，并提供屏幕阅读器等辅助技术。
+- 考虑辅助功能 - 方便所有用户都可以与加载项轻松交互，并提供屏幕阅读器等辅助技术。
 
-- 针对所有平台和输入方法（包括鼠标/键盘和 [触摸](#optimize-for-touch)）的设计。确保您的 UI 可响应不同的外观设置。
+- 针对所有平台和输入方法（包括鼠标/键盘和 [触摸](#optimize-for-touch)）而设计。确保 UI 可响应不同的外观设置。
 
 对于应用你在开发外接程序时可以使用和自定义的设计原则的模板，请参阅[适用于 Office 外接程序的 UX 设计模式](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code)。
 
@@ -118,14 +121,14 @@ ms.date: 01/23/2018
   |连续|> 500 毫秒|5 秒|中等等待时间，不再感觉反应灵敏。可能需要反馈。|
   |受限|> 500 毫秒|10 秒|较长，但不足以执行其他操作。可能需要反馈。|
   |扩展|> 500 毫秒|> 10 秒|长到足以在等待时执行其他操作。可能需要反馈。|
-  |长时间运行|> 5 毫秒|> 1 分钟|用户当然可以执行其他操作。|
+  |长时间运行|> 5 秒|> 1 分钟|用户当然可以执行其他操作。|
 
 - 监视您的服务运行状况，并使用遥测监视用户的成功。
 
 
 ## <a name="market-your-add-in"></a>加载项市场营销
 
-- 将加载项发布到 [AppSource](https://docs.microsoft.com/zh-cn/office/dev/store/submit-to-the-office-store)，并在网站中[对它进行宣传](https://docs.microsoft.com/zh-cn/office/dev/store/promote-your-office-store-solution)。创建[有效的 AppSource 一览](https://docs.microsoft.com/zh-cn/office/dev/store/create-effective-office-store-listings)。
+- 将加载项发布到 [AppSource](https://docs.microsoft.com/en-us/office/dev/store/submit-to-the-office-store)，并在网站中[对它进行宣传](https://docs.microsoft.com/en-us/office/dev/store/promote-your-office-store-solution)。创建[有效的 AppSource 一览](https://docs.microsoft.com/en-us/office/dev/store/create-effective-office-store-listings)。
 
 - 使用简洁且富有描述性的加载项标题。字符数不得超过 128 个。
 
