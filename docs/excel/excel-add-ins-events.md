@@ -2,12 +2,12 @@
 title: 使用 Excel JavaScript API 处理事件
 description: ''
 ms.date: 05/25/2018
-ms.openlocfilehash: b928910cc673cfe8ff99906259b51fa2c3afdca4
-ms.sourcegitcommit: 17f60431644b448a4816913039aaebfa328f9b0a
+ms.openlocfilehash: 575e4112ed5f55356020eed8327d309fc58cd643
+ms.sourcegitcommit: 9685fd83136bd2106f4c5595bda0010bc1b1950b
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/25/2018
-ms.locfileid: "19476478"
+ms.lasthandoff: 07/19/2018
+ms.locfileid: "20596517"
 ---
 # <a name="work-with-events-using-the-excel-javascript-api"></a>使用 Excel JavaScript API 处理事件 
 
@@ -21,11 +21,12 @@ ms.locfileid: "19476478"
 |:---------------|:-------------|:-----------|
 | `onAdded` | 添加对象时发生的事件。 | [**WorksheetCollection**](https://dev.office.com/reference/add-ins/excel/worksheetcollection) |
 | `onDeleted` | 删除对象时发生的事件。 | [**WorksheetCollection**](https://dev.office.com/reference/add-ins/excel/worksheetcollection) |
-| `onActivated` | 启用对象时发生的事件。 | [**WorksheetCollection**](https://dev.office.com/reference/add-ins/excel/worksheetcollection)、[**工作表**](https://dev.office.com/reference/add-ins/excel/worksheet) |
-| `onDeactivated` | 停用对象时发生的事件。 | [**WorksheetCollection**](https://dev.office.com/reference/add-ins/excel/worksheetcollection)、[**工作表**](https://dev.office.com/reference/add-ins/excel/worksheet) |
-| `onChanged` | 更改单元格内数据时发生的事件。 | [**工作表**](https://dev.office.com/reference/add-ins/excel/worksheet)、[**表**](https://dev.office.com/reference/add-ins/excel/table)[**、TableCollection**](https://dev.office.com/reference/add-ins/excel/tablecollection) |
-| `onDataChanged` | 更改捆绑中的数据或格式时发生的事件。 | [**捆绑**](https://dev.office.com/reference/add-ins/excel/binding) |
-| `onSelectionChanged` | 更改活动单元格或选定范围时发生的事件。 | [**工作表**](https://dev.office.com/reference/add-ins/excel/worksheet)、[**表**](https://dev.office.com/reference/add-ins/excel/table)、[**捆绑**](https://dev.office.com/reference/add-ins/excel/binding) |
+| `onActivated` | 启用对象时发生的事件。 | [**WorksheetCollection**](https://dev.office.com/reference/add-ins/excel/worksheetcollection)、[**Worksheet**](https://dev.office.com/reference/add-ins/excel/worksheet) |
+| `onDeactivated` | 停用对象时发生的事件。 | [**WorksheetCollection**](https://dev.office.com/reference/add-ins/excel/worksheetcollection)、[**Worksheet**](https://dev.office.com/reference/add-ins/excel/worksheet) |
+| `onChanged` | 更改单元格内数据时发生的事件。 | [**Worksheet**](https://dev.office.com/reference/add-ins/excel/worksheet)、[**Table**](https://dev.office.com/reference/add-ins/excel/table)[**、TableCollection**](https://dev.office.com/reference/add-ins/excel/tablecollection) |
+| `onDataChanged` | 更改绑定中的数据或格式时发生的事件。 | [**Binding**](https://dev.office.com/reference/add-ins/excel/binding) |
+| `onSelectionChanged` | 更改活动单元格或选定范围时发生的事件。 | [**Worksheet**](https://dev.office.com/reference/add-ins/excel/worksheet)、[**Table**](https://dev.office.com/reference/add-ins/excel/table)、[**Binding**](https://dev.office.com/reference/add-ins/excel/binding) |
+| `onSettingsChanged` | 当文档中的设置变化时发生的事件。 | [**SettingCollection**](https://dev.office.com/reference/add-ins/excel/settingcollection) |
 
 ### <a name="event-triggers"></a>事件触发器
 

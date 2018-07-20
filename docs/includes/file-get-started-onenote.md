@@ -30,8 +30,8 @@
 
     - **选择一个项目类型：** `Jquery`
     - **选择一个脚本类型：** `Javascript`
-    - **要将你的外接程序命名为什么?:** `My Office Add-in`
-    - **要支持哪一个 Office 客户端应用程序?:** `Onenote`
+    - **要如何命名加载项?:** `My Office Add-in`
+    - **要支持哪一个 Office 客户端应用?:** `Onenote`
 
     ![有关 Yeoman 生成器提示和回答的屏幕截图](../images/yo-office-onenote-jquery.png)
     
@@ -59,7 +59,7 @@
     </main>
     ```
 
-3. 打开文件“app.js”****，以指定加载项脚本。 将整个内容替换为以下代码，并保存文件。
+3. 打开文件 **index/ src.js** 以指定加载项的脚本。使用以下代码替换全部内容并保存文件。
 
     ```js
     'use strict';
@@ -68,8 +68,6 @@
 
         Office.initialize = function (reason) {
             $(document).ready(function () {
-                app.initialize();
-
                 // Set up event handler for the UI.
                 $('#addOutline').click(addOutlineToPage);
             });
@@ -144,13 +142,13 @@
 
     <img alt="The Office Add-ins dialog showing the MY ADD-INS tab" src="../images/onenote-office-add-ins-dialog.png" width="500">
 
-3. |||UNTRANSLATED_CONTENT_START|||In the Upload Add-in dialog, browse to **one-note-add-in-manifest.xml** in your project folder, and then choose **Upload**.|||UNTRANSLATED_CONTENT_END||| 
+3. 在“上传加载项”对话框中，浏览到项目文件夹中的“one-note-add-in-manifest.xml”****，再选择“上传”****。 
 
-4. 在**主页**选项卡，选择功能区中的**显示任务窗格**按钮。 该外接程序在 OneNote 页面旁的 iFrame 中打开。
+4. 在**主页**选项卡，选择功能区中的**显示任务窗格**按钮。 该加载项在 OneNote 页面旁的 iFrame 中打开。
 
 5. 在文本区域中输入一些文本，然后选择**添加大纲**。 您输入的文本将添加至页面。 
 
-    ![通过此步骤生成的 OneNote 外接程序](../images/onenote-first-add-in.png)
+    ![通过此演练生成的 OneNote 加载项](../images/onenote-first-add-in.png)
 
 ## <a name="troubleshooting-and-tips"></a>疑难解答和提示
 
