@@ -2,12 +2,12 @@
 title: 创建使用单一登录的 ASP.NET Office 加载项
 description: ''
 ms.date: 01/23/2018
-ms.openlocfilehash: 6a1c8ea7a8634d701a43e08fd8bb9c5f9c1863cd
-ms.sourcegitcommit: c72c35e8389c47a795afbac1b2bcf98c8e216d82
+ms.openlocfilehash: be7d6a8ab7f646c1ef9e77a2b459c41000c49f43
+ms.sourcegitcommit: eea7f2b1679cf9a209d35880b906e311bdf1359c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/23/2018
-ms.locfileid: "19437715"
+ms.lasthandoff: 07/26/2018
+ms.locfileid: "21241136"
 ---
 # <a name="create-an-aspnet-office-add-in-that-uses-single-sign-on-preview"></a>创建使用单一登录的 ASP.NET Office 加载项（预览）
 
@@ -42,11 +42,11 @@ ms.locfileid: "19437715"
 
    > 1. 在“工具”**** 菜单上，依次转到“NuGet 包管理器”**** > “包管理器控制台”****。 
 
-   > 2. 在控制台中，运行以下命令。 即使 Internet 连接速度很快，也可能需要一分钟或更长时间才能完成。 完成后，应该会在控制台输出末尾处附近看到**已成功安装“Microsoft.Identity.Client 1.1.1-alpha0393”...**。
+   > 2. 在控制台上，运行以下命令。即使使用快速的 Internet 连接，也可能需要一分钟或更长时间才能完成。完成后你应该看到 **成功安装“Microsoft.Identity.Client 1.1.4-preview0002”......** 接近控制台输出的末尾。
 
-   >    `Install-Package Microsoft.Identity.Client -Version 1.1.1-alpha0393 -Source https://www.myget.org/F/aad-clients-nightly/api/v3/index.json`
+   >    `Install-Package Microsoft.Identity.Client -Version 1.1.4-preview0002`
 
-   > 3. 在“解决方案资源管理器”**** 中，右键单击“引用”****。验证是否列出了“Microsoft.Identity.Client”****。如果没有列出或它的条目上有警告图标，请先删除此条目，再使用“Visual Studio 添加引用”向导，添加对 **... \[Begin | Complete]\packages\Microsoft.Identity.Client.1.1.1-alpha0393\lib\net45\Microsoft.Identity.Client.dll** 处程序集的引用。
+   > 3. 在“解决方案资源管理器”**** 中，右键单击“引用”****。验证是否列出了“Microsoft.Identity.Client”****。如果没有列出或它的条目上有警告图标，请先删除此条目，再使用“Visual Studio 添加引用”向导，添加对 **... \[Begin | Complete]\packages\Microsoft.Identity.Client.1.1.4-alpha0002\lib\net45\Microsoft.Identity.Client.dll** 处程序集的引用。
 
 1. 重新生成此项目。
 
@@ -59,16 +59,16 @@ ms.locfileid: "19437715"
     * Files.Read.All
     * offline_access
     * openid
-    * profile
+    * 配置文件
 
 
 [!INCLUDE[](../includes/register-sso-add-in-aad-v2-include.md)]
 
-## <a name="grant-administrator-consent-to-the-add-in"></a>Error 13008 occurs when the user tiggered an operation that 向加载项授予管理员许可
+## <a name="grant-administrator-consent-to-the-add-in"></a>向外接程序授予管理员许可
 
 [!INCLUDE[](../includes/grant-admin-consent-to-an-add-in-include.md)]
 
-## <a name="configure-the-add-in"></a>配置加载项
+## <a name="configure-the-add-in"></a>配置外接程序
 
 1. 在以下字符串中，将占位符“{tenant_ID}”替换为你的 Office 365 租户ID。 使用[“找到你的 Office 365 租户 ID”](https://support.office.com/en-us/article/Find-your-Office-365-tenant-ID-6891b561-a52d-4ade-9f39-b492285e2c9b)中的一种方法获得它。
 
@@ -120,13 +120,13 @@ ms.locfileid: "19437715"
     </WebApplicationInfo>
     ```
 
-1. 将标记中的*两处*占位符“{application_GUID here}”均替换成在注册加载项时复制的应用程序 ID。 由于 ID 并不包含“{} ”，因此请勿添加它们。 这与在 web.config 中对 ClientID 和 Audience 使用的 ID 相同。
+1. 将标记中的*两处*占位符“{application_GUID here}”均替换成在注册加载项时复制的应用程序 ID。 |||UNTRANSLATED_CONTENT_START|||The "{}" are not part of the ID, so do not include them.|||UNTRANSLATED_CONTENT_END||| 这与在 web.config 中对 ClientID 和 Audience 使用的 ID 相同。
 
     > [!NOTE]
     > * **Resource** 值是向注册的加载项添加 Web API 平台时设置的**应用 ID URI**。
     > * 仅在通过 AppSource 销售加载项时，才使用 **Scopes** 部分生成许可对话框。
 
-1. 在 Visual Studio 中，打开 **“错误列表”** 的 **“警告”** 选项卡。 如果存在关于 `<WebApplicationInfo>` 不是 `<VersionOverrides>` 的有效子级的警告，则该 Visual Studio 2017 Preview 版本无法识别 SSO 标记。 作为解决方法，请对 Word、Excel 或 PowerPoint 加载项执行以下操作。 （如果使用的是 Outlook 外接程序，请参阅下面的解决方法。）
+1. 在 Visual Studio 中，打开“错误列表”**** 的“警告”**** 选项卡。 如果存在关于 `<WebApplicationInfo>` 不是 `<VersionOverrides>` 的有效子级的警告，则该 Visual Studio 2017 Preview 版本无法识别 SSO 标记。 作为解决方法，请对 Word、Excel 或 PowerPoint 外接程序执行以下操作。 （如果使用的是 Outlook 外接程序，请参阅下面的解决方法。）
 
    - **Word、Excel 和 Powerpoint 的解决方法**
 
@@ -165,7 +165,7 @@ ms.locfileid: "19437715"
     * 方法，用于在任务窗格底部显示从 Microsoft Graph 返回的数据（或错误消息）。`showResult`
     * 方法，用于记录最终用户不应看到的控制台错误。`logErrors`
 
-1. 在向 `Office.initialize` 分配函数下方，添加以下代码。关于此代码，请注意以下几点：
+1. 在向 `Office.initialize` 分配函数下方，添加下列代码。关于此代码，请注意以下几点：
 
     * 加载项中的错误处理有时会自动尝试使用一组不同的选项，重新获取访问令牌。 计数器变量 `timesGetOneDriveFilesHasRun` 和标志变量 `triedWithoutForceConsent` 用于确保用户不会重复循环失败的尝试来获取令牌。 
     * 虽然 `getDataWithToken` 方法是在下一步中创建，但请注意，它会将 `forceConsent` 选项设置为 `false`。有关详细信息，请参阅下一步。
@@ -309,7 +309,7 @@ ms.locfileid: "19437715"
         break;      
     ```
 
-1. 将 `TODO7` 替换为以下代码。如果用户触发的操作未等到上一次调用完成就调用了 `getAccessTokenAsync`，就会发生错误 13008。
+1. 将 `TODO7` 替换为下列代码。如果用户触发的操作未等到上一次调用完成就调用了 `getAccessTokenAsync`，就会发生错误 13008。
 
     ```javascript
     case 13008:
@@ -368,7 +368,7 @@ ms.locfileid: "19437715"
     var message = JSON.parse(result.responseText).Message;
     ```
 
-1. 将 `TODO11` 替换为以下代码。关于此代码，请注意以下几点：
+1. 将 `TODO11` 替换为下列代码。关于此代码，请注意以下几点：
 
     * 如果 Microsoft Graph 要求进行其他形式的身份验证，错误 50076 发生。
     * Office 主机应获取新令牌（使用 **Claims** 值作为 `authChallenge` 选项）。 这就指示 AAD 提示用户进行所有必需形式的身份验证。 
@@ -383,7 +383,7 @@ ms.locfileid: "19437715"
     }    
     ```
 
-1. 将 `TODO12` 替换为以下代码。关于此代码，请注意以下几点：
+1. 将 `TODO12` 替换为下列代码。关于此代码，请注意以下几点：
 
     * 错误 65001 表示未许可授予（或已撤消）一个或多个对 Microsoft Graph 的访问权限。 
     * 加载项应获取新令牌（`forceConsent` 选项设置为 `true`）。
@@ -593,7 +593,7 @@ ms.locfileid: "19437715"
     string[] graphScopes = { "Files.Read.All" };
     ```
 
-7. 将 `TODO3` 替换为以下代码。关于此代码，请注意以下几点：
+7. 将 `TODO3` 替换为下列代码。关于此代码，请注意以下几点：
 
     * 方法将首先查找内存中的 MSAL 缓存，获取匹配的访问令牌。仅当不存在任何令牌时，该方法才会通过 Azure AD V2 终结点启动“代表”流。`ConfidentialClientApplication.AcquireTokenOnBehalfOfAsync`
     * 如果 MS Graph 资源要求进行多重身份验证，但用户尚未提供，AAD 就会抛出包含 Claims 属性的异常。
@@ -630,7 +630,7 @@ ms.locfileid: "19437715"
     }
     ```
 
-9. 将 `TODO3b` 和 `TODO3c` 替换为以下代码。关于此代码，请注意以下几点：
+9. 将 `TODO3b` 和 `TODO3c` 替换为下列代码。关于此代码，请注意以下几点：
 
     * 如果 AAD 调用包含至少一个范围（权限）未获用户和租户管理员的许可（或许可被撤消）， AAD 返回“400 错误请求”和错误 `AADSTS65001`。 MSAL 抛出包含此信息的 **MsalUiRequiredException**。 客户端应通过选项 `{ forceConsent: true }` 重新调用 `getAccessTokenAsync`。
     *  如果 AAD 调用包含至少一个 AAD 无法识别的范围，AAD 返回“400 错误请求”和错误 `AADSTS70011`。 MSAL 抛出包含此信息的 **MsalUiRequiredException**。 客户端应通知用户。
@@ -724,7 +724,7 @@ ms.locfileid: "19437715"
 
 1. 按此组中的“显示加载项”**** 按钮，在任务窗格中查看此加载项的 UI。
 
-1. 按下按钮 **“从 OneDrive 获取我的文件”**。如果尚未登录 Office，便会看到登录提示。
+1. 按“从 OneDrive 获取我的文件”**** 按钮。如果尚未登录 Office，便会看到登录提示。
     
     > [!NOTE]
     > 如果先前使用其他 ID 登录过 Office，并且当时打开的一些 Office 应用现在仍处于打开状态，Office 可能无法可靠地更改 ID，即使看似已在 PowerPoint 中更改过，也不例外。 在这种情况下，可能无法调用 Microsoft Graph，或者可能返回以前 ID 的数据。 为了防止发生这种情况，请务必先*关闭其他所有 Office 应用*，再按“从 OneDrive 获取我的文件”****。

@@ -116,7 +116,7 @@
           items:
             - name: 设计工具包
               href: design/design-toolkits.md
-            - name: Office UI 结构
+            - name: Office UI Fabric
               href: design/office-ui-fabric.md
             - name: 开始使用 Fabric React
               href: design/using-office-ui-fabric-react.md
@@ -159,7 +159,7 @@
                   href: develop/create-sso-office-add-ins-aspnet.md
                 - name: 使用 Node.js 创建 SSO 加载项
                   href: develop/create-sso-office-add-ins-nodejs.md
-                - name: 通过 Azure AD v2.0 注册使用 SSO 的 Office 加载项
+                - name: 向 Azure AD v2.0 注册使用 SSO 的 Office 加载项
                   href: develop/register-sso-add-in-aad-v2.md
                 - name: 向加载项授予管理员许可
                   href: develop/grant-admin-consent-to-an-add-in.md
@@ -194,7 +194,7 @@
       href: excel/excel-add-ins-overview.md
       displayName: Excel
       items:
-        - name: 构建您的第一个 Excel 外接程序
+        - name: 构建您的第一个 Excel 加载项
           href: excel/excel-add-ins-get-started-overview.md
           displayName: Excel
           items:
@@ -227,13 +227,13 @@
             - name: 图表
               href: excel/excel-add-ins-charts.md
               displayName: Excel
-            - name: 事件
+            - name: 活动
               href: excel/excel-add-ins-events.md
               displayName: Excel
             - name: 范围
               href: excel/excel-add-ins-ranges.md
               displayName: Excel
-            - name: Table
+            - name: 表格
               href: excel/excel-add-ins-tables.md
               displayName: Excel
             - name: 工作表
@@ -261,11 +261,11 @@
         - name: Excel JavaScript API 参考
           href: 'https://dev.office.com/reference/add-ins/excel/excel-add-ins-reference-overview'
           displayName: Excel
-    - name: Word 外接程序
+    - name: Word 加载项
       href: word/word-add-ins-programming-overview.md
       displayName: Word
       items:
-        - name: 构建您的第一个 Word 外接程序
+        - name: 生成首个 Word 加载项
           href: word/word-add-ins.md
           displayName: Word
         - name: Word 加载项教程
@@ -274,7 +274,7 @@
         - name: 使用 Office Open XML 创建更优质的 Word 加载项
           href: word/create-better-add-ins-for-word-with-office-open-xml.md
           displayName: Word
-        - name: 字典任务窗格外接程序
+        - name: 字典任务窗格加载项
           href: word/dictionary-task-pane-add-ins.md
           displayName: Word
         - name: 通过加载项获取整个文档
@@ -285,6 +285,9 @@
           displayName: Word
         - name: 绑定到文档中的区域
           href: develop/bind-to-regions-in-a-document-or-spreadsheet.md
+          displayName: Word
+        - name: 使用搜索选项在 Word 加载项中查找文本
+          href: word/search-option-guidance.md
           displayName: Word
         - name: Word JavaScript API 参考
           href: 'https://dev.office.com/reference/add-ins/word/word-add-ins-reference-overview'
@@ -299,7 +302,7 @@
         - name: 生成首个 PowerPoint 加载项
           href: powerpoint/powerpoint-add-ins-get-started.md
           displayName: PowerPoint
-        - name: PowerPoint 外接程序教程
+        - name: PowerPoint 加载项教程
           href: tutorials/powerpoint-tutorial.yml
           displayName: PowerPoint
         - name: 在 PowerPoint 加载项中使用文档主题

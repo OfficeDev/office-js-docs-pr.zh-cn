@@ -2,9 +2,13 @@
 title: 通过 Office 365 管理中心进行集中部署来发布 Office 加载项
 description: ''
 ms.date: 01/23/2018
+ms.openlocfilehash: 42ef569ddc868fb82730e445d4d34fd9caa94b0e
+ms.sourcegitcommit: eea7f2b1679cf9a209d35880b906e311bdf1359c
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 07/26/2018
+ms.locfileid: "21241213"
 ---
-
-
 # <a name="publish-office-add-ins-using-centralized-deployment-via-the-office-365-admin-center"></a>通过 Office 365 管理中心进行集中部署来发布 Office 加载项
 
 通过 Office 365 管理中心，管理员可以轻松地为组织内的用户和组部署 Office 加载项。通过管理中心部署加载项后，用户可立即在其 Office 应用程序中使用此加载项，而无需进行客户端配置。可以通过集中部署来部署内部加载项以及 ISV 提供的加载项。
@@ -20,10 +24,10 @@ Office 365 管理中心当前支持以下方案：
 - 当用户启动 Office 应用时自动为用户安装加载项。
 - 当管理员禁用或删除加载项，或者将用户从 Azure Active Directory 或从已部署加载项的组中删除时，则自动为用户删除该加载项。
 
-如果组织满足使用集中部署的所有要求，则建议 Office 365 管理员通过集中部署在组织内部署 Office 加载项。 有关如何确定组织是否可以使用集中部署的信息，请参阅[确定加载项集中部署是否适用于你的 Office 365 组织](https://support.office.com/zh-cn/article/Determine-if-Centralized-Deployment-of-add-ins-works-for-your-Office-365-organization-B4527D49-4073-4B43-8274-31B7A3166F92)。
+如果组织满足使用集中部署的所有要求，则建议 Office 365 管理员通过集中部署在组织内部署 Office 加载项。 有关如何确定组织是否可以使用集中部署的信息，请参阅[确定加载项集中部署是否适用于你的 Office 365 组织](https://support.office.com/en-us/article/Determine-if-Centralized-Deployment-of-add-ins-works-for-your-Office-365-organization-B4527D49-4073-4B43-8274-31B7A3166F92)。
 
 > [!NOTE]
-> 在没有连接到 Office 365 的本地环境中，或若要部署 SharePoint 加载项或定目标到 Office 2013 的 Office 加载项，请使用 [SharePoint 加载项目录](publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md)。 若要部署 COM/VSTO 加载项，请使用 ClickOnce 或 Windows Installer，如[部署 Office 解决方案](https://msdn.microsoft.com/zh-cn/library/bb386179.aspx)中所述。
+> 在没有连接到 Office 365 的本地环境中，或若要部署 SharePoint 加载项或定目标到 Office 2013 的 Office 加载项，请使用 [SharePoint 加载项目录](publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md)。 若要部署 COM/VSTO 加载项，请使用 ClickOnce 或 Windows Installer，如[部署 Office 解决方案](https://msdn.microsoft.com/en-us/library/bb386179.aspx)中所述。
 
 ## <a name="recommended-approach-for-deploying-office-add-ins"></a>部署 Office 加载项的推荐方法
 
@@ -39,47 +43,47 @@ Office 365 管理中心当前支持以下方案：
 
 ## <a name="publish-an-office-add-in-via-centralized-deployment"></a>通过集中部署发布 Office 加载项
 
-在开始之前，请按照[确定加载项集中部署是否适用于你的 Office 365 组织](https://support.office.com/zh-cn/article/Determine-if-Centralized-Deployment-of-add-ins-works-for-your-Office-365-organization-B4527D49-4073-4B43-8274-31B7A3166F92)中所述确认组织是否满足使用集中部署的所有要求。
+在开始之前，请按照[确定加载项集中部署是否适用于你的 Office 365 组织](https://support.office.com/en-us/article/Determine-if-Centralized-Deployment-of-add-ins-works-for-your-Office-365-organization-B4527D49-4073-4B43-8274-31B7A3166F92)中所述确认组织是否满足使用集中部署的所有要求。
 
 如果组织满足所有要求，请完成以下步骤以通过集中部署发布 Office 加载项：
 
 1. 使用工作或学校帐户登录 Office 365。
-2. 选择左上角的应用启动器图标，然后选择“管理”。
-3. 在导航菜单中，选择“设置” > “服务和加载项”。
+2. 选择左上角的应用启动器图标，然后选择“管理”****。
+3. 在导航菜单中，选择“设置”**** > “服务和加载项”****。
 4. 如果在页面顶部看到公布新的 Office 365 管理中心的消息，请选择该消息以转至“管理中心预览版”（请参阅[关于 Office 365 管理中心](https://support.office.com/en-ie/article/About-the-Office-365-admin-center-758befc4-0888-4009-9f14-0d147402fd23)）。
-5. 在页面顶部选择“上传加载项”。 
-6. 在“集中部署”页面上，选择以下选项之一：
+5. 在页面顶部选择“上传加载项”****。 
+6. 在“集中部署”**** 页面上，选择以下选项之一：
 
     - **我想从 AppSource 添加加载项。**
-    - **我在此设备上有清单文件(.xml)。** 对于此选项，请选择“浏览”以找到想要使用的清单文件 (.xml)。
+    - **我在此设备上有清单文件(.xml)。** 对于此选项，请选择“浏览”**** 以找到想要使用的清单文件 (.xml)。
     - **我具有清单文件的 URL。** 对于此选项，请在提供的字段中键入清单的 URL。
 
     ![Office 365 管理中心中的新加载项对话框](../images/new-add-in.png)
 
-7.  选择“下一步”。
+7.  选择“下一步”****。
 
-8.  如果选择了从 AppSource 添加加载项的选项，请选择相应的加载项。 请注意，可以通过“为你推荐”、“评级”或“名称”类别，查看可选择的加载项。 只能从 AppSource 添加免费加载项；暂不支持添加付费加载项。
+8.  如果选择了从 AppSource 添加加载项的选项，请选择相应的加载项。 请注意，可以通过“为你推荐”****、“评级”**** 或“名称”**** 类别，查看可选择的加载项。 只能从 AppSource 添加免费加载项；暂不支持添加付费加载项。
 
     > [!NOTE]
     > 使用 AppSource 选项，无需干预，即会自动向用户提供加载项的更新程序和增强功能。
 
     ![Office 365 管理中心内的“选择加载项”对话框](../images/select-an-add-in.png)
 
-9. 现在已启用该加载项。 在该加载项的页面上，其状态是“已启用”，与以下屏幕截图中 Power BI 磁贴加载项页面所示的内容相似。 在“有权访问的人员”部分中，选择“编辑”可将该加载项分配给用户和/或组。
+9. 加载项现在可用于分配。 在该加载项的页面上，其状态是“已启用”****，与以下屏幕截图中 Power BI 磁贴加载项页面所示的内容相似。 在“有权访问的人员”**** 部分中，选择“编辑”**** 可将该加载项分配给用户和/或组。
 
     ![Office 365 管理中心中的 Power BI 磁贴加载项页面](../images/power-bi-tiles.png)
 
-10. 在**“编辑有权访问的人员”页面**上，选择“每个人”或“特定用户/组”。 使用“搜索”框查找想要为其部署加载项的用户和/或组。
+10. 在 **“编辑有权访问的人员”页面**上，选择“每个人”**** 或“特定用户/组”****。 使用“搜索”框查找想要为其部署加载项的用户和/或组。
 
     ![编辑 Office 365 管理中心内的“谁有权访问”页面](../images/power-bi-tiles-edit.png)
 
     > [!NOTE]
     > 对于单一登录 (SSO) 加载项，分配的用户和组也会与共用同一 Azure 应用 ID 的加载项进行共享。 对用户分配进行的任何更改也会应用于这些加载项。相关加载项将显示在此页面上。 仅对于 SSO 加载项，此页面将显示该加载项所需的 Microsoft Graph 权限的列表。
 
-11. 完成后，选择“保存”，查看加载项设置，然后选择“关闭”。 现在，可以看到此加载项与其他应用一起显示在 Office 365 中。
+11. 完成后，选择“保存”****，查看加载项设置，然后选择“关闭”****。 现在，可以看到此加载项与其他应用一起显示在 Office 365 中。
 
     > [!NOTE]
-    >  管理员选择“保存”后，即表示向所有用户授予许可。 
+    >  管理员选择“保存”**** 后，即表示向所有用户授予许可。 
 
     ![Office 365 管理中心内的应用列表](../images/citations.png)
 
@@ -105,7 +109,7 @@ Office 365 管理中心当前支持以下方案：
 |状态|此状态如何出现|影响|
 |-----|--------------------|------|
 |**活动**|管理员已上传加载项并已将其分配给用户和/或组。|已为其分配加载项的用户和/或组，可在相关的 Office 客户端中找到它。|
-|**已禁用**|管理员已禁用加载项。|已为其分配加载项的用户和/或组不再能够访问它。 如果加载项状态从“已禁用”更改为“活动”，则用户和组将重新获得对它的访问权限。|
+|**已禁用**|管理员已禁用加载项。|已为其分配加载项的用户和/或组不再能够访问它。 如果加载项状态从“已禁用”**** 更改为“活动”****，则用户和组将重新获得对它的访问权限。|
 |**已删除**|管理员已删除加载项。|已为其分配加载项的用户和/或组不再能够访问它。|
 
 ## <a name="updating-office-add-ins-that-are-published-via-centralized-deployment"></a>更新通过集中部署发布的 Office 加载项
@@ -126,8 +130,12 @@ Office 365 管理中心当前支持以下方案：
 
 如果加载项不支持加载项命令，用户可以通过执行以下操作将其添加到 Office 应用程序中：
 
-1.  在 Word 2016、Excel 2016 或 PowerPoint 2016 中，选择“插入” > “我的加载项”。
-2.  在外接程序窗口中选择“管理托管”选项卡。
-3.  选择加载项，然后选择“添加”。 
+1.  在 Word 2016、Excel 2016 或 PowerPoint 2016 中，选择“插入”**** > “我的加载项”****。
+2.  在外接程序窗口中选择“管理托管”**** 选项卡。
+3.  选择加载项，然后选择“添加”****。 
 
     ![屏幕截图显示 Office 应用程序的“Office 加载项”页的“管理托管”选项卡。 引文加载项显示在此选项卡上。](../images/office-add-ins-admin-managed.png)
+    
+## <a name="see-also"></a>另请参阅
+[确定加载项的集中式部署是否适用于你的 Office 365 组织](https://support.office.com/en-us/article/Determine-if-Centralized-Deployment-of-add-ins-works-for-your-Office-365-organization-b4527d49-4073-4b43-8274-31b7a3166f92)
+    

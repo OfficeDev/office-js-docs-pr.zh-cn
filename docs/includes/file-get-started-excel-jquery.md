@@ -172,8 +172,8 @@
 
     - **选择一个项目类型：** `Jquery`
     - **选择一个脚本类型：** `Javascript`
-    - **要将你的外接程序命名为什么?:** `My Office Add-in`
-    - **要支持哪一个 Office 客户端应用程序?:** `Excel`
+    - **要如何命名加载项?:** `My Office Add-in`
+    - **要支持哪一个 Office 客户端应用?:** `Excel`
 
     ![Yeoman 生成器](../images/yo-office-jquery.png)
     
@@ -206,7 +206,7 @@
     </div>
     ```
 
-7. 打开文件“app.js”****，以指定加载项脚本。 将整个内容替换为以下代码，并保存文件。
+7. 打开文件 **src\index.js** 以指定加载项的脚本。使用以下代码替换全部内容并保存文件。
 
     ```js
     'use strict';

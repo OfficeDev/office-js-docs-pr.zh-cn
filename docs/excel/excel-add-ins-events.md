@@ -2,12 +2,12 @@
 title: 使用 Excel JavaScript API 处理事件
 description: ''
 ms.date: 05/25/2018
-ms.openlocfilehash: 575e4112ed5f55356020eed8327d309fc58cd643
-ms.sourcegitcommit: 9685fd83136bd2106f4c5595bda0010bc1b1950b
+ms.openlocfilehash: 5b48712b0b1b5bd0dd7492ee7c692104a99678a7
+ms.sourcegitcommit: 9e0952b3df852bd2896e9f4a6f59f5b89fc1ae24
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/19/2018
-ms.locfileid: "20596517"
+ms.lasthandoff: 07/27/2018
+ms.locfileid: "21270270"
 ---
 # <a name="work-with-events-using-the-excel-javascript-api"></a>使用 Excel JavaScript API 处理事件 
 
@@ -27,6 +27,19 @@ ms.locfileid: "20596517"
 | `onDataChanged` | 更改绑定中的数据或格式时发生的事件。 | [**Binding**](https://dev.office.com/reference/add-ins/excel/binding) |
 | `onSelectionChanged` | 更改活动单元格或选定范围时发生的事件。 | [**Worksheet**](https://dev.office.com/reference/add-ins/excel/worksheet)、[**Table**](https://dev.office.com/reference/add-ins/excel/table)、[**Binding**](https://dev.office.com/reference/add-ins/excel/binding) |
 | `onSettingsChanged` | 当文档中的设置变化时发生的事件。 | [**SettingCollection**](https://dev.office.com/reference/add-ins/excel/settingcollection) |
+
+## <a name="preview-beta-events-in-excel"></a>在 Excel 中预览（Beta）事件
+
+> [!NOTE]
+> 这些事件目前仅在公开预览（测试版）中提供。 要使用这些功能，您必须使用 Office.js CDN 的 beta 库： https://appsforoffice.microsoft.com/lib/beta/hosted/office.js。
+
+| 事件 | 说明 | 支持的对象 |
+|:---------------|:-------------|:-----------|
+| `onAdded` | 添加图表时发生的事件。 | [**chartCollection**](https://github.com/OfficeDev/office-js-docs/blob/ExcelJs_OpenSpec/reference/new-events.md) |
+| `onDeleted` | 删除图表时发生的事件。 | [**chartCollection**](https://github.com/OfficeDev/office-js-docs/blob/ExcelJs_OpenSpec/reference/new-events.md) |
+| `onActivated` | 激活图表时发生的事件。 | [**Chart**](https://github.com/OfficeDev/office-js-docs/blob/ExcelJs_OpenSpec/reference/new-events.md)， [**ChartCollection**](https://github.com/OfficeDev/office-js-docs/blob/ExcelJs_OpenSpec/reference/new-events.md) |
+| `onDeactivated` | 停用图表时发生的事件。 | [**Chart**](https://github.com/OfficeDev/office-js-docs/blob/ExcelJs_OpenSpec/reference/new-events.md)， [**ChartCollection**](https://github.com/OfficeDev/office-js-docs/blob/ExcelJs_OpenSpec/reference/new-events.md) |
+| `onCalculated` | 工作表完成计算（或集合的所有工作表都已完成）时发生的事件。 | [**WorksheetCollection**](https://github.com/OfficeDev/office-js-docs/blob/ExcelJs_OpenSpec/reference/new-events.md)、[**Worksheet**](https://github.com/OfficeDev/office-js-docs/blob/ExcelJs_OpenSpec/reference/new-events.md) |
 
 ### <a name="event-triggers"></a>事件触发器
 

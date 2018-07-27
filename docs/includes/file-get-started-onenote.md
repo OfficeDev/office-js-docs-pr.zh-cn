@@ -59,7 +59,7 @@
     </main>
     ```
 
-3. 打开文件 **index/ src.js** 以指定加载项的脚本。使用以下代码替换全部内容并保存文件。
+3. 打开文件 **src\index.js**，以指定加载项脚本。 将整个内容替换为以下代码，并保存文件。
 
     ```js
     'use strict';
@@ -142,7 +142,7 @@
 
     <img alt="The Office Add-ins dialog showing the MY ADD-INS tab" src="../images/onenote-office-add-ins-dialog.png" width="500">
 
-3. 在“上传加载项”对话框中，浏览到项目文件夹中的“one-note-add-in-manifest.xml”****，再选择“上传”****。 
+3. 在“上传加载项”对话框中，转到项目文件夹中的“one-note-add-in-manifest.xml”****，再选择“上传”****。 
 
 4. 在**主页**选项卡，选择功能区中的**显示任务窗格**按钮。 该加载项在 OneNote 页面旁的 iFrame 中打开。
 

@@ -194,8 +194,8 @@
 
     - **选择一个项目类型：** `Jquery`
     - **选择一个脚本类型：** `Javascript`
-    - **要将你的外接程序命名为什么?:** `My Office Add-in`
-    - **要支持哪一个 Office 客户端应用程序?:** `Powerpoint`
+    - **要如何命名加载项?:** `My Office Add-in`
+    - **要支持哪一个 Office 客户端应用?:** `Powerpoint`
 
     ![有关 Yeoman 生成器提示和回答的屏幕截图](../images/yo-office-powerpoint-jquery.png)
     
@@ -230,7 +230,7 @@
     </div>
     ```
 
-4. 打开项目根目录中的文件“app.js”****，以指定加载项脚本。 将整个内容替换为以下代码，并保存文件。
+4. 打开文件 **src\index.js** 以指定加载项的脚本。使用以下代码替换全部内容并保存文件。
 
     ```js
     'use strict';
@@ -275,7 +275,7 @@
     })();
     ```
 
-5. 打开项目根目录中的文件“app.css”****，以指定加载项自定义样式。 将整个内容替换为以下内容，并保存文件。
+5. |||UNTRANSLATED_CONTENT_START|||Open the file **app.css** in the root of the project to specify the custom styles for the add-in.|||UNTRANSLATED_CONTENT_END||| 将整个内容替换为以下内容，并保存文件。
 
     ```css
     #content-header {
@@ -355,4 +355,4 @@
 恭喜！已成功创建 PowerPoint 加载项！ 接下来，请详细了解 PowerPoint 加载项的功能，并跟着 PowerPoint 加载项教程一起操作，生成更复杂的加载项。
 
 > [!div class="nextstepaction"]
-> [PowerPoint 外接程序教程](../tutorials/powerpoint-tutorial.yml)
+> [PowerPoint 加载项教程](../tutorials/powerpoint-tutorial.yml)

@@ -2,18 +2,28 @@
 title: 旁加载 Office 加载项以供测试
 description: ''
 ms.date: 01/25/2018
+ms.openlocfilehash: e5769ef40868ec996194725d98913e61b76279bc
+ms.sourcegitcommit: 9e0952b3df852bd2896e9f4a6f59f5b89fc1ae24
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 07/27/2018
+ms.locfileid: "21270291"
 ---
-
 # <a name="sideload-office-add-ins-for-testing"></a>旁加载 Office 加载项以供测试
 
-你可以安装 Office 外接程序以在 Windows 上运行的 Office 客户端中进行测试（通过使用共享文件夹，以将清单发布到网络文件共享）。 
+您可以通过以下方法之一安装 Office 加载项，以便在 Windows 上运行的 Office 客户端中进行测试：
 
-如果不在 Windows 上测试 Word、Excel 或 PowerPoint 外接程序，则请参阅以下主题之一来旁加载外接程序：
+- 使用共享文件夹目录将清单发布到网络文件共享位置（说明见下文）
+- [从加载项项目文件夹根目录运行 "**npm run sideload**" 命令。](sideload-office-addin-using-sideload-command.md) 
+>[!NOTE]
+>"npm run sideload" 方法仅适用于 Excel、Word 和 PowerPoint 加载项）。
+
+如果不是在 Windows 上测试 Word、Excel 或 PowerPoint 加载项，则请参阅以下主题之一来旁加载加载项：
 
 - [在 Office Online 中旁加载 Office 外接程序进行测试](sideload-office-add-ins-for-testing.md)
 - [在 iPad 和 Mac 上旁加载 Office 加载项以供测试](sideload-an-office-add-in-on-ipad-and-mac.md)
 
-下面的视频逐步展示了如何在 Office 桌面或 Office Online 上旁加载加载项。  
+下面的视频逐步展示了如何在 Office 桌面或 Office Online 上使用共享文件夹旁加载加载项。  
 
 
 > [!VIDEO https://www.youtube.com/embed/XXsAw2UUiQo]
@@ -56,11 +66,11 @@ ms.date: 01/25/2018
     > [!IMPORTANT]
     > [!include[HTTPS guidance](../includes/https-guidance.md)]
 
-2. 在 Excel、Word 或 PowerPoint 中，选择功能区上“插入”选项卡中的“我的加载项”。
+2. 在 Excel、Word 或 PowerPoint 中，选择功能区上“插入”**** 选项卡中的“我的加载项”****。
 
 3. 在“**Office 外接程序**”对话框的顶部，选择“**共享文件夹**”。
 
-4. 依次选择加载项名称和“确定”，以插入加载项。
+4. 依次选择加载项名称和“确定”****，以插入加载项。
 
 
 ## <a name="see-also"></a>另请参阅
