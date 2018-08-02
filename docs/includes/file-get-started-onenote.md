@@ -28,7 +28,7 @@
     yo office
     ```
 
-    - **选择一个项目类型：** `Jquery`
+    - **选择一个项目类型：** `Office Add-in project using Jquery framework`
     - **选择一个脚本类型：** `Javascript`
     - **要如何命名加载项?:** `My Office Add-in`
     - **要支持哪一个 Office 客户端应用?:** `Onenote`
@@ -142,11 +142,11 @@
 
     <img alt="The Office Add-ins dialog showing the MY ADD-INS tab" src="../images/onenote-office-add-ins-dialog.png" width="500">
 
-3. 在“上传加载项”对话框中，转到项目文件夹中的“one-note-add-in-manifest.xml”****，再选择“上传”****。 
+3. 在“上传加载项”对话框中，转到项目文件夹中的 **“one-note-add-in-manifest.xml”**，再选择 **“上传”**。 
 
-4. 在**主页**选项卡，选择功能区中的**显示任务窗格**按钮。 该加载项在 OneNote 页面旁的 iFrame 中打开。
+4. 在**主页**选项卡，选择功能区中的**显示任务窗格**按钮。 该加载项任务窗格在 OneNote 页面旁的 iFrame 中打开。
 
-5. 在文本区域中输入一些文本，然后选择**添加大纲**。 您输入的文本将添加至页面。 
+5. 在文本区域中输入一些文本，然后选择**添加边框**。 您输入的文本将添加至页面。 
 
     ![通过此演练生成的 OneNote 加载项](../images/onenote-first-add-in.png)
 

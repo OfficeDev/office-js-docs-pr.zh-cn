@@ -2,12 +2,12 @@
 title: 通过 Office 365 管理中心进行集中部署来发布 Office 加载项
 description: ''
 ms.date: 01/23/2018
-ms.openlocfilehash: 42ef569ddc868fb82730e445d4d34fd9caa94b0e
-ms.sourcegitcommit: eea7f2b1679cf9a209d35880b906e311bdf1359c
+ms.openlocfilehash: b16d38d9e4dff46257dfe04b280eab4752558a01
+ms.sourcegitcommit: bc68b4cf811b45e8b8d1cbd7c8d2867359ab671b
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/26/2018
-ms.locfileid: "21241213"
+ms.lasthandoff: 08/02/2018
+ms.locfileid: "21703894"
 ---
 # <a name="publish-office-add-ins-using-centralized-deployment-via-the-office-365-admin-center"></a>通过 Office 365 管理中心进行集中部署来发布 Office 加载项
 
@@ -69,7 +69,7 @@ Office 365 管理中心当前支持以下方案：
 
     ![Office 365 管理中心内的“选择加载项”对话框](../images/select-an-add-in.png)
 
-9. 加载项现在可用于分配。 在该加载项的页面上，其状态是“已启用”****，与以下屏幕截图中 Power BI 磁贴加载项页面所示的内容相似。 在“有权访问的人员”**** 部分中，选择“编辑”**** 可将该加载项分配给用户和/或组。
+9. 加载项现在可用于分配。 |||UNTRANSLATED_CONTENT_START|||On the page for the add-in, its status is **On**, like that shown for the Power BI Tiles add-in in the screenshot below.|||UNTRANSLATED_CONTENT_END||| 在“有权访问的人员”**** 部分中，选择“编辑”**** 可将该加载项分配给用户和/或组。
 
     ![Office 365 管理中心中的 Power BI 磁贴加载项页面](../images/power-bi-tiles.png)
 
@@ -136,6 +136,14 @@ Office 365 管理中心当前支持以下方案：
 
     ![屏幕截图显示 Office 应用程序的“Office 加载项”页的“管理托管”选项卡。 引文加载项显示在此选项卡上。](../images/office-add-ins-admin-managed.png)
     
+但是，对于 Outlook，用户可以执行以下操作：
+
+1.  在 Outlook 2016 中，选择 **主页** > **商店**。
+2.  选择加载项选项卡下的**管理托管**项目。
+3.  |||UNTRANSLATED_CONTENT_START|||Choose the add-in, and then choose **Add**.|||UNTRANSLATED_CONTENT_END|||
+
+    ![屏幕截图显示了 Outlook 应用程序的“商店”页面的“管理托管”区域。](../images/outlook-add-ins-admin-managed.png)
+
 ## <a name="see-also"></a>另请参阅
 [确定加载项的集中式部署是否适用于你的 Office 365 组织](https://support.office.com/en-us/article/Determine-if-Centralized-Deployment-of-add-ins-works-for-your-Office-365-organization-b4527d49-4073-4b43-8274-31b7a3166f92)
     

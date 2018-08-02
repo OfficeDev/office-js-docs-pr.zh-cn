@@ -192,7 +192,7 @@
     yo office
     ```
 
-    - **选择一个项目类型：** `Jquery`
+    - **选择一个项目类型：** `Office Add-in project using Jquery framework`
     - **选择一个脚本类型：** `Javascript`
     - **要如何命名加载项?:** `My Office Add-in`
     - **要支持哪一个 Office 客户端应用?:** `Powerpoint`
@@ -230,7 +230,7 @@
     </div>
     ```
 
-4. 打开文件 **src\index.js** 以指定加载项的脚本。使用以下代码替换全部内容并保存文件。
+4. 打开文件 **src\index.js**，以指定加载项脚本。 将整个内容替换为以下代码，并保存文件。
 
     ```js
     'use strict';
@@ -275,7 +275,7 @@
     })();
     ```
 
-5. |||UNTRANSLATED_CONTENT_START|||Open the file **app.css** in the root of the project to specify the custom styles for the add-in.|||UNTRANSLATED_CONTENT_END||| 将整个内容替换为以下内容，并保存文件。
+5. 打开项目根目录中的文件“app.css”****，以指定加载项自定义样式。 将整个内容替换为以下内容，并保存文件。
 
     ```css
     #content-header {

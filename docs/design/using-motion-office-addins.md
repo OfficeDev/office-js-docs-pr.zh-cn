@@ -48,15 +48,13 @@ Office 的重点是工作效率，因此 Office 动画语言支持帮助客户�
 
 |允许事项|禁止事项|
 |:-----|:-----|
-| 应使用[建议的动作持续时间](https://developer.microsoft.com/en-us/fabric#/styles/animations)。 | 不得使用夸张的动画。 避免打造会分散客户注意力的花哨体验。
-| 应遵循 [Microsoft 动作指南](https://microsoft.sharepoint.com/teams/BrandCentral/Pages/The-Microsoft-brand-Core-elements-Motion.aspx#topic_0)中建议的缓和曲线。  |不得用不连贯的方式移动元素。 避免占先、退回、橡皮筋或其他模拟自然世界物理学的效果。|
+| 应使用[建议的动作持续时间](https://developer.microsoft.com/fabric#/styles/animations)。 | 不得使用夸张的动画。 避免打造会分散客户注意力的花哨体验。
+| 遵循[建议的缓和曲线](https://docs.microsoft.com/windows/uwp/design/motion/timing-and-easing#easing-in-fluent-motion)。  |不得用不连贯的方式移动元素。 避免占先、退回、橡皮筋或其他模拟自然世界物理学的效果。|
 
 ![左 gif 显示使用缓和淡化效果加载磁贴，右 gif 显示使用退回效果加载磁贴](../images/add-in-motion-character.gif)
 
 ## <a name="see-also"></a>另请参阅
 
-* 
-  [Fabric 动画指南](https://developer.microsoft.com/en-us/fabric#/styles/animations)
-* 
-  [通用 Windows 平台应用动作](https://docs.microsoft.com/zh-cn/windows/uwp/design/motion/)
+* [Fabric 动画指南](https://developer.microsoft.com/fabric#/styles/animations)
+* [通用 Windows 平台应用动作](https://docs.microsoft.com/windows/uwp/design/motion)
 

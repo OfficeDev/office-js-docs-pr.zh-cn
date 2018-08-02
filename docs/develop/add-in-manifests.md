@@ -2,12 +2,12 @@
 title: Office 外接程序 XML 清单
 description: ''
 ms.date: 02/09/2018
-ms.openlocfilehash: 24c212335fa50feb4d13b6069a24cacbd9849715
-ms.sourcegitcommit: c72c35e8389c47a795afbac1b2bcf98c8e216d82
+ms.openlocfilehash: 71c77e190d5d2d6cc67ada671b9efe3168b7f7b5
+ms.sourcegitcommit: bc68b4cf811b45e8b8d1cbd7c8d2867359ab671b
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/23/2018
-ms.locfileid: "19437617"
+ms.lasthandoff: 08/02/2018
+ms.locfileid: "21703817"
 ---
 # <a name="office-add-ins-xml-manifest"></a>Office 加载项 XML 清单
 
@@ -39,7 +39,7 @@ Office 外接程序的 XML 清单文件描述，当最终用户安装外接程�
 | 元素                                                                                      | 内容 | 任务窗格 | Outlook |
 | :------------------------------------------------------------------------------------------- | :-----: | :-------: | :-----: |
 | [OfficeApp][]                                                                                |    X    |     X     |    X    |
-| [Id][]                                                                                       |    X    |     X     |    X    |
+| [ID][]                                                                                       |    X    |     X     |    X    |
 | [版本][]                                                                                  |    X    |     X     |    X    |
 | [ProviderName][]                                                                             |    X    |     X     |    X    |
 | [DefaultLocale][]                                                                            |    X    |     X     |    X    |
@@ -55,7 +55,7 @@ Office 外接程序的 XML 清单文件描述，当最终用户安装外接程�
 | [Rule (RuleCollection)][]<br/>[Rule (MailApp)][]                                             |         |           |    X    |
 | [Requirements (MailApp)*][]                                                                  |         |           |    X    |
 | [Set*][]<br/>[Sets (MailAppRequirements)*][]                                                 |         |           |    X    |
-| [Form*][]<br/>[formsettings*][]                                                              |         |           |    X    |
+| [Form*][]<br/>[FormSettings*][]                                                              |         |           |    X    |
 | [Sets (Requirements)*][]                                                                     |    X    |     X     |         |
 | [Hosts*][]                                                                                   |    X    |     X     |         |
 
@@ -64,12 +64,12 @@ _\*Office 加载项清单架构版本 1.1 中新增_
 <!-- Links for above table -->
 
 [officeapp]: http://msdn.microsoft.com/en-us/library/68f1cada-66f8-4341-45f5-14e0634c24fb%28Office.15%29.aspx
-[id]: http://msdn.microsoft.com/en-us/library/67c4344a-935c-09d6-1282-55ee61a2838b%28Office.15%29.aspx
-[version]: http://msdn.microsoft.com/en-us/library/6a8bbaa5-ee8c-6824-4aba-cb1a804269f6%28Office.15%29.aspx
+[ID]: http://msdn.microsoft.com/en-us/library/67c4344a-935c-09d6-1282-55ee61a2838b%28Office.15%29.aspx
+[版本]: http://msdn.microsoft.com/en-us/library/6a8bbaa5-ee8c-6824-4aba-cb1a804269f6%28Office.15%29.aspx
 [providername]: http://msdn.microsoft.com/en-us/library/0062693a-fafa-ea2d-051a-75dac0f6c323%28Office.15%29.aspx
 [defaultlocale]: http://msdn.microsoft.com/en-us/library/04796a3a-3afa-dc85-db66-4677560c185c%28Office.15%29.aspx
 [displayname]: http://msdn.microsoft.com/en-us/library/529159ca-53bf-efcf-c245-e572dab0ef57%28Office.15%29.aspx
-[description]: http://msdn.microsoft.com/en-us/library/bcce6bad-23d0-7631-7d8c-1064b8453b5a%28Office.15%29.aspx
+[说明]: http://msdn.microsoft.com/en-us/library/bcce6bad-23d0-7631-7d8c-1064b8453b5a%28Office.15%29.aspx
 [iconurl]: http://msdn.microsoft.com/library/c7dac2d4-4fda-6fc7-3774-49f02b2d3e1e%28Office.15%29.aspx
 [highresolutioniconurl]: http://msdn.microsoft.com/library/ff7b2647-ec8e-70dc-4e4a-e1a1377ff3f2%28Office.15%29.aspx
 [defaultsettings (contentapp)]: http://msdn.microsoft.com/en-us/library/f7edc689-551f-1a17-ea81-ffd58f534557%28Office.15%29.aspx
@@ -107,11 +107,14 @@ _\*Office 加载项清单架构版本 1.1 中新增_
 
 ## <a name="specify-domains-you-want-to-open-in-the-add-in-window"></a>指定要在加载项窗口中打开的域
 
-默认情况下，如果外接程序尝试转到托管起始页（如清单文件的 [SourceLocation](https://dev.office.com/reference/add-ins/manifest/sourcelocation) 元素中所指定的）的域之外的域中的 URL，则该 URL 将在 Office 主机应用程序的外接程序窗格外的新浏览器窗口中打开。此默认行为将防止用户在外接程序窗格从嵌入的 **iframe** 元素中进行意外页面导航。
+在 Office Online 中运行时，可以将任务窗格导航到任何 URL。 但是，在桌面平台中，如果你的外接程序尝试转到托管起始页（如清单文件的 [SourceLocation](https://dev.office.com/reference/add-ins/manifest/sourcelocation) 元素中所指定的）的域之外的域中的 URL，则该 URL 将在 Office 主机应用程序的外接程序窗格外的新浏览器窗口中打开。
 
-若要重写此操作，请在清单文件的 [AppDomains](https://dev.office.com/reference/add-ins/manifest/appdomains) 元素中指定的域列表中指定要在外接程序窗口中打开的每个域。如果外接程序尝试转至在列表之外的域的 URL，则该 URL 将在新的浏览器窗口中（外接程序窗格之外）打开。
+若要重写此（桌面 Office）操作，请在清单文件的 [AppDomains](https://dev.office.com/reference/add-ins/manifest/appdomains) 元素中指定的域列表中指定要在外接程序窗口中打开的每个域。 如果外接程序尝试转到列表中的域中的 URL，则其将在桌面 Office 和 Office Online 的任务窗格中打开。 如果其尝试转到列表之外的 URL，则在桌面 Office 中，该 URL 将在新的浏览器窗口中（外接程序窗格之外）打开。
 
-下面的 XML 清单示例在 **SourceLocation** 元素中指定的 `https://www.contoso.com` 域中托管加载项主页。它还在 **AppDomains** 元素列表内的 [AppDomain](http://msdn.microsoft.com/en-us/library/2a0353ec-5e09-6fbf-1636-4bb5dcebb9bf%28Office.15%29.aspx) 元素中指定 `https://www.northwindtraders.com` 域。如果加载项转到 www.northwindtraders.com 域中的页面，此页面就会在加载项窗格中打开。
+> [!NOTE]
+> 这个操作仅适用于外接程序的根窗格。 如果外接程序页面中嵌入了 iframe，则 iframe 可以定向到任何 URL，不管其是否列在 **AppDomains**，甚至在桌面 Office。
+
+下面的 XML 清单示例在 `https://www.contoso.com` 域中托管其外接程序主页，该域如 **SourceLocation** 元素中指定的那样。 其还指定 [AppDomains](https://dev.office.com/reference/add-ins/manifest/appdomain) 元素列表内的 **AppDomain** 元素中的 `https://www.northwindtraders.com` 域。 如果外接程序转到 www.northwindtraders.com 域中的页面，则该页面将在外接程序窗格中打开，甚至在 Office 桌面中打开。
 
 ```XML
 <?xml version="1.0" encoding="UTF-8"?>

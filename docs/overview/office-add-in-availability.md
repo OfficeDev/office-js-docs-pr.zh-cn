@@ -1,9 +1,14 @@
 ---
 title: Office 加载项主机和平台可用性
 description: Excel、Word、Outlook、PowerPoint 和 OneNote 支持的要求集。
-ms.date: 3/20/2018
+ms.date: 07/31/2018
+ms.openlocfilehash: 084029c0a5b70b73eaa0b3fcc180f4a813fb8b72
+ms.sourcegitcommit: bc68b4cf811b45e8b8d1cbd7c8d2867359ab671b
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 08/02/2018
+ms.locfileid: "21703908"
 ---
-
 # <a name="office-add-in-host-and-platform-availability"></a>Office 加载项主机和平台可用性
 
 若要按预期运行，Office 加载项可能会依赖特定的 Office 主机、要求集、API 成员或 API 版本。 下表列出了每个 Office 应用目前支持的可用平台、扩展点、API 要求集和通用 API 要求集。 
@@ -33,6 +38,9 @@ ms.date: 3/20/2018
         - <a href="https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets">ExcelApi 1.2</a><br>
         - <a href="https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets">ExcelApi 1.3</a><br>
         - <a href="https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets">ExcelApi 1.4</a><br>
+        - <a href="https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets">ExcelApi 1.5</a><br>
+        - <a href="https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets">ExcelApi 1.6</a><br>
+        - <a href="https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets">ExcelApi 1.7</a><br>
         - <a href="https://dev.office.com/reference/add-ins/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a></td>
     <td>
         - BindingEvents<br>
@@ -43,7 +51,7 @@ ms.date: 3/20/2018
         - TableCoercion<br>
         - TextBindings<br>
         - CompressedFile<br>
-        - Settings<br>
+        - 设置<br>
         - TextCoercion</td>
   </tr>
   <tr>
@@ -60,7 +68,7 @@ ms.date: 3/20/2018
         - TableBindings<br>
         - TableCoercion<br>
         - TextBindings<br>
-        - Settings<br>
+        - 设置<br>
         - TextCoercion</td>
   </tr>
   <tr>
@@ -72,6 +80,9 @@ ms.date: 3/20/2018
         - <a href="https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets">ExcelApi 1.2</a><br>
         - <a href="https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets">ExcelApi 1.3</a><br>
         - <a href="https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets">ExcelApi 1.4</a><br>
+        - <a href="https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets">ExcelApi 1.5</a><br>
+        - <a href="https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets">ExcelApi 1.6</a><br>
+        - <a href="https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets">ExcelApi 1.7</a><br>
         - <a href="https://dev.office.com/reference/add-ins/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a></td>
     <td>- BindingEvents<br>
         - DocumentEvents<br>
@@ -80,7 +91,7 @@ ms.date: 3/20/2018
         - TableBindings<br>
         - TableCoercion<br>
         - TextBindings<br>
-        - Settings<br>
+        - 设置<br>
         - TextCoercion</td> 
   </tr>
   <tr>
@@ -90,6 +101,10 @@ ms.date: 3/20/2018
     <td>- <a href="https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets">ExcelApi 1.1</a><br>
         - <a href="https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets">ExcelApi 1.2</a><br>
         - <a href="https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets">ExcelApi 1.3</a><br>
+        - <a href="https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets">ExcelApi 1.4</a><br>
+        - <a href="https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets">ExcelApi 1.5</a><br>
+        - <a href="https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets">ExcelApi 1.6</a><br>
+        - <a href="https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets">ExcelApi 1.7</a><br>
         - <a href="https://dev.office.com/reference/add-ins/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a></td>
     <td>- BindingEvents<br>
         - DocumentEvents<br>
@@ -98,7 +113,7 @@ ms.date: 3/20/2018
         - TableBindings<br>
         - TableCoercion<br>
         - TextBindings<br>
-        - Settings<br>
+        - 设置<br>
         - TextCoercion</td>
   </tr>
   <tr>
@@ -109,6 +124,10 @@ ms.date: 3/20/2018
     <td>- <a href="https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets">ExcelApi 1.1</a><br>
         - <a href="https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets">ExcelApi 1.2</a><br>
         - <a href="https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets">ExcelApi 1.3</a><br>
+        - <a href="https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets">ExcelApi 1.4</a><br>
+        - <a href="https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets">ExcelApi 1.5</a><br>
+        - <a href="https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets">ExcelApi 1.6</a><br>
+        - <a href="https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets">ExcelApi 1.7</a><br>
         - <a href="https://dev.office.com/reference/add-ins/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a></td>
     <td>- BindingEvents<br>
         - DocumentEvents<br>
@@ -141,8 +160,9 @@ ms.date: 3/20/2018
       - <a href="https://dev.office.com/reference/add-ins/outlook/1.2/index?product=outlook&version=v1.2">Mailbox 1.2</a><br>
       - <a href="https://dev.office.com/reference/add-ins/outlook/1.3/index?product=outlook&version=v1.3">Mailbox 1.3</a><br>
       - <a href="https://dev.office.com/reference/add-ins/outlook/1.4/index?product=outlook&version=v1.4">Mailbox 1.4</a><br>
-      - <a href="https://dev.office.com/reference/add-ins/outlook/1.5/index?product=outlook&version=v1.5">Mailbox 1.5</a></td>
-    <td>暂无</td>
+      - <a href="https://dev.office.com/reference/add-ins/outlook/1.5/index?product=outlook&version=v1.5">Mailbox 1.5</a><br>
+      - <a href="https://dev.office.com/reference/add-ins/outlook/1.6/index?product=outlook&version=v1.6">Mailbox 1.6</a></td>
+    <td>不适用</td>
   </tr>
   <tr>
     <td>Office 2013 for Windows</td>
@@ -153,7 +173,7 @@ ms.date: 3/20/2018
       - <a href="https://dev.office.com/reference/add-ins/outlook/1.2/index?product=outlook&version=v1.2">Mailbox 1.2</a><br>
       - <a href="https://dev.office.com/reference/add-ins/outlook/1.3/index?product=outlook&version=v1.3">Mailbox 1.3</a><br>
       - <a href="https://dev.office.com/reference/add-ins/outlook/1.4/index?product=outlook&version=v1.4">Mailbox 1.4</a></td>
-    <td>暂无</td>
+    <td>不适用</td>
   </tr>
   <tr>
     <td>Office 2016 for Windows</td>
@@ -167,7 +187,7 @@ ms.date: 3/20/2018
       - <a href="https://dev.office.com/reference/add-ins/outlook/1.4/index?product=outlook&version=v1.4">Mailbox 1.4</a><br>
       - <a href="https://dev.office.com/reference/add-ins/outlook/1.5/index?product=outlook&version=v1.5">Mailbox 1.5</a><br>
       - <a href="https://dev.office.com/reference/add-ins/outlook/1.6/index?product=outlook&version=v1.6">Mailbox 1.6</a></td>
-    <td>暂无</td> 
+    <td>不适用</td> 
   </tr>
   <tr>
     <td>Office for iOS</td>
@@ -178,7 +198,7 @@ ms.date: 3/20/2018
       - <a href="https://dev.office.com/reference/add-ins/outlook/1.3/index?product=outlook&version=v1.3">Mailbox 1.3</a><br>
       - <a href="https://dev.office.com/reference/add-ins/outlook/1.4/index?product=outlook&version=v1.4">Mailbox 1.4</a><br>
       - <a href="https://dev.office.com/reference/add-ins/outlook/1.5/index?product=outlook&version=v1.5">Mailbox 1.5</a></td>    
-    <td>暂无</td>
+    <td>不适用</td>
   </tr>
   <tr>
     <td>Office 2016 for Mac</td>
@@ -189,8 +209,9 @@ ms.date: 3/20/2018
       - <a href="https://dev.office.com/reference/add-ins/outlook/1.2/index?product=outlook&version=v1.2">Mailbox 1.2</a><br>
       - <a href="https://dev.office.com/reference/add-ins/outlook/1.3/index?product=outlook&version=v1.3">Mailbox 1.3</a><br>
       - <a href="https://dev.office.com/reference/add-ins/outlook/1.4/index?product=outlook&version=v1.4">Mailbox 1.4</a><br>
-      - <a href="https://dev.office.com/reference/add-ins/outlook/1.5/index?product=outlook&version=v1.5">Mailbox 1.5</a></td>
-    <td>暂无</td>
+      - <a href="https://dev.office.com/reference/add-ins/outlook/1.5/index?product=outlook&version=v1.5">Mailbox 1.5</a><br>
+      - <a href="https://dev.office.com/reference/add-ins/outlook/1.6/index?product=outlook&version=v1.6">Mailbox 1.6</a></td>
+    <td>不适用</td>
   </tr>
   <tr>
     <td>Office for Android</td>
@@ -199,8 +220,9 @@ ms.date: 3/20/2018
     <td> - <a href="https://dev.office.com/reference/add-ins/outlook/1.1/index?product=outlook&version=v1.1">Mailbox 1.1</a><br>
       - <a href="https://dev.office.com/reference/add-ins/outlook/1.2/index?product=outlook&version=v1.2">Mailbox 1.2</a><br>
       - <a href="https://dev.office.com/reference/add-ins/outlook/1.3/index?product=outlook&version=v1.3">Mailbox 1.3</a><br>
-      - <a href="https://dev.office.com/reference/add-ins/outlook/1.4/index?product=outlook&version=v1.4">Mailbox 1.4</a></td>
-    <td>暂无</td>
+      - <a href="https://dev.office.com/reference/add-ins/outlook/1.4/index?product=outlook&version=v1.4">Mailbox 1.4</a><br>
+      - <a href="https://dev.office.com/reference/add-ins/outlook/1.5/index?product=outlook&version=v1.5">Mailbox 1.5</a></td>
+    <td>不适用</td>
   </tr>
 </table>
 
@@ -234,7 +256,7 @@ ms.date: 3/20/2018
          - DocumentEvents<br>
          - TextFile<br>
          - ImageCoercion<br>
-         - Settings<br>
+         - 设置<br>
          - TextCoercion</td>
   </tr>
   <tr>
@@ -245,7 +267,7 @@ ms.date: 3/20/2018
          - CompressedFile<br>
          - CustomXmlPart<br>
          - DocumentEvents<br>
-         - File<br>
+         - 文件<br>
          - HtmlCoercion<br>
          - ImageCoercion<br>
          - OoxmlCoercion<br>
@@ -253,7 +275,7 @@ ms.date: 3/20/2018
          - TableCoercion<br>
          - TextBindings<br>
          - TextFile<br>
-         - Settings<br>
+         - 设置<br>
          - TextCoercion<br>
          - MatrixCoercion<br>
          - Matrix Bindings</td>
@@ -270,7 +292,7 @@ ms.date: 3/20/2018
          - CompressedFile<br>
          - CustomXmlPart<br>
          - DocumentEvents<br>
-         - File<br>
+         - 文件<br>
          - HtmlCoercion<br>
          - ImageCoercion<br>
          - OoxmlCoercion<br>
@@ -278,7 +300,7 @@ ms.date: 3/20/2018
          - TableCoercion<br>
          - TextBindings<br>
          - TextFile<br>
-         - Settings<br>
+         - 设置<br>
          - TextCoercion<br>
          - MatrixCoercion<br>
          - Matrix Bindings </td> 
@@ -295,7 +317,7 @@ ms.date: 3/20/2018
          - CompressedFile<br>
          - CustomXmlPart<br>
          - DocumentEvents<br>
-         - File<br>
+         - 文件<br>
          - HtmlCoercion<br>
          - ImageCoercion<br>
          - OoxmlCoercion<br>
@@ -303,7 +325,7 @@ ms.date: 3/20/2018
          - TableCoercion<br>
          - TextBindings<br>
          - TextFile<br>
-         - Settings<br>
+         - 设置<br>
          - TextCoercion<br>
          - MatrixCoercion<br>
          - Matrix Bindings </td> 
@@ -321,7 +343,7 @@ ms.date: 3/20/2018
          - CompressedFile<br>
          - CustomXmlPart<br>
          - DocumentEvents<br>
-         - File<br>
+         - 文件<br>
          - HtmlCoercion<br>
          - ImageCoercion<br>
          - OoxmlCoercion<br>
@@ -329,7 +351,7 @@ ms.date: 3/20/2018
          - TableCoercion<br>
          - TextBindings<br>
          - TextFile<br>
-         - Settings<br>
+         - 设置<br>
          - TextCoercion<br>
          - MatrixCoercion<br>
          - Matrix Bindings </td> 
@@ -356,9 +378,9 @@ ms.date: 3/20/2018
     <td> - <a href="https://dev.office.com/reference/add-ins/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a></td>
     <td> - ActiveView<br>
          - CompressedFile<br>
-         - File<br>
-         - Selection<br>
-         - Settings<br>
+         - 文件<br>
+         - 选择<br>
+         - 设置<br>
          - TextCoercion<br>
          - ImageCoercion</td>
   </tr>
@@ -372,9 +394,9 @@ ms.date: 3/20/2018
     <td> - ActiveView<br>
          - CompressedFile<br>
          - DocumentEvents<br>
-         - File<br>
-         - Selection<br>
-         - Settings<br>
+         - 文件<br>
+         - 选择<br>
+         - 设置<br>
          - TextCoercion</td>
   </tr>
   <tr>
@@ -386,9 +408,9 @@ ms.date: 3/20/2018
     <td> - ActiveView<br>
          - CompressedFile<br>
          - DocumentEvents<br>
-         - File<br>
-         - Selection<br>
-         - Settings<br>
+         - 文件<br>
+         - 选择<br>
+         - 设置<br>
          - TextCoercion<br>
          - ImageCoercion</td>
   </tr>
@@ -400,9 +422,9 @@ ms.date: 3/20/2018
      <td> - ActiveView<br>
          - CompressedFile<br>
          - DocumentEvents<br>
-         - File<br>
-         - Selection<br>
-         - Settings<br>
+         - 文件<br>
+         - 选择<br>
+         - 设置<br>
          - TextCoercion<br>
          - ImageCoercion</td>
   </tr>
@@ -415,9 +437,9 @@ ms.date: 3/20/2018
     <td> - ActiveView<br>
          - CompressedFile<br>
          - DocumentEvents<br>
-         - File<br>
-         - Selection<br>
-         - Settings<br>
+         - 文件<br>
+         - 选择<br>
+         - 设置<br>
          - TextCoercion<br>
          - ImageCoercion</td>
   </tr>
@@ -443,40 +465,14 @@ ms.date: 3/20/2018
     <td> - <a href="https://dev.office.com/reference/add-ins/requirement-sets/onenote-api-requirement-sets">OneNoteApi 1.1</a><br>
          - <a href="https://dev.office.com/reference/add-ins/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a></td>
     <td> - DocumentEvents<br>
-         - Settings<br>
+         - 设置<br>
          - TextCoercion<br>
          - HtmlCoercion<br>
          - ImageCoercion</td>
   </tr>
-  <tr>
-    <td>Office 2013 for Windows</td>
-    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;* </td>
-    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;* </td>
-    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;* </td>
-  </tr> 
-  <tr>
-    <td>Office 2016 for Windows</td>
-    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;* </td>
-    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;* </td>
-    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;* </td> 
-  </tr>
-  <tr>
-    <td>Office for iOS</td>
-    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;* </td>
-    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;* </td>
-    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;* </td>
-  </tr>
-  <tr>
-    <td>Office 2016 for Mac</td>
-    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;* </td>
-    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;* </td>
-    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;* </td>
-  </tr>
 </table>
 
 <br/>
-
-\* = 我们正在完善。 
 
 ## <a name="see-also"></a>另请参阅
 

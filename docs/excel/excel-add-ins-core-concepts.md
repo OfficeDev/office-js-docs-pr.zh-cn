@@ -2,12 +2,12 @@
 title: Excel JavaScript API 核心概念
 description: ''
 ms.date: 12/04/2017
-ms.openlocfilehash: 1582268a3bdac2b7fe63c4b0a48cf1a19f85bd31
-ms.sourcegitcommit: c72c35e8389c47a795afbac1b2bcf98c8e216d82
+ms.openlocfilehash: fb22ae41718c459366a628c8f06531cc6978a178
+ms.sourcegitcommit: bc68b4cf811b45e8b8d1cbd7c8d2867359ab671b
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/23/2018
-ms.locfileid: "19437484"
+ms.lasthandoff: 08/02/2018
+ms.locfileid: "21703838"
 ---
 # <a name="excel-javascript-api-core-concepts"></a>Excel JavaScript API 核心概念
  
@@ -55,7 +55,7 @@ selectedRange.format.autofitColumns();
  
 ### <a name="sync"></a>sync()
  
-在请求上下文中调用 **sync()** 方法将在 Excel 文档中同步代理对象与对象之间的状态。 **Sync()** 方法运行在请求上下文中加入队列的所有命令，并检索应该在代理对象上加载的任何属性的值。 **sync()** 方法以异步方式执行并返回一个 [promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)（在 **sync()** 方法完成后解析）。
+在请求上下文中调用 **sync()** 方法将在 Excel 文档中同步代理对象与对象之间的状态。 **Sync()** 方法运行在请求上下文中加入队列的所有命令，并检索应该在代理对象上加载的任何属性的值。 **sync()** 方法以异步方式执行并返回 [promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)（在 **sync()** 方法完成后解析）。
  
 下面的示例演示了一个批处理函数，它定义本地 JavaScript 代理对象 (**selectedRange**)，加载该对象的属性，然后使用 JavaScript Promises 模式调用 **context.sync()** 以同步 Excel 文档中代理对象与对象之间的状态。
  
@@ -77,7 +77,7 @@ Excel.run(function (context) {
  
 在前面的示例中设置了 **selectedRange**，并在调用 **context.sync()** 时加载其 **address** 属性。
  
-由于 **sync()** 是一个返回 promise 的异步操作，因此，（在 JavaScript 中）应始终**返回** promise。 这样做可确保在脚本继续运行之前完成 **sync()** 操作。 有关使用 **sync()** 优化性能的更多信息，见 [Excel JavaScript API 性能优化](https://dev.office.com/reference/add-ins/excel/performance.md)。
+由于 **sync()** 是一个返回 promise 的异步操作，因此，（在 JavaScript 中）应始终**返回** promise。 这样做可确保在脚本继续运行之前完成 **sync()** 操作。 有关使用 **sync()** 优化性能的更多信息，见 [Excel JavaScript API 性能优化](https://docs.microsoft.com/office/dev/add-ins/excel/performance)。
  
 ### <a name="load"></a>load()
  
@@ -115,9 +115,9 @@ Excel.run(function (context) {
 });
 ```
  
-在前面的示例中，由于 `format/font` 在调用 **myRange.load()** 时未指定，因此无法读取 `format.font.color` 属性。
+在前面的示例中，由于在调用 **myRange.load()** 时未指定 `format/font`，因此无法读取 `format.font.color` 属性。
 
-为了优化性能，您应该明确指定要在使用 **load()** 方法时加载某个对象的属性和关系，如下 [Excel JavaScript API性能优化](performance.md)所述。 有关 **load()** 方法的详细信息，请参阅 [Excel JavaScript API 高级概念](excel-add-ins-advanced-concepts.md)。
+为了优化性能，您应该明确指定要在使用 **load()** 方法时加载某个对象的属性和关系，如下 [Excel JavaScript API 性能优化](performance.md)所述。 有关 **load()** 方法的详细信息，请参阅 [Excel JavaScript API 高级概念](excel-add-ins-advanced-concepts.md)。
 
 ## <a name="null-or-blank-property-values"></a>null 或空属性值
  
@@ -257,6 +257,6 @@ Excel.run(function (context) {
 ## <a name="see-also"></a>另请参阅
  
 * [开始使用 Excel 加载项](excel-add-ins-get-started-overview.md)
-* [Excel 外接程序代码示例](http://dev.office.com/code-samples#?filters=excel,office%20add-ins)
-* [Excel JavaScript API性能优化](https://dev.office.com/reference/add-ins/excel/performance.md)
-* [Excel JavaScript API 参考](https://dev.office.com/reference/add-ins/excel/excel-add-ins-reference-overview)
+* [Excel 加载项代码示例](https://developer.microsoft.com/office/gallery/?filterBy=Samples)
+* [Excel JavaScript API性能优化](https://docs.microsoft.com/office/dev/add-ins/excel/performance)
+* [Excel JavaScript API 引用](https://dev.office.com/reference/add-ins/excel/excel-add-ins-reference-overview)

@@ -28,10 +28,10 @@
     yo office
     ```
 
-    - **选择一个项目类型：** `Jquery`
+    - **选择一个项目类型：** `Office Add-in project using Jquery framework`
     - **选择一个脚本类型：** `Javascript`
-    - **要将你的外接程序命名为什么?:** `My Office Add-in`
-    - **要支持哪一个 Office 客户端应用程序?:** `Project`
+    - **要如何命名加载项?:** `My Office Add-in`
+    - **要支持哪一个 Office 客户端应用?:** `Project`
 
     ![有关 Yeoman 生成器提示和回答的屏幕截图](../images/yo-office-project-jquery.png)
     

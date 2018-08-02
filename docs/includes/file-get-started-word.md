@@ -248,10 +248,10 @@ _适用于：Word 2016、Word for iPad、Word for Mac_
     yo office
     ```
 
-    - **选择一个项目类型：** `Jquery`
+    - **选择一个项目类型：** `Office Add-in project using Jquery framework`
     - **选择一个脚本类型：** `Javascript`
-    - **要将你的外接程序命名为什么?:** `My Office Add-in`
-    - **要支持哪一个 Office 客户端应用程序?:** `Word`
+    - **要如何命名加载项?:** `My Office Add-in`
+    - **要支持哪一个 Office 客户端应用?:** `Word`
 
     ![有关 Yeoman 生成器提示和回答的屏幕截图](../images/yo-office-word-jquery.png)
     
@@ -471,7 +471,7 @@ _适用于：Word 2016、Word for iPad、Word for Mac_
 
 ## <a name="next-steps"></a>后续步骤
 
-恭喜！已使用 jQuery 成功创建 Word 外接程序！ 接下来，请详细了解 Word 外接程序的功能，并跟着 Word 外接程序教程一起操作，生成更复杂的外接程序。
+恭喜！已使用 jQuery 成功创建 Word 加载项！ 接下来，请详细了解 Word 加载项的功能，并跟着 Word 加载项教程一起操作，生成更复杂的加载项。
 
 > [!div class="nextstepaction"]
 > [Word 外接程序教程](../tutorials/word-tutorial.yml)

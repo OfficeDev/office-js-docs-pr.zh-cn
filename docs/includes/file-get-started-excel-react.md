@@ -46,7 +46,7 @@ create-react-app my-addin
     yo office 
     ```
 
-    - **选择一个项目类型：** `Manifest`
+    - **选择一个项目类型：** `Office Add-in containing the manifest only`
     - **要将你的外接程序命名为什么?:** `My Office Add-in`
     - **要支持哪一个 Office 客户端应用程序?:** `Excel`
 
