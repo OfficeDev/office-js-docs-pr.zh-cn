@@ -2,27 +2,25 @@
 title: 旁加载 Office 加载项以供测试
 description: ''
 ms.date: 01/25/2018
-ms.openlocfilehash: 42af5d0665fc6cb1135103789adcb4414c4763ff
-ms.sourcegitcommit: bc68b4cf811b45e8b8d1cbd7c8d2867359ab671b
+ms.openlocfilehash: 1bca17808deaa5e7f0c65669a87abe1b38e5393f
+ms.sourcegitcommit: 0d4d78e275249f0d4b6a6cf807b42b79890c3023
 ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 08/02/2018
-ms.locfileid: "21703803"
+ms.locfileid: "21773578"
 ---
 # <a name="sideload-office-add-ins-for-testing"></a>旁加载 Office 加载项以供测试
 
-您可以通过以下方法之一安装 Office 加载项，以便在 Windows 上运行的 Office 客户端中进行测试：
+您可以通过将清单发布到网络文件共享来安装 Office 加载项，以便在 Windows 上运行的 Office 客户端中进行测试（说明如下）。
 
-- 使用共享文件夹目录将清单发布到网络文件共享位置（说明见下文）
-- [从加载项项目文件夹根目录运行 "**npm run sideload**" 命令。](sideload-office-addin-using-sideload-command.md)
+> [!NOTE]
+> 如果您的加载项项目是使用 [**yo office** 工具](https://github.com/OfficeDev/generator-office)创建的，那么有一种替代方法可以为您提供旁加载功能。 有关详情，请参阅 [使用 sideload 命令旁加载 Office 加载项](sideload-office-addin-using-sideload-command.md)。
 
-    > [!NOTE]
-    > "npm run sideload" 方法仅适用于 Excel、Word 和 PowerPoint 加载项。
-
-如果不在 Windows 上测试 Word、Excel 或 PowerPoint 加载项，则请参阅以下主题之一来旁加载加载项：
+本文仅适用于在 Windows 上测试 Word、Excel 或 PowerPoint 加载项。 如果要在其他平台上进行测试或想要测试 Outlook 加载项，请参阅以下主题之一来旁加载加载项：
 
 - [在 Office Online 中旁加载 Office 外接程序进行测试](sideload-office-add-ins-for-testing.md)
 - [在 iPad 和 Mac 上旁加载 Office 加载项以供测试](sideload-an-office-add-in-on-ipad-and-mac.md)
+- [旁加载 Outlook 加载项以供测试](../../../../outlook/add-insSideload Outlook Add-ins for testing)
 
 下面的视频逐步展示了如何在 Office 桌面或 Office Online 上使用共享文件夹目录旁加载加载项。  
 
