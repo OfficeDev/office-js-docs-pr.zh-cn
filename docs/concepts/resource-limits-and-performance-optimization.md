@@ -2,12 +2,12 @@
 title: Office 加载项的资源限制和性能优化
 description: ''
 ms.date: 01/23/2018
-ms.openlocfilehash: 1f352cfe07b114a7c2622e68a0bf41fb5878d982
-ms.sourcegitcommit: c72c35e8389c47a795afbac1b2bcf98c8e216d82
+ms.openlocfilehash: f5f24faf337a40caf7245d45052208ef6f46af1a
+ms.sourcegitcommit: bc68b4cf811b45e8b8d1cbd7c8d2867359ab671b
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/23/2018
-ms.locfileid: "19437694"
+ms.lasthandoff: 08/02/2018
+ms.locfileid: "21703824"
 ---
 # <a name="resource-limits-and-performance-optimization-for-office-add-ins"></a>Office 加载项的资源限制和性能优化
 
@@ -46,11 +46,11 @@ ms.locfileid: "19437694"
 
 - **正则表达式响应时间** - Outlook 计算 Outlook 外接程序清单中的所有正则表达式的默认阈值为 1,000 毫秒。超过该阈值会导致 Outlook 稍后重新尝试计算。
 
-    通过使用 Windows 注册表中的组策略或应用程序特定设置，管理员可以在 **OutlookActivationAlertThreshold** 设置中调整 1,000 毫秒的默认阈值 。有关详细信息，请参阅[覆盖 Office 外接程序性能的资源使用情况设置](http://msdn.microsoft.com/library/da14ec8c-5075-4035-a951-fc3c2b15c04b%28Office.15%29.aspx)。
+    通过使用 Windows 注册表中的组策略或应用程序特定设置，管理员可以在 **OutlookActivationAlertThreshold** 设置中调整此 1000 毫秒的默认阈值。
 
 - **正则表达式重新计算** - Outlook 重新计算清单中的所有正则表达式的默认限制为三次。如果三次计算均因超过适用阈值（默认值为 1,000 毫秒或 **OutlookActivationAlertThreshold** 指定的值，如果 Windows 注册表中存在该设置）而失败，则 Outlook 将禁用该 Outlook 外接程序。Exchange 管理中心会显示禁用状态，该外接程序被禁止在 Outlook 富客户端、Outlook Web App 和适用于设备的 OWA 中使用。
 
-    通过使用 Windows 注册表中的组策略或应用程序特定设置，管理员可以在 **OutlookActivationManagerRetryLimit** 设置中调整这一重试评估次数。有关详细信息，请参阅[覆盖 Office  外接程序性能的资源使用情况设置](http://msdn.microsoft.com/library/da14ec8c-5075-4035-a951-fc3c2b15c04b%28Office.15%29.aspx)。
+    通过使用 Windows 注册表中的组策略或应用程序特定设置，管理员可以调整该时间数，以在 **OutlookActivationManagerRetryLimit** 设置中重试该评估。
 
 ### <a name="task-pane-and-content-add-ins"></a>任务窗格和内容外接程序
     
@@ -69,8 +69,8 @@ Office 提供了遥测日志，以保留本地计算机上运行的 Office 解�
 
 |**日期/时间**|**事件 ID**|**严重性**|**标题**|**文件**|**ID**|**应用程序**|
 |:-----|:-----|:-----|:-----|:-----|:-----|:-----|
-|10/8/2012 5:57:10 PM|7||外接程序清单已成功下载|Who's Who|69cc567c-6737-4c49-88dd-123334943a22|Outlook|
-|10/8/2012 5:57:01 PM|7||外接程序清单已成功下载|LinkedIn|333bf46d-7dad-4f2b-8cf4-c19ddc78b723|Outlook|
+|2012 年 10 月 8 日下午 5:57:10|7||外接程序清单已成功下载|名人录|69cc567c-6737-4c49-88dd-123334943a22|Outlook|
+|2012 年 10 月 8 日下午 5:57:01|7||外接程序清单已成功下载|领英|333bf46d-7dad-4f2b-8cf4-c19ddc78b723|Outlook|
 
 下表列出了遥测日志通常跟踪的 Office 外接程序的事件。
 
