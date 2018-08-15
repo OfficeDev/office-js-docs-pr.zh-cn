@@ -22,7 +22,7 @@
   "notification_subscribers": [
   "mor-oitac-eng@moravia.com"],
   "branches_to_filter": [
-    "live-sxs",
+    "live",
     "master-sxs"
   ],
   "git_repository_url_open_to_public_contributors": "https://github.com/OfficeDev/office-js-docs-pr",
