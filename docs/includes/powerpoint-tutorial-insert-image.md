@@ -9,11 +9,11 @@
 
     ![PowerPoint 教程 - 突出显示 HelloWorldWeb 目中 Controllers 文件夹的 Visual Studio 解决方案资源管理器窗口](../images/powerpoint-tutorial-solution-explorer-controllers.png)
 
-2. 右键单击“Controllers”文件夹，并依次选择“添加”>“新基架项...”。
+2. 右键单击“Controllers”**** 文件夹，并依次选择“添加”>“新基架项...”****。
 
-3. 在“添加基架”对话框窗口中，依次选择“Web API 2 控制器 - 空”和“添加”按钮。 
+3. 在“添加基架”**** 对话框窗口中，依次选择“Web API 2 控制器 - 空”**** 和“添加”**** 按钮。 
 
-4. 在“添加控制器”对话框窗口中，输入“PhotoController”作为控制器名称，再选择“添加”按钮。 此时，Visual Studio 创建并打开 **PhotoController.cs** 文件。
+4. 在“添加控制器”**** 对话框窗口中，输入“PhotoController”**** 作为控制器名称，再选择“添加”**** 按钮。 此时，Visual Studio 创建并打开 **PhotoController.cs** 文件。
 
 5. 将 **PhotoController.cs** 文件的全部内容替换为下列代码，以调用必应服务来检索 Base64 编码字符串形式的一天中照片。 使用 Office JavaScript API 将图像插入文档时，必须将图像数据指定为 Base64 编码字符串。
 
@@ -63,7 +63,7 @@
     }
     ```
 
-6. 在 **Home.html** 文件中，将 `TODO1` 替换为以下标记。 此标记定义在加载项任务窗格内显示的“插入图像”按钮。
+6. 在 **Home.html** 文件中，将 `TODO1` 替换为以下标记。 此标记定义在加载项任务窗格内显示的“插入图像”**** 按钮。
 
     ```html
     <button class="ms-Button ms-Button--primary" id="insert-image">
@@ -73,7 +73,7 @@
     </button>
     ```
 
-7. 在 **Home.js** 文件中，将 `TODO1` 替换为下列代码，以分配“插入图像”按钮的事件处理程序。
+7. 在 **Home.js** 文件中，将 `TODO1` 替换为下列代码，以分配“插入图像”**** 按钮的事件处理程序。
 
     ```js
     $('#insert-image').click(insertImage);
@@ -116,18 +116,18 @@
 
 ## <a name="test-the-add-in"></a>测试加载项
 
-1. 使用 Visual Studio 的同时，按 `F5` 或选择“开始”按钮启动 PowerPoint，以测试新建的 PowerPoint 加载项，功能区中显示有“显示任务窗格”加载项按钮。加载项本地托管在 IIS 上。
+1. 使用 Visual Studio 的同时，按 `F5` 或选择“开始”**** 按钮启动 PowerPoint，以测试新建的 PowerPoint 加载项，功能区中显示有“显示任务窗格”**** 加载项按钮。加载项本地托管在 IIS 上。
 
     ![突出显示“开始”按钮的 Visual Studio 屏幕截图](../images/powerpoint-tutorial-start.png)
 
-2. 在 PowerPoint 中，选择功能区中的“显示任务窗格”按钮，以打开加载项任务窗格。
+2. 在 PowerPoint 中，选择功能区中的“显示任务窗格”**** 按钮，以打开加载项任务窗格。
 
     ![“开始”功能区中突出显示“显示任务窗格”按钮的 Visual Studio 屏幕截图](../images/powerpoint-tutorial-show-taskpane-button.png)
 
-3. 在任务窗格中，选择“插入图像”按钮，将一天中的必应照片添加到当前幻灯片。
+3. 在任务窗格中，选择“插入图像”**** 按钮，将一天中的必应照片添加到当前幻灯片。
 
     ![突出显示“插入图像”按钮的 PowerPoint 加载项屏幕截图](../images/powerpoint-tutorial-insert-image-button.png)
 
-4. 在 Visual Studio 中，按 `Shift + F5` 或选择“停止”按钮，以停止加载项。 PowerPoint 在加载项停止时自动关闭。
+4. 在 Visual Studio 中，按 `Shift + F5` 或选择“停止”**** 按钮，以停止加载项。 PowerPoint 在加载项停止时自动关闭。
 
     ![突出显示“停止”按钮的 Visual Studio 屏幕截图](../images/powerpoint-tutorial-stop.png)

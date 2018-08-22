@@ -85,33 +85,33 @@
 
 ## <a name="test-the-add-in"></a>测试加载项
 
-1. 使用 Visual Studio 的同时，按 `F5` 或选择“开始”按钮启动 PowerPoint，以测试加载项，功能区中显示有“显示任务窗格”加载项按钮。加载项本地托管在 IIS 上。
+1. 使用 Visual Studio 的同时，按 `F5` 或选择“开始”**** 按钮启动 PowerPoint，以测试加载项，功能区中显示有“显示任务窗格”**** 加载项按钮。加载项本地托管在 IIS 上。
 
     ![突出显示“开始”按钮的 Visual Studio 屏幕截图](../images/powerpoint-tutorial-start.png)
 
-2. 在 PowerPoint 中，选择功能区中的“显示任务窗格”按钮，以打开加载项任务窗格。
+2. 在 PowerPoint 中，选择功能区中的“显示任务窗格”**** 按钮，以打开加载项任务窗格。
 
     ![“开始”功能区中突出显示“显示任务窗格”按钮的 Visual Studio 屏幕截图](../images/powerpoint-tutorial-show-taskpane-button.png)
 
 
-3. 使用“开始”选项卡功能区中的“新建幻灯片”按钮，将两张新幻灯片添加到文档中。 
+3. 使用“开始”**** 选项卡功能区中的“新建幻灯片”**** 按钮，将两张新幻灯片添加到文档中。 
 
-4. 在任务窗格中，选择“前往第一张幻灯片”按钮。 此时，选择并显示文档中的第一张幻灯片。
+4. 在任务窗格中，选择“前往第一张幻灯片”**** 按钮。 此时，选择并显示文档中的第一张幻灯片。
 
     ![突出显示“前往第一张幻灯片”按钮的 PowerPoint 加载项屏幕截图](../images/powerpoint-tutorial-go-to-first-slide.png)
 
-5. 在任务窗格中，选择“前往下一张幻灯片”按钮。 此时，选择并显示文档中的下一张幻灯片。
+5. 在任务窗格中，选择“前往下一张幻灯片”**** 按钮。 此时，选择并显示文档中的下一张幻灯片。
 
     ![突出显示“前往下一张幻灯片”按钮的 PowerPoint 加载项屏幕截图](../images/powerpoint-tutorial-go-to-next-slide.png)
 
-6. 在任务窗格中，选择“前往上一张幻灯片”按钮。 此时，选择并显示文档中的上一张幻灯片。
+6. 在任务窗格中，选择“前往上一张幻灯片”**** 按钮。 此时，选择并显示文档中的上一张幻灯片。
 
     ![突出显示“前往上一张幻灯片”按钮的 PowerPoint 加载项屏幕截图](../images/powerpoint-tutorial-go-to-previous-slide.png)
 
-7. 在任务窗格中，选择“前往最后一张幻灯片”按钮。 此时，选择并显示文档中的最后一张幻灯片。
+7. 在任务窗格中，选择“前往最后一张幻灯片”**** 按钮。 此时，选择并显示文档中的最后一张幻灯片。
 
     ![突出显示“前往最后一张幻灯片”按钮的 PowerPoint 加载项屏幕截图](../images/powerpoint-tutorial-go-to-last-slide.png)
 
-8. 在 Visual Studio 中，按 `Shift + F5` 或选择“停止”按钮，以停止加载项。 PowerPoint 在加载项停止时自动关闭。
+8. 在 Visual Studio 中，按 `Shift + F5` 或选择“停止”**** 按钮，以停止加载项。 PowerPoint 在加载项停止时自动关闭。
 
     ![突出显示“停止”按钮的 Visual Studio 屏幕截图](../images/powerpoint-tutorial-stop.png)
