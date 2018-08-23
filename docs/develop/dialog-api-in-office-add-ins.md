@@ -3,10 +3,10 @@ title: 在 Office 外接程序中使用对话框 API
 description: ''
 ms.date: 12/04/2017
 ms.openlocfilehash: b026c3c5871372c52d0b44e36c01fc44a3d2bf04
-ms.sourcegitcommit: c72c35e8389c47a795afbac1b2bcf98c8e216d82
+ms.sourcegitcommit: 7ecc1dc24bf7488b53117d7a83ad60e952a6f7aa
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/23/2018
+ms.lasthandoff: 08/23/2018
 ms.locfileid: "19437953"
 ---
 # <a name="use-the-dialog-api-in-your-office-add-ins"></a>在 Office 加载项中使用对话框 API

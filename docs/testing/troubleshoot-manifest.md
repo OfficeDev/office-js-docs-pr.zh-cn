@@ -2,8 +2,13 @@
 title: 验证并排查清单问题
 description: 使用这些方法验证 Office 加载项清单。
 ms.date: 12/04/2017
+ms.openlocfilehash: 19f7caaf1d5482972432aad3d2774d69c75cde76
+ms.sourcegitcommit: 7ecc1dc24bf7488b53117d7a83ad60e952a6f7aa
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 08/23/2018
+ms.locfileid: "19438758"
 ---
-
 # <a name="validate-and-troubleshoot-issues-with-your-manifest"></a>验证并排查清单问题
 
 下面这些方法可用于验证和排查 Office 加载项清单问题： 

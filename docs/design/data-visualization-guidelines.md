@@ -2,10 +2,13 @@
 title: Office 加载项的数据可视化样式指南
 description: ''
 ms.date: 12/04/2017
+ms.openlocfilehash: 3255c1aeff6cba4b9f13aa2555b8c84ac773fb75
+ms.sourcegitcommit: 7ecc1dc24bf7488b53117d7a83ad60e952a6f7aa
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 08/23/2018
+ms.locfileid: "19437351"
 ---
-
-
-
 # <a name="data-visualization-style-guidelines-for-office-add-ins"></a>Office 加载项的数据可视化样式指南
 
 良好的数据可视化效果可帮助用户找到数据见解。他们可以使用这些见解来讲述具有说服力的故事。本文提供了准则，以帮助你在适用于 Excel 和其他 Office 应用的外接程序中设计有效的数据可视化。

@@ -2,8 +2,13 @@
 title: 使用 Angular 开发 Office 加载项
 description: ''
 ms.date: 12/04/2017
+ms.openlocfilehash: c3aa67d7427249fb04d9777dc0d76098ea607582
+ms.sourcegitcommit: 7ecc1dc24bf7488b53117d7a83ad60e952a6f7aa
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 08/23/2018
+ms.locfileid: "19437505"
 ---
-
 # <a name="develop-office-add-ins-with-angular"></a>使用 Angular 开发 Office 加载项
 
 本文介绍了如何使用 Angular 2+ 将 Office 加载项创建为单页应用。
@@ -17,7 +22,7 @@ ms.date: 12/04/2017
 打开 nodejs 窗口，并在命令行处输入以下命令： 
 
 ```bash
-npm install --save-dev @types/office-js`
+npm install --save-dev @types/office-js
 ```
 
 ## <a name="bootstrapping-must-be-inside-officeinitialize"></a>启动代码必须位于 Office.initialize 内

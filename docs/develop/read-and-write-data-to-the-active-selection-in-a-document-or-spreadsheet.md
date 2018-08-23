@@ -2,9 +2,13 @@
 title: 对文档或电子表格中的活动选择执行数据读取和写入操作
 description: ''
 ms.date: 12/04/2017
+ms.openlocfilehash: 6d0aa8a27223a436b7f8e99cbbab0c21dd93f2b5
+ms.sourcegitcommit: 7ecc1dc24bf7488b53117d7a83ad60e952a6f7aa
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 08/23/2018
+ms.locfileid: "19437533"
 ---
-
-
 # <a name="read-and-write-data-to-the-active-selection-in-a-document-or-spreadsheet"></a>对文档或电子表格中的活动选择执行数据读取和写入操作
 
 通过 [Document](https://dev.office.com/reference/add-ins/shared/document) 对象公开的方法，你可以读取文档或电子表格中用户的当前选区或向其中写入内容。为此，**Document** 对象提供了 **getSelectedDataAsync** 和 **setSelectedDataAsync** 方法。本主题还介绍了如何读取、写入和创建事件处理程序，以检测对用户选定内容所做的更改。
@@ -38,7 +42,7 @@ function write(message){
 
 
 > [!TIP]
-> **何时应使用矩阵与表格 coercionType 数据访问？**如果需要表格数据在添加行和列时动态增长，且必须处理表格标题，应使用表格数据类型（具体操作是将 **getSelectedDataAsync** 方法的 _coercionType_ 参数指定为 `"table"` 或 **Office.CoercionType.Table**）。虽然表格数据和矩阵数据都支持在数据结构内添加行和列，但只有表格数据支持追加行和列。如果不打算添加行和列，且数据不需要使用标题功能，应使用矩阵数据类型（具体操作是将 **getSelecteDataAsync** 方法的 _coercionType_ 参数指定为 `"matrix"` 或 **Office.CoercionType.Matrix**），它提供了更简单的数据交互模型。
+> **何时应使用矩阵与表格 coercionType 数据访问？** 如果需要表格数据在添加行和列时动态增长，且必须处理表格标题，应使用表格数据类型（具体操作是将 **getSelectedDataAsync** 方法的 _coercionType_ 参数指定为 `"table"` 或 **Office.CoercionType.Table**）。虽然表格数据和矩阵数据都支持在数据结构内添加行和列，但只有表格数据支持追加行和列。如果不打算添加行和列，且数据不需要使用标题功能，应使用矩阵数据类型（具体操作是将 **getSelecteDataAsync** 方法的 _coercionType_ 参数指定为 `"matrix"` 或 **Office.CoercionType.Matrix**），它提供了更简单的数据交互模型。
 
 作为第二个  _callback_ 参数传入函数的匿名函数会在 **getSelectedDataAsync** 操作完成时执行。调用该函数时使用单个参数 _asyncResult_，后者包含调用的结果和状态。如果调用失败，则  [AsyncResult](https://dev.office.com/reference/add-ins/shared/asyncresult.context) 对象的 **error** 属性会提供对 [Error](https://dev.office.com/reference/add-ins/shared/error) 对象的访问。您可以检查 [Error.name](https://dev.office.com/reference/add-ins/shared/error.name) 和 [Error.message](https://dev.office.com/reference/add-ins/shared/error.message) 属性的值，以确定设置操作失败的原因。否则，会显示文档中选定的文本。
 

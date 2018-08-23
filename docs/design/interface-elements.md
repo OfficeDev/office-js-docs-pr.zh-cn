@@ -2,9 +2,13 @@
 title: Office 加载项的 Office UI 元素
 description: ''
 ms.date: 12/04/2017
+ms.openlocfilehash: 8282caff412a9a258e54092bc77e07571f0d8ac1
+ms.sourcegitcommit: 7ecc1dc24bf7488b53117d7a83ad60e952a6f7aa
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 08/23/2018
+ms.locfileid: "19437302"
 ---
-
-
 # <a name="office-ui-elements-for-office-add-ins"></a>Office 加载项的 Office UI 元素
 
 可以使用几种类型的 UI 元素来扩展 Office UI，包括外接程序命令和 HTML 容器。这些 UI 元素类似于 Office 的自然扩展，并且跨平台工作。可以将基于 Web 的自定义代码插入上述任一元素。

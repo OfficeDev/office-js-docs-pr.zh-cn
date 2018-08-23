@@ -2,9 +2,13 @@
 title: 在 Office 外接程序中使用 OAuth 授权框架
 description: ''
 ms.date: 12/04/2017
+ms.openlocfilehash: 36eb0e34ed96bb9289926170bea1b82546695fa8
+ms.sourcegitcommit: 7ecc1dc24bf7488b53117d7a83ad60e952a6f7aa
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 08/23/2018
+ms.locfileid: "19437372"
 ---
-
-
 # <a name="use-the-oauth-authorization-framework-in-an-office-add-in"></a>在 Office 外接程序中使用 OAuth 授权框架
 
 OAuth 是授权的开放式标准，Office 365、Facebook、Google、SalesForce、LinkedIn 等联机服务提供商用其执行用户身份验证。OAuth 授权框架是 Azure 和 Office 365 中所用的默认授权协议。OAuth 授权框架用于企业（公司）和消费者方案。

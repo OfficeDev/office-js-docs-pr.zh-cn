@@ -2,9 +2,13 @@
 title: 错误处理
 description: ''
 ms.date: 12/04/2017
+ms.openlocfilehash: 59619ff4ccba1985f875d13a29ab691c1617d21b
+ms.sourcegitcommit: 7ecc1dc24bf7488b53117d7a83ad60e952a6f7aa
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 08/23/2018
+ms.locfileid: "19437204"
 ---
-
-
 # <a name="error-handling"></a>错误处理
 
 使用 Excel JavaScript API 生成加载项时，请务必加入错误处理逻辑，以便解决运行时错误。 鉴于 API 的异步特性，这样做非常关键。

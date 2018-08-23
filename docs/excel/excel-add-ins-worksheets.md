@@ -2,9 +2,13 @@
 title: 使用 Excel JavaScript API 处理工作表
 description: ''
 ms.date: 12/04/2017
+ms.openlocfilehash: f4c129f34460340a9abed3eda4a47e3bb6dd5978
+ms.sourcegitcommit: 7ecc1dc24bf7488b53117d7a83ad60e952a6f7aa
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 08/23/2018
+ms.locfileid: "19437435"
 ---
-
-
 # <a name="work-with-worksheets-using-the-excel-javascript-api"></a>使用 Excel JavaScript API 处理工作表
 
 本文提供了代码示例，介绍如何使用 Excel JavaScript API 对工作表执行常见任务。 有关 **Worksheet** 和 **WorksheetCollection** 对象支持的属性和方法的完整列表，请参阅 [Worksheet 对象 (Excel JavaScript API)](https://dev.office.com/reference/add-ins/excel/worksheet) 和 [WorksheetCollection 对象 (Excel JavaScript API)](https://dev.office.com/reference/add-ins/excel/worksheetcollection)。

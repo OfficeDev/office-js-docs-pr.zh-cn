@@ -2,9 +2,13 @@
 title: 使用 Excel JavaScript API 处理表格
 description: ''
 ms.date: 12/04/2017
+ms.openlocfilehash: c7d5f3f975092250747350501bbe011a17db9852
+ms.sourcegitcommit: 7ecc1dc24bf7488b53117d7a83ad60e952a6f7aa
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 08/23/2018
+ms.locfileid: "19437498"
 ---
-
-
 # <a name="work-with-tables-using-the-excel-javascript-api"></a>使用 Excel JavaScript API 处理表格
 
 本文中的代码示例展示了如何使用 Excel JavaScript API 对表格执行常见任务。 有关 **Table** 和 **TableCollection** 对象支持的属性和方法的完整列表，请参阅 [Table 对象 (Excel JavaScript API)](https://dev.office.com/reference/add-ins/excel/table) 和 [TableCollection 对象 (Excel JavaScript API)](https://dev.office.com/reference/add-ins/excel/tablecollection)。
@@ -159,7 +163,7 @@ Excel.run(function (context) {
 
 ## <a name="update-column-name"></a>更新列名称
 
-下面的代码示例将表格中第一列的名称更新为“购买日期”。如果运行代码的 Excel 主机应用支持[要求集](https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets) **ExcelApi 1.2**，那么列宽和行高会设置为最适应表格中的当前数据。
+下面的代码示例将表格中第一列的名称更新为“购买日期”****。如果运行代码的 Excel 主机应用支持[要求集](https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets) **ExcelApi 1.2**，那么列宽和行高会设置为最适应表格中的当前数据。
 
 ```js
 Excel.run(function (context) {
