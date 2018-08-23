@@ -1,19 +1,26 @@
+items:
 - name: Office
   tocHref: /office/
   topicHref: /office/index
   items:
-    - name: 外接程序
-      tocHref: /office/dev/add-ins/
-      topicHref: /office/dev/add-ins
+  - name: 外接程序
+    tocHref: /office/dev/add-ins/
+    topicHref: /office/dev/add-ins
+    items:
+    - name: 教程
       items:
-        - name: 教程
-          items:
-            - name: Excel 外接程序教程
-              tocHref: /office/dev/add-ins/tutorials/excel-tutorial
-              topicHref: /office/dev/add-ins/tutorials/excel-tutorial
-            - name: PowerPoint 外接程序教程
-              tocHref: /office/dev/add-ins/tutorials/powerpoint-tutorial
-              topicHref: /office/dev/add-ins/tutorials/powerpoint-tutorial
-            - name: Word 外接程序教程
-              tocHref: /office/dev/add-ins/tutorials/word-tutorial
-              topicHref: /office/dev/add-ins/tutorials/word-tutorial
+      - name: Excel 外接程序教程
+        tocHref: /office/dev/add-ins/tutorials/excel-tutorial
+        topicHref: /office/dev/add-ins/tutorials/excel-tutorial
+      - name: PowerPoint 外接程序教程
+        tocHref: /office/dev/add-ins/tutorials/powerpoint-tutorial
+        topicHref: /office/dev/add-ins/tutorials/powerpoint-tutorial
+      - name: Word 外接程序教程
+        tocHref: /office/dev/add-ins/tutorials/word-tutorial
+        topicHref: /office/dev/add-ins/tutorials/word-tutorial
+ms.openlocfilehash: 511598e67445df99eafbf04e9aaa0b6e52081492
+ms.sourcegitcommit: c72c35e8389c47a795afbac1b2bcf98c8e216d82
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 05/23/2018
+ms.locfileid: "19437344"
