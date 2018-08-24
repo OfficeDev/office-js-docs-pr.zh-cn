@@ -2,12 +2,12 @@
 title: 将数据验证添加到 Excel 范围
 description: ''
 ms.date: 04/13/2018
-ms.openlocfilehash: 3d6a901e2f8296806cff470340b40f4d77e79e34
-ms.sourcegitcommit: bc68b4cf811b45e8b8d1cbd7c8d2867359ab671b
+ms.openlocfilehash: af965df4a1aece5b7f8d5ea89664519b576a4850
+ms.sourcegitcommit: 4de2a1b62ccaa8e51982e95537fc9f52c0c5e687
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "21703943"
+ms.lasthandoff: 08/10/2018
+ms.locfileid: "22925309"
 ---
 # <a name="add-data-validation-to-excel-ranges-preview"></a>将数据验证添加到 Excel 范围（预览）
 
@@ -19,9 +19,9 @@ ms.locfileid: "21703943"
 
 Excel JavaScript 库提供的 API 可让外接程序将自动数据验证添加到工作簿中的表、列、行和其他范围。 要了解数据验证的概念和术语，请参阅以下关于用户如何通过 Excel UI 添加数据验证的文章：
 
-- [将数据验证应用于单元格](https://support.office.com/en-us/article/Apply-data-validation-to-cells-29FECBCC-D1B9-42C1-9D76-EFF3CE5F7249)
-- [有关数据验证的更多信息](https://support.office.com/en-us/article/More-on-data-validation-f38dee73-9900-4ca6-9301-8a5f6e1f0c4c)
-- [Excel 中数据验证的说明和示例](https://support.microsoft.com/en-us/help/211485/description-and-examples-of-data-validation-in-excel)
+- [将数据验证应用于单元格](https://support.office.com/article/Apply-data-validation-to-cells-29FECBCC-D1B9-42C1-9D76-EFF3CE5F7249)
+- [有关数据验证的更多信息](https://support.office.com/article/More-on-data-validation-f38dee73-9900-4ca6-9301-8a5f6e1f0c4c)
+- [Excel 中数据验证的说明和示例](https://support.microsoft.com/help/211485/description-and-examples-of-data-validation-in-excel)
 
 ## <a name="programmatic-control-of-data-validation"></a>数据验证的程序控制
 
@@ -230,8 +230,8 @@ myrange.dataValidation.clear()
 ## <a name="see-also"></a>另请参阅
 
 - [Excel JavaScript API 核心概念](excel-add-ins-core-concepts.md)
-- [DataValidation 对象（适用于 Excel 的 JavaScript API）](https://docs.microsoft.com/javascript/api/excel/excel.datavalidation)
-- [Range 对象（适用于 Excel 的 JavaScript API）](https://docs.microsoft.com/javascript/api/excel/excel.range)
+- [DataValidation 对象 (Excel JavaScript API)](https://docs.microsoft.com/javascript/api/excel/excel.datavalidation)
+- [Range 对象 (Excel JavaScript API)](https://docs.microsoft.com/javascript/api/excel/excel.range)
 
 
 

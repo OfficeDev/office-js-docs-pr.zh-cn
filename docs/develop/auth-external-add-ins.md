@@ -2,12 +2,12 @@
 title: 在 Office 加载项中授权外部服务
 description: ''
 ms.date: 12/04/2017
-ms.openlocfilehash: 34e8119d4ecf6432cde7f06552584d164b8c9b8e
-ms.sourcegitcommit: c72c35e8389c47a795afbac1b2bcf98c8e216d82
+ms.openlocfilehash: 12f6f80b1679eeec8aec569b534aca074610e929
+ms.sourcegitcommit: 4de2a1b62ccaa8e51982e95537fc9f52c0c5e687
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/23/2018
-ms.locfileid: "19437449"
+ms.lasthandoff: 08/10/2018
+ms.locfileid: "22925288"
 ---
 # <a name="authorize-external-services-in-your-office-add-in"></a>在 Office 加载项中授权外部服务
 
@@ -51,7 +51,7 @@ OAuth 流旨在保护应用的标识和授权。授权代码流提供了*客户�
 
 ### <a name="relayproxy-functions"></a>中继/代理函数
 
-通过在 [Azure Functions](https://azure.microsoft.com/en-us/services/functions) 或 [Amazon Lambda](https://aws.amazon.com/lambda) 等服务托管的简单函数中存储**客户端 ID** 和**客户端密码**值，甚至可以对无服务器 Web 应用使用授权代码流。函数用给定代码交换**访问令牌**，并将令牌中继回客户端。这种方法的安全性取决于函数访问权限的受保护程度。
+通过在 [Azure Functions](https://azure.microsoft.com/services/functions) 或 [Amazon Lambda](https://aws.amazon.com/lambda) 等服务托管的简单函数中存储**客户端 ID** 和**客户端密码**值，甚至可以对无服务器 Web 应用使用授权代码流。函数用给定代码交换**访问令牌**，并将令牌中继回客户端。这种方法的安全性取决于函数访问权限的受保护程度。
 
 若要使用此技术，加载项会通过 UI/弹出窗口显示在线服务（如 Google、Facebook 等）登录屏幕。如果用户登录并授权加载项访问其在线服务中的资源，加载项会收到代码，可以将它发送给在线函数。在本文稍后介绍的**中间人服务**部分中，涉及的服务就是使用类似的流。
 
@@ -59,7 +59,7 @@ OAuth 流旨在保护应用的标识和授权。授权代码流提供了*客户�
 
 库适用于许多语言和平台，既可用于隐式流，也可用于授权代码流。 一些库是通用的，而另一些库则为在线服务专用。
 
-**将 Azure Active Directory 作为授权提供程序使用的 Office 365 及其他服务**：[Azure Active Directory 授权库](https://azure.microsoft.com/en-us/documentation/articles/active-directory-authentication-libraries/)。预览也适用于 [Microsoft 身份验证库](https://www.nuget.org/packages/Microsoft.Identity.Client)。
+**将 Azure Active Directory 作为授权提供程序使用的 Office 365 及其他服务**：[Azure Active Directory 授权库](https://azure.microsoft.com/documentation/articles/active-directory-authentication-libraries/)。预览也适用于 [Microsoft 身份验证库](https://www.nuget.org/packages/Microsoft.Identity.Client)。
 
 **Google**：在 [GitHub.com/Google](https://github.com/google) 中搜索 "auth" 或你语言的相应名称。大部分的相关存储库被命名为 `google-auth-library-[name of language]`。
 
@@ -79,4 +79,4 @@ OAuth 流旨在保护应用的标识和授权。授权代码流提供了*客户�
 
 ## <a name="what-is-cors"></a>什么是 CORS？
 
-CORS 的全称是 [Cross Origin Resource Sharing](https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS)，即“跨源资源共享”。若要了解如何在加载项内使用 CORS，请参阅[解决 Office 加载项中的同源策略限制](addressing-same-origin-policy-limitations.md)。
+CORS 的全称是 [Cross Origin Resource Sharing](https://developer.mozilla.org/docs/Web/HTTP/Access_control_CORS)，即“跨源资源共享”。若要了解如何在加载项内使用 CORS，请参阅[解决 Office 加载项中的同源策略限制](addressing-same-origin-policy-limitations.md)。

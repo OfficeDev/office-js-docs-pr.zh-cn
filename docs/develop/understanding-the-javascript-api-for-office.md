@@ -2,12 +2,12 @@
 title: 了解适用于 Office 的 JavaScript API
 description: ''
 ms.date: 01/23/2018
-ms.openlocfilehash: ccc5122061e267fec875fcbbb5b2083e1b934f9d
-ms.sourcegitcommit: 7ecc1dc24bf7488b53117d7a83ad60e952a6f7aa
+ms.openlocfilehash: a9e1e26d4ba94a933ecb98250c19afee90750f5d
+ms.sourcegitcommit: 28fc652bded31205e393df9dec3a9dedb4169d78
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/22/2018
-ms.locfileid: "22546786"
+ms.lasthandoff: 08/23/2018
+ms.locfileid: "22928033"
 ---
 # <a name="understanding-the-javascript-api-for-office"></a>了解适用于 Office 的 JavaScript API
 
@@ -71,7 +71,7 @@ Office.initialize = function (reason) {
 
 ## <a name="office-javascript-api-object-model"></a>Office JavaScript API 对象模型
 
-初始化后，加载项可以与主机（例如 Excel、Outlook）交互。 [Office JavaScript API 对象模型](office-javascript-api-object-model.md)页面有关于特定使用模式的更多详细信息。 [共享 API](https://dev.office.com/reference/add-ins/javascript-api-for-office) 和特定的主机都有详细的参考文档。
+初始化后，加载项可以与主机 （例如 Excel、 Outlook）交互。[Office JavaScript API 对象模型](office-javascript-api-object-model.md)页上提供特定的使用模式的详细信息。此外，还有 [共享 API](https://dev.office.com/reference/add-ins/javascript-api-for-office) 及特定主机详细的参考文档。
 
 ## <a name="api-support-matrix"></a>API 支持矩阵
 
@@ -82,7 +82,7 @@ Office.initialize = function (reason) {
 |||||||||
 |:-----|:-----|:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|
 ||**主机名**|数据库|工作簿|邮箱|演示文稿|文档|项目|
-||**支持的****主机应用程序**|Access Web App|Excel、<br/>Excel Online|Outlook、<br/>Outlook Web App、<br/>适用于设备的 OWA|PowerPoint、<br/>PowerPoint Online|Word|项目|
+||**支持的****主机应用程序**|Access Web App|Excel、<br/>Excel 在线|Outlook、<br/>Outlook Web App、<br/>适用于设备的 OWA|PowerPoint、<br/>PowerPoint 联机|Word|项目|
 |**支持的外接程序类型**|内容|是|是||是|||
 ||任务窗格||是||是|是|是|
 ||Outlook|||是||||

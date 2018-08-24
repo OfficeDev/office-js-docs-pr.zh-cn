@@ -2,12 +2,12 @@
 title: 随文档自动打开任务窗格
 description: ''
 ms.date: 05/02/2018
-ms.openlocfilehash: 06e1cce3a45a5af744a1be4b3feabbf051940d76
-ms.sourcegitcommit: 4e4f7c095e8f33b06bd8a02534ee901125eb1d17
+ms.openlocfilehash: 4f3d677619610208b585df72dd1764be39fd9e35
+ms.sourcegitcommit: 4de2a1b62ccaa8e51982e95537fc9f52c0c5e687
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/28/2018
-ms.locfileid: "20085318"
+ms.lasthandoff: 08/10/2018
+ms.locfileid: "22925351"
 ---
 # <a name="automatically-open-a-task-pane-with-a-document"></a>随文档自动打开任务窗格
 
@@ -111,14 +111,14 @@ webextension 部件还包括对具有 `id`、 `storeType`、 `store` 和 `versio
 | **`storeType` 值** | **`id` 值**    |**`store` 值** | **`version` 值**|
 |:---------------|:---------------|:---------------|:---------------|
 |OMEX (AppSource)|加载项的 AppSource 资产 ID（请参阅“注意”）|AppSource 的区域设置；例如，“en-us”。|AppSource 目录中的版本（请参阅“注意”）|
-|FileSystem（网络共享）|外接程序清单中外接程序的 GUID。|网络共享路径。例如，“\\\\MyComputer\\MySharedFolder”。|外接程序清单中的版本。|
-|EXCatalog（通过 Exchange 服务器部署） |外接程序清单中外接程序的 GUID。|“EXCatalog”。 EXCatalog 行是用于 Office 365 管理中心中使用集中部署的加载项的行。|外接程序清单中的版本。
+|FileSystem（网络共享）|外接程序清单中外接程序的 GUID。|网络共享路径。例如，“\\\\MyComputer\\MySharedFolder”。|加载项清单中的版本。|
+|EXCatalog（通过 Exchange 服务器部署） |加载项清单中加载项的 GUID。|“EXCatalog”。 EXCatalog 行是用于 Office 365 管理中心中使用集中部署的加载项的行。|加载项清单中的版本。
 |Registry（系统注册表）|外接程序清单中外接程序的 GUID。|“developer”|加载项清单中的版本。|
 
 > [!NOTE]
 > 若要查找 AppSource 中加载项的资产 ID 和版本，请转到加载项的 AppSource 登陆页面。资产 ID 显示在浏览器的地址栏中。版本在页面的“详细信息”**** 部分中列出。
 
-若要详细了解 webextension 标记，请参阅 [[MS-OWEXML] 2.2.5. WebExtensionReference](https://msdn.microsoft.com/en-us/library/hh695383(v=office.12).aspx)。
+若要详细了解 webextension 标记，请参阅 [[MS-OWEXML] 2.2.5. WebExtensionReference](https://msdn.microsoft.com/library/hh695383(v=office.12).aspx)。
 
 以下示例演示如何添加 taskpane 部件。
 
@@ -137,10 +137,10 @@ webextension 部件还包括对具有 `id`、 `storeType`、 `store` 和 `versio
 > [!NOTE]
 > 若要将加载项与文档一起分发，以便提示用户进行安装，必须将“visibility”属性设置为 1。只能通过 Open XML 执行此操作。
 
-编写 XML 的一个简单方法是首先运行外接程序并[标记客户端上的文档](#tag-the-document-on-the-client-side)以写入值，然后保存该文档并检查生成的 XML。Office 将检测并提供适当的属性值。还可以使用 [Open XML SDK 2.5 Productivity Tool](https://www.microsoft.com/en-us/download/details.aspx?id=30425) 工具生成 C# 代码以编程方式添加基于生成的 XML 的标记。
+编写 XML 的一个简单方法是首先运行外接程序并[标记客户端上的文档](#tag-the-document-on-the-client-side)以写入值，然后保存该文档并检查生成的 XML。Office 将检测并提供适当的属性值。还可以使用 [Open XML SDK 2.5 Productivity Tool](https://www.microsoft.com/download/details.aspx?id=30425) 工具生成 C# 代码以编程方式添加基于生成的 XML 的标记。
 
 ## <a name="test-and-verify-opening-taskpanes"></a>测试并验证打开任务窗格
-你可以部署测试版的外接程序，它将通过 Office 365 管理中心使用集中部署自动打开任务窗格。 以下示例显示了如何使用 EXCatalog 存储版本从集中部署目录插入外接程序。
+您可以部署测试版本的加载项，将自动在 Office 365 管理中心内，通过使用集中部署打开任务窗格。下面的示例演示如何从集中部署目录使用 EXCatalog 存储版本插入加载项。
 
 ```xml
 <we:webextension xmlns:we="http://schemas.microsoft.com/office/webextensions/webextension/2010/11" id="{52811C31-4593-43B8-A697-EB873422D156}">
@@ -151,11 +151,11 @@ webextension 部件还包括对具有 `id`、 `storeType`、 `store` 和 `versio
     <we:snapshot xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships"/>
 </we:webextension>
 ```
-要测试前面的示例，请参阅[设置 Office 365 开发环境](https://msdn.microsoft.com/en-us/office/office365/howto/setup-development-environment)并考虑注册一个 [Office 365 开发人员账户](https://developer.microsoft.com/en-us/office/dev-program)。 你实际上可以体验集中部署并验证外接程序是否按预期运行。
+若要测试上面的示例，如果您未拥有 Office 365 订阅，请考虑加入 [Office 365 开发人员计划](https://docs.microsoft.com/office/developer-program/office-365-developer-program)并注册 [Office 365 开发人员帐户](https://developer.microsoft.com/office/dev-program)。 您可以实际体验集中部署并验证加载项是否按预期运行。
 
 
 ## <a name="see-also"></a>另请参阅
 
 有关展示了如何使用 AutoOpen 功能的示例，请参阅 [Office 加载项命令示例](https://github.com/OfficeDev/Office-Add-in-Commands-Samples/tree/master/AutoOpenTaskpane)。 
-[加入 Office 365 开发人员计划](https://docs.microsoft.com/en-us/office/developer-program/office-365-developer-program)。 
+[加入 Office 365 开发人员计划](https://docs.microsoft.com/office/developer-program/office-365-developer-program)。 
 

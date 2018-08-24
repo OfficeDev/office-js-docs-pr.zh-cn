@@ -2,12 +2,12 @@
 title: Office 加载项中的 Office UI Fabric
 description: ''
 ms.date: 12/04/2017
-ms.openlocfilehash: 04964d5864eea4a960f7b57e5df6f7bd7c844fde
-ms.sourcegitcommit: 4e4f7c095e8f33b06bd8a02534ee901125eb1d17
+ms.openlocfilehash: b573f720ebe4f90f7d4dbfdb05693871b93a2258
+ms.sourcegitcommit: 4de2a1b62ccaa8e51982e95537fc9f52c0c5e687
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/28/2018
-ms.locfileid: "20084068"
+ms.lasthandoff: 08/10/2018
+ms.locfileid: "22925190"
 ---
 # <a name="office-ui-fabric-in-office-add-ins"></a>Office 加载项中的 Office UI Fabric 
 
@@ -44,21 +44,21 @@ Fabric Core 包含设计语言的基本元素，如图标、颜色、类型和�
 Fabric 提供了多种可用于生成外界程序的 UX 组件，包括以下类型的组件：
 
 - 输入组件 - 如按钮、复选框和切换
-- 导航组件 - 如回转、痕迹
+- 导航组件 - 如透视、痕迹
 - 通知组件 - 例如，消息栏和标注  
 
 并非所有 Fabric 组件都推荐用于外接程序。以下是我们建议在外接程序中使用的 Fabric React UX 组件列表：
 
-- [痕迹导航](https://developer.microsoft.com/en-us/fabric#/components/breadcrumb)
-- [按钮](https://developer.microsoft.com/en-us/fabric#/components/button)
-- [复选框](https://developer.microsoft.com/en-us/fabric#/components/checkbox)
-- [选择组](https://developer.microsoft.com/en-us/fabric#/components/choicegroup)
-- [下拉列表](https://developer.microsoft.com/en-us/fabric#/components/dropdown)
-- [标签](https://developer.microsoft.com/en-us/fabric#/components/label)
-- [列表](https://developer.microsoft.com/en-us/fabric#/components/list)
-- [透视](https://developer.microsoft.com/en-us/fabric#/components/pivot)
-- [文本字段](https://developer.microsoft.com/en-us/fabric#/components/textfield)
-- [切换](https://developer.microsoft.com/en-us/fabric#/components/toggle)
+- [痕迹导航](https://developer.microsoft.com/fabric#/components/breadcrumb)
+- [按钮](https://developer.microsoft.com/fabric#/components/button)
+- [复选框](https://developer.microsoft.com/fabric#/components/checkbox)
+- [选择组](https://developer.microsoft.com/fabric#/components/choicegroup)
+- [下拉列表](https://developer.microsoft.com/fabric#/components/dropdown)
+- [标签](https://developer.microsoft.com/fabric#/components/label)
+- [列表](https://developer.microsoft.com/fabric#/components/list)
+- [透视](https://developer.microsoft.com/fabric#/components/pivot)
+- [文本字段](https://developer.microsoft.com/fabric#/components/textfield)
+- [切换](https://developer.microsoft.com/fabric#/components/toggle)
 
 你可以使用不同的 JavaScript 框架（如 Angular 或 React）来生成外接程序。若要开始将 Fabric 组件与框架一起使用，请参阅以下资源。
 

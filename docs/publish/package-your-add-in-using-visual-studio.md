@@ -2,12 +2,12 @@
 title: 使用 Visual Studio 打包加载项以准备发布
 description: ''
 ms.date: 01/25/2018
-ms.openlocfilehash: e03959294536eeb416a1531d2d281ba83f2d3732
-ms.sourcegitcommit: c72c35e8389c47a795afbac1b2bcf98c8e216d82
+ms.openlocfilehash: 89f59d06ff305e0d0fd062a36f7e9f756415df45
+ms.sourcegitcommit: 4de2a1b62ccaa8e51982e95537fc9f52c0c5e687
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/23/2018
-ms.locfileid: "19438751"
+ms.lasthandoff: 08/10/2018
+ms.locfileid: "22925246"
 ---
 # <a name="package-your-add-in-using-visual-studio-to-prepare-for-publishing"></a>使用 Visual Studio 打包加载项以准备发布
 
@@ -28,11 +28,11 @@ Office 加载项包包含 XML [清单文件](../develop/add-in-manifests.md)，�
 
     如果你选择“**新建...**”，将会显示“**创建发布配置文件**”向导。可以使用此向导从托管提供程序（如 Microsoft Azure）的网站导入发布配置文件，或创建新配置文件并添加你的服务器、凭据以及下一过程中的其他设置。
     
-    有关导入发布配置文件或创建新发布配置文件的详细信息，请参阅 [创建发布配置文件](http://msdn.microsoft.com/en-us/library/dd465337.aspx#creating_a_profile)。
+    有关导入发布配置文件或创建新发布配置文件的详细信息，请参阅 [创建发布配置文件](http://msdn.microsoft.com/library/dd465337.aspx#creating_a_profile)。
     
 3. 在“**发布外接程序**”页中，选择“**部署 Web 项目**”链接。
     
-    出现 **“发布 Web”** 对话框。有关使用此向导的详细信息，请参阅[如何：在 Visual Studio 中使用“一键式发布”部署 Web 项目](http://msdn.microsoft.com/en-us/library/dd465337.aspx)。
+    出现 **“发布 Web”** 对话框。有关使用此向导的详细信息，请参阅[如何：在 Visual Studio 中使用“一键式发布”部署 Web 项目](http://msdn.microsoft.com/library/dd465337.aspx)。
     
 
 ## <a name="to-package-your-add-in-using-visual-studio-2015"></a>使用 Visual Studio 2015 打包加载项的具体步骤
@@ -50,7 +50,7 @@ Office 加载项包包含 XML [清单文件](../develop/add-in-manifests.md)，�
     > [!IMPORTANT]
     > [!include[HTTPS guidance](../includes/https-guidance.md)] Azure 网站自动提供 HTTPS 端点。
 
-    Visual Studio 生成发布外接程序所需的文件，然后打开发布输出文件夹。 
+    Visual Studio 生成发布加载项所需的文件，并打开发布输出文件夹。 
     
 如果计划将加载项提交到 AppSource，可以选择“执行验证检查”**** 链接，以发现将会导致加载项被拒绝的任何问题。应先解决所有问题，再将加载项提交到应用商店。
 
@@ -62,5 +62,5 @@ Office 加载项包包含 XML [清单文件](../develop/add-in-manifests.md)，�
 ## <a name="see-also"></a>另请参阅
 
 - [发布 Office 加载项](../publish/publish.md)
-- [将解决方案提交到 AppSource 和 Office 应用商店](https://docs.microsoft.com/en-us/office/dev/store/submit-to-the-office-store)
+- [将解决方案提交到 AppSource 和 Office 应用商店](https://docs.microsoft.com/office/dev/store/submit-to-the-office-store)
     

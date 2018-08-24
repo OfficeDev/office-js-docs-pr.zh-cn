@@ -2,12 +2,12 @@
 title: 在 iPad 和 Mac 上调试 Office 外接程序
 description: ''
 ms.date: 03/21/2018
-ms.openlocfilehash: e9efae76aa3341eacfd73d6afcc3a3274536aa9d
-ms.sourcegitcommit: 6fbf42723f9c1b72095700c20458fd0e8c572794
+ms.openlocfilehash: 24a95799ba400aa6ecf93ee5431cf3fd64779d75
+ms.sourcegitcommit: 4de2a1b62ccaa8e51982e95537fc9f52c0c5e687
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "19722329"
+ms.lasthandoff: 08/10/2018
+ms.locfileid: "22925204"
 ---
 # <a name="debug-office-add-ins-on-ipad-and-mac"></a>在 iPad 和 Mac 上调试 Office 外接程序
 
@@ -36,7 +36,7 @@ ms.locfileid: "19722329"
 
 ## <a name="debugging-with-vorlonjs-on-a-ipad-or-mac"></a>在 iPad 或 Mac 上使用 Vorlon.JS 进行调试
 
-要在 iPad 或 Mac 上调试加载项，可以使用 Vorlon.JS，这是一个类似于 F12 工具的网页调试器。 它旨在实现远程工作，使您能够在不同设备上调试网页。 有关详细信息，请参阅 [Vorlon 网站](http://www.vorlonjs.com)。  
+要在 iPad 或 Mac 上调试加载项，可以使用 Vorlon.JS，这是一个类似于 F12 工具的网页调试器。 它旨在实现远程工作，使你能够在不同设备上调试网页。 有关详细信息，请参阅 [Vorlon 网站](http://www.vorlonjs.com)。  
 
 
 ### <a name="install-and-set-up-vorlonjs"></a>安装并设置 Vorlon.JS  
@@ -115,7 +115,7 @@ ms.locfileid: "19722329"
 
 3.  打开浏览器窗口，然后转到 Vorlon.JS 界面 `https://localhost:1337`。
 
-4. 旁加载外接程序。如果是针对 Excel、PowerPoint 或 Word，请按[在 iPad 和 Mac 上旁加载 Office 外接程序](sideload-an-office-add-in-on-ipad-and-mac.md)中所述进行旁加载。如果是 Outlook 外接程序，请按[旁加载 Outlook 外接程序用于测试](https://docs.microsoft.com/en-us/outlook/add-ins/sideload-outlook-add-ins-for-testing)进行旁加载。如果外接程序不使用外接程序命令，它将立即打开。否则，请选择按钮以打开外接程序。按钮位于“**主页**”选项卡或“**外接程序**”选项卡上，具体取决于 Office 主机应用程序版本。
+4. 旁加载外接程序。如果是针对 Excel、PowerPoint 或 Word，请按[在 iPad 和 Mac 上旁加载 Office 外接程序](sideload-an-office-add-in-on-ipad-and-mac.md)中所述进行旁加载。如果是 Outlook 外接程序，请按[旁加载 Outlook 外接程序用于测试](https://docs.microsoft.com/outlook/add-ins/sideload-outlook-add-ins-for-testing)进行旁加载。如果外接程序不使用外接程序命令，它将立即打开。否则，请选择按钮以打开外接程序。按钮位于“**主页**”选项卡或“**外接程序**”选项卡上，具体取决于 Office 主机应用程序版本。
 
 外接程序将在 Vorlon.JS（在 Vorlon.JS 界面左侧）的客户端列表中显示为 **{OS} - n**，*n* 代表数字，而 *{OS}* 表示设备类型，例如“Macintosh”。 
 

@@ -1,13 +1,13 @@
 ---
-title: Office 外接程序平台概述
+title: Office 加载项平台概述
 description: ''
 ms.date: 01/23/2018
-ms.openlocfilehash: f7b1f4add776f1971e9762c5cb80dabed45b0a1c
-ms.sourcegitcommit: a0e0416289b293863b8b4d3f9a12581a9e681b27
+ms.openlocfilehash: a35e0db20f5c573357b12b9034d9b13ce0cc3a27
+ms.sourcegitcommit: 4de2a1b62ccaa8e51982e95537fc9f52c0c5e687
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/23/2018
-ms.locfileid: "20023163"
+ms.lasthandoff: 08/10/2018
+ms.locfileid: "22925274"
 ---
 # <a name="office-add-ins-platform-overview"></a>Office 加载项平台概述
 
@@ -39,7 +39,7 @@ COM 或 VSTO 加载项是旧 Office 集成解决方案，仅在 Office for Windo
 
 Office 外接程序包括两个基本组件：XML 清单文件和你自己的 Web 应用程序。此清单定义各种设置，包括将外接程序与 Office 客户端集成的方式。需要在 Web 服务器或 Web 托管服务上托管 Web 应用程序，例如 Microsoft Azure。
 
-*图 1. 外接程序清单 (XML) + 网页 (HTML, JS) = 一个 Office 外接程序*
+*图 1. 加载项清单 (XML) + 网页 (HTML, JS) = 一个 Office 加载项*
 
 ![清单 + 网页 = Office 加载项](../images/about-addins-manifestwebpage.png)
 
@@ -101,7 +101,7 @@ Outlook 外接程序可扩展 Office 功能区，还可以在查看或撰写 Out
 
 Outlook 加载项可以通过项访问上下文信息（如地址或跟踪 ID），再使用此类数据访问服务器和 Web 服务上的其他信息，以打造有吸引力的用户体验。大多数情况下，Outlook 加载项无需经过修改，即可在各种支持的主机应用（包括 Outlook、Outlook for Mac、Outlook Web App，以及适用于设备的 Outlook Web App）上运行，从而在桌面设备、Web 设备、平板电脑和移动设备上提供无缝体验。 
 
-有关 Outlook 加载项的概述，请参阅 [Outlook 加载项概述](https://docs.microsoft.com/en-us/outlook/add-ins/)。 
+有关 Outlook 加载项的概述，请参阅 [Outlook 加载项概述](https://docs.microsoft.com/outlook/add-ins/)。 
 
 ### <a name="create-new-objects-in-office-documents"></a>在 Office 文档中新建对象 
 
@@ -117,13 +117,13 @@ Office JavaScript API 包含的对象和成员适用于生成加载项，并与 
 
 ## <a name="next-steps"></a>后续步骤 
 
-要了解有关如何开始构建 Office 外接程序的更多信息，请尝试使用我们的 [5 分钟快速入门](https://docs.microsoft.com/en-us/office/dev/add-ins/)。 你可以使用 Visual Studio 或任何其他编辑器立即开始构建外接程序。 
+要了解有关如何开始构建 Office 加载项的更多信息，请尝试使用我们的 [5 分钟快速入门](https://docs.microsoft.com/office/dev/add-ins/)。 你可以使用 Visual Studio 或任何其他编辑器立即开始构建加载项。 
 
-若要开始计划解决方案并打造有吸引力的有效用户体验，请熟悉 Office 外接程序的[设计指南](../design/add-in-design.md)和[最佳做法](../concepts/add-in-development-best-practices.md)。    
+若要开始计划解决方案并打造有吸引力的有效用户体验，请熟悉 Office 加载项的[设计指南](../design/add-in-design.md)和[最佳做法](../concepts/add-in-development-best-practices.md)。    
    
 ## <a name="see-also"></a>另请参阅
 
-- [Office 加载项示例](https://developer.microsoft.com/en-us/office/gallery/?filterBy=Samples)
+- [Office 加载项示例](https://developer.microsoft.com/office/gallery/?filterBy=Samples)
 - [了解适用于 Office 的 JavaScript API](../develop/understanding-the-javascript-api-for-office.md)
 - [Office 外接程序主机和平台可用性](../overview/office-add-in-availability.md)
 
