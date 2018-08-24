@@ -2,12 +2,12 @@
 title: 在 Visual Studio 中创建和调试 Office 加载项
 description: ''
 ms.date: 03/14/2018
-ms.openlocfilehash: 3e4fbcd3919be0d5510b36ae77a6e3706eab9689
-ms.sourcegitcommit: c72c35e8389c47a795afbac1b2bcf98c8e216d82
+ms.openlocfilehash: c903f3d475e46ee09a3c350f79c1e3d671ae5923
+ms.sourcegitcommit: 28fc652bded31205e393df9dec3a9dedb4169d78
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/23/2018
-ms.locfileid: "19437603"
+ms.lasthandoff: 08/23/2018
+ms.locfileid: "22927445"
 ---
 # <a name="create-and-debug-office-add-ins-in-visual-studio"></a>在 Visual Studio 中创建和调试 Office 加载项
 
@@ -19,7 +19,7 @@ ms.locfileid: "19437603"
 ## <a name="create-an-office-add-in-project-in-visual-studio"></a>在 Visual Studio 中创建 Office 加载项项目
 
 
-首先，请确保已安装 [Office 开发人员工具](https://www.visualstudio.com/features/office-tools-vs.aspx)和一版 Microsoft Office。可以加入 [Office 365 开发人员计划](https://developer.microsoft.com/en-us/office/dev-program)，也可以按照下面的说明操作，以获取[最新版](../develop/install-latest-office-version.md)。
+首先，请确保已安装 [Office 开发人员工具](https://www.visualstudio.com/features/office-tools-vs.aspx)和一版 Microsoft Office。可以加入 [Office 365 开发人员计划](https://developer.microsoft.com/office/dev-program)，也可以按照下面的说明操作，以获取[最新版](../develop/install-latest-office-version.md)。
 
 
 1. 在 Visual Studio 菜单栏中，依次选择“文件”**** > “新建”**** > “项目”****。
@@ -48,7 +48,7 @@ ms.locfileid: "19437603"
 |**项目**|**说明**|
 |:-----|:-----|
 |加载项项目|仅包含一个 XML 清单文件，该文件包含描述您加载项的所有设置。这些设置可帮助 Office 主机确定应何时激活加载项，以及在何处显示加载项。Visual Studio 会为您生成此文件的内容，以便您能够立即运行项目并使用加载项。您可以通过使用清单编辑器来随时更改这些设置。|
-|Web 应用程序项目|包含加载项的内容页面，包括开发可识别 Office 的 HTML 和 JavaScript 页面所需的所有文件和文件引用。在您开发加载项时，Visual Studio 会在本地 IIS 服务器上承载 Web 应用程序。准备好进行发布后，必须找出一个服务器来承载此项目。如果要了解有关 ASP.NET Web 应用程序项目的更多信息，请参阅 [ASP.NET Web 项目](http://msdn.microsoft.com/en-us/library/cdcd712f-96b0-4165-8b5d-9d0566650a28%28Office.15%29.aspx)。|
+|Web 应用程序项目|包含加载项的内容页面，包括开发可识别 Office 的 HTML 和 JavaScript 页面所需的所有文件和文件引用。在您开发加载项时，Visual Studio 会在本地 IIS 服务器上承载 Web 应用程序。准备好进行发布后，必须找出一个服务器来承载此项目。如果要了解有关 ASP.NET Web 应用程序项目的更多信息，请参阅 [ASP.NET Web 项目](http://msdn.microsoft.com/library/cdcd712f-96b0-4165-8b5d-9d0566650a28%28Office.15%29.aspx)。|
 
 ## <a name="modify-your-add-in-settings"></a>修改您的外接程序设置
 
@@ -91,7 +91,7 @@ Web 应用程序项目包含一个可用于入门的默认 HTML 页和 Javascrip
 ### <a name="to-open-the-property-pages-of-a-project"></a>打开项目的属性页
 
 
-1. 在“**解决方案资源管理器**”中，选择项目名称。
+1. 在 **解决方案资源管理器**中，选择基本加载项项目（非 Web 项目）。
     
 2. 在菜单栏上，依次选择“**视图**”和“**属性窗口**”。
     
@@ -159,19 +159,19 @@ Web 应用程序项目包含一个可用于入门的默认 HTML 页和 Javascrip
 接下来，Visual Studio 会执行以下操作：
 
 
-1. 修改 XML 显示文件的 [SourceLocation](http://msdn.microsoft.com/en-us/library/e6ea8cd4-7c8b-1da7-d8f8-8d3c80a088bc%28Office.15%29.aspx)元素，通过将 ～remoteAppUrl 标记替换为起始页的完全限定地址（例如， http://localhost/MyAgave.html)。
+1. 修改 XML 显示文件的 [SourceLocation](https://dev.office.com/reference/add-ins/manifest/sourcelocation)元素，通过将 ～remoteAppUrl 标记替换为起始页的完全限定地址（例如， http://localhost/MyAgave.html)）。
     
 2. 在 IIS Express 中启动 Web 应用程序项目。
     
 3. 打开主机应用程序。 
     
-生成项目时，Visual Studio 不会显示“**输出**”窗口中的验证错误。Visual Studio 报告“**错误列表**”窗口中出现的错误和警告。通过在代码和文本编辑器中显示不同颜色的波浪下划线（称为波浪线），Visual Studio 还报告验证错误。通过这些标志，你可以得知 Visual Studio 在代码中检测到的问题。有关详细信息，请参阅 [代码和文本编辑器](https://msdn.microsoft.com/en-us/library/se2f663y(v=vs.140).aspx)。有关如何启用或禁用验证的详细信息，请参阅： 
+生成项目时，Visual Studio 不会显示“**输出**”窗口中的验证错误。Visual Studio 报告“**错误列表**”窗口中出现的错误和警告。通过在代码和文本编辑器中显示不同颜色的波浪下划线（称为波浪线），Visual Studio 还报告验证错误。通过这些标志，你可以得知 Visual Studio 在代码中检测到的问题。有关详细信息，请参阅 [代码和文本编辑器](https://msdn.microsoft.com/library/se2f663y(v=vs.140).aspx)。有关如何启用或禁用验证的详细信息，请参阅： 
 
-- [选项、文本编辑器、JavaScript 和 IntelliSense](https://msdn.microsoft.com/en-us/library/hh362485(v=vs.140).aspx)
+- [选项、文本编辑器、JavaScript 和 IntelliSense](https://msdn.microsoft.com/library/hh362485(v=vs.140).aspx)
     
-- [操作方法：为 Visual Web Developer 中的 HTML 编辑设置验证选项](https://msdn.microsoft.com/en-us/library/0byxkfet(v=vs.100).aspx)
+- [操作方法：为 Visual Web Developer 中的 HTML 编辑设置验证选项](https://msdn.microsoft.com/library/0byxkfet(v=vs.100).aspx)
     
-- [有关 CSS，请参阅验证、CSS、文本编辑器和“选项”对话框](https://msdn.microsoft.com/en-us/library/se2f663y(v=vs.140).aspx)
+- [有关 CSS，请参阅验证、CSS、文本编辑器和“选项”对话框](https://msdn.microsoft.com/library/se2f663y(v=vs.140).aspx)
     
 若要查看项目中 XML 清单文件的验证规则，请参阅 [Office 外接程序 XML 清单](../develop/add-in-manifests.md)。
 

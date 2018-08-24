@@ -1,4 +1,4 @@
-# <a name="ux-design-patterns-for-office-add-ins"></a> Office加载项的UX设计模式
+# <a name="ux-design-patterns-for-office-add-ins"></a>适用于 Office 外接程序的 UX 设计模式
 
 Office加载项用户体验设计应该向Office用户提供引人注目的体验，并在默认的Office用户界面中，实现无缝配合，扩展Office整体体验。  
 
@@ -10,14 +10,14 @@ Office UI Fabric 呈现外观和行为类似于 Office 部件的组件。 利用
 
 使用UX模式模板：
 
-* 将解决方案应用于常见的客户场景。
+* 将解决方案应用于常见的客户方案。
 * 应用设计最佳实践。
-* 纳入“[Office UI Fabric](https://developer.microsoft.com/en-us/fabric#/get-started)”组件和样式。
-* 构建以可视方式与默认 Office 用户界面集成的加载项。
+* 纳入“[Office UI Fabric](https://developer.microsoft.com/fabric#/get-started)”组件和样式。
+* 构建以可视方式与默认 Office UI 集成的外接程序。
 * 想象UX。
 
 
-## <a name="getting-started"></a>新手指南
+## <a name="getting-started"></a>入门
 
 这些模式按照加载项中常见的关键操作或体验进行组织。 主要组别是：
 
@@ -37,6 +37,6 @@ Office UI Fabric 呈现外观和行为类似于 Office 部件的组件。 利用
 
 ## <a name="see-also"></a>另请参阅
 * [设计工具包](design-toolkits.md)
-* [Office UI Fabric](https://developer.microsoft.com/en-us/fabric)
-* [ Office加载项的最佳开发实践](https://docs.microsoft.com/en-us/office/dev/add-ins/concepts/add-in-development-best-practices)
-* [开始使用 Fabric React](https://docs.microsoft.com/en-us/office/dev/add-ins/design/using-office-ui-fabric-react)
+* [Office UI Fabric](https://developer.microsoft.com/fabric)
+* [Office 外接程序开发最佳做法](https://docs.microsoft.com/office/dev/add-ins/concepts/add-in-development-best-practices)
+* [开始使用 Fabric React](https://docs.microsoft.com/office/dev/add-ins/design/using-office-ui-fabric-react)

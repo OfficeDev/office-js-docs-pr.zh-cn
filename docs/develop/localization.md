@@ -2,12 +2,12 @@
 title: Office 加载项的本地化
 description: ''
 ms.date: 01/23/2018
-ms.openlocfilehash: d7888859ca29a62541020b45b0b7a3638c41f4f2
-ms.sourcegitcommit: c72c35e8389c47a795afbac1b2bcf98c8e216d82
+ms.openlocfilehash: c700dfa2f424577edf364505b0da47854467f77b
+ms.sourcegitcommit: 4de2a1b62ccaa8e51982e95537fc9f52c0c5e687
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/23/2018
-ms.locfileid: "19437736"
+ms.lasthandoff: 08/10/2018
+ms.locfileid: "22925575"
 ---
 # <a name="localization-for-office-add-ins"></a>Office 加载项的本地化
 
@@ -62,7 +62,7 @@ ms.locfileid: "19437736"
 |[SourceLocation]   |指定的每个区域设置中的用户都可以看到专门针对相应区域设置为加载项设计的网页。 |
 
 
-> **注意**：只能本地化 Office 支持的区域设置的说明和显示名称。有关最新版 Office 支持的语言和区域设置列表，请参阅 [Office 2013 中的语言标识符和 OptionState ID 值](http://technet.microsoft.com/en-us/library/cc179219.aspx)。
+> **注意**：只能本地化 Office 支持的区域设置的说明和显示名称。有关最新版 Office 支持的语言和区域设置列表，请参阅 [Office 2013 中的语言标识符和 OptionState ID 值](https://docs.microsoft.com/previous-versions/office/office-2013-resource-kit/cc179219(v=office.15))。
 
 
 ### <a name="examples"></a>示例
@@ -158,7 +158,7 @@ ms.locfileid: "19437736"
 
 如果使用 Visual Studio 创建 Office 外接程序，.NET Framework 和 Ajax 会提供用于全球化和本地化客户端脚本文件的方法。
 
-您可以全球化 Office 外接程序并在其 JavaScript 代码中使用 [Date](http://msdn.microsoft.com/library/caf98d32-2de2-4704-8198-692350343681.aspx) 和 [Number](http://msdn.microsoft.com/library/c216d3a1-12ae-47d1-bca1-c3666d04572f.aspx) JavaScript 类型扩展和 JavaScript [Date](http://msdn.microsoft.com/library/ce2202bb-7ec9-4f5a-bf48-3a04feff283e.aspx) 对象，以根据当前浏览器的区域设置显示值。有关详细信息，请参阅 [Walkthrough: Globalizing a Date by Using Client Script](http://msdn.microsoft.com/library/69b34e6d-d590-4d03-a763-b7ae54b47d74.aspx)。
+您可以全球化 Office 外接程序并在其 JavaScript 代码中使用 [Date](http://msdn.microsoft.com/library/caf98d32-2de2-4704-8198-692350343681.aspx) 和 [Number](http://msdn.microsoft.com/library/c216d3a1-12ae-47d1-bca1-c3666d04572f.aspx) JavaScript 类型扩展和 JavaScript [Date](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Date) 对象，以根据当前浏览器的区域设置显示值。有关详细信息，请参阅 [Walkthrough: Globalizing a Date by Using Client Script](http://msdn.microsoft.com/library/69b34e6d-d590-4d03-a763-b7ae54b47d74.aspx)。
 
 可将本地化的资源字符串直接包含在独立的 JavaScript 文件中，以便为不同区域设置提供客户端脚本文件，这些文件在浏览器中设置或由用户提供。为每个受支持的区域设置创建单独的脚本文件。在每个脚本文件中，包括一个 JSON 格式的对象，其中包含用于该区域设置的资源字符串。在浏览器中运行脚本时，会应用本地化的值。 
 
@@ -175,7 +175,7 @@ ms.locfileid: "19437736"
 
 ### <a name="configure-office-2013-to-use-additional-languages-for-display-or-editing"></a>将 Office 2013 配置为使用其他显示或编辑语言
 
-您可以使用 Office 2013 语言包安装其他语言。有关语言包及其获取位置的详细信息，请参阅 [Office 2013 语言选项](http://office.microsoft.com/en-us/language-packs/)。
+您可以使用 Office 2013 语言包安装其他语言。有关语言包及其获取位置的详细信息，请参阅 [Office 2013 语言选项](http://office.microsoft.com/language-packs/)。
 
 > **注意**：若为 MSDN 订阅者，可能已有可用的 Office 2013 语言包。若要确定订阅是否提供可供下载的 Office 2013 语言包，请转到 [MSDN 订阅主页](https://msdn.microsoft.com/subscriptions/manage/)，在“软件下载”**** 中输入“Office 2013 语言包”，再依次选择“搜索”**** 和“我的订阅提供的产品”****。在“语言”**** 下，选中要下载的语言包的复选框，再选择“转到”****。 
 
@@ -419,7 +419,7 @@ UIStrings.js 资源文件创建对象 **UIStrings**，其中包含加载项 UI �
 ## <a name="see-also"></a>另请参阅
 
 - [Office 加载项的设计准则](../design/add-in-design.md)    
-- [Office 2013 中的语言标识符和 OptionState Id 值](http://technet.microsoft.com/en-us/library/cc179219%28Office.15%29.aspx)
+- [Office 2013 中的语言标识符和 OptionState Id 值](https://docs.microsoft.com/previous-versions/office/office-2013-resource-kit/cc179219(v=office.15))
 
 [DefaultLocale]:        https://dev.office.com/reference/add-ins/manifest/defaultlocale
 [说明]:          https://dev.office.com/reference/add-ins/manifest/description

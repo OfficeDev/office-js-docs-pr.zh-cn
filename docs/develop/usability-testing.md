@@ -2,12 +2,12 @@
 title: Office 加载项的可用性测试
 description: ''
 ms.date: 01/23/2018
-ms.openlocfilehash: 410b8d7ede22cf222ee2df794e438c7f5f8881dd
-ms.sourcegitcommit: 4e4f7c095e8f33b06bd8a02534ee901125eb1d17
+ms.openlocfilehash: 4b21af2502c9357e8a7d2c953cd5182833577ac9
+ms.sourcegitcommit: 4de2a1b62ccaa8e51982e95537fc9f52c0c5e687
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/28/2018
-ms.locfileid: "20085308"
+ms.lasthandoff: 08/10/2018
+ms.locfileid: "22925449"
 ---
 # <a name="usability-testing-for-office-add-ins"></a>Office 加载项的可用性测试
 
@@ -24,7 +24,7 @@ ms.locfileid: "20085308"
 你只需五名参与者即可发现设计中的大多数可用性问题。在整个开发周期内定期进行小型测试，以确保产品以用户为中心。
 
 > [!NOTE]
-> 建议跨多个平台测试加载项的可用性。若要[将加载项发布到 AppSource](https://docs.microsoft.com/en-us/office/dev/store/submit-to-the-office-store)，加载项必须适用于[支持已定义方法的所有平台](../overview/office-add-in-availability.md)。
+> 建议跨多个平台测试加载项的可用性。若要[将加载项发布到 AppSource](https://docs.microsoft.com/office/dev/store/submit-to-the-office-store)，加载项必须适用于[支持已定义方法的所有平台](../overview/office-add-in-availability.md)。
 
 ## <a name="1---sign-up-for-a-testing-service"></a>1. 注册测试服务
 

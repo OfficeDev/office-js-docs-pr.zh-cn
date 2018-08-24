@@ -2,12 +2,12 @@
 title: Office 加载项的资源限制和性能优化
 description: ''
 ms.date: 01/23/2018
-ms.openlocfilehash: f5f24faf337a40caf7245d45052208ef6f46af1a
-ms.sourcegitcommit: bc68b4cf811b45e8b8d1cbd7c8d2867359ab671b
+ms.openlocfilehash: 57004d5f3b38bfb1c58cefbccf22a2ea0aa0b16f
+ms.sourcegitcommit: 4de2a1b62ccaa8e51982e95537fc9f52c0c5e687
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "21703824"
+ms.lasthandoff: 08/10/2018
+ms.locfileid: "22925386"
 ---
 # <a name="resource-limits-and-performance-optimization-for-office-add-ins"></a>Office 加载项的资源限制和性能优化
 
@@ -85,7 +85,7 @@ Office 提供了遥测日志，以保留本地计算机上运行的 Office 解�
 |19|外接程序遇到运行时错误|关键|Office 外接程序遇到一个导致它失败的问题。有关详细信息，请使用遇到错误的计算机上的 Windows 事件查看器查看“**Microsoft Office 通知**”日志。|
 |20|外接程序未能验证许可|关键|无法验证 Office 外接程序的许可信息，且其可能已过期。有关详细信息，请使用遇到错误的计算机上的 Windows 事件查看器查看“**Microsoft Office 通知**”日志。|
 
-有关详细信息，请参阅[部署遥测仪表板](http://msdn.microsoft.com/en-us/library/f69cde72-689d-421f-99b8-c51676c77717%28Office.15%29.aspx)和[使用遥测日志排查 Office 文件和自定义解决方案](http://msdn.microsoft.com/library/ef88e30e-7537-488e-bc72-8da29810f7aa%28Office.15%29.aspx)。
+有关详细信息，请参阅[部署遥测仪表板](https://docs.microsoft.com/previous-versions/office/office-2013-resource-kit/jj219431(v=office.15))和[使用遥测日志排查 Office 文件和自定义解决方案](https://docs.microsoft.com/office/client-developer/shared/troubleshooting-office-files-and-custom-solutions-with-the-telemetry-log)。
 
 
 ## <a name="design-and-implementation-techniques"></a>设计和实现技术
@@ -94,9 +94,9 @@ Office 提供了遥测日志，以保留本地计算机上运行的 Office 解�
 
 - 在外接程序需要从无限制的数据集中读取大量数据的情况下，您可以在从表格中读取数据时应用分页，或者减小每次短暂读取操作中的数据大小，而不是试图在一次操作中完成全部读取。 
     
-   对于显示打断潜在的长时间运行且耗费大量 CPU 资源的 JavaScript 和 jQuery 代码的示例，请参阅[如何在高强度 JavaScript 处理过程中（暂时）将控制交回浏览器？](http://stackoverflow.com/questions/210821/how-can-i-give-control-back-briefly-to-the-browser-during-intensive-javascript)。该示例使用了全局对象的 [setTimeout](http://msdn.microsoft.com/en-us/library/ie/ms536753%28v=vs.85%29.aspx) 方法来限制输入和输出的时长，同时还以具有固定大小的片段的方式处理传入的数据（而非任意大小）。
+   对于显示打断潜在的长时间运行且耗费大量 CPU 资源的 JavaScript 和 jQuery 代码的示例，请参阅[如何在高强度 JavaScript 处理过程中（暂时）将控制交回浏览器？](http://stackoverflow.com/questions/210821/how-can-i-give-control-back-briefly-to-the-browser-during-intensive-javascript)。该示例使用了全局对象的 [setTimeout](https://developer.mozilla.org/docs/Web/API/WindowOrWorkerGlobalScope/setTimeout) 方法来限制输入和输出的时长，同时还以具有固定大小的片段的方式处理传入的数据（而非任意大小）。
     
-- 如果外接程序使用大量占用 CPU 的算法来处理大量数据，则您可以使用 Web Worker 在后台执行长时间运行的任务，同时在前台运行单独的脚本，例如在用户界面中显示进度。Web Worker 不会阻止用户活动并允许 HTML 页面保持响应能力。有关 Web Worker 的示例，请参阅 [Web Worker 的基本信息](https://www.html5rocks.com/en/tutorials/workers/basics/)。有关 Internet Explorer Web Worker API 的详细信息，请参阅 [Web Worker](http://msdn.microsoft.com/en-us/library/IE/hh772807%28v=vs.85%29.aspx)。
+- 如果外接程序使用大量占用 CPU 的算法来处理大量数据，则您可以使用 Web Worker 在后台执行长时间运行的任务，同时在前台运行单独的脚本，例如在用户界面中显示进度。Web Worker 不会阻止用户活动并允许 HTML 页面保持响应能力。有关 Web Worker 的示例，请参阅 [Web Worker 的基本信息](https://www.html5rocks.com/en/tutorials/workers/basics/)。有关 Internet Explorer Web Worker API 的详细信息，请参阅 [Web Worker](https://developer.mozilla.org/docs/Web/API/Web_Workers_API)。
     
 - 如果外接程序使用大量占用 CPU 的算法，但您可以将数据输入或输出划分成较小的集合，则可以考虑创建一个 Web 服务，将数据传递给该 Web 服务以减轻 CPU 负担，然后等待异步回调。
     
@@ -106,5 +106,5 @@ Office 提供了遥测日志，以保留本地计算机上运行的 Office 解�
 ## <a name="see-also"></a>另请参阅
 
 - [Office 加载项的隐私和安全](../concepts/privacy-and-security.md)
-- [Outlook 加载项的激活和 JavaScript API 限制](https://docs.microsoft.com/en-us/outlook/add-ins/limits-for-activation-and-javascript-api-for-outlook-add-ins)
+- [Outlook 加载项的激活和 JavaScript API 限制](https://docs.microsoft.com/outlook/add-ins/limits-for-activation-and-javascript-api-for-outlook-add-ins)
     

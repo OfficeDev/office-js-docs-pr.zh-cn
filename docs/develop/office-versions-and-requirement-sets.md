@@ -1,3 +1,14 @@
+---
+title: Office 版本和要求集
+description: ''
+ms.date: 03/29/2018
+ms.openlocfilehash: 3900dbc50d879b9dec809e19b0fc3458a3f46729
+ms.sourcegitcommit: 4de2a1b62ccaa8e51982e95537fc9f52c0c5e687
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 08/10/2018
+ms.locfileid: "22925183"
+---
 # <a name="office-versions-and-requirement-sets"></a>Office 版本和要求集
 
 Office 跨多个平台运行且有许多版本，它们并非全都支持 Office JavaScript API (Office.js) 中的所有 API。 不一定总能控制用户安装的 Office 版本。  为了应对这种情况，我们提供了名为“要求集”的系统，以帮助确定 Office 主机是否支持 Office 加载项需要的功能。 
@@ -10,7 +21,7 @@ Office 跨多个平台运行且有许多版本，它们并非全都支持 Office
 
 ## <a name="how-to-check-your-office-version"></a>如何检查 Office 版本
 
-若要确定使用的 Office 版本，请在 Office 应用程序中，依次选择“文件”****菜单和“帐户”****。 Office 版本显示在“产品信息”****部分中。 例如，下面的屏幕截图指明 Office 版本 1802（生成号 9026.1000）：
+若要确定使用的 Office 版本，请在 Office 应用程序中，依次选择“文件”**** 菜单和“帐户”****。 Office 版本显示在“产品信息”**** 部分中。 例如，下面的屏幕截图指明 Office 版本 1802（生成号 9026.1000）：
 
 ![检查 Office 版本](../images/office-version-number-ui.jpg)
 
@@ -39,19 +50,16 @@ Office 加载项可使用 API 要求集，以确定 Office 主机是否支持需
 
 要求集的版本号（如 `ExcelApi 1.1` 中的“1.1”）是相对于 Office 主机而言。 给定要求集的版本号（例如，`ExcelApi 1.1`）既不对应于 Office.js 的版本号，也不对应于其他 Office 主机（例如，Word、Outlook 等）的要求集。  各个 Office 主机的要求集的发布速度和时间不同。 例如，`ExcelApi 1.5` 要求集先于 `WordApi 1.3` 要求集发布。
 
-适用于 Office 的 JavaScript API 库 (Office.js) 包含当前可用的所有要求集。 虽然有 `ExcelApi 1.3` 和 `WordApi 1.3` 等要求集，但并无 `Office.js 1.3` 要求集。 最新版 Office.js 作为一个通过内容传送网络 (CDN) 提供的 Office 终结点进行维护。 若要详细了解 Office.js CDN（包括如何处理版本控制和向后兼容性），请参阅[了解适用于 Office 的 JavaScript API](https://docs.microsoft.com/zh-cn/office/dev/add-ins/develop/understanding-the-javascript-api-for-office)。
+适用于 Office 的 JavaScript API 库 (Office.js) 包含当前可用的所有要求集。 虽然有 `ExcelApi 1.3` 和 `WordApi 1.3` 等要求集，但并无 `Office.js 1.3` 要求集。 最新版 Office.js 作为一个通过内容传送网络 (CDN) 提供的 Office 终结点进行维护。 若要详细了解 Office.js CDN（包括如何处理版本控制和向后兼容性），请参阅[了解适用于 Office 的 JavaScript API](https://docs.microsoft.com/office/dev/add-ins/develop/understanding-the-javascript-api-for-office)。
 
 ## <a name="specify-office-hosts-and-requirement-sets"></a>指定 Office 主机和要求集
 
-可通过多种方法来指定加载项需要的 Office 主机和要求集。  有关详细信息，请参阅[指定 Office 主机和 API 要求](https://docs.microsoft.com/zh-cn/office/dev/add-ins/develop/specify-office-hosts-and-api-requirements)
+可通过多种方法来指定加载项需要的 Office 主机和要求集。  有关详细信息，请参阅[指定 Office 主机和 API 要求](https://docs.microsoft.com/office/dev/add-ins/develop/specify-office-hosts-and-api-requirements)
 
 
 ## <a name="see-also"></a>另请参阅
 
-- 
-  [指定 Office 主机和 API 要求](https://docs.microsoft.com/zh-cn/office/dev/add-ins/develop/specify-office-hosts-and-api-requirements)
-- 
-  [安装最新版 Office](https://docs.microsoft.com/zh-cn/office/dev/add-ins/develop/install-latest-office-version)
-- 
-  [Office 365 专业增强版的更新通道概述](https://docs.microsoft.com/zh-cn/deployoffice/overview-of-update-channels-for-office-365-proplus)
-- [通过 Office 365 充分利用 Office](https://products.office.com/en-us/compare-all-microsoft-office-products?tab=2)
+- [指定 Office 主机和 API 要求](https://docs.microsoft.com/office/dev/add-ins/develop/specify-office-hosts-and-api-requirements)
+- [安装最新版 Office](https://docs.microsoft.com/office/dev/add-ins/develop/install-latest-office-version)
+- [Office 365 专业增强版的更新通道概述](https://docs.microsoft.com/deployoffice/overview-of-update-channels-for-office-365-proplus)
+- [通过 Office 365 充分利用 Office](https://products.office.com/compare-all-microsoft-office-products?tab=2)

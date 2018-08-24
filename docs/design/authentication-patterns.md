@@ -2,7 +2,7 @@
 
 加载项可能要求用户登录或注册以访问特色和功能。 用户名和密码的输入框或启动第三方凭证流的按钮是验证体验中的通用界面控件。 简单有效的身份验证体验是让用户开始使用加载项重要的第一步。
 
-## <a name="best-practices"></a>最佳实行
+## <a name="best-practices"></a>最佳做法
 
 |允许事项|禁止事项|
 |:----|:----|
@@ -15,7 +15,7 @@
 |为用户提供注销和重新认证的方法。    |强制用户卸载以切换身份。|
 
 > [!NOTE]
-> 目前，Word、Excel、Outlook 和 PowerPoint 预览版支持单一登录 API。 若要详细了解目前支持单一登录 API 的平台，请参阅 [IdentityAPI 要求集](https://dev.office.com/reference/add-ins/requirement-sets/identity-api-requirement-sets)。 如果使用的是 Outlook 加载项，请务必为 Office 365 租赁启用新式验证。 若要了解如何这样做，请参阅 [Exchange Online：如何为租户启用新式验证](https://social.technet.microsoft.com/wiki/contents/articles/32711.exchange-online-how-to-enable-your-tenant-for-modern-authentication.aspx)。
+> 目前，Word、Excel、Outlook 和 PowerPoint 预览版支持单一登录 API。 若要详细了解目前支持单一登录 API 的平台，请参阅 [IdentityAPI 要求集](https://dev.office.com/reference/add-ins/requirement-sets/identity-api-requirement-sets)。 如果使用的是 Outlook 加载项，请务必为 Office 365 租赁启用新式验证。 若要了解如何执行此操作，请参阅 [Exchange Online：如何为租户启用新式验证](https://social.technet.microsoft.com/wiki/contents/articles/32711.exchange-online-how-to-enable-your-tenant-for-modern-authentication.aspx)。
 
 
 ## <a name="authentication-flow"></a>身份验证流程
@@ -29,7 +29,7 @@
 
 
 
-3. 身份提供商登录 - 身份提供商将拥有自己的用户界面。 Microsoft Azure Active Directory允许自定义登录和访问面板页面，以便与您的服务保持一致的外观。 [了解更多](https://docs.microsoft.com/en-us/azure/active-directory/fundamentals/customize-branding)。
+3. 身份提供商登录 - 身份提供商将拥有自己的用户界面。 Microsoft Azure Active Directory允许自定义登录和访问面板页面，以便与您的服务保持一致的外观。 [了解更多](https://docs.microsoft.com/azure/active-directory/fundamentals/customize-branding)。
 ![](../images/add-in-auth-identity-sign-in.png)
 
 4. 进度 - 在设置和UI加载时指示进度。
@@ -49,4 +49,4 @@
 ![](../images/add-in-ribbon.png)
 
 ## <a name="see-also"></a>另请参阅
-- 学习更多关于 [开发SSO插件](https://docs.microsoft.com/en-us/office/dev/add-ins/develop/sso-in-office-add-ins)
+- 学习更多关于 [开发SSO插件](https://docs.microsoft.com/office/dev/add-ins/develop/sso-in-office-add-ins)

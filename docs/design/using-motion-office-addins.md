@@ -25,7 +25,7 @@ Office 的重点是工作效率，因此 Office 动画语言支持帮助客户�
 
 
 ## <a name="use-expected-motions"></a>使用符合预期的动作
-建议使用 [Office UI Fabric](https://developer.microsoft.com/en-us/fabric) 直观连接到 Office 平台，还建议使用 [Fabric 动画](https://developer.microsoft.com/en-us/fabric#/styles/animations)创建与 Fabric 动作语言一致的动作。 
+建议使用 [Office UI Fabric](https://developer.microsoft.com/fabric) 直观连接到 Office 平台，还建议使用 [Fabric 动画](https://developer.microsoft.com/fabric#/styles/animations)创建与 Fabric 动作语言一致的动作。 
 
 它可用于在 Office 中无缝集成。它有助于创建更侧重用户感受（而不是外观）的体验。动画 CSS 类提供方向、进入/退出和持续时间（强化 Office 心理模型），并为客户提供了解如何与加载项交互的机会。
 

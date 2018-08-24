@@ -1,8 +1,8 @@
 # <a name="office-javascript-apis"></a>Office JavaScript API
 
-欢迎阅读 Office JavaScript API 概念文档。 此存储库包含 Office JavaScript API 概念、快速入门、教程和操作说明指南方面的文档源文件。 为获得最佳体验，建议在 [docs.microsoft.com](https://docs.microsoft.com/en-us/office/dev/add-ins/) 上查看此类内容。
+欢迎阅读 Office JavaScript API 概念文档。 此存储库包含 Office JavaScript API 概念、快速入门、教程和操作说明指南方面的文档源文件。 为获得最佳体验，建议在 [docs.microsoft.com](https://docs.microsoft.com/office/dev/add-ins) 上查看此类内容。
 
-> **注意**：[office-js-docs](https://github.com/OfficeDev/office-js-docs) 存储库包含 Office JavaScript API 参考文档源文件。
+> **注意**：[office-js-docs](https://github.com/OfficeDev/office-js-docs-reference) 存储库包含 Office JavaScript API 参考文档源文件。
 
 ## <a name="give-us-your-feedback"></a>提供反馈
 

@@ -2,15 +2,20 @@
 title: 排查 Office 加载项中的用户错误
 description: ''
 ms.date: 01/23/2018
+ms.openlocfilehash: b9f55b5487aec1a2e700863e58cd5bbbf2daf146
+ms.sourcegitcommit: 4de2a1b62ccaa8e51982e95537fc9f52c0c5e687
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 08/10/2018
+ms.locfileid: "22925456"
 ---
-
 # <a name="troubleshoot-user-errors-with-office-add-ins"></a>排查 Office 加载项中的用户错误
 
 有时，您的用户在使用您开发的 Office 外接程序时可能会遇到问题。例如，外接程序无法加载或无法访问。使用本文中的信息有助于解决您的用户在使用 Office 外接程序时遇到的常见问题。 
 
 还可以使用 [Fiddler](http://www.telerik.com/fiddler) 发现和调试加载项问题。
 
-解决用户的问题后，可以[在 AppSource 中直接回复客户评论](https://docs.microsoft.com/zh-cn/office/dev/store/create-effective-office-store-listings)。
+解决用户的问题后，可以[在 AppSource 中直接回复客户评论](https://docs.microsoft.com/office/dev/store/create-effective-office-store-listings)。
 
 ## <a name="common-errors-and-troubleshooting-steps"></a>常见错误和故障排除步骤
 
@@ -21,7 +26,7 @@ ms.date: 01/23/2018
 |**错误消息**|**解决方案**|
 |:-----|:-----|
 |应用错误：无法访问目录|验证防火墙设置。“目录”是指 AppSource。此消息表明用户无法访问 AppSource。|
-|应用错误：无法启动此应用。若要忽略此问题，请关闭这个对话框。若要重试，请单击“重启”。|确认已安装最新的 Office 更新，或下载 [Office 2013 更新](https://support.microsoft.com/en-us/kb/2986156/)。|
+|应用错误：无法启动此应用。若要忽略此问题，请关闭这个对话框。若要重试，请单击“重启”。|确认是否已安装最新的 Office 更新程序，或下载 [Office 2013 更新程序](https://support.microsoft.com/kb/2986156/)。|
 |错误：对象不 支持此属性或方法 "defineProperty"|确认 Internet Explorer 不是在兼容模式下运行。转到“工具”>“**兼容性视图设置**”。|
 |很抱歉，我们无法加载 该应用程序，因为您的浏览器 版本不受支持。 单击此处查看 支持的浏览器版本的列表。|确保浏览器支持 HTML5 本地存储，或重置您的 Internet Explorer 设置。有关受支持的浏览器的信息，请参阅 [运行 Office 加载项的要求](../concepts/requirements-for-running-office-add-ins.md)。|
 
@@ -49,7 +54,7 @@ ms.date: 01/23/2018
     
 3. 尝试插入外接程序时在收到提示的时候验证其身份。
     
-确认是否已安装最新的 Office 更新程序，或下载 [Office 2013 更新程序](https://support.microsoft.com/en-us/kb/2986156/)。
+确认是否已安装最新的 Office 更新程序，或下载 [Office 2013 更新程序](https://support.microsoft.com/kb/2986156/)。
 
 
 ## <a name="add-in-doesnt-load-in-task-pane-or-other-issues-with-the-add-in-manifest"></a>外接程序无法在任务窗格中加载，或外接程序清单存在其他问题
