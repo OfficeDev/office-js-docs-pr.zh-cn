@@ -270,7 +270,6 @@ _适用于：Word 2016、Word for iPad、Word for Mac_
             <title>Boilerplate text app</title>
             <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.1.4.min.js"></script>
             <script src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js" type="text/javascript"></script>
-            <script src="app.js" type="text/javascript"></script>
             <link href="app.css" rel="stylesheet" type="text/css" />
         </head>
         <body>
@@ -297,7 +296,7 @@ _适用于：Word 2016、Word for iPad、Word for Mac_
     </html>
     ```
 
-2. 打开文件“app.js”****，以指定加载项脚本。 将整个内容替换为以下代码，并保存文件。 此脚本包含初始化代码以及用于更改 Word 文档的代码（具体方法是通过选择某个按钮将文本插入文档）。 
+2. 打开文件 **src/index.js** 以指定加载项的脚本，替换全部内容为以下代码并保存该文件。此脚本包含初始化代码以及更改 Word 文档的代码，它在选择一个按钮时将文字插入到文档。 
 
     ```js
     'use strict';
@@ -398,7 +397,7 @@ _适用于：Word 2016、Word for iPad、Word for Mac_
     })();
     ```
 
-3. 打开项目根目录中的文件“app.css”****，以指定加载项自定义样式。 将整个内容替换为以下内容，并保存文件。
+3. 打开项目根目录中的文件 **app.css**，以指定加载项自定义样式。 将整个内容替换为以下内容，并保存文件。
 
     ```css
     #content-header {
