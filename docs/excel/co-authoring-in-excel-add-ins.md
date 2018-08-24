@@ -2,16 +2,16 @@
 title: 使用 Excel 加载项共同创作
 description: ''
 ms.date: 12/04/2017
-ms.openlocfilehash: d0ef481f9efd6b977963091d5d0a123c30a5a789
-ms.sourcegitcommit: c72c35e8389c47a795afbac1b2bcf98c8e216d82
+ms.openlocfilehash: 1919f66a3c93c42ec24520f971eda33dac491355
+ms.sourcegitcommit: 4de2a1b62ccaa8e51982e95537fc9f52c0c5e687
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/23/2018
-ms.locfileid: "19437568"
+ms.lasthandoff: 08/10/2018
+ms.locfileid: "22925239"
 ---
 # <a name="coauthoring-in-excel-add-ins"></a>使用 Excel 加载项共同创作  
 
-借助[共同创作功能](https://support.office.com/en-US/article/Collaborate-on-Excel-workbooks-at-the-same-time-with-co-authoring-7152aa8b-b791-414c-a3bb-3024e46fb104)，多个人可以共同协作，同时编辑同一个 Excel 工作簿。 在另一个共同创作者更改并保存工作簿后，此工作簿的所有共同创作者都可以立即看这些更改。 若要共同创作 Excel 工作簿，必须将工作簿存储在 OneDrive、OneDrive for Business 或 SharePoint Online 中。
+借助[共同创作功能](https://support.office.com/article/Collaborate-on-Excel-workbooks-at-the-same-time-with-co-authoring-7152aa8b-b791-414c-a3bb-3024e46fb104)，多个人可以共同协作，同时编辑同一个 Excel 工作簿。 在另一个共同创作者更改并保存工作簿后，此工作簿的所有共同创作者都可以立即看这些更改。 若要共同创作 Excel 工作簿，必须将工作簿存储在 OneDrive、OneDrive for Business 或 SharePoint Online 中。
 
 > [!IMPORTANT]
 > 在 Excel 2016 for Office 365 中，便会发现左上角显示有“自动保存”。 启用“自动保存”后，将实时向合著者显示你的更改。 请考虑此行为对 Excel 外接程序设计的影响。 用户可以通过 Excel 窗口左上方的开关禁用“自动保存”。
@@ -56,5 +56,5 @@ Excel 外接程序可以读取工作簿内容（通过隐藏工作表和设置�
 
 ## <a name="see-also"></a>另请参阅 
 
-- [Excel 中的共同创作功能的相关信息 (VBA)](https://msdn.microsoft.com/en-us/vba/excel-vba/articles/about-coauthoring-in-excel) 
-- [自动保存如何影响外接程序和宏 (VBA)](https://msdn.microsoft.com/en-us/vba/office-shared-vba/articles/how-autosave-impacts-addins-and-macros) 
+- [Excel 中的共同创作功能的相关信息 (VBA)](https://msdn.microsoft.com/vba/excel-vba/articles/about-coauthoring-in-excel) 
+- [自动保存如何影响外接程序和宏 (VBA)](https://msdn.microsoft.com/vba/office-shared-vba/articles/how-autosave-impacts-addins-and-macros) 

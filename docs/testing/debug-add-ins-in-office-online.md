@@ -2,8 +2,13 @@
 title: 在 Office Online 中调试加载项
 description: 如何使用 Office Online 测试和调试加载项。
 ms.date: 03/14/2018
+ms.openlocfilehash: fac57e136c07bf33dce62908ea2c12d8be806f7b
+ms.sourcegitcommit: 4de2a1b62ccaa8e51982e95537fc9f52c0c5e687
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 08/10/2018
+ms.locfileid: "22925337"
 ---
-
 # <a name="debug-add-ins-in-office-online"></a>在 Office Online 中调试加载项
 
 
@@ -16,7 +21,7 @@ ms.date: 03/14/2018
 - 获取 Office 365 开发人员帐户（如果还没有的话），或获取对 SharePoint 网站的访问权限。
     
   > [!NOTE]
-  > 若要注册免费 Office 365 开发人员订阅，请加入 [Office 365 开发人员计划](https://developer.microsoft.com/en-us/office/dev-program)。 请参阅 [Office 365 开发人员计划文档](https://docs.microsoft.com/zh-cn/office/developer-program/office-365-developer-program)，逐步了解如何加入 Office 365 开发人员计划并注册和配置订阅。
+  > 若要注册免费 Office 365 开发人员订阅，请加入 [Office 365 开发人员计划](https://developer.microsoft.com/office/dev-program)。 请参阅 [Office 365 开发人员计划文档](https://docs.microsoft.com/office/developer-program/office-365-developer-program)，逐步了解如何加入 Office 365 开发人员计划并注册和配置订阅。
      
 - 对 Office 365 (SharePoint Online) 设置加载项目录。加载项目录是 SharePoint Online 中的专用网站集，用于托管 Office 加载项的文档库。如果有自己的 SharePoint 网站，可以设置加载项目录文档库。有关详细信息，请参阅[向 SharePoint 上的加载项目录发布任务窗格和内容加载项](../publish/publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md)。
     
@@ -58,8 +63,8 @@ ms.date: 03/14/2018
 
 - [Office 加载项开发最佳做法](../concepts/add-in-development-best-practices.md)
 - 
-  [AppSource 验证策略](https://docs.microsoft.com/zh-cn/office/dev/store/validation-policies)  
+  [AppSource 验证策略](https://docs.microsoft.com/office/dev/store/validation-policies)  
 - 
-  [创建有效的 AppSource 应用和加载项](https://docs.microsoft.com/zh-cn/office/dev/store/create-effective-office-store-listings)  
+  [创建有效的 AppSource 应用和加载项](https://docs.microsoft.com/office/dev/store/create-effective-office-store-listings)  
 - [排查 Office 加载项中的用户错误](testing-and-troubleshooting.md)
     

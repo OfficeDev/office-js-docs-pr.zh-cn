@@ -2,19 +2,19 @@
 title: 了解适用于 Office 的 JavaScript API
 description: ''
 ms.date: 01/23/2018
-ms.openlocfilehash: fef2cdad69408f099296461066f1ea380e3b118b
-ms.sourcegitcommit: bc68b4cf811b45e8b8d1cbd7c8d2867359ab671b
+ms.openlocfilehash: ccc5122061e267fec875fcbbb5b2083e1b934f9d
+ms.sourcegitcommit: 7ecc1dc24bf7488b53117d7a83ad60e952a6f7aa
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "21703810"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "22546786"
 ---
 # <a name="understanding-the-javascript-api-for-office"></a>了解适用于 Office 的 JavaScript API
 
 本文提供了有关适用于 Office 的 JavaScript API 的信息以及使用方法。有关参考信息，请参阅 [适用于 Office 的 JavaScript API](https://dev.office.com/reference/add-ins/javascript-api-for-office)。有关将 Visual Studio 项目文件更新到适用于 Office 的 JavaScript API 的最新当前版本的信息，请参阅 [更新适用于 Office 的 JavaScript API 版本和清单架构文件](update-your-javascript-api-for-office-and-manifest-schema-version.md)。
 
 > [!NOTE]
-> 如果计划将加载项[发布](../publish/publish.md)到 AppSource 并适用于 Office 体验，请务必遵循 [AppSource 验证策略](https://docs.microsoft.com/en-us/office/dev/store/validation-policies)。例如，加载项必须适用于支持已定义方法的所有平台，才能通过验证（有关详细信息，请参阅[第 4.12 部分](https://docs.microsoft.com/en-us/office/dev/store/validation-policies#4-apps-and-add-ins-behave-predictably)以及 [Office 加载项主机和可用性](../overview/office-add-in-availability.md)页面）。 
+> 如果计划将加载项[发布](../publish/publish.md)到 AppSource 并适用于 Office 体验，请务必遵循 [AppSource 验证策略](https://docs.microsoft.com/office/dev/store/validation-policies)。例如，加载项必须适用于支持已定义方法的所有平台，才能通过验证（有关详细信息，请参阅[第 4.12 部分](https://docs.microsoft.com/office/dev/store/validation-policies#4-apps-and-add-ins-behave-predictably)以及 [Office 加载项主机和可用性](../overview/office-add-in-availability.md)页面）。 
 
 ## <a name="referencing-the-javascript-api-for-office-library-in-your-add-in"></a>在加载项中引用适用于 Office 的 JavaScript API 库
 
@@ -71,7 +71,7 @@ Office.initialize = function (reason) {
 
 ## <a name="office-javascript-api-object-model"></a>Office JavaScript API 对象模型
 
-初始化后，加载项可以与主机（例如 Excel、Outlook）交互。 [Office JavaScript API 对象模型](/office-javascript-api-object-model.md)页面有关于特定使用模式的更多详细信息。 [共享 API](https://dev.office.com/reference/add-ins/javascript-api-for-office) 和特定的主机都有详细的参考文档。
+初始化后，加载项可以与主机（例如 Excel、Outlook）交互。 [Office JavaScript API 对象模型](office-javascript-api-object-model.md)页面有关于特定使用模式的更多详细信息。 [共享 API](https://dev.office.com/reference/add-ins/javascript-api-for-office) 和特定的主机都有详细的参考文档。
 
 ## <a name="api-support-matrix"></a>API 支持矩阵
 
@@ -82,7 +82,7 @@ Office.initialize = function (reason) {
 |||||||||
 |:-----|:-----|:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|
 ||**主机名**|数据库|工作簿|邮箱|演示文稿|文档|项目|
-||**支持的****主机应用程序**|Access Web App|Excel、<br/>Excel 在线|Outlook、<br/>Outlook Web App、<br/>适用于设备的 OWA|PowerPoint、<br/>PowerPoint 联机|Word|项目|
+||**支持的****主机应用程序**|Access Web App|Excel、<br/>Excel Online|Outlook、<br/>Outlook Web App、<br/>适用于设备的 OWA|PowerPoint、<br/>PowerPoint Online|Word|项目|
 |**支持的外接程序类型**|内容|是|是||是|||
 ||任务窗格||是||是|是|是|
 ||Outlook|||是||||

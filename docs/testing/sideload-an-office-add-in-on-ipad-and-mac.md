@@ -2,8 +2,13 @@
 title: 在 iPad 和 Mac 上旁加载 Office 加载项以供测试
 description: ''
 ms.date: 12/04/2017
+ms.openlocfilehash: 9b4bcb92e1123c627a8b1a6df4785ff357453189
+ms.sourcegitcommit: 4de2a1b62ccaa8e51982e95537fc9f52c0c5e687
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 08/10/2018
+ms.locfileid: "22925267"
 ---
-
 # <a name="sideload-office-add-ins-on-ipad-and-mac-for-testing"></a>在 iPad 和 Mac 上旁加载 Office 加载项以供测试
 
 若要查看你的外接程序在 Office for iOS 中如何运行，可以使用 iTunes 将你的外接程序的清单旁加载到 iPad，或直接将你的外接程序的清单旁加载到 Office for Mac 中。此操作并不能使你在运行时对其设置断点和调试代码，但你可以查看其行为方式，并验证 UI 可用且正确呈现。 
@@ -19,7 +24,7 @@ ms.date: 12/04/2017
 
 ## <a name="prerequisites-for-office-for-mac"></a>Office for Mac 的先决条件
 
-- 在已安装 [Office for Mac](https://products.office.com/en-us/buy/compare-microsoft-office-products?tab=omac) 的情况下可运行 OS X v10.10 "Yosemite" 或更高版本的 Mac。
+- 在已安装 [Office for Mac](https://products.office.com/buy/compare-microsoft-office-products?tab=omac) 的情况下可运行 OS X v10.10 "Yosemite" 或更高版本的 Mac。
     
 - Word for Mac 版本 15.18 (160109)。
    
@@ -60,7 +65,7 @@ ms.date: 12/04/2017
 ## <a name="sideload-an-add-in-on-office-for-mac"></a>在 Office for Mac 上旁加载加载项
 
 > [!NOTE]
-> 若要旁加载 Outlook 2016 for Mac 加载项，请参阅[旁加载 Outlook 加载项以供测试](https://docs.microsoft.com/zh-cn/outlook/add-ins/sideload-outlook-add-ins-for-testing)。
+> 若要旁加载 Outlook 2016 for Mac 加载项，请参阅[旁加载 Outlook 加载项以供测试](https://docs.microsoft.com/outlook/add-ins/sideload-outlook-add-ins-for-testing)。
 
 1. 打开“**终端**”并转到以下文件夹之一，你将在其中保存外接程序的清单文件。如果 `wef` 文件夹在你的计算机上不存在，请创建它。
     
@@ -79,7 +84,7 @@ ms.date: 12/04/2017
     ![Office for Mac 中的“我的加载项”](../images/my-add-ins-wikipedia.png)
 
     > [!IMPORTANT]
-    > 旁加载的加载项不会显示在“我的加载项”对话框中。它们仅显示在下拉菜单中（单击“插入”选项卡上“我的加载项”右侧的向下小箭头）。旁加载的加载项在此菜单中的“开发人员加载项”标题下列出。 
+    > 旁加载的加载项不会显示在“我的加载项”对话框中。它们仅显示在下拉菜单中（单击“插入”**** 选项卡上“我的加载项”右侧的向下小箭头）。旁加载的加载项在此菜单中的“开发人员加载项”**** 标题下列出。 
     
 5. 验证加载项是否在 Word 中显示。
     

@@ -2,14 +2,19 @@
 title: Project 任务窗格加载项
 description: ''
 ms.date: 01/23/2018
+ms.openlocfilehash: aa7117ebc1c5bf0038346881b2c6e6f7a80e1bac
+ms.sourcegitcommit: 4de2a1b62ccaa8e51982e95537fc9f52c0c5e687
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 08/10/2018
+ms.locfileid: "22925484"
 ---
-
 # <a name="task-pane-add-ins-for-project"></a>Project 任务窗格加载项
 
 Project Standard 2013 和 Project Professional 2013 都支持任务窗格加载项。你可以运行为 Word 2013 或 Excel 2013 开发的常规任务窗格加载项。还可以开发在 Project 中处理选择事件的自定义加载项，并将项目中的任务、资源、视图和其他单元格级别的数据与 SharePoint 列表、SharePoint 外接程序、Web 部件、Web 服务和企业应用程序相集成。
 
 > [!NOTE]
-> [Project 2013 SDK 下载](https://www.microsoft.com/en-us/download/details.aspx?id=30435%20)中的示例加载项展示了如何使用 Project 加载项对象模型，以及如何在 Project Server 2013 中使用 OData 报表数据服务。提取和安装 SDK 时，请查看 `\Samples\Apps\` 子目录。
+> [Project 2013 SDK 下载](https://www.microsoft.com/download/details.aspx?id=30435%20)中的示例加载项展示了如何使用 Project 加载项对象模型，以及如何在 Project Server 2013 中使用 OData 报表数据服务。提取和安装 SDK 时，请查看 `\Samples\Apps\` 子目录。
 
 有关 Office 加载项的简介，请参阅 [Office 加载项平台概述](../overview/office-add-ins.md)。
 
@@ -51,9 +56,9 @@ Project 加载项方案包括以下几种：
 在安装 Project 2013 SDK 下载时， `\Samples\Apps\` 子目录包括以下示例外接程序：
 
 
--  **Bing 搜索：**BingSearch.XML 清单文件指向用于移动设备的 Bing 搜索页。由于 Bing Web 应用程序在 Internet 中已存在，因此 Bing 搜索加载项不使用其他源代码文件或 Project 加载项对象模型。
+-  **Bing 搜索：** BingSearch.XML 清单文件指向用于移动设备的 Bing 搜索页。由于 Bing Web 应用程序在 Internet 中已存在，因此 Bing 搜索加载项不使用其他源代码文件或 Project 加载项对象模型。
     
--  **Project OM 测试：**JSOM_SimpleOMCalls.XML 清单文件和 JSOM_Call.html 文件一起构成了在 Project 2013 中测试对象模型和加载项功能的示例。HTML 文件引用 JSOM_Sample.js 文件，其中包含将 Office.js 文件和 Project-15.js 文件用于主要功能的 JavaScript 函数。SDK 下载包括所有必要的源代码文件和用于 Project OM 测试加载项的清单 XML 文件。 [使用文本编辑器创建 Project 2013 的第一个任务窗格加载项](../project/create-your-first-task-pane-add-in-for-project-by-using-a-text-editor.md)中介绍了 Project OM 测试示例的开发和安装。
+-  **Project OM 测试：** JSOM_SimpleOMCalls.XML 清单文件和 JSOM_Call.html 文件一起构成了在 Project 2013 中测试对象模型和加载项功能的示例。HTML 文件引用 JSOM_Sample.js 文件，其中包含将 Office.js 文件和 Project-15.js 文件用于主要功能的 JavaScript 函数。SDK 下载包括所有必要的源代码文件和用于 Project OM 测试加载项的清单 XML 文件。 [使用文本编辑器创建 Project 2013 的第一个任务窗格加载项](../project/create-your-first-task-pane-add-in-for-project-by-using-a-text-editor.md)中介绍了 Project OM 测试示例的开发和安装。
     
 -  **HelloProject_OData：**??这是一个用于 Visual Studio 的 Visual Studio 2008 解决方案，它可以对活动项目中的数据（如成本、工作和完成百分比）进行归纳总结，并将其与存储活动项目的 Project Web App 实例中的所有已发布项目的平均值进行比较。 **创建将 REST 与本地 Project Server OData 服务结合使用的 Project 加载项**中介绍了有关将 REST 协议与 Project Web App 中的  [ProjectData](../project/create-a-project-add-in-that-uses-rest-with-an-on-premises-odata-service.md) 服务结合使用的示例的开发、安装和测试。
     
@@ -168,7 +173,7 @@ Project 加载项方案包括以下几种：
 6. 在“**受信任的外接程序目录**”窗格（请参阅图 1）中的“**目录 URL**”文本框中添加 `\\ServerName\AppManifests` 路径，选择“**添加目录**”，然后选择“**确定**”。
     
     > [!NOTE]
-    > 图 1 展示了“受信任的目录地址”列表中的两个文件共享和一个虚构的专用目录 URL。只有一个文件共享可以成为默认文件共享，并且只有一个目录 URL 可以成为默认目录。例如，如果将 `\\Server2\AppManifests` 设置为默认，Project 就会清除 `\\ServerName\AppManifests` 的“默认”复选框。如果更改默认选择，可以选择“清除”删除已安装的加载项，再重启 Project。如果在 Project 处于打开状态时，将加载项添加到默认文件共享或 SharePoint 目录，应重启 Project。
+    > 图 1 展示了“受信任的目录地址”**** 列表中的两个文件共享和一个虚构的专用目录 URL。只有一个文件共享可以成为默认文件共享，并且只有一个目录 URL 可以成为默认目录。例如，如果将 `\\Server2\AppManifests` 设置为默认，Project 就会清除 `\\ServerName\AppManifests` 的“默认”**** 复选框。如果更改默认选择，可以选择“清除”**** 删除已安装的加载项，再重启 Project。如果在 Project 处于打开状态时，将加载项添加到默认文件共享或 SharePoint 目录，应重启 Project。
 
     *图 1：使用信任中心添加加载项清单目录*
 
@@ -203,5 +208,5 @@ Project 加载项方案包括以下几种：
 - [使用文本编辑器创建首个 Project 2013 任务窗格加载项](create-your-first-task-pane-add-in-for-project-by-using-a-text-editor.md)
 - [创建将 REST 与本地 Project Server OData 服务结合使用的 Project 加载项](create-a-project-add-in-that-uses-rest-with-an-on-premises-odata-service.md)
 - [将 Project 任务窗格外接程序连接到 PWA](http://blogs.msdn.com/b/project_programmability/archive/2012/11/02/connecting-a-project-task-pane-app-to-pwa.aspx)
-- [Project 2013 SDK 下载](https://www.microsoft.com/en-us/download/details.aspx?id=30435%20)
+- [Project 2013 SDK 下载](https://www.microsoft.com/download/details.aspx?id=30435%20)
     

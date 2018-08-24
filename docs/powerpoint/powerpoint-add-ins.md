@@ -2,14 +2,19 @@
 title: PowerPoint 加载项
 description: ''
 ms.date: 12/04/2017
+ms.openlocfilehash: e5c605410601d711e28ca04ff6e26387019cbb41
+ms.sourcegitcommit: 4de2a1b62ccaa8e51982e95537fc9f52c0c5e687
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 08/10/2018
+ms.locfileid: "22925316"
 ---
-
 # <a name="powerpoint-add-ins"></a>PowerPoint 加载项
 
 你可以使用 PowerPoint 外接程序为用户演示文稿构建跨平台（包括 Windows、iOS、Office Online 和 Mac）出色解决方案。可以创建以下两种类型的外接程序：
 
-- 使用**内容外接程序**向演示文稿添加动态 HTML5 内容。有关示例，请参阅可用于将交互关系图从 LucidChart 插入面板的 [PowerPoint 的 LucidChart 关系图](https://store.office.com/en-us/app.aspx?assetid=WA104380117&ui=en-US&rs=en-US&ad=US&clickedfilter=OfficeProductFilter%3APowerPoint&productgroup=PowerPoint&homprd=PowerPoint&sourcecorrid=950950b7-aa6c-4766-95fa-e75d37266c21&homappcat=Productivity&homapppos=3&homchv=2&appredirect=false)外接程序。
-- 使用**任务窗格外界程序**引入参考信息或通过服务将数据插入幻灯片。有关示例，请参阅可用于在演示文稿中添加专业照片的 [Shutterstock 图像](https://store.office.com/en-us/app.aspx?assetid=WA104380169&ui=en-US&rs=en-US&ad=US&clickedfilter=OfficeProductFilter%3APowerPoint&productgroup=PowerPoint&homprd=PowerPoint&sourcecorrid=950950b7-aa6c-4766-95fa-e75d37266c21&homappcat=Editor%2527s%2BPicks&homapppos=0&homchv=1&appredirect=false)外接程序。 
+- 使用**内容外接程序**向演示文稿添加动态 HTML5 内容。有关示例，请参阅可用于将交互关系图从 LucidChart 插入面板的 [PowerPoint 的 LucidChart 关系图](https://store.office.com/app.aspx?assetid=WA104380117&ui=en-US&rs=en-US&ad=US&clickedfilter=OfficeProductFilter%3APowerPoint&productgroup=PowerPoint&homprd=PowerPoint&sourcecorrid=950950b7-aa6c-4766-95fa-e75d37266c21&homappcat=Productivity&homapppos=3&homchv=2&appredirect=false)外接程序。
+- 使用**任务窗格外界程序**引入参考信息或通过服务将数据插入幻灯片。有关示例，请参阅可用于在演示文稿中添加专业照片的 [Shutterstock 图像](https://store.office.com/app.aspx?assetid=WA104380169&ui=en-US&rs=en-US&ad=US&clickedfilter=OfficeProductFilter%3APowerPoint&productgroup=PowerPoint&homprd=PowerPoint&sourcecorrid=950950b7-aa6c-4766-95fa-e75d37266c21&homappcat=Editor%2527s%2BPicks&homapppos=0&homchv=1&appredirect=false)外接程序。 
 
 ## <a name="powerpoint-add-in-scenarios"></a>PowerPoint 加载项方案
 

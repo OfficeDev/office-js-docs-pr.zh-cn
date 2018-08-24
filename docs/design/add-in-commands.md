@@ -2,12 +2,12 @@
 title: Excel、Word 和 PowerPoint 的外接程序命令
 description: ''
 ms.date: 01/23/2018
-ms.openlocfilehash: 68eee18233b6b874f237ded41009561dbde774de
-ms.sourcegitcommit: 4e4f7c095e8f33b06bd8a02534ee901125eb1d17
+ms.openlocfilehash: 621c3e991d6ec4930cd11e39e19cca1c8a1fa3d8
+ms.sourcegitcommit: 4de2a1b62ccaa8e51982e95537fc9f52c0c5e687
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/28/2018
-ms.locfileid: "20084061"
+ms.lasthandoff: 08/10/2018
+ms.locfileid: "22925197"
 ---
 # <a name="add-in-commands-for-excel-word-and-powerpoint"></a>Excel、Word 和 PowerPoint 加载项命令
 
@@ -16,7 +16,7 @@ ms.locfileid: "20084061"
 有关此功能的概述，请观看视频 [Office 功能区中的加载项命令](https://channel9.msdn.com/events/Build/2016/P551)。
 
 > [!NOTE]
-> SharePoint 目录不支持加载项命令。可以通过[集中部署](../publish/centralized-deployment.md)或 [AppSource](https://docs.microsoft.com/en-us/office/dev/store/submit-to-the-office-store) 部署加载项命令，也可以使用[旁加载](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)部署加载项命令以供测试。 
+> SharePoint 目录不支持加载项命令。可以通过[集中部署](../publish/centralized-deployment.md)或 [AppSource](https://docs.microsoft.com/office/dev/store/submit-to-the-office-store) 部署加载项命令，也可以使用[旁加载](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)部署加载项命令以供测试。 
 
 *图 1：在 Excel Desktop 中运行命令的加载项*
 
@@ -70,7 +70,7 @@ ms.locfileid: "20084061"
     - 请勿添加不必要的按钮，这样会增加加载项占用的空间。
 
      > [!NOTE]
-     > 占用过多空间的加载项可能无法通过 [AppSource 验证](https://docs.microsoft.com/en-us/office/dev/store/validation-policies)。
+     > 占用过多空间的加载项可能无法通过 [AppSource 验证](https://docs.microsoft.com/office/dev/store/validation-policies)。
 
 - 对于所有图标，请遵循[图标设计指南](add-in-icons.md)。
 - 提供也可以在不支持命令的主机上运行的外接程序的版本。单个外接程序清单可以在命令感知（带有命令）和非命令感知（作为任务窗格）的主机中工作。

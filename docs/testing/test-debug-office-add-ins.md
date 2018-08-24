@@ -1,9 +1,14 @@
 ---
 title: 测试和调试 Office 加载项
-description: null
+description: ''
 ms.date: 11/24/2017
+ms.openlocfilehash: f645482fa92faad2e28484fa4b878bd35c0a27b6
+ms.sourcegitcommit: 4de2a1b62ccaa8e51982e95537fc9f52c0c5e687
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 08/10/2018
+ms.locfileid: "22925260"
 ---
-
 # <a name="test-and-debug-office-add-ins"></a>测试和调试 Office 加载项
 
 本部分介绍了如何测试、调试和排查 Office 加载项问题。
@@ -19,7 +24,7 @@ ms.date: 11/24/2017
 - [在 iPad 和 Mac 上旁加载 Office 加载项](sideload-an-office-add-in-on-ipad-and-mac.md)
 
 - 
-  [旁加载 Outlook 加载项以供测试](https://docs.microsoft.com/zh-cn/outlook/add-ins/sideload-outlook-add-ins-for-testing)
+  [旁加载 Outlook 加载项以供测试](https://docs.microsoft.com/outlook/add-ins/sideload-outlook-add-ins-for-testing)
 
 ## <a name="debug-an-office-add-in"></a>调试 Office 加载项
 

@@ -2,12 +2,17 @@
 title: Office 加载项开发生命周期
 description: ''
 ms.date: 01/23/2018
+ms.openlocfilehash: 8da351a87fdf455d3ae8f8583f2db3226a3cb340
+ms.sourcegitcommit: 4de2a1b62ccaa8e51982e95537fc9f52c0c5e687
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 08/10/2018
+ms.locfileid: "22925435"
 ---
-
 # <a name="office-add-ins-development-lifecycle"></a>Office 加载项开发生命周期
 
 > [!NOTE]
-> 如果计划将加载项[发布](../publish/publish.md)到 AppSource 并适用于 Office 体验，请务必遵循 [AppSource 验证策略](https://docs.microsoft.com/zh-cn/office/dev/store/validation-policies)。例如，加载项必须适用于支持已定义方法的所有平台，才能通过验证（有关详细信息，请参阅[第 4.12 部分](https://docs.microsoft.com/zh-cn/office/dev/store/validation-policies#4-apps-and-add-ins-behave-predictably)以及 [Office 加载项主机和可用性](../overview/office-add-in-availability.md)页面）。 
+> 如果计划将加载项[发布](../publish/publish.md)到 AppSource 并适用于 Office 体验，请务必遵循 [AppSource 验证策略](https://docs.microsoft.com/office/dev/store/validation-policies)。例如，加载项必须适用于支持已定义方法的所有平台，才能通过验证（有关详细信息，请参阅[第 4.12 部分](https://docs.microsoft.com/office/dev/store/validation-policies#4-apps-and-add-ins-behave-predictably)以及 [Office 加载项主机和可用性](../overview/office-add-in-availability.md)页面）。 
 
 Office 加载项的典型开发生命周期包括下列步骤：
 
@@ -44,7 +49,7 @@ Office 加载项的典型开发生命周期包括下列步骤：
     
     如果上述任一问题的答案是肯定的，请考虑创建 **Outlook 加载项**。然后，确定加载项的触发上下文（例如，撰写表单中的用户、特定消息类型、是否有附件、地址、任务建议、会议建议，或电子邮件或约会内容中的特定字符串模式）。 
         
-    若要了解如何根据上下文激活 Outlook 加载项，请参阅 [Outlook 加载项的激活规则](https://docs.microsoft.com/zh-cn/outlook/add-ins/activation-rules)。 
+    若要了解如何根据上下文激活 Outlook 加载项，请参阅 [Outlook 加载项的激活规则](https://docs.microsoft.com/outlook/add-ins/activation-rules)。 
     
 - 客户是否要使用加载项来增强文档的查看或创作体验？如果是，建议考虑创建**任务窗格加载项**。 
 
@@ -69,7 +74,7 @@ Office 加载项的典型开发生命周期包括下列步骤：
     
 将 HTML 文件以及任何 JavaScript 和 CSS 文件放在外接程序清单文件中指定的 Web 服务器上。安装外接程序的过程取决于外接程序的类型。有关详细信息，请参阅[旁加载 Office 外接程序进行测试](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)。
     
-对于 Outlook 外接程序，将其安装在 Exchange 邮箱中，并指定 Exchange 管理中心 (EAC) 中外接程序清单文件的位置。有关详细信息，请参阅[部署和安装 Outlook 外接程序以供测试](https://docs.microsoft.com/zh-cn/outlook/add-ins/testing-and-tips)。
+对于 Outlook 外接程序，将其安装在 Exchange 邮箱中，并指定 Exchange 管理中心 (EAC) 中外接程序清单文件的位置。有关详细信息，请参阅[部署和安装 Outlook 外接程序以供测试](https://docs.microsoft.com/outlook/add-ins/testing-and-tips)。
 
     
 ## <a name="7-publish-the-add-in"></a>7. 发布加载项

@@ -2,9 +2,13 @@
 title: 开始使用 Excel 加载项
 description: ''
 ms.date: 01/23/2018
+ms.openlocfilehash: d7f44429fd51a274c5c970523ed3e80851855ff6
+ms.sourcegitcommit: 4de2a1b62ccaa8e51982e95537fc9f52c0c5e687
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 08/10/2018
+ms.locfileid: "22925211"
 ---
-
-
 # <a name="get-started-with-excel-add-ins"></a>开始使用 Excel 加载项
 
 可以使用熟悉的 Web 技术（如 HTML、CSS 和 JavaScript）创建 Excel 加载项。 
@@ -15,6 +19,6 @@ ms.date: 01/23/2018
 
 ## <a name="explore-snippets-with-script-lab"></a>通过脚本实验室探索片段
 
-使用脚本实验室工具，可以直接从 Office 应用程序（如 Excel、Word 和 PowerPoint）创建、运行和共享 Office 加载项代码。 可以[从 AppSource 免费安装 Script Lab](https://appsource.microsoft.com/en-us/product/office/WA104380862?src=office&corrid=ed93ce54-3f2c-48ab-9df7-d9913f7b190b&omexanonuid=4a0102fb-b31a-4b9f-9bb0-39d4cc6b789d)，并在 Excel 中启动它，以探索与工作簿数据进行交互的内置示例集合。 然后，使用它来编写和执行自己的 Excel JavaScript API 代码，与电子表格进行交互。 有关详细信息，请参阅[脚本实验室，Microsoft Garage 项目](https://github.com/OfficeDev/script-lab/blob/master/README.md)。
+使用脚本实验室工具，可以直接从 Office 应用程序（如 Excel、Word 和 PowerPoint）创建、运行和共享 Office 加载项代码。 可以[从 AppSource 免费安装 Script Lab](https://appsource.microsoft.com/product/office/WA104380862?src=office&corrid=ed93ce54-3f2c-48ab-9df7-d9913f7b190b&omexanonuid=4a0102fb-b31a-4b9f-9bb0-39d4cc6b789d)，并在 Excel 中启动它，以探索与工作簿数据进行交互的内置示例集合。 然后，使用它来编写和执行自己的 Excel JavaScript API 代码，与电子表格进行交互。 有关详细信息，请参阅[脚本实验室，Microsoft Garage 项目](https://github.com/OfficeDev/script-lab/blob/master/README.md)。
 
 [!include[Script Lab support](../includes/alert-script-lab-support.md)]

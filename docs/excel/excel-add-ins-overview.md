@@ -2,9 +2,13 @@
 title: Excel 加载项概述
 description: ''
 ms.date: 01/23/2018
+ms.openlocfilehash: fedeb65e32e96431b56e7b1c029fa4ef4e137b61
+ms.sourcegitcommit: 4de2a1b62ccaa8e51982e95537fc9f52c0c5e687
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 08/10/2018
+ms.locfileid: "22925155"
 ---
-
-
 # <a name="excel-add-ins-overview"></a>Excel 加载项概述
 
 使用 Excel 加载项，可以跨多个平台扩展 Excel 应用功能，包括 Office for Windows、Office Online、Office for Mac 和 Office for iPad。在工作簿内使用 Excel 加载项，可以：
@@ -20,7 +24,7 @@ Office 加载项平台提供框架和 Office.js JavaScript API，使你能够创
 * **集中式部署**：管理员可以在整个组织内为用户快速而轻松地部署 Excel 加载项。
 * **单一登录 (SSO)**：轻松地将 Excel 加载项与 Microsoft Graph 集成。
 * **使用标准 Web 技术**：使用熟悉的 Web 技术（如 HTML、CSS 和 JavaScript）创建 Excel 加载项。
-* **通过 AppSource 分发**：将 Excel 加载项发布到 [AppSource](https://appsource.microsoft.com/en-us/marketplace/apps?product=office&page=1&src=office&corrid=53245fad-fcbe-41f8-9f97-b0840264f97c&omexanonuid=4a0102fb-b31a-4b9f-9bb0-39d4cc6b789d)，供广大受众使用。
+* **通过 AppSource 分发**：将 Excel 加载项发布到 [AppSource](https://appsource.microsoft.com/marketplace/apps?product=office&page=1&src=office&corrid=53245fad-fcbe-41f8-9f97-b0840264f97c&omexanonuid=4a0102fb-b31a-4b9f-9bb0-39d4cc6b789d)，供广大受众使用。
 
 > [!NOTE]
 > Excel 加载项不同于 COM 和 VSTO 加载项，后者是旧 Office 集成解决方案，只能在 Office for Windows 上运行。 与 COM 加载项不同的是，Excel 加载项不需要你在用户设备上，或在 Excel 中安装任何代码。 
