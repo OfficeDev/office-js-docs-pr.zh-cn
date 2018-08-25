@@ -2,12 +2,12 @@
 title: 在 Windows 10 上使用 F12 开发人员工具调试外接程序
 description: ''
 ms.date: 01/23/2018
-ms.openlocfilehash: e1e4cde4a1a0fe27058346b93e8aaa39dd75a4e3
-ms.sourcegitcommit: c72c35e8389c47a795afbac1b2bcf98c8e216d82
+ms.openlocfilehash: 226773962fb1777a3a1f0e09445721ae2b8b5f5b
+ms.sourcegitcommit: e1c92ba882e6eb03a165867c6021a6aa742aa310
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/23/2018
-ms.locfileid: "19438723"
+ms.lasthandoff: 08/20/2018
+ms.locfileid: "22925603"
 ---
 # <a name="debug-add-ins-using-f12-developer-tools-on-windows-10"></a>在 Windows 10 上使用 F12 开发人员工具调试外接程序
 
@@ -38,15 +38,15 @@ Windows 10 中随附的 F12 开发人员工具可帮助您调试、测试和加�
     
 3. 启动与 Office 版本相对应的 F12 开发工具：
     
-   - 对于 32 位版 Office，请使用 C:\Windows\System32\F12\F12Chooser.exe
+   - 对于 32 位版 Office，请使用 C:\Windows\System32\F12\IEChooser.exe
     
-   - 对于 64 位版 Office，请使用 C:\Windows\SysWOW64\F12\F12Chooser.exe
+   - 对于 64 位版 Office，请使用 C:\Windows\SysWOW64\F12\IEChooser.exe
     
-   当你启动 F12Chooser 时，一个单独的窗口（名为“选择要调试的目标”）显示要调试的可能的应用程序。选择你感兴趣的应用程序。如果你正在编写自己的外接程序，请选择你已在其中部署外接程序的网站，这可能是本地主机 URL。 
+   当你启动 IEChooser 时，一个单独的窗口（名为“选择要调试的目标”）显示要调试的可能的应用程序。选择你感兴趣的应用程序。如果你正在编写自己的外接程序，请选择你已在其中部署外接程序的网站，这可以是本地主机 URL。 
     
    例如，选择“home.html”****。 
     
-   ![F12Chooser 屏幕，指向圈出的加载项](../images/choose-target-to-debug.png)
+   ![IEChooser 屏幕，指向气泡加载项](../images/choose-target-to-debug.png)
 
 4. 在 F12 窗口中，选择您想要调试的文件。
     
@@ -54,7 +54,7 @@ Windows 10 中随附的 F12 开发人员工具可帮助您调试、测试和加�
     
 5. 设置断点。
     
-   要在 home.js 中设置断点，请选择第 144 行（位于 _ textChanged_  函数中）。您将在该行的左侧看到一个红点，并在 ** “调用堆栈和断点”** （右下角）窗格中看到相应的行。有关设置断点的其他方法，请参阅[ “使用调试器检查正在运行的 JavaScript”](https://msdn.microsoft.com/library/dn255007%28v=vs.85%29.aspx)。 
+   要在 home.js 中设置断点，请选择第 144 行（位于 _ textChanged_  函数中）。您将在该行的左侧看到一个红点，并在 ** “调用堆栈和断点”** （右下角）窗格中看到相应的行。有关设置断点的其他方法，请参阅[ “使用调试器检查正在运行的 JavaScript”](https://docs.microsoft.com/previous-versions/windows/internet-explorer/ie-developer/samples/dn255007(v=vs.85))。 
     
    ![断点位于 home.js 文件中的调试程序](../images/debugger-home-js-02.png)
 
@@ -67,6 +67,6 @@ Windows 10 中随附的 F12 开发人员工具可帮助您调试、测试和加�
 
 ## <a name="see-also"></a>另请参阅
 
-- [使用调试器检查正在运行的 JavaScript](https://msdn.microsoft.com/library/dn255007%28v=vs.85%29.aspx)
-- [使用 F12 开发人员工具](https://msdn.microsoft.com/en-us/library/bg182326%28v=vs.85%29.aspx)
+- [使用调试器检查正在运行的 JavaScript](https://docs.microsoft.com/previous-versions/windows/internet-explorer/ie-developer/samples/dn255007(v=vs.85))
+- [使用 F12 开发人员工具](https://docs.microsoft.com/previous-versions/windows/internet-explorer/ie-developer/samples/bg182326(v=vs.85))
     

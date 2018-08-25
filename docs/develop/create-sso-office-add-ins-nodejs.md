@@ -1,8 +1,13 @@
 ---
 title: 创建使用单一登录的 Node.js Office 加载项
 description: 2018 年 1 月23 日
+ms.openlocfilehash: 70ce81a1cd0038d3219763fb1e15bc3089e06f57
+ms.sourcegitcommit: 28fc652bded31205e393df9dec3a9dedb4169d78
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 08/23/2018
+ms.locfileid: "22927388"
 ---
-
 # <a name="create-a-nodejs-office-add-in-that-uses-single-sign-on-preview"></a>创建使用单一登录的 Node.js Office 加载项（预览）
 
 用户可以登录 Office，Office Web 加载项能够利用此登录进程，授权用户访问加载项和 Microsoft Graph，而无需要求用户再登录一次。有关概述，请参阅[在 Office 加载项中启用 SSO](sso-in-office-add-ins.md)。
@@ -22,16 +27,17 @@ description: 2018 年 1 月23 日
 
 * Office 2016 版本 1708（生成号 8424.nnnn）或更高版本（Office 365 订阅版本，有时亦称为“即点即用”）
 
-  可能必须成为 Office 预览体验成员，才能获取此版本。有关详细信息，请参阅[成为 Office 预览体验成员](https://products.office.com/zh-cn/office-insider?tab=tab-1)。
+  可能必须成为 Office 预览体验成员，才能获取此版本。有关详细信息，请参阅[成为 Office 预览体验成员](https://products.office.com/office-insider?tab=tab-1)。
 
 ## <a name="set-up-the-starter-project"></a>创建起始项目
 
 1. 克隆或下载 [Office 加载项 NodeJS SSO](https://github.com/officedev/office-add-in-nodejs-sso) 中的存储库。 
 
     > [!NOTE]
-    > 示例项目有两个版本：  
+    > 示例项目有三个版本：  
     > * **Before** 文件夹是初学者项目。未直接连接到 SSO 或授权的外接程序的 UI 和其他方面已经完成。本文后续章节将引导你完成此过程。 
     > * 如果完成了本文中的过程，该示例的**已完成**版本会与所生成的外接程序类似，只不过完成的项目具有对本文文本冗余的代码注释。若要使用已完成的版本，请按照本文中的说明进行操作即可，但需要将“Before”替换为“Completed”，并跳过**编写客户端代码**和**编写服务器端代码**部分。
+    > *  **完整多租户**版本是支持多租户的完整示例。 如果要支持带 SSO 的来自不同域的 Microsoft 帐户，请浏览此示例。
 
 2. 在 **Before** 文件夹中打开 Git bash 控制台。
 
@@ -42,90 +48,33 @@ description: 2018 年 1 月23 日
     > [!NOTE]
     > 可能会看到一些生成错误，提示某些变量已声明但未使用。请忽略这些错误。之所以会看到这些错误是因为，示例项目的“之前”版本缺少某代码，将在后续步骤中添加。
 
-## <a name="register-the-add-in-with-azure-ad-v20-endpoint"></a>向 Azure AD v2.0 终结点注册加载项
+## <a name="register-the-add-in-with-azure-ad-v20-endpoint"></a>向 Azure AD v2.0  端点注册加载项
 
-1. 转到 [https://apps.dev.microsoft.com](https://apps.dev.microsoft.com)。 
-
-1. 使用管理员凭据登录 Office 365 租户。例如，MyName@contoso.onmicrosoft.com
-
-1. 单击“添加应用”。
-
-1. 出现提示时，使用“Office-Add-in-NodeJS-SSO”作为应用名称，然后按“创建应用程序”。
-
-1. 当应用的配置页面打开时，复制并保存“应用 ID”。将在后续过程中用到它。 
-
-    > [!NOTE]
-    > 如果其他应用（如 PowerPoint、Word、Excel 等 Office 主机应用）寻求对应用的授权访问权限，此 ID 是“受众”值。反过来，如果它寻求对 Microsoft Graph 的授权访问权限，此 ID 同时也是应用的“客户端 ID”。
-
-1. 在“应用程序机密”部分中，按“生成新密码”。将打开弹出对话框，并显示一个新密码（也称为“应用机密”）。*立即复制密码并使用应用程序 ID 进行保存。*你将在后续过程中需要它。然后关闭此对话框。
-
-1. 在“平台”部分中，单击“添加平台”。 
-
-1. 在打开的对话框中，选择“Web API”。
-
-1. 此时，生成了“api://{应用 ID GUID}”形式的“应用 ID URI”。在双斜杠和 GUID 之间插入字符串“localhost:3000”。整个 ID 应为 `api://localhost:3000/{App ID GUID}`。 
-
-    > [!NOTE]
-    > “应用 ID URI”正下方的“范围”名称的域部分会自动更改为与之匹配。 它应为 `api://localhost:3000/{App ID GUID}/access_as_user`。
-
-1. 这一步和下一步授予 Office 主机应用对加载项的访问权限。 在“预授权应用程序”部分中，确定要授权给加载项 Web 应用程序的应用程序。 下面每个 ID 都需要进行预授权。 每次输入一个 ID，都会看到新的空文本框。 （仅输入 GUID）。
-
-    * `d3590ed6-52b3-4102-aeff-aad2292ab01c` (Microsoft Office)
-    * `57fb890c-0dab-4253-a5e0-7188c88b2bb4` (Office Online)
-    * `bc59ab01-8403-45c6-8796-ac3ef710b3e3` (Office Online) 
-
-1. 打开每个“应用 ID”旁边的“范围”下拉列表，并选中 `api://localhost:3000/{App ID GUID}/access_as_user` 对应的框。
-
-1. 在“平台”部分顶部附近，再次单击“添加平台”，并选择“Web”。
-
-1. 在“平台”下的新“Web”部分中，输入下列内容作为“重定向 URL”：`https://localhost:3000`。 
-
-1. 向下滚动到“Microsoft Graph 权限”部分的“委派的权限”子部分。使用“添加”按钮，打开“选择权限”对话框。
-
-1. 在对话框中，选中以下权限对应的框： 
-
+以下说明以通用方式书写，以便可以在多个地方使用。 对于本文而言，请执行以下操作：
+- 将占位符 **$ADD-IN-NAME$** 替换为 `“Office-Add-in-NodeJS-SSO`。
+- 将占位符 **$FQDN-WITHOUT-PROTOCOL$** 替换为 `localhost:3000`。
+- 在**选择权限**对话框中指定权限时，选中以下权限框。 只有第一个是加载 项本身真正需要的；但 Office 主机需要 `profile` 权限来为加载项 Web 应用程序获取令牌。
     * Files.Read.All
     * profile
 
-    > [!NOTE]
-    > `User.Read` 权限可能已默认列出。根据最佳做法，最好不要请求授予不需要的权限，因此建议取消选中此权限对应的框。
+[!INCLUDE[](../includes/register-sso-add-in-aad-v2-include.md)]
 
-1. 单击对话框底部的“确定”。
 
-1. 单击注册页面底部的“保存”。
+## <a name="grant-administrator-consent-to-the-add-in"></a>向加载项授予管理员许可
 
-## <a name="grant-admin-consent-to-the-add-in"></a>向加载项授予管理员许可
+[!INCLUDE[](../includes/grant-admin-consent-to-an-add-in-include.md)]
 
-> [!NOTE]
-> 仅在开发加载项时，才需要执行此过程。 将生产加载项部署到 AppSource 或加载项目录后，用户需要在安装时单独信任它。
-
-1. 在以下字符串中，将占位符“{application_ID}”替换为注册加载项时复制的应用 ID。
-
-    `https://login.microsoftonline.com/common/adminconsent?client_id={application_ID}&state=12345`
-
-1. 将生成的 URL 粘贴到浏览器地址栏并导航到该 URL。
-
-1. 出现提示时，使用管理员凭据登录 Office 365 租户。
-
-1. 然后，系统提示向加载项授予对 Microsoft Graph 数据的访问权限。单击“接受”。 
-
-1. 然后，浏览器窗口/选项卡重定向到注册加载项时指定的**重定向 URL**。因此，如果加载项正在运行，加载项的主页将在浏览器中打开。如果加载项未在运行，将看到错误消息，提示找不到或打不开 localhost:3000 处的资源。*不过，尝试执行重定向即表示管理员许可过程已成功完成*。所以，无论是打开了主页还是看到了错误消息，都可以继续执行下一步。
-
-2. 在浏览器的地址栏中，你将看到一个带有 GUID 值的“租户”查询参数。这是 Office 365 租户的 ID。复制并保存此值。你将在后续步骤中使用它。
-
-3. 关闭该窗口/选项卡。
-
-## <a name="configure-the-add-in"></a>配置外接程序
+## <a name="configure-the-add-in"></a>配置加载项
 
 1. 在代码编辑器中打开 src\server.ts 文件。顶部附近存在对 `AuthModule` 类的构造函数的调用。该构造函数中存在一些需要为其分配值的字符串参数。
 
-2. 对于 `client_id` 属性，将占位符 `{client GUID}` 替换为注册外接程序时保存的应用程序 ID。完成后，应该有一个括在单引号中的 GUID。而不应存在任何“{}”字符。
+2. 对于 `client_id` 属性，将占位符 `{client GUID}` 替换为注册加载项时保存的应用程序 ID。 完成后，单引号中应该只有一个 GUID。 不应出现任何 "{}" 字符。
 
-3. 对于 `client_secret` 属性，将占位符 `{client secret}` 替换为注册外接程序时保存的应用程序机密。
+3. 对于 `client_secret` 属性，将占位符 `{client secret}` 替换为注册 加载项时保存的应用程序密钥。
 
 4. 对于 `audience` 属性，将占位符 `{audience GUID}` 替换为注册外接程序时保存的应用程序 ID。（即分配给 `client_id` 属性的同一值）。
   
-3. 在分配给 `issuer` 属性的字符串中，你将看到占位符 *{O365 tenant GUID}*。将此替换为在最后一个过程结束时保存的 Office 365 租户 ID。如果出于任何原因，你以前没有获得 ID，请使用[查找 Office 365 租户 ID](https://support.office.com/zh-cn/article/Find-your-Office-365-tenant-ID-6891b561-a52d-4ade-9f39-b492285e2c9b)中的一种方法来获取 ID。完成后，`issuer` 属性值应如下所示：
+3. 在分配给 `issuer` 属性的字符串中，你会看到占位符 *{O365 tenant GUID}*。 将其替换为 Office 365 租约 ID。 使用[找到你的 Office 365 租户 ID](https://docs.microsoft.com/onedrive/find-your-office-365-tenant-id) 中的一种方法获得它。 完成后，`issuer` 属性值应该如下所示：
 
     `https://login.microsoftonline.com/12345678-1234-1234-1234-123456789012/v2.0`
 
@@ -135,7 +84,7 @@ description: 2018 年 1 月23 日
 
 1. 滚动到文件底部。
 
-1. 结束 `</VersionOverrides>` 标记的正上方为以下标记：
+1. 在结束 `</VersionOverrides>` 标记的正上方，你会发现以下标记：
 
     ```xml
     <WebApplicationInfo>
@@ -148,7 +97,7 @@ description: 2018 年 1 月23 日
     </WebApplicationInfo>
     ```
 
-1. 将标记中的*两处*占位符“{此为 application_GUID }”均替换为在注册加载项时复制的应用 ID。（由于“{}”不属于 ID，因此请勿添加。）这与在 web.config 中对 ClientID 和 Audience 使用的 ID 相同。
+1. 将标记中的*两处*占位符“{application_GUID here}”均替换成在注册加载项时复制的应用程序 ID。 （由于 ID 并不包含“{}”，因此请勿添加它们。）这与在 web.config 中对 ClientID 和 Audience 使用的 ID 相同。
 
     > [!NOTE]
     > * **Resource** 值是向注册的加载项添加 Web API 平台时设置的**应用 ID URI**。
@@ -161,10 +110,10 @@ description: 2018 年 1 月23 日
 1. 打开 **public** 文件夹中的 program.js 文件。其中已存在一些代码：
 
     * 针对 `Office.initialize` 方法的分配，反过来又将一个处理程序分配给 `getGraphAccessTokenButton` 按钮的 Click 事件。
-    * `showResult` 方法，用于在任务窗格底部显示从 Microsoft Graph 返回的数据（或错误消息）。
-    * `logErrors` 方法，用于记录最终用户不应看到的控制台错误。
+    * 方法，用于在任务窗格底部显示从 Microsoft Graph 返回的数据（或错误消息）。`showResult`
+    * 方法，用于记录最终用户不应看到的控制台错误。`logErrors`
 
-11. 在向 `Office.initialize` 分配函数下方，添加下列代码。关于此代码，请注意以下几点：
+11. 在 `Office.initialize`  赋值语句的下方，添加下列代码。关于此代码，请注意以下几点：
 
     * 加载项中的错误处理有时会自动尝试使用一组不同的选项，重新获取访问令牌。 计数器变量 `timesGetOneDriveFilesHasRun` 以及标志变量 `triedWithoutForceConsent` 和 `timesMSGraphErrorReceived` 用于确保用户不会重复循环失败的尝试来获取令牌。 
     * 虽然 `getDataWithToken` 方法是在下一步中创建，但请注意，它会将 `forceConsent` 选项设置为 `false`。有关详细信息，请参阅下一步。
@@ -183,10 +132,10 @@ description: 2018 年 1 月23 日
 
 1. 在 `getOneDriveFiles` 方法下方，添加下列代码。关于此代码，请注意以下几点：
 
-    * `getAccessTokenAsync` 是 Office.js 中的新 API，可便于加载项要求 Office 主机应用（Excel、PowerPoint、Word 等）提供加载项访问令牌（对于已登录 Office 的用户）。反过来，Office 主机应用会向 Azure AD 2.0 终结点请求获取令牌。由于已在注册加载项时将 Office 主机预授权给加载项，因此 Azure AD 会发送访问令牌。
+    * 是 Office.js 中的新 API，可便于加载项要求 Office 主机应用（Excel、PowerPoint、Word 等）提供加载项访问令牌（对于已登录 Office 的用户）。反过来，Office 主机应用会向 Azure AD 2.0 终结点请求获取令牌。由于已在注册加载项时将 Office 主机预授权给加载项，因此 Azure AD 会发送访问令牌。`getAccessTokenAsync`
     * 如果用户未登录 Office，Office 主机会提示用户登录。
     * options 参数将 `forceConsent` 设置为 `false`，因此用户不会在每次使用加载项时都看到提示，要求其许可向 Office 主机授予对加载项的访问权限。 用户首次运行加载项时，`getAccessTokenAsync` 调用会失败，但在后续步骤中添加的错误处理逻辑会自动重新调用（`forceConsent` 选项设置为 `true`），并提示用户许可，但仅限首次运行。
-    * `handleClientSideErrors` 方法将在后续步骤中创建。
+    * 方法将在后续步骤中创建。`handleClientSideErrors`
 
     ```javascript
     function getDataWithToken(options) {
@@ -212,7 +161,7 @@ description: 2018 年 1 月23 日
 1. 在 `getOneDriveFiles` 方法下方，添加下列代码。关于此代码，请注意以下几点：
 
     * 此方法调用指定 Web API 终结点，并向它传递访问令牌，这也是 Office 主机应用用于获取对加载项的访问权限的令牌。在服务器端，此访问令牌将用于“代表”流，以获取对 Microsoft Graph 的访问令牌。
-    * `handleServerSideErrors` 方法将在后续步骤中创建。
+    * 方法将在后续步骤中创建。`handleServerSideErrors`
 
     ```javascript
     function getData(relativeUrl, accessToken) {
@@ -453,12 +402,11 @@ description: 2018 年 1 月23 日
 
 1. 打开 \src\auth.ts 文件。将下面的方法添加到 `AuthModule` 类。关于此代码，请注意以下几点：
 
-    * `jwt` 参数是对应用的访问令牌。在“代表”流中，它与 AAD 进行交换，以获取对资源的访问令牌。
+    * 参数是对应用的访问令牌。在“代表”流中，它与 AAD 进行交换，以获取对资源的访问令牌。`jwt`
     * 虽然 scopes 参数有默认值，但在此示例中，它将被调用代码覆盖。
     * resource 是可选参数。不得在 STS 是 AAD V 2.0 终结点时使用它。V 2.0 终结点通过范围推断资源。如果在 HTTP 请求中发送资源，它会返回错误。 
-    * `catch` 信息块中抛出异常*不会*导致立即向客户端发送“500 内部服务器错误”。 server.js 文件中的调用代码会捕获此异常，并将它变成发送到客户端的错误消息。
+    * 信息块中抛出异常*不会*导致立即向客户端发送“500 内部服务器错误”。`catch` server.js 文件中的调用代码会捕获此异常，并将它变成发送到客户端的错误消息。
 
-    
         ```javascript
         private async exchangeForToken(jwt: string, scopes: string[] = ['openid'], resource?: string) {
             try {
@@ -596,9 +544,8 @@ description: 2018 年 1 月23 日
 
 5. 将 `TODO8` 替换为以下代码。关于此代码，请注意以下几点：
 
-    * `acquireTokenOnBehalfOf` 调用中不包括 resource 参数，因为 `AuthModule` 对象 (`auth`) 是使用不支持 resource 属性的 AAD V2.0 终结点进行构造。
+    * 调用中不包括 resource 参数，因为 `AuthModule` 对象 (`auth`) 是使用不支持 resource 属性的 AAD V2.0 终结点进行构造。`acquireTokenOnBehalfOf`
     * 调用的第二个参数指定了加载项获取 OneDrive 上用户文件和文件夹列表时所需的权限。 （之所以不需要 `profile` 权限是因为，只有当 Office 主机获取对加载项的访问令牌时，才需要此权限，用此令牌交换对 Microsoft Graph 的访问令牌时并不需要。）
-
 
     ```javascript
     const graphToken = await auth.acquireTokenOnBehalfOf(jwt, ['Files.Read.All']);
@@ -641,7 +588,6 @@ description: 2018 年 1 月23 日
 
     * OData 终结点返回的响应可能是错误（如 401）。如果终结点需要访问令牌，但令牌无效或到期，就会生成 401 错误。 不过，错误消息仍是*消息*，而不是 `https.get` 调用中的错误，因此不会触发 `https.get` 末尾的 `on('error', reject)` 代码行。 所以，代码区分成功 (200) 消息和错误消息，并向调用方发送 JSON 对象，其中包含请求获取的 OData 或错误消息。
 
-
     ```javascript
     var error;
     if (response.statusCode === 200) {
@@ -682,21 +628,21 @@ description: 2018 年 1 月23 日
 
 现在，你需要让 Office 知道在哪里可以找到该外接程序。
 
-1. 创建网络共享，或[将文件夹共享到网络](https://technet.microsoft.com/zh-cn/library/cc770880.aspx)。
+1. 创建网络共享，或[将文件夹共享到网络](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc770880(v=ws.11))。
 
 2. 将 Office-Add-in-NodeJS-SSO.xml 清单文件从项目根目录复制到共享文件夹。
 
 3. 启动 PowerPoint 并打开文档。
 
-4. 选择“文件”选项卡，然后选择“选项”。
+4. 选择“文件”**** 选项卡，然后选择“选项”****。
 
 5. 选择**信任中心**，然后选择**信任中心设置**按钮。
 
-6. 选择“受信任的外接程序目录”。
+6. 选择“受信任的外接程序目录”****。
 
-7. 在“目录 URL”字段中，输入包含 Office-Add-in-NodeJS-SSO.xml 的文件夹共享的网络路径，然后选择“添加目录”。
+7. 在“目录 URL”**** 字段中，输入包含 Office-Add-in-NodeJS-SSO.xml 的文件夹共享的网络路径，然后选择“添加目录”****。
 
-8. 选中“显示在菜单中”复选框，然后选择“确定”。
+8. 选中“显示在菜单中”**** 复选框，然后选择“确定”****。
 
 9. 随后会出现一条消息，告知你下次启动 Microsoft Office 时将应用你的设置。关闭 PowerPoint。
 
@@ -720,25 +666,25 @@ description: 2018 年 1 月23 日
 
 1. 重启 PowerPoint 并打开或创建演示文稿。 
 
-2. 在 PowerPoint 中的“开发工具”选项卡上，选择“我的外接程序”。
+2. 在 PowerPoint 中的“开发工具”**** 选项卡上，选择“我的外接程序”****。
 
-3. 选择“共享文件夹”选项卡。
+3. 选择“共享文件夹”**** 选项卡。
 
-4. 选择“SSO NodeJS 示例”，然后选择“确定”。
+4. 选择“SSO NodeJS 示例”****，然后选择“确定”****。
 
-5. “主页”功能区上有一个名为“**SSO NodeJS**”的新组，包含标记为“显示外接程序”的按钮和一个图标。 
+5. “主页”**** 功能区上有一个名为“**SSO NodeJS**”的新组，包含标记为“显示外接程序”**** 的按钮和一个图标。 
 
 ## <a name="test-the-add-in"></a>测试加载项
 
 1. 请确保 OneDrive 中有一些文件，以便可以验证结果。
 
-2. 单击“显示加载项”按钮，打开此加载项。
+2. 单击“显示加载项”**** 按钮，打开此加载项。
 
-2. 此时，加载项打开并显示欢迎页。单击“从 OneDrive 获取我的文件”按钮。
+2. 此时，加载项打开并显示欢迎页。单击“从 OneDrive 获取我的文件”**** 按钮。
 
 2. 如果你已登录 Office，则 OneDrive 上的文件和文件夹列表将显示在该按钮的下方。首次操作需要的时间可能会超过 15 秒。
 
 3. 如过没有登录 Office，弹出窗口将打开并提示进行登录。完成登录后，文件和文件夹的列表将在几秒钟后显示。*请勿再次按下此按钮。*
 
 > [!NOTE]
-> 如果先前使用其他 ID 登录过 Office，并且当时打开的一些 Office 应用现在仍处于打开状态，Office 可能无法可靠地更改 ID，即使看似已在 PowerPoint 中更改过，也不例外。 在这种情况下，可能无法调用 Microsoft Graph，或者可能返回以前 ID 的数据。 为了防止发生这种情况，请务必先*关闭其他所有 Office 应用程序*，然后再按“从 OneDrive 获取我的文件”。
+> 如果先前使用其他 ID 登录过 Office，并且当时打开的一些 Office 应用现在仍处于打开状态，Office 可能无法可靠地更改 ID，即使看似已在 PowerPoint 中更改过，也不例外。 在这种情况下，可能无法调用 Microsoft Graph，或者可能返回以前 ID 的数据。 为了防止发生这种情况，请务必先*关闭其他所有 Office 应用程序*，然后再按“从 OneDrive 获取我的文件”****。

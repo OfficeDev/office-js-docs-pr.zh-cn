@@ -2,12 +2,12 @@
 title: 暂留加载项状态和设置
 description: ''
 ms.date: 12/04/2017
-ms.openlocfilehash: b4d1cdf2ce127d140153b6db02bc9a337a37bb5d
-ms.sourcegitcommit: c72c35e8389c47a795afbac1b2bcf98c8e216d82
+ms.openlocfilehash: ee65d6b1f033b012a548bc685b9228679bec8c5e
+ms.sourcegitcommit: 4de2a1b62ccaa8e51982e95537fc9f52c0c5e687
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/23/2018
-ms.locfileid: "19437862"
+ms.lasthandoff: 08/10/2018
+ms.locfileid: "22925568"
 ---
 # <a name="persisting-add-in-state-and-settings"></a>暂留加载项状态和设置
 
@@ -17,7 +17,7 @@ Office 加载项实质上是在浏览器控件的无状态环境中运行的 Web
     -  在依赖加载项类型的位置上存储的属性包中的名称-数值对。
     -  在文档中存储的自定义 XML。
     
-- 使用基础浏览器控件提供的技术：浏览器 Cookie 或 HTML5 Web 存储（[localStorage](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage) 或 [sessionStorage](https://developer.mozilla.org/en-US/docs/Web/API/Window/sessionStorage)）。
+- 使用基础浏览器控件提供的技术：浏览器 Cookie 或 HTML5 Web 存储（[localStorage](https://developer.mozilla.org/docs/Web/API/Window/localStorage) 或 [sessionStorage](https://developer.mozilla.org/docs/Web/API/Window/sessionStorage)）。
     
 本文重点介绍如何使用适用于 Office 的 JavaScript API 保留外接程序状态。有关使用浏览器 Cookie 和 Web 存储的示例，请参阅 [Excel-Add-in-JavaScript-PersistCustomSettings](https://github.com/OfficeDev/Excel-Add-in-JavaScript-PersistCustomSettings)。
 
@@ -183,10 +183,10 @@ function getReviewers() {
 ```
 
 
-## <a name="how-to-save-settings-in-the-users-mailbox-for-outlook-add-ins-as-roaming-settings"></a>如何在用户邮箱中将 Outlook 外接程序设置保存为漫游设置
+## <a name="how-to-save-settings-in-the-users-mailbox-for-outlook-add-ins-as-roaming-settings"></a>如何在 Outlook 加载项用户邮箱中将设置保存为漫游设置
 
 
- Outlook 外接程序可以使用 [RoamingSettings](https://dev.office.com/reference/add-ins/outlook/RoamingSettings) 对象来保存特定于用户邮箱的外接程序状态和设置数据。 此数据只能由该 Outlook 外接程序代表运行外接程序的用户访问。 数据存储在用户的 Exchange Server 邮箱中，并且可以在该用户登录到其帐户并运行 Outlook 外接程序时访问。
+Outlook 外接程序可以使用 [RoamingSettings](https://dev.office.com/reference/add-ins/outlook/RoamingSettings) 对象来保存特定于用户邮箱的外接程序状态和设置数据。 此数据只能由该 Outlook 外接程序代表运行外接程序的用户访问。 数据存储在用户的 Exchange Server 邮箱中，并且可以在该用户登录到其帐户并运行 Outlook 外接程序时访问。
 
 
 ### <a name="loading-roaming-settings"></a>加载漫游设置
@@ -333,6 +333,6 @@ function saveCallback(asyncResult) {
 ## <a name="see-also"></a>另请参阅
 
 - [了解适用于 Office 的 JavaScript API](understanding-the-javascript-api-for-office.md)
-- [Outlook 加载项](https://docs.microsoft.com/en-us/outlook/add-ins/)
+- [Outlook 加载项](https://docs.microsoft.com/outlook/add-ins/)
 - [Excel-Add-in-JavaScript-PersistCustomSettings](https://github.com/OfficeDev/Excel-Add-in-JavaScript-PersistCustomSettings)
     
