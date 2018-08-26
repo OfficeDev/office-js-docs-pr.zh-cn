@@ -2,12 +2,12 @@
 title: 使用 Excel JavaScript API 处理事件
 description: ''
 ms.date: 05/25/2018
-ms.openlocfilehash: 5b48712b0b1b5bd0dd7492ee7c692104a99678a7
-ms.sourcegitcommit: 9e0952b3df852bd2896e9f4a6f59f5b89fc1ae24
+ms.openlocfilehash: 3d94a36a60220b856795b8d0abf5387fcb8c1bad
+ms.sourcegitcommit: e1c92ba882e6eb03a165867c6021a6aa742aa310
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/27/2018
-ms.locfileid: "21270270"
+ms.lasthandoff: 08/20/2018
+ms.locfileid: "22925624"
 ---
 # <a name="work-with-events-using-the-excel-javascript-api"></a>使用 Excel JavaScript API 处理事件 
 
@@ -21,11 +21,11 @@ ms.locfileid: "21270270"
 |:---------------|:-------------|:-----------|
 | `onAdded` | 添加对象时发生的事件。 | [**WorksheetCollection**](https://dev.office.com/reference/add-ins/excel/worksheetcollection) |
 | `onDeleted` | 删除对象时发生的事件。 | [**WorksheetCollection**](https://dev.office.com/reference/add-ins/excel/worksheetcollection) |
-| `onActivated` | 启用对象时发生的事件。 | [**WorksheetCollection**](https://dev.office.com/reference/add-ins/excel/worksheetcollection)、[**Worksheet**](https://dev.office.com/reference/add-ins/excel/worksheet) |
-| `onDeactivated` | 停用对象时发生的事件。 | [**WorksheetCollection**](https://dev.office.com/reference/add-ins/excel/worksheetcollection)、[**Worksheet**](https://dev.office.com/reference/add-ins/excel/worksheet) |
+| `onActivated` | 启用对象时发生的事件。 | [**WorksheetCollection**](https://dev.office.com/reference/add-ins/excel/worksheetcollection)、[**工作表**](https://dev.office.com/reference/add-ins/excel/worksheet) |
+| `onDeactivated` | 停用对象时发生的事件。 | [**WorksheetCollection**](https://dev.office.com/reference/add-ins/excel/worksheetcollection)、[**工作表**](https://dev.office.com/reference/add-ins/excel/worksheet) |
 | `onChanged` | 更改单元格内数据时发生的事件。 | [**Worksheet**](https://dev.office.com/reference/add-ins/excel/worksheet)、[**Table**](https://dev.office.com/reference/add-ins/excel/table)[**、TableCollection**](https://dev.office.com/reference/add-ins/excel/tablecollection) |
-| `onDataChanged` | 更改绑定中的数据或格式时发生的事件。 | [**Binding**](https://dev.office.com/reference/add-ins/excel/binding) |
-| `onSelectionChanged` | 更改活动单元格或选定范围时发生的事件。 | [**Worksheet**](https://dev.office.com/reference/add-ins/excel/worksheet)、[**Table**](https://dev.office.com/reference/add-ins/excel/table)、[**Binding**](https://dev.office.com/reference/add-ins/excel/binding) |
+| `onDataChanged` | 更改绑定中的数据或格式时发生的事件。 | [**捆绑**](https://dev.office.com/reference/add-ins/excel/binding) |
+| `onSelectionChanged` | 更改活动单元格或选定范围时发生的事件。 | [** 工作表**](https://dev.office.com/reference/add-ins/excel/worksheet)、[**表 格**](https://dev.office.com/reference/add-ins/excel/table)、[**捆 绑**](https://dev.office.com/reference/add-ins/excel/binding) |
 | `onSettingsChanged` | 当文档中的设置变化时发生的事件。 | [**SettingCollection**](https://dev.office.com/reference/add-ins/excel/settingcollection) |
 
 ## <a name="preview-beta-events-in-excel"></a>在 Excel 中预览（Beta）事件
@@ -35,11 +35,11 @@ ms.locfileid: "21270270"
 
 | 事件 | 说明 | 支持的对象 |
 |:---------------|:-------------|:-----------|
-| `onAdded` | 添加图表时发生的事件。 | [**chartCollection**](https://github.com/OfficeDev/office-js-docs/blob/ExcelJs_OpenSpec/reference/new-events.md) |
-| `onDeleted` | 删除图表时发生的事件。 | [**chartCollection**](https://github.com/OfficeDev/office-js-docs/blob/ExcelJs_OpenSpec/reference/new-events.md) |
+| `onAdded` | 添加图表时发生的事件。 | [**ChartCollection**](https://github.com/OfficeDev/office-js-docs/blob/ExcelJs_OpenSpec/reference/new-events.md) |
+| `onDeleted` | 删除图表时发生的事件。 | [**ChartCollection**](https://github.com/OfficeDev/office-js-docs/blob/ExcelJs_OpenSpec/reference/new-events.md) |
 | `onActivated` | 激活图表时发生的事件。 | [**Chart**](https://github.com/OfficeDev/office-js-docs/blob/ExcelJs_OpenSpec/reference/new-events.md)， [**ChartCollection**](https://github.com/OfficeDev/office-js-docs/blob/ExcelJs_OpenSpec/reference/new-events.md) |
 | `onDeactivated` | 停用图表时发生的事件。 | [**Chart**](https://github.com/OfficeDev/office-js-docs/blob/ExcelJs_OpenSpec/reference/new-events.md)， [**ChartCollection**](https://github.com/OfficeDev/office-js-docs/blob/ExcelJs_OpenSpec/reference/new-events.md) |
-| `onCalculated` | 工作表完成计算（或集合的所有工作表都已完成）时发生的事件。 | [**WorksheetCollection**](https://github.com/OfficeDev/office-js-docs/blob/ExcelJs_OpenSpec/reference/new-events.md)、[**Worksheet**](https://github.com/OfficeDev/office-js-docs/blob/ExcelJs_OpenSpec/reference/new-events.md) |
+| `onCalculated` | 工作表完成计算（或集合的所有工作表都已完成）时发生的事件。 | [**WorksheetCollection**](https://github.com/OfficeDev/office-js-docs/blob/ExcelJs_OpenSpec/reference/new-events.md)、[**工作表**](https://github.com/OfficeDev/office-js-docs/blob/ExcelJs_OpenSpec/reference/new-events.md) |
 
 ### <a name="event-triggers"></a>事件触发器
 
@@ -130,6 +130,32 @@ function remove() {
                 console.log("Event handler successfully removed.");
             });
     }).catch(errorHandlerFunction);
+}
+```
+
+## <a name="enable-and-disable-events"></a>启用和禁用事件
+
+> [!NOTE]
+> 此功能是当前仅适用于公共预览 (beta)。 若要使用它，您必须引用 Office.js CDN 的 beta 库： https://appsforoffice.microsoft.com/lib/beta/hosted/office.js。
+
+事件是在[运行时](https://docs.microsoft.com/en-us/javascript/api/excel/excel.runtime?view=office-js)级别打开和关闭。  `enableEvents` 属性判断是否会触发事件，并激活其处理程序。 关闭事件对于性能是关键因素时，或者编辑多个实体并且想要在完成前避免触发事件时很有用。
+
+下面的代码示例演示如何打开和关闭事件。
+
+```typescript
+async function toggleEvents() {
+    await Excel.run(async (context) => {
+        context.runtime.load("enableEvents");
+        await context.sync();
+        const eventBoolean = !context.runtime.enableEvents
+        context.runtime.enableEvents = eventBoolean;
+        if (eventBoolean) {
+            console.log("Events are currently on.");
+        } else {
+            console.log("Events are currently off.");
+        }
+        await context.sync();
+    });
 }
 ```
 

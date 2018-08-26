@@ -2,12 +2,12 @@
 title: 在 Microsoft Azure 上托管 Office 加载项
 description: ''
 ms.date: 01/25/2018
-ms.openlocfilehash: f0d6a5a10d2ce0620b42566be03e2d36f8a922f2
-ms.sourcegitcommit: c72c35e8389c47a795afbac1b2bcf98c8e216d82
+ms.openlocfilehash: a7a364db256a64a224ed6895ed710bb0592fa72f
+ms.sourcegitcommit: 4de2a1b62ccaa8e51982e95537fc9f52c0c5e687
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/23/2018
-ms.locfileid: "19438807"
+ms.lasthandoff: 08/10/2018
+ms.locfileid: "22925519"
 ---
 # <a name="host-an-office-add-in-on-microsoft-azure"></a>在 Microsoft Azure 上托管 Office 加载项
 
@@ -20,17 +20,17 @@ ms.locfileid: "19438807"
 1. 安装 [Visual Studio 2017](https://www.visualstudio.com/downloads)，并选择添加 **Azure 开发**工作负载。
 
     > [!NOTE]
-    > 如果之前已安装 Visual Studio 2017，请[使用 Visual Studio 安装程序](https://docs.microsoft.com/en-us/visualstudio/install/modify-visual-studio)，以确保安装 **Azure 开发**工作负载。 
+    > 如果之前已安装 Visual Studio 2017，请[使用 Visual Studio 安装程序](https://docs.microsoft.com/visualstudio/install/modify-visual-studio)，以确保安装 **Azure 开发**工作负载。 
 
 2. 安装 Office 2016。 
     
     > [!NOTE]
-    > 如果尚未安装 Office 2016，可以[注册 1 个月免费试用版](http://office.microsoft.com/en-us/try/?WT%2Eintid1=ODC%5FENUS%5FFX101785584%5FXT104056786)。
+    > 如果尚未安装 Office 2016，可以[注册 1 个月免费试用版](http://office.microsoft.com/try/?WT%2Eintid1=ODC%5FENUS%5FFX101785584%5FXT104056786)。
 
 3.  获取 Azure 订阅。
     
     > [!NOTE]
-    > 如果还没有 Azure 订阅，可以[通过 MSDN 订阅获取 Azure 订阅](http://www.windowsazure.com/en-us/pricing/member-offers/msdn-benefits/)，也可以[注册免费试用版](https://azure.microsoft.com/en-us/pricing/free-trial)。 
+    > 如果还没有 Azure 订阅，可以[通过 MSDN 订阅获取 Azure 订阅](http://www.windowsazure.com/pricing/member-offers/msdn-benefits/)，也可以[注册免费试用版](https://azure.microsoft.com/pricing/free-trial)。 
 
 ## <a name="step-1-create-a-shared-folder-to-host-your-add-in-xml-manifest-file"></a>第 1 步：创建用于托管加载项 XML 清单文件的共享文件夹
 
@@ -45,7 +45,7 @@ ms.locfileid: "19438807"
 5. 在“文件共享”**** 中，选择下拉箭头，再依次选择“所有人”**** > “添加”**** > “共享”****。
     
 > [!NOTE]
-> 本演练要将本地文件共享用作受信任的目录，用来存储加载项 XML 清单文件。在实际方案中，可以改为选择[将 XML 清单文件部署到 SharePoint 目录](../publish/publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md)，或[将加载项发布到 AppSource](https://docs.microsoft.com/en-us/office/dev/store/submit-to-the-office-store)。
+> 本演练要将本地文件共享用作受信任的目录，用来存储加载项 XML 清单文件。在实际方案中，可以改为选择[将 XML 清单文件部署到 SharePoint 目录](../publish/publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md)，或[将加载项发布到 AppSource](https://docs.microsoft.com/office/dev/store/submit-to-the-office-store)。
 
 ## <a name="step-2-add-the-file-share-to-the-trusted-add-ins-catalog"></a>第 2 步：将文件共享添加到受信任的加载项目录
 
@@ -134,7 +134,7 @@ ms.locfileid: "19438807"
     > [!IMPORTANT]
     > [!include[HTTPS guidance](../includes/https-guidance.md)] Azure 网站自动提供 HTTPS 端点。
 
-## <a name="step-4-create-an-office-add-in-in-visual-studio"></a>第 4 步：在 Visual Studio 中创建 Office 外接程序
+## <a name="step-4-create-an-office-add-in-in-visual-studio"></a>第 4 步：在 Visual Studio 中创建 Office 加载项
 
 1. 以管理员身份启动 Visual Studio。
     
@@ -164,17 +164,17 @@ Visual Studio 将创建基本的 Word 外接程序，你可以按原样发布，
 
     Visual Studio 会将 Office 外接程序的 Web 项目发布到 Azure Web 应用。Visual Studio 完成发布 Web 项目后，浏览器将打开并显示网页，其中显示“应用服务应用已创建”文本。这是 Web 应用当前的默认页。
 
-7. 要查看外接程序的网页，请更改 URL 以便它使用 HTTPS 并指定外接程序 HTML 页面的路径（例如：https://YourDomain.azurewebsites.net/Home.html)）。 这可确认你的外接程序 Web 应用现在托管于 Azure 上。 复制根 URL（例如 https://YourDomain.azurewebsites.net)），在本文稍后编辑外接程序清单文件时将需要此 URL。
+7. 要查看外接程序的网页，请更改 URL 以便它使用 HTTPS 并指定外接程序 HTML 页面的路径（例如：https://YourDomain.azurewebsites.net/Home.html)）。 这可确认你的外接程序的 Web 应用现在托管于 Azure 上。 复制根 URL（例如 https://YourDomain.azurewebsites.net)），在本文稍后编辑外接程序清单文件时将需要此 URL。
     
-## <a name="step-6-edit-and-deploy-the-add-in-xml-manifest-file"></a>第 6 步：编辑并部署外接程序 XML 清单文件
+## <a name="step-6-edit-and-deploy-the-add-in-xml-manifest-file"></a>步骤 6：编辑并部署外接程序 XML 清单文件
 
 1. 在示例 Office 外接程序在“解决方案资源管理器”**** 中打开的 Visual Studio 中，展开该解决方案以显示两个项目。
     
-2. 展开 Office 外接程序项目（例如 WordWebAddIn），右键单击清单文件夹，然后选择**打开**。随即打开外接程序 XML 清单文件。
+2. 展开 Office 外接程序项目（例如 WordWebAddIn），右键单击清单文件夹，然后选择 **“打开”**。随即打开外接程序 XML 清单文件。
     
 3. 在 XML 清单文件中，找到所有的 "~remoteAppUrl" 实例，并将其全部替换为 Azure 上的外接程序 Web 应用的根 URL。 这就是之前在将外接程序 Web 应用发布到 Azure 后复制的 URL（例如：https://YourDomain.azurewebsites.net)）。 
     
-4. 选择** 文件**，然后选择**全部保存**。关闭外接程序 XML 清单文件。
+4. 选择 **“文件”**，然后选择**  “全部保存”**。关闭外接程序 XML 清单文件。
     
 5. 返回到“解决方案资源管理器”****，右键单击清单文件夹并选择“在文件资源管理器中打开文件夹”****。
     

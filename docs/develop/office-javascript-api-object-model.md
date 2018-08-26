@@ -2,12 +2,12 @@
 title: Office JavaScript API 对象模型
 description: ''
 ms.date: 07/27/2018
-ms.openlocfilehash: a1fca2c8dd5a92cadb6f2798c3732093578360e5
-ms.sourcegitcommit: bc68b4cf811b45e8b8d1cbd7c8d2867359ab671b
+ms.openlocfilehash: 999383ae07472ec8d07be0fa714a44339c8ce76d
+ms.sourcegitcommit: 4de2a1b62ccaa8e51982e95537fc9f52c0c5e687
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "21719879"
+ms.lasthandoff: 08/10/2018
+ms.locfileid: "22925505"
 ---
 # <a name="office-javascript-api-object-model"></a>Office JavaScript API 对象模型
 Office JavaScript 加载项可以访问主机的基础功能。 大多数访问都通过一些重要的对象。 [Context](#context-object) 对象可以访问初始化后的运行时环境。 [Document](#document-object) 对象使用户可以控制 Excel、PowerPoint 或Word 文档。 [Mailbox](#mailbox-object) 对象提供对消息和用户配置文件的 Outlook 加载项访问权限。 理解这些高级对象之间的关系是 JavaScript 加载项的基础。
@@ -20,7 +20,7 @@ Office JavaScript 加载项可以访问主机的基础功能。 大多数访问�
 
 例如，在任务窗格或内容外接程序中，可以使用 [Context](https://dev.office.com/reference/add-ins/shared/office.context.document) 对象的 **document** 属性访问 **Document** 对象的属性和方法，以便与 Word 文档、Excel 工作表或 Project 计划的内容交互。类似地，在 Outlook 外接程序中，可以使用 [Context](https://dev.office.com/reference/add-ins/outlook/Office.context.mailbox) 对象的 **mailbox** 属性访问 **Mailbox** 对象的属性和方法，以便与邮件、会议请求或约会内容交互。
 
-**Context** 对象还提供对 [contentLanguage](https://dev.office.com/reference/add-ins/shared/office.context.contentlanguage) 和 [displayLanguage](https://dev.office.com/reference/add-ins/shared/office.context.displaylanguage) 属性的访问权限，以便于确定文档或项中使用的或由主机应用使用的区域设置（语言）。 [roamingSettings](https://dev.office.com/reference/add-ins/outlook/Office.context) 属性允许您访问 [ RoamingSettings](https://dev.office.com/reference/add-ins/outlook/RoamingSettings) 对象的成员，用于存储特定于各个用户邮箱的加载项的设置。 最后，**Context** 对象提供 [ui](https://dev.office.com/reference/add-ins/shared/officeui) 属性，以便于加载项启动弹出对话框。
+**Context** 对象还提供对 [contentLanguage](https://dev.office.com/reference/add-ins/shared/office.context.contentlanguage) 和 [displayLanguage](https://dev.office.com/reference/add-ins/shared/office.context.displaylanguage) 属性的访问权限，以便于确定文档或项中使用的或由主机应用使用的区域设置（语言）。 [roamingSettings](https://dev.office.com/reference/add-ins/outlook/Office.context) 属性允许您访问 [ RoamingSettings](https://dev.office.com/reference/add-ins/outlook/RoamingSettings) 对象的成员，用于存储特定于各个用户邮箱的加载项的设置。 最后，**Context** 对象提供一个允许你的外接程序启动弹出对话框的 [ui](https://dev.office.com/reference/add-ins/shared/officeui) 属性。
 
 
 ## <a name="document-object"></a>Document 对象
@@ -171,4 +171,4 @@ var item = Office.context.mailbox.item;
     
 -  **RoamingSettings** 对象：用于将 Outlook 加载项专用自定义设置保存到安装了加载项的用户邮箱。
     
-若要了解如何在 Outlook 加载项中使用 JavaScript，请参阅 [Outlook 加载项](https://docs.microsoft.com/en-us/outlook/add-ins/)。
+若要了解如何在 Outlook 加载项中使用 JavaScript，请参阅 [Outlook 加载项](https://docs.microsoft.com/outlook/add-ins/)。
