@@ -2,12 +2,12 @@
 title: Excel JavaScript API 高级概念
 description: ''
 ms.date: 1/18/2018
-ms.openlocfilehash: 89db69e124475c882448a2105837787ce2c84753
-ms.sourcegitcommit: c72c35e8389c47a795afbac1b2bcf98c8e216d82
+ms.openlocfilehash: 7abf905233a872de07410b6ae6f0da4330bec7b7
+ms.sourcegitcommit: 4de2a1b62ccaa8e51982e95537fc9f52c0c5e687
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/23/2018
-ms.locfileid: "19437554"
+ms.lasthandoff: 08/10/2018
+ms.locfileid: "22925393"
 ---
 # <a name="excel-javascript-api-advanced-concepts"></a>Excel JavaScript API 高级概念
 
@@ -239,6 +239,6 @@ return context.sync()
 ## <a name="see-also"></a>另请参阅
  
 * [Excel JavaScript API 核心概念](excel-add-ins-core-concepts.md)
-* [Excel 外接程序代码示例](http://dev.office.com/code-samples#?filters=excel,office%20add-ins)
-* [Excel JavaScript API 性能优化](https://dev.office.com/reference/add-ins/excel/performance.md)
+* [Excel 加载项代码示例](http://dev.office.com/code-samples#?filters=excel,office%20add-ins)
+* [Excel JavaScript API 性能优化](performance.md)
 * [Excel JavaScript API 参考](https://dev.office.com/reference/add-ins/excel/excel-add-ins-reference-overview)
