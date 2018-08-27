@@ -2,12 +2,12 @@
 title: Office 加载项的隐私和安全
 description: ''
 ms.date: 01/23/2018
-ms.openlocfilehash: 326c8095b6ced105cc21492dc290a443212b3d3f
-ms.sourcegitcommit: c72c35e8389c47a795afbac1b2bcf98c8e216d82
+ms.openlocfilehash: 76408abe96b07e793a72a8cbd177a29428366dd0
+ms.sourcegitcommit: 4de2a1b62ccaa8e51982e95537fc9f52c0c5e687
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/23/2018
-ms.locfileid: "19437729"
+ms.lasthandoff: 08/10/2018
+ms.locfileid: "22925526"
 ---
 # <a name="privacy-and-security-for-office-add-ins"></a>Office 加载项的隐私和安全
 
@@ -33,13 +33,13 @@ Office 外接程序受到外接程序运行时环境、多层权限模型和性�
 
 以下各节简要介绍在基于 Windows 的设备上、OS X Mac 设备上以及 Web 上的 Office Online 客户端中，运行时体系结构如何支持在 Office 客户端中运行加载项。
 
-> **注意**：若要了解如何将 WIP 和 Intune 与 Office 加载项结合使用，请参阅[使用 WIP 和 Intune 保护运行 Office 加载项的文档中的企业数据](https://docs.microsoft.com/en-us/microsoft-365-enterprise/office-add-ins-wip)。
+> **注意**：若要了解如何将 WIP 和 Intune 与 Office 加载项结合使用，请参阅[使用 WIP 和 Intune 保护运行 Office 加载项的文档中的企业数据](https://docs.microsoft.com/microsoft-365/enterprise/office-add-ins-wip)。
 
 ### <a name="clients-for-windows-and-os-x-devices"></a>适用于 Windows 和 OS X 设备的客户端
 
 在支持的台式机和平板电脑设备的客户端（如 Excel、Outlook 和适用于 Mac 的 Outlook）中，通过集成进程内组件 Office 外接程序运行时来支持 Office 外接程序，该组件管理外接程序的生命周期，并实现外接程序和客户端应用程序之间的互操作性。外接程序网页本身托管在进程外。如图 1 中所示，在 Windows 台式机或平板电脑设备上，外接程序网页托管在 Internet Explorer 控件内部，而 Internet Explorer 控件托管在外接程序运行时进程内部，提供安全和性能隔离。
 
-在 Windows 桌面设备上，必须为受限网站区域启用 Internet Explorer 保护模式。通常情况下，此模式默认启用。如果禁用，则会在尝试启动外接程序时[看到错误消息](https://support.microsoft.com/en-us/help/2761180/apps-for-office-don-t-start-if-you-disable-protected-mode-for-the-restricted-sites-zone-in-internet-explorer)。
+在 Windows 桌面设备上，必须为受限网站区域启用 Internet Explorer 保护模式。通常情况下，此模式默认启用。如果禁用，则会在尝试启动外接程序时[看到错误消息](https://support.microsoft.com/help/2761180/apps-for-office-don-t-start-if-you-disable-protected-mode-for-the-restricted-sites-zone-in-internet-explorer)。
 
 *图 1.基于 Windows 的台式机和平板电脑客户端中的 Office 外接程序运行时环境*
 
@@ -90,7 +90,7 @@ Office 加载项是使用浏览器控件或 **iframe** 中运行的 Web 技术�
 
 - 在共享一个文档时，用户也会共享已插入该文档或与该文档关联的加载项。如果用户打开一个包含其之前未使用的加载项的文档，则主机应用程序会提示用户向加载项授予在文档中运行的权限。在组织环境中，如果文档来自外部源，则 Office 主机应用程序也会提示用户。
 
-- 用户可以启用或禁用对 AppSource 的访问权限。对于内容和任务窗格加载项，用户通过主机 Office 客户端上的“信任中心”****（通过“文件”**** > “选项”**** > “信任中心”**** > “信任中心设置”**** > “受信任的加载项目录”**** 打开），管理对受信任的加载项和目录的访问权限。对于 Outlook 加载项，用户可以通过选择“管理加载项”**** 按钮管理加载项，具体操作为：在 Outlook for Windows 中，依次选择“文件”**** > “管理加载项”****；在 Outlook for Mac 中，选择加载项栏上的“管理加载项”**** 按钮；在 Outlook Web App 中，依次选择“设置”**** 菜单（齿轮图标）>“管理加载项”****。管理员还可以通过[使用组策略](http://technet.microsoft.com/en-us/library/jj219429.aspx#BKMK_Managing)管理此访问权限。
+- 用户可以启用或禁用对 AppSource 的访问权限。对于内容和任务窗格加载项，用户通过主机 Office 客户端上的“信任中心”****（通过“文件”**** > “选项”**** > “信任中心”**** > “信任中心设置”**** > “受信任的加载项目录”**** 打开），管理对受信任的加载项和目录的访问权限。对于 Outlook 加载项，用户可以通过选择“管理加载项”**** 按钮管理加载项，具体操作为：在 Outlook for Windows 中，依次选择“文件”**** > “管理加载项”****；在 Outlook for Mac 中，选择加载项栏上的“管理加载项”**** 按钮；在 Outlook Web App 中，依次选择“设置”**** 菜单（齿轮图标）>“管理加载项”****。管理员还可以通过[使用组策略](https://docs.microsoft.com/previous-versions/office/office-2013-resource-kit/jj219429(v=office.15)#using-group-policy-to-manage-how-users-can-install-and-use-apps-for-office)管理此访问权限。
 
 - 加载项平台的设计在以下方面为最终用户提供了安全和性能保障：
 
@@ -98,11 +98,11 @@ Office 加载项是使用浏览器控件或 **iframe** 中运行的 Web 技术�
 
   - 在 Web 浏览器控件中运行可允许加载项完成在浏览器中运行的常规网页可执行的所有操作，但同时将限制加载项遵守针对域隔离和安全区域的同源策略。
 
-Outlook 外接程序通过特定的资源使用率监视提供额外安全和性能功能。有关详细信息，请参阅 [Outlook 外接程序的隐私、权限和安全性](https://docs.microsoft.com/en-us/outlook/add-ins/privacy-and-security)。
+Outlook 外接程序通过特定的资源使用率监视提供额外安全和性能功能。有关详细信息，请参阅 [Outlook 外接程序的隐私、权限和安全性](https://docs.microsoft.com/outlook/add-ins/privacy-and-security)。
 
 ### <a name="developer-guidelines-to-handle-pii"></a>开发人员处理 PII 的准则
 
-你可以在[保护人力资源应用程序开发和测试中的隐私](http://technet.microsoft.com/en-us/library/gg447064.aspx)中阅读 IT 管理员和开发人员用于保护 PII 的通用准则。下面列出了对 Office 外接程序开发人员的一些特定 PII 保护准则：
+下面列出了对 Office 外接程序开发人员的一些特定 PII 保护准则：
 
 - [Settings](https://dev.office.com/reference/add-ins/shared/settings) 对象旨在保存内容加载项或任务窗格加载项的会话之间的加载项设置和状态数据，但不会在 **Settings** 对象中存储密码和其他敏感 PII。最终用户无法查看 **Settings** 对象中的数据，但该数据存储为文档的易于访问的文件格式的一部分。你应该限制加载项对 PII 的使用，并将加载项所需的任何 PII 存储在将加载项作为用户保护的资源托管的服务器上。
 
@@ -139,7 +139,7 @@ Outlook 外接程序通过特定的资源使用率监视提供额外安全和性
 </OfficeApp>
 ```
 
-若要详细了解任务窗格和内容加载项权限，请参阅[在内容和任务窗格加载项中请求获取 API 使用权限](https://docs.microsoft.com/en-us/office/dev/add-ins/develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins)。
+若要详细了解任务窗格和内容加载项权限，请参阅[在内容和任务窗格加载项中请求获取 API 使用权限](https://docs.microsoft.com/office/dev/add-ins/develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins)。
 
 若要详细了解 Outlook 加载项权限，请参阅以下主题：
 
@@ -176,23 +176,23 @@ Exchange 和 SharePoint 提供了客户端代理以实现跨域访问。通常�
 恶意用户可以通过在文档或外接程序字段中输入恶意脚本来攻击外接程序的来源。 开发人员应该处理用户输入，以避免在其域中执行恶意用户的JavaScript。 以下是处理用户通过文档、邮件消息或外接程序字段提供的输入的一些良好实践：
 
 
-- 根据需要使用 [innerText](http://msdn.microsoft.com/en-us/library/ie/ms533897.aspx) 和 [textContent](https://msdn.microsoft.com/library/ms533899.aspx) 属性，而非 DOM 属性 [innerHTML](https://developer.mozilla.org/en-US/docs/DOM/Node.textContent)。执行以下操作获取 Internet Explorer 和 Firefox 跨浏览器支持：
+- 根据需要使用 [innerText](https://developer.mozilla.org/docs/Web/API/Element/innerHTML) 和 [textContent](https://developer.mozilla.org/docs/Web/API/Node/innerText) 属性，而非 DOM 属性 [innerHTML](https://developer.mozilla.org/docs/DOM/Node.textContent)。执行以下操作获取 Internet Explorer 和 Firefox 跨浏览器支持：
 
     ```js
      var text = x.innerText || x.textContent
     ```
 
-    有关 **innerText** 和 **textContent** 之间区别的信息，请参阅 [Node.textContent](https://developer.mozilla.org/en-US/docs/DOM/Node.textContent)。有关常见浏览器间 DOM 兼容性的详细信息，请参阅 [W3C DOM 兼容性 - HTML](http://www.quirksmode.org/dom/w3c_html.html#t07)。
+    有关 **innerText** 和 **textContent** 之间区别的信息，请参阅 [Node.textContent](https://developer.mozilla.org/docs/DOM/Node.textContent)。有关常见浏览器间 DOM 兼容性的详细信息，请参阅 [W3C DOM 兼容性 - HTML](http://www.quirksmode.org/dom/w3c_html.html#t07)。
 
-- 如果你必须使用 **innerHTML**，请在将用户输入传递到 **innerHTML** 之前确保用户输入不包含恶意内容。有关详细信息以及如何安全使用 **innerHTML** 的示例，请参阅 [innerHTML](http://msdn.microsoft.com/en-us/library/ie/ms533897.aspx) 属性。
+- 如果你必须使用 **innerHTML**，请在将用户输入传递到 **innerHTML** 之前确保用户输入不包含恶意内容。有关详细信息以及如何安全使用 **innerHTML** 的示例，请参阅 [innerHTML](https://developer.mozilla.org/docs/Web/API/Element/innerHTML) 属性。
 
 - 如果要使用 jQuery，请使用 [.text()](http://api.jquery.com/text/) 方法，而非 [.html()](http://api.jquery.com/html/) 方法。
 
-- 使用 [toStaticHTML](http://msdn.microsoft.com/en-us/library/ie/cc848922.aspx) 方法可在将用户输入传递到 **innerHTML** 之前删除用户输入中的所有动态 HTML 元素和属性。
+- 使用 [toStaticHTML](http://msdn.microsoft.com/library/ie/cc848922.aspx) 方法可在将用户输入传递到 **innerHTML** 之前删除用户输入中的所有动态 HTML 元素和属性。
 
-- 使用 [encodeURIComponent](http://msdn.microsoft.com/en-us/library/8202bce6-1342-40dc-a5ef-ac6d210a7d15.aspx) 或 [encodeURI](http://msdn.microsoft.com/en-us/library/17bab5a2-bcd4-46c2-8b52-b2b5a0ed98a3.aspx) 函数可对应为来自用户输入或包含用户输入的 URL 的文本进行编码。
+- 使用 [encodeURIComponent](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/encodeuricomponent) 或 [encodeURI](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/encodeuri) 函数可对应为来自用户输入或包含用户输入的 URL 的文本进行编码。
 
-- 有关创建更安全的 Web 解决方案的更多最佳做法，请参阅[开发安全加载项](http://msdn.microsoft.com/en-us/library/windows/apps/hh849625.aspx)。
+- 有关创建更安全的 Web 解决方案的更多最佳做法，请参阅[开发安全加载项](https://docs.microsoft.com/previous-versions/windows/apps/hh849625(v=win.10))。
 
 ### <a name="tips-to-prevent-clickjacking"></a>防止“点击劫持”的提示
 
@@ -241,7 +241,7 @@ Exchange 和 SharePoint 提供了客户端代理以实现跨域访问。通常�
   - 制定概述遵从性隐私策略的声明。
   - 准备好在提交加载项后签订合约协议。
 
-除资源使用率规则之外，Outlook 外接程序的开发人员还应确保其外接程序遵守有关指定激活规则和使用 JavaScript API 的限制。有关详细信息，请参阅[激活限制和适用于 Outlook 外接程序的 JavaScript API](http://msdn.microsoft.com/library/e0c9e3d0-517e-4333-b8bd-e169c51a07f6.aspx)。
+除资源使用率规则之外，Outlook 外接程序的开发人员还应确保其外接程序遵守有关指定激活规则和使用 JavaScript API 的限制。有关详细信息，请参阅[激活限制和适用于 Outlook 外接程序的 JavaScript API](https://docs.microsoft.com/outlook/add-ins/limits-for-activation-and-javascript-api-for-outlook-add-ins)。
 
 ## <a name="it-administrators-control"></a>IT 管理员控制
 
@@ -249,12 +249,12 @@ Exchange 和 SharePoint 提供了客户端代理以实现跨域访问。通常�
 
 ## <a name="see-also"></a>另请参阅
 
-- [在内容和任务窗格加载项中请求获取 API 使用权限](http://msdn.microsoft.com/library/da2efadc-4ebf-45fe-be39-397ac1eb1dbd.aspx)
-- [Outlook 外接程序的隐私、权限和安全性](http://msdn.microsoft.com/library/44208fc4-05d4-42d8-ab20-faa89624de1c.aspx)
-- [了解 Outlook 外接程序权限](https://docs.microsoft.com/en-us/outlook/add-ins/understanding-outlook-add-in-permissions)
-- [Outlook 外接程序的激活和 JavaScript API 限制](http://msdn.microsoft.com/library/e0c9e3d0-517e-4333-b8bd-e169c51a07f6.aspx)
-- [解决 Office 外接程序中的同源策略限制](http://msdn.microsoft.com/library/36c800ae-1dda-4ea8-a558-37c89ffb161b.aspx)
+- [在内容和任务窗格加载项中请求获取 API 使用权限](https://docs.microsoft.com/office/dev/add-ins/develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins)
+- [Outlook 外接程序的隐私、权限和安全性](https://docs.microsoft.com/outlook/add-ins/privacy-and-security)
+- [了解 Outlook 外接程序权限](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)
+- [Outlook 外接程序的激活和 JavaScript API 限制](https://docs.microsoft.com/outlook/add-ins/limits-for-activation-and-javascript-api-for-outlook-add-ins)
+- [解决 Office 外接程序中的同源策略限制](https://docs.microsoft.com/office/dev/add-ins/develop/addressing-same-origin-policy-limitations)
 - [同源策略](http://www.w3.org/Security/wiki/Same_Origin_Policy)
 - [同源策略第 1 部分：不准偷看](http://blogs.msdn.com/b/ieinternals/archive/2009/08/28/explaining-same-origin-policy-part-1-deny-read.aspx)
-- [针对 JavaScript 的同源策略](https://developer.mozilla.org/En/Same_origin_policy_for_JavaScript)
-- [IE 保护模式](https://support.microsoft.com/en-us/help/2761180/apps-for-office-don-t-start-if-you-disable-protected-mode-for-the-restricted-sites-zone-in-internet-explorer)
+- [针对 JavaScript 的同源策略](https://developer.mozilla.org/docs/Web/Security/Same-origin_policy)
+- [IE 保护模式](https://support.microsoft.com/help/2761180/apps-for-office-don-t-start-if-you-disable-protected-mode-for-the-restricted-sites-zone-in-internet-explorer)
