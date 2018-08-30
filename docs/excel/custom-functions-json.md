@@ -2,7 +2,7 @@
 
 如果在 Excel 加载项中包括[自定义函数](custom-functions-overview.md)，你必须托管一个 JSON 文件，其中包含有关函数的元数据（此外，还要托管包含函数的 JavaScript文件，以及充当 JavaScript 文件父项的无用户界面的 HTML 文件）。 本文使用示例描述了 JSON 文件的格式。
 
-[此处](https://github.com/OfficeDev/Excel-Custom-Functions/blob/master/customfunctions.json)提供了一个完整的示例 JSON文件。
+[此处](https://github.com/OfficeDev/Excel-Custom-Functions/blob/master/config/customfunctions.json)提供了一个完整的示例 JSON文件。
 
 ## <a name="functions-array"></a>函数数组
 
