@@ -1,10 +1,10 @@
 ### YamlMime:YamlDocument
-ms.openlocfilehash: c56cc86f11a43fff1a089dc4e24eced24799c327
-ms.sourcegitcommit: 4de2a1b62ccaa8e51982e95537fc9f52c0c5e687
+ms.openlocfilehash: e3a2ccbc7a8d626ad48f7ff8513bbf4acd5910ea
+ms.sourcegitcommit: 90d3b64219f14dd9cfe23ee9746477734195cb8f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/10/2018
-ms.locfileid: "22925323"
+ms.lasthandoff: 08/29/2018
+ms.locfileid: "23271341"
 documentType: LandingData
 title: Office 外接程序文档
 metadata:
@@ -15,7 +15,7 @@ metadata:
   ms.date: 12/04/2017
   ms.author: o365devx
 abstract:
-  description: <a href="https://docs.microsoft.com/office/dev/add-ins/overview/office-add-ins">Office 外接程序平台</a> 允许你构建扩展 Office 应用程序并与 Office 文档中的内容进行交互的解决方案。 通过 Office 外接程序，可以使用熟悉的 Web 技术，例如 HTML、CSS 和 JavaScript 来扩展 Word、Excel、PowerPoint、OneNote，Project 和 Outlook，并与其进行交互。 解决方案可以跨多个平台在 Office 中运行，包括 Office for Windows、Office Online、Office for Mac 和 Office for iPad。 通过我们的快速入门、操作指南和 API 参考文档创建 Office 外接程序。<br/><br/><b>注意：</b>有关 COM 或 VSTO 外接程序的信息，请参阅 <a href="https://msdn.microsoft.com/library/fp161347.aspx" target="_blank">MSDN 文档</a>。
+  description: <a href="https://docs.microsoft.com/office/dev/add-ins/overview/office-add-ins">Office 外接程序平台</a> 允许你构建扩展 Office 应用程序并与 Office 文档中的内容进行交互的解决方案。 通过 Office 外接程序，可以使用熟悉的 Web 技术，例如 HTML、CSS 和 JavaScript 来扩展 Word、Excel、PowerPoint、OneNote，Project 和 Outlook，并与其进行交互。 解决方案可以跨多个平台在 Office 中运行，包括 Office for Windows、Office Online、Office for Mac 和 Office for iPad。 了解如何通过我们的快速入门、操作指南和 API 参考文档创建 Office 外接程序。<br/><br/><b>注意：</b> 有关 COM 或 VSTO 外接程序的信息，请参阅 <a href="https://docs.microsoft.com/office/client-developer/office-client-development" target="_blank">Office 客户端开发文档</a>。
   aside:
     image:
       alt: 
