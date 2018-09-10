@@ -1,12 +1,12 @@
 ---
 title: 创建使用单一登录的 Node.js Office 加载项
 description: 2018 年 1 月23 日
-ms.openlocfilehash: 70ce81a1cd0038d3219763fb1e15bc3089e06f57
-ms.sourcegitcommit: 28fc652bded31205e393df9dec3a9dedb4169d78
+ms.openlocfilehash: bb77d037140f8c56ca05f3817fb2b9d0271297ae
+ms.sourcegitcommit: 8333ede51307513312d3078cb072f856f5bef8a2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/23/2018
-ms.locfileid: "22927388"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "23876611"
 ---
 # <a name="create-a-nodejs-office-add-in-that-uses-single-sign-on-preview"></a>创建使用单一登录的 Node.js Office 加载项（预览）
 
@@ -37,7 +37,7 @@ ms.locfileid: "22927388"
     > 示例项目有三个版本：  
     > * **Before** 文件夹是初学者项目。未直接连接到 SSO 或授权的外接程序的 UI 和其他方面已经完成。本文后续章节将引导你完成此过程。 
     > * 如果完成了本文中的过程，该示例的**已完成**版本会与所生成的外接程序类似，只不过完成的项目具有对本文文本冗余的代码注释。若要使用已完成的版本，请按照本文中的说明进行操作即可，但需要将“Before”替换为“Completed”，并跳过**编写客户端代码**和**编写服务器端代码**部分。
-    > *  **完整多租户**版本是支持多租户的完整示例。 如果要支持带 SSO 的来自不同域的 Microsoft 帐户，请浏览此示例。
+    > * **完整多租户**版本是支持多租户的完整示例。 如果要支持带 SSO 的来自不同域的 Microsoft 帐户，请浏览此示例。
 
 2. 在 **Before** 文件夹中打开 Git bash 控制台。
 
@@ -48,7 +48,7 @@ ms.locfileid: "22927388"
     > [!NOTE]
     > 可能会看到一些生成错误，提示某些变量已声明但未使用。请忽略这些错误。之所以会看到这些错误是因为，示例项目的“之前”版本缺少某代码，将在后续步骤中添加。
 
-## <a name="register-the-add-in-with-azure-ad-v20-endpoint"></a>向 Azure AD v2.0  端点注册加载项
+## <a name="register-the-add-in-with-azure-ad-v20-endpoint"></a>向 Azure AD v2.0 端点注册加载项
 
 以下说明以通用方式书写，以便可以在多个地方使用。 对于本文而言，请执行以下操作：
 - 将占位符 **$ADD-IN-NAME$** 替换为 `“Office-Add-in-NodeJS-SSO`。
@@ -70,7 +70,7 @@ ms.locfileid: "22927388"
 
 2. 对于 `client_id` 属性，将占位符 `{client GUID}` 替换为注册加载项时保存的应用程序 ID。 完成后，单引号中应该只有一个 GUID。 不应出现任何 "{}" 字符。
 
-3. 对于 `client_secret` 属性，将占位符 `{client secret}` 替换为注册 加载项时保存的应用程序密钥。
+3. 对于 `client_secret` 属性，将占位符 `{client secret}` 替换为注册加载项时保存的应用程序机密。
 
 4. 对于 `audience` 属性，将占位符 `{audience GUID}` 替换为注册外接程序时保存的应用程序 ID。（即分配给 `client_id` 属性的同一值）。
   
@@ -113,7 +113,7 @@ ms.locfileid: "22927388"
     * 方法，用于在任务窗格底部显示从 Microsoft Graph 返回的数据（或错误消息）。`showResult`
     * 方法，用于记录最终用户不应看到的控制台错误。`logErrors`
 
-11. 在 `Office.initialize`  赋值语句的下方，添加下列代码。关于此代码，请注意以下几点：
+11. 在 `Office.initialize` 赋值语句的下方，添加下列代码。关于此代码，请注意以下几点：
 
     * 加载项中的错误处理有时会自动尝试使用一组不同的选项，重新获取访问令牌。 计数器变量 `timesGetOneDriveFilesHasRun` 以及标志变量 `triedWithoutForceConsent` 和 `timesMSGraphErrorReceived` 用于确保用户不会重复循环失败的尝试来获取令牌。 
     * 虽然 `getDataWithToken` 方法是在下一步中创建，但请注意，它会将 `forceConsent` 选项设置为 `false`。有关详细信息，请参阅下一步。
@@ -132,7 +132,7 @@ ms.locfileid: "22927388"
 
 1. 在 `getOneDriveFiles` 方法下方，添加下列代码。关于此代码，请注意以下几点：
 
-    * 是 Office.js 中的新 API，可便于加载项要求 Office 主机应用（Excel、PowerPoint、Word 等）提供加载项访问令牌（对于已登录 Office 的用户）。反过来，Office 主机应用会向 Azure AD 2.0 终结点请求获取令牌。由于已在注册加载项时将 Office 主机预授权给加载项，因此 Azure AD 会发送访问令牌。`getAccessTokenAsync`
+    * [getAccessTokenAsync](https://docs.microsoft.com/office/dev/add-ins/develop/sso-in-office-add-ins#sso-api-reference) 是 Office.js 中的新 API，可便于加载项要求 Office 主机应用（Excel、PowerPoint、Word 等）提供加载项访问令牌（对于已登录 Office 的用户）。反过来，Office 主机应用会向 Azure AD 2.0 端点请求获取令牌。由于已在注册加载项时将 Office 主机预授权给加载项，因此 Azure AD 会发送该令牌。
     * 如果用户未登录 Office，Office 主机会提示用户登录。
     * options 参数将 `forceConsent` 设置为 `false`，因此用户不会在每次使用加载项时都看到提示，要求其许可向 Office 主机授予对加载项的访问权限。 用户首次运行加载项时，`getAccessTokenAsync` 调用会失败，但在后续步骤中添加的错误处理逻辑会自动重新调用（`forceConsent` 选项设置为 `true`），并提示用户许可，但仅限首次运行。
     * 方法将在后续步骤中创建。`handleClientSideErrors`

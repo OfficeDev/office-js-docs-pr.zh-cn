@@ -2,12 +2,12 @@
 title: 创建使用单一登录的 ASP.NET Office 加载项
 description: ''
 ms.date: 01/23/2018
-ms.openlocfilehash: 70662a01d86d3fa111b39deb4c16702a4f8530f5
-ms.sourcegitcommit: e1c92ba882e6eb03a165867c6021a6aa742aa310
+ms.openlocfilehash: cdf039e66f0d61e656827ee3ab0ad5762cba430d
+ms.sourcegitcommit: 8333ede51307513312d3078cb072f856f5bef8a2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/20/2018
-ms.locfileid: "22925638"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "23876618"
 ---
 # <a name="create-an-aspnet-office-add-in-that-uses-single-sign-on-preview"></a>创建使用单一登录的 ASP.NET Office 加载项（预览）
 
@@ -46,11 +46,11 @@ ms.locfileid: "22925638"
 
    >    `Install-Package Microsoft.Identity.Client -Version 1.1.4-preview0002`
 
-   > 3. 在** 解决方案资源管理器**中，右键单击** 引用**。 验证是否列出了 ** Microsoft.Identity.Client**。 如果没有列出或它的条目上有警告图标，请先删除此条目，再使用“Visual Studio 添加引用向导”，在 **... \[Begin | Complete]\packages\Microsoft.Identity.Client.1.1.4-alpha0002\lib\net45\Microsoft.Identity.Client.dll** 添加对程序集的引用。
+   > 3. 在“解决方案资源管理器”**** 中，右键单击“引用”****。 验证是否列出了“Microsoft.Identity.Client”****。 如果没有列出或它的条目上有警告图标，请先删除此条目，再使用“Visual Studio 添加引用向导”，在 **... \[Begin | Complete]\packages\Microsoft.Identity.Client.1.1.4-alpha0002\lib\net45\Microsoft.Identity.Client.dll** 添加对程序集的引用。
 
 1. 重新生成此项目。
 
-## <a name="register-the-add-in-with-azure-ad-v20-endpoint"></a>向 Azure AD v2.0  端点注册加载项
+## <a name="register-the-add-in-with-azure-ad-v20-endpoint"></a>向 Azure AD v2.0 端点注册加载项
 
 以下说明以通用方式书写，以便可以在多个地方使用。 对于本文而言，请执行以下操作：
 - 将占位符 **$ADD-IN-NAME$** 替换为 `Office-Add-in-ASPNET-SSO`。
@@ -68,7 +68,7 @@ ms.locfileid: "22925638"
 
 [!INCLUDE[](../includes/grant-admin-consent-to-an-add-in-include.md)]
 
-## <a name="configure-the-add-in"></a>配置加载项
+## <a name="configure-the-add-in"></a>配置外接程序
 
 1. 在以下字符串中，将占位符“{tenant_ID}”替换为你的 Office 365 租户ID。 使用[“找到你的 Office 365 租户 ID”](https://docs.microsoft.com/onedrive/find-your-office-365-tenant-id)中的一种方法获得它。
 
@@ -126,7 +126,7 @@ ms.locfileid: "22925638"
     > * **Resource** 值是向注册的加载项添加 Web API 平台时设置的**应用 ID URI**。
     > * 仅在通过 AppSource 销售加载项时，才使用 **Scopes** 部分生成许可对话框。
 
-1. 在 Visual Studio 中，打开**错误列表**的**警告**选项卡。 如果存在关于 `<WebApplicationInfo>` 不是 `<VersionOverrides>` 的有效子级的警告，则该 Visual Studio 2017 Preview 版本无法识别 SSO 标记。 作为解决方法，请对 Word、Excel 或 PowerPoint 加载项执行以下操作。 （如果使用的是 Outlook 外接程序，请参阅下面的解决方法。）
+1. 在 Visual Studio 中，打开“错误列表”**** 的“警告”**** 选项卡。 如果存在关于 `<WebApplicationInfo>` 不是 `<VersionOverrides>` 的有效子级的警告，则该 Visual Studio 2017 预览版无法识别 SSO 标记。 作为解决方法，请对 Word、Excel 或 PowerPoint 加载项执行以下操作。 （如果使用的是 Outlook 外接程序，请参阅下面的解决方法。）
 
    - **Word、Excel 和 Powerpoint 的解决方法**
 
@@ -165,7 +165,7 @@ ms.locfileid: "22925638"
     * 方法，用于在任务窗格底部显示从 Microsoft Graph 返回的数据（或错误消息）。`showResult`
     * 方法，用于记录最终用户不应看到的控制台错误。`logErrors`
 
-1. 在向 `Office.initialize` 赋值的语句下方，添加下列代码。关于此代码，请注意以下几点：
+1. 在 `Office.initialize` 赋值语句的下方，添加下列代码。关于此代码，请注意以下几点：
 
     * 加载项中的错误处理有时会自动尝试使用一组不同的选项，重新获取访问令牌。 计数器变量 `timesGetOneDriveFilesHasRun` 和标志变量 `triedWithoutForceConsent` 用于确保用户不会重复循环失败的尝试来获取令牌。 
     * 虽然 `getDataWithToken` 方法是在下一步中创建，但请注意，它会将 `forceConsent` 选项设置为 `false`。有关详细信息，请参阅下一步。
@@ -183,7 +183,7 @@ ms.locfileid: "22925638"
 
 1. 在 `getOneDriveFiles` 方法下方，添加下列代码。关于此代码，请注意以下几点：
 
-    * 是 Office.js 中的新 API，可便于加载项要求 Office 主机应用（Excel、PowerPoint、Word 等）提供加载项访问令牌（对于已登录 Office 的用户）。反过来，Office 主机应用会向 Azure AD 2.0 终结点请求获取令牌。由于已在注册加载项时将 Office 主机预授权给加载项，因此 Azure AD 会发送访问令牌。`getAccessTokenAsync`
+    * [getAccessTokenAsync](https://docs.microsoft.com/office/dev/add-ins/develop/sso-in-office-add-ins#sso-api-reference) 是 Office.js 中的新 API，可便于加载项要求 Office 主机应用（Excel、PowerPoint、Word 等）提供加载项访问令牌（对于已登录 Office 的用户）。反过来，Office 主机应用会向 Azure AD 2.0 端点请求获取令牌。由于已在注册加载项时将 Office 主机预授权给加载项，因此 Azure AD 会发送该令牌。
     * 如果用户未登录 Office，Office 主机会提示用户登录。
     * options 参数将 `forceConsent` 设置为 `false`，因此用户不会在每次使用加载项时都看到提示，要求其许可向 Office 主机授予对加载项的访问权限。 用户首次运行加载项时，`getAccessTokenAsync` 调用会失败，但在后续步骤中添加的错误处理逻辑会自动重新调用（`forceConsent` 选项设置为 `true`），并提示用户许可，但仅限首次运行。
     * 方法将在后续步骤中创建。`handleClientSideErrors`
@@ -282,11 +282,11 @@ ms.locfileid: "22925638"
         break; 
     ```
 
-1. 将 `TODO4` 替换为以下代码。 如果用户用于登录的帐户既不是工作帐户或学校帐户，也不是 Microsoft 帐户，错误 13003 发生。 建议用户注销，再使用受支持的帐户类型重新登录。
+1. 替换 `TODO4` 为以下代码。如果用户登录的帐户既不是工作或学校帐户，也不是 Microsoft 帐户时，将发生错误 13003。让用户注销，然后再次使用支持的帐户类型登录。
 
     ```javascript
     case 13003: 
-        showResult(['Please sign out of Office and sign in again with a work or school account, or Microsoft Account. Other kinds of accounts, like corporate domain accounts do not work.']);
+        showResult(['Please sign out of Office and sign in again with a work or school account, or Microsoft account. Other kinds of accounts, like corporate domain accounts do not work.']);
         break;   
     ```
 
@@ -322,7 +322,7 @@ ms.locfileid: "22925638"
     ```javascript
     case 13009:
         if (triedWithoutForceConsent) {
-            showResult(['Please sign out of Office and sign in again with a work or school account, or Microsoft Account.']);
+            showResult(['Please sign out of Office and sign in again with a work or school account, or Microsoft account.']);
         } else {
             getDataWithToken({ forceConsent: false });
         }
