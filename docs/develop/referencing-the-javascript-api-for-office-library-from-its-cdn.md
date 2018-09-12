@@ -2,17 +2,17 @@
 title: 从内容传送网络 (CDN) 引用适用于 Office 的 JavaScript API 库
 description: ''
 ms.date: 01/23/2018
-ms.openlocfilehash: 6d435c0e3a0383d03f28e095c56b62e967394e22
-ms.sourcegitcommit: 7ecc1dc24bf7488b53117d7a83ad60e952a6f7aa
+ms.openlocfilehash: 9d3328ba09e2f69e76bd55f21064d52a8537cfa9
+ms.sourcegitcommit: 30435939ab8b8504c3dbfc62fd29ec6b0f1a7d22
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/23/2018
-ms.locfileid: "19437134"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "23943899"
 ---
 # <a name="referencing-the-javascript-api-for-office-library-from-its-content-delivery-network-cdn"></a>从内容传送网络 (CDN) 引用适用于 Office 的 JavaScript API 库
 
 
-[适用于 Office 的 JavaScript API](https://dev.office.com/reference/add-ins/javascript-api-for-office) 库包含 Office.js 文件和关联的主机应用专用 .js 文件（如 Excel-15.js 和 Outlook-15.js）。 
+[适用于 Office 的 JavaScript API](https://docs.microsoft.com/javascript/office/javascript-api-for-office?view=office-js) 库包含 Office.js 文件和关联的主机应用专用 .js 文件（如 Excel-15.js 和 Outlook-15.js）。 
 
 
 引用 API 的最简单方法是，通过向页面的 `<head>` 标记添加以下 `<script>` 来使用我们的 CDN：  
@@ -31,5 +31,5 @@ ms.locfileid: "19437134"
 ## <a name="see-also"></a>另请参阅
 
 - [了解适用于 Office 的 JavaScript API](understanding-the-javascript-api-for-office.md)    
-- [适用于 Office 的 JavaScript API](https://dev.office.com/reference/add-ins/javascript-api-for-office)
+- [适用于 Office 的 JavaScript API](https://docs.microsoft.com/javascript/office/javascript-api-for-office?view=office-js)
     

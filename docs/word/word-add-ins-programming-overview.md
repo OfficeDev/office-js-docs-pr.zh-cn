@@ -2,12 +2,12 @@
 title: Word 加载项概述
 description: ''
 ms.date: 01/23/2018
-ms.openlocfilehash: 90b6ad29b4d1fe4ecffd3a1e57d76d16752ee77a
-ms.sourcegitcommit: 4de2a1b62ccaa8e51982e95537fc9f52c0c5e687
+ms.openlocfilehash: 51ab24fa12017fc16a49d5ac2f97dad288bcfcfe
+ms.sourcegitcommit: 30435939ab8b8504c3dbfc62fd29ec6b0f1a7d22
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/10/2018
-ms.locfileid: "22925428"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "23944639"
 ---
 # <a name="word-add-ins-overview"></a>Word 加载项概述
 
@@ -52,11 +52,11 @@ Word.run(function (context) {
 
 ## <a name="javascript-apis-for-word"></a>适用于 Word 的 JavaScript API
 
-有两组 JavaScript Api 可用于与 Word 文档中的对象和元数据进行交互。第一组是[适用于 Office 的 JavaScript API](https://dev.office.com/reference/add-ins/javascript-api-for-office?product=word)，在 Office 2013 进行了引入。这是一个共享 API --许多对象可以在由两个或多个 Office 客户端托管的外接程序中使用。此 API 广泛使用回调。 
+有两组 JavaScript Api 可用于与 Word 文档中的对象和元数据进行交互。第一组是[适用于 Office 的 JavaScript API](https://docs.microsoft.com/javascript/office/javascript-api-for-office?view=office-js?product=word)，在 Office 2013 进行了引入。这是一个共享 API --许多对象可以在由两个或多个 Office 客户端托管的外接程序中使用。此 API 广泛使用回调。 
 
-第二组是 [Word JavaScript API](https://dev.office.com/reference/add-ins/word/word-add-ins-reference-overview)。这是强类型对象模型，可用于创建面向适用于 Mac 和 Windows 的 Word 2016 的 Word 外接程序。此对象模型使用承诺模式，并提供对特定于 Word 对象（如[正文](https://dev.office.com/reference/add-ins/word/body)、[内容控件](https://dev.office.com/reference/add-ins/word/contentcontrol)、[内联图片](https://dev.office.com/reference/add-ins/word/inlinepicture)和[段落](https://dev.office.com/reference/add-ins/word/paragraph)）的访问权限。Word JavaScript API 包括 TypeScript 定义和 vsdoc 文件，这样，您可以在 IDE 中获得代码提示。
+第二组是 [Word JavaScript API](https://docs.microsoft.com/javascript/office/overview/word-add-ins-reference-overview?view=office-js)。这是强类型对象模型，可用于创建面向适用于 Mac 和 Windows 的 Word 2016 的 Word 外接程序。此对象模型使用承诺模式，并提供对特定于 Word 对象（如[正文](https://docs.microsoft.com/javascript/api/word/word.body?view=office-js)、[内容控件](https://docs.microsoft.com/javascript/api/word/word.contentcontrol?view=office-js)、[内联图片](https://docs.microsoft.com/javascript/api/word/word.inlinepicture?view=office-js)和[段落](https://docs.microsoft.com/javascript/api/word/word.paragraph?view=office-js)）的访问权限。Word JavaScript API 包括 TypeScript 定义和 vsdoc 文件，这样，您可以在 IDE 中获得代码提示。
 
-目前，所有 Word 客户端均支持共享的适用于 Office 的 JavaScript API，大多数客户端支持 Word JavaScript API。有关受支持的客户端的详细信息，请参阅 [API 参考文档](https://dev.office.com/reference/add-ins/javascript-api-for-office?product=word)。
+目前，所有 Word 客户端均支持共享的适用于 Office 的 JavaScript API，大多数客户端支持 Word JavaScript API。有关受支持的客户端的详细信息，请参阅 [API 参考文档](https://docs.microsoft.com/javascript/office/javascript-api-for-office?view=office-js?product=word)。
 
 我们建议从 Word JavaScript API 开始，因为对象模型更易于使用。如果需要执行以下操作，请使用 Word JavaScript API：
 
@@ -74,7 +74,7 @@ Word.run(function (context) {
 
 ## <a name="next-steps"></a>后续步骤
 
-准备好创建首个 Word 加载项了吗？请参阅[生成首个 Word 加载项](word-add-ins.md)。还可以尝试感受交互式[入门体验](http://dev.office.com/getting-started/addins?product=Word)。请使用[加载项清单](../develop/add-in-manifests.md)描述加载项的托管位置和显示方式，并定义权限和其他信息。
+准备好创建首个 Word 加载项了吗？请参阅[生成首个 Word 加载项](word-add-ins.md)。还可以尝试感受交互式[入门体验](https://docs.microsoft.com/office/dev/add-ins/?product=Word)。请使用[加载项清单](../develop/add-in-manifests.md)描述加载项的托管位置和显示方式，并定义权限和其他信息。
 
 若要了解如何设计世界一流的 Word 外接程序来为用户打造具有吸引力的体验，请参阅[设计指南](../design/add-in-design.md)和[最佳实践](../concepts/add-in-development-best-practices.md)。
 
@@ -82,10 +82,10 @@ Word.run(function (context) {
 
 ## <a name="whats-coming-up-for-word-add-ins"></a>Word 加载项未来发展趋势如何？
 
-随着我们设计和开发适用于 Word 加载项的新 API，我们将会发布这些 API，以供大家在 [API 开放性规范](https://dev.office.com/reference/add-ins/openspec)页面上提供反馈。请了解即将推出的 Word JavaScript API 新功能，并提供对设计规范的宝贵意见。
+随着我们设计和开发适用于 Word 加载项的新 API，我们将会发布这些 API，以供大家在 [API 开放性规范](https://docs.microsoft.com/javascript/office/openspec?view=office-js)页面上提供反馈。请了解即将推出的 Word JavaScript API 新功能，并提供对设计规范的宝贵意见。
 
 ## <a name="see-also"></a>另请参阅
 
 * [Office 加载项平台概述](../overview/office-add-ins.md)
-* [Word JavaScript API 参考](https://dev.office.com/reference/add-ins/word/word-add-ins-reference-overview)
+* [Word JavaScript API 参考](https://docs.microsoft.com/javascript/office/overview/word-add-ins-reference-overview?view=office-js)
 

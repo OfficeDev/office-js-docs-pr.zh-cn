@@ -2,18 +2,18 @@
 title: Office 加载项的数据可视化样式指南
 description: ''
 ms.date: 12/04/2017
-ms.openlocfilehash: 3255c1aeff6cba4b9f13aa2555b8c84ac773fb75
-ms.sourcegitcommit: 7ecc1dc24bf7488b53117d7a83ad60e952a6f7aa
+ms.openlocfilehash: 27de6b6b2f4352488ad8f63c3b6e1250cbfbb324
+ms.sourcegitcommit: 30435939ab8b8504c3dbfc62fd29ec6b0f1a7d22
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/23/2018
-ms.locfileid: "19437351"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "23945790"
 ---
 # <a name="data-visualization-style-guidelines-for-office-add-ins"></a>Office 加载项的数据可视化样式指南
 
 良好的数据可视化效果可帮助用户找到数据见解。他们可以使用这些见解来讲述具有说服力的故事。本文提供了准则，以帮助你在适用于 Excel 和其他 Office 应用的外接程序中设计有效的数据可视化。
 
-我们建议使用 [Office UI Fabric](http://dev.office.com/fabric) 来创建数据可视化的镶边。Office UI Fabric 包含可与 Office 外观无缝集成的样式和组件。 
+我们建议使用 [Office UI Fabric](https://developer.microsoft.com/fabric) 来创建数据可视化的镶边。Office UI Fabric 包含可与 Office 外观无缝集成的样式和组件。 
 
 <!--The following figure shows a data visualization in an add-in that uses Fabric.
 
@@ -34,7 +34,7 @@ ms.locfileid: "19437351"
 
 - 使图表标题便于阅读。设定其位置以创建相对于其余图表的清晰视觉对象层次结构。
 - 一般情况下，使用句子大写（大写第一个字词）。若要创建对比度或强化层次结构，可以全部使用大写，但应谨慎使用全部大写。
-- 纳入 [Office UI Fabric 类型校正](http://dev.office.com/fabric#/styles/typography)使图表与使用 Segoe 的 Office UI 保持一致。你还可以使用不同的字样来区分图表内容和 UI。
+- 纳入 [Office UI Fabric 类型校正](https://developer.microsoft.com/fabric#/styles/typography)使图表与使用 Segoe 的 Office UI 保持一致。你还可以使用不同的字样来区分图表内容和 UI。
 - 使用带有大型计数器的 sans-serif 字样。
 
 下面的示例显示图表标题中使用的 serif 和 sans-serif 字样。请留意如何通过缩放对比度和空白的有效使用来构建强大的可视化层次结构。
@@ -46,7 +46,7 @@ ms.locfileid: "19437351"
 
 请确保轴标签颜色足够深，以便可以清楚地阅读，并且具有足够的文本和背景色对比度。请确保颜色不要过深，避免比数据墨迹更加突出。
 
-浅灰色轴标签效果最佳。如果使用的是 Fabric，请参阅[中性色调色板](http://dev.office.com/fabric#/styles/colors)。
+浅灰色轴标签效果最佳。如果使用的是 Fabric，请参阅[中性色调色板](https://developer.microsoft.com/fabric#/styles/colors)。
 
 ### <a name="data-ink"></a>数据墨迹
 
@@ -67,7 +67,7 @@ ms.locfileid: "19437351"
 
 要准确读取图表，通常网格线是必不可少的，但应显示为辅助可视元素，用于增强数据墨迹效果，但不会影响数据显示。确保静态网格线较细且颜色较淡，除非专门将其设计用于高对比度的情况。还可以使用交互作用创建在用户与图表交互时上下文中显示的动态、实时网格线。
 
-浅灰色网格线效果最佳。如果使用的是 Fabric，请参阅[中性色调色板](http://dev.office.com/fabric#/styles/colors)。
+浅灰色网格线效果最佳。如果使用的是 Fabric，请参阅[中性色调色板](https://developer.microsoft.com/fabric#/styles/colors)。
 
 下图显示了带有网格线的数据可视化。
 

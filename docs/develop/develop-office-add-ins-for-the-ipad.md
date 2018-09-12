@@ -2,12 +2,12 @@
 title: 开发适用于 iPad 的 Office 加载项
 description: ''
 ms.date: 01/23/2018
-ms.openlocfilehash: 96743b343aca28e7a35e78c587a9b39cf050a539
-ms.sourcegitcommit: 4de2a1b62ccaa8e51982e95537fc9f52c0c5e687
+ms.openlocfilehash: 77e67c361d227babebdd081ecdf308fc7469e507
+ms.sourcegitcommit: 30435939ab8b8504c3dbfc62fd29ec6b0f1a7d22
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/10/2018
-ms.locfileid: "22925113"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "23944352"
 ---
 # <a name="develop-office-add-ins-for-the-ipad"></a>开发适用于 iPad 的 Office 加载项
 
@@ -17,7 +17,7 @@ ms.locfileid: "22925113"
 
 |**任务**|**说明**|**资源**|
 |:-----|:-----|:-----|
-|更新外接程序以支持 Office.js 版本 1.1。|将 Office 外接程序项目中使用的 JavaScript 文件（Office.js 和特定于应用的 .js 文件）和外接程序清单验证文件更新到版本 1.1。|[JavaScript API 中的更改内容](https://dev.office.com/reference/add-ins/what's-changed-in-the-javascript-api-for-office)|
+|更新外接程序以支持 Office.js 版本 1.1。|将 Office 外接程序项目中使用的 JavaScript 文件（Office.js 和特定于应用的 .js 文件）和外接程序清单验证文件更新到版本 1.1。|[JavaScript API 中的更改内容](https://docs.microsoft.com/javascript/office/what's-changed-in-the-javascript-api-for-office?view=office-js)|
 |应用 UI 设计最佳实践。|将外接程序 UI 与 iOS 体验无缝集成。|[针对 iOS 进行设计](https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/MobileHIG/)|
 |应用外接程序设计最佳实践。|确保外接程序提供明确值、正常运行并持续执行。|[开发 Office 外接程序的最佳做法](../concepts/add-in-development-best-practices.md)|
 |针对触摸优化外接程序。|使 UI 响应触摸输入以及鼠标和键盘。|[应用 UX 设计原则](../concepts/add-in-development-best-practices.md#apply-ux-design-principles)|
@@ -26,8 +26,8 @@ ms.locfileid: "22925113"
 |将加载项重新提交到 AppSource。|在卖家面板中，选中“将此加载项添加到 iPad 上的 Office 加载项目录中”**** 复选框，并在“Apple ID”框中输入 Apple 开发人员 ID。请查看[应用提供商协议](https://sellerdashboard.microsoft.com/Assets/Content/Agreements/en-US/Office_Store_Seller_Agreement_20120927.htm)，以确保了解协议。|[将解决方案提交到 AppSource 和 Office 应用商店](https://docs.microsoft.com/office/dev/store/submit-to-the-office-store)|
 
 对于正在其他平台上运行的 Office 应用程序，您的外接程序可以保持原样。您还可以基于您的外接程序所运行的浏览器/设备提供不同的 UI 服务。若要检测您的外接程序是否正在 iPad 上运行，您可以使用以下 API：
-- var isTouchEnabled = [Office.context.touchEnabled](https://dev.office.com/reference/add-ins/shared/office.context.touchenabled)
-- var allowCommerce = [Office.context.commerceAllowed](https://dev.office.com/reference/add-ins/shared/office.context.commerceallowed)
+- var isTouchEnabled = [Office.context.touchEnabled](https://docs.microsoft.com/javascript/api/office/office.context?view=office-js#touchenabled)
+- var allowCommerce = [Office.context.commerceAllowed](https://docs.microsoft.com/javascript/api/office/office.context?view=office-js#commerceallowed)
     
 
 ## <a name="best-practices-for-developing-office-add-ins-for-ios-and-mac"></a>开发适用于 iOS 和 Mac 的 Office 外接程序的最佳实践

@@ -2,12 +2,12 @@
 title: PowerPoint 加载项
 description: ''
 ms.date: 12/04/2017
-ms.openlocfilehash: e5c605410601d711e28ca04ff6e26387019cbb41
-ms.sourcegitcommit: 4de2a1b62ccaa8e51982e95537fc9f52c0c5e687
+ms.openlocfilehash: 21f6ec0b00003a90df6850562e399d33da7b49b9
+ms.sourcegitcommit: 30435939ab8b8504c3dbfc62fd29ec6b0f1a7d22
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/10/2018
-ms.locfileid: "22925316"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "23943885"
 ---
 # <a name="powerpoint-add-ins"></a>PowerPoint 加载项
 
@@ -30,13 +30,13 @@ ms.locfileid: "22925316"
 若要生成内容外接程序，则需要获取演示文稿的活动视图，并在 Office.Initialize 处理程序期间处理 ActiveViewChanged 事件。
 
 
-- `getActiveFileView` 函数将调用 [Document.getActiveViewAsync](https://dev.office.com/reference/add-ins/shared/document.getactiveviewasync) 方法，以返回演示文稿的当前视图是“编辑”（你可在其中编辑幻灯片的任何视图，如**普通**或**大纲视图**）还是“阅读”（**幻灯片放映**或**阅读视图**）视图。
+- `getActiveFileView` 函数将调用 [Document.getActiveViewAsync](https://docs.microsoft.com/javascript/api/office/office.document?view=office-js#getactiveviewasync-options--callback-) 方法，以返回演示文稿的当前视图是“编辑”（你可在其中编辑幻灯片的任何视图，如**普通**或**大纲视图**）还是“阅读”（**幻灯片放映**或**阅读视图**）视图。
 
 
-- `registerActiveViewChanged` 函数调用 [addHandlerAsync](https://dev.office.com/reference/add-ins/shared/document.addhandlerasync) 方法，以注册 [Document.ActiveViewChanged](https://dev.office.com/reference/add-ins/shared/document.activeviewchanged) 事件的事件处理程序。 
+- `registerActiveViewChanged` 函数调用 [addHandlerAsync](https://docs.microsoft.com/javascript/api/office/office.document?view=office-js#addhandlerasync-eventtype--handler--options--callback-) 方法，以注册 [Document.ActiveViewChanged](https://docs.microsoft.com/javascript/api/office/office.document?view=office-js) 事件的事件处理程序。 
 
 > [!NOTE]
-> 在 PowerPoint Online 中，[Document.ActiveViewChanged](https://dev.office.com/reference/add-ins/shared/document.activeviewchanged) 事件永远不会触发，因为幻灯片放映模式被视为新会话。在这种情况下，加载项必须在加载时提取活动视图，如下所述。
+> 在 PowerPoint Online 中，[Document.ActiveViewChanged](https://docs.microsoft.com/javascript/api/office/office.document?view=office-js) 事件永远不会触发，因为幻灯片放映模式被视为新会话。在这种情况下，加载项必须在加载时提取活动视图，如下所述。
 
 ```js
 //general Office.initialize function. Fires on load of the add-in.
@@ -85,7 +85,7 @@ function registerActiveViewChanged() {
 
 ## <a name="navigate-to-a-particular-slide-in-the-presentation"></a>转到演示文稿中的特定幻灯片
 
-`getSelectedRange` 函数将调用 [Document.getSelectedDataAsync](https://dev.office.com/reference/add-ins/shared/document.getselecteddataasync) 方法，以获取 `asyncResult.value` 返回的、包含名为“slides”的阵列的 JSON 对象，该阵列中包含所选幻灯片范围（或仅当前幻灯片）的 ID、标题和索引。它还会将所选范围内第一张幻灯片的 ID 保存到一个全局变量。
+`getSelectedRange` 函数将调用 [Document.getSelectedDataAsync](https://docs.microsoft.com/javascript/api/office/office.document?view=office-js#getselecteddataasync-coerciontype--options--callback-) 方法，以获取 `asyncResult.value` 返回的、包含名为“slides”的阵列的 JSON 对象，该阵列中包含所选幻灯片范围（或仅当前幻灯片）的 ID、标题和索引。它还会将所选范围内第一张幻灯片的 ID 保存到一个全局变量。
 
 
 ```js
@@ -105,7 +105,7 @@ function getSelectedRange() {
 }
 ```
 
-`goToFirstSlide` 函数调用 [Document.goToByIdAsync](https://dev.office.com/reference/add-ins/shared/document.gotobyidasync) 方法，以转到上述 `getSelectedRange` 函数存储的第一张幻灯片的 ID。
+`goToFirstSlide` 函数调用 [Document.goToByIdAsync](https://docs.microsoft.com/javascript/api/office/office.document?view=office-js#gotobyidasync-id--gototype--options--callback-) 方法，以转到上述 `getSelectedRange` 函数存储的第一张幻灯片的 ID。
 
 
 
@@ -149,7 +149,7 @@ function goToSlideByIndex() {
 
 ## <a name="get-the-url-of-the-presentation"></a>获取演示文稿的 URL
 
-`getFileUrl` 函数调用 [Document.getFileProperties](https://dev.office.com/reference/add-ins/shared/document.getfilepropertiesasync) 方法，以获取演示文稿文件 URL。
+`getFileUrl` 函数调用 [Document.getFileProperties](https://docs.microsoft.com/javascript/api/office/office.document?view=office-js#getfilepropertiesasync-options--callback-) 方法，以获取演示文稿文件 URL。
 
 
 ```js
@@ -170,7 +170,7 @@ function getFileUrl() {
 
 
 ## <a name="see-also"></a>另请参阅
-- [PowerPoint 代码示例](https://dev.office.com/code-samples#?filters=powerpoint)
+- [PowerPoint 代码示例](https://developer.microsoft.com/en-us/office/gallery/?filterBy=Samples,PowerPoint)
 - [如何每文档保存内容和任务窗格加载项的加载项状态和设置](../develop/persisting-add-in-state-and-settings.md#how-to-save-add-in-state-and-settings-per-document-for-content-and-task-pane-add-ins)
 - [对文档或电子表格中的活动选择执行数据读取和写入操作](../develop/read-and-write-data-to-the-active-selection-in-a-document-or-spreadsheet.md)
 - [通过 PowerPoint 或 Word 加载项获取整个文档](../powerpoint/get-the-whole-document-from-an-add-in-for-powerpoint.md)

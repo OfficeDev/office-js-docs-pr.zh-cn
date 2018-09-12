@@ -2,12 +2,12 @@
 title: Office 加载项中的异步编程
 description: ''
 ms.date: 12/04/2017
-ms.openlocfilehash: babf71499ad63be757efdfa6ccf7ad9dfd292932
-ms.sourcegitcommit: 90d3b64219f14dd9cfe23ee9746477734195cb8f
+ms.openlocfilehash: c4008eb2238e166095d017bb1477e24f118c0ea0
+ms.sourcegitcommit: 30435939ab8b8504c3dbfc62fd29ec6b0f1a7d22
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2018
-ms.locfileid: "23271355"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "23945465"
 ---
 # <a name="asynchronous-programming-in-office-add-ins"></a>Office 加载项中的异步编程
 
@@ -101,7 +101,7 @@ function write(message){
 
 **AsyncResult** 对象的 **asyncContext**、**status** 和 **error** 属性将同种类型的信息返回到已传递给所有“Async”方法的回调函数中。但是，返回到 **AsyncResult.value** 属性的内容因“Async”方法的功能不同而不同。
 
-例如，（**Binding**、[CustomXmlPart](https://docs.microsoft.com/javascript/api/office/office.binding)、[Document](https://docs.microsoft.com/javascript/api/office/office.customxmlpart)、[RoamingSettings](https://docs.microsoft.com/javascript/api/office/office.document) 和 [Settings](https://docs.microsoft.com/en-us/javascript/api/outlook/office.roamingsettings) 对象的）[addHandlerAsync](https://docs.microsoft.com/javascript/api/office/office.settings) 方法用于将事件处理程序函数添加到这些对象表示的项。你可以从传递给任何 **addHandlerAsync** 方法的回调函数访问 **AsyncResult.value** 属性，但由于添加事件处理程序时没有访问任何数据或对象，如果尝试访问 **value** 属性，它始终会返回 **undefined**。
+例如，（**Binding**、[CustomXmlPart](https://docs.microsoft.com/javascript/api/office/office.binding)、[Document](https://docs.microsoft.com/javascript/api/office/office.customxmlpart)、[RoamingSettings](https://docs.microsoft.com/javascript/api/office/office.document) 和 [Settings](https://docs.microsoft.com/javascript/api/outlook/office.roamingsettings) 对象的）[addHandlerAsync](https://docs.microsoft.com/javascript/api/office/office.settings) 方法用于将事件处理程序函数添加到这些对象表示的项。你可以从传递给任何 **addHandlerAsync** 方法的回调函数访问 **AsyncResult.value** 属性，但由于添加事件处理程序时没有访问任何数据或对象，如果尝试访问 **value** 属性，它始终会返回 **undefined**。
 
 另一方面，如果您调用  **Document.getSelectedDataAsync** 方法，则它会将用户在文档中所选的数据返回到回调的 **AsyncResult.value** 属性中。或者，如果您调用 [Bindings.getAllAsync](https://docs.microsoft.com/javascript/api/office/office.bindings#getallasync-options--callback-) 方法，它会返回文档中所有 **Binding** 对象的数组。并且，如果您调用 [Bindings.getByIdAsync](https://docs.microsoft.com/javascript/api/office/office.bindings#getbyidasync-id--options--callback-) 方法，则返回单个的 **Binding** 对象。
 

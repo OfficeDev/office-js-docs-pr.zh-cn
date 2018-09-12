@@ -2,12 +2,12 @@
 title: Project 任务窗格加载项
 description: ''
 ms.date: 01/23/2018
-ms.openlocfilehash: aa7117ebc1c5bf0038346881b2c6e6f7a80e1bac
-ms.sourcegitcommit: 4de2a1b62ccaa8e51982e95537fc9f52c0c5e687
+ms.openlocfilehash: f8e36e157ce78f4c93dc192c42c997e5f022a4d2
+ms.sourcegitcommit: 30435939ab8b8504c3dbfc62fd29ec6b0f1a7d22
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/10/2018
-ms.locfileid: "22925484"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "23945769"
 ---
 # <a name="task-pane-add-ins-for-project"></a>Project 任务窗格加载项
 
@@ -204,7 +204,7 @@ Project 加载项方案包括以下几种：
 
 - [Office 加载项平台概述](../overview/office-add-ins.md)
 - [Office 加载项 XML 清单](../develop/add-in-manifests.md)
-- [适用于 Office 的 JavaScript API](https://dev.office.com/reference/add-ins/javascript-api-for-office)
+- [适用于 Office 的 JavaScript API](https://docs.microsoft.com/javascript/office/javascript-api-for-office?view=office-js)
 - [使用文本编辑器创建首个 Project 2013 任务窗格加载项](create-your-first-task-pane-add-in-for-project-by-using-a-text-editor.md)
 - [创建将 REST 与本地 Project Server OData 服务结合使用的 Project 加载项](create-a-project-add-in-that-uses-rest-with-an-on-premises-odata-service.md)
 - [将 Project 任务窗格外接程序连接到 PWA](http://blogs.msdn.com/b/project_programmability/archive/2012/11/02/connecting-a-project-task-pane-app-to-pwa.aspx)

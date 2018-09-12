@@ -2,12 +2,12 @@
 title: 解决 Office 加载项中的同源策略限制
 description: ''
 ms.date: 12/04/2017
-ms.openlocfilehash: 536e02d2367bef81d4a6e49098d66833c99f5e50
-ms.sourcegitcommit: 4de2a1b62ccaa8e51982e95537fc9f52c0c5e687
+ms.openlocfilehash: cfd61a78bf3dc1602ce140296d3a3d8afa9845eb
+ms.sourcegitcommit: 30435939ab8b8504c3dbfc62fd29ec6b0f1a7d22
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/10/2018
-ms.locfileid: "22925106"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "23944053"
 ---
 # <a name="addressing-same-origin-policy-limitations-in-office-add-ins"></a>解决 Office 加载项中的同源策略限制
 
@@ -55,7 +55,7 @@ function loadVideoDetails(videoIndex) {
 
 解决同源策略限制的另一个方法是将加载项网页作为在 Cookie 中使用 OAuth 或缓存凭据的 ASP 页来实施。
 
-有关演示如何使用 `System.Net` 中的 `Cookie` 对象获取和设置 cookie 值的服务器端代码示例，请参阅 [Value](https://msdn.microsoft.com/library/4f772twc)(#value) 属性。
+有关演示如何使用 `System.Net` 中的 `Cookie` 对象获取和设置 cookie 值的服务器端代码示例，请参阅 [Value](https://docs.microsoft.com/dotnet/api/system.net.cookie.value?view=netframework-4.7.2)(#value) 属性。
 
 
 ## <a name="using-cross-origin-resource-sharing-cors"></a>使用跨源资源共享 (CORS)

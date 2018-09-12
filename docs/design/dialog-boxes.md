@@ -2,12 +2,12 @@
 title: Office 加载项中的对话框
 description: ''
 ms.date: 12/04/2017
-ms.openlocfilehash: af47fd338872d3ecfce06145783fcc9ff314f7bc
-ms.sourcegitcommit: 7ecc1dc24bf7488b53117d7a83ad60e952a6f7aa
+ms.openlocfilehash: f18f603d76a902bdce56152ecb3f63bbafad56fb
+ms.sourcegitcommit: 30435939ab8b8504c3dbfc62fd29ec6b0f1a7d22
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/23/2018
-ms.locfileid: "19437141"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "23945748"
 ---
 # <a name="dialog-boxes-in-office-add-ins"></a>Office 加载项中的对话框
  
@@ -32,6 +32,6 @@ ms.locfileid: "19437141"
 
 - [用户体验模式示例](https://office.visualstudio.com/DefaultCollection/OC/_git/GettingStarted-FabricReact)
 - [GitHub 开发资源](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code)
-- [Dialog 对象](https://dev.office.com/reference/add-ins/shared/officeui.dialog)
+- [Dialog 对象](https://docs.microsoft.com/javascript/api/office/office.dialog?view=office-js)
 
 
