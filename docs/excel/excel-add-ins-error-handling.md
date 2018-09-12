@@ -2,23 +2,23 @@
 title: 错误处理
 description: ''
 ms.date: 12/04/2017
-ms.openlocfilehash: 59619ff4ccba1985f875d13a29ab691c1617d21b
-ms.sourcegitcommit: 7ecc1dc24bf7488b53117d7a83ad60e952a6f7aa
+ms.openlocfilehash: e39ee537b677803f6c4ebd35e7a8878d62fd6e14
+ms.sourcegitcommit: 30435939ab8b8504c3dbfc62fd29ec6b0f1a7d22
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/23/2018
-ms.locfileid: "19437204"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "23945472"
 ---
-# <a name="error-handling"></a><span data-ttu-id="130f2-102">错误处理</span><span class="sxs-lookup"><span data-stu-id="130f2-102">Error handling</span></span>
+# <a name="error-handling"></a><span data-ttu-id="9cc50-102">错误处理</span><span class="sxs-lookup"><span data-stu-id="9cc50-102">Error handling</span></span>
 
-<span data-ttu-id="130f2-103">使用 Excel JavaScript API 生成加载项时，请务必加入错误处理逻辑，以便解决运行时错误。</span><span class="sxs-lookup"><span data-stu-id="130f2-103">When you build an add-in using the Excel JavaScript API, be sure to include error handling logic to account for runtime errors.</span></span> <span data-ttu-id="130f2-104">鉴于 API 的异步特性，这样做非常关键。</span><span class="sxs-lookup"><span data-stu-id="130f2-104">Doing so is critical, due to the asynchronous nature of the API.</span></span>
+<span data-ttu-id="9cc50-103">使用 Excel JavaScript API 生成加载项时，请务必加入错误处理逻辑，以便解决运行时错误。</span><span class="sxs-lookup"><span data-stu-id="9cc50-103">When you build an add-in using the Excel JavaScript API, be sure to include error handling logic to account for runtime errors.</span></span> <span data-ttu-id="9cc50-104">鉴于 API 的异步特性，这样做非常关键。</span><span class="sxs-lookup"><span data-stu-id="9cc50-104">Doing so is critical, due to the asynchronous nature of the API.</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="130f2-105">若要详细了解 **sync()** 方法和 Excel JavaScript API 异步特性，请参阅 [Excel JavaScript API 核心概念](excel-add-ins-core-concepts.md)。</span><span class="sxs-lookup"><span data-stu-id="130f2-105">For more information about the **sync()** method and the asynchronous nature of Excel JavaScript API, see [Excel JavaScript API core concepts](excel-add-ins-core-concepts.md).</span></span>
+> <span data-ttu-id="9cc50-105">若要详细了解 **sync()** 方法和 Excel JavaScript API 异步特性，请参阅 [Excel JavaScript API 核心概念](excel-add-ins-core-concepts.md)。</span><span class="sxs-lookup"><span data-stu-id="9cc50-105">For more information about the **sync()** method and the asynchronous nature of Excel JavaScript API, see [Excel JavaScript API core concepts](excel-add-ins-core-concepts.md).</span></span>
 
-## <a name="best-practices"></a><span data-ttu-id="130f2-106">最佳做法</span><span class="sxs-lookup"><span data-stu-id="130f2-106">Best practices</span></span>
+## <a name="best-practices"></a><span data-ttu-id="9cc50-106">最佳做法</span><span class="sxs-lookup"><span data-stu-id="9cc50-106">Best practices</span></span>
 
-<span data-ttu-id="130f2-107">通过本文档中的代码示例，你会注意到每次调用 `Excel.run` 时，都会带上 `catch` 语句，以便捕获 `Excel.run` 内出现的任何错误。</span><span class="sxs-lookup"><span data-stu-id="130f2-107">Throughout the code samples in this documentation, you'll notice that every call to `Excel.run` is accompanied by a `catch` statement to catch any errors that occur within the `Excel.run`.</span></span> <span data-ttu-id="130f2-108">建议在使用 Excel JavaScript API 生成加载项时使用相同模式。</span><span class="sxs-lookup"><span data-stu-id="130f2-108">We recommend that you use the same pattern when you build an add-in using the Excel JavaScript APIs.</span></span>
+<span data-ttu-id="9cc50-107">通过本文档中的代码示例，你会注意到每次调用 `Excel.run` 时，都会带上 `catch` 语句，以便捕获 `Excel.run` 内出现的任何错误。</span><span class="sxs-lookup"><span data-stu-id="9cc50-107">Throughout the code samples in this documentation, you'll notice that every call to `Excel.run` is accompanied by a `catch` statement to catch any errors that occur within the `Excel.run`.</span></span> <span data-ttu-id="9cc50-108">建议在使用 Excel JavaScript API 生成加载项时使用相同模式。</span><span class="sxs-lookup"><span data-stu-id="9cc50-108">We recommend that you use the same pattern when you build an add-in using the Excel JavaScript APIs.</span></span>
 
 ```js
 Excel.run(function (context) { 
@@ -33,20 +33,20 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);     
 ```
 
-## <a name="api-errors"></a><span data-ttu-id="130f2-109">API 错误</span><span class="sxs-lookup"><span data-stu-id="130f2-109">API errors</span></span> 
+## <a name="api-errors"></a><span data-ttu-id="9cc50-109">API 错误</span><span class="sxs-lookup"><span data-stu-id="9cc50-109">API errors</span></span> 
 
-<span data-ttu-id="130f2-110">当 Excel JavaScript API 请求无法成功运行时，API 将返回错误对象，其中包含以下属性：</span><span class="sxs-lookup"><span data-stu-id="130f2-110">When an Excel JavaScript API request fails to run successfully, the API returns an error object that contains the following properties:</span></span> 
+<span data-ttu-id="9cc50-110">当 Excel JavaScript API 请求无法成功运行时，API 将返回错误对象，其中包含以下属性：</span><span class="sxs-lookup"><span data-stu-id="9cc50-110">When an Excel JavaScript API request fails to run successfully, the API returns an error object that contains the following properties:</span></span> 
 
-- <span data-ttu-id="130f2-111">**代码**：错误消息的 `code` 属性包含一个字符串，它属于 `OfficeExtension.ErrorCodes` 或 `Excel.ErrorCodes` 列表的一部分。</span><span class="sxs-lookup"><span data-stu-id="130f2-111">**code**:  The `code` property of an error message contains a string that is part of the `OfficeExtension.ErrorCodes` or `Excel.ErrorCodes` list.</span></span> <span data-ttu-id="130f2-112">例如，错误代码“InvalidReference”指示引用对于指定操作无效。</span><span class="sxs-lookup"><span data-stu-id="130f2-112">For example, the error code "InvalidReference" indicates that the reference is not valid for the specified operation.</span></span> <span data-ttu-id="130f2-113">错误代码尚未本地化。</span><span class="sxs-lookup"><span data-stu-id="130f2-113">Error codes are not localized.</span></span> 
+- <span data-ttu-id="9cc50-111">**代码**：错误消息的 `code` 属性包含一个字符串，它属于 `OfficeExtension.ErrorCodes` 或 `Excel.ErrorCodes` 列表的一部分。</span><span class="sxs-lookup"><span data-stu-id="9cc50-111">**code**:  The `code` property of an error message contains a string that is part of the `OfficeExtension.ErrorCodes` or `Excel.ErrorCodes` list.</span></span> <span data-ttu-id="9cc50-112">例如，错误代码“InvalidReference”指示引用对于指定操作无效。</span><span class="sxs-lookup"><span data-stu-id="9cc50-112">For example, the error code "InvalidReference" indicates that the reference is not valid for the specified operation.</span></span> <span data-ttu-id="9cc50-113">错误代码尚未本地化。</span><span class="sxs-lookup"><span data-stu-id="9cc50-113">Error codes are not localized.</span></span> 
 
-- <span data-ttu-id="130f2-114">**消息**：错误消息的 `message` 属性包含本地化字符串中的错误摘要。</span><span class="sxs-lookup"><span data-stu-id="130f2-114">**message**: The `message` property of an error message contains a summary of the error in the localized string.</span></span> <span data-ttu-id="130f2-115">错误消息并非针对最终用户的使用情况；应使用错误代码和相应的业务逻辑来确定加载项显示给最终用户的错误消息。</span><span class="sxs-lookup"><span data-stu-id="130f2-115">The error message is not intended for end-user consumption; you should use the error code and appropriate business logic to determine the error message that your add-in shows to end-users.</span></span>
+- <span data-ttu-id="9cc50-114">**消息**：错误消息的 `message` 属性包含本地化字符串中的错误摘要。</span><span class="sxs-lookup"><span data-stu-id="9cc50-114">**message**: The `message` property of an error message contains a summary of the error in the localized string.</span></span> <span data-ttu-id="9cc50-115">错误消息并非针对最终用户的使用情况；应使用错误代码和相应的业务逻辑来确定加载项显示给最终用户的错误消息。</span><span class="sxs-lookup"><span data-stu-id="9cc50-115">The error message is not intended for end-user consumption; you should use the error code and appropriate business logic to determine the error message that your add-in shows to end-users.</span></span>
 
-- <span data-ttu-id="130f2-116">**debugInfo**：出现此信息时，错误消息的 `debugInfo` 属性将提供其他信息，帮助理解错误根本原因。</span><span class="sxs-lookup"><span data-stu-id="130f2-116">**debugInfo**: When present, the `debugInfo` property of the error message provides additional information that you can use to understand the root cause of the error.</span></span> 
+- <span data-ttu-id="9cc50-116">**debugInfo**：出现此信息时，错误消息的 `debugInfo` 属性将提供其他信息，帮助理解错误根本原因。</span><span class="sxs-lookup"><span data-stu-id="9cc50-116">**debugInfo**: When present, the `debugInfo` property of the error message provides additional information that you can use to understand the root cause of the error.</span></span> 
 
 > [!NOTE]
-> <span data-ttu-id="130f2-117">如果使用 `console.log()` 将错误消息打印到控制台，那么这些消息只会在服务器上可见。</span><span class="sxs-lookup"><span data-stu-id="130f2-117">If you use `console.log()` to print error messages to the console, those messages will only be visible on the server.</span></span> <span data-ttu-id="130f2-118">最终用户不会在加载项任务窗格或主机应用的其他任何位置看到这些错误消息。</span><span class="sxs-lookup"><span data-stu-id="130f2-118">End-users will not see those error messages in the add-in taskpane or anywhere in the host application.</span></span>
+> <span data-ttu-id="9cc50-117">如果使用 `console.log()` 将错误消息打印到控制台，那么这些消息只会在服务器上可见。</span><span class="sxs-lookup"><span data-stu-id="9cc50-117">If you use `console.log()` to print error messages to the console, those messages will only be visible on the server.</span></span> <span data-ttu-id="9cc50-118">最终用户不会在加载项任务窗格或主机应用的其他任何位置看到这些错误消息。</span><span class="sxs-lookup"><span data-stu-id="9cc50-118">End-users will not see those error messages in the add-in taskpane or anywhere in the host application.</span></span>
 
-## <a name="see-also"></a><span data-ttu-id="130f2-119">另请参阅</span><span class="sxs-lookup"><span data-stu-id="130f2-119">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="9cc50-119">另请参阅</span><span class="sxs-lookup"><span data-stu-id="9cc50-119">See also</span></span>
 
-- [<span data-ttu-id="130f2-120">Excel JavaScript API 核心概念</span><span class="sxs-lookup"><span data-stu-id="130f2-120">Excel JavaScript API core concepts</span></span>](excel-add-ins-core-concepts.md)
-- [<span data-ttu-id="130f2-121">OfficeExtension.Error 对象（Excel JavaScript API）</span><span class="sxs-lookup"><span data-stu-id="130f2-121">OfficeExtension.Error object (JavaScript API for Excel)</span></span>](https://dev.office.com/reference/add-ins/excel/error)
+- [<span data-ttu-id="9cc50-120">Excel JavaScript API 核心概念</span><span class="sxs-lookup"><span data-stu-id="9cc50-120">Excel JavaScript API core concepts</span></span>](excel-add-ins-core-concepts.md)
+- [<span data-ttu-id="9cc50-121">OfficeExtension.Error 对象（Excel JavaScript API）</span><span class="sxs-lookup"><span data-stu-id="9cc50-121">OfficeExtension.Error object (JavaScript API for Excel)</span></span>](https://docs.microsoft.com/javascript/api/office/officeextension.error?view=office-js)
