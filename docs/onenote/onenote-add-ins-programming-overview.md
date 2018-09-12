@@ -2,12 +2,12 @@
 title: OneNote JavaScript API 编程概述
 description: ''
 ms.date: 01/23/2018
-ms.openlocfilehash: a2161484991888a6a8c834ba61398cc8c0afb955
-ms.sourcegitcommit: 4de2a1b62ccaa8e51982e95537fc9f52c0c5e687
+ms.openlocfilehash: d45e73841c191d5760963cbc684f03cf23ea1989
+ms.sourcegitcommit: 30435939ab8b8504c3dbfc62fd29ec6b0f1a7d22
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/10/2018
-ms.locfileid: "22925169"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "23944149"
 ---
 # <a name="onenote-javascript-api-programming-overview"></a>OneNote JavaScript API 编程概述
 
@@ -26,7 +26,7 @@ OneNote 引入了适用于 OneNote Online 外接程序的 JavaScript API。你�
 
 **Office 外接程序 = 清单 + 网页**
 
-![Office 外接程序包含清单和网页](../images/onenote-add-in.png)
+![Office 加载项包含清单和网页](../images/onenote-add-in.png)
 
 ## <a name="using-the-javascript-api"></a>使用 JavaScript API
 
@@ -84,11 +84,12 @@ function getPagesInSection() {
 }
 ```
 
-您可以在 [API 参考](https://dev.office.com/reference/add-ins/onenote/onenote-add-ins-javascript-reference) 中找到受支持的 OneNote 对象和操作。
+您可以在 [API 参考](https://docs.microsoft.com/javascript/office/overview/onenote-add-ins-javascript-reference?view=office-js) 中找到受支持的 OneNote 对象和操作。
 
 ### <a name="accessing-the-common-api-through-the-document-object"></a>通过 *Document* 对象访问通用 API
 
-使用 **Document** 对象以访问通用 API，例如 [getSelectedDataAsync](https://dev.office.com/reference/add-ins/shared/document.getselecteddataasync) 和 [setSelectedDataAsync](https://dev.office.com/reference/add-ins/shared/document.setselecteddataasync) 方法。 
+使用 **Document** 对象以访问通用 API，例如 [getSelectedDataAsync](https://docs.microsoft.com/javascript/api/office/office.document?view=office-js#getselecteddataasync-coerciontype--options--callback-) 和 [setSelectedDataAsync](https://docs.microsoft.com/javascript/api/office/office.document?view=office-js#setselecteddataasync-data--options--callback-) 方法。 
+
 
 例如：  
 
@@ -110,13 +111,13 @@ OneNote 外接程序仅支持以下通用 API：
 
 | API | 注释 |
 |:------|:------|
-| [Office.context.document.getSelectedDataAsync](https://dev.office.com/reference/add-ins/shared/document.getselecteddataasync) | 仅限 **Office.CoercionType.Text** 和 **Office.CoercionType.Matrix** |
-| [Office.context.document.setSelectedDataAsync](https://dev.office.com/reference/add-ins/shared/document.setselecteddataasync) | 仅限 **Office.CoercionType.Text**、**Office.CoercionType.Image** 和 **Office.CoercionType.Html** | 
-| [var mySetting = Office.context.document.settings.get(name);](https://dev.office.com/reference/add-ins/shared/settings.get) | 设置仅受内容外接程序支持 | 
-| [Office.context.document.settings.set(name, value);](https://dev.office.com/reference/add-ins/shared/settings.set) | 设置仅受内容外接程序支持 | 
-| [Office.EventType.DocumentSelectionChanged](https://dev.office.com/reference/add-ins/shared/document.selectionchanged.event) ||
+| [Office.context.document.getSelectedDataAsync](https://docs.microsoft.com/javascript/api/office/office.document?view=office-js#getselecteddataasync-coerciontype--options--callback-) | 仅限 **Office.CoercionType.Text** 和 **Office.CoercionType.Matrix** |
+| [Office.context.document.setSelectedDataAsync](https://docs.microsoft.com/javascript/api/office/office.document?view=office-js#setselecteddataasync-data--options--callback-) | 仅限 **Office.CoercionType.Text**、**Office.CoercionType.Image** 和 **Office.CoercionType.Html** | 
+| [var mySetting = Office.context.document.settings.get(name);](https://docs.microsoft.com/javascript/api/office/office.settings?view=office-js#get-name-) | 设置仅受内容外接程序支持 | 
+| [Office.context.document.settings.set(name, value);](https://docs.microsoft.com/javascript/api/office/office.settings?view=office-js#set-name--value-) | 设置仅受内容外接程序支持 | 
+| [Office.EventType.DocumentSelectionChanged](https://docs.microsoft.com/javascript/api/office/office.documentselectionchangedeventargs?view=office-js) ||
 
-一般情况下，您仅能使用通用 API 执行在丰富 API 中不支持的操作。若要了解有关使用通用 API 的详细信息，请参阅 Office 外接程序[文档](../overview/office-add-ins.md)和[引用](https://dev.office.com/reference/add-ins/javascript-api-for-office)。
+一般情况下，您仅能使用通用 API 执行在丰富 API 中不支持的操作。若要了解有关使用通用 API 的详细信息，请参阅 Office 外接程序[文档](../overview/office-add-ins.md)和[引用](https://docs.microsoft.com/javascript/office/javascript-api-for-office?view=office-js)。
 
 
 <a name="om-diagram"></a>
@@ -129,6 +130,6 @@ OneNote 外接程序仅支持以下通用 API：
 ## <a name="see-also"></a>另请参阅
 
 - [生成首个 OneNote 加载项](onenote-add-ins-getting-started.md)
-- [OneNote JavaScript API 参考](https://dev.office.com/reference/add-ins/onenote/onenote-add-ins-javascript-reference)
+- [OneNote JavaScript API 参考](https://docs.microsoft.com/javascript/office/overview/onenote-add-ins-javascript-reference?view=office-js)
 - [Rubric Grader 示例](https://github.com/OfficeDev/OneNote-Add-in-Rubric-Grader)
 - [Office 加载项平台概述](../overview/office-add-ins.md)

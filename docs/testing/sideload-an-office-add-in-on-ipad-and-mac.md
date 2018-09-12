@@ -2,12 +2,12 @@
 title: 在 iPad 和 Mac 上旁加载 Office 加载项以供测试
 description: ''
 ms.date: 12/04/2017
-ms.openlocfilehash: 9b4bcb92e1123c627a8b1a6df4785ff357453189
-ms.sourcegitcommit: 4de2a1b62ccaa8e51982e95537fc9f52c0c5e687
+ms.openlocfilehash: 48f685cc6c3f1a5193ad4dbd3f9ba27f5f855b05
+ms.sourcegitcommit: 30435939ab8b8504c3dbfc62fd29ec6b0f1a7d22
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/10/2018
-ms.locfileid: "22925267"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "23944444"
 ---
 # <a name="sideload-office-add-ins-on-ipad-and-mac-for-testing"></a>在 iPad 和 Mac 上旁加载 Office 加载项以供测试
 
@@ -65,13 +65,13 @@ ms.locfileid: "22925267"
 ## <a name="sideload-an-add-in-on-office-for-mac"></a>在 Office for Mac 上旁加载加载项
 
 > [!NOTE]
-> 若要旁加载 Outlook 2016 for Mac 加载项，请参阅[旁加载 Outlook 加载项以供测试](https://docs.microsoft.com/outlook/add-ins/sideload-outlook-add-ins-for-testing)。
+> 若要旁加载 Outlook 2016 for Mac 加载项，请参阅[旁加载 Outlook 加载项测试](https://docs.microsoft.com/outlook/add-ins/sideload-outlook-add-ins-for-testing)。
 
 1. 打开“**终端**”并转到以下文件夹之一，你将在其中保存外接程序的清单文件。如果 `wef` 文件夹在你的计算机上不存在，请创建它。
     
-    - 对于 Word：`/Users/<username>/Library/Containers/com.microsoft.Word/Data/documents/wef`    
-    - 对于 Excel：`/Users/<username>/Library/Containers/com.microsoft.Excel/Data/documents/wef`
-    - 对于 PowerPoint：`/Users/<username>/Library/Containers/com.microsoft.Powerpoint/Data/documents/wef`
+    - 对于 Word：  `/Users/<username>/Library/Containers/com.microsoft.Word/Data/documents/wef`    
+    - 对于 Excel：  `/Users/<username>/Library/Containers/com.microsoft.Excel/Data/documents/wef`
+    - 对于 PowerPoint： `/Users/<username>/Library/Containers/com.microsoft.Powerpoint/Data/documents/wef`
     
 2. 在“**查找程序**”中使用命令 `open .`（包括句点或点）打开该文件夹。将你的外接程序的清单文件复制到该文件夹中。
     
