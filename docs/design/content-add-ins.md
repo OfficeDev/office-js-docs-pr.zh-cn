@@ -1,15 +1,15 @@
 ---
 title: 内容 Office 外接程序
-description: ''
+description: 内容外接程序这种图面可被直接嵌入 Word、Excel 或 PowerPoint 文档中。内容外接程序让用户访问运行代码以修改文档或显示数据源中数据的界面控件。
 ms.date: 12/04/2017
-ms.openlocfilehash: f2632e94e0a797836f73caf0d53fdc0f24bd6790
-ms.sourcegitcommit: bc68b4cf811b45e8b8d1cbd7c8d2867359ab671b
+ms.openlocfilehash: 8692b6e8af4504a5eadcba64c9659adaa9122975
+ms.sourcegitcommit: 30435939ab8b8504c3dbfc62fd29ec6b0f1a7d22
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "21703915"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "23944081"
 ---
-# <a name="content-office-add-ins"></a>内容 Office 加载项
+# <a name="content-office-add-ins"></a>内容 Office 外接程序
 
 内容外接程序这种图面可被直接嵌入 Word、Excel 或 PowerPoint 文档中。内容外接程序让用户访问运行代码以修改文档或显示数据源中数据的界面控件。在你要将功能直接嵌入文档时，请使用内容加载项。  
 
@@ -24,7 +24,7 @@ ms.locfileid: "21703915"
 
 ## <a name="variants"></a>变量
 
-Office 2016 桌面和 Office 365 中的 Word、Excel 和 PowerPoint 的内容外接程序大小由用户指定。
+Office 桌面和 Office 365 中的 Word、Excel 和 PowerPoint 的内容外接程序大小由用户指定。
 
 ## <a name="personality-menu"></a>“个性”菜单
 

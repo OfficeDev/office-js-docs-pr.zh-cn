@@ -2,12 +2,12 @@
 title: 创建将 REST 与本地 Project Server OData 服务结合使用的 Project 加载项
 description: ''
 ms.date: 01/23/2018
-ms.openlocfilehash: 23f9a2f1f2272d5fce4609e111932f4b585caa31
-ms.sourcegitcommit: 4de2a1b62ccaa8e51982e95537fc9f52c0c5e687
+ms.openlocfilehash: 462b151a12c7c19f445e86bf59af633b699e7e60
+ms.sourcegitcommit: 30435939ab8b8504c3dbfc62fd29ec6b0f1a7d22
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/10/2018
-ms.locfileid: "22925540"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "23945706"
 ---
 # <a name="create-a-project-add-in-that-uses-rest-with-an-on-premises-project-server-odata-service"></a>创建将 REST 与本地 Project Server OData 服务结合使用的 Project 加载项
 
@@ -41,7 +41,7 @@ ms.locfileid: "22925540"
 
 1. 若要使浏览器直接显示来自 REST 查询的 XML 数据，请关闭源阅读视图。有关如何在 Internet Explorer 中执行此操作的信息，请参阅 [查询 Project Server 2013 报告数据的 OData 源](https://docs.microsoft.com/previous-versions/office/project-odata/jj163048(v=office.15))中过程 1 的第 4 步。
     
-2. 在浏览器中查询 **ProjectData** 服务，使用以下 URL：**http://ServerName /ProjectServerName /_api/ProjectData**。 例如，如果项目 Web 应用实例是 `http://MyServer/pwa`，浏览器应显示如下结果：
+2. 在浏览器中查询 **ProjectData**服务，使用以下 URL：**http://ServerName /ProjectServerName /_api/ProjectData**。 例如，如果项目 Web 应用实例是 `http://MyServer/pwa`，浏览器应显示如下结果：
     
     ```xml
     <?xml version="1.0" encoding="utf-8"?>
@@ -103,7 +103,7 @@ Visual Studio Office 开发人员工具包含 Project 2013 任务窗格外接程
     
     Visual Studio 创建 **HelloProjectOdata** 项目和 **HelloProjectODataWeb** 项目。
     
-“**外接程序**”文件夹（请参阅下一个屏幕截图）中包含自定义 CSS 样式的 App.css 文件。在“**主页**”子文件夹中，Home.html 文件中包含外接程序使用的 CSS 文件和 JavaScript 文件的引用，及用于外接程序的 HTML5 内容。此外，Home.js 文件用于自定义 JavaScript 代码。“**脚本**”文件夹中包括 jQuery 库文件。“**Office**”子文件夹中包括 JavaScript 库（例如 office.js 和 project-15.js），及 Office 外接程序中的标准字符串的语言库。在“**内容**”文件夹中，Office.css 文件包含所有的 Office 外接程序的默认样式。
+“**外接程序**”文件夹（请参阅下一个屏幕截图）中包含自定义 CSS 样式的 App.css 文件。在“**主页**”子文件夹，Home.html 文件中包含外接程序使用的 CSS 文件和 JavaScript 文件的引用，及用于外接程序的 HTML5 内容。此外，Home.js 文件用于自定义 JavaScript 代码。“**脚本**”文件夹中包括 jQuery 库文件。“**Office**”子文件夹中包括 JavaScript 库（例如 office.js 和 project-15.js），及 Office 外接程序中的标准字符串的语言库。在“**内容**”文件夹中，Office.css 文件包含所有的 Office 外接程序的默认样式。
 
 *图 4：在解决方案资源管理器中查看默认 Web 项目文件*
 
@@ -316,7 +316,7 @@ HelloProjectOData.js 文件的剩余部分包含两个函数：当用户选择�
     }
     ```
 
-2. 添加 **setOdataUrl** 和相关函数。**setOdataUrl** 函数调用 **getProjectGuid** 和 **getDocumentUrl** 以初始化全局变量。在 [getProjectFieldAsync method](https://dev.office.com/reference/add-ins/shared/projectdocument.getprojectfieldasync) 中，_callback_ 参数的匿名函数通过使用 jQuery 库中的 **removeAttr** 方法启用“**比较所有项目**”按钮，并显示 **ProjectData** 服务的 URL。如果 Project 未连接 Project Web App，则函数会提示错误，该错误会显示一个弹出错误消息。SurfaceErrors.js 文件中包括 **throwError** 方法。
+2. 添加 **setOdataUrl** 和相关函数。**setOdataUrl** 函数调用 **getProjectGuid** 和 **getDocumentUrl** 以初始化全局变量。在 [getProjectFieldAsync method](https://docs.microsoft.com/javascript/api/office/office.document?view=office-js) 中，_callback_ 参数的匿名函数通过使用 jQuery 库中的 **removeAttr** 方法启用“**比较所有项目**”按钮，并显示 **ProjectData** 服务的 URL。如果 Project 未连接 Project Web App，则函数会提示错误，该错误会显示一个弹出错误消息。SurfaceErrors.js 文件中包括 **throwError** 方法。
     
    > [!NOTE]
    > 若要在装有 Project Server 的计算机上运行 Visual Studio 时按 **F5** 调试，请取消注释初始化 **_pwa** 全局变量的代码行后面的代码。若要在装有 Project Server 计算机上进行调试时启用 jQuery **ajax** 方法，必须设置 PWA URL 的 **localhost** 值。如果在远程计算机上运行 Visual Studio，那么 **localhost** URL 是可选的。部署加载项前，请注释掉相应代码。

@@ -2,12 +2,12 @@
 title: 随文档自动打开任务窗格
 description: ''
 ms.date: 05/02/2018
-ms.openlocfilehash: 4f3d677619610208b585df72dd1764be39fd9e35
-ms.sourcegitcommit: 4de2a1b62ccaa8e51982e95537fc9f52c0c5e687
+ms.openlocfilehash: d624a34e5eb7c23a885aec42c8ed14914f413578
+ms.sourcegitcommit: 30435939ab8b8504c3dbfc62fd29ec6b0f1a7d22
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/10/2018
-ms.locfileid: "22925351"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "23944790"
 ---
 # <a name="automatically-open-a-task-pane-with-a-document"></a>随文档自动打开任务窗格
 
@@ -56,7 +56,7 @@ Autoopen 功能目前<!-- in **developer preview** and it is only -->在以下�
 > 只有在用户设备上已安装加载项时，才能打开指定为自动打开的窗格。如果在打开文档时用户未安装加载项，那么 AutoOpen 功能将不起作用，而且设置也会被忽略。如果还要求加载项与文档一起分发，需要将“visibility”属性设置为 1；只能使用 OpenXML 完成此操作，本文稍后将提供示例。 
 
 ### <a name="step-1-specify-the-task-pane-to-open"></a>第 1 步：指定要打开的任务窗格
-若要指定要自动打开的任务窗格，请将 [TaskpaneId](https://dev.office.com/reference/add-ins/manifest/action#taskpaneid) 值设置为 **Office.AutoShowTaskpaneWithDocument**。只能在一个任务窗格上设置此值。如果在多个任务窗格上设置此值，将识别值的第一个匹配项，而忽略其他。 
+若要指定要自动打开的任务窗格，请将 [TaskpaneId](https://docs.microsoft.com/javascript/office/manifest/action?view=office-js#taskpaneid) 值设置为 **Office.AutoShowTaskpaneWithDocument**。只能在一个任务窗格上设置此值。如果在多个任务窗格上设置此值，将识别值的第一个匹配项，而忽略其他。 
 
 在下面的示例中，TaskPaneId 值设置为 Office.AutoShowTaskpaneWithDocument。
           
@@ -73,7 +73,7 @@ Autoopen 功能目前<!-- in **developer preview** and it is only -->在以下�
 
 
 #### <a name="tag-the-document-on-the-client-side"></a>在客户端上标记文档
-使用 Office.js [settings.set](https://dev.office.com/reference/add-ins/shared/settings.set) 方法将 **Office.AutoShowTaskpaneWithDocument** 设置为“**true**”，如以下示例所示。   
+使用 Office.js [settings.set](https://docs.microsoft.com/javascript/api/office/office.settings?view=office-js) 方法将 **Office.AutoShowTaskpaneWithDocument** 设置为“**true**”，如以下示例所示。   
 
 ```js
 Office.context.document.settings.set("Office.AutoShowTaskpaneWithDocument", true);
@@ -112,7 +112,7 @@ webextension 部件还包括对具有 `id`、 `storeType`、 `store` 和 `versio
 |:---------------|:---------------|:---------------|:---------------|
 |OMEX (AppSource)|加载项的 AppSource 资产 ID（请参阅“注意”）|AppSource 的区域设置；例如，“en-us”。|AppSource 目录中的版本（请参阅“注意”）|
 |FileSystem（网络共享）|外接程序清单中外接程序的 GUID。|网络共享路径。例如，“\\\\MyComputer\\MySharedFolder”。|加载项清单中的版本。|
-|EXCatalog（通过 Exchange 服务器部署） |加载项清单中加载项的 GUID。|“EXCatalog”。 EXCatalog 行是用于 Office 365 管理中心中使用集中部署的加载项的行。|加载项清单中的版本。
+|EXCatalog（通过 Exchange 服务器部署） |外接程序清单中外接程序的 GUID。|“EXCatalog”。 EXCatalog 行是用于 Office 365 管理中心中使用集中部署的加载项的行。|加载项清单中的版本。
 |Registry（系统注册表）|外接程序清单中外接程序的 GUID。|“developer”|加载项清单中的版本。|
 
 > [!NOTE]
@@ -140,7 +140,7 @@ webextension 部件还包括对具有 `id`、 `storeType`、 `store` 和 `versio
 编写 XML 的一个简单方法是首先运行外接程序并[标记客户端上的文档](#tag-the-document-on-the-client-side)以写入值，然后保存该文档并检查生成的 XML。Office 将检测并提供适当的属性值。还可以使用 [Open XML SDK 2.5 Productivity Tool](https://www.microsoft.com/download/details.aspx?id=30425) 工具生成 C# 代码以编程方式添加基于生成的 XML 的标记。
 
 ## <a name="test-and-verify-opening-taskpanes"></a>测试并验证打开任务窗格
-您可以部署测试版本的加载项，将自动在 Office 365 管理中心内，通过使用集中部署打开任务窗格。下面的示例演示如何从集中部署目录使用 EXCatalog 存储版本插入加载项。
+你可以部署测试版的加载项，它将通过 Office 365 管理中心使用集中部署自动打开任务窗格。 以下示例显示了如何使用 EXCatalog 存储版本从集中部署目录插入外接程序。
 
 ```xml
 <we:webextension xmlns:we="http://schemas.microsoft.com/office/webextensions/webextension/2010/11" id="{52811C31-4593-43B8-A697-EB873422D156}">
@@ -151,7 +151,7 @@ webextension 部件还包括对具有 `id`、 `storeType`、 `store` 和 `versio
     <we:snapshot xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships"/>
 </we:webextension>
 ```
-若要测试上面的示例，如果您未拥有 Office 365 订阅，请考虑加入 [Office 365 开发人员计划](https://docs.microsoft.com/office/developer-program/office-365-developer-program)并注册 [Office 365 开发人员帐户](https://developer.microsoft.com/office/dev-program)。 您可以实际体验集中部署并验证加载项是否按预期运行。
+若要测试上面的示例，如果您未拥有 Office 365 订阅，请考虑加入 [Office 365 开发人员计划](https://docs.microsoft.com/office/developer-program/office-365-developer-program)并注册 [Office 365 开发人员帐户](https://developer.microsoft.com/office/dev-program)。 你实际上可以体验集中部署并验证外接程序是否按预期运行。
 
 
 ## <a name="see-also"></a>另请参阅

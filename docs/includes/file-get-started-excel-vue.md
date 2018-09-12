@@ -48,10 +48,9 @@ vue init webpack my-add-in
     yo office 
     ```
 
-    - **选择一个项目类型：** `Manifest`
+    - **选择一个项目类型：** `Office Add-in containing the manifest only`
     - **要将你的外接程序命名为什么?:** `My Office Add-in`
     - **要支持哪一个 Office 客户端应用程序?:** `Excel`
-
 
     完成向导后，可以使用清单文件和资源文件来构建项目。
 
@@ -210,5 +209,5 @@ vue init webpack my-add-in
 
 * [Excel 加载项教程](../tutorials/excel-tutorial-create-table.md)
 * [Excel JavaScript API 核心概念](../excel/excel-add-ins-core-concepts.md)
-* [Excel 加载项代码示例](http://dev.office.com/code-samples#?filters=excel,office%20add-ins)
-* [Excel JavaScript API 参考](https://dev.office.com/reference/add-ins/excel/excel-add-ins-reference-overview)
+* [Excel 加载项代码示例](https://developer.microsoft.com/office/gallery/?filterBy=Samples,Excel)
+* [Excel JavaScript API 参考](https://docs.microsoft.com/javascript/office/overview/excel-add-ins-reference-overview?view=office-js)

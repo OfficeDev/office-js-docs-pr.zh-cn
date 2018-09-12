@@ -128,9 +128,9 @@
 
 ### <a name="update-the-manifest"></a>更新清单
 
-1. 打开加载项项目中的 XML 清单文件。 此文件定义的是加载项设置和功能。
+1. 在加载项项目中打开 XML 清单文件。该文件定义了加载项的设置和功能。
 
-2. 元素具有占位符值。`ProviderName` 将其替换为你的姓名。
+2. |||UNTRANSLATED_CONTENT_START|||The `ProviderName` element has a placeholder value.|||UNTRANSLATED_CONTENT_END||| 将其替换为你的姓名。
 
 3. 元素的 `DefaultValue` 属性有占位符。`DisplayName` 将它替换为“My Office Add-in”****。
 

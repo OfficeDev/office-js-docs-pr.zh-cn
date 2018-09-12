@@ -2,12 +2,12 @@
 title: Office 加载项开发生命周期
 description: ''
 ms.date: 01/23/2018
-ms.openlocfilehash: 8da351a87fdf455d3ae8f8583f2db3226a3cb340
-ms.sourcegitcommit: 4de2a1b62ccaa8e51982e95537fc9f52c0c5e687
+ms.openlocfilehash: 713daff9a0d16f904209f8b4561f3cf51bd9a9c9
+ms.sourcegitcommit: 30435939ab8b8504c3dbfc62fd29ec6b0f1a7d22
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/10/2018
-ms.locfileid: "22925435"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "23944280"
 ---
 # <a name="office-add-ins-development-lifecycle"></a>Office 加载项开发生命周期
 
@@ -53,7 +53,7 @@ Office 加载项的典型开发生命周期包括下列步骤：
     
 - 客户是否要使用加载项来增强文档的查看或创作体验？如果是，建议考虑创建**任务窗格加载项**。 
 
-某些加载项 API 的支持可能因 Office 应用及其运行平台（Windows、Mac、Web、Mobile）而异。若要了解客户端和平台的当前 API 覆盖范围，请参阅 [Office 加载项主机和平台可用性](../overview/office-add-in-availability.md)页面。  
+某些加载项 API 的支持可能因 Office 应用及其运行平台（Windows、Mac、Web、Mobile）而异。 若要了解客户端和平台的当前 API 覆盖范围，请参阅 [Office 加载项主机和平台可用性](../overview/office-add-in-availability.md)页面。  
 
     
 ## <a name="4-design-and-implement-the-user-experience-and-user-interface-for-the-add-in"></a>4. 设计并实现加载项的用户体验和用户界面
@@ -86,5 +86,5 @@ Office 加载项的典型开发生命周期包括下列步骤：
     
 如果外接程序调用 Web 服务，且在发布外接程序后对 Web 服务进行了更新，则无需重新发布外接程序。 但是，如果你对提交的外接程序的任何项目或数据进行了更改（如外接程序清单、屏幕截图、图标、HTML 或 JavaScript 文件），则需重新发布外接程序。 
     
-特别是，如果已将加载项发布到 AppSource，需要重新提交加载项，以便 AppSource 能够实现这些更改。必须重新提交加载项，并附带包含新版本号的更新后加载项清单。还必须确保将提交表单中的加载项版本号更新为，与新清单版本号一致。对于 Outlook 加载项，应确保 [Id](https://dev.office.com/reference/add-ins/manifest/id) 元素包含加载项清单中的不同 UUID。
+特别是，如果已将加载项发布到 AppSource，需要重新提交加载项，以便 AppSource 能够实现这些更改。必须重新提交加载项，并附带包含新版本号的更新后加载项清单。还必须确保将提交表单中的加载项版本号更新为，与新清单版本号一致。对于 Outlook 加载项，应确保 [Id](https://docs.microsoft.com/javascript/office/manifest/id?view=office-js) 元素包含加载项清单中的不同 UUID。
     

@@ -6,7 +6,7 @@ Office UI Fabric 包含一组默认主题颜色。当 Fabric 作为组件应用�
 Office 应用程序使客户能够通过应用 Office UI 主题个性化设置其界面。客户可以在四个 UI 主题中进行选择来改变背景样式以及 Word、PowerPoint、Excel 和 Office 套件中其他应用程序的按钮。若要使外接程序感觉像是 Office 的一个固有部分并响应个性化设置，请使用我们的主题 API。例如，任务窗格背景颜色在某些主题中切换到深灰色。我们的主题 API 允许你照做并调整前景文本，以确保[辅助功能](../design/accessibility-guidelines.md)。
 
 > [!NOTE]
-> - 对于邮件和任务窗格外接程序，请使用 [Context.officeTheme](https://dev.office.com/reference/add-ins/shared/office.context.officetheme) 元素匹配 Office 应用程序的主题。此 API 当前仅在 Office 2016 中可用。
+> - 对于邮件和任务窗格外接程序，请使用 [Context.officeTheme](https://docs.microsoft.com/javascript/api/office/office.context?view=office-js) 元素匹配 Office 应用程序的主题。此 API 当前仅在 Office 2016 中可用。
 > - 对于 PowerPoint 内容加载项，请参阅[在 PowerPoint 加载项中使用 Office 主题](../powerpoint/use-document-themes-in-your-powerpoint-add-ins.md)。
 
 将下列一般原则应用于颜色：

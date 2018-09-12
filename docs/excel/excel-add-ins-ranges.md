@@ -2,16 +2,16 @@
 title: 使用 Excel JavaScript API 处理区域
 description: ''
 ms.date: 12/04/2017
-ms.openlocfilehash: 48784d14542bcff4a2aab416c5f91c132f6c172d
-ms.sourcegitcommit: e1c92ba882e6eb03a165867c6021a6aa742aa310
+ms.openlocfilehash: 2760e3991951088edb8cd9c1aab7b242a8f105bb
+ms.sourcegitcommit: 30435939ab8b8504c3dbfc62fd29ec6b0f1a7d22
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/20/2018
-ms.locfileid: "22925617"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "23945776"
 ---
 # <a name="work-with-ranges-using-the-excel-javascript-api"></a>使用 Excel JavaScript API 处理区域
 
-本文中的代码示例展示了如何使用 Excel JavaScript API 对区域执行常见任务。 有关 **Range** 对象支持的属性和方法的完整列表，请参阅 [Range 对象 (Excel JavaScript API)](https://dev.office.com/reference/add-ins/excel/range)。
+本文中的代码示例展示了如何使用 Excel JavaScript API 对区域执行常见任务。 有关 **Range** 对象支持的属性和方法的完整列表，请参阅 [Range 对象 (Excel JavaScript API)](https://docs.microsoft.com/javascript/api/excel/excel.range?view=office-js)。
 
 ## <a name="get-a-range"></a>获取区域
 
@@ -504,7 +504,7 @@ Excel.run(function (context) {
 
 **区域中设置字体颜色和填充颜色之后的数据**
 
-![设置格式后的 Excel 数据](../images/excel-ranges-format-font-and-fill.png)
+![Excel 中设置格式之后的数据](../images/excel-ranges-format-font-and-fill.png)
 
 ### <a name="set-number-format"></a>设置数字格式
 
@@ -533,12 +533,12 @@ Excel.run(function (context) {
 
 **区域中设置数字格式之后的数据**
 
-![设置格式后的 Excel 数据](../images/excel-ranges-format-numbers.png)
+![Excel 中设置格式之后的数据](../images/excel-ranges-format-numbers.png)
 
 ## <a name="copy-and-paste"></a>复制和粘贴
 
 > [!NOTE]
-> 目前，只有公共预览版 （测试版）才有 copyFrom 函数。 若要使用此功能，则您必须使用 Office.js CDN 的 beta 库： https://appsforoffice.microsoft.com/lib/beta/hosted/office.js。
+> 目前，只有公共预览版 （测试版）才有 copyFrom 函数。 若要使用此功能，你必须使用 Office.js CDN 的 beta 库：https://appsforoffice.microsoft.com/lib/beta/hosted/office.js。
 > 如果你正在使用 TypeScript，或者你的代码编辑器使用 TypeScript 类型定义文件实现 IntelliSense，请使用 https://appsforoffice.microsoft.com/lib/beta/hosted/office.d.ts。
 
 区间的 copyFrom 函数将复制 Excel UI 的复制和粘贴行为。 目标是调用该 copyFrom 的区间对象。 将需要拷贝的源作为区间或代表区间的字符串地址进行传递。 下面的代码示例中，将数据从 **A1:E1** 复制到以 **G1** 开头（最终粘贴到 **G1:K1** 之中） 的区间。
@@ -564,7 +564,7 @@ copyFrom(sourceRange: Range | string, copyType?: "All" | "Formulas" | "Values" |
 `“Formats”` 复制该区间的格式，包括字体、颜色和其他格式设置，但不包括数值。 
 `”All”` （默认选项）复制数据和格式，保留单元格的公式（如有）。
 
-`skipBlanks` 设置是否将空白单元格复制到目标。 如果为是，则 `copyFrom` 跳过源区间中的空白单元格。 被跳过的单元格不会覆盖目标区间对应单元格的现有数据。 默认为否。
+`skipBlanks` 设置是否将空白单元格复制到目标。 如果为是，则 `copyFrom` 跳过源区间中的空白单元格。 被跳过的单元格不会覆盖目标区间对应单元格的现有数据。 默认值为 false。
 
 下面的代码示例和图片采用简单的场景，对上述行为进行了演示。 
 
@@ -599,4 +599,4 @@ Excel.run(function (context) {
 ## <a name="see-also"></a>另请参阅
 
 - [Excel JavaScript API 核心概念](excel-add-ins-core-concepts.md)
-- [Range 对象 (Excel JavaScript API)](https://dev.office.com/reference/add-ins/excel/range)
+
