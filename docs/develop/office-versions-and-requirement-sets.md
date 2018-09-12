@@ -2,12 +2,12 @@
 title: Office 版本和要求集
 description: ''
 ms.date: 03/29/2018
-ms.openlocfilehash: 3900dbc50d879b9dec809e19b0fc3458a3f46729
-ms.sourcegitcommit: 4de2a1b62ccaa8e51982e95537fc9f52c0c5e687
+ms.openlocfilehash: b1829f91f3f3ae93f646ca2debf9040d0344c34c
+ms.sourcegitcommit: 30435939ab8b8504c3dbfc62fd29ec6b0f1a7d22
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/10/2018
-ms.locfileid: "22925183"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "23943955"
 ---
 # <a name="office-versions-and-requirement-sets"></a>Office 版本和要求集
 
@@ -36,21 +36,21 @@ Office 加载项可使用 API 要求集，以确定 Office 主机是否支持需
 
 加载项使用的要求集中的 API 只能是受运行加载项的 Office 主机版本支持的 API。 若要确切了解适用于特定 Office 主机版本的要求集，请参阅以下主机专用要求集文章：
 
-- [Excel JavaScript API 要求集](https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets?product=excel) (ExcelApi)
-- [Word JavaScript API 要求集](https://dev.office.com/reference/add-ins/requirement-sets/word-api-requirement-sets) (WordApi)
-- [OneNote JavaScript API 要求集](https://dev.office.com/reference/add-ins/requirement-sets/onenote-api-requirement-sets) (OneNoteApi)
-- [了解 Outlook API 要求集](https://dev.office.com/reference/add-ins/outlook/tutorial-api-requirement-sets) (MailBox)
+- [Excel JavaScript API 要求集](https://docs.microsoft.com/javascript/office/requirement-sets/excel-api-requirement-sets?view=office-js) (ExcelApi)
+- [Word JavaScript API 要求集](https://docs.microsoft.com/javascript/office/requirement-sets/word-api-requirement-sets?view=office-js) (WordApi)
+- [OneNote JavaScript API 要求集](https://docs.microsoft.com/javascript/office/requirement-sets/onenote-api-requirement-sets?view=office-js) (OneNoteApi)
+- [了解 Outlook API 要求集](https://docs.microsoft.com/javascript/office/requirement-sets/outlook-api-requirement-sets?view=office-js) (MailBox)
 
 一些要求集包含任何 Office 主机都能使用的 API。 若要了解这些要求集，请参阅以下文章：
 
-- [Office 通用要求集](https://dev.office.com/reference/add-ins/requirement-sets/office-add-in-requirement-sets)
-- [加载项命令要求集](https://dev.office.com/reference/add-ins/requirement-sets/add-in-commands-requirement-sets?product=excel)
-- [对话框 API 要求集](https://dev.office.com/reference/add-ins/requirement-sets/dialog-api-requirement-sets?product=excel)
-- [标识 API 要求集](https://dev.office.com/reference/add-ins/requirement-sets/identity-api-requirement-sets?product=excel)
+- [Office 通用要求集](https://docs.microsoft.com/javascript/office/requirement-sets/office-add-in-requirement-sets?view=office-js)
+- [加载项命令要求集](https://docs.microsoft.com/javascript/office/requirement-sets/add-in-commands-requirement-sets?view=office-js)
+- [对话框 API 要求集](https://docs.microsoft.com/javascript/office/requirement-sets/dialog-api-requirement-sets?view=office-js)
+- [标识 API 要求集](https://docs.microsoft.com/javascript/office/requirement-sets/identity-api-requirement-sets?view=office-js)
 
 要求集的版本号（如 `ExcelApi 1.1` 中的“1.1”）是相对于 Office 主机而言。 给定要求集的版本号（例如，`ExcelApi 1.1`）既不对应于 Office.js 的版本号，也不对应于其他 Office 主机（例如，Word、Outlook 等）的要求集。  各个 Office 主机的要求集的发布速度和时间不同。 例如，`ExcelApi 1.5` 要求集先于 `WordApi 1.3` 要求集发布。
 
-适用于 Office 的 JavaScript API 库 (Office.js) 包含当前可用的所有要求集。 虽然有 `ExcelApi 1.3` 和 `WordApi 1.3` 等要求集，但并无 `Office.js 1.3` 要求集。 最新版 Office.js 作为一个通过内容传送网络 (CDN) 提供的 Office 终结点进行维护。 若要详细了解 Office.js CDN（包括如何处理版本控制和向后兼容性），请参阅[了解适用于 Office 的 JavaScript API](https://docs.microsoft.com/office/dev/add-ins/develop/understanding-the-javascript-api-for-office)。
+适用于 Office 的 JavaScript API 库 (Office.js) 包含当前可用的所有要求集。 虽然有 `ExcelApi 1.3` 和 `WordApi 1.3` 等要求集，但并无 `Office.js 1.3` 要求集。 最新版 Office.js 作为一个通过内容传送网络 (CDN) 提供的 Office 终结点进行维护。 若要详细了解 Office.js CDN（包括版本控制和向后兼容性），请参阅[了解适用于 Office 的 JavaScript API](https://docs.microsoft.com/office/dev/add-ins/develop/understanding-the-javascript-api-for-office)。
 
 ## <a name="specify-office-hosts-and-requirement-sets"></a>指定 Office 主机和要求集
 
