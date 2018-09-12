@@ -109,9 +109,9 @@
 
 ### <a name="update-the-manifest"></a>更新清单
 
-1. 打开加载项项目中的 XML 清单文件。 此文件定义的是加载项设置和功能。
+1. 在加载项项目中打开 XML 清单文件。该文件定义了加载项的设置和功能。
 
-2. 元素具有占位符值。`ProviderName` 将其替换为你的姓名。
+2. |||UNTRANSLATED_CONTENT_START|||The `ProviderName` element has a placeholder value.|||UNTRANSLATED_CONTENT_END||| 将其替换为你的姓名。
 
 3. 元素的 `DefaultValue` 属性有占位符。`DisplayName` 将它替换为“My Office Add-in”****。
 
@@ -320,5 +320,5 @@
 
 * [Excel 加载项教程](../tutorials/excel-tutorial-create-table.md)
 * [Excel JavaScript API 核心概念](../excel/excel-add-ins-core-concepts.md)
-* [Excel 加载项代码示例](http://dev.office.com/code-samples#?filters=excel,office%20add-ins)
-* [Excel JavaScript API 参考](https://dev.office.com/reference/add-ins/excel/excel-add-ins-reference-overview)
+* [Excel 加载项代码示例](https://developer.microsoft.com/office/gallery/?filterBy=Samples,Excel)
+* [Excel JavaScript API 参考](https://docs.microsoft.com/javascript/office/overview/excel-add-ins-reference-overview?view=office-js)

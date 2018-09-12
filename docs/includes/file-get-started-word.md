@@ -73,11 +73,11 @@ _适用于：Word 2016、Word for iPad、Word for Mac_
                     $('#emerson').click(insertEmersonQuoteAtSelection);
                     $('#checkhov').click(insertChekhovQuoteAtTheBeginning);
                     $('#proverb').click(insertChineseProverbAtTheEnd);
-                    $('#supportedVersion').html('This code is using Word 2016 or greater.');
+                    $('#supportedVersion').html('This code is using Word 2016 or later.');
                 }
                 else {
                     // Just letting you know that this code will not work with your version of Word.
-                    $('#supportedVersion').html('This code requires Word 2016 or greater.');
+                    $('#supportedVersion').html('This code requires Word 2016 or later.');
                 }
             });
         };
@@ -188,9 +188,9 @@ _适用于：Word 2016、Word for iPad、Word for Mac_
 
 ### <a name="update-the-manifest"></a>更新清单
 
-1. 打开加载项项目中的 XML 清单文件。 此文件定义的是加载项设置和功能。
+1. 在加载项项目中打开 XML 清单文件。该文件定义了加载项的设置和功能。
 
-2. 元素具有占位符值。`ProviderName` 将其替换为你的姓名。
+2. |||UNTRANSLATED_CONTENT_START|||The `ProviderName` element has a placeholder value.|||UNTRANSLATED_CONTENT_END||| 将其替换为你的姓名。
 
 3. 元素的 `DefaultValue` 属性有占位符。`DisplayName` 将它替换为“My Office Add-in”****。
 
@@ -296,7 +296,7 @@ _适用于：Word 2016、Word for iPad、Word for Mac_
     </html>
     ```
 
-2. 打开文件 **src/index.js** 以指定加载项的脚本，替换全部内容为以下代码并保存该文件。此脚本包含初始化代码以及更改 Word 文档的代码，它在选择一个按钮时将文字插入到文档。 
+2. 打开文件 **src\index.js**，以指定加载项脚本。 将整个内容替换为以下代码，并保存文件。 此脚本包含初始化代码以及用于更改 Word 文档的代码（具体方法是通过选择某个按钮将文本插入文档）。 
 
     ```js
     'use strict';
@@ -313,11 +313,11 @@ _适用于：Word 2016、Word for iPad、Word for Mac_
                     $('#emerson').click(insertEmersonQuoteAtSelection);
                     $('#checkhov').click(insertChekhovQuoteAtTheBeginning);
                     $('#proverb').click(insertChineseProverbAtTheEnd);
-                    $('#supportedVersion').html('This code is using Word 2016 or greater.');
+                    $('#supportedVersion').html('This code is using Word 2016 or later.');
                 }
                 else {
                     // Just letting you know that this code will not work with your version of Word.
-                    $('#supportedVersion').html('This code requires Word 2016 or greater.');
+                    $('#supportedVersion').html('This code requires Word 2016 or later.');
                 }
             });
         };
@@ -397,7 +397,7 @@ _适用于：Word 2016、Word for iPad、Word for Mac_
     })();
     ```
 
-3. 打开项目根目录中的文件 **app.css**，以指定加载项自定义样式。 将整个内容替换为以下内容，并保存文件。
+3. 打开项目根目录中的文件“app.css”****，以指定加载项自定义样式。 将整个内容替换为以下内容，并保存文件。
 
     ```css
     #content-header {
@@ -478,5 +478,5 @@ _适用于：Word 2016、Word for iPad、Word for Mac_
 ## <a name="see-also"></a>另请参阅
 
 * [Word 加载项概述](../word/word-add-ins-programming-overview.md)
-* [Word 加载项代码示例](http://dev.office.com/code-samples#?filters=word,office%20add-ins)
-* [Word JavaScript API 参考](https://dev.office.com/reference/add-ins/word/word-add-ins-reference-overview)
+* [Word 加载项代码示例](https://developer.microsoft.com/en-us/office/gallery/?filterBy=Samples,Word)
+* [Word JavaScript API 参考](https://docs.microsoft.com/javascript/office/overview/word-add-ins-reference-overview?view=office-js)

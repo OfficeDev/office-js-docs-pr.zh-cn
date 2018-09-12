@@ -2,19 +2,19 @@
 title: 在 Office 外接程序中使用对话框 API
 description: ''
 ms.date: 12/04/2017
-ms.openlocfilehash: b026c3c5871372c52d0b44e36c01fc44a3d2bf04
-ms.sourcegitcommit: 7ecc1dc24bf7488b53117d7a83ad60e952a6f7aa
+ms.openlocfilehash: 65ac55baa31f298ea5a17d789ba96772c8f5bb02
+ms.sourcegitcommit: 30435939ab8b8504c3dbfc62fd29ec6b0f1a7d22
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/23/2018
-ms.locfileid: "19437953"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "23945605"
 ---
 # <a name="use-the-dialog-api-in-your-office-add-ins"></a>在 Office 加载项中使用对话框 API
 
-可以在 Office 外接程序中使用[对话框 API](https://dev.office.com/reference/add-ins/shared/officeui) 打开对话框。本文提供了有关如何在 Office 外接程序中使用对话框 API 的指南。
+可以在 Office 外接程序中使用[对话框 API](https://docs.microsoft.com/javascript/api/office/office.ui?view=office-js) 打开对话框。本文提供了有关如何在 Office 外接程序中使用对话框 API 的指南。
 
 > [!NOTE]
-> 若要了解对话框 API 目前的受支持情况，请参阅[对话框 API 要求集](https://dev.office.com/reference/add-ins/requirement-sets/dialog-api-requirement-sets)。目前，Word、Excel、PowerPoint 和 Outlook 支持对话框 API。
+> 若要了解对话框 API 目前的受支持情况，请参阅[对话框 API 要求集](https://docs.microsoft.com/javascript/office/requirement-sets/dialog-api-requirement-sets?view=office-js)。目前，Word、Excel、PowerPoint 和 Outlook 支持对话框 API。
 
 > 对话框 API 的主要应用场景是为 Google 或 Facebook 等资源启用身份验证。 如果加载项要求可通过 Microsoft Graph 访问 Office 用户数据或资源数据（如 Office 365 或 OneDrive），建议尽可能使用单一登录 API。 如果使用单一登录 API，则不需要使用 Dialog API。 有关详细信息，请参阅[为 Office 加载项启用单一登录](sso-in-office-add-ins.md)。
 
@@ -35,11 +35,11 @@ ms.locfileid: "19437953"
 
 ## <a name="dialog-api-scenarios"></a>Dialog API 应用场景
 
-Office JavaScript API 支持以下应用场景，其在 [Office.context.ui 命名空间](https://dev.office.com/reference/add-ins/shared/officeui)中使用 [Dialog](https://dev.office.com/reference/add-ins/shared/officeui.dialog) 对象和两个函数。
+Office JavaScript API 支持以下应用场景，其在 [Office.context.ui 命名空间](https://docs.microsoft.com/javascript/api/office/office.ui?view=office-js)中使用 [Dialog](https://docs.microsoft.com/javascript/api/office/office.dialog?view=office-js) 对象和两个函数。
 
 ### <a name="open-a-dialog-box"></a>打开对话框
 
-为了打开对话框，任务窗格中的代码调用 [displayDialogAsync](https://dev.office.com/reference/add-ins/shared/officeui.displaydialogasync) 方法，并将要打开的资源 URL 传递到此方法。这通常是页面，但也可以是 MVC 应用中的控制器方法、路由、Web 服务方法或其他任何资源。在本文中，“页面”或“网站”是指对话框中的资源。下面的代码就是一个简单示例：
+为了打开对话框，任务窗格中的代码调用 [displayDialogAsync](https://docs.microsoft.com/javascript/api/office/office.ui?view=office-js) 方法，并将要打开的资源 URL 传递到此方法。这通常是页面，但也可以是 MVC 应用中的控制器方法、路由、Web 服务方法或其他任何资源。在本文中，“页面”或“网站”是指对话框中的资源。下面的代码就是一个简单示例：
 
 ```js
 Office.context.ui.displayDialogAsync('https://myAddinDomain/myDialog.html');
@@ -47,7 +47,7 @@ Office.context.ui.displayDialogAsync('https://myAddinDomain/myDialog.html');
 
 > [!NOTE]
 > - URL 使用 HTTP**S** 协议。对话框中加载的所有页面都必须遵循此要求，而不仅仅是加载的第一个页面。
-> - 域与主机页的域相同，主机页可以是任务窗格中的页面，也可以是外接程序命令的[函数文件](https://dev.office.com/reference/add-ins/manifest/functionfile)。这要求：传递到 `displayDialogAsync` 方法的页面、控制器方法或其他资源必须与主机页位于相同的域。
+> - 域与主机页的域相同，主机页可以是任务窗格中的页面，也可以是外接程序命令的[函数文件](https://docs.microsoft.com/javascript/office/manifest/functionfile?view=office-js)。这要求：传递到 `displayDialogAsync` 方法的页面、控制器方法或其他资源必须与主机页位于相同的域。
 
 在第一个页面（或其他资源）加载后，用户可以转到使用 HTTPS 的任意网站（或其他资源）。还可以将第一个页面设计为直接重定向到另一个站点。
 
@@ -117,8 +117,8 @@ Office.context.ui.displayDialogAsync('https://myDomain/myDialog.html', {height: 
 ```
 
 > [!NOTE]
-> - Office 将 [AsyncResult](https://dev.office.com/reference/add-ins/shared/asyncresult) 对象传递给回调。它表示尝试打开对话框的结果，不表示对话框中任何事件的结果。若要详细了解此区别，请参阅[处理错误和事件](#handle-errors-and-events)部分。
-> - 的 `value` 属性设置为 [Dialog](https://dev.office.com/reference/add-ins/shared/officeui.dialog) 对象，此对象位于主机页（而不是对话框的执行上下文）中。`asyncResult`
+> - Office 将 [AsyncResult]() 对象传递给回调。它表示尝试打开对话框的结果，不表示对话框中任何事件的结果。若要详细了解此区别，请参阅[处理错误和事件](#handle-errors-and-events)部分。
+> - 的 `value` 属性设置为 [Dialog](https://docs.microsoft.com/javascript/api/office/office.dialog?view=office-js) 对象，此对象位于主机页（而不是对话框的执行上下文）中。`asyncResult`
 > - 是用于处理事件的函数。可以根据需要任意命名。`processMessage`
 > - 变量的声明范围比回调更广，因为 `processMessage` 中也会引用此变量。`dialog`
 
@@ -250,7 +250,7 @@ function processMessage(arg) {
 |12005|传递给 `displayDialogAsync` 的 URL 使用 HTTP 协议。需要使用 HTTPS。（在 Office 的某些版本中，返回 12005 的错误消息与返回 12004 错误消息是相同的。）|
 |<span id="12007">12007</span>|已从此主机窗口打开了一个对话框。主机窗口（如任务窗格）一次只能打开一个对话框。|
 
-调用 `displayDialogAsync` 后，它总是将 [AsyncResult](https://dev.office.com/reference/add-ins/shared/asyncresult) 对象传递给它的回调函数。如果调用成功（即对话框窗口已打开），`AsyncResult` 对象的 `value` 属性是 [Dialog](https://dev.office.com/reference/add-ins/shared/officeui.dialog) 对象。有关示例，请参阅[将信息从对话框发送到主机页](#send-information-from-the-dialog-box-to-the-host-page)部分。如果调用 `displayDialogAsync` 失败，不会创建窗口，`AsyncResult` 对象的 `status` 属性设置为“failed”，并且会填充对象的 `error` 属性。应始终有回调可用于测试 `status`，并在出错时进行响应。有关仅报告错误消息的示例（无论代码编号是什么），请参阅以下代码：
+调用 `displayDialogAsync` 后，它总是将 [AsyncResult](https://docs.microsoft.com/javascript/api/office/office.asyncresult?view=office-js) 对象传递给它的回调函数。如果调用成功（即对话框窗口已打开），`AsyncResult` 对象的 `value` 属性是 [Dialog](https://docs.microsoft.com/javascript/api/office/office.dialog?view=office-js) 对象。有关示例，请参阅[将信息从对话框发送到主机页](#send-information-from-the-dialog-box-to-the-host-page)部分。如果调用 `displayDialogAsync` 失败，不会创建窗口，`AsyncResult` 对象的 `status` 属性设置为“failed”，并且会填充对象的 `error` 属性。应始终有回调可用于测试 `status`，并在出错时进行响应。有关仅报告错误消息的示例（无论代码编号是什么），请参阅以下代码：
 
 ```js
 var dialog;
@@ -346,7 +346,7 @@ var clientID = localStorage.getItem("clientID");
 Office.context.ui.displayDialogAsync('https://myAddinDomain/myDialog.html?clientID=15963ac5-314f-4d9b-b5a1-ccb2f1aea248');
 ```
 
-有关使用此技术的样本，请参阅[在 PowerPoint 加载项中使用 Microsoft Graph 插入 Excel 图表](https://github.com/OfficeDev/PowerPoint-Add-in-Microsoft-Graph-ASPNET-InsertChart)。
+有关使用此技术的示例，请参阅[在 PowerPoint 加载项中使用 Microsoft Graph 插入 Excel 图表](https://github.com/OfficeDev/PowerPoint-Add-in-Microsoft-Graph-ASPNET-InsertChart)。
 
 对话框窗口中的代码可以分析 URL，并读取参数值。
 
@@ -391,7 +391,7 @@ Office.context.ui.displayDialogAsync('https://myAddinDomain/myDialog.html?client
 
 有关使用此模式的示例外接程序，请参阅：
 
-- [在 PowerPoint 外接程序中使用 Microsoft Graph 插入 Excel 图表](https://github.com/OfficeDev/PowerPoint-Add-in-Microsoft-Graph-ASPNET-InsertChart)：对话框窗口最初打开的资源是没有自己视图的控制器方法。然后，其重定向到 Office 365 登录页。
+- [在 PowerPoint 加载项中使用 Microsoft Graph 插入 Excel 图表](https://github.com/OfficeDev/PowerPoint-Add-in-Microsoft-Graph-ASPNET-InsertChart)：对话框窗口最初打开的资源是没有自己的视图的控制器方法。它将重定向到 Office 365 登录页。
 - [Office 外接程序 Office 365 客户端 AngularJS 身份验证](https://github.com/OfficeDev/Word-Add-in-AngularJS-Client-OAuth)：对话框窗口最初打开的资源是一个页面。
 
 #### <a name="support-multiple-identity-providers"></a>支持多个标识提供程序
@@ -415,7 +415,7 @@ Office.context.ui.displayDialogAsync('https://myAddinDomain/myDialog.html?client
 - 对话框窗口使用 `messageParent` 发送字符串化访问令牌，或将访问令牌存储在主机窗口可以检索到的位置，从而将访问令牌发送给主机窗口。令牌具有时间限制，但在持续期间，主机窗口可以使用它直接访问用户资源，而无需进一步提示。
 
 下面的示例使用对话框 API 实现此目的：
-- [在 PowerPoint 外接程序中使用 Microsoft Graph 插入 Excel 图表](https://github.com/OfficeDev/PowerPoint-Add-in-Microsoft-Graph-ASPNET-InsertChart) - 将访问令牌存储在数据库中。
+- [在 PowerPoint 加载项中使用 Microsoft Graph 插入 Excel 图表](https://github.com/OfficeDev/PowerPoint-Add-in-Microsoft-Graph-ASPNET-InsertChart) - 将访问令牌存储在数据库中。
 - [使用 OAuth.io 服务简化热门在线服务访问的 Office 加载项](https://github.com/OfficeDev/Office-Add-in-OAuth.io)
 
 若要详细了解加载项中的身份验证和授权，请参阅：
@@ -425,7 +425,7 @@ Office.context.ui.displayDialogAsync('https://myAddinDomain/myDialog.html?client
 
 ## <a name="use-the-office-dialog-api-with-single-page-applications-and-client-side-routing"></a>将 Office Dialog API 与单页应用程序和客户端路由结合使用
 
-如果外接程序使用客户端路由（单页应用程序通常这样做），则可以选择将路由 URL 传递给 [ displayDialogAsync ](http://dev.office.com/reference/add-ins/shared/officeui.displaydialogasync) 方法，而不是传递各个完整 HTML 页面的 URL。
+如果外接程序使用客户端路由（单页应用程序通常这样做），则可以选择将路由 URL 传递给 [ displayDialogAsync ](https://docs.microsoft.com/javascript/api/office/office.ui?view=office-js) 方法，而不是传递各个完整 HTML 页面的 URL。
 
 > [!IMPORTANT]
 >对话框位于有自己执行上下文的新窗口中。如果传递路由，基页面及其所有初始化和启动代码都会在这个新上下文中再次运行，且所有变量都会在对话框中设置为各自的初始值。所以，此技术会在对话框窗口中启动应用的第二个实例。更改对话框窗口中变量的代码不会更改任务窗格版本的相同变量。同样，对话框窗口有自己的会话存储，任务窗格中的代码无法访问此类存储。
