@@ -1,12 +1,12 @@
 ---
 title: 创建使用单一登录的 Node.js Office 加载项
 description: 2018 年 1 月23 日
-ms.openlocfilehash: bb77d037140f8c56ca05f3817fb2b9d0271297ae
-ms.sourcegitcommit: 8333ede51307513312d3078cb072f856f5bef8a2
+ms.openlocfilehash: 62d32a3f2c8946b21eabd5b0f71aaeeea7c85bb4
+ms.sourcegitcommit: 30435939ab8b8504c3dbfc62fd29ec6b0f1a7d22
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "23876611"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "23945734"
 ---
 # <a name="create-a-nodejs-office-add-in-that-uses-single-sign-on-preview"></a>创建使用单一登录的 Node.js Office 加载项（预览）
 
@@ -31,7 +31,7 @@ ms.locfileid: "23876611"
 
 ## <a name="set-up-the-starter-project"></a>创建起始项目
 
-1. 克隆或下载 [Office 加载项 NodeJS SSO](https://github.com/officedev/office-add-in-nodejs-sso) 中的存储库。 
+1. 在 [Office 加载项 NodeJS SSO](https://github.com/officedev/office-add-in-nodejs-sso) 中克隆或下载库文件。 
 
     > [!NOTE]
     > 示例项目有三个版本：  
@@ -48,14 +48,14 @@ ms.locfileid: "23876611"
     > [!NOTE]
     > 可能会看到一些生成错误，提示某些变量已声明但未使用。请忽略这些错误。之所以会看到这些错误是因为，示例项目的“之前”版本缺少某代码，将在后续步骤中添加。
 
-## <a name="register-the-add-in-with-azure-ad-v20-endpoint"></a>向 Azure AD v2.0 端点注册加载项
+## <a name="register-the-add-in-with-azure-ad-v20-endpoint"></a>向 Azure AD v2.0 终结点注册加载项
 
 以下说明以通用方式书写，以便可以在多个地方使用。 对于本文而言，请执行以下操作：
 - 将占位符 **$ADD-IN-NAME$** 替换为 `“Office-Add-in-NodeJS-SSO`。
 - 将占位符 **$FQDN-WITHOUT-PROTOCOL$** 替换为 `localhost:3000`。
-- 在**选择权限**对话框中指定权限时，选中以下权限框。 只有第一个是加载 项本身真正需要的；但 Office 主机需要 `profile` 权限来为加载项 Web 应用程序获取令牌。
+- 在 **“选择权限”** 对话框中指定权限时，选中以下权限框。 只有第一个是加载 项本身真正需要的；但 Office 主机需要 `profile` 权限来为加载项 Web 应用程序获取令牌。
     * Files.Read.All
-    * profile
+    * 配置文件
 
 [!INCLUDE[](../includes/register-sso-add-in-aad-v2-include.md)]
 
@@ -64,17 +64,17 @@ ms.locfileid: "23876611"
 
 [!INCLUDE[](../includes/grant-admin-consent-to-an-add-in-include.md)]
 
-## <a name="configure-the-add-in"></a>配置加载项
+## <a name="configure-the-add-in"></a>配置外接程序
 
 1. 在代码编辑器中打开 src\server.ts 文件。顶部附近存在对 `AuthModule` 类的构造函数的调用。该构造函数中存在一些需要为其分配值的字符串参数。
 
 2. 对于 `client_id` 属性，将占位符 `{client GUID}` 替换为注册加载项时保存的应用程序 ID。 完成后，单引号中应该只有一个 GUID。 不应出现任何 "{}" 字符。
 
-3. 对于 `client_secret` 属性，将占位符 `{client secret}` 替换为注册加载项时保存的应用程序机密。
+3. 对于 `client_secret` 属性，将占位符 `{client secret}` 替换为注册外接程序时保存的应用程序机密。
 
 4. 对于 `audience` 属性，将占位符 `{audience GUID}` 替换为注册外接程序时保存的应用程序 ID。（即分配给 `client_id` 属性的同一值）。
   
-3. 在分配给 `issuer` 属性的字符串中，你会看到占位符 *{O365 tenant GUID}*。 将其替换为 Office 365 租约 ID。 使用[找到你的 Office 365 租户 ID](https://docs.microsoft.com/onedrive/find-your-office-365-tenant-id) 中的一种方法获得它。 完成后，`issuer` 属性值应该如下所示：
+3. 在分配给 `issuer` 属性的字符串中，你会看到占位符 *{O365 tenant GUID}*。 将其替换为 Office 365 租约 ID。 使用[“找到你的 Office 365 租户 ID”](https://docs.microsoft.com/onedrive/find-your-office-365-tenant-id)中的一种方法获得它。 完成后，`issuer` 属性值应该如下所示：
 
     `https://login.microsoftonline.com/12345678-1234-1234-1234-123456789012/v2.0`
 
@@ -113,7 +113,7 @@ ms.locfileid: "23876611"
     * 方法，用于在任务窗格底部显示从 Microsoft Graph 返回的数据（或错误消息）。`showResult`
     * 方法，用于记录最终用户不应看到的控制台错误。`logErrors`
 
-11. 在 `Office.initialize` 赋值语句的下方，添加下列代码。关于此代码，请注意以下几点：
+11. 在向 `Office.initialize` 分配函数下方，添加下列代码。关于此代码，请注意以下几点：
 
     * 加载项中的错误处理有时会自动尝试使用一组不同的选项，重新获取访问令牌。 计数器变量 `timesGetOneDriveFilesHasRun` 以及标志变量 `triedWithoutForceConsent` 和 `timesMSGraphErrorReceived` 用于确保用户不会重复循环失败的尝试来获取令牌。 
     * 虽然 `getDataWithToken` 方法是在下一步中创建，但请注意，它会将 `forceConsent` 选项设置为 `false`。有关详细信息，请参阅下一步。
@@ -132,7 +132,7 @@ ms.locfileid: "23876611"
 
 1. 在 `getOneDriveFiles` 方法下方，添加下列代码。关于此代码，请注意以下几点：
 
-    * [getAccessTokenAsync](https://docs.microsoft.com/office/dev/add-ins/develop/sso-in-office-add-ins#sso-api-reference) 是 Office.js 中的新 API，可便于加载项要求 Office 主机应用（Excel、PowerPoint、Word 等）提供加载项访问令牌（对于已登录 Office 的用户）。反过来，Office 主机应用会向 Azure AD 2.0 端点请求获取令牌。由于已在注册加载项时将 Office 主机预授权给加载项，因此 Azure AD 会发送该令牌。
+    * [getAccessTokenAsync](https://docs.microsoft.com/office/dev/add-ins/develop/sso-in-office-add-ins#sso-api-reference)是 Office.js 中新增的 API，支持加载项向 Office 主机应用程序（Excel、PowerPoint、Word 等）请求获取对加载项的访问令牌（对于已登录 Office 的用户）。 反过来，Office 主机应用程序会向 Azure AD 2.0 终结点请求获取令牌。 由于已在注册加载项时将 Office 主机预授权给加载项，因此 Azure AD 将会发送令牌。
     * 如果用户未登录 Office，Office 主机会提示用户登录。
     * options 参数将 `forceConsent` 设置为 `false`，因此用户不会在每次使用加载项时都看到提示，要求其许可向 Office 主机授予对加载项的访问权限。 用户首次运行加载项时，`getAccessTokenAsync` 调用会失败，但在后续步骤中添加的错误处理逻辑会自动重新调用（`forceConsent` 选项设置为 `true`），并提示用户许可，但仅限首次运行。
     * 方法将在后续步骤中创建。`handleClientSideErrors`
@@ -540,7 +540,7 @@ ms.locfileid: "23876611"
     ```
 
     > [!NOTE]
-    > 只能使用 `access_as_user` 范围授权 API 为 Office 加载项处理代表流。服务中的其他 API 应有自己的范围要求。这就限制了使用 Office 获得的令牌可以访问的内容。
+    > 只能使用 `access_as_user` 范围授权 API 为 Office 加载项处理代理流。服务中的其他 API 应有自己的范围要求。这就限制了使用 Office 获得的令牌可以访问的内容。
 
 5. 将 `TODO8` 替换为以下代码。关于此代码，请注意以下几点：
 
