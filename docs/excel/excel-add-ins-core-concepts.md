@@ -1,17 +1,17 @@
 ---
 title: Excel JavaScript API 核心概念
-description: ''
+description: 使用 Excel JavaScript API 构建适用于 Excel 的外接程序。
 ms.date: 12/04/2017
-ms.openlocfilehash: 37d652d2ad2f323d0f94583e530e91e775e06ddf
-ms.sourcegitcommit: 4de2a1b62ccaa8e51982e95537fc9f52c0c5e687
+ms.openlocfilehash: 0833640d06f97f84a4fe5d33da6532dbd540bd5d
+ms.sourcegitcommit: 30435939ab8b8504c3dbfc62fd29ec6b0f1a7d22
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/10/2018
-ms.locfileid: "22925407"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "23945444"
 ---
 # <a name="excel-javascript-api-core-concepts"></a>Excel JavaScript API 核心概念
  
-本文介绍如何使用 [Excel JavaScript API](https://dev.office.com/reference/add-ins/excel/excel-add-ins-reference-overview) 生成适用于 Excel 2016 的加载项。 它引入了一些核心概念，这些概念是使用 API 的基础，并为执行特定任务提供指导，如读取或写入较大区域、更新区域内的所有单元格等等。
+本文介绍如何使用 [Excel JavaScript API](https://docs.microsoft.com/javascript/office/overview/excel-add-ins-reference-overview?view=office-js) 生成适用于 Excel 2016 或更高版本的外接程序。 它引入了一些核心概念，这些概念是使用 API 的基础，并为执行特定任务提供指导，如读取或写入较大区域、更新区域内的所有单元格等等。
 
 ## <a name="asynchronous-nature-of-excel-apis"></a>Excel API 的异步特性
 
@@ -117,7 +117,7 @@ Excel.run(function (context) {
  
 在前面的示例中，由于在调用 **myRange.load()** 时未指定 `format/font`，因此无法读取 `format.font.color` 属性。
 
-为了优化性能，您应该明确指定要在使用 **load()** 方法时加载某个对象的属性和关系，如 [Excel JavaScript API 性能优化](performance.md)所述。 有关 **load()** 方法的详细信息，请参阅 [Excel JavaScript API 高级概念](excel-add-ins-advanced-concepts.md)。
+为了优化性能，应该在对象上使用 **load()** 方法时明确指定要加载的属性和关系，如 [Excel JavaScript API 性能优化](performance.md)所述。 有关 **load()** 方法的详细信息，请参阅 [Excel JavaScript API 高级概念](excel-add-ins-advanced-concepts.md)。
 
 ## <a name="null-or-blank-property-values"></a>null 或空属性值
  
@@ -250,7 +250,7 @@ Excel.run(function (context) {
 |ItemAlreadyExists|所创建的资源已存在。|
 |UnsupportedOperation|不支持正在尝试的操作。|
 |RequestAborted|请求在运行时已中止。|
-|ApiNotAvailable|请求的 API 不可用。|
+|wApiNotAvailable|请求的 API 不可用。|
 |InsertDeleteConflict|尝试的插入或删除操作导致冲突。|
 |InvalidOperation|尝试的操作对于对象无效。|
  
@@ -258,5 +258,5 @@ Excel.run(function (context) {
  
 * [开始使用 Excel 加载项](excel-add-ins-get-started-overview.md)
 * [Excel 加载项代码示例](https://developer.microsoft.com/office/gallery/?filterBy=Samples)
-* [Excel JavaScript API性能优化](https://docs.microsoft.com/office/dev/add-ins/excel/performance)
-* [Excel JavaScript API 参考](https://dev.office.com/reference/add-ins/excel/excel-add-ins-reference-overview)
+* [Excel JavaScript API 性能优化](https://docs.microsoft.com/office/dev/add-ins/excel/performance)
+* [Excel JavaScript API 参考](https://docs.microsoft.com/javascript/office/overview/excel-add-ins-reference-overview?view=office-js)

@@ -2,12 +2,12 @@
 title: 使用 Excel JavaScript API 处理事件
 description: ''
 ms.date: 05/25/2018
-ms.openlocfilehash: df3a677cc804e0cc066a6a380e2eb8aac39a1d92
-ms.sourcegitcommit: 78b28ae88d53bfef3134c09cc4336a5a8722c70b
+ms.openlocfilehash: fbeb0e6efabe37afb0f73ab8e7448d8cf01ebace
+ms.sourcegitcommit: 30435939ab8b8504c3dbfc62fd29ec6b0f1a7d22
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/01/2018
-ms.locfileid: "23797278"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "23943976"
 ---
 # <a name="work-with-events-using-the-excel-javascript-api"></a>使用 Excel JavaScript API 处理事件 
 
@@ -21,17 +21,17 @@ ms.locfileid: "23797278"
 |:---------------|:-------------|:-----------|
 | `onAdded` | 添加对象时发生的事件。 | [**WorksheetCollection**](https://docs.microsoft.com/javascript/api/excel/excel.worksheetcollection) |
 | `onDeleted` | 删除对象时发生的事件。 | [**WorksheetCollection**](https://docs.microsoft.com/javascript/api/excel/excel.worksheetcollection) |
-| `onActivated` | 激活对象时发生的事件。 | [**WorksheetCollection**](https://docs.microsoft.com/javascript/api/excel/excel.worksheetcollection)、[**工作表**](https://docs.microsoft.com/javascript/api/excel/excel.worksheet) |
+| `onActivated` | 启用对象时发生的事件。 | [**WorksheetCollection**](https://docs.microsoft.com/javascript/api/excel/excel.worksheetcollection)、[**工作表**](https://docs.microsoft.com/javascript/api/excel/excel.worksheet) |
 | `onDeactivated` | 停用对象时发生的事件。 | [**WorksheetCollection**](https://docs.microsoft.com/javascript/api/excel/excel.worksheetcollection)、[**工作表**](https://docs.microsoft.com/javascript/api/excel/excel.worksheet) |
 | `onChanged` | 更改单元格内数据时发生的事件。 | [**Worksheet**](https://docs.microsoft.com/javascript/api/excel/excel.worksheet)、[**Table**](https://docs.microsoft.com/javascript/api/excel/excel.table)[**、TableCollection**](https://docs.microsoft.com/javascript/api/excel/excel.tablecollection) |
-| `onDataChanged` | 更改绑定中的数据或格式时发生的事件。 | [**捆绑**](https://docs.microsoft.com/javascript/api/excel/excel.binding) |
-| `onSelectionChanged` | 更改活动单元格或选定范围时发生的事件。 | [**工作表**](https://docs.microsoft.com/javascript/api/excel/excel.worksheet)、[**表格**](https://docs.microsoft.com/javascript/api/excel/excel.table)、[**捆绑**](https://docs.microsoft.com/javascript/api/excel/excel.binding) |
-| `onSettingsChanged` | 当文档中的设置变化时发生的事件。 | [**SettingCollection**](https://docs.microsoft.com/javascript/api/excel/excel.settingcollection) |
+| `onDataChanged` | 数据绑定中的数据或格式更改时发生的事件。 | [**数据绑定**](https://docs.microsoft.com/javascript/api/excel/excel.binding) |
+| `onSelectionChanged` | 更改活动单元格或选定范围时发生的事件。 | [**工作表**](https://docs.microsoft.com/javascript/api/excel/excel.worksheet)、[**表格**](https://docs.microsoft.com/javascript/api/excel/excel.table)、[**数据绑定**](https://docs.microsoft.com/javascript/api/excel/excel.binding) |
+| `onSettingsChanged` | 当文档设置变更时发生的事件。 | [**SettingCollection**](https://docs.microsoft.com/javascript/api/excel/excel.settingcollection) |
 
 ## <a name="preview-beta-events-in-excel"></a>在 Excel 中预览（Beta）事件
 
 > [!NOTE]
-> 这些事件目前仅在公共预览版（测试版）中提供。 要使用这些功能，您必须使用 Office.js CDN 的 beta 库： https://appsforoffice.microsoft.com/lib/beta/hosted/office.js。
+> 这些事件目前仅适用于公开预览版（测试版）。 要使用这些功能，您必须使用 Office.js CDN 的 beta 库： https://appsforoffice.microsoft.com/lib/beta/hosted/office.js。
 
 | 事件 | 说明 | 支持的对象 |
 |:---------------|:-------------|:-----------|
@@ -136,13 +136,13 @@ function remove() {
 ## <a name="enable-and-disable-events"></a>启用和禁用事件
 
 > [!NOTE]
-> 此功能目前仅在公共预览版（测试版）中可用。 若要使用它，您必须引用 Office.js CDN 的 beta 库：https://appsforoffice.microsoft.com/lib/beta/hosted/office.js。
+> 此功能目前仅在公共预览版（测试版）中可用。 要使用该功能，您必须引用 Office.js CDN 的 beta 库：https://appsforoffice.microsoft.com/lib/beta/hosted/office.js。
 
 可以通过禁用事件来提高加载项的性能。 例如，您的应用可能永远不需要接收事件，也可能在执行多个实体的批量编辑时忽略事件。 
 
-在[运行时](https://docs.microsoft.com/javascript/api/excel/excel.runtime)级别启用或禁用事件。 `enableEvents` 属性判断是否会触发事件，并激活其处理程序。 
+在[运行时](https://docs.microsoft.com/javascript/api/excel/excel.runtime)级别启用或禁用事件。 |||UNTRANSLATED_CONTENT_START|||The `enableEvents` property determines if events are fired and their handlers are activated.|||UNTRANSLATED_CONTENT_END||| 
 
-下面的代码示例展示如何打开和关闭事件。
+下面的代码示例演示如何打开和关闭事件。
 
 ```js
 Excel.run(function (context) {

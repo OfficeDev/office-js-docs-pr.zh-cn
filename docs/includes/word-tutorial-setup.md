@@ -16,8 +16,8 @@
 
 ## <a name="setup"></a>设置
 
-1. 克隆 GitHub 存储库 [Word 加载项教程](https://github.com/OfficeDev/Word-Add-in-Tutorial)。
-2. 打开 Git Bash 窗口或已启用 Node.JS 的系统命令提示符，并转到项目的“开始”**** 文件夹。
+1. 克隆 [Word 加载项教程](https://github.com/OfficeDev/Word-Add-in-Tutorial) GitHub 存储库。
+2. |||UNTRANSLATED_CONTENT_START|||Open a Git bash window, or Node.JS-enabled system prompt, and navigate to the **Start** folder of the project.|||UNTRANSLATED_CONTENT_END|||
 3. 运行命令 `npm install`，以安装 package.json 文件中列出的工具和库。 
 4. 按照[将自签名证书添加为受信任的根证书](https://github.com/OfficeDev/generator-office/blob/master/src/docs/ssl.md)中的步骤操作，信任开发计算机操作系统的证书。
 

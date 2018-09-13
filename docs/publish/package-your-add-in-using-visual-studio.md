@@ -2,12 +2,12 @@
 title: 使用 Visual Studio 打包加载项以准备发布
 description: ''
 ms.date: 01/25/2018
-ms.openlocfilehash: 89f59d06ff305e0d0fd062a36f7e9f756415df45
-ms.sourcegitcommit: 4de2a1b62ccaa8e51982e95537fc9f52c0c5e687
+ms.openlocfilehash: aa93fc6befd133127c3542a420d779d070316a57
+ms.sourcegitcommit: 30435939ab8b8504c3dbfc62fd29ec6b0f1a7d22
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/10/2018
-ms.locfileid: "22925246"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "23944379"
 ---
 # <a name="package-your-add-in-using-visual-studio-to-prepare-for-publishing"></a>使用 Visual Studio 打包加载项以准备发布
 
@@ -26,7 +26,7 @@ Office 加载项包包含 XML [清单文件](../develop/add-in-manifests.md)，�
     > [!NOTE]
     > 发布配置文件指定要部署到的服务器、登录服务器所需的凭据、要部署的数据库和其他部署选项。
 
-    如果你选择“**新建...**”，将会显示“**创建发布配置文件**”向导。可以使用此向导从托管提供程序（如 Microsoft Azure）的网站导入发布配置文件，或创建新配置文件并添加你的服务器、凭据以及下一过程中的其他设置。
+    |||UNTRANSLATED_CONTENT_START|||If you choose  **New ...**, the Create Publishing Profile Wizard appears. You can use this wizard to import a publishing profile from a web site hosting provider such as Microsoft Azure or create a new profile and add your server, credentials, and other settings in the next procedure.|||UNTRANSLATED_CONTENT_END|||
     
     有关导入发布配置文件或创建新发布配置文件的详细信息，请参阅 [创建发布配置文件](http://msdn.microsoft.com/library/dd465337.aspx#creating_a_profile)。
     
@@ -41,7 +41,7 @@ Office 加载项包包含 XML [清单文件](../develop/add-in-manifests.md)，�
 
 1. 在“发布加载项”**** 页中，选择“打包加载项”**** 链接。
     
-    此时，“发布 Office 和 SharePoint 加载项”**** 向导显示。
+    显示“发布 Office 和 SharePoint 加载项”向导。
     
 2. 在“网站托管在哪里?”**** 下拉列表中，选择或输入托管加载项内容文件的网站的 HTTPS URL，再选择“完成”****。 
     
@@ -50,7 +50,7 @@ Office 加载项包包含 XML [清单文件](../develop/add-in-manifests.md)，�
     > [!IMPORTANT]
     > [!include[HTTPS guidance](../includes/https-guidance.md)] Azure 网站自动提供 HTTPS 端点。
 
-    Visual Studio 生成发布加载项所需的文件，并打开发布输出文件夹。 
+    此时，Visual Studio 生成发布加载项所需的文件，并打开发布输出文件夹。 
     
 如果计划将加载项提交到 AppSource，可以选择“执行验证检查”**** 链接，以发现将会导致加载项被拒绝的任何问题。应先解决所有问题，再将加载项提交到应用商店。
 
