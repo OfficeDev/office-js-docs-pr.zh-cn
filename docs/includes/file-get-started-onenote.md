@@ -42,7 +42,7 @@
 
 1. 在代码编辑器中，打开项目根目录中的“index.html”****。 此文件包含在加载项任务窗格中呈现的 HTML。
 
-2. 将 `<body>` 元素内的 `<main>` 元素替换为以下标记，并保存文件。 这会使用 [Office UI Fabric 组件](http://dev.office.com/fabric/components)添加文本区域和按钮。
+2. 将 `<body>` 元素内的 `<main>` 元素替换为以下标记，并保存文件。 这会使用 [Office UI Fabric 组件](https://developer.microsoft.com/en-us/fabric#/components)添加文本区域和按钮。
 
     ```html
     <main class="ms-welcome__main">
@@ -142,7 +142,7 @@
 
     <img alt="The Office Add-ins dialog showing the MY ADD-INS tab" src="../images/onenote-office-add-ins-dialog.png" width="500">
 
-3. 在“上传加载项”对话框中，转到项目文件夹中的 **“one-note-add-in-manifest.xml”**，再选择 **“上传”**。 
+3. 在“上传加载项”对话框中，转到项目文件夹中的“one-note-add-in-manifest.xml”****，再选择“上传”****。 
 
 4. 在**主页**选项卡，选择功能区中的**显示任务窗格**按钮。 该加载项任务窗格在 OneNote 页面旁的 iFrame 中打开。
 
@@ -172,6 +172,6 @@
 ## <a name="see-also"></a>另请参阅
 
 - [OneNote JavaScript API 编程概述](../onenote/onenote-add-ins-programming-overview.md)
-- [OneNote JavaScript API 参考](https://dev.office.com/reference/add-ins/onenote/onenote-add-ins-javascript-reference)
+- [OneNote JavaScript API 参考](https://docs.microsoft.com/javascript/office/overview/onenote-add-ins-javascript-reference?view=office-js)
 - [Rubric Grader 示例](https://github.com/OfficeDev/OneNote-Add-in-Rubric-Grader)
 - [Office 加载项平台概述](../overview/office-add-ins.md)
