@@ -2,12 +2,12 @@
 title: 在 Windows 10 上使用 F12 开发人员工具调试外接程序
 description: ''
 ms.date: 01/23/2018
-ms.openlocfilehash: 226773962fb1777a3a1f0e09445721ae2b8b5f5b
-ms.sourcegitcommit: e1c92ba882e6eb03a165867c6021a6aa742aa310
+ms.openlocfilehash: 57e0818da0a115380bcb11f1226c48d3ded1078a
+ms.sourcegitcommit: 30435939ab8b8504c3dbfc62fd29ec6b0f1a7d22
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/20/2018
-ms.locfileid: "22925603"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "23943724"
 ---
 # <a name="debug-add-ins-using-f12-developer-tools-on-windows-10"></a>在 Windows 10 上使用 F12 开发人员工具调试外接程序
 
@@ -34,7 +34,7 @@ Windows 10 中随附的 F12 开发人员工具可帮助您调试、测试和加�
 
 1. 打开 Word 并选择空白文档。 
     
-2. 在“插入”**** 选项卡上的“加载项”组中，依次选择“Microsoft Store”**** 和 QR4Office 加载项。（可以从 Microsoft Store 或加载项目录中加载任何加载项。）
+2. 在**插入**选项卡上的加载项组中，选择 **Store** 然后选中 QR4Office 加载项。（可以从 Store 或加载项目录中加载任何加载项。）
     
 3. 启动与 Office 版本相对应的 F12 开发工具：
     
@@ -42,11 +42,11 @@ Windows 10 中随附的 F12 开发人员工具可帮助您调试、测试和加�
     
    - 对于 64 位版 Office，请使用 C:\Windows\SysWOW64\F12\IEChooser.exe
     
-   当你启动 IEChooser 时，一个单独的窗口（名为“选择要调试的目标”）显示要调试的可能的应用程序。选择你感兴趣的应用程序。如果你正在编写自己的外接程序，请选择你已在其中部署外接程序的网站，这可以是本地主机 URL。 
+   当你启动 IEChooser 时，一个单独的窗口（名为“选择要调试的目标”）显示可能要调试的应用程序。 选择你感兴趣的应用程序。 如果你正在编写自己的外接程序，请选择你已在其中部署外接程序的网站，这可能是 localhost URL。 
     
    例如，选择“home.html”****。 
     
-   ![IEChooser 屏幕，指向气泡加载项](../images/choose-target-to-debug.png)
+   ![IEChooser 界面，指向气泡加载项](../images/choose-target-to-debug.png)
 
 4. 在 F12 窗口中，选择您想要调试的文件。
     

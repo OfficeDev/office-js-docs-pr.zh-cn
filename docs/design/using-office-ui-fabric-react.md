@@ -2,12 +2,12 @@
 title: 在 Office 加载项中使用 Office UI Fabric React
 description: ''
 ms.date: 12/04/2017
-ms.openlocfilehash: e078640cbcc6217e9ed0a1ad99ef02afbfd317a8
-ms.sourcegitcommit: 4e4f7c095e8f33b06bd8a02534ee901125eb1d17
+ms.openlocfilehash: 4baeea20457892bcc7b94b381f5c0a577274408a
+ms.sourcegitcommit: 30435939ab8b8504c3dbfc62fd29ec6b0f1a7d22
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/28/2018
-ms.locfileid: "20084075"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "23944273"
 ---
 # <a name="use-office-ui-fabric-react-in-office-add-ins"></a>在 Office 加载项中使用 Office UI Fabric React
 
@@ -20,7 +20,7 @@ Office UI Fabric 是用于生成 Office 和 Office 365 用户体验的 JavaScrip
 
 ## <a name="step-1---create-your-project-with-the-yeoman-generator-for-office"></a>第 1 步 - 使用适用于 Office 的 Yeoman 生成器创建项目
 
-若要创建使用 Fabric React 的外接程序，我们建议使用 Office 的 Yeoman 生成器。Office 的 Yeoman 生成器提供开发 Office 外接程序所需的项目基架和版本管理。
+若要创建使用 Fabric React 的加载项，我们建议使用 Office 的 Yeoman 生成器。Office 的 Yeoman 生成器提供开发 Office 加载项所需的项目基架和版本管理。
 
 若要创建项目，请使用 **Windows PowerShell**（而不是命令提示符）执行以下步骤：
 
@@ -112,7 +112,7 @@ export class ButtonPrimaryExample extends React.Component<IButtonProps, {}> {
 
 ## <a name="see-also"></a>另请参阅
 
-- [Office UI Fabric React](https://dev.office.com/fabric#/)
+- [Office UI Fabric React](https://developer.microsoft.com/fabric)
 - [Fabric React 代码示例入门](https://github.com/OfficeDev/Word-Add-in-GettingStartedFabricReact)
 - [用户体验设计模式（使用 Fabric 2.6.1）](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code)
 - [Office 外接程序 Fabric UI 示例（使用 Fabric 1.0）](https://github.com/OfficeDev/Office-Add-in-Fabric-UI-Sample)

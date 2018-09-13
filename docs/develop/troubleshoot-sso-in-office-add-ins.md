@@ -2,12 +2,12 @@
 title: 排查单一登录 (SSO) 错误消息
 description: ''
 ms.date: 12/08/2017
-ms.openlocfilehash: ef4d7ed873121deec5fd235e0eace70a3a0c2f0e
-ms.sourcegitcommit: 8333ede51307513312d3078cb072f856f5bef8a2
+ms.openlocfilehash: 1dd36d99715937e12a9194baace3731ac331e658
+ms.sourcegitcommit: 30435939ab8b8504c3dbfc62fd29ec6b0f1a7d22
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "23876597"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "23945437"
 ---
 # <a name="troubleshoot-error-messages-for-single-sign-on-sso-preview"></a>排查单一登录 (SSO) 错误消息（预览）
 
@@ -43,7 +43,7 @@ ms.locfileid: "23876597"
 加载项或 Office 版本不支持 [getAccessTokenAsync](https://docs.microsoft.com/office/dev/add-ins/develop/sso-in-office-add-ins#sso-api-reference) API。 
 
 - Office 版本不支持 SSO。必须为 Office 2016 版本 1710（生成号 8629.nnnn）或更高版本（Office 365 订阅版本，有时亦称为“即点即用”）。可能必须成为 Office 预览体验成员，才能获取此版本。有关详细信息，请参阅[成为 Office 预览体验成员](https://products.office.com/office-insider?tab=tab-1)。 
-- 加载项清单缺少适当的 [WebApplicationInfo](https://dev.office.com/reference/add-ins/manifest/webapplicationinfo) 部分。
+- 加载项清单缺少适当的 [WebApplicationInfo](https://docs.microsoft.com/javascript/office/manifest/webapplicationinfo?view=office-js) 部分。
 
 ### <a name="13001"></a>13001
 
@@ -67,7 +67,7 @@ Office Online 中绝不会出现此错误。 如果用户的 Cookie 到期，Off
 
 ### <a name="13005"></a>13005
 
-授权无效。 这通常意味着，Office 尚未获得对加载项 Web 服务的预授权。 有关详细信息，请参阅[创建服务应用程序](sso-in-office-add-ins.md#create-the-service-application)和[向 Azure AD v2.0 终结点注册加载项](create-sso-office-add-ins-aspnet.md#register-the-add-in-with-azure-ad-v20-endpoint) (ASP.NET) 或[向 Azure AD v2.0 终结点注册加载项](create-sso-office-add-ins-nodejs.md#register-the-add-in-with-azure-ad-v20-endpoint) (Node JS)。 如果用户尚未将您的服务应用程序权限授予其 `profile`，也可能发生这个情况。
+授权无效。 这通常意味着，Office 尚未获得对加载项 Web 服务的预授权。 有关详细信息，请参阅[创建服务应用程序](sso-in-office-add-ins.md#create-the-service-application)和[向 Azure AD v2.0 终结点注册加载项](create-sso-office-add-ins-aspnet.md#register-the-add-in-with-azure-ad-v20-endpoint) (ASP.NET) 或[向 Azure AD v2.0 终结点注册加载项](create-sso-office-add-ins-nodejs.md#register-the-add-in-with-azure-ad-v20-endpoint) (Node JS)。 如果用户尚未将服务应用程序权限授予其 `profile`，也可能发生这个情况。
 
 ### <a name="13006"></a>13006
 
@@ -75,7 +75,7 @@ Office Online 中绝不会出现此错误。 如果用户的 Cookie 到期，Off
 
 ### <a name="13007"></a>13007
 
-Office 主机无法获取加载项 Web 服务的访问令牌。
+Office 主机无法获取对加载项 Web 服务的访问令牌。
 - 如果在开发过程中发生此错误，请确保您的加载项注册和加载项清单指定了 `openid` 和 `profile`权限。 有关详细信息，请参阅[向 Azure AD v2.0 终结点注册加载项](create-sso-office-add-ins-aspnet.md#register-the-add-in-with-azure-ad-v20-endpoint) (ASP.NET) 或[向 Azure AD v2.0 终结点注册加载项](create-sso-office-add-ins-nodejs.md#register-the-add-in-with-azure-ad-v20-endpoint) (Node JS)，以及[配置加载项](create-sso-office-add-ins-aspnet.md#configure-the-add-in) (ASP.NET) 或[配置加载项](create-sso-office-add-ins-nodejs.md#configure-the-add-in) (Node JS)。
 - 在生产中，有几种情况会导致这个错误。 其中包括：
     - 用户在授予许可后，又撤销了许可。 您的代码应该撤回 `getAccessTokenAsync` 方法，使用选项`forceConsent: true`，但不能超过一次。
@@ -122,7 +122,7 @@ Office 主机无法获取加载项 Web 服务的访问令牌。
 ### <a name="invalid-or-missing-scope-permission-errors"></a>范围（权限）无效或缺失错误
 
 - 服务器端代码应向客户端发送 `403 Forbidden` 响应，向用户显示易记消息。如果可能，请在控制台或日志中记录此错误。
-- 请确保加载项清单 [Scopes](https://dev.office.com/reference/add-ins/manifest/scopes) 部分指定了所需的全部权限。 此外，还请确保加载项 Web 服务注册指定了相同的权限。 同时检查是否有拼写错误。 有关详细信息，请参阅[向 Azure AD v2.0 终结点注册加载项](create-sso-office-add-ins-aspnet.md#register-the-add-in-with-azure-ad-v20-endpoint) (ASP.NET) 或[向 Azure AD v2.0 终结点注册加载项](create-sso-office-add-ins-nodejs.md#register-the-add-in-with-azure-ad-v20-endpoint) (Node JS)，以及[配置加载项](create-sso-office-add-ins-aspnet.md#configure-the-add-in) (ASP.NET) 或[配置加载项](create-sso-office-add-ins-nodejs.md#configure-the-add-in) (Node JS)。
+- 请确保加载项清单 [Scopes](https://docs.microsoft.com/javascript/office/manifest/scopes?view=office-js) 部分指定了所需的全部权限。 此外，还请确保加载项 Web 服务注册指定了相同的权限。 同时检查是否有拼写错误。 有关详细信息，请参阅[向 Azure AD v2.0 终结点注册加载项](create-sso-office-add-ins-aspnet.md#register-the-add-in-with-azure-ad-v20-endpoint) (ASP.NET) 或[向 Azure AD v2.0 终结点注册加载项](create-sso-office-add-ins-nodejs.md#register-the-add-in-with-azure-ad-v20-endpoint) (Node JS)，以及[配置加载项](create-sso-office-add-ins-aspnet.md#configure-the-add-in) (ASP.NET) 或[配置加载项](create-sso-office-add-ins-nodejs.md#configure-the-add-in) (Node JS)。
 
 ### <a name="expired-or-invalid-token-errors-when-calling-microsoft-graph"></a>调用 Microsoft Graph 时令牌过期或无效错误
 
