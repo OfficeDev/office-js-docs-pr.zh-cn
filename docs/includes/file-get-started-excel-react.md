@@ -1,6 +1,6 @@
 # <a name="build-an-excel-add-in-using-react"></a>使用 React 生成 Excel 加载项
 
-在本文中，你将完成使用 React 和 Excel JavaScript API 生成 Excel 加载项的过程。
+在本文中，您将了解使用 React 和 Excel JavaScript API 生成 Excel 加载项的过程。
 
 ## <a name="environment"></a>环境
 
@@ -35,11 +35,11 @@
 
     - **选择一个项目类型：** `Office Add-in project using React framework`
     - **要将你的外接程序命名为什么?:** `My Office Add-in`
-    - **要支持哪一个 Office 客户端应用程序？：** `Excel`
+    - **要支持哪一个 Office 客户端应用?:** `Excel`
 
     ![Yeoman 生成器](../images/yo-office-excel-react.png)
     
-    完成向导后，生成器将创建项目并安装提供支持的 Node 组件。
+    完成向导后，生成器将创建项目并安装 Node 支持组件。
 
 4.  打开 **src/components/App.tsx**，搜索注释“更新填充颜色”，然后将填充颜色从“黄色”更改为“蓝色”，然后保存文件。 
 
@@ -74,13 +74,13 @@
     npm start
     ```
 
-2. 在 Excel 中，依次选择 **“主页”** 选项卡和功能区中的 **“显示任务窗格”** 按钮，以打开加载项任务窗格。
+2. 在 Excel 中，依次选择“主页”**** 选项卡和功能区中的“显示任务窗格”**** 按钮，以打开加载项任务窗格。
 
     ![Excel 加载项按钮](../images/excel-quickstart-addin-2b.png)
 
 3. 选择工作表中的任何一系列单元格。
 
-4. 在任务窗格中，选择 **“设置颜色”** 按钮，将选定区域的颜色设置为绿色。
+4. 在任务窗格中，选择 **“设置颜色”** 按钮，将选定区域的颜色设置为l蓝色。
 
     ![Excel 加载项](../images/excel-quickstart-addin-2c.png)
 
@@ -95,5 +95,5 @@
 
 * [Excel 加载项教程](../tutorials/excel-tutorial-create-table.md)
 * [Excel JavaScript API 核心概念](../excel/excel-add-ins-core-concepts.md)
-* [Excel 加载项代码示例](http://dev.office.com/code-samples#?filters=excel,office%20add-ins)
-* [Excel JavaScript API 参考](https://dev.office.com/reference/add-ins/excel/excel-add-ins-reference-overview)
+* [Excel 加载项代码示例](https://developer.microsoft.com/office/gallery/?filterBy=Samples,Excel)
+* [Excel JavaScript API 参考](https://docs.microsoft.com/javascript/office/overview/excel-add-ins-reference-overview?view=office-js)

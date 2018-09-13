@@ -2,17 +2,17 @@
 title: 使用搜索选项在 Word 加载项中查找文本
 description: ''
 ms.date: 7/20/2018
-ms.openlocfilehash: 9dcd5e42de9cc0816797a4a14b40a0e3e376f158
-ms.sourcegitcommit: eea7f2b1679cf9a209d35880b906e311bdf1359c
+ms.openlocfilehash: d81ffdcec49d59c175c3e5ecdf82ad1f796fdb3e
+ms.sourcegitcommit: 30435939ab8b8504c3dbfc62fd29ec6b0f1a7d22
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/26/2018
-ms.locfileid: "21254859"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "23944098"
 ---
 # <a name="use-search-options-to-find-text-in-your-word-add-in"></a>使用搜索选项在 Word 加载项中查找文本 
 
 加载项经常需要根据文档的文本进行操作。
-每个内容控件都会暴露搜索函数（包括 [ Body](https://dev.office.com/reference/add-ins/word/body)、[Paragraph](https://dev.office.com/reference/add-ins/word/paragraph)、[Range](https://dev.office.com/reference/add-ins/word/range)、[Table](https://dev.office.com/reference/add-ins/word/table)、[TableRow](https://dev.office.com/reference/add-ins/word/tablerow) 和基本的 [ContentControl](https://dev.office.com/reference/add-ins/word/contentcontrol) 对象）。 此函数接受表示要搜索的文本字符串（或 wldcard 表达式）和一个 [SearchOptions](https://dev.office.com/reference/add-ins/word/searchoptions) 对象。 它返回与搜索文本匹配的范围集合。
+每个内容控件都会暴露搜索函数（包括 [ Body](https://docs.microsoft.com/javascript/api/word/word.body?view=office-js)、[Paragraph](https://docs.microsoft.com/javascript/api/word/word.paragraph?view=office-js)、[Range](https://docs.microsoft.com/javascript/api/word/word.range?view=office-js)、[Table](https://docs.microsoft.com/javascript/api/word/word.table?view=office-js)、[TableRow](https://docs.microsoft.com/javascript/api/word/word.tablerow?view=office-js) 和基本的 [ContentControl](https://docs.microsoft.com/javascript/api/word/word.contentcontrol?view=office-js) 对象）。 此函数接受表示要搜索的文本字符串（或 wldcard 表达式）和一个 [SearchOptions](https://docs.microsoft.com/javascript/api/word/word.searchoptions?view=office-js) 对象。 它返回与搜索文本匹配的范围集合。
 
 ## <a name="search-options"></a>搜索选项
 搜索选项是一组布尔值，用于定义应如何处理搜索参数。 
@@ -41,7 +41,7 @@ ms.locfileid: "21254859"
 |除括号中区域内的字符以外的任何单个字符|[!x-z] |t[!a-m]ck 找到 tock 和 tuck，而不是 tack 或 tick。|
 |前一个字符或表达式出现 n 次|{n} |fe{2}d 找到 feed，而不是 fed。|
 |前一个字符或表达式至少出现 n 次|{n,} |fe{1,}d 找到 fed 和 feed。|
-|前一个字符或表达式出现 n 到 m 次|{n,m} |10{1,3} 找到10、100 和 1000。|
+|前一个字符或表达式出现 n 至 m 次|{n,m} |10{1,3} 找到 10、100 和 1000。|
 |前一个字符或表达式出现一次或多次|@ |lo@t 找到 lot 和 loot。|
 
 ### <a name="escaping-the-special-characters"></a>转义特殊字符
@@ -200,4 +200,4 @@ Word.run(function (context) {
 });
 ```
 
-更多信息请参见 [Word JavaScript 参考 API](https://dev.office.com/reference/add-ins/word/word-add-ins-reference-overview)。
+更多信息请参见 [Word JavaScript 参考 API](https://docs.microsoft.com/javascript/office/overview/word-add-ins-reference-overview?view=office-js)。
