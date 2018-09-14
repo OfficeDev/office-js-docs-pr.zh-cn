@@ -2,12 +2,12 @@
 title: 使用文本编辑器创建首个 Project 2013 任务窗格加载项
 description: ''
 ms.date: 12/04/2017
-ms.openlocfilehash: a09da8fd3ab4989afb8a6ec6e6b2ae226b6f18d5
-ms.sourcegitcommit: 4de2a1b62ccaa8e51982e95537fc9f52c0c5e687
+ms.openlocfilehash: ca00d1922ed3959ea9ab013f4d7f59ded084b241
+ms.sourcegitcommit: 30435939ab8b8504c3dbfc62fd29ec6b0f1a7d22
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/10/2018
-ms.locfileid: "22925547"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "23945699"
 ---
 # <a name="create-your-first-task-pane-add-in-for-project-2013-by-using-a-text-editor"></a>使用文本编辑器创建首个 Project 2013 任务窗格加载项
 
@@ -106,7 +106,7 @@ JSOMCall.html 示例使用 office.js 文件和 project-15.js 文件中包含的 
 
    下面的代码使用 Office.js 文件中的函数，获取应用上下文和文档信息。**text** 对象是 HTML 文件中 ** textarea** 控件的 ID。
     
-   **\_projDoc** 变量是使用 **ProjectDocument** 对象进行初始化。代码包含一些简单的错误处理函数，以及获取应用上下文和项目文档上下文属性的 **getContextValues** 函数。若要详细了解 Project 的 JavaScript 对象模型，请参阅[适用于 Office 的 JavaScript API](https://dev.office.com/reference/add-ins/javascript-api-for-office)。
+   **\_projDoc** 变量是使用 **ProjectDocument** 对象进行初始化。代码包含一些简单的错误处理函数，以及获取应用上下文和项目文档上下文属性的 **getContextValues** 函数。若要详细了解 Project 的 JavaScript 对象模型，请参阅[适用于 Office 的 JavaScript API](https://docs.microsoft.com/javascript/office/javascript-api-for-office?view=office-js)。
 
     ```javascript
     /*
@@ -168,11 +168,11 @@ JSOMCall.html 示例使用 office.js 文件和 project-15.js 文件中包含的 
     }
     ```
 
-   有关 Office.debug.js 文件中函数的信息，请参见 [JavaScript API for Office](https://dev.office.com/reference/add-ins/javascript-api-for-office)。例如，**getDocumentUrl** 函数获取打开的项目的 URL 或文件路径。
+   有关 Office.debug.js 文件中函数的信息，请参见 [JavaScript API for Office](https://docs.microsoft.com/javascript/office/javascript-api-for-office?view=office-js)。例如，**getDocumentUrl** 函数获取打开的项目的 URL 或文件路径。
     
 3. 添加调用 Office.js 和 Project-15.js 中异步函数的 JavaScript 函数，以获取选定数据：
     
-   - 例如，**getSelectedDataAsync** 是 Office.js 中的常规函数，用于获取选定数据的无格式文本。有关详细信息，请参阅 [AsyncResult 对象](https://dev.office.com/reference/add-ins/shared/asyncresult)。
+   - 例如，**getSelectedDataAsync** 是 Office.js 中的常规函数，用于获取选定数据的无格式文本。有关详细信息，请参阅 [AsyncResult 对象](https://docs.microsoft.com/javascript/api/office/office.asyncresult?view=office-js)。
     
    - Project-15.js 中的 **getSelectedTaskAsync** 函数用于获取选定任务的 GUID。同样，**getSelectedResourceAsync** 函数用于获取选定资源的 GUID。如果在未选择任务或资源时调用这些函数，函数会显示未定义错误。
     
@@ -188,7 +188,7 @@ JSOMCall.html 示例使用 office.js 文件和 project-15.js 文件中包含的 
    - 如果项目与 SharePoint 任务列表同步，则 **getWSSUrlAsync** 函数获取任务列表的 URL 和名称。如果项目不与 SharePoint 任务列表同步，则 **getWSSUrlAsync** 函数错误关闭。
     
      > [!NOTE]
-     > 若要获取任务列表的 SharePoint URL 和名称，建议将 **getProjectFieldAsync** 函数与 [ProjectProjectFields](https://dev.office.com/reference/add-ins/shared/projectprojectfields-enumeration) 枚举中的 **WSSUrl** 和 **WSSList** 常量配合使用。
+     > 若要获取任务列表的 SharePoint URL 和名称，建议将 **getProjectFieldAsync** 函数与 [ProjectProjectFields](https://docs.microsoft.com/javascript/api/office/office.projectprojectfields?view=office-js) 枚举中的 **WSSUrl** 和 **WSSList** 常量配合使用。
 
    以下代码的每个函数中都包含由 `function (asyncResult)` 指定的匿名函数，该函数是获取异步结果的回叫。你可以使用命名函数，而不是匿名函数，前者有助于实现复杂外接程序的可维护性。
 
@@ -766,7 +766,8 @@ JSOMCall.html 示例使用 office.js 文件和 project-15.js 文件中包含的 
     - 优先级： `500`
     - 备注：此为任务 T2 的备注。 仅为测试备注。 若为实际备注，应包含一些真实信息。
 
-13. 选择 **“getWSSUrlAsync”**  按钮。如果项目是以下类型之一，结果中显示任务列表 URL 和名称。
+13. 选择 **getWSSUrlAsync** 按钮.。如果项目是以下类型之一，结果中显示任务列表 URL 和名称。
+
     
     - 导入到 Project Server 的 SharePoint 任务列表。
     - 导入到 Project Professional，再保存回 SharePoint（未使用 Project Server）的 SharePoint 任务列表。
@@ -1095,7 +1096,7 @@ function logMethodError(methodName, errorName, errorMessage, actionMessage) {
 
 - [Project 任务窗格加载项](../project/project-add-ins.md)
 - [了解外接程序的 JavaScript API](../develop/understanding-the-javascript-api-for-office.md)
-- [适用于 Office 加载项的 JavaScript API](https://dev.office.com/reference/add-ins/javascript-api-for-office)
+- [Office 加载项的 JavaScript API](https://docs.microsoft.com/javascript/office/javascript-api-for-office?view=office-js)
 - [Office 加载项清单的架构参考 (v1.1)](../develop/add-in-manifests.md)     
 - [Project 2013 SDK 下载](https://www.microsoft.com/download/details.aspx?id=30435%20)
     

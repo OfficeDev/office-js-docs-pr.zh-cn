@@ -1,22 +1,22 @@
 ---
-title: 在 Visual Studio 中将 Office 加载项项目转换为使用 TypeScript
+title: 在 Visual Studio 中将 Office 加载项项目转换未使用 TypeScript
 description: ''
 ms.date: 01/19/2018
-ms.openlocfilehash: 783d47e04fc6d28604501ac77345470c26d36c89
-ms.sourcegitcommit: 4de2a1b62ccaa8e51982e95537fc9f52c0c5e687
+ms.openlocfilehash: 894cdcb8360a26dfb0f2d5ddbf06cbd7c52d5623
+ms.sourcegitcommit: 30435939ab8b8504c3dbfc62fd29ec6b0f1a7d22
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/10/2018
-ms.locfileid: "22925379"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "23945346"
 ---
 # <a name="convert-an-office-add-in-project-in-visual-studio-to-typescript"></a>在 Visual Studio 中将 Office 加载项项目转换为使用 TypeScript
 
 可以使用 Visual Studio 中的 Office 加载项模板，创建使用 JavaScript 的加载项，再将加载项项目转换为使用 TypeScript。 使用 Visual Studio 创建加载项项目，无需从头开始创建 Office 加载项 TypeScript 项目。 
 
-本文介绍了如何使用 Visual Studio 创建 Excel 加载项，再将加载项项目从使用 JavaScript 转换为使用 TypeScript。 可以按照相同的过程操作，在 Visual Studio 中将其他类型的 Office 加载项 JavaScript 项目转换为使用 TypeScript。
+本文介绍了如何使用 Visual Studio 创建 Excel 加载项，再将加载项项目从使用 JavaScript 转换为使用 TypeScript。 可以按照相同的过程操作，在 Visual Studio 中将其他类型的 Office 加载项 JavaScript 项目转换为使用 TypeScript 。
 
 > [!NOTE]
-> 若不想使用 Visual Studio 创建 Office 加载项 TypeScript 项目，请按照任何 [5 分钟快速入门](../index.yml)的“任意编辑器”部分中的说明操作，并在[适用于 Office 加载项的 Yeoman 生成器](https://github.com/OfficeDev/generator-office)出现提示时选择 `TypeScript`。
+> 若不想使用 Visual Studio 创建 Office 加载项 TypeScript 项目，请按照任何 [5 分钟快速入门](../index.yml) 的“任意编辑器”部分中的说明操作，并在 [Office 加载项的 Yeoman 生成器](https://github.com/OfficeDev/generator-office) 出现提示时选择 `TypeScript` 。
 
 ## <a name="prerequisites"></a>先决条件
 
@@ -30,7 +30,7 @@ ms.locfileid: "22925379"
     > [!NOTE]
     > 虽然 TypeScript 应该会随 Visual Studio 2017 一起默认安装，但可以[使用 Visual Studio 安装程序](https://docs.microsoft.com/visualstudio/install/modify-visual-studio)确认它是否已安装。 在 Visual Studio 安装程序中，选择“单个组件”**** 选项卡，再确认是否已在“SDK、库和框架”**** 下选中“TypeScript 2.3 SDK”****。
 
-- Excel 2016
+- Excel 2016 或更高版本
 
 ## <a name="create-the-add-in-project"></a>创建加载项项目
 
@@ -121,7 +121,7 @@ declare var fabric: any;
             messageBanner = new fabric.MessageBanner(element);
             messageBanner.hideBanner();
             
-            // If not using Excel 2016, use fallback logic.
+            // If not using Excel 2016 or later, use fallback logic.
             if (!Office.context.requirements.isSetSupported('ExcelApi', 1.1)) {
                 $("#template-description").text("This sample will display the value of the cells that you have selected in the spreadsheet.");
                 $('#button-text').text("Display!");
