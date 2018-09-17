@@ -2,12 +2,12 @@
 title: 在 iPad 和 Mac 上调试 Office 外接程序
 description: ''
 ms.date: 03/21/2018
-ms.openlocfilehash: 24a95799ba400aa6ecf93ee5431cf3fd64779d75
-ms.sourcegitcommit: 4de2a1b62ccaa8e51982e95537fc9f52c0c5e687
+ms.openlocfilehash: 6f6ba8744a6510a37166325595407c990a53b079
+ms.sourcegitcommit: 30435939ab8b8504c3dbfc62fd29ec6b0f1a7d22
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/10/2018
-ms.locfileid: "22925204"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "23945034"
 ---
 # <a name="debug-office-add-ins-on-ipad-and-mac"></a>在 iPad 和 Mac 上调试 Office 外接程序
 

@@ -2,12 +2,12 @@
 title: 在 Office 加载项中授权外部服务
 description: ''
 ms.date: 12/04/2017
-ms.openlocfilehash: 12f6f80b1679eeec8aec569b534aca074610e929
-ms.sourcegitcommit: 4de2a1b62ccaa8e51982e95537fc9f52c0c5e687
+ms.openlocfilehash: ee88019e85ba37f24c81fd7bf3663ee7cf066d45
+ms.sourcegitcommit: 30435939ab8b8504c3dbfc62fd29ec6b0f1a7d22
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/10/2018
-ms.locfileid: "22925288"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "23945741"
 ---
 # <a name="authorize-external-services-in-your-office-add-in"></a>在 Office 加载项中授权外部服务
 
@@ -29,7 +29,7 @@ OAuth 流旨在保护应用的标识和授权。授权代码流提供了*客户�
 > [!NOTE]
 > 还可以视需要使用中间人服务，从而执行授权操作，并将访问令牌传递给加载项。 若要详细了解此方案，请参阅本文稍后将介绍的**中间人服务**部分。
 
-## <a name="authorization-to-microsoft-graph"></a>授权访问 Microsoft Graph
+## <a name="authorization-to-microsoft-graph"></a>授予访问 Microsoft Graph
 
 如果外部服务可以通过 Microsoft Graph 访问（如 Office 365 或 OneDrive），便能使用[为 Office 加载项启用单一登录](authorize-to-microsoft-graph.md)及其相关文章中介绍的单一登录系统，既可以为用户提供最佳体验，也能够最大限度地简化自己的开发体验。 本文介绍的技术非常适用于不可通过 Microsoft Graph 访问的外部服务。 不过，这些服务*可*用于访问 Microsoft Graph，就这一点而言，可能会更青睐它们，而无视单一登录具有的优势。 例如，单一登录系统需要使用服务器端代码，因此无法用于真正的单页应用程序。 此外，并不是所有平台都支持单一登录系统。
 

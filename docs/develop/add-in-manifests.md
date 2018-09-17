@@ -2,12 +2,12 @@
 title: Office 外接程序 XML 清单
 description: ''
 ms.date: 02/09/2018
-ms.openlocfilehash: 449c6ae3f98383ddff5f866cc47d19ea82ea89c2
-ms.sourcegitcommit: 4de2a1b62ccaa8e51982e95537fc9f52c0c5e687
+ms.openlocfilehash: 5c24f0c773195ee7b2ed5c6fc9eccfd5840e2651
+ms.sourcegitcommit: 30435939ab8b8504c3dbfc62fd29ec6b0f1a7d22
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/10/2018
-ms.locfileid: "22925400"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "23944930"
 ---
 # <a name="office-add-ins-xml-manifest"></a>Office 加载项 XML 清单
 
@@ -44,7 +44,7 @@ Office 外接程序的 XML 清单文件描述，当最终用户安装外接程�
 | [ProviderName][]                                                                             |    X    |     X     |    X    |
 | [DefaultLocale][]                                                                            |    X    |     X     |    X    |
 | [DisplayName][]                                                                              |    X    |     X     |    X    |
-| [Description][]                                                                              |    X    |     X     |    X    |
+| [说明][]                                                                              |    X    |     X     |    X    |
 | [IconUrl][]                                                                                  |    X    |     X     |    X    |
 | [HighResolutionIconUrl][]                                                                    |    X    |     X     |    X    |
 | [DefaultSettings (ContentApp)][]<br/>[DefaultSettings (TaskPaneApp)][]                       |    X    |     X     |         |
@@ -63,58 +63,58 @@ _\*Office 加载项清单架构版本 1.1 中新增_
 
 <!-- Links for above table -->
 
-[officeapp]: https://dev.office.com/reference/add-ins/manifest/officeapp
-[ID]: https://dev.office.com/reference/add-ins/manifest/id
-[version]: https://dev.office.com/reference/add-ins/manifest/version
-[providername]: https://dev.office.com/reference/add-ins/manifest/providername
-[defaultlocale]: https://dev.office.com/reference/add-ins/manifest/defaultlocale
-[displayname]: https://dev.office.com/reference/add-ins/manifest/displayname
-[description]: https://dev.office.com/reference/add-ins/manifest/description
-[iconurl]: https://dev.office.com/reference/add-ins/manifest/iconurl
-[highresolutioniconurl]: https://dev.office.com/reference/add-ins/manifest/highresolutioniconurl
-[defaultsettings (contentapp)]: https://dev.office.com/reference/add-ins/manifest/defaultsettings
-[defaultsettings (taskpaneapp)]: https://dev.office.com/reference/add-ins/manifest/defaultsettings
-[sourcelocation (contentapp)]: https://dev.office.com/reference/add-ins/manifest/sourcelocation
-[sourcelocation (taskpaneapp)]: https://dev.office.com/reference/add-ins/manifest/sourcelocation
+[officeapp]: https://docs.microsoft.com/javascript/office/manifest/officeapp?view=office-js
+[ID]: https://docs.microsoft.com/javascript/office/manifest/id
+[version]: https://docs.microsoft.com/javascript/office/manifest/version
+[providername]: https://docs.microsoft.com/javascript/office/manifest/providername
+[defaultlocale]: https://docs.microsoft.com/javascript/office/manifest/defaultlocale
+[displayname]: https://docs.microsoft.com/javascript/office/manifest/displayname
+[description]: https://docs.microsoft.com/javascript/office/manifest/description
+[iconurl]: https://docs.microsoft.com/javascript/office/manifest/iconurl
+[highresolutioniconurl]: https://docs.microsoft.com/javascript/office/manifest/highresolutioniconurl
+[defaultsettings (contentapp)]: https://docs.microsoft.com/javascript/office/manifest/defaultsettings
+[defaultsettings (taskpaneapp)]: https://docs.microsoft.com/javascript/office/manifest/defaultsettings
+[sourcelocation (contentapp)]: https://docs.microsoft.com/javascript/office/manifest/sourcelocation
+[sourcelocation (taskpaneapp)]: https://docs.microsoft.com/javascript/office/manifest/sourcelocation
 [desktopsettings]: https://msdn.microsoft.com/library/da9fd085-b8cc-2be0-d329-2aa1ef5d3f1c(Office.15).aspx
 [sourcelocation (mailapp)]: http://msdn.microsoft.com/library/3792d389-bebd-d19a-9d90-35b7a0bfc623%28Office.15%29.aspx
-[permissions (contentapp)]: https://dev.office.com/reference/add-ins/manifest/permissions
-[permissions (taskpaneapp)]: https://dev.office.com/reference/add-ins/manifest/permissions
-[permissions (mailapp)]: https://dev.office.com/reference/add-ins/manifest/permissions
-[rule (rulecollection)]: https://dev.office.com/reference/add-ins/manifest/rule
-[rule (mailapp)]: https://dev.office.com/reference/add-ins/manifest/rule
-[requirements (mailapp)*]: https://dev.office.com/reference/add-ins/manifest/requirements
-[set*]: https://dev.office.com/reference/add-ins/manifest/set
-[sets (mailapprequirements)*]: https://dev.office.com/reference/add-ins/manifest/sets
-[form*]: https://dev.office.com/reference/add-ins/manifest/form
-[formsettings*]: https://dev.office.com/reference/add-ins/manifest/formsettings
-[sets (requirements)*]: https://dev.office.com/reference/add-ins/manifest/sets
-[hosts*]: https://dev.office.com/reference/add-ins/manifest/hosts
+[permissions (contentapp)]: https://docs.microsoft.com/javascript/office/manifest/permissions
+[permissions (taskpaneapp)]: https://docs.microsoft.com/javascript/office/manifest/permissions
+[permissions (mailapp)]: https://docs.microsoft.com/javascript/office/manifest/permissions
+[rule (rulecollection)]: https://docs.microsoft.com/javascript/office/manifest/rule
+[rule (mailapp)]: https://docs.microsoft.com/javascript/office/manifest/rule
+[requirements (mailapp)*]: https://docs.microsoft.com/javascript/office/manifest/requirements
+[set*]: https://docs.microsoft.com/javascript/office/manifest/set
+[sets (mailapprequirements)*]: https://docs.microsoft.com/javascript/office/manifest/sets
+[form*]: https://docs.microsoft.com/javascript/office/manifest/form
+[formsettings*]: https://docs.microsoft.com/javascript/office/manifest/formsettings
+[sets (requirements)*]: https://docs.microsoft.com/javascript/office/manifest/sets
+[hosts*]: https://docs.microsoft.com/javascript/office/manifest/hosts
 
 ## <a name="hosting-requirements"></a>托管要求
 
-所有图像 URI（如用于[加载项命令][]的 URI）都必须支持缓存。 托管图像的服务器不得返回在 HTTP 响应中指定 `no-cache`、`no-store` 或类似选项的 `Cache-Control` 头。
+所有 URI，如用于的图像 [外接程序命令][]，必须支持缓存。承载图像的服务器不应该返回 `Cache-Control` 标头指定 `no-cache`，`no-store`，或类似的 HTTP 响应中的选项。
 
-所有 URL（如 [SourceLocation](https://dev.office.com/reference/add-ins/manifest/sourcelocation) 元素中指定的源文件位置）都应**受 SSL 保护 (HTTPS)**。 [!include[HTTPS guidance](../includes/https-guidance.md)]
+所有 URL（如 [SourceLocation](https://docs.microsoft.com/javascript/office/manifest/sourcelocation) 元素中指定的源文件位置）都应**受 SSL 保护 (HTTPS)**。 [!include[HTTPS guidance](../includes/https-guidance.md)]
 
 ## <a name="best-practices-for-submitting-to-appsource"></a>关于提交到 AppSource 的最佳做法
 
 确保外接程序 ID 有效且具有唯一 GUID。Web 上提供可用于创建唯一 GUID 的各种 GUID 生成器工具。
 
-提交到 AppSource 的加载项还必须包括 [SupportUrl](https://dev.office.com/reference/add-ins/manifest/supporturl) 元素。 有关详细信息，请参阅[提交到 AppSource 的应用和加载项的验证策略](https://docs.microsoft.com/office/dev/store/validation-policies)。
+提交到 AppSource 的加载项还必须包括 [SupportUrl](https://docs.microsoft.com/javascript/office/manifest/supporturl) 元素。 有关详细信息，请参阅[提交到 AppSource 的应用和加载项的验证策略](https://docs.microsoft.com/office/dev/store/validation-policies)。
 
-仅使用 [AppDomain](https://dev.office.com/reference/add-ins/manifest/appdomains) 元素指定域（除了在 [SourceLocation](https://dev.office.com/reference/add-ins/manifest/sourcelocation) 元素中指定的用于身份验证方案的域）。
+仅使用 [AppDomain](https://docs.microsoft.com/javascript/office/manifest/appdomains) 元素指定域（除了在 [SourceLocation](https://docs.microsoft.com/javascript/office/manifest/sourcelocation) 元素中指定的用于身份验证方案的域）。
 
 ## <a name="specify-domains-you-want-to-open-in-the-add-in-window"></a>指定要在加载项窗口中打开的域
 
-在 Office Online 中运行时，可以将任务窗格导航到任何 URL。 但是，在桌面平台中，如果你的加载项尝试转到托管起始页（如清单文件的 [SourceLocation](https://dev.office.com/reference/add-ins/manifest/sourcelocation) 元素中所指定的）的域之外的域中的 URL，则该 URL 将在 Office 主机应用程序的加载项窗格外的新浏览器窗口中打开。
+在 Office Online 中运行时，可以将任务窗格导航到任何 URL。 但是，在桌面平台中，如果你的加载项尝试转到托管起始页（如清单文件的 [SourceLocation](https://docs.microsoft.com/javascript/office/manifest/sourcelocation) 元素中所指定的）的域之外的域中的 URL，则该 URL 将在 Office 主机应用程序的加载项窗格外的新浏览器窗口中打开。
 
-若要重写此（桌面 Office）操作，请在清单文件的 [AppDomains](https://dev.office.com/reference/add-ins/manifest/appdomains) 元素中指定的域列表中指定要在加载项窗口中打开的每个域。 如果外接程序尝试转到列表中的域中的 URL，则其将在桌面 Office 和 Office Online 的任务窗格中打开。 如果其尝试转到列表之外的 URL，则在桌面 Office 中，该 URL 将在新的浏览器窗口中（加载项窗格之外）打开。
+若要重写此（桌面 Office）操作，请在清单文件的 [AppDomains](https://docs.microsoft.com/javascript/office/manifest/appdomains)元素中指定的域列表中指定要在加载项窗口中打开的每个域。 如果外接程序尝试转到列表中的域中的 URL，则其将在桌面 Office 和 Office Online 的任务窗格中打开。 如果其尝试转到列表之外的 URL，则在桌面 Office 中，该 URL 将在新的浏览器窗口中（加载项窗格之外）打开。
 
 > [!NOTE]
 > 这个操作仅适用于外接程序的根窗格。 如果外接程序页面中嵌入了 iframe，则 iframe 可以定向到任何 URL，不管其是否列在 **AppDomains**，甚至在桌面 Office。
 
-下面的 XML 清单示例在 `https://www.contoso.com` 域中托管其加载项主页，该域如 **SourceLocation** 元素中指定的那样。 它还指定 **AppDomains** 元素列表内的 [AppDomain](https://dev.office.com/reference/add-ins/manifest/appdomain) 元素中的 `https://www.northwindtraders.com` 域。 如果加载项转到 www.northwindtraders.com 域中的页面，则该页面将在外接程序窗格中打开，甚至在 Office 桌面中打开。
+下面的 XML 清单示例在 `https://www.contoso.com` 域中托管其加载项主页，该域如 **SourceLocation**元素中指定的那样。 它还指定 `https://www.northwindtraders.com` AppDomain元素中的[域](https://docs.microsoft.com/javascript/office/manifest/appdomain)，其位于**AppDomains**元素列表内。 如果加载项转到 www.northwindtraders.com 域中的页面，则该页面将在外接程序窗格中打开，甚至在 Office 桌面中打开。
 
 ```XML
 <?xml version="1.0" encoding="UTF-8"?>
@@ -135,7 +135,7 @@ _\*Office 加载项清单架构版本 1.1 中新增_
 </OfficeApp>
 ```
 
-## <a name="manifest-v11-xml-file-examples-and-schemas"></a>清单 v1.1 XML 文件示例和架构
+## <a name="manifest-v11-xml-file-examples-and-schemas"></a>Manifest v1.1 XML 文件示例和架构
 下面各部分展示了内容加载项、任务窗格加载项和 Outlook 加载项的清单 v1.1 XML 文件示例。
 
 # <a name="task-panetabtabid-1"></a>[任务窗格](#tab/tabid-1)

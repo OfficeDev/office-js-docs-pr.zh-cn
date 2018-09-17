@@ -2,12 +2,12 @@
 title: Office 加载项的可用性测试
 description: ''
 ms.date: 01/23/2018
-ms.openlocfilehash: 4b21af2502c9357e8a7d2c953cd5182833577ac9
-ms.sourcegitcommit: 4de2a1b62ccaa8e51982e95537fc9f52c0c5e687
+ms.openlocfilehash: 0c90cc4e573d24f9c7c4e5c4f6a77853ec9fc93e
+ms.sourcegitcommit: 30435939ab8b8504c3dbfc62fd29ec6b0f1a7d22
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/10/2018
-ms.locfileid: "22925449"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "23945602"
 ---
 # <a name="usability-testing-for-office-add-ins"></a>Office 加载项的可用性测试
 
@@ -78,7 +78,7 @@ ms.locfileid: "22925449"
 
 如果计划测试外接程序的实时生成，以下问题可以筛选出可以执行此任务的用户。 
 
-**此测试要求安装 Microsoft PowerPoint 2016。是否已安装 PowerPoint 2016？**  
+**此测试需要具有最新版本的 Microsoft PowerPoint。您是否有最新版本的 PowerPoint？**  
  a. 是 [*必选*]  
  b. 否 [*拒绝*]  
  c. 不知道 [*拒绝*]  

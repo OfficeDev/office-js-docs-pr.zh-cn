@@ -1,21 +1,21 @@
 ---
-title: 更新到最新的适用于 Office 的 JavaScript API 库和第 1.1 版加载项清单架构
+title: 更新到适用于 Office 的 JavaScript API 最新库和第 1.1 版加载项清单架构
 description: 将 Office 加载项项目中使用的 JavaScript 文件（Office.js 和特定于应用的 .js 文件）和加载项清单验证文件更新到版本 1.1。
 ms.date: 12/04/2017
-ms.openlocfilehash: 2ebfa5e908f278fd3abe754e536625fe6e7d9870
-ms.sourcegitcommit: bc68b4cf811b45e8b8d1cbd7c8d2867359ab671b
+ms.openlocfilehash: c597c7456da2749d1061ab3e2c5bf9f41800a9cf
+ms.sourcegitcommit: 30435939ab8b8504c3dbfc62fd29ec6b0f1a7d22
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "21703782"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "23944396"
 ---
-# <a name="update-to-the-latest-javascript-api-for-office-library-and-version-11-add-in-manifest-schema"></a>更新到最新的适用于 Office 的 JavaScript API 库和第 1.1 版加载项清单架构
+# <a name="update-to-the-latest-javascript-api-for-office-library-and-version-11-add-in-manifest-schema"></a>更新到适用于 Office 的 JavaScript API 最新库和第 1.1 版加载项清单架构
 
 本文介绍了如何将 Office 外接程序项目中的 JavaScript 文件（Office.js 和特定于应用程序的 .js 文件）和外接程序清单验证文件更新到版本 1.1。
 
 ## <a name="use-the-most-up-to-date-project-files"></a>使用最新项目文件
 
-如果您使用 Visual Studio 来开发您的外接程序，以使用适用于 Office 的 JavaScript API 的 [最新 API 成员](https://dev.office.com/reference/add-ins/what's-changed-in-the-javascript-api-for-office)和 [外接程序清单 v1.1 功能](../develop/add-in-manifests.md)（根据 offappmanifest-1.1.xsd 进行了验证），则您需要下载并安装 [Visual Studio 2015 和最新的 Office 开发人员工具](https://www.visualstudio.com/features/office-tools-vs)。
+如果您使用 Visual Studio 来开发您的外接程序，以使用适用于 Office 的 JavaScript API 的 [最新 API 成员](https://docs.microsoft.com/javascript/office/what's-changed-in-the-javascript-api-for-office?view=office-js)和 [外接程序清单 v1.1 功能](../develop/add-in-manifests.md)（根据 offappmanifest-1.1.xsd 进行了验证），则您需要下载并安装 [Visual Studio 2015 和最新的 Office 开发人员工具](https://www.visualstudio.com/features/office-tools-vs)。
 
 如果您使用文本编辑器或 Visual Studio 以外的 IDE 开发您的 外接程序，则您需要针对在 外接程序 的清单中引用的 Office.js 和架构版本，将引用更新到 CDN。
 
@@ -59,12 +59,12 @@ ms.locfileid: "21703782"
     ```
 
    > [!NOTE] 
-   > 在 CDN URL 中，`office.js` 前面的 `/1/` 指定在第 1.1 版 Office.js 中使用最新增量版本。   
+   > 在 CDN URL 中，`/1/`  前面的`office.js`指定在第 1.1 版 Office.js 中使用最新增量版本。   
 
 
 ### <a name="update-the-manifest-file-in-your-project-to-use-schema-version-11"></a>将项目中的清单文件更新为使用第 1.1 版架构
 
-在外接程序清单文件中，更新 **OfficeApp** 元素的 **xmlns** 属性，将版本值更改为 `1.1`（除 **xmlns** 属性以外的属性保持不变）。
+在外接程序清单文件中，更新 **OfficeApp**元素的 **xmlns**属性，将版本值更改为 `1.1`（除 **xmlns**属性以外的属性保持不变）。
     
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -78,7 +78,7 @@ ms.locfileid: "21703782"
 ```
 
 > [!NOTE] 
-> 将加载项清单架构更新为第 1.1 版后，需要删除 **Capabilities** 和 **Capability** 元素，并将它们替换为 [Hosts](https://dev.office.com/reference/add-ins/manifest/hosts) 和 [Host](https://dev.office.com/reference/add-ins/manifest/hosts) 元素或 [Requirements 和 Requirement 元素](specify-office-hosts-and-api-requirements.md)。
+> 将加载项清单架构更新为第 1.1 版后，需要删除 **Capabilities**和 **Capability**元素，并将它们替换为 [Hosts](https://docs.microsoft.com/javascript/office/manifest/hosts?view=office-js)和 [Host](https://docs.microsoft.com/javascript/office/manifest/host?view=office-js)元素或 [Requirements 和 Requirement 元素](specify-office-hosts-and-api-requirements.md)。
 
 ## <a name="updating-an-office-add-in-project-created-with-a-text-editor-or-other-ide"></a>更新使用文本编辑器或其他 IDE 创建的 Office 加载项项目
 
@@ -89,7 +89,7 @@ ms.locfileid: "21703782"
 你不需要适用于 Office 的 JavaScript API 文件（Office.js 和特定于应用程序的.js 文件）的本地副本来开发 Office 加载项（在运行时引用 Office.js 的 CDN 会下载必要的文件），但如果你想要库文件的本地副本，你可以使用 [NuGet 命令行实用程序](http://docs.nuget.org/consume/installing-nuget)和 `Install-Package Microsoft.Office.js` 命令来下载它们。
 
 > [!NOTE] 
-> 若要获取 v1.1 加载项清单的 XSD（XML 架构定义）副本，请参阅 [Office 加载项清单的架构参考 (v1.1)](../develop/add-in-manifests.md) 中列出的内容。
+> 若要获取 v1.1 加载项清单的 XSD（XML 架构定义）副本，请参阅 [Office 加载项清单的架构参考（v1.1）](../develop/add-in-manifests.md)中列出的内容。
 
 
 ### <a name="update-the-javascript-api-for-office-library-files-in-your-project-to-use-the-newest-release"></a>将项目中适用于 Office 的 JavaScript API 库文件更新为使用最新版本
@@ -103,11 +103,11 @@ ms.locfileid: "21703782"
     ```
 
    > [!NOTE] 
-   > 在 CDN URL 中，`office.js` 前面的 `/1/` 指定在第 1.1 版 Office.js 中使用最新增量版本。   
+   > 在 CDN URL 中，`/1/`前面的`office.js`指定在第 1.1 版 Office.js 中使用最新增量版本。   
 
 ### <a name="update-the-manifest-file-in-your-project-to-use-schema-version-11"></a>将项目中的清单文件更新为使用第 1.1 版架构
 
-在外接程序清单文件中，更新 **OfficeApp** 元素的 **xmlns** 属性，将版本值更改为 `1.1`（除 **xmlns** 属性以外的属性保持不变）。
+在外接程序清单文件中，更新 **OfficeApp**元素的 **xmlns**属性，将版本值更改为 `1.1`（除 **xmlns**属性以外的属性保持不变）。
     
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -121,13 +121,13 @@ ms.locfileid: "21703782"
 ```
 
 > [!NOTE] 
-> 将加载项清单架构更新为第 1.1 版后，需要删除 **Capabilities** 和 **Capability** 元素，并将它们替换为 [Hosts](https://dev.office.com/reference/add-ins/manifest/hosts) 和 [Host](https://dev.office.com/reference/add-ins/manifest/hosts) 元素或 [Requirements 和 Requirement 元素](specify-office-hosts-and-api-requirements.md)。
+> 将加载项清单架构更新为第 1.1 版后，需要删除 **Capabilities**和 **Capability**元素，并将它们替换为 [Hosts](https://docs.microsoft.com/javascript/office/manifest/hosts?view=office-js)和 [Host](https://docs.microsoft.com/javascript/office/manifest/host?view=office-js)元素或 [Requirements 和 Requirement 元素](specify-office-hosts-and-api-requirements.md)。
     
 
 ## <a name="see-also"></a>另请参阅
 
 - [指定 Office 主机和 API 要求](specify-office-hosts-and-api-requirements.md) 
 - [了解适用于 Office 的 JavaScript API](understanding-the-javascript-api-for-office.md)    
-- [适用于 Office 的 JavaScript API](https://dev.office.com/reference/add-ins/javascript-api-for-office)   
+- [适用于 Office 的 JavaScript API](https://docs.microsoft.com/javascript/office/javascript-api-for-office?view=office-js)   
 - [Office 外接程序清单的架构参考 (v1.1)](../develop/add-in-manifests.md)
     

@@ -2,12 +2,12 @@
 title: 在 Visual Studio 中创建和调试 Office 加载项
 description: ''
 ms.date: 03/14/2018
-ms.openlocfilehash: c903f3d475e46ee09a3c350f79c1e3d671ae5923
-ms.sourcegitcommit: 28fc652bded31205e393df9dec3a9dedb4169d78
+ms.openlocfilehash: 2e5c08a72ec97e26000d6ea7e53dd1d0f2c9e6dc
+ms.sourcegitcommit: 30435939ab8b8504c3dbfc62fd29ec6b0f1a7d22
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/23/2018
-ms.locfileid: "22927445"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "23945353"
 ---
 # <a name="create-and-debug-office-add-ins-in-visual-studio"></a>在 Visual Studio 中创建和调试 Office 加载项
 
@@ -24,7 +24,7 @@ ms.locfileid: "22927445"
 
 1. 在 Visual Studio 菜单栏中，依次选择“文件”**** > “新建”**** > “项目”****。
     
-2. 在“**Visual C#**”或“**Visual Basic**”下的项目类型列表中，展开“**Office/SharePoint**”，选择“**Web 外接程序**”，然后选择外接程序项目之一。  
+2. 在**Visual C#** 或**Visual Basic**下的项目类型列表中，展开**Office/SharePoint**，选择**Web 外接程序**，然后选择外接程序项目之一。  
     
 3. 命名此项目，再选择“确定”**** 以创建项目。
     
@@ -154,12 +154,12 @@ Web 应用程序项目包含一个可用于入门的默认 HTML 页和 Javascrip
     
 2. 在计算机上创建一组允许加载项在主机应用程序中显示的注册表项。
     
-3. 生成网络应用程序项目，然后将其部署到本地 IIS Web 服务器http://localhost) 
+3. 生成网络应用程序项目，然后将其部署到本地 IIS Web 服务器（http://localhost) 
     
 接下来，Visual Studio 会执行以下操作：
 
 
-1. 修改 XML 显示文件的 [SourceLocation](https://dev.office.com/reference/add-ins/manifest/sourcelocation)元素，通过将 ～remoteAppUrl 标记替换为起始页的完全限定地址（例如， http://localhost/MyAgave.html)）。
+1. 修改 XML 显示文件的 [SourceLocation](https://docs.microsoft.com/javascript/office/manifest/sourcelocation?view=office-js)元素，通过将 ～remoteAppUrl 标记替换为起始页的完全限定地址（例如，http://localhost/MyAgave.html)）。
     
 2. 在 IIS Express 中启动 Web 应用程序项目。
     
@@ -167,7 +167,7 @@ Web 应用程序项目包含一个可用于入门的默认 HTML 页和 Javascrip
     
 生成项目时，Visual Studio 不会显示“**输出**”窗口中的验证错误。Visual Studio 报告“**错误列表**”窗口中出现的错误和警告。通过在代码和文本编辑器中显示不同颜色的波浪下划线（称为波浪线），Visual Studio 还报告验证错误。通过这些标志，你可以得知 Visual Studio 在代码中检测到的问题。有关详细信息，请参阅 [代码和文本编辑器](https://msdn.microsoft.com/library/se2f663y(v=vs.140).aspx)。有关如何启用或禁用验证的详细信息，请参阅： 
 
-- [选项、文本编辑器、JavaScript 和 IntelliSense](https://msdn.microsoft.com/library/hh362485(v=vs.140).aspx)
+- [选项、文本编辑器、JavaScript 和 IntelliSense](https://docs.microsoft.com/visualstudio/ide/reference/options-text-editor-javascript-intellisense?view=vs-2015)
     
 - [操作方法：为 Visual Web Developer 中的 HTML 编辑设置验证选项](https://msdn.microsoft.com/library/0byxkfet(v=vs.100).aspx)
     

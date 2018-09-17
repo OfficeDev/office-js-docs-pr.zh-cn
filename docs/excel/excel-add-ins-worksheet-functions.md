@@ -2,12 +2,12 @@
 title: 使用 Excel JavaScript API 调用内置 Excel 工作表函数
 description: ''
 ms.date: 01/24/2017
-ms.openlocfilehash: 6c0568fc1c608c4f1586d783ea5ac49aef944542
-ms.sourcegitcommit: 4de2a1b62ccaa8e51982e95537fc9f52c0c5e687
+ms.openlocfilehash: e709884db0bef36f1ff9a59ebf25d000f160d043
+ms.sourcegitcommit: 30435939ab8b8504c3dbfc62fd29ec6b0f1a7d22
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/10/2018
-ms.locfileid: "22925561"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "23945804"
 ---
 # <a name="call-built-in-excel-worksheet-functions"></a>调用内置 Excel 工作表函数
 
@@ -455,4 +455,4 @@ Excel.run(function (context) {
 
 - [Excel JavaScript API 核心概念](excel-add-ins-core-concepts.md)
 - [Excel JavaScript API 开放性规范](https://github.com/OfficeDev/office-js-docs/tree/ExcelJs_OpenSpec)
-- [工作表函数对象（适用于 Excel 的 JavaScript API）](https://dev.office.com/reference/add-ins/excel/functions)
+- [工作表函数对象（适用于 Excel 的 JavaScript API）](https://docs.microsoft.com/javascript/api/excel/excel.worksheet?view=office-js)

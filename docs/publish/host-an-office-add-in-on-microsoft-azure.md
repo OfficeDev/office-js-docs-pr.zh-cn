@@ -2,12 +2,12 @@
 title: 在 Microsoft Azure 上托管 Office 加载项
 description: ''
 ms.date: 01/25/2018
-ms.openlocfilehash: a7a364db256a64a224ed6895ed710bb0592fa72f
-ms.sourcegitcommit: 4de2a1b62ccaa8e51982e95537fc9f52c0c5e687
+ms.openlocfilehash: 62fc3c6dc212efc47493f2bcb3a994fb4db6a752
+ms.sourcegitcommit: 30435939ab8b8504c3dbfc62fd29ec6b0f1a7d22
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/10/2018
-ms.locfileid: "22925519"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "23945563"
 ---
 # <a name="host-an-office-add-in-on-microsoft-azure"></a>在 Microsoft Azure 上托管 Office 加载项
 
@@ -22,7 +22,7 @@ ms.locfileid: "22925519"
     > [!NOTE]
     > 如果之前已安装 Visual Studio 2017，请[使用 Visual Studio 安装程序](https://docs.microsoft.com/visualstudio/install/modify-visual-studio)，以确保安装 **Azure 开发**工作负载。 
 
-2. 安装 Office 2016。 
+2. 安装 Office。 
     
     > [!NOTE]
     > 如果尚未安装 Office 2016，可以[注册 1 个月免费试用版](http://office.microsoft.com/try/?WT%2Eintid1=ODC%5FENUS%5FFX101785584%5FXT104056786)。
@@ -65,7 +65,7 @@ ms.locfileid: "22925519"
     > [!NOTE]
     > 如果将加载项 XML 清单文件存储到已指定为受信任的 Web 加载项目录的共享中，用户可以转到功能区中的“插入”**** 选项卡，并选择“我的加载项”****，此时加载项就会显示在“Office 加载项”**** 对话框中的“共享文件夹”**** 下。
 
-6. 关闭 Word 2016。
+6. 关闭 Word。
 
 ## <a name="step-3-create-a-web-app-in-azure"></a>第 3 步：在 Azure 中创建 Web 应用
 
@@ -170,11 +170,11 @@ Visual Studio 将创建基本的 Word 外接程序，你可以按原样发布，
 
 1. 在示例 Office 外接程序在“解决方案资源管理器”**** 中打开的 Visual Studio 中，展开该解决方案以显示两个项目。
     
-2. 展开 Office 外接程序项目（例如 WordWebAddIn），右键单击清单文件夹，然后选择 **“打开”**。随即打开外接程序 XML 清单文件。
+2. 展开 Office 外接程序项目（例如 WordWebAddIn），右键单击清单文件夹，然后选择“打开”****。随即打开外接程序 XML 清单文件。
     
-3. 在 XML 清单文件中，找到所有的 "~remoteAppUrl" 实例，并将其全部替换为 Azure 上的外接程序 Web 应用的根 URL。 这就是之前在将外接程序 Web 应用发布到 Azure 后复制的 URL（例如：https://YourDomain.azurewebsites.net)）。 
+3. 在 XML 清单文件中，找到所有的 ＂~remoteAppUrl＂实例，并将其全部替换为 Azure 上的外接程序 Web 应用的根 URL。 这就是之前在将外接程序 Web 应用发布到 Azure 后复制的 URL（例如：https://YourDomain.azurewebsites.net)）。 
     
-4. 选择 **“文件”**，然后选择**  “全部保存”**。关闭外接程序 XML 清单文件。
+4. |||UNTRANSLATED_CONTENT_START|||Choose **File** and then choose **Save All**. Close the add-in XML manifest file.|||UNTRANSLATED_CONTENT_END|||
     
 5. 返回到“解决方案资源管理器”****，右键单击清单文件夹并选择“在文件资源管理器中打开文件夹”****。
     

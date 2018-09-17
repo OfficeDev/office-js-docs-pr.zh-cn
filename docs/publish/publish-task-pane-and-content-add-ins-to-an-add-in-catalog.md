@@ -1,13 +1,13 @@
 ---
 title: 将任务窗格和内容加载项发布到 SharePoint 目录
-description: ''
+description: 若要使其组织内的用户可以访问 Office 外接程序，管理员可以将 Office 加载项的清单文件上载到其组织的外接程序目录。
 ms.date: 01/23/2018
-ms.openlocfilehash: 6bf63c36d952b901faaa16b0d93748023ac0fef9
-ms.sourcegitcommit: 4de2a1b62ccaa8e51982e95537fc9f52c0c5e687
+ms.openlocfilehash: 2d1328b9944366d063934ff5781029beccfc82c8
+ms.sourcegitcommit: 30435939ab8b8504c3dbfc62fd29ec6b0f1a7d22
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/10/2018
-ms.locfileid: "22925295"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "23944844"
 ---
 # <a name="publish-task-pane-and-content-add-ins-to-a-sharepoint-catalog"></a>将任务窗格和内容加载项发布到 SharePoint 目录
 
@@ -16,7 +16,7 @@ ms.locfileid: "22925295"
 > [!IMPORTANT]
 > - SharePoint 上的加载项目录不支持在[加载项清单](../develop/add-in-manifests.md)的 `VersionOverrides` 节点中实现的加载项功能（如加载项命令）。
 > - 如果面向的是云或混合环境，建议通过 [Office 365 管理中心使用集中部署](../publish/centralized-deployment.md)来发布加载项。
-> - Office 2016 for Mac 不支持 SharePoint 目录。若要向 Mac 客户端部署 Office 加载项，必须将它们提交到 [AppSource](https://docs.microsoft.com/office/dev/store/submit-to-the-office-store)。   
+> - SharePoint 目录不支持 Office 2016 for Mac。 若要部署到客户端 Mac 的 Office 外接程序，您必须将它们提交给 [AppSource](https://docs.microsoft.com/office/dev/store/submit-to-the-office-store)。   
 
 ## <a name="set-up-an-add-in-catalog"></a>设置加载项目录
 
@@ -100,6 +100,6 @@ ms.locfileid: "22925295"
     
     - `https:// _domain_ /sites/ _AddinCatalogSiteCollection_`
     
-3. |||UNTRANSLATED_CONTENT_START|||Close and reopen the Office application. The add-in catalog will be available in the **Office Add-ins** dialog box.|||UNTRANSLATED_CONTENT_END|||
+3. 关闭并重新打开 Office 应用。此时，加载项目录会出现在＂Office 外接程序＂**** 对话框中。
 
-或者，管理员可以使用组策略在 SharePoint 上指定 Office 加载项目录。 有关详细信息，请参阅[使用组策略管理用户安装和使用 Office 加载项的方式](https://docs.microsoft.com/previous-versions/office/office-2013-resource-kit/jj219429(v=office.15)#using-group-policy-to-manage-how-users-can-install-and-use-apps-for-office)一节。
+或者，管理员可以使用组策略在 SharePoint 上指定 Office 加载项目录。 有关详细信息，请参阅[使用组策略管理用户安装和使用 Office 外接程序的方式](https://docs.microsoft.com/previous-versions/office/office-2013-resource-kit/jj219429(v=office.15)#using-group-policy-to-manage-how-users-can-install-and-use-apps-for-office)一节。

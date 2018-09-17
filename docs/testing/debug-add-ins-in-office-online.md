@@ -2,17 +2,17 @@
 title: 在 Office Online 中调试加载项
 description: 如何使用 Office Online 测试和调试加载项。
 ms.date: 03/14/2018
-ms.openlocfilehash: fac57e136c07bf33dce62908ea2c12d8be806f7b
-ms.sourcegitcommit: 4de2a1b62ccaa8e51982e95537fc9f52c0c5e687
+ms.openlocfilehash: ee458352c78a3bb7828e66df9fcde12958f3df93
+ms.sourcegitcommit: 30435939ab8b8504c3dbfc62fd29ec6b0f1a7d22
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/10/2018
-ms.locfileid: "22925337"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "23945762"
 ---
 # <a name="debug-add-ins-in-office-online"></a>在 Office Online 中调试加载项
 
 
-您可以在并非运行 Windows 或 Office 2013 或 Office 2016 桌面客户端的计算机上构建和调试外接程序，例如，如果您正在使用 Mac 进行开发。本文介绍如何使用 Office Online 测试和调试您的外接程序。 
+您可以生成和调试未运行 Windows 或 Office 桌面客户端计算机上加载&mdash;例如，如果您正在开发 mac。 如何使用 Office Online 测试和调试加载项。 
 
 ## <a name="prerequisites"></a>先决条件
 
@@ -62,9 +62,7 @@ ms.locfileid: "22925337"
 ## <a name="see-also"></a>另请参阅
 
 - [Office 加载项开发最佳做法](../concepts/add-in-development-best-practices.md)
-- 
-  [AppSource 验证策略](https://docs.microsoft.com/office/dev/store/validation-policies)  
-- 
-  [创建有效的 AppSource 应用和加载项](https://docs.microsoft.com/office/dev/store/create-effective-office-store-listings)  
+- [AppSource 验证策略](https://docs.microsoft.com/office/dev/store/validation-policies)  
+- [创建有效的 AppSource 应用和加载项](https://docs.microsoft.com/office/dev/store/create-effective-office-store-listings)  
 - [排查 Office 加载项中的用户错误](testing-and-troubleshooting.md)
     
