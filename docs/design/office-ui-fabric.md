@@ -2,12 +2,12 @@
 title: Office 加载项中的 Office UI Fabric
 description: ''
 ms.date: 12/04/2017
-ms.openlocfilehash: b573f720ebe4f90f7d4dbfdb05693871b93a2258
-ms.sourcegitcommit: 4de2a1b62ccaa8e51982e95537fc9f52c0c5e687
+ms.openlocfilehash: 7b1e4a9c377c9a60195a51115d7f275603f1ca5a
+ms.sourcegitcommit: 30435939ab8b8504c3dbfc62fd29ec6b0f1a7d22
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/10/2018
-ms.locfileid: "22925190"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "23944032"
 ---
 # <a name="office-ui-fabric-in-office-add-ins"></a>Office 加载项中的 Office UI Fabric 
 
@@ -36,33 +36,33 @@ Fabric Core 包含设计语言的基本元素，如图标、颜色、类型和�
     <i class="ms-Icon ms-font-xl ms-Icon--Table ms-fontColor-themePrimary"></i>
     ```
 
-    若要查找 Office UI Fabric 中可用的更多图标，请在“[图标](https://dev.office.com/fabric#/styles/icons)”页上使用搜索功能。找到要在外接程序中使用的图标后，请务必在图标名称前加上前缀 `ms-Icon--`。 
+    若要查找 Office UI Fabric 中可用的更多图标，请在“[图标](https://developer.microsoft.com/fabric#/styles/icons)”页上使用搜索功能。找到要在外接程序中使用的图标后，请务必在图标名称前加上前缀 `ms-Icon--`。 
 
-    若要了解 Office UI Fabric 中可用的字号和颜色，请参阅[版式](https://dev.office.com/fabric#/styles/typography)和[颜色](https://dev.office.com/fabric#/styles/colors)。
+    若要了解 Office UI Fabric 中可用的字号和颜色，请参阅[版式](https://developer.microsoft.com/fabric#/styles/typography)和[颜色](https://developer.microsoft.com/fabric#/styles/colors)。
  
 ## <a name="use-fabric-components"></a>使用 Fabric 组件 
 Fabric 提供了多种可用于生成外界程序的 UX 组件，包括以下类型的组件：
 
 - 输入组件 - 如按钮、复选框和切换
-- 导航组件 - 如透视、痕迹
+- 导航组件 - 如透视和痕迹
 - 通知组件 - 例如，消息栏和标注  
 
 并非所有 Fabric 组件都推荐用于外接程序。以下是我们建议在外接程序中使用的 Fabric React UX 组件列表：
 
-- [痕迹导航](https://developer.microsoft.com/fabric#/components/breadcrumb)
+- [痕迹](https://developer.microsoft.com/fabric#/components/breadcrumb)
 - [按钮](https://developer.microsoft.com/fabric#/components/button)
 - [复选框](https://developer.microsoft.com/fabric#/components/checkbox)
-- [选择组](https://developer.microsoft.com/fabric#/components/choicegroup)
+- [ChoiceGroup](https://developer.microsoft.com/fabric#/components/choicegroup)
 - [下拉列表](https://developer.microsoft.com/fabric#/components/dropdown)
 - [标签](https://developer.microsoft.com/fabric#/components/label)
 - [列表](https://developer.microsoft.com/fabric#/components/list)
 - [透视](https://developer.microsoft.com/fabric#/components/pivot)
-- [文本字段](https://developer.microsoft.com/fabric#/components/textfield)
+- [TextField](https://developer.microsoft.com/fabric#/components/textfield)
 - [切换](https://developer.microsoft.com/fabric#/components/toggle)
 
 你可以使用不同的 JavaScript 框架（如 Angular 或 React）来生成外接程序。若要开始将 Fabric 组件与框架一起使用，请参阅以下资源。
 
 |**框架**|**示例**|
 |:------------|:----------|
-|**React**|[在 Office 外接程序中使用 Office UI Fabric React](using-office-ui-fabric-react.md )|
-|**Angular**| 请参阅包含 Angular 1.5 指令的社区项目 [ngOfficeUIFabric](http://ngofficeuifabric.com/)，以及[考虑使用 Angular 2 组件包装 Fabric 组件](../develop/add-ins-with-angular2.md#consider-wrapping-fabric-components-with-angular-components)|
+|**回应**|[在 Office 外接程序中使用 Office UI Fabric React](using-office-ui-fabric-react.md )|
+|**角度**| 请参阅包含 Angular 1.5 指令的社区项目 [ngOfficeUIFabric](http://ngofficeuifabric.com/)，以及[考虑使用 Angular 2 组件包装 Fabric 组件](../develop/add-ins-with-angular2.md#consider-wrapping-fabric-components-with-angular-components)|
