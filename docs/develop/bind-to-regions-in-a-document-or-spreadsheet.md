@@ -2,12 +2,12 @@
 title: 绑定到文档或电子表格中的区域
 description: ''
 ms.date: 12/04/2017
-ms.openlocfilehash: 5fda8635b7f968ff1e0e6ea160a78544998b64fc
-ms.sourcegitcommit: 30435939ab8b8504c3dbfc62fd29ec6b0f1a7d22
+ms.openlocfilehash: 7d5fbeb53423917703bb9671720be59d9812e62e
+ms.sourcegitcommit: 3da2038e827dc3f274d63a01dc1f34c98b04557e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "23945570"
+ms.lasthandoff: 09/19/2018
+ms.locfileid: "24016372"
 ---
 # <a name="bind-to-regions-in-a-document-or-spreadsheet"></a>绑定到文档或电子表格中的区域
 
@@ -400,7 +400,7 @@ function removeEventHandlerFromBinding() {
 [setDataAsync]:          https://docs.microsoft.com/javascript/api/office/Office.Binding?view=office-js#setdataasync-data--options--callback-
 [SelectionChanged]:      https://docs.microsoft.com/javascript/api/office/office.bindingselectionchangedeventargs?view=office-js
 [addHandlerAsync]:       https://docs.microsoft.com/javascript/api/office/Office.Binding?view=office-js#addhandlerasync-eventtype--handler--options--callback-
-[removeHandlerAsync]:    https://docs.microsoft.com/en-us/javascript/api/office/Office.Binding?view=office-js#removehandlerasync-eventtype--options--callback-
+[removeHandlerAsync]:    https://docs.microsoft.com/javascript/api/office/Office.Binding?view=office-js#removehandlerasync-eventtype--options--callback-
 
 [Bindings]:              https://docs.microsoft.com/javascript/api/office/office.bindings?view=office-js
 [getByIdAsync]:          https://docs.microsoft.com/javascript/api/office/office.bindings?view=office-js#getbyidasync-id--options--callback- 
@@ -410,12 +410,12 @@ function removeEventHandlerFromBinding() {
 [addFromPromptAsync]:    https://docs.microsoft.com/javascript/api/office/office.bindings?view=office-js#addfrompromptasync-bindingtype--options--callback-
 [releaseByIdAsync]:      https://docs.microsoft.com/javascript/api/office/office.bindings?view=office-js#releasebyidasync-id--options--callback-
 
-[AsyncResult]:          https://docs.microsoft.com/en-us/javascript/api/office/office.asyncresult?view=office-js
-[Office.BindingType]:   https://docs.microsoft.com/en-us/javascript/api/office/office.bindingtype?view=office-js
-[Office.select]:        https://docs.microsoft.com/en-us/javascript/api/office?view=office-js 
-[Office.EventType]:     https://docs.microsoft.com/en-us/javascript/api/office/office.eventtype?view=office-js 
-[Document.bindings]:    https://docs.microsoft.com/en-us/javascript/api/office/office.document?view=office-js
+[AsyncResult]:          https://docs.microsoft.com/javascript/api/office/office.asyncresult?view=office-js
+[Office.BindingType]:   https://docs.microsoft.com/javascript/api/office/office.bindingtype?view=office-js
+[Office.select]:        https://docs.microsoft.com/javascript/api/office?view=office-js 
+[Office.EventType]:     https://docs.microsoft.com/javascript/api/office/office.eventtype?view=office-js 
+[Document.bindings]:    https://docs.microsoft.com/javascript/api/office/office.document?view=office-js
 
 
-[TableBinding.rowCount]: https://docs.microsoft.com/en-us/javascript/api/office/office.tablebinding?view=office-js
-[BindingSelectionChangedEventArgs]: https://docs.microsoft.com/en-us/javascript/api/office/office.bindingselectionchangedeventargs?view=office-js
+[TableBinding.rowCount]: https://docs.microsoft.com/javascript/api/office/office.tablebinding?view=office-js
+[BindingSelectionChangedEventArgs]: https://docs.microsoft.com/javascript/api/office/office.bindingselectionchangedeventargs?view=office-js
