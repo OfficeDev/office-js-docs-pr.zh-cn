@@ -109,9 +109,9 @@
 
 ### <a name="update-the-manifest"></a>更新清单
 
-1. 在加载项项目中打开 XML 清单文件。该文件定义了加载项的设置和功能。
+1. 打开加载项项目中的 XML 清单文件。 此文件定义的是加载项设置和功能。
 
-2. |||UNTRANSLATED_CONTENT_START|||The `ProviderName` element has a placeholder value.|||UNTRANSLATED_CONTENT_END||| 将其替换为你的姓名。
+2. 元素具有占位符值。`ProviderName` 将其替换为你的姓名。
 
 3. 元素的 `DefaultValue` 属性有占位符。`DisplayName` 将它替换为“My Office Add-in”****。
 
@@ -179,11 +179,15 @@
     
     完成向导后，生成器将创建项目并安装提供支持的 Node 组件。
 
-    
+4. 导航到 web 应用程序项目的根文件夹。
 
-4. 在代码编辑器中，打开项目根目录中的 **index.html**。 此文件指定在加载项任务窗格中呈现的 HTML。 
+    ```bash
+    cd "My Office Add-in"
+    ```
+
+5. 在代码编辑器中，打开项目根目录中的 **index.html**。 此文件指定在加载项任务窗格中呈现的 HTML。 
  
-5. 在 **index.html** 中，将生成的 `header` 标记替换为以下标记。
+6. 在 **index.html** 中，将生成的 `header` 标记替换为以下标记。
  
     ```html
     <div id="content-header">
@@ -193,7 +197,7 @@
     </div>
     ```
 
-6. 在 **index.html** 中，将生成的 `main` 标记替换为以下标记，再保存文件。
+7. 在 **index.html** 中，将生成的 `main` 标记替换为以下标记，再保存文件。
 
     ```html
     <div id="content-main">
@@ -206,7 +210,7 @@
     </div>
     ```
 
-7. 打开文件 **src\index.js**，以指定加载项脚本。 将整个内容替换为以下代码，并保存文件。
+8. 打开文件 **src\index.js**，以指定加载项脚本。 将整个内容替换为以下代码，并保存文件。
 
     ```js
     'use strict';
@@ -234,7 +238,7 @@
     })();
     ```
 
-8. 打开文件“app.css”****，以指定加载项自定义样式。 将整个内容替换为以下代码，并保存文件。
+9. 打开文件“app.css”****，以指定加载项自定义样式。 将整个内容替换为以下代码，并保存文件。
 
     ```css
     #content-header {
