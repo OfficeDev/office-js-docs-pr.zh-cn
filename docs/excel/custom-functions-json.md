@@ -23,9 +23,8 @@
 
 |  属性  |  数据类型  |  是否必需？  |  说明  |
 |:-----|:-----|:-----|:-----|
-|  `cancelable`  |  布尔值  |  否，默认值为 `false` 。  |  如果为 `true`，每当用户执行的操作会取消函数时，Excel 将调用 `onCanceled` 处理程序；例如，手动触发重新计算或编辑函数引用的单元格。 如果使用此选项，Excel 将使用额外的 `caller` 参数调用 JavaScript 函数。 （请***不要*** 在 `parameters` 属性中注册此参数）。 在函数的主体中，必须将处理程序分配给 `caller.onCanceled` 成员。 注意，`cancelable` 和 `sync` 不能同时为 `true`。  |
-|  `stream`  |  布尔值  |  否，默认值为 `false` 。  |  如果为 `true`，即使只调用一次，该函数也可能会重复输出到单元格。 此选项对于快速变化的数据源（如股票价格）非常有用。 如果使用此选项，Excel 将使用额外的 `caller` 参数调用 JavaScript 函数。 （请***不要*** 在 `parameters` 属性中注册此参数）。 函数不应存在 `return` 语句。 相反，结果值将作为 `caller.setResult` 回调方法的参数传递。 注意，`stream` 和 `sync` 不能同时为 `true`。|
-|  `sync`  |  布尔值  |  否，默认值为 `false`  |  如果为 `true`，函数会同步运行，并且它必须返回一个值。 如果为 `false`，则函数将异步运行，并且它必须返回 `OfficeExtension.Promise` 对象。 注意，如果 `sync`  或 `true`  为 `cancelable` ，则 `stream`   不能为 `true` 。  |
+|  `cancelable`  |  布尔值  |  否，默认值为 `false` 。  |  如果为 `true`，则每次用户执行具有取消函数效果的操作时，Excel 都会调用 `onCanceled` 处理程序；例如，手动触发重新计算或编辑函数引用的单元格。如果您使用此选项，Excel 将使用其他 `caller` 参数调用 JavaScript 函数。（请***不要***在 `parameters` 属性中注册此参数）。在函数的正文中， 必须将处理程序分配给 `caller.onCanceled` 成员。|
+|  `stream`  |  布尔值  |  否，默认值为 `false` 。  |  如果为 `true`，即使只调用一次，该函数也可能会重复输出到单元格。 此选项对于快速变化的数据源（如股票价格）非常有用。 如果使用此选项，Excel 将使用额外的 `caller` 参数调用 JavaScript 函数。 （请***不要*** 在 `parameters` 属性中注册此参数）。 函数不应存在 `return` 语句。 相反，结果值将作为 `caller.setResult` 回调方法的参数传递。|
 
 ## <a name="parameters-array"></a>参数数组
 
@@ -69,10 +68,7 @@
                     "type": "number",
                     "dimensionality": "scalar"
                 }
-            ],
-            "options": {
-                "sync": true
-            }
+            ]
         },
         {
             "name": "ADD42ASYNC", 
@@ -89,10 +85,7 @@
                     "type": "number",
                     "dimensionality": "scalar"
                 }
-            ],
-            "options": {
-                "sync": false
-            }
+            ]
         },
         {
             "name": "ISEVEN", 
@@ -109,10 +102,7 @@
                     "type": "number",
                     "dimensionality": "scalar"
                 }
-            ],
-            "options": {
-                "sync": true
-            }
+            ]
         },
         {
             "name": "GETDAY",
@@ -121,10 +111,7 @@
             "result": {
                 "type": "string"
             },
-            "parameters": [],
-            "options": {
-                "sync": true
-            }
+            "parameters": []
         },
         {
             "name": "INCREMENTVALUE", 
@@ -143,7 +130,6 @@
                 }
             ],
             "options": {
-                "sync": false,
                 "stream": true,
                 "cancelable": true
             }
@@ -163,10 +149,7 @@
                     "type": "number",
                     "dimensionality": "matrix"
                 }
-            ],
-            "options": {
-                "sync": true
-            }
+            ]
         }
     ]
 }
