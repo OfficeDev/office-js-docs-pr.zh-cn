@@ -1,12 +1,12 @@
 ---
 title: 创建使用单一登录的 Node.js Office 加载项
 description: 2018 年 1 月23 日
-ms.openlocfilehash: 62d32a3f2c8946b21eabd5b0f71aaeeea7c85bb4
-ms.sourcegitcommit: 30435939ab8b8504c3dbfc62fd29ec6b0f1a7d22
+ms.openlocfilehash: b257729bbf868c91b2e98509b6ef04a0c38d9b42
+ms.sourcegitcommit: 3da2038e827dc3f274d63a01dc1f34c98b04557e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "23945734"
+ms.lasthandoff: 09/19/2018
+ms.locfileid: "24016421"
 ---
 # <a name="create-a-nodejs-office-add-in-that-uses-single-sign-on-preview"></a>创建使用单一登录的 Node.js Office 加载项（预览）
 
@@ -31,7 +31,7 @@ ms.locfileid: "23945734"
 
 ## <a name="set-up-the-starter-project"></a>创建起始项目
 
-1. 在 [Office 加载项 NodeJS SSO](https://github.com/officedev/office-add-in-nodejs-sso) 中克隆或下载库文件。 
+1. 克隆或下载 [Office 加载项 NodeJS SSO](https://github.com/officedev/office-add-in-nodejs-sso) 中的存储库。 
 
     > [!NOTE]
     > 示例项目有三个版本：  
@@ -64,17 +64,17 @@ ms.locfileid: "23945734"
 
 [!INCLUDE[](../includes/grant-admin-consent-to-an-add-in-include.md)]
 
-## <a name="configure-the-add-in"></a>配置外接程序
+## <a name="configure-the-add-in"></a>配置加载项
 
 1. 在代码编辑器中打开 src\server.ts 文件。顶部附近存在对 `AuthModule` 类的构造函数的调用。该构造函数中存在一些需要为其分配值的字符串参数。
 
 2. 对于 `client_id` 属性，将占位符 `{client GUID}` 替换为注册加载项时保存的应用程序 ID。 完成后，单引号中应该只有一个 GUID。 不应出现任何 "{}" 字符。
 
-3. 对于 `client_secret` 属性，将占位符 `{client secret}` 替换为注册外接程序时保存的应用程序机密。
+3. 对于 `client_secret` 属性，将占位符 `{client secret}` 替换为注册加载项时保存的应用程序机密。
 
 4. 对于 `audience` 属性，将占位符 `{audience GUID}` 替换为注册外接程序时保存的应用程序 ID。（即分配给 `client_id` 属性的同一值）。
   
-3. 在分配给 `issuer` 属性的字符串中，你会看到占位符 *{O365 tenant GUID}*。 将其替换为 Office 365 租约 ID。 使用[“找到你的 Office 365 租户 ID”](https://docs.microsoft.com/onedrive/find-your-office-365-tenant-id)中的一种方法获得它。 完成后，`issuer` 属性值应该如下所示：
+3. 在分配给 `issuer` 属性的字符串中，你会看到占位符 *{O365 tenant GUID}*。 将其替换为 Office 365 租约 ID。 使用[“找到你的 Office 365 租户 ID”](https://docs.microsoft.com/onedrive/find-your-office-365-tenant-id)中的一种方法获得它。 完成后，`issuer` 属性值应如下所示：
 
     `https://login.microsoftonline.com/12345678-1234-1234-1234-123456789012/v2.0`
 
@@ -97,10 +97,10 @@ ms.locfileid: "23945734"
     </WebApplicationInfo>
     ```
 
-1. 将标记中的*两处*占位符“{application_GUID here}”均替换成在注册加载项时复制的应用程序 ID。 （由于 ID 并不包含“{}”，因此请勿添加它们。）这与在 web.config 中对 ClientID 和 Audience 使用的 ID 相同。
+1. 将标记中的*两处*占位符“{application_GUID here}”均替换成在注册加载项时复制的应用程序 ID。 （“{}”不是 ID 的一部分，因此请不要包括它们。）此 ID 与您在 web.config 的 ClientID 和 Audience 中使用的 ID 相同。
 
     > [!NOTE]
-    > * **Resource** 值是向注册的加载项添加 Web API 平台时设置的**应用 ID URI**。
+    > * **Resource** 值是向注册的加载项添加 Web API 平台时设置的**应用程序 ID URI**。
     > * 仅在通过 AppSource 销售加载项时，才使用 **Scopes** 部分生成许可对话框。
 
 1. 保存并关闭文件。
@@ -132,7 +132,7 @@ ms.locfileid: "23945734"
 
 1. 在 `getOneDriveFiles` 方法下方，添加下列代码。关于此代码，请注意以下几点：
 
-    * [getAccessTokenAsync](https://docs.microsoft.com/office/dev/add-ins/develop/sso-in-office-add-ins#sso-api-reference)是 Office.js 中新增的 API，支持加载项向 Office 主机应用程序（Excel、PowerPoint、Word 等）请求获取对加载项的访问令牌（对于已登录 Office 的用户）。 反过来，Office 主机应用程序会向 Azure AD 2.0 终结点请求获取令牌。 由于已在注册加载项时将 Office 主机预授权给加载项，因此 Azure AD 将会发送令牌。
+    * [getAccessTokenAsync](https://docs.microsoft.com/office/dev/add-ins/develop/sso-in-office-add-ins#sso-api-reference) 是 Office.js 中新增的 API，支持加载项向 Office 主机应用程序（Excel、PowerPoint、Word 等）请求获取对加载项的访问令牌（对于已登录 Office 的用户）。 反过来，Office 主机应用程序会向 Azure AD 2.0 终结点请求获取令牌。 由于已在注册加载项时将 Office 主机预授权给加载项，因此 Azure AD 将会发送令牌。
     * 如果用户未登录 Office，Office 主机会提示用户登录。
     * options 参数将 `forceConsent` 设置为 `false`，因此用户不会在每次使用加载项时都看到提示，要求其许可向 Office 主机授予对加载项的访问权限。 用户首次运行加载项时，`getAccessTokenAsync` 调用会失败，但在后续步骤中添加的错误处理逻辑会自动重新调用（`forceConsent` 选项设置为 `true`），并提示用户许可，但仅限首次运行。
     * 方法将在后续步骤中创建。`handleClientSideErrors`
@@ -540,7 +540,7 @@ ms.locfileid: "23945734"
     ```
 
     > [!NOTE]
-    > 只能使用 `access_as_user` 范围授权 API 为 Office 加载项处理代理流。服务中的其他 API 应有自己的范围要求。这就限制了使用 Office 获得的令牌可以访问的内容。
+    > 只可使用 `access_as_user` 作用域授权 API 为 Office 加载项处理代表流。服务中的其他 API 应有自己的作用域要求。 这就限制了使用 Office 获得的令牌可以访问的内容。
 
 5. 将 `TODO8` 替换为以下代码。关于此代码，请注意以下几点：
 
@@ -664,9 +664,14 @@ ms.locfileid: "23945734"
 
 ## <a name="add-the-add-in-to-an-office-document"></a>将外接程序添加到 Office 文档
 
-1. 重启 PowerPoint 并打开或创建演示文稿。 
+1. 重启 PowerPoint 并打开或创建演示文稿。
 
-2. 在 PowerPoint 中的“开发工具”**** 选项卡上，选择“我的外接程序”****。
+1. 如果在功能区上看不到 **“开发工具”** 选项卡，请通过以下步骤将其启用：
+ 1. 导航到 **“文件”** | **“选项”** | **“自定义功能区”**。
+ 2. 单击复选框以在 **“自定义功能区”** 页面右侧的控件名称树中启用 **“开发工具”**。
+ 3. 按 **“确定”**。
+
+2. 在 PowerPoint 中的 **“开发工具”** 选项卡上，选择 **“我的加载项”** 。
 
 3. 选择“共享文件夹”**** 选项卡。
 

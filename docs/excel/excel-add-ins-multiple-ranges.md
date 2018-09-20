@@ -2,12 +2,12 @@
 title: 在 Excel 加载项中同时处理多个范围
 description: ''
 ms.date: 9/4/2018
-ms.openlocfilehash: ade97947e513d0af5d7a520c1f07ef1fa046dd0f
-ms.sourcegitcommit: 30435939ab8b8504c3dbfc62fd29ec6b0f1a7d22
+ms.openlocfilehash: bcb14d1f4c015fe675c2d65cb5f1198d485dd4c5
+ms.sourcegitcommit: 3da2038e827dc3f274d63a01dc1f34c98b04557e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "23949849"
+ms.lasthandoff: 09/19/2018
+ms.locfileid: "24016456"
 ---
 # <a name="work-with-multiple-ranges-simultaneously-in-excel-add-ins-preview"></a>在 Excel 加载项同时处理多个范围（预览）
 
@@ -27,17 +27,61 @@ Excel JavaScript 库使加载项能够执行操作，并同时在多个范围设
 例如：
 
 - `RangeAreas` 具有 `address` 属性，返回使用逗号分隔的范围地址字符串，而不是像 `Range.address` 属性那样返回一个地址。
-- `RangeAreas` 具有 `dataValidation` 属性，返回的 `DataValidation` 对象代表 `RangeAreas` 中所有范围的数据验证（如果一致）。 如果相同的 `DataValidation` 对象不应用于 `RangeAreas` 中的所有范围，则属性为 `null`。 `RangeAreas` 对象有一项常规、但不是通用的原则：*如果属性在 `RangeAreas` 的所有区域上具有一致的值，则它是 `null`。* 要了解有关详细信息和一些例外，请参阅[读取 RangeAreas 的属性](#reading-properties-of-rangeareas)。
+- `RangeAreas` 具有 `dataValidation` 属性，返回的 `DataValidation` 对象代表 `RangeAreas` 中所有范围的数据验证（如果一致）。 如果相同的 `DataValidation` 对象不应用于 `RangeAreas` 中的所有范围，则属性为 `null`。 对象有一项常规、但不是通用的原则：*如果属性在 `RangeAreas` 的所有区域上具有一致的值，则它是 `null`。*`RangeAreas` 要了解有关详细信息和一些例外，请参阅[读取 RangeAreas 的属性](#reading-properties-of-rangeareas)。
 - `RangeAreas.cellCount` 获取 `RangeAreas` 中所有范围的单元格总数目。
 - `RangeAreas.calculate` 重新计算 `RangeAreas` 中所有范围的单元格。
 - `RangeAreas.getEntireColumn` 和 `RangeAreas.getEntireRow` 返回另一个 `RangeAreas` 对象，表示 `RangeAreas` 中所有范围的所有列 （或行）。 例如，如果 `RangeAreas` 表示"A:C" 和 "F:L"，则 `RangeAreas.getEntireColumn` 返回表示 "A1:C4" 和 "F14:L15" 的 `RangeAreas` 对象。
 - `RangeAreas.copyFrom` 可以是 `Range` 或 `RangeAreas` 参数，表示复制操作的源范围。
 
+#### <a name="complete-list-of-range-members-that-are-also-available-on-rangeareas"></a>在 RangeAreas 上也可用的“范围”成员的完整列表
+
+##### <a name="properties"></a>属性
+
+请先熟悉[读取 RangeAreas 的属性](#reading-properties-of-rangeareas)，然后再编写可读取列出的所有属性的代码。 返回什么有不少微妙之处。
+
+- address
+- addressLocal
+- cellCount
+- conditionalFormats
+- context
+- dataValidation
+- 格式
+- isEntireColumn
+- isEntireRow
+- 样式
+- 工作表
+
+##### <a name="methods"></a>方法
+
+预览版中的范围方法是做了标记的。
+
+- calculate()
+- clear()
+- convertDataTypeToText()（预览）
+- convertToLinkedDataType()（预览）
+- copyFrom()（预览）
+- getEntireColumn()
+- getEntireRow()
+- getIntersection()
+- getIntersectionOrNullObject()
+- getOffsetRange()（名为 RangeAreas 对象上的 getOffsetRangeAreas）
+- getSpecialCells()（预览）
+- getSpecialCellsOrNullObject()（预览）
+- getTables()（预览）
+- getUsedRange()（名为 RangeAreas 对象上的 getUsedRangeAreas）
+- getUsedRangeOrNullObject() （名为 RangeAreas 对象上的 getUsedRangeAreasOrNullObject）
+- load()
+- set()
+- setDirty()（预览）
+- toJSON()
+- track()
+- untrack()
+
 ### <a name="rangearea-specific-properties-and-methods"></a>特定于 RangeArea 的属性和方法
 
- `RangeAreas` 类型的某些属性和方法所不在 `Range` 对象上：
+`RangeAreas` 类型具有某些不在 `Range` 对象上的属性和方法。 以下是其中的选定内容：
 
-- `areas`：`RangeCollection` 对象，其中包含 `RangeAreas` 对象所表示的所有范围。  `RangeCollection` 对象也是新增，并类似于其他 Excel 集合对象。 它具有 `items` 属性，是表示范围的 `Range` 对象数组。
+- `areas`：`RangeCollection` 对象，其中包含 `RangeAreas` 对象所表示的所有范围。 对象也是新增，并类似于其他 Excel 集合对象。`RangeCollection` 它具有 `items` 属性，是表示范围的 `Range` 对象数组。
 - `areaCount`：`RangeAreas` 中范围的总数目。
 - `getOffsetRangeAreas`：工作原理和 [Range.getOffsetRange](https://docs.microsoft.com/javascript/api/excel/excel.range#getoffsetrange-rowoffset--columnoffset-) 一样，只不过返回一个 `RangeAreas`，它包含的范围与原 `RangeAreas` 中的某一范围产生偏移。
 
@@ -55,7 +99,7 @@ Excel JavaScript 库使加载项能够执行操作，并同时在多个范围设
 
 
 > [!WARNING] 
->  切勿尝试直接添加或删除 `RangeAreas.areas.items` 数组的成员。 这将导致代码中的不正常行为。 例如，可以将额外的 `Range` 对象推送到数组，但这样做将导致错误，因为 `RangeAreas` 属性和方法的行为不会因新项目的添加而有所不同。 例如，`areaCount` 属性不包括以这种方式推送的范围，并且如果 `index` 大于 `areasCount-1`，`RangeAreas.getItemAt(index)` 将抛出错误。 同样，通过获取引用并调用其 方法删除  数组中的  对象会导致错误：虽然  对象已删除，父  对象仍将视其为存在。`Range` `RangeAreas.areas.items` `Range.delete` `Range` * * `RangeAreas` 例如，如果您的代码调用 `RangeAreas.calculate`，Office 会尝试计算该范围，但将发生错误，因为 range 对象不存在。
+> 切勿尝试直接添加或删除 `RangeAreas.areas.items` 数组的成员。 这将导致代码中的不正常行为。 例如，可以将额外的 `Range` 对象推送到数组，但这样做将导致错误，因为 `RangeAreas` 属性和方法的行为不会因新项目的添加而有所不同。 例如，`areaCount` 属性不包括以这种方式推送的范围，并且如果 `index` 大于 `areasCount-1`，`RangeAreas.getItemAt(index)` 将抛出错误。 同样，通过获取引用并调用其 方法删除  数组中的  对象会导致错误：虽然  对象已删除，父  对象仍将视其为存在。`Range``RangeAreas.areas.items``Range.delete``Range`**`RangeAreas` 例如，如果您的代码调用 `RangeAreas.calculate`，Office 会尝试计算该范围，但将发生错误，因为 range 对象不存在。
 
 在 `RangeAreas` 上设置属性会在 `RangeAreas.areas` 集合的所有范围上设置相应的属性。
 
@@ -80,7 +124,7 @@ Excel.run(function (context) {
 
 ### <a name="discover-range-areas-programmatically"></a>以编程方式发现范围
 
- `Range.getSpecialCells()` 和 `Range.getSpecialCellsOrNullObject()` 方法使你能够在运行时根据单元格和单元格值类型的特征而确定对其执行操作的范围。 下面是 TypeScript 数据类型文件中的方法签名：
+和 `Range.getSpecialCellsOrNullObject()` 方法使你能够在运行时根据单元格和单元格值类型的特征而确定对其执行操作的范围。`Range.getSpecialCells()` 下面是 TypeScript 数据类型文件中的方法签名：
 
 ```typescript
 getSpecialCells(cellType: Excel.SpecialCellType, cellValueType?: Excel.SpecialCellValueType): Excel.RangeAreas;
@@ -94,7 +138,7 @@ getSpecialCellsOrNullObject(cellType: Excel.SpecialCellType, cellValueType?: Exc
 
 - 它通过首先调用 `Worksheet.getUsedRange` 并针对仅该范围调用 `getSpecialCells`，将搜索限制于工作表的所需部分。
 - 它将 `Excel.SpecialCellType` 枚举中值的字符串版本作为参数传递到 `getSpecialCells`。 某些无法传递的其他值 包括： 空白单元格 为 "Blanks" ，具有文字值而不是公式的单元格为 "Constants"，与 `usedRange` 中第一个单元格具有相同条件格式的单元格 为 "SameConditionalFormat"。 第一个单元格为左上角的单元格。 要了解枚举中值的完整列表，请参阅 [beta office.d.ts](https://appsforoffice.microsoft.com/lib/beta/hosted/office.d.ts)。
--  `getSpecialCells` 方法返回 `RangeAreas` 对象，以便所有带公式的单元格都将以粉红色标示，即使它们并非全部连续。 
+- `getSpecialCells` 方法返回 `RangeAreas` 对象，所以所有带公式的单元格都将以粉红色标示，即使它们并非全都相邻。 
 
 ```js
 Excel.run(function (context) {
@@ -107,11 +151,11 @@ Excel.run(function (context) {
 })
 ```
 
-有时，会无法发现*任何*具备目标特征的单元格。 如果 `getSpecialCells` 找不到任何单元格，将引发 **ItemNotFound** 错误。 如果存在 `catch` 块/方法，控制流将重定向到该块/方法。 如果不存在，错误将暂停函数的执行。 在某些时候，如果不存在具有目标特征的单元格，你可能希望抛出错误。 
+有时，范围不具有*任何*带目标特征的单元格。 如果 `getSpecialCells` 找不到任何单元格，将引发 **ItemNotFound** 错误。 如果存在 `catch` 块/方法，控制流将重定向到该块/方法。 如果不存在，错误将暂停函数的执行。 在某些时候，如果不存在具有目标特征的单元格，你可能希望抛出错误。 
 
 但在其他时候，不存在匹配单元格的情况属于正常但可能不常见；你的代码应检查这种可能性并恰当处理而不抛出错误。 对于这些方案，请使用 `getSpecialCellsOrNullObject` 方法并测试 `RangeAreas.isNullObject` 属性。 示例如下。 关于此代码，请注意以下几点：
 
--  `getSpecialCellsOrNullObject` 方法总是返回代理对象，因此永远不会成为一般 JavaScript 意义上的  `null`。 但是，如果找到匹配的单元格，对象的 `isNullObject` 属性将设置为 `true`。
+- 方法总是返回代理对象，因此永远不会成为一般 JavaScript 意义上的  `null`。`getSpecialCellsOrNullObject` 但是，如果找到匹配的单元格，对象的 `isNullObject` 属性将设置为 `true`。
 - 它将在测试 `isNullObject` 属性*之前*调用 `context.sync`。 这是所有 `*OrNullObject` 方法和属性的要求，因为你始终需要加载和同步属性才能读取它。 但是，不需要*显式*加载 `isNullObject` 属性。 它会由 `context.sync` 自动加载，即使对象没有调用 `load`。 有关详细信息，请参阅 [\*OrNullObject](https://docs.microsoft.com/office/dev/add-ins/excel/excel-add-ins-advanced-concepts#42ornullobject-methods)。
 - 你可以通过首先选择没有公式的单元格范围然后运行它来测试此代码。 然后选择其中至少具有一个带公式的单元格的范围并再次运行。
 
@@ -152,7 +196,7 @@ Excel.run(function (context) {
 })
 ```
 
-有时，你需要对多个单元格值类型执行操作—— 例如所有文本值和所有布尔值 ("Logical")。  `Excel.SpecialCellValueType` 枚举具有让你组合多个类型的值。 例如，"LogicalText" 将匹配所有布尔值和所有文本值单元格。 可以将这四种基本类型中的任何两种或任何三种类型组合使用。 这些枚举值的基本类型组合名称通常以字母顺序列出。 因此，若要合并错误值、文本值和布尔值的单元格，请使用 "ErrorLogicalText"，而不是 "LogicalErrorText" 或 "TextErrorLogical"。 默认参数 "All" 合并所有四种类型。 下面的示例突出显示带有生成数字或布尔值的公式的所有单元格：
+有时，你需要对多个单元格值类型执行操作—— 例如所有文本值和所有布尔值 ("Logical")。 枚举具有让你组合多个类型的值。`Excel.SpecialCellValueType` 例如，"LogicalText" 将匹配所有布尔值和所有文本值单元格。 可以将这四种基本类型中的任何两种或任何三种类型组合使用。 这些枚举值的基本类型组合名称通常以字母顺序列出。 因此，若要合并错误值、文本值和布尔值的单元格，请使用 "ErrorLogicalText"，而不是 "LogicalErrorText" 或 "TextErrorLogical"。 默认参数 "All" 合并所有四种类型。 下面的示例突出显示带有生成数字或布尔值的公式的所有单元格：
 
 ```js
 Excel.run(function (context) {
@@ -170,7 +214,7 @@ Excel.run(function (context) {
 
 ### <a name="get-rangeareas-within-rangeareas"></a>获取 RangeAreas 中的 RangeAreas
 
- `RangeAreas` 类型本身也有 `getSpecialCells` 和 `getSpecialCellsOrNullObject` 方法，它们采用相同的两个参数。 这些方法返回 `RangeAreas.areas` 集合所有范围的所有目标单元格。 方法调用于  对象而不是  对象的行为中存在一个细小区别：将 "SameConditionalFormat" 作为第一个参数传递时，方法会返回  集合第一个范围中与左上角单元格具有同一条件格式的所有单元格。`RangeAreas` `Range` * `RangeAreas.areas` * 这一点同样适用于 "SameDataValidation"：传递给 `Range.getSpecialCells` 时，它将返回与* 范围中*左上角单元格具有相同数据验证规则的的单元格。 但当传递给 `RangeAreas.getSpecialCells` 时，将返回与 *`RangeAreas.areas` 集合第一个范围中*的左上角单元格具有相同数据验证规则的所有单元格。
+类型本身也有 `getSpecialCells` 和 `getSpecialCellsOrNullObject` 方法，它们采用相同的两个参数。`RangeAreas` 这些方法返回 `RangeAreas.areas` 集合所有范围的所有目标单元格。 方法调用于  对象而不是  对象的行为中存在一个细小区别：将 "SameConditionalFormat" 作为第一个参数传递时，方法会返回  集合第一个范围中与左上角单元格具有同一条件格式的所有单元格。`RangeAreas``Range`*`RangeAreas.areas`* 这一点同样适用于 "SameDataValidation"：传递给 `Range.getSpecialCells` 时，它将返回与* 范围中*左上角单元格具有相同数据验证规则的的单元格。 但当传递给 `RangeAreas.getSpecialCells` 时，将返回与 *`RangeAreas.areas` 集合第一个范围中*的左上角单元格具有相同数据验证规则的所有单元格。
 
 ## <a name="read-properties-of-rangeareas"></a>读取 RangeAreas 的属性
 
@@ -195,11 +239,11 @@ Excel.run(function (context) {
 })
 ```
 
-当不可能达成一致性时，事情会变得更为复杂。 `RangeAreas` 属性的行为遵循以下三个原则：
+当不可能达成一致性时，事情会变得更为复杂。 属性的行为遵循以下三个原则：`RangeAreas`
 
-- `RangeAreas` 对象的布尔值属性返回 `false`，除非该属性对于所有成员范围均为 true。
+- 对象的布尔值属性返回 `false`，除非该属性对于所有成员范围均为 true。`RangeAreas`
 - 除 `address` 属性外的非布尔值属性将返回 `null`，除非所有成员范围的相应属性具有相同的值。
--  `address` 属性返回成员范围地址的以逗号分隔 字符串。
+- 属性返回成员范围地址的以逗号分隔 字符串。`address`
 
 例如，下面的代码生成一个 `RangeAreas`，其中只有一个范围是整列，也只有一个 范围填充粉红色。 控制台将显示填充颜色为 `null`，`isEntireRow` 属性为 `false` 且 `address` 属性为 "Sheet1!F3:F5, Sheet1!H:H"（假定工作表名称为 "Sheet1"）。 
 

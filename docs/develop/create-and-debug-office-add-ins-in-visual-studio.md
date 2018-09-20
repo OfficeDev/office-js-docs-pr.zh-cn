@@ -2,12 +2,12 @@
 title: 在 Visual Studio 中创建和调试 Office 加载项
 description: ''
 ms.date: 03/14/2018
-ms.openlocfilehash: 2e5c08a72ec97e26000d6ea7e53dd1d0f2c9e6dc
-ms.sourcegitcommit: 30435939ab8b8504c3dbfc62fd29ec6b0f1a7d22
+ms.openlocfilehash: 991b5cf31f05f18f315311a5735d3ed207a655c6
+ms.sourcegitcommit: 3da2038e827dc3f274d63a01dc1f34c98b04557e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "23945353"
+ms.lasthandoff: 09/19/2018
+ms.locfileid: "24016414"
 ---
 # <a name="create-and-debug-office-add-ins-in-visual-studio"></a>在 Visual Studio 中创建和调试 Office 加载项
 
@@ -24,7 +24,7 @@ ms.locfileid: "23945353"
 
 1. 在 Visual Studio 菜单栏中，依次选择“文件”**** > “新建”**** > “项目”****。
     
-2. 在**Visual C#** 或**Visual Basic**下的项目类型列表中，展开**Office/SharePoint**，选择**Web 外接程序**，然后选择外接程序项目之一。  
+2. 在**Visual C#** 或 **Visual Basic**下的项目类型列表中，展开 **Office/SharePoint**，选择 **Web 外接程序**，然后选择外接程序项目之一。  
     
 3. 命名此项目，再选择“确定”**** 以创建项目。
     

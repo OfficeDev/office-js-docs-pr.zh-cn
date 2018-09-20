@@ -1,6 +1,6 @@
 # <a name="create-custom-functions-in-excel-preview"></a>在 Excel 中创建自定义函数（预览）
 
-借助自定义函数（类似于用户定义的函数 [UDF]），开发人员可以使用加载项向 Excel 添加任何 JavaScript 函数。 然后，用户可以像使用 Excel 中的其他本机函数（例如 `=SUM()`）一样访问自定义函数。 本文介绍了如何在 Excel 中创建自定义函数。
+借助自定义函数（类似于用户定义的函数 [UDF]），开发人员可以使用加载项向 Excel 添加任何 JavaScript 函数。 然后，用户可以像使用 Excel 中的其他本机函数（例如 `=SUM()`）一样访问自定义函数。 本文介绍如何在 Excel 中创建自定义函数。
 
 下图显示了最终用户如何将自定义函数插入到单元格中。 将 42 添加到一对数字的函数。
 
@@ -24,11 +24,11 @@ function ADD42(a, b) {
 
 ## <a name="learn-the-basics"></a>学习基础知识
 
-在克隆的示例存储库中，将看到以下文件：
+在克隆的示例存储库中，你将看到以下文件：
 
 - **./src/customfunctions.js**，其中包含自定义函数代码（请参阅上面 `ADD42` 函数的简单代码示例）。
-- **./config/customfunctions.json**，其中包含将自定义函数告诉 Excel 的注册 JSON。 注册会使自定义函数显示在用户键入单元格时显示的可用函数列表中。
-- **./index.html**，它提供 JS 文件的&lt;脚本&gt;引用。 该文件不在 Excel 中显示 UI。
+- **./config/customfunctions.json**，其中包含将自定义函数相关信息告知 Excel 的注册 JSON。 注册会使自定义函数显示在用户键入单元格时显示的可用函数列表中。
+- **./index.html**，它提供 JS 文件的&lt;脚本&gt;引用。 此文件不在 Excel 中显示 UI。
 - **./manifest.xml**，它将 HTML、JavaScript 和 JSON 文件的位置告诉 Excel；还为与该加载项一起安装的所有自定义函数指定一个命名空间。
 
 ### <a name="json-file-configcustomfunctionsjson"></a>JSON 文件 (./config/customfunctions.json)
@@ -91,10 +91,10 @@ customfunctions.json中的以下代码相同的 `ADD42` 功能指定元数据。
 ### <a name="manifest-file-manifestxml"></a>清单文件 (./manifest.xml)
 
 
-以下是一个例子 `<ExtensionPoint>` 和 `<Resources>` 您在加载项的清单中包含的标记使Excel能够运行您的函数。 请注意有关此标记的以下事实：
+下面是 `<ExtensionPoint>` 和 `<Resources>` 标记的示例，你可以在加载项的清单中包括这些标记，使 Excel 能够运行你的函数。 请注意有关此标记的以下事实：
 
 - 该 `<Script>` 元素及其相应的资源ID指定JavaScript文件在您的函数中的位置。
-- 该 `<Page>` 元素及其相应的资源ID指定加载项之HTML页面的位置。 HTML页面包含一个 `<Script>` 加载JavaScript文件的标签（customfunctions.js）。 HTML 页面是一个隐藏页面，始终不会在 UI 中显示。
+- 该 `<Page>` 元素及其相应的资源ID指定加载项之HTML页面的位置。 HTML页面包含一个 `<Script>` 加载JavaScript文件的标签（customfunctions.js）。 HTML 页面是一个隐藏页面，从不会显示在 UI 中。
 - 该 `<Metadata>` 元素及其相应的资源ID指定JSON文件的位置。
 - 一个 `<Namespace>` 元素及其相应的资源ID指定加载项中所有自定义函数的前缀。
 
@@ -143,7 +143,7 @@ Office.initialize = function (reason) {
 };
 ```
 
-您还可以使用以下语法：
+你还可以使用以下语法：
 
 ```js
 Office.Preview.StartCustomFunctions();
@@ -168,13 +168,13 @@ function getComment(x) {
 }
 ```
 
-## <a name="synchronous-and-asynchronous-functions"></a>同步和异步功能
+## <a name="synchronous-and-asynchronous-functions"></a>同步和异步函数
 
 上面的 `ADD42` 功能是关于Excel同步的（通过设置在JSON文件中的 `"sync": true` 选项来指定）。 同步函数提供了快速的性能，因为它们与Excel运行的过程相同，并且在多线程计算过程中它们并行运行。   
 
 另一方面，如果您的自定义函数从Web中检索数据，则它必须相对于Excel异步。 异步函数必须：
 
-1. 将 JavaScript 承诺返回到 Excel。
+1. 将 JavaScript Promise 返回到 Excel。
 3. 使用回调函数，用最终值解析Promise。
 
 下面的代码显示用于检索温度计温度的异步自定义函数示例。 注意 `sendWebRequest` 是一个假设的功能，这里没有指定，它使用XHR来调用温度网络服务。
@@ -199,15 +199,15 @@ function getTemperature(thermometerID){
 异步功能可以流式处理。 借助流式处理自定义函数，可以随时间推移将数据重复输出到单元格，而无需等待 Excel 或用户请求重新计算。 以下示例是一个自定义函数，它每秒向结果添加一个数字。 关于此代码，请注意以下几点：
 
 - Excel会自动使用 `setResult` 回调来显示每个新值。
-- 始终不会在注册代码中指定最后的 `caller` 参数，且当 Excel 用户输入此函数时，该参数不会在其自动完成菜单中显示。 它是包含`setResult` 回调函数的对象，用于将数据从函数传递到 Excel，以更新单元格值。
-- 为了让Excel通过 `setResult` 功能在 `caller` 对象，您必须通过设置 `"stream": true` 选项在注册JSON文件中自定义函数的 `options` 属性里，来声明在函数注册期间支持流式处理。
+- 始终不会在注册代码中指定最后的 `handler` 参数，且当 Excel 用户输入此函数时，该参数不会在其自动完成菜单中显示。 它是包含`setResult` 回调函数的对象，用于将数据从函数传递到 Excel，以更新单元格值。
+- 为了让Excel通过 `setResult` 功能在 `handler` 对象，您必须通过设置 `"stream": true` 选项在注册JSON文件中自定义函数的 `options` 属性里，来声明在函数注册期间支持流式处理。
 
 ```js
-function incrementValue(increment, caller){
+function incrementValue(increment, handler){
     var result = 0;
     setInterval(function(){
          result += increment;
-         caller.setResult(result);
+         handler.setResult(result);
     }, 1000);
 }
 ```
@@ -224,17 +224,17 @@ function incrementValue(increment, caller){
 
 要使功能可取消，请设置选项 `"cancelable": true` 在注册JSON文件中自定义函数的 `options` 属性里面。
 
-下面的代码展示了已实现取消的上一个示例。 在此代码中，`caller` 对象包含一个为每个可取消的自定义函数定义的 `onCanceled` 函数。
+下面的代码展示了已实现取消的上一个示例。 在此代码中，`handler` 对象包含一个为每个可取消的自定义函数定义的 `onCanceled` 函数。
 
 ```js
-function incrementValue(increment, caller){ 
+function incrementValue(increment, handler){ 
     var result = 0;
     var timer = setInterval(function(){
          result += increment;
-         caller.setResult(result);
+         handler.setResult(result);
     }, 1000);
 
-    caller.onCanceled = function(){
+    handler.onCanceled = function(){
         clearInterval(timer);
     }
 }
@@ -253,13 +253,13 @@ function incrementValue(increment, caller){
 ```js
 var savedTemperatures;
 
-function streamTemperature(thermometerID, caller){ 
+function streamTemperature(thermometerID, handler){ 
      if(!savedTemperatures[thermometerID]){
          refreshTemperatures(thermometerID); // starts fetching temperatures if the thermometer hasn't been read yet
      }
 
      function getNextTemperature(){
-         caller.setResult(savedTemperatures[thermometerID]); // setResult sends the saved temperature value to Excel.
+         handler.setResult(savedTemperatures[thermometerID]); // setResult sends the saved temperature value to Excel.
          setTimeout(getNextTemperature, 1000); // Wait 1 second before updating Excel again.
      }
      getNextTemperature();
@@ -316,7 +316,9 @@ function secondHighest(values){
 
 ## <a name="changelog"></a>更改日志
 
-- **2017 年 11 月 7 日**：发布了自定义函数（预览）和示例
+- **2017 年 11 月 7 日**：发布了*自定义函数（预览）和示例
 - **2017 年 11 月 20 日**：修复了使用内部版本 8801 及更高版本的函数的兼容性问题
-- **2017 年 11 月 28 日**：发布了对取消异步函数的支持（需要对流式处理函数进行相应更改）
-- **2018年5月7日**：提供对Mac、Excel Online和进程运行中的同步功能的支持
+- **2017 年 11 月 28 日**：发布了*对取消异步函数的支持（需要对流式处理函数进行相应更改）
+- **2018 年 5 月 7 日**：发布了*对 Mac、Excel Online 和在进程中运行的同步函数的支持
+
+\* 至 Office 预览体验计划渠道

@@ -49,16 +49,16 @@ items:
   - name: PowerPoint 外接程序教程
     displayName: PowerPoint
     href: tutorials/powerpoint-tutorial.yml
-  - name: Word 外接程序教程
+  - name: Word 加载项教程
     displayName: Word
     href: tutorials/word-tutorial.yml
 - name: 概念
   items:
   - name: 运行加载项的要求
     href: concepts/requirements-for-running-office-add-ins.md
-  - name: 外接程序开发的最佳做法
+  - name: 加载项开发最佳实践
     href: concepts/add-in-development-best-practices.md
-  - name: 外接程序开发生命周期
+  - name: 加载项开发生命周期
     href: concepts/add-in-development-lifecycle.md
   - name: 隐私和安全性
     href: concepts/privacy-and-security.md
@@ -117,7 +117,7 @@ items:
       items:
       - name: 设计工具包
         href: design/design-toolkits.md
-      - name: Office UI 结构
+      - name: Office UI Fabric
         href: design/office-ui-fabric.md
       - name: 开始使用 Fabric React
         href: design/using-office-ui-fabric-react.md
@@ -149,7 +149,7 @@ items:
         href: develop/create-addin-commands.md
       - name: 指定 Office 主机
         href: develop/specify-office-hosts-and-api-requirements.md
-      - name: 在内容加载项和任务窗格加载项中请求获取 API 使用权限
+      - name: 在内容和任务窗格加载项中请求获取 API 使用权限
         href: develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md
       - name: 更新 API 和清单版本
         href: develop/update-your-javascript-api-for-office-and-manifest-schema-version.md
@@ -166,11 +166,11 @@ items:
           href: develop/register-sso-add-in-aad-v2.md
         - name: 向加载项授予管理员许可
           href: develop/grant-admin-consent-to-an-add-in.md
-        - name: 排查单一登录 (SSO) 错误消息
+        - name: 单一登录 (SSO) 错误消息故障排查
           href: develop/troubleshoot-sso-in-office-add-ins.md
       - name: 授权外部服务
         href: develop/auth-external-add-ins.md
-      - name: 授权给 Microsoft Graph
+      - name: 向 Microsoft Graph 授权
         href: develop/authorize-to-microsoft-graph.md
     - name: 使用对话框 API
       href: develop/dialog-api-in-office-add-ins.md
@@ -192,11 +192,11 @@ items:
       href: develop/develop-office-add-ins-for-the-ipad.md
     - name: 使用 Angular 开发加载项
       href: develop/add-ins-with-angular2.md
-  - name: Excel 外接程序
+  - name: Excel 加载项
     displayName: Excel
     href: excel/excel-add-ins-overview.md
     items:
-    - name: 构建您的第一个 Excel 外接程序
+    - name: 构建您的第一个 Excel 加载项
       displayName: Excel
       href: excel/excel-add-ins-get-started-overview.md
       items:
@@ -268,12 +268,12 @@ items:
         href: excel/excel-add-ins-multiple-ranges.md
     - name: Excel JavaScript API 参考
       displayName: Excel
-      href: https://docs.microsoft.com/en-us/javascript/office/overview/excel-add-ins-reference-overview?view=office-js
-  - name: Word 外接程序
+      href: https://docs.microsoft.com/javascript/office/overview/excel-add-ins-reference-overview?view=office-js
+  - name: Word 加载项
     displayName: Word
     href: word/word-add-ins-programming-overview.md
     items:
-    - name: 构建您的第一个 Word 外接程序
+    - name: 构建您的第一个 Word 加载项
       displayName: Word
       href: word/word-add-ins.md
     - name: Word 加载项教程
@@ -282,7 +282,7 @@ items:
     - name: 使用 Office Open XML 创建更优质的 Word 加载项
       displayName: Word
       href: word/create-better-add-ins-for-word-with-office-open-xml.md
-    - name: 字典任务窗格外接程序
+    - name: 字典任务窗格加载项
       displayName: Word
       href: word/dictionary-task-pane-add-ins.md
     - name: 通过加载项获取整个文档
@@ -299,8 +299,8 @@ items:
       href: word/search-option-guidance.md
     - name: Word JavaScript API 参考
       displayName: Word
-      href: https://docs.microsoft.com/en-us/javascript/office/overview/word-add-ins-reference-overview?view=office-js
-  - name: Outlook 外接程序
+      href: https://docs.microsoft.com/javascript/office/overview/word-add-ins-reference-overview?view=office-js
+  - name: Outlook 加载项
     displayName: Outlook
     href: https://docs.microsoft.com/outlook/add-ins/
   - name: PowerPoint 加载项
@@ -326,12 +326,12 @@ items:
     - name: 生成首个 OneNote 加载项
       displayName: OneNote
       href: onenote/onenote-add-ins-getting-started.md
-    - name: 使用 OneNote 页内容
+    - name: 使用 OneNote 页面内容
       displayName: OneNote
       href: onenote/onenote-add-ins-page-content.md
     - name: OneNote JavaScript API 参考
       displayName: OneNote
-      href: https://docs.microsoft.com/en-us/javascript/office/overview/onenote-add-ins-javascript-reference?view=office-js
+      href: https://docs.microsoft.com/javascript/office/overview/onenote-add-ins-javascript-reference?view=office-js
   - name: Project 加载项
     displayName: Project
     href: project/project-add-ins.md
@@ -416,15 +416,15 @@ items:
     href: https://docs.microsoft.com/javascript/office/overview/word-add-ins-reference-overview?view=office-js
   - name: 共享 API
     displayName: PowerPoint, Project
-    href: https://docs.microsoft.com/en-us/javascript/office/requirement-sets/office-add-in-requirement-sets?view=office-js
+    href: https://docs.microsoft.com/javascript/office/requirement-sets/office-add-in-requirement-sets?view=office-js
   - name: API 开放性规范
     displayName: Excel, Word
     href: https://docs.microsoft.com/javascript/office/openspec?view=office-js
 - name: 资源
   href: resources/resources-links-help.md
-ms.openlocfilehash: 8ba30f4411fd0744d2271e64c694279561cb4e22
-ms.sourcegitcommit: 30435939ab8b8504c3dbfc62fd29ec6b0f1a7d22
+ms.openlocfilehash: 19c424952936e03a982f1c0eba2b01e47e2ff7c4
+ms.sourcegitcommit: 3da2038e827dc3f274d63a01dc1f34c98b04557e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "23945811"
+ms.lasthandoff: 09/19/2018
+ms.locfileid: "24016428"

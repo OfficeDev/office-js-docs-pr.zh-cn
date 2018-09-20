@@ -2,12 +2,12 @@
 title: 排查单一登录 (SSO) 错误消息
 description: ''
 ms.date: 12/08/2017
-ms.openlocfilehash: 1dd36d99715937e12a9194baace3731ac331e658
-ms.sourcegitcommit: 30435939ab8b8504c3dbfc62fd29ec6b0f1a7d22
+ms.openlocfilehash: a0eb0839596bad0dfe45c2cbbc05c2c3d74eda24
+ms.sourcegitcommit: 3da2038e827dc3f274d63a01dc1f34c98b04557e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "23945437"
+ms.lasthandoff: 09/19/2018
+ms.locfileid: "24016316"
 ---
 # <a name="troubleshoot-error-messages-for-single-sign-on-sso-preview"></a>排查单一登录 (SSO) 错误消息（预览）
 
@@ -98,9 +98,13 @@ Office 主机无法获取对加载项 Web 服务的访问令牌。
 
 用户正在 Office Online 上运行加载项，但使用的是 Edge 或 Internet Explorer。 用户的 Office 365 域和 login.microsoftonline.com 域位于浏览器设置中的不同安全区域。 如果此错误返回，用户将已看到对此进行解释的错误，并链接到关于如何更改区域配置的页面。 如果加载项提供的功能无需用户登录，代码应捕获此错误，并让加载项继续正常运行。
 
+### <a name="13012"></a>13012
+
+加载项在不支持 `getAccessTokenAsync` API 的平台上运行。 例如，它不支持在 iPad 上运行。 另请参阅[标识 API 要求集](https://docs.microsoft.com/javascript/office/requirement-sets/identity-api-requirement-sets)。
+
 ### <a name="50001"></a>50001
 
-这个错误（并非特定于 `getAccessTokenAsync`）可能表示浏览器已兑现了 office.js 文件的一个旧副本。 清除浏览器的缓存。 另一种可能性是 Office 的版本不够新，无法支持 SSO。 请参阅 [先决条件](create-sso-office-add-ins-aspnet.md#prerequisites)。
+此错误（并非特定于 `getAccessTokenAsync`）可能表示浏览器已缓存了 office.js 文件的一个旧副本。 清除浏览器的缓存。 另一种可能性是 Office 的版本不够新，无法支持 SSO。 请参阅 [先决条件](create-sso-office-add-ins-aspnet.md#prerequisites)。
 
 ## <a name="errors-on-the-server-side-from-azure-active-directory"></a>Azure Active Directory 服务器端错误
 

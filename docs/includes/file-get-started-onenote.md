@@ -36,7 +36,12 @@
     ![有关 Yeoman 生成器提示和回答的屏幕截图](../images/yo-office-onenote-jquery.png)
     
     完成向导后，生成器将创建项目并安装 Node 支持组件。
+    
+4. 导航到 web 应用程序项目的根文件夹。
 
+    ```bash
+    cd "My Office Add-in"
+    ```
 
 ## <a name="update-the-code"></a>更新代码
 

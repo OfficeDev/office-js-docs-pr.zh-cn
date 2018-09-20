@@ -128,9 +128,9 @@
 
 ### <a name="update-the-manifest"></a>更新清单
 
-1. 在加载项项目中打开 XML 清单文件。该文件定义了加载项的设置和功能。
+1. 打开加载项项目中的 XML 清单文件。 此文件定义的是加载项设置和功能。
 
-2. |||UNTRANSLATED_CONTENT_START|||The `ProviderName` element has a placeholder value.|||UNTRANSLATED_CONTENT_END||| 将其替换为你的姓名。
+2. 元素具有占位符值。`ProviderName` 将其替换为你的姓名。
 
 3. 元素的 `DefaultValue` 属性有占位符。`DisplayName` 将它替换为“My Office Add-in”****。
 
@@ -200,6 +200,12 @@
     ![有关 Yeoman 生成器提示和回答的屏幕截图](../images/yo-office-powerpoint-jquery.png)
     
     完成向导后，生成器将创建项目并安装提供支持的 Node 组件。
+    
+4. 导航到 web 应用程序项目的根文件夹。
+
+    ```bash
+    cd "My Office Add-in"
+    ```
 
 ### <a name="update-the-code"></a>更新代码
 
