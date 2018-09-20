@@ -1,10 +1,10 @@
 ### YamlMime:YamlDocument
-ms.openlocfilehash: 31011aefa0ae026ed6b0bcae4c8538834ee7e6dd
-ms.sourcegitcommit: 30435939ab8b8504c3dbfc62fd29ec6b0f1a7d22
+ms.openlocfilehash: 666f4ddb314c4fae960195efde6f6f2231b8f5b6
+ms.sourcegitcommit: 3da2038e827dc3f274d63a01dc1f34c98b04557e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "23944572"
+ms.lasthandoff: 09/19/2018
+ms.locfileid: "24016295"
 documentType: LandingData
 title: Office 外接程序文档
 metadata:
@@ -83,6 +83,6 @@ sections:
     - title: 常用 API (2013)
       html: <p><a href="https://docs.microsoft.com/javascript/office/javascript-api-for-office?view=office-js" target="_blank">适用于 Office 的 JavaScript API</a></p>
     - title: 主机特定的 API (2016)
-      html: <p><a href="https://docs.microsoft.com/javascript/office/overview/excel-add-ins-reference-overview?view=office-js" target="_blank">Excel JavaScript API</a></p><p><a href="https://docs.microsoft.com/en-us/javascript/office/overview/word-add-ins-reference-overview?view=office-js" target="_blank">Word JavaScript API</a></p><p><a href="https://docs.microsoft.com/en-us/javascript/office/overview/onenote-add-ins-javascript-reference?view=office-js" target="_blank">OneNote JavaScript API</a></p><p><a href="https://docs.microsoft.com/en-us/javascript/office/requirement-sets/outlook-api-requirement-sets?view=office-js" target="_blank">Outlook JavaScript API</a></p>
+      html: <p><a href="https://docs.microsoft.com/javascript/office/overview/excel-add-ins-reference-overview?view=office-js" target="_blank">Excel JavaScript API</a></p><p><a href="https://docs.microsoft.com/javascript/office/overview/word-add-ins-reference-overview?view=office-js" target="_blank">Word JavaScript API</a></p><p><a href="https://docs.microsoft.com/javascript/office/overview/onenote-add-ins-javascript-reference?view=office-js" target="_blank">OneNote JavaScript API</a></p><p><a href="https://docs.microsoft.com/javascript/office/requirement-sets/outlook-api-requirement-sets?view=office-js" target="_blank">Outlook JavaScript API</a></p>
     - title: 其他
-      html: <p><a href="https://docs.microsoft.com/javascript/office/openspec?view=office-js" target="_blank">API 开放性规范</a></p><p><a href="https://docs.microsoft.com/en-us/javascript/office/manifest/allowsnapshot?view=office-js" target="_blank">Office 外接程序清单</a></p>
+      html: <p><a href="https://docs.microsoft.com/javascript/office/openspec?view=office-js" target="_blank">API 开放性规范</a></p><p><a href="https://docs.microsoft.com/javascript/office/manifest/allowsnapshot?view=office-js" target="_blank">Office 外接程序清单</a></p>
