@@ -36,6 +36,12 @@
     ![有关 Yeoman 生成器提示和回答的屏幕截图](../images/yo-office-project-jquery.png)
     
     完成向导后，生成器将创建项目并安装 Node 支持组件。
+    
+4. 导航到 web 应用程序项目的根文件夹。
+
+    ```bash
+    cd "My Office Add-in"
+    ```
 
 ## <a name="update-the-code"></a>更新代码
 
@@ -68,7 +74,7 @@
     </div>
     ```
 
-4. 打开文件 **index/ src.js** 以指定加载项的脚本。使用以下代码替换全部内容并保存文件。
+4. 打开文件 **src\index.js**，以指定加载项脚本。 将整个内容替换为以下代码，并保存文件。
 
     ```js
     'use strict';
@@ -121,7 +127,7 @@
     })();
     ```
 
-4. |||UNTRANSLATED_CONTENT_START|||Open the file **app.css** in the root of the project to specify the custom styles for the add-in.|||UNTRANSLATED_CONTENT_END||| 将整个内容替换为以下内容，并保存文件。
+4. 打开项目根目录中的文件“app.css”****，以指定加载项自定义样式。 将整个内容替换为以下内容，并保存文件。
 
     ```css
     #content-header {
