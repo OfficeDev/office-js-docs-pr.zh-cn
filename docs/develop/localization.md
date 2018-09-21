@@ -1,15 +1,15 @@
 ---
 title: Office 加载项的本地化
-description: 可以使用 适用于 Office 的 JavaScript API 来确定区域设置并根据主机应用程序的区域设置显示字符串，或根据数据的区域设置解释或显示数据。
+description: 可以使用适用于 Office 的 JavaScript API 来确定区域设置并根据主机应用程序的区域设置显示字符串，或根据数据的区域设置解释或显示数据。
 ms.date: 01/23/2018
-ms.openlocfilehash: ba8388b965458edcf9e8abef05f9991abe2fdcbf
-ms.sourcegitcommit: 30435939ab8b8504c3dbfc62fd29ec6b0f1a7d22
+ms.openlocfilehash: 2b47a54acd2018be0d4c6c6fdac2e5d3bd1d6770
+ms.sourcegitcommit: 3da2038e827dc3f274d63a01dc1f34c98b04557e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "23945655"
+ms.lasthandoff: 09/19/2018
+ms.locfileid: "24016442"
 ---
-# <a name="localization-for-office-add-ins"></a>Office 外接程序的本地化
+# <a name="localization-for-office-add-ins"></a>Office 加载项的本地化
 
 您可以实现适合 Office 外接程序的任何本地化方案。Office 外接程序平台的 JavaScript API 和清单架构提供了一些选择。可以使用适用于 Office 的 JavaScript API 确定区域设置并根据主机应用程序的区域设置显示字符串，或根据数据的区域设置解释或显示数据。可以使用清单指定区域设置特定的加载项文件位置和描述性信息。也可以使用 Microsoft Ajax 脚本支持全球化和本地化。
 
@@ -17,7 +17,7 @@ ms.locfileid: "23945655"
 
 适用于 Office 的 JavaScript API 提供两个属性，支持显示或解释与主机应用程序和数据的区域设置一致的值：
 
-- [Context.displayLanguage][displayLanguage] 指定主机应用程序用户界面的区域设置（或语言）。 以下示例验证主机应用程序是否使用 en-US 或 fr-Fr 区域设置，并显示特定区域设置的问候语。
+- [Context.displayLanguage][displayLanguage] 指定主机应用程序用户界面的区域设置（或语言）。 以下示例验证主机应用程序是使用 en-US 还是 fr-Fr 区域设置，并显示特定区域设置的问候语。
     
     ```js
     function sayHelloWithDisplayLanguage() {
@@ -85,7 +85,7 @@ ms.locfileid: "23945655"
 这意味着，加载项默认情况下采用 `en-us` 区域设置。除非客户端计算机的区域设置为 `fr-fr`（此时用户将看到法语的显示名称“Lecteur vidéo”），否则对于所有区域设置，用户都将看到英文显示名称“Video player”。
 
 > [!NOTE] 
-> 每种语言只可指定单一的替代，包括对于默认区域设置的替代。 例如，如果默认区域设置为 `en-us`，则无法也指定 `en-us` 的替代。 
+> 每种语言只可指定单一的替代，包括对于默认区域设置的替代。 例如，如果默认区域设置为 `en-us`，则无法也指定 `en-us` 的覆盖。 
 
 下面的示例对 [Description] 元素应用区域设置覆盖。它先指定默认区域设置 `en-us` 和英文说明，再指定 [Override] 语句，其中包含 `fr-fr` 区域设置的法语说明：
 
@@ -172,17 +172,17 @@ ms.locfileid: "23945655"
 
 若要运行所提供的示例代码，请在计算机上配置 Microsoft Office 2013 以使用其他语言，这样您就可以通过切换用于显示菜单和命令的语言或者切换用于编辑和校对的语言（或同时切换两者）来测试您的加载项。
 
-此外，还需要创建 Visual Studio 2015 Office 外接程序项目。
+此外，还需要创建 Visual Studio 2015 Office 加载项项目。
 
 > [!NOTE] 
-> 若要下载 Visual Studio 2015，请参阅 [Office 开发人员工具页](https://www.visualstudio.com/features/office-tools-vs)。 此页还具有的 Office 开发工具的链接。
+> 若要下载 Visual Studio 2015，请参阅 [Office 开发人员工具页](https://www.visualstudio.com/features/office-tools-vs)。 此页还具有 Office 开发工具的链接。
 
 ### <a name="configure-office-2013-to-use-additional-languages-for-display-or-editing"></a>将 Office 2013 配置为使用其他显示或编辑语言
 
 您可以使用 Office 2013 语言包安装其他语言。有关语言包及其获取位置的详细信息，请参阅 [Office 2013 语言选项](http://office.microsoft.com/language-packs/)。
 
 > [!NOTE] 
-> 注意：如果你是一位 MSDN 订户，则可能已拥有适用的 Office 2013 语言包。 若要确定你的订阅是否有可供下载的 Office 2013 语言包，请转至 [MSDN 订阅主页](https://msdn.microsoft.com/subscriptions/manage/)，在“**软件下载**”中输入“Office 2013 语言包”，选择“**搜索**”，然后选择“**我的订阅可用的产品**”。 在“**语言**”下，选中想要下载的语言包的复选框，然后选择“**转到**” 
+> 如果你是一位 MSDN 订户，则可能已拥有适用的 Office 2013 语言包。 若要确定你的订阅是否有可供下载的 Office 2013 语言包，请转至 [MSDN 订阅主页](https://msdn.microsoft.com/subscriptions/manage/)，在“**软件下载**”中输入“Office 2013 语言包”，选择“**搜索**”，然后选择“**我的订阅可用的产品**”。 在“**语言**”下，选中想要下载的语言包的复选框，然后选择“**转到**” 
 
 安装语言包后，您可以配置 Office 2013 以使用安装的语言在 UI 中显示或编辑文档内容，或同时用于两者。本文中的示例使用的是应用了西班牙语语言包的 Office 2013 的安装。
 
@@ -400,7 +400,7 @@ UIStrings.js 资源文件创建对象 **UIStrings**，其中包含加载项 UI �
 })();
 ```
 
-### <a name="test-your-localized-add-in"></a>测试本地化的外接程序
+### <a name="test-your-localized-add-in"></a>测试本地化加载项
 
 若要测试本地化加载项，请更改在主机应用程序中用于显示或编辑的语言，然后运行加载项。 
 
@@ -428,17 +428,17 @@ UIStrings.js 资源文件创建对象 **UIStrings**，其中包含加载项 UI �
 - [Office 加载项的设计准则](../design/add-in-design.md)    
 - [Office 2013 中的语言标识符和 OptionState Id 值](https://docs.microsoft.com/previous-versions/office/office-2013-resource-kit/cc179219(v=office.15))
 
-[DefaultLocale]:        https://docs.microsoft.com/en-us/javascript/office/manifest/defaultlocale?view=office-js
-[说明]:          https://docs.microsoft.com/en-us/javascript/office/manifest/description?view=office-js
-[DisplayName]:          https://docs.microsoft.com/en-us/javascript/office/manifest/displayname?view=office-js
-[IconUrl]:              https://docs.microsoft.com/en-us/javascript/office/manifest/iconurl?view=office-js
-[HighResolutionIconUrl]:https://docs.microsoft.com/en-us/javascript/office/manifest/highresolutioniconurl?view=office-js
-[资源]:            https://docs.microsoft.com/en-us/javascript/office/manifest/resources?view=office-js
-[SourceLocation]:       https://docs.microsoft.com/en-us/javascript/office/manifest/sourcelocation?view=office-js
-[替代]:             https://docs.microsoft.com/en-us/javascript/office/manifest/override?view=office-js
-[DesktopSettings]:      https://docs.microsoft.com/en-us/javascript/office/manifest/desktopsettings?view=office-js
-[TabletSettings]:       https://docs.microsoft.com/en-us/javascript/office/manifest/tabletsettings?view=office-js
-[PhoneSettings]:        https://docs.microsoft.com/en-us/javascript/office/manifest/phonesettings?view=office-js
-[displayLanguage]:  https://docs.microsoft.com/en-us/javascript/api/office/office.context?view=office-js#displaylanguage 
-[contentLanguage]:  https://docs.microsoft.com/en-us/javascript/api/office/office.context?view=office-js#contentlanguage 
+[DefaultLocale]:        https://docs.microsoft.com/javascript/office/manifest/defaultlocale?view=office-js
+[说明]:          https://docs.microsoft.com/javascript/office/manifest/description?view=office-js
+[DisplayName]:          https://docs.microsoft.com/javascript/office/manifest/displayname?view=office-js
+[IconUrl]:              https://docs.microsoft.com/javascript/office/manifest/iconurl?view=office-js
+[HighResolutionIconUrl]:https://docs.microsoft.com/javascript/office/manifest/highresolutioniconurl?view=office-js
+[资源]:            https://docs.microsoft.com/javascript/office/manifest/resources?view=office-js
+[SourceLocation]:       https://docs.microsoft.com/javascript/office/manifest/sourcelocation?view=office-js
+[替代]:             https://docs.microsoft.com/javascript/office/manifest/override?view=office-js
+[DesktopSettings]:      https://docs.microsoft.com/javascript/office/manifest/desktopsettings?view=office-js
+[TabletSettings]:       https://docs.microsoft.com/javascript/office/manifest/tabletsettings?view=office-js
+[PhoneSettings]:        https://docs.microsoft.com/javascript/office/manifest/phonesettings?view=office-js
+[displayLanguage]:  https://docs.microsoft.com/javascript/api/office/office.context?view=office-js#displaylanguage 
+[contentLanguage]:  https://docs.microsoft.com/javascript/api/office/office.context?view=office-js#contentlanguage 
 [RFC 3066]: https://www.rfc-editor.org/info/rfc3066
