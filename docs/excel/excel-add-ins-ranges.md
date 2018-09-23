@@ -2,16 +2,16 @@
 title: 使用 Excel JavaScript API 处理区域
 description: ''
 ms.date: 12/04/2017
-ms.openlocfilehash: 2760e3991951088edb8cd9c1aab7b242a8f105bb
-ms.sourcegitcommit: 30435939ab8b8504c3dbfc62fd29ec6b0f1a7d22
+ms.openlocfilehash: dea015c028d58a708bb83f79fcbfebc3cf3bfc1e
+ms.sourcegitcommit: e7e4d08569a01c69168bb005188e9a1e628304b9
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "23945776"
+ms.lasthandoff: 09/22/2018
+ms.locfileid: "24967709"
 ---
 # <a name="work-with-ranges-using-the-excel-javascript-api"></a>使用 Excel JavaScript API 处理区域
 
-本文中的代码示例展示了如何使用 Excel JavaScript API 对区域执行常见任务。 有关 **Range** 对象支持的属性和方法的完整列表，请参阅 [Range 对象 (Excel JavaScript API)](https://docs.microsoft.com/javascript/api/excel/excel.range?view=office-js)。
+本文中的代码示例展示了如何使用 Excel JavaScript API 对区域执行常见任务。 有关 **Range** 对象支持的属性和方法的完整列表，请参阅 [Range 对象 (Excel JavaScript API)](https://docs.microsoft.com/javascript/api/excel/excel.range)。
 
 ## <a name="get-a-range"></a>获取区域
 
