@@ -2,12 +2,12 @@
 title: 在 Office 外接程序中使用对话框 API
 description: ''
 ms.date: 12/04/2017
-ms.openlocfilehash: 65ac55baa31f298ea5a17d789ba96772c8f5bb02
-ms.sourcegitcommit: 30435939ab8b8504c3dbfc62fd29ec6b0f1a7d22
+ms.openlocfilehash: 569aa6fe6a16b4dc158f0b4e0f5b457650a5a46a
+ms.sourcegitcommit: 470d8212b256275587e651abaa6f28beafebcab4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "23945605"
+ms.lasthandoff: 09/21/2018
+ms.locfileid: "24062135"
 ---
 # <a name="use-the-dialog-api-in-your-office-add-ins"></a>在 Office 加载项中使用对话框 API
 
@@ -47,7 +47,10 @@ Office.context.ui.displayDialogAsync('https://myAddinDomain/myDialog.html');
 
 > [!NOTE]
 > - URL 使用 HTTP**S** 协议。对话框中加载的所有页面都必须遵循此要求，而不仅仅是加载的第一个页面。
-> - 域与主机页的域相同，主机页可以是任务窗格中的页面，也可以是外接程序命令的[函数文件](https://docs.microsoft.com/javascript/office/manifest/functionfile?view=office-js)。这要求：传递到 `displayDialogAsync` 方法的页面、控制器方法或其他资源必须与主机页位于相同的域。
+> - 对话框资源的域与主机页的域相同，主机页可以是任务窗格中的页面，也可以是加载项命令的[函数文件](https://docs.microsoft.com/javascript/office/manifest/functionfile?view=office-js)。这要求：传递到 `displayDialogAsync` 方法的页面、控制器方法或其他资源必须与主机页位于相同的域。
+
+> [!IMPORTANT]
+> 主机页上和对话框中的资源都必须具有相同的完整域。 如果您试图将传递 `displayDialogAsync`  加载项的域的子域，将不起作用。 完整的域，包括任何子域，必须匹配。
 
 在第一个页面（或其他资源）加载后，用户可以转到使用 HTTPS 的任意网站（或其他资源）。还可以将第一个页面设计为直接重定向到另一个站点。
 
@@ -389,9 +392,9 @@ Office.context.ui.displayDialogAsync('https://myAddinDomain/myDialog.html?client
 3. 当 redirectPage.html 页面打开时，它会调用 `messageParent` 向主机页报告登录是否成功，而且还会视情况报告用户数据或错误数据。
 4. 事件在主机页中触发，其处理程序关闭对话框窗口，并视情况对消息进行其他处理。`DialogMessageReceived`
 
-有关使用此模式的示例外接程序，请参阅：
+有关使用此模式的示例加载项，请参阅：
 
-- [在 PowerPoint 加载项中使用 Microsoft Graph 插入 Excel 图表](https://github.com/OfficeDev/PowerPoint-Add-in-Microsoft-Graph-ASPNET-InsertChart)：对话框窗口最初打开的资源是没有自己的视图的控制器方法。它将重定向到 Office 365 登录页。
+- [在 PowerPoint 加载项中使用 Microsoft Graph 插入 Excel 图表](https://github.com/OfficeDev/PowerPoint-Add-in-Microsoft-Graph-ASPNET-InsertChart)：对话框窗口最初打开的资源是没有自己视图的控制器方法。 它将重定向到 Office 365 登录页面。
 - [Office 外接程序 Office 365 客户端 AngularJS 身份验证](https://github.com/OfficeDev/Word-Add-in-AngularJS-Client-OAuth)：对话框窗口最初打开的资源是一个页面。
 
 #### <a name="support-multiple-identity-providers"></a>支持多个标识提供程序

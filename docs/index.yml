@@ -1,10 +1,10 @@
 ### YamlMime:YamlDocument
-ms.openlocfilehash: 666f4ddb314c4fae960195efde6f6f2231b8f5b6
-ms.sourcegitcommit: 3da2038e827dc3f274d63a01dc1f34c98b04557e
+ms.openlocfilehash: 2d9cd30df34fee32821e4746ca369c2dc850f2b1
+ms.sourcegitcommit: e7e4d08569a01c69168bb005188e9a1e628304b9
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/19/2018
-ms.locfileid: "24016295"
+ms.lasthandoff: 09/22/2018
+ms.locfileid: "24967646"
 documentType: LandingData
 title: Office 外接程序文档
 metadata:
@@ -15,7 +15,7 @@ metadata:
   ms.date: 12/04/2017
   ms.author: o365devx
 abstract:
-  description: <a href="https://docs.microsoft.com/office/dev/add-ins/overview/office-add-ins">Office 外接程序平台</a> 允许你构建扩展 Office 应用程序并与 Office 文档中的内容进行交互的解决方案。 通过 Office 外接程序，可以使用熟悉的 Web 技术，例如 HTML、CSS 和 JavaScript 来扩展 Word、Excel、PowerPoint、OneNote，Project 和 Outlook，并与其进行交互。 解决方案可以跨多个平台在 Office 中运行，包括 Office for Windows、Office Online、Office for Mac 和 Office for iPad。 通过我们的快速入门、操作指南和 API 参考文档创建 Office 外接程序。<br/><br/><b>注意：</b> 有关 COM 或 VSTO 外接程序的信息，请参阅 <a href="https://docs.microsoft.com/office/client-developer/office-client-development" target="_blank">Office 客户端开发文档</a>。
+  description: <a href="https://docs.microsoft.com/office/dev/add-ins/overview/office-add-ins">Office 外接程序平台</a> 允许你构建扩展 Office 应用程序并与 Office 文档中的内容进行交互的解决方案。 通过 Office 外接程序，可以使用熟悉的 Web 技术，例如 HTML、CSS 和 JavaScript 来扩展 Word、Excel、PowerPoint、OneNote，Project 和 Outlook，并与其进行交互。 解决方案可以跨多个平台在 Office 中运行，包括 Office for Windows、Office Online、Office for Mac 和 Office for iPad。 借助我们的快速入门、操作指南和 API 参考文档创建 Office 外接程序。<br/><br/><b>注意：</b>有关 COM 或 VSTO 外接程序的信息，请参阅 <a href="https://docs.microsoft.com/office/client-developer/office-client-development" target="_blank">Office 客户端开发文档</a>。
   aside:
     image:
       alt: 
@@ -69,11 +69,11 @@ sections:
     - html: <a href="/office/dev/add-ins/excel/excel-add-ins-overview">Excel 外接程序开发</a>
     - html: <a href="/office/dev/add-ins/word/word-add-ins-programming-overview">Word 外接程序开发</a>
     - html: <a href="/office/dev/add-ins/onenote/onenote-add-ins-programming-overview">OneNote 外接程序开发</a>
-    - html: <a href="/office/dev/add-ins/outlook/add-ins">Outlook 外接程序开发</a>
+    - html: <a href="/outlook/add-ins">Outlook 外接程序开发</a>
     - html: <a href="/office/dev/add-ins/powerpoint/powerpoint-add-ins">PowerPoint 外接程序开发</a>
     - html: <a href="/office/dev/add-ins/project/project-add-ins">Project 外接程序开发</a>
     - html: <a href="/office/dev/add-ins/testing/test-debug-office-add-ins">测试和调试 Office 外接程序</a>
-    - html: <a href="/office/dev/add-ins/publish/publish">发布 Office 加载项</a>
+    - html: <a href="/office/dev/add-ins/publish/publish">发布 Office 外接程序</a>
 - title: 参考
   items:
   - type: list
