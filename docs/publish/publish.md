@@ -1,15 +1,15 @@
 ---
-title: 部署和发布 Office 外接程序
-description: ''
+title: 部署和发布 Office 外接程序 |Microsoft Docs
+description: 用以测试或向用户发布的部署 Office 外接程序的方法和选项。
 ms.date: 01/23/2018
-ms.openlocfilehash: b35c50c65a5d8b8b3f1a5e9724fa9072285fb7ae
-ms.sourcegitcommit: 30435939ab8b8504c3dbfc62fd29ec6b0f1a7d22
+ms.openlocfilehash: ada786ed7ded1f34d564389c09c2cd5c25c2a331
+ms.sourcegitcommit: eb74e94d3e1bc1930a9c6582a0a99355d0da34f2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "23944338"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "25004929"
 ---
-# <a name="deploy-and-publish-your-office-add-in"></a>部署和发布 Office 加载项
+# <a name="deploy-and-publish-your-office-add-in"></a>部署和发布 Office 外接程序
 
 可以使用几种方法之一来部署 Office 外接程序，以用于对用户进行测试或分发：
 
@@ -48,7 +48,7 @@ ms.locfileid: "23944338"
 
 ## <a name="deployment-methods"></a>部署方法
 
-以下各节提供了有关向组织中的用户分发 Office 加载项的最常用的部署方法的其他信息。
+以下各节提供了有关向组织中的用户分发 Office 加载项的最常用部署方法的其他信息。
 
 有关最终用户如何获取、插入和运行加载项的信息，请参阅[开始使用 Office 加载项](https://support.office.com/en-ie/article/Start-using-your-Office-Add-in-82e665c4-6700-4b56-a3f3-ef5441996862?ui=en-US&rs=en-IE&ad=IE)。
 
@@ -65,7 +65,7 @@ SharePoint 加载项目录是特殊网站集，创建后可用于托管 Word、E
 如果要在本地环境中部署外接程序，请使用 SharePoint 目录。有关详细信息，请参阅[将任务窗格和内容外接程序发布到 SharePoint 目录](publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md)。
 
 > [!NOTE]
-> SharePoint 目录不支持 Office for Mac。若要向 Mac 客户端部署 Office 加载项，必须将它们提交到 [AppSource](https://docs.microsoft.com/office/dev/store/submit-to-the-office-store). 
+> SharePoint 目录不支持 Office for Mac。 若要部署 Office 外接程序到 Mac 客户端，您必须将它们提交给 [AppSource](https://docs.microsoft.com/office/dev/store/submit-to-the-office-store)。 
 
 ### <a name="outlook-add-in-deployment"></a>Outlook 加载项部署
 

@@ -2,12 +2,12 @@
 title: 指定 Office 主机和 API 要求
 description: ''
 ms.date: 12/04/2017
-ms.openlocfilehash: 6693aa6825d14214dcba36a738ae7bf4e3ed0378
-ms.sourcegitcommit: 30435939ab8b8504c3dbfc62fd29ec6b0f1a7d22
+ms.openlocfilehash: 1a1b98763b73d4c41cb9853c139866b727c125a1
+ms.sourcegitcommit: eb74e94d3e1bc1930a9c6582a0a99355d0da34f2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "23945713"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "25005007"
 ---
 # <a name="specify-office-hosts-and-api-requirements"></a>指定 Office 主机和 API 要求
 
@@ -30,7 +30,7 @@ ms.locfileid: "23945713"
 |:-----|:-----|
 |Office 应用程序、Office 主机应用程序、Office 主机或主机|Office 应用程序、Office 主机应用程序、Office 主机或主机|
 |平台|平台|
-|要求集|命名的一组相关的 API 成员。外接程序使用要求集来确定 Office 主机是否支持你的外接程序使用的 API 成员。测试对要求集的支持比对单个的 API 成员的支持更为容易。要求集支持根据 Office 主机和 Office 主机的版本变化。 <br >要求集在清单文件中指定。 当你在清单中指定要求集时，你可以设置 Office 主机必须提供的用于运行你的外接程序的最低级别的 API 支持。 不支持在清单中指定要求集的 office 主机无法运行外接程序，并加载项不会显示 <span class="ui">我的加载项</span>中。此限制其中加载项是可用。在代码中使用运行时检查。 有关要求集的完整列表，请参阅 [Office 外接程序要求集](https://docs.microsoft.com/javascript/office/requirement-sets/office-add-in-requirement-sets?view=office-js)。|
+|要求集|命名的一组相关的 API 成员。外接程序使用要求集来确定 Office 主机是否支持你的外接程序使用的 API 成员。测试对要求集的支持比对单个的 API 成员的支持更为容易。要求集支持根据 Office 主机和 Office 主机的版本变化。 <br >要求集在清单文件中指定。 当你在清单中指定要求集时，你可以设置 Office 主机必须提供的用于运行你的外接程序的最低级别的 API 支持。 不支持在清单中指定要求集的 Office 主机无法运行外接程序，且外接程序不会显示在<span class="ui">我的外接程序</span>中。此限制外接程序的可用位置。在代码中使用运行时检查。 有关要求集的完整列表，请参阅 [Office 外接程序要求集](https://docs.microsoft.com/javascript/office/requirement-sets/office-add-in-requirement-sets?view=office-js)。|
 |运行时检查|在运行时执行的一种测试，用以确定运行外接程序的 Office 主机是否支持要求集或外接程序使用的方法。若要执行运行时检查，请使用包含 **isSetSupported** 方法、要求集或不属于要求集的方法名称的 **if** 语句。使用运行时检查以确保达到的客户数目最大。与要求集不同，运行时检查不指定 Office 主机必须提供的用于运行外接程序的最低级别的 API 支持。相反，使用 **if** 语句来确定是否支持某个 API 成员。如果支持，则可以在外接程序中提供其他功能。使用运行时检查时，外接程序将始终在“**我的外接程序**”中显示。|
 
 ## <a name="before-you-begin"></a>开始之前
@@ -42,7 +42,7 @@ ms.locfileid: "23945713"
 外接程序清单必须使用外接程序清单架构版本 1.1。按照以下操作设置外接程序清单中的 **OfficeApp**。
 
 ```XML
-<OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="TaskPaneApp">
+<OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.1" xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance" xsi:type="TaskPaneApp">
 ```
 
 ### <a name="specify-the-latest-javascript-api-for-office-library"></a>指定最新的适用于 Office 的 JavaScript API 库
@@ -81,7 +81,7 @@ ms.locfileid: "23945713"
 
 | 名称          | Office 主机应用程序                      |
 |:--------------|:----------------------------------------------|
-| 数据库      | Access Web 应用                               |
+| 数据库      | Access Web App                               |
 | 文档      | Word for Windows、Word for Mac、Word for iPad 和 Word Online        |
 | 邮箱       | Outlook for Windows、Outlook for Mac、Outlook Web 和 Outlook.com | 
 | 演示文稿  | PowerPoint for Windows、PowerPoint for Mac、PowerPoint for iPad 和 PowerPoint Online  |
@@ -123,7 +123,7 @@ ms.locfileid: "23945713"
     
 - **Sets** 元素可以包含一个或多个 **Set** 元素。**DefaultMinVersion** 指定所有子 **Set** 元素的默认 **MinVersion** 值。
     
--  **设置**元素指定的 Office 主机必须支持运行外接程序的要求集。  **Name**属性指定要求集的名称。  **MinVersion**指定要求集的最低版本。 **MinVersion**替代 **DefaultMinVersion**的值。 有关要求集和您的 API 成员属于要求集版本的详细信息，请参阅 [Office 加载项要求集](https://docs.microsoft.com/javascript/office/requirement-sets/office-add-in-requirement-sets?view=office-js)。
+- **设置**元素指定的 Office 主机必须支持运行外接程序的要求集。 **Name**属性指定要求集的名称。 **MinVersion**指定要求集的最低版本。 **MinVersion**替代 **DefaultMinVersion**的值。 有关要求集和您的 API 成员属于要求集版本的详细信息，请参阅 [Office 加载项要求集](https://docs.microsoft.com/javascript/office/requirement-sets/office-add-in-requirement-sets?view=office-js)。
     
 - **Methods** 元素可以包含一个或多个 **Method** 元素。不能将 **Methods** 元素和 Outlook 外接程序结合使用。
     
@@ -184,7 +184,7 @@ else
 
 
 > [!NOTE]
-> 建议限制在加载项代码中使用此类型运行时检查。
+> 建议限制在外接程序代码中使用此类型运行时检查。
 
 下面的代码示例检查主机是否支持 **document.setSelectedDataAsync**。
 

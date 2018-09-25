@@ -1,13 +1,13 @@
 ---
-title: Office 加载项平台概述
-description: ''
+title: Office 加载项平台概述 |Microsoft 文档
+description: 使用熟悉的 web 技术，如 HTML、 CSS 和 JavaScript 以扩展与 Word、Excel、 PowerPoint、OneNote、Project 和 Outlook 的交互。
 ms.date: 01/23/2018
-ms.openlocfilehash: a35e0db20f5c573357b12b9034d9b13ce0cc3a27
-ms.sourcegitcommit: 4de2a1b62ccaa8e51982e95537fc9f52c0c5e687
+ms.openlocfilehash: 4249e675f4f6a0371e13c5933b3277e7e38841d0
+ms.sourcegitcommit: eb74e94d3e1bc1930a9c6582a0a99355d0da34f2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/10/2018
-ms.locfileid: "22925274"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "25004978"
 ---
 # <a name="office-add-ins-platform-overview"></a>Office 加载项平台概述
 
@@ -93,7 +93,7 @@ Office 外接程序可以在 Office 主机应用程序中执行下列操作：
 
 *图 4：任务窗格*
 
-![任务窗格](../images/about-addins-taskpane.png)
+![在外接程序命令外使用任务窗格](../images/about-addins-taskpane.png)
 
 ### <a name="extend-outlook-functionality"></a>扩展 Outlook 功能 
 
@@ -109,7 +109,7 @@ Outlook 加载项可以通过项访问上下文信息（如地址或跟踪 ID）
 
 *图 5：内容加载项*
 
-![内容加载项](../images/about-addins-contentaddin.png)
+![嵌入基于 web 的对象调用的内容加载项](../images/about-addins-contentaddin.png)
 
 ## <a name="office-javascript-apis"></a>Office JavaScript API 
 

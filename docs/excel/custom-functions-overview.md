@@ -2,12 +2,12 @@
 ms.date: 09/20/2018
 description: 在 Excel 中使用 JavaScript 创建自定义的函数。
 title: 在 Excel 中创建自定义函数（预览）
-ms.openlocfilehash: abfc43872c84ac7a86e59d70ef616308ba3d4231
-ms.sourcegitcommit: 8ce9a8d7f41d96879c39cc5527a3007dff25bee8
+ms.openlocfilehash: b214329fe50955d0f39d50f674152f475ca24b4d
+ms.sourcegitcommit: eb74e94d3e1bc1930a9c6582a0a99355d0da34f2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "24985807"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "25005041"
 ---
 # <a name="create-custom-functions-in-excel-preview"></a>在 Excel 中创建自定义函数（预览）
 
@@ -45,7 +45,7 @@ function ADD42(a, b) {
 | **./src/customfunctions.js** | JavaScript | 包含定义自定义函数的代码。 |
 | **./config/customfunctions.json** | JSON | 包含描述自定义函数的元数据，并使 Excel 能够注册自定义函数以使其可供最终用户使用。 |
 | **./index.html** | HTML | 提供 &lt;脚本&gt; 定义自定义函数的 JavaScript 文件的引用。 |
-| **Manifest.xml** | XML | 此表中指定外接程序中所有自定义函数的命名空间，以及前面列出的JavaScript、 JSON 和 HTML 文件的位置。 |
+| **./manifest.xml** | XML | 此表中指定外接程序中所有自定义函数的命名空间，以及前面列出的JavaScript、 JSON 和 HTML 文件的位置。 |
 
 ### <a name="manifest-file-manifestxml"></a>清单文件（./manifest.xml）
 
@@ -92,7 +92,7 @@ function ADD42(a, b) {
 自定义函数元数据文件提供 Excel 要求注册自定义函数并使其可供最终用户使用的信息。 自定义函数是在用户第一次运行加载项时注册的。 之后，所有工作簿中的同一用户都可以使用它们 （即，不仅在加载项最初运行的工作簿中。）
 
 > [!TIP]
-> 您的 JSON 文件的服务器设置必须启用 [CORS](https://developer.mozilla.org/docs/Web/HTTP/CORS)才能使自定义函数在 Excel Online 中正常工作。
+> 您的 JSON 文件的服务器设置必须启用 [CORS](https://developer.mozilla.org/docs/Web/HTTP/CORS) 才能使自定义函数在 Excel Online 中正常工作。
 
 下面的代码 **customfunctions.json** 指定的元数据 `ADD42` 是以前本文中所述的函数。 此元数据定义的函数名称、说明、返回值、输入的参数等。 下表提供了此代码示例有关的 JSON 对象中的各个属性的详细信息。
 
@@ -135,19 +135,19 @@ function ADD42(a, b) {
 | `name` | 当用户在单元格中键入公式时，自动完成菜单中显示函数的名称。 在自动完成菜单中，此值将由自定义函数的命名空间中的 XML 清单文件指定作为前缀。 |
 | `helpUrl` | 当用户请求帮助显示的页面的 Url。 |
 | `description` | 介绍函数的用途。 当函数是 Excel 中自动完成菜单中的选定项时，此值将显示为工具提示。 |
-| `result`  | 定义函数返回的信息类型的对象。 子属性的值可以是 **字符串**、**数字**或 **布尔值**。`type` `dimensionality` 子属性的值可以是**标量**或**矩阵**（指定 `type` 值的二维数组）。 |
-| `parameters` | 定义函数的输入参数的数组。 该 `name` 和 `description`在 Excel intelliSense 中使用的子属性。 和 `dimensionality`子属性与此表中`result`前面描述的对象的子属性相同。`type` |
+| `result`  | 定义函数返回的信息类型的对象。 子属性的值可以是 **字符串**、**数字**或 **布尔值**。`type` `dimensionality` 子属性的值可以是**scalar** 或 **matrix**（指定 `type` 值的二维数组）。 |
+| `parameters` | 定义函数的输入参数的数组。 在 Excel intelliSense 中出现的 `name` 和 `description` 子属性。 和 `dimensionality`子属性与此表中`result`前面描述的对象的子属性相同。`type` |
 | `options` | 使你可以自定义 Excel 执行函数的方式和时间等的某些方面。 有关如何使用此属性的详细信息，请参阅本文后面的 [Streamed 函数](#streamed-functions)和 [取消](#canceling-a-function)。 |
 
 ## <a name="functions-that-return-data-from-external-sources"></a>从外部源返回数据的函数
 
 如果自定义的函数从 web 等外部源检索数据，它必须：
 
-1. 将 JavaScript Promise 返回到 Excel。
+1. 将 JavaScript 承诺返回到 Excel。
 
-2. 使用回调函数，用最终值解析 Promise。
+2. 使用回调函数，用最终值解析承诺。
 
-自定义函数在单元格中显示`#GETTING_DATA` 临时结果，而 Excel 等待最终结果。 用户可以在等待结果时与电子表格的其余部分进行正常交互。
+自定义函数在单元格中显示 `#GETTING_DATA` 临时结果，而 Excel 等待最终结果。 用户可以在等待结果时与电子表格的其余部分进行正常交互。
 
 在下面的代码示例中，`getTemperature()` 自定义函数检索温度计当前温度。 注意，`sendWebRequest` 是一个假设的函数（这里没有指定），它使用 XHR 来调用温度 Web 服务。
 
@@ -216,7 +216,7 @@ function incrementValue(increment, handler){
 
 自定义函数可以将数据保存在全局 JavaScript 变量中。 在后续调用中，自定义函数可以使用保存在这些变量中的值。 当用户将相同的自定义函数添加到多个单元格时，保存状态很有用，因为该函数的所有实例都可以共享该状态。 例如，可以保存调用某个 Web 资源时返回的数据，以避免再次调用同一个 Web 资源。
 
-下面的代码示例演示了以前在全局上保存状态的温度流函数的实现。 关于此代码，请注意以下几点：
+下面的代码示例演示了以前全局保存状态的温度流函数的实现。 关于此代码，请注意以下几点：
 
 - `refreshTemperature` 是一个流式处理函数，它会在每一秒内读取特定温度计的温度。 新的温度保存在 `savedTemperatures` 变量，但不直接更新单元格值。 它不应该直接从工作表单元格中调用， *所以它没有在JSON文件中注册*。
 
@@ -253,7 +253,7 @@ function refreshTemperature(thermometerID){
 
 您自定义的函数可能接受范围的数据作为输入参数，或它可能返回的数据范围。 JavaScript 中，数据范围表示为一个二维数组。
 
-例如，假设函数从 Excel 中存储的一系列数字中返回第二个最大值。 下面的函数接受参数 `values`，这是类型 `Excel.CustomFunctionDimensionality.matrix`。 请注意，在该函数的 JSON 元数据中，您可以将该参数的`type` 属性 设置为 `matrix`。
+例如，假设函数从 Excel 中存储的一系列数字中返回第二个最大值。 下面的函数接受参数 `values`，其类型为 `Excel.CustomFunctionDimensionality.matrix`。 请注意，在该函数的 JSON 元数据中，您可以将该参数的 `type` 属性 设置为 `matrix`。
 
 ```js
 function secondHighest(values){
@@ -279,8 +279,7 @@ function secondHighest(values){
 
 ```js
 function getComment(x) {
-    //this delivers a section of lorem ipsum from the jsonplaceholder API
-    let url = "https://jsonplaceholder.typicode.com/comments/" + x;
+    let url = "https://yourhypotheticalapi/comments/" + x;
 
     return fetch(url)
         .then(function (data) {
@@ -298,7 +297,7 @@ function getComment(x) {
 ## <a name="known-issues"></a>已知问题
 
 - Excel 暂未使用帮助 URL 和参数说明。
-- 自定义功能目前不适用于移动客户端的 Excel。
+- 自定义功能目前不适用于移动客户的Excel。
 - 不支持可变函数（每当电子表格中不相关的数据更改时自动重新计算）。
 - 尚未启用通过 Office 365 管理门户和 AppSource 进行的部署。
 - Excel Online中的自定义功能，可能会在一段时间无活动后，在进程期间停止工作。 刷新浏览器页面 (F5) 并重新输入自定义函数以恢复该功能。
@@ -307,10 +306,10 @@ function getComment(x) {
 
 ## <a name="changelog"></a>更改日志
 
-- **2017 年 11 月 7 日**：发布了*自定义函数预览和示例
+- **2017 年 11 月 7 日**：发布了* 自定义函数预览和示例
 - **2017 年 11 月 20 日**：修复了使用内部版本 8801 及更高版本的函数的兼容性问题
-- **2017 年 11 月 28 日**：发布了*对取消异步函数的支持（需要对流式函数进行相应更改）
-- **2018 年 5 月 7 日**：发布了*对 Mac、Excel Online 和在进程中运行的同步函数的支持
+- **2017 年 11 月 28 日**：发布了* 对取消异步函数的支持（需要对流式函数进行相应更改）
+- **2018 年 5 月 7 日**：发布了* 对 Mac、Excel Online 和在进程中运行的同步函数的支持
 - **2018 年 9 月 20 日，** 发布了支持自定义函数 JavaScript 的运行时。 有关详细信息，请参阅 [Excel 自定义函数的运行时](custom-functions-runtime.md)。
 
 \* 至 Office 预览体验计划渠道

@@ -2,12 +2,12 @@
 title: 更新到适用于 Office 的 JavaScript API 最新库和第 1.1 版加载项清单架构
 description: 将 Office 加载项项目中使用的 JavaScript 文件（Office.js 和特定于应用的 .js 文件）和加载项清单验证文件更新到版本 1.1。
 ms.date: 12/04/2017
-ms.openlocfilehash: c597c7456da2749d1061ab3e2c5bf9f41800a9cf
-ms.sourcegitcommit: 30435939ab8b8504c3dbfc62fd29ec6b0f1a7d22
+ms.openlocfilehash: e58239a4e67871eb955d7fc205e26d0eb95af327
+ms.sourcegitcommit: eb74e94d3e1bc1930a9c6582a0a99355d0da34f2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "23944396"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "25004936"
 ---
 # <a name="update-to-the-latest-javascript-api-for-office-library-and-version-11-add-in-manifest-schema"></a>更新到适用于 Office 的 JavaScript API 最新库和第 1.1 版加载项清单架构
 
@@ -59,17 +59,17 @@ ms.locfileid: "23944396"
     ```
 
    > [!NOTE] 
-   > 在 CDN URL 中，`/1/`  前面的`office.js`指定在第 1.1 版 Office.js 中使用最新增量版本。   
+   > 在 CDN URL 中，`/1/` 前面的 `office.js` 指定在第 1.1 版 Office.js 中使用最新增量版本。   
 
 
 ### <a name="update-the-manifest-file-in-your-project-to-use-schema-version-11"></a>将项目中的清单文件更新为使用第 1.1 版架构
 
-在外接程序清单文件中，更新 **OfficeApp**元素的 **xmlns**属性，将版本值更改为 `1.1`（除 **xmlns**属性以外的属性保持不变）。
+在加载项清单文件中，更新 **OfficeApp** 元素的 **xmlns** 属性，将版本值更改为 `1.1`（除 **xmlns**属性以外的属性保持不变）。
     
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
 <OfficeApp xsi:type="ContentApp" 
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance" 
     xmlns="http://schemas.microsoft.com/office/appforoffice/1.1">
   
   <!-- manifest contents -->
@@ -103,16 +103,16 @@ ms.locfileid: "23944396"
     ```
 
    > [!NOTE] 
-   > 在 CDN URL 中，`/1/`前面的`office.js`指定在第 1.1 版 Office.js 中使用最新增量版本。   
+   > 在 CDN URL 中，`/1/` 前面的 `office.js` 指定在第 1.1 版 Office.js 中使用最新增量版本。   
 
 ### <a name="update-the-manifest-file-in-your-project-to-use-schema-version-11"></a>将项目中的清单文件更新为使用第 1.1 版架构
 
-在外接程序清单文件中，更新 **OfficeApp**元素的 **xmlns**属性，将版本值更改为 `1.1`（除 **xmlns**属性以外的属性保持不变）。
+在加载项清单文件中，更新 **OfficeApp** 元素的 **xmlns** 属性，将版本值更改为 `1.1`（除 **xmlns**属性以外的属性保持不变）。
     
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
 <OfficeApp xsi:type="ContentApp" 
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance" 
     xmlns="http://schemas.microsoft.com/office/appforoffice/1.1">
   
   <!-- manifest contents -->

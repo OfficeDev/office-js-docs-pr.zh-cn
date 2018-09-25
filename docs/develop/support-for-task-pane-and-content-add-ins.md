@@ -2,12 +2,12 @@
 title: 对 Office 2013 内容和任务窗格加载项的 Office JavaScript API 支持
 description: ''
 ms.date: 12/04/2017
-ms.openlocfilehash: 54e14f27f7acc9c61e613e834ff0dff0d466e916
-ms.sourcegitcommit: 30435939ab8b8504c3dbfc62fd29ec6b0f1a7d22
+ms.openlocfilehash: cb4bb003966639fd5518fefcd3983ee9ca2fb101
+ms.sourcegitcommit: eb74e94d3e1bc1930a9c6582a0a99355d0da34f2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "23945496"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "25005009"
 ---
 # <a name="office-javascript-api-support-for-content-and-task-pane-add-ins-in-office-2013"></a>对 Office 2013 内容和任务窗格加载项的 Office JavaScript API 支持
 
@@ -121,7 +121,7 @@ function write(message){
 
 通常需要保存外接程序的自定义数据，例如用户的首选项或外接程序的状态，并在下一次打开外接程序时访问该数据。可以使用通用的 Web 编程技术保存该数据，例如浏览器 cookie 或 HTML 5 Web 存储。或者，如果你的外接程序在 Excel、PowerPoint 或 Word 中运行，则可以使用 [设置](https://docs.microsoft.com/javascript/api/office/office.settings?view=office-js) 对象的方法。使用**设置**对象创建的数据存储在电子表格、演示文档或植入和保存外接程序的文档中。此数据仅用于创建它的外接程序。
 
-为了避免往返于存储文档的服务器，使用 **Settings**对象创建的数据运行时在内存中进行管理。之前保存的设置数据在初始化外接程序时加载到内存中，并在调用 [Settings.saveAsync](https://docs.microsoft.com/javascript/api/office/office.settings?view=office-js#saveasync-options--callback-)方法时，仅将对数据的更改保存回文档。在内部，将该数据作为名称/值对存储在序列化的 JSON 对象中。可以使用 [Settings](https://docs.microsoft.com/javascript/api/office/office.settings?view=office-js#get-name-)对象的 [get](https://docs.microsoft.com/javascript/api/office/office.settings?view=office-js#set-name--value-)、[set](https://docs.microsoft.com/javascript/api/office/office.settings?view=office-js#remove-name-)和 **remove**方法从数据的内存副本中读取、写入和删除项目。以下代码行显示如何创建名为 `themeColor`的设置，并将它的值设置为“green”。
+若要避免往返存储文档的服务器，运行时在内存中管理使用 **Settings** 对象创建的数据。 以前保存的设置数据在外接程序初始化时加载到内存中，对数据的更改仅在调用 [Settings.saveAsync](https://docs.microsoft.com/javascript/api/office/office.settings?view=office-js#saveasync-options--callback-) 方法时保存回文档。 内部的数据以名称/值对的形式存储在序列化的 JSON 对象。 使用 **Settings** 对象的 [get](https://docs.microsoft.com/javascript/api/office/office.settings?view=office-js#get-name-)、[set](https://docs.microsoft.com/javascript/api/office/office.settings?view=office-js#set-name--value-) 和 [remove](https://docs.microsoft.com/javascript/api/office/office.settings?view=office-js#remove-name-) 方法读取、写入和删除数据在内存副本中的项目。 下面的代码行演示如何创建名为 `themeColor` 的设置并设置其值为 'green'。
 
 
 
@@ -150,7 +150,7 @@ Office.context.document.settings.set('themeColor', 'green');
 ```XML
 <?xml version="1.0" encoding="utf-8"?>
 <OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.0"
- xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+ xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance" 
  xsi:type="TaskPaneApp">
 ???<!-- Other manifest elements omitted. -->
   <Permissions>ReadDocument</Permissions>

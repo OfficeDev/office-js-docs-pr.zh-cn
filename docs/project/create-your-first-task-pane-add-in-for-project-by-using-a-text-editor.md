@@ -2,12 +2,12 @@
 title: 使用文本编辑器创建首个 Project 2013 任务窗格加载项
 description: ''
 ms.date: 12/04/2017
-ms.openlocfilehash: ca00d1922ed3959ea9ab013f4d7f59ded084b241
-ms.sourcegitcommit: 30435939ab8b8504c3dbfc62fd29ec6b0f1a7d22
+ms.openlocfilehash: eb12f1d15135301fe27b143781e1f622475f7b66
+ms.sourcegitcommit: eb74e94d3e1bc1930a9c6582a0a99355d0da34f2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "23945699"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "25004894"
 ---
 # <a name="create-your-first-task-pane-add-in-for-project-2013-by-using-a-text-editor"></a>使用文本编辑器创建首个 Project 2013 任务窗格加载项
 
@@ -30,7 +30,7 @@ JSOMCall.html 示例使用 office.js 文件和 project-15.js 文件中包含的 
 ```XML
 <?xml version="1.0" encoding="utf-8"?>
    <OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.1" 
-              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+              xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance" 
               xsi:type="TaskPaneApp">
      <Id>93A26520-9414-492F-994B-4983A1C7A607</Id>
      <Version>15.0</Version>
@@ -755,7 +755,7 @@ JSOMCall.html 示例使用 office.js 文件和 project-15.js 文件中包含的 
     - 任务名称： `T2`
     - GUID： `{25D3E03B-9A7D-E111-92FC-00155D3BA208}`
     - WSS ID： `0`
-    - ResourceNames： `R1[50%],R2[50%]`
+    - ResourceNames: `R1[50%],R2[50%]`
 
 12. 选择“获取任务字段”**** 按钮。**getTaskFields** 函数会多次调用 **getTaskfieldAsync** 函数，以获取任务名称、索引、开始日期、持续时间、优先级和任务备注。
 
@@ -766,8 +766,7 @@ JSOMCall.html 示例使用 office.js 文件和 project-15.js 文件中包含的 
     - 优先级： `500`
     - 备注：此为任务 T2 的备注。 仅为测试备注。 若为实际备注，应包含一些真实信息。
 
-13. 选择 **getWSSUrlAsync** 按钮.。如果项目是以下类型之一，结果中显示任务列表 URL 和名称。
-
+13. 选择“getWSSUrlAsync”**** 按钮。如果项目是以下类型之一，结果中显示任务列表 URL 和名称。
     
     - 导入到 Project Server 的 SharePoint 任务列表。
     - 导入到 Project Professional，再保存回 SharePoint（未使用 Project Server）的 SharePoint 任务列表。

@@ -2,12 +2,12 @@
 title: Office 外接程序 XML 清单
 description: ''
 ms.date: 02/09/2018
-ms.openlocfilehash: 5c24f0c773195ee7b2ed5c6fc9eccfd5840e2651
-ms.sourcegitcommit: 30435939ab8b8504c3dbfc62fd29ec6b0f1a7d22
+ms.openlocfilehash: b2e0db2712ecfcd9e7df740548968c91ff1c1af2
+ms.sourcegitcommit: eb74e94d3e1bc1930a9c6582a0a99355d0da34f2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "23944930"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "25004985"
 ---
 # <a name="office-add-ins-xml-manifest"></a>Office 加载项 XML 清单
 
@@ -93,7 +93,7 @@ _\*Office 加载项清单架构版本 1.1 中新增_
 
 ## <a name="hosting-requirements"></a>托管要求
 
-所有 URI，如用于的图像 [外接程序命令][]，必须支持缓存。承载图像的服务器不应该返回 `Cache-Control` 标头指定 `no-cache`，`no-store`，或类似的 HTTP 响应中的选项。
+所有图像 URI（如用于[加载项命令][]的 URI）都必须支持缓存。 托管图像的服务器不得返回在 HTTP 响应中指定 `no-cache`、`no-store` 或类似选项的 `Cache-Control` 标头。
 
 所有 URL（如 [SourceLocation](https://docs.microsoft.com/javascript/office/manifest/sourcelocation) 元素中指定的源文件位置）都应**受 SSL 保护 (HTTPS)**。 [!include[HTTPS guidance](../includes/https-guidance.md)]
 
@@ -109,16 +109,16 @@ _\*Office 加载项清单架构版本 1.1 中新增_
 
 在 Office Online 中运行时，可以将任务窗格导航到任何 URL。 但是，在桌面平台中，如果你的加载项尝试转到托管起始页（如清单文件的 [SourceLocation](https://docs.microsoft.com/javascript/office/manifest/sourcelocation) 元素中所指定的）的域之外的域中的 URL，则该 URL 将在 Office 主机应用程序的加载项窗格外的新浏览器窗口中打开。
 
-若要重写此（桌面 Office）操作，请在清单文件的 [AppDomains](https://docs.microsoft.com/javascript/office/manifest/appdomains)元素中指定的域列表中指定要在加载项窗口中打开的每个域。 如果外接程序尝试转到列表中的域中的 URL，则其将在桌面 Office 和 Office Online 的任务窗格中打开。 如果其尝试转到列表之外的 URL，则在桌面 Office 中，该 URL 将在新的浏览器窗口中（加载项窗格之外）打开。
+若要重写此（桌面 Office）操作，请在清单文件的 [AppDomains](https://docs.microsoft.com/javascript/office/manifest/appdomains) 元素中指定的域列表中指定要在加载项窗口中打开的每个域。 如果外接程序尝试转到列表中的域中的 URL，则其将在桌面 Office 和 Office Online 的任务窗格中打开。 如果其尝试转到列表之外的 URL，则在桌面 Office 中，该 URL 将在新的浏览器窗口中（加载项窗格之外）打开。
 
 > [!NOTE]
 > 这个操作仅适用于外接程序的根窗格。 如果外接程序页面中嵌入了 iframe，则 iframe 可以定向到任何 URL，不管其是否列在 **AppDomains**，甚至在桌面 Office。
 
-下面的 XML 清单示例在 `https://www.contoso.com` 域中托管其加载项主页，该域如 **SourceLocation**元素中指定的那样。 它还指定 `https://www.northwindtraders.com` AppDomain元素中的[域](https://docs.microsoft.com/javascript/office/manifest/appdomain)，其位于**AppDomains**元素列表内。 如果加载项转到 www.northwindtraders.com 域中的页面，则该页面将在外接程序窗格中打开，甚至在 Office 桌面中打开。
+下面的 XML 清单示例在 `https://www.contoso.com` 域中托管其加载项主页，该域在 **SourceLocation** 元素中指定。 它还在 **AppDomains** 元素列表的 [AppDomain](https://docs.microsoft.com/javascript/office/manifest/appdomain) 元素中指定 `https://www.northwindtraders.com` 域。 如果加载项转到 www.northwindtraders.com 域中的页面，则该页面将在外接程序窗格中打开，甚至在 Office 桌面中打开。
 
 ```XML
 <?xml version="1.0" encoding="UTF-8"?>
-<OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="TaskPaneApp">
+<OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.1" xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance" xsi:type="TaskPaneApp">
   <Id>c6890c26-5bbb-40ed-a321-37f07909a2f0</Id>
   <Version>1.0</Version>
   <ProviderName>Contoso, Ltd</ProviderName>
@@ -135,7 +135,7 @@ _\*Office 加载项清单架构版本 1.1 中新增_
 </OfficeApp>
 ```
 
-## <a name="manifest-v11-xml-file-examples-and-schemas"></a>Manifest v1.1 XML 文件示例和架构
+## <a name="manifest-v11-xml-file-examples-and-schemas"></a>清单 v1.1 XML 文件示例和架构
 下面各部分展示了内容加载项、任务窗格加载项和 Outlook 加载项的清单 v1.1 XML 文件示例。
 
 # <a name="task-panetabtabid-1"></a>[任务窗格](#tab/tabid-1)
@@ -144,7 +144,7 @@ _\*Office 加载项清单架构版本 1.1 中新增_
 
 ```XML
 <?xml version="1.0" encoding="utf-8"?>
-<OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:bt="http://schemas.microsoft.com/office/officeappbasictypes/1.0" xmlns:ov="http://schemas.microsoft.com/office/taskpaneappversionoverrides" xsi:type="TaskPaneApp">
+<OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.1" xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance" xmlns:bt="http://schemas.microsoft.com/office/officeappbasictypes/1.0" xmlns:ov="http://schemas.microsoft.com/office/taskpaneappversionoverrides" xsi:type="TaskPaneApp">
 
 <!-- See https://github.com/OfficeDev/Office-Add-in-Commands-Samples for documentation-->
 
@@ -343,7 +343,7 @@ _\*Office 加载项清单架构版本 1.1 中新增_
 <?xml version="1.0" encoding="utf-8"?>
 <OfficeApp
   xmlns="http://schemas.microsoft.com/office/appforoffice/1.1"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance"
   xsi:type="ContentApp">
   <Id>01eac144-e55a-45a7-b6e3-f1cc60ab0126</Id>
   <AlternateId>en-US\WA123456789</AlternateId>
@@ -380,7 +380,7 @@ _\*Office 加载项清单架构版本 1.1 中新增_
 <?xml version="1.0" encoding="utf-8"?>
 <OfficeApp xmlns=
   "http://schemas.microsoft.com/office/appforoffice/1.1"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance"
   xsi:type="MailApp">
 
   <Id>971E76EF-D73E-567F-ADAE-5A76B39052CF</Id>

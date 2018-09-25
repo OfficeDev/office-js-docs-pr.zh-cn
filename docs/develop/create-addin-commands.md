@@ -2,12 +2,12 @@
 title: 在清单中创建 Excel、Word 和 PowerPoint 的加载项命令
 description: 在清单中使用 VersionOverrides 定义 Excel、Word 和 PowerPoint 加载项命令。 加载项命令可用于创建 UI 元素，也可用于添加按钮或列表，同时还能执行操作。
 ms.date: 12/04/2017
-ms.openlocfilehash: 4d0bb5eb82ef931c94e6791aaeab598af9f0e298
-ms.sourcegitcommit: eb74e94d3e1bc1930a9c6582a0a99355d0da34f2
+ms.openlocfilehash: 6542084e5f63480100a72121e6acf25e7fc49ac8
+ms.sourcegitcommit: 4b2e93db537d89e8aa7a9eb05b0338debb42ba56
 ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 09/25/2018
-ms.locfileid: "25005027"
+ms.locfileid: "25018210"
 ---
 # <a name="create-add-in-commands-in-your-manifest-for-excel-word-and-powerpoint"></a>在清单中创建 Excel、Word 和 PowerPoint 加载项命令
 
@@ -182,7 +182,7 @@ ms.locfileid: "25005027"
         Office.context.document.setSelectedDataAsync("ExecuteFunction works. Button ID=" + event.source.id,
             function (asyncResult) {
                 var error = asyncResult.error;
-                if (asyncResult.status === "failed") {
+                if (asyncResult.status === Office.AsyncResultStatus.Failed) {
                     // Show error message. 
                 }
                 else {

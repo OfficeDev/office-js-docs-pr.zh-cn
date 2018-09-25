@@ -2,12 +2,12 @@
 title: 验证并排查清单问题
 description: 使用这些方法验证 Office 加载项清单。
 ms.date: 12/04/2017
-ms.openlocfilehash: 19f7caaf1d5482972432aad3d2774d69c75cde76
-ms.sourcegitcommit: 7ecc1dc24bf7488b53117d7a83ad60e952a6f7aa
+ms.openlocfilehash: c3eed1a74cf4830556d977e6217a89c1fd016548
+ms.sourcegitcommit: eb74e94d3e1bc1930a9c6582a0a99355d0da34f2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/23/2018
-ms.locfileid: "19438758"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "25004950"
 ---
 # <a name="validate-and-troubleshoot-issues-with-your-manifest"></a>验证并排查清单问题
 
@@ -57,9 +57,9 @@ ms.locfileid: "19438758"
     xmllint --noout --schema XSD_FILE XML_FILE
     ```
 
-## <a name="use-runtime-logging-to-debug-your-add-in-manifest"></a>使用运行时日志记录功能调试加载项清单
+## <a name="use-runtime-logging-to-debug-your-add-in"></a>使用运行时日志记录功能调试加载项 
 
-可以使用运行时日志记录调试外接程序的清单。此功能可以帮助你标识并修复清单中未被 XSD 架构验证检测到的问题，例如资源 ID 间的不匹配等。运行时日志记录对于调试执行外接程序命令的外接程序尤其有用。  
+您可以使用运行时日志记录调试加载项的清单以及几种安装错误。 此功能可以帮助你标识并修复清单中未被 XSD 架构验证检测到的问题，例如资源 ID 间的不匹配等。 运行时日志记录对于调试执行加载项命令和 Excel 自定义函数的加载项尤其有用。   
 
 > [!NOTE]
 > 运行时日志记录功能暂适用于 Office 2016 桌面版。

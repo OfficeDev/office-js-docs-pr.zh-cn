@@ -2,12 +2,12 @@
 title: 使用 Angular 开发 Office 加载项
 description: ''
 ms.date: 12/04/2017
-ms.openlocfilehash: 6ce0080bcff67956665cf25f45df8c598b781538
-ms.sourcegitcommit: 30435939ab8b8504c3dbfc62fd29ec6b0f1a7d22
+ms.openlocfilehash: 65b2a229e0379106b63b0f1abaaa8b66d7cdf367
+ms.sourcegitcommit: eb74e94d3e1bc1930a9c6582a0a99355d0da34f2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "23944555"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "25004971"
 ---
 # <a name="develop-office-add-ins-with-angular"></a>使用 Angular 开发 Office 加载项
 
@@ -80,7 +80,7 @@ export class AppRoutingModule { }
 建议在外接程序中使用 [Office UI Fabric](https://developer.microsoft.com/fabric#/fabric-js) 样式。Fabric 包括多个版本的组件，其中包括[基于 TypeScript](https://github.com/OfficeDev/office-ui-fabric-js) 的版本。考虑使用 Angular 组件包装 Fabric 组件，从而在外接程序中使用 Fabric 组件。有关具体操作方法的示例，请参阅[使用 Angular 生成的 Word 样式检查外接程序](https://github.com/OfficeDev/Word-Add-in-Angular2-StyleChecker)。例如，请注意 [fabric.textfield.wrapper](https://github.com/OfficeDev/Word-Add-in-Angular2-StyleChecker/blob/master/app/shared/office-fabric-component-wrappers/fabric.textfield.wrapper.component.ts) 中定义的 Angular 组件如何导入定义了 Fabric 组件的 Fabric 文件 TextField.ts。 
 
 
-## <a name="using-the-office-dialog-api-with-angular"></a>配合 Angular 使用 Office 对话框 API
+## <a name="using-the-office-dialog-api-with-angular"></a>将 Office 对话框 API 与 Angular 结合使用
 
 Office 加载项对话框 API 使得加载项可以在半模态对话框中打开页面，该页面可与主页面交换信息，这在任务窗格中是典型操作。 
 
@@ -111,7 +111,7 @@ export class MyComponent {
 
 Angular 使用 RxJS (Reactive Extensions for JavaScript)，而 RxJS 引入了 `Observable` 和 `Observer` 对象来实现异步处理。本部分简要介绍了如何使用 `Observables`；有关详细信息，请参阅官方 [RxJS](http://reactivex.io/rxjs/) 文档。
 
-在某种程度上类似一个 `Promise` 对象 - 它立即从异步调用返回，但它可能在以后才能进行解析。不过，`Promise` 是一个值（可以是一个数组对象），而 `Observable` 是对象数组（可能仅有一个成员）。这可使代码调用 `Observable` 对象上的 [数组方法](http://www.w3schools.com/jsref/jsref_obj_array.asp)，如 `concat`、`map` 和 `filter`。`Observable` 
+在某种程度上类似一个 `Promise` 对象 - 它立即从异步调用返回，但它可能在以后才能进行解析。不过，`Promise` 是一个值（可以是一个数组对象），而 `Observable` 是对象数组（可能仅有一个成员）。这可使代码调用 `Observable` 对象上的 [数组方法](https://www.w3schools.com/jsref/jsref_obj_array.asp)，如 `concat`、`map` 和 `filter`。`Observable` 
 
 ### <a name="pushing-instead-of-pulling"></a>使用“推送”代替“拉取”
 

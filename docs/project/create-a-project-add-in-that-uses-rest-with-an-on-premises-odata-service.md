@@ -2,12 +2,12 @@
 title: 创建将 REST 与本地 Project Server OData 服务结合使用的 Project 加载项
 description: ''
 ms.date: 01/23/2018
-ms.openlocfilehash: 462b151a12c7c19f445e86bf59af633b699e7e60
-ms.sourcegitcommit: 30435939ab8b8504c3dbfc62fd29ec6b0f1a7d22
+ms.openlocfilehash: 7a632b708ebcf714ce1fa6ca2f5feb095fcd9f9d
+ms.sourcegitcommit: eb74e94d3e1bc1930a9c6582a0a99355d0da34f2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "23945706"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "25005034"
 ---
 # <a name="create-a-project-add-in-that-uses-rest-with-an-on-premises-project-server-odata-service"></a>创建将 REST 与本地 Project Server OData 服务结合使用的 Project 加载项
 
@@ -41,13 +41,13 @@ ms.locfileid: "23945706"
 
 1. 若要使浏览器直接显示来自 REST 查询的 XML 数据，请关闭源阅读视图。有关如何在 Internet Explorer 中执行此操作的信息，请参阅 [查询 Project Server 2013 报告数据的 OData 源](https://docs.microsoft.com/previous-versions/office/project-odata/jj163048(v=office.15))中过程 1 的第 4 步。
     
-2. 在浏览器中查询 **ProjectData**服务，使用以下 URL：**http://ServerName /ProjectServerName /_api/ProjectData**。 例如，如果项目 Web 应用实例是 `http://MyServer/pwa`，浏览器应显示如下结果：
+2. 使用以下 URL 在浏览器中查询 **ProjectData**服务：**http://ServerName /ProjectServerName /_api/ProjectData**。 例如，如果项目 Web 应用实例是 `http://MyServer/pwa`，浏览器应显示如下结果：
     
     ```xml
     <?xml version="1.0" encoding="utf-8"?>
         <service xml:base="http://myserver/pwa/_api/ProjectData/" 
-        xmlns="http://www.w3.org/2007/app" 
-        xmlns:atom="http://www.w3.org/2005/Atom">
+        xmlns="https://www.w3.org/2007/app" 
+        xmlns:atom="https://www.w3.org/2005/Atom">
         <workspace>
             <atom:title>Default</atom:title>
             <collection href="Projects">
@@ -103,7 +103,7 @@ Visual Studio Office 开发人员工具包含 Project 2013 任务窗格外接程
     
     Visual Studio 创建 **HelloProjectOdata** 项目和 **HelloProjectODataWeb** 项目。
     
-“**外接程序**”文件夹（请参阅下一个屏幕截图）中包含自定义 CSS 样式的 App.css 文件。在“**主页**”子文件夹，Home.html 文件中包含外接程序使用的 CSS 文件和 JavaScript 文件的引用，及用于外接程序的 HTML5 内容。此外，Home.js 文件用于自定义 JavaScript 代码。“**脚本**”文件夹中包括 jQuery 库文件。“**Office**”子文件夹中包括 JavaScript 库（例如 office.js 和 project-15.js），及 Office 外接程序中的标准字符串的语言库。在“**内容**”文件夹中，Office.css 文件包含所有的 Office 外接程序的默认样式。
+**AddIn** 文件夹（请参阅下一个屏幕截图）中包含自定义 CSS 样式的 App.css 文件。 在“**主页**”子文件夹中，Home.html 文件中包含外接程序使用的 CSS 文件和 JavaScript 文件的引用，及用于外接程序的 HTML5 内容。 此外，Home.js 文件用于你的自定义 JavaScript 代码。 **Scripts** 文件夹中包括 jQuery 库文件。  **Office** 子文件夹包含 Office 外接程序中的 JavaScript 库，如 office.js 和 project-15.js，以及标准字符串的语言库。在 **Content** 文件夹，Office.css 文件包含 Office 外接程序的所有默认样式。
 
 *图 4：在解决方案资源管理器中查看默认 Web 项目文件*
 
@@ -139,7 +139,7 @@ Visual Studio Office 开发人员工具包含 Project 2013 任务窗格外接程
     ```XML
     <?xml version="1.0" encoding="UTF-8"?>
     <OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.1" 
-            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="TaskPaneApp">
+            xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance" xsi:type="TaskPaneApp">
         <Id>c512df8d-a1c5-4d74-8a34-d30f6bbcbd82 </Id>
         <Version>1.0</Version>
         <ProviderName> [Provider name]</ProviderName>

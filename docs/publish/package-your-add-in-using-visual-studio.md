@@ -1,13 +1,13 @@
 ---
-title: 使用 Visual Studio 打包加载项以准备发布
-description: ''
+title: 使用 Visual Studio 打包加载项以准备发布 | Microsoft Docs
+description: 如何使用 Visual Studio 2015 部署 Web 项目并打包加载项。
 ms.date: 01/25/2018
-ms.openlocfilehash: aa93fc6befd133127c3542a420d779d070316a57
-ms.sourcegitcommit: 30435939ab8b8504c3dbfc62fd29ec6b0f1a7d22
+ms.openlocfilehash: d74ead03b8ac5b7652c7c98851e7e082f4b31ba8
+ms.sourcegitcommit: eb74e94d3e1bc1930a9c6582a0a99355d0da34f2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "23944379"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "25004915"
 ---
 # <a name="package-your-add-in-using-visual-studio-to-prepare-for-publishing"></a>使用 Visual Studio 打包加载项以准备发布
 
@@ -26,13 +26,13 @@ Office 加载项包包含 XML [清单文件](../develop/add-in-manifests.md)，�
     > [!NOTE]
     > 发布配置文件指定要部署到的服务器、登录服务器所需的凭据、要部署的数据库和其他部署选项。
 
-    |||UNTRANSLATED_CONTENT_START|||If you choose  **New ...**, the Create Publishing Profile Wizard appears. You can use this wizard to import a publishing profile from a web site hosting provider such as Microsoft Azure or create a new profile and add your server, credentials, and other settings in the next procedure.|||UNTRANSLATED_CONTENT_END|||
+    如果选择**新建...**，将会显示“创建发布配置文件向导”。 可以使用此向导从托管提供程序（如 Microsoft Azure）的网站导入发布配置文件，或创建新配置文件并添加你的服务器、凭据以及下一过程中的其他设置。
     
-    有关导入发布配置文件或创建新发布配置文件的详细信息，请参阅 [创建发布配置文件](http://msdn.microsoft.com/library/dd465337.aspx#creating_a_profile)。
+    有关导入发布配置文件或创建新发布配置文件的详细信息，请参阅 [创建发布配置文件](https://msdn.microsoft.com/library/dd465337.aspx#creating_a_profile)。
     
 3. 在“**发布外接程序**”页中，选择“**部署 Web 项目**”链接。
     
-    出现 **“发布 Web”** 对话框。有关使用此向导的详细信息，请参阅[如何：在 Visual Studio 中使用“一键式发布”部署 Web 项目](http://msdn.microsoft.com/library/dd465337.aspx)。
+    出现 **“发布 Web”** 对话框。有关使用此向导的详细信息，请参阅[如何：在 Visual Studio 中使用“一键式发布”部署 Web 项目](https://msdn.microsoft.com/library/dd465337.aspx)。
     
 
 ## <a name="to-package-your-add-in-using-visual-studio-2015"></a>使用 Visual Studio 2015 打包加载项的具体步骤
@@ -41,7 +41,7 @@ Office 加载项包包含 XML [清单文件](../develop/add-in-manifests.md)，�
 
 1. 在“发布加载项”**** 页中，选择“打包加载项”**** 链接。
     
-    显示“发布 Office 和 SharePoint 加载项”向导。
+    显示“发布 Office 和 SharePoint 加载项向导”。
     
 2. 在“网站托管在哪里?”**** 下拉列表中，选择或输入托管加载项内容文件的网站的 HTTPS URL，再选择“完成”****。 
     
