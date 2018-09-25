@@ -2,18 +2,18 @@
 ms.date: 09/20/2018
 description: 在 Excel 中使用 JavaScript 创建自定义的函数。
 title: 在 Excel 中创建自定义函数（预览）
-ms.openlocfilehash: 295152ca14cf56293d51b8b0512b729373841208
-ms.sourcegitcommit: 470d8212b256275587e651abaa6f28beafebcab4
+ms.openlocfilehash: abfc43872c84ac7a86e59d70ef616308ba3d4231
+ms.sourcegitcommit: 8ce9a8d7f41d96879c39cc5527a3007dff25bee8
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/21/2018
-ms.locfileid: "24062128"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "24985807"
 ---
 # <a name="create-custom-functions-in-excel-preview"></a>在 Excel 中创建自定义函数（预览）
 
 自定义函数使开发人员可以通过在 JavaScript 中定义这些函数作为外接程序的一部分，将新函数添加到 Excel。 然后，用户可以像使用 Excel 中的其他本机函数（例如 `SUM()`）一样访问自定义函数。 本文介绍了如何在 Excel 中创建自定义函数。
 
-下图显示了最终用户将插入 Excel 工作表的单元格的自定义的函数。  `CONTOSO.ADD42` 自定义函数用于将 42 添加到用户指定为函数的输入参数的一对数字中。
+下图显示了最终用户将插入 Excel 工作表的单元格的自定义的函数。 自定义函数用于将 42 添加到用户指定为函数的输入参数的一对数字中。`CONTOSO.ADD42`
 
 <img alt="animated image showing an end user inserting the CONTOSO.ADD42 custom function into a cell of an Excel worksheet" src="../images/custom-function.gif" width="579" height="383" />
 
@@ -27,11 +27,11 @@ function ADD42(a, b) {
 
 自定义函数现可在 Windows、Mac 和 Excel Online 的开发人员预览版中使用。 若要试用它们，请完成以下步骤：
 
-1. 安装 Office（以 10827 为基础的 Windows 或 以 13.329 为基础的 Mac）并加入 [Office 预览体验计划](https://products.office.com/office-insider) 程序。 您必须加入 Office 预览体验计划才能访问自定义的函数；目前，除非您是 office 预览体验计划程序的成员，否则在所有 office 生成中都会禁用自定义函数。
+1. 安装 Office（Windows 上的内部版本 10827 或 Mac 上的内部版本 13.329）并加入 [Office 预览体验计划](https://products.office.com/office-insider) 程序。 您必须加入 Office 预览体验计划才能访问自定义的函数；目前，除非您是 office 预览体验计划程序的成员，否则在所有 office 生成中都会禁用自定义函数。
 
 2. 使用 [Yo Office](https://github.com/OfficeDev/generator-office) 创建 Excel 自定义函数外接程序项目，然后按照 [OfficeDev/Excel-Custom-Functions README](https://github.com/OfficeDev/Excel-Custom-Functions/blob/master/README.md) 中使用项目的说明。
 
-3. `=CONTOSO.ADD42(1,2)`  在Excel 工作表的任意单元格键入，并按 **Enter** 运行自定义的函数。
+3. 在 Excel 工作表的任意单元格键入 `=CONTOSO.ADD42(1,2)`，并按 **Enter** 运行自定义的函数。
 
 > [!NOTE]
 > 本文后面的 [已知问题](#known-issues) 一节指定了自定义函数的当前限制。
@@ -87,7 +87,7 @@ function ADD42(a, b) {
 > [!NOTE]
 > Excel 中的函数由 XML 清单文件中指定的命名空间预置。 函数的命名空间出现在函数名之前并由句点分隔。 例如，若要`ADD42()`在 Excel 工作表的单元格中调用函数，则需要键入 `=CONTOSO.ADD42`，因为 CONTOSO 是命名空间并且`ADD42`是 JSON 文件中指定的函数的名称。 该命名空间旨在用作公司或加载项的标识符。 
 
-### <a name="json-file-configcustomfunctionsjson"></a>JSON 文件（./config/customfunctions.json）
+### <a name="json-file-configcustomfunctionsjson"></a>JSON 文件 (./config/customfunctions.json)
 
 自定义函数元数据文件提供 Excel 要求注册自定义函数并使其可供最终用户使用的信息。 自定义函数是在用户第一次运行加载项时注册的。 之后，所有工作簿中的同一用户都可以使用它们 （即，不仅在加载项最初运行的工作簿中。）
 
@@ -135,8 +135,8 @@ function ADD42(a, b) {
 | `name` | 当用户在单元格中键入公式时，自动完成菜单中显示函数的名称。 在自动完成菜单中，此值将由自定义函数的命名空间中的 XML 清单文件指定作为前缀。 |
 | `helpUrl` | 当用户请求帮助显示的页面的 Url。 |
 | `description` | 介绍函数的用途。 当函数是 Excel 中自动完成菜单中的选定项时，此值将显示为工具提示。 |
-| `result`  | 定义函数返回的信息类型的对象。  `type` 子属性的值可以是 **字符串**、**数字**或 **布尔值**。  `dimensionality` 子属性的值可以是 **标量**或 **矩阵** （指定值的一个二维数组 `type`）。 |
-| `parameters` | 定义函数的输入参数的数组。 该 `name` 和 `description`在 Excel intelliSense 中使用的子属性。  `type` 和 `dimensionality`子属性与此表中`result`前面描述的对象的子属性相同。 |
+| `result`  | 定义函数返回的信息类型的对象。 子属性的值可以是 **字符串**、**数字**或 **布尔值**。`type` `dimensionality` 子属性的值可以是**标量**或**矩阵**（指定 `type` 值的二维数组）。 |
+| `parameters` | 定义函数的输入参数的数组。 该 `name` 和 `description`在 Excel intelliSense 中使用的子属性。 和 `dimensionality`子属性与此表中`result`前面描述的对象的子属性相同。`type` |
 | `options` | 使你可以自定义 Excel 执行函数的方式和时间等的某些方面。 有关如何使用此属性的详细信息，请参阅本文后面的 [Streamed 函数](#streamed-functions)和 [取消](#canceling-a-function)。 |
 
 ## <a name="functions-that-return-data-from-external-sources"></a>从外部源返回数据的函数
@@ -147,9 +147,9 @@ function ADD42(a, b) {
 
 2. 使用回调函数，用最终值解析 Promise。
 
-自定义功能显示 `#GETTING_DATA` Excel 等待最终结果的同时在单元格中的临时结果。 用户可以在等待结果时与电子表格的其余部分进行正常交互。
+自定义函数在单元格中显示`#GETTING_DATA` 临时结果，而 Excel 等待最终结果。 用户可以在等待结果时与电子表格的其余部分进行正常交互。
 
-在下面的代码示例中，`getTemperature()` 自定义函数检索温度计当前温度。 注意，这`sendWebRequest` 是一个假设的函数（这里没有指定）它使用 XHR 来调用温度 Web 服务。
+在下面的代码示例中，`getTemperature()` 自定义函数检索温度计当前温度。 注意，`sendWebRequest` 是一个假设的函数（这里没有指定），它使用 XHR 来调用温度 Web 服务。
 
 ```js
 function getTemperature(thermometerID){
@@ -161,15 +161,15 @@ function getTemperature(thermometerID){
 }
 ```
 
-## <a name="streamed-functions"></a>流式函数
+## <a name="streamed-functions"></a>流式处理函数
 
 流式自定义函数使您能够在一段时间内重复地将数据输出到单元格，而无需用户明确请求重新计算。 以下示例是一个自定义函数，它每秒向结果添加一个数字。 关于此代码，请注意以下几点：
 
 - Excel会自动使用 `setResult` 回调来显示每个新值。
 
-- 最后一个参数，`handler`，永远不会在注册代码中指定，当 Excel 用户输入该函数时，它不会显示在自动完成菜单中。 它是包含`setResult` 回调函数的对象，用于将数据从函数传递到 Excel，以更新单元格值。
+- 最后一个参数 `handler` 永远不会在注册代码中指定，当 Excel 用户输入该函数时，它不会显示在自动完成菜单中。 它是包含`setResult` 回调函数的对象，用于将数据从函数传递到 Excel，以更新单元格值。
 
-- 为了让Excel 在对象中中传递`setResult`函数`handler`，您必须通过设置选项`"stream": true` 在`options`注册 JSON 元数据文件中自定义函数的属性里，来声明在函数注册期间支持流。
+- 为了让 Excel 在 `handler` 对象中传递 `setResult`函数，您必须在函数注册期间声明支持流，方法是在 JSON 元数据文件中为自定义函数的 `options` 属性设置选项 `"stream": true`。
 
 ```js
 function incrementValue(increment, handler){
@@ -187,14 +187,14 @@ function incrementValue(increment, handler){
 
 - 用户编辑或删除引用函数的单元格。
 
-- 当函数的一个参数（输入）发生变化时。 在这种情况下，取消后触发一个新函数调用。
+- 当函数的一个参数（输入）发生变化时。 在这种情况下，取消后触发新函数调用。
 
-- 用户手动触发重新计算。 在这种情况下，取消后触发一个新函数调用。
+- 用户手动触发重新计算。 在这种情况下，取消后触发新函数调用。
 
 > [!NOTE]
-> 必须为每个流式函数实现一个取消处理程序。
+> 您必须为每个流式传输功能实施取消处理程序。
 
-若要使函数取消，请 `"cancelable": true` 在`options`注册 JSON 文件中自定义函数的属性里面设置选项。
+若要使函数可取消，请在 JSON 元数据文件中的自定义函数的 `options` 属性中设置选项 `"cancelable": true`。
 
 下面的代码显示以前描述的相同`incrementValue` 函数，但这一次实现了一个取消处理程序。 本示例中， `clearInterval()` 将运行时 `incrementValue` 取消函数。
 
@@ -222,7 +222,7 @@ function incrementValue(increment, handler){
 
 - `streamTemperature` 每秒钟更新单元格中显示的温度值并使用 `savedTemperatures` 变量作为其数据源。 它必须在JSON文件中注册，并用所有大写字母命名， `STREAMTEMPERATURE`。
 
-- 用户可以`streamTemperature` 从 Excel UI 的多个单元格中调用 。 每次调用都从相同的 `savedTemperatures` 变量读取数据。
+- 用户可以从 Excel UI 的多个单元格中调用 `streamTemperature`。 每次调用都从相同的 `savedTemperatures` 变量读取数据。
 
 ```js
 var savedTemperatures;
@@ -249,11 +249,11 @@ function refreshTemperature(thermometerID){
 }
 ```
 
-## <a name="working-with-ranges-of-data"></a>使用数据范围
+## <a name="working-with-ranges-of-data"></a>使用数据区域
 
 您自定义的函数可能接受范围的数据作为输入参数，或它可能返回的数据范围。 JavaScript 中，数据范围表示为一个二维数组。
 
-例如，假设函数从 Excel 中存储的一系列数字中返回第二个最大值。 下面的函数接受参数 `values`，这是类型 `Excel.CustomFunctionDimensionality.matrix`。 请注意，在该函数的 JSON 元数据中，您可以将该参数的`type` 属性`matrix` 设置为。
+例如，假设函数从 Excel 中存储的一系列数字中返回第二个最大值。 下面的函数接受参数 `values`，这是类型 `Excel.CustomFunctionDimensionality.matrix`。 请注意，在该函数的 JSON 元数据中，您可以将该参数的`type` 属性 设置为 `matrix`。
 
 ```js
 function secondHighest(values){
@@ -297,11 +297,11 @@ function getComment(x) {
 
 ## <a name="known-issues"></a>已知问题
 
+- Excel 暂未使用帮助 URL 和参数说明。
+- 自定义功能目前不适用于移动客户端的 Excel。
 - 不支持可变函数（每当电子表格中不相关的数据更改时自动重新计算）。
-- 自定义函数目前不适用于移动客户的 Excel。
-- 不支持可变函数（每当电子表格中不相关的数据更改时自动重新计算）。
-- 尚未启用通过 Office 365 Admin Portal 和 AppSource 进行的部署。
-- Excel Online中的自定义功能，可能会在一段时间无活动后，在进程期间停止工作。 刷新浏览器页面（F5）并重新输入自定义函数以恢复该功能。
+- 尚未启用通过 Office 365 管理门户和 AppSource 进行的部署。
+- Excel Online中的自定义功能，可能会在一段时间无活动后，在进程期间停止工作。 刷新浏览器页面 (F5) 并重新输入自定义函数以恢复该功能。
 - 如果您有多个加载项在 Excel for Windows 上运行，您可能会看到 **#GETTING_DATA**临时结果单元格内的工作表。 关闭 Excel 的所有窗口，并重新启动 Excel。
 - 将来可能会提供专门用于自定义函数的调试工具。 同时，您可以在 Excel Online 使用 F12 开发人员工具调试。 请参阅 [自定义函数最佳实践](custom-functions-best-practices.md)中的详细信息。
 
