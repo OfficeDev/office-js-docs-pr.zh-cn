@@ -2,12 +2,12 @@
 title: Project 任务窗格加载项
 description: ''
 ms.date: 01/23/2018
-ms.openlocfilehash: f8e36e157ce78f4c93dc192c42c997e5f022a4d2
-ms.sourcegitcommit: 30435939ab8b8504c3dbfc62fd29ec6b0f1a7d22
+ms.openlocfilehash: ae9353d62923f4ac0a914f578948b3434fd9b178
+ms.sourcegitcommit: eb74e94d3e1bc1930a9c6582a0a99355d0da34f2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "23945769"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "25005020"
 ---
 # <a name="task-pane-add-ins-for-project"></a>Project 任务窗格加载项
 
@@ -77,7 +77,7 @@ Project 加载项方案包括以下几种：
     ```XML
     <?xml version="1.0" encoding="utf-8"?>
     <OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.0" 
-                xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+                xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance" 
               xsi:type="TaskPaneApp">
       <Id>1234-5678</Id>
       <Version>15.0</Version>
@@ -115,7 +115,7 @@ Project 加载项方案包括以下几种：
     ```XML
     <?xml version="1.0" encoding="utf-8"?>
     <OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.0" 
-                xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+                xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance" 
               xsi:type="TaskPaneApp">
       <Id>1234-5678</Id>
       <Version>15.0</Version>

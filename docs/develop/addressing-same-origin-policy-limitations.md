@@ -2,17 +2,17 @@
 title: 解决 Office 加载项中的同源策略限制
 description: ''
 ms.date: 12/04/2017
-ms.openlocfilehash: cfd61a78bf3dc1602ce140296d3a3d8afa9845eb
-ms.sourcegitcommit: 30435939ab8b8504c3dbfc62fd29ec6b0f1a7d22
+ms.openlocfilehash: 054a01d554c529579917218361bcb8aeebb04c3c
+ms.sourcegitcommit: eb74e94d3e1bc1930a9c6582a0a99355d0da34f2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "23944053"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "25004880"
 ---
 # <a name="addressing-same-origin-policy-limitations-in-office-add-ins"></a>解决 Office 加载项中的同源策略限制
 
 
-浏览器强制的同源策略可防止从一个域加载的脚本获取或操控来自另一个域的网页的属性。即，默认情况下，请求 URL 的域必须与当前网页的域相同。例如，此策略将阻止一个域中的网页对非托管该网页的域执行 [XmlHttpRequest](http://www.w3.org/TR/XMLHttpRequest/) Web 服务调用。
+浏览器强制的同源策略可防止从一个域加载的脚本获取或操控来自另一个域的网页的属性。即，默认情况下，请求 URL 的域必须与当前网页的域相同。例如，此策略将阻止一个域中的网页对非托管该网页的域执行 [XmlHttpRequest](https://www.w3.org/TR/XMLHttpRequest/) Web 服务调用。
 
 由于 Office 外接程序在浏览器控件中托管，因此同源策略也适用于在其网页中运行的脚本。
 

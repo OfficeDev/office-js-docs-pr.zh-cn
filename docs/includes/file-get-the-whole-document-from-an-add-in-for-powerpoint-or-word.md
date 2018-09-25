@@ -32,7 +32,7 @@ PowerPoint 外接程序的 XML 清单文件提供有关外接程序的重要信�
     ```xml  
     <?xml version="1.0" encoding="utf-8" ?> 
     <OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.1" 
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance" 
     xsi:type="TaskPaneApp">
         <Id>[Replace_With_Your_GUID]</Id> 
         <Version>1.0</Version> 
