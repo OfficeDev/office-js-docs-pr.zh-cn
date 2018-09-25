@@ -2,14 +2,14 @@
 ms.date: 09/20/2018
 description: Excel 自定义函数使用新的 JavaScript 运行时，其不同于标准的加载项  WebView 控件运行时。
 title: Excel 自定义函数运行时
-ms.openlocfilehash: d31002096fccd682c0f2a23a8b43249af5d4df8f
-ms.sourcegitcommit: 470d8212b256275587e651abaa6f28beafebcab4
+ms.openlocfilehash: fa2b2030259e05f64b8b4660ded8b80c6af1eb5a
+ms.sourcegitcommit: 8ce9a8d7f41d96879c39cc5527a3007dff25bee8
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/21/2018
-ms.locfileid: "24068812"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "24985793"
 ---
-# <a name="runtime-for-excel-custom-functions"></a>Excel 自定义函数运行时
+# <a name="runtime-for-excel-custom-functions-preview"></a>Excel 自定义函数的运行时（预览）
 
 自定义函数使用新的 JavaScript 运行时，其使用的是沙盒化的 JavaScript 引擎而不是 web 浏览器，由此扩展了 Excel 的功能。 因为自定义函数不需要呈现 UI 元素，新的 JavaScript 运行时为执行计算进行了优化，让你能够同时运行数千个自定义函数。
 
@@ -36,7 +36,7 @@ ms.locfileid: "24068812"
 
 XHR 代表 [XmlHttpRequest](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest)，这是一个发出 HTTP 请求以便与服务器进行交互的标准 web API。 在新的 JavaScript 运行时中，XHR 通过要求[同源策略](https://developer.mozilla.org/en-US/docs/Web/Security/Same-origin_policy)和简单 [CORS](https://www.w3.org/TR/cors/)实现附加安全措施。  
 
-在下面的代码示例中，`getTemperature()` 函数发出 web 请求，以获取基于温度计 ID 的特定区域温度。  `sendWebRequest()` 函数使用 XHR 向可提供数据的端点发出 `GET` 请求。  
+在下面的代码示例中，`getTemperature()` 函数发出 web 请求，以获取基于温度计 ID 的特定区域温度。 函数使用 XHR 向可提供数据的端点发出 `GET` 请求。`sendWebRequest()`  
 
 ```js
 function getTemperature(thermometerID) {
@@ -80,7 +80,7 @@ ws.onerror = (error) => {
 
 ### <a name="asyncstorage"></a>AsyncStorage
 
-AsyncStorage 是可用于存储身份验证令牌的键值存储系统。 它特点是：
+AsyncStorage 是可用于存储身份验证令牌的键值存储系统。 它的特点是：
 
 - 持续
 - 不加密
@@ -100,7 +100,7 @@ AsyncStorage 对于加载项的所有部件全局可用。 对于自定义函数
  - `multiSet`
  - `multiRemove`
  
-`mergeItem` 和 `multiMerge` 方法现时不受支持。
+和 `multiMerge` 方法现时不受支持。`mergeItem`
 
 下面的代码示例调用 `AsyncStorage.getItem` 函数以从存储检索值。
 
@@ -120,7 +120,7 @@ _goGetData = async () => {
 
 ### <a name="dialog-api"></a>Dialog API
 
-Dialog API 可打开一个提示用户登录的对话框。  可使用 Dialog API 要求通过Google 或 Facebook 等外部资源进行用户身份验证，此后用户才可以使用你的函数。   
+Dialog API 可打开一个提示用户登录的对话框。 可使用 Dialog API 要求通过Google 或 Facebook 等外部资源进行用户身份验证，此后用户才可以使用你的函数。   
 
 在下面的代码示例中，`getTokenViaDialog()` 方法使用 Dialog API 的 `displayWebDialog()` 方法打开一个对话框。
 

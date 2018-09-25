@@ -1,13 +1,13 @@
 ---
 title: Word 加载项概述
 description: ''
-ms.date: 01/23/2018
-ms.openlocfilehash: 51ab24fa12017fc16a49d5ac2f97dad288bcfcfe
-ms.sourcegitcommit: 30435939ab8b8504c3dbfc62fd29ec6b0f1a7d22
+ms.date: 09/24/2018
+ms.openlocfilehash: 6dedb3386d6e052b374c8716e90899ef2aca7880
+ms.sourcegitcommit: 8ce9a8d7f41d96879c39cc5527a3007dff25bee8
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "23944639"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "24985800"
 ---
 # <a name="word-add-ins-overview"></a>Word 加载项概述
 
@@ -42,17 +42,16 @@ Word.run(function (context) {
 
 通过 Word JavaScript API 可使应用程序访问 Word 文档中的对象和元数据。这些 API 可用于创建面向以下应用程序的外接程序：
 
-* 适用于 Windows 的 Word 2013
-* 适用于 Windows 的 Word 2016
+* 适用于 Windows 的 Word 2013 或更高版本
 * Word Online
-* 适用于 Mac 的 Word 2016
+* 适用于 Mac 的 Word 2016 或更高版本
 * 适用于 iOS 的 Word
 
 外接程序只需编写一次，即可跨多个平台在所有版本 Word 中运行。有关详细信息，请参阅 [Office 外接程序主机和平台可用性](../overview/office-add-in-availability.md)。
 
 ## <a name="javascript-apis-for-word"></a>适用于 Word 的 JavaScript API
 
-有两组 JavaScript Api 可用于与 Word 文档中的对象和元数据进行交互。第一组是[适用于 Office 的 JavaScript API](https://docs.microsoft.com/javascript/office/javascript-api-for-office?view=office-js?product=word)，在 Office 2013 进行了引入。这是一个共享 API --许多对象可以在由两个或多个 Office 客户端托管的外接程序中使用。此 API 广泛使用回调。 
+有两组 JavaScript Api 可用于与 Word 文档中的对象和元数据进行交互。第一组是[适用于 Office 的 JavaScript API](https://docs.microsoft.com/javascript/office/javascript-api-for-office?view=office-js?product=word)，在 Office 2013 进行了引入。这是一个共享 API --许多对象可以在由两个或多个 Office 客户端托管的外接程序中使用。此 API 广泛使用回调。
 
 第二组是 [Word JavaScript API](https://docs.microsoft.com/javascript/office/overview/word-add-ins-reference-overview?view=office-js)。这是强类型对象模型，可用于创建面向适用于 Mac 和 Windows 的 Word 2016 的 Word 外接程序。此对象模型使用承诺模式，并提供对特定于 Word 对象（如[正文](https://docs.microsoft.com/javascript/api/word/word.body?view=office-js)、[内容控件](https://docs.microsoft.com/javascript/api/word/word.contentcontrol?view=office-js)、[内联图片](https://docs.microsoft.com/javascript/api/word/word.inlinepicture?view=office-js)和[段落](https://docs.microsoft.com/javascript/api/word/word.paragraph?view=office-js)）的访问权限。Word JavaScript API 包括 TypeScript 定义和 vsdoc 文件，这样，您可以在 IDE 中获得代码提示。
 
