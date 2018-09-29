@@ -2,12 +2,12 @@
 title: 错误处理
 description: ''
 ms.date: 12/04/2017
-ms.openlocfilehash: e39ee537b677803f6c4ebd35e7a8878d62fd6e14
-ms.sourcegitcommit: 30435939ab8b8504c3dbfc62fd29ec6b0f1a7d22
+ms.openlocfilehash: 23a70b1d66befb971c3c1394eb9162c19f2ee176
+ms.sourcegitcommit: fdf7f4d686700edd6e6b04b2ea1bd43e59d4a03a
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "23945472"
+ms.lasthandoff: 09/28/2018
+ms.locfileid: "25348084"
 ---
 # <a name="error-handling"></a>错误处理
 
@@ -41,7 +41,7 @@ Excel.run(function (context) {
 
 - **消息**：错误消息的 `message` 属性包含本地化字符串中的错误摘要。 错误消息并非针对最终用户的使用情况；应使用错误代码和相应的业务逻辑来确定加载项显示给最终用户的错误消息。
 
-- **debugInfo**：出现此信息时，错误消息的 `debugInfo` 属性将提供其他信息，帮助理解错误根本原因。 
+- **debugInfo**：出现此信息时，错误消息的 `debugInfo` 属性将提供其他信息，帮助理解错误的根本原因。 
 
 > [!NOTE]
 > 如果使用 `console.log()` 将错误消息打印到控制台，那么这些消息只会在服务器上可见。 最终用户不会在加载项任务窗格或主机应用的其他任何位置看到这些错误消息。
@@ -49,4 +49,4 @@ Excel.run(function (context) {
 ## <a name="see-also"></a>另请参阅
 
 - [Excel JavaScript API 核心概念](excel-add-ins-core-concepts.md)
-- [OfficeExtension.Error 对象（Excel JavaScript API）](https://docs.microsoft.com/javascript/api/office/officeextension.error?view=office-js)
+- [OfficeExtension.Error 对象 (JavaScript API for Excel)](https://docs.microsoft.com/javascript/api/office/officeextension.error?view=office-js)
