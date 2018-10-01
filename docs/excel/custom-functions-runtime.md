@@ -1,17 +1,19 @@
 ---
-ms.date: 09/20/2018
-description: Excel 自定义函数使用新的 JavaScript 运行时，其不同于标准的加载项  WebView 控件运行时。
+ms.date: 09/27/2018
+description: Excel 自定义函数使用新的 JavaScript 运行时，其不同于标准的加载项 WebView 控件运行时。
 title: Excel 自定义函数运行时
-ms.openlocfilehash: fa2b2030259e05f64b8b4660ded8b80c6af1eb5a
-ms.sourcegitcommit: 8ce9a8d7f41d96879c39cc5527a3007dff25bee8
+ms.openlocfilehash: ce9678d68860c0f8f4c868712155af7824ceb93f
+ms.sourcegitcommit: fdf7f4d686700edd6e6b04b2ea1bd43e59d4a03a
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "24985793"
+ms.lasthandoff: 09/28/2018
+ms.locfileid: "25348105"
 ---
 # <a name="runtime-for-excel-custom-functions-preview"></a>Excel 自定义函数的运行时（预览）
 
 自定义函数使用新的 JavaScript 运行时，其使用的是沙盒化的 JavaScript 引擎而不是 web 浏览器，由此扩展了 Excel 的功能。 因为自定义函数不需要呈现 UI 元素，新的 JavaScript 运行时为执行计算进行了优化，让你能够同时运行数千个自定义函数。
+
+[!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
 ## <a name="key-facts-about-the-new-javascript-runtime"></a>新的 JavaScript 运行时的有关要点 
 
@@ -36,7 +38,7 @@ ms.locfileid: "24985793"
 
 XHR 代表 [XmlHttpRequest](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest)，这是一个发出 HTTP 请求以便与服务器进行交互的标准 web API。 在新的 JavaScript 运行时中，XHR 通过要求[同源策略](https://developer.mozilla.org/en-US/docs/Web/Security/Same-origin_policy)和简单 [CORS](https://www.w3.org/TR/cors/)实现附加安全措施。  
 
-在下面的代码示例中，`getTemperature()` 函数发出 web 请求，以获取基于温度计 ID 的特定区域温度。 函数使用 XHR 向可提供数据的端点发出 `GET` 请求。`sendWebRequest()`  
+在下面的代码示例中，`getTemperature()` 函数发出 web 请求，以获取基于温度计 ID 的特定区域温度。 `sendWebRequest()` 函数使用 XHR 向可提供数据的端点发出 `GET` 请求。  
 
 ```js
 function getTemperature(thermometerID) {
@@ -64,11 +66,11 @@ function sendWebRequest(thermometerID, data) {
 
 ### <a name="websockets"></a>Websocket
 
-[Websocket](https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API) 是在服务器与一个或多个客户端之间建立实时通信的网络协议。 它通常用于聊天应用程序，因为它允许同时读取和写入文本。  
+[WebSocket](https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API)  是在服务器与一个或多个客户端之间建立实时通信的网络协议。 它通常用于聊天应用程序，因为它允许同时读取和写入文本。  
 
 如下面的代码示例中所示，自定义函数可以使用 Websocket。 本示例中，WebSocket 记录其接收的每条消息。
 
-```ts
+```typescript
 const ws = new WebSocket('wss://bundles.office.com');
 ws.onmessage = (message) => {
     console.log(`Received: ${message}`);
@@ -100,11 +102,11 @@ AsyncStorage 对于加载项的所有部件全局可用。 对于自定义函数
  - `multiSet`
  - `multiRemove`
  
-和 `multiMerge` 方法现时不受支持。`mergeItem`
+目前，`mergeItem` 和 `multiMerge` 方法不受支持。
 
 下面的代码示例调用 `AsyncStorage.getItem` 函数以从存储检索值。
 
-```js
+```typescript
 _goGetData = async () => {
     try {
         const value = await AsyncStorage.getItem('toDoItem');
@@ -120,7 +122,7 @@ _goGetData = async () => {
 
 ### <a name="dialog-api"></a>Dialog API
 
-Dialog API 可打开一个提示用户登录的对话框。 可使用 Dialog API 要求通过Google 或 Facebook 等外部资源进行用户身份验证，此后用户才可以使用你的函数。   
+Dialog API 可打开一个提示用户登录的对话框。 可使用 Dialog API 要求通过 Google 或 Facebook 等外部资源进行用户身份验证，此后用户才可以使用你的函数。   
 
 在下面的代码示例中，`getTokenViaDialog()` 方法使用 Dialog API 的 `displayWebDialog()` 方法打开一个对话框。
 
@@ -130,11 +132,11 @@ Dialog API 可打开一个提示用户登录的对话框。 可使用 Dialog API
 function getStock (ticker) {
   return new Promise(function (resolve, reject) {
     // Get a token
-    getToken("https://myauthurl")
+    getToken("https://www.contoso.com/auth")
     .then(function (token) {
       
       // Use token to get stock price
-      fetch("https://myservice.com/?token=token&ticker= + ticker")
+      fetch("https://www.contoso.com/?token=token&ticker= + ticker")
       .then(function (result) {
 
         // Return stock price to cell
@@ -204,10 +206,10 @@ function getStock (ticker) {
 ```
 
 > [!NOTE]
-> 本节中所述的 Dialog AP 是用于自定义函数的新 JavaScript 运行时的一部分，仅可在自定义的函数中使用。 此 API 不同于可在任务窗格和加载项命令中使用的 [Dialog API](../develop/dialog-api-in-office-add-ins.md)。
+> 本节中所述的 Dialog API 是用于自定义函数的新 JavaScript 运行时的一部分，仅可在自定义的函数中使用。 此 API 不同于可在任务窗格和加载项命令中使用的 [Dialog API](../develop/dialog-api-in-office-add-ins.md)。
 
 ## <a name="see-also"></a>另请参阅
 
 * [在 Excel 中创建自定义函数](custom-functions-overview.md)
 * [自定义函数元数据](custom-functions-json.md)
-* [自定义函数的最佳实践](custom-functions-best-practices.md)
+* [自定义函数最佳做法](custom-functions-best-practices.md)

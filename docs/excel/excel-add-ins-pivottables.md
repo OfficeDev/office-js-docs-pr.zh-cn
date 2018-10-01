@@ -2,18 +2,18 @@
 title: 使用 Excel JavaScript API 处理数据透视表
 description: 使用 Excel JavaScript API 创建数据透视表并与其组件交互。
 ms.date: 09/21/2018
-ms.openlocfilehash: b8704389ced3686858f488b2a50f80c22b1b8bd6
-ms.sourcegitcommit: e7e4d08569a01c69168bb005188e9a1e628304b9
+ms.openlocfilehash: 7178ae0d578e9f52bd9590c764c488c7fa4d2b43
+ms.sourcegitcommit: fdf7f4d686700edd6e6b04b2ea1bd43e59d4a03a
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/22/2018
-ms.locfileid: "24967667"
+ms.lasthandoff: 09/28/2018
+ms.locfileid: "25348182"
 ---
 # <a name="work-with-pivottables-using-the-excel-javascript-api"></a>使用 Excel JavaScript API 处理数据透视表
 
 数据透视表简化更大的数据集。 它们允许分组数据的快速操作。 Excel JavaScript API 允许加载项创建数据透视表并与其组件交互。 
 
-如果不熟悉数据透视表的功能，尝试以最终用户的身份了解它们的功能。 请参阅[创建数据透视表分析工作表数据](https://support.office.com/en-us/article/Import-and-analyze-data-ccd3c4a6-272f-4c97-afbb-d3f27407fcde#ID0EAABAAA=PivotTables)，了解这些工具的入门指导。 
+如果不熟悉数据透视表的功能，尝试以最终用户的身份了解它们的功能。请参阅[创建数据透视表分析工作表数据](https://support.office.com/en-us/article/Import-and-analyze-data-ccd3c4a6-272f-4c97-afbb-d3f27407fcde#ID0EAABAAA=PivotTables)，了解这些工具的入门指导。 
 
 本文提供了常见方案的代码示例。 参阅[**数据透视表**](https://docs.microsoft.com/javascript/api/excel/excel.pivottable)和[**PivotTableCollection**](https://docs.microsoft.com/javascript/api/excel/excel.pivottable)，加深对数据透视表 API 的理解。
 
@@ -26,7 +26,7 @@ ms.locfileid: "24967667"
 
 ![来自不同农场的不同类型水果销售的集合。](../images/excel-pivots-raw-data.png)
 
-此数据具有五个层次结构：**农场**、**类型**、**分类**、 **农场销售箱数**，和**批发箱数**。 每个层次结构只能存在于四个类别中的一个类别。 如果**类型**添加到列层次结构，然后又添加到行层次结构，则其仅保留至后者。
+此数据具有五个层次结构：**农场**、**类型**、**分类**、**农场销售箱数**和**批发箱数**。 每个层次结构只能存在于四个类别中的一个类别。 如果**类型**添加到列层次结构，然后又添加到行层次结构，则其仅保留至后者。
 
 行和列的层次结构定义如何分组数据。 例如，**农场**的行层次结构会将来自同一农场的所有数据集归集在一起。 选择行和列层次结构来定义数据透视表的方向。
 
@@ -34,7 +34,7 @@ ms.locfileid: "24967667"
 
 筛选器层次结构基于已筛选类型中的值包含或排除来自透视的数据。 选择了**有机**类型的**分类**筛选器层次结构仅显示有机水果的数据。
 
-这还是农场数据，一旁是数据透视表。 数据透视表使用 **农场**和**类型**作为行层次结构，**农场销售箱数**和**批发箱数**作为数据层次结构 （默认总和的聚合函数），**分类**作为筛选器层次结构（选中**有机**）。 
+这还是农场数据，一旁是数据透视表。 数据透视表使用**农场**和**类型**作为行层次结构，**农场销售箱数**和**批发箱数**作为数据层次结构 （默认总和的聚合函数），**分类**作为筛选器层次结构（选中**有机**）。 
 
 ![具有行、数据和筛选器层次结构的数据透视表旁边果销售数据的选定内容。](../images/excel-pivot-table-and-data.png)
 
@@ -99,7 +99,7 @@ await Excel.run(async (context) => {
 
 行和列透视与那些字段值相关的数据。
 
-添加 **农场**列透视每个农场的所有销售情况。 添加**类型**和**分类**行，可基于销售的水果以及该水果是否为有机等条件而将数据作进一步的分解。
+添加**农场**列透视每个农场的所有销售情况。 添加**类型**和**分类**行，可基于销售的水果以及该水果是否为有机等条件而将数据作进一步的分解。
 
 ![带农场列和类型及分类行的数据透视表。](../images/excel-pivots-table-rows-and-columns.png)
 
@@ -155,7 +155,7 @@ await Excel.run(async (context) => {
 
 ## <a name="change-aggregation-function"></a>更改聚合函数
 
-数据层次结构将其数值聚合。 对于数字的数据集，默认情况下，这是总和。 属性基于类型定义此行为 `AggregrationFunction`。`summarizeBy` 
+数据层次结构将其数值聚合。 对于数字的数据集，默认情况下，这是总和。 `summarizeBy` 属性基于 `AggregrationFunction` 类型定义此行为。 
 
 当前支持的聚合函数类型为`Sum`、`Count`、`Average`、`Max` `Min`、`Product`、`CountNumbers`、`StandardDeviation`、`StandardDeviationP`、`Variance`、`VarianceP`和`Automatic` （默认）。
 
@@ -266,4 +266,4 @@ await Excel.run(async (context) => {
 ## <a name="see-also"></a>另请参阅
 
 - [Excel JavaScript API 核心概念](excel-add-ins-core-concepts.md)
-- [Excel JavaScript API 引用](https://docs.microsoft.com/javascript/api/excel)
+- [Excel JavaScript API 参考](https://docs.microsoft.com/javascript/api/excel)

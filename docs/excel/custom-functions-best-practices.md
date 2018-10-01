@@ -2,12 +2,12 @@
 ms.date: 09/27/2018
 description: 了解 Excel 自定义函数的最佳做法和建议的模式。
 title: 自定义函数的最佳做法
-ms.openlocfilehash: 4590682a9efa3048605686763f9af28f2fad20a4
-ms.sourcegitcommit: fdf7f4d686700edd6e6b04b2ea1bd43e59d4a03a
+ms.openlocfilehash: d157464a3a8bf453cd0970281f1a4fdd27df5d25
+ms.sourcegitcommit: 1852ae367de53deb91d03ca55d16eb69709340d3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/28/2018
-ms.locfileid: "25348112"
+ms.lasthandoff: 09/29/2018
+ms.locfileid: "25348785"
 ---
 # <a name="custom-functions-best-practices-preview"></a>自定义函数的最佳做法（预览）
 
@@ -41,7 +41,7 @@ function getComment(x) {
 
 - 使用自定义函数代码中的 `console.log` 语句实时发送输出到控制台。
 
-- 使用自定义函数代码内的 `debugger;` 语句来指定 F12 窗口打开时执行将暂停的断点。 例如，如果 F12 窗口打开时以下函数运行，则执行将在 `debugger;` 语句上暂停，使你能够在函数返回前手动检查参数值。  `debugger;` 语句在 F12 窗口未打开时在 Excel Online 中不起作用。 目前，`debugger;` 语句在 Excel for Windows 中不起作用。
+- 使用自定义函数代码内的 `debugger;` 语句来指定 F12 窗口打开时执行将暂停的断点。 例如，如果 F12 窗口打开时以下函数运行，则执行将在 `debugger;` 语句上暂停，使你能够在函数返回前手动检查参数值。 `debugger;` 语句在 F12 窗口未打开时在 Excel Online 中不起作用。 目前，`debugger;` 语句在 Excel for Windows 中不起作用。
 
     ```js
     function add(first, second){
@@ -50,16 +50,15 @@ function getComment(x) {
     }
     ```
 
-如果加载项未能注册，请[验证为托管加载项应用程序的 Web 服务器正确配置了 SSL 证书](https://github.com/OfficeDev/generator-office/blob/master/src/docs/ssl.md)。
+如果加载项无法注册，请[验证为托管加载项应用程序的 Web 服务器正确配置了 SSL 证书](https://github.com/OfficeDev/generator-office/blob/master/src/docs/ssl.md)。
 
-如果你在 Office 2016 桌面中测试加载项，可以启用[运行时日志记录](../testing/troubleshoot-manifest.md#use-runtime-logging-to-debug-your-add-in)，以调试加载项 XML 清单文件以及若干安装和运行时条件等问题。
+如果您在 Office 2016 桌面版中测试加载项，可以启用[运行时日志记录](../testing/troubleshoot-manifest.md#use-runtime-logging-to-debug-your-add-in)，以调试加载项 XML 指令清单文件以及若干安装和运行时条件相关的问题。
 
+## <a name="mapping-function-names-to-json-metadata"></a>函数名称映射到 JSON 元数据
 
-## <a name="mapping-function-names-to-json-metadata"></a>将函数名称映射到 JSON 元数据
+如[自定义函数概述](custom-functions-overview.md)文章中所述，自定义函数项目必须包含一个 JSON 元数据文件，它提供了 Excel 注册并向最终用户提供自定义函数所需的信息。 此外，在定义了自定义函数的 JavaScript 文件中，必须提供信息以指定 JavaScript 文件中的每个自定义函数对应于 JSON 元数据文件中的哪些函数对象。
 
-如[自定义函数概述](custom-functions-overview.md)文章中所述，自定义函数项目必须包含一个 JSON 元数据文件，它提供了 Excel 注册并向最终用户提供自定义函数所需的信息。 此外，在定义自定义函数的 JavaScript 文件内，你必须提供信息以指定 JSON 元数据文件中的哪个函数对象对应于 JavaScript 文件中的每个自定义函数。
-
-例如，下面的代码示例定义自定义函数 `add`，然后指定函数 `add` 对应于 JSON 元数据文件中 `id` 属性值是 **ADD** 的对象。
+例如，下面的代码示例定义了自定义函数 `add`，然后指定函数 `add` 对应于 JSON 元数据文件中 `id` 属性值是 **ADD** 的对象。
 
 ```js
 function add(first, second){
@@ -71,15 +70,15 @@ CustomFunctionMappings.ADD = add;
 
 在 JavaScript 文件中创建自定义函数并指定 JSON 元数据文件中的对应信息时，请记住以下最佳做法。
 
-* 在 JavaScript 文件中，以小骆驼拼写法指定函数名称。 例如，函数名称 `addTenToInput` 用小骆驼拼写法编写：名称的第一个单词开头以小写字母开头，名称中的每个后续单词开头以大写字母开头。
+* 在 JavaScript 文件中，以驼峰拼写法指定函数名称。 例如，函数名称 `addTenToInput` 使用了驼峰拼写法：名称的第一个单词开头为小写字母，名称中的每个后续单词开头为大写字母。
 
-* 在 JSON 元数据文件中，以大写字母指定每个 `name` 属性的值。 `name` 属性定义了最终用户将在 Excel 中看到的函数名称。 在每个自定义函数名称中使用大写字母为最终用户提供了一致的体验，在 Excel 中所有内置函数名称都是大写。
+* 在 JSON 元数据文件中，以大写字母指定每个 `name` 属性的值。 `name` 属性定义了最终用户将在 Excel 中看到的函数名称。 在每个自定义函数名称中使用大写字母为最终用户提供了一致的体验，因为在 Excel 中所有内置函数名称都是大写。
 
-* 在 JSON 元数据文件中，以大写字母指定每个 `id` 属性的值。 这样使  JavaScript 代码中的 `CustomFunctionMappings` 语句对应于 JSON 元数据文件中的 `id` 属性的部分显而易见（前提是函数名称使用小骆驼拼写法，如前面所建议）。
+* 在 JSON 元数据文件中，以大写字母指定每个 `id` 属性的值。 这样使 `CustomFunctionMappings` JavaScript 代码中对应于 JSON 元数据文件 `id` 属性的部分显而易见（前提是函数名称使用驼峰拼写法，如前面所建议）。
 
-* 在 JSON 元数据文件中，确保每个 `id` 属性的值在文件范围内是唯一的。 即，元数据文件中没有两个函数对象具有相同的 `id` 值。 此外，不要在元数据文件中指定两个仅大小写不同的 `id` 值。 例如，不要将一个函数对象的 `id` 值定义为 **add**，而将另一函数对象的 `id` 值定义为 **ADD**。
+* 在 JSON 元数据文件中，确保每个 `id` 属性的值在文件范围内是唯一的。 即，元数据文件中没有两个函数对象具有相同的 `id` 值。 此外，不要在元数据文件中指定两个 `id` 仅大小写不同的值。 例如，不要将一个函数对象的 `id` 值定义为 **add**，而将另一函数对象的 `id` 值定义为 ** ADD**。
 
-* JSON 元数据文件中的 `id` 属性值在映射到相应的 JavaScript 函数名称后，不要更改其值。 可以通过更新 JSON 元数据文件中的 `name` 属性来更改最终用户在 Excel 中看到的函数名称，但绝不应在 `id` 属性值确定后再更改其值。
+* JSON 元数据文件中的 `id` 属性值在映射到相应的 JavaScript 函数名称后，不要更改其值。 您可以通过更新 JSON 元数据文件中 `name` 属性的值更改用户在 Excel 中看到的函数名称，但永远不要在 `id` 属性已建立后更改其值。
 
 * 在 JavaScript 文件中，在相同位置指定所有自定义函数映射。 例如，下面的代码示例定义两个自定义的函数，并指定这两个函数的映射信息。
 
@@ -127,6 +126,7 @@ CustomFunctionMappings.ADD = add;
 
 ## <a name="see-also"></a>另请参阅
 
-- [在 Excel 中创建自定义函数](custom-functions-overview.md)
-- [自定义函数元数据](custom-functions-json.md)
-- [Excel 自定义函数运行时](custom-functions-runtime.md)
+* [在 Excel 中创建自定义函数](custom-functions-overview.md)
+* [自定义函数元数据](custom-functions-json.md)
+* [Excel 自定义函数运行时](custom-functions-runtime.md)
+* [Excel 自定义函数教程](excel-tutorial-custom-functions.md)

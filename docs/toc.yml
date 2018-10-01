@@ -46,7 +46,10 @@ items:
   - name: Excel 加载项教程
     displayName: Excel
     href: tutorials/excel-tutorial.yml
-  - name: PowerPoint 外接程序教程
+  - name: Excel 自定义函数教程
+    displayName: Excel
+    href: tutorials/excel-tutorial-create-custom-functions.md
+  - name: PowerPoint 加载项教程
     displayName: PowerPoint
     href: tutorials/powerpoint-tutorial.yml
   - name: Word 加载项教程
@@ -56,7 +59,7 @@ items:
   items:
   - name: 运行加载项的要求
     href: concepts/requirements-for-running-office-add-ins.md
-  - name: 加载项开发最佳实践
+  - name: 加载项开发最佳做法
     href: concepts/add-in-development-best-practices.md
   - name: 加载项开发生命周期
     href: concepts/add-in-development-lifecycle.md
@@ -71,9 +74,9 @@ items:
     items:
     - name: 准则
       items:
-      - name: 辅助功能
+      - name: 可访问性
         href: design/accessibility-guidelines.md
-      - name: 语言
+      - name: 语音
         href: design/voice-guidelines.md
       - name: 数据可视化
         href: design/data-visualization-guidelines.md
@@ -172,7 +175,7 @@ items:
         href: develop/auth-external-add-ins.md
       - name: 向 Microsoft Graph 授权
         href: develop/authorize-to-microsoft-graph.md
-    - name: 使用对话框 API
+    - name: 使用 Dialog API
       href: develop/dialog-api-in-office-add-ins.md
     - name: 随文档自动打开任务窗格
       href: develop/automatically-open-a-task-pane-with-a-document.md
@@ -196,7 +199,7 @@ items:
     displayName: Excel
     href: excel/excel-add-ins-overview.md
     items:
-    - name: 构建您的第一个 Excel 加载项
+    - name: 生成首个 Excel 加载项
       displayName: Excel
       href: excel/excel-add-ins-get-started-overview.md
       items:
@@ -220,9 +223,13 @@ items:
       href: excel/excel-add-ins-core-concepts.md
       items:
       - name: 自定义函数
-        displayName: Excel
-        href: excel/custom-functions-overview.md
         items:
+        - name: 自定义函数概述
+          displayName: Excel
+          href: excel/custom-functions-overview.md
+        - name: 自定义函数教程
+          displayName: Excel
+          href: excel/excel-tutorial-custom-functions.md
         - name: 自定义函数运行时
           displayName: Excel
           href: excel/custom-functions-runtime.md
@@ -272,14 +279,17 @@ items:
       - name: 使用多个区域
         displayName: Excel
         href: excel/excel-add-ins-multiple-ranges.md
-    - name: Excel JavaScript API 参考
+    - name: Excel JavaScript API 概述
       displayName: Excel
       href: https://docs.microsoft.com/javascript/office/overview/excel-add-ins-reference-overview?view=office-js
+    - name: Excel JavaScript API 参考
+      displayName: Excel
+      href: https://docs.microsoft.com/javascript/api/excel?view=office-js
   - name: Word 加载项
     displayName: Word
     href: word/word-add-ins-programming-overview.md
     items:
-    - name: 构建您的第一个 Word 加载项
+    - name: 生成首个 Word 加载项
       displayName: Word
       href: word/word-add-ins.md
     - name: Word 加载项教程
@@ -303,9 +313,12 @@ items:
     - name: 使用搜索选项在 Word 加载项中查找文本
       displayName: Word
       href: word/search-option-guidance.md
-    - name: Word JavaScript API 参考
+    - name: Word JavaScript API 使用情况概述
       displayName: Word
       href: https://docs.microsoft.com/javascript/office/overview/word-add-ins-reference-overview?view=office-js
+    - name: Word JavaScript API 参考
+      displayName: Word
+      href: https://docs.microsoft.com/en-us/javascript/api/word?view=office-js
   - name: Outlook 加载项
     displayName: Outlook
     href: https://docs.microsoft.com/outlook/add-ins/
@@ -335,9 +348,12 @@ items:
     - name: 使用 OneNote 页内容
       displayName: OneNote
       href: onenote/onenote-add-ins-page-content.md
-    - name: OneNote JavaScript API 参考
+    - name: OneNote JavaScript API 概述
       displayName: OneNote
       href: https://docs.microsoft.com/javascript/office/overview/onenote-add-ins-javascript-reference?view=office-js
+    - name: OneNote JavaScript API 参考
+      displayName: OneNote
+      href: https://docs.microsoft.com/en-us/javascript/api/onenote?view=office-js
   - name: Project 加载项
     displayName: Project
     href: project/project-add-ins.md
@@ -348,7 +364,7 @@ items:
     - name: 创建将 REST 与本地 OData 服务结合使用的 Project 加载项
       displayName: Project
       href: project/create-a-project-add-in-that-uses-rest-with-an-on-premises-odata-service.md
-    - name: 使用文本编辑器创建 Project 的第一个任务窗格加载项
+    - name: 使用文本编辑器创建 Project 的首个任务窗格加载项
       displayName: Project
       href: project/create-your-first-task-pane-add-in-for-project-by-using-a-text-editor.md
   - name: 测试和调试
@@ -362,7 +378,7 @@ items:
         href: testing/sideload-office-addin-using-sideload-command.md
       - name: 从任务窗格附加调试器
         href: testing/attach-debugger-from-task-pane.md
-      - name: 使用 F12 开发者工具调试
+      - name: 使用 F12 开发人员工具调试
         href: testing/debug-add-ins-using-f12-developer-tools-on-windows-10.md
     - name: Office Online
       items:
@@ -399,28 +415,28 @@ items:
       href: https://docs.microsoft.com/office/dev/store/validation-policies
 - name: 参考
   items:
-  - name: Office 加载项清单
+  - name: Office 加载项清单参考
     displayName: Excel, Word, Outlook, PowerPoint, OneNote, Project
     href: https://docs.microsoft.com/javascript/office/manifest/allowsnapshot?view=office-js
-  - name: Office JavaScript API
+  - name: Office JavaScript API 集概述
     displayName: Excel, Word, Outlook, Visio, OneNote
     href: https://docs.microsoft.com/javascript/office/javascript-api-for-office?view=office-js
-  - name: Excel JavaScript API
+  - name: 特定于 Excel 的 JavaScript API 概述
     displayName: Excel
     href: https://docs.microsoft.com/javascript/office/overview/excel-add-ins-reference-overview?view=office-js
-  - name: OneNote JavaScript API
+  - name: 特定于 OneNote 的 JavaScript API 概述
     displayName: OneNote
     href: https://docs.microsoft.com/javascript/office/overview/onenote-add-ins-javascript-reference?view=office-js
-  - name: Outlook JavaScript API
+  - name: Outlook JavaScript API 要求集
     displayName: Outlook
     href: https://docs.microsoft.com/javascript/office/requirement-sets/outlook-api-requirement-sets?view=office-js
-  - name: Visio JavaScript API
+  - name: 特定于 Visio 的 JavaScript API 概述
     displayName: Visio
     href: https://docs.microsoft.com/javascript/office/overview/visio-javascript-reference-overview?view=office-js
-  - name: Word JavaScript API
+  - name: 特定于 Word 的 JavaScript API 概述
     displayName: Word
     href: https://docs.microsoft.com/javascript/office/overview/word-add-ins-reference-overview?view=office-js
-  - name: 共享 API
+  - name: 常见的 JavaScript API 要求集
     displayName: PowerPoint, Project
     href: https://docs.microsoft.com/javascript/office/requirement-sets/office-add-in-requirement-sets?view=office-js
   - name: API 开放性规范
@@ -428,9 +444,9 @@ items:
     href: https://docs.microsoft.com/javascript/office/openspec?view=office-js
 - name: 资源
   href: resources/resources-links-help.md
-ms.openlocfilehash: b02b37aa7b85e2a2e1126c065636158928bd1ced
-ms.sourcegitcommit: 470d8212b256275587e651abaa6f28beafebcab4
+ms.openlocfilehash: 0a24a30a1dcbeb6679d4b520d9cba4552ba5076c
+ms.sourcegitcommit: 1852ae367de53deb91d03ca55d16eb69709340d3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/21/2018
-ms.locfileid: "24062114"
+ms.lasthandoff: 09/29/2018
+ms.locfileid: "25348750"
