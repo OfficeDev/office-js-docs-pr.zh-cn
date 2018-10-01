@@ -2,16 +2,16 @@
 title: Excel 加载项概述
 description: ''
 ms.date: 01/23/2018
-ms.openlocfilehash: 4a81487290e77314e5a53c1f258716ca5cc29c2b
-ms.sourcegitcommit: 30435939ab8b8504c3dbfc62fd29ec6b0f1a7d22
+ms.openlocfilehash: dac1b4e19f3773d4e21711b1585dfbbebc39784a
+ms.sourcegitcommit: fdf7f4d686700edd6e6b04b2ea1bd43e59d4a03a
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "23945165"
+ms.lasthandoff: 09/28/2018
+ms.locfileid: "25348147"
 ---
 # <a name="excel-add-ins-overview"></a>Excel 加载项概述
 
-使用 Excel 加载项，可以跨多个平台扩展 Excel 应用功能，包括 Office for Windows、Office Online、Office for Mac 和 Office for iPad。在工作簿内使用 Excel 加载项，可以：
+使用 Excel 加载项，可以在包括 Office for Windows、Office Online、Office for Mac 和 Office for iPad 等多个平台上扩展 Excel 的应用程序功能。在工作簿内使用 Excel 加载项，可以：
 
 - 与 Excel 对象交互、读取和写入 Excel 数据。 
 - 使用基于 Web 的任务窗格或内容窗格扩展功能 
@@ -20,7 +20,7 @@ ms.locfileid: "23945165"
 
 Office 加载项平台提供框架和 Office.js JavaScript API，使你能够创建和运行 Excel 加载项。通过使用 Office 加载项平台创建 Excel 加载项，可以获得以下好处：
 
-* **跨平台支持**：在 Office for Windows、Mac、iOS 和 Office Online 中运行 Excel 加载项。
+* **跨平台支持**：可在 Office for Windows、Mac、iOS 和 Office Online 中运行 Excel 加载项。
 * **集中式部署**：管理员可以在整个组织内为用户快速而轻松地部署 Excel 加载项。
 * **单一登录 (SSO)**：轻松地将 Excel 加载项与 Microsoft Graph 集成。
 * **使用标准 Web 技术**：使用熟悉的 Web 技术（如 HTML、CSS 和 JavaScript）创建 Excel 加载项。
@@ -56,13 +56,13 @@ Web 应用程序可以托管在任何 Web 服务器上，并且可以使用客�
 
 ### <a name="add-in-commands"></a>加载项命令
 
-加载项命令是能够扩展 Excel UI，并在加载项中启动操作的 UI 元素。加载项命令可用于在功能区中添加按钮，也可用于向 Excel 上下文菜单中添加项。选择加载项命令后，用户便启动操作，如运行 JavaScript 代码，或在任务窗格中显示加载项页面。 
+加载项命令是能够扩展 Excel UI 并在加载项中启动操作的 UI 元素。加载项命令可用于在功能区中添加按钮，也可用于向 Excel 上下文菜单中添加项。选择加载项命令后，用户便启动操作，如运行 JavaScript 代码，或在任务窗格中显示加载项页面。 
 
 **加载项命令**
 
 ![Excel 中的加载项命令](../images/excel-add-in-commands-script-lab.png)
 
-有关命令功能、受支持的平台和开发加载项命令第最佳做法的详细信息，请参阅[适用于 Excel、Word 和 Powerpoint 的加载项命令](../design/add-in-commands.md)。
+有关命令功能、受支持的平台和开发加载项命令的最佳做法的详细信息，请参阅[适用于 Excel、Word 和 PowerPoint 的加载项命令](../design/add-in-commands.md)。
 
 ### <a name="task-panes"></a>任务窗格
 
@@ -76,7 +76,7 @@ Web 应用程序可以托管在任何 Web 服务器上，并且可以使用客�
 
 ### <a name="dialog-boxes"></a>对话框
 
-对话框是浮动在活动的 Excel 应用程序窗口之上的界面。 可以将对话框用于以下任务，如显示无法直接在任务窗格中打开的登录页、请求用户确认操作，或托管如果局限在任务窗格中可能过小的视频。 若要在 Excel 加载项中打开对话框，请使用[对话框 API](https://docs.microsoft.com/javascript/api/office/office.ui?view=office-js)。
+对话框是浮动在活动的 Excel 应用程序窗口之上的界面。 可以将对话框用于以下任务，如显示无法直接在任务窗格中打开的登录页、请求用户确认操作，或播放由于尺寸限制而不适合在任务窗格中播放的视频。 若要在 Excel 加载项中打开对话框，请使用[对话框 API](https://docs.microsoft.com/javascript/api/office/office.ui?view=office-js)。
 
 **对话框**
 
@@ -94,7 +94,7 @@ Web 应用程序可以托管在任何 Web 服务器上，并且可以使用客�
 
 有关内容加载项的详细信息，请参阅 [Office 内容加载项](../design/content-add-ins.md)。有关在 Excel 中实现内容加载项的示例，请参阅 GitHub 中的 [ Excel 内容加载项 Humongous Insurance](https://github.com/OfficeDev/Excel-Content-Add-in-Humongous-Insurance)。
 
-## <a name="javascript-apis-to-interact-with-workbook-content"></a>要与工作簿内容交互的 JavaScript API
+## <a name="javascript-apis-to-interact-with-workbook-content"></a>与工作簿内容交互的 JavaScript API
 
 Excel 加载项通过使用 [Office JavaScript API](https://docs.microsoft.com/javascript/office/javascript-api-for-office?view=office-js) 与 Excel 中的对象进行交互，其中包括两个 JavaScript 对象模型：
 
