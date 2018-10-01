@@ -2,20 +2,20 @@
 ms.date: 09/27/2018
 description: 在 Excel 中使用 JavaScript 创建自定义的函数。
 title: 在 Excel 中创建自定义函数（预览）
-ms.openlocfilehash: c8a2d8755a68530ecf8743c4a8ab65a4bed5b849
-ms.sourcegitcommit: fdf7f4d686700edd6e6b04b2ea1bd43e59d4a03a
+ms.openlocfilehash: 98e418f843f6f5574088cea9c7393afc4a42060b
+ms.sourcegitcommit: 1852ae367de53deb91d03ca55d16eb69709340d3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/28/2018
-ms.locfileid: "25348154"
+ms.lasthandoff: 09/29/2018
+ms.locfileid: "25348799"
 ---
 # <a name="create-custom-functions-in-excel-preview"></a>在 Excel 中创建自定义函数（预览）
 
-自定义函数使开发人员可以通过在 JavaScript 中定义这些函数作为外接程序的一部分，将新函数添加到 Excel。然后，用户可以像使用 Excel 中的其他本机函数（例如 `SUM()`）一样访问自定义函数。本文介绍了如何在 Excel 中创建自定义函数。
+自定义函数使开发人员可以通过在 JavaScript 中定义这些函数作为加载项的一部分，将新函数添加到 Excel。然后，用户可以像使用 Excel 中的其他本机函数（例如 `SUM()`）一样访问自定义函数。本文介绍了如何在 Excel 中创建自定义函数。
 
 [!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
-下图显示了最终用户将插入 Excel 工作表的单元格的自定义的函数。 `CONTOSO.ADD42` 自定义函数用于将 42 添加到用户指定为函数的输入参数的一对数字中。
+下图显示了最终用户将插入 Excel 工作表的单元格的自定义函数。 `CONTOSO.ADD42` 自定义函数用于将 42 添加到用户指定为函数的输入参数的一对数字中。
 
 <img alt="animated image showing an end user inserting the CONTOSO.ADD42 custom function into a cell of an Excel worksheet" src="../images/custom-function.gif" width="579" height="383" />
 
@@ -30,16 +30,16 @@ function add42(a, b) {
 > [!NOTE]
 > 本文后面的 [已知问题](#known-issues) 一节指定了自定义函数的当前限制。
 
-## <a name="components-of-a-custom-functions-add-in-project"></a>自定义函数外接程序项目的组件
+## <a name="components-of-a-custom-functions-add-in-project"></a>自定义函数加载项项目的组件
 
-如果使用 [Yo Office 生成器](https://github.com/OfficeDev/generator-office) 创建 Excel 自定义函数外接程序项目，将在项目中看到生成器创建的以下文件：
+果使用 [Yo Office 生成器](https://github.com/OfficeDev/generator-office) 创建 Excel 自定义函数加载项项目，将在项目中看到生成器创建的以下文件：
 
 | 文件 | 文件格式 | 说明 |
 |------|-------------|-------------|
 | **./src/customfunctions.js**<br/>或<br/>**./src/customfunctions.ts** | JavaScript<br/>或<br/>TypeScript | 包含定义自定义函数的代码。 |
 | **./config/customfunctions.json** | JSON | 包含描述自定义函数的元数据，并使 Excel 能够注册自定义函数且使其可供最终用户使用。 |
 | **./index.html** | HTML | 提供 &lt;脚本&gt; 定义自定义函数的 JavaScript 文件的引用。 |
-| **./manifest.xml** | XML | 此表中指定外接程序中所有自定义函数的命名空间，以及前面列出的JavaScript、JSON 和 HTML 文件的位置。 |
+| **./manifest.xml** | XML | 此表中指定加载项中所有自定义函数的命名空间，以及前面列出的 JavaScript、JSON 和 HTML 文件的位置。 |
 
 下面的章节将提供有关这些文件的更多信息。
 
@@ -47,7 +47,7 @@ function add42(a, b) {
 
 脚本文件 （Yo Office 生成器创建项目中的 **./src/customfunctions.js** 或 **./src/customfunctions.ts**）包含定义自定义函数的代码，该代码还将自定义函数的名称映射到 [JSON 元数据文件](#json-metadata-file)中的对象。 
 
-例如，下面的代码示例定义自定义函数 `add` 和 `increment`，然后指定这两个函数的映射信息。  `add` 函数被映射到 JSON 元数据文件中的对象，其中 `id` 属性的值是 **ADD**，而 `increment` 函数被映射到元数据文件中的对象，其中 `id` 属性的值是 **INCREMENT**。 有关将脚本文件中的函数名称映射到 JSON 元数据文件中对象的详细信息，请参阅[自定义函数的最佳做法](custom-functions-best-practices.md#mapping-function-names-to-json-metadata)。
+例如，下面的代码示例定义自定义函数 `add` 和 `increment`，然后指定这两个函数的映射信息。 `add` 函数被映射到 JSON 元数据文件中的对象，其中 `id` 属性的值是 **ADD**，而 `increment` 函数被映射到元数据文件中的对象，其中 `id` 属性的值是 **INCREMENT**。 有关将脚本文件中的函数名称映射到 JSON 元数据文件中对象的详细信息，请参阅[自定义函数的最佳做法](custom-functions-best-practices.md#mapping-function-names-to-json-metadata)。
 
 ```js
 function add(first, second){
@@ -78,7 +78,7 @@ CustomFunctionMappings.INCREMENT = increment;
 > [!TIP]
 > JSON 文件的服务器设置必须启用 [CORS](https://developer.mozilla.org/docs/Web/HTTP/CORS) 才能使自定义函数在 Excel Online 中正常工作。
 
-下面在 **customfunctions.json** 中的代码指定前面所述 `add` 函数和 `increment` 函数的元数据。 此代码后示例的表格提供了有关此 JSON 对象中单独属性的详细信息。 有关指定 JSON 元数据文件中 `id`  和 `name` 属性值的详细信息，请参阅[自定义函数的最佳做法](custom-functions-best-practices.md#mapping-function-names-to-json-metadata)。
+下面在 **customfunctions.json** 中的代码指定前面所述 `add` 函数和 `increment` 函数的元数据。 此代码后示例的表格提供了有关此 JSON 对象中单独属性的详细信息。 有关指定 JSON 元数据文件中 `id` 和 `name` 属性值的详细信息，请参阅[自定义函数的最佳做法](custom-functions-best-practices.md#mapping-function-names-to-json-metadata)。
 
 ```json
 {
@@ -139,7 +139,7 @@ CustomFunctionMappings.INCREMENT = increment;
 | 属性  | 说明 |
 |---------|---------|
 | `id` | 函数的唯一 ID。 设置之后，不应更改此 ID。 |
-| `name` | 最终用户在 Excel 中看到的函数名称。 在 Excel 中，此函数名称将以[  XML ](#manifest-file)清单文件中指定的自定义函数命名空间为前缀。 |
+| `name` | 最终用户在 Excel 中看到的函数名称。 在 Excel 中，此函数名称将以[ XML ](#manifest-file)清单文件中指定的自定义函数命名空间为前缀。 |
 | `helpUrl` | 用户请求帮助时显示的页面的 Url。 |
 | `description` | 介绍函数的用途。 当函数是 Excel 中自动完成菜单中的选定项时，此值将显示为工具提示。 |
 | `result`  | 定义函数返回的信息类型的对象。 `type` 子属性的值可以是**字符串**、**数字**或**布尔值**。 `dimensionality` 子属性的值可以是**scalar** 或 **matrix**（指定 `type` 值的二维数组）。 |
@@ -188,7 +188,7 @@ CustomFunctionMappings.INCREMENT = increment;
 
 ## <a name="functions-that-return-data-from-external-sources"></a>从外部源返回数据的函数
 
-从外部源返回数据的函数
+如果自定义函数从 web 等外部源检索数据，它必须：
 
 1. 将 JavaScript 承诺返回到 Excel。
 
@@ -196,7 +196,7 @@ CustomFunctionMappings.INCREMENT = increment;
 
 自定义函数在单元格中显示 `#GETTING_DATA` 临时结果，而 Excel 等待最终结果。 用户可以在等待结果时与电子表格的其余部分进行正常交互。
 
-在下面的代码示例中，`getTemperature()` 自定义函数检索温度计当前温度。 注意，`sendWebRequest` 是一个假设的函数（这里没有指定），它使用 [XHR](custom-functions-runtime.md#xhr)  来调用温度 Web 服务。
+在下面的代码示例中，`getTemperature()` 自定义函数检索温度计当前温度。 注意，`sendWebRequest` 是一个假设的函数（这里没有指定），它使用 [XHR](custom-functions-runtime.md#xhr) 来调用温度 Web 服务。
 
 ```js
 function getTemperature(thermometerID){
@@ -216,7 +216,7 @@ function getTemperature(thermometerID){
 
 - 第二个输入参数 `handler` 在最终用户从自动完成菜单中选择函数时不在 Excel 中向他们显示。
 
--  `onCanceled` 回调定义函数被取消时执行的该函数。 必须为每个流式函数实施一个取消处理程序。 有关详细信息，请参阅[取消函数](#canceling-a-function)。 
+- `onCanceled` 回调定义函数被取消时执行的该函数。 必须为每个流式函数实施一个取消处理程序。 有关详细信息，请参阅[取消函数](#canceling-a-function)。 
 
 ```js
 function incrementValue(increment, handler){
@@ -277,7 +277,7 @@ function incrementValue(increment, handler){
 
 下面的代码示例演示了全局保存状态的温度流式函数的实现。 关于此代码，请注意以下几点：
 
-- `refreshTemperature` 是一个流式函数，它会在每一秒内读取特定温度计的温度。 新的温度保存在 `savedTemperatures` 变量，但不直接更新单元格值。 它不应该直接从工作表单元格中调用，*所以它没有在 JSON 文件中注册*。
+- `refreshTemperature` 是一个流式函数，它会在每一秒内读取特定温度计的温度。 新的温度保存在 `savedTemperatures` 变量，但不直接更新单元格值。 它不应该直接从工作表单元格中调用，*因此未在 JSON 文件中注册*。
 
 - `streamTemperature` 每秒钟更新单元格中显示的温度值并使用 `savedTemperatures` 变量作为其数据源。 它必须在 JSON 文件中注册，并使用全大写字母命名：`STREAMTEMPERATURE`。
 
@@ -310,7 +310,7 @@ function refreshTemperature(thermometerID){
 
 ## <a name="working-with-ranges-of-data"></a>使用数据区域
 
-自定义的函数可接受一系列数据作为输入参数，或者可返回一系列数据。 JavaScript 中，数据区域表示为一个二维数组。
+自定义的函数可接受一系列数据作为输入参数，或者可返回一系列数据。 在 JavaScript 中，数据区域表示为一个二维数组。
 
 例如，假设函数从 Excel 中存储的一系列数字中返回第二个最大值。 下面的函数接受参数 `values`，其类型为 `Excel.CustomFunctionDimensionality.matrix`。 请注意，在此函数的 JSON 元数据中，可以将参数的 `type` 属性设置为 `matrix`。
 
@@ -359,7 +359,7 @@ function getComment(x) {
 - 自定义功能目前不适用于移动客户端的 Excel。
 - 不支持可变函数（每当电子表格中不相关的数据更改时自动重新计算）。
 - 尚未启用通过 Office 365 管理门户和 AppSource 进行的部署。
-- Excel Online中的自定义功能，可能会在一段时间无活动后，在进程期间停止工作。 刷新浏览器页面 (F5) 并重新输入自定义函数以恢复该功能。
+- Excel Online 中的自定义功能，可能会在一段时间无活动后，在进程期间停止工作。 刷新浏览器页面 (F5) 并重新输入自定义函数以恢复该功能。
 - 如果有多个加载项在 Excel for Windows 上运行，可能会在工作表单元格内看到 **#GETTING_DATA** 临时结果。 关闭 Excel 的所有窗口，并重新启动 Excel。
 - 将来可能会提供专门用于自定义函数的调试工具。 同时，可以在 Excel Online 使用 F12 开发人员工具调试。 请参阅[自定义函数最佳做法](custom-functions-best-practices.md)中的详细信息。
 
@@ -378,3 +378,4 @@ function getComment(x) {
 * [自定义函数元数据](custom-functions-json.md)
 * [Excel 自定义函数运行时](custom-functions-runtime.md)
 * [自定义函数最佳做法](custom-functions-best-practices.md)
+* [Excel 自定义函数教程](excel-tutorial-custom-functions.md)
