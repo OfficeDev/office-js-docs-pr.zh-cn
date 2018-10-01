@@ -2,12 +2,12 @@
 ms.date: 09/27/2018
 description: Excel 自定义函数使用新的 JavaScript 运行时，其不同于标准的加载项 WebView 控件运行时。
 title: Excel 自定义函数运行时
-ms.openlocfilehash: ce9678d68860c0f8f4c868712155af7824ceb93f
-ms.sourcegitcommit: fdf7f4d686700edd6e6b04b2ea1bd43e59d4a03a
+ms.openlocfilehash: 7489cd66851d1e0c24ef573ffa920b794cf749c2
+ms.sourcegitcommit: 1852ae367de53deb91d03ca55d16eb69709340d3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/28/2018
-ms.locfileid: "25348105"
+ms.lasthandoff: 09/29/2018
+ms.locfileid: "25348757"
 ---
 # <a name="runtime-for-excel-custom-functions-preview"></a>Excel 自定义函数的运行时（预览）
 
@@ -30,7 +30,7 @@ ms.locfileid: "25348105"
 自定义函数使用的 JavaScript 运行时有以下 API：
 
 - [XHR](#xhr)
-- [Websocket](#websockets)
+- [WebSocket](#websockets)
 - [AsyncStorage](#asyncstorage)
 - [Dialog API](#dialog-api)
 
@@ -64,9 +64,9 @@ function sendWebRequest(thermometerID, data) {
 
 ```
 
-### <a name="websockets"></a>Websocket
+### <a name="websockets"></a>WebSocket
 
-[WebSocket](https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API)  是在服务器与一个或多个客户端之间建立实时通信的网络协议。 它通常用于聊天应用程序，因为它允许同时读取和写入文本。  
+[Websocket](https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API) 是在服务器与一个或多个客户端之间建立实时通信的网络协议。 它通常用于聊天应用程序，因为它允许同时读取和写入文本。  
 
 如下面的代码示例中所示，自定义函数可以使用 Websocket。 本示例中，WebSocket 记录其接收的每条消息。
 
@@ -212,4 +212,5 @@ function getStock (ticker) {
 
 * [在 Excel 中创建自定义函数](custom-functions-overview.md)
 * [自定义函数元数据](custom-functions-json.md)
-* [自定义函数最佳做法](custom-functions-best-practices.md)
+* [自定义函数的最佳做法](custom-functions-best-practices.md)
+* [Excel 自定义函数教程](excel-tutorial-custom-functions.md)
