@@ -1,22 +1,22 @@
 ---
 title: Office 加载项主机和平台可用性
 description: Excel、Word、Outlook、PowerPoint 和 OneNote 支持的要求集。
-ms.date: 09/24/2018
-ms.openlocfilehash: b06602e35ec906866ad16d667036a4cbaff2d89e
-ms.sourcegitcommit: 8ce9a8d7f41d96879c39cc5527a3007dff25bee8
+ms.date: 10/03/2018
+ms.openlocfilehash: 6f7b5b565773457e6cd8a9eee69eb304784a29a9
+ms.sourcegitcommit: 563c53bac52b31277ab935f30af648f17c5ed1e2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "24985821"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "25459313"
 ---
 # <a name="office-add-in-host-and-platform-availability"></a>Office 加载项主机和平台可用性
 
-若要按预期运行，Office 加载项可能会依赖特定的 Office 主机、要求集、API 成员或 API 版本。 下表列出了每个 Office 应用目前支持的可用平台、扩展点、API 要求集和通用 API 要求集。
+若要按预期运行，Office 加载项可能会依赖特定的 Office 主机、要求集、API 成员或 API 版本。下表包含每个 Office 应用程序目前支持的可用平台、扩展点、API 要求集和通用 API 要求集。
 
-如果表格单元格内有星号 (*)，表示我们正在完善它。 有关 Project 或 Access 要求集，请参阅 [Office 通用要求集](https://docs.microsoft.com/javascript/office/requirement-sets/office-add-in-requirement-sets)。  
+如果表格单元格内有星号 (*)，表示我们正在完善它。有关 Project 或 Access 要求集，请参阅 [Office 通用要求集](https://docs.microsoft.com/javascript/office/requirement-sets/office-add-in-requirement-sets)。  
 
 > [!NOTE]
-> 通过 MSI 安装的 Office 2016 的生成号为 16.0.4266.1001。此版本只包含 ExcelApi 1.1、WordApi 1.1 和通用 API 要求集。
+> 通过 MSI 安装的 Office 2016 的内部版本号为 16.0.4266.1001。此版本只包含 ExcelApi 1.1、WordApi 1.1 和通用 API 要求集。
 
 ## <a name="excel"></a>Excel
 
@@ -41,16 +41,17 @@ ms.locfileid: "24985821"
         - <a href="https://docs.microsoft.com/javascript/office/requirement-sets/excel-api-requirement-sets">ExcelApi 1.5</a><br>
         - <a href="https://docs.microsoft.com/javascript/office/requirement-sets/excel-api-requirement-sets">ExcelApi 1.6</a><br>
         - <a href="https://docs.microsoft.com/javascript/office/requirement-sets/excel-api-requirement-sets">ExcelApi 1.7</a><br>
+        - <a href="https://docs.microsoft.com/javascript/office/requirement-sets/excel-api-requirement-sets">ExcelApi 1.8</a><br>
         - <a href="https://docs.microsoft.com/javascript/office/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a></td>
     <td>
         - BindingEvents<br>
         - CompressedFile<br>
         - DocumentEvents<br>
-        - File<br>
+        - 文件<br>
         - MatrixBindings<br>
         - MatrixCoercion<br>
         - Selection<br>
-        - Settings<br>
+        - 设置<br>
         - TableBindings<br>
         - TableCoercion<br>
         - TextBindings<br>
@@ -66,12 +67,12 @@ ms.locfileid: "24985821"
         - BindingEvents<br>
         - CompressedFile<br>
         - DocumentEvents<br>
-        - File<br>
+        - 文件<br>
         - ImageCoercion<br>
         - MatrixBindings<br>
         - MatrixCoercion<br>
         - Selection<br>
-        - Settings<br>
+        - 设置<br>
         - TableBindings<br>
         - TableCoercion<br>
         - TextBindings<br>
@@ -89,23 +90,24 @@ ms.locfileid: "24985821"
         - <a href="https://docs.microsoft.com/javascript/office/requirement-sets/excel-api-requirement-sets">ExcelApi 1.5</a><br>
         - <a href="https://docs.microsoft.com/javascript/office/requirement-sets/excel-api-requirement-sets">ExcelApi 1.6</a><br>
         - <a href="https://docs.microsoft.com/javascript/office/requirement-sets/excel-api-requirement-sets">ExcelApi 1.7</a><br>
+        - <a href="https://docs.microsoft.com/javascript/office/requirement-sets/excel-api-requirement-sets">ExcelApi 1.8</a><br>
         - <a href="https://docs.microsoft.com/javascript/office/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a></td>
     <td>- BindingEvents<br>
         - CompressedFile<br>
         - DocumentEvents<br>
-        - File<br>
+        - 文件<br>
         - ImageCoercion<br>
         - MatrixBindings<br>
         - MatrixCoercion<br>
         - Selection<br>
-        - Settings<br>
+        - 设置<br>
         - TableBindings<br>
         - TableCoercion<br>
         - TextBindings<br>
         - TextCoercion</td>
   </tr>
   <tr>
-    <td>Office for Windows</td>
+    <td>Office 2019 for Windows</td>
     <td>- 任务窗格<br>
         - 内容<br>
         - <a href="https://docs.microsoft.com/javascript/office/requirement-sets/add-in-commands-requirement-sets">加载项命令</a></td>
@@ -116,16 +118,17 @@ ms.locfileid: "24985821"
         - <a href="https://docs.microsoft.com/javascript/office/requirement-sets/excel-api-requirement-sets">ExcelApi 1.5</a><br>
         - <a href="https://docs.microsoft.com/javascript/office/requirement-sets/excel-api-requirement-sets">ExcelApi 1.6</a><br>
         - <a href="https://docs.microsoft.com/javascript/office/requirement-sets/excel-api-requirement-sets">ExcelApi 1.7</a><br>
+        - <a href="https://docs.microsoft.com/javascript/office/requirement-sets/excel-api-requirement-sets">ExcelApi 1.8</a><br>
         - <a href="https://docs.microsoft.com/javascript/office/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a></td>
     <td>- BindingEvents<br>
         - CompressedFile<br>
         - DocumentEvents<br>
-        - File<br>
+        - 文件<br>
         - ImageCoercion<br>
         - MatrixBindings<br>
         - MatrixCoercion<br>
         - Selection<br>
-        - Settings<br>
+        - 设置<br>
         - TableBindings<br>
         - TableCoercion<br>
         - TextBindings<br>
@@ -142,11 +145,12 @@ ms.locfileid: "24985821"
         - <a href="https://docs.microsoft.com/javascript/office/requirement-sets/excel-api-requirement-sets">ExcelApi 1.5</a><br>
         - <a href="https://docs.microsoft.com/javascript/office/requirement-sets/excel-api-requirement-sets">ExcelApi 1.6</a><br>
         - <a href="https://docs.microsoft.com/javascript/office/requirement-sets/excel-api-requirement-sets">ExcelApi 1.7</a><br>
+         - <a href="https://docs.microsoft.com/javascript/office/requirement-sets/excel-api-requirement-sets">ExcelApi 1.8</a><br>
         - <a href="https://docs.microsoft.com/javascript/office/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a></td>
     <td>- BindingEvents<br>
         - CompressedFile<br>
         - DocumentEvents<br>
-        - File<br>
+        - 文件<br>
         - ImageCoercion<br>
         - MatrixBindings<br>
         - MatrixCoercion<br>
@@ -169,17 +173,18 @@ ms.locfileid: "24985821"
         - <a href="https://docs.microsoft.com/javascript/office/requirement-sets/excel-api-requirement-sets">ExcelApi 1.5</a><br>
         - <a href="https://docs.microsoft.com/javascript/office/requirement-sets/excel-api-requirement-sets">ExcelApi 1.6</a><br>
         - <a href="https://docs.microsoft.com/javascript/office/requirement-sets/excel-api-requirement-sets">ExcelApi 1.7</a><br>
+        - <a href="https://docs.microsoft.com/javascript/office/requirement-sets/excel-api-requirement-sets">ExcelApi 1.8</a><br>
         - <a href="https://docs.microsoft.com/javascript/office/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a></td>
     <td>- BindingEvents<br>
         - CompressedFile<br>
         - DocumentEvents<br>
-        - File<br>
+        - 文件<br>
         - ImageCoercion<br>
         - MatrixBindings<br>
         - MatrixCoercion<br>
         - PdfFile<br>
-        - 选择<br>
-        - Settings<br>
+        - Selection<br>
+        - 设置<br>
         - TableBindings<br>
         - TableCoercion<br>
         - TextBindings<br>
@@ -197,17 +202,18 @@ ms.locfileid: "24985821"
         - <a href="https://docs.microsoft.com/javascript/office/requirement-sets/excel-api-requirement-sets">ExcelApi 1.5</a><br>
         - <a href="https://docs.microsoft.com/javascript/office/requirement-sets/excel-api-requirement-sets">ExcelApi 1.6</a><br>
         - <a href="https://docs.microsoft.com/javascript/office/requirement-sets/excel-api-requirement-sets">ExcelApi 1.7</a><br>
+        - <a href="https://docs.microsoft.com/javascript/office/requirement-sets/excel-api-requirement-sets">ExcelApi 1.8</a><br>
         - <a href="https://docs.microsoft.com/javascript/office/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a></td>
     <td>- BindingEvents<br>
         - CompressedFile<br>
         - DocumentEvents<br>
-        - File<br>
+        - 文件<br>
         - ImageCoercion<br>
         - MatrixBindings<br>
         - MatrixCoercion<br>
         - PdfFile<br>
-        - 选择<br>
-        - Settings<br>
+        - Selection<br>
+        - 设置<br>
         - TableBindings<br>
         - TableCoercion<br>
         - TextBindings<br>
@@ -236,7 +242,8 @@ ms.locfileid: "24985821"
       - <a href="https://docs.microsoft.com/javascript/office/objectmodel/requirement-set-1.3/outlook-requirement-set-1.3">Mailbox 1.3</a><br>
       - <a href="https://docs.microsoft.com/javascript/office/objectmodel/requirement-set-1.4/outlook-requirement-set-1.4">Mailbox 1.4</a><br>
       - <a href="https://docs.microsoft.com/javascript/office/objectmodel/requirement-set-1.5/outlook-requirement-set-1.5">Mailbox 1.5</a><br>
-      - <a href="https://docs.microsoft.com/javascript/office/objectmodel/requirement-set-1.6/outlook-requirement-set-1.6">Mailbox 1.6</a></td>
+      - <a href="https://docs.microsoft.com/javascript/office/objectmodel/requirement-set-1.6/outlook-requirement-set-1.6">Mailbox 1.6</a><br>
+      - <a href="https://docs.microsoft.com/javascript/office/objectmodel/requirement-set-1.7/outlook-requirement-set-1.7">Mailbox 1.7</a></td>
     <td>不适用</td>
   </tr>
   <tr>
@@ -266,7 +273,7 @@ ms.locfileid: "24985821"
     <td>不适用</td>
   </tr>
   <tr>
-    <td>Office for Windows</td>
+    <td>Office 2019 for Windows</td>
     <td> - 邮件阅读<br>
       - 邮件撰写<br>
       - <a href="https://docs.microsoft.com/javascript/office/requirement-sets/add-in-commands-requirement-sets">加载项命令</a><br>
@@ -276,7 +283,8 @@ ms.locfileid: "24985821"
       - <a href="https://docs.microsoft.com/javascript/office/objectmodel/requirement-set-1.3/outlook-requirement-set-1.3">Mailbox 1.3</a><br>
       - <a href="https://docs.microsoft.com/javascript/office/objectmodel/requirement-set-1.4/outlook-requirement-set-1.4">Mailbox 1.4</a><br>
       - <a href="https://docs.microsoft.com/javascript/office/objectmodel/requirement-set-1.5/outlook-requirement-set-1.5">Mailbox 1.5</a><br>
-      - <a href="https://docs.microsoft.com/javascript/office/objectmodel/requirement-set-1.6/outlook-requirement-set-1.6">Mailbox 1.6</a></td>
+      - <a href="https://docs.microsoft.com/javascript/office/objectmodel/requirement-set-1.6/outlook-requirement-set-1.6">Mailbox 1.6</a><br>
+      - <a href="https://docs.microsoft.com/javascript/office/objectmodel/requirement-set-1.7/outlook-requirement-set-1.7">Mailbox 1.7</a></td>
     <td>不适用</td>
   </tr>
   <tr>
@@ -352,15 +360,15 @@ ms.locfileid: "24985821"
     <td> - BindingEvents<br>
          - CustomXmlParts<br>
          - DocumentEvents<br>
-         - File<br>
+         - 文件<br>
          - HtmlCoercion<br>
          - ImageCoercion<br>
          - MatrixBindings<br>
          - MatrixCoercion<br>
          - OoxmlCoercion<br>
          - PdfFile<br>
-         - 选择<br>
-         - Settings<br>
+         - Selection<br>
+         - 设置<br>
          - TableBindings<br>
          - TableCoercion<br>
          - TextBindings<br>
@@ -382,8 +390,8 @@ ms.locfileid: "24985821"
          - MatrixCoercion<br>
          - OoxmlCoercion<br>
          - PdfFile<br>
-         - 选择<br>
-         - Settings<br>
+         - Selection<br>
+         - 设置<br>
          - TableBindings<br>
          - TableCoercion<br>
          - TextBindings<br>
@@ -409,8 +417,8 @@ ms.locfileid: "24985821"
          - MatrixCoercion<br>
          - OoxmlCoercion<br>
          - PdfFile<br>
-         - 选择<br>
-         - Settings<br>
+         - Selection<br>
+         - 设置<br>
          - TableBindings<br>
          - TableCoercion<br>
          - TextBindings<br>
@@ -418,7 +426,7 @@ ms.locfileid: "24985821"
          - TextFile </td>
   </tr>
   <tr>
-    <td>Office for Windows</td>
+    <td>Office 2019 for Windows</td>
     <td> - 任务窗格<br>
          - <a href="https://docs.microsoft.com/javascript/office/requirement-sets/add-in-commands-requirement-sets">加载项命令</a></td>
     <td> - <a href="https://docs.microsoft.com/javascript/office/requirement-sets/word-api-requirement-sets">WordApi 1.1</a><br>
@@ -436,7 +444,7 @@ ms.locfileid: "24985821"
          - MatrixCoercion<br>
          - OoxmlCoercion<br>
          - PdfFile<br>
-         - 选择<br>
+         - Selection<br>
          - 设置<br>
          - TableBindings<br>
          - TableCoercion<br>
@@ -463,8 +471,8 @@ ms.locfileid: "24985821"
          - MatrixCoercion<br>
          - OoxmlCoercion<br>
          - PdfFile<br>
-         - 选择<br>
-         - Settings<br>
+         - Selection<br>
+         - 设置<br>
          - TableBindings<br>
          - TableCoercion<br>
          - TextBindings<br>
@@ -491,8 +499,8 @@ ms.locfileid: "24985821"
          - MatrixCoercion<br>
          - OoxmlCoercion<br>
          - PdfFile<br>
-         - 选择<br>
-         - Settings<br>
+         - Selection<br>
+         - 设置<br>
          - TableBindings<br>
          - TableCoercion<br>
          - TextBindings<br>
@@ -520,7 +528,7 @@ ms.locfileid: "24985821"
          - OoxmlCoercion<br>
          - PdfFile<br>
          - Selection<br>
-         - Settings<br>
+         - 设置<br>
          - TableBindings<br>
          - TableCoercion<br>
          - TextBindings<br>
@@ -550,7 +558,7 @@ ms.locfileid: "24985821"
     <td> - ActiveView<br>
          - CompressedFile<br>
          - DocumentEvents<br>
-         - File<br>
+         - 文件<br>
          - ImageCoercion<br>
          - PdfFile<br>
          - Selection<br>
@@ -567,7 +575,7 @@ ms.locfileid: "24985821"
     <td> - ActiveView<br>
          - CompressedFile<br>
          - DocumentEvents<br>
-         - File<br>
+         - 文件<br>
          - ImageCoercion<br>
          - PdfFile<br>
          - Selection<br>
@@ -583,7 +591,7 @@ ms.locfileid: "24985821"
     <td> - ActiveView<br>
          - CompressedFile<br>
          - DocumentEvents<br>
-         - File<br>
+         - 文件<br>
          - ImageCoercion<br>
          - PdfFile<br>
          - Selection<br>
@@ -591,7 +599,7 @@ ms.locfileid: "24985821"
          - TextCoercion</td>
   </tr>
   <tr>
-    <td>Office for Windows</td>
+    <td>Office 2019 for Windows</td>
     <td> - 内容<br>
          - 任务窗格<br>
          - <a href="https://docs.microsoft.com/javascript/office/requirement-sets/add-in-commands-requirement-sets">加载项命令</a></td>
@@ -599,7 +607,7 @@ ms.locfileid: "24985821"
     <td> - ActiveView<br>
          - CompressedFile<br>
          - DocumentEvents<br>
-         - File<br>
+         - 文件<br>
          - ImageCoercion<br>
          - PdfFile<br>
          - Selection<br>
@@ -614,7 +622,7 @@ ms.locfileid: "24985821"
      <td> - ActiveView<br>
          - CompressedFile<br>
          - DocumentEvents<br>
-         - File<br>
+         - 文件<br>
          - PdfFile<br>
          - Selection<br>
          - Settings<br>
@@ -630,7 +638,7 @@ ms.locfileid: "24985821"
     <td> - ActiveView<br>
          - CompressedFile<br>
          - DocumentEvents<br>
-         - File<br>
+         - 文件<br>
          - ImageCoercion<br>
          - PdfFile<br>
          - Selection<br>
@@ -646,7 +654,7 @@ ms.locfileid: "24985821"
     <td> - ActiveView<br>
          - CompressedFile<br>
          - DocumentEvents<br>
-         - File<br>
+         - 文件<br>
          - ImageCoercion<br>
          - PdfFile<br>
          - Selection<br>
@@ -678,7 +686,7 @@ ms.locfileid: "24985821"
          - HtmlCoercion<br>
          - ImageCoercion<br>
          - Settings<br>
-         - contTextCoercion</td>
+         - TextCoercion</td>
   </tr>
 </table>
 
