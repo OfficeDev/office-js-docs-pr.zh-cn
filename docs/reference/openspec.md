@@ -1,0 +1,18 @@
+# <a name="api-open-specifications"></a><span data-ttu-id="b88f8-101">API 开放性规范</span><span class="sxs-lookup"><span data-stu-id="b88f8-101">API open specifications</span></span>
+
+<span data-ttu-id="b88f8-102">Office JavaScript API 开放性规范提供有关为 Excel，Word 和其他主机应用程序设计的新版 JavaScript API 的信息。</span><span class="sxs-lookup"><span data-stu-id="b88f8-102">The Office JavaScript API open specifications provide information about new JavaScript APIs that are being designed for Excel, Word, and other host applications.</span></span> <span data-ttu-id="b88f8-103">您可以查看[  OfficeDev / office-js-docs ](https://github.com/OfficeDev/office-js-docs/branches/all) GitHub 存储库的\*\*  分支\*\* 中的开放性规范，以了解计划中的 API 对于将来的版本，可以通过在 GitHub 存储库中记录问题来提供有关计划的 API 功能和设计的反馈。</span><span class="sxs-lookup"><span data-stu-id="b88f8-103">You can review the open specifications in [branches](https://github.com/OfficeDev/office-js-docs/branches/all) of the **OfficeDev/office-js-docs** GitHub repository to learn about APIs that are planned for future releases and can provide feedback about the planned API features and design by logging issues in the GitHub repository.</span></span>
+
+> [!IMPORTANT]
+> <span data-ttu-id="b88f8-104">API 开放性规范中描述的功能可能处于开发的各个阶段，例如早期设计或公开预览，并且可能会发生变化。</span><span class="sxs-lookup"><span data-stu-id="b88f8-104">Features described in the API open specifications may be in various stages of development, such as early design or public preview, and are subject to change.</span></span> <span data-ttu-id="b88f8-105">当 API 功能普遍可用时，相关文档将从开放性规范中删除，并添加到[  Office加载项文档](https://docs.microsoft.com/office/dev/add-ins/)   中。</span><span class="sxs-lookup"><span data-stu-id="b88f8-105">When an API feature becomes generally available, related documentation is removed from the open specification and added to the [Office Add-ins documentation](https://docs.microsoft.com/office/dev/add-ins/).</span></span> 
+
+## <a name="new-excel-javascript-apis"></a><span data-ttu-id="b88f8-106">新版 Excel JavaScript API</span><span class="sxs-lookup"><span data-stu-id="b88f8-106">New Excel JavaScript APIs</span></span>
+
+<span data-ttu-id="b88f8-107">加入我们，一起审阅我们设计的新版 Excel JavaScript API 吧。</span><span class="sxs-lookup"><span data-stu-id="b88f8-107">Join us in reviewing our design for new Excel JavaScript APIs.</span></span> 
+
+<span data-ttu-id="b88f8-108">**请参阅 [Excel JavaScript 开放性规范页](https://github.com/OfficeDev/office-js-docs/tree/ExcelJs_OpenSpec)，了解详细信息并提供反馈。**</span><span class="sxs-lookup"><span data-stu-id="b88f8-108">**See the [Excel JavaScript open design page](https://github.com/OfficeDev/office-js-docs/tree/ExcelJs_OpenSpec) to learn more and provide your feedback.**</span></span>
+
+## <a name="new-word-javascript-apis"></a><span data-ttu-id="b88f8-109">新版 Word JavaScript API</span><span class="sxs-lookup"><span data-stu-id="b88f8-109">New Word JavaScript APIs</span></span>
+
+<span data-ttu-id="b88f8-110">加入我们，一起审阅我们设计的新版 Word JavaScript API 吧。</span><span class="sxs-lookup"><span data-stu-id="b88f8-110">Join us in reviewing our design for new Excel JavaScript APIs.</span></span> 
+
+<span data-ttu-id="b88f8-111">**请参阅 [Word JavaScript 开放性规范页](https://github.com/OfficeDev/office-js-docs/tree/WordJs_OpenSpec)，了解详细信息并提供反馈。**</span><span class="sxs-lookup"><span data-stu-id="b88f8-111">**See the [Excel JavaScript open design page](https://github.com/OfficeDev/office-js-docs/tree/WordJs_OpenSpec) to learn more and provide your feedback.**</span></span>
