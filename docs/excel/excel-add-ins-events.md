@@ -2,12 +2,12 @@
 title: 使用 Excel JavaScript API 处理事件
 description: ''
 ms.date: 09/21/2018
-ms.openlocfilehash: 6da36938d13c540b310fb5870f310681364803e9
-ms.sourcegitcommit: e7e4d08569a01c69168bb005188e9a1e628304b9
+ms.openlocfilehash: b56d25e7e0306b4881115397d4136e63ddc03e5c
+ms.sourcegitcommit: 563c53bac52b31277ab935f30af648f17c5ed1e2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/22/2018
-ms.locfileid: "24967695"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "25459173"
 ---
 # <a name="work-with-events-using-the-excel-javascript-api"></a>使用 Excel JavaScript API 处理事件 
 
@@ -15,7 +15,7 @@ ms.locfileid: "24967695"
 
 ## <a name="events-in-excel"></a>Excel 中的事件
 
-每当 Excel 工作簿中出现某种类型的更改时，就会触发事件通知。 使用 Excel JavaScript API，可以注册事件处理程序，以便加载项能够在发生特定事件时自动运行指定的函数。 下列事件暂不受支持。
+每当 Excel 工作簿中出现某种类型的更改时，就会触发事件通知。使用 Excel JavaScript API，可以注册事件处理程序，以便加载项能够在发生特定事件时自动运行指定的函数。
 
 | 事件 | 说明 | 支持的对象 |
 |:---------------|:-------------|:-----------|
@@ -24,7 +24,7 @@ ms.locfileid: "24967695"
 | `onActivated` | 启用对象时发生的事件。 | [**图表**](https://docs.microsoft.com/javascript/api/excel/excel.chart)、[**ChartCollection**](https://docs.microsoft.com/javascript/api/excel/excel.chartcollection)、[**WorksheetCollection**](https://docs.microsoft.com/javascript/api/excel/excel.worksheetcollection)、[**工作表**](https://docs.microsoft.com/javascript/api/excel/excel.worksheet) |
 | `onDeactivated` | 停用对象时发生的事件。 | [**图表**](https://docs.microsoft.com/javascript/api/excel/excel.chart)、[**ChartCollection**](https://docs.microsoft.com/javascript/api/excel/excel.chartcollection)、[**WorksheetCollection**](https://docs.microsoft.com/javascript/api/excel/excel.worksheetcollection)、[**工作表**](https://docs.microsoft.com/javascript/api/excel/excel.worksheet) |
 | `onCalculated` | 工作表完成计算（或集合的所有工作表都已完成）时发生的事件。 | [**WorksheetCollection**](https://docs.microsoft.com/javascript/api/excel/excel.worksheetcollection)、[**工作表**](https://docs.microsoft.com/javascript/api/excel/excel.worksheet) |
-| `onChanged` | 更改单元格内数据时发生的事件。 | [**Worksheet**](https://docs.microsoft.com/javascript/api/excel/excel.worksheet)、[**Table**](https://docs.microsoft.com/javascript/api/excel/excel.table)[**、TableCollection**](https://docs.microsoft.com/javascript/api/excel/excel.tablecollection) |
+| `onChanged` | 更改单元格内数据时发生的事件。 | [**工作表**](https://docs.microsoft.com/javascript/api/excel/excel.worksheet)、[**表**](https://docs.microsoft.com/javascript/api/excel/excel.table)[**、TableCollection**](https://docs.microsoft.com/javascript/api/excel/excel.tablecollection) |
 | `onDataChanged` | 更改绑定中的数据或格式时发生的事件。 | [**绑定**](https://docs.microsoft.com/javascript/api/excel/excel.binding) |
 | `onSelectionChanged` | 更改活动单元格或选定范围时发生的事件。 | [**工作表**](https://docs.microsoft.com/javascript/api/excel/excel.worksheet)、[**表格**](https://docs.microsoft.com/javascript/api/excel/excel.table)、[**绑定**](https://docs.microsoft.com/javascript/api/excel/excel.binding) |
 | `onSettingsChanged` | 当文档设置变更时发生的事件。 | [**SettingCollection**](https://docs.microsoft.com/javascript/api/excel/excel.settingcollection) |
@@ -49,7 +49,7 @@ Excel 工作簿内的事件可以通过下列方式触发：
 
 ## <a name="register-an-event-handler"></a>注册事件处理程序
 
-下面的代码示例为 **Sample** 工作表中的 `onChanged` 事件注册事件处理程序。 此代码指定 `handleDataChange` 函数应在工作表中的数据有变化时运行。
+下面的代码示例为 **Sample** 工作表中的 `onChanged` 事件注册事件处理程序。此代码指定 `handleDataChange` 函数应在工作表中的数据有变化时运行。
 
 ```js
 Excel.run(function (context) {
@@ -65,7 +65,7 @@ Excel.run(function (context) {
 
 ## <a name="handle-an-event"></a>处理事件
 
-如上一示例所示，注册事件处理程序时，指定函数应在指定事件发生时运行。 可以将函数设计为执行方案所需的任何操作。 下面的代码示例展示了事件处理程序函数如何直接将事件信息写入控制台。 
+如上一示例所示，注册事件处理程序时，指定函数应在指定事件发生时运行。可以将函数设计为执行方案所需的任何操作。下面的代码示例展示了事件处理程序函数如何直接将事件信息写入控制台。 
 
 ```js
 function handleChange(event)
@@ -83,7 +83,7 @@ function handleChange(event)
 
 ## <a name="remove-an-event-handler"></a>删除事件处理程序
 
-下面的代码示例为 **Sample** 工作表中的 `onSelectionChanged` 事件注册事件处理程序，并将 `handleSelectionChange` 函数定义为在事件发生时运行。 它还定义了随后可以调用的 `remove()` 函数，以删除相应事件处理程序。
+下面的代码示例为 **Sample** 工作表中的 `onSelectionChanged` 事件注册事件处理程序，并将 `handleSelectionChange` 函数定义为在事件发生时运行。它还定义了随后可以调用的 `remove()` 函数，以删除相应事件处理程序。
 
 ```js
 var eventResult;
@@ -123,9 +123,9 @@ function remove() {
 
 ## <a name="enable-and-disable-events"></a>启用和禁用事件
 
-可以通过禁用事件来提高加载项的性能。 例如，您的应用可能永远不需要接收事件，也可能在执行多个实体的批量编辑时忽略事件。 
+可以通过禁用事件来提高加载项的性能。例如，您的应用可能永远不需要接收事件，也可能在执行多个实体的批量编辑时忽略事件。 
 
-在[运行时](https://docs.microsoft.com/javascript/api/excel/excel.runtime)级别启用或禁用事件。 `enableEvents` 属性判断是否会触发事件，并激活其处理程序。 
+在[运行时](https://docs.microsoft.com/javascript/api/excel/excel.runtime)级别启用或禁用事件。`enableEvents` 属性判断是否会触发事件，并激活其处理程序。 
 
 下面的代码示例演示如何打开和关闭事件。
 
@@ -147,4 +147,4 @@ Excel.run(function (context) {
 
 ## <a name="see-also"></a>另请参阅
 
-- [Excel JavaScript API 核心概念](excel-add-ins-core-concepts.md)
+- [使用 Excel JavaScript API 的基本编程概念](excel-add-ins-core-concepts.md)

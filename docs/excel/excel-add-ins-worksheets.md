@@ -2,16 +2,16 @@
 title: 使用 Excel JavaScript API 处理工作表
 description: ''
 ms.date: 12/04/2017
-ms.openlocfilehash: f4c129f34460340a9abed3eda4a47e3bb6dd5978
-ms.sourcegitcommit: 7ecc1dc24bf7488b53117d7a83ad60e952a6f7aa
+ms.openlocfilehash: 9ceb2187cdd7f503fb39171e420adabcc2f13041
+ms.sourcegitcommit: 563c53bac52b31277ab935f30af648f17c5ed1e2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/23/2018
-ms.locfileid: "19437435"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "25459131"
 ---
 # <a name="work-with-worksheets-using-the-excel-javascript-api"></a>使用 Excel JavaScript API 处理工作表
 
-本文提供了代码示例，介绍如何使用 Excel JavaScript API 对工作表执行常见任务。 有关 **Worksheet** 和 **WorksheetCollection** 对象支持的属性和方法的完整列表，请参阅 [Worksheet 对象 (Excel JavaScript API)](https://dev.office.com/reference/add-ins/excel/worksheet) 和 [WorksheetCollection 对象 (Excel JavaScript API)](https://dev.office.com/reference/add-ins/excel/worksheetcollection)。
+本文提供了代码示例，介绍如何使用 Excel JavaScript API 对工作表执行常见任务。 有关 **Worksheet** 和 **WorksheetCollection** 对象支持的属性和方法的完整列表，请参阅 [Worksheet 对象 (Excel JavaScript API)](https://docs.microsoft.com/javascript/api/excel/excel.worksheet?view=office-js) 和 [WorksheetCollection 对象 (Excel JavaScript API)](https://docs.microsoft.com/javascript/api/excel/excel.worksheetcollection?view=office-js)。
 
 > [!NOTE]
 > 本文中的信息仅适用于常规工作表；不适用于“图表”或“宏”表。
@@ -281,6 +281,5 @@ Excel.run(function (context) {
 
 ## <a name="see-also"></a>另请参阅
 
-- [Excel JavaScript API 核心概念](excel-add-ins-core-concepts.md)
-- [Worksheet 对象 (Excel JavaScript API)](https://dev.office.com/reference/add-ins/excel/worksheet)
-- [WorksheetCollection 对象 (Excel JavaScript API)](https://dev.office.com/reference/add-ins/excel/worksheetcollection)
+- [使用 Excel JavaScript API 的基本编程概念](excel-add-ins-core-concepts.md)
+

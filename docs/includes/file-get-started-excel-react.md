@@ -1,12 +1,12 @@
 # <a name="build-an-excel-add-in-using-react"></a>使用 React 生成 Excel 加载项
 
-在本文中，您将了解使用 React 和 Excel JavaScript API 生成 Excel 加载项的过程。
+在本文中，你将完成使用 React 和 Excel JavaScript API 生成 Excel 加载项的过程。
 
 ## <a name="environment"></a>环境
 
-- **Office 桌面**：确保你安装了最新版本的 Office。 加载项命令需要内部版本 16.0.6769.0000 或更高版本（推荐 **16.0.6868.0000**）。 学习如何 [安装最新版本的 Office 应用程序](http://aka.ms/latestoffice)。 
+- **Office 桌面**：确保你安装了最新版本的 Office。加载项命令需要内部版本 16.0.6769.0000 或更高版本（建议使用 **16.0.6868.0000**）。了解如何[安装最新版本的 Office 应用程序](http://aka.ms/latestoffice)。 
  
-- **Office Online**：没有额外的设置。 请注意，对工作/学校帐户的 Office Online 命令的支持处于预览状态。
+- **Office Online**：没有额外的设置。请注意，对工作/学校帐户的 Office Online 命令的支持处于预览状态。
 
 ## <a name="prerequisites"></a>先决条件
 
@@ -19,15 +19,15 @@
 
 ### <a name="create-the-web-app"></a>创建 Web 应用
 
-1. 在本地驱动器上创建一个文件夹，并命名为“my-addin”****。 将在其中创建应用程序文件。
+1. 在本地驱动器上创建文件夹，并将它命名为 **my-addin**。将在其中创建应用文件。
 
-2. 转到应用程序文件夹。
+2. 转到应用文件夹。
 
     ```bash
     cd my-addin
     ```
 
-3. 使用 Yeoman 生成器生成加载项清单文件。 运行下面的命令，再回答提示问题，如以下屏幕截图所示。
+3. 使用 Yeoman 生成器生成加载项的清单文件。运行下面的命令，再回答提示问题，如以下屏幕截图所示。
 
     ```bash
     yo office
@@ -59,7 +59,7 @@
 
 6. 按照[将自签名证书添加为受信任的根证书](https://github.com/OfficeDev/generator-office/blob/master/src/docs/ssl.md)中的步骤操作，信任开发计算机操作系统的证书。
 
-7. 旁加载加载项以便在 Excel 中将显示。 在终端中，运行以下命令： 
+7. 旁加载加载项以便在 Excel 中将显示。在终端中，运行以下命令： 
     
     ```bash
     npm run sideload
@@ -94,6 +94,6 @@
 ## <a name="see-also"></a>另请参阅
 
 * [Excel 加载项教程](../tutorials/excel-tutorial-create-table.md)
-* [Excel JavaScript API 核心概念](../excel/excel-add-ins-core-concepts.md)
+* [使用 Excel JavaScript API 的基本编程概念](../excel/excel-add-ins-core-concepts.md)
 * [Excel 加载项代码示例](https://developer.microsoft.com/office/gallery/?filterBy=Samples,Excel)
 * [Excel JavaScript API 参考](https://docs.microsoft.com/javascript/office/overview/excel-add-ins-reference-overview?view=office-js)
