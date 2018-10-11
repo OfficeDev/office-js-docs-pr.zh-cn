@@ -2,20 +2,20 @@
 title: 使用 Excel JavaScript API 处理表格
 description: ''
 ms.date: 12/04/2017
-ms.openlocfilehash: c7d5f3f975092250747350501bbe011a17db9852
-ms.sourcegitcommit: 7ecc1dc24bf7488b53117d7a83ad60e952a6f7aa
+ms.openlocfilehash: 1e8c71f34de7a295fcac8e5ea6a4fff5cae4fdcf
+ms.sourcegitcommit: 563c53bac52b31277ab935f30af648f17c5ed1e2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/23/2018
-ms.locfileid: "19437498"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "25459159"
 ---
 # <a name="work-with-tables-using-the-excel-javascript-api"></a>使用 Excel JavaScript API 处理表格
 
-本文中的代码示例展示了如何使用 Excel JavaScript API 对表格执行常见任务。 有关 **Table** 和 **TableCollection** 对象支持的属性和方法的完整列表，请参阅 [Table 对象 (Excel JavaScript API)](https://dev.office.com/reference/add-ins/excel/table) 和 [TableCollection 对象 (Excel JavaScript API)](https://dev.office.com/reference/add-ins/excel/tablecollection)。
+本文中的代码示例展示了如何使用 Excel JavaScript API 对表格执行常见任务。 有关 **Table** 和 **TableCollection** 对象支持的属性和方法的完整列表，请参阅 [Table 对象 (Excel JavaScript API)](https://docs.microsoft.com/javascript/api/excel/excel.table?view=office-js) 和 [TableCollection 对象 (Excel JavaScript API)](https://docs.microsoft.com/javascript/api/excel/excel.tablecollection?view=office-js)。
 
 ## <a name="create-a-table"></a>创建表
 
-下面的代码示例在名为 **Sample** 的工作表中创建一个表。 此表包含标题，并且包含四列和七行数据。 如果在其中运行代码的 Excel 主机应用程序支持[要求集](https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets) **ExcelApi 1.2**，则为表中的当前数据设置最佳列宽和行高。
+下面的代码示例在名为 **Sample** 的工作表中创建一个表。 此表包含标题，并且包含四列和七行数据。 如果在其中运行代码的 Excel 主机应用程序支持[要求集](https://docs.microsoft.com/javascript/office/requirement-sets/excel-api-requirement-sets?view=office-js) **ExcelApi 1.2**，则为表中的当前数据设置最佳列宽和行高。
 
 > [!NOTE]
 > 若要指定表格名称，必须先创建表格，再设置它的 **name** 属性，如下面的示例所示。
@@ -49,16 +49,16 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
-**新建表格**
+**新建表**
 
-![Excel 中的新表](../images/excel-tables-create.png)
+![Excel 中的新表格](../images/excel-tables-create.png)
 
 ## <a name="add-rows-to-a-table"></a>向表添加行
 
-下面的代码示例将七个新行添加到名为 **Sample** 的工作表内的 **ExpensesTable** 表中。 新行被添加到表的末尾。 如果在其中运行代码的 Excel 主机应用程序支持[要求集](https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets) **ExcelApi 1.2**，则为表中的当前数据设置最佳列宽和行高。
+下面的代码示例将七个新行添加到名为 **Sample** 的工作表内的 **ExpensesTable** 表中。 新行被添加到表的末尾。 如果在其中运行代码的 Excel 主机应用程序支持[要求集](https://docs.microsoft.com/javascript/office/requirement-sets/excel-api-requirement-sets?view=office-js) **ExcelApi 1.2**，则为表中的当前数据设置最佳列宽和行高。
 
 > [!NOTE]
-> [TableRow](https://dev.office.com/reference/add-ins/excel/tablerow) 对象的 **index** 属性表示表格行集合内行的索引编号。 **TableRow** 对象不包含可用作标识行的唯一键的 **id** 属性。
+> [TableRow](https://docs.microsoft.com/javascript/api/excel/excel.tablerow?view=office-js) 对象的 **index** 属性表示表格行集合内行的索引编号。 **TableRow** 对象不包含可用作标识行的唯一键的 **id** 属性。
 
 ```js
 Excel.run(function (context) {
@@ -93,11 +93,11 @@ Excel.run(function (context) {
 下面的示例演示如何向表添加列。 第一个示例使用静态值填充新列；第二个示例使用公式填充新列。
 
 > [!NOTE]
-> [TableColumn](https://dev.office.com/reference/add-ins/excel/tablecolumn) 对象的 **index** 属性表示表格列集合内列的索引编号。 **TableColumn** 对象的 **id** 属性包含用于标识列的唯一键。
+> [TableColumn](https://docs.microsoft.com/javascript/api/excel/excel.tablecolumn?view=office-js) 对象的 **index** 属性表示表格列集合内列的索引编号。 **TableColumn** 对象的 **id** 属性包含用于标识列的唯一键。
 
 ### <a name="add-a-column-that-contains-static-values"></a>添加包含静态值的列
 
-下面的代码示例将一个新列添加到名为 **Sample** 的工作表内的 **ExpensesTable** 表中。 新列添加到表中所有现有列后面，并且包含一个标题（“星期几”），以及用于填充列中单元格的数据。 如果在其中运行代码的 Excel 主机应用程序支持[要求集](https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets) **ExcelApi 1.2**，则为表中的当前数据设置最佳列宽和行高。
+下面的代码示例将一个新列添加到名为 **Sample** 的工作表内的 **ExpensesTable** 表中。 新列添加到表中所有现有列后面，并且包含一个标题（“星期几”），以及用于填充列中单元格的数据。 如果在其中运行代码的 Excel 主机应用程序支持[要求集](https://docs.microsoft.com/javascript/office/requirement-sets/excel-api-requirement-sets?view=office-js) **ExcelApi 1.2**，则为表中的当前数据设置最佳列宽和行高。
 
 ```js
 Excel.run(function (context) {
@@ -130,7 +130,7 @@ Excel.run(function (context) {
 
 ### <a name="add-a-column-that-contains-formulas"></a>添加包含公式的列
 
-下面的代码示例将一个新列添加到名为 **Sample** 的工作表内的 **ExpensesTable** 表中。 新列添加到表的末尾，包含标题（“日期类型”），并使用一个公式来填充列中的每个数据单元格。 如果在其中运行代码的 Excel 主机应用程序支持[要求集](https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets) **ExcelApi 1.2**，则为表中的当前数据设置最佳列宽和行高。
+下面的代码示例将一个新列添加到名为 **Sample** 的工作表内的 **ExpensesTable** 表中。 新列添加到表的末尾，包含标题（“日期类型”），并使用一个公式来填充列中的每个数据单元格。 如果在其中运行代码的 Excel 主机应用程序支持[要求集](https://docs.microsoft.com/javascript/office/requirement-sets/excel-api-requirement-sets?view=office-js) **ExcelApi 1.2**，则为表中的当前数据设置最佳列宽和行高。
 
 ```js
 Excel.run(function (context) {
@@ -163,7 +163,7 @@ Excel.run(function (context) {
 
 ## <a name="update-column-name"></a>更新列名称
 
-下面的代码示例将表格中第一列的名称更新为“购买日期”****。如果运行代码的 Excel 主机应用支持[要求集](https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets) **ExcelApi 1.2**，那么列宽和行高会设置为最适应表格中的当前数据。
+下面的代码示例将表格中第一列的名称更新为**购买日期**。如果运行代码的 Excel 主机应用支持[要求集](https://docs.microsoft.com/javascript/office/requirement-sets/excel-api-requirement-sets?view=office-js) **ExcelApi 1.2**，那么列宽和行高会设置为最适应表格中的当前数据。
 
 ```js
 Excel.run(function (context) {
@@ -335,7 +335,7 @@ Excel.run(function (context) {
 
 ## <a name="format-a-table"></a>设置表格式
 
-下面的代码示例将格式应用于表。 它为表的标题行、正文、第二行以及第一列指定不同的填充颜色。 有关可以用来指定格式的属性的信息，请参阅 [RangeFormat 对象 (Excel JavaScript API)](https://dev.office.com/reference/add-ins/excel/rangeformat)。
+下面的代码示例将格式应用于表。 它为表的标题行、正文、第二行以及第一列指定不同的填充颜色。 有关可以用来指定格式的属性的信息，请参阅 [RangeFormat 对象 (Excel JavaScript API)](https://docs.microsoft.com/javascript/api/excel/excel.rangeformat?view=office-js)。
 
 ```js
 Excel.run(function (context) {
@@ -391,7 +391,7 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
-**内的数据（在区域转换为表之前）**
+**区域内的数据（在区域转换为表之前）**
 
 ![Excel 中区域内的数据](../images/excel-ranges.png)
 
@@ -401,7 +401,7 @@ Excel.run(function (context) {
 
 ## <a name="import-json-data-into-a-table"></a>将 JSON 数据导入表
 
-下面的代码示例在名为 **Sample** 的工作表中创建一个表，然后使用定义了两行数据的 JSON 对象来填充表。 如果在其中运行代码的 Excel 主机应用程序支持[要求集](https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets) **ExcelApi 1.2**，则为表中的当前数据设置最佳列宽和行高。
+下面的代码示例在名为 **Sample** 的工作表中创建一个表，然后使用定义了两行数据的 JSON 对象来填充表。 如果在其中运行代码的 Excel 主机应用程序支持[要求集](https://docs.microsoft.com/javascript/office/requirement-sets/excel-api-requirement-sets?view=office-js) **ExcelApi 1.2**，则为表中的当前数据设置最佳列宽和行高。
 
 ```js
 Excel.run(function (context) {
@@ -448,6 +448,5 @@ Excel.run(function (context) {
 
 ## <a name="see-also"></a>另请参阅
 
-- [Excel JavaScript API 核心概念](excel-add-ins-core-concepts.md)
-- [Table 对象 (Excel JavaScript API)](https://dev.office.com/reference/add-ins/excel/table)
-- [TableCollection 对象 (Excel JavaScript API)](https://dev.office.com/reference/add-ins/excel/tablecollection)
+- [使用 Excel JavaScript API 的基本编程概念](excel-add-ins-core-concepts.md)
+
