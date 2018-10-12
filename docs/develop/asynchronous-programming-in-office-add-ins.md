@@ -2,12 +2,12 @@
 title: Office 加载项中的异步编程
 description: ''
 ms.date: 12/04/2017
-ms.openlocfilehash: c4008eb2238e166095d017bb1477e24f118c0ea0
-ms.sourcegitcommit: 30435939ab8b8504c3dbfc62fd29ec6b0f1a7d22
+ms.openlocfilehash: badaf14123c3a70d28394d0286377d7e0920d453
+ms.sourcegitcommit: c53f05bbd4abdfe1ee2e42fdd4f82b318b363ad7
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "23945465"
+ms.lasthandoff: 10/12/2018
+ms.locfileid: "25505928"
 ---
 # <a name="asynchronous-programming-in-office-add-ins"></a>Office 加载项中的异步编程
 
@@ -398,5 +398,5 @@ function write(message){
 ## <a name="see-also"></a>另请参阅
 
 - [了解适用于 Office 的 JavaScript API](understanding-the-javascript-api-for-office.md) 
-- [适用于 Office 的 JavaScript API](https://docs.microsoft.com/javascript/office/javascript-api-for-office)
+- [适用于 Office 的 JavaScript API](https://docs.microsoft.com/office/dev/add-ins/reference/javascript-api-for-office)
      

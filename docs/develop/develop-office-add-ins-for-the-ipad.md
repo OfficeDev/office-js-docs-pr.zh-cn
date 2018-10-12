@@ -2,12 +2,12 @@
 title: 开发适用于 iPad 的 Office 加载项
 description: ''
 ms.date: 01/23/2018
-ms.openlocfilehash: 77e67c361d227babebdd081ecdf308fc7469e507
-ms.sourcegitcommit: 30435939ab8b8504c3dbfc62fd29ec6b0f1a7d22
+ms.openlocfilehash: 56226d5b3111b1496bd2175329f68814f6d2980a
+ms.sourcegitcommit: c53f05bbd4abdfe1ee2e42fdd4f82b318b363ad7
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "23944352"
+ms.lasthandoff: 10/12/2018
+ms.locfileid: "25505816"
 ---
 # <a name="develop-office-add-ins-for-the-ipad"></a>开发适用于 iPad 的 Office 加载项
 
@@ -17,7 +17,7 @@ ms.locfileid: "23944352"
 
 |**任务**|**说明**|**资源**|
 |:-----|:-----|:-----|
-|更新外接程序以支持 Office.js 版本 1.1。|将 Office 外接程序项目中使用的 JavaScript 文件（Office.js 和特定于应用的 .js 文件）和外接程序清单验证文件更新到版本 1.1。|[JavaScript API 中的更改内容](https://docs.microsoft.com/javascript/office/what's-changed-in-the-javascript-api-for-office?view=office-js)|
+|更新外接程序以支持 Office.js 版本 1.1。|将 Office 外接程序项目中使用的 JavaScript 文件（Office.js 和特定于应用的 .js 文件）和外接程序清单验证文件更新到版本 1.1。|[JavaScript API 中的更改内容](https://docs.microsoft.com/office/dev/add-ins/reference/what's-changed-in-the-javascript-api-for-office?view=office-js)|
 |应用 UI 设计最佳实践。|将外接程序 UI 与 iOS 体验无缝集成。|[针对 iOS 进行设计](https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/MobileHIG/)|
 |应用外接程序设计最佳实践。|确保外接程序提供明确值、正常运行并持续执行。|[开发 Office 外接程序的最佳做法](../concepts/add-in-development-best-practices.md)|
 |针对触摸优化外接程序。|使 UI 响应触摸输入以及鼠标和键盘。|[应用 UX 设计原则](../concepts/add-in-development-best-practices.md#apply-ux-design-principles)|

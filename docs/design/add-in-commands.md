@@ -2,12 +2,12 @@
 title: Excel、Word 和 PowerPoint 的外接程序命令
 description: ''
 ms.date: 01/23/2018
-ms.openlocfilehash: 101c34748f0eba5502caeab63ecbc00992ac548e
-ms.sourcegitcommit: 30435939ab8b8504c3dbfc62fd29ec6b0f1a7d22
+ms.openlocfilehash: 3db846e9d28e063d959fd617bf8c50ab5cb5ec86
+ms.sourcegitcommit: c53f05bbd4abdfe1ee2e42fdd4f82b318b363ad7
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "23944514"
+ms.lasthandoff: 10/12/2018
+ms.locfileid: "25506264"
 ---
 # <a name="add-in-commands-for-excel-word-and-powerpoint"></a>Excel、Word 和 PowerPoint 加载项命令
 
@@ -85,7 +85,7 @@ ms.locfileid: "23944514"
 
 加载项命令的最佳入门方式是参照 GitHub 上的 [Office 加载项命令示例](https://github.com/OfficeDev/Office-Add-in-Commands-Samples/)。
 
-若要详细了解如何在清单中指定加载项命令，请参阅[在清单中创建加载项命令](../develop/create-addin-commands.md)和 [VersionOverrides](https://docs.microsoft.com/javascript/office/manifest/versionoverrides?view=office-js) 参考内容。
+若要详细了解如何在清单中指定加载项命令，请参阅[在清单中创建加载项命令](../develop/create-addin-commands.md)和 [VersionOverrides](https://docs.microsoft.com/office/dev/add-ins/reference/manifest/versionoverrides?view=office-js) 参考内容。
 
 
 

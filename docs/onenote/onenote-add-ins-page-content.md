@@ -2,12 +2,12 @@
 title: 处理 OneNote 页面内容
 description: ''
 ms.date: 12/04/2017
-ms.openlocfilehash: 3ceb693b85490e5b7046880a79ae46753a1d3238
-ms.sourcegitcommit: 30435939ab8b8504c3dbfc62fd29ec6b0f1a7d22
+ms.openlocfilehash: 246c864cfb6a63b5f78da8c1189ac5545411168c
+ms.sourcegitcommit: c53f05bbd4abdfe1ee2e42fdd4f82b318b363ad7
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "23944125"
+ms.lasthandoff: 10/12/2018
+ms.locfileid: "25505662"
 ---
 # <a name="work-with-onenote-page-content"></a>处理 OneNote 页面内容 
 
@@ -55,6 +55,6 @@ OneNote 外接程序 JavaScript API 支持使用以下 HTML 创建和更新页�
 ## <a name="see-also"></a>另请参阅
 
 - [OneNote JavaScript API 编程概述](onenote-add-ins-programming-overview.md)
-- [OneNote JavaScript API 参考](https://docs.microsoft.com/javascript/office/overview/onenote-add-ins-javascript-reference?view=office-js)
+- [OneNote JavaScript API 参考](https://docs.microsoft.com/office/dev/add-ins/reference/overview/onenote-add-ins-javascript-reference?view=office-js)
 - [Rubric Grader 示例](https://github.com/OfficeDev/OneNote-Add-in-Rubric-Grader)
 - [Office 加载项平台概述](../overview/office-add-ins.md)
