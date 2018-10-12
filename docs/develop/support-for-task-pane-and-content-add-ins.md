@@ -2,22 +2,22 @@
 title: 对 Office 2013 内容和任务窗格加载项的 Office JavaScript API 支持
 description: ''
 ms.date: 12/04/2017
-ms.openlocfilehash: cb4bb003966639fd5518fefcd3983ee9ca2fb101
-ms.sourcegitcommit: eb74e94d3e1bc1930a9c6582a0a99355d0da34f2
+ms.openlocfilehash: 86c5b0e19a767ae4715e48bef93465ab45a32e31
+ms.sourcegitcommit: c53f05bbd4abdfe1ee2e42fdd4f82b318b363ad7
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "25005009"
+ms.lasthandoff: 10/12/2018
+ms.locfileid: "25506033"
 ---
 # <a name="office-javascript-api-support-for-content-and-task-pane-add-ins-in-office-2013"></a>对 Office 2013 内容和任务窗格加载项的 Office JavaScript API 支持
 
 
-您可以使用 [Office JavaScript API](https://docs.microsoft.com/javascript/office/javascript-api-for-office?view=office-js) 创建 Office 2013 主机应用程序的任务窗格或内容外接程序。已对内容和任务窗格外接程序支持的对象和方法进行如下分类：
+您可以使用 [Office JavaScript API](https://docs.microsoft.com/office/dev/add-ins/reference/javascript-api-for-office?view=office-js) 创建 Office 2013 主机应用程序的任务窗格或内容外接程序。已对内容和任务窗格外接程序支持的对象和方法进行如下分类：
 
 
 1. **与其他 Office 外接程序共享的常见对象。** 这些对象包括 [Office](https://docs.microsoft.com/javascript/api/office?view=office-js)、[Context](https://docs.microsoft.com/javascript/api/office/office.context?view=office-js) 和 [AsyncResult](https://docs.microsoft.com/javascript/api/office/office.asyncresult?view=office-js)。**Office** 对象是 Office JavaScript API 的根对象。**Context** 对象表示外接程序的运行时环境。**Office** 和 **Context** 都是适用于任何 Office 外接程序的基础对象。**AsyncResult** 对象表示异步操作的结果，比如返回到 **getSelectedDataAsync** 方法的数据，其中该方法可以读取用户在文档中选择的内容。
     
-2.  **Document 对象。** 可用于内容和任务窗格外接程序的大部分 API 通过 [Document](https://docs.microsoft.com/javascript/api/office/office.document?view=office-js) 对象的方法、属性和事件公开。 内容或任务窗格外接程序可以使用 [Office.context.document](https://docs.microsoft.com/javascript/api/office/office.context?view=office-js#document) 属性访问 **Document** 对象，并通过它访问 API 的关键成员以处理文档中的数据，例如 [Bindings](https://docs.microsoft.com/javascript/api/office/office.bindings?view=office-js) 和 [CustomXmlParts](https://docs.microsoft.com/javascript/api/office/office.customxmlparts?view=office-js) 对象，以及 [getSelectedDataAsync](https://docs.microsoft.com/javascript/api/office/office.document?view=office-js#getselecteddataasync-coerciontype--options--callback-)、[setSelectedDataAsync](https://docs.microsoft.com/javascript/api/office/office.document?view=office-js#setselecteddataasync-data--options--callback-) 和 [getFileAsync](https://docs.microsoft.com/javascript/api/office/office.document?view=office-js#getfileasync-filetype--options--callback-) 方法。 **Document** 对象也提供了用于确定文档是只读还是处于编辑模式的 [mode](https://docs.microsoft.com/javascript/api/office/office.document?view=office-js#mode) 属性、获取当前文档 URL 的 [url](https://docs.microsoft.com/javascript/api/office/office.document?view=office-js#url) 属性，以及对 [Settings](https://docs.microsoft.com/javascript/api/office/office.settings?view=office-js) 对象的访问。 **Document<** 对象还支持添加 [SelectionChanged](https://docs.microsoft.com/javascript/api/office/office.documentselectionchangedeventargs?view=office-js) 事件的事件处理程序，因此你可以检测用户何时更改文档中的选择内容。
+2.  **The Document object.** The majority of the API available to content and task pane add-ins is exposed through the methods, properties, and events of the [Document](https://docs.microsoft.com/javascript/api/office/office.document?view=office-js) object. A content or task pane add-in can use the [Office.context.document](https://docs.microsoft.com/javascript/api/office/office.context?view=office-js#document) property to access the **Document** object, and through it, can access the key members of the API for working with data in documents, such as the [Bindings](https://docs.microsoft.com/javascript/api/office/office.bindings?view=office-js) and [CustomXmlParts](https://docs.microsoft.com/javascript/api/office/office.customxmlparts?view=office-js) objects, and the [getSelectedDataAsync](https://docs.microsoft.com/javascript/api/office/office.document?view=office-js#getselecteddataasync-coerciontype--options--callback-), [setSelectedDataAsync](https://docs.microsoft.com/javascript/api/office/office.document?view=office-js#setselecteddataasync-data--options--callback-), and [getFileAsync](https://docs.microsoft.com/javascript/api/office/office.document?view=office-js#getfileasync-filetype--options--callback-) methods. The **Document** object also provides the [mode](https://docs.microsoft.com/javascript/api/office/office.document?view=office-js#mode) property for determining whether a document is read-only or in edit mode, the [url](https://docs.microsoft.com/javascript/api/office/office.document?view=office-js#url) property to get the URL of the current document, and access to the [Settings](https://docs.microsoft.com/javascript/api/office/office.settings?view=office-js) object. The **Document** object also supports adding event handlers for the [SelectionChanged](https://docs.microsoft.com/javascript/api/office/office.documentselectionchangedeventargs?view=office-js) event, so you can detect when a user changes their selection in the document.
     
    内容或任务窗格外接程序只能在加载 DOM 和运行时环境后访问 **Document** 对象，通常是在 [Office.initialize](https://docs.microsoft.com/javascript/api/office?view=office-js) 事件的事件处理程序中加载。有关应用程序初始化时的事件流以及如何检查 DOM 和运行时是否成功加载的信息，请参阅[加载 DOM 和运行时环境](loading-the-dom-and-runtime-environment.md)。
     
@@ -121,7 +121,7 @@ function write(message){
 
 通常需要保存外接程序的自定义数据，例如用户的首选项或外接程序的状态，并在下一次打开外接程序时访问该数据。可以使用通用的 Web 编程技术保存该数据，例如浏览器 cookie 或 HTML 5 Web 存储。或者，如果你的外接程序在 Excel、PowerPoint 或 Word 中运行，则可以使用 [设置](https://docs.microsoft.com/javascript/api/office/office.settings?view=office-js) 对象的方法。使用**设置**对象创建的数据存储在电子表格、演示文档或植入和保存外接程序的文档中。此数据仅用于创建它的外接程序。
 
-若要避免往返存储文档的服务器，运行时在内存中管理使用 **Settings** 对象创建的数据。 以前保存的设置数据在外接程序初始化时加载到内存中，对数据的更改仅在调用 [Settings.saveAsync](https://docs.microsoft.com/javascript/api/office/office.settings?view=office-js#saveasync-options--callback-) 方法时保存回文档。 内部的数据以名称/值对的形式存储在序列化的 JSON 对象。 使用 **Settings** 对象的 [get](https://docs.microsoft.com/javascript/api/office/office.settings?view=office-js#get-name-)、[set](https://docs.microsoft.com/javascript/api/office/office.settings?view=office-js#set-name--value-) 和 [remove](https://docs.microsoft.com/javascript/api/office/office.settings?view=office-js#remove-name-) 方法读取、写入和删除数据在内存副本中的项目。 下面的代码行演示如何创建名为 `themeColor` 的设置并设置其值为 'green'。
+To avoid roundtrips to the server where the document is stored, data created with the **Settings** object is managed in memory at run time. Previously saved settings data is loaded into memory when the add-in is initialized, and changes to that data are only saved back to the document when you call the [Settings.saveAsync](https://docs.microsoft.com/javascript/api/office/office.settings?view=office-js#saveasync-options--callback-) method. Internally, the data is stored in a serialized JSON object as name/value pairs. You use the [get](https://docs.microsoft.com/javascript/api/office/office.settings?view=office-js#get-name-), [set](https://docs.microsoft.com/javascript/api/office/office.settings?view=office-js#set-name--value-), and [remove](https://docs.microsoft.com/javascript/api/office/office.settings?view=office-js#remove-name-) methods of the **Settings** object, to read, write, and delete items from the in-memory copy of the data. The following line of code shows how to create a setting named `themeColor` and set its value to 'green'.
 
 
 
@@ -164,7 +164,7 @@ Office.context.document.settings.set('themeColor', 'green');
 
 ## <a name="see-also"></a>另请参阅
 
-- [Office JavaScript API](https://docs.microsoft.com/javascript/office/javascript-api-for-office?view=office-js)
+- [Office JavaScript API](https://docs.microsoft.com/office/dev/add-ins/reference/javascript-api-for-office?view=office-js)
 - [Office 加载项清单的架构参考](../develop/add-in-manifests.md)
 - [排查 Office 加载项中的用户错误](../testing/testing-and-troubleshooting.md)
     
