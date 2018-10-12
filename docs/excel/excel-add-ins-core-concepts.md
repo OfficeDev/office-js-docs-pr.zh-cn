@@ -2,16 +2,16 @@
 title: 使用 Excel JavaScript API 的基本编程概念
 description: 使用 Excel JavaScript API 构建适用于 Excel 的加载项。
 ms.date: 10/03/2018
-ms.openlocfilehash: c66d44b76fad9f1559da7514997b62670a0f9360
-ms.sourcegitcommit: 563c53bac52b31277ab935f30af648f17c5ed1e2
+ms.openlocfilehash: f93ec7b5e34f90f2d61f29d861b7e0c19f66f6e3
+ms.sourcegitcommit: c53f05bbd4abdfe1ee2e42fdd4f82b318b363ad7
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/10/2018
-ms.locfileid: "25459201"
+ms.lasthandoff: 10/12/2018
+ms.locfileid: "25505984"
 ---
 # <a name="fundamental-programming-concepts-with-the-excel-javascript-api"></a>使用 Excel JavaScript API 的基本编程概念
  
-本文介绍如何使用 [Excel JavaScript API](https://docs.microsoft.com/javascript/office/overview/excel-add-ins-reference-overview?view=office-js) 生成适用于 Excel 2016 或更高版本的加载项。它引入了一些核心概念，这些概念是使用 API 的基础，并为执行特定任务提供指导，如读取或写入较大区域、更新区域内的所有单元格等等。
+本文介绍如何使用 [Excel JavaScript API](https://docs.microsoft.com/office/dev/add-ins/reference/overview/excel-add-ins-reference-overview?view=office-js) 生成适用于 Excel 2016 或更高版本的外接程序。它引入了一些核心概念，这些概念是使用 API 的基础，并为执行特定任务提供指导，如读取或写入较大区域、更新区域内的所有单元格等等。
 
 ## <a name="asynchronous-nature-of-excel-apis"></a>Excel API 的异步特性
 
@@ -44,7 +44,7 @@ Excel 和加载项在两个不同的进程中运行。由于它们使用不同�
  
 在加载项中声明和使用的 Excel JavaScript 对象为代理对象。调用的任何方法或在代理对象上设置或加载的属性都只是添加到挂起命令的队列中。在请求上下文（例如 `context.sync()`）上调用 **sync()** 方法时，已加入队列的命令将被发送到 Excel 并运行。从根本上来说，Excel JavaScript API 是以批处理为中心的。可以在请求上下文中将任意数量的更改加入队列，然后调用 **sync()** 方法来运行此批已加入队列的命令。
  
-例如，下面的代码段声明本地 JavaScript 对象 **selectedRange** 以引用 Excel 文档中选定的区域，然后在该对象上设置某些属性。**selectedRange** 对象是一个代理对象，因此在该对象上所设置的属性以及调用的方法将不会反映在 Excel 文档中，直到加载项调用 **context.sync()**。
+例如，下面的代码段声明本地 JavaScript 对象 **selectedRange** 以引用 Excel 文档中选定的区域，然后在该对象上设置某些属性。**selectedRange**  对象是一个代理对象，因此在该对象上所设置的属性以及调用的方法将不会反映在 Excel 文档中，直到加载项调用 **context.sync()**。
  
 ```js
 const selectedRange = context.workbook.getSelectedRange();
@@ -55,7 +55,7 @@ selectedRange.format.autofitColumns();
  
 ### <a name="sync"></a>sync()
  
-在请求上下文中调用 **sync()** 方法将在 Excel 文档中同步代理对象与对象之间的状态。**Sync()** 方法运行在请求上下文中加入队列的所有命令，并检索应该在代理对象上加载的任何属性的值。**Sync()** 方法以异步方式执行并返回 [promise](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise)（在**sync()** 方法完成后解析）。
+在请求上下文中调用 **sync()**  方法将在 Excel 文档中同步代理对象与对象之间的状态。**Sync()** 方法运行在请求上下文中加入队列的所有命令，并检索应该在代理对象上加载的任何属性的值。**Sync()** 方法以异步方式执行并返回 [promise](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise)（在**sync()** 方法完成后解析）。
  
 下面的示例演示了一个批处理函数，它定义本地 JavaScript 代理对象 (**selectedRange**)，加载该对象的属性，然后使用 JavaScript Promises 模式调用 **context.sync()** 以同步 Excel 文档中代理对象与对象之间的状态。
  
@@ -117,7 +117,7 @@ Excel.run(function (context) {
  
 在前面的示例中，由于在调用 **myRange.load()** 时未指定 `format/font`，因此无法读取 `format.font.color` 属性。
 
-为了优化性能，应该在对象上使用 **load()** 方法时明确指定要加载的属性和关系，如 [Excel JavaScript API 性能优化](performance.md)所述。有关 **load()** 方法的详细信息，请参阅 [使用 Excel JavaScript API 的高级编程概念](excel-add-ins-advanced-concepts.md)。
+为了优化性能，应该在对象上使用 **load()** 方法时明确指定要加载的属性和关系，如 [Excel JavaScript API 性能优化](performance.md)所述。 有关 **load()** 方法的详细信息，请参阅 [Excel JavaScript API 的高级编程概念](excel-add-ins-advanced-concepts.md)。
 
 ## <a name="null-or-blank-property-values"></a>null 或空属性值
  
@@ -240,7 +240,7 @@ Excel.run(function (context) {
 |InvalidBinding  |由于之前的更新，此对象绑定不再有效。|
 |InvalidSelection|当前选定内容对于此操作无效。|
 |Unauthenticated |所需的身份验证信息缺少或无效。|
-|访问被拒绝 |无法执行所请求的操作。|
+|AccessDenied |无法执行所请求的操作。|
 |ItemNotFound |所请求的资源不存在。|
 |ActivityLimitReached|已达到活动限制。|
 |GeneralException|处理请求时出现内部错误。|
@@ -260,4 +260,4 @@ Excel.run(function (context) {
 * [Excel 加载项代码示例](https://developer.microsoft.com/office/gallery/?filterBy=Samples)
 * [使用 Excel JavaScript API 的高级编程概念](excel-add-ins-advanced-concepts.md)
 * [Excel JavaScript API 性能优化](https://docs.microsoft.com/office/dev/add-ins/excel/performance)
-* [Excel JavaScript API 参考](https://docs.microsoft.com/javascript/office/overview/excel-add-ins-reference-overview?view=office-js)
+* [Excel JavaScript API 参考](https://docs.microsoft.com/office/dev/add-ins/reference/overview/excel-add-ins-reference-overview?view=office-js)
