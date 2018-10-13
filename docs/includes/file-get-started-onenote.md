@@ -14,7 +14,7 @@
 
 ## <a name="create-the-add-in-project"></a>创建加载项项目
 
-1. 在本地驱动器上创建文件夹，并将它命名为“`my-onenote-addin`”。 将在其中创建外接程序文件。
+1. 在本地驱动器上创建文件夹，并将它命名为 `my-onenote-addin` 。可以在此处为加载项创建文件。
 
 2. 转到新文件夹。
 
@@ -22,7 +22,7 @@
     cd my-onenote-addin
     ```
 
-3. 使用 Yeoman 生成器创建 OneNote 加载项项目。 运行下面的命令，再回答如下所示的提示问题：
+3. 使用 Yeoman 生成器创建 OneNote 加载项项目。运行下面的命令，再回答如下所示的提示问题：
 
     ```bash
     yo office
@@ -30,12 +30,12 @@
 
     - **选择一个项目类型：** `Office Add-in project using Jquery framework`
     - **选择一个脚本类型：** `Javascript`
-    - **要如何命名加载项?:** `My Office Add-in`
-    - **要支持哪一个 Office 客户端应用?:** `Onenote`
+    - **要将你的加载项命名为什么?:** `My Office Add-in`
+    - **要支持哪一个 Office 客户端应用程序?:** `Onenote`
 
     ![有关 Yeoman 生成器提示和回答的屏幕截图](../images/yo-office-onenote-jquery.png)
     
-    完成向导后，生成器将创建项目并安装 Node 支持组件。
+    完成此向导后，生成器会创建项目，并安装支持的 Node 组件。
     
 4. 导航到 web 应用程序项目的根文件夹。
 
@@ -45,9 +45,9 @@
 
 ## <a name="update-the-code"></a>更新代码
 
-1. 在代码编辑器中，打开项目根目录中的“index.html”****。 此文件包含在加载项任务窗格中呈现的 HTML。
+1. 在代码编辑器中，打开项目根目录中的 **index.html** 根目录中的项目。此文件包括在加载项任务窗格中呈现的 HTML。
 
-2. 将 `<body>` 元素内的 `<main>` 元素替换为以下标记，并保存文件。 这会使用 [Office UI Fabric 组件](https://developer.microsoft.com/en-us/fabric#/components)添加文本区域和按钮。
+2. 将 `<body>` 元素内的 `<main>` 元素替换为以下标记，并保存文件。这会使用 [Office UI Fabric 组件](https://developer.microsoft.com/en-us/fabric#/components)添加文本区域和按钮。
 
     ```html
     <main class="ms-welcome__main">
@@ -64,7 +64,7 @@
     </main>
     ```
 
-3. 打开文件 **src\index.js**，以指定加载项脚本。 将整个内容替换为以下代码，并保存文件。
+3. 打开文件 **src\index.js** 以指定加载项的脚本。使用以下代码替换全部内容并保存文件。
 
     ```js
     'use strict';
@@ -111,11 +111,11 @@
 
 ## <a name="update-the-manifest"></a>更新清单
 
-1. 打开文件“one-note-add-in-manifest.xml”****，以定义加载项的设置和功能。
+1. 打开文件**one-note-add-in-manifest.xml**，以定义加载项的设置和功能。
 
-2. 元素具有占位符值。`ProviderName` 将其替换为你的姓名。
+2. `ProviderName` 元素具有占位符值。将其替换为你的姓名。
 
-3. 元素的 `DefaultValue` 属性有占位符。`Description` 将它替换为“A task pane add-in for OneNote”****。
+3. `Description` 元素的 `DefaultValue` 属性具有占位符。将其替换为 **OneNote 的任务窗格加载项**。
 
 4. 保存文件。
 
@@ -137,39 +137,39 @@
 
 1. 在 [OneNote Online](https://www.onenote.com/notebooks) 中，打开一个笔记本。
 
-2. 依次选择“插入”>“Office 加载项”****，打开“Office 加载项”对话框。
+2. 依次选择**插入 > Office 加载项**，打开“Office 加载项”对话框。
 
-    - 如果使用使用者帐户登录，请依次选择“我的加载项”**** 选项卡和“上传我的加载项”****。
+    - 如果使用使用者帐户登录，请依次选择**我的加载项**选项卡和**上传我的加载项**。
 
-    - 如果使用工作或学校帐户登录，请依次选择“我的组织”**** 选项卡和“上传我的加载项”****。 
+    - 如果使用工作或学校帐户登录，请依次选择**我的组织**选项卡和**上传我的加载项**。 
 
-    下图展示了使用者笔记本的“我的加载项”**** 选项卡。
+    下图展示了使用者笔记本的**我的加载项**选项卡。
 
     <img alt="The Office Add-ins dialog showing the MY ADD-INS tab" src="../images/onenote-office-add-ins-dialog.png" width="500">
 
-3. 在“上传加载项”对话框中，转到项目文件夹中的“one-note-add-in-manifest.xml”****，再选择“上传”****。 
+3. 在“上传加载项”对话框中，转到项目文件夹中的**one-note-add-in-manifest.xml**，再选择**上传**。 
 
-4. 在**主页**选项卡，选择功能区中的**显示任务窗格**按钮。 该加载项任务窗格在 OneNote 页面旁的 iFrame 中打开。
+4. 在**主页**选项卡，选择功能区中的**显示任务窗格**按钮。该加载项任务窗格在 OneNote 页面旁的 iFrame 中打开。
 
-5. 在文本区域中输入一些文本，然后选择**添加边框**。 您输入的文本将添加至页面。 
+5. 在文本区域中输入一些文本，然后选择**添加边框**。您输入的文本将添加至页面。 
 
     ![通过此演练生成的 OneNote 加载项](../images/onenote-first-add-in.png)
 
 ## <a name="troubleshooting-and-tips"></a>疑难解答和提示
 
-- 您可以使用浏览器的开发者工具调试外接程序。当您在 Internet Explorer 或 Chrome 中使用 Gulp Web 服务器并进行调试时，您可以本地保存您的更改，然后仅刷新外接程序的 iFrame。
+- 您可以使用浏览器的开发者工具调试加载项。当您在 Internet Explorer 或 Chrome 中使用 Gulp Web 服务器并进行调试时，您可以本地保存您的更改，然后仅刷新加载项的 iFrame。
 
-- 检查 OneNote 对象时，目前可用的属性显示实际值。需要加载的属性显示“未定义”**。展开 `_proto_` 节点，查看已在对象上定义但尚未加载的属性。
+- 检查 OneNote 对象时，目前可用的属性显示实际值。需要加载的属性显示*未定义*。展开 `_proto_` 节点，查看已在对象上定义但尚未加载的属性。
 
    ![调试器中尚未加载的 OneNote 对象](../images/onenote-debug.png)
 
-- 如果您的外接程序使用任何 HTTP 资源，则需要启用浏览器中的混合内容。生产外接程序应当仅使用安全 HTTPS 资源。
+- 如果您的加载项使用任何 HTTP 资源，则需要启用浏览器中的混合内容。生产加载项应当仅使用安全 HTTPS 资源。
 
-- 可以从任何位置打开任务窗格外接程序，但只能在常规页面内容（即不在标题、图像、IFrame 等中）内插入内容外接程序。 
+- 可以从任何位置打开任务窗格加载项，但只能在常规页面内容（即不在标题、图像、IFrame 等中）内插入内容加载项。 
 
 ## <a name="next-steps"></a>后续步骤
 
-恭喜！已成功创建 OneNote 加载项！ 接下来，请详细了解与生成 OneNote 加载项有关的核心概念。
+恭喜，您已成功创建的 OneNote 加载项 ！接下来，请详细了解与生成 OneNote 加载项有关的核心概念。
 
 > [!div class="nextstepaction"]
 > [OneNote JavaScript API 编程概述](../onenote/onenote-add-ins-programming-overview.md)
@@ -177,6 +177,6 @@
 ## <a name="see-also"></a>另请参阅
 
 - [OneNote JavaScript API 编程概述](../onenote/onenote-add-ins-programming-overview.md)
-- [OneNote JavaScript API 参考](https://docs.microsoft.com/javascript/office/overview/onenote-add-ins-javascript-reference?view=office-js)
+- [OneNote JavaScript API 参考](https://docs.microsoft.com/office/dev/add-ins/reference/overview/onenote-add-ins-javascript-reference?view=office-js)
 - [Rubric Grader 示例](https://github.com/OfficeDev/OneNote-Add-in-Rubric-Grader)
 - [Office 加载项平台概述](../overview/office-add-ins.md)

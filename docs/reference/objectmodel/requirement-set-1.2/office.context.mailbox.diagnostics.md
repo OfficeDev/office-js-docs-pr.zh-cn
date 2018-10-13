@@ -1,7 +1,7 @@
 
-# <a name="diagnostics"></a>diagnostics
+# <a name="diagnostics"></a>诊断
 
-### [Office](Office.md)[.context](Office.context.md)[.mailbox](Office.context.mailbox.md)。诊断
+### [Office](Office.md)[.context](Office.context.md)[.mailbox](Office.context.mailbox.md). diagnostics
 
 将诊断信息提供给 Outlook 加载项。
 
@@ -9,13 +9,13 @@
 
 |要求| 值|
 |---|---|
-|[最低的邮箱版本要求](/javascript/office/requirement-sets/outlook-api-requirement-sets)| 1.0|
+|[最低的邮箱版本要求](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
 |[最低权限级别](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
 |[适用的 Outlook 模式](https://docs.microsoft.com/outlook/add-ins/#extension-points)| 撰写或阅读|
 
 ### <a name="members"></a>成员
 
-####  <a name="hostname-string"></a>hostName :String
+####  <a name="hostname-string"></a>hostName :字符串
 
 获取表示主机应用程序的名称的字符串。
 
@@ -29,11 +29,11 @@
 
 |要求| 值|
 |---|---|
-|[最低的邮箱版本要求](/javascript/office/requirement-sets/outlook-api-requirement-sets)| 1.0|
+|[最低的邮箱要求集版本](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
 |[最低权限级别](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
 |[适用的 Outlook 模式](https://docs.microsoft.com/outlook/add-ins/#extension-points)| 撰写或阅读|
 
-####  <a name="hostversion-string"></a>hostVersion :String
+####  <a name="hostversion-string"></a>hostVersion :字符串
 
 获取表示主机应用程序或 Exchange Server 的版本的字符串。
 
@@ -47,11 +47,11 @@
 
 |要求| 值|
 |---|---|
-|[最低的邮箱版本要求](/javascript/office/requirement-sets/outlook-api-requirement-sets)| 1.0|
+|[最低的邮箱版本要求](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
 |[最低权限级别](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
 |[适用的 Outlook 模式](https://docs.microsoft.com/outlook/add-ins/#extension-points)| 撰写或阅读|
 
-####  <a name="owaview-string"></a>OWAView :String
+####  <a name="owaview-string"></a>OWAView :字符串
 
 获取表示 Outlook Web App 的当前视图的字符串。
 
@@ -73,6 +73,6 @@ Outlook Web App 具有三种视图，这些视图分别与屏幕和窗口的宽�
 
 |要求| 值|
 |---|---|
-|[最低的邮箱版本要求](/javascript/office/requirement-sets/outlook-api-requirement-sets)| 1.0|
+|[最低的邮箱版本要求](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
 |[最低权限级别](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
 |[适用的 Outlook 模式](https://docs.microsoft.com/outlook/add-ins/#extension-points)| 撰写或阅读|

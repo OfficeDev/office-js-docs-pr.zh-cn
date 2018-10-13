@@ -2,14 +2,14 @@
 
 # <a name="office"></a>Office
 
-该 Office 命名空间提供所有 Office 应用中的加载项所使用的共享接口。此列表仅记录 Outlook 加载项所使用的那些接口。有关 Office 命名空间的完整列表，请参阅[共享 API](/javascript/api/office)。
+Office 命名空间提供所有 Office 应用中的加载项所使用的共享接口。此列表仅记录 Outlook 加载项所使用的那些接口。有关 Office 命名空间的完整列表，请参阅[共享 API](/javascript/api/office)。
 
 ##### <a name="requirements"></a>要求
 
 |要求| 值|
 |---|---|
-|[最低的邮箱版本要求](/javascript/office/requirement-sets/outlook-api-requirement-sets)| 1.0|
-|[适用的 Outlook 模式](https://docs.microsoft.com/outlook/add-ins/#extension-points)| 撰写或阅读​|
+|[最低邮箱要求集版本](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
+|[适用的 Outlook 模式](https://docs.microsoft.com/outlook/add-ins/#extension-points)| 撰写或阅读|
 
 ##### <a name="members-and-methods"></a>成员和方法
 
@@ -34,92 +34,92 @@
 
 ##### <a name="type"></a>类型：
 
-*   字符串
+*   String
 
-##### <a name="properties"></a>属性:
+##### <a name="properties"></a>属性：
 
 |名称| 类型| 说明|
 |---|---|---|
-|`Succeeded`| 字符串|调用成功。|
-|`Failed`| 字符串|调用失败。|
+|`Succeeded`| String|调用成功。|
+|`Failed`| String|调用失败。|
 
 ##### <a name="requirements"></a>要求
 
 |要求| 值|
 |---|---|
-|[最低的邮箱版本要求](/javascript/office/requirement-sets/outlook-api-requirement-sets)| 1.0|
+|[最低邮箱要求集版本](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
 |[适用的 Outlook 模式](https://docs.microsoft.com/outlook/add-ins/#extension-points)| 撰写或阅读​|
 
 ---
 
-####  <a name="coerciontype-string"></a>CoercionType :String
+####  <a name="coerciontype-string"></a>CoercionType :字符串
 
 指定如何强制由调用方法返回或设置的数据。
 
 ##### <a name="type"></a>类型：
 
-*   字符串
+*   String
 
-##### <a name="properties"></a>属性:
+##### <a name="properties"></a>属性：
 
 |名称| 类型| 说明|
 |---|---|---|
-|`Html`| 字符串|请求以 HTML 格式返回的数据。|
-|`Text`| 字符串|请求以文本格式返回的数据。|
+|`Html`| String|要求以 HTML 格式返回数据。|
+|`Text`| String|要求以文本格式返回数据。|
 
 ##### <a name="requirements"></a>要求
 
 |要求| 值|
 |---|---|
-|[最低的邮箱版本要求](/javascript/office/requirement-sets/outlook-api-requirement-sets)| 1.0|
-|[适用的 Outlook 模式](https://docs.microsoft.com/outlook/add-ins/#extension-points)| 撰写或阅读​|
+|[最低邮箱要求集版本](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
+|[适用的 Outlook 模式](https://docs.microsoft.com/outlook/add-ins/#extension-points)| 撰写或阅读|
 
 ---
 
-####  <a name="eventtype-string"></a>EventType :String
+####  <a name="eventtype-string"></a>EventType :字符串
 
 指定与事件处理程序相关联的事件。
 
 ##### <a name="type"></a>类型：
 
-*   字符串
+*   String
 
-##### <a name="properties"></a>属性:
+##### <a name="properties"></a>属性：
 
 | 名称 | 类型 | 说明 | 最低要求集 |
 |---|---|---|---|
-|`AppointmentTimeChanged`| 字符串 | 所选约会或系列的日期或时间已更改。 | 1.7 |
-|`ItemChanged`| 字符串 | 选定的项已更改。 | 1.5 |
-|`RecipientsChanged`| 字符串 | 所选项或约会地点的收件人列表已更改。 | 1.7 |
-|`RecurrenceChanged`| 字符串 | 所选系列的定期模式已更改。 | 1.7 |
+|`AppointmentTimeChanged`| String | 所选约会或系列的日期或时间已更改。 | 1.7 |
+|`ItemChanged`| String | 选定的项已更改。 | 1.5 |
+|`RecipientsChanged`| String | 所选项或约会地点的收件人列表已更改。 | 1.7 |
+|`RecurrenceChanged`| String | 所选系列的定期模式已更改。 | 1.7 |
 
 ##### <a name="requirements"></a>要求
 
 |要求| 值|
 |---|---|
-|[最低的邮箱版本要求](/javascript/office/requirement-sets/outlook-api-requirement-sets)| 1.5 |
+|[最低邮箱要求集版本](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.5 |
 |[适用的 Outlook 模式](https://docs.microsoft.com/outlook/add-ins/#extension-points)| 撰写或阅读​ |
 
 ---
 
-####  <a name="sourceproperty-string"></a>SourceProperty :String
+####  <a name="sourceproperty-string"></a>SourceProperty :字符串
 
 指定由调用方法返回的数据源。
 
 ##### <a name="type"></a>类型：
 
-*   字符串
+*   String
 
-##### <a name="properties"></a>属性:
+##### <a name="properties"></a>属性：
 
 |名称| 类型| 说明|
 |---|---|---|
-|`Body`| 字符串|数据源来自邮件的正文。|
-|`Subject`| 字符串|数据源来自邮件的主题。|
+|`Body`| String|数据源来自邮件的正文。|
+|`Subject`| String|数据源来自邮件的主题。|
 
 ##### <a name="requirements"></a>要求
 
 |要求| 值|
 |---|---|
-|[最低的邮箱版本要求](/javascript/office/requirement-sets/outlook-api-requirement-sets)| 1.0|
-|[适用的 Outlook 模式](https://docs.microsoft.com/outlook/add-ins/#extension-points)| 撰写或阅读​|
+|[最低邮箱要求集版本](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
+|[适用的 Outlook 模式](https://docs.microsoft.com/outlook/add-ins/#extension-points)| 撰写或阅读|
