@@ -2,30 +2,29 @@
 title: 使用搜索选项在 Word 加载项中查找文本
 description: ''
 ms.date: 7/20/2018
-ms.openlocfilehash: d81ffdcec49d59c175c3e5ecdf82ad1f796fdb3e
-ms.sourcegitcommit: 30435939ab8b8504c3dbfc62fd29ec6b0f1a7d22
+ms.openlocfilehash: ca5c819edb7f3c183379d9df997e41eb56a4de51
+ms.sourcegitcommit: c53f05bbd4abdfe1ee2e42fdd4f82b318b363ad7
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "23944098"
+ms.lasthandoff: 10/12/2018
+ms.locfileid: "25505368"
 ---
 # <a name="use-search-options-to-find-text-in-your-word-add-in"></a>使用搜索选项在 Word 加载项中查找文本 
 
-加载项经常需要根据文档的文本进行操作。
-每个内容控件都会暴露搜索函数（包括 [ Body](https://docs.microsoft.com/javascript/api/word/word.body?view=office-js)、[Paragraph](https://docs.microsoft.com/javascript/api/word/word.paragraph?view=office-js)、[Range](https://docs.microsoft.com/javascript/api/word/word.range?view=office-js)、[Table](https://docs.microsoft.com/javascript/api/word/word.table?view=office-js)、[TableRow](https://docs.microsoft.com/javascript/api/word/word.tablerow?view=office-js) 和基本的 [ContentControl](https://docs.microsoft.com/javascript/api/word/word.contentcontrol?view=office-js) 对象）。 此函数接受表示要搜索的文本字符串（或 wldcard 表达式）和一个 [SearchOptions](https://docs.microsoft.com/javascript/api/word/word.searchoptions?view=office-js) 对象。 它返回与搜索文本匹配的范围集合。
+加载项经常需要根据文档的文本进行操作。每个内容控件都会公开搜索函数（包括  [Body](https://docs.microsoft.com/javascript/api/word/word.body?view=office-js)、[Paragraph](https://docs.microsoft.com/javascript/api/word/word.paragraph?view=office-js)、[Range](https://docs.microsoft.com/javascript/api/word/word.range?view=office-js)、[Table](https://docs.microsoft.com/javascript/api/word/word.table?view=office-js)、[TableRow](https://docs.microsoft.com/javascript/api/word/word.tablerow?view=office-js) 和基本的 [ContentControl](https://docs.microsoft.com/javascript/api/word/word.contentcontrol?view=office-js) 对象）。此函数接受表示要搜索的文本字符串（或 wldcard 表达式）和一个 [SearchOptions](https://docs.microsoft.com/javascript/api/word/word.searchoptions?view=office-js) 对象。它返回与搜索文本匹配的范围集合。
 
 ## <a name="search-options"></a>搜索选项
 搜索选项是一组布尔值，用于定义应如何处理搜索参数。 
 
 | 属性     | 说明|
 |:---------------|:----|
-|ignorePunct|获取或设置一个值，该值指示是否忽略单词之间的所有标点符号。 对应于“查找和替换”对话框中的“忽略标点字符”复选框。|
-|ignoreSpace|获取或设置一个值，该值指示是否忽略单词之间的所有标点符号。 对应于“查找和替换”对话框中的“忽略空格字符”复选框。|
-|matchCase|获取或设置一个值，该值指示是否执行区分大小写的搜索。 对应于“查找和替换”对话框中的“区分大小写”复选框。|
-|matchPrefix|获取或设置一个值，该值指示是否匹配以搜索字符串开头的单词。 对应于“查找和替换”对话框中的“区分前缀”复选框。|
-|matchSuffix|获取或设置一个值，该值指示是否匹配以搜索字符串结束的单词。 对应于“查找和替换”对话框中的“区分后缀”复选框。|
-|matchWholeWord|获取或设置一个值，该值指示是仅查找整个单词的操作，而不是作为较大单词的一部分的文本。 对应于“查找和替换”对话框中的“全字匹配”复选框。|
-|matchWildcards|获取或设置一个值，该值指示是否使用特殊搜索运算符执行搜索。 对应于“查找和替换”对话框中的“使用通配符”复选框。|
+|ignorePunct|获取或设置一个值，该值指示是否忽略单词之间的所有标点符号。对应于“查找和替换”对话框中的“忽略标点字符”复选框。|
+|ignoreSpace|获取或设置一个值，该值指示是否忽略单词之间的所有空格。对应于“查找和替换”对话框中的“忽略空格字符”复选框。|
+|matchCase|获取或设置一个值，该值指示是否执行区分大小写的搜索。对应于“查找和替换”对话框中的“区分大小写”复选框。|
+|matchPrefix|获取或设置一个值，该值指示是否匹配以搜索字符串开头的单词。对应于“查找和替换”对话框中的“匹配前缀”复选框。|
+|matchSuffix|获取或设置一个值，该值指示是否匹配以搜索字符串结束的单词。对应于“查找和替换”对话框中的“匹配后缀”复选框。|
+|matchWholeWord|获取或设置指示是否只查找整个单词，而不查找长单词的一部分的值。对应于“查找和替换”对话框中的“全字匹配”复选框。|
+|matchWildcards|获取或设置指示搜索是否使用特殊搜索操作符执行的值。对应于“查找和替换”对话框中的“使用通配符”复选框。|
 
 ## <a name="wildcard-guidance"></a>通配符指导
 下表提供了有关 Word JavaScript API 的搜索通配符的指导。
@@ -200,4 +199,4 @@ Word.run(function (context) {
 });
 ```
 
-更多信息请参见 [Word JavaScript 参考 API](https://docs.microsoft.com/javascript/office/overview/word-add-ins-reference-overview?view=office-js)。
+更多信息请参见 [Word JavaScript 参考 API](https://docs.microsoft.com/office/dev/add-ins/reference/overview/word-add-ins-reference-overview?view=office-js)。

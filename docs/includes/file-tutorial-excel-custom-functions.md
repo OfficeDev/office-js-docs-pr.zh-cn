@@ -2,7 +2,7 @@
 
 ## <a name="introduction"></a>简介
 
-自定义函数使你可以通过在 JavaScript 中定义这些函数作为加载项的一部分，将新函数添加到 Excel。 在 Excel 内的用户可以像访问 Excel 内的任何本机函数（例如 `SUM()`）一样访问自定义函数。 你可以创建自定义函数，以执行简单任务，例如自定义计算或更复杂的任务，如将来自 Web 的实时数据l以流式处理方法插入工作表。
+自定义函数使你可以通过在 JavaScript 中定义这些函数作为加载项的一部分，将新函数添加到 Excel。然后，用户可以像使用 Excel 中的其他本机函数一样访问自定义函数，如 `SUM()`。你可以创建自定义函数，以执行简单任务，例如自定义计算或更复杂的任务，如将来自 Web 的实时数据l以流式处理方法插入工作表。
 
 在此教程中，你将：
 > [!div class="checklist"]
@@ -17,9 +17,9 @@
 
 * [Node.js 和 npm](https://nodejs.org/en/)
 
-* [Git Bash](https://git-scm.com/downloads)（或类似 Git 客户端）
+* [Git Bash](https://git-scm.com/downloads)（或其他 Git 客户端）
 
-* 最新版本的 [Yeoman](http://yeoman.io/) 和 [Yo Office 生成器](https://www.npmjs.com/package/generator-office)。 要全局安装这些工具，请通过命令提示符运行以下命令：
+*  [Yeoman](http://yeoman.io/) 和 [Yo Office 生成器](https://www.npmjs.com/package/generator-office)的最新版本。若要全局安装这些工具，请通过命令提示符处运行以下命令：
 
     ```bash
     npm install -g yo generator-office
@@ -45,7 +45,7 @@
 
     ![自定义函数的 Yo Office bash 提示](../images/yo-office-cfs-stock-ticker-3.png)
 
-    完成向导后，生成器会创建项目文件，并安装支持的 Node 组件。
+    完成向导后，生成器会创建项目文件，并安装支持的 Node 组件。 项目文件来自[ Excel 自定义函数](https://github.com/OfficeDev/Excel-Custom-Functions) GitHub 存储库。
 
 2. 导航到项目文件夹。
 
@@ -100,7 +100,7 @@
     =CONTOSO.ADD(10,200)
     ```
 
- `ADD` 自定义函数计算指定作为输入参数的两个数字的总和。 在按 enter 后，键入 `=CONTOSO.ADD(10,200)` 应在单元格中生成结果 **210**。
+`ADD` 自定义函数计算指定作为输入参数的两个数字的总和。 在按 enter 后，键入 `=CONTOSO.ADD(10,200)` 应在单元格中生成结果 **210**。
 
 ## <a name="create-a-custom-function-that-requests-data-from-the-web"></a>创建从 Web 请求数据的自定义函数
 
