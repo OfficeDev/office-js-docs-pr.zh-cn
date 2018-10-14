@@ -282,7 +282,7 @@ items:
         href: excel/excel-add-ins-worksheets.md
     - name: Excel JavaScript API 概述
       displayName: Excel
-      href: https://docs.microsoft.com/javascript/office/overview/excel-add-ins-reference-overview?view=office-js
+      href: https://docs.microsoft.com/office/dev/add-ins/reference/overview/excel-add-ins-reference-overview?view=office-js
     - name: Excel JavaScript API 参考
       displayName: Excel
       href: https://docs.microsoft.com/javascript/api/excel?view=office-js
@@ -316,7 +316,7 @@ items:
       href: word/search-option-guidance.md
     - name: Word JavaScript API 使用情况概述
       displayName: Word
-      href: https://docs.microsoft.com/javascript/office/overview/word-add-ins-reference-overview?view=office-js
+      href: https://docs.microsoft.com/office/dev/add-ins/reference/overview/word-add-ins-reference-overview?view=office-js
     - name: Word JavaScript API 参考
       displayName: Word
       href: https://docs.microsoft.com/en-us/javascript/api/word?view=office-js
@@ -351,7 +351,7 @@ items:
       href: onenote/onenote-add-ins-page-content.md
     - name: OneNote JavaScript API 概述
       displayName: OneNote
-      href: https://docs.microsoft.com/javascript/office/overview/onenote-add-ins-javascript-reference?view=office-js
+      href: https://docs.microsoft.com/office/dev/add-ins/reference/overview/onenote-add-ins-javascript-reference?view=office-js
     - name: OneNote JavaScript API 参考
       displayName: OneNote
       href: https://docs.microsoft.com/en-us/javascript/api/onenote?view=office-js
@@ -422,7 +422,7 @@ items:
     - name: Excel
       href: reference/overview/excel-add-ins-reference-overview.md
       items:
-      - name: Excel JavaScript API 要求集
+      - name: Excel JavaScript API 的要求集
         href: reference/requirement-sets/excel-api-requirement-sets.md
       - name: Excel API 参考 （英文）
         href: /javascript/api/excel
@@ -643,11 +643,11 @@ items:
       href: reference/manifest/highresolutioniconurl.md
     - name: Host
       href: reference/manifest/host.md
-    - name: Hosts
+    - name: 主机
       href: reference/manifest/hosts.md
     - name: IconUrl
       href: reference/manifest/iconurl.md
-    - name: ID
+    - name: Id
       href: reference/manifest/id.md
     - name: 元数据
       href: reference/manifest/metadata.md
@@ -675,7 +675,7 @@ items:
       href: reference/manifest/requestedwidth.md
     - name: 要求
       href: reference/manifest/requirements.md
-    - name: 规则
+    - name: Rule
       href: reference/manifest/rule.md
     - name: 设置
       href: reference/manifest/set.md
@@ -716,7 +716,7 @@ items:
         href: reference/manifest/getstarted.md
       - name: Group
         href: reference/manifest/group.md
-      - name: Hosts
+      - name: 主机
         href: reference/manifest/hosts.md
       - name: 图标
         href: reference/manifest/icon.md
@@ -742,9 +742,9 @@ items:
         href: reference/manifest/webapplicationinfo.md
 - name: 资源
   href: resources/resources-links-help.md
-ms.openlocfilehash: 0aecde804271ab187658129b478371363404eef5
-ms.sourcegitcommit: 563c53bac52b31277ab935f30af648f17c5ed1e2
+ms.openlocfilehash: e050a9d566314bc6dd7a8e146e6fd32733b92738
+ms.sourcegitcommit: c53f05bbd4abdfe1ee2e42fdd4f82b318b363ad7
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/10/2018
-ms.locfileid: "25459215"
+ms.lasthandoff: 10/12/2018
+ms.locfileid: "25506278"
