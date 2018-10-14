@@ -1,7 +1,7 @@
 
-# <a name="diagnostics"></a>诊断
+# <a name="diagnostics"></a>diagnostics
 
-### [Office](Office.md)[.context](Office.context.md)[.mailbox](Office.context.mailbox.md)。诊断
+### [Office](Office.md)[.context](Office.context.md)[.mailbox](Office.context.mailbox.md). diagnostics
 
 将诊断信息提供给 Outlook 加载项。
 
@@ -9,7 +9,7 @@
 
 |要求| 值|
 |---|---|
-|[最低的邮箱版本要求](/javascript/office/requirement-sets/outlook-api-requirement-sets)| 1.0|
+|[最低邮箱要求集版本](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
 |[最低权限级别](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
 |[适用的 Outlook 模式](https://docs.microsoft.com/outlook/add-ins/#extension-points)| 撰写或阅读|
 
@@ -31,13 +31,13 @@
 
 ##### <a name="type"></a>类型：
 
-*   字符串
+*   String
 
 ##### <a name="requirements"></a>要求
 
 |要求| 值|
 |---|---|
-|[最低的邮箱版本要求](/javascript/office/requirement-sets/outlook-api-requirement-sets)| 1.0|
+|[最低邮箱集版本要求](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
 |[最低权限级别](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
 |[适用的 Outlook 模式](https://docs.microsoft.com/outlook/add-ins/#extension-points)| 撰写或阅读|
 
@@ -45,21 +45,21 @@
 
 获取表示主机应用程序或 Exchange Server 的版本的字符串。
 
-如果邮件加载项正在 Outlook 桌面客户端或 Outlook for iOS 上运行，则 `hostVersion` 属性返回主机应用程序 Outlook 的版本。在 Outlook Web App 中，属性返回 Exchange Server 的版本。其中的一个示例是字符串 `15.0.468.0`。
+如果邮件加载项是在 Outlook 桌面客户端或 Outlook for iOS 上运行，则 `hostVersion` 属性返回主机应用程序 Outlook 的版本。在 Outlook Web App 中，属性返回 Exchange Server 的版本。其中的一个示例是字符串 `15.0.468.0`。
 
 ##### <a name="type"></a>类型：
 
-*   字符串
+*   String
 
 ##### <a name="requirements"></a>要求
 
 |要求| 值|
 |---|---|
-|[最低的邮箱版本要求](/javascript/office/requirement-sets/outlook-api-requirement-sets)| 1.0|
+|[最低邮箱要求集版本](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
 |[最低权限级别](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
 |[适用的 Outlook 模式](https://docs.microsoft.com/outlook/add-ins/#extension-points)| 撰写或阅读|
 
-####  <a name="owaview-string"></a>OWAView :String
+####  <a name="owaview-string"></a>OWAView :字符串
 
 获取表示 Outlook Web App 的当前视图的字符串。
 
@@ -75,12 +75,12 @@ Outlook Web App 具有三种视图，这些视图分别与屏幕和窗口的宽�
 
 ##### <a name="type"></a>类型：
 
-*   字符串
+*   String
 
 ##### <a name="requirements"></a>要求
 
 |要求| 值|
 |---|---|
-|[最低的邮箱版本要求](/javascript/office/requirement-sets/outlook-api-requirement-sets)| 1.0|
+|[最低邮箱要求集版本](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
 |[最低权限级别](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
 |[适用的 Outlook 模式](https://docs.microsoft.com/outlook/add-ins/#extension-points)| 撰写或阅读|
