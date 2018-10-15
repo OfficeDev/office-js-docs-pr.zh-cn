@@ -1,13 +1,13 @@
 ---
-ms.date: 09/27/2018
-description: 在 Excel 中使用 JavaScript 创建自定义的函数。
+ms.date: 10/09/2018
+description: 在 Excel 中使用 JavaScript 创建自定义函数。
 title: 在 Excel 中创建自定义函数（预览）
-ms.openlocfilehash: f6b658bbd119a785b342ec22bc1b341f6902da3f
-ms.sourcegitcommit: 563c53bac52b31277ab935f30af648f17c5ed1e2
+ms.openlocfilehash: e52039f2618f793f688cd89c5d62bac0a8632667
+ms.sourcegitcommit: c53f05bbd4abdfe1ee2e42fdd4f82b318b363ad7
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/10/2018
-ms.locfileid: "25459341"
+ms.lasthandoff: 10/12/2018
+ms.locfileid: "25506117"
 ---
 # <a name="create-custom-functions-in-excel-preview"></a>在 Excel 中创建自定义函数（预览）
 
@@ -194,7 +194,7 @@ CustomFunctionMappings.INCREMENT = increment;
 
 2. 使用回调函数，用最终值解析 Promise。
 
-自定义函数在单元格中显示 `#GETTING_DATA` 临时结果，而 Excel 等待最终结果。用户可以在等待结果时与工作表的其余部分进行正常交互。
+自定义函数在单元格中显示  `#GETTING_DATA` 临时结果，而 Excel 等待最终结果。用户可以在等待结果时与工作表的其余部分进行正常交互。
 
 在下面的代码示例中，`getTemperature()` 自定义函数检索温度计当前温度。注意，`sendWebRequest` 是一个假设的函数（这里没有指定），它使用 [XHR](custom-functions-runtime.md#xhr-example) 来调用温度 Web 服务。
 
@@ -216,7 +216,7 @@ function getTemperature(thermometerID){
 
 - 第二个输入参数 `handler` 在最终用户从自动完成菜单中选择函数时不在 Excel 中向他们显示。
 
--  `onCanceled` 回调定义函数被取消时执行的函数。必须为任何流式函数实施一个取消处理程序。有关详细信息，请参阅[取消函数](#canceling-a-function)。 
+- `onCanceled` 回调定义函数被取消时执行的函数。必须为任何流式函数实施一个取消处理程序。有关详细信息，请参阅[取消函数](#canceling-a-function)。
 
 ```js
 function incrementValue(increment, handler){
@@ -232,7 +232,7 @@ function incrementValue(increment, handler){
 }
 ```
 
-指定 JSON 元数据文件中的流式函数元数据时，必须设置 `options` 对象内部的属性 `"cancelable": true` 和 `"stream": true`，如下面的示例中所示。
+指定 JSON 元数据文件中的流式函数元数据时，必须设置 `options`  对象内部的属性 `"cancelable": true`  和 `"stream": true`，如下面的示例中所示。
 
 ```json
 {
@@ -273,27 +273,34 @@ function incrementValue(increment, handler){
 
 ## <a name="saving-and-sharing-state"></a>保存和共享状态
 
-自定义函数可以将数据保存在全局 JavaScript 变量中。在后续调用中，自定义函数可以使用保存在这些变量中的值。当用户将相同的自定义函数添加到多个单元格时，保存状态很有用，因为该函数的所有实例都可以共享该状态。例如，可以保存调用某个 Web 资源时返回的数据，以避免对同一个 Web 资源进行其他调用。
+自定义函数可以将数据保存在全局 JavaScript 变量中，可在后续调用中使用。当用户从多个单元格调用相同的自定义函数时，保存的状态就很有用，因为该函数的所有实例都可以访问该状态。例如，可以保存从 Web 资源调用中返回的数据，以避免额外调用相同的 Web 资源。
 
-下面的代码示例演示了全局保存状态的温度流式函数的实现。关于此代码，请注意以下几点：
+下面的代码示例演示了全局保存状态的温度流式函数的实现。 关于此代码，请注意以下几点：
 
-- `refreshTemperature` 是一个流式处理函数，它会在每一秒内读取特定温度计的温度。新的温度保存在 `savedTemperatures` 变量中，但不直接更新单元格值。它不应该直接从工作表单元格中调用，*因此未在 JSON 文件中注册*。
+-  `streamTemperature` 函数更新每秒显示在单元格中的温度值，它使用 `savedTemperatures` 变量作为其数据源。
 
-- `streamTemperature` 每秒钟更新单元格中显示的温度值并使用 `savedTemperatures` 变量作为其数据源。它必须在 JSON 文件中注册，并使用全大写字母命名：`STREAMTEMPERATURE`。
+- 因为 `streamTemperature` 是一个流函数，所以它可执行取消函数时将运行的取消处理程序。
 
-- 用户可以从 Excel UI 的多个单元格中调用 `streamTemperature`。每次调用都从相同的 `savedTemperatures` 变量读取数据。
+- 如果用户从 Excel 中的多个单元格调用 `streamTemperature` 函数，则 `streamTemperature` 函数每次运行时会从同一个 `savedTemperatures` 变量读取数据。 
+
+-  `refreshTemperature` 函数每秒读取特定温度计的温度，并将结果存储在 `savedTemperatures` 变量中。 因为 `refreshTemperature` 函数不向 Excel 中的最终用户公开，所以该函数不需要在 JSON 文件中注册。
 
 ```js
 var savedTemperatures;
 
 function streamTemperature(thermometerID, handler){
   if(!savedTemperatures[thermometerID]){
-    refreshTemperatures(thermometerID); // starts fetching temperatures if the thermometer hasn't been read yet
+    refreshTemperature(thermometerID); // starts fetching temperatures if the thermometer hasn't been read yet
   }
 
   function getNextTemperature(){
     handler.setResult(savedTemperatures[thermometerID]); // setResult sends the saved temperature value to Excel.
-    setTimeout(getNextTemperature, 1000); // Wait 1 second before updating Excel again.
+    var delayTime = 1000; // Amount of milliseconds to delay a request by.
+    setTimeout(getNextTemperature, delayTime); // Wait 1 second before updating Excel again.
+
+    handler.onCancelled() = function {
+      clearTimeout(delayTime);
+    }
   }
   getNextTemperature();
 }
@@ -310,9 +317,9 @@ function refreshTemperature(thermometerID){
 
 ## <a name="working-with-ranges-of-data"></a>使用数据区域
 
-自定义的函数可接受一系列数据作为输入参数，或者可返回一系列数据。在 JavaScript 中，数据区域表示为一个二维数组。
+自定义的函数可接受一系列数据作为输入参数，或者可返回一系列数据。 在 JavaScript 中，数据区域表示为一个二维数组。
 
-例如，假设函数从 Excel 中存储的一系列数字中返回第二个最大值。下面的函数接受参数 `values`，其类型为 `Excel.CustomFunctionDimensionality.matrix`。请注意，在此函数的 JSON 元数据中，可以将参数的 `type` 属性设置为 `matrix`。
+例如，假设函数从 Excel 中存储的一系列数字中返回第二个最大值。 下面的函数接受参数 `values`，其类型为 `Excel.CustomFunctionDimensionality.matrix`。 请注意，在此函数的 JSON 元数据中，可以将参数的 `type` 属性设置为 `matrix`。
 
 ```js
 function secondHighest(values){
@@ -334,7 +341,7 @@ function secondHighest(values){
 
 ## <a name="handling-errors"></a>处理错误
 
-构建用来定义自定义函数的加载项时，请务必包含错误处理逻辑以解决运行时错误。自定义函数的错误处理与 [Excel JavaScript API 的错误处理](excel-add-ins-error-handling.md)相同。在以下代码示例中，`.catch` 将处理先前在代码中发生的任何错误。
+构建用来定义自定义函数的加载项时，请务必包含错误处理逻辑以解决运行时错误。自定义函数的错误处理与 [Excel JavaScript API 的错误处理](excel-add-ins-error-handling.md)相同。在以下代码示例中， `.catch` 将处理先前在代码中发生的任何错误。
 
 ```js
 function getComment(x) {
@@ -359,9 +366,9 @@ function getComment(x) {
 - 自定义功能目前不适用于移动客户端的 Excel。
 - 不支持可变函数（每当电子表格中不相关的数据更改时自动重新计算）。
 - 尚未启用通过 Office 365 管理门户和 AppSource 进行的部署。
-- Excel Online 中的自定义功能可能会在一段时间无活动后在进程期间停止工作。刷新浏览器页面 (F5) 并重新输入自定义函数以恢复该功能。
-- 如果有多个加载项在 Excel for Windows 上运行，可能会在工作表单元格内看到 **#GETTING_DATA** 临时结果。关闭 Excel 的所有窗口，并重新启动 Excel。
-- 将来可能会提供专门用于自定义函数的调试工具。同时，可以在 Excel Online 使用 F12 开发人员工具调试。更多详情，请参阅 [自定义函数的最佳做法](custom-functions-best-practices.md)。
+- Excel Online 中的自定义功能，可能会在一段时间无活动后，在进程期间停止工作。 刷新浏览器页面 (F5) 并重新输入自定义函数以恢复该功能。
+- 如果有多个加载项在 Excel for Windows 上运行，可能会在工作表单元格内看到 **#GETTING_DATA** 临时结果。 关闭 Excel 的所有窗口，并重新启动 Excel。
+- 将来可能会提供专门用于自定义函数的调试工具。 同时，可以在 Excel Online 使用 F12 开发人员工具调试。 请参阅[自定义函数最佳做法](custom-functions-best-practices.md)中的详细信息。
 
 ## <a name="changelog"></a>更改日志
 
@@ -369,7 +376,7 @@ function getComment(x) {
 - **2017 年 11 月 20 日**：修复了使用内部版本 8801 及更高版本的函数的兼容性问题
 - **2017 年 11 月 28 日**：发布了*对取消异步函数的支持（需要对流式函数进行相应更改）
 - **2018 年 5 月 7 日**：发布了*对 Mac、Excel Online 和在进程中运行的同步函数的支持
-- **2018 年 9 月 20 日**：发布了对自定义函数 JavaScript 运行时的支持。有关详细信息，请参阅 [Excel 自定义函数的运行时](custom-functions-runtime.md)。
+- **2018 年 9 月 20 日，** 发布了对自定义函数 JavaScript 运行时的支持。 有关详细信息，请参阅 [Excel 自定义函数的运行时](custom-functions-runtime.md)。
 
 \* 至 Office 预览体验计划渠道
 
