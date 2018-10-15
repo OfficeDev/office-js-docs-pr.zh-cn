@@ -2,24 +2,24 @@
 title: 使用 Excel JavaScript API 的高级编程概念
 description: ''
 ms.date: 10/03/2018
-ms.openlocfilehash: 190eb65e45ce246009b6d85d378571bd2f451e0b
-ms.sourcegitcommit: 563c53bac52b31277ab935f30af648f17c5ed1e2
+ms.openlocfilehash: 09f2d95e4cf7631b519f00cddee265dbf697e07e
+ms.sourcegitcommit: c53f05bbd4abdfe1ee2e42fdd4f82b318b363ad7
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/10/2018
-ms.locfileid: "25459250"
+ms.lasthandoff: 10/12/2018
+ms.locfileid: "25505886"
 ---
 # <a name="advanced-programming-concepts-with-the-excel-javascript-api"></a>使用 Excel JavaScript API 的高级编程概念
 
-本文根据 [Excel JavaScript API 基本编程概念](excel-add-ins-core-concepts.md)中的信息，介绍了生成适用于 Excel 2016 的复杂加载项所必需的部分高级方案。
+本文根据 [Excel JavaScript API 核心方案](excel-add-ins-core-concepts.md)中的信息，介绍了生成适用于 Excel 2016 的复杂加载项所必需的部分高级方案。
 
 ## <a name="officejs-apis-for-excel"></a>适用于 Excel 的 Office.js API
 
 Excel 加载项通过使用适用于 Office 的 JavaScript API 与 Excel 中的对象进行交互，该 API 包括两个 JavaScript 对象模型：
 
-* **Excel JavaScript API**：自 Office 2016 引入的 [Excel JavaScript API](https://docs.microsoft.com/javascript/office/overview/excel-add-ins-reference-overview?view=office-js) 提供了强类型的对象，可用于访问工作表、区域、表格、图表等。 
+* **Excel JavaScript API**：自 Office 2016 引入的 [Excel JavaScript API](https://docs.microsoft.com/office/dev/add-ins/reference/overview/excel-add-ins-reference-overview?view=office-js) 提供了强类型的对象，可用于访问工作表、区域、表格、图表等。 
 
-* **公用 API**：自 Office 2013 引入的公用 API（也称为[共享 API](https://docs.microsoft.com/javascript/office/javascript-api-for-office?view=office-js)）可用于访问诸如 Word、Excel 和 PowerPoint 等多种宿主应用程序通用的 UI、对话框和客户端设置等功能。
+* **公用 API**：自 Office 2013 引入的公用 API（也称为[共享 API](https://docs.microsoft.com/office/dev/add-ins/reference/javascript-api-for-office?view=office-js)）可用于访问诸如 Word、Excel 和 PowerPoint 等多种宿主应用程序通用的 UI、对话框和客户端设置等功能。
 
 尽管大概率会使用 Excel JavaScript API 开发面向 Excel 2016 或后续版本的加载项的大部分功能，还将使用到共享 API 中的对象。 例如：
 
@@ -29,7 +29,7 @@ Excel 加载项通过使用适用于 Office 的 JavaScript API 与 Excel 中的�
 
 ## <a name="requirement-sets"></a>要求集
 
-要求集是具名的 API 成员的组合。Office 加载项可以执行运行时检查或使用清单中指定的要求集，以确定 Office 宿主是否支持加载项所需的 API。若要了解每个受支持的平台的可用特定要求集，请参阅 [Excel 的 JavaScript API 要求集](https://docs.microsoft.com/javascript/office/requirement-sets/excel-api-requirement-sets?view=office-js)。
+要求集是具名的 API 成员的组合。Office 加载项可以执行运行时检查或使用清单中指定的要求集，以确定 Office 宿主是否支持加载项所需的 API。若要了解每个受支持的平台的可用特定要求集，请参阅 [Excel 的 JavaScript API 要求集](https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/excel-api-requirement-sets?view=office-js)。
 
 ### <a name="checking-for-requirement-set-support-at-runtime"></a>在运行时检查要求集支持
 
@@ -46,7 +46,7 @@ else {
 
 ### <a name="defining-requirement-set-support-in-the-manifest"></a>在清单中定义要求集支持
 
-你可以在加载项清单中使用 [Requirements 元素](https://docs.microsoft.com/javascript/office/manifest/requirements?view=office-js)指定加载项需要激活的最低要求集和/或 API 方法。如果 Office 宿主或平台不支持清单的 **Requiremsnts** 元素中指定的要求集或 API 方法, 加载项不会在宿主或平台中运行，并不会显示于**我的加载项**列表中。 
+你可以在加载项清单中使用 [Requirements 元素](https://docs.microsoft.com/office/dev/add-ins/reference/manifest/requirements?view=office-js)指定最低要求集和/或加载项需要激活的 API 方法。如果 Office 宿主或平台不支持清单的 **Requiremsnts** 元素中指定的要求集或 API 方法, 加载项不会在宿主或平台中运行，并不会显示于**我的加载项**列表中。 
 
 以下代码示例显示加载项清单中的 **Requirements** 元素，该元素指定应在支持 ExcelApi 要求集版本 1.3 或更高版本的所有 Office 宿主应用程序中加载该加载项。
 
@@ -63,7 +63,7 @@ else {
 
 ### <a name="requirement-sets-for-the-officejs-common-api"></a>Office.js 公用 API 的要求集
 
-有关公用 API 要求集的信息，请参阅 [Office 公用 API 要求集](https://docs.microsoft.com/javascript/office/requirement-sets/office-add-in-requirement-sets?view=office-js)。
+有关公用 API 要求集的信息，请参阅 [Office 公用 API 要求集](https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/office-add-in-requirement-sets?view=office-js)。
 
 ## <a name="loading-the-properties-of-an-object"></a>加载对象的属性
 
@@ -159,7 +159,7 @@ someRange.load("format/font/name")
 
 ## <a name="setting-properties-of-an-object"></a>设置对象的属性
 
-在具有嵌套导航属性的对象上设置属性可能很麻烦。作为使用如上所述导航路径设置单个属性的替代方法，可以使用 Excel JavaScript API 中所有对象上可用的  `object.set()` 方法。使用此方法时，可以通过传递相同 Office.js 类型的另一个对象或 JavaScript 对象（其属性结构类似于调用该方法的对象的属性）一次设置对象的多个属性。
+在具有嵌套导航属性的对象上设置属性可能很麻烦。作为使用如上所述导航路径设置单个属性的替代方法，可以使用 Excel JavaScript API 中所有对象上可用的  `object.set()` 方法，可对 Excel 的 JavaScript API 中的所有对象。使用此方法时，可以通过传递相同 Office.js 类型的另一个对象或 JavaScript 对象（其属性结构类似于调用该方法的对象的属性）一次设置对象的多个属性。
 
 > [!NOTE]
 > `set()` 方法只对宿主应用程序 Office JavaScript API（如 Excel JavaScript API）中的对象实现。通用（共享） API 不支持此方法。 
@@ -183,7 +183,7 @@ object.set(properties[, options]);
 
 #### <a name="returns"></a>返回
 
-无效    
+void    
 
 #### <a name="example"></a>示例
 
@@ -241,4 +241,4 @@ return context.sync()
 * [使用 Excel JavaScript API 的基本编程概念](excel-add-ins-core-concepts.md)
 * [Excel 加载项代码示例](https://developer.microsoft.com/office/gallery/?filterBy=Samples,Excel)
 * [Excel JavaScript API 性能优化](performance.md)
-* [Excel JavaScript API 参考](https://docs.microsoft.com/javascript/office/overview/excel-add-ins-reference-overview?view=office-js)
+* [Excel JavaScript API 参考](https://docs.microsoft.com/office/dev/add-ins/reference/overview/excel-add-ins-reference-overview?view=office-js)

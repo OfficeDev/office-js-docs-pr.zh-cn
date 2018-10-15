@@ -7,9 +7,9 @@
 
 |要求| 值|
 |---|---|
-|[最低的邮箱版本要求](/javascript/office/requirement-sets/outlook-api-requirement-sets)| 1.0|
+|[最低邮箱要求集版本](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
 |[最低权限级别](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
-|[适用的 Outlook 模式](https://docs.microsoft.com/outlook/add-ins/#extension-points)| 撰写或阅读​|
+|[适用的 Outlook 模式](https://docs.microsoft.com/outlook/add-ins/#extension-points)| 撰写或阅读|
 
 ##### <a name="members-and-methods"></a>成员和方法
 
@@ -27,7 +27,7 @@
 > [!NOTE]
 > 当前仅 Outlook 2016  for Mac 或更高版本（内部版本 16.9.1212 或更高版本）支持此成员。
 
-获取与邮箱关联的用户的帐户类型。 下表列出了可能的值。
+获取与邮箱关联用户的帐户类型。下表列出了可能的值。
 
 | 值 | 说明 |
 |-------|-------------|
@@ -38,13 +38,13 @@
 
 ##### <a name="type"></a>类型：
 
-*   String
+*   字符串
 
 ##### <a name="requirements"></a>要求
 
 |要求| 值|
 |---|---|
-|[最低的邮箱要求集版本](/javascript/office/requirement-sets/outlook-api-requirement-sets)| 1.6 |
+|[最低邮箱要求集版本](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.6 |
 |[最低权限级别](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
 |[适用的 Outlook 模式](https://docs.microsoft.com/outlook/add-ins/#extension-points)| 撰写或阅读|
 
@@ -54,7 +54,7 @@
 console.log(Office.context.mailbox.userProfile.accountType);
 ```
 
-####  <a name="displayname-string"></a>displayName :String
+####  <a name="displayname-string"></a>displayName :字符串
 
 获取用户的显示名称。
 
@@ -66,7 +66,7 @@ console.log(Office.context.mailbox.userProfile.accountType);
 
 |要求| 值|
 |---|---|
-|[最低的邮箱版本要求](/javascript/office/requirement-sets/outlook-api-requirement-sets)| 1.0|
+|[最低邮箱要求集版本](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
 |[最低权限级别](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
 |[适用的 Outlook 模式](https://docs.microsoft.com/outlook/add-ins/#extension-points)| 撰写或阅读|
 
@@ -77,19 +77,19 @@ console.log(Office.context.mailbox.userProfile.accountType);
 console.log(Office.context.mailbox.userProfile.displayName);
 ```
 
-####  <a name="emailaddress-string"></a>emailAddress :String
+####  <a name="emailaddress-string"></a>emailAddress :字符串
 
 获取用户的 SMTP 电子邮件地址。
 
 ##### <a name="type"></a>类型：
 
-*   String
+*   字符串
 
 ##### <a name="requirements"></a>要求
 
 |要求| 值|
 |---|---|
-|[最低的邮箱版本要求](/javascript/office/requirement-sets/outlook-api-requirement-sets)| 1.0|
+|[最低邮箱要求集版本](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
 |[最低权限级别](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
 |[适用的 Outlook 模式](https://docs.microsoft.com/outlook/add-ins/#extension-points)| 撰写或阅读|
 
@@ -100,7 +100,7 @@ console.log(Office.context.mailbox.userProfile.displayName);
 console.log(Office.context.mailbox.userProfile.emailAddress);
 ```
 
-####  <a name="timezone-string"></a>timeZone :String
+####  <a name="timezone-string"></a>timeZone :字符串
 
 获取用户的默认时区。
 
@@ -112,7 +112,7 @@ console.log(Office.context.mailbox.userProfile.emailAddress);
 
 |要求| 值|
 |---|---|
-|[最低的邮箱版本要求](/javascript/office/requirement-sets/outlook-api-requirement-sets)| 1.0|
+|[最低邮箱要求集版本](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
 |[最低权限级别](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
 |[适用的 Outlook 模式](https://docs.microsoft.com/outlook/add-ins/#extension-points)| 撰写或阅读|
 
