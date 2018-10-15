@@ -1,17 +1,17 @@
 
-# <a name="mailbox"></a>邮箱
+# <a name="mailbox"></a>mailbox
 
-### [Office](Office.md)[.context](Office.context.md).mailbox
+### [Office](Office.md)[.context](Office.context.md). mailbox
 
-为 Microsoft Outlook 和 Microsoft Outlook 网页版提供对 Outlook 外接程序对象模型的访问权限。
+为 Microsoft Outlook 和 Microsoft Outlook 网页版提供对 Outlook 加载项对象模型的访问权限。
 
 ##### <a name="requirements"></a>要求
 
 |要求| 值|
 |---|---|
-|[最低的邮箱版本要求](/javascript/office/requirement-sets/outlook-api-requirement-sets)| 1.0|
-|[最低权限级别](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| 受限|
-|[适用的 Outlook 模式](https://docs.microsoft.com/outlook/add-ins/#extension-points)| 撰写或阅读​|
+|[最低邮箱要求集版本](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
+|[最低权限级别](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| Restricted|
+|[适用的 Outlook 模式](https://docs.microsoft.com/outlook/add-ins/#extension-points)| 撰写或阅读|
 
 ##### <a name="members-and-methods"></a>成员和方法
 
@@ -35,9 +35,9 @@
 
 ### <a name="namespaces"></a>命名空间
 
-[diagnostics](Office.context.mailbox.diagnostics.md)：将诊断信息提供给 Outlook 外接程序。
+[诊断](Office.context.mailbox.diagnostics.md)：将诊断信息提供给 Outlook 外接程序。
 
-[item](Office.context.mailbox.item.md)：提供用于访问 Outlook 外接程序中的邮件或约会的方法和属性。
+[item](Office.context.mailbox.item.md)：提供用于访问 Outlook 加载项中的邮件或约会的方法和属性。
 
 [userProfile](Office.context.mailbox.userProfile.md)：提供有关 Outlook 外接程序中的用户信息。
 
@@ -48,7 +48,7 @@
 获取此电子邮件帐户的 Exchange Web 服务 (EWS) 端点 URL。仅限阅读模式。
 
 > [!NOTE]
-> 注意：在 iOS 版 Outlook 或  Android 版 Outlook 中不支持此成员。
+> 在 Outlook for iOS 或 Outlook for Android 中不支持此成员。
 
 远程服务可使用 `ewsUrl` 值对用户邮箱进行 EWS 调用。例如，可以创建远程服务来 [获取选定项目中的附件](https://docs.microsoft.com/outlook/add-ins/get-attachments-of-an-outlook-item)。
 
@@ -56,41 +56,41 @@
 
 在撰写模式中，必须调用 [`saveAsync`](Office.context.mailbox.item.md#saveasyncoptions-callback) 方法，才能使用 `ewsUrl` 成员。应用必须具有调用 `saveAsync` 方法的 **ReadWriteItem** 权限。
 
-##### <a name="type"></a>类型:
+##### <a name="type"></a>类型：
 
-*   字符串
+*   String
 
 ##### <a name="requirements"></a>要求
 
 |要求| 值|
 |---|---|
-|[最低的邮箱版本要求](/javascript/office/requirement-sets/outlook-api-requirement-sets)| 1.0|
+|[最低邮箱要求集版本](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
 |[最低权限级别](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
 |[适用的 Outlook 模式](https://docs.microsoft.com/outlook/add-ins/#extension-points)| 撰写或阅读|
 
-#### <a name="resturl-string"></a>restUrl： 字符串
+#### <a name="resturl-string"></a>restUrl :String
 
 获取此电子邮件帐户的 REST 端点 URL。
 
-值可用于对用户邮箱进行 [REST API](https://docs.microsoft.com/outlook/rest/) 调用。`restUrl`
+`restUrl` 值可用于对用户邮箱进行 [REST API](https://docs.microsoft.com/outlook/rest/) 调用。
 
 应用必须在其清单中指定拥有 **ReadItem** 权限，才能在阅读模式中调用 `restUrl` 成员。
 
 在撰写模式中，必须调用 [`saveAsync`](Office.context.mailbox.item.md#saveasyncoptions-callback) 方法，才能使用 `restUrl` 成员。应用必须具有调用 `saveAsync` 方法的 **ReadWriteItem** 权限。
 
-##### <a name="type"></a>类型:
+##### <a name="type"></a>类型：
 
-*   字符串
+*   String
 
 ##### <a name="requirements"></a>要求
 
 |要求| 值|
 |---|---|
-|[最低的邮箱版本要求](/javascript/office/requirement-sets/outlook-api-requirement-sets)| 1.5 |
+|[最低邮箱要求集版本](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.5 |
 |[最低权限级别](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
 |[适用的 Outlook 模式](https://docs.microsoft.com/outlook/add-ins/#extension-points)| 撰写或阅读|
 
-### <a name="methods"></a>方法
+### <a name="methods"></a>模式
 
 ####  <a name="addhandlerasynceventtype-handler-options-callback"></a>addHandlerAsync(eventType, handler, [options], [callback])
 
@@ -103,16 +103,16 @@
 | 名称 | 类型 | 属性 | 说明 |
 |---|---|---|---|
 | `eventType` | [Office.EventType](office.md#eventtype-string) || 应调用处理程序的事件。 |
-| `handler` | 函数 || 用于处理事件的函数。此函数必须接受单个参数，即对象文本。参数上的 `type` 属性将匹配传递给 `addHandlerAsync` 的 `eventType` 参数。 |
-| `options` | 对象 | &lt;可选&gt; | 包含一个或多个以下属性的对象文本。 |
-| `options.asyncContext` | 对象 | &lt;可选&gt; | 开发人员可以提供他们想要在回调方法中访问的任何对象。 |
-| `callback` | 函数| &lt;可选&gt;|方法完成后，使用单个参数 `callback`（一个 [`asyncResult`](/javascript/api/office/office.asyncresult) 对象）调用在 `AsyncResult` 参数中传递的函数。|
+| `handler` | Function || 用于处理事件的函数。此函数必须接受单个参数，即对象文本。参数上的 `type` 属性将匹配传递给 `addHandlerAsync` 的 `eventType` 参数。 |
+| `options` | Object | &lt;可选&gt; | 包含一个或多个以下属性的对象文本。 |
+| `options.asyncContext` | Object | &lt;可选&gt; | 开发人员可以提供他们想要在回调方法中访问的任何对象。 |
+| `callback` | function| &lt;可选&gt;|方法完成后，使用单个参数 `callback`（一个 [`asyncResult`](/javascript/api/office/office.asyncresult) 对象）调用在 `AsyncResult` 参数中传递的函数。|
 
 ##### <a name="requirements"></a>要求
 
 |要求| 值|
 |---|---|
-|[最低的邮箱版本要求](/javascript/office/requirement-sets/outlook-api-requirement-sets)| 1.5 |
+|[最低邮箱要求集版本](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.5 |
 |[最低权限级别](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem |
 |[适用的 Outlook 模式](https://docs.microsoft.com/outlook/add-ins/#extension-points)| 撰写或阅读|
 
@@ -137,7 +137,7 @@ function loadNewItem(eventArgs) {
 
 ####  <a name="converttoewsiditemid-restversion--string"></a>convertToEwsId(itemId, restVersion) → {String}
 
-将适用REST格式化的项目 ID 转换为 EWS 格式。
+将适用 REST 格式化的项目 ID 转换为 EWS 格式。
 
 > [!NOTE]
 > 在 Outlook for iOS 或 Outlook for Android 中不支持此方法。
@@ -148,20 +148,20 @@ function loadNewItem(eventArgs) {
 
 |名称| 类型| 说明|
 |---|---|---|
-|`itemId`| 字符串|适用 Outlook REST API 进行格式化的项目 ID。|
+|`itemId`| String|适用 Outlook REST API 进行格式化的项目 ID。|
 |`restVersion`| [Office.MailboxEnums.RestVersion](/javascript/api/outlook/office.mailboxenums.restversion)|值指示用于检索项目 ID 的 Outlook REST API 版本。|
 
 ##### <a name="requirements"></a>要求
 
 |要求| 值|
 |---|---|
-|[最低的邮箱版本要求](/javascript/office/requirement-sets/outlook-api-requirement-sets)| 1.3|
-|[最低权限级别](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| 受限|
+|[最低邮箱要求集版本](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.3|
+|[最低权限级别](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| Restricted|
 |[适用的 Outlook 模式](https://docs.microsoft.com/outlook/add-ins/#extension-points)| 撰写或阅读|
 
 ##### <a name="returns"></a>返回：
 
-类型：字符串
+类型：String
 
 ##### <a name="example"></a>示例
 
@@ -186,19 +186,19 @@ Outlook 或 Outlook Web App 邮件应用程序的日期和时间可以使用不�
 
 |名称| 类型| 说明|
 |---|---|---|
-|`timeValue`| 日期|一个 Date 对象|
+|`timeValue`| Date|一个 Date 对象|
 
 ##### <a name="requirements"></a>要求
 
 |要求| 值|
 |---|---|
-|[最低的邮箱版本要求](/javascript/office/requirement-sets/outlook-api-requirement-sets)| 1.0|
+|[最低邮箱要求集版本](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
 |[最低权限级别](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
 |[适用的 Outlook 模式](https://docs.microsoft.com/outlook/add-ins/#extension-points)| 撰写或阅读|
 
 ##### <a name="returns"></a>返回：
 
-返回：[](/javascript/api/outlook/office.LocalClientTime)
+返回：LocalClientTime[ ](/javascript/api/outlook/office.LocalClientTime)
 
 ####  <a name="converttorestiditemid-restversion--string"></a>convertToRestId(itemId, restVersion) → {String}
 
@@ -213,20 +213,20 @@ Outlook 或 Outlook Web App 邮件应用程序的日期和时间可以使用不�
 
 |名称| 类型| 说明|
 |---|---|---|
-|`itemId`| 字符串|字符串|
+|`itemId`| String|适用于 Exchange Web 服务 (EWS) 进行格式化的项目 ID。|
 |`restVersion`| [Office.MailboxEnums.RestVersion](/javascript/api/outlook/office.mailboxenums.restversion)|值指示转换的 ID 所使用的 Outlook REST API 版本。|
 
 ##### <a name="requirements"></a>要求
 
 |要求| 值|
 |---|---|
-|[最低的邮箱版本要求](/javascript/office/requirement-sets/outlook-api-requirement-sets)| 1.3|
-|[最低权限级别](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| 受限|
+|[最低邮箱要求集版本](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.3|
+|[最低权限级别](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| Restricted|
 |[适用的 Outlook 模式](https://docs.microsoft.com/outlook/add-ins/#extension-points)| 撰写或阅读|
 
 ##### <a name="returns"></a>返回：
 
-类型：字符串
+类型：String
 
 ##### <a name="example"></a>示例
 
@@ -255,7 +255,7 @@ var restId = Office.context.mailbox.convertToRestId(ewsId, Office.MailboxEnums.R
 
 |要求| 值|
 |---|---|
-|[最低的邮箱版本要求](/javascript/office/requirement-sets/outlook-api-requirement-sets)| 1.0|
+|[最低邮箱要求集版本](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
 |[最低权限级别](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
 |[适用的 Outlook 模式](https://docs.microsoft.com/outlook/add-ins/#extension-points)| 撰写或阅读|
 
@@ -267,7 +267,7 @@ var restId = Office.context.mailbox.convertToRestId(ewsId, Office.MailboxEnums.R
 
 <dt>类型</dt>
 
-<dd>日期</dd>
+<dd>Date</dd>
 
 </dl>
 
@@ -280,7 +280,7 @@ var restId = Office.context.mailbox.convertToRestId(ewsId, Office.MailboxEnums.R
 
 `displayAppointmentForm` 方法将在桌面新窗口中或移动设备对话框中打开现有的日历约会。
 
-在 Outlook for Mac 中，您可以使用此方法来显示非定期系列的单个约会，或显示定期系列的主约会，但无法显示该系列的实例。这是因为在 Outlook for Mac 中，无法访问定期系列实例的属性（包括项目 ID）。
+在 Outlook for Mac 中，您可以使用此方法来显示非重复性的单个约会，或显示重复系列中的主约会，但无法显示该系列的实例。这是因为在 Outlook for Mac 中，无法访问定期系列实例的属性（包括项目 ID）。
 
 在 Outlook Web App 中，此方法仅在窗体正文小于或等于 32KB 字符数时，才会打开指定的窗体。
 
@@ -290,13 +290,13 @@ var restId = Office.context.mailbox.convertToRestId(ewsId, Office.MailboxEnums.R
 
 |名称| 类型| 说明|
 |---|---|---|
-|`itemId`| 字符串|字符串|
+|`itemId`| String|现有日历约会的 Exchange Web 服务 (EWS) 标识符。|
 
 ##### <a name="requirements"></a>要求
 
 |要求| 值|
 |---|---|
-|[最低的邮箱版本要求](/javascript/office/requirement-sets/outlook-api-requirement-sets)| 1.0|
+|[最低邮箱要求集版本](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
 |[最低权限级别](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
 |[适用的 Outlook 模式](https://docs.microsoft.com/outlook/add-ins/#extension-points)| 撰写或阅读|
 
@@ -313,7 +313,7 @@ Office.context.mailbox.displayAppointmentForm(appointmentId);
 > [!NOTE]
 > 在 Outlook for iOS 或 Outlook for Android 中不支持此方法。
 
-在 Outlook Web App 中，方法将在桌面新窗口中或移动设备对话框中打开一封现有邮件。`displayMessageForm`
+在 Outlook Web App 中，`displayMessageForm` 方法将在桌面新窗口中或移动设备对话框中打开一封现有邮件。
 
 在 Outlook Web App 中，此方法仅在窗体正文小于或等于 32 KB 字符数时，才会打开指定的窗体。
 
@@ -325,13 +325,13 @@ Office.context.mailbox.displayAppointmentForm(appointmentId);
 
 |名称| 类型| 说明|
 |---|---|---|
-|`itemId`| String|字符串|
+|`itemId`| String|现有邮件的 Exchange Web 服务 (EWS) 标识符。|
 
 ##### <a name="requirements"></a>要求
 
 |要求| 值|
 |---|---|
-|[最低的邮箱版本要求](/javascript/office/requirement-sets/outlook-api-requirement-sets)| 1.0|
+|[最低邮箱要求集版本](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
 |[最低权限级别](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
 |[适用的 Outlook 模式](https://docs.microsoft.com/outlook/add-ins/#extension-points)| 撰写或阅读|
 
@@ -363,11 +363,11 @@ Office.context.mailbox.displayMessageForm(messageId);
 
 |名称| 类型| 说明|
 |---|---|---|
-| `parameters` | 对象 | 描述新约会的参数字典。 |
+| `parameters` | Object | 描述新约会的参数字典。 |
 | `parameters.requiredAttendees` | Array.&lt;String&gt; | Array.&lt;[EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails)&gt; | 包含电子邮件地址的字符串数组或包含约会的每个必需与会者 `EmailAddressDetails` 对象的数组。数组限制为最多 100 个条目。 |
 | `parameters.optionalAttendees` | Array.&lt;String&gt; | Array.&lt;[EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails)&gt; | 包含电子邮件地址的字符串数组或包含约会的每个可选与会者 `EmailAddressDetails` 对象的数组。数组限制为最多 100 个条目。 |
-| `parameters.start` | 日期 | 指定约会开始日期和时间的 `Date` 对象。 |
-| `parameters.end` | 日期 | 指定约会的结束日期和时间的 `Date` 对象。 |
+| `parameters.start` | Date | 指定约会开始日期和时间的 `Date` 对象。 |
+| `parameters.end` | Date | 指定约会的结束日期和时间的 `Date` 对象。 |
 | `parameters.location` | String | 包含约会位置的字符串。字符串长度限制为最多 255 个字符。 |
 | `parameters.resources` | Array.&lt;String&gt; | 包含约会所需资源的字符串数组。数组限制为最多 100 个条目。 |
 | `parameters.subject` | String | 包含约会主题的字符串。字符串长度限制为最多 255 个字符。 |
@@ -377,7 +377,7 @@ Office.context.mailbox.displayMessageForm(messageId);
 
 |要求| 值|
 |---|---|
-|[最低的邮箱版本要求](/javascript/office/requirement-sets/outlook-api-requirement-sets)| 1.0|
+|[最低邮箱要求集版本](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
 |[最低权限级别](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
 |[适用的 Outlook 模式](https://docs.microsoft.com/outlook/add-ins/#extension-points)| 阅读|
 
@@ -416,25 +416,25 @@ Office.context.mailbox.displayNewAppointmentForm(
 
 |名称| 类型| 说明|
 |---|---|---|
-| `parameters` | 对象 | 描述新邮件的参数字典。 |
+| `parameters` | Object | 描述新邮件的参数字典。 |
 | `parameters.toRecipients` | Array.&lt;String&gt; | Array.&lt;[EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails)&gt; | 包含电子邮件地址的字符串数组或包含收件人行上每个收件人的 `EmailAddressDetails` 对象的数组。 数组限制为最多 100 个条目。 |
 | `parameters.ccRecipients` | Array.&lt;String&gt; | Array.&lt;[EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails)&gt; | 包含电子邮件地址的字符串数组或包含抄送行上每个收件人的 `EmailAddressDetails` 对象的数组。 数组限制为最多 100 个条目。 |
 | `parameters.bccRecipients` | Array.&lt;String&gt; | Array.&lt;[EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails)&gt; | 包含电子邮件地址的字符串数组或包含密件抄送行上每个收件人的 `EmailAddressDetails` 对象的数组。 数组限制为最多 100 个条目。 |
 | `parameters.subject` | String | 包含邮件主题的字符串。 字符串长度限制为最多 255 个字符。 |
 | `parameters.htmlBody` | String | 邮件的 HTML 正文。 正文内容限制为最大 32 KB。 |
-| `parameters.attachments` | 数组。&lt;对象&gt; | JSON 对象（是文件或项目附件）的数组。 |
+| `parameters.attachments` | Array.&lt;Object&gt; | JSON 对象（是文件或项目附件）的数组。 |
 | `parameters.attachments.type` | String | 指示附件的类型。必须是文件附件的 `file` 或项目附件的 `item` 。 |
 | `parameters.attachments.name` | String | 一个包含附件的名称的字符串，最多包含 255 个字符。|
-| `parameters.attachments.url` | String | 仅在将 `type` 设置为 `file` 时使用。文件位置的 URI。 |
-| `parameters.attachments.isInline` | Boolean | 仅在将 `type` 设置为 `file` 时使用。如果为 `true`，则表示附件将在邮件正文中内联显示，并且不应显示在附件列表中。 |
-| `parameters.attachments.itemId` | String | 仅在 `type` 设置为 `item` 时使用。 你想要附加到新邮件的现有电子邮件的 EWS 项目 id。 字符串最长为 100 个字符。 |
+| `parameters.attachments.url` | String | 仅在 `type` 设置为 `file` 时才使用。文件位置的 URI。 |
+| `parameters.attachments.isInline` | Boolean | 仅在 `type` 设置为 `file` 时才使用。如果为 `true`，表示将在邮件正文中嵌入显示附件，并且不应在附件列表中显示。 |
+| `parameters.attachments.itemId` | String | 仅在 `type` 设置为 `item` 时才使用。 你想要附加到新邮件的现有电子邮件的 EWS 项目 id。 字符串最多达 100 个字符。 |
 
 
 ##### <a name="requirements"></a>要求
 
 |要求| 值|
 |---|---|
-|[最低的邮箱要求集版本](/javascript/office/requirement-sets/outlook-api-requirement-sets)| 1.6 |
+|[最低邮箱要求集版本](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.6 |
 |[最低权限级别](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
 |[适用的 Outlook 模式](https://docs.microsoft.com/outlook/add-ins/#extension-points)| 阅读|
 
@@ -458,18 +458,18 @@ Office.context.mailbox.displayNewMessageForm(
   });
 ```
 
-#### <a name="getcallbacktokenasyncoptions-callback"></a>getCallbackTokenAsync([options], callback)
+#### <a name="getcallbacktokenasyncoptions-callback"></a>getCallbackTokenAsync([选项] 回调)
 
 获取一个包含用于调用 REST API 或 Exchange Web 服务令牌的字符串。
 
-`getCallbackTokenAsync` 方法进行异步调用，从托管用户邮箱的 Exchange Server 获取非跳转令牌。回调令牌的生存期为 5 分钟。
+`getCallbackTokenAsync` 方法进行异步调用，从托管用户邮箱的 Exchange Server 获取不透明令牌。回调令牌的生存期为 5 分钟。
 
 > [!NOTE]
-> 建议外接程序尽可能地使用 REST API 而不是 Exchange Web 服务。 
+> 建议加载项尽可能地使用 REST API 而不是 Exchange Web 服务。 
 
 **REST 令牌**
 
-请求 REST 令牌时 (`options.isRest = true`) 时，生成的令牌将无法对 Exchange Web 服务调用进行身份验证。令牌的作用域限制为对当前项及其附件的只读访问，除非外接程序在其清单中指定了 [`ReadWriteMailbox`](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions#readwritemailbox-permission) 权限。如果指定了 `ReadWriteMailbox` 权限，则生成的令牌将授予对邮件、日历和联系人的读/写权限，包括发送邮件的功能。
+请求 REST 令牌 (`options.isRest = true`) 时，生成的令牌将无法对 Exchange Web 服务调用进行身份验证。令牌的作用域限制为对当前项及其附件的只读访问，除非加载项在其清单中指定了 [`ReadWriteMailbox`](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions#readwritemailbox-permission) 权限。如果指定了 `ReadWriteMailbox` 权限，则生成的令牌将授予对邮件、日历和联系人的读/写权限，包括发送邮件的功能。
 
 在进行 REST API 调用时，外接程序应使用 `restUrl` 属性来确定要使用的正确 URL。
 
@@ -477,22 +477,22 @@ Office.context.mailbox.displayNewMessageForm(
 
 请求 EWS 令牌 (`options.isRest = false`) 时，生成的令牌将无法对 REST API 调用进行身份验证。令牌的作用域限制为访问当前项。
 
-外接程序应使用 `ewsUrl` 属性来确定进行 EWS 调用时要使用的正确 URL。
+加载项应使用 `ewsUrl` 属性来确定进行 EWS 调用时要使用的正确 URL。
 
 ##### <a name="parameters"></a>参数：
 
 |名称| 类型| 属性| 说明|
 |---|---|---|---|
-| `options` | 对象 | &lt;可选&gt; | 包含一个或多个以下属性的对象文本。 |
-| `options.isRest` | 布尔值 |  &lt;可选&gt; | 确定所提供的令牌是否将用于 Outlook REST API 或 Exchange Web 服务。默认值为 `false`。 |
-| `options.asyncContext` | 对象 |  &lt;可选&gt; | 可选 |
-|`callback`| 函数||方法完成后，通过单个参数调用 `callback` 参数中传递的函数， `asyncResult`, 是一个 [`AsyncResult`](/javascript/api/office/office.asyncresult) 对象。令牌以 `asyncResult.value` 属性字符串形式提供。|
+| `options` | Object | &lt;可选&gt; | 包含一个或多个以下属性的对象文本。 |
+| `options.isRest` | Boolean |  &lt;可选&gt; | 确定所提供的令牌是否将用于 Outlook REST API 或 Exchange Web 服务。默认值为 `false`。 |
+| `options.asyncContext` | Object |  &lt;可选&gt; | 传递给异步方法的任何状态数据。 |
+|`callback`| function||方法完成后，通过单个参数调用 `callback` 参数中传递的函数， `asyncResult`, 是一个 [`AsyncResult`](/javascript/api/office/office.asyncresult) 对象。令牌以 `asyncResult.value` 属性字符串形式提供。|
 
 ##### <a name="requirements"></a>要求
 
 |要求| 值|
 |---|---|
-|[最低的邮箱版本要求](/javascript/office/requirement-sets/outlook-api-requirement-sets)| 1.5 |
+|[最低邮箱要求集版本](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.5 |
 |[最低权限级别](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
 |[适用的 Outlook 模式](https://docs.microsoft.com/outlook/add-ins/#extension-points)| 撰写和阅读|
 
@@ -513,11 +513,11 @@ function cb(asyncResult) {
 }
 ```
 
-#### <a name="getcallbacktokenasynccallback-usercontext"></a>getCallbackTokenAsync(callback, [userContext])
+#### <a name="getcallbacktokenasynccallback-usercontext"></a>getCallbackTokenAsync(回调, [userContext])
 
 获取一个字符串，其中包含用于从 Exchange Server 获取附件或项目的令牌。
 
-`getCallbackTokenAsync` 方法进行异步调用，从托管用户邮箱的 Exchange Server 获取非跳转令牌。回调令牌的生存期为 5 分钟。
+`getCallbackTokenAsync` 方法进行异步调用，从托管用户邮箱的 Exchange Server 获取不透明令牌。回调令牌的生存期为 5 分钟。
 
 可以将令牌和附件标识符或项标识符传递至第三方系统。第三方系统使用令牌作为持有者身份验证令牌调用 Exchange Web 服务 (EWS) [GetAttachment](https://docs.microsoft.com/exchange/client-developer/web-service-reference/getattachment-operation) 或 [GetItem](https://docs.microsoft.com/exchange/client-developer/web-service-reference/getitem-operation)，以返回附件或项目。例如，可以创建远程服务来[获取选定项目中的附件](https://docs.microsoft.com/outlook/add-ins/get-attachments-of-an-outlook-item)。
 
@@ -529,14 +529,14 @@ function cb(asyncResult) {
 
 |名称| 类型| 属性| 说明|
 |---|---|---|---|
-|`callback`| 函数||方法完成后，通过单个参数调用 `callback` 参数中传递的函数， `asyncResult`, 是一个 [`AsyncResult`](/javascript/api/office/office.asyncresult) 对象。令牌以 `asyncResult.value` 属性字符串形式提供。|
-|`userContext`| 对象| &lt;可选&gt;|传递给异步方法的任何状态数据。|
+|`callback`| function||方法完成后，通过单个参数 `asyncResult`（这是一个 [`AsyncResult`](/javascript/api/office/office.asyncresult) 对象）调用 `callback` 参数中传递的函数。令牌作为 `asyncResult.value` 属性中的字符串提供。|
+|`userContext`| Object| &lt;可选&gt;|传递给异步方法的任何状态数据。|
 
 ##### <a name="requirements"></a>要求
 
 |要求| 值|
 |---|---|
-|[最低的邮箱版本要求](/javascript/office/requirement-sets/outlook-api-requirement-sets)| 1.3|
+|[最低邮箱要求集版本](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.3|
 |[最低权限级别](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
 |[适用的 Outlook 模式](https://docs.microsoft.com/outlook/add-ins/#extension-points)| 撰写和阅读|
 
@@ -554,22 +554,22 @@ function cb(asyncResult) {
 
 ####  <a name="getuseridentitytokenasynccallback-usercontext"></a>getUserIdentityTokenAsync(callback, [userContext])
 
-获取用于标识用户和 Office 外接程序的令牌。
+获取用于标识用户和 Office 加载项的令牌。
 
-`getUserIdentityTokenAsync` 方法返回你可以用于在第三方系统上识别和  [验证外接程序和用户的令牌。](https://docs.microsoft.com/outlook/add-ins/authentication)
+`getUserIdentityTokenAsync` 方法返回可以用于标识和[在第三方系统上验证加载项和用户](https://docs.microsoft.com/outlook/add-ins/authentication)的令牌。
 
 ##### <a name="parameters"></a>参数：
 
 |名称| 类型| 属性| 说明|
 |---|---|---|---|
-|`callback`| 函数||方法完成后，使用单个参数 `callback`（一个 [`asyncResult`](/javascript/api/office/office.asyncresult) 对象）调用在 `AsyncResult` 参数中传递的函数。<br/><br/>令牌以 `asyncResult.value` 属性中的字符串形式提供。|
-|`userContext`| 对象| &lt;可选&gt;|传递给异步方法的任何状态数据。|
+|`callback`| function||方法完成后，使用单个参数 `callback`（一个 [`asyncResult`](/javascript/api/office/office.asyncresult) 对象）调用在 `AsyncResult` 参数中传递的函数。<br/><br/>令牌作为 `asyncResult.value` 属性中的字符串提供。|
+|`userContext`| Object| &lt;可选&gt;|传递给异步方法的任何状态数据。|
 
 ##### <a name="requirements"></a>要求
 
 |要求| 值|
 |---|---|
-|[最低的邮箱版本要求](/javascript/office/requirement-sets/outlook-api-requirement-sets)| 1.0|
+|[最低邮箱要求集版本](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
 |[最低权限级别](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
 |[适用的 Outlook 模式](https://docs.microsoft.com/outlook/add-ins/#extension-points)| 撰写或阅读|
 
@@ -590,15 +590,15 @@ function cb(asyncResult) {
 向托管用户邮箱的 Exchange 服务器上的 Exchange Web 服务 (EWS) 发出异步请求。
 
 > [!NOTE]
-> 在以下情景中不支持此方法。
-> - 在Outlook for iOS 或 Outlook for Android 中
-> - 通过 Gmail 邮箱加载外接程序
+> 在以下方案中不支持此方法。
+> - 在 Outlook for iOS 或 Outlook for Android 中
+> - 在 Gmail 邮箱中加载加载项时
 > 
-> 在这些情况下, 外接程序应转而 [使用 REST Api](https://docs.microsoft.com/outlook/add-ins/use-rest-api) 访问用户的邮箱。
+> 在这些情况下, 加载项应转而[使用 REST API](https://docs.microsoft.com/outlook/add-ins/use-rest-api) 访问用户的邮箱。
 
-`makeEwsRequestAsync` 方法代表外接程序将 EWS 请求发送到 Exchange。 有关支持的 EWS 操作列表，请参阅 [从 Outlook 外接程序调用 web 服务](https://docs.microsoft.com/outlook/add-ins/web-services#ews-operations-that-add-ins-support) 。
+`makeEwsRequestAsync` 方法代表加载项向 Exchange 发送 EWS 请求。 有关支持的 EWS 操作列表，请参阅 [从 Outlook 加载项调用 Web 服务](https://docs.microsoft.com/outlook/add-ins/web-services#ews-operations-that-add-ins-support) 。
 
-你不能通过 `makeEwsRequestAsync` 方法请求与文件夹关联的项目。
+不能通过 `makeEwsRequestAsync` 方法请求与“文件夹”关联的项。
 
 XML 请求必须指定 UTF-8 编码。
 
@@ -606,40 +606,40 @@ XML 请求必须指定 UTF-8 编码。
 <?xml version="1.0" encoding="utf-8"?>
 ```
 
-外接程序必须具有 **ReadWriteMailbox** 权限才能使用 `makeEwsRequestAsync` 方法。有关使用 **ReadWriteMailbox** 权限和可使用 `makeEwsRequestAsync` 方法调用 EWS 操作的信息，请参阅[指定用户邮箱中邮件外接程序的访问权限](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)。
+加载项必须具有 **ReadWriteMailbox** 权限才能使用 `makeEwsRequestAsync` 方法。欲知使用 **ReadWriteMailbox** 权限和可使用 `makeEwsRequestAsync` 方法调用 EWS 操作的信息，请参阅[指定邮件加载项访问用户邮箱的权限](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)。
 
 > [!NOTE]
-> 注意：服务器管理员必须在客户端访问服务器 EWS 目录上将 `OAuthAuthentication` 设置为 true，`makeEwsRequestAsync` 方法才能发出 EWS 请求。
+> 注意：服务器管理员必须在 Client Access Server EWS 目录上将 `OAuthAuthentication` 设置为 true，`makeEwsRequestAsync` 方法才能发出 EWS 请求。
 
 ##### <a name="version-differences"></a>版本差异
 
-当你在较 15.0.4535.1004 版本更早的 Outlook 版本的邮件应用程序中使用 `makeEwsRequestAsync` 方法，应当将编码值设置为 `ISO-8859-1`。
+当你在较 15.0.4535.1004 版本更早的 Outlook 版本的邮件应用程序中使用 `makeEwsRequestAsync` 方法时，应当将编码值设置为 `ISO-8859-1`。
 
 ```
 <?xml version="1.0" encoding="iso-8859-1"?>
 ```
 
-当邮件应用程序在 Outlook 网页版中运行时，您不需要设置编码值。可以通过使用 mailbox.diagnostics.hostName 属性来确定您的邮件应用程序在 Outlook 中还是 Outlook 网页版中运行。可以通过使用 mailbox.diagnostics.hostVersion 属性来确定正在运行的 Outlook 版本。
+当邮件应用在 Outlook 网页版中运行时，不需要设置编码值。可以通过使用 mailbox.diagnostics.hostName 属性来确定邮件应用是正在 Outlook 中运行还是在 Outlook 网页版中运行。可以通过使用 mailbox.diagnostics.hostVersion 属性来确定正在运行的 Outlook 版本。
 
 ##### <a name="parameters"></a>参数：
 
 |名称| 类型| 属性| 说明|
 |---|---|---|---|
 |`data`| String||EWS 请求。|
-|`callback`| EWS 请求。||EWS>请求。`callback``asyncResult`[`AsyncResult`](/javascript/api/office/office.asyncresult)<br/><br/>EWS 调用的 XML 结果作为 `asyncResult.value` 属性中的字符串提供。 如果结果的大小超过 1 MB，将转而返回一条错误消息。|
-|`userContext`| 对象| &lt;可选&gt;|传递给异步方法的任何状态数据。|
+|`callback`| function||方法完成后，使用单个参数 `callback`（一个 [`asyncResult`](/javascript/api/office/office.asyncresult) 对象）调用在 `AsyncResult` 参数中传递的函数。<br/><br/>EWS 调用的 XML 结果作为 `asyncResult.value` 属性中的字符串提供。 如果结果的大小超过 1 MB，将转而返回一条错误消息。|
+|`userContext`| Object| &lt;可选&gt;|传递给异步方法的任何状态数据。|
 
 ##### <a name="requirements"></a>要求
 
 |要求| 值|
 |---|---|
-|[最低的邮箱版本要求](/javascript/office/requirement-sets/outlook-api-requirement-sets)| 1.0|
+|[最低邮箱要求集版本](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
 |[最低权限级别](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadWriteMailbox|
 |[适用的 Outlook 模式](https://docs.microsoft.com/outlook/add-ins/#extension-points)| 撰写或阅读|
 
 ##### <a name="example"></a>示例
 
-下面的示例调用 `makeEwsRequestAsync`  将使用  `GetItem` 操作获取项目的主题。
+下面的示例调用 `makeEwsRequestAsync`  以使用  `GetItem` 操作获取项目的主题。
 
 ```js
 function getSubjectRequest(id) {
