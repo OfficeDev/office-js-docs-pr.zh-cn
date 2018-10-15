@@ -220,13 +220,13 @@ ng new my-addin
 
 3. 如果浏览器在加载加载项页面后没有显示任何证书错误，就可以准备测试加载项了。 
 
-## <a name="try-it-out"></a>试用
+## <a name="try-it-out"></a>试试看
 
 1. 请按照运行加载项和在 Excel 中旁加载加载项时所用平台对应的说明操作。
 
-    - Windows：[在 Windows 上旁加载 Office 加载项](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)
+    - Windows：[在 Windows 旁加载 Office 加载项](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)
     - Excel Online：[在 Office Online 中旁加载 Office 加载项](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-on-office-online)
-    - iPad 和 Mac：[在 iPad 和 Mac 上旁加载 Office 加载项](../testing/sideload-an-office-add-in-on-ipad-and-mac.md)
+    - iPad 和 Mac：[在 iPad 和 Mac 旁加载 Office 加载项](../testing/sideload-an-office-add-in-on-ipad-and-mac.md)
 
    
 2. 在 Excel 中，依次选择**主页**选项卡和功能区中的**显示任务窗格**按钮，以打开加载项任务窗格。
@@ -251,4 +251,4 @@ ng new my-addin
 * [Excel 加载项教程](../tutorials/excel-tutorial-create-table.md)
 * [使用 Excel JavaScript API 的基本编程概念](../excel/excel-add-ins-core-concepts.md)
 * [Excel 加载项代码示例](https://developer.microsoft.com/office/gallery/?filterBy=Samples,Excel)
-* [Excel JavaScript API 参考](https://docs.microsoft.com/javascript/office/overview/excel-add-ins-reference-overview?view=office-js)
+* [Excel JavaScript API 参考](https://docs.microsoft.com/office/dev/add-ins/reference/overview/excel-add-ins-reference-overview?view=office-js)
