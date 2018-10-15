@@ -2,21 +2,19 @@
 title: 排查单一登录 (SSO) 错误消息
 description: ''
 ms.date: 12/08/2017
-ms.openlocfilehash: 270cc2c636f982d271f22fa93415515dbc63ad43
-ms.sourcegitcommit: fdf7f4d686700edd6e6b04b2ea1bd43e59d4a03a
+ms.openlocfilehash: 5abf10d8281ea54be9a172c3f45b742fb33991df
+ms.sourcegitcommit: c53f05bbd4abdfe1ee2e42fdd4f82b318b363ad7
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/28/2018
-ms.locfileid: "25348175"
+ms.lasthandoff: 10/12/2018
+ms.locfileid: "25506068"
 ---
 # <a name="troubleshoot-error-messages-for-single-sign-on-sso-preview"></a>排查单一登录 (SSO) 错误消息（预览）
 
 本文提供了一些指南，介绍了如何排查 Office 加载项中出现的单一登录 (SSO) 问题，以及如何让已启用 SSO 的加载项可靠地处理特殊条件或错误。
 
 > [!NOTE]
-> 目前，Word、Excel、Outlook 和 PowerPoint 预览版支持单一登录 API。 若要详细了解目前支持单一登录 API 的平台，请参阅 [IdentityAPI 要求集] https://docs.microsoft.com/javascript/office/requirement-sets/identity-api-requirement-sets)。
-> 若要使用 SSO，你必须从加载项启动 HTML 页的 https://appsforoffice.microsoft.com/lib/beta/hosted/office.js 中加载 beta 版的 Office JavaScript 库。
-> 如果使用的是 Outlook 加载项，请务必为 Office 365 租赁启用新式验证。 若要了解如何执行此操作，请参阅 [Exchange Online：如何为租户启用新式验证](https://social.technet.microsoft.com/wiki/contents/articles/32711.exchange-online-how-to-enable-your-tenant-for-modern-authentication.aspx)。
+> 在预览的 Word、 Excel、 Outlook 和 PowerPoint 当前支持单一登录 API。有关其中当前支持单一登录 API 的详细信息，请参阅 [ IdentityAPI 要求集]https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/identity-api-requirement-sets)。若要使用 SSO，必须加载 beta 版中的 Office JavaScript 库 https://appsforoffice.microsoft.com/lib/beta/hosted/office.js 中的加载项的启动 HTML 页。如果正在使用 Outlook 加载项，请务必为 Office 365 租户启用现代的身份验证。欲知如何执行此操作的信息，请参阅 [在线交流： 如何启用租户的现代身份验证](https://social.technet.microsoft.com/wiki/contents/articles/32711.exchange-online-how-to-enable-your-tenant-for-modern-authentication.aspx)。
 
 ## <a name="debugging-tools"></a>调试工具
 
@@ -36,22 +34,22 @@ ms.locfileid: "25348175"
 - [Office-Add-in-NodeJS-SSO 中的 program.js](https://github.com/OfficeDev/Office-Add-in-NodeJS-SSO/blob/master/Completed/public/program.js)
 
 > [!NOTE]
-> 除了本节中提出的建议之外，Outlook 加载项还有一个额外的方式来响应任何 13*nnn* 错误。 要了解详细信息，请参阅[方案：在 Outlook 加载项中实施服务的单一登录](https://docs.microsoft.com/outlook/add-ins/implement-sso-in-outlook-add-in)和 [AttachmentsDemo 示例加载项](https://github.com/OfficeDev/outlook-add-in-attachments-demo)。 
+> 除了本节中所提出的建议，Outlook 加载项具有任何 13*nnn* 错误响应的其他方法。欲知详请，请参阅 [方案： 在 Outlook 加载项中实现单一登录服务器](https://docs.microsoft.com/outlook/add-ins/implement-sso-in-outlook-add-in) 和 [AttachmentsDemo 示例加载项](https://github.com/OfficeDev/outlook-add-in-attachments-demo)。 
 
 ### <a name="13000"></a>13000
 
 加载项或 Office 版本不支持 [getAccessTokenAsync](https://docs.microsoft.com/office/dev/add-ins/develop/sso-in-office-add-ins#sso-api-reference) API。 
 
 - Office 版本不支持 SSO。必须为 Office 2016 版本 1710（生成号 8629.nnnn）或更高版本（Office 365 订阅版本，有时亦称为“即点即用”）。可能必须成为 Office 预览体验成员，才能获取此版本。有关详细信息，请参阅[成为 Office 预览体验成员](https://products.office.com/office-insider?tab=tab-1)。 
-- 加载项清单缺少适当的 [WebApplicationInfo](https://docs.microsoft.com/javascript/office/manifest/webapplicationinfo?view=office-js) 部分。
+- 加载项清单缺少适当的 [WebApplicationInfo](https://docs.microsoft.com/office/dev/add-ins/reference/manifest/webapplicationinfo?view=office-js) 部分。
 
-加载项应通过回调至用户身份验证的替代系统来对此错误做出响应。 有关详细信息，请参阅[要求和最佳做法](https://docs.microsoft.com/office/dev/add-ins/develop/sso-in-office-add-ins#requirements-and-best-practices)。
+加载项应该通过回退到备用的用户身份验证系统来响应此错误。欲知详情，请参阅 [要求和最佳做法](https://docs.microsoft.com/office/dev/add-ins/develop/sso-in-office-add-ins#requirements-and-best-practices)。
 
 ### <a name="13001"></a>13001
 
-用户未登录 Office。 代码应重新调用 `getAccessTokenAsync` 方法，并在 [options](https://docs.microsoft.com/office/dev/add-ins/develop/sso-in-office-add-ins#sso-api-reference) 参数中传递选项 `forceAddAccount: true`。 但只能执行一次。 用户可能已决定不登录。
+用户未登录 Office。代码应调回 `getAccessTokenAsync` 方法并传递 `forceAddAccount: true` [ options](https://docs.microsoft.com/office/dev/add-ins/develop/sso-in-office-add-ins#sso-api-reference) 参数中的选项。但此操作不能执行一次以上。用户可能已决定不登录。
 
-Office Online 中绝不会出现此错误。 如果用户的 Cookie 到期，Office Online 返回的是错误 13006。 
+Office Online 永远不会出现此错误。如果用户的 cookie 过期，Office Online 返回错误 13006。 
 
 ### <a name="13002"></a>13002
 
@@ -62,16 +60,16 @@ Office Online 中绝不会出现此错误。 如果用户的 Cookie 到期，Off
 
 ### <a name="13003"></a>13003
 
-用户类型不受支持。 用户未使用有效的 Microsoft 帐户或 Office 365 （“工作或学校”）帐户登录 Office。 例如，当使用本地域帐户运行 Office 时，可能会生成此错误。 代码应提示用户登录到 Office 或回调至用户身份验证的替代系统。 有关详细信息，请参阅[要求和最佳做法](https://docs.microsoft.com/office/dev/add-ins/develop/sso-in-office-add-ins##requirements-and-best-practices)。
+用户类型不受支持。用户未使用有效的 Microsoft 帐户或 Office 365 （"工作或学校"） 帐户登录 Office 。如果 Office 使用本地域帐户运行，则可能会发生这种情况，例如，代码应要求用户登录 Office 或退回到备用的用户身份验证系统。欲知详情，请参阅 [要求和最佳做法](https://docs.microsoft.com/office/dev/add-ins/develop/sso-in-office-add-ins##requirements-and-best-practices)。
 
 
 ### <a name="13004"></a>13004
 
-资源无效。 加载项清单未正确配置。 请更新此清单。 有关详细信息，请参阅[验证并排查清单问题](../testing/troubleshoot-manifest.md)。 最常见的问题是，**Resource**元素（ 在**WebApplicationInfo**元素中 ）具有与加载项的域不匹配的域。 尽管资源值的协议部分应为 "api" 而不是 "https"；域名的所有其他部分（包括端口，如果有的话）应与加载项的相同。
+无效的资源。加载项清单尚未正确配置。更新清单。欲知详情，请参阅 [与清单一同验证和解决问题](../testing/troubleshoot-manifest.md)。最常见的问题是 （在 **WebApplicationInfo** 元素中） 的 **Resource** 元素具有与加载项的域不匹配的域。尽管 Resource 值的协议部分应为" api "不是" https "; 域名的所有其他部分（包括端口，如果有的话）应与加载项的相同。
 
 ### <a name="13005"></a>13005
 
-授权无效。 这通常意味着，Office 尚未获得对加载项 Web 服务的预授权。 有关详细信息，请参阅[创建服务应用程序](sso-in-office-add-ins.md#create-the-service-application)和[向 Azure AD v2.0 终结点注册加载项](create-sso-office-add-ins-aspnet.md#register-the-add-in-with-azure-ad-v20-endpoint) (ASP.NET) 或[向 Azure AD v2.0 终结点注册加载项](create-sso-office-add-ins-nodejs.md#register-the-add-in-with-azure-ad-v20-endpoint) (Node JS)。 如果用户尚未将服务应用程序权限授予其 `profile`，也可能发生这个情况。
+授予无效。这通常意味着 Office 仍未事先授权加载项的 web 服务。欲知详情，请参阅 [创建服务应用程序](sso-in-office-add-ins.md#create-the-service-application) 和 [使用Azure AD v2.0端点注册加载项](create-sso-office-add-ins-aspnet.md#register-the-add-in-with-azure-ad-v20-endpoint) ( ASP.NET ) 或 [使用Azure AD v2.0端点注册加载项](create-sso-office-add-ins-nodejs.md#register-the-add-in-with-azure-ad-v20-endpoint) ( Node JS )。如果用户未将服务应用程序权限授予其 `profile`，也可能发生这种情况。
 
 ### <a name="13006"></a>13006
 
@@ -81,37 +79,37 @@ Office Online 中绝不会出现此错误。 如果用户的 Cookie 到期，Off
 
 Office 主机无法获取对加载项 Web 服务的访问令牌。
 
-- 如果在开发过程中发生此错误，请确保您的加载项注册和加载项清单指定了 `openid` 和 `profile`权限。 有关详细信息，请参阅[向 Azure AD v2.0 终结点注册加载项](create-sso-office-add-ins-aspnet.md#register-the-add-in-with-azure-ad-v20-endpoint) (ASP.NET) 或[向 Azure AD v2.0 终结点注册加载项](create-sso-office-add-ins-nodejs.md#register-the-add-in-with-azure-ad-v20-endpoint) (Node JS)，以及[配置加载项](create-sso-office-add-ins-aspnet.md#configure-the-add-in) (ASP.NET) 或[配置加载项](create-sso-office-add-ins-nodejs.md#configure-the-add-in) (Node JS)。
-- 在生产中，有几种情况会导致这个错误。 其中包括：
-    - 用户在授予许可后，又撤销了许可。 您的代码应该撤回 `getAccessTokenAsync` 方法，使用选项`forceConsent: true`，但不能超过一次。
-    - 用户拥有 Microsoft帐户 (MSA) 身份。 使用工作或学校帐户，某些情况会导致其他 13nnn 错误之一，使用 MSA 将导致 13007。 
+- 如果在开发过程中发生此错误，请确保加载项注册和加载项指令清单指定 `openid` 和 `profile` 权限，欲知详情，请参阅 [使用Azure AD v2.0端点注册加载项](create-sso-office-add-ins-aspnet.md#register-the-add-in-with-azure-ad-v20-endpoint) (ASP.NET) 或 [使用Azure AD v2.0端点注册加载项](create-sso-office-add-ins-nodejs.md#register-the-add-in-with-azure-ad-v20-endpoint)  ( Node JS )，以及 [配置加载项](create-sso-office-add-ins-aspnet.md#configure-the-add-in) ( ASP.NET ) 或 [配置加载项](create-sso-office-add-ins-nodejs.md#configure-the-add-in) ( Node JS )。
+- 生成时，有几种情况会导致这个错误。其中有一些是：
+    - 用户在事先授予许可后已撤销同意。代码应使用选项 `forceConsent: true`选项调回 `getAccessTokenAsync` 方法，但是不能超过一次。
+    - 用户具备 Microsoft 帐户 ( MSA ) 标识。当使用MSA时将导致13007，某些情况会导致工作或学校帐户中出现其他13nnn错误之一。 
 
-  对于所有这些情况，如果已经尝试过 `forceConsent` 选项一次，那么代码可能会提示用户稍后重试操作。
+  对于所有这些情况，如果已经尝试过一次 `forceConsent` 选项，那么代码可能会提示用户稍后重试操作。
 
 ### <a name="13008"></a>13008
 
-用户在上一次调用 `getAccessTokenAsync` 完成前触发了调用 `getAccessTokenAsync` 的操作。 代码应提示用户在上一次操作完成后再重复此操作。
+在先前的 `getAccessTokenAsync` 调用完成之前，用户触发了一个调用 `getAccessTokenAsync` 的操作。代码会要求用户在上一个操作完成后重复操作。
 
 ### <a name="13009"></a>13009
 
-加载项使用选项 `forceConsent: true` 调用了 `getAccessTokenAsync` 方法，但加载项清单部署到的目录类型不支持强制许可。 代码应重新调用 `getAccessTokenAsync` 方法，并在 [options](https://docs.microsoft.com/office/dev/add-ins/develop/sso-in-office-add-ins#sso-api-reference) 参数中传递选项 `forceConsent: false`。 不过，使用 `forceConsent: true` 调用 `getAccessTokenAsync` 本身就是在自动响应使用 `forceConsent: false` 调用 `getAccessTokenAsync` 时出现的错误。因此，代码应跟踪是否已使用 `forceConsent: false` 调用 `getAccessTokenAsync`。 如果已调用，代码或者应告诉用户注销并重新登录 Office，或者应该回调至用户身份验证的替代系统。 有关详细信息，请参阅[要求和最佳做法](https://docs.microsoft.com/office/dev/add-ins/develop/sso-in-office-add-ins#requirements-and-best-practices)。
+加载项调用 `getAccessTokenAsync` 方法选项 `forceConsent: true`，但加载项的清单将部署到一种类型的不支持强制同意的目录。代码应调回在 [options](https://docs.microsoft.com/office/dev/add-ins/develop/sso-in-office-add-ins#sso-api-reference) 参数中 `getAccessTokenAsync` 方法并传递选项 `forceConsent: false` 。但是，调用 `getAccessTokenAsync` 与 `forceConsent: true` 可能本身已失败的呼叫自动响应 `getAccessTokenAsync` 与 `forceConsent: false`，因此代码应跟踪的是否 `getAccessTokenAsync` 与 `forceConsent: false` 已被调用。如果是，则代码应也会告知用户注销 Office 和再次登录或它应回退到备用系统的用户身份验证。欲知详情，请参阅 [要求和最佳做法](https://docs.microsoft.com/office/dev/add-ins/develop/sso-in-office-add-ins#requirements-and-best-practices)。
 
 > [!NOTE]
-> Microsoft 不一定会将此限制施加于所有类型的插件目录。 如果没有施加，绝不会出现此错误。
+> Microsoft 不一定会对任何类型的加载项目录实施此限制。如果没有，则永远不会出现此错误。
 
 ### <a name="13010"></a>13010
 
-用户正在 Office Online 上运行加载项，但使用的是 Edge 或 Internet Explorer。 用户的 Office 365 域和 login.microsoftonline.com 域位于浏览器设置中的不同安全区域。 如果此错误返回，用户将已看到对此进行解释的错误，并链接到关于如何更改区域配置的页面。 如果加载项提供的功能无需用户登录，代码应捕获此错误，并让加载项继续正常运行。
+用户正在 Office Online 上运行加载项，并且正在使用 Edge 或 Internet Explorer，用户的 Office 365 域和 login.microsoftonline.com 域位于浏览器设置中的不同安全区域中。如果返回此错误，则用户将看到解释此错误并链接到有关如何更改区域配置的页面的错误。如果加载项提供的功能不需要用户登录，那么代码应该捕获此错误并允许加载项保持运行。
 
 ### <a name="13012"></a>13012
 
-加载项在不支持 `getAccessTokenAsync` API 的平台上运行。 例如，它不支持在 iPad 上运行。 另请参阅[ Identity API  要求集](https://docs.microsoft.com/javascript/office/requirement-sets/identity-api-requirement-sets)。
+加载项不支持的平台上运行 `getAccessTokenAsync` API。例如，它不支持 iPad 。另请参阅 [标识 API 要求集](https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/identity-api-requirement-sets)。
 
 ### <a name="50001"></a>50001
 
-此错误（并非特定于 `getAccessTokenAsync`）可能表示浏览器已缓存了 office.js 文件的一个旧副本。 开发时，清除浏览器的缓存。 另一种可能性是 Office 的版本不够新，无法支持 SSO。 请参阅[先决条件](create-sso-office-add-ins-aspnet.md#prerequisites)。
+此错误 (不是特定于 `getAccessTokenAsync`) 可能指示在浏览器已缓存的 office.js 文件的旧副本。开发时, 清除浏览器的缓存。另一种可能是 Office 的版本不够最新，不足以支持 SSO 。请参阅 [先决条件](create-sso-office-add-ins-aspnet.md#prerequisites)。
 
-在生产加载项中，加载项应通过回调至用户身份验证的替代系统来对此错误做出响应。 有关详细信息，请参阅[要求和最佳做法](https://docs.microsoft.com/office/dev/add-ins/develop/sso-in-office-add-ins##requirements-and-best-practices)。
+在生产加载项时，加载项应该通过回退到备用的用户身份验证系统来响应此错误。欲知详情，请参阅 [要求和最佳做法](https://docs.microsoft.com/office/dev/add-ins/develop/sso-in-office-add-ins##requirements-and-best-practices)。
 
 
 ## <a name="errors-on-the-server-side-from-azure-active-directory"></a>Azure Active Directory 服务器端错误
@@ -123,24 +121,24 @@ Office 主机无法获取对加载项 Web 服务的访问令牌。
 
 ### <a name="conditional-access--multifactor-authentication-errors"></a>条件访问/多重身份验证错误
  
-在特定 AAD 和 Office 365 shen'fen身份配置中，一些可通过 Microsoft Graph 访问的资源可以要求进行多重身份验证 (MFA)，即使用户的 Office 365 租赁并不要求此验证。 通过代表流收到对 MFA 保护资源的令牌请求时，AAD 会向加载项 Web 服务返回包含 `claims` 属性的 JSON 消息。 claims 属性指明需要进一步执行哪几重身份验证。 
+在 AAD 和 Office 365 中的特定身份配置中， Microsoft Graph 可访问的某些资源可能需要多因素身份验证（MFA），即使用户的 Office 365 租户不具备。 当 AAD 通过代表流收到对受 MFA 保护的资源的令牌请求时，它会向您的加载项的 Web 服务返回包含 `claims` 属性的 JSON 消息。声明属性包含有关需要进一步的身份验证因素的信息。 
 
-服务器端代码应测试此消息是否有错，并将 claims 值中继到客户端代码。 客户端需要此信息，因为 Office 处理 SSO 加载项的身份验证。发送到客户端的消息可以是错误（如 `500 Server Error` 或 `401 Unauthorized`），也可以是成功响应的正文部分（如 `200 OK`）。 无论属于上述哪种情况，代码对加载项 Web API 的客户端 AJAX 调用的（失败或成功）回调都应测试此响应是否有错。 如果已中继 claims 值，代码应重新调用 `getAccessTokenAsync`，并在 [options](https://docs.microsoft.com/office/dev/add-ins/develop/sso-in-office-add-ins#sso-api-reference) 参数中传递选项 `authChallenge: CLAIMS-STRING-HERE`。 如果 AAD 看到此字符串，它会先提示用户进行多重身份验证，再返回将在代表流中接受的新访问令牌。
+服务器端代码应测试此消息并将声明值转发到客户端代码。由于 Office 处理 SSO 加载项的身份验证，需要在客户端中使用此信息。发送给客户端的消息可以是错误 (如 `500 Server Error` 或 `401 Unauthorized`) 或也可以是成功响应的正文 (如 `200 OK`)。在任一情况下，代码的客户端 AJAX （故障或成功） 回调调用加载项的 web API 应该测试此响应。如果声明值已被转达，则代码应调回 `getAccessTokenAsync` 和传递在 [options](https://docs.microsoft.com/office/dev/add-ins/develop/sso-in-office-add-ins#sso-api-reference) 参数中的选项 `authChallenge: CLAIMS-STRING-HERE`。当 AAD 看到此字符串时，它会提示用户输入其他因素，然后返回一个新的访问令牌，该令牌将在代表流中被接受。
 
-### <a name="consent-missing-errors"></a>缺少许可错误
+### <a name="consent-missing-errors"></a>缺少许可证错误
 
-如果 AAD 未记录用户（或租户管理员）已授权加载项访问 Microsoft Graph 资源，AAD 会向 Web 服务发送错误消息。 代码必须指示客户端（例如，在 `403 Forbidden` 响应的正文中）通过 `forceConsent: true` 选项重新调用 `getAccessTokenAsync`。
+如果AAD没有记录用户（或租户管理员）已授权加载项（对Microsoft Graph资源），AAD会向网络服务器发送错误消息。代码必须告知客户端 (例如，正文中的 `403 Forbidden` 响应）通过 `forceConsent: true` 选项调回 `getAccessTokenAsync` 。
 
 ### <a name="invalid-or-missing-scope-permission-errors"></a>范围（权限）无效或缺失错误
 
-- 服务器端代码应向客户端发送 `403 Forbidden` 响应，向用户显示易记消息。如果可能，请在控制台或日志中记录此错误。
-- 请确保加载项清单 [Scopes](https://docs.microsoft.com/javascript/office/manifest/scopes?view=office-js) 部分指定了所需的全部权限。 此外，还请确保加载项 Web 服务注册指定了相同的权限。 同时检查是否有拼写错误。 有关详细信息，请参阅[向 Azure AD v2.0 终结点注册加载项](create-sso-office-add-ins-aspnet.md#register-the-add-in-with-azure-ad-v20-endpoint) (ASP.NET) 或[向 Azure AD v2.0 终结点注册加载项](create-sso-office-add-ins-nodejs.md#register-the-add-in-with-azure-ad-v20-endpoint) (Node JS)，以及[配置加载项](create-sso-office-add-ins-aspnet.md#configure-the-add-in) (ASP.NET) 或[配置加载项](create-sso-office-add-ins-nodejs.md#configure-the-add-in) (Node JS)。
+- 服务器端代码应向客户端发送 `403 Forbidden` 响应，该响应应向用户呈现友好的信息。如果可能，请在控制台或日志中记录此错误。
+- 确保加载项清单[Scopes](https://docs.microsoft.com/office/dev/add-ins/reference/manifest/scopes?view=office-js)部分指定所有所需的权限。并确保加载项的 Web 服务的注册指定了相同的权限。同时检查拼写错误。欲知详情，请参阅 [使用Azure AD v2.0端点注册加载项](create-sso-office-add-ins-aspnet.md#register-the-add-in-with-azure-ad-v20-endpoint) (ASP.NET) 或 [使用Azure AD v2.0端点注册加载项](create-sso-office-add-ins-nodejs.md#register-the-add-in-with-azure-ad-v20-endpoint) ( Node JS )，以及 [配置加载项](create-sso-office-add-ins-aspnet.md#configure-the-add-in) ( ASP.NET ) 或 [配置加载项](create-sso-office-add-ins-nodejs.md#configure-the-add-in)( Node JS )。
 
 ### <a name="expired-or-invalid-token-errors-when-calling-microsoft-graph"></a>调用 Microsoft Graph 时令牌过期或无效错误
 
-一些身份验证和授权库（包括 MSAL）在必要时使用缓存的刷新令牌，防止出现令牌过期错误。 也可以编码自己的令牌缓存系统。 有关如何这样做的示例，请参阅 [Office 加载项 NodeJS SSO](https://github.com/OfficeDev/Office-Add-in-NodeJS-SSO)，并重点参阅 [auth.ts](https://github.com/OfficeDev/Office-Add-in-NodeJS-SSO/blob/master/Completed/src/auth.ts) 文件。
+某些身份验证和授权的库，包括 MSAL，必要时通过使用缓存的刷新令牌来防止过期令牌错误。还可以编写代码自己的令牌缓存系统。执行此操作的示例，请参阅 [Office 加载项 NodeJS SSO](https://github.com/OfficeDev/Office-Add-in-NodeJS-SSO)，尤其是文件 [auth.ts](https://github.com/OfficeDev/Office-Add-in-NodeJS-SSO/blob/master/Completed/src/auth.ts)。
 
-不过，如果收到了令牌过期或令牌无效错误，代码必须指示客户端（例如，在 `401 Unauthorized` 响应的正文中）重新调用 `getAccessTokenAsync`，并重复调用加载项 Web API 终结点，这会重复执行代表流来获取新 Microsoft Graph 令牌。 
+不过，如果收到了令牌过期或令牌无效错误，代码必须指示客户端（例如，在 `401 Unauthorized` 响应的正文中）重新调用 `getAccessTokenAsync`，并重复调用加载项的Web API的端点，这会重复执行代表流来获取 Microsoft Graph 的新令牌。 
 
 ### <a name="invalid-token-error-when-calling-microsoft-graph"></a>调用 Microsoft Graph 时令牌无效错误
 
