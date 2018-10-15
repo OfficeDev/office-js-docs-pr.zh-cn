@@ -8,7 +8,7 @@ Office 命名空间提供所有 Office 应用中的加载项所使用的共享�
 
 |要求| 值|
 |---|---|
-|[最低的邮箱要求集版本](/javascript/office/requirement-sets/outlook-api-requirement-sets)| 1.0|
+|[最低的邮箱版本要求](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
 |[适用的 Outlook 模式](https://docs.microsoft.com/outlook/add-ins/#extension-points)| 撰写或阅读|
 
 ##### <a name="members-and-methods"></a>成员和方法
@@ -20,9 +20,9 @@ Office 命名空间提供所有 Office 应用中的加载项所使用的共享�
 | [EventType](#eventtype-string) | 成员 |
 | [SourceProperty](#sourceproperty-string) | 成员 |
 
-### <a name="namespaces"></a>命名空间
+### <a name="namespaces"></a>Namespaces
 
-[上下文](office.context.md)：提供 Office 加载项 API 的上下文命名空间中的共享接口以便在 Outlook 加载项 API 中使用。
+[context](office.context.md)：提供 Office 加载项 API 的上下文命名空间中的共享接口以便在 Outlook 加载项 API 中使用。
 
 [MailboxEnums](/javascript/api/outlook/office.mailboxenums.attachmenttype)：包括 ItemType、EntityType、AttachmentType、RecipientType、ResponseType 和 ItemNotificationMessageType 枚举。
 
@@ -34,20 +34,20 @@ Office 命名空间提供所有 Office 应用中的加载项所使用的共享�
 
 ##### <a name="type"></a>类型：
 
-*   字符串
+*   String
 
 ##### <a name="properties"></a>属性：
 
 |名称| 类型| 说明|
 |---|---|---|
-|`Succeeded`| 字符串|调用成功。|
-|`Failed`| 字符串|调用失败。|
+|`Succeeded`| String|调用成功。|
+|`Failed`| String|调用失败。|
 
 ##### <a name="requirements"></a>要求
 
 |要求| 值|
 |---|---|
-|[最低的邮箱要求集版本](/javascript/office/requirement-sets/outlook-api-requirement-sets)| 1.0|
+|[最低的邮箱要求集版本](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
 |[适用的 Outlook 模式](https://docs.microsoft.com/outlook/add-ins/#extension-points)| 撰写或阅读|
 
 ---
@@ -58,20 +58,20 @@ Office 命名空间提供所有 Office 应用中的加载项所使用的共享�
 
 ##### <a name="type"></a>类型：
 
-*   字符串
+*   String
 
 ##### <a name="properties"></a>属性：
 
 |名称| 类型| 说明|
 |---|---|---|
-|`Html`| 字符串|要求以 HTML 格式返回数据。|
-|`Text`| 字符串|要求以文本格式返回数据。|
+|`Html`| String|要求以 HTML 格式返回数据。|
+|`Text`| String|要求以文本格式返回数据。|
 
 ##### <a name="requirements"></a>要求
 
 |要求| 值|
 |---|---|
-|[最低的邮箱要求集版本](/javascript/office/requirement-sets/outlook-api-requirement-sets)| 1.0|
+|[最低的邮箱要求集版本](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
 |[适用的 Outlook 模式](https://docs.microsoft.com/outlook/add-ins/#extension-points)| 撰写或阅读|
 
 ---
@@ -82,23 +82,23 @@ Office 命名空间提供所有 Office 应用中的加载项所使用的共享�
 
 ##### <a name="type"></a>类型：
 
-*   字符串
+*   String
 
 ##### <a name="properties"></a>属性：
 
 | 名称 | 类型 | 说明 | 最低要求集 |
 |---|---|---|---|
-|`AppointmentTimeChanged`| 字符串 | 所选约会或系列的日期或时间已更改。 | 1.7 |
-|`ItemChanged`| 字符串 | 选定的项已更改。 | 1.5 |
-|`OfficeThemeChanged`| 字符串 | 选定的项已更改。 | 预览 |
-|`RecipientsChanged`| 字符串 | 所选项或约会地点的收件人列表已更改。 | 1.7 |
-|`RecurrenceChanged`| 字符串 | 所选系列的定期模式已更改。 | 1.7 |
+|`AppointmentTimeChanged`| String | 所选约会或系列的日期或时间已更改。 | 1.7 |
+|`ItemChanged`| String | 选定的项已更改。 | 1.5 |
+|`OfficeThemeChanged`| String | 选定的项已更改。 | 预览 |
+|`RecipientsChanged`| String | 所选项或约会地点的收件人列表已更改。 | 1.7 |
+|`RecurrenceChanged`| String | 所选系列的定期模式已更改。 | 1.7 |
 
 ##### <a name="requirements"></a>要求
 
 |要求| 值|
 |---|---|
-|[最低的邮箱要求集版本](/javascript/office/requirement-sets/outlook-api-requirement-sets)| 1.5 |
+|[最低的邮箱版本要求](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.5 |
 |[适用的 Outlook 模式](https://docs.microsoft.com/outlook/add-ins/#extension-points)| 撰写或阅读 |
 
 ---
@@ -109,18 +109,18 @@ Office 命名空间提供所有 Office 应用中的加载项所使用的共享�
 
 ##### <a name="type"></a>类型：
 
-*   字符串
+*   String
 
 ##### <a name="properties"></a>属性：
 
 |名称| 类型| 说明|
 |---|---|---|
-|`Body`| 字符串|数据源来自邮件的正文。|
-|`Subject`| 字符串|数据源来自邮件的主题。|
+|`Body`| String|数据源来自邮件的正文。|
+|`Subject`| String|数据源来自邮件的主题。|
 
 ##### <a name="requirements"></a>要求
 
 |要求| 值|
 |---|---|
-|[最低的邮箱要求集版本](/javascript/office/requirement-sets/outlook-api-requirement-sets)| 1.0|
+|[最低的邮箱要求集版本](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
 |[适用的 Outlook 模式](https://docs.microsoft.com/outlook/add-ins/#extension-points)| 撰写或阅读|
