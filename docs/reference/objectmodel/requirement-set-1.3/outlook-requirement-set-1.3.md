@@ -3,7 +3,7 @@
 适用于 Office 的 JavaScript API 的 Outlook 加载项 API 子集包括您可以在 Outlook 加载项中使用的对象、方法、属性和事件。
 
 > [!NOTE]
-> 本文档适用于最新要求集之外的[要求集](/javascript/office/requirement-sets/outlook-api-requirement-sets)。 
+> 本文档适用于最新要求集之外的[要求集](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)。 
 
 ## <a name="whats-new-in-13"></a>1.3 中的新增功能有哪些？
 

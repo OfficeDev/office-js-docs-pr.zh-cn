@@ -2,16 +2,16 @@
 title: Project 任务窗格加载项
 description: ''
 ms.date: 01/23/2018
-ms.openlocfilehash: 2aa8a88878082357949935305b9d39d203f5fb5d
-ms.sourcegitcommit: fdf7f4d686700edd6e6b04b2ea1bd43e59d4a03a
+ms.openlocfilehash: 1b7554920c0f6e76ec0b351e103781e152c70a9d
+ms.sourcegitcommit: c53f05bbd4abdfe1ee2e42fdd4f82b318b363ad7
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/28/2018
-ms.locfileid: "25348161"
+ms.lasthandoff: 10/12/2018
+ms.locfileid: "25506103"
 ---
 # <a name="task-pane-add-ins-for-project"></a>Project 任务窗格加载项
 
-Project Standard 2013 和 Project Professional 2013（15.1 或更高版本）同时包括对任务窗格加载项的支持。您可以运行为  Word 或 Excel 2013 开发的常规任务窗格加载项。 您还可以开发自定义加载项，用于处理项目中的所选事件，并将任务、资源、视图和其他项目中的单元格级别数据与 SharePoint 列表、SharePoint 加载项、Web 部件、web 服务和企业应用程序相集成。
+Project Standard 2013 和 Project Professional 2013（15.1 或更高版本）都支持任务窗格加载项。你可以运行为 Word 2013 或 Excel 2013 开发的常规任务窗格加载项。还可以开发在 Project 中处理选择事件的自定义加载项，并将项目中的任务、资源、视图和其他单元格级别的数据与 SharePoint 列表、SharePoint 加载项、Web 部件、Web 服务和企业应用程序相集成。
 
 > [!NOTE]
 > [Project 2013 SDK 下载](https://www.microsoft.com/download/details.aspx?id=30435%20)包括展示如何使用 Project 加载项对象模型，以及如何在 Project Server 2013 中使用 OData 报表数据服务的示例加载项。提取和安装 SDK 时，请查看 `\Samples\Apps\` 子目录。
@@ -204,7 +204,7 @@ Project 加载项方案包括以下几种：
 
 - [Office 加载项平台概述](../overview/office-add-ins.md)
 - [Office 加载项 XML 清单](../develop/add-in-manifests.md)
-- [适用于 Office 的 JavaScript API](https://docs.microsoft.com/javascript/office/javascript-api-for-office?view=office-js)
+- [适用于 Office 的 JavaScript API](https://docs.microsoft.com/office/dev/add-ins/reference/javascript-api-for-office?view=office-js)
 - [使用文本编辑器创建首个 Project 2013 任务窗格加载项](create-your-first-task-pane-add-in-for-project-by-using-a-text-editor.md)
 - [创建将 REST 与本地 Project Server OData 服务结合使用的 Project 加载项](create-a-project-add-in-that-uses-rest-with-an-on-premises-odata-service.md)
 - [将 Project 任务窗格加载项连接到 PWA](http://blogs.msdn.com/b/project_programmability/archive/2012/11/02/connecting-a-project-task-pane-app-to-pwa.aspx)

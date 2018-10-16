@@ -57,7 +57,7 @@ vue init webpack my-add-in
     ![Yeoman 生成器](../images/yo-office.png)
     
     > [!NOTE]
-    > 如果系统提示覆盖 **package.json**，请回答**否**（不覆盖）。
+    > 如果系统提示覆盖 ** package.json** ，请回答** 否**（不覆盖）。
 
 ## <a name="secure-the-app"></a>保护应用
 
@@ -210,4 +210,4 @@ vue init webpack my-add-in
 * [Excel 加载项教程](../tutorials/excel-tutorial-create-table.md)
 * [使用 Excel JavaScript API 的基本编程概念](../excel/excel-add-ins-core-concepts.md)
 * [Excel 加载项代码示例](https://developer.microsoft.com/office/gallery/?filterBy=Samples,Excel)
-* [Excel JavaScript API 参考](https://docs.microsoft.com/javascript/office/overview/excel-add-ins-reference-overview?view=office-js)
+* [Excel JavaScript API 参考](https://docs.microsoft.com/office/dev/add-ins/reference/overview/excel-add-ins-reference-overview?view=office-js)

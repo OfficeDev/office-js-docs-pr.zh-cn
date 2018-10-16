@@ -2,12 +2,12 @@
 title: 使用 Excel JavaScript API 处理数据透视表
 description: 使用 Excel JavaScript API 创建数据透视表并与其组件交互。
 ms.date: 09/21/2018
-ms.openlocfilehash: 00dd982d4ba4de0db34277cd546b572d4394e258
-ms.sourcegitcommit: 563c53bac52b31277ab935f30af648f17c5ed1e2
+ms.openlocfilehash: a3ff624f8e4e6652834f0a424b482b372c6f2401
+ms.sourcegitcommit: c53f05bbd4abdfe1ee2e42fdd4f82b318b363ad7
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/10/2018
-ms.locfileid: "25459278"
+ms.lasthandoff: 10/12/2018
+ms.locfileid: "25505907"
 ---
 # <a name="work-with-pivottables-using-the-excel-javascript-api"></a>使用 Excel JavaScript API 处理数据透视表
 
@@ -156,7 +156,7 @@ await Excel.run(async (context) => {
 
 ## <a name="change-aggregation-function"></a>更改汇总函数
 
-数据层次结构可以聚合其值。对于数字的数据集，这是默认情况下的总和。 `summarizeBy` 属性根据 `AggregrationFunction` 类型定义了此行为。 
+数据层次结构可以聚合赋值。对于数字的数据集，默认情况下为总和。 `summarizeBy` 属性根据[AggregrationFunction](https://docs.microsoft.com/javascript/api/excel/excel.aggregationfunction) 类型定义行为。 
 
 当前支持的汇总函数类型为 `Sum` 、 `Count` 、 `Average` 、 `Max` 、 `Min` 、 `Product` 、 `CountNumbers` 、 `StandardDeviation` 、 `StandardDeviationP` 、 `Variance` 、 `VarianceP` 、 和 `Automatic` （默认）。
 
@@ -175,14 +175,14 @@ await Excel.run(async (context) => {
 });
 ```
 
-## <a name="change-calculations-with-a-showasrule"></a>更改 ShowAsRule 计算
+## <a name="change-calculations-with-a-showasrule"></a>使用 ShowAsRule 更改计算
 
-数据透视表在默认情况下独立聚合了它们行和列的层次结构的数据。一个 `ShowAsRule` 根据数据透视表中的其他项改变了数据层次结构的输出值。
+数据透视表在默认情况下独立聚合了行和列的层次结构的数据。一个 [ShowAsRule](https://docs.microsoft.com/javascript/api/excel/excel.showasrule)  根据数据透视表中的其他项改变了数据层次结构的输出值。
 
 此 `ShowAsRule` 对象具有三种属性：
 -   `calculation`：相对于数据层次结构的计算类型（默认是 `none`）。
--   `baseField`: 计算之前包含了基准数据的层次结构内的字段会被应用。 `PivotField` 通常具有其父层次结构相同的名称。
--   `baseItem`: 根据计算类型与基本字段的值进行比较的单项。并非所有计算都需要此字段。
+-   `baseField`: 应用在计算前包含了基准数据层次结构内的字段。 [PivotField](https://docs.microsoft.com/javascript/api/excel/excel.pivotfield)  通常具有与其父层次结构相同的名称。
+-   `baseItem`: 根据计算类型与基本字段的值进行比较的单项[PivotItem](https://docs.microsoft.com/javascript/api/excel/excel.pivotitem) 。并非所有计算都需要此字段。
 
 下面的示例将 **Sum of Crates Sold at Farm** 数据层次结构的计算设置为列总计的百分比。我们仍希望此粒度扩展到水果类型的级别，因此我们将使用 **Type** 行层次结构及其基础字段。此示例还将 **Farm** 作为第一个行层次结构，因此农场的总项还显示了每个农场负责生产的百分比。
 
@@ -235,7 +235,7 @@ await Excel.run(async (context) => {
 
 ## <a name="pivottable-layouts"></a>数据透视表布局
 
-数据透视表布局定义了层次结构和其数据的位置。您可访问此布局以确定存储数据的区域。 
+[PivotLayout](https://docs.microsoft.com/javascript/api/excel/excel.pivotlayout) 定义了层次结构和其数据的位置。您可访问此布局以确定存储数据的区域。 
 
 下图显示了哪个布局函数调用对应哪个数据透视表范围。
 
