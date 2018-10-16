@@ -2,13 +2,13 @@
 
 # <a name="office"></a>Office
 
-该 Office 命名空间提供所有 Office 应用中的加载项所使用的共享接口。此列表仅记录 Outlook 加载项所使用的那些接口。有关 Office 命名空间的完整列表，请参阅[共享 API](/javascript/api/office)。
+Office 命名空间提供所有 Office 应用中的加载项所使用的共享接口。此列表仅记录 Outlook 加载项所使用的那些接口。有关 Office 命名空间的完整列表，请参阅[共享 API](/javascript/api/office)。
 
 ##### <a name="requirements"></a>要求
 
 |要求| 值|
 |---|---|
-|[最低的邮箱版本要求](/javascript/office/requirement-sets/outlook-api-requirement-sets)| 1.0|
+|[最低的邮箱版本要求](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
 |[适用的 Outlook 模式](https://docs.microsoft.com/outlook/add-ins/#extension-points)| 撰写或阅读|
 
 ##### <a name="members-and-methods"></a>成员和方法
@@ -20,7 +20,7 @@
 | [EventType](#eventtype-string) | 成员 |
 | [SourceProperty](#sourceproperty-string) | 成员 |
 
-### <a name="namespaces"></a>命名空间
+### <a name="namespaces"></a>Namespaces
 
 [context](office.context.md)：提供 Office 加载项 API 的上下文命名空间中的共享接口以便在 Outlook 加载项 API 中使用。
 
@@ -47,12 +47,12 @@
 
 |要求| 值|
 |---|---|
-|[最低的邮箱版本要求](/javascript/office/requirement-sets/outlook-api-requirement-sets)| 1.0|
+|[最低的邮箱版本要求](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
 |[适用的 Outlook 模式](https://docs.microsoft.com/outlook/add-ins/#extension-points)| 撰写或阅读|
 
 ---
 
-####  <a name="coerciontype-string"></a>CoercionType :String
+####  <a name="coerciontype-string"></a>CoercionType :字符串
 
 指定如何强制由调用方法返回或设置的数据。
 
@@ -64,19 +64,19 @@
 
 |名称| 类型| 说明|
 |---|---|---|
-|`Html`| String|请求以 HTML 格式返回的数据。|
-|`Text`| String|请求以文本格式返回的数据。|
+|`Html`| String|要求以 HTML 格式返回数据。|
+|`Text`| String|要求以文本格式返回数据。|
 
 ##### <a name="requirements"></a>要求
 
 |要求| 值|
 |---|---|
-|[最低的邮箱版本要求](/javascript/office/requirement-sets/outlook-api-requirement-sets)| 1.0|
+|[最低的邮箱要求集版本](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
 |[适用的 Outlook 模式](https://docs.microsoft.com/outlook/add-ins/#extension-points)| 撰写或阅读|
 
 ---
 
-####  <a name="eventtype-string"></a>EventType :String
+####  <a name="eventtype-string"></a>EventType :字符串
 
 指定与事件处理程序相关联的事件。
 
@@ -94,12 +94,12 @@
 
 |要求| 值|
 |---|---|
-|[最低的邮箱版本要求](/javascript/office/requirement-sets/outlook-api-requirement-sets)| 1.5 |
+|[最低邮箱要求集版本](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.5 |
 |[适用的 Outlook 模式](https://docs.microsoft.com/outlook/add-ins/#extension-points)| 撰写或阅读 |
 
 ---
 
-####  <a name="sourceproperty-string"></a>SourceProperty :String
+####  <a name="sourceproperty-string"></a>SourceProperty :字符串
 
 指定由调用方法返回的数据源。
 
@@ -118,5 +118,5 @@
 
 |要求| 值|
 |---|---|
-|[最低的邮箱版本要求](/javascript/office/requirement-sets/outlook-api-requirement-sets)| 1.0|
+|[最低的邮箱版本要求](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
 |[适用的 Outlook 模式](https://docs.microsoft.com/outlook/add-ins/#extension-points)| 撰写或阅读|
