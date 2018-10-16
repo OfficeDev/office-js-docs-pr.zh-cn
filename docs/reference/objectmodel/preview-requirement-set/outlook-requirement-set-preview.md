@@ -3,7 +3,7 @@
 适用于 Office 的 JavaScript API 的 Outlook 加载项 API 子集包括您可以在 Outlook 加载项中使用的对象、方法、属性和事件。
 
 > [!NOTE]
-> 本文档适用于**预览**[要求集](/javascript/office/requirement-sets/outlook-api-requirement-sets)。 此要求集尚未完全实施，客户端不会准确报告对它的支持。 不应在加载项清单中指定此要求集。 不应在加载项清单中指定此要求集。
+> 本文档适用于**预览**[要求集](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)。 此要求集尚未完全实施，客户端不会准确报告对它的支持。 不应在加载项清单中指定此要求集。 不应在加载项清单中指定此要求集。
 
 预览要求集包括[要求集 1.7](../requirement-set-1.7/outlook-requirement-set-1.7.md) 的所有功能。
 
