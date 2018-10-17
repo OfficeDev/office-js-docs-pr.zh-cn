@@ -1,13 +1,13 @@
 ---
 title: 生成首个 Word 加载项
 description: ''
-ms.date: 12/29/2017
+ms.date: 10/16/2018
 ROBOTS: NOINDEX
-ms.openlocfilehash: f4d0fc9c874d262b4a23fd006a9ffcef31aeaaad
-ms.sourcegitcommit: 7ecc1dc24bf7488b53117d7a83ad60e952a6f7aa
+ms.openlocfilehash: 716cea59614b81a97cce829be11e50b2be9e1c54
+ms.sourcegitcommit: f47654582acbe9f618bec49fb97e1d30f8701b62
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/23/2018
-ms.locfileid: "19438401"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "25579784"
 ---
 [!include[Word add-ins get started](../includes/file-get-started-word.md)]

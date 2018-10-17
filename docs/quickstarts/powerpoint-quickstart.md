@@ -1,12 +1,12 @@
 ---
 title: 生成首个 PowerPoint 加载项
 description: ''
-ms.date: 12/29/2017
-ms.openlocfilehash: 28ec725aa65a7609cad38381cd06d1f9e1a57bf6
-ms.sourcegitcommit: 7ecc1dc24bf7488b53117d7a83ad60e952a6f7aa
+ms.date: 10/16/2018
+ms.openlocfilehash: 8bb296a22d0ccc6970a0c53deaba78558db560f3
+ms.sourcegitcommit: f47654582acbe9f618bec49fb97e1d30f8701b62
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/23/2018
-ms.locfileid: "19438597"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "25579686"
 ---
 [!include[Build your first PowerPoint add-in](../includes/file-get-started-powerpoint.md)]
