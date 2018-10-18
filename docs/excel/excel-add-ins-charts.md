@@ -2,20 +2,20 @@
 title: 使用 Excel JavaScript API 处理图表
 description: ''
 ms.date: 12/04/2017
-ms.openlocfilehash: 831ca5805b1ade5a2a826f5d043831fcf59da8a0
-ms.sourcegitcommit: 30435939ab8b8504c3dbfc62fd29ec6b0f1a7d22
+ms.openlocfilehash: 80b537ec66caf6e173dfe4453a257c5963156e6f
+ms.sourcegitcommit: 563c53bac52b31277ab935f30af648f17c5ed1e2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "23944132"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "25459299"
 ---
 # <a name="work-with-charts-using-the-excel-javascript-api"></a>使用 Excel JavaScript API 处理图表
 
-本文提供了代码示例，介绍如何使用 Excel JavaScript API 对图表执行常见任务。 有关 **Chart** 和 **ChartCollection** 对象支持的属性和方法的完整列表，请参阅 [Chart 对象 (Excel JavaScript API)](https://docs.microsoft.com/javascript/api/excel/excel.chart?view=office-js) 和 [Chart Collection 对象 (Excel JavaScript API)](https://docs.microsoft.com/javascript/api/excel/excel.chartcollection?view=office-js)。
+本文提供了显示如何使用 Excel JavaScript API 的图表使用执行常见任务的代码示例。有关的属性和方法的 **图表** 和 **ChartCollection** 对象支持的完整列表，请参阅 [Chart 对象 (Excel 的 JavaScript API)](https://docs.microsoft.com/javascript/api/excel/excel.chart?view=office-js) 和 [图表集合对象 (Excel 的 JavaScript API)](https://docs.microsoft.com/javascript/api/excel/excel.chartcollection?view=office-js)。
 
 ## <a name="create-a-chart"></a>创建图表
 
-下面的代码示例在名为 **Sample** 的工作表中创建一个图表。 该图表是基于区域 **A1:B13** 的数据的**折线**图。
+下面的代码示例创建名为 **示例**工作表中的图表。 **取决于** A1:B13 **范围中的数据的折线图**图表。
 
 ```js
 Excel.run(function (context) {
@@ -40,7 +40,7 @@ Excel.run(function (context) {
 
 ## <a name="add-a-data-series-to-a-chart"></a>向图表添加数据系列
 
-下面的代码示例向工作表中的第一个图表添加数据系列。 新的数据系列对应于“2016 年”**** 列，并以区域 **D2:D5** 中的数据为依据。
+下面的代码示例向工作表中的第一个图表的数据系列。新数据系列对应于名为 **2016年** 的列，并取决于 **D2:D5**范围中的数据。
 
 ```js
 Excel.run(function (context) {
@@ -188,4 +188,4 @@ Excel.run(function (context) {
 
 ## <a name="see-also"></a>另请参阅
 
-- [Excel JavaScript API 核心概念](excel-add-ins-core-concepts.md)
+- [使用 Excel JavaScript API 的基本编程概念](excel-add-ins-core-concepts.md)
