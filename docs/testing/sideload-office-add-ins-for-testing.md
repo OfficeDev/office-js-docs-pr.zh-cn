@@ -2,12 +2,12 @@
 title: 在 Office Online 中旁加载 Office 加载项以供测试
 description: ''
 ms.date: 12/04/2017
-ms.openlocfilehash: 69b255545525ff667618c9f8bd1e1b7953592967
-ms.sourcegitcommit: 58af795c3d0393a4b1f6425fa1cbdca1e48fb473
+ms.openlocfilehash: 10e236366012bb402b968d0f61ea64326bb9172d
+ms.sourcegitcommit: 4de2a1b62ccaa8e51982e95537fc9f52c0c5e687
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/29/2018
-ms.locfileid: "20138847"
+ms.lasthandoff: 08/10/2018
+ms.locfileid: "22925302"
 ---
 # <a name="sideload-office-add-ins-in-office-online-for-testing"></a>在 Office Online 中旁加载 Office 加载项以供测试
 
@@ -17,7 +17,7 @@ ms.locfileid: "20138847"
 
 
 > [!NOTE]
-> 如本文所述，Word、Excel 和 PowerPoint 支持旁加载。若要旁加载 Outlook 外接程序，请参阅[旁加载 Outlook 外接程序进行测试](https://docs.microsoft.com/en-us/outlook/add-ins/sideload-outlook-add-ins-for-testing)。
+> 如本文所述，Word、Excel 和 PowerPoint 支持旁加载。若要旁加载 Outlook 外接程序，请参阅[旁加载 Outlook 外接程序进行测试](https://docs.microsoft.com/outlook/add-ins/sideload-outlook-add-ins-for-testing)。
 
 下面的视频逐步展示了如何在 Office 桌面或 Office Online 上旁加载加载项。  
 

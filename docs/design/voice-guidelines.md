@@ -13,7 +13,7 @@
 
 ## <a name="see-also"></a>另请参阅
 
-- [所有能力编写](https://docs.microsoft.com/en-us/style-guide/accessibility/writing-all-abilities)指南
-- [Microsoft 风格和语气的十大提示](https://docs.microsoft.com/en-us/style-guide/top-10-tips-style-voice)
-- [单词选择](https://docs.microsoft.com/en-us/style-guide/word-choice/)指南
--  Office 加载项[验证策略](https://docs.microsoft.com/en-us/office/dev/store/validation-policies)
+- [所有能力编写](https://docs.microsoft.com/style-guide/accessibility/writing-all-abilities)指南
+- [Microsoft 风格和语气的十大提示](https://docs.microsoft.com/style-guide/top-10-tips-style-voice)
+- [单词选择](https://docs.microsoft.com/style-guide/word-choice/)指南
+-  Office 加载项[验证策略](https://docs.microsoft.com/office/dev/store/validation-policies)

@@ -3,7 +3,7 @@
 > [!NOTE]
 > 此页面介绍了 Word 加载项教程的步骤之一。如果是通过搜索引擎结果或其他直接链接到达此页面，请转到 [Word 加载项教程](../tutorials/word-tutorial.yml)介绍性页面，从头开始学习本教程。
 
-开始执行本教程的这一步之前，建议通过 Word UI 创建和控制格式文本内容控件，以便熟悉此类控件及其属性。 有关详细信息，请参阅[在 Word 中创建用户填写或打印的表单](https://support.office.com/en-us/article/create-forms-that-users-complete-or-print-in-word-040c5cc1-e309-445b-94ac-542f732c8c8b)。
+开始执行本教程的这一步之前，建议通过 Word UI 创建和控制格式文本内容控件，以便熟悉此类控件及其属性。 有关详细信息，请参阅[在 Word 中创建用户填写或打印的表单](https://support.office.com/article/create-forms-that-users-complete-or-print-in-word-040c5cc1-e309-445b-94ac-542f732c8c8b)。
 
 > [!NOTE]
 > 虽然可通过 UI 添加到 Word 文档的内容控件有好几种，但目前 Word.js 仅支持格式文本内容控件。
@@ -105,14 +105,14 @@
 
 7. 将 `TODO1` 替换为以下代码。 
     > [!NOTE]
-    > `ContentControlCollection.getByTag` 方法返回指定标记的所有内容控件的一个 `ContentControlCollection`。 我们用 `getFirst` 获得对所需控件的引用。
+    > 方法返回指定标记的所有内容控件的一个 `ContentControlCollection`。`ContentControlCollection.getByTag` 我们用 `getFirst` 获得对所需控件的引用。
 
     ```js
     const serviceNameContentControl = context.document.contentControls.getByTag("serviceName").getFirst();
     serviceNameContentControl.insertText("Fabrikam Online Productivity Suite", "Replace");
     ``` 
 
-## <a name="test-the-add-in"></a>测试外接程序
+## <a name="test-the-add-in"></a>测试加载项
 
 1. 如果上一阶段教程中的 Git Bash 窗口或已启用 Node.JS 的系统命令提示符仍处于打开状态，请按 Ctrl+C 两次，停止正在运行的 Web 服务器。 否则，打开 Git Bash 窗口或已启用 Node.JS 的系统命令提示符，并转到项目的“开始”**** 文件夹。
      > [!NOTE]

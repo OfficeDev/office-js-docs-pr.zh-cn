@@ -1,13 +1,13 @@
 ---
-title: 在 Microsoft Azure 上托管 Office 加载项
-description: ''
+title: 在 Microsoft Azure 上托管 Office 加载项 | Microsoft Docs
+description: 了 解如何将外接程序 Web 应用部署到 Azure 并旁加载外接程序以在 Office 客户端应用程序中进行测试。
 ms.date: 01/25/2018
-ms.openlocfilehash: 62fc3c6dc212efc47493f2bcb3a994fb4db6a752
-ms.sourcegitcommit: 30435939ab8b8504c3dbfc62fd29ec6b0f1a7d22
+ms.openlocfilehash: 32560fdd0655fbba937140152f16cc91c2185411
+ms.sourcegitcommit: eb74e94d3e1bc1930a9c6582a0a99355d0da34f2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "23945563"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "25004999"
 ---
 # <a name="host-an-office-add-in-on-microsoft-azure"></a>在 Microsoft Azure 上托管 Office 加载项
 
@@ -25,12 +25,12 @@ ms.locfileid: "23945563"
 2. 安装 Office。 
     
     > [!NOTE]
-    > 如果尚未安装 Office 2016，可以[注册 1 个月免费试用版](http://office.microsoft.com/try/?WT%2Eintid1=ODC%5FENUS%5FFX101785584%5FXT104056786)。
+    > 如果尚未安装 Office，可以[注册 1 个月免费试用版](https://products.office.com/en-US/try?legRedir=true&WT.intid1=ODC_ENUS_FX101785584_XT104056786&CorrelationId=64c762de-7a97-4dd1-bb96-e231d7485735)。
 
 3.  获取 Azure 订阅。
     
     > [!NOTE]
-    > 如果还没有 Azure 订阅，可以[通过 MSDN 订阅获取 Azure 订阅](http://www.windowsazure.com/pricing/member-offers/msdn-benefits/)，也可以[注册免费试用版](https://azure.microsoft.com/pricing/free-trial)。 
+    > 如果还没有 Azure 订阅，可以[通过 Visual Studio 订阅获取](https://azure.microsoft.com/en-us/pricing/member-offers/visual-studio-subscriptions/)，也可以[注册免费试用版](https://azure.microsoft.com/pricing/free-trial)。 
 
 ## <a name="step-1-create-a-shared-folder-to-host-your-add-in-xml-manifest-file"></a>第 1 步：创建用于托管加载项 XML 清单文件的共享文件夹
 
@@ -49,10 +49,10 @@ ms.locfileid: "23945563"
 
 ## <a name="step-2-add-the-file-share-to-the-trusted-add-ins-catalog"></a>第 2 步：将文件共享添加到受信任的加载项目录
 
-1.  启动 Word 2016 并创建文档。
+1.  启动 Word 并创建文档。
 
     > [!NOTE]
-    > 尽管本示例使用的是 Word 2016，但也可以使用任何支持 Office 加载项的 Office 应用（如 Excel、Outlook、PowerPoint 或 Project 2016）。
+    > 尽管本示例使用的是 Word，但也可以使用任何支持 Office 加载项的 Office 应用（如 Excel、Outlook、PowerPoint 或 Project）。
     
 2.  选择“文件”**** > “选项”****。
     
@@ -172,9 +172,9 @@ Visual Studio 将创建基本的 Word 外接程序，你可以按原样发布，
     
 2. 展开 Office 外接程序项目（例如 WordWebAddIn），右键单击清单文件夹，然后选择“打开”****。随即打开外接程序 XML 清单文件。
     
-3. 在 XML 清单文件中，找到所有的 ＂~remoteAppUrl＂实例，并将其全部替换为 Azure 上的外接程序 Web 应用的根 URL。 这就是之前在将外接程序 Web 应用发布到 Azure 后复制的 URL（例如：https://YourDomain.azurewebsites.net)）。 
+3. 在 XML 清单文件中，找到所有的 "~remoteAppUrl" 实例，并将其全部替换为 Azure 上的外接程序 Web 应用的根 URL。 这就是之前在将外接程序 Web 应用发布到 Azure 后复制的 URL（例如：https://YourDomain.azurewebsites.net)）。 
     
-4. |||UNTRANSLATED_CONTENT_START|||Choose **File** and then choose **Save All**. Close the add-in XML manifest file.|||UNTRANSLATED_CONTENT_END|||
+4. 选择“文件”****，然后选择“全部保存”****。关闭外接程序 XML 清单文件。
     
 5. 返回到“解决方案资源管理器”****，右键单击清单文件夹并选择“在文件资源管理器中打开文件夹”****。
     
@@ -184,7 +184,7 @@ Visual Studio 将创建基本的 Word 外接程序，你可以按原样发布，
 
 ## <a name="step-7-insert-and-run-the-add-in-in-the-office-client-application"></a>步骤 7：在 Office 客户端应用程序中插入并运行加载项
 
-1. 启动 Word 2016 并创建文档。
+1. 启动 Word 并创建文档。
     
 2. 在功能区中选择“插入”**** > “我的外接程序”****。 
     

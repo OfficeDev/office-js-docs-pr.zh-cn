@@ -30,8 +30,8 @@
 
 7. 将 `TODO3` 替换为以下代码。 请注意以下几点：
    - Word.js 业务逻辑会添加到传递给 `Word.run` 的函数中。 此逻辑不会立即执行， 而是添加到挂起命令队列中。
-   - `context.sync` 方法将所有已排入队列的命令都发送到 Word 以供执行。
-   - `Word.run` 后跟 `catch` 块。 这是应始终遵循的最佳做法。 
+   - 方法将所有已排入队列的命令都发送到 Word 以供执行。`context.sync`
+   - 后跟 `catch` 块。`Word.run` 这是应始终遵循的最佳做法。 
 
     ```js
     function insertParagraph() {
@@ -51,7 +51,7 @@
     ``` 
 
 8. 将 `TODO4` 替换为下面的代码。请注意以下几点：
-   - `insertParagraph` 方法的第一个参数是新段落的文本。
+   - 方法的第一个参数是新段落的文本。`insertParagraph`
    - 第二个参数是应在正文中的什么位置插入段落。 如果父对象为正文，其他段落插入选项包括“End”和“Replace”。 
 
     ```js
@@ -62,14 +62,14 @@
 
 ## <a name="test-the-add-in"></a>测试加载项
 
-1. 打开 Git Bash 窗口或已启用 Node.JS 的系统命令提示符，并转到项目的“开始”****文件夹。
+1. 打开 Git Bash 窗口或已启用 Node.JS 的系统命令提示符，并转到项目的“开始”**** 文件夹。
 2. 运行命令 `npm run build`，以将 ES6 源代码转换为所有可运行 Office 加载项的主机支持的旧版 JavaScript。
 3. 运行命令 `npm start`，以启动在 localhost 上运行的 Web 服务器。   
 4. 通过以下方法之一旁加载加载项：
     - Windows：[在 Windows 上旁加载 Office 加载项](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)
     - Word Online：[在 Office Online 中旁加载 Office 加载项](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-on-office-online)
     - iPad 和 Mac：[在 iPad 和 Mac 上旁加载 Office 加载项](../testing/sideload-an-office-add-in-on-ipad-and-mac.md)
-5. 在 Word 的“开始”****菜单中，选择“显示任务窗格”****。
+5. 在 Word 的“开始”**** 菜单中，选择“显示任务窗格”****。
 6. 在任务窗格中，选择“插入段落”****。
 7. 在段落中进行一些更改。 
 8. 再次选择“插入段落”****。 观察新段落是否位于上一段落之上，因为 `insertParagraph` 方法要在文档正文的“开头”插入内容。

@@ -2,12 +2,12 @@
 title: 使用 Excel JavaScript API 处理图表
 description: ''
 ms.date: 12/04/2017
-ms.openlocfilehash: c0f45892cb937a565a6855390344855f75e7473e
-ms.sourcegitcommit: c72c35e8389c47a795afbac1b2bcf98c8e216d82
+ms.openlocfilehash: 3ba9e12076203aa5ae738abb2a9f32199b58ae22
+ms.sourcegitcommit: 9685fd83136bd2106f4c5595bda0010bc1b1950b
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/23/2018
-ms.locfileid: "19437442"
+ms.lasthandoff: 07/19/2018
+ms.locfileid: "20596510"
 ---
 # <a name="work-with-charts-using-the-excel-javascript-api"></a>使用 Excel JavaScript API 处理图表
 
@@ -41,9 +41,6 @@ Excel.run(function (context) {
 ## <a name="add-a-data-series-to-a-chart"></a>向图表添加数据系列
 
 下面的代码示例向工作表中的第一个图表添加数据系列。 新的数据系列对应于“2016 年”**** 列，并以区域 **D2:D5** 中的数据为依据。
-
-> [!NOTE]
-> 此示例使用的 API 暂仅在公共预览版 (beta) 中提供。 要运行此示例，必须使用 Office.js CDN 的 beta 库： https://appsforoffice.microsoft.com/lib/beta/hosted/office.js。
 
 ```js
 Excel.run(function (context) {
@@ -112,9 +109,6 @@ Excel.run(function (context) {
 
 下面的代码示例将工作表中首个图表的数值轴显示单位设置为“百”****。
 
-> [!NOTE]
-> 此示例使用的 API 暂仅在公共预览版 (beta) 中提供。 要运行此示例，必须使用 Office.js CDN 的 beta 库： https://appsforoffice.microsoft.com/lib/beta/hosted/office.js。
-
 ```js
 Excel.run(function (context) {
     var sheet = context.workbook.worksheets.getItem("Sample");
@@ -155,9 +149,6 @@ Excel.run(function (context) {
 
 下面的代码示例向 **Sample** 工作表中首个图表的第一个系列添加移动均线。趋势线显示超过 5 个周期的移动平均。
 
-> [!NOTE]
-> 此示例使用的 API 暂仅在公共预览版 (beta) 中提供。 要运行此示例，必须使用 Office.js CDN 的 beta 库： https://appsforoffice.microsoft.com/lib/beta/hosted/office.js。
-
 ```js
 Excel.run(function (context) {
     var sheet = context.workbook.worksheets.getItem("Sample");
@@ -177,9 +168,6 @@ Excel.run(function (context) {
 ### <a name="update-a-trendline"></a>更新趋势线
 
 下面的代码示例将 **Sample** 工作表中首个图表的第一个系列的趋势线设置为“线性”**** 类型。
-
-> [!NOTE]
-> 此示例使用的 API 暂仅在公共预览版 (beta) 中提供。 要运行此示例，必须使用 Office.js CDN 的 beta 库： https://appsforoffice.microsoft.com/lib/beta/hosted/office.js。
 
 ```js
 Excel.run(function (context) {

@@ -2,12 +2,12 @@
 title: Office 加载项的隐私和安全
 description: ''
 ms.date: 01/23/2018
-ms.openlocfilehash: 76408abe96b07e793a72a8cbd177a29428366dd0
-ms.sourcegitcommit: 4de2a1b62ccaa8e51982e95537fc9f52c0c5e687
+ms.openlocfilehash: e627c847f203205b808918acf3af3154bdbe04ce
+ms.sourcegitcommit: 30435939ab8b8504c3dbfc62fd29ec6b0f1a7d22
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/10/2018
-ms.locfileid: "22925526"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "23945577"
 ---
 # <a name="privacy-and-security-for-office-add-ins"></a>Office 加载项的隐私和安全
 
@@ -104,7 +104,7 @@ Outlook 外接程序通过特定的资源使用率监视提供额外安全和性
 
 下面列出了对 Office 外接程序开发人员的一些特定 PII 保护准则：
 
-- [Settings](https://dev.office.com/reference/add-ins/shared/settings) 对象旨在保存内容加载项或任务窗格加载项的会话之间的加载项设置和状态数据，但不会在 **Settings** 对象中存储密码和其他敏感 PII。最终用户无法查看 **Settings** 对象中的数据，但该数据存储为文档的易于访问的文件格式的一部分。你应该限制加载项对 PII 的使用，并将加载项所需的任何 PII 存储在将加载项作为用户保护的资源托管的服务器上。
+- [Settings](https://docs.microsoft.com/javascript/api/office/office.settings?view=office-js) 对象旨在保存内容加载项或任务窗格加载项的会话之间的加载项设置和状态数据，但不会在 **Settings** 对象中存储密码和其他敏感 PII。最终用户无法查看 **Settings** 对象中的数据，但该数据存储为文档的易于访问的文件格式的一部分。你应该限制加载项对 PII 的使用，并将加载项所需的任何 PII 存储在将加载项作为用户保护的资源托管的服务器上。
 
 - 使用某些应用程序可能会泄露 PII。请确保安全地存储用户的身份、位置、访问时间和任何其他凭据数据，以便该加载项的其他用户无法访问该数据。
 
@@ -118,7 +118,7 @@ Outlook 外接程序通过特定的资源使用率监视提供额外安全和性
 
 ### <a name="permissions-choices"></a>权限选择
 
-外接程序平台提供了一种权限模型，外接程序可以使用它来声明对其功能所需的用户数据的访问级别。 每个权限级别都对应于外接程序可以用于其功能的适用于 Office 的 JavaScript API 的子集。 例如，内容和任务窗格外接程序的 ** WriteDocument**  权限允许访问 [ Document.setSelectedDataAsync](https://dev.office.com/reference/add-ins/shared/document.setselecteddataasync) 方法，该方法允许将附加内容写入用户的文档，但不允许访问从文档中读取数据的任何方法。 此权限级别对于只需写入文档的外接程序很有意义，例如用户可以查询要插入其文档的数据的外接程序。
+外接程序平台提供了一种权限模型，外接程序可以使用它来声明对其功能所需的用户数据的访问级别。 每个权限级别都对应于外接程序可以用于其功能的适用于 Office 的 JavaScript API 的子集。 例如，内容和任务窗格外接程序的 ** WriteDocument**  权限允许访问 [ Document.setSelectedDataAsync](https://docs.microsoft.com/javascript/api/office/office.document?view=office-js) 方法，该方法允许将附加内容写入用户的文档，但不允许访问从文档中读取数据的任何方法。 此权限级别对于只需写入文档的外接程序很有意义，例如用户可以查询要插入其文档的数据的外接程序。
 
 最佳做法是应该基于“_最小特权_”原则请求权限。即应该请求外接程序正常运行所需的 API 的最小子集的访问权限。例如，如果外接程序只需要读取其功能的用户文档中的数据，则应仅请求“**ReadDocument**”权限。（但是，请注意如果请求权限不足，则会导致外接程序平台阻止外接程序使用部分 API 并将生成运行时错误。）
 

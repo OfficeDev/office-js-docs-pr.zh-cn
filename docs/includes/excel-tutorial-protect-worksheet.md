@@ -6,7 +6,7 @@
 ## <a name="configure-the-manifest-to-add-a-second-ribbon-button"></a>将清单配置为添加第二个功能区按钮
 
 1. 打开清单文件 **my-office-add-in-manifest.xml**。
-2. 找到 `<Control>` 元素。 此元素定义了“主页”功能区上一直用于启动加载项的“显示任务窗格”按钮。 将向“主页”功能区上的相同组添加第二个按钮。 在结束 Control 标记 (`</Control>`) 和结束 Group 标记 (`</Group>`) 之间，添加下列标记。
+2. 找到 `<Control>` 元素。 此元素定义了“主页”**** 功能区上一直用于启动加载项的“显示任务窗格”**** 按钮。 将向“主页”**** 功能区上的相同组添加第二个按钮。 在结束 Control 标记 (`</Control>`) 和结束 Group 标记 (`</Group>`) 之间，添加下列标记。
 
     ```xml
     <Control xsi:type="Button" id="<!--TODO1: Unique (in manifest) name for button -->">
@@ -38,7 +38,7 @@
     <Label resid="ProtectionButtonLabel" />
     ```
 
-5. `SuperTip` 元素定义了按钮的工具提示。 由于工具提示标题应与按钮标签相同，因此使用完全相同的资源 ID，即“ProtectionButtonLabel”。 工具提示说明为“单击即可启用和禁用工作表保护”。 不过，`ID` 应为“ProtectionButtonToolTip”。 因此，完成后，整个 `SuperTip` 标记应如下面的代码所示： 
+5. 元素定义了按钮的工具提示。`SuperTip` 由于工具提示标题应与按钮标签相同，因此使用完全相同的资源 ID，即“ProtectionButtonLabel”。 工具提示说明为“单击即可启用和禁用工作表保护”。 不过，`ID` 应为“ProtectionButtonToolTip”。 因此，完成后，整个 `SuperTip` 标记应如下面的代码所示： 
 
     ```xml
     <Supertip>            
@@ -102,7 +102,7 @@
 
 1. 打开文件 \function-file\function-file.js。
 
-2. 此文件已有立即调用函数表达式 (IIFE)。 由于不需要自定义初始化逻辑，因此分配到 `Office.initialize` 的函数的空主体保留不动。 （不过，请勿删除它。 `Office.initialize` 属性不得为空值或未定义。）*在 IIFE 之外*，添加下列代码。 请注意，我们向方法指定了 `args` 参数，因此方法的最后一行为 `args.completed`。 **ExecuteFunction** 类型的所有加载项命令都必须满足这项要求。 它会指示 Office 主机应用，函数已完成，且 UI 可以再次变成响应式。
+2. 此文件已有立即调用函数表达式 (IIFE)。 由于不需要自定义初始化逻辑，因此分配到 `Office.initialize` 的函数的空主体保留不动。 （不过，请勿删除它。 属性不得为空值或未定义。）*在 IIFE 之外*，添加下列代码。`Office.initialize` 请注意，我们向方法指定了 `args` 参数，因此方法的最后一行为 `args.completed`。 **ExecuteFunction** 类型的所有加载项命令都必须满足这项要求。 它会指示 Office 主机应用，函数已完成，且 UI 可以再次变成响应式。
 
     ```javascript
     function toggleProtection(args) {
@@ -122,7 +122,7 @@
     }
     ```
 
-3. 将 `TODO1` 替换为以下代码。 此代码使用处于标准切换模式的工作表对象 protection 属性。 `TODO2` 将在下一部分中进行介绍。
+3. 将 `TODO1` 替换为以下代码。 此代码使用处于标准切换模式的工作表对象 protection 属性。 将在下一部分中进行介绍。`TODO2`
 
     ```javascript
     const sheet = context.workbook.worksheets.getActiveWorksheet();
@@ -206,7 +206,7 @@
 
 ## <a name="configure-the-script-loading-html-file"></a>配置脚本加载 HTML 文件
 
-打开 /function-file/function-file.html 文件。 这是在用户按“切换工作表保护”按钮时调用的无 UI HTML 文件。 用于加载应当在按钮按下时运行的 JavaScript 方法。 将不更改此文件。 只需注意，第二个 `<script>` 标记加载 functionfile.js。
+打开 /function-file/function-file.html 文件。 这是在用户按“切换工作表保护”**** 按钮时调用的无 UI HTML 文件。 用于加载应当在按钮按下时运行的 JavaScript 方法。 将不更改此文件。 只需注意，第二个 `<script>` 标记加载 functionfile.js。
 
    > [!NOTE]
    > function-file.html 文件及其加载的 function-file.js 文件在完全独立于加载项任务窗格的 IE 进程中运行。 如果将 function-file.js 转换为与 app.js 文件相同的 bundle.js 文件，加载项必须加载 bundle.js 文件的两个副本，这就违背了绑定目的。 此外，function-file.js 文件不包含任何不受 IE 支持的 JavaScript。 出于这两点原因，此加载项根本不会转换 function-file.js。 
@@ -217,14 +217,14 @@
 2. 通过删除缓存文件夹内容，删除 Office 缓存。 若要完全清除主机中的旧版加载项，必须这样做。 
     - 对于 Windows：`%LOCALAPPDATA%\Microsoft\Office\16.0\Wef\`。
     - 对于 Mac：`/Users/{your_name_on_the_device}/Library/Containers/com.Microsoft.OsfWebHost/Data/`。
-3. 如果服务器出于任何原因而未运行，请在 Git Bash 窗口或已启用 Node.JS 的系统命令提示符中，转到项目的“开始”文件夹，再运行命令 `npm start`。 无需重新生成项目，因为唯一更改的 JavaScript 文件不属于已生成的 bundle.js。
+3. 如果服务器出于任何原因而未运行，请在 Git Bash 窗口或已启用 Node.JS 的系统命令提示符中，转到项目的“开始”**** 文件夹，再运行命令 `npm start`。 无需重新生成项目，因为唯一更改的 JavaScript 文件不属于已生成的 bundle.js。
 4. 使用更改后的新版清单文件，并通过下列方法之一，重复旁加载进程。 *应覆盖清单文件的旧副本。*
     - Windows：[在 Windows 上旁加载 Office 加载项](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)
     - Excel Online：[在 Office Online 中旁加载 Office 加载项](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-on-office-online)
     - iPad 和 Mac：[在 iPad 和 Mac 上旁加载 Office 加载项](../testing/sideload-an-office-add-in-on-ipad-and-mac.md)
 7. 打开 Excel 中的任意工作表。
-8. 在“开始”功能区上，选择“切换工作表保护”。请注意，功能区上的大部分控件都处于禁用状态（灰显），如下面的屏幕截图所示。 
+8. 在“开始”**** 功能区上，选择“切换工作表保护”****。请注意，功能区上的大部分控件都处于禁用状态（灰显），如下面的屏幕截图所示。 
 9. 选择要更改其内容的单元格。 此时，将会看到一条错误消息，提示工作表受保护。
-10. 再次选择“切换工作表保护”，此时控件重新启用，可以再次更改单元格值了。
+10. 再次选择“切换工作表保护”****，此时控件重新启用，可以再次更改单元格值了。
 
     ![Excel 教程 - 在功能区上启用工作表保护](../images/excel-tutorial-ribbon-with-protection-on.png)
