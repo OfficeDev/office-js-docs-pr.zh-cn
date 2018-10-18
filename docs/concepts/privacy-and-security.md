@@ -2,12 +2,12 @@
 title: Office 加载项的隐私和安全
 description: ''
 ms.date: 01/23/2018
-ms.openlocfilehash: e627c847f203205b808918acf3af3154bdbe04ce
-ms.sourcegitcommit: 30435939ab8b8504c3dbfc62fd29ec6b0f1a7d22
+ms.openlocfilehash: c8fb61d6366d36ab14a072af80702226fe5efa9c
+ms.sourcegitcommit: eb74e94d3e1bc1930a9c6582a0a99355d0da34f2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "23945577"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "25005048"
 ---
 # <a name="privacy-and-security-for-office-add-ins"></a>Office 加载项的隐私和安全
 
@@ -129,7 +129,7 @@ Outlook 外接程序通过特定的资源使用率监视提供额外安全和性
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
 <OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.0"
-           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+           xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance" 
            xmlns:ver="http://schemas.microsoft.com/office/appforoffice/1.0"
            xsi:type="TaskPaneApp">
 
@@ -149,7 +149,7 @@ Outlook 外接程序通过特定的资源使用率监视提供额外安全和性
 
 ### <a name="same-origin-policy"></a>同源策略
 
-由于 Office 外接程序是在 Web 浏览器控件中运行的网页，因此，它们必须遵守浏览器强制实施的同源策略：默认情况下，一个域中的网页无法执行它的域之外的其他域进行 [XmlHttpRequest](http://www.w3.org/TR/XMLHttpRequest/) Web 服务调用。
+由于 Office 外接程序是在 Web 浏览器控件中运行的网页，因此，它们必须遵守浏览器强制实施的同源策略：默认情况下，一个域中的网页无法执行它的域之外的其他域进行 [XmlHttpRequest](https://www.w3.org/TR/XMLHttpRequest/) Web 服务调用。
 
 消除此限制的一种方法是使用 JSON/P - 通过包括一个带指向承载于其他域上的某个脚本的 **src** 属性的 **script** 标记来为 Web 服务提供代理。你可以编程方式创建 **script** 标记，动态创建 **src** 属性所指向的 URL，并通过 URI 查询参数将参数传递到 URL。Web 服务提供程序创建和承载特定 URL 上的 JavaScript 代码，然后根据 URI 查询参数返回不同的脚本。随后，这些脚本将在其插入到的位置执行并按预期工作。
 
@@ -188,7 +188,7 @@ Exchange 和 SharePoint 提供了客户端代理以实现跨域访问。通常�
 
 - 如果要使用 jQuery，请使用 [.text()](http://api.jquery.com/text/) 方法，而非 [.html()](http://api.jquery.com/html/) 方法。
 
-- 使用 [toStaticHTML](http://msdn.microsoft.com/library/ie/cc848922.aspx) 方法可在将用户输入传递到 **innerHTML** 之前删除用户输入中的所有动态 HTML 元素和属性。
+- 使用 [toStaticHTML](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference) 方法可在将用户输入传递到 **innerHTML** 之前删除用户输入中的所有动态 HTML 元素和属性。
 
 - 使用 [encodeURIComponent](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/encodeuricomponent) 或 [encodeURI](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/encodeuri) 函数可对应为来自用户输入或包含用户输入的 URL 的文本进行编码。
 
@@ -254,7 +254,7 @@ Exchange 和 SharePoint 提供了客户端代理以实现跨域访问。通常�
 - [了解 Outlook 外接程序权限](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)
 - [Outlook 外接程序的激活和 JavaScript API 限制](https://docs.microsoft.com/outlook/add-ins/limits-for-activation-and-javascript-api-for-outlook-add-ins)
 - [解决 Office 外接程序中的同源策略限制](https://docs.microsoft.com/office/dev/add-ins/develop/addressing-same-origin-policy-limitations)
-- [同源策略](http://www.w3.org/Security/wiki/Same_Origin_Policy)
+- [同源策略](https://www.w3.org/Security/wiki/Same_Origin_Policy)
 - [同源策略第 1 部分：不准偷看](http://blogs.msdn.com/b/ieinternals/archive/2009/08/28/explaining-same-origin-policy-part-1-deny-read.aspx)
 - [针对 JavaScript 的同源策略](https://developer.mozilla.org/docs/Web/Security/Same-origin_policy)
 - [IE 保护模式](https://support.microsoft.com/help/2761180/apps-for-office-don-t-start-if-you-disable-protected-mode-for-the-restricted-sites-zone-in-internet-explorer)
