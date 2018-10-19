@@ -4,6 +4,8 @@
 
 ## <a name="prerequisites"></a>先决条件
 
+- [Node.js](https://nodejs.org)
+
 - 全局安装 [Vue CLI](https://github.com/vuejs/vue-cli)。
 
     ```bash
@@ -50,20 +52,17 @@ vue init webpack my-add-in
 
     - **选择一个项目类型：** `Office Add-in containing the manifest only`
     - **要将你的外接程序命名为什么?:** `My Office Add-in`
-    - **要支持哪一个 Office 客户端应用程序?:** `Excel`
-
-    完成向导后，可以使用清单文件和资源文件来构建项目。
+    - **要支持哪一个 Office 客户端应用?:** `Excel`
 
     ![Yeoman 生成器](../images/yo-office.png)
     
-    > [!NOTE]
-    > 如果系统提示覆盖 ** package.json** ，请回答** 否**（不覆盖）。
+    完成向导后，生成器将创建清单文件。
 
 ## <a name="secure-the-app"></a>保护应用
 
 [!include[HTTPS guidance](../includes/https-guidance.md)]
 
-若要为应用程序启用 HTTPS，请打开项目根目录中的 **package.json**，修改 `dev` 脚本以添加 `--https` 标记，再保存此文件。
+若要为应用程序启用 HTTPS，请打开 Vue 项目根目录中的 **package.json** 文件，修改 `dev` 脚本以添加 `--https` 标记，再保存此文件。
 
 ```json
 "dev": "webpack-dev-server --https --inline --progress --config build/webpack.dev.conf.js"
@@ -71,9 +70,11 @@ vue init webpack my-add-in
 
 ## <a name="update-the-app"></a>更新应用
 
-1. 在代码编辑器中，打开清单文件（即应用程序根目录中名称以“manifest.xml”结尾的文件）。将所有 `https://localhost:3000` 都替换为 `https://localhost:8080`，再保存此文件。
+1. 在代码编辑器中，打开 Yo Office 在 Vue 项目根目录下创建的文件夹**我的 Office 加载项**。 在该文件夹中，你将看到定义加载项设置的清单文件：**manifest.xml**。
 
-2. 打开 **index.html**，紧靠 `</head>` 标记前面添加以下 `<script>` 标记，再保存此文件。
+2. 打开清单文件，用 `https://localhost:8080` 替换所有出现的 `https://localhost:3000`，然后保存文件。
+
+3. 打开文件 **index.html**（位于 Vue 项目的根目录下），在 `</head>` 标记前添加以下 `<script>` 标记，并保存文件。
 
     ```html
     <script src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js"></script>
@@ -180,7 +181,7 @@ vue init webpack my-add-in
 
 3. 如果浏览器在加载加载项页面后没有显示任何证书错误，就可以准备测试加载项了。 
 
-## <a name="try-it-out"></a>试试看
+## <a name="try-it-out"></a>试用
 
 1. 请按照运行加载项和在 Excel 中旁加载加载项时所用平台对应的说明操作。
 
