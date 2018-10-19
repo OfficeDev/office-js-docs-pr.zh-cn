@@ -1,30 +1,30 @@
 ---
-ms.date: 10/03/2018
+ms.date: 10/17/2018
 description: 了解开发使用新 JavaScript 运行时的 Excel 自定义函数方面的主要方案。
 title: Excel 自定义函数运行时
-ms.openlocfilehash: a48b02a8ca404b51740d9052d199da934eb9312e
-ms.sourcegitcommit: 563c53bac52b31277ab935f30af648f17c5ed1e2
+ms.openlocfilehash: 333816c3916af1490d14b8344c4bb49094f9a7f9
+ms.sourcegitcommit: a6d6348075c1abed76d2146ddfc099b0151fe403
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/10/2018
-ms.locfileid: "25459103"
+ms.lasthandoff: 10/19/2018
+ms.locfileid: "25640013"
 ---
 # <a name="runtime-for-excel-custom-functions-preview"></a>Excel 自定义函数的运行时（预览）
 
-自定义函数使用的新的 JavaScript 运行时不同于加载项的其他部件所使用的运行时，如任务窗格或其他 UI 元素。 此 JavaScript 运行时旨在优化自定义函数中的计算性能并公开可用于执行在自定义函数内的常见基于 web 的操作，如请求外部数据或通过与服务器的持续连接来交换数据。 JavaScript 运行时还提供对可以在自定义函数内使用的或由加载项的其他部件使用的 `OfficeRuntime` 命名空间中的新 API 的访问权限以存储数据或显示一个对话框。 本文介绍如何使用这些自定义函数内的 API，还概述了开发自定义函数时要记住的其他注意事项。
+自定义函数使用新的JavaScript运行时，该运行时与加载项的其他部分（例如任务窗格或其他UI元素）使用的运行时不同。此JavaScript运行时旨在优化自定义函数中的计算性能，并公开可用于在自定义函数中执行常见的基于Web的操作（如请求外部数据或通过与服务器的持久连接以交换数据）的新API。JavaScript运行时还提供对 `OfficeRuntime`  命名空间中的新 API 的访问，这些 API 可以在自定义函数中使用，也可以由加载项的其他部分用于存储数据或显示对话框。 本文介绍如何在自定义函数中使用这些 API，并概述在开发自定义函数时要记住的其他注意事项。
 
 [!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
 ## <a name="requesting-external-data"></a>请求外部数据
 
-在自定义函数内，可以通过使用像 [提取](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) 那样的 API 或使用 [XmlHttpRequest (XHR)](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest)（一种发出 HTTP 请求以与服务器进行互动的标准 Web API）来请求外部数据。 在 JavaScript 运行时内，XHR 通过要求[同源策略](https://developer.mozilla.org/en-US/docs/Web/Security/Same-origin_policy)和简单 [CORS](https://www.w3.org/TR/cors/) 来实施额外的安全措施。  
+在自定义函数中，您可以使用 [Fetch](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) 等 API 或使用 [XmlHttpRequest  (XHR)](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest)  （发布 HTTP 请求以与服务器交互的一个标准 Web API）来请求外部数据。在 JavaScript  运行时中，XHR 通过要求 [同源策略](https://developer.mozilla.org/en-US/docs/Web/Security/Same-origin_policy) 和简单的 [CORS](https://www.w3.org/TR/cors/) 来实现其他安全措施。  
 
 ### <a name="xhr-example"></a>XHR 示例
 
-在下面的代码示例中，`getTemperature` 函数调用 `sendWebRequest` 函数以获取基于温度计 ID 的特定区域的温度。 `sendWebRequest` 函数使用 XHR 向可提供数据的端点发出一个 `GET` 请求。 
+在下面的代码示例中， `getTemperature` 函数调用 `sendWebRequest` 函数以根据温度计 ID 获取特定区域的温度。 `sendWebRequest` 函数使用 XHR 向可提供数据的端点发出 `GET` 请求。 
 
 > [!NOTE] 
-> 使用提取或 XHR 时，将返回新的 JavaScript `Promise`。 2018 年 9 月之前，必须指定 `OfficeExtension.Promise` 才能在 Office JavaScript API 内使用承诺，但现在仅可以使用 JavaScript `Promise`。
+> 当使用 fetch 或 XHR 时，会返回一个新的 JavaScript `Promise` 。在2018年9月之前，您必须指定 `OfficeExtension.Promise` 在 Office  JavaScript API 中使用 promises，但现在您只需使用 JavaScript `Promise` 即可。
 
 ```js
 function getTemperature(thermometerID) {
@@ -51,7 +51,7 @@ function sendWebRequest(thermometerID, data) {
 
 ## <a name="receiving-data-via-websockets"></a>通过 WebSockets 接收数据
 
-在自定义函数内，可以使用 [WebSockets](https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API) 以通过与服务器的持续连接来交换数据。 通过使用 WebSockets，自定义函数可以打开一个与服务器的连接，然后当某些事件发生时从服务器自动接收邮件，而无需显式轮询服务器以获取数据。
+在自定义函数中，您可以使用 [WebSockets](https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API) 通过与服务器的持久连接来交换数据。 通过使用 WebSockets，您的自定义函数可以打开与服务器的连接，然后在发生特定事件时自动从服务器接收消息，而无需显式轮询服务器以获取数据。
 
 ### <a name="websockets-example"></a>WebSockets 示例
 
@@ -69,9 +69,9 @@ ws.onerror = (error) => {
 
 ## <a name="storing-and-accessing-data"></a>存储和访问数据
 
-在自定义函数内（或在加载项的任何其他部件内），可以存储和使用 `OfficeRuntime.AsyncStorage` 对象访问数据。 `AsyncStorage` 是一个永久性、未加密、键值存储系统，可代替 [localStorage](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage)，而后者不能用于自定义函数内。 如使用 `AsyncStorage`，加载项最多可存储 10 MB 的数据。
+在自定义函数内（或在加载项的任何其他部分内），您可以使用 `OfficeRuntime.AsyncStorage` 对象来存储和访问数据。 `AsyncStorage` 是一个持久的，未加密的键值存储系统，它提供了 [localStorage](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage) 的替代方法，它不能在自定义函数中使用。加载项可以使用 `AsyncStorage` 来存储多达 10 MB 的数据。
 
-下列方法在 `AsyncStorage` 对象上可用：
+下面的方法在 `AsyncStorage` 对象上可用：
  
  - `getItem`
  - `setItem`
@@ -102,7 +102,7 @@ _goGetData = async () => {
 
 ## <a name="displaying-a-dialog-box"></a>显示对话框
 
-在自定义函数内（或在加载项的任何其他部件内），可以使用 `OfficeRuntime.displayWebDialogOptions` API 显示一个对话框。 此对话框 API 代替可以在任务窗格和加载项命令内但不可以在自定义函数内使用的 [Dialog API](../develop/dialog-api-in-office-add-ins.md)。
+在自定义函数内（或在加载项的任何其他部分内），您可以使用 `OfficeRuntime.displayWebDialogOptions`  API 以显示对话框。 此对话框 API 提供了 [Dialog API](../develop/dialog-api-in-office-add-ins.md) 的替代方法，可以在任务窗格和加载项命令中使用，但不能在自定义函数中使用。
 
 ### <a name="dialog-api-example"></a>Dialog API 示例 
 
@@ -189,7 +189,7 @@ function getStock (ticker) {
 
 ## <a name="additional-considerations"></a>其他注意事项
 
-为了创建一个将在多个平台（Office 加载项的关键租户之一）上运行的加载项，你不应该访问自定义函数中的文档对象模型 (DOM) 或使用像 jQuery 那样依赖于 DOM 的库。 在 Excel for Windows 上，自定义函数使用 JavaScript 运行时，所以自定义函数无法访问 DOM。
+为了创建一个将在多个平台（Office 加载项的关键租户之一）上运行的加载项，您不应访问自定义函数中的文档对象模型（DOM）或使用依赖于 DOM 像 jQuery 这样的库。 在 Excel for Windows 中，自定义函数使用 JavaScript 运行时，自定义函数无法访问 DOM。
 
 ## <a name="see-also"></a>另请参阅
 
