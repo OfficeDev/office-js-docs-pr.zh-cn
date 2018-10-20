@@ -1,13 +1,13 @@
 ---
 title: 错误处理
 description: ''
-ms.date: 12/04/2017
-ms.openlocfilehash: b07012516cbe15374d0707c157738117a9c8fe96
-ms.sourcegitcommit: 563c53bac52b31277ab935f30af648f17c5ed1e2
+ms.date: 10/16/2018
+ms.openlocfilehash: caba29f7d6949cc6d9df1498ac0a3d4f5de6c4ee
+ms.sourcegitcommit: f47654582acbe9f618bec49fb97e1d30f8701b62
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/10/2018
-ms.locfileid: "25459229"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "25579812"
 ---
 # <a name="error-handling"></a>错误处理
 
@@ -45,6 +45,32 @@ Excel.run(function (context) {
 
 > [!NOTE]
 > 如果使用 `console.log()` 将错误消息打印到控制台，那么这些消息只会在服务器上可见。最终用户不会在加载项任务窗格或主机应用的其他任何位置看到这些错误消息。
+
+## <a name="error-messages"></a>错误消息
+
+下表定义了 API 可能返回的错误列表。
+
+|error.code | error.message |
+|:----------|:--------------|
+|InvalidArgument |自变量无效、缺少或格式不正确。|
+|InvalidRequest  |无法处理此请求。|
+|InvalidReference|此引用对于当前操作无效。|
+|InvalidBinding  |由于之前的更新，此对象绑定不再有效。|
+|InvalidSelection|当前选定内容对于此操作无效。|
+|Unauthenticated |所需的身份验证信息缺少或无效。|
+|AccessDenied |无法执行所请求的操作。|
+|ItemNotFound |所请求的资源不存在。|
+|ActivityLimitReached|已达到活动限制。|
+|GeneralException|处理请求时出现内部错误。|
+|NotImplemented  |所请求的功能未实现。|
+|ServiceNotAvailable|服务不可用。|
+|冲突|由于冲突，无法处理请求。|
+|ItemAlreadyExists|所创建的资源已存在。|
+|UnsupportedOperation|不支持正在尝试的操作。|
+|RequestAborted|请求在运行时已中止。|
+|wApiNotAvailable|请求的 API 不可用。|
+|InsertDeleteConflict|尝试的插入或删除操作导致冲突。|
+|InvalidOperation|尝试的操作对于对象无效。|
 
 ## <a name="see-also"></a>另请参阅
 

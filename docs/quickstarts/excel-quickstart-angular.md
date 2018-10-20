@@ -1,12 +1,12 @@
 ---
 title: 使用 Angular 生成 Excel 加载项
 description: ''
-ms.date: 12/29/2017
-ms.openlocfilehash: a36a89fe0b015b5b5a6280ab70be830a6c4c92a3
-ms.sourcegitcommit: 7ecc1dc24bf7488b53117d7a83ad60e952a6f7aa
+ms.date: 10/19/2018
+ms.openlocfilehash: f0f4acdf24e644f3f0d06f8a2ddd2f470c4db82a
+ms.sourcegitcommit: c400a220783b03a739449e2d3ff00bbffe5ec7c1
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/23/2018
-ms.locfileid: "19438569"
+ms.lasthandoff: 10/20/2018
+ms.locfileid: "25681824"
 ---
 [!include[Excel add-ins get started Angular](../includes/file-get-started-excel-angular.md)]
