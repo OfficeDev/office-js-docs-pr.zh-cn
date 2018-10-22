@@ -8,7 +8,7 @@
 
 # <a name="visual-studiotabvisual-studio"></a>[Visual Studio](#tab/visual-studio)
 
-### <a name="prerequisites"></a>必备组件
+### <a name="prerequisites"></a>先决条件
 
 [!include[Quick Start prerequisites](../includes/quickstart-vs-prerequisites.md)]
 
@@ -145,7 +145,7 @@
 
 # <a name="any-editortabvisual-studio-code"></a>[任意编辑器](#tab/visual-studio-code)
 
-### <a name="prerequisites"></a>必备组件
+### <a name="prerequisites"></a>先决条件
 
 - [Node.js](https://nodejs.org)
 
@@ -156,19 +156,7 @@
 
 ### <a name="create-the-web-app"></a>创建 Web 应用
 
-1. 在本地驱动器上创建文件夹，并将它命名为 **my-addin**。将在其中创建应用文件。
-
-    ```bash
-    mkdir my-addin
-    ```
-
-2. 转到应用文件夹。
-
-    ```bash
-    cd my-addin
-    ```
-
-3. 使用 Yeoman 生成器生成加载项的清单文件。运行下面的命令，再回答提示问题，如以下屏幕截图所示：
+1. 使用 Yeoman 生成器创建 Excel 加载项项目。 运行下面的命令，再回答如下所示的提示问题：
 
     ```bash
     yo office
@@ -183,7 +171,7 @@
     
     完成此向导后，生成器会创建项目，并安装支持的 Node 组件。
 
-4. 导航到 web 应用程序项目的根文件夹。
+2. 导航到项目的根文件夹。
 
     ```bash
     cd "My Office Add-in"
@@ -274,11 +262,11 @@
 
 ### <a name="update-the-manifest"></a>更新清单
 
-1. 打开文件**manifest.xml**，以定义加载项的设置和功能。 
+1. 打开文件 **manifest.xml**，以定义加载项的设置和功能。 
 
-2. `ProviderName` 元素具有占位符值。将其替换为你的姓名。
+2. `ProviderName` 元素具有占位符值。 将其替换为你的名称。
 
-3. `Description` 元素的 `DefaultValue` 属性具有占位符。将其替换为 **Excel 的任务窗格加载项**。
+3. `Description` 元素的 `DefaultValue` 属性具有占位符。将其替换为**Excel 的任务窗格加载项**。
 
 4. 保存文件。
 

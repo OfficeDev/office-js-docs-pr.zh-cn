@@ -208,17 +208,17 @@ _适用于：Word 2016、Word for iPad、Word for Mac_
     ...
     ```
 
-### <a name="try-it-out"></a>尝试
+### <a name="try-it-out"></a>试用
 
 1. 在 Visual Studio 中，按 F5 或选择**开始**按钮启动 Word，以测试新建的 Word 加载项，功能区中显示有**显示任务窗格**加载项按钮。加载项驻留在本地 IIS 上。
 
-2. 在 Word 中，依次选择**主页**选项卡和功能区中的**显示任务窗格**按钮，以打开加载项任务窗格。 （如果您使用非订阅版本的 Office 2016，而不是 Office 365 版本，则自定义按钮不受支持。 而是会立即打开任务窗格。）
+2. 在 Word 中，选择功能区中的**主页**选项卡，然后选择**显示任务窗格**按钮打开加载项任务窗格。（如果您使用非订阅版本的 Office 2016，而不是 Office 365 版本，则自定义按钮不受支持。而是会立即打开任务窗格。）
 
     ![突出显示了“显示任务窗格”按钮的 Word 应用程序屏幕截图](../images/word-quickstart-addin-0.png)
 
 3. 选择任务窗格中的任意按钮，将样本文字添加到文档。
 
-    ![加载了样本加载项的 Word 应用程序的屏幕截图](../images/word-quickstart-addin-1b.png)
+    ![加载了样本加载项的 Word 应用的屏幕截图](../images/word-quickstart-addin-1b.png)
 
 # <a name="any-editortabvisual-studio-code"></a>[任意编辑器](#tab/visual-studio-code)
 
@@ -226,7 +226,7 @@ _适用于：Word 2016、Word for iPad、Word for Mac_
 
 - [Node.js](https://nodejs.org)
 
-- 全局安装最新版 [Yeoman](https://github.com/yeoman/yo) 和 [Office 加载项的 Yeoman 生成器](https://github.com/OfficeDev/generator-office)。
+- 全局安装最新版 [Yeoman](https://github.com/yeoman/yo) 和 [Office 外接程序的 Yeoman 生成器](https://github.com/OfficeDev/generator-office)。
 
     ```bash
     npm install -g yo generator-office
@@ -234,15 +234,7 @@ _适用于：Word 2016、Word for iPad、Word for Mac_
 
 ### <a name="create-the-add-in-project"></a>创建加载项项目
 
-1. 在本地驱动器上创建文件夹，并将它命名为“`my-word-addin`”。 将在其中创建加载项文件。
-
-2. 转到新文件夹。
-
-    ```bash
-    cd my-word-addin
-    ```
-
-3. 使用 Yeoman 生成器创建 Word 加载项项目。 运行下面的命令，再回答如下所示的提示问题：
+1. 使用 Yeoman 生成器创建 Word 加载项项目。 运行下面的命令，再回答如下所示的提示问题：
 
     ```bash
     yo office
@@ -257,7 +249,7 @@ _适用于：Word 2016、Word for iPad、Word for Mac_
     
     完成此向导后，生成器会创建项目，并安装支持的 Node 组件。
     
-4. 导航到 web 应用程序项目的根文件夹。
+2. 导航到项目的根文件夹。
 
     ```bash
     cd "My Office Add-in"
@@ -265,41 +257,34 @@ _适用于：Word 2016、Word for iPad、Word for Mac_
 
 ### <a name="update-the-code"></a>更新代码
 
-1. 在代码编辑器中，打开项目根目录中的 **index.html**。 此文件包含在加载项任务窗格中呈现的 HTML。 将整个内容替换为以下代码，并保存文件。 此加载项将显示三个按钮，在用户选择其中任一按钮后，样本文字就会添加到文档中。
+1. 在代码编辑器中，打开项目根目录中的 **index.html** 根目录中的项目。此文件包括在加载项任务窗格中渲染的 HTML。 
+
+2. 将 `<body>` 元素替换为以下标记，并保存文件。
 
     ```html
-    <!DOCTYPE html>
-    <html>
-        <head>
-            <meta charset="UTF-8" />
-            <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
-            <title>Boilerplate text app</title>
-            <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.1.4.min.js"></script>
-            <script src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js" type="text/javascript"></script>
-            <link href="app.css" rel="stylesheet" type="text/css" />
-        </head>
-        <body>
-            <div id="content-header">
-                <div class="padding">
-                    <h1>Welcome</h1>
-                </div>
-            </div>    
-            <div id="content-main">
-                <div class="padding">
-                    <p>Choose the buttons below to add boilerplate text to the document by using the Word JavaScript API.</p>
-                    <br />
-                    <h3>Try it out</h3>
-                    <button id="emerson">Add quote from Ralph Waldo Emerson</button>
-                    <br /><br />
-                    <button id="checkhov">Add quote from Anton Chekhov</button>
-                    <br /><br />
-                    <button id="proverb">Add Chinese proverb</button>
-                </div>
+    <body>
+        <div id="content-header">
+            <div class="padding">
+                <h1>Welcome</h1>
             </div>
-            <br />
-            <div id="supportedVersion"/>
-        </body>
-    </html>
+        </div>
+        <div id="content-main">
+            <div class="padding">
+                <p>Choose the buttons below to add boilerplate text to the document by using the Word JavaScript API.</p>
+                <br />
+                <h3>Try it out</h3>
+                <button id="emerson">Add quote from Ralph Waldo Emerson</button>
+                <br /><br />
+                <button id="checkhov">Add quote from Anton Chekhov</button>
+                <br /><br />
+                <button id="proverb">Add Chinese proverb</button>
+            </div>
+        </div>
+        <br />
+        <div id="supportedVersion" />
+        <script type="text/javascript" src="node_modules/jquery/dist/jquery.js"></script>
+        <script type="text/javascript" src="node_modules/office-ui-fabric-js/dist/js/fabric.js"></script>
+    </body>
     ```
 
 2. 打开文件 **src\index.js**，以指定加载项脚本。 将整个内容替换为以下代码，并保存文件。 此脚本包含初始化代码以及用于更改 Word 文档的代码（具体方法是通过选择某个按钮将文本插入文档）。 
@@ -403,7 +388,7 @@ _适用于：Word 2016、Word for iPad、Word for Mac_
     })();
     ```
 
-3. 打开项目根目录中的文件 **app.css**，以指定加载项自定义样式。 将整个内容替换为以下内容，并保存文件。
+3. 打开项目根目录中的文件 **app.css**，以指定加载项自定义样式。将整个内容替换为以下内容，并保存文件。
 
     ```css
     #content-header {
@@ -434,11 +419,11 @@ _适用于：Word 2016、Word for iPad、Word for Mac_
 
 ### <a name="update-the-manifest"></a>更新清单
 
-1. 打开文件 **my-office-add-in-manifest.xml**，以定义加载项的设置和功能。
+1. 打开文件 **manifest.xml**，以定义加载项的设置和功能。
 
 2. `ProviderName` 元素具有占位符值。将其替换为你的姓名。
 
-3. `Description` 元素的 `DefaultValue` 属性具有一个占位符。 将它替换为 **Word 加载项的任务窗格**。
+3. `Description` 元素的 `DefaultValue`  属性具有一个占位符。将其替换为 **Word 的任务窗格加载项**。
 
 4. 保存文件。
 
@@ -456,13 +441,13 @@ _适用于：Word 2016、Word for iPad、Word for Mac_
 
 [!include[Start server section](../includes/quickstart-yo-start-server.md)] 
 
-### <a name="try-it-out"></a>尝试
+### <a name="try-it-out"></a>试用
 
 1. 按照运行加载项所用平台对应的说明操作，以在 Word 中旁加载加载项。
 
-    - Windows：[在 Windows 上旁加载 Office 加载项](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)
+    - Windows：[在 Windows 上旁加载 Office 外接程序](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)
     - Word Online：[在 Office Online 中旁加载 Office 加载项](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-on-office-online)
-    - iPad 和 Mac：[在 iPad 和 Mac 上旁加载 Office 加载项](../testing/sideload-an-office-add-in-on-ipad-and-mac.md)
+    - iPad 和 Mac：[在 iPad 和 Mac 上旁加载 Office 外接程序](../testing/sideload-an-office-add-in-on-ipad-and-mac.md)
 
 2. 在 Word 中，依次选择**主页**选项卡和功能区中的**显示任务窗格**按钮，以打开加载项任务窗格。
 
