@@ -8,7 +8,7 @@
 
 # <a name="visual-studiotabvisual-studio"></a>[Visual Studio](#tab/visual-studio)
 
-### <a name="prerequisites"></a>先决条件
+### <a name="prerequisites"></a>必备组件
 
 [!include[Quick Start prerequisites](../includes/quickstart-vs-prerequisites.md)]
 
@@ -145,11 +145,11 @@
 
 # <a name="any-editortabvisual-studio-code"></a>[任意编辑器](#tab/visual-studio-code)
 
-### <a name="prerequisites"></a>先决条件
+### <a name="prerequisites"></a>必备组件
 
 - [Node.js](https://nodejs.org)
 
-- 全局安装最新版本的 [Yeoman](https://github.com/yeoman/yo) 和 [Office 加载项的 Yeoman 生成器](https://github.com/OfficeDev/generator-office)。
+- 全局安装最新版 [Yeoman](https://github.com/yeoman/yo) 和 [Office 外接程序的 Yeoman 生成器](https://github.com/OfficeDev/generator-office)。
     ```bash
     npm install -g yo generator-office
     ```
@@ -157,6 +157,10 @@
 ### <a name="create-the-web-app"></a>创建 Web 应用
 
 1. 在本地驱动器上创建文件夹，并将它命名为 **my-addin**。将在其中创建应用文件。
+
+    ```bash
+    mkdir my-addin
+    ```
 
 2. 转到应用文件夹。
 
@@ -185,32 +189,33 @@
     cd "My Office Add-in"
     ```
 
-5. 在代码编辑器中，打开项目根目录中的 **index.html** 根目录中的项目。此文件指定在加载项任务窗格中呈现的 HTML。 
+### <a name="update-the-code"></a>更新代码 
+
+1. 在代码编辑器中，打开项目根目录中的 **index.html**。此文件指定在加载项任务窗格中呈现的 HTML。 
  
-6. 在 **index.html** 中，将生成的 `header` 标记替换为以下标记。
+2. 在 **index.html** 中，将 `body` 标记替换为以下标记并保存文件。
  
     ```html
-    <div id="content-header">
-        <div class="padding">
-            <h1>Welcome</h1>
+    <body class="ms-font-m ms-welcome">
+        <div id="content-header">
+            <div class="padding">
+                <h1>Welcome</h1>
+            </div>
         </div>
-    </div>
+        <div id="content-main">
+            <div class="padding">
+                <p>Choose the button below to set the color of the selected range to green.</p>
+                <br />
+                <h3>Try it out</h3>
+                <button class="ms-Button" id="set-color">Set color</button>
+            </div>
+        </div>
+        <script type="text/javascript" src="node_modules/jquery/dist/jquery.js"></script>
+        <script type="text/javascript" src="node_modules/office-ui-fabric-js/dist/js/fabric.js"></script>
+    </body>    
     ```
 
-7. 在 **index.html** 中，将生成的 `main` 标记替换为以下标记，再保存文件。
-
-    ```html
-    <div id="content-main">
-        <div class="padding">
-            <p>Choose the button below to set the color of the selected range to green.</p>
-            <br />
-            <h3>Try it out</h3>
-            <button class="ms-Button" id="set-color">Set color</button>
-        </div>
-    </div>
-    ```
-
-8. 打开文件 **src\index.js** 以指定加载项的脚本。使用以下代码替换全部内容并保存文件。
+3. 打开文件 **src\index.js** 以指定加载项的脚本。使用以下代码替换全部内容并保存文件。
 
     ```js
     'use strict';
@@ -238,7 +243,7 @@
     })();
     ```
 
-9. 打开文件 **app.css**，以指定加载项自定义样式。将整个内容替换为以下代码，并保存文件。
+4. 打开文件 **app.css**，以指定加载项自定义样式。将整个内容替换为以下代码，并保存文件。
 
     ```css
     #content-header {
@@ -269,15 +274,13 @@
 
 ### <a name="update-the-manifest"></a>更新清单
 
-1. 打开文件 **my-office-add-in-manifest.xml**，以定义加载项的设置和功能。 
+1. 打开文件**manifest.xml**，以定义加载项的设置和功能。 
 
 2. `ProviderName` 元素具有占位符值。将其替换为你的姓名。
 
-3. `DisplayName` 元素的 `DefaultValue` 属性具有占位符。将其替换为**我的 Office 加载项**。
+3. `Description` 元素的 `DefaultValue` 属性具有占位符。将其替换为 **Excel 的任务窗格加载项**。
 
-4. `Description` 元素的 `DefaultValue` 属性具有占位符。将其替换为** Excel 的任务窗格加载项**。
-
-5. 保存文件。
+4. 保存文件。
 
     ```xml
     ...
