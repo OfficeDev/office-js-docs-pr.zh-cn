@@ -2,32 +2,18 @@
 
 在本文中，你将完成使用 React 和 Excel JavaScript API 生成 Excel 加载项的过程。
 
-## <a name="environment"></a>环境
-
-- **Office 桌面**：确保你安装了最新版本的 Office。加载项命令需要内部版本 16.0.6769.0000 或更高版本（建议使用 **16.0.6868.0000**）。了解如何[安装最新版本的 Office 应用程序](http://aka.ms/latestoffice)。 
- 
-- **Office Online**：没有额外的设置。请注意，对工作/学校帐户的 Office Online 命令的支持处于预览状态。
-
 ## <a name="prerequisites"></a>先决条件
 
 - [Node.js](https://nodejs.org)
 
-- 全局安装最新版本的 [Yeoman](https://github.com/yeoman/yo) 和 [Office 加载项的 Yeoman 生成器](https://github.com/OfficeDev/generator-office)。
+- 全局安装最新版 [Yeoman](https://github.com/yeoman/yo) 和 [Office 外接程序的 Yeoman 生成器](https://github.com/OfficeDev/generator-office)。
     ```bash
     npm install -g yo generator-office
     ```
 
-### <a name="create-the-web-app"></a>创建 Web 应用
+## <a name="create-the-web-app"></a>创建 Web 应用
 
-1. 在本地驱动器上创建文件夹，并将它命名为 **my-addin**。将在其中创建应用文件。
-
-2. 转到应用文件夹。
-
-    ```bash
-    cd my-addin
-    ```
-
-3. 使用 Yeoman 生成器生成加载项的清单文件。运行下面的命令，再回答提示问题，如以下屏幕截图所示。
+1. 使用 Yeoman 生成器创建 Excel 加载项项目。 运行下面的命令，再回答如下所示的提示问题：
 
     ```bash
     yo office
@@ -39,48 +25,221 @@
 
     ![Yeoman 生成器](../images/yo-office-excel-react.png)
     
-    完成向导后，生成器将创建项目并安装 Node 支持组件。
+    完成此向导后，生成器会创建项目，并安装支持的 Node 组件。
 
-4.  打开 **src/components/App.tsx**，搜索注释“更新填充颜色”，然后将填充颜色从“黄色”更改为“蓝色”，然后保存文件。 
+2. 导航到项目的根文件夹。
 
-    ```js
-    range.format.fill.color = 'blue'
-
-    ```
-
-5. 在** src / components / App.tsx **中的`render` 函数的`return` 块中，将 `<Herolist>` 更新到下面的代码中，然后保存文件。 
-
-    ```js
-      <HeroList message='Discover what My Office Add-in can do for you today!' items={this.state.listItems}>
-        <p className='ms-font-l'>Choose the button below to set the color of the selected range to blue. <b>Set color</b>.</p>
-        <Button className='ms-welcome__action' buttonType={ButtonType.hero} iconProps={{ iconName: 'ChevronRight' }} onClick={this.click}>Run</Button>
-    </HeroList>
-    ```
-
-6. 按照[将自签名证书添加为受信任的根证书](https://github.com/OfficeDev/generator-office/blob/master/src/docs/ssl.md)中的步骤操作，信任开发计算机操作系统的证书。
-
-7. 旁加载加载项以便在 Excel 中将显示。在终端中，运行以下命令： 
-    
     ```bash
-    npm run sideload
+    cd "My Office Add-in"
     ```
+
+## <a name="update-the-code"></a>更新代码
+
+1. 在代码编辑器中，打开文件 **src/styles.less**，将以下样式添加到文件末尾，然后保存文件。
+
+    ```css
+    #content-header {
+        background: #2a8dd4;
+        color: #fff;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 80px; 
+        overflow: hidden;
+        font-family: Arial;
+        padding-top: 25px;
+    }
+
+    #content-main {
+        background: #fff;
+        position: fixed;
+        top: 80px;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        overflow: auto; 
+        font-family: Arial;
+    }
+
+    .padding {
+        padding: 15px;
+    }
+
+    .padding-sm {
+        padding: 4px;
+    }
+
+    .normal-button {
+        width: 80px;
+        padding: 2px;
+    }
+    ```
+
+2. Office 加载项 Yeoman 生成器创建的项目模板包含一个此快速入门不需要的 React 组件。 删除文件 **src/components/HeroList.tsx**。
+
+3. 打开文件 **src/components/Header.tsx**，将整个内容替换为以下代码，并保存文件。
+
+    ```typescript
+    import * as React from 'react';
+
+    export interface HeaderProps {
+        title: string;
+    }
+
+    export class Header extends React.Component<HeaderProps, any> {
+        constructor(props, context) {
+            super(props, context);
+        }
+
+        render() {
+            return (
+                <div id='content-header'>
+                    <div className='padding'>
+                        <h1>{this.props.title}</h1>
+                    </div>
+                </div>
+            );
+        }
+    }
+    ```
+
+4. 在 **src/components** 文件夹中创建一个名为 **Content.tsx** 的新 React 组件，添加以下代码，然后保存该文件。
+
+    ```typescript
+    import * as React from 'react';
+    import { Button, ButtonType } from 'office-ui-fabric-react';
+
+    export interface ContentProps {
+        message: string;
+        buttonLabel: string;
+        click: any;
+    }
+
+    export class Content extends React.Component<ContentProps, any> {
+        constructor(props, context) {
+            super(props, context);
+        }
+
+        render() {
+            return (
+                <div id='content-main'>
+                    <div className='padding'>
+                        <p>{this.props.message}</p>
+                        <br />
+                        <h3>Try it out</h3>
+                        <br/>
+                        <Button className='normal-button' buttonType={ButtonType.hero} onClick={this.props.click}>{this.props.buttonLabel}</Button>
+                    </div>
+                </div>
+            );
+        }
+    }
+    ```
+
+5. 打开文件 **src/components/App.tsx**，将整个内容替换为以下代码，并保存文件。
+
+    ```typescript
+    import * as React from 'react';
+    import { Header } from './Header';
+    import { Content } from './Content';
+    import Progress from './Progress';
+
+    import * as OfficeHelpers from '@microsoft/office-js-helpers';
+
+    export interface AppProps {
+        title: string;
+        isOfficeInitialized: boolean;
+    }
+
+    export interface AppState {
+    }
+
+    export default class App extends React.Component<AppProps, AppState> {
+        constructor(props, context) {
+            super(props, context);
+        }
+
+        setColor = async () => {
+            try {
+                await Excel.run(async context => {
+                    const range = context.workbook.getSelectedRange();
+                    range.load('address');
+                    range.format.fill.color = 'green';
+                    await context.sync();
+                    console.log(`The range address was ${range.address}.`);
+                });
+            } catch (error) {
+                OfficeHelpers.UI.notify(error);
+                OfficeHelpers.Utilities.log(error);
+            }
+        }
+
+        render() {
+            const {
+                title,
+                isOfficeInitialized,
+            } = this.props;
+
+            if (!isOfficeInitialized) {
+                return (
+                    <Progress
+                        title={title}
+                        logo='assets/logo-filled.png'
+                        message='Please sideload your addin to see app body.'
+                    />
+                );
+            }
+
+            return (
+                <div className='ms-welcome'>
+                    <Header title='Welcome' />
+                    <Content message='Choose the button below to set the color of the selected range to green.' buttonLabel='Set color' click={this.setColor} />
+                </div>
+            );
+        }
+    }
+    ```
+
+## <a name="update-the-manifest"></a>更新清单
+
+1. 打开文件 **manifest.xml**，以定义加载项的设置和功能。 
+
+2. `ProviderName` 元素具有占位符值。 将其替换为你的姓名。
+
+3. `Description` 元素的 `DefaultValue` 属性具有占位符。将其替换为**Excel 的任务窗格加载项**。
+
+4. 保存文件。
+
+    ```xml
+    ...
+    <ProviderName>John Doe</ProviderName>
+    <DefaultLocale>en-US</DefaultLocale>
+    <!-- The display name of your add-in. Used on the store and various places of the Office UI such as the add-ins dialog. -->
+    <DisplayName DefaultValue="My Office Add-in" />
+    <Description DefaultValue="A task pane add-in for Excel"/>
+    ...
+    ```
+
+## <a name="start-the-dev-server"></a>启动开发人员服务器
+
+[!include[Start server section](../includes/quickstart-yo-start-server.md)] 
 
 ## <a name="try-it-out"></a>试用
 
-1. 通过终端运行下面的命令，以启动开发人员服务器。
+1. 请按照运行加载项所用平台对应的说明操作，以在 Excel 中旁加载加载项。
 
-    Windows：
-    ```bash
-    npm start
-    ```
+    - Windows：[在 Windows 旁加载 Office 加载项](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)
+    - Excel Online：[在 Office Online 中旁加载 Office 加载项](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-on-office-online)
+    - iPad 和 Mac：[在 iPad 和 Mac 旁加载 Office 加载项](../testing/sideload-an-office-add-in-on-ipad-and-mac.md)
 
-2. 在 Excel 中，依次选择“主页”**** 选项卡和功能区中的“显示任务窗格”**** 按钮，以打开加载项任务窗格。
+2. 在 Excel 中，依次选择**主页**选项卡和功能区中的**显示任务窗格**按钮，以打开加载项任务窗格。
 
     ![Excel 加载项按钮](../images/excel-quickstart-addin-2b.png)
 
 3. 选择工作表中的任何一系列单元格。
 
-4. 在任务窗格中，选择 **“设置颜色”** 按钮，将选定区域的颜色设置为l蓝色。
+4. 在任务窗格中，选择**设置颜色**按钮，将选定区域的颜色设置为绿色。
 
     ![Excel 加载项](../images/excel-quickstart-addin-2c.png)
 
