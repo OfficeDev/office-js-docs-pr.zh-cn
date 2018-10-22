@@ -1,13 +1,13 @@
 ---
 title: 使用 Excel JavaScript API 处理事件
 description: ''
-ms.date: 09/21/2018
-ms.openlocfilehash: b56d25e7e0306b4881115397d4136e63ddc03e5c
-ms.sourcegitcommit: 563c53bac52b31277ab935f30af648f17c5ed1e2
+ms.date: 10/17/2018
+ms.openlocfilehash: c3fbdf27dcbedf0d006973e6ebc2e01b02e6cec2
+ms.sourcegitcommit: a6d6348075c1abed76d2146ddfc099b0151fe403
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/10/2018
-ms.locfileid: "25459173"
+ms.lasthandoff: 10/19/2018
+ms.locfileid: "25639936"
 ---
 # <a name="work-with-events-using-the-excel-javascript-api"></a>使用 Excel JavaScript API 处理事件 
 
@@ -17,7 +17,7 @@ ms.locfileid: "25459173"
 
 每当 Excel 工作簿中出现某种类型的更改时，就会触发事件通知。使用 Excel JavaScript API，可以注册事件处理程序，以便加载项能够在发生特定事件时自动运行指定的函数。
 
-| 事件 | 说明 | 支持的对象 |
+| 事件 | 描述 | 支持的对象 |
 |:---------------|:-------------|:-----------|
 | `onAdded` | 添加对象时发生的事件。 | [**ChartCollection**](https://docs.microsoft.com/javascript/api/excel/excel.chartcollection)、[**WorksheetCollection**](https://docs.microsoft.com/javascript/api/excel/excel.worksheetcollection) |
 | `onDeleted` | 删除对象时发生的事件。 | [**ChartCollection**](https://docs.microsoft.com/javascript/api/excel/excel.chartcollection)、[**WorksheetCollection**](https://docs.microsoft.com/javascript/api/excel/excel.worksheetcollection) |
@@ -41,7 +41,10 @@ Excel 工作簿内的事件可以通过下列方式触发：
 
 ### <a name="lifecycle-of-an-event-handler"></a>事件处理程序的生命周期
 
-事件处理程序在加载项注册事件处理程序时创建完成，并在加载项取消注册事件处理程序或加载项关闭时销毁。事件处理程序不会暂留为 Excel 文件的一部分。
+事件处理程序在加载项注册事件处理程序时创建完成。当加载项取消注册事件处理程序或刷新、重新加载或关闭加载项时，它将被销毁。 事件处理程序不会作为 Excel 文件的一部分保留，也不会与 Excel Online 的会话保持一致。
+
+> [!CAUTION]
+> 删除已注册事件的对象（例如，注册了 `onChanged` 事件的表）时，事件处理程序不再触发但保留在内存中，直到加载项或 Excel 会话刷新或关闭。
 
 ### <a name="events-and-coauthoring"></a>事件和共同创作
 
