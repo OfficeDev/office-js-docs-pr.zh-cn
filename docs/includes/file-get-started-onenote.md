@@ -1,182 +1,266 @@
-# <a name="build-your-first-onenote-add-in"></a><span data-ttu-id="3420e-101">生成首个 OneNote 加载项</span><span class="sxs-lookup"><span data-stu-id="3420e-101">Build your first OneNote add-in</span></span>
+# <a name="build-your-first-onenote-add-in"></a><span data-ttu-id="7a827-101">生成首个 OneNote 加载项</span><span class="sxs-lookup"><span data-stu-id="7a827-101">Build your first OneNote add-in</span></span>
 
-<span data-ttu-id="3420e-102">本文将逐步介绍如何使用 jQuery 和 Office JavaScript API 生成 OneNote 加载项。</span><span class="sxs-lookup"><span data-stu-id="3420e-102">In this article, you'll walk through the process of building a OneNote add-in by using jQuery and the Office JavaScript API.</span></span>
+<span data-ttu-id="7a827-102">本文将逐步介绍如何使用 jQuery 和 Office JavaScript API 生成 OneNote 加载项。</span><span class="sxs-lookup"><span data-stu-id="7a827-102">In this article, you'll walk through the process of building a OneNote add-in by using jQuery and the Office JavaScript API.</span></span>
 
-## <a name="prerequisites"></a><span data-ttu-id="3420e-103">先决条件</span><span class="sxs-lookup"><span data-stu-id="3420e-103">Prerequisites</span></span>
+## <a name="prerequisites"></a><span data-ttu-id="7a827-103">先决条件</span><span class="sxs-lookup"><span data-stu-id="7a827-103">Prerequisites</span></span>
 
-- [<span data-ttu-id="3420e-104">Node.js</span><span class="sxs-lookup"><span data-stu-id="3420e-104">Node.js</span></span>](https://nodejs.org)
+- [<span data-ttu-id="7a827-104">Node.js</span><span class="sxs-lookup"><span data-stu-id="7a827-104">Node.js</span></span>](https://nodejs.org)
 
-- <span data-ttu-id="3420e-105">全局安装最新版 [Yeoman](https://github.com/yeoman/yo) 和 [Office 加载项的 Yeoman 生成器](https://github.com/OfficeDev/generator-office)。</span><span class="sxs-lookup"><span data-stu-id="3420e-105">Install the latest version of [Yeoman](https://github.com/yeoman/yo) and the [Yeoman generator for Office Add-ins](https://github.com/OfficeDev/generator-office) globally.</span></span>
+- <span data-ttu-id="7a827-105">全局安装最新版 [Yeoman](https://github.com/yeoman/yo) 和 [Office 外接程序的 Yeoman 生成器](https://github.com/OfficeDev/generator-office)。</span><span class="sxs-lookup"><span data-stu-id="7a827-105">Install the latest version of [Yeoman](https://github.com/yeoman/yo) and the [Yeoman generator for Office Add-ins](https://github.com/OfficeDev/generator-office) globally.</span></span>
 
     ```bash
     npm install -g yo generator-office
     ```
 
-## <a name="create-the-add-in-project"></a><span data-ttu-id="3420e-106">创建加载项项目</span><span class="sxs-lookup"><span data-stu-id="3420e-106">Create the add-in project</span></span>
+## <a name="create-the-add-in-project"></a><span data-ttu-id="7a827-106">创建加载项项目</span><span class="sxs-lookup"><span data-stu-id="7a827-106">Create the add-in project</span></span>
 
-1. <span data-ttu-id="3420e-p101">在本地驱动器上创建文件夹，并将它命名为 `my-onenote-addin` 。可以在此处为加载项创建文件。</span><span class="sxs-lookup"><span data-stu-id="3420e-p101">Create a folder on your local drive and name it `my-onenote-addin`. This is where you'll create the files for your add-in.</span></span>
-
-2. <span data-ttu-id="3420e-109">转到新文件夹。</span><span class="sxs-lookup"><span data-stu-id="3420e-109">Navigate to your new folder.</span></span>
-
-    ```bash
-    cd my-onenote-addin
-    ```
-
-3. <span data-ttu-id="3420e-p102">使用 Yeoman 生成器创建 OneNote 加载项项目。运行下面的命令，再回答如下所示的提示问题：</span><span class="sxs-lookup"><span data-stu-id="3420e-p102">Use the Yeoman generator to create a OneNote add-in project. Run the following command and then answer the prompts as follows:</span></span>
+1. <span data-ttu-id="7a827-p101">使用 Yeoman 生成器创建 OneNote 加载项项目。运行下面的命令，再回答如下所示的提示问题：</span><span class="sxs-lookup"><span data-stu-id="7a827-p101">Use the Yeoman generator to create a OneNote add-in project. Run the following command and then answer the prompts as follows:</span></span>
 
     ```bash
     yo office
     ```
 
-    - <span data-ttu-id="3420e-112">**选择一个项目类型：** `Office Add-in project using Jquery framework`</span><span class="sxs-lookup"><span data-stu-id="3420e-112">**Choose a project type:** `Office Add-in project using Jquery framework`</span></span>
-    - <span data-ttu-id="3420e-113">**选择一个脚本类型：** `Javascript`</span><span class="sxs-lookup"><span data-stu-id="3420e-113">**Choose a script type:** `Javascript`</span></span>
-    - <span data-ttu-id="3420e-114">**要将你的加载项命名为什么?:** `My Office Add-in`</span><span class="sxs-lookup"><span data-stu-id="3420e-114">**What do you want to name your add-in?:** `My Office Add-in`</span></span>
-    - <span data-ttu-id="3420e-115">**要支持哪一个 Office 客户端应用程序?:** `Onenote`</span><span class="sxs-lookup"><span data-stu-id="3420e-115">**Which Office client application would you like to support?:** `Onenote`</span></span>
+    - <span data-ttu-id="7a827-109">**选择一个项目类型：** `Office Add-in project using Jquery framework`</span><span class="sxs-lookup"><span data-stu-id="7a827-109">**Choose a project type:** `Office Add-in project using Jquery framework`</span></span>
+    - <span data-ttu-id="7a827-110">**选择一个脚本类型：** `Javascript`</span><span class="sxs-lookup"><span data-stu-id="7a827-110">**Choose a script type:** `Javascript`</span></span>
+    - <span data-ttu-id="7a827-111">**要将你的外接程序命名为什么?:** `My Office Add-in`</span><span class="sxs-lookup"><span data-stu-id="7a827-111">**What do you want to name your add-in?:** `My Office Add-in`</span></span>
+    - <span data-ttu-id="7a827-112">**要支持哪一个 Office 客户端应用程序?:** `Onenote`</span><span class="sxs-lookup"><span data-stu-id="7a827-112">**Which Office client application would you like to support?:** `Onenote`</span></span>
 
     ![有关 Yeoman 生成器提示和回答的屏幕截图](../images/yo-office-onenote-jquery.png)
     
-    <span data-ttu-id="3420e-117">完成此向导后，生成器会创建项目，并安装支持的 Node 组件。</span><span class="sxs-lookup"><span data-stu-id="3420e-117">After you complete the wizard, the generator will create the project and install supporting Node components.</span></span>
+    <span data-ttu-id="7a827-114">完成此向导后，生成器会创建项目，并安装支持的 Node 组件。</span><span class="sxs-lookup"><span data-stu-id="7a827-114">After you complete the wizard, the generator will create the project and install supporting Node components.</span></span>
     
-4. <span data-ttu-id="3420e-118">导航到 web 应用程序项目的根文件夹。</span><span class="sxs-lookup"><span data-stu-id="3420e-118">Navigate to the root folder of the web application project.</span></span>
+2. <span data-ttu-id="7a827-115">导航到项目的根文件夹。</span><span class="sxs-lookup"><span data-stu-id="7a827-115">Navigate to the root folder of the web application project.</span></span>
 
     ```bash
     cd "My Office Add-in"
     ```
 
-## <a name="update-the-code"></a><span data-ttu-id="3420e-119">更新代码</span><span class="sxs-lookup"><span data-stu-id="3420e-119">Update the code</span></span>
+## <a name="update-the-code"></a><span data-ttu-id="7a827-116">更新代码</span><span class="sxs-lookup"><span data-stu-id="7a827-116">Update the code</span></span>
 
-1. <span data-ttu-id="3420e-p103">在代码编辑器中，打开项目根目录中的 **index.html** 根目录中的项目。此文件包括在加载项任务窗格中呈现的 HTML。</span><span class="sxs-lookup"><span data-stu-id="3420e-p103">In your code editor, open **index.html** in the root of the project. This file contains the HTML that will be rendered in the add-in's task pane.</span></span>
+1. <span data-ttu-id="7a827-p102">在代码编辑器中，打开项目根目录中的 **index.html** 根目录中的项目。此文件包括在加载项任务窗格中渲染的 HTML。</span><span class="sxs-lookup"><span data-stu-id="7a827-p102">In your code editor, open **index.html** in the root of the project. This file contains the HTML that will be rendered in the add-in's task pane.</span></span>
 
-2. <span data-ttu-id="3420e-p104">将 `<body>` 元素内的 `<main>` 元素替换为以下标记，并保存文件。这会使用 [Office UI Fabric 组件](https://developer.microsoft.com/en-us/fabric#/components)添加文本区域和按钮。</span><span class="sxs-lookup"><span data-stu-id="3420e-p104">Replace the `<main>` element inside the `<body>` element with the following markup and save the file. This adds a text area and a button using [Office UI Fabric components](https://developer.microsoft.com/en-us/fabric#/components).</span></span>
+2. <span data-ttu-id="7a827-119">将 `<body>` 元素替换为以下标记，并保存文件。</span><span class="sxs-lookup"><span data-stu-id="7a827-119">Replace the `<body>` element inside the  element with the following markup and save the file.</span></span> 
 
     ```html
-    <main class="ms-welcome__main">
-        <br />
-        <p class="ms-font-l">Enter content below</p>
-        <div class="ms-TextField ms-TextField--placeholder">
-            <textarea id="textBox" rows="5"></textarea>
-        </div>
-        <button id="addOutline" class="ms-welcome__action ms-Button ms-Button--hero ms-u-slideUpIn20">
-            <span class="ms-Button-label">Add Outline</span>
-            <span class="ms-Button-icon"><i class="ms-Icon"></i></span>
-            <span class="ms-Button-description">Adds the content above to the current page.</span>
-        </button>
-    </main>
+    <body class="ms-font-m ms-welcome">
+        <header class="ms-welcome__header ms-bgColor-themeDark ms-u-fadeIn500">
+            <h2 class="ms-fontSize-xxl ms-fontWeight-regular ms-fontColor-white">OneNote Add-in</h1>
+        </header>
+        <main id="app-body" class="ms-welcome__main">
+            <br />
+            <p class="ms-font-m">Enter HTML content here:</p>
+            <div class="ms-TextField ms-TextField--placeholder">
+                <textarea id="textBox" rows="8" cols="30"></textarea>
+            </div>
+            <button id="addOutline" class="ms-Button ms-Button--primary">
+                <span class="ms-Button-label">Add outline</span>
+            </button>
+        </main>
+        <script type="text/javascript" src="node_modules/jquery/dist/jquery.js"></script>
+        <script type="text/javascript" src="node_modules/office-ui-fabric-js/dist/js/fabric.js"></script>
+    </body>
     ```
 
-3. <span data-ttu-id="3420e-p105">打开文件 **src\index.js** 以指定加载项的脚本。使用以下代码替换全部内容并保存文件。</span><span class="sxs-lookup"><span data-stu-id="3420e-p105">Open the file **src\index.js** to specify the script for the add-in. Replace the entire contents with the following code and save the file.</span></span>
+3. <span data-ttu-id="7a827-120">打开文件 **src\index.js**，以指定加载项脚本。</span><span class="sxs-lookup"><span data-stu-id="7a827-120">Open the file **app.js** to specify the script for the add-in.</span></span> <span data-ttu-id="7a827-121">将整个内容替换为以下代码，并保存文件。</span><span class="sxs-lookup"><span data-stu-id="7a827-121">Replace the entire contents with the following code and save the file.</span></span>
 
     ```js
-    'use strict';
+    import * as OfficeHelpers from "@microsoft/office-js-helpers";
 
-    (function () {
-
-        Office.initialize = function (reason) {
-            $(document).ready(function () {
-                // Set up event handler for the UI.
-                $('#addOutline').click(addOutlineToPage);
-            });
-        };
-
-        // Add the contents of the text area to the page.
-        function addOutlineToPage() {        
-            OneNote.run(function (context) {
-                var html = '<p>' + $('#textBox').val() + '</p>';
+    Office.initialize = (reason) => {
+        $(document).ready(() => {
+            $('#addOutline').click(addOutlineToPage);
+        });
+    };
+    
+    async function addOutlineToPage() {
+        try {
+            await OneNote.run(async context => {
+                var html = "<p>" + $("#textBox").val() + "</p>";
 
                 // Get the current page.
                 var page = context.application.getActivePage();
 
-                // Queue a command to load the page with the title property.             
-                page.load('title'); 
+                // Queue a command to load the page with the title property.
+                page.load("title");
 
-                // Add an outline with the specified HTML to the page.
+                // Add text to the page by using the specified HTML.
                 var outline = page.addOutline(40, 90, html);
 
                 // Run the queued commands, and return a promise to indicate task completion.
                 return context.sync()
                     .then(function() {
-                        console.log('Added outline to page ' + page.title);
+                        console.log("Added outline to page " + page.title);
                     })
                     .catch(function(error) {
-                        app.showNotification("Error: " + error); 
-                        console.log("Error: " + error); 
-                        if (error instanceof OfficeExtension.Error) { 
-                            console.log("Debug info: " + JSON.stringify(error.debugInfo)); 
-                        } 
-                    }); 
-            });
+                        app.showNotification("Error: " + error);
+                        console.log("Error: " + error);
+                        if (error instanceof OfficeExtension.Error) {
+                            console.log("Debug info: " + JSON.stringify(error.debugInfo));
+                        }
+                    });
+                });
+        } catch (error) {
+            OfficeHelpers.UI.notify(error);
+            OfficeHelpers.Utilities.log(error);
         }
-    })();
+    }
     ```
 
-## <a name="update-the-manifest"></a><span data-ttu-id="3420e-126">更新清单</span><span class="sxs-lookup"><span data-stu-id="3420e-126">Update the manifest</span></span>
+4. <span data-ttu-id="7a827-122">打开文件 **app.css**，以指定加载项自定义样式。</span><span class="sxs-lookup"><span data-stu-id="7a827-122">Open the file **app.css** to specify the custom styles for the add-in.</span></span> <span data-ttu-id="7a827-123">将整个内容替换为以下内容，并保存文件。</span><span class="sxs-lookup"><span data-stu-id="7a827-123">Replace the entire contents with the following and save the file.</span></span>
 
-1. <span data-ttu-id="3420e-127">打开文件**one-note-add-in-manifest.xml**，以定义加载项的设置和功能。</span><span class="sxs-lookup"><span data-stu-id="3420e-127">Open the file **one-note-add-in-manifest.xml** to define the add-in's settings and capabilities.</span></span>
+    ```css
+    html, body {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+    }
 
-2. <span data-ttu-id="3420e-p106">`ProviderName` 元素具有占位符值。将其替换为你的姓名。</span><span class="sxs-lookup"><span data-stu-id="3420e-p106">The `ProviderName` element has a placeholder value. Replace it with your name.</span></span>
+    ul, p, h1, h2, h3, h4, h5, h6 {
+        margin: 0;
+        padding: 0;
+    }
 
-3. <span data-ttu-id="3420e-p107">`Description` 元素的 `DefaultValue` 属性具有占位符。将其替换为 **OneNote 的任务窗格加载项**。</span><span class="sxs-lookup"><span data-stu-id="3420e-p107">The `DefaultValue` attribute of the `Description` element has a placeholder. Replace it with **A task pane add-in for OneNote**.</span></span>
+    .ms-welcome {
+        position: relative;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-flex-direction: column;
+        flex-direction: column;
+        -webkit-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+        min-height: 500px;
+        min-width: 320px;
+        overflow: auto;
+        overflow-x: hidden;
+    }
 
-4. <span data-ttu-id="3420e-132">保存文件。</span><span class="sxs-lookup"><span data-stu-id="3420e-132">Save the file.</span></span>
+    .ms-welcome__header {
+        min-height: 30px;
+        padding: 0px;
+        padding-bottom: 5px;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-flex-direction: column;
+        flex-direction: column;
+        -webkit-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+        -webkit-align-items: center;
+        align-items: center;
+        -webkit-justify-content: flex-end;
+        justify-content: flex-end;
+    }
+
+    .ms-welcome__header > h1 {
+        margin-top: 5px;
+        text-align: center;
+    }
+
+    .ms-welcome__main {
+        display: -webkit-flex;
+        display: flex;
+        -webkit-flex-direction: column;
+        flex-direction: column;
+        -webkit-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+        -webkit-align-items: center;
+        align-items: left;
+        -webkit-flex: 1 0 0;
+        flex: 1 0 0;
+        padding: 30px 20px;
+    }
+
+    .ms-welcome__main > h2 {
+        width: 100%;
+        text-align: left;
+    }
+
+    @media (min-width: 0) and (max-width: 350px) {
+        .ms-welcome__features {
+            width: 100%;
+        }
+    }
+    ```
+
+## <a name="update-the-manifest"></a><span data-ttu-id="7a827-124">更新清单</span><span class="sxs-lookup"><span data-stu-id="7a827-124">Update the manifest</span></span>
+
+1. <span data-ttu-id="7a827-125">打开文件 **manifest.xml**，以定义加载项的设置和功能。</span><span class="sxs-lookup"><span data-stu-id="7a827-125">Open the file **my-office-add-in-manifest.xml** to define the add-in's settings and capabilities.</span></span>
+
+2. <span data-ttu-id="7a827-p105">`ProviderName` 元素具有占位符值。将其替换为你的姓名。</span><span class="sxs-lookup"><span data-stu-id="7a827-p105">The `ProviderName` element has a placeholder value. Replace it with your name.</span></span>
+
+3. <span data-ttu-id="7a827-p106">`Description` 元素的 `DefaultValue` 属性具有占位符。将其替换为 **OneNote 的任务窗格加载项**。</span><span class="sxs-lookup"><span data-stu-id="7a827-p106">The `DefaultValue` attribute of the `Description` element has a placeholder. Replace it with **A task pane add-in for OneNote**.</span></span>
+
+4. <span data-ttu-id="7a827-130">保存文件。</span><span class="sxs-lookup"><span data-stu-id="7a827-130">Save the file.</span></span>
 
     ```xml
     ...
     <ProviderName>John Doe</ProviderName>
     <DefaultLocale>en-US</DefaultLocale>
     <!-- The display name of your add-in. Used on the store and various places of the Office UI such as the add-ins dialog. -->
-    <DisplayName DefaultValue="OneNote Add-in" />
+    <DisplayName DefaultValue="My Office Add-in" />
     <Description DefaultValue="A task pane add-in for OneNote"/>
     ...
     ```
 
-## <a name="start-the-dev-server"></a><span data-ttu-id="3420e-133">启动开发人员服务器</span><span class="sxs-lookup"><span data-stu-id="3420e-133">Start the dev server</span></span>
+## <a name="start-the-dev-server"></a><span data-ttu-id="7a827-131">启动开发人员服务器</span><span class="sxs-lookup"><span data-stu-id="7a827-131">Start the dev server</span></span>
 
 [!include[Start server section](../includes/quickstart-yo-start-server.md)]
 
-## <a name="try-it-out"></a><span data-ttu-id="3420e-134">试用</span><span class="sxs-lookup"><span data-stu-id="3420e-134">Try it out</span></span>
+## <a name="try-it-out"></a><span data-ttu-id="7a827-132">试用</span><span class="sxs-lookup"><span data-stu-id="7a827-132">Try it out</span></span>
 
-1. <span data-ttu-id="3420e-135">在 [OneNote Online](https://www.onenote.com/notebooks) 中，打开一个笔记本。</span><span class="sxs-lookup"><span data-stu-id="3420e-135">In [OneNote Online](https://www.onenote.com/notebooks), open a notebook.</span></span>
+1. <span data-ttu-id="7a827-133">在 [OneNote Online](https://www.onenote.com/notebooks) 中，打开一个笔记本。</span><span class="sxs-lookup"><span data-stu-id="7a827-133">In [OneNote Online](https://www.onenote.com/notebooks), open a notebook.</span></span>
 
-2. <span data-ttu-id="3420e-136">依次选择**插入 > Office 加载项**，打开“Office 加载项”对话框。</span><span class="sxs-lookup"><span data-stu-id="3420e-136">Choose **Insert > Office Add-ins** to open the Office Add-ins dialog.</span></span>
+2. <span data-ttu-id="7a827-134">依次选择**插入 > Office 加载项**，打开“Office 加载项”对话框。</span><span class="sxs-lookup"><span data-stu-id="7a827-134">Choose **Insert > Office Add-ins** to open the Office Add-ins dialog.</span></span>
 
-    - <span data-ttu-id="3420e-137">如果使用使用者帐户登录，请依次选择**我的加载项**选项卡和**上传我的加载项**。</span><span class="sxs-lookup"><span data-stu-id="3420e-137">If you're signed in with your consumer account, select the **MY ADD-INS** tab, and then choose **Upload My Add-in**.</span></span>
+    - <span data-ttu-id="7a827-135">如果使用使用者帐户登录，请依次选择**我的加载项**选项卡和**上传我的加载项**。</span><span class="sxs-lookup"><span data-stu-id="7a827-135">If you're signed in with your consumer account, select the **MY ADD-INS** tab, and then choose **Upload My Add-in**.</span></span>
 
-    - <span data-ttu-id="3420e-138">如果使用工作或学校帐户登录，请依次选择**我的组织**选项卡和**上传我的加载项**。</span><span class="sxs-lookup"><span data-stu-id="3420e-138">If you're signed in with your work or school account, select the **MY ORGANIZATION** tab, and then select **Upload My Add-in**.</span></span> 
+    - <span data-ttu-id="7a827-136">如果使用工作或学校帐户登录，请依次选择**我的组织**选项卡和**上传我的加载项**。</span><span class="sxs-lookup"><span data-stu-id="7a827-136">If you're signed in with your work or school account, select the **MY ORGANIZATION** tab, and then select **Upload My Add-in**.</span></span> 
 
-    <span data-ttu-id="3420e-139">下图展示了使用者笔记本的**我的加载项**选项卡。</span><span class="sxs-lookup"><span data-stu-id="3420e-139">The following image shows the **MY ADD-INS** tab for consumer notebooks.</span></span>
+    <span data-ttu-id="7a827-137">下图展示了使用者笔记本的**我的加载项**选项卡。</span><span class="sxs-lookup"><span data-stu-id="7a827-137">The following image shows the **MY ADD-INS** tab for consumer notebooks.</span></span>
 
     <img alt="The Office Add-ins dialog showing the MY ADD-INS tab" src="../images/onenote-office-add-ins-dialog.png" width="500">
 
-3. <span data-ttu-id="3420e-140">在“上传加载项”对话框中，转到项目文件夹中的**one-note-add-in-manifest.xml**，再选择**上传**。</span><span class="sxs-lookup"><span data-stu-id="3420e-140">In the Upload Add-in dialog, browse to **one-note-add-in-manifest.xml** in your project folder, and then choose **Upload**.</span></span> 
+3. <span data-ttu-id="7a827-138">在“上传加载项”对话框中，转到项目文件夹中的**manifest.xml**，再选择**上传**。</span><span class="sxs-lookup"><span data-stu-id="7a827-138">In the Upload Add-in dialog, browse to **one-note-add-in-manifest.xml** in your project folder, and then choose **Upload**.</span></span> 
 
-4. <span data-ttu-id="3420e-p108">在**主页**选项卡，选择功能区中的**显示任务窗格**按钮。该加载项任务窗格在 OneNote 页面旁的 iFrame 中打开。</span><span class="sxs-lookup"><span data-stu-id="3420e-p108">From the **Home** tab, choose the **Show Taskpane** button in the ribbon. The add-in task pane opens in an iFrame next to the OneNote page.</span></span>
+4. <span data-ttu-id="7a827-p107">在**主页**选项卡，选择功能区中的**显示任务窗格**按钮。该加载项任务窗格在 OneNote 页面旁的 iFrame 中打开。</span><span class="sxs-lookup"><span data-stu-id="7a827-p107">From the **Home** tab, choose the **Show Taskpane** button in the ribbon. The add-in task pane opens in an iFrame next to the OneNote page.</span></span>
 
-5. <span data-ttu-id="3420e-p109">在文本区域中输入一些文本，然后选择**添加边框**。您输入的文本将添加至页面。</span><span class="sxs-lookup"><span data-stu-id="3420e-p109">Enter some text in the text area, and then choose **Add outline**. The text you entered is added to the page.</span></span> 
+5. <span data-ttu-id="7a827-141">在文本区域中，输入以下 HTML 内容，然后选择**添加大纲**。</span><span class="sxs-lookup"><span data-stu-id="7a827-141">Enter some text in the text area and then choose **Add outline**.</span></span>  
 
-    ![通过此演练生成的 OneNote 加载项](../images/onenote-first-add-in.png)
+    ```html
+    <ol>
+    <li>Item #1</li>
+    <li>Item #2</li>
+    <li>Item #3</li>
+    <li>Item #4</li>
+    </ol>
+    ```
 
-## <a name="troubleshooting-and-tips"></a><span data-ttu-id="3420e-146">疑难解答和提示</span><span class="sxs-lookup"><span data-stu-id="3420e-146">Troubleshooting and tips</span></span>
+    <span data-ttu-id="7a827-142">你指定的大纲将被添加到页面。</span><span class="sxs-lookup"><span data-stu-id="7a827-142">The outline that you specified is added to the page.</span></span>
 
-- <span data-ttu-id="3420e-p110">您可以使用浏览器的开发者工具调试加载项。当您在 Internet Explorer 或 Chrome 中使用 Gulp Web 服务器并进行调试时，您可以本地保存您的更改，然后仅刷新加载项的 iFrame。</span><span class="sxs-lookup"><span data-stu-id="3420e-p110">You can debug the add-in using your browser's developer tools. When you're using the Gulp web server and debugging in Internet Explorer or Chrome, you can save your changes locally and then just refresh the add-in's iFrame.</span></span>
+    ![通过此演练生成的 OneNote 加载项](../images/onenote-first-add-in-3.png)
 
-- <span data-ttu-id="3420e-p111">检查 OneNote 对象时，目前可用的属性显示实际值。需要加载的属性显示*未定义*。展开 `_proto_` 节点，查看已在对象上定义但尚未加载的属性。</span><span class="sxs-lookup"><span data-stu-id="3420e-p111">When you inspect a OneNote object, the properties that are currently available for use display actual values. Properties that need to be loaded display *undefined*. Expand the `_proto_` node to see properties that are defined on the object but are not yet loaded.</span></span>
+## <a name="troubleshooting-and-tips"></a><span data-ttu-id="7a827-144">疑难解答和提示</span><span class="sxs-lookup"><span data-stu-id="7a827-144">Troubleshooting and tips</span></span>
+
+- <span data-ttu-id="7a827-p108">您可以使用浏览器的开发者工具调试加载项。当您在 Internet Explorer 或 Chrome 中使用 Gulp Web 服务器并进行调试时，您可以本地保存您的更改，然后仅刷新加载项的 iFrame。</span><span class="sxs-lookup"><span data-stu-id="7a827-p108">You can debug the add-in using your browser's developer tools. When you're using the Gulp web server and debugging in Internet Explorer or Chrome, you can save your changes locally and then just refresh the add-in's iFrame.</span></span>
+
+- <span data-ttu-id="7a827-p109">检查 OneNote 对象时，目前可用的属性显示实际值。需要加载的属性显示*未定义*。展开 `_proto_` 节点，查看已在对象上定义但尚未加载的属性。</span><span class="sxs-lookup"><span data-stu-id="7a827-p109">When you inspect a OneNote object, the properties that are currently available for use display actual values. Properties that need to be loaded display *undefined*. Expand the `_proto_` node to see properties that are defined on the object but are not yet loaded.</span></span>
 
    ![调试器中尚未加载的 OneNote 对象](../images/onenote-debug.png)
 
-- <span data-ttu-id="3420e-p112">如果您的加载项使用任何 HTTP 资源，则需要启用浏览器中的混合内容。生产加载项应当仅使用安全 HTTPS 资源。</span><span class="sxs-lookup"><span data-stu-id="3420e-p112">You need to enable mixed content in the browser if your add-in uses any HTTP resources. Production add-ins should use only secure HTTPS resources.</span></span>
+- <span data-ttu-id="7a827-p110">如果您的外接程序使用任何 HTTP 资源，则需要启用浏览器中的混合内容。生产外接程序应当仅使用安全 HTTPS 资源。</span><span class="sxs-lookup"><span data-stu-id="7a827-p110">You need to enable mixed content in the browser if your add-in uses any HTTP resources. Production add-ins should use only secure HTTPS resources.</span></span>
 
-- <span data-ttu-id="3420e-155">可以从任何位置打开任务窗格加载项，但只能在常规页面内容（即不在标题、图像、IFrame 等中）内插入内容加载项。</span><span class="sxs-lookup"><span data-stu-id="3420e-155">Task pane add-ins can be opened from anywhere, but content add-ins can only be inserted inside regular page content (i.e. not in titles, images, iFrames, etc.).</span></span> 
+- <span data-ttu-id="7a827-153">可以从任何位置打开任务窗格加载项，但只能在常规页面内容（即不在标题、图像、IFrame 等中）内插入内容加载项。</span><span class="sxs-lookup"><span data-stu-id="7a827-153">Task pane add-ins can be opened from anywhere, but content add-ins can only be inserted inside regular page content (i.e. not in titles, images, iFrames, etc.).</span></span> 
 
-## <a name="next-steps"></a><span data-ttu-id="3420e-156">后续步骤</span><span class="sxs-lookup"><span data-stu-id="3420e-156">Next steps</span></span>
+## <a name="next-steps"></a><span data-ttu-id="7a827-154">后续步骤</span><span class="sxs-lookup"><span data-stu-id="7a827-154">Next steps</span></span>
 
-<span data-ttu-id="3420e-p113">恭喜，您已成功创建的 OneNote 加载项 ！接下来，请详细了解与生成 OneNote 加载项有关的核心概念。</span><span class="sxs-lookup"><span data-stu-id="3420e-p113">Congratulations, you've successfully created a OneNote add-in! Next, learn more about the core concepts of building OneNote add-ins.</span></span>
+<span data-ttu-id="7a827-p111">恭喜，您已成功创建的 OneNote 加载项 ！接下来，请详细了解与生成 OneNote 加载项有关的核心概念。</span><span class="sxs-lookup"><span data-stu-id="7a827-p111">Congratulations, you've successfully created a OneNote add-in! Next, learn more about the core concepts of building OneNote add-ins.</span></span>
 
 > [!div class="nextstepaction"]
-> [<span data-ttu-id="3420e-159">OneNote JavaScript API 编程概述</span><span class="sxs-lookup"><span data-stu-id="3420e-159">OneNote JavaScript API programming overview</span></span>](../onenote/onenote-add-ins-programming-overview.md)
+> [<span data-ttu-id="7a827-157">OneNote JavaScript API 编程概述</span><span class="sxs-lookup"><span data-stu-id="7a827-157">OneNote JavaScript API programming overview</span></span>](../onenote/onenote-add-ins-programming-overview.md)
 
-## <a name="see-also"></a><span data-ttu-id="3420e-160">另请参阅</span><span class="sxs-lookup"><span data-stu-id="3420e-160">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="7a827-158">另请参阅</span><span class="sxs-lookup"><span data-stu-id="7a827-158">See also</span></span>
 
-- [<span data-ttu-id="3420e-161">OneNote JavaScript API 编程概述</span><span class="sxs-lookup"><span data-stu-id="3420e-161">OneNote JavaScript API programming overview</span></span>](../onenote/onenote-add-ins-programming-overview.md)
-- [<span data-ttu-id="3420e-162">OneNote JavaScript API 参考</span><span class="sxs-lookup"><span data-stu-id="3420e-162">OneNote JavaScript API reference</span></span>](https://docs.microsoft.com/office/dev/add-ins/reference/overview/onenote-add-ins-javascript-reference?view=office-js)
-- [<span data-ttu-id="3420e-163">Rubric Grader 示例</span><span class="sxs-lookup"><span data-stu-id="3420e-163">Rubric Grader sample</span></span>](https://github.com/OfficeDev/OneNote-Add-in-Rubric-Grader)
-- [<span data-ttu-id="3420e-164">Office 加载项平台概述</span><span class="sxs-lookup"><span data-stu-id="3420e-164">Office Add-ins platform overview</span></span>](../overview/office-add-ins.md)
+- [<span data-ttu-id="7a827-159">OneNote JavaScript API 编程概述</span><span class="sxs-lookup"><span data-stu-id="7a827-159">OneNote JavaScript API programming overview</span></span>](../onenote/onenote-add-ins-programming-overview.md)
+- [<span data-ttu-id="7a827-160">OneNote JavaScript API 参考</span><span class="sxs-lookup"><span data-stu-id="7a827-160">OneNote JavaScript API reference</span></span>](https://docs.microsoft.com/office/dev/add-ins/reference/overview/onenote-add-ins-javascript-reference?view=office-js)
+- [<span data-ttu-id="7a827-161">Rubric Grader 示例</span><span class="sxs-lookup"><span data-stu-id="7a827-161">Rubric Grader sample</span></span>](https://github.com/OfficeDev/OneNote-Add-in-Rubric-Grader)
+- [<span data-ttu-id="7a827-162">Office 外接程序平台概述</span><span class="sxs-lookup"><span data-stu-id="7a827-162">Office Add-ins platform overview</span></span>](../overview/office-add-ins.md)

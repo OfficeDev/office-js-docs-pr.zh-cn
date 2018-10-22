@@ -1,99 +1,258 @@
-# <a name="build-an-excel-add-in-using-react"></a><span data-ttu-id="96efd-101">使用 React 生成 Excel 加载项</span><span class="sxs-lookup"><span data-stu-id="96efd-101">Build an Excel add-in using React</span></span>
+# <a name="build-an-excel-add-in-using-react"></a><span data-ttu-id="fb805-101">使用 React 生成 Excel 加载项</span><span class="sxs-lookup"><span data-stu-id="fb805-101">Build an Excel add-in using React</span></span>
 
-<span data-ttu-id="96efd-102">在本文中，你将完成使用 React 和 Excel JavaScript API 生成 Excel 加载项的过程。</span><span class="sxs-lookup"><span data-stu-id="96efd-102">In this article, you'll walk through the process of building an Excel add-in using React and the Excel JavaScript API.</span></span>
+<span data-ttu-id="fb805-102">在本文中，你将完成使用 React 和 Excel JavaScript API 生成 Excel 加载项的过程。</span><span class="sxs-lookup"><span data-stu-id="fb805-102">In this article, you'll walk through the process of building an Excel add-in using React and the Excel JavaScript API.</span></span>
 
-## <a name="environment"></a><span data-ttu-id="96efd-103">环境</span><span class="sxs-lookup"><span data-stu-id="96efd-103">Environment</span></span>
+## <a name="prerequisites"></a><span data-ttu-id="fb805-103">先决条件</span><span class="sxs-lookup"><span data-stu-id="fb805-103">Prerequisites</span></span>
 
-- <span data-ttu-id="96efd-p101">**Office 桌面**：确保你安装了最新版本的 Office。加载项命令需要内部版本 16.0.6769.0000 或更高版本（建议使用 **16.0.6868.0000**）。了解如何[安装最新版本的 Office 应用程序](http://aka.ms/latestoffice)。</span><span class="sxs-lookup"><span data-stu-id="96efd-p101">**Office Desktop**: Ensure that you have the latest version of Office installed. Add-in commands require build 16.0.6769.0000 or higher (**16.0.6868.0000** recommended). Learn how to [Install the latest version of Office applications](http://aka.ms/latestoffice).</span></span> 
- 
-- <span data-ttu-id="96efd-p102">**Office Online**：没有额外的设置。请注意，对工作/学校帐户的 Office Online 命令的支持处于预览状态。</span><span class="sxs-lookup"><span data-stu-id="96efd-p102">**Office Online**: There is no additional setup. Please note that support for commands in Office Online for work/school accounts is in preview.</span></span>
+- [<span data-ttu-id="fb805-104">Node.js</span><span class="sxs-lookup"><span data-stu-id="fb805-104">Node.js</span></span>](https://nodejs.org)
 
-## <a name="prerequisites"></a><span data-ttu-id="96efd-109">先决条件</span><span class="sxs-lookup"><span data-stu-id="96efd-109">Prerequisites</span></span>
-
-- [<span data-ttu-id="96efd-110">Node.js</span><span class="sxs-lookup"><span data-stu-id="96efd-110">Node.js</span></span>](https://nodejs.org)
-
-- <span data-ttu-id="96efd-111">全局安装最新版本的 [Yeoman](https://github.com/yeoman/yo) 和 [Office 加载项的 Yeoman 生成器](https://github.com/OfficeDev/generator-office)。</span><span class="sxs-lookup"><span data-stu-id="96efd-111">Install the latest version of [Yeoman](https://github.com/yeoman/yo) and the [Yeoman generator for Office Add-ins](https://github.com/OfficeDev/generator-office) globally.</span></span>
+- <span data-ttu-id="fb805-105">全局安装最新版 [Yeoman](https://github.com/yeoman/yo) 和 [Office 外接程序的 Yeoman 生成器](https://github.com/OfficeDev/generator-office)。</span><span class="sxs-lookup"><span data-stu-id="fb805-105">Install the latest version of [Yeoman](https://github.com/yeoman/yo) and the [Yeoman generator for Office Add-ins](https://github.com/OfficeDev/generator-office) globally.</span></span>
     ```bash
     npm install -g yo generator-office
     ```
 
-### <a name="create-the-web-app"></a><span data-ttu-id="96efd-112">创建 Web 应用</span><span class="sxs-lookup"><span data-stu-id="96efd-112">Create the web app</span></span>
+## <a name="create-the-web-app"></a><span data-ttu-id="fb805-106">创建 Web 应用</span><span class="sxs-lookup"><span data-stu-id="fb805-106">Create the web app</span></span>
 
-1. <span data-ttu-id="96efd-p103">在本地驱动器上创建文件夹，并将它命名为 **my-addin**。将在其中创建应用文件。</span><span class="sxs-lookup"><span data-stu-id="96efd-p103">Create a folder on your local drive and name it **my-addin**. This is where you'll create the files for your app.</span></span>
-
-2. <span data-ttu-id="96efd-115">转到应用文件夹。</span><span class="sxs-lookup"><span data-stu-id="96efd-115">Navigate to your app folder.</span></span>
-
-    ```bash
-    cd my-addin
-    ```
-
-3. <span data-ttu-id="96efd-p104">使用 Yeoman 生成器生成加载项的清单文件。运行下面的命令，再回答提示问题，如以下屏幕截图所示。</span><span class="sxs-lookup"><span data-stu-id="96efd-p104">Use the Yeoman generator to generate the manifest file for your add-in. Run the following command and then answer the prompts as shown in the following screenshot.</span></span>
+1. <span data-ttu-id="fb805-107">使用 Yeoman 生成器创建 Excel 加载项项目。</span><span class="sxs-lookup"><span data-stu-id="fb805-107">Use the Yeoman generator to create an Outlook add-in project.</span></span> <span data-ttu-id="fb805-108">运行下面的命令，再回答如下所示的提示问题：</span><span class="sxs-lookup"><span data-stu-id="fb805-108">Run the following command and then answer the prompts as follows:</span></span>
 
     ```bash
     yo office
     ```
 
-    - <span data-ttu-id="96efd-118">**选择一个项目类型：** `Office Add-in project using React framework`</span><span class="sxs-lookup"><span data-stu-id="96efd-118">**Choose a project type:** `Office Add-in project using React framework`</span></span>
-    - <span data-ttu-id="96efd-119">**要将你的外接程序命名为什么?:** `My Office Add-in`</span><span class="sxs-lookup"><span data-stu-id="96efd-119">**What do you want to name your add-in?:** `My Office Add-in`</span></span>
-    - <span data-ttu-id="96efd-120">**要支持哪一个 Office 客户端应用?:** `Excel`</span><span class="sxs-lookup"><span data-stu-id="96efd-120">**Which Office client application would you like to support?:** `Excel`</span></span>
+    - <span data-ttu-id="fb805-109">**选择一个项目类型：** `Office Add-in project using React framework`</span><span class="sxs-lookup"><span data-stu-id="fb805-109">**Choose a project type:** `Office Add-in project using React framework`</span></span>
+    - <span data-ttu-id="fb805-110">**要将你的外接程序命名为什么?:** `My Office Add-in`</span><span class="sxs-lookup"><span data-stu-id="fb805-110">**What do you want to name your add-in?:** `My Office Add-in`</span></span>
+    - <span data-ttu-id="fb805-111">**要支持哪一个 Office 客户端应用?:** `Excel`</span><span class="sxs-lookup"><span data-stu-id="fb805-111">**Which Office client application would you like to support?:** `Excel`</span></span>
 
     ![Yeoman 生成器](../images/yo-office-excel-react.png)
     
-    <span data-ttu-id="96efd-122">完成向导后，生成器将创建项目并安装 Node 支持组件。</span><span class="sxs-lookup"><span data-stu-id="96efd-122">After you complete the wizard, the generator will create the project and install supporting Node components.</span></span>
+    <span data-ttu-id="fb805-113">完成此向导后，生成器会创建项目，并安装支持的 Node 组件。</span><span class="sxs-lookup"><span data-stu-id="fb805-113">After you complete the wizard, the generator will create the project and install supporting Node components.</span></span>
 
-4.  <span data-ttu-id="96efd-123">打开 **src/components/App.tsx**，搜索注释“更新填充颜色”，然后将填充颜色从“黄色”更改为“蓝色”，然后保存文件。</span><span class="sxs-lookup"><span data-stu-id="96efd-123">Open **src/components/App.tsx**, search for the comment "Update the fill color," then change the fill color from 'yellow' to 'blue', and save the file.</span></span> 
+2. <span data-ttu-id="fb805-114">导航到项目的根文件夹。</span><span class="sxs-lookup"><span data-stu-id="fb805-114">Navigate to the root folder of the web application project.</span></span>
 
-    ```js
-    range.format.fill.color = 'blue'
-
-    ```
-
-5. <span data-ttu-id="96efd-124">在\*\* src / components / App.tsx \*\*中的`render` 函数的`return` 块中，将 `<Herolist>` 更新到下面的代码中，然后保存文件。</span><span class="sxs-lookup"><span data-stu-id="96efd-124">In the `return` block of the `render` function within **src/components/App.tsx**, update the `<Herolist>` to the code below, and save the file.</span></span> 
-
-    ```js
-      <HeroList message='Discover what My Office Add-in can do for you today!' items={this.state.listItems}>
-        <p className='ms-font-l'>Choose the button below to set the color of the selected range to blue. <b>Set color</b>.</p>
-        <Button className='ms-welcome__action' buttonType={ButtonType.hero} iconProps={{ iconName: 'ChevronRight' }} onClick={this.click}>Run</Button>
-    </HeroList>
-    ```
-
-6. <span data-ttu-id="96efd-125">按照[将自签名证书添加为受信任的根证书](https://github.com/OfficeDev/generator-office/blob/master/src/docs/ssl.md)中的步骤操作，信任开发计算机操作系统的证书。</span><span class="sxs-lookup"><span data-stu-id="96efd-125">Carry out the steps in [Adding Self-Signed Certificates as Trusted Root Certificate](https://github.com/OfficeDev/generator-office/blob/master/src/docs/ssl.md) to trust the certificate for your development computer's operating system.</span></span>
-
-7. <span data-ttu-id="96efd-p105">旁加载加载项以便在 Excel 中将显示。在终端中，运行以下命令：</span><span class="sxs-lookup"><span data-stu-id="96efd-p105">Sideload your add-in so it will appear in Excel. In the terminal, run the following command:</span></span> 
-    
     ```bash
-    npm run sideload
+    cd "My Office Add-in"
     ```
 
-## <a name="try-it-out"></a><span data-ttu-id="96efd-128">试用</span><span class="sxs-lookup"><span data-stu-id="96efd-128">Try it out</span></span>
+## <a name="update-the-code"></a><span data-ttu-id="fb805-115">更新代码</span><span class="sxs-lookup"><span data-stu-id="fb805-115">Update the code</span></span>
 
-1. <span data-ttu-id="96efd-129">通过终端运行下面的命令，以启动开发人员服务器。</span><span class="sxs-lookup"><span data-stu-id="96efd-129">From the terminal, run the following command to start the dev server.</span></span>
+1. <span data-ttu-id="fb805-116">在代码编辑器中，打开文件 **src/styles.less**，将以下样式添加到文件末尾，然后保存文件。</span><span class="sxs-lookup"><span data-stu-id="fb805-116">In your code editor, open the file **src/styles.less**, add the following styles to the end of the file, and save the file.</span></span>
 
-    <span data-ttu-id="96efd-130">Windows：</span><span class="sxs-lookup"><span data-stu-id="96efd-130">Windows:</span></span>
-    ```bash
-    npm start
+    ```css
+    #content-header {
+        background: #2a8dd4;
+        color: #fff;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 80px; 
+        overflow: hidden;
+        font-family: Arial;
+        padding-top: 25px;
+    }
+
+    #content-main {
+        background: #fff;
+        position: fixed;
+        top: 80px;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        overflow: auto; 
+        font-family: Arial;
+    }
+
+    .padding {
+        padding: 15px;
+    }
+
+    .padding-sm {
+        padding: 4px;
+    }
+
+    .normal-button {
+        width: 80px;
+        padding: 2px;
+    }
     ```
 
-2. <span data-ttu-id="96efd-131">在 Excel 中，依次选择“主页”\*\*\*\* 选项卡和功能区中的“显示任务窗格”\*\*\*\* 按钮，以打开加载项任务窗格。</span><span class="sxs-lookup"><span data-stu-id="96efd-131">In Excel, choose the **Home** tab, and then choose the **Show Taskpane** button in the ribbon to open the add-in task pane.</span></span>
+2. <span data-ttu-id="fb805-117">Office 加载项 Yeoman 生成器创建的项目模板包含一个此快速入门不需要的 React 组件。</span><span class="sxs-lookup"><span data-stu-id="fb805-117">The project template that the Office Add-ins Yeoman generator created includes a React component that is not needed for this quick start.</span></span> <span data-ttu-id="fb805-118">删除文件 **src/components/HeroList.tsx**。</span><span class="sxs-lookup"><span data-stu-id="fb805-118">Delete the file **src/components/HeroList.tsx**.</span></span>
+
+3. <span data-ttu-id="fb805-119">打开文件 **src/components/Header.tsx**，将整个内容替换为以下代码，并保存文件。</span><span class="sxs-lookup"><span data-stu-id="fb805-119">Open the file **src\index.js** to specify the script for the add-in. Replace the entire contents with the following code and save the file.</span></span>
+
+    ```typescript
+    import * as React from 'react';
+
+    export interface HeaderProps {
+        title: string;
+    }
+
+    export class Header extends React.Component<HeaderProps, any> {
+        constructor(props, context) {
+            super(props, context);
+        }
+
+        render() {
+            return (
+                <div id='content-header'>
+                    <div className='padding'>
+                        <h1>{this.props.title}</h1>
+                    </div>
+                </div>
+            );
+        }
+    }
+    ```
+
+4. <span data-ttu-id="fb805-120">在 **src/components** 文件夹中创建一个名为 **Content.tsx** 的新 React 组件，添加以下代码，然后保存该文件。</span><span class="sxs-lookup"><span data-stu-id="fb805-120">Create a new React component named **Content.tsx** in the **src/components** folder, add the following code, and save the file.</span></span>
+
+    ```typescript
+    import * as React from 'react';
+    import { Button, ButtonType } from 'office-ui-fabric-react';
+
+    export interface ContentProps {
+        message: string;
+        buttonLabel: string;
+        click: any;
+    }
+
+    export class Content extends React.Component<ContentProps, any> {
+        constructor(props, context) {
+            super(props, context);
+        }
+
+        render() {
+            return (
+                <div id='content-main'>
+                    <div className='padding'>
+                        <p>{this.props.message}</p>
+                        <br />
+                        <h3>Try it out</h3>
+                        <br/>
+                        <Button className='normal-button' buttonType={ButtonType.hero} onClick={this.props.click}>{this.props.buttonLabel}</Button>
+                    </div>
+                </div>
+            );
+        }
+    }
+    ```
+
+5. <span data-ttu-id="fb805-121">打开文件 **src/components/App.tsx**，将整个内容替换为以下代码，并保存文件。</span><span class="sxs-lookup"><span data-stu-id="fb805-121">Open the file **src\index.js** to specify the script for the add-in. Replace the entire contents with the following code and save the file.</span></span>
+
+    ```typescript
+    import * as React from 'react';
+    import { Header } from './Header';
+    import { Content } from './Content';
+    import Progress from './Progress';
+
+    import * as OfficeHelpers from '@microsoft/office-js-helpers';
+
+    export interface AppProps {
+        title: string;
+        isOfficeInitialized: boolean;
+    }
+
+    export interface AppState {
+    }
+
+    export default class App extends React.Component<AppProps, AppState> {
+        constructor(props, context) {
+            super(props, context);
+        }
+
+        setColor = async () => {
+            try {
+                await Excel.run(async context => {
+                    const range = context.workbook.getSelectedRange();
+                    range.load('address');
+                    range.format.fill.color = 'green';
+                    await context.sync();
+                    console.log(`The range address was ${range.address}.`);
+                });
+            } catch (error) {
+                OfficeHelpers.UI.notify(error);
+                OfficeHelpers.Utilities.log(error);
+            }
+        }
+
+        render() {
+            const {
+                title,
+                isOfficeInitialized,
+            } = this.props;
+
+            if (!isOfficeInitialized) {
+                return (
+                    <Progress
+                        title={title}
+                        logo='assets/logo-filled.png'
+                        message='Please sideload your addin to see app body.'
+                    />
+                );
+            }
+
+            return (
+                <div className='ms-welcome'>
+                    <Header title='Welcome' />
+                    <Content message='Choose the button below to set the color of the selected range to green.' buttonLabel='Set color' click={this.setColor} />
+                </div>
+            );
+        }
+    }
+    ```
+
+## <a name="update-the-manifest"></a><span data-ttu-id="fb805-122">更新清单</span><span class="sxs-lookup"><span data-stu-id="fb805-122">Update the manifest</span></span>
+
+1. <span data-ttu-id="fb805-123">打开文件 **manifest.xml**，以定义加载项的设置和功能。</span><span class="sxs-lookup"><span data-stu-id="fb805-123">Open the file **my-office-add-in-manifest.xml** to define the add-in's settings and capabilities.</span></span> 
+
+2. <span data-ttu-id="fb805-124">`ProviderName` 元素具有占位符值。</span><span class="sxs-lookup"><span data-stu-id="fb805-124">The `ProviderName` element has a placeholder value.</span></span> <span data-ttu-id="fb805-125">将其替换为你的姓名。</span><span class="sxs-lookup"><span data-stu-id="fb805-125">Replace it with your name.</span></span>
+
+3. <span data-ttu-id="fb805-p104">`Description` 元素的 `DefaultValue` 属性具有占位符。将其替换为**Excel 的任务窗格加载项**。</span><span class="sxs-lookup"><span data-stu-id="fb805-p104">The `DefaultValue` attribute of the `Description` element has a placeholder. Replace it with **A task pane add-in for Excel**.</span></span>
+
+4. <span data-ttu-id="fb805-128">保存文件。</span><span class="sxs-lookup"><span data-stu-id="fb805-128">Save the file.</span></span>
+
+    ```xml
+    ...
+    <ProviderName>John Doe</ProviderName>
+    <DefaultLocale>en-US</DefaultLocale>
+    <!-- The display name of your add-in. Used on the store and various places of the Office UI such as the add-ins dialog. -->
+    <DisplayName DefaultValue="My Office Add-in" />
+    <Description DefaultValue="A task pane add-in for Excel"/>
+    ...
+    ```
+
+## <a name="start-the-dev-server"></a><span data-ttu-id="fb805-129">启动开发人员服务器</span><span class="sxs-lookup"><span data-stu-id="fb805-129">Start the dev server</span></span>
+
+[!include[Start server section](../includes/quickstart-yo-start-server.md)] 
+
+## <a name="try-it-out"></a><span data-ttu-id="fb805-130">试用</span><span class="sxs-lookup"><span data-stu-id="fb805-130">Try it out</span></span>
+
+1. <span data-ttu-id="fb805-131">请按照运行加载项所用平台对应的说明操作，以在 Excel 中旁加载加载项。</span><span class="sxs-lookup"><span data-stu-id="fb805-131">Follow the instructions for the platform you'll use to run your add-in to sideload the add-in within Excel.</span></span>
+
+    - <span data-ttu-id="fb805-132">Windows：[在 Windows 旁加载 Office 加载项](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)</span><span class="sxs-lookup"><span data-stu-id="fb805-132">Windows: [Sideload Office Add-ins on Windows](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)</span></span>
+    - <span data-ttu-id="fb805-133">Excel Online：[在 Office Online 中旁加载 Office 加载项](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-on-office-online)</span><span class="sxs-lookup"><span data-stu-id="fb805-133">Excel Online: [Sideload Office Add-ins in Office Online](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-on-office-online)</span></span>
+    - <span data-ttu-id="fb805-134">iPad 和 Mac：[在 iPad 和 Mac 旁加载 Office 加载项](../testing/sideload-an-office-add-in-on-ipad-and-mac.md)</span><span class="sxs-lookup"><span data-stu-id="fb805-134">iPad and Mac: [Sideload Office Add-ins on iPad and Mac](../testing/sideload-an-office-add-in-on-ipad-and-mac.md)</span></span>
+
+2. <span data-ttu-id="fb805-135">在 Excel 中，依次选择**主页**选项卡和功能区中的**显示任务窗格**按钮，以打开加载项任务窗格。</span><span class="sxs-lookup"><span data-stu-id="fb805-135">In Excel, choose the **Home** tab, and then choose the **Show Taskpane** button in the ribbon to open the add-in task pane.</span></span>
 
     ![Excel 加载项按钮](../images/excel-quickstart-addin-2b.png)
 
-3. <span data-ttu-id="96efd-133">选择工作表中的任何一系列单元格。</span><span class="sxs-lookup"><span data-stu-id="96efd-133">Select any range of cells in the worksheet.</span></span>
+3. <span data-ttu-id="fb805-137">选择工作表中的任何一系列单元格。</span><span class="sxs-lookup"><span data-stu-id="fb805-137">Select any range of cells in the worksheet.</span></span>
 
-4. <span data-ttu-id="96efd-134">在任务窗格中，选择 **“设置颜色”** 按钮，将选定区域的颜色设置为l蓝色。</span><span class="sxs-lookup"><span data-stu-id="96efd-134">In the task pane, choose the **Set color** button to set the color of the selected range to green.</span></span>
+4. <span data-ttu-id="fb805-138">在任务窗格中，选择**设置颜色**按钮，将选定区域的颜色设置为绿色。</span><span class="sxs-lookup"><span data-stu-id="fb805-138">In the task pane, choose the **Set color** button to set the color of the selected range to green.</span></span>
 
     ![Excel 加载项](../images/excel-quickstart-addin-2c.png)
 
-## <a name="next-steps"></a><span data-ttu-id="96efd-136">后续步骤</span><span class="sxs-lookup"><span data-stu-id="96efd-136">Next steps</span></span>
+## <a name="next-steps"></a><span data-ttu-id="fb805-140">后续步骤</span><span class="sxs-lookup"><span data-stu-id="fb805-140">Next steps</span></span>
 
-<span data-ttu-id="96efd-p106">恭喜！已使用 React 成功创建 Excel 加载项！接下来，请详细了解 Excel 加载项功能，并跟着 Excel 加载项教程一起操作，生成更复杂的加载项。</span><span class="sxs-lookup"><span data-stu-id="96efd-p106">Congratulations, you've successfully created an Excel add-in using React! Next, learn more about the capabilities of an Excel add-in and build a more complex add-in by following along with the Excel add-in tutorial.</span></span>
+<span data-ttu-id="fb805-p105">恭喜！已使用 React 成功创建 Excel 加载项！接下来，请详细了解 Excel 加载项功能，并跟着 Excel 加载项教程一起操作，生成更复杂的加载项。</span><span class="sxs-lookup"><span data-stu-id="fb805-p105">Congratulations, you've successfully created an Excel add-in using React! Next, learn more about the capabilities of an Excel add-in and build a more complex add-in by following along with the Excel add-in tutorial.</span></span>
 
 > [!div class="nextstepaction"]
-> [<span data-ttu-id="96efd-139">Excel 加载项教程</span><span class="sxs-lookup"><span data-stu-id="96efd-139">Excel add-in tutorial</span></span>](../tutorials/excel-tutorial.yml)
+> [<span data-ttu-id="fb805-143">Excel 加载项教程</span><span class="sxs-lookup"><span data-stu-id="fb805-143">Excel add-in tutorial</span></span>](../tutorials/excel-tutorial.yml)
 
-## <a name="see-also"></a><span data-ttu-id="96efd-140">另请参阅</span><span class="sxs-lookup"><span data-stu-id="96efd-140">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="fb805-144">另请参阅</span><span class="sxs-lookup"><span data-stu-id="fb805-144">See also</span></span>
 
-* [<span data-ttu-id="96efd-141">Excel 加载项教程</span><span class="sxs-lookup"><span data-stu-id="96efd-141">Excel add-in tutorial</span></span>](../tutorials/excel-tutorial-create-table.md)
-* [<span data-ttu-id="96efd-142">使用 Excel JavaScript API 的基本编程概念</span><span class="sxs-lookup"><span data-stu-id="96efd-142">Fundamental programming concepts with the Excel JavaScript API</span></span>](../excel/excel-add-ins-core-concepts.md)
-* [<span data-ttu-id="96efd-143">Excel 加载项代码示例</span><span class="sxs-lookup"><span data-stu-id="96efd-143">Excel add-in code samples</span></span>](https://developer.microsoft.com/office/gallery/?filterBy=Samples,Excel)
-* [<span data-ttu-id="96efd-144">Excel JavaScript API 参考</span><span class="sxs-lookup"><span data-stu-id="96efd-144">Excel JavaScript API reference</span></span>](https://docs.microsoft.com/office/dev/add-ins/reference/overview/excel-add-ins-reference-overview?view=office-js)
+* [<span data-ttu-id="fb805-145">Excel 加载项教程</span><span class="sxs-lookup"><span data-stu-id="fb805-145">Excel add-in tutorial</span></span>](../tutorials/excel-tutorial-create-table.md)
+* [<span data-ttu-id="fb805-146">使用 Excel JavaScript API 的基本编程概念</span><span class="sxs-lookup"><span data-stu-id="fb805-146">Fundamental programming concepts with the Excel JavaScript API</span></span>](../excel/excel-add-ins-core-concepts.md)
+* [<span data-ttu-id="fb805-147">Excel 加载项代码示例</span><span class="sxs-lookup"><span data-stu-id="fb805-147">Excel add-in code samples</span></span>](https://developer.microsoft.com/office/gallery/?filterBy=Samples,Excel)
+* [<span data-ttu-id="fb805-148">Excel JavaScript API 参考</span><span class="sxs-lookup"><span data-stu-id="fb805-148">Excel JavaScript API reference</span></span>](https://docs.microsoft.com/office/dev/add-ins/reference/overview/excel-add-ins-reference-overview?view=office-js)
