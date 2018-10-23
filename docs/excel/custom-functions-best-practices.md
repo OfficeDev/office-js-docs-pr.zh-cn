@@ -1,13 +1,13 @@
 ---
-ms.date: 10/03/2018
+ms.date: 10/17/2018
 description: 了解 Excel 自定义函数的最佳做法和建议的模式。
 title: 自定义函数最佳做法
-ms.openlocfilehash: f6781de97f912df70800532032162187ae9f9344
-ms.sourcegitcommit: 563c53bac52b31277ab935f30af648f17c5ed1e2
+ms.openlocfilehash: 10ba29966c1e991ca23674ce3e5da88de2772e00
+ms.sourcegitcommit: a6d6348075c1abed76d2146ddfc099b0151fe403
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/10/2018
-ms.locfileid: "25459110"
+ms.lasthandoff: 10/19/2018
+ms.locfileid: "25639999"
 ---
 # <a name="custom-functions-best-practices-preview"></a>自定义函数的最佳做法（预览）
 
@@ -37,7 +37,7 @@ function getComment(x) {
 
 ## <a name="debugging"></a>调试
 
-目前，调试 Excel 自定义函数的最佳方法是首先在 [Excel Online](../testing/sideload-office-add-ins-for-testing.md) 中 **旁加载** 加载项。 然后您可以通过使用 [浏览器本机的 f12 调试工具](../testing/debug-add-ins-in-office-online.md) 并结合以下技术调试您自定义的函数：
+目前，调试 Excel 自定义函数的最佳方法是到首先在 **Excel Online** 内[旁加载](../testing/sideload-office-add-ins-for-testing.md)加载项。然后，可以通过结合下列方法使用[浏览器自带的 F12 键调试工具](../testing/debug-add-ins-in-office-online.md)来调试自定义函数：
 
 - 使用自定义函数代码中的 `console.log` 语句发送输出到实时控制台。
 
@@ -75,6 +75,8 @@ CustomFunctionMappings.ADD = add;
 * 在 JSON 元数据文件中，以大写形式指定每个 `name` 属性的值。 `name` 属性定义了最终用户将在 Excel 中看到的函数名称。为每个自定义的函数名称使用大写字母可以为最终用户在 Excel 中提供一致的体验，在那里所有内置的函数名称都是大写的。
 
 * 在 JSON 元数据文件中，以大写形式指定每个 `id` 属性的值。这样做可以明显地知晓，您的 JavaScript 代码中的 `CustomFunctionMappings` 语句的哪一部分对应于 JSON 元数据文件的  `id` 属性（前提是您的函数名称如前面所建议的使用 camelCase）。
+
+* 在 JSON 元数据文件中，确保每个 `id` 属性的值仅包含字母数字字符和句号。 
 
 * 在 JSON 元数据文件中，确保每个 `id` 属性的值在此文件范围内是唯一的。即元数据文件中不存在两个函数对象同时具有相同的 `id` 值。此外，在元数据文件中不指定两个仅仅是大小写不同的 `id` 值。例如，不会定义一个具有 **add** 的 `id` 值的函数对象和一个具有 **ADD** 的 `id` 值的函数对象。
 
