@@ -2,12 +2,12 @@
 title: Office 加载项主机和平台可用性
 description: Excel、Word、Outlook、PowerPoint 和 OneNote 支持的要求集。
 ms.date: 10/03/2018
-ms.openlocfilehash: bc7ac5c97c041a546c160c05cffc2c80db1ff1b1
-ms.sourcegitcommit: c53f05bbd4abdfe1ee2e42fdd4f82b318b363ad7
+ms.openlocfilehash: 39a80f322c282e29e6e8c4363f0c82522b33b75d
+ms.sourcegitcommit: f47654582acbe9f618bec49fb97e1d30f8701b62
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "25506348"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "25579924"
 ---
 # <a name="office-add-in-host-and-platform-availability"></a>Office 加载项主机和平台可用性
 
@@ -321,7 +321,8 @@ ms.locfileid: "25506348"
       - <a href="https://docs.microsoft.com/office/dev/add-ins/reference/objectmodel/requirement-set-1.3/outlook-requirement-set-1.3">Mailbox 1.3</a><br>
       - <a href="https://docs.microsoft.com/office/dev/add-ins/reference/objectmodel/requirement-set-1.4/outlook-requirement-set-1.4">Mailbox 1.4</a><br>
       - <a href="https://docs.microsoft.com/office/dev/add-ins/reference/objectmodel/requirement-set-1.5/outlook-requirement-set-1.5">Mailbox 1.5</a><br>
-      - <a href="https://docs.microsoft.com/office/dev/add-ins/reference/objectmodel/requirement-set-1.6/outlook-requirement-set-1.6">Mailbox 1.6</a></td>
+      - <a href="https://docs.microsoft.com/office/dev/add-ins/reference/objectmodel/requirement-set-1.6/outlook-requirement-set-1.6">Mailbox 1.6</a><br>
+      - <a href="https://docs.microsoft.com/office/dev/add-ins/reference/objectmodel/requirement-set-1.7/outlook-requirement-set-1.7">Mailbox 1.7</a></td>
     <td>不适用</td>
   </tr>
   <tr>
