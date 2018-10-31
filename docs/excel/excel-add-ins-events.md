@@ -1,13 +1,13 @@
 ---
 title: 使用 Excel JavaScript API 处理事件
 description: ''
-ms.date: 10/17/2018
-ms.openlocfilehash: c3fbdf27dcbedf0d006973e6ebc2e01b02e6cec2
-ms.sourcegitcommit: a6d6348075c1abed76d2146ddfc099b0151fe403
+ms.date: 05/25/2018
+ms.openlocfilehash: fbeb0e6efabe37afb0f73ab8e7448d8cf01ebace
+ms.sourcegitcommit: 30435939ab8b8504c3dbfc62fd29ec6b0f1a7d22
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/19/2018
-ms.locfileid: "25639936"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "23943976"
 ---
 # <a name="work-with-events-using-the-excel-javascript-api"></a>使用 Excel JavaScript API 处理事件 
 
@@ -15,19 +15,31 @@ ms.locfileid: "25639936"
 
 ## <a name="events-in-excel"></a>Excel 中的事件
 
-每当 Excel 工作簿中出现某种类型的更改时，就会触发事件通知。使用 Excel JavaScript API，可以注册事件处理程序，以便加载项能够在发生特定事件时自动运行指定的函数。
+每当 Excel 工作簿中出现某种类型的更改时，就会触发事件通知。 使用 Excel JavaScript API，可以注册事件处理程序，以便加载项能够在发生特定事件时自动运行指定的函数。 下列事件暂不受支持。
 
-| 事件 | 描述 | 支持的对象 |
+| 事件 | 说明 | 支持的对象 |
 |:---------------|:-------------|:-----------|
-| `onAdded` | 添加对象时发生的事件。 | [**ChartCollection**](https://docs.microsoft.com/javascript/api/excel/excel.chartcollection)、[**WorksheetCollection**](https://docs.microsoft.com/javascript/api/excel/excel.worksheetcollection) |
-| `onDeleted` | 删除对象时发生的事件。 | [**ChartCollection**](https://docs.microsoft.com/javascript/api/excel/excel.chartcollection)、[**WorksheetCollection**](https://docs.microsoft.com/javascript/api/excel/excel.worksheetcollection) |
-| `onActivated` | 启用对象时发生的事件。 | [**图表**](https://docs.microsoft.com/javascript/api/excel/excel.chart)、[**ChartCollection**](https://docs.microsoft.com/javascript/api/excel/excel.chartcollection)、[**WorksheetCollection**](https://docs.microsoft.com/javascript/api/excel/excel.worksheetcollection)、[**工作表**](https://docs.microsoft.com/javascript/api/excel/excel.worksheet) |
-| `onDeactivated` | 停用对象时发生的事件。 | [**图表**](https://docs.microsoft.com/javascript/api/excel/excel.chart)、[**ChartCollection**](https://docs.microsoft.com/javascript/api/excel/excel.chartcollection)、[**WorksheetCollection**](https://docs.microsoft.com/javascript/api/excel/excel.worksheetcollection)、[**工作表**](https://docs.microsoft.com/javascript/api/excel/excel.worksheet) |
-| `onCalculated` | 工作表完成计算（或集合的所有工作表都已完成）时发生的事件。 | [**WorksheetCollection**](https://docs.microsoft.com/javascript/api/excel/excel.worksheetcollection)、[**工作表**](https://docs.microsoft.com/javascript/api/excel/excel.worksheet) |
-| `onChanged` | 更改单元格内数据时发生的事件。 | [**工作表**](https://docs.microsoft.com/javascript/api/excel/excel.worksheet)、[**表**](https://docs.microsoft.com/javascript/api/excel/excel.table)[**、TableCollection**](https://docs.microsoft.com/javascript/api/excel/excel.tablecollection) |
-| `onDataChanged` | 更改绑定中的数据或格式时发生的事件。 | [**绑定**](https://docs.microsoft.com/javascript/api/excel/excel.binding) |
-| `onSelectionChanged` | 更改活动单元格或选定范围时发生的事件。 | [**工作表**](https://docs.microsoft.com/javascript/api/excel/excel.worksheet)、[**表格**](https://docs.microsoft.com/javascript/api/excel/excel.table)、[**绑定**](https://docs.microsoft.com/javascript/api/excel/excel.binding) |
+| `onAdded` | 添加对象时发生的事件。 | [**WorksheetCollection**](https://docs.microsoft.com/javascript/api/excel/excel.worksheetcollection) |
+| `onDeleted` | 删除对象时发生的事件。 | [**WorksheetCollection**](https://docs.microsoft.com/javascript/api/excel/excel.worksheetcollection) |
+| `onActivated` | 启用对象时发生的事件。 | [**WorksheetCollection**](https://docs.microsoft.com/javascript/api/excel/excel.worksheetcollection)、[**工作表**](https://docs.microsoft.com/javascript/api/excel/excel.worksheet) |
+| `onDeactivated` | 停用对象时发生的事件。 | [**WorksheetCollection**](https://docs.microsoft.com/javascript/api/excel/excel.worksheetcollection)、[**工作表**](https://docs.microsoft.com/javascript/api/excel/excel.worksheet) |
+| `onChanged` | 更改单元格内数据时发生的事件。 | [**Worksheet**](https://docs.microsoft.com/javascript/api/excel/excel.worksheet)、[**Table**](https://docs.microsoft.com/javascript/api/excel/excel.table)[**、TableCollection**](https://docs.microsoft.com/javascript/api/excel/excel.tablecollection) |
+| `onDataChanged` | 数据绑定中的数据或格式更改时发生的事件。 | [**数据绑定**](https://docs.microsoft.com/javascript/api/excel/excel.binding) |
+| `onSelectionChanged` | 更改活动单元格或选定范围时发生的事件。 | [**工作表**](https://docs.microsoft.com/javascript/api/excel/excel.worksheet)、[**表格**](https://docs.microsoft.com/javascript/api/excel/excel.table)、[**数据绑定**](https://docs.microsoft.com/javascript/api/excel/excel.binding) |
 | `onSettingsChanged` | 当文档设置变更时发生的事件。 | [**SettingCollection**](https://docs.microsoft.com/javascript/api/excel/excel.settingcollection) |
+
+## <a name="preview-beta-events-in-excel"></a>在 Excel 中预览（Beta）事件
+
+> [!NOTE]
+> 这些事件目前仅适用于公开预览版（测试版）。 要使用这些功能，您必须使用 Office.js CDN 的 beta 库： https://appsforoffice.microsoft.com/lib/beta/hosted/office.js。
+
+| 事件 | 说明 | 支持的对象 |
+|:---------------|:-------------|:-----------|
+| `onAdded` | 添加图表时发生的事件。 | [**ChartCollection**](https://github.com/OfficeDev/office-js-docs/blob/ExcelJs_OpenSpec/reference/new-events.md) |
+| `onDeleted` | 删除图表时发生的事件。 | [**ChartCollection**](https://github.com/OfficeDev/office-js-docs/blob/ExcelJs_OpenSpec/reference/new-events.md) |
+| `onActivated` | 激活图表时发生的事件。 | [**Chart**](https://github.com/OfficeDev/office-js-docs/blob/ExcelJs_OpenSpec/reference/new-events.md)， [**ChartCollection**](https://github.com/OfficeDev/office-js-docs/blob/ExcelJs_OpenSpec/reference/new-events.md) |
+| `onDeactivated` | 停用图表时发生的事件。 | [**Chart**](https://github.com/OfficeDev/office-js-docs/blob/ExcelJs_OpenSpec/reference/new-events.md)， [**ChartCollection**](https://github.com/OfficeDev/office-js-docs/blob/ExcelJs_OpenSpec/reference/new-events.md) |
+| `onCalculated` | 工作表完成计算（或集合的所有工作表都已完成）时发生的事件。 | [**WorksheetCollection**](https://github.com/OfficeDev/office-js-docs/blob/ExcelJs_OpenSpec/reference/new-events.md)、[**工作表**](https://github.com/OfficeDev/office-js-docs/blob/ExcelJs_OpenSpec/reference/new-events.md) |
 
 ### <a name="event-triggers"></a>事件触发器
 
@@ -41,10 +53,7 @@ Excel 工作簿内的事件可以通过下列方式触发：
 
 ### <a name="lifecycle-of-an-event-handler"></a>事件处理程序的生命周期
 
-事件处理程序在加载项注册事件处理程序时创建完成。当加载项取消注册事件处理程序或刷新、重新加载或关闭加载项时，它将被销毁。 事件处理程序不会作为 Excel 文件的一部分保留，也不会与 Excel Online 的会话保持一致。
-
-> [!CAUTION]
-> 删除已注册事件的对象（例如，注册了 `onChanged` 事件的表）时，事件处理程序不再触发但保留在内存中，直到加载项或 Excel 会话刷新或关闭。
+事件处理程序在加载项注册事件处理程序时创建完成，并在加载项取消注册事件处理程序或加载项关闭时销毁。事件处理程序不会暂留为 Excel 文件的一部分。
 
 ### <a name="events-and-coauthoring"></a>事件和共同创作
 
@@ -52,7 +61,7 @@ Excel 工作簿内的事件可以通过下列方式触发：
 
 ## <a name="register-an-event-handler"></a>注册事件处理程序
 
-下面的代码示例为 **Sample** 工作表中的 `onChanged` 事件注册事件处理程序。此代码指定 `handleDataChange` 函数应在工作表中的数据有变化时运行。
+下面的代码示例为 **Sample** 工作表中的 `onChanged` 事件注册事件处理程序。 此代码指定 `handleDataChange` 函数应在工作表中的数据有变化时运行。
 
 ```js
 Excel.run(function (context) {
@@ -68,7 +77,7 @@ Excel.run(function (context) {
 
 ## <a name="handle-an-event"></a>处理事件
 
-如上一示例所示，注册事件处理程序时，指定函数应在指定事件发生时运行。可以将函数设计为执行方案所需的任何操作。下面的代码示例展示了事件处理程序函数如何直接将事件信息写入控制台。 
+如上一示例所示，注册事件处理程序时，指定函数应在指定事件发生时运行。 可以将函数设计为执行方案所需的任何操作。 下面的代码示例展示了事件处理程序函数如何直接将事件信息写入控制台。 
 
 ```js
 function handleChange(event)
@@ -86,7 +95,7 @@ function handleChange(event)
 
 ## <a name="remove-an-event-handler"></a>删除事件处理程序
 
-下面的代码示例为 **Sample** 工作表中的 `onSelectionChanged` 事件注册事件处理程序，并将 `handleSelectionChange` 函数定义为在事件发生时运行。它还定义了随后可以调用的 `remove()` 函数，以删除相应事件处理程序。
+下面的代码示例为 **Sample** 工作表中的 `onSelectionChanged` 事件注册事件处理程序，并将 `handleSelectionChange` 函数定义为在事件发生时运行。 它还定义了随后可以调用的 `remove()` 函数，以删除相应事件处理程序。
 
 ```js
 var eventResult;
@@ -126,9 +135,12 @@ function remove() {
 
 ## <a name="enable-and-disable-events"></a>启用和禁用事件
 
-可以通过禁用事件来提高加载项的性能。例如，您的应用可能永远不需要接收事件，也可能在执行多个实体的批量编辑时忽略事件。 
+> [!NOTE]
+> 此功能目前仅在公共预览版（测试版）中可用。 要使用该功能，您必须引用 Office.js CDN 的 beta 库：https://appsforoffice.microsoft.com/lib/beta/hosted/office.js。
 
-在[运行时](https://docs.microsoft.com/javascript/api/excel/excel.runtime)级别启用或禁用事件。`enableEvents` 属性判断是否会触发事件，并激活其处理程序。 
+可以通过禁用事件来提高加载项的性能。 例如，您的应用可能永远不需要接收事件，也可能在执行多个实体的批量编辑时忽略事件。 
+
+在[运行时](https://docs.microsoft.com/javascript/api/excel/excel.runtime)级别启用或禁用事件。 属性判断是否会触发事件，并激活其处理程序。`enableEvents` 
 
 下面的代码示例演示如何打开和关闭事件。
 
@@ -150,4 +162,5 @@ Excel.run(function (context) {
 
 ## <a name="see-also"></a>另请参阅
 
-- [使用 Excel JavaScript API 的基本编程概念](excel-add-ins-core-concepts.md)
+- [Excel JavaScript API 核心概念](excel-add-ins-core-concepts.md)
+- [Excel JavaScript API 开放性规范](https://github.com/OfficeDev/office-js-docs/tree/ExcelJs_OpenSpec)

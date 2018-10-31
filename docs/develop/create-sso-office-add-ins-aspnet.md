@@ -2,12 +2,12 @@
 title: 创建使用单一登录的 ASP.NET Office 加载项
 description: ''
 ms.date: 01/23/2018
-ms.openlocfilehash: d98fdc6604f0b4bf0c7437e75f27759fc6c5c83f
-ms.sourcegitcommit: 30435939ab8b8504c3dbfc62fd29ec6b0f1a7d22
+ms.openlocfilehash: be7d6a8ab7f646c1ef9e77a2b459c41000c49f43
+ms.sourcegitcommit: eea7f2b1679cf9a209d35880b906e311bdf1359c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "23945720"
+ms.lasthandoff: 07/26/2018
+ms.locfileid: "21241136"
 ---
 # <a name="create-an-aspnet-office-add-in-that-uses-single-sign-on-preview"></a>创建使用单一登录的 ASP.NET Office 加载项（预览）
 
@@ -22,7 +22,7 @@ ms.locfileid: "23945720"
 
 * 最新版 Visual Studio 2017 Preview。
 
-* Office 2016，版本 1708，内部版本 8424.nnnn 或更高版本（Office 365 订阅版本，有时称为“即点即用”）。可能需要成为 Office 预览体验成员才能获取此版本。有关详细信息，请参阅[成为 Office 预览体验成员](https://products.office.com/office-insider?tab=tab-1)。
+* Office 2016，版本 1708，内部版本 8424.nnnn 或更高版本（Office 365 订阅版本，有时称为“即点即用”）。可能需要成为 Office 预览体验成员才能获取此版本。有关详细信息，请参阅[成为 Office 预览体验成员](https://products.office.com/en-us/office-insider?tab=tab-1)。
 
 ## <a name="set-up-the-starter-project"></a>设置初学者项目
 
@@ -38,15 +38,15 @@ ms.locfileid: "23945720"
     > [!NOTE]
     > 将看到有关 Identity 命名空间的错误消息。 这是由于将在下一步中修复的配置问题间接造成。 重要的是，包已安装。
 
-1. 目前，SSO 所需的 MSAL 库 (Microsoft.Identity.Client) 版本（`1.1.4-preview0002` 版本）没有在标准 NuGet 目录中列出，因此也没有在 package.config 中列出，必须单独进行安装。 
+1. 目前，SSO 所需的 MSAL 库 (Microsoft.Identity.Client) 版本（`1.1.1-alpha0393` 版本）没有在标准 NuGet 目录中列出，因此也没有在 package.config 中列出，必须单独进行安装。 
 
    > 1. 在“工具”**** 菜单上，依次转到“NuGet 包管理器”**** > “包管理器控制台”****。 
 
-   > 2. 在控制台中，运行以下命令。 即使 Internet 连接速度很快，也可能需要一分钟或更长时间才能完成。 完成后，应该会在控制台输出末尾处附近看到**已成功安装 Microsoft.Identity.Client 1.1.4-alpha0002”...**。
+   > 2. 在控制台上，运行以下命令。即使使用快速的 Internet 连接，也可能需要一分钟或更长时间才能完成。完成后你应该看到 **成功安装“Microsoft.Identity.Client 1.1.4-preview0002”......** 接近控制台输出的末尾。
 
    >    `Install-Package Microsoft.Identity.Client -Version 1.1.4-preview0002`
 
-   > 3. 在“解决方案资源管理器”**** 中，右键单击“引用”****。验证是否列出了“Microsoft.Identity.Client”****。如果没有列出或它的条目上有警告图标，请先删除此条目，再使用“Visual Studio 添加引用”向导，以对 **... \[Begin | Complete]\packages\Microsoft.Identity.Client.1.1.4-preview0002\lib\net45\Microsoft.Identity.Client.dll**的程序集添加引用。
+   > 3. 在“解决方案资源管理器”**** 中，右键单击“引用”****。验证是否列出了“Microsoft.Identity.Client”****。如果没有列出或它的条目上有警告图标，请先删除此条目，再使用“Visual Studio 添加引用”向导，添加对 **... \[Begin | Complete]\packages\Microsoft.Identity.Client.1.1.4-alpha0002\lib\net45\Microsoft.Identity.Client.dll** 处程序集的引用。
 
 1. 重新生成此项目。
 
@@ -64,13 +64,13 @@ ms.locfileid: "23945720"
 
 [!INCLUDE[](../includes/register-sso-add-in-aad-v2-include.md)]
 
-## <a name="grant-administrator-consent-to-the-add-in"></a>向加载项授予管理员许可
+## <a name="grant-administrator-consent-to-the-add-in"></a>向外接程序授予管理员许可
 
 [!INCLUDE[](../includes/grant-admin-consent-to-an-add-in-include.md)]
 
 ## <a name="configure-the-add-in"></a>配置外接程序
 
-1. 在以下字符串中，将占位符“{tenant_ID}”替换为你的 Office 365 租户ID。 使用[“找到你的 Office 365 租户 ID”](https://docs.microsoft.com/onedrive/find-your-office-365-tenant-id)中的一种方法获得它。
+1. 在以下字符串中，将占位符“{tenant_ID}”替换为你的 Office 365 租户ID。 使用[“找到你的 Office 365 租户 ID”](https://support.office.com/en-us/article/Find-your-Office-365-tenant-ID-6891b561-a52d-4ade-9f39-b492285e2c9b)中的一种方法获得它。
 
     `https://login.microsoftonline.com/{tenant_ID}/v2.0`
 
@@ -126,7 +126,7 @@ ms.locfileid: "23945720"
     > * **Resource** 值是向注册的加载项添加 Web API 平台时设置的**应用 ID URI**。
     > * 仅在通过 AppSource 销售加载项时，才使用 **Scopes** 部分生成许可对话框。
 
-1. 在 Visual Studio 中，打开“错误列表”**** 的“警告”**** 选项卡。 如果存在关于 `<WebApplicationInfo>` 不是 `<VersionOverrides>` 的有效子级的警告，则该 Visual Studio 2017 预览版无法识别 SSO 标记。 作为解决方法，请对 Word、Excel 或 PowerPoint 外接程序执行以下操作。 （如果使用的是 Outlook 外接程序，请参阅下面的解决方法。）
+1. 在 Visual Studio 中，打开“错误列表”**** 的“警告”**** 选项卡。 如果存在关于 `<WebApplicationInfo>` 不是 `<VersionOverrides>` 的有效子级的警告，则该 Visual Studio 2017 Preview 版本无法识别 SSO 标记。 作为解决方法，请对 Word、Excel 或 PowerPoint 外接程序执行以下操作。 （如果使用的是 Outlook 外接程序，请参阅下面的解决方法。）
 
    - **Word、Excel 和 Powerpoint 的解决方法**
 
@@ -183,7 +183,7 @@ ms.locfileid: "23945720"
 
 1. 在 `getOneDriveFiles` 方法下方，添加下列代码。关于此代码，请注意以下几点：
 
-    * [getAccessTokenAsync](https://docs.microsoft.com/office/dev/add-ins/develop/sso-in-office-add-ins#sso-api-reference)是 Office.js 中新增的 API，支持加载项向 Office 主机应用程序（Excel、PowerPoint、Word 等）请求获取对加载项的访问令牌（对于已登录 Office 的用户）。 反过来，Office 主机应用程序会向 Azure AD 2.0 终结点请求获取令牌。 由于已在注册加载项时将 Office 主机预授权给加载项，因此 Azure AD 将会发送令牌。
+    * 是 Office.js 中的新 API，可便于加载项要求 Office 主机应用（Excel、PowerPoint、Word 等）提供加载项访问令牌（对于已登录 Office 的用户）。反过来，Office 主机应用会向 Azure AD 2.0 终结点请求获取令牌。由于已在注册加载项时将 Office 主机预授权给加载项，因此 Azure AD 会发送访问令牌。`getAccessTokenAsync`
     * 如果用户未登录 Office，Office 主机会提示用户登录。
     * options 参数将 `forceConsent` 设置为 `false`，因此用户不会在每次使用加载项时都看到提示，要求其许可向 Office 主机授予对加载项的访问权限。 用户首次运行加载项时，`getAccessTokenAsync` 调用会失败，但在后续步骤中添加的错误处理逻辑会自动重新调用（`forceConsent` 选项设置为 `true`），并提示用户许可，但仅限首次运行。
     * 方法将在后续步骤中创建。`handleClientSideErrors`
@@ -282,11 +282,11 @@ ms.locfileid: "23945720"
         break; 
     ```
 
-1. 将 `TODO4` 替换为以下代码。 如果用户用于登录的帐户既不是工作帐户或学校帐户，也不是 Microsoft 帐户，就会出现错误 13003。 建议用户注销，再使用受支持的帐户类型重新登录。
+1. 将 `TODO4` 替换为以下代码。 如果用户用于登录的帐户既不是工作帐户或学校帐户，也不是 Microsoft 帐户，错误 13003 发生。 建议用户注销，再使用受支持的帐户类型重新登录。
 
     ```javascript
     case 13003: 
-        showResult(['Please sign out of Office and sign in again with a work or school account, or Microsoft account. Other kinds of accounts, like corporate domain accounts do not work.']);
+        showResult(['Please sign out of Office and sign in again with a work or school account, or Microsoft Account. Other kinds of accounts, like corporate domain accounts do not work.']);
         break;   
     ```
 
@@ -322,7 +322,7 @@ ms.locfileid: "23945720"
     ```javascript
     case 13009:
         if (triedWithoutForceConsent) {
-            showResult(['Please sign out of Office and sign in again with a work or school account, or Microsoft account.']);
+            showResult(['Please sign out of Office and sign in again with a work or school account, or Microsoft Account.']);
         } else {
             getDataWithToken({ forceConsent: false });
         }
@@ -347,12 +347,17 @@ ms.locfileid: "23945720"
 
         // TODO11: Handle the case where AAD asks for an additional form of authentication.
 
-        // TODO12: Handle missing consent and scope (permission) related issues.
+        // TODO12: Handle the case where consent has not been granted, or has been revoked.
 
-        // TODO13: Handle the case where the token sent to Microsoft Graph in the request for 
+        // TODO13: Handle the case where an invalid scope (permission) was used in the on-behalf-of flow.
+
+        // TODO14: Handle the case where the token that the add-in's client-side sends to it's 
+        //         server-side is not valid because it is missing `access_as_user` scope (permission).
+
+        // TODO15: Handle the case where the token sent to Microsoft Graph in the request for 
         //         data is expired or invalid.
 
-        // TODO14: Log all other server errors.
+        // TODO16: Log all other server errors.
     }
     ```
 
@@ -378,23 +383,7 @@ ms.locfileid: "23945720"
     }    
     ```
 
-1. 将 `TODO12` 替换为以下代码。 你将在接下来的几个步骤中用 *内部* 条件块来替换此代码中的三个 `TODO`。
-
-    ```javascript
-    else if (exceptionMessage) {
-
-        // TODO12A: Handle the case where consent has not been granted, or has been revoked.
-
-        // TODO12B: Handle the case where an invalid scope (permission) was used in the on-behalf-of flow.
-
-        // TODO12C: Handle the case where the token that the add-in's client-side sends to it's 
-        //          server-side is not valid because it is missing `access_as_user` scope (permission).
-    }
-  
-    ```
-
-
-1. 将 `TODO12A` 替换为以下代码。 （这创建了 *内部* 条件块中的第一部分）。请注意有关此代码：
+1. 将 `TODO12` 替换为下列代码。关于此代码，请注意以下几点：
 
     * 错误 65001 表示未许可授予（或已撤消）一个或多个对 Microsoft Graph 的访问权限。 
     * 加载项应获取新令牌（`forceConsent` 选项设置为 `true`）。
@@ -411,7 +400,7 @@ ms.locfileid: "23945720"
     }    
     ```
 
-1. 将 `TODO12B` 替换为下列代码。关于此代码，请注意以下几点：
+1. 将 `TODO13` 替换为下列代码。关于此代码，请注意以下几点：
 
     * 错误 70011 有多重含义。对于此加载项而言，最重要的含义是已请求获取的范围（权限）无效。因此，代码会检查是否有完整错误说明，而不仅仅是数字。
     * 加载项应报告此错误。
@@ -422,7 +411,7 @@ ms.locfileid: "23945720"
     }    
     ```
 
-1. 将 `TODO12C` 替换为下列代码。关于此代码，请注意以下几点：
+1. 将 `TODO14` 替换为下列代码。关于此代码，请注意以下几点：
 
     * 如果 `access_as_user` 范围（权限）不在访问令牌中，此令牌由加载项客户端发送到 AAD 以便在代表流中使用，那么在后续步骤中创建的服务器端代码将发送消息 `Missing access_as_user`。
     * 加载项应报告此错误。
@@ -433,7 +422,7 @@ ms.locfileid: "23945720"
     }    
     ```
 
-1. 将 `TODO13` 替换为以下代码。 （这是 *外部* 条件块的一部分，应紧跟着以 `else if (exceptionMessage) {` 开头的括号的右侧，并是相同级别的缩进。）请注意有关此代码：
+1. 将 `TODO15` 替换为下列代码。关于此代码，请注意以下几点：
 
     * 要在服务器端代码中使用的标识库（Microsoft 身份验证库 (MSAL)）应确保没有向 Microsoft Graph 发送任何到期或无效令牌；但如果这种情况确实发生，从 Microsoft Graph 返回到加载项 Web 服务的错误包含代码 `InvalidAuthenticationToken`。在后续步骤中创建的服务器端代码会将此消息中继到加载项客户端。
     * 在这种情况下，加载项应重置计数器和标志变量，再重新调用按钮处理程序方法，以从头开始执行整个身份验证流程。
@@ -447,7 +436,7 @@ ms.locfileid: "23945720"
     }    
     ```
 
-1. 将 `TODO14` 替换为以下代码。
+1. 将 `TODO16` 替换为以下代码。
 
     ```javascript
     else {
@@ -559,7 +548,7 @@ ms.locfileid: "23945720"
 3. 在声明 `ValuesController` 的代码行的正上方，添加属性 `[Authorize]`。这可确保只要调用控制器方法时，加载项就会运行在上一过程中配置的授权过程。只有拥有对加载项的有效访问令牌，调用方才能调用控制器的方法。
 
     > [!NOTE]
-    > 生产 ASP.NET MVC Web API 服务应在一个或多个自定义 [FilterAttribute](https://docs.microsoft.com/previous-versions/aspnet/web-frameworks/hh834645(v=vs.108)) 类中有代表流的自定义逻辑。 此说明性示例将逻辑放入主控制器中，以便能够轻松跟进授权和数据提取逻辑的整个流。 这也可以让示例与 [Azure 示例](https://github.com/Azure-Samples/)中的授权示例模式保持一致。    
+    > 生产 ASP.NET MVC Web API 服务应在一个或多个自定义 [FilterAttribute](https://msdn.microsoft.com/en-us/library/system.web.http.filters(v=vs.108).aspx) 类中有代表流的自定义逻辑。 此说明性示例将逻辑放入主控制器中，以便能够轻松跟进授权和数据提取逻辑的整个流。 这也可以让示例与 [Azure 示例](https://github.com/Azure-Samples/)中的授权示例模式保持一致。    
 
 4. 将下列方法添加到 `ValuesController`。 请注意，返回值是 `Task<HttpResponseMessage>`（而不是 `Task<IEnumerable<string>>`），这对于 `GET api/values` 方法而言更为常见。 这是将自定义授权逻辑放入控制器中造成不良影响：此逻辑中的一些错误条件要求将 HTTP Response 对象发送到加载项客户端。 
 
@@ -586,7 +575,7 @@ ms.locfileid: "23945720"
     ```
 
     > [!NOTE]
-    > 只可使用 `access_as_user` 作用域授权 API 为 Office 加载项处理代表流。服务中的其他 API 应有自己的作用域要求。 这就限制了使用 Office 获得的令牌可以访问的内容。
+    > 只能使用 `access_as_user` 范围授权 API 为 Office 加载项处理代表流。服务中的其他 API 应有自己的范围要求。这就限制了使用 Office 获得的令牌可以访问的内容。
 
 6. 将 `TODO2` 替换为下列代码。关于此代码，请注意以下几点：
     * 它将从 Office 主机收到的原始访问令牌转换为，传递给另一个方法的 `UserAssertion` 对象。

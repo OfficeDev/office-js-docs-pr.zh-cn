@@ -15,7 +15,7 @@
 
 1. 克隆 [Excel 加载项教程](https://github.com/OfficeDev/Excel-Add-in-Tutorial) GitHub 存储库。
 
-2. |||UNTRANSLATED_CONTENT_START|||Open a Git bash window, or Node.JS-enabled system prompt, and navigate to the **Start** folder of the project.|||UNTRANSLATED_CONTENT_END|||
+2. 打开 Git Bash 窗口或已启用 Node.JS 的系统命令提示符，并转到项目的 ** Start** 文件夹。
 
 3. 运行命令 `npm install`，以安装 package.json 文件中列出的工具和库。 
 

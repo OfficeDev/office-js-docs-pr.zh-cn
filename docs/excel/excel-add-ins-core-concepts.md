@@ -1,13 +1,13 @@
 ---
 title: 使用 Excel JavaScript API 的基本编程概念
 description: 使用 Excel JavaScript API 构建适用于 Excel 的加载项。
-ms.date: 10/03/2018
-ms.openlocfilehash: f93ec7b5e34f90f2d61f29d861b7e0c19f66f6e3
-ms.sourcegitcommit: c53f05bbd4abdfe1ee2e42fdd4f82b318b363ad7
+ms.date: 10/16/2018
+ms.openlocfilehash: 21fcbc32dab2057f6d1f5e97a62a6b00bf1f7f03
+ms.sourcegitcommit: f47654582acbe9f618bec49fb97e1d30f8701b62
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "25505984"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "25579889"
 ---
 # <a name="fundamental-programming-concepts-with-the-excel-javascript-api"></a>使用 Excel JavaScript API 的基本编程概念
  
@@ -117,7 +117,7 @@ Excel.run(function (context) {
  
 在前面的示例中，由于在调用 **myRange.load()** 时未指定 `format/font`，因此无法读取 `format.font.color` 属性。
 
-为了优化性能，应该在对象上使用 **load()** 方法时明确指定要加载的属性和关系，如 [Excel JavaScript API 性能优化](performance.md)所述。 有关 **load()** 方法的详细信息，请参阅 [Excel JavaScript API 的高级编程概念](excel-add-ins-advanced-concepts.md)。
+为了优化性能，应该在对象上使用 **load()** 方法时明确指定要加载的属性和关系，如 [Excel JavaScript API 性能优化](performance.md)所述。有关 **load()** 方法的详细信息，请参阅 [使用 Excel JavaScript API 的高级编程概念](excel-add-ins-advanced-concepts.md)。
 
 ## <a name="null-or-blank-property-values"></a>null 或空属性值
  
@@ -228,31 +228,9 @@ Excel.run(function (context) {
 });
 ```
  
-## <a name="error-messages"></a>错误消息
- 
-出现 API 错误时，API 将返回包含代码和消息的 **error** 对象。下表定义了 API 可能返回的错误列表。
- 
-|error.code | error.message |
-|:----------|:--------------|
-|InvalidArgument |自变量无效、缺少或格式不正确。|
-|InvalidRequest  |无法处理此请求。|
-|InvalidReference|此引用对于当前操作无效。|
-|InvalidBinding  |由于之前的更新，此对象绑定不再有效。|
-|InvalidSelection|当前选定内容对于此操作无效。|
-|Unauthenticated |所需的身份验证信息缺少或无效。|
-|AccessDenied |无法执行所请求的操作。|
-|ItemNotFound |所请求的资源不存在。|
-|ActivityLimitReached|已达到活动限制。|
-|GeneralException|处理请求时出现内部错误。|
-|NotImplemented  |所请求的功能未实现。|
-|ServiceNotAvailable|服务不可用。|
-|冲突              |由于冲突，无法处理请求。|
-|ItemAlreadyExists|所创建的资源已存在。|
-|UnsupportedOperation|不支持正在尝试的操作。|
-|RequestAborted|请求在运行时已中止。|
-|wApiNotAvailable|请求的 API 不可用。|
-|InsertDeleteConflict|尝试的插入或删除操作导致冲突。|
-|InvalidOperation|尝试的操作对于对象无效。|
+##<a name="handle-errors"></a>处理错误
+
+出现 API 错误时，API 将返回包含代码和消息的 **error** 对象。 有关错误处理，包括 API 错误列表的详细信息，请参阅[错误处理](excel-add-ins-error-handling.md)。
  
 ## <a name="see-also"></a>另请参阅
  

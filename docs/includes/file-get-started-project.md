@@ -6,7 +6,7 @@
 
 - [Node.js](https://nodejs.org)
 
-- 全局安装最新版 [Yeoman](https://github.com/yeoman/yo) 和 [Office 外接程序的 Yeoman 生成器](https://github.com/OfficeDev/generator-office)。
+- 全局安装最新版 [Yeoman](https://github.com/yeoman/yo) 和 [Office 加载项的 Yeoman 生成器](https://github.com/OfficeDev/generator-office)。
 
     ```bash
     npm install -g yo generator-office
@@ -14,7 +14,15 @@
 
 ## <a name="create-the-add-in"></a>创建加载项
 
-1. 使用 Yeoman 生成器创建 Project 加载项项目。 运行下面的命令，再回答如下所示的提示问题：
+1. 在本地驱动器上创建一个文件夹，并命名为 `my-project-addin`。 将在其中创建外接程序文件。
+
+2. 转到新文件夹。
+
+    ```bash
+    cd my-project-addin
+    ```
+
+3. 使用 Yeoman 生成器创建 Project 加载项项目。 运行下面的命令，再回答如下所示的提示问题：
 
     ```bash
     yo office
@@ -22,50 +30,45 @@
 
     - **选择一个项目类型：** `Office Add-in project using Jquery framework`
     - **选择一个脚本类型：** `Javascript`
-    - **要将你的外接程序命名为什么?:** `My Office Add-in`
-    - **要支持哪一个 Office 客户端应用程序?:** `Project`
+    - **要如何命名加载项?:** `My Office Add-in`
+    - **要支持哪一个 Office 客户端应用?:** `Project`
 
     ![有关 Yeoman 生成器提示和回答的屏幕截图](../images/yo-office-project-jquery.png)
     
-    完成此向导后，生成器会创建项目，并安装支持的 Node 组件。
-    
-2. 导航到项目的根文件夹。
-
-    ```bash
-    cd "My Office Add-in"
-    ```
+    完成向导后，生成器将创建项目并安装 Node 支持组件。
 
 ## <a name="update-the-code"></a>更新代码
 
-1. 在代码编辑器中，打开项目根目录中的 **index.html** 根目录中的项目。此文件包括在加载项任务窗格中渲染的 HTML。
+1. 在代码编辑器中，打开项目根目录中的“index.html”****。 此文件包含在加载项任务窗格中呈现的 HTML。
 
-2. 将 `<body>` 元素替换为以下标记。
+2. 将 `<body>` 元素内的 `<header>` 元素替换为以下标记。
 
     ```html
-    <body class="ms-font-m ms-welcome">
-        <div id="content-header">
-            <div class="padding">
-                <h1>Welcome</h1>
-            </div>
+    <div id="content-header">
+        <div class="padding">
+            <h1>Welcome</h1>
         </div>
-        <div id="content-main">
-            <div class="padding">
-                <p>Select a task and then choose the buttons below and observe the output in the <b>Results</b> textbox.</p>
-                <h3>Try it out</h3>
-                <button class="ms-Button" id="get-task-guid">Get Task GUID</button>
-                <br/><br/>
-                <button class="ms-Button" id="get-task">Get Task data</button>
-                <br/>
-                <h4>Results:</h4>
-                <textarea id="result" rows="6" cols="25"></textarea>
-            </div>
-        </div>
-        <script type="text/javascript" src="node_modules/jquery/dist/jquery.js"></script>
-        <script type="text/javascript" src="node_modules/office-ui-fabric-js/dist/js/fabric.js"></script>
-    </body>
+    </div>
     ```
 
-3. 打开文件 **src\index.js**，以指定加载项脚本。 将整个内容替换为以下代码，并保存文件。
+3. 将 `<body>` 元素内的 `<main>` 元素替换为以下标记，并保存文件。
+
+    ```html
+    <div id="content-main">
+        <div class="padding">
+            <p>Select a task and then choose the buttons below and observe the output in the <b>Results</b> textbox.</p>
+            <h3>Try it out</h3>
+            <button class="ms-Button" id="get-task-guid">Get Task GUID</button>
+            <br/><br/>
+            <button class="ms-Button" id="get-task">Get Task data</button>
+            <br/>
+            <h4>Results:</h4>
+            <textarea id="result" rows="6" cols="25"></textarea>
+        </div>
+    </div>
+    ```
+
+4. 打开文件 **index/ src.js** 以指定加载项的脚本。使用以下代码替换全部内容并保存文件。
 
     ```js
     'use strict';
@@ -118,7 +121,7 @@
     })();
     ```
 
-4. 打开项目根目录中的文件**app.css**，以指定加载项自定义样式。将整个内容替换为以下内容，并保存文件。
+4. 打开项目根目录中的文件 **app.css**，以指定加载项自定义样式。 将整个内容替换为以下内容，并保存文件。
 
     ```css
     #content-header {
@@ -149,11 +152,11 @@
 
 ## <a name="update-the-manifest"></a>更新清单
 
-1. 打开文件 **manifest.xml**，以定义加载项的设置和功能。
+1. 打开文件“my-office-add-in-manifest.xml”****，以定义加载项的设置和功能。
 
-2. `ProviderName` 元素具有占位符值。将其替换为你的姓名。
+2. 元素具有占位符值。`ProviderName` 将其替换为你的姓名。
 
-3. `Description` 元素的 `DefaultValue` 属性有占位符。 将它替换为 **A task pane add-in for Project**。
+3. 元素的 `DefaultValue` 属性有占位符。`Description` 将它替换为“A task pane add-in for Project”****。
 
 4. 保存文件。
 
@@ -177,19 +180,19 @@
 
 2. 请按照运行加载项所用平台对应的说明操作，以在 Project 中旁加载加载项。
 
-    - Windows：[在 Windows 上旁加载 Office 外接程序](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)
-    - Project Online：[在 Office Online 中旁加载 Office 外接程序](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-on-office-online)
-    - iPad 和 Mac：[在 iPad 和 Mac 上旁加载 Office 外接程序](../testing/sideload-an-office-add-in-on-ipad-and-mac.md)
+    - Windows：[在 Windows 上旁加载 Office 加载项](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)
+    - Project Online：[在 Office Online 中旁加载 Office 加载项](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-on-office-online)
+    - iPad 和 Mac：[在 iPad 和 Mac 上旁加载 Office 加载项](../testing/sideload-an-office-add-in-on-ipad-and-mac.md)
 
 3. 在 Project 中，选择一个任务。
 
     ![Project 中已选择一个任务的项目计划的屏幕截图](../images/project_quickstart_addin_1.png)
 
-4. 在任务窗格中，选择**获取任务 GUID** 按钮，将任务 GUID 写入到**结果**文本框。
+4. 在任务窗格中，选择“获取任务 GUID”**** 按钮，将任务 GUID 写入到“结果”**** 文本框。
 
     ![Project 中已选择一个任务的项目计划，且任务 GUID 写入到任务窗格中文本框的屏幕截图](../images/project_quickstart_addin_2.png)
 
-5. 在任务窗格中，选择**获取任务数据**按钮，将选定任务的多个属性写入到**结果**文本框。
+5. 在任务窗格中，选择“获取任务数据”**** 按钮，将选定任务的多个属性写入到“结果”**** 文本框。
 
     ![Project 中已选择一个任务的项目计划，且多个任务属性写入到任务窗格中文本框的屏幕截图](../images/project_quickstart_addin_3.png)
 

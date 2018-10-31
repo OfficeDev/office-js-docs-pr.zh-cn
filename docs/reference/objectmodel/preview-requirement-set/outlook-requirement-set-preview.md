@@ -1,9 +1,9 @@
 # <a name="outlook-add-in-api-preview-requirement-set"></a>Outlook 加载项 API 预览要求集
 
-适用于 Office 的 JavaScript API 的 Outlook 加载项 API 子集包括您可以在 Outlook 加载项中使用的对象、方法、属性和事件。
+适用于 Office 的 JavaScript API 的 Outlook 加载项 API 子集包括可以在 Outlook 加载项中使用的对象、方法、属性和事件。
 
 > [!NOTE]
-> 本文档适用于**预览**[要求集](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)。 此要求集尚未完全实施，客户端不会准确报告对它的支持。 不应在加载项清单中指定此要求集。 不应在加载项清单中指定此要求集。
+> 本文档适用于**预览**[要求集](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)。此要求集尚未完全实施，客户端不会准确报告对它的支持。不应在加载项清单中指定此要求集。在此要求集中引入的方法和属性应在使用前单独测试其可用性。
 
 预览要求集包括[要求集 1.7](../requirement-set-1.7/outlook-requirement-set-1.7.md) 的所有功能。
 
@@ -19,6 +19,7 @@
 - [Office.context.auth.getAccessTokenAsync](https://docs.microsoft.com/office/dev/add-ins/develop/sso-in-office-add-ins#sso-api-reference) - 现已开始支持访问`getAccessTokenAsync`，以便加载项能够[获取 Microsoft Graph API 的访问令牌](https://docs.microsoft.com/outlook/add-ins/authenticate-a-user-with-an-sso-token)。
 - [Office.MailboxEnums.DelegatePermissions](/javascript/api/outlook/office.mailboxenums.delegatepermissions) -添加新的位标志枚举，指定委派权限。
 - [Office.EventType](/javascript/api/office/office.eventtype) - 通过添加 `OfficeThemeChanged` 条目修改支持 OfficeThemeChanged 事件。
+- [SupportsSharedFolders 清单元素](../../manifest/supportssharedfolders.md) - 添加子元素到 [DesktopFormFactor](../../manifest/desktopformfactor.md) 清单元素。 它定义加载项是否可在委派方案中可用。
 
 ## <a name="see-also"></a>另请参阅
 
