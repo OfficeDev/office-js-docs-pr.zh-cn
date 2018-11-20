@@ -1,2 +1,11 @@
 > [!NOTE]
-> 自定义函数目前在开发人员预览版中可用。Excel 2016 for Windows（内部版本 10827 或更高版本）、Excel 2016 for Mac（内部版本 13.329 或更高版本）和 Excel Online 都支持自定义函数。此外，你必须加入 [Office 预览体验](https://products.office.com/office-insider)计划（**预览体验成员**级别 - 以前称为“Insider Fast”）才能使用自定义函数。所有 Office 内部版本目前都禁用自定义函数，除非你是“Office 预览体验”计划的成员。（**预览体验成员**级别）
+> 自定义功能目前可在开发人员预览中使用，并在以下平台上受支持：
+> - Excel Online
+> - Excel for Windows（版本 1810 或更高版本）
+> - Excel for Mac（版本 13.329 或更高版本）
+> 
+> 要在 Excel Online 中使用自定义功能，请使用 Office 365 订阅或 [Microsoft 帐户](https://account.microsoft.com/account)进行登录。
+> 
+> 若要在 Excel for Windows 或 Excel for Mac 中使用自定义函数，您必须拥有 Office 365 订阅、加入 [Office 预览体验成员](https://products.office.com/office-insider)计划（**预览体验成员 **级别 - 以前称为“快速预览体验成员”）并使用最新内部版本的 Excel（如本说明前面所述）。 
+>
+> 如果还没有 Office 365 订阅，可以通过加入 [Office 365 开发人员计划](https://developer.microsoft.com/zh-CN/office/dev-program)获取一个订阅。

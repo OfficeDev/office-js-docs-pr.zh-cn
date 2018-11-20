@@ -2,7 +2,7 @@
 
 适用于：OneNote Online
 
-下面的链接展示了 API 中的高级 OneNote 对象。 每个对象页面链接包含对象可用的属性、关系和方法的描述。 如需了解详细信息，请浏览这些链接。 
+下面的链接展示了 API 中的高级 OneNote 对象。 每个对象页面链接包含对象可用的属性、事件和方法的描述。 如需了解详细信息，请浏览相应链接。 
     
 - [Application](/javascript/api/onenote/onenote.application)：用于访问所有全局可寻址的 OneNote 对象（如活动笔记本和活动分区）的顶级对象。
 
@@ -38,6 +38,10 @@
 - [TableCell](/javascript/api/onenote/onenote.tablecell)：段落对象的容器。
     - [TableCellCollection](/javascript/api/onenote/onenote.tablecellcollection)：TableRow 中 TableCell 对象的集合。
 
+## <a name="onenote-javascript-api-requirement-sets"></a>OneNote JavaScript API 要求集
+
+要求集是指各组已命名的 API 成员。 Office 外接程序使用清单中指定的要求集或执行运行时检查，以确定 Office 主机是否支持外接程序所需的 API。 有关 OneNote JavaScript API 要求集的详细信息，请参阅 [OneNote JavaScript API 要求集](../requirement-sets/onenote-api-requirement-sets.md)文章。
+
 ## <a name="onenote-javascript-api-reference"></a>OneNote JavaScript API 参考
 
 有关 OneNote JavaScript API 的详细信息，请参阅 [OneNote JavaScript API 参考文档](/javascript/api/onenote)。
@@ -47,4 +51,4 @@
 - [OneNote JavaScript API 编程概述](https://docs.microsoft.com/office/dev/add-ins/onenote/onenote-add-ins-programming-overview)
 - [生成第一个 OneNote 外接程序](https://docs.microsoft.com/office/dev/add-ins/onenote/onenote-add-ins-getting-started)
 - [Rubric Grader 示例](https://github.com/OfficeDev/OneNote-Add-in-Rubric-Grader)
-- [Office 外接程序平台概述](https://docs.microsoft.com/office/dev/add-ins/overview/office-add-ins)
+- [Office 加载项平台概述](https://docs.microsoft.com/office/dev/add-ins/overview/office-add-ins)

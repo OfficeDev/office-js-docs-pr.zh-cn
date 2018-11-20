@@ -187,7 +187,7 @@ function sendFile() {
 
 本地函数  `getSlice` 可对 **File.getSliceAsync** 方法进行调用，以从 **File** 对象中检索切片。 **getSliceAsync** 方法返回切片集合中的 **Slice** 对象。它具有两个必需参数： _sliceIndex_ 和 _callback_。 _sliceIndex_ 参数将整数作为切块集合中的索引器。与 JavaScript API for Office 中的其他函数一样， **getSliceAsync** 方法还将回调函数作为参数，以处理方法调用的结果。
 
- **Slice** 对象使您可以访问到文件中包含的数据。 除非在 **getFileAsync** 方法的 _options_ 参数中另有规定， **Slice** 对象的大小为 4 MB。  **Slice** 对象公开三个属性：[size](https://docs.microsoft.com/javascript/api/office/office.slice?view=office-js#size)、[data](https://docs.microsoft.com/javascript/api/office/office.slice?view=office-js#data) 和 [index](https://docs.microsoft.com/javascript/api/office/office.slice?view=office-js#index)。  **size** 属性获取以字节为单位的切片的大小。 **index** 属性获取一个整数，表示切片在切片集合中的位置。
+**切片**对象提供对文件中包含的数据的访问权限。 **切片**对象的大小为 4 MB，除非 **getFileAsync** 方法的_选项_参数中另有指定。 **切片**对象公开三个属性：[大小](https://docs.microsoft.com/javascript/api/office/office.slice?view=office-js#size)、[数据](https://docs.microsoft.com/javascript/api/office/office.slice?view=office-js#data)和[索引](https://docs.microsoft.com/javascript/api/office/office.slice?view=office-js#index)。 **大小**属性获取以字节为单位的切片大小。 **索引**属性获取一个整数，表示切片在切片集合中的位置。
 
 ```js
 // Get a slice from the file and then call sendSlice.
@@ -204,7 +204,8 @@ function getSlice(state) {
 }
 ```
 
-**Slice.data** 属性以字节数组形式返回文件的原始数据。如果数据采用文本格式（即 XML 或纯文本），则切片包含原始文本。如果您为 **Document.getFileAsync** 的 _fileType_ 参数传入 **Office.FileType.Compressed**，则切片将以字节数组形式包含文件的二进制数据。对于 PowerPoint 或 Word 文件，切片包含字节数组。
+
+            **Slice.data** 属性以字节数组形式返回文件的原始数据。如果数据采用文本格式（即 XML 或纯文本），则切片包含原始文本。如果您为 **Document.getFileAsync** 的 _fileType_ 参数传入 **Office.FileType.Compressed**，则切片将以字节数组形式包含文件的二进制数据。对于 PowerPoint 或 Word 文件，切片包含字节数组。
 
 您必须实施自己的函数（或使用可用库），将字节数组数据转换为 Base64 编码的字符串。有关使用 JavaScript 进行 Base64 编码的信息，请参阅 [Base64 编码和解码](https://developer.mozilla.org/docs/Web/JavaScript/Base64_encoding_and_decoding)。
 

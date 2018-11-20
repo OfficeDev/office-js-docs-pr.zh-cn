@@ -1,22 +1,20 @@
 ---
-title: Office 加载项主机和平台可用性
-description: Excel、Word、Outlook、PowerPoint 和 OneNote 支持的要求集。
-ms.date: 10/03/2018
-ms.openlocfilehash: 39a80f322c282e29e6e8c4363f0c82522b33b75d
-ms.sourcegitcommit: f47654582acbe9f618bec49fb97e1d30f8701b62
+title: Office 外接程序主机和平台可用性
+description: Excel、Word、Outlook、PowerPoint、OneNote 和项目支持的要求集。
+ms.date: 11/07/2018
+ms.openlocfilehash: f8d7d9d393531301829b31dd171a5332a0da536b
+ms.sourcegitcommit: 9b021af6cb23a58486d6c5c7492be425e309bea1
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "25579924"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "26533796"
 ---
-# <a name="office-add-in-host-and-platform-availability"></a>Office 加载项主机和平台可用性
+# <a name="office-add-in-host-and-platform-availability"></a>Office 外接程序主机和平台可用性
 
-若要按预期运行，Office 加载项可能会依赖特定的 Office 主机、要求集、API 成员或 API 版本。下表包含每个 Office 应用程序目前支持的可用平台、扩展点、API 要求集和通用 API 要求集。
-
-如果表格单元格内有星号 (*)，表示我们正在完善它。有关 Project 或 Access 要求集，请参阅 [Office 通用要求集](https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/office-add-in-requirement-sets)。  
+若要按预期运行，Office 加载项可能会依赖特定的 Office 主机、要求集、API 成员或 API 版本。 下表列出了每个 Office 应用目前支持的可用平台、扩展点、API 要求集和通用 API 要求集。
 
 > [!NOTE]
-> 通过 MSI 安装的 Office 2016 的内部版本号为 16.0.4266.1001。此版本只包含 ExcelApi 1.1、WordApi 1.1 和通用 API 要求集。
+> 通过 MSI 安装的 Office 2016 的生成号为 16.0.4266.1001。此版本只包含 ExcelApi 1.1、WordApi 1.1 和通用 API 要求集。
 
 ## <a name="excel"></a>Excel
 
@@ -29,7 +27,7 @@ ms.locfileid: "25579924"
   </tr>
   <tr>
     <td>Office Online</td>
-    <td> - Taskpane<br>
+    <td> - 任务窗格<br>
         - 内容<br>
         - <a href="https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">加载项命令</a>
     </td>
@@ -47,7 +45,7 @@ ms.locfileid: "25579924"
         - BindingEvents<br>
         - CompressedFile<br>
         - DocumentEvents<br>
-        - 文件<br>
+        - File<br>
         - MatrixBindings<br>
         - MatrixCoercion<br>
         - Selection<br>
@@ -60,14 +58,14 @@ ms.locfileid: "25579924"
   <tr>
     <td>Office 2013 for Windows</td>
     <td>
-        - Taskpane<br>
+        - 任务窗格<br>
         - 内容</td>
     <td>  - <a href="https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a></td>
     <td>
         - BindingEvents<br>
         - CompressedFile<br>
         - DocumentEvents<br>
-        - 文件<br>
+        - File<br>
         - ImageCoercion<br>
         - MatrixBindings<br>
         - MatrixCoercion<br>
@@ -80,7 +78,7 @@ ms.locfileid: "25579924"
   </tr>
   <tr>
     <td>Office 2016 for Windows</td>
-    <td>- Taskpane<br>
+    <td>- 任务窗格<br>
         - 内容<br>
         - <a href="https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">加载项命令</a></td>
     <td>- <a href="https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/excel-api-requirement-sets">ExcelApi 1.1</a><br>
@@ -95,7 +93,7 @@ ms.locfileid: "25579924"
     <td>- BindingEvents<br>
         - CompressedFile<br>
         - DocumentEvents<br>
-        - 文件<br>
+        - File<br>
         - ImageCoercion<br>
         - MatrixBindings<br>
         - MatrixCoercion<br>
@@ -107,8 +105,8 @@ ms.locfileid: "25579924"
         - TextCoercion</td>
   </tr>
   <tr>
-    <td>Office for Windows</td>
-    <td>- Taskpane<br>
+    <td>Office 2019 for Windows</td>
+    <td>- 任务窗格<br>
         - 内容<br>
         - <a href="https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">加载项命令</a></td>
     <td>- <a href="https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/excel-api-requirement-sets">ExcelApi 1.1</a><br>
@@ -123,7 +121,7 @@ ms.locfileid: "25579924"
     <td>- BindingEvents<br>
         - CompressedFile<br>
         - DocumentEvents<br>
-        - 文件<br>
+        - File<br>
         - ImageCoercion<br>
         - MatrixBindings<br>
         - MatrixCoercion<br>
@@ -136,7 +134,7 @@ ms.locfileid: "25579924"
   </tr>
   <tr>
     <td>Office for iOS</td>
-    <td>- Taskpane<br>
+    <td>- 任务窗格<br>
         - 内容</td>
     <td>- <a href="https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/excel-api-requirement-sets">ExcelApi 1.1</a><br>
         - <a href="https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/excel-api-requirement-sets">ExcelApi 1.2</a><br>
@@ -150,7 +148,7 @@ ms.locfileid: "25579924"
     <td>- BindingEvents<br>
         - CompressedFile<br>
         - DocumentEvents<br>
-        - 文件<br>
+        - File<br>
         - ImageCoercion<br>
         - MatrixBindings<br>
         - MatrixCoercion<br>
@@ -163,7 +161,7 @@ ms.locfileid: "25579924"
   </tr>
   <tr>
     <td>Office 2016 for Mac</td>
-    <td>- Taskpane<br>
+    <td>- 任务窗格<br>
         - 内容<br>
         - <a href="https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">加载项命令</a></td>
     <td>- <a href="https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/excel-api-requirement-sets">ExcelApi 1.1</a><br>
@@ -178,7 +176,7 @@ ms.locfileid: "25579924"
     <td>- BindingEvents<br>
         - CompressedFile<br>
         - DocumentEvents<br>
-        - 文件<br>
+        - File<br>
         - ImageCoercion<br>
         - MatrixBindings<br>
         - MatrixCoercion<br>
@@ -192,7 +190,7 @@ ms.locfileid: "25579924"
   </tr>
   <tr>
     <td>Office 2019 for Mac</td>
-    <td>- Taskpane<br>
+    <td>- 任务窗格<br>
         - 内容<br>
         - <a href="https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">加载项命令</a></td>
     <td>- <a href="https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/excel-api-requirement-sets">ExcelApi 1.1</a><br>
@@ -207,7 +205,7 @@ ms.locfileid: "25579924"
     <td>- BindingEvents<br>
         - CompressedFile<br>
         - DocumentEvents<br>
-        - 文件<br>
+        - File<br>
         - ImageCoercion<br>
         - MatrixBindings<br>
         - MatrixCoercion<br>
@@ -244,7 +242,7 @@ ms.locfileid: "25579924"
       - <a href="https://docs.microsoft.com/office/dev/add-ins/reference/objectmodel/requirement-set-1.5/outlook-requirement-set-1.5">Mailbox 1.5</a><br>
       - <a href="https://docs.microsoft.com/office/dev/add-ins/reference/objectmodel/requirement-set-1.6/outlook-requirement-set-1.6">Mailbox 1.6</a><br>
       - <a href="https://docs.microsoft.com/office/dev/add-ins/reference/objectmodel/requirement-set-1.7/outlook-requirement-set-1.7">Mailbox 1.7</a></td>
-    <td>不适用</td>
+    <td>不可用</td>
   </tr>
   <tr>
     <td>Office 2013 for Windows</td>
@@ -255,7 +253,7 @@ ms.locfileid: "25579924"
       - <a href="https://docs.microsoft.com/office/dev/add-ins/reference/objectmodel/requirement-set-1.2/outlook-requirement-set-1.2">Mailbox 1.2</a><br>
       - <a href="https://docs.microsoft.com/office/dev/add-ins/reference/objectmodel/requirement-set-1.3/outlook-requirement-set-1.3">Mailbox 1.3</a><br>
       - <a href="https://docs.microsoft.com/office/dev/add-ins/reference/objectmodel/requirement-set-1.4/outlook-requirement-set-1.4">Mailbox 1.4</a></td>
-    <td>不适用</td>
+    <td>不可用</td>
   </tr>
   <tr>
     <td>Office 2016 for Windows</td>
@@ -270,7 +268,7 @@ ms.locfileid: "25579924"
       - <a href="https://docs.microsoft.com/office/dev/add-ins/reference/objectmodel/requirement-set-1.5/outlook-requirement-set-1.5">Mailbox 1.5</a><br>
       - <a href="https://docs.microsoft.com/office/dev/add-ins/reference/objectmodel/requirement-set-1.6/outlook-requirement-set-1.6">Mailbox 1.6</a><br>
       - <a href="https://docs.microsoft.com/office/dev/add-ins/reference/objectmodel/requirement-set-1.7/outlook-requirement-set-1.7">Mailbox 1.7</a></td>
-    <td>不适用</td>
+    <td>不可用</td>
   </tr>
   <tr>
     <td>Office 2019 for Windows</td>
@@ -285,7 +283,7 @@ ms.locfileid: "25579924"
       - <a href="https://docs.microsoft.com/office/dev/add-ins/reference/objectmodel/requirement-set-1.5/outlook-requirement-set-1.5">Mailbox 1.5</a><br>
       - <a href="https://docs.microsoft.com/office/dev/add-ins/reference/objectmodel/requirement-set-1.6/outlook-requirement-set-1.6">Mailbox 1.6</a><br>
       - <a href="https://docs.microsoft.com/office/dev/add-ins/reference/objectmodel/requirement-set-1.7/outlook-requirement-set-1.7">Mailbox 1.7</a></td>
-    <td>不适用</td>
+    <td>不可用</td>
   </tr>
   <tr>
     <td>Office for iOS</td>
@@ -296,7 +294,7 @@ ms.locfileid: "25579924"
       - <a href="https://docs.microsoft.com/office/dev/add-ins/reference/objectmodel/requirement-set-1.3/outlook-requirement-set-1.3">Mailbox 1.3</a><br>
       - <a href="https://docs.microsoft.com/office/dev/add-ins/reference/objectmodel/requirement-set-1.4/outlook-requirement-set-1.4">Mailbox 1.4</a><br>
       - <a href="https://docs.microsoft.com/office/dev/add-ins/reference/objectmodel/requirement-set-1.5/outlook-requirement-set-1.5">Mailbox 1.5</a></td>
-    <td>不适用</td>
+    <td>不可用</td>
   </tr>
   <tr>
     <td>Office 2016 for Mac</td>
@@ -309,7 +307,7 @@ ms.locfileid: "25579924"
       - <a href="https://docs.microsoft.com/office/dev/add-ins/reference/objectmodel/requirement-set-1.4/outlook-requirement-set-1.4">Mailbox 1.4</a><br>
       - <a href="https://docs.microsoft.com/office/dev/add-ins/reference/objectmodel/requirement-set-1.5/outlook-requirement-set-1.5">Mailbox 1.5</a><br>
       - <a href="https://docs.microsoft.com/office/dev/add-ins/reference/objectmodel/requirement-set-1.6/outlook-requirement-set-1.6">Mailbox 1.6</a></td>
-    <td>不适用</td>
+    <td>不可用</td>
   </tr>
   <tr>
     <td>Office 2019 for Mac</td>
@@ -323,7 +321,7 @@ ms.locfileid: "25579924"
       - <a href="https://docs.microsoft.com/office/dev/add-ins/reference/objectmodel/requirement-set-1.5/outlook-requirement-set-1.5">Mailbox 1.5</a><br>
       - <a href="https://docs.microsoft.com/office/dev/add-ins/reference/objectmodel/requirement-set-1.6/outlook-requirement-set-1.6">Mailbox 1.6</a><br>
       - <a href="https://docs.microsoft.com/office/dev/add-ins/reference/objectmodel/requirement-set-1.7/outlook-requirement-set-1.7">Mailbox 1.7</a></td>
-    <td>不适用</td>
+    <td>不可用</td>
   </tr>
   <tr>
     <td>Office for Android</td>
@@ -334,7 +332,7 @@ ms.locfileid: "25579924"
       - <a href="https://docs.microsoft.com/office/dev/add-ins/reference/objectmodel/requirement-set-1.3/outlook-requirement-set-1.3">Mailbox 1.3</a><br>
       - <a href="https://docs.microsoft.com/office/dev/add-ins/reference/objectmodel/requirement-set-1.4/outlook-requirement-set-1.4">Mailbox 1.4</a><br>
       - <a href="https://docs.microsoft.com/office/dev/add-ins/reference/objectmodel/requirement-set-1.5/outlook-requirement-set-1.5">Mailbox 1.5</a></td>
-    <td>不适用</td>
+    <td>不可用</td>
   </tr>
 </table>
 
@@ -348,12 +346,11 @@ ms.locfileid: "25579924"
     <th>扩展点</th>
     <th>API 要求集</th>
     <th><a href="https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/office-add-in-requirement-sets"><b>通用 API</b></a></th>
-  </tr> 
   </tr>
   <tr>
     <td>Office Online</td>
-    <td> - Taskpane<br>
-         - <a href="https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">加载项命令</a></td>
+    <td> - 任务窗格<br>
+         - <a href="https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">外接程序命令</a></td>
     <td> - <a href="https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/word-api-requirement-sets">WordApi 1.1</a><br>
          - <a href="https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/word-api-requirement-sets">WordApi 1.2</a><br>
          - <a href="https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/word-api-requirement-sets">WordApi 1.3</a><br>
@@ -361,7 +358,7 @@ ms.locfileid: "25579924"
     <td> - BindingEvents<br>
          - CustomXmlParts<br>
          - DocumentEvents<br>
-         - 文件<br>
+         - File<br>
          - HtmlCoercion<br>
          - ImageCoercion<br>
          - MatrixBindings<br>
@@ -378,13 +375,13 @@ ms.locfileid: "25579924"
   </tr>
   <tr>
     <td>Office 2013 for Windows</td>
-    <td> - Taskpane</td>
+    <td> - 任务窗格</td>
     <td> - <a href="https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a></td>
     <td> - BindingEvents<br>
          - CompressedFile<br>
          - CustomXmlParts<br>
          - DocumentEvents<br>
-         - 文件<br>
+         - File<br>
          - HtmlCoercion<br>
          - ImageCoercion<br>
          - MatrixBindings<br>
@@ -401,8 +398,8 @@ ms.locfileid: "25579924"
   </tr>
   <tr>
     <td>Office 2016 for Windows</td>
-    <td> - Taskpane<br>
-         - <a href="https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">加载项命令</a></td>
+    <td> - 任务窗格<br>
+         - <a href="https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">外接程序命令</a></td>
     <td> - <a href="https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/word-api-requirement-sets">WordApi 1.1</a><br>
         - <a href="https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/word-api-requirement-sets">WordApi 1.2</a><br>
         - <a href="https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/word-api-requirement-sets">WordApi 1.3</a><br>
@@ -411,7 +408,7 @@ ms.locfileid: "25579924"
          - CompressedFile<br>
          - CustomXmlParts<br>
          - DocumentEvents<br>
-         - 文件<br>
+         - File<br>
          - HtmlCoercion<br>
          - ImageCoercion<br>
          - MatrixBindings<br>
@@ -428,8 +425,8 @@ ms.locfileid: "25579924"
   </tr>
   <tr>
     <td>Office 2019 for Windows</td>
-    <td> - Taskpane<br>
-         - <a href="https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">加载项命令</a></td>
+    <td> - 任务窗格<br>
+         - <a href="https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">外接程序命令</a></td>
     <td> - <a href="https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/word-api-requirement-sets">WordApi 1.1</a><br>
         - <a href="https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/word-api-requirement-sets">WordApi 1.2</a><br>
         - <a href="https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/word-api-requirement-sets">WordApi 1.3</a><br>
@@ -438,7 +435,7 @@ ms.locfileid: "25579924"
          - CompressedFile<br>
          - CustomXmlParts<br>
          - DocumentEvents<br>
-         - 文件<br>
+         - File<br>
          - HtmlCoercion<br>
          - ImageCoercion<br>
          - MatrixBindings<br>
@@ -455,7 +452,7 @@ ms.locfileid: "25579924"
   </tr>
   <tr>
     <td>Office for iOS</td>
-    <td> - Taskpane</td>
+    <td> - 任务窗格</td>
     <td> - <a href="https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/word-api-requirement-sets">WordApi 1.1</a><br>
          - <a href="https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/word-api-requirement-sets">WordApi 1.2</a><br>
          - <a href="https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/word-api-requirement-sets">WordApi 1.3</a><br>
@@ -465,7 +462,7 @@ ms.locfileid: "25579924"
          - CompressedFile<br>
          - CustomXmlParts<br>
          - DocumentEvents<br>
-         - 文件<br>
+         - File<br>
          - HtmlCoercion<br>
          - ImageCoercion<br>
          - MatrixBindings<br>
@@ -482,8 +479,8 @@ ms.locfileid: "25579924"
   </tr>
   <tr>
     <td>Office 2016 for Mac</td>
-    <td> - Taskpane<br>
-         - <a href="https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">加载项命令</a></td>
+    <td> - 任务窗格<br>
+         - <a href="https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">外接程序命令</a></td>
     <td> - <a href="https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/word-api-requirement-sets">WordApi 1.1</a><br>
         - <a href="https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/word-api-requirement-sets">WordApi 1.2</a><br>
         - <a href="https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/word-api-requirement-sets">WordApi 1.3</a><br>
@@ -493,7 +490,7 @@ ms.locfileid: "25579924"
          - CompressedFile<br>
          - CustomXmlParts<br>
          - DocumentEvents<br>
-         - 文件<br>
+         - File<br>
          - HtmlCoercion<br>
          - ImageCoercion<br>
          - MatrixBindings<br>
@@ -510,8 +507,8 @@ ms.locfileid: "25579924"
   </tr>
   <tr>
     <td>Office 2019 for Mac</td>
-    <td> - Taskpane<br>
-         - <a href="https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">加载项命令</a></td>
+    <td> - 任务窗格<br>
+         - <a href="https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">外接程序命令</a></td>
     <td> - <a href="https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/word-api-requirement-sets">WordApi 1.1</a><br>
         - <a href="https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/word-api-requirement-sets">WordApi 1.2</a><br>
         - <a href="https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/word-api-requirement-sets">WordApi 1.3</a><br>
@@ -521,7 +518,7 @@ ms.locfileid: "25579924"
          - CompressedFile<br>
          - CustomXmlParts<br>
          - DocumentEvents<br>
-         - 文件<br>
+         - File<br>
          - HtmlCoercion<br>
          - ImageCoercion<br>
          - MatrixBindings<br>
@@ -548,18 +545,17 @@ ms.locfileid: "25579924"
     <th>扩展点</th>
     <th>API 要求集</th>
     <th><a href="https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/office-add-in-requirement-sets"><b>通用 API</b></a></th>
-  </tr> 
   </tr>
   <tr>
     <td>Office Online</td>
     <td> - 内容<br>
-         - Taskpane<br>
-         - <a href="https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">加载项命令</a></td>
+         - 任务窗格<br>
+         - <a href="https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">外接程序命令</a></td>
     <td> - <a href="https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a></td>
     <td> - ActiveView<br>
          - CompressedFile<br>
          - DocumentEvents<br>
-         - 文件<br>
+         - File<br>
          - ImageCoercion<br>
          - PdfFile<br>
          - Selection<br>
@@ -569,14 +565,14 @@ ms.locfileid: "25579924"
   <tr>
     <td>Office 2013 for Windows</td>
     <td> - 内容<br>
-         - Taskpane<br>
+         - 任务窗格<br>
     </td>
     <td> - <a href="https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a>
 </td>
     <td> - ActiveView<br>
          - CompressedFile<br>
          - DocumentEvents<br>
-         - 文件<br>
+         - File<br>
          - ImageCoercion<br>
          - PdfFile<br>
          - Selection<br>
@@ -586,13 +582,13 @@ ms.locfileid: "25579924"
   <tr>
     <td>Office 2016 for Windows</td>
     <td> - 内容<br>
-         - Taskpane<br>
-         - <a href="https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">加载项命令</a></td>
+         - 任务窗格<br>
+         - <a href="https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">外接程序命令</a></td>
     <td> - <a href="https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a></td>
     <td> - ActiveView<br>
          - CompressedFile<br>
          - DocumentEvents<br>
-         - 文件<br>
+         - File<br>
          - ImageCoercion<br>
          - PdfFile<br>
          - Selection<br>
@@ -602,13 +598,13 @@ ms.locfileid: "25579924"
   <tr>
     <td>Office 2019 for Windows</td>
     <td> - 内容<br>
-         - Taskpane<br>
-         - <a href="https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">加载项命令</a></td>
+         - 任务窗格<br>
+         - <a href="https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">外接程序命令</a></td>
     <td> - <a href="https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a></td>
     <td> - ActiveView<br>
          - CompressedFile<br>
          - DocumentEvents<br>
-         - 文件<br>
+         - File<br>
          - ImageCoercion<br>
          - PdfFile<br>
          - Selection<br>
@@ -618,12 +614,12 @@ ms.locfileid: "25579924"
   <tr>
     <td>Office for iOS</td>
     <td> - 内容<br>
-         - Taskpane</td>
+         - 任务窗格</td>
     <td> - <a href="https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a></td>
      <td> - ActiveView<br>
          - CompressedFile<br>
          - DocumentEvents<br>
-         - 文件<br>
+         - File<br>
          - PdfFile<br>
          - Selection<br>
          - Settings<br>
@@ -633,13 +629,13 @@ ms.locfileid: "25579924"
   <tr>
     <td>Office 2016 for Mac</td>
     <td> - 内容<br>
-         - Taskpane<br>
-         - <a href="https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">加载项命令</a></td>
+         - 任务窗格<br>
+         - <a href="https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">外接程序命令</a></td>
     <td> - <a href="https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a></td>
     <td> - ActiveView<br>
          - CompressedFile<br>
          - DocumentEvents<br>
-         - 文件<br>
+         - File<br>
          - ImageCoercion<br>
          - PdfFile<br>
          - Selection<br>
@@ -649,13 +645,13 @@ ms.locfileid: "25579924"
   <tr>
     <td>Office 2019 for Mac</td>
     <td> - 内容<br>
-         - Taskpane<br>
-         - <a href="https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">加载项命令</a></td>
+         - 任务窗格<br>
+         - <a href="https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">外接程序命令</a></td>
     <td> - <a href="https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a></td>
     <td> - ActiveView<br>
          - CompressedFile<br>
          - DocumentEvents<br>
-         - 文件<br>
+         - File<br>
          - ImageCoercion<br>
          - PdfFile<br>
          - Selection<br>
@@ -674,19 +670,52 @@ ms.locfileid: "25579924"
     <th>扩展点</th>
     <th>API 要求集</th>
     <th><a href="https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/office-add-in-requirement-sets"><b>通用 API</b></a></th>
-  </tr> 
   </tr>
   <tr>
     <td>Office Online</td>
     <td> - 内容<br>
-         - Taskpane<br>
-         - <a href="https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">加载项命令</a></td>
+         - 任务窗格<br>
+         - <a href="https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">外接程序命令</a></td>
     <td> - <a href="https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/onenote-api-requirement-sets">OneNoteApi 1.1</a><br>
          - <a href="https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a></td>
     <td> - DocumentEvents<br>
          - HtmlCoercion<br>
          - ImageCoercion<br>
          - Settings<br>
+         - TextCoercion</td>
+  </tr>
+</table>
+
+<br/>
+
+## <a name="project"></a>项目
+
+<table style="width:80%">
+  <tr>
+    <th>平台</th>
+    <th>扩展点</th>
+    <th>API 要求集</th>
+    <th><a href="https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/office-add-in-requirement-sets"><b>通用 API</b></a></th>
+  </tr>
+  <tr>
+    <td>Office 2013 for Windows</td>
+    <td> - 任务窗格</td>
+    <td> - <a href="https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a></td>
+    <td> - Selection<br>
+         - TextCoercion</td>
+  </tr>
+  <tr>
+    <td>Office 2016 for Windows</td>
+    <td> - 任务窗格</td>
+    <td> - <a href="https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a></td>
+    <td> - Selection<br>
+         - TextCoercion</td>
+  </tr>
+  <tr>
+    <td>Office 2019 for Windows</td>
+    <td> - 任务窗格</td>
+    <td> - <a href="https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a></td>
+    <td> - Selection<br>
          - TextCoercion</td>
   </tr>
 </table>

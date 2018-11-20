@@ -5,13 +5,13 @@
 
 ## <a name="insert-an-image"></a>插入图像
 
-1. 在代码编辑器中打开项目。 
+1. 在代码编辑器中打开项目。
 2. 打开文件 index.html。
 3. 在包含 `replace-text` 按钮的 `div` 下方，添加下列标记：
 
     ```html
-    <div class="padding">            
-        <button class="ms-Button" id="insert-image">Insert Image</button>            
+    <div class="padding">
+        <button class="ms-Button" id="insert-image">Insert Image</button>
     </div>
     ```
 
@@ -21,20 +21,20 @@
 
     ```js
     import { base64Image } from "./base64Image";
-    ``` 
+    ```
 
-5. 在向 `replace-text` 按钮分配单击处理程序的代码行下方，添加下列代码：
+6. 在向 `replace-text` 按钮分配单击处理程序的代码行下方，添加下列代码：
 
     ```js
     $('#insert-image').click(insertImage);
     ```
 
-6. 在 `replaceText` 函数下方，添加下列函数：
+7. 在 `replaceText` 函数下方，添加下列函数：
 
     ```js
     function insertImage() {
         Word.run(function (context) {
-            
+
             // TODO1: Queue commands to insert an image.
 
             return context.sync();
@@ -46,13 +46,13 @@
             }
         });
     }
-    ``` 
+    ```
 
-7. 将 `TODO1` 替换为下面的代码。 请注意，此代码行在文档末尾插入 Base64 编码图像。 （`Paragraph` 对象还包含 `insertInlinePictureFromBase64` 方法和其他 `insert*` 方法。 有关示例，请参阅下面的 insertHTML 部分。）
+8. 将 `TODO1` 替换为下面的代码。 请注意，此代码行在文档末尾插入 Base64 编码图像。 （`Paragraph` 对象还包含 `insertInlinePictureFromBase64` 方法和其他 `insert*` 方法。 有关示例，请参阅下面的 insertHTML 部分。）
 
     ```js
     context.document.body.insertInlinePictureFromBase64(base64Image, "End");
-    ``` 
+    ```
 
 ## <a name="insert-html"></a>插入 HTML
 
@@ -60,8 +60,8 @@
 2. 在包含 `insert-image` 按钮的 `div` 下方，添加下列标记：
 
     ```html
-    <div class="padding">            
-        <button class="ms-Button" id="insert-html">Insert HTML</button>            
+    <div class="padding">
+        <button class="ms-Button" id="insert-html">Insert HTML</button>
     </div>
     ```
 
@@ -78,7 +78,7 @@
     ```js
     function insertHTML() {
         Word.run(function (context) {
-            
+
             // TODO1: Queue commands to insert a string of HTML.
 
             return context.sync();
@@ -90,7 +90,7 @@
             }
         });
     }
-    ``` 
+    ```
 
 6. 将 `TODO1` 替换为下面的代码。请注意以下几点：
    - 第一行代码在文档末尾添加空白段落。 
@@ -99,33 +99,33 @@
     ```js
     const blankParagraph = context.document.body.paragraphs.getLast().insertParagraph("", "After");
     blankParagraph.insertHtml('<p style="font-family: verdana;">Inserted HTML.</p><p>Another paragraph</p>', "End");
-    ``` 
+    ```
 
 ## <a name="insert-table"></a>插入表格
 
 1. 打开文件 index.html。
-3. 在包含 `insert-html` 按钮的 `div` 下方，添加下列标记：
+2. 在包含 `insert-html` 按钮的 `div` 下方，添加下列标记：
 
     ```html
-    <div class="padding">            
-        <button class="ms-Button" id="insert-table">Insert Table</button>            
+    <div class="padding">
+        <button class="ms-Button" id="insert-table">Insert Table</button>
     </div>
     ```
 
-4. 打开 app.js 文件。
+3. 打开 app.js 文件。
 
-5. 在向 `insert-html` 按钮分配单击处理程序的代码行下方，添加下列代码：
+4. 在向 `insert-html` 按钮分配单击处理程序的代码行下方，添加下列代码：
 
     ```js
     $('#insert-table').click(insertTable);
     ```
 
-6. 在 `insertHTML` 函数下方，添加下列函数：
+5. 在 `insertHTML` 函数下方，添加下列函数：
 
     ```js
     function insertTable() {
         Word.run(function (context) {
-            
+
             // TODO1: Queue commands to get a reference to the paragraph
             //        that will proceed the table.
 
@@ -140,28 +140,28 @@
             }
         });
     }
-    ``` 
+    ```
 
-7. 将 `TODO1` 替换为下面的代码。 请注意，此代码行先使用 `ParapgraphCollection.getFirst` 方法获取对第一个段落的引用，再使用 `Paragraph.getNext` 方法获取对第二个段落的引用。
+6. 将 `TODO1` 替换为下面的代码。 请注意，此代码行先使用 `ParagraphCollection.getFirst` 方法获取对第一个段落的引用，再使用 `Paragraph.getNext` 方法获取对第二个段落的引用。
 
     ```js
     const secondParagraph = context.document.body.paragraphs.getFirst().getNext();
-    ``` 
+    ```
 
-8. 将 `TODO2` 替换为下面的代码。请注意以下几点：
-   - 方法的前两个参数指定行数和列数。`insertTable`
+7. 将 `TODO2` 替换为下面的代码。请注意以下几点：
+   - `insertTable` 方法的前两个参数指定行数和列数。
    - 第三个参数指定要在哪里插入表格（在此示例中，是在段落后面插入）。
    - 第四个参数是用于设置表格单元格值的二维数组。
    - 虽然表格采用普通的默认样式，但 `insertTable` 方法返回的 `Table` 对象包含多个成员，其中部分成员用于设置表格样式。
 
-     ```js
+    ```js
     const tableData = [
             ["Name", "ID", "Birth City"],
             ["Bob", "434", "Chicago"],
             ["Sue", "719", "Havana"],
         ];
     secondParagraph.insertTable(3, 3, "After", tableData);
-    ``` 
+    ```
 
 ## <a name="test-the-add-in"></a>测试加载项
 
@@ -173,9 +173,9 @@
 
 2. 运行命令 `npm run build`，以将 ES6 源代码转换为所有可运行 Office 加载项的主机支持的旧版 JavaScript。
 3. 运行命令 `npm start`，以启动在 localhost 上运行的 Web 服务器。
-4. 通过关闭任务窗格来重新加载它，再选择“开始”**** 菜单上的“显示任务窗格”****，以重新打开加载项。
+4. 通过关闭任务窗格来重新加载它，再选择“开始”**** 菜单上的“显示任务窗格”****，以重新打开外接程序。
 5. 在任务窗格中，至少选择“插入段落”**** 三次，以确保文档中有多个段落。
-6. 选择“插入图像”**** 按钮，观察是否在文档末尾插入了图像。
+6. 选择“插入图像”**** 按钮，观察图像是否插入在文档末尾。
 7. 选择“插入 HTML”**** 按钮，观察是否在文档末尾插入了两个段落，第一个段落使用 Verdana 字体。
 8. 选择“插入表格”**** 按钮，观察是否在第二个段落后面插入了表格。
 

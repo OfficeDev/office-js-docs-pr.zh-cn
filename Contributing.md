@@ -15,22 +15,22 @@
 
 * 进行小幅度的更改，[通过 GitHub 参与](#contribute-using-github)。
 * 进行大幅度的更改，或更改涉及代码，[通过 Git 参与](#contribute-using-git)。
-* 通过 GitHub 问题中心报告文档缺陷。
+* 通过“GitHub 问题”举报文档缺陷。
 * 通过 [Office 开发人员平台 UserVoice](http://officespdev.uservoice.com) 网站请求查看新文档。
 
 ## <a name="contribute-using-github"></a>通过 GitHub 参与
 
 通过 GitHub 参与此文档无需将报告复制到桌面。这是在存储库中创建拉取请求的最简单的方法。使用此方法进行不涉及代码更改的少量改动。 
 
-**注意**此方法允许一次参与一篇文章。
+**注意**：此方法允许一次参与一篇文章。
 
 ### <a name="to-contribute-using-github"></a>通过 GitHub 参与
 
-1. 在 GitHub 找到想要参与的文章。
-2. 进入 GitHub 上的相应文章后，登录 GitHub（要获取免费帐户，请[加入 GitHub](https://github.com/join)）。
+1. 在 GitHub 上找到想要参与的文章。
+2. 进入 GitHub 上的相应文章后，登录 GitHub（获取免费帐户[加入 GitHub](https://github.com/join)）。
 3. 选择“**铅笔图标**”（编辑项目分叉中的对应文件），然后在“**<>编辑文件**”窗口进行更改。 
 4. 滚动到底部，输入说明。
-5. 依次选择“建议文件更改”****>“创建拉取请求”****。
+5. 依次选择“**建议文件更改**”>“**创建拉取请求**”。
 
 现已成功提交拉取请求。拉取请求通常在 10 个工作日内完成审核。 
 
@@ -47,8 +47,8 @@
 ### <a name="to-contribute-using-git"></a>通过 Git 参与
 
 1. 如果没有 GitHub 帐户，可通过 [GitHub](https://github.com/join) 建立帐户。 
-2. 拥有帐户后，在计算机上安装 Git。 按[安装 Git 教程]中的步骤操作。
-3. 遵循[使用 GitHub、Git 和此存储库](#use-github-git-and-this-repository)中的步骤来通过 Git 提交拉取请求。
+2. 拥有帐户后，在计算机上安装 Git。 按[安装 Git] 教程中的步骤操作。
+3. 若要通过 Git 提交拉取请求，遵循[使用 GitHub、Git 和此存储库](#use-github-git-and-this-repository)中的步骤操作。
 4. 以下人员需签署参与者许可协议：
 
     * Microsoft Open Technologies 组的成员。
@@ -56,24 +56,24 @@
 
 社区成员必须签署参与许可协议 (CLA) 才能向项目提供大量提交内容。只需完成并提交此文档一次。请仔细查看该文档。可能要求你让你的员工签署此文档。
 
-签署此 CLA 并未授予你操纵主存储库的权利，但确实表示 Office 开发人员和 Office 开发人员内容发布团队可以查看并批准你提供的内容。 您的提交会得到计分。
+签署此 CLA 并未授予你操纵主存储库的权利，但确实表示 Office 开发人员和 Office 开发人员内容发布团队可以查看并批准你提供的内容。 针对提供的内容，将获得相应奖励。
 
 拉取请求通常在 10 个工作日内完成审核。
 
 ## <a name="use-github-git-and-this-repository"></a>使用 GitHub、Git 和此存储库
 
-**注意：** 本部分的多数信息都可在 [GitHub 帮助]文章中找到。如果已了解 Git 和 GitHub，请跳至“**贡献和编辑内容**”部分以查看对此存储库中代码/内容流的说明。
+**注意**：此部分中的大多数信息都可以在 [GitHub 帮助]文章中找到。  如果熟悉 Git 和 GitHub，请跳至**参与和编辑内容**部分，了解此存储库的代码/内容流的具体详情。
 
-### <a name="to-set-up-your-fork-of-the-repository"></a>设置存储库分叉的具体步骤
+### <a name="to-set-up-your-fork-of-the-repository"></a>设置存储库分支的具体步骤
 
 1.  建立 GitHub 帐户以参与此项目。如果还未进行此操作，请转至 [GitHub](https://github.com/join) 立即进行。
-2.  在计算机上安装 Git。 按[安装 Git 教程]中的步骤操作。
-3.  创建此存储库的你自己的分叉。 为此，在页面顶部，选择**分叉**按钮。
-4.  将自己的分叉复制到计算机上。打开 Git Bash 以完成此步骤。在命令提示符处输入以下命令：
+2.  在计算机上安装 Git。 按[安装 Git] 教程中的步骤操作。
+3.  创建此存储库的你自己的分支。 为此，在页面顶部，选择“**分叉**”按钮。
+4.  将自己的分叉复制到计算机上。打开 Git Bash 以完成此步骤。在命令提示符中输入：
 
         git clone https://github.com/<your user name>/<repo name>.git
 
-    接下来，输入以下命令，创建对根存储库的引用：
+    然后，通过输入以下命令来创建对根库的引用：
 
         cd <repo name>
         git remote add upstream https://github.com/OfficeDev/<repo name>.git
@@ -111,14 +111,14 @@
 
 若要编辑文件，请在自己选择的编辑器中将其打开并进行修改。若要新建文件，请使用自己选择的编辑器并将新文件存储在本地存储库副本中的适当位置。执行操作期间，经常保存进行的操作。
 
-中的文件是你在本地存储库中创建的新分支的工作副本。提交更改前，在此文件夹的任何更改都不会影响本地存储库。若要向本地存储库提交更改，在 GitBash 中键入以下命令：`C:\Users\<yourusername>\<repo name>`
+`C:\Users\<yourusername>\<repo name>` 中的文件是你在本地存储库中创建的新分支的工作副本。提交更改前，在此文件夹的任何更改都不会影响本地存储库。若要向本地存储库提交更改，在 GitBash 中键入以下命令：
 
     git add .
     git commit -v -a -m "<Describe the changes made in this commit>"
 
-命令将更改添加到临时区域以准备将其提交到存储库。`add` 命令表明你希望将所有已添加或修改的文件暂存后，对子文件夹进行递归查看。（若不希望提交所有更改，可以添加特定的文件）。也可以撤消提交。要请求帮助，请键入 `git add -help` 或 `git status`。）`add`
+`add` 命令将更改添加到临时区域以准备将其提交到存储库。`add` 命令表明你希望将所有已添加或修改的文件暂存后，对子文件夹进行递归查看。（若不希望提交所有更改，可以添加特定的文件）。也可以撤消提交。要请求帮助，请键入 `git add -help` 或 `git status`。）
 
-命令将临时更改应用到存储库。`-m` 开关表示你正在向命令行提供要提交的注释。-v 和 -a 开关可以忽略。-v 开关用于命令的详细输出，-a 执行添加命令已执行的操作。`commit`
+`commit` 命令将临时更改应用到存储库。`-m` 开关表示你正在向命令行提供要提交的注释。-v 和 -a 开关可以忽略。-v 开关用于命令的详细输出，-a 执行添加命令已执行的操作。
 
 参与期间可以多次提交，也可结束参与后一次性提交。
 
@@ -172,7 +172,7 @@
 
 此存储库中的所有文章都使用 Markdown。 [Daring Fireball - Markdown] 中有完整介绍（并列出了所有语法）。
  
-## <a name="faq"></a>常见问题解答
+## <a name="faq"></a>FAQ
 
 ### <a name="how-do-i-get-a-github-account"></a>如何获取 GitHub 帐户？
 
@@ -204,6 +204,6 @@
 
 [GitHub Home]: http://github.com
 [GitHub 帮助]: http://help.github.com/
-[设置 Git]: https://help.github.com/articles/set-up-git/
+[安装 Git]: https://help.github.com/articles/set-up-git/
 [Daring Fireball - Markdown]: http://daringfireball.net/projects/markdown/
 [Daring Fireball]: http://daringfireball.net/

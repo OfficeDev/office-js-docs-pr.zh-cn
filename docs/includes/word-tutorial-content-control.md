@@ -11,13 +11,13 @@
 
 ## <a name="create-a-content-control"></a>创建内容控件
 
-1. 在代码编辑器中打开项目。 
+1. 在代码编辑器中打开项目。
 2. 打开文件 index.html。
 3. 在包含 `replace-text` 按钮的 `div` 下方，添加下列标记：
 
     ```html
-    <div class="padding">            
-        <button class="ms-Button" id="create-content-control">Create Content Control</button>            
+    <div class="padding">
+        <button class="ms-Button" id="create-content-control">Create Content Control</button>
     </div>
     ```
 
@@ -34,7 +34,7 @@
     ```js
     function createContentControl() {
         Word.run(function (context) {
-            
+
             // TODO1: Queue commands to create a content control.
 
             return context.sync();
@@ -46,14 +46,14 @@
             }
         });
     }
-    ``` 
+    ```
 
 7. 将 `TODO1` 替换为下面的代码。请注意以下几点：
    - 此代码用于在内容控件中包装短语“Office 365”。 它做了一个简化假设，即存在字符串，且用户已选择它。
-   - 属性指定内容控件的可见标题。`ContentControl.title` 
-   - 属性指定标记，可用于通过 `ContentControlCollection.getByTag` 方法获取对内容控件的引用，将用于稍后出现的函数。`ContentControl.tag` 
-   - 属性指定控件的外观。`ContentControl.appearance` 使用值“Tags”表示，控件包装在开始标记和结束标记中，且开始标记包含内容控件标题。 其他可取值包括“BoundingBox”和“None”。
-   - 属性指定标记颜色或边界框的边框。`ContentControl.color`
+   - `ContentControl.title` 属性指定内容控件的可见标题。
+   - `ContentControl.tag` 属性指定标记，可用于通过 `ContentControlCollection.getByTag` 方法获取对内容控件的引用，将用于稍后出现的函数。
+   - `ContentControl.appearance` 属性指定控件的外观。 使用值“Tags”表示，控件包装在开始标记和结束标记中，且开始标记包含内容控件标题。 其他可取值包括“BoundingBox”和“None”。
+   - `ContentControl.color` 属性指定标记颜色或边界框的边框。
 
     ```js
     const serviceNameRange = context.document.getSelection();
@@ -62,7 +62,7 @@
     serviceNameContentControl.tag = "serviceName";
     serviceNameContentControl.appearance = "Tags";
     serviceNameContentControl.color = "blue";
-    ``` 
+    ```
 
 ## <a name="replace-the-content-of-the-content-control"></a>替换内容控件的内容
 
@@ -70,8 +70,8 @@
 2. 在包含 `create-content-control` 按钮的 `div` 下方，添加下列标记：
 
     ```html
-    <div class="padding">            
-        <button class="ms-Button" id="replace-content-in-control">Rename Service</button>            
+    <div class="padding">
+        <button class="ms-Button" id="replace-content-in-control">Rename Service</button>
     </div>
     ```
 
@@ -88,7 +88,7 @@
     ```js
     function replaceContentInControl() {
         Word.run(function (context) {
-            
+
             // TODO1: Queue commands to replace the text in the Service Name
             //        content control.
 
@@ -101,25 +101,25 @@
             }
         });
     }
-    ``` 
+    ```
 
-7. 将 `TODO1` 替换为以下代码。 
+7. 将 `TODO1` 替换为下面的代码。
     > [!NOTE]
-    > 方法返回指定标记的所有内容控件的一个 `ContentControlCollection`。`ContentControlCollection.getByTag` 我们用 `getFirst` 获得对所需控件的引用。
+    > `ContentControlCollection.getByTag` 方法将返回指定标记的所有内容控件的 `ContentControlCollection`。 我们使用 `getFirst` 来获取对所需控件的引用。
 
     ```js
     const serviceNameContentControl = context.document.contentControls.getByTag("serviceName").getFirst();
     serviceNameContentControl.insertText("Fabrikam Online Productivity Suite", "Replace");
-    ``` 
+    ```
 
-## <a name="test-the-add-in"></a>测试加载项
+## <a name="test-the-add-in"></a>测试外接程序
 
 1. 如果上一阶段教程中的 Git Bash 窗口或已启用 Node.JS 的系统命令提示符仍处于打开状态，请按 Ctrl+C 两次，停止正在运行的 Web 服务器。 否则，打开 Git Bash 窗口或已启用 Node.JS 的系统命令提示符，并转到项目的“开始”**** 文件夹。
      > [!NOTE]
      > 虽然只要更改任意文件（包括 app.js 文件），浏览器同步服务器就会在任务窗格中重新加载加载项，但它不会重新转换 JavaScript。因此，必须重复执行生成命令，这样对 app.js 做出的更改才会生效。 为此，需要终止服务器进程，这样才能看到提示并输入生成命令。 生成后，重启服务器。 接下来的几步操作就是在执行此过程。
 2. 运行命令 `npm run build`，以将 ES6 源代码转换为所有可运行 Office 加载项的主机支持的旧版 JavaScript。
 3. 运行命令 `npm start`，以启动在 localhost 上运行的 Web 服务器。
-4. 通过关闭任务窗格来重新加载它，再选择“开始”**** 菜单上的“显示任务窗格”****，以重新打开加载项。
+4. 通过关闭任务窗格来重新加载它，再选择“开始”**** 菜单上的“显示任务窗格”****，以重新打开外接程序。
 5. 在任务窗格中，选择“插入段落”****，以确保文档顶部有包含“Office 365”的段落。
 6. 选择刚刚添加的段落中的短语“Office 365”，再选择“创建内容控件”**** 按钮。 观察此短语是否包装在标签为“服务名称”的标记中。
 7. 选择“重命名服务”**** 按钮，并观察内容控件的文本是否变成“Fabrikam Online Productivity Suite”。

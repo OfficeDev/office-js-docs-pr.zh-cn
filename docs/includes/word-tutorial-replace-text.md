@@ -1,17 +1,17 @@
-本教程的这一步是，在选定文本区域内外添加文本，并替换选定区域的文本。 
+本教程的这一步是，在选定文本区域内外添加文本，并替换选定区域的文本。
 
 > [!NOTE]
 > 此页面介绍了 Word 加载项教程的步骤之一。如果是通过搜索引擎结果或其他直接链接到达此页面，请转到 [Word 加载项教程](../tutorials/word-tutorial.yml)介绍性页面，从头开始学习本教程。
 
 ## <a name="add-text-inside-a-range"></a>在区域内添加文本
 
-1. 在代码编辑器中打开项目。 
+1. 在代码编辑器中打开项目。
 2. 打开文件 index.html。
 3. 在包含 `change-font` 按钮的 `div` 下方，添加下列标记：
 
     ```html
-    <div class="padding">            
-        <button class="ms-Button" id="insert-text-into-range">Insert Abbreviation</button>            
+    <div class="padding">
+        <button class="ms-Button" id="insert-text-into-range">Insert Abbreviation</button>
     </div>
     ```
 
@@ -28,10 +28,10 @@
     ```js
     function insertTextIntoRange() {
         Word.run(function (context) {
-            
+
             // TODO1: Queue commands to insert text into a selected range.
 
-            // TODO2: Load the text of the range and sync so that the 
+            // TODO2: Load the text of the range and sync so that the
             //        current range text can be read.
 
             // TODO3: Queue commands to repeat the text of the original
@@ -50,7 +50,7 @@
 
 7. 将 `TODO1` 替换为下面的代码。请注意以下几点：
    - 此方法用于在“即点即用”文本区域末尾插入缩写 ["(C2R)"]。 它做了一个简化假设，即存在字符串，且用户已选择它。
-   - 方法的第一个参数是要插入到 `Range` 对象的字符串。`Range.insertText`
+   - `Range.insertText` 方法的第一个参数是要插入到 `Range` 对象的字符串。
    - 第二个参数指定了应在区域中的什么位置插入其他文本。 除了“End”外，其他可用选项包括“Start”、“Before”、“After”和“Replace”。 
    - “End”和“After”的区别在于，“End”在现有区域末尾插入新文本，而“After”则是新建包含字符串的区域，并在现有区域后面插入新区域。 同样，“Start”是在现有区域的开头位置插入文本，而“Before”插入的是新区域。 “Replace”将现有区域文本替换为第一个参数中的字符串。
    - 在本教程之前阶段步骤中，正文对象的 insert* 方法没有“Before”和“After”选项。 这是因为不能将内容置于文档正文外。
@@ -59,14 +59,14 @@
     const doc = context.document;
     const originalRange = doc.getSelection();
     originalRange.insertText(" (C2R)", "End");
-    ``` 
+    ```
 
 8. 在下一部分前，将跳过 `TODO2`。 将 `TODO3` 替换为下面的代码。 此代码类似于在本教程第一阶段中创建的代码，区别在于现在是要在文档末尾（而不是开头）插入新段落。 这一新段落将说明，新文本现属于原始区域。
- 
+
     ```js
     doc.body.insertParagraph("Original range: " + originalRange.text,
                              "End");
-    ``` 
+    ```
 
 ## <a name="add-code-to-fetch-document-properties-into-the-task-panes-script-objects"></a>添加代码以将文档属性提取到任务窗格的脚本对象
 
@@ -86,16 +86,16 @@
         .then(function() {
 
                 // TODO4: Move the doc.body.insertParagraph line here.
-    
+
             }
         )
             // TODO5: Move the final call of context.sync here and ensure
-            //        that it does not run until the insertParagraph has 
+            //        that it does not run until the insertParagraph has
             //        been queued.
-    ``` 
+    ```
 
-2. 由于不能在同一取消分支代码路径中有两个 `return` 语句，因此请删除 `Word.run` 末尾的最后一行代码 `return context.sync();`。本教程稍后将添加最后一个新 `context.sync` 语句。 
-3. 剪切并粘贴 `doc.body.insertParagraph` 代码行，以替代 `TODO4`。 
+2. 由于不能在同一取消分支代码路径中有两个 `return` 语句，因此请删除 `Word.run` 末尾的最后一行代码 `return context.sync();`。本教程稍后将添加最后一个新 `context.sync` 语句。
+3. 剪切并粘贴 `doc.body.insertParagraph` 代码行，以替代 `TODO4`。
 4. 将 `TODO5` 替换为下面的代码。请注意以下几点：
    - 将 `sync` 方法传递到 `then` 函数可确保它不会在 `insertParagraph` 逻辑已排入队列前运行。
    - 由于 `then` 方法调用传递给它的任何函数，并且也不想调用 `sync` 两次，因此请从 context.sync 末尾省略掉“()”。
@@ -106,20 +106,20 @@
 
 完成后，整个函数应如下所示：
 
-  
+
 ```js
 function insertTextIntoRange() {
     Word.run(function (context) {
-        
+
         const doc = context.document;
         const originalRange = doc.getSelection();
         originalRange.insertText(" (C2R)", "End");
 
         originalRange.load("text");
         return context.sync()
-            .then(function() {        
+            .then(function() {
                         doc.body.insertParagraph("Current text of original range: " + originalRange.text,
-                                                "End");            
+                                                "End");
                 }
             )
             .then(context.sync);
@@ -131,7 +131,7 @@ function insertTextIntoRange() {
         }
     });
 }
-``` 
+```
 
 ## <a name="add-text-between-ranges"></a>在区域间添加文本
 
@@ -139,8 +139,8 @@ function insertTextIntoRange() {
 2. 在包含 `insert-text-into-range` 按钮的 `div` 下方，添加下列标记：
 
     ```html
-    <div class="padding">            
-        <button class="ms-Button" id="insert-text-outside-range">Add Version Info</button>            
+    <div class="padding">
+        <button class="ms-Button" id="insert-text-outside-range">Add Version Info</button>
     </div>
     ```
 
@@ -157,11 +157,11 @@ function insertTextIntoRange() {
     ```js
     function insertTextBeforeRange() {
         Word.run(function (context) {
-            
-            // TODO1: Queue commands to insert a new range before the 
+
+            // TODO1: Queue commands to insert a new range before the
             //        selected range.
 
-            // TODO2: Load the text of the original range and sync so that the 
+            // TODO2: Load the text of the original range and sync so that the
             //        range text can be read and inserted.
 
         })
@@ -172,21 +172,21 @@ function insertTextIntoRange() {
             }
         });
     }
-    ``` 
+    ```
 
 6. 将 `TODO1` 替换为下面的代码。请注意以下几点：
    - 此方法用于在文本为“Office 365”的区域前添加文本为“Office 2019”的区域。 它做了一个简化假设，即存在字符串，且用户已选择它。
-   - 方法的第一个参数是要添加的字符串。`Range.insertText`
+   - `Range.insertText` 方法的第一个参数是要添加的字符串。
    - 第二个参数指定了应在区域中的什么位置插入其他文本。 若要详细了解位置选项，请参阅前面介绍的 `insertTextIntoRange` 函数。
 
     ```js
     const doc = context.document;
     const originalRange = doc.getSelection();
     originalRange.insertText("Office 2019, ", "Before");
-    ``` 
+    ```
 
-7. 将 `TODO2` 替换为下面的代码。 
- 
+7. 将 `TODO2` 替换为下面的代码。
+
      ```js
     originalRange.load("text");
     return context.sync()
@@ -194,21 +194,21 @@ function insertTextIntoRange() {
 
                 // TODO3: Queue commands to insert the original range as a
                 //        paragraph at the end of the document.
-    
+
                 }
             )
 
             // TODO4: Make a final call of context.sync here and ensure
-            //        that it does not run until the insertParagraph has 
+            //        that it does not run until the insertParagraph has
             //        been queued.
-    ``` 
+    ```
 
 8. 将 `TODO3` 替换为下面的代码。 这一新段落将说明，新文本***不***属于原始选定区域。 原始区域中的文本仍与用户选择它时一样。
- 
+
     ```js
     doc.body.insertParagraph("Current text of original range: " + originalRange.text,
                              "End");
-    ``` 
+    ```
 
 9. 将 `TODO4` 替换为下面的代码：
 
@@ -223,8 +223,8 @@ function insertTextIntoRange() {
 2. 在包含 `insert-text-outside-range` 按钮的 `div` 下方，添加下列标记：
 
     ```html
-    <div class="padding">            
-        <button class="ms-Button" id="replace-text">Change Quantity Term</button>            
+    <div class="padding">
+        <button class="ms-Button" id="replace-text">Change Quantity Term</button>
     </div>
     ```
 
@@ -241,7 +241,7 @@ function insertTextIntoRange() {
     ```js
     function replaceText() {
         Word.run(function (context) {
-             
+
             // TODO1: Queue commands to replace the text.
 
             return context.sync();
@@ -253,15 +253,15 @@ function insertTextIntoRange() {
             }
         });
     }
-    ``` 
+    ```
 
 6. 将 `TODO1` 替换为下面的代码。 请注意，此方法用于将字符串“几个”替换为字符串“许多”。 它做了一个简化假设，即存在字符串，且用户已选择它。
 
     ```js
     const doc = context.document;
     const originalRange = doc.getSelection();
-    originalRange.insertText("many", "Replace"); 
-    ``` 
+    originalRange.insertText("many", "Replace");
+    ```
 
 ## <a name="test-the-add-in"></a>测试加载项
 
@@ -272,7 +272,7 @@ function insertTextIntoRange() {
 
 2. 运行命令 `npm run build`，以将 ES6 源代码转换为所有可运行 Office 加载项的主机支持的旧版 JavaScript。
 3. 运行命令 `npm start`，以启动在 localhost 上运行的 Web 服务器。
-4. 通过关闭任务窗格来重新加载它，再选择“开始”**** 菜单上的“显示任务窗格”****，以重新打开加载项。
+4. 通过关闭任务窗格来重新加载它，再选择“开始”**** 菜单上的“显示任务窗格”****，以重新打开外接程序。
 5. 在任务窗格中，选择“插入段落”****，以确保文档开头有一个段落。
 6. 选择某文本。 选择短语“即点即用”最合适。 *请注意，不要在选定区域的前后添加空格。*
 7. 选择“插入缩写”**** 按钮。 观察“(C2R)”是否已添加。 此外，还请观察，文档底部是否添加了包含整个扩展文本的新段落，因为新字符串已添加到现有区域中。

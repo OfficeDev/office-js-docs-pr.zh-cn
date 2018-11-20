@@ -9,14 +9,14 @@ Word 提供了一组丰富的 API，你可以使用它们创建与文档内容�
 
 ## <a name="word-javascript-api"></a>Word JavaScript API
 
-Word JavaScript API 通过 Office.js 进行加载，它改变了你与文档和段落等对象的交互方式。Word JavaScript API 不提供各个用于检索和更新每个对象的异步 API，而是提供与 Word 中运行的真实对象对应的“代理”JavaScript 对象。你可以通过同步读取和写入这些代理对象的属性，并调用对其执行操作的同步方法，从而与这些代理对象进行交互。与代理对象的这些交互不会立即在运行的脚本中实现。**context.sync** 方法通过执行已排入队列的指令并检索可供在脚本中使用的已加载 Word 对象的属性，在运行的 JavaScript 和 Office 真实对象之间同步状态。
+Word JavaScript API 通过 Office.js 进行加载，改变了你与文档和段落等对象的交互方式。Word JavaScript API 不提供各个用于检索和更新每个对象的异步 API，而是提供与 Word 中运行的真实对象对应的“代理”JavaScript 对象。你可以通过同步读取和写入这些代理对象的属性，并调用对其执行操作的同步方法，从而与这些代理对象进行交互。与代理对象的这些交互不会立即在运行的脚本中实现。**context.sync** 方法通过执行已排入队列的指令并检索可供在脚本中使用的已加载 Word 对象的属性，在运行的 JavaScript 和 Office 真实对象之间同步状态。
 
 ## <a name="javascript-api-for-office"></a>适用于 Office 的 JavaScript API
 
-你可以从以下位置引用 Office.js：
+可以从以下位置引用 Office.js：
 
-* https://appsforoffice.microsoft.com/lib/1/hosted/office.js - 在生产外接程序中使用此资源用。
-* https://appsforoffice.microsoft.com/lib/beta/hosted/office.js - 尝试预览功能时使用此资源。
+* https://appsforoffice.microsoft.com/lib/1/hosted/office.js - 将此资源用于生产外接程序。
+* https://appsforoffice.microsoft.com/lib/beta/hosted/office.js - 在试用预览功能时使用此资源。
 
 如果你使用的是 [Visual Studio](https://www.visualstudio.com/products/free-developer-offers-vs)，则可以下载 [Office 开发人员工具](https://www.visualstudio.com/features/office-tools-vs.aspx)，从而获取包含 Office.js 的项目模板。你还可以使用 [nuget 获取 Office.js](https://www.nuget.org/packages/Microsoft.Office.js/)。
 
@@ -26,7 +26,7 @@ Word JavaScript API 通过 Office.js 进行加载，它改变了你与文档和�
 
 若要运行外接程序，请使用 Office.initialize 事件处理程序。若要详细了解如何初始化外接程序，请参阅[了解 API](https://docs.microsoft.com/office/dev/add-ins/develop/understanding-the-javascript-api-for-office)。
 
-以 Word 2016 或更高版本为目标的外接程序通过将一个函数传递到 **Word.run()** 方法来执行。 向 **run** 方法传递的函数必须具有上下文参数。 此[ context 对象](/javascript/api/word/word.requestcontext) 与从 Office 对象获取的 context 对象不同，但它也用于与 Word 运行时环境交互。 Context 对象提供对 Word JavaScript API 对象模型的访问。 下面的示例显示如何使用 **Word.run()** 方法初始化并执行 Word 加载项。
+面向 Word 2016 或更高版本的外接程序通过向 **Word.run()** 方法传递函数来执行。 传递到 **run** 方法的函数必须具有上下文参数。 此[上下文对象](/javascript/api/word/word.requestcontext)不同于从 Office 对象获取的上下文对象，但它同样可以用于与 Word 运行时环境交互。 此上下文对象可提供对 Word JavaScript API 对象模型的访问。 以下示例显示如何使用 **Word.run()** 方法初始化和运行 Word。
 
 ```js
 (function () {
@@ -110,9 +110,13 @@ Word.run(function (context) {
 })
 ```
 
-## <a name="word-javascript-api-open-specifications"></a>Word 的 JavaScript API 开放性规范
+## <a name="word-javascript-api-open-specifications"></a>Word JavaScript API 开放性规范
 
 在我们设计和开发新的 API 以用于创建 Word 外接程序时，我们会公开它们，以便你可以在我们的[开放性 API 规范](../openspec.md)页面上提供反馈。了解即将推出的面向 Word JavaScript API 的新功能，并提供你对我们的设计规范的宝贵意见。
+
+## <a name="word-javascript-api-requirement-sets"></a>Word JavaScript API 要求集
+
+要求集是指各组已命名的 API 成员。 Office 外接程序使用清单中指定的要求集或执行运行时检查，以确定 Office 主机是否支持外接程序所需的 API。 有关 Word JavaScript API 要求集的详细信息，请参阅 [Word JavaScript API 要求集](../requirement-sets/word-api-requirement-sets.md)文章。
 
 ## <a name="word-javascript-api-reference"></a>Word JavaScript API 参考
 
@@ -122,4 +126,4 @@ Word.run(function (context) {
 
 * [Word 外接程序概述](https://docs.microsoft.com/office/dev/add-ins/word/word-add-ins-programming-overview)
 * [Office 外接程序平台概述](https://docs.microsoft.com/office/dev/add-ins/overview/office-add-ins)
-* [GitHub 上的 Word 外接程序示例](https://github.com/OfficeDev?utf8=%E2%9C%93&q=Word)
+* [GitHub Word 上的外接程序示例](https://github.com/OfficeDev?utf8=%E2%9C%93&q=Word)

@@ -6,7 +6,7 @@
 
 - [Node.js](https://nodejs.org)
 
-- 全局安装最新版 [Yeoman](https://github.com/yeoman/yo) 和 [Office 外接程序的 Yeoman 生成器](https://github.com/OfficeDev/generator-office)。
+- 全局安装最新版 [Yeoman](https://github.com/yeoman/yo) 和 [Office 加载项的 Yeoman 生成器](https://github.com/OfficeDev/generator-office)。
     ```bash
     npm install -g yo generator-office
     ```
@@ -19,8 +19,8 @@
     yo office
     ```
 
-    - **选择一个项目类型：** `Office Add-in project using React framework`
-    - **要将你的外接程序命名为什么?:** `My Office Add-in`
+    - **选择项目类型:** `Office Add-in project using React framework`
+    - **要如何命名加载项?:** `My Office Add-in`
     - **要支持哪一个 Office 客户端应用?:** `Excel`
 
     ![Yeoman 生成器](../images/yo-office-excel-react.png)
@@ -35,7 +35,7 @@
 
 ## <a name="update-the-code"></a>更新代码
 
-1. 在代码编辑器中，打开文件 **src/styles.less**，将以下样式添加到文件末尾，然后保存文件。
+1. 在代码编辑器中，打开文件 **src/styles.less**，将以下样式添加到文件的末尾，然后保存文件。
 
     ```css
     #content-header {
@@ -76,9 +76,9 @@
     }
     ```
 
-2. Office 加载项 Yeoman 生成器创建的项目模板包含一个此快速入门不需要的 React 组件。 删除文件 **src/components/HeroList.tsx**。
+2. Office 加载项 Yeoman 生成器创建的项目模板包含此快速入门不需要的 React 组件。 删除文件 **src/components/HeroList.tsx**。
 
-3. 打开文件 **src/components/Header.tsx**，将整个内容替换为以下代码，并保存文件。
+3. 打开文件 **src/components/Header.tsx**，将全部内容替换为以下代码，然后保存文件。
 
     ```typescript
     import * as React from 'react';
@@ -104,7 +104,7 @@
     }
     ```
 
-4. 在 **src/components** 文件夹中创建一个名为 **Content.tsx** 的新 React 组件，添加以下代码，然后保存该文件。
+4. 在 **src / components** 文件夹中创建一个名为 **Content.tsx** 的新 React 组件，添加以下代码，然后保存文件。
 
     ```typescript
     import * as React from 'react';
@@ -137,7 +137,7 @@
     }
     ```
 
-5. 打开文件 **src/components/App.tsx**，将整个内容替换为以下代码，并保存文件。
+5. 打开文件 **src/components/App.tsx**，将全部内容替换为以下代码，然后保存文件。
 
     ```typescript
     import * as React from 'react';
@@ -203,11 +203,11 @@
 
 ## <a name="update-the-manifest"></a>更新清单
 
-1. 打开文件 **manifest.xml**，以定义加载项的设置和功能。 
+1. 打开文件 **manifest.xml** 以定义加载项的设置和功能。 
 
 2. `ProviderName` 元素具有占位符值。 将其替换为你的姓名。
 
-3. `Description` 元素的 `DefaultValue` 属性具有占位符。将其替换为**Excel 的任务窗格加载项**。
+3. `Description` 元素的 `DefaultValue` 属性有占位符。 将它替换为“A task pane add-in for Excel”****。
 
 4. 保存文件。
 
@@ -229,9 +229,9 @@
 
 1. 请按照运行加载项所用平台对应的说明操作，以在 Excel 中旁加载加载项。
 
-    - Windows：[在 Windows 旁加载 Office 加载项](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)
-    - Excel Online：[在 Office Online 中旁加载 Office 加载项](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-on-office-online)
-    - iPad 和 Mac：[在 iPad 和 Mac 旁加载 Office 加载项](../testing/sideload-an-office-add-in-on-ipad-and-mac.md)
+    - Windows：[在 Windows 上旁加载 Office 加载项](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)
+    - Excel Online：[在 Office Online 中旁加载 Office 加载项](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-in-office-online)
+    - iPad 和 Mac：[在 iPad 和 Mac 上旁加载 Office 加载项](../testing/sideload-an-office-add-in-on-ipad-and-mac.md)
 
 2. 在 Excel 中，依次选择**主页**选项卡和功能区中的**显示任务窗格**按钮，以打开加载项任务窗格。
 
@@ -253,6 +253,6 @@
 ## <a name="see-also"></a>另请参阅
 
 * [Excel 加载项教程](../tutorials/excel-tutorial-create-table.md)
-* [使用 Excel JavaScript API 的基本编程概念](../excel/excel-add-ins-core-concepts.md)
+* [Excel JavaScript API 基本编程概念](../excel/excel-add-ins-core-concepts.md)
 * [Excel 加载项代码示例](https://developer.microsoft.com/office/gallery/?filterBy=Samples,Excel)
 * [Excel JavaScript API 参考](https://docs.microsoft.com/office/dev/add-ins/reference/overview/excel-add-ins-reference-overview?view=office-js)

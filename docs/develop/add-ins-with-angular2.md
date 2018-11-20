@@ -1,13 +1,13 @@
 ---
 title: 使用 Angular 开发 Office 加载项
 description: ''
-ms.date: 12/04/2017
-ms.openlocfilehash: 65b2a229e0379106b63b0f1abaaa8b66d7cdf367
-ms.sourcegitcommit: eb74e94d3e1bc1930a9c6582a0a99355d0da34f2
+ms.date: 11/02/2018
+ms.openlocfilehash: 312317e594024125e2dc86d23840750e48d81e40
+ms.sourcegitcommit: c6723a31b48945ca4c466ba016a3dfc7b6267f5c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "25004971"
+ms.lasthandoff: 11/03/2018
+ms.locfileid: "25942249"
 ---
 # <a name="develop-office-add-ins-with-angular"></a>使用 Angular 开发 Office 加载项
 
@@ -82,7 +82,7 @@ export class AppRoutingModule { }
 
 ## <a name="using-the-office-dialog-api-with-angular"></a>将 Office 对话框 API 与 Angular 结合使用
 
-Office 加载项对话框 API 使得加载项可以在半模态对话框中打开页面，该页面可与主页面交换信息，这在任务窗格中是典型操作。 
+Office 加载项对话框 API 可使加载项打开半模态对话框中的页面，该页面可与主页面交换信息，这在任务窗格中是典型操作。 
 
 [displayDialogAsync](https://docs.microsoft.com/javascript/api/office/office.ui?view=office-js) 方法采用指定应在对话框中打开的页面的 URL 的参数。外接程序可具有单独的 HTML 页面（与基本页不同）来传递此参数，或在 Angular 应用程序中传递路由的 URL。 
 
@@ -111,13 +111,13 @@ export class MyComponent {
 
 Angular 使用 RxJS (Reactive Extensions for JavaScript)，而 RxJS 引入了 `Observable` 和 `Observer` 对象来实现异步处理。本部分简要介绍了如何使用 `Observables`；有关详细信息，请参阅官方 [RxJS](http://reactivex.io/rxjs/) 文档。
 
-在某种程度上类似一个 `Promise` 对象 - 它立即从异步调用返回，但它可能在以后才能进行解析。不过，`Promise` 是一个值（可以是一个数组对象），而 `Observable` 是对象数组（可能仅有一个成员）。这可使代码调用 `Observable` 对象上的 [数组方法](https://www.w3schools.com/jsref/jsref_obj_array.asp)，如 `concat`、`map` 和 `filter`。`Observable` 
+`Observable` 在某种程度上类似一个 `Promise` 对象 - 它立即从异步调用返回，但它可能在以后才能进行解析。不过，`Promise` 是一个值（可以是一个数组对象），而 `Observable` 是对象数组（可能仅有一个成员）。这可使代码调用 `Observable` 对象上的 [数组方法](https://www.w3schools.com/jsref/jsref_obj_array.asp)，如 `concat`、`map` 和 `filter`。 
 
 ### <a name="pushing-instead-of-pulling"></a>使用“推送”代替“拉取”
 
 代码“拉取” `Promise` 对象（通过将其分配到变量），而 `Observable` 对象将其值“推送”到*订阅* `Observable` 的对象。订阅服务器是 `Observer` 对象。推送体系结构的优势是，随着时间的推移，新成员可以添加到 `Observable` 数组。添加了新成员后，订阅 `Observable` 的所有 `Observer` 对象都将收到一条通知。 
 
-被配置为使用一个函数处理每个新对象（称为“next”对象）。（它还被配置为响应一个错误和一个完成通知。参阅下一部分的一个示例。）为此，与 `Promise` 对象相比，`Observable` 对象的使用范围更广。例如，除了从 AJAX 调用返回 `Observable`（即返回 `Promise` 的方式）以外，还可从事件处理程序返回 `Observable`，例如文本框的“已更改”事件处理程序。用户每次在框中输入文本时，所有已订阅的 `Observer` 对象将使用最新文本和/或输入的应用程序的当前状态立即做出反应。`Observer` 
+`Observer` 被配置为使用一个函数处理每个新对象（称为“next”对象）。（它还被配置为响应一个错误和一个完成通知。参阅下一部分的一个示例。）为此，与 `Promise` 对象相比，`Observable` 对象的使用范围更广。例如，除了从 AJAX 调用返回 `Observable`（即返回 `Promise` 的方式）以外，还可从事件处理程序返回 `Observable`，例如文本框的“已更改”事件处理程序。用户每次在框中输入文本时，所有已订阅的 `Observer` 对象将使用最新文本和/或输入的应用程序的当前状态立即做出反应。 
 
 
 ### <a name="waiting-until-all-asynchronous-calls-have-completed"></a>等待所有异步调用完成
@@ -144,3 +144,16 @@ const subscription = source.subscribe(
 );
 ``` 
 
+## <a name="compile-the-angular-application-using-the-ahead-of-time-aot-compiler"></a>使用 Ahead-of-Time (AOT) 编译器编译 Angula r应用程序
+
+应用程序性能是影响用户体验的最重要方面之一。 可以在构建时使用 Angular Ahead-of-Time (AOT) 编译器编译应用程序来优化 Angular 应用程序。 它可将所有源代码（HTML 模板和 TypeScript）转换为高效的 JavaScript 代码。 如果使用 AOT 编译器编译应用程序，则运行时不会发生其他编译，从而加快 HTML 模板的呈现和异步请求。 此外，应用程序的总体大小将减小，因为 Angular 编译器无需包含在可分发应用程序中。 
+
+若要使用 AOT 编译器，请将 `--aot` 添加到 `ng build` 或 `ng serve` 命令：
+
+```bash
+ng build --aot
+ng serve --aot
+```
+
+> [!NOTE]
+> 若要了解有关 Angular Ahead-of-Time (AOT) 编译器的详细信息，请参阅[官方指南](https://angular.io/guide/aot-compiler)。

@@ -2,12 +2,12 @@
 title: 在 Office 加载项中授权外部服务
 description: ''
 ms.date: 12/04/2017
-ms.openlocfilehash: ee88019e85ba37f24c81fd7bf3663ee7cf066d45
-ms.sourcegitcommit: 30435939ab8b8504c3dbfc62fd29ec6b0f1a7d22
+ms.openlocfilehash: 6cdf07886ba883a7dfe935b59c918948c2b45afa
+ms.sourcegitcommit: 86724e980f720ed05359c9525948cb60b6f10128
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "23945741"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "26237477"
 ---
 # <a name="authorize-external-services-in-your-office-add-in"></a>在 Office 加载项中授权外部服务
 
@@ -15,9 +15,9 @@ ms.locfileid: "23945741"
 
 授权 Web 应用访问在线服务的行业标准框架为 **OAuth 2.0**。大多数情况下，无需了解框架的详细工作原理，即可在加载项中使用它。许多库都可用来化繁为简。
 
-OAuth 的基本概念是，应用程序本身可以是一个安全主体，就像一个用户或组，拥有其自己的标识和权限集。在最典型的应用场景中，当用户在需要联机服务的 Office 外接程序中进行操作时，外接程序会向服务发送请求，请求为用户帐户提供一组特定权限。然后，该服务会提示用户向外接程序授予这些权限。授予权限之后，该服务会向外接程序发送一个小的编码*访问令牌*。外接程序可以通过在其向服务 API 发送的所有请求中包含令牌来使用该服务。但外接程序只能在用户授予它的权限范围内进行操作。令牌还会在某个指定时间后过期。
+OAuth 的基本概念是，应用程序本身可以是一个安全主体，就像一个用户或组，拥有其自己的标识和权限集。 在最典型的应用场景中，当用户在需要联机服务的 Office 加载项中进行操作时，加载项会向服务发送请求，请求为用户帐户提供一组特定权限。 然后，该服务会提示用户向加载项授予这些权限。 授予权限之后，该服务会向外接程序发送一个小的编码*访问令牌*。 外接程序可以通过在其向服务 API 发送的所有请求中包含令牌来使用该服务。 但外接程序只能在用户授予它的权限范围内进行操作。 令牌还会在某个指定时间后过期。
 
-针对不同方案，设计了几种 OAuth 模式（称为*流*或*授权类型*）。 以下两种模式最常实现：
+几种称为*流*或*授权类型*的 OAuth 模式专为不同方案而设计。 以下两种模式最常实现：
 
 - **隐式流**：加载项与在线服务的通信是通过客户端 JavaScript 实现。
 - **授权代码流**：加载项 Web 应用与在线服务的通信是*服务器间*通信。因此，它是通过服务器端代码实现。
@@ -27,13 +27,9 @@ OAuth 流旨在保护应用的标识和授权。授权代码流提供了*客户�
 应熟悉隐式流和授权代码流的利与弊。 若要详细了解这两个流，请参阅[授权代码流](https://tools.ietf.org/html/rfc6749#section-1.3.1)和[隐式流](https://tools.ietf.org/html/rfc6749#section-1.3.2)。
 
 > [!NOTE]
-> 还可以视需要使用中间人服务，从而执行授权操作，并将访问令牌传递给加载项。 若要详细了解此方案，请参阅本文稍后将介绍的**中间人服务**部分。
+> 还可以视需要使用中间人服务，从而执行授权操作，并将访问令牌传递给加载项。 有关此方案的详细信息，请参阅本文稍后介绍的**中间人服务**部分。
 
-## <a name="authorization-to-microsoft-graph"></a>授予访问 Microsoft Graph
-
-如果外部服务可以通过 Microsoft Graph 访问（如 Office 365 或 OneDrive），便能使用[为 Office 加载项启用单一登录](authorize-to-microsoft-graph.md)及其相关文章中介绍的单一登录系统，既可以为用户提供最佳体验，也能够最大限度地简化自己的开发体验。 本文介绍的技术非常适用于不可通过 Microsoft Graph 访问的外部服务。 不过，这些服务*可*用于访问 Microsoft Graph，就这一点而言，可能会更青睐它们，而无视单一登录具有的优势。 例如，单一登录系统需要使用服务器端代码，因此无法用于真正的单页应用程序。 此外，并不是所有平台都支持单一登录系统。
-
-## <a name="using-the-implicit-flow-in-office-add-ins"></a>在 Office 加载项中使用隐式流
+## <a name="using-the-implicit-flow-in-office-add-ins"></a>在 Office 外接程序中使用隐式流
 若要确定在线服务是否支持隐式流，最好是查阅服务文档。 对于支持隐式流的服务，可以使用 **Office-js-helpers** JavaScript 库，完成所有细节工作：
 
 - [Office-js-helpers](https://github.com/OfficeDev/office-js-helpers)
