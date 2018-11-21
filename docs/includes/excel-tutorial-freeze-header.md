@@ -5,13 +5,13 @@
 
 ## <a name="freeze-the-tables-header-row"></a>冻结表的标题行
 
-1. 在代码编辑器中打开项目。 
+1. 在代码编辑器中打开项目。
 2. 打开文件 index.html。
 3. 在包含 `create-chart` 按钮的 `div` 下方，添加下列标记：
 
     ```html
-    <div class="padding">            
-        <button class="ms-Button" id="freeze-header">Freeze Header</button>            
+    <div class="padding">
+        <button class="ms-Button" id="freeze-header">Freeze Header</button>
     </div>
     ```
 
@@ -28,7 +28,7 @@
     ```js
     function freezeHeader() {
         Excel.run(function (context) {
-            
+
             // TODO1: Queue commands to keep the header visible when the user scrolls.
 
             return context.sync();
@@ -40,7 +40,7 @@
             }
         });
     }
-    ``` 
+    ```
 
 7. 将 `TODO1` 替换为以下代码。请注意以下几点：
    - `Worksheet.freezePanes` 集合是工作表中的一组窗格，在工作表滚动时就地固定或冻结。
@@ -49,7 +49,7 @@
     ```js
     const currentWorksheet = context.workbook.worksheets.getActiveWorksheet();
     currentWorksheet.freezePanes.freezeRows(1);
-    ``` 
+    ```
 
 ## <a name="test-the-add-in"></a>测试加载项
 
@@ -62,8 +62,8 @@
 2. 运行命令 `npm start`，启动在 localhost 上运行的 Web 服务器。
 4. 通过关闭任务窗格来重新加载它，再选择“主页”**** 菜单上的“显示任务窗格”****，重新打开加载项。
 6. 如果表格在工作表中，请删除它。
-7. 在任务窗格中，选择“创建表格”****。 
-8. 选择“冻结标题”**** 按钮。
+7. 在任务窗格中，选择“**创建表**”。
+8. 选择“**冻结标题**”按钮。
 9. 向下滚动工作表，直到在上面的行不可见时表格标题在顶部依然可见。
 
     ![Excel 教程 - 冻结标题](../images/excel-tutorial-freeze-header.png)

@@ -130,11 +130,11 @@
 
 1. 打开加载项项目中的 XML 清单文件。 此文件定义的是加载项设置和功能。
 
-2. 元素具有占位符值。`ProviderName` 将其替换为你的姓名。
+2. `ProviderName` 元素具有占位符值。 将其替换为你的姓名。
 
-3. 元素的 `DefaultValue` 属性有占位符。`DisplayName` 将它替换为“My Office Add-in”****。
+3. `DisplayName` 元素的 `DefaultValue` 属性有占位符。 将它替换为“My Office Add-in”****。
 
-4. 元素的 `DefaultValue` 属性有占位符。`Description` 将它替换为“A task pane add-in for PowerPoint”****。
+4. `Description` 元素的 `DefaultValue` 属性有占位符。 将它替换为“A task pane add-in for PowerPoint”****。
 
 5. 保存文件。
 
@@ -178,59 +178,56 @@
 
 ### <a name="create-the-add-in-project"></a>创建加载项项目
 
-1. 在本地驱动器上创建文件夹，并将它命名为“`my-powerpoint-addin`”。 将在其中创建外接程序文件。
-
-2. 转到新文件夹。
-
-    ```bash
-    cd my-powerpoint-addin
-    ```
-
-3. 使用 Yeoman 生成器创建 PowerPoint 加载项项目。 运行下面的命令，再回答如下所示的提示问题：
+1. 使用 Yeoman 生成器创建 PowerPoint 加载项项目。 运行下面的命令，再回答如下所示的提示问题：
 
     ```bash
     yo office
     ```
 
-    - **选择一个项目类型：** `Jquery`
-    - **选择一个脚本类型：** `Javascript`
+    - **选择项目类型:** `Office Add-in project using Jquery framework`
+    - **选择脚本类型:** `Javascript`
     - **要如何命名加载项?:** `My Office Add-in`
-    - **要支持哪一个 Office 客户端应用?:** `Powerpoint`
+    - **要支持哪一个 Office 客户端应用?:** `PowerPoint`
 
     ![有关 Yeoman 生成器提示和回答的屏幕截图](../images/yo-office-powerpoint-jquery.png)
     
-    完成向导后，生成器将创建项目并安装提供支持的 Node 组件。
+    完成此向导后，生成器会创建项目，并安装支持的 Node 组件。
+    
+2. 导航到项目的根文件夹。
+
+    ```bash
+    cd "My Office Add-in"
+    ```
 
 ### <a name="update-the-code"></a>更新代码
 
 1. 在代码编辑器中，打开项目根目录中的“index.html”****。 此文件包含在加载项任务窗格中呈现的 HTML。
 
-2. 将 `<body>` 元素内的 `<header>` 元素替换为以下标记。
+2. 用以下标记替换 `<body>` 元素。
 
     ```html
-    <div id="content-header">
-        <div class="padding">
-            <h1>Welcome</h1>
+    <body class="ms-font-m ms-welcome">
+        <div id="content-header">
+            <div class="padding">
+                <h1>Welcome</h1>
+            </div>
         </div>
-    </div>
+        <div id="content-main">
+            <div class="padding">
+                <p>Select a slide and then choose the buttons to below to add content to it.</p>
+                <br />
+                <h3>Try it out</h3>
+                <button class="ms-Button" id="insert-image">Insert Image</button>
+                <br /><br />
+                <button class="ms-Button" id="insert-text">Insert Text</button>
+            </div>
+        </div>
+        <script type="text/javascript" src="node_modules/jquery/dist/jquery.js"></script>
+        <script type="text/javascript" src="node_modules/office-ui-fabric-js/dist/js/fabric.js"></script>
+    </body>
     ```
 
-3. 将 `<body>` 元素内的 `<main>` 元素替换为以下标记，并保存文件。
-
-    ```html
-    <div id="content-main">
-        <div class="padding">
-            <p>Select a slide and then choose the buttons below to add content to it.</p>
-            <br />
-            <h3>Try it out</h3>
-            <button class="ms-Button" id="insert-image">Insert Image</button>
-            <br/><br/>
-            <button class="ms-Button" id="insert-text">Insert Text</button>
-        </div>
-    </div>
-    ```
-
-4. 打开文件 **src\index.js** 以指定加载项的脚本。使用以下代码替换全部内容并保存文件。
+3. 打开文件“**src/index.js**”，以指定加载项的脚本。 将整个内容替换为下列代码，并保存文件。
 
     ```js
     'use strict';
@@ -275,7 +272,7 @@
     })();
     ```
 
-5. 打开项目根目录中的文件 **app.css** 以指定加载项的自定义样式。 将整个内容替换为以下内容，并保存文件。
+4. 打开项目根目录中的文件“app.css”****，以指定加载项自定义样式。 将整个内容替换为以下内容，并保存文件。
 
     ```css
     #content-header {
@@ -306,11 +303,11 @@
 
 ### <a name="update-the-manifest"></a>更新清单
 
-1. 打开文件“my-office-add-in-manifest.xml”****，以定义加载项的设置和功能。
+1. 打开文件“**manifest.xml**”以定义加载项的设置和功能。
 
-2. 元素具有占位符值。`ProviderName` 将其替换为你的姓名。
+2. `ProviderName` 元素具有占位符值。 将其替换为你的姓名。
 
-3. 元素的 `DefaultValue` 属性有占位符。`Description` 将它替换为“A task pane add-in for PowerPoint”****。
+3. `Description` 元素的 `DefaultValue` 属性有占位符。 将它替换为“A task pane add-in for PowerPoint”****。
 
 4. 保存文件。
 
@@ -333,10 +330,10 @@
 1. 请按照运行加载项所用平台对应的说明操作，以在 PowerPoint 中旁加载加载项。
 
     - Windows：[在 Windows 上旁加载 Office 加载项](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)
-    - PowerPoint Online：[在 Office Online 中旁加载 Office 加载项](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-on-office-online)
+    - PowerPoint Online：[在 Office Online 中旁加载 Office 加载项](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-in-office-online)
     - iPad 和 Mac：[在 iPad 和 Mac 上旁加载 Office 加载项](../testing/sideload-an-office-add-in-on-ipad-and-mac.md)
 
-2. 在 PowerPoint 中，新建一个文件，再依次选择“主页”**** 选项卡和功能区中的“显示任务窗格”**** 按钮，以打开加载项任务窗格。
+2. 在 PowerPoint 中，插入新的空白幻灯片，再依次选择“主页”**** 选项卡和功能区中的“显示任务窗格”**** 按钮，以打开加载项任务窗格。
 
     ![突出显示了“显示任务窗格”按钮的 PowerPoint 屏幕截图](../images/powerpoint_quickstart_addin_1b.png)
 
@@ -352,7 +349,7 @@
 
 ## <a name="next-steps"></a>后续步骤
 
-恭喜！已成功创建 PowerPoint 加载项！ 接下来，请详细了解 PowerPoint 加载项的功能，并跟着 PowerPoint 加载项教程一起操作，生成更复杂的加载项。
+恭喜！已成功创建 PowerPoint 加载项！ 接下来，请详细了解 PowerPoint 加载项功能，并跟着 PowerPoint 加载项教程一起操作，生成更复杂的加载项。
 
 > [!div class="nextstepaction"]
 > [PowerPoint 加载项教程](../tutorials/powerpoint-tutorial.yml)

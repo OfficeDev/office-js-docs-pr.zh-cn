@@ -1,13 +1,13 @@
 ---
-title: Excel、Word 和 PowerPoint 的外接程序命令
+title: Excel、Word 和 PowerPoint 加载项命令
 description: ''
 ms.date: 01/23/2018
-ms.openlocfilehash: 3db846e9d28e063d959fd617bf8c50ab5cb5ec86
-ms.sourcegitcommit: c53f05bbd4abdfe1ee2e42fdd4f82b318b363ad7
+ms.openlocfilehash: 698fd4b77ea90430a141db1c791856f4f57fa29b
+ms.sourcegitcommit: 9b021af6cb23a58486d6c5c7492be425e309bea1
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "25506264"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "26533663"
 ---
 # <a name="add-in-commands-for-excel-word-and-powerpoint"></a>Excel、Word 和 PowerPoint 加载项命令
 
@@ -35,7 +35,7 @@ ms.locfileid: "25506264"
 **扩展点**
 
 - 功能区选项卡 - 扩展内置选项卡或新建自定义选项卡。
-- 上下文菜单 - 扩展选定上下文菜单。 
+- 上下文菜单 - 扩展选定上下文菜单。
 
 **控件类型**
 
@@ -49,11 +49,11 @@ ms.locfileid: "25506264"
 
 ## <a name="supported-platforms"></a>支持的平台
 
-目前，以下平台支持外接程序命令：
+目前，以下平台支持加载项命令：
 
-- Office for Windows Desktop 2016（内部版本 16.0.6769+）
+- Office 2016 for Windows 或更高版本（内部版本 16.0.6769+）
 - Office for Mac（内部版本 15.33+）
-- Office Online 
+- Office Online
 
 即将推出更多受支持的平台。
 
@@ -73,10 +73,10 @@ ms.locfileid: "25506264"
      > [!NOTE]
      > 占用过多空间的加载项可能无法通过 [AppSource 验证](https://docs.microsoft.com/office/dev/store/validation-policies)。
 
-- 对于所有图标，请遵循[图标设计指南](add-in-icons.md)。
-- 提供也可以在不支持命令的主机上运行的外接程序的版本。单个外接程序清单可以在命令感知（带有命令）和非命令感知（作为任务窗格）的主机中工作。
+- 对于所有图标，请遵循[图标设计准则](add-in-icons.md)。
+- 提供也可以在不支持命令的主机上运行的加载项的版本。 单个加载项清单可以在命令感知（带有命令）和非命令感知（作为任务窗格）的主机中工作。
 
-   *图 3：Office 2013 中的任务窗格加载项，以及 Office 2016 中使用加载项命令的相同加载项*
+   *图 3. Office 2013 中的任务窗格加载项，以及 Office 2016 中使用加载项命令的相同加载项*
 
    ![显示 Office 2013 中的任务窗格加载项，以及 Office 2016 中使用加载项命令的相同加载项的屏幕截图](../images/office-task-pane-add-ins.png)
 
@@ -86,7 +86,3 @@ ms.locfileid: "25506264"
 加载项命令的最佳入门方式是参照 GitHub 上的 [Office 加载项命令示例](https://github.com/OfficeDev/Office-Add-in-Commands-Samples/)。
 
 若要详细了解如何在清单中指定加载项命令，请参阅[在清单中创建加载项命令](../develop/create-addin-commands.md)和 [VersionOverrides](https://docs.microsoft.com/office/dev/add-ins/reference/manifest/versionoverrides?view=office-js) 参考内容。
-
-
-
-

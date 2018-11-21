@@ -2,12 +2,12 @@
 title: 处理 OneNote 页面内容
 description: ''
 ms.date: 12/04/2017
-ms.openlocfilehash: 246c864cfb6a63b5f78da8c1189ac5545411168c
-ms.sourcegitcommit: c53f05bbd4abdfe1ee2e42fdd4f82b318b363ad7
+ms.openlocfilehash: f44c58ac9cb3502889e280c63538603901b63a88
+ms.sourcegitcommit: 86724e980f720ed05359c9525948cb60b6f10128
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "25505662"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "26237408"
 ---
 # <a name="work-with-onenote-page-content"></a>处理 OneNote 页面内容 
 
@@ -45,6 +45,9 @@ OneNote 外接程序 JavaScript API 支持使用以下 HTML 创建和更新页�
 - `<table>`, `<tr>`, `<td>`
 - `<h1>` ... `<h6>`
 - `<b>`, `<em>`, `<strong>`, `<i>`, `<u>`, `<del>`, `<sup>`, `<sub>`, `<cite>`
+
+> [!NOTE]
+> 将 HTML 导入 OneNote 合并空白。 生成的内容将粘贴到一个大纲中。
 
 ## <a name="accessing-page-contents"></a>访问页面内容
 

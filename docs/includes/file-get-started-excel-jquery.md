@@ -14,15 +14,15 @@
 
 ### <a name="create-the-add-in-project"></a>创建加载项项目
 
-1. 在 Visual Studio 菜单栏中，依次选择**文件** > **新建** > **项目**。
+1. 在 Visual Studio 菜单栏中，依次选择“文件”**** > “新建”**** > “项目”****。
     
-2. 在 **Visual C#** 或 **Visual Basic** 下的项目类型列表中，展开 **Office/SharePoint** ，选择**加载项**，再选择** Excel Web 加载项**作为项目类型。 
+2. 在“Visual C#”**** 或“Visual Basic”**** 下的项目类型列表中，展开“Office/SharePoint”****，选择“加载项”****，再选择“Excel Web 加载项”**** 作为项目类型。 
 
-3. 命名此项目，再选择**确定**。
+3. 命名此项目，再选择“确定”****。
 
-4. 在**创建 Office 加载项**对话框窗口中，选择**将新功能添加到 Excel**，再选择**完成**以创建项目。
+4. 在“创建 Office 加载项”**** 对话框窗口中，选择“将新功能添加到 Excel”****，再选择“完成”**** 以创建项目。
 
-5. 此时，Visual Studio 创建解决方案，且它的两个项目显示在**解决方案资源管理器**中。**Home.html** 文件在 Visual Studio 中打开。
+5. 此时，Visual Studio 创建解决方案，且它的两个项目显示在“解决方案资源管理器”**** 中。**Home.html** 文件在 Visual Studio 中打开。
     
 ### <a name="explore-the-visual-studio-solution"></a>探索 Visual Studio 解决方案
 
@@ -30,7 +30,7 @@
 
 ### <a name="update-the-code"></a>更新代码
 
-1. **Home.html** 指定在加载项任务窗格中呈现的 HTML。在 **Home.html**，将 `<body>` 元素替换为以下标记，并保存文件。
+1. **Home.html** 指定在加载项的任务窗格中呈现的 HTML。 在 **Home.html** 中，将 `<body>` 元素替换为以下标记，并保存文件。
  
     ```html
     <body class="ms-font-m ms-welcome">
@@ -50,7 +50,7 @@
     </body>
     ```
 
-2. 打开 Web 应用项目根目录中的文件 **Home.js**。此文件指定加载项脚本。将整个内容替换为以下代码，并保存文件。 
+2. 打开 Web 应用项目根目录中的文件“Home.js”****。 此文件指定加载项脚本。 将整个内容替换为以下代码，并保存文件。 
 
     ```js
     'use strict';
@@ -78,7 +78,7 @@
     })();
     ```
 
-3. 打开 Web 应用项目根目录中的文件 **Home.css** 。此文件指定加载项自定义样式。将整个内容替换为以下代码，并保存文件。 
+3. 打开 Web 应用项目根目录中的文件“Home.css”****。 此文件指定加载项自定义样式。 将整个内容替换为以下代码，并保存文件。 
 
     ```css
     #content-header {
@@ -109,13 +109,13 @@
 
 ### <a name="update-the-manifest"></a>更新清单
 
-1. 在加载项项目中打开 XML 清单文件。该文件定义了加载项的设置和功能。
+1. 打开加载项项目中的 XML 清单文件。 此文件定义的是加载项设置和功能。
 
-2. `ProviderName` 元素具有占位符值。将其替换为你的姓名。
+2. `ProviderName` 元素具有占位符值。 将其替换为你的姓名。
 
-3. `DisplayName` 元素的 `DefaultValue` 属性具有占位符。将其替换为**我的 Office 加载项**。
+3. `DisplayName` 元素的 `DefaultValue` 属性有占位符。 将它替换为“My Office Add-in”****。
 
-4. `Description` 元素的 `DefaultValue` 属性具有占位符。将其替换为** Excel 的任务窗格加载项**。
+4. `Description` 元素的 `DefaultValue` 属性有占位符。 将它替换为“A task pane add-in for Excel”****。
 
 5. 保存文件。
 
@@ -131,15 +131,15 @@
 
 ### <a name="try-it-out"></a>试用
 
-1. 使用 Visual Studio 的同时，按 F5 或选择**开始**按钮启动 Excel，以测试新建的 Excel 加载项，功能区中显示有**显示任务窗格**加载项按钮。加载项本地托管在 IIS 上。
+1. 使用 Visual Studio 的同时，按 F5 或选择“开始”**** 按钮启动 Excel，以测试新建的 Excel 加载项，功能区中显示有“显示任务窗格”**** 加载项按钮。加载项本地托管在 IIS 上。
 
-2. 在 Excel 中，依次选择**主页**选项卡和功能区中的**显示任务窗格**按钮，以打开加载项任务窗格。
+2. 在 Excel 中，依次选择的“**开始**”选项卡和功能区中的“**显示任务窗格**”按钮，以打开加载项任务窗格。
 
     ![Excel 加载项按钮](../images/excel-quickstart-addin-2a.png)
 
 3. 选择工作表中的任何一系列单元格。
 
-4. 在任务窗格中，选择**设置颜色**按钮，将选定区域的颜色设置为绿色。
+4. 在任务窗格中，选择“**设置颜色**”按钮，将选定区域的颜色设置为绿色。
 
     ![Excel 加载项](../images/excel-quickstart-addin-2c.png)
 
@@ -149,7 +149,7 @@
 
 - [Node.js](https://nodejs.org)
 
-- 全局安装最新版 [Yeoman](https://github.com/yeoman/yo) 和 [Office 外接程序的 Yeoman 生成器](https://github.com/OfficeDev/generator-office)。
+- 全局安装最新版 [Yeoman](https://github.com/yeoman/yo) 和 [Office 加载项的 Yeoman 生成器](https://github.com/OfficeDev/generator-office)。
     ```bash
     npm install -g yo generator-office
     ```
@@ -162,10 +162,10 @@
     yo office
     ```
 
-    - **选择一个项目类型：** `Office Add-in project using Jquery framework`
-    - **选择一个脚本类型：** `Javascript`
-    - **要将你的外接程序命名为什么?:** `My Office Add-in`
-    - **要支持哪一个 Office 客户端应用?:** `Excel`
+    - **选择项目类型:** `Office Add-in project using Jquery framework`
+    - **选择脚本类型:** `Javascript`
+    - **要如何命名加载项?:** `My Office Add-in`
+    - **要支持哪一个 Office 客户端应用？：**`Excel`
 
     ![Yeoman 生成器](../images/yo-office-jquery.png)
     
@@ -179,9 +179,9 @@
 
 ### <a name="update-the-code"></a>更新代码 
 
-1. 在代码编辑器中，打开项目根目录中的 **index.html**。此文件指定在加载项任务窗格中呈现的 HTML。 
+1. 在代码编辑器中，打开项目根目录中的“index.html”****。 此文件指定在加载项任务窗格中呈现的 HTML。 
  
-2. 在 **index.html** 中，将 `body` 标记替换为以下标记并保存文件。
+2. 在“**index.html**”中，将 `body` 标记替换为以下标记，再保存文件。
  
     ```html
     <body class="ms-font-m ms-welcome">
@@ -203,7 +203,7 @@
     </body>    
     ```
 
-3. 打开文件 **src\index.js** 以指定加载项的脚本。使用以下代码替换全部内容并保存文件。
+3. 打开文件“**src/index.js**”，以指定加载项的脚本。 将整个内容替换为下列代码，并保存文件。
 
     ```js
     'use strict';
@@ -231,7 +231,7 @@
     })();
     ```
 
-4. 打开文件 **app.css**，以指定加载项自定义样式。将整个内容替换为以下代码，并保存文件。
+4. 打开文件“app.css”****，以指定加载项自定义样式。 将整个内容替换为以下代码，并保存文件。
 
     ```css
     #content-header {
@@ -262,11 +262,11 @@
 
 ### <a name="update-the-manifest"></a>更新清单
 
-1. 打开文件 **manifest.xml**，以定义加载项的设置和功能。 
+1. 打开文件“**manifest.xml**”以定义加载项的设置和功能。 
 
-2. `ProviderName` 元素具有占位符值。 将其替换为你的名称。
+2. `ProviderName` 元素具有占位符值。 将其替换为你的姓名。
 
-3. `Description` 元素的 `DefaultValue` 属性具有占位符。将其替换为**Excel 的任务窗格加载项**。
+3. `Description` 元素的 `DefaultValue` 属性有占位符。 将它替换为“A task pane add-in for Excel”****。
 
 4. 保存文件。
 
@@ -288,17 +288,17 @@
 
 1. 请按照运行加载项所用平台对应的说明操作，以在 Excel 中旁加载加载项。
 
-    - Windows：[在 Windows 旁加载 Office 加载项](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)
-    - Excel Online：[在 Office Online 中旁加载 Office 加载项](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-on-office-online)
-    - iPad 和 Mac：[在 iPad 和 Mac 旁加载 Office 加载项](../testing/sideload-an-office-add-in-on-ipad-and-mac.md)
+    - Windows：[在 Windows 上旁加载 Office 加载项](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)
+    - Excel Online：[在 Office Online 中旁加载 Office 加载项](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-in-office-online)
+    - iPad 和 Mac：[在 iPad 和 Mac 上旁加载 Office 加载项](../testing/sideload-an-office-add-in-on-ipad-and-mac.md)
 
-2. 在 Excel 中，依次选择**主页**选项卡和功能区中的**显示任务窗格**按钮，以打开加载项任务窗格。
+2. 在 Excel 中，依次选择的“**开始**”选项卡和功能区中的“**显示任务窗格**”按钮，以打开加载项任务窗格。
 
     ![Excel 加载项按钮](../images/excel-quickstart-addin-2b.png)
 
 3. 选择工作表中的任何一系列单元格。
 
-4. 在任务窗格中，选择**设置颜色**按钮，将选定区域的颜色设置为绿色。
+4. 在任务窗格中，选择“**设置颜色**”按钮，将选定区域的颜色设置为绿色。
 
     ![Excel 加载项](../images/excel-quickstart-addin-2c.png)
 
@@ -314,6 +314,6 @@
 ## <a name="see-also"></a>另请参阅
 
 * [Excel 加载项教程](../tutorials/excel-tutorial-create-table.md)
-* [使用 Excel JavaScript API 的基本编程概念](../excel/excel-add-ins-core-concepts.md)
+* [Excel JavaScript API 基本编程概念](../excel/excel-add-ins-core-concepts.md)
 * [Excel 加载项代码示例](https://developer.microsoft.com/office/gallery/?filterBy=Samples,Excel)
 * [Excel JavaScript API 参考](https://docs.microsoft.com/office/dev/add-ins/reference/overview/excel-add-ins-reference-overview?view=office-js)
