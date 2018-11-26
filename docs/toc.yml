@@ -156,6 +156,8 @@ items:
         href: develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md
       - name: 更新 API 和清单版本
         href: develop/update-your-javascript-api-for-office-and-manifest-schema-version.md
+      - name: 如何查找清单元素的正确顺序
+        href: develop/manifest-element-ordering.md
     - name: 身份验证和授权
       items:
       - name: 在加载项中启用 SSO
@@ -748,9 +750,9 @@ items:
         href: reference/manifest/webapplicationinfo.md
 - name: Resources
   href: resources/resources-links-help.md
-ms.openlocfilehash: e12000f983b90dd19c483866de1dc459138d0322
-ms.sourcegitcommit: 9b021af6cb23a58486d6c5c7492be425e309bea1
+ms.openlocfilehash: 1ae6299f20a6f191ca324b278c561a6c7c8f8bad
+ms.sourcegitcommit: 3e84d616e69f39eeeeea773f2431e7d674c4a9f5
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/15/2018
-ms.locfileid: "26533726"
+ms.lasthandoff: 11/22/2018
+ms.locfileid: "26644737"
