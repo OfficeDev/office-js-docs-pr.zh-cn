@@ -82,7 +82,7 @@
 |:-----|:-----|:-----|
 | **RegExName** | 是 | 指定正则表达式的名称，以便你能够在外接程序的代码中引用该表达式。 |
 | **RegExValue** | 是 | 指定将对其求值的正则表达式以确定是否应显示邮件外接程序。 |
-| **PropertyName** | 是 | 指定正则表达式进行计算所依据的属性名称。可以是下列类型之一：`Subject`、`BodyAsPlaintext`、`BodyAsHTML` 或 `SenderSTMPAddress`。 |
+| **PropertyName** | 是 | 指定正则表达式进行计算所依据的属性名称。可以是下列类型之一：`Subject`、`BodyAsPlaintext`、`BodyAsHTML` 或 `SenderSMTPAddress`。 |
 | **IgnoreCase** | 否 | 指定在执行正则表达式时忽略大小写。 |
 | **Highlight** | 否 | **注意：** 这仅适用于 **ExtensionPoint** 元素中的 **Rule** 元素。指定客户端应如何突出显示匹配的文本。可以是以下值之一：`all` 或 `none`。如果未指定，则默认值为 `all`。 |
 
