@@ -1,13 +1,13 @@
 ---
 title: 在 Office 加载项中使用对话框 API
 description: ''
-ms.date: 10/31/2018
-ms.openlocfilehash: bf93a6aeb4d0b92015351d924d417be0631daf37
-ms.sourcegitcommit: 86724e980f720ed05359c9525948cb60b6f10128
+ms.date: 11/28/2018
+ms.openlocfilehash: 0b6879f9c91ef6443718b032f9ec53c9a9c3afa0
+ms.sourcegitcommit: 026437bd3819f4e9cd4153ebe60c98ab04e18f4e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/09/2018
-ms.locfileid: "26237526"
+ms.lasthandoff: 11/30/2018
+ms.locfileid: "26992231"
 ---
 # <a name="use-the-dialog-api-in-your-office-add-ins"></a>在 Office 加载项中使用对话框 API
 
@@ -80,6 +80,17 @@ Office.context.ui.displayDialogAsync('https://myDomain/myDialog.html', {height: 
 > [!NOTE]
 > 如果对话框始终重定向到无法在 iframe 中打开的页面，**不**得使用 `displayInIframe: true`。例如，许多热门 Web 服务（如 Google 和 Microsoft 帐户）的登录页都无法在 iframe 中打开。
 
+### <a name="handling-pop-up-blockers-with-office-online"></a>使用 Office Online 处理弹出窗口阻止程序
+
+如果尝试在使用 Office Online 时显示对话框，可能会导致浏览器的弹出窗口阻止程序阻止对话框。 如果加载项用户先同意加载项发出的提示，可以避开浏览器的弹出窗口阻止程序。 `displayDialogAsync` 的 [DialogOptions](/javascript/api/office/office.dialogoptions) 包含可触发此类弹出窗口的 `promptBeforeOpen` 属性。 `promptBeforeOpen` 是提供以下行为的布尔值：
+ 
+ - `true` - 框架显示用于触发导航的弹出窗口，并避开浏览器的弹出窗口阻止程序。 
+ - `false` - 对话框不会显示，开发人员必须处理弹出窗口（通过提供用户界面项目来触发导航）。 
+ 
+弹出窗口如以下屏幕截图中所示：
+
+![加载项对话框可以生成提示，以避免浏览器内的弹出窗口阻止程序。](../images/dialog-prompt-before-open.png)
+ 
 ### <a name="send-information-from-the-dialog-box-to-the-host-page"></a>将信息从对话框发送到主机页
 
 对话框无法与任务窗格中的主机页进行通信，除非：

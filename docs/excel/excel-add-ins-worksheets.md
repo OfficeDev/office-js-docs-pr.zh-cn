@@ -1,17 +1,17 @@
 ---
 title: 使用 Excel JavaScript API 处理工作表
 description: ''
-ms.date: 12/04/2017
-ms.openlocfilehash: 9ceb2187cdd7f503fb39171e420adabcc2f13041
-ms.sourcegitcommit: 563c53bac52b31277ab935f30af648f17c5ed1e2
+ms.date: 11/27/2018
+ms.openlocfilehash: ef74dc622f3e857314874763a54df67bcff1d8ff
+ms.sourcegitcommit: 026437bd3819f4e9cd4153ebe60c98ab04e18f4e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/10/2018
-ms.locfileid: "25459131"
+ms.lasthandoff: 11/30/2018
+ms.locfileid: "26992224"
 ---
 # <a name="work-with-worksheets-using-the-excel-javascript-api"></a>使用 Excel JavaScript API 处理工作表
 
-本文提供了代码示例，介绍如何使用 Excel JavaScript API 对工作表执行常见任务。 有关 **Worksheet** 和 **WorksheetCollection** 对象支持的属性和方法的完整列表，请参阅 [Worksheet 对象 (Excel JavaScript API)](https://docs.microsoft.com/javascript/api/excel/excel.worksheet?view=office-js) 和 [WorksheetCollection 对象 (Excel JavaScript API)](https://docs.microsoft.com/javascript/api/excel/excel.worksheetcollection?view=office-js)。
+本文中的代码示例展示了如何使用 Excel JavaScript API 对工作表执行常见任务。 有关 **Worksheet** 和 **WorksheetCollection** 对象支持的属性和方法的完整列表，请参阅 [Worksheet 对象 (Excel JavaScript API)](https://docs.microsoft.com/javascript/api/excel/excel.worksheet) 和 [WorksheetCollection 对象 (Excel JavaScript API)](https://docs.microsoft.com/javascript/api/excel/excel.worksheetcollection)。
 
 > [!NOTE]
 > 本文中的信息仅适用于常规工作表；不适用于“图表”或“宏”表。
@@ -277,9 +277,33 @@ Excel.run(function (context) {
 
 ## <a name="get-a-range-within-a-worksheet"></a>获取工作表中的区域
 
-有关介绍如何获取工作表中区域的示例，请参阅[使用 Excel JavaScript API 处理区域](excel-add-ins-ranges.md)。
+有关展示了如何获取工作表中区域的示例，请参阅[使用 Excel JavaScript API 处理区域](excel-add-ins-ranges.md)。
+
+## <a name="data-protection"></a>数据保护
+
+加载项可以控制用户能否编辑工作表中的数据。 工作表的 `protection` 属性是包含 `protect()` 方法的 [WorksheetProtection](https://docs.microsoft.com/javascript/api/excel/excel.worksheetprotection) 对象。 下面的示例展示了关于切换活动工作表的完整保护的基本方案。
+
+```js
+Excel.run(function (context) {
+    var activeSheet = context.workbook.worksheets.getActiveWorksheet();
+    activeSheet.load("protection/protected");
+
+    return context.sync().then(function() {
+        if (!activeSheet.protection.protected) {
+            activeSheet.protection.protect();
+        }
+    })
+}).catch(errorHandlerFunction);
+```
+
+`protect` 方法包含两个可选参数：
+
+ - `options`：定义具体编辑限制的 [WorksheetProtectionOptions](https://docs.microsoft.com/javascript/api/excel/excel.worksheetprotectionoptions) 对象。
+ - `password`：表示用户规避保护并编辑工作表所需使用的密码的字符串。
+
+[保护工作表](https://support.office.com/article/protect-a-worksheet-3179efdb-1285-4d49-a9c3-f4ca36276de6)一文详细介绍了工作表保护，以及如何通过 Excel UI 更改保护。
 
 ## <a name="see-also"></a>另请参阅
 
-- [使用 Excel JavaScript API 的基本编程概念](excel-add-ins-core-concepts.md)
+- [Excel JavaScript API 基本编程概念](excel-add-ins-core-concepts.md)
 

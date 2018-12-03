@@ -282,6 +282,9 @@ items:
       - name: 表
         displayName: Excel
         href: excel/excel-add-ins-tables.md
+      - name: 工作簿
+        displayName: Excel
+        href: excel/excel-add-ins-workbooks.md
       - name: 工作表
         displayName: Excel
         href: excel/excel-add-ins-worksheets.md
@@ -750,9 +753,9 @@ items:
         href: reference/manifest/webapplicationinfo.md
 - name: Resources
   href: resources/resources-links-help.md
-ms.openlocfilehash: 1ae6299f20a6f191ca324b278c561a6c7c8f8bad
-ms.sourcegitcommit: 3e84d616e69f39eeeeea773f2431e7d674c4a9f5
+ms.openlocfilehash: ae9c486ede8704e1ac475af94dea3a129b1c22d6
+ms.sourcegitcommit: 026437bd3819f4e9cd4153ebe60c98ab04e18f4e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "26644737"
+ms.lasthandoff: 11/30/2018
+ms.locfileid: "26992203"
