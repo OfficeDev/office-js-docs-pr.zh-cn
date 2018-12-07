@@ -1,13 +1,13 @@
 ---
-ms.date: 10/17/2018
+ms.date: 11/29/2018
 description: 在 Excel 中使用 JavaScript 创建自定义函数。
 title: 在 Excel 中创建自定义函数（预览）
-ms.openlocfilehash: 8383b5f6d568a1ce2da036fbacfb90404bbe8297
-ms.sourcegitcommit: 2ac7d64bb2db75ace516a604866850fce5cb2174
+ms.openlocfilehash: daa0cea24473290a2bc1b5c931f2f7a00ddc8276
+ms.sourcegitcommit: e2ba9d7210c921d068f40d9f689314c73ad5ab4a
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/14/2018
-ms.locfileid: "26298549"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "27156612"
 ---
 # <a name="create-custom-functions-in-excel-preview"></a>在 Excel 中创建自定义函数（预览）
 
@@ -43,7 +43,7 @@ function add42(a, b) {
 
 下列部分将提供有关这些文件的详细信息。
 
-### <a name="script-file"></a>脚本文件 
+### <a name="script-file"></a>脚本文件
 
 脚本文件（Yo Office 生成器创建的项目中的 **./src/customfunctions.js** 或 **./src/customfunctions.ts**）包含定义自定义函数并将自定义函数名称映射到 [JSON 元数据文件](#json-metadata-file)中的对象的代码。 
 
@@ -127,7 +127,8 @@ CustomFunctionMappings.INCREMENT = increment;
     ],
     "options": {
         "cancelable": true,
-        "stream": true
+        "stream": true,
+        "volatile": false
       }
     }
   ]
@@ -144,7 +145,7 @@ CustomFunctionMappings.INCREMENT = increment;
 | `description` | 说明函数的功能。 当函数是 Excel 自动完成菜单中的选中项时，此值将作为工具提示显示。 |
 | `result`  | 定义函数返回的信息类型的对象。 有关此对象的详细信息，请参阅[结果](custom-functions-json.md#result)。 |
 | `parameters` | 定义函数的输入参数的数组。 有关此对象的详细信息，请参阅[参数](custom-functions-json.md#parameters)。 |
-| `options` | 使用户能够自定义 Excel 执行函数的方式和时间。 有关如何使用此属性的详细信息，请参阅本文后面的[流式处理函数](#streaming-functions)和[取消函数](#canceling-a-function)。 |
+| `options` | 使用户能够自定义 Excel 执行函数的方式和时间。 有关如何使用此属性的详细信息，请参阅本文后面的[流式处理函数](#streaming-functions)、[取消函数](#canceling-a-function)和[声明可变函数](#declaring-a-volatile-function)。 |
 
 ### <a name="manifest-file"></a>清单文件
 
@@ -270,6 +271,31 @@ function incrementValue(increment, handler){
 - 用户手动触发重新计算。 在这种情况下，取消之后还会触发新的函数调用。
 
 为了能够取消函数，必须在 JavaScript 函数中实现一个取消处理程序，并在说明函数的 JSON 元数据中指定 `options` 对象中的属性 `"cancelable": true`。 本文前一部分中的代码示例提供了这些方法的示例。
+
+## <a name="declaring-a-volatile-function"></a>声明可变函数
+
+[可变函数](https://docs.microsoft.com/office/client-developer/excel/excel-recalculation#volatile-and-non-volatile-functions)是指其值时刻更改的函数（即使此函数的自变量均未更改）。 每当 Excel 重新计算时，这些函数即会重新计算。 例如，假设某个单元格调用函数 `NOW`。 每当调用 `NOW` 时，它将自动返回当前的日期和时间。
+
+Excel 包含多个内置可变函数，例如 `RAND` 和 `TODAY`。 可参阅[可变函数和非可变函数](https://docs.microsoft.com/zh-CN/office/client-developer/excel/excel-recalculation#volatile-and-non-volatile-functions)，来获取 Excel 可变函数的完整列表。  
+  
+借助自定义函数，可以创建自己的可变函数。处理日期、时间、随机数字和建模时，可能会使用可变函数。 例如，Monte Carlo 模拟需要生成随机输入，来确定最佳解决方案。  
+  
+若要声明可变函数，则在 JSON 元数据文件内相应函数的 `options` 对象中添加 `"volatile": true`，如下面的代码示例所示。 请注意，无法同时将一个函数标记为 `"streaming": true` 和 `"volatile": true`；当同时将这两者标记为 `true` 时，将忽略可变选项。  
+
+```json
+{
+  "name": "TOMORROW",
+  "description":  "Returns tomorrow’s date",
+  "helpUrl": "http://www.contoso.com",
+  "result": {
+      "type": "string",
+      "dimensionality": "scalar"
+  },
+  "options": {
+      "volatile": true
+  }
+}
+```
 
 ## <a name="saving-and-sharing-state"></a>保存和共享状态
 

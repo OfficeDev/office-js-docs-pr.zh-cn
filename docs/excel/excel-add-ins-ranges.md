@@ -1,13 +1,13 @@
 ---
 title: 使用 Excel JavaScript API 处理区域
 description: ''
-ms.date: 10/19/2018
-ms.openlocfilehash: 9ac2ce808390dce90572aa27f3f8da2bce9cb572
-ms.sourcegitcommit: 8b079005eb042035328e89b29bf2ec775dd08a96
+ms.date: 12/04/2018
+ms.openlocfilehash: 4a6e0014da82956b15e11e2739f6f58fb82d5030
+ms.sourcegitcommit: e2ba9d7210c921d068f40d9f689314c73ad5ab4a
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "25772247"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "27156605"
 ---
 # <a name="work-with-ranges-using-the-excel-javascript-api"></a>使用 Excel JavaScript API 处理区域
 
@@ -538,6 +538,54 @@ Excel.run(function (context) {
 ### <a name="conditional-formatting-of-ranges"></a>范围的条件格式
 
 范围可以根据条件将格式应用于个别单元格。 有关此操作的详细信息，请参阅[将条件格式应用于 Excel 范围](excel-add-ins-conditional-formatting.md)。
+
+## <a name="work-with-dates-using-the-moment-msdate-plug-in"></a>使用 Moment-MSDate 插件处理日期
+
+[时刻 JavaScript 库](https://momentjs.com/)提供了使用日期和时间戳的便捷方式。 [Moment-MSDate 插件](https://www.npmjs.com/package/moment-msdate)可将时刻格式转换为 Excel 所需的格式。 这是 [NOW 函数](https://support.office.com/article/now-function-3337fd29-145a-4347-b2e6-20c904739c46)返回的相同格式。
+
+以下代码显示如何将 **B4** 处的范围设置为时刻的时间戳：
+
+```js
+Excel.run(function (context) {
+    var sheet = context.workbook.worksheets.getItem("Sample");
+    
+    var now = Date.now();
+    var nowMoment = moment(now);
+    var nowMS = nowMoment.toOADate();
+    
+    var dateRange = sheet.getRange("B4");
+    dateRange.values = [[nowMS]];
+    
+    dateRange.numberFormat = [["[$-409]m/d/yy h:mm AM/PM;@"]];
+    
+    return context.sync();
+}).catch(errorHandlerFunction);
+```
+
+这是一项类似于在单元格之外获取日期并将其转换为时刻或其他格式的技术，如以下代码中所示：
+
+```js
+Excel.run(function (context) {
+    var sheet = context.workbook.worksheets.getItem("Sample");
+
+    var dateRange = sheet.getRange("B4");
+    dateRange.load("values");
+        
+    return context.sync().then(function () {
+        var nowMS = dateRange.values[0][0];
+
+        // log the date as a moment
+        var nowMoment = moment.fromOADate(nowMS);
+        console.log(`get (moment): ${JSON.stringify(nowMoment)}`);
+
+        // log the date as a UNIX-style timestamp 
+        var now = nowMoment.unix();
+        console.log(`get (timestamp): ${now}`);
+    });
+}).catch(errorHandlerFunction);
+```
+
+你的加载项将必须对范围进行格式化才能以更可读的形式显示日期。 `"[$-409]m/d/yy h:mm AM/PM;@"` 的示例显示类似“12/3/18 3:57 PM”的时间。 有关日期和时间数字格式的详细信息，请参阅[查看自定义数字格式的准则](https://support.office.com/article/review-guidelines-for-customizing-a-number-format-c0a1d1fa-d3f4-4018-96b7-9c9354dd99f5)一文中的“日期和时间格式的准则”。
 
 ## <a name="copy-and-paste"></a>复制和粘贴
 

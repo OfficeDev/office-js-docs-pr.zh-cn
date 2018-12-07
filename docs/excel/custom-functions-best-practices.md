@@ -1,13 +1,13 @@
 ---
-ms.date: 10/24/2018
-description: 了解 Excel 自定义函数的最佳实践和推荐模式。
+ms.date: 11/29/2018
+description: 了解在 Excel 中开发自定义函数的最佳实践。
 title: 自定义函数最佳实践
-ms.openlocfilehash: 0408318227e1f89726ed7c0e4dfbb8e6340abef4
-ms.sourcegitcommit: 52d18dd8a60e0cec1938394669d577570700e61e
+ms.openlocfilehash: b1785c7f41af9823cfd135ead29fff4eda4b0b1d
+ms.sourcegitcommit: e2ba9d7210c921d068f40d9f689314c73ad5ab4a
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "25797397"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "27156584"
 ---
 # <a name="custom-functions-best-practices-preview"></a>自定义函数最佳实践（预览）
 
@@ -39,7 +39,7 @@ function getComment(x) {
 
 如果要在 Windows 版 Office 中测试外接程序，则应启用**[运行时日志记录](../testing/troubleshoot-manifest.md#use-runtime-logging-to-debug-your-add-in)**，以解决外接程序的 XML 清单文件及多个安装和运行时条件问题。 运行时日志记录将 `console.log` 语句写入日志文件，以帮你发现问题。
 
-若要向 Excel 自定义函数团队报告有关此故障排除方法的反馈，请发送团队反馈。 若要执行此操作，请选择“**文件|反馈|发送哭脸**”。 发送哭脸将提供必要的日志，以帮助我们了解你遇到的问题。 
+若要向 Excel 自定义函数团队报告有关此故障排除方法的反馈，请发送团队反馈。 若要执行此操作，请选择“**文件|反馈|发送哭脸**”。 发送哭脸将提供必要的日志，以帮助我们了解你遇到的问题。
 
 ## <a name="debugging"></a>调试
 
@@ -129,6 +129,66 @@ CustomFunctionMappings.ADD = add;
       ]
     }
     ```
+
+## <a name="declaring-optional-parameters"></a>声明可选参数 
+在 Excel for Windows（版本 1812 或更高版本）中，可以声明自定义函数的可选参数。 当用户在 Excel 中调用函数时，可选参数将显示在括号中。 例如，具有一个名为 `parameter1` 的必需参数和一个名为 `parameter2` 的可选参数的函数 `FOO` 将在 Excel 中显示为 `=FOO(parameter1, [parameter2])`。
+
+若要使某个参数可选，请在定义函数的 JSON 元数据文件中将 `"optional": true` 添加到该参数。 以下示例显示对于函数 `=ADD(first, second, [third])` 会是怎么样的。 请注意，可选 `[third]` 参数后跟两个必需参数。 必需参数将先显示在 Excel 的公式 UI 中。
+
+```json
+{
+    "id": "add",
+    "name": "ADD",
+    "description": "Add two numbers",
+    "helpUrl": "http://www.contoso.com",
+    "result": {
+        "type": "number",
+        "dimensionality": "scalar"
+        },
+    "parameters": [
+        {
+            "name": "first",
+            "description": "first number to add",
+            "type": "number",
+            "dimensionality": "scalar"
+        },
+        {
+            "name": "second",
+            "description": "second number to add",
+            "type": "number",
+            "dimensionality": "scalar",
+        },
+        {
+            "name": "third",
+            "description": "third optional number to add",
+            "type": "number",
+            "dimensionality": "scalar",
+            "optional": true
+        }
+    ],
+    "options": {
+        "sync": false
+    }
+}
+```
+
+定义包含一个或多个可选参数的函数时，应指定未定义可选参数时会发生什么情况。 在以下示例中，`zipCode` 和 `dayOfWeek` 都是 `getWeatherReport` 函数的可选参数。 如果未定义 `zipCode` 参数，则会将默认值设置为 98052。 如果未定义 `dayOfWeek` 参数，则会将其设置为星期三。
+
+```js
+function getWeatherReport(zipCode, dayOfWeek)
+{
+  if (zipCode === undefined) {
+      zipCode = "98052";
+  }
+
+  if (dayOfWeek === undefined) {
+    dayOfWeek = "Wednesday";
+  }
+
+  // Get weather report for specified zipCode and dayOfWeek
+  // ...
+}
+```
 
 ## <a name="additional-considerations"></a>其他注意事项
 
