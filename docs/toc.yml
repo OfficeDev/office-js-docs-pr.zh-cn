@@ -49,6 +49,9 @@ items:
   - name: Excel 自定义函数教程
     displayName: Excel
     href: tutorials/excel-tutorial-create-custom-functions.md
+  - name: Outlook 加载项教程
+    displayName: Outlook
+    href: /outlook/add-ins/addin-tutorial
   - name: PowerPoint 加载项教程
     displayName: PowerPoint
     href: tutorials/powerpoint-tutorial.yml
@@ -753,9 +756,9 @@ items:
         href: reference/manifest/webapplicationinfo.md
 - name: Resources
   href: resources/resources-links-help.md
-ms.openlocfilehash: ae9c486ede8704e1ac475af94dea3a129b1c22d6
-ms.sourcegitcommit: 026437bd3819f4e9cd4153ebe60c98ab04e18f4e
+ms.openlocfilehash: d0f9b83bba233357a6bc16ce0505d2d2f84b9e9b
+ms.sourcegitcommit: 0adc31ceaba92cb15dc6430c00fe7a96c107c9de
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "26992203"
+ms.lasthandoff: 12/09/2018
+ms.locfileid: "27210096"
