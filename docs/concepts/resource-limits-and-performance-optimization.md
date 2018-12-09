@@ -2,12 +2,12 @@
 title: Office 加载项的资源限制和性能优化
 description: ''
 ms.date: 01/23/2018
-ms.openlocfilehash: 57004d5f3b38bfb1c58cefbccf22a2ea0aa0b16f
-ms.sourcegitcommit: 4de2a1b62ccaa8e51982e95537fc9f52c0c5e687
+ms.openlocfilehash: c2695f35214bd418ad06debbdf81ed7f25596840
+ms.sourcegitcommit: 0adc31ceaba92cb15dc6430c00fe7a96c107c9de
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/10/2018
-ms.locfileid: "22925386"
+ms.lasthandoff: 12/09/2018
+ms.locfileid: "27210075"
 ---
 # <a name="resource-limits-and-performance-optimization-for-office-add-ins"></a>Office 加载项的资源限制和性能优化
 
@@ -46,11 +46,11 @@ ms.locfileid: "22925386"
 
 - **正则表达式响应时间** - Outlook 计算 Outlook 外接程序清单中的所有正则表达式的默认阈值为 1,000 毫秒。超过该阈值会导致 Outlook 稍后重新尝试计算。
 
-    通过使用 Windows 注册表中的组策略或应用程序特定设置，管理员可以在 **OutlookActivationAlertThreshold** 设置中调整此 1000 毫秒的默认阈值。
+    通过使用 Windows 注册表中的组策略或应用程序特定设置，管理员可以在 **OutlookActivationAlertThreshold** 设置中调整此 1,000 毫秒的默认阈值。
 
 - **正则表达式重新计算** - Outlook 重新计算清单中的所有正则表达式的默认限制为三次。如果三次计算均因超过适用阈值（默认值为 1,000 毫秒或 **OutlookActivationAlertThreshold** 指定的值，如果 Windows 注册表中存在该设置）而失败，则 Outlook 将禁用该 Outlook 外接程序。Exchange 管理中心会显示禁用状态，该外接程序被禁止在 Outlook 富客户端、Outlook Web App 和适用于设备的 OWA 中使用。
 
-    通过使用 Windows 注册表中的组策略或应用程序特定设置，管理员可以调整该时间数，以在 **OutlookActivationManagerRetryLimit** 设置中重试该评估。
+    通过使用 Windows 注册表中的组策略或特定于应用程序的设置，管理员可以调整该时间数，以在 **OutlookActivationManagerRetryLimit** 设置中重试该评估。
 
 ### <a name="task-pane-and-content-add-ins"></a>任务窗格和内容外接程序
     
@@ -69,8 +69,8 @@ Office 提供了遥测日志，以保留本地计算机上运行的 Office 解�
 
 |**日期/时间**|**事件 ID**|**严重性**|**标题**|**文件**|**ID**|**应用程序**|
 |:-----|:-----|:-----|:-----|:-----|:-----|:-----|
-|2012 年 10 月 8 日下午 5:57:10|7||外接程序清单已成功下载|名人录|69cc567c-6737-4c49-88dd-123334943a22|Outlook|
-|2012 年 10 月 8 日下午 5:57:01|7||外接程序清单已成功下载|领英|333bf46d-7dad-4f2b-8cf4-c19ddc78b723|Outlook|
+|10/8/2012 5:57:10 PM|7||外接程序清单已成功下载|Who's Who|69cc567c-6737-4c49-88dd-123334943a22|Outlook|
+|10/8/2012 5:57:01 PM|7||外接程序清单已成功下载|LinkedIn|333bf46d-7dad-4f2b-8cf4-c19ddc78b723|Outlook|
 
 下表列出了遥测日志通常跟踪的 Office 外接程序的事件。
 
@@ -94,7 +94,7 @@ Office 提供了遥测日志，以保留本地计算机上运行的 Office 解�
 
 - 在外接程序需要从无限制的数据集中读取大量数据的情况下，您可以在从表格中读取数据时应用分页，或者减小每次短暂读取操作中的数据大小，而不是试图在一次操作中完成全部读取。 
     
-   对于显示打断潜在的长时间运行且耗费大量 CPU 资源的 JavaScript 和 jQuery 代码的示例，请参阅[如何在高强度 JavaScript 处理过程中（暂时）将控制交回浏览器？](http://stackoverflow.com/questions/210821/how-can-i-give-control-back-briefly-to-the-browser-during-intensive-javascript)。该示例使用了全局对象的 [setTimeout](https://developer.mozilla.org/docs/Web/API/WindowOrWorkerGlobalScope/setTimeout) 方法来限制输入和输出的时长，同时还以具有固定大小的片段的方式处理传入的数据（而非任意大小）。
+   For a JavaScript and jQuery code sample that shows breaking up a potentially long-running and CPU-intensive series of inputting and outputting operations on unbounded data, see [How can I give control back (briefly) to the browser during intensive JavaScript processing?](http://stackoverflow.com/questions/210821/how-can-i-give-control-back-briefly-to-the-browser-during-intensive-javascript). This example uses the [setTimeout](https://developer.mozilla.org/docs/Web/API/WindowOrWorkerGlobalScope/setTimeout) method of the global object to limit the duration of input and output. It also handles the data in defined chunks instead of randomly unbounded data.
     
 - 如果外接程序使用大量占用 CPU 的算法来处理大量数据，则您可以使用 Web Worker 在后台执行长时间运行的任务，同时在前台运行单独的脚本，例如在用户界面中显示进度。Web Worker 不会阻止用户活动并允许 HTML 页面保持响应能力。有关 Web Worker 的示例，请参阅 [Web Worker 的基本信息](https://www.html5rocks.com/en/tutorials/workers/basics/)。有关 Internet Explorer Web Worker API 的详细信息，请参阅 [Web Worker](https://developer.mozilla.org/docs/Web/API/Web_Workers_API)。
     
@@ -106,5 +106,6 @@ Office 提供了遥测日志，以保留本地计算机上运行的 Office 解�
 ## <a name="see-also"></a>另请参阅
 
 - [Office 加载项的隐私和安全](../concepts/privacy-and-security.md)
-- [Outlook 加载项的激活和 JavaScript API 限制](https://docs.microsoft.com/outlook/add-ins/limits-for-activation-and-javascript-api-for-outlook-add-ins)
+- [Outlook 外接程序的激活限制和 JavaScript API](https://docs.microsoft.com/outlook/add-ins/limits-for-activation-and-javascript-api-for-outlook-add-ins)
+- [使用 Excel JavaScript API 优化性能](../excel/performance.md)
     

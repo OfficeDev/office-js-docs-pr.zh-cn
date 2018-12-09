@@ -1,13 +1,13 @@
 ---
 title: Excel JavaScript API 性能优化
 description: 使用 Excel JavaScript API 优化性能
-ms.date: 11/29/2018
-ms.openlocfilehash: fb0f81b79d2eac847a91a7b2a4fab92362330a10
-ms.sourcegitcommit: e2ba9d7210c921d068f40d9f689314c73ad5ab4a
+ms.date: 12/06/2018
+ms.openlocfilehash: f076ad6f773725c878b404d1039271a2ac59be48
+ms.sourcegitcommit: 0adc31ceaba92cb15dc6430c00fe7a96c107c9de
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "27156577"
+ms.lasthandoff: 12/09/2018
+ms.locfileid: "27210089"
 ---
 # <a name="performance-optimization-using-the-excel-javascript-api"></a>使用 Excel JavaScript API 优化性能
 
@@ -76,11 +76,15 @@ _其中：_
 
 请注意，一个对象下的某些“属性”可能与另一个对象同名。 例如，`format` 是区域对象下的一个属性，但 `format` 本身也是一个对象。 因此，如果发出 `range.load("format")` 之类的调用，这就相当于 `range.format.load()`，后者是一个空 load() 调用，它可能会导致前面所述的性能问题。 若要避免这种情况，代码应仅加载对象树中的“叶节点”。 
 
-## <a name="suspend-calculation-temporarily"></a>暂停计算
+## <a name="suspend-excel-processes-temporarily"></a>暂时挂起 Excel 进程
 
-如果你试图在大量单元格上执行操作（例如，设置一个大范围对象的值），而且不介意在操作完成时暂停 Excel 中的计算，建议暂停计算，直到调用下一个 ```context.sync()```。
+Excel 中的多个后台任务将反应来自用户和外接程序的输入。 可以控制其中的部分 Excel 进程以提高性能。 这在外接程序处理大型数据集时尤其有用。
 
-有关如何使用 ```suspendApiCalculationUntilNextSync()``` API 以便捷的方式暂停和重新激活计算的信息，请参阅[应用程序对象](https://docs.microsoft.com/javascript/api/excel/excel.application)参考文档。 下面的代码演示了如何暂停计算：
+### <a name="suspend-calculation-temporarily"></a>暂停计算
+
+如果你试图在大量单元格上执行操作（例如，设置一个大范围对象的值），而且不介意在操作完成时暂停 Excel 中的计算，建议暂停计算，直到调用下一个 `context.sync()`。
+
+有关如何使用 `suspendApiCalculationUntilNextSync()` API 以便捷的方式暂停和重新激活计算的信息，请参阅[应用程序对象](https://docs.microsoft.com/javascript/api/excel/excel.application)参考文档。 下面的代码演示了如何暂停计算：
 
 ```js
 Excel.run(async function(ctx) {
@@ -120,6 +124,17 @@ Excel.run(async function(ctx) {
     console.log(rangeToGet.values);
 })
 ```
+
+### <a name="suspend-screen-updating"></a>暂停屏幕更新
+
+> [!NOTE]
+> 本文中所述的 `suspendScreenUpdatingUntilNextSync()` 方法需要使用 [Office.js CDN](https://appsforoffice.microsoft.com/lib/beta/hosted/office.js) 中的 Beta 版 Office JavaScript 库。 [类型定义文件]（https://appsforoffice.microsoft.com/lib/beta/hosted/office.d.ts) 也可以在 CDN 中找到）。 有关即将推出的 API 的更多信息，请访问 GitHub 上的[开放性规范](https://github.com/OfficeDev/office-js-docs/tree/ExcelJs_OpenSpec)。
+
+Excel 大约会在代码发生更改时显示外接程序所进行的这些更改。 对于大型迭代数据集，你无需实时在屏幕上查看此进度。 在外接程序调用 `context.sync()` 或者在 `Excel.run` 结束（隐式调用 `context.sync`）之前，`Application.suspendScreenUpdatingUntilNextSync()` 将暂停对 Excel 的可视化更新。 请注意，在下次同步之前，Excel 不会显示任何活动迹象。你的外接程序应为用户提供相关指南，以便为此延迟做好准备，或者提供一个状态栏，以演示相关活动。
+
+### <a name="enable-and-disable-events"></a>启用和禁用事件
+
+可以通过禁用事件来改进加载项性能。 [使用事件](excel-add-ins-events.md#enable-and-disable-events)文章中的代码示例展示了如何启用和禁用事件。
 
 ## <a name="update-all-cells-in-a-range"></a>更新区域中的所有单元格 
 
@@ -193,13 +208,10 @@ Excel.run(async (context) => {
 });
 ```
 
-## <a name="enable-and-disable-events"></a>启用和禁用事件
-
-可以通过禁用事件来改进加载项性能。 [使用事件](excel-add-ins-events.md#enable-and-disable-events)文章中的代码示例展示了如何启用和禁用事件。
-
 ## <a name="see-also"></a>另请参阅
 
 - [Excel JavaScript API 基本编程概念](excel-add-ins-core-concepts.md)
 - [Excel JavaScript API 高级编程概念](excel-add-ins-advanced-concepts.md)
+- [Office 外接程序的资源限制和性能优化](../concepts/resource-limits-and-performance-optimization.md)
 - [Excel JavaScript API 开放性规范](https://github.com/OfficeDev/office-js-docs/tree/ExcelJs_OpenSpec)
 - [工作表函数对象（适用于 Excel 的 JavaScript API）](https://docs.microsoft.com/javascript/api/excel/excel.functions)
