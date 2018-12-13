@@ -1,12 +1,13 @@
 ---
 title: 创建使用单一登录的 Node.js Office 加载项
-description: 2018 年 1 月23 日
-ms.openlocfilehash: a6e91b84de69e4b2da5cc10277f0ca3579287b96
-ms.sourcegitcommit: 9b021af6cb23a58486d6c5c7492be425e309bea1
+description: ''
+ms.date: 12/7/2018
+ms.openlocfilehash: 5a3a4d398842119dc8c0d935f83a233313bb35c4
+ms.sourcegitcommit: f130dfa423bc536804fa4a90e1183d85f1bef730
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/15/2018
-ms.locfileid: "26533761"
+ms.lasthandoff: 12/12/2018
+ms.locfileid: "27243483"
 ---
 # <a name="create-a-nodejs-office-add-in-that-uses-single-sign-on-preview"></a>创建使用单一登录的 Node.js Office 加载项（预览）
 
@@ -196,14 +197,14 @@ ms.locfileid: "26533761"
             // TODO3: Handle the case where the user's sign-in or consent was aborted.
     
             // TODO4: Handle the case where the user is logged in with an account that is neither work or school, 
-            //        nor Micrososoft Account.
+            //        nor Microsoft Account.
     
             // TODO5: Handle an unspecified error from the Office host.
     
             // TODO6: Handle the case where the Office host cannot get an access token to the add-ins 
             //        web service/application.
     
-            // TODO7: Handle the case where the user tiggered an operation that calls `getAccessTokenAsync` 
+            // TODO7: Handle the case where the user triggered an operation that calls `getAccessTokenAsync` 
             //        before a previous call of it completed.
     
             // TODO8: Handle the case where the add-in does not support forcing consent.
@@ -260,7 +261,7 @@ ms.locfileid: "26533761"
         break;      
     ```
 
-1. 将 `TODO7` 替换为下列代码。如果用户触发的操作未等到上一次调用完成就调用了 `getAccessTokenAsync`，就会发生错误 13008。
+1. 将 `TODO7` 替换为以下代码。 如果用户触发的操作未等到上一次调用完成就调用了 `getAccessTokenAsync`，错误 13008 发生。
 
     ```javascript
     case 13008:
@@ -331,13 +332,7 @@ ms.locfileid: "26533761"
     else if (result.responseJSON.error.innerError
             && result.responseJSON.error.innerError.error_codes
             && result.responseJSON.error.innerError.error_codes[0] === 65001){
-        showResult(['Please grant consent to this add-in to access your Microsoft Graph data.']);        
-        /*
-            THE FORCE CONSENT OPTION IS NOT AVAILABLE IN DURING PREVIEW. WHEN SSO FOR
-            OFFICE ADD-INS IS RELEASED, REMOVE THE showResult LINE ABOVE AND UNCOMMENT
-            THE FOLLOWING LINE.
-        */
-        // getDataWithToken({ forceConsent: true });
+        getDataWithToken({ forceConsent: true });
     }
     ```
 
@@ -405,8 +400,8 @@ ms.locfileid: "26533761"
 1. 打开 \src\auth.ts 文件。将下面的方法添加到 `AuthModule` 类。关于此代码，请注意以下几点：
 
     * `jwt` 参数是对应用的访问令牌。在“代表”流中，它与 AAD 进行交换，以获取对资源的访问令牌。
-    * 虽然 scopes 参数有默认值，但在此示例中，它将被调用代码覆盖。
-    * resource 是可选参数。不得在 STS 是 AAD V 2.0 终结点时使用它。V 2.0 终结点通过范围推断资源。如果在 HTTP 请求中发送资源，它会返回错误。 
+    * 虽然 scopes 参数具有默认值，但在此示例中，它将被调用代码覆盖。
+    * resource 参数是可选的。 它不应在[安全令牌服务 (STS)](https://docs.microsoft.com/previous-versions/windows-identity-foundation/ee748490(v=msdn.10)) 是 AAD V 2.0 终结点时使用。 V 2.0 终结点从作用域推断资源，如果在 HTTP 请求中发送资源，则它将返回错误。 
     * `catch` 信息块中抛出异常*不会*导致立即向客户端发送“500 内部服务器错误”。 server.js 文件中的调用代码会捕获此异常，并将它变成发送到客户端的错误消息。
 
         ```typescript
@@ -521,9 +516,9 @@ ms.locfileid: "26533761"
     })); 
     ```
 
-3. 将以下方法添加到文件底部。此方法将处理对 `onedriveitems` API 的任何请求。
+3. 将以下方法添加到文件底部。此方法将处理对 `values` API 的任何请求。
     ```typescript
-    app.get('/api/onedriveitems', handler(async (req, res) => {
+    app.get('/api/values', handler(async (req, res) => {
         // TODO7: Initialize the AuthModule object and validate the access token 
         //        that the client-side received from the Office host.
         // TODO8: Get a token to Microsoft Graph from either persistent storage 
