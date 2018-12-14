@@ -1,4 +1,4 @@
-# <a name="accessibility-guidelines"></a>辅助功能指南
+# <a name="accessibility-guidelines"></a>辅助功能准则
 
 在设计和开发 Office 外接程序时，你将需要确保所有潜在用户和客户都能够成功使用你的外接程序。请应用以下准则，确保所有目标用户都能访问你的解决方案。
 
@@ -34,4 +34,4 @@
 
 - [Web 内容辅助功能指南 (WCAG) 2.0](https://www.w3.org/TR/wcag2ict/#REF-WCAG20)
 - [向非 Web 信息和通信技术 (WCAG2ICT) 应用 WCAG 2.0 的指南](https://www.w3.org/TR/wcag2ict/)
-- [关于信息和通信技术 (ICT) 的辅助功能要求的欧洲标准](http://www.etsi.org/deliver/etsi_en/301500_301599/301549/01.00.00_20/en_301549v010000c.pdf) 
+- [关于信息和通信技术 (ICT) 的辅助功能要求的欧洲标准](https://www.etsi.org/deliver/etsi_en/301500_301599/301549/01.00.00_20/en_301549v010000c.pdf) 

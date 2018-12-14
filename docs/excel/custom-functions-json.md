@@ -2,12 +2,12 @@
 ms.date: 11/26/2018
 description: 在 Excel 中定义自定义函数的元数据。
 title: Excel 中的自定义函数的元数据
-ms.openlocfilehash: a3d4427af2c6ab46133cb4e2fd9ce384a6a8336c
-ms.sourcegitcommit: e2ba9d7210c921d068f40d9f689314c73ad5ab4a
+ms.openlocfilehash: 60b22283d533cec6546d4ba8e7217868ef2be97c
+ms.sourcegitcommit: 3d8454055ba4d7aae12f335def97357dea5beb30
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "27156591"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "27270640"
 ---
 # <a name="custom-functions-metadata-preview"></a>自定义函数元数据（预览）
 
@@ -115,9 +115,9 @@ ms.locfileid: "27156591"
 |  `helpUrl`  |  string  |   否  |  提供有关函数的信息的 URL。 （它显示在任务窗格中。）例如，**http://contoso.com/help/convertcelsiustofahrenheit.html**。 |
 | `id`     | string | 是 | 函数的唯一 ID。 此 ID 只能包含字母数字字符和句点，设置后不应更改。 |
 |  `name`  |  string  |  是  |  最终用户在 Excel 中看到的函数的名称。 在 Excel 中，此函数名称将以 XML 清单文件中指定的自定义函数命名空间为前缀。 |
-|  `options`  |  object  |  否  |  使用户能够自定义 Excel 执行函数的方式和时间。 有关详细信息，请参阅[选项对象](#options-object)。 |
-|  `parameters`  |  array  |  是  |  定义函数的输入参数的数组。 有关详细信息，请参阅[参数数组](#parameters-array)。 |
-|  `result`  |  object  |  是  |  定义函数返回的信息类型的对象。 有关详细信息，请参阅[结果对象](#result-object)。 |
+|  `options`  |  object  |  否  |  使用户能够自定义 Excel 执行函数的方式和时间。 有关详细信息，请参阅[选项](#options)。 |
+|  `parameters`  |  array  |  是  |  定义函数的输入参数的数组。 有关详细信息，请参阅[参数](#parameters)。 |
+|  `result`  |  object  |  是  |  定义函数返回的信息类型的对象。 有关详细信息，请参阅[结果](#result)。 |
 
 ## <a name="options"></a>options
 

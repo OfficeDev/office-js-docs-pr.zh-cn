@@ -2,12 +2,12 @@
 title: 验证并排查清单问题
 description: 使用这些方法验证 Office 加载项清单。
 ms.date: 11/02/2018
-ms.openlocfilehash: 710a06108206675a6c4fe523137f12a5d12f1da4
-ms.sourcegitcommit: c6723a31b48945ca4c466ba016a3dfc7b6267f5c
+ms.openlocfilehash: c166220f0ddd5002efcb2805b5e50ee20a48b4fe
+ms.sourcegitcommit: 3d8454055ba4d7aae12f335def97357dea5beb30
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/03/2018
-ms.locfileid: "25942242"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "27270787"
 ---
 # <a name="validate-and-troubleshoot-issues-with-your-manifest"></a>验证并排查清单问题
 
@@ -16,7 +16,7 @@ ms.locfileid: "25942242"
 - [通过 Office 加载项验证程序验证清单](#validate-your-manifest-with-the-office-add-in-validator)   
 - [根据 XML 架构验证清单](#validate-your-manifest-against-the-xml-schema)
 - [使用适用于 Office 加载项的 Yeoman 生成器来验证清单](#validate-your-manifest-with-the-yeoman-generator-for-office-add-ins)
-- [使用运行时日志记录功能调试加载项清单](#use-runtime-logging-to-debug-your-add-in-manifest)
+- [使用运行时日志记录功能调试加载项](#use-runtime-logging-to-debug-your-add-in)
 
 
 ## <a name="validate-your-manifest-with-the-office-add-in-validator"></a>通过 Office 加载项验证程序验证清单

@@ -2,12 +2,12 @@
 title: Office 加载项的数据可视化样式指南
 description: ''
 ms.date: 12/04/2017
-ms.openlocfilehash: 27de6b6b2f4352488ad8f63c3b6e1250cbfbb324
-ms.sourcegitcommit: 30435939ab8b8504c3dbfc62fd29ec6b0f1a7d22
+ms.openlocfilehash: 686ae69c4bfdbd5f8623a80c9e1b61548a3f2bda
+ms.sourcegitcommit: 3d8454055ba4d7aae12f335def97357dea5beb30
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "23945790"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "27270689"
 ---
 # <a name="data-visualization-style-guidelines-for-office-add-ins"></a>Office 加载项的数据可视化样式指南
 
@@ -59,7 +59,7 @@ ms.locfileid: "23945790"
 有关在数据可视化中使用颜色的最佳做法，请参阅以下内容：
 
 
-- [为什么彩虹色不是数据可视化的最佳选择](http://www.poynter.org/2013/why-rainbow-colors-arent-always-the-best-options-for-data-visualizations/224413/)
+- [为什么彩虹色不是数据可视化的最佳选择](https://www.poynter.org/2013/why-rainbow-colors-arent-always-the-best-options-for-data-visualizations/224413/)
 - [Color Brewer 2.0：制图的颜色建议](http://colorbrewer2.org/)
 - [我想要的色调](http://tools.medialab.sciences-po.fr/iwanthue/)
 
@@ -108,7 +108,7 @@ Office Design 团队创建了以下设计原则集，我们可在为 Office 产�
 - 允许与对象进行直接交互，以展示新见解（例如，通过拖动进行排序）。
 - 使用简单、直接、熟悉的交互模型。
 
-有关如何设计用户友好交互式数据可视化的详细信息，请参阅 [UI 原则和陷阱](http://uitraps.com/)。
+有关如何设计用户友好交互式数据可视化的详细信息，请参阅 [UI 原则和陷阱](https://uitraps.com/)。
 
 ### <a name="motion-design-principles"></a>动作设计原则
 
@@ -124,7 +124,7 @@ Office Design 团队创建了以下设计原则集，我们可在为 Office 产�
 
 创建因果关系感知。在暂存动画时：
 
-- 一次暂存一个。 
+- 一次暂存一个。 
 - 在更改数据墨迹前，将更改暂存到轴中。
 - 如果对象以相同的速度朝相同的方向移动，那么可以暂存对象并将其制作成动画组。
 - 在只有 4-5 个对象的组中暂存数据元素。查看器很难独立跟踪数量超过 4-5 个的对象。
@@ -133,7 +133,7 @@ Office Design 团队创建了以下设计原则集，我们可在为 Office 产�
 
 - 动画可帮助用户理解对数据的更改，提供上下文，并作为非语言注释层发挥作用。
 - 动作应发生在可视化效果具有含义的坐标空间中。
-- 为视觉对象定制动画。 
+- 为视觉对象定制动画。 
 - 避免不必要的动画效果。
 
 随数据运动。
@@ -149,6 +149,5 @@ Office Design 团队创建了以下设计原则集，我们可在为 Office 产�
 
 ## <a name="see-also"></a>另请参阅 
 
-- [数据和设计：关于准备和可视化信息的简单介绍](https://infoactive.co/data-design)
-- [构建数据可视化效果的五个最佳库](http://www.fastcompany.com/3029760/the-five-best-libraries-for-building-data-vizualizations)
+- [构建数据可视化效果的五个最佳库](https://www.fastcompany.com/3029760/the-five-best-libraries-for-building-data-vizualizations)
 - [定量信息的视觉显示](https://www.edwardtufte.com/tufte/books_vdqi)

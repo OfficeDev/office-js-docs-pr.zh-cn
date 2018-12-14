@@ -2,12 +2,12 @@
 title: 使用 Office Open XML 创建更优质的 Word 加载项
 description: ''
 ms.date: 12/04/2017
-ms.openlocfilehash: 5eb50d19e23521cf3a6f7c58b1ad0b0cd6b64cab
-ms.sourcegitcommit: 9b021af6cb23a58486d6c5c7492be425e309bea1
+ms.openlocfilehash: f178a9ee05661e69cc5e08857bbdf8f5081553e0
+ms.sourcegitcommit: 3d8454055ba4d7aae12f335def97357dea5beb30
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/15/2018
-ms.locfileid: "26533824"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "27271046"
 ---
 # <a name="create-better-add-ins-for-word-with-office-open-xml"></a>使用 Office Open XML 创建更优质的 Word 加载项
 
@@ -852,6 +852,5 @@ SmartArt 图表具有四个关联的部件，但始终需要的只有两个。�
 ## <a name="see-also"></a>另请参阅
 
 - [适用于 Office 的 JavaScript API](https://docs.microsoft.com/office/dev/add-ins/reference/javascript-api-for-office?view=office-js)
-- [标准 ECMA-376：Office Open XML 文件格式](http://www.ecma-international.org/publications/standards/Ecma-376.htm)（其中收录了 Open XML 的完整语言参考和相关文档）
-- [OpenXMLDeveloper.org](http://www.openxmldeveloper.org)
+- [标准 ECMA-376：Office Open XML 文件格式](https://www.ecma-international.org/publications/standards/Ecma-376.htm)（其中收录了 Open XML 的完整语言参考和相关文档）
 - [探索适用于 Office 的 JavaScript API：数据绑定和自定义 XML 部分](https://msdn.microsoft.com/magazine/dn166930.aspx)

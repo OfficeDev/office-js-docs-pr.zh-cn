@@ -2,23 +2,23 @@
 title: 在 Office 外接程序中使用 OAuth 授权框架
 description: ''
 ms.date: 12/04/2017
-ms.openlocfilehash: cd9f15b66b7509f5fd9b1e8d9c7e1e2978968116
-ms.sourcegitcommit: 30435939ab8b8504c3dbfc62fd29ec6b0f1a7d22
+ms.openlocfilehash: 3fac2dd0ca6231684b0b91db80f969787822cf5f
+ms.sourcegitcommit: 3d8454055ba4d7aae12f335def97357dea5beb30
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "23944743"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "27270696"
 ---
 # <a name="use-the-oauth-authorization-framework-in-an-office-add-in"></a>在 Office 外接程序中使用 OAuth 授权框架
 
 OAuth 是授权的开放式标准，Office 365、Facebook、Google、SalesForce、LinkedIn 等联机服务提供商用其执行用户身份验证。OAuth 授权框架是 Azure 和 Office 365 中所用的默认授权协议。OAuth 授权框架用于企业（公司）和消费者方案。
 
-在线服务提供商可以通过 REST 提供公开的公共 API。 开发人员可以使用这些公共 API 在其 Office 外接程序中读取数据或写入数据到在线服务提供商。 将来自在线服务提供商的数据集成在外接程序中会增加它的价值，这会导致更好的用户采用。 当在你的外接程序中使用这些 API 时，会要求用户使用 OAuth 授权框架进行身份验证。
+联机服务提供商可通过 REST 提供公开的公用 API。 开发人员可以使用这些公用 API 在其 Office 外接程序中读取数据或写入数据到联机服务提供商。 将来自联机服务提供商的数据集成在外接程序中会增加它的价值，从而被更多的用户采用。 在外接程序中使用这些 API 时，会要求用户使用 OAuth 授权框架进行身份验证。
 
 本主题介绍如何在您的外接程序中实施身份验证流程以执行用户身份验证。本主题中包括的代码段采用的是 [Office-Add-in-NodeJS-ServerAuth](https://github.com/OfficeDev/Office-Add-in-NodeJS-ServerAuth) 代码示例。
 
 > [!NOTE]
-> 出于安全考虑，不允许浏览器在 IFrame 中显示登录页。根据您的客户所采用的 Office 版本，特别是基于 Web 的版本，您的外接程序将显示在 IFrame 中。这样需要考虑如何管理身份验证流程。 
+> 出于安全考虑，不允许浏览器在 IFrame 中显示登录页。根据您的客户所采用的 Office 版本，特别是基于 Web 的版本，您的外接程序将显示在 IFrame 中。这样需要考虑如何管理身份验证流程。  
 
 下图显示了所需的组件和在您的外接程序中实施身份验证时所发生的事件流。
 
@@ -41,7 +41,7 @@ OAuth 是授权的开放式标准，Office 365、Facebook、Google、SalesForce�
 
 ## <a name="step-1---start-socket-and-open-a-pop-up-window"></a>第 1 步 - 启动套接字并打开弹出窗口
 
-当您运行此代码示例时，任务窗格外接程序显示在 Office 中。当用户选择要登录到的 OAuth 提供程序时，外接程序首先创建套接字。此示例使用套接字提供良好的外接程序用户体验。外接程序使用套接字与用户沟通身份验证的成功或失败。通过使用套接字，外接程序的主页可轻松地更新身份验证状态，并不需要用户交互或轮询。下面的代码段来自 routes/connect.js，显示了如何启动套接字。套接字使用 **decodedNodeCookie**（外接程序的会话 ID）命名。此代码示例通过使用 [socket.io](http://socket.io/) 创建套接字。
+当您运行此代码示例时，任务窗格外接程序显示在 Office 中。当用户选择要登录到的 OAuth 提供程序时，外接程序首先创建套接字。此示例使用套接字提供良好的外接程序用户体验。外接程序使用套接字与用户沟通身份验证的成功或失败。通过使用套接字，外接程序的主页可轻松地更新身份验证状态，并不需要用户交互或轮询。下面的代码段来自 routes/connect.js，显示了如何启动套接字。套接字使用 **decodedNodeCookie**（外接程序的会话 ID）命名。此代码示例通过使用 [socket.io](https://socket.io/) 创建套接字。
 
 
 ```js
