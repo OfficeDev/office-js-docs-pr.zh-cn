@@ -2,12 +2,12 @@
 title: 使用 Angular 开发 Office 加载项
 description: ''
 ms.date: 11/02/2018
-ms.openlocfilehash: 312317e594024125e2dc86d23840750e48d81e40
-ms.sourcegitcommit: c6723a31b48945ca4c466ba016a3dfc7b6267f5c
+ms.openlocfilehash: b8756b9336e0d39c5544b264a110950fdd4d75ce
+ms.sourcegitcommit: 3d8454055ba4d7aae12f335def97357dea5beb30
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/03/2018
-ms.locfileid: "25942249"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "27270661"
 ---
 # <a name="develop-office-add-ins-with-angular"></a>使用 Angular 开发 Office 加载项
 
@@ -109,7 +109,7 @@ export class MyComponent {
 
 ## <a name="using-observable"></a>使用 Observable 对象
 
-Angular 使用 RxJS (Reactive Extensions for JavaScript)，而 RxJS 引入了 `Observable` 和 `Observer` 对象来实现异步处理。本部分简要介绍了如何使用 `Observables`；有关详细信息，请参阅官方 [RxJS](http://reactivex.io/rxjs/) 文档。
+Angular 使用 RxJS (Reactive Extensions for JavaScript)，而 RxJS 引入了 `Observable` 和 `Observer` 对象来实现异步处理。本部分简要介绍了如何使用 `Observables`；有关详细信息，请参阅官方 [RxJS](https://rxjs-dev.firebaseapp.com/) 文档。
 
 `Observable` 在某种程度上类似一个 `Promise` 对象 - 它立即从异步调用返回，但它可能在以后才能进行解析。不过，`Promise` 是一个值（可以是一个数组对象），而 `Observable` 是对象数组（可能仅有一个成员）。这可使代码调用 `Observable` 对象上的 [数组方法](https://www.w3schools.com/jsref/jsref_obj_array.asp)，如 `concat`、`map` 和 `filter`。 
 

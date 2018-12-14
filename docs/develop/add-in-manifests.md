@@ -2,12 +2,12 @@
 title: Office 加载项 XML 清单
 description: ''
 ms.date: 12/04/2018
-ms.openlocfilehash: 97e454347d3ab4ee94b4ee43f088962f117e8924
-ms.sourcegitcommit: e2ba9d7210c921d068f40d9f689314c73ad5ab4a
+ms.openlocfilehash: 412b271be406f9c44cc3e93609ddd2836922243a
+ms.sourcegitcommit: 3d8454055ba4d7aae12f335def97357dea5beb30
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "27156598"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "27270717"
 ---
 # <a name="office-add-ins-xml-manifest"></a>Office 加载项 XML 清单
 
@@ -85,7 +85,7 @@ _\*Office 加载项清单架构版本 1.1 中新增_
 [sourcelocation (contentapp)]: https://docs.microsoft.com/office/dev/add-ins/reference/manifest/sourcelocation
 [sourcelocation (taskpaneapp)]: https://docs.microsoft.com/office/dev/add-ins/reference/manifest/sourcelocation
 [desktopsettings]: https://msdn.microsoft.com/library/da9fd085-b8cc-2be0-d329-2aa1ef5d3f1c(Office.15).aspx
-[sourcelocation (mailapp)]: http://msdn.microsoft.com/library/3792d389-bebd-d19a-9d90-35b7a0bfc623%28Office.15%29.aspx
+[sourcelocation (mailapp)]: https://msdn.microsoft.com/library/3792d389-bebd-d19a-9d90-35b7a0bfc623%28Office.15%29.aspx
 [permissions (contentapp)]: https://docs.microsoft.com/office/dev/add-ins/reference/manifest/permissions
 [permissions (taskpaneapp)]: https://docs.microsoft.com/office/dev/add-ins/reference/manifest/permissions
 [permissions (mailapp)]: https://docs.microsoft.com/office/dev/add-ins/reference/manifest/permissions

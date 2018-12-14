@@ -2,12 +2,12 @@
 title: 排查单一登录 (SSO) 错误消息
 description: ''
 ms.date: 12/08/2017
-ms.openlocfilehash: 28493809c537cecc392f73f5f047e62741c5f77c
-ms.sourcegitcommit: 86724e980f720ed05359c9525948cb60b6f10128
+ms.openlocfilehash: 42f0bf50e65e10f21df11403f53942cc4753a79b
+ms.sourcegitcommit: 3d8454055ba4d7aae12f335def97357dea5beb30
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/09/2018
-ms.locfileid: "26237491"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "27270892"
 ---
 # <a name="troubleshoot-error-messages-for-single-sign-on-sso-preview"></a>排查单一登录 (SSO) 错误消息（预览）
 
@@ -22,12 +22,12 @@ ms.locfileid: "26237491"
 
 开发时，强烈建议使用具有以下功能的工具：能够截获并显示加载项 Web 服务发出的 HTTP 请求和发送给它的响应。最热门的两个工具是：
 
-- [Fiddler](http://www.telerik.com/fiddler)：免费使用（[文档](http://docs.telerik.com/fiddler/configure-fiddler/tasks/configurefiddler)）
+- [Fiddler](https://www.telerik.com/fiddler)：免费使用（[文档](https://docs.telerik.com/fiddler/configure-fiddler/tasks/configurefiddler)）
 - [Charles](https://www.charlesproxy.com/)：免费使用 30 天。 （[文档](https://www.charlesproxy.com/documentation/)）
 
 开发服务 API 时，不妨还尝试使用：
 
-- [Postman](http://www.getpostman.com/postman)：免费使用（[文档](https://www.getpostman.com/docs/)）
+- [Postman](https://www.getpostman.com/postman)：免费使用（[文档](https://www.getpostman.com/docs/)）
 
 ## <a name="causes-and-handling-of-errors-from-getaccesstokenasync"></a>导致 getAccessTokenAsync 生成错误的原因和处理方法
 

@@ -2,12 +2,12 @@
 title: 解决 Office 加载项中的同源策略限制
 description: ''
 ms.date: 12/04/2017
-ms.openlocfilehash: 054a01d554c529579917218361bcb8aeebb04c3c
-ms.sourcegitcommit: eb74e94d3e1bc1930a9c6582a0a99355d0da34f2
+ms.openlocfilehash: e5aa329eb3f073f3544d8446683debed3239fd00
+ms.sourcegitcommit: 3d8454055ba4d7aae12f335def97357dea5beb30
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "25004880"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "27270598"
 ---
 # <a name="addressing-same-origin-policy-limitations-in-office-add-ins"></a>解决 Office 加载项中的同源策略限制
 
@@ -61,7 +61,7 @@ function loadVideoDetails(videoIndex) {
 ## <a name="using-cross-origin-resource-sharing-cors"></a>使用跨源资源共享 (CORS)
 
 
-有关使用 [XmlHttpRequest2](http://dvcs.w3.org/hg/xhr/raw-file/tip/Overview.html) 的跨源资源共享功能的示例，请参阅 [XMLHttpRequest2 中的新技巧](http://www.html5rocks.com/en/tutorials/file/xhr2/)的“跨源资源共享 (CORS)”部分。
+有关使用 [XmlHttpRequest2](https://dvcs.w3.org/hg/xhr/raw-file/tip/Overview.html) 的跨源资源共享功能的示例，请参阅 [XMLHttpRequest2 中的新技巧](https://www.html5rocks.com/en/tutorials/file/xhr2/)的“跨源资源共享 (CORS)”部分。
 
 
 ## <a name="building-your-own-proxy-using-iframe-and-post-message"></a>使用 IFRAME 和 POST MESSAGE 生成您自己的代理

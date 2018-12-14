@@ -1,13 +1,13 @@
 ---
-ms.date: 10/17/2018
+ms.date: 12/5/2018
 description: 了解开发使用新 JavaScript 运行时的 Excel 自定义函数时的关键方案。
 title: Excel 自定义函数的运行时
-ms.openlocfilehash: 7261eb214e97a2a05e08571a31ac9b449df14083
-ms.sourcegitcommit: 161a0625646a8c2ebaf1773c6369ee7cc96aa07b
+ms.openlocfilehash: 715690c5cba2466e4a50ba2a33d2324a1abe02f5
+ms.sourcegitcommit: 3d8454055ba4d7aae12f335def97357dea5beb30
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "25891709"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "27270829"
 ---
 # <a name="runtime-for-excel-custom-functions-preview"></a>Excel 自定义函数的运行时（预览）
 
@@ -17,11 +17,11 @@ ms.locfileid: "25891709"
 
 ## <a name="requesting-external-data"></a>请求外部数据
 
-在自定义函数中，你可以使用 [Fetch](https://developer.mozilla.org/zh-CN/docs/Web/API/Fetch_API) 等 API 或使用 [XmlHttpRequest (XHR)](https://developer.mozilla.org/zh-CN/docs/Web/API/XMLHttpRequest)（一种发出与服务器交互的 HTTP 请求的标准 Web API）来请求外部数据。 在 JavaScript runtime 运行时内，XHR 通过要求[相同来源策略](https://developer.mozilla.org/zh-CN/docs/Web/Security/Same-origin_policy)和简单 [CORS](https://www.w3.org/TR/cors/) 来实施附加安全措施。  
+在自定义函数中，你可以使用 [Fetch](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) 等 API 或使用 [XmlHttpRequest (XHR)](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest)（一种发出与服务器交互的 HTTP 请求的标准 Web API）来请求外部数据。 在 JavaScript runtime 运行时内，XHR 通过要求[相同来源策略](https://developer.mozilla.org/en-US/docs/Web/Security/Same-origin_policy)和简单 [CORS](https://www.w3.org/TR/cors/) 来实施附加安全措施。  
 
 ### <a name="xhr-example"></a>XHR 示例
 
-在下面的代码示例中，`getTemperature` 函数调用 `sendWebRequest` 函数，以基于温度计 ID 获取特定区域的温度。 `sendWebRequest` 函数使用 XHR 来向可以提供相应数据的端点发出 `GET` 请求。 
+在下面的代码示例中，`getTemperature` 函数调用 `sendWebRequest` 函数，以基于温度计 ID 获取特定区域的温度。 `sendWebRequest` 函数使用 XHR 来向可以提供相应数据的端点发出 `GET` 请求。
 
 > [!NOTE] 
 > 当使用提取或 XHR 时，将返回新的 JavaScript `Promise`。 在 2018 年 9 月之前，必须指定 `OfficeExtension.Promise` 才能在 Office JavaScript API 中使用 promise，但现在可以直接使用 JavaScript `Promise`。
@@ -51,7 +51,7 @@ function sendWebRequest(thermometerID, data) {
 
 ## <a name="receiving-data-via-websockets"></a>通过 WebSocket 接收数据
 
-在自定义函数内，可使用 [WebSocket](https://developer.mozilla.org/zh-CN/docs/Web/API/WebSockets_API) 来通过与服务器的持久连接交换数据。 通过使用 WebSocket，自定义函数可以打开与服务器的连接，然后在发生某些事件时自动从服务器接收消息，而无需显式地轮询服务器来获取数据。
+在自定义函数内，可使用 [WebSocket](https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API) 来通过与服务器的持久连接交换数据。 通过使用 WebSocket，自定义函数可以打开与服务器的连接，然后在发生某些事件时自动从服务器接收消息，而无需显式地轮询服务器来获取数据。
 
 ### <a name="websockets-example"></a>WebSocket 示例
 
@@ -69,7 +69,7 @@ ws.onerror = (error) => {
 
 ## <a name="storing-and-accessing-data"></a>存储和访问数据
 
-在自定义函数（或外接程序的任何其他部分）内，可以使用 `OfficeRuntime.AsyncStorage` 对象来存储和访问数据。 `AsyncStorage` 是一种未加密的持久键值存储系统，为无法在自定义函数内使用的 [localStorage](https://developer.mozilla.org/zh-CN/docs/Web/API/Window/localStorage) 提供了一种替代方案。 一个外接程序可以使用 `AsyncStorage` 存储最多 10 MB 的数据。
+在自定义函数（或外接程序的任何其他部分）内，可以使用 `OfficeRuntime.AsyncStorage` 对象来存储和访问数据。 `AsyncStorage` 是一种未加密的持久键值存储系统，为无法在自定义函数内使用的 [localStorage](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage) 提供了一种替代方案。 一个外接程序可以使用 `AsyncStorage` 存储最多 10 MB 的数据。
 
 `AsyncStorage` 旨在作为共享存储解决方案，这意味着外接程序的多个部分将能访问相同数据。 例如，用户身份验证令牌可能存储在 `AsyncStorage` 中，因为自定义函数和任务窗格等外接程序 UI 元素都有可能会访问该数据。 同样，如果两个外接程序共享同一个域（例如 www.contoso.com/addin1、www.contoso.com/addin2），则也可以通过 `AsyncStorage` 来回共享信息。 注意，具有不同子域的外接程序将具有不同的 `AsyncStorage` 实例（例如 subdomain.contoso.com/addin1、differentsubdomain.contoso.com/addin2） 
 
@@ -107,7 +107,7 @@ _goGetData = async () => {
 
 在自定义函数（或外接程序的任何其他部分）内，可以使用 `OfficeRuntime.displayWebDialogOptions` API 来显示对话框。 此对话框 API 为可在任务窗格和附加程序命令内使用但无法在自定义函数中使用的[对话框 API](../develop/dialog-api-in-office-add-ins.md) 提供了一个替代方案。
 
-### <a name="dialog-api-example"></a>对话框 API 示例 
+### <a name="dialog-api-example"></a>对话框 API 示例
 
 在下面的代码示例中，函数 `getTokenViaDialog` 使用对话框 API 的 `displayWebDialogOptions` 函数来显示对话框。
 

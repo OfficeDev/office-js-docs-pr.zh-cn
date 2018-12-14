@@ -46,7 +46,7 @@
 |---|---|
 |[最低版本的邮箱要求集](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
 |[最低权限级别](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
-|[适用的 Outlook 模式](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Compose 或 Read|
+|[适用的 Outlook 模式](https://docs.microsoft.com/outlook/add-ins/#extension-points)| 撰写或阅读|
 
 ### <a name="methods"></a>方法
 
@@ -57,11 +57,11 @@
 > [!NOTE]
 > 在 Outlook for iOS 或 Outlook for Android 中不支持此方法。
 
-通过 REST API 检索的项 ID（如 [Outlook 邮件 API](https://docs.microsoft.com/previous-versions/office/office-365-api/api/version-2.0/mail-rest-operations) 或 [Microsoft Graph](http://graph.microsoft.io/)）使用与 Exchange Web 服务 (EWS) 所使用格式不同的格式。`convertToEwsId` 方法将 REST 格式化的 ID 转换为正确的 EWS 格式。
+通过 REST API 检索的项 ID（如 [Outlook 邮件 API](https://docs.microsoft.com/previous-versions/office/office-365-api/api/version-2.0/mail-rest-operations) 或 [Microsoft Graph](https://graph.microsoft.io/)）使用与 Exchange Web 服务 (EWS) 所使用格式不同的格式。`convertToEwsId` 方法将 REST 格式化的 ID 转换为正确的 EWS 格式。
 
 ##### <a name="parameters"></a>参数：
 
-|名称| 类型| 描述|
+|名称| 类型| 说明|
 |---|---|---|
 |`itemId`| 字符串|Outlook REST API 的格式化的项目 ID。|
 |`restVersion`| [Office.MailboxEnums.RestVersion](/javascript/api/outlook_1_3/office.mailboxenums.restversion)|指示用于检索项目 ID 的 Outlook REST API 的版本。|
@@ -99,7 +99,7 @@ Outlook 或 Outlook Web App 邮件应用程序的日期和时间可以使用不�
 
 ##### <a name="parameters"></a>参数：
 
-|名称| 类型| 描述|
+|名称| 类型| 说明|
 |---|---|---|
 |`timeValue`| 日期|一个 Date 对象|
 
@@ -122,11 +122,11 @@ Outlook 或 Outlook Web App 邮件应用程序的日期和时间可以使用不�
 > [!NOTE]
 > 在 Outlook for iOS 或 Outlook for Android 中不支持此方法。
 
-与 REST API 所使用的格式比较，通过 EWS 或通过 `itemId` 属性检索的项目 ID 使用不同的格式（例如 [Outlook Mail API](https://docs.microsoft.com/previous-versions/office/office-365-api/api/version-2.0/mail-rest-operations) 或 [Microsoft Graph](http://graph.microsoft.io/)）。`convertToRestId` 方法将 EWS 格式化的 ID 转换为正确的 REST 格式。
+与 REST API 所使用的格式比较，通过 EWS 或通过 `itemId` 属性检索的项目 ID 使用不同的格式（例如 [Outlook Mail API](https://docs.microsoft.com/previous-versions/office/office-365-api/api/version-2.0/mail-rest-operations) 或 [Microsoft Graph](https://graph.microsoft.io/)）。`convertToRestId` 方法将 EWS 格式化的 ID 转换为正确的 REST 格式。
 
 ##### <a name="parameters"></a>参数：
 
-|名称| 类型| 描述|
+|名称| 类型| 说明|
 |---|---|---|
 |`itemId`| 字符串|适用于 Exchange Web 服务 (EWS) 的项目 ID 格式化。|
 |`restVersion`| [Office.MailboxEnums.RestVersion](/javascript/api/outlook_1_3/office.mailboxenums.restversion)|值指示转换的 ID 所使用的 Outlook REST API 的版本。|
@@ -205,7 +205,7 @@ var restId = Office.context.mailbox.convertToRestId(ewsId, Office.MailboxEnums.R
 
 ##### <a name="parameters"></a>参数：
 
-|名称| 类型| 描述|
+|名称| 类型| 说明|
 |---|---|---|
 |`itemId`| 字符串|现有日历约会的 Exchange Web 服务 (EWS) 标识符。|
 
@@ -240,7 +240,7 @@ Office.context.mailbox.displayAppointmentForm(appointmentId);
 
 ##### <a name="parameters"></a>参数：
 
-|名称| 类型| 描述|
+|名称| 类型| 说明|
 |---|---|---|
 |`itemId`| 字符串|现有消息的 Exchange Web 服务 (EWS) 标识符。|
 
@@ -275,7 +275,7 @@ Office.context.mailbox.displayMessageForm(messageId);
 
 ##### <a name="parameters"></a>参数：
 
-|名称| 类型| 描述|
+|名称| 类型| 说明|
 |---|---|---|
 | `parameters` | 对象 | 描述新约会的参数字典。 |
 | `parameters.requiredAttendees` | Array.&lt;String&gt; &#124; Array.&lt;[EmailAddressDetails](/javascript/api/outlook_1_3/office.emailaddressdetails)&gt; | 包含电子邮件地址的字符串数组或包含约会的每个必需与会者的 `EmailAddressDetails` 对象的数组。数组限制为最多 100 个条目。 |
@@ -284,7 +284,7 @@ Office.context.mailbox.displayMessageForm(messageId);
 | `parameters.end` | Date | 指定约会的结束日期和时间的 `Date` 对象。 |
 | `parameters.location` | String | 包含约会位置的字符串。字符串长度限制为最多 255 个字符。 |
 | `parameters.resources` | Array.&lt;String&gt; | 包含约会所需资源的字符串数组。数组限制为最多 100 个条目。 |
-| `parameters.subject` | String | 包含约会主题的字符串。字符串长度限制为最多 255 个字符。 |
+| `parameters.subject` | 字符串 | 包含约会主题的字符串。字符串长度限制为最多 255 个字符。 |
 | `parameters.body` | 字符串 | 约会的正文。正文内容限制为最大 32 KB。 |
 
 ##### <a name="requirements"></a>要求
@@ -392,15 +392,15 @@ function cb(asyncResult) {
 向托管用户邮箱的 Exchange 服务器上的 Exchange Web 服务 (EWS) 发出异步请求。
 
 > [!NOTE]
-> 在下列应用场景中不支持此方法：
+> 此方法在下列应用场景不受支持。
 > - 在 Outlook for iOS 或 Outlook for Android 中
-> - 当加载项加载在 Gmail 邮箱中时
+> - 当加载项载入 Gmail 邮箱中时
 > 
-> 在这些情况下，加载项应该[使用 REST Api](https://docs.microsoft.com/outlook/add-ins/use-rest-api) 以改为访问用户的邮箱。
+> 在这些情况下，加载项应该[使用 REST API](https://docs.microsoft.com/outlook/add-ins/use-rest-api) 来改为访问用户的邮箱。
 
 `makeEwsRequestAsync` 方法代表加载项将 EWS 请求发送到 Exchange。 有关支持的 EWS 操作的列表，请参阅[从 Outlook 加载项调用 Web 服务](https://docs.microsoft.com/outlook/add-ins/web-services#ews-operations-that-add-ins-support)。
 
-不能使用 `makeEwsRequestAsync` 方法请求与文件夹关联的项目。
+你不能使用 `makeEwsRequestAsync` 方法请求与文件夹关联的项目。
 
 XML 请求必须指定 UTF-8 编码。
 
@@ -428,7 +428,7 @@ XML 请求必须指定 UTF-8 编码。
 |名称| 类型| 属性| 说明|
 |---|---|---|---|
 |`data`| 字符串||EWS 请求。|
-|`callback`| 函数||方法完成后，使用单个参数 `asyncResult`（一个 [`AsyncResult`](/javascript/api/office/office.asyncresult) 对象）调用在 `callback` 参数中传递的函数。<br/><br/>EWS 调用的 XML 结果作为 `asyncResult.value` 属性中的字符串提供。 如果结果大小超过 1 MB，则返回一条错误消息。|
+|`callback`| 函数||方法完成后，使用单个参数 `asyncResult`（一个 [`AsyncResult`](/javascript/api/office/office.asyncresult) 对象）调用在 `callback` 参数中传递的函数。<br/><br/>EWS 调用的 XML 结果作为 `asyncResult.value` 属性中的字符串提供。 如果结果大小超过 1 MB，则改为返回一条错误消息。|
 |`userContext`| 对象| &lt;可选&gt;|传递给异步方法的任何状态数据。|
 
 ##### <a name="requirements"></a>要求

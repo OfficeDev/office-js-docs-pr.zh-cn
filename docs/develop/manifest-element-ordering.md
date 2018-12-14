@@ -2,12 +2,12 @@
 title: 如何查找清单元素的正确顺序
 description: 了解如何查找在父元素中放置子元素的正确顺序。
 ms.date: 11/16/2018
-ms.openlocfilehash: 6627a32b8a29bc8b0aa12550a61f43295713ecdb
-ms.sourcegitcommit: 3e84d616e69f39eeeeea773f2431e7d674c4a9f5
+ms.openlocfilehash: 3efc95926b7562b0e68bbb6f4b13c47cc4ae6824
+ms.sourcegitcommit: 3d8454055ba4d7aae12f335def97357dea5beb30
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "26649873"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "27270612"
 ---
 # <a name="how-to-find-the-proper-order-of-manifest-elements"></a>如何查找清单元素的正确顺序
 
@@ -18,7 +18,7 @@ Office 外接程序清单中的 XML 元素必须位于正确父元素下，*且*
 例如，在 `<OfficeApp>` 元素中，`<Id>`、`<Version>`、`<ProviderName>` 必须按此顺序出现。 如果添加了 `<AlternateId>` 元素，则其必须位于 `<Id>` 和 `<Version>` 元素之间。 如果任何元素的顺序出错，清单将无效并且你的外接程序将无法加载。
 
 > [!NOTE]
-> 当元素顺序被打乱时，[Office 外接程序验证程序](/office/dev/add-ins/testing/troubleshoot-manifest?branch=manifest-element-ordering#validate-your-manifest-with-the-office-add-in-validator)将使用与元素位于错误父级下时相同的错误消息。 该错误消息会提示子元素不是父元素的有效子级。 如果出现此类错误，而子元素的参考文档却指示它对父级*是*有效的，则问题很可能是子级的放置顺序出现了错误。
+> 当元素顺序被打乱时，[Office 外接程序验证程序](/office/dev/add-ins/testing/troubleshoot-manifest#validate-your-manifest-with-the-office-add-in-validator)将使用与元素位于错误父级下时相同的错误消息。 该错误消息会提示子元素不是父元素的有效子级。 如果出现此类错误，而子元素的参考文档却指示它对父级*是*有效的，则问题很可能是子级的放置顺序出现了错误。
 
 若要查找给定父元素的子元素的正确顺序，请执行以下步骤。 （这是一个简化的过程，因为 XSD 文件非常复杂。 完全解析 XSD 文件不在本文的讨论范围之列。）
 

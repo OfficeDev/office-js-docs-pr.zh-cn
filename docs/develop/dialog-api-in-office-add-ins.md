@@ -2,12 +2,12 @@
 title: 在 Office 加载项中使用对话框 API
 description: ''
 ms.date: 11/28/2018
-ms.openlocfilehash: 0b6879f9c91ef6443718b032f9ec53c9a9c3afa0
-ms.sourcegitcommit: 026437bd3819f4e9cd4153ebe60c98ab04e18f4e
+ms.openlocfilehash: b19d56d3f4fb831eb8c0ca16af53ee309989d223
+ms.sourcegitcommit: 3d8454055ba4d7aae12f335def97357dea5beb30
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "26992231"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "27270955"
 ---
 # <a name="use-the-dialog-api-in-your-office-add-ins"></a>在 Office 加载项中使用对话框 API
 
@@ -131,7 +131,7 @@ Office.context.ui.displayDialogAsync('https://myDomain/myDialog.html', {height: 
 ```
 
 > [!NOTE]
-> - Office 将 [AsyncResult]() 对象传递给回调。它表示尝试打开对话框的结果，不表示对话框中任何事件的结果。若要详细了解此区别，请参阅[处理错误和事件](#handle-errors-and-events)部分。
+> - Office 将 [AsyncResult](https://docs.microsoft.com/javascript/api/office/office.asyncresult?view=office-js) 对象传递给回调。它表示尝试打开对话框的结果，不表示对话框中任何事件的结果。若要详细了解此区别，请参阅[处理错误和事件](#handle-errors-and-events)部分。
 > - `asyncResult` 的 `value` 属性设置为 [Dialog](https://docs.microsoft.com/javascript/api/office/office.dialog?view=office-js) 对象，此对象位于主机页（而不是对话框的执行上下文）中。
 > - `processMessage` 是用于处理事件的函数。可以根据需要任意命名。
 > - `dialog` 变量的声明范围比回调更广，因为 `processMessage` 中也会引用此变量。

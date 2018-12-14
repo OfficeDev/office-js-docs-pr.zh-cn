@@ -2,12 +2,12 @@
 title: 在 Office 加载项中授权外部服务
 description: ''
 ms.date: 12/04/2017
-ms.openlocfilehash: 6cdf07886ba883a7dfe935b59c918948c2b45afa
-ms.sourcegitcommit: 86724e980f720ed05359c9525948cb60b6f10128
+ms.openlocfilehash: 65b9325cc838dafca7f7e8e3402fc45762321459
+ms.sourcegitcommit: 3d8454055ba4d7aae12f335def97357dea5beb30
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/09/2018
-ms.locfileid: "26237477"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "27270745"
 ---
 # <a name="authorize-external-services-in-your-office-add-in"></a>在 Office 加载项中授权外部服务
 
@@ -61,7 +61,7 @@ OAuth 流旨在保护应用的标识和授权。授权代码流提供了*客户�
 
 **Facebook**：在 [Facebook 开发者](https://developers.facebook.com) 中搜索 "library" 或 "sdk"。
 
-**常规 OAuth 2.0**：指向十几种语言库的链接页面由 IETF OAuth 工作组在以下位置进行维护：[OAuth 代码](http://oauth.net/code/)。请注意，其中一些库可用来实现 OAuth 兼容服务。作为外接程序开发人员，你所感兴趣的库就是此页上称为*客户端*的库，因为 Web 服务器是 OAuth 兼容服务的客户端。
+**常规 OAuth 2.0**：指向十几种语言库的链接页面由 IETF OAuth 工作组在以下位置进行维护：[OAuth 代码](https://oauth.net/code/)。请注意，其中一些库可用来实现 OAuth 兼容服务。作为外接程序开发人员，你所感兴趣的库就是此页上称为*客户端*的库，因为 Web 服务器是 OAuth 兼容服务的客户端。
 
 ## <a name="middleman-services"></a>中间人服务
 
