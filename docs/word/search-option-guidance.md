@@ -1,33 +1,34 @@
 ---
 title: 使用搜索选项在 Word 加载项中查找文本
 description: ''
-ms.date: 7/20/2018
-ms.openlocfilehash: ca5c819edb7f3c183379d9df997e41eb56a4de51
-ms.sourcegitcommit: c53f05bbd4abdfe1ee2e42fdd4f82b318b363ad7
+ms.date: 07/20/2018
+ms.openlocfilehash: d2c0fa2d542cd64986c2fd82f8a50a813f14610a
+ms.sourcegitcommit: 3d8454055ba4d7aae12f335def97357dea5beb30
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "25505368"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "27270619"
 ---
 # <a name="use-search-options-to-find-text-in-your-word-add-in"></a>使用搜索选项在 Word 加载项中查找文本 
 
-加载项经常需要根据文档的文本进行操作。每个内容控件都会公开搜索函数（包括  [Body](https://docs.microsoft.com/javascript/api/word/word.body?view=office-js)、[Paragraph](https://docs.microsoft.com/javascript/api/word/word.paragraph?view=office-js)、[Range](https://docs.microsoft.com/javascript/api/word/word.range?view=office-js)、[Table](https://docs.microsoft.com/javascript/api/word/word.table?view=office-js)、[TableRow](https://docs.microsoft.com/javascript/api/word/word.tablerow?view=office-js) 和基本的 [ContentControl](https://docs.microsoft.com/javascript/api/word/word.contentcontrol?view=office-js) 对象）。此函数接受表示要搜索的文本字符串（或 wldcard 表达式）和一个 [SearchOptions](https://docs.microsoft.com/javascript/api/word/word.searchoptions?view=office-js) 对象。它返回与搜索文本匹配的范围集合。
+加载项经常需要基于文档文本运行。
+每种内容控件均有公开的搜索函数（这些内容控件包括 [Body](https://docs.microsoft.com/javascript/api/word/word.body?view=office-js)、[Paragraph](https://docs.microsoft.com/javascript/api/word/word.paragraph?view=office-js)、[Range](https://docs.microsoft.com/javascript/api/word/word.range?view=office-js)、[Table](https://docs.microsoft.com/javascript/api/word/word.table?view=office-js)、[TableRow](https://docs.microsoft.com/javascript/api/word/word.tablerow?view=office-js) 和基本 [ContentControl](https://docs.microsoft.com/javascript/api/word/word.contentcontrol?view=office-js) 对象）。 此函数接受一个代表所搜索文本的字符串（如通配符表达式）和 [SearchOptions](https://docs.microsoft.com/javascript/api/word/word.searchoptions?view=office-js) 对象。 它返回与搜索文本匹配的区域集合。
 
 ## <a name="search-options"></a>搜索选项
-搜索选项是一组布尔值，用于定义应如何处理搜索参数。 
+搜索选项为多个用于定义搜索参数处理方式的布尔值集合。 
 
 | 属性     | 说明|
 |:---------------|:----|
-|ignorePunct|获取或设置一个值，该值指示是否忽略单词之间的所有标点符号。对应于“查找和替换”对话框中的“忽略标点字符”复选框。|
-|ignoreSpace|获取或设置一个值，该值指示是否忽略单词之间的所有空格。对应于“查找和替换”对话框中的“忽略空格字符”复选框。|
-|matchCase|获取或设置一个值，该值指示是否执行区分大小写的搜索。对应于“查找和替换”对话框中的“区分大小写”复选框。|
-|matchPrefix|获取或设置一个值，该值指示是否匹配以搜索字符串开头的单词。对应于“查找和替换”对话框中的“匹配前缀”复选框。|
-|matchSuffix|获取或设置一个值，该值指示是否匹配以搜索字符串结束的单词。对应于“查找和替换”对话框中的“匹配后缀”复选框。|
-|matchWholeWord|获取或设置指示是否只查找整个单词，而不查找长单词的一部分的值。对应于“查找和替换”对话框中的“全字匹配”复选框。|
-|matchWildcards|获取或设置指示搜索是否使用特殊搜索操作符执行的值。对应于“查找和替换”对话框中的“使用通配符”复选框。|
+|ignorePunct|获取或设置一个值，该值指示是否忽略单词之间的标点符号的值。 对应于“查找和替换”对话框中的“忽略标点符号”复选框。|
+|ignoreSpace|获取或设置一个值，该值指示是否忽略单词之间的所有空格。 对应于“查找和替换”对话框中的“忽略空格”复选框。|
+|matchCase|获取或设置一个值，该值指示是否执行区分大小写搜索。 对应于“查找和替换”对话框中的“区分大小写”复选框。|
+|matchPrefix|获取或设置一个值，该值指示是否匹配以搜索字符串开头的单词。 对应于“查找和替换”对话框中的“匹配前缀”复选框。|
+|matchSuffix|获取或设置一个值，该值指示是否匹配以搜索字符串结尾的单词。 对应于“查找和替换”对话框中的“匹配后缀”复选框。|
+|matchWholeWord|获取或设置一个值，该值用于指示是否查找操作仅限整个单词，而非较长单词的一部分的文字。 对应于“查找和替换”对话框中的“全字匹配”复选框。|
+|matchWildcards|获取或设置一个值，该值指示搜索是否使用特殊搜索操作符执行。 对应于“查找和替换”对话框中的“使用通配符”复选框。|
 
 ## <a name="wildcard-guidance"></a>通配符指导
-下表提供了有关 Word JavaScript API 的搜索通配符的指导。
+下表提供了与 Word JavaScript API 的搜索通配符相关的指导。
 
 | 若要查找：         | 通配符 |  示例 |
 |:-----------------|:--------|:----------|
@@ -40,7 +41,7 @@ ms.locfileid: "25505368"
 |除括号中区域内的字符以外的任何单个字符|[!x-z] |t[!a-m]ck 找到 tock 和 tuck，而不是 tack 或 tick。|
 |前一个字符或表达式出现 n 次|{n} |fe{2}d 找到 feed，而不是 fed。|
 |前一个字符或表达式至少出现 n 次|{n,} |fe{1,}d 找到 fed 和 feed。|
-|前一个字符或表达式出现 n 至 m 次|{n,m} |10{1,3} 找到 10、100 和 1000。|
+|前一个字符或表达式出现 n 到 m 次|{n,m} |10{1,3} 找到 10、100 和 1000。|
 |前一个字符或表达式出现一次或多次|@ |lo@t 找到 lot 和 loot。|
 
 ### <a name="escaping-the-special-characters"></a>转义特殊字符
@@ -48,7 +49,7 @@ ms.locfileid: "25505368"
 通配符搜索与正则表达式搜索大致相同。正则表达式中有特殊字符，包括“[”、“]”、“(”、“)”、“{”、“}”、“\*”、“?”、“<”、“>”、“!”和“@”。如果其中一个字符属于代码要搜索的文本字符串，则需要转义这个字符，以便让 Word 知道应该以文本形式（而不是作为正则表达式逻辑的一部分）处理这个字符。若要在 Word  UI 搜索中转义字符，请在字符前面添加“\'”字符。不过，若要以编程方式转义，请将字符置于“[]”字符之间。例如，“[\*]\*”搜索以“\*”开头、后跟任意数量的其他字符的所有字符串。 
 
 ## <a name="examples"></a>示例
-以下示例演示了常见方案。
+下面示例演示常见情况。
 
 ### <a name="ignore-punctuation-search"></a>忽略标点符号搜索
 
@@ -199,4 +200,4 @@ Word.run(function (context) {
 });
 ```
 
-更多信息请参见 [Word JavaScript 参考 API](https://docs.microsoft.com/office/dev/add-ins/reference/overview/word-add-ins-reference-overview?view=office-js)。
+更多信息请参阅 [Word JavaScript API 参考](https://docs.microsoft.com/office/dev/add-ins/reference/overview/word-add-ins-reference-overview?view=office-js).
