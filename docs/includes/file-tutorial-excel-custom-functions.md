@@ -19,7 +19,7 @@
 
 * [Git Bash](https://git-scm.com/downloads)（或其他 Git 客户端）
 
-* 最新版本的 [Yeoman](http://yeoman.io/) 和 [Yo Office 生成器](https://www.npmjs.com/package/generator-office)。 若要全局安装这些工具，请通过命令提示符运行以下命令：
+* 最新版本的 [Yeoman](https://yeoman.io/) 和 [Yo Office 生成器](https://www.npmjs.com/package/generator-office)。 若要全局安装这些工具，请通过命令提示符运行以下命令：
 
     ```bash
     npm install -g yo generator-office
@@ -58,7 +58,7 @@
     * 如果要使用 Excel for Windows 测试自定义函数，请运行以下命令来启动本地 Web 服务器，启动 Excel，并旁加载加载项：
 
         ```bash
-        npm start
+        npm run start-desktop
         ```
 
     * 如果要使用 Excel Online 测试自定义函数，请运行以下命令来启动本地 Web 服务器： 
@@ -69,7 +69,7 @@
 
 ## <a name="try-out-a-prebuilt-custom-function"></a>尝试预生成的自定义函数
 
-使用 Yo Office 生成器创建的自定义函数项目包含一些预生成的自定义函数，这些函数在 **src/customfunction.js** 文件中定义。 项目根目录中的 **manifest.xml** 文件指定所有自定义函数均属于 `CONTOSO` 名称空间。
+使用 Yo Office 生成器创建的自定义函数项目包含一些预生成的自定义函数，这些函数在 **src/functions/functions.js** 文件中定义。 项目根目录中的 **manifest.xml** 文件指定所有自定义函数均属于 `CONTOSO` 名称空间。
 
 在使用任何预生成的自定义函数之前，必须在 Excel 中注册自定义函数加载项。 通过完成针对本教程中将要使用的平台的相应步骤来执行上述操作。
 
@@ -94,11 +94,7 @@
 
 1. 在单元格内，键入 **=CONTOSO**。 请注意，自动完成菜单将显示 `CONTOSO` 命名空间中所有函数的列表。
 
-2. 通过在单元格中指定以下值并按 Enter 来运行 `CONTOSO.ADD` 函数，并将数字 `10` 和 `200` 作为输入参数：
-
-    ```
-    =CONTOSO.ADD(10,200)
-    ```
+2. 通过在单元格中指定值 `=CONTOSO.ADD(10,200)` 并按 Enter 来运行 `CONTOSO.ADD` 函数，并将数字 `10` 和 `200` 作为输入参数。
 
 `ADD` 自定义函数计算指定为输入参数的两个数字的总和。 键入 `=CONTOSO.ADD(10,200)` 应在按下 Enter 后在单元格中生成结果 **210**。
 
@@ -108,7 +104,7 @@
 
 完成以下步骤，以创建一个名为 `stockPrice` 的自定义函数，该函数接受股票代码（例如，**MSFT**）并返回该股票的价格。 此自定义函数使用 IEX Trading API，该 API 是免费的，并且不需要身份验证。
 
-1. 在 Yo Office 生成器创建的 **stock-ticker** 项目中，找到文件 **src/customfunctions.js** 并在代码编辑器中打开它。
+1. 在 Yo Office 生成器创建的 **stock-ticker** 项目中，找到文件 **src/functions/functions.js** 并在代码编辑器中打开它。
 
 2. 将以下代码添加到 **customfunctions.js**，并保存文件。
 
@@ -130,7 +126,7 @@
     CustomFunctionMappings.STOCKPRICE = stockPrice;
     ```
 
-3. 用户必须指定说明新函数的元数据，Excel 才能为最终用户提供此新函数。 在 Yo Office 生成器创建的 **stock-ticker** 项目中，找到文件 **config/customfunctions.json** 并在代码编辑器中打开它。 将以下对象添加到 **config/customfunctions.json** 文件中的 `functions` 数组，并保存该文件。
+3. 用户必须指定说明新函数的元数据，Excel 才能为最终用户提供此新函数。 在 Yo Office 生成器创建的 **stock-ticker** 项目中，找到文件 **src/functions/functions.json** 并在代码编辑器中打开它。 将以下对象添加到 **src/functions/functions.json** 文件中的 `functions` 数组，并保存该文件。
 
     此 JSON 说明了 `stockPrice` 函数。
 
@@ -184,7 +180,7 @@
 
 完成以下步骤，创建一个名为 `stockPriceStream` 的自定义函数，该函数每 1000 毫秒请求指定股票的价格（假设之前的请求已经完成）。 正在进行初始请求时，用户可能会在调用函数的单元格中看到占位符值 **#GETTING_DATA**。 函数返回一个值后，**#GETTING_DATA** 将被替换为单元格中的该值。
 
-1. 在 Yo Office 生成器创建的 **stock-ticker** 项目中，向 **src/customfunctions.js** 添加以下代码并保存文件。
+1. 在 Yo Office 生成器创建的 **stock-ticker** 项目中，向 **src/functions/functions.js** 添加以下代码并保存文件。
 
     ```js
     function stockPriceStream(ticker, handler) {
@@ -223,7 +219,7 @@
     CustomFunctionMappings.STOCKPRICESTREAM = stockPriceStream;
     ```
 
-2. 用户必须指定说明新函数的元数据，Excel 才能为最终用户提供此新函数。 在 Yo Office 生成器创建的 **stock-ticker** 项目中，向 **config/customfunctions.json** 文件中的 `functions` 数组添加以下对象，并保存文件。
+2. 用户必须指定说明新函数的元数据，Excel 才能为最终用户提供此新函数。 在 Yo Office 生成器创建的 **stock-ticker** 项目中，向 **src/functions/functions.json** 文件中的 `functions` 数组添加以下对象，并保存文件。
 
     此 JSON 说明了 `stockPriceStream` 函数。 对于任何流式处理函数，必须在 `options` 对象中将 `stream` 属性和 `cancelable` 属性设置为 `true`，如本代码示例所示。
 

@@ -2,12 +2,12 @@
 title: 创建将 REST 与本地 Project Server OData 服务结合使用的 Project 加载项
 description: ''
 ms.date: 01/23/2018
-ms.openlocfilehash: 7a632b708ebcf714ce1fa6ca2f5feb095fcd9f9d
-ms.sourcegitcommit: eb74e94d3e1bc1930a9c6582a0a99355d0da34f2
+ms.openlocfilehash: 0bd11e15d2742db12ecbe88d60e02f4e1fa87867
+ms.sourcegitcommit: 3d8454055ba4d7aae12f335def97357dea5beb30
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "25005034"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "27271025"
 ---
 # <a name="create-a-project-add-in-that-uses-rest-with-an-on-premises-project-server-odata-service"></a>创建将 REST 与本地 Project Server OData 服务结合使用的 Project 加载项
 
@@ -41,7 +41,7 @@ ms.locfileid: "25005034"
 
 1. 若要使浏览器直接显示来自 REST 查询的 XML 数据，请关闭源阅读视图。有关如何在 Internet Explorer 中执行此操作的信息，请参阅 [查询 Project Server 2013 报告数据的 OData 源](https://docs.microsoft.com/previous-versions/office/project-odata/jj163048(v=office.15))中过程 1 的第 4 步。
     
-2. 使用以下 URL 在浏览器中查询 **ProjectData**服务：**http://ServerName /ProjectServerName /_api/ProjectData**。 例如，如果项目 Web 应用实例是 `http://MyServer/pwa`，浏览器应显示如下结果：
+2. 在浏览器中使用以下 URL 查询 **ProjectData** 服务：**http://ServerName /ProjectServerName /_api/ProjectData**。 例如，如果 Project Web App 实例是 `http://MyServer/pwa`，浏览器会显示以下结果：
     
     ```xml
     <?xml version="1.0" encoding="utf-8"?>
@@ -103,7 +103,7 @@ Visual Studio Office 开发人员工具包含 Project 2013 任务窗格外接程
     
     Visual Studio 创建 **HelloProjectOdata** 项目和 **HelloProjectODataWeb** 项目。
     
-**AddIn** 文件夹（请参阅下一个屏幕截图）中包含自定义 CSS 样式的 App.css 文件。 在“**主页**”子文件夹中，Home.html 文件中包含外接程序使用的 CSS 文件和 JavaScript 文件的引用，及用于外接程序的 HTML5 内容。 此外，Home.js 文件用于你的自定义 JavaScript 代码。 **Scripts** 文件夹中包括 jQuery 库文件。  **Office** 子文件夹包含 Office 外接程序中的 JavaScript 库，如 office.js 和 project-15.js，以及标准字符串的语言库。在 **Content** 文件夹，Office.css 文件包含 Office 外接程序的所有默认样式。
+“**外接程序**”文件夹（请参阅下一个屏幕截图）中包含自定义 CSS 样式的 App.css 文件。 在“**主页**”子文件夹中，Home.html 文件中包含外接程序使用的 CSS 文件和 JavaScript 文件的引用，及用于外接程序的 HTML5 内容。 此外，Home.js 文件用于你的自定义 JavaScript 代码。 “**脚本**”文件夹中包括 jQuery 库文件。 “**Office**”子文件夹中包括 JavaScript 库（例如 office.js 和 project-15.js），及 Office 加载项中的标准字符串的语言库。在“**内容**”文件夹中，Office.css 文件包含所有的 Office 加载项的默认样式。
 
 *图 4：在解决方案资源管理器中查看默认 Web 项目文件*
 
@@ -128,7 +128,7 @@ Visual Studio Office 开发人员工具包含 Project 2013 任务窗格外接程
     
 1. 在“**解决方案资源管理器**”中，请转到名为“图像”的文件夹。
     
-2. 若要显示在“**Office 外接程序**”下拉列表中，图标的像素必须为 32 x 32。例如，安装 Project 2013 SDK，然后选择“**图像**”文件夹并添加 SDK 的以下文件： `\Samples\Apps\HelloProjectOData\HelloProjectODataWeb\Images\NewIcon.png`
+2. 若要显示在“**Office 外接程序**”下拉列表中，图标的像素必须为 32 x 32。例如，安装 Project 2013 SDK，然后选择“**图像**”文件夹并添加 SDK 的以下文件：`\Samples\Apps\HelloProjectOData\HelloProjectODataWeb\Images\NewIcon.png`
     
     也可以使用自己的 32x32 图标，或将下列图像复制到 NewIcon.png 文件中，再将此文件添加到 `HelloProjectODataWeb\Images` 文件夹中：
     
@@ -1132,7 +1132,7 @@ Table styles
 
   `~/ProjectData/Projects()?skip= [numSkipped]&amp;$top=100&amp;$filter=[filter]&amp;$select=[field1,field2, ???????]`
     
-  有关详情，请参阅 [“使用 REST 端点的 OData 系统查询选项”](https://docs.microsoft.com/previous-versions/dynamicscrm-2015/developers-guide/gg309461(v=crm.7))。你还可以使用 Windows PowerShell 中的 [Set-SPProjectOdataConfiguration](http://technet.microsoft.com/library/jj219516%28v=office.15%29.aspx) 命令来替代查询的 **“项目”** 实体集（或 33 个实体集中的任何一个）的默认页面大小。请参阅 [ProjectData - “OData 项目”服务引用](https://docs.microsoft.com/previous-versions/office/project-odata/jj163015(v=office.15))。
+  For more information, see [OData System Query Options Using the REST Endpoint](https://docs.microsoft.com/previous-versions/dynamicscrm-2015/developers-guide/gg309461(v=crm.7)). You can also use the [Set-SPProjectOdataConfiguration](https://docs.microsoft.com/en-us/powershell/module/sharepoint-server/Set-SPProjectOdataConfiguration?view=sharepoint-ps) command in Windows PowerShell to override the default page size for a query of the **Projects** entity set (or any of the 33 entity sets). See [ProjectData - Project OData service reference](https://docs.microsoft.com/previous-versions/office/project-odata/jj163015(v=office.15)).
     
 - 若要部署加载项，请参阅 [发布 Office 加载项](../publish/publish.md)。
     

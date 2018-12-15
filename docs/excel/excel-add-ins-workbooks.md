@@ -1,13 +1,13 @@
 ---
 title: 使用 Excel JavaScript API 处理工作簿
 description: ''
-ms.date: 11/27/2018
-ms.openlocfilehash: 1cfde9bfdf306e35f47595f936679d9fa6e1814e
-ms.sourcegitcommit: 026437bd3819f4e9cd4153ebe60c98ab04e18f4e
+ms.date: 12/13/2018
+ms.openlocfilehash: 388e061f72055b557a9da822391a9c0cd64a2c24
+ms.sourcegitcommit: 09f124fac7b2e711e1a8be562a99624627c0699e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "27002336"
+ms.lasthandoff: 12/15/2018
+ms.locfileid: "27283121"
 ---
 # <a name="work-with-workbooks-using-the-excel-javascript-api"></a>使用 Excel JavaScript API 处理工作簿
 
@@ -92,7 +92,7 @@ Excel.run(function (context) {
 
 此外，还可以在工作表级别设置保护，来防止不希望发生的数据编辑。 有关详细信息，请参阅[使用 Excel JavaScript API 处理工作表](excel-add-ins-worksheets.md#data-protection)一文的“数据保护”部分。****
 
-> [!NOTE] 
+> [!NOTE]
 > 有关 Excel 中工作簿保护的详细信息，请参阅[保护工作簿](https://support.office.com/article/Protect-a-workbook-7E365A4D-3E89-4616-84CA-1931257C1517)一文。
 
 ## <a name="access-document-properties"></a>访问文档属性
@@ -147,6 +147,53 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
+## <a name="add-custom-xml-data-to-the-workbook"></a>向工作簿添加自定义 XML 数据
+
+通过 Excel 的 Open XML **.xlsx** 文件格式，可以让加载项将自定义 XML 数据嵌入到工作簿中。 此类数据将一直位于工作簿中，具体取决于加载项。
+
+工作簿包含 [CustomXmlPartCollection](/javascript/api/excel/excel.customxmlpartcollection)，它是一个 [CustomXmlParts](/javascript/api/excel/excel.customxmlpart) 列表。 通过这些部件可以访问 XML 字符串并获得对应的唯一 ID。 将这些 ID 存储为设置后，加载项可以维护会话之间的 XML 部件密钥。
+
+以下示例展示了如何使用自定义 XML 部件。 第一个代码块演示了如何将 XML 数据嵌入到文档中。 它将会存储一个审阅者列表，然后使用工作簿的设置保存 XML 的 `id`，以供后续检索。 第二个代码块演示后续如何访问该 XML。 “ContosoReviewXmlPartId”设置将被加载和传递到工作簿的 `customXmlParts`。 XML 数据随后将打印至控制台。
+
+```js
+Excel.run(async (context) => {
+    // Add reviewer data to the document as XML
+    var originalXml = "<Reviewers xmlns='http://schemas.contoso.com/review/1.0'><Reviewer>Juan</Reviewer><Reviewer>Hong</Reviewer><Reviewer>Sally</Reviewer></Reviewers>";
+    var customXmlPart = context.workbook.customXmlParts.add(originalXml);
+    customXmlPart.load("id");
+
+    return context.sync().then(function() {
+        // Store the XML part's ID in a setting
+        var settings = context.workbook.settings;
+        settings.add("ContosoReviewXmlPartId", customXmlPart.id);
+    });
+}).catch(errorHandlerFunction);
+```
+
+```js
+Excel.run(async (context) => {
+    // Retrieve the XML part's id from the setting
+    var settings = context.workbook.settings;
+    var xmlPartIDSetting = settings.getItemOrNullObject("ContosoReviewXmlPartId").load("value");
+
+    return context.sync().then(function () {
+        if (xmlPartIDSetting.value) {
+            var customXmlPart = context.workbook.customXmlParts.getItem(xmlPartIDSetting.value);
+            var xmlBlob = customXmlPart.getXml();
+
+            return context.sync().then(function () {
+                // Add spaces to make more human readable in the console
+                var readableXML = xmlBlob.value.replace(/></g, "> <");
+                console.log(readableXML);
+            });
+        }
+    });
+}).catch(errorHandlerFunction);
+```
+
+> [!NOTE]
+> 仅当顶级自定义 XML 元素包含 `xmlns` 属性时才会填充 `CustomXMLPart.namespaceUri`。
+
 ## <a name="control-calculation-behavior"></a>控制计算行为
 
 ### <a name="set-calculation-mode"></a>设置计算模式
@@ -156,7 +203,7 @@ Excel.run(function (context) {
  - `automatic`：默认的重新计算行为，每当相关数据发生更改时 Excel 都会计算新的公式结果。
  - `automaticExceptTables`：与 `automatic` 相同，但会忽略对表中值的任何更改。
  - `manual`：仅在用户或加载项请求计算时，才会进行计算。
- 
+
 ### <a name="set-calculation-type"></a>设置计算类型
 
 [Application](/javascript/api/excel/excel.application) 对象提供了一个用于强制立即进行重新计算的方法。 `Application.calculate(calculationType)` 将基于指定的 `calculationType` 启动手动重新计算。 可以指定下列值：
@@ -165,7 +212,7 @@ Excel.run(function (context) {
  - `fullRebuild`：检查从属的公式，然后重新计算所有打开的工作簿中的所有公式，无论它们自上次重新计算后是否发生了更改。
  - `recalculate`：重新计算所有活动工作簿中自上次计算后发生更改（或已以编程方式将其标记为重新计算目标）的公式，以及从属于它们的公式。
  
-> [!NOTE] 
+> [!NOTE]
 > 有关重新计算的详细信息，请参阅[更改公式重新计算、迭代或精度](https://support.office.com/article/change-formula-recalculation-iteration-or-precision-73fc7dac-91cf-4d36-86e8-67124f6bcce4)一文。
 
 ### <a name="temporarily-suspend-calculations"></a>暂停计算

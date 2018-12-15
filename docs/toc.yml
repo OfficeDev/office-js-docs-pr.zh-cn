@@ -279,9 +279,12 @@ items:
       - name: 数据透视表
         displayName: Excel
         href: excel/excel-add-ins-pivottables.md
-      - name: 范围
+      - name: 区域（基本）
         displayName: Excel
         href: excel/excel-add-ins-ranges.md
+      - name: 区域（高级）
+        displayName: Excel
+        href: excel/excel-add-ins-ranges-advanced.md
       - name: 表
         displayName: Excel
         href: excel/excel-add-ins-tables.md
@@ -756,9 +759,9 @@ items:
         href: reference/manifest/webapplicationinfo.md
 - name: Resources
   href: resources/resources-links-help.md
-ms.openlocfilehash: d0f9b83bba233357a6bc16ce0505d2d2f84b9e9b
-ms.sourcegitcommit: 0adc31ceaba92cb15dc6430c00fe7a96c107c9de
+ms.openlocfilehash: 2d22930ebc3b39aa5aa4059cfbf5aa39a049772a
+ms.sourcegitcommit: 09f124fac7b2e711e1a8be562a99624627c0699e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/09/2018
-ms.locfileid: "27210096"
+ms.lasthandoff: 12/15/2018
+ms.locfileid: "27283107"

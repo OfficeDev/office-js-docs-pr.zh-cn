@@ -1,13 +1,13 @@
 ---
-ms.date: 11/29/2018
+ms.date: 12/5/2018
 description: 在 Excel 中使用 JavaScript 创建自定义函数。
 title: 在 Excel 中创建自定义函数（预览）
-ms.openlocfilehash: daa0cea24473290a2bc1b5c931f2f7a00ddc8276
-ms.sourcegitcommit: e2ba9d7210c921d068f40d9f689314c73ad5ab4a
+ms.openlocfilehash: 6c8f25cfea2ce37b34817c330c0e36ed095cabb7
+ms.sourcegitcommit: 3d8454055ba4d7aae12f335def97357dea5beb30
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "27156612"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "27270969"
 ---
 # <a name="create-custom-functions-in-excel-preview"></a>在 Excel 中创建自定义函数（预览）
 
@@ -36,16 +36,16 @@ function add42(a, b) {
 
 | 文件 | 文件格式 | 说明 |
 |------|-------------|-------------|
-| **./src/customfunctions.js**<br/>或<br/>**./src/customfunctions.ts** | JavaScript<br/>或<br/>TypeScript | 包含定义自定义函数的代码。 |
-| **./config/customfunctions.json** | JSON | 包含描述自定义函数的元数据，使 Excel 能够注册自定义函数，并使其可供最终用户使用。 |
-| **./index.html** | HTML | 提供对定义自定义函数的 JavaScript 文件的&lt;脚本&gt;引用。 |
+| **./src/functions/functions.js**<br/>或<br/>**./src/functions/functions.ts** | JavaScript<br/>或<br/>TypeScript | 包含定义自定义函数的代码。 |
+| **./src/functions/functions.json** | JSON | 包含描述自定义函数的元数据，使 Excel 能够注册自定义函数，并使其可供最终用户使用。 |
+| **./src/functions/functions.html** | HTML | 提供对定义自定义函数的 JavaScript 文件的&lt;脚本&gt;引用。 |
 | **./manifest.xml** | XML | 指定加载项中所有自定义函数的命名空间以及此表中前面列出的 JavaScript、JSON 和 HTML 文件的位置。 |
 
 下列部分将提供有关这些文件的详细信息。
 
 ### <a name="script-file"></a>脚本文件
 
-脚本文件（Yo Office 生成器创建的项目中的 **./src/customfunctions.js** 或 **./src/customfunctions.ts**）包含定义自定义函数并将自定义函数名称映射到 [JSON 元数据文件](#json-metadata-file)中的对象的代码。 
+脚本文件（Yo Office 生成器创建的项目中的 **./src/functions/functions.js** 或 **./src/functions/functions.ts**）包含定义自定义函数并将自定义函数名称映射到 [JSON 元数据文件](#json-metadata-file)中的对象的代码。 
 
 例如，以下代码定义自定义函数 `add` 和 `increment`，然后指定这两个函数的映射信息。 将 `add` 函数映射到 JSON 元数据文件中的对象，其中 `id` 属性的值为 **ADD**，将 `increment` 函数映射到元数据文件中的对象，其中 `id` 属性的值为 **INCREMENT**。 有关将脚本文件中的函数名称映射到 JSON 元数据文件中的对象的更多信息，请参阅[自定义函数最佳实践](custom-functions-best-practices.md#mapping-function-names-to-json-metadata)。
 
@@ -73,12 +73,12 @@ CustomFunctionMappings.INCREMENT = increment;
 
 ### <a name="json-metadata-file"></a>JSON 元数据文件 
 
-自定义函数元数据文件（Yo Office 生成器创建的项目中的 **./config/customfunctions.json**）提供 Excel 注册自定义函数并使其可供最终用户使用所需的信息。 自定义函数在用户首次运行加载项时注册。 之后，它们可在所有工作簿（即，不仅仅是在加载项初始运行的工作簿）中供同一用户使用。
+自定义函数元数据文件（Yo Office 生成器创建的项目中的 **./src/functions/functions.json**）提供 Excel 注册自定义函数并使其可供最终用户使用所需的信息。 自定义函数在用户首次运行加载项时注册。 之后，它们可在所有工作簿（即，不仅仅是在加载项初始运行的工作簿）中供同一用户使用。
 
 > [!TIP]
 > 托管 JSON 文件的服务器上的服务器设置必须启用 [CORS](https://developer.mozilla.org/docs/Web/HTTP/CORS)，以便自定义函数在 Excel Online 中正常工作。
 
-**customfunctions.json** 中的以下代码指定上述 `add` 函数和 `increment` 函数的元数据。 此代码示例后面的表提供了有关此 JSON 对象中各个属性的详细信息。 有关在 JSON 元数据文件中指定 `id` 和 `name` 属性值的详细信息，请参阅[自定义函数最佳实践](custom-functions-best-practices.md#mapping-function-names-to-json-metadata)。
+**functions.json** 中的以下代码指定上述 `add` 函数和 `increment` 函数的元数据。 此代码示例后面的表提供了有关此 JSON 对象中各个属性的详细信息。 有关在 JSON 元数据文件中指定 `id` 和 `name` 属性值的详细信息，请参阅[自定义函数最佳实践](custom-functions-best-practices.md#mapping-function-names-to-json-metadata)。
 
 ```json
 {
@@ -153,35 +153,41 @@ CustomFunctionMappings.INCREMENT = increment;
 
 ```xml
 <VersionOverrides xmlns="http://schemas.microsoft.com/office/taskpaneappversionoverrides" xsi:type="VersionOverridesV1_0">
-    <Hosts>
-        <Host xsi:type="Workbook">
-            <AllFormFactors>
-                <ExtensionPoint xsi:type="CustomFunctions">
-                    <Script>
-                        <SourceLocation resid="JS-URL" /> <!--resid points to location of JavaScript file-->
-                    </Script>
-                    <Page>
-                        <SourceLocation resid="HTML-URL"/> <!--resid points to location of HTML file-->
-                    </Page>
-                    <Metadata>
-                        <SourceLocation resid="JSON-URL" /> <!--resid points to location of JSON file-->
-                    </Metadata>
-                    <Namespace resid="namespace" />
-                </ExtensionPoint>
-            </AllFormFactors>
-        </Host>
-    </Hosts>
-    <Resources>
-        <bt:Urls>
-            <bt:Url id="JSON-URL" DefaultValue="http://127.0.0.1:8080/customfunctions.json" /> <!--specifies the location of your JSON file-->
-            <bt:Url id="JS-URL" DefaultValue="http://127.0.0.1:8080/customfunctions.js" /> <!--specifies the location of your JavaScript file-->
-            <bt:Url id="HTML-URL" DefaultValue="http://127.0.0.1:8080/index.html" /> <!--specifies the location of your HTML file-->
-        </bt:Urls>
-        <bt:ShortStrings>
-            <bt:String id="namespace" DefaultValue="CONTOSO" /> <!--specifies the namespace that will be prepended to a function's name when it is called in Excel. Can only contain alphanumeric characters and periods.-->
-        </bt:ShortStrings>
-    </Resources>
-</VersionOverrides>
+        <Hosts>
+            <Host xsi:type="Workbook">
+                <AllFormFactors>
+                    <ExtensionPoint xsi:type="CustomFunctions">
+                        <Script>
+                            <SourceLocation resid="Contoso.Functions.Script.Url" />
+                        </Script>
+                        <Page>
+                            <SourceLocation resid="Contoso.Functions.Page.Url"/>
+                        </Page>
+                        <Metadata>
+                            <SourceLocation resid="Contoso.Functions.Metadata.Url" />
+                        </Metadata>
+                        <Namespace resid="Contoso.Functions.Namespace" />
+                    </ExtensionPoint>
+                </AllFormFactors>
+            </Host>
+        </Hosts>
+        <Resources>
+            <bt:Images>
+                <bt:Image id="Contoso.tpicon_16x16" DefaultValue="https://localhost:3000/assets/icon-16.png" />
+                <bt:Image id="Contoso.tpicon_32x32" DefaultValue="https://localhost:3000/assets/icon-32.png" />
+                <bt:Image id="Contoso.tpicon_80x80" DefaultValue="https://localhost:3000/assets/icon-80.png" />
+            </bt:Images>
+            <bt:Urls>
+                <bt:Url id="Contoso.Functions.Script.Url" DefaultValue="https://localhost:3000/dist/functions.js" />
+                <bt:Url id="Contoso.Functions.Metadata.Url" DefaultValue="https://localhost:3000/dist/functions.json" />
+                <bt:Url id="Contoso.Functions.Page.Url" DefaultValue="https://localhost:3000/dist/functions.html" />
+                <bt:Url id="Contoso.Taskpane.Url" DefaultValue="https://localhost:3000/taskpane.html" />
+            </bt:Urls>
+            <bt:ShortStrings>
+                <bt:String id="Contoso.Functions.Namespace" DefaultValue="CONTOSO" />
+            </bt:ShortStrings>
+        </Resources>
+    </VersionOverrides>
 ```
 
 > [!NOTE]

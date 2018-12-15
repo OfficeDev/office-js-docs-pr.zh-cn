@@ -1,13 +1,13 @@
 ---
 title: Office 加载项的本地化
 description: 可使用适用于 Office 的 JavaScript API 确定区域设置并根据主机应用程序的区域设置显示字符串，或者根据数据的区域设置来解读或显示数据。
-ms.date: 01/23/2018
-ms.openlocfilehash: a727ff87a7a92960a28c0077c1bcbf2cebeb2d0d
-ms.sourcegitcommit: 9b021af6cb23a58486d6c5c7492be425e309bea1
+ms.date: 12/11/2018
+ms.openlocfilehash: 0455c28913dd1a7eb8cb0853cd872a4284f44270
+ms.sourcegitcommit: 3d8454055ba4d7aae12f335def97357dea5beb30
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/15/2018
-ms.locfileid: "26533831"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "27270997"
 ---
 # <a name="localization-for-office-add-ins"></a>Office 加载项的本地化
 
@@ -38,7 +38,7 @@ ms.locfileid: "26533831"
     }
     ```
 
-- [Context.contentLanguage][contentLanguage] 指定数据的区域设置（或语言）。展开上一个代码示例，不检查 [displayLanguage] 属性，而是将 `myLanguage` 分配给 [contentLanguage] 属性，并使用相同代码的其余部分根据数据的区域设置显示问候语：
+- [Context.contentLanguage][contentLanguage] 指定数据的区域设置（或语言）。展开上一个代码示例，不检查 [displayLanguage] 属性，而是为 `myLanguage` 分配 [contentLanguage] 属性值，并使用相同代码的其余部分根据数据的区域设置显示问候语：
 
     ```js
     var myLanguage = Office.context.contentLanguage;
@@ -49,7 +49,7 @@ ms.locfileid: "26533831"
 
 每个 Office 外接程序在其清单中指定一个 [DefaultLocale] 元素和区域设置。默认情况下，Office 外接程序平台和 Office 主机应用程序将 [Description]、[DisplayName]、[IconUrl]、[HighResolutionIconUrl] 和 [SourceLocation] 元素的值应用于所有的区域设置。可以通过为每个其他区域设置的上述五个元素中的任意一个指定 [Override] 子元素来选择支持将特定值用于特定的区域设置。[DefaultLocale] 元素和 [Override] 元素的 `Locale` 属性的值根据 [RFC 3066]（“用于语言标识的标记”）指定。表 1 描述了这些元素的本地化支持。
 
-**表 1.本地化支持**
+*表 1.本地化支持*
 
 
 |**Element**|**本地化支持**|
@@ -161,41 +161,37 @@ ms.locfileid: "26533831"
 
 如果使用 Visual Studio 创建 Office 外接程序，.NET Framework 和 Ajax 会提供用于全球化和本地化客户端脚本文件的方法。
 
-您可以全球化 Office 外接程序并在其 JavaScript 代码中使用 [Date](http://msdn.microsoft.com/library/caf98d32-2de2-4704-8198-692350343681.aspx) 和 [Number](http://msdn.microsoft.com/library/c216d3a1-12ae-47d1-bca1-c3666d04572f.aspx) JavaScript 类型扩展和 JavaScript [Date](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Date) 对象，以根据当前浏览器的区域设置显示值。有关详细信息，请参阅 [Walkthrough: Globalizing a Date by Using Client Script](http://msdn.microsoft.com/library/69b34e6d-d590-4d03-a763-b7ae54b47d74.aspx)。
+您可以全球化 Office 外接程序并在其 JavaScript 代码中使用 [Date](https://msdn.microsoft.com/library/caf98d32-2de2-4704-8198-692350343681.aspx) 和 [Number](https://msdn.microsoft.com/library/c216d3a1-12ae-47d1-bca1-c3666d04572f.aspx) JavaScript 类型扩展和 JavaScript [Date](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Date) 对象，以根据当前浏览器的区域设置显示值。有关详细信息，请参阅 [Walkthrough: Globalizing a Date by Using Client Script](https://msdn.microsoft.com/library/69b34e6d-d590-4d03-a763-b7ae54b47d74.aspx)。
 
 可将本地化的资源字符串直接包含在独立的 JavaScript 文件中，以便为不同区域设置提供客户端脚本文件，这些文件在浏览器中设置或由用户提供。为每个受支持的区域设置创建单独的脚本文件。在每个脚本文件中，包括一个 JSON 格式的对象，其中包含用于该区域设置的资源字符串。在浏览器中运行脚本时，会应用本地化的值。
 
 
 ## <a name="example-build-a-localized-office-add-in"></a>示例：生成本地化 Office 加载项
 
-本节提供示例，演示如何本地化 Office 外接程序描述、显示名称和 UI。
-
-若要运行所提供的示例代码，请在计算机上配置 Microsoft Office 2013 以使用其他语言，这样您就可以通过切换用于显示菜单和命令的语言或者切换用于编辑和校对的语言（或同时切换两者）来测试您的加载项。
-
-此外，还需要创建 Visual Studio 2015 Office 加载项项目。
+本节提供示例，演示如何本地化 Office 外接程序描述、显示名称和 UI。 
 
 > [!NOTE]
-> 要下载 Visual Studio 2015，请参阅 [Office 开发人员工具页面](https://www.visualstudio.com/features/office-tools-vs)。 此页面还提供 Office 开发人员工具链接。
+> 要下载 Visual Studio 2017，请参阅 [Visual Studio IDE 页面](https://visualstudio.microsoft.com/vs/)。 在安装过程中，你需要选择 Office/SharePoint 开发工作负载。
 
-### <a name="configure-office-2013-to-use-additional-languages-for-display-or-editing"></a>配置 Office 2013 以使用其他语言进行显示或编辑
+### <a name="configure-office-to-use-additional-languages-for-display-or-editing"></a>配置 Office 以使用其他语言进行显示或编辑
 
-您可以使用 Office 2013 语言包安装其他语言。有关语言包及其获取位置的详细信息，请参阅 [Office 2013 语言选项](http://office.microsoft.com/language-packs/)。
+若要运行所提供的示例代码，请在计算机上配置 Microsoft Office 以使用其他语言，这样您就可以通过切换用于显示菜单和命令的语言或者切换用于编辑和校对的语言（或同时切换两者）来测试您的加载项。
 
-> [!NOTE]
-> 如果你是一位 MSDN 订阅者，则可能已具有适用于你的 Office 2013 语言包。 若要确定你的订阅是否提供可供下载的 Office 2013 语言包，请转至 [MSDN 订阅主页](https://msdn.microsoft.com/subscriptions/manage/)，在“**软件下载**”中输入“Office 2013 语言包”，选择“**搜索**”，然后选择“**我的订阅可用的产品**”。 在“**语言**”下，选中想要下载的语言包的复选框，然后选择“**转到**”。
+可以使用 Office 语言包安装其他语言。 有关语言包以及如何获取语言包的详细信息，请参阅[适用于 Office 的 Language Accessory Pack](https://office.microsoft.com/language-packs/)。
 
-安装语言包后，您可以配置 Office 2013 以使用安装的语言在 UI 中显示或编辑文档内容，或同时用于两者。本文中的示例使用的是应用了西班牙语语言包的 Office 2013 的安装。
+安装 Language Accessory Pack 后，可以将 Office 配置使用安装的语言，以便在 UI 中显示，或编辑文档内容，或者两者兼具。 在本文的示例中，所安装的 Office 应用了西班牙语语言包。
 
 ### <a name="create-an-office-add-in-project"></a>创建 Office 加载项项目
 
+需要创建 Visual Studio 2017 Office 加载项项目。 
+
+> [!NOTE]
+> 如果未安装 Visual Studio 2017，请参阅 [Visual Studio IDE 页面](https://visualstudio.microsoft.com/vs/)，以获取下载说明。 在安装过程中，你需要选择 Office/SharePoint 开发工作负载。 如果之前已安装 Visual Studio 2017，请使用 [Visual Studio 安装程序](https://docs.microsoft.com/visualstudio/install/modify-visual-studio/)，以确保安装 Office/SharePoint 开发工作负载。
+
+
 1. 在 Visual Studio 中，依次选择“文件”**** > “新建项目”****。
-
-2. 在“新建项目”**** 对话框中的“模版”**** 下，展开“Visual Basic”**** 或“Visual C#”****，展开“Office/SharePoint”****，再选择“Office 加载项”****。
-
-3. 选择“Office 加载项”****，再为加载项命名（例如，WorldReadyAddIn）。选择“确定”****。
-
-4. 在“创建 Office 加载项”**** 对话框中，依次选择“任务窗格”**** 和“下一步”****。在下一个页面上，清除所有主机应用的复选框，Word 除外。选择“完成”****，以创建项目。
-
+2. 在“新建项目”**** 对话框中，展开“Visual Basic”**** 或“Visual C#”****，展开“Office/SharePoint”****，再选择“加载项”****。
+3. 选择“Word 加载项”****，再为加载项命名 **WorldReadyAddIn**。选择“确定”****。
 
 ### <a name="localize-the-text-used-in-your-add-in"></a>本地化加载项中使用的文本
 
@@ -229,49 +225,27 @@ ms.locfileid: "26533831"
 
 1. 在 Visual Studio 的“解决方案资源管理器”**** 中，选择“Home.html”****。
 
-2. 将 Home.html 中的 HTML 替换为以下 HTML。
+2. 在 Home.html 中，将 `<body>` 元素替换为以下 HTML，并保存文件。
 
     ```html
-    <!DOCTYPE html>
-    <html>
-    <head>
-        <meta charset="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
-        <title></title>
-        <script src="../../Scripts/jquery-1.8.2.js" type="text/javascript"></script>
-
-        <link href="../../Content/Office.css" rel="stylesheet" type="text/css" />
-        <script src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js" type="text/javascript"></script>
-
-        <!-- To enable offline debugging using a local reference to Office.js, use:                        -->
-        <!-- <script src="../../Scripts/Office/MicrosoftAjax.js" type="text/javascript"></script>          -->
-        <!--    <script src="../../Scripts/Office/1.0/office.js" type="text/javascript"></script>          -->
-
-        <link href="../App.css" rel="stylesheet" type="text/css" />
-        <script src="../App.js" type="text/javascript"></script>
-
-        <link href="Home.css" rel="stylesheet" type="text/css" />
-        <script src="Home.js" type="text/javascript"></script> <body>
+    <body>
         <!-- Page content -->
-        <div id="content-header">
+        <div id="content-header" class="ms-bgColor-themePrimary ms-font-xl">
             <div class="padding">
-                <h1 id="greeting"></h1>
+                <h1 id="greeting" class="ms-fontColor-white"></h1>
             </div>
         </div>
         <div id="content-main">
             <div class="padding">
-                <div>
+                <div class="ms-font-m">
                     <p id="about"></p>
                 </div>
             </div>
         </div>
-    </head>
-    </html>
+    </body>
     ```
 
-3. 在 Visual Studio 中，依次选择“文件”**** 和“保存 AddIn\Home\Home.html”****。
-
-下图展示了在示例加载项运行时显示本地化文本的 heading (h1) 元素和 paragraph (p) 元素。
+下图展示了在完成剩余步骤和运行加载项时显示本地化文本的 heading (h1) 元素和 paragraph (p) 元素。
 
 *图 1：加载项 UI*
 
@@ -279,17 +253,19 @@ ms.locfileid: "26533831"
 
 ### <a name="add-the-resource-file-that-contains-the-localized-strings"></a>添加包含本地化字符串的资源文件
 
-JavaScript 资源文件包含用于加载项 UI 的字符串。示例加载项 UI 有一个用于显示问候语的 h1 元素，和一个用于向用户介绍该加载项的 p 元素。 
+JavaScript 资源文件包含加载项 UI 使用的字符串。 示例加载项 UI 的 HTML 中包含用于显示问候语的 `<h1>` 元素以及用于向用户介绍加载项的 `<p>` 元素。 
 
 若要为标题和段落启用本地化字符串，您需要将字符串放在一个单独的资源文件中。资源文件会创建一个 JavaScript 对象，对每组本地化字符串来说，它都包含一个单独的 JavaScript 对象表示法 (JSON) 对象。资源文件也提供为给定区域设置找回适当 JSON 对象的方法。
 
-若要将资源文件添加到加载项项目，请执行以下操作：
+若要为加载项项目添加资源文件：
 
-1. 在 Visual Studio 的“解决方案资源管理器”**** 中，选择示例加载项 Web 项目中的“加载项”**** 文件夹，再依次选择“添加”**** > “JavaScript 文件”****。
+1. 在 Visual Studio 的“解决方案资源管理器”**** 中，右键单击“WorldReadyAddInWeb”**** 项目并选择“添加”**** > “新项目”****。 
 
-2. 在“指定项名称”**** 对话框中，输入“UIStrings.js”。
+2. 在“添加新项目”**** 对话框中，选择“JavaScript 文件”****。
 
-3. 将以下代码添加到 UIStrings.js 文件。
+3. 输入文件名 **UIStrings.js**，然后选择“添加”****。
+
+4. 将以下代码添加到 UIStrings.js 文件，然后保存文件。
 
     ```js
     /* Store the locale-specific strings */
@@ -376,8 +352,6 @@ UIStrings.js 资源文件创建对象 **UIStrings**，其中包含加载项 UI �
     {
 
         $(document).ready(function () {
-            app.initialize();
-
             // Get the language setting for editing document content.
             // To test this, uncomment the following line and then comment out the
             // line that uses Office.context.displayLanguage.
@@ -394,7 +368,7 @@ UIStrings.js 资源文件创建对象 **UIStrings**，其中包含加载项 UI �
 
             // Set localized text for UI elements.
             $("#greeting").text(UIText.Greeting);
-            $("#about").text(UIText.Instruction);
+            $("#about").text(UIText.Introduction);
         });
     };
 })();
@@ -406,17 +380,21 @@ UIStrings.js 资源文件创建对象 **UIStrings**，其中包含加载项 UI �
 
 若要更改加载项中的显示或编辑语言，请执行以下操作：
 
-1. 在 Word 2013 中，依次选择“文件”**** > “选项”**** > “语言”****。下图展示了打开了“语言”选项卡的“Word 选项”**** 对话框。
+1. 在 Word 中，选择“文件”**** > “选项”**** > “语言”****。 下图显示打开了“语言”选项卡的“Word 选项”**** 对话框。
 
-    *图 2：“Word 2013 选项”对话框中的“语言”选项*
+    *图 2：“Word 选项”对话框中的“语言”选项*
 
-    ![“Word 2013 选项”对话框](../images/office15-app-how-to-localize-fig04.png)
+    ![“Word 选项”对话框](../images/office15-app-how-to-localize-fig04.png)
 
-2. 在“选择用户界面和帮助语言”**** 下，选择要使用的显示语言（例如，西班牙语），再选择向上箭头键将西班牙语移到列表中的首位。或者，若要更改编辑语言，在“选择编辑语言”**** 下，选择要使用的编辑语言（例如，西班牙语），再选择“设置为默认值”****。
+2. 在“**选择显示语言**”下，选择想要显示的语言，例如西班牙语，然后选择向上箭头键将西班牙语移至列表中的第一个位置。 或者，若要更改编辑时使用的语言，在“选择编辑语言”**** 下，选择编辑时想要使用的语言，例如西班牙语，然后选择“设置为默认值”****。
 
-3. 选择“**确定**”确认选择，然后关闭 Word。
+3. 选择“确定”**** 确认选择，然后关闭 Word。
 
-运行示例加载项 任务窗格加载项将在 Word 2013 中加载，同时更改加载项 UI 中的字符串以匹配主机应用程序使用的语言，如下图所示。
+4. 在 Visual Studio 中按 F5 以运行示例加载项，或者从菜单栏中选择“调试”**** > “开始调试”****。
+
+5. 在 Word 中选择“开始”**** > “显示任务窗格”****。
+
+运行后，加载项 UI 中的字符串将会更改，以匹配主机应用程序使用的语言，如下图所示。
 
 
 *图 3. 使用本地化文本的加载项 UI*
