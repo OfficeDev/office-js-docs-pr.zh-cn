@@ -17,18 +17,18 @@
 在单一登录处于预览期间，生产加载项应允许用户可以选择直接使用服务或 Microsoft 等标识提供者进行登录。
 
 1. 首先运行 Placemat - 将登录按钮设置为加载项初次运行体验中的明确号召性用语。
-![](../images/add-in-fre-value-placemat.png)
+![Office 应用程序中的加载项任务窗格屏幕截图](../images/add-in-fre-value-placemat.png)
 
 2. 标识提供者选项对话框 - 显示明确的标识提供者列表，包括用户名和密码表单（如适用）。 身份验证对话框处于打开状态时，加载项 UI 可能会被阻止。
-![](../images/add-in-auth-choices-dialog.png)
+![Office 应用程序中的身份提供程序选项对话框的屏幕截图](../images/add-in-auth-choices-dialog.png)
 
 
 
-3. 标识提供者登录 - 标识提供者将拥有其自己的 UI。 Microsoft Azure Active Directory 允许自定义登录和访问面板页面，以便与服务保持一致的外观和体验。 [了解详细信息](https://docs.microsoft.com/azure/active-directory/fundamentals/customize-branding)。
-![](../images/add-in-auth-identity-sign-in.png)
+3. 身份提供程序登录 - 身份提供程序将拥有其自己的 UI。 Microsoft Azure Active Directory 允许自定义登录和访问面板页面，以便与服务保持一致的外观和体验。 [了解详细信息](https://docs.microsoft.com/azure/active-directory/fundamentals/customize-branding)。
+![Office 应用程序中的身份提供程序登录对话框的屏幕截图](../images/add-in-auth-identity-sign-in.png)
 
 4. 进度 - 表示设置和 UI 加载时的进度。
-![](../images/add-in-auth-modal-interstitial.png)
+![显示 Office 应用程序中进度指示器的对话框的屏幕截图](../images/add-in-auth-modal-interstitial.png)
 
 > [!NOTE] 
 > 使用 Microsoft 的标识服务时，你将有机会使用可定制的浅色和深色主题的品牌登录按钮。了解详细信息。
@@ -40,12 +40,12 @@
 
 一旦用于生产加载项的单一登录正式发布后，即可使用该正式发布版获取流畅的最终用户体验。 Office 中的用户标识（Microsoft 帐户或 Office 365 标识）用于登录到加载项。 因此，用户只登录一次。 这样便使你的客户更容易上手，体验更为顺畅。
 
-1. 在安装加载项时，用户将看到类似于以下所示的“同意”窗口：![](../images/add-in-auth-SSO-consent-dialog.png)
+1. 安装加载项时，用户将会看到一个与以下窗口类似的同意窗口：![安装加载项时，Office 应用程序中的同意窗口的屏幕截图](../images/add-in-auth-SSO-consent-dialog.png)
 > [!NOTE]
 > 加载项发布服务器将控制同意窗口中包含的徽标、字符串和权限范围。 这一 UI 由 Microsoft 预配置。
 
 2. 加载项将在用户同意后加载。 它可以提取并显示任何必要的用户自定义信息。
-![](../images/add-in-ribbon.png)
+![Office 应用程序功能区中显示的加载项按钮的屏幕截图](../images/add-in-ribbon.png)
 
 ## <a name="see-also"></a>另请参阅
 - 详细了解[开发 SSO 加载项（预览版）](https://docs.microsoft.com/office/dev/add-ins/develop/sso-in-office-add-ins)

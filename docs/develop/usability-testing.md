@@ -2,12 +2,12 @@
 title: Office 加载项的可用性测试
 description: ''
 ms.date: 01/23/2018
-ms.openlocfilehash: 0c90cc4e573d24f9c7c4e5c4f6a77853ec9fc93e
-ms.sourcegitcommit: 30435939ab8b8504c3dbfc62fd29ec6b0f1a7d22
+ms.openlocfilehash: 38f0416d56f3fc43c6d5f68df9b5c84586b03c8c
+ms.sourcegitcommit: 3d8454055ba4d7aae12f335def97357dea5beb30
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "23945602"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "27270927"
 ---
 # <a name="usability-testing-for-office-add-ins"></a>Office 加载项的可用性测试
 
@@ -28,7 +28,7 @@ ms.locfileid: "23945602"
 
 ## <a name="1---sign-up-for-a-testing-service"></a>1. 注册测试服务
 
-有关详细信息，请参阅[选择在线工具进行不受监管的远程用户测试](https://www.nngroup.com/articles/unmoderated-user-testing-tools/)。
+有关详细信息，请参阅[选择联机工具进行未加管制的远程用户测试](https://www.nngroup.com/articles/unmoderated-user-testing-tools/)。
 
 ## <a name="2-develop-your-research-questions"></a>2.制定研究问题
  
@@ -57,7 +57,7 @@ ms.locfileid: "23945602"
  - 外接程序如何与 Office 应用程序的文档空间交互
  - 用户对任意内容插入流的掌控程度如何
 
-有关详细信息，请参阅[编写有效问题](http://help.usertesting.com/customer/en/portal/articles/2077663-writing-effective-questions)。
+有关详细信息，请参阅[收集实际响应与主观数据](https://help.usertesting.com/hc/zh-CN/articles/115003378572-Writing-effective-questions)。
  
 ## <a name="3-identify-participants-to-target"></a>3.确定所要面向的参与者
  
@@ -78,16 +78,16 @@ ms.locfileid: "23945602"
 
 如果计划测试外接程序的实时生成，以下问题可以筛选出可以执行此任务的用户。 
 
-**此测试需要具有最新版本的 Microsoft PowerPoint。您是否有最新版本的 PowerPoint？**  
+**该测试需要安装最新版本的 Microsoft PowerPoint。是否拥有最新版本的 PowerPoint？**  
  a. 是 [*必选*]  
  b. 否 [*拒绝*]  
  c. 不知道 [*拒绝*]  
 
-**此测试要求安装适用于 PowerPoint 2016 的免费外接程序，并创建免费帐户以进行使用。是否愿意安装外接程序并创建免费帐户？**  
+**此测试要求安装适用于 PowerPoint 的免费加载项，并创建免费帐户以进行使用。是否愿意安装加载项并创建免费帐户？**  
  a. 是 [*必选*]  
  b. 否 [*拒绝*]  
 
-有关详细信息，请参阅[筛选器问题最佳做法](http://help.usertesting.com/customer/en/portal/articles/2077835-screener-question-best-practices)。
+有关详细信息，请参阅[筛选程序问题最佳做法](https://help.usertesting.com/hc/zh-CN/articles/115003370731-Screener-question-best-practices)。
  
 ## <a name="5-create-tasks-and-questions-for-participants"></a>5.创建针对参与者的任务和问题
  
@@ -99,17 +99,17 @@ ms.locfileid: "23945602"
 
 在测试期间的任何给定时刻，都不要假设用户会位于其应位于的屏幕上。考虑告诉用户要开始下一个任务他们需要位于哪个屏幕。 
 
-有关详细信息，请参阅[编写出色任务](http://help.usertesting.com/customer/en/portal/articles/2077824-writing-great-tasks)。
+有关详细信息，请参阅[编写出色任务](https://help.usertesting.com/hc/zh-CN/articles/115003371651-Writing-great-tasks)。
 
 ## <a name="6-create-a-prototype-to-match-the-tasks-and-questions"></a>6.创建用于匹配任务和问题的原型
  
-可以测试实时外接程序，或者可以测试原型。注意，如果要测试实时外接程序，则需要筛选出已安装 Office 2016、愿意安装外接程序且愿意注册帐户的参与者（除非你具有可以向参与者提供的登录凭据）。然后需要确保他们成功安装外接程序。 
+可以测试实时加载项，或者可以测试原型。 注意，如果要测试实时加载项，则需要筛选出已安装 Office、愿意安装加载项且愿意注册帐户的参与者（除非你具有可以向参与者提供的登录凭据）。然后需要确保他们成功安装加载项。 
 
 通常，逐步指导用户如何安装外接程序需要大约 5 分钟。以下是简洁明了的安装步骤示例。请根据测试的具体情况调整步骤。
 
-**请使用以下说明安装适用于 PowerPoint 2016 的外接程序（在此处插入外接程序名称）：** 
+**请使用以下说明安装适用于 PowerPoint 的加载项（在此处插入加载项名称）：** 
 
-1. 打开 Microsoft PowerPoint 2016。
+1. 打开 Microsoft PowerPoint。
 2. 选择“**空白演示文稿**”。
 3. 转到“**插入 > 我的外接程序**”。
 5. 在弹出窗口中，选择“**应用商店**”。
@@ -139,6 +139,6 @@ ms.locfileid: "23945602"
 
 ## <a name="see-also"></a>另请参阅
  
- - [如何执行可用性测试](http://whatpixel.com/howto-conduct-usability-testing/)  
- - [最佳实践](http://help.usertesting.com/customer/en/portal/articles/1680726-best-practices)  
- - [最小化偏差](http://downloads.usertesting.com/white_papers/TipSheet_MinimizingBias.pdf)  
+ - [如何执行可用性测试](https://whatpixel.com/howto-conduct-usability-testing/)  
+ - [用户测试的最佳做法](https://help.usertesting.com/hc/zh-CN/articles/115003370231-Best-practices-for-UserTesting)  
+ - [最小化偏差](https://downloads.usertesting.com/white_papers/TipSheet_MinimizingBias.pdf)  

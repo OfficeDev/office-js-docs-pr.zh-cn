@@ -2,23 +2,23 @@
 title: 从内容传送网络 (CDN) 引用适用于 Office 的 JavaScript API 库
 description: ''
 ms.date: 01/23/2018
-ms.openlocfilehash: 0ad589ee98342ee72259cddc0957277e9018f186
-ms.sourcegitcommit: c53f05bbd4abdfe1ee2e42fdd4f82b318b363ad7
+ms.openlocfilehash: fec75531997a6b496b442b72d8139a9c98f37cd5
+ms.sourcegitcommit: 3d8454055ba4d7aae12f335def97357dea5beb30
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "25505417"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "27270836"
 ---
 # <a name="referencing-the-javascript-api-for-office-library-from-its-content-delivery-network-cdn"></a>从内容传送网络 (CDN) 引用适用于 Office 的 JavaScript API 库
 
 > [!NOTE]
-> 除了本文中描述的步骤之外，如果要使用 TypeScript，然后获取 Intellisense，您需要在项目文件夹根目录下在启用 Node 的系统提示符（或 git bash 窗口）中运行以下命令。您必须安装 [Node.js](https://nodejs.org)  (其中包括 npm)。
+> 如果想要使用 TypeScript 获取 Intellisense，除了本文中所述的步骤之外，还需要在项目文件夹根目录的节点支持系统提示框（或 Git Bash 窗口）中运行以下命令。 必须安装 [Node.js](https://nodejs.org)（包括 npm）。
 > 
-> ```
+> ```bash
 > npm install --save-dev @types/office-js
 > ```
 
-[适用于 Office 的 JavaScript API](https://docs.microsoft.com/office/dev/add-ins/reference/javascript-api-for-office?view=office-js) 库包含 Office.js 文件和关联主机应用的专用 .js 文件（如 Excel-15.js 和 Outlook-15.js）。 
+[适用于 Office 的 JavaScript API](https://docs.microsoft.com/office/dev/add-ins/reference/javascript-api-for-office?view=office-js) 库包含 Office.js 文件和关联的主机应用专用 .js 文件（如 Excel-15.js 和 Outlook-15.js）。 
 
 
 引用 API 的最简单方法是，通过向页面的 `<head>` 标记添加以下 `<script>` 来使用我们的 CDN：  
