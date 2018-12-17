@@ -1,13 +1,13 @@
 ---
-ms.date: 12/5/2018
+ms.date: 12/14/2018
 description: 在 Excel 中使用 JavaScript 创建自定义函数。
 title: 在 Excel 中创建自定义函数（预览）
-ms.openlocfilehash: 6c8f25cfea2ce37b34817c330c0e36ed095cabb7
-ms.sourcegitcommit: 3d8454055ba4d7aae12f335def97357dea5beb30
+ms.openlocfilehash: 87f56f4c697d19296fe1b539e4071c8e79fbed6a
+ms.sourcegitcommit: 09f124fac7b2e711e1a8be562a99624627c0699e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "27270969"
+ms.lasthandoff: 12/15/2018
+ms.locfileid: "27283114"
 ---
 # <a name="create-custom-functions-in-excel-preview"></a>在 Excel 中创建自定义函数（预览）
 
@@ -370,6 +370,50 @@ function secondHighest(values){
   return secondHighest;
 }
 ```
+
+## <a name="discovering-cells-that-invoke-custom-functions"></a>发现调用自定义函数的单元格
+
+此外，可以通过自定义函数设置区域格式、显示缓存值和协调使用 `caller.address` 的值，这使你能够发现哪些单元格调用了自定义函数。 可以在以下部分应用场景中使用 `caller.address`：
+
+- 设置区域格式：将 `caller.address` 用作单元格键，以便将信息存储到 [AsyncStorage](https://docs.microsoft.com/office/dev/add-ins/excel/custom-functions-runtime#storing-and-accessing-data) 中。 然后，使用 Excel 中的 [onCalculated](https://docs.microsoft.com/javascript/api/excel/excel.worksheet#oncalculated) 从 `AsyncStorage` 加载该键。
+- 显示缓存值：如果脱机使用函数，将显示 `AsyncStorage` 中使用 `onCalculated` 存储的缓存值。
+- 协调：使用 `caller.address` 发现原始单元格，以帮助你在处理时进行协调。
+
+仅当函数 JSON 元数据文件中的 `requiresAddress` 被标记为 `true` 时，才会公开与单元格地址相关的信息。 以下示例诠释了此情况：
+
+```JSON
+{
+   "id": "ADDTIME",
+   "name": "ADDTIME",
+   "description": "Display current date and add the amount of hours to it designated by the parameter",
+   "helpUrl": "http://www.contoso.com",
+   "result": {
+      "type": "number",
+      "dimensionality": "scalar"
+   },
+   "parameters": [
+      {
+         "name": "Additional time",
+         "description": "Amount of hours to increase current date by",
+         "type": "number",
+         "dimensionality": "scalar"
+      }
+   ],
+   "options": {
+      "requiresAddress": true
+   }
+}
+```
+
+此外，需要在脚本文件 (**./src/customfunctions.js** 或 **./src/customfunctions.ts**) 中添加 `getAddress` 函数，以查找单元格地址。 此函数可能会使用参数，如以下示例 `parameter1` 所示。 最后一个参数始终为 `invocationContext`，该对象包含 JSON 元数据文件中的 `requiresAddress` 被标记为 `true` 时 Excel 传递的单元格位置。
+
+```js
+function getAddress(parameter1, invocationContext) {
+    return invocationContext.address;
+}
+```
+
+默认情况下，从 `getAddress` 函数返回的值遵循以下格式：`SheetName!CellNumber`。 例如，如果名为“Expense”的工作表中的 B2 单元格调用了函数，则返回的值为 `Expenses!B2`。
 
 ## <a name="handling-errors"></a>处理错误
 
