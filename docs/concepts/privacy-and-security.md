@@ -2,12 +2,12 @@
 title: Office 加载项的隐私和安全
 description: ''
 ms.date: 01/23/2018
-ms.openlocfilehash: c8fb61d6366d36ab14a072af80702226fe5efa9c
-ms.sourcegitcommit: eb74e94d3e1bc1930a9c6582a0a99355d0da34f2
+ms.openlocfilehash: 339726df186860ba23a51e842d55231d2e8797f0
+ms.sourcegitcommit: 3d8454055ba4d7aae12f335def97357dea5beb30
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "25005048"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "27270871"
 ---
 # <a name="privacy-and-security-for-office-add-ins"></a>Office 加载项的隐私和安全
 
@@ -102,7 +102,7 @@ Outlook 外接程序通过特定的资源使用率监视提供额外安全和性
 
 ### <a name="developer-guidelines-to-handle-pii"></a>开发人员处理 PII 的准则
 
-下面列出了对 Office 外接程序开发人员的一些特定 PII 保护准则：
+下面列出了一些特定于 Office 加载项开发人员的 PII 保护准则：
 
 - [Settings](https://docs.microsoft.com/javascript/api/office/office.settings?view=office-js) 对象旨在保存内容加载项或任务窗格加载项的会话之间的加载项设置和状态数据，但不会在 **Settings** 对象中存储密码和其他敏感 PII。最终用户无法查看 **Settings** 对象中的数据，但该数据存储为文档的易于访问的文件格式的一部分。你应该限制加载项对 PII 的使用，并将加载项所需的任何 PII 存储在将加载项作为用户保护的资源托管的服务器上。
 
@@ -118,7 +118,7 @@ Outlook 外接程序通过特定的资源使用率监视提供额外安全和性
 
 ### <a name="permissions-choices"></a>权限选择
 
-外接程序平台提供了一种权限模型，外接程序可以使用它来声明对其功能所需的用户数据的访问级别。 每个权限级别都对应于外接程序可以用于其功能的适用于 Office 的 JavaScript API 的子集。 例如，内容和任务窗格外接程序的 ** WriteDocument**  权限允许访问 [ Document.setSelectedDataAsync](https://docs.microsoft.com/javascript/api/office/office.document?view=office-js) 方法，该方法允许将附加内容写入用户的文档，但不允许访问从文档中读取数据的任何方法。 此权限级别对于只需写入文档的外接程序很有意义，例如用户可以查询要插入其文档的数据的外接程序。
+加载项平台中提供了一个权限模型，供加载项用于声明实现其功能所需的对用数据的访问级别。 每个权限级别对应适用于 Office 的 JavaScript API 的子集，加载项通过这些权限级别实现其功能。 例如，内容和任务窗格加载项的 **WriteDocument** 权限可访问 [Document.setSelectedDataAsync](https://docs.microsoft.com/javascript/api/office/office.document?view=office-js) 方法，该方法允许加载项对用户文档执行写入操作，但不允许访问任何读取文档中的数据的方法。 此权限级别对于只需要对文档执行写入操作的加载项很有用，例如用户可以查询要插入到其文档的数据的加载项。
 
 最佳做法是应该基于“_最小特权_”原则请求权限。即应该请求外接程序正常运行所需的 API 的最小子集的访问权限。例如，如果外接程序只需要读取其功能的用户文档中的数据，则应仅请求“**ReadDocument**”权限。（但是，请注意如果请求权限不足，则会导致外接程序平台阻止外接程序使用部分 API 并将生成运行时错误。）
 
@@ -169,26 +169,26 @@ function loadVideoDetails(videoIndex) {
 }
 ```
 
-Exchange 和 SharePoint 提供了客户端代理以实现跨域访问。通常，Intranet 上的同源策略没有 Internet 上的同源策略那样严格。有关详细信息，请参阅[同源策略第 1 部分：不准偷看](http://blogs.msdn.com/b/ieinternals/archive/2009/08/28/explaining-same-origin-policy-part-1-deny-read.aspx)和[解决 Office 加载项中的同源策略限制](../develop/addressing-same-origin-policy-limitations.md)。
+Exchange 和 SharePoint 提供了客户端代理以实现跨域访问。通常，Intranet 上的同源策略没有 Internet 上的同源策略那样严格。有关详细信息，请参阅[同源策略第 1 部分：不准偷看](https://blogs.msdn.com/b/ieinternals/archive/2009/08/28/explaining-same-origin-policy-part-1-deny-read.aspx)和[解决 Office 加载项中的同源策略限制](../develop/addressing-same-origin-policy-limitations.md)。
 
 ### <a name="tips-to-prevent-malicious-cross-site-scripting"></a>防止恶意跨站点脚本的提示
 
-恶意用户可以通过在文档或外接程序字段中输入恶意脚本来攻击外接程序的来源。 开发人员应该处理用户输入，以避免在其域中执行恶意用户的JavaScript。 以下是处理用户通过文档、邮件消息或外接程序字段提供的输入的一些良好实践：
+恶意用户可能会通过文档或加载项中的字段输入恶意脚本，以此来攻击加载项源。 开发人员应处理用户输入以避免在其域中执行恶意用户的 JavaScript。 以下是从文档或邮件中或者通过加载项中的字段处理用户输入可遵循的一些良好做法：
 
 
-- 根据需要使用 [innerText](https://developer.mozilla.org/docs/Web/API/Element/innerHTML) 和 [textContent](https://developer.mozilla.org/docs/Web/API/Node/innerText) 属性，而非 DOM 属性 [innerHTML](https://developer.mozilla.org/docs/DOM/Node.textContent)。执行以下操作获取 Internet Explorer 和 Firefox 跨浏览器支持：
+- 根据需要使用 [innerText](https://developer.mozilla.org/docs/Web/API/Element/innerHTML) 和 [textContent](https://developer.mozilla.org/docs/DOM/Node.textContent) 属性，而非 DOM 属性 [innerHTML](https://developer.mozilla.org/docs/Web/API/Node/innerText)。执行以下操作获取 Internet Explorer 和 Firefox 跨浏览器支持：
 
     ```js
      var text = x.innerText || x.textContent
     ```
 
-    有关 **innerText** 和 **textContent** 之间区别的信息，请参阅 [Node.textContent](https://developer.mozilla.org/docs/DOM/Node.textContent)。有关常见浏览器间 DOM 兼容性的详细信息，请参阅 [W3C DOM 兼容性 - HTML](http://www.quirksmode.org/dom/w3c_html.html#t07)。
+    有关 **innerText** 和 **textContent** 之间区别的信息，请参阅 [Node.textContent](https://developer.mozilla.org/docs/DOM/Node.textContent)。有关常见浏览器间 DOM 兼容性的详细信息，请参阅 [W3C DOM 兼容性 - HTML](https://www.quirksmode.org/dom/w3c_html.html#t07)。
 
 - 如果你必须使用 **innerHTML**，请在将用户输入传递到 **innerHTML** 之前确保用户输入不包含恶意内容。有关详细信息以及如何安全使用 **innerHTML** 的示例，请参阅 [innerHTML](https://developer.mozilla.org/docs/Web/API/Element/innerHTML) 属性。
 
-- 如果要使用 jQuery，请使用 [.text()](http://api.jquery.com/text/) 方法，而非 [.html()](http://api.jquery.com/html/) 方法。
+- 如果要使用 jQuery，请使用 [.text()](https://api.jquery.com/text/) 方法，而非 [.html()](https://api.jquery.com/html/) 方法。
 
-- 使用 [toStaticHTML](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference) 方法可在将用户输入传递到 **innerHTML** 之前删除用户输入中的所有动态 HTML 元素和属性。
+- 使用 [toStaticHTML](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Reference) 方法可在将用户输入传递到 **innerHTML** 之前删除用户输入中的所有动态 HTML 元素和属性。
 
 - 使用 [encodeURIComponent](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/encodeuricomponent) 或 [encodeURI](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/encodeuri) 函数可对应为来自用户输入或包含用户输入的 URL 的文本进行编码。
 
@@ -196,7 +196,7 @@ Exchange 和 SharePoint 提供了客户端代理以实现跨域访问。通常�
 
 ### <a name="tips-to-prevent-clickjacking"></a>防止“点击劫持”的提示
 
-由于 Office 加载项通过 Office Online 主机应用程序运行在浏览器中时呈现在 iframe 中，请使用以下提示来尽量降低[点击劫持](http://en.wikipedia.org/wiki/Clickjacking)（一种黑客用来欺骗用户泄露机密信息的技术）的风险。
+由于 Office 加载项通过 Office Online 主机应用程序运行在浏览器中时呈现在 iframe 中，请使用以下提示来尽量降低[点击劫持](https://en.wikipedia.org/wiki/Clickjacking)（一种黑客用来欺骗用户泄露机密信息的技术）的风险。
 
 首先，确定您的加载项可以执行的敏感操作。其中包括未授权的用户可能恶意使用的任何操作，如启动金融交易或发布敏感数据。例如，您的加载项可能让用户将款项发送到用户定义的接收人。
 
@@ -255,6 +255,6 @@ Exchange 和 SharePoint 提供了客户端代理以实现跨域访问。通常�
 - [Outlook 外接程序的激活和 JavaScript API 限制](https://docs.microsoft.com/outlook/add-ins/limits-for-activation-and-javascript-api-for-outlook-add-ins)
 - [解决 Office 外接程序中的同源策略限制](https://docs.microsoft.com/office/dev/add-ins/develop/addressing-same-origin-policy-limitations)
 - [同源策略](https://www.w3.org/Security/wiki/Same_Origin_Policy)
-- [同源策略第 1 部分：不准偷看](http://blogs.msdn.com/b/ieinternals/archive/2009/08/28/explaining-same-origin-policy-part-1-deny-read.aspx)
+- [同源策略第 1 部分：不准偷看](https://blogs.msdn.com/b/ieinternals/archive/2009/08/28/explaining-same-origin-policy-part-1-deny-read.aspx)
 - [针对 JavaScript 的同源策略](https://developer.mozilla.org/docs/Web/Security/Same-origin_policy)
 - [IE 保护模式](https://support.microsoft.com/help/2761180/apps-for-office-don-t-start-if-you-disable-protected-mode-for-the-restricted-sites-zone-in-internet-explorer)
