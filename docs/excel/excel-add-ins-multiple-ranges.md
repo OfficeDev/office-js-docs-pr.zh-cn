@@ -2,12 +2,12 @@
 title: 同时在 Excel 加载项中处理多个区域
 description: ''
 ms.date: 09/04/2018
-ms.openlocfilehash: 37f9c8a9f3127d78e1cc794aea9e6d1502cdeaf9
-ms.sourcegitcommit: 3d8454055ba4d7aae12f335def97357dea5beb30
+ms.openlocfilehash: f1217fc76d14269882a73ec5eb7758e519563456
+ms.sourcegitcommit: 6870f0d96ed3da2da5a08652006c077a72d811b6
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "27270976"
+ms.lasthandoff: 12/21/2018
+ms.locfileid: "27383223"
 ---
 # <a name="work-with-multiple-ranges-simultaneously-in-excel-add-ins-preview"></a>同时在 Excel 加载项中处理多个区域（预览）
 
@@ -97,8 +97,7 @@ Excel JavaScript 库允许你使用加载项同时在多个区域上执行操作
 > [!NOTE]
 > 你不能直接将其他区域添加到 `RangeAreas` 对象。 例如，`RangeAreas.areas` 中的集合不具有 `add` 方法。
 
-
-> [!WARNING] 
+> [!WARNING]
 > 不要尝试直接添加或删除 `RangeAreas.areas.items` 数组的成员。 这将导致代码中出现不需要的行为。 例如，可能会将其他 `Range` 对象推送到数组上，但这样做会导致错误，因为 `RangeAreas` 属性和方法将表现为如同新项目并不存在一样。 例如，`areaCount` 属性不包含通过这种方法推送的区域，并且如果 `index` 大于 `areasCount-1`，则 `RangeAreas.getItemAt(index)` 将引发错误。 同样，删除 `RangeAreas.areas.items` 数组中的 `Range` 对象（通过获取对它的引用并调用其 `Range.delete` 方法）也会导致错误：尽管 `Range` 对象*已被*删除，但父 `RangeAreas` 对象的属性和方法将表现为或尝试表现为如同它仍然存在一样。 例如，如果你的代码调用 `RangeAreas.calculate`，Office 将尝试计算区域，但这会引发错误，因为区域对象并不存在。
 
 在 `RangeAreas` 上设置属性会在 `RangeAreas.areas` 集合中的所有区域上设置相应的属性。
@@ -107,8 +106,8 @@ Excel JavaScript 库允许你使用加载项同时在多个区域上执行操作
 
 ```js
 Excel.run(function (context) {
-    const sheet = context.workbook.worksheets.getActiveWorksheet();
-    const rangeAreas = sheet.getRanges("F3:F5, H3:H5");
+    var sheet = context.workbook.worksheets.getActiveWorksheet();
+    var rangeAreas = sheet.getRanges("F3:F5, H3:H5");
     rangeAreas.format.fill.color = "pink";
 
     return context.sync();
@@ -142,9 +141,9 @@ getSpecialCellsOrNullObject(cellType: Excel.SpecialCellType, cellValueType?: Exc
 
 ```js
 Excel.run(function (context) {
-    const sheet = context.workbook.worksheets.getActiveWorksheet();
-    const usedRange = sheet.getUsedRange();
-    const formulaRanges = usedRange.getSpecialCells("Formulas");
+    var sheet = context.workbook.worksheets.getActiveWorksheet();
+    var usedRange = sheet.getUsedRange();
+    var formulaRanges = usedRange.getSpecialCells("Formulas");
     formulaRanges.format.fill.color = "pink";
 
     return context.sync();
@@ -161,8 +160,8 @@ Excel.run(function (context) {
 
 ```js
 Excel.run(function (context) {
-    const range = context.workbook.getSelectedRange();
-    const formulaRanges = range.getSpecialCellsOrNullObject("Formulas");
+    var range = context.workbook.getSelectedRange();
+    var formulaRanges = range.getSpecialCellsOrNullObject("Formulas");
     return context.sync()
         .then(function() {
             if (formulaRanges.isNullObject) {
@@ -187,9 +186,9 @@ Excel.run(function (context) {
 
 ```js
 Excel.run(function (context) {
-    const sheet = context.workbook.worksheets.getActiveWorksheet();
-    const usedRange = sheet.getUsedRange();
-    const constantNumberRanges = usedRange.getSpecialCells("Constants", "Numbers");
+    var sheet = context.workbook.worksheets.getActiveWorksheet();
+    var usedRange = sheet.getUsedRange();
+    var constantNumberRanges = usedRange.getSpecialCells("Constants", "Numbers");
     constantNumberRanges.format.fill.color = "pink";
 
     return context.sync();
@@ -200,9 +199,9 @@ Excel.run(function (context) {
 
 ```js
 Excel.run(function (context) {
-    const sheet = context.workbook.worksheets.getActiveWorksheet();
-    const usedRange = sheet.getUsedRange();
-    const formulaLogicalNumberRanges = usedRange.getSpecialCells("Formulas", "LogicalNumbers");
+    var sheet = context.workbook.worksheets.getActiveWorksheet();
+    var usedRange = sheet.getUsedRange();
+    var formulaLogicalNumberRanges = usedRange.getSpecialCells("Formulas", "LogicalNumbers");
     formulaLogicalNumberRanges.format.fill.color = "pink";
 
     return context.sync();
@@ -222,10 +221,10 @@ Excel.run(function (context) {
 
 ```js
 Excel.run(function (context) {
-    const sheet = context.workbook.worksheets.getActiveWorksheet();
+    var sheet = context.workbook.worksheets.getActiveWorksheet();
 
     // The ranges are the F column and the H column.
-    const rangeAreas = sheet.getRanges("F:F, H:H");  
+    var rangeAreas = sheet.getRanges("F:F, H:H");  
     rangeAreas.format.fill.color = "pink";
 
     rangeAreas.load("format/fill/color, isEntireColumn");
@@ -249,10 +248,10 @@ Excel.run(function (context) {
 
 ```js
 Excel.run(function (context) {
-    const sheet = context.workbook.worksheets.getActiveWorksheet();
-    const rangeAreas = sheet.getRanges("F3:F5, H:H");
+    var sheet = context.workbook.worksheets.getActiveWorksheet();
+    var rangeAreas = sheet.getRanges("F3:F5, H:H");
 
-    const pinkColumnRange = sheet.getRange("H:H");
+    var pinkColumnRange = sheet.getRange("H:H");
     pinkColumnRange.format.fill.color = "pink";
 
     rangeAreas.load("format/fill/color, isEntireColumn, address");
