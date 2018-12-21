@@ -1,17 +1,17 @@
 ---
 title: Project 任务窗格加载项
 description: ''
-ms.date: 01/23/2018
-ms.openlocfilehash: 024b7d1c7e05e8b7a7a71871eec4b088d45afdc1
-ms.sourcegitcommit: 3d8454055ba4d7aae12f335def97357dea5beb30
+ms.date: 12/17/2018
+ms.openlocfilehash: 80f8e41a2409873283a38e30506fa954771ecb1e
+ms.sourcegitcommit: 6870f0d96ed3da2da5a08652006c077a72d811b6
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "27270780"
+ms.lasthandoff: 12/21/2018
+ms.locfileid: "27383279"
 ---
 # <a name="task-pane-add-ins-for-project"></a>Project 任务窗格加载项
 
-Project Standard 2013 和 Project Professional 2013（版本 15.1 或更高版本）均包括对任务窗格加载项的支持。你可以运行专为 Word 2013 或 Excel 2013 开发的通用任务窗格加载项。 此外，你还可以开发自定义加载项，用于处理 Project 中的选择事件以及将项目中的任务、资源、视图和其他单元格级别的数据与 SharePoint 列表、SharePoint 加载项、Web 部件、Web 服务和企业应用程序相集成。
+Project Standard 2013 和 Project Professional 2013（版本 15.1 或更高版本）均包括对任务窗格加载项的支持。你可以运行专为 Word 或 Excel 开发的通用任务窗格加载项。 此外，你还可以开发自定义加载项，用于处理 Project 中的选择事件以及将项目中的任务、资源、视图和其他单元格级别的数据与 SharePoint 列表、SharePoint 加载项、Web 部件、Web 服务和企业应用程序相集成。
 
 > [!NOTE]
 > [Project 2013 SDK 下载](https://www.microsoft.com/download/details.aspx?id=30435%20)中的示例加载项展示了如何使用 Project 加载项对象模型，以及如何在 Project Server 2013 中使用 OData 报表数据服务。提取和安装 SDK 时，请查看 `\Samples\Apps\` 子目录。
@@ -50,8 +50,6 @@ Project 加载项方案包括以下几种：
 用于 Project 外接程序的 JavaScript 库包括  **Office** 命名空间别名的扩展，使开发人员可以访问 Project 应用程序的属性以及项目中的任务、资源和视图。Project-15.js 文件中的 JavaScript 库扩展用于用 Visual Studio 2015 创建的 Project 外接程序中。Project 2013 SDK 下载中还提供了 Office.js、Office.debug.js、Project-15.js、Project-15.debug.js 和相关文件。
 
 若要创建加载项，可以使用简单文本编辑器创建 HTML 网页和相关的 JavaScript 文件、CSS 文件及 REST 查询。除了 HTML 页面或 Web 应用程序外，加载项还需要一个用于配置的 XML 清单文件。Project 可以使用包括指定为  **TaskPaneExtension** 的 **type** 属性的清单文件。该清单文件可供多个 Office 2013 客户端应用程序使用，您也可以创建一个 Project 2013 专用的清单文件。有关详细信息，请参阅 [Office 加载项平台概述](../overview/office-add-ins.md)中的"开发基础知识"一节。
-
-对于复杂的自定义应用程序，为了便于调试，建议你使用 Visual Studio 2015 为加载项开发网站。Visual Studio 2015 包括用于加载项项目的模板，你可以在其中选择加载项的类型（任务窗格、内容或邮件）和主机应用程序（Project、Word、Excel 或 Outlook）。
 
 在安装 Project 2013 SDK 下载时，`\Samples\Apps\` 子目录包括以下示例加载项：
 
