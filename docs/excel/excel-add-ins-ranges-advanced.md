@@ -1,13 +1,13 @@
 ---
 title: 使用 Excel JavaScript API 对区域执行操作（高级）
 description: ''
-ms.date: 12/14/2018
-ms.openlocfilehash: 42b1127580c46120d337553fdb86a19a78b37567
-ms.sourcegitcommit: 09f124fac7b2e711e1a8be562a99624627c0699e
+ms.date: 12/18/2018
+ms.openlocfilehash: 6d3da1e7eff4e61ae1b88213d0b432581d8f6a8a
+ms.sourcegitcommit: 6870f0d96ed3da2da5a08652006c077a72d811b6
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/15/2018
-ms.locfileid: "27283791"
+ms.lasthandoff: 12/21/2018
+ms.locfileid: "27383237"
 ---
 # <a name="work-with-ranges-using-the-excel-javascript-api-advanced"></a>使用 Excel JavaScript API 对区域执行操作（高级）
 
@@ -61,7 +61,15 @@ Excel.run(function (context) {
 
 你的加载项将必须对范围进行格式化才能以更可读的形式显示日期。 `"[$-409]m/d/yy h:mm AM/PM;@"` 的示例显示类似“12/3/18 3:57 PM”的时间。 有关日期和时间数字格式的详细信息，请参阅[查看自定义数字格式的准则](https://support.office.com/article/review-guidelines-for-customizing-a-number-format-c0a1d1fa-d3f4-4018-96b7-9c9354dd99f5)一文中的“日期和时间格式的准则”。
 
-## <a name="copy-and-paste"></a>复制和粘贴
+## <a name="work-with-multiple-ranges-simultaneously-preview"></a>同时处理多个区域（预览版）
+
+> [!NOTE]
+> `RangeAreas` 对象当前仅适用于公共预览版（beta 版本）。 若要使用此功能，必须使用 Office.js CDN 的 beta 版库：https://appsforoffice.microsoft.com/lib/beta/hosted/office.js。
+> 如果使用的是 TypeScript 或代码编辑器将 TypeScript 类型定义文件用于 IntelliSense，则使用 https://appsforoffice.microsoft.com/lib/beta/hosted/office.d.ts。
+
+`RangeAreas` 对象允许外接程序每次在多个区域上执行操作。 这些区域可能但不必是连续区域。 `RangeAreas` 将进一步在[同时在 Excel 加载项中处理多个区域](excel-add-ins-multiple-ranges.md)一文中进行讨论。
+
+## <a name="copy-and-paste-preview"></a>复制和粘贴（预览版）
 
 > [!NOTE]
 > `Range.copyFrom` 函数当前仅适用于公共预览版（beta 版本）。 若要使用此功能，必须使用 Office.js CDN 的 beta 版库：https://appsforoffice.microsoft.com/lib/beta/hosted/office.js。
@@ -125,7 +133,7 @@ Excel.run(function (context) {
 
 ![在区域中运行复制方法之后的 Excel 中的数据](../images/excel-range-copyfrom-skipblanks-after.png)
 
-## <a name="remove-duplicates"></a>删除重复项
+## <a name="remove-duplicates-preview"></a>删除重复项（预览版）
 
 > [!NOTE]
 > 区域对象的 `removeDuplicates` 函数当前仅适用于公共预览版（beta 版本）。 若要使用此功能，必须使用 Office.js CDN 的 beta 版库：https://appsforoffice.microsoft.com/lib/beta/hosted/office.js。

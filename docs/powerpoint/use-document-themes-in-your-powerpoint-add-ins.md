@@ -1,13 +1,13 @@
 ---
 title: 在 PowerPoint 加载项中使用文档主题
 description: ''
-ms.date: 12/04/2017
-ms.openlocfilehash: d3cc52d965765c80a692075fe3c6aad4ec64a8ae
-ms.sourcegitcommit: 4de2a1b62ccaa8e51982e95537fc9f52c0c5e687
+ms.date: 12/17/2018
+ms.openlocfilehash: 5caa274ae8774e8a30c416085ab4a431d6907944
+ms.sourcegitcommit: 6870f0d96ed3da2da5a08652006c077a72d811b6
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/10/2018
-ms.locfileid: "22925442"
+ms.lasthandoff: 12/21/2018
+ms.locfileid: "27383251"
 ---
 # <a name="use-document-themes-in-your-powerpoint-add-ins"></a>在 PowerPoint 加载项中使用文档主题
 
@@ -25,7 +25,7 @@ ms.locfileid: "22925442"
 
 ![调色板](../images/office15-app-color-palette.png)
 
-若要在 PowerPoint 中查看或自定义一套完整的 12 种主题颜色，请在“设计”**** 选项卡的“变量”**** 组中，单击“更多”**** 下拉菜单，指向“颜色”****，再单击“自定义颜色”****，以调出“新建主题颜色”**** 对话框。
+若要在 PowerPoint 中查看或自定义一套完整的 12 种主题颜色，请在“设计”**** 选项卡的“变量”**** 组中，单击“更多”**** 下拉菜单，然后选择“颜色”**** > “自定义颜色”****，以调出“新建主题颜色”****。
 
 ![“新建主题颜色”对话框](../images/office15-app-create-new-theme-colors.png)
 
@@ -37,7 +37,7 @@ ms.locfileid: "22925442"
 
 ![字体选取器](../images/office15-app-font-picker.png)
 
-若要在 PowerPoint 中查看或自定义主题字体，请在“**设计**”选项卡的“**变量**”组中，单击“**更多**”下拉菜单，然后指向“**字体**”，并单击“**自定义字体**”以显示“**新建主题字体**”对话框。
+若要在 PowerPoint 中查看或自定义主题字体，请在“设计”选项卡**** 的“变量”**** 组中，单击“更多”**** 下拉菜单，然后选择“字体”**** > “自定义字体”**** 以显示“新建主题字体”**** 对话框。
 
 ![“新建主题字体”对话框](../images/office15-app-create-new-theme-fonts.png)
 
@@ -59,7 +59,10 @@ OfficeThemes.css 包含您可在 PowerPoint 任务窗格加载项中使用的类
 
 #### <a name="to-add-officethemescss-to-your-visual-studio-project"></a>将 OfficeThemes.css 添加到 Visual Studio 项目中的具体步骤
 
-1. 在“解决方案资源管理器”**** 中，右键单击“project_name Web”_****_**** 项目中的“内容”**** 文件夹，指向“添加”****，再选择“样式表”****。
+> [!NOTE]
+> 此过程中的步骤仅适用于 Visual Studio 2015。 如果你使用的是 Visual Studio 2017，则会自动为你创建的任何新 PowerPoint 加载项项目创建 OfficeThemes.css 文件。
+
+1. 在“解决方案资源管理器”**** 中，右键单击 _**project_name**_**Web** 项目中的“内容”**** 文件夹，选择“添加”****，然后选择“样式表”****。
     
 2. 将新的样式表命名为“OfficeThemes”****。
     
@@ -139,7 +142,7 @@ OfficeThemes.css 包含您可在 PowerPoint 任务窗格加载项中使用的类
 
 #### <a name="to-reference-officethemescss-in-your-add-in-for-powerpoint"></a>在 PowerPoint 加载项中引用 OfficeThemes.css 的具体步骤
 
-1. 在 Visual Studio 2015 中，打开或新建“Office 加载项”**** 项目。
+1. 在 Visual Studio 2017 中，打开或创建新的 **Office 加载项**项目。
     
 2. 在实现加载项 UI 的 HTML 页面（如默认模板中的 Home.html）中，在 `<head>` 标记内添加以下引用 OfficeThemes.css 文件的 `<link>` 标记：
     

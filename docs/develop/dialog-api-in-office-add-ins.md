@@ -1,13 +1,13 @@
 ---
 title: 在 Office 加载项中使用对话框 API
 description: ''
-ms.date: 11/28/2018
-ms.openlocfilehash: b19d56d3f4fb831eb8c0ca16af53ee309989d223
-ms.sourcegitcommit: 3d8454055ba4d7aae12f335def97357dea5beb30
+ms.date: 12/20/2018
+ms.openlocfilehash: 0c45a17935cb264db4b8488ec8eaae2535848770
+ms.sourcegitcommit: 6870f0d96ed3da2da5a08652006c077a72d811b6
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "27270955"
+ms.lasthandoff: 12/21/2018
+ms.locfileid: "27383244"
 ---
 # <a name="use-the-dialog-api-in-your-office-add-ins"></a>在 Office 加载项中使用对话框 API
 
@@ -218,6 +218,9 @@ function processMessage(arg) {
     }
 }
 ```
+
+> [!NOTE]
+> `showNotification` 实施未在本文提供的示例代码中显示。 有关如何在外接程序中实施此函数的示例，请参阅 [Office 外接程序对话框 API 示例](https://github.com/OfficeDev/Office-Add-in-Dialog-API-Simple-Example)。
 
 ### <a name="closing-the-dialog-box"></a>关闭对话框
 
