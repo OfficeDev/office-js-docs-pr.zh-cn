@@ -1,13 +1,13 @@
 ---
 title: 使用 Office Open XML 创建更优质的 Word 加载项
 description: ''
-ms.date: 12/04/2017
-ms.openlocfilehash: f178a9ee05661e69cc5e08857bbdf8f5081553e0
-ms.sourcegitcommit: 3d8454055ba4d7aae12f335def97357dea5beb30
+ms.date: 12/17/2018
+ms.openlocfilehash: 79531c7073d2f96620c6cbf1e3bbbbe6e12154e3
+ms.sourcegitcommit: 6870f0d96ed3da2da5a08652006c077a72d811b6
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "27271046"
+ms.lasthandoff: 12/21/2018
+ms.locfileid: "27383286"
 ---
 # <a name="create-better-add-ins-for-word-with-office-open-xml"></a>使用 Office Open XML 创建更优质的 Word 加载项
 
@@ -50,7 +50,7 @@ ms.locfileid: "27271046"
 *图 4：使用图片样式和效果格式化的图像*
 
 
-![Word 2013 中的格式化图像。](../images/office15-app-create-wd-app-using-ooxml-fig04.png)
+![Word 中的格式化图像。](../images/office15-app-create-wd-app-using-ooxml-fig04.png)
 
 
 向图像应用优质格式和效果所需的标记比预期要少。
@@ -72,37 +72,37 @@ ms.locfileid: "27271046"
 *图 7：形状*
 
 
-![Word 2013 中的 Office 2013 绘图形状。](../images/office15-app-create-wd-app-using-ooxml-fig07.png)
+![Word 中的 Microsoft Office 绘图形状。](../images/office15-app-create-wd-app-using-ooxml-fig07.png)
 
 可以插入带/不带文本和格式效果的内置或自定义绘图形状。
 
 *图 8：应用了直接格式的表格*
 
 
-![Word 2013 中的格式化表格。](../images/office15-app-create-wd-app-using-ooxml-fig08.png)
+![Word 中的格式化表格。](../images/office15-app-create-wd-app-using-ooxml-fig08.png)
 
 可以包括文本格式、边框、阴影、单元格尺寸调整或所需的任何表格格式。
 
 *图 9：使用表格样式格式化的表格*
 
 
-![Word 2013 中的格式化表格。](../images/office15-app-create-wd-app-using-ooxml-fig09.png)
+![Word 中的格式化表格。](../images/office15-app-create-wd-app-using-ooxml-fig09.png)
 
 可以使用内置或自定义表格样式，就像对文本使用段落样式一样简单。
 
 *图 10：SmartArt 图表*
 
 
-![Word 2013 中的动态 SmartArt 图表。](../images/office15-app-create-wd-app-using-ooxml-fig10.png)
+![Word 中的动态 SmartArt 图表。](../images/office15-app-create-wd-app-using-ooxml-fig10.png)
 
-Office 2013 提供了大量 SmartArt 图表布局（可以使用 Office Open XML 创建自己的 SmartArt 图表布局）。
+Microsoft Office 提供了大量 SmartArt 图表布局（可以使用 Office Open XML 创建自己的 SmartArt 图表布局）。
 
 *图 11：图表*
 
 
-![Word 2013 中的图表。](../images/office15-app-create-wd-app-using-ooxml-fig11.png)
+![Word 中的图表。](../images/office15-app-create-wd-app-using-ooxml-fig11.png)
 
-你可以在 Word 文档中插入 Excel 图表作为实时图表，这也意味着你可以在 Word 外接程序中使用这些图表。如上述示例中所示，你可以使用 Office Open XML 强制转换，以插入用户可以插入其自己的文档中的几乎任何类型的内容。获取所需的 Office Open XML 标记有两种简单的方法。将多种格式的内容添加到一个原本空白的 Word 2013 文档中，然后将文件保存为 Word XML 文档格式，或通过 [getSelectedDataAsync](https://docs.microsoft.com/javascript/api/office/office.document?view=office-js#getselecteddataasync-coerciontype--options--callback-) 方法，使用测试外接程序来捕捉标记。两种方法都可以获得几乎相同的结果。
+你可以在 Word 文档中插入 Excel 图表作为实时图表，这也意味着你可以在 Word 外接程序中使用这些图表。如上述示例中所示，你可以使用 Office Open XML 强制转换，以插入用户可以插入其自己的文档中的几乎任何类型的内容。获取所需的 Office Open XML 标记有两种简单的方法。将多种格式的内容添加到一个原本空白的 Word 文档中，然后将文件保存为 Word XML 文档格式，或通过 [getSelectedDataAsync](https://docs.microsoft.com/javascript/api/office/office.document?view=office-js#getselecteddataasync-coerciontype--options--callback-) 方法，使用测试外接程序来捕捉标记。两种方法都可以获得几乎相同的结果。
 
 
 > [!NOTE]
@@ -121,10 +121,10 @@ Office 2013 提供了大量 SmartArt 图表布局（可以使用 Office Open XML
 
 
 > [!TIP]
-> 可以在记事本等文本编辑器中编辑 Office Open XML 标记。如果在 Visual Studio 2015 中打开它，可以使用“编辑 > 高级 > 格式化文档”****（Ctrl+K、Ctrl+D）设置包格式，以简化编辑。然后，可以折叠或展开其中的文档部分，如图 12 所示，以便更轻松地查看和编辑 Office Open XML 包内容。每个文档部分都是以 **pkg:part** 标记开头。
+> 可以在记事本等文本编辑器中编辑 Office Open XML 标记。如果在 Visual Studio 中打开它，可以使用“编辑 > 高级 > 格式化文档”****（Ctrl+K、Ctrl+D）设置包格式，以简化编辑。然后，可以折叠或展开其中的文档部分，如图 12 所示，以便更轻松地查看和编辑 Office Open XML 包内容。每个文档部分都是以 **pkg:part** 标记开头。
 
 
-*图 12：折叠和展开包部分以便在 Visual Studio 2015 中更轻松地编辑*
+*图 12：折叠和展开包部分以便在 Visual Studio 中更轻松地编辑*
 
 ![包部件的 Office Open XML 代码段。](../images/office15-app-create-wd-app-using-ooxml-fig12.png)
 
@@ -207,7 +207,7 @@ Office 2013 提供了大量 SmartArt 图表布局（可以使用 Office Open XML
 
 
 > [!NOTE]
-> 如果将此处所示的标记与 version XML 声明标记和 mso-application 一起添加到 XML 文件（如图 13 所示，后两行标记位于文件顶部），可以在 Word 中将它打开为 Word 文档。如果没有添加后两行标记，也仍可以通过依次单击 Word 中的“文件”>“打开”**** 打开它。此时，Word 2013 标题栏上显示“兼容性模式”****，因为已删除指示 Word 这是 2013 文档的设置。由于要将此标记添加到现有 Word 2013 文档，因此内容完全不会受影响。
+> 如果将此处所示的标记与 version XML 声明标记和 mso-application 一起添加到 XML 文件（如图 13 所示，后两行标记位于文件顶部），可以在 Word 中将它打开为 Word 文档。如果没有添加后两行标记，也仍可以通过依次单击 Word 中的“文件”>“打开”**** 打开它。此时，Word 标题栏上显示“兼容性模式”****，因为已删除指示 Word 这是 Word 文档的设置。由于要将此标记添加到现有 Word 文档，因此内容完全不会受影响。
 
 
 ### <a name="javascript-for-using-setselecteddataasync"></a>使用 setSelectedDataAsync 所需的 JavaScript
@@ -317,7 +317,7 @@ function writeContent() {
 
 
 > [!TIP]
-> 若要在 Visual Studio 2015 中编辑标记，请在删除任何部分中的命名空间后，仔细检查相应部分的所有标记。如果删除的是标记的必需命名空间，受影响标记的相关前缀下面会显示红色的弯曲下划线。如果删除 **xmlns:mc** 命名空间，还必须删除命名空间列表前面的 **mc:Ignorable** 属性。
+> 若要在 Visual Studio 中编辑标记，请在删除任何部分中的命名空间后，仔细检查相应部分的所有标记。如果删除的是标记的必需命名空间，受影响标记的相关前缀下面会显示红色的弯曲下划线。如果删除 **xmlns:mc** 命名空间，还必须删除命名空间列表前面的 **mc:Ignorable** 属性。
 
 
 - 可以在打开的正文标记内看到段落标记 (**w:p**)，其中包含此示例的内容。
@@ -333,7 +333,7 @@ function writeContent() {
 
     请注意，由于本示例中包括的格式是字体格式（即可以应用于一个字符的格式），它还在单独的 run 属性中显示。
 
-- 还要注意，隐藏的“_GoBack”书签（**w:bookmarkStart** 和 **w:bookmarkEnd**）的标记默认显示在 Word 2013 文档中。始终可以从标记中删除 GoBack 书签的起始标记和结束标记。
+- 还要注意，隐藏的“_GoBack”书签（**w:bookmarkStart** 和 **w:bookmarkEnd**）的标记默认显示在 Word 文档中。始终可以从标记中删除 GoBack 书签的起始标记和结束标记。
 
 - 文档正文的最后一部分是 **w:sectPr** 标记或分节属性。此标记包括边距和页面方向等设置。您使用 **setSelectedDataAsync** 插入的内容将默认呈现在目标文档中的活动部分属性上。因此，除非您的内容包括分节符（能看到多个 **w:sectPr** 标记），否则无法删除此标记。
 
@@ -349,9 +349,9 @@ function writeContent() {
 
 要在 Word 中关闭你创建的文档的 RSID 属性，请执行以下操作： 
 
-1. 在 Word 2013 中，选择“**文件**”，然后选择“**选项**”。
+1. 在 Word 中，选择“文件”****，然后选择“选项”****。
 2. 在“Word 选项”对话框中，选择“**信任中心**”，然后选择“**信任中心设置**”。
-3. 在“信任中心”对话框中，选择“**隐私选项**”，然后禁用“**存储随机数以提高组合精确性**”设置。
+3. 在“信任中心”对话框中，选择“隐私选项”****，然后禁用“存储随机数以提高组合精确性”**** 设置。
 
 若要从现有文档中删除 RSID 标记，请尝试在 Office Open XML 中打开的文档中使用以下快捷方式：
 
@@ -378,7 +378,7 @@ function writeContent() {
 
 因此，为了在 Word 2007 中打开 Office Open XML 格式 Word 文档时支持形状和文本框，形状（包括文本框）需要回退 VML 标记。
 
-通常情况下，对于 [Word-Add-in-Load-and-write-Open-XML](https://github.com/OfficeDev/Word-Add-in-Load-and-write-Open-XML) 代码示例中包括的形状和文本框示例，可以删除回退标记。保存文档后，Word 2013 会自动将缺失的回退标记添加到形状中。但是，如果您更想保留回退标记以确保支持所有用户方案，也不会带来危害。
+通常情况下，对于 [Word-Add-in-Load-and-write-Open-XML](https://github.com/OfficeDev/Word-Add-in-Load-and-write-Open-XML) 代码示例中包括的形状和文本框示例，可以删除回退标记。保存文档后，Word 会自动将缺失的回退标记添加到形状中。但是，如果您更想保留回退标记以确保支持所有用户方案，也不会带来危害。
 
 如果内容包括分组绘图对象，您将看到其他（以及明显重复的）标记，但这是必须保留的。当组中包含对象时，绘图形状的标记部分会被复制。
 
@@ -396,14 +396,14 @@ function writeContent() {
 
 ### <a name="working-with-content-controls"></a>使用内容控件
 
-内容控件是 Word 2013 中的重要功能，此功能可以通过多种方式大大增强 Word 外接程序的功能，包括使您可以在文档中的指定位置（而不仅仅是选定内容处）插入内容。
+内容控件是 Word 中的重要功能，此功能可以通过多种方式大大增强 Word 外接程序的功能，包括使您可以在文档中的指定位置（而不仅仅是选定内容处）插入内容。
 
 在 Word 中，内容控件位于功能区的“开发人员”选项卡上，如图 15 所示。
 
 
 *图 15：Word 中“开发人员”选项卡上的控件组*
 
-![Word 2013 功能区上的内容控件组。](../images/office15-app-create-wd-app-using-ooxml-fig15.png)
+![Word 功能区上的内容控件组。](../images/office15-app-create-wd-app-using-ooxml-fig15.png)
 
 Word 中的内容控件类型包括格式文本、纯文本、图片、构建基块库、复选框、下拉列表、组合框、日期选取器，以及重复节。
 
@@ -480,7 +480,7 @@ Word 中的内容控件类型包括格式文本、纯文本、图片、构建基
 
 - 唯一的 **id** 是必需的属性。如果从外接程序中绑定到控件，则 ID 为绑定在文档中用于标识适用的命名内容控件的属性。
 
-- **appearance** 属性用于隐藏控件容器，使外观更简洁。这是 Word 2013 中的一个新功能，通过使用 w15 命名空间可以看到。由于使用了此属性，w15 命名空间会保留在 document.xml 部件的开头。
+- **appearance** 属性用于隐藏控件容器，使外观更简洁。此功能在 Word 2013 中引入，通过使用 w15 命名空间可以看到。由于使用了此属性，w15 命名空间会保留在 document.xml 部件的开头。
 
 - **showingPlcHdr** 属性是一个可选的设置，将您包含在控件（此示例中的文本）内的默认内容设置为占位符内容。因此，如果用户在控制区域单击或点按，则选中整个内容，而不是对用户可以更改的可编辑内容进行操作。
 
@@ -672,7 +672,7 @@ function populateBinding(filename) {
 
 
 > [!NOTE]
-> “Heading 1”样式的完整 Word 2013 定义在本示例中已保留。
+> “Heading 1”样式的完整 Word 定义在本示例中已保留。
 
 
 
@@ -797,7 +797,7 @@ SmartArt 图表具有四个关联的部件，但始终需要的只有两个。�
 
     chart1.xml.rels 中共引用了三个文件，但只有一个是必需的。其中包括二进制 Excel 工作簿数据（必需）和可以删除的颜色和样式部件（colors1.xml 和 styles1.xml）。
 
-可以在本机 Word 2013 中创建并编辑的图表为 Excel 2013 图表，其数据在作为二进制数据嵌入 Office Open XML 数据包的 Excel 工作簿上进行维护。与图像的二进制数据部件类似，此 Excel 二进制数据也是必需的，但此部件中没有要编辑的内容。因此您只需在编辑器中折叠此部件，从而避免需要手动滚动全部内容来检查 Office Open XML 数据包的剩余部分。
+可以在本机 Word 中创建并编辑的图表为 Excel 图表，其数据在作为二进制数据嵌入 Office Open XML 数据包的 Excel 工作簿上进行维护。与图像的二进制数据部件类似，此 Excel 二进制数据也是必需的，但此部件中没有要编辑的内容。因此您只需在编辑器中折叠此部件，从而避免需要手动滚动全部内容来检查 Office Open XML 数据包的剩余部分。
 
 但是，类似于 SmartArt，您可以删除颜色和样式部件。如果使用了可用的图表样式和颜色样式来为图表设置格式，则图表将在插入目标文档时自动呈现为适用的格式。
 
@@ -814,7 +814,7 @@ SmartArt 图表具有四个关联的部件，但始终需要的只有两个。�
 > 请记住，您可以使用数据包中的所有 .rels 部件作为地图，以快速检查可以删除的文档部件。
 
 
-1. 在 Visual Studio 2015 中打开平展的 XML 文件，并按 Ctrl+K 和 Ctrl+D 设置文件格式。然后使用左侧的折叠/展开按钮折叠需要删除的部件。您可能还想要折叠需要但无需编辑的长部件（如图像文件的 base64 二进制数据），以使标记可以更快速更容易地进行可视化浏览。
+1. 在 Visual Studio 中打开平展的 XML 文件，并按 Ctrl+K 和 Ctrl+D 设置文件格式。然后使用左侧的折叠/展开按钮折叠需要删除的部件。您可能还想要折叠需要但无需编辑的长部件（如图像文件的 base64 二进制数据），以使标记可以更快速更容易地进行可视化浏览。
 
 2. 在准备用于加载项的 Office Open XML 标记时，文档包的几个部分几乎总是可以删除。 建议首先删除这些部分（及其关联的关系定义），这将立即大大减少包。 这些包括 theme1、fontTable、设置、webSettings、缩略图以及核心和加载项属性文件以及任何 `taskpane` 或 `webExtension` 部分。
 
@@ -834,7 +834,7 @@ SmartArt 图表具有四个关联的部件，但始终需要的只有两个。�
 
 
 > [!TIP]
-> 如果在开发期间更新现有解决方案中的 Office Open XML 代码片段，请先清除 Internet 临时文件，再重新运行解决方案，以更新代码使用的 Office Open XML。解决方案中 XML 文件包含的标记会缓存到计算机。当然，可以从默认 Web 浏览器中清除 Internet 临时文件。若要在 Visual Studio 2015 中访问 Internet 选项并删除这些设置，请选择“调试”**** 菜单中的“选项和设置”****。然后在“环境”**** 下，依次选择“Web 浏览器”**** 和“Internet Explorer 选项”****。
+> 如果在开发期间更新现有解决方案中的 Office Open XML 代码片段，请先清除 Internet 临时文件，再重新运行解决方案，以更新代码使用的 Office Open XML。解决方案中 XML 文件包含的标记会缓存到计算机。当然，可以从默认 Web 浏览器中清除 Internet 临时文件。若要在 Visual Studio 2017 中访问 Internet 选项并删除这些设置，请选择“调试”**** 菜单中的“选项”****。然后在“环境”**** 下，依次选择“Web 浏览器”**** 和“Internet Explorer 选项”****。
 
 
 ## <a name="creating-an-add-in-for-both-template-and-stand-alone-use"></a>创建用于模板和独立使用的加载项
