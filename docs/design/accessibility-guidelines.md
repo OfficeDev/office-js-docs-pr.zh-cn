@@ -1,3 +1,14 @@
+---
+title: Office 加载项的辅助功能准则
+description: ''
+ms.date: 09/24/2018
+ms.openlocfilehash: d23041e874792a5718708c2171b1fdbe0675cddf
+ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 12/22/2018
+ms.locfileid: "27433388"
+---
 # <a name="accessibility-guidelines"></a>辅助功能准则
 
 在设计和开发 Office 外接程序时，你将需要确保所有潜在用户和客户都能够成功使用你的外接程序。请应用以下准则，确保所有目标用户都能访问你的解决方案。

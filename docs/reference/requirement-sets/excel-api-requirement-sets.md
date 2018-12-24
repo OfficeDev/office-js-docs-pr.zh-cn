@@ -1,3 +1,14 @@
+---
+title: Excel JavaScript API 要求集
+description: ''
+ms.date: 10/09/2018
+ms.openlocfilehash: 825b0862e7cab1c146fc14e0095506b7f26f849b
+ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 12/22/2018
+ms.locfileid: "27434032"
+---
 # <a name="excel-javascript-api-requirement-sets"></a>Excel JavaScript API 要求集
 
 要求集是指各组已命名的 API 成员。Office 加载项使用清单中指定的要求集或执行运行时检查，以确定 Office 主机是否支持加载项所需的 API。有关详细信息，请参阅 [Office 版本和要求集](https://docs.microsoft.com/office/dev/add-ins/develop/office-versions-and-requirement-sets)。

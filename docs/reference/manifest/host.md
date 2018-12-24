@@ -1,3 +1,14 @@
+---
+title: 清单文件中的 Host 元素
+description: ''
+ms.date: 10/09/2018
+ms.openlocfilehash: 37b772261ad82b4f899e73314a08ffd1dd03b442
+ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 12/22/2018
+ms.locfileid: "27432807"
+---
 # <a name="host-element"></a>Host 元素
 
 指定应在其中激活外接程序的单个 Office 应用程序类型。
@@ -11,9 +22,9 @@
 
 ### <a name="attributes"></a>属性
 
-| 属性     | 类型   | 是否必需 | 说明                                      |
+| 属性     | 类型   | 必需 | 说明                                      |
 |:--------------|:-------|:---------|:-------------------------------------------------|
-| [名称](#name) | 字符串 | 必需 | Office 主机应用程序的类型名称。 |
+| [Name](#name) | string | 必需 | Office 主机应用程序的类型名称。 |
 
 ### <a name="name"></a>名称
 指定此外接程序面向的主机类型。值必须为以下值之一：
@@ -39,17 +50,17 @@
 
 ### <a name="attributes"></a>属性
 
-|  属性  |  是否必需  |  说明  |
+|  属性  |  必需  |  说明  |
 |:-----|:-----|:-----|
 |  [xsi:type](#xsitype)  |  是  | 描述这些设置适用的 Office 主机。|
 
 ### <a name="child-elements"></a>子元素
 
-|  元素 |  是否必需  |  说明  |
+|  元素 |  必需  |  说明  |
 |:-----|:-----|:-----|
 |  [DesktopFormFactor](desktopformfactor.md)    |  是   |  定义桌面外形规格的设置。 |
 |  [MobileFormFactor](mobileformfactor.md)    |  否   |  定义移动外形规格的设置。**注意：** 仅在 Outlook for iOS 中支持此元素。 |
-|  [AllFormFactors](allformfactors.md)    |  No   |  定义所有外形规格的设置。 仅用于 Excel 中的自定义函数。 |
+|  [AllFormFactors](allformfactors.md)    |  否   |  定义所有外形规格的设置。 仅用于 Excel 中的自定义函数。 |
 
 ### <a name="xsitype"></a>xsi:type
 

@@ -1,3 +1,14 @@
+---
+title: 清单文件中的 Resources 元素
+description: ''
+ms.date: 10/09/2018
+ms.openlocfilehash: 0707df137d075a9922836e5d960216d089c56675
+ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 12/22/2018
+ms.locfileid: "27433899"
+---
 # <a name="resources-element"></a>Resources 元素
 
 包含图标、字符串以及 [VersionOverrides](versionoverrides.md) 节点的 URL。清单元素通过使用资源的 **id** 来指定资源。这有助于将清单的大小保持在可管理的范围，尤其是当资源具有不同区域设置的版本时。**id** 在清单内必须是唯一的且最多可包含 32 个字符。
@@ -8,10 +19,10 @@
 
 |  元素 |  类型  |  说明  |
 |:-----|:-----|:-----|
-|  [图像](#images)            |  image   |  提供指向图标图像的 HTTPS URL。 |
-|  **Url**                |  url     |  提供 HTTPS URL 位置。一个 URL 最多可包含 2048 个字符。 |
+|  [Images](#images)            |  image   |  提供指向图标图像的 HTTPS URL。 |
+|  **Urls**                |  url     |  提供 HTTPS URL 位置。一个 URL 最多可包含 2048 个字符。 |
 |  **ShortStrings** |  string  |  **Label** 和 **Title** 元素的文本。每个 **String** 最多可包含 125 个字符。|
-|  **LongStrings**  |  string  | **Description** 属性的文本。每个 **String** 最多可包含 250 个字符。|
+|  **LongStrings**  |  字符串  | **Description** 属性的文本。每个 **String** 最多可包含 250 个字符。|
 
 > [!NOTE]
 > 必须对 **Image** 和 **Url** 元素中的所有 URL 使用安全套接字层 (SSL)。

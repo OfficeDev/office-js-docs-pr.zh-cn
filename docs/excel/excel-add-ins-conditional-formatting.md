@@ -1,3 +1,14 @@
+---
+title: 通过 Excel JavaScript API 将条件格式应用于范围
+description: ''
+ms.date: 10/22/2018
+ms.openlocfilehash: f4baaea04ef487c26721ecfb2a90b8609ee96777
+ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 12/22/2018
+ms.locfileid: "27433178"
+---
 # <a name="apply-conditional-formatting-to-excel-ranges"></a>将条件格式应用于特定 Excel 范围
 
 Excel JavaScript 库提供了用于将条件格式应用于工作表中的特定数据范围的 API。 借助此功能，可以轻松直观地解析大型数据集。 该格式还会基于相应范围内的更改进行动态更新。 

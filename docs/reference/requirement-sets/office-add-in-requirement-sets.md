@@ -1,6 +1,17 @@
+---
+title: Office 通用 API 要求集
+description: ''
+ms.date: 11/20/2018
+ms.openlocfilehash: 4ce96babd7f819e4cfe1581db1a51d0ae67390fd
+ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 12/22/2018
+ms.locfileid: "27433101"
+---
 # <a name="office-common-api-requirement-sets"></a>Office 通用 API 要求集
 
-要求集是指各组已命名的 API 成员。 Office 外接程序使用清单中指定的要求集或执行运行时检查，以确定 Office 主机是否支持外接程序所需的 API。 有关详细信息，请参阅 [Office 版本和要求集](https://docs.microsoft.com/office/dev/add-ins/develop/office-versions-and-requirement-sets)。
+要求集是指各组已命名的 API 成员。Office 加载项使用清单中指定的要求集或执行运行时检查，以确定 Office 主机是否支持加载项所需的 API。有关详细信息，请参阅 [Office 版本和要求集](https://docs.microsoft.com/office/dev/add-ins/develop/office-versions-and-requirement-sets)。
 
 需要了解加载项在哪些位置受 Office 主机支持？ 请参阅 [Office 加载项主机和平台可用性](https://docs.microsoft.com/office/dev/add-ins/overview/office-add-in-availability)。
 

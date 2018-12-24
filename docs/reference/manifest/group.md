@@ -1,6 +1,17 @@
+---
+title: 清单文件中的 Group 元素
+description: ''
+ms.date: 10/09/2018
+ms.openlocfilehash: 13cd9bbe6f602fd1779caea487e34177c3e9d483
+ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 12/22/2018
+ms.locfileid: "27433694"
+---
 # <a name="group-element"></a>Group 元素
 
-在选项卡中定义 UI 控件组。在自定义选项卡上，加载项最多可以创建 10 个组。每个组限制为 6 个控件，不论它显示在哪个选项卡上。加载项限于一个自定义选项卡。
+在选项卡中定义 UI 控件组在自定义选项卡上，外接程序可以创建最多 10 个组。每个组限制为 6 个控件，不论它显示在哪个选项卡上。外接程序限定到一个自定义选项卡。
 
 ## <a name="attributes"></a>属性
 
@@ -10,20 +21,20 @@
 
 ### <a name="id-attribute"></a>id 属性
 
-必需。组的唯一标识符。是一个最多为 125 个字符的字符串。该字符串在清单内必须是唯一的，否则组将无法呈现。
+必需。组的唯一标识符。是一个最多为 125 个字符的字符串。该字符串在清单内必须是唯一的，否则组将不能呈现。
 
 ## <a name="child-elements"></a>子元素
 |  元素 |  必需  |  说明  |
 |:-----|:-----|:-----|
 |  [Label](#label)      | 是 |  CustomTab 或组的标签。  |
-|  [Control](#control)    | 是 |  一个或多个 Control 对象的集合。  |
+|  [Control](#control)    | 是 |  一个或多个控件对象的集合。  |
 
 ### <a name="label"></a>标签 
 
-必需。组的标签。**resid** 属性必须设置为 [Resources](resources.md) 元素的 **ShortStrings** 元素中的 **String** 元素的 **id** 属性的值。
+必需。组的标签。 **resid** 属性必须设置为 **ShortStrings** 元素（位于 **Resources** 元素）中 **String** 元素的 [id](resources.md) 属性的值。
 
 ### <a name="control"></a>控件
-一个组至少需要一个控件。
+一个组需要至少一个控件。
 
 ```xml
 <Group id="msgreadCustomTab.grp1">

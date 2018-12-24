@@ -1,7 +1,17 @@
+---
+title: Office.context.mailbox - 要求集 1.1
+description: ''
+ms.date: 10/31/2018
+ms.openlocfilehash: 352132fcc4645463b922cd3bab200fb8efb167b4
+ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 12/22/2018
+ms.locfileid: "27433325"
+---
+# <a name="mailbox"></a>邮箱
 
-# <a name="mailbox"></a>mailbox
-
-### [Office](Office.md)[.context](Office.context.md). mailbox
+### <a name="officeofficemdcontextofficecontextmdmailbox"></a>[Office](Office.md)[.context](Office.context.md).mailbox
 
 为 Microsoft Outlook 和 Microsoft Outlook 网页版提供对 Outlook 加载项对象模型的访问权限。
 
@@ -11,7 +21,7 @@
 |---|---|
 |[最低版本的邮箱要求集](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
 |[最低权限级别](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| 受限|
-|[适用的 Outlook 模式](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Compose 或 Read|
+|[适用的 Outlook 模式](https://docs.microsoft.com/outlook/add-ins/#extension-points)| 撰写或阅读|
 
 ### <a name="namespaces"></a>命名空间
 
@@ -310,13 +320,13 @@ function cb(asyncResult) {
 > [!NOTE]
 > 此方法在下列应用场景不受支持。
 > - 在 Outlook for iOS 或 Outlook for Android 中
-> - 当外接程序载入 Gmail 邮箱中时
+> - 当加载项载入 Gmail 邮箱中时
 > 
-> 在这些情况下，外接程序应该[使用 REST API](https://docs.microsoft.com/outlook/add-ins/use-rest-api) 来改为访问用户的邮箱。
+> 在这些情况下，加载项应该[使用 REST API](https://docs.microsoft.com/outlook/add-ins/use-rest-api) 来改为访问用户的邮箱。
 
-`makeEwsRequestAsync` 方法代表外接程序将 EWS 请求发送到 Exchange。 有关支持的 EWS 操作的列表，请参阅[从 Outlook 加载项调用 Web 服务](https://docs.microsoft.com/outlook/add-ins/web-services#ews-operations-that-add-ins-support)。
+`makeEwsRequestAsync` 方法代表加载项将 EWS 请求发送到 Exchange。 有关支持的 EWS 操作的列表，请参阅[从 Outlook 加载项调用 Web 服务](https://docs.microsoft.com/outlook/add-ins/web-services#ews-operations-that-add-ins-support)。
 
-不能使用 `makeEwsRequestAsync` 方法请求与文件夹关联的项目。
+你不能使用 `makeEwsRequestAsync` 方法请求与文件夹关联的项目。
 
 XML 请求必须指定 UTF-8 编码。
 
