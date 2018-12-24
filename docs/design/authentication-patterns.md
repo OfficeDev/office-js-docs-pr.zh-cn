@@ -1,3 +1,14 @@
+---
+title: Office 外接程序的身份验证设计准则
+description: ''
+ms.date: 11/02/2018
+ms.openlocfilehash: a812a1fe6feaa1c6744205db6bfd4ed81793fefe
+ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 12/22/2018
+ms.locfileid: "27432975"
+---
 # <a name="authentication-patterns"></a>身份验证模式
 
 加载项可能需要用户登录或注册才能访问特性和功能。 用户名和密码的输入框或启动第三方凭据流的按钮是身份验证体验中常见的界面控件。 获得简单高效的身份验证体验是让用户开始使用加载项的重要第一步。

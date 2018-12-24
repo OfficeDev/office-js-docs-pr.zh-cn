@@ -1,4 +1,15 @@
-# <a name="voice-guidelines"></a>语音指南
+---
+title: Office 外接程序的语音准则
+description: ''
+ms.date: 06/27/2018
+ms.openlocfilehash: afd8d63095661634052c51ea528502368023140d
+ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 12/22/2018
+ms.locfileid: "27433283"
+---
+# <a name="voice-guidelines"></a>语音准则
 
 在设计 Office 外接程序时，请考虑你在 UI 文本和元素中使用的语音。尽量与 Office UI 的语音和语调保持一致，即口语化、有趣且用户可访问。 
 
@@ -13,7 +24,7 @@
 
 ## <a name="see-also"></a>另请参阅
 
-- [所有能力编写](https://docs.microsoft.com/style-guide/accessibility/writing-all-abilities)指南
-- [Microsoft 风格和语气的十大提示](https://docs.microsoft.com/style-guide/top-10-tips-style-voice)
-- [单词选择](https://docs.microsoft.com/style-guide/word-choice/)指南
--  Office 加载项[验证策略](https://docs.microsoft.com/office/dev/store/validation-policies)
+- [所有功能编写](https://docs.microsoft.com/style-guide/accessibility/writing-all-abilities)准则
+- [有关 Microsoft 样式和语音的前 10 个提示](https://docs.microsoft.com/style-guide/top-10-tips-style-voice)
+- [字词选择](https://docs.microsoft.com/style-guide/word-choice/)指南
+-  Office 外接程序[验证策略](https://docs.microsoft.com/office/dev/store/validation-policies)

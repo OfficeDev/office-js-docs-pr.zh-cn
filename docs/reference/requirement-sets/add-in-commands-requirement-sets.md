@@ -1,3 +1,14 @@
+---
+title: 加载项命令要求集
+description: ''
+ms.date: 11/21/2018
+ms.openlocfilehash: d0da9d9584a899658ab73e1373589a6d824f0c3e
+ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 12/22/2018
+ms.locfileid: "27432779"
+---
 # <a name="add-in-commands-requirement-sets"></a>加载项命令要求集
 
 要求集是指各组已命名的 API 成员。Office 加载项使用清单中指定的要求集或执行运行时检查，以确定 Office 主机是否支持加载项所需的 API。有关详细信息，请参阅 [Office 版本和要求集](https://docs.microsoft.com/office/dev/add-ins/develop/office-versions-and-requirement-sets)。

@@ -1,7 +1,17 @@
-
+---
+title: Office.context.mailbox.userProfile - 要求集 1.6
+description: ''
+ms.date: 10/31/2018
+ms.openlocfilehash: fe30a390583dc646e9c8792710c580d02c373a1a
+ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 12/22/2018
+ms.locfileid: "27432892"
+---
 # <a name="userprofile"></a>userProfile
 
-### [Office](Office.md)[.context](Office.context.md)[.mailbox](Office.context.mailbox.md). userProfile
+### <a name="officeofficemdcontextofficecontextmdmailboxofficecontextmailboxmduserprofile"></a>[Office](Office.md)[.context](Office.context.md)[.mailbox](Office.context.mailbox.md).userProfile
 
 ##### <a name="requirements"></a>要求
 
@@ -54,7 +64,7 @@
 console.log(Office.context.mailbox.userProfile.accountType);
 ```
 
-####  <a name="displayname-string"></a>displayName :String
+####  <a name="displayname-string"></a>displayName：字符串
 
 获取用户的显示名称。
 

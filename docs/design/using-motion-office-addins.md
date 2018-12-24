@@ -1,6 +1,17 @@
-# <a name="using-motion-in-office-add-ins"></a>在 Office 外接程序中使用动作
+---
+title: 在 Office 加载项中使用动作
+description: ''
+ms.date: 03/23/2018
+ms.openlocfilehash: 0003f7c52da190852dbd13ad58be26fa6e86911d
+ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 12/22/2018
+ms.locfileid: "27432961"
+---
+# <a name="using-motion-in-office-add-ins"></a>在 Office 加载项中使用动作
 
-设计 Office 外接程序时，可以使用动作来提升用户体验。 UI 元素、控件和组件通常都有需要使用转换、动作或动画的交互行为。 UI 界面元素之间运动的共同特征定义设计语言的动画方面。 
+设计 Office 加载项时，可以使用动作来提升用户体验。 UI 元素、控件和组件通常都有需要使用转换、动作或动画的交互行为。 UI 界面元素之间运动的共同特征定义设计语言的动画方面。 
 
 Office 的重点是工作效率，因此 Office 动画语言支持帮助客户完成工作的目标。 力求在高性能响应、可靠编排和细节带来的喜悦之间实现平衡。 Office 中嵌入的加载项不超出现有动画语言范围。 鉴于此，在应用动作时，请务必注意遵循以下几项指南。 
 
@@ -49,7 +60,7 @@ Office 的重点是工作效率，因此 Office 动画语言支持帮助客户�
 |允许事项|禁止事项|
 |:-----|:-----|
 | 应使用[建议的动作持续时间](https://developer.microsoft.com/fabric#/styles/animations)。 | 不得使用夸张的动画。 避免打造会分散客户注意力的花哨体验。
-| 遵循[建议的缓和曲线](https://docs.microsoft.com/windows/uwp/design/motion/timing-and-easing#easing-in-fluent-motion)。  |不得用不连贯的方式移动元素。 避免占先、退回、橡皮筋或其他模拟自然世界物理学的效果。|
+| 请遵循[建议的缓和曲线](https://docs.microsoft.com/windows/uwp/design/motion/timing-and-easing#easing-in-fluent-motion)。  |不得用不连贯的方式移动元素。 避免占先、退回、橡皮筋或其他模拟自然世界物理学的效果。|
 
 ![左 gif 显示使用缓和淡化效果加载磁贴，右 gif 显示使用退回效果加载磁贴](../images/add-in-motion-character.gif)
 

@@ -1,7 +1,17 @@
+---
+title: Office.context.mailbox - 要求集 1.3
+description: ''
+ms.date: 10/31/2018
+ms.openlocfilehash: eb4a69b6119644f288f90a80b161911ab4311339
+ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 12/22/2018
+ms.locfileid: "27433353"
+---
+# <a name="mailbox"></a>邮箱
 
-# <a name="mailbox"></a>mailbox
-
-### [Office](Office.md)[.context](Office.context.md). mailbox
+### <a name="officeofficemdcontextofficecontextmdmailbox"></a>[Office](Office.md)[.context](Office.context.md).mailbox
 
 为 Microsoft Outlook 和 Microsoft Outlook 网页版提供对 Outlook 加载项对象模型的访问权限。
 
@@ -11,7 +21,7 @@
 |---|---|
 |[最低版本的邮箱要求集](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
 |[最低权限级别](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| 受限|
-|[适用的 Outlook 模式](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Compose 或 Read|
+|[适用的 Outlook 模式](https://docs.microsoft.com/outlook/add-ins/#extension-points)| 撰写或阅读|
 
 ### <a name="namespaces"></a>命名空间
 
@@ -61,7 +71,7 @@
 
 ##### <a name="parameters"></a>参数：
 
-|名称| 类型| 说明|
+|名称| 类型| 描述|
 |---|---|---|
 |`itemId`| 字符串|Outlook REST API 的格式化的项目 ID。|
 |`restVersion`| [Office.MailboxEnums.RestVersion](/javascript/api/outlook_1_3/office.mailboxenums.restversion)|指示用于检索项目 ID 的 Outlook REST API 的版本。|
@@ -99,7 +109,7 @@ Outlook 或 Outlook Web App 邮件应用程序的日期和时间可以使用不�
 
 ##### <a name="parameters"></a>参数：
 
-|名称| 类型| 说明|
+|名称| 类型| 描述|
 |---|---|---|
 |`timeValue`| 日期|一个 Date 对象|
 
@@ -126,7 +136,7 @@ Outlook 或 Outlook Web App 邮件应用程序的日期和时间可以使用不�
 
 ##### <a name="parameters"></a>参数：
 
-|名称| 类型| 说明|
+|名称| 类型| 描述|
 |---|---|---|
 |`itemId`| 字符串|适用于 Exchange Web 服务 (EWS) 的项目 ID 格式化。|
 |`restVersion`| [Office.MailboxEnums.RestVersion](/javascript/api/outlook_1_3/office.mailboxenums.restversion)|值指示转换的 ID 所使用的 Outlook REST API 的版本。|
@@ -205,7 +215,7 @@ var restId = Office.context.mailbox.convertToRestId(ewsId, Office.MailboxEnums.R
 
 ##### <a name="parameters"></a>参数：
 
-|名称| 类型| 说明|
+|名称| 类型| 描述|
 |---|---|---|
 |`itemId`| 字符串|现有日历约会的 Exchange Web 服务 (EWS) 标识符。|
 
@@ -240,7 +250,7 @@ Office.context.mailbox.displayAppointmentForm(appointmentId);
 
 ##### <a name="parameters"></a>参数：
 
-|名称| 类型| 说明|
+|名称| 类型| 描述|
 |---|---|---|
 |`itemId`| 字符串|现有消息的 Exchange Web 服务 (EWS) 标识符。|
 
@@ -275,7 +285,7 @@ Office.context.mailbox.displayMessageForm(messageId);
 
 ##### <a name="parameters"></a>参数：
 
-|名称| 类型| 说明|
+|名称| 类型| 描述|
 |---|---|---|
 | `parameters` | 对象 | 描述新约会的参数字典。 |
 | `parameters.requiredAttendees` | Array.&lt;String&gt; &#124; Array.&lt;[EmailAddressDetails](/javascript/api/outlook_1_3/office.emailaddressdetails)&gt; | 包含电子邮件地址的字符串数组或包含约会的每个必需与会者的 `EmailAddressDetails` 对象的数组。数组限制为最多 100 个条目。 |
@@ -284,7 +294,7 @@ Office.context.mailbox.displayMessageForm(messageId);
 | `parameters.end` | Date | 指定约会的结束日期和时间的 `Date` 对象。 |
 | `parameters.location` | String | 包含约会位置的字符串。字符串长度限制为最多 255 个字符。 |
 | `parameters.resources` | Array.&lt;String&gt; | 包含约会所需资源的字符串数组。数组限制为最多 100 个条目。 |
-| `parameters.subject` | 字符串 | 包含约会主题的字符串。字符串长度限制为最多 255 个字符。 |
+| `parameters.subject` | String | 包含约会主题的字符串。字符串长度限制为最多 255 个字符。 |
 | `parameters.body` | 字符串 | 约会的正文。正文内容限制为最大 32 KB。 |
 
 ##### <a name="requirements"></a>要求

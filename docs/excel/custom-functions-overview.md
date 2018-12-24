@@ -1,13 +1,13 @@
 ---
-ms.date: 12/14/2018
+ms.date: 12/21/2018
 description: 在 Excel 中使用 JavaScript 创建自定义函数。
 title: 在 Excel 中创建自定义函数（预览）
-ms.openlocfilehash: be90f1f16b2e32b1b835781df95a1872516e4cfb
-ms.sourcegitcommit: 1b90ec48be51629625d21ca04e3b8880399c0116
+ms.openlocfilehash: 8f30ee32168147b8beeb6e60372cd631237ce993
+ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/19/2018
-ms.locfileid: "27378083"
+ms.lasthandoff: 12/22/2018
+ms.locfileid: "27433038"
 ---
 # <a name="create-custom-functions-in-excel-preview"></a>在 Excel 中创建自定义函数（预览）
 
@@ -419,6 +419,7 @@ function getComment(x) {
 - 在一段时间处于非活动状态后，Excel Online 中的自定义函数可能会在会话期间停止工作。 刷新浏览器页面 (F5) 并重新输入自定义函数以恢复该功能。
 - 如果在 Excel for Windows 上运行多个加载项，可能会在工作表单元格中看到 **#GETTING_DATA** 临时结果。 关闭所有 Excel 窗口并重启 Excel。
 - 将来可能会推出专门针对自定义函数的调试工具。 在此期间，可以使用 F12 开发人员工具在 Excel Online 上进行调试。 有关详细信息，请参阅[自定义函数最佳实践](custom-functions-best-practices.md)。
+- 在 32 位版本的 Office 365 *12 月*预览体验成员版本 1901（内部版本 11128.20000）上，自定义函数可能无法正常工作。 在某些情况下，你可以通过下载 https://github.com/OfficeDev/Excel-Custom-Functions/blob/december-insiders-workaround/excel-udf-host.win32.bundle 处的文件来解决此错误。 然后，将其复制到 "C:\Program Files (x86)\Microsoft Office\root\Office16" 文件夹。
 
 ## <a name="changelog"></a>更改日志
 

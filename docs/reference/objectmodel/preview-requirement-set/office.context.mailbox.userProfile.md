@@ -1,7 +1,17 @@
-
+---
+title: Office.context.mailbox.userProfile - 预览要求集
+description: ''
+ms.date: 10/31/2018
+ms.openlocfilehash: 061ee8367005f4af0795c4d9e1236d0b2443521a
+ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 12/22/2018
+ms.locfileid: "27432814"
+---
 # <a name="userprofile"></a>userProfile
 
-### [Office](Office.md)[.context](Office.context.md)[.mailbox](Office.context.mailbox.md). userProfile
+### <a name="officeofficemdcontextofficecontextmdmailboxofficecontextmailboxmduserprofile"></a>[Office](Office.md)[.context](Office.context.md)[.mailbox](Office.context.mailbox.md).userProfile
 
 ##### <a name="requirements"></a>要求
 
@@ -29,7 +39,7 @@
 
 获取与邮箱关联的用户的帐户类型。 下表中列出了可能的值。
 
-| 值 | 说明 |
+| 值 | 描述 |
 |-------|-------------|
 | `enterprise` | 邮箱位于本地 Exchange 服务器上。 |
 | `gmail` | 邮箱与 Gmail 帐户关联。 |
