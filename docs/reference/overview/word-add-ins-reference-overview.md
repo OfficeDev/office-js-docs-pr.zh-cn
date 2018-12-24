@@ -1,3 +1,14 @@
+---
+title: Word JavaScript API 概述
+description: ''
+ms.date: 10/09/2018
+ms.openlocfilehash: fb45b4197b464f1bf9799a557be0dd3c2881c63d
+ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 12/22/2018
+ms.locfileid: "27433850"
+---
 # <a name="word-javascript-api-overview"></a>Word JavaScript API 概述
 
 Word 提供了一组丰富的 API，你可以使用它们创建与文档内容和元数据进行交互的外接程序。使用这些 API 可以为用户带来与 Word 融为一体并扩展 Word 的精彩体验。你可以导入和导出内容、组合来自不同数据源的新文档，并能与文档工作流进行集成，从而创建自定义文档解决方案。

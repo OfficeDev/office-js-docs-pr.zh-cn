@@ -1,7 +1,17 @@
+---
+title: Office.context.mailbox - 预览要求集
+description: ''
+ms.date: 10/31/2018
+ms.openlocfilehash: 97f92f86c1bd8737c3c657c22b2ca882c88fb3e3
+ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 12/22/2018
+ms.locfileid: "27433948"
+---
+# <a name="mailbox"></a>邮箱
 
-# <a name="mailbox"></a>mailbox
-
-### [Office](Office.md)[.context](Office.context.md). mailbox
+### <a name="officeofficemdcontextofficecontextmdmailbox"></a>[Office](Office.md)[.context](Office.context.md).mailbox
 
 为 Microsoft Outlook 和 Microsoft Outlook 网页版提供对 Outlook 加载项对象模型的访问权限。
 
@@ -11,7 +21,7 @@
 |---|---|
 |[最低版本的邮箱要求集](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
 |[最低权限级别](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| 受限|
-|[适用的 Outlook 模式](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Compose 或 Read|
+|[适用的 Outlook 模式](https://docs.microsoft.com/outlook/add-ins/#extension-points)| 撰写或阅读|
 
 ##### <a name="members-and-methods"></a>成员和方法
 
@@ -147,7 +157,7 @@ function loadNewItem(eventArgs) {
 
 ##### <a name="parameters"></a>参数：
 
-|名称| 类型| 说明|
+|名称| 类型| 描述|
 |---|---|---|
 |`itemId`| 字符串|Outlook REST API 的格式化的项目 ID。|
 |`restVersion`| [Office.MailboxEnums.RestVersion](/javascript/api/outlook/office.mailboxenums.restversion)|指示用于检索项目 ID 的 Outlook REST API 的版本。|
@@ -185,7 +195,7 @@ Outlook 或 Outlook Web App 邮件应用程序的日期和时间可以使用不�
 
 ##### <a name="parameters"></a>参数：
 
-|名称| 类型| 说明|
+|名称| 类型| 描述|
 |---|---|---|
 |`timeValue`| 日期|一个 Date 对象|
 
@@ -212,7 +222,7 @@ Outlook 或 Outlook Web App 邮件应用程序的日期和时间可以使用不�
 
 ##### <a name="parameters"></a>参数：
 
-|名称| 类型| 说明|
+|名称| 类型| 描述|
 |---|---|---|
 |`itemId`| 字符串|适用于 Exchange Web 服务 (EWS) 的项目 ID 格式化。|
 |`restVersion`| [Office.MailboxEnums.RestVersion](/javascript/api/outlook/office.mailboxenums.restversion)|值指示转换的 ID 所使用的 Outlook REST API 的版本。|
@@ -291,7 +301,7 @@ var restId = Office.context.mailbox.convertToRestId(ewsId, Office.MailboxEnums.R
 
 ##### <a name="parameters"></a>参数：
 
-|名称| 类型| 说明|
+|名称| 类型| 描述|
 |---|---|---|
 |`itemId`| 字符串|现有日历约会的 Exchange Web 服务 (EWS) 标识符。|
 
@@ -326,7 +336,7 @@ Office.context.mailbox.displayAppointmentForm(appointmentId);
 
 ##### <a name="parameters"></a>参数：
 
-|名称| 类型| 说明|
+|名称| 类型| 描述|
 |---|---|---|
 |`itemId`| 字符串|现有消息的 Exchange Web 服务 (EWS) 标识符。|
 
@@ -364,7 +374,7 @@ Office.context.mailbox.displayMessageForm(messageId);
 > [!NOTE]
 > 所有参数都是可选参数。
 
-|名称| 类型| 说明|
+|名称| 类型| 描述|
 |---|---|---|
 | `parameters` | 对象 | 描述新约会的参数字典。 |
 | `parameters.requiredAttendees` | Array.&lt;String&gt; &#124; Array.&lt;[EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails)&gt; | 包含电子邮件地址的字符串数组或包含约会的每个必需与会者的 `EmailAddressDetails` 对象的数组。数组限制为最多 100 个条目。 |
@@ -373,7 +383,7 @@ Office.context.mailbox.displayMessageForm(messageId);
 | `parameters.end` | Date | 指定约会的结束日期和时间的 `Date` 对象。 |
 | `parameters.location` | String | 包含约会位置的字符串。字符串长度限制为最多 255 个字符。 |
 | `parameters.resources` | Array.&lt;String&gt; | 包含约会所需资源的字符串数组。数组限制为最多 100 个条目。 |
-| `parameters.subject` | 字符串 | 包含约会主题的字符串。字符串长度限制为最多 255 个字符。 |
+| `parameters.subject` | String | 包含约会主题的字符串。字符串长度限制为最多 255 个字符。 |
 | `parameters.body` | 字符串 | 约会的正文。正文内容限制为最大 32 KB。 |
 
 ##### <a name="requirements"></a>要求
@@ -417,7 +427,7 @@ Office.context.mailbox.displayNewAppointmentForm(
 > [!NOTE]
 > 所有参数都是可选参数。
 
-|名称| 类型| 说明|
+|名称| 类型| 描述|
 |---|---|---|
 | `parameters` | 对象 | 描述新邮件的参数字典。 |
 | `parameters.toRecipients` | Array.&lt;String&gt; &#124; Array.&lt;[EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails)&gt; | 包含电子邮件地址的字符串数组或包含收件人行上每个收件人的 `EmailAddressDetails` 对象的数组。 数组限制为最多 100 个条目。 |
@@ -428,8 +438,8 @@ Office.context.mailbox.displayNewAppointmentForm(
 | `parameters.attachments` | Array.&lt;Object&gt; | JSON 对象（文件或项目附件）数组。 |
 | `parameters.attachments.type` | 字符串 | 指示附件的类型。必须是文件附件的 `file` 或项目附件的 `item`。 |
 | `parameters.attachments.name` | 字符串 | 一个包含附件的名称的字符串，最多包含 255 个字符。|
-| `parameters.attachments.url` | 字符串 | 仅在将 `type` 设置为 `file` 时使用。文件的位置的 URI。 |
-| `parameters.attachments.isInline` | Boolean | 仅在将 `type` 设置为 `file` 时使用。如果为 `true`，则表示附件将在邮件正文中内联显示，并且不应显示在附件列表中。 |
+| `parameters.attachments.url` | String | 仅在将 `type` 设置为 `file` 时使用。文件的位置的 URI。 |
+| `parameters.attachments.isInline` | 布尔 | 仅在将 `type` 设置为 `file` 时使用。如果为 `true`，则表示附件将在邮件正文中内联显示，并且不应显示在附件列表中。 |
 | `parameters.attachments.itemId` | String | 仅在将 `type` 设置为 `item` 时使用。 要附加到新邮件的现有电子邮件的 EWS 项 ID。 最长为 100 个字符的字符串。 |
 
 
@@ -487,9 +497,9 @@ Office.context.mailbox.displayNewMessageForm(
 
 |名称| 类型| 属性| 说明|
 |---|---|---|---|
-| `options` | 对象 | &lt;可选&gt; | 包含一个或多个以下属性的对象文本。 |
+| `options` | Object | &lt;可选&gt; | 包含一个或多个以下属性的对象文本。 |
 | `options.isRest` | 布尔值 |  &lt;可选&gt; | 确定所提供的令牌是否将用于 Outlook REST API 或 Exchange Web 服务。默认值为 `false`。 |
-| `options.asyncContext` | 对象 |  &lt;可选&gt; | 传递给异步方法的任何状态数据。 |
+| `options.asyncContext` | Object |  &lt;可选&gt; | 传递给异步方法的任何状态数据。 |
 |`callback`| 函数||方法完成后，使用单个参数 `callback`（一个 [`asyncResult`](/javascript/api/office/office.asyncresult) 对象）调用在 `AsyncResult` 参数中传递的函数。令牌作为 `asyncResult.value` 属性中的字符串提供。|
 
 ##### <a name="requirements"></a>要求

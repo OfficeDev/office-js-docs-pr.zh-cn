@@ -1,3 +1,14 @@
+---
+title: 清单文件中的 SupportUrl 元素
+description: ''
+ms.date: 10/09/2018
+ms.openlocfilehash: 00234ef9fe8960b9956e6a2595e2e2e71bfb97c6
+ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 12/22/2018
+ms.locfileid: "27432667"
+---
 # <a name="supporturl-element"></a>SupportUrl 元素
 
 指定提供外接程序支持信息的页面的 URL。
@@ -21,18 +32,18 @@
 </OfficeApp>
 ```
 
-## <a name="contained-in"></a>包含在
+## <a name="contained-in"></a>包含于
 
 [OfficeApp](officeapp.md)
 
 ## <a name="can-contain"></a>可以包含
 
-|  元素 | 必需 | 描述  |
+|  元素 | 必需 | 说明  |
 |:-----|:-----|:-----|
-|  [替代](override.md)   | No | 指定其他区域设置 URL 的设置 |
+|  [Override](override.md)   | 否 | 指定其他区域设置 URL 的设置 |
 
 ## <a name="attributes"></a>属性
 
-|**属性**|**类型**|**必需**|**描述**|
+|**属性**|**类型**|**必需**|**说明**|
 |:-----|:-----|:-----|:-----|
-|DefaultValue|URL|必需|指定此设置的默认值，表示为 [DefaultLocale](defaultlocale.md) 元素中指定的区域设置。|
+|DefaultValue|URL|必需|指定该设置的默认值，表示为 [DefaultLocale](defaultlocale.md) 元素中指定的区域设置。|

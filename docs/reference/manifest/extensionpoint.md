@@ -1,3 +1,14 @@
+---
+title: 清单文件中的 ExtensionPoint 元件
+description: ''
+ms.date: 10/09/2018
+ms.openlocfilehash: 21def2de7168ff06c1eda26add07c33d366ec296
+ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 12/22/2018
+ms.locfileid: "27433962"
+---
 # <a name="extensionpoint-element"></a>ExtensionPoint 元素
 
  定义 Office UI 中加载项公开功能的位置。 **ExtensionPoint** 元素是 [AllFormFactors](allformfactors.md)、[DesktopFormFactor](desktopformfactor.md) 或 [MobileFormFactor](mobileformfactor.md) 的子元素。 
@@ -10,19 +21,19 @@
 
 ## <a name="extension-points-for-excel-only"></a>仅适用于 Excel 的扩展点
 
-- **CustomFunctions** -针对 Excel 、用 JavaScript 编写的自定义函数。
+- **CustomFunctions** - 针对 Excel 使用 JavaScript 编写的自定义函数。
 
-[此 XML 代码示例](https://github.com/OfficeDev/Excel-Custom-Functions/blob/master/customfunctions.xml) 演示如何使用 **ExtensionPoint** 元素与 **CustomFunctions** 属性值，以及使用的子元素。
+[此 XML 示例代码](https://github.com/OfficeDev/Excel-Custom-Functions/blob/master/customfunctions.xml)演示如何将 **ExtensionPoint** 元素与 **CustomFunctions** 属性值配合使用，以及如何使用子元素。
 
 ## <a name="extension-points-for-word-excel-powerpoint-and-onenote-add-in-commands"></a>适用于 Word、Excel、PowerPoint 和 OneNote 加载项命令的扩展点
 
 - **PrimaryCommandSurface** - Office 中的功能区。
 - **ContextMenu** - Office UI 中右键单击时出现的快捷菜单。
 
-下面的示例演示如何将  **ExtensionPoint** 元素与 **PrimaryCommandSurface** 和 **ContextMenu** 属性值配合使用，以及使用每一项时的子元素。
+下面的示例演示如何将  **ExtensionPoint** 元素与 **PrimaryCommandSurface** 和 **ContextMenu** 属性值配合使用，以及应彼此配合使用的子元素。
 
 > [!IMPORTANT] 
-> 对于包含 ID 属性的元素，请务必提供唯一的 ID。 建议将你公司的名称与你的 ID一起使用。 例如，使用以下格式。 <CustomTab id="mycompanyname.mygroupname">
+> 对于包含 ID 属性的元素，请务必提供唯一的 ID。 建议将你的公司名称用于此 ID。 例如，使用以下格式。 <CustomTab id="mycompanyname.mygroupname">
 
 ```XML
 <ExtensionPoint xsi:type="PrimaryCommandSurface">
@@ -61,18 +72,18 @@
  
 |**元素**|**说明**|
 |:-----|:-----|
-|**CustomTab**|如果想要向功能区添加自定义选项卡（使用 **PrimaryCommandSurface**），则为必需项。如果使用 **CustomTab** 元素，则不能使用 **OfficeTab** 元素。**id** 属性是必需的。|
-|**OfficeTab**|如果想要扩展默认 Office 功能区选项卡（使用 **PrimaryCommandSurface**），则为必需项。如果使用 **OfficeTab** 元素，则不能使用 **CustomTab** 元素。有关详细信息，请参阅 [OfficeTab](officetab.md)。|
-|**OfficeMenu**|如果（使用 **ContextMenu**）正将外接程序命令添加到默认上下文菜单中，则为必需项。**id** 属性必须设置为： <br/> - 适用于 Excel 或 Word 的 **ContextMenuText**。当用户选定文本时显示上下文菜单上的项，然后用户右键单击所选定的文本。 <br/> - 适用于 Excel 的 **ContextMenuCell**。当用户右键单击电子表格中的某个单元格时显示上下文菜单上的项。|
+|**CustomTab**|如果想要（使用 **PrimaryCommandSurface**）向功能区添加自定义选项卡，则为必需项。如果使用 **CustomTab** 元素，则不能使用 **OfficeTab** 元素。**id** 属性是必需的。|
+|**OfficeTab**|如果想要（使用 **PrimaryCommandSurface**）扩展默认 Office 功能区选项卡，则为必需项。如果使用 **OfficeTab** 元素，则不能使用 **CustomTab** 元素。有关详细信息，请参阅 [OfficeTab](officetab.md)。|
+|**OfficeMenu**|如果正（使用 **ContextMenu**）将外接程序命令添加到默认上下文菜单中，则为必需项。**id** 属性必须设置为： <br/> 适用于 Excel 或 Word 的 - **ContextMenuText**当用户选定文本，然后右键单击所选定的文本时显示上下文菜单上的项。 <br/> 适用于 Excel 的 - **ContextMenuCell**当用户右键单击电子表格中的某个单元格时显示上下文菜单上的项。|
 |**Group**|选项卡上的一组用户界面扩展点。一个组可以有最多六个控件。 **id** 属性是必需项。它是最多使用 125 个字符的字符串。|
-|**标签**|必需。组标签。**resid** 属性必须设置为 **String** 元素的 **id** 属性的值。**String** 元素是 **ShortStrings** 元素的子元素，而 ShortStrings 元素是 **Resources** 元素的子元素。|
-|**图标**|必需。指定将在小型设备上使用或在显示过多按钮的情况下使用的组图标。**resid** 属性必须设置为 **Image** 元素的 **id** 属性的值。**Image** 元素是 **Images** 元素的子元素，而 Images 元素是 **Resources** 元素的子元素。**size** 属性给出图像的大小（以像素为单位）。要求三种图像大小：16、32 和 80。也同样支持五种可选大小：20、24、40、48 和 64。|
+|**Label**|必需。组标签。**resid** 属性必须设置为 **String** 元素的 **id** 属性的值。**String** 元素是 **ShortStrings** 元素的子元素，而 ShortStrings 元素是 **Resources** 元素的子元素。|
+|**Icon**|必需。指定将在小型设备上使用或在显示过多按钮的情况下使用的组图标。**resid** 属性必须设置为 **Image** 元素的 **id** 属性的值。**Image** 元素是 **Images** 元素的子元素，而 Images 元素是 **Resources** 元素的子元素。**size** 属性给出图像的大小（以像素为单位）。要求三种图像大小：16、32 和 80。也同样支持五种可选大小：20、24、40、48 和 64。|
 |**Tooltip**|可选。组的工具提示**resid** 属性必须设置为 **String** 元素的 **id** 属性的值。**String** 元素是 **LongStrings** 元素的子元素，而 LongStrings 元素是 **Resources** 元素的子元素。|
-|**控件**|每个组需要至少一个控件。 **Control** 元素可以是一个**按钮**，也可以是一个**菜单**。 使用**菜单**指定按钮控件的下拉列表。 目前，仅支持“按钮”和“菜单”。 请参阅[按钮控件](control.md#button-control)和[菜单控件](control.md#menu-dropdown-button-controls)各节了解详细信息。<br/>**注意**  为了使故障排除变得更简单，我们建议一次性添加 **Control** 元素和相关的 **Resources** 子元素。|
-|**脚本**|使用自定义函数定义和注册代码链接到 JavaScript 文件。 在开发者预览版中不使用此元素。 实际上，HTML 页负责加载所有 JavaScript 文件。|
-|**页面**|链接到自定义函数的 HTML 页。|
+|**Control**|每个组需要至少一个控件。 **Control** 元素可以是一个**按钮**，也可以是一个**菜单**。 使用**菜单**指定按钮控件的下拉列表。 目前，仅支持“按钮”和“菜单”。 请参阅[按钮控件](control.md#button-control)和[菜单控件](control.md#menu-dropdown-button-controls)各节了解详细信息。<br/>**注意**  为了使故障排除变得更简单，我们建议一次性添加 **Control** 元素和相关的 **Resources** 子元素。|
+|**Script**|使用自定义函数定义和注册代码链接到 JavaScript 文件。 在开发者预览版中不使用此元素。 实际上，HTML 页负责加载所有 JavaScript 文件。|
+|**Page**|链接到自定义函数的 HTML 页。|
 
-## <a name="extension-points-for-outlook"></a>Outlook 扩展点
+## <a name="extension-points-for-outlook"></a>仅适用于 Outlook 的扩展点
 
 - [MessageReadCommandSurface](#messagereadcommandsurface) 
 - [MessageComposeCommandSurface](#messagecomposecommandsurface) 
@@ -80,7 +91,7 @@
 - [AppointmentAttendeeCommandSurface](#appointmentattendeecommandsurface)
 - [Module](#module)（仅能在 [DesktopFormFactor](desktopformfactor.md) 中使用。）
 - [MobileMessageReadCommandSurface](#mobilemessagereadcommandsurface)
-- [事件](#events)
+- [Events](#events)
 - [DetectedEntity](#detectedentity)
 
 ### <a name="messagereadcommandsurface"></a>MessageReadCommandSurface
@@ -142,7 +153,7 @@
 
 ### <a name="appointmentorganizercommandsurface"></a>AppointmentOrganizerCommandSurface
 
-此扩展点将按钮置于向会议的组织者显示的窗体功能区上。 
+此扩展点将按钮置于向会议的组织者显示的窗体的功能区上。 
 
 #### <a name="child-elements"></a>子元素
 
@@ -171,7 +182,7 @@
 
 ### <a name="appointmentattendeecommandsurface"></a>AppointmentAttendeeCommandSurface
 
-此扩展点将按钮置于向会议与会者显示的窗体功能区上。 
+此扩展点将按钮置于向会议与会者显示的窗体的功能区上。 
 
 #### <a name="child-elements"></a>子元素
 
@@ -198,7 +209,7 @@
 </ExtensionPoint>
 ```
 
-### <a name="module"></a>模块
+### <a name="module"></a>Module
 
 此扩展点将按钮置于模块扩展的功能区上。 
 
@@ -239,40 +250,40 @@
 此扩展点添加了指定事件的事件处理程序。
 
 > [!NOTE]
-> 注意：仅 Office 365 中的 Outlook 网页版支持此元素类型。
+> 仅 Office 365 中的 Outlook 网页版支持此元素类型。
 
 | 元素 | 说明  |
 |:-----|:-----|
-|  [事件](event.md) |  指定事件和事件处理程序函数。  |
+|  [Event](event.md) |  指定事件和事件处理程序函数。  |
 
 #### <a name="itemsend-event-example"></a>ItemSend 事件示例
 
 ```xml
-<ExtensionPoint xsi:type="Events"> 
-  <Event Type="ItemSend" FunctionExecution="synchronous" FunctionName="itemSendHandler" /> 
-</ExtensionPoint> 
+<ExtensionPoint xsi:type="Events"> 
+  <Event Type="ItemSend" FunctionExecution="synchronous" FunctionName="itemSendHandler" /> 
+</ExtensionPoint> 
 ```
 
 ### <a name="detectedentity"></a>DetectedEntity
 
 此扩展点在指定实体类型上添加上下文外接程序激活。
 
-包含的 [VersionOverrides](versionoverrides.md) 元素的 `VersionOverridesV1_1` 的属性值必须为 `xsi:type`。
+包含 [VersionOverrides](versionoverrides.md) 元素的 `xsi:type` 属性值必须为 `VersionOverridesV1_1`。
 
 > [!NOTE]
-> 注意：仅 Office 365 中的 Outlook 网页版支持此元素类型。
+> 仅 Office 365 中的 Outlook 网页版支持此元素类型。
 
 |  元素 |  说明  |
 |:-----|:-----|
-|  [标签](#label) |  在上下文窗口中指定外接程序的标签。  |
+|  [Label](#label) |  在上下文窗口中指定外接程序的标签。  |
 |  [SourceLocation](sourcelocation.md) |  指定上下文窗口的 URL。  |
-|  [规则](rule.md) |  指定确定外接程序激活时间的一个或多个规则。  |
+|  [Rule](rule.md) |  指定确定外接程序激活时间的一个或多个规则。  |
 
 #### <a name="label"></a>标签
 
-必需。组的标签。**resid** 属性必须设置为 [Resources](resources.md) 元素的 **ShortStrings** 元素中的 **String** 元素的 **id** 属性的值。
+必需。组的标签。 **resid** 属性必须设置为 **ShortStrings** 元素（位于 **Resources** 元素）中 **String** 元素的 [id](resources.md) 属性的值。
 
-#### <a name="highlight-requirements"></a>突出要求
+#### <a name="highlight-requirements"></a>突出显示要求
 
 用户可以激活上下文外接程序的唯一方法是与突出显示实体进行交互。开发人员可以使用 `ItemHasKnownEntity` 和`ItemHasRegularExpressionMatch` 规则类型的 `Rule` 元素的 `Highlight` 属性来控制突出显示哪些实体。
 

@@ -1,11 +1,22 @@
-#<a name="design-toolkits"></a>设计工具包
+---
+title: Office 外接程序的设计工具包
+description: ''
+ms.date: 06/27/2018
+ms.openlocfilehash: ebcffd027c1a3710cab02c7e67ab020f7b76c826
+ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 12/22/2018
+ms.locfileid: "27433248"
+---
+# <a name="design-toolkits"></a>设计工具包
 
-我们已经包含了我们的工具包，以帮助您开始使用。 您可以在这里找到我们所有可用的模式，它们附有简要说明、布局建议和示例加载项。
+我们提供了可帮助你入门的工具包。 你可以在该工具包中找到所有可用模式及其简要说明、布局推荐和示例外接程序。
 
-### <a name="downloads"></a>下载
+### <a name="downloads"></a>下载内容
 
-* [面料设计草图工具包](https://aka.ms/fabric-sketch-toolkit)
-* [面料设计Adobe XD工具包](https://aka.ms/fabric-toolkit)
-* [加载项草图工具包](https://aka.ms/addins_sketch_toolkit)
-* [加载项Adobe XD工具包](https://aka.ms/addins_toolkit)
-* [Segoe UI和Fabric MDL2图标字体](https://static2.sharepointonline.com/files/fabric/fabric-website/files/segoeui_fabricmdl2_icon_fonts.zip)
+* [Fabric Design Sketch Toolkit](https://aka.ms/fabric-sketch-toolkit)
+* [Fabric Design Adobe XD Toolkit](https://aka.ms/fabric-toolkit)
+* [Add-in Sketch Toolkit](https://aka.ms/addins_sketch_toolkit)
+* [Add-in Adobe XD Toolkit](https://aka.ms/addins_toolkit)
+* [Segoe UI 和 Fabric MDL2 图标字体](https://static2.sharepointonline.com/files/fabric/fabric-website/files/segoeui_fabricmdl2_icon_fonts.zip)

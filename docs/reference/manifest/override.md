@@ -1,8 +1,19 @@
+---
+title: 清单文件中的 Override 元素
+description: ''
+ms.date: 10/09/2018
+ms.openlocfilehash: d1d2400312f12116b1ac5f4010135541e783dcc7
+ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 12/22/2018
+ms.locfileid: "27432863"
+---
 # <a name="override-element"></a>Override 元素
 
 提供一种为其他区域设置指定某设置的值的方法。
 
-**加载项类型：** Content、Task pane、Mail
+**加载项类型：** 内容、任务窗格和邮件
 
 ## <a name="syntax"></a>语法
 
@@ -10,12 +21,12 @@
 <Override Locale="string" Value="string" />
 ```
 
-## <a name="contained-in"></a>包含在
+## <a name="contained-in"></a>包含于
 
-|**元素**|
+|**Element**|
 |:-----|
 |[CitationText](citationtext.md)|
-|[Description](description.md)|
+|[说明](description.md)|
 |[DictionaryName](dictionaryname.md)|
 |[DictionaryHomePage](dictionaryhomepage.md)|
 |[DisplayName](displayname.md)|
@@ -29,10 +40,10 @@
 
 |**属性**|**类型**|**必需**|**说明**|
 |:-----|:-----|:-----|:-----|
-|Locale|string|必需|为此替代项指定区域设置的区域性名称，采用 BCP 47 语言标记格式，例如 `"en-US"`。|
-|Value|string|必需|指定设置的值，表示为指定区域设置。|
+|Locale|字符串|必需|为此替代项指定区域设置的区域性名称，采用 BCP 47 语言标记格式，例如 `"en-US"`。|
+|值|字符串|必需|指定表示为指定区域设置的设置的值。|
 
 ## <a name="see-also"></a>另请参阅
 
-- [Office 加载项的本地化](https://docs.microsoft.com/office/dev/add-ins/develop/localization)
+- [Office 外接程序的本地化](https://docs.microsoft.com/office/dev/add-ins/develop/localization)
     
