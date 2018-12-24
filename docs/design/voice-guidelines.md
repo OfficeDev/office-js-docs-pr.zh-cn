@@ -1,19 +1,30 @@
-# <a name="voice-guidelines"></a><span data-ttu-id="a1999-101">语音指南</span><span class="sxs-lookup"><span data-stu-id="a1999-101">Voice guidelines</span></span>
+---
+title: Office 外接程序的语音准则
+description: ''
+ms.date: 06/27/2018
+ms.openlocfilehash: afd8d63095661634052c51ea528502368023140d
+ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 12/22/2018
+ms.locfileid: "27433283"
+---
+# <a name="voice-guidelines"></a><span data-ttu-id="7a6a5-102">语音准则</span><span class="sxs-lookup"><span data-stu-id="7a6a5-102">Voice guidelines</span></span>
 
-<span data-ttu-id="a1999-p101">在设计 Office 外接程序时，请考虑你在 UI 文本和元素中使用的语音。尽量与 Office UI 的语音和语调保持一致，即口语化、有趣且用户可访问。</span><span class="sxs-lookup"><span data-stu-id="a1999-p101">As you design your Office Add-ins, consider the voice that you use in your UI text and elements. Strive to match the voice and tone of the Office UI, which is conversational, engaging, and accessible to users.</span></span> 
+<span data-ttu-id="7a6a5-p101">在设计 Office 外接程序时，请考虑你在 UI 文本和元素中使用的语音。尽量与 Office UI 的语音和语调保持一致，即口语化、有趣且用户可访问。</span><span class="sxs-lookup"><span data-stu-id="7a6a5-p101">As you design your Office Add-ins, consider the voice that you use in your UI text and elements. Strive to match the voice and tone of the Office UI, which is conversational, engaging, and accessible to users.</span></span> 
 
-<span data-ttu-id="a1999-104">要使文本与 Office 语音的准则相符，请执行以下操作：</span><span class="sxs-lookup"><span data-stu-id="a1999-104">To align your text with the principles of the Office voice:</span></span>
+<span data-ttu-id="7a6a5-105">要使文本与 Office 语音的准则相符，请执行以下操作：</span><span class="sxs-lookup"><span data-stu-id="7a6a5-105">To align your text with the principles of the Office voice:</span></span>
 
-- <span data-ttu-id="a1999-p102">**使用自然的风格。** 写下您说话的方式。避免使用行话和技术性太强的单词和短语。使用用户熟悉的术语。</span><span class="sxs-lookup"><span data-stu-id="a1999-p102">**Use a natural style.** Write the way that you speak. Avoid jargon and overly technical words and phrases. Use terms that are familiar to your users.</span></span>
-- <span data-ttu-id="a1999-p103">**使用简单、直白的语言。** 在文本中使用短的单词和句子，使用主动语态。</span><span class="sxs-lookup"><span data-stu-id="a1999-p103">**Use simple, direct language.** Use short words and sentences, and active voice in your text.</span></span> 
-- <span data-ttu-id="a1999-p104">**保持一致。** 对相同的概念始终使用相同的措辞。</span><span class="sxs-lookup"><span data-stu-id="a1999-p104">**Be consistent.** Use the same words for the same concepts throughout.</span></span>
-- <span data-ttu-id="a1999-p105">**吸引用户。** 将用户称为“您”。避免使用第三人称。对用户任务使用祈使句。</span><span class="sxs-lookup"><span data-stu-id="a1999-p105">**Engage the user.** Address the user as "you". Avoid using third person. Use imperatives for user tasks.</span></span>
-- <span data-ttu-id="a1999-p106">**乐于帮助用户并为用户设身处地着想。** 呈现积极、礼貌、鼓舞人心且能提供支持的文本。强调用户能够完成的任务，而不是无法完成的任务。</span><span class="sxs-lookup"><span data-stu-id="a1999-p106">**Be helpful and empathetic.** Make your text positive, polite, supportive, and encouraging. Emphasize what users can accomplish ― not what they can't.</span></span>
-- <span data-ttu-id="a1999-p107">**了解客户。** 使用习语或口语时，请注意考虑到文化和全球化因素。</span><span class="sxs-lookup"><span data-stu-id="a1999-p107">**Know your customers.** Be mindful of cultural considerations and globalization when you use idioms or colloquialisms.</span></span>
+- <span data-ttu-id="7a6a5-p102">**使用自然的风格。** 写下您说话的方式。避免使用行话和技术性太强的单词和短语。使用用户熟悉的术语。</span><span class="sxs-lookup"><span data-stu-id="7a6a5-p102">**Use a natural style.** Write the way that you speak. Avoid jargon and overly technical words and phrases. Use terms that are familiar to your users.</span></span>
+- <span data-ttu-id="7a6a5-p103">**使用简单、直白的语言。** 在文本中使用短的单词和句子，使用主动语态。</span><span class="sxs-lookup"><span data-stu-id="7a6a5-p103">**Use simple, direct language.** Use short words and sentences, and active voice in your text.</span></span> 
+- <span data-ttu-id="7a6a5-p104">**保持一致。** 对相同的概念始终使用相同的措辞。</span><span class="sxs-lookup"><span data-stu-id="7a6a5-p104">**Be consistent.** Use the same words for the same concepts throughout.</span></span>
+- <span data-ttu-id="7a6a5-p105">**吸引用户。** 将用户称为“您”。避免使用第三人称。对用户任务使用祈使句。</span><span class="sxs-lookup"><span data-stu-id="7a6a5-p105">**Engage the user.** Address the user as "you". Avoid using third person. Use imperatives for user tasks.</span></span>
+- <span data-ttu-id="7a6a5-p106">**乐于帮助用户并为用户设身处地着想。** 呈现积极、礼貌、鼓舞人心且能提供支持的文本。强调用户能够完成的任务，而不是无法完成的任务。</span><span class="sxs-lookup"><span data-stu-id="7a6a5-p106">**Be helpful and empathetic.** Make your text positive, polite, supportive, and encouraging. Emphasize what users can accomplish ― not what they can't.</span></span>
+- <span data-ttu-id="7a6a5-p107">**了解客户。** 使用习语或口语时，请注意考虑到文化和全球化因素。</span><span class="sxs-lookup"><span data-stu-id="7a6a5-p107">**Know your customers.** Be mindful of cultural considerations and globalization when you use idioms or colloquialisms.</span></span>
 
-## <a name="see-also"></a><span data-ttu-id="a1999-122">另请参阅</span><span class="sxs-lookup"><span data-stu-id="a1999-122">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="7a6a5-123">另请参阅</span><span class="sxs-lookup"><span data-stu-id="7a6a5-123">See also</span></span>
 
-- <span data-ttu-id="a1999-123">[所有能力编写](https://docs.microsoft.com/style-guide/accessibility/writing-all-abilities)指南</span><span class="sxs-lookup"><span data-stu-id="a1999-123">Guidelines for [writing for all abilities](https://docs.microsoft.com/style-guide/accessibility/writing-all-abilities)</span></span>
-- [<span data-ttu-id="a1999-124">Microsoft 风格和语气的十大提示</span><span class="sxs-lookup"><span data-stu-id="a1999-124">Top 10 tips for Microsoft style and voice</span></span>](https://docs.microsoft.com/style-guide/top-10-tips-style-voice)
-- <span data-ttu-id="a1999-125">[单词选择](https://docs.microsoft.com/style-guide/word-choice/)指南</span><span class="sxs-lookup"><span data-stu-id="a1999-125">Guidelines on [word choice](https://docs.microsoft.com/style-guide/word-choice/)</span></span>
--  <span data-ttu-id="a1999-126">Office 加载项[验证策略](https://docs.microsoft.com/office/dev/store/validation-policies)</span><span class="sxs-lookup"><span data-stu-id="a1999-126">Office Add-in [validation policies](https://docs.microsoft.com/office/dev/store/validation-policies)</span></span>
+- <span data-ttu-id="7a6a5-124">[所有功能编写](https://docs.microsoft.com/style-guide/accessibility/writing-all-abilities)准则</span><span class="sxs-lookup"><span data-stu-id="7a6a5-124">Guidelines for [writing for all abilities](https://docs.microsoft.com/style-guide/accessibility/writing-all-abilities)</span></span>
+- [<span data-ttu-id="7a6a5-125">有关 Microsoft 样式和语音的前 10 个提示</span><span class="sxs-lookup"><span data-stu-id="7a6a5-125">Top 10 tips for Microsoft style and voice</span></span>](https://docs.microsoft.com/style-guide/top-10-tips-style-voice)
+- <span data-ttu-id="7a6a5-126">[字词选择](https://docs.microsoft.com/style-guide/word-choice/)指南</span><span class="sxs-lookup"><span data-stu-id="7a6a5-126">Guidelines on [word choice](https://docs.microsoft.com/style-guide/word-choice/)</span></span>
+-  <span data-ttu-id="7a6a5-127">Office 外接程序[验证策略](https://docs.microsoft.com/office/dev/store/validation-policies)</span><span class="sxs-lookup"><span data-stu-id="7a6a5-127">Office Add-in [validation policies](https://docs.microsoft.com/office/dev/store/validation-policies)</span></span>
