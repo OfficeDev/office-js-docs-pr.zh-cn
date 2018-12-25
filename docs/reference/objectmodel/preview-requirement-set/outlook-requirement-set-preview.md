@@ -1,3 +1,14 @@
+---
+title: Outlook 外接程序 API 预览要求集
+description: ''
+ms.date: 10/31/2018
+ms.openlocfilehash: e1ed6cae6ac3753f420763b63de0d05283a8fac5
+ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 12/22/2018
+ms.locfileid: "27433661"
+---
 # <a name="outlook-add-in-api-preview-requirement-set"></a>Outlook 外接程序 API 预览要求集
 
 适用于 Office 的 JavaScript API 的 Outlook 外接程序 API 子集包括可以在 Outlook 外接程序中使用的对象、方法、属性和事件。

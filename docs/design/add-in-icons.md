@@ -1,3 +1,14 @@
+---
+title: Office 外接程序的图标准则
+description: ''
+ms.date: 06/27/2018
+ms.openlocfilehash: 853f47d5ce8d9ce7efd5e7e048f4f3151448887e
+ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 12/22/2018
+ms.locfileid: "27433941"
+---
 # <a name="icons"></a>图标
 图标是行为或概念的可视化表示形式。 它们通常用于为控件和命令添加含义。 实际或符号化的视觉对象使用户能够以与标记帮助用户浏览其环境的相同方式浏览 UI。 这些视觉对象应简单明了，并且只包含所需的详细信息，以使客户能够快速分析他们在选择控件时将会发生的操作。
 

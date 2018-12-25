@@ -1,3 +1,14 @@
+---
+title: 清单文件中的 AppDomains 元素
+description: ''
+ms.date: 12/13/2018
+ms.openlocfilehash: cc2f5ade0bdda214c85490f8e474b42f921edbe8
+ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 12/22/2018
+ms.locfileid: "27433676"
+---
 # <a name="appdomains-element"></a>AppDomains 元素
 
 列出了除 Office 外接程序用于加载页面的 SourceLocation 元素中指定的域之外的所有域。对于每个其他域，指定 AppDomain 元素。

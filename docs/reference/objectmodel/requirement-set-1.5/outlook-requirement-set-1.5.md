@@ -1,4 +1,15 @@
-# <a name="outlook-add-in-api-requirement-set-15"></a>Outlook 加载项 API 要求集 1.5
+---
+title: Outlook 加载项 API 要求集 1.5
+description: ''
+ms.date: 11/14/2018
+ms.openlocfilehash: dc6432c3e55ed75c120c2872233ca0f275010e73
+ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 12/22/2018
+ms.locfileid: "27433927"
+---
+# <a name="outlook-add-in-api-requirement-set-15"></a>Outlook 外接程序 API 要求集 1.5
 
 适用于 Office 的 JavaScript API 的 Outlook 加载项 API 子集包括可以在 Outlook 加载项中使用的对象、方法、属性和事件。
 

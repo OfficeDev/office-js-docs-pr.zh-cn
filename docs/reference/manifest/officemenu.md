@@ -1,3 +1,14 @@
+---
+title: 清单文件中的 OfficeMenu 元素
+description: ''
+ms.date: 10/09/2018
+ms.openlocfilehash: d243612c9b78c362bed9d90dcb539b0dbacfa6f3
+ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 12/22/2018
+ms.locfileid: "27432485"
+---
 # <a name="officemenu-element"></a>OfficeMenu 元素
 
 定义要添加到 Office 上下文菜单的控件集合。适用于 Word、Excel、PowerPoint 和 OneNote 外接程序。
@@ -16,14 +27,14 @@
 
 ## <a name="xsitype"></a>xsi:type
 
-指定要在其中添加此 Office 外接程序的 Office 客户端应用程序内置菜单。
+指定要在其中添加此 Office 外接程序的 Office 客户端应用程序的内置菜单。
 
-- `ContextMenuText` - 当用户选定文本，然后打开（右键单击）选定文本上的上下文菜单时显示上下文菜单上的项。适用于 Word、Excel、PowerPoint 和 OneNote。
-- `ContextMenuCell` - 当用户打开（右键单击）电子表格中的某个单元格上的上下文菜单时显示上下文菜单上的项。适用于 Excel。 
+- `ContextMenuText` -  当用户选定文本，然后打开（右键单击）选定文本上的上下文菜单时显示上下文菜单上的项。适用于 Word、Excel、PowerPoint 和 OneNote。
+- `ContextMenuCell` -  当用户打开（右键单击）电子表格中的某个单元格上的上下文菜单时显示上下文菜单上的项。适用于 Excel。 
 
-## <a name="control"></a>Control
+## <a name="control"></a>控件
 
-每个 OfficeMenu 元素都需要一个或多个 menu 控件。** ** [ ](control.md#menu-dropdown-button-controls) 
+每个 **OfficeMenu** 元素都需要一个或多个 [menu](control.md#menu-dropdown-button-controls) 控件。 
 
 ## <a name="example"></a>示例
 

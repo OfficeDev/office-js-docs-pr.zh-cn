@@ -1,5 +1,14 @@
- 
-
+---
+title: Office 命名空间 - 要求集 1.3
+description: ''
+ms.date: 11/08/2018
+ms.openlocfilehash: c269f21b98e7f87d6f064f6c8ea0c439916f7caf
+ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 12/22/2018
+ms.locfileid: "27432744"
+---
 # <a name="office"></a>Office
 
 该 Office 命名空间提供所有 Office 应用中的外接程序所使用的共享接口。此列表仅记录 Outlook 外接程序所使用的接口。有关 Office 命名空间的完整列表，请参阅[共享 API](/javascript/api/office)。

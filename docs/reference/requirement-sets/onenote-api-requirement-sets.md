@@ -1,6 +1,17 @@
+---
+title: OneNote JavaScript API 要求集
+description: ''
+ms.date: 10/09/2018
+ms.openlocfilehash: c0cec9375dc0d3db4a09e44a9b73935af0691bde
+ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 12/22/2018
+ms.locfileid: "27433822"
+---
 # <a name="onenote-javascript-api-requirement-sets"></a>OneNote JavaScript API 要求集
 
-要求集是指各组已命名的 API 成员。 Office 加载项使用清单中指定要求集或使用运行时检查，以确定 Office 主机是否支持加载项所需的 API。 有关详细信息，请参阅 [Office 版本和要求集](https://docs.microsoft.com/office/dev/add-ins/develop/office-versions-and-requirement-sets)。
+要求集是指各组已命名的 API 成员。Office 加载项使用清单中指定的要求集或执行运行时检查，以确定 Office 主机是否支持加载项所需的 API。有关详细信息，请参阅 [Office 版本和要求集](https://docs.microsoft.com/office/dev/add-ins/develop/office-versions-and-requirement-sets)。
 
 下表列出了 OneNote 要求集、支持这些要求集的 Office 主机应用程序，以及这些应用程序的内部版本或发布日期。
 
@@ -14,7 +25,7 @@
 
 ## <a name="onenote-javascript-api-11"></a>OneNote JavaScript API 1.1 
 
-OneNote JavaScript API 1.1 是首版 API。 有关 API 的详细信息，请参阅 [OneNote JavaScript API 编程概述](https://docs.microsoft.com/office/dev/add-ins/onenote/onenote-add-ins-programming-overview)。
+OneNote JavaScript API 1.1 是该 API 的第一版。 有关此 API 的详细信息，请参阅 [OneNote JavaScript API 编程概述](https://docs.microsoft.com/office/dev/add-ins/onenote/onenote-add-ins-programming-overview)。
 
 ## <a name="runtime-requirement-support-check"></a>运行时要求支持检查
 
@@ -31,9 +42,9 @@ else {
 
 ## <a name="manifest-based-requirement-support-check"></a>基于清单的要求支持检查
 
-只能使用加载项清单中的 Requirements 元素指定加载项必须使用的关键要求集或 API 成员。如果 Office 主机或平台不支持在 Requirements 元素中指定的要求集或 API 成员，则加载项将无法在该主机或平台上运行，并且不会显示在“我的加载项”中。
+只能使用外接程序清单中的 Requirements 元素指定外接程序必须使用的关键要求集或 API 成员。如果 Office 主机或平台不支持在 Requirements 元素中指定的要求集或 API 成员，则外接程序将无法在该主机或平台上运行，并且不会显示在“我的外接程序”中。
 
-下面的代码示例展示了加载所有支持第 1.1 版 OneNoteApi 要求集的 Office 主机应用程序的加载项。
+下面的代码示例展示了加载所有 支持第 1.1 版 OneNoteApi 要求集的 Office 主机应用程序的外接程序。
 
 ```xml
 <Requirements>
@@ -47,4 +58,4 @@ else {
 
 - [Office 版本和要求集](https://docs.microsoft.com/office/dev/add-ins/develop/office-versions-and-requirement-sets)
 - [指定 Office 主机和 API 要求](https://docs.microsoft.com/office/dev/add-ins/develop/specify-office-hosts-and-api-requirements)
-- [Office 加载项 XML 清单](https://docs.microsoft.com/office/dev/add-ins/develop/add-in-manifests)
+- [Office 外接程序 XML 清单](https://docs.microsoft.com/office/dev/add-ins/develop/add-in-manifests)

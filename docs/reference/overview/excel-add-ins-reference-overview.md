@@ -1,3 +1,14 @@
+---
+title: Excel JavaScript API 概述
+description: ''
+ms.date: 11/01/2018
+ms.openlocfilehash: 202e6eb4993e43191f4f8c867ff0907af61a2ed6
+ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 12/22/2018
+ms.locfileid: "27433801"
+---
 # <a name="excel-javascript-api-overview"></a>Excel JavaScript API 概述
 
 可以使用 Excel JavaScript API 构建适用于 Excel 2016 或更高版本的加载项。 以下列表显示在 API 中可用的高级 Excel 对象。 每个对象页面链接包含对象可用的属性、事件和方法的描述。 如需了解详细信息，请从菜单中浏览相应链接。

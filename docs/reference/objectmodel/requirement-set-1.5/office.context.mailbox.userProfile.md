@@ -1,6 +1,17 @@
+---
+title: Office.context.mailbox.userProfile - 要求集 1.5
+description: ''
+ms.date: 10/31/2018
+ms.openlocfilehash: 748daf4d14aae1d14560d29e1d76eeea09830573
+ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 12/22/2018
+ms.locfileid: "27432716"
+---
 # <a name="userprofile"></a>userProfile
 
-### [Office](Office.md)[.context](Office.context.md)[.mailbox](Office.context.mailbox.md). userProfile
+### <a name="officeofficemdcontextofficecontextmdmailboxofficecontextmailboxmduserprofile"></a>[Office](Office.md)[.context](Office.context.md)[.mailbox](Office.context.mailbox.md).userProfile
 
 ##### <a name="requirements"></a>要求
 

@@ -1,3 +1,14 @@
+---
+title: 清单文件中的 MobileFormFactor 元素
+description: ''
+ms.date: 10/09/2018
+ms.openlocfilehash: f0a68c7127f7872207a58ed252def7a2977c33ed
+ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 12/22/2018
+ms.locfileid: "27433690"
+---
 # <a name="mobileformfactor-element"></a>MobileFormFactor 元素
 
 指定对移动外形规格的外接程序的设置。它包含移动外形规格的所有外接程序信息（**资源**节点的信息除外）。
