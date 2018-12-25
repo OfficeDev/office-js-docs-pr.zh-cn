@@ -15,82 +15,79 @@
 
 ## <a name="prerequisites"></a>先决条件
 
-* [Node.js 和 npm](https://nodejs.org/en/)
+* [Node.js](https://nodejs.org/en/)（版本 8.0.0 或更高版本）
 
 * [Git Bash](https://git-scm.com/downloads)（或其他 Git 客户端）
 
-* 最新版本的 [Yeoman](https://yeoman.io/) 和 [Yo Office 生成器](https://www.npmjs.com/package/generator-office)。 若要全局安装这些工具，请通过命令提示符运行以下命令：
+* 最新版本的 [Yeoman](https://yeoman.io/) 和[适用于 Office 外接程序的 Yeoman 生成器](https://www.npmjs.com/package/generator-office)。若要全局安装这些工具，请从命令提示符处运行以下命令：
 
-    ```bash
+    ```
     npm install -g yo generator-office
     ```
 
-* Excel for Windows（版本 1810 或更高版本）或 Excel Online
+    > [!NOTE]
+    > 即便先前已安装 Yeoman 生成器，我们仍建议将包更新至最新的 npm 版本。
+
+* Excel for Windows（64 位，版本 1810 或更高版本）或 Excel Online
 
 * 加入 [Office 预览体验计划](https://products.office.com/office-insider)（**预览体验成员**级别 - 以前称为“预览体验成员 - 快”）
 
 ## <a name="create-a-custom-functions-project"></a>创建自定义函数项目
 
-本教程首先使用 Yo Office 生成器创建自定义函数项目所需的文件。
+ 首先，使用 Yeoman 生成器创建自定义函数项目。 这将为你的项目设置开始对自定义函数进行编码所需的正确文件夹结构、源文件和依存关系。
 
 1. 运行下面的命令，再回答如下所示的提示问题。
 
-    ```bash
+    ```
     yo office
     ```
 
     * 选择项目类型：`Excel Custom Functions Add-in project (...)`
+
     * 选择脚本类型：`JavaScript`
+
     * 要如何命名加载项？ `stock-ticker`
 
-    ![自定义函数的 Yo Office bash 提示](../images/yo-office-cfs-stock-ticker-3.png)
+    ![自定义函数的 Office 外接程序提示的 Yeoman 生成器](../images/12-10-fork-cf-pic.jpg)
 
-    完成此向导后，生成器将创建项目文件，并安装支持的 Node 组件。 项目文件来自 [Excel-Custom-Functions](https://github.com/OfficeDev/Excel-Custom-Functions) GitHub 存储库。
+    Yeoman 生成器将创建项目文件并安装支持的 Node 组件。 项目文件来自 [Excel-Custom-Functions](https://github.com/OfficeDev/Excel-Custom-Functions) GitHub 存储库。
 
-2. 导航到项目文件夹。
+2. 转到项目文件夹。
 
-    ```bash
+    ```
     cd stock-ticker
     ```
 
-3. 启动本地 Web 服务器。
+3. 信任运行此项目所需的自签名证书。 有关适用于 Windows 或 Mac 的详细说明，请参阅[将自签名证书添加为受信任的根证书](https://github.com/OfficeDev/generator-office/blob/master/src/docs/ssl.md)。  
 
-    * 如果要使用 Excel for Windows 测试自定义函数，请运行以下命令来启动本地 Web 服务器，启动 Excel，并旁加载加载项：
+4. 生成项目。
 
-        ```bash
-        npm run start-desktop
+    ```
+    npm run build
+    ```
+
+5. 启动在 Node.js 中运行的本地 Web 服务器。
+
+    * 如果将使用 Excel for Windows 测试自定义函数，请运行以下命令来启动本地 Web 服务器，启动 Excel，并旁加载加载项：
+
         ```
+         npm run start
+        ```
+        运行此命令之后，命令提示符将显示与已完成项目相关的详细信息，打开的另一个 npm 窗口将显示与版本相关的详细信息，并且 Excel 将启动且加载项将会加载。 如果加载项未加载，请检查是否已正确完成步骤 3。
 
-    * 如果要使用 Excel Online 测试自定义函数，请运行以下命令来启动本地 Web 服务器： 
+    * 如果要使用 Excel Online 测试自定义函数，请运行以下命令来启动本地 Web 服务器：
 
-        ```bash
+        ```
         npm run start-web
         ```
 
+         运行此命令之后，打开的另一个窗口将向你显示与版本相关的详细信息。 要使用函数，请在 Office Online 中打开一个新的工作簿。
+
 ## <a name="try-out-a-prebuilt-custom-function"></a>尝试预生成的自定义函数
 
-使用 Yo Office 生成器创建的自定义函数项目包含一些预生成的自定义函数，这些函数在 **src/functions/functions.js** 文件中定义。 项目根目录中的 **manifest.xml** 文件指定所有自定义函数均属于 `CONTOSO` 名称空间。
+使用 Yeoman 生成器创建的自定义函数项目包含一些预生成的自定义函数，这些函数在 **src/customfunction.js** 文件中定义。 项目根目录中的 **manifest.xml** 文件指定所有自定义函数均属于 `CONTOSO` 名称空间。
 
-在使用任何预生成的自定义函数之前，必须在 Excel 中注册自定义函数加载项。 通过完成针对本教程中将要使用的平台的相应步骤来执行上述操作。
-
-* 如果要使用 Excel for Windows 测试自定义函数，请执行以下操作：
-
-    1. 在 Excel 中，选择“插入”**** 选项卡，然后选择位于“我的加载项”**** 右侧的向下箭头。![Excel for Windows 中的“插入”功能区，同时突出显示“我的加载项”箭头](../images/excel-cf-register-add-in-1b.png)
-
-    2. 在可用加载项列表中，找到“开发人员加载项”**** 部分，并选择“Excel 自定义函数”**** 加载项以进行注册。
-        ![Excel for Windows 中的“插入”功能区，同时在“我的加载项”列表中突出显示“Excel 自定义函数”加载项](../images/excel-cf-register-add-in-2.png)
-
-* 如果要使用 Excel Online 测试自定义函数，请执行以下操作： 
-
-    1. 在 Excel Online 中，选择“插入”**** 选项卡，然后选择“加载项”****。![Excel Online 中的“插入”功能区，同时突出显示“我的加载项”图标](../images/excel-cf-online-register-add-in-1.png)
-
-    2. 选择“管理我的加载项”****，然后选择“上载我的加载项”****。 
-
-    3. 选择“浏览...”****，并导航到 Yo Office 生成器创建的项目的根目录。 
-
-    4. 依次选择文件“manifest.xml”****，“打开”****，然后选择“上载”****。
-
-此时，在项目中预生成的自定义函数将在 Excel 中加载并在其中可用。 通过在 Excel 中完成以下步骤来尝试使用 `ADD` 自定义函数：
+在 Excel 工作簿中，通过在 Excel 中完成以下步骤来尝试使用 `ADD` 自定义函数：
 
 1. 在单元格内，键入 **=CONTOSO**。 请注意，自动完成菜单将显示 `CONTOSO` 命名空间中所有函数的列表。
 
@@ -102,11 +99,11 @@
 
 如果需要一个可以从 API 请求股票价格并在工作表单元格中显示结果的函数，该怎么办？ 自定义函数旨在使用户可以轻松地以异步方式从 Web 中请求数据。
 
-完成以下步骤，以创建一个名为 `stockPrice` 的自定义函数，该函数接受股票代码（例如，**MSFT**）并返回该股票的价格。 此自定义函数使用 IEX Trading API，该 API 是免费的，并且不需要身份验证。
+完成以下步骤，以创建一个名为 `stockPrice` 的自定义函数，该函数接受股票代码符号（例如，**MSFT**）并返回该股票的价格。 此自定义函数使用 IEX Trading API，该 API 是免费的，并且不需要身份验证。
 
-1. 在 Yo Office 生成器创建的 **stock-ticker** 项目中，找到文件 **src/functions/functions.js** 并在代码编辑器中打开它。
+1. 在 Yeoman 生成器创建的 **stock-ticker** 项目中，找到文件 **src/customfunctions.js** 并在代码编辑器中打开它。
 
-2. 将以下代码添加到 **customfunctions.js**，并保存文件。
+2. 在 **customfunctions.js** 中，找到 `increment` 函数并将以下代码添加到该函数后面。
 
     ```js
     function stockPrice(ticker) {
@@ -123,14 +120,17 @@
         //    will be bubbled up to Excel to indicate an error.
     }
 
+3. In **customfunctions.js**, locate the line`CustomFunctionMappings.INCREMENT = increment;`, add the following line of code immediately after that line, and save the file.
+
+    ```js
     CustomFunctionMappings.STOCKPRICE = stockPrice;
     ```
 
-3. 用户必须指定说明新函数的元数据，Excel 才能为最终用户提供此新函数。 在 Yo Office 生成器创建的 **stock-ticker** 项目中，找到文件 **src/functions/functions.json** 并在代码编辑器中打开它。 将以下对象添加到 **src/functions/functions.json** 文件中的 `functions` 数组，并保存该文件。
+4. 用户必须指定说明 Excel 函数的元数据，Excel 才能提供此新函数。 打开 **config/customfunctions.json** 文件。 将 JSON 对象添加到“函数”数组中，然后保存该文件。
 
     此 JSON 说明了 `stockPrice` 函数。
 
-    ```json
+    ```JSON
     {
         "id": "STOCKPRICE",
         "name": "STOCKPRICE",
@@ -151,7 +151,7 @@
     }
     ```
 
-4. 必须在 Excel 中重新注册加载项，以便最终用户可以使用此新函数。 完成针对本教程中将要使用的平台的下列相应步骤。
+5. 必须在 Excel 中重新注册加载项，以便最终用户可以使用此新函数。 完成针对本教程中将要使用的平台的下列相应步骤。
 
     * 如果使用的是 Excel for Windows，请执行以下操作：
 
@@ -159,20 +159,20 @@
 
         2. 在 Excel 中，选择“插入”**** 选项卡，然后选择位于“我的加载项”**** 右侧的向下箭头。![Excel for Windows 中的“插入”功能区，同时突出显示“我的加载项”箭头](../images/excel-cf-register-add-in-1b.png)
 
-        1. 在可用加载项列表中，找到“开发人员加载项”**** 部分，并选择“Excel 自定义函数”**** 加载项以进行注册。
+        3. 在可用加载项列表中，找到“**开发人员加载项**”部分并选择 **stock-ticker** 加载项进行注册。
             ![Excel for Windows 中的“插入”功能区，同时在“我的加载项”列表中突出显示“Excel 自定义函数”加载项](../images/excel-cf-register-add-in-2.png)
 
-    * 如果使用的是 Excel Online，请执行以下操作： 
+    * 如果使用的是 Excel Online，请执行以下操作：
 
         1. 在 Excel Online 中，选择“插入”**** 选项卡，然后选择“加载项”****。![Excel Online 中的“插入”功能区，同时突出显示“我的加载项”图标](../images/excel-cf-online-register-add-in-1.png)
 
         2. 选择“管理我的加载项”****，然后选择“上载我的加载项”****。 
 
-        3. 选择“浏览...”****，并导航到 Yo Office 生成器创建的项目的根目录。 
+        3. 选择“浏览...”****，并导航到 Yeoman 生成器创建的项目的根目录。 
 
         4. 依次选择文件“manifest.xml”****，“打开”****，然后选择“上载”****。
 
-5. 现在，让我们尝试使用新函数。 在单元格 **B1** 中，键入文本 `=CONTOSO.STOCKPRICE("MSFT")` 然后按 Enter。 应看到单元格 **B1** 中的结果是 Microsoft 一股股票的当前股票价格。
+6. 现在，让我们尝试使用新函数。 在单元格 **B1** 中，键入文本 `=CONTOSO.STOCKPRICE("MSFT")` 然后按 Enter。 应看到单元格 **B1** 中的结果是 Microsoft 一股股票的当前股票价格。
 
 ## <a name="create-a-streaming-asynchronous-custom-function"></a>创建流式处理异步自定义函数
 
@@ -180,7 +180,7 @@
 
 完成以下步骤，创建一个名为 `stockPriceStream` 的自定义函数，该函数每 1000 毫秒请求指定股票的价格（假设之前的请求已经完成）。 正在进行初始请求时，用户可能会在调用函数的单元格中看到占位符值 **#GETTING_DATA**。 函数返回一个值后，**#GETTING_DATA** 将被替换为单元格中的该值。
 
-1. 在 Yo Office 生成器创建的 **stock-ticker** 项目中，向 **src/functions/functions.js** 添加以下代码并保存文件。
+1. 在 Yeoman 生成器创建的 **stock-ticker** 项目中，向 **src/customfunctions.js** 添加以下代码并保存文件。
 
     ```js
     function stockPriceStream(ticker, handler) {
@@ -219,7 +219,7 @@
     CustomFunctionMappings.STOCKPRICESTREAM = stockPriceStream;
     ```
 
-2. 用户必须指定说明新函数的元数据，Excel 才能为最终用户提供此新函数。 在 Yo Office 生成器创建的 **stock-ticker** 项目中，向 **src/functions/functions.json** 文件中的 `functions` 数组添加以下对象，并保存文件。
+2. 用户必须指定说明新函数的元数据，Excel 才能为用户提供此新函数。 在 Yeoman 生成器创建的 **stock-ticker** 项目中，向 **config/customfunctions.json** 文件中的 `functions` 数组添加以下对象，并保存文件。
 
     此 JSON 说明了 `stockPriceStream` 函数。 对于任何流式处理函数，必须在 `options` 对象中将 `stream` 属性和 `cancelable` 属性设置为 `true`，如本代码示例所示。
 
@@ -256,16 +256,16 @@
         
         2. 在 Excel 中，选择“插入”**** 选项卡，然后选择位于“我的加载项”**** 右侧的向下箭头。![Excel for Windows 中的“插入”功能区，同时突出显示“我的加载项”箭头](../images/excel-cf-register-add-in-1b.png)
 
-        3. 在可用加载项列表中，找到“开发人员加载项”**** 部分，并选择“Excel 自定义函数”**** 加载项以进行注册。
+        3. 在可用加载项列表中，找到“**开发人员加载项**”部分并选择 **stock-ticker** 加载项进行注册。
             ![Excel for Windows 中的“插入”功能区，同时在“我的加载项”列表中突出显示“Excel 自定义函数”加载项](../images/excel-cf-register-add-in-2.png)
 
-    * 如果使用的是 Excel Online，请执行以下操作： 
+    * 如果使用的是 Excel Online，请执行以下操作：
 
         1. 在 Excel Online 中，选择“插入”**** 选项卡，然后选择“加载项”****。![Excel Online 中的“插入”功能区，同时突出显示“我的加载项”图标](../images/excel-cf-online-register-add-in-1.png)
 
-        2. 选择“管理我的加载项”****，然后选择“上载我的加载项”****。 
+        2. 选择“管理我的加载项”****，然后选择“上载我的加载项”****。
 
-        3. 选择“浏览...”****，并导航到 Yo Office 生成器创建的项目的根目录。 
+        3. 选择“浏览...”****，并导航到 Yeoman 生成器创建的项目的根目录。
 
         4. 依次选择文件“manifest.xml”****，“打开”****，然后选择“上载”****。
 
@@ -273,7 +273,7 @@
 
 ## <a name="next-steps"></a>后续步骤
 
-在本教程中，你已经创建新的自定义函数项目，尝试了预生成的函数，创建了从 Web 请求数据的自定义函数，并创建了从 Web 传送实时数据的自定义函数。 若要详细了解 Excel 中的自定义函数，请继续阅读以下文章： 
+在本教程中，你已经创建新的自定义函数项目，尝试了预生成的函数，创建了从 Web 请求数据的自定义函数，并创建了从 Web 传送实时数据的自定义函数。 若要详细了解 Excel 中的自定义函数，请继续阅读以下文章：
 
 > [!div class="nextstepaction"]
 > [在 Excel 中创建自定义函数](../excel/custom-functions-overview.md)
