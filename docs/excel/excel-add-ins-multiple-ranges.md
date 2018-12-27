@@ -1,13 +1,13 @@
 ---
 title: 同时在 Excel 加载项中处理多个区域
 description: ''
-ms.date: 09/04/2018
-ms.openlocfilehash: f1217fc76d14269882a73ec5eb7758e519563456
-ms.sourcegitcommit: 6870f0d96ed3da2da5a08652006c077a72d811b6
+ms.date: 12/26/2018
+ms.openlocfilehash: ab7cd9757adaedf2b6cc43fdcc604b98a60b6ecd
+ms.sourcegitcommit: 8d248cd890dae1e9e8ef1bd47e09db4c1cf69593
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/21/2018
-ms.locfileid: "27383223"
+ms.lasthandoff: 12/27/2018
+ms.locfileid: "27447230"
 ---
 # <a name="work-with-multiple-ranges-simultaneously-in-excel-add-ins-preview"></a>同时在 Excel 加载项中处理多个区域（预览）
 
@@ -85,7 +85,7 @@ Excel JavaScript 库允许你使用加载项同时在多个区域上执行操作
 - `areaCount`：`RangeAreas` 中的区域总数。
 - `getOffsetRangeAreas`：与 [Range.getOffsetRange](/javascript/api/excel/excel.range#getoffsetrange-rowoffset--columnoffset-) 的作用类似，不同之处在于，前者将返回 `RangeAreas` 并且包含多个区域，每个区域都是原始 `RangeAreas` 中的区域的偏移。
 
-## <a name="create-rangeareas-and-set-properties"></a>创建 RangeAreas 并设置属性
+## <a name="create-rangeareas"></a>创建 RangeAreas
 
 可以通过两种基本方法创建 `RangeAreas` 对象：
 
@@ -100,7 +100,9 @@ Excel JavaScript 库允许你使用加载项同时在多个区域上执行操作
 > [!WARNING]
 > 不要尝试直接添加或删除 `RangeAreas.areas.items` 数组的成员。 这将导致代码中出现不需要的行为。 例如，可能会将其他 `Range` 对象推送到数组上，但这样做会导致错误，因为 `RangeAreas` 属性和方法将表现为如同新项目并不存在一样。 例如，`areaCount` 属性不包含通过这种方法推送的区域，并且如果 `index` 大于 `areasCount-1`，则 `RangeAreas.getItemAt(index)` 将引发错误。 同样，删除 `RangeAreas.areas.items` 数组中的 `Range` 对象（通过获取对它的引用并调用其 `Range.delete` 方法）也会导致错误：尽管 `Range` 对象*已被*删除，但父 `RangeAreas` 对象的属性和方法将表现为或尝试表现为如同它仍然存在一样。 例如，如果你的代码调用 `RangeAreas.calculate`，Office 将尝试计算区域，但这会引发错误，因为区域对象并不存在。
 
-在 `RangeAreas` 上设置属性会在 `RangeAreas.areas` 集合中的所有区域上设置相应的属性。
+## <a name="set-properties-on-multiple-ranges"></a>在多个区域设置属性
+
+在 `RangeAreas` 对象上设置属性会在 `RangeAreas.areas` 集合中的所有区域上设置相应的属性。
 
 以下是在多个区域上设置属性的示例。 函数将突出显示区域 **F3:F5** 和 **H3:H5**。
 
@@ -114,106 +116,19 @@ Excel.run(function (context) {
 })
 ```
 
-此示例适用于可以对传递给 `getRanges` 的区域地址进行硬编码或在运行时轻松进行计算的应用场景。 一些适用的应用场景包括： 
+此示例适用于可以对传递给 `getRanges` 的区域地址进行硬编码或在运行时轻松进行计算的应用场景。 一些适用的应用场景包括：
 
 - 代码在已知模板的上下文中运行。
 - 代码在导入数据的上下文中运行，其中数据架构是已知的。
 
-如果你在编码时不知道要对哪个区域执行操作，则必须在运行时发现它们。 下一节将讨论这些应用场景。
+## <a name="get-special-cells-from-multiple-ranges"></a>从多个区域获取特殊单元格
 
-### <a name="discover-range-areas-programmatically"></a>以编程方式发现区域
+`RangeAreas` 对象上的 `getSpecialCells` 和 `getSpecialCellsOrNullObject` 方法原理上类似于 `Range` 对象上同名方法。 这些方法从 `RangeAreas.areas` 集合中所有区域返回包含指定特征的单元格。 请参阅 [查找区域内特殊单元格](excel-add-ins-ranges-advanced.md#find-special-cells-within-a-range-preview) 部分了解特殊单元格更多详细信息。
 
-`Range.getSpecialCells()` 和 `Range.getSpecialCellsOrNullObject()` 方法使你能够在运行时根据单元格特征和单元格的值类型查找要对其执行操作的区域。 以下是 TypeScript 数据类型文件中的方法签名：
+调用 `RangeAreas` 对象上的 `getSpecialCells` 或 `getSpecialCellsOrNullObject` 方法时：
 
-```typescript
-getSpecialCells(cellType: Excel.SpecialCellType, cellValueType?: Excel.SpecialCellValueType): Excel.RangeAreas;
-```
-
-```typescript
-getSpecialCellsOrNullObject(cellType: Excel.SpecialCellType, cellValueType?: Excel.SpecialCellValueType): Excel.RangeAreas;
-```
-
-以下是使用第一种方法的示例。 关于此代码，请注意以下几点：
-
-- 它通过先调用 `Worksheet.getUsedRange` 并仅调用该区域的 `getSpecialCells` 来限制需要搜索的工作表部分。
-- 它以参数形式传递给 `getSpecialCells`，即 `Excel.SpecialCellType` 枚举中的值的字符串版本。 某些可以传递的其他值包括：适用于空单元格的“空白”，适用于包含文本值而不是公式的单元格的“常量”，以及适用于与 `usedRange` 中的第一个单元格具有相同条件格式的单元格的“SameConditionalFormat”。 第一个单元格是指最左上角的单元格。 有关枚举中的值的完整列表，请参阅 [beta office.d.ts](https://appsforoffice.microsoft.com/lib/beta/hosted/office.d.ts)。
-- `getSpecialCells` 方法将返回 `RangeAreas` 对象，因此包含公式的单元格都会变成粉色，即使它们并非都是连续的单元格。 
-
-```js
-Excel.run(function (context) {
-    var sheet = context.workbook.worksheets.getActiveWorksheet();
-    var usedRange = sheet.getUsedRange();
-    var formulaRanges = usedRange.getSpecialCells("Formulas");
-    formulaRanges.format.fill.color = "pink";
-
-    return context.sync();
-})
-```
-
-有时，区域未包含*任何*具有目标特征的单元格。 如果 `getSpecialCells` 未找到任何单元格，它将引发 **ItemNotFound** 错误。 这会将控制流转移到 `catch` 信息块/方法（如果存在）。 如果不存在，则该错误会终止函数。 可能存在这样的应用场景，即你正好希望当不存在具有目标特征的单元格时引发错误。 
-
-但在没有匹配单元格（这是正常现象，但可能并不常见）的应用场景中，你的代码应该会检查这种可能的情况并按正常方式处理它，而不会引发错误。 对于这些应用场景，请使用 `getSpecialCellsOrNullObject` 方法并测试 `RangeAreas.isNullObject` 属性。 示例如下。 关于此代码，请注意以下几点：
-
-- `getSpecialCellsOrNullObject` 方法将始终返回代理对象，因此在一般的 JavaScript 认知中，它从不为 `null`。 但是，如果没有找到匹配的单元格，则对象的 `isNullObject` 属性将设置为 `true`。
-- 在测试 `isNullObject` 属性*之前*，它将调用 `context.sync`。 这是所有 `*OrNullObject` 方法和属性的要求，因为你必须始终加载和同步属性才能读取它。 但是，不必*明确*加载 `isNullObject` 属性。 即使未在对象上调用 `load`，`context.sync` 也会自动加载该属性。 有关详细信息，请参阅 [\*OrNullObject](https://docs.microsoft.com/office/dev/add-ins/excel/excel-add-ins-advanced-concepts#42ornullobject-methods)。
-- 你可以测试此代码，方法是先选择没有公式单元格的区域并运行它。 然后选择至少包含一个带公式的单元格的区域，并再次运行它。
-
-```js
-Excel.run(function (context) {
-    var range = context.workbook.getSelectedRange();
-    var formulaRanges = range.getSpecialCellsOrNullObject("Formulas");
-    return context.sync()
-        .then(function() {
-            if (formulaRanges.isNullObject) {
-                console.log("No cells have formulas");
-            }
-            else {
-                formulaRanges.format.fill.color = "pink";
-            }
-        })
-        .then(context.sync);
-})
-```
-
-为简单起见，本文中的所有其他示例都使用 `getSpecialCells` 方法，而不是 `getSpecialCellsOrNullObject`。
-
-#### <a name="narrow-the-target-cells-with-cell-value-types"></a>通过单元格值类型缩小目标单元格的范围
-
-有一个枚举类型为 `Excel.SpecialCellValueType` 的第二个可选参数，它可以进一步缩小要定位的单元格范围。 仅当将“公式”或“常量”传递给 `getSpecialCells` 或 `getSpecialCellsOrNullObject` 时，才能使用它。 该参数指定你只需要具有特定值类型的单元格。 有四种基本类型：“错误”、“逻辑”（它表示布尔）、“数字”和“文本”。 （除了这四种类型以外，枚举还具有其他值，将在下文对此展开讨论。）以下是一个示例。 关于此代码，请注意以下几点：
-
-- 它只会突出显示具有文本数值的单元格。 它既不会突出显示具有公式的单元格（即使结果是数字），也不会突出显示布尔、文本或错误状态单元格。
-- 要测试代码，请确保工作表中的某些单元格包含文本数值，某些包含其他类型的文本值，而某些则包含公式。
-
-```js
-Excel.run(function (context) {
-    var sheet = context.workbook.worksheets.getActiveWorksheet();
-    var usedRange = sheet.getUsedRange();
-    var constantNumberRanges = usedRange.getSpecialCells("Constants", "Numbers");
-    constantNumberRanges.format.fill.color = "pink";
-
-    return context.sync();
-})
-```
-
-有时，你需要对多种单元格值类型执行操作，例如所有文本值和所有布尔值（“逻辑”）单元格。 `Excel.SpecialCellValueType` 枚举提供的值允许你组合不同的类型。 例如，“LogicalText”将定向所有布尔值和所有文本值单元格。 你可以组合四种基本类型中的任意两种或任意三种。 这些用于组合基本类型的枚举值的名称始终按字母顺序排列。 因此，要组合错误值、文本值和布尔值单元格，请使用“ErrorLogicalText”，而不是“LogicalErrorText”或“TextErrorLogical”。 默认参数“全部”将组合所有四种类型。 以下示例突出显示包含用于生成数字或布尔值的公式的所有单元格：
-
-```js
-Excel.run(function (context) {
-    var sheet = context.workbook.worksheets.getActiveWorksheet();
-    var usedRange = sheet.getUsedRange();
-    var formulaLogicalNumberRanges = usedRange.getSpecialCells("Formulas", "LogicalNumbers");
-    formulaLogicalNumberRanges.format.fill.color = "pink";
-
-    return context.sync();
-})
-```
-
-> [!NOTE]
-> 仅当 `Excel.SpecialCellType` 参数为“公式”或“常量”时，才能使用 `Excel.SpecialCellValueType` 参数。
-
-### <a name="get-rangeareas-within-rangeareas"></a>获取 RangeAreas 内的 RangeAreas
-
-`RangeAreas` 类型本身也具有 `getSpecialCells` 和 `getSpecialCellsOrNullObject` 方法，它们采用两个相同的参数。 这些方法将返回 `RangeAreas.areas` 集合中所有区域的所有目标单元格。 在 `RangeAreas` 对象而不是 `Range` 对象上调用时，这些方法的行为存在一个小差异：如果将“SameConditionalFormat”作为第一个参数进行传递，则该方法将返回与 `RangeAreas.areas` 集合中第一个区域*最左上角的单元格具有相同条件格式的所有单元格*。 这一点也适用于“SameDataValidation”：如果传递给 `Range.getSpecialCells`，它将返回与区域最左上角的单元格*具有相同数据验证规则的所有单元格*。 但是，如果传递给 `RangeAreas.getSpecialCells`，它将返回与 `RangeAreas.areas` 集合中第一个区域*最左上角的单元格具有相同数据验证规则的所有单元格*。
+- 如果传递 `Excel.SpecialCellType.sameConditionalFormat` 作为第一个参数，该方法返回具有相同条件格式的所有单元格作为 `RangeAreas.areas` 集合第一个区域左上角单元格。
+- 如果传递 `Excel.SpecialCellType.sameDataValidation` 作为第一个参数，该方法返回具有相同数据验证规则的所有单元格作为 `RangeAreas.areas` 集合第一个区域左上角单元格。
 
 ## <a name="read-properties-of-rangeareas"></a>读取 RangeAreas 的属性
 
@@ -244,7 +159,7 @@ Excel.run(function (context) {
 - 除非所有成员区域上的对应属性都具有相同的值，否则非布尔属性（`address` 属性除外）将返回 `null`。
 - `address` 属性将返回一串以逗号分隔的成员区域地址。
 
-例如，以下代码将创建 `RangeAreas`，其中只有一个区域是整列，并且只有一个区域具有粉色填充。 控制台将为填充颜色显示 `null`，为 `isEntireRow` 属性显示 `false`，并为 `address` 属性显示“Sheet1!F3:F5, Sheet1!H:H”（假设工作表名称为“Sheet1”）。 
+例如，以下代码将创建 `RangeAreas`，其中只有一个区域是整列，并且只有一个区域具有粉色填充。 控制台将为填充颜色显示 `null`，为 `isEntireRow` 属性显示 `false`，并为 `address` 属性显示“Sheet1!F3:F5, Sheet1!H:H”（假设工作表名称为“Sheet1”）。
 
 ```js
 Excel.run(function (context) {
@@ -268,6 +183,6 @@ Excel.run(function (context) {
 
 ## <a name="see-also"></a>另请参阅
 
-- [Excel JavaScript API 基本编程概念](https://docs.microsoft.com/office/dev/add-ins/reference/overview/excel-add-ins-reference-overview)
-- [Range 对象（适用于 Excel 的 JavaScript API）](https://docs.microsoft.com/javascript/api/excel/excel.range)
-- [Range 对象（适用于 Excel 的 JavaScript API）](https://docs.microsoft.com/javascript/api/excel/excel.rangeareas)（当 API 处于预览状态时，此链接可能无效。 作为替代方法，请参阅 [beta office.d.ts](https://appsforoffice.microsoft.com/lib/beta/hosted/office.d.ts)。)
+- [Excel JavaScript API 基本编程概念](../reference/overview/excel-add-ins-reference-overview.md)
+- [使用 Excel JavaScript API 对区域执行操作（基本）](excel-add-ins-ranges.md)
+- [使用 Excel JavaScript API 对区域执行操作（高级）](excel-add-ins-ranges-advanced.md)
