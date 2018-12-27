@@ -1,13 +1,13 @@
 ---
 title: 使用 Excel JavaScript API 对区域执行操作（高级）
 description: ''
-ms.date: 12/18/2018
-ms.openlocfilehash: 6d3da1e7eff4e61ae1b88213d0b432581d8f6a8a
-ms.sourcegitcommit: 6870f0d96ed3da2da5a08652006c077a72d811b6
+ms.date: 12/26/2018
+ms.openlocfilehash: 43c32bb8f579a231eae289df4e026b45afac6dcb
+ms.sourcegitcommit: 8d248cd890dae1e9e8ef1bd47e09db4c1cf69593
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/21/2018
-ms.locfileid: "27383237"
+ms.lasthandoff: 12/27/2018
+ms.locfileid: "27447237"
 ---
 # <a name="work-with-ranges-using-the-excel-javascript-api-advanced"></a>使用 Excel JavaScript API 对区域执行操作（高级）
 
@@ -69,6 +69,116 @@ Excel.run(function (context) {
 
 `RangeAreas` 对象允许外接程序每次在多个区域上执行操作。 这些区域可能但不必是连续区域。 `RangeAreas` 将进一步在[同时在 Excel 加载项中处理多个区域](excel-add-ins-multiple-ranges.md)一文中进行讨论。
 
+## <a name="find-special-cells-within-a-range-preview"></a>查找区域内特殊单元格（预览）
+
+> [!NOTE]
+>  `getSpecialCells` 和 `getSpecialCellsOrNullObject` 方法当前仅适用于公共预览版（beta 版本）。 若要使用此功能，必须使用 Office.js CDN 的 beta 版库：https://appsforoffice.microsoft.com/lib/beta/hosted/office.js。
+> 如果使用的是 TypeScript 或代码编辑器将 TypeScript 类型定义文件用于 IntelliSense，则使用 https://appsforoffice.microsoft.com/lib/beta/hosted/office.d.ts。
+
+`Range.getSpecialCells()` 和 `Range.getSpecialCellsOrNullObject()` 方法根据单元格特征和值类型来查找区域。 这两种方法都返回 `RangeAreas` 对象。 以下是 TypeScript 数据类型文件中的方法签名：
+
+```typescript
+getSpecialCells(cellType: Excel.SpecialCellType, cellValueType?: Excel.SpecialCellValueType): Excel.RangeAreas;
+```
+
+```typescript
+getSpecialCellsOrNullObject(cellType: Excel.SpecialCellType, cellValueType?: Excel.SpecialCellValueType): Excel.RangeAreas;
+```
+
+下面示例使用 `getSpecialCells` 方法来查找有公式的所有单元格。 关于此代码，请注意以下几点：
+
+- 它通过先调用 `Worksheet.getUsedRange` 并仅调用该区域的 `getSpecialCells` 来限制需要搜索的工作表部分。
+- `getSpecialCells` 方法将返回 `RangeAreas` 对象，因此包含公式的单元格都会变成粉色，即使它们并非都是连续的单元格。
+
+```js
+Excel.run(function (context) {
+    var sheet = context.workbook.worksheets.getActiveWorksheet();
+    var usedRange = sheet.getUsedRange();
+    var formulaRanges = usedRange.getSpecialCells(Excel.SpecialCellType.formulas);
+    formulaRanges.format.fill.color = "pink";
+
+    return context.sync();
+})
+```
+
+如果区域中不存在具有目标特征的单元格，`getSpecialCells` 会引发 **ItemNotFound**错误。 这会将控制流转移到 `catch` 信息块（如果存在）。 如果不存在 `catch` 信息块，则错误会终止函数。
+
+如果您希望具有目标特征的单元格应始终存在，你可能想你的代码在没有这些单元格的时候引发错误。 若没有匹配单元格是一个有效应用场景，你的代码应该会检查这种可能的情况并按正常方式处理它，而不会引发错误。 可以用此 `getSpecialCellsOrNullObject` 方法及其返回的 `isNullObject` 属性实现此行为。 此示例使用此模式。 关于此代码，请注意以下几点：
+
+- `getSpecialCellsOrNullObject` 方法将始终返回代理对象，因此在一般的 JavaScript 认知中，它从不为 `null`。 但是，如果没有找到匹配的单元格，则对象的 `isNullObject` 属性将设置为 `true`。
+- 在测试 `isNullObject` 属性*之前*，它将调用 `context.sync`。 这是所有 `*OrNullObject` 方法和属性的要求，因为你必须始终加载和同步属性才能读取它。 但是，不必*明确*加载 `isNullObject` 属性。 即使未在对象上调用 `load`，`context.sync` 也会自动加载该属性。 有关详细信息，请参阅 [\*OrNullObject](https://docs.microsoft.com/office/dev/add-ins/excel/excel-add-ins-advanced-concepts#42ornullobject-methods)。
+- 你可以测试此代码，方法是先选择没有公式单元格的区域并运行它。 然后选择至少包含一个带公式的单元格的区域，并再次运行它。
+
+```js
+Excel.run(function (context) {
+    var range = context.workbook.getSelectedRange();
+    var formulaRanges = range.getSpecialCellsOrNullObject(Excel.SpecialCellType.formulas);
+    return context.sync()
+        .then(function() {
+            if (formulaRanges.isNullObject) {
+                console.log("No cells have formulas");
+            }
+            else {
+                formulaRanges.format.fill.color = "pink";
+            }
+        })
+        .then(context.sync);
+})
+```
+
+为简单起见，本文中的所有其他示例都使用 `getSpecialCells` 方法，而不是 `getSpecialCellsOrNullObject`。
+
+### <a name="narrow-the-target-cells-with-cell-value-types"></a>通过单元格值类型缩小目标单元格的范围
+
+`Range.getSpecialCells()` 和 `Range.getSpecialCellsOrNullObject()` 方法接受一个可选第二参数，用于进一步缩小目标单元格。 此第二参数是你用于指定只希望包含特定数值类型单元格的一个 `Excel.SpecialCellValueType`。
+
+> [!NOTE]
+> 当且仅当 `Excel.SpecialCellType` 为 `Excel.SpecialCellType.formulas` 或 `Excel.SpecialCellType.constants` 时才使用 `Excel.SpecialCellValueType` 参数。
+
+#### <a name="test-for-a-single-cell-value-type"></a>测试单个单元格值类型
+
+`Excel.SpecialCellValueType` 枚举有四种基本类型 （除本节后续部分所述其他组合式值外）：
+
+- `Excel.SpecialCellValueType.errors`
+- `Excel.SpecialCellValueType.logical`（意味着布尔值）
+- `Excel.SpecialCellValueType.numbers`
+- `Excel.SpecialCellValueType.text`
+
+以下示例查找数值常量的特殊单元格，并将这些单元格设置为粉色。 关于此代码，请注意以下几点：
+
+- 它只会突出显示具有文本数值的单元格。 它既不会突出显示具有公式的单元格（即使结果是数字），也不会突出显示布尔、文本或错误状态单元格。
+- 要测试代码，请确保工作表中的某些单元格包含文本数值，某些包含其他类型的文本值，而某些则包含公式。
+
+```js
+Excel.run(function (context) {
+    var sheet = context.workbook.worksheets.getActiveWorksheet();
+    var usedRange = sheet.getUsedRange();
+    var constantNumberRanges = usedRange.getSpecialCells(
+        Excel.SpecialCellType.constants,
+        Excel.SpecialCellValueType.numbers);
+    constantNumberRanges.format.fill.color = "pink";
+
+    return context.sync();
+})
+```
+
+#### <a name="test-for-multiple-cell-value-types"></a>测试多个单元格值类型
+
+有时，你需要对多种单元格值类型执行操作，例如所有文本值和所有布尔值（`Excel.SpecialCellValueType.logical`）单元格。 `Excel.SpecialCellValueType` 枚举具有组合式类型值。 例如，`Excel.SpecialCellValueType.logicalText` 将定向所有布尔值和所有文本值单元格。 `Excel.SpecialCellValueType.all` 是默认值，并不限制返回的单元格值类型。 以下示例设置了包含用于生成数字或布尔值的公式的所有单元格颜色。
+
+```js
+Excel.run(function (context) {
+    var sheet = context.workbook.worksheets.getActiveWorksheet();
+    var usedRange = sheet.getUsedRange();
+    var formulaLogicalNumberRanges = usedRange.getSpecialCells(
+        Excel.SpecialCellType.formulas,
+        Excel.SpecialCellValueType.logicalNumbers);
+    formulaLogicalNumberRanges.format.fill.color = "pink";
+
+    return context.sync();
+})
+```
+
 ## <a name="copy-and-paste-preview"></a>复制和粘贴（预览版）
 
 > [!NOTE]
@@ -76,7 +186,8 @@ Excel.run(function (context) {
 > 如果使用的是 TypeScript 或代码编辑器将 TypeScript 类型定义文件用于 IntelliSense，则使用 https://appsforoffice.microsoft.com/lib/beta/hosted/office.d.ts。
 
 区域的 `copyFrom` 函数将复制 Excel UI 的“复制和粘贴”行为。 调用 `copyFrom` 的区域对象是目标。
-将要复制的源作为一个范围或一个表示范围的字符串地址进行传递。 以下代码示例将数据从“A1:E1”**** 复制到“G1”**** 开始的范围（粘贴到“G1:K1”**** 结束）。
+将要复制的源作为一个范围或一个表示范围的字符串地址进行传递。
+以下代码示例将数据从“A1:E1”**** 复制到“G1”**** 开始的范围（粘贴到“G1:K1”**** 结束）。
 
 ```js
 Excel.run(function (context) {
@@ -90,15 +201,15 @@ Excel.run(function (context) {
 `Range.copyFrom` 具有三个可选参数。
 
 ```TypeScript
-copyFrom(sourceRange: Range | string, copyType?: "All" | "Formulas" | "Values" | "Formats", skipBlanks?: boolean, transpose?: boolean): void;
+copyFrom(sourceRange: Range | RangeAreas | string, copyType?: Excel.RangeCopyType, skipBlanks?: boolean, transpose?: boolean): void;
 ```
 
 `copyType` 指定将哪些数据从源复制到目标。
 
-- `"Formulas"` 转换源单元格中的公式，并保留这些公式范围的相对位置。 将原样复制任何非公式条目。
-- `"Values"` 复制数据值，如果是公式，则复制公式的结果。
-- `"Formats"` 复制范围的格式设置（包括字体、颜色和其他格式），但不会复制任何值。
-- `"All"`（默认选项）复制数据和格式设置，保留单元格的公式（如果找到）。
+- `Excel.RangeCopyType.formulas` 转换源单元格中的公式，并保留这些公式范围的相对位置。 将原样复制任何非公式条目。
+- `Excel.RangeCopyType.values` 复制数据值，如果是公式，则复制公式的结果。
+- `Excel.RangeCopyType.formats` 复制范围的格式设置（包括字体、颜色和其他格式），但不会复制任何值。
+- `Excel.RangeCopyType.all`（默认选项）复制数据和格式设置，保留单元格的公式（如果找到）。
 
 `skipBlanks` 设置是否将空白单元格复制到目标。 如果为 true，`copyFrom` 将跳过源范围中的空白单元格。
 跳过的单元格不会覆盖目标范围中其对应单元格的现有数据。 默认值为 false。
@@ -177,3 +288,4 @@ Excel.run(async (context) => {
 
 - [使用 Excel JavaScript API 对区域执行操作](excel-add-ins-ranges.md)
 - [Excel JavaScript API 基本编程概念](excel-add-ins-core-concepts.md)
+- [ 同时在 Excel 加载项中处理多个区域 ](excel-add-ins-multiple-ranges.md)
