@@ -2,12 +2,12 @@
 title: Excel JavaScript API 要求集
 description: ''
 ms.date: 10/09/2018
-ms.openlocfilehash: 825b0862e7cab1c146fc14e0095506b7f26f849b
-ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
+ms.openlocfilehash: 4456ac3cb2411f9a22cb131b7a53884a760a2f22
+ms.sourcegitcommit: 60fd8a3ac4a6d66cb9e075ce7e0cde3c888a5fe9
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/22/2018
-ms.locfileid: "27434032"
+ms.lasthandoff: 12/28/2018
+ms.locfileid: "27458144"
 ---
 # <a name="excel-javascript-api-requirement-sets"></a>Excel JavaScript API 要求集
 
@@ -802,9 +802,9 @@ Excel 事件 API 提供了多个事件处理程序，以便加载项能够在发
 * `add(name: string, reference: Range or string, comment: string)`：将新名称添加到给定范围的集合。
 * `addFormulaLocal(name: string, formula: string, comment: string)`：使用用户的公式区域设置，将新名称添加到给定范围的集合。
 
-### <a name="settings-api-in-in-excel-namespace"></a>Excel 命名空间中的设置 API
+### <a name="settings-api-in-the-excel-namespace"></a>Excel 命名空间中的设置 API
 
-[Setting](/javascript/api/excel/excel.setting) 对象表示文档保留设置的键值对。现在，我们已在 Excel 命名空间下添加了与设置相关的 API。这不会提供全新功能，但可便于继续使用基于承诺的批处理 API 语法，减少对 Excel 相关任务常见 API 的依赖。
+[Setting](/javascript/api/excel/excel.setting) 对象表示文档保留设置的键值对。 `Excel.Setting` 的功能等同于 `Office.Settings`，但使用批处理 API 语法，而不是通用 API 的回调模型。
 
 API 包括通过键获取设置条目的 `getItem()`，以及将指定键值设置对添加到工作簿的 `add()`。
 

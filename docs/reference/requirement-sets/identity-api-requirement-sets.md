@@ -2,12 +2,12 @@
 title: Identity API 要求集
 description: ''
 ms.date: 10/09/2018
-ms.openlocfilehash: 43a220cfada5883f292edd13cc753dc6c70e3504
-ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
+ms.openlocfilehash: 4ed3fde5b3cef6dd6633d9eafbd098b24cc27308
+ms.sourcegitcommit: 60fd8a3ac4a6d66cb9e075ce7e0cde3c888a5fe9
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/22/2018
-ms.locfileid: "27433920"
+ms.lasthandoff: 12/28/2018
+ms.locfileid: "27457661"
 ---
 # <a name="identity-api-requirement-sets"></a>Identity API 要求集
 
@@ -30,7 +30,7 @@ Office 外接程序在多个 Office 版本中运行。 下表列出了 Identity 
 
 ## <a name="office-common-api-requirement-sets"></a>Office 通用 API 要求集
 
-有关公用 API 要求集的信息，请参阅 [Office 公用 API 要求集](office-add-in-requirement-sets.md)。
+若要了解通用 API 要求集，请参阅 [Office 通用 API 要求集](office-add-in-requirement-sets.md)。
 
 ## <a name="identityapi-11"></a>IdentityAPI 1.1 
 

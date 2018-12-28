@@ -2,31 +2,31 @@
 title: 使用 Excel 加载项共同创作
 description: ''
 ms.date: 12/04/2017
-ms.openlocfilehash: 47482ba74ef298add4cdb553d66904381123289d
-ms.sourcegitcommit: 30435939ab8b8504c3dbfc62fd29ec6b0f1a7d22
+ms.openlocfilehash: 6831b829b7b40561a348335b4c9c9c07da27f6a3
+ms.sourcegitcommit: 60fd8a3ac4a6d66cb9e075ce7e0cde3c888a5fe9
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "23945727"
+ms.lasthandoff: 12/28/2018
+ms.locfileid: "27457649"
 ---
 # <a name="coauthoring-in-excel-add-ins"></a>使用 Excel 加载项共同创作  
 
-借助[共同创作功能](https://support.office.com/article/Collaborate-on-Excel-workbooks-at-the-same-time-with-co-authoring-7152aa8b-b791-414c-a3bb-3024e46fb104)，多个人可以共同协作，同时编辑同一个 Excel 工作簿。 在另一个共同创作者更改并保存工作簿后，此工作簿的所有共同创作者都可以立即看这些更改。 若要共同创作 Excel 工作簿，必须在 OneDrive、OneDrive for Business 或 SharePoint Online 储存工作簿。
+借助[共同创作功能](https://support.office.com/article/Collaborate-on-Excel-workbooks-at-the-same-time-with-co-authoring-7152aa8b-b791-414c-a3bb-3024e46fb104)，多个人可以共同协作，同时编辑同一个 Excel 工作簿。 在另一个共同创作者更改并保存工作簿后，此工作簿的所有共同创作者都可以立即看这些更改。 若要共同创作 Excel 工作簿，必须将工作簿存储在 OneDrive、OneDrive for Business 或 SharePoint Online 中。
 
 > [!IMPORTANT]
-> 在 Excel 2016 for Office 365 中，您将在左上角找到自动保存。当自动保存开启时，共同创作者能够实时查看您的修改。在您的Excel加载项设计时，充分考虑这一编辑行为的影响。用户可以通过在Excel窗口左上角的开关关闭自动保存。
+> 在 Excel for Office 365 中，便会发现左上角显示有“自动保存”。 启用“自动保存”后，将实时向合著者显示你的更改。 请考虑此行为对 Excel 外接程序设计的影响。 用户可以通过 Excel 窗口左上方的开关禁用“自动保存”。
 
 共同创作功能在以下平台上可用：
 
-- Excel 在线
-- 适应于安卓系统的 Excel
-- 适应于iOS系统的 Excel
-- 适应于第10版视窗的Excel Mobile
+- Excel Online
+- Excel for Android
+- Excel for iOS
+- Excel Mobile for Windows 10
 - 适用于 Office 365 客户的 Excel for Windows Desktop（Windows 桌面内部版本 16.0.8326.2076 或更高版本，当前的渠道客户自 2017 年 8 月起可获取这些版本）
 
 ## <a name="coauthoring-overview"></a>共同创作功能概述
  
-当您修改工作簿内容时，Excel自动同步所有共同创作者的修改。共同创作者可以修改工作簿内容，同时可在Excel加载项中运行编码。例如，当下述JavaScript代码在Office加载项中运行时，区间数值设置为Contoso：
+如果工作簿的内容有变化，Excel 会自动跨所有共同创作者同步这些更改。 共同创作者可以更改工作簿的内容，而 Excel 加载项中运行的代码也可以这样做。 例如，在 Office 加载项中运行以下 JavaScript 代码时，范围值会设置为 Contoso：
 
 ```js
 range.values = [['Contoso']];
@@ -46,13 +46,13 @@ Excel 外接程序可以读取工作簿内容（通过隐藏工作表和设置�
 - 用户 A 的隐藏工作表更新为新值橙色。
 - 用户 A 的自定义可视化效果仍为蓝色。 
 
-如果希望用户 A 的自定义可视化效果响应共同创作者对隐藏工作表所做的更改，请使用 [BindingDataChanged](https://docs.microsoft.com/javascript/api/office/office.bindingdatachangedeventargs?view=office-js) 事件。 这可确保共同创作者对工作簿内容所做的更改反映到加载项状态中。
+如果希望用户 A 的自定义可视化效果响应共同创作者对隐藏工作表所做的更改，请使用 [BindingDataChanged](https://docs.microsoft.com/javascript/api/office/office.bindingdatachangedeventargs) 事件。 这可确保共同创作者对工作簿内容所做的更改反映到加载项状态中。
 
 ## <a name="caveats-to-using-events-with-coauthoring"></a>使用事件进行共同创作的注意事项 
 
 如上所述，在某些情况下，对所有共同创作者触发事件可提升用户体验。 但是，请注意在一些应用场景下，此行为可能会导致不良的用户体验。 
 
-例如，在数据验证应用场景下，通常通过显示 UI 来响应事件。 本地用户或合著者（远程）通过绑定更改工作簿内容时，会运行前面部分中所述的 [BindingDataChanged](https://docs.microsoft.com/javascript/api/office/office.bindingdatachangedeventargs?view=office-js) 事件。 如果 **BindingDataChanged** 事件的事件处理程序显示 UI，用户就会看到与他们在工作簿中进行的更改无关的 UI，从而导致不良的用户体验。 在外接程序中使用事件时，请避免显示 UI。
+例如，在数据验证应用场景下，通常通过显示 UI 来响应事件。 本地用户或合著者（远程）通过绑定更改工作簿内容时，会运行前面部分中所述的 [BindingDataChanged](https://docs.microsoft.com/javascript/api/office/office.bindingdatachangedeventargs) 事件。 如果 **BindingDataChanged** 事件的事件处理程序显示 UI，用户就会看到与他们在工作簿中进行的更改无关的 UI，从而导致不良的用户体验。 在外接程序中使用事件时，请避免显示 UI。
 
 ## <a name="see-also"></a>另请参阅 
 

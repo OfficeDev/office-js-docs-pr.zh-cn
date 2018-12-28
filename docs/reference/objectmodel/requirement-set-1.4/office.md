@@ -2,18 +2,18 @@
 title: Office 命令空间 - 要求集 1.4
 description: ''
 ms.date: 11/08/2018
-ms.openlocfilehash: 7a86c550bd1f40c3db306c518165bc60b8bf0280
-ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
+ms.openlocfilehash: f447c3c46db553c0a6d4ba8bf2d4e108848c3f4d
+ms.sourcegitcommit: 60fd8a3ac4a6d66cb9e075ce7e0cde3c888a5fe9
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/22/2018
-ms.locfileid: "27433780"
+ms.lasthandoff: 12/28/2018
+ms.locfileid: "27457682"
 ---
 # <a name="office"></a>Office
 
-该 Office 命名空间提供所有 Office 应用中的外接程序所使用的共享接口。此列表仅记录 Outlook 外接程序所使用的接口。有关 Office 命名空间的完整列表，请参阅[共享 API](/javascript/api/office)。
+该 Office 命名空间提供所有 Office 应用中的加载项所使用的共享接口。此列表仅记录 Outlook 加载项所使用的接口。有关 Office 命名空间的完整列表，请参阅[公用 API](/javascript/api/office)。
 
-##### <a name="requirements"></a>Requirements
+##### <a name="requirements"></a>要求
 
 |要求| 值|
 |---|---|

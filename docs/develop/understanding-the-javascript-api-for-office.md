@@ -2,23 +2,23 @@
 title: 了解适用于 Office 的 JavaScript API
 description: ''
 ms.date: 10/17/2018
-ms.openlocfilehash: 266014305af67d53046dac9a5492e08dbbb8dc29
-ms.sourcegitcommit: 2ac7d64bb2db75ace516a604866850fce5cb2174
+ms.openlocfilehash: 14de5d8bab791d0954179c21163ba0a08824b834
+ms.sourcegitcommit: 60fd8a3ac4a6d66cb9e075ce7e0cde3c888a5fe9
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/14/2018
-ms.locfileid: "26298556"
+ms.lasthandoff: 12/28/2018
+ms.locfileid: "27458102"
 ---
 # <a name="understanding-the-javascript-api-for-office"></a>了解适用于 Office 的 JavaScript API
 
-本文提供了有关适用于 Office 的 JavaScript API 的信息以及使用方法。有关参考信息，请参阅 [适用于 Office 的 JavaScript API](https://docs.microsoft.com/office/dev/add-ins/reference/javascript-api-for-office?view=office-js)。有关将 Visual Studio 项目文件更新到适用于 Office 的 JavaScript API 的最新当前版本的信息，请参阅 [更新适用于 Office 的 JavaScript API 版本和清单架构文件](update-your-javascript-api-for-office-and-manifest-schema-version.md)。
+本文提供了有关适用于 Office 的 JavaScript API 的信息以及使用方法。有关参考信息，请参阅 [适用于 Office 的 JavaScript API](https://docs.microsoft.com/office/dev/add-ins/reference/javascript-api-for-office)。有关将 Visual Studio 项目文件更新到适用于 Office 的 JavaScript API 的最新当前版本的信息，请参阅 [更新适用于 Office 的 JavaScript API 版本和清单架构文件](update-your-javascript-api-for-office-and-manifest-schema-version.md)。
 
 > [!NOTE]
 > 如果计划将加载项[发布](../publish/publish.md)到 AppSource 并适用于 Office 体验，请务必遵循 [AppSource 验证策略](https://docs.microsoft.com/office/dev/store/validation-policies)。例如，加载项必须适用于支持已定义方法的所有平台，才能通过验证（有关详细信息，请参阅[第 4.12 部分](https://docs.microsoft.com/office/dev/store/validation-policies#4-apps-and-add-ins-behave-predictably)以及 [Office 加载项主机和可用性](../overview/office-add-in-availability.md)页面）。 
 
 ## <a name="referencing-the-javascript-api-for-office-library-in-your-add-in"></a>在加载项中引用适用于 Office 的 JavaScript API 库
 
-[适用于 Office 的 JavaScript](https://docs.microsoft.com/office/dev/add-ins/reference/javascript-api-for-office?view=office-js) 库包含 Office.js 文件和关联的特定于主机应用程序的 .js 文件，例如 Excel-15.js 和 Outlook-15.js。引用该 API 最简单的方法是通过添加以下 `<script>` 到你的页面的 `<head>` 标记来使用我们的 CDN：  
+[适用于 Office 的 JavaScript](https://docs.microsoft.com/office/dev/add-ins/reference/javascript-api-for-office) 库包含 Office.js 文件和关联的特定于主机应用程序的 .js 文件，例如 Excel-15.js 和 Outlook-15.js。引用该 API 最简单的方法是通过添加以下 `<script>` 到你的页面的 `<head>` 标记来使用我们的 CDN：  
 
 ```html
 <script src="https://appsforoffice.microsoft.com/lib/1/hosted/Office.js" type="text/javascript"></script>
@@ -141,7 +141,7 @@ Office.initialize = function (reason) {
  };
 ```
 
-有关详细信息，请参阅 [Office.initialize 事件](https://docs.microsoft.com/javascript/api/office?view=office-js)和 [InitializationReason 枚举](https://docs.microsoft.com/javascript/api/office/office.initializationreason?view=office-js)。
+有关详细信息，请参阅 [Office.initialize 事件](https://docs.microsoft.com/javascript/api/office)和 [InitializationReason 枚举](https://docs.microsoft.com/javascript/api/office/office.initializationreason)。
 
 > [!NOTE]
 > 目前，无论是否同时调用 `Office.onReady()`均必须设置 `Office.Initialize`。 如果无需使用 `Office.Initialize`，可以将其设置为一个空函数，如以下示例中所示。
@@ -165,7 +165,7 @@ Office.initialize = function (reason) {
 
 ## <a name="office-javascript-api-object-model"></a>Office JavaScript API 对象模型
 
-初始化后，加载项可与主机进行交互（例如，Excel、Outlook）。 [Office JavaScript API 对象模型](office-javascript-api-object-model.md)页提供了有关特定使用模式的更为详细的信息。 还提供了有关[共享 API](https://docs.microsoft.com/office/dev/add-ins/reference/javascript-api-for-office?view=office-js) 和特定主机的详细参考文档。
+初始化后，加载项可与主机进行交互（例如，Excel、Outlook）。 [Office JavaScript API 对象模型](office-javascript-api-object-model.md)页提供了有关特定使用模式的更为详细的信息。 还提供了有关[通用 API](https://docs.microsoft.com/office/dev/add-ins/reference/javascript-api-for-office) 和主机特定 API 的详细参考文档。
 
 ## <a name="api-support-matrix"></a>API 支持矩阵
 
