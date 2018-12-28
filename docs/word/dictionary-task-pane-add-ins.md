@@ -2,12 +2,12 @@
 title: 创建字典任务窗格加载项
 description: ''
 ms.date: 12/04/2017
-ms.openlocfilehash: 1032ad2312faabf4c1956078d2db4028521b5eb6
-ms.sourcegitcommit: eb74e94d3e1bc1930a9c6582a0a99355d0da34f2
+ms.openlocfilehash: 814dcc94f08a81ab01f96e5af487b4f7708c1aa5
+ms.sourcegitcommit: 60fd8a3ac4a6d66cb9e075ce7e0cde3c888a5fe9
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "25004992"
+ms.lasthandoff: 12/28/2018
+ms.locfileid: "27457850"
 ---
 # <a name="create-a-dictionary-task-pane-add-in"></a>创建字典任务窗格加载项
 
@@ -526,13 +526,13 @@ a:hover, a:active
 从此实现中调用的 JavaScript API for Office (Office.js) 的主要成员如下：
 
 
-- **Office** 对象的 [initialize](https://docs.microsoft.com/javascript/api/office?view=office-js) 事件，该事件在初始化外接程序上下文时引发，并提供对 [Document](https://docs.microsoft.com/javascript/api/office/office.document?view=office-js) 对象实例（表示外接程序与之交互的文档）的访问权限。
+- **Office** 对象的 [initialize](https://docs.microsoft.com/javascript/api/office) 事件，该事件在初始化外接程序上下文时引发，并提供对 [Document](https://docs.microsoft.com/javascript/api/office/office.document) 对象实例（表示外接程序与之交互的文档）的访问权限。
     
-- **Document** 对象的 [addHandlerAsync](https://docs.microsoft.com/javascript/api/office/office.document?view=office-js#addhandlerasync-eventtype--handler--options--callback-) 方法，在 **initialize** 函数中调用该方法，以便为文档的 [SelectionChanged](https://docs.microsoft.com/javascript/api/office/office.documentselectionchangedeventargs?view=office-js) 事件添加事件处理程序，从而侦听用户选择更改。
+- **Document** 对象的 [addHandlerAsync](https://docs.microsoft.com/javascript/api/office/office.document#addhandlerasync-eventtype--handler--options--callback-) 方法，在 **initialize** 函数中调用该方法，以便为文档的 [SelectionChanged](https://docs.microsoft.com/javascript/api/office/office.documentselectionchangedeventargs) 事件添加事件处理程序，从而侦听用户选择更改。
     
-- **Document** 对象的 [getSelectedDataAsync](https://docs.microsoft.com/javascript/api/office/office.document?view=office-js#getselecteddataasync-coerciontype--options--callback-) 方法，在引发 **SelectionChanged** 事件处理程序时会在 `tryUpdatingSelectedWord()` 函数中调用该方法，以获取用户选择的字词或短语，将其强制为纯文本，然后执行 `selectedTextCallback` 异步回调函数。
+- **Document** 对象的 [getSelectedDataAsync](https://docs.microsoft.com/javascript/api/office/office.document#getselecteddataasync-coerciontype--options--callback-) 方法，在引发 **SelectionChanged** 事件处理程序时会在 `tryUpdatingSelectedWord()` 函数中调用该方法，以获取用户选择的字词或短语，将其强制为纯文本，然后执行 `selectedTextCallback` 异步回调函数。
     
-- 当 `selectTextCallback` 异步回调函数（作为 **getSelectedDataAsync** 方法的 _callback_ 参数传递）执行时，它在回调返回时获取所选文本的值。它通过使用返回的 [AsyncResult](https://docs.microsoft.com/javascript/api/office/office.asyncresult?view=office-js) 对象的 [value](https://docs.microsoft.com/javascript/api/office/office.asyncresult?view=office-js#status) 属性从回调的 _selectedText_ 参数（类型为 **AsyncResult**）获取该值。
+- 当 `selectTextCallback` 异步回调函数（作为 **getSelectedDataAsync** 方法的 _callback_ 参数传递）执行时，它在回调返回时获取所选文本的值。它通过使用返回的 [AsyncResult](https://docs.microsoft.com/javascript/api/office/office.asyncresult) 对象的 [value](https://docs.microsoft.com/javascript/api/office/office.asyncresult#status) 属性从回调的 _selectedText_ 参数（类型为 **AsyncResult**）获取该值。
     
 - `selectedTextCallback` 函数中剩余的代码查询定义的 XML Web 服务。它还调入 Microsoft Translator API，以提供具有所选字词拼音的 .wav 文件的 URL。
     

@@ -2,12 +2,12 @@
 title: 在 Visual Studio 中创建和调试 Office 外接程序
 description: 使用 Visual Studio 在 Windows 的 Office 桌面客户端上创建和调试 Office 外接程序
 ms.date: 11/02/2018
-ms.openlocfilehash: eccdde75c60d30dce28320b820df9c187f6eb7a3
-ms.sourcegitcommit: 9b021af6cb23a58486d6c5c7492be425e309bea1
+ms.openlocfilehash: 99b642804cb662d66106d3a599e5d84dbab8c4a3
+ms.sourcegitcommit: 60fd8a3ac4a6d66cb9e075ce7e0cde3c888a5fe9
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/15/2018
-ms.locfileid: "26533719"
+ms.lasthandoff: 12/28/2018
+ms.locfileid: "27458025"
 ---
 # <a name="create-and-debug-office-add-ins-in-visual-studio"></a>在 Visual Studio 中创建和调试 Office 外接程序
 
@@ -186,7 +186,7 @@ Web 应用程序项目包含可用于实现入门的默认 HTML 文件、JavaScr
     
 接下来，Visual Studio 会执行以下操作：
 
-1. 通过将 `~remoteAppUrl` 标记替换为起始页的完全限定地址（例如，`https://localhost:44302/Home.html`）来修改 XML 清单文件的 [SourceLocation](https://docs.microsoft.com/office/dev/add-ins/reference/manifest/sourcelocation?view=office-js) 元素。
+1. 通过将 `~remoteAppUrl` 标记替换为起始页的完全限定地址（例如，`https://localhost:44302/Home.html`）来修改 XML 清单文件的 [SourceLocation](https://docs.microsoft.com/office/dev/add-ins/reference/manifest/sourcelocation) 元素。
     
 2. 在 IIS Express 中启动 Web 应用程序项目。
     

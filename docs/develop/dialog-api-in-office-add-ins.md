@@ -2,19 +2,19 @@
 title: 在 Office 加载项中使用对话框 API
 description: ''
 ms.date: 12/20/2018
-ms.openlocfilehash: 0c45a17935cb264db4b8488ec8eaae2535848770
-ms.sourcegitcommit: 6870f0d96ed3da2da5a08652006c077a72d811b6
+ms.openlocfilehash: c96fa69e5bd3d1c6c028921ec9e4f7f220e710c9
+ms.sourcegitcommit: 60fd8a3ac4a6d66cb9e075ce7e0cde3c888a5fe9
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/21/2018
-ms.locfileid: "27383244"
+ms.lasthandoff: 12/28/2018
+ms.locfileid: "27458081"
 ---
 # <a name="use-the-dialog-api-in-your-office-add-ins"></a>在 Office 加载项中使用对话框 API
 
-可以在 Office 外接程序中使用[对话框 API](https://docs.microsoft.com/javascript/api/office/office.ui?view=office-js) 打开对话框。本文提供了有关如何在 Office 外接程序中使用对话框 API 的指南。
+可以在 Office 外接程序中使用[对话框 API](https://docs.microsoft.com/javascript/api/office/office.ui) 打开对话框。本文提供了有关如何在 Office 外接程序中使用对话框 API 的指南。
 
 > [!NOTE]
-> 若要了解对话框 API 目前的受支持情况，请参阅[对话框 API 要求集](https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/dialog-api-requirement-sets?view=office-js)。目前，Word、Excel、PowerPoint 和 Outlook 支持对话框 API。
+> 若要了解对话框 API 目前的受支持情况，请参阅[对话框 API 要求集](https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/dialog-api-requirement-sets)。目前，Word、Excel、PowerPoint 和 Outlook 支持对话框 API。
 
 > 对话框 API 的主要应用场景是为 Google 或 Facebook 等资源启用身份验证。
 
@@ -35,11 +35,11 @@ ms.locfileid: "27383244"
 
 ## <a name="dialog-api-scenarios"></a>对话框 API 应用场景
 
-Office JavaScript API 支持以下应用场景，其在 [Office.context.ui 命名空间](https://docs.microsoft.com/javascript/api/office/office.ui?view=office-js)中使用 [Dialog](https://docs.microsoft.com/javascript/api/office/office.dialog?view=office-js) 对象和两个函数。
+Office JavaScript API 支持以下应用场景，其在 [Office.context.ui 命名空间](https://docs.microsoft.com/javascript/api/office/office.ui)中使用 [Dialog](https://docs.microsoft.com/javascript/api/office/office.dialog) 对象和两个函数。
 
 ### <a name="open-a-dialog-box"></a>打开对话框
 
-为了打开对话框，任务窗格中的代码调用 [displayDialogAsync](https://docs.microsoft.com/javascript/api/office/office.ui?view=office-js) 方法，并将要打开的资源 URL 传递到此方法。这通常是页面，但也可以是 MVC 应用中的控制器方法、路由、Web 服务方法或其他任何资源。在本文中，“页面”或“网站”是指对话框中的资源。下面的代码就是一个简单示例：
+为了打开对话框，任务窗格中的代码调用 [displayDialogAsync](https://docs.microsoft.com/javascript/api/office/office.ui) 方法，并将要打开的资源 URL 传递到此方法。这通常是页面，但也可以是 MVC 应用中的控制器方法、路由、Web 服务方法或其他任何资源。在本文中，“页面”或“网站”是指对话框中的资源。下面的代码就是一个简单示例：
 
 ```js
 Office.context.ui.displayDialogAsync('https://myAddinDomain/myDialog.html');
@@ -47,7 +47,7 @@ Office.context.ui.displayDialogAsync('https://myAddinDomain/myDialog.html');
 
 > [!NOTE]
 > - URL 使用 **HTTPS** 协议。对话框中加载的所有页面都必须遵循此要求，而不仅仅是加载的第一个页面。
-> - 对话框资源域与宿主页的域相同，宿主页可以是任务窗格中的页面，也可以是加载项命令的[函数文件](https://docs.microsoft.com/office/dev/add-ins/reference/manifest/functionfile?view=office-js)。 这要求：传递到 `displayDialogAsync` 方法的页面、控制器方法或其他资源必须与主机页位于相同的域。
+> - 对话框资源域与宿主页的域相同，宿主页可以是任务窗格中的页面，也可以是加载项命令的[函数文件](https://docs.microsoft.com/office/dev/add-ins/reference/manifest/functionfile)。 这要求：传递到 `displayDialogAsync` 方法的页面、控制器方法或其他资源必须与主机页位于相同的域。
 
 > [!IMPORTANT]
 > 宿主页面和对话框资源必须具有相同的完整域。 如果尝试传递 `displayDialogAsync` 加载项域的子域，则不会起作用。 完整域（包括任何子域）必须匹配。
@@ -131,8 +131,8 @@ Office.context.ui.displayDialogAsync('https://myDomain/myDialog.html', {height: 
 ```
 
 > [!NOTE]
-> - Office 将 [AsyncResult](https://docs.microsoft.com/javascript/api/office/office.asyncresult?view=office-js) 对象传递给回调。它表示尝试打开对话框的结果，不表示对话框中任何事件的结果。若要详细了解此区别，请参阅[处理错误和事件](#handle-errors-and-events)部分。
-> - `asyncResult` 的 `value` 属性设置为 [Dialog](https://docs.microsoft.com/javascript/api/office/office.dialog?view=office-js) 对象，此对象位于主机页（而不是对话框的执行上下文）中。
+> - Office 将 [AsyncResult](https://docs.microsoft.com/javascript/api/office/office.asyncresult) 对象传递给回调。它表示尝试打开对话框的结果，不表示对话框中任何事件的结果。若要详细了解此区别，请参阅[处理错误和事件](#handle-errors-and-events)部分。
+> - `asyncResult` 的 `value` 属性设置为 [Dialog](https://docs.microsoft.com/javascript/api/office/office.dialog) 对象，此对象位于主机页（而不是对话框的执行上下文）中。
 > - `processMessage` 是用于处理事件的函数。可以根据需要任意命名。
 > - `dialog` 变量的声明范围比回调更广，因为 `processMessage` 中也会引用此变量。
 
@@ -268,7 +268,7 @@ function processMessage(arg) {
 |<span id="12007">12007</span>|已从此主机窗口打开了一个对话框。主机窗口（如任务窗格）一次只能打开一个对话框。|
 |12009|用户已选择忽略对话框。 联机版本的 Office 中可能会发生此错误，用户可能会选择不允许加载项显示对话框。|
 
-调用 `displayDialogAsync` 时，总是将 [AsyncResult](https://docs.microsoft.com/javascript/api/office/office.asyncresult?view=office-js) 对象传递给它的回调函数。 如果调用成功（即对话框窗口已打开），`AsyncResult` 对象的 `value` 属性是 [Dialog](https://docs.microsoft.com/javascript/api/office/office.dialog?view=office-js) 对象。 有关示例，请参阅[将信息从对话框发送到宿主页](#send-information-from-the-dialog-box-to-the-host-page)部分。 如果调用 `displayDialogAsync` 失败，不会创建窗口，`AsyncResult` 对象的 `status` 属性设置为 `Office.AsyncResultStatus.Failed`，并且会填充对象的 `error` 属性。 应始终有用于测试 `status` 并在出错时进行响应的回调。 有关仅报告错误消息（无论代码编号是什么）的示例，请参阅下面的代码：
+调用 `displayDialogAsync` 时，总是将 [AsyncResult](https://docs.microsoft.com/javascript/api/office/office.asyncresult) 对象传递给它的回调函数。 如果调用成功（即对话框窗口已打开），`AsyncResult` 对象的 `value` 属性是 [Dialog](https://docs.microsoft.com/javascript/api/office/office.dialog) 对象。 有关示例，请参阅[将信息从对话框发送到宿主页](#send-information-from-the-dialog-box-to-the-host-page)部分。 如果调用 `displayDialogAsync` 失败，不会创建窗口，`AsyncResult` 对象的 `status` 属性设置为 `Office.AsyncResultStatus.Failed`，并且会填充对象的 `error` 属性。 应始终有用于测试 `status` 并在出错时进行响应的回调。 有关仅报告错误消息（无论代码编号是什么）的示例，请参阅下面的代码：
 
 ```js
 var dialog;
@@ -443,7 +443,7 @@ Office.context.ui.displayDialogAsync('https://myAddinDomain/myDialog.html?client
 
 ## <a name="use-the-office-dialog-api-with-single-page-applications-and-client-side-routing"></a>将 Office Dialog API 与单页应用程序和客户端路由结合使用
 
-如果外接程序使用客户端路由（单页应用程序通常这样做），则可以选择将路由 URL 传递给 [ displayDialogAsync ](https://docs.microsoft.com/javascript/api/office/office.ui?view=office-js) 方法，而不是传递各个完整 HTML 页面的 URL。
+如果外接程序使用客户端路由（单页应用程序通常这样做），则可以选择将路由 URL 传递给 [ displayDialogAsync ](https://docs.microsoft.com/javascript/api/office/office.ui) 方法，而不是传递各个完整 HTML 页面的 URL。
 
 > [!IMPORTANT]
 >对话框位于有自己执行上下文的新窗口中。如果传递路由，基页面及其所有初始化和启动代码都会在这个新上下文中再次运行，且所有变量都会在对话框中设置为各自的初始值。所以，此技术会在对话框窗口中启动应用的第二个实例。更改对话框窗口中变量的代码不会更改任务窗格版本的相同变量。同样，对话框窗口有自己的会话存储，任务窗格中的代码无法访问此类存储。

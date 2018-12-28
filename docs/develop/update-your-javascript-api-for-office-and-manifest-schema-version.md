@@ -2,12 +2,12 @@
 title: 更新到适用于 Office 的 JavaScript API 最新库和第 1.1 版加载项清单架构
 description: 将在 Office 加载项项目中的 JavaScript 文件（Office.js 和特定于应用程序的 .js 文件）和加载项清单验证文件更新到版本 1.1。
 ms.date: 12/12/2018
-ms.openlocfilehash: 1f88d6a7f663af06304326a78bb4ff47d82dab94
-ms.sourcegitcommit: 3d8454055ba4d7aae12f335def97357dea5beb30
+ms.openlocfilehash: bc49aa1a6eaa9f074f25c41ebe7d2dca072e3dae
+ms.sourcegitcommit: 60fd8a3ac4a6d66cb9e075ce7e0cde3c888a5fe9
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "27270738"
+ms.lasthandoff: 12/28/2018
+ms.locfileid: "27458095"
 ---
 # <a name="update-to-the-latest-javascript-api-for-office-library-and-version-11-add-in-manifest-schema"></a>更新到适用于 Office 的 JavaScript API 最新库和第 1.1 版加载项清单架构
 
@@ -18,7 +18,7 @@ ms.locfileid: "27270738"
 
 ## <a name="use-the-most-up-to-date-project-files"></a>使用最新项目文件
 
-如果你使用 Visual Studio 来开发你的加载项，以使用适用于 Office 的 JavaScript API 的[最新 API 成员](https://docs.microsoft.com/office/dev/add-ins/reference/what's-changed-in-the-javascript-api-for-office?view=office-js)和[加载项清单 v1.1 功能](../develop/add-in-manifests.md)（根据 offappmanifest-1.1.xsd 进行了验证），则你需要下载 Visual Studio 2017。 要下载 Visual Studio 2017，请参阅 [Visual Studio IDE 页面](https://visualstudio.microsoft.com/vs/)。 在安装过程中，你需要选择 Office/SharePoint 开发工作负载。
+如果你使用 Visual Studio 来开发你的加载项，以使用适用于 Office 的 JavaScript API 的[最新 API 成员](https://docs.microsoft.com/office/dev/add-ins/reference/what's-changed-in-the-javascript-api-for-office)和[加载项清单 v1.1 功能](../develop/add-in-manifests.md)（根据 offappmanifest-1.1.xsd 进行了验证），则你需要下载 Visual Studio 2017。 要下载 Visual Studio 2017，请参阅 [Visual Studio IDE 页面](https://visualstudio.microsoft.com/vs/)。 在安装过程中，你需要选择 Office/SharePoint 开发工作负载。
 
 如果您使用文本编辑器或 Visual Studio 以外的 IDE 开发您的 外接程序，则您需要针对在 外接程序 的清单中引用的 Office.js 和架构版本，将引用更新到 CDN。
 
@@ -76,7 +76,7 @@ ms.locfileid: "27270738"
 ```
 
 > [!NOTE] 
-> 在将加载项清单架构的版本更新为 1.1 之后，你将需要删除 **Capabilities** 和 **Capability** 元素，并将其替换为 [Hosts](https://docs.microsoft.com/office/dev/add-ins/reference/manifest/hosts?view=office-js) 和 [Host](https://docs.microsoft.com/office/dev/add-ins/reference/manifest/host?view=office-js) 元素或 [Requirements 和 Requirement](specify-office-hosts-and-api-requirements.md) 元素。
+> 在将加载项清单架构的版本更新为 1.1 之后，你将需要删除 **Capabilities** 和 **Capability** 元素，并将其替换为 [Hosts](https://docs.microsoft.com/office/dev/add-ins/reference/manifest/hosts) 和 [Host](https://docs.microsoft.com/office/dev/add-ins/reference/manifest/host) 元素或 [Requirements 和 Requirement](specify-office-hosts-and-api-requirements.md) 元素。
 
 ## <a name="updating-an-office-add-in-project-created-with-a-text-editor-or-other-ide"></a>更新使用文本编辑器或其他 IDE 创建的 Office 加载项项目
 
@@ -119,13 +119,13 @@ ms.locfileid: "27270738"
 ```
 
 > [!NOTE] 
-> 在将加载项清单架构的版本更新为 1.1 之后，你将需要删除 **Capabilities** 和 **Capability** 元素，并将其替换为 [Hosts](https://docs.microsoft.com/office/dev/add-ins/reference/manifest/hosts?view=office-js) 和 [Host](https://docs.microsoft.com/office/dev/add-ins/reference/manifest/host?view=office-js) 元素或 [Requirements 和 Requirement](specify-office-hosts-and-api-requirements.md) 元素。
+> 在将加载项清单架构的版本更新为 1.1 之后，你将需要删除 **Capabilities** 和 **Capability** 元素，并将其替换为 [Hosts](https://docs.microsoft.com/office/dev/add-ins/reference/manifest/hosts) 和 [Host](https://docs.microsoft.com/office/dev/add-ins/reference/manifest/host) 元素或 [Requirements 和 Requirement](specify-office-hosts-and-api-requirements.md) 元素。
     
 
 ## <a name="see-also"></a>另请参阅
 
 - [指定 Office 主机和 API 要求](specify-office-hosts-and-api-requirements.md) 
 - [了解适用于 Office 的 JavaScript API](understanding-the-javascript-api-for-office.md)    
-- [适用于 Office 的 JavaScript API](https://docs.microsoft.com/office/dev/add-ins/reference/javascript-api-for-office?view=office-js)   
+- [适用于 Office 的 JavaScript API](https://docs.microsoft.com/office/dev/add-ins/reference/javascript-api-for-office)   
 - [Office 外接程序清单的架构参考 (v1.1)](../develop/add-in-manifests.md)
     

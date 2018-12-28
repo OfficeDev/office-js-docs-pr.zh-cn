@@ -2,12 +2,12 @@
 title: 处理 OneNote 页面内容
 description: ''
 ms.date: 12/04/2017
-ms.openlocfilehash: f44c58ac9cb3502889e280c63538603901b63a88
-ms.sourcegitcommit: 86724e980f720ed05359c9525948cb60b6f10128
+ms.openlocfilehash: aef9d80ebb37dacd2c3b5f2ec9d33cb0164d8452
+ms.sourcegitcommit: 60fd8a3ac4a6d66cb9e075ce7e0cde3c888a5fe9
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/09/2018
-ms.locfileid: "26237408"
+ms.lasthandoff: 12/28/2018
+ms.locfileid: "27457612"
 ---
 # <a name="work-with-onenote-page-content"></a>处理 OneNote 页面内容 
 
@@ -22,14 +22,14 @@ ms.locfileid: "26237408"
 
 若要创建空的 OneNote 页面，请使用下列方法之一：
 
-- [Section.addPage](https://docs.microsoft.com/javascript/api/onenote/onenote.section?view=office-js#addpage-title-)
-- [Page.insertPageAsSibling](https://docs.microsoft.com/javascript/api/onenote/onenote.section?view=office-js#insertsectionassibling-location--title-)
+- [Section.addPage](https://docs.microsoft.com/javascript/api/onenote/onenote.section#addpage-title-)
+- [Page.insertPageAsSibling](https://docs.microsoft.com/javascript/api/onenote/onenote.section#insertsectionassibling-location--title-)
 
 然后使用以下对象中的方法处理页面内容，如 Page.addOutline 和 Outline.appendHtml。 
 
-- [Page](https://docs.microsoft.com/javascript/api/onenote/onenote.page?view=office-js)
-- [Outline](https://docs.microsoft.com/javascript/api/onenote/onenote.outline?view=office-js)
-- [Paragraph](https://docs.microsoft.com/javascript/api/onenote/onenote.paragraph?view=office-js)
+- [Page](https://docs.microsoft.com/javascript/api/onenote/onenote.page)
+- [Outline](https://docs.microsoft.com/javascript/api/onenote/onenote.outline)
+- [Paragraph](https://docs.microsoft.com/javascript/api/onenote/onenote.paragraph)
 
 OneNote 页面的内容和结构由 HTML 进行表示。只有一部分 HTML 可用于创建或更新页面内容，如下所述。
 
@@ -58,6 +58,6 @@ OneNote 外接程序 JavaScript API 支持使用以下 HTML 创建和更新页�
 ## <a name="see-also"></a>另请参阅
 
 - [OneNote JavaScript API 编程概述](onenote-add-ins-programming-overview.md)
-- [OneNote JavaScript API 参考](https://docs.microsoft.com/office/dev/add-ins/reference/overview/onenote-add-ins-javascript-reference?view=office-js)
+- [OneNote JavaScript API 参考](https://docs.microsoft.com/office/dev/add-ins/reference/overview/onenote-add-ins-javascript-reference)
 - [Rubric Grader 示例](https://github.com/OfficeDev/OneNote-Add-in-Rubric-Grader)
 - [Office 加载项平台概述](../overview/office-add-ins.md)

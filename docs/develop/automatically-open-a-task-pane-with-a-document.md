@@ -2,12 +2,12 @@
 title: 随文档自动打开任务窗格
 description: ''
 ms.date: 05/02/2018
-ms.openlocfilehash: 7022381eb24d5b0566936b068f2940703f0eef9f
-ms.sourcegitcommit: 9b021af6cb23a58486d6c5c7492be425e309bea1
+ms.openlocfilehash: 84e64c74b1c14da39a1f375fe54b1e6dcc887d16
+ms.sourcegitcommit: 60fd8a3ac4a6d66cb9e075ce7e0cde3c888a5fe9
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/15/2018
-ms.locfileid: "26533747"
+ms.lasthandoff: 12/28/2018
+ms.locfileid: "27457920"
 ---
 # <a name="automatically-open-a-task-pane-with-a-document"></a>随文档自动打开任务窗格
 
@@ -59,7 +59,7 @@ Autoopen 功能目前<!-- in **developer preview** and it is only -->在以下�
 
 ### <a name="step-1-specify-the-task-pane-to-open"></a>第 1 步：指定要打开的任务窗格
 
-若要指定要自动打开的任务窗格，请将 [TaskpaneId](https://docs.microsoft.com/office/dev/add-ins/reference/manifest/action?view=office-js#taskpaneid) 值设置为 **Office.AutoShowTaskpaneWithDocument**。只能在一个任务窗格上设置此值。如果在多个任务窗格上设置此值，将识别值的第一个匹配项，而忽略其他。
+若要指定要自动打开的任务窗格，请将 [TaskpaneId](https://docs.microsoft.com/office/dev/add-ins/reference/manifest/action#taskpaneid) 值设置为 **Office.AutoShowTaskpaneWithDocument**。只能在一个任务窗格上设置此值。如果在多个任务窗格上设置此值，将识别值的第一个匹配项，而忽略其他。
 
 在下面的示例中，TaskPaneId 值设置为 Office.AutoShowTaskpaneWithDocument。
 
@@ -77,7 +77,7 @@ Autoopen 功能目前<!-- in **developer preview** and it is only -->在以下�
 
 #### <a name="tag-the-document-on-the-client-side"></a>在客户端上标记文档
 
-使用 Office.js [settings.set](https://docs.microsoft.com/javascript/api/office/office.settings?view=office-js) 方法将 **Office.AutoShowTaskpaneWithDocument** 设置为“**true**”，如以下示例所示。
+使用 Office.js [settings.set](https://docs.microsoft.com/javascript/api/office/office.settings) 方法将 **Office.AutoShowTaskpaneWithDocument** 设置为“**true**”，如以下示例所示。
 
 ```js
 Office.context.document.settings.set("Office.AutoShowTaskpaneWithDocument", true);

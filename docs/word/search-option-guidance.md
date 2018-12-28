@@ -2,17 +2,17 @@
 title: 使用搜索选项在 Word 加载项中查找文本
 description: ''
 ms.date: 07/20/2018
-ms.openlocfilehash: d2c0fa2d542cd64986c2fd82f8a50a813f14610a
-ms.sourcegitcommit: 3d8454055ba4d7aae12f335def97357dea5beb30
+ms.openlocfilehash: 36946f7b9bbcb4c8b5ceca1e8b88e7588c0814ce
+ms.sourcegitcommit: 60fd8a3ac4a6d66cb9e075ce7e0cde3c888a5fe9
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "27270619"
+ms.lasthandoff: 12/28/2018
+ms.locfileid: "27457724"
 ---
 # <a name="use-search-options-to-find-text-in-your-word-add-in"></a>使用搜索选项在 Word 加载项中查找文本 
 
 加载项经常需要基于文档文本运行。
-每种内容控件均有公开的搜索函数（这些内容控件包括 [Body](https://docs.microsoft.com/javascript/api/word/word.body?view=office-js)、[Paragraph](https://docs.microsoft.com/javascript/api/word/word.paragraph?view=office-js)、[Range](https://docs.microsoft.com/javascript/api/word/word.range?view=office-js)、[Table](https://docs.microsoft.com/javascript/api/word/word.table?view=office-js)、[TableRow](https://docs.microsoft.com/javascript/api/word/word.tablerow?view=office-js) 和基本 [ContentControl](https://docs.microsoft.com/javascript/api/word/word.contentcontrol?view=office-js) 对象）。 此函数接受一个代表所搜索文本的字符串（如通配符表达式）和 [SearchOptions](https://docs.microsoft.com/javascript/api/word/word.searchoptions?view=office-js) 对象。 它返回与搜索文本匹配的区域集合。
+每种内容控件均有公开的搜索函数（这些内容控件包括 [Body](https://docs.microsoft.com/javascript/api/word/word.body)、[Paragraph](https://docs.microsoft.com/javascript/api/word/word.paragraph)、[Range](https://docs.microsoft.com/javascript/api/word/word.range)、[Table](https://docs.microsoft.com/javascript/api/word/word.table)、[TableRow](https://docs.microsoft.com/javascript/api/word/word.tablerow) 和基本 [ContentControl](https://docs.microsoft.com/javascript/api/word/word.contentcontrol) 对象）。 此函数接受一个代表所搜索文本的字符串（如通配符表达式）和 [SearchOptions](https://docs.microsoft.com/javascript/api/word/word.searchoptions) 对象。 它返回与搜索文本匹配的区域集合。
 
 ## <a name="search-options"></a>搜索选项
 搜索选项为多个用于定义搜索参数处理方式的布尔值集合。 
@@ -200,4 +200,4 @@ Word.run(function (context) {
 });
 ```
 
-更多信息请参阅 [Word JavaScript API 参考](https://docs.microsoft.com/office/dev/add-ins/reference/overview/word-add-ins-reference-overview?view=office-js).
+更多信息请参阅 [Word JavaScript API 参考](https://docs.microsoft.com/office/dev/add-ins/reference/overview/word-add-ins-reference-overview).

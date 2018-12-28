@@ -2,12 +2,12 @@
 title: 使用文本编辑器为 Microsoft Project 创建首个任务窗格加载项
 description: ''
 ms.date: 12/17/2018
-ms.openlocfilehash: 46d632684c9d2fa301ab398b36e778d7543d1749
-ms.sourcegitcommit: 6870f0d96ed3da2da5a08652006c077a72d811b6
+ms.openlocfilehash: 6370895311f341acd0d65826b2fc721587cf8e4a
+ms.sourcegitcommit: 60fd8a3ac4a6d66cb9e075ce7e0cde3c888a5fe9
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/21/2018
-ms.locfileid: "27383272"
+ms.lasthandoff: 12/28/2018
+ms.locfileid: "27457955"
 ---
 # <a name="create-your-first-task-pane-add-in-for-microsoft-project-by-using-a-text-editor"></a>使用文本编辑器为 Microsoft Project 创建首个任务窗格加载项
 
@@ -106,7 +106,7 @@ JSOMCall.html 示例使用 office.js 文件和 project-15.js 文件中包含的 
 
    下面的代码使用 Office.js 文件中的函数，获取应用上下文和文档信息。**text** 对象是 HTML 文件中 ** textarea** 控件的 ID。
     
-   **\_projDoc** 变量是使用 **ProjectDocument** 对象进行初始化。代码包含一些简单的错误处理函数，以及获取应用上下文和项目文档上下文属性的 **getContextValues** 函数。若要详细了解 Project 的 JavaScript 对象模型，请参阅[适用于 Office 的 JavaScript API](https://docs.microsoft.com/office/dev/add-ins/reference/javascript-api-for-office?view=office-js)。
+   **\_projDoc** 变量是使用 **ProjectDocument** 对象进行初始化。代码包含一些简单的错误处理函数，以及获取应用上下文和项目文档上下文属性的 **getContextValues** 函数。若要详细了解 Project 的 JavaScript 对象模型，请参阅[适用于 Office 的 JavaScript API](https://docs.microsoft.com/office/dev/add-ins/reference/javascript-api-for-office)。
 
     ```javascript
     /*
@@ -168,11 +168,11 @@ JSOMCall.html 示例使用 office.js 文件和 project-15.js 文件中包含的 
     }
     ```
 
-   有关 Office.debug.js 文件中函数的信息，请参见 [JavaScript API for Office](https://docs.microsoft.com/office/dev/add-ins/reference/javascript-api-for-office?view=office-js)。例如，**getDocumentUrl** 函数获取打开的项目的 URL 或文件路径。
+   有关 Office.debug.js 文件中函数的信息，请参见 [JavaScript API for Office](https://docs.microsoft.com/office/dev/add-ins/reference/javascript-api-for-office)。例如，**getDocumentUrl** 函数获取打开的项目的 URL 或文件路径。
     
 3. 添加调用 Office.js 和 Project-15.js 中异步函数的 JavaScript 函数，以获取选定数据：
     
-   - 例如，**getSelectedDataAsync** 是 Office.js 中的常规函数，用于获取选定数据的无格式文本。有关详细信息，请参阅 [AsyncResult 对象](https://docs.microsoft.com/javascript/api/office/office.asyncresult?view=office-js)。
+   - 例如，**getSelectedDataAsync** 是 Office.js 中的常规函数，用于获取选定数据的无格式文本。有关详细信息，请参阅 [AsyncResult 对象](https://docs.microsoft.com/javascript/api/office/office.asyncresult)。
     
    - Project-15.js 中的 **getSelectedTaskAsync** 函数用于获取选定任务的 GUID。同样，**getSelectedResourceAsync** 函数用于获取选定资源的 GUID。如果在未选择任务或资源时调用这些函数，函数会显示未定义错误。
     
@@ -188,7 +188,7 @@ JSOMCall.html 示例使用 office.js 文件和 project-15.js 文件中包含的 
    - 如果项目与 SharePoint 任务列表同步，则 **getWSSUrlAsync** 函数获取任务列表的 URL 和名称。如果项目不与 SharePoint 任务列表同步，则 **getWSSUrlAsync** 函数错误关闭。
     
      > [!NOTE]
-     > 若要获取任务列表的 SharePoint URL 和名称，建议将 **getProjectFieldAsync** 函数与 [ProjectProjectFields](https://docs.microsoft.com/javascript/api/office/office.projectprojectfields?view=office-js) 枚举中的 **WSSUrl** 和 **WSSList** 常量配合使用。
+     > 若要获取任务列表的 SharePoint URL 和名称，建议将 **getProjectFieldAsync** 函数与 [ProjectProjectFields](https://docs.microsoft.com/javascript/api/office/office.projectprojectfields) 枚举中的 **WSSUrl** 和 **WSSList** 常量配合使用。
 
    以下代码的每个函数中都包含由 `function (asyncResult)` 指定的匿名函数，该函数是获取异步结果的回叫。你可以使用命名函数，而不是匿名函数，前者有助于实现复杂外接程序的可维护性。
 
@@ -1094,7 +1094,7 @@ function logMethodError(methodName, errorName, errorMessage, actionMessage) {
 
 - [Project 任务窗格加载项](../project/project-add-ins.md)
 - [了解加载项的 JavaScript API](../develop/understanding-the-javascript-api-for-office.md)
-- [适用于 Office 加载项的 JavaScript API](https://docs.microsoft.com/office/dev/add-ins/reference/javascript-api-for-office?view=office-js)
+- [适用于 Office 加载项的 JavaScript API](https://docs.microsoft.com/office/dev/add-ins/reference/javascript-api-for-office)
 - [Office 加载项清单的架构参考 (v1.1)](../develop/add-in-manifests.md)     
 - [Project 2013 SDK 下载](https://www.microsoft.com/download/details.aspx?id=30435%20)
     

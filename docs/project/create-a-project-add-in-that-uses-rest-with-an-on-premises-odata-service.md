@@ -2,12 +2,12 @@
 title: 创建将 REST 与本地 Project Server OData 服务结合使用的 Project 加载项
 description: ''
 ms.date: 01/23/2018
-ms.openlocfilehash: 0bd11e15d2742db12ecbe88d60e02f4e1fa87867
-ms.sourcegitcommit: 3d8454055ba4d7aae12f335def97357dea5beb30
+ms.openlocfilehash: 9fc6e526587a6256e5ee51effe3bdb5cfe27af47
+ms.sourcegitcommit: 60fd8a3ac4a6d66cb9e075ce7e0cde3c888a5fe9
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "27271025"
+ms.lasthandoff: 12/28/2018
+ms.locfileid: "27458032"
 ---
 # <a name="create-a-project-add-in-that-uses-rest-with-an-on-premises-project-server-odata-service"></a>创建将 REST 与本地 Project Server OData 服务结合使用的 Project 加载项
 
@@ -316,7 +316,7 @@ HelloProjectOData.js 文件的剩余部分包含两个函数：当用户选择�
     }
     ```
 
-2. 添加 **setOdataUrl** 和相关函数。**setOdataUrl** 函数调用 **getProjectGuid** 和 **getDocumentUrl** 以初始化全局变量。在 [getProjectFieldAsync method](https://docs.microsoft.com/javascript/api/office/office.document?view=office-js) 中，_callback_ 参数的匿名函数通过使用 jQuery 库中的 **removeAttr** 方法启用“**比较所有项目**”按钮，并显示 **ProjectData** 服务的 URL。如果 Project 未连接 Project Web App，则函数会提示错误，该错误会显示一个弹出错误消息。SurfaceErrors.js 文件中包括 **throwError** 方法。
+2. 添加 **setOdataUrl** 和相关函数。**setOdataUrl** 函数调用 **getProjectGuid** 和 **getDocumentUrl** 以初始化全局变量。在 [getProjectFieldAsync method](https://docs.microsoft.com/javascript/api/office/office.document) 中，_callback_ 参数的匿名函数通过使用 jQuery 库中的 **removeAttr** 方法启用“**比较所有项目**”按钮，并显示 **ProjectData** 服务的 URL。如果 Project 未连接 Project Web App，则函数会提示错误，该错误会显示一个弹出错误消息。SurfaceErrors.js 文件中包括 **throwError** 方法。
     
    > [!NOTE]
    > 若要在装有 Project Server 的计算机上运行 Visual Studio 时按 **F5** 调试，请取消注释初始化 **_pwa** 全局变量的代码行后面的代码。若要在装有 Project Server 计算机上进行调试时启用 jQuery **ajax** 方法，必须设置 PWA URL 的 **localhost** 值。如果在远程计算机上运行 Visual Studio，那么 **localhost** URL 是可选的。部署加载项前，请注释掉相应代码。

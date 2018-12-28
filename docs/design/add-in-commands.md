@@ -2,12 +2,12 @@
 title: Excel、Word 和 PowerPoint 加载项命令
 description: ''
 ms.date: 01/23/2018
-ms.openlocfilehash: 698fd4b77ea90430a141db1c791856f4f57fa29b
-ms.sourcegitcommit: 9b021af6cb23a58486d6c5c7492be425e309bea1
+ms.openlocfilehash: 17bc464793e8a85c54b4e2d3abe2e94e38c2e185
+ms.sourcegitcommit: 60fd8a3ac4a6d66cb9e075ce7e0cde3c888a5fe9
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/15/2018
-ms.locfileid: "26533663"
+ms.lasthandoff: 12/28/2018
+ms.locfileid: "27457675"
 ---
 # <a name="add-in-commands-for-excel-word-and-powerpoint"></a>Excel、Word 和 PowerPoint 加载项命令
 
@@ -45,7 +45,7 @@ ms.locfileid: "26533663"
 **操作**
 
 - ShowTaskpane - 显示一个或多个在其中加载自定义 HTML 页的窗格。
-- ExecuteFunction - 加载一个不可见的 HTML 页，然后在其中执行一个 JavaScript 函数。若要在你的函数（例如错误、进度或其他输入）中显示 UI，你可以使用 [displayDialog](https://docs.microsoft.com/javascript/api/office/office.ui?view=office-js) API。  
+- ExecuteFunction - 加载一个不可见的 HTML 页，然后在其中执行一个 JavaScript 函数。若要在你的函数（例如错误、进度或其他输入）中显示 UI，你可以使用 [displayDialog](https://docs.microsoft.com/javascript/api/office/office.ui) API。  
 
 ## <a name="supported-platforms"></a>支持的平台
 
@@ -85,4 +85,4 @@ ms.locfileid: "26533663"
 
 加载项命令的最佳入门方式是参照 GitHub 上的 [Office 加载项命令示例](https://github.com/OfficeDev/Office-Add-in-Commands-Samples/)。
 
-若要详细了解如何在清单中指定加载项命令，请参阅[在清单中创建加载项命令](../develop/create-addin-commands.md)和 [VersionOverrides](https://docs.microsoft.com/office/dev/add-ins/reference/manifest/versionoverrides?view=office-js) 参考内容。
+若要详细了解如何在清单中指定加载项命令，请参阅[在清单中创建加载项命令](../develop/create-addin-commands.md)和 [VersionOverrides](https://docs.microsoft.com/office/dev/add-ins/reference/manifest/versionoverrides) 参考内容。

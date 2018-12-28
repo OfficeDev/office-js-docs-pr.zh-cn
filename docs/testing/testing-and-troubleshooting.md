@@ -2,12 +2,12 @@
 title: 排查 Office 加载项中的用户错误
 description: ''
 ms.date: 01/23/2018
-ms.openlocfilehash: fb1b15236214056e6e15b4581a3813d42e31dc54
-ms.sourcegitcommit: 3d8454055ba4d7aae12f335def97357dea5beb30
+ms.openlocfilehash: 6106b138eabb0360b11671eeb2a467e93311321e
+ms.sourcegitcommit: 60fd8a3ac4a6d66cb9e075ce7e0cde3c888a5fe9
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "27270773"
+ms.lasthandoff: 12/28/2018
+ms.locfileid: "27457913"
 ---
 # <a name="troubleshoot-user-errors-with-office-add-ins"></a>排查 Office 加载项中的用户错误
 
@@ -86,7 +86,7 @@ ms.locfileid: "27270773"
 3. 输入错误消息中显示的 URL，然后选择“**添加**”。
 4. 再次尝试使用外接程序。如果问题仍然存在，请验证其他安全区域的设置，并确保外接程序域与 Office 应用程序地址栏中显示的 URL 处于同一区域。
 
-在弹出模式中使用对话框 API 时，会出现此问题。若要避免出现此问题，请使用 [displayInFrame](https://docs.microsoft.com/javascript/api/office/office.ui?view=office-js) 标记。这要求页面支持在 iframe 中进行显示。以下示例演示如何使用此标记。
+在弹出模式中使用对话框 API 时，会出现此问题。若要避免出现此问题，请使用 [displayInFrame](https://docs.microsoft.com/javascript/api/office/office.ui) 标记。这要求页面支持在 iframe 中进行显示。以下示例演示如何使用此标记。
 
 ```js
 
