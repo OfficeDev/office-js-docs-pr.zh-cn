@@ -2,12 +2,12 @@
 title: Excel 加载项概述
 description: ''
 ms.date: 01/23/2018
-ms.openlocfilehash: b8fc1aadaf47195f55fb3ed3c6281d33b32f2e4e
-ms.sourcegitcommit: 86724e980f720ed05359c9525948cb60b6f10128
+ms.openlocfilehash: ecc581a0ddb19d6c5351fd4b4e251aad8136a2e1
+ms.sourcegitcommit: 60fd8a3ac4a6d66cb9e075ce7e0cde3c888a5fe9
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/09/2018
-ms.locfileid: "26237456"
+ms.lasthandoff: 12/28/2018
+ms.locfileid: "27457472"
 ---
 # <a name="excel-add-ins-overview"></a>Excel 加载项概述
 
@@ -32,7 +32,7 @@ Office 加载项平台提供框架和 Office.js JavaScript API，使你能够创
 
 Excel 加载项包括两个基本组件：Web 应用程序和称为“清单文件”的配置文件。 
 
-Web 应用程序使用 [Office JavaScript API](https://docs.microsoft.com/office/dev/add-ins/reference/javascript-api-for-office?view=office-js) 与 Excel 中的对象进行交互，并且还有助于与在线资源进行交互。 例如，加载项可以执行下列任意任务：
+Web 应用程序使用 [Office JavaScript API](https://docs.microsoft.com/office/dev/add-ins/reference/javascript-api-for-office) 与 Excel 中的对象进行交互，并且还有助于与在线资源进行交互。 例如，加载项可以执行下列任意任务：
 
 * 创建、读取、更新和删除工作簿中的数据（工作表、区域、表、图表、已命名项等）。
 * 使用标准 OAuth 2.0 流通过在线服务执行用户身份验证。
@@ -75,7 +75,7 @@ Web 应用程序可以托管在任何 Web 服务器上，并且可以使用客�
 
 ### <a name="dialog-boxes"></a>对话框
 
-对话框是浮动在活动的 Excel 应用程序窗口之上的界面。 可以将对话框用于以下任务，如显示无法直接在任务窗格中打开的登录页、请求用户确认操作，或托管如果局限在任务窗格中可能过小的视频。 若要在 Excel 加载项中打开对话框，请使用[对话框 API](https://docs.microsoft.com/javascript/api/office/office.ui?view=office-js)。
+对话框是浮动在活动的 Excel 应用程序窗口之上的界面。 可以将对话框用于以下任务，如显示无法直接在任务窗格中打开的登录页、请求用户确认操作，或托管如果局限在任务窗格中可能过小的视频。 若要在 Excel 加载项中打开对话框，请使用[对话框 API](https://docs.microsoft.com/javascript/api/office/office.ui)。
 
 **对话框**
 
@@ -95,11 +95,11 @@ Web 应用程序可以托管在任何 Web 服务器上，并且可以使用客�
 
 ## <a name="javascript-apis-to-interact-with-workbook-content"></a>要与工作簿内容交互的 JavaScript API
 
-Excel 加载项通过使用 [Office JavaScript API](https://docs.microsoft.com/office/dev/add-ins/reference/javascript-api-for-office?view=office-js) 与 Excel 中的对象进行交互，其中包括两个 JavaScript 对象模型：
+Excel 加载项通过使用 [Office JavaScript API](https://docs.microsoft.com/office/dev/add-ins/reference/javascript-api-for-office) 与 Excel 中的对象进行交互，其中包括两个 JavaScript 对象模型：
 
-* **Excel JavaScript API**：[Excel JavaScript API](https://docs.microsoft.com/office/dev/add-ins/reference/overview/excel-add-ins-reference-overview?view=office-js) 随 Office 2016 引入，提供强类型的 Excel 对象，可用于访问工作表、区域、表、图表等。 
+* **Excel JavaScript API**：[Excel JavaScript API](https://docs.microsoft.com/office/dev/add-ins/reference/overview/excel-add-ins-reference-overview) 随 Office 2016 引入，提供强类型的 Excel 对象，可用于访问工作表、区域、表、图表等。 
 
-* **共享 API**：共享 API 随 Office 2013 引入，使用它可以访问多种类型的主机应用程序（如 Word、Excel 和 PowerPoint ）中常见的 UI、对话框和客户端设置等功能。 由于共享 API 确实为 Excel 交互提供了有限的功能，因此，如果加载项需要在 Excel 2013 上运行，则可以使用它。
+* **通用 API**：通用 API 随 Office 2013 引入，使用它可以访问多种类型的主机应用程序（如 Word、Excel 和 PowerPoint ）中常见的 UI、对话框和客户端设置等功能。 由于通用 API 确实为 Excel 交互提供了有限的功能，因此，如果加载项需要在 Excel 2013 上运行，则可以使用它。
 
 ## <a name="next-steps"></a>后续步骤
 
@@ -111,4 +111,4 @@ Excel 加载项通过使用 [Office JavaScript API](https://docs.microsoft.com/o
 - [开发 Office 加载项的最佳做法](../concepts/add-in-development-best-practices.md)
 - [Office 加载项的设计准则](../design/add-in-design.md)
 - [Excel JavaScript API 基本编程概念](excel-add-ins-core-concepts.md)
-- [Excel JavaScript API 参考](https://docs.microsoft.com/office/dev/add-ins/reference/overview/excel-add-ins-reference-overview?view=office-js)
+- [Excel JavaScript API 参考](https://docs.microsoft.com/office/dev/add-ins/reference/overview/excel-add-ins-reference-overview)

@@ -2,12 +2,12 @@
 title: 清单文件中的 Rule 元素
 description: ''
 ms.date: 11/30/2018
-ms.openlocfilehash: ce7763ecb4ef81587ccacbd4090a6f412baf99b2
-ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
+ms.openlocfilehash: 2c5ae07e5d0a3c9c8979abcada3d758c415e2e59
+ms.sourcegitcommit: 60fd8a3ac4a6d66cb9e075ce7e0cde3c888a5fe9
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/22/2018
-ms.locfileid: "27433110"
+ms.lasthandoff: 12/28/2018
+ms.locfileid: "27457451"
 ---
 # <a name="rule-element"></a>Rule 元素
 
@@ -74,7 +74,7 @@ ms.locfileid: "27433110"
 | **EntityType** | 是 | 指定若想规则计算结果为 true 而必须存在的实体类型。可以为以下类型之一：`MeetingSuggestion`、`TaskSuggestion`、`Address`、`Url`、`PhoneNumber`、`EmailAddress` 或 `Contact`。 |
 | **RegExFilter** | 否 | 指定一个针对此实体运行以进行激活的正则表达式。 |
 | **FilterName** | 否 | 指定正则表达式筛选器的名称，以便随后能够在你的外接程序代码中引用该名称。 |
-| **IgnoreCase** | 否 | 指定在运行由 **RegExFilter** 属性指定的正则表达式时忽略大小写。 |
+| **IgnoreCase** | 否 | 指定在匹配由 **RegExFilter** 属性指定的正则表达式时是否忽略大小写。 |
 | **Highlight** | 否 | **注意：** 这仅适用于 **ExtensionPoint** 元素中的 **Rule** 元素。指定客户端应如何突出显示匹配的实体。可以是以下值之一：`all` 或 `none`。如果未指定，则默认值为 `all`。 |
 
 ### <a name="example"></a>示例
@@ -93,9 +93,10 @@ ms.locfileid: "27433110"
 |:-----|:-----|:-----|
 | **RegExName** | 是 | 指定正则表达式的名称，以便你能够在外接程序的代码中引用该表达式。 |
 | **RegExValue** | 是 | 指定将对其求值的正则表达式以确定是否应显示邮件外接程序。 |
-| **PropertyName** | 是 | 指定正则表达式进行计算所依据的属性名称。可以是下列类型之一：`Subject`、`BodyAsPlaintext`、`BodyAsHTML` 或 `SenderSMTPAddress`。 |
-| **IgnoreCase** | 否 | 指定在执行正则表达式时忽略大小写。 |
-| **Highlight** | 否 | **注意：** 这仅适用于 **ExtensionPoint** 元素中的 **Rule** 元素。指定客户端应如何突出显示匹配的文本。可以是以下值之一：`all` 或 `none`。如果未指定，则默认值为 `all`。 |
+| **PropertyName** | 是 | 指定正则表达式进行计算所依据的属性名称。可以是下列类型之一：`Subject`、`BodyAsPlaintext`、`BodyAsHTML` 或 `SenderSMTPAddress`。<br/><br/>如果指定 `BodyAsHTML`，则 Outlook 只会在项目正文为 HTML 时应用正则表达式。 否则，Outlook 将不会返回该正则表达式的匹配项。<br/><br/>如果指定 `BodyAsPlaintext`，则 Outlook 将始终对项目正文应用正则表达式。<br/><br/>**注释：** 如果指定 **Rule** 元素的 **Highlight** 属性，则必须将 **PropertyName** 属性设为 `BodyAsPlaintext`。|
+| **IgnoreCase** | 否 | 指定在匹配由 **RegExName** 属性指定的正则表达式时是否忽略大小写。 |
+| **Highlight** | 否 | 指定客户端应如何突出显示匹配的文本。 此属性仅适用于 **ExtensionPoint** 元素内的 **Rule** 元素。 可以是以下值之一：`all` 或 `none`。 如果未指定，则默认值为 `all`。<br/><br/>**注释：** 如果指定 **Rule** 元素的 **Highlight** 属性，则必须将 **PropertyName** 属性设为 `BodyAsPlaintext`。
+|
 
 ### <a name="example"></a>示例
 

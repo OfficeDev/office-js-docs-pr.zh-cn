@@ -2,18 +2,18 @@
 title: Office.context - 要求集 1.7
 description: ''
 ms.date: 10/11/2018
-ms.openlocfilehash: 86d65e827705476aa1e72e5eb178a546833c9acc
-ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
+ms.openlocfilehash: 7b2886901fc23f998c2254bca834e3608f8cf5c3
+ms.sourcegitcommit: 60fd8a3ac4a6d66cb9e075ce7e0cde3c888a5fe9
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/22/2018
-ms.locfileid: "27433577"
+ms.lasthandoff: 12/28/2018
+ms.locfileid: "27457465"
 ---
 # <a name="context"></a>上下文
 
 ### <a name="officeofficemdcontext"></a>[Office](Office.md).context
 
-Office.context 命名空间提供所有 Office 应用中的外接程序所使用的共享接口。此列表仅记录 Outlook 外接程序所使用的接口。有关 Office.context 命名空间的完整列表，请参阅[共享 API 中的 Office.context 引用](/javascript/api/office/office.context)。
+Office.context 命名空间提供所有 Office 应用中的加载项所使用的共享接口。此列表仅记录 Outlook 加载项所使用的接口。有关 Office.context 命名空间的完整列表，请参阅[通用 API 中的 Office.context 引用](/javascript/api/office/office.context)。
 
 ##### <a name="requirements"></a>要求
 
@@ -75,7 +75,7 @@ function write(message){
 
 ####  <a name="officetheme-object"></a>officeTheme :Object
 
-提供了访问 Office 主题颜色的属性。
+提供对 Office 主题颜色的属性的访问权限。
 
 > [!NOTE]
 > 在 Outlook for iOS 或 Outlook for Android 中不支持此成员。

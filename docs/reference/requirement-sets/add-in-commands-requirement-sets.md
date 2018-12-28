@@ -2,12 +2,12 @@
 title: 加载项命令要求集
 description: ''
 ms.date: 11/21/2018
-ms.openlocfilehash: d0da9d9584a899658ab73e1373589a6d824f0c3e
-ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
+ms.openlocfilehash: c308112a923483ac9ac82cd08b42d7744d93c8e3
+ms.sourcegitcommit: 60fd8a3ac4a6d66cb9e075ce7e0cde3c888a5fe9
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/22/2018
-ms.locfileid: "27432779"
+ms.lasthandoff: 12/28/2018
+ms.locfileid: "27457605"
 ---
 # <a name="add-in-commands-requirement-sets"></a>加载项命令要求集
 
@@ -29,7 +29,7 @@ ms.locfileid: "27432779"
 |:-----|:-----|:-----|:-----|:-----|:-----|:-----|
 | AddinCommands 1.1  | 不适用 | *仅 Outlook 支持* 16.0.4678.1000  | 版本 1705（内部版本 8121.1000）或更高版本 | 不适用 | 15.34 或更高版本\*| 2017 年 5 月 |
 
->\*针对版本 16.9 &ndash; 16.14（含），[Office.context.requirements.isSetSupported](https://docs.microsoft.com/javascript/api/office/office.requirementsetsupport?view=office-js#issetsupported-name--minversion-) 方法将错误地返回 `false`，但这些版本*支持*需求集。
+>\*针对版本 16.9 &ndash; 16.14（含），[Office.context.requirements.isSetSupported](https://docs.microsoft.com/javascript/api/office/office.requirementsetsupport#issetsupported-name--minversion-) 方法将错误地返回 `false`，但这些版本*支持*需求集。
 
 若要详细了解版本、内部版本号和 Office Online Server，请参阅：
 
