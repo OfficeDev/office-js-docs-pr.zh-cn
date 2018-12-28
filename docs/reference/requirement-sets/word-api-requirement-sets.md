@@ -2,12 +2,12 @@
 title: Word JavaScript API 要求集
 description: ''
 ms.date: 11/14/2018
-ms.openlocfilehash: 061d9d9ddd7ad6ba9009e6f0f468050c369f5571
-ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
+ms.openlocfilehash: 92678945f504e39bcf712558736145e948a8c628
+ms.sourcegitcommit: 60fd8a3ac4a6d66cb9e075ce7e0cde3c888a5fe9
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/22/2018
-ms.locfileid: "27434011"
+ms.lasthandoff: 12/28/2018
+ms.locfileid: "27458046"
 ---
 # <a name="word-javascript-api-requirement-sets"></a>Word JavaScript API 要求集
 
