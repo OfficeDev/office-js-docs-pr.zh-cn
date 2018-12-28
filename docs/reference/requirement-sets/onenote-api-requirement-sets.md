@@ -2,34 +2,34 @@
 title: OneNote JavaScript API 要求集
 description: ''
 ms.date: 10/09/2018
-ms.openlocfilehash: c0cec9375dc0d3db4a09e44a9b73935af0691bde
-ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
+ms.openlocfilehash: 2402d9100228e079066f4abd4f8909aa384dd1c9
+ms.sourcegitcommit: 60fd8a3ac4a6d66cb9e075ce7e0cde3c888a5fe9
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/22/2018
-ms.locfileid: "27433822"
+ms.lasthandoff: 12/28/2018
+ms.locfileid: "27457598"
 ---
-# <a name="onenote-javascript-api-requirement-sets"></a><span data-ttu-id="97da6-102">OneNote JavaScript API 要求集</span><span class="sxs-lookup"><span data-stu-id="97da6-102">OneNote JavaScript API requirement sets</span></span>
+# <a name="onenote-javascript-api-requirement-sets"></a><span data-ttu-id="02c6b-102">OneNote JavaScript API 要求集</span><span class="sxs-lookup"><span data-stu-id="02c6b-102">OneNote JavaScript API requirement sets</span></span>
 
-<span data-ttu-id="97da6-p101">要求集是指各组已命名的 API 成员。Office 加载项使用清单中指定的要求集或执行运行时检查，以确定 Office 主机是否支持加载项所需的 API。有关详细信息，请参阅 [Office 版本和要求集](https://docs.microsoft.com/office/dev/add-ins/develop/office-versions-and-requirement-sets)。</span><span class="sxs-lookup"><span data-stu-id="97da6-p101">Requirement sets are named groups of API members. Office Add-ins use requirement sets specified in the manifest or use a runtime check to determine whether an Office host supports APIs that an add-in needs. For more information, see [Office versions and requirement sets](https://docs.microsoft.com/office/dev/add-ins/develop/office-versions-and-requirement-sets).</span></span>
+<span data-ttu-id="02c6b-p101">要求集是指各组已命名的 API 成员。Office 加载项使用清单中指定的要求集或执行运行时检查，以确定 Office 主机是否支持加载项所需的 API。有关详细信息，请参阅 [Office 版本和要求集](https://docs.microsoft.com/office/dev/add-ins/develop/office-versions-and-requirement-sets)。</span><span class="sxs-lookup"><span data-stu-id="02c6b-p101">Requirement sets are named groups of API members. Office Add-ins use requirement sets specified in the manifest or use a runtime check to determine whether an Office host supports APIs that an add-in needs. For more information, see [Office versions and requirement sets](https://docs.microsoft.com/office/dev/add-ins/develop/office-versions-and-requirement-sets).</span></span>
 
-<span data-ttu-id="97da6-106">下表列出了 OneNote 要求集、支持这些要求集的 Office 主机应用程序，以及这些应用程序的内部版本或发布日期。</span><span class="sxs-lookup"><span data-stu-id="97da6-106">The following table lists the OneNote requirement sets, the Office host applications that support those requirement sets, and the build versions or availability date.</span></span>
+<span data-ttu-id="02c6b-106">下表列出了 OneNote 要求集、支持这些要求集的 Office 主机应用程序，以及这些应用程序的内部版本或发布日期。</span><span class="sxs-lookup"><span data-stu-id="02c6b-106">The following table lists the OneNote requirement sets, the Office host applications that support those requirement sets, and the build versions or availability date.</span></span>
 
-|  <span data-ttu-id="97da6-107">要求集</span><span class="sxs-lookup"><span data-stu-id="97da6-107">Requirement set</span></span>  |  <span data-ttu-id="97da6-108">Office Online</span><span class="sxs-lookup"><span data-stu-id="97da6-108">Office Online</span></span> | 
+|  <span data-ttu-id="02c6b-107">要求集</span><span class="sxs-lookup"><span data-stu-id="02c6b-107">Requirement set</span></span>  |  <span data-ttu-id="02c6b-108">Office Online</span><span class="sxs-lookup"><span data-stu-id="02c6b-108">Office Online</span></span> | 
 |:-----|:-----|
-| <span data-ttu-id="97da6-109">OneNoteApi 1.1</span><span class="sxs-lookup"><span data-stu-id="97da6-109">OneNoteApi 1.1</span></span>  | <span data-ttu-id="97da6-110">2016 年 9 月</span><span class="sxs-lookup"><span data-stu-id="97da6-110">September 2016</span></span> |  
+| <span data-ttu-id="02c6b-109">OneNoteApi 1.1</span><span class="sxs-lookup"><span data-stu-id="02c6b-109">OneNoteApi 1.1</span></span>  | <span data-ttu-id="02c6b-110">2016 年 9 月</span><span class="sxs-lookup"><span data-stu-id="02c6b-110">September 2016</span></span> |  
 
-## <a name="office-common-api-requirement-sets"></a><span data-ttu-id="97da6-111">Office 通用 API 要求集</span><span class="sxs-lookup"><span data-stu-id="97da6-111">Office common API requirement sets</span></span>
+## <a name="office-common-api-requirement-sets"></a><span data-ttu-id="02c6b-111">Office 通用 API 要求集</span><span class="sxs-lookup"><span data-stu-id="02c6b-111">Office common API requirement sets</span></span>
 
-<span data-ttu-id="97da6-112">若要了解通用 API 要求集，请参阅 [Office 通用 API 要求集](office-add-in-requirement-sets.md)。</span><span class="sxs-lookup"><span data-stu-id="97da6-112">For information about common API requirement sets, see [Office common API requirement sets](office-add-in-requirement-sets.md).</span></span>
+<span data-ttu-id="02c6b-112">若要了解通用 API 要求集，请参阅 [Office 通用 API 要求集](office-add-in-requirement-sets.md)。</span><span class="sxs-lookup"><span data-stu-id="02c6b-112">For information about common API requirement sets, see [Office common API requirement sets](office-add-in-requirement-sets.md).</span></span>
 
-## <a name="onenote-javascript-api-11"></a><span data-ttu-id="97da6-113">OneNote JavaScript API 1.1</span><span class="sxs-lookup"><span data-stu-id="97da6-113">OneNote JavaScript API 1.1</span></span> 
+## <a name="onenote-javascript-api-11"></a><span data-ttu-id="02c6b-113">OneNote JavaScript API 1.1</span><span class="sxs-lookup"><span data-stu-id="02c6b-113">OneNote JavaScript API 1.1</span></span> 
 
-<span data-ttu-id="97da6-114">OneNote JavaScript API 1.1 是该 API 的第一版。</span><span class="sxs-lookup"><span data-stu-id="97da6-114">OneNote JavaScript API 1.1 is the first version of the API.</span></span> <span data-ttu-id="97da6-115">有关此 API 的详细信息，请参阅 [OneNote JavaScript API 编程概述](https://docs.microsoft.com/office/dev/add-ins/onenote/onenote-add-ins-programming-overview)。</span><span class="sxs-lookup"><span data-stu-id="97da6-115">For details about the API, see the [OneNote JavaScript API](https://docs.microsoft.com/office/dev/add-ins/onenote/onenote-add-ins-programming-overview) reference topics.</span></span>
+<span data-ttu-id="02c6b-114">OneNote JavaScript API 1.1 是该 API 的第一版。</span><span class="sxs-lookup"><span data-stu-id="02c6b-114">OneNote JavaScript API 1.1 is the first version of the API.</span></span> <span data-ttu-id="02c6b-115">有关此 API 的详细信息，请参阅 [OneNote JavaScript API 编程概述](https://docs.microsoft.com/office/dev/add-ins/onenote/onenote-add-ins-programming-overview)。</span><span class="sxs-lookup"><span data-stu-id="02c6b-115">For details about the API, see the [OneNote JavaScript API programming overview](https://docs.microsoft.com/office/dev/add-ins/onenote/onenote-add-ins-programming-overview).</span></span>
 
-## <a name="runtime-requirement-support-check"></a><span data-ttu-id="97da6-116">运行时要求支持检查</span><span class="sxs-lookup"><span data-stu-id="97da6-116">Runtime requirement support check</span></span>
+## <a name="runtime-requirement-support-check"></a><span data-ttu-id="02c6b-116">运行时要求支持检查</span><span class="sxs-lookup"><span data-stu-id="02c6b-116">Runtime requirement support check</span></span>
 
-<span data-ttu-id="97da6-117">在运行时期间，加载项可以执行下列检查，确定特定主机是否支持 API 要求集：</span><span class="sxs-lookup"><span data-stu-id="97da6-117">During the runtime, add-ins can check if a particular host supports an API requirement set by doing the following-check:</span></span> 
+<span data-ttu-id="02c6b-117">在运行时期间，加载项可以执行下列检查，确定特定主机是否支持 API 要求集：</span><span class="sxs-lookup"><span data-stu-id="02c6b-117">During the runtime, add-ins can check if a particular host supports an API requirement set by doing the following-check:</span></span> 
 
 ```js
 if (Office.context.requirements.isSetSupported('OneNoteApi', 1.1) === true) {
@@ -40,11 +40,11 @@ else {
 }
 ```
 
-## <a name="manifest-based-requirement-support-check"></a><span data-ttu-id="97da6-118">基于清单的要求支持检查</span><span class="sxs-lookup"><span data-stu-id="97da6-118">Manifest-based requirement support check</span></span>
+## <a name="manifest-based-requirement-support-check"></a><span data-ttu-id="02c6b-118">基于清单的要求支持检查</span><span class="sxs-lookup"><span data-stu-id="02c6b-118">Manifest-based requirement support check</span></span>
 
-<span data-ttu-id="97da6-p103">只能使用外接程序清单中的 Requirements 元素指定外接程序必须使用的关键要求集或 API 成员。如果 Office 主机或平台不支持在 Requirements 元素中指定的要求集或 API 成员，则外接程序将无法在该主机或平台上运行，并且不会显示在“我的外接程序”中。</span><span class="sxs-lookup"><span data-stu-id="97da6-p103">Use the Requirements element in the add-in manifest to specify critical requirement sets or API members that your add-in must use. If the Office host or platform doesn't support the requirement sets or API members specified in the Requirements element, the add-in won't run in that host or platform, and won't display in My Add-ins.</span></span>
+<span data-ttu-id="02c6b-p103">只能使用外接程序清单中的 Requirements 元素指定外接程序必须使用的关键要求集或 API 成员。如果 Office 主机或平台不支持在 Requirements 元素中指定的要求集或 API 成员，则外接程序将无法在该主机或平台上运行，并且不会显示在“我的外接程序”中。</span><span class="sxs-lookup"><span data-stu-id="02c6b-p103">Use the Requirements element in the add-in manifest to specify critical requirement sets or API members that your add-in must use. If the Office host or platform doesn't support the requirement sets or API members specified in the Requirements element, the add-in won't run in that host or platform, and won't display in My Add-ins.</span></span>
 
-<span data-ttu-id="97da6-121">下面的代码示例展示了加载所有 支持第 1.1 版 OneNoteApi 要求集的 Office 主机应用程序的外接程序。</span><span class="sxs-lookup"><span data-stu-id="97da6-121">The following code example shows an add-in that loads in all Office host applications that support the OneNoteApi requirement set, version 1.1.</span></span>
+<span data-ttu-id="02c6b-121">下面的代码示例展示了加载所有 支持第 1.1 版 OneNoteApi 要求集的 Office 主机应用程序的外接程序。</span><span class="sxs-lookup"><span data-stu-id="02c6b-121">The following code example shows an add-in that loads in all Office host applications that support the OneNoteApi requirement set, version 1.1.</span></span>
 
 ```xml
 <Requirements>
@@ -54,8 +54,8 @@ else {
 </Requirements>
 ```
 
-## <a name="see-also"></a><span data-ttu-id="97da6-122">另请参阅</span><span class="sxs-lookup"><span data-stu-id="97da6-122">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="02c6b-122">另请参阅</span><span class="sxs-lookup"><span data-stu-id="02c6b-122">See also</span></span>
 
-- [<span data-ttu-id="97da6-123">Office 版本和要求集</span><span class="sxs-lookup"><span data-stu-id="97da6-123">Office versions and requirement sets</span></span>](https://docs.microsoft.com/office/dev/add-ins/develop/office-versions-and-requirement-sets)
-- [<span data-ttu-id="97da6-124">指定 Office 主机和 API 要求</span><span class="sxs-lookup"><span data-stu-id="97da6-124">Specify Office hosts and API requirements</span></span>](https://docs.microsoft.com/office/dev/add-ins/develop/specify-office-hosts-and-api-requirements)
-- [<span data-ttu-id="97da6-125">Office 外接程序 XML 清单</span><span class="sxs-lookup"><span data-stu-id="97da6-125">Office Add-ins XML manifest</span></span>](https://docs.microsoft.com/office/dev/add-ins/develop/add-in-manifests)
+- [<span data-ttu-id="02c6b-123">Office 版本和要求集</span><span class="sxs-lookup"><span data-stu-id="02c6b-123">Office versions and requirement sets</span></span>](https://docs.microsoft.com/office/dev/add-ins/develop/office-versions-and-requirement-sets)
+- [<span data-ttu-id="02c6b-124">指定 Office 主机和 API 要求</span><span class="sxs-lookup"><span data-stu-id="02c6b-124">Specify Office hosts and API requirements</span></span>](https://docs.microsoft.com/office/dev/add-ins/develop/specify-office-hosts-and-api-requirements)
+- [<span data-ttu-id="02c6b-125">Office 外接程序 XML 清单</span><span class="sxs-lookup"><span data-stu-id="02c6b-125">Office Add-ins XML manifest</span></span>](https://docs.microsoft.com/office/dev/add-ins/develop/add-in-manifests)
