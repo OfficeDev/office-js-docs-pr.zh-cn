@@ -123,7 +123,7 @@
 
     ```js
     function openDialog() {
-        // TODO1: Call the Office Shared API that opens a dialog
+        // TODO1: Call the Office Common API that opens a dialog
     }
     ```
 

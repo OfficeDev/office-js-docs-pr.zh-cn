@@ -471,4 +471,4 @@ _适用于：Word 2016、Word for iPad、Word for Mac_
 * [Word 加载项概述](../word/word-add-ins-programming-overview.md)
 * 
   [Word 加载项代码示例](https://developer.microsoft.com/en-us/office/gallery/?filterBy=Samples,Word)
-* [Word JavaScript API 参考](https://docs.microsoft.com/office/dev/add-ins/reference/overview/word-add-ins-reference-overview?view=office-js)
+* [Word JavaScript API 参考](https://docs.microsoft.com/office/dev/add-ins/reference/overview/word-add-ins-reference-overview)

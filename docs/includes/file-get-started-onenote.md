@@ -261,6 +261,6 @@
 ## <a name="see-also"></a>另请参阅
 
 - [OneNote JavaScript API 编程概述](../onenote/onenote-add-ins-programming-overview.md)
-- [OneNote JavaScript API 参考](https://docs.microsoft.com/office/dev/add-ins/reference/overview/onenote-add-ins-javascript-reference?view=office-js)
+- [OneNote JavaScript API 参考](https://docs.microsoft.com/office/dev/add-ins/reference/overview/onenote-add-ins-javascript-reference)
 - [Rubric Grader 示例](https://github.com/OfficeDev/OneNote-Add-in-Rubric-Grader)
 - [Office 加载项平台概述](../overview/office-add-ins.md)
