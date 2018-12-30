@@ -1,13 +1,13 @@
 ---
 title: 使用 Excel JavaScript API 对区域执行操作（基本）
 description: ''
-ms.date: 12/14/2018
-ms.openlocfilehash: 4c64abec1f79bd1194a106e46b8a6fe6c4b71d07
-ms.sourcegitcommit: 09f124fac7b2e711e1a8be562a99624627c0699e
+ms.date: 12/28/2018
+ms.openlocfilehash: 843f57f8e5dc20d4341749f4594e0bd8139e60fa
+ms.sourcegitcommit: d75295cc4f47d8d872e7a361fdb5526f0f145dd2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/15/2018
-ms.locfileid: "27283100"
+ms.lasthandoff: 12/29/2018
+ms.locfileid: "27460868"
 ---
 # <a name="work-with-ranges-using-the-excel-javascript-api"></a>使用 Excel JavaScript API 处理区域
 
@@ -541,6 +541,35 @@ Excel.run(function (context) {
 ### <a name="conditional-formatting-of-ranges"></a>范围的条件格式
 
 范围可以根据条件将格式应用于个别单元格。 有关此操作的详细信息，请参阅[将条件格式应用于 Excel 范围](excel-add-ins-conditional-formatting.md)。
+
+## <a name="find-a-cell-using-string-matching-preview"></a>查找使用字符串匹配 （预览） 的单元格
+
+> [!NOTE]
+> 区域对象的 `find` 函数当前仅适用于公共预览版（beta 版本）。 若要使用此功能，必须使用 Office.js CDN 的 beta 版库：https://appsforoffice.microsoft.com/lib/beta/hosted/office.js。
+> 如果使用的是 TypeScript 或代码编辑器将 TypeScript 类型定义文件用于 IntelliSense，则使用 https://appsforoffice.microsoft.com/lib/beta/hosted/office.d.ts。
+
+`Range` 对象具有 `find` 方法在区域内搜索指定字符串。 返回有匹配文本的第一个单元格区域。 以下代码示例查找值等于字符串 **食品** 的第一个单元格，并将其地址记录到控制台。 请注意，若指定的字符串不存在于区域中，`find` 将引发 `ItemNotFound` 错误。 若您预计到指定的字符串可能不存在区域中，则可使用 [findOrNullObject](excel-add-ins-advanced-concepts.md#42ornullobject-methods) 方法，以便您的代码可正常处理该情况。
+
+```js
+Excel.run(function (context) {
+    var sheet = context.workbook.worksheets.getItem("Sample");
+    var table = sheet.tables.getItem("ExpensesTable");
+    var searchRange = table.getRange();
+    var foundRange = searchRange.find("Food", {
+        completeMatch: true, // find will match the whole cell value
+        matchCase: false, // find will not match case
+        searchDirection: Excel.SearchDirection.forward // find will start searching at the beginning of the range
+    });
+
+    foundRange.load("address");
+    return context.sync()
+        .then(function() {
+            console.log(foundRange.address);
+    });
+}).catch(errorHandlerFunction);
+```
+
+在表示一个单元格的区域调用 `find` 方法时，将在整个工作表进行搜索。 搜索开始于该单元格，并按照 `SearchCriteria.searchDirection` 指定的方向进行，如有需要在工作表结束的地方换行。
 
 ## <a name="see-also"></a>另请参阅
 

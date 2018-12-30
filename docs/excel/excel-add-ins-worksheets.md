@@ -1,13 +1,13 @@
 ---
 title: 使用 Excel JavaScript API 处理工作表
 description: ''
-ms.date: 11/27/2018
-ms.openlocfilehash: ef74dc622f3e857314874763a54df67bcff1d8ff
-ms.sourcegitcommit: 026437bd3819f4e9cd4153ebe60c98ab04e18f4e
+ms.date: 12/28/2018
+ms.openlocfilehash: 804d047270f5236209c1555190f465a760548875
+ms.sourcegitcommit: d75295cc4f47d8d872e7a361fdb5526f0f145dd2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "26992224"
+ms.lasthandoff: 12/29/2018
+ms.locfileid: "27460861"
 ---
 # <a name="work-with-worksheets-using-the-excel-javascript-api"></a>使用 Excel JavaScript API 处理工作表
 
@@ -50,7 +50,7 @@ Excel.run(function (context) {
 Excel.run(function (context) {
     var sheet = context.workbook.worksheets.getActiveWorksheet();
     sheet.load("name");
-    
+
     return context.sync()
         .then(function () {
             console.log(`The active worksheet is "${sheet.name}"`);
@@ -155,7 +155,7 @@ Excel.run(function (context) {
 
     var sheet = sheets.add("Sample");
     sheet.load("name, position");
-    
+
     return context.sync()
         .then(function () {
             console.log(`Added worksheet named "${sheet.name}" in position ${sheet.position}`);
@@ -258,16 +258,16 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
-## <a name="get-a-cell-within-a-worksheet"></a>获取工作表中的单元格
+## <a name="get-a-single-cell-within-a-worksheet"></a>获取工作表中的单个单元格
 
-下面的代码示例从名为 **Sample** 的工作表获取位于第 2 行第 5 列的单元格，加载其 **address** 和 **values** 属性，并向控制台写入一条消息。 传递给 **getCell(row: number, column:number)** 方法的值是要检索的单元格的零索引行号和列号。
+下面的代码示例从名为 **Sample** 的工作表获取位于第 2 行第 5 列的单元格，加载其 **address** 和 **values** 属性，并向控制台写入一条消息。 传递给 `getCell(row: number, column:number)` 方法的值是要检索的单元格的零索引行号和列号。
 
 ```js
 Excel.run(function (context) {
     var sheet = context.workbook.worksheets.getItem("Sample");
     var cell = sheet.getCell(1, 4);
     cell.load("address, values");
-    
+
     return context.sync()
         .then(function() {
             console.log(`The value of the cell in row 2, column 5 is "${cell.values[0][0]}" and the address of that cell is "${cell.address}"`);
@@ -275,9 +275,34 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
-## <a name="get-a-range-within-a-worksheet"></a>获取工作表中的区域
+## <a name="find-all-cells-with-matching-text-preview"></a>查找具有匹配文本 （预览） 所有单元格
 
-有关展示了如何获取工作表中区域的示例，请参阅[使用 Excel JavaScript API 处理区域](excel-add-ins-ranges.md)。
+> [!NOTE]
+> 工作表对象的 `findAll` 函数当前仅适用于公共预览版（beta 版本）。 若要使用此功能，必须使用 Office.js CDN 的 beta 版库：https://appsforoffice.microsoft.com/lib/beta/hosted/office.js。
+> 如果使用的是 TypeScript 或代码编辑器将 TypeScript 类型定义文件用于 IntelliSense，则使用 https://appsforoffice.microsoft.com/lib/beta/hosted/office.d.ts。
+
+`Worksheet` 对象具有 `find` 方法在工作表内搜索指定字符串。 返回 `RangeAreas` 对象，也就是可以进行一次性全部编辑的 `Range` 对象集。 以下代码示例查找值等于字符串 **完成** 的所有单元格，并标记为绿色。 请注意，若指定的字符串不存在于工作表中，`findAll` 将引发 `ItemNotFound` 错误。 若您预计到指定的字符串可能不存在工作表中，则可使用 [findAllOrNullObject](excel-add-ins-advanced-concepts.md#42ornullobject-methods) 方法，以便您的代码可正常处理该情况。
+
+```js
+Excel.run(function (context) {
+    var sheet = context.workbook.worksheets.getItem("Sample");
+    var foundRanges = sheet.findAll("Complete", {
+        completeMatch: true, // findAll will match the whole cell value
+        matchCase: false // findAll will not match case
+    });
+
+    return context.sync()
+        .then(function() {
+            foundRanges.format.fill.color = "green"
+    });
+}).catch(errorHandlerFunction);
+```
+
+> [!NOTE]
+> 本节介绍如何使用 `Worksheet` 对象函数查找单元格与区域。 更多区域检索信息可在特定对象文章中找到。
+> - 有关展示如何使用 `Range` 对象获取工作表中区域的示例，请参阅 [使用 Excel JavaScript API 处理区域](excel-add-ins-ranges.md)。
+> - 有关展示如何从 `Table` 对象获取区域的示例，请参阅 [使用 Excel JavaScript API 处理表](excel-add-ins-tables.md)。
+> - 有关显示如何基于单元格特性进行多个子区域的较大区域搜索示例，请参阅 [使用 Excel 加载项同时处理多个区域](excel-add-ins-multiple-ranges.md)。
 
 ## <a name="data-protection"></a>数据保护
 
@@ -298,12 +323,11 @@ Excel.run(function (context) {
 
 `protect` 方法包含两个可选参数：
 
- - `options`：定义具体编辑限制的 [WorksheetProtectionOptions](https://docs.microsoft.com/javascript/api/excel/excel.worksheetprotectionoptions) 对象。
- - `password`：表示用户规避保护并编辑工作表所需使用的密码的字符串。
+- `options`：定义具体编辑限制的 [WorksheetProtectionOptions](https://docs.microsoft.com/javascript/api/excel/excel.worksheetprotectionoptions) 对象。
+- `password`：表示用户规避保护并编辑工作表所需使用的密码的字符串。
 
 [保护工作表](https://support.office.com/article/protect-a-worksheet-3179efdb-1285-4d49-a9c3-f4ca36276de6)一文详细介绍了工作表保护，以及如何通过 Excel UI 更改保护。
 
 ## <a name="see-also"></a>另请参阅
 
 - [Excel JavaScript API 基本编程概念](excel-add-ins-core-concepts.md)
-
