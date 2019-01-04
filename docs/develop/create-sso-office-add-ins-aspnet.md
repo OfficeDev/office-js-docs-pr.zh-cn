@@ -2,12 +2,12 @@
 title: 创建使用单一登录的 ASP.NET Office 加载项
 description: ''
 ms.date: 01/23/2018
-ms.openlocfilehash: 9ccabfcb2f3dc071ab9be181dda1ed5cadadd763
-ms.sourcegitcommit: 979e8d2b0fbc537f9c01527062767c026592aa62
+ms.openlocfilehash: 295d586e363345c819584c3e04dd59c2c98f90b8
+ms.sourcegitcommit: 3007bf57515b0811ff98a7e1518ecc6fc9462276
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "25852943"
+ms.lasthandoff: 01/04/2019
+ms.locfileid: "27724898"
 ---
 # <a name="create-an-aspnet-office-add-in-that-uses-single-sign-on-preview"></a>创建使用单一登录的 ASP.NET Office 加载项（预览）
 
@@ -132,7 +132,7 @@ ms.locfileid: "25852943"
 
         1. 在结束 `</VersionOverrides>` 标记正上方的清单中，注释掉 `<WebApplicationInfo>` 部分。
 
-        2. 按 F5 启动调试会话。此操作会在下列文件夹（相比 Visual Studio，在“文件资源管理器”**** 中访问此文件夹更方便）中创建清单副本：`Office-Add-in-ASP.NET-SSO\Complete\Office-Add-in-ASPNET-SSO\bin\Debug\OfficeAppManifests`
+        2. 按 **F5** 启动调试会话。此操作会在下列文件夹（相比 Visual Studio，在“**文件资源管理器**”中访问此文件夹更方便）中创建清单副本：`Office-Add-in-ASP.NET-SSO\Complete\Office-Add-in-ASPNET-SSO\bin\Debug\OfficeAppManifests`
 
         3. 在清单副本中，删除 `<WebApplicationInfo>` 部分周围的注释语法。
 
