@@ -2,12 +2,12 @@
 ms.date: 11/29/2018
 description: 了解在 Excel 中开发自定义函数的最佳实践。
 title: 自定义函数最佳实践
-ms.openlocfilehash: b1785c7f41af9823cfd135ead29fff4eda4b0b1d
-ms.sourcegitcommit: e2ba9d7210c921d068f40d9f689314c73ad5ab4a
+ms.openlocfilehash: c1be1d01a88d50bb0f3aee8af1aea7c47658bc10
+ms.sourcegitcommit: 3007bf57515b0811ff98a7e1518ecc6fc9462276
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "27156584"
+ms.lasthandoff: 01/04/2019
+ms.locfileid: "27724884"
 ---
 # <a name="custom-functions-best-practices-preview"></a>自定义函数最佳实践（预览）
 
@@ -199,4 +199,4 @@ function getWeatherReport(zipCode, dayOfWeek)
 * [在 Excel 中创建自定义函数](custom-functions-overview.md)
 * [自定义函数元数据](custom-functions-json.md)
 * [Excel 自定义函数的运行时](custom-functions-runtime.md)
-* [Excel 自定义函数教程](excel-tutorial-custom-functions.md)
+* [Excel 自定义函数教程](../tutorials/excel-tutorial-create-custom-functions.md)

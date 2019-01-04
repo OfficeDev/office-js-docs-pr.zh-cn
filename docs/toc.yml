@@ -45,7 +45,7 @@ items:
   items:
   - name: Excel 加载项教程
     displayName: Excel
-    href: tutorials/excel-tutorial.yml
+    href: tutorials/excel-tutorial.md
   - name: Excel 自定义函数教程
     displayName: Excel
     href: tutorials/excel-tutorial-create-custom-functions.md
@@ -54,10 +54,10 @@ items:
     href: /outlook/add-ins/addin-tutorial
   - name: PowerPoint 加载项教程
     displayName: PowerPoint
-    href: tutorials/powerpoint-tutorial.yml
+    href: tutorials/powerpoint-tutorial.md
   - name: Word 加载项教程
     displayName: Word
-    href: tutorials/word-tutorial.yml
+    href: tutorials/word-tutorial.md
 - name: 概念
   items:
   - name: 运行加载项的要求
@@ -222,7 +222,7 @@ items:
         href: excel/excel-add-ins-get-started-vue.md
     - name: Excel 加载项教程
       displayName: Excel
-      href: tutorials/excel-tutorial.yml
+      href: tutorials/excel-tutorial.md
     - name: 概念
       displayName: Excel
       items:
@@ -251,7 +251,7 @@ items:
           href: excel/custom-functions-overview.md
         - name: 自定义函数教程
           displayName: Excel
-          href: excel/excel-tutorial-custom-functions.md
+          href: tutorials/excel-tutorial-create-custom-functions.md
         - name: 自定义函数运行时
           displayName: Excel
           href: excel/custom-functions-runtime.md
@@ -309,7 +309,7 @@ items:
       href: word/word-add-ins.md
     - name: Word 加载项教程
       displayName: Word
-      href: tutorials/word-tutorial.yml
+      href: tutorials/word-tutorial.md
     - name: 使用 Office Open XML 创建更优质的 Word 加载项
       displayName: Word
       href: word/create-better-add-ins-for-word-with-office-open-xml.md
@@ -346,7 +346,7 @@ items:
       href: powerpoint/powerpoint-add-ins-get-started.md
     - name: PowerPoint 加载项教程
       displayName: PowerPoint
-      href: tutorials/powerpoint-tutorial.yml
+      href: tutorials/powerpoint-tutorial.md
     - name: 在 PowerPoint 加载项中使用文档主题
       displayName: PowerPoint
       href: powerpoint/use-document-themes-in-your-powerpoint-add-ins.md
@@ -759,9 +759,9 @@ items:
         href: reference/manifest/webapplicationinfo.md
 - name: Resources
   href: resources/resources-links-help.md
-ms.openlocfilehash: 6b231178fde8ecca79a06b89d12c00912fed9dac
-ms.sourcegitcommit: 60fd8a3ac4a6d66cb9e075ce7e0cde3c888a5fe9
+ms.openlocfilehash: 60cd25434abb81c9b6142831352fd7476e14e419
+ms.sourcegitcommit: 3007bf57515b0811ff98a7e1518ecc6fc9462276
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/28/2018
-ms.locfileid: "27457948"
+ms.lasthandoff: 01/04/2019
+ms.locfileid: "27724863"

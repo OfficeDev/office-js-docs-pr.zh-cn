@@ -2,12 +2,12 @@
 ms.date: 12/21/2018
 description: 在 Excel 中使用 JavaScript 创建自定义函数。
 title: 在 Excel 中创建自定义函数（预览）
-ms.openlocfilehash: 8f30ee32168147b8beeb6e60372cd631237ce993
-ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
+ms.openlocfilehash: bee981d11f8c05948795867f2d759936bfe16d82
+ms.sourcegitcommit: 3007bf57515b0811ff98a7e1518ecc6fc9462276
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/22/2018
-ms.locfileid: "27433038"
+ms.lasthandoff: 01/04/2019
+ms.locfileid: "27724870"
 ---
 # <a name="create-custom-functions-in-excel-preview"></a>在 Excel 中创建自定义函数（预览）
 
@@ -428,7 +428,7 @@ function getComment(x) {
 - **2017 年 11 月 28 日**：发布了*对取消异步函数的支持（需要对流式处理函数进行相应更改）
 - **2018 年 5 月 7 日**：发布了*对 Mac、Excel Online 和在进程中运行的异步函数的支持
 - **2018 年 9 月 20 日**：发布了对自定义函数 JavaScript 运行时的支持。 有关详细信息，请参阅 [Excel 自定义函数的运行时](custom-functions-runtime.md)。
-- **2018 年 10 月 20 日**：随着 [10 月预览体验内部版本](https://support.office.com/zh-CN/article/what-s-new-for-office-insiders-c152d1e2-96ff-4ce9-8c14-e74e13847a24)的推出，自定义函数现在需要适用于 Windows Desktop 和 Online 的[自定义函数元数据](custom-functions-json.md)中的“id”参数。 在 Mac 上，应忽略此参数。
+- **2018 年 10 月 20 日**：随着 [10 月预览体验内部版本](https://support.office.com/en-us/article/what-s-new-for-office-insiders-c152d1e2-96ff-4ce9-8c14-e74e13847a24)的推出，自定义函数现在需要适用于 Windows Desktop 和 Online 的[自定义函数元数据](custom-functions-json.md)中的“id”参数。 在 Mac 上，应忽略此参数。
 
 
 \* 转到 [Office 预览体验成员](https://products.office.com/office-insider)频道（以前称为“预览体验成员 - 快”）
@@ -438,4 +438,4 @@ function getComment(x) {
 * [自定义函数元数据](custom-functions-json.md)
 * [Excel 自定义函数的运行时](custom-functions-runtime.md)
 * [自定义函数最佳实践](custom-functions-best-practices.md)
-* [Excel 自定义函数教程](excel-tutorial-custom-functions.md)
+* [Excel 自定义函数教程](../tutorials/excel-tutorial-create-custom-functions.md)

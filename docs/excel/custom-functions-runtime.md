@@ -2,12 +2,12 @@
 ms.date: 12/5/2018
 description: 了解开发使用新 JavaScript 运行时的 Excel 自定义函数时的关键方案。
 title: Excel 自定义函数的运行时
-ms.openlocfilehash: 715690c5cba2466e4a50ba2a33d2324a1abe02f5
-ms.sourcegitcommit: 3d8454055ba4d7aae12f335def97357dea5beb30
+ms.openlocfilehash: a2e59c24addecbf0159b816b15c3bf6faf623475
+ms.sourcegitcommit: 3007bf57515b0811ff98a7e1518ecc6fc9462276
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "27270829"
+ms.lasthandoff: 01/04/2019
+ms.locfileid: "27724842"
 ---
 # <a name="runtime-for-excel-custom-functions-preview"></a>Excel 自定义函数的运行时（预览）
 
@@ -199,4 +199,4 @@ function getStock (ticker) {
 * [在 Excel 中创建自定义函数](custom-functions-overview.md)
 * [自定义函数元数据](custom-functions-json.md)
 * [自定义函数最佳实践](custom-functions-best-practices.md)
-* [Excel 自定义函数教程](excel-tutorial-custom-functions.md)
+* [Excel 自定义函数教程](../tutorials/excel-tutorial-create-custom-functions.md)
