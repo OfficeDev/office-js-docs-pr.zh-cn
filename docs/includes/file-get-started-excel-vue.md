@@ -204,7 +204,7 @@ vue init webpack my-add-in
 恭喜！已使用 Vue 成功创建 Excel 加载项！接下来，请详细了解 Excel 加载项功能，并跟着 Excel 加载项教程一起操作，生成更复杂的加载项。
 
 > [!div class="nextstepaction"]
-> [Excel 加载项教程](../tutorials/excel-tutorial.yml)
+> [Excel 加载项教程](../tutorials/excel-tutorial.md)
 
 ## <a name="see-also"></a>另请参阅
 
