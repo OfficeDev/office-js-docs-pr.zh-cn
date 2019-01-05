@@ -2,12 +2,12 @@
 title: Office 加载项的本地化
 description: 可使用适用于 Office 的 JavaScript API 确定区域设置并根据主机应用程序的区域设置显示字符串，或者根据数据的区域设置来解读或显示数据。
 ms.date: 12/11/2018
-ms.openlocfilehash: e86421ac0b201e6092a3d112c04de57a6b6cc1dd
-ms.sourcegitcommit: 60fd8a3ac4a6d66cb9e075ce7e0cde3c888a5fe9
+ms.openlocfilehash: 050880d8b2d5091cc0e5ab3e3dc14e632e0014f1
+ms.sourcegitcommit: 3007bf57515b0811ff98a7e1518ecc6fc9462276
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/28/2018
-ms.locfileid: "27457997"
+ms.lasthandoff: 01/04/2019
+ms.locfileid: "27724891"
 ---
 # <a name="localization-for-office-add-ins"></a>Office 加载项的本地化
 
@@ -390,7 +390,7 @@ UIStrings.js 资源文件创建对象 **UIStrings**，其中包含加载项 UI �
 
 3. 选择“确定”**** 确认选择，然后关闭 Word。
 
-4. 在 Visual Studio 中按 F5 以运行示例加载项，或者从菜单栏中选择“调试”**** > “开始调试”****。
+4. 在 Visual Studio 中按 **F5** 以运行示例加载项，或者从菜单栏中选择“调试”**** > “开始调试”****。
 
 5. 在 Word 中选择“开始”**** > “显示任务窗格”****。
 

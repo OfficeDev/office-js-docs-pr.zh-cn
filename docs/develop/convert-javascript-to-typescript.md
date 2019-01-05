@@ -2,12 +2,12 @@
 title: 在 Visual Studio 中将 Office 加载项项目转换为使用 TypeScript
 description: ''
 ms.date: 10/30/2018
-ms.openlocfilehash: d2a092cb48864cb9a4c9e791e3485963d0329ed2
-ms.sourcegitcommit: 161a0625646a8c2ebaf1773c6369ee7cc96aa07b
+ms.openlocfilehash: 9ea1cf421ce94d7756595950604ab3279e049c95
+ms.sourcegitcommit: 3007bf57515b0811ff98a7e1518ecc6fc9462276
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "25891800"
+ms.lasthandoff: 01/04/2019
+ms.locfileid: "27724849"
 ---
 # <a name="convert-an-office-add-in-project-in-visual-studio-to-typescript"></a>在 Visual Studio 中将 Office 加载项项目转换为使用 TypeScript
 
@@ -106,9 +106,9 @@ ms.locfileid: "25891800"
 
 ## <a name="run-the-converted-add-in-project"></a>运行转换后的外接程序项目
 
-1. 在 Visual Studio 中，按 F5 或选择“开始”**** 按钮以启动 Excel，功能区中显示有“显示任务窗格”**** 加载项按钮。加载项本地托管在 IIS 上。
+1. 在 Visual Studio 中，按 **F5** 或选择“开始”**** 按钮以启动 Excel，功能区中显示有“显示任务窗格”**** 加载项按钮。加载项本地托管在 IIS 上。
 
-2. 在 Excel 中，依次选择“开始”**** 选项卡和功能区中的“显示任务窗格”**** 按钮，打开加载项任务窗格。
+2. 在 Excel 中，依次选择的“**开始**”选项卡和功能区中的“**显示任务窗格**”按钮，以打开加载项任务窗格。
 
 3. 在工作表中，选择九个包含数字的单元格。
 
