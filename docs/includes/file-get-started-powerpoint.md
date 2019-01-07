@@ -150,7 +150,7 @@
 
 ### <a name="try-it-out"></a>试用
 
-1. 使用 Visual Studio 的同时，按 F5 或选择“开始”**** 按钮启动 PowerPoint，以测试新建的 PowerPoint 加载项，功能区中显示有“显示任务窗格”**** 加载项按钮。加载项本地托管在 IIS 上。
+1. 使用 Visual Studio 的同时，按 **F5** 或选择“开始”**** 按钮启动 PowerPoint，以测试新建的 PowerPoint 加载项，功能区中显示有“显示任务窗格”**** 加载项按钮。加载项本地托管在 IIS 上。
 
 2. 在 PowerPoint 中，插入新的空白幻灯片，再依次选择“主页”**** 选项卡和功能区中的“显示任务窗格”**** 按钮，以打开加载项任务窗格。
 
@@ -352,4 +352,4 @@
 恭喜！已成功创建 PowerPoint 加载项！ 接下来，请详细了解 PowerPoint 加载项功能，并跟着 PowerPoint 加载项教程一起操作，生成更复杂的加载项。
 
 > [!div class="nextstepaction"]
-> [PowerPoint 加载项教程](../tutorials/powerpoint-tutorial.yml)
+> [PowerPoint 加载项教程](../tutorials/powerpoint-tutorial.md)

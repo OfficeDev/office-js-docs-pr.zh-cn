@@ -210,9 +210,9 @@ _适用于：Word 2016、Word for iPad、Word for Mac_
 
 ### <a name="try-it-out"></a>试用
 
-1. 使用 Visual Studio 的同时，按 F5 或选择“开始”**** 按钮启动 Word，以测试新建的 Word 加载项，功能区中显示有“显示任务窗格”**** 加载项按钮。加载项本地托管在 IIS 上。
+1. 使用 Visual Studio 的同时，按 **F5** 或选择“开始”**** 按钮启动 Word，以测试新建的 Word 加载项，功能区中显示有“显示任务窗格”**** 加载项按钮。加载项本地托管在 IIS 上。
 
-2. 在 Word 中，依次选择“**开始**”选项卡和功能区中的“**显示任务窗格**”按钮，以打开加载项任务窗格。 （如果使用的是非订阅版 Office 2016，而不是 Office 365 版本，则无法使用自定义按钮。 相反，任务窗格将立即打开。）
+2. 在 Word 中，依次选择“主页”**** 选项卡和功能区中的“显示任务窗格”**** 按钮，以打开加载项任务窗格。 （如果使用的是非订阅版 Office 2016，而不是 Office 365 版本，则无法使用自定义按钮。 相反，任务窗格将立即打开。）
 
     ![突出显示了“显示任务窗格”按钮的 Word 应用屏幕截图](../images/word-quickstart-addin-0.png)
 
@@ -464,7 +464,7 @@ _适用于：Word 2016、Word for iPad、Word for Mac_
 恭喜！已使用 jQuery 成功创建 Word 加载项！ 接下来，请详细了解 Word 加载项功能，并跟着 Word 加载项教程一起操作，生成更复杂的加载项。
 
 > [!div class="nextstepaction"]
-> [Word 加载项教程](../tutorials/word-tutorial.yml)
+> [Word 加载项教程](../tutorials/word-tutorial.md)
 
 ## <a name="see-also"></a>另请参阅
 

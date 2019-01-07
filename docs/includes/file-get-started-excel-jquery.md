@@ -131,7 +131,7 @@
 
 ### <a name="try-it-out"></a>试用
 
-1. 使用 Visual Studio 的同时，按 F5 或选择“开始”**** 按钮启动 Excel，以测试新建的 Excel 加载项，功能区中显示有“显示任务窗格”**** 加载项按钮。加载项本地托管在 IIS 上。
+1. 使用 Visual Studio 的同时，按 **F5** 或选择“开始”**** 按钮启动 Excel，以测试新建的 Excel 加载项，功能区中显示有“显示任务窗格”**** 加载项按钮。加载项本地托管在 IIS 上。
 
 2. 在 Excel 中，依次选择的“**开始**”选项卡和功能区中的“**显示任务窗格**”按钮，以打开加载项任务窗格。
 
@@ -309,11 +309,12 @@
 恭喜！已使用 jQuery 成功创建 Excel 加载项！接下来，请详细了解 Excel 加载项功能，并跟着 Excel 加载项教程一起操作，生成更复杂的加载项。
 
 > [!div class="nextstepaction"]
-> [Excel 加载项教程](../tutorials/excel-tutorial.yml)
+> [Excel 加载项教程](../tutorials/excel-tutorial.md)
 
 ## <a name="see-also"></a>另请参阅
 
 * [Excel 加载项教程](../tutorials/excel-tutorial-create-table.md)
 * [Excel JavaScript API 基本编程概念](../excel/excel-add-ins-core-concepts.md)
-* [Excel 加载项代码示例](https://developer.microsoft.com/office/gallery/?filterBy=Samples,Excel)
+* 
+  [Excel 加载项代码示例](https://developer.microsoft.com/office/gallery/?filterBy=Samples,Excel)
 * [Excel JavaScript API 参考](https://docs.microsoft.com/office/dev/add-ins/reference/overview/excel-add-ins-reference-overview)
