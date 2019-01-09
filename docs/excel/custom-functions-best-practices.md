@@ -1,13 +1,13 @@
 ---
-ms.date: 11/29/2018
+ms.date: 01/08/2019
 description: 了解在 Excel 中开发自定义函数的最佳实践。
-title: 自定义函数最佳实践
-ms.openlocfilehash: c1be1d01a88d50bb0f3aee8af1aea7c47658bc10
-ms.sourcegitcommit: 3007bf57515b0811ff98a7e1518ecc6fc9462276
+title: 自定义函数最佳实践（预览）
+ms.openlocfilehash: 45618a61d0d1fdd0398ecec3aa0db21e493787fd
+ms.sourcegitcommit: 9afcb1bb295ec0c8940ed3a8364dbac08ef6b382
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "27724884"
+ms.lasthandoff: 01/08/2019
+ms.locfileid: "27770649"
 ---
 # <a name="custom-functions-best-practices-preview"></a>自定义函数最佳实践（预览）
 
@@ -58,35 +58,33 @@ function getComment(x) {
 
 如果你的外接程序无法注册，请验证是否为托管外接应用程序的 Web 服务器[正确配置了 SSL 证书](https://github.com/OfficeDev/generator-office/blob/master/src/docs/ssl.md)。
 
-## <a name="mapping-function-names-to-json-metadata"></a>将函数名称映射到 JSON 元数据
+## <a name="associating-function-names-with-json-metadata"></a>将函数名称与 JSON 元数据相关联
 
-如[自定义函数概述](custom-functions-overview.md)一文所述，自定义函数项目必须包含 JSON 元数据文件，该文件提供 Excel 注册自定义函数并使其可供最终用户使用所需的信息。 此外，在定义自定义函数的 JavaScript 文件中，必须提供信息以指定 JSON 元数据文件中的哪个函数对象与 JavaScript 文件中的每个自定义函数相对应。
+如[自定义函数概述](custom-functions-overview.md)文章中所述，自定义函数项目必须包含 JSON 元数据文件和脚本（JavaScript 或 TypeScript）文件才能构成完整的函数。 要使函数正常工作，需要将脚本文件中的函数名称绑定到 JSON 文件中列出的 ID。 此过程称为“关联”。 请记住在 JavaScript 代码文件的末尾包含关联，否则，函数将无法正常工作。
 
-例如，以下代码示例定义了自定义函数 `add`，然后指定该 `add` 函数对应于 JSON 元数据文件中的对象，其中 `id` 属性的值为 **ADD**。
+以下代码示例展示了如何执行此关联操作。 该示例定义了自定义函数 `add`，并将其与 JSON 元数据文件中的对象关联，其中 `id` 属性的值为 **ADD**。
 
 ```js
 function add(first, second){
   return first + second;
 }
 
-CustomFunctionMappings.ADD = add;
+CustomFunctions.associate("ADD", add); 
 ```
 
 在 JavaScript 文件中创建自定义函数和在 JSON 元数据文件中指定相应信息时，请记住以下最佳实践。
 
-* 在 JavaScript 文件中，以 camelCase 形式指定函数名称。 例如，函数名称 `addTenToInput` 便采用了 camelCase 形式：名称中的第一个单词以小写字母开头，名称中的每个后续单词以大写字母开头。
+* 在 JSON 元数据文件中，函数的 `name` 和 `id` 只能使用大写字母。 不要使用大小写字母混合或仅使用小写字母。 如果这样做，你最终可能会得到两个值，这些值只会因情况而异，从而导致意外覆盖你的函数。 例如，`id` 值为 **add** 的函数对象稍后可以通过声明在 `id` 值为 **ADD** 的函数对象文件中覆盖。 此外，`name` 属性还会定义最终用户将在 Excel 中看到的函数名称。 使用大写字母作为每个自定义函数的名称可在 Excel 中提供一致的体验，其中所有内置函数名称均为大写。
 
-* 在 JSON 元数据文件中，以大写形式指定每个 `name` 属性的值。 `name` 属性定义最终用户将在 Excel 中看到的函数名称。 使用大写字母作为每个自定义函数的名称可为 Excel 中的最终用户提供一致的体验，其中所有内置函数名称均为大写。
+* 但是，在关联时没有必要将函数的 `name` 大写。 例如，`CustomFunctions.associate("add", add)` 等同于 `CustomFunctions.associate("ADD", add)`。
 
-* 在 JSON 元数据文件中，以大写形式指定每个 `id` 属性的值。 由此便可很明显的看出，JavaScript 代码中 `CustomFunctionMappings` 语句的哪一部分对应于 JSON 元数据文件中的 `id` 属性（前提是你的函数名称采用了 camelCase 形式，如前所述）。
+* 在 JSON 元数据文件中，确保每个 `id` 属性的值仅包含字母数字字符和句点。
 
-* 在 JSON 元数据文件中，确保每个 `id` 属性的值仅包含字母数字字符和句点。 
+* 在 JSON 元数据文件中，确保每个 `id` 属性的值在该文件范围内是唯一的。 也就是说，元数据文件中不应存在具有相同 `id` 值的两个函数对象。 
 
-* 在 JSON 元数据文件中，确保每个 `id` 属性的值在该文件范围内是唯一的。 也就是说，元数据文件中不应存在具有相同 `id` 值的两个函数对象。 此外，请勿在元数据文件中指定仅在大小写方面不同的两个 `id` 值。 例如，不要定义一个 `id` 值为 **add** 的函数对象和另一个 `id` 值为 **ADD** 的函数对象。
+* 在将 JSON 元数据文件中的 `id` 属性的值与相应的 JavaScript 函数名称关联后，请勿再更改该值。 你可以通过更新 JSON 元数据文件中的 `name` 属性来更改最终用户在 Excel 中看到的函数名称，但绝不能更改已确定的 `id` 属性的值。
 
-* 在将 JSON 元数据文件中的 `id` 属性的值映射到相应的 JavaScript 函数名称后，请勿再更改该值。 你可以通过更新 JSON 元数据文件中的 `name` 属性来更改最终用户在 Excel 中看到的函数名称，但绝不能更改已确定的 `id` 属性的值。
-
-* 在 JavaScript 文件中，请在同一位置指定所有自定义函数映射。 例如，以下代码示例定义了两个自定义函数，并接着指定了这两个函数的映射信息。
+* 在 JavaScript 文件中，请在同一位置指定所有自定义函数关联。 例如，以下代码示例定义了两个自定义函数，并接着指定了这两个函数的关联信息。
 
     ```js
     function add(first, second){
@@ -105,12 +103,12 @@ CustomFunctionMappings.ADD = add;
       };
     }
 
-    // map `id` values in the JSON metadata file to JavaScript function names
-    CustomFunctionMappings.ADD = add;
-    CustomFunctionMappings.INCREMENT = increment;
+    // associate `id` values in the JSON metadata file to JavaScript function names
+    CustomFunctions.associate("ADD", add);
+    CustomFunctions.associate("INCREMENT", increment);
     ```
 
-    以下示例显示了与此 JavaScript 代码示例中定义的函数相对应的 JSON 元数据。
+    以下示例显示了与此 JavaScript 代码示例中定义的函数相对应的 JSON 元数据。 请注意，在此文件中，`id` 和 `name` 属性为大写字母。 
 
     ```json
     {
@@ -137,7 +135,7 @@ CustomFunctionMappings.ADD = add;
 
 ```json
 {
-    "id": "add",
+    "id": "ADD",
     "name": "ADD",
     "description": "Add two numbers",
     "helpUrl": "http://www.contoso.com",
@@ -199,4 +197,5 @@ function getWeatherReport(zipCode, dayOfWeek)
 * [在 Excel 中创建自定义函数](custom-functions-overview.md)
 * [自定义函数元数据](custom-functions-json.md)
 * [Excel 自定义函数的运行时](custom-functions-runtime.md)
+* [自定义函数更改日志](custom-functions-changelog.md)
 * [Excel 自定义函数教程](../tutorials/excel-tutorial-create-custom-functions.md)
