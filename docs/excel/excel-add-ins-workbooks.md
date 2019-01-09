@@ -1,13 +1,13 @@
 ---
 title: 使用 Excel JavaScript API 处理工作簿
 description: ''
-ms.date: 12/13/2018
-ms.openlocfilehash: 388e061f72055b557a9da822391a9c0cd64a2c24
-ms.sourcegitcommit: 09f124fac7b2e711e1a8be562a99624627c0699e
+ms.date: 1/7/2019
+ms.openlocfilehash: db32cf0c847d578fb909d9ad97a3a75ef3f97eee
+ms.sourcegitcommit: 9afcb1bb295ec0c8940ed3a8364dbac08ef6b382
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/15/2018
-ms.locfileid: "27283121"
+ms.lasthandoff: 01/08/2019
+ms.locfileid: "27770586"
 ---
 # <a name="work-with-workbooks-using-the-excel-javascript-api"></a>使用 Excel JavaScript API 处理工作簿
 
@@ -50,7 +50,7 @@ Excel.createWorkbook();
 
 此外，`createWorkbook` 方法还可以创建现有工作簿的副本。 此方法接受 .xlsx 文件的 base64 编码字符串表示形式作为可选参数。 若字符串参数为有效的 .xlsx 文件，则生成的工作簿为该文件的副本。
 
-可以利用[文件切片](/javascript/api/office/office.document#getfileasync-filetype--options--callback-)获取加载项的当前工作簿，作为一个 base64 编码字符串。 可以使用 [FileReader](https://developer.mozilla.org/docs/Web/API/FileReader) 类将文件转换为所需的 base64 编码字符串，如以下示例所示。 
+可以利用[文件切片](/javascript/api/office/office.document#getfileasync-filetype--options--callback-)获取加载项的当前工作簿，作为一个 base64 编码字符串。 可以使用 [FileReader](https://developer.mozilla.org/docs/Web/API/FileReader) 类将文件转换为所需的 base64 编码字符串，如以下示例所示。
 
 ```js
 var myFile = document.getElementById("file");
@@ -60,9 +60,9 @@ reader.onload = (function (event) {
     Excel.run(function (context) {
         // strip off the metadata before the base64-encoded string
         var startIndex = event.target.result.indexOf("base64,");
-        var mybase64 = event.target.result.substr(startIndex + 7);
+        var workbookContents = event.target.result.substr(startIndex + 7);
 
-        Excel.createWorkbook(mybase64);
+        Excel.createWorkbook(workbookContents);
         return context.sync();
     }).catch(errorHandlerFunction);
 });
@@ -71,9 +71,48 @@ reader.onload = (function (event) {
 reader.readAsDataURL(myFile.files[0]);
 ```
 
+### <a name="insert-a-copy-of-an-existing-workbook-into-the-current-one"></a>将现有工作簿副本插入到当前工作簿中
+
+> [!NOTE]
+> `WorksheetCollection.addFromBase64` 函数当前仅适用于公共预览版（beta 版本）。 若要使用此功能，必须使用 Office.js CDN 的 beta 版库：https://appsforoffice.microsoft.com/lib/beta/hosted/office.js。
+> 如果使用的是 TypeScript 或代码编辑器将 TypeScript 类型定义文件用于 IntelliSense，则使用 https://appsforoffice.microsoft.com/lib/beta/hosted/office.d.ts。
+
+上一示例显示从现有工作簿创建的新工作簿。 此外，还可以将所有或部分现有工作簿复制到当前与加载项关联的工作簿中。 工作簿的 [WorksheetCollection](/javascript/api/excel/excel.worksheetcollection) 可通过 `addFromBase64` 方法将目标工作簿的工作表副本插入到其本身。 其他工作簿文件将作为 base64 编码字符串传递，如 `Excel.createWorkbook` 调用一样。
+
+```TypeScript
+addFromBase64(base64File: string, sheetNamesToInsert?: string[], positionType?: Excel.WorksheetPositionType, relativeTo?: Worksheet | string): OfficeExtension.ClientResult<string[]>;
+```
+
+在以下示例中，工作簿的工作表将插入到当前工作簿的活动工作表之后。 请注意，将为 `sheetNamesToInsert?: string[]` 参数传递 `null`。 这意味着将插入所有工作表。
+
+```js
+var myFile = <HTMLInputElement>document.getElementById("file");
+var reader = new FileReader();
+
+reader.onload = (event) => {
+    Excel.run((context) => {
+        // strip off the metadata before the base64-encoded string
+        var startIndex = (<string>(<FileReader>event.target).result).indexOf("base64,");
+        var workbookContents = (<string>(<FileReader>event.target).result).substr(startIndex + 7);
+
+        var sheets = context.workbook.worksheets;
+        sheets.addFromBase64(
+            workbookContents,
+            null, // get all the worksheets
+            Excel.WorksheetPositionType.after, // insert them after the worksheet specified by the next parameter
+            sheets.getActiveWorksheet() // insert them after the active worksheet
+        );
+        return context.sync();
+    });
+};
+
+// read in the file as a data URL so we can parse the base64-encoded string
+reader.readAsDataURL(myFile.files[0]);
+```
+
 ## <a name="protect-the-workbooks-structure"></a>保护工作簿的结构
 
-加载项可以控制用户编辑工作簿结构的能力。 Workbook 对象的 `protection` 属性是一个包含 `protect()` 方法的 [WorkbookProtection](/javascript/api/excel/excel.workbookprotection) 对象。 下列示例演示切换对工作簿结构的保护的基本方案。 
+加载项可以控制用户编辑工作簿结构的能力。 Workbook 对象的 `protection` 属性是一个包含 `protect()` 方法的 [WorkbookProtection](/javascript/api/excel/excel.workbookprotection) 对象。 下列示例演示切换对工作簿结构的保护的基本方案。
 
 ```js
 Excel.run(function (context) {
@@ -200,18 +239,18 @@ Excel.run(async (context) => {
 
 默认情况下，当引用的单元格发生更改时，Excel 会重新计算公式结果。 调整此计算行为可以改进加载项的性能。 Application 对象包含一个 `CalculationMode` 类型的 `calculationMode` 属性。 可以将此属性设置为下列值：
 
- - `automatic`：默认的重新计算行为，每当相关数据发生更改时 Excel 都会计算新的公式结果。
- - `automaticExceptTables`：与 `automatic` 相同，但会忽略对表中值的任何更改。
- - `manual`：仅在用户或加载项请求计算时，才会进行计算。
+- `automatic`：默认的重新计算行为，每当相关数据发生更改时 Excel 都会计算新的公式结果。
+- `automaticExceptTables`：与 `automatic` 相同，但会忽略对表中值的任何更改。
+- `manual`：仅在用户或加载项请求计算时，才会进行计算。
 
 ### <a name="set-calculation-type"></a>设置计算类型
 
 [Application](/javascript/api/excel/excel.application) 对象提供了一个用于强制立即进行重新计算的方法。 `Application.calculate(calculationType)` 将基于指定的 `calculationType` 启动手动重新计算。 可以指定下列值：
 
- - `full`：重新计算所有打开的工作簿中的所有公式，无论它们自上次重新计算后是否发生了更改。
- - `fullRebuild`：检查从属的公式，然后重新计算所有打开的工作簿中的所有公式，无论它们自上次重新计算后是否发生了更改。
- - `recalculate`：重新计算所有活动工作簿中自上次计算后发生更改（或已以编程方式将其标记为重新计算目标）的公式，以及从属于它们的公式。
- 
+- `full`：重新计算所有打开的工作簿中的所有公式，无论它们自上次重新计算后是否发生了更改。
+- `fullRebuild`：检查从属的公式，然后重新计算所有打开的工作簿中的所有公式，无论它们自上次重新计算后是否发生了更改。
+- `recalculate`：重新计算所有活动工作簿中自上次计算后发生更改（或已以编程方式将其标记为重新计算目标）的公式，以及从属于它们的公式。
+
 > [!NOTE]
 > 有关重新计算的详细信息，请参阅[更改公式重新计算、迭代或精度](https://support.office.com/article/change-formula-recalculation-iteration-or-precision-73fc7dac-91cf-4d36-86e8-67124f6bcce4)一文。
 

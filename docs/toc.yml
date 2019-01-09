@@ -46,9 +46,6 @@ items:
   - name: Excel 加载项教程
     displayName: Excel
     href: tutorials/excel-tutorial.md
-  - name: Excel 自定义函数教程
-    displayName: Excel
-    href: tutorials/excel-tutorial-create-custom-functions.md
   - name: Outlook 加载项教程
     displayName: Outlook
     href: /outlook/add-ins/addin-tutorial
@@ -261,6 +258,9 @@ items:
         - name: 自定义函数最佳实践
           displayName: Excel
           href: excel/custom-functions-best-practices.md
+        - name: 自定义函数更改日志
+          displayName: Excel
+          href: excel/custom-functions-changelog.md
       - name: 数据有效性
         displayName: Excel
         href: excel/excel-add-ins-data-validation.md
@@ -759,9 +759,9 @@ items:
         href: reference/manifest/webapplicationinfo.md
 - name: Resources
   href: resources/resources-links-help.md
-ms.openlocfilehash: 60cd25434abb81c9b6142831352fd7476e14e419
-ms.sourcegitcommit: 3007bf57515b0811ff98a7e1518ecc6fc9462276
+ms.openlocfilehash: 7ad59f66ad87a5bbdbcb52d0af4e98af2a69a6da
+ms.sourcegitcommit: 9afcb1bb295ec0c8940ed3a8364dbac08ef6b382
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "27724863"
+ms.lasthandoff: 01/08/2019
+ms.locfileid: "27770621"

@@ -1,13 +1,13 @@
 ---
-ms.date: 11/26/2018
+ms.date: 01/08/2019
 description: 在 Excel 中定义自定义函数的元数据。
-title: Excel 中的自定义函数的元数据
-ms.openlocfilehash: 4bdf27173c5e912aa3eba3c8661ba45dd8b453cb
-ms.sourcegitcommit: 3007bf57515b0811ff98a7e1518ecc6fc9462276
+title: Excel 中的自定义函数的元数据（预览）
+ms.openlocfilehash: 79fb5ac0ebcbe91b154c48cb10aad65451b6e5ee
+ms.sourcegitcommit: 9afcb1bb295ec0c8940ed3a8364dbac08ef6b382
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "27724856"
+ms.lasthandoff: 01/08/2019
+ms.locfileid: "27770628"
 ---
 # <a name="custom-functions-metadata-preview"></a>自定义函数元数据（预览）
 
@@ -158,4 +158,5 @@ ms.locfileid: "27724856"
 * [在 Excel 中创建自定义函数](custom-functions-overview.md)
 * [Excel 自定义函数的运行时](custom-functions-runtime.md)
 * [自定义函数最佳实践](custom-functions-best-practices.md)
+* [自定义函数更改日志](custom-functions-changelog.md)
 * [Excel 自定义函数教程](../tutorials/excel-tutorial-create-custom-functions.md)

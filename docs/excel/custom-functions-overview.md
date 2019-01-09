@@ -1,13 +1,13 @@
 ---
-ms.date: 12/21/2018
+ms.date: 01/08/2019
 description: 在 Excel 中使用 JavaScript 创建自定义函数。
 title: 在 Excel 中创建自定义函数（预览）
-ms.openlocfilehash: bee981d11f8c05948795867f2d759936bfe16d82
-ms.sourcegitcommit: 3007bf57515b0811ff98a7e1518ecc6fc9462276
+ms.openlocfilehash: 0bc1b9face240f6218b501dd195bde39e8781205
+ms.sourcegitcommit: 9afcb1bb295ec0c8940ed3a8364dbac08ef6b382
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "27724870"
+ms.lasthandoff: 01/08/2019
+ms.locfileid: "27770635"
 ---
 # <a name="create-custom-functions-in-excel-preview"></a>在 Excel 中创建自定义函数（预览）
 
@@ -36,18 +36,18 @@ function add42(a, b) {
 
 | 文件 | 文件格式 | 说明 |
 |------|-------------|-------------|
-| **./src/functions/functions.js**<br/>或<br/>**./src/functions/functions.ts** | JavaScript<br/>或<br/>TypeScript | 包含定义自定义函数的代码。 |
-| **./src/functions/functions.json** | JSON | 包含描述自定义函数的元数据，使 Excel 能够注册自定义函数，并使其可供最终用户使用。 |
-| **./src/functions/functions.html** | HTML | 提供对定义自定义函数的 JavaScript 文件的&lt;脚本&gt;引用。 |
+| **./src/customfunctions.js**<br/>或<br/>**./src/customfunctions.ts** | JavaScript<br/>或<br/>TypeScript | 包含定义自定义函数的代码。 |
+| **./config/customfunctions.json** | JSON | 包含描述自定义函数的元数据，使 Excel 能够注册自定义函数，并使其可供最终用户使用。 |
+| **./index.html** | HTML | 提供对定义自定义函数的 JavaScript 文件的&lt;脚本&gt;引用。 |
 | **./manifest.xml** | XML | 指定加载项中所有自定义函数的命名空间以及此表中前面列出的 JavaScript、JSON 和 HTML 文件的位置。 |
 
 下列部分将提供有关这些文件的详细信息。
 
 ### <a name="script-file"></a>脚本文件
 
-脚本文件（Yo Office 生成器创建的项目中的 **./src/functions/functions.js** 或 **./src/functions/functions.ts**）包含定义自定义函数并将自定义函数名称映射到 [JSON 元数据文件](#json-metadata-file)中的对象的代码。 
+脚本文件（Yo Office 生成器创建的项目中的 **./src/customfunctions.js** 或 **./src/customfunctions.ts**）包含定义自定义函数并将自定义函数名称映射到 [JSON 元数据文件](#json-metadata-file)中的对象的代码。 
 
-例如，以下代码定义自定义函数 `add` 和 `increment`，然后指定这两个函数的映射信息。 将 `add` 函数映射到 JSON 元数据文件中的对象，其中 `id` 属性的值为 **ADD**，将 `increment` 函数映射到元数据文件中的对象，其中 `id` 属性的值为 **INCREMENT**。 有关将脚本文件中的函数名称映射到 JSON 元数据文件中的对象的更多信息，请参阅[自定义函数最佳实践](custom-functions-best-practices.md#mapping-function-names-to-json-metadata)。
+例如，以下代码定义自定义函数 `add` 和 `increment`，然后指定这两个函数的关联信息。 将 `add` 函数关联到 JSON 元数据文件中的对象，其中 `id` 属性的值为 **ADD**，将 `increment` 函数关联到元数据文件中的对象，其中 `id` 属性的值为 **INCREMENT**。 有关将脚本文件中的函数名称关联到 JSON 元数据文件中的对象的更多信息，请参阅[自定义函数最佳实践](custom-functions-best-practices.md#associating-function-names-with-json-metadata)。
 
 ```js
 function add(first, second){
@@ -66,19 +66,19 @@ function increment(incrementBy, callback) {
   };
 }
 
-// map `id` values in the JSON metadata file to the JavaScript function names
-CustomFunctionMappings.ADD = add;
-CustomFunctionMappings.INCREMENT = increment;
+// associate `id` values in the JSON metadata file to the JavaScript function names
+ CustomFunctions.associate("ADD", add);
+ CustomFunctions.associate("INCREMENT", increment);
 ```
 
-### <a name="json-metadata-file"></a>JSON 元数据文件 
+### <a name="json-metadata-file"></a>JSON 元数据文件
 
-自定义函数元数据文件（Yo Office 生成器创建的项目中的 **./src/functions/functions.json**）提供 Excel 注册自定义函数并使其可供最终用户使用所需的信息。 自定义函数在用户首次运行加载项时注册。 之后，它们可在所有工作簿（即，不仅仅是在加载项初始运行的工作簿）中供同一用户使用。
+自定义函数元数据文件（Yo Office 生成器创建的项目中的 **./config/customfunctions.json**）提供 Excel 注册自定义函数并使其可供最终用户使用所需的信息。 自定义函数在用户首次运行加载项时注册。 之后，它们可在所有工作簿（即，不仅仅是在加载项初始运行的工作簿）中供同一用户使用。
 
 > [!TIP]
 > 托管 JSON 文件的服务器上的服务器设置必须启用 [CORS](https://developer.mozilla.org/docs/Web/HTTP/CORS)，以便自定义函数在 Excel Online 中正常工作。
 
-**functions.json** 中的以下代码指定上述 `add` 函数和 `increment` 函数的元数据。 此代码示例后面的表提供了有关此 JSON 对象中各个属性的详细信息。 有关在 JSON 元数据文件中指定 `id` 和 `name` 属性值的详细信息，请参阅[自定义函数最佳实践](custom-functions-best-practices.md#mapping-function-names-to-json-metadata)。
+**customfunctions.json** 中的以下代码指定上述 `add` 函数和 `increment` 函数的元数据。 此代码示例后面的表提供了有关此 JSON 对象中各个属性的详细信息。 有关在 JSON 元数据文件中指定 `id` 和 `name` 属性值的详细信息，请参阅[自定义函数最佳实践](custom-functions-best-practices.md#associating-function-names-with-json-metadata)。
 
 ```json
 {
@@ -151,42 +151,52 @@ CustomFunctionMappings.INCREMENT = increment;
 定义自定义函数的加载项的 XML 清单文件（Yo Office 生成器创建的项目中的 **./manifest.xml**）指定加载项中所有自定义函数的命名空间以及 JavaScript、JSON 和 HTML 文件的位置。 下面的 XML 标记显示了 `<ExtensionPoint>` 和 `<Resources>` 元素的一个示例，必须在加载项清单中包含这些元素才能启用自定义函数。  
 
 ```xml
-<VersionOverrides xmlns="http://schemas.microsoft.com/office/taskpaneappversionoverrides" xsi:type="VersionOverridesV1_0">
-        <Hosts>
-            <Host xsi:type="Workbook">
-                <AllFormFactors>
-                    <ExtensionPoint xsi:type="CustomFunctions">
-                        <Script>
-                            <SourceLocation resid="Contoso.Functions.Script.Url" />
-                        </Script>
-                        <Page>
-                            <SourceLocation resid="Contoso.Functions.Page.Url"/>
-                        </Page>
-                        <Metadata>
-                            <SourceLocation resid="Contoso.Functions.Metadata.Url" />
-                        </Metadata>
-                        <Namespace resid="Contoso.Functions.Namespace" />
-                    </ExtensionPoint>
-                </AllFormFactors>
-            </Host>
-        </Hosts>
-        <Resources>
-            <bt:Images>
-                <bt:Image id="Contoso.tpicon_16x16" DefaultValue="https://localhost:3000/assets/icon-16.png" />
-                <bt:Image id="Contoso.tpicon_32x32" DefaultValue="https://localhost:3000/assets/icon-32.png" />
-                <bt:Image id="Contoso.tpicon_80x80" DefaultValue="https://localhost:3000/assets/icon-80.png" />
-            </bt:Images>
-            <bt:Urls>
-                <bt:Url id="Contoso.Functions.Script.Url" DefaultValue="https://localhost:3000/dist/functions.js" />
-                <bt:Url id="Contoso.Functions.Metadata.Url" DefaultValue="https://localhost:3000/dist/functions.json" />
-                <bt:Url id="Contoso.Functions.Page.Url" DefaultValue="https://localhost:3000/dist/functions.html" />
-                <bt:Url id="Contoso.Taskpane.Url" DefaultValue="https://localhost:3000/taskpane.html" />
-            </bt:Urls>
-            <bt:ShortStrings>
-                <bt:String id="Contoso.Functions.Namespace" DefaultValue="CONTOSO" />
-            </bt:ShortStrings>
-        </Resources>
-    </VersionOverrides>
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:bt="http://schemas.microsoft.com/office/officeappbasictypes/1.0" xmlns:ov="http://schemas.microsoft.com/office/taskpaneappversionoverrides" xsi:type="TaskPaneApp">
+  <Id>6f4e46e8-07a8-4644-b126-547d5b539ece</Id>
+  <Version>1.0.0.0</Version>
+  <ProviderName>Contoso</ProviderName>
+  <DefaultLocale>en-US</DefaultLocale>
+  <DisplayName DefaultValue="helloworld"/>
+  <Description DefaultValue="Samples to test custom functions"/>
+  <Hosts>
+    <Host Name="Workbook"/>
+  </Hosts>
+  <DefaultSettings>
+    <SourceLocation DefaultValue="https://localhost:8081/index.html"/>
+  </DefaultSettings>
+  <Permissions>ReadWriteDocument</Permissions>
+  <VersionOverrides xmlns="http://schemas.microsoft.com/office/taskpaneappversionoverrides" xsi:type="VersionOverridesV1_0">
+    <Hosts>
+      <Host xsi:type="Workbook">
+        <AllFormFactors>
+          <ExtensionPoint xsi:type="CustomFunctions">
+            <Script>
+              <SourceLocation resid="JS-URL"/>
+            </Script>
+            <Page>
+              <SourceLocation resid="HTML-URL"/>
+            </Page>
+            <Metadata>
+              <SourceLocation resid="JSON-URL"/>
+            </Metadata>
+            <Namespace resid="namespace"/>
+          </ExtensionPoint>
+        </AllFormFactors>
+      </Host>
+    </Hosts>
+    <Resources>
+      <bt:Urls>
+        <bt:Url id="JSON-URL" DefaultValue="https://localhost:8081/config/customfunctions.json"/>
+        <bt:Url id="JS-URL" DefaultValue="https://localhost:8081/dist/win32/ship/index.win32.bundle"/>
+        <bt:Url id="HTML-URL" DefaultValue="https://localhost:8081/index.html"/>
+      </bt:Urls>
+      <bt:ShortStrings>
+        <bt:String id="namespace" DefaultValue="CONTOSO"/>
+      </bt:ShortStrings>
+    </Resources>
+  </VersionOverrides>
+</OfficeApp>
 ```
 
 > [!NOTE]
@@ -345,13 +355,13 @@ function secondHighest(values){
 }
 ```
 
-## <a name="discovering-cells-that-invoke-custom-functions"></a>发现调用自定义函数的单元格
+## <a name="determine-which-cell-invoked-your-custom-function"></a>确定调用自定义函数的单元格
 
-此外，可以通过自定义函数设置区域格式、显示缓存值和协调使用 `caller.address` 的值，这使你能够发现哪些单元格调用了自定义函数。 可以在以下部分应用场景中使用 `caller.address`：
+在某些情况下，需要获取调用自定义函数的单元格地址。 这在以下类型的应用场景中非常有用：
 
-- 设置区域格式：将 `caller.address` 用作单元格键，以便将信息存储到 [AsyncStorage](https://docs.microsoft.com/office/dev/add-ins/excel/custom-functions-runtime#storing-and-accessing-data) 中。 然后，使用 Excel 中的 [onCalculated](https://docs.microsoft.com/javascript/api/excel/excel.worksheet#oncalculated) 从 `AsyncStorage` 加载该键。
+- 设置区域格式：将单元格地址用作键，以便将信息存储到 [AsyncStorage](https://docs.microsoft.com/office/dev/add-ins/excel/custom-functions-runtime#storing-and-accessing-data) 中。 然后，使用 Excel 中的 [onCalculated](https://docs.microsoft.com/javascript/api/excel/excel.worksheet#oncalculated) 从 `AsyncStorage` 加载该键。
 - 显示缓存值：如果脱机使用函数，将显示 `AsyncStorage` 中使用 `onCalculated` 存储的缓存值。
-- 协调：使用 `caller.address` 发现原始单元格，以帮助你在处理时进行协调。
+- 协调：使用单元格地址发现原始单元格，以帮助你在处理时进行协调。
 
 仅当函数 JSON 元数据文件中的 `requiresAddress` 被标记为 `true` 时，才会公开与单元格地址相关的信息。 以下示例诠释了此情况：
 
@@ -421,21 +431,11 @@ function getComment(x) {
 - 将来可能会推出专门针对自定义函数的调试工具。 在此期间，可以使用 F12 开发人员工具在 Excel Online 上进行调试。 有关详细信息，请参阅[自定义函数最佳实践](custom-functions-best-practices.md)。
 - 在 32 位版本的 Office 365 *12 月*预览体验成员版本 1901（内部版本 11128.20000）上，自定义函数可能无法正常工作。 在某些情况下，你可以通过下载 https://github.com/OfficeDev/Excel-Custom-Functions/blob/december-insiders-workaround/excel-udf-host.win32.bundle 处的文件来解决此错误。 然后，将其复制到 "C:\Program Files (x86)\Microsoft Office\root\Office16" 文件夹。
 
-## <a name="changelog"></a>更改日志
-
-- **2017 年 11 月 7 日**：发布了*自定义函数（预览）和示例
-- **2017 年 11 月 20 日**：修复了使用内部版本 8801 及更高版本的函数的兼容性问题
-- **2017 年 11 月 28 日**：发布了*对取消异步函数的支持（需要对流式处理函数进行相应更改）
-- **2018 年 5 月 7 日**：发布了*对 Mac、Excel Online 和在进程中运行的异步函数的支持
-- **2018 年 9 月 20 日**：发布了对自定义函数 JavaScript 运行时的支持。 有关详细信息，请参阅 [Excel 自定义函数的运行时](custom-functions-runtime.md)。
-- **2018 年 10 月 20 日**：随着 [10 月预览体验内部版本](https://support.office.com/en-us/article/what-s-new-for-office-insiders-c152d1e2-96ff-4ce9-8c14-e74e13847a24)的推出，自定义函数现在需要适用于 Windows Desktop 和 Online 的[自定义函数元数据](custom-functions-json.md)中的“id”参数。 在 Mac 上，应忽略此参数。
-
-
-\* 转到 [Office 预览体验成员](https://products.office.com/office-insider)频道（以前称为“预览体验成员 - 快”）
-
 ## <a name="see-also"></a>另请参阅
 
 * [自定义函数元数据](custom-functions-json.md)
 * [Excel 自定义函数的运行时](custom-functions-runtime.md)
 * [自定义函数最佳实践](custom-functions-best-practices.md)
+* [自定义函数更改日志](custom-functions-changelog.md)
 * [Excel 自定义函数教程](../tutorials/excel-tutorial-create-custom-functions.md)
+
