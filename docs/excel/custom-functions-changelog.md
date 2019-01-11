@@ -2,12 +2,12 @@
 ms.date: 01/08/2019
 description: 发现 Excel 自定义函数的最新更新。
 title: 自定义函数更改日志（预览）
-ms.openlocfilehash: 48954ce759c7873925eb56a52d09b7196956542a
-ms.sourcegitcommit: 9afcb1bb295ec0c8940ed3a8364dbac08ef6b382
+ms.openlocfilehash: a450bf2f6a297fe0843f3b3b57a17be0c854905e
+ms.sourcegitcommit: d1b5966b157a262536699eeb26ac5029cb5bf7f5
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/08/2019
-ms.locfileid: "27773213"
+ms.lasthandoff: 01/09/2019
+ms.locfileid: "27783294"
 ---
 # <a name="custom-functions-changelog-preview"></a>自定义函数更改日志（预览）
 
@@ -18,7 +18,7 @@ Excel 自定义函数仍处于预览状态，这意味着将会对该产品进�
 - **2017 年 11 月 28 日**：发布了*对取消异步函数的支持（需要对流式处理函数进行相应更改）
 - **2018 年 5 月 7 日**：发布了*对 Mac、Excel Online 和在进程中运行的异步函数的支持
 - **2018 年 9 月 20 日**：发布了对自定义函数 JavaScript 运行时的支持。 有关详细信息，请参阅 [Excel 自定义函数的运行时](custom-functions-runtime.md)。
-- **2018 年 10 月 20 日**：随着 [10 月预览体验内部版本](https://support.office.com/zh-CN/article/what-s-new-for-office-insiders-c152d1e2-96ff-4ce9-8c14-e74e13847a24)的推出，自定义函数现在需要适用于 Windows Desktop 和 Online 的[自定义函数元数据](custom-functions-json.md)中的“id”参数。 在 Mac 上，应忽略此参数。
+- **2018 年 10 月 20 日**：随着 [10 月预览体验内部版本](https://support.office.com/zh-CN/article/what-s-new-for-office-insiders-c152d1e2-96ff-4ce9-8c14-e74e13847a24)的推出，自定义函数现在需要适用于 Windows Desktop 和 Online 的[自定义函数元数据](custom-functions-json.md)中的“id”参数。 在 Mac 上，应忽略此参数。 自定义函数现也支持可选参数和 `any` 返回类型。
 - **2018 年 12 月 12 日**：自定义函数中现在包括用于发现单元格地址的方法。 有关详细信息，请参阅[确定调用自定义函数的单元格](custom-functions-overview.md#determine-which-cell-invoked-your-custom-function)。
 - **2019 年 1 月 8 日**：绑定方法 `CustomFunctionMapping()` 已更改为 `CustomFunctions.associate()`。 有关详细信息，请参阅[自定义函数最佳实践（预览）](custom-functions-best-practices.md)。
 
