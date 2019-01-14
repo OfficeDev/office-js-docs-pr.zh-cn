@@ -1,15 +1,15 @@
 ---
 title: 处理 OneNote 页面内容
 description: ''
-ms.date: 12/04/2017
-ms.openlocfilehash: aef9d80ebb37dacd2c3b5f2ec9d33cb0164d8452
-ms.sourcegitcommit: 60fd8a3ac4a6d66cb9e075ce7e0cde3c888a5fe9
+ms.date: 1/10/2019
+ms.openlocfilehash: 617c30f2a9a0c72b1c309ce299f388b5a16b983f
+ms.sourcegitcommit: 384e217fd51d73d13ccfa013bfc6e049b66bd98c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/28/2018
-ms.locfileid: "27457612"
+ms.lasthandoff: 01/11/2019
+ms.locfileid: "27896334"
 ---
-# <a name="work-with-onenote-page-content"></a>处理 OneNote 页面内容 
+# <a name="work-with-onenote-page-content"></a>处理 OneNote 页面内容
 
 在 OneNote 外接程序 JavaScript API 中，页面内容由以下对象模型表示。
 
@@ -25,7 +25,7 @@ ms.locfileid: "27457612"
 - [Section.addPage](https://docs.microsoft.com/javascript/api/onenote/onenote.section#addpage-title-)
 - [Page.insertPageAsSibling](https://docs.microsoft.com/javascript/api/onenote/onenote.section#insertsectionassibling-location--title-)
 
-然后使用以下对象中的方法处理页面内容，如 Page.addOutline 和 Outline.appendHtml。 
+然后使用以下对象中的方法处理页面内容，如 `Page.addOutline` 和 `Outline.appendHtml`。
 
 - [Page](https://docs.microsoft.com/javascript/api/onenote/onenote.page)
 - [Outline](https://docs.microsoft.com/javascript/api/onenote/onenote.outline)
@@ -37,17 +37,19 @@ OneNote 页面的内容和结构由 HTML 进行表示。只有一部分 HTML 可
 
 OneNote 外接程序 JavaScript API 支持使用以下 HTML 创建和更新页面内容：
 
-- `<html>`, `<body>`, `<div>`, `<span>`, `<br/>` 
+- `<html>`, `<body>`, `<div>`, `<span>`, `<br/>`
 - `<p>`
 - `<img>`
 - `<a>`
-- `<ul>`, `<ol>`, `<li>` 
+- `<ul>`, `<ol>`, `<li>`
 - `<table>`, `<tr>`, `<td>`
 - `<h1>` ... `<h6>`
 - `<b>`, `<em>`, `<strong>`, `<i>`, `<u>`, `<del>`, `<sup>`, `<sub>`, `<cite>`
 
 > [!NOTE]
 > 将 HTML 导入 OneNote 合并空白。 生成的内容将粘贴到一个大纲中。
+
+OneNote 会尽力将 HTML 翻译成页面内容，同时确保用户的安全性。 HTML 和 CSS 标准并不完全与 OneNote 的内容模型匹配，因此，会存在外观上的差异，尤其是采用 CSS 样式时。 如果需要特定格式，则建议使用 JavaScript 对象。
 
 ## <a name="accessing-page-contents"></a>访问页面内容
 

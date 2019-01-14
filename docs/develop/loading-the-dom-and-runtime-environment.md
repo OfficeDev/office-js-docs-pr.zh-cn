@@ -1,13 +1,13 @@
 ---
 title: 加载 DOM 和运行时环境
 description: ''
-ms.date: 01/23/2018
-ms.openlocfilehash: 0de9acf842d28002ec134998c36224f98574cf8f
-ms.sourcegitcommit: 60fd8a3ac4a6d66cb9e075ce7e0cde3c888a5fe9
+ms.date: 01/09/2019
+ms.openlocfilehash: 2e829fbdb73b8ea450486fe2fef3e839213c970b
+ms.sourcegitcommit: 384e217fd51d73d13ccfa013bfc6e049b66bd98c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/28/2018
-ms.locfileid: "27457689"
+ms.lasthandoff: 01/11/2019
+ms.locfileid: "27896341"
 ---
 # <a name="loading-the-dom-and-runtime-environment"></a>加载 DOM 和运行时环境
 
@@ -33,9 +33,9 @@ ms.locfileid: "27457689"
     
     后面的两个步骤第 4 步和第 5 步以异步方式并行发生。因此，您的加载项代码必须在继续之前确保 DOM 和加载项运行时环境已加载完。
     
-4. 浏览器控件加载 DOM 和 HTML 正文，并调用  **window.onload** 事件的事件处理程序。
+4. 浏览器控件加载 DOM 和 HTML 正文，并调用 **window.onload** 事件的事件处理程序。
     
-5. Office 主机应用程序加载运行时环境，这将从内容分发网络 (CDN) 服务器中为 JavaScript 库文件下载并缓存 JavaScript API，然后为 [Office](https://docs.microsoft.com/javascript/api/office) 对象的 [initialize](https://docs.microsoft.com/javascript/api/office) 事件调用加载项的事件处理程序。
+5. Office 主机应用程序加载运行时环境，这将从内容分发网络 (CDN) 服务器中为 JavaScript 库文件下载并缓存 JavaScript API，然后为 [Office](/javascript/api/office) 对象的 [initialize](/javascript/api/office#initialize-reason-) 事件调用加载项的事件处理程序（如果已为其分配处理程序）。 此时它还会检查是否有任何回调（或链接 `then()` 函数）已传递（或链接）到 `Office.onReady` 处理程序。 有关 `Office.initialize` 与 `Office.onReady` 之间的区别的详细信息，请参阅[初始化加载项](/office/dev/add-ins/develop/understanding-the-javascript-api-for-office#initializing-your-add-in)。
     
 6. 当 DOM 和 HTML 正文加载完毕并且加载项完成初始化后，加载项的主函数就可以继续进行。
     
@@ -60,18 +60,31 @@ ms.locfileid: "27457689"
     
 4. 如果用户单击该按钮以启动 Outlook 外接程序，Outlook 将在浏览器控件中打开 HTML 页面。下面两个步骤（步骤 5 和 6）并行发生。
     
-5. 浏览器控件加载 DOM 和 HTML 正文，并调用  **onload** 事件的事件处理程序。
+5. 浏览器控件加载 DOM 和 HTML 正文，并调用 **onload** 事件的事件处理程序。
     
-6. Outlook 调用加载项的 [Office](https://docs.microsoft.com/javascript/api/office) 对象的 [initialize](https://docs.microsoft.com/javascript/api/office) 事件处理程序。
+6. Outlook 加载运行时环境，这将从内容分发网络 (CDN) 服务器中为 JavaScript 库文件下载并缓存 JavaScript API，然后为 [Office](/javascript/api/office) 加载项对象的 [initialize](/javascript/api/office#initialize-reason-) 事件调用事件处理程序（如果已为其分配处理程序）。 此时它还会检查是否有任何回调（或链接 `then()` 函数）已传递（或链接）到 `Office.onReady` 处理程序。 有关 `Office.initialize` 与 `Office.onReady` 之间的区别的详细信息，请参阅[初始化加载项](/office/dev/add-ins/develop/understanding-the-javascript-api-for-office#initializing-your-add-in)。
     
 7. 当 DOM 和 HTML 正文加载完毕并且加载项完成初始化后，加载项的主函数就可以继续进行。
     
 
 ## <a name="checking-the-load-status"></a>检查加载状态
 
+检查 DOM 和运行时环境是否已完成加载的一种方法是使用 jQuery [.ready()](http://api.jquery.com/ready/) 函数：`$(document).ready()`。 例如，以下 **onReady** 事件处理程序确保在专用于初始化加载项的代码运行之前先加载 DOM。 随后，**onReady** 处理程序将继续使用 [mailbox.item](https://docs.microsoft.com/javascript/api/outlook/office.mailbox?view=office-js) 属性来获取当前在 Outlook 中选择的项目，并调用加载项的主函数，即 `initDialer`。
 
-检查 DOM 和 运行时环境是否加载完毕的一种方式是使用 jQuery [.ready()](https://api.jquery.com/ready/) 函数： `$(document).ready()`。例如，以下  **initialize** 事件处理程序函数可确保在专门用于初始化外接程序的代码运行前先加载 DOM。随后， **initialize** 事件处理程序继续使用 [mailbox.item](https://docs.microsoft.com/javascript/api/outlook/office.mailbox) 属性获取 Outlook 中当前选定的项目，并调用外接程序的主函数 `initDialer`。
+```js
+Office.onReady()
+    .then(
+        // Checks for the DOM to load.
+        $(document).ready(function () {
+            // After the DOM is loaded, add-in-specific code can run.
+            var mailbox = Office.context.mailbox;
+            _Item = mailbox.item;
+            initDialer();
+        });
+);
+```
 
+或者，你也可以在 **initialize** 事件处理程序中使用相同的代码，如下面的示例所示。
 
 ```js
 Office.initialize = function () {
@@ -85,22 +98,24 @@ Office.initialize = function () {
 }
 ```
 
-这种方法可在任何 Office 外接程序的  **initialize** 处理程序中使用。
+这种方法可在任何 Office 加载项的 **onReady** 或 **initialize** 处理程序中使用。
 
 电话拨号器示例 Outlook 加载项展示了略为不同的方法，此方法仅使用 JavaScript 检查这些相同条件。 
 
 > [!IMPORTANT]
-> 即使加载项没有初始化任务要执行，也必须至少添加最简单的 **Office.initialize** 事件处理程序函数，如下面的示例所示。
-
-```js
-Office.initialize = function () {
-};
-```
-
-如果您无法加入  **Office.initialize** 事件处理程序，则启动加载项时可能会出错。此外，如果用户尝试将您的加载项与 Office Online Web 客户端（如 Excel Online、PowerPoint Online 或 Outlook Web App）结合使用，应用程序将无法运行。
-
-如果您的加载项包括多个页，则在每次加载新页时，页面必须加入或调用  **Office.initialize** 事件处理程序。
-
+> 即使加载项没有初始化任务要执行，也必须至少包含对 **Office.onReady** 的调用或分配最简单的 **Office.initialize** 事件处理程序函数，如下面的示例所示。
+>
+>```js
+>Office.onReady();
+>```
+>
+>```js
+>Office.initialize = function () {};
+>```
+>
+> 如果未调用 **Office.onReady** 或分配 **Office.initialize** 事件处理程序，则加载项在启动时可能会引发错误。 而且，如果某个用户尝试通过 Office Online Web 客户端（例如 Excel Online、PowerPoint Online 或 Outlook Web App）使用你的外接程序，则外接程序会无法运行。
+>
+> 如果你的加载项包括多个页，则在每次加载新页时，该页面必须调用 **Office.onReady** 或分配 **Office.initialize** 事件处理程序。
 
 ## <a name="see-also"></a>另请参阅
 

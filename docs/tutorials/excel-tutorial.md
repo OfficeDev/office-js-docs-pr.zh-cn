@@ -1,14 +1,14 @@
 ---
 title: Excel 加载项教程
 description: 在本教程中，你将学习如何构建一个 Excel 外接程序，用于创建、填充、筛选和排序表格、创建图表、冻结表格标题、保护工作表并打开对话框。
-ms.date: 12/31/2018
+ms.date: 01/09/2019
 ms.topic: tutorial
-ms.openlocfilehash: fe4350f5f3fdbe34250c1739c7651a1dde1e28ef
-ms.sourcegitcommit: 3007bf57515b0811ff98a7e1518ecc6fc9462276
+ms.openlocfilehash: de5a08be53d7a6c2f4df4d9419e3713266800f7e
+ms.sourcegitcommit: 384e217fd51d73d13ccfa013bfc6e049b66bd98c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "27724940"
+ms.lasthandoff: 01/11/2019
+ms.locfileid: "27896355"
 ---
 # <a name="tutorial-create-an-excel-task-pane-add-in"></a>教程：创建 Excel 任务窗格加载项
 
@@ -801,30 +801,30 @@ ms.locfileid: "27724940"
 
 4. 在项目的根目录中，创建 popup.js 文件。
 
-5. 将下面的代码添加到 popup.js 中。请注意以下几点：
+5. 将下面的代码添加到 popup.js 中。 关于此代码，请注意以下几点：
 
-   - *所有调用 Office.JS 库中 API 的页面都必须向 `Office.initialize` 属性分配函数。* 如果不需要初始化，函数可以主体是空的，但此属性既不得未定义，也不得分配到空值或非函数值。 有关示例，请参阅项目根目录中的 app.js 文件。 分配代码必须先于任何 Office.JS 调用运行，因此分配代码位于页面加载的脚本文件中，正如本例所示。
-   
-   - jQuery `ready` 函数在 `initialize` 方法内调用。应在 `Office.initialize` 函数内加载、初始化或启动其他 JavaScript 库的代码，这几乎就是一条普遍性规则。
+   - *每个调用 Office.JS 库中的 API 的页面均必须首先确保该库已完成初始化。* 执行此操作的最佳方法是调用 `Office.onReady()` 方法。 如果加载项具有其自己的初始化任务，则代码应位于链接至 `Office.onReady()` 调用的 `then()` 方法中。 有关示例，请参阅项目根目录中的 app.js 文件。 必须在调用 Office.JS 之前运行 `Office.onReady()` 调用；因此，作业位于由页面加载的脚本文件中，如同本示例中一样。
+   - 将在 `then()` 方法内调用 jQuery `ready` 函数。 在大多数情况下，应在链接至 `Office.onReady()` 调用的 `then()` 方法内加载、初始化或启动其他 JavaScript 库代码。
 
     ```js
     (function () {
     "use strict";
 
-        Office.initialize = function() {
-            $(document).ready(function () {  
+        Office.onReady()
+            .then(function() {
+                $(document).ready(function () {  
 
-                // TODO1: Assign handler to the OK button.
+                    // TODO1: Assign handler to the OK button.
 
+                });
             });
-        }
 
         // TODO2: Create the OK button handler
 
     }());
     ```
 
-6. 将 `TODO1` 替换为下列代码。 将在下一步中创建 `sendStringToParentPage` 函数。
+6. 将 `TODO1` 替换为下面的代码。 将在下一步中创建 `sendStringToParentPage` 函数。
 
     ```js
     $('#ok-button').click(sendStringToParentPage);
