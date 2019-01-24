@@ -2,74 +2,75 @@
 title: 加载 DOM 和运行时环境
 description: ''
 ms.date: 01/09/2019
-ms.openlocfilehash: 2e829fbdb73b8ea450486fe2fef3e839213c970b
-ms.sourcegitcommit: 384e217fd51d73d13ccfa013bfc6e049b66bd98c
+localization_priority: Priority
+ms.openlocfilehash: ce56518759740e20f2643bb675274602b3d968a4
+ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/11/2019
-ms.locfileid: "27896341"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "29389226"
 ---
-# <a name="loading-the-dom-and-runtime-environment"></a><span data-ttu-id="4cc89-102">加载 DOM 和运行时环境</span><span class="sxs-lookup"><span data-stu-id="4cc89-102">Loading the DOM and runtime environment</span></span>
+# <a name="loading-the-dom-and-runtime-environment"></a><span data-ttu-id="fb58f-102">加载 DOM 和运行时环境</span><span class="sxs-lookup"><span data-stu-id="fb58f-102">Loading the DOM and runtime environment</span></span>
 
 
 
-<span data-ttu-id="4cc89-103">外接程序在运行自己的自定义逻辑前必须确保 DOM 和 Office 外接程序运行时环境都已加载。</span><span class="sxs-lookup"><span data-stu-id="4cc89-103">An add-in must ensure that both the DOM and the Office Add-ins runtime environment are loaded before running its own custom logic.</span></span> 
+<span data-ttu-id="fb58f-103">外接程序在运行自己的自定义逻辑前必须确保 DOM 和 Office 外接程序运行时环境都已加载。</span><span class="sxs-lookup"><span data-stu-id="fb58f-103">An add-in must ensure that both the DOM and the Office Add-ins runtime environment are loaded before running its own custom logic.</span></span> 
 
-## <a name="startup-of-a-content-or-task-pane-add-in"></a><span data-ttu-id="4cc89-104">启动内容或任务窗格加载项</span><span class="sxs-lookup"><span data-stu-id="4cc89-104">Startup of a content or task pane add-in</span></span>
+## <a name="startup-of-a-content-or-task-pane-add-in"></a><span data-ttu-id="fb58f-104">启动内容或任务窗格加载项</span><span class="sxs-lookup"><span data-stu-id="fb58f-104">Startup of a content or task pane add-in</span></span>
 
-<span data-ttu-id="4cc89-105">下图显示了在 Excel、PowerPoint、Project、Word 或 Access 中启动内容或任务窗格外接程序所涉及的事件流。</span><span class="sxs-lookup"><span data-stu-id="4cc89-105">The following figure shows the flow of events involved in starting a content or task pane add-in in Excel, PowerPoint, Project, Word, or Access.</span></span>
+<span data-ttu-id="fb58f-105">下图显示了在 Excel、PowerPoint、Project、Word 或 Access 中启动内容或任务窗格外接程序所涉及的事件流。</span><span class="sxs-lookup"><span data-stu-id="fb58f-105">The following figure shows the flow of events involved in starting a content or task pane add-in in Excel, PowerPoint, Project, Word, or Access.</span></span>
 
 ![启动内容/任务窗格外接程序时的事件流](../images/office15-app-sdk-loading-dom-agave-runtime.png)
 
-<span data-ttu-id="4cc89-107">启动内容/任务窗格外接程序时，将发生以下事件：</span><span class="sxs-lookup"><span data-stu-id="4cc89-107">The following events occur when a content or task pane add-in starts:</span></span> 
+<span data-ttu-id="fb58f-107">启动内容/任务窗格外接程序时，将发生以下事件：</span><span class="sxs-lookup"><span data-stu-id="fb58f-107">The following events occur when a content or task pane add-in starts:</span></span> 
 
 
 
-1. <span data-ttu-id="4cc89-108">用户打开已包含加载项的文档，或在文档中插入加载项。</span><span class="sxs-lookup"><span data-stu-id="4cc89-108">The user opens a document that already contains an add-in or inserts an add-in in the document.</span></span>
+1. <span data-ttu-id="fb58f-108">用户打开已包含加载项的文档，或在文档中插入加载项。</span><span class="sxs-lookup"><span data-stu-id="fb58f-108">The user opens a document that already contains an add-in or inserts an add-in in the document.</span></span>
     
-2. <span data-ttu-id="4cc89-109">Office 主机应用从 AppSource、SharePoint 上的加载项目录或源自的共享文件夹目录中读取加载项 XML 清单。</span><span class="sxs-lookup"><span data-stu-id="4cc89-109">The Office host application reads the add-in's XML manifest from AppSource, an add-in catalog on SharePoint, or the shared folder catalog it originates from.</span></span>
+2. <span data-ttu-id="fb58f-109">Office 主机应用从 AppSource、SharePoint 上的加载项目录或源自的共享文件夹目录中读取加载项 XML 清单。</span><span class="sxs-lookup"><span data-stu-id="fb58f-109">The Office host application reads the add-in's XML manifest from AppSource, an add-in catalog on SharePoint, or the shared folder catalog it originates from.</span></span>
     
-3. <span data-ttu-id="4cc89-110">Office 主机应用在浏览器控件中打开加载项的 HTML 页面。</span><span class="sxs-lookup"><span data-stu-id="4cc89-110">The Office host application opens the add-in's HTML page in a browser control.</span></span>
+3. <span data-ttu-id="fb58f-110">Office 主机应用在浏览器控件中打开加载项的 HTML 页面。</span><span class="sxs-lookup"><span data-stu-id="fb58f-110">The Office host application opens the add-in's HTML page in a browser control.</span></span>
     
-    <span data-ttu-id="4cc89-p101">后面的两个步骤第 4 步和第 5 步以异步方式并行发生。因此，您的加载项代码必须在继续之前确保 DOM 和加载项运行时环境已加载完。</span><span class="sxs-lookup"><span data-stu-id="4cc89-p101">The next two steps, steps 4 and 5, occur asynchronously and in parallel. For this reason, your add-in's code must make sure that both the DOM and the add-in runtime environment have finished loading before proceeding.</span></span>
+    <span data-ttu-id="fb58f-p101">后面的两个步骤第 4 步和第 5 步以异步方式并行发生。因此，您的加载项代码必须在继续之前确保 DOM 和加载项运行时环境已加载完。</span><span class="sxs-lookup"><span data-stu-id="fb58f-p101">The next two steps, steps 4 and 5, occur asynchronously and in parallel. For this reason, your add-in's code must make sure that both the DOM and the add-in runtime environment have finished loading before proceeding.</span></span>
     
-4. <span data-ttu-id="4cc89-113">浏览器控件加载 DOM 和 HTML 正文，并调用 **window.onload** 事件的事件处理程序。</span><span class="sxs-lookup"><span data-stu-id="4cc89-113">The browser control loads the DOM and HTML body, and calls the event handler for the  **window.onload** event.</span></span>
+4. <span data-ttu-id="fb58f-113">浏览器控件加载 DOM 和 HTML 正文，并调用 **window.onload** 事件的事件处理程序。</span><span class="sxs-lookup"><span data-stu-id="fb58f-113">The browser control loads the DOM and HTML body, and calls the event handler for the  **window.onload** event.</span></span>
     
-5. <span data-ttu-id="4cc89-114">Office 主机应用程序加载运行时环境，这将从内容分发网络 (CDN) 服务器中为 JavaScript 库文件下载并缓存 JavaScript API，然后为 [Office](/javascript/api/office) 对象的 [initialize](/javascript/api/office#initialize-reason-) 事件调用加载项的事件处理程序（如果已为其分配处理程序）。</span><span class="sxs-lookup"><span data-stu-id="4cc89-114">The Office host application loads the runtime environment, which downloads and caches the JavaScript API for JavaScript library files from the content distribution network (CDN) server, and then calls the add-in's event handler for the [initialize](/javascript/api/office#initialize-reason-) event of the [Office](/javascript/api/office) object.</span></span> <span data-ttu-id="4cc89-115">此时它还会检查是否有任何回调（或链接 `then()` 函数）已传递（或链接）到 `Office.onReady` 处理程序。</span><span class="sxs-lookup"><span data-stu-id="4cc89-115">At this time it also checks to see if any callbacks (or chained `then()` functions) have been passed (or chained) to the `Office.onReady` handler.</span></span> <span data-ttu-id="4cc89-116">有关 `Office.initialize` 与 `Office.onReady` 之间的区别的详细信息，请参阅[初始化加载项](/office/dev/add-ins/develop/understanding-the-javascript-api-for-office#initializing-your-add-in)。</span><span class="sxs-lookup"><span data-stu-id="4cc89-116">For more information about the distinction between `Office.initialize` and `Office.onReady`, see [Initializing your add-in](/office/dev/add-ins/develop/understanding-the-javascript-api-for-office#initializing-your-add-in).</span></span>
+5. <span data-ttu-id="fb58f-114">Office 主机应用程序加载运行时环境，这将从内容分发网络 (CDN) 服务器中为 JavaScript 库文件下载并缓存 JavaScript API，然后为 [Office](/javascript/api/office) 对象的 [initialize](/javascript/api/office#initialize-reason-) 事件调用加载项的事件处理程序（如果已为其分配处理程序）。</span><span class="sxs-lookup"><span data-stu-id="fb58f-114">The Office host application loads the runtime environment, which downloads and caches the JavaScript API for JavaScript library files from the content distribution network (CDN) server, and then calls the add-in's event handler for the [initialize](/javascript/api/office#initialize-reason-) event of the [Office](/javascript/api/office) object, if a handler has been assigned to it.</span></span> <span data-ttu-id="fb58f-115">此时它还会检查是否有任何回调（或链接 `then()` 函数）已传递（或链接）到 `Office.onReady` 处理程序。</span><span class="sxs-lookup"><span data-stu-id="fb58f-115">At this time it also checks to see if any callbacks (or chained `then()` functions) have been passed (or chained) to the `Office.onReady` handler.</span></span> <span data-ttu-id="fb58f-116">有关 `Office.initialize` 与 `Office.onReady` 之间的区别的详细信息，请参阅[初始化加载项](/office/dev/add-ins/develop/understanding-the-javascript-api-for-office#initializing-your-add-in)。</span><span class="sxs-lookup"><span data-stu-id="fb58f-116">For more information about the distinction between `Office.initialize` and `Office.onReady`, see [Initializing your add-in](/office/dev/add-ins/develop/understanding-the-javascript-api-for-office#initializing-your-add-in).</span></span>
     
-6. <span data-ttu-id="4cc89-117">当 DOM 和 HTML 正文加载完毕并且加载项完成初始化后，加载项的主函数就可以继续进行。</span><span class="sxs-lookup"><span data-stu-id="4cc89-117">When the DOM and HTML body finish loading and the add-in finishes initializing, the main function of the add-in can proceed.</span></span>
+6. <span data-ttu-id="fb58f-117">当 DOM 和 HTML 正文加载完毕并且加载项完成初始化后，加载项的主函数就可以继续进行。</span><span class="sxs-lookup"><span data-stu-id="fb58f-117">When the DOM and HTML body finish loading and the add-in finishes initializing, the main function of the add-in can proceed.</span></span>
     
 
-## <a name="startup-of-an-outlook-add-in"></a><span data-ttu-id="4cc89-118">启动 Outlook 外接程序</span><span class="sxs-lookup"><span data-stu-id="4cc89-118">Startup of an Outlook add-in</span></span>
+## <a name="startup-of-an-outlook-add-in"></a><span data-ttu-id="fb58f-118">启动 Outlook 外接程序</span><span class="sxs-lookup"><span data-stu-id="fb58f-118">Startup of an Outlook add-in</span></span>
 
 
 
-<span data-ttu-id="4cc89-119">下图显示了启动在台式机、平板电脑或智能手机上运行的 Outlook 外接程序所涉及的事件流。</span><span class="sxs-lookup"><span data-stu-id="4cc89-119">The following figure shows the flow of events involved in starting an Outlook add-in running on the desktop, tablet, or smartphone.</span></span>
+<span data-ttu-id="fb58f-119">下图显示了启动在台式机、平板电脑或智能手机上运行的 Outlook 外接程序所涉及的事件流。</span><span class="sxs-lookup"><span data-stu-id="fb58f-119">The following figure shows the flow of events involved in starting an Outlook add-in running on the desktop, tablet, or smartphone.</span></span>
 
 ![启动 Outlook 外接程序时的事件流](../images/outlook15-loading-dom-agave-runtime.png)
 
-<span data-ttu-id="4cc89-121">启动 Outlook 外接程序时，将发生以下事件：</span><span class="sxs-lookup"><span data-stu-id="4cc89-121">The following events occur when an Outlook add-in starts:</span></span> 
+<span data-ttu-id="fb58f-121">启动 Outlook 外接程序时，将发生以下事件：</span><span class="sxs-lookup"><span data-stu-id="fb58f-121">The following events occur when an Outlook add-in starts:</span></span> 
 
 
 
-1. <span data-ttu-id="4cc89-122">当 Outlook 启动时，Outlook 读取已为用户的电子邮件帐户安装的 Outlook 外接程序的 XML 清单。</span><span class="sxs-lookup"><span data-stu-id="4cc89-122">When Outlook starts, Outlook reads the XML manifests for Outlook add-ins that have been installed for the user's email account.</span></span>
+1. <span data-ttu-id="fb58f-122">当 Outlook 启动时，Outlook 读取已为用户的电子邮件帐户安装的 Outlook 外接程序的 XML 清单。</span><span class="sxs-lookup"><span data-stu-id="fb58f-122">When Outlook starts, Outlook reads the XML manifests for Outlook add-ins that have been installed for the user's email account.</span></span>
     
-2. <span data-ttu-id="4cc89-123">用户选择 Outlook 中的一个项目。</span><span class="sxs-lookup"><span data-stu-id="4cc89-123">The user selects an item in Outlook.</span></span>
+2. <span data-ttu-id="fb58f-123">用户选择 Outlook 中的一个项目。</span><span class="sxs-lookup"><span data-stu-id="fb58f-123">The user selects an item in Outlook.</span></span>
     
-3. <span data-ttu-id="4cc89-124">如果所选项目满足某个 Outlook 外接程序的激活条件，则 Outlook 将激活该外接程序，并使其按钮在 UI 中可见。</span><span class="sxs-lookup"><span data-stu-id="4cc89-124">If the selected item satisfies the activation conditions of an Outlook add-in, Outlook activates the add-in and makes its button visible in the UI.</span></span>
+3. <span data-ttu-id="fb58f-124">如果所选项目满足某个 Outlook 外接程序的激活条件，则 Outlook 将激活该外接程序，并使其按钮在 UI 中可见。</span><span class="sxs-lookup"><span data-stu-id="fb58f-124">If the selected item satisfies the activation conditions of an Outlook add-in, Outlook activates the add-in and makes its button visible in the UI.</span></span>
     
-4. <span data-ttu-id="4cc89-p103">如果用户单击该按钮以启动 Outlook 外接程序，Outlook 将在浏览器控件中打开 HTML 页面。下面两个步骤（步骤 5 和 6）并行发生。</span><span class="sxs-lookup"><span data-stu-id="4cc89-p103">If the user clicks the button to start the Outlook add-in, Outlook opens the HTML page in a browser control. The next two steps, steps 5 and 6, occur in parallel.</span></span>
+4. <span data-ttu-id="fb58f-p103">如果用户单击该按钮以启动 Outlook 外接程序，Outlook 将在浏览器控件中打开 HTML 页面。下面两个步骤（步骤 5 和 6）并行发生。</span><span class="sxs-lookup"><span data-stu-id="fb58f-p103">If the user clicks the button to start the Outlook add-in, Outlook opens the HTML page in a browser control. The next two steps, steps 5 and 6, occur in parallel.</span></span>
     
-5. <span data-ttu-id="4cc89-127">浏览器控件加载 DOM 和 HTML 正文，并调用 **onload** 事件的事件处理程序。</span><span class="sxs-lookup"><span data-stu-id="4cc89-127">The browser control loads the DOM and HTML body, and calls the event handler for the  **onload** event.</span></span>
+5. <span data-ttu-id="fb58f-127">浏览器控件加载 DOM 和 HTML 正文，并调用 **onload** 事件的事件处理程序。</span><span class="sxs-lookup"><span data-stu-id="fb58f-127">The browser control loads the DOM and HTML body, and calls the event handler for the  **onload** event.</span></span>
     
-6. <span data-ttu-id="4cc89-128">Outlook 加载运行时环境，这将从内容分发网络 (CDN) 服务器中为 JavaScript 库文件下载并缓存 JavaScript API，然后为 [Office](/javascript/api/office) 加载项对象的 [initialize](/javascript/api/office#initialize-reason-) 事件调用事件处理程序（如果已为其分配处理程序）。</span><span class="sxs-lookup"><span data-stu-id="4cc89-128">The Office host application loads the runtime environment, which downloads and caches the JavaScript API for JavaScript library files from the content distribution network (CDN) server, and then calls the add-in's event handler for the [initialize](/javascript/api/office#initialize-reason-) event of the [Office](/javascript/api/office) object.</span></span> <span data-ttu-id="4cc89-129">此时它还会检查是否有任何回调（或链接 `then()` 函数）已传递（或链接）到 `Office.onReady` 处理程序。</span><span class="sxs-lookup"><span data-stu-id="4cc89-129">At this time it also checks to see if any callbacks (or chained `then()` functions) have been passed (or chained) to the `Office.onReady` handler.</span></span> <span data-ttu-id="4cc89-130">有关 `Office.initialize` 与 `Office.onReady` 之间的区别的详细信息，请参阅[初始化加载项](/office/dev/add-ins/develop/understanding-the-javascript-api-for-office#initializing-your-add-in)。</span><span class="sxs-lookup"><span data-stu-id="4cc89-130">For more information about the distinction between `Office.initialize` and `Office.onReady`, see [Initializing your add-in](/office/dev/add-ins/develop/understanding-the-javascript-api-for-office#initializing-your-add-in).</span></span>
+6. <span data-ttu-id="fb58f-128">Outlook 加载运行时环境，这将从内容分发网络 (CDN) 服务器中为 JavaScript 库文件下载并缓存 JavaScript API，然后为 [Office](/javascript/api/office) 加载项对象的 [initialize](/javascript/api/office#initialize-reason-) 事件调用事件处理程序（如果已为其分配处理程序）。</span><span class="sxs-lookup"><span data-stu-id="fb58f-128">Outlook loads the runtime environment, which downloads and caches the JavaScript API for JavaScript library files from the content distribution network (CDN) server, and then calls the event handler for the [initialize](/javascript/api/office#initialize-reason-) event of the [Office](/javascript/api/office) object of the add-in, if a handler has been assigned to it.</span></span> <span data-ttu-id="fb58f-129">此时它还会检查是否有任何回调（或链接 `then()` 函数）已传递（或链接）到 `Office.onReady` 处理程序。</span><span class="sxs-lookup"><span data-stu-id="fb58f-129">At this time it also checks to see if any callbacks (or chained `then()` functions) have been passed (or chained) to the `Office.onReady` handler.</span></span> <span data-ttu-id="fb58f-130">有关 `Office.initialize` 与 `Office.onReady` 之间的区别的详细信息，请参阅[初始化加载项](/office/dev/add-ins/develop/understanding-the-javascript-api-for-office#initializing-your-add-in)。</span><span class="sxs-lookup"><span data-stu-id="fb58f-130">For more information about the distinction between `Office.initialize` and `Office.onReady`, see [Initializing your add-in](/office/dev/add-ins/develop/understanding-the-javascript-api-for-office#initializing-your-add-in).</span></span>
     
-7. <span data-ttu-id="4cc89-131">当 DOM 和 HTML 正文加载完毕并且加载项完成初始化后，加载项的主函数就可以继续进行。</span><span class="sxs-lookup"><span data-stu-id="4cc89-131">When the DOM and HTML body finish loading and the add-in finishes initializing, the main function of the add-in can proceed.</span></span>
+7. <span data-ttu-id="fb58f-131">当 DOM 和 HTML 正文加载完毕并且加载项完成初始化后，加载项的主函数就可以继续进行。</span><span class="sxs-lookup"><span data-stu-id="fb58f-131">When the DOM and HTML body finish loading and the add-in finishes initializing, the main function of the add-in can proceed.</span></span>
     
 
-## <a name="checking-the-load-status"></a><span data-ttu-id="4cc89-132">检查加载状态</span><span class="sxs-lookup"><span data-stu-id="4cc89-132">Checking the load status</span></span>
+## <a name="checking-the-load-status"></a><span data-ttu-id="fb58f-132">检查加载状态</span><span class="sxs-lookup"><span data-stu-id="fb58f-132">Checking the load status</span></span>
 
-<span data-ttu-id="4cc89-133">检查 DOM 和运行时环境是否已完成加载的一种方法是使用 jQuery [.ready()](http://api.jquery.com/ready/) 函数：`$(document).ready()`。</span><span class="sxs-lookup"><span data-stu-id="4cc89-133">One way to check that both the DOM and the runtime environment have finished loading is to use the jQuery [.ready()](http://api.jquery.com/ready/) function: `$(document).ready()`.</span></span> <span data-ttu-id="4cc89-134">例如，以下 **onReady** 事件处理程序确保在专用于初始化加载项的代码运行之前先加载 DOM。</span><span class="sxs-lookup"><span data-stu-id="4cc89-134">For example, the following **onReady** event handler makes sure the DOM is first loaded before the code specific to initializing the add-in runs.</span></span> <span data-ttu-id="4cc89-135">随后，**onReady** 处理程序将继续使用 [mailbox.item](https://docs.microsoft.com/javascript/api/outlook/office.mailbox?view=office-js) 属性来获取当前在 Outlook 中选择的项目，并调用加载项的主函数，即 `initDialer`。</span><span class="sxs-lookup"><span data-stu-id="4cc89-135">Subsequently, the **onReady** handler proceeds to use the [mailbox.item](https://docs.microsoft.com/javascript/api/outlook/office.mailbox?view=office-js) property to obtain the currently selected item in Outlook, and calls the main function of the add-in, `initDialer`.</span></span>
+<span data-ttu-id="fb58f-133">检查 DOM 和运行时环境是否已完成加载的一种方法是使用 jQuery [.ready()](http://api.jquery.com/ready/) 函数：`$(document).ready()`。</span><span class="sxs-lookup"><span data-stu-id="fb58f-133">One way to check that both the DOM and the runtime environment have finished loading is to use the jQuery [.ready()](http://api.jquery.com/ready/) function: `$(document).ready()`.</span></span> <span data-ttu-id="fb58f-134">例如，以下 **onReady** 事件处理程序确保在专用于初始化加载项的代码运行之前先加载 DOM。</span><span class="sxs-lookup"><span data-stu-id="fb58f-134">For example, the following **onReady** event handler makes sure the DOM is first loaded before the code specific to initializing the add-in runs.</span></span> <span data-ttu-id="fb58f-135">随后，**onReady** 处理程序将继续使用 [mailbox.item](https://docs.microsoft.com/javascript/api/outlook/office.mailbox?view=office-js) 属性来获取当前在 Outlook 中选择的项目，并调用加载项的主函数，即 `initDialer`。</span><span class="sxs-lookup"><span data-stu-id="fb58f-135">Subsequently, the **onReady** handler proceeds to use the [mailbox.item](https://docs.microsoft.com/javascript/api/outlook/office.mailbox?view=office-js) property to obtain the currently selected item in Outlook, and calls the main function of the add-in, `initDialer`.</span></span>
 
 ```js
 Office.onReady()
@@ -84,7 +85,7 @@ Office.onReady()
 );
 ```
 
-<span data-ttu-id="4cc89-136">或者，你也可以在 **initialize** 事件处理程序中使用相同的代码，如下面的示例所示。</span><span class="sxs-lookup"><span data-stu-id="4cc89-136">Alternatively, you can use the same code in an  **initialize** event handler as shown in the following example.</span></span>
+<span data-ttu-id="fb58f-136">或者，你也可以在 **initialize** 事件处理程序中使用相同的代码，如下面的示例所示。</span><span class="sxs-lookup"><span data-stu-id="fb58f-136">Alternatively, you can use the same code in an  **initialize** event handler as shown in the following example.</span></span>
 
 ```js
 Office.initialize = function () {
@@ -98,12 +99,12 @@ Office.initialize = function () {
 }
 ```
 
-<span data-ttu-id="4cc89-137">这种方法可在任何 Office 加载项的 **onReady** 或 **initialize** 处理程序中使用。</span><span class="sxs-lookup"><span data-stu-id="4cc89-137">This same technique can be used in the  **initialize** handler of any Office Add-in.</span></span>
+<span data-ttu-id="fb58f-137">这种方法可在任何 Office 加载项的 **onReady** 或 **initialize** 处理程序中使用。</span><span class="sxs-lookup"><span data-stu-id="fb58f-137">This same technique can be used in the **onReady** or **initialize** handlers of any Office Add-in.</span></span>
 
-<span data-ttu-id="4cc89-138">电话拨号器示例 Outlook 加载项展示了略为不同的方法，此方法仅使用 JavaScript 检查这些相同条件。</span><span class="sxs-lookup"><span data-stu-id="4cc89-138">The phone dialer sample Outlook add-in shows a slightly different approach using only JavaScript to check these same conditions.</span></span> 
+<span data-ttu-id="fb58f-138">电话拨号器示例 Outlook 加载项展示了略为不同的方法，此方法仅使用 JavaScript 检查这些相同条件。</span><span class="sxs-lookup"><span data-stu-id="fb58f-138">The phone dialer sample Outlook add-in shows a slightly different approach using only JavaScript to check these same conditions.</span></span> 
 
 > [!IMPORTANT]
-> <span data-ttu-id="4cc89-139">即使加载项没有初始化任务要执行，也必须至少包含对 **Office.onReady** 的调用或分配最简单的 **Office.initialize** 事件处理程序函数，如下面的示例所示。</span><span class="sxs-lookup"><span data-stu-id="4cc89-139">Even if your add-in has no initialization tasks to perform, you must include at least a minimal **Office.initialize** event handler function like the following example.</span></span>
+> <span data-ttu-id="fb58f-139">即使加载项没有初始化任务要执行，也必须至少包含对 **Office.onReady** 的调用或分配最简单的 **Office.initialize** 事件处理程序函数，如下面的示例所示。</span><span class="sxs-lookup"><span data-stu-id="fb58f-139">Even if your add-in has no initialization tasks to perform, you must include at least a call of **Office.onReady** or assign minimal **Office.initialize** event handler function as shown in the following examples.</span></span>
 >
 >```js
 >Office.onReady();
@@ -113,11 +114,11 @@ Office.initialize = function () {
 >Office.initialize = function () {};
 >```
 >
-> <span data-ttu-id="4cc89-140">如果未调用 **Office.onReady** 或分配 **Office.initialize** 事件处理程序，则加载项在启动时可能会引发错误。</span><span class="sxs-lookup"><span data-stu-id="4cc89-140">If you do not call **Office.onReady** or assign an  **Office.initialize** event handler, your add-in may raise an error when it starts.</span></span> <span data-ttu-id="4cc89-141">而且，如果某个用户尝试通过 Office Online Web 客户端（例如 Excel Online、PowerPoint Online 或 Outlook Web App）使用你的外接程序，则外接程序会无法运行。</span><span class="sxs-lookup"><span data-stu-id="4cc89-141">Also, if a user attempts to use your add-in with an Office Online web client, such as Excel Online, PowerPoint Online, or Outlook Web App, it will fail to run.</span></span>
+> <span data-ttu-id="fb58f-140">如果未调用 **Office.onReady** 或分配 **Office.initialize** 事件处理程序，则加载项在启动时可能会引发错误。</span><span class="sxs-lookup"><span data-stu-id="fb58f-140">If you do not call **Office.onReady** or assign an  **Office.initialize** event handler, your add-in may raise an error when it starts.</span></span> <span data-ttu-id="fb58f-141">而且，如果某个用户尝试通过 Office Online Web 客户端（例如 Excel Online、PowerPoint Online 或 Outlook Web App）使用你的外接程序，则外接程序会无法运行。</span><span class="sxs-lookup"><span data-stu-id="fb58f-141">Also, if a user attempts to use your add-in with an Office Online web client, such as Excel Online, PowerPoint Online, or Outlook Web App, it will fail to run.</span></span>
 >
-> <span data-ttu-id="4cc89-142">如果你的加载项包括多个页，则在每次加载新页时，该页面必须调用 **Office.onReady** 或分配 **Office.initialize** 事件处理程序。</span><span class="sxs-lookup"><span data-stu-id="4cc89-142">If your add-in includes more than one page, whenever it loads a new page that page must include or call an  **Office.initialize** event handler.</span></span>
+> <span data-ttu-id="fb58f-142">如果你的加载项包括多个页，则在每次加载新页时，该页面必须调用 **Office.onReady** 或分配 **Office.initialize** 事件处理程序。</span><span class="sxs-lookup"><span data-stu-id="fb58f-142">If your add-in includes more than one page, whenever it loads a new page that page must either call **Office.onReady** or assign an  **Office.initialize** event handler.</span></span>
 
-## <a name="see-also"></a><span data-ttu-id="4cc89-143">另请参阅</span><span class="sxs-lookup"><span data-stu-id="4cc89-143">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="fb58f-143">另请参阅</span><span class="sxs-lookup"><span data-stu-id="fb58f-143">See also</span></span>
 
-- [<span data-ttu-id="4cc89-144">了解适用于 Office 的 JavaScript API</span><span class="sxs-lookup"><span data-stu-id="4cc89-144">Understanding the JavaScript API for Office</span></span>](understanding-the-javascript-api-for-office.md)
+- [<span data-ttu-id="fb58f-144">了解适用于 Office 的 JavaScript API</span><span class="sxs-lookup"><span data-stu-id="fb58f-144">Understanding the JavaScript API for Office</span></span>](understanding-the-javascript-api-for-office.md)
     

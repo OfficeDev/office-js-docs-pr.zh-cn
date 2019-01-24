@@ -1,36 +1,44 @@
-# <a name="build-your-first-powerpoint-add-in"></a><span data-ttu-id="75e42-101">生成首个 PowerPoint 加载项</span><span class="sxs-lookup"><span data-stu-id="75e42-101">Build your first PowerPoint add-in</span></span>
+---
+ms.openlocfilehash: 2305faa6cc1560628cfc58d8bcf5c62b4fb0fb18
+ms.sourcegitcommit: 984c425e2ad58577af8f494079923cab165ad36c
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 01/18/2019
+ms.locfileid: "28726994"
+---
+# <a name="build-your-first-powerpoint-add-in"></a><span data-ttu-id="71dcf-101">生成首个 PowerPoint 加载项</span><span class="sxs-lookup"><span data-stu-id="71dcf-101">Build your first PowerPoint add-in</span></span>
 
-<span data-ttu-id="75e42-102">本文将逐步介绍如何使用 jQuery 和 Office JavaScript API 生成 PowerPoint 加载项。</span><span class="sxs-lookup"><span data-stu-id="75e42-102">In this article, you'll walk through the process of building a PowerPoint add-in by using jQuery and the Office JavaScript API.</span></span>
+<span data-ttu-id="71dcf-102">本文将逐步介绍如何使用 jQuery 和 Office JavaScript API 生成 PowerPoint 加载项。</span><span class="sxs-lookup"><span data-stu-id="71dcf-102">In this article, you'll walk through the process of building a PowerPoint add-in by using jQuery and the Office JavaScript API.</span></span>
 
-## <a name="create-the-add-in"></a><span data-ttu-id="75e42-103">创建加载项</span><span class="sxs-lookup"><span data-stu-id="75e42-103">Create the add-in</span></span> 
+## <a name="create-the-add-in"></a><span data-ttu-id="71dcf-103">创建加载项</span><span class="sxs-lookup"><span data-stu-id="71dcf-103">Create the add-in</span></span> 
 
 [!include[Choose your editor](../includes/quickstart-choose-editor.md)]
 
-# <a name="visual-studiotabvisual-studio"></a>[<span data-ttu-id="75e42-104">Visual Studio</span><span class="sxs-lookup"><span data-stu-id="75e42-104">Visual Studio</span></span>](#tab/visual-studio)
+# <a name="visual-studiotabvisual-studio"></a>[<span data-ttu-id="71dcf-104">Visual Studio</span><span class="sxs-lookup"><span data-stu-id="71dcf-104">Visual Studio</span></span>](#tab/visual-studio)
 
-### <a name="prerequisites"></a><span data-ttu-id="75e42-105">先决条件</span><span class="sxs-lookup"><span data-stu-id="75e42-105">Prerequisites</span></span>
+### <a name="prerequisites"></a><span data-ttu-id="71dcf-105">先决条件</span><span class="sxs-lookup"><span data-stu-id="71dcf-105">Prerequisites</span></span>
 
 [!include[Quick Start prerequisites](../includes/quickstart-vs-prerequisites.md)]
 
-### <a name="create-the-add-in-project"></a><span data-ttu-id="75e42-106">创建加载项项目</span><span class="sxs-lookup"><span data-stu-id="75e42-106">Create the add-in project</span></span>
+### <a name="create-the-add-in-project"></a><span data-ttu-id="71dcf-106">创建加载项项目</span><span class="sxs-lookup"><span data-stu-id="71dcf-106">Create the add-in project</span></span>
 
-1. <span data-ttu-id="75e42-107">在 Visual Studio 菜单栏中，依次选择“文件”\*\*\*\* > “新建”\*\*\*\* > “项目”\*\*\*\*。</span><span class="sxs-lookup"><span data-stu-id="75e42-107">On the Visual Studio menu bar, choose  **File** > **New** > **Project**.</span></span>
+1. <span data-ttu-id="71dcf-107">在 Visual Studio 菜单栏中，依次选择“文件”\*\*\*\* > “新建”\*\*\*\* > “项目”\*\*\*\*。</span><span class="sxs-lookup"><span data-stu-id="71dcf-107">On the Visual Studio menu bar, choose  **File** > **New** > **Project**.</span></span>
     
-2. <span data-ttu-id="75e42-108">在“Visual C#”\*\*\*\* 或“Visual Basic”\*\*\*\* 下的项目类型列表中，展开“Office/SharePoint”\*\*\*\*，选择“加载项”\*\*\*\*，再选择“PowerPoint Web 加载项”\*\*\*\* 作为项目类型。</span><span class="sxs-lookup"><span data-stu-id="75e42-108">In the list of project types under **Visual C#** or **Visual Basic**, expand  **Office/SharePoint**, choose **Add-ins**, and then choose **PowerPoint Web Add-in** as the project type.</span></span> 
+2. <span data-ttu-id="71dcf-108">在“Visual C#”\*\*\*\* 或“Visual Basic”\*\*\*\* 下的项目类型列表中，展开“Office/SharePoint”\*\*\*\*，选择“加载项”\*\*\*\*，再选择“PowerPoint Web 加载项”\*\*\*\* 作为项目类型。</span><span class="sxs-lookup"><span data-stu-id="71dcf-108">In the list of project types under **Visual C#** or **Visual Basic**, expand  **Office/SharePoint**, choose **Add-ins**, and then choose **PowerPoint Web Add-in** as the project type.</span></span> 
 
-3. <span data-ttu-id="75e42-109">命名此项目，再选择“确定”\*\*\*\*。</span><span class="sxs-lookup"><span data-stu-id="75e42-109">Name the project, and then choose **OK**.</span></span>
+3. <span data-ttu-id="71dcf-109">命名此项目，再选择“确定”\*\*\*\*。</span><span class="sxs-lookup"><span data-stu-id="71dcf-109">Name the project, and then choose **OK**.</span></span>
 
-4. <span data-ttu-id="75e42-110">在“创建 Office 加载项”\*\*\*\* 对话框窗口中，选择“将新功能添加到 PowerPoint”\*\*\*\*，再选择“完成”\*\*\*\* 以创建项目。</span><span class="sxs-lookup"><span data-stu-id="75e42-110">In the **Create Office Add-in** dialog window, choose **Add new functionalities to PowerPoint**, and then choose **Finish** to create the project.</span></span>
+4. <span data-ttu-id="71dcf-110">在“创建 Office 加载项”\*\*\*\* 对话框窗口中，选择“将新功能添加到 PowerPoint”\*\*\*\*，再选择“完成”\*\*\*\* 以创建项目。</span><span class="sxs-lookup"><span data-stu-id="71dcf-110">In the **Create Office Add-in** dialog window, choose **Add new functionalities to PowerPoint**, and then choose **Finish** to create the project.</span></span>
 
-5. <span data-ttu-id="75e42-p101">此时，Visual Studio 创建解决方案，且它的两个项目显示在“解决方案资源管理器”\*\*\*\* 中。**Home.html** 文件在 Visual Studio 中打开。</span><span class="sxs-lookup"><span data-stu-id="75e42-p101">Visual Studio creates a solution and its two projects appear in **Solution Explorer**. The **Home.html** file opens in Visual Studio.</span></span>
+5. <span data-ttu-id="71dcf-p101">此时，Visual Studio 创建解决方案，且它的两个项目显示在“解决方案资源管理器”\*\*\*\* 中。**Home.html** 文件在 Visual Studio 中打开。</span><span class="sxs-lookup"><span data-stu-id="71dcf-p101">Visual Studio creates a solution and its two projects appear in **Solution Explorer**. The **Home.html** file opens in Visual Studio.</span></span>
     
-### <a name="explore-the-visual-studio-solution"></a><span data-ttu-id="75e42-113">探索 Visual Studio 解决方案</span><span class="sxs-lookup"><span data-stu-id="75e42-113">Explore the Visual Studio solution</span></span>
+### <a name="explore-the-visual-studio-solution"></a><span data-ttu-id="71dcf-113">探索 Visual Studio 解决方案</span><span class="sxs-lookup"><span data-stu-id="71dcf-113">Explore the Visual Studio solution</span></span>
 
 [!include[Description of Visual Studio projects](../includes/quickstart-vs-solution.md)]
 
-### <a name="update-the-code"></a><span data-ttu-id="75e42-114">更新代码</span><span class="sxs-lookup"><span data-stu-id="75e42-114">Update the code</span></span>
+### <a name="update-the-code"></a><span data-ttu-id="71dcf-114">更新代码</span><span class="sxs-lookup"><span data-stu-id="71dcf-114">Update the code</span></span>
 
-1. <span data-ttu-id="75e42-115">**Home.html** 指定在加载项的任务窗格中呈现的 HTML。</span><span class="sxs-lookup"><span data-stu-id="75e42-115">**Home.html** specifies the HTML that will be rendered in the add-in's task pane.</span></span> <span data-ttu-id="75e42-116">在 **Home.html** 中，将 `<body>` 元素替换为以下标记，并保存文件。</span><span class="sxs-lookup"><span data-stu-id="75e42-116">In **Home.html**, replace the `<body>` element with the following markup and save the file.</span></span>
+1. <span data-ttu-id="71dcf-115">**Home.html** 指定在加载项的任务窗格中呈现的 HTML。</span><span class="sxs-lookup"><span data-stu-id="71dcf-115">**Home.html** specifies the HTML that will be rendered in the add-in's task pane.</span></span> <span data-ttu-id="71dcf-116">在 **Home.html** 中，将 `<body>` 元素替换为以下标记，并保存文件。</span><span class="sxs-lookup"><span data-stu-id="71dcf-116">In **Home.html**, replace the `<body>` element with the following markup and save the file.</span></span>
  
     ```html
     <body class="ms-font-m ms-welcome">
@@ -52,21 +60,22 @@
     </body>
     ```
 
-2. <span data-ttu-id="75e42-117">打开 Web 应用项目根目录中的文件“Home.js”\*\*\*\*。</span><span class="sxs-lookup"><span data-stu-id="75e42-117">Open the file **Home.js** in the root of the web application project.</span></span> <span data-ttu-id="75e42-118">此文件指定加载项脚本。</span><span class="sxs-lookup"><span data-stu-id="75e42-118">This file specifies the script for the add-in.</span></span> <span data-ttu-id="75e42-119">将整个内容替换为以下代码，并保存文件。</span><span class="sxs-lookup"><span data-stu-id="75e42-119">Replace the entire contents with the following code and save the file.</span></span>
+2. <span data-ttu-id="71dcf-117">打开 Web 应用项目根目录中的文件“Home.js”\*\*\*\*。</span><span class="sxs-lookup"><span data-stu-id="71dcf-117">Open the file **Home.js** in the root of the web application project.</span></span> <span data-ttu-id="71dcf-118">此文件指定加载项脚本。</span><span class="sxs-lookup"><span data-stu-id="71dcf-118">This file specifies the script for the add-in.</span></span> <span data-ttu-id="71dcf-119">将整个内容替换为以下代码，并保存文件。</span><span class="sxs-lookup"><span data-stu-id="71dcf-119">Replace the entire contents with the following code and save the file.</span></span>
 
     ```js
     'use strict';
 
     (function () {
 
-        // The initialize function must be run each time a new page is loaded
-        Office.initialize = function (reason) {
+        Office.onReady(function() {
+            // Office is ready
             $(document).ready(function () {
+                // The document is ready
                 $('#insert-image').click(insertImage);
                 $('#insert-text').click(insertText);
             });
-        };
-    
+        });
+
         function insertImage() {
             Office.context.document.setSelectedDataAsync(getImageAsBase64String(), {
                 coercionType: Office.CoercionType.Image,
@@ -97,7 +106,7 @@
     })();
     ```
 
-3. <span data-ttu-id="75e42-120">打开 Web 应用项目根目录中的文件“Home.css”\*\*\*\*。</span><span class="sxs-lookup"><span data-stu-id="75e42-120">Open the file **Home.css** in the root of the web application project.</span></span> <span data-ttu-id="75e42-121">此文件指定加载项自定义样式。</span><span class="sxs-lookup"><span data-stu-id="75e42-121">This file specifies the custom styles for the add-in.</span></span> <span data-ttu-id="75e42-122">将整个内容替换为以下代码，并保存文件。</span><span class="sxs-lookup"><span data-stu-id="75e42-122">Replace the entire contents with the following code and save the file.</span></span>
+3. <span data-ttu-id="71dcf-120">打开 Web 应用项目根目录中的文件“Home.css”\*\*\*\*。</span><span class="sxs-lookup"><span data-stu-id="71dcf-120">Open the file **Home.css** in the root of the web application project.</span></span> <span data-ttu-id="71dcf-121">此文件指定加载项自定义样式。</span><span class="sxs-lookup"><span data-stu-id="71dcf-121">This file specifies the custom styles for the add-in.</span></span> <span data-ttu-id="71dcf-122">将整个内容替换为以下代码，并保存文件。</span><span class="sxs-lookup"><span data-stu-id="71dcf-122">Replace the entire contents with the following code and save the file.</span></span>
 
     ```css
     #content-header {
@@ -126,17 +135,17 @@
     }
     ```
 
-### <a name="update-the-manifest"></a><span data-ttu-id="75e42-123">更新清单</span><span class="sxs-lookup"><span data-stu-id="75e42-123">Update the manifest</span></span>
+### <a name="update-the-manifest"></a><span data-ttu-id="71dcf-123">更新清单</span><span class="sxs-lookup"><span data-stu-id="71dcf-123">Update the manifest</span></span>
 
-1. <span data-ttu-id="75e42-124">打开加载项项目中的 XML 清单文件。</span><span class="sxs-lookup"><span data-stu-id="75e42-124">Open the XML manifest file in the add-in project.</span></span> <span data-ttu-id="75e42-125">此文件定义的是加载项设置和功能。</span><span class="sxs-lookup"><span data-stu-id="75e42-125">This file defines the add-in's settings and capabilities.</span></span>
+1. <span data-ttu-id="71dcf-124">打开加载项项目中的 XML 清单文件。</span><span class="sxs-lookup"><span data-stu-id="71dcf-124">Open the XML manifest file in the add-in project.</span></span> <span data-ttu-id="71dcf-125">此文件定义的是加载项设置和功能。</span><span class="sxs-lookup"><span data-stu-id="71dcf-125">This file defines the add-in's settings and capabilities.</span></span>
 
-2. <span data-ttu-id="75e42-126">`ProviderName` 元素具有占位符值。</span><span class="sxs-lookup"><span data-stu-id="75e42-126">The `ProviderName` element has a placeholder value.</span></span> <span data-ttu-id="75e42-127">将其替换为你的姓名。</span><span class="sxs-lookup"><span data-stu-id="75e42-127">Replace it with your name.</span></span>
+2. <span data-ttu-id="71dcf-126">`ProviderName` 元素具有占位符值。</span><span class="sxs-lookup"><span data-stu-id="71dcf-126">The `ProviderName` element has a placeholder value.</span></span> <span data-ttu-id="71dcf-127">将其替换为你的姓名。</span><span class="sxs-lookup"><span data-stu-id="71dcf-127">Replace it with your name.</span></span>
 
-3. <span data-ttu-id="75e42-128">`DisplayName` 元素的 `DefaultValue` 属性有占位符。</span><span class="sxs-lookup"><span data-stu-id="75e42-128">The `DefaultValue` attribute of the `DisplayName` element has a placeholder.</span></span> <span data-ttu-id="75e42-129">将它替换为“My Office Add-in”\*\*\*\*。</span><span class="sxs-lookup"><span data-stu-id="75e42-129">Replace it with **My Office Add-in**.</span></span>
+3. <span data-ttu-id="71dcf-128">`DisplayName` 元素的 `DefaultValue` 属性有占位符。</span><span class="sxs-lookup"><span data-stu-id="71dcf-128">The `DefaultValue` attribute of the `DisplayName` element has a placeholder.</span></span> <span data-ttu-id="71dcf-129">将它替换为“My Office Add-in”\*\*\*\*。</span><span class="sxs-lookup"><span data-stu-id="71dcf-129">Replace it with **My Office Add-in**.</span></span>
 
-4. <span data-ttu-id="75e42-130">`Description` 元素的 `DefaultValue` 属性有占位符。</span><span class="sxs-lookup"><span data-stu-id="75e42-130">The `DefaultValue` attribute of the `Description` element has a placeholder.</span></span> <span data-ttu-id="75e42-131">将它替换为“A task pane add-in for PowerPoint”\*\*\*\*。</span><span class="sxs-lookup"><span data-stu-id="75e42-131">Replace it with **A task pane add-in for PowerPoint**.</span></span>
+4. <span data-ttu-id="71dcf-130">`Description` 元素的 `DefaultValue` 属性有占位符。</span><span class="sxs-lookup"><span data-stu-id="71dcf-130">The `DefaultValue` attribute of the `Description` element has a placeholder.</span></span> <span data-ttu-id="71dcf-131">将它替换为“A task pane add-in for PowerPoint”\*\*\*\*。</span><span class="sxs-lookup"><span data-stu-id="71dcf-131">Replace it with **A task pane add-in for PowerPoint**.</span></span>
 
-5. <span data-ttu-id="75e42-132">保存文件。</span><span class="sxs-lookup"><span data-stu-id="75e42-132">Save the file.</span></span>
+5. <span data-ttu-id="71dcf-132">保存文件。</span><span class="sxs-lookup"><span data-stu-id="71dcf-132">Save the file.</span></span>
 
     ```xml
     ...
@@ -148,62 +157,62 @@
     ...
     ```
 
-### <a name="try-it-out"></a><span data-ttu-id="75e42-133">试用</span><span class="sxs-lookup"><span data-stu-id="75e42-133">Try it out</span></span>
+### <a name="try-it-out"></a><span data-ttu-id="71dcf-133">试用</span><span class="sxs-lookup"><span data-stu-id="71dcf-133">Try it out</span></span>
 
-1. <span data-ttu-id="75e42-p109">使用 Visual Studio 的同时，按 **F5** 或选择“开始”\*\*\*\* 按钮启动 PowerPoint，以测试新建的 PowerPoint 加载项，功能区中显示有“显示任务窗格”\*\*\*\* 加载项按钮。加载项本地托管在 IIS 上。</span><span class="sxs-lookup"><span data-stu-id="75e42-p109">Using Visual Studio, test the newly created PowerPoint add-in by pressing F5 or choosing the **Start** button to launch PowerPoint with the **Show Taskpane** add-in button displayed in the ribbon. The add-in will be hosted locally on IIS.</span></span>
+1. <span data-ttu-id="71dcf-p109">使用 Visual Studio 的同时，按 **F5** 或选择“开始”\*\*\*\* 按钮启动 PowerPoint，以测试新建的 PowerPoint 加载项，功能区中显示有“显示任务窗格”\*\*\*\* 加载项按钮。加载项本地托管在 IIS 上。</span><span class="sxs-lookup"><span data-stu-id="71dcf-p109">Using Visual Studio, test the newly created PowerPoint add-in by pressing **F5** or choosing the **Start** button to launch PowerPoint with the **Show Taskpane** add-in button displayed in the ribbon. The add-in will be hosted locally on IIS.</span></span>
 
-2. <span data-ttu-id="75e42-136">在 PowerPoint 中，插入新的空白幻灯片，再依次选择“主页”\*\*\*\* 选项卡和功能区中的“显示任务窗格”\*\*\*\* 按钮，以打开加载项任务窗格。</span><span class="sxs-lookup"><span data-stu-id="75e42-136">In PowerPoint, insert a new blank slide, choose the **Home** tab, and then choose the **Show Taskpane** button in the ribbon to open the add-in task pane.</span></span>
+2. <span data-ttu-id="71dcf-136">在 PowerPoint 中，插入新的空白幻灯片，再依次选择“主页”\*\*\*\* 选项卡和功能区中的“显示任务窗格”\*\*\*\* 按钮，以打开加载项任务窗格。</span><span class="sxs-lookup"><span data-stu-id="71dcf-136">In PowerPoint, insert a new blank slide, choose the **Home** tab, and then choose the **Show Taskpane** button in the ribbon to open the add-in task pane.</span></span>
 
     ![突出显示了“显示任务窗格”按钮的 PowerPoint 屏幕截图](../images/powerpoint_quickstart_addin_1.png)
 
-3. <span data-ttu-id="75e42-138">在任务窗格中，选择“插入图像”\*\*\*\* 按钮，以便将图像添加到选定幻灯片。</span><span class="sxs-lookup"><span data-stu-id="75e42-138">In the task pane, choose the **Insert Image** button to add an image to the selected slide.</span></span>
+3. <span data-ttu-id="71dcf-138">在任务窗格中，选择“插入图像”\*\*\*\* 按钮，以便将图像添加到选定幻灯片。</span><span class="sxs-lookup"><span data-stu-id="71dcf-138">In the task pane, choose the **Insert Image** button to add an image to the selected slide.</span></span>
 
     ![幻灯片上显示有狗图像的 PowerPoint 屏幕截图](../images/powerpoint_quickstart_addin_2.png)
 
-4. <span data-ttu-id="75e42-140">在任务窗格中，选择“插入文本”\*\*\*\* 按钮，以便将文本添加到选定幻灯片。</span><span class="sxs-lookup"><span data-stu-id="75e42-140">In the task pane, choose the **Insert Text** button to add text to the selected slide.</span></span>
+4. <span data-ttu-id="71dcf-140">在任务窗格中，选择“插入文本”\*\*\*\* 按钮，以便将文本添加到选定幻灯片。</span><span class="sxs-lookup"><span data-stu-id="71dcf-140">In the task pane, choose the **Insert Text** button to add text to the selected slide.</span></span>
 
     ![幻灯片上显示有狗图像和文本“Hello World”的 PowerPoint 屏幕截图](../images/powerpoint_quickstart_addin_3.png)
 
-# <a name="any-editortabvisual-studio-code"></a>[<span data-ttu-id="75e42-142">任意编辑器</span><span class="sxs-lookup"><span data-stu-id="75e42-142">Any editor</span></span>](#tab/visual-studio-code)
+# <a name="any-editortabvisual-studio-code"></a>[<span data-ttu-id="71dcf-142">任意编辑器</span><span class="sxs-lookup"><span data-stu-id="71dcf-142">Any editor</span></span>](#tab/visual-studio-code)
 
-### <a name="prerequisites"></a><span data-ttu-id="75e42-143">先决条件</span><span class="sxs-lookup"><span data-stu-id="75e42-143">Prerequisites</span></span>
+### <a name="prerequisites"></a><span data-ttu-id="71dcf-143">先决条件</span><span class="sxs-lookup"><span data-stu-id="71dcf-143">Prerequisites</span></span>
 
-- [<span data-ttu-id="75e42-144">Node.js</span><span class="sxs-lookup"><span data-stu-id="75e42-144">Node.js</span></span>](https://nodejs.org)
+- [<span data-ttu-id="71dcf-144">Node.js</span><span class="sxs-lookup"><span data-stu-id="71dcf-144">Node.js</span></span>](https://nodejs.org)
 
-- <span data-ttu-id="75e42-145">全局安装最新版 [Yeoman](https://github.com/yeoman/yo) 和 [Office 加载项的 Yeoman 生成器](https://github.com/OfficeDev/generator-office)。</span><span class="sxs-lookup"><span data-stu-id="75e42-145">Install the latest version of [Yeoman](https://github.com/yeoman/yo) and the [Yeoman generator for Office Add-ins](https://github.com/OfficeDev/generator-office) globally.</span></span>
+- <span data-ttu-id="71dcf-145">全局安装最新版 [Yeoman](https://github.com/yeoman/yo) 和 [Office 加载项的 Yeoman 生成器](https://github.com/OfficeDev/generator-office)。</span><span class="sxs-lookup"><span data-stu-id="71dcf-145">Install the latest version of [Yeoman](https://github.com/yeoman/yo) and the [Yeoman generator for Office Add-ins](https://github.com/OfficeDev/generator-office) globally.</span></span>
 
     ```bash
     npm install -g yo generator-office
     ```
 
-### <a name="create-the-add-in-project"></a><span data-ttu-id="75e42-146">创建加载项项目</span><span class="sxs-lookup"><span data-stu-id="75e42-146">Create the add-in project</span></span>
+### <a name="create-the-add-in-project"></a><span data-ttu-id="71dcf-146">创建加载项项目</span><span class="sxs-lookup"><span data-stu-id="71dcf-146">Create the add-in project</span></span>
 
-1. <span data-ttu-id="75e42-147">使用 Yeoman 生成器创建 PowerPoint 加载项项目。</span><span class="sxs-lookup"><span data-stu-id="75e42-147">Use the Yeoman generator to create a PowerPoint add-in project.</span></span> <span data-ttu-id="75e42-148">运行下面的命令，再回答如下所示的提示问题：</span><span class="sxs-lookup"><span data-stu-id="75e42-148">Run the following command and then answer the prompts as follows:</span></span>
+1. <span data-ttu-id="71dcf-147">使用 Yeoman 生成器创建 PowerPoint 加载项项目。</span><span class="sxs-lookup"><span data-stu-id="71dcf-147">Use the Yeoman generator to create a PowerPoint add-in project.</span></span> <span data-ttu-id="71dcf-148">运行下面的命令，再回答如下所示的提示问题：</span><span class="sxs-lookup"><span data-stu-id="71dcf-148">Run the following command and then answer the prompts as follows:</span></span>
 
     ```bash
     yo office
     ```
 
-    - <span data-ttu-id="75e42-149">**选择项目类型:** `Office Add-in project using Jquery framework`</span><span class="sxs-lookup"><span data-stu-id="75e42-149">**Choose a project type:** `Office Add-in project using Jquery framework`</span></span>
-    - <span data-ttu-id="75e42-150">**选择脚本类型:** `Javascript`</span><span class="sxs-lookup"><span data-stu-id="75e42-150">**Choose a script type:** `Javascript`</span></span>
-    - <span data-ttu-id="75e42-151">**要如何命名加载项?:** `My Office Add-in`</span><span class="sxs-lookup"><span data-stu-id="75e42-151">**What do you want to name your add-in?:** `My Office Add-in`</span></span>
-    - <span data-ttu-id="75e42-152">**要支持哪一个 Office 客户端应用?:** `PowerPoint`</span><span class="sxs-lookup"><span data-stu-id="75e42-152">**Which Office client application would you like to support?:** `PowerPoint`</span></span>
+    - <span data-ttu-id="71dcf-149">**选择项目类型:** `Office Add-in project using Jquery framework`</span><span class="sxs-lookup"><span data-stu-id="71dcf-149">**Choose a project type:** `Office Add-in project using Jquery framework`</span></span>
+    - <span data-ttu-id="71dcf-150">**选择脚本类型:** `Javascript`</span><span class="sxs-lookup"><span data-stu-id="71dcf-150">**Choose a script type:** `Javascript`</span></span>
+    - <span data-ttu-id="71dcf-151">**要如何命名加载项?:** `My Office Add-in`</span><span class="sxs-lookup"><span data-stu-id="71dcf-151">**What do you want to name your add-in?:** `My Office Add-in`</span></span>
+    - <span data-ttu-id="71dcf-152">**要支持哪一个 Office 客户端应用?:** `PowerPoint`</span><span class="sxs-lookup"><span data-stu-id="71dcf-152">**Which Office client application would you like to support?:** `PowerPoint`</span></span>
 
     ![有关 Yeoman 生成器提示和回答的屏幕截图](../images/yo-office-powerpoint-jquery.png)
     
-    <span data-ttu-id="75e42-154">完成此向导后，生成器会创建项目，并安装支持的 Node 组件。</span><span class="sxs-lookup"><span data-stu-id="75e42-154">After you complete the wizard, the generator will create the project and install supporting Node components.</span></span>
+    <span data-ttu-id="71dcf-154">完成此向导后，生成器会创建项目，并安装支持的 Node 组件。</span><span class="sxs-lookup"><span data-stu-id="71dcf-154">After you complete the wizard, the generator will create the project and install supporting Node components.</span></span>
     
-2. <span data-ttu-id="75e42-155">导航到项目的根文件夹。</span><span class="sxs-lookup"><span data-stu-id="75e42-155">Navigate to the root folder of the project.</span></span>
+2. <span data-ttu-id="71dcf-155">导航到项目的根文件夹。</span><span class="sxs-lookup"><span data-stu-id="71dcf-155">Navigate to the root folder of the project.</span></span>
 
     ```bash
     cd "My Office Add-in"
     ```
 
-### <a name="update-the-code"></a><span data-ttu-id="75e42-156">更新代码</span><span class="sxs-lookup"><span data-stu-id="75e42-156">Update the code</span></span>
+### <a name="update-the-code"></a><span data-ttu-id="71dcf-156">更新代码</span><span class="sxs-lookup"><span data-stu-id="71dcf-156">Update the code</span></span>
 
-1. <span data-ttu-id="75e42-157">在代码编辑器中，打开项目根目录中的“index.html”\*\*\*\*。</span><span class="sxs-lookup"><span data-stu-id="75e42-157">In your code editor, open **index.html** in the root of the project.</span></span> <span data-ttu-id="75e42-158">此文件包含在加载项任务窗格中呈现的 HTML。</span><span class="sxs-lookup"><span data-stu-id="75e42-158">This file contains the HTML that will be rendered in the add-in's task pane.</span></span>
+1. <span data-ttu-id="71dcf-157">在代码编辑器中，打开项目根目录中的“index.html”\*\*\*\*。</span><span class="sxs-lookup"><span data-stu-id="71dcf-157">In your code editor, open **index.html** in the root of the project.</span></span> <span data-ttu-id="71dcf-158">此文件包含在加载项任务窗格中呈现的 HTML。</span><span class="sxs-lookup"><span data-stu-id="71dcf-158">This file contains the HTML that will be rendered in the add-in's task pane.</span></span>
 
-2. <span data-ttu-id="75e42-159">用以下标记替换 `<body>` 元素。</span><span class="sxs-lookup"><span data-stu-id="75e42-159">Replace the `<body>` element with the following markup.</span></span>
+2. <span data-ttu-id="71dcf-159">用以下标记替换 `<body>` 元素。</span><span class="sxs-lookup"><span data-stu-id="71dcf-159">Replace the `<body>` element with the following markup.</span></span>
 
     ```html
     <body class="ms-font-m ms-welcome">
@@ -227,20 +236,21 @@
     </body>
     ```
 
-3. <span data-ttu-id="75e42-160">打开文件“**src/index.js**”，以指定加载项的脚本。</span><span class="sxs-lookup"><span data-stu-id="75e42-160">Open the file **src\index.js** to specify the script for the add-in.</span></span> <span data-ttu-id="75e42-161">将整个内容替换为下列代码，并保存文件。</span><span class="sxs-lookup"><span data-stu-id="75e42-161">Replace the entire contents with the following code and save the file.</span></span>
+3. <span data-ttu-id="71dcf-160">打开文件“**src/index.js**”，以指定加载项的脚本。</span><span class="sxs-lookup"><span data-stu-id="71dcf-160">Open the file **src\index.js** to specify the script for the add-in.</span></span> <span data-ttu-id="71dcf-161">将整个内容替换为下列代码，并保存文件。</span><span class="sxs-lookup"><span data-stu-id="71dcf-161">Replace the entire contents with the following code and save the file.</span></span>
 
     ```js
     'use strict';
 
     (function () {
 
-        // The initialize function must be run each time a new page is loaded
-        Office.initialize = function (reason) {
+        Office.onReady(function() {
+            // Office is ready
             $(document).ready(function () {
+                // The document is ready
                 $('#insert-image').click(insertImage);
                 $('#insert-text').click(insertText);
             });
-        };
+        });
     
         function insertImage() {
             Office.context.document.setSelectedDataAsync(getImageAsBase64String(), {
@@ -272,7 +282,7 @@
     })();
     ```
 
-4. <span data-ttu-id="75e42-162">打开项目根目录中的文件“app.css”\*\*\*\*，以指定加载项自定义样式。</span><span class="sxs-lookup"><span data-stu-id="75e42-162">Open the file **app.css** in the root of the project to specify the custom styles for the add-in.</span></span> <span data-ttu-id="75e42-163">将整个内容替换为以下内容，并保存文件。</span><span class="sxs-lookup"><span data-stu-id="75e42-163">Replace the entire contents with the following and save the file.</span></span>
+4. <span data-ttu-id="71dcf-162">打开项目根目录中的文件“app.css”\*\*\*\*，以指定加载项自定义样式。</span><span class="sxs-lookup"><span data-stu-id="71dcf-162">Open the file **app.css** in the root of the project to specify the custom styles for the add-in.</span></span> <span data-ttu-id="71dcf-163">将整个内容替换为以下内容，并保存文件。</span><span class="sxs-lookup"><span data-stu-id="71dcf-163">Replace the entire contents with the following and save the file.</span></span>
 
     ```css
     #content-header {
@@ -301,15 +311,15 @@
     }
     ```
 
-### <a name="update-the-manifest"></a><span data-ttu-id="75e42-164">更新清单</span><span class="sxs-lookup"><span data-stu-id="75e42-164">Update the manifest</span></span>
+### <a name="update-the-manifest"></a><span data-ttu-id="71dcf-164">更新清单</span><span class="sxs-lookup"><span data-stu-id="71dcf-164">Update the manifest</span></span>
 
-1. <span data-ttu-id="75e42-165">打开文件“**manifest.xml**”以定义加载项的设置和功能。</span><span class="sxs-lookup"><span data-stu-id="75e42-165">Open the file **manifest.xml** to define the add-in's settings and capabilities.</span></span>
+1. <span data-ttu-id="71dcf-165">打开文件“**manifest.xml**”以定义加载项的设置和功能。</span><span class="sxs-lookup"><span data-stu-id="71dcf-165">Open the file **manifest.xml** to define the add-in's settings and capabilities.</span></span>
 
-2. <span data-ttu-id="75e42-166">`ProviderName` 元素具有占位符值。</span><span class="sxs-lookup"><span data-stu-id="75e42-166">The `ProviderName` element has a placeholder value.</span></span> <span data-ttu-id="75e42-167">将其替换为你的姓名。</span><span class="sxs-lookup"><span data-stu-id="75e42-167">Replace it with your name.</span></span>
+2. <span data-ttu-id="71dcf-166">`ProviderName` 元素具有占位符值。</span><span class="sxs-lookup"><span data-stu-id="71dcf-166">The `ProviderName` element has a placeholder value.</span></span> <span data-ttu-id="71dcf-167">将其替换为你的姓名。</span><span class="sxs-lookup"><span data-stu-id="71dcf-167">Replace it with your name.</span></span>
 
-3. <span data-ttu-id="75e42-168">`Description` 元素的 `DefaultValue` 属性有占位符。</span><span class="sxs-lookup"><span data-stu-id="75e42-168">The `DefaultValue` attribute of the `Description` element has a placeholder.</span></span> <span data-ttu-id="75e42-169">将它替换为“A task pane add-in for PowerPoint”\*\*\*\*。</span><span class="sxs-lookup"><span data-stu-id="75e42-169">Replace it with **A task pane add-in for PowerPoint**.</span></span>
+3. <span data-ttu-id="71dcf-168">`Description` 元素的 `DefaultValue` 属性有占位符。</span><span class="sxs-lookup"><span data-stu-id="71dcf-168">The `DefaultValue` attribute of the `Description` element has a placeholder.</span></span> <span data-ttu-id="71dcf-169">将它替换为“A task pane add-in for PowerPoint”\*\*\*\*。</span><span class="sxs-lookup"><span data-stu-id="71dcf-169">Replace it with **A task pane add-in for PowerPoint**.</span></span>
 
-4. <span data-ttu-id="75e42-170">保存文件。</span><span class="sxs-lookup"><span data-stu-id="75e42-170">Save the file.</span></span>
+4. <span data-ttu-id="71dcf-170">保存文件。</span><span class="sxs-lookup"><span data-stu-id="71dcf-170">Save the file.</span></span>
 
     ```xml
     ...
@@ -321,35 +331,35 @@
     ...
     ```
 
-### <a name="start-the-dev-server"></a><span data-ttu-id="75e42-171">启动开发人员服务器</span><span class="sxs-lookup"><span data-stu-id="75e42-171">Start the dev server</span></span>
+### <a name="start-the-dev-server"></a><span data-ttu-id="71dcf-171">启动开发人员服务器</span><span class="sxs-lookup"><span data-stu-id="71dcf-171">Start the dev server</span></span>
 
 [!include[Start server section](../includes/quickstart-yo-start-server.md)] 
 
-### <a name="try-it-out"></a><span data-ttu-id="75e42-172">试用</span><span class="sxs-lookup"><span data-stu-id="75e42-172">Try it out</span></span>
+### <a name="try-it-out"></a><span data-ttu-id="71dcf-172">试用</span><span class="sxs-lookup"><span data-stu-id="71dcf-172">Try it out</span></span>
 
-1. <span data-ttu-id="75e42-173">请按照运行加载项所用平台对应的说明操作，以在 PowerPoint 中旁加载加载项。</span><span class="sxs-lookup"><span data-stu-id="75e42-173">Follow the instructions for the platform you'll use to run your add-in to sideload the add-in within PowerPoint.</span></span>
+1. <span data-ttu-id="71dcf-173">请按照运行加载项所用平台对应的说明操作，以在 PowerPoint 中旁加载加载项。</span><span class="sxs-lookup"><span data-stu-id="71dcf-173">Follow the instructions for the platform you'll use to run your add-in to sideload the add-in within PowerPoint.</span></span>
 
-    - <span data-ttu-id="75e42-174">Windows：[在 Windows 上旁加载 Office 加载项](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)</span><span class="sxs-lookup"><span data-stu-id="75e42-174">Windows: [Sideload Office Add-ins on Windows](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)</span></span>
-    - <span data-ttu-id="75e42-175">PowerPoint Online：[在 Office Online 中旁加载 Office 加载项](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-in-office-online)</span><span class="sxs-lookup"><span data-stu-id="75e42-175">PowerPoint Online: [Sideload Office Add-ins in Office Online](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-in-office-online)</span></span>
-    - <span data-ttu-id="75e42-176">iPad 和 Mac：[在 iPad 和 Mac 上旁加载 Office 加载项](../testing/sideload-an-office-add-in-on-ipad-and-mac.md)</span><span class="sxs-lookup"><span data-stu-id="75e42-176">iPad and Mac: [Sideload Office Add-ins on iPad and Mac](../testing/sideload-an-office-add-in-on-ipad-and-mac.md)</span></span>
+    - <span data-ttu-id="71dcf-174">Windows：[在 Windows 上旁加载 Office 加载项](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)</span><span class="sxs-lookup"><span data-stu-id="71dcf-174">Windows: [Sideload Office Add-ins on Windows](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)</span></span>
+    - <span data-ttu-id="71dcf-175">PowerPoint Online：[在 Office Online 中旁加载 Office 加载项](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-in-office-online)</span><span class="sxs-lookup"><span data-stu-id="71dcf-175">PowerPoint Online: [Sideload Office Add-ins in Office Online](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-in-office-online)</span></span>
+    - <span data-ttu-id="71dcf-176">iPad 和 Mac：[在 iPad 和 Mac 上旁加载 Office 加载项](../testing/sideload-an-office-add-in-on-ipad-and-mac.md)</span><span class="sxs-lookup"><span data-stu-id="71dcf-176">iPad and Mac: [Sideload Office Add-ins on iPad and Mac](../testing/sideload-an-office-add-in-on-ipad-and-mac.md)</span></span>
 
-2. <span data-ttu-id="75e42-177">在 PowerPoint 中，插入新的空白幻灯片，再依次选择“主页”\*\*\*\* 选项卡和功能区中的“显示任务窗格”\*\*\*\* 按钮，以打开加载项任务窗格。</span><span class="sxs-lookup"><span data-stu-id="75e42-177">In PowerPoint, insert a new blank slide, choose the **Home** tab, and then choose the **Show Taskpane** button in the ribbon to open the add-in task pane.</span></span>
+2. <span data-ttu-id="71dcf-177">在 PowerPoint 中，插入新的空白幻灯片，再依次选择“主页”\*\*\*\* 选项卡和功能区中的“显示任务窗格”\*\*\*\* 按钮，以打开加载项任务窗格。</span><span class="sxs-lookup"><span data-stu-id="71dcf-177">In PowerPoint, insert a new blank slide, choose the **Home** tab, and then choose the **Show Taskpane** button in the ribbon to open the add-in task pane.</span></span>
 
     ![突出显示了“显示任务窗格”按钮的 PowerPoint 屏幕截图](../images/powerpoint_quickstart_addin_1b.png)
 
-3. <span data-ttu-id="75e42-179">在任务窗格中，选择“插入图像”\*\*\*\* 按钮，以便将图像添加到选定幻灯片。</span><span class="sxs-lookup"><span data-stu-id="75e42-179">In the task pane, choose the **Insert Image** button to add an image to the selected slide.</span></span>
+3. <span data-ttu-id="71dcf-179">在任务窗格中，选择“插入图像”\*\*\*\* 按钮，以便将图像添加到选定幻灯片。</span><span class="sxs-lookup"><span data-stu-id="71dcf-179">In the task pane, choose the **Insert Image** button to add an image to the selected slide.</span></span>
 
     ![幻灯片上显示有狗图像的 PowerPoint 屏幕截图](../images/powerpoint_quickstart_addin_2b.png)
 
-4. <span data-ttu-id="75e42-181">在任务窗格中，选择“插入文本”\*\*\*\* 按钮，以便将文本添加到选定幻灯片。</span><span class="sxs-lookup"><span data-stu-id="75e42-181">In the task pane, choose the **Insert Text** button to add text to the selected slide.</span></span>
+4. <span data-ttu-id="71dcf-181">在任务窗格中，选择“插入文本”\*\*\*\* 按钮，以便将文本添加到选定幻灯片。</span><span class="sxs-lookup"><span data-stu-id="71dcf-181">In the task pane, choose the **Insert Text** button to add text to the selected slide.</span></span>
 
     ![幻灯片上显示有狗图像和文本“Hello World”的 PowerPoint 屏幕截图](../images/powerpoint_quickstart_addin_3b.png)
 
 ---
 
-## <a name="next-steps"></a><span data-ttu-id="75e42-183">后续步骤</span><span class="sxs-lookup"><span data-stu-id="75e42-183">Next steps</span></span>
+## <a name="next-steps"></a><span data-ttu-id="71dcf-183">后续步骤</span><span class="sxs-lookup"><span data-stu-id="71dcf-183">Next steps</span></span>
 
-<span data-ttu-id="75e42-184">恭喜！已成功创建 PowerPoint 加载项！</span><span class="sxs-lookup"><span data-stu-id="75e42-184">Congratulations, you've successfully created a PowerPoint add-in!</span></span> <span data-ttu-id="75e42-185">接下来，请详细了解 PowerPoint 加载项功能，并跟着 PowerPoint 加载项教程一起操作，生成更复杂的加载项。</span><span class="sxs-lookup"><span data-stu-id="75e42-185">Next, learn more about the capabilities of a PowerPoint add-in and build a more complex add-in by following along with the PowerPoint add-in tutorial.</span></span>
+<span data-ttu-id="71dcf-184">恭喜！已成功创建 PowerPoint 加载项！</span><span class="sxs-lookup"><span data-stu-id="71dcf-184">Congratulations, you've successfully created a PowerPoint add-in!</span></span> <span data-ttu-id="71dcf-185">接下来，请详细了解 PowerPoint 加载项功能，并跟着 PowerPoint 加载项教程一起操作，生成更复杂的加载项。</span><span class="sxs-lookup"><span data-stu-id="71dcf-185">Next, learn more about the capabilities of a PowerPoint add-in and build a more complex add-in by following along with the PowerPoint add-in tutorial.</span></span>
 
 > [!div class="nextstepaction"]
-> [<span data-ttu-id="75e42-186">PowerPoint 加载项教程</span><span class="sxs-lookup"><span data-stu-id="75e42-186">PowerPoint add-in tutorial</span></span>](../tutorials/powerpoint-tutorial.md)
+> [<span data-ttu-id="71dcf-186">PowerPoint 加载项教程</span><span class="sxs-lookup"><span data-stu-id="71dcf-186">PowerPoint add-in tutorial</span></span>](../tutorials/powerpoint-tutorial.md)
