@@ -2,12 +2,13 @@
 title: 设计 Office 加载项
 description: ''
 ms.date: 12/04/2017
-ms.openlocfilehash: a864dc0fc6d30ecfcd7a71d1b2677d408519af0e
-ms.sourcegitcommit: 30435939ab8b8504c3dbfc62fd29ec6b0f1a7d22
+localization_priority: Priority
+ms.openlocfilehash: 70faca768f5af70baf389c16fe8259427a85e8d9
+ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "23944196"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "29388715"
 ---
 # <a name="design-your-office-add-ins"></a>设计 Office 加载项
 
@@ -27,11 +28,11 @@ Office 应用程序遵循一套常规交互原则。应用共享内容并具有�
 
 - **使内容优先于 Chrome。** 使客户的页面、幻灯片或电子表格始终关注体验。外接程序是辅助界面。没有任何辅助 Chrome 应当与外接程序的内容和功能交互。请明智地品牌化你的体验。我们知道这对于向用户提供独特且可识别的功能但避免干扰十分重要。努力将重点集中于内容和任务完成，而非品牌关注。
 
-- **为用户带来愉快体验并让用户得到控制。** 人们喜欢使用兼具功能和视觉吸引力的产品。 仔细打造你的体验。 通过考虑每个交互和视觉细节来打磨细节。 允许用户控制他们的体验。 完成任务的必要步骤必须清晰明确。 重要的决定应该易于理解。 操作应该能方便地撤消。 外接程序不是最终目标 - 它是对 Office 功能的增强。
+- **使其方便好用并保持对用户的控制。** 人们喜欢使用实用且外观吸引人的产品。 小心地定制你的体验。 将每个交互和视觉细节考虑在内，把细节做好。 允许用户控制其体验。 完成任务的必要步骤必须清楚并相互关联。 重要的决定应该是易于理解的。 操作应该可以轻松撤消。 外接程序不是一个目标，它是对 Office 功能的增强。
 
 - **针对所有平台和输入方法进行设计**。外接程序设计用于 Office 支持的所有平台，您的外接程序 UI 应该进行优化，以便跨平台和外形规格运行。支持鼠标/键盘和触摸输入设备，确保您的自定义 HTML UI 响应迅速，可适应不同的外形规格。有关详细信息，请参阅[触摸](../concepts/add-in-development-best-practices.md#optimize-for-touch)。 
 
 ## <a name="see-also"></a>另请参阅
-- [Office UI Fabric](https://developer.microsoft.com/en-us/fabric) 
+- [Office UI Fabric](https://developer.microsoft.com/zh-CN/fabric) 
 - [加载项开发最佳做法](../concepts/add-in-development-best-practices.md)
 

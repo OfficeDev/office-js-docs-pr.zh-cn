@@ -2,12 +2,13 @@
 title: 运行 Office 加载项的要求
 description: ''
 ms.date: 02/09/2018
-ms.openlocfilehash: 0602bd05927eebabec64f771025be5e064a2a355
-ms.sourcegitcommit: 4de2a1b62ccaa8e51982e95537fc9f52c0c5e687
+localization_priority: Priority
+ms.openlocfilehash: 3d3e9c16a9227f46d00f85ccfc74f6a5d8c5568c
+ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/10/2018
-ms.locfileid: "22925421"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "29386643"
 ---
 # <a name="requirements-for-running-office-add-ins"></a>运行 Office 加载项的要求
 
@@ -52,7 +53,7 @@ ms.locfileid: "22925421"
 - 必须安装的 Internet Explorer 11 或更高版本无需是默认浏览器。为了支持 Office 外接程序，充当主机的 Office 客户端所使用的浏览器组件是 Internet Explorer 11 或更高版本的一部分。
 
   > [!NOTE]
-  > 必须关闭 Internet Explorer 的“增强安全配置”(ESC) 才能使 Office Web 加载项正常工作。 如果在开发加载项时使用 Windows Server 计算机作为客户端，请注意在 Windows Server 中会默认打开 ESC。
+  > 必须关闭 Internet Explorer 的增强安全配置 (ESC) 才能使 Office Web 加载项正常工作。 如果在开发加载项时使用 Windows Server 计算机作为客户端，请注意 Windows Server 中会默认打开 ESC。
 
 - 将以下任一浏览器作为默认浏览器：Internet Explorer 11 或更高版本，或 Microsoft Edge、Chrome、Firefox 或 Safari (Mac OS) 的最新版本。
 - HTML 和 JavaScript 编辑器（如记事本）、[Visual Studio 和 Microsoft 开发人员工具](https://www.visualstudio.com/features/office-tools-vs) 或第三方 Web 开发工具。
