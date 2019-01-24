@@ -2,12 +2,13 @@
 title: Office 加载项中的异步编程
 description: ''
 ms.date: 12/04/2017
-ms.openlocfilehash: badaf14123c3a70d28394d0286377d7e0920d453
-ms.sourcegitcommit: c53f05bbd4abdfe1ee2e42fdd4f82b318b363ad7
+localization_priority: Priority
+ms.openlocfilehash: 811ea251641720f6e4c945a0b7182335b399bb65
+ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "25505928"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "29387150"
 ---
 # <a name="asynchronous-programming-in-office-add-ins"></a>Office 加载项中的异步编程
 
@@ -268,7 +269,7 @@ function addBindingDataChangedEventHandler() {
 
 所有"异步"方法的常用语法都遵循此模式：
 
- _AsyncMethod_ `(`_RequiredParameters_`, [`_OptionalParameters_`],`_CallbackFunction_ `);`
+ _AsyncMethod_ `(`_RequiredParameters_`, [`_OptionalParameters_`],`_CallbackFunction_`);`
 
 所有异步方法都支持可选参数，这些可选参数作为包含一个或多个可选参数的 JavaScript 对象表示法 (JSON) 对象传入。包含可选参数的 JSON 对象是键-值对的无序集合，其中用":"字符来分隔键和值。对象中的每对用逗号分隔，整个对集合括在大括号中。键是参数名称，值是要为该参数传递的值。
 

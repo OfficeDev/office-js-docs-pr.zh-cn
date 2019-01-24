@@ -2,12 +2,13 @@
 title: Office 加载项设计语言
 description: ''
 ms.date: 12/04/2017
-ms.openlocfilehash: e0975f8ec5c0706509dbb7d1fb39defc6c21e006
-ms.sourcegitcommit: 4de2a1b62ccaa8e51982e95537fc9f52c0c5e687
+localization_priority: Priority
+ms.openlocfilehash: abeeca02687c44f6a3cc513867ff3eb637c07348
+ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/10/2018
-ms.locfileid: "22925085"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "29388694"
 ---
 # <a name="office-add-in-design-language"></a>Office 加载项设计语言
 
