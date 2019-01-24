@@ -2,12 +2,13 @@
 title: 使用 Excel JavaScript API 处理表格
 description: ''
 ms.date: 12/04/2017
-ms.openlocfilehash: 1dccb19cc39b3e765107a462669342d444000343
-ms.sourcegitcommit: 60fd8a3ac4a6d66cb9e075ce7e0cde3c888a5fe9
+localization_priority: Priority
+ms.openlocfilehash: 0454ccdcd992529447e97677780a01f5811672b5
+ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/28/2018
-ms.locfileid: "27457836"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "29386937"
 ---
 # <a name="work-with-tables-using-the-excel-javascript-api"></a>使用 Excel JavaScript API 处理表格
 

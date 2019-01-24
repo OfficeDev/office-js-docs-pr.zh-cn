@@ -2,12 +2,13 @@
 title: 使用文本编辑器为 Microsoft Project 创建首个任务窗格加载项
 description: ''
 ms.date: 12/17/2018
-ms.openlocfilehash: 6370895311f341acd0d65826b2fc721587cf8e4a
-ms.sourcegitcommit: 60fd8a3ac4a6d66cb9e075ce7e0cde3c888a5fe9
-ms.translationtype: HT
+localization_priority: Normal
+ms.openlocfilehash: fb218dff1bed6b7723597a628db6217a5f149771
+ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/28/2018
-ms.locfileid: "27457955"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "29389478"
 ---
 # <a name="create-your-first-task-pane-add-in-for-microsoft-project-by-using-a-text-editor"></a>使用文本编辑器为 Microsoft Project 创建首个任务窗格加载项
 

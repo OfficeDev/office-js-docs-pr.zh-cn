@@ -2,12 +2,13 @@
 title: Office 通用 API 要求集
 description: ''
 ms.date: 11/20/2018
-ms.openlocfilehash: 189753fc76bb207ebfcb19577471572aeb543659
-ms.sourcegitcommit: 60fd8a3ac4a6d66cb9e075ce7e0cde3c888a5fe9
+localization_priority: Priority
+ms.openlocfilehash: e03bfa5256bf61a528be32e86f514ddbdb651614
+ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/28/2018
-ms.locfileid: "27457906"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "29386776"
 ---
 # <a name="office-common-api-requirement-sets"></a>Office 通用 API 要求集
 

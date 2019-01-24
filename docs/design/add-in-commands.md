@@ -2,12 +2,13 @@
 title: Excel、Word 和 PowerPoint 加载项命令
 description: ''
 ms.date: 01/23/2018
-ms.openlocfilehash: 17bc464793e8a85c54b4e2d3abe2e94e38c2e185
-ms.sourcegitcommit: 60fd8a3ac4a6d66cb9e075ce7e0cde3c888a5fe9
+localization_priority: Priority
+ms.openlocfilehash: f375a7f59a6918e812fb03b46c55bf964e62419d
+ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/28/2018
-ms.locfileid: "27457675"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "29388407"
 ---
 # <a name="add-in-commands-for-excel-word-and-powerpoint"></a>Excel、Word 和 PowerPoint 加载项命令
 

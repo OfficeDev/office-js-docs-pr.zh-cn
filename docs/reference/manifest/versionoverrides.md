@@ -1,13 +1,14 @@
 ---
 title: 清单文件中的 VersionOverrides 元素
 description: ''
-ms.date: 10/09/2018
-ms.openlocfilehash: a8bdc18b289d8d83336b0ce270f36d71170aecbf
-ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
-ms.translationtype: HT
+ms.date: 01/15/2019
+localization_priority: Normal
+ms.openlocfilehash: 197a636169b7f00edd44019cee21686065845800
+ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/22/2018
-ms.locfileid: "27433878"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "29387798"
 ---
 # <a name="versionoverrides-element"></a>VersionOverrides 元素
 
@@ -34,9 +35,10 @@ ms.locfileid: "27433878"
 |  **VersionOverrides**    |  否  | 在新版架构下定义外接程序命令。有关详细信息，请参阅[实现多个版本](#implementing-multiple-versions)。 |
 |  **WebApplicationInfo**    |  否  | 指定加载项关联 Web 应用程序的详细信息。 |
 
-
-
 ### <a name="versionoverrides-example"></a>VersionOverrides 示例
+
+下面是典型的示例`<VersionOverrides>`元素，包括不是必需的但通常使用的一些子元素。
+
 ```xml
 <OfficeApp>
 ...
@@ -97,6 +99,7 @@ ms.locfileid: "27433878"
         <!-- add information on resources -->
       </Resources>
     </VersionOverrides>  
+  </VersionOverrides>
 ...
 </OfficeApp>
 ```

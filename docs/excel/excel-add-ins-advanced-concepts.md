@@ -2,12 +2,13 @@
 title: Excel JavaScript API 高级编程概念
 description: ''
 ms.date: 10/03/2018
-ms.openlocfilehash: 7abc6b692ed6d72924e7ebda47a8198fd85a4aa0
-ms.sourcegitcommit: 60fd8a3ac4a6d66cb9e075ce7e0cde3c888a5fe9
+localization_priority: Priority
+ms.openlocfilehash: 1e623e87cbda8b8aeb6e51104bec818d62bf489e
+ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/28/2018
-ms.locfileid: "27457878"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "29388478"
 ---
 # <a name="advanced-programming-concepts-with-the-excel-javascript-api"></a>Excel JavaScript API 高级编程概念
 

@@ -2,23 +2,24 @@
 title: 使用 Excel JavaScript API 调用内置 Excel 工作表函数
 description: ''
 ms.date: 01/24/2017
-ms.openlocfilehash: 4130f6cce3906e2d1f455ec82b5e250d84dcdf9d
-ms.sourcegitcommit: 563c53bac52b31277ab935f30af648f17c5ed1e2
-ms.translationtype: HT
+localization_priority: Normal
+ms.openlocfilehash: 5ce8ac0c56a7d6a499f601fcc0767a1e76ea14cc
+ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/10/2018
-ms.locfileid: "25459320"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "29388610"
 ---
 # <a name="call-built-in-excel-worksheet-functions"></a>调用内置 Excel 工作表函数
 
-本文介绍了如何使用 Excel JavaScript API 调用内置 Excel 工作表函数（如 `VLOOKUP` 和 `SUM`）。其中还收录了可以使用 Excel JavaScript API 调用的内置 Excel 工作表函数的完整列表。
+本文介绍了如何使用 Excel JavaScript API 调用内置 Excel 工作表函数（如 `VLOOKUP` 和 `SUM`）。 其中还收录了可以使用 Excel JavaScript API 调用的内置 Excel 工作表函数的完整列表。
 
 > [!NOTE]
 > 若要了解如何使用 Excel JavaScript API 在 Excel 中创建*自定义函数*，请参阅[在 Excel 中创建自定义函数](custom-functions-overview.md)。
 
 ## <a name="calling-a-worksheet-function"></a>创建工作表函数
 
-下面的代码片段演示如何调用工作表函数，其中 `sampleFunction()` 是一个占位符，应将它替换为要调用的函数名称和函数需要使用的输入参数。工作表函数返回的 **FunctionResult** 对象的 **value** 属性包含指定函数的结果。如以下示例所示，在可以阅读 **FunctionResult** 对象的 **value** 属性之前，必须对属性 `load`。本示例中，函数的结果直接写入控制台。 
+下面的代码片段展示了如何调用工作表函数，其中 `sampleFunction()` 是占位符，应将它替换为要调用的函数名称和函数需要使用的输入参数。 工作表函数返回的 **FunctionResult** 对象的 **value** 属性包含指定函数的结果。 如此示例所示，必须先对 **FunctionResult** 对象的 **value** 属性执行 `load` 操作，然后才能读取它。 在此示例中，函数结果被直接写入控制台。 
 
 ```js
 var functionResult = context.workbook.functions.sampleFunction(); 
@@ -30,13 +31,13 @@ return context.sync()
 ```
 
 > [!TIP]
-> 有关可以使用 Excel JavaScript API 调用的函数的列表，请参阅本文的[支持的工作表函数](#supported-worksheet-functions)部分。
+> 有关可以使用 Excel JavaScript API 调用的函数列表，请参阅本文的[支持的工作表函数](#supported-worksheet-functions)部分。
 
 ## <a name="sample-data"></a>示例数据
 
-下图展示了 Excel 工作表中的表格，其中包含三个月内各种工具的销售数据。表格中的每个数字均表示具体工具在特定月份中的销售件数。接下来的示例展示了如何向此类数据应用内置工作表函数。
+下图展示了 Excel 工作表中的表格，其中包含三个月内各种工具的销售数据。 表格中的每个数字均表示具体工具在特定月份中的销售件数。 接下来的两个示例展示了如何向此类数据应用内置工作表函数。
 
-![Hammer、Wrench 和 Saw 的 11 月、12 月和 1 月销售数据的 Excel 屏幕截图](../images/worksheet-functions-chaining-results.jpg)
+![锤子、扳手和锯子的 11 月、12 月和 1 月销售数据的 Excel 屏幕截图](../images/worksheet-functions-chaining-results.jpg)
 
 ## <a name="example-1-single-function"></a>示例 1：单函数
 
@@ -57,9 +58,9 @@ Excel.run(function (context) {
 
 ## <a name="example-2-nested-functions"></a>示例 2：嵌套函数
 
-下面的代码示例向前述示例数据应用 `VLOOKUP` 函数，以分别确定 11 月和 12 月售出的 Wrench 数。然后，应用 `SUM` 函数，以计算这两个月售出的 Wrench 总数。 
+下面的代码示例向前述示例数据应用 `VLOOKUP` 函数，以分别确定 11 月和 12 月售出的扳手数。然后，应用 `SUM` 函数，以计算这两个月售出的扳手总数。 
 
-如此示例所示，如果一个或多个函数调用嵌套在另一个函数调用中，只需对随后要读取的最终结果（在此示例中为 `sumOfTwoLookups`）执行 `load` 操作即可。系统会计算所有中间结果（在此示例中，为每个 `VLOOKUP` 函数的结果），并根据这些中间结果计算最终结果。
+如此示例所示，如果一个或多个函数调用嵌套在另一个函数调用中，只需对随后要读取的最终结果（在此示例中为 `sumOfTwoLookups`）执行 `load` 操作即可。 系统会计算所有中间结果（在此示例中，为每个 `VLOOKUP` 函数的结果），并根据这些中间结果计算最终结果。
 
 ```js
 Excel.run(function (context) {
@@ -113,7 +114,7 @@ Excel.run(function (context) {
 | <a href="https://support.office.com/article/BESSELK-function-606d11bc-06d3-4d53-9ecb-2803e2b90b70" target="_blank">BESSELK 函数</a> | FunctionResult | 返回修正的贝塞耳函数 Kn(x) |
 | <a href="https://support.office.com/article/BESSELY-function-f3a356b3-da89-42c3-8974-2da54d6353a2" target="_blank">BESSELY 函数</a> | FunctionResult | 返回贝赛耳函数 Yn(x) |
 | <a href="https://support.office.com/article/BETADIST-function-11188c9c-780a-42c7-ba43-9ecb5a878d31" target="_blank">BETA.DIST 函数</a> | FunctionResult | 返回 beta 累积分布函数 |
-| <a href="https://support.office.com/article/BETAINV-function-e84cb8aa-8df0-4cf6-9892-83a341d252eb" target="_blank">BETA.INV 函数</a> | FunctionResult | 返回指定的 beta 分布累积分布函数的反函数值 |
+| <a href="https://support.office.com/article/BETAINV-function-e84cb8aa-8df0-4cf6-9892-83a341d252eb" target="_blank">BETA.INV 函数</a> | FunctionResult | 返回指定的 beta 分布累积分布函数的反函数 |
 | <a href="https://support.office.com/article/BIN2DEC-function-63905b57-b3a0-453d-99f4-647bb519cd6c" target="_blank">BIN2DEC 函数</a> | FunctionResult | 将二进制数转换为十进制 |
 | <a href="https://support.office.com/article/BIN2HEX-function-0375e507-f5e5-4077-9af8-28d84f9f41cc" target="_blank">BIN2HEX 函数</a> | FunctionResult | 将二进制数转换为十六进制 |
 | <a href="https://support.office.com/article/BIN2OCT-function-0a4e01ba-ac8d-4158-9b29-16c25c4c23fd" target="_blank">BIN2OCT 函数</a> | FunctionResult | 将二进制数转换为八进制 |
@@ -122,16 +123,16 @@ Excel.run(function (context) {
 | <a href="https://support.office.com/article/BINOMINV-function-80a0370c-ada6-49b4-83e7-05a91ba77ac9" target="_blank">BINOM.INV 函数</a> | FunctionResult | 返回一个数值，它是使得累积二项式分布的函数值小于或等于临界值的最小整数 |
 | <a href="https://support.office.com/article/BITAND-function-8a2be3d7-91c3-4b48-9517-64548008563a" target="_blank">BITAND 函数</a> | FunctionResult | 返回两个数字的“按位与” |
 | <a href="https://support.office.com/article/BITLSHIFT-function-c55bb27e-cacd-4c7c-b258-d80861a03c9c" target="_blank">BITLSHIFT 函数</a> | FunctionResult | 返回按照 shift_amount 位数左移后得到的数值 |
-| <a href="https://support.office.com/article/BITOR-function-f6ead5c8-5b98-4c9e-9053-8ad5234919b2" target="_blank">BITOR 函数</a> | FunctionResult | 返回 2 个数字的“按位或” |
+| <a href="https://support.office.com/article/BITOR-function-f6ead5c8-5b98-4c9e-9053-8ad5234919b2" target="_blank">BITOR 函数</a> | FunctionResult | 返回 2 个数字的按位“或” |
 | <a href="https://support.office.com/article/BITRSHIFT-function-274d6996-f42c-4743-abdb-4ff95351222c" target="_blank">BITRSHIFT 函数</a> | FunctionResult | 返回按照 shift_amount 位数右移后得到的数值 |
-| <a href="https://support.office.com/article/BITXOR-function-c81306a1-03f9-4e89-85ac-b86c3cba10e4" target="_blank">BITXOR 函数</a> | FunctionResult | 返回两个数字的“按位异或”值 |
-| <a href="https://support.office.com/article/CEILINGMATH-function-80f95d2f-b499-4eee-9f16-f795a8e306c8" target="_blank">CEILING.MATH、ECMA_CEILING 函数</a> | FunctionResult | 将数值向上舍入为最接近的整数或最接近的基数的倍数 |
+| <a href="https://support.office.com/article/BITXOR-function-c81306a1-03f9-4e89-85ac-b86c3cba10e4" target="_blank">BITXOR 函数</a> | FunctionResult | 返回两个数字的按位“异或”值 |
+| <a href="https://support.office.com/article/CEILINGMATH-function-80f95d2f-b499-4eee-9f16-f795a8e306c8" target="_blank">CEILING。数学、 ECMA_CEILING 函数</a> | FunctionResult | 将数值向上舍入为最接近的整数或最接近的基数的倍数 |
 | <a href="https://support.office.com/article/CEILINGPRECISE-function-f366a774-527a-4c92-ba49-af0a196e66cb" target="_blank">CEILING.PRECISE 函数</a> | FunctionResult | 将数值四舍五入到最接近的整数或最接近的基数的倍数。不论数字是否带有符号，都将数字向上舍入。 |
 | <a href="https://support.office.com/article/CHAR-function-bbd249c8-b36e-4a91-8017-1c133f9b837a" target="_blank">CHAR 函数</a> | FunctionResult | 返回由代码数字指定的字符 |
 | <a href="https://support.office.com/article/CHISQDIST-function-8486b05e-5c05-4942-a9ea-f6b341518732" target="_blank">CHISQ.DIST 函数</a> | FunctionResult | 返回累积 beta 分布的概率密度函数 |
 | <a href="https://support.office.com/article/CHISQDISTRT-function-dc4832e8-ed2b-49ae-8d7c-b28d5804c0f2" target="_blank">CHISQ.DIST.RT 函数</a> | FunctionResult | 返回 χ2 分布的收尾概率 |
 | <a href="https://support.office.com/article/CHISQINV-function-400db556-62b3-472d-80b3-254723e7092f" target="_blank">CHISQ.INV 函数</a> | FunctionResult | 返回累积 beta 分布的概率密度函数 |
-| <a href="https://support.office.com/article/CHISQINVRT-function-435b5ed8-98d5-4da6-823f-293e2cbc94fe" target="_blank">CHISQ.INV.RT 函数</a> | FunctionResult | 返回 χ2 分布的收尾概率的反函数值 |
+| <a href="https://support.office.com/article/CHISQINVRT-function-435b5ed8-98d5-4da6-823f-293e2cbc94fe" target="_blank">CHISQ.INV.RT 函数</a> | FunctionResult | 返回 χ2 分布的收尾概率的反函数 |
 | <a href="https://support.office.com/article/CHOOSE-function-fc5c184f-cb62-4ec7-a46e-38653b98f5bc" target="_blank">CHOOSE 函数</a> | FunctionResult | 从值列表中选择一个值 |
 | <a href="https://support.office.com/article/CLEAN-function-26f3d7c5-475f-4a9c-90e5-4b8ba987ba41" target="_blank">CLEAN 函数</a> | FunctionResult | 删除文本中的所有非打印字符 |
 | <a href="https://support.office.com/article/CODE-function-c32b692b-2ed0-4a04-bdd9-75640144b928" target="_blank">CODE 函数</a> | FunctionResult | 返回文本字符串中第一个字符的数字代码 |
@@ -184,7 +185,7 @@ Excel.run(function (context) {
 | <a href="https://support.office.com/article/DISC-function-71fce9f3-3f05-4acf-a5a3-eac6ef4daa53" target="_blank">DISC 函数</a> | FunctionResult | 返回债券的贴现率 |
 | <a href="https://support.office.com/article/DMAX-function-f4e8209d-8958-4c3d-a1ee-6351665d41c2" target="_blank">DMAX 函数</a> | FunctionResult | 返回所选数据库条目中的最大值 |
 | <a href="https://support.office.com/article/DMIN-function-4ae6f1d9-1f26-40f1-a783-6dc3680192a3" target="_blank">DMIN 函数</a> | FunctionResult | 返回所选数据库条目中的最小值 |
-| <a href="https://support.office.com/article/DOLLAR-function-a6cd05d9-9740-4ad3-a469-8109d18ff611" target="_blank">DOLLAR、USDOLLAR 函数</a> | FunctionResult | 使用 $（美元）货币格式将数字转换为文本 |
+| <a href="https://support.office.com/article/DOLLAR-function-a6cd05d9-9740-4ad3-a469-8109d18ff611" target="_blank">美元、 USDOLLAR 函数</a> | FunctionResult | 使用 $（美元）货币格式将数字转换为文本 |
 | <a href="https://support.office.com/article/DOLLARDE-function-db85aab0-1677-428a-9dfd-a38476693427" target="_blank">DOLLARDE 函数</a> | FunctionResult | 将以分数表示的货币值转换为以小数表示的货币值 |
 | <a href="https://support.office.com/article/DOLLARFR-function-0835d163-3023-4a33-9824-3042c5d4f495" target="_blank">DOLLARFR 函数</a> | FunctionResult | 将以小数表示的货币值转换为以分数表示的货币值 |
 | <a href="https://support.office.com/article/DPRODUCT-function-4f96b13e-d49c-47a7-b769-22f6d017cb31" target="_blank">DPRODUCT 函数</a> | FunctionResult | 将与数据库中的条件匹配的记录的特定字段中的值相乘 |
@@ -208,14 +209,14 @@ Excel.run(function (context) {
 | <a href="https://support.office.com/article/EXPONDIST-function-4c12ae24-e563-4155-bf3e-8b78b6ae140e" target="_blank">EXPON.DIST 函数</a> | FunctionResult | 返回指数分布 |
 | <a href="https://support.office.com/article/FDIST-function-a887efdc-7c8e-46cb-a74a-f884cd29b25d" target="_blank">F.DIST 函数</a> | FunctionResult | 返回 F 概率分布 |
 | <a href="https://support.office.com/article/FDISTRT-function-d74cbb00-6017-4ac9-b7d7-6049badc0520" target="_blank">F.DIST.RT 函数</a> | FunctionResult | 返回 F 概率分布 |
-| <a href="https://support.office.com/article/FINV-function-0dda0cf9-4ea0-42fd-8c3c-417a1ff30dbe" target="_blank">F.INV 函数</a> | FunctionResult | 返回 F 概率分布的反函数值 |
-| <a href="https://support.office.com/article/FINVRT-function-d371aa8f-b0b1-40ef-9cc2-496f0693ac00" target="_blank">F.INV.RT 函数</a> | FunctionResult | 返回 F 概率分布的反函数值 |
+| <a href="https://support.office.com/article/FINV-function-0dda0cf9-4ea0-42fd-8c3c-417a1ff30dbe" target="_blank">F.INV 函数</a> | FunctionResult | 返回 F 概率分布的逆函数值 |
+| <a href="https://support.office.com/article/FINVRT-function-d371aa8f-b0b1-40ef-9cc2-496f0693ac00" target="_blank">F.INV.RT 函数</a> | FunctionResult | 返回 F 概率分布的逆函数值 |
 | <a href="https://support.office.com/article/FACT-function-ca8588c2-15f2-41c0-8e8c-c11bd471a4f3" target="_blank">FACT 函数</a> | FunctionResult | 返回某数的阶乘 |
 | <a href="https://support.office.com/article/FACTDOUBLE-function-e67697ac-d214-48eb-b7b7-cce2589ecac8" target="_blank">FACTDOUBLE 函数</a> | FunctionResult | 返回数字的双阶乘 |
 | <a href="https://support.office.com/article/FALSE-function-2d58dfa5-9c03-4259-bf8f-f0ae14346904" target="_blank">FALSE 函数</a> | FunctionResult | 返回逻辑值 `FALSE` |
 | <a href="https://support.office.com/article/FIND-FINDB-functions-c7912941-af2a-4bdf-a553-d0d89b0a0628" target="_blank">FIND、FINDB 函数</a> | FunctionResult | 在一个文本值中查找另一个（区分大小写） |
 | <a href="https://support.office.com/article/FISHER-function-d656523c-5076-4f95-b87b-7741bf236c69" target="_blank">FISHER 函数</a> | FunctionResult | 返回 Fisher 变换值 |
-| <a href="https://support.office.com/article/FISHERINV-function-62504b39-415a-4284-a285-19c8e82f86bb" target="_blank">FISHERINV 函数</a> | FunctionResult | 返回 Fisher 变换的逆函数值 |
+| <a href="https://support.office.com/article/FISHERINV-function-62504b39-415a-4284-a285-19c8e82f86bb" target="_blank">FISHERINV 函数</a> | FunctionResult | 返回 Fisher 逆变换值 |
 | <a href="https://support.office.com/article/FIXED-function-ffd5723c-324c-45e9-8b96-e41be2a8274a" target="_blank">FIXED 函数</a> | FunctionResult | 将数字格式化为具有固定数量的小数的文本 |
 | <a href="https://support.office.com/article/FLOORMATH-function-c302b599-fbdb-4177-ba19-2c2b1249a2f5" target="_blank">FLOOR.MATH 函数</a> | FunctionResult | 将数字向下舍入为最接近的整数或最接近的基数的倍数 |
 | <a href="https://support.office.com/article/FLOORPRECISE-function-f769b468-1452-4617-8dc3-02f842a0702e" target="_blank">FLOOR.PRECISE 函数</a> | FunctionResult | 将数字向下舍入为最接近的整数或最接近的基数的倍数。不论数字是否带有符号，都将数字向下舍入。 |
@@ -223,7 +224,7 @@ Excel.run(function (context) {
 | <a href="https://support.office.com/article/FVSCHEDULE-function-bec29522-bd87-4082-bab9-a241f3fb251d" target="_blank">FVSCHEDULE 函数</a> | FunctionResult | 返回在应用一系列复利后，初始本金的终值 |
 | <a href="https://support.office.com/article/GAMMA-function-ce1702b1-cf55-471d-8307-f83be0fc5297" target="_blank">GAMMA 函数</a> | FunctionResult | 返回 Gamma 函数值 |
 | <a href="https://support.office.com/article/GAMMADIST-function-9b6f1538-d11c-4d5f-8966-21f6a2201def" target="_blank">GAMMA.DIST 函数</a> | FunctionResult | 返回 γ 分布 |
-| <a href="https://support.office.com/article/GAMMAINV-function-74991443-c2b0-4be5-aaab-1aa4d71fbb18" target="_blank">GAMMA.INV 函数</a> | FunctionResult | 返回 γ 累积分布的反函数值 |
+| <a href="https://support.office.com/article/GAMMAINV-function-74991443-c2b0-4be5-aaab-1aa4d71fbb18" target="_blank">GAMMA.INV 函数</a> | FunctionResult | 返回 γ 累积分布的反函数 |
 | <a href="https://support.office.com/article/GAMMALN-function-b838c48b-c65f-484f-9e1d-141c55470eb9" target="_blank">GAMMALN 函数</a> | FunctionResult | 返回 γ 函数的自然对数 Γ(x) |
 | <a href="https://support.office.com/article/GAMMALNPRECISE-function-5cdfe601-4e1e-4189-9d74-241ef1caa599" target="_blank">GAMMALN.PRECISE 函数</a> | FunctionResult | 返回 γ 函数的自然对数 Γ(x) |
 | <a href="https://support.office.com/article/GAUSS-function-069f1b4e-7dee-4d6a-a71f-4b69044a6b33" target="_blank">GAUSS 函数</a> | FunctionResult | 返回比标准正态累积分布小 0.5 的值 |
@@ -291,7 +292,7 @@ Excel.run(function (context) {
 | <a href="https://support.office.com/article/LOG-function-4e82f196-1ca9-4747-8fb0-6c4a3abb3280" target="_blank">LOG 函数</a> | FunctionResult | 返回一个数在指定底下的对数 |
 | <a href="https://support.office.com/article/LOG10-function-c75b881b-49dd-44fb-b6f4-37e3486a0211" target="_blank">LOG10 函数</a> | FunctionResult | 返回以 10 为底的对数 |
 | <a href="https://support.office.com/article/LOGNORMDIST-function-eb60d00b-48a9-4217-be2b-6074aee6b070" target="_blank">LOGNORM.DIST 函数</a> | FunctionResult | 返回对数正态分布 |
-| <a href="https://support.office.com/article/LOGNORMINV-function-fe79751a-f1f2-4af8-a0a1-e151b2d4f600" target="_blank">LOGNORM.INV 函数</a> | FunctionResult | 返回对数正态分布的反函数值 |
+| <a href="https://support.office.com/article/LOGNORMINV-function-fe79751a-f1f2-4af8-a0a1-e151b2d4f600" target="_blank">LOGNORM.INV 函数</a> | FunctionResult | 返回对数正态分布的反函数 |
 | <a href="https://support.office.com/article/LOOKUP-function-446d94af-663b-451d-8251-369d5e3864cb" target="_blank">LOOKUP 函数</a> | FunctionResult | 在向量或数组中查找值 |
 | <a href="https://support.office.com/article/LOWER-function-3f21df02-a80c-44b2-afaf-81358f9fdeb4" target="_blank">LOWER 函数</a> | FunctionResult | 将文本转换为小写 |
 | <a href="https://support.office.com/article/MATCH-function-e8dffd45-c762-47d6-bf89-533f4a37673a" target="_blank">MATCH 函数</a> | FunctionResult | 在引用或数组中查找值 |
@@ -302,10 +303,10 @@ Excel.run(function (context) {
 | <a href="https://support.office.com/article/MID-MIDB-functions-d5f9e25c-d7d6-472e-b568-4ecb12433028" target="_blank">MID、MIDB 函数</a> | FunctionResult | 从指定位置开始，返回文本字符串中特定数量的字符。 |
 | <a href="https://support.office.com/article/MIN-function-61635d12-920f-4ce2-a70f-96f202dcc152" target="_blank">MIN 函数</a> | FunctionResult | 返回参数列表中的最小值 |
 | <a href="https://support.office.com/article/MINA-function-245a6f46-7ca5-4dc7-ab49-805341bc31d3" target="_blank">MINA 函数</a> | FunctionResult | 返回参数列表中的最小值，包括数字、文本和逻辑值 |
-| <a href="https://support.office.com/article/MINUTE-function-af728df0-05c4-4b07-9eed-a84801a60589" target="_blank">MINUTE 函数</a> | FunctionResult | 将序列数值转换为分钟 |
+| <a href="https://support.office.com/article/MINUTE-function-af728df0-05c4-4b07-9eed-a84801a60589" target="_blank">MINUTE 函数</a> | FunctionResult | 将序列号转换为分钟 |
 | <a href="https://support.office.com/article/MIRR-function-b020f038-7492-4fb4-93c1-35c345b53524" target="_blank">MIRR 函数</a> | FunctionResult | 返回内部收益率，它的正现金流和负现金流以不同的比率融资 |
 | <a href="https://support.office.com/article/MOD-function-9b6cd169-b6ee-406a-a97b-edf2a9dc24f3" target="_blank">MOD 函数</a> | FunctionResult | 返回除法的余数 |
-| <a href="https://support.office.com/article/MONTH-function-579a2881-199b-48b2-ab90-ddba0eba86e8" target="_blank">MONTH 函数</a> | FunctionResult | 将序列数值转换为月 |
+| <a href="https://support.office.com/article/MONTH-function-579a2881-199b-48b2-ab90-ddba0eba86e8" target="_blank">MONTH 函数</a> | FunctionResult | 将序列号转换为月 |
 | <a href="https://support.office.com/article/MROUND-function-c299c3b0-15a5-426d-aa4b-d2d5b3baf427" target="_blank">MROUND 函数</a> | FunctionResult | 返回舍入到所需倍数的数值 |
 | <a href="https://support.office.com/article/MULTINOMIAL-function-6fa6373c-6533-41a2-a45e-a56db1db1bf6" target="_blank">MULTINOMIAL 函数</a> | FunctionResult | 返回一组数字的多项式 |
 | <a href="https://support.office.com/article/N-function-a624cad1-3635-4208-b54a-29733d1278c9" target="_blank">N 函数</a> | FunctionResult | 返回转换为数字的值 |
@@ -313,11 +314,11 @@ Excel.run(function (context) {
 | <a href="https://support.office.com/article/NEGBINOMDIST-function-c8239f89-c2d0-45bd-b6af-172e570f8599" target="_blank">NEGBINOM.DIST 函数</a> | FunctionResult | 返回负二项式分布函数值 |
 | <a href="https://support.office.com/article/NETWORKDAYS-function-48e717bf-a7a3-495f-969e-5005e3eb18e7" target="_blank">NETWORKDAYS 函数</a> | FunctionResult | 返回两个日期之间的完整工作日数 |
 | <a href="https://support.office.com/article/NETWORKDAYSINTL-function-a9b26239-4f20-46a1-9ab8-4e925bfd5e28" target="_blank">NETWORKDAYS.INTL 函数</a> | FunctionResult | 使用能够指示哪些以及有多少天是周末的参数返回两个日期之间的完整工作日数 |
-| <a href="https://support.office.com/article/NOMINAL-function-7f1ae29b-6b92-435e-b950-ad8b190ddd2b" target="_blank">NOMINAL 函数</a> | FunctionResult | 返回年度的名义利率 |
+| <a href="https://support.office.com/article/NOMINAL-function-7f1ae29b-6b92-435e-b950-ad8b190ddd2b" target="_blank">NOMINAL 函数</a> | FunctionResult | 返回年度的单利 |
 | <a href="https://support.office.com/article/NORMDIST-function-edb1cc14-a21c-4e53-839d-8082074c9f8d" target="_blank">NORM.DIST 函数</a> | FunctionResult | 返回正态分布函数值 |
-| <a href="https://support.office.com/article/NORMINV-function-54b30935-fee7-493c-bedb-2278a9db7e13" target="_blank">NORM.INV 函数</a> | FunctionResult | 返回正态分布的反函数值 |
+| <a href="https://support.office.com/article/NORMINV-function-54b30935-fee7-493c-bedb-2278a9db7e13" target="_blank">NORM.INV 函数</a> | FunctionResult | 返回正态分布的反函数 |
 | <a href="https://support.office.com/article/NORMSDIST-function-1e787282-3832-4520-a9ae-bd2a8d99ba88" target="_blank">NORM.S.DIST 函数</a> | FunctionResult | 返回标准正态分布函数值 |
-| <a href="https://support.office.com/article/NORMSINV-function-d6d556b4-ab7f-49cd-b526-5a20918452b1" target="_blank">NORM.S.INV 函数</a> | FunctionResult | 返回标准正态分布的反函数值 |
+| <a href="https://support.office.com/article/NORMSINV-function-d6d556b4-ab7f-49cd-b526-5a20918452b1" target="_blank">NORM.S.INV 函数</a> | FunctionResult | 返回标准正态分布的反函数 |
 | <a href="https://support.office.com/article/NOT-function-9cfc6011-a054-40c7-a140-cd4ba2d87d77" target="_blank">NOT 函数</a> | FunctionResult | 反转其参数的逻辑 |
 | <a href="https://support.office.com/article/NOW-function-3337fd29-145a-4347-b2e6-20c904739c46" target="_blank">NOW 函数</a> | FunctionResult | 返回当前日期和时间的序列号 |
 | <a href="https://support.office.com/article/NPER-function-240535b5-6653-4d2d-bfcf-b6a38151d815" target="_blank">NPER 函数</a> | FunctionResult | 返回一项投资的周期数量 |
@@ -372,7 +373,7 @@ Excel.run(function (context) {
 | <a href="https://support.office.com/article/RRI-function-6f5822d8-7ef1-4233-944c-79e8172930f4" target="_blank">RRI 函数</a> | FunctionResult | 返回某项投资增长的等效利率 |
 | <a href="https://support.office.com/article/SEC-function-ff224717-9c87-4170-9b58-d069ced6d5f7" target="_blank">SEC 函数</a> | FunctionResult | 返回一个角度的正割值 |
 | <a href="https://support.office.com/article/SECH-function-e05a789f-5ff7-4d7f-984a-5edb9b09556f" target="_blank">SECH 函数</a> | FunctionResult | 返回一个角度的双曲正割值 |
-| <a href="https://support.office.com/article/SECOND-function-740d1cfc-553c-4099-b668-80eaa24e8af1" target="_blank">SECOND 函数</a> | FunctionResult | 将序列数值转换为秒 |
+| <a href="https://support.office.com/article/SECOND-function-740d1cfc-553c-4099-b668-80eaa24e8af1" target="_blank">SECOND 函数</a> | FunctionResult | 将序列号转换为秒 |
 | <a href="https://support.office.com/article/SERIESSUM-function-a3ab25b5-1093-4f5b-b084-96c49087f637" target="_blank">SERIESSUM 函数</a> | FunctionResult | 返回基于以下公式的幂级数之和 |
 | <a href="https://support.office.com/article/SHEET-function-44718b6f-8b87-47a1-a9d6-b701c06cff24" target="_blank">SHEET 函数</a> | FunctionResult | 返回引用的工作表的工作表编号 |
 | <a href="https://support.office.com/article/SHEETS-function-770515eb-e1e8-45ce-8066-b557e5e4b80b" target="_blank">SHEETS 函数</a> | FunctionResult | 返回引用中的工作表数 |
@@ -390,7 +391,7 @@ Excel.run(function (context) {
 | <a href="https://support.office.com/article/STDEVS-function-7d69cf97-0c1f-4acf-be27-f3e83904cc23" target="_blank">STDEV.S 函数</a> | FunctionResult | 基于样本估计标准偏差 |
 | <a href="https://support.office.com/article/STDEVA-function-5ff38888-7ea5-48de-9a6d-11ed73b29e9d" target="_blank">STDEVA 函数</a> | FunctionResult | 基于样本估计标准偏差，包括数字、文本和逻辑值 |
 | <a href="https://support.office.com/article/STDEVPA-function-5578d4d6-455a-4308-9991-d405afe2c28c" target="_blank">STDEVPA 函数</a> | FunctionResult | 基于整个样本总体计算标准偏差，包括数字、文本和逻辑值 |
-| <a href="https://support.office.com/article/SUBSTITUTE-function-6434944e-a904-4336-a9b0-1e58df3bc332" target="_blank">SUBSTITUTE 函数</a> | FunctionResult | 在文本串中用新文本替换旧文本 |
+| <a href="https://support.office.com/article/SUBSTITUTE-function-6434944e-a904-4336-a9b0-1e58df3bc332" target="_blank">SUBSTITUTE 函数</a> | FunctionResult | 在文本串中用新文本替换旧文本。 |
 | <a href="https://support.office.com/article/SUBTOTAL-function-7b027003-f060-4ade-9040-e478765b9939" target="_blank">SUBTOTAL 函数</a> | FunctionResult | 返回一个数据列表或数据库的分类汇总 |
 | <a href="https://support.office.com/article/SUM-function-043e1c7d-7726-4e80-8f32-07b23e057f89" target="_blank">SUM 函数</a> | FunctionResult | 对参数求和 |
 | <a href="https://support.office.com/article/SUMIF-function-169b8c99-c05c-4483-a712-1697a653039b" target="_blank">SUMIF 函数</a> | FunctionResult | 根据给定的标准，对指定的单元格求和 |
@@ -402,16 +403,16 @@ Excel.run(function (context) {
 | <a href="https://support.office.com/article/TDIST2T-function-198e9340-e360-4230-bd21-f52f22ff5c28" target="_blank">T.DIST.2T 函数</a> | FunctionResult | 返回学生 t 分布的百分点（概率） |
 | <a href="https://support.office.com/article/TDISTRT-function-20a30020-86f9-4b35-af1f-7ef6ae683eda" target="_blank">T.DIST.RT 函数</a> | FunctionResult | 返回学生的 t 分布 |
 | <a href="https://support.office.com/article/TINV-function-2908272b-4e61-4942-9df9-a25fec9b0e2e" target="_blank">T.INV 函数</a> | FunctionResult | 返回作为概率和自由度函数的学生 t 分布的 t 值 |
-| <a href="https://support.office.com/article/TINV2T-function-ce72ea19-ec6c-4be7-bed2-b9baf2264f17" target="_blank">T.INV.2T 函数</a> | FunctionResult | 返回学生 t 分布的反函数值 |
+| <a href="https://support.office.com/article/TINV2T-function-ce72ea19-ec6c-4be7-bed2-b9baf2264f17" target="_blank">T.INV.2T 函数</a> | FunctionResult | 返回学生 t 分布的反函数 |
 | <a href="https://support.office.com/article/TAN-function-08851a40-179f-4052-b789-d7f699447401" target="_blank">TAN 函数</a> | FunctionResult | 返回一个数字的正切值 |
 | <a href="https://support.office.com/article/TANH-function-017222f0-a0c3-4f69-9787-b3202295dc6c" target="_blank">TANH 函数</a> | FunctionResult | 返回一个数字的双曲正切值 |
 | <a href="https://support.office.com/article/TBILLEQ-function-2ab72d90-9b4d-4efe-9fc2-0f81f2c19c8c" target="_blank">TBILLEQ 函数</a> | FunctionResult | 返回短期国库券的等价债券收益 |
 | <a href="https://support.office.com/article/TBILLPRICE-function-eacca992-c29d-425a-9eb8-0513fe6035a2" target="_blank">TBILLPRICE 函数</a> | FunctionResult | 返回每张票面为 100 元的短期国库券的现价 |
 | <a href="https://support.office.com/article/TBILLYIELD-function-6d381232-f4b0-4cd5-8e97-45b9c03468ba" target="_blank">TBILLYIELD 函数</a> | FunctionResult | 返回短期国库券的收益 |
 | <a href="https://support.office.com/article/TEXT-function-20d5ac4d-7b94-49fd-bb38-93d29371225c" target="_blank">TEXT 函数</a> | FunctionResult | 设置数字格式并将其转换为文本 |
-| <a href="https://support.office.com/article/TIME-function-9a5aff99-8f7d-4611-845e-747d0b8d5457" target="_blank">TIME 函数</a> | FunctionResult | 返回特定时间的序列数值 |
-| <a href="https://support.office.com/article/TIMEVALUE-function-0b615c12-33d8-4431-bf3d-f3eb6d186645" target="_blank">TIMEVALUE 函数</a> | FunctionResult | 将以文本表达的时间转换为序列数值 |
-| <a href="https://support.office.com/article/TODAY-function-5eb3078d-a82c-4736-8930-2f51a028fdd9" target="_blank">TODAY 函数</a> | FunctionResult | 返回当前日期的序列数值 |
+| <a href="https://support.office.com/article/TIME-function-9a5aff99-8f7d-4611-845e-747d0b8d5457" target="_blank">TIME 函数</a> | FunctionResult | 返回特定时间的序列号 |
+| <a href="https://support.office.com/article/TIMEVALUE-function-0b615c12-33d8-4431-bf3d-f3eb6d186645" target="_blank">TIMEVALUE 函数</a> | FunctionResult | 将以文本表达的时间转换为序列号 |
+| <a href="https://support.office.com/article/TODAY-function-5eb3078d-a82c-4736-8930-2f51a028fdd9" target="_blank">TODAY 函数</a> | FunctionResult | 返回当前日期的序列号 |
 | <a href="https://support.office.com/article/TRIM-function-410388fa-c5df-49c6-b16c-9e5630b479f9" target="_blank">TRIM 函数</a> | FunctionResult | 从文本中删除空格 |
 | <a href="https://support.office.com/article/TRIMMEAN-function-d90c9878-a119-4746-88fa-63d988f511d3" target="_blank">TRIMMEAN 函数</a> | FunctionResult | 返回数据集内部的平均值 |
 | <a href="https://support.office.com/article/TRUE-function-7652c6e3-8987-48d0-97cd-ef223246b3fb" target="_blank">TRUE 函数</a> | FunctionResult | 返回逻辑值 `TRUE` |
@@ -435,7 +436,7 @@ Excel.run(function (context) {
 | <a href="https://support.office.com/article/XIRR-function-de1242ec-6477-445b-b11b-a303ad9adc9d" target="_blank">XIRR 函数</a> | FunctionResult | 返回一组现金流的内部收益率，这些现金流不一定定期发生 |
 | <a href="https://support.office.com/article/XNPV-function-1b42bbf6-370f-4532-a0eb-d67c16b664b7" target="_blank">XNPV 函数</a> | FunctionResult | 返回一组现金流的净现值，这些现金流不一定定期发生 |
 | <a href="https://support.office.com/article/XOR-function-1548d4c2-5e47-4f77-9a92-0533bba14f37" target="_blank">XOR 函数</a> | FunctionResult | 返回所有参数的逻辑“异或”值 |
-| <a href="https://support.office.com/article/YEAR-function-c64f017a-1354-490d-981f-578e8ec8d3b9" target="_blank">YEAR 函数</a> | FunctionResult | 将序列数值转换为年 |
+| <a href="https://support.office.com/article/YEAR-function-c64f017a-1354-490d-981f-578e8ec8d3b9" target="_blank">YEAR 函数</a> | FunctionResult | 将序列号转换为年 |
 | <a href="https://support.office.com/article/YEARFRAC-function-3844141e-c76d-4143-82b6-208454ddc6a8" target="_blank">YEARFRAC 函数</a> | FunctionResult | 返回表示 start_date 和 end_date 之间的天数占一年总天数的比值 |
 | <a href="https://support.office.com/article/YIELD-function-f5f5ca43-c4bd-434f-8bd2-ed3c9727a4fe" target="_blank">YIELD 函数</a> | FunctionResult | 返回定期支付利息的债券的收益 |
 | <a href="https://support.office.com/article/YIELDDISC-function-a9dbdbae-7dae-46de-b995-615faffaaed7" target="_blank">YIELDDISC 函数</a> | FunctionResult | 返回已贴现债券的年收益；例如，短期国库券 |
@@ -444,6 +445,6 @@ Excel.run(function (context) {
 
 ## <a name="see-also"></a>另请参阅
 
-- [使用 Excel JavaScript API 的基本编程概念](excel-add-ins-core-concepts.md)
+- [Excel JavaScript API 基本编程概念](excel-add-ins-core-concepts.md)
 - [功能类 (针对 Excel 的 JavaScript API)](https://docs.microsoft.com/javascript/api/excel/excel.functions)
-- [Workbook 函数对象 (Excel JavaScript API)](https://docs.microsoft.com/javascript/api/excel/excel.workbook#functions)
+- [工作簿功能对象 (Excel 的 JavaScript API)](https://docs.microsoft.com/javascript/api/excel/excel.workbook#functions)

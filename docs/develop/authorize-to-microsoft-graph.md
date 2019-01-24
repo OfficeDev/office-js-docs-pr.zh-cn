@@ -2,12 +2,13 @@
 title: 在 Office 加载项中对 Microsoft Graph 授权
 description: ''
 ms.date: 04/10/2018
-ms.openlocfilehash: fb8d234516e34f78e8aa1c9dd87465994038ca10
-ms.sourcegitcommit: 60fd8a3ac4a6d66cb9e075ce7e0cde3c888a5fe9
+localization_priority: Priority
+ms.openlocfilehash: ce1e54168d32a362777e08d573fe99c0d6a9cd33
+ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/28/2018
-ms.locfileid: "27457780"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "29386258"
 ---
 # <a name="authorize-to-microsoft-graph-in-your-office-add-in-preview"></a>在 Office 加载项中对 Microsoft Graph 授权（预览）
 

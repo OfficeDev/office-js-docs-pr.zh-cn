@@ -2,12 +2,13 @@
 title: Office 命名空间 - 要求集 1.5
 description: ''
 ms.date: 11/08/2018
-ms.openlocfilehash: 11b9ea439e659f0aefdcd15ae9a73ac128aee98b
-ms.sourcegitcommit: 60fd8a3ac4a6d66cb9e075ce7e0cde3c888a5fe9
-ms.translationtype: HT
+localization_priority: Normal
+ms.openlocfilehash: 3de90dffb3bf1baa8bc08ec512c6e89359db1349
+ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/28/2018
-ms.locfileid: "27458004"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "29387644"
 ---
 # <a name="office"></a>Office
 
@@ -114,11 +115,11 @@ ms.locfileid: "27458004"
 
 ##### <a name="type"></a>类型：
 
-*   字符串
+*   String
 
 ##### <a name="properties"></a>属性：
 
-|名称| 类型| 描述|
+|名称| 类型| 说明|
 |---|---|---|
 |`Body`| 字符串|数据源来自邮件的正文。|
 |`Subject`| String|数据源来自邮件的主题。|

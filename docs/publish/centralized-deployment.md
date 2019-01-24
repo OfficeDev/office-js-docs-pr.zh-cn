@@ -2,12 +2,13 @@
 title: 通过 Office 365 管理中心进行集中部署来发布 Office 加载项
 description: ''
 ms.date: 01/23/2018
-ms.openlocfilehash: 7115901c183dc939523e97b76a1b91070f9db970
-ms.sourcegitcommit: 86724e980f720ed05359c9525948cb60b6f10128
+localization_priority: Priority
+ms.openlocfilehash: 7821ee291dd6c2dbc1b2ed995b09c7f5d4c5eb89
+ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/09/2018
-ms.locfileid: "26237519"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "29387805"
 ---
 # <a name="publish-office-add-ins-using-centralized-deployment-via-the-office-365-admin-center"></a>通过 Office 365 管理中心进行集中部署来发布 Office 加载项
 
@@ -24,7 +25,7 @@ Office 365 管理中心当前支持以下方案：
 - 当用户启动 Office 应用时自动为用户安装加载项。
 - 当管理员禁用或删除加载项，或者将用户从 Azure Active Directory 或从已部署加载项的组中删除时，则自动为用户删除该加载项。
 
-如果组织满足使用集中部署的所有要求，则建议 Office 365 管理员通过集中部署在组织内部署 Office 加载项。 有关如何确定组织是否可以使用集中部署的信息，请参阅[确定加载项集中部署是否适用于你的 Office 365 组织](https://support.office.com/article/Determine-if-Centralized-Deployment-of-add-ins-works-for-your-Office-365-organization-b4527d49-4073-4b43-8274-31b7a3166f92)。
+如果组织满足使用集中部署的所有要求，则建议 Office 365 管理员通过集中部署在组织内部署 Office 加载项。 有关如何确定组织是否可以使用集中部署的信息，请参阅[确定加载项集中部署是否适用于你的 Office 365 组织](https://support.office.com/article/Determine-if-Centralized-Deployment-of-add-ins-works-for-your-Office-365-organization-B4527D49-4073-4B43-8274-31B7A3166F92)。
 
 > [!NOTE]
 > 在没有连接到 Office 365 的本地环境中，或若要部署 SharePoint 加载项或定目标到 Office 2013 的 Office 加载项，请使用 [SharePoint 加载项目录](publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md)。 若要部署 COM/VSTO 加载项，请使用 ClickOnce 或 Windows Installer，如[部署 Office 解决方案](https://docs.microsoft.com/visualstudio/vsto/deploying-an-office-solution)中所述。
@@ -43,7 +44,7 @@ Office 365 管理中心当前支持以下方案：
 
 ## <a name="publish-an-office-add-in-via-centralized-deployment"></a>通过集中部署发布 Office 加载项
 
-在开始之前，请按照[确定加载项集中部署是否适用于你的 Office 365 组织](https://support.office.com/article/Determine-if-Centralized-Deployment-of-add-ins-works-for-your-Office-365-organization-b4527d49-4073-4b43-8274-31b7a3166f92)中所述确认组织是否满足使用集中部署的所有要求。
+在开始之前，请按照[确定加载项集中部署是否适用于你的 Office 365 组织](https://support.office.com/article/Determine-if-Centralized-Deployment-of-add-ins-works-for-your-Office-365-organization-B4527D49-4073-4B43-8274-31B7A3166F92)中所述确认组织是否满足使用集中部署的所有要求。
 
 如果组织满足所有要求，请完成以下步骤以通过集中部署发布 Office 加载项：
 

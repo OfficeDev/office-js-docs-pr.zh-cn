@@ -2,12 +2,13 @@
 title: 从内容传送网络 (CDN) 引用适用于 Office 的 JavaScript API 库
 description: ''
 ms.date: 01/23/2018
-ms.openlocfilehash: 9943af86419652e5f5e89b1741b32b4e0da15e77
-ms.sourcegitcommit: 60fd8a3ac4a6d66cb9e075ce7e0cde3c888a5fe9
+localization_priority: Priority
+ms.openlocfilehash: 1d19121c5f641b509c1e32d74b20f7095abe7d8d
+ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/28/2018
-ms.locfileid: "27457619"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "29388022"
 ---
 # <a name="referencing-the-javascript-api-for-office-library-from-its-content-delivery-network-cdn"></a>从内容传送网络 (CDN) 引用适用于 Office 的 JavaScript API 库
 

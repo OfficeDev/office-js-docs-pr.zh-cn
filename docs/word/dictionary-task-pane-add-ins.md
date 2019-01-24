@@ -1,13 +1,14 @@
 ---
-title: 创建字典任务窗格加载项
+title: 创建字典任务窗格外接程序
 description: ''
 ms.date: 12/04/2017
-ms.openlocfilehash: 814dcc94f08a81ab01f96e5af487b4f7708c1aa5
-ms.sourcegitcommit: 60fd8a3ac4a6d66cb9e075ce7e0cde3c888a5fe9
-ms.translationtype: HT
+localization_priority: Normal
+ms.openlocfilehash: a97c378092da783e748f014515de587383201818
+ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/28/2018
-ms.locfileid: "27457850"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "29388211"
 ---
 # <a name="create-a-dictionary-task-pane-add-in"></a>创建字典任务窗格加载项
 

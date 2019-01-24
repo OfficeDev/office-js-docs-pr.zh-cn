@@ -2,12 +2,13 @@
 title: PowerPoint 加载项
 description: ''
 ms.date: 10/16/2018
-ms.openlocfilehash: c5dd017de031c66271f1d39c0f953bce63a85a87
-ms.sourcegitcommit: 60fd8a3ac4a6d66cb9e075ce7e0cde3c888a5fe9
+localization_priority: Priority
+ms.openlocfilehash: 022bed349dde061b61a8db0711a94a0a4d77f2e1
+ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/28/2018
-ms.locfileid: "27457648"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "29388631"
 ---
 # <a name="powerpoint-add-ins"></a>PowerPoint 加载项
 

@@ -1,3 +1,11 @@
+---
+ms.openlocfilehash: 2305faa6cc1560628cfc58d8bcf5c62b4fb0fb18
+ms.sourcegitcommit: 984c425e2ad58577af8f494079923cab165ad36c
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 01/18/2019
+ms.locfileid: "28726994"
+---
 # <a name="build-your-first-powerpoint-add-in"></a>生成首个 PowerPoint 加载项
 
 本文将逐步介绍如何使用 jQuery 和 Office JavaScript API 生成 PowerPoint 加载项。
@@ -59,14 +67,15 @@
 
     (function () {
 
-        // The initialize function must be run each time a new page is loaded
-        Office.initialize = function (reason) {
+        Office.onReady(function() {
+            // Office is ready
             $(document).ready(function () {
+                // The document is ready
                 $('#insert-image').click(insertImage);
                 $('#insert-text').click(insertText);
             });
-        };
-    
+        });
+
         function insertImage() {
             Office.context.document.setSelectedDataAsync(getImageAsBase64String(), {
                 coercionType: Office.CoercionType.Image,
@@ -234,13 +243,14 @@
 
     (function () {
 
-        // The initialize function must be run each time a new page is loaded
-        Office.initialize = function (reason) {
+        Office.onReady(function() {
+            // Office is ready
             $(document).ready(function () {
+                // The document is ready
                 $('#insert-image').click(insertImage);
                 $('#insert-text').click(insertText);
             });
-        };
+        });
     
         function insertImage() {
             Office.context.document.setSelectedDataAsync(getImageAsBase64String(), {

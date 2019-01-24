@@ -2,12 +2,13 @@
 title: 暂留加载项状态和设置
 description: ''
 ms.date: 12/04/2017
-ms.openlocfilehash: ce2b9ffce97e6338d62cdf07d722ffa384283d28
-ms.sourcegitcommit: 60fd8a3ac4a6d66cb9e075ce7e0cde3c888a5fe9
+localization_priority: Priority
+ms.openlocfilehash: 7739dd46499c3ab5ccda13d362950ec86d761660
+ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/28/2018
-ms.locfileid: "27458067"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "29388239"
 ---
 # <a name="persisting-add-in-state-and-settings"></a>暂留加载项状态和设置
 
@@ -37,7 +38,7 @@ Office 加载项实质上是在浏览器控件的无状态环境中运行的 Web
 > [!NOTE]
 > 下面两部分是在 Office 常见 JavaScript API 上下文中介绍的设置。 主机专用 Excel JavaScript API 还提供对自定义设置的访问权限。 Excel API 和编程模式有点不一样。 有关详细信息，请参阅 [Excel SettingCollection](https://docs.microsoft.com/javascript/api/excel/excel.settingcollection)。
 
-在内部，通过 **Settings**、 **CustomProperties** 或 **RoamingSettings** 对象访问的属性包中的数据存储为序列化的 JavaScript 对象表示法 (JSON) 对象，包含名称/值对。 每个值的名称（键）必须为 **string**，且存储的值可为 JavaScript **string**、**number**、**date** 或 **object**，但不能为 **function**。
+在内部，通过  **Settings**、 **CustomProperties** 或 **RoamingSettings** 对象访问的属性包中的数据存储为序列化的 JavaScript 对象表示法 (JSON) 对象，包含名称/值对。每个值的名称（键）必须为 **string**，且存储的值可为 JavaScript  **string**、 **number**、 **date** 或 **object**，但不能为  **function**。
 
 本属性包结构示例包含三个已定义 **string** 值，分别为 `firstName`、 `location` 和 `defaultView`。
 
@@ -49,11 +50,11 @@ Office 加载项实质上是在浏览器控件的无状态环境中运行的 Web
 }
 ```
 
-在前一个加载项会话中保存设置属性包之后，可以在加载项的当前会话中初始化加载项时或在之后的任何时间加载该设置属性包。 在会话过程中，将会使用与所创建的种类设置（**Settings**、**CustomProperties** 或 **RoamingSettings**）对应的对象 的 **get**、**set** 和 **remove** 方法，将设置整体托管到内存中。 
+设置属性包在上一加载项会话中进行保存后，在加载项当前会话期间，可以在加载项初始化时或其初始化后的任何时间点加载设置属性包。在会话期间，设置使用与您所创建的该类设置相对应的对象（ **Settings**、 **CustomProperties** 或 **RoamingSettings**）的 **get**、 **set** 和 **remove** 方法完全托管在内存中。 
 
 
 > [!IMPORTANT]
-> 若要将在加载项的当前会话中所做的任何添加、更新或删除暂留到存储位置，必须调用与此类设置搭配使用的对应对象的 **saveAsync** 方法。 **get**、**set** 和 **remove** 方法只可在设置属性包的内存副本上运行。 如果加载项在未调用 **saveAsync** 的情况下关闭，则在该会话过程中对设置所做的任何更改都会丢失。 
+> 若要将在加载项当前会话期间添加、更新或删除的任何内容暂留到存储位置，必须调用用于处理此类设置的相应对象的 **saveAsync** 方法。**get**、**set** 和 **remove** 方法仅对 settings 属性包的内存副本执行操作。如果加载项在没有调用 **saveAsync** 的情况下关闭，那么在相应会话期间对设置所做的任何更改都会丢失。 
 
 
 ## <a name="how-to-save-add-in-state-and-settings-per-document-for-content-and-task-pane-add-ins"></a>如何按文档暂留内容和任务窗格加载项的加载项状态和设置

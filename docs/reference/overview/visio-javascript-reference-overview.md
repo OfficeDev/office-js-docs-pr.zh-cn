@@ -2,12 +2,13 @@
 title: Visio JavaScript API 概述
 description: ''
 ms.date: 10/11/2018
-ms.openlocfilehash: f530e1541146fb2f38209845791132b789577640
-ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
+localization_priority: Priority
+ms.openlocfilehash: 0a3a141ec624a2e509ae34290691bff6e8e529a5
+ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/22/2018
-ms.locfileid: "27432933"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "29389436"
 ---
 # <a name="visio-javascript-api-overview"></a>Visio JavaScript API 概述
 
@@ -65,7 +66,7 @@ function hideToolbars() {
 
 在外接程序中声明和使用的 Visio JavaScript 对象是 Visio 文档中真实对象的代理对象。对代理对象执行的所有操作都不会在 Visio 中实现；在同步文档状态前，Visio 文档的状态不会在代理对象中实现。运行 `context.sync()` 时将同步文档状态。
 
-例如，本地 JavaScript 对象 getActivePage 声明为引用选定页面。 这可用于将属性和调用方法的设置操作排入队列。 对此类对象执行的操作不会实现，除非运行 **sync()** 方法。
+例如，本地 JavaScript 对象 getActivePage 声明为引用选定页面。这可用于将属性和调用方法的设置操作排入队列。对此类对象执行的操作不会实现，除非运行 sync() 方法。
 
 ```js
 var activePage = context.document.getActivePage();

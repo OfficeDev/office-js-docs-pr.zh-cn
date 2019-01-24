@@ -2,12 +2,13 @@
 title: Office JavaScript API 对象模型
 description: ''
 ms.date: 07/27/2018
-ms.openlocfilehash: 2947ae2bf0da4f1a0e5151ae8d6d8a723cf6d4b9
-ms.sourcegitcommit: 60fd8a3ac4a6d66cb9e075ce7e0cde3c888a5fe9
+localization_priority: Priority
+ms.openlocfilehash: 5530b77fb25a9decc5f4ae02008808811e7e6513
+ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/28/2018
-ms.locfileid: "27458018"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "29388526"
 ---
 # <a name="office-javascript-api-object-model"></a>Office JavaScript API 对象模型
 Office JavaScript 加载项提供对主机基础功能的访问权限。 大多数此类访问权限可以访问一些重要的对象。 [Context](#context-object) 对象提供在初始化之后对运行时环境的访问权限。 [Document](#document-object) 对象使用户能够控制 Excel、PowerPoint 或 Word 文档。 [Mailbox](#mailbox-object) 对象使 Outlook 加载项能够访问邮件和用户配置文件。 理解这些高级对象之间的关系是 JavaScript 加载项的基础。

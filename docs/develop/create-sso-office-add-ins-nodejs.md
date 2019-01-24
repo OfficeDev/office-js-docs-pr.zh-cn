@@ -2,12 +2,13 @@
 title: 创建使用单一登录的 Node.js Office 加载项
 description: ''
 ms.date: 12/07/2018
-ms.openlocfilehash: b05ef90000da7fda3a72d2ba873c169a469731a6
-ms.sourcegitcommit: 3007bf57515b0811ff98a7e1518ecc6fc9462276
+localization_priority: Priority
+ms.openlocfilehash: 0e47b8a577e337a40542f38509b6da325df299ba
+ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "27724905"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "29387336"
 ---
 # <a name="create-a-nodejs-office-add-in-that-uses-single-sign-on-preview"></a>创建使用单一登录的 Node.js Office 加载项（预览）
 
@@ -537,7 +538,7 @@ ms.locfileid: "27724905"
     ```
 
     > [!NOTE]
-    > 只可使用 `access_as_user` 作用域授权 API 为 Office 外接程序处理代表流。服务中的其他 API 应有自己的作用域要求。 这就限制了使用 Office 获得的令牌可以访问的内容。
+    > 只能使用 `access_as_user` 范围授权 API 为 Office 加载项处理代表流。服务中的其他 API 应有自己的范围要求。这就限制了使用 Office 获得的令牌可以访问的内容。
 
 5. 将 `TODO8` 替换为以下代码。关于此代码，请注意以下几点：
 

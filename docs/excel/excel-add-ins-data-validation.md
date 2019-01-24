@@ -2,12 +2,13 @@
 title: 向特定 Excel 范围添加数据验证
 description: ''
 ms.date: 10/03/2018
-ms.openlocfilehash: e584d80403969ca15527afb69251832a96f3003e
-ms.sourcegitcommit: 979e8d2b0fbc537f9c01527062767c026592aa62
+localization_priority: Priority
+ms.openlocfilehash: dfe29bce5e23f7f251f6b52bf3eb359101f274ca
+ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "25852915"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "29386986"
 ---
 # <a name="add-data-validation-to-excel-ranges"></a>向特定 Excel 范围添加数据验证
 

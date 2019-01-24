@@ -3,11 +3,12 @@ title: 通过 PowerPoint 加载项获取整个文档
 description: ''
 ms.date: 12/04/2017
 ROBOTS: NOINDEX
-ms.openlocfilehash: 952edfdce96584041366358ae6293c02c9f850d7
-ms.sourcegitcommit: 7ecc1dc24bf7488b53117d7a83ad60e952a6f7aa
-ms.translationtype: HT
+localization_priority: Normal
+ms.openlocfilehash: 5cf0befd42c05cd060e1857146f2560bd2d58949
+ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/23/2018
-ms.locfileid: "19438422"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "29388148"
 ---
 [!include[Get the whole document from an add-in for PowerPoint](../includes/file-get-the-whole-document-from-an-add-in-for-powerpoint-or-word.md)]

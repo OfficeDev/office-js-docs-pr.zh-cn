@@ -2,12 +2,13 @@
 title: 在 Office 加载项中使用对话框 API
 description: ''
 ms.date: 12/20/2018
-ms.openlocfilehash: c96fa69e5bd3d1c6c028921ec9e4f7f220e710c9
-ms.sourcegitcommit: 60fd8a3ac4a6d66cb9e075ce7e0cde3c888a5fe9
+localization_priority: Priority
+ms.openlocfilehash: fa6524e36319d2031ab005c8dec2fc8b5c50d7cd
+ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/28/2018
-ms.locfileid: "27458081"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "29386965"
 ---
 # <a name="use-the-dialog-api-in-your-office-add-ins"></a>在 Office 加载项中使用对话框 API
 

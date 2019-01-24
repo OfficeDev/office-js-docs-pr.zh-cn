@@ -2,12 +2,13 @@
 title: Excel JavaScript API 概述
 description: ''
 ms.date: 11/01/2018
-ms.openlocfilehash: 202e6eb4993e43191f4f8c867ff0907af61a2ed6
-ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
+localization_priority: Priority
+ms.openlocfilehash: 34183c561b3da3e01a996f08761c753f204c766b
+ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/22/2018
-ms.locfileid: "27433801"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "29388750"
 ---
 # <a name="excel-javascript-api-overview"></a>Excel JavaScript API 概述
 

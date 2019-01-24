@@ -1,13 +1,14 @@
 ---
 title: Outlook 加载项 API 要求集 1.5
 description: ''
-ms.date: 11/14/2018
-ms.openlocfilehash: dc6432c3e55ed75c120c2872233ca0f275010e73
-ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
-ms.translationtype: HT
+ms.date: 01/16/2019
+localization_priority: Normal
+ms.openlocfilehash: fde394ff4b75e0f6b160f5d56cb73adc9da9dede
+ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/22/2018
-ms.locfileid: "27433927"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "29388375"
 ---
 # <a name="outlook-add-in-api-requirement-set-15"></a>Outlook 外接程序 API 要求集 1.5
 
@@ -28,7 +29,7 @@ ms.locfileid: "27433927"
 ### <a name="change-log"></a>更改日志
 
 - 添加了 [Office.context.mailbox.addHandlerAsync](office.context.mailbox.md#addhandlerasynceventtype-handler-options-callback)：添加支持事件的事件处理程序。
-- 添加了 [Office.context.mailbox.removeHandlerAsync](office.context.mailbox.md#removehandlerasynceventtype-handler-options-callback)：删除支持事件的事件处理程序。
+- 添加[Office.context.mailbox.removeHandlerAsync](office.context.mailbox.md#removehandlerasynceventtype-options-callback)： 删除的事件处理程序支持的事件类型。
 - 添加了 [Office.EventType](office.md#eventtype-string)：指定与事件处理程序相关联的事件，并包括对 ItemChanged 事件的支持。
 - 添加了 [Office.context.mailbox.restUrl](office.context.mailbox.md#resturl-string)：获取此电子邮件帐户的 REST 终结点的 URL。
 - 修改了 [Office.context.mailbox.getCallbackTokenAsync](office.context.mailbox.md#getcallbacktokenasyncoptions-callback)：添加了此方法的新版本（具有新签名） (`getCallbackTokenAsync([options], callback)`)。原始版本仍可用且未更改。

@@ -2,12 +2,13 @@
 title: 开始使用 Excel 加载项
 description: ''
 ms.date: 01/23/2018
-ms.openlocfilehash: d7f44429fd51a274c5c970523ed3e80851855ff6
-ms.sourcegitcommit: 4de2a1b62ccaa8e51982e95537fc9f52c0c5e687
+localization_priority: Priority
+ms.openlocfilehash: b75a25f986d4dd141a3858a357592c5ba9c28bd8
+ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/10/2018
-ms.locfileid: "22925211"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "29388967"
 ---
 # <a name="get-started-with-excel-add-ins"></a>开始使用 Excel 加载项
 

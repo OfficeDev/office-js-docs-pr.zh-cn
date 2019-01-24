@@ -1,3 +1,11 @@
+---
+ms.openlocfilehash: f090023acbeae8bab9e25a36b64669c7d033daea
+ms.sourcegitcommit: 319780e4fb77b97d16d5657950e4eb84415eb7eb
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 01/17/2019
+ms.locfileid: "28725530"
+---
 # <a name="build-an-excel-add-in-using-react"></a>使用 React 生成 Excel 加载项
 
 在本文中，你将完成使用 React 和 Excel JavaScript API 生成 Excel 加载项的过程。
@@ -140,6 +148,8 @@
 5. 打开文件 **src/components/App.tsx**，将全部内容替换为以下代码，然后保存文件。
 
     ```typescript
+    /* global Office, Excel */
+
     import * as React from 'react';
     import { Header } from './Header';
     import { Content } from './Content';

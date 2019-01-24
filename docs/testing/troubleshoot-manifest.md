@@ -2,12 +2,13 @@
 title: 验证并排查清单问题
 description: 使用这些方法验证 Office 加载项清单。
 ms.date: 11/02/2018
-ms.openlocfilehash: c166220f0ddd5002efcb2805b5e50ee20a48b4fe
-ms.sourcegitcommit: 3d8454055ba4d7aae12f335def97357dea5beb30
+localization_priority: Priority
+ms.openlocfilehash: 921adf6f1f398887d96031790facc1fb1425af2b
+ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "27270787"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "29388373"
 ---
 # <a name="validate-and-troubleshoot-issues-with-your-manifest"></a>验证并排查清单问题
 

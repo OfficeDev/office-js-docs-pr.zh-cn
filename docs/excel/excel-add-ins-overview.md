@@ -2,12 +2,13 @@
 title: Excel 加载项概述
 description: ''
 ms.date: 01/23/2018
-ms.openlocfilehash: ecc581a0ddb19d6c5351fd4b4e251aad8136a2e1
-ms.sourcegitcommit: 60fd8a3ac4a6d66cb9e075ce7e0cde3c888a5fe9
+localization_priority: Priority
+ms.openlocfilehash: 747b9b28f8e15de71a7af7e72bced61f8063139e
+ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/28/2018
-ms.locfileid: "27457472"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "29386734"
 ---
 # <a name="excel-add-ins-overview"></a>Excel 加载项概述
 

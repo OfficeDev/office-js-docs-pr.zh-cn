@@ -2,12 +2,13 @@
 title: 在 Office 加载项中授权外部服务
 description: ''
 ms.date: 12/04/2017
-ms.openlocfilehash: 65b9325cc838dafca7f7e8e3402fc45762321459
-ms.sourcegitcommit: 3d8454055ba4d7aae12f335def97357dea5beb30
+localization_priority: Priority
+ms.openlocfilehash: 4c045c28d62993db630c27553e8f52b8da5a0ee1
+ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "27270745"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "29388785"
 ---
 # <a name="authorize-external-services-in-your-office-add-in"></a>在 Office 加载项中授权外部服务
 
@@ -15,7 +16,7 @@ ms.locfileid: "27270745"
 
 授权 Web 应用访问在线服务的行业标准框架为 **OAuth 2.0**。大多数情况下，无需了解框架的详细工作原理，即可在加载项中使用它。许多库都可用来化繁为简。
 
-OAuth 的基本概念是，应用程序本身可以是一个安全主体，就像一个用户或组，拥有其自己的标识和权限集。 在最典型的应用场景中，当用户在需要联机服务的 Office 加载项中进行操作时，加载项会向服务发送请求，请求为用户帐户提供一组特定权限。 然后，该服务会提示用户向加载项授予这些权限。 授予权限之后，该服务会向外接程序发送一个小的编码*访问令牌*。 外接程序可以通过在其向服务 API 发送的所有请求中包含令牌来使用该服务。 但外接程序只能在用户授予它的权限范围内进行操作。 令牌还会在某个指定时间后过期。
+OAuth 的基本概念是，应用程序本身可以是一个安全主体，就像一个用户或组，拥有其自己的标识和权限集。在最典型的应用场景中，当用户在需要联机服务的 Office 外接程序中进行操作时，外接程序会向服务发送请求，请求为用户帐户提供一组特定权限。然后，该服务会提示用户向外接程序授予这些权限。授予权限之后，该服务会向外接程序发送一个小的编码*访问令牌*。外接程序可以通过在其向服务 API 发送的所有请求中包含令牌来使用该服务。但外接程序只能在用户授予它的权限范围内进行操作。令牌还会在某个指定时间后过期。
 
 几种称为*流*或*授权类型*的 OAuth 模式专为不同方案而设计。 以下两种模式最常实现：
 

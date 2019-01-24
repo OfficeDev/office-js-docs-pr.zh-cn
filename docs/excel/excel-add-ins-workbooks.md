@@ -2,12 +2,13 @@
 title: 使用 Excel JavaScript API 处理工作簿
 description: ''
 ms.date: 1/7/2019
-ms.openlocfilehash: db32cf0c847d578fb909d9ad97a3a75ef3f97eee
-ms.sourcegitcommit: 9afcb1bb295ec0c8940ed3a8364dbac08ef6b382
+localization_priority: Priority
+ms.openlocfilehash: c7a7a4ca9d420c637d096896ec6bae166fb5b355
+ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/08/2019
-ms.locfileid: "27770586"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "29388365"
 ---
 # <a name="work-with-workbooks-using-the-excel-javascript-api"></a>使用 Excel JavaScript API 处理工作簿
 

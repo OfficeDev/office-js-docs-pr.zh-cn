@@ -2,12 +2,13 @@
 title: 为 Office 加载项启用单一登录
 description: ''
 ms.date: 09/26/2018
-ms.openlocfilehash: a823c1c58a79d97094e97ffe66f082b45601c10c
-ms.sourcegitcommit: 60fd8a3ac4a6d66cb9e075ce7e0cde3c888a5fe9
+localization_priority: Priority
+ms.openlocfilehash: 96370072e29262c70f421ced9a90ca9422a12243
+ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/28/2018
-ms.locfileid: "27457871"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "29388106"
 ---
 # <a name="enable-single-sign-on-for-office-add-ins-preview"></a>为 Office 加载项启用单一登录（预览）
 

@@ -1,12 +1,13 @@
 ---
 title: 生成首个 Project 加载项
 description: ''
-ms.date: 10/16/2018
-ms.openlocfilehash: 5da5ff0d59778b4b6bbe09007663a5f936a2dea0
-ms.sourcegitcommit: f47654582acbe9f618bec49fb97e1d30f8701b62
+ms.date: 01/17/2019
+localization_priority: Priority
+ms.openlocfilehash: a5cfd31c206e0956a683441b839a169681cb889d
+ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "25579735"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "29386468"
 ---
 [!include[Build your first Project add-in](../includes/file-get-started-project.md)]

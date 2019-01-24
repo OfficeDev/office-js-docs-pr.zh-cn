@@ -2,12 +2,13 @@
 title: 随文档自动打开任务窗格
 description: ''
 ms.date: 05/02/2018
-ms.openlocfilehash: 84e64c74b1c14da39a1f375fe54b1e6dcc887d16
-ms.sourcegitcommit: 60fd8a3ac4a6d66cb9e075ce7e0cde3c888a5fe9
+localization_priority: Priority
+ms.openlocfilehash: dd0fb8befdfe41ec96f1f418b3e4eb43f6ba98da
+ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/28/2018
-ms.locfileid: "27457920"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "29386755"
 ---
 # <a name="automatically-open-a-task-pane-with-a-document"></a>随文档自动打开任务窗格
 

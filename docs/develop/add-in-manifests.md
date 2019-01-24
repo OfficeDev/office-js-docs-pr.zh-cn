@@ -2,12 +2,13 @@
 title: Office 加载项 XML 清单
 description: ''
 ms.date: 12/26/2018
-ms.openlocfilehash: e0602c3baf028a4982feb6983ce05e8fee3d8501
-ms.sourcegitcommit: 60fd8a3ac4a6d66cb9e075ce7e0cde3c888a5fe9
+localization_priority: Priority
+ms.openlocfilehash: 0b5672b14950d275ab34973aa3dc534455e43cd6
+ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/28/2018
-ms.locfileid: "27457864"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "29386804"
 ---
 # <a name="office-add-ins-xml-manifest"></a>Office 加载项 XML 清单
 

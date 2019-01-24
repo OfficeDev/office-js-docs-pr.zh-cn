@@ -2,12 +2,13 @@
 title: 绑定到文档或电子表格中的区域
 description: ''
 ms.date: 12/04/2017
-ms.openlocfilehash: 7b751fa49699c0b40f7bdf7f97e535ec9ab25580
-ms.sourcegitcommit: 60fd8a3ac4a6d66cb9e075ce7e0cde3c888a5fe9
+localization_priority: Priority
+ms.openlocfilehash: f475da024428999ca4192fb6a395cee2bb7b0e30
+ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/28/2018
-ms.locfileid: "27458060"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "29388554"
 ---
 # <a name="bind-to-regions-in-a-document-or-spreadsheet"></a>绑定到文档或电子表格中的区域
 
@@ -396,11 +397,11 @@ function removeEventHandlerFromBinding() {
 [MatrixBinding]:         https://docs.microsoft.com/javascript/api/office/office.matrixbinding
 [TableBinding]:          https://docs.microsoft.com/javascript/api/office/office.tablebinding
 [TextBinding]:           https://docs.microsoft.com/javascript/api/office/office.textbinding
-[getDataAsync]:          https://docs.microsoft.com/javascript/api/office/office.binding#getdataasync-options--callback-
-[setDataAsync]:          https://docs.microsoft.com/javascript/api/office/office.binding#setdataasync-data--options--callback-
+[getDataAsync]:          https://docs.microsoft.com/javascript/api/office/Office.Binding#getdataasync-options--callback-
+[setDataAsync]:          https://docs.microsoft.com/javascript/api/office/Office.Binding#setdataasync-data--options--callback-
 [SelectionChanged]:      https://docs.microsoft.com/javascript/api/office/office.bindingselectionchangedeventargs
-[addHandlerAsync]:       https://docs.microsoft.com/javascript/api/office/office.binding#addhandlerasync-eventtype--handler--options--callback-
-[removeHandlerAsync]:    https://docs.microsoft.com/javascript/api/office/office.binding#removehandlerasync-eventtype--options--callback-
+[addHandlerAsync]:       https://docs.microsoft.com/javascript/api/office/Office.Binding#addhandlerasync-eventtype--handler--options--callback-
+[removeHandlerAsync]:    https://docs.microsoft.com/javascript/api/office/Office.Binding#removehandlerasync-eventtype--options--callback-
 
 [Bindings]:              https://docs.microsoft.com/javascript/api/office/office.bindings
 [getByIdAsync]:          https://docs.microsoft.com/javascript/api/office/office.bindings#getbyidasync-id--options--callback- 

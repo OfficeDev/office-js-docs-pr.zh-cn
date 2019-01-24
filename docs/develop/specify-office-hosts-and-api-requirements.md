@@ -2,12 +2,13 @@
 title: 指定 Office 主机和 API 要求
 description: ''
 ms.date: 12/04/2017
-ms.openlocfilehash: cba42b885951e3fc83fb1e3d237e0fe78f72ab1d
-ms.sourcegitcommit: 60fd8a3ac4a6d66cb9e075ce7e0cde3c888a5fe9
+localization_priority: Priority
+ms.openlocfilehash: 3ea0116d8c8e9dcf685db349d78ed43af91b1620
+ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/28/2018
-ms.locfileid: "27457843"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "29386818"
 ---
 # <a name="specify-office-hosts-and-api-requirements"></a>指定 Office 主机和 API 要求
 

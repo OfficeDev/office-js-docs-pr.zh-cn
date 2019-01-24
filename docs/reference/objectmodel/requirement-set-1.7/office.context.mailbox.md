@@ -1,13 +1,14 @@
 ---
 title: Office.context.mailbox - 要求集 1.7
 description: ''
-ms.date: 10/31/2018
-ms.openlocfilehash: 3f4cee427e49a691b42d47d6821c54cd428207d9
-ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
-ms.translationtype: HT
+ms.date: 01/16/2019
+localization_priority: Normal
+ms.openlocfilehash: 062dedceb671d5a98a1656823a6f6803e7dc0094
+ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/22/2018
-ms.locfileid: "27433339"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "29387061"
 ---
 # <a name="mailbox"></a>邮箱
 
@@ -27,7 +28,7 @@ ms.locfileid: "27433339"
 
 | 成员 | 类型 |
 |--------|------|
-| [ewsUrl](#ewsurl-string) | 成员 |
+| [ewsUrl](#ewsurl-string) | Member |
 | [restUrl](#resturl-string) | 成员 |
 | [addHandlerAsync](#addhandlerasynceventtype-handler-options-callback) | 方法 |
 | [convertToEwsId](#converttoewsiditemid-restversion--string) | 方法 |
@@ -42,7 +43,7 @@ ms.locfileid: "27433339"
 | [getCallbackTokenAsync](#getcallbacktokenasynccallback-usercontext) | 方法 |
 | [getUserIdentityTokenAsync](#getuseridentitytokenasynccallback-usercontext) | 方法 |
 | [makeEwsRequestAsync](#makeewsrequestasyncdata-callback-usercontext) | 方法 |
-| [removeHandlerAsync](#removehandlerasynceventtype-handler-options-callback) | 方法 |
+| [removeHandlerAsync](#removehandlerasynceventtype-options-callback) | 方法 |
 
 ### <a name="namespaces"></a>命名空间
 
@@ -116,8 +117,8 @@ ms.locfileid: "27433339"
 | `eventType` | [Office.EventType](office.md#eventtype-string) || 应调用处理程序的事件。 |
 | `handler` | 函数 || 用于处理事件的函数。此函数必须接受一个参数，即对象文本。参数上的 `type` 属性将匹配传递给 `addHandlerAsync` 的 `eventType` 参数。 |
 | `options` | Object | &lt;可选&gt; | 包含一个或多个以下属性的对象文本。 |
-| `options.asyncContext` | 对象 | &lt;可选&gt; | 开发人员可以提供他们想要在回调方法中访问的任何对象。 |
-| `callback` | 函数| &lt;可选&gt;|方法完成后，使用单个参数 `callback`（一个 [`asyncResult`](/javascript/api/office/office.asyncresult) 对象）调用在 `AsyncResult` 参数中传递的函数。|
+| `options.asyncContext` | Object | &lt;可选&gt; | 开发人员可以提供他们想要在回调方法中访问的任何对象。 |
+| `callback` | 函数| &lt;optional&gt;|方法完成后，使用单个参数 `callback`（一个 [`asyncResult`](/javascript/api/office/office.asyncresult) 对象）调用在 `AsyncResult` 参数中传递的函数。|
 
 ##### <a name="requirements"></a>Requirements
 
@@ -125,7 +126,7 @@ ms.locfileid: "27433339"
 |---|---|
 |[最低版本的邮箱要求集](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.5 |
 |[最低权限级别](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem |
-|[适用的 Outlook 模式](https://docs.microsoft.com/outlook/add-ins/#extension-points)| 撰写或阅读|
+|[适用的 Outlook 模式](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Compose 或 Read|
 
 ##### <a name="example"></a>示例
 
@@ -157,12 +158,12 @@ function loadNewItem(eventArgs) {
 
 ##### <a name="parameters"></a>参数：
 
-|名称| 类型| 描述|
+|名称| 说明| 说明|
 |---|---|---|
-|`itemId`| 字符串|Outlook REST API 的格式化的项目 ID。|
+|`itemId`| String|Outlook REST API 的格式化的项目 ID。|
 |`restVersion`| [Office.MailboxEnums.RestVersion](/javascript/api/outlook_1_7/office.mailboxenums.restversion)|指示用于检索项目 ID 的 Outlook REST API 的版本。|
 
-##### <a name="requirements"></a>要求
+##### <a name="requirements"></a>Requirements
 
 |要求| 值|
 |---|---|
@@ -195,11 +196,11 @@ Outlook 或 Outlook Web App 邮件应用程序的日期和时间可以使用不�
 
 ##### <a name="parameters"></a>参数：
 
-|名称| 类型| 描述|
+|名称| 说明| 说明|
 |---|---|---|
-|`timeValue`| 日期|一个 Date 对象|
+|`timeValue`| Date|一个 Date 对象|
 
-##### <a name="requirements"></a>要求
+##### <a name="requirements"></a>Requirements
 
 |要求| 值|
 |---|---|
@@ -222,12 +223,12 @@ Outlook 或 Outlook Web App 邮件应用程序的日期和时间可以使用不�
 
 ##### <a name="parameters"></a>参数：
 
-|名称| 类型| 描述|
+|名称| 说明| 说明|
 |---|---|---|
-|`itemId`| 字符串|适用于 Exchange Web 服务 (EWS) 的项目 ID 格式化。|
+|`itemId`| String|适用于 Exchange Web 服务 (EWS) 的项目 ID 格式化。|
 |`restVersion`| [Office.MailboxEnums.RestVersion](/javascript/api/outlook_1_7/office.mailboxenums.restversion)|值指示转换的 ID 所使用的 Outlook REST API 的版本。|
 
-##### <a name="requirements"></a>要求
+##### <a name="requirements"></a>Requirements
 
 |要求| 值|
 |---|---|
@@ -258,11 +259,11 @@ var restId = Office.context.mailbox.convertToRestId(ewsId, Office.MailboxEnums.R
 
 ##### <a name="parameters"></a>参数：
 
-|名称| 类型| 说明|
+|名称| 说明| 说明|
 |---|---|---|
 |`input`| [LocalClientTime](/javascript/api/outlook_1_7/office.LocalClientTime)|要转换的本地时间值。|
 
-##### <a name="requirements"></a>要求
+##### <a name="requirements"></a>Requirements
 
 |要求| 值|
 |---|---|
@@ -301,17 +302,17 @@ var restId = Office.context.mailbox.convertToRestId(ewsId, Office.MailboxEnums.R
 
 ##### <a name="parameters"></a>参数：
 
-|名称| 类型| 描述|
+|名称| 说明| 说明|
 |---|---|---|
-|`itemId`| 字符串|现有日历约会的 Exchange Web 服务 (EWS) 标识符。|
+|`itemId`| String|现有日历约会的 Exchange Web 服务 (EWS) 标识符。|
 
-##### <a name="requirements"></a>要求
+##### <a name="requirements"></a>Requirements
 
 |要求| 值|
 |---|---|
 |[最低版本的邮箱要求集](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
 |[最低权限级别](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
-|[适用的 Outlook 模式](https://docs.microsoft.com/outlook/add-ins/#extension-points)| 撰写或阅读|
+|[适用的 Outlook 模式](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Compose 或 Read|
 
 ##### <a name="example"></a>示例
 
@@ -336,17 +337,17 @@ Office.context.mailbox.displayAppointmentForm(appointmentId);
 
 ##### <a name="parameters"></a>参数：
 
-|名称| 类型| 描述|
+|名称| 说明| 说明|
 |---|---|---|
-|`itemId`| 字符串|现有消息的 Exchange Web 服务 (EWS) 标识符。|
+|`itemId`| String|现有消息的 Exchange Web 服务 (EWS) 标识符。|
 
-##### <a name="requirements"></a>要求
+##### <a name="requirements"></a>Requirements
 
 |要求| 值|
 |---|---|
 |[最低版本的邮箱要求集](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
 |[最低权限级别](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
-|[适用的 Outlook 模式](https://docs.microsoft.com/outlook/add-ins/#extension-points)| 撰写或阅读|
+|[适用的 Outlook 模式](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Compose 或 Read|
 
 ##### <a name="example"></a>示例
 
@@ -374,7 +375,7 @@ Office.context.mailbox.displayMessageForm(messageId);
 > [!NOTE]
 > 所有参数都是可选参数。
 
-|名称| 类型| 描述|
+|名称| 说明| 描述|
 |---|---|---|
 | `parameters` | 对象 | 描述新约会的参数字典。 |
 | `parameters.requiredAttendees` | Array.&lt;String&gt; &#124; Array.&lt;[EmailAddressDetails](/javascript/api/outlook_1_7/office.emailaddressdetails)&gt; | 包含电子邮件地址的字符串数组或包含约会的每个必需与会者的 `EmailAddressDetails` 对象的数组。数组限制为最多 100 个条目。 |
@@ -386,7 +387,7 @@ Office.context.mailbox.displayMessageForm(messageId);
 | `parameters.subject` | String | 包含约会主题的字符串。字符串长度限制为最多 255 个字符。 |
 | `parameters.body` | 字符串 | 约会的正文。正文内容限制为最大 32 KB。 |
 
-##### <a name="requirements"></a>要求
+##### <a name="requirements"></a>Requirements
 
 |要求| 值|
 |---|---|
@@ -427,7 +428,7 @@ Office.context.mailbox.displayNewAppointmentForm(
 > [!NOTE]
 > 所有参数都是可选参数。
 
-|名称| 类型| 描述|
+|名称| 说明| 描述|
 |---|---|---|
 | `parameters` | 对象 | 描述新邮件的参数字典。 |
 | `parameters.toRecipients` | Array.&lt;String&gt; &#124; Array.&lt;[EmailAddressDetails](/javascript/api/outlook_1_7/office.emailaddressdetails)&gt; | 包含电子邮件地址的字符串数组或包含收件人行上每个收件人的 `EmailAddressDetails` 对象的数组。 数组限制为最多 100 个条目。 |
@@ -436,10 +437,10 @@ Office.context.mailbox.displayNewAppointmentForm(
 | `parameters.subject` | String | 包含邮件主题的字符串。 字符串长度限制为最多 255 个字符。 |
 | `parameters.htmlBody` | String | 邮件的 HTML 正文。 正文内容限制为最大 32 KB。 |
 | `parameters.attachments` | Array.&lt;Object&gt; | JSON 对象（文件或项目附件）数组。 |
-| `parameters.attachments.type` | 字符串 | 指示附件的类型。必须是文件附件的 `file` 或项目附件的 `item`。 |
+| `parameters.attachments.type` | String | 指示附件的类型。必须是文件附件的 `file` 或项目附件的 `item`。 |
 | `parameters.attachments.name` | 字符串 | 一个包含附件的名称的字符串，最多包含 255 个字符。|
 | `parameters.attachments.url` | String | 仅在将 `type` 设置为 `file` 时使用。文件的位置的 URI。 |
-| `parameters.attachments.isInline` | 布尔 | 仅在将 `type` 设置为 `file` 时使用。如果为 `true`，则表示附件将在邮件正文中内联显示，并且不应显示在附件列表中。 |
+| `parameters.attachments.isInline` | Boolean | 仅在将 `type` 设置为 `file` 时使用。如果为 `true`，则表示附件将在邮件正文中内联显示，并且不应显示在附件列表中。 |
 | `parameters.attachments.itemId` | String | 仅在将 `type` 设置为 `item` 时使用。 要附加到新邮件的现有电子邮件的 EWS 项 ID。 最长为 100 个字符的字符串。 |
 
 
@@ -497,12 +498,12 @@ Office.context.mailbox.displayNewMessageForm(
 
 |名称| 类型| 属性| 说明|
 |---|---|---|---|
-| `options` | Object | &lt;可选&gt; | 包含一个或多个以下属性的对象文本。 |
+| `options` | 对象 | &lt;可选&gt; | 包含一个或多个以下属性的对象文本。 |
 | `options.isRest` | 布尔值 |  &lt;可选&gt; | 确定所提供的令牌是否将用于 Outlook REST API 或 Exchange Web 服务。默认值为 `false`。 |
 | `options.asyncContext` | Object |  &lt;可选&gt; | 传递给异步方法的任何状态数据。 |
 |`callback`| 函数||方法完成后，使用单个参数 `callback`（一个 [`asyncResult`](/javascript/api/office/office.asyncresult) 对象）调用在 `AsyncResult` 参数中传递的函数。令牌作为 `asyncResult.value` 属性中的字符串提供。|
 
-##### <a name="requirements"></a>要求
+##### <a name="requirements"></a>Requirements
 
 |要求| 值|
 |---|---|
@@ -544,9 +545,9 @@ function cb(asyncResult) {
 |名称| 类型| 属性| 说明|
 |---|---|---|---|
 |`callback`| 函数||方法完成后，使用单个参数 `callback`（一个 [`asyncResult`](/javascript/api/office/office.asyncresult) 对象）调用在 `AsyncResult` 参数中传递的函数。令牌作为 `asyncResult.value` 属性中的字符串提供。|
-|`userContext`| 对象| &lt;可选&gt;|传递给异步方法的任何状态数据。|
+|`userContext`| Object| &lt;可选&gt;|传递给异步方法的任何状态数据。|
 
-##### <a name="requirements"></a>要求
+##### <a name="requirements"></a>Requirements
 
 |要求| 值|
 |---|---|
@@ -577,15 +578,15 @@ function cb(asyncResult) {
 |名称| 类型| 属性| 说明|
 |---|---|---|---|
 |`callback`| 函数||方法完成后，使用单个参数 `asyncResult`（一个 [`AsyncResult`](/javascript/api/office/office.asyncresult) 对象）调用在 `callback` 参数中传递的函数。<br/><br/>令牌作为 `asyncResult.value` 属性中的字符串提供。|
-|`userContext`| 对象| &lt;可选&gt;|传递给异步方法的任何状态数据。|
+|`userContext`| Object| &lt;可选&gt;|传递给异步方法的任何状态数据。|
 
-##### <a name="requirements"></a>要求
+##### <a name="requirements"></a>Requirements
 
 |要求| 值|
 |---|---|
 |[最低版本的邮箱要求集](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
 |[最低权限级别](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
-|[适用的 Outlook 模式](https://docs.microsoft.com/outlook/add-ins/#extension-points)| 撰写或阅读|
+|[适用的 Outlook 模式](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Compose 或 Read|
 
 ##### <a name="example"></a>示例
 
@@ -639,17 +640,17 @@ XML 请求必须指定 UTF-8 编码。
 
 |名称| 类型| 属性| 说明|
 |---|---|---|---|
-|`data`| 字符串||EWS 请求。|
+|`data`| String||EWS 请求。|
 |`callback`| 函数||方法完成后，使用单个参数 `asyncResult`（一个 [`AsyncResult`](/javascript/api/office/office.asyncresult) 对象）调用在 `callback` 参数中传递的函数。<br/><br/>EWS 调用的 XML 结果作为 `asyncResult.value` 属性中的字符串提供。 如果结果大小超过 1 MB，则改为返回一条错误消息。|
 |`userContext`| 对象| &lt;可选&gt;|传递给异步方法的任何状态数据。|
 
-##### <a name="requirements"></a>要求
+##### <a name="requirements"></a>Requirements
 
 |要求| 值|
 |---|---|
 |[最低版本的邮箱要求集](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
 |[最低权限级别](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadWriteMailbox|
-|[适用的 Outlook 模式](https://docs.microsoft.com/outlook/add-ins/#extension-points)| 撰写或阅读|
+|[适用的 Outlook 模式](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Compose 或 Read|
 
 ##### <a name="example"></a>示例
 
@@ -697,9 +698,9 @@ function callback(asyncResult)  {
 }
 ```
 
-####  <a name="removehandlerasynceventtype-handler-options-callback"></a>removeHandlerAsync(eventType, handler, [options], [callback])
+####  <a name="removehandlerasynceventtype-options-callback"></a>removeHandlerAsync (eventType，[选项] [回调])
 
-删除支持事件的事件处理程序。
+删除的事件处理程序支持的事件类型。
 
 当前，唯一支持的事件类型是 `Office.EventType.ItemChanged`。
 
@@ -708,10 +709,9 @@ function callback(asyncResult)  {
 | 名称 | 类型 | 属性 | 说明 |
 |---|---|---|---|
 | `eventType` | [Office.EventType](office.md#eventtype-string) || 应撤销处理程序的事件。 |
-| `handler` | 函数 || 用于处理事件的函数。此函数必须接受一个参数，即对象文本。参数上的 `type` 属性将匹配传递给 `addHandlerAsync` 的 `eventType` 参数。 |
 | `options` | Object | &lt;可选&gt; | 包含一个或多个以下属性的对象文本。 |
-| `options.asyncContext` | 对象 | &lt;可选&gt; | 开发人员可以提供他们想要在回调方法中访问的任何对象。 |
-| `callback` | 函数| &lt;可选&gt;|方法完成后，使用单个参数 `callback`（一个 [`asyncResult`](/javascript/api/office/office.asyncresult) 对象）调用在 `AsyncResult` 参数中传递的函数。|
+| `options.asyncContext` | Object | &lt;可选&gt; | 开发人员可以提供他们想要在回调方法中访问的任何对象。 |
+| `callback` | 函数| &lt;optional&gt;|方法完成后，使用单个参数 `callback`（一个 [`asyncResult`](/javascript/api/office/office.asyncresult) 对象）调用在 `AsyncResult` 参数中传递的函数。|
 
 ##### <a name="requirements"></a>Requirements
 

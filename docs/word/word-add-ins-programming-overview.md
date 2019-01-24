@@ -2,12 +2,13 @@
 title: Word 加载项概述
 description: ''
 ms.date: 09/24/2018
-ms.openlocfilehash: 64b306e7f0f6f706da047a4358150bcc0b5f85fe
-ms.sourcegitcommit: 60fd8a3ac4a6d66cb9e075ce7e0cde3c888a5fe9
+localization_priority: Priority
+ms.openlocfilehash: b279034b285a1b73fd32d21d55b6cced6e40818a
+ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/28/2018
-ms.locfileid: "27457633"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "29389387"
 ---
 # <a name="word-add-ins-overview"></a>Word 加载项概述
 

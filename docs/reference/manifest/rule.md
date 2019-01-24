@@ -1,13 +1,14 @@
 ---
 title: 清单文件中的 Rule 元素
 description: ''
-ms.date: 11/30/2018
-ms.openlocfilehash: 2c5ae07e5d0a3c9c8979abcada3d758c415e2e59
-ms.sourcegitcommit: 60fd8a3ac4a6d66cb9e075ce7e0cde3c888a5fe9
-ms.translationtype: HT
+ms.date: 12/27/2018
+localization_priority: Normal
+ms.openlocfilehash: 38e724e6962c48efd0902be315c49ebb4cf6c798
+ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/28/2018
-ms.locfileid: "27457451"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "29388498"
 ---
 # <a name="rule-element"></a>Rule 元素
 

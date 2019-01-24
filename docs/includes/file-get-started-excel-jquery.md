@@ -1,3 +1,11 @@
+---
+ms.openlocfilehash: cc6c19614ae1cc7e2eb0ff8ef49d0f9f62da634f
+ms.sourcegitcommit: 984c425e2ad58577af8f494079923cab165ad36c
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 01/18/2019
+ms.locfileid: "28726987"
+---
 # <a name="build-an-excel-add-in-using-jquery"></a>使用 jQuery 生成 Excel 加载项
 
 本文将逐步介绍如何使用 jQuery 和 Excel JavaScript API 生成 Excel 加载项。 
@@ -56,11 +64,14 @@
     'use strict';
 
     (function () {
-        Office.initialize = function (reason) {
+
+        Office.onReady(function() {
+            // Office is ready
             $(document).ready(function () {
+                // The document is ready
                 $('#set-color').click(setColor);
             });
-        };
+        });
 
         function setColor() {
             Excel.run(function (context) {
@@ -209,11 +220,13 @@
     'use strict';
     
     (function () {
-        Office.initialize = function (reason) {
+        Office.onReady(function() {
+            // Office is ready
             $(document).ready(function () {
+                // The document is ready
                 $('#set-color').click(setColor);
             });
-        };
+        });
 
         function setColor() {
             Excel.run(function (context) {

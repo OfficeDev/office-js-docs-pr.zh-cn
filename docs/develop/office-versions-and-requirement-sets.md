@@ -2,12 +2,13 @@
 title: Office 版本和要求集
 description: ''
 ms.date: 03/29/2018
-ms.openlocfilehash: b59199d4a9319f0d656b99886f533121253d5e4f
-ms.sourcegitcommit: 60fd8a3ac4a6d66cb9e075ce7e0cde3c888a5fe9
+localization_priority: Priority
+ms.openlocfilehash: fce111a25a4d88964827a403aad80d8899c7fb86
+ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/28/2018
-ms.locfileid: "27457829"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "29386678"
 ---
 # <a name="office-versions-and-requirement-sets"></a>Office 版本和要求集
 

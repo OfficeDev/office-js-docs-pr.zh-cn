@@ -2,11 +2,12 @@
 title: 使用 React 生成 Excel 加载项
 description: ''
 ms.date: 10/19/2018
-ms.openlocfilehash: 7aec99bf7a2a6e2c14260ddf896ab1a9d4b01d48
-ms.sourcegitcommit: c400a220783b03a739449e2d3ff00bbffe5ec7c1
+localization_priority: Priority
+ms.openlocfilehash: 7237680d3ea1ebb8391ca443aef80bba2ffdfdd1
+ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/20/2018
-ms.locfileid: "25681796"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "29385985"
 ---
 [!include[Excel add-ins get started react](../includes/file-get-started-excel-react.md)]

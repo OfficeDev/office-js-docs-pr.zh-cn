@@ -2,12 +2,13 @@
 title: Office 加载项中的 Office UI Fabric 
 description: ''
 ms.date: 12/04/2017
-ms.openlocfilehash: 7f66a16743da4e7f1e03aeb2c7317d918e941746
-ms.sourcegitcommit: 3d8454055ba4d7aae12f335def97357dea5beb30
+localization_priority: Priority
+ms.openlocfilehash: ec5b443d71e465a6e43cb0d871fc6fddd30e231a
+ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "27270591"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "29388036"
 ---
 # <a name="office-ui-fabric-in-office-add-ins"></a>Office 加载项中的 Office UI Fabric 
 

@@ -2,12 +2,13 @@
 title: Office 加载项开发最佳做法
 description: ''
 ms.date: 01/23/2018
-ms.openlocfilehash: 87cdbe354e33290e0f6944be1ed592ca581d4426
-ms.sourcegitcommit: 60fd8a3ac4a6d66cb9e075ce7e0cde3c888a5fe9
+localization_priority: Priority
+ms.openlocfilehash: 774dacc2fa48a75a95b88740d65eca88ad7dcfdd
+ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/28/2018
-ms.locfileid: "27457990"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "29388978"
 ---
 # <a name="best-practices-for-developing-office-add-ins"></a>Office 加载项开发最佳做法
 
