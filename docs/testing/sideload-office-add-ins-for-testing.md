@@ -2,12 +2,13 @@
 title: 在 Office Online 中旁加载 Office 加载项以供测试
 description: 通过旁加载在 Office Online 中测试 Office 加载项
 ms.date: 10/19/2018
-ms.openlocfilehash: 94138cd0a22f053a9471bf905b8d0838dead15cf
-ms.sourcegitcommit: 3a808cf39cbc77056968d53a5957462371ad83a1
+localization_priority: Priority
+ms.openlocfilehash: f656b83a7d9841cc362276ccc7c5729927cbc392
+ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "25911226"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "29389401"
 ---
 # <a name="sideload-office-add-ins-in-office-online-for-testing"></a>在 Office Online 中旁加载 Office 加载项以供测试
 
@@ -64,7 +65,11 @@ ms.locfileid: "25911226"
 6. 验证是否已安装外接程序。例如，如果它是一个外接程序命令，它应显示在功能区或上下文菜单上。如果它是一个任务窗格外接程序，则应显示窗格。
 
 > [!NOTE]
->若要使用 Edge 测试 Office 加载项，请在 Edge 搜索栏中输入“** about：flags **”以调出“开发人员设置”选项。  选中“**允许本地主机环回**”选项，然后重新启动 Edge。
+>若要使用 Edge 测试 Office 加载项，需要执行两个配置步骤： 
+>
+> - 在 Windows 命令提示符下，运行以下行：`CheckNetIsolation LoopbackExempt -a -n="Microsoft.MicrosoftEdge_8wekyb3d8bbwe"`
+>
+> - 在 Edge 搜索栏中输入“**about:flags**”以调出“开发人员设置”选项。  选中“**允许本地主机环回**”选项，然后重新启动 Edge。
 
 >    ![选中此框后，Edge 会允许本地主机环回选项。](../images/allow-localhost-loopback.png)
 

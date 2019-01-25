@@ -2,12 +2,13 @@
 title: 在 Office 加载项中使用 Office UI Fabric React
 description: ''
 ms.date: 12/04/2017
-ms.openlocfilehash: 4baeea20457892bcc7b94b381f5c0a577274408a
-ms.sourcegitcommit: 30435939ab8b8504c3dbfc62fd29ec6b0f1a7d22
+localization_priority: Priority
+ms.openlocfilehash: 6013275a9a7a4d5d01f37bbbd268a9258cc82f17
+ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "23944273"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "29389282"
 ---
 # <a name="use-office-ui-fabric-react-in-office-add-ins"></a>在 Office 加载项中使用 Office UI Fabric React
 
@@ -18,9 +19,9 @@ Office UI Fabric 是用于生成 Office 和 Office 365 用户体验的 JavaScrip
 > [!NOTE]
 > 如果按照本文中的步骤操作，也可以在加载项中使用 Fabric Core。
 
-## <a name="step-1---create-your-project-with-the-yeoman-generator-for-office"></a>第 1 步 - 使用适用于 Office 的 Yeoman 生成器创建项目
+## <a name="step-1---create-your-project-with-the-yeoman-generator-for-office"></a>第 1 步 - 使用 Office 的 Yeoman 生成器创建项目
 
-若要创建使用 Fabric React 的加载项，我们建议使用 Office 的 Yeoman 生成器。Office 的 Yeoman 生成器提供开发 Office 加载项所需的项目基架和版本管理。
+若要创建使用 Fabric React 的外接程序，我们建议使用 Office 的 Yeoman 生成器。 Office 的 Yeoman 生成器提供开发 Office 外接程序所需的项目基架和版本管理。
 
 若要创建项目，请使用 **Windows PowerShell**（而不是命令提示符）执行以下步骤：
 

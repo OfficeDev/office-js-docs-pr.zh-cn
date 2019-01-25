@@ -1,13 +1,14 @@
 ---
 title: Outlook 外接程序 API 要求集 1.7
 description: ''
-ms.date: 10/09/2018
-ms.openlocfilehash: 2e233c614a902a724ead0240c4e5229e1053ee81
-ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
+ms.date: 01/16/2019
+localization_priority: Priority
+ms.openlocfilehash: 9023997e06a659252abeecca4681b2ec250fd63c
+ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/22/2018
-ms.locfileid: "27432310"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "29387966"
 ---
 # <a name="outlook-add-in-api-requirement-set-17"></a>Outlook 外接程序 API 要求集 1.7
 
@@ -32,7 +33,7 @@ ms.locfileid: "27432310"
 - 修改了 [Office.context.mailbox.item.from](office.context.mailbox.item.md#from-emailaddressdetailsjavascriptapioutlook17officeemailaddressdetailsfromjavascriptapioutlook17officefrom)：进行了修改，以便在撰写模式下获取收件人值。
 - 修改了 [Office.context.mailbox.item.organizer](office.context.mailbox.item.md#organizer-emailaddressdetailsjavascriptapioutlook17officeemailaddressdetailsorganizerjavascriptapioutlook17officeorganizer) - 进行了修改，以便在撰写模式下获取组织者值。
 - 添加了 [Office.context.mailbox.item.recurrence](office.context.mailbox.item.md#nullable-recurrence-recurrencejavascriptapioutlook17officerecurrence)：添加了一个新属性，该属性用于获取或设置可提供约会项目定期模式的管理方法的对象。 该属性还可用于获取会议请求项目的定期模式。
-- 添加了 [Office.context.mailbox.item.removeHandlerAsync](office.context.mailbox.item.md#removehandlerasynceventtype-handler-options-callback)：添加了一种新方法，该方法可删除事件处理程序。
+- 添加了 [Office.context.mailbox.item.removeHandlerAsync](office.context.mailbox.item.md#removehandlerasynceventtype-options-callback)：添加了一种新方法，该方法可删除受支持的事件类型的事件处理程序。
 - 添加了 [Office.context.mailbox.item.seriesId](office.context.mailbox.item.md#nullable-seriesid-string)，添加了一个新属性，该属性可获取事件所属系列的 ID。
 - 添加了 [Office.MailboxEnums.Days](/javascript/api/outlook_1_7/office.mailboxenums.days)：添加了一个新枚举，该枚举指定星期几或日期类型。
 - 添加了 [Office.MailboxEnums.Month](/javascript/api/outlook_1_7/office.mailboxenums.month)：添加了一个新枚举，该枚举指定月份。
