@@ -2,12 +2,13 @@
 title: Excel JavaScript API 要求集
 description: ''
 ms.date: 10/09/2018
-ms.openlocfilehash: 4456ac3cb2411f9a22cb131b7a53884a760a2f22
-ms.sourcegitcommit: 60fd8a3ac4a6d66cb9e075ce7e0cde3c888a5fe9
+localization_priority: Priority
+ms.openlocfilehash: fdcbee0374851f0f88130ae8afe28eec3a0fe77c
+ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/28/2018
-ms.locfileid: "27458144"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "29388722"
 ---
 # <a name="excel-javascript-api-requirement-sets"></a>Excel JavaScript API 要求集
 
@@ -147,7 +148,7 @@ Excel JavaScript API 要求集 1.8 的功能包括适用于数据透视表、数
 |[chartSeries](/javascript/api/excel/excel.chartseries)|_属性_ > overlap|指定条柱的摆放方式。 可以是 -100 到 100 之间的值。 只适用于二维条形图和二维柱形图。 读写。|1.8|
 |[chartSeries](/javascript/api/excel/excel.chartseries)|_属性_ > secondPlotSize|返回或设置复合饼图或复合条饼图的辅助分区的大小，以占主饼图大小的百分比表示。 可以是 5 到 200 之间的值。 读写。|1.8|
 |[chartSeries](/javascript/api/excel/excel.chartseries)|_属性_ > varyByCategories|如果 Excel 为每个数据标记分配不同的颜色或图案，则为 True。 图表必须只包含一个系列。 读写。|1.8|
-|[chartSeries](/javascript/api/excel/excel.chartseries)|_关系_ > axisGroup|返回或设置指定系列的组。 读写|1.8|
+|[chartSeries](/javascript/api/excel/excel.chartseries)|_关系_ > axisGroup|返回或设置指定系列的组。读写|1.8|
 |[chartSeries](/javascript/api/excel/excel.chartseries)|_关系_ > dataLabels|表示系列中所有数据标签的集合。 只读。|1.8|
 |[chartSeries](/javascript/api/excel/excel.chartseries)|_关系_ > splitType|返回或设置复合饼图或复合条饼图中两个分区的拆分方式。 读写。|1.8|
 |[chartTrendline](/javascript/api/excel/excel.charttrendline)|_属性_ > backwardPeriod|表示趋势线向后延伸的周期数。|1.8|
@@ -1005,7 +1006,7 @@ API 包括通过键获取设置条目的 `getItem()`，以及将指定键值设�
 
 ## <a name="excel-javascript-api-11"></a>Excel JavaScript API 1.1
 
-Excel JavaScript API 1.1 是首版 API。 有关 API 的详细信息，请参 [Excel JavaScript API ](/javascript/api/excel)参考主题。
+Excel JavaScript API 1.1 是首版 API。有关 API 的详细信息，请参阅 [Excel JavaScript API](/javascript/api/excel) 参考主题。
 
 ## <a name="see-also"></a>另请参阅
 

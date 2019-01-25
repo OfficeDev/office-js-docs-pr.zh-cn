@@ -1,13 +1,14 @@
 ---
 title: Office.context.mailbox - 要求集 1.5
 description: ''
-ms.date: 10/31/2018
-ms.openlocfilehash: c80ed3837315f3bf51da302d91f08e2114af3b2f
-ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
+ms.date: 01/16/2019
+localization_priority: Priority
+ms.openlocfilehash: fb84d1e7a5ffd1a5549f213e63ae827f8a883d34
+ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/22/2018
-ms.locfileid: "27433955"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "29389429"
 ---
 # <a name="mailbox"></a>邮箱
 
@@ -41,7 +42,7 @@ ms.locfileid: "27433955"
 | [getCallbackTokenAsync](#getcallbacktokenasynccallback-usercontext) | 方法 |
 | [getUserIdentityTokenAsync](#getuseridentitytokenasynccallback-usercontext) | 方法 |
 | [makeEwsRequestAsync](#makeewsrequestasyncdata-callback-usercontext) | 方法 |
-| [removeHandlerAsync](#removehandlerasynceventtype-handler-options-callback) | 方法 |
+| [removeHandlerAsync](#removehandlerasynceventtype-options-callback) | 方法 |
 
 ### <a name="namespaces"></a>命名空间
 
@@ -639,9 +640,9 @@ function callback(asyncResult)  {
 }
 ```
 
-####  <a name="removehandlerasynceventtype-handler-options-callback"></a>removeHandlerAsync(eventType, handler, [options], [callback])
+####  <a name="removehandlerasynceventtype-options-callback"></a>removeHandlerAsync(eventType, [options], [callback])
 
-删除支持事件的事件处理程序。
+删除受支持事件类型的事件处理程序。
 
 当前，唯一支持的事件类型是 `Office.EventType.ItemChanged`。
 
@@ -650,8 +651,7 @@ function callback(asyncResult)  {
 | 名称 | 类型 | 属性 | 说明 |
 |---|---|---|---|
 | `eventType` | [Office.EventType](office.md#eventtype-string) || 应撤销处理程序的事件。 |
-| `handler` | 函数 || 用于处理事件的函数。此函数必须接受一个参数，即对象文本。参数上的 `type` 属性将匹配传递给 `addHandlerAsync` 的 `eventType` 参数。 |
-| `options` | Object | &lt;可选&gt; | 包含一个或多个以下属性的对象文本。 |
+| `options` | 对象 | &lt;可选&gt; | 包含一个或多个以下属性的对象文本。 |
 | `options.asyncContext` | 对象 | &lt;可选&gt; | 开发人员可以提供他们想要在回调方法中访问的任何对象。 |
 | `callback` | 函数| &lt;可选&gt;|方法完成后，使用单个参数 `callback`（一个 [`asyncResult`](/javascript/api/office/office.asyncresult) 对象）调用在 `AsyncResult` 参数中传递的函数。|
 
