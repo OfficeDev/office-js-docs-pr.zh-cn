@@ -1,13 +1,14 @@
 ---
 title: 了解适用于 Office 的 JavaScript API
 description: ''
-ms.date: 10/17/2018
-ms.openlocfilehash: 14de5d8bab791d0954179c21163ba0a08824b834
-ms.sourcegitcommit: 60fd8a3ac4a6d66cb9e075ce7e0cde3c888a5fe9
+ms.date: 01/17/2019
+localization_priority: Priority
+ms.openlocfilehash: e685985783b08b51725165b03863ff3b0fffeeaf
+ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/28/2018
-ms.locfileid: "27458102"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "29388820"
 ---
 # <a name="understanding-the-javascript-api-for-office"></a>了解适用于 Office 的 JavaScript API
 
@@ -44,16 +45,21 @@ Office 加载项通常使用启动逻辑执行以下操作：
 
 - 使用 Office 对话框 API 提示用户使用默认的加载项设置值。
 
-但在完全加载库前，启动代码不得调用任何 Office.js API。 有两种方法可让代码确保已加载库。 以下各部分介绍了这两种方法： 
+但在加载库前，启动代码不得调用任何 Office.js API。 有两种方法可让代码确保已加载库。 以下各部分介绍了这两种方法： 
 
 - [使用 Office.onReady() 进行初始化](#initialize-with-officeonready)
 - [使用 Office.initialize 进行初始化](#initialize-with-officeinitialize)
 
-有关这两种方法之间的差别信息，请参阅 [Office.initialize 和 Office.onReady() 之间的主要差别](#major-differences-between-officeinitialize-and-officeonready)。 有关初始化加载项时的事件顺序的更多详细信息，请参阅 [加载 DOM 和运行时环境](loading-the-dom-and-runtime-environment.md)。
+> [!TIP]
+> 建议使用 `Office.onReady()` 取代 `Office.initialize`。 虽然仍然支持 `Office.initialize`，但使用 `Office.onReady()` 可提供更大的灵活性。 可以仅将一个处理程序分配到 `Office.initialize` 并仅由 Office 基础结构调用一次，但可以在代码中的不同位置调用 `Office.onReady()` 并使用不同的回调。
+> 
+> 有关这两种方法之间的差别信息，请参阅 [Office.initialize 和 Office.onReady() 之间的主要差别](#major-differences-between-officeinitialize-and-officeonready)。
+
+有关初始化加载项时的事件顺序的更多详细信息，请参阅 [加载 DOM 和运行时环境](loading-the-dom-and-runtime-environment.md)。
 
 ### <a name="initialize-with-officeonready"></a>使用 Office.onReady() 进行初始化
 
-`Office.onReady()` 是一个异步方法，它在查看是否完全加载 Office.js 库时返回 Promise 对象。 仅在加载库时，它才将 Promise 解析为一个对象，该对象指定具有 `Office.HostType` 枚举值（`Excel`、`Word` 等）的 Office 主机应用程序的对象和具有 `Office.PlatformType` 枚举值（`PC`、`Mac`、`OfficeOnline` 等）的平台。 如果在调用 `Office.onReady()` 时已加载库，则 Promise 将立即解析。
+`Office.onReady()` 是一个异步方法，它在查看是否加载 Office.js 库时返回 Promise 对象。 仅在加载库时，它才将 Promise 解析为一个对象，该对象指定具有 `Office.HostType` 枚举值（`Excel`、`Word` 等）的 Office 主机应用程序的对象和具有 `Office.PlatformType` 枚举值（`PC`、`Mac`、`OfficeOnline` 等）的平台。 如果在调用 `Office.onReady()` 时已加载库，则 Promise 将立即解析。
 
 调用 `Office.onReady()` 的一种方法是向其传递一个回调方法。 下面是一个示例：
 
@@ -107,7 +113,7 @@ Office.onReady(function() {
 
 ### <a name="initialize-with-officeinitialize"></a>使用 Office.initialize 进行初始化
 
-当 Office.js 库完全加载并准备好用于用户交互时将触发初始化事件。 可将处理程序分配到实现初始化逻辑的 `Office.initialize`。 以下是检查用户的 Excel 版本是否支持加载项可能调用的所有 API 的示例。
+当 Office.js 库加载并准备好用于用户交互时将触发初始化事件。 可将处理程序分配到实现初始化逻辑的 `Office.initialize`。 以下是检查用户的 Excel 版本是否支持加载项可能调用的所有 API 的示例。
 
 ```js
 Office.initialize = function () {
@@ -143,13 +149,6 @@ Office.initialize = function (reason) {
 
 有关详细信息，请参阅 [Office.initialize 事件](https://docs.microsoft.com/javascript/api/office)和 [InitializationReason 枚举](https://docs.microsoft.com/javascript/api/office/office.initializationreason)。
 
-> [!NOTE]
-> 目前，无论是否同时调用 `Office.onReady()`均必须设置 `Office.Initialize`。 如果无需使用 `Office.Initialize`，可以将其设置为一个空函数，如以下示例中所示。
-> 
->```js
->Office.initialize = function () {};
->```
-
 ### <a name="major-differences-between-officeinitialize-and-officeonready"></a>Office.initialize 和 Office.onReady 之间的主要差别
 
 - 可以仅将一个处理程序分配到 `Office.initialize` 并仅由 Office 基础结构调用一次，但可以在代码中的不同位置调用 `Office.onReady()` 并使用不同的回调。 例如，只要自定义脚本使用运行初始化逻辑的回调进行加载，代码就可以调用 `Office.onReady()`。代码还可以在任务窗格中设置一个按钮，其脚本会使用不同的回调调用 `Office.onReady()`。 如果是这样，则会在单击该按钮后运行第二个回调。
@@ -157,7 +156,12 @@ Office.initialize = function (reason) {
 - `Office.initialize` 事件将在 Office.js 初始化其本身的内部过程的末尾处触发。 并且它会在内部过程结束后*立即*触发。 如果将处理程序分配到事件所使用的代码在事件触发后执行的时间过长，则处理程序将不会运行。 例如，如果使用的是 WebPack 任务管理器，则在加载 Office.js 后但在加载自定义 JavaScript 前，它会配置加载项的主页以加载填充代码文件。 在脚本加载和分配处理程序时，初始化事件已经发生。 但调用 `Office.onReady()` 永远不会“太迟”。 如果初始化事件已经发生，则回调将立即运行。
 
 > [!NOTE]
-> 即使没有启动逻辑，也应在加载项 JavaScript 加载时将空函数分配到 `Office.initialize`，如以下示例中所示。 在初始化事件触发且指定的事件处理程序函数运行前，某些 Office 主机和平台组合将不会加载任务窗格。
+> 即使没有启动逻辑，也应在加载项 JavaScript 加载时调用 `Office.onReady()` 或将空函数分配到 `Office.initialize`。 有些 Office 主机和平台组合只有在发生这些情况之一后才会加载任务窗格。 以下示例显示了这两种方法。
+>
+>```js  
+>Office.onReady();  
+>```    
+>
 > 
 >```js
 >Office.initialize = function () {};

@@ -1,19 +1,20 @@
 ---
-title: 部署和发布 Office 外接程序 |Microsoft Docs
-description: 用以测试或向用户发布的部署 Office 外接程序的方法和选项。
+title: 部署和发布 Office 加载项 | Microsoft Docs
+description: 部署 Office 加载项以进行测试或分发给用户的方法和选项。
 ms.date: 01/23/2018
-ms.openlocfilehash: ada786ed7ded1f34d564389c09c2cd5c25c2a331
-ms.sourcegitcommit: eb74e94d3e1bc1930a9c6582a0a99355d0da34f2
+localization_priority: Priority
+ms.openlocfilehash: 0a99218a3eed3143f70ace6e63f5a01b952a5623
+ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "25004929"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "29388764"
 ---
-# <a name="deploy-and-publish-your-office-add-in"></a>部署和发布 Office 外接程序
+# <a name="deploy-and-publish-your-office-add-in"></a>部署和发布 Office 加载项
 
 可以使用几种方法之一来部署 Office 外接程序，以用于对用户进行测试或分发：
 
-|**方法**|**使用...**|
+|**方法**|**Use...**|
 |:---------|:------------|
 |[旁加载](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)|在开发过程中测试在 Windows、Office Online、iPad 或 Mac 上运行的加载项。|
 |[集中部署](centralized-deployment.md)|在云或混合部署中，使用 Office 365 管理中心将加载项分发给组织中的用户。|
@@ -37,9 +38,9 @@ ms.locfileid: "25004929"
 | 任务窗格       | X           | X                       | X          | X                    |
 | 命令         | X           | X                       | X          |                      |
 
-* SharePoint 目录不支持 Office for Mac。
+&#42; SharePoint 目录不支持 Office for Mac。
 
-### <a name="deployment-options-for-outlook-add-ins"></a>Outlook 外接程序的部署选项
+### <a name="deployment-options-for-outlook-add-ins"></a>Outlook 加载项的部署选项
 
 | 扩展点 | 旁加载 | Exchange 服务器 | AppSource    |
 |:----------------|:-----------:|:---------------:|:------------:|
@@ -65,7 +66,7 @@ SharePoint 加载项目录是特殊网站集，创建后可用于托管 Word、E
 如果要在本地环境中部署外接程序，请使用 SharePoint 目录。有关详细信息，请参阅[将任务窗格和内容外接程序发布到 SharePoint 目录](publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md)。
 
 > [!NOTE]
-> SharePoint 目录不支持 Office for Mac。 若要部署 Office 外接程序到 Mac 客户端，您必须将它们提交给 [AppSource](https://docs.microsoft.com/office/dev/store/submit-to-the-office-store)。 
+> SharePoint 目录不支持 Office for Mac。 若要向 Mac 客户端部署 Office 加载项，必须将其提交到 [AppSource](https://docs.microsoft.com/office/dev/store/submit-to-the-office-store)。 
 
 ### <a name="outlook-add-in-deployment"></a>Outlook 加载项部署
 
@@ -82,7 +83,7 @@ Outlook 外接程序部署需要以下内容：
 
 - [旁加载 Outlook 加载项以供测试](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)
 - [提交到 AppSource][AppSource]
-- [Office 加载项设计指南](../design/add-in-design.md)
+- [Office 加载项的设计准则](../design/add-in-design.md)
 - [创建有效的 AppSource 一览](https://docs.microsoft.com/office/dev/store/create-effective-office-store-listings)
 - [排查 Office 加载项中的用户错误](../testing/testing-and-troubleshooting.md)
 
