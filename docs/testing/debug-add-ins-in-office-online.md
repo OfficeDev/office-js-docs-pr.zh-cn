@@ -2,17 +2,18 @@
 title: 在 Office Online 中调试加载项
 description: 如何使用 Office Online 测试和调试加载项。
 ms.date: 03/14/2018
-ms.openlocfilehash: ee458352c78a3bb7828e66df9fcde12958f3df93
-ms.sourcegitcommit: 30435939ab8b8504c3dbfc62fd29ec6b0f1a7d22
+localization_priority: Priority
+ms.openlocfilehash: 6252a713444f7ec8bf955c3283a650f72cbcbed1
+ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "23945762"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "29386552"
 ---
 # <a name="debug-add-ins-in-office-online"></a>在 Office Online 中调试加载项
 
 
-您可以生成和调试未运行 Windows 或 Office 桌面客户端计算机上加载&mdash;例如，如果您正在开发 mac。 如何使用 Office Online 测试和调试加载项。 
+您可以在并非运行 Windows 或 Office 2013 或 Office 2016 桌面客户端的计算机上构建和调试外接程序，例如，如果您正在使用 Mac 进行开发。本文介绍如何使用 Office Online 测试和调试您的外接程序。 本文介绍如何使用 Office Online 测试和调试加载项。 
 
 ## <a name="prerequisites"></a>先决条件
 

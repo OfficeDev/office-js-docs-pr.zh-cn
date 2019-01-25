@@ -1,13 +1,14 @@
 ---
 title: 将任务窗格和内容加载项发布到 SharePoint 目录
-description: ''
+description: 为使组织内的用户可访问 Office 加载项，管理员可以将 Office 加载项清单文件上传到组织的加载项目录中。
 ms.date: 01/23/2018
-ms.openlocfilehash: 6bf63c36d952b901faaa16b0d93748023ac0fef9
-ms.sourcegitcommit: 4de2a1b62ccaa8e51982e95537fc9f52c0c5e687
+localization_priority: Priority
+ms.openlocfilehash: 9ce5d6b1ebce4fc5589df2c349eb6676c2c02bbc
+ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/10/2018
-ms.locfileid: "22925295"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "29386867"
 ---
 # <a name="publish-task-pane-and-content-add-ins-to-a-sharepoint-catalog"></a>将任务窗格和内容加载项发布到 SharePoint 目录
 
@@ -16,21 +17,24 @@ ms.locfileid: "22925295"
 > [!IMPORTANT]
 > - SharePoint 上的加载项目录不支持在[加载项清单](../develop/add-in-manifests.md)的 `VersionOverrides` 节点中实现的加载项功能（如加载项命令）。
 > - 如果面向的是云或混合环境，建议通过 [Office 365 管理中心使用集中部署](../publish/centralized-deployment.md)来发布加载项。
-> - Office 2016 for Mac 不支持 SharePoint 目录。若要向 Mac 客户端部署 Office 加载项，必须将它们提交到 [AppSource](https://docs.microsoft.com/office/dev/store/submit-to-the-office-store)。   
+> - SharePoint 目录不支持 Office for Mac。 若要向 Mac 客户端部署 Office 加载项，必须将其提交到 [AppSource](https://docs.microsoft.com/office/dev/store/submit-to-the-office-store)。   
 
 ## <a name="set-up-an-add-in-catalog"></a>设置加载项目录
 
 完成以下部分之一中的步骤，以在 SharePoint 或 Office 365 上设置加载项目录。
 
-### <a name="to-set-up-an-add-in-catalog-on-sharepoint"></a>在 SharePoint 上设置加载项目录
+### <a name="to-set-up-an-add-in-catalog-for-on-premises-sharepoint"></a>为本地 SharePoint 设置加载项目录
 
-1. 浏览到“**管理中心网站**”（“**开始**” > “**所有程序**” > “**Microsoft SharePoint 2013 产品**” > “**SharePoint 2013 管理中心**”）。
+> [!NOTE]
+> 本地 SharePoint 中的 UI 仍将加载项称为**应用程序**。
+
+1. 浏览到**管理中心网站**。
     
-2. 在左侧的任务窗格中，选择“**外接程序**”。
+2. 在左侧的任务窗格中，选择“**应用程序**”。
     
-3. 在“**外接程序**”页面的“**外接程序管理**”下，选择“**管理外接程序目录**”。
+3. 在“**应用程序**”页的“**应用程序管理**”下方，选择“**管理应用程序目录**”。
     
-4. 在“**管理外接程序目录**”页上，确保在“**Web 应用程序选择器**”中选择了正确的 Web 应用程序。
+4. 在“**管理应用程序目录**”页上，确保在“**Web 应用程序选择器**”中选择了正确的 Web 应用程序。
     
 5. 选择“**查看网站设置**”。
     
@@ -40,7 +44,7 @@ ms.locfileid: "22925295"
     
 8. 在“**共享‘应用程序目录网站’**”对话框中，指定一个或多个网站用户，为他们设置相应的权限，选择性地设置其他选项，然后选择“**共享**”。
     
-9. 若要向 Office 加载项加载项目录添加加载项，请选择“Office 加载项”****。
+9. 若要向 Office 加载项加载项目录添加加载项，请选择“**针对 Office 的应用程序**”。
 
 ### <a name="to-set-up-an-add-in-catalog-on-office-365"></a>在 Office 365 上设置加载项目录
 
@@ -100,6 +104,6 @@ ms.locfileid: "22925295"
     
     - `https:// _domain_ /sites/ _AddinCatalogSiteCollection_`
     
-3. 关闭并重新打开 Office 应用。此时，加载项目录会出现在 **Office 加载项**对话框中。
+3. 关闭并重新打开 Office 应用。此时，加载项目录会出现在“**Office 加载项**”对话框中。
 
-或者，管理员可以使用组策略在 SharePoint 上指定 Office 加载项目录。 有关详细信息，请参阅[使用组策略管理用户安装和使用 Office 加载项的方式](https://docs.microsoft.com/previous-versions/office/office-2013-resource-kit/jj219429(v=office.15)#using-group-policy-to-manage-how-users-can-install-and-use-apps-for-office)一节。
+或者，管理员可以使用组策略在 SharePoint 上指定 Office 加载项目录。 有关详细信息，请参阅[使用组策略管理用户如何安装和使用 Office 加载项](https://docs.microsoft.com/previous-versions/office/office-2013-resource-kit/jj219429(v=office.15)#using-group-policy-to-manage-how-users-can-install-and-use-apps-for-office)一节。
