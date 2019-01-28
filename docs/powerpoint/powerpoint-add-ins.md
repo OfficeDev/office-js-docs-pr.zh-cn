@@ -1,14 +1,14 @@
 ---
 title: PowerPoint 加载项
 description: ''
-ms.date: 10/16/2018
+ms.date: 01/24/2019
 localization_priority: Priority
-ms.openlocfilehash: 022bed349dde061b61a8db0711a94a0a4d77f2e1
-ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
+ms.openlocfilehash: da60c87993bc67057aeec6a4e754f57ae376ddd4
+ms.sourcegitcommit: b3812245ee1426c299e6484fdd2096a9212ce823
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "29388631"
+ms.lasthandoff: 01/25/2019
+ms.locfileid: "29539861"
 ---
 # <a name="powerpoint-add-ins"></a>PowerPoint 加载项
 
@@ -30,7 +30,7 @@ ms.locfileid: "29388631"
 
 ## <a name="detect-the-presentations-active-view-and-handle-the-activeviewchanged-event"></a>检测演示文稿的活动视图并处理 ActiveViewChanged 事件
 
-若要生成内容外接程序，则需要获取演示文稿的活动视图，并在 `ActiveViewChanged` 处理程序期间处理 `Office.Initialize` 事件。 
+若要生成内容外接程序，则需要获取演示文稿的活动视图，并在 `ActiveViewChanged` 处理程序期间处理 `Office.Initialize` 事件。
 
 > [!NOTE]
 > 在 PowerPoint Online 中，[Document.ActiveViewChanged](https://docs.microsoft.com/javascript/api/office/office.document) 事件永远不会触发，因为幻灯片放映模式被视为新会话。 在这种情况下，加载项必须在加载时提取活动视图，如下面的代码示例所述。
@@ -39,7 +39,7 @@ ms.locfileid: "29388631"
 
 - `getActiveFileView` 函数将调用 [Document.getActiveViewAsync](https://docs.microsoft.com/javascript/api/office/office.document#getactiveviewasync-options--callback-) 方法，以返回演示文稿的当前视图是“编辑”（你可在其中编辑幻灯片的任何视图，如**普通**或**大纲视图**）还是“阅读”（**幻灯片放映**或**阅读视图**）。
 
-- `registerActiveViewChanged` 函数调用 [addHandlerAsync](https://docs.microsoft.com/javascript/api/office/office.document#addhandlerasync-eventtype--handler--options--callback-) 方法，以注册 [Document.ActiveViewChanged](https://docs.microsoft.com/javascript/api/office/office.document) 事件的处理程序。 
+- `registerActiveViewChanged` 函数调用 [addHandlerAsync](https://docs.microsoft.com/javascript/api/office/office.document#addhandlerasync-eventtype--handler--options--callback-) 方法，以注册 [Document.ActiveViewChanged](https://docs.microsoft.com/javascript/api/office/office.document) 事件的处理程序。
 
 
 ```js
@@ -74,7 +74,7 @@ function registerActiveViewChanged() {
         app.showNotification(JSON.stringify(args));
     }
 
-    Office.context.document.addHandlerAsync(Office.EventType.ActiveViewChanged, Globals.activeViewHandler, 
+    Office.context.document.addHandlerAsync(Office.EventType.ActiveViewChanged, Globals.activeViewHandler,
         function (asyncResult) {
             if (asyncResult.status == "failed") {
                 app.showNotification("Action failed with error: " + asyncResult.error.message);
@@ -163,13 +163,37 @@ function getFileUrl() {
 }
 ```
 
+## <a name="create-a-presentation"></a>创建演示文稿
 
+加载项可创建新的演示文稿，且与当前运行此加载项的 PowerPoint 实例分开。 PowerPoint 命名空间针对此目的提供了 `createPresentation` 方法。 调用此方法时，新的演示文稿将立即打开并在 PowerPoint 新实例中显示。 加载项保持打开状态，并随之前的演示文稿一起运行。
+
+```js
+PowerPoint.createPresentation();
+```
+
+此外，`createPresentation` 方法还可创建现有演示文稿的副本。 此方法接受 .pptx 文件的 base64 编码字符串表示形式作为可选参数。 若字符串参数为有效的 .pptx 文件，则生成的演示文稿是该文件的副本。 可以使用 [FileReader](https://developer.mozilla.org/docs/Web/API/FileReader) 类将文件转换为所需的 base64 编码字符串，如以下示例所示。
+
+```js
+var myFile = document.getElementById("file");
+var reader = new FileReader();
+
+reader.onload = function (event) {
+    // strip off the metadata before the base64-encoded string
+    var startIndex = event.target.result.indexOf("base64,");
+    var copyBase64 = event.target.result.substr(startIndex + 7);
+
+    PowerPoint.createPresentation(copyBase64);
+};
+
+// read in the file as a data URL so we can parse the base64-encoded string
+reader.readAsDataURL(myFile.files[0]);
+```
 
 ## <a name="see-also"></a>另请参阅
+
 - 
   [PowerPoint 代码示例](https://developer.microsoft.com/en-us/office/gallery/?filterBy=Samples,PowerPoint)
 - [如何每文档保存内容和任务窗格加载项的加载项状态和设置](../develop/persisting-add-in-state-and-settings.md#how-to-save-add-in-state-and-settings-per-document-for-content-and-task-pane-add-ins)
 - [对文档或电子表格中的活动选择执行数据读取和写入操作](../develop/read-and-write-data-to-the-active-selection-in-a-document-or-spreadsheet.md)
 - [通过 PowerPoint 或 Word 加载项获取整个文档](../powerpoint/get-the-whole-document-from-an-add-in-for-powerpoint.md)
 - [在 PowerPoint 加载项中使用文档主题](use-document-themes-in-your-powerpoint-add-ins.md)
-    
