@@ -2,13 +2,12 @@
 title: 同时在 Excel 加载项中处理多个区域
 description: ''
 ms.date: 12/26/2018
-localization_priority: Normal
-ms.openlocfilehash: ba171026f410e59e81d3bbb6bc0f799c929a25a3
-ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
+ms.openlocfilehash: ab7cd9757adaedf2b6cc43fdcc604b98a60b6ecd
+ms.sourcegitcommit: 8d248cd890dae1e9e8ef1bd47e09db4c1cf69593
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "29387868"
+ms.lasthandoff: 12/27/2018
+ms.locfileid: "27447230"
 ---
 # <a name="work-with-multiple-ranges-simultaneously-in-excel-add-ins-preview"></a>同时在 Excel 加载项中处理多个区域（预览）
 
@@ -124,7 +123,7 @@ Excel.run(function (context) {
 
 ## <a name="get-special-cells-from-multiple-ranges"></a>从多个区域获取特殊单元格
 
-`RangeAreas` 对象上的 `getSpecialCells` 和 `getSpecialCellsOrNullObject` 方法原理上类似于 `Range` 对象上同名方法。 这些方法从 `RangeAreas.areas` 集合中所有区域返回包含指定特征的单元格。 请参阅 [查找区域内特殊单元格](excel-add-ins-ranges-advanced.md#find-special-cells-within-a-range-preview) 部分了解特殊单元格更多详细信息。
+`RangeAreas` 对象上的 `getSpecialCells` 和 `getSpecialCellsOrNullObject` 方法与 `Range` 对象上的同名方法工作原理类似。 这些方法从 `RangeAreas.areas` 集合中所有区域返回包含指定特征的单元格。 请参阅 [查找区域内特殊单元格](excel-add-ins-ranges-advanced.md#find-special-cells-within-a-range-preview) 部分了解特殊单元格更多详细信息。
 
 调用 `RangeAreas` 对象上的 `getSpecialCells` 或 `getSpecialCellsOrNullObject` 方法时：
 
