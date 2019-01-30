@@ -4,7 +4,7 @@ description: ''
 ms.date: 12/26/2018
 ms.openlocfilehash: 43c32bb8f579a231eae289df4e026b45afac6dcb
 ms.sourcegitcommit: 8d248cd890dae1e9e8ef1bd47e09db4c1cf69593
-ms.translationtype: HT
+ms.translationtype: Auto
 ms.contentlocale: zh-CN
 ms.lasthandoff: 12/27/2018
 ms.locfileid: "27447237"
@@ -72,10 +72,10 @@ Excel.run(function (context) {
 ## <a name="find-special-cells-within-a-range-preview"></a>查找区域内特殊单元格（预览）
 
 > [!NOTE]
->  `getSpecialCells` 和 `getSpecialCellsOrNullObject` 方法当前仅适用于公共预览版（beta 版本）。 若要使用此功能，必须使用 Office.js CDN 的 beta 版库：https://appsforoffice.microsoft.com/lib/beta/hosted/office.js。
+> `getSpecialCells` 和 `getSpecialCellsOrNullObject` 方法当前仅适用于公共预览版（beta 版本）。 若要使用此功能，必须使用 Office.js CDN 的 beta 版库：https://appsforoffice.microsoft.com/lib/beta/hosted/office.js。
 > 如果使用的是 TypeScript 或代码编辑器将 TypeScript 类型定义文件用于 IntelliSense，则使用 https://appsforoffice.microsoft.com/lib/beta/hosted/office.d.ts。
 
-`Range.getSpecialCells()` 和 `Range.getSpecialCellsOrNullObject()` 方法根据单元格特征和值类型来查找区域。 这两种方法都返回 `RangeAreas` 对象。 以下是 TypeScript 数据类型文件中的方法签名：
+`Range.getSpecialCells()` 和 `Range.getSpecialCellsOrNullObject()` 方法根据单元格特征和值类型来查找区域。 这两种方法都返回 `RangeAreas` 对象。 以下是 TypeScript 数据类型文件中方法的签名：
 
 ```typescript
 getSpecialCells(cellType: Excel.SpecialCellType, cellValueType?: Excel.SpecialCellValueType): Excel.RangeAreas;
@@ -103,7 +103,7 @@ Excel.run(function (context) {
 
 如果区域中不存在具有目标特征的单元格，`getSpecialCells` 会引发 **ItemNotFound**错误。 这会将控制流转移到 `catch` 信息块（如果存在）。 如果不存在 `catch` 信息块，则错误会终止函数。
 
-如果您希望具有目标特征的单元格应始终存在，你可能想你的代码在没有这些单元格的时候引发错误。 若没有匹配单元格是一个有效应用场景，你的代码应该会检查这种可能的情况并按正常方式处理它，而不会引发错误。 可以用此 `getSpecialCellsOrNullObject` 方法及其返回的 `isNullObject` 属性实现此行为。 此示例使用此模式。 关于此代码，请注意以下几点：
+如果你希望具有目标特征的单元格始终存在，则你可能想要代码在没有这些单元格的时候引发错误。 若没有匹配单元格是一个有效应用场景，代码应该会检查这种可能的情况并按正常方式处理它，而不会引发错误。 可以用此 `getSpecialCellsOrNullObject` 方法及其返回的 `isNullObject` 属性实现此行为。 此示例使用此模式。 关于此代码，请注意以下几点：
 
 - `getSpecialCellsOrNullObject` 方法将始终返回代理对象，因此在一般的 JavaScript 认知中，它从不为 `null`。 但是，如果没有找到匹配的单元格，则对象的 `isNullObject` 属性将设置为 `true`。
 - 在测试 `isNullObject` 属性*之前*，它将调用 `context.sync`。 这是所有 `*OrNullObject` 方法和属性的要求，因为你必须始终加载和同步属性才能读取它。 但是，不必*明确*加载 `isNullObject` 属性。 即使未在对象上调用 `load`，`context.sync` 也会自动加载该属性。 有关详细信息，请参阅 [\*OrNullObject](https://docs.microsoft.com/office/dev/add-ins/excel/excel-add-ins-advanced-concepts#42ornullobject-methods)。
@@ -137,7 +137,7 @@ Excel.run(function (context) {
 
 #### <a name="test-for-a-single-cell-value-type"></a>测试单个单元格值类型
 
-`Excel.SpecialCellValueType` 枚举有四种基本类型 （除本节后续部分所述其他组合式值外）：
+`Excel.SpecialCellValueType` 枚举有四种基本类型 （本节后续部分所述其他组合值除外）：
 
 - `Excel.SpecialCellValueType.errors`
 - `Excel.SpecialCellValueType.logical`（意味着布尔值）
@@ -164,7 +164,7 @@ Excel.run(function (context) {
 
 #### <a name="test-for-multiple-cell-value-types"></a>测试多个单元格值类型
 
-有时，你需要对多种单元格值类型执行操作，例如所有文本值和所有布尔值（`Excel.SpecialCellValueType.logical`）单元格。 `Excel.SpecialCellValueType` 枚举具有组合式类型值。 例如，`Excel.SpecialCellValueType.logicalText` 将定向所有布尔值和所有文本值单元格。 `Excel.SpecialCellValueType.all` 是默认值，并不限制返回的单元格值类型。 以下示例设置了包含用于生成数字或布尔值的公式的所有单元格颜色。
+有时，你需要对多种单元格值类型执行操作，例如所有文本值和所有布尔值（`Excel.SpecialCellValueType.logical`）单元格。 `Excel.SpecialCellValueType` 枚举具有组合类型的值。 例如，`Excel.SpecialCellValueType.logicalText` 将定向所有布尔值和所有文本值单元格。 `Excel.SpecialCellValueType.all` 是默认值，并不限制返回的单元格值类型。 以下示例设置了包含用于生成数字或布尔值的公式的所有单元格颜色。
 
 ```js
 Excel.run(function (context) {
