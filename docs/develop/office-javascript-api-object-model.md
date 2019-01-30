@@ -3,12 +3,12 @@ title: Office JavaScript API 对象模型
 description: ''
 ms.date: 07/27/2018
 localization_priority: Priority
-ms.openlocfilehash: 5530b77fb25a9decc5f4ae02008808811e7e6513
-ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
+ms.openlocfilehash: 7e93a46019816daa236c986aac921a2962ca1af2
+ms.sourcegitcommit: 2e4b97f0252ff3dd908a3aa7a9720f0cb50b855d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "29388526"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "29635956"
 ---
 # <a name="office-javascript-api-object-model"></a>Office JavaScript API 对象模型
 Office JavaScript 加载项提供对主机基础功能的访问权限。 大多数此类访问权限可以访问一些重要的对象。 [Context](#context-object) 对象提供在初始化之后对运行时环境的访问权限。 [Document](#document-object) 对象使用户能够控制 Excel、PowerPoint 或 Word 文档。 [Mailbox](#mailbox-object) 对象使 Outlook 加载项能够访问邮件和用户配置文件。 理解这些高级对象之间的关系是 JavaScript 加载项的基础。
@@ -87,7 +87,7 @@ Office JavaScript 加载项提供对主机基础功能的访问权限。 大多�
 > [!TIP]
 > **何时应使用矩阵与表格 coercionType 数据访问？** 如果需要表格数据在添加行和列时动态增长，且必须处理表格标题，应使用表格数据类型（具体操作是将 **Document** 或 **Binding** 对象数据访问方法的 _coercionType_ 参数指定为 `"table"` 或 **Office.CoercionType.Table**）。虽然表格数据和矩阵数据都支持在数据结构内添加行和列，但只有表格数据支持追加行和列。如果不打算添加行和列，且数据不需要使用标题功能，应使用矩阵数据类型（具体操作是将数据访问方法的 _coercionType_ 参数指定为 `"matrix"` 或 **Office.CoercionType.Matrix**），它提供了更简单的数据交互模型。
 
-如果无法将数据强制转换为指定的类型，那么回调中的 [AsyncResult.status](https://docs.microsoft.com/javascript/api/office/office.asyncresult.error) 属性返回 `"failed"`，并且你可以使用 [AsyncResult.error](https://docs.microsoft.com/javascript/api/office/office.asyncresult.context) 属性访问 [Error](https://docs.microsoft.com/javascript/api/office/office.error) 对象，其中包括方法调用失败原因的信息。
+如果无法将数据强制转换为指定的类型，那么回调中的 [AsyncResult.status](https://docs.microsoft.com/javascript/api/office/office.asyncresult#status) 属性返回 `"failed"`，并且你可以使用 [AsyncResult.error](https://docs.microsoft.com/javascript/api/office/office.asyncresult#error) 属性访问 [Error](https://docs.microsoft.com/javascript/api/office/office.error) 对象，其中包括方法调用失败原因的信息。
 
 
 ## <a name="working-with-selections-using-the-document-object"></a>使用 Document 对象处理选择内容
