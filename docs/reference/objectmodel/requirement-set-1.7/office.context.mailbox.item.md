@@ -1,70 +1,81 @@
+---
+title: Office.context.mailbox.item-要求设置 1.7
+description: ''
+ms.date: 01/16/2019
+localization_priority: Normal
+ms.openlocfilehash: dfc86d8a118ab5f5c32968c567a2eec6b9e7d267
+ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "29389583"
+---
+# <a name="item"></a><span data-ttu-id="b314e-102">item</span><span class="sxs-lookup"><span data-stu-id="b314e-102">item</span></span>
 
-# <a name="item"></a><span data-ttu-id="3eb21-101">item</span><span class="sxs-lookup"><span data-stu-id="3eb21-101">item</span></span>
+### <a name="officeofficemdcontextofficecontextmdmailboxofficecontextmailboxmditem"></a><span data-ttu-id="b314e-103">[Office](office.md)[.context](office.context.md)[.mailbox](office.context.mailbox.md).item</span><span class="sxs-lookup"><span data-stu-id="b314e-103">[Office](office.md)[.context](office.context.md)[.mailbox](office.context.mailbox.md).item</span></span>
 
-### <a name="officeofficemdcontextofficecontextmdmailboxofficecontextmailboxmditem"></a><span data-ttu-id="3eb21-102">[Office](office.md)[.context](office.context.md)[.mailbox](office.context.mailbox.md).item</span><span class="sxs-lookup"><span data-stu-id="3eb21-102">[Office](office.md)[.context](office.context.md)[.mailbox](office.context.mailbox.md).item</span></span>
+<span data-ttu-id="b314e-p101">`item` 命名空间用于访问当前选定的邮件、会议请求或约会。可以通过使用 [itemType](#itemtype-officemailboxenumsitemtypejavascriptapioutlook17officemailboxenumsitemtype) 属性确定 `item` 的类型。</span><span class="sxs-lookup"><span data-stu-id="b314e-p101">The `item` namespace is used to access the currently selected message, meeting request, or appointment. You can determine the type of the `item` by using the [itemType](#itemtype-officemailboxenumsitemtypejavascriptapioutlook17officemailboxenumsitemtype) property.</span></span>
 
-<span data-ttu-id="3eb21-p101">`item` 命名空间用于访问当前选定的邮件、会议请求或约会。可以通过使用 [itemType](#itemtype-officemailboxenumsitemtypejavascriptapioutlook17officemailboxenumsitemtype) 属性确定 `item` 的类型。</span><span class="sxs-lookup"><span data-stu-id="3eb21-p101">The `item` namespace is used to access the currently selected message, meeting request, or appointment. You can determine the type of the `item` by using the [itemType](#itemtype-officemailboxenumsitemtypejavascriptapioutlook17officemailboxenumsitemtype) property.</span></span>
+##### <a name="requirements"></a><span data-ttu-id="b314e-106">Requirements</span><span class="sxs-lookup"><span data-stu-id="b314e-106">Requirements</span></span>
 
-##### <a name="requirements"></a><span data-ttu-id="3eb21-105">Requirements</span><span class="sxs-lookup"><span data-stu-id="3eb21-105">Requirements</span></span>
-
-|<span data-ttu-id="3eb21-106">要求</span><span class="sxs-lookup"><span data-stu-id="3eb21-106">Requirement</span></span>|<span data-ttu-id="3eb21-107">值</span><span class="sxs-lookup"><span data-stu-id="3eb21-107">Value</span></span>|
+|<span data-ttu-id="b314e-107">要求</span><span class="sxs-lookup"><span data-stu-id="b314e-107">Requirement</span></span>|<span data-ttu-id="b314e-108">值</span><span class="sxs-lookup"><span data-stu-id="b314e-108">Value</span></span>|
 |---|---|
-|[<span data-ttu-id="3eb21-108">最低版本的邮箱要求集</span><span class="sxs-lookup"><span data-stu-id="3eb21-108">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|<span data-ttu-id="3eb21-109">1.0</span><span class="sxs-lookup"><span data-stu-id="3eb21-109">1.0</span></span>|
-|[<span data-ttu-id="3eb21-110">最低权限级别</span><span class="sxs-lookup"><span data-stu-id="3eb21-110">Minimum permission level</span></span>](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)|<span data-ttu-id="3eb21-111">受限</span><span class="sxs-lookup"><span data-stu-id="3eb21-111">Restricted</span></span>|
-|[<span data-ttu-id="3eb21-112">适用的 Outlook 模式</span><span class="sxs-lookup"><span data-stu-id="3eb21-112">Applicable Outlook mode</span></span>](https://docs.microsoft.com/outlook/add-ins/#extension-points)|<span data-ttu-id="3eb21-113">Compose 或 Read</span><span class="sxs-lookup"><span data-stu-id="3eb21-113">Compose or read</span></span>|
+|[<span data-ttu-id="b314e-109">最低版本的邮箱要求集</span><span class="sxs-lookup"><span data-stu-id="b314e-109">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|<span data-ttu-id="b314e-110">1.0</span><span class="sxs-lookup"><span data-stu-id="b314e-110">1.0</span></span>|
+|[<span data-ttu-id="b314e-111">最低权限级别</span><span class="sxs-lookup"><span data-stu-id="b314e-111">Minimum permission level</span></span>](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)|<span data-ttu-id="b314e-112">受限</span><span class="sxs-lookup"><span data-stu-id="b314e-112">Restricted</span></span>|
+|[<span data-ttu-id="b314e-113">适用的 Outlook 模式</span><span class="sxs-lookup"><span data-stu-id="b314e-113">Applicable Outlook mode</span></span>](https://docs.microsoft.com/outlook/add-ins/#extension-points)|<span data-ttu-id="b314e-114">撰写或阅读</span><span class="sxs-lookup"><span data-stu-id="b314e-114">Compose or read</span></span>|
 
-##### <a name="members-and-methods"></a><span data-ttu-id="3eb21-114">成员和方法</span><span class="sxs-lookup"><span data-stu-id="3eb21-114">Members and methods</span></span>
+##### <a name="members-and-methods"></a><span data-ttu-id="b314e-115">成员和方法</span><span class="sxs-lookup"><span data-stu-id="b314e-115">Members and methods</span></span>
 
-| <span data-ttu-id="3eb21-115">成员</span><span class="sxs-lookup"><span data-stu-id="3eb21-115">Member</span></span> | <span data-ttu-id="3eb21-116">类型</span><span class="sxs-lookup"><span data-stu-id="3eb21-116">Type</span></span> |
+| <span data-ttu-id="b314e-116">成员</span><span class="sxs-lookup"><span data-stu-id="b314e-116">Member</span></span> | <span data-ttu-id="b314e-117">类型</span><span class="sxs-lookup"><span data-stu-id="b314e-117">Type</span></span> |
 |--------|------|
-| [<span data-ttu-id="3eb21-117">attachments</span><span class="sxs-lookup"><span data-stu-id="3eb21-117">attachments</span></span>](#attachments-arrayattachmentdetailsjavascriptapioutlook17officeattachmentdetails) | <span data-ttu-id="3eb21-118">成员</span><span class="sxs-lookup"><span data-stu-id="3eb21-118">Member</span></span> |
-| [<span data-ttu-id="3eb21-119">bcc</span><span class="sxs-lookup"><span data-stu-id="3eb21-119">bcc</span></span>](#bcc-recipientsjavascriptapioutlook17officerecipients) | <span data-ttu-id="3eb21-120">成员</span><span class="sxs-lookup"><span data-stu-id="3eb21-120">Member</span></span> |
-| [<span data-ttu-id="3eb21-121">body</span><span class="sxs-lookup"><span data-stu-id="3eb21-121">body</span></span>](#body-bodyjavascriptapioutlook17officebody) | <span data-ttu-id="3eb21-122">成员</span><span class="sxs-lookup"><span data-stu-id="3eb21-122">Member</span></span> |
-| [<span data-ttu-id="3eb21-123">cc</span><span class="sxs-lookup"><span data-stu-id="3eb21-123">cc</span></span>](#cc-arrayemailaddressdetailsjavascriptapioutlook17officeemailaddressdetailsrecipientsjavascriptapioutlook17officerecipients) | <span data-ttu-id="3eb21-124">成员</span><span class="sxs-lookup"><span data-stu-id="3eb21-124">Member</span></span> |
-| [<span data-ttu-id="3eb21-125">conversationId</span><span class="sxs-lookup"><span data-stu-id="3eb21-125">conversationId</span></span>](#nullable-conversationid-string) | <span data-ttu-id="3eb21-126">成员</span><span class="sxs-lookup"><span data-stu-id="3eb21-126">Member</span></span> |
-| [<span data-ttu-id="3eb21-127">dateTimeCreated</span><span class="sxs-lookup"><span data-stu-id="3eb21-127">dateTimeCreated</span></span>](#datetimecreated-date) | <span data-ttu-id="3eb21-128">成员</span><span class="sxs-lookup"><span data-stu-id="3eb21-128">Member</span></span> |
-| [<span data-ttu-id="3eb21-129">dateTimeModified</span><span class="sxs-lookup"><span data-stu-id="3eb21-129">dateTimeModified</span></span>](#datetimemodified-date) | <span data-ttu-id="3eb21-130">成员</span><span class="sxs-lookup"><span data-stu-id="3eb21-130">Member</span></span> |
-| [<span data-ttu-id="3eb21-131">end</span><span class="sxs-lookup"><span data-stu-id="3eb21-131">end</span></span>](#end-datetimejavascriptapioutlook17officetime) | <span data-ttu-id="3eb21-132">成员</span><span class="sxs-lookup"><span data-stu-id="3eb21-132">Member</span></span> |
-| [<span data-ttu-id="3eb21-133">from</span><span class="sxs-lookup"><span data-stu-id="3eb21-133">from</span></span>](#from-emailaddressdetailsjavascriptapioutlook17officeemailaddressdetailsfromjavascriptapioutlook17officefrom) | <span data-ttu-id="3eb21-134">成员</span><span class="sxs-lookup"><span data-stu-id="3eb21-134">Member</span></span> |
-| [<span data-ttu-id="3eb21-135">internetMessageId</span><span class="sxs-lookup"><span data-stu-id="3eb21-135">internetMessageId</span></span>](#internetmessageid-string) | <span data-ttu-id="3eb21-136">成员</span><span class="sxs-lookup"><span data-stu-id="3eb21-136">Member</span></span> |
-| [<span data-ttu-id="3eb21-137">itemClass</span><span class="sxs-lookup"><span data-stu-id="3eb21-137">itemClass</span></span>](#itemclass-string) | <span data-ttu-id="3eb21-138">成员</span><span class="sxs-lookup"><span data-stu-id="3eb21-138">Member</span></span> |
-| [<span data-ttu-id="3eb21-139">itemId</span><span class="sxs-lookup"><span data-stu-id="3eb21-139">itemId</span></span>](#nullable-itemid-string) | <span data-ttu-id="3eb21-140">成员</span><span class="sxs-lookup"><span data-stu-id="3eb21-140">Member</span></span> |
-| [<span data-ttu-id="3eb21-141">itemType</span><span class="sxs-lookup"><span data-stu-id="3eb21-141">itemType</span></span>](#itemtype-officemailboxenumsitemtypejavascriptapioutlook17officemailboxenumsitemtype) | <span data-ttu-id="3eb21-142">成员</span><span class="sxs-lookup"><span data-stu-id="3eb21-142">Member</span></span> |
-| [<span data-ttu-id="3eb21-143">location</span><span class="sxs-lookup"><span data-stu-id="3eb21-143">location</span></span>](#location-stringlocationjavascriptapioutlook17officelocation) | <span data-ttu-id="3eb21-144">成员</span><span class="sxs-lookup"><span data-stu-id="3eb21-144">Member</span></span> |
-| [<span data-ttu-id="3eb21-145">normalizedSubject</span><span class="sxs-lookup"><span data-stu-id="3eb21-145">normalizedSubject</span></span>](#normalizedsubject-string) | <span data-ttu-id="3eb21-146">成员</span><span class="sxs-lookup"><span data-stu-id="3eb21-146">Member</span></span> |
-| [<span data-ttu-id="3eb21-147">notificationMessages</span><span class="sxs-lookup"><span data-stu-id="3eb21-147">notificationMessages</span></span>](#notificationmessages-notificationmessagesjavascriptapioutlook17officenotificationmessages) | <span data-ttu-id="3eb21-148">成员</span><span class="sxs-lookup"><span data-stu-id="3eb21-148">Member</span></span> |
-| [<span data-ttu-id="3eb21-149">optionalAttendees</span><span class="sxs-lookup"><span data-stu-id="3eb21-149">optionalAttendees</span></span>](#optionalattendees-arrayemailaddressdetailsjavascriptapioutlook17officeemailaddressdetailsrecipientsjavascriptapioutlook17officerecipients) | <span data-ttu-id="3eb21-150">成员</span><span class="sxs-lookup"><span data-stu-id="3eb21-150">Member</span></span> |
-| [<span data-ttu-id="3eb21-151">organizer</span><span class="sxs-lookup"><span data-stu-id="3eb21-151">organizer</span></span>](#organizer-emailaddressdetailsjavascriptapioutlook17officeemailaddressdetailsorganizerjavascriptapioutlook17officeorganizer) | <span data-ttu-id="3eb21-152">Member</span><span class="sxs-lookup"><span data-stu-id="3eb21-152">Member</span></span> |
-| [<span data-ttu-id="3eb21-153">recurrence</span><span class="sxs-lookup"><span data-stu-id="3eb21-153">recurrence</span></span>](#nullable-recurrence-recurrencejavascriptapioutlook17officerecurrence) | <span data-ttu-id="3eb21-154">Member</span><span class="sxs-lookup"><span data-stu-id="3eb21-154">Member</span></span> |
-| [<span data-ttu-id="3eb21-155">requiredAttendees</span><span class="sxs-lookup"><span data-stu-id="3eb21-155">requiredAttendees</span></span>](#requiredattendees-arrayemailaddressdetailsjavascriptapioutlook17officeemailaddressdetailsrecipientsjavascriptapioutlook17officerecipients) | <span data-ttu-id="3eb21-156">Member</span><span class="sxs-lookup"><span data-stu-id="3eb21-156">Member</span></span> |
-| [<span data-ttu-id="3eb21-157">sender</span><span class="sxs-lookup"><span data-stu-id="3eb21-157">sender</span></span>](#sender-emailaddressdetailsjavascriptapioutlook17officeemailaddressdetails) | <span data-ttu-id="3eb21-158">Member</span><span class="sxs-lookup"><span data-stu-id="3eb21-158">Member</span></span> |
-| [<span data-ttu-id="3eb21-159">seriesId</span><span class="sxs-lookup"><span data-stu-id="3eb21-159">seriesId</span></span>](#nullable-seriesid-string) | <span data-ttu-id="3eb21-160">Member</span><span class="sxs-lookup"><span data-stu-id="3eb21-160">Member</span></span> |
-| [<span data-ttu-id="3eb21-161">start</span><span class="sxs-lookup"><span data-stu-id="3eb21-161">start</span></span>](#start-datetimejavascriptapioutlook17officetime) | <span data-ttu-id="3eb21-162">成员</span><span class="sxs-lookup"><span data-stu-id="3eb21-162">Member</span></span> |
-| [<span data-ttu-id="3eb21-163">subject</span><span class="sxs-lookup"><span data-stu-id="3eb21-163">subject</span></span>](#subject-stringsubjectjavascriptapioutlook17officesubject) | <span data-ttu-id="3eb21-164">成员</span><span class="sxs-lookup"><span data-stu-id="3eb21-164">Member</span></span> |
-| [<span data-ttu-id="3eb21-165">to</span><span class="sxs-lookup"><span data-stu-id="3eb21-165">to</span></span>](#to-arrayemailaddressdetailsjavascriptapioutlook17officeemailaddressdetailsrecipientsjavascriptapioutlook17officerecipients) | <span data-ttu-id="3eb21-166">成员</span><span class="sxs-lookup"><span data-stu-id="3eb21-166">Member</span></span> |
-| [<span data-ttu-id="3eb21-167">addFileAttachmentAsync</span><span class="sxs-lookup"><span data-stu-id="3eb21-167">addFileAttachmentAsync</span></span>](#addfileattachmentasyncuri-attachmentname-options-callback) | <span data-ttu-id="3eb21-168">方法</span><span class="sxs-lookup"><span data-stu-id="3eb21-168">Method</span></span> |
-| [<span data-ttu-id="3eb21-169">addHandlerAsync</span><span class="sxs-lookup"><span data-stu-id="3eb21-169">addHandlerAsync</span></span>](#addhandlerasynceventtype-handler-options-callback) | <span data-ttu-id="3eb21-170">方法</span><span class="sxs-lookup"><span data-stu-id="3eb21-170">Method</span></span> |
-| [<span data-ttu-id="3eb21-171">addItemAttachmentAsync</span><span class="sxs-lookup"><span data-stu-id="3eb21-171">addItemAttachmentAsync</span></span>](#additemattachmentasyncitemid-attachmentname-options-callback) | <span data-ttu-id="3eb21-172">方法</span><span class="sxs-lookup"><span data-stu-id="3eb21-172">Method</span></span> |
-| [<span data-ttu-id="3eb21-173">close</span><span class="sxs-lookup"><span data-stu-id="3eb21-173">close</span></span>](#close) | <span data-ttu-id="3eb21-174">方法</span><span class="sxs-lookup"><span data-stu-id="3eb21-174">Method</span></span> |
-| [<span data-ttu-id="3eb21-175">displayReplyAllForm</span><span class="sxs-lookup"><span data-stu-id="3eb21-175">displayReplyAllForm</span></span>](#displayreplyallformformdata) | <span data-ttu-id="3eb21-176">方法</span><span class="sxs-lookup"><span data-stu-id="3eb21-176">Method</span></span> |
-| [<span data-ttu-id="3eb21-177">displayReplyForm</span><span class="sxs-lookup"><span data-stu-id="3eb21-177">displayReplyForm</span></span>](#displayreplyformformdata) | <span data-ttu-id="3eb21-178">方法</span><span class="sxs-lookup"><span data-stu-id="3eb21-178">Method</span></span> |
-| [<span data-ttu-id="3eb21-179">getEntities</span><span class="sxs-lookup"><span data-stu-id="3eb21-179">getEntities</span></span>](#getentities--entitiesjavascriptapioutlook17officeentities) | <span data-ttu-id="3eb21-180">方法</span><span class="sxs-lookup"><span data-stu-id="3eb21-180">Method</span></span> |
-| [<span data-ttu-id="3eb21-181">getEntitiesByType</span><span class="sxs-lookup"><span data-stu-id="3eb21-181">getEntitiesByType</span></span>](#getentitiesbytypeentitytype--nullable-arraystringcontactjavascriptapioutlook17officecontactmeetingsuggestionjavascriptapioutlook17officemeetingsuggestionphonenumberjavascriptapioutlook17officephonenumbertasksuggestionjavascriptapioutlook17officetasksuggestion) | <span data-ttu-id="3eb21-182">方法</span><span class="sxs-lookup"><span data-stu-id="3eb21-182">Method</span></span> |
-| [<span data-ttu-id="3eb21-183">getFilteredEntitiesByName</span><span class="sxs-lookup"><span data-stu-id="3eb21-183">getFilteredEntitiesByName</span></span>](#getfilteredentitiesbynamename--nullable-arraystringcontactjavascriptapioutlook17officecontactmeetingsuggestionjavascriptapioutlook17officemeetingsuggestionphonenumberjavascriptapioutlook17officephonenumbertasksuggestionjavascriptapioutlook17officetasksuggestion) | <span data-ttu-id="3eb21-184">方法</span><span class="sxs-lookup"><span data-stu-id="3eb21-184">Method</span></span> |
-| [<span data-ttu-id="3eb21-185">getRegExMatches</span><span class="sxs-lookup"><span data-stu-id="3eb21-185">getRegExMatches</span></span>](#getregexmatches--object) | <span data-ttu-id="3eb21-186">方法</span><span class="sxs-lookup"><span data-stu-id="3eb21-186">Method</span></span> |
-| [<span data-ttu-id="3eb21-187">getRegExMatchesByName</span><span class="sxs-lookup"><span data-stu-id="3eb21-187">getRegExMatchesByName</span></span>](#getregexmatchesbynamename--nullable-array-string-) | <span data-ttu-id="3eb21-188">方法</span><span class="sxs-lookup"><span data-stu-id="3eb21-188">Method</span></span> |
-| [<span data-ttu-id="3eb21-189">getSelectedDataAsync</span><span class="sxs-lookup"><span data-stu-id="3eb21-189">getSelectedDataAsync</span></span>](#getselecteddataasynccoerciontype-options-callback--string) | <span data-ttu-id="3eb21-190">方法</span><span class="sxs-lookup"><span data-stu-id="3eb21-190">Method</span></span> |
-| [<span data-ttu-id="3eb21-191">getSelectedEntities</span><span class="sxs-lookup"><span data-stu-id="3eb21-191">getSelectedEntities</span></span>](#getselectedentities--entitiesjavascriptapioutlook17officeentities) | <span data-ttu-id="3eb21-192">方法</span><span class="sxs-lookup"><span data-stu-id="3eb21-192">Method</span></span> |
-| [<span data-ttu-id="3eb21-193">getSelectedRegExMatches</span><span class="sxs-lookup"><span data-stu-id="3eb21-193">getSelectedRegExMatches</span></span>](#getselectedregexmatches--object) | <span data-ttu-id="3eb21-194">方法</span><span class="sxs-lookup"><span data-stu-id="3eb21-194">Method</span></span> |
-| [<span data-ttu-id="3eb21-195">loadCustomPropertiesAsync</span><span class="sxs-lookup"><span data-stu-id="3eb21-195">loadCustomPropertiesAsync</span></span>](#loadcustompropertiesasynccallback-usercontext) | <span data-ttu-id="3eb21-196">方法</span><span class="sxs-lookup"><span data-stu-id="3eb21-196">Method</span></span> |
-| [<span data-ttu-id="3eb21-197">removeAttachmentAsync</span><span class="sxs-lookup"><span data-stu-id="3eb21-197">removeAttachmentAsync</span></span>](#removeattachmentasyncattachmentid-options-callback) | <span data-ttu-id="3eb21-198">方法</span><span class="sxs-lookup"><span data-stu-id="3eb21-198">Method</span></span> |
-| [<span data-ttu-id="3eb21-199">removeHandlerAsync</span><span class="sxs-lookup"><span data-stu-id="3eb21-199">removeHandlerAsync</span></span>](#removehandlerasynceventtype-handler-options-callback) | <span data-ttu-id="3eb21-200">方法</span><span class="sxs-lookup"><span data-stu-id="3eb21-200">Method</span></span> |
-| [<span data-ttu-id="3eb21-201">saveAsync</span><span class="sxs-lookup"><span data-stu-id="3eb21-201">saveAsync</span></span>](#saveasyncoptions-callback) | <span data-ttu-id="3eb21-202">方法</span><span class="sxs-lookup"><span data-stu-id="3eb21-202">Method</span></span> |
-| [<span data-ttu-id="3eb21-203">setSelectedDataAsync</span><span class="sxs-lookup"><span data-stu-id="3eb21-203">setSelectedDataAsync</span></span>](#setselecteddataasyncdata-options-callback) | <span data-ttu-id="3eb21-204">方法</span><span class="sxs-lookup"><span data-stu-id="3eb21-204">Method</span></span> |
+| [<span data-ttu-id="b314e-118">attachments</span><span class="sxs-lookup"><span data-stu-id="b314e-118">attachments</span></span>](#attachments-arrayattachmentdetailsjavascriptapioutlook17officeattachmentdetails) | <span data-ttu-id="b314e-119">成员</span><span class="sxs-lookup"><span data-stu-id="b314e-119">Member</span></span> |
+| [<span data-ttu-id="b314e-120">bcc</span><span class="sxs-lookup"><span data-stu-id="b314e-120">bcc</span></span>](#bcc-recipientsjavascriptapioutlook17officerecipients) | <span data-ttu-id="b314e-121">成员</span><span class="sxs-lookup"><span data-stu-id="b314e-121">Member</span></span> |
+| [<span data-ttu-id="b314e-122">body</span><span class="sxs-lookup"><span data-stu-id="b314e-122">body</span></span>](#body-bodyjavascriptapioutlook17officebody) | <span data-ttu-id="b314e-123">成员</span><span class="sxs-lookup"><span data-stu-id="b314e-123">Member</span></span> |
+| [<span data-ttu-id="b314e-124">cc</span><span class="sxs-lookup"><span data-stu-id="b314e-124">cc</span></span>](#cc-arrayemailaddressdetailsjavascriptapioutlook17officeemailaddressdetailsrecipientsjavascriptapioutlook17officerecipients) | <span data-ttu-id="b314e-125">成员</span><span class="sxs-lookup"><span data-stu-id="b314e-125">Member</span></span> |
+| [<span data-ttu-id="b314e-126">conversationId</span><span class="sxs-lookup"><span data-stu-id="b314e-126">conversationId</span></span>](#nullable-conversationid-string) | <span data-ttu-id="b314e-127">成员</span><span class="sxs-lookup"><span data-stu-id="b314e-127">Member</span></span> |
+| [<span data-ttu-id="b314e-128">dateTimeCreated</span><span class="sxs-lookup"><span data-stu-id="b314e-128">dateTimeCreated</span></span>](#datetimecreated-date) | <span data-ttu-id="b314e-129">成员</span><span class="sxs-lookup"><span data-stu-id="b314e-129">Member</span></span> |
+| [<span data-ttu-id="b314e-130">dateTimeModified</span><span class="sxs-lookup"><span data-stu-id="b314e-130">dateTimeModified</span></span>](#datetimemodified-date) | <span data-ttu-id="b314e-131">成员</span><span class="sxs-lookup"><span data-stu-id="b314e-131">Member</span></span> |
+| [<span data-ttu-id="b314e-132">end</span><span class="sxs-lookup"><span data-stu-id="b314e-132">end</span></span>](#end-datetimejavascriptapioutlook17officetime) | <span data-ttu-id="b314e-133">成员</span><span class="sxs-lookup"><span data-stu-id="b314e-133">Member</span></span> |
+| [<span data-ttu-id="b314e-134">from</span><span class="sxs-lookup"><span data-stu-id="b314e-134">from</span></span>](#from-emailaddressdetailsjavascriptapioutlook17officeemailaddressdetailsfromjavascriptapioutlook17officefrom) | <span data-ttu-id="b314e-135">成员</span><span class="sxs-lookup"><span data-stu-id="b314e-135">Member</span></span> |
+| [<span data-ttu-id="b314e-136">internetMessageId</span><span class="sxs-lookup"><span data-stu-id="b314e-136">internetMessageId</span></span>](#internetmessageid-string) | <span data-ttu-id="b314e-137">成员</span><span class="sxs-lookup"><span data-stu-id="b314e-137">Member</span></span> |
+| [<span data-ttu-id="b314e-138">itemClass</span><span class="sxs-lookup"><span data-stu-id="b314e-138">itemClass</span></span>](#itemclass-string) | <span data-ttu-id="b314e-139">成员</span><span class="sxs-lookup"><span data-stu-id="b314e-139">Member</span></span> |
+| [<span data-ttu-id="b314e-140">itemId</span><span class="sxs-lookup"><span data-stu-id="b314e-140">itemId</span></span>](#nullable-itemid-string) | <span data-ttu-id="b314e-141">成员</span><span class="sxs-lookup"><span data-stu-id="b314e-141">Member</span></span> |
+| [<span data-ttu-id="b314e-142">itemType</span><span class="sxs-lookup"><span data-stu-id="b314e-142">itemType</span></span>](#itemtype-officemailboxenumsitemtypejavascriptapioutlook17officemailboxenumsitemtype) | <span data-ttu-id="b314e-143">成员</span><span class="sxs-lookup"><span data-stu-id="b314e-143">Member</span></span> |
+| [<span data-ttu-id="b314e-144">location</span><span class="sxs-lookup"><span data-stu-id="b314e-144">location</span></span>](#location-stringlocationjavascriptapioutlook17officelocation) | <span data-ttu-id="b314e-145">成员</span><span class="sxs-lookup"><span data-stu-id="b314e-145">Member</span></span> |
+| [<span data-ttu-id="b314e-146">normalizedSubject</span><span class="sxs-lookup"><span data-stu-id="b314e-146">normalizedSubject</span></span>](#normalizedsubject-string) | <span data-ttu-id="b314e-147">成员</span><span class="sxs-lookup"><span data-stu-id="b314e-147">Member</span></span> |
+| [<span data-ttu-id="b314e-148">notificationMessages</span><span class="sxs-lookup"><span data-stu-id="b314e-148">notificationMessages</span></span>](#notificationmessages-notificationmessagesjavascriptapioutlook17officenotificationmessages) | <span data-ttu-id="b314e-149">成员</span><span class="sxs-lookup"><span data-stu-id="b314e-149">Member</span></span> |
+| [<span data-ttu-id="b314e-150">optionalAttendees</span><span class="sxs-lookup"><span data-stu-id="b314e-150">optionalAttendees</span></span>](#optionalattendees-arrayemailaddressdetailsjavascriptapioutlook17officeemailaddressdetailsrecipientsjavascriptapioutlook17officerecipients) | <span data-ttu-id="b314e-151">成员</span><span class="sxs-lookup"><span data-stu-id="b314e-151">Member</span></span> |
+| [<span data-ttu-id="b314e-152">organizer</span><span class="sxs-lookup"><span data-stu-id="b314e-152">organizer</span></span>](#organizer-emailaddressdetailsjavascriptapioutlook17officeemailaddressdetailsorganizerjavascriptapioutlook17officeorganizer) | <span data-ttu-id="b314e-153">Member</span><span class="sxs-lookup"><span data-stu-id="b314e-153">Member</span></span> |
+| [<span data-ttu-id="b314e-154">recurrence</span><span class="sxs-lookup"><span data-stu-id="b314e-154">recurrence</span></span>](#nullable-recurrence-recurrencejavascriptapioutlook17officerecurrence) | <span data-ttu-id="b314e-155">Member</span><span class="sxs-lookup"><span data-stu-id="b314e-155">Member</span></span> |
+| [<span data-ttu-id="b314e-156">requiredAttendees</span><span class="sxs-lookup"><span data-stu-id="b314e-156">requiredAttendees</span></span>](#requiredattendees-arrayemailaddressdetailsjavascriptapioutlook17officeemailaddressdetailsrecipientsjavascriptapioutlook17officerecipients) | <span data-ttu-id="b314e-157">成员</span><span class="sxs-lookup"><span data-stu-id="b314e-157">Member</span></span> |
+| [<span data-ttu-id="b314e-158">sender</span><span class="sxs-lookup"><span data-stu-id="b314e-158">sender</span></span>](#sender-emailaddressdetailsjavascriptapioutlook17officeemailaddressdetails) | <span data-ttu-id="b314e-159">Member</span><span class="sxs-lookup"><span data-stu-id="b314e-159">Member</span></span> |
+| [<span data-ttu-id="b314e-160">seriesId</span><span class="sxs-lookup"><span data-stu-id="b314e-160">seriesId</span></span>](#nullable-seriesid-string) | <span data-ttu-id="b314e-161">Member</span><span class="sxs-lookup"><span data-stu-id="b314e-161">Member</span></span> |
+| [<span data-ttu-id="b314e-162">start</span><span class="sxs-lookup"><span data-stu-id="b314e-162">start</span></span>](#start-datetimejavascriptapioutlook17officetime) | <span data-ttu-id="b314e-163">成员</span><span class="sxs-lookup"><span data-stu-id="b314e-163">Member</span></span> |
+| [<span data-ttu-id="b314e-164">subject</span><span class="sxs-lookup"><span data-stu-id="b314e-164">subject</span></span>](#subject-stringsubjectjavascriptapioutlook17officesubject) | <span data-ttu-id="b314e-165">成员</span><span class="sxs-lookup"><span data-stu-id="b314e-165">Member</span></span> |
+| [<span data-ttu-id="b314e-166">to</span><span class="sxs-lookup"><span data-stu-id="b314e-166">to</span></span>](#to-arrayemailaddressdetailsjavascriptapioutlook17officeemailaddressdetailsrecipientsjavascriptapioutlook17officerecipients) | <span data-ttu-id="b314e-167">成员</span><span class="sxs-lookup"><span data-stu-id="b314e-167">Member</span></span> |
+| [<span data-ttu-id="b314e-168">addFileAttachmentAsync</span><span class="sxs-lookup"><span data-stu-id="b314e-168">addFileAttachmentAsync</span></span>](#addfileattachmentasyncuri-attachmentname-options-callback) | <span data-ttu-id="b314e-169">方法</span><span class="sxs-lookup"><span data-stu-id="b314e-169">Method</span></span> |
+| [<span data-ttu-id="b314e-170">addHandlerAsync</span><span class="sxs-lookup"><span data-stu-id="b314e-170">addHandlerAsync</span></span>](#addhandlerasynceventtype-handler-options-callback) | <span data-ttu-id="b314e-171">方法</span><span class="sxs-lookup"><span data-stu-id="b314e-171">Method</span></span> |
+| [<span data-ttu-id="b314e-172">addItemAttachmentAsync</span><span class="sxs-lookup"><span data-stu-id="b314e-172">addItemAttachmentAsync</span></span>](#additemattachmentasyncitemid-attachmentname-options-callback) | <span data-ttu-id="b314e-173">方法</span><span class="sxs-lookup"><span data-stu-id="b314e-173">Method</span></span> |
+| [<span data-ttu-id="b314e-174">close</span><span class="sxs-lookup"><span data-stu-id="b314e-174">close</span></span>](#close) | <span data-ttu-id="b314e-175">方法</span><span class="sxs-lookup"><span data-stu-id="b314e-175">Method</span></span> |
+| [<span data-ttu-id="b314e-176">displayReplyAllForm</span><span class="sxs-lookup"><span data-stu-id="b314e-176">displayReplyAllForm</span></span>](#displayreplyallformformdata) | <span data-ttu-id="b314e-177">方法</span><span class="sxs-lookup"><span data-stu-id="b314e-177">Method</span></span> |
+| [<span data-ttu-id="b314e-178">displayReplyForm</span><span class="sxs-lookup"><span data-stu-id="b314e-178">displayReplyForm</span></span>](#displayreplyformformdata) | <span data-ttu-id="b314e-179">方法</span><span class="sxs-lookup"><span data-stu-id="b314e-179">Method</span></span> |
+| [<span data-ttu-id="b314e-180">getEntities</span><span class="sxs-lookup"><span data-stu-id="b314e-180">getEntities</span></span>](#getentities--entitiesjavascriptapioutlook17officeentities) | <span data-ttu-id="b314e-181">方法</span><span class="sxs-lookup"><span data-stu-id="b314e-181">Method</span></span> |
+| [<span data-ttu-id="b314e-182">getEntitiesByType</span><span class="sxs-lookup"><span data-stu-id="b314e-182">getEntitiesByType</span></span>](#getentitiesbytypeentitytype--nullable-arraystringcontactjavascriptapioutlook17officecontactmeetingsuggestionjavascriptapioutlook17officemeetingsuggestionphonenumberjavascriptapioutlook17officephonenumbertasksuggestionjavascriptapioutlook17officetasksuggestion) | <span data-ttu-id="b314e-183">方法</span><span class="sxs-lookup"><span data-stu-id="b314e-183">Method</span></span> |
+| [<span data-ttu-id="b314e-184">getFilteredEntitiesByName</span><span class="sxs-lookup"><span data-stu-id="b314e-184">getFilteredEntitiesByName</span></span>](#getfilteredentitiesbynamename--nullable-arraystringcontactjavascriptapioutlook17officecontactmeetingsuggestionjavascriptapioutlook17officemeetingsuggestionphonenumberjavascriptapioutlook17officephonenumbertasksuggestionjavascriptapioutlook17officetasksuggestion) | <span data-ttu-id="b314e-185">方法</span><span class="sxs-lookup"><span data-stu-id="b314e-185">Method</span></span> |
+| [<span data-ttu-id="b314e-186">getRegExMatches</span><span class="sxs-lookup"><span data-stu-id="b314e-186">getRegExMatches</span></span>](#getregexmatches--object) | <span data-ttu-id="b314e-187">方法</span><span class="sxs-lookup"><span data-stu-id="b314e-187">Method</span></span> |
+| [<span data-ttu-id="b314e-188">getRegExMatchesByName</span><span class="sxs-lookup"><span data-stu-id="b314e-188">getRegExMatchesByName</span></span>](#getregexmatchesbynamename--nullable-array-string-) | <span data-ttu-id="b314e-189">方法</span><span class="sxs-lookup"><span data-stu-id="b314e-189">Method</span></span> |
+| [<span data-ttu-id="b314e-190">getSelectedDataAsync</span><span class="sxs-lookup"><span data-stu-id="b314e-190">getSelectedDataAsync</span></span>](#getselecteddataasynccoerciontype-options-callback--string) | <span data-ttu-id="b314e-191">方法</span><span class="sxs-lookup"><span data-stu-id="b314e-191">Method</span></span> |
+| [<span data-ttu-id="b314e-192">getSelectedEntities</span><span class="sxs-lookup"><span data-stu-id="b314e-192">getSelectedEntities</span></span>](#getselectedentities--entitiesjavascriptapioutlook17officeentities) | <span data-ttu-id="b314e-193">方法</span><span class="sxs-lookup"><span data-stu-id="b314e-193">Method</span></span> |
+| [<span data-ttu-id="b314e-194">getSelectedRegExMatches</span><span class="sxs-lookup"><span data-stu-id="b314e-194">getSelectedRegExMatches</span></span>](#getselectedregexmatches--object) | <span data-ttu-id="b314e-195">方法</span><span class="sxs-lookup"><span data-stu-id="b314e-195">Method</span></span> |
+| [<span data-ttu-id="b314e-196">loadCustomPropertiesAsync</span><span class="sxs-lookup"><span data-stu-id="b314e-196">loadCustomPropertiesAsync</span></span>](#loadcustompropertiesasynccallback-usercontext) | <span data-ttu-id="b314e-197">方法</span><span class="sxs-lookup"><span data-stu-id="b314e-197">Method</span></span> |
+| [<span data-ttu-id="b314e-198">removeAttachmentAsync</span><span class="sxs-lookup"><span data-stu-id="b314e-198">removeAttachmentAsync</span></span>](#removeattachmentasyncattachmentid-options-callback) | <span data-ttu-id="b314e-199">方法</span><span class="sxs-lookup"><span data-stu-id="b314e-199">Method</span></span> |
+| [<span data-ttu-id="b314e-200">removeHandlerAsync</span><span class="sxs-lookup"><span data-stu-id="b314e-200">removeHandlerAsync</span></span>](#removehandlerasynceventtype-options-callback) | <span data-ttu-id="b314e-201">方法</span><span class="sxs-lookup"><span data-stu-id="b314e-201">Method</span></span> |
+| [<span data-ttu-id="b314e-202">saveAsync</span><span class="sxs-lookup"><span data-stu-id="b314e-202">saveAsync</span></span>](#saveasyncoptions-callback) | <span data-ttu-id="b314e-203">方法</span><span class="sxs-lookup"><span data-stu-id="b314e-203">Method</span></span> |
+| [<span data-ttu-id="b314e-204">setSelectedDataAsync</span><span class="sxs-lookup"><span data-stu-id="b314e-204">setSelectedDataAsync</span></span>](#setselecteddataasyncdata-options-callback) | <span data-ttu-id="b314e-205">方法</span><span class="sxs-lookup"><span data-stu-id="b314e-205">Method</span></span> |
 
-### <a name="example"></a><span data-ttu-id="3eb21-205">示例</span><span class="sxs-lookup"><span data-stu-id="3eb21-205">Example</span></span>
+### <a name="example"></a><span data-ttu-id="b314e-206">示例</span><span class="sxs-lookup"><span data-stu-id="b314e-206">Example</span></span>
 
-<span data-ttu-id="3eb21-206">以下 JavaScript 代码示例显示了如何访问 Outlook 中当前项目的 `subject` 属性。</span><span class="sxs-lookup"><span data-stu-id="3eb21-206">The following JavaScript code example shows how to access the `subject` property of the current item in Outlook.</span></span>
+<span data-ttu-id="b314e-207">以下 JavaScript 代码示例显示了如何访问 Outlook 中当前项目的 `subject` 属性。</span><span class="sxs-lookup"><span data-stu-id="b314e-207">The following JavaScript code example shows how to access the `subject` property of the current item in Outlook.</span></span>
 
 ```js
 // The initialize function is required for all apps.
@@ -80,30 +91,30 @@ Office.initialize = function () {
 }
 ```
 
-### <a name="members"></a><span data-ttu-id="3eb21-207">成员</span><span class="sxs-lookup"><span data-stu-id="3eb21-207">Members</span></span>
+### <a name="members"></a><span data-ttu-id="b314e-208">成员</span><span class="sxs-lookup"><span data-stu-id="b314e-208">Members</span></span>
 
-#### <a name="attachments-arrayattachmentdetailsjavascriptapioutlook17officeattachmentdetails"></a><span data-ttu-id="3eb21-208">attachments :Array.<[AttachmentDetails](/javascript/api/outlook_1_7/office.attachmentdetails)></span><span class="sxs-lookup"><span data-stu-id="3eb21-208">attachments :Array.<[AttachmentDetails](/javascript/api/outlook_1_7/office.attachmentdetails)></span></span>
+#### <a name="attachments-arrayattachmentdetailsjavascriptapioutlook17officeattachmentdetails"></a><span data-ttu-id="b314e-209">attachments :Array.<[AttachmentDetails](/javascript/api/outlook_1_7/office.attachmentdetails)></span><span class="sxs-lookup"><span data-stu-id="b314e-209">attachments :Array.<[AttachmentDetails](/javascript/api/outlook_1_7/office.attachmentdetails)></span></span>
 
-<span data-ttu-id="3eb21-p102">获取项目的附件数组。仅限阅读模式。</span><span class="sxs-lookup"><span data-stu-id="3eb21-p102">Gets an array of attachments for the item. Read mode only.</span></span>
+<span data-ttu-id="b314e-p102">获取项目的附件数组。仅限阅读模式。</span><span class="sxs-lookup"><span data-stu-id="b314e-p102">Gets an array of attachments for the item. Read mode only.</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="3eb21-211">由于潜在的安全问题，某些类型的文件会受到 Outlook 阻止，并且不会返回。</span><span class="sxs-lookup"><span data-stu-id="3eb21-211">Certain types of files are blocked by Outlook due to potential security issues and are therefore not returned.</span></span> <span data-ttu-id="3eb21-212">如需了解更多信息，请参阅 [Outlook 中阻止的附件](https://support.office.com/article/Blocked-attachments-in-Outlook-434752E1-02D3-4E90-9124-8B81E49A8519)。</span><span class="sxs-lookup"><span data-stu-id="3eb21-212">For more information see [Payments in Outlook](https://support.office.com/article/Blocked-attachments-in-Outlook-434752E1-02D3-4E90-9124-8B81E49A8519).</span></span>
+> <span data-ttu-id="b314e-212">由于潜在的安全问题，某些类型的文件会受到 Outlook 阻止，并且不会返回。</span><span class="sxs-lookup"><span data-stu-id="b314e-212">Certain types of files are blocked by Outlook due to potential security issues and are therefore not returned.</span></span> <span data-ttu-id="b314e-213">如需了解更多信息，请参阅 [Outlook 中阻止的附件](https://support.office.com/article/Blocked-attachments-in-Outlook-434752E1-02D3-4E90-9124-8B81E49A8519)。</span><span class="sxs-lookup"><span data-stu-id="b314e-213">For more information, see [Blocked attachments in Outlook](https://support.office.com/article/Blocked-attachments-in-Outlook-434752E1-02D3-4E90-9124-8B81E49A8519).</span></span>
 
-##### <a name="type"></a><span data-ttu-id="3eb21-213">类型：</span><span class="sxs-lookup"><span data-stu-id="3eb21-213">Type:</span></span>
+##### <a name="type"></a><span data-ttu-id="b314e-214">类型：</span><span class="sxs-lookup"><span data-stu-id="b314e-214">Type:</span></span>
 
-*   <span data-ttu-id="3eb21-214">Array.<[AttachmentDetails](/javascript/api/outlook_1_7/office.attachmentdetails)></span><span class="sxs-lookup"><span data-stu-id="3eb21-214">Array.<[AttachmentDetails](/javascript/api/outlook_1_7/office.attachmentdetails)></span></span>
+*   <span data-ttu-id="b314e-215">Array.<[AttachmentDetails](/javascript/api/outlook_1_7/office.attachmentdetails)></span><span class="sxs-lookup"><span data-stu-id="b314e-215">Array.<[AttachmentDetails](/javascript/api/outlook_1_7/office.attachmentdetails)></span></span>
 
-##### <a name="requirements"></a><span data-ttu-id="3eb21-215">要求</span><span class="sxs-lookup"><span data-stu-id="3eb21-215">Requirements</span></span>
+##### <a name="requirements"></a><span data-ttu-id="b314e-216">要求</span><span class="sxs-lookup"><span data-stu-id="b314e-216">Requirements</span></span>
 
-|<span data-ttu-id="3eb21-216">要求</span><span class="sxs-lookup"><span data-stu-id="3eb21-216">Requirement</span></span>|<span data-ttu-id="3eb21-217">值</span><span class="sxs-lookup"><span data-stu-id="3eb21-217">Value</span></span>|
+|<span data-ttu-id="b314e-217">要求</span><span class="sxs-lookup"><span data-stu-id="b314e-217">Requirement</span></span>|<span data-ttu-id="b314e-218">值</span><span class="sxs-lookup"><span data-stu-id="b314e-218">Value</span></span>|
 |---|---|
-|[<span data-ttu-id="3eb21-218">最低版本的邮箱要求集</span><span class="sxs-lookup"><span data-stu-id="3eb21-218">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|<span data-ttu-id="3eb21-219">1.0</span><span class="sxs-lookup"><span data-stu-id="3eb21-219">1.0</span></span>|
-|[<span data-ttu-id="3eb21-220">最低权限级别</span><span class="sxs-lookup"><span data-stu-id="3eb21-220">Minimum permission level</span></span>](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)|<span data-ttu-id="3eb21-221">ReadItem</span><span class="sxs-lookup"><span data-stu-id="3eb21-221">ReadItem</span></span>|
-|[<span data-ttu-id="3eb21-222">适用的 Outlook 模式</span><span class="sxs-lookup"><span data-stu-id="3eb21-222">Applicable Outlook mode</span></span>](https://docs.microsoft.com/outlook/add-ins/#extension-points)|<span data-ttu-id="3eb21-223">阅读</span><span class="sxs-lookup"><span data-stu-id="3eb21-223">Read</span></span>|
+|[<span data-ttu-id="b314e-219">最低版本的邮箱要求集</span><span class="sxs-lookup"><span data-stu-id="b314e-219">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|<span data-ttu-id="b314e-220">1.0</span><span class="sxs-lookup"><span data-stu-id="b314e-220">1.0</span></span>|
+|[<span data-ttu-id="b314e-221">最低权限级别</span><span class="sxs-lookup"><span data-stu-id="b314e-221">Minimum permission level</span></span>](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)|<span data-ttu-id="b314e-222">ReadItem</span><span class="sxs-lookup"><span data-stu-id="b314e-222">ReadItem</span></span>|
+|[<span data-ttu-id="b314e-223">适用的 Outlook 模式</span><span class="sxs-lookup"><span data-stu-id="b314e-223">Applicable Outlook mode</span></span>](https://docs.microsoft.com/outlook/add-ins/#extension-points)|<span data-ttu-id="b314e-224">阅读</span><span class="sxs-lookup"><span data-stu-id="b314e-224">Read</span></span>|
 
-##### <a name="example"></a><span data-ttu-id="3eb21-224">示例</span><span class="sxs-lookup"><span data-stu-id="3eb21-224">Example</span></span>
+##### <a name="example"></a><span data-ttu-id="b314e-225">示例</span><span class="sxs-lookup"><span data-stu-id="b314e-225">Example</span></span>
 
-<span data-ttu-id="3eb21-225">以下代码使用当前项目上所有附件的详细信息构成 HTML 字符串。</span><span class="sxs-lookup"><span data-stu-id="3eb21-225">The following code builds an HTML string with details of all attachments on the current item.</span></span>
+<span data-ttu-id="b314e-226">以下代码使用当前项目上所有附件的详细信息构成 HTML 字符串。</span><span class="sxs-lookup"><span data-stu-id="b314e-226">The following code builds an HTML string with details of all attachments on the current item.</span></span>
 
 ```js
 var _Item = Office.context.mailbox.item;
@@ -125,23 +136,23 @@ if (_Item.attachments.length > 0) {
 // Do something with outputString
 ```
 
-####  <a name="bcc-recipientsjavascriptapioutlook17officerecipients"></a><span data-ttu-id="3eb21-226">bcc :[Recipients](/javascript/api/outlook_1_7/office.recipients)</span><span class="sxs-lookup"><span data-stu-id="3eb21-226">bcc :[Recipients](/javascript/api/outlook_1_7/office.recipients)</span></span>
+####  <a name="bcc-recipientsjavascriptapioutlook17officerecipients"></a><span data-ttu-id="b314e-227">bcc :[Recipients](/javascript/api/outlook_1_7/office.recipients)</span><span class="sxs-lookup"><span data-stu-id="b314e-227">bcc :[Recipients](/javascript/api/outlook_1_7/office.recipients)</span></span>
 
-<span data-ttu-id="3eb21-227">获取对象，该对象提供用于获取或更新邮件的密件抄送 (Bcc) 行上的收件人的方法。</span><span class="sxs-lookup"><span data-stu-id="3eb21-227">Gets an object that provides methods to get or update the recipients on the Bcc (blind carbon copy) line of a message.</span></span> <span data-ttu-id="3eb21-228">仅限撰写模式。</span><span class="sxs-lookup"><span data-stu-id="3eb21-228">Compose mode only.</span></span>
+<span data-ttu-id="b314e-228">获取对象，该对象提供用于获取或更新邮件的密件抄送 (Bcc) 行上的收件人的方法。</span><span class="sxs-lookup"><span data-stu-id="b314e-228">Gets an object that provides methods to get or update the recipients on the Bcc (blind carbon copy) line of a message.</span></span> <span data-ttu-id="b314e-229">仅限撰写模式。</span><span class="sxs-lookup"><span data-stu-id="b314e-229">Compose mode only.</span></span>
 
-##### <a name="type"></a><span data-ttu-id="3eb21-229">类型：</span><span class="sxs-lookup"><span data-stu-id="3eb21-229">Type:</span></span>
+##### <a name="type"></a><span data-ttu-id="b314e-230">类型：</span><span class="sxs-lookup"><span data-stu-id="b314e-230">Type:</span></span>
 
-*   [<span data-ttu-id="3eb21-230">收件人</span><span class="sxs-lookup"><span data-stu-id="3eb21-230">Recipients</span></span>](/javascript/api/outlook_1_7/office.recipients)
+*   [<span data-ttu-id="b314e-231">收件人</span><span class="sxs-lookup"><span data-stu-id="b314e-231">Recipients</span></span>](/javascript/api/outlook_1_7/office.recipients)
 
-##### <a name="requirements"></a><span data-ttu-id="3eb21-231">要求</span><span class="sxs-lookup"><span data-stu-id="3eb21-231">Requirements</span></span>
+##### <a name="requirements"></a><span data-ttu-id="b314e-232">要求</span><span class="sxs-lookup"><span data-stu-id="b314e-232">Requirements</span></span>
 
-|<span data-ttu-id="3eb21-232">要求</span><span class="sxs-lookup"><span data-stu-id="3eb21-232">Requirement</span></span>|<span data-ttu-id="3eb21-233">值</span><span class="sxs-lookup"><span data-stu-id="3eb21-233">Value</span></span>|
+|<span data-ttu-id="b314e-233">要求</span><span class="sxs-lookup"><span data-stu-id="b314e-233">Requirement</span></span>|<span data-ttu-id="b314e-234">值</span><span class="sxs-lookup"><span data-stu-id="b314e-234">Value</span></span>|
 |---|---|
-|[<span data-ttu-id="3eb21-234">最低版本的邮箱要求集</span><span class="sxs-lookup"><span data-stu-id="3eb21-234">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|<span data-ttu-id="3eb21-235">1.1</span><span class="sxs-lookup"><span data-stu-id="3eb21-235">1.1</span></span>|
-|[<span data-ttu-id="3eb21-236">最低权限级别</span><span class="sxs-lookup"><span data-stu-id="3eb21-236">Minimum permission level</span></span>](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)|<span data-ttu-id="3eb21-237">ReadItem</span><span class="sxs-lookup"><span data-stu-id="3eb21-237">ReadItem</span></span>|
-|[<span data-ttu-id="3eb21-238">适用的 Outlook 模式</span><span class="sxs-lookup"><span data-stu-id="3eb21-238">Applicable Outlook mode</span></span>](https://docs.microsoft.com/outlook/add-ins/#extension-points)|<span data-ttu-id="3eb21-239">撰写</span><span class="sxs-lookup"><span data-stu-id="3eb21-239">Compose</span></span>|
+|[<span data-ttu-id="b314e-235">最低版本的邮箱要求集</span><span class="sxs-lookup"><span data-stu-id="b314e-235">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|<span data-ttu-id="b314e-236">1.1</span><span class="sxs-lookup"><span data-stu-id="b314e-236">1.1</span></span>|
+|[<span data-ttu-id="b314e-237">最低权限级别</span><span class="sxs-lookup"><span data-stu-id="b314e-237">Minimum permission level</span></span>](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)|<span data-ttu-id="b314e-238">ReadItem</span><span class="sxs-lookup"><span data-stu-id="b314e-238">ReadItem</span></span>|
+|[<span data-ttu-id="b314e-239">适用的 Outlook 模式</span><span class="sxs-lookup"><span data-stu-id="b314e-239">Applicable Outlook mode</span></span>](https://docs.microsoft.com/outlook/add-ins/#extension-points)|<span data-ttu-id="b314e-240">撰写</span><span class="sxs-lookup"><span data-stu-id="b314e-240">Compose</span></span>|
 
-##### <a name="example"></a><span data-ttu-id="3eb21-240">示例</span><span class="sxs-lookup"><span data-stu-id="3eb21-240">Example</span></span>
+##### <a name="example"></a><span data-ttu-id="b314e-241">示例</span><span class="sxs-lookup"><span data-stu-id="b314e-241">Example</span></span>
 
 ```js
 Office.context.mailbox.item.bcc.setAsync( ['alice@contoso.com', 'bob@contoso.com'] );
@@ -153,47 +164,47 @@ function callback(asyncResult) {
 }
 ```
 
-####  <a name="body-bodyjavascriptapioutlook17officebody"></a><span data-ttu-id="3eb21-241">body :[Body](/javascript/api/outlook_1_7/office.body)</span><span class="sxs-lookup"><span data-stu-id="3eb21-241">body :[Body](/javascript/api/outlook_1_7/office.body)</span></span>
+####  <a name="body-bodyjavascriptapioutlook17officebody"></a><span data-ttu-id="b314e-242">body :[Body](/javascript/api/outlook_1_7/office.body)</span><span class="sxs-lookup"><span data-stu-id="b314e-242">body :[Body](/javascript/api/outlook_1_7/office.body)</span></span>
 
-<span data-ttu-id="3eb21-242">获取一个提供用于处理项目正文的方法的对象。</span><span class="sxs-lookup"><span data-stu-id="3eb21-242">Gets an object that provides methods for manipulating the body of an item.</span></span>
+<span data-ttu-id="b314e-243">获取一个提供用于处理项目正文的方法的对象。</span><span class="sxs-lookup"><span data-stu-id="b314e-243">Gets an object that provides methods for manipulating the body of an item.</span></span>
 
-##### <a name="type"></a><span data-ttu-id="3eb21-243">类型：</span><span class="sxs-lookup"><span data-stu-id="3eb21-243">Type:</span></span>
+##### <a name="type"></a><span data-ttu-id="b314e-244">类型：</span><span class="sxs-lookup"><span data-stu-id="b314e-244">Type:</span></span>
 
-*   [<span data-ttu-id="3eb21-244">Body</span><span class="sxs-lookup"><span data-stu-id="3eb21-244">Body</span></span>](/javascript/api/outlook_1_7/office.body)
+*   [<span data-ttu-id="b314e-245">Body</span><span class="sxs-lookup"><span data-stu-id="b314e-245">Body</span></span>](/javascript/api/outlook_1_7/office.body)
 
-##### <a name="requirements"></a><span data-ttu-id="3eb21-245">要求</span><span class="sxs-lookup"><span data-stu-id="3eb21-245">Requirements</span></span>
+##### <a name="requirements"></a><span data-ttu-id="b314e-246">要求</span><span class="sxs-lookup"><span data-stu-id="b314e-246">Requirements</span></span>
 
-|<span data-ttu-id="3eb21-246">要求</span><span class="sxs-lookup"><span data-stu-id="3eb21-246">Requirement</span></span>|<span data-ttu-id="3eb21-247">值</span><span class="sxs-lookup"><span data-stu-id="3eb21-247">Value</span></span>|
+|<span data-ttu-id="b314e-247">要求</span><span class="sxs-lookup"><span data-stu-id="b314e-247">Requirement</span></span>|<span data-ttu-id="b314e-248">值</span><span class="sxs-lookup"><span data-stu-id="b314e-248">Value</span></span>|
 |---|---|
-|[<span data-ttu-id="3eb21-248">最低版本的邮箱要求集</span><span class="sxs-lookup"><span data-stu-id="3eb21-248">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|<span data-ttu-id="3eb21-249">1.1</span><span class="sxs-lookup"><span data-stu-id="3eb21-249">1.1</span></span>|
-|[<span data-ttu-id="3eb21-250">最低权限级别</span><span class="sxs-lookup"><span data-stu-id="3eb21-250">Minimum permission level</span></span>](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)|<span data-ttu-id="3eb21-251">ReadItem</span><span class="sxs-lookup"><span data-stu-id="3eb21-251">ReadItem</span></span>|
-|[<span data-ttu-id="3eb21-252">适用的 Outlook 模式</span><span class="sxs-lookup"><span data-stu-id="3eb21-252">Applicable Outlook mode</span></span>](https://docs.microsoft.com/outlook/add-ins/#extension-points)|<span data-ttu-id="3eb21-253">撰写或阅读</span><span class="sxs-lookup"><span data-stu-id="3eb21-253">Compose or read</span></span>|
+|[<span data-ttu-id="b314e-249">最低版本的邮箱要求集</span><span class="sxs-lookup"><span data-stu-id="b314e-249">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|<span data-ttu-id="b314e-250">1.1</span><span class="sxs-lookup"><span data-stu-id="b314e-250">1.1</span></span>|
+|[<span data-ttu-id="b314e-251">最低权限级别</span><span class="sxs-lookup"><span data-stu-id="b314e-251">Minimum permission level</span></span>](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)|<span data-ttu-id="b314e-252">ReadItem</span><span class="sxs-lookup"><span data-stu-id="b314e-252">ReadItem</span></span>|
+|[<span data-ttu-id="b314e-253">适用的 Outlook 模式</span><span class="sxs-lookup"><span data-stu-id="b314e-253">Applicable Outlook mode</span></span>](https://docs.microsoft.com/outlook/add-ins/#extension-points)|<span data-ttu-id="b314e-254">撰写或阅读</span><span class="sxs-lookup"><span data-stu-id="b314e-254">Compose or read</span></span>|
 
-####  <a name="cc-arrayemailaddressdetailsjavascriptapioutlook17officeemailaddressdetailsrecipientsjavascriptapioutlook17officerecipients"></a><span data-ttu-id="3eb21-254">cc :Array.<[EmailAddressDetails](/javascript/api/outlook_1_7/office.emailaddressdetails)>|[Recipients](/javascript/api/outlook_1_7/office.recipients)</span><span class="sxs-lookup"><span data-stu-id="3eb21-254">cc :Array.<[EmailAddressDetails](/javascript/api/outlook_1_7/office.emailaddressdetails)>|[Recipients](/javascript/api/outlook_1_7/office.recipients)</span></span>
+####  <a name="cc-arrayemailaddressdetailsjavascriptapioutlook17officeemailaddressdetailsrecipientsjavascriptapioutlook17officerecipients"></a><span data-ttu-id="b314e-255">cc :Array.<[EmailAddressDetails](/javascript/api/outlook_1_7/office.emailaddressdetails)>|[Recipients](/javascript/api/outlook_1_7/office.recipients)</span><span class="sxs-lookup"><span data-stu-id="b314e-255">cc :Array.<[EmailAddressDetails](/javascript/api/outlook_1_7/office.emailaddressdetails)>|[Recipients](/javascript/api/outlook_1_7/office.recipients)</span></span>
 
-<span data-ttu-id="3eb21-255">提供对邮件的抄送 (Cc) 收件人的访问权限。</span><span class="sxs-lookup"><span data-stu-id="3eb21-255">Provides access to the Cc (carbon copy) recipients of a message.</span></span> <span data-ttu-id="3eb21-256">对象的类型和访问级别取决于当前项目的模式。</span><span class="sxs-lookup"><span data-stu-id="3eb21-256">The type of object and level of access depends on the mode of the current item.</span></span>
+<span data-ttu-id="b314e-256">提供对邮件的抄送 (Cc) 收件人的访问权限。</span><span class="sxs-lookup"><span data-stu-id="b314e-256">Provides access to the Cc (carbon copy) recipients of a message.</span></span> <span data-ttu-id="b314e-257">对象的类型和访问级别取决于当前项目的模式。</span><span class="sxs-lookup"><span data-stu-id="b314e-257">The type of object and level of access depends on the mode of the current item.</span></span>
 
-##### <a name="read-mode"></a><span data-ttu-id="3eb21-257">阅读模式</span><span class="sxs-lookup"><span data-stu-id="3eb21-257">Read mode</span></span>
+##### <a name="read-mode"></a><span data-ttu-id="b314e-258">阅读模式</span><span class="sxs-lookup"><span data-stu-id="b314e-258">Read mode</span></span>
 
-<span data-ttu-id="3eb21-p106">`cc` 属性返回包含邮件的**抄送**行上所列的每个收件人的 `EmailAddressDetails` 对象的数组。集合上限为 100 个成员。</span><span class="sxs-lookup"><span data-stu-id="3eb21-p106">The `cc` property returns an array that contains an `EmailAddressDetails` object for each recipient listed on the **Cc** line of the message. The collection is limited to a maximum of 100 members.</span></span>
+<span data-ttu-id="b314e-p106">`cc` 属性返回包含邮件的**抄送**行上所列的每个收件人的 `EmailAddressDetails` 对象的数组。集合上限为 100 个成员。</span><span class="sxs-lookup"><span data-stu-id="b314e-p106">The `cc` property returns an array that contains an `EmailAddressDetails` object for each recipient listed on the **Cc** line of the message. The collection is limited to a maximum of 100 members.</span></span>
 
-##### <a name="compose-mode"></a><span data-ttu-id="3eb21-260">撰写模式</span><span class="sxs-lookup"><span data-stu-id="3eb21-260">Compose mode</span></span>
+##### <a name="compose-mode"></a><span data-ttu-id="b314e-261">撰写模式</span><span class="sxs-lookup"><span data-stu-id="b314e-261">Compose mode</span></span>
 
-<span data-ttu-id="3eb21-261">`cc` 属性返回 `Recipients`一个对象，该对象提供用于获取或更新邮件的**抄送**行上收件人的方法。</span><span class="sxs-lookup"><span data-stu-id="3eb21-261">The `cc` property returns a `Recipients` object that provides methods for manipulating the recipients on the **Cc** line of the message.</span></span>
+<span data-ttu-id="b314e-262">`cc` 属性返回一个 `Recipients` 对象，该对象提供用于获取或更新邮件的“**抄送**”行上收件人的方法。</span><span class="sxs-lookup"><span data-stu-id="b314e-262">The `cc` property returns a `Recipients` object that provides methods to get or update the recipients on the **Cc** line of the message.</span></span>
 
-##### <a name="type"></a><span data-ttu-id="3eb21-262">类型：</span><span class="sxs-lookup"><span data-stu-id="3eb21-262">Type:</span></span>
+##### <a name="type"></a><span data-ttu-id="b314e-263">类型：</span><span class="sxs-lookup"><span data-stu-id="b314e-263">Type:</span></span>
 
-*   <span data-ttu-id="3eb21-263">Array.<[EmailAddressDetails](/javascript/api/outlook_1_7/office.emailaddressdetails)> | [Recipients](/javascript/api/outlook_1_7/office.recipients)</span><span class="sxs-lookup"><span data-stu-id="3eb21-263">Array.<[EmailAddressDetails](/javascript/api/outlook_1_7/office.emailaddressdetails)> | [Recipients](/javascript/api/outlook_1_7/office.recipients)</span></span>
+*   <span data-ttu-id="b314e-264">Array.<[EmailAddressDetails](/javascript/api/outlook_1_7/office.emailaddressdetails)> | [Recipients](/javascript/api/outlook_1_7/office.recipients)</span><span class="sxs-lookup"><span data-stu-id="b314e-264">Array.<[EmailAddressDetails](/javascript/api/outlook_1_7/office.emailaddressdetails)> | [Recipients](/javascript/api/outlook_1_7/office.recipients)</span></span>
 
-##### <a name="requirements"></a><span data-ttu-id="3eb21-264">要求</span><span class="sxs-lookup"><span data-stu-id="3eb21-264">Requirements</span></span>
+##### <a name="requirements"></a><span data-ttu-id="b314e-265">要求</span><span class="sxs-lookup"><span data-stu-id="b314e-265">Requirements</span></span>
 
-|<span data-ttu-id="3eb21-265">要求</span><span class="sxs-lookup"><span data-stu-id="3eb21-265">Requirement</span></span>|<span data-ttu-id="3eb21-266">值</span><span class="sxs-lookup"><span data-stu-id="3eb21-266">Value</span></span>|
+|<span data-ttu-id="b314e-266">要求</span><span class="sxs-lookup"><span data-stu-id="b314e-266">Requirement</span></span>|<span data-ttu-id="b314e-267">值</span><span class="sxs-lookup"><span data-stu-id="b314e-267">Value</span></span>|
 |---|---|
-|[<span data-ttu-id="3eb21-267">最低版本的邮箱要求集</span><span class="sxs-lookup"><span data-stu-id="3eb21-267">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|<span data-ttu-id="3eb21-268">1.0</span><span class="sxs-lookup"><span data-stu-id="3eb21-268">1.0</span></span>|
-|[<span data-ttu-id="3eb21-269">最低权限级别</span><span class="sxs-lookup"><span data-stu-id="3eb21-269">Minimum permission level</span></span>](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)|<span data-ttu-id="3eb21-270">ReadItem</span><span class="sxs-lookup"><span data-stu-id="3eb21-270">ReadItem</span></span>|
-|[<span data-ttu-id="3eb21-271">适用的 Outlook 模式</span><span class="sxs-lookup"><span data-stu-id="3eb21-271">Applicable Outlook mode</span></span>](https://docs.microsoft.com/outlook/add-ins/#extension-points)|<span data-ttu-id="3eb21-272">撰写或阅读</span><span class="sxs-lookup"><span data-stu-id="3eb21-272">Compose or read</span></span>|
+|[<span data-ttu-id="b314e-268">最低版本的邮箱要求集</span><span class="sxs-lookup"><span data-stu-id="b314e-268">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|<span data-ttu-id="b314e-269">1.0</span><span class="sxs-lookup"><span data-stu-id="b314e-269">1.0</span></span>|
+|[<span data-ttu-id="b314e-270">最低权限级别</span><span class="sxs-lookup"><span data-stu-id="b314e-270">Minimum permission level</span></span>](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)|<span data-ttu-id="b314e-271">ReadItem</span><span class="sxs-lookup"><span data-stu-id="b314e-271">ReadItem</span></span>|
+|[<span data-ttu-id="b314e-272">适用的 Outlook 模式</span><span class="sxs-lookup"><span data-stu-id="b314e-272">Applicable Outlook mode</span></span>](https://docs.microsoft.com/outlook/add-ins/#extension-points)|<span data-ttu-id="b314e-273">撰写或阅读</span><span class="sxs-lookup"><span data-stu-id="b314e-273">Compose or read</span></span>|
 
-##### <a name="example"></a><span data-ttu-id="3eb21-273">示例</span><span class="sxs-lookup"><span data-stu-id="3eb21-273">Example</span></span>
+##### <a name="example"></a><span data-ttu-id="b314e-274">示例</span><span class="sxs-lookup"><span data-stu-id="b314e-274">Example</span></span>
 
 ```js
 Office.context.mailbox.item.cc.setAsync( ['alice@contoso.com', 'bob@contoso.com'] );
@@ -205,104 +216,104 @@ function callback(asyncResult) {
 }
 ```
 
-####  <a name="nullable-conversationid-string"></a><span data-ttu-id="3eb21-274">(nullable) conversationId :String</span><span class="sxs-lookup"><span data-stu-id="3eb21-274">(nullable) conversationId :String</span></span>
+####  <a name="nullable-conversationid-string"></a><span data-ttu-id="b314e-275">(nullable) conversationId :String</span><span class="sxs-lookup"><span data-stu-id="b314e-275">(nullable) conversationId :String</span></span>
 
-<span data-ttu-id="3eb21-275">获取包含特定消息的电子邮件会话的标识符。</span><span class="sxs-lookup"><span data-stu-id="3eb21-275">Gets an identifier for the email conversation that contains a particular message.</span></span>
+<span data-ttu-id="b314e-276">获取包含特定消息的电子邮件会话的标识符。</span><span class="sxs-lookup"><span data-stu-id="b314e-276">Gets an identifier for the email conversation that contains a particular message.</span></span>
 
-<span data-ttu-id="3eb21-p107">如果在阅读窗体或撰写窗体的回复中激活邮件应用程序，则此属性可以获得一个整数值。如果用户随后更改了回复邮件的主题（若发送回复），则该邮件的对话 ID 将改变且之前获取的值将不适用。</span><span class="sxs-lookup"><span data-stu-id="3eb21-p107">You can get an integer for this property if your mail app is activated in read forms or responses in compose forms. If subsequently the user changes the subject of the reply message, upon sending the reply, the conversation ID for that message will change and that value you obtained earlier will no longer apply.</span></span>
+<span data-ttu-id="b314e-p107">如果在阅读窗体或撰写窗体的回复中激活邮件应用程序，则此属性可以获得一个整数值。如果用户随后更改了回复邮件的主题（若发送回复），则该邮件的对话 ID 将改变且之前获取的值将不适用。</span><span class="sxs-lookup"><span data-stu-id="b314e-p107">You can get an integer for this property if your mail app is activated in read forms or responses in compose forms. If subsequently the user changes the subject of the reply message, upon sending the reply, the conversation ID for that message will change and that value you obtained earlier will no longer apply.</span></span>
 
-<span data-ttu-id="3eb21-p108">对于撰写窗体的新项目，此属性获得一个 null 值。如果用户设置一个主题并保存该项目，`conversationId` 属性将返回一个值。</span><span class="sxs-lookup"><span data-stu-id="3eb21-p108">You get null for this property for a new item in a compose form. If the user sets a subject and saves the item, the `conversationId` property will return a value.</span></span>
+<span data-ttu-id="b314e-p108">对于撰写窗体的新项目，此属性获得一个 null 值。如果用户设置一个主题并保存该项目，`conversationId` 属性将返回一个值。</span><span class="sxs-lookup"><span data-stu-id="b314e-p108">You get null for this property for a new item in a compose form. If the user sets a subject and saves the item, the `conversationId` property will return a value.</span></span>
 
-##### <a name="type"></a><span data-ttu-id="3eb21-280">类型:</span><span class="sxs-lookup"><span data-stu-id="3eb21-280">Type:</span></span>
+##### <a name="type"></a><span data-ttu-id="b314e-281">类型:</span><span class="sxs-lookup"><span data-stu-id="b314e-281">Type:</span></span>
 
-*   <span data-ttu-id="3eb21-281">String</span><span class="sxs-lookup"><span data-stu-id="3eb21-281">String</span></span>
+*   <span data-ttu-id="b314e-282">String</span><span class="sxs-lookup"><span data-stu-id="b314e-282">String</span></span>
 
-##### <a name="requirements"></a><span data-ttu-id="3eb21-282">要求</span><span class="sxs-lookup"><span data-stu-id="3eb21-282">Requirements</span></span>
+##### <a name="requirements"></a><span data-ttu-id="b314e-283">要求</span><span class="sxs-lookup"><span data-stu-id="b314e-283">Requirements</span></span>
 
-|<span data-ttu-id="3eb21-283">要求</span><span class="sxs-lookup"><span data-stu-id="3eb21-283">Requirement</span></span>|<span data-ttu-id="3eb21-284">值</span><span class="sxs-lookup"><span data-stu-id="3eb21-284">Value</span></span>|
+|<span data-ttu-id="b314e-284">要求</span><span class="sxs-lookup"><span data-stu-id="b314e-284">Requirement</span></span>|<span data-ttu-id="b314e-285">值</span><span class="sxs-lookup"><span data-stu-id="b314e-285">Value</span></span>|
 |---|---|
-|[<span data-ttu-id="3eb21-285">最低版本的邮箱要求集</span><span class="sxs-lookup"><span data-stu-id="3eb21-285">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|<span data-ttu-id="3eb21-286">1.0</span><span class="sxs-lookup"><span data-stu-id="3eb21-286">1.0</span></span>|
-|[<span data-ttu-id="3eb21-287">最低权限级别</span><span class="sxs-lookup"><span data-stu-id="3eb21-287">Minimum permission level</span></span>](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)|<span data-ttu-id="3eb21-288">ReadItem</span><span class="sxs-lookup"><span data-stu-id="3eb21-288">ReadItem</span></span>|
-|[<span data-ttu-id="3eb21-289">适用的 Outlook 模式</span><span class="sxs-lookup"><span data-stu-id="3eb21-289">Applicable Outlook mode</span></span>](https://docs.microsoft.com/outlook/add-ins/#extension-points)|<span data-ttu-id="3eb21-290">撰写或阅读</span><span class="sxs-lookup"><span data-stu-id="3eb21-290">Compose or read</span></span>|
+|[<span data-ttu-id="b314e-286">最低版本的邮箱要求集</span><span class="sxs-lookup"><span data-stu-id="b314e-286">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|<span data-ttu-id="b314e-287">1.0</span><span class="sxs-lookup"><span data-stu-id="b314e-287">1.0</span></span>|
+|[<span data-ttu-id="b314e-288">最低权限级别</span><span class="sxs-lookup"><span data-stu-id="b314e-288">Minimum permission level</span></span>](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)|<span data-ttu-id="b314e-289">ReadItem</span><span class="sxs-lookup"><span data-stu-id="b314e-289">ReadItem</span></span>|
+|[<span data-ttu-id="b314e-290">适用的 Outlook 模式</span><span class="sxs-lookup"><span data-stu-id="b314e-290">Applicable Outlook mode</span></span>](https://docs.microsoft.com/outlook/add-ins/#extension-points)|<span data-ttu-id="b314e-291">撰写或阅读</span><span class="sxs-lookup"><span data-stu-id="b314e-291">Compose or read</span></span>|
 
-#### <a name="datetimecreated-date"></a><span data-ttu-id="3eb21-291">dateTimeCreated :Date</span><span class="sxs-lookup"><span data-stu-id="3eb21-291">dateTimeCreated :Date</span></span>
+#### <a name="datetimecreated-date"></a><span data-ttu-id="b314e-292">dateTimeCreated :Date</span><span class="sxs-lookup"><span data-stu-id="b314e-292">dateTimeCreated :Date</span></span>
 
-<span data-ttu-id="3eb21-p109">获取项目创建的日期和时间。仅限阅读模式。</span><span class="sxs-lookup"><span data-stu-id="3eb21-p109">Gets the date and time that an item was created. Read mode only.</span></span>
+<span data-ttu-id="b314e-p109">获取项目创建的日期和时间。仅限阅读模式。</span><span class="sxs-lookup"><span data-stu-id="b314e-p109">Gets the date and time that an item was created. Read mode only.</span></span>
 
-##### <a name="type"></a><span data-ttu-id="3eb21-294">类型：</span><span class="sxs-lookup"><span data-stu-id="3eb21-294">Type:</span></span>
+##### <a name="type"></a><span data-ttu-id="b314e-295">类型：</span><span class="sxs-lookup"><span data-stu-id="b314e-295">Type:</span></span>
 
-*   <span data-ttu-id="3eb21-295">日期</span><span class="sxs-lookup"><span data-stu-id="3eb21-295">Date</span></span>
+*   <span data-ttu-id="b314e-296">日期</span><span class="sxs-lookup"><span data-stu-id="b314e-296">Date</span></span>
 
-##### <a name="requirements"></a><span data-ttu-id="3eb21-296">要求</span><span class="sxs-lookup"><span data-stu-id="3eb21-296">Requirements</span></span>
+##### <a name="requirements"></a><span data-ttu-id="b314e-297">要求</span><span class="sxs-lookup"><span data-stu-id="b314e-297">Requirements</span></span>
 
-|<span data-ttu-id="3eb21-297">要求</span><span class="sxs-lookup"><span data-stu-id="3eb21-297">Requirement</span></span>|<span data-ttu-id="3eb21-298">值</span><span class="sxs-lookup"><span data-stu-id="3eb21-298">Value</span></span>|
+|<span data-ttu-id="b314e-298">要求</span><span class="sxs-lookup"><span data-stu-id="b314e-298">Requirement</span></span>|<span data-ttu-id="b314e-299">值</span><span class="sxs-lookup"><span data-stu-id="b314e-299">Value</span></span>|
 |---|---|
-|[<span data-ttu-id="3eb21-299">最低版本的邮箱要求集</span><span class="sxs-lookup"><span data-stu-id="3eb21-299">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|<span data-ttu-id="3eb21-300">1.0</span><span class="sxs-lookup"><span data-stu-id="3eb21-300">1.0</span></span>|
-|[<span data-ttu-id="3eb21-301">最低权限级别</span><span class="sxs-lookup"><span data-stu-id="3eb21-301">Minimum permission level</span></span>](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)|<span data-ttu-id="3eb21-302">ReadItem</span><span class="sxs-lookup"><span data-stu-id="3eb21-302">ReadItem</span></span>|
-|[<span data-ttu-id="3eb21-303">适用的 Outlook 模式</span><span class="sxs-lookup"><span data-stu-id="3eb21-303">Applicable Outlook mode</span></span>](https://docs.microsoft.com/outlook/add-ins/#extension-points)|<span data-ttu-id="3eb21-304">阅读</span><span class="sxs-lookup"><span data-stu-id="3eb21-304">Read</span></span>|
+|[<span data-ttu-id="b314e-300">最低版本的邮箱要求集</span><span class="sxs-lookup"><span data-stu-id="b314e-300">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|<span data-ttu-id="b314e-301">1.0</span><span class="sxs-lookup"><span data-stu-id="b314e-301">1.0</span></span>|
+|[<span data-ttu-id="b314e-302">最低权限级别</span><span class="sxs-lookup"><span data-stu-id="b314e-302">Minimum permission level</span></span>](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)|<span data-ttu-id="b314e-303">ReadItem</span><span class="sxs-lookup"><span data-stu-id="b314e-303">ReadItem</span></span>|
+|[<span data-ttu-id="b314e-304">适用的 Outlook 模式</span><span class="sxs-lookup"><span data-stu-id="b314e-304">Applicable Outlook mode</span></span>](https://docs.microsoft.com/outlook/add-ins/#extension-points)|<span data-ttu-id="b314e-305">阅读</span><span class="sxs-lookup"><span data-stu-id="b314e-305">Read</span></span>|
 
-##### <a name="example"></a><span data-ttu-id="3eb21-305">示例</span><span class="sxs-lookup"><span data-stu-id="3eb21-305">Example</span></span>
+##### <a name="example"></a><span data-ttu-id="b314e-306">示例</span><span class="sxs-lookup"><span data-stu-id="b314e-306">Example</span></span>
 
 ```js
 var created = Office.context.mailbox.item.dateTimeCreated;
 ```
 
-#### <a name="datetimemodified-date"></a><span data-ttu-id="3eb21-306">dateTimeModified :Date</span><span class="sxs-lookup"><span data-stu-id="3eb21-306">dateTimeModified :Date</span></span>
+#### <a name="datetimemodified-date"></a><span data-ttu-id="b314e-307">dateTimeModified :Date</span><span class="sxs-lookup"><span data-stu-id="b314e-307">dateTimeModified :Date</span></span>
 
-<span data-ttu-id="3eb21-p110">获取项目最近一次修改的日期和时间。仅限阅读模式。</span><span class="sxs-lookup"><span data-stu-id="3eb21-p110">Gets the date and time that an item was last modified. Read mode only.</span></span>
+<span data-ttu-id="b314e-p110">获取项目最近一次修改的日期和时间。仅限阅读模式。</span><span class="sxs-lookup"><span data-stu-id="b314e-p110">Gets the date and time that an item was last modified. Read mode only.</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="3eb21-309">在 Outlook for iOS 或 Outlook for Android 中不支持此成员。</span><span class="sxs-lookup"><span data-stu-id="3eb21-309">Note: This member is not supported in Outlook for iOS or Outlook for Android.</span></span>
+> <span data-ttu-id="b314e-310">在 Outlook for iOS 或 Outlook for Android 中不支持此成员。</span><span class="sxs-lookup"><span data-stu-id="b314e-310">This member is not supported in Outlook for iOS or Outlook for Android.</span></span>
 
-##### <a name="type"></a><span data-ttu-id="3eb21-310">类型:</span><span class="sxs-lookup"><span data-stu-id="3eb21-310">Type:</span></span>
+##### <a name="type"></a><span data-ttu-id="b314e-311">类型:</span><span class="sxs-lookup"><span data-stu-id="b314e-311">Type:</span></span>
 
-*   <span data-ttu-id="3eb21-311">日期</span><span class="sxs-lookup"><span data-stu-id="3eb21-311">Date</span></span>
+*   <span data-ttu-id="b314e-312">日期</span><span class="sxs-lookup"><span data-stu-id="b314e-312">Date</span></span>
 
-##### <a name="requirements"></a><span data-ttu-id="3eb21-312">要求</span><span class="sxs-lookup"><span data-stu-id="3eb21-312">Requirements</span></span>
+##### <a name="requirements"></a><span data-ttu-id="b314e-313">要求</span><span class="sxs-lookup"><span data-stu-id="b314e-313">Requirements</span></span>
 
-|<span data-ttu-id="3eb21-313">要求</span><span class="sxs-lookup"><span data-stu-id="3eb21-313">Requirement</span></span>|<span data-ttu-id="3eb21-314">值</span><span class="sxs-lookup"><span data-stu-id="3eb21-314">Value</span></span>|
+|<span data-ttu-id="b314e-314">要求</span><span class="sxs-lookup"><span data-stu-id="b314e-314">Requirement</span></span>|<span data-ttu-id="b314e-315">值</span><span class="sxs-lookup"><span data-stu-id="b314e-315">Value</span></span>|
 |---|---|
-|[<span data-ttu-id="3eb21-315">最低版本的邮箱要求集</span><span class="sxs-lookup"><span data-stu-id="3eb21-315">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|<span data-ttu-id="3eb21-316">1.0</span><span class="sxs-lookup"><span data-stu-id="3eb21-316">1.0</span></span>|
-|[<span data-ttu-id="3eb21-317">最低权限级别</span><span class="sxs-lookup"><span data-stu-id="3eb21-317">Minimum permission level</span></span>](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)|<span data-ttu-id="3eb21-318">ReadItem</span><span class="sxs-lookup"><span data-stu-id="3eb21-318">ReadItem</span></span>|
-|[<span data-ttu-id="3eb21-319">适用的 Outlook 模式</span><span class="sxs-lookup"><span data-stu-id="3eb21-319">Applicable Outlook mode</span></span>](https://docs.microsoft.com/outlook/add-ins/#extension-points)|<span data-ttu-id="3eb21-320">阅读</span><span class="sxs-lookup"><span data-stu-id="3eb21-320">Read</span></span>|
+|[<span data-ttu-id="b314e-316">最低版本的邮箱要求集</span><span class="sxs-lookup"><span data-stu-id="b314e-316">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|<span data-ttu-id="b314e-317">1.0</span><span class="sxs-lookup"><span data-stu-id="b314e-317">1.0</span></span>|
+|[<span data-ttu-id="b314e-318">最低权限级别</span><span class="sxs-lookup"><span data-stu-id="b314e-318">Minimum permission level</span></span>](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)|<span data-ttu-id="b314e-319">ReadItem</span><span class="sxs-lookup"><span data-stu-id="b314e-319">ReadItem</span></span>|
+|[<span data-ttu-id="b314e-320">适用的 Outlook 模式</span><span class="sxs-lookup"><span data-stu-id="b314e-320">Applicable Outlook mode</span></span>](https://docs.microsoft.com/outlook/add-ins/#extension-points)|<span data-ttu-id="b314e-321">阅读</span><span class="sxs-lookup"><span data-stu-id="b314e-321">Read</span></span>|
 
-##### <a name="example"></a><span data-ttu-id="3eb21-321">示例</span><span class="sxs-lookup"><span data-stu-id="3eb21-321">Example</span></span>
+##### <a name="example"></a><span data-ttu-id="b314e-322">示例</span><span class="sxs-lookup"><span data-stu-id="b314e-322">Example</span></span>
 
 ```js
 var modified = Office.context.mailbox.item.dateTimeModified;
 ```
 
-####  <a name="end-datetimejavascriptapioutlook17officetime"></a><span data-ttu-id="3eb21-322">end :Date|[Time](/javascript/api/outlook_1_7/office.time)</span><span class="sxs-lookup"><span data-stu-id="3eb21-322">end :Date|[Time](/javascript/api/outlook_1_7/office.time)</span></span>
+####  <a name="end-datetimejavascriptapioutlook17officetime"></a><span data-ttu-id="b314e-323">end :Date|[Time](/javascript/api/outlook_1_7/office.time)</span><span class="sxs-lookup"><span data-stu-id="b314e-323">end :Date|[Time](/javascript/api/outlook_1_7/office.time)</span></span>
 
-<span data-ttu-id="3eb21-323">获取或设置约会结束的日期和时间。</span><span class="sxs-lookup"><span data-stu-id="3eb21-323">Gets or sets the date and time that the appointment is to end.</span></span>
+<span data-ttu-id="b314e-324">获取或设置约会结束的日期和时间。</span><span class="sxs-lookup"><span data-stu-id="b314e-324">Gets or sets the date and time that the appointment is to end.</span></span>
 
-<span data-ttu-id="3eb21-p111">将 `end` 属性表示为协调世界时 (UTC) 的日期和时间值。可使用 [`convertToLocalClientTime`](office.context.mailbox.md#converttolocalclienttimetimevalue--localclienttimejavascriptapioutlook17officelocalclienttime) 方法将 end 属性值转换为客户端的本地日期和时间。</span><span class="sxs-lookup"><span data-stu-id="3eb21-p111">The `end` property is expressed as a Coordinated Universal Time (UTC) date and time value. You can use the [`convertToLocalClientTime`](office.context.mailbox.md#converttolocalclienttimetimevalue--localclienttimejavascriptapioutlook17officelocalclienttime) method to convert the end property value to the client’s local date and time.</span></span>
+<span data-ttu-id="b314e-p111">将 `end` 属性表示为协调世界时 (UTC) 的日期和时间值。可使用 [`convertToLocalClientTime`](office.context.mailbox.md#converttolocalclienttimetimevalue--localclienttimejavascriptapioutlook17officelocalclienttime) 方法将 end 属性值转换为客户端的本地日期和时间。</span><span class="sxs-lookup"><span data-stu-id="b314e-p111">The `end` property is expressed as a Coordinated Universal Time (UTC) date and time value. You can use the [`convertToLocalClientTime`](office.context.mailbox.md#converttolocalclienttimetimevalue--localclienttimejavascriptapioutlook17officelocalclienttime) method to convert the end property value to the client’s local date and time.</span></span>
 
-##### <a name="read-mode"></a><span data-ttu-id="3eb21-326">阅读模式</span><span class="sxs-lookup"><span data-stu-id="3eb21-326">Read mode</span></span>
+##### <a name="read-mode"></a><span data-ttu-id="b314e-327">阅读模式</span><span class="sxs-lookup"><span data-stu-id="b314e-327">Read mode</span></span>
 
-<span data-ttu-id="3eb21-327">`end` 属性返回 `Date` 对象。</span><span class="sxs-lookup"><span data-stu-id="3eb21-327">The `end` property returns a `Date` object.</span></span>
+<span data-ttu-id="b314e-328">`end` 属性返回 `Date` 对象。</span><span class="sxs-lookup"><span data-stu-id="b314e-328">The `end` property returns a `Date` object.</span></span>
 
-##### <a name="compose-mode"></a><span data-ttu-id="3eb21-328">撰写模式</span><span class="sxs-lookup"><span data-stu-id="3eb21-328">Compose mode</span></span>
+##### <a name="compose-mode"></a><span data-ttu-id="b314e-329">撰写模式</span><span class="sxs-lookup"><span data-stu-id="b314e-329">Compose mode</span></span>
 
-<span data-ttu-id="3eb21-329">`end` 属性返回 `Time` 对象。</span><span class="sxs-lookup"><span data-stu-id="3eb21-329">The `end` property returns a `Time` object.</span></span>
+<span data-ttu-id="b314e-330">`end` 属性返回 `Time` 对象。</span><span class="sxs-lookup"><span data-stu-id="b314e-330">The `end` property returns a `Time` object.</span></span>
 
-<span data-ttu-id="3eb21-330">使用 [`Time.setAsync`](/javascript/api/outlook_1_7/office.time#setasync-datetime--options--callback-) 方法设置结束时间时，应使用 [`convertToUtcClientTime`](office.context.mailbox.md#converttoutcclienttimeinput--date) 方法将客户端的本地时间转换为服务器的 UTC。</span><span class="sxs-lookup"><span data-stu-id="3eb21-330">When you use the [`Time.setAsync`](/javascript/api/outlook_1_7/office.time#setasync-datetime--options--callback-) method to set the end time, you should use the [`convertToUtcClientTime`](office.context.mailbox.md#converttoutcclienttimeinput--date) method to convert the local time on the client to UTC for the server.</span></span>
+<span data-ttu-id="b314e-331">使用 [`Time.setAsync`](/javascript/api/outlook_1_7/office.time#setasync-datetime--options--callback-) 方法设置结束时间时，应使用 [`convertToUtcClientTime`](office.context.mailbox.md#converttoutcclienttimeinput--date) 方法将客户端的本地时间转换为服务器的 UTC。</span><span class="sxs-lookup"><span data-stu-id="b314e-331">When you use the [`Time.setAsync`](/javascript/api/outlook_1_7/office.time#setasync-datetime--options--callback-) method to set the end time, you should use the [`convertToUtcClientTime`](office.context.mailbox.md#converttoutcclienttimeinput--date) method to convert the local time on the client to UTC for the server.</span></span>
 
-##### <a name="type"></a><span data-ttu-id="3eb21-331">类型：</span><span class="sxs-lookup"><span data-stu-id="3eb21-331">Type:</span></span>
+##### <a name="type"></a><span data-ttu-id="b314e-332">类型：</span><span class="sxs-lookup"><span data-stu-id="b314e-332">Type:</span></span>
 
-*   <span data-ttu-id="3eb21-332">Date | [Time](/javascript/api/outlook_1_7/office.time)</span><span class="sxs-lookup"><span data-stu-id="3eb21-332">Date | [Time](/javascript/api/outlook_1_7/office.time)</span></span>
+*   <span data-ttu-id="b314e-333">Date | [Time](/javascript/api/outlook_1_7/office.time)</span><span class="sxs-lookup"><span data-stu-id="b314e-333">Date | [Time](/javascript/api/outlook_1_7/office.time)</span></span>
 
-##### <a name="requirements"></a><span data-ttu-id="3eb21-333">要求</span><span class="sxs-lookup"><span data-stu-id="3eb21-333">Requirements</span></span>
+##### <a name="requirements"></a><span data-ttu-id="b314e-334">要求</span><span class="sxs-lookup"><span data-stu-id="b314e-334">Requirements</span></span>
 
-|<span data-ttu-id="3eb21-334">要求</span><span class="sxs-lookup"><span data-stu-id="3eb21-334">Requirement</span></span>|<span data-ttu-id="3eb21-335">值</span><span class="sxs-lookup"><span data-stu-id="3eb21-335">Value</span></span>|
+|<span data-ttu-id="b314e-335">要求</span><span class="sxs-lookup"><span data-stu-id="b314e-335">Requirement</span></span>|<span data-ttu-id="b314e-336">值</span><span class="sxs-lookup"><span data-stu-id="b314e-336">Value</span></span>|
 |---|---|
-|[<span data-ttu-id="3eb21-336">最低版本的邮箱要求集</span><span class="sxs-lookup"><span data-stu-id="3eb21-336">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|<span data-ttu-id="3eb21-337">1.0</span><span class="sxs-lookup"><span data-stu-id="3eb21-337">1.0</span></span>|
-|[<span data-ttu-id="3eb21-338">最低权限级别</span><span class="sxs-lookup"><span data-stu-id="3eb21-338">Minimum permission level</span></span>](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)|<span data-ttu-id="3eb21-339">ReadItem</span><span class="sxs-lookup"><span data-stu-id="3eb21-339">ReadItem</span></span>|
-|[<span data-ttu-id="3eb21-340">适用的 Outlook 模式</span><span class="sxs-lookup"><span data-stu-id="3eb21-340">Applicable Outlook mode</span></span>](https://docs.microsoft.com/outlook/add-ins/#extension-points)|<span data-ttu-id="3eb21-341">撰写或阅读</span><span class="sxs-lookup"><span data-stu-id="3eb21-341">Compose or read</span></span>|
+|[<span data-ttu-id="b314e-337">最低版本的邮箱要求集</span><span class="sxs-lookup"><span data-stu-id="b314e-337">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|<span data-ttu-id="b314e-338">1.0</span><span class="sxs-lookup"><span data-stu-id="b314e-338">1.0</span></span>|
+|[<span data-ttu-id="b314e-339">最低权限级别</span><span class="sxs-lookup"><span data-stu-id="b314e-339">Minimum permission level</span></span>](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)|<span data-ttu-id="b314e-340">ReadItem</span><span class="sxs-lookup"><span data-stu-id="b314e-340">ReadItem</span></span>|
+|[<span data-ttu-id="b314e-341">适用的 Outlook 模式</span><span class="sxs-lookup"><span data-stu-id="b314e-341">Applicable Outlook mode</span></span>](https://docs.microsoft.com/outlook/add-ins/#extension-points)|<span data-ttu-id="b314e-342">撰写或阅读</span><span class="sxs-lookup"><span data-stu-id="b314e-342">Compose or read</span></span>|
 
-##### <a name="example"></a><span data-ttu-id="3eb21-342">示例</span><span class="sxs-lookup"><span data-stu-id="3eb21-342">Example</span></span>
+##### <a name="example"></a><span data-ttu-id="b314e-343">示例</span><span class="sxs-lookup"><span data-stu-id="b314e-343">Example</span></span>
 
-<span data-ttu-id="3eb21-343">以下示例通过使用 `Time` 对象的 [`setAsync`](/javascript/api/outlook_1_7/office.time#setasync-datetime--options--callback-) 方法，设置撰写模式下约会的结束时间。</span><span class="sxs-lookup"><span data-stu-id="3eb21-343">The following example sets the end time of an appointment in compose mode by using the [`setAsync`](/javascript/api/outlook_1_7/office.time#setasync-datetime--options--callback-) method of the `Time` object.</span></span>
+<span data-ttu-id="b314e-344">以下示例通过使用 `Time` 对象的 [`setAsync`](/javascript/api/outlook_1_7/office.time#setasync-datetime--options--callback-) 方法，设置撰写模式下约会的结束时间。</span><span class="sxs-lookup"><span data-stu-id="b314e-344">The following example sets the end time of an appointment in compose mode by using the [`setAsync`](/javascript/api/outlook_1_7/office.time#setasync-datetime--options--callback-) method of the `Time` object.</span></span>
 
 ```js
 var endTime = new Date("3/14/2015");
@@ -321,26 +332,26 @@ Office.context.mailbox.item.end.setAsync(endTime, options, function(result) {
 });
 ```
 
-#### <a name="from-emailaddressdetailsjavascriptapioutlook17officeemailaddressdetailsfromjavascriptapioutlook17officefrom"></a><span data-ttu-id="3eb21-344">from :[EmailAddressDetails](/javascript/api/outlook_1_7/office.emailaddressdetails)|[From](/javascript/api/outlook_1_7/office.from)</span><span class="sxs-lookup"><span data-stu-id="3eb21-344">from :[EmailAddressDetails](/javascript/api/outlook_1_7/office.emailaddressdetails)|[From](/javascript/api/outlook_1_7/office.from)</span></span>
+#### <a name="from-emailaddressdetailsjavascriptapioutlook17officeemailaddressdetailsfromjavascriptapioutlook17officefrom"></a><span data-ttu-id="b314e-345">from :[EmailAddressDetails](/javascript/api/outlook_1_7/office.emailaddressdetails)|[From](/javascript/api/outlook_1_7/office.from)</span><span class="sxs-lookup"><span data-stu-id="b314e-345">from :[EmailAddressDetails](/javascript/api/outlook_1_7/office.emailaddressdetails)|[From](/javascript/api/outlook_1_7/office.from)</span></span>
 
-<span data-ttu-id="3eb21-345">获取邮件发件人的电子邮件地址。</span><span class="sxs-lookup"><span data-stu-id="3eb21-345">Gets the email address of the sender of a message.</span></span>
+<span data-ttu-id="b314e-346">获取邮件发件人的电子邮件地址。</span><span class="sxs-lookup"><span data-stu-id="b314e-346">Gets the email address of the sender of a message.</span></span>
 
-<span data-ttu-id="3eb21-p112">`from` 和 [`sender`](#sender-emailaddressdetailsjavascriptapioutlook17officeemailaddressdetails) 属性表示同一个人，邮件由代理人发送的除外。在此情况下，`from` 属性表示代理程序，而 sender 属性表示代理人。</span><span class="sxs-lookup"><span data-stu-id="3eb21-p112">The `from` and [`sender`](#sender-emailaddressdetailsjavascriptapioutlook17officeemailaddressdetails) properties represent the same person unless the message is sent by a delegate. In that case, the `from` property represents the delegator, and the sender property represents the delegate.</span></span>
+<span data-ttu-id="b314e-p112">`from` 和 [`sender`](#sender-emailaddressdetailsjavascriptapioutlook17officeemailaddressdetails) 属性表示同一个人，邮件由代理人发送的除外。在此情况下，`from` 属性表示代理程序，而 sender 属性表示代理人。</span><span class="sxs-lookup"><span data-stu-id="b314e-p112">The `from` and [`sender`](#sender-emailaddressdetailsjavascriptapioutlook17officeemailaddressdetails) properties represent the same person unless the message is sent by a delegate. In that case, the `from` property represents the delegator, and the sender property represents the delegate.</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="3eb21-348">`from` 属性中 `EmailAddressDetails` 对象的 `recipientType` 属性为 `undefined`。</span><span class="sxs-lookup"><span data-stu-id="3eb21-348">Note: The `recipientType` property of the `EmailAddressDetails` object in the `from` property is `undefined`.</span></span>
+> <span data-ttu-id="b314e-349">`from` 属性中 `EmailAddressDetails` 对象的 `recipientType` 属性为 `undefined`。</span><span class="sxs-lookup"><span data-stu-id="b314e-349">The `recipientType` property of the `EmailAddressDetails` object in the `from` property is `undefined`.</span></span>
 
-##### <a name="read-mode"></a><span data-ttu-id="3eb21-349">阅读模式</span><span class="sxs-lookup"><span data-stu-id="3eb21-349">Read mode</span></span>
+##### <a name="read-mode"></a><span data-ttu-id="b314e-350">阅读模式</span><span class="sxs-lookup"><span data-stu-id="b314e-350">Read mode</span></span>
 
-<span data-ttu-id="3eb21-350">`from` 属性返回一个 `EmailAddressDetails` 对象。</span><span class="sxs-lookup"><span data-stu-id="3eb21-350">The AssignToCategory`from` property always returns an AssignToCategoryRuleAction`EmailAddressDetails` object.</span></span>
+<span data-ttu-id="b314e-351">`from` 属性返回一个 `EmailAddressDetails` 对象。</span><span class="sxs-lookup"><span data-stu-id="b314e-351">The `from` property returns an `EmailAddressDetails` object.</span></span>
 
 ```js
 var subject = Office.context.mailbox.item.from;
 ```
 
-##### <a name="compose-mode"></a><span data-ttu-id="3eb21-351">撰写模式</span><span class="sxs-lookup"><span data-stu-id="3eb21-351">Compose mode</span></span>
+##### <a name="compose-mode"></a><span data-ttu-id="b314e-352">撰写模式</span><span class="sxs-lookup"><span data-stu-id="b314e-352">Compose mode</span></span>
 
-<span data-ttu-id="3eb21-352">`from` 属性返回一个 `From` 对象，该对象提供从值中进行获取的方法。</span><span class="sxs-lookup"><span data-stu-id="3eb21-352">The `from` property returns a `From` object that provides a method to get the from value.</span></span>
+<span data-ttu-id="b314e-353">`from` 属性返回一个 `From` 对象，该对象提供从值中进行获取的方法。</span><span class="sxs-lookup"><span data-stu-id="b314e-353">The `from` property returns a `From` object that provides a method to get the from value.</span></span>
 
 ```js
 Office.context.mailbox.item.from.getAsync(callback);
@@ -350,95 +361,95 @@ function callback(asyncResult) {
 }
 ```
 
-##### <a name="type"></a><span data-ttu-id="3eb21-353">类型：</span><span class="sxs-lookup"><span data-stu-id="3eb21-353">Type:</span></span>
+##### <a name="type"></a><span data-ttu-id="b314e-354">类型：</span><span class="sxs-lookup"><span data-stu-id="b314e-354">Type:</span></span>
 
-*   <span data-ttu-id="3eb21-354">[EmailAddressDetails](/javascript/api/outlook_1_7/office.emailaddressdetails) | [From](/javascript/api/outlook_1_7/office.from)</span><span class="sxs-lookup"><span data-stu-id="3eb21-354">[EmailAddressDetails](/javascript/api/outlook_1_7/office.emailaddressdetails) | [From](/javascript/api/outlook_1_7/office.from)</span></span>
+*   <span data-ttu-id="b314e-355">[EmailAddressDetails](/javascript/api/outlook_1_7/office.emailaddressdetails) | [From](/javascript/api/outlook_1_7/office.from)</span><span class="sxs-lookup"><span data-stu-id="b314e-355">[EmailAddressDetails](/javascript/api/outlook_1_7/office.emailaddressdetails) | [From](/javascript/api/outlook_1_7/office.from)</span></span>
 
-##### <a name="requirements"></a><span data-ttu-id="3eb21-355">要求</span><span class="sxs-lookup"><span data-stu-id="3eb21-355">Requirements</span></span>
+##### <a name="requirements"></a><span data-ttu-id="b314e-356">要求</span><span class="sxs-lookup"><span data-stu-id="b314e-356">Requirements</span></span>
 
-|<span data-ttu-id="3eb21-356">要求</span><span class="sxs-lookup"><span data-stu-id="3eb21-356">Requirement</span></span>|||
+|<span data-ttu-id="b314e-357">要求</span><span class="sxs-lookup"><span data-stu-id="b314e-357">Requirement</span></span>|||
 |---|---|---|
-|[<span data-ttu-id="3eb21-357">最低版本的邮箱要求集</span><span class="sxs-lookup"><span data-stu-id="3eb21-357">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|<span data-ttu-id="3eb21-358">1.0</span><span class="sxs-lookup"><span data-stu-id="3eb21-358">1.0</span></span>|<span data-ttu-id="3eb21-359">1.7</span><span class="sxs-lookup"><span data-stu-id="3eb21-359">-17</span></span>|
-|[<span data-ttu-id="3eb21-360">最低权限级别</span><span class="sxs-lookup"><span data-stu-id="3eb21-360">Minimum permission level</span></span>](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)|<span data-ttu-id="3eb21-361">ReadItem</span><span class="sxs-lookup"><span data-stu-id="3eb21-361">ReadItem</span></span>|<span data-ttu-id="3eb21-362">ReadWriteItem</span><span class="sxs-lookup"><span data-stu-id="3eb21-362">ReadWriteItem</span></span>|
-|[<span data-ttu-id="3eb21-363">适用的 Outlook 模式</span><span class="sxs-lookup"><span data-stu-id="3eb21-363">Applicable Outlook mode</span></span>](https://docs.microsoft.com/outlook/add-ins/#extension-points)|<span data-ttu-id="3eb21-364">阅读</span><span class="sxs-lookup"><span data-stu-id="3eb21-364">Read</span></span>|<span data-ttu-id="3eb21-365">撰写</span><span class="sxs-lookup"><span data-stu-id="3eb21-365">Compose</span></span>|
+|[<span data-ttu-id="b314e-358">最低版本的邮箱要求集</span><span class="sxs-lookup"><span data-stu-id="b314e-358">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|<span data-ttu-id="b314e-359">1.0</span><span class="sxs-lookup"><span data-stu-id="b314e-359">1.0</span></span>|<span data-ttu-id="b314e-360">1.7</span><span class="sxs-lookup"><span data-stu-id="b314e-360">1.7</span></span>|
+|[<span data-ttu-id="b314e-361">最低权限级别</span><span class="sxs-lookup"><span data-stu-id="b314e-361">Minimum permission level</span></span>](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)|<span data-ttu-id="b314e-362">ReadItem</span><span class="sxs-lookup"><span data-stu-id="b314e-362">ReadItem</span></span>|<span data-ttu-id="b314e-363">ReadWriteItem</span><span class="sxs-lookup"><span data-stu-id="b314e-363">ReadWriteItem</span></span>|
+|[<span data-ttu-id="b314e-364">适用的 Outlook 模式</span><span class="sxs-lookup"><span data-stu-id="b314e-364">Applicable Outlook mode</span></span>](https://docs.microsoft.com/outlook/add-ins/#extension-points)|<span data-ttu-id="b314e-365">阅读</span><span class="sxs-lookup"><span data-stu-id="b314e-365">Read</span></span>|<span data-ttu-id="b314e-366">撰写</span><span class="sxs-lookup"><span data-stu-id="b314e-366">Compose</span></span>|
 
-#### <a name="internetmessageid-string"></a><span data-ttu-id="3eb21-366">internetMessageId :String</span><span class="sxs-lookup"><span data-stu-id="3eb21-366">internetMessageId :String</span></span>
+#### <a name="internetmessageid-string"></a><span data-ttu-id="b314e-367">internetMessageId :String</span><span class="sxs-lookup"><span data-stu-id="b314e-367">internetMessageId :String</span></span>
 
-<span data-ttu-id="3eb21-p113">获取电子邮件的 Internet 消息标识符。仅限阅读模式。</span><span class="sxs-lookup"><span data-stu-id="3eb21-p113">Gets the Internet message identifier for an email message. Read mode only.</span></span>
+<span data-ttu-id="b314e-p113">获取电子邮件的 Internet 消息标识符。仅限阅读模式。</span><span class="sxs-lookup"><span data-stu-id="b314e-p113">Gets the Internet message identifier for an email message. Read mode only.</span></span>
 
-##### <a name="type"></a><span data-ttu-id="3eb21-369">类型：</span><span class="sxs-lookup"><span data-stu-id="3eb21-369">Type:</span></span>
+##### <a name="type"></a><span data-ttu-id="b314e-370">类型：</span><span class="sxs-lookup"><span data-stu-id="b314e-370">Type:</span></span>
 
-*   <span data-ttu-id="3eb21-370">String</span><span class="sxs-lookup"><span data-stu-id="3eb21-370">String</span></span>
+*   <span data-ttu-id="b314e-371">String</span><span class="sxs-lookup"><span data-stu-id="b314e-371">String</span></span>
 
-##### <a name="requirements"></a><span data-ttu-id="3eb21-371">要求</span><span class="sxs-lookup"><span data-stu-id="3eb21-371">Requirements</span></span>
+##### <a name="requirements"></a><span data-ttu-id="b314e-372">要求</span><span class="sxs-lookup"><span data-stu-id="b314e-372">Requirements</span></span>
 
-|<span data-ttu-id="3eb21-372">要求</span><span class="sxs-lookup"><span data-stu-id="3eb21-372">Requirement</span></span>|<span data-ttu-id="3eb21-373">值</span><span class="sxs-lookup"><span data-stu-id="3eb21-373">Value</span></span>|
+|<span data-ttu-id="b314e-373">要求</span><span class="sxs-lookup"><span data-stu-id="b314e-373">Requirement</span></span>|<span data-ttu-id="b314e-374">值</span><span class="sxs-lookup"><span data-stu-id="b314e-374">Value</span></span>|
 |---|---|
-|[<span data-ttu-id="3eb21-374">最低版本的邮箱要求集</span><span class="sxs-lookup"><span data-stu-id="3eb21-374">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|<span data-ttu-id="3eb21-375">1.0</span><span class="sxs-lookup"><span data-stu-id="3eb21-375">1.0</span></span>|
-|[<span data-ttu-id="3eb21-376">最低权限级别</span><span class="sxs-lookup"><span data-stu-id="3eb21-376">Minimum permission level</span></span>](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)|<span data-ttu-id="3eb21-377">ReadItem</span><span class="sxs-lookup"><span data-stu-id="3eb21-377">ReadItem</span></span>|
-|[<span data-ttu-id="3eb21-378">适用的 Outlook 模式</span><span class="sxs-lookup"><span data-stu-id="3eb21-378">Applicable Outlook mode</span></span>](https://docs.microsoft.com/outlook/add-ins/#extension-points)|<span data-ttu-id="3eb21-379">阅读</span><span class="sxs-lookup"><span data-stu-id="3eb21-379">Read</span></span>|
+|[<span data-ttu-id="b314e-375">最低版本的邮箱要求集</span><span class="sxs-lookup"><span data-stu-id="b314e-375">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|<span data-ttu-id="b314e-376">1.0</span><span class="sxs-lookup"><span data-stu-id="b314e-376">1.0</span></span>|
+|[<span data-ttu-id="b314e-377">最低权限级别</span><span class="sxs-lookup"><span data-stu-id="b314e-377">Minimum permission level</span></span>](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)|<span data-ttu-id="b314e-378">ReadItem</span><span class="sxs-lookup"><span data-stu-id="b314e-378">ReadItem</span></span>|
+|[<span data-ttu-id="b314e-379">适用的 Outlook 模式</span><span class="sxs-lookup"><span data-stu-id="b314e-379">Applicable Outlook mode</span></span>](https://docs.microsoft.com/outlook/add-ins/#extension-points)|<span data-ttu-id="b314e-380">阅读</span><span class="sxs-lookup"><span data-stu-id="b314e-380">Read</span></span>|
 
-##### <a name="example"></a><span data-ttu-id="3eb21-380">示例</span><span class="sxs-lookup"><span data-stu-id="3eb21-380">Example</span></span>
+##### <a name="example"></a><span data-ttu-id="b314e-381">示例</span><span class="sxs-lookup"><span data-stu-id="b314e-381">Example</span></span>
 
 ```js
 var internetMessageId = Office.context.mailbox.item.internetMessageId;
 ```
 
-#### <a name="itemclass-string"></a><span data-ttu-id="3eb21-381">itemClass :String</span><span class="sxs-lookup"><span data-stu-id="3eb21-381">itemClass :String</span></span>
+#### <a name="itemclass-string"></a><span data-ttu-id="b314e-382">itemClass :String</span><span class="sxs-lookup"><span data-stu-id="b314e-382">itemClass :String</span></span>
 
-<span data-ttu-id="3eb21-p114">获取选定项目的 Exchange Web 服务项目类。仅限阅读模式。</span><span class="sxs-lookup"><span data-stu-id="3eb21-p114">Gets the Exchange Web Services item class of the selected item. Read mode only.</span></span>
+<span data-ttu-id="b314e-p114">获取选定项目的 Exchange Web 服务项目类。仅限阅读模式。</span><span class="sxs-lookup"><span data-stu-id="b314e-p114">Gets the Exchange Web Services item class of the selected item. Read mode only.</span></span>
 
-<span data-ttu-id="3eb21-p115">`itemClass` 属性指定所选项目的邮件类别。以下是邮件或约会项目的默认邮件类别。</span><span class="sxs-lookup"><span data-stu-id="3eb21-p115">The `itemClass` property specifies the message class of the selected item. The following are the default message classes for the message or appointment item.</span></span>
+<span data-ttu-id="b314e-p115">`itemClass` 属性指定所选项目的邮件类别。以下是邮件或约会项目的默认邮件类别。</span><span class="sxs-lookup"><span data-stu-id="b314e-p115">The `itemClass` property specifies the message class of the selected item. The following are the default message classes for the message or appointment item.</span></span>
 
-|<span data-ttu-id="3eb21-386">类型</span><span class="sxs-lookup"><span data-stu-id="3eb21-386">Type</span></span>|<span data-ttu-id="3eb21-387">说明</span><span class="sxs-lookup"><span data-stu-id="3eb21-387">Description</span></span>|<span data-ttu-id="3eb21-388">项目类</span><span class="sxs-lookup"><span data-stu-id="3eb21-388">item class</span></span>|
+|<span data-ttu-id="b314e-387">类型</span><span class="sxs-lookup"><span data-stu-id="b314e-387">Type</span></span>|<span data-ttu-id="b314e-388">说明</span><span class="sxs-lookup"><span data-stu-id="b314e-388">Description</span></span>|<span data-ttu-id="b314e-389">项目类</span><span class="sxs-lookup"><span data-stu-id="b314e-389">item class</span></span>|
 |---|---|---|
-|<span data-ttu-id="3eb21-389">约会项目</span><span class="sxs-lookup"><span data-stu-id="3eb21-389">Appointment items</span></span>|<span data-ttu-id="3eb21-390">这些是项目类 `IPM.Appointment` 或 `IPM.Appointment.Occurence` 的日历项目。</span><span class="sxs-lookup"><span data-stu-id="3eb21-390">These are calendar items of the item class `IPM.Appointment` or `IPM.Appointment.Occurence`.</span></span>|`IPM.Appointment`<br />`IPM.Appointment.Occurence`|
-|<span data-ttu-id="3eb21-391">邮件项目</span><span class="sxs-lookup"><span data-stu-id="3eb21-391">Message items</span></span>|<span data-ttu-id="3eb21-392">这些项目包括具有默认邮件类别 `IPM.Note` 的电子邮件，以及使用 `IPM.Schedule.Meeting` 作为基础邮件类别的会议请求、响应和取消。</span><span class="sxs-lookup"><span data-stu-id="3eb21-392">These include email messages that have the default message class `IPM.Note`, and meeting requests, responses, and cancellations, that use `IPM.Schedule.Meeting` as the base message class.</span></span>|`IPM.Note`<br />`IPM.Schedule.Meeting.Request`<br />`IPM.Schedule.Meeting.Neg`<br />`IPM.Schedule.Meeting.Pos`<br />`IPM.Schedule.Meeting.Tent`<br />`IPM.Schedule.Meeting.Canceled`|
+|<span data-ttu-id="b314e-390">约会项目</span><span class="sxs-lookup"><span data-stu-id="b314e-390">Appointment items</span></span>|<span data-ttu-id="b314e-391">这些是项目类 `IPM.Appointment` 或 `IPM.Appointment.Occurence` 的日历项目。</span><span class="sxs-lookup"><span data-stu-id="b314e-391">These are calendar items of the item class `IPM.Appointment` or `IPM.Appointment.Occurence`.</span></span>|`IPM.Appointment`<br />`IPM.Appointment.Occurence`|
+|<span data-ttu-id="b314e-392">邮件项目</span><span class="sxs-lookup"><span data-stu-id="b314e-392">Message items</span></span>|<span data-ttu-id="b314e-393">这些项目包括具有默认邮件类别 `IPM.Note` 的电子邮件，以及使用 `IPM.Schedule.Meeting` 作为基础邮件类别的会议请求、响应和取消。</span><span class="sxs-lookup"><span data-stu-id="b314e-393">These include email messages that have the default message class `IPM.Note`, and meeting requests, responses, and cancellations, that use `IPM.Schedule.Meeting` as the base message class.</span></span>|`IPM.Note`<br />`IPM.Schedule.Meeting.Request`<br />`IPM.Schedule.Meeting.Neg`<br />`IPM.Schedule.Meeting.Pos`<br />`IPM.Schedule.Meeting.Tent`<br />`IPM.Schedule.Meeting.Canceled`|
 
-<span data-ttu-id="3eb21-393">你可以创建用于扩展默认邮件类别的自定义邮件类别，例如，自定义约会邮件类别 `IPM.Appointment.Contoso`。</span><span class="sxs-lookup"><span data-stu-id="3eb21-393">You can create custom message classes that extends a default message class, for example, a custom appointment message class `IPM.Appointment.Contoso`.</span></span>
+<span data-ttu-id="b314e-394">你可以创建用于扩展默认邮件类别的自定义邮件类别，例如，自定义约会邮件类别 `IPM.Appointment.Contoso`。</span><span class="sxs-lookup"><span data-stu-id="b314e-394">You can create custom message classes that extends a default message class, for example, a custom appointment message class `IPM.Appointment.Contoso`.</span></span>
 
-##### <a name="type"></a><span data-ttu-id="3eb21-394">类型：</span><span class="sxs-lookup"><span data-stu-id="3eb21-394">Type:</span></span>
+##### <a name="type"></a><span data-ttu-id="b314e-395">类型：</span><span class="sxs-lookup"><span data-stu-id="b314e-395">Type:</span></span>
 
-*   <span data-ttu-id="3eb21-395">String</span><span class="sxs-lookup"><span data-stu-id="3eb21-395">String</span></span>
+*   <span data-ttu-id="b314e-396">String</span><span class="sxs-lookup"><span data-stu-id="b314e-396">String</span></span>
 
-##### <a name="requirements"></a><span data-ttu-id="3eb21-396">要求</span><span class="sxs-lookup"><span data-stu-id="3eb21-396">Requirements</span></span>
+##### <a name="requirements"></a><span data-ttu-id="b314e-397">要求</span><span class="sxs-lookup"><span data-stu-id="b314e-397">Requirements</span></span>
 
-|<span data-ttu-id="3eb21-397">要求</span><span class="sxs-lookup"><span data-stu-id="3eb21-397">Requirement</span></span>|<span data-ttu-id="3eb21-398">值</span><span class="sxs-lookup"><span data-stu-id="3eb21-398">Value</span></span>|
+|<span data-ttu-id="b314e-398">要求</span><span class="sxs-lookup"><span data-stu-id="b314e-398">Requirement</span></span>|<span data-ttu-id="b314e-399">值</span><span class="sxs-lookup"><span data-stu-id="b314e-399">Value</span></span>|
 |---|---|
-|[<span data-ttu-id="3eb21-399">最低版本的邮箱要求集</span><span class="sxs-lookup"><span data-stu-id="3eb21-399">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|<span data-ttu-id="3eb21-400">1.0</span><span class="sxs-lookup"><span data-stu-id="3eb21-400">1.0</span></span>|
-|[<span data-ttu-id="3eb21-401">最低权限级别</span><span class="sxs-lookup"><span data-stu-id="3eb21-401">Minimum permission level</span></span>](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)|<span data-ttu-id="3eb21-402">ReadItem</span><span class="sxs-lookup"><span data-stu-id="3eb21-402">ReadItem</span></span>|
-|[<span data-ttu-id="3eb21-403">适用的 Outlook 模式</span><span class="sxs-lookup"><span data-stu-id="3eb21-403">Applicable Outlook mode</span></span>](https://docs.microsoft.com/outlook/add-ins/#extension-points)|<span data-ttu-id="3eb21-404">阅读</span><span class="sxs-lookup"><span data-stu-id="3eb21-404">Read</span></span>|
+|[<span data-ttu-id="b314e-400">最低版本的邮箱要求集</span><span class="sxs-lookup"><span data-stu-id="b314e-400">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|<span data-ttu-id="b314e-401">1.0</span><span class="sxs-lookup"><span data-stu-id="b314e-401">1.0</span></span>|
+|[<span data-ttu-id="b314e-402">最低权限级别</span><span class="sxs-lookup"><span data-stu-id="b314e-402">Minimum permission level</span></span>](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)|<span data-ttu-id="b314e-403">ReadItem</span><span class="sxs-lookup"><span data-stu-id="b314e-403">ReadItem</span></span>|
+|[<span data-ttu-id="b314e-404">适用的 Outlook 模式</span><span class="sxs-lookup"><span data-stu-id="b314e-404">Applicable Outlook mode</span></span>](https://docs.microsoft.com/outlook/add-ins/#extension-points)|<span data-ttu-id="b314e-405">阅读</span><span class="sxs-lookup"><span data-stu-id="b314e-405">Read</span></span>|
 
-##### <a name="example"></a><span data-ttu-id="3eb21-405">示例</span><span class="sxs-lookup"><span data-stu-id="3eb21-405">Example</span></span>
+##### <a name="example"></a><span data-ttu-id="b314e-406">示例</span><span class="sxs-lookup"><span data-stu-id="b314e-406">Example</span></span>
 
 ```js
 var itemClass = Office.context.mailbox.item.itemClass;
 ```
 
-#### <a name="nullable-itemid-string"></a><span data-ttu-id="3eb21-406">(nullable) itemId :String</span><span class="sxs-lookup"><span data-stu-id="3eb21-406">(nullable) itemId :String</span></span>
+#### <a name="nullable-itemid-string"></a><span data-ttu-id="b314e-407">(nullable) itemId :String</span><span class="sxs-lookup"><span data-stu-id="b314e-407">(nullable) itemId :String</span></span>
 
-<span data-ttu-id="3eb21-p116">获取当前项目的 Exchange Web 服务项目标识符。仅限阅读模式。</span><span class="sxs-lookup"><span data-stu-id="3eb21-p116">Gets the Exchange Web Services item identifier for the current item. Read mode only.</span></span>
+<span data-ttu-id="b314e-p116">获取当前项目的 Exchange Web 服务项目标识符。仅限阅读模式。</span><span class="sxs-lookup"><span data-stu-id="b314e-p116">Gets the Exchange Web Services item identifier for the current item. Read mode only.</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="3eb21-409">`itemId` 属性返回的标识符与 Exchange Web 服务项目标识符相同。</span><span class="sxs-lookup"><span data-stu-id="3eb21-409">The identifier returned by the `itemId` property is the same as the Exchange Web Services item identifier.</span></span> <span data-ttu-id="3eb21-410">`itemId` 属性与 Outlook 条目 ID 或 Outlook REST API 使用的 ID 不同。</span><span class="sxs-lookup"><span data-stu-id="3eb21-410">The `itemId` property is not identical to the Outlook Entry ID or the ID used by the Outlook REST API.</span></span> <span data-ttu-id="3eb21-411">使用此值进行 REST API 调用前，应使用 [Office.context.mailbox.convertToRestId](office.context.mailbox.md#converttorestiditemid-restversion--string) 对它进行转换。</span><span class="sxs-lookup"><span data-stu-id="3eb21-411">Before making REST API calls using this value, it should be converted using [Office.context.mailbox.convertToRestId](office.context.mailbox.md#converttorestiditemid-restversion--string).</span></span> <span data-ttu-id="3eb21-412">有关详细信息，请参阅[从 Outlook 加载项使用 Outlook REST API](https://docs.microsoft.com/outlook/add-ins/use-rest-api#get-the-item-id)。</span><span class="sxs-lookup"><span data-stu-id="3eb21-412">For more details, see [Use the Outlook REST APIs from an Outlook add-in](https://docs.microsoft.com/outlook/add-ins/use-rest-api#get-the-item-id).</span></span>
+> <span data-ttu-id="b314e-410">`itemId` 属性返回的标识符与 Exchange Web 服务项目标识符相同。</span><span class="sxs-lookup"><span data-stu-id="b314e-410">The identifier returned by the `itemId` property is the same as the Exchange Web Services item identifier.</span></span> <span data-ttu-id="b314e-411">`itemId` 属性与 Outlook 条目 ID 或 Outlook REST API 使用的 ID 不同。</span><span class="sxs-lookup"><span data-stu-id="b314e-411">The `itemId` property is not identical to the Outlook Entry ID or the ID used by the Outlook REST API.</span></span> <span data-ttu-id="b314e-412">使用此值进行 REST API 调用前，应使用 [Office.context.mailbox.convertToRestId](office.context.mailbox.md#converttorestiditemid-restversion--string) 对它进行转换。</span><span class="sxs-lookup"><span data-stu-id="b314e-412">Before making REST API calls using this value, it should be converted using [Office.context.mailbox.convertToRestId](office.context.mailbox.md#converttorestiditemid-restversion--string).</span></span> <span data-ttu-id="b314e-413">有关详细信息，请参阅[从 Outlook 加载项使用 Outlook REST API](https://docs.microsoft.com/outlook/add-ins/use-rest-api#get-the-item-id)。</span><span class="sxs-lookup"><span data-stu-id="b314e-413">For more details, see [Use the Outlook REST APIs from an Outlook add-in](https://docs.microsoft.com/outlook/add-ins/use-rest-api#get-the-item-id).</span></span>
 
-<span data-ttu-id="3eb21-p118">`itemId` 属性在撰写模式下不可用。如果需要项目标识符，[`saveAsync`](#saveasyncoptions-callback) 方法可用于将项目保存到存储，这将在回调函数的 [`AsyncResult.value`](/javascript/api/office/office.asyncresult) 参数中返回项目标识符。</span><span class="sxs-lookup"><span data-stu-id="3eb21-p118">The `itemId` property is not available in compose mode. If an item identifier is required, the [`saveAsync`](#saveasyncoptions-callback) method can be used to save the item to the store, which will return the item identifier in the [`AsyncResult.value`](/javascript/api/office/office.asyncresult) parameter in the callback function.</span></span>
+<span data-ttu-id="b314e-p118">`itemId` 属性在撰写模式下不可用。如果需要项目标识符，[`saveAsync`](#saveasyncoptions-callback) 方法可用于将项目保存到存储，这将在回调函数的 [`AsyncResult.value`](/javascript/api/office/office.asyncresult) 参数中返回项目标识符。</span><span class="sxs-lookup"><span data-stu-id="b314e-p118">The `itemId` property is not available in compose mode. If an item identifier is required, the [`saveAsync`](#saveasyncoptions-callback) method can be used to save the item to the store, which will return the item identifier in the [`AsyncResult.value`](/javascript/api/office/office.asyncresult) parameter in the callback function.</span></span>
 
-##### <a name="type"></a><span data-ttu-id="3eb21-415">类型:</span><span class="sxs-lookup"><span data-stu-id="3eb21-415">Type:</span></span>
+##### <a name="type"></a><span data-ttu-id="b314e-416">类型:</span><span class="sxs-lookup"><span data-stu-id="b314e-416">Type:</span></span>
 
-*   <span data-ttu-id="3eb21-416">String</span><span class="sxs-lookup"><span data-stu-id="3eb21-416">String</span></span>
+*   <span data-ttu-id="b314e-417">String</span><span class="sxs-lookup"><span data-stu-id="b314e-417">String</span></span>
 
-##### <a name="requirements"></a><span data-ttu-id="3eb21-417">要求</span><span class="sxs-lookup"><span data-stu-id="3eb21-417">Requirements</span></span>
+##### <a name="requirements"></a><span data-ttu-id="b314e-418">要求</span><span class="sxs-lookup"><span data-stu-id="b314e-418">Requirements</span></span>
 
-|<span data-ttu-id="3eb21-418">要求</span><span class="sxs-lookup"><span data-stu-id="3eb21-418">Requirement</span></span>|<span data-ttu-id="3eb21-419">值</span><span class="sxs-lookup"><span data-stu-id="3eb21-419">Value</span></span>|
+|<span data-ttu-id="b314e-419">要求</span><span class="sxs-lookup"><span data-stu-id="b314e-419">Requirement</span></span>|<span data-ttu-id="b314e-420">值</span><span class="sxs-lookup"><span data-stu-id="b314e-420">Value</span></span>|
 |---|---|
-|[<span data-ttu-id="3eb21-420">最低版本的邮箱要求集</span><span class="sxs-lookup"><span data-stu-id="3eb21-420">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|<span data-ttu-id="3eb21-421">1.0</span><span class="sxs-lookup"><span data-stu-id="3eb21-421">1.0</span></span>|
-|[<span data-ttu-id="3eb21-422">最低权限级别</span><span class="sxs-lookup"><span data-stu-id="3eb21-422">Minimum permission level</span></span>](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)|<span data-ttu-id="3eb21-423">ReadItem</span><span class="sxs-lookup"><span data-stu-id="3eb21-423">ReadItem</span></span>|
-|[<span data-ttu-id="3eb21-424">适用的 Outlook 模式</span><span class="sxs-lookup"><span data-stu-id="3eb21-424">Applicable Outlook mode</span></span>](https://docs.microsoft.com/outlook/add-ins/#extension-points)|<span data-ttu-id="3eb21-425">阅读</span><span class="sxs-lookup"><span data-stu-id="3eb21-425">Read</span></span>|
+|[<span data-ttu-id="b314e-421">最低版本的邮箱要求集</span><span class="sxs-lookup"><span data-stu-id="b314e-421">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|<span data-ttu-id="b314e-422">1.0</span><span class="sxs-lookup"><span data-stu-id="b314e-422">1.0</span></span>|
+|[<span data-ttu-id="b314e-423">最低权限级别</span><span class="sxs-lookup"><span data-stu-id="b314e-423">Minimum permission level</span></span>](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)|<span data-ttu-id="b314e-424">ReadItem</span><span class="sxs-lookup"><span data-stu-id="b314e-424">ReadItem</span></span>|
+|[<span data-ttu-id="b314e-425">适用的 Outlook 模式</span><span class="sxs-lookup"><span data-stu-id="b314e-425">Applicable Outlook mode</span></span>](https://docs.microsoft.com/outlook/add-ins/#extension-points)|<span data-ttu-id="b314e-426">阅读</span><span class="sxs-lookup"><span data-stu-id="b314e-426">Read</span></span>|
 
-##### <a name="example"></a><span data-ttu-id="3eb21-426">示例</span><span class="sxs-lookup"><span data-stu-id="3eb21-426">Example</span></span>
+##### <a name="example"></a><span data-ttu-id="b314e-427">示例</span><span class="sxs-lookup"><span data-stu-id="b314e-427">Example</span></span>
 
-<span data-ttu-id="3eb21-p119">以下代码检查项目标识符是否存在。如果 `itemId` 属性返回 `null` 或 `undefined`，则将项目保存到存储，并从异步结果中获取项目标识符。</span><span class="sxs-lookup"><span data-stu-id="3eb21-p119">The following code checks for the presence of an item identifier. If the `itemId` property returns `null` or `undefined`, it saves the item to the store and gets the item identifier from the asynchronous result.</span></span>
+<span data-ttu-id="b314e-p119">以下代码检查项目标识符是否存在。如果 `itemId` 属性返回 `null` 或 `undefined`，则将项目保存到存储，并从异步结果中获取项目标识符。</span><span class="sxs-lookup"><span data-stu-id="b314e-p119">The following code checks for the presence of an item identifier. If the `itemId` property returns `null` or `undefined`, it saves the item to the store and gets the item identifier from the asynchronous result.</span></span>
 
 ```js
 var itemId = Office.context.mailbox.item.itemId;
@@ -449,25 +460,25 @@ if (itemId === null || itemId == undefined) {
 }
 ```
 
-####  <a name="itemtype-officemailboxenumsitemtypejavascriptapioutlook17officemailboxenumsitemtype"></a><span data-ttu-id="3eb21-429">itemType :[Office.MailboxEnums.ItemType](/javascript/api/outlook_1_7/office.mailboxenums.itemtype)</span><span class="sxs-lookup"><span data-stu-id="3eb21-429">itemType :[Office.MailboxEnums.ItemType](/javascript/api/outlook_1_7/office.mailboxenums.itemtype)</span></span>
+####  <a name="itemtype-officemailboxenumsitemtypejavascriptapioutlook17officemailboxenumsitemtype"></a><span data-ttu-id="b314e-430">itemType :[Office.MailboxEnums.ItemType](/javascript/api/outlook_1_7/office.mailboxenums.itemtype)</span><span class="sxs-lookup"><span data-stu-id="b314e-430">itemType :[Office.MailboxEnums.ItemType](/javascript/api/outlook_1_7/office.mailboxenums.itemtype)</span></span>
 
-<span data-ttu-id="3eb21-430">获取实例表示的项的类型。</span><span class="sxs-lookup"><span data-stu-id="3eb21-430">Gets the type of item that an instance represents.</span></span>
+<span data-ttu-id="b314e-431">获取实例表示的项的类型。</span><span class="sxs-lookup"><span data-stu-id="b314e-431">Gets the type of item that an instance represents.</span></span>
 
-<span data-ttu-id="3eb21-431">`itemType` 属性返回其中一个 `ItemType` 枚举值，指示 `item` 对象实例是邮件还是约会。</span><span class="sxs-lookup"><span data-stu-id="3eb21-431">The `itemType` property returns one of the `ItemType` enumeration values, indicating whether the `item` object instance is a message or an appointment.</span></span>
+<span data-ttu-id="b314e-432">`itemType` 属性返回其中一个 `ItemType` 枚举值，指示 `item` 对象实例是邮件还是约会。</span><span class="sxs-lookup"><span data-stu-id="b314e-432">The `itemType` property returns one of the `ItemType` enumeration values, indicating whether the `item` object instance is a message or an appointment.</span></span>
 
-##### <a name="type"></a><span data-ttu-id="3eb21-432">类型：</span><span class="sxs-lookup"><span data-stu-id="3eb21-432">Type:</span></span>
+##### <a name="type"></a><span data-ttu-id="b314e-433">类型：</span><span class="sxs-lookup"><span data-stu-id="b314e-433">Type:</span></span>
 
-*   [<span data-ttu-id="3eb21-433">Office.MailboxEnums.ItemType</span><span class="sxs-lookup"><span data-stu-id="3eb21-433">Office.MailboxEnums.ItemType</span></span>](/javascript/api/outlook_1_7/office.mailboxenums.itemtype)
+*   [<span data-ttu-id="b314e-434">Office.MailboxEnums.ItemType</span><span class="sxs-lookup"><span data-stu-id="b314e-434">Office.MailboxEnums.ItemType</span></span>](/javascript/api/outlook_1_7/office.mailboxenums.itemtype)
 
-##### <a name="requirements"></a><span data-ttu-id="3eb21-434">要求</span><span class="sxs-lookup"><span data-stu-id="3eb21-434">Requirements</span></span>
+##### <a name="requirements"></a><span data-ttu-id="b314e-435">要求</span><span class="sxs-lookup"><span data-stu-id="b314e-435">Requirements</span></span>
 
-|<span data-ttu-id="3eb21-435">要求</span><span class="sxs-lookup"><span data-stu-id="3eb21-435">Requirement</span></span>|<span data-ttu-id="3eb21-436">值</span><span class="sxs-lookup"><span data-stu-id="3eb21-436">Value</span></span>|
+|<span data-ttu-id="b314e-436">要求</span><span class="sxs-lookup"><span data-stu-id="b314e-436">Requirement</span></span>|<span data-ttu-id="b314e-437">值</span><span class="sxs-lookup"><span data-stu-id="b314e-437">Value</span></span>|
 |---|---|
-|[<span data-ttu-id="3eb21-437">最低版本的邮箱要求集</span><span class="sxs-lookup"><span data-stu-id="3eb21-437">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|<span data-ttu-id="3eb21-438">1.0</span><span class="sxs-lookup"><span data-stu-id="3eb21-438">1.0</span></span>|
-|[<span data-ttu-id="3eb21-439">最低权限级别</span><span class="sxs-lookup"><span data-stu-id="3eb21-439">Minimum permission level</span></span>](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)|<span data-ttu-id="3eb21-440">ReadItem</span><span class="sxs-lookup"><span data-stu-id="3eb21-440">ReadItem</span></span>|
-|[<span data-ttu-id="3eb21-441">适用的 Outlook 模式</span><span class="sxs-lookup"><span data-stu-id="3eb21-441">Applicable Outlook mode</span></span>](https://docs.microsoft.com/outlook/add-ins/#extension-points)|<span data-ttu-id="3eb21-442">撰写或阅读</span><span class="sxs-lookup"><span data-stu-id="3eb21-442">Compose or read</span></span>|
+|[<span data-ttu-id="b314e-438">最低版本的邮箱要求集</span><span class="sxs-lookup"><span data-stu-id="b314e-438">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|<span data-ttu-id="b314e-439">1.0</span><span class="sxs-lookup"><span data-stu-id="b314e-439">1.0</span></span>|
+|[<span data-ttu-id="b314e-440">最低权限级别</span><span class="sxs-lookup"><span data-stu-id="b314e-440">Minimum permission level</span></span>](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)|<span data-ttu-id="b314e-441">ReadItem</span><span class="sxs-lookup"><span data-stu-id="b314e-441">ReadItem</span></span>|
+|[<span data-ttu-id="b314e-442">适用的 Outlook 模式</span><span class="sxs-lookup"><span data-stu-id="b314e-442">Applicable Outlook mode</span></span>](https://docs.microsoft.com/outlook/add-ins/#extension-points)|<span data-ttu-id="b314e-443">撰写或阅读</span><span class="sxs-lookup"><span data-stu-id="b314e-443">Compose or read</span></span>|
 
-##### <a name="example"></a><span data-ttu-id="3eb21-443">示例</span><span class="sxs-lookup"><span data-stu-id="3eb21-443">Example</span></span>
+##### <a name="example"></a><span data-ttu-id="b314e-444">示例</span><span class="sxs-lookup"><span data-stu-id="b314e-444">Example</span></span>
 
 ```js
 if (Office.context.mailbox.item.itemType == Office.MailboxEnums.ItemType.Message)
@@ -476,31 +487,31 @@ else
   // do something else
 ```
 
-####  <a name="location-stringlocationjavascriptapioutlook17officelocation"></a><span data-ttu-id="3eb21-444">location :String|[Location](/javascript/api/outlook_1_7/office.location)</span><span class="sxs-lookup"><span data-stu-id="3eb21-444">location :String|[Location](/javascript/api/outlook_1_7/office.location)</span></span>
+####  <a name="location-stringlocationjavascriptapioutlook17officelocation"></a><span data-ttu-id="b314e-445">location :String|[Location](/javascript/api/outlook_1_7/office.location)</span><span class="sxs-lookup"><span data-stu-id="b314e-445">location :String|[Location](/javascript/api/outlook_1_7/office.location)</span></span>
 
-<span data-ttu-id="3eb21-445">获取或设置约会的位置。</span><span class="sxs-lookup"><span data-stu-id="3eb21-445">Gets or sets the location of an appointment.</span></span>
+<span data-ttu-id="b314e-446">获取或设置约会的位置。</span><span class="sxs-lookup"><span data-stu-id="b314e-446">Gets or sets the location of an appointment.</span></span>
 
-##### <a name="read-mode"></a><span data-ttu-id="3eb21-446">阅读模式</span><span class="sxs-lookup"><span data-stu-id="3eb21-446">Read mode</span></span>
+##### <a name="read-mode"></a><span data-ttu-id="b314e-447">阅读模式</span><span class="sxs-lookup"><span data-stu-id="b314e-447">Read mode</span></span>
 
-<span data-ttu-id="3eb21-447">`location` 属性返回一个包含约会位置的字符串。</span><span class="sxs-lookup"><span data-stu-id="3eb21-447">The `location` property returns a string that contains the location of the appointment.</span></span>
+<span data-ttu-id="b314e-448">`location` 属性返回一个包含约会位置的字符串。</span><span class="sxs-lookup"><span data-stu-id="b314e-448">The `location` property returns a string that contains the location of the appointment.</span></span>
 
-##### <a name="compose-mode"></a><span data-ttu-id="3eb21-448">撰写模式</span><span class="sxs-lookup"><span data-stu-id="3eb21-448">Compose mode</span></span>
+##### <a name="compose-mode"></a><span data-ttu-id="b314e-449">撰写模式</span><span class="sxs-lookup"><span data-stu-id="b314e-449">Compose mode</span></span>
 
-<span data-ttu-id="3eb21-449">`location` 属性返回一个 `Location` 对象，该对象提供用于获取和设置约会位置的方法。</span><span class="sxs-lookup"><span data-stu-id="3eb21-449">The `location` property returns a `Location` object that provides methods that are used to get and set the location of the appointment.</span></span>
+<span data-ttu-id="b314e-450">`location` 属性返回一个 `Location` 对象，该对象提供用于获取和设置约会位置的方法。</span><span class="sxs-lookup"><span data-stu-id="b314e-450">The `location` property returns a `Location` object that provides methods that are used to get and set the location of the appointment.</span></span>
 
-##### <a name="type"></a><span data-ttu-id="3eb21-450">类型：</span><span class="sxs-lookup"><span data-stu-id="3eb21-450">Type:</span></span>
+##### <a name="type"></a><span data-ttu-id="b314e-451">类型：</span><span class="sxs-lookup"><span data-stu-id="b314e-451">Type:</span></span>
 
-*   <span data-ttu-id="3eb21-451">String | [Location](/javascript/api/outlook_1_7/office.location)</span><span class="sxs-lookup"><span data-stu-id="3eb21-451">String | [Location](/javascript/api/outlook_1_7/office.location)</span></span>
+*   <span data-ttu-id="b314e-452">String | [Location](/javascript/api/outlook_1_7/office.location)</span><span class="sxs-lookup"><span data-stu-id="b314e-452">String | [Location](/javascript/api/outlook_1_7/office.location)</span></span>
 
-##### <a name="requirements"></a><span data-ttu-id="3eb21-452">要求</span><span class="sxs-lookup"><span data-stu-id="3eb21-452">Requirements</span></span>
+##### <a name="requirements"></a><span data-ttu-id="b314e-453">要求</span><span class="sxs-lookup"><span data-stu-id="b314e-453">Requirements</span></span>
 
-|<span data-ttu-id="3eb21-453">要求</span><span class="sxs-lookup"><span data-stu-id="3eb21-453">Requirement</span></span>|<span data-ttu-id="3eb21-454">值</span><span class="sxs-lookup"><span data-stu-id="3eb21-454">Value</span></span>|
+|<span data-ttu-id="b314e-454">要求</span><span class="sxs-lookup"><span data-stu-id="b314e-454">Requirement</span></span>|<span data-ttu-id="b314e-455">值</span><span class="sxs-lookup"><span data-stu-id="b314e-455">Value</span></span>|
 |---|---|
-|[<span data-ttu-id="3eb21-455">最低版本的邮箱要求集</span><span class="sxs-lookup"><span data-stu-id="3eb21-455">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|<span data-ttu-id="3eb21-456">1.0</span><span class="sxs-lookup"><span data-stu-id="3eb21-456">1.0</span></span>|
-|[<span data-ttu-id="3eb21-457">最低权限级别</span><span class="sxs-lookup"><span data-stu-id="3eb21-457">Minimum permission level</span></span>](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)|<span data-ttu-id="3eb21-458">ReadItem</span><span class="sxs-lookup"><span data-stu-id="3eb21-458">ReadItem</span></span>|
-|[<span data-ttu-id="3eb21-459">适用的 Outlook 模式</span><span class="sxs-lookup"><span data-stu-id="3eb21-459">Applicable Outlook mode</span></span>](https://docs.microsoft.com/outlook/add-ins/#extension-points)|<span data-ttu-id="3eb21-460">撰写或阅读</span><span class="sxs-lookup"><span data-stu-id="3eb21-460">Compose or read</span></span>|
+|[<span data-ttu-id="b314e-456">最低版本的邮箱要求集</span><span class="sxs-lookup"><span data-stu-id="b314e-456">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|<span data-ttu-id="b314e-457">1.0</span><span class="sxs-lookup"><span data-stu-id="b314e-457">1.0</span></span>|
+|[<span data-ttu-id="b314e-458">最低权限级别</span><span class="sxs-lookup"><span data-stu-id="b314e-458">Minimum permission level</span></span>](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)|<span data-ttu-id="b314e-459">ReadItem</span><span class="sxs-lookup"><span data-stu-id="b314e-459">ReadItem</span></span>|
+|[<span data-ttu-id="b314e-460">适用的 Outlook 模式</span><span class="sxs-lookup"><span data-stu-id="b314e-460">Applicable Outlook mode</span></span>](https://docs.microsoft.com/outlook/add-ins/#extension-points)|<span data-ttu-id="b314e-461">撰写或阅读</span><span class="sxs-lookup"><span data-stu-id="b314e-461">Compose or read</span></span>|
 
-##### <a name="example"></a><span data-ttu-id="3eb21-461">示例</span><span class="sxs-lookup"><span data-stu-id="3eb21-461">Example</span></span>
+##### <a name="example"></a><span data-ttu-id="b314e-462">示例</span><span class="sxs-lookup"><span data-stu-id="b314e-462">Example</span></span>
 
 ```js
 var userContext = { value : 1 };
@@ -512,71 +523,71 @@ function callback(asyncResult) {
 }
 ```
 
-#### <a name="normalizedsubject-string"></a><span data-ttu-id="3eb21-462">normalizedSubject :String</span><span class="sxs-lookup"><span data-stu-id="3eb21-462">normalizedSubject :String</span></span>
+#### <a name="normalizedsubject-string"></a><span data-ttu-id="b314e-463">normalizedSubject :String</span><span class="sxs-lookup"><span data-stu-id="b314e-463">normalizedSubject :String</span></span>
 
-<span data-ttu-id="3eb21-p120">获取删除了所有前缀（包括 `RE:` 和 `FWD:`）的项目主题。仅限阅读模式。</span><span class="sxs-lookup"><span data-stu-id="3eb21-p120">Gets the subject of an item, with all prefixes removed (including `RE:` and `FWD:`). Read mode only.</span></span>
+<span data-ttu-id="b314e-p120">获取删除了所有前缀（包括 `RE:` 和 `FWD:`）的项目主题。仅限阅读模式。</span><span class="sxs-lookup"><span data-stu-id="b314e-p120">Gets the subject of an item, with all prefixes removed (including `RE:` and `FWD:`). Read mode only.</span></span>
 
-<span data-ttu-id="3eb21-p121">normalizedSubject 属性获取包含由电子邮件程序添加的任何标准前缀（如 `RE:` 和 `FW:`）的项目主题。若要获取包含完整前缀的项目主题，请使用 [`subject`](#subject-stringsubjectjavascriptapioutlook17officesubject) 属性。</span><span class="sxs-lookup"><span data-stu-id="3eb21-p121">The normalizedSubject property gets the subject of the item, with any standard prefixes (such as `RE:` and `FW:`) that are added by email programs. To get the subject of the item with the prefixes intact, use the [`subject`](#subject-stringsubjectjavascriptapioutlook17officesubject) property.</span></span>
+<span data-ttu-id="b314e-p121">normalizedSubject 属性获取包含由电子邮件程序添加的任何标准前缀（如 `RE:` 和 `FW:`）的项目主题。若要获取包含完整前缀的项目主题，请使用 [`subject`](#subject-stringsubjectjavascriptapioutlook17officesubject) 属性。</span><span class="sxs-lookup"><span data-stu-id="b314e-p121">The normalizedSubject property gets the subject of the item, with any standard prefixes (such as `RE:` and `FW:`) that are added by email programs. To get the subject of the item with the prefixes intact, use the [`subject`](#subject-stringsubjectjavascriptapioutlook17officesubject) property.</span></span>
 
-##### <a name="type"></a><span data-ttu-id="3eb21-467">类型:</span><span class="sxs-lookup"><span data-stu-id="3eb21-467">Type:</span></span>
+##### <a name="type"></a><span data-ttu-id="b314e-468">类型:</span><span class="sxs-lookup"><span data-stu-id="b314e-468">Type:</span></span>
 
-*   <span data-ttu-id="3eb21-468">String</span><span class="sxs-lookup"><span data-stu-id="3eb21-468">String</span></span>
+*   <span data-ttu-id="b314e-469">String</span><span class="sxs-lookup"><span data-stu-id="b314e-469">String</span></span>
 
-##### <a name="requirements"></a><span data-ttu-id="3eb21-469">要求</span><span class="sxs-lookup"><span data-stu-id="3eb21-469">Requirements</span></span>
+##### <a name="requirements"></a><span data-ttu-id="b314e-470">要求</span><span class="sxs-lookup"><span data-stu-id="b314e-470">Requirements</span></span>
 
-|<span data-ttu-id="3eb21-470">要求</span><span class="sxs-lookup"><span data-stu-id="3eb21-470">Requirement</span></span>|<span data-ttu-id="3eb21-471">值</span><span class="sxs-lookup"><span data-stu-id="3eb21-471">Value</span></span>|
+|<span data-ttu-id="b314e-471">要求</span><span class="sxs-lookup"><span data-stu-id="b314e-471">Requirement</span></span>|<span data-ttu-id="b314e-472">值</span><span class="sxs-lookup"><span data-stu-id="b314e-472">Value</span></span>|
 |---|---|
-|[<span data-ttu-id="3eb21-472">最低版本的邮箱要求集</span><span class="sxs-lookup"><span data-stu-id="3eb21-472">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|<span data-ttu-id="3eb21-473">1.0</span><span class="sxs-lookup"><span data-stu-id="3eb21-473">1.0</span></span>|
-|[<span data-ttu-id="3eb21-474">最低权限级别</span><span class="sxs-lookup"><span data-stu-id="3eb21-474">Minimum permission level</span></span>](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)|<span data-ttu-id="3eb21-475">ReadItem</span><span class="sxs-lookup"><span data-stu-id="3eb21-475">ReadItem</span></span>|
-|[<span data-ttu-id="3eb21-476">适用的 Outlook 模式</span><span class="sxs-lookup"><span data-stu-id="3eb21-476">Applicable Outlook mode</span></span>](https://docs.microsoft.com/outlook/add-ins/#extension-points)|<span data-ttu-id="3eb21-477">阅读</span><span class="sxs-lookup"><span data-stu-id="3eb21-477">Read</span></span>|
+|[<span data-ttu-id="b314e-473">最低版本的邮箱要求集</span><span class="sxs-lookup"><span data-stu-id="b314e-473">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|<span data-ttu-id="b314e-474">1.0</span><span class="sxs-lookup"><span data-stu-id="b314e-474">1.0</span></span>|
+|[<span data-ttu-id="b314e-475">最低权限级别</span><span class="sxs-lookup"><span data-stu-id="b314e-475">Minimum permission level</span></span>](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)|<span data-ttu-id="b314e-476">ReadItem</span><span class="sxs-lookup"><span data-stu-id="b314e-476">ReadItem</span></span>|
+|[<span data-ttu-id="b314e-477">适用的 Outlook 模式</span><span class="sxs-lookup"><span data-stu-id="b314e-477">Applicable Outlook mode</span></span>](https://docs.microsoft.com/outlook/add-ins/#extension-points)|<span data-ttu-id="b314e-478">阅读</span><span class="sxs-lookup"><span data-stu-id="b314e-478">Read</span></span>|
 
-##### <a name="example"></a><span data-ttu-id="3eb21-478">示例</span><span class="sxs-lookup"><span data-stu-id="3eb21-478">Example</span></span>
+##### <a name="example"></a><span data-ttu-id="b314e-479">示例</span><span class="sxs-lookup"><span data-stu-id="b314e-479">Example</span></span>
 
 ```js
 var normalizedSubject = Office.context.mailbox.item.normalizedSubject;
 ```
 
-####  <a name="notificationmessages-notificationmessagesjavascriptapioutlook17officenotificationmessages"></a><span data-ttu-id="3eb21-479">notificationMessages :[NotificationMessages](/javascript/api/outlook_1_7/office.notificationmessages)</span><span class="sxs-lookup"><span data-stu-id="3eb21-479">notificationMessages :[NotificationMessages](/javascript/api/outlook_1_7/office.notificationmessages)</span></span>
+####  <a name="notificationmessages-notificationmessagesjavascriptapioutlook17officenotificationmessages"></a><span data-ttu-id="b314e-480">notificationMessages :[NotificationMessages](/javascript/api/outlook_1_7/office.notificationmessages)</span><span class="sxs-lookup"><span data-stu-id="b314e-480">notificationMessages :[NotificationMessages](/javascript/api/outlook_1_7/office.notificationmessages)</span></span>
 
-<span data-ttu-id="3eb21-480">获取项目的通知邮件。</span><span class="sxs-lookup"><span data-stu-id="3eb21-480">Gets the notification messages for an item.</span></span>
+<span data-ttu-id="b314e-481">获取项目的通知邮件。</span><span class="sxs-lookup"><span data-stu-id="b314e-481">Gets the notification messages for an item.</span></span>
 
-##### <a name="type"></a><span data-ttu-id="3eb21-481">类型：</span><span class="sxs-lookup"><span data-stu-id="3eb21-481">Type:</span></span>
+##### <a name="type"></a><span data-ttu-id="b314e-482">类型：</span><span class="sxs-lookup"><span data-stu-id="b314e-482">Type:</span></span>
 
-*   [<span data-ttu-id="3eb21-482">NotificationMessages</span><span class="sxs-lookup"><span data-stu-id="3eb21-482">NotificationMessages</span></span>](/javascript/api/outlook_1_7/office.notificationmessages)
+*   [<span data-ttu-id="b314e-483">NotificationMessages</span><span class="sxs-lookup"><span data-stu-id="b314e-483">NotificationMessages</span></span>](/javascript/api/outlook_1_7/office.notificationmessages)
 
-##### <a name="requirements"></a><span data-ttu-id="3eb21-483">要求</span><span class="sxs-lookup"><span data-stu-id="3eb21-483">Requirements</span></span>
+##### <a name="requirements"></a><span data-ttu-id="b314e-484">要求</span><span class="sxs-lookup"><span data-stu-id="b314e-484">Requirements</span></span>
 
-|<span data-ttu-id="3eb21-484">要求</span><span class="sxs-lookup"><span data-stu-id="3eb21-484">Requirement</span></span>|<span data-ttu-id="3eb21-485">值</span><span class="sxs-lookup"><span data-stu-id="3eb21-485">Value</span></span>|
+|<span data-ttu-id="b314e-485">要求</span><span class="sxs-lookup"><span data-stu-id="b314e-485">Requirement</span></span>|<span data-ttu-id="b314e-486">值</span><span class="sxs-lookup"><span data-stu-id="b314e-486">Value</span></span>|
 |---|---|
-|[<span data-ttu-id="3eb21-486">最低版本的邮箱要求集</span><span class="sxs-lookup"><span data-stu-id="3eb21-486">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|<span data-ttu-id="3eb21-487">1.3</span><span class="sxs-lookup"><span data-stu-id="3eb21-487">1.3</span></span>|
-|[<span data-ttu-id="3eb21-488">最低权限级别</span><span class="sxs-lookup"><span data-stu-id="3eb21-488">Minimum permission level</span></span>](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)|<span data-ttu-id="3eb21-489">ReadItem</span><span class="sxs-lookup"><span data-stu-id="3eb21-489">ReadItem</span></span>|
-|[<span data-ttu-id="3eb21-490">适用的 Outlook 模式</span><span class="sxs-lookup"><span data-stu-id="3eb21-490">Applicable Outlook mode</span></span>](https://docs.microsoft.com/outlook/add-ins/#extension-points)|<span data-ttu-id="3eb21-491">撰写或阅读</span><span class="sxs-lookup"><span data-stu-id="3eb21-491">Compose or read</span></span>|
+|[<span data-ttu-id="b314e-487">最低版本的邮箱要求集</span><span class="sxs-lookup"><span data-stu-id="b314e-487">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|<span data-ttu-id="b314e-488">1.3</span><span class="sxs-lookup"><span data-stu-id="b314e-488">1.3</span></span>|
+|[<span data-ttu-id="b314e-489">最低权限级别</span><span class="sxs-lookup"><span data-stu-id="b314e-489">Minimum permission level</span></span>](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)|<span data-ttu-id="b314e-490">ReadItem</span><span class="sxs-lookup"><span data-stu-id="b314e-490">ReadItem</span></span>|
+|[<span data-ttu-id="b314e-491">适用的 Outlook 模式</span><span class="sxs-lookup"><span data-stu-id="b314e-491">Applicable Outlook mode</span></span>](https://docs.microsoft.com/outlook/add-ins/#extension-points)|<span data-ttu-id="b314e-492">撰写或阅读</span><span class="sxs-lookup"><span data-stu-id="b314e-492">Compose or read</span></span>|
 
-####  <a name="optionalattendees-arrayemailaddressdetailsjavascriptapioutlook17officeemailaddressdetailsrecipientsjavascriptapioutlook17officerecipients"></a><span data-ttu-id="3eb21-492">optionalAttendees :Array.<[EmailAddressDetails](/javascript/api/outlook_1_7/office.emailaddressdetails)>|[Recipients](/javascript/api/outlook_1_7/office.recipients)</span><span class="sxs-lookup"><span data-stu-id="3eb21-492">optionalAttendees :Array.<[EmailAddressDetails](/javascript/api/outlook_1_7/office.emailaddressdetails)>|[Recipients](/javascript/api/outlook_1_7/office.recipients)</span></span>
+####  <a name="optionalattendees-arrayemailaddressdetailsjavascriptapioutlook17officeemailaddressdetailsrecipientsjavascriptapioutlook17officerecipients"></a><span data-ttu-id="b314e-493">optionalAttendees :Array.<[EmailAddressDetails](/javascript/api/outlook_1_7/office.emailaddressdetails)>|[Recipients](/javascript/api/outlook_1_7/office.recipients)</span><span class="sxs-lookup"><span data-stu-id="b314e-493">optionalAttendees :Array.<[EmailAddressDetails](/javascript/api/outlook_1_7/office.emailaddressdetails)>|[Recipients](/javascript/api/outlook_1_7/office.recipients)</span></span>
 
-<span data-ttu-id="3eb21-493">提供对事件的可选与会者的访问权限。</span><span class="sxs-lookup"><span data-stu-id="3eb21-493">Provides access to the optional attendees of an event.</span></span> <span data-ttu-id="3eb21-494">对象的类型和访问级别取决于当前项目的模式。</span><span class="sxs-lookup"><span data-stu-id="3eb21-494">The type of object and level of access depends on the mode of the current item.</span></span>
+<span data-ttu-id="b314e-494">提供对事件的可选与会者的访问权限。</span><span class="sxs-lookup"><span data-stu-id="b314e-494">Provides access to the optional attendees of an event.</span></span> <span data-ttu-id="b314e-495">对象的类型和访问级别取决于当前项目的模式。</span><span class="sxs-lookup"><span data-stu-id="b314e-495">The type of object and level of access depends on the mode of the current item.</span></span>
 
-##### <a name="read-mode"></a><span data-ttu-id="3eb21-495">阅读模式</span><span class="sxs-lookup"><span data-stu-id="3eb21-495">Read mode</span></span>
+##### <a name="read-mode"></a><span data-ttu-id="b314e-496">阅读模式</span><span class="sxs-lookup"><span data-stu-id="b314e-496">Read mode</span></span>
 
-<span data-ttu-id="3eb21-496">`optionalAttendees` 属性返回一个数组，其中包含每个可选与会者的 `EmailAddressDetails` 对象。</span><span class="sxs-lookup"><span data-stu-id="3eb21-496">The `optionalAttendees` property returns an array that contains an `EmailAddressDetails` object for each optional attendee to the meeting.</span></span>
+<span data-ttu-id="b314e-497">`optionalAttendees` 属性返回一个数组，其中包含每个可选与会者的 `EmailAddressDetails` 对象。</span><span class="sxs-lookup"><span data-stu-id="b314e-497">The `optionalAttendees` property returns an array that contains an `EmailAddressDetails` object for each optional attendee to the meeting.</span></span>
 
-##### <a name="compose-mode"></a><span data-ttu-id="3eb21-497">撰写模式</span><span class="sxs-lookup"><span data-stu-id="3eb21-497">Compose mode</span></span>
+##### <a name="compose-mode"></a><span data-ttu-id="b314e-498">撰写模式</span><span class="sxs-lookup"><span data-stu-id="b314e-498">Compose mode</span></span>
 
-<span data-ttu-id="3eb21-498">`optionalAttendees` 属性返回一个 `Recipients` 对象，该对象提供用于获取或更新可选与会者的方法。</span><span class="sxs-lookup"><span data-stu-id="3eb21-498">The `optionalAttendees` property returns a `Recipients` object that provides methods to get and set the optional attendees for a meeting.</span></span>
+<span data-ttu-id="b314e-499">`optionalAttendees` 属性返回一个 `Recipients` 对象，该对象提供用于获取或更新可选与会者的方法。</span><span class="sxs-lookup"><span data-stu-id="b314e-499">The `optionalAttendees` property returns a `Recipients` object that provides methods to get or update the optional attendees for a meeting.</span></span>
 
-##### <a name="type"></a><span data-ttu-id="3eb21-499">类型：</span><span class="sxs-lookup"><span data-stu-id="3eb21-499">Type:</span></span>
+##### <a name="type"></a><span data-ttu-id="b314e-500">类型：</span><span class="sxs-lookup"><span data-stu-id="b314e-500">Type:</span></span>
 
-*   <span data-ttu-id="3eb21-500">Array.<[EmailAddressDetails](/javascript/api/outlook_1_7/office.emailaddressdetails)> | [Recipients](/javascript/api/outlook_1_7/office.recipients)</span><span class="sxs-lookup"><span data-stu-id="3eb21-500">Array.<[EmailAddressDetails](/javascript/api/outlook_1_7/office.emailaddressdetails)> | [Recipients](/javascript/api/outlook_1_7/office.recipients)</span></span>
+*   <span data-ttu-id="b314e-501">Array.<[EmailAddressDetails](/javascript/api/outlook_1_7/office.emailaddressdetails)> | [Recipients](/javascript/api/outlook_1_7/office.recipients)</span><span class="sxs-lookup"><span data-stu-id="b314e-501">Array.<[EmailAddressDetails](/javascript/api/outlook_1_7/office.emailaddressdetails)> | [Recipients](/javascript/api/outlook_1_7/office.recipients)</span></span>
 
-##### <a name="requirements"></a><span data-ttu-id="3eb21-501">要求</span><span class="sxs-lookup"><span data-stu-id="3eb21-501">Requirements</span></span>
+##### <a name="requirements"></a><span data-ttu-id="b314e-502">要求</span><span class="sxs-lookup"><span data-stu-id="b314e-502">Requirements</span></span>
 
-|<span data-ttu-id="3eb21-502">要求</span><span class="sxs-lookup"><span data-stu-id="3eb21-502">Requirement</span></span>|<span data-ttu-id="3eb21-503">值</span><span class="sxs-lookup"><span data-stu-id="3eb21-503">Value</span></span>|
+|<span data-ttu-id="b314e-503">要求</span><span class="sxs-lookup"><span data-stu-id="b314e-503">Requirement</span></span>|<span data-ttu-id="b314e-504">值</span><span class="sxs-lookup"><span data-stu-id="b314e-504">Value</span></span>|
 |---|---|
-|[<span data-ttu-id="3eb21-504">最低版本的邮箱要求集</span><span class="sxs-lookup"><span data-stu-id="3eb21-504">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|<span data-ttu-id="3eb21-505">1.0</span><span class="sxs-lookup"><span data-stu-id="3eb21-505">1.0</span></span>|
-|[<span data-ttu-id="3eb21-506">最低权限级别</span><span class="sxs-lookup"><span data-stu-id="3eb21-506">Minimum permission level</span></span>](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)|<span data-ttu-id="3eb21-507">ReadItem</span><span class="sxs-lookup"><span data-stu-id="3eb21-507">ReadItem</span></span>|
-|[<span data-ttu-id="3eb21-508">适用的 Outlook 模式</span><span class="sxs-lookup"><span data-stu-id="3eb21-508">Applicable Outlook mode</span></span>](https://docs.microsoft.com/outlook/add-ins/#extension-points)|<span data-ttu-id="3eb21-509">撰写或阅读</span><span class="sxs-lookup"><span data-stu-id="3eb21-509">Compose or read</span></span>|
+|[<span data-ttu-id="b314e-505">最低版本的邮箱要求集</span><span class="sxs-lookup"><span data-stu-id="b314e-505">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|<span data-ttu-id="b314e-506">1.0</span><span class="sxs-lookup"><span data-stu-id="b314e-506">1.0</span></span>|
+|[<span data-ttu-id="b314e-507">最低权限级别</span><span class="sxs-lookup"><span data-stu-id="b314e-507">Minimum permission level</span></span>](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)|<span data-ttu-id="b314e-508">ReadItem</span><span class="sxs-lookup"><span data-stu-id="b314e-508">ReadItem</span></span>|
+|[<span data-ttu-id="b314e-509">适用的 Outlook 模式</span><span class="sxs-lookup"><span data-stu-id="b314e-509">Applicable Outlook mode</span></span>](https://docs.microsoft.com/outlook/add-ins/#extension-points)|<span data-ttu-id="b314e-510">撰写或阅读</span><span class="sxs-lookup"><span data-stu-id="b314e-510">Compose or read</span></span>|
 
-##### <a name="example"></a><span data-ttu-id="3eb21-510">示例</span><span class="sxs-lookup"><span data-stu-id="3eb21-510">Example</span></span>
+##### <a name="example"></a><span data-ttu-id="b314e-511">示例</span><span class="sxs-lookup"><span data-stu-id="b314e-511">Example</span></span>
 
 ```js
 Office.context.mailbox.item.optionalAttendees.setAsync( ['alice@contoso.com', 'bob@contoso.com'] );
@@ -588,82 +599,82 @@ function callback(asyncResult) {
 }
 ```
 
-#### <a name="organizer-emailaddressdetailsjavascriptapioutlook17officeemailaddressdetailsorganizerjavascriptapioutlook17officeorganizer"></a><span data-ttu-id="3eb21-511">organizer :[EmailAddressDetails](/javascript/api/outlook_1_7/office.emailaddressdetails)|[Organizer](/javascript/api/outlook_1_7/office.organizer)</span><span class="sxs-lookup"><span data-stu-id="3eb21-511">organizer :[EmailAddressDetails](/javascript/api/outlook_1_7/office.emailaddressdetails)|[Organizer](/javascript/api/outlook_1_7/office.organizer)</span></span>
+#### <a name="organizer-emailaddressdetailsjavascriptapioutlook17officeemailaddressdetailsorganizerjavascriptapioutlook17officeorganizer"></a><span data-ttu-id="b314e-512">organizer :[EmailAddressDetails](/javascript/api/outlook_1_7/office.emailaddressdetails)|[Organizer](/javascript/api/outlook_1_7/office.organizer)</span><span class="sxs-lookup"><span data-stu-id="b314e-512">organizer :[EmailAddressDetails](/javascript/api/outlook_1_7/office.emailaddressdetails)|[Organizer](/javascript/api/outlook_1_7/office.organizer)</span></span>
 
-<span data-ttu-id="3eb21-512">获取指定会议的组织者的电子邮件地址。</span><span class="sxs-lookup"><span data-stu-id="3eb21-512">Gets the email address of the meeting organizer for a specified meeting.</span></span>
+<span data-ttu-id="b314e-513">获取指定会议的组织者的电子邮件地址。</span><span class="sxs-lookup"><span data-stu-id="b314e-513">Gets the email address of the organizer for a specified meeting.</span></span>
 
-##### <a name="read-mode"></a><span data-ttu-id="3eb21-513">阅读模式</span><span class="sxs-lookup"><span data-stu-id="3eb21-513">Read mode</span></span>
+##### <a name="read-mode"></a><span data-ttu-id="b314e-514">阅读模式</span><span class="sxs-lookup"><span data-stu-id="b314e-514">Read mode</span></span>
 
-<span data-ttu-id="3eb21-514">`organizer` 属性返回 [EmailAddressDetails](/javascript/api/outlook_1_7/office.emailaddressdetails) 对象，它表示会议组织者。</span><span class="sxs-lookup"><span data-stu-id="3eb21-514">The `organizer` property returns an [EmailAddressDetails](/javascript/api/outlook_1_7/office.emailaddressdetails) object that represents the meeting organizer.</span></span>
+<span data-ttu-id="b314e-515">`organizer` 属性返回 [EmailAddressDetails](/javascript/api/outlook_1_7/office.emailaddressdetails) 对象，它表示会议组织者。</span><span class="sxs-lookup"><span data-stu-id="b314e-515">The `organizer` property returns an [EmailAddressDetails](/javascript/api/outlook_1_7/office.emailaddressdetails) object that represents the meeting organizer.</span></span>
 
-##### <a name="compose-mode"></a><span data-ttu-id="3eb21-515">撰写模式</span><span class="sxs-lookup"><span data-stu-id="3eb21-515">Compose mode</span></span>
+##### <a name="compose-mode"></a><span data-ttu-id="b314e-516">撰写模式</span><span class="sxs-lookup"><span data-stu-id="b314e-516">Compose mode</span></span>
 
-<span data-ttu-id="3eb21-516">`organizer` 属性返回[组织者](/javascript/api/outlook_1_7/office.organizer)对象，该对象提供获取组织者值的方法。</span><span class="sxs-lookup"><span data-stu-id="3eb21-516">The `organizer` property returns an [Organizer](/javascript/api/outlook_1_7/office.organizer) object that provides a method to get the organizer value.</span></span>
+<span data-ttu-id="b314e-517">`organizer` 属性返回 [Organizer](/javascript/api/outlook_1_7/office.organizer) 对象，该对象提供获取组织者值的方法。</span><span class="sxs-lookup"><span data-stu-id="b314e-517">The `organizer` property returns an [Organizer](/javascript/api/outlook_1_7/office.organizer) object that provides a method to get the organizer value.</span></span>
 
-##### <a name="type"></a><span data-ttu-id="3eb21-517">类型：</span><span class="sxs-lookup"><span data-stu-id="3eb21-517">Type:</span></span>
+##### <a name="type"></a><span data-ttu-id="b314e-518">类型：</span><span class="sxs-lookup"><span data-stu-id="b314e-518">Type:</span></span>
 
-*   <span data-ttu-id="3eb21-518">[EmailAddressDetails](/javascript/api/outlook_1_7/office.emailaddressdetails) | [Organizer](/javascript/api/outlook_1_7/office.organizer)</span><span class="sxs-lookup"><span data-stu-id="3eb21-518">[EmailAddressDetails](/javascript/api/outlook_1_7/office.emailaddressdetails) | [Organizer](/javascript/api/outlook_1_7/office.organizer)</span></span>
+*   <span data-ttu-id="b314e-519">[EmailAddressDetails](/javascript/api/outlook_1_7/office.emailaddressdetails) | [Organizer](/javascript/api/outlook_1_7/office.organizer)</span><span class="sxs-lookup"><span data-stu-id="b314e-519">[EmailAddressDetails](/javascript/api/outlook_1_7/office.emailaddressdetails) | [Organizer](/javascript/api/outlook_1_7/office.organizer)</span></span>
 
-##### <a name="requirements"></a><span data-ttu-id="3eb21-519">要求</span><span class="sxs-lookup"><span data-stu-id="3eb21-519">Requirements</span></span>
+##### <a name="requirements"></a><span data-ttu-id="b314e-520">要求</span><span class="sxs-lookup"><span data-stu-id="b314e-520">Requirements</span></span>
 
-|<span data-ttu-id="3eb21-520">要求</span><span class="sxs-lookup"><span data-stu-id="3eb21-520">Requirement</span></span>|||
+|<span data-ttu-id="b314e-521">要求</span><span class="sxs-lookup"><span data-stu-id="b314e-521">Requirement</span></span>|||
 |---|---|---|
-|[<span data-ttu-id="3eb21-521">最低版本的邮箱要求集</span><span class="sxs-lookup"><span data-stu-id="3eb21-521">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|<span data-ttu-id="3eb21-522">1.0</span><span class="sxs-lookup"><span data-stu-id="3eb21-522">1.0</span></span>|<span data-ttu-id="3eb21-523">1.7</span><span class="sxs-lookup"><span data-stu-id="3eb21-523">-17</span></span>|
-|[<span data-ttu-id="3eb21-524">最低权限级别</span><span class="sxs-lookup"><span data-stu-id="3eb21-524">Minimum permission level</span></span>](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)|<span data-ttu-id="3eb21-525">ReadItem</span><span class="sxs-lookup"><span data-stu-id="3eb21-525">ReadItem</span></span>|<span data-ttu-id="3eb21-526">ReadWriteItem</span><span class="sxs-lookup"><span data-stu-id="3eb21-526">ReadWriteItem</span></span>|
-|[<span data-ttu-id="3eb21-527">适用的 Outlook 模式</span><span class="sxs-lookup"><span data-stu-id="3eb21-527">Applicable Outlook mode</span></span>](https://docs.microsoft.com/outlook/add-ins/#extension-points)|<span data-ttu-id="3eb21-528">阅读</span><span class="sxs-lookup"><span data-stu-id="3eb21-528">Read</span></span>|<span data-ttu-id="3eb21-529">撰写</span><span class="sxs-lookup"><span data-stu-id="3eb21-529">Compose</span></span>|
+|[<span data-ttu-id="b314e-522">最低版本的邮箱要求集</span><span class="sxs-lookup"><span data-stu-id="b314e-522">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|<span data-ttu-id="b314e-523">1.0</span><span class="sxs-lookup"><span data-stu-id="b314e-523">1.0</span></span>|<span data-ttu-id="b314e-524">1.7</span><span class="sxs-lookup"><span data-stu-id="b314e-524">1.7</span></span>|
+|[<span data-ttu-id="b314e-525">最低权限级别</span><span class="sxs-lookup"><span data-stu-id="b314e-525">Minimum permission level</span></span>](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)|<span data-ttu-id="b314e-526">ReadItem</span><span class="sxs-lookup"><span data-stu-id="b314e-526">ReadItem</span></span>|<span data-ttu-id="b314e-527">ReadWriteItem</span><span class="sxs-lookup"><span data-stu-id="b314e-527">ReadWriteItem</span></span>|
+|[<span data-ttu-id="b314e-528">适用的 Outlook 模式</span><span class="sxs-lookup"><span data-stu-id="b314e-528">Applicable Outlook mode</span></span>](https://docs.microsoft.com/outlook/add-ins/#extension-points)|<span data-ttu-id="b314e-529">阅读</span><span class="sxs-lookup"><span data-stu-id="b314e-529">Read</span></span>|<span data-ttu-id="b314e-530">撰写</span><span class="sxs-lookup"><span data-stu-id="b314e-530">Compose</span></span>|
 
-##### <a name="example"></a><span data-ttu-id="3eb21-530">示例</span><span class="sxs-lookup"><span data-stu-id="3eb21-530">Example</span></span>
+##### <a name="example"></a><span data-ttu-id="b314e-531">示例</span><span class="sxs-lookup"><span data-stu-id="b314e-531">Example</span></span>
 
 ```js
 var organizerName = Office.context.mailbox.item.organizer.displayName;
 var organizerAddress = Office.context.mailbox.item.organizer.emailAddress;
 ```
 
-#### <a name="nullable-recurrence-recurrencejavascriptapioutlook17officerecurrence"></a><span data-ttu-id="3eb21-531">（可以为 null）定期：[定期](/javascript/api/outlook_1_7/office.recurrence)</span><span class="sxs-lookup"><span data-stu-id="3eb21-531">(nullable) recurrence :[Recurrence](/javascript/api/outlook_1_7/office.recurrence)</span></span>
+#### <a name="nullable-recurrence-recurrencejavascriptapioutlook17officerecurrence"></a><span data-ttu-id="b314e-532">(nullable) recurrence :[Recurrence](/javascript/api/outlook_1_7/office.recurrence)</span><span class="sxs-lookup"><span data-stu-id="b314e-532">(nullable) recurrence :[Recurrence](/javascript/api/outlook_1_7/office.recurrence)</span></span>
 
-<span data-ttu-id="3eb21-532">获取或设置约会的定期模式。</span><span class="sxs-lookup"><span data-stu-id="3eb21-532">Gets or sets the location of an appointment.</span></span> <span data-ttu-id="3eb21-533">获取或设置会议请求的定期模式。</span><span class="sxs-lookup"><span data-stu-id="3eb21-533">Gets the recurrence pattern of a meeting request.</span></span> <span data-ttu-id="3eb21-534">阅读撰写约会项目的模式。</span><span class="sxs-lookup"><span data-stu-id="3eb21-534">Read and compose modes for appointment items.</span></span> <span data-ttu-id="3eb21-535">会议请求项目的阅读模式。</span><span class="sxs-lookup"><span data-stu-id="3eb21-535">Read mode for meeting request items.</span></span>
+<span data-ttu-id="b314e-533">获取或设置约会的定期模式。</span><span class="sxs-lookup"><span data-stu-id="b314e-533">Gets or sets the recurrence pattern of an appointment.</span></span> <span data-ttu-id="b314e-534">获取或设置会议请求的定期模式。</span><span class="sxs-lookup"><span data-stu-id="b314e-534">Gets the recurrence pattern of a meeting request.</span></span> <span data-ttu-id="b314e-535">阅读撰写约会项目的模式。</span><span class="sxs-lookup"><span data-stu-id="b314e-535">Read and compose modes for appointment items.</span></span> <span data-ttu-id="b314e-536">会议请求项目的阅读模式。</span><span class="sxs-lookup"><span data-stu-id="b314e-536">Read mode for meeting request items.</span></span>
 
-<span data-ttu-id="3eb21-536">如果项目是一个系列或系列中的一个实例，则 `recurrence` 属性将返回定期约会的[定期](/javascript/api/outlook_1_7/office.recurrence)对象或会议请求。</span><span class="sxs-lookup"><span data-stu-id="3eb21-536">The `recurrence` property returns a [recurrence](/javascript/api/outlook_1_7/office.recurrence) object for recurring appointments or meetings requests if an item is a series or an instance in a series.</span></span> <span data-ttu-id="3eb21-537">针对单个约会和单个约会的会议请求返回 `null`。</span><span class="sxs-lookup"><span data-stu-id="3eb21-537">`null` is returned for single appointments and meeting requests of single appointments.</span></span> <span data-ttu-id="3eb21-538">针对非会议请求的邮件返回 `undefined`。</span><span class="sxs-lookup"><span data-stu-id="3eb21-538">`undefined` is returned for messages that are not meeting requests.</span></span>
+<span data-ttu-id="b314e-537">如果项目是一个系列或系列中的一个实例，则 `recurrence` 属性将返回定期约会的 [recurrence](/javascript/api/outlook_1_7/office.recurrence) 对象或会议请求。</span><span class="sxs-lookup"><span data-stu-id="b314e-537">The `recurrence` property returns a [recurrence](/javascript/api/outlook_1_7/office.recurrence) object for recurring appointments or meetings requests if an item is a series or an instance in a series.</span></span> <span data-ttu-id="b314e-538">针对单个约会和单个约会的会议请求返回 `null`。</span><span class="sxs-lookup"><span data-stu-id="b314e-538">`null` is returned for single appointments and meeting requests of single appointments.</span></span> <span data-ttu-id="b314e-539">针对非会议请求的邮件返回 `undefined`。</span><span class="sxs-lookup"><span data-stu-id="b314e-539">`undefined` is returned for messages that are not meeting requests.</span></span>
 
-> <span data-ttu-id="3eb21-539">注意：会议请求的 `itemClass` 值为 IPM.Schedule.Meeting.Request。</span><span class="sxs-lookup"><span data-stu-id="3eb21-539">Note: Meeting requests have an `itemClass` value of IPM.Schedule.Meeting.Request.</span></span>
+> <span data-ttu-id="b314e-540">注意：会议请求的 `itemClass` 值为 IPM.Schedule.Meeting.Request。</span><span class="sxs-lookup"><span data-stu-id="b314e-540">Note: Meeting requests have an `itemClass` value of IPM.Schedule.Meeting.Request.</span></span>
 
-> <span data-ttu-id="3eb21-540">注意：如果定期对象为 `null`，则这表示对象是单个约会或单个约会的会议请求，而不是系列的一部分。</span><span class="sxs-lookup"><span data-stu-id="3eb21-540">Note: If the recurrence object is `null`, this indicates that the object is a single appointment or a meeting request of a single appointment and NOT a part of a series.</span></span>
+> <span data-ttu-id="b314e-541">注意：如果 recurrence 对象为 `null`，则这表示对象是单个约会或单个约会的会议请求，而不是系列的一部分。</span><span class="sxs-lookup"><span data-stu-id="b314e-541">Note: If the recurrence object is `null`, this indicates that the object is a single appointment or a meeting request of a single appointment and NOT a part of a series.</span></span>
 
-##### <a name="type"></a><span data-ttu-id="3eb21-541">类型：</span><span class="sxs-lookup"><span data-stu-id="3eb21-541">Type:</span></span>
+##### <a name="type"></a><span data-ttu-id="b314e-542">类型：</span><span class="sxs-lookup"><span data-stu-id="b314e-542">Type:</span></span>
 
-* [<span data-ttu-id="3eb21-542">定期</span><span class="sxs-lookup"><span data-stu-id="3eb21-542">recurrence</span></span>](/javascript/api/outlook_1_7/office.recurrence)
+* [<span data-ttu-id="b314e-543">Recurrence</span><span class="sxs-lookup"><span data-stu-id="b314e-543">Recurrence</span></span>](/javascript/api/outlook_1_7/office.recurrence)
 
-|<span data-ttu-id="3eb21-543">要求</span><span class="sxs-lookup"><span data-stu-id="3eb21-543">Requirement</span></span>|<span data-ttu-id="3eb21-544">值</span><span class="sxs-lookup"><span data-stu-id="3eb21-544">Value</span></span>|
+|<span data-ttu-id="b314e-544">要求</span><span class="sxs-lookup"><span data-stu-id="b314e-544">Requirement</span></span>|<span data-ttu-id="b314e-545">值</span><span class="sxs-lookup"><span data-stu-id="b314e-545">Value</span></span>|
 |---|---|
-|[<span data-ttu-id="3eb21-545">最低版本的邮箱要求集</span><span class="sxs-lookup"><span data-stu-id="3eb21-545">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|<span data-ttu-id="3eb21-546">1.7</span><span class="sxs-lookup"><span data-stu-id="3eb21-546">-17</span></span>|
-|[<span data-ttu-id="3eb21-547">最低权限级别</span><span class="sxs-lookup"><span data-stu-id="3eb21-547">Minimum permission level</span></span>](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)|<span data-ttu-id="3eb21-548">ReadItem</span><span class="sxs-lookup"><span data-stu-id="3eb21-548">ReadItem</span></span>|
-|[<span data-ttu-id="3eb21-549">适用的 Outlook 模式</span><span class="sxs-lookup"><span data-stu-id="3eb21-549">Applicable Outlook mode</span></span>](https://docs.microsoft.com/outlook/add-ins/#extension-points)|<span data-ttu-id="3eb21-550">撰写或阅读</span><span class="sxs-lookup"><span data-stu-id="3eb21-550">Compose or read</span></span>|
+|[<span data-ttu-id="b314e-546">最低版本的邮箱要求集</span><span class="sxs-lookup"><span data-stu-id="b314e-546">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|<span data-ttu-id="b314e-547">1.7</span><span class="sxs-lookup"><span data-stu-id="b314e-547">1.7</span></span>|
+|[<span data-ttu-id="b314e-548">最低权限级别</span><span class="sxs-lookup"><span data-stu-id="b314e-548">Minimum permission level</span></span>](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)|<span data-ttu-id="b314e-549">ReadItem</span><span class="sxs-lookup"><span data-stu-id="b314e-549">ReadItem</span></span>|
+|[<span data-ttu-id="b314e-550">适用的 Outlook 模式</span><span class="sxs-lookup"><span data-stu-id="b314e-550">Applicable Outlook mode</span></span>](https://docs.microsoft.com/outlook/add-ins/#extension-points)|<span data-ttu-id="b314e-551">撰写或阅读</span><span class="sxs-lookup"><span data-stu-id="b314e-551">Compose or read</span></span>|
 
-####  <a name="requiredattendees-arrayemailaddressdetailsjavascriptapioutlook17officeemailaddressdetailsrecipientsjavascriptapioutlook17officerecipients"></a><span data-ttu-id="3eb21-551">requiredAttendees :Array.<[EmailAddressDetails](/javascript/api/outlook_1_7/office.emailaddressdetails)>|[Recipients](/javascript/api/outlook_1_7/office.recipients)</span><span class="sxs-lookup"><span data-stu-id="3eb21-551">requiredAttendees :Array.<[EmailAddressDetails](/javascript/api/outlook_1_7/office.emailaddressdetails)>|[Recipients](/javascript/api/outlook_1_7/office.recipients)</span></span>
+####  <a name="requiredattendees-arrayemailaddressdetailsjavascriptapioutlook17officeemailaddressdetailsrecipientsjavascriptapioutlook17officerecipients"></a><span data-ttu-id="b314e-552">requiredAttendees :Array.<[EmailAddressDetails](/javascript/api/outlook_1_7/office.emailaddressdetails)>|[Recipients](/javascript/api/outlook_1_7/office.recipients)</span><span class="sxs-lookup"><span data-stu-id="b314e-552">requiredAttendees :Array.<[EmailAddressDetails](/javascript/api/outlook_1_7/office.emailaddressdetails)>|[Recipients](/javascript/api/outlook_1_7/office.recipients)</span></span>
 
-<span data-ttu-id="3eb21-552">提供对事件的必需与会者的访问权限。</span><span class="sxs-lookup"><span data-stu-id="3eb21-552">Provides access to the required attendees of an event.</span></span> <span data-ttu-id="3eb21-553">对象的类型和访问级别取决于当前项目的模式。</span><span class="sxs-lookup"><span data-stu-id="3eb21-553">The type of object and level of access depends on the mode of the current item.</span></span>
+<span data-ttu-id="b314e-553">提供对事件的必需与会者的访问权限。</span><span class="sxs-lookup"><span data-stu-id="b314e-553">Provides access to the required attendees of an event.</span></span> <span data-ttu-id="b314e-554">对象的类型和访问级别取决于当前项目的模式。</span><span class="sxs-lookup"><span data-stu-id="b314e-554">The type of object and level of access depends on the mode of the current item.</span></span>
 
-##### <a name="read-mode"></a><span data-ttu-id="3eb21-554">阅读模式</span><span class="sxs-lookup"><span data-stu-id="3eb21-554">Read mode</span></span>
+##### <a name="read-mode"></a><span data-ttu-id="b314e-555">阅读模式</span><span class="sxs-lookup"><span data-stu-id="b314e-555">Read mode</span></span>
 
-<span data-ttu-id="3eb21-555">`requiredAttendees` 属性返回一个数组，其中包含每个必需与会者的 `EmailAddressDetails` 对象。</span><span class="sxs-lookup"><span data-stu-id="3eb21-555">The `requiredAttendees` property returns an array that contains an `EmailAddressDetails` object for each required attendee to the meeting.</span></span>
+<span data-ttu-id="b314e-556">`requiredAttendees` 属性返回一个数组，其中包含每个必需与会者的 `EmailAddressDetails` 对象。</span><span class="sxs-lookup"><span data-stu-id="b314e-556">The `requiredAttendees` property returns an array that contains an `EmailAddressDetails` object for each required attendee to the meeting.</span></span>
 
-##### <a name="compose-mode"></a><span data-ttu-id="3eb21-556">撰写模式</span><span class="sxs-lookup"><span data-stu-id="3eb21-556">Compose mode</span></span>
+##### <a name="compose-mode"></a><span data-ttu-id="b314e-557">撰写模式</span><span class="sxs-lookup"><span data-stu-id="b314e-557">Compose mode</span></span>
 
-<span data-ttu-id="3eb21-557">`requiredAttendees` 属性返回一个 `Recipients` 对象，该对象提供用于获取或更新必需与会者的方法。</span><span class="sxs-lookup"><span data-stu-id="3eb21-557">The `requiredAttendees` property returns a `Recipients` object that provides methods to get and set the required attendees for a meeting.</span></span>
+<span data-ttu-id="b314e-558">`requiredAttendees` 属性返回一个 `Recipients` 对象，该对象提供用于获取或更新必需与会者的方法。</span><span class="sxs-lookup"><span data-stu-id="b314e-558">The `requiredAttendees` property returns a `Recipients` object that provides methods to get or update the required attendees for a meeting.</span></span>
 
-##### <a name="type"></a><span data-ttu-id="3eb21-558">类型：</span><span class="sxs-lookup"><span data-stu-id="3eb21-558">Type:</span></span>
+##### <a name="type"></a><span data-ttu-id="b314e-559">类型：</span><span class="sxs-lookup"><span data-stu-id="b314e-559">Type:</span></span>
 
-*   <span data-ttu-id="3eb21-559">Array.<[EmailAddressDetails](/javascript/api/outlook_1_7/office.emailaddressdetails)> | [Recipients](/javascript/api/outlook_1_7/office.recipients)</span><span class="sxs-lookup"><span data-stu-id="3eb21-559">Array.<[EmailAddressDetails](/javascript/api/outlook_1_7/office.emailaddressdetails)> | [Recipients](/javascript/api/outlook_1_7/office.recipients)</span></span>
+*   <span data-ttu-id="b314e-560">Array.<[EmailAddressDetails](/javascript/api/outlook_1_7/office.emailaddressdetails)> | [Recipients](/javascript/api/outlook_1_7/office.recipients)</span><span class="sxs-lookup"><span data-stu-id="b314e-560">Array.<[EmailAddressDetails](/javascript/api/outlook_1_7/office.emailaddressdetails)> | [Recipients](/javascript/api/outlook_1_7/office.recipients)</span></span>
 
-##### <a name="requirements"></a><span data-ttu-id="3eb21-560">要求</span><span class="sxs-lookup"><span data-stu-id="3eb21-560">Requirements</span></span>
+##### <a name="requirements"></a><span data-ttu-id="b314e-561">要求</span><span class="sxs-lookup"><span data-stu-id="b314e-561">Requirements</span></span>
 
-|<span data-ttu-id="3eb21-561">要求</span><span class="sxs-lookup"><span data-stu-id="3eb21-561">Requirement</span></span>|<span data-ttu-id="3eb21-562">值</span><span class="sxs-lookup"><span data-stu-id="3eb21-562">Value</span></span>|
+|<span data-ttu-id="b314e-562">要求</span><span class="sxs-lookup"><span data-stu-id="b314e-562">Requirement</span></span>|<span data-ttu-id="b314e-563">值</span><span class="sxs-lookup"><span data-stu-id="b314e-563">Value</span></span>|
 |---|---|
-|[<span data-ttu-id="3eb21-563">最低版本的邮箱要求集</span><span class="sxs-lookup"><span data-stu-id="3eb21-563">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|<span data-ttu-id="3eb21-564">1.0</span><span class="sxs-lookup"><span data-stu-id="3eb21-564">1.0</span></span>|
-|[<span data-ttu-id="3eb21-565">最低权限级别</span><span class="sxs-lookup"><span data-stu-id="3eb21-565">Minimum permission level</span></span>](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)|<span data-ttu-id="3eb21-566">ReadItem</span><span class="sxs-lookup"><span data-stu-id="3eb21-566">ReadItem</span></span>|
-|[<span data-ttu-id="3eb21-567">适用的 Outlook 模式</span><span class="sxs-lookup"><span data-stu-id="3eb21-567">Applicable Outlook mode</span></span>](https://docs.microsoft.com/outlook/add-ins/#extension-points)|<span data-ttu-id="3eb21-568">撰写或阅读</span><span class="sxs-lookup"><span data-stu-id="3eb21-568">Compose or read</span></span>|
+|[<span data-ttu-id="b314e-564">最低版本的邮箱要求集</span><span class="sxs-lookup"><span data-stu-id="b314e-564">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|<span data-ttu-id="b314e-565">1.0</span><span class="sxs-lookup"><span data-stu-id="b314e-565">1.0</span></span>|
+|[<span data-ttu-id="b314e-566">最低权限级别</span><span class="sxs-lookup"><span data-stu-id="b314e-566">Minimum permission level</span></span>](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)|<span data-ttu-id="b314e-567">ReadItem</span><span class="sxs-lookup"><span data-stu-id="b314e-567">ReadItem</span></span>|
+|[<span data-ttu-id="b314e-568">适用的 Outlook 模式</span><span class="sxs-lookup"><span data-stu-id="b314e-568">Applicable Outlook mode</span></span>](https://docs.microsoft.com/outlook/add-ins/#extension-points)|<span data-ttu-id="b314e-569">撰写或阅读</span><span class="sxs-lookup"><span data-stu-id="b314e-569">Compose or read</span></span>|
 
-##### <a name="example"></a><span data-ttu-id="3eb21-569">示例</span><span class="sxs-lookup"><span data-stu-id="3eb21-569">Example</span></span>
+##### <a name="example"></a><span data-ttu-id="b314e-570">示例</span><span class="sxs-lookup"><span data-stu-id="b314e-570">Example</span></span>
 
 ```js
 Office.context.mailbox.item.requiredAttendees.setAsync( ['alice@contoso.com', 'bob@contoso.com'] );
@@ -675,95 +686,95 @@ function callback(asyncResult) {
 }
 ```
 
-#### <a name="sender-emailaddressdetailsjavascriptapioutlook17officeemailaddressdetails"></a><span data-ttu-id="3eb21-570">发件人：[EmailAddressDetails](/javascript/api/outlook_1_7/office.emailaddressdetails)</span><span class="sxs-lookup"><span data-stu-id="3eb21-570">sender :[EmailAddressDetails](/javascript/api/outlook_1_7/office.emailaddressdetails)</span></span>
+#### <a name="sender-emailaddressdetailsjavascriptapioutlook17officeemailaddressdetails"></a><span data-ttu-id="b314e-571">sender :[EmailAddressDetails](/javascript/api/outlook_1_7/office.emailaddressdetails)</span><span class="sxs-lookup"><span data-stu-id="b314e-571">sender :[EmailAddressDetails](/javascript/api/outlook_1_7/office.emailaddressdetails)</span></span>
 
-<span data-ttu-id="3eb21-p126">获取电子邮件发件人的电子邮件地址。仅限阅读模式。</span><span class="sxs-lookup"><span data-stu-id="3eb21-p126">Gets the email address of the sender of an email message. Read mode only.</span></span>
+<span data-ttu-id="b314e-p126">获取电子邮件发件人的电子邮件地址。仅限阅读模式。</span><span class="sxs-lookup"><span data-stu-id="b314e-p126">Gets the email address of the sender of an email message. Read mode only.</span></span>
 
-<span data-ttu-id="3eb21-p127">[`from`](#from-emailaddressdetailsjavascriptapioutlook17officeemailaddressdetailsfromjavascriptapioutlook17officefrom) 和 `sender` 属性表示同一个人，邮件由代理人发送的除外。在此情况下，`from` 属性表示代理程序，而 sender 属性表示代理人。</span><span class="sxs-lookup"><span data-stu-id="3eb21-p127">The [`from`](#from-emailaddressdetailsjavascriptapioutlook17officeemailaddressdetailsfromjavascriptapioutlook17officefrom) and `sender` properties represent the same person unless the message is sent by a delegate. In that case, the `from` property represents the delegator, and the sender property represents the delegate.</span></span>
+<span data-ttu-id="b314e-p127">[`from`](#from-emailaddressdetailsjavascriptapioutlook17officeemailaddressdetailsfromjavascriptapioutlook17officefrom) 和 `sender` 属性表示同一个人，邮件由代理人发送的除外。在此情况下，`from` 属性表示代理程序，而 sender 属性表示代理人。</span><span class="sxs-lookup"><span data-stu-id="b314e-p127">The [`from`](#from-emailaddressdetailsjavascriptapioutlook17officeemailaddressdetailsfromjavascriptapioutlook17officefrom) and `sender` properties represent the same person unless the message is sent by a delegate. In that case, the `from` property represents the delegator, and the sender property represents the delegate.</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="3eb21-575">`sender` 属性中 `EmailAddressDetails` 对象的 `recipientType` 属性为 `undefined`。</span><span class="sxs-lookup"><span data-stu-id="3eb21-575">Note: The `recipientType` property of the `EmailAddressDetails` object in the `sender` property is `undefined`.</span></span>
+> <span data-ttu-id="b314e-576">`sender` 属性中 `EmailAddressDetails` 对象的 `recipientType` 属性为 `undefined`。</span><span class="sxs-lookup"><span data-stu-id="b314e-576">The `recipientType` property of the `EmailAddressDetails` object in the `sender` property is `undefined`.</span></span>
 
-##### <a name="type"></a><span data-ttu-id="3eb21-576">类型：</span><span class="sxs-lookup"><span data-stu-id="3eb21-576">Type:</span></span>
+##### <a name="type"></a><span data-ttu-id="b314e-577">类型：</span><span class="sxs-lookup"><span data-stu-id="b314e-577">Type:</span></span>
 
-*   [<span data-ttu-id="3eb21-577">EmailAddressDetails</span><span class="sxs-lookup"><span data-stu-id="3eb21-577">EmailAddressDetails</span></span>](/javascript/api/outlook_1_7/office.emailaddressdetails)
+*   [<span data-ttu-id="b314e-578">EmailAddressDetails</span><span class="sxs-lookup"><span data-stu-id="b314e-578">EmailAddressDetails</span></span>](/javascript/api/outlook_1_7/office.emailaddressdetails)
 
-##### <a name="requirements"></a><span data-ttu-id="3eb21-578">要求</span><span class="sxs-lookup"><span data-stu-id="3eb21-578">Requirements</span></span>
+##### <a name="requirements"></a><span data-ttu-id="b314e-579">要求</span><span class="sxs-lookup"><span data-stu-id="b314e-579">Requirements</span></span>
 
-|<span data-ttu-id="3eb21-579">要求</span><span class="sxs-lookup"><span data-stu-id="3eb21-579">Requirement</span></span>|<span data-ttu-id="3eb21-580">值</span><span class="sxs-lookup"><span data-stu-id="3eb21-580">Value</span></span>|
+|<span data-ttu-id="b314e-580">要求</span><span class="sxs-lookup"><span data-stu-id="b314e-580">Requirement</span></span>|<span data-ttu-id="b314e-581">值</span><span class="sxs-lookup"><span data-stu-id="b314e-581">Value</span></span>|
 |---|---|
-|[<span data-ttu-id="3eb21-581">最低版本的邮箱要求集</span><span class="sxs-lookup"><span data-stu-id="3eb21-581">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|<span data-ttu-id="3eb21-582">1.0</span><span class="sxs-lookup"><span data-stu-id="3eb21-582">1.0</span></span>|
-|[<span data-ttu-id="3eb21-583">最低权限级别</span><span class="sxs-lookup"><span data-stu-id="3eb21-583">Minimum permission level</span></span>](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)|<span data-ttu-id="3eb21-584">ReadItem</span><span class="sxs-lookup"><span data-stu-id="3eb21-584">ReadItem</span></span>|
-|[<span data-ttu-id="3eb21-585">适用的 Outlook 模式</span><span class="sxs-lookup"><span data-stu-id="3eb21-585">Applicable Outlook mode</span></span>](https://docs.microsoft.com/outlook/add-ins/#extension-points)|<span data-ttu-id="3eb21-586">阅读</span><span class="sxs-lookup"><span data-stu-id="3eb21-586">Read</span></span>|
+|[<span data-ttu-id="b314e-582">最低版本的邮箱要求集</span><span class="sxs-lookup"><span data-stu-id="b314e-582">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|<span data-ttu-id="b314e-583">1.0</span><span class="sxs-lookup"><span data-stu-id="b314e-583">1.0</span></span>|
+|[<span data-ttu-id="b314e-584">最低权限级别</span><span class="sxs-lookup"><span data-stu-id="b314e-584">Minimum permission level</span></span>](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)|<span data-ttu-id="b314e-585">ReadItem</span><span class="sxs-lookup"><span data-stu-id="b314e-585">ReadItem</span></span>|
+|[<span data-ttu-id="b314e-586">适用的 Outlook 模式</span><span class="sxs-lookup"><span data-stu-id="b314e-586">Applicable Outlook mode</span></span>](https://docs.microsoft.com/outlook/add-ins/#extension-points)|<span data-ttu-id="b314e-587">阅读</span><span class="sxs-lookup"><span data-stu-id="b314e-587">Read</span></span>|
 
-##### <a name="example"></a><span data-ttu-id="3eb21-587">示例</span><span class="sxs-lookup"><span data-stu-id="3eb21-587">Example</span></span>
+##### <a name="example"></a><span data-ttu-id="b314e-588">示例</span><span class="sxs-lookup"><span data-stu-id="b314e-588">Example</span></span>
 
 ```js
 var senderName = Office.context.mailbox.item.sender.displayName;
 var senderAddress = Office.context.mailbox.item.sender.emailAddress;
 ```
 
-#### <a name="nullable-seriesid-string"></a><span data-ttu-id="3eb21-588">（可以为 null）系列 Id：字符串</span><span class="sxs-lookup"><span data-stu-id="3eb21-588">(nullable) seriesId :String</span></span>
+#### <a name="nullable-seriesid-string"></a><span data-ttu-id="b314e-589">(nullable) seriesId :String</span><span class="sxs-lookup"><span data-stu-id="b314e-589">(nullable) seriesId :String</span></span>
 
-<span data-ttu-id="3eb21-589">获取实例所属的系列的 Id。</span><span class="sxs-lookup"><span data-stu-id="3eb21-589">Gets the id of the series that an instance belongs to.</span></span>
+<span data-ttu-id="b314e-590">获取实例所属的系列的 ID。</span><span class="sxs-lookup"><span data-stu-id="b314e-590">Gets the id of the series that an instance belongs to.</span></span>
 
-<span data-ttu-id="3eb21-590">在 OWA 和 Outlook 中，`seriesId` 返回此项目所属的父（系列）项目的 Exchange Web 服务 (EWS) ID。</span><span class="sxs-lookup"><span data-stu-id="3eb21-590">In OWA and Outlook, the `seriesId` returns the Exchange Web Services (EWS) ID of the parent (series) item that this item belongs to.</span></span> <span data-ttu-id="3eb21-591">但是，在 iOS 和 Android 中，`seriesId` 返回父项目的其余部分 ID。</span><span class="sxs-lookup"><span data-stu-id="3eb21-591">However, in iOS and Android, the `seriesId` returns the REST ID of the parent item.</span></span>
+<span data-ttu-id="b314e-591">在 OWA 和 Outlook 中，`seriesId` 返回此项目所属的父（系列）项目的 Exchange Web 服务 (EWS) ID。</span><span class="sxs-lookup"><span data-stu-id="b314e-591">In OWA and Outlook, the `seriesId` returns the Exchange Web Services (EWS) ID of the parent (series) item that this item belongs to.</span></span> <span data-ttu-id="b314e-592">但是，在 iOS 和 Android 中，`seriesId` 返回父项目的其余部分 ID。</span><span class="sxs-lookup"><span data-stu-id="b314e-592">However, in iOS and Android, the `seriesId` returns the REST ID of the parent item.</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="3eb21-592">`seriesId` 属性返回的标识符与 Exchange Web 服务项目标识符相同。</span><span class="sxs-lookup"><span data-stu-id="3eb21-592">The identifier returned by the `seriesId` property is the same as the Exchange Web Services item identifier.</span></span> <span data-ttu-id="3eb21-593">`seriesId` 属性与 Outlook REST API 使用的 Outlook ID 不同。</span><span class="sxs-lookup"><span data-stu-id="3eb21-593">The `seriesId` property is not identical to the Outlook IDs used by the Outlook REST API.</span></span> <span data-ttu-id="3eb21-594">使用此值进行 REST API 调用前，应使用 [Office.context.mailbox.convertToRestId](office.context.mailbox.md#converttorestiditemid-restversion--string) 对它进行转换。</span><span class="sxs-lookup"><span data-stu-id="3eb21-594">Before making REST API calls using this value, it should be converted using [Office.context.mailbox.convertToRestId](office.context.mailbox.md#converttorestiditemid-restversion--string).</span></span> <span data-ttu-id="3eb21-595">有关详细信息，请参阅[从 Outlook 加载项使用 Outlook REST API](https://docs.microsoft.com/outlook/add-ins/use-rest-api)。</span><span class="sxs-lookup"><span data-stu-id="3eb21-595">For more details, see [Use the Outlook REST APIs from an Outlook add-in](https://docs.microsoft.com/outlook/add-ins/use-rest-api).</span></span>
+> <span data-ttu-id="b314e-593">`seriesId` 属性返回的标识符与 Exchange Web 服务项目标识符相同。</span><span class="sxs-lookup"><span data-stu-id="b314e-593">The identifier returned by the `seriesId` property is the same as the Exchange Web Services item identifier.</span></span> <span data-ttu-id="b314e-594">`seriesId` 属性与 Outlook REST API 使用的 Outlook ID 不同。</span><span class="sxs-lookup"><span data-stu-id="b314e-594">The `seriesId` property is not identical to the Outlook IDs used by the Outlook REST API.</span></span> <span data-ttu-id="b314e-595">使用此值进行 REST API 调用前，应使用 [Office.context.mailbox.convertToRestId](office.context.mailbox.md#converttorestiditemid-restversion--string) 对它进行转换。</span><span class="sxs-lookup"><span data-stu-id="b314e-595">Before making REST API calls using this value, it should be converted using [Office.context.mailbox.convertToRestId](office.context.mailbox.md#converttorestiditemid-restversion--string).</span></span> <span data-ttu-id="b314e-596">有关详细信息，请参阅[从 Outlook 加载项使用 Outlook REST API](https://docs.microsoft.com/outlook/add-ins/use-rest-api)。</span><span class="sxs-lookup"><span data-stu-id="b314e-596">For more details, see [Use the Outlook REST APIs from an Outlook add-in](https://docs.microsoft.com/outlook/add-ins/use-rest-api).</span></span>
 
-<span data-ttu-id="3eb21-596">`seriesId` 属性对于没有父项目（如单个约会、系列项目或会议请求）的项目返回 `null`，对于非会议请求的任何其他项目，返回 `undefined`。</span><span class="sxs-lookup"><span data-stu-id="3eb21-596">The `seriesId` property returns `null` for items that do not have parent items such as single appointments, series items, or meeting requests and returns `undefined` for any other items that are not meeting requests.</span></span>
+<span data-ttu-id="b314e-597">`seriesId` 属性对于没有父项目（如单个约会、系列项目或会议请求）的项目返回 `null`，对于非会议请求的任何其他项目，返回 `undefined`。</span><span class="sxs-lookup"><span data-stu-id="b314e-597">The `seriesId` property returns `null` for items that do not have parent items such as single appointments, series items, or meeting requests and returns `undefined` for any other items that are not meeting requests.</span></span>
 
-##### <a name="type"></a><span data-ttu-id="3eb21-597">类型：</span><span class="sxs-lookup"><span data-stu-id="3eb21-597">Type:</span></span>
+##### <a name="type"></a><span data-ttu-id="b314e-598">类型：</span><span class="sxs-lookup"><span data-stu-id="b314e-598">Type:</span></span>
 
-* <span data-ttu-id="3eb21-598">String</span><span class="sxs-lookup"><span data-stu-id="3eb21-598">String</span></span>
+* <span data-ttu-id="b314e-599">String</span><span class="sxs-lookup"><span data-stu-id="b314e-599">String</span></span>
 
-##### <a name="requirements"></a><span data-ttu-id="3eb21-599">要求</span><span class="sxs-lookup"><span data-stu-id="3eb21-599">Requirements</span></span>
+##### <a name="requirements"></a><span data-ttu-id="b314e-600">要求</span><span class="sxs-lookup"><span data-stu-id="b314e-600">Requirements</span></span>
 
-|<span data-ttu-id="3eb21-600">要求</span><span class="sxs-lookup"><span data-stu-id="3eb21-600">Requirement</span></span>|<span data-ttu-id="3eb21-601">值</span><span class="sxs-lookup"><span data-stu-id="3eb21-601">Value</span></span>|
+|<span data-ttu-id="b314e-601">要求</span><span class="sxs-lookup"><span data-stu-id="b314e-601">Requirement</span></span>|<span data-ttu-id="b314e-602">值</span><span class="sxs-lookup"><span data-stu-id="b314e-602">Value</span></span>|
 |---|---|
-|[<span data-ttu-id="3eb21-602">最低版本的邮箱要求集</span><span class="sxs-lookup"><span data-stu-id="3eb21-602">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|<span data-ttu-id="3eb21-603">1.7</span><span class="sxs-lookup"><span data-stu-id="3eb21-603">-17</span></span>|
-|[<span data-ttu-id="3eb21-604">最低权限级别</span><span class="sxs-lookup"><span data-stu-id="3eb21-604">Minimum permission level</span></span>](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)|<span data-ttu-id="3eb21-605">ReadItem</span><span class="sxs-lookup"><span data-stu-id="3eb21-605">ReadItem</span></span>|
-|[<span data-ttu-id="3eb21-606">适用的 Outlook 模式</span><span class="sxs-lookup"><span data-stu-id="3eb21-606">Applicable Outlook mode</span></span>](https://docs.microsoft.com/outlook/add-ins/#extension-points)|<span data-ttu-id="3eb21-607">撰写或阅读</span><span class="sxs-lookup"><span data-stu-id="3eb21-607">Compose or read</span></span>|
+|[<span data-ttu-id="b314e-603">最低版本的邮箱要求集</span><span class="sxs-lookup"><span data-stu-id="b314e-603">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|<span data-ttu-id="b314e-604">1.7</span><span class="sxs-lookup"><span data-stu-id="b314e-604">1.7</span></span>|
+|[<span data-ttu-id="b314e-605">最低权限级别</span><span class="sxs-lookup"><span data-stu-id="b314e-605">Minimum permission level</span></span>](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)|<span data-ttu-id="b314e-606">ReadItem</span><span class="sxs-lookup"><span data-stu-id="b314e-606">ReadItem</span></span>|
+|[<span data-ttu-id="b314e-607">适用的 Outlook 模式</span><span class="sxs-lookup"><span data-stu-id="b314e-607">Applicable Outlook mode</span></span>](https://docs.microsoft.com/outlook/add-ins/#extension-points)|<span data-ttu-id="b314e-608">撰写或阅读</span><span class="sxs-lookup"><span data-stu-id="b314e-608">Compose or read</span></span>|
 
-##### <a name="example"></a><span data-ttu-id="3eb21-608">示例</span><span class="sxs-lookup"><span data-stu-id="3eb21-608">Example</span></span>
+##### <a name="example"></a><span data-ttu-id="b314e-609">示例</span><span class="sxs-lookup"><span data-stu-id="b314e-609">Example</span></span>
 
 ```js
 var seriesId = Office.context.mailbox.item.seriesId;
 var isSeries = (seriesId == null);
 ```
 
-####  <a name="start-datetimejavascriptapioutlook17officetime"></a><span data-ttu-id="3eb21-609">start :Date|[Time](/javascript/api/outlook_1_7/office.time)</span><span class="sxs-lookup"><span data-stu-id="3eb21-609">start :Date|[Time](/javascript/api/outlook_1_7/office.time)</span></span>
+####  <a name="start-datetimejavascriptapioutlook17officetime"></a><span data-ttu-id="b314e-610">start :Date|[Time](/javascript/api/outlook_1_7/office.time)</span><span class="sxs-lookup"><span data-stu-id="b314e-610">start :Date|[Time](/javascript/api/outlook_1_7/office.time)</span></span>
 
-<span data-ttu-id="3eb21-610">获取或设置约会开始的日期和时间。</span><span class="sxs-lookup"><span data-stu-id="3eb21-610">Gets or sets the date and time that the appointment is to begin.</span></span>
+<span data-ttu-id="b314e-611">获取或设置约会开始的日期和时间。</span><span class="sxs-lookup"><span data-stu-id="b314e-611">Gets or sets the date and time that the appointment is to begin.</span></span>
 
-<span data-ttu-id="3eb21-p130">将 `start` 属性表示为协调世界时 (UTC) 的日期和时间值。可使用 [`convertToLocalClientTime`](office.context.mailbox.md#converttolocalclienttimetimevalue--localclienttimejavascriptapioutlook17officelocalclienttime) 方法将该值转换为客户端的本地日期和时间。</span><span class="sxs-lookup"><span data-stu-id="3eb21-p130">The `start` property is expressed as a Coordinated Universal Time (UTC) date and time value. You can use the [`convertToLocalClientTime`](office.context.mailbox.md#converttolocalclienttimetimevalue--localclienttimejavascriptapioutlook17officelocalclienttime) method to convert the value to the client’s local date and time.</span></span>
+<span data-ttu-id="b314e-p130">将 `start` 属性表示为协调世界时 (UTC) 的日期和时间值。可使用 [`convertToLocalClientTime`](office.context.mailbox.md#converttolocalclienttimetimevalue--localclienttimejavascriptapioutlook17officelocalclienttime) 方法将该值转换为客户端的本地日期和时间。</span><span class="sxs-lookup"><span data-stu-id="b314e-p130">The `start` property is expressed as a Coordinated Universal Time (UTC) date and time value. You can use the [`convertToLocalClientTime`](office.context.mailbox.md#converttolocalclienttimetimevalue--localclienttimejavascriptapioutlook17officelocalclienttime) method to convert the value to the client’s local date and time.</span></span>
 
-##### <a name="read-mode"></a><span data-ttu-id="3eb21-613">阅读模式</span><span class="sxs-lookup"><span data-stu-id="3eb21-613">Read mode</span></span>
+##### <a name="read-mode"></a><span data-ttu-id="b314e-614">阅读模式</span><span class="sxs-lookup"><span data-stu-id="b314e-614">Read mode</span></span>
 
-<span data-ttu-id="3eb21-614">`start` 属性返回 `Date` 对象。</span><span class="sxs-lookup"><span data-stu-id="3eb21-614">The `start` property returns a `Date` object.</span></span>
+<span data-ttu-id="b314e-615">`start` 属性返回 `Date` 对象。</span><span class="sxs-lookup"><span data-stu-id="b314e-615">The `start` property returns a `Date` object.</span></span>
 
-##### <a name="compose-mode"></a><span data-ttu-id="3eb21-615">撰写模式</span><span class="sxs-lookup"><span data-stu-id="3eb21-615">Compose mode</span></span>
+##### <a name="compose-mode"></a><span data-ttu-id="b314e-616">撰写模式</span><span class="sxs-lookup"><span data-stu-id="b314e-616">Compose mode</span></span>
 
-<span data-ttu-id="3eb21-616">`start` 属性返回 `Time` 对象。</span><span class="sxs-lookup"><span data-stu-id="3eb21-616">The `start` property returns a `Time` object.</span></span>
+<span data-ttu-id="b314e-617">`start` 属性返回 `Time` 对象。</span><span class="sxs-lookup"><span data-stu-id="b314e-617">The `start` property returns a `Time` object.</span></span>
 
-<span data-ttu-id="3eb21-617">使用 [`Time.setAsync`](/javascript/api/outlook_1_7/office.time#setasync-datetime--options--callback-) 方法设置开始时间时，应使用 [`convertToUtcClientTime`](office.context.mailbox.md#converttoutcclienttimeinput--date) 方法将客户端的本地时间转换为服务器的 UTC。</span><span class="sxs-lookup"><span data-stu-id="3eb21-617">When you use the [`Time.setAsync`](/javascript/api/outlook_1_7/office.time#setasync-datetime--options--callback-) method to set the start time, you should use the [`convertToUtcClientTime`](office.context.mailbox.md#converttoutcclienttimeinput--date) method to convert the local time on the client to UTC for the server.</span></span>
+<span data-ttu-id="b314e-618">使用 [`Time.setAsync`](/javascript/api/outlook_1_7/office.time#setasync-datetime--options--callback-) 方法设置开始时间时，应使用 [`convertToUtcClientTime`](office.context.mailbox.md#converttoutcclienttimeinput--date) 方法将客户端的本地时间转换为服务器的 UTC。</span><span class="sxs-lookup"><span data-stu-id="b314e-618">When you use the [`Time.setAsync`](/javascript/api/outlook_1_7/office.time#setasync-datetime--options--callback-) method to set the start time, you should use the [`convertToUtcClientTime`](office.context.mailbox.md#converttoutcclienttimeinput--date) method to convert the local time on the client to UTC for the server.</span></span>
 
-##### <a name="type"></a><span data-ttu-id="3eb21-618">类型：</span><span class="sxs-lookup"><span data-stu-id="3eb21-618">Type:</span></span>
+##### <a name="type"></a><span data-ttu-id="b314e-619">类型：</span><span class="sxs-lookup"><span data-stu-id="b314e-619">Type:</span></span>
 
-*   <span data-ttu-id="3eb21-619">Date | [Time](/javascript/api/outlook_1_7/office.time)</span><span class="sxs-lookup"><span data-stu-id="3eb21-619">Date | [Time](/javascript/api/outlook_1_7/office.time)</span></span>
+*   <span data-ttu-id="b314e-620">Date | [Time](/javascript/api/outlook_1_7/office.time)</span><span class="sxs-lookup"><span data-stu-id="b314e-620">Date | [Time](/javascript/api/outlook_1_7/office.time)</span></span>
 
-##### <a name="requirements"></a><span data-ttu-id="3eb21-620">要求</span><span class="sxs-lookup"><span data-stu-id="3eb21-620">Requirements</span></span>
+##### <a name="requirements"></a><span data-ttu-id="b314e-621">要求</span><span class="sxs-lookup"><span data-stu-id="b314e-621">Requirements</span></span>
 
-|<span data-ttu-id="3eb21-621">要求</span><span class="sxs-lookup"><span data-stu-id="3eb21-621">Requirement</span></span>|<span data-ttu-id="3eb21-622">值</span><span class="sxs-lookup"><span data-stu-id="3eb21-622">Value</span></span>|
+|<span data-ttu-id="b314e-622">要求</span><span class="sxs-lookup"><span data-stu-id="b314e-622">Requirement</span></span>|<span data-ttu-id="b314e-623">值</span><span class="sxs-lookup"><span data-stu-id="b314e-623">Value</span></span>|
 |---|---|
-|[<span data-ttu-id="3eb21-623">最低版本的邮箱要求集</span><span class="sxs-lookup"><span data-stu-id="3eb21-623">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|<span data-ttu-id="3eb21-624">1.0</span><span class="sxs-lookup"><span data-stu-id="3eb21-624">1.0</span></span>|
-|[<span data-ttu-id="3eb21-625">最低权限级别</span><span class="sxs-lookup"><span data-stu-id="3eb21-625">Minimum permission level</span></span>](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)|<span data-ttu-id="3eb21-626">ReadItem</span><span class="sxs-lookup"><span data-stu-id="3eb21-626">ReadItem</span></span>|
-|[<span data-ttu-id="3eb21-627">适用的 Outlook 模式</span><span class="sxs-lookup"><span data-stu-id="3eb21-627">Applicable Outlook mode</span></span>](https://docs.microsoft.com/outlook/add-ins/#extension-points)|<span data-ttu-id="3eb21-628">撰写或阅读</span><span class="sxs-lookup"><span data-stu-id="3eb21-628">Compose or read</span></span>|
+|[<span data-ttu-id="b314e-624">最低版本的邮箱要求集</span><span class="sxs-lookup"><span data-stu-id="b314e-624">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|<span data-ttu-id="b314e-625">1.0</span><span class="sxs-lookup"><span data-stu-id="b314e-625">1.0</span></span>|
+|[<span data-ttu-id="b314e-626">最低权限级别</span><span class="sxs-lookup"><span data-stu-id="b314e-626">Minimum permission level</span></span>](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)|<span data-ttu-id="b314e-627">ReadItem</span><span class="sxs-lookup"><span data-stu-id="b314e-627">ReadItem</span></span>|
+|[<span data-ttu-id="b314e-628">适用的 Outlook 模式</span><span class="sxs-lookup"><span data-stu-id="b314e-628">Applicable Outlook mode</span></span>](https://docs.microsoft.com/outlook/add-ins/#extension-points)|<span data-ttu-id="b314e-629">撰写或阅读</span><span class="sxs-lookup"><span data-stu-id="b314e-629">Compose or read</span></span>|
 
-##### <a name="example"></a><span data-ttu-id="3eb21-629">示例</span><span class="sxs-lookup"><span data-stu-id="3eb21-629">Example</span></span>
+##### <a name="example"></a><span data-ttu-id="b314e-630">示例</span><span class="sxs-lookup"><span data-stu-id="b314e-630">Example</span></span>
 
-<span data-ttu-id="3eb21-630">以下示例通过使用 `Time` 对象的 [`setAsync`](/javascript/api/outlook_1_7/office.time#setasync-datetime--options--callback-) 方法，设置撰写模式下约会的开始时间。</span><span class="sxs-lookup"><span data-stu-id="3eb21-630">The following example sets the start time of an appointment in compose mode by using the [`setAsync`](/javascript/api/outlook_1_7/office.time#setasync-datetime--options--callback-) method of the `Time` object.</span></span>
+<span data-ttu-id="b314e-631">以下示例通过使用 `Time` 对象的 [`setAsync`](/javascript/api/outlook_1_7/office.time#setasync-datetime--options--callback-) 方法，设置撰写模式下约会的开始时间。</span><span class="sxs-lookup"><span data-stu-id="b314e-631">The following example sets the start time of an appointment in compose mode by using the [`setAsync`](/javascript/api/outlook_1_7/office.time#setasync-datetime--options--callback-) method of the `Time` object.</span></span>
 
 ```js
 var startTime = new Date("3/14/2015");
@@ -782,23 +793,23 @@ Office.context.mailbox.item.start.setAsync(startTime, options, function(result) 
 });
 ```
 
-####  <a name="subject-stringsubjectjavascriptapioutlook17officesubject"></a><span data-ttu-id="3eb21-631">subject :String|[Subject](/javascript/api/outlook_1_7/office.subject)</span><span class="sxs-lookup"><span data-stu-id="3eb21-631">subject :String|[Subject](/javascript/api/outlook_1_7/office.subject)</span></span>
+####  <a name="subject-stringsubjectjavascriptapioutlook17officesubject"></a><span data-ttu-id="b314e-632">subject :String|[Subject](/javascript/api/outlook_1_7/office.subject)</span><span class="sxs-lookup"><span data-stu-id="b314e-632">subject :String|[Subject](/javascript/api/outlook_1_7/office.subject)</span></span>
 
-<span data-ttu-id="3eb21-632">获取或设置显示在项目的主题字段中的说明。</span><span class="sxs-lookup"><span data-stu-id="3eb21-632">Gets or sets the description that appears in the subject field of an item.</span></span>
+<span data-ttu-id="b314e-633">获取或设置显示在项目的主题字段中的说明。</span><span class="sxs-lookup"><span data-stu-id="b314e-633">Gets or sets the description that appears in the subject field of an item.</span></span>
 
-<span data-ttu-id="3eb21-633">`subject` 属性获取或设置由电子邮件服务器发送项目时的整个主题。</span><span class="sxs-lookup"><span data-stu-id="3eb21-633">The `subject` property gets or sets the entire subject of the item, as sent by the email server.</span></span>
+<span data-ttu-id="b314e-634">`subject` 属性获取或设置由电子邮件服务器发送项目时的整个主题。</span><span class="sxs-lookup"><span data-stu-id="b314e-634">The `subject` property gets or sets the entire subject of the item, as sent by the email server.</span></span>
 
-##### <a name="read-mode"></a><span data-ttu-id="3eb21-634">阅读模式</span><span class="sxs-lookup"><span data-stu-id="3eb21-634">Read mode</span></span>
+##### <a name="read-mode"></a><span data-ttu-id="b314e-635">阅读模式</span><span class="sxs-lookup"><span data-stu-id="b314e-635">Read mode</span></span>
 
-<span data-ttu-id="3eb21-p131">`subject` 属性返回一个字符串。使用 [`normalizedSubject`](#normalizedsubject-string) 属性获取不带任何前导前缀（如 `RE:` 和 `FW:`）的主题。</span><span class="sxs-lookup"><span data-stu-id="3eb21-p131">The `subject` property returns a string. Use the [`normalizedSubject`](#normalizedsubject-string) property to get the subject minus any leading prefixes such as `RE:` and `FW:`.</span></span>
+<span data-ttu-id="b314e-p131">`subject` 属性返回一个字符串。使用 [`normalizedSubject`](#normalizedsubject-string) 属性获取不带任何前导前缀（如 `RE:` 和 `FW:`）的主题。</span><span class="sxs-lookup"><span data-stu-id="b314e-p131">The `subject` property returns a string. Use the [`normalizedSubject`](#normalizedsubject-string) property to get the subject minus any leading prefixes such as `RE:` and `FW:`.</span></span>
 
 ```js
 var subject = Office.context.mailbox.item.subject;
 ```
 
-##### <a name="compose-mode"></a><span data-ttu-id="3eb21-637">撰写模式</span><span class="sxs-lookup"><span data-stu-id="3eb21-637">Compose mode</span></span>
+##### <a name="compose-mode"></a><span data-ttu-id="b314e-638">撰写模式</span><span class="sxs-lookup"><span data-stu-id="b314e-638">Compose mode</span></span>
 
-<span data-ttu-id="3eb21-638">`subject` 属性返回一个 `Subject` 对象，该对象提供用于获取和设置主题的方法。</span><span class="sxs-lookup"><span data-stu-id="3eb21-638">The `subject` property returns a `Subject` object that provides methods to get and set the subject.</span></span>
+<span data-ttu-id="b314e-639">`subject` 属性返回一个 `Subject` 对象，该对象提供用于获取和设置主题的方法。</span><span class="sxs-lookup"><span data-stu-id="b314e-639">The `subject` property returns a `Subject` object that provides methods to get and set the subject.</span></span>
 
 ```js
 Office.context.mailbox.item.subject.getAsync(callback);
@@ -808,43 +819,43 @@ function callback(asyncResult) {
 }
 ```
 
-##### <a name="type"></a><span data-ttu-id="3eb21-639">类型：</span><span class="sxs-lookup"><span data-stu-id="3eb21-639">Type:</span></span>
+##### <a name="type"></a><span data-ttu-id="b314e-640">类型：</span><span class="sxs-lookup"><span data-stu-id="b314e-640">Type:</span></span>
 
-*   <span data-ttu-id="3eb21-640">String | [Subject](/javascript/api/outlook_1_7/office.subject)</span><span class="sxs-lookup"><span data-stu-id="3eb21-640">String | [Subject](/javascript/api/outlook_1_7/office.subject)</span></span>
+*   <span data-ttu-id="b314e-641">String | [Subject](/javascript/api/outlook_1_7/office.subject)</span><span class="sxs-lookup"><span data-stu-id="b314e-641">String | [Subject](/javascript/api/outlook_1_7/office.subject)</span></span>
 
-##### <a name="requirements"></a><span data-ttu-id="3eb21-641">要求</span><span class="sxs-lookup"><span data-stu-id="3eb21-641">Requirements</span></span>
+##### <a name="requirements"></a><span data-ttu-id="b314e-642">要求</span><span class="sxs-lookup"><span data-stu-id="b314e-642">Requirements</span></span>
 
-|<span data-ttu-id="3eb21-642">要求</span><span class="sxs-lookup"><span data-stu-id="3eb21-642">Requirement</span></span>|<span data-ttu-id="3eb21-643">值</span><span class="sxs-lookup"><span data-stu-id="3eb21-643">Value</span></span>|
+|<span data-ttu-id="b314e-643">要求</span><span class="sxs-lookup"><span data-stu-id="b314e-643">Requirement</span></span>|<span data-ttu-id="b314e-644">值</span><span class="sxs-lookup"><span data-stu-id="b314e-644">Value</span></span>|
 |---|---|
-|[<span data-ttu-id="3eb21-644">最低版本的邮箱要求集</span><span class="sxs-lookup"><span data-stu-id="3eb21-644">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|<span data-ttu-id="3eb21-645">1.0</span><span class="sxs-lookup"><span data-stu-id="3eb21-645">1.0</span></span>|
-|[<span data-ttu-id="3eb21-646">最低权限级别</span><span class="sxs-lookup"><span data-stu-id="3eb21-646">Minimum permission level</span></span>](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)|<span data-ttu-id="3eb21-647">ReadItem</span><span class="sxs-lookup"><span data-stu-id="3eb21-647">ReadItem</span></span>|
-|[<span data-ttu-id="3eb21-648">适用的 Outlook 模式</span><span class="sxs-lookup"><span data-stu-id="3eb21-648">Applicable Outlook mode</span></span>](https://docs.microsoft.com/outlook/add-ins/#extension-points)|<span data-ttu-id="3eb21-649">撰写或阅读</span><span class="sxs-lookup"><span data-stu-id="3eb21-649">Compose or read</span></span>|
+|[<span data-ttu-id="b314e-645">最低版本的邮箱要求集</span><span class="sxs-lookup"><span data-stu-id="b314e-645">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|<span data-ttu-id="b314e-646">1.0</span><span class="sxs-lookup"><span data-stu-id="b314e-646">1.0</span></span>|
+|[<span data-ttu-id="b314e-647">最低权限级别</span><span class="sxs-lookup"><span data-stu-id="b314e-647">Minimum permission level</span></span>](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)|<span data-ttu-id="b314e-648">ReadItem</span><span class="sxs-lookup"><span data-stu-id="b314e-648">ReadItem</span></span>|
+|[<span data-ttu-id="b314e-649">适用的 Outlook 模式</span><span class="sxs-lookup"><span data-stu-id="b314e-649">Applicable Outlook mode</span></span>](https://docs.microsoft.com/outlook/add-ins/#extension-points)|<span data-ttu-id="b314e-650">撰写或阅读</span><span class="sxs-lookup"><span data-stu-id="b314e-650">Compose or read</span></span>|
 
-####  <a name="to-arrayemailaddressdetailsjavascriptapioutlook17officeemailaddressdetailsrecipientsjavascriptapioutlook17officerecipients"></a><span data-ttu-id="3eb21-650">to :Array.<[EmailAddressDetails](/javascript/api/outlook_1_7/office.emailaddressdetails)>|[Recipients](/javascript/api/outlook_1_7/office.recipients)</span><span class="sxs-lookup"><span data-stu-id="3eb21-650">to :Array.<[EmailAddressDetails](/javascript/api/outlook_1_7/office.emailaddressdetails)>|[Recipients](/javascript/api/outlook_1_7/office.recipients)</span></span>
+####  <a name="to-arrayemailaddressdetailsjavascriptapioutlook17officeemailaddressdetailsrecipientsjavascriptapioutlook17officerecipients"></a><span data-ttu-id="b314e-651">to :Array.<[EmailAddressDetails](/javascript/api/outlook_1_7/office.emailaddressdetails)>|[Recipients](/javascript/api/outlook_1_7/office.recipients)</span><span class="sxs-lookup"><span data-stu-id="b314e-651">to :Array.<[EmailAddressDetails](/javascript/api/outlook_1_7/office.emailaddressdetails)>|[Recipients](/javascript/api/outlook_1_7/office.recipients)</span></span>
 
-<span data-ttu-id="3eb21-651">提供对邮件的**发送至**行上的收件人的访问权限。</span><span class="sxs-lookup"><span data-stu-id="3eb21-651">Provides access to the recipients on the **To** line of a message.</span></span> <span data-ttu-id="3eb21-652">对象的类型和访问级别取决于当前项目的模式。</span><span class="sxs-lookup"><span data-stu-id="3eb21-652">The type of object and level of access depends on the mode of the current item.</span></span>
+<span data-ttu-id="b314e-652">提供对邮件的“**收件人**”行上的收件人的访问权限。</span><span class="sxs-lookup"><span data-stu-id="b314e-652">Provides access to the recipients on the **To** line of a message.</span></span> <span data-ttu-id="b314e-653">对象的类型和访问级别取决于当前项目的模式。</span><span class="sxs-lookup"><span data-stu-id="b314e-653">The type of object and level of access depends on the mode of the current item.</span></span>
 
-##### <a name="read-mode"></a><span data-ttu-id="3eb21-653">阅读模式</span><span class="sxs-lookup"><span data-stu-id="3eb21-653">Read mode</span></span>
+##### <a name="read-mode"></a><span data-ttu-id="b314e-654">阅读模式</span><span class="sxs-lookup"><span data-stu-id="b314e-654">Read mode</span></span>
 
-<span data-ttu-id="3eb21-p133">`to` 属性返回包含邮件的**收件人**行上所列的每个收件人的 `EmailAddressDetails` 对象的数组。集合上限为 100 个成员。</span><span class="sxs-lookup"><span data-stu-id="3eb21-p133">The `to` property returns an array that contains an `EmailAddressDetails` object for each recipient listed on the **To** line of the message. The collection is limited to a maximum of 100 members.</span></span>
+<span data-ttu-id="b314e-p133">`to` 属性返回包含邮件的**收件人**行上所列的每个收件人的 `EmailAddressDetails` 对象的数组。集合上限为 100 个成员。</span><span class="sxs-lookup"><span data-stu-id="b314e-p133">The `to` property returns an array that contains an `EmailAddressDetails` object for each recipient listed on the **To** line of the message. The collection is limited to a maximum of 100 members.</span></span>
 
-##### <a name="compose-mode"></a><span data-ttu-id="3eb21-656">撰写模式</span><span class="sxs-lookup"><span data-stu-id="3eb21-656">Compose mode</span></span>
+##### <a name="compose-mode"></a><span data-ttu-id="b314e-657">撰写模式</span><span class="sxs-lookup"><span data-stu-id="b314e-657">Compose mode</span></span>
 
-<span data-ttu-id="3eb21-657">`to` 属性返回 `Recipients`一个对象，该对象提供用于获取或更新邮件的**发送至**行上收件人的方法。</span><span class="sxs-lookup"><span data-stu-id="3eb21-657">The to`to` property returns a Recipients`Recipients` object that provides methods for manipulating the recipients on the **To** line of the message.</span></span>
+<span data-ttu-id="b314e-658">`to` 属性返回一个 `Recipients` 对象，该对象提供用于获取或更新邮件的“**收件人**”行上收件人的方法。</span><span class="sxs-lookup"><span data-stu-id="b314e-658">The `to` property returns a `Recipients` object that provides methods to get or update the recipients on the **To** line of the message.</span></span>
 
-##### <a name="type"></a><span data-ttu-id="3eb21-658">类型：</span><span class="sxs-lookup"><span data-stu-id="3eb21-658">Type:</span></span>
+##### <a name="type"></a><span data-ttu-id="b314e-659">类型：</span><span class="sxs-lookup"><span data-stu-id="b314e-659">Type:</span></span>
 
-*   <span data-ttu-id="3eb21-659">Array.<[EmailAddressDetails](/javascript/api/outlook_1_7/office.emailaddressdetails)> | [Recipients](/javascript/api/outlook_1_7/office.recipients)</span><span class="sxs-lookup"><span data-stu-id="3eb21-659">Array.<[EmailAddressDetails](/javascript/api/outlook_1_7/office.emailaddressdetails)> | [Recipients](/javascript/api/outlook_1_7/office.recipients)</span></span>
+*   <span data-ttu-id="b314e-660">Array.<[EmailAddressDetails](/javascript/api/outlook_1_7/office.emailaddressdetails)> | [Recipients](/javascript/api/outlook_1_7/office.recipients)</span><span class="sxs-lookup"><span data-stu-id="b314e-660">Array.<[EmailAddressDetails](/javascript/api/outlook_1_7/office.emailaddressdetails)> | [Recipients](/javascript/api/outlook_1_7/office.recipients)</span></span>
 
-##### <a name="requirements"></a><span data-ttu-id="3eb21-660">要求</span><span class="sxs-lookup"><span data-stu-id="3eb21-660">Requirements</span></span>
+##### <a name="requirements"></a><span data-ttu-id="b314e-661">要求</span><span class="sxs-lookup"><span data-stu-id="b314e-661">Requirements</span></span>
 
-|<span data-ttu-id="3eb21-661">要求</span><span class="sxs-lookup"><span data-stu-id="3eb21-661">Requirement</span></span>|<span data-ttu-id="3eb21-662">值</span><span class="sxs-lookup"><span data-stu-id="3eb21-662">Value</span></span>|
+|<span data-ttu-id="b314e-662">要求</span><span class="sxs-lookup"><span data-stu-id="b314e-662">Requirement</span></span>|<span data-ttu-id="b314e-663">值</span><span class="sxs-lookup"><span data-stu-id="b314e-663">Value</span></span>|
 |---|---|
-|[<span data-ttu-id="3eb21-663">最低版本的邮箱要求集</span><span class="sxs-lookup"><span data-stu-id="3eb21-663">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|<span data-ttu-id="3eb21-664">1.0</span><span class="sxs-lookup"><span data-stu-id="3eb21-664">1.0</span></span>|
-|[<span data-ttu-id="3eb21-665">最低权限级别</span><span class="sxs-lookup"><span data-stu-id="3eb21-665">Minimum permission level</span></span>](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)|<span data-ttu-id="3eb21-666">ReadItem</span><span class="sxs-lookup"><span data-stu-id="3eb21-666">ReadItem</span></span>|
-|[<span data-ttu-id="3eb21-667">适用的 Outlook 模式</span><span class="sxs-lookup"><span data-stu-id="3eb21-667">Applicable Outlook mode</span></span>](https://docs.microsoft.com/outlook/add-ins/#extension-points)|<span data-ttu-id="3eb21-668">撰写或阅读</span><span class="sxs-lookup"><span data-stu-id="3eb21-668">Compose or read</span></span>|
+|[<span data-ttu-id="b314e-664">最低版本的邮箱要求集</span><span class="sxs-lookup"><span data-stu-id="b314e-664">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|<span data-ttu-id="b314e-665">1.0</span><span class="sxs-lookup"><span data-stu-id="b314e-665">1.0</span></span>|
+|[<span data-ttu-id="b314e-666">最低权限级别</span><span class="sxs-lookup"><span data-stu-id="b314e-666">Minimum permission level</span></span>](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)|<span data-ttu-id="b314e-667">ReadItem</span><span class="sxs-lookup"><span data-stu-id="b314e-667">ReadItem</span></span>|
+|[<span data-ttu-id="b314e-668">适用的 Outlook 模式</span><span class="sxs-lookup"><span data-stu-id="b314e-668">Applicable Outlook mode</span></span>](https://docs.microsoft.com/outlook/add-ins/#extension-points)|<span data-ttu-id="b314e-669">撰写或阅读</span><span class="sxs-lookup"><span data-stu-id="b314e-669">Compose or read</span></span>|
 
-##### <a name="example"></a><span data-ttu-id="3eb21-669">示例</span><span class="sxs-lookup"><span data-stu-id="3eb21-669">Example</span></span>
+##### <a name="example"></a><span data-ttu-id="b314e-670">示例</span><span class="sxs-lookup"><span data-stu-id="b314e-670">Example</span></span>
 
 ```js
 Office.context.mailbox.item.to.setAsync( ['alice@contoso.com', 'bob@contoso.com'] );
@@ -856,43 +867,43 @@ function callback(asyncResult) {
 }
 ```
 
-### <a name="methods"></a><span data-ttu-id="3eb21-670">方法</span><span class="sxs-lookup"><span data-stu-id="3eb21-670">Methods</span></span>
+### <a name="methods"></a><span data-ttu-id="b314e-671">方法</span><span class="sxs-lookup"><span data-stu-id="b314e-671">Methods</span></span>
 
-####  <a name="addfileattachmentasyncuri-attachmentname-options-callback"></a><span data-ttu-id="3eb21-671">addFileAttachmentAsync(uri, attachmentName, [options], [callback])</span><span class="sxs-lookup"><span data-stu-id="3eb21-671">addFileAttachmentAsync(uri, attachmentName, [options], [callback])</span></span>
+####  <a name="addfileattachmentasyncuri-attachmentname-options-callback"></a><span data-ttu-id="b314e-672">addFileAttachmentAsync(uri, attachmentName, [options], [callback])</span><span class="sxs-lookup"><span data-stu-id="b314e-672">addFileAttachmentAsync(uri, attachmentName, [options], [callback])</span></span>
 
-<span data-ttu-id="3eb21-672">将文件作为附件添加到邮件或约会。</span><span class="sxs-lookup"><span data-stu-id="3eb21-672">Adds a file to a message or appointment as an attachment.</span></span>
+<span data-ttu-id="b314e-673">将文件作为附件添加到邮件或约会。</span><span class="sxs-lookup"><span data-stu-id="b314e-673">Adds a file to a message or appointment as an attachment.</span></span>
 
-<span data-ttu-id="3eb21-673">`addFileAttachmentAsync` 方法在指定的 URI 上载文件并将其附加到撰写窗体中的项目。</span><span class="sxs-lookup"><span data-stu-id="3eb21-673">The `addFileAttachmentAsync` method uploads the file at the specified URI and attaches it to the item in the compose form.</span></span>
+<span data-ttu-id="b314e-674">`addFileAttachmentAsync` 方法在指定的 URI 上载文件并将其附加到撰写窗体中的项目。</span><span class="sxs-lookup"><span data-stu-id="b314e-674">The `addFileAttachmentAsync` method uploads the file at the specified URI and attaches it to the item in the compose form.</span></span>
 
-<span data-ttu-id="3eb21-674">你随后可以将该标识符与 [`removeAttachmentAsync`](#removeattachmentasyncattachmentid-options-callback) 方法一同使用，以删除同一个会话中的附件。</span><span class="sxs-lookup"><span data-stu-id="3eb21-674">You can subsequently use the identifier with the [`removeAttachmentAsync`](#removeattachmentasyncattachmentid-options-callback) method to remove the attachment in the same session.</span></span>
+<span data-ttu-id="b314e-675">你随后可以将该标识符与 [`removeAttachmentAsync`](#removeattachmentasyncattachmentid-options-callback) 方法一同使用，以删除同一个会话中的附件。</span><span class="sxs-lookup"><span data-stu-id="b314e-675">You can subsequently use the identifier with the [`removeAttachmentAsync`](#removeattachmentasyncattachmentid-options-callback) method to remove the attachment in the same session.</span></span>
 
-##### <a name="parameters"></a><span data-ttu-id="3eb21-675">参数：</span><span class="sxs-lookup"><span data-stu-id="3eb21-675">Parameters:</span></span>
-|<span data-ttu-id="3eb21-676">名称</span><span class="sxs-lookup"><span data-stu-id="3eb21-676">Name</span></span>|<span data-ttu-id="3eb21-677">类型</span><span class="sxs-lookup"><span data-stu-id="3eb21-677">Type</span></span>|<span data-ttu-id="3eb21-678">属性</span><span class="sxs-lookup"><span data-stu-id="3eb21-678">Attributes</span></span>|<span data-ttu-id="3eb21-679">说明</span><span class="sxs-lookup"><span data-stu-id="3eb21-679">Description</span></span>|
+##### <a name="parameters"></a><span data-ttu-id="b314e-676">参数：</span><span class="sxs-lookup"><span data-stu-id="b314e-676">Parameters:</span></span>
+|<span data-ttu-id="b314e-677">名称</span><span class="sxs-lookup"><span data-stu-id="b314e-677">Name</span></span>|<span data-ttu-id="b314e-678">类型</span><span class="sxs-lookup"><span data-stu-id="b314e-678">Type</span></span>|<span data-ttu-id="b314e-679">属性</span><span class="sxs-lookup"><span data-stu-id="b314e-679">Attributes</span></span>|<span data-ttu-id="b314e-680">说明</span><span class="sxs-lookup"><span data-stu-id="b314e-680">Description</span></span>|
 |---|---|---|---|
-|`uri`|<span data-ttu-id="3eb21-680">字符串</span><span class="sxs-lookup"><span data-stu-id="3eb21-680">String</span></span>||<span data-ttu-id="3eb21-p134">提供附加到邮件或约会的文件的位置的 URI。最大长度为 2048 个字符。</span><span class="sxs-lookup"><span data-stu-id="3eb21-p134">The URI that provides the location of the file to attach to the message or appointment. The maximum length is 2048 characters.</span></span>|
-|`attachmentName`|<span data-ttu-id="3eb21-683">字符串</span><span class="sxs-lookup"><span data-stu-id="3eb21-683">String</span></span>||<span data-ttu-id="3eb21-p135">在附件上载过程中显示的附件名称。最大长度为 255 个字符。</span><span class="sxs-lookup"><span data-stu-id="3eb21-p135">The name of the attachment that is shown while the attachment is uploading. The maximum length is 255 characters.</span></span>|
-|`options`|<span data-ttu-id="3eb21-686">Object</span><span class="sxs-lookup"><span data-stu-id="3eb21-686">Object</span></span>|<span data-ttu-id="3eb21-687">&lt;可选&gt;</span><span class="sxs-lookup"><span data-stu-id="3eb21-687">&lt;optional&gt;</span></span>|<span data-ttu-id="3eb21-688">包含一个或多个以下属性的对象文本。</span><span class="sxs-lookup"><span data-stu-id="3eb21-688">An object literal that contains one or more of the following properties.</span></span>|
-|`options.asyncContext`|<span data-ttu-id="3eb21-689">对象</span><span class="sxs-lookup"><span data-stu-id="3eb21-689">Object</span></span>|<span data-ttu-id="3eb21-690">&lt;可选&gt;</span><span class="sxs-lookup"><span data-stu-id="3eb21-690">&lt;optional&gt;</span></span>|<span data-ttu-id="3eb21-691">开发人员可以提供他们想要在回调方法中访问的任何对象。</span><span class="sxs-lookup"><span data-stu-id="3eb21-691">Developers can provide any object they wish to access in the callback method.</span></span>|
-|`options.isInline`|<span data-ttu-id="3eb21-692">布尔值</span><span class="sxs-lookup"><span data-stu-id="3eb21-692">Boolean</span></span>|<span data-ttu-id="3eb21-693">&lt;可选&gt;</span><span class="sxs-lookup"><span data-stu-id="3eb21-693">&lt;optional&gt;</span></span>|<span data-ttu-id="3eb21-694">如果为 `true`，则表示附件将在邮件正文中内联显示，并且不应显示在附件列表中。</span><span class="sxs-lookup"><span data-stu-id="3eb21-694">If `true`, indicates that the attachment will be shown inline in the message body, and should not be displayed in the attachment list.</span></span>|
-|`callback`|<span data-ttu-id="3eb21-695">函数</span><span class="sxs-lookup"><span data-stu-id="3eb21-695">function</span></span>|<span data-ttu-id="3eb21-696">&lt;可选&gt;</span><span class="sxs-lookup"><span data-stu-id="3eb21-696">&lt;optional&gt;</span></span>|<span data-ttu-id="3eb21-697">方法完成后，使用单个参数 `asyncResult`（一个 [`AsyncResult`](/javascript/api/office/office.asyncresult) 对象）调用在 `callback` 参数中传递的函数。</span><span class="sxs-lookup"><span data-stu-id="3eb21-697">When the method completes, the function passed in the `callback` parameter is called with a single parameter, `asyncResult`, which is an [`AsyncResult`](/javascript/api/office/office.asyncresult) object.</span></span> <br/><span data-ttu-id="3eb21-698">如果成功，附件标识符将在 `asyncResult.value` 属性中提供。</span><span class="sxs-lookup"><span data-stu-id="3eb21-698">On success, the attachment identifier will be provided in the `asyncResult.value` property.</span></span><br/><span data-ttu-id="3eb21-699">如果上传附件失败，`asyncResult` 对象将包含一个提供错误说明的 `Error` 对象。</span><span class="sxs-lookup"><span data-stu-id="3eb21-699">If uploading the attachment fails, the `asyncResult` object will contain an `Error` object that provides a description of the error.</span></span>|
+|`uri`|<span data-ttu-id="b314e-681">字符串</span><span class="sxs-lookup"><span data-stu-id="b314e-681">String</span></span>||<span data-ttu-id="b314e-p134">提供附加到邮件或约会的文件的位置的 URI。最大长度为 2048 个字符。</span><span class="sxs-lookup"><span data-stu-id="b314e-p134">The URI that provides the location of the file to attach to the message or appointment. The maximum length is 2048 characters.</span></span>|
+|`attachmentName`|<span data-ttu-id="b314e-684">字符串</span><span class="sxs-lookup"><span data-stu-id="b314e-684">String</span></span>||<span data-ttu-id="b314e-p135">在附件上载过程中显示的附件名称。最大长度为 255 个字符。</span><span class="sxs-lookup"><span data-stu-id="b314e-p135">The name of the attachment that is shown while the attachment is uploading. The maximum length is 255 characters.</span></span>|
+|`options`|<span data-ttu-id="b314e-687">对象</span><span class="sxs-lookup"><span data-stu-id="b314e-687">Object</span></span>|<span data-ttu-id="b314e-688">&lt;可选&gt;</span><span class="sxs-lookup"><span data-stu-id="b314e-688">&lt;optional&gt;</span></span>|<span data-ttu-id="b314e-689">包含一个或多个以下属性的对象文本。</span><span class="sxs-lookup"><span data-stu-id="b314e-689">An object literal that contains one or more of the following properties.</span></span>|
+|`options.asyncContext`|<span data-ttu-id="b314e-690">对象</span><span class="sxs-lookup"><span data-stu-id="b314e-690">Object</span></span>|<span data-ttu-id="b314e-691">&lt;可选&gt;</span><span class="sxs-lookup"><span data-stu-id="b314e-691">&lt;optional&gt;</span></span>|<span data-ttu-id="b314e-692">开发人员可以提供他们想要在回调方法中访问的任何对象。</span><span class="sxs-lookup"><span data-stu-id="b314e-692">Developers can provide any object they wish to access in the callback method.</span></span>|
+|`options.isInline`|<span data-ttu-id="b314e-693">布尔值</span><span class="sxs-lookup"><span data-stu-id="b314e-693">Boolean</span></span>|<span data-ttu-id="b314e-694">&lt;可选&gt;</span><span class="sxs-lookup"><span data-stu-id="b314e-694">&lt;optional&gt;</span></span>|<span data-ttu-id="b314e-695">如果为 `true`，则表示附件将在邮件正文中内联显示，并且不应显示在附件列表中。</span><span class="sxs-lookup"><span data-stu-id="b314e-695">If `true`, indicates that the attachment will be shown inline in the message body, and should not be displayed in the attachment list.</span></span>|
+|`callback`|<span data-ttu-id="b314e-696">函数</span><span class="sxs-lookup"><span data-stu-id="b314e-696">function</span></span>|<span data-ttu-id="b314e-697">&lt;可选&gt;</span><span class="sxs-lookup"><span data-stu-id="b314e-697">&lt;optional&gt;</span></span>|<span data-ttu-id="b314e-698">方法完成后，使用单个参数 `asyncResult`（一个 [`AsyncResult`](/javascript/api/office/office.asyncresult) 对象）调用在 `callback` 参数中传递的函数。</span><span class="sxs-lookup"><span data-stu-id="b314e-698">When the method completes, the function passed in the `callback` parameter is called with a single parameter, `asyncResult`, which is an [`AsyncResult`](/javascript/api/office/office.asyncresult) object.</span></span> <br/><span data-ttu-id="b314e-699">如果成功，附件标识符将在 `asyncResult.value` 属性中提供。</span><span class="sxs-lookup"><span data-stu-id="b314e-699">On success, the attachment identifier will be provided in the `asyncResult.value` property.</span></span><br/><span data-ttu-id="b314e-700">如果上传附件失败，`asyncResult` 对象将包含一个提供错误说明的 `Error` 对象。</span><span class="sxs-lookup"><span data-stu-id="b314e-700">If uploading the attachment fails, the `asyncResult` object will contain an `Error` object that provides a description of the error.</span></span>|
 
-##### <a name="errors"></a><span data-ttu-id="3eb21-700">错误</span><span class="sxs-lookup"><span data-stu-id="3eb21-700">Errors</span></span>
+##### <a name="errors"></a><span data-ttu-id="b314e-701">错误</span><span class="sxs-lookup"><span data-stu-id="b314e-701">Errors</span></span>
 
-|<span data-ttu-id="3eb21-701">错误代码</span><span class="sxs-lookup"><span data-stu-id="3eb21-701">Error code</span></span>|<span data-ttu-id="3eb21-702">说明</span><span class="sxs-lookup"><span data-stu-id="3eb21-702">Description</span></span>|
+|<span data-ttu-id="b314e-702">错误代码</span><span class="sxs-lookup"><span data-stu-id="b314e-702">Error code</span></span>|<span data-ttu-id="b314e-703">说明</span><span class="sxs-lookup"><span data-stu-id="b314e-703">Description</span></span>|
 |------------|-------------|
-|`AttachmentSizeExceeded`|<span data-ttu-id="3eb21-703">附件大小超过了允许的大小。</span><span class="sxs-lookup"><span data-stu-id="3eb21-703">The attachment is larger than allowed.</span></span>|
-|`FileTypeNotSupported`|<span data-ttu-id="3eb21-704">该附件的扩展名不是允许的扩展名。</span><span class="sxs-lookup"><span data-stu-id="3eb21-704">The attachment has an extension that is not allowed.</span></span>|
-|`NumberOfAttachmentsExceeded`|<span data-ttu-id="3eb21-705">邮件或约会具有的附件过多。</span><span class="sxs-lookup"><span data-stu-id="3eb21-705">The message or appointment has too many attachments.</span></span>|
+|`AttachmentSizeExceeded`|<span data-ttu-id="b314e-704">附件大小超过了允许的大小。</span><span class="sxs-lookup"><span data-stu-id="b314e-704">The attachment is larger than allowed.</span></span>|
+|`FileTypeNotSupported`|<span data-ttu-id="b314e-705">该附件的扩展名不是允许的扩展名。</span><span class="sxs-lookup"><span data-stu-id="b314e-705">The attachment has an extension that is not allowed.</span></span>|
+|`NumberOfAttachmentsExceeded`|<span data-ttu-id="b314e-706">邮件或约会具有的附件过多。</span><span class="sxs-lookup"><span data-stu-id="b314e-706">The message or appointment has too many attachments.</span></span>|
 
-##### <a name="requirements"></a><span data-ttu-id="3eb21-706">要求</span><span class="sxs-lookup"><span data-stu-id="3eb21-706">Requirements</span></span>
+##### <a name="requirements"></a><span data-ttu-id="b314e-707">要求</span><span class="sxs-lookup"><span data-stu-id="b314e-707">Requirements</span></span>
 
-|<span data-ttu-id="3eb21-707">要求</span><span class="sxs-lookup"><span data-stu-id="3eb21-707">Requirement</span></span>|<span data-ttu-id="3eb21-708">值</span><span class="sxs-lookup"><span data-stu-id="3eb21-708">Value</span></span>|
+|<span data-ttu-id="b314e-708">要求</span><span class="sxs-lookup"><span data-stu-id="b314e-708">Requirement</span></span>|<span data-ttu-id="b314e-709">值</span><span class="sxs-lookup"><span data-stu-id="b314e-709">Value</span></span>|
 |---|---|
-|[<span data-ttu-id="3eb21-709">最低版本的邮箱要求集</span><span class="sxs-lookup"><span data-stu-id="3eb21-709">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|<span data-ttu-id="3eb21-710">1.1</span><span class="sxs-lookup"><span data-stu-id="3eb21-710">1.1</span></span>|
-|[<span data-ttu-id="3eb21-711">最低权限级别</span><span class="sxs-lookup"><span data-stu-id="3eb21-711">Minimum permission level</span></span>](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)|<span data-ttu-id="3eb21-712">ReadWriteItem</span><span class="sxs-lookup"><span data-stu-id="3eb21-712">ReadWriteItem</span></span>|
-|[<span data-ttu-id="3eb21-713">适用的 Outlook 模式</span><span class="sxs-lookup"><span data-stu-id="3eb21-713">Applicable Outlook mode</span></span>](https://docs.microsoft.com/outlook/add-ins/#extension-points)|<span data-ttu-id="3eb21-714">撰写</span><span class="sxs-lookup"><span data-stu-id="3eb21-714">Compose</span></span>|
+|[<span data-ttu-id="b314e-710">最低版本的邮箱要求集</span><span class="sxs-lookup"><span data-stu-id="b314e-710">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|<span data-ttu-id="b314e-711">1.1</span><span class="sxs-lookup"><span data-stu-id="b314e-711">1.1</span></span>|
+|[<span data-ttu-id="b314e-712">最低权限级别</span><span class="sxs-lookup"><span data-stu-id="b314e-712">Minimum permission level</span></span>](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)|<span data-ttu-id="b314e-713">ReadWriteItem</span><span class="sxs-lookup"><span data-stu-id="b314e-713">ReadWriteItem</span></span>|
+|[<span data-ttu-id="b314e-714">适用的 Outlook 模式</span><span class="sxs-lookup"><span data-stu-id="b314e-714">Applicable Outlook mode</span></span>](https://docs.microsoft.com/outlook/add-ins/#extension-points)|<span data-ttu-id="b314e-715">撰写</span><span class="sxs-lookup"><span data-stu-id="b314e-715">Compose</span></span>|
 
-##### <a name="examples"></a><span data-ttu-id="3eb21-715">示例</span><span class="sxs-lookup"><span data-stu-id="3eb21-715">Examples</span></span>
+##### <a name="examples"></a><span data-ttu-id="b314e-716">示例</span><span class="sxs-lookup"><span data-stu-id="b314e-716">Examples</span></span>
 
 ```js
 function callback(result) {
@@ -912,7 +923,7 @@ function addAttachment() {
 }
 ```
 
-<span data-ttu-id="3eb21-716">以下示例将图像文件添加为内联附件，并在邮件正文中引用该附件。</span><span class="sxs-lookup"><span data-stu-id="3eb21-716">The following example adds an image file as an inline attachment and references the attachment in the message body.</span></span>
+<span data-ttu-id="b314e-717">以下示例将图像文件添加为内联附件，并在邮件正文中引用该附件。</span><span class="sxs-lookup"><span data-stu-id="b314e-717">The following example adds an image file as an inline attachment and references the attachment in the message body.</span></span>
 
 ```js
 Office.context.mailbox.item.addFileAttachmentAsync
@@ -936,31 +947,31 @@ Office.context.mailbox.item.addFileAttachmentAsync
 );
 ```
 
-####  <a name="addhandlerasynceventtype-handler-options-callback"></a><span data-ttu-id="3eb21-717">addHandlerAsync(eventType, handler, [options], [callback])</span><span class="sxs-lookup"><span data-stu-id="3eb21-717">addHandlerAsync(eventType, handler, [options], [callback])</span></span>
+####  <a name="addhandlerasynceventtype-handler-options-callback"></a><span data-ttu-id="b314e-718">addHandlerAsync(eventType, handler, [options], [callback])</span><span class="sxs-lookup"><span data-stu-id="b314e-718">addHandlerAsync(eventType, handler, [options], [callback])</span></span>
 
-<span data-ttu-id="3eb21-718">添加支持事件的事件处理程序。</span><span class="sxs-lookup"><span data-stu-id="3eb21-718">Adds an event handler for a supported event.</span></span>
+<span data-ttu-id="b314e-719">添加支持事件的事件处理程序。</span><span class="sxs-lookup"><span data-stu-id="b314e-719">Adds an event handler for a supported event.</span></span>
 
-<span data-ttu-id="3eb21-719">当前，支持的事件类型是 `Office.EventType.AppointmentTimeChanged`、`Office.EventType.RecipientsChanged` 和 `Office.EventType.RecurrenceChanged`</span><span class="sxs-lookup"><span data-stu-id="3eb21-719">Currently the supported event types are `Office.EventType.AppointmentTimeChanged`, `Office.EventType.RecipientsChanged`, and `Office.EventType.RecurrenceChanged`</span></span>
+<span data-ttu-id="b314e-720">当前，支持的事件类型是 `Office.EventType.AppointmentTimeChanged`、`Office.EventType.RecipientsChanged` 和 `Office.EventType.RecurrenceChanged`</span><span class="sxs-lookup"><span data-stu-id="b314e-720">Currently the supported event types are `Office.EventType.AppointmentTimeChanged`, `Office.EventType.RecipientsChanged`, and `Office.EventType.RecurrenceChanged`</span></span>
 
-##### <a name="parameters"></a><span data-ttu-id="3eb21-720">参数：</span><span class="sxs-lookup"><span data-stu-id="3eb21-720">Parameters:</span></span>
+##### <a name="parameters"></a><span data-ttu-id="b314e-721">参数：</span><span class="sxs-lookup"><span data-stu-id="b314e-721">Parameters:</span></span>
 
-| <span data-ttu-id="3eb21-721">名称</span><span class="sxs-lookup"><span data-stu-id="3eb21-721">Name</span></span> | <span data-ttu-id="3eb21-722">类型</span><span class="sxs-lookup"><span data-stu-id="3eb21-722">Type</span></span> | <span data-ttu-id="3eb21-723">属性</span><span class="sxs-lookup"><span data-stu-id="3eb21-723">Attributes</span></span> | <span data-ttu-id="3eb21-724">说明</span><span class="sxs-lookup"><span data-stu-id="3eb21-724">Description</span></span> |
+| <span data-ttu-id="b314e-722">名称</span><span class="sxs-lookup"><span data-stu-id="b314e-722">Name</span></span> | <span data-ttu-id="b314e-723">类型</span><span class="sxs-lookup"><span data-stu-id="b314e-723">Type</span></span> | <span data-ttu-id="b314e-724">属性</span><span class="sxs-lookup"><span data-stu-id="b314e-724">Attributes</span></span> | <span data-ttu-id="b314e-725">说明</span><span class="sxs-lookup"><span data-stu-id="b314e-725">Description</span></span> |
 |---|---|---|---|
-| `eventType` | [<span data-ttu-id="3eb21-725">Office.EventType</span><span class="sxs-lookup"><span data-stu-id="3eb21-725">Office.EventType</span></span>](office.md#eventtype-string) || <span data-ttu-id="3eb21-726">应调用处理程序的事件。</span><span class="sxs-lookup"><span data-stu-id="3eb21-726">The event that should invoke the handler.</span></span> |
-| `handler` | <span data-ttu-id="3eb21-727">函数</span><span class="sxs-lookup"><span data-stu-id="3eb21-727">Function</span></span> || <span data-ttu-id="3eb21-p136">用于处理事件的函数。此函数必须接受一个参数，即对象文本。参数上的 `type` 属性将匹配传递给 `addHandlerAsync` 的 `eventType` 参数。</span><span class="sxs-lookup"><span data-stu-id="3eb21-p136">The function to handle the event. The function must accept a single parameter, which is an object literal. The `type` property on the parameter will match the `eventType` parameter passed to `addHandlerAsync`.</span></span> |
-| `options` | <span data-ttu-id="3eb21-731">Object</span><span class="sxs-lookup"><span data-stu-id="3eb21-731">Object</span></span> | <span data-ttu-id="3eb21-732">&lt;可选&gt;</span><span class="sxs-lookup"><span data-stu-id="3eb21-732">&lt;optional&gt;</span></span> | <span data-ttu-id="3eb21-733">包含一个或多个以下属性的对象文本。</span><span class="sxs-lookup"><span data-stu-id="3eb21-733">An object literal that contains one or more of the following properties.</span></span> |
-| `options.asyncContext` | <span data-ttu-id="3eb21-734">对象</span><span class="sxs-lookup"><span data-stu-id="3eb21-734">Object</span></span> | <span data-ttu-id="3eb21-735">&lt;可选&gt;</span><span class="sxs-lookup"><span data-stu-id="3eb21-735">&lt;optional&gt;</span></span> | <span data-ttu-id="3eb21-736">开发人员可以提供他们想要在回调方法中访问的任何对象。</span><span class="sxs-lookup"><span data-stu-id="3eb21-736">Developers can provide any object they wish to access in the callback method.</span></span> |
-| `callback` | <span data-ttu-id="3eb21-737">函数</span><span class="sxs-lookup"><span data-stu-id="3eb21-737">function</span></span>| <span data-ttu-id="3eb21-738">&lt;可选&gt;</span><span class="sxs-lookup"><span data-stu-id="3eb21-738">&lt;optional&gt;</span></span>|<span data-ttu-id="3eb21-739">方法完成后，使用单个参数 `callback`（一个 [`asyncResult`](/javascript/api/office/office.asyncresult) 对象）调用在 `AsyncResult` 参数中传递的函数。</span><span class="sxs-lookup"><span data-stu-id="3eb21-739">When the method completes, the function passed in the `callback` parameter is called with a single parameter, `asyncResult`, which is an [`AsyncResult`](/javascript/api/office/office.asyncresult) object.</span></span>|
+| `eventType` | [<span data-ttu-id="b314e-726">Office.EventType</span><span class="sxs-lookup"><span data-stu-id="b314e-726">Office.EventType</span></span>](office.md#eventtype-string) || <span data-ttu-id="b314e-727">应调用处理程序的事件。</span><span class="sxs-lookup"><span data-stu-id="b314e-727">The event that should invoke the handler.</span></span> |
+| `handler` | <span data-ttu-id="b314e-728">函数</span><span class="sxs-lookup"><span data-stu-id="b314e-728">Function</span></span> || <span data-ttu-id="b314e-p136">用于处理事件的函数。此函数必须接受一个参数，即对象文本。参数上的 `type` 属性将匹配传递给 `addHandlerAsync` 的 `eventType` 参数。</span><span class="sxs-lookup"><span data-stu-id="b314e-p136">The function to handle the event. The function must accept a single parameter, which is an object literal. The `type` property on the parameter will match the `eventType` parameter passed to `addHandlerAsync`.</span></span> |
+| `options` | <span data-ttu-id="b314e-732">Object</span><span class="sxs-lookup"><span data-stu-id="b314e-732">Object</span></span> | <span data-ttu-id="b314e-733">&lt;可选&gt;</span><span class="sxs-lookup"><span data-stu-id="b314e-733">&lt;optional&gt;</span></span> | <span data-ttu-id="b314e-734">包含一个或多个以下属性的对象文本。</span><span class="sxs-lookup"><span data-stu-id="b314e-734">An object literal that contains one or more of the following properties.</span></span> |
+| `options.asyncContext` | <span data-ttu-id="b314e-735">对象</span><span class="sxs-lookup"><span data-stu-id="b314e-735">Object</span></span> | <span data-ttu-id="b314e-736">&lt;可选&gt;</span><span class="sxs-lookup"><span data-stu-id="b314e-736">&lt;optional&gt;</span></span> | <span data-ttu-id="b314e-737">开发人员可以提供他们想要在回调方法中访问的任何对象。</span><span class="sxs-lookup"><span data-stu-id="b314e-737">Developers can provide any object they wish to access in the callback method.</span></span> |
+| `callback` | <span data-ttu-id="b314e-738">函数</span><span class="sxs-lookup"><span data-stu-id="b314e-738">function</span></span>| <span data-ttu-id="b314e-739">&lt;可选&gt;</span><span class="sxs-lookup"><span data-stu-id="b314e-739">&lt;optional&gt;</span></span>|<span data-ttu-id="b314e-740">方法完成后，使用单个参数 `callback`（一个 [`asyncResult`](/javascript/api/office/office.asyncresult) 对象）调用在 `AsyncResult` 参数中传递的函数。</span><span class="sxs-lookup"><span data-stu-id="b314e-740">When the method completes, the function passed in the `callback` parameter is called with a single parameter, `asyncResult`, which is an [`AsyncResult`](/javascript/api/office/office.asyncresult) object.</span></span>|
 
-##### <a name="requirements"></a><span data-ttu-id="3eb21-740">Requirements</span><span class="sxs-lookup"><span data-stu-id="3eb21-740">Requirements</span></span>
+##### <a name="requirements"></a><span data-ttu-id="b314e-741">Requirements</span><span class="sxs-lookup"><span data-stu-id="b314e-741">Requirements</span></span>
 
-|<span data-ttu-id="3eb21-741">要求</span><span class="sxs-lookup"><span data-stu-id="3eb21-741">Requirement</span></span>| <span data-ttu-id="3eb21-742">值</span><span class="sxs-lookup"><span data-stu-id="3eb21-742">Value</span></span>|
+|<span data-ttu-id="b314e-742">要求</span><span class="sxs-lookup"><span data-stu-id="b314e-742">Requirement</span></span>| <span data-ttu-id="b314e-743">值</span><span class="sxs-lookup"><span data-stu-id="b314e-743">Value</span></span>|
 |---|---|
-|[<span data-ttu-id="3eb21-743">最低版本的邮箱要求集</span><span class="sxs-lookup"><span data-stu-id="3eb21-743">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| <span data-ttu-id="3eb21-744">1.7</span><span class="sxs-lookup"><span data-stu-id="3eb21-744">-17</span></span> |
-|[<span data-ttu-id="3eb21-745">最低权限级别</span><span class="sxs-lookup"><span data-stu-id="3eb21-745">Minimum permission level</span></span>](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| <span data-ttu-id="3eb21-746">ReadItem</span><span class="sxs-lookup"><span data-stu-id="3eb21-746">ReadItem</span></span> |
-|[<span data-ttu-id="3eb21-747">适用的 Outlook 模式</span><span class="sxs-lookup"><span data-stu-id="3eb21-747">Applicable Outlook mode</span></span>](https://docs.microsoft.com/outlook/add-ins/#extension-points)| <span data-ttu-id="3eb21-748">撰写或阅读</span><span class="sxs-lookup"><span data-stu-id="3eb21-748">Compose or read</span></span> |
+|[<span data-ttu-id="b314e-744">最低版本的邮箱要求集</span><span class="sxs-lookup"><span data-stu-id="b314e-744">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| <span data-ttu-id="b314e-745">1.7</span><span class="sxs-lookup"><span data-stu-id="b314e-745">1.7</span></span> |
+|[<span data-ttu-id="b314e-746">最低权限级别</span><span class="sxs-lookup"><span data-stu-id="b314e-746">Minimum permission level</span></span>](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| <span data-ttu-id="b314e-747">ReadItem</span><span class="sxs-lookup"><span data-stu-id="b314e-747">ReadItem</span></span> |
+|[<span data-ttu-id="b314e-748">适用的 Outlook 模式</span><span class="sxs-lookup"><span data-stu-id="b314e-748">Applicable Outlook mode</span></span>](https://docs.microsoft.com/outlook/add-ins/#extension-points)| <span data-ttu-id="b314e-749">撰写或阅读</span><span class="sxs-lookup"><span data-stu-id="b314e-749">Compose or read</span></span> |
 
-##### <a name="example"></a><span data-ttu-id="3eb21-749">示例</span><span class="sxs-lookup"><span data-stu-id="3eb21-749">Example</span></span>
+##### <a name="example"></a><span data-ttu-id="b314e-750">示例</span><span class="sxs-lookup"><span data-stu-id="b314e-750">Example</span></span>
 
 ```js
 Office.initialize = function (reason) {
@@ -979,43 +990,43 @@ function loadNewItem(eventArgs) {
 };
 ```
 
-####  <a name="additemattachmentasyncitemid-attachmentname-options-callback"></a><span data-ttu-id="3eb21-750">addItemAttachmentAsync(itemId, attachmentName, [options], [callback])</span><span class="sxs-lookup"><span data-stu-id="3eb21-750">addItemAttachmentAsync(itemId, attachmentName, [options], [callback])</span></span>
+####  <a name="additemattachmentasyncitemid-attachmentname-options-callback"></a><span data-ttu-id="b314e-751">addItemAttachmentAsync(itemId, attachmentName, [options], [callback])</span><span class="sxs-lookup"><span data-stu-id="b314e-751">addItemAttachmentAsync(itemId, attachmentName, [options], [callback])</span></span>
 
-<span data-ttu-id="3eb21-751">将 Exchange 项目（如邮件）作为附件添加到邮件或约会。</span><span class="sxs-lookup"><span data-stu-id="3eb21-751">Adds an Exchange item, such as a message, as an attachment to the message or appointment.</span></span>
+<span data-ttu-id="b314e-752">将 Exchange 项目（如邮件）作为附件添加到邮件或约会。</span><span class="sxs-lookup"><span data-stu-id="b314e-752">Adds an Exchange item, such as a message, as an attachment to the message or appointment.</span></span>
 
-<span data-ttu-id="3eb21-p137">`addItemAttachmentAsync` 方法将包含指定 Exchange 标识符的项目附加到撰写窗体中的项目。如果指定一个回调方法，此方法使用 `asyncResult` 参数调用，该参数包含一个附件标识符或代码，指示附加项目过程中出现的任何错误。可以使用 `options` 参数将状态信息传递给回调方法（如果需要）。</span><span class="sxs-lookup"><span data-stu-id="3eb21-p137">The `addItemAttachmentAsync` method attaches the item with the specified Exchange identifier to the item in the compose form. If you specify a callback method, the method is called with one parameter, `asyncResult`, which contains either the attachment identifier or a code that indicates any error that occurred while attaching the item. You can use the `options` parameter to pass state information to the callback method, if needed.</span></span>
+<span data-ttu-id="b314e-p137">`addItemAttachmentAsync` 方法将包含指定 Exchange 标识符的项目附加到撰写窗体中的项目。如果指定一个回调方法，此方法使用 `asyncResult` 参数调用，该参数包含一个附件标识符或代码，指示附加项目过程中出现的任何错误。可以使用 `options` 参数将状态信息传递给回调方法（如果需要）。</span><span class="sxs-lookup"><span data-stu-id="b314e-p137">The `addItemAttachmentAsync` method attaches the item with the specified Exchange identifier to the item in the compose form. If you specify a callback method, the method is called with one parameter, `asyncResult`, which contains either the attachment identifier or a code that indicates any error that occurred while attaching the item. You can use the `options` parameter to pass state information to the callback method, if needed.</span></span>
 
-<span data-ttu-id="3eb21-755">随后可以将该标识符与 [`removeAttachmentAsync`](#removeattachmentasyncattachmentid-options-callback) 方法一同使用，以删除同一个会话中的附件。</span><span class="sxs-lookup"><span data-stu-id="3eb21-755">You can subsequently use the identifier with the [`removeAttachmentAsync`](#removeattachmentasyncattachmentid-options-callback) method to remove the attachment in the same session.</span></span>
+<span data-ttu-id="b314e-756">随后可以将该标识符与 [`removeAttachmentAsync`](#removeattachmentasyncattachmentid-options-callback) 方法一同使用，以删除同一个会话中的附件。</span><span class="sxs-lookup"><span data-stu-id="b314e-756">You can subsequently use the identifier with the [`removeAttachmentAsync`](#removeattachmentasyncattachmentid-options-callback) method to remove the attachment in the same session.</span></span>
 
-<span data-ttu-id="3eb21-756">如果 Office 加载项在 Outlook Web App 中运行，则 `addItemAttachmentAsync` 方法可以将项目附加到项目（正在编辑的项目除外）中；然而，不支持也不建议这样做。</span><span class="sxs-lookup"><span data-stu-id="3eb21-756">If your Office add-in is running in Outlook Web App, the `addItemAttachmentAsync` method can attach items to items other than the item that you are editing; however, this is not supported and is not recommended.</span></span>
+<span data-ttu-id="b314e-757">如果 Office 加载项在 Outlook Web App 中运行，则 `addItemAttachmentAsync` 方法可以将项目附加到项目（正在编辑的项目除外）中；然而，不支持也不建议这样做。</span><span class="sxs-lookup"><span data-stu-id="b314e-757">If your Office Add-in is running in Outlook Web App, the `addItemAttachmentAsync` method can attach items to items other than the item that you are editing; however, this is not supported and is not recommended.</span></span>
 
-##### <a name="parameters"></a><span data-ttu-id="3eb21-757">参数：</span><span class="sxs-lookup"><span data-stu-id="3eb21-757">Parameters:</span></span>
+##### <a name="parameters"></a><span data-ttu-id="b314e-758">参数：</span><span class="sxs-lookup"><span data-stu-id="b314e-758">Parameters:</span></span>
 
-|<span data-ttu-id="3eb21-758">名称</span><span class="sxs-lookup"><span data-stu-id="3eb21-758">Name</span></span>|<span data-ttu-id="3eb21-759">类型</span><span class="sxs-lookup"><span data-stu-id="3eb21-759">Type</span></span>|<span data-ttu-id="3eb21-760">属性</span><span class="sxs-lookup"><span data-stu-id="3eb21-760">Attributes</span></span>|<span data-ttu-id="3eb21-761">说明</span><span class="sxs-lookup"><span data-stu-id="3eb21-761">Description</span></span>|
+|<span data-ttu-id="b314e-759">名称</span><span class="sxs-lookup"><span data-stu-id="b314e-759">Name</span></span>|<span data-ttu-id="b314e-760">类型</span><span class="sxs-lookup"><span data-stu-id="b314e-760">Type</span></span>|<span data-ttu-id="b314e-761">属性</span><span class="sxs-lookup"><span data-stu-id="b314e-761">Attributes</span></span>|<span data-ttu-id="b314e-762">说明</span><span class="sxs-lookup"><span data-stu-id="b314e-762">Description</span></span>|
 |---|---|---|---|
-|`itemId`|<span data-ttu-id="3eb21-762">字符串</span><span class="sxs-lookup"><span data-stu-id="3eb21-762">String</span></span>||<span data-ttu-id="3eb21-p138">要附加的项目的 Exchange 标识符。最大长度为 100 个字符。</span><span class="sxs-lookup"><span data-stu-id="3eb21-p138">The Exchange identifier of the item to attach. The maximum length is 100 characters.</span></span>|
-|`attachmentName`|<span data-ttu-id="3eb21-765">字符串</span><span class="sxs-lookup"><span data-stu-id="3eb21-765">String</span></span>||<span data-ttu-id="3eb21-p139">要附加的项目的主题。最大长度为 255 个字符。</span><span class="sxs-lookup"><span data-stu-id="3eb21-p139">The sujbect of the item to be attached. The maximum length is 255 characters.</span></span>|
-|`options`|<span data-ttu-id="3eb21-768">Object</span><span class="sxs-lookup"><span data-stu-id="3eb21-768">Object</span></span>|<span data-ttu-id="3eb21-769">&lt;可选&gt;</span><span class="sxs-lookup"><span data-stu-id="3eb21-769">&lt;optional&gt;</span></span>|<span data-ttu-id="3eb21-770">包含一个或多个以下属性的对象文本。</span><span class="sxs-lookup"><span data-stu-id="3eb21-770">An object literal that contains one or more of the following properties.</span></span>|
-|`options.asyncContext`|<span data-ttu-id="3eb21-771">对象</span><span class="sxs-lookup"><span data-stu-id="3eb21-771">Object</span></span>|<span data-ttu-id="3eb21-772">&lt;可选&gt;</span><span class="sxs-lookup"><span data-stu-id="3eb21-772">&lt;optional&gt;</span></span>|<span data-ttu-id="3eb21-773">开发人员可以提供他们想要在回调方法中访问的任何对象。</span><span class="sxs-lookup"><span data-stu-id="3eb21-773">Developers can provide any object they wish to access in the callback method.</span></span>|
-|`callback`|<span data-ttu-id="3eb21-774">函数</span><span class="sxs-lookup"><span data-stu-id="3eb21-774">function</span></span>|<span data-ttu-id="3eb21-775">&lt;可选&gt;</span><span class="sxs-lookup"><span data-stu-id="3eb21-775">&lt;optional&gt;</span></span>|<span data-ttu-id="3eb21-776">方法完成后，使用单个参数 `asyncResult`（一个 [`AsyncResult`](/javascript/api/office/office.asyncresult) 对象）调用在 `callback` 参数中传递的函数。</span><span class="sxs-lookup"><span data-stu-id="3eb21-776">When the method completes, the function passed in the `callback` parameter is called with a single parameter, `asyncResult`, which is an [`AsyncResult`](/javascript/api/office/office.asyncresult) object.</span></span> <br/><span data-ttu-id="3eb21-777">如果成功，附件标识符将在 `asyncResult.value` 属性中提供。</span><span class="sxs-lookup"><span data-stu-id="3eb21-777">On success, the attachment identifier will be provided in the `asyncResult.value` property.</span></span><br/><span data-ttu-id="3eb21-778">如果添加附件失败，`asyncResult` 对象将包含一个提供错误说明的 `Error` 对象。</span><span class="sxs-lookup"><span data-stu-id="3eb21-778">If adding the attachment fails, the `asyncResult` object will contain an `Error` object that provides a description of the error.</span></span>|
+|`itemId`|<span data-ttu-id="b314e-763">字符串</span><span class="sxs-lookup"><span data-stu-id="b314e-763">String</span></span>||<span data-ttu-id="b314e-p138">要附加的项目的 Exchange 标识符。最大长度为 100 个字符。</span><span class="sxs-lookup"><span data-stu-id="b314e-p138">The Exchange identifier of the item to attach. The maximum length is 100 characters.</span></span>|
+|`attachmentName`|<span data-ttu-id="b314e-766">字符串</span><span class="sxs-lookup"><span data-stu-id="b314e-766">String</span></span>||<span data-ttu-id="b314e-p139">要附加的项目的主题。最大长度为 255 个字符。</span><span class="sxs-lookup"><span data-stu-id="b314e-p139">The sujbect of the item to be attached. The maximum length is 255 characters.</span></span>|
+|`options`|<span data-ttu-id="b314e-769">对象</span><span class="sxs-lookup"><span data-stu-id="b314e-769">Object</span></span>|<span data-ttu-id="b314e-770">&lt;可选&gt;</span><span class="sxs-lookup"><span data-stu-id="b314e-770">&lt;optional&gt;</span></span>|<span data-ttu-id="b314e-771">包含一个或多个以下属性的对象文本。</span><span class="sxs-lookup"><span data-stu-id="b314e-771">An object literal that contains one or more of the following properties.</span></span>|
+|`options.asyncContext`|<span data-ttu-id="b314e-772">对象</span><span class="sxs-lookup"><span data-stu-id="b314e-772">Object</span></span>|<span data-ttu-id="b314e-773">&lt;可选&gt;</span><span class="sxs-lookup"><span data-stu-id="b314e-773">&lt;optional&gt;</span></span>|<span data-ttu-id="b314e-774">开发人员可以提供他们想要在回调方法中访问的任何对象。</span><span class="sxs-lookup"><span data-stu-id="b314e-774">Developers can provide any object they wish to access in the callback method.</span></span>|
+|`callback`|<span data-ttu-id="b314e-775">函数</span><span class="sxs-lookup"><span data-stu-id="b314e-775">function</span></span>|<span data-ttu-id="b314e-776">&lt;可选&gt;</span><span class="sxs-lookup"><span data-stu-id="b314e-776">&lt;optional&gt;</span></span>|<span data-ttu-id="b314e-777">方法完成后，使用单个参数 `asyncResult`（一个 [`AsyncResult`](/javascript/api/office/office.asyncresult) 对象）调用在 `callback` 参数中传递的函数。</span><span class="sxs-lookup"><span data-stu-id="b314e-777">When the method completes, the function passed in the `callback` parameter is called with a single parameter, `asyncResult`, which is an [`AsyncResult`](/javascript/api/office/office.asyncresult) object.</span></span> <br/><span data-ttu-id="b314e-778">如果成功，附件标识符将在 `asyncResult.value` 属性中提供。</span><span class="sxs-lookup"><span data-stu-id="b314e-778">On success, the attachment identifier will be provided in the `asyncResult.value` property.</span></span><br/><span data-ttu-id="b314e-779">如果添加附件失败，`asyncResult` 对象将包含一个提供错误说明的 `Error` 对象。</span><span class="sxs-lookup"><span data-stu-id="b314e-779">If adding the attachment fails, the `asyncResult` object will contain an `Error` object that provides a description of the error.</span></span>|
 
-##### <a name="errors"></a><span data-ttu-id="3eb21-779">错误</span><span class="sxs-lookup"><span data-stu-id="3eb21-779">Errors</span></span>
+##### <a name="errors"></a><span data-ttu-id="b314e-780">错误</span><span class="sxs-lookup"><span data-stu-id="b314e-780">Errors</span></span>
 
-|<span data-ttu-id="3eb21-780">错误代码</span><span class="sxs-lookup"><span data-stu-id="3eb21-780">Error code</span></span>|<span data-ttu-id="3eb21-781">说明</span><span class="sxs-lookup"><span data-stu-id="3eb21-781">Description</span></span>|
+|<span data-ttu-id="b314e-781">错误代码</span><span class="sxs-lookup"><span data-stu-id="b314e-781">Error code</span></span>|<span data-ttu-id="b314e-782">说明</span><span class="sxs-lookup"><span data-stu-id="b314e-782">Description</span></span>|
 |------------|-------------|
-|`NumberOfAttachmentsExceeded`|<span data-ttu-id="3eb21-782">邮件或约会具有的附件过多。</span><span class="sxs-lookup"><span data-stu-id="3eb21-782">The message or appointment has too many attachments.</span></span>|
+|`NumberOfAttachmentsExceeded`|<span data-ttu-id="b314e-783">邮件或约会具有的附件过多。</span><span class="sxs-lookup"><span data-stu-id="b314e-783">The message or appointment has too many attachments.</span></span>|
 
-##### <a name="requirements"></a><span data-ttu-id="3eb21-783">要求</span><span class="sxs-lookup"><span data-stu-id="3eb21-783">Requirements</span></span>
+##### <a name="requirements"></a><span data-ttu-id="b314e-784">要求</span><span class="sxs-lookup"><span data-stu-id="b314e-784">Requirements</span></span>
 
-|<span data-ttu-id="3eb21-784">要求</span><span class="sxs-lookup"><span data-stu-id="3eb21-784">Requirement</span></span>|<span data-ttu-id="3eb21-785">值</span><span class="sxs-lookup"><span data-stu-id="3eb21-785">Value</span></span>|
+|<span data-ttu-id="b314e-785">要求</span><span class="sxs-lookup"><span data-stu-id="b314e-785">Requirement</span></span>|<span data-ttu-id="b314e-786">值</span><span class="sxs-lookup"><span data-stu-id="b314e-786">Value</span></span>|
 |---|---|
-|[<span data-ttu-id="3eb21-786">最低版本的邮箱要求集</span><span class="sxs-lookup"><span data-stu-id="3eb21-786">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|<span data-ttu-id="3eb21-787">1.1</span><span class="sxs-lookup"><span data-stu-id="3eb21-787">1.1</span></span>|
-|[<span data-ttu-id="3eb21-788">最低权限级别</span><span class="sxs-lookup"><span data-stu-id="3eb21-788">Minimum permission level</span></span>](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)|<span data-ttu-id="3eb21-789">ReadWriteItem</span><span class="sxs-lookup"><span data-stu-id="3eb21-789">ReadWriteItem</span></span>|
-|[<span data-ttu-id="3eb21-790">适用的 Outlook 模式</span><span class="sxs-lookup"><span data-stu-id="3eb21-790">Applicable Outlook mode</span></span>](https://docs.microsoft.com/outlook/add-ins/#extension-points)|<span data-ttu-id="3eb21-791">撰写</span><span class="sxs-lookup"><span data-stu-id="3eb21-791">Compose</span></span>|
+|[<span data-ttu-id="b314e-787">最低版本的邮箱要求集</span><span class="sxs-lookup"><span data-stu-id="b314e-787">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|<span data-ttu-id="b314e-788">1.1</span><span class="sxs-lookup"><span data-stu-id="b314e-788">1.1</span></span>|
+|[<span data-ttu-id="b314e-789">最低权限级别</span><span class="sxs-lookup"><span data-stu-id="b314e-789">Minimum permission level</span></span>](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)|<span data-ttu-id="b314e-790">ReadWriteItem</span><span class="sxs-lookup"><span data-stu-id="b314e-790">ReadWriteItem</span></span>|
+|[<span data-ttu-id="b314e-791">适用的 Outlook 模式</span><span class="sxs-lookup"><span data-stu-id="b314e-791">Applicable Outlook mode</span></span>](https://docs.microsoft.com/outlook/add-ins/#extension-points)|<span data-ttu-id="b314e-792">撰写</span><span class="sxs-lookup"><span data-stu-id="b314e-792">Compose</span></span>|
 
-##### <a name="example"></a><span data-ttu-id="3eb21-792">示例</span><span class="sxs-lookup"><span data-stu-id="3eb21-792">Example</span></span>
+##### <a name="example"></a><span data-ttu-id="b314e-793">示例</span><span class="sxs-lookup"><span data-stu-id="b314e-793">Example</span></span>
 
-<span data-ttu-id="3eb21-793">以下示例将现有的 Outlook 项目添加为名为 `My Attachment` 的附件。</span><span class="sxs-lookup"><span data-stu-id="3eb21-793">The following example adds an existing Outlook item as an attachment with the name `My Attachment`.</span></span>
+<span data-ttu-id="b314e-794">以下示例将现有的 Outlook 项目添加为名为 `My Attachment` 的附件。</span><span class="sxs-lookup"><span data-stu-id="b314e-794">The following example adds an existing Outlook item as an attachment with the name `My Attachment`.</span></span>
 
 ```js
 function callback(result) {
@@ -1038,77 +1049,77 @@ function addAttachment() {
 }
 ```
 
-####  <a name="close"></a><span data-ttu-id="3eb21-794">close()</span><span class="sxs-lookup"><span data-stu-id="3eb21-794">close()</span></span>
+####  <a name="close"></a><span data-ttu-id="b314e-795">close()</span><span class="sxs-lookup"><span data-stu-id="b314e-795">close()</span></span>
 
-<span data-ttu-id="3eb21-795">关闭当前正在撰写的项目。</span><span class="sxs-lookup"><span data-stu-id="3eb21-795">Closes the current item that is being composed.</span></span>
+<span data-ttu-id="b314e-796">关闭当前正在撰写的项目。</span><span class="sxs-lookup"><span data-stu-id="b314e-796">Closes the current item that is being composed.</span></span>
 
-<span data-ttu-id="3eb21-p140">
-            \`close\` 方法的行为取决于要撰写的项目的当前状态。如果项目具有未保存的更改，客户端将提示用户保存、放弃或取消关闭操作。</span><span class="sxs-lookup"><span data-stu-id="3eb21-p140">The behavior of the `close` method depends on the current state of the item being composed. If the item has unsaved changes, the client prompts the user to save, discard, or cancel the close action.</span></span>
+<span data-ttu-id="b314e-p140">
+            \`close\` 方法的行为取决于要撰写的项目的当前状态。如果项目具有未保存的更改，客户端将提示用户保存、放弃或取消关闭操作。</span><span class="sxs-lookup"><span data-stu-id="b314e-p140">The behavior of the `close` method depends on the current state of the item being composed. If the item has unsaved changes, the client prompts the user to save, discard, or cancel the close action.</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="3eb21-798">在 Outlook 网页版中，如果该项目是约会并且之前已使用 `saveAsync` 保存，则即使自上次保存项目后未发生任何更改，也会提示用户保存、放弃或取消。</span><span class="sxs-lookup"><span data-stu-id="3eb21-798">In Outlook on the web, if the item is an appointment and it has previously been saved using `saveAsync`, the user is prompted to save, discard, or cancel even if no changes have occurred since the item was last saved.</span></span>
+> <span data-ttu-id="b314e-799">在 Outlook 网页版中，如果该项目是约会并且之前已使用 `saveAsync` 保存，则即使自上次保存项目后未发生任何更改，也会提示用户保存、放弃或取消。</span><span class="sxs-lookup"><span data-stu-id="b314e-799">In Outlook on the web, if the item is an appointment and it has previously been saved using `saveAsync`, the user is prompted to save, discard, or cancel even if no changes have occurred since the item was last saved.</span></span>
 
-<span data-ttu-id="3eb21-799">在 Outlook 桌面客户端中，如果邮件是内联答复，`close` 方法不起作用。</span><span class="sxs-lookup"><span data-stu-id="3eb21-799">In the Outlook desktop client, if the message is an inline reply, the `close` method has no effect.</span></span>
+<span data-ttu-id="b314e-800">在 Outlook 桌面客户端中，如果邮件是内联答复，`close` 方法不起作用。</span><span class="sxs-lookup"><span data-stu-id="b314e-800">In the Outlook desktop client, if the message is an inline reply, the `close` method has no effect.</span></span>
 
-##### <a name="requirements"></a><span data-ttu-id="3eb21-800">要求</span><span class="sxs-lookup"><span data-stu-id="3eb21-800">Requirements</span></span>
+##### <a name="requirements"></a><span data-ttu-id="b314e-801">要求</span><span class="sxs-lookup"><span data-stu-id="b314e-801">Requirements</span></span>
 
-|<span data-ttu-id="3eb21-801">要求</span><span class="sxs-lookup"><span data-stu-id="3eb21-801">Requirement</span></span>|<span data-ttu-id="3eb21-802">值</span><span class="sxs-lookup"><span data-stu-id="3eb21-802">Value</span></span>|
+|<span data-ttu-id="b314e-802">要求</span><span class="sxs-lookup"><span data-stu-id="b314e-802">Requirement</span></span>|<span data-ttu-id="b314e-803">值</span><span class="sxs-lookup"><span data-stu-id="b314e-803">Value</span></span>|
 |---|---|
-|[<span data-ttu-id="3eb21-803">最低版本的邮箱要求集</span><span class="sxs-lookup"><span data-stu-id="3eb21-803">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|<span data-ttu-id="3eb21-804">1.3</span><span class="sxs-lookup"><span data-stu-id="3eb21-804">1.3</span></span>|
-|[<span data-ttu-id="3eb21-805">最低权限级别</span><span class="sxs-lookup"><span data-stu-id="3eb21-805">Minimum permission level</span></span>](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)|<span data-ttu-id="3eb21-806">受限</span><span class="sxs-lookup"><span data-stu-id="3eb21-806">Restricted</span></span>|
-|[<span data-ttu-id="3eb21-807">适用的 Outlook 模式</span><span class="sxs-lookup"><span data-stu-id="3eb21-807">Applicable Outlook mode</span></span>](https://docs.microsoft.com/outlook/add-ins/#extension-points)|<span data-ttu-id="3eb21-808">撰写</span><span class="sxs-lookup"><span data-stu-id="3eb21-808">Compose</span></span>|
+|[<span data-ttu-id="b314e-804">最低版本的邮箱要求集</span><span class="sxs-lookup"><span data-stu-id="b314e-804">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|<span data-ttu-id="b314e-805">1.3</span><span class="sxs-lookup"><span data-stu-id="b314e-805">1.3</span></span>|
+|[<span data-ttu-id="b314e-806">最低权限级别</span><span class="sxs-lookup"><span data-stu-id="b314e-806">Minimum permission level</span></span>](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)|<span data-ttu-id="b314e-807">受限</span><span class="sxs-lookup"><span data-stu-id="b314e-807">Restricted</span></span>|
+|[<span data-ttu-id="b314e-808">适用的 Outlook 模式</span><span class="sxs-lookup"><span data-stu-id="b314e-808">Applicable Outlook mode</span></span>](https://docs.microsoft.com/outlook/add-ins/#extension-points)|<span data-ttu-id="b314e-809">撰写</span><span class="sxs-lookup"><span data-stu-id="b314e-809">Compose</span></span>|
 
-#### <a name="displayreplyallformformdata"></a><span data-ttu-id="3eb21-809">displayReplyAllForm(formData)</span><span class="sxs-lookup"><span data-stu-id="3eb21-809">displayReplyAllForm(formData)</span></span>
+#### <a name="displayreplyallformformdata"></a><span data-ttu-id="b314e-810">displayReplyAllForm(formData)</span><span class="sxs-lookup"><span data-stu-id="b314e-810">displayReplyAllForm(formData)</span></span>
 
-<span data-ttu-id="3eb21-810">显示答复窗体，其中包括所选邮件的发件人和所有收件人或所选约会的组织者和所有与会者。</span><span class="sxs-lookup"><span data-stu-id="3eb21-810">Displays a reply form that includes the sender and all recipients of the selected message or the organizer and all attendees of the selected appointment.</span></span>
+<span data-ttu-id="b314e-811">显示答复窗体，其中包括所选邮件的发件人和所有收件人或所选约会的组织者和所有与会者。</span><span class="sxs-lookup"><span data-stu-id="b314e-811">Displays a reply form that includes the sender and all recipients of the selected message or the organizer and all attendees of the selected appointment.</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="3eb21-811">在 Outlook for iOS 或 Outlook for Android 中不支持此方法。</span><span class="sxs-lookup"><span data-stu-id="3eb21-811">Note: This method is not supported in Outlook for iOS or Outlook for Android.</span></span>
+> <span data-ttu-id="b314e-812">在 Outlook for iOS 或 Outlook for Android 中不支持此方法。</span><span class="sxs-lookup"><span data-stu-id="b314e-812">This method is not supported in Outlook for iOS or Outlook for Android.</span></span>
 
-<span data-ttu-id="3eb21-812">在 Outlook Web App 中，答复窗体显示为包含 3 列视图的弹出式窗体以及包含 2 列或 1 列视图的弹出式窗体。</span><span class="sxs-lookup"><span data-stu-id="3eb21-812">In Outlook Web App, the reply form is displayed as a pop-out form in the 3-column view and a pop-up form in the 2- or 1-column view.</span></span>
+<span data-ttu-id="b314e-813">在 Outlook Web App 中，答复窗体显示为包含 3 列视图的弹出式窗体以及包含 2 列或 1 列视图的弹出式窗体。</span><span class="sxs-lookup"><span data-stu-id="b314e-813">In Outlook Web App, the reply form is displayed as a pop-out form in the 3-column view and a pop-up form in the 2- or 1-column view.</span></span>
 
-<span data-ttu-id="3eb21-813">如果任意字符串参数超出其限制，`displayReplyAllForm` 将引发异常。</span><span class="sxs-lookup"><span data-stu-id="3eb21-813">If any of the string parameters exceed their limits, `displayReplyAllForm` throws an exception.</span></span>
+<span data-ttu-id="b314e-814">如果任意字符串参数超出其限制，`displayReplyAllForm` 将引发异常。</span><span class="sxs-lookup"><span data-stu-id="b314e-814">If any of the string parameters exceed their limits, `displayReplyAllForm` throws an exception.</span></span>
 
-<span data-ttu-id="3eb21-p141">当在 `formData.attachments` 参数中指定附件时，Outlook 和 Outlook Web App 尝试下载所有附件并将其附加到答复窗体。如果无法添加任何附件，则在窗体 UI 中显示错误。如果这不可能，则不引发错误消息。</span><span class="sxs-lookup"><span data-stu-id="3eb21-p141">When attachments are specified in the `formData.attachments` parameter, Outlook and Outlook Web App attempt to download all attachments and attach them to the reply form. If any attachments fail to be added, an error is shown in the form UI. If this isn't possible, then no error message is thrown.</span></span>
+<span data-ttu-id="b314e-p141">当在 `formData.attachments` 参数中指定附件时，Outlook 和 Outlook Web App 尝试下载所有附件并将其附加到答复窗体。如果无法添加任何附件，则在窗体 UI 中显示错误。如果这不可能，则不引发错误消息。</span><span class="sxs-lookup"><span data-stu-id="b314e-p141">When attachments are specified in the `formData.attachments` parameter, Outlook and Outlook Web App attempt to download all attachments and attach them to the reply form. If any attachments fail to be added, an error is shown in the form UI. If this isn't possible, then no error message is thrown.</span></span>
 
-##### <a name="parameters"></a><span data-ttu-id="3eb21-817">参数：</span><span class="sxs-lookup"><span data-stu-id="3eb21-817">Parameters:</span></span>
+##### <a name="parameters"></a><span data-ttu-id="b314e-818">参数：</span><span class="sxs-lookup"><span data-stu-id="b314e-818">Parameters:</span></span>
 
-|<span data-ttu-id="3eb21-818">名称</span><span class="sxs-lookup"><span data-stu-id="3eb21-818">Name</span></span>|<span data-ttu-id="3eb21-819">类型</span><span class="sxs-lookup"><span data-stu-id="3eb21-819">Type</span></span>|<span data-ttu-id="3eb21-820">属性</span><span class="sxs-lookup"><span data-stu-id="3eb21-820">Attributes</span></span>|<span data-ttu-id="3eb21-821">说明</span><span class="sxs-lookup"><span data-stu-id="3eb21-821">Description</span></span>|
+|<span data-ttu-id="b314e-819">名称</span><span class="sxs-lookup"><span data-stu-id="b314e-819">Name</span></span>|<span data-ttu-id="b314e-820">类型</span><span class="sxs-lookup"><span data-stu-id="b314e-820">Type</span></span>|<span data-ttu-id="b314e-821">属性</span><span class="sxs-lookup"><span data-stu-id="b314e-821">Attributes</span></span>|<span data-ttu-id="b314e-822">说明</span><span class="sxs-lookup"><span data-stu-id="b314e-822">Description</span></span>|
 |---|---|---|---|
-|`formData`|<span data-ttu-id="3eb21-822">字符串 &#124; 对象</span><span class="sxs-lookup"><span data-stu-id="3eb21-822">String &#124; Object</span></span>||<span data-ttu-id="3eb21-p142">一个包含文本和 HTML 且表示答复窗体的正文的字符串。字符串限制为 32 KB。</span><span class="sxs-lookup"><span data-stu-id="3eb21-p142">A string that contains text and HTML and that represents the body of the reply form. The string is limited to 32 KB.</span></span><br/><span data-ttu-id="3eb21-825">**或**</span><span class="sxs-lookup"><span data-stu-id="3eb21-825">**OR**</span></span><br/><span data-ttu-id="3eb21-p143">包含正文或附件数据和回调函数的对象。对象定义如下。</span><span class="sxs-lookup"><span data-stu-id="3eb21-p143">An object that contains body or attachment data and a callback function. The object is defined as follows.</span></span>|
-|`formData.htmlBody`|<span data-ttu-id="3eb21-828">字符串</span><span class="sxs-lookup"><span data-stu-id="3eb21-828">String</span></span>|<span data-ttu-id="3eb21-829">&lt;可选&gt;</span><span class="sxs-lookup"><span data-stu-id="3eb21-829">&lt;optional&gt;</span></span>|<span data-ttu-id="3eb21-p144">一个包含文本和 HTML 且表示答复窗体的正文的字符串。字符串限制为 32 KB。</span><span class="sxs-lookup"><span data-stu-id="3eb21-p144">A string that contains text and HTML and that represents the body of the reply form. The string is limited to 32 KB.</span></span>
-|`formData.attachments`|<span data-ttu-id="3eb21-832">Array.&lt;Object&gt;</span><span class="sxs-lookup"><span data-stu-id="3eb21-832">Array.&lt;Object&gt;</span></span>|<span data-ttu-id="3eb21-833">&lt;可选&gt;</span><span class="sxs-lookup"><span data-stu-id="3eb21-833">&lt;optional&gt;</span></span>|<span data-ttu-id="3eb21-834">JSON 对象（是文件或项目附件）的数组。</span><span class="sxs-lookup"><span data-stu-id="3eb21-834">An array of JSON objects that are either file or item attachments.</span></span>|
-|`formData.attachments.type`|<span data-ttu-id="3eb21-835">字符串</span><span class="sxs-lookup"><span data-stu-id="3eb21-835">String</span></span>||<span data-ttu-id="3eb21-p145">指示附件的类型。必须是文件附件的 `file` 或项目附件的 `item`。</span><span class="sxs-lookup"><span data-stu-id="3eb21-p145">Indicates the type of attachment. Must be `file` for a file attachment or `item` for an item attachment.</span></span>|
-|`formData.attachments.name`|<span data-ttu-id="3eb21-838">字符串</span><span class="sxs-lookup"><span data-stu-id="3eb21-838">String</span></span>||<span data-ttu-id="3eb21-839">一个包含附件的名称的字符串，最多包含 255 个字符。</span><span class="sxs-lookup"><span data-stu-id="3eb21-839">A string that contains the name of the attachment, up to 255 characters in length.</span></span>|
-|`formData.attachments.url`|<span data-ttu-id="3eb21-840">String</span><span class="sxs-lookup"><span data-stu-id="3eb21-840">String</span></span>||<span data-ttu-id="3eb21-p146">仅在将 `type` 设置为 `file` 时使用。文件的位置的 URI。</span><span class="sxs-lookup"><span data-stu-id="3eb21-p146">Only used if `type` is set to `file`. The URI of the location for the file.</span></span>|
-|`formData.attachments.isInline`|<span data-ttu-id="3eb21-843">布尔</span><span class="sxs-lookup"><span data-stu-id="3eb21-843">Boolean</span></span>||<span data-ttu-id="3eb21-p147">仅在将 `type` 设置为 `file` 时使用。如果为 `true`，则表示附件将在邮件正文中内联显示，并且不应显示在附件列表中。</span><span class="sxs-lookup"><span data-stu-id="3eb21-p147">Only used if `type` is set to `file`. If `true`, indicates that the attachment will be shown inline in the message body, and should not be displayed in the attachment list.</span></span>|
-|`formData.attachments.itemId`|<span data-ttu-id="3eb21-846">String</span><span class="sxs-lookup"><span data-stu-id="3eb21-846">String</span></span>||<span data-ttu-id="3eb21-p148">仅在将 `type` 设置为 `item` 时使用。附件的 EWS 项目 ID。字符串最长为 100 个字符。</span><span class="sxs-lookup"><span data-stu-id="3eb21-p148">Only used if `type` is set to `item`. The EWS item id of the attachment. This is a string up to 100 characters.</span></span>|
-|`callback`|<span data-ttu-id="3eb21-850">函数</span><span class="sxs-lookup"><span data-stu-id="3eb21-850">function</span></span>|<span data-ttu-id="3eb21-851">&lt;可选&gt;</span><span class="sxs-lookup"><span data-stu-id="3eb21-851">&lt;optional&gt;</span></span>|<span data-ttu-id="3eb21-852">方法完成后，使用单个参数 `asyncResult`（一个 [AsyncResult](/javascript/api/office/office.asyncresult) 对象）调用在 `callback` 参数中传递的函数。</span><span class="sxs-lookup"><span data-stu-id="3eb21-852">When the method completes, the function passed in the `callback` parameter is called with a single parameter, `asyncResult`, which is an [AsyncResult](/javascript/api/office/office.asyncresult) object.</span></span>|
+|`formData`|<span data-ttu-id="b314e-823">字符串 &#124; 对象</span><span class="sxs-lookup"><span data-stu-id="b314e-823">String &#124; Object</span></span>||<span data-ttu-id="b314e-p142">一个包含文本和 HTML 且表示答复窗体的正文的字符串。字符串限制为 32 KB。</span><span class="sxs-lookup"><span data-stu-id="b314e-p142">A string that contains text and HTML and that represents the body of the reply form. The string is limited to 32 KB.</span></span><br/><span data-ttu-id="b314e-826">**OR**</span><span class="sxs-lookup"><span data-stu-id="b314e-826">**OR**</span></span><br/><span data-ttu-id="b314e-p143">包含正文或附件数据和回调函数的对象。对象定义如下。</span><span class="sxs-lookup"><span data-stu-id="b314e-p143">An object that contains body or attachment data and a callback function. The object is defined as follows.</span></span>|
+|`formData.htmlBody`|<span data-ttu-id="b314e-829">字符串</span><span class="sxs-lookup"><span data-stu-id="b314e-829">String</span></span>|<span data-ttu-id="b314e-830">&lt;可选&gt;</span><span class="sxs-lookup"><span data-stu-id="b314e-830">&lt;optional&gt;</span></span>|<span data-ttu-id="b314e-p144">一个包含文本和 HTML 且表示答复窗体的正文的字符串。字符串限制为 32 KB。</span><span class="sxs-lookup"><span data-stu-id="b314e-p144">A string that contains text and HTML and that represents the body of the reply form. The string is limited to 32 KB.</span></span>
+|`formData.attachments`|<span data-ttu-id="b314e-833">Array.&lt;Object&gt;</span><span class="sxs-lookup"><span data-stu-id="b314e-833">Array.&lt;Object&gt;</span></span>|<span data-ttu-id="b314e-834">&lt;可选&gt;</span><span class="sxs-lookup"><span data-stu-id="b314e-834">&lt;optional&gt;</span></span>|<span data-ttu-id="b314e-835">JSON 对象（是文件或项目附件）的数组。</span><span class="sxs-lookup"><span data-stu-id="b314e-835">An array of JSON objects that are either file or item attachments.</span></span>|
+|`formData.attachments.type`|<span data-ttu-id="b314e-836">字符串</span><span class="sxs-lookup"><span data-stu-id="b314e-836">String</span></span>||<span data-ttu-id="b314e-p145">指示附件的类型。必须是文件附件的 `file` 或项目附件的 `item`。</span><span class="sxs-lookup"><span data-stu-id="b314e-p145">Indicates the type of attachment. Must be `file` for a file attachment or `item` for an item attachment.</span></span>|
+|`formData.attachments.name`|<span data-ttu-id="b314e-839">字符串</span><span class="sxs-lookup"><span data-stu-id="b314e-839">String</span></span>||<span data-ttu-id="b314e-840">一个包含附件的名称的字符串，最多包含 255 个字符。</span><span class="sxs-lookup"><span data-stu-id="b314e-840">A string that contains the name of the attachment, up to 255 characters in length.</span></span>|
+|`formData.attachments.url`|<span data-ttu-id="b314e-841">String</span><span class="sxs-lookup"><span data-stu-id="b314e-841">String</span></span>||<span data-ttu-id="b314e-p146">仅在将 `type` 设置为 `file` 时使用。文件的位置的 URI。</span><span class="sxs-lookup"><span data-stu-id="b314e-p146">Only used if `type` is set to `file`. The URI of the location for the file.</span></span>|
+|`formData.attachments.isInline`|<span data-ttu-id="b314e-844">Boolean</span><span class="sxs-lookup"><span data-stu-id="b314e-844">Boolean</span></span>||<span data-ttu-id="b314e-p147">仅在将 `type` 设置为 `file` 时使用。如果为 `true`，则表示附件将在邮件正文中内联显示，并且不应显示在附件列表中。</span><span class="sxs-lookup"><span data-stu-id="b314e-p147">Only used if `type` is set to `file`. If `true`, indicates that the attachment will be shown inline in the message body, and should not be displayed in the attachment list.</span></span>|
+|`formData.attachments.itemId`|<span data-ttu-id="b314e-847">String</span><span class="sxs-lookup"><span data-stu-id="b314e-847">String</span></span>||<span data-ttu-id="b314e-p148">仅在将 `type` 设置为 `item` 时使用。附件的 EWS 项目 ID。字符串最长为 100 个字符。</span><span class="sxs-lookup"><span data-stu-id="b314e-p148">Only used if `type` is set to `item`. The EWS item id of the attachment. This is a string up to 100 characters.</span></span>|
+|`callback`|<span data-ttu-id="b314e-851">函数</span><span class="sxs-lookup"><span data-stu-id="b314e-851">function</span></span>|<span data-ttu-id="b314e-852">&lt;可选&gt;</span><span class="sxs-lookup"><span data-stu-id="b314e-852">&lt;optional&gt;</span></span>|<span data-ttu-id="b314e-853">方法完成后，使用单个参数 `asyncResult`（一个 [AsyncResult](/javascript/api/office/office.asyncresult) 对象）调用在 `callback` 参数中传递的函数。</span><span class="sxs-lookup"><span data-stu-id="b314e-853">When the method completes, the function passed in the `callback` parameter is called with a single parameter, `asyncResult`, which is an [AsyncResult](/javascript/api/office/office.asyncresult) object.</span></span>|
 
-##### <a name="requirements"></a><span data-ttu-id="3eb21-853">要求</span><span class="sxs-lookup"><span data-stu-id="3eb21-853">Requirements</span></span>
+##### <a name="requirements"></a><span data-ttu-id="b314e-854">要求</span><span class="sxs-lookup"><span data-stu-id="b314e-854">Requirements</span></span>
 
-|<span data-ttu-id="3eb21-854">要求</span><span class="sxs-lookup"><span data-stu-id="3eb21-854">Requirement</span></span>|<span data-ttu-id="3eb21-855">值</span><span class="sxs-lookup"><span data-stu-id="3eb21-855">Value</span></span>|
+|<span data-ttu-id="b314e-855">要求</span><span class="sxs-lookup"><span data-stu-id="b314e-855">Requirement</span></span>|<span data-ttu-id="b314e-856">值</span><span class="sxs-lookup"><span data-stu-id="b314e-856">Value</span></span>|
 |---|---|
-|[<span data-ttu-id="3eb21-856">最低版本的邮箱要求集</span><span class="sxs-lookup"><span data-stu-id="3eb21-856">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|<span data-ttu-id="3eb21-857">1.0</span><span class="sxs-lookup"><span data-stu-id="3eb21-857">1.0</span></span>|
-|[<span data-ttu-id="3eb21-858">最低权限级别</span><span class="sxs-lookup"><span data-stu-id="3eb21-858">Minimum permission level</span></span>](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)|<span data-ttu-id="3eb21-859">ReadItem</span><span class="sxs-lookup"><span data-stu-id="3eb21-859">ReadItem</span></span>|
-|[<span data-ttu-id="3eb21-860">适用的 Outlook 模式</span><span class="sxs-lookup"><span data-stu-id="3eb21-860">Applicable Outlook mode</span></span>](https://docs.microsoft.com/outlook/add-ins/#extension-points)|<span data-ttu-id="3eb21-861">阅读</span><span class="sxs-lookup"><span data-stu-id="3eb21-861">Read</span></span>|
+|[<span data-ttu-id="b314e-857">最低版本的邮箱要求集</span><span class="sxs-lookup"><span data-stu-id="b314e-857">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|<span data-ttu-id="b314e-858">1.0</span><span class="sxs-lookup"><span data-stu-id="b314e-858">1.0</span></span>|
+|[<span data-ttu-id="b314e-859">最低权限级别</span><span class="sxs-lookup"><span data-stu-id="b314e-859">Minimum permission level</span></span>](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)|<span data-ttu-id="b314e-860">ReadItem</span><span class="sxs-lookup"><span data-stu-id="b314e-860">ReadItem</span></span>|
+|[<span data-ttu-id="b314e-861">适用的 Outlook 模式</span><span class="sxs-lookup"><span data-stu-id="b314e-861">Applicable Outlook mode</span></span>](https://docs.microsoft.com/outlook/add-ins/#extension-points)|<span data-ttu-id="b314e-862">阅读</span><span class="sxs-lookup"><span data-stu-id="b314e-862">Read</span></span>|
 
-##### <a name="examples"></a><span data-ttu-id="3eb21-862">示例</span><span class="sxs-lookup"><span data-stu-id="3eb21-862">Examples</span></span>
+##### <a name="examples"></a><span data-ttu-id="b314e-863">示例</span><span class="sxs-lookup"><span data-stu-id="b314e-863">Examples</span></span>
 
-<span data-ttu-id="3eb21-863">以下代码将一个字符串传递到 `displayReplyAllForm` 函数。</span><span class="sxs-lookup"><span data-stu-id="3eb21-863">The following code passes a string to the `displayReplyAllForm` function.</span></span>
+<span data-ttu-id="b314e-864">以下代码将一个字符串传递到 `displayReplyAllForm` 函数。</span><span class="sxs-lookup"><span data-stu-id="b314e-864">The following code passes a string to the `displayReplyAllForm` function.</span></span>
 
 ```js
 Office.context.mailbox.item.displayReplyAllForm('hello there');
 Office.context.mailbox.item.displayReplyAllForm('<b>hello there</b>');
 ```
 
-<span data-ttu-id="3eb21-864">使用空白正文答复。</span><span class="sxs-lookup"><span data-stu-id="3eb21-864">Reply with an empty body.</span></span>
+<span data-ttu-id="b314e-865">使用空白正文答复。</span><span class="sxs-lookup"><span data-stu-id="b314e-865">Reply with an empty body.</span></span>
 
 ```js
 Office.context.mailbox.item.displayReplyAllForm({});
 ```
 
-<span data-ttu-id="3eb21-865">仅使用正文答复。</span><span class="sxs-lookup"><span data-stu-id="3eb21-865">Reply with just a body.</span></span>
+<span data-ttu-id="b314e-866">仅使用正文答复。</span><span class="sxs-lookup"><span data-stu-id="b314e-866">Reply with just a body.</span></span>
 
 ```js
 Office.context.mailbox.item.displayReplyAllForm(
@@ -1117,7 +1128,7 @@ Office.context.mailbox.item.displayReplyAllForm(
 });
 ```
 
-<span data-ttu-id="3eb21-866">使用正文和文件附件答复。</span><span class="sxs-lookup"><span data-stu-id="3eb21-866">Reply with a body and a file attachment.</span></span>
+<span data-ttu-id="b314e-867">使用正文和文件附件答复。</span><span class="sxs-lookup"><span data-stu-id="b314e-867">Reply with a body and a file attachment.</span></span>
 
 ```js
 Office.context.mailbox.item.displayReplyAllForm(
@@ -1134,7 +1145,7 @@ Office.context.mailbox.item.displayReplyAllForm(
 });
 ```
 
-<span data-ttu-id="3eb21-867">使用正文和项目附件答复。</span><span class="sxs-lookup"><span data-stu-id="3eb21-867">Reply with a body and an item attachment.</span></span>
+<span data-ttu-id="b314e-868">使用正文和项目附件答复。</span><span class="sxs-lookup"><span data-stu-id="b314e-868">Reply with a body and an item attachment.</span></span>
 
 ```js
 Office.context.mailbox.item.displayReplyAllForm(
@@ -1151,7 +1162,7 @@ Office.context.mailbox.item.displayReplyAllForm(
 });
 ```
 
-<span data-ttu-id="3eb21-868">使用正文、文件附件、项目附件和回调答复。</span><span class="sxs-lookup"><span data-stu-id="3eb21-868">Reply with a body, file attachment, item attachment, and a callback.</span></span>
+<span data-ttu-id="b314e-869">使用正文、文件附件、项目附件和回调答复。</span><span class="sxs-lookup"><span data-stu-id="b314e-869">Reply with a body, file attachment, item attachment, and a callback.</span></span>
 
 ```js
 Office.context.mailbox.item.displayReplyAllForm(
@@ -1177,57 +1188,57 @@ Office.context.mailbox.item.displayReplyAllForm(
 });
 ```
 
-#### <a name="displayreplyformformdata"></a><span data-ttu-id="3eb21-869">displayReplyForm(formData)</span><span class="sxs-lookup"><span data-stu-id="3eb21-869">displayReplyForm(formData)</span></span>
+#### <a name="displayreplyformformdata"></a><span data-ttu-id="b314e-870">displayReplyForm(formData)</span><span class="sxs-lookup"><span data-stu-id="b314e-870">displayReplyForm(formData)</span></span>
 
-<span data-ttu-id="3eb21-870">显示答复窗体，其中仅包括所选邮件的发件人或所选约会的组织者。</span><span class="sxs-lookup"><span data-stu-id="3eb21-870">Displays a reply form that includes only the sender of the selected message or the organizer of the selected appointment.</span></span>
+<span data-ttu-id="b314e-871">显示答复窗体，其中仅包括所选邮件的发件人或所选约会的组织者。</span><span class="sxs-lookup"><span data-stu-id="b314e-871">Displays a reply form that includes only the sender of the selected message or the organizer of the selected appointment.</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="3eb21-871">在 Outlook for iOS 或 Outlook for Android 中不支持此方法。</span><span class="sxs-lookup"><span data-stu-id="3eb21-871">Note: This method is not supported in Outlook for iOS or Outlook for Android.</span></span>
+> <span data-ttu-id="b314e-872">在 Outlook for iOS 或 Outlook for Android 中不支持此方法。</span><span class="sxs-lookup"><span data-stu-id="b314e-872">This method is not supported in Outlook for iOS or Outlook for Android.</span></span>
 
-<span data-ttu-id="3eb21-872">在 Outlook Web App 中，答复窗体显示为包含 3 列视图的弹出式窗体以及包含 2 列或 1 列视图的弹出式窗体。</span><span class="sxs-lookup"><span data-stu-id="3eb21-872">In Outlook Web App, the reply form is displayed as a pop-out form in the 3-column view and a pop-up form in the 2- or 1-column view.</span></span>
+<span data-ttu-id="b314e-873">在 Outlook Web App 中，答复窗体显示为包含 3 列视图的弹出式窗体以及包含 2 列或 1 列视图的弹出式窗体。</span><span class="sxs-lookup"><span data-stu-id="b314e-873">In Outlook Web App, the reply form is displayed as a pop-out form in the 3-column view and a pop-up form in the 2- or 1-column view.</span></span>
 
-<span data-ttu-id="3eb21-873">如果任意字符串参数超出其限制，`displayReplyForm` 将引发异常。</span><span class="sxs-lookup"><span data-stu-id="3eb21-873">If any of the string parameters exceed their limits, `displayReplyForm` throws an exception.</span></span>
+<span data-ttu-id="b314e-874">如果任意字符串参数超出其限制，`displayReplyForm` 将引发异常。</span><span class="sxs-lookup"><span data-stu-id="b314e-874">If any of the string parameters exceed their limits, `displayReplyForm` throws an exception.</span></span>
 
-<span data-ttu-id="3eb21-p149">当在 `formData.attachments` 参数中指定附件时，Outlook 和 Outlook Web App 尝试下载所有附件并将其附加到答复窗体。如果无法添加任何附件，则在窗体 UI 中显示错误。如果这不可能，则不引发错误消息。</span><span class="sxs-lookup"><span data-stu-id="3eb21-p149">When attachments are specified in the `formData.attachments` parameter, Outlook and Outlook Web App attempt to download all attachments and attach them to the reply form. If any attachments fail to be added, an error is shown in the form UI. If this isn't possible, then no error message is thrown.</span></span>
+<span data-ttu-id="b314e-p149">当在 `formData.attachments` 参数中指定附件时，Outlook 和 Outlook Web App 尝试下载所有附件并将其附加到答复窗体。如果无法添加任何附件，则在窗体 UI 中显示错误。如果这不可能，则不引发错误消息。</span><span class="sxs-lookup"><span data-stu-id="b314e-p149">When attachments are specified in the `formData.attachments` parameter, Outlook and Outlook Web App attempt to download all attachments and attach them to the reply form. If any attachments fail to be added, an error is shown in the form UI. If this isn't possible, then no error message is thrown.</span></span>
 
-##### <a name="parameters"></a><span data-ttu-id="3eb21-877">参数：</span><span class="sxs-lookup"><span data-stu-id="3eb21-877">Parameters:</span></span>
+##### <a name="parameters"></a><span data-ttu-id="b314e-878">参数：</span><span class="sxs-lookup"><span data-stu-id="b314e-878">Parameters:</span></span>
 
-|<span data-ttu-id="3eb21-878">名称</span><span class="sxs-lookup"><span data-stu-id="3eb21-878">Name</span></span>|<span data-ttu-id="3eb21-879">类型</span><span class="sxs-lookup"><span data-stu-id="3eb21-879">Type</span></span>|<span data-ttu-id="3eb21-880">属性</span><span class="sxs-lookup"><span data-stu-id="3eb21-880">Attributes</span></span>|<span data-ttu-id="3eb21-881">说明</span><span class="sxs-lookup"><span data-stu-id="3eb21-881">Description</span></span>|
+|<span data-ttu-id="b314e-879">名称</span><span class="sxs-lookup"><span data-stu-id="b314e-879">Name</span></span>|<span data-ttu-id="b314e-880">类型</span><span class="sxs-lookup"><span data-stu-id="b314e-880">Type</span></span>|<span data-ttu-id="b314e-881">属性</span><span class="sxs-lookup"><span data-stu-id="b314e-881">Attributes</span></span>|<span data-ttu-id="b314e-882">说明</span><span class="sxs-lookup"><span data-stu-id="b314e-882">Description</span></span>|
 |---|---|---|---|
-|`formData`|<span data-ttu-id="3eb21-882">字符串 &#124; 对象</span><span class="sxs-lookup"><span data-stu-id="3eb21-882">String &#124; Object</span></span>||<span data-ttu-id="3eb21-p150">一个包含文本和 HTML 且表示答复窗体的正文的字符串。字符串限制为 32 KB。</span><span class="sxs-lookup"><span data-stu-id="3eb21-p150">A string that contains text and HTML and that represents the body of the reply form. The string is limited to 32 KB.</span></span><br/><span data-ttu-id="3eb21-885">**或**</span><span class="sxs-lookup"><span data-stu-id="3eb21-885">**OR**</span></span><br/><span data-ttu-id="3eb21-p151">包含正文或附件数据和回调函数的对象。对象定义如下。</span><span class="sxs-lookup"><span data-stu-id="3eb21-p151">An object that contains body or attachment data and a callback function. The object is defined as follows.</span></span>|
-|`formData.htmlBody`|<span data-ttu-id="3eb21-888">字符串</span><span class="sxs-lookup"><span data-stu-id="3eb21-888">String</span></span>|<span data-ttu-id="3eb21-889">&lt;可选&gt;</span><span class="sxs-lookup"><span data-stu-id="3eb21-889">&lt;optional&gt;</span></span>|<span data-ttu-id="3eb21-p152">一个包含文本和 HTML 且表示答复窗体的正文的字符串。字符串限制为 32 KB。</span><span class="sxs-lookup"><span data-stu-id="3eb21-p152">A string that contains text and HTML and that represents the body of the reply form. The string is limited to 32 KB.</span></span>
-|`formData.attachments`|<span data-ttu-id="3eb21-892">Array.&lt;Object&gt;</span><span class="sxs-lookup"><span data-stu-id="3eb21-892">Array.&lt;Object&gt;</span></span>|<span data-ttu-id="3eb21-893">&lt;可选&gt;</span><span class="sxs-lookup"><span data-stu-id="3eb21-893">&lt;optional&gt;</span></span>|<span data-ttu-id="3eb21-894">JSON 对象（是文件或项目附件）的数组。</span><span class="sxs-lookup"><span data-stu-id="3eb21-894">An array of JSON objects that are either file or item attachments.</span></span>|
-|`formData.attachments.type`|<span data-ttu-id="3eb21-895">字符串</span><span class="sxs-lookup"><span data-stu-id="3eb21-895">String</span></span>||<span data-ttu-id="3eb21-p153">指示附件的类型。必须是文件附件的 `file` 或项目附件的 `item`。</span><span class="sxs-lookup"><span data-stu-id="3eb21-p153">Indicates the type of attachment. Must be `file` for a file attachment or `item` for an item attachment.</span></span>|
-|`formData.attachments.name`|<span data-ttu-id="3eb21-898">字符串</span><span class="sxs-lookup"><span data-stu-id="3eb21-898">String</span></span>||<span data-ttu-id="3eb21-899">一个包含附件的名称的字符串，最多包含 255 个字符。</span><span class="sxs-lookup"><span data-stu-id="3eb21-899">A string that contains the name of the attachment, up to 255 characters in length.</span></span>|
-|`formData.attachments.url`|<span data-ttu-id="3eb21-900">String</span><span class="sxs-lookup"><span data-stu-id="3eb21-900">String</span></span>||<span data-ttu-id="3eb21-p154">仅在将 `type` 设置为 `file` 时使用。文件的位置的 URI。</span><span class="sxs-lookup"><span data-stu-id="3eb21-p154">Only used if `type` is set to `file`. The URI of the location for the file.</span></span>|
-|`formData.attachments.isInline`|<span data-ttu-id="3eb21-903">布尔</span><span class="sxs-lookup"><span data-stu-id="3eb21-903">Boolean</span></span>||<span data-ttu-id="3eb21-p155">仅在将 `type` 设置为 `file` 时使用。如果为 `true`，则表示附件将在邮件正文中内联显示，并且不应显示在附件列表中。</span><span class="sxs-lookup"><span data-stu-id="3eb21-p155">Only used if `type` is set to `file`. If `true`, indicates that the attachment will be shown inline in the message body, and should not be displayed in the attachment list.</span></span>|
-|`formData.attachments.itemId`|<span data-ttu-id="3eb21-906">String</span><span class="sxs-lookup"><span data-stu-id="3eb21-906">String</span></span>||<span data-ttu-id="3eb21-p156">仅在将 `type` 设置为 `item` 时使用。附件的 EWS 项目 ID。字符串最长为 100 个字符。</span><span class="sxs-lookup"><span data-stu-id="3eb21-p156">Only used if `type` is set to `item`. The EWS item id of the attachment. This is a string up to 100 characters.</span></span>|
-|`callback`|<span data-ttu-id="3eb21-910">函数</span><span class="sxs-lookup"><span data-stu-id="3eb21-910">function</span></span>|<span data-ttu-id="3eb21-911">&lt;可选&gt;</span><span class="sxs-lookup"><span data-stu-id="3eb21-911">&lt;optional&gt;</span></span>|<span data-ttu-id="3eb21-912">方法完成后，使用单个参数 `asyncResult`（一个 [AsyncResult](/javascript/api/office/office.asyncresult) 对象）调用在 `callback` 参数中传递的函数。</span><span class="sxs-lookup"><span data-stu-id="3eb21-912">When the method completes, the function passed in the `callback` parameter is called with a single parameter, `asyncResult`, which is an [AsyncResult](/javascript/api/office/office.asyncresult) object.</span></span>|
+|`formData`|<span data-ttu-id="b314e-883">字符串 &#124; 对象</span><span class="sxs-lookup"><span data-stu-id="b314e-883">String &#124; Object</span></span>||<span data-ttu-id="b314e-p150">一个包含文本和 HTML 且表示答复窗体的正文的字符串。字符串限制为 32 KB。</span><span class="sxs-lookup"><span data-stu-id="b314e-p150">A string that contains text and HTML and that represents the body of the reply form. The string is limited to 32 KB.</span></span><br/><span data-ttu-id="b314e-886">**OR**</span><span class="sxs-lookup"><span data-stu-id="b314e-886">**OR**</span></span><br/><span data-ttu-id="b314e-p151">包含正文或附件数据和回调函数的对象。对象定义如下。</span><span class="sxs-lookup"><span data-stu-id="b314e-p151">An object that contains body or attachment data and a callback function. The object is defined as follows.</span></span>|
+|`formData.htmlBody`|<span data-ttu-id="b314e-889">字符串</span><span class="sxs-lookup"><span data-stu-id="b314e-889">String</span></span>|<span data-ttu-id="b314e-890">&lt;可选&gt;</span><span class="sxs-lookup"><span data-stu-id="b314e-890">&lt;optional&gt;</span></span>|<span data-ttu-id="b314e-p152">一个包含文本和 HTML 且表示答复窗体的正文的字符串。字符串限制为 32 KB。</span><span class="sxs-lookup"><span data-stu-id="b314e-p152">A string that contains text and HTML and that represents the body of the reply form. The string is limited to 32 KB.</span></span>
+|`formData.attachments`|<span data-ttu-id="b314e-893">Array.&lt;Object&gt;</span><span class="sxs-lookup"><span data-stu-id="b314e-893">Array.&lt;Object&gt;</span></span>|<span data-ttu-id="b314e-894">&lt;可选&gt;</span><span class="sxs-lookup"><span data-stu-id="b314e-894">&lt;optional&gt;</span></span>|<span data-ttu-id="b314e-895">JSON 对象（是文件或项目附件）的数组。</span><span class="sxs-lookup"><span data-stu-id="b314e-895">An array of JSON objects that are either file or item attachments.</span></span>|
+|`formData.attachments.type`|<span data-ttu-id="b314e-896">字符串</span><span class="sxs-lookup"><span data-stu-id="b314e-896">String</span></span>||<span data-ttu-id="b314e-p153">指示附件的类型。必须是文件附件的 `file` 或项目附件的 `item`。</span><span class="sxs-lookup"><span data-stu-id="b314e-p153">Indicates the type of attachment. Must be `file` for a file attachment or `item` for an item attachment.</span></span>|
+|`formData.attachments.name`|<span data-ttu-id="b314e-899">字符串</span><span class="sxs-lookup"><span data-stu-id="b314e-899">String</span></span>||<span data-ttu-id="b314e-900">一个包含附件的名称的字符串，最多包含 255 个字符。</span><span class="sxs-lookup"><span data-stu-id="b314e-900">A string that contains the name of the attachment, up to 255 characters in length.</span></span>|
+|`formData.attachments.url`|<span data-ttu-id="b314e-901">String</span><span class="sxs-lookup"><span data-stu-id="b314e-901">String</span></span>||<span data-ttu-id="b314e-p154">仅在将 `type` 设置为 `file` 时使用。文件的位置的 URI。</span><span class="sxs-lookup"><span data-stu-id="b314e-p154">Only used if `type` is set to `file`. The URI of the location for the file.</span></span>|
+|`formData.attachments.isInline`|<span data-ttu-id="b314e-904">Boolean</span><span class="sxs-lookup"><span data-stu-id="b314e-904">Boolean</span></span>||<span data-ttu-id="b314e-p155">仅在将 `type` 设置为 `file` 时使用。如果为 `true`，则表示附件将在邮件正文中内联显示，并且不应显示在附件列表中。</span><span class="sxs-lookup"><span data-stu-id="b314e-p155">Only used if `type` is set to `file`. If `true`, indicates that the attachment will be shown inline in the message body, and should not be displayed in the attachment list.</span></span>|
+|`formData.attachments.itemId`|<span data-ttu-id="b314e-907">String</span><span class="sxs-lookup"><span data-stu-id="b314e-907">String</span></span>||<span data-ttu-id="b314e-p156">仅在将 `type` 设置为 `item` 时使用。附件的 EWS 项目 ID。字符串最长为 100 个字符。</span><span class="sxs-lookup"><span data-stu-id="b314e-p156">Only used if `type` is set to `item`. The EWS item id of the attachment. This is a string up to 100 characters.</span></span>|
+|`callback`|<span data-ttu-id="b314e-911">函数</span><span class="sxs-lookup"><span data-stu-id="b314e-911">function</span></span>|<span data-ttu-id="b314e-912">&lt;可选&gt;</span><span class="sxs-lookup"><span data-stu-id="b314e-912">&lt;optional&gt;</span></span>|<span data-ttu-id="b314e-913">方法完成后，使用单个参数 `asyncResult`（一个 [AsyncResult](/javascript/api/office/office.asyncresult) 对象）调用在 `callback` 参数中传递的函数。</span><span class="sxs-lookup"><span data-stu-id="b314e-913">When the method completes, the function passed in the `callback` parameter is called with a single parameter, `asyncResult`, which is an [AsyncResult](/javascript/api/office/office.asyncresult) object.</span></span>|
 
-##### <a name="requirements"></a><span data-ttu-id="3eb21-913">要求</span><span class="sxs-lookup"><span data-stu-id="3eb21-913">Requirements</span></span>
+##### <a name="requirements"></a><span data-ttu-id="b314e-914">要求</span><span class="sxs-lookup"><span data-stu-id="b314e-914">Requirements</span></span>
 
-|<span data-ttu-id="3eb21-914">要求</span><span class="sxs-lookup"><span data-stu-id="3eb21-914">Requirement</span></span>|<span data-ttu-id="3eb21-915">值</span><span class="sxs-lookup"><span data-stu-id="3eb21-915">Value</span></span>|
+|<span data-ttu-id="b314e-915">要求</span><span class="sxs-lookup"><span data-stu-id="b314e-915">Requirement</span></span>|<span data-ttu-id="b314e-916">值</span><span class="sxs-lookup"><span data-stu-id="b314e-916">Value</span></span>|
 |---|---|
-|[<span data-ttu-id="3eb21-916">最低版本的邮箱要求集</span><span class="sxs-lookup"><span data-stu-id="3eb21-916">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|<span data-ttu-id="3eb21-917">1.0</span><span class="sxs-lookup"><span data-stu-id="3eb21-917">1.0</span></span>|
-|[<span data-ttu-id="3eb21-918">最低权限级别</span><span class="sxs-lookup"><span data-stu-id="3eb21-918">Minimum permission level</span></span>](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)|<span data-ttu-id="3eb21-919">ReadItem</span><span class="sxs-lookup"><span data-stu-id="3eb21-919">ReadItem</span></span>|
-|[<span data-ttu-id="3eb21-920">适用的 Outlook 模式</span><span class="sxs-lookup"><span data-stu-id="3eb21-920">Applicable Outlook mode</span></span>](https://docs.microsoft.com/outlook/add-ins/#extension-points)|<span data-ttu-id="3eb21-921">阅读</span><span class="sxs-lookup"><span data-stu-id="3eb21-921">Read</span></span>|
+|[<span data-ttu-id="b314e-917">最低版本的邮箱要求集</span><span class="sxs-lookup"><span data-stu-id="b314e-917">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|<span data-ttu-id="b314e-918">1.0</span><span class="sxs-lookup"><span data-stu-id="b314e-918">1.0</span></span>|
+|[<span data-ttu-id="b314e-919">最低权限级别</span><span class="sxs-lookup"><span data-stu-id="b314e-919">Minimum permission level</span></span>](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)|<span data-ttu-id="b314e-920">ReadItem</span><span class="sxs-lookup"><span data-stu-id="b314e-920">ReadItem</span></span>|
+|[<span data-ttu-id="b314e-921">适用的 Outlook 模式</span><span class="sxs-lookup"><span data-stu-id="b314e-921">Applicable Outlook mode</span></span>](https://docs.microsoft.com/outlook/add-ins/#extension-points)|<span data-ttu-id="b314e-922">阅读</span><span class="sxs-lookup"><span data-stu-id="b314e-922">Read</span></span>|
 
-##### <a name="examples"></a><span data-ttu-id="3eb21-922">示例</span><span class="sxs-lookup"><span data-stu-id="3eb21-922">Examples</span></span>
+##### <a name="examples"></a><span data-ttu-id="b314e-923">示例</span><span class="sxs-lookup"><span data-stu-id="b314e-923">Examples</span></span>
 
-<span data-ttu-id="3eb21-923">以下代码将一个字符串传递到 `displayReplyForm` 函数。</span><span class="sxs-lookup"><span data-stu-id="3eb21-923">The following code passes a string to the `displayReplyForm` function.</span></span>
+<span data-ttu-id="b314e-924">以下代码将一个字符串传递到 `displayReplyForm` 函数。</span><span class="sxs-lookup"><span data-stu-id="b314e-924">The following code passes a string to the `displayReplyForm` function.</span></span>
 
 ```js
 Office.context.mailbox.item.displayReplyForm('hello there');
 Office.context.mailbox.item.displayReplyForm('<b>hello there</b>');
 ```
 
-<span data-ttu-id="3eb21-924">使用空白正文答复。</span><span class="sxs-lookup"><span data-stu-id="3eb21-924">Reply with an empty body.</span></span>
+<span data-ttu-id="b314e-925">使用空白正文答复。</span><span class="sxs-lookup"><span data-stu-id="b314e-925">Reply with an empty body.</span></span>
 
 ```js
 Office.context.mailbox.item.displayReplyForm({});
 ```
 
-<span data-ttu-id="3eb21-925">仅使用正文答复。</span><span class="sxs-lookup"><span data-stu-id="3eb21-925">Reply with just a body.</span></span>
+<span data-ttu-id="b314e-926">仅使用正文答复。</span><span class="sxs-lookup"><span data-stu-id="b314e-926">Reply with just a body.</span></span>
 
 ```js
 Office.context.mailbox.item.displayReplyForm(
@@ -1236,7 +1247,7 @@ Office.context.mailbox.item.displayReplyForm(
 });
 ```
 
-<span data-ttu-id="3eb21-926">使用正文和文件附件答复。</span><span class="sxs-lookup"><span data-stu-id="3eb21-926">Reply with a body and a file attachment.</span></span>
+<span data-ttu-id="b314e-927">使用正文和文件附件答复。</span><span class="sxs-lookup"><span data-stu-id="b314e-927">Reply with a body and a file attachment.</span></span>
 
 ```js
 Office.context.mailbox.item.displayReplyForm(
@@ -1253,7 +1264,7 @@ Office.context.mailbox.item.displayReplyForm(
 });
 ```
 
-<span data-ttu-id="3eb21-927">使用正文和项目附件答复。</span><span class="sxs-lookup"><span data-stu-id="3eb21-927">Reply with a body and an item attachment.</span></span>
+<span data-ttu-id="b314e-928">使用正文和项目附件答复。</span><span class="sxs-lookup"><span data-stu-id="b314e-928">Reply with a body and an item attachment.</span></span>
 
 ```js
 Office.context.mailbox.item.displayReplyForm(
@@ -1270,7 +1281,7 @@ Office.context.mailbox.item.displayReplyForm(
 });
 ```
 
-<span data-ttu-id="3eb21-928">使用正文、文件附件、项目附件和回调答复。</span><span class="sxs-lookup"><span data-stu-id="3eb21-928">Reply with a body, file attachment, item attachment, and a callback.</span></span>
+<span data-ttu-id="b314e-929">使用正文、文件附件、项目附件和回调答复。</span><span class="sxs-lookup"><span data-stu-id="b314e-929">Reply with a body, file attachment, item attachment, and a callback.</span></span>
 
 ```js
 Office.context.mailbox.item.displayReplyForm(
@@ -1296,75 +1307,75 @@ Office.context.mailbox.item.displayReplyForm(
 });
 ```
 
-#### <a name="getentities--entitiesjavascriptapioutlook17officeentities"></a><span data-ttu-id="3eb21-929">getEntities() → {[Entities](/javascript/api/outlook_1_7/office.entities)}</span><span class="sxs-lookup"><span data-stu-id="3eb21-929">getEntities() → {[Entities](/javascript/api/outlook_1_7/office.entities)}</span></span>
+#### <a name="getentities--entitiesjavascriptapioutlook17officeentities"></a><span data-ttu-id="b314e-930">getEntities() → {[Entities](/javascript/api/outlook_1_7/office.entities)}</span><span class="sxs-lookup"><span data-stu-id="b314e-930">getEntities() → {[Entities](/javascript/api/outlook_1_7/office.entities)}</span></span>
 
-<span data-ttu-id="3eb21-930">获取在所选项目的正文中找到的实体。</span><span class="sxs-lookup"><span data-stu-id="3eb21-930">Gets the entities found in the selected item.</span></span>
+<span data-ttu-id="b314e-931">获取在所选项目的正文中找到的实体。</span><span class="sxs-lookup"><span data-stu-id="b314e-931">Gets the entities found in the selected item's body.</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="3eb21-931">在 Outlook for iOS 或 Outlook for Android 中不支持此方法。</span><span class="sxs-lookup"><span data-stu-id="3eb21-931">Note: This method is not supported in Outlook for iOS or Outlook for Android.</span></span>
+> <span data-ttu-id="b314e-932">在 Outlook for iOS 或 Outlook for Android 中不支持此方法。</span><span class="sxs-lookup"><span data-stu-id="b314e-932">This method is not supported in Outlook for iOS or Outlook for Android.</span></span>
 
-##### <a name="requirements"></a><span data-ttu-id="3eb21-932">要求</span><span class="sxs-lookup"><span data-stu-id="3eb21-932">Requirements</span></span>
+##### <a name="requirements"></a><span data-ttu-id="b314e-933">要求</span><span class="sxs-lookup"><span data-stu-id="b314e-933">Requirements</span></span>
 
-|<span data-ttu-id="3eb21-933">要求</span><span class="sxs-lookup"><span data-stu-id="3eb21-933">Requirement</span></span>|<span data-ttu-id="3eb21-934">值</span><span class="sxs-lookup"><span data-stu-id="3eb21-934">Value</span></span>|
+|<span data-ttu-id="b314e-934">要求</span><span class="sxs-lookup"><span data-stu-id="b314e-934">Requirement</span></span>|<span data-ttu-id="b314e-935">值</span><span class="sxs-lookup"><span data-stu-id="b314e-935">Value</span></span>|
 |---|---|
-|[<span data-ttu-id="3eb21-935">最低版本的邮箱要求集</span><span class="sxs-lookup"><span data-stu-id="3eb21-935">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|<span data-ttu-id="3eb21-936">1.0</span><span class="sxs-lookup"><span data-stu-id="3eb21-936">1.0</span></span>|
-|[<span data-ttu-id="3eb21-937">最低权限级别</span><span class="sxs-lookup"><span data-stu-id="3eb21-937">Minimum permission level</span></span>](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)|<span data-ttu-id="3eb21-938">ReadItem</span><span class="sxs-lookup"><span data-stu-id="3eb21-938">ReadItem</span></span>|
-|[<span data-ttu-id="3eb21-939">适用的 Outlook 模式</span><span class="sxs-lookup"><span data-stu-id="3eb21-939">Applicable Outlook mode</span></span>](https://docs.microsoft.com/outlook/add-ins/#extension-points)|<span data-ttu-id="3eb21-940">阅读</span><span class="sxs-lookup"><span data-stu-id="3eb21-940">Read</span></span>|
+|[<span data-ttu-id="b314e-936">最低版本的邮箱要求集</span><span class="sxs-lookup"><span data-stu-id="b314e-936">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|<span data-ttu-id="b314e-937">1.0</span><span class="sxs-lookup"><span data-stu-id="b314e-937">1.0</span></span>|
+|[<span data-ttu-id="b314e-938">最低权限级别</span><span class="sxs-lookup"><span data-stu-id="b314e-938">Minimum permission level</span></span>](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)|<span data-ttu-id="b314e-939">ReadItem</span><span class="sxs-lookup"><span data-stu-id="b314e-939">ReadItem</span></span>|
+|[<span data-ttu-id="b314e-940">适用的 Outlook 模式</span><span class="sxs-lookup"><span data-stu-id="b314e-940">Applicable Outlook mode</span></span>](https://docs.microsoft.com/outlook/add-ins/#extension-points)|<span data-ttu-id="b314e-941">阅读</span><span class="sxs-lookup"><span data-stu-id="b314e-941">Read</span></span>|
 
-##### <a name="returns"></a><span data-ttu-id="3eb21-941">返回：</span><span class="sxs-lookup"><span data-stu-id="3eb21-941">Returns:</span></span>
+##### <a name="returns"></a><span data-ttu-id="b314e-942">返回：</span><span class="sxs-lookup"><span data-stu-id="b314e-942">Returns:</span></span>
 
-<span data-ttu-id="3eb21-942">类型：[Entities](/javascript/api/outlook_1_7/office.entities)</span><span class="sxs-lookup"><span data-stu-id="3eb21-942">Type: [Entities](/javascript/api/outlook_1_7/office.entities)</span></span>
+<span data-ttu-id="b314e-943">类型：[Entities](/javascript/api/outlook_1_7/office.entities)</span><span class="sxs-lookup"><span data-stu-id="b314e-943">Type: [Entities](/javascript/api/outlook_1_7/office.entities)</span></span>
 
-##### <a name="example"></a><span data-ttu-id="3eb21-943">示例</span><span class="sxs-lookup"><span data-stu-id="3eb21-943">Example</span></span>
+##### <a name="example"></a><span data-ttu-id="b314e-944">示例</span><span class="sxs-lookup"><span data-stu-id="b314e-944">Example</span></span>
 
-<span data-ttu-id="3eb21-944">以下示例访问当前项目的正文中的联系人实体。</span><span class="sxs-lookup"><span data-stu-id="3eb21-944">The following example accesses the contacts entities on the current item.</span></span>
+<span data-ttu-id="b314e-945">以下示例访问当前项目的正文中的联系人实体。</span><span class="sxs-lookup"><span data-stu-id="b314e-945">The following example accesses the contacts entities in the current item's body.</span></span>
 
 ```js
 var contacts = Office.context.mailbox.item.getEntities().contacts;
 ```
 
-#### <a name="getentitiesbytypeentitytype--nullable-arraystringcontactjavascriptapioutlook17officecontactmeetingsuggestionjavascriptapioutlook17officemeetingsuggestionphonenumberjavascriptapioutlook17officephonenumbertasksuggestionjavascriptapioutlook17officetasksuggestion"></a><span data-ttu-id="3eb21-945">getEntitiesByType(entityType) → (nullable) {Array.<(String|[Contact](/javascript/api/outlook_1_7/office.contact)|[MeetingSuggestion](/javascript/api/outlook_1_7/office.meetingsuggestion)|[PhoneNumber](/javascript/api/outlook_1_7/office.phonenumber)|[TaskSuggestion](/javascript/api/outlook_1_7/office.tasksuggestion))>}</span><span class="sxs-lookup"><span data-stu-id="3eb21-945">getEntitiesByType(entityType) → (nullable) {Array.<(String|[Contact](/javascript/api/outlook_1_7/office.contact)|[MeetingSuggestion](/javascript/api/outlook_1_7/office.meetingsuggestion)|[PhoneNumber](/javascript/api/outlook_1_7/office.phonenumber)|[TaskSuggestion](/javascript/api/outlook_1_7/office.tasksuggestion))>}</span></span>
+#### <a name="getentitiesbytypeentitytype--nullable-arraystringcontactjavascriptapioutlook17officecontactmeetingsuggestionjavascriptapioutlook17officemeetingsuggestionphonenumberjavascriptapioutlook17officephonenumbertasksuggestionjavascriptapioutlook17officetasksuggestion"></a><span data-ttu-id="b314e-946">getEntitiesByType(entityType) → (nullable) {Array.<(String|[Contact](/javascript/api/outlook_1_7/office.contact)|[MeetingSuggestion](/javascript/api/outlook_1_7/office.meetingsuggestion)|[PhoneNumber](/javascript/api/outlook_1_7/office.phonenumber)|[TaskSuggestion](/javascript/api/outlook_1_7/office.tasksuggestion))>}</span><span class="sxs-lookup"><span data-stu-id="b314e-946">getEntitiesByType(entityType) → (nullable) {Array.<(String|[Contact](/javascript/api/outlook_1_7/office.contact)|[MeetingSuggestion](/javascript/api/outlook_1_7/office.meetingsuggestion)|[PhoneNumber](/javascript/api/outlook_1_7/office.phonenumber)|[TaskSuggestion](/javascript/api/outlook_1_7/office.tasksuggestion))>}</span></span>
 
-<span data-ttu-id="3eb21-946">获取所选项目的正文中找到的指定实体类型的所有实体的数组。</span><span class="sxs-lookup"><span data-stu-id="3eb21-946">Gets an array of all the entities of the specified entity type found in the selected item.</span></span>
+<span data-ttu-id="b314e-947">获取所选项目的正文中找到的指定实体类型的所有实体的数组。</span><span class="sxs-lookup"><span data-stu-id="b314e-947">Gets an array of all the entities of the specified entity type found in the selected item's body.</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="3eb21-947">在 Outlook for iOS 或 Outlook for Android 中不支持此方法。</span><span class="sxs-lookup"><span data-stu-id="3eb21-947">Note: This method is not supported in Outlook for iOS or Outlook for Android.</span></span>
+> <span data-ttu-id="b314e-948">在 Outlook for iOS 或 Outlook for Android 中不支持此方法。</span><span class="sxs-lookup"><span data-stu-id="b314e-948">This method is not supported in Outlook for iOS or Outlook for Android.</span></span>
 
-##### <a name="parameters"></a><span data-ttu-id="3eb21-948">参数：</span><span class="sxs-lookup"><span data-stu-id="3eb21-948">Parameters:</span></span>
+##### <a name="parameters"></a><span data-ttu-id="b314e-949">参数：</span><span class="sxs-lookup"><span data-stu-id="b314e-949">Parameters:</span></span>
 
-|<span data-ttu-id="3eb21-949">名称</span><span class="sxs-lookup"><span data-stu-id="3eb21-949">Name</span></span>|<span data-ttu-id="3eb21-950">类型</span><span class="sxs-lookup"><span data-stu-id="3eb21-950">Type</span></span>|<span data-ttu-id="3eb21-951">说明</span><span class="sxs-lookup"><span data-stu-id="3eb21-951">Description</span></span>|
+|<span data-ttu-id="b314e-950">名称</span><span class="sxs-lookup"><span data-stu-id="b314e-950">Name</span></span>|<span data-ttu-id="b314e-951">类型</span><span class="sxs-lookup"><span data-stu-id="b314e-951">Type</span></span>|<span data-ttu-id="b314e-952">说明</span><span class="sxs-lookup"><span data-stu-id="b314e-952">Description</span></span>|
 |---|---|---|
-|`entityType`|[<span data-ttu-id="3eb21-952">Office.MailboxEnums.EntityType</span><span class="sxs-lookup"><span data-stu-id="3eb21-952">Office.MailboxEnums.EntityType</span></span>](/javascript/api/outlook_1_7/office.mailboxenums.entitytype)|<span data-ttu-id="3eb21-953">EntityType 枚举值之一。</span><span class="sxs-lookup"><span data-stu-id="3eb21-953">One of the EntityType enumeration values.</span></span>|
+|`entityType`|[<span data-ttu-id="b314e-953">Office.MailboxEnums.EntityType</span><span class="sxs-lookup"><span data-stu-id="b314e-953">Office.MailboxEnums.EntityType</span></span>](/javascript/api/outlook_1_7/office.mailboxenums.entitytype)|<span data-ttu-id="b314e-954">EntityType 枚举值之一。</span><span class="sxs-lookup"><span data-stu-id="b314e-954">One of the EntityType enumeration values.</span></span>|
 
-##### <a name="requirements"></a><span data-ttu-id="3eb21-954">要求</span><span class="sxs-lookup"><span data-stu-id="3eb21-954">Requirements</span></span>
+##### <a name="requirements"></a><span data-ttu-id="b314e-955">要求</span><span class="sxs-lookup"><span data-stu-id="b314e-955">Requirements</span></span>
 
-|<span data-ttu-id="3eb21-955">要求</span><span class="sxs-lookup"><span data-stu-id="3eb21-955">Requirement</span></span>|<span data-ttu-id="3eb21-956">值</span><span class="sxs-lookup"><span data-stu-id="3eb21-956">Value</span></span>|
+|<span data-ttu-id="b314e-956">要求</span><span class="sxs-lookup"><span data-stu-id="b314e-956">Requirement</span></span>|<span data-ttu-id="b314e-957">值</span><span class="sxs-lookup"><span data-stu-id="b314e-957">Value</span></span>|
 |---|---|
-|[<span data-ttu-id="3eb21-957">最低版本的邮箱要求集</span><span class="sxs-lookup"><span data-stu-id="3eb21-957">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|<span data-ttu-id="3eb21-958">1.0</span><span class="sxs-lookup"><span data-stu-id="3eb21-958">1.0</span></span>|
-|[<span data-ttu-id="3eb21-959">最低权限级别</span><span class="sxs-lookup"><span data-stu-id="3eb21-959">Minimum permission level</span></span>](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)|<span data-ttu-id="3eb21-960">受限</span><span class="sxs-lookup"><span data-stu-id="3eb21-960">Restricted</span></span>|
-|[<span data-ttu-id="3eb21-961">适用的 Outlook 模式</span><span class="sxs-lookup"><span data-stu-id="3eb21-961">Applicable Outlook mode</span></span>](https://docs.microsoft.com/outlook/add-ins/#extension-points)|<span data-ttu-id="3eb21-962">阅读</span><span class="sxs-lookup"><span data-stu-id="3eb21-962">Read</span></span>|
+|[<span data-ttu-id="b314e-958">最低版本的邮箱要求集</span><span class="sxs-lookup"><span data-stu-id="b314e-958">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|<span data-ttu-id="b314e-959">1.0</span><span class="sxs-lookup"><span data-stu-id="b314e-959">1.0</span></span>|
+|[<span data-ttu-id="b314e-960">最低权限级别</span><span class="sxs-lookup"><span data-stu-id="b314e-960">Minimum permission level</span></span>](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)|<span data-ttu-id="b314e-961">受限</span><span class="sxs-lookup"><span data-stu-id="b314e-961">Restricted</span></span>|
+|[<span data-ttu-id="b314e-962">适用的 Outlook 模式</span><span class="sxs-lookup"><span data-stu-id="b314e-962">Applicable Outlook mode</span></span>](https://docs.microsoft.com/outlook/add-ins/#extension-points)|<span data-ttu-id="b314e-963">阅读</span><span class="sxs-lookup"><span data-stu-id="b314e-963">Read</span></span>|
 
-##### <a name="returns"></a><span data-ttu-id="3eb21-963">返回：</span><span class="sxs-lookup"><span data-stu-id="3eb21-963">Returns:</span></span>
+##### <a name="returns"></a><span data-ttu-id="b314e-964">返回：</span><span class="sxs-lookup"><span data-stu-id="b314e-964">Returns:</span></span>
 
-<span data-ttu-id="3eb21-964">如果在 `entityType` 中传递的值不是 `EntityType` 枚举的有效成员，该方法返回 null。</span><span class="sxs-lookup"><span data-stu-id="3eb21-964">If the value passed in `entityType` is not a valid member of the `EntityType` enumeration, the method returns null.</span></span> <span data-ttu-id="3eb21-965">如果指定类型的任何实体都不存在于该项目的正文中，该方法将返回空数组。</span><span class="sxs-lookup"><span data-stu-id="3eb21-965">If no entities of the specified type are present on the item, the method returns an empty array.</span></span> <span data-ttu-id="3eb21-966">否则，返回的数组中对象的类型取决于 `entityType` 参数中请求实体的类型。</span><span class="sxs-lookup"><span data-stu-id="3eb21-966">Otherwise, the type of the objects in the returned array depends on the type of entity requested in the `entityType` parameter.</span></span>
+<span data-ttu-id="b314e-965">如果在 `entityType` 中传递的值不是 `EntityType` 枚举的有效成员，该方法返回 null。</span><span class="sxs-lookup"><span data-stu-id="b314e-965">If the value passed in `entityType` is not a valid member of the `EntityType` enumeration, the method returns null.</span></span> <span data-ttu-id="b314e-966">如果指定类型的任何实体都不存在于该项目的正文中，该方法将返回空数组。</span><span class="sxs-lookup"><span data-stu-id="b314e-966">If no entities of the specified type are present in the item's body, the method returns an empty array.</span></span> <span data-ttu-id="b314e-967">否则，返回的数组中对象的类型取决于 `entityType` 参数中请求实体的类型。</span><span class="sxs-lookup"><span data-stu-id="b314e-967">Otherwise, the type of the objects in the returned array depends on the type of entity requested in the `entityType` parameter.</span></span>
 
-<span data-ttu-id="3eb21-967">当使用此方法的最低权限级别**受限**时，某些实体类型需要 **ReadItem** 才能进行访问，如下表中所指定。</span><span class="sxs-lookup"><span data-stu-id="3eb21-967">While the minimum permission level to use this method is **Restricted**, some entity types require **ReadItem** to access, as specified in the following table.</span></span>
+<span data-ttu-id="b314e-968">当使用此方法的最低权限级别**受限**时，某些实体类型需要 **ReadItem** 才能进行访问，如下表中所指定。</span><span class="sxs-lookup"><span data-stu-id="b314e-968">While the minimum permission level to use this method is **Restricted**, some entity types require **ReadItem** to access, as specified in the following table.</span></span>
 
-|<span data-ttu-id="3eb21-968">`entityType` 的值</span><span class="sxs-lookup"><span data-stu-id="3eb21-968">Value of `entityType`</span></span>|<span data-ttu-id="3eb21-969">返回的数组中对象的类型</span><span class="sxs-lookup"><span data-stu-id="3eb21-969">Type of objects in returned array</span></span>|<span data-ttu-id="3eb21-970">所需权限级别</span><span class="sxs-lookup"><span data-stu-id="3eb21-970">Required Permission Level</span></span>|
+|<span data-ttu-id="b314e-969">`entityType` 的值</span><span class="sxs-lookup"><span data-stu-id="b314e-969">Value of `entityType`</span></span>|<span data-ttu-id="b314e-970">返回的数组中对象的类型</span><span class="sxs-lookup"><span data-stu-id="b314e-970">Type of objects in returned array</span></span>|<span data-ttu-id="b314e-971">所需权限级别</span><span class="sxs-lookup"><span data-stu-id="b314e-971">Required Permission Level</span></span>|
 |---|---|---|
-|`Address`|<span data-ttu-id="3eb21-971">String</span><span class="sxs-lookup"><span data-stu-id="3eb21-971">String</span></span>|<span data-ttu-id="3eb21-972">**受限**</span><span class="sxs-lookup"><span data-stu-id="3eb21-972">**Restricted**</span></span>|
-|`Contact`|<span data-ttu-id="3eb21-973">Contact</span><span class="sxs-lookup"><span data-stu-id="3eb21-973">Contact</span></span>|<span data-ttu-id="3eb21-974">**ReadItem**</span><span class="sxs-lookup"><span data-stu-id="3eb21-974">**ReadItem**</span></span>|
-|`EmailAddress`|<span data-ttu-id="3eb21-975">String</span><span class="sxs-lookup"><span data-stu-id="3eb21-975">String</span></span>|<span data-ttu-id="3eb21-976">**ReadItem**</span><span class="sxs-lookup"><span data-stu-id="3eb21-976">**ReadItem**</span></span>|
-|`MeetingSuggestion`|<span data-ttu-id="3eb21-977">MeetingSuggestion</span><span class="sxs-lookup"><span data-stu-id="3eb21-977">MeetingSuggestion</span></span>|<span data-ttu-id="3eb21-978">**ReadItem**</span><span class="sxs-lookup"><span data-stu-id="3eb21-978">**ReadItem**</span></span>|
-|`PhoneNumber`|<span data-ttu-id="3eb21-979">PhoneNumber</span><span class="sxs-lookup"><span data-stu-id="3eb21-979">PhoneNumber</span></span>|<span data-ttu-id="3eb21-980">**受限**</span><span class="sxs-lookup"><span data-stu-id="3eb21-980">**Restricted**</span></span>|
-|`TaskSuggestion`|<span data-ttu-id="3eb21-981">TaskSuggestion</span><span class="sxs-lookup"><span data-stu-id="3eb21-981">TaskSuggestion</span></span>|<span data-ttu-id="3eb21-982">**ReadItem**</span><span class="sxs-lookup"><span data-stu-id="3eb21-982">**ReadItem**</span></span>|
-|`URL`|<span data-ttu-id="3eb21-983">String</span><span class="sxs-lookup"><span data-stu-id="3eb21-983">String</span></span>|<span data-ttu-id="3eb21-984">**受限**</span><span class="sxs-lookup"><span data-stu-id="3eb21-984">**Restricted**</span></span>|
+|`Address`|<span data-ttu-id="b314e-972">String</span><span class="sxs-lookup"><span data-stu-id="b314e-972">String</span></span>|<span data-ttu-id="b314e-973">**受限**</span><span class="sxs-lookup"><span data-stu-id="b314e-973">**Restricted**</span></span>|
+|`Contact`|<span data-ttu-id="b314e-974">Contact</span><span class="sxs-lookup"><span data-stu-id="b314e-974">Contact</span></span>|<span data-ttu-id="b314e-975">**ReadItem**</span><span class="sxs-lookup"><span data-stu-id="b314e-975">**ReadItem**</span></span>|
+|`EmailAddress`|<span data-ttu-id="b314e-976">String</span><span class="sxs-lookup"><span data-stu-id="b314e-976">String</span></span>|<span data-ttu-id="b314e-977">**ReadItem**</span><span class="sxs-lookup"><span data-stu-id="b314e-977">**ReadItem**</span></span>|
+|`MeetingSuggestion`|<span data-ttu-id="b314e-978">MeetingSuggestion</span><span class="sxs-lookup"><span data-stu-id="b314e-978">MeetingSuggestion</span></span>|<span data-ttu-id="b314e-979">**ReadItem**</span><span class="sxs-lookup"><span data-stu-id="b314e-979">**ReadItem**</span></span>|
+|`PhoneNumber`|<span data-ttu-id="b314e-980">PhoneNumber</span><span class="sxs-lookup"><span data-stu-id="b314e-980">PhoneNumber</span></span>|<span data-ttu-id="b314e-981">**受限**</span><span class="sxs-lookup"><span data-stu-id="b314e-981">**Restricted**</span></span>|
+|`TaskSuggestion`|<span data-ttu-id="b314e-982">TaskSuggestion</span><span class="sxs-lookup"><span data-stu-id="b314e-982">TaskSuggestion</span></span>|<span data-ttu-id="b314e-983">**ReadItem**</span><span class="sxs-lookup"><span data-stu-id="b314e-983">**ReadItem**</span></span>|
+|`URL`|<span data-ttu-id="b314e-984">String</span><span class="sxs-lookup"><span data-stu-id="b314e-984">String</span></span>|<span data-ttu-id="b314e-985">**受限**</span><span class="sxs-lookup"><span data-stu-id="b314e-985">**Restricted**</span></span>|
 
-<span data-ttu-id="3eb21-985">类型：Array.<(String|[Contact](/javascript/api/outlook_1_7/office.contact)|[MeetingSuggestion](/javascript/api/outlook_1_7/office.meetingsuggestion)|[PhoneNumber](/javascript/api/outlook_1_7/office.phonenumber)|[TaskSuggestion](/javascript/api/outlook_1_7/office.tasksuggestion))></span><span class="sxs-lookup"><span data-stu-id="3eb21-985">Type: Array.<(String|[Contact](/javascript/api/outlook_1_7/office.contact)|[MeetingSuggestion](/javascript/api/outlook_1_7/office.meetingsuggestion)|[PhoneNumber](/javascript/api/outlook_1_7/office.phonenumber)|[TaskSuggestion](/javascript/api/outlook_1_7/office.tasksuggestion))></span></span>
+<span data-ttu-id="b314e-986">类型：Array.<(String|[Contact](/javascript/api/outlook_1_7/office.contact)|[MeetingSuggestion](/javascript/api/outlook_1_7/office.meetingsuggestion)|[PhoneNumber](/javascript/api/outlook_1_7/office.phonenumber)|[TaskSuggestion](/javascript/api/outlook_1_7/office.tasksuggestion))></span><span class="sxs-lookup"><span data-stu-id="b314e-986">Type: Array.<(String|[Contact](/javascript/api/outlook_1_7/office.contact)|[MeetingSuggestion](/javascript/api/outlook_1_7/office.meetingsuggestion)|[PhoneNumber](/javascript/api/outlook_1_7/office.phonenumber)|[TaskSuggestion](/javascript/api/outlook_1_7/office.tasksuggestion))></span></span>
 
-##### <a name="example"></a><span data-ttu-id="3eb21-986">示例</span><span class="sxs-lookup"><span data-stu-id="3eb21-986">Example</span></span>
+##### <a name="example"></a><span data-ttu-id="b314e-987">示例</span><span class="sxs-lookup"><span data-stu-id="b314e-987">Example</span></span>
 
-<span data-ttu-id="3eb21-987">以下示例显示了如何访问表示当前项目的正文中的邮政地址的字符串数组。</span><span class="sxs-lookup"><span data-stu-id="3eb21-987">The following example shows how to access an array of strings that represent postal addresses in the subject or body of the current item.</span></span>
+<span data-ttu-id="b314e-988">以下示例显示了如何访问表示当前项目的正文中的邮政地址的字符串数组。</span><span class="sxs-lookup"><span data-stu-id="b314e-988">The following example shows how to access an array of strings that represent postal addresses in the current item's body.</span></span>
 
 ```js
 // The initialize function is required for all apps.
@@ -1380,45 +1391,45 @@ Office.initialize = function () {
 }
 ```
 
-#### <a name="getfilteredentitiesbynamename--nullable-arraystringcontactjavascriptapioutlook17officecontactmeetingsuggestionjavascriptapioutlook17officemeetingsuggestionphonenumberjavascriptapioutlook17officephonenumbertasksuggestionjavascriptapioutlook17officetasksuggestion"></a><span data-ttu-id="3eb21-988">getFilteredEntitiesByName(name) → (nullable) {Array.<(String|[Contact](/javascript/api/outlook_1_7/office.contact)|[MeetingSuggestion](/javascript/api/outlook_1_7/office.meetingsuggestion)|[PhoneNumber](/javascript/api/outlook_1_7/office.phonenumber)|[TaskSuggestion](/javascript/api/outlook_1_7/office.tasksuggestion))>}</span><span class="sxs-lookup"><span data-stu-id="3eb21-988">getFilteredEntitiesByName(name) → (nullable) {Array.<(String|[Contact](/javascript/api/outlook_1_7/office.contact)|[MeetingSuggestion](/javascript/api/outlook_1_7/office.meetingsuggestion)|[PhoneNumber](/javascript/api/outlook_1_7/office.phonenumber)|[TaskSuggestion](/javascript/api/outlook_1_7/office.tasksuggestion))>}</span></span>
+#### <a name="getfilteredentitiesbynamename--nullable-arraystringcontactjavascriptapioutlook17officecontactmeetingsuggestionjavascriptapioutlook17officemeetingsuggestionphonenumberjavascriptapioutlook17officephonenumbertasksuggestionjavascriptapioutlook17officetasksuggestion"></a><span data-ttu-id="b314e-989">getFilteredEntitiesByName(name) → (nullable) {Array.<(String|[Contact](/javascript/api/outlook_1_7/office.contact)|[MeetingSuggestion](/javascript/api/outlook_1_7/office.meetingsuggestion)|[PhoneNumber](/javascript/api/outlook_1_7/office.phonenumber)|[TaskSuggestion](/javascript/api/outlook_1_7/office.tasksuggestion))>}</span><span class="sxs-lookup"><span data-stu-id="b314e-989">getFilteredEntitiesByName(name) → (nullable) {Array.<(String|[Contact](/javascript/api/outlook_1_7/office.contact)|[MeetingSuggestion](/javascript/api/outlook_1_7/office.meetingsuggestion)|[PhoneNumber](/javascript/api/outlook_1_7/office.phonenumber)|[TaskSuggestion](/javascript/api/outlook_1_7/office.tasksuggestion))>}</span></span>
 
-<span data-ttu-id="3eb21-989">返回传递清单 XML 文件中定义的命名筛选器的所选项目中的已知实体。</span><span class="sxs-lookup"><span data-stu-id="3eb21-989">Returns well-known entities in the selected item that pass the named filter defined in the manifest XML file.</span></span>
+<span data-ttu-id="b314e-990">返回传递清单 XML 文件中定义的命名筛选器的所选项目中的已知实体。</span><span class="sxs-lookup"><span data-stu-id="b314e-990">Returns well-known entities in the selected item that pass the named filter defined in the manifest XML file.</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="3eb21-990">在 Outlook for iOS 或 Outlook for Android 中不支持此方法。</span><span class="sxs-lookup"><span data-stu-id="3eb21-990">Note: This method is not supported in Outlook for iOS or Outlook for Android.</span></span>
+> <span data-ttu-id="b314e-991">在 Outlook for iOS 或 Outlook for Android 中不支持此方法。</span><span class="sxs-lookup"><span data-stu-id="b314e-991">This method is not supported in Outlook for iOS or Outlook for Android.</span></span>
 
-<span data-ttu-id="3eb21-991">`getFilteredEntitiesByName` 方法返回匹配在具有指定 `FilterName` 元素值的清单 XML 文件中的 [ItemHasKnownEntity](/office/dev/add-ins/reference/manifest/rule#itemhasknownentity-rule) 规则元素中定义的正则表达式的实体。</span><span class="sxs-lookup"><span data-stu-id="3eb21-991">The `getFilteredEntitiesByName` method returns the entities that match the regular expression defined in the [ItemHasKnownEntity](/office/dev/add-ins/reference/manifest/rule#itemhasknownentity-rule) rule element in the manifest XML file with the specified `FilterName` element value.</span></span>
+<span data-ttu-id="b314e-992">`getFilteredEntitiesByName` 方法返回匹配在具有指定 `FilterName` 元素值的清单 XML 文件中的 [ItemHasKnownEntity](/office/dev/add-ins/reference/manifest/rule#itemhasknownentity-rule) 规则元素中定义的正则表达式的实体。</span><span class="sxs-lookup"><span data-stu-id="b314e-992">The `getFilteredEntitiesByName` method returns the entities that match the regular expression defined in the [ItemHasKnownEntity](/office/dev/add-ins/reference/manifest/rule#itemhasknownentity-rule) rule element in the manifest XML file with the specified `FilterName` element value.</span></span>
 
-##### <a name="parameters"></a><span data-ttu-id="3eb21-992">参数：</span><span class="sxs-lookup"><span data-stu-id="3eb21-992">Parameters:</span></span>
+##### <a name="parameters"></a><span data-ttu-id="b314e-993">参数：</span><span class="sxs-lookup"><span data-stu-id="b314e-993">Parameters:</span></span>
 
-|<span data-ttu-id="3eb21-993">名称</span><span class="sxs-lookup"><span data-stu-id="3eb21-993">Name</span></span>|<span data-ttu-id="3eb21-994">类型</span><span class="sxs-lookup"><span data-stu-id="3eb21-994">Type</span></span>|<span data-ttu-id="3eb21-995">描述</span><span class="sxs-lookup"><span data-stu-id="3eb21-995">Description</span></span>|
+|<span data-ttu-id="b314e-994">名称</span><span class="sxs-lookup"><span data-stu-id="b314e-994">Name</span></span>|<span data-ttu-id="b314e-995">类型</span><span class="sxs-lookup"><span data-stu-id="b314e-995">Type</span></span>|<span data-ttu-id="b314e-996">说明</span><span class="sxs-lookup"><span data-stu-id="b314e-996">Description</span></span>|
 |---|---|---|
-|`name`|<span data-ttu-id="3eb21-996">字符串</span><span class="sxs-lookup"><span data-stu-id="3eb21-996">String</span></span>|<span data-ttu-id="3eb21-997">定义筛选器匹配的 `ItemHasKnownEntity` 规则元素的名称。</span><span class="sxs-lookup"><span data-stu-id="3eb21-997">The name of the `ItemHasKnownEntity` rule element that defines the filter to match.</span></span>|
+|`name`|<span data-ttu-id="b314e-997">字符串</span><span class="sxs-lookup"><span data-stu-id="b314e-997">String</span></span>|<span data-ttu-id="b314e-998">定义筛选器匹配的 `ItemHasKnownEntity` 规则元素的名称。</span><span class="sxs-lookup"><span data-stu-id="b314e-998">The name of the `ItemHasKnownEntity` rule element that defines the filter to match.</span></span>|
 
-##### <a name="requirements"></a><span data-ttu-id="3eb21-998">要求</span><span class="sxs-lookup"><span data-stu-id="3eb21-998">Requirements</span></span>
+##### <a name="requirements"></a><span data-ttu-id="b314e-999">要求</span><span class="sxs-lookup"><span data-stu-id="b314e-999">Requirements</span></span>
 
-|<span data-ttu-id="3eb21-999">要求</span><span class="sxs-lookup"><span data-stu-id="3eb21-999">Requirement</span></span>|<span data-ttu-id="3eb21-1000">值</span><span class="sxs-lookup"><span data-stu-id="3eb21-1000">Value</span></span>|
+|<span data-ttu-id="b314e-1000">要求</span><span class="sxs-lookup"><span data-stu-id="b314e-1000">Requirement</span></span>|<span data-ttu-id="b314e-1001">值</span><span class="sxs-lookup"><span data-stu-id="b314e-1001">Value</span></span>|
 |---|---|
-|[<span data-ttu-id="3eb21-1001">最低版本的邮箱要求集</span><span class="sxs-lookup"><span data-stu-id="3eb21-1001">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|<span data-ttu-id="3eb21-1002">1.0</span><span class="sxs-lookup"><span data-stu-id="3eb21-1002">1.0</span></span>|
-|[<span data-ttu-id="3eb21-1003">最低权限级别</span><span class="sxs-lookup"><span data-stu-id="3eb21-1003">Minimum permission level</span></span>](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)|<span data-ttu-id="3eb21-1004">ReadItem</span><span class="sxs-lookup"><span data-stu-id="3eb21-1004">ReadItem</span></span>|
-|[<span data-ttu-id="3eb21-1005">适用的 Outlook 模式</span><span class="sxs-lookup"><span data-stu-id="3eb21-1005">Applicable Outlook mode</span></span>](https://docs.microsoft.com/outlook/add-ins/#extension-points)|<span data-ttu-id="3eb21-1006">阅读</span><span class="sxs-lookup"><span data-stu-id="3eb21-1006">Read</span></span>|
+|[<span data-ttu-id="b314e-1002">最低版本的邮箱要求集</span><span class="sxs-lookup"><span data-stu-id="b314e-1002">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|<span data-ttu-id="b314e-1003">1.0</span><span class="sxs-lookup"><span data-stu-id="b314e-1003">1.0</span></span>|
+|[<span data-ttu-id="b314e-1004">最低权限级别</span><span class="sxs-lookup"><span data-stu-id="b314e-1004">Minimum permission level</span></span>](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)|<span data-ttu-id="b314e-1005">ReadItem</span><span class="sxs-lookup"><span data-stu-id="b314e-1005">ReadItem</span></span>|
+|[<span data-ttu-id="b314e-1006">适用的 Outlook 模式</span><span class="sxs-lookup"><span data-stu-id="b314e-1006">Applicable Outlook mode</span></span>](https://docs.microsoft.com/outlook/add-ins/#extension-points)|<span data-ttu-id="b314e-1007">阅读</span><span class="sxs-lookup"><span data-stu-id="b314e-1007">Read</span></span>|
 
-##### <a name="returns"></a><span data-ttu-id="3eb21-1007">返回：</span><span class="sxs-lookup"><span data-stu-id="3eb21-1007">Returns:</span></span>
+##### <a name="returns"></a><span data-ttu-id="b314e-1008">返回：</span><span class="sxs-lookup"><span data-stu-id="b314e-1008">Returns:</span></span>
 
-<span data-ttu-id="3eb21-p158">如果具有匹配 `name` 参数的 `FilterName` 元素值的清单中没有任何 `ItemHasKnownEntity` 元素，则该方法返回 `null`。如果 `name` 参数匹配清单中的 `ItemHasKnownEntity` 元素，但在匹配的当前项目中没有实体，则该方法返回一个空数组。</span><span class="sxs-lookup"><span data-stu-id="3eb21-p158">If there is no `ItemHasKnownEntity` element in the manifest with a `FilterName` element value that matches the `name` parameter, the method returns `null`. If the `name` parameter does match an `ItemHasKnownEntity` element in the manifest, but there are no entities in the current item that match, the method return an empty array.</span></span>
+<span data-ttu-id="b314e-p158">如果具有匹配 `name` 参数的 `FilterName` 元素值的清单中没有任何 `ItemHasKnownEntity` 元素，则该方法返回 `null`。如果 `name` 参数匹配清单中的 `ItemHasKnownEntity` 元素，但在匹配的当前项目中没有实体，则该方法返回一个空数组。</span><span class="sxs-lookup"><span data-stu-id="b314e-p158">If there is no `ItemHasKnownEntity` element in the manifest with a `FilterName` element value that matches the `name` parameter, the method returns `null`. If the `name` parameter does match an `ItemHasKnownEntity` element in the manifest, but there are no entities in the current item that match, the method return an empty array.</span></span>
 
-<span data-ttu-id="3eb21-1010">类型：Array.<(String|[Contact](/javascript/api/outlook_1_7/office.contact)|[MeetingSuggestion](/javascript/api/outlook_1_7/office.meetingsuggestion)|[PhoneNumber](/javascript/api/outlook_1_7/office.phonenumber)|[TaskSuggestion](/javascript/api/outlook_1_7/office.tasksuggestion))></span><span class="sxs-lookup"><span data-stu-id="3eb21-1010">Type: Array.<(String|[Contact](/javascript/api/outlook_1_7/office.contact)|[MeetingSuggestion](/javascript/api/outlook_1_7/office.meetingsuggestion)|[PhoneNumber](/javascript/api/outlook_1_7/office.phonenumber)|[TaskSuggestion](/javascript/api/outlook_1_7/office.tasksuggestion))></span></span>
+<span data-ttu-id="b314e-1011">类型：Array.<(String|[Contact](/javascript/api/outlook_1_7/office.contact)|[MeetingSuggestion](/javascript/api/outlook_1_7/office.meetingsuggestion)|[PhoneNumber](/javascript/api/outlook_1_7/office.phonenumber)|[TaskSuggestion](/javascript/api/outlook_1_7/office.tasksuggestion))></span><span class="sxs-lookup"><span data-stu-id="b314e-1011">Type: Array.<(String|[Contact](/javascript/api/outlook_1_7/office.contact)|[MeetingSuggestion](/javascript/api/outlook_1_7/office.meetingsuggestion)|[PhoneNumber](/javascript/api/outlook_1_7/office.phonenumber)|[TaskSuggestion](/javascript/api/outlook_1_7/office.tasksuggestion))></span></span>
 
-#### <a name="getregexmatches--object"></a><span data-ttu-id="3eb21-1011">getRegExMatches() → {Object}</span><span class="sxs-lookup"><span data-stu-id="3eb21-1011">getRegExMatches() → {Object}</span></span>
+#### <a name="getregexmatches--object"></a><span data-ttu-id="b314e-1012">getRegExMatches() → {Object}</span><span class="sxs-lookup"><span data-stu-id="b314e-1012">getRegExMatches() → {Object}</span></span>
 
-<span data-ttu-id="3eb21-1012">返回所选项目中匹配在清单 XML 文件中定义的正则表达式的字符串值。</span><span class="sxs-lookup"><span data-stu-id="3eb21-1012">Returns string values in the selected item that match the regular expressions defined in the manifest XML file.</span></span>
+<span data-ttu-id="b314e-1013">返回所选项目中匹配在清单 XML 文件中定义的正则表达式的字符串值。</span><span class="sxs-lookup"><span data-stu-id="b314e-1013">Returns string values in the selected item that match the regular expressions defined in the manifest XML file.</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="3eb21-1013">在 Outlook for iOS 或 Outlook for Android 中不支持此方法。</span><span class="sxs-lookup"><span data-stu-id="3eb21-1013">Note: This method is not supported in Outlook for iOS or Outlook for Android.</span></span>
+> <span data-ttu-id="b314e-1014">在 Outlook for iOS 或 Outlook for Android 中不支持此方法。</span><span class="sxs-lookup"><span data-stu-id="b314e-1014">This method is not supported in Outlook for iOS or Outlook for Android.</span></span>
 
-<span data-ttu-id="3eb21-p159">`getRegExMatches` 方法返回匹配在清单 XML 文件中的每个 `ItemHasRegularExpressionMatch` 或 `ItemHasKnownEntity` 规则元素中定义的正则表达式的字符串。对于 `ItemHasRegularExpressionMatch` 规则，匹配字符串必须发生在该规则指定的项目的属性中。`PropertyName` 简单类型定义支持的属性。</span><span class="sxs-lookup"><span data-stu-id="3eb21-p159">The `getRegExMatches` method returns the strings that match the regular expression defined in each `ItemHasRegularExpressionMatch` or `ItemHasKnownEntity` rule element in the manifest XML file. For an `ItemHasRegularExpressionMatch` rule, a matching string has to occur in the property of the item that is specified by that rule. The `PropertyName` simple type defines the supported properties.</span></span>
+<span data-ttu-id="b314e-p159">`getRegExMatches` 方法返回匹配在清单 XML 文件中的每个 `ItemHasRegularExpressionMatch` 或 `ItemHasKnownEntity` 规则元素中定义的正则表达式的字符串。对于 `ItemHasRegularExpressionMatch` 规则，匹配字符串必须发生在该规则指定的项目的属性中。`PropertyName` 简单类型定义支持的属性。</span><span class="sxs-lookup"><span data-stu-id="b314e-p159">The `getRegExMatches` method returns the strings that match the regular expression defined in each `ItemHasRegularExpressionMatch` or `ItemHasKnownEntity` rule element in the manifest XML file. For an `ItemHasRegularExpressionMatch` rule, a matching string has to occur in the property of the item that is specified by that rule. The `PropertyName` simple type defines the supported properties.</span></span>
 
-<span data-ttu-id="3eb21-1017">例如，考虑一个外接程序清单具有以下 `Rule` 元素：</span><span class="sxs-lookup"><span data-stu-id="3eb21-1017">For example, consider an add-in manifest has the following `Rule` element:</span></span>
+<span data-ttu-id="b314e-1018">例如，考虑一个外接程序清单具有以下 `Rule` 元素：</span><span class="sxs-lookup"><span data-stu-id="b314e-1018">For example, consider an add-in manifest has the following `Rule` element:</span></span>
 
 ```xml
 <Rule xsi:type="RuleCollection" Mode="And">
@@ -1430,7 +1441,7 @@ Office.initialize = function () {
 </Rule>
 ```
 
-<span data-ttu-id="3eb21-1018">从 `getRegExMatches` 返回的对象应有两个属性：`fruits` 和 `veggies`。</span><span class="sxs-lookup"><span data-stu-id="3eb21-1018">The object returned from `getRegExMatches` would have two properties: `fruits` and `veggies`.</span></span>
+<span data-ttu-id="b314e-1019">从 `getRegExMatches` 返回的对象应有两个属性：`fruits` 和 `veggies`。</span><span class="sxs-lookup"><span data-stu-id="b314e-1019">The object returned from `getRegExMatches` would have two properties: `fruits` and `veggies`.</span></span>
 
 ```json
 {
@@ -1439,37 +1450,37 @@ Office.initialize = function () {
 }
 ```
 
-<span data-ttu-id="3eb21-p160">如果在项目的正文属性上指定 `ItemHasRegularExpressionMatch` 规则，则正则表达式应进一步筛选正文，不应尝试返回该项目的整个正文。使用正则表达式（如 `.*`）获取项目的整个正文并不总是返回预期的结果。而是使用 [`Body.getAsync`](/javascript/api/outlook_1_7/office.body#getasync-coerciontype--options--callback-) 方法检索整个正文。</span><span class="sxs-lookup"><span data-stu-id="3eb21-p160">If you specify an `ItemHasRegularExpressionMatch` rule on the body property of an item, the regular expression should further filter the body and should not attempt to return the entire body of the item. Using a regular expression such as `.*` to obtain the entire body of an item does not always return the expected results. Instead, use the [`Body.getAsync`](/javascript/api/outlook_1_7/office.body#getasync-coerciontype--options--callback-) method to retrieve the entire body.</span></span>
+<span data-ttu-id="b314e-p160">如果在项目的正文属性上指定 `ItemHasRegularExpressionMatch` 规则，则正则表达式应进一步筛选正文，不应尝试返回该项目的整个正文。使用正则表达式（如 `.*`）获取项目的整个正文并不总是返回预期的结果。而是使用 [`Body.getAsync`](/javascript/api/outlook_1_7/office.body#getasync-coerciontype--options--callback-) 方法检索整个正文。</span><span class="sxs-lookup"><span data-stu-id="b314e-p160">If you specify an `ItemHasRegularExpressionMatch` rule on the body property of an item, the regular expression should further filter the body and should not attempt to return the entire body of the item. Using a regular expression such as `.*` to obtain the entire body of an item does not always return the expected results. Instead, use the [`Body.getAsync`](/javascript/api/outlook_1_7/office.body#getasync-coerciontype--options--callback-) method to retrieve the entire body.</span></span>
 
-##### <a name="requirements"></a><span data-ttu-id="3eb21-1022">Requirements</span><span class="sxs-lookup"><span data-stu-id="3eb21-1022">Requirements</span></span>
+##### <a name="requirements"></a><span data-ttu-id="b314e-1023">Requirements</span><span class="sxs-lookup"><span data-stu-id="b314e-1023">Requirements</span></span>
 
-|<span data-ttu-id="3eb21-1023">要求</span><span class="sxs-lookup"><span data-stu-id="3eb21-1023">Requirement</span></span>|<span data-ttu-id="3eb21-1024">值</span><span class="sxs-lookup"><span data-stu-id="3eb21-1024">Value</span></span>|
+|<span data-ttu-id="b314e-1024">要求</span><span class="sxs-lookup"><span data-stu-id="b314e-1024">Requirement</span></span>|<span data-ttu-id="b314e-1025">值</span><span class="sxs-lookup"><span data-stu-id="b314e-1025">Value</span></span>|
 |---|---|
-|[<span data-ttu-id="3eb21-1025">最低版本的邮箱要求集</span><span class="sxs-lookup"><span data-stu-id="3eb21-1025">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|<span data-ttu-id="3eb21-1026">1.0</span><span class="sxs-lookup"><span data-stu-id="3eb21-1026">1.0</span></span>|
-|[<span data-ttu-id="3eb21-1027">最低权限级别</span><span class="sxs-lookup"><span data-stu-id="3eb21-1027">Minimum permission level</span></span>](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)|<span data-ttu-id="3eb21-1028">ReadItem</span><span class="sxs-lookup"><span data-stu-id="3eb21-1028">ReadItem</span></span>|
-|[<span data-ttu-id="3eb21-1029">适用的 Outlook 模式</span><span class="sxs-lookup"><span data-stu-id="3eb21-1029">Applicable Outlook mode</span></span>](https://docs.microsoft.com/outlook/add-ins/#extension-points)|<span data-ttu-id="3eb21-1030">阅读</span><span class="sxs-lookup"><span data-stu-id="3eb21-1030">Read</span></span>|
+|[<span data-ttu-id="b314e-1026">最低版本的邮箱要求集</span><span class="sxs-lookup"><span data-stu-id="b314e-1026">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|<span data-ttu-id="b314e-1027">1.0</span><span class="sxs-lookup"><span data-stu-id="b314e-1027">1.0</span></span>|
+|[<span data-ttu-id="b314e-1028">最低权限级别</span><span class="sxs-lookup"><span data-stu-id="b314e-1028">Minimum permission level</span></span>](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)|<span data-ttu-id="b314e-1029">ReadItem</span><span class="sxs-lookup"><span data-stu-id="b314e-1029">ReadItem</span></span>|
+|[<span data-ttu-id="b314e-1030">适用的 Outlook 模式</span><span class="sxs-lookup"><span data-stu-id="b314e-1030">Applicable Outlook mode</span></span>](https://docs.microsoft.com/outlook/add-ins/#extension-points)|<span data-ttu-id="b314e-1031">阅读</span><span class="sxs-lookup"><span data-stu-id="b314e-1031">Read</span></span>|
 
-##### <a name="returns"></a><span data-ttu-id="3eb21-1031">返回：</span><span class="sxs-lookup"><span data-stu-id="3eb21-1031">Returns:</span></span>
+##### <a name="returns"></a><span data-ttu-id="b314e-1032">返回：</span><span class="sxs-lookup"><span data-stu-id="b314e-1032">Returns:</span></span>
 
-<span data-ttu-id="3eb21-p161">一个包含匹配在清单 XML 文件中定义的正则表达式的字符串数组的对象。每个数组的名称等于匹配 `ItemHasRegularExpressionMatch` 规则的 `RegExName` 属性或匹配 `ItemHasKnownEntity` 规则的 `FilterName` 属性的相应值。</span><span class="sxs-lookup"><span data-stu-id="3eb21-p161">An object that contains arrays of strings that match the regular expressions defined in the manifest XML file. The name of each array is equal to the corresponding value of the `RegExName` attribute of the matching `ItemHasRegularExpressionMatch` rule or the `FilterName` attribute of the matching `ItemHasKnownEntity` rule.</span></span>
+<span data-ttu-id="b314e-p161">一个包含匹配在清单 XML 文件中定义的正则表达式的字符串数组的对象。每个数组的名称等于匹配 `ItemHasRegularExpressionMatch` 规则的 `RegExName` 属性或匹配 `ItemHasKnownEntity` 规则的 `FilterName` 属性的相应值。</span><span class="sxs-lookup"><span data-stu-id="b314e-p161">An object that contains arrays of strings that match the regular expressions defined in the manifest XML file. The name of each array is equal to the corresponding value of the `RegExName` attribute of the matching `ItemHasRegularExpressionMatch` rule or the `FilterName` attribute of the matching `ItemHasKnownEntity` rule.</span></span>
 
-<dl class="param-type"><span data-ttu-id="3eb21-1034">
+<dl class="param-type"><span data-ttu-id="b314e-1035">
 
 <dt>
 类型</dt>
 
 
-</span><span class="sxs-lookup"><span data-stu-id="3eb21-1034">
+</span><span class="sxs-lookup"><span data-stu-id="b314e-1035">
 
 <dt>Type</dt>
 
-</span></span><dd><span data-ttu-id="3eb21-1035">对象</span><span class="sxs-lookup"><span data-stu-id="3eb21-1035">Object</span></span></dd>
+</span></span><dd><span data-ttu-id="b314e-1036">对象</span><span class="sxs-lookup"><span data-stu-id="b314e-1036">Object</span></span></dd>
 
 </dl>
 
-##### <a name="example"></a><span data-ttu-id="3eb21-1036">示例</span><span class="sxs-lookup"><span data-stu-id="3eb21-1036">Example</span></span>
+##### <a name="example"></a><span data-ttu-id="b314e-1037">示例</span><span class="sxs-lookup"><span data-stu-id="b314e-1037">Example</span></span>
 
-<span data-ttu-id="3eb21-1037">以下示例显示了如何访问正则表达式规则元素 `fruits` 和 `veggies` 的匹配项的数组，这些元素在清单中指定。</span><span class="sxs-lookup"><span data-stu-id="3eb21-1037">The following example shows how to access the array of matches for the regular expression rule elements `fruits` and `veggies`, which are specified in the manifest.</span></span>
+<span data-ttu-id="b314e-1038">以下示例显示了如何访问正则表达式规则元素 `fruits` 和 `veggies` 的匹配项的数组，这些元素在清单中指定。</span><span class="sxs-lookup"><span data-stu-id="b314e-1038">The following example shows how to access the array of matches for the regular expression rule elements `fruits` and `veggies`, which are specified in the manifest.</span></span>
 
 ```js
 var allMatches = Office.context.mailbox.item.getRegExMatches();
@@ -1477,96 +1488,96 @@ var fruits = allMatches.fruits;
 var veges = allMatches.veggies;
 ```
 
-#### <a name="getregexmatchesbynamename--nullable-array-string-"></a><span data-ttu-id="3eb21-1038">getRegExMatchesByName(name) → (nullable) {Array.<String>}</span><span class="sxs-lookup"><span data-stu-id="3eb21-1038">getRegExMatchesByName(name) → (nullable) {Array.< String >}</span></span>
+#### <a name="getregexmatchesbynamename--nullable-array-string-"></a><span data-ttu-id="b314e-1039">getRegExMatchesByName(name) → (nullable) {Array.< String >}</span><span class="sxs-lookup"><span data-stu-id="b314e-1039">getRegExMatchesByName(name) → (nullable) {Array.< String >}</span></span>
 
-<span data-ttu-id="3eb21-1039">返回匹配在清单 XML 文件中定义的命名正则表达式的所选项目中的字符串值。</span><span class="sxs-lookup"><span data-stu-id="3eb21-1039">Returns string values in the selected item that match the named regular expression defined in the manifest XML file.</span></span>
+<span data-ttu-id="b314e-1040">返回匹配在清单 XML 文件中定义的命名正则表达式的所选项目中的字符串值。</span><span class="sxs-lookup"><span data-stu-id="b314e-1040">Returns string values in the selected item that match the named regular expression defined in the manifest XML file.</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="3eb21-1040">在 Outlook for iOS 或 Outlook for Android 中不支持此方法。</span><span class="sxs-lookup"><span data-stu-id="3eb21-1040">Note: This method is not supported in Outlook for iOS or Outlook for Android.</span></span>
+> <span data-ttu-id="b314e-1041">在 Outlook for iOS 或 Outlook for Android 中不支持此方法。</span><span class="sxs-lookup"><span data-stu-id="b314e-1041">This method is not supported in Outlook for iOS or Outlook for Android.</span></span>
 
-<span data-ttu-id="3eb21-1041">`getRegExMatchesByName` 方法返回匹配在具有指定 `RegExName` 元素值的清单 XML 文件中的 `ItemHasRegularExpressionMatch` 规则元素中定义的正则表达式的字符串。</span><span class="sxs-lookup"><span data-stu-id="3eb21-1041">The `getRegExMatchesByName` method returns the strings that match the regular expression defined in the `ItemHasRegularExpressionMatch` rule element in the manifest XML file with the specified `RegExName` element value.</span></span>
+<span data-ttu-id="b314e-1042">`getRegExMatchesByName` 方法返回匹配在具有指定 `RegExName` 元素值的清单 XML 文件中的 `ItemHasRegularExpressionMatch` 规则元素中定义的正则表达式的字符串。</span><span class="sxs-lookup"><span data-stu-id="b314e-1042">The `getRegExMatchesByName` method returns the strings that match the regular expression defined in the `ItemHasRegularExpressionMatch` rule element in the manifest XML file with the specified `RegExName` element value.</span></span>
 
-<span data-ttu-id="3eb21-p162">如果在项目的正文属性上指定 `ItemHasRegularExpressionMatch` 规则，则正则表达式应进一步筛选正文，不应尝试返回该项目的整个正文。使用正则表达式（如 `.*`）获取项目的整个正文并不总是返回预期的结果。</span><span class="sxs-lookup"><span data-stu-id="3eb21-p162">If you specify an `ItemHasRegularExpressionMatch` rule on the body property of an item, the regular expression should further filter the body and should not attempt to return the entire body of the item. Using a regular expression such as `.*` to obtain the entire body of an item does not always return the expected results.</span></span>
+<span data-ttu-id="b314e-p162">如果在项目的正文属性上指定 `ItemHasRegularExpressionMatch` 规则，则正则表达式应进一步筛选正文，不应尝试返回该项目的整个正文。使用正则表达式（如 `.*`）获取项目的整个正文并不总是返回预期的结果。</span><span class="sxs-lookup"><span data-stu-id="b314e-p162">If you specify an `ItemHasRegularExpressionMatch` rule on the body property of an item, the regular expression should further filter the body and should not attempt to return the entire body of the item. Using a regular expression such as `.*` to obtain the entire body of an item does not always return the expected results.</span></span>
 
-##### <a name="parameters"></a><span data-ttu-id="3eb21-1044">参数：</span><span class="sxs-lookup"><span data-stu-id="3eb21-1044">Parameters:</span></span>
+##### <a name="parameters"></a><span data-ttu-id="b314e-1045">参数：</span><span class="sxs-lookup"><span data-stu-id="b314e-1045">Parameters:</span></span>
 
-|<span data-ttu-id="3eb21-1045">名称</span><span class="sxs-lookup"><span data-stu-id="3eb21-1045">Name</span></span>|<span data-ttu-id="3eb21-1046">类型</span><span class="sxs-lookup"><span data-stu-id="3eb21-1046">Type</span></span>|<span data-ttu-id="3eb21-1047">描述</span><span class="sxs-lookup"><span data-stu-id="3eb21-1047">Description</span></span>|
+|<span data-ttu-id="b314e-1046">名称</span><span class="sxs-lookup"><span data-stu-id="b314e-1046">Name</span></span>|<span data-ttu-id="b314e-1047">类型</span><span class="sxs-lookup"><span data-stu-id="b314e-1047">Type</span></span>|<span data-ttu-id="b314e-1048">说明</span><span class="sxs-lookup"><span data-stu-id="b314e-1048">Description</span></span>|
 |---|---|---|
-|`name`|<span data-ttu-id="3eb21-1048">字符串</span><span class="sxs-lookup"><span data-stu-id="3eb21-1048">String</span></span>|<span data-ttu-id="3eb21-1049">定义筛选器匹配的 `ItemHasRegularExpressionMatch` 规则元素的名称。</span><span class="sxs-lookup"><span data-stu-id="3eb21-1049">The name of the `ItemHasRegularExpressionMatch` rule element that defines the filter to match.</span></span>|
+|`name`|<span data-ttu-id="b314e-1049">字符串</span><span class="sxs-lookup"><span data-stu-id="b314e-1049">String</span></span>|<span data-ttu-id="b314e-1050">定义筛选器匹配的 `ItemHasRegularExpressionMatch` 规则元素的名称。</span><span class="sxs-lookup"><span data-stu-id="b314e-1050">The name of the `ItemHasRegularExpressionMatch` rule element that defines the filter to match.</span></span>|
 
-##### <a name="requirements"></a><span data-ttu-id="3eb21-1050">要求</span><span class="sxs-lookup"><span data-stu-id="3eb21-1050">Requirements</span></span>
+##### <a name="requirements"></a><span data-ttu-id="b314e-1051">要求</span><span class="sxs-lookup"><span data-stu-id="b314e-1051">Requirements</span></span>
 
-|<span data-ttu-id="3eb21-1051">要求</span><span class="sxs-lookup"><span data-stu-id="3eb21-1051">Requirement</span></span>|<span data-ttu-id="3eb21-1052">值</span><span class="sxs-lookup"><span data-stu-id="3eb21-1052">Value</span></span>|
+|<span data-ttu-id="b314e-1052">要求</span><span class="sxs-lookup"><span data-stu-id="b314e-1052">Requirement</span></span>|<span data-ttu-id="b314e-1053">值</span><span class="sxs-lookup"><span data-stu-id="b314e-1053">Value</span></span>|
 |---|---|
-|[<span data-ttu-id="3eb21-1053">最低版本的邮箱要求集</span><span class="sxs-lookup"><span data-stu-id="3eb21-1053">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|<span data-ttu-id="3eb21-1054">1.0</span><span class="sxs-lookup"><span data-stu-id="3eb21-1054">1.0</span></span>|
-|[<span data-ttu-id="3eb21-1055">最低权限级别</span><span class="sxs-lookup"><span data-stu-id="3eb21-1055">Minimum permission level</span></span>](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)|<span data-ttu-id="3eb21-1056">ReadItem</span><span class="sxs-lookup"><span data-stu-id="3eb21-1056">ReadItem</span></span>|
-|[<span data-ttu-id="3eb21-1057">适用的 Outlook 模式</span><span class="sxs-lookup"><span data-stu-id="3eb21-1057">Applicable Outlook mode</span></span>](https://docs.microsoft.com/outlook/add-ins/#extension-points)|<span data-ttu-id="3eb21-1058">阅读</span><span class="sxs-lookup"><span data-stu-id="3eb21-1058">Read</span></span>|
+|[<span data-ttu-id="b314e-1054">最低版本的邮箱要求集</span><span class="sxs-lookup"><span data-stu-id="b314e-1054">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|<span data-ttu-id="b314e-1055">1.0</span><span class="sxs-lookup"><span data-stu-id="b314e-1055">1.0</span></span>|
+|[<span data-ttu-id="b314e-1056">最低权限级别</span><span class="sxs-lookup"><span data-stu-id="b314e-1056">Minimum permission level</span></span>](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)|<span data-ttu-id="b314e-1057">ReadItem</span><span class="sxs-lookup"><span data-stu-id="b314e-1057">ReadItem</span></span>|
+|[<span data-ttu-id="b314e-1058">适用的 Outlook 模式</span><span class="sxs-lookup"><span data-stu-id="b314e-1058">Applicable Outlook mode</span></span>](https://docs.microsoft.com/outlook/add-ins/#extension-points)|<span data-ttu-id="b314e-1059">阅读</span><span class="sxs-lookup"><span data-stu-id="b314e-1059">Read</span></span>|
 
-##### <a name="returns"></a><span data-ttu-id="3eb21-1059">返回：</span><span class="sxs-lookup"><span data-stu-id="3eb21-1059">Returns:</span></span>
+##### <a name="returns"></a><span data-ttu-id="b314e-1060">返回：</span><span class="sxs-lookup"><span data-stu-id="b314e-1060">Returns:</span></span>
 
-<span data-ttu-id="3eb21-1060">一个包含匹配在清单 XML 文件中定义的正则表达式的字符串的数组。</span><span class="sxs-lookup"><span data-stu-id="3eb21-1060">An array that contains the strings that match the regular expression defined in the manifest XML file.</span></span>
+<span data-ttu-id="b314e-1061">一个包含匹配在清单 XML 文件中定义的正则表达式的字符串的数组。</span><span class="sxs-lookup"><span data-stu-id="b314e-1061">An array that contains the strings that match the regular expression defined in the manifest XML file.</span></span>
 
-<dl class="param-type"><span data-ttu-id="3eb21-1061">
+<dl class="param-type"><span data-ttu-id="b314e-1062">
 
 <dt>类型</dt>
 
-</span><span class="sxs-lookup"><span data-stu-id="3eb21-1061">
+</span><span class="sxs-lookup"><span data-stu-id="b314e-1062">
 
 <dt>Type</dt>
 
-</span></span><dd><span data-ttu-id="3eb21-1062">Array.< String ></span><span class="sxs-lookup"><span data-stu-id="3eb21-1062">Array.< String ></span></span></dd>
+</span></span><dd><span data-ttu-id="b314e-1063">Array.< String ></span><span class="sxs-lookup"><span data-stu-id="b314e-1063">Array.< String ></span></span></dd>
 
 </dl>
 
-##### <a name="example"></a><span data-ttu-id="3eb21-1063">示例</span><span class="sxs-lookup"><span data-stu-id="3eb21-1063">Example</span></span>
+##### <a name="example"></a><span data-ttu-id="b314e-1064">示例</span><span class="sxs-lookup"><span data-stu-id="b314e-1064">Example</span></span>
 
 ```js
 var fruits = Office.context.mailbox.item.getRegExMatchesByName("fruits");
 var veggies = Office.context.mailbox.item.getRegExMatchesByName("veggies");
 ```
 
-####  <a name="getselecteddataasynccoerciontype-options-callback--string"></a><span data-ttu-id="3eb21-1064">getSelectedDataAsync(coercionType, [options], callback) → {String}</span><span class="sxs-lookup"><span data-stu-id="3eb21-1064">getSelectedDataAsync(coercionType, [options], callback) → {String}</span></span>
+####  <a name="getselecteddataasynccoerciontype-options-callback--string"></a><span data-ttu-id="b314e-1065">getSelectedDataAsync(coercionType, [options], callback) → {String}</span><span class="sxs-lookup"><span data-stu-id="b314e-1065">getSelectedDataAsync(coercionType, [options], callback) → {String}</span></span>
 
-<span data-ttu-id="3eb21-1065">以异步方式返回邮件的主题或正文中选定的数据。</span><span class="sxs-lookup"><span data-stu-id="3eb21-1065">Asynchronously returns selected data from the subject or body of a message.</span></span>
+<span data-ttu-id="b314e-1066">以异步方式返回邮件的主题或正文中选定的数据。</span><span class="sxs-lookup"><span data-stu-id="b314e-1066">Asynchronously returns selected data from the subject or body of a message.</span></span>
 
-<span data-ttu-id="3eb21-p163">如果没有选定内容，但光标位于正文或主题中，此方法将会为所选数据返回 null。如果选定的是字段，而不是正文或主题，则此方法返回 `InvalidSelection` 错误。</span><span class="sxs-lookup"><span data-stu-id="3eb21-p163">If there is no selection but the cursor is in the body or subject, the method returns null for the selected data. If a field other than the body or subject is selected, the method returns the `InvalidSelection` error.</span></span>
+<span data-ttu-id="b314e-p163">如果没有选定内容，但光标位于正文或主题中，此方法将会为所选数据返回 null。如果选定的是字段，而不是正文或主题，则此方法返回 `InvalidSelection` 错误。</span><span class="sxs-lookup"><span data-stu-id="b314e-p163">If there is no selection but the cursor is in the body or subject, the method returns null for the selected data. If a field other than the body or subject is selected, the method returns the `InvalidSelection` error.</span></span>
 
-##### <a name="parameters"></a><span data-ttu-id="3eb21-1068">参数：</span><span class="sxs-lookup"><span data-stu-id="3eb21-1068">Parameters:</span></span>
+##### <a name="parameters"></a><span data-ttu-id="b314e-1069">参数：</span><span class="sxs-lookup"><span data-stu-id="b314e-1069">Parameters:</span></span>
 
-|<span data-ttu-id="3eb21-1069">名称</span><span class="sxs-lookup"><span data-stu-id="3eb21-1069">Name</span></span>|<span data-ttu-id="3eb21-1070">类型</span><span class="sxs-lookup"><span data-stu-id="3eb21-1070">Type</span></span>|<span data-ttu-id="3eb21-1071">属性</span><span class="sxs-lookup"><span data-stu-id="3eb21-1071">Attributes</span></span>|<span data-ttu-id="3eb21-1072">说明</span><span class="sxs-lookup"><span data-stu-id="3eb21-1072">Description</span></span>|
+|<span data-ttu-id="b314e-1070">名称</span><span class="sxs-lookup"><span data-stu-id="b314e-1070">Name</span></span>|<span data-ttu-id="b314e-1071">类型</span><span class="sxs-lookup"><span data-stu-id="b314e-1071">Type</span></span>|<span data-ttu-id="b314e-1072">属性</span><span class="sxs-lookup"><span data-stu-id="b314e-1072">Attributes</span></span>|<span data-ttu-id="b314e-1073">说明</span><span class="sxs-lookup"><span data-stu-id="b314e-1073">Description</span></span>|
 |---|---|---|---|
-|`coercionType`|[<span data-ttu-id="3eb21-1073">Office.CoercionType</span><span class="sxs-lookup"><span data-stu-id="3eb21-1073">Office.CoercionType</span></span>](office.md#coerciontype-string)||<span data-ttu-id="3eb21-p164">请求数据的格式。如果为文本，则此方法返回纯文本作为字符串，删除任何显示的 HTML 标记。如果为 HTML，则此方法返回所选文本，不论是纯文本还是 HTML。</span><span class="sxs-lookup"><span data-stu-id="3eb21-p164">Requests a format for the data. If Text, the method returns the plain text as a string , removing any HTML tags present. If HTML, the method returns the selected text, whether it is plaintext or HTML.</span></span>|
-|`options`|<span data-ttu-id="3eb21-1077">对象</span><span class="sxs-lookup"><span data-stu-id="3eb21-1077">Object</span></span>|<span data-ttu-id="3eb21-1078">&lt;可选&gt;</span><span class="sxs-lookup"><span data-stu-id="3eb21-1078">&lt;optional&gt;</span></span>|<span data-ttu-id="3eb21-1079">包含一个或多个以下属性的对象文本。</span><span class="sxs-lookup"><span data-stu-id="3eb21-1079">An object literal that contains one or more of the following properties.</span></span>|
-|`options.asyncContext`|<span data-ttu-id="3eb21-1080">对象</span><span class="sxs-lookup"><span data-stu-id="3eb21-1080">Object</span></span>|<span data-ttu-id="3eb21-1081">&lt;可选&gt;</span><span class="sxs-lookup"><span data-stu-id="3eb21-1081">&lt;optional&gt;</span></span>|<span data-ttu-id="3eb21-1082">开发人员可以提供他们想要在回调方法中访问的任何对象。</span><span class="sxs-lookup"><span data-stu-id="3eb21-1082">Developers can provide any object they wish to access in the callback method.</span></span>|
-|`callback`|<span data-ttu-id="3eb21-1083">函数</span><span class="sxs-lookup"><span data-stu-id="3eb21-1083">function</span></span>||<span data-ttu-id="3eb21-1084">方法完成后，使用单个参数 `asyncResult`（一个 [`AsyncResult`](/javascript/api/office/office.asyncresult) 对象）调用在 `callback` 参数中传递的函数。</span><span class="sxs-lookup"><span data-stu-id="3eb21-1084">When the method completes, the function passed in the `callback` parameter is called with a single parameter, `asyncResult`, which is an [`AsyncResult`](/javascript/api/office/office.asyncresult) object.</span></span><br/><br/><span data-ttu-id="3eb21-1085">若要从回调方法访问所选数据，请调用 `asyncResult.value.data`。</span><span class="sxs-lookup"><span data-stu-id="3eb21-1085">To access the selected data from the callback method, call `asyncResult.value.data`.</span></span> <span data-ttu-id="3eb21-1086">若要访问选定内容的源属性，请调用 `asyncResult.value.sourceProperty`，这将为 `body` 或 `subject`。</span><span class="sxs-lookup"><span data-stu-id="3eb21-1086">To access the source property that the selection comes from, call , which will be either  or .|</span></span>|
+|`coercionType`|[<span data-ttu-id="b314e-1074">Office.CoercionType</span><span class="sxs-lookup"><span data-stu-id="b314e-1074">Office.CoercionType</span></span>](office.md#coerciontype-string)||<span data-ttu-id="b314e-p164">请求数据的格式。如果为文本，则此方法返回纯文本作为字符串，删除任何显示的 HTML 标记。如果为 HTML，则此方法返回所选文本，不论是纯文本还是 HTML。</span><span class="sxs-lookup"><span data-stu-id="b314e-p164">Requests a format for the data. If Text, the method returns the plain text as a string , removing any HTML tags present. If HTML, the method returns the selected text, whether it is plaintext or HTML.</span></span>|
+|`options`|<span data-ttu-id="b314e-1078">对象</span><span class="sxs-lookup"><span data-stu-id="b314e-1078">Object</span></span>|<span data-ttu-id="b314e-1079">&lt;可选&gt;</span><span class="sxs-lookup"><span data-stu-id="b314e-1079">&lt;optional&gt;</span></span>|<span data-ttu-id="b314e-1080">包含一个或多个以下属性的对象文本。</span><span class="sxs-lookup"><span data-stu-id="b314e-1080">An object literal that contains one or more of the following properties.</span></span>|
+|`options.asyncContext`|<span data-ttu-id="b314e-1081">对象</span><span class="sxs-lookup"><span data-stu-id="b314e-1081">Object</span></span>|<span data-ttu-id="b314e-1082">&lt;可选&gt;</span><span class="sxs-lookup"><span data-stu-id="b314e-1082">&lt;optional&gt;</span></span>|<span data-ttu-id="b314e-1083">开发人员可以提供他们想要在回调方法中访问的任何对象。</span><span class="sxs-lookup"><span data-stu-id="b314e-1083">Developers can provide any object they wish to access in the callback method.</span></span>|
+|`callback`|<span data-ttu-id="b314e-1084">函数</span><span class="sxs-lookup"><span data-stu-id="b314e-1084">function</span></span>||<span data-ttu-id="b314e-1085">方法完成后，使用单个参数 `asyncResult`（一个 [`AsyncResult`](/javascript/api/office/office.asyncresult) 对象）调用在 `callback` 参数中传递的函数。</span><span class="sxs-lookup"><span data-stu-id="b314e-1085">When the method completes, the function passed in the `callback` parameter is called with a single parameter, `asyncResult`, which is an [`AsyncResult`](/javascript/api/office/office.asyncresult) object.</span></span><br/><br/><span data-ttu-id="b314e-1086">若要从回调方法访问所选数据，请调用 `asyncResult.value.data`。</span><span class="sxs-lookup"><span data-stu-id="b314e-1086">To access the selected data from the callback method, call `asyncResult.value.data`.</span></span> <span data-ttu-id="b314e-1087">若要访问选定内容的源属性，请调用 `asyncResult.value.sourceProperty`，这将为 `body` 或 `subject`。</span><span class="sxs-lookup"><span data-stu-id="b314e-1087">To access the source property that the selection comes from, call `asyncResult.value.sourceProperty`, which will be either `body` or `subject`.</span></span>|
 
-##### <a name="requirements"></a><span data-ttu-id="3eb21-1087">要求</span><span class="sxs-lookup"><span data-stu-id="3eb21-1087">Requirements</span></span>
+##### <a name="requirements"></a><span data-ttu-id="b314e-1088">要求</span><span class="sxs-lookup"><span data-stu-id="b314e-1088">Requirements</span></span>
 
-|<span data-ttu-id="3eb21-1088">要求</span><span class="sxs-lookup"><span data-stu-id="3eb21-1088">Requirement</span></span>|<span data-ttu-id="3eb21-1089">值</span><span class="sxs-lookup"><span data-stu-id="3eb21-1089">Value</span></span>|
+|<span data-ttu-id="b314e-1089">要求</span><span class="sxs-lookup"><span data-stu-id="b314e-1089">Requirement</span></span>|<span data-ttu-id="b314e-1090">值</span><span class="sxs-lookup"><span data-stu-id="b314e-1090">Value</span></span>|
 |---|---|
-|[<span data-ttu-id="3eb21-1090">最低版本的邮箱要求集</span><span class="sxs-lookup"><span data-stu-id="3eb21-1090">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|<span data-ttu-id="3eb21-1091">1.2</span><span class="sxs-lookup"><span data-stu-id="3eb21-1091">1.2</span></span>|
-|[<span data-ttu-id="3eb21-1092">最低权限级别</span><span class="sxs-lookup"><span data-stu-id="3eb21-1092">Minimum permission level</span></span>](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)|<span data-ttu-id="3eb21-1093">ReadWriteItem</span><span class="sxs-lookup"><span data-stu-id="3eb21-1093">ReadWriteItem</span></span>|
-|[<span data-ttu-id="3eb21-1094">适用的 Outlook 模式</span><span class="sxs-lookup"><span data-stu-id="3eb21-1094">Applicable Outlook mode</span></span>](https://docs.microsoft.com/outlook/add-ins/#extension-points)|<span data-ttu-id="3eb21-1095">撰写</span><span class="sxs-lookup"><span data-stu-id="3eb21-1095">Compose</span></span>|
+|[<span data-ttu-id="b314e-1091">最低版本的邮箱要求集</span><span class="sxs-lookup"><span data-stu-id="b314e-1091">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|<span data-ttu-id="b314e-1092">1.2</span><span class="sxs-lookup"><span data-stu-id="b314e-1092">1.2</span></span>|
+|[<span data-ttu-id="b314e-1093">最低权限级别</span><span class="sxs-lookup"><span data-stu-id="b314e-1093">Minimum permission level</span></span>](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)|<span data-ttu-id="b314e-1094">ReadWriteItem</span><span class="sxs-lookup"><span data-stu-id="b314e-1094">ReadWriteItem</span></span>|
+|[<span data-ttu-id="b314e-1095">适用的 Outlook 模式</span><span class="sxs-lookup"><span data-stu-id="b314e-1095">Applicable Outlook mode</span></span>](https://docs.microsoft.com/outlook/add-ins/#extension-points)|<span data-ttu-id="b314e-1096">撰写</span><span class="sxs-lookup"><span data-stu-id="b314e-1096">Compose</span></span>|
 
-##### <a name="returns"></a><span data-ttu-id="3eb21-1096">返回：</span><span class="sxs-lookup"><span data-stu-id="3eb21-1096">Returns:</span></span>
+##### <a name="returns"></a><span data-ttu-id="b314e-1097">返回：</span><span class="sxs-lookup"><span data-stu-id="b314e-1097">Returns:</span></span>
 
-<span data-ttu-id="3eb21-1097">作为字符串的所选数据的格式由 `coercionType` 确定。</span><span class="sxs-lookup"><span data-stu-id="3eb21-1097">The selected data as a string with format determined by `coercionType`.</span></span>
+<span data-ttu-id="b314e-1098">作为字符串的所选数据的格式由 `coercionType` 确定。</span><span class="sxs-lookup"><span data-stu-id="b314e-1098">The selected data as a string with format determined by `coercionType`.</span></span>
 
-<dl class="param-type"><span data-ttu-id="3eb21-1098">
+<dl class="param-type"><span data-ttu-id="b314e-1099">
 
 <dt>
 类型</dt>
 
 
-</span><span class="sxs-lookup"><span data-stu-id="3eb21-1098">
+</span><span class="sxs-lookup"><span data-stu-id="b314e-1099">
 
 <dt>Type</dt>
 
-</span></span><dd><span data-ttu-id="3eb21-1099">字符串</span><span class="sxs-lookup"><span data-stu-id="3eb21-1099">String</span></span></dd>
+</span></span><dd><span data-ttu-id="b314e-1100">字符串</span><span class="sxs-lookup"><span data-stu-id="b314e-1100">String</span></span></dd>
 
 </dl>
 
-##### <a name="example"></a><span data-ttu-id="3eb21-1100">示例</span><span class="sxs-lookup"><span data-stu-id="3eb21-1100">Example</span></span>
+##### <a name="example"></a><span data-ttu-id="b314e-1101">示例</span><span class="sxs-lookup"><span data-stu-id="b314e-1101">Example</span></span>
 
 ```js
 // getting selected data
@@ -1586,43 +1597,43 @@ function setCallback(asyncResult) {
 }
 ```
 
-#### <a name="getselectedentities--entitiesjavascriptapioutlook17officeentities"></a><span data-ttu-id="3eb21-1101">getSelectedEntities() → {[Entities](/javascript/api/outlook_1_7/office.entities)}</span><span class="sxs-lookup"><span data-stu-id="3eb21-1101">getSelectedEntities() → {[Entities](/javascript/api/outlook_1_7/office.entities)}</span></span>
+#### <a name="getselectedentities--entitiesjavascriptapioutlook17officeentities"></a><span data-ttu-id="b314e-1102">getSelectedEntities() → {[Entities](/javascript/api/outlook_1_7/office.entities)}</span><span class="sxs-lookup"><span data-stu-id="b314e-1102">getSelectedEntities() → {[Entities](/javascript/api/outlook_1_7/office.entities)}</span></span>
 
-<span data-ttu-id="3eb21-p166">获取在用户已选择的突出显示匹配项中找到的实体。突出显示匹配项适用于[上下文加载项](https://docs.microsoft.com/outlook/add-ins/contextual-outlook-add-ins)。</span><span class="sxs-lookup"><span data-stu-id="3eb21-p166">Gets the entities found in a highlighted match a user has selected. Highlighted matches apply to [contextual add-ins](https://docs.microsoft.com/outlook/add-ins/contextual-outlook-add-ins).</span></span>
+<span data-ttu-id="b314e-p166">获取在用户已选择的突出显示匹配项中找到的实体。突出显示匹配项适用于[上下文加载项](https://docs.microsoft.com/outlook/add-ins/contextual-outlook-add-ins)。</span><span class="sxs-lookup"><span data-stu-id="b314e-p166">Gets the entities found in a highlighted match a user has selected. Highlighted matches apply to [contextual add-ins](https://docs.microsoft.com/outlook/add-ins/contextual-outlook-add-ins).</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="3eb21-1104">在 Outlook for iOS 或 Outlook for Android 中不支持此方法。</span><span class="sxs-lookup"><span data-stu-id="3eb21-1104">Note: This method is not supported in Outlook for iOS or Outlook for Android.</span></span>
+> <span data-ttu-id="b314e-1105">在 Outlook for iOS 或 Outlook for Android 中不支持此方法。</span><span class="sxs-lookup"><span data-stu-id="b314e-1105">This method is not supported in Outlook for iOS or Outlook for Android.</span></span>
 
-##### <a name="requirements"></a><span data-ttu-id="3eb21-1105">要求</span><span class="sxs-lookup"><span data-stu-id="3eb21-1105">Requirements</span></span>
+##### <a name="requirements"></a><span data-ttu-id="b314e-1106">要求</span><span class="sxs-lookup"><span data-stu-id="b314e-1106">Requirements</span></span>
 
-|<span data-ttu-id="3eb21-1106">要求</span><span class="sxs-lookup"><span data-stu-id="3eb21-1106">Requirement</span></span>|<span data-ttu-id="3eb21-1107">值</span><span class="sxs-lookup"><span data-stu-id="3eb21-1107">Value</span></span>|
+|<span data-ttu-id="b314e-1107">要求</span><span class="sxs-lookup"><span data-stu-id="b314e-1107">Requirement</span></span>|<span data-ttu-id="b314e-1108">值</span><span class="sxs-lookup"><span data-stu-id="b314e-1108">Value</span></span>|
 |---|---|
-|[<span data-ttu-id="3eb21-1108">最低版本的邮箱要求集</span><span class="sxs-lookup"><span data-stu-id="3eb21-1108">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|<span data-ttu-id="3eb21-1109">1.6</span><span class="sxs-lookup"><span data-stu-id="3eb21-1109">-16</span></span>|
-|[<span data-ttu-id="3eb21-1110">最低权限级别</span><span class="sxs-lookup"><span data-stu-id="3eb21-1110">Minimum permission level</span></span>](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)|<span data-ttu-id="3eb21-1111">ReadItem</span><span class="sxs-lookup"><span data-stu-id="3eb21-1111">ReadItem</span></span>|
-|[<span data-ttu-id="3eb21-1112">适用的 Outlook 模式</span><span class="sxs-lookup"><span data-stu-id="3eb21-1112">Applicable Outlook mode</span></span>](https://docs.microsoft.com/outlook/add-ins/#extension-points)|<span data-ttu-id="3eb21-1113">阅读</span><span class="sxs-lookup"><span data-stu-id="3eb21-1113">Read</span></span>|
+|[<span data-ttu-id="b314e-1109">最低版本的邮箱要求集</span><span class="sxs-lookup"><span data-stu-id="b314e-1109">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|<span data-ttu-id="b314e-1110">1.6</span><span class="sxs-lookup"><span data-stu-id="b314e-1110">1.6</span></span>|
+|[<span data-ttu-id="b314e-1111">最低权限级别</span><span class="sxs-lookup"><span data-stu-id="b314e-1111">Minimum permission level</span></span>](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)|<span data-ttu-id="b314e-1112">ReadItem</span><span class="sxs-lookup"><span data-stu-id="b314e-1112">ReadItem</span></span>|
+|[<span data-ttu-id="b314e-1113">适用的 Outlook 模式</span><span class="sxs-lookup"><span data-stu-id="b314e-1113">Applicable Outlook mode</span></span>](https://docs.microsoft.com/outlook/add-ins/#extension-points)|<span data-ttu-id="b314e-1114">阅读</span><span class="sxs-lookup"><span data-stu-id="b314e-1114">Read</span></span>|
 
-##### <a name="returns"></a><span data-ttu-id="3eb21-1114">返回：</span><span class="sxs-lookup"><span data-stu-id="3eb21-1114">Returns:</span></span>
+##### <a name="returns"></a><span data-ttu-id="b314e-1115">返回：</span><span class="sxs-lookup"><span data-stu-id="b314e-1115">Returns:</span></span>
 
-<span data-ttu-id="3eb21-1115">类型：[Entities](/javascript/api/outlook_1_7/office.entities)</span><span class="sxs-lookup"><span data-stu-id="3eb21-1115">Type: [Entities](/javascript/api/outlook_1_7/office.entities)</span></span>
+<span data-ttu-id="b314e-1116">类型：[Entities](/javascript/api/outlook_1_7/office.entities)</span><span class="sxs-lookup"><span data-stu-id="b314e-1116">Type: [Entities](/javascript/api/outlook_1_7/office.entities)</span></span>
 
-##### <a name="example"></a><span data-ttu-id="3eb21-1116">示例</span><span class="sxs-lookup"><span data-stu-id="3eb21-1116">Example</span></span>
+##### <a name="example"></a><span data-ttu-id="b314e-1117">示例</span><span class="sxs-lookup"><span data-stu-id="b314e-1117">Example</span></span>
 
-<span data-ttu-id="3eb21-1117">以下示例访问用户选择的突出显示匹配项中的地址实体。</span><span class="sxs-lookup"><span data-stu-id="3eb21-1117">The following example accesses the addresses entities in the highlighted match selected by the user.</span></span>
+<span data-ttu-id="b314e-1118">以下示例访问用户选择的突出显示匹配项中的地址实体。</span><span class="sxs-lookup"><span data-stu-id="b314e-1118">The following example accesses the addresses entities in the highlighted match selected by the user.</span></span>
 
 ```js
 var contacts = Office.context.mailbox.item.getSelectedEntities().addresses;
 ```
 
-#### <a name="getselectedregexmatches--object"></a><span data-ttu-id="3eb21-1118">getSelectedRegExMatches() → {Object}</span><span class="sxs-lookup"><span data-stu-id="3eb21-1118">getSelectedRegExMatches() → {Object}</span></span>
+#### <a name="getselectedregexmatches--object"></a><span data-ttu-id="b314e-1119">getSelectedRegExMatches() → {Object}</span><span class="sxs-lookup"><span data-stu-id="b314e-1119">getSelectedRegExMatches() → {Object}</span></span>
 
-<span data-ttu-id="3eb21-p167">返回突出显示匹配项中匹配在清单 XML 文件中定义的正则表达式的字符串值。突出显示匹配项适用于[上下文外接程序](https://docs.microsoft.com/outlook/add-ins/contextual-outlook-add-ins)。</span><span class="sxs-lookup"><span data-stu-id="3eb21-p167">Returns string values in a highlighted match that match the regular expressions defined in the manifest XML file. Highlighted matches apply to [contextual add-ins](https://docs.microsoft.com/outlook/add-ins/contextual-outlook-add-ins).</span></span>
+<span data-ttu-id="b314e-p167">返回突出显示匹配项中匹配在清单 XML 文件中定义的正则表达式的字符串值。突出显示匹配项适用于[上下文外接程序](https://docs.microsoft.com/outlook/add-ins/contextual-outlook-add-ins)。</span><span class="sxs-lookup"><span data-stu-id="b314e-p167">Returns string values in a highlighted match that match the regular expressions defined in the manifest XML file. Highlighted matches apply to [contextual add-ins](https://docs.microsoft.com/outlook/add-ins/contextual-outlook-add-ins).</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="3eb21-1121">在 Outlook for iOS 或 Outlook for Android 中不支持此方法。</span><span class="sxs-lookup"><span data-stu-id="3eb21-1121">Note: This method is not supported in Outlook for iOS or Outlook for Android.</span></span>
+> <span data-ttu-id="b314e-1122">在 Outlook for iOS 或 Outlook for Android 中不支持此方法。</span><span class="sxs-lookup"><span data-stu-id="b314e-1122">This method is not supported in Outlook for iOS or Outlook for Android.</span></span>
 
-<span data-ttu-id="3eb21-p168">`getSelectedRegExMatches` 方法返回匹配在清单 XML 文件中的每个 `ItemHasRegularExpressionMatch` 或 `ItemHasKnownEntity` 规则元素中定义的正则表达式的字符串。对于 `ItemHasRegularExpressionMatch` 规则，匹配字符串必须发生在该规则指定的项目的属性中。`PropertyName` 简单类型定义支持的属性。</span><span class="sxs-lookup"><span data-stu-id="3eb21-p168">The `getSelectedRegExMatches` method returns the strings that match the regular expression defined in each `ItemHasRegularExpressionMatch` or `ItemHasKnownEntity` rule element in the manifest XML file. For an `ItemHasRegularExpressionMatch` rule, a matching string has to occur in the property of the item that is specified by that rule. The `PropertyName` simple type defines the supported properties.</span></span>
+<span data-ttu-id="b314e-p168">`getSelectedRegExMatches` 方法返回匹配在清单 XML 文件中的每个 `ItemHasRegularExpressionMatch` 或 `ItemHasKnownEntity` 规则元素中定义的正则表达式的字符串。对于 `ItemHasRegularExpressionMatch` 规则，匹配字符串必须发生在该规则指定的项目的属性中。`PropertyName` 简单类型定义支持的属性。</span><span class="sxs-lookup"><span data-stu-id="b314e-p168">The `getSelectedRegExMatches` method returns the strings that match the regular expression defined in each `ItemHasRegularExpressionMatch` or `ItemHasKnownEntity` rule element in the manifest XML file. For an `ItemHasRegularExpressionMatch` rule, a matching string has to occur in the property of the item that is specified by that rule. The `PropertyName` simple type defines the supported properties.</span></span>
 
-<span data-ttu-id="3eb21-1125">例如，考虑一个外接程序清单具有以下 `Rule` 元素：</span><span class="sxs-lookup"><span data-stu-id="3eb21-1125">For example, consider an add-in manifest has the following `Rule` element:</span></span>
+<span data-ttu-id="b314e-1126">例如，考虑一个外接程序清单具有以下 `Rule` 元素：</span><span class="sxs-lookup"><span data-stu-id="b314e-1126">For example, consider an add-in manifest has the following `Rule` element:</span></span>
 
 ```xml
 <Rule xsi:type="RuleCollection" Mode="And">
@@ -1634,7 +1645,7 @@ var contacts = Office.context.mailbox.item.getSelectedEntities().addresses;
 </Rule>
 ```
 
-<span data-ttu-id="3eb21-1126">从 `getRegExMatches` 返回的对象应有两个属性：`fruits` 和 `veggies`。</span><span class="sxs-lookup"><span data-stu-id="3eb21-1126">The object returned from `getRegExMatches` would have two properties: `fruits` and `veggies`.</span></span>
+<span data-ttu-id="b314e-1127">从 `getRegExMatches` 返回的对象应有两个属性：`fruits` 和 `veggies`。</span><span class="sxs-lookup"><span data-stu-id="b314e-1127">The object returned from `getRegExMatches` would have two properties: `fruits` and `veggies`.</span></span>
 
 ```json
 {
@@ -1643,23 +1654,23 @@ var contacts = Office.context.mailbox.item.getSelectedEntities().addresses;
 }
 ```
 
-<span data-ttu-id="3eb21-p169">如果在项目的正文属性上指定 `ItemHasRegularExpressionMatch` 规则，则正则表达式应进一步筛选正文，不应尝试返回该项目的整个正文。使用正则表达式（如 `.*`）获取项目的整个正文并不总是返回预期的结果。而是使用 [`Body.getAsync`](/javascript/api/outlook_1_7/office.body#getasync-coerciontype--options--callback-) 方法检索整个正文。</span><span class="sxs-lookup"><span data-stu-id="3eb21-p169">If you specify an `ItemHasRegularExpressionMatch` rule on the body property of an item, the regular expression should further filter the body and should not attempt to return the entire body of the item. Using a regular expression such as `.*` to obtain the entire body of an item does not always return the expected results. Instead, use the [`Body.getAsync`](/javascript/api/outlook_1_7/office.body#getasync-coerciontype--options--callback-) method to retrieve the entire body.</span></span>
+<span data-ttu-id="b314e-p169">如果在项目的正文属性上指定 `ItemHasRegularExpressionMatch` 规则，则正则表达式应进一步筛选正文，不应尝试返回该项目的整个正文。使用正则表达式（如 `.*`）获取项目的整个正文并不总是返回预期的结果。而是使用 [`Body.getAsync`](/javascript/api/outlook_1_7/office.body#getasync-coerciontype--options--callback-) 方法检索整个正文。</span><span class="sxs-lookup"><span data-stu-id="b314e-p169">If you specify an `ItemHasRegularExpressionMatch` rule on the body property of an item, the regular expression should further filter the body and should not attempt to return the entire body of the item. Using a regular expression such as `.*` to obtain the entire body of an item does not always return the expected results. Instead, use the [`Body.getAsync`](/javascript/api/outlook_1_7/office.body#getasync-coerciontype--options--callback-) method to retrieve the entire body.</span></span>
 
-##### <a name="requirements"></a><span data-ttu-id="3eb21-1130">Requirements</span><span class="sxs-lookup"><span data-stu-id="3eb21-1130">Requirements</span></span>
+##### <a name="requirements"></a><span data-ttu-id="b314e-1131">Requirements</span><span class="sxs-lookup"><span data-stu-id="b314e-1131">Requirements</span></span>
 
-|<span data-ttu-id="3eb21-1131">要求</span><span class="sxs-lookup"><span data-stu-id="3eb21-1131">Requirement</span></span>|<span data-ttu-id="3eb21-1132">值</span><span class="sxs-lookup"><span data-stu-id="3eb21-1132">Value</span></span>|
+|<span data-ttu-id="b314e-1132">要求</span><span class="sxs-lookup"><span data-stu-id="b314e-1132">Requirement</span></span>|<span data-ttu-id="b314e-1133">值</span><span class="sxs-lookup"><span data-stu-id="b314e-1133">Value</span></span>|
 |---|---|
-|[<span data-ttu-id="3eb21-1133">最低版本的邮箱要求集</span><span class="sxs-lookup"><span data-stu-id="3eb21-1133">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|<span data-ttu-id="3eb21-1134">1.6</span><span class="sxs-lookup"><span data-stu-id="3eb21-1134">-16</span></span>|
-|[<span data-ttu-id="3eb21-1135">最低权限级别</span><span class="sxs-lookup"><span data-stu-id="3eb21-1135">Minimum permission level</span></span>](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)|<span data-ttu-id="3eb21-1136">ReadItem</span><span class="sxs-lookup"><span data-stu-id="3eb21-1136">ReadItem</span></span>|
-|[<span data-ttu-id="3eb21-1137">适用的 Outlook 模式</span><span class="sxs-lookup"><span data-stu-id="3eb21-1137">Applicable Outlook mode</span></span>](https://docs.microsoft.com/outlook/add-ins/#extension-points)|<span data-ttu-id="3eb21-1138">阅读</span><span class="sxs-lookup"><span data-stu-id="3eb21-1138">Read</span></span>|
+|[<span data-ttu-id="b314e-1134">最低版本的邮箱要求集</span><span class="sxs-lookup"><span data-stu-id="b314e-1134">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|<span data-ttu-id="b314e-1135">1.6</span><span class="sxs-lookup"><span data-stu-id="b314e-1135">1.6</span></span>|
+|[<span data-ttu-id="b314e-1136">最低权限级别</span><span class="sxs-lookup"><span data-stu-id="b314e-1136">Minimum permission level</span></span>](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)|<span data-ttu-id="b314e-1137">ReadItem</span><span class="sxs-lookup"><span data-stu-id="b314e-1137">ReadItem</span></span>|
+|[<span data-ttu-id="b314e-1138">适用的 Outlook 模式</span><span class="sxs-lookup"><span data-stu-id="b314e-1138">Applicable Outlook mode</span></span>](https://docs.microsoft.com/outlook/add-ins/#extension-points)|<span data-ttu-id="b314e-1139">阅读</span><span class="sxs-lookup"><span data-stu-id="b314e-1139">Read</span></span>|
 
-##### <a name="returns"></a><span data-ttu-id="3eb21-1139">返回：</span><span class="sxs-lookup"><span data-stu-id="3eb21-1139">Returns:</span></span>
+##### <a name="returns"></a><span data-ttu-id="b314e-1140">返回：</span><span class="sxs-lookup"><span data-stu-id="b314e-1140">Returns:</span></span>
 
-<span data-ttu-id="3eb21-p170">一个包含匹配在清单 XML 文件中定义的正则表达式的字符串数组的对象。每个数组的名称等于匹配 `ItemHasRegularExpressionMatch` 规则的 `RegExName` 属性或匹配 `ItemHasKnownEntity` 规则的 `FilterName` 属性的相应值。</span><span class="sxs-lookup"><span data-stu-id="3eb21-p170">An object that contains arrays of strings that match the regular expressions defined in the manifest XML file. The name of each array is equal to the corresponding value of the `RegExName` attribute of the matching `ItemHasRegularExpressionMatch` rule or the `FilterName` attribute of the matching `ItemHasKnownEntity` rule.</span></span>
+<span data-ttu-id="b314e-p170">一个包含匹配在清单 XML 文件中定义的正则表达式的字符串数组的对象。每个数组的名称等于匹配 `ItemHasRegularExpressionMatch` 规则的 `RegExName` 属性或匹配 `ItemHasKnownEntity` 规则的 `FilterName` 属性的相应值。</span><span class="sxs-lookup"><span data-stu-id="b314e-p170">An object that contains arrays of strings that match the regular expressions defined in the manifest XML file. The name of each array is equal to the corresponding value of the `RegExName` attribute of the matching `ItemHasRegularExpressionMatch` rule or the `FilterName` attribute of the matching `ItemHasKnownEntity` rule.</span></span>
 
-##### <a name="example"></a><span data-ttu-id="3eb21-1142">示例</span><span class="sxs-lookup"><span data-stu-id="3eb21-1142">Example</span></span>
+##### <a name="example"></a><span data-ttu-id="b314e-1143">示例</span><span class="sxs-lookup"><span data-stu-id="b314e-1143">Example</span></span>
 
-<span data-ttu-id="3eb21-1143">以下示例显示了如何访问正则表达式规则元素 `fruits` 和 `veggies` 的匹配项的数组，这些元素在清单中指定。</span><span class="sxs-lookup"><span data-stu-id="3eb21-1143">The following example shows how to access the array of matches for the regular expression rule elements `fruits` and `veggies`, which are specified in the manifest.</span></span>
+<span data-ttu-id="b314e-1144">以下示例显示了如何访问正则表达式规则元素 `fruits` 和 `veggies` 的匹配项的数组，这些元素在清单中指定。</span><span class="sxs-lookup"><span data-stu-id="b314e-1144">The following example shows how to access the array of matches for the regular expression rule elements `fruits` and `veggies`, which are specified in the manifest.</span></span>
 
 ```js
 var selectedMatches = Office.context.mailbox.item.getSelectedRegExMatches();
@@ -1667,30 +1678,30 @@ var fruits = selectedMatches.fruits;
 var veggies = selectedMatches.veggies;
 ```
 
-####  <a name="loadcustompropertiesasynccallback-usercontext"></a><span data-ttu-id="3eb21-1144">loadCustomPropertiesAsync(callback, [userContext])</span><span class="sxs-lookup"><span data-stu-id="3eb21-1144">loadCustomPropertiesAsync(callback, [userContext])</span></span>
+####  <a name="loadcustompropertiesasynccallback-usercontext"></a><span data-ttu-id="b314e-1145">loadCustomPropertiesAsync(callback, [userContext])</span><span class="sxs-lookup"><span data-stu-id="b314e-1145">loadCustomPropertiesAsync(callback, [userContext])</span></span>
 
-<span data-ttu-id="3eb21-1145">异步加载所选项目上此外接程序的自定义属性。</span><span class="sxs-lookup"><span data-stu-id="3eb21-1145">Asynchronously loads custom properties for this add-in on the selected item.</span></span>
+<span data-ttu-id="b314e-1146">异步加载所选项目上此外接程序的自定义属性。</span><span class="sxs-lookup"><span data-stu-id="b314e-1146">Asynchronously loads custom properties for this add-in on the selected item.</span></span>
 
-<span data-ttu-id="3eb21-p171">自定义属性基于每个应用、每个项目存储为键/值对。此方法在回调中返回 `CustomProperties` 对象，该回调提供访问特定于当前项目和当前外接程序的自定义属性的方法。自定义属性未在项目上加密，因此这不应用作安全存储。</span><span class="sxs-lookup"><span data-stu-id="3eb21-p171">Custom properties are stored as key/value pairs on a per-app, per-item basis. This method returns a `CustomProperties` object in the callback, which provides methods to access the custom properties specific to the current item and the current add-in. Custom properties are not encrypted on the item, so this should not be used as secure storage.</span></span>
+<span data-ttu-id="b314e-p171">自定义属性基于每个应用、每个项目存储为键/值对。此方法在回调中返回 `CustomProperties` 对象，该回调提供访问特定于当前项目和当前外接程序的自定义属性的方法。自定义属性未在项目上加密，因此这不应用作安全存储。</span><span class="sxs-lookup"><span data-stu-id="b314e-p171">Custom properties are stored as key/value pairs on a per-app, per-item basis. This method returns a `CustomProperties` object in the callback, which provides methods to access the custom properties specific to the current item and the current add-in. Custom properties are not encrypted on the item, so this should not be used as secure storage.</span></span>
 
-##### <a name="parameters"></a><span data-ttu-id="3eb21-1149">参数：</span><span class="sxs-lookup"><span data-stu-id="3eb21-1149">Parameters:</span></span>
+##### <a name="parameters"></a><span data-ttu-id="b314e-1150">参数：</span><span class="sxs-lookup"><span data-stu-id="b314e-1150">Parameters:</span></span>
 
-|<span data-ttu-id="3eb21-1150">名称</span><span class="sxs-lookup"><span data-stu-id="3eb21-1150">Name</span></span>|<span data-ttu-id="3eb21-1151">类型</span><span class="sxs-lookup"><span data-stu-id="3eb21-1151">Type</span></span>|<span data-ttu-id="3eb21-1152">属性</span><span class="sxs-lookup"><span data-stu-id="3eb21-1152">Attributes</span></span>|<span data-ttu-id="3eb21-1153">说明</span><span class="sxs-lookup"><span data-stu-id="3eb21-1153">Description</span></span>|
+|<span data-ttu-id="b314e-1151">名称</span><span class="sxs-lookup"><span data-stu-id="b314e-1151">Name</span></span>|<span data-ttu-id="b314e-1152">类型</span><span class="sxs-lookup"><span data-stu-id="b314e-1152">Type</span></span>|<span data-ttu-id="b314e-1153">属性</span><span class="sxs-lookup"><span data-stu-id="b314e-1153">Attributes</span></span>|<span data-ttu-id="b314e-1154">说明</span><span class="sxs-lookup"><span data-stu-id="b314e-1154">Description</span></span>|
 |---|---|---|---|
-|`callback`|<span data-ttu-id="3eb21-1154">函数</span><span class="sxs-lookup"><span data-stu-id="3eb21-1154">function</span></span>||<span data-ttu-id="3eb21-1155">方法完成后，使用单个参数 `asyncResult`（一个 [`AsyncResult`](/javascript/api/office/office.asyncresult) 对象）调用在 `callback` 参数中传递的函数。</span><span class="sxs-lookup"><span data-stu-id="3eb21-1155">When the method completes, the function passed in the `callback` parameter is called with a single parameter, `asyncResult`, which is an [`AsyncResult`](/javascript/api/office/office.asyncresult) object.</span></span><br/><br/><span data-ttu-id="3eb21-1156">自定义属性作为 `asyncResult.value` 属性中的 [`CustomProperties`](/javascript/api/outlook_1_7/office.customproperties) 对象提供。</span><span class="sxs-lookup"><span data-stu-id="3eb21-1156">The custom properties are provided as a [`CustomProperties`](/javascript/api/outlook_1_7/office.customproperties) object in the `asyncResult.value` property.</span></span> <span data-ttu-id="3eb21-1157">此对象可用于获取、设置以及从项目中删除自定义属性，并将自定义属性集的更改重新保存到服务器。</span><span class="sxs-lookup"><span data-stu-id="3eb21-1157">The custom properties are provided as a CustomProperties object in the asyncResult.value property. This object can be used to get, set, and remove custom properties from the item and save changes to the custom property set back to the server.</span></span>|
-|`userContext`|<span data-ttu-id="3eb21-1158">对象</span><span class="sxs-lookup"><span data-stu-id="3eb21-1158">Object</span></span>|<span data-ttu-id="3eb21-1159">&lt;可选&gt;</span><span class="sxs-lookup"><span data-stu-id="3eb21-1159">&lt;optional&gt;</span></span>|<span data-ttu-id="3eb21-1160">开发人员可以提供他们想要在回调函数中访问的任何对象。</span><span class="sxs-lookup"><span data-stu-id="3eb21-1160">Developers can provide any object they wish to access in the callback method.</span></span> <span data-ttu-id="3eb21-1161">此对象可以通过回调函数中的 `asyncResult.asyncContext` 属性进行访问。</span><span class="sxs-lookup"><span data-stu-id="3eb21-1161">This object can be accessed by the `asyncResult.asyncContext` property in the callback function.|</span></span>|
+|`callback`|<span data-ttu-id="b314e-1155">函数</span><span class="sxs-lookup"><span data-stu-id="b314e-1155">function</span></span>||<span data-ttu-id="b314e-1156">方法完成后，使用单个参数 `asyncResult`（一个 [`AsyncResult`](/javascript/api/office/office.asyncresult) 对象）调用在 `callback` 参数中传递的函数。</span><span class="sxs-lookup"><span data-stu-id="b314e-1156">When the method completes, the function passed in the `callback` parameter is called with a single parameter, `asyncResult`, which is an [`AsyncResult`](/javascript/api/office/office.asyncresult) object.</span></span><br/><br/><span data-ttu-id="b314e-1157">自定义属性作为 `asyncResult.value` 属性中的 [`CustomProperties`](/javascript/api/outlook_1_7/office.customproperties) 对象提供。</span><span class="sxs-lookup"><span data-stu-id="b314e-1157">The custom properties are provided as a [`CustomProperties`](/javascript/api/outlook_1_7/office.customproperties) object in the `asyncResult.value` property.</span></span> <span data-ttu-id="b314e-1158">此对象可用于获取、设置以及从项目中删除自定义属性，并将自定义属性集的更改重新保存到服务器。</span><span class="sxs-lookup"><span data-stu-id="b314e-1158">This object can be used to get, set, and remove custom properties from the item and save changes to the custom property set back to the server.</span></span>|
+|`userContext`|<span data-ttu-id="b314e-1159">对象</span><span class="sxs-lookup"><span data-stu-id="b314e-1159">Object</span></span>|<span data-ttu-id="b314e-1160">&lt;可选&gt;</span><span class="sxs-lookup"><span data-stu-id="b314e-1160">&lt;optional&gt;</span></span>|<span data-ttu-id="b314e-1161">开发人员可以提供他们想要在回调函数中访问的任何对象。</span><span class="sxs-lookup"><span data-stu-id="b314e-1161">Developers can provide any object they wish to access in the callback function.</span></span> <span data-ttu-id="b314e-1162">此对象可以通过回调函数中的 `asyncResult.asyncContext` 属性进行访问。</span><span class="sxs-lookup"><span data-stu-id="b314e-1162">This object can be accessed by the `asyncResult.asyncContext` property in the callback function.</span></span>|
 
-##### <a name="requirements"></a><span data-ttu-id="3eb21-1162">要求</span><span class="sxs-lookup"><span data-stu-id="3eb21-1162">Requirements</span></span>
+##### <a name="requirements"></a><span data-ttu-id="b314e-1163">要求</span><span class="sxs-lookup"><span data-stu-id="b314e-1163">Requirements</span></span>
 
-|<span data-ttu-id="3eb21-1163">要求</span><span class="sxs-lookup"><span data-stu-id="3eb21-1163">Requirement</span></span>|<span data-ttu-id="3eb21-1164">值</span><span class="sxs-lookup"><span data-stu-id="3eb21-1164">Value</span></span>|
+|<span data-ttu-id="b314e-1164">要求</span><span class="sxs-lookup"><span data-stu-id="b314e-1164">Requirement</span></span>|<span data-ttu-id="b314e-1165">值</span><span class="sxs-lookup"><span data-stu-id="b314e-1165">Value</span></span>|
 |---|---|
-|[<span data-ttu-id="3eb21-1165">最低版本的邮箱要求集</span><span class="sxs-lookup"><span data-stu-id="3eb21-1165">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|<span data-ttu-id="3eb21-1166">1.0</span><span class="sxs-lookup"><span data-stu-id="3eb21-1166">1.0</span></span>|
-|[<span data-ttu-id="3eb21-1167">最低权限级别</span><span class="sxs-lookup"><span data-stu-id="3eb21-1167">Minimum permission level</span></span>](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)|<span data-ttu-id="3eb21-1168">ReadItem</span><span class="sxs-lookup"><span data-stu-id="3eb21-1168">ReadItem</span></span>|
-|[<span data-ttu-id="3eb21-1169">适用的 Outlook 模式</span><span class="sxs-lookup"><span data-stu-id="3eb21-1169">Applicable Outlook mode</span></span>](https://docs.microsoft.com/outlook/add-ins/#extension-points)|<span data-ttu-id="3eb21-1170">撰写或阅读</span><span class="sxs-lookup"><span data-stu-id="3eb21-1170">Compose or read</span></span>|
+|[<span data-ttu-id="b314e-1166">最低版本的邮箱要求集</span><span class="sxs-lookup"><span data-stu-id="b314e-1166">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|<span data-ttu-id="b314e-1167">1.0</span><span class="sxs-lookup"><span data-stu-id="b314e-1167">1.0</span></span>|
+|[<span data-ttu-id="b314e-1168">最低权限级别</span><span class="sxs-lookup"><span data-stu-id="b314e-1168">Minimum permission level</span></span>](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)|<span data-ttu-id="b314e-1169">ReadItem</span><span class="sxs-lookup"><span data-stu-id="b314e-1169">ReadItem</span></span>|
+|[<span data-ttu-id="b314e-1170">适用的 Outlook 模式</span><span class="sxs-lookup"><span data-stu-id="b314e-1170">Applicable Outlook mode</span></span>](https://docs.microsoft.com/outlook/add-ins/#extension-points)|<span data-ttu-id="b314e-1171">撰写或阅读</span><span class="sxs-lookup"><span data-stu-id="b314e-1171">Compose or read</span></span>|
 
-##### <a name="example"></a><span data-ttu-id="3eb21-1171">示例</span><span class="sxs-lookup"><span data-stu-id="3eb21-1171">Example</span></span>
+##### <a name="example"></a><span data-ttu-id="b314e-1172">示例</span><span class="sxs-lookup"><span data-stu-id="b314e-1172">Example</span></span>
 
-<span data-ttu-id="3eb21-p174">以下代码示例显示了如何使用 `loadCustomPropertiesAsync` 方法异步加载特定于当前项目的自定义属性。该示例还显示了如何使用 `CustomProperties.saveAsync` 方法将这些属性重新保存到服务器。加载自定义属性后，该代码示例将使用 `CustomProperties.get` 方法读取自定义属性 `myProp`，使用 `CustomProperties.set` 方法写入自定义属性 `otherProp`，最后调用 `saveAsync` 方法保存这些自定义属性。</span><span class="sxs-lookup"><span data-stu-id="3eb21-p174">The following code example shows how to use the `loadCustomPropertiesAsync` method to asynchronously load custom properties that are specific to the current item. The example also shows how to use the `CustomProperties.saveAsync` method to save these properties back to the server. After loading the custom properties, the code sample uses the `CustomProperties.get` method to read the custom property `myProp`, the `CustomProperties.set` method to write the custom property `otherProp`, and then finally calls the `saveAsync` method to save the custom properties.</span></span>
+<span data-ttu-id="b314e-p174">以下代码示例显示了如何使用 `loadCustomPropertiesAsync` 方法异步加载特定于当前项目的自定义属性。该示例还显示了如何使用 `CustomProperties.saveAsync` 方法将这些属性重新保存到服务器。加载自定义属性后，该代码示例将使用 `CustomProperties.get` 方法读取自定义属性 `myProp`，使用 `CustomProperties.set` 方法写入自定义属性 `otherProp`，最后调用 `saveAsync` 方法保存这些自定义属性。</span><span class="sxs-lookup"><span data-stu-id="b314e-p174">The following code example shows how to use the `loadCustomPropertiesAsync` method to asynchronously load custom properties that are specific to the current item. The example also shows how to use the `CustomProperties.saveAsync` method to save these properties back to the server. After loading the custom properties, the code sample uses the `CustomProperties.get` method to read the custom property `myProp`, the `CustomProperties.set` method to write the custom property `otherProp`, and then finally calls the `saveAsync` method to save the custom properties.</span></span>
 
 ```js
 // The initialize function is required for all add-ins.
@@ -1715,38 +1726,38 @@ function saveCallback(asyncResult) {
 }
 ```
 
-####  <a name="removeattachmentasyncattachmentid-options-callback"></a><span data-ttu-id="3eb21-1175">removeAttachmentAsync(attachmentId, [options], [callback])</span><span class="sxs-lookup"><span data-stu-id="3eb21-1175">removeAttachmentAsync(attachmentId, [options], [callback])</span></span>
+####  <a name="removeattachmentasyncattachmentid-options-callback"></a><span data-ttu-id="b314e-1176">removeAttachmentAsync(attachmentId, [options], [callback])</span><span class="sxs-lookup"><span data-stu-id="b314e-1176">removeAttachmentAsync(attachmentId, [options], [callback])</span></span>
 
-<span data-ttu-id="3eb21-1176">将附件从邮件或约会中删除。</span><span class="sxs-lookup"><span data-stu-id="3eb21-1176">Removes an attachment from a message or appointment.</span></span>
+<span data-ttu-id="b314e-1177">将附件从邮件或约会中删除。</span><span class="sxs-lookup"><span data-stu-id="b314e-1177">Removes an attachment from a message or appointment.</span></span>
 
-<span data-ttu-id="3eb21-p175">`removeAttachmentAsync` 方法删除项目中带指定标识符的附件。最佳做法是，仅当同一个邮件应用程序在同一会话中添加了一个附件时，你才应使用该附件标识符来删除该附件。在 Outlook Web App 和适用于设备的 OWA 中，附件标识符只在同一个会话中才有效。当用户关闭应用程序，或者如果用户开始在内嵌窗体中撰写，并在随后弹出的内嵌窗体中继续在单独的窗口撰写时，会话即结束。</span><span class="sxs-lookup"><span data-stu-id="3eb21-p175">The `removeAttachmentAsync` method removes the attachment with the specified identifier from the item. As a best practice, you should use the attachment identifier to remove an attachment only if the same mail app has added that attachment in the same session. In Outlook Web App and OWA for Devices, the attachment identifier is valid only within the same session. A session is over when the user closes the app, or if the user starts composing in an inline form and subsequently pops out the inline form to continue in a separate window.</span></span>
+<span data-ttu-id="b314e-p175">`removeAttachmentAsync` 方法删除项目中带指定标识符的附件。最佳做法是，仅当同一个邮件应用程序在同一会话中添加了一个附件时，你才应使用该附件标识符来删除该附件。在 Outlook Web App 和适用于设备的 OWA 中，附件标识符只在同一个会话中才有效。当用户关闭应用程序，或者如果用户开始在内嵌窗体中撰写，并在随后弹出的内嵌窗体中继续在单独的窗口撰写时，会话即结束。</span><span class="sxs-lookup"><span data-stu-id="b314e-p175">The `removeAttachmentAsync` method removes the attachment with the specified identifier from the item. As a best practice, you should use the attachment identifier to remove an attachment only if the same mail app has added that attachment in the same session. In Outlook Web App and OWA for Devices, the attachment identifier is valid only within the same session. A session is over when the user closes the app, or if the user starts composing in an inline form and subsequently pops out the inline form to continue in a separate window.</span></span>
 
-##### <a name="parameters"></a><span data-ttu-id="3eb21-1181">参数：</span><span class="sxs-lookup"><span data-stu-id="3eb21-1181">Parameters:</span></span>
+##### <a name="parameters"></a><span data-ttu-id="b314e-1182">参数：</span><span class="sxs-lookup"><span data-stu-id="b314e-1182">Parameters:</span></span>
 
-|<span data-ttu-id="3eb21-1182">名称</span><span class="sxs-lookup"><span data-stu-id="3eb21-1182">Name</span></span>|<span data-ttu-id="3eb21-1183">类型</span><span class="sxs-lookup"><span data-stu-id="3eb21-1183">Type</span></span>|<span data-ttu-id="3eb21-1184">属性</span><span class="sxs-lookup"><span data-stu-id="3eb21-1184">Attributes</span></span>|<span data-ttu-id="3eb21-1185">说明</span><span class="sxs-lookup"><span data-stu-id="3eb21-1185">Description</span></span>|
+|<span data-ttu-id="b314e-1183">名称</span><span class="sxs-lookup"><span data-stu-id="b314e-1183">Name</span></span>|<span data-ttu-id="b314e-1184">类型</span><span class="sxs-lookup"><span data-stu-id="b314e-1184">Type</span></span>|<span data-ttu-id="b314e-1185">属性</span><span class="sxs-lookup"><span data-stu-id="b314e-1185">Attributes</span></span>|<span data-ttu-id="b314e-1186">说明</span><span class="sxs-lookup"><span data-stu-id="b314e-1186">Description</span></span>|
 |---|---|---|---|
-|`attachmentId`|<span data-ttu-id="3eb21-1186">字符串</span><span class="sxs-lookup"><span data-stu-id="3eb21-1186">String</span></span>||<span data-ttu-id="3eb21-p176">要删除的附件的标识符。字符串的最大长度为 100 个字符。</span><span class="sxs-lookup"><span data-stu-id="3eb21-p176">The identifier of the attachment to remove. The maximum length of the string is 100 characters.</span></span>|
-|`options`|<span data-ttu-id="3eb21-1189">Object</span><span class="sxs-lookup"><span data-stu-id="3eb21-1189">Object</span></span>|<span data-ttu-id="3eb21-1190">&lt;可选&gt;</span><span class="sxs-lookup"><span data-stu-id="3eb21-1190">&lt;optional&gt;</span></span>|<span data-ttu-id="3eb21-1191">包含一个或多个以下属性的对象文本。</span><span class="sxs-lookup"><span data-stu-id="3eb21-1191">An object literal that contains one or more of the following properties.</span></span>|
-|`options.asyncContext`|<span data-ttu-id="3eb21-1192">对象</span><span class="sxs-lookup"><span data-stu-id="3eb21-1192">Object</span></span>|<span data-ttu-id="3eb21-1193">&lt;可选&gt;</span><span class="sxs-lookup"><span data-stu-id="3eb21-1193">&lt;optional&gt;</span></span>|<span data-ttu-id="3eb21-1194">开发人员可以提供他们想要在回调方法中访问的任何对象。</span><span class="sxs-lookup"><span data-stu-id="3eb21-1194">Developers can provide any object they wish to access in the callback method.</span></span>|
-|`callback`|<span data-ttu-id="3eb21-1195">函数</span><span class="sxs-lookup"><span data-stu-id="3eb21-1195">function</span></span>|<span data-ttu-id="3eb21-1196">&lt;可选&gt;</span><span class="sxs-lookup"><span data-stu-id="3eb21-1196">&lt;optional&gt;</span></span>|<span data-ttu-id="3eb21-1197">方法完成后，使用单个参数 `asyncResult`（一个 [`AsyncResult`](/javascript/api/office/office.asyncresult) 对象）调用在 `callback` 参数中传递的函数。</span><span class="sxs-lookup"><span data-stu-id="3eb21-1197">When the method completes, the function passed in the `callback` parameter is called with a single parameter, `asyncResult`, which is an [`AsyncResult`](/javascript/api/office/office.asyncresult) object.</span></span> <br/><span data-ttu-id="3eb21-1198">如果删除附件失败，`asyncResult.error` 属性将包含一个说明失败原因的错误代码。</span><span class="sxs-lookup"><span data-stu-id="3eb21-1198">If removing the attachment fails, the `asyncResult.error` property will contain an error code with the reason for the failure.</span></span>|
+|`attachmentId`|<span data-ttu-id="b314e-1187">字符串</span><span class="sxs-lookup"><span data-stu-id="b314e-1187">String</span></span>||<span data-ttu-id="b314e-1188">要删除的附件的标识符。</span><span class="sxs-lookup"><span data-stu-id="b314e-1188">The identifier of the attachment to remove.</span></span>|
+|`options`|<span data-ttu-id="b314e-1189">对象</span><span class="sxs-lookup"><span data-stu-id="b314e-1189">Object</span></span>|<span data-ttu-id="b314e-1190">&lt;可选&gt;</span><span class="sxs-lookup"><span data-stu-id="b314e-1190">&lt;optional&gt;</span></span>|<span data-ttu-id="b314e-1191">包含一个或多个以下属性的对象文本。</span><span class="sxs-lookup"><span data-stu-id="b314e-1191">An object literal that contains one or more of the following properties.</span></span>|
+|`options.asyncContext`|<span data-ttu-id="b314e-1192">对象</span><span class="sxs-lookup"><span data-stu-id="b314e-1192">Object</span></span>|<span data-ttu-id="b314e-1193">&lt;可选&gt;</span><span class="sxs-lookup"><span data-stu-id="b314e-1193">&lt;optional&gt;</span></span>|<span data-ttu-id="b314e-1194">开发人员可以提供他们想要在回调方法中访问的任何对象。</span><span class="sxs-lookup"><span data-stu-id="b314e-1194">Developers can provide any object they wish to access in the callback method.</span></span>|
+|`callback`|<span data-ttu-id="b314e-1195">函数</span><span class="sxs-lookup"><span data-stu-id="b314e-1195">function</span></span>|<span data-ttu-id="b314e-1196">&lt;可选&gt;</span><span class="sxs-lookup"><span data-stu-id="b314e-1196">&lt;optional&gt;</span></span>|<span data-ttu-id="b314e-1197">方法完成后，使用单个参数 `asyncResult`（一个 [`AsyncResult`](/javascript/api/office/office.asyncresult) 对象）调用在 `callback` 参数中传递的函数。</span><span class="sxs-lookup"><span data-stu-id="b314e-1197">When the method completes, the function passed in the `callback` parameter is called with a single parameter, `asyncResult`, which is an [`AsyncResult`](/javascript/api/office/office.asyncresult) object.</span></span> <br/><span data-ttu-id="b314e-1198">如果删除附件失败，`asyncResult.error` 属性将包含一个说明失败原因的错误代码。</span><span class="sxs-lookup"><span data-stu-id="b314e-1198">If removing the attachment fails, the `asyncResult.error` property will contain an error code with the reason for the failure.</span></span>|
 
-##### <a name="errors"></a><span data-ttu-id="3eb21-1199">错误</span><span class="sxs-lookup"><span data-stu-id="3eb21-1199">Errors</span></span>
+##### <a name="errors"></a><span data-ttu-id="b314e-1199">错误</span><span class="sxs-lookup"><span data-stu-id="b314e-1199">Errors</span></span>
 
-|<span data-ttu-id="3eb21-1200">错误代码</span><span class="sxs-lookup"><span data-stu-id="3eb21-1200">Error code</span></span>|<span data-ttu-id="3eb21-1201">说明</span><span class="sxs-lookup"><span data-stu-id="3eb21-1201">Description</span></span>|
+|<span data-ttu-id="b314e-1200">错误代码</span><span class="sxs-lookup"><span data-stu-id="b314e-1200">Error code</span></span>|<span data-ttu-id="b314e-1201">说明</span><span class="sxs-lookup"><span data-stu-id="b314e-1201">Description</span></span>|
 |------------|-------------|
-|`InvalidAttachmentId`|<span data-ttu-id="3eb21-1202">附件标识符不存在。</span><span class="sxs-lookup"><span data-stu-id="3eb21-1202">The attachment identifier does not exist.</span></span>|
+|`InvalidAttachmentId`|<span data-ttu-id="b314e-1202">附件标识符不存在。</span><span class="sxs-lookup"><span data-stu-id="b314e-1202">The attachment identifier does not exist.</span></span>|
 
-##### <a name="requirements"></a><span data-ttu-id="3eb21-1203">要求</span><span class="sxs-lookup"><span data-stu-id="3eb21-1203">Requirements</span></span>
+##### <a name="requirements"></a><span data-ttu-id="b314e-1203">要求</span><span class="sxs-lookup"><span data-stu-id="b314e-1203">Requirements</span></span>
 
-|<span data-ttu-id="3eb21-1204">要求</span><span class="sxs-lookup"><span data-stu-id="3eb21-1204">Requirement</span></span>|<span data-ttu-id="3eb21-1205">值</span><span class="sxs-lookup"><span data-stu-id="3eb21-1205">Value</span></span>|
+|<span data-ttu-id="b314e-1204">要求</span><span class="sxs-lookup"><span data-stu-id="b314e-1204">Requirement</span></span>|<span data-ttu-id="b314e-1205">值</span><span class="sxs-lookup"><span data-stu-id="b314e-1205">Value</span></span>|
 |---|---|
-|[<span data-ttu-id="3eb21-1206">最低版本的邮箱要求集</span><span class="sxs-lookup"><span data-stu-id="3eb21-1206">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|<span data-ttu-id="3eb21-1207">1.1</span><span class="sxs-lookup"><span data-stu-id="3eb21-1207">1.1</span></span>|
-|[<span data-ttu-id="3eb21-1208">最低权限级别</span><span class="sxs-lookup"><span data-stu-id="3eb21-1208">Minimum permission level</span></span>](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)|<span data-ttu-id="3eb21-1209">ReadWriteItem</span><span class="sxs-lookup"><span data-stu-id="3eb21-1209">ReadWriteItem</span></span>|
-|[<span data-ttu-id="3eb21-1210">适用的 Outlook 模式</span><span class="sxs-lookup"><span data-stu-id="3eb21-1210">Applicable Outlook mode</span></span>](https://docs.microsoft.com/outlook/add-ins/#extension-points)|<span data-ttu-id="3eb21-1211">撰写</span><span class="sxs-lookup"><span data-stu-id="3eb21-1211">Compose</span></span>|
+|[<span data-ttu-id="b314e-1206">最低版本的邮箱要求集</span><span class="sxs-lookup"><span data-stu-id="b314e-1206">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|<span data-ttu-id="b314e-1207">1.1</span><span class="sxs-lookup"><span data-stu-id="b314e-1207">1.1</span></span>|
+|[<span data-ttu-id="b314e-1208">最低权限级别</span><span class="sxs-lookup"><span data-stu-id="b314e-1208">Minimum permission level</span></span>](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)|<span data-ttu-id="b314e-1209">ReadWriteItem</span><span class="sxs-lookup"><span data-stu-id="b314e-1209">ReadWriteItem</span></span>|
+|[<span data-ttu-id="b314e-1210">适用的 Outlook 模式</span><span class="sxs-lookup"><span data-stu-id="b314e-1210">Applicable Outlook mode</span></span>](https://docs.microsoft.com/outlook/add-ins/#extension-points)|<span data-ttu-id="b314e-1211">撰写</span><span class="sxs-lookup"><span data-stu-id="b314e-1211">Compose</span></span>|
 
-##### <a name="example"></a><span data-ttu-id="3eb21-1212">示例</span><span class="sxs-lookup"><span data-stu-id="3eb21-1212">Example</span></span>
+##### <a name="example"></a><span data-ttu-id="b314e-1212">示例</span><span class="sxs-lookup"><span data-stu-id="b314e-1212">Example</span></span>
 
-<span data-ttu-id="3eb21-1213">以下代码删除包含标识符 '0' 的附件。</span><span class="sxs-lookup"><span data-stu-id="3eb21-1213">The following code removes an attachment with an identifier of '0'.</span></span>
+<span data-ttu-id="b314e-1213">以下代码删除包含标识符 '0' 的附件。</span><span class="sxs-lookup"><span data-stu-id="b314e-1213">The following code removes an attachment with an identifier of '0'.</span></span>
 
 ```js
 Office.context.mailbox.item.removeAttachmentAsync(
@@ -1759,83 +1770,77 @@ Office.context.mailbox.item.removeAttachmentAsync(
 );
 ```
 
-####  <a name="removehandlerasynceventtype-handler-options-callback"></a><span data-ttu-id="3eb21-1214">removeHandlerAsync (事件类型、处理程序、[选项]、[回调])</span><span class="sxs-lookup"><span data-stu-id="3eb21-1214">addHandlerAsync(eventType, handler, [options], [callback])</span></span>
+####  <a name="removehandlerasynceventtype-options-callback"></a><span data-ttu-id="b314e-1214">removeHandlerAsync(eventType, [options], [callback])</span><span class="sxs-lookup"><span data-stu-id="b314e-1214">removeHandlerAsync(eventType, [options], [callback])</span></span>
 
-<span data-ttu-id="3eb21-1215">删除支持事件的事件处理程序。</span><span class="sxs-lookup"><span data-stu-id="3eb21-1215">Removes an event handler for a</span></span>
+<span data-ttu-id="b314e-1215">删除受支持事件类型的事件处理程序。</span><span class="sxs-lookup"><span data-stu-id="b314e-1215">Removes the event handlers for a supported event type.</span></span>
 
-<span data-ttu-id="3eb21-1216">当前，支持的事件类型是 `Office.EventType.AppointmentTimeChanged`、`Office.EventType.RecipientsChanged` 和 `Office.EventType.RecurrenceChanged`</span><span class="sxs-lookup"><span data-stu-id="3eb21-1216">Currently the supported event types are `Office.EventType.AppointmentTimeChanged`, `Office.EventType.RecipientsChanged`, and `Office.EventType.RecurrenceChanged`</span></span>
+<span data-ttu-id="b314e-1216">当前，支持的事件类型是 `Office.EventType.AppointmentTimeChanged`、`Office.EventType.RecipientsChanged` 和 `Office.EventType.RecurrenceChanged`</span><span class="sxs-lookup"><span data-stu-id="b314e-1216">Currently the supported event types are `Office.EventType.AppointmentTimeChanged`, `Office.EventType.RecipientsChanged`, and `Office.EventType.RecurrenceChanged`</span></span>
 
-##### <a name="parameters"></a><span data-ttu-id="3eb21-1217">参数：</span><span class="sxs-lookup"><span data-stu-id="3eb21-1217">Parameters:</span></span>
+##### <a name="parameters"></a><span data-ttu-id="b314e-1217">参数：</span><span class="sxs-lookup"><span data-stu-id="b314e-1217">Parameters:</span></span>
 
-| <span data-ttu-id="3eb21-1218">名称</span><span class="sxs-lookup"><span data-stu-id="3eb21-1218">Name</span></span> | <span data-ttu-id="3eb21-1219">类型</span><span class="sxs-lookup"><span data-stu-id="3eb21-1219">Type</span></span> | <span data-ttu-id="3eb21-1220">属性</span><span class="sxs-lookup"><span data-stu-id="3eb21-1220">Attributes</span></span> | <span data-ttu-id="3eb21-1221">说明</span><span class="sxs-lookup"><span data-stu-id="3eb21-1221">Description</span></span> |
+| <span data-ttu-id="b314e-1218">名称</span><span class="sxs-lookup"><span data-stu-id="b314e-1218">Name</span></span> | <span data-ttu-id="b314e-1219">类型</span><span class="sxs-lookup"><span data-stu-id="b314e-1219">Type</span></span> | <span data-ttu-id="b314e-1220">属性</span><span class="sxs-lookup"><span data-stu-id="b314e-1220">Attributes</span></span> | <span data-ttu-id="b314e-1221">说明</span><span class="sxs-lookup"><span data-stu-id="b314e-1221">Description</span></span> |
 |---|---|---|---|
-| `eventType` | [<span data-ttu-id="3eb21-1222">Office.EventType</span><span class="sxs-lookup"><span data-stu-id="3eb21-1222">Office.EventType</span></span>](office.md#eventtype-string) || <span data-ttu-id="3eb21-1223">应调用处理程序的事件。</span><span class="sxs-lookup"><span data-stu-id="3eb21-1223">The event that should invoke the handler.</span></span> |
-| `handler` | <span data-ttu-id="3eb21-1224">函数</span><span class="sxs-lookup"><span data-stu-id="3eb21-1224">Function</span></span> || <span data-ttu-id="3eb21-p177">用于处理事件的函数。此函数必须接受一个参数，即对象文本。参数上的 `type` 属性将匹配传递给 `removeHandlerAsync` 的 `eventType` 参数。</span><span class="sxs-lookup"><span data-stu-id="3eb21-p177">The function to handle the event. The function must accept a single parameter, which is an object literal. The `type` property on the parameter will match the `eventType` parameter passed to `removeHandlerAsync`.</span></span> |
-| `options` | <span data-ttu-id="3eb21-1228">Object</span><span class="sxs-lookup"><span data-stu-id="3eb21-1228">Object</span></span> | <span data-ttu-id="3eb21-1229">&lt;可选&gt;</span><span class="sxs-lookup"><span data-stu-id="3eb21-1229">&lt;optional&gt;</span></span> | <span data-ttu-id="3eb21-1230">包含一个或多个以下属性的对象文本。</span><span class="sxs-lookup"><span data-stu-id="3eb21-1230">An object literal that contains one or more of the following properties.</span></span> |
-| `options.asyncContext` | <span data-ttu-id="3eb21-1231">对象</span><span class="sxs-lookup"><span data-stu-id="3eb21-1231">Object</span></span> | <span data-ttu-id="3eb21-1232">&lt;可选&gt;</span><span class="sxs-lookup"><span data-stu-id="3eb21-1232">&lt;optional&gt;</span></span> | <span data-ttu-id="3eb21-1233">开发人员可以提供他们想要在回调方法中访问的任何对象。</span><span class="sxs-lookup"><span data-stu-id="3eb21-1233">Developers can provide any object they wish to access in the callback method.</span></span> |
-| `callback` | <span data-ttu-id="3eb21-1234">函数</span><span class="sxs-lookup"><span data-stu-id="3eb21-1234">function</span></span>| <span data-ttu-id="3eb21-1235">&lt;可选&gt;</span><span class="sxs-lookup"><span data-stu-id="3eb21-1235">&lt;optional&gt;</span></span>|<span data-ttu-id="3eb21-1236">方法完成后，使用单个参数 `callback`（一个 [`asyncResult`](/javascript/api/office/office.asyncresult) 对象）调用在 `AsyncResult` 参数中传递的函数。</span><span class="sxs-lookup"><span data-stu-id="3eb21-1236">When the method completes, the function passed in the `callback` parameter is called with a single parameter, `asyncResult`, which is an [`AsyncResult`](/javascript/api/office/office.asyncresult) object.</span></span>|
+| `eventType` | [<span data-ttu-id="b314e-1222">Office.EventType</span><span class="sxs-lookup"><span data-stu-id="b314e-1222">Office.EventType</span></span>](office.md#eventtype-string) || <span data-ttu-id="b314e-1223">应调用处理程序的事件。</span><span class="sxs-lookup"><span data-stu-id="b314e-1223">The event that should invoke the handler.</span></span> |
+| `options` | <span data-ttu-id="b314e-1224">对象</span><span class="sxs-lookup"><span data-stu-id="b314e-1224">Object</span></span> | <span data-ttu-id="b314e-1225">&lt;可选&gt;</span><span class="sxs-lookup"><span data-stu-id="b314e-1225">&lt;optional&gt;</span></span> | <span data-ttu-id="b314e-1226">包含一个或多个以下属性的对象文本。</span><span class="sxs-lookup"><span data-stu-id="b314e-1226">An object literal that contains one or more of the following properties.</span></span> |
+| `options.asyncContext` | <span data-ttu-id="b314e-1227">对象</span><span class="sxs-lookup"><span data-stu-id="b314e-1227">Object</span></span> | <span data-ttu-id="b314e-1228">&lt;可选&gt;</span><span class="sxs-lookup"><span data-stu-id="b314e-1228">&lt;optional&gt;</span></span> | <span data-ttu-id="b314e-1229">开发人员可以提供他们想要在回调方法中访问的任何对象。</span><span class="sxs-lookup"><span data-stu-id="b314e-1229">Developers can provide any object they wish to access in the callback method.</span></span> |
+| `callback` | <span data-ttu-id="b314e-1230">函数</span><span class="sxs-lookup"><span data-stu-id="b314e-1230">function</span></span>| <span data-ttu-id="b314e-1231">&lt;可选&gt;</span><span class="sxs-lookup"><span data-stu-id="b314e-1231">&lt;optional&gt;</span></span>|<span data-ttu-id="b314e-1232">方法完成后，使用单个参数 `callback`（一个 [`asyncResult`](/javascript/api/office/office.asyncresult) 对象）调用在 `AsyncResult` 参数中传递的函数。</span><span class="sxs-lookup"><span data-stu-id="b314e-1232">When the method completes, the function passed in the `callback` parameter is called with a single parameter, `asyncResult`, which is an [`AsyncResult`](/javascript/api/office/office.asyncresult) object.</span></span>|
 
-##### <a name="requirements"></a><span data-ttu-id="3eb21-1237">Requirements</span><span class="sxs-lookup"><span data-stu-id="3eb21-1237">Requirements</span></span>
+##### <a name="requirements"></a><span data-ttu-id="b314e-1233">Requirements</span><span class="sxs-lookup"><span data-stu-id="b314e-1233">Requirements</span></span>
 
-|<span data-ttu-id="3eb21-1238">要求</span><span class="sxs-lookup"><span data-stu-id="3eb21-1238">Requirement</span></span>| <span data-ttu-id="3eb21-1239">值</span><span class="sxs-lookup"><span data-stu-id="3eb21-1239">Value</span></span>|
+|<span data-ttu-id="b314e-1234">要求</span><span class="sxs-lookup"><span data-stu-id="b314e-1234">Requirement</span></span>| <span data-ttu-id="b314e-1235">值</span><span class="sxs-lookup"><span data-stu-id="b314e-1235">Value</span></span>|
 |---|---|
-|[<span data-ttu-id="3eb21-1240">最低版本的邮箱要求集</span><span class="sxs-lookup"><span data-stu-id="3eb21-1240">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| <span data-ttu-id="3eb21-1241">1.7</span><span class="sxs-lookup"><span data-stu-id="3eb21-1241">-17</span></span> |
-|[<span data-ttu-id="3eb21-1242">最低权限级别</span><span class="sxs-lookup"><span data-stu-id="3eb21-1242">Minimum permission level</span></span>](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| <span data-ttu-id="3eb21-1243">ReadItem</span><span class="sxs-lookup"><span data-stu-id="3eb21-1243">ReadItem</span></span> |
-|[<span data-ttu-id="3eb21-1244">适用的 Outlook 模式</span><span class="sxs-lookup"><span data-stu-id="3eb21-1244">Applicable Outlook mode</span></span>](https://docs.microsoft.com/outlook/add-ins/#extension-points)| <span data-ttu-id="3eb21-1245">撰写或阅读</span><span class="sxs-lookup"><span data-stu-id="3eb21-1245">Compose or read</span></span> |
+|[<span data-ttu-id="b314e-1236">最低版本的邮箱要求集</span><span class="sxs-lookup"><span data-stu-id="b314e-1236">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| <span data-ttu-id="b314e-1237">1.7</span><span class="sxs-lookup"><span data-stu-id="b314e-1237">1.7</span></span> |
+|[<span data-ttu-id="b314e-1238">最低权限级别</span><span class="sxs-lookup"><span data-stu-id="b314e-1238">Minimum permission level</span></span>](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| <span data-ttu-id="b314e-1239">ReadItem</span><span class="sxs-lookup"><span data-stu-id="b314e-1239">ReadItem</span></span> |
+|[<span data-ttu-id="b314e-1240">适用的 Outlook 模式</span><span class="sxs-lookup"><span data-stu-id="b314e-1240">Applicable Outlook mode</span></span>](https://docs.microsoft.com/outlook/add-ins/#extension-points)| <span data-ttu-id="b314e-1241">撰写或阅读</span><span class="sxs-lookup"><span data-stu-id="b314e-1241">Compose or read</span></span> |
 
-##### <a name="example"></a><span data-ttu-id="3eb21-1246">示例</span><span class="sxs-lookup"><span data-stu-id="3eb21-1246">Example</span></span>
+##### <a name="example"></a><span data-ttu-id="b314e-1242">示例</span><span class="sxs-lookup"><span data-stu-id="b314e-1242">Example</span></span>
 
 ```js
 Office.initialize = function (reason) {
   $(document).ready(function () {
-    Office.context.mailbox.item.removeHandlerAsync(Office.EventType.RecurrenceChanged, loadNewItem, function (result) {
+    Office.context.mailbox.item.removeHandlerAsync(Office.EventType.RecurrenceChanged, function (result) {
       if (result.status === Office.AsyncResultStatus.Failed) {
         // Handle error
       }
     });
   });
 };
-
-function loadNewItem(eventArgs) {
-  // Load the properties of the newly selected item
-  loadProps(Office.context.mailbox.item);
-};
 ```
 
-####  <a name="saveasyncoptions-callback"></a><span data-ttu-id="3eb21-1247">saveAsync([options], callback)</span><span class="sxs-lookup"><span data-stu-id="3eb21-1247">saveAsync([options], callback)</span></span>
+####  <a name="saveasyncoptions-callback"></a><span data-ttu-id="b314e-1243">saveAsync([options], callback)</span><span class="sxs-lookup"><span data-stu-id="b314e-1243">saveAsync([options], callback)</span></span>
 
-<span data-ttu-id="3eb21-1248">异步保存项目。</span><span class="sxs-lookup"><span data-stu-id="3eb21-1248">Asynchronously saves an item.</span></span>
+<span data-ttu-id="b314e-1244">异步保存项目。</span><span class="sxs-lookup"><span data-stu-id="b314e-1244">Asynchronously saves an item.</span></span>
 
-<span data-ttu-id="3eb21-p178">调用时，此方法将当前邮件保存为草稿，并通过回调方法返回项目 ID。在 Outlook Web App 或 Outlook 联机模式下，该项目被保存到服务器中。在 Outlook 缓存模式下，该项目被保存到本地缓存中。</span><span class="sxs-lookup"><span data-stu-id="3eb21-p178">When invoked, this method saves the current message as a draft and returns the item id via the callback method. In Outlook Web App or Outlook in online mode, the item is saved to the server. In Outlook in cached mode, the item is saved to the local cache.</span></span>
-
-> [!NOTE]
-> <span data-ttu-id="3eb21-1252">如果加载项在撰写模式下对某个项目调用 `saveAsync` 来获得 `itemId`，以便与 EWS 或 REST API 一同使用，请注意，当 Outlook 处于高速缓存模式时，可能需要一段时间项目才能真正同步到服务器。</span><span class="sxs-lookup"><span data-stu-id="3eb21-1252">Note: If your add-in calls `saveAsync` on an item in compose mode in order to get an `itemId` to use with EWS or the REST API, be aware that when Outlook is in cached mode, it may take some time before the item is actually synced to the server. Until the item is synced, using the  will return an error.</span></span> <span data-ttu-id="3eb21-1253">在项目同步前，使用 `itemId` 将返回一个错误。</span><span class="sxs-lookup"><span data-stu-id="3eb21-1253">Until the item is synced, using the `itemId` will return an error.</span></span>
-
-<span data-ttu-id="3eb21-p180">由于约会没有草稿状态，如果以撰写模式在约会中调用 `saveAsync`，则该项将被保存为用户日历中的正常约会。对于之前未保存过的新约会，则不会发送邀请。保存现有约会将向添加或删除的与会者发送更新。</span><span class="sxs-lookup"><span data-stu-id="3eb21-p180">Since appointments have no draft state, if `saveAsync` is called on an appointment in compose mode, the item will be saved as a normal appointment on the user's calendar. For new appointments that have not been saved before, no invitation will be sent. Saving an existing appointment will send an update to added or removed attendees.</span></span>
+<span data-ttu-id="b314e-p176">调用时，此方法将当前邮件保存为草稿，并通过回调方法返回项目 ID。在 Outlook Web App 或 Outlook 联机模式下，该项目被保存到服务器中。在 Outlook 缓存模式下，该项目被保存到本地缓存中。</span><span class="sxs-lookup"><span data-stu-id="b314e-p176">When invoked, this method saves the current message as a draft and returns the item id via the callback method. In Outlook Web App or Outlook in online mode, the item is saved to the server. In Outlook in cached mode, the item is saved to the local cache.</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="3eb21-1257">以下客户端在撰写模式下对约会上的 `saveAsync` 具有不同的行为：</span><span class="sxs-lookup"><span data-stu-id="3eb21-1257">The following clients have different behavior for `saveAsync` on appointments in compose mode:</span></span>
+> <span data-ttu-id="b314e-1248">如果加载项在撰写模式下对某个项目调用 `saveAsync` 来获得 `itemId`，以便与 EWS 或 REST API 一同使用，请注意，当 Outlook 处于高速缓存模式时，可能需要一段时间项目才能真正同步到服务器。</span><span class="sxs-lookup"><span data-stu-id="b314e-1248">If your add-in calls `saveAsync` on an item in compose mode in order to get an `itemId` to use with EWS or the REST API, be aware that when Outlook is in cached mode, it may take some time before the item is actually synced to the server.</span></span> <span data-ttu-id="b314e-1249">在项目同步前，使用 `itemId` 将返回一个错误。</span><span class="sxs-lookup"><span data-stu-id="b314e-1249">Until the item is synced, using the `itemId` will return an error.</span></span>
+
+<span data-ttu-id="b314e-p178">由于约会没有草稿状态，如果以撰写模式在约会中调用 `saveAsync`，则该项将被保存为用户日历中的正常约会。对于之前未保存过的新约会，则不会发送邀请。保存现有约会将向添加或删除的与会者发送更新。</span><span class="sxs-lookup"><span data-stu-id="b314e-p178">Since appointments have no draft state, if `saveAsync` is called on an appointment in compose mode, the item will be saved as a normal appointment on the user's calendar. For new appointments that have not been saved before, no invitation will be sent. Saving an existing appointment will send an update to added or removed attendees.</span></span>
+
+> [!NOTE]
+> <span data-ttu-id="b314e-1253">以下客户端在撰写模式下对约会上的 `saveAsync` 具有不同的行为：</span><span class="sxs-lookup"><span data-stu-id="b314e-1253">The following clients have different behavior for `saveAsync` on appointments in compose mode:</span></span>
 >
-> - <span data-ttu-id="3eb21-1258">Mac Outlook 不支持在撰写模式下对会议执行 `saveAsync` 操作。</span><span class="sxs-lookup"><span data-stu-id="3eb21-1258">Note: Mac Outlook does not support `saveAsync` on a meeting in compose mode. Calling  on a meeting in Mac Outlook will return an error.</span></span> <span data-ttu-id="3eb21-1259">对 Mac Outlook 中的会议调用 `saveAsync` 将会返回一个错误。</span><span class="sxs-lookup"><span data-stu-id="3eb21-1259">Note: Mac Outlook does not support  on a meeting in compose mode. Calling `saveAsync` on a meeting in Mac Outlook will return an error.</span></span>
-> - <span data-ttu-id="3eb21-1260">撰写模式下在约会上调用 `saveAsync` 时，Outlook 网页版始终发送邀请或更新。</span><span class="sxs-lookup"><span data-stu-id="3eb21-1260">Outlook on the web always sends an invitation or update when `saveAsync` is called on an appointment in compose mode.</span></span>
+> - <span data-ttu-id="b314e-1254">Mac Outlook 不支持在撰写模式下对会议执行 `saveAsync` 操作。</span><span class="sxs-lookup"><span data-stu-id="b314e-1254">Mac Outlook does not support `saveAsync` on a meeting in compose mode.</span></span> <span data-ttu-id="b314e-1255">对 Mac Outlook 中的会议调用 `saveAsync` 将会返回一个错误。</span><span class="sxs-lookup"><span data-stu-id="b314e-1255">Calling `saveAsync` on a meeting in Mac Outlook will return an error.</span></span>
+> - <span data-ttu-id="b314e-1256">在撰写模式下的约会上调用 `saveAsync` 时，Outlook 网页版始终发送邀请或更新。</span><span class="sxs-lookup"><span data-stu-id="b314e-1256">Outlook on the web always sends an invitation or update when `saveAsync` is called on an appointment in compose mode.</span></span>
 
-##### <a name="parameters"></a><span data-ttu-id="3eb21-1261">参数：</span><span class="sxs-lookup"><span data-stu-id="3eb21-1261">Parameters:</span></span>
+##### <a name="parameters"></a><span data-ttu-id="b314e-1257">参数：</span><span class="sxs-lookup"><span data-stu-id="b314e-1257">Parameters:</span></span>
 
-|<span data-ttu-id="3eb21-1262">名称</span><span class="sxs-lookup"><span data-stu-id="3eb21-1262">Name</span></span>|<span data-ttu-id="3eb21-1263">类型</span><span class="sxs-lookup"><span data-stu-id="3eb21-1263">Type</span></span>|<span data-ttu-id="3eb21-1264">属性</span><span class="sxs-lookup"><span data-stu-id="3eb21-1264">Attributes</span></span>|<span data-ttu-id="3eb21-1265">说明</span><span class="sxs-lookup"><span data-stu-id="3eb21-1265">Description</span></span>|
+|<span data-ttu-id="b314e-1258">名称</span><span class="sxs-lookup"><span data-stu-id="b314e-1258">Name</span></span>|<span data-ttu-id="b314e-1259">类型</span><span class="sxs-lookup"><span data-stu-id="b314e-1259">Type</span></span>|<span data-ttu-id="b314e-1260">属性</span><span class="sxs-lookup"><span data-stu-id="b314e-1260">Attributes</span></span>|<span data-ttu-id="b314e-1261">说明</span><span class="sxs-lookup"><span data-stu-id="b314e-1261">Description</span></span>|
 |---|---|---|---|
-|`options`|<span data-ttu-id="3eb21-1266">Object</span><span class="sxs-lookup"><span data-stu-id="3eb21-1266">Object</span></span>|<span data-ttu-id="3eb21-1267">&lt;可选&gt;</span><span class="sxs-lookup"><span data-stu-id="3eb21-1267">&lt;optional&gt;</span></span>|<span data-ttu-id="3eb21-1268">包含一个或多个以下属性的对象文本。</span><span class="sxs-lookup"><span data-stu-id="3eb21-1268">An object literal that contains one or more of the following properties.</span></span>|
-|`options.asyncContext`|<span data-ttu-id="3eb21-1269">对象</span><span class="sxs-lookup"><span data-stu-id="3eb21-1269">Object</span></span>|<span data-ttu-id="3eb21-1270">&lt;可选&gt;</span><span class="sxs-lookup"><span data-stu-id="3eb21-1270">&lt;optional&gt;</span></span>|<span data-ttu-id="3eb21-1271">开发人员可以提供他们想要在回调方法中访问的任何对象。</span><span class="sxs-lookup"><span data-stu-id="3eb21-1271">Developers can provide any object they wish to access in the callback method.</span></span>|
-|`callback`|<span data-ttu-id="3eb21-1272">函数</span><span class="sxs-lookup"><span data-stu-id="3eb21-1272">function</span></span>||<span data-ttu-id="3eb21-1273">方法完成后，使用一个参数 `asyncResult`（[`AsyncResult`](/javascript/api/office/office.asyncresult) 对象）调用在 `callback` 参数中传递的函数。</span><span class="sxs-lookup"><span data-stu-id="3eb21-1273">When the method completes, the function passed in the `callback` parameter is called with a single parameter, `asyncResult`, which is an [`AsyncResult`](/javascript/api/office/office.asyncresult) object.</span></span><br/><br/><span data-ttu-id="3eb21-1274">如果成功，该项目标识符在 `asyncResult.value` 属性中提供。</span><span class="sxs-lookup"><span data-stu-id="3eb21-1274">On success, the item identifier is provided in the `asyncResult.value` property.|</span></span>|
+|`options`|<span data-ttu-id="b314e-1262">对象</span><span class="sxs-lookup"><span data-stu-id="b314e-1262">Object</span></span>|<span data-ttu-id="b314e-1263">&lt;可选&gt;</span><span class="sxs-lookup"><span data-stu-id="b314e-1263">&lt;optional&gt;</span></span>|<span data-ttu-id="b314e-1264">包含一个或多个以下属性的对象文本。</span><span class="sxs-lookup"><span data-stu-id="b314e-1264">An object literal that contains one or more of the following properties.</span></span>|
+|`options.asyncContext`|<span data-ttu-id="b314e-1265">对象</span><span class="sxs-lookup"><span data-stu-id="b314e-1265">Object</span></span>|<span data-ttu-id="b314e-1266">&lt;可选&gt;</span><span class="sxs-lookup"><span data-stu-id="b314e-1266">&lt;optional&gt;</span></span>|<span data-ttu-id="b314e-1267">开发人员可以提供他们想要在回调方法中访问的任何对象。</span><span class="sxs-lookup"><span data-stu-id="b314e-1267">Developers can provide any object they wish to access in the callback method.</span></span>|
+|`callback`|<span data-ttu-id="b314e-1268">函数</span><span class="sxs-lookup"><span data-stu-id="b314e-1268">function</span></span>||<span data-ttu-id="b314e-1269">方法完成后，使用单个参数 `asyncResult`（一个 [`AsyncResult`](/javascript/api/office/office.asyncresult) 对象）调用在 `callback` 参数中传递的函数。</span><span class="sxs-lookup"><span data-stu-id="b314e-1269">When the method completes, the function passed in the `callback` parameter is called with a single parameter, `asyncResult`, which is an [`AsyncResult`](/javascript/api/office/office.asyncresult) object.</span></span><br/><br/><span data-ttu-id="b314e-1270">如果成功，该项目标识符将在 `asyncResult.value` 属性中提供。</span><span class="sxs-lookup"><span data-stu-id="b314e-1270">On success, the item identifier is provided in the `asyncResult.value` property.</span></span>|
 
-##### <a name="requirements"></a><span data-ttu-id="3eb21-1275">要求</span><span class="sxs-lookup"><span data-stu-id="3eb21-1275">Requirements</span></span>
+##### <a name="requirements"></a><span data-ttu-id="b314e-1271">要求</span><span class="sxs-lookup"><span data-stu-id="b314e-1271">Requirements</span></span>
 
-|<span data-ttu-id="3eb21-1276">要求</span><span class="sxs-lookup"><span data-stu-id="3eb21-1276">Requirement</span></span>|<span data-ttu-id="3eb21-1277">值</span><span class="sxs-lookup"><span data-stu-id="3eb21-1277">Value</span></span>|
+|<span data-ttu-id="b314e-1272">要求</span><span class="sxs-lookup"><span data-stu-id="b314e-1272">Requirement</span></span>|<span data-ttu-id="b314e-1273">值</span><span class="sxs-lookup"><span data-stu-id="b314e-1273">Value</span></span>|
 |---|---|
-|[<span data-ttu-id="3eb21-1278">最低版本的邮箱要求集</span><span class="sxs-lookup"><span data-stu-id="3eb21-1278">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|<span data-ttu-id="3eb21-1279">1.3</span><span class="sxs-lookup"><span data-stu-id="3eb21-1279">1.3</span></span>|
-|[<span data-ttu-id="3eb21-1280">最低权限级别</span><span class="sxs-lookup"><span data-stu-id="3eb21-1280">Minimum permission level</span></span>](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)|<span data-ttu-id="3eb21-1281">ReadWriteItem</span><span class="sxs-lookup"><span data-stu-id="3eb21-1281">ReadWriteItem</span></span>|
-|[<span data-ttu-id="3eb21-1282">适用的 Outlook 模式</span><span class="sxs-lookup"><span data-stu-id="3eb21-1282">Applicable Outlook mode</span></span>](https://docs.microsoft.com/outlook/add-ins/#extension-points)|<span data-ttu-id="3eb21-1283">撰写</span><span class="sxs-lookup"><span data-stu-id="3eb21-1283">Compose</span></span>|
+|[<span data-ttu-id="b314e-1274">最低版本的邮箱要求集</span><span class="sxs-lookup"><span data-stu-id="b314e-1274">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|<span data-ttu-id="b314e-1275">1.3</span><span class="sxs-lookup"><span data-stu-id="b314e-1275">1.3</span></span>|
+|[<span data-ttu-id="b314e-1276">最低权限级别</span><span class="sxs-lookup"><span data-stu-id="b314e-1276">Minimum permission level</span></span>](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)|<span data-ttu-id="b314e-1277">ReadWriteItem</span><span class="sxs-lookup"><span data-stu-id="b314e-1277">ReadWriteItem</span></span>|
+|[<span data-ttu-id="b314e-1278">适用的 Outlook 模式</span><span class="sxs-lookup"><span data-stu-id="b314e-1278">Applicable Outlook mode</span></span>](https://docs.microsoft.com/outlook/add-ins/#extension-points)|<span data-ttu-id="b314e-1279">撰写</span><span class="sxs-lookup"><span data-stu-id="b314e-1279">Compose</span></span>|
 
-##### <a name="examples"></a><span data-ttu-id="3eb21-1284">示例</span><span class="sxs-lookup"><span data-stu-id="3eb21-1284">Examples</span></span>
+##### <a name="examples"></a><span data-ttu-id="b314e-1280">示例</span><span class="sxs-lookup"><span data-stu-id="b314e-1280">Examples</span></span>
 
 ```js
 Office.context.mailbox.item.saveAsync(
@@ -1844,7 +1849,7 @@ Office.context.mailbox.item.saveAsync(
   });
 ```
 
-<span data-ttu-id="3eb21-p182">下面是传递给回调函数的 `result` 参数的示例。`value` 属性包含的项目的项目 ID。</span><span class="sxs-lookup"><span data-stu-id="3eb21-p182">The following is an example of the `result` parameter passed to the callback function. The `value` property contains the item ID of the item.</span></span>
+<span data-ttu-id="b314e-p180">下面是传递给回调函数的 `result` 参数的示例。`value` 属性包含的项目的项目 ID。</span><span class="sxs-lookup"><span data-stu-id="b314e-p180">The following is an example of the `result` parameter passed to the callback function. The `value` property contains the item ID of the item.</span></span>
 
 ```json
 {
@@ -1853,31 +1858,31 @@ Office.context.mailbox.item.saveAsync(
 }
 ```
 
-####  <a name="setselecteddataasyncdata-options-callback"></a><span data-ttu-id="3eb21-1287">setSelectedDataAsync(data, [options], callback)</span><span class="sxs-lookup"><span data-stu-id="3eb21-1287">setSelectedDataAsync(data, [options], callback)</span></span>
+####  <a name="setselecteddataasyncdata-options-callback"></a><span data-ttu-id="b314e-1283">setSelectedDataAsync(data, [options], callback)</span><span class="sxs-lookup"><span data-stu-id="b314e-1283">setSelectedDataAsync(data, [options], callback)</span></span>
 
-<span data-ttu-id="3eb21-1288">以异步方式将数据插入到邮件的正文或主题中。</span><span class="sxs-lookup"><span data-stu-id="3eb21-1288">Asynchronously inserts data into the body or subject of a message.</span></span>
+<span data-ttu-id="b314e-1284">以异步方式将数据插入到邮件的正文或主题中。</span><span class="sxs-lookup"><span data-stu-id="b314e-1284">Asynchronously inserts data into the body or subject of a message.</span></span>
 
-<span data-ttu-id="3eb21-p183">`setSelectedDataAsync` 方法将指定字符串插入到项目主题或正文的光标位置，或者，如果在编辑器中已选择文本，则该方法将替换选择的文本。如果光标不在正文或主题字段中，则返回错误。插入之后，光标会位于插入内容的末尾。</span><span class="sxs-lookup"><span data-stu-id="3eb21-p183">The `setSelectedDataAsync` method inserts the specified string at the cursor location in the subject or body of the item, or, if text is selected in the editor, it replaces the selected text. If the cursor is not in the body or subject field, an error is returned. After insertion, the cursor is placed at the end of the inserted content.</span></span>
+<span data-ttu-id="b314e-p181">`setSelectedDataAsync` 方法将指定字符串插入到项目主题或正文的光标位置，或者，如果在编辑器中已选择文本，则该方法将替换选择的文本。如果光标不在正文或主题字段中，则返回错误。插入之后，光标会位于插入内容的末尾。</span><span class="sxs-lookup"><span data-stu-id="b314e-p181">The `setSelectedDataAsync` method inserts the specified string at the cursor location in the subject or body of the item, or, if text is selected in the editor, it replaces the selected text. If the cursor is not in the body or subject field, an error is returned. After insertion, the cursor is placed at the end of the inserted content.</span></span>
 
-##### <a name="parameters"></a><span data-ttu-id="3eb21-1292">参数：</span><span class="sxs-lookup"><span data-stu-id="3eb21-1292">Parameters:</span></span>
+##### <a name="parameters"></a><span data-ttu-id="b314e-1288">参数：</span><span class="sxs-lookup"><span data-stu-id="b314e-1288">Parameters:</span></span>
 
-|<span data-ttu-id="3eb21-1293">名称</span><span class="sxs-lookup"><span data-stu-id="3eb21-1293">Name</span></span>|<span data-ttu-id="3eb21-1294">类型</span><span class="sxs-lookup"><span data-stu-id="3eb21-1294">Type</span></span>|<span data-ttu-id="3eb21-1295">属性</span><span class="sxs-lookup"><span data-stu-id="3eb21-1295">Attributes</span></span>|<span data-ttu-id="3eb21-1296">说明</span><span class="sxs-lookup"><span data-stu-id="3eb21-1296">Description</span></span>|
+|<span data-ttu-id="b314e-1289">名称</span><span class="sxs-lookup"><span data-stu-id="b314e-1289">Name</span></span>|<span data-ttu-id="b314e-1290">类型</span><span class="sxs-lookup"><span data-stu-id="b314e-1290">Type</span></span>|<span data-ttu-id="b314e-1291">属性</span><span class="sxs-lookup"><span data-stu-id="b314e-1291">Attributes</span></span>|<span data-ttu-id="b314e-1292">说明</span><span class="sxs-lookup"><span data-stu-id="b314e-1292">Description</span></span>|
 |---|---|---|---|
-|`data`|<span data-ttu-id="3eb21-1297">字符串</span><span class="sxs-lookup"><span data-stu-id="3eb21-1297">String</span></span>||<span data-ttu-id="3eb21-p184">要插入的数据。数据不得超过 1,000,000 个字符。如果传入的数据超过 1,000,000 个字符，则会引发 `ArgumentOutOfRange` 异常。</span><span class="sxs-lookup"><span data-stu-id="3eb21-p184">The data to be inserted. Data is not to exceed 1,000,000 characters. If more than 1,000,000 characters are passed in, an `ArgumentOutOfRange` exception is thrown.</span></span>|
-|`options`|<span data-ttu-id="3eb21-1301">Object</span><span class="sxs-lookup"><span data-stu-id="3eb21-1301">Object</span></span>|<span data-ttu-id="3eb21-1302">&lt;可选&gt;</span><span class="sxs-lookup"><span data-stu-id="3eb21-1302">&lt;optional&gt;</span></span>|<span data-ttu-id="3eb21-1303">包含一个或多个以下属性的对象文本。</span><span class="sxs-lookup"><span data-stu-id="3eb21-1303">An object literal that contains one or more of the following properties.</span></span>|
-|`options.asyncContext`|<span data-ttu-id="3eb21-1304">对象</span><span class="sxs-lookup"><span data-stu-id="3eb21-1304">Object</span></span>|<span data-ttu-id="3eb21-1305">&lt;可选&gt;</span><span class="sxs-lookup"><span data-stu-id="3eb21-1305">&lt;optional&gt;</span></span>|<span data-ttu-id="3eb21-1306">开发人员可以提供他们想要在回调方法中访问的任何对象。</span><span class="sxs-lookup"><span data-stu-id="3eb21-1306">Developers can provide any object they wish to access in the callback method.</span></span>|
-|`options.coercionType`|[<span data-ttu-id="3eb21-1307">Office.CoercionType</span><span class="sxs-lookup"><span data-stu-id="3eb21-1307">Office.CoercionType</span></span>](office.md#coerciontype-string)|<span data-ttu-id="3eb21-1308">&lt;optional&gt;</span><span class="sxs-lookup"><span data-stu-id="3eb21-1308">&lt;optional&gt;</span></span>|<span data-ttu-id="3eb21-p185">如果为 `text`，则在 Outlook Web App 和 Outlook 中应用当前样式。如果该字段是 HTML 编辑器，则仅插入文本数据，即使数据为 HTML。</span><span class="sxs-lookup"><span data-stu-id="3eb21-p185">If `text`, the current style is applied in Outlook Web App and Outlook. If the field is an HTML editor, only the text data is inserted, even if the data is HTML.</span></span><br/><br/><span data-ttu-id="3eb21-p186">如果 `html` 和该字段支持 HTML（主题不支持），则在 Outlook Web App 中应用当前样式，而在 Outlook 中应用默认样式。如果该字段是文本字段，则返回 `InvalidDataFormat` 错误。</span><span class="sxs-lookup"><span data-stu-id="3eb21-p186">If `html` and the field supports HTML (the subject doesn't), the current style is applied in Outlook Web App and the default style is applied in Outlook. If the field is a text field, an `InvalidDataFormat` error is returned.</span></span><br/><br/><span data-ttu-id="3eb21-1313">如果未设置 `coercionType`，则结果取决于该字段：如果该字段是 HTML，则使用 HTML；如果该字段是文本，则使用纯文本。</span><span class="sxs-lookup"><span data-stu-id="3eb21-1313">If `coercionType` is not set, the result depends on the field: if the field is HTML then HTML is used; if the field is text, then plain text is used.</span></span>|
-|`callback`|<span data-ttu-id="3eb21-1314">function</span><span class="sxs-lookup"><span data-stu-id="3eb21-1314">function</span></span>||<span data-ttu-id="3eb21-1315">方法完成后，使用单个参数 `callback`（一个 [`asyncResult`](/javascript/api/office/office.asyncresult) 对象）调用在 `AsyncResult` 参数中传递的函数。</span><span class="sxs-lookup"><span data-stu-id="3eb21-1315">When the method completes, the function passed in the `callback` parameter is called with a single parameter, `asyncResult`, which is an [`AsyncResult`](/javascript/api/office/office.asyncresult) object.</span></span>|
+|`data`|<span data-ttu-id="b314e-1293">字符串</span><span class="sxs-lookup"><span data-stu-id="b314e-1293">String</span></span>||<span data-ttu-id="b314e-p182">要插入的数据。数据不得超过 1,000,000 个字符。如果传入的数据超过 1,000,000 个字符，则会引发 `ArgumentOutOfRange` 异常。</span><span class="sxs-lookup"><span data-stu-id="b314e-p182">The data to be inserted. Data is not to exceed 1,000,000 characters. If more than 1,000,000 characters are passed in, an `ArgumentOutOfRange` exception is thrown.</span></span>|
+|`options`|<span data-ttu-id="b314e-1297">Object</span><span class="sxs-lookup"><span data-stu-id="b314e-1297">Object</span></span>|<span data-ttu-id="b314e-1298">&lt;可选&gt;</span><span class="sxs-lookup"><span data-stu-id="b314e-1298">&lt;optional&gt;</span></span>|<span data-ttu-id="b314e-1299">包含一个或多个以下属性的对象文本。</span><span class="sxs-lookup"><span data-stu-id="b314e-1299">An object literal that contains one or more of the following properties.</span></span>|
+|`options.asyncContext`|<span data-ttu-id="b314e-1300">对象</span><span class="sxs-lookup"><span data-stu-id="b314e-1300">Object</span></span>|<span data-ttu-id="b314e-1301">&lt;可选&gt;</span><span class="sxs-lookup"><span data-stu-id="b314e-1301">&lt;optional&gt;</span></span>|<span data-ttu-id="b314e-1302">开发人员可以提供他们想要在回调方法中访问的任何对象。</span><span class="sxs-lookup"><span data-stu-id="b314e-1302">Developers can provide any object they wish to access in the callback method.</span></span>|
+|`options.coercionType`|[<span data-ttu-id="b314e-1303">Office.CoercionType</span><span class="sxs-lookup"><span data-stu-id="b314e-1303">Office.CoercionType</span></span>](office.md#coerciontype-string)|<span data-ttu-id="b314e-1304">&lt;optional&gt;</span><span class="sxs-lookup"><span data-stu-id="b314e-1304">&lt;optional&gt;</span></span>|<span data-ttu-id="b314e-p183">如果为 `text`，则在 Outlook Web App 和 Outlook 中应用当前样式。如果该字段是 HTML 编辑器，则仅插入文本数据，即使数据为 HTML。</span><span class="sxs-lookup"><span data-stu-id="b314e-p183">If `text`, the current style is applied in Outlook Web App and Outlook. If the field is an HTML editor, only the text data is inserted, even if the data is HTML.</span></span><br/><br/><span data-ttu-id="b314e-p184">如果 `html` 和该字段支持 HTML（主题不支持），则在 Outlook Web App 中应用当前样式，而在 Outlook 中应用默认样式。如果该字段是文本字段，则返回 `InvalidDataFormat` 错误。</span><span class="sxs-lookup"><span data-stu-id="b314e-p184">If `html` and the field supports HTML (the subject doesn't), the current style is applied in Outlook Web App and the default style is applied in Outlook. If the field is a text field, an `InvalidDataFormat` error is returned.</span></span><br/><br/><span data-ttu-id="b314e-1309">如果未设置 `coercionType`，则结果取决于该字段：如果该字段是 HTML，则使用 HTML；如果该字段是文本，则使用纯文本。</span><span class="sxs-lookup"><span data-stu-id="b314e-1309">If `coercionType` is not set, the result depends on the field: if the field is HTML then HTML is used; if the field is text, then plain text is used.</span></span>|
+|`callback`|<span data-ttu-id="b314e-1310">function</span><span class="sxs-lookup"><span data-stu-id="b314e-1310">function</span></span>||<span data-ttu-id="b314e-1311">方法完成后，使用单个参数 `callback`（一个 [`asyncResult`](/javascript/api/office/office.asyncresult) 对象）调用在 `AsyncResult` 参数中传递的函数。</span><span class="sxs-lookup"><span data-stu-id="b314e-1311">When the method completes, the function passed in the `callback` parameter is called with a single parameter, `asyncResult`, which is an [`AsyncResult`](/javascript/api/office/office.asyncresult) object.</span></span>|
 
-##### <a name="requirements"></a><span data-ttu-id="3eb21-1316">Requirements</span><span class="sxs-lookup"><span data-stu-id="3eb21-1316">Requirements</span></span>
+##### <a name="requirements"></a><span data-ttu-id="b314e-1312">Requirements</span><span class="sxs-lookup"><span data-stu-id="b314e-1312">Requirements</span></span>
 
-|<span data-ttu-id="3eb21-1317">要求</span><span class="sxs-lookup"><span data-stu-id="3eb21-1317">Requirement</span></span>|<span data-ttu-id="3eb21-1318">值</span><span class="sxs-lookup"><span data-stu-id="3eb21-1318">Value</span></span>|
+|<span data-ttu-id="b314e-1313">要求</span><span class="sxs-lookup"><span data-stu-id="b314e-1313">Requirement</span></span>|<span data-ttu-id="b314e-1314">值</span><span class="sxs-lookup"><span data-stu-id="b314e-1314">Value</span></span>|
 |---|---|
-|[<span data-ttu-id="3eb21-1319">最低版本的邮箱要求集</span><span class="sxs-lookup"><span data-stu-id="3eb21-1319">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|<span data-ttu-id="3eb21-1320">1.2</span><span class="sxs-lookup"><span data-stu-id="3eb21-1320">1.2</span></span>|
-|[<span data-ttu-id="3eb21-1321">最低权限级别</span><span class="sxs-lookup"><span data-stu-id="3eb21-1321">Minimum permission level</span></span>](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)|<span data-ttu-id="3eb21-1322">ReadWriteItem</span><span class="sxs-lookup"><span data-stu-id="3eb21-1322">ReadWriteItem</span></span>|
-|[<span data-ttu-id="3eb21-1323">适用的 Outlook 模式</span><span class="sxs-lookup"><span data-stu-id="3eb21-1323">Applicable Outlook mode</span></span>](https://docs.microsoft.com/outlook/add-ins/#extension-points)|<span data-ttu-id="3eb21-1324">撰写</span><span class="sxs-lookup"><span data-stu-id="3eb21-1324">Compose</span></span>|
+|[<span data-ttu-id="b314e-1315">最低版本的邮箱要求集</span><span class="sxs-lookup"><span data-stu-id="b314e-1315">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|<span data-ttu-id="b314e-1316">1.2</span><span class="sxs-lookup"><span data-stu-id="b314e-1316">1.2</span></span>|
+|[<span data-ttu-id="b314e-1317">最低权限级别</span><span class="sxs-lookup"><span data-stu-id="b314e-1317">Minimum permission level</span></span>](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)|<span data-ttu-id="b314e-1318">ReadWriteItem</span><span class="sxs-lookup"><span data-stu-id="b314e-1318">ReadWriteItem</span></span>|
+|[<span data-ttu-id="b314e-1319">适用的 Outlook 模式</span><span class="sxs-lookup"><span data-stu-id="b314e-1319">Applicable Outlook mode</span></span>](https://docs.microsoft.com/outlook/add-ins/#extension-points)|<span data-ttu-id="b314e-1320">撰写</span><span class="sxs-lookup"><span data-stu-id="b314e-1320">Compose</span></span>|
 
-##### <a name="example"></a><span data-ttu-id="3eb21-1325">示例</span><span class="sxs-lookup"><span data-stu-id="3eb21-1325">Example</span></span>
+##### <a name="example"></a><span data-ttu-id="b314e-1321">示例</span><span class="sxs-lookup"><span data-stu-id="b314e-1321">Example</span></span>
 
 ```js
 Office.context.mailbox.item.setSelectedDataAsync("Hello World!");
