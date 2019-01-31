@@ -1,14 +1,14 @@
 ---
 title: Office 加载项平台概述 | Microsoft Docs
 description: 使用熟悉的 Web 技术，例如 HTML、CSS 和 JavaScript 来扩展 Word、Excel、PowerPoint、OneNote、Project 和 Outlook，并与其进行交互。
-ms.date: 01/23/2018
+ms.date: 01/29/2019
 localization_priority: Priority
-ms.openlocfilehash: aa969815cedfe0832151d2e94adc47ac6a097760
-ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
+ms.openlocfilehash: febd7a49568d8e924558b11ad17b357e17c65867
+ms.sourcegitcommit: 2e4b97f0252ff3dd908a3aa7a9720f0cb50b855d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "29388582"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "29635935"
 ---
 # <a name="office-add-ins-platform-overview"></a>Office 加载项平台概述
 
@@ -20,7 +20,7 @@ ms.locfileid: "29388582"
     
 -  **新建可嵌入到 Office 文档的丰富、交互式对象** - 用户可添加到其自己的 Excel 电子表格和 PowerPoint 演示文稿的嵌入式地图、图表和交互式可视化效果。 
     
-## <a name="how-are-office-add-ins-different-than-com-and-vsto-add-ins"></a>Office 加载项与 COM 和 VSTO 加载项有何不同？ 
+## <a name="how-are-office-add-ins-different-from-com-and-vsto-add-ins"></a>Office 加载项与 COM 和 VSTO 加载项有何不同？ 
 
 COM 或 VSTO 加载项是旧 Office 集成解决方案，仅在 Office for Windows 上运行。与 COM 加载项不同，Office 加载项不涉及在用户设备或 Office 客户端中运行的代码。对于 Office 加载项，主机应用（例如 Excel）会读取加载项清单，并挂钩 UI 中的加载项自定义功能区按钮和菜单命令。如果需要，它加载加载项的 JavaScript 和 HTML 代码，此代码在沙盒中的浏览器上下文范围内执行。 
 
