@@ -1,14 +1,14 @@
 ---
 title: Office.context.mailbox.item - 要求集 1.5
 description: ''
-ms.date: 12/18/2018
+ms.date: 01/30/2019
 localization_priority: Priority
-ms.openlocfilehash: 48bc1291e7aa6d8e335c07d16ddd74e6e9455f0d
-ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
+ms.openlocfilehash: cca0bb4baa15d72a58909ca1417eb52a9bf70a8f
+ms.sourcegitcommit: bf5c56d9b8c573e42bf2268e10ca3fd4d2bb4ff9
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "29389569"
+ms.lasthandoff: 02/01/2019
+ms.locfileid: "29701839"
 ---
 # <a name="item"></a>item
 
@@ -377,7 +377,7 @@ var internetMessageId = Office.context.mailbox.item.internetMessageId;
 
 | 类型 | 说明 | 项目类 |
 | --- | --- | --- |
-| 约会项目 | 这些是项目类 `IPM.Appointment` 或 `IPM.Appointment.Occurence` 的日历项目。 | `IPM.Appointment`<br />`IPM.Appointment.Occurence` |
+| 约会项目 | 这些是项目类 `IPM.Appointment` 或 `IPM.Appointment.Occurrence` 的日历项目。 | `IPM.Appointment`<br />`IPM.Appointment.Occurrence` |
 | 邮件项目 | 这些项目包括具有默认邮件类别 `IPM.Note` 的电子邮件，以及使用 `IPM.Schedule.Meeting` 作为基础邮件类别的会议请求、响应和取消。 | `IPM.Note`<br />`IPM.Schedule.Meeting.Request`<br />`IPM.Schedule.Meeting.Neg`<br />`IPM.Schedule.Meeting.Pos`<br />`IPM.Schedule.Meeting.Tent`<br />`IPM.Schedule.Meeting.Canceled` |
 
 你可以创建用于扩展默认邮件类别的自定义邮件类别，例如，自定义约会邮件类别 `IPM.Appointment.Contoso`。
