@@ -3,12 +3,12 @@ title: 为 Office 加载项启用单一登录
 description: ''
 ms.date: 09/26/2018
 localization_priority: Priority
-ms.openlocfilehash: 96370072e29262c70f421ced9a90ca9422a12243
-ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
+ms.openlocfilehash: f76a1394bb55a260af9bbde2d18cd330bbf2688b
+ms.sourcegitcommit: bf5c56d9b8c573e42bf2268e10ca3fd4d2bb4ff9
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "29388106"
+ms.lasthandoff: 02/01/2019
+ms.locfileid: "29701790"
 ---
 # <a name="enable-single-sign-on-for-office-add-ins-preview"></a>为 Office 加载项启用单一登录（预览）
 
@@ -20,6 +20,8 @@ ms.locfileid: "29388106"
 
 当前只在预览中支持单一登录 API。 它可供开发人员进行实验，但不应用于生产加载项。 此外，在 [AppSource](https://appsource.microsoft.com) 中不接受使用 SSO 的加载项。
 
+SSO 需要 Office 365（Office 的订阅版本，也称为“即点即用版本”）。 你应该使用来自预览体验成员频道的最新每月版本和内部版本。 你可能需要成为 Office 预览体验成员，才能获取此版本。 有关详细信息，请参阅[成为 Office 预览体验成员](https://products.office.com/office-insider?tab=tab-1)。 请注意，当内部版本进入生产半年频道时，将关闭对该内部版本的预览功能（包括 SSO）的支持。
+
 并非所有 Office 应用程序都支持 SSO 预览。 可以在 Word、Excel、Outlook 和 PowerPoint 中使用此加载项。 若要详细了解目前支持单一登录 API 的平台，请参阅 [IdentityAPI 要求集](https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/identity-api-requirement-sets)。
 
 ### <a name="requirements-and-best-practices"></a>要求和最佳做法
@@ -28,7 +30,7 @@ ms.locfileid: "29388106"
 
 如果使用的是 **Outlook** 加载项，请务必为 Office 365 租赁启用新式验证。 若要了解如何执行此操作，请参阅 [Exchange Online: How to enable your tenant for modern authentication](https://social.technet.microsoft.com/wiki/contents/articles/32711.exchange-online-how-to-enable-your-tenant-for-modern-authentication.aspx)（如何为租户启用新式体验）。
 
-*不应*依赖 SSO 作为加载项的唯一身份验证方法。 应实现备用身份验证系统，在某些错误情况下，加载项可以返回到该系统。 可以使用包含用户表和身份验证的系统，也可以利用其中某个社交登录提供者。 有关如何使用 Office 加载项执行此操作的详细信息，请参阅 [Authorize external services in your Office Add-in](https://docs.microsoft.com/en-us/office/dev/add-ins/develop/auth-external-add-ins)（对 Office 加载项中的外部服务授权）。 对于 *Outlook*，建议使用后备系统。 有关详细信息，请参阅[应用场景：在 Outlook 加载项中对服务实现单一登录](https://docs.microsoft.com/outlook/add-ins/implement-sso-in-outlook-add-in)。
+*不应*依赖 SSO 作为加载项的唯一身份验证方法。 应实现备用身份验证系统，在某些错误情况下，加载项可以返回到该系统。 可以使用包含用户表和身份验证的系统，也可以利用其中某个社交登录提供者。 有关如何使用 Office 加载项执行此操作的详细信息，请参阅 [Authorize external services in your Office Add-in](https://docs.microsoft.com/zh-CN/office/dev/add-ins/develop/auth-external-add-ins)（对 Office 加载项中的外部服务授权）。 对于 *Outlook*，建议使用后备系统。 有关详细信息，请参阅[应用场景：在 Outlook 加载项中对服务实现单一登录](https://docs.microsoft.com/outlook/add-ins/implement-sso-in-outlook-add-in)。
 
 ### <a name="how-sso-works-at-runtime"></a>运行时 SSO 的工作方式
 
@@ -43,7 +45,7 @@ ms.locfileid: "29388106"
 5. Azure AD 将加载项令牌发送给 Office 主机应用程序。
 6. Office 主机应用程序在 `getAccessTokenAsync` 调用返回的结果对象中，将“**加载项令牌**”发送给加载项。
 7. 加载项中的 JavaScript 可以解析令牌并提取所需信息，如用户的电子邮件地址。 
-8. （可选）加载项可以向其服务器端发送 HTTP 请求以获取关于用户的更多数据，如用户的偏好。 此外，访问令牌本身也可发送到服务器端以进行解析和验证。 
+8. （可选）加载项可以向其服务器端发送 HTTP 请求以获取关于用户的更多数据，如用户的偏好。 此外，访问令牌本身也可发送到服务器端以进行解析和验证。
 
 ## <a name="develop-an-sso-add-in"></a>开发 SSO 加载项
 

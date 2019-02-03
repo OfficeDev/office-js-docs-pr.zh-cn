@@ -3,12 +3,12 @@ title: 创建使用单一登录的 Node.js Office 加载项
 description: ''
 ms.date: 12/07/2018
 localization_priority: Priority
-ms.openlocfilehash: 0e47b8a577e337a40542f38509b6da325df299ba
-ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
+ms.openlocfilehash: cf249e47709a325f22fc1fda49ee76b7a3357b4f
+ms.sourcegitcommit: bf5c56d9b8c573e42bf2268e10ca3fd4d2bb4ff9
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "29387336"
+ms.lasthandoff: 02/01/2019
+ms.locfileid: "29701930"
 ---
 # <a name="create-a-nodejs-office-add-in-that-uses-single-sign-on-preview"></a>创建使用单一登录的 Node.js Office 加载项（预览）
 
@@ -27,11 +27,9 @@ ms.locfileid: "29387336"
 
 * TypeScript 版本 2.2.2 或更高版本
 
-* Office 2016 版本 1708（生成号 8424.nnnn）或更高版本（Office 365 订阅版本，有时亦称为“即点即用”）
+* Office 365（订阅版本，也称为“即点即用版本”）。 来自预览体验成员频道的最新每月版本和内部版本。 你可能需要成为 Office 预览体验成员，才能获取此版本。 有关详细信息，请参阅[成为 Office 预览体验成员](https://products.office.com/office-insider?tab=tab-1)。 请注意，当内部版本进入生产半年频道时，将关闭对该内部版本的预览功能（包括 SSO）的支持。
 
-  可能必须成为 Office 预览体验成员，才能获取此版本。有关详细信息，请参阅[成为 Office 预览体验成员](https://products.office.com/office-insider?tab=tab-1)。
-
-## <a name="set-up-the-starter-project"></a>创建起始项目
+## <a name="set-up-the-starter-project"></a>设置初学者项目
 
 1. 克隆或下载 [Office 外接程序 NodeJS SSO](https://github.com/officedev/office-add-in-nodejs-sso) 中的存储库。 
 
@@ -538,7 +536,7 @@ ms.locfileid: "29387336"
     ```
 
     > [!NOTE]
-    > 只能使用 `access_as_user` 范围授权 API 为 Office 加载项处理代表流。服务中的其他 API 应有自己的范围要求。这就限制了使用 Office 获得的令牌可以访问的内容。
+    > 只可使用 `access_as_user` 作用域授权 API 为 Office 外接程序处理代表流。服务中的其他 API 应有自己的作用域要求。 这就限制了使用 Office 获得的令牌可以访问的内容。
 
 5. 将 `TODO8` 替换为以下代码。关于此代码，请注意以下几点：
 
