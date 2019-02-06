@@ -2,12 +2,14 @@
 title: OneNote JavaScript API 要求集
 description: ''
 ms.date: 10/09/2018
-ms.openlocfilehash: 2402d9100228e079066f4abd4f8909aa384dd1c9
-ms.sourcegitcommit: 60fd8a3ac4a6d66cb9e075ce7e0cde3c888a5fe9
-ms.translationtype: HT
+ms.prod: onenote
+localization_priority: Normal
+ms.openlocfilehash: 3d274700d002963937294c8bcb235331d2829542
+ms.sourcegitcommit: 33dcf099c6b3d249811580d67ee9b790c0fdccfb
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/28/2018
-ms.locfileid: "27457598"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "29742105"
 ---
 # <a name="onenote-javascript-api-requirement-sets"></a>OneNote JavaScript API 要求集
 

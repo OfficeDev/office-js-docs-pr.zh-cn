@@ -2,13 +2,14 @@
 title: Word JavaScript API 概述
 description: ''
 ms.date: 10/09/2018
+ms.prod: word
 localization_priority: Priority
-ms.openlocfilehash: 3493f402a50d44c8d7a95bccd32d9a287a8e12f3
-ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
+ms.openlocfilehash: 9a884e0e092779cc5959aa9b32ae6a5c4f3c0893
+ms.sourcegitcommit: 33dcf099c6b3d249811580d67ee9b790c0fdccfb
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "29389154"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "29742301"
 ---
 # <a name="word-javascript-api-overview"></a>Word JavaScript API 概述
 

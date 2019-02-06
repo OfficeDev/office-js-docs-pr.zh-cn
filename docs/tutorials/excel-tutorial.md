@@ -2,14 +2,15 @@
 title: Excel 加载项教程
 description: 在本教程中，你将学习如何构建一个 Excel 外接程序，用于创建、填充、筛选和排序表格、创建图表、冻结表格标题、保护工作表并打开对话框。
 ms.date: 01/28/2019
+ms.prod: excel
 ms.topic: tutorial
 localization_priority: Normal
-ms.openlocfilehash: 6fe72a9170862dbb0c422db7d8efd3f187bf45ae
-ms.sourcegitcommit: 2e4b97f0252ff3dd908a3aa7a9720f0cb50b855d
+ms.openlocfilehash: 410b2391d207f7c83f9accb349448dbc0c92a0e2
+ms.sourcegitcommit: 33dcf099c6b3d249811580d67ee9b790c0fdccfb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "29635963"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "29742448"
 ---
 # <a name="tutorial-create-an-excel-task-pane-add-in"></a>教程：创建 Excel 任务窗格加载项
 
@@ -65,7 +66,7 @@ ms.locfileid: "29635963"
 
 4. 打开 app.js 文件。
 
-5. 将 `TODO1` 替换为以下代码。 此代码用于确定用户的 Excel 版本是否支持包含本系列教程将使用的所有 API 的 Excel.js 版本。 在生产加载项中，若要隐藏或禁用调用不受支持的 API 的 UI，请使用条件块的主体。 这样一来，用户仍可以使用 Excel 版本支持的加载项部分。
+5. 将 `TODO1` 替换为下面的代码。 此代码用于确定用户的 Excel 版本是否支持包含本系列教程将使用的所有 API 的 Excel.js 版本。 在生产加载项中，若要隐藏或禁用调用不受支持的 API 的 UI，请使用条件块的主体。 这样一来，用户仍可以使用 Excel 版本支持的加载项部分。
 
     ```js
     if (!Office.context.requirements.isSetSupported('ExcelApi', 1.7)) {
@@ -122,7 +123,7 @@ ms.locfileid: "29635963"
     expensesTable.name = "ExpensesTable";
     ```
 
-9. 将 `TODO5` 替换为以下代码。请注意以下几点：
+9. 将 `TODO5` 替换为以下代码。注意：
 
    - 范围的单元格值是通过一组数组进行设置。
 
@@ -143,7 +144,7 @@ ms.locfileid: "29635963"
     ]);
     ```
 
-10. 将 `TODO6` 替换为以下代码。请注意以下几点：
+10. 将 `TODO6` 替换为以下代码。注意：
 
    - 此代码将从零开始编制的索引传递给表格的列集合的 `getItemAt` 方法，以获取对“金额”**** 列的引用。
 
@@ -228,7 +229,7 @@ ms.locfileid: "29635963"
     }
     ```
 
-7. 将 `TODO1` 替换为以下代码。请注意以下几点：
+7. 将 `TODO1` 替换为以下代码。注意：
 
    - 代码先将列名称传递给 `getItem` 方法（而不是像 `createTable` 方法一样将列索引传递给 `getItemAt` 方法），获取对需要筛选的列的引用。 由于用户可以移动表格列，因此给定索引处的列可能会在表格创建后更改。 所以，更安全的做法是，使用列名称获取对列的引用。 上一教程安全地使用了 `getItemAt`，因为是在与创建表格完全相同的方法中使用了它，所以用户没有机会移动列。
 
@@ -280,7 +281,7 @@ ms.locfileid: "29635963"
     }
     ```
 
-6. 将 `TODO1` 替换为以下代码。请注意以下几点：
+6. 将 `TODO1` 替换为以下代码。注意：
 
    - 此代码创建一组 `SortField` 对象，其中只有一个成员，因为加载项只对“商家”列进行了排序。
 
@@ -310,7 +311,7 @@ ms.locfileid: "29635963"
 
 2. 运行命令 `npm run build`，将 ES6 源代码转换为 Internet Explorer 支持的旧版 JavaScript（Excel 在后台用来运行 Excel 加载项）。
 
-3. 运行命令 `npm start`，启动在 localhost 上运行的 Web 服务器。
+3. 运行命令 `npm start`，启动在本地主机上运行的 Web 服务器。
 
 4. 通过关闭任务窗格来重新加载它，再选择“**开始**”菜单上的“**显示任务窗格**”，以重新打开加载项。
 

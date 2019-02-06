@@ -2,12 +2,14 @@
 title: Identity API 要求集
 description: ''
 ms.date: 10/09/2018
-ms.openlocfilehash: 4ed3fde5b3cef6dd6633d9eafbd098b24cc27308
-ms.sourcegitcommit: 60fd8a3ac4a6d66cb9e075ce7e0cde3c888a5fe9
-ms.translationtype: HT
+ms.prod: non-product-specific
+localization_priority: Normal
+ms.openlocfilehash: 8db095c54322f04781b7dfa7bfadd857800678e3
+ms.sourcegitcommit: 33dcf099c6b3d249811580d67ee9b790c0fdccfb
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/28/2018
-ms.locfileid: "27457661"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "29742196"
 ---
 # <a name="identity-api-requirement-sets"></a>Identity API 要求集
 
@@ -19,7 +21,7 @@ Office 外接程序在多个 Office 版本中运行。 下表列出了 Identity 
 |:-----|-----|:-----|:-----|:-----|:-----|:-----|:-----|:-----|
 | IdentityAPI 1.1  | 不适用 | 预览 **&#42;** | 即将推出 | 预览 **&#42;**| 预览 | 预览| 即将推出 | 即将推出 |
 
-> **&#42;** 在预览阶段，仅为预览体验计划中使用“快速”选项的用户提供针对 Windows 2016 和 Mac 的 Identity API 支持。 若要加入预览体验计划，请参阅[成为 Office 预览体验成员](https://products.office.com/office-insider?tab=tab-1)。 若要切换到快速通道，请参阅[预览体验成员快速选项](https://answers.microsoft.com/zh-CN/msoffice/forum/msoffice_officeinsider-mso_win10-msoinsider_reg/its-here-office-insider-fast-for-office-2016-on/dbe8e7bb-9523-44a4-948b-9436fedfd961)。
+> **&#42;** 在预览阶段，仅为预览体验计划中使用“快速”选项的用户提供针对 Windows 2016 和 Mac 的 Identity API 支持。 若要加入预览体验计划，请参阅[成为 Office 预览体验成员](https://products.office.com/office-insider?tab=tab-1)。 若要切换到快速通道，请参阅[预览体验成员快速选项](https://answers.microsoft.com/en-us/msoffice/forum/msoffice_officeinsider-mso_win10-msoinsider_reg/its-here-office-insider-fast-for-office-2016-on/dbe8e7bb-9523-44a4-948b-9436fedfd961)。
 
 若要详细了解版本、内部版本号和 Office Online Server，请参阅：
 

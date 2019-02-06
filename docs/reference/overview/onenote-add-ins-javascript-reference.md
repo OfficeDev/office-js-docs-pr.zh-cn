@@ -2,12 +2,14 @@
 title: OneNote JavaScript API 概述
 description: ''
 ms.date: 10/09/2018
-ms.openlocfilehash: 461cc4a62beea82151a3b381096f313e43289e94
-ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
-ms.translationtype: HT
+ms.prod: onenote
+localization_priority: Normal
+ms.openlocfilehash: 87bc16f77c14871044fa628f9903ea6ae05f3e0e
+ms.sourcegitcommit: 33dcf099c6b3d249811580d67ee9b790c0fdccfb
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/22/2018
-ms.locfileid: "27432828"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "29742420"
 ---
 # <a name="onenote-javascript-api-overview"></a>OneNote JavaScript API 概述
 

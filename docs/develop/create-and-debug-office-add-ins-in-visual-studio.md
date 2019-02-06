@@ -3,12 +3,12 @@ title: 在 Visual Studio 中创建和调试 Office 外接程序
 description: 使用 Visual Studio 在 Windows 的 Office 桌面客户端上创建和调试 Office 外接程序
 ms.date: 11/02/2018
 localization_priority: Priority
-ms.openlocfilehash: 377c65d089ef43814bbc419435d2b817e80b3fcc
-ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
+ms.openlocfilehash: eb7a64d9ad5096af7eb900a6d29b682e950c1bed
+ms.sourcegitcommit: 33dcf099c6b3d249811580d67ee9b790c0fdccfb
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "29389450"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "29742378"
 ---
 # <a name="create-and-debug-office-add-ins-in-visual-studio"></a>在 Visual Studio 中创建和调试 Office 外接程序
 
@@ -16,9 +16,9 @@ ms.locfileid: "29389450"
 
 > [!NOTE]
 > Visual Studio 不支持为 OneNote 或 Project 创建 Office 外接程序，但你可以使用 [Office 外接程序的 Yeoman 生成器](https://github.com/OfficeDev/generator-office)来创建这些类型的外接程序。
-> - 若要开始使用 OneNote 的外接程序，请参阅[生成首个 OneNote 外接程序](../onenote/onenote-add-ins-getting-started.md)。
+> - 若要开始使用 OneNote 的外接程序，请参阅[生成首个 OneNote 外接程序](../quickstarts/onenote-quickstart.md)。
 > 
-> - 若要开始使用 Project 的外接程序，请参阅[生成首个 Project 外接程序](../project/project-add-ins-get-started.md)。
+> - 若要开始使用 Project 的外接程序，请参阅[生成首个 Project 外接程序](../quickstarts/project-quickstart.md)。
 
 ## <a name="prerequisites"></a>先决条件
 

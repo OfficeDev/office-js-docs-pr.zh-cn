@@ -2,12 +2,13 @@
 ms.date: 01/08/2019
 description: 了解开发使用新 JavaScript 运行时的 Excel 自定义函数时的关键方案。
 title: Excel 自定义函数的运行时（预览）
-ms.openlocfilehash: 2610be95ea255d14c577d8b9215f32a79ab04463
-ms.sourcegitcommit: 9afcb1bb295ec0c8940ed3a8364dbac08ef6b382
-ms.translationtype: HT
+localization_priority: Normal
+ms.openlocfilehash: dd8158da4ebcccac61b8ab6958a101489bf5a668
+ms.sourcegitcommit: 33dcf099c6b3d249811580d67ee9b790c0fdccfb
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/08/2019
-ms.locfileid: "27770579"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "29742315"
 ---
 # <a name="runtime-for-excel-custom-functions-preview"></a>Excel 自定义函数的运行时（预览）
 
@@ -17,7 +18,7 @@ ms.locfileid: "27770579"
 
 ## <a name="requesting-external-data"></a>请求外部数据
 
-在自定义函数中，你可以使用 [Fetch](https://developer.mozilla.org/zh-CN/docs/Web/API/Fetch_API) 等 API 或使用 [XmlHttpRequest (XHR)](https://developer.mozilla.org/zh-CN/docs/Web/API/XMLHttpRequest)（一种发出与服务器交互的 HTTP 请求的标准 Web API）来请求外部数据。 在 JavaScript runtime 运行时内，XHR 通过要求[相同来源策略](https://developer.mozilla.org/zh-CN/docs/Web/Security/Same-origin_policy)和简单 [CORS](https://www.w3.org/TR/cors/) 来实施附加安全措施。  
+在自定义函数中，你可以使用 [Fetch](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) 等 API 或使用 [XmlHttpRequest (XHR)](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest)（一种发出与服务器交互的 HTTP 请求的标准 Web API）来请求外部数据。 在 JavaScript runtime 运行时内，XHR 通过要求[相同来源策略](https://developer.mozilla.org/en-US/docs/Web/Security/Same-origin_policy)和简单 [CORS](https://www.w3.org/TR/cors/) 来实施附加安全措施。  
 
 ### <a name="xhr-example"></a>XHR 示例
 
@@ -51,7 +52,7 @@ function sendWebRequest(thermometerID, data) {
 
 ## <a name="receiving-data-via-websockets"></a>通过 WebSocket 接收数据
 
-在自定义函数内，可使用 [WebSocket](https://developer.mozilla.org/zh-CN/docs/Web/API/WebSockets_API) 来通过与服务器的持久连接交换数据。 通过使用 WebSocket，自定义函数可以打开与服务器的连接，然后在发生某些事件时自动从服务器接收消息，而无需显式地轮询服务器来获取数据。
+在自定义函数内，可使用 [WebSocket](https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API) 来通过与服务器的持久连接交换数据。 通过使用 WebSocket，自定义函数可以打开与服务器的连接，然后在发生某些事件时自动从服务器接收消息，而无需显式地轮询服务器来获取数据。
 
 ### <a name="websockets-example"></a>WebSocket 示例
 
@@ -69,7 +70,7 @@ ws.onerror = (error) => {
 
 ## <a name="storing-and-accessing-data"></a>存储和访问数据
 
-在自定义函数（或外接程序的任何其他部分）内，可以使用 `OfficeRuntime.AsyncStorage` 对象来存储和访问数据。 `AsyncStorage` 是一种未加密的持久键值存储系统，为无法在自定义函数内使用的 [localStorage](https://developer.mozilla.org/zh-CN/docs/Web/API/Window/localStorage) 提供了一种替代方案。 一个外接程序可以使用 `AsyncStorage` 存储最多 10 MB 的数据。
+在自定义函数（或外接程序的任何其他部分）内，可以使用 `OfficeRuntime.AsyncStorage` 对象来存储和访问数据。 `AsyncStorage` 是一种未加密的持久键值存储系统，为无法在自定义函数内使用的 [localStorage](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage) 提供了一种替代方案。 一个外接程序可以使用 `AsyncStorage` 存储最多 10 MB 的数据。
 
 `AsyncStorage` 旨在作为共享存储解决方案，这意味着外接程序的多个部分将能访问相同数据。 例如，用户身份验证令牌可能存储在 `AsyncStorage` 中，因为自定义函数和任务窗格等外接程序 UI 元素都有可能会访问该数据。 同样，如果两个外接程序共享同一个域（例如 www.contoso.com/addin1、www.contoso.com/addin2），则也可以通过 `AsyncStorage` 来回共享信息。 注意，具有不同子域的外接程序将具有不同的 `AsyncStorage` 实例（例如 subdomain.contoso.com/addin1、differentsubdomain.contoso.com/addin2） 
 
@@ -105,11 +106,11 @@ _goGetData = async () => {
 
 ## <a name="displaying-a-dialog-box"></a>显示对话框
 
-在自定义函数（或外接程序的任何其他部分）内，可以使用 `OfficeRuntime.displayWebDialogOptions` API 来显示对话框。 此对话框 API 为可在任务窗格和附加程序命令内使用但无法在自定义函数中使用的[对话框 API](../develop/dialog-api-in-office-add-ins.md) 提供了一个替代方案。
+在自定义函数（或外接程序的任何其他部分）内，可以使用 `OfficeRuntime.displayWebDialog` API 来显示对话框。 此对话框 API 为可在任务窗格和附加程序命令内使用但无法在自定义函数中使用的[对话框 API](../develop/dialog-api-in-office-add-ins.md) 提供了一个替代方案。
 
 ### <a name="dialog-api-example"></a>对话框 API 示例
 
-在下面的代码示例中，函数 `getTokenViaDialog` 使用对话框 API 的 `displayWebDialogOptions` 函数来显示对话框。
+在下面的代码示例中，函数 `getTokenViaDialog` 使用对话框 API 的 `displayWebDialog` 函数来显示对话框。
 
 ```js
 // Get auth token before calling my service, a hypothetical API that will deliver a stock price based on stock ticker string, such as "MSFT"
@@ -169,13 +170,13 @@ function getStock (ticker) {
         }, 1000);
       } else {
         _dialogOpen = true;
-        OfficeRuntime.displayWebDialogOptions(url, {
+        OfficeRuntime.displayWebDialog(url, {
           height: '50%',
           width: '50%',
           onMessage: function (message, dialog) {
             _cachedToken = message;
             resolve(message);
-            dialog.closeDialog();
+            dialog.close();
             return;
           },
           onRuntimeError: function(error, dialog) {

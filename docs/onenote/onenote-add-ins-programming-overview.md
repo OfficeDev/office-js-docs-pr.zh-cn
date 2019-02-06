@@ -3,12 +3,12 @@ title: OneNote JavaScript API 编程概述
 description: ''
 ms.date: 01/23/2018
 localization_priority: Priority
-ms.openlocfilehash: 94b233e3694f5b066025a567837c82aad38a7cd8
-ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
+ms.openlocfilehash: 86c59e8453dc94129a9c96606c1fe06247421e66
+ms.sourcegitcommit: 33dcf099c6b3d249811580d67ee9b790c0fdccfb
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "29387959"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "29742287"
 ---
 # <a name="onenote-javascript-api-programming-overview"></a>OneNote JavaScript API 编程概述
 
@@ -130,7 +130,7 @@ OneNote 加载项仅支持以下通用 API：
 
 ## <a name="see-also"></a>另请参阅
 
-- [生成首个 OneNote 加载项](onenote-add-ins-getting-started.md)
+- [生成首个 OneNote 加载项](../quickstarts/onenote-quickstart.md)
 - [OneNote JavaScript API 参考](https://docs.microsoft.com/office/dev/add-ins/reference/overview/onenote-add-ins-javascript-reference)
 - [Rubric Grader 示例](https://github.com/OfficeDev/OneNote-Add-in-Rubric-Grader)
 - [Office 加载项平台概述](../overview/office-add-ins.md)
