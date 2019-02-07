@@ -1,47 +1,20 @@
 ---
 title: 在 iPad 和 Mac 上调试 Office 外接程序
 description: ''
-ms.date: 03/21/2018
+ms.date: 02/01/2019
 localization_priority: Priority
-ms.openlocfilehash: 058f3cb4a4acc77a5c4fcd4559970187842c2c4b
-ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
+ms.openlocfilehash: b283cf14563345834e7076cdd4de4f15a26692b6
+ms.sourcegitcommit: 33dcf099c6b3d249811580d67ee9b790c0fdccfb
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "29388029"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "29742329"
 ---
 # <a name="debug-office-add-ins-on-ipad-and-mac"></a>在 iPad 和 Mac 上调试 Office 外接程序
 
-您可以使用 Visual Studio 开发和调试 Windows 上的外接程序。但是，无法使用它调试 iPad 或 Mac 上的外接程序。由于外接程序使用 HTML 和 Javascript 开发，它们应旨在跨平台工作，但不同浏览器呈现您的 HTML 的方式可能存在细微差异。本文介绍如何调试在 iPad 或 Mac 上运行的外接程序。 
+您可以使用 Visual Studio 开发和调试 Windows 上的外接程序。但是，无法使用它调试 iPad 或 Mac 上的外接程序。由于外接程序使用 HTML 和 Javascript 开发，它们应旨在跨平台工作，但不同浏览器呈现您的 HTML 的方式可能存在细微差异。本文介绍如何调试在 iPad 或 Mac 上运行的外接程序。
 
-## <a name="debugging-with-safari-web-inspector-on-a-mac"></a>在 Mac 上使用 Safari Web 检查器进行调试
-
-如果有在任务窗格或内容加载项中显示 UI 的加载项，可以使用 Safari Web 检查器调试 Office 加载项。
-
-要在 Mac 上调试 Office 加载项，必须拥有 Mac OS High Sierra 和 Mac Office 版本：16.9.1（内部版本 18012504）或更高版本。 如果没有 Office Mac 内部版本，可以通过加入 [Office 365 开发人员计划](https://aka.ms/o365devprogram)获取一个版本。
-
-首先，打开终端，设置相关 Office 应用程序的 `OfficeWebAddinDeveloperExtras` 属性，如下所示：
-
-- `defaults write com.microsoft.Word OfficeWebAddinDeveloperExtras -bool true`
-
-- `defaults write com.microsoft.Excel OfficeWebAddinDeveloperExtras -bool true`
-
-- `defaults write com.microsoft.Powerpoint OfficeWebAddinDeveloperExtras -bool true`
-
-- `defaults write com.microsoft.Outlook OfficeWebAddinDeveloperExtras -bool true`
-
-然后，打开 Office 应用程序并插入加载项。 右键单击加载项，应在上下文菜单中看到一个“检查元素”**** 选项。  选择该选项，它将弹出检查器，可以在其中设置断点并调试加载项。
-
-> [!NOTE]
-> 请注意，这是一个实验性功能，我们不能保证在未来的 Office 应用程序版本中保留此功能。
->
-> 如果试图使用检查器和对话框闪烁，请尝试以下解决方法：
-> 1. 缩小对话框大小。
-> 2. 选择“检查元素”****，这将在新窗口中打开。
-> 3. 将对话框调整为原始大小。
-> 4. 根据需要使用检查器。
-
-## <a name="debugging-with-vorlonjs-on-a-ipad-or-mac"></a>在 iPad 或 Mac 上使用 Vorlon.JS 进行调试
+## <a name="debugging-with-vorlonjs-on-ipad-or-mac"></a>在 iPad 或 Mac 上使用 Vorlon.JS 进行调试
 
 若要在 iPad 或 Mac 上调试加载项，可以使用 Vorlon.JS，一个类似于 F12 工具的 Web 页调试程序。 它旨在实现远程工作，使你能够在不同设备上调试网页。 有关详细信息，请参阅 [Vorlon 网站](http://www.vorlonjs.com)。  
 
@@ -134,6 +107,34 @@ Vorlon 工具具有多种插件。当前已启用的插件显示为工具顶部�
 
 > [!NOTE]
 > 无法在 Vorlon.JS 中设置断点。
+
+## <a name="debugging-with-safari-web-inspector-on-a-mac"></a>在 Mac 上使用 Safari Web 检查器进行调试
+
+> [!IMPORTANT]
+> 请注意，**检查元素**加载项上下文菜单选项是一个实验性功能，我们不能保证在未来的 Office 应用程序版本中保留此功能。
+
+如果有在任务窗格或内容加载项中显示 UI 的加载项，可以使用 Safari Web 检查器调试 Office 加载项。
+
+要在 Mac 上调试 Office 加载项，必须拥有 Mac OS High Sierra 或更高版本和 Mac Office 版本 16.9.1（内部版本 18012504）或更高版本。 如果没有 Office for Mac 内部版本，可以通过加入 [Office 365 开发人员计划](https://aka.ms/o365devprogram)获取一个版本。
+
+首先，打开终端，设置相关 Office 应用程序的 `OfficeWebAddinDeveloperExtras` 属性，如下所示：
+
+- `defaults write com.microsoft.Word OfficeWebAddinDeveloperExtras -bool true`
+
+- `defaults write com.microsoft.Excel OfficeWebAddinDeveloperExtras -bool true`
+
+- `defaults write com.microsoft.Powerpoint OfficeWebAddinDeveloperExtras -bool true`
+
+- `defaults write com.microsoft.Outlook OfficeWebAddinDeveloperExtras -bool true`
+
+然后，打开 Office 应用程序并[旁加载你的加载项](sideload-an-office-add-in-on-ipad-and-mac.md)。 右键单击加载项，应在上下文菜单中看到一个“**检查元素**”选项。  选择该选项，它将弹出检查器，可以在其中设置断点并调试加载项。
+
+> [!NOTE]
+> 如果试图使用检查器和对话框闪烁，请尝试以下解决方法：
+> 1. 缩小对话框大小。
+> 2. 选择“检查元素”****，这将在新窗口中打开。
+> 3. 将对话框调整为原始大小。
+> 4. 根据需要使用检查器。
 
 
 ## <a name="clearing-the-office-applications-cache-on-a-mac-or-ipad"></a>在 Mac 或 iPad 上清除 Office 应用程序缓存

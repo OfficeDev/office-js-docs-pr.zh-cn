@@ -3,12 +3,12 @@ title: 开始使用 Excel 加载项
 description: ''
 ms.date: 01/23/2018
 localization_priority: Priority
-ms.openlocfilehash: b75a25f986d4dd141a3858a357592c5ba9c28bd8
-ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
+ms.openlocfilehash: ad0c948be710f6274d50c341854e43fc42639ee8
+ms.sourcegitcommit: 33dcf099c6b3d249811580d67ee9b790c0fdccfb
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "29388967"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "29742259"
 ---
 # <a name="get-started-with-excel-add-ins"></a>开始使用 Excel 加载项
 
@@ -16,7 +16,7 @@ ms.locfileid: "29388967"
 
 ## <a name="create-your-first-excel-add-in"></a>创建你的第一个 Excel 加载项
 
-若要开始操作，请完成本节的任一演练，使用 [React](excel-add-ins-get-started-react.md)、[Angular](excel-add-ins-get-started-angular.md)，或 [jQuery](excel-add-ins-get-started-jquery.md) 创建 Excel 加载项。 每个演练都提供分步指南，用于创建一个简单的任务窗格加载项，该加载项使用 Excel JavaScript API 与工作表进行交互。 
+若要开始操作，请完成本节的任一演练，使用 [React](../quickstarts/excel-quickstart-react.md)、[Angular](../quickstarts/excel-quickstart-angular.md)、[jQuery](../quickstarts/excel-quickstart-jquery.md) 或 [Vue](../quickstarts/excel-quickstart-vue.md) 创建 Excel 加载项。 每个演练都提供分步指南，用于创建一个简单的任务窗格加载项，该加载项使用 Excel JavaScript API 与工作表进行交互。 
 
 ## <a name="explore-snippets-with-script-lab"></a>通过脚本实验室探索片段
 
