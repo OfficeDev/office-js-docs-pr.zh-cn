@@ -3,12 +3,12 @@ title: 创建使用单一登录的 ASP.NET Office 加载项
 description: ''
 ms.date: 01/23/2018
 localization_priority: Priority
-ms.openlocfilehash: 94976e47d2bce15e224d837a11cab6b08bd80cda
-ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
+ms.openlocfilehash: d79dde68b8222a8aafa01a01dc21a4f932f101a9
+ms.sourcegitcommit: bf5c56d9b8c573e42bf2268e10ca3fd4d2bb4ff9
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "29388302"
+ms.lasthandoff: 02/01/2019
+ms.locfileid: "29701818"
 ---
 # <a name="create-an-aspnet-office-add-in-that-uses-single-sign-on-preview"></a>创建使用单一登录的 ASP.NET Office 加载项（预览）
 
@@ -21,9 +21,9 @@ ms.locfileid: "29388302"
 
 ## <a name="prerequisites"></a>先决条件
 
-* 最新版 Visual Studio 2017 Preview。
+* Visual Studio 2017 的最新可用版本。
 
-* Office 2016，版本 1708，内部版本 8424.nnnn 或更高版本（Office 365 订阅版本，有时称为“即点即用”）。可能需要成为 Office 预览体验成员才能获取此版本。有关详细信息，请参阅[成为 Office 预览体验成员](https://products.office.com/office-insider?tab=tab-1)。
+* Office 365（订阅版本，也称为“即点即用版本”）。 来自预览体验成员频道的最新每月版本和内部版本。 你可能需要成为 Office 预览体验成员，才能获取此版本。 有关详细信息，请参阅[成为 Office 预览体验成员](https://products.office.com/office-insider?tab=tab-1)。 请注意，当内部版本进入生产半年频道时，将关闭对该内部版本的预览功能（包括 SSO）的支持。
 
 ## <a name="set-up-the-starter-project"></a>设置初学者项目
 
@@ -39,7 +39,7 @@ ms.locfileid: "29388302"
     > [!NOTE]
     > 将看到有关 Identity 命名空间的错误消息。 这是由于将在下一步中修复的配置问题间接造成。 重要的是，包已安装。
 
-1. 目前，SSO 所需的 MSAL 库 (Microsoft.Identity.Client) 版本（`1.1.4-preview0002` 版本）没有在标准 NuGet 目录中列出，因此也没有在 package.config 中列出，必须单独进行安装。 
+1. 目前，SSO 所需的 MSAL 库 (Microsoft.Identity.Client) 版本（`1.1.4-preview0002` 版本）没有在标准 NuGet 目录中列出，因此也没有在 package.config 中列出，必须单独进行安装。
 
    > 1. 在“工具”**** 菜单上，依次转到“NuGet 包管理器”**** > “包管理器控制台”****。 
 
