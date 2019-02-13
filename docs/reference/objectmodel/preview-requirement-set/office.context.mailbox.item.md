@@ -3,12 +3,12 @@ title: Office.context.mailbox.item-预览要求集
 description: ''
 ms.date: 01/30/2019
 localization_priority: Normal
-ms.openlocfilehash: 73495cfaceceec5da9c737f31f6ee96a7452dc3c
-ms.sourcegitcommit: bf5c56d9b8c573e42bf2268e10ca3fd4d2bb4ff9
+ms.openlocfilehash: a660f8bafdd2587f97d704e42c47abbe6c7d533d
+ms.sourcegitcommit: a59f4e322238efa187f388a75b7709462c71e668
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/01/2019
-ms.locfileid: "29701916"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "29982046"
 ---
 # <a name="item"></a>item
 
@@ -52,8 +52,8 @@ ms.locfileid: "29701916"
 | [requiredAttendees](#requiredattendees-arrayemailaddressdetailsjavascriptapioutlookofficeemailaddressdetailsrecipientsjavascriptapioutlookofficerecipients) | 成员 |
 | [sender](#sender-emailaddressdetailsjavascriptapioutlookofficeemailaddressdetails) | 成员 |
 | [seriesId](#nullable-seriesid-string) | Member |
-| [start](#start-datetimejavascriptapioutlookofficetime) | 成员 |
-| [subject](#subject-stringsubjectjavascriptapioutlookofficesubject) | 成员 |
+| [start](#start-datetimejavascriptapioutlookofficetime) | Member |
+| [subject](#subject-stringsubjectjavascriptapioutlookofficesubject) | Member |
 | [to](#to-arrayemailaddressdetailsjavascriptapioutlookofficeemailaddressdetailsrecipientsjavascriptapioutlookofficerecipients) | 成员 |
 | [addFileAttachmentAsync](#addfileattachmentasyncuri-attachmentname-options-callback) | 方法 |
 | [addFileAttachmentFromBase64Async](#addfileattachmentfrombase64asyncbase64file-attachmentname-options-callback) | 方法 |
@@ -402,7 +402,7 @@ function callbackFunction(asyncResult) {
 `from` 属性返回一个 `EmailAddressDetails` 对象。
 
 ```javascript
-var subject = Office.context.mailbox.item.from;
+var from = Office.context.mailbox.item.from;
 ```
 
 ##### <a name="compose-mode"></a>撰写模式

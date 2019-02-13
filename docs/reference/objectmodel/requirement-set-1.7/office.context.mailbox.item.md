@@ -3,12 +3,12 @@ title: Office.context.mailbox.item-要求设置 1.7
 description: ''
 ms.date: 01/30/2019
 localization_priority: Normal
-ms.openlocfilehash: 6ac795d426cf80071d7b83d5e10714f4d3a6036b
-ms.sourcegitcommit: bf5c56d9b8c573e42bf2268e10ca3fd4d2bb4ff9
+ms.openlocfilehash: e4bfbd9629913f775edff66f4592c220c4e5d580
+ms.sourcegitcommit: a59f4e322238efa187f388a75b7709462c71e668
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/01/2019
-ms.locfileid: "29701888"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "29982053"
 ---
 # <a name="item"></a>item
 
@@ -51,7 +51,7 @@ ms.locfileid: "29701888"
 | [sender](#sender-emailaddressdetailsjavascriptapioutlook17officeemailaddressdetails) | 成员 |
 | [seriesId](#nullable-seriesid-string) | 成员 |
 | [start](#start-datetimejavascriptapioutlook17officetime) | 成员 |
-| [subject](#subject-stringsubjectjavascriptapioutlook17officesubject) | 成员 |
+| [subject](#subject-stringsubjectjavascriptapioutlook17officesubject) | Member |
 | [to](#to-arrayemailaddressdetailsjavascriptapioutlook17officeemailaddressdetailsrecipientsjavascriptapioutlook17officerecipients) | 成员 |
 | [addFileAttachmentAsync](#addfileattachmentasyncuri-attachmentname-options-callback) | 方法 |
 | [addHandlerAsync](#addhandlerasynceventtype-handler-options-callback) | 方法 |
@@ -346,7 +346,7 @@ Office.context.mailbox.item.end.setAsync(endTime, options, function(result) {
 `from` 属性返回一个 `EmailAddressDetails` 对象。
 
 ```js
-var subject = Office.context.mailbox.item.from;
+var from = Office.context.mailbox.item.from;
 ```
 
 ##### <a name="compose-mode"></a>撰写模式

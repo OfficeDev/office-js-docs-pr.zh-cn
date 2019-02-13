@@ -5,12 +5,12 @@ ms.date: 01/08/2019
 ms.prod: excel
 ms.topic: tutorial
 localization_priority: Normal
-ms.openlocfilehash: 5ec99be6aec35ab659f5ddb6bdd270aa892a45eb
-ms.sourcegitcommit: 33dcf099c6b3d249811580d67ee9b790c0fdccfb
+ms.openlocfilehash: 4ac735e6fc19f13859d07df6cb3d2443e6dfe2fd
+ms.sourcegitcommit: a59f4e322238efa187f388a75b7709462c71e668
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "29742427"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "29982018"
 ---
 # <a name="tutorial-create-custom-functions-in-excel-preview"></a>教程：在 Excel 中创建自定义函数（预览）
 
@@ -89,7 +89,7 @@ npm run start
 此命令将启动 Web 服务器，并将自定义函数加载项旁加载到 Excel for Windows 中。
 
 > [!NOTE]
-> 如果加载项未加载，请检查是否已正确完成步骤 3。
+> 如果加载项未加载，请检查是否已正确完成步骤 3。 您还可以**[运行时日志记录](../testing/troubleshoot-manifest.md#use-runtime-logging-to-debug-your-add-in)** 来解决问题的外接程序的 XML 指令清单文件，以及任何安装或运行时的问题。 运行时日志记录写入`console.log`语句日志文件以帮助您查找和修复问题。
 
 # <a name="excel-onlinetabexcel-online"></a>[Excel Online](#tab/excel-online)
 
@@ -316,6 +316,7 @@ npm run start-web
 <ol start="4">
 <li>尝试使用新函数。 在单元格 <strong>C1</strong> 中，键入文本 <strong>=CONTOSO.STOCKPRICESTREAM("MSFT")</strong>，然后按 Enter。 假设股票市场开盘，应该会看到单元格 <strong>C1</strong> 中的结果在不断更新，以反映 Microsoft 一股股票的实时价格。</li>
 </ol>
+
 
 ## <a name="next-steps"></a>后续步骤
 

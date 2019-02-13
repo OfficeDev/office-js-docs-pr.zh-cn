@@ -1,14 +1,14 @@
 ---
-ms.date: 01/08/2019
+ms.date: 02/06/2019
 description: 了解开发使用新 JavaScript 运行时的 Excel 自定义函数时的关键方案。
 title: Excel 自定义函数的运行时（预览）
 localization_priority: Normal
-ms.openlocfilehash: dd8158da4ebcccac61b8ab6958a101489bf5a668
-ms.sourcegitcommit: 33dcf099c6b3d249811580d67ee9b790c0fdccfb
+ms.openlocfilehash: d891a41dc9e142ef3cfaa00c8b54d8d27913c57d
+ms.sourcegitcommit: a59f4e322238efa187f388a75b7709462c71e668
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "29742315"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "29982039"
 ---
 # <a name="runtime-for-excel-custom-functions-preview"></a>Excel 自定义函数的运行时（预览）
 
@@ -18,7 +18,11 @@ ms.locfileid: "29742315"
 
 ## <a name="requesting-external-data"></a>请求外部数据
 
-在自定义函数中，你可以使用 [Fetch](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) 等 API 或使用 [XmlHttpRequest (XHR)](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest)（一种发出与服务器交互的 HTTP 请求的标准 Web API）来请求外部数据。 在 JavaScript runtime 运行时内，XHR 通过要求[相同来源策略](https://developer.mozilla.org/en-US/docs/Web/Security/Same-origin_policy)和简单 [CORS](https://www.w3.org/TR/cors/) 来实施附加安全措施。  
+在自定义函数中，你可以使用 [Fetch](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) 等 API 或使用 [XmlHttpRequest (XHR)](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest)（一种发出与服务器交互的 HTTP 请求的标准 Web API）来请求外部数据。
+
+JavaScript 运行时使用的自定义函数内, XHR 通过要求[同源策略](https://developer.mozilla.org/en-US/docs/Web/Security/Same-origin_policy)和简单[CORS](https://www.w3.org/TR/cors/)实现其他安全措施。
+
+请注意的简单 CORS 实现不能使用 cookie，并仅支持简单方法 (GET、 标头，POST)。 简单 CORS 接受简单的标头包含字段名称`Accept`， `Accept-Language`， `Content-Language`。 您还可以使用`Content-Type`中简单 CORS 标头提供的内容类型是`application/x-www-form-urlencoded`， `text/plain`，或`multipart/form-data`。
 
 ### <a name="xhr-example"></a>XHR 示例
 
@@ -44,6 +48,9 @@ function sendWebRequest(thermometerID, data) {
         if (this.readyState == 4 && this.status == 200) {
            data.temperature = JSON.parse(xhttp.responseText).temperature
         };
+        
+        //set Content-Type to application/text. Application/json is not currently supported with Simple CORS
+        xhttp.setRequestHeader("Content-Type", "application/text");
         xhttp.open("GET", "https://contoso.com/temperature/" + thermometerID), true)
         xhttp.send();  
     }
