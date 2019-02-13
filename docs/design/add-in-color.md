@@ -4,10 +4,10 @@ description: ''
 ms.date: 06/27/2018
 localization_priority: Normal
 ms.openlocfilehash: 5cf5ea011cb1a745d9d277ef1556cdd913adb121
-ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
+ms.sourcegitcommit: a59f4e322238efa187f388a75b7709462c71e668
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/23/2019
+ms.lasthandoff: 02/13/2019
 ms.locfileid: "29386790"
 ---
 # <a name="color"></a>颜色

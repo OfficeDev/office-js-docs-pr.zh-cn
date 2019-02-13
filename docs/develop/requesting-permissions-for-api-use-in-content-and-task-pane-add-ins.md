@@ -4,10 +4,10 @@ description: ''
 ms.date: 12/04/2017
 localization_priority: Normal
 ms.openlocfilehash: 83e0ef9c77ad74b6d4557ac49555beda3800e6f1
-ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
+ms.sourcegitcommit: a59f4e322238efa187f388a75b7709462c71e668
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/23/2019
+ms.lasthandoff: 02/13/2019
 ms.locfileid: "29386881"
 ---
 # <a name="requesting-permissions-for-api-use-in-content-and-task-pane-add-ins"></a>在内容和任务窗格加载项中请求获取 API 使用权限

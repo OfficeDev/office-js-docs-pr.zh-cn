@@ -2,12 +2,13 @@
 title: 同时在 Excel 加载项中处理多个区域
 description: ''
 ms.date: 12/26/2018
-ms.openlocfilehash: ab7cd9757adaedf2b6cc43fdcc604b98a60b6ecd
-ms.sourcegitcommit: 8d248cd890dae1e9e8ef1bd47e09db4c1cf69593
+localization_priority: Normal
+ms.openlocfilehash: ba171026f410e59e81d3bbb6bc0f799c929a25a3
+ms.sourcegitcommit: a59f4e322238efa187f388a75b7709462c71e668
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/27/2018
-ms.locfileid: "27447230"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "29387868"
 ---
 # <a name="work-with-multiple-ranges-simultaneously-in-excel-add-ins-preview"></a>同时在 Excel 加载项中处理多个区域（预览）
 
