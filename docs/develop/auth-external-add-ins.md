@@ -1,14 +1,14 @@
 ---
 title: 在 Office 加载项中授权外部服务
 description: ''
-ms.date: 12/04/2017
+ms.date: 02/12/2019
 localization_priority: Priority
-ms.openlocfilehash: 4c045c28d62993db630c27553e8f52b8da5a0ee1
-ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
+ms.openlocfilehash: 6420107f29fd285e52839cd737f19472194b835f
+ms.sourcegitcommit: a59f4e322238efa187f388a75b7709462c71e668
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "29388785"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "29981997"
 ---
 # <a name="authorize-external-services-in-your-office-add-in"></a>在 Office 加载项中授权外部服务
 
@@ -16,7 +16,7 @@ ms.locfileid: "29388785"
 
 授权 Web 应用访问在线服务的行业标准框架为 **OAuth 2.0**。大多数情况下，无需了解框架的详细工作原理，即可在加载项中使用它。许多库都可用来化繁为简。
 
-OAuth 的基本概念是，应用程序本身可以是一个安全主体，就像一个用户或组，拥有其自己的标识和权限集。在最典型的应用场景中，当用户在需要联机服务的 Office 外接程序中进行操作时，外接程序会向服务发送请求，请求为用户帐户提供一组特定权限。然后，该服务会提示用户向外接程序授予这些权限。授予权限之后，该服务会向外接程序发送一个小的编码*访问令牌*。外接程序可以通过在其向服务 API 发送的所有请求中包含令牌来使用该服务。但外接程序只能在用户授予它的权限范围内进行操作。令牌还会在某个指定时间后过期。
+OAuth 的基本概念是，应用程序本身可以是一个安全主体，就像一个用户或组，拥有其自己的标识和权限集。 在最典型的应用场景中，当用户在需要联机服务的 Office 加载项中进行操作时，加载项会向服务发送请求，请求为用户帐户提供一组特定权限。 然后，该服务会提示用户向加载项授予这些权限。 授予权限之后，该服务会向外接程序发送一个小的编码*访问令牌*。 外接程序可以通过在其向服务 API 发送的所有请求中包含令牌来使用该服务。 但外接程序只能在用户授予它的权限范围内进行操作。 令牌还会在某个指定时间后过期。
 
 几种称为*流*或*授权类型*的 OAuth 模式专为不同方案而设计。 以下两种模式最常实现：
 
@@ -66,13 +66,9 @@ OAuth 流旨在保护应用的标识和授权。授权代码流提供了*客户�
 
 ## <a name="middleman-services"></a>中间人服务
 
-加载项可以使用中间人服务（如 OAuth.io 或 Auth0）执行授权。中间人服务可以提供热门在线服务的访问令牌，和/或简化加载项社交登录的启用过程。通过极少量的代码，加载项就可以使用客户端脚本或服务器端代码，连接到中间人服务，然后中间人服务会向加载项发送所需的任何在线服务令牌。所有授权实现代码都位于中间人服务中。
+加载项可以使用中间人服务（如 [OAuth.io](https://oauth.io) 或 [Auth0](https://auth0.com)）执行授权。中间人服务可以提供热门在线服务的访问令牌，和/或简化加载项社交登录的启用过程。通过极少量的代码，加载项就可以使用客户端脚本或服务器端代码，连接到中间人服务，然后中间人服务会向加载项发送所需的任何在线服务令牌。所有授权实现代码都位于中间人服务中。 
 
-有关使用中间人服务进行授权的加载项示例，请参阅以下示例：
-
-- [Office-Add-in-Auth0](https://github.com/OfficeDev/Office-Add-in-Auth0) 使用 Auth0 启用 Facebook、Google 和 Microsoft 帐户社交登录。
-
-- [Office-Add-in-OAuth.io](https://github.com/OfficeDev/Office-Add-in-OAuth.io) 使用 OAuth.io 从 Facebook 和 Google 获取访问令牌。
+我们建议外接程序中用于身份验证/授权的 UI 使用对话框 API 打开登录页面。 有关详细信息，请参阅[在身份验证流中使用对话框 API](dialog-api-in-office-add-ins.md#use-the-dialog-apis-in-an-authentication-flow)。 以这种方式打开 Office 对话框时，对话框具有全新和单独的浏览器实例，以及父页面的实例中的 JavaScript 引擎（如外接程序的任务窗格或 FunctionFile）。 一个标记以及可转换为字符串的其他信息被传递回使用名为 `messageParent` 的 API 的父页面。 然后父页面可以使用标记对资源进行经过授权的调用。 由于此体系结构，用户必须谨慎地使用中间人服务提供的 API。 服务通常会提供 API 集，其中代码创建某种上下文对象，该对象获取标记并使用该标记对资源进行后续调用。 该服务通常具有单个 API 方法，该方法进行初始调用并创建上下文对象**。 此类对象无法完全字符串化，因此无法从 Office 对话框传递到父页面。 通常，中间人服务在较低抽象级别提供第二个 API 集，例如 REST API。 第二个集将具有从该服务获取标记的 API，以及获取对资源的授权访问权限时将标记传递到服务的其他 API。 需要在此较低抽象级别使用 API，以便在 Office 对话框中获取标记并使用 `messageParent` 将其传递到父页面。 
 
 ## <a name="what-is-cors"></a>什么是 CORS？
 

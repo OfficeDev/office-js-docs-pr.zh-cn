@@ -1,14 +1,14 @@
 ---
 title: 在 Office 加载项中使用对话框 API
 description: ''
-ms.date: 12/20/2018
+ms.date: 02/12/2019
 localization_priority: Priority
-ms.openlocfilehash: fa6524e36319d2031ab005c8dec2fc8b5c50d7cd
-ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
+ms.openlocfilehash: d53fa5ddbafae5afb0e925762f9d738b9b78c9b0
+ms.sourcegitcommit: a59f4e322238efa187f388a75b7709462c71e668
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "29386965"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "29982032"
 ---
 # <a name="use-the-dialog-api-in-your-office-add-ins"></a>在 Office 加载项中使用对话框 API
 
@@ -200,10 +200,6 @@ if (loginSuccess) {
 > - 未显示 `getProfile` 和 `getError` 函数的实现。这两个函数均从查询参数或 HTTP 响应的正文获取数据。
 > - 根据登录是否成功，发送不同类型的匿名对象。两者都有 `messageType` 属性。不同之处在于，一个有 `profile` 属性，另一个有 `error` 属性。
 
-有关使用条件消息的样本，请参阅：
-- [使用 Auth0 服务简化社交登录的 Office 加载项](https://github.com/OfficeDev/Office-Add-in-Auth0)
-- [使用 OAuth.io 服务简化热门在线服务访问的 Office 加载项](https://github.com/OfficeDev/Office-Add-in-OAuth.io)
-
 主机页中的处理程序代码使用 `messageType` 属性的值设置分支，如下面的示例所示。请注意，`showUserName` 函数的用法与之前的示例相同，`showNotification` 函数在主机页的 UI 中显示错误。
 
 ```js
@@ -352,11 +348,6 @@ var clientID = localStorage.getItem("clientID");
 // var clientID = localStorage.clientID;
 ```
 
-有关通过这种方式使用本地存储的样本加载项，请参阅：
-
-- [使用 Auth0 服务简化社交登录的 Office 加载项](https://github.com/OfficeDev/Office-Add-in-Auth0)
-- [使用 OAuth.io 服务简化热门在线服务访问的 Office 加载项](https://github.com/OfficeDev/Office-Add-in-OAuth.io)
-
 ### <a name="use-query-parameters"></a>使用查询参数
 
 下面的示例展示了如何使用查询参数传递数据：
@@ -417,8 +408,6 @@ Office.context.ui.displayDialogAsync('https://myAddinDomain/myDialog.html?client
 
 如果外接程序允许用户选择提供程序（如 Microsoft 帐户、Google 或 Facebook），你需要使用本地第一个页面（见前一部分），为用户提供用于选择提供程序的 UI。用户的选择会触发登录 URL 的构建并重定向到该 URL。
 
-有关使用此模式的示例，请参阅[使用 Auth0 服务简化社交登录的 Office 外接程序](https://github.com/OfficeDev/Office-Add-in-Auth0)。
-
 #### <a name="authorization-of-the-add-in-to-an-external-resource"></a>在外接程序中授权外部资源
 
 在现代网络中，Web 应用程序是安全主体（就像用户一样），拥有自己的标识以及对联机资源（如 Office 365、Google Plus、Facebook 或 LinkedIn）的权限。在部署前，需要先向资源提供程序注册应用程序。注册内容包括：
@@ -435,7 +424,6 @@ Office.context.ui.displayDialogAsync('https://myAddinDomain/myDialog.html?client
 
 下面的示例使用对话框 API 实现此目的：
 - [Insert Excel charts using Microsoft Graph in a PowerPoint add-in](https://github.com/OfficeDev/PowerPoint-Add-in-Microsoft-Graph-ASPNET-InsertChart)（在 PowerPoint 加载项中使用 Microsoft Graph 插入 Excel 图表） - 将访问令牌存储在数据库中。
-- [Office Add-in that uses the OAuth.io Service to Simplify Access to Popular Online Services](https://github.com/OfficeDev/Office-Add-in-OAuth.io)（使用 OAuth.io 服务简化热门在线服务访问的 Office 加载项）
 
 若要详细了解加载项中的身份验证和授权，请参阅：
 - [在 Office 加载项中授权外部服务](auth-external-add-ins.md)

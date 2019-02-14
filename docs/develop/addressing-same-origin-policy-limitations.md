@@ -1,37 +1,26 @@
 ---
 title: 解决 Office 加载项中的同源策略限制
 description: ''
-ms.date: 12/04/2017
+ms.date: 02/08/2019
 localization_priority: Priority
-ms.openlocfilehash: 75bc42cd7d2a7acc8cb57ee08807a8486e21f467
-ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
+ms.openlocfilehash: 52af2eef2881b48feb141182233bc194ae406aa0
+ms.sourcegitcommit: a59f4e322238efa187f388a75b7709462c71e668
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "29387753"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "29981990"
 ---
 # <a name="addressing-same-origin-policy-limitations-in-office-add-ins"></a>解决 Office 加载项中的同源策略限制
-
 
 浏览器强制的同源策略可防止从一个域加载的脚本获取或操控来自另一个域的网页的属性。即，默认情况下，请求 URL 的域必须与当前网页的域相同。例如，此策略将阻止一个域中的网页对非托管该网页的域执行 [XmlHttpRequest](https://www.w3.org/TR/XMLHttpRequest/) Web 服务调用。
 
 由于 Office 外接程序在浏览器控件中托管，因此同源策略也适用于在其网页中运行的脚本。
 
-开发加载项时，要解决同源策略强制，您可以执行以下操作：
+同一来源的策略可能在许多情况下是不必要的障碍，例如当 web 应用程序跨多个子域托管内容和 API 时。 有一些常见技术可以安全解决同一来源策略执行的问题。 本文仅提供有关部分内容的最简洁的介绍。 请使用提供的链接开始对这些技术进行研究。
 
-- 针对匿名访问使用 JSON/P。 
-    
-- 使用基于令牌的身份验证架构实施服务器端脚本。
-    
-- 使用跨源资源共享 (CORS)。
-    
-- 使用 IFRAME 和 POST MESSAGE 生成您自己的代理。
-    
+## <a name="use-jsonp-for-anonymous-access"></a>针对匿名访问使用 JSON/P
 
-## <a name="using-jsonp-for-anonymous-access"></a>针对匿名访问使用 JSON/P
-
-
-解决此限制的一个方法是使用 JSON/P 提供 Web 服务的代理。可以通过包括指向任何域上托管的某些脚本的 `script` 标签（带有 `src` 属性）实现此过程。可以使用编程的方法创建 `script` 标签，动态创建 `src` 属性所指向的 URL，然后通过 URI 查询参数将参数传递给 URL。Web 服务提供程序在特定的 URL 位置创建和托管 JavaScript 代码，并根据 URI 查询参数返回不同的脚本。这些脚本然后在插入位置执行并按照预期的方式工作。
+解决同一来源策略限制的一个方法是使用 [JSON/P](https://www.w3schools.com/js/js_json_jsonp.asp) 为 web 服务提供代理。 可以通过包括指向任何域上托管的某些脚本的 `script` 标签（带有 `src` 属性）实现此过程。 可以使用编程的方法创建 `script` 标签，动态创建 `src` 属性所指向的 URL，然后通过 URI 查询参数将参数传递给 URL。 Web 服务提供程序在特定的 URL 位置创建和托管 JavaScript 代码，并根据 URI 查询参数返回不同的脚本。 这些脚本然后在插入位置执行并按照预期的方式工作。
 
 下面是使用可在任何 Office 外接程序中工作的技术的 JSON/P 示例。
 
@@ -51,21 +40,18 @@ function loadVideoDetails(videoIndex) {
 ```
 
 
-## <a name="implementing-server-side-script-using-a-token-based-authentication-scheme"></a>使用基于令牌的身份验证架构实施服务器端脚本
+## <a name="implement-server-side-code-using-a-token-based-authorization-scheme"></a>使用基于令牌的授权架构实施服务器端代码
+
+解决同一来源策略限制的另一个方法是提供使用 [OAuth 2.0](https://oauth.net/2/) 流的服务器端代码，让一个域获取对另一个域上托管的资源的授权访问。 
 
 
-解决同源策略限制的另一个方法是将加载项网页作为在 Cookie 中使用 OAuth 或缓存凭据的 ASP 页来实施。
-
-有关演示如何使用 `System.Net` 中的 `Cookie` 对象获取和设置 cookie 值的服务器端代码示例，请参阅 [Value](https://docs.microsoft.com/dotnet/api/system.net.cookie.value?view=netframework-4.7.2) 属性。
-
-
-## <a name="using-cross-origin-resource-sharing-cors"></a>使用跨源资源共享 (CORS)
+## <a name="use-cross-origin-resource-sharing-cors"></a>使用跨源资源共享 (CORS)
 
 
 有关使用 [XmlHttpRequest2](https://dvcs.w3.org/hg/xhr/raw-file/tip/Overview.html) 的跨源资源共享功能的示例，请参阅 [XMLHttpRequest2 中的新技巧](https://www.html5rocks.com/en/tutorials/file/xhr2/)的“跨源资源共享 (CORS)”部分。
 
 
-## <a name="building-your-own-proxy-using-iframe-and-post-message"></a>使用 IFRAME 和 POST MESSAGE 生成您自己的代理
+## <a name="build-your-own-proxy-using-iframe-and-post-message-cross-window-messaging"></a>使用 IFRAME 和 POST MESSAGE 生成您自己的代理（跨 Window 消息传递）。
 
 
 有关如何使用 IFRAME 和 POST MESSAGE 生成自己代理的示例，请参阅[跨窗口消息传送](http://ejohn.org/blog/cross-window-messaging/)。
