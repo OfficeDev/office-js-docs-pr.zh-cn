@@ -36,6 +36,7 @@
       "uhfHeaderId": "MSDocsHeader-Dev_Office",
       "searchScope": ["Office Add-ins"],
       "breadcrumb_path": "/office/dev/add-ins/breadcrumb/toc.json",
+      "feedback_system": "None",
       "feedback_github_repo": "OfficeDev/office-js-docs-pr",
       "feedback_product_url": "https://officespdev.uservoice.com/",
       "extendBreadcrumb": true,
@@ -43,15 +44,31 @@
       "ms.author": "o365devx",
       "author": "o365devx",
       "ms.topic": "conceptual",
-      "ms.prod": "Office 365",
-      "ms.technology": "Add-ins",
+      "ms.technology": "add-ins",
+      "titleSuffix": "Office Add-ins",
       "bilingual_type": "hover over",
-      "feedback_system": "None",
       "hide_comments": true
     },
     "fileMetadata": {
       "feedback_system": {
         "resources/resources-links-help.md": "None"
+      },
+      "ms.prod": {
+        "concepts/*.md": "non-product-specific",
+        "design/*.md": "non-product-specific",
+        "develop/*.md": "non-product-specific",
+        "excel/*.md": "excel",
+        "onenote/*.md": "onenote",
+        "overview/*.md": "non-product-specific",
+        "powerpoint/*.md": "powerpoint",
+        "project/*.md": "project",
+        "publish/*.md": "non-product-specific",
+        "reference/*.md": "non-product-specific",
+        "reference/manifest/*.md": "non-product-specific",
+        "reference/objectmodel/**/*.md": "outlook",
+        "resources/*.md": "non-product-specific",
+        "testing/*.md": "non-product-specific",
+        "word/*.md": "word"
       }
     },
     "template": [],
