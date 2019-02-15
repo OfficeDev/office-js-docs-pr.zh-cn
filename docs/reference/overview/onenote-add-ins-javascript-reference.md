@@ -4,12 +4,12 @@ description: ''
 ms.date: 10/09/2018
 ms.prod: onenote
 localization_priority: Normal
-ms.openlocfilehash: 87bc16f77c14871044fa628f9903ea6ae05f3e0e
-ms.sourcegitcommit: 33dcf099c6b3d249811580d67ee9b790c0fdccfb
+ms.openlocfilehash: f8fed0104412f60ec59146ef7820be958047d1f3
+ms.sourcegitcommit: 70ef38a290c18a1d1a380fd02b263470207a5dc6
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "29742420"
+ms.lasthandoff: 02/15/2019
+ms.locfileid: "30052740"
 ---
 # <a name="onenote-javascript-api-overview"></a>OneNote JavaScript API 概述
 
@@ -62,6 +62,6 @@ ms.locfileid: "29742420"
 ## <a name="see-also"></a>另请参阅
 
 - [OneNote JavaScript API 编程概述](https://docs.microsoft.com/office/dev/add-ins/onenote/onenote-add-ins-programming-overview)
-- [生成第一个 OneNote 外接程序](https://docs.microsoft.com/office/dev/add-ins/onenote/onenote-add-ins-getting-started)
+- [生成第一个 OneNote 外接程序](../../quickstarts/onenote-quickstart.md)
 - [Rubric Grader 示例](https://github.com/OfficeDev/OneNote-Add-in-Rubric-Grader)
 - [Office 加载项平台概述](https://docs.microsoft.com/office/dev/add-ins/overview/office-add-ins)

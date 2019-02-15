@@ -1,13 +1,14 @@
 ---
 title: 处理 OneNote 页面内容
 description: ''
-ms.date: 1/10/2019
-ms.openlocfilehash: 617c30f2a9a0c72b1c309ce299f388b5a16b983f
-ms.sourcegitcommit: 384e217fd51d73d13ccfa013bfc6e049b66bd98c
-ms.translationtype: HT
+ms.date: 01/10/2019
+localization_priority: Normal
+ms.openlocfilehash: b92f83ee85943ca4e819b04e2b6fa90e6d4fe4b3
+ms.sourcegitcommit: 70ef38a290c18a1d1a380fd02b263470207a5dc6
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/11/2019
-ms.locfileid: "27896334"
+ms.lasthandoff: 02/15/2019
+ms.locfileid: "30052719"
 ---
 # <a name="work-with-onenote-page-content"></a>处理 OneNote 页面内容
 
