@@ -1,13 +1,14 @@
 ---
 title: Office.context.mailbox.userProfile - 预览要求集
 description: ''
-ms.date: 10/31/2018
-ms.openlocfilehash: 061ee8367005f4af0795c4d9e1236d0b2443521a
-ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
-ms.translationtype: HT
+ms.date: 02/15/2019
+localization_priority: Normal
+ms.openlocfilehash: 214434c988c01ecb1aef93f4067cd95bfe768ae9
+ms.sourcegitcommit: f26778b596b6b022814c39601485ff676ed4e2fa
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/22/2018
-ms.locfileid: "27432814"
+ms.lasthandoff: 02/16/2019
+ms.locfileid: "30068173"
 ---
 # <a name="userprofile"></a>userProfile
 
@@ -28,7 +29,7 @@ ms.locfileid: "27432814"
 | [accountType](#accounttype-string) | 成员 |
 | [displayName](#displayname-string) | 成员 |
 | [emailAddress](#emailaddress-string) | 成员 |
-| [timeZone](#timezone-string) | 成员 |
+| [timeZone](#timezone-string) | Member |
 
 ### <a name="members"></a>成员
 
@@ -39,14 +40,14 @@ ms.locfileid: "27432814"
 
 获取与邮箱关联的用户的帐户类型。 下表中列出了可能的值。
 
-| 值 | 描述 |
+| 值 | 说明 |
 |-------|-------------|
 | `enterprise` | 邮箱位于本地 Exchange 服务器上。 |
 | `gmail` | 邮箱与 Gmail 帐户关联。 |
 | `office365` | 邮箱与 Office 365 工作或学校帐户关联。 |
 | `outlookCom` | 邮箱与个人 Outlook.com 帐户关联。 |
 
-##### <a name="type"></a>类型：
+##### <a name="type"></a>Type
 
 *   String
 
@@ -60,15 +61,15 @@ ms.locfileid: "27432814"
 
 ##### <a name="example"></a>示例
 
-```js
+```javascript
 console.log(Office.context.mailbox.userProfile.accountType);
 ```
 
-####  <a name="displayname-string"></a>displayName：字符串
+####  <a name="displayname-string"></a>displayName :String
 
 获取用户的显示名称。
 
-##### <a name="type"></a>类型：
+##### <a name="type"></a>Type
 
 *   String
 
@@ -82,7 +83,7 @@ console.log(Office.context.mailbox.userProfile.accountType);
 
 ##### <a name="example"></a>示例
 
-```js
+```javascript
 // Example: Allie Bellew
 console.log(Office.context.mailbox.userProfile.displayName);
 ```
@@ -91,7 +92,7 @@ console.log(Office.context.mailbox.userProfile.displayName);
 
 获取用户的 SMTP 电子邮件地址。
 
-##### <a name="type"></a>类型：
+##### <a name="type"></a>Type
 
 *   String
 
@@ -105,7 +106,7 @@ console.log(Office.context.mailbox.userProfile.displayName);
 
 ##### <a name="example"></a>示例
 
-```js
+```javascript
 // Example: allieb@contoso.com
 console.log(Office.context.mailbox.userProfile.emailAddress);
 ```
@@ -114,7 +115,7 @@ console.log(Office.context.mailbox.userProfile.emailAddress);
 
 获取用户的默认时区。
 
-##### <a name="type"></a>类型：
+##### <a name="type"></a>Type
 
 *   String
 
@@ -128,7 +129,7 @@ console.log(Office.context.mailbox.userProfile.emailAddress);
 
 ##### <a name="example"></a>示例
 
-```js
+```javascript
 // Example: Pacific Standard Time
 console.log(Office.context.mailbox.userProfile.timeZone);
 ```

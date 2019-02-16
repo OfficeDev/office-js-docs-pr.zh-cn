@@ -1,13 +1,14 @@
 ---
 title: Office.context.mailbox - 要求集 1.2
 description: ''
-ms.date: 10/31/2018
-ms.openlocfilehash: 18ac05d9d097253a2b1f51e162a6a8600b2b88cf
-ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
-ms.translationtype: HT
+ms.date: 02/15/2019
+localization_priority: Normal
+ms.openlocfilehash: 5d3cc3fbcc233e8afd0d0a6f3a3ae80534eb3c28
+ms.sourcegitcommit: f26778b596b6b022814c39601485ff676ed4e2fa
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/22/2018
-ms.locfileid: "27433402"
+ms.lasthandoff: 02/16/2019
+ms.locfileid: "30068215"
 ---
 # <a name="mailbox"></a>邮箱
 
@@ -42,7 +43,7 @@ ms.locfileid: "27433402"
 
 远程服务可使用 `ewsUrl` 值对用户邮箱进行 EWS 调用。例如，可以创建远程服务来 [获取选定项目中的附件](https://docs.microsoft.com/outlook/add-ins/get-attachments-of-an-outlook-item)。
 
-##### <a name="type"></a>类型:
+##### <a name="type"></a>Type
 
 *   String
 
@@ -64,13 +65,13 @@ Outlook 或 Outlook Web App 邮件应用程序的日期和时间可以使用不�
 
 如果邮件应用程序在 Outlook 中运行，`convertToLocalClientTime` 方法将返回一个值设置为客户端计算机时区的字典对象。如果邮件应用程序在 Outlook Web App 中运行，`convertToLocalClientTime` 方法将返回值设置为 EAC 中指定的时区的字典对象。
 
-##### <a name="parameters"></a>参数：
+##### <a name="parameters"></a>Parameters
 
-|名称| 类型| 描述|
+|名称| 类型| 说明|
 |---|---|---|
-|`timeValue`| 日期|一个 Date 对象|
+|`timeValue`| Date|一个 Date 对象|
 
-##### <a name="requirements"></a>要求
+##### <a name="requirements"></a>Requirements
 
 |要求| 值|
 |---|---|
@@ -88,13 +89,13 @@ Outlook 或 Outlook Web App 邮件应用程序的日期和时间可以使用不�
 
 `convertToUtcClientTime` 方法将包含本地日期和时间的字典转换为包含与本地日期和时间对应的正确值的 Date 对象。
 
-##### <a name="parameters"></a>参数：
+##### <a name="parameters"></a>Parameters
 
 |名称| 类型| 说明|
 |---|---|---|
 |`input`| [LocalClientTime](/javascript/api/outlook_1_2/office.LocalClientTime)|要转换的本地时间值。|
 
-##### <a name="requirements"></a>要求
+##### <a name="requirements"></a>Requirements
 
 |要求| 值|
 |---|---|
@@ -131,13 +132,13 @@ Outlook 或 Outlook Web App 邮件应用程序的日期和时间可以使用不�
 
 如果指定的项标识符没有识别现有约会，将在客户端计算机或设备上打开一个空白窗格，并且不会返回错误消息。
 
-##### <a name="parameters"></a>参数：
+##### <a name="parameters"></a>Parameters
 
 |名称| 类型| 描述|
 |---|---|---|
 |`itemId`| 字符串|现有日历约会的 Exchange Web 服务 (EWS) 标识符。|
 
-##### <a name="requirements"></a>要求
+##### <a name="requirements"></a>Requirements
 
 |要求| 值|
 |---|---|
@@ -147,7 +148,7 @@ Outlook 或 Outlook Web App 邮件应用程序的日期和时间可以使用不�
 
 ##### <a name="example"></a>示例
 
-```js
+```javascript
 Office.context.mailbox.displayAppointmentForm(appointmentId);
 ```
 
@@ -166,7 +167,7 @@ Office.context.mailbox.displayAppointmentForm(appointmentId);
 
 不要使用包含表示约会的 `itemId` 的 `displayMessageForm`。使用 `displayAppointmentForm` 方法显示现有的约会，并使用 `displayNewAppointmentForm` 显示窗体以新建约会。
 
-##### <a name="parameters"></a>参数：
+##### <a name="parameters"></a>Parameters
 
 |名称| 类型| 描述|
 |---|---|---|
@@ -182,7 +183,7 @@ Office.context.mailbox.displayAppointmentForm(appointmentId);
 
 ##### <a name="example"></a>示例
 
-```js
+```javascript
 Office.context.mailbox.displayMessageForm(messageId);
 ```
 
@@ -201,9 +202,9 @@ Office.context.mailbox.displayMessageForm(messageId);
 
 如果任何参数超过指定大小限制，或者指定了未知参数名称，则会引发异常。
 
-##### <a name="parameters"></a>参数：
+##### <a name="parameters"></a>Parameters
 
-|名称| 类型| 描述|
+|名称| 说明| 描述|
 |---|---|---|
 | `parameters` | 对象 | 描述新约会的参数字典。 |
 | `parameters.requiredAttendees` | Array.&lt;String&gt; &#124; Array.&lt;[EmailAddressDetails](/javascript/api/outlook_1_2/office.emailaddressdetails)&gt; | 包含电子邮件地址的字符串数组或包含约会的每个必需与会者的 `EmailAddressDetails` 对象的数组。数组限制为最多 100 个条目。 |
@@ -213,7 +214,7 @@ Office.context.mailbox.displayMessageForm(messageId);
 | `parameters.location` | String | 包含约会位置的字符串。字符串长度限制为最多 255 个字符。 |
 | `parameters.resources` | Array.&lt;String&gt; | 包含约会所需资源的字符串数组。数组限制为最多 100 个条目。 |
 | `parameters.subject` | String | 包含约会主题的字符串。字符串长度限制为最多 255 个字符。 |
-| `parameters.body` | 字符串 | 约会的正文。正文内容限制为最大 32 KB。 |
+| `parameters.body` | String | 约会的正文。正文内容限制为最大 32 KB。 |
 
 ##### <a name="requirements"></a>要求
 
@@ -225,7 +226,7 @@ Office.context.mailbox.displayMessageForm(messageId);
 
 ##### <a name="example"></a>示例
 
-```js
+```javascript
 var start = new Date();
 var end = new Date();
 end.setHours(start.getHours() + 1);
@@ -253,7 +254,7 @@ Office.context.mailbox.displayNewAppointmentForm(
 
 应用必须在其清单中指定拥有 **ReadItem** 权限，才能调用 `getCallbackTokenAsync` 方法。
 
-##### <a name="parameters"></a>参数：
+##### <a name="parameters"></a>Parameters
 
 |名称| 类型| 属性| 说明|
 |---|---|---|---|
@@ -270,7 +271,7 @@ Office.context.mailbox.displayNewAppointmentForm(
 
 ##### <a name="example"></a>示例
 
-```js
+```javascript
 function getCallbackToken() {
   Office.context.mailbox.getCallbackTokenAsync(cb);
 }
@@ -286,7 +287,7 @@ function cb(asyncResult) {
 
 `getUserIdentityTokenAsync` 方法返回你可以用于在第三方系统上识别和 [验证外接程序和用户的令牌](https://docs.microsoft.com/outlook/add-ins/authentication)。
 
-##### <a name="parameters"></a>参数：
+##### <a name="parameters"></a>Parameters
 
 |名称| 类型| 属性| 说明|
 |---|---|---|---|
@@ -303,7 +304,7 @@ function cb(asyncResult) {
 
 ##### <a name="example"></a>示例
 
-```js
+```javascript
 function getIdentityToken() {
   Office.context.mailbox.getUserIdentityTokenAsync(cb);
 }
@@ -349,7 +350,7 @@ XML 请求必须指定 UTF-8 编码。
 
 当邮件应用程序运行在 Outlook 网页版中时，您不需要设置编码值。可以通过使用 mailbox.diagnostics.hostName 属性来确定您的邮件应用程序在 Outlook 中还是 Outlook 网页版中运行。可以通过使用 mailbox.diagnostics.hostVersion 属性来确定正在运行的是 Outlook 的哪个版本。
 
-##### <a name="parameters"></a>参数：
+##### <a name="parameters"></a>Parameters
 
 |名称| 类型| 属性| 说明|
 |---|---|---|---|
@@ -369,10 +370,10 @@ XML 请求必须指定 UTF-8 编码。
 
 下面的示例调用 `makeEwsRequestAsync` 以使用 `GetItem` 操作来获取项目的主题。
 
-```js
+```javascript
 function getSubjectRequest(id) {
-   // Return a GetItem operation request for the subject of the specified item.
-   var request =
+  // Return a GetItem operation request for the subject of the specified item.
+  var request =
     '<?xml version="1.0" encoding="utf-8"?>' +
     '<soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"' +
     '               xmlns:xsd="http://www.w3.org/2001/XMLSchema"' +
@@ -394,19 +395,19 @@ function getSubjectRequest(id) {
     '  </soap:Body>' +
     '</soap:Envelope>';
 
-   return request;
+  return request;
 }
 
 function sendRequest() {
-   // Create a local variable that contains the mailbox.
-   Office.context.mailbox.makeEwsRequestAsync(
+  // Create a local variable that contains the mailbox.
+  Office.context.mailbox.makeEwsRequestAsync(
     getSubjectRequest(mailbox.item.itemId), callback);
 }
 
 function callback(asyncResult)  {
-   var result = asyncResult.value;
-   var context = asyncResult.asyncContext;
+  var result = asyncResult.value;
+  var context = asyncResult.asyncContext;
 
-   // Process the returned response here.
+  // Process the returned response here.
 }
 ```

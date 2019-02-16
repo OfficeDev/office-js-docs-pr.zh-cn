@@ -1,13 +1,14 @@
 ---
 title: Office.context.mailbox - 要求集 1.3
 description: ''
-ms.date: 10/31/2018
-ms.openlocfilehash: eb4a69b6119644f288f90a80b161911ab4311339
-ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
-ms.translationtype: HT
+ms.date: 02/15/2019
+localization_priority: Normal
+ms.openlocfilehash: edf9bcaa842660007bea85b497308aa7949f8085
+ms.sourcegitcommit: f26778b596b6b022814c39601485ff676ed4e2fa
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/22/2018
-ms.locfileid: "27433353"
+ms.lasthandoff: 02/16/2019
+ms.locfileid: "30068222"
 ---
 # <a name="mailbox"></a>邮箱
 
@@ -46,7 +47,7 @@ ms.locfileid: "27433353"
 
 在撰写模式中，必须调用 [`saveAsync`](Office.context.mailbox.item.md#saveasyncoptions-callback) 方法，才能使用 `ewsUrl` 成员。应用必须具有调用 `saveAsync` 方法的 **ReadWriteItem** 权限。
 
-##### <a name="type"></a>类型:
+##### <a name="type"></a>Type
 
 *   String
 
@@ -69,14 +70,14 @@ ms.locfileid: "27433353"
 
 通过 REST API 检索的项 ID（如 [Outlook 邮件 API](https://docs.microsoft.com/previous-versions/office/office-365-api/api/version-2.0/mail-rest-operations) 或 [Microsoft Graph](https://graph.microsoft.io/)）使用与 Exchange Web 服务 (EWS) 所使用格式不同的格式。`convertToEwsId` 方法将 REST 格式化的 ID 转换为正确的 EWS 格式。
 
-##### <a name="parameters"></a>参数：
+##### <a name="parameters"></a>Parameters
 
 |名称| 类型| 描述|
 |---|---|---|
 |`itemId`| 字符串|Outlook REST API 的格式化的项目 ID。|
 |`restVersion`| [Office.MailboxEnums.RestVersion](/javascript/api/outlook_1_3/office.mailboxenums.restversion)|指示用于检索项目 ID 的 Outlook REST API 的版本。|
 
-##### <a name="requirements"></a>要求
+##### <a name="requirements"></a>Requirements
 
 |要求| 值|
 |---|---|
@@ -90,12 +91,11 @@ ms.locfileid: "27433353"
 
 ##### <a name="example"></a>示例
 
-```js
-// Get an item's ID from a REST API
+```javascript
+// Get an item's ID from a REST API.
 var restId = 'AAMkAGVlOTZjNTM3LW...';
 
-// Treat restId as coming from the v2.0 version of the
-// Outlook Mail API
+// Treat restId as coming from the v2.0 version of the Outlook Mail API.
 var ewsId = Office.context.mailbox.convertToEwsId(restId, Office.MailboxEnums.RestVersion.v2_0);
 ```
 
@@ -107,13 +107,13 @@ Outlook 或 Outlook Web App 邮件应用程序的日期和时间可以使用不�
 
 如果邮件应用程序在 Outlook 中运行，`convertToLocalClientTime` 方法将返回一个值设置为客户端计算机时区的字典对象。如果邮件应用程序在 Outlook Web App 中运行，`convertToLocalClientTime` 方法将返回值设置为 EAC 中指定的时区的字典对象。
 
-##### <a name="parameters"></a>参数：
+##### <a name="parameters"></a>Parameters
 
-|名称| 类型| 描述|
+|名称| 类型| 说明|
 |---|---|---|
 |`timeValue`| 日期|一个 Date 对象|
 
-##### <a name="requirements"></a>要求
+##### <a name="requirements"></a>Requirements
 
 |要求| 值|
 |---|---|
@@ -134,7 +134,7 @@ Outlook 或 Outlook Web App 邮件应用程序的日期和时间可以使用不�
 
 与 REST API 所使用的格式比较，通过 EWS 或通过 `itemId` 属性检索的项目 ID 使用不同的格式（例如 [Outlook Mail API](https://docs.microsoft.com/previous-versions/office/office-365-api/api/version-2.0/mail-rest-operations) 或 [Microsoft Graph](https://graph.microsoft.io/)）。`convertToRestId` 方法将 EWS 格式化的 ID 转换为正确的 REST 格式。
 
-##### <a name="parameters"></a>参数：
+##### <a name="parameters"></a>Parameters
 
 |名称| 类型| 描述|
 |---|---|---|
@@ -155,12 +155,11 @@ Outlook 或 Outlook Web App 邮件应用程序的日期和时间可以使用不�
 
 ##### <a name="example"></a>示例
 
-```js
-// Get the currently selected item's ID
+```javascript
+// Get the currently selected item's ID.
 var ewsId = Office.context.mailbox.item.itemId;
 
-// Convert to a REST ID for the v2.0 version of the
-// Outlook Mail API
+// Convert to a REST ID for the v2.0 version of the Outlook Mail API.
 var restId = Office.context.mailbox.convertToRestId(ewsId, Office.MailboxEnums.RestVersion.v2_0);
 ```
 
@@ -170,13 +169,13 @@ var restId = Office.context.mailbox.convertToRestId(ewsId, Office.MailboxEnums.R
 
 `convertToUtcClientTime` 方法将包含本地日期和时间的字典转换为包含与本地日期和时间对应的正确值的 Date 对象。
 
-##### <a name="parameters"></a>参数：
+##### <a name="parameters"></a>Parameters
 
 |名称| 类型| 说明|
 |---|---|---|
 |`input`| [LocalClientTime](/javascript/api/outlook_1_3/office.LocalClientTime)|要转换的本地时间值。|
 
-##### <a name="requirements"></a>要求
+##### <a name="requirements"></a>Requirements
 
 |要求| 值|
 |---|---|
@@ -194,7 +193,7 @@ var restId = Office.context.mailbox.convertToRestId(ewsId, Office.MailboxEnums.R
 类型</dt>
 
 
-<dd>日期</dd>
+<dd>Date</dd>
 
 </dl>
 
@@ -213,13 +212,13 @@ var restId = Office.context.mailbox.convertToRestId(ewsId, Office.MailboxEnums.R
 
 如果指定的项标识符没有识别现有约会，将在客户端计算机或设备上打开一个空白窗格，并且不会返回错误消息。
 
-##### <a name="parameters"></a>参数：
+##### <a name="parameters"></a>Parameters
 
-|名称| 类型| 描述|
+|名称| 说明| 说明|
 |---|---|---|
 |`itemId`| 字符串|现有日历约会的 Exchange Web 服务 (EWS) 标识符。|
 
-##### <a name="requirements"></a>要求
+##### <a name="requirements"></a>Requirements
 
 |要求| 值|
 |---|---|
@@ -229,7 +228,7 @@ var restId = Office.context.mailbox.convertToRestId(ewsId, Office.MailboxEnums.R
 
 ##### <a name="example"></a>示例
 
-```js
+```javascript
 Office.context.mailbox.displayAppointmentForm(appointmentId);
 ```
 
@@ -248,13 +247,13 @@ Office.context.mailbox.displayAppointmentForm(appointmentId);
 
 不要使用包含表示约会的 `itemId` 的 `displayMessageForm`。使用 `displayAppointmentForm` 方法显示现有的约会，并使用 `displayNewAppointmentForm` 显示窗体以新建约会。
 
-##### <a name="parameters"></a>参数：
+##### <a name="parameters"></a>Parameters
 
-|名称| 类型| 描述|
+|名称| 说明| 说明|
 |---|---|---|
 |`itemId`| 字符串|现有消息的 Exchange Web 服务 (EWS) 标识符。|
 
-##### <a name="requirements"></a>要求
+##### <a name="requirements"></a>Requirements
 
 |要求| 值|
 |---|---|
@@ -264,7 +263,7 @@ Office.context.mailbox.displayAppointmentForm(appointmentId);
 
 ##### <a name="example"></a>示例
 
-```js
+```javascript
 Office.context.mailbox.displayMessageForm(messageId);
 ```
 
@@ -283,9 +282,9 @@ Office.context.mailbox.displayMessageForm(messageId);
 
 如果任何参数超过指定大小限制，或者指定了未知参数名称，则会引发异常。
 
-##### <a name="parameters"></a>参数：
+##### <a name="parameters"></a>Parameters
 
-|名称| 类型| 描述|
+|名称| 说明| 描述|
 |---|---|---|
 | `parameters` | 对象 | 描述新约会的参数字典。 |
 | `parameters.requiredAttendees` | Array.&lt;String&gt; &#124; Array.&lt;[EmailAddressDetails](/javascript/api/outlook_1_3/office.emailaddressdetails)&gt; | 包含电子邮件地址的字符串数组或包含约会的每个必需与会者的 `EmailAddressDetails` 对象的数组。数组限制为最多 100 个条目。 |
@@ -295,7 +294,7 @@ Office.context.mailbox.displayMessageForm(messageId);
 | `parameters.location` | String | 包含约会位置的字符串。字符串长度限制为最多 255 个字符。 |
 | `parameters.resources` | Array.&lt;String&gt; | 包含约会所需资源的字符串数组。数组限制为最多 100 个条目。 |
 | `parameters.subject` | String | 包含约会主题的字符串。字符串长度限制为最多 255 个字符。 |
-| `parameters.body` | 字符串 | 约会的正文。正文内容限制为最大 32 KB。 |
+| `parameters.body` | String | 约会的正文。正文内容限制为最大 32 KB。 |
 
 ##### <a name="requirements"></a>要求
 
@@ -307,7 +306,7 @@ Office.context.mailbox.displayMessageForm(messageId);
 
 ##### <a name="example"></a>示例
 
-```js
+```javascript
 var start = new Date();
 var end = new Date();
 end.setHours(start.getHours() + 1);
@@ -337,7 +336,7 @@ Office.context.mailbox.displayNewAppointmentForm(
 
 在撰写模式中，必须调用 [`saveAsync`](Office.context.mailbox.item.md#saveasyncoptions-callback) 方法来获取传递给 `getCallbackTokenAsync` 方法的项目标识符。应用必须具有调用 `saveAsync` 方法的 **ReadWriteItem** 权限。
 
-##### <a name="parameters"></a>参数：
+##### <a name="parameters"></a>Parameters
 
 |名称| 类型| 属性| 说明|
 |---|---|---|---|
@@ -354,7 +353,7 @@ Office.context.mailbox.displayNewAppointmentForm(
 
 ##### <a name="example"></a>示例
 
-```js
+```javascript
 function getCallbackToken() {
   Office.context.mailbox.getCallbackTokenAsync(cb);
 }
@@ -370,11 +369,11 @@ function cb(asyncResult) {
 
 `getUserIdentityTokenAsync` 方法返回你可以用于在第三方系统上识别和 [验证外接程序和用户的令牌](https://docs.microsoft.com/outlook/add-ins/authentication)。
 
-##### <a name="parameters"></a>参数：
+##### <a name="parameters"></a>Parameters
 
 |名称| 类型| 属性| 说明|
 |---|---|---|---|
-|`callback`| 函数||方法完成后，使用单个参数 `asyncResult`（一个 [`AsyncResult`](/javascript/api/office/office.asyncresult) 对象）调用在 `callback` 参数中传递的函数。<br/><br/>令牌作为 `asyncResult.value` 属性中的字符串提供。|
+|`callback`| 函数||方法完成后，使用单个参数 `callback`（一个 [`asyncResult`](/javascript/api/office/office.asyncresult) 对象）调用在 `AsyncResult` 参数中传递的函数。<br/><br/>令牌作为 `asyncResult.value` 属性中的字符串提供。|
 |`userContext`| 对象| &lt;可选&gt;|传递给异步方法的任何状态数据。|
 
 ##### <a name="requirements"></a>要求
@@ -387,7 +386,7 @@ function cb(asyncResult) {
 
 ##### <a name="example"></a>示例
 
-```js
+```javascript
 function getIdentityToken() {
   Office.context.mailbox.getUserIdentityTokenAsync(cb);
 }
@@ -433,7 +432,7 @@ XML 请求必须指定 UTF-8 编码。
 
 当邮件应用程序运行在 Outlook 网页版中时，您不需要设置编码值。可以通过使用 mailbox.diagnostics.hostName 属性来确定您的邮件应用程序在 Outlook 中还是 Outlook 网页版中运行。可以通过使用 mailbox.diagnostics.hostVersion 属性来确定正在运行的是 Outlook 的哪个版本。
 
-##### <a name="parameters"></a>参数：
+##### <a name="parameters"></a>Parameters
 
 |名称| 类型| 属性| 说明|
 |---|---|---|---|
@@ -453,10 +452,10 @@ XML 请求必须指定 UTF-8 编码。
 
 下面的示例调用 `makeEwsRequestAsync` 以使用 `GetItem` 操作来获取项目的主题。
 
-```js
+```javascript
 function getSubjectRequest(id) {
-   // Return a GetItem operation request for the subject of the specified item.
-   var request =
+  // Return a GetItem operation request for the subject of the specified item.
+  var request =
     '<?xml version="1.0" encoding="utf-8"?>' +
     '<soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"' +
     '               xmlns:xsd="http://www.w3.org/2001/XMLSchema"' +
@@ -478,19 +477,19 @@ function getSubjectRequest(id) {
     '  </soap:Body>' +
     '</soap:Envelope>';
 
-   return request;
+  return request;
 }
 
 function sendRequest() {
-   // Create a local variable that contains the mailbox.
-   Office.context.mailbox.makeEwsRequestAsync(
+  // Create a local variable that contains the mailbox.
+  Office.context.mailbox.makeEwsRequestAsync(
     getSubjectRequest(mailbox.item.itemId), callback);
 }
 
 function callback(asyncResult)  {
-   var result = asyncResult.value;
-   var context = asyncResult.asyncContext;
+  var result = asyncResult.value;
+  var context = asyncResult.asyncContext;
 
-   // Process the returned response here.
+  // Process the returned response here.
 }
 ```

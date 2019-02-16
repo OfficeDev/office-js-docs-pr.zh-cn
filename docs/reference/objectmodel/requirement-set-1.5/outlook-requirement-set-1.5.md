@@ -1,14 +1,14 @@
 ---
 title: Outlook 加载项 API 要求集 1.5
 description: ''
-ms.date: 01/16/2019
+ms.date: 02/15/2019
 localization_priority: Normal
-ms.openlocfilehash: fde394ff4b75e0f6b160f5d56cb73adc9da9dede
-ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
+ms.openlocfilehash: edc34bd088c1e8a2e88732518dcb335d38b8ba21
+ms.sourcegitcommit: f26778b596b6b022814c39601485ff676ed4e2fa
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "29388375"
+ms.lasthandoff: 02/16/2019
+ms.locfileid: "30067921"
 ---
 # <a name="outlook-add-in-api-requirement-set-15"></a>Outlook 外接程序 API 要求集 1.5
 
@@ -29,14 +29,14 @@ ms.locfileid: "29388375"
 ### <a name="change-log"></a>更改日志
 
 - 添加了 [Office.context.mailbox.addHandlerAsync](office.context.mailbox.md#addhandlerasynceventtype-handler-options-callback)：添加支持事件的事件处理程序。
-- 添加[Office.context.mailbox.removeHandlerAsync](office.context.mailbox.md#removehandlerasynceventtype-options-callback)： 删除的事件处理程序支持的事件类型。
+- 添加了[removeHandlerAsync](office.context.mailbox.md#removehandlerasynceventtype-options-callback): 删除受支持的事件类型的事件处理程序。
 - 添加了 [Office.EventType](office.md#eventtype-string)：指定与事件处理程序相关联的事件，并包括对 ItemChanged 事件的支持。
 - 添加了 [Office.context.mailbox.restUrl](office.context.mailbox.md#resturl-string)：获取此电子邮件帐户的 REST 终结点的 URL。
 - 修改了 [Office.context.mailbox.getCallbackTokenAsync](office.context.mailbox.md#getcallbacktokenasyncoptions-callback)：添加了此方法的新版本（具有新签名） (`getCallbackTokenAsync([options], callback)`)。原始版本仍可用且未更改。
 - 添加了 [Office.context.ui.closeContainer](/javascript/api/office/office.ui#closecontainer--)。
 - 修改了 [Office.context.mailbox.item.addFileAttachmentAsync](office.context.mailbox.item.md#addfileattachmentasyncuri-attachmentname-options-callback)：`options` 字典中的新值调用 `isInline`，用于指定在邮件正文中内联使用了一个图像。
-- 修改了 [Office.context.mailbox.item.displayReplyAllForm](office.context.mailbox.item.md#displayreplyallformformdata)：`formData.attachments` 字典中的新值调用 `isInline`，用于指定在邮件正文中内联使用了一个图像。
-- 修改了 [Office.context.mailbox.item.displayReplyForm](office.context.mailbox.item.md#displayreplyformformdata)：`formData.attachments` 字典中的新值调用 `isInline`，用于指定在邮件正文中内联使用了一个图像。
+- 修改了 [Office.context.mailbox.item.displayReplyAllForm](office.context.mailbox.item.md#displayreplyallformformdata-callback)：`formData.attachments` 字典中的新值调用 `isInline`，用于指定在邮件正文中内联使用了一个图像。
+- 修改了 [Office.context.mailbox.item.displayReplyForm](office.context.mailbox.item.md#displayreplyformformdata-callback)：`formData.attachments` 字典中的新值调用 `isInline`，用于指定在邮件正文中内联使用了一个图像。
 
 ## <a name="see-also"></a>另请参阅
 

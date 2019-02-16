@@ -1,13 +1,14 @@
 ---
 title: Office.context.mailbox.userProfile - 要求集 1.5
 description: ''
-ms.date: 10/31/2018
-ms.openlocfilehash: 748daf4d14aae1d14560d29e1d76eeea09830573
-ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
-ms.translationtype: HT
+ms.date: 02/15/2019
+localization_priority: Normal
+ms.openlocfilehash: e98e88cde184db121e69fdd267dff4e39d887b1f
+ms.sourcegitcommit: f26778b596b6b022814c39601485ff676ed4e2fa
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/22/2018
-ms.locfileid: "27432716"
+ms.lasthandoff: 02/16/2019
+ms.locfileid: "30067825"
 ---
 # <a name="userprofile"></a>userProfile
 
@@ -35,7 +36,7 @@ ms.locfileid: "27432716"
 
 获取用户的显示名称。
 
-##### <a name="type"></a>类型：
+##### <a name="type"></a>Type
 
 *   String
 
@@ -49,7 +50,7 @@ ms.locfileid: "27432716"
 
 ##### <a name="example"></a>示例
 
-```js
+```javascript
 // Example: Allie Bellew
 console.log(Office.context.mailbox.userProfile.displayName);
 ```
@@ -58,7 +59,7 @@ console.log(Office.context.mailbox.userProfile.displayName);
 
 获取用户的 SMTP 电子邮件地址。
 
-##### <a name="type"></a>类型：
+##### <a name="type"></a>Type
 
 *   String
 
@@ -72,7 +73,7 @@ console.log(Office.context.mailbox.userProfile.displayName);
 
 ##### <a name="example"></a>示例
 
-```js
+```javascript
 // Example: allieb@contoso.com
 console.log(Office.context.mailbox.userProfile.emailAddress);
 ```
@@ -81,7 +82,7 @@ console.log(Office.context.mailbox.userProfile.emailAddress);
 
 获取用户的默认时区。
 
-##### <a name="type"></a>类型：
+##### <a name="type"></a>Type
 
 *   String
 
@@ -95,7 +96,7 @@ console.log(Office.context.mailbox.userProfile.emailAddress);
 
 ##### <a name="example"></a>示例
 
-```js
+```javascript
 // Example: Pacific Standard Time
 console.log(Office.context.mailbox.userProfile.timeZone);
 ```

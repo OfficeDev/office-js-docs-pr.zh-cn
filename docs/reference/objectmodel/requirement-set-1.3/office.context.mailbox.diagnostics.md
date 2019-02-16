@@ -1,19 +1,20 @@
 ---
 title: Office.context.mailbox.diagnostics - 要求集 1.3
 description: ''
-ms.date: 10/11/2018
-ms.openlocfilehash: a0edb17bebed0965b6fc642f386b94aaca2e4ad3
-ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
-ms.translationtype: HT
+ms.date: 02/15/2019
+localization_priority: Normal
+ms.openlocfilehash: bf2807a1cd3f09437ea638e24651d8eaf615c469
+ms.sourcegitcommit: f26778b596b6b022814c39601485ff676ed4e2fa
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/22/2018
-ms.locfileid: "27433129"
+ms.lasthandoff: 02/16/2019
+ms.locfileid: "30067914"
 ---
-# <a name="diagnostics"></a>诊断
+# <a name="diagnostics"></a>diagnostics
 
 ### <a name="officeofficemdcontextofficecontextmdmailboxofficecontextmailboxmddiagnostics"></a>[Office](Office.md)[.context](Office.context.md)[.mailbox](Office.context.mailbox.md).diagnostics
 
-将诊断信息提供给 Outlook 加载项。
+将诊断信息提供给 Outlook 外接程序。
 
 ##### <a name="requirements"></a>要求
 
@@ -31,7 +32,7 @@ ms.locfileid: "27433129"
 
 可以是下列值之一的字符串：`Outlook`、`OutlookIOS` 或 `OutlookWebApp`。
 
-##### <a name="type"></a>类型：
+##### <a name="type"></a>Type
 
 *   String
 
@@ -49,7 +50,7 @@ ms.locfileid: "27433129"
 
 如果邮件外接程序正在 Outlook 桌面客户端或 Outlook for iOS 上运行，则 `hostVersion` 属性返回主机应用程序版本 Outlook。在 Outlook Web App 中，属性返回 Exchange Server 的版本。其中的一个示例是字符串 `15.0.468.0`。
 
-##### <a name="type"></a>类型:
+##### <a name="type"></a>Type
 
 *   String
 
@@ -75,7 +76,7 @@ Outlook Web App 具有三种视图，这些视图分别与屏幕和窗口的宽�
 *   `TwoColumns` 在屏幕较宽时显示。Outlook Web App 在大多数平板电脑上使用此视图。
 *   `ThreeColumns` 在屏幕为宽屏时显示。例如，Outlook Web App 在台式机的全屏窗口中使用此视图。
 
-##### <a name="type"></a>类型：
+##### <a name="type"></a>Type
 
 *   String
 

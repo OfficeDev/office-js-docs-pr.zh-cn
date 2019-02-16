@@ -1,15 +1,16 @@
 ---
 title: Office.context - 要求集 1.2
 description: ''
-ms.date: 10/11/2018
-ms.openlocfilehash: 0797c0fed68709de006c03d817437493f35023d3
-ms.sourcegitcommit: 60fd8a3ac4a6d66cb9e075ce7e0cde3c888a5fe9
-ms.translationtype: HT
+ms.date: 02/15/2019
+localization_priority: Normal
+ms.openlocfilehash: 8e8d83500e1cb9de730f6a7bac75c3bcc0012b4e
+ms.sourcegitcommit: f26778b596b6b022814c39601485ff676ed4e2fa
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/28/2018
-ms.locfileid: "27457514"
+ms.lasthandoff: 02/16/2019
+ms.locfileid: "30068131"
 ---
-# <a name="context"></a>上下文
+# <a name="context"></a>context
 
 ### <a name="officeofficemdcontext"></a>[Office](Office.md).context
 
@@ -35,7 +36,7 @@ Office.context 命名空间提供所有 Office 应用中的加载项所使用的
 
 `displayLanguage` 值反映在 Office 主机应用程序中通过“**文件 > 选项 > 语言**”指定的当前“**显示语言**”设置。
 
-##### <a name="type"></a>类型：
+##### <a name="type"></a>Type
 
 *   String
 
@@ -48,7 +49,7 @@ Office.context 命名空间提供所有 Office 应用中的加载项所使用的
 
 ##### <a name="example"></a>示例
 
-```js
+```javascript
 function sayHelloWithDisplayLanguage() {
   var myDisplayLanguage = Office.context.displayLanguage;
   switch (myDisplayLanguage) {
@@ -60,6 +61,7 @@ function sayHelloWithDisplayLanguage() {
       break;
   }
 }
+
 // Function that writes to a div with id='message' on the page.
 function write(message){
   document.getElementById('message').innerText += message;
@@ -72,7 +74,7 @@ function write(message){
 
 `RoamingSettings` 对象允许您存储和访问用户邮箱中存储的邮件外接程序的数据，以便从用于访问该邮箱的任何主机客户端应用程序中运行该外接程序时，该外接程序可以使用该数据。
 
-##### <a name="type"></a>类型:
+##### <a name="type"></a>类型
 
 *   [RoamingSettings](/javascript/api/outlook_1_2/office.RoamingSettings)
 

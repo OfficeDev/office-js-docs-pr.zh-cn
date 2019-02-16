@@ -1,13 +1,14 @@
 ---
 title: Office 命名空间 - 预览要求集
 description: ''
-ms.date: 11/08/2018
-ms.openlocfilehash: f4a4f0d7a4ce0de433d4e70b6a4675b5f63f26f0
-ms.sourcegitcommit: 60fd8a3ac4a6d66cb9e075ce7e0cde3c888a5fe9
-ms.translationtype: HT
+ms.date: 02/15/2019
+localization_priority: Normal
+ms.openlocfilehash: bbec602680da7914666daf33ed36c45751ae69c6
+ms.sourcegitcommit: f26778b596b6b022814c39601485ff676ed4e2fa
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/28/2018
-ms.locfileid: "27457927"
+ms.lasthandoff: 02/16/2019
+ms.locfileid: "30068320"
 ---
 # <a name="office"></a>Office
 
@@ -41,7 +42,7 @@ ms.locfileid: "27457927"
 
 指定异步调用的结果。
 
-##### <a name="type"></a>类型：
+##### <a name="type"></a>Type
 
 *   字符串
 
@@ -65,7 +66,7 @@ ms.locfileid: "27457927"
 
 指定如何强制由调用方法返回或设置的数据。
 
-##### <a name="type"></a>类型：
+##### <a name="type"></a>Type
 
 *   字符串
 
@@ -89,7 +90,7 @@ ms.locfileid: "27457927"
 
 指定与事件处理程序相关联的事件。
 
-##### <a name="type"></a>类型：
+##### <a name="type"></a>Type
 
 *   字符串
 
@@ -117,7 +118,7 @@ ms.locfileid: "27457927"
 
 指定由调用方法返回的数据源。
 
-##### <a name="type"></a>类型：
+##### <a name="type"></a>Type
 
 *   字符串
 

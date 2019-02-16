@@ -1,14 +1,14 @@
 ---
 title: Office 命名空间 - 要求集 1.5
 description: ''
-ms.date: 11/08/2018
+ms.date: 02/15/2019
 localization_priority: Normal
-ms.openlocfilehash: 3de90dffb3bf1baa8bc08ec512c6e89359db1349
-ms.sourcegitcommit: a59f4e322238efa187f388a75b7709462c71e668
+ms.openlocfilehash: c9f769550ad2c4994545e51d140b6ea6e67761bc
+ms.sourcegitcommit: f26778b596b6b022814c39601485ff676ed4e2fa
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "29387644"
+ms.lasthandoff: 02/16/2019
+ms.locfileid: "30067935"
 ---
 # <a name="office"></a>Office
 
@@ -34,7 +34,7 @@ ms.locfileid: "29387644"
 
 [context](office.context.md)：提供 Office 加载项 API 的上下文命名空间中的共享接口以便在 Outlook 加载项 API 中使用。
 
-[MailboxEnums](/javascript/api/outlook/office.mailboxenums.attachmenttype)：包括 ItemType、EntityType、AttachmentType、RecipientType、ResponseType 和 ItemNotificationMessageType 枚举。
+[MailboxEnums](/javascript/api/outlook_1_5/office.mailboxenums.attachmenttype)：包括 ItemType、EntityType、AttachmentType、RecipientType、ResponseType 和 ItemNotificationMessageType 枚举。
 
 ### <a name="members"></a>成员
 
@@ -42,7 +42,7 @@ ms.locfileid: "29387644"
 
 指定异步调用的结果。
 
-##### <a name="type"></a>类型：
+##### <a name="type"></a>Type
 
 *   字符串
 
@@ -66,7 +66,7 @@ ms.locfileid: "29387644"
 
 指定如何强制由调用方法返回或设置的数据。
 
-##### <a name="type"></a>类型：
+##### <a name="type"></a>Type
 
 *   字符串
 
@@ -90,7 +90,7 @@ ms.locfileid: "29387644"
 
 指定与事件处理程序相关联的事件。
 
-##### <a name="type"></a>类型：
+##### <a name="type"></a>Type
 
 *   字符串
 
@@ -113,7 +113,7 @@ ms.locfileid: "29387644"
 
 指定由调用方法返回的数据源。
 
-##### <a name="type"></a>类型：
+##### <a name="type"></a>Type
 
 *   String
 

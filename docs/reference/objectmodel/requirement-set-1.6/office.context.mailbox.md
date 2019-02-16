@@ -1,14 +1,14 @@
 ---
 title: Office.context.mailbox - 要求集 1.6
 description: ''
-ms.date: 01/16/2019
+ms.date: 02/15/2019
 localization_priority: Normal
-ms.openlocfilehash: 336357d5915a6b061e69ef488eb31a11077722b1
-ms.sourcegitcommit: a59f4e322238efa187f388a75b7709462c71e668
+ms.openlocfilehash: 91ba2945b3c6390f4623e1d716c516790be26ad3
+ms.sourcegitcommit: f26778b596b6b022814c39601485ff676ed4e2fa
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "29389562"
+ms.lasthandoff: 02/16/2019
+ms.locfileid: "30068096"
 ---
 # <a name="mailbox"></a>邮箱
 
@@ -68,7 +68,7 @@ ms.locfileid: "29389562"
 
 在撰写模式中，必须调用 [`saveAsync`](Office.context.mailbox.item.md#saveasyncoptions-callback) 方法，才能使用 `ewsUrl` 成员。应用必须具有调用 `saveAsync` 方法的 **ReadWriteItem** 权限。
 
-##### <a name="type"></a>类型:
+##### <a name="type"></a>Type
 
 *   String
 
@@ -90,7 +90,7 @@ ms.locfileid: "29389562"
 
 在撰写模式中，必须调用 [`saveAsync`](Office.context.mailbox.item.md#saveasyncoptions-callback) 方法，才能使用 `restUrl` 成员。应用必须具有调用 `saveAsync` 方法的 **ReadWriteItem** 权限。
 
-##### <a name="type"></a>类型:
+##### <a name="type"></a>Type
 
 *   String
 
@@ -110,14 +110,14 @@ ms.locfileid: "29389562"
 
 目前，唯一受支持的事件类型是 `Office.EventType.ItemChanged`，用户选择一个新项目时将调用该类型。 此事件由实现可固定任务窗格的加载项使用，并允许加载项根据当前选定的项目刷新任务窗格 UI。
 
-##### <a name="parameters"></a>参数：
+##### <a name="parameters"></a>Parameters
 
 | 名称 | 类型 | 属性 | 说明 |
 |---|---|---|---|
 | `eventType` | [Office.EventType](office.md#eventtype-string) || 应调用处理程序的事件。 |
 | `handler` | 函数 || 用于处理事件的函数。此函数必须接受一个参数，即对象文本。参数上的 `type` 属性将匹配传递给 `addHandlerAsync` 的 `eventType` 参数。 |
-| `options` | Object | &lt;optional&gt; | 包含一个或多个以下属性的对象文本。 |
-| `options.asyncContext` | 对象 | &lt;optional&gt; | 开发人员可以提供他们想要在回调方法中访问的任何对象。 |
+| `options` | Object | &lt;可选&gt; | 包含一个或多个以下属性的对象文本。 |
+| `options.asyncContext` | 对象 | &lt;可选&gt; | 开发人员可以提供他们想要在回调方法中访问的任何对象。 |
 | `callback` | 函数| &lt;可选&gt;|方法完成后，使用单个参数 `callback`（一个 [`asyncResult`](/javascript/api/office/office.asyncresult) 对象）调用在 `AsyncResult` 参数中传递的函数。|
 
 ##### <a name="requirements"></a>Requirements
@@ -126,23 +126,23 @@ ms.locfileid: "29389562"
 |---|---|
 |[最低版本的邮箱要求集](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.5 |
 |[最低权限级别](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem |
-|[适用的 Outlook 模式](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Compose 或 Read|
+|[适用的 Outlook 模式](https://docs.microsoft.com/outlook/add-ins/#extension-points)| 撰写或阅读|
 
 ##### <a name="example"></a>示例
 
-```js
+```javascript
 Office.initialize = function (reason) {
   $(document).ready(function () {
     Office.context.mailbox.addHandlerAsync(Office.EventType.ItemChanged, loadNewItem, function (result) {
       if (result.status === Office.AsyncResultStatus.Failed) {
-        // Handle error
+        // Handle error.
       }
     });
   });
 };
 
 function loadNewItem(eventArgs) {
-  // Load the properties of the newly selected item
+  // Load the properties of the newly selected item.
   loadProps(Office.context.mailbox.item);
 };
 ```
@@ -156,7 +156,7 @@ function loadNewItem(eventArgs) {
 
 通过 REST API 检索的项 ID（如 [Outlook 邮件 API](https://docs.microsoft.com/previous-versions/office/office-365-api/api/version-2.0/mail-rest-operations) 或 [Microsoft Graph](https://graph.microsoft.io/)）使用与 Exchange Web 服务 (EWS) 所使用格式不同的格式。`convertToEwsId` 方法将 REST 格式化的 ID 转换为正确的 EWS 格式。
 
-##### <a name="parameters"></a>参数：
+##### <a name="parameters"></a>Parameters
 
 |名称| 说明| 说明|
 |---|---|---|
@@ -177,12 +177,11 @@ function loadNewItem(eventArgs) {
 
 ##### <a name="example"></a>示例
 
-```js
-// Get an item's ID from a REST API
+```javascript
+// Get an item's ID from a REST API.
 var restId = 'AAMkAGVlOTZjNTM3LW...';
 
-// Treat restId as coming from the v2.0 version of the
-// Outlook Mail API
+// Treat restId as coming from the v2.0 version of the Outlook Mail API.
 var ewsId = Office.context.mailbox.convertToEwsId(restId, Office.MailboxEnums.RestVersion.v2_0);
 ```
 
@@ -194,7 +193,7 @@ Outlook 或 Outlook Web App 邮件应用程序的日期和时间可以使用不�
 
 如果邮件应用程序在 Outlook 中运行，`convertToLocalClientTime` 方法将返回一个值设置为客户端计算机时区的字典对象。如果邮件应用程序在 Outlook Web App 中运行，`convertToLocalClientTime` 方法将返回值设置为 EAC 中指定的时区的字典对象。
 
-##### <a name="parameters"></a>参数：
+##### <a name="parameters"></a>Parameters
 
 |名称| 类型| 说明|
 |---|---|---|
@@ -221,7 +220,7 @@ Outlook 或 Outlook Web App 邮件应用程序的日期和时间可以使用不�
 
 与 REST API 所使用的格式比较，通过 EWS 或通过 `itemId` 属性检索的项目 ID 使用不同的格式（例如 [Outlook Mail API](https://docs.microsoft.com/previous-versions/office/office-365-api/api/version-2.0/mail-rest-operations) 或 [Microsoft Graph](https://graph.microsoft.io/)）。`convertToRestId` 方法将 EWS 格式化的 ID 转换为正确的 REST 格式。
 
-##### <a name="parameters"></a>参数：
+##### <a name="parameters"></a>Parameters
 
 |名称| 类型| 描述|
 |---|---|---|
@@ -242,12 +241,11 @@ Outlook 或 Outlook Web App 邮件应用程序的日期和时间可以使用不�
 
 ##### <a name="example"></a>示例
 
-```js
-// Get the currently selected item's ID
+```javascript
+// Get the currently selected item's ID.
 var ewsId = Office.context.mailbox.item.itemId;
 
-// Convert to a REST ID for the v2.0 version of the
-// Outlook Mail API
+// Convert to a REST ID for the v2.0 version of the Outlook Mail API.
 var restId = Office.context.mailbox.convertToRestId(ewsId, Office.MailboxEnums.RestVersion.v2_0);
 ```
 
@@ -257,7 +255,7 @@ var restId = Office.context.mailbox.convertToRestId(ewsId, Office.MailboxEnums.R
 
 `convertToUtcClientTime` 方法将包含本地日期和时间的字典转换为包含与本地日期和时间对应的正确值的 Date 对象。
 
-##### <a name="parameters"></a>参数：
+##### <a name="parameters"></a>Parameters
 
 |名称| 类型| 说明|
 |---|---|---|
@@ -300,7 +298,7 @@ var restId = Office.context.mailbox.convertToRestId(ewsId, Office.MailboxEnums.R
 
 如果指定的项标识符没有识别现有约会，将在客户端计算机或设备上打开一个空白窗格，并且不会返回错误消息。
 
-##### <a name="parameters"></a>参数：
+##### <a name="parameters"></a>Parameters
 
 |名称| 类型| 描述|
 |---|---|---|
@@ -312,11 +310,11 @@ var restId = Office.context.mailbox.convertToRestId(ewsId, Office.MailboxEnums.R
 |---|---|
 |[最低版本的邮箱要求集](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
 |[最低权限级别](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
-|[适用的 Outlook 模式](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Compose 或 Read|
+|[适用的 Outlook 模式](https://docs.microsoft.com/outlook/add-ins/#extension-points)| 撰写或阅读|
 
 ##### <a name="example"></a>示例
 
-```js
+```javascript
 Office.context.mailbox.displayAppointmentForm(appointmentId);
 ```
 
@@ -335,7 +333,7 @@ Office.context.mailbox.displayAppointmentForm(appointmentId);
 
 不要使用包含表示约会的 `itemId` 的 `displayMessageForm`。使用 `displayAppointmentForm` 方法显示现有的约会，并使用 `displayNewAppointmentForm` 显示窗体以新建约会。
 
-##### <a name="parameters"></a>参数：
+##### <a name="parameters"></a>Parameters
 
 |名称| 类型| 描述|
 |---|---|---|
@@ -351,7 +349,7 @@ Office.context.mailbox.displayAppointmentForm(appointmentId);
 
 ##### <a name="example"></a>示例
 
-```js
+```javascript
 Office.context.mailbox.displayMessageForm(messageId);
 ```
 
@@ -370,7 +368,7 @@ Office.context.mailbox.displayMessageForm(messageId);
 
 如果任何参数超过指定大小限制，或者指定了未知参数名称，则会引发异常。
 
-##### <a name="parameters"></a>参数：
+##### <a name="parameters"></a>Parameters
 
 > [!NOTE]
 > 所有参数都是可选参数。
@@ -397,7 +395,7 @@ Office.context.mailbox.displayMessageForm(messageId);
 
 ##### <a name="example"></a>示例
 
-```js
+```javascript
 var start = new Date();
 var end = new Date();
 end.setHours(start.getHours() + 1);
@@ -423,7 +421,7 @@ Office.context.mailbox.displayNewAppointmentForm(
 
 如果任何参数超过指定大小限制，或者指定了未知参数名称，则会引发异常。
 
-##### <a name="parameters"></a>参数：
+##### <a name="parameters"></a>Parameters
 
 > [!NOTE]
 > 所有参数都是可选参数。
@@ -454,7 +452,7 @@ Office.context.mailbox.displayNewAppointmentForm(
 
 ##### <a name="example"></a>示例
 
-```js
+```javascript
 Office.context.mailbox.displayNewMessageForm(
   {
     toRecipients: Office.context.mailbox.item.to, // Copy the To line from current item
@@ -494,11 +492,11 @@ Office.context.mailbox.displayNewMessageForm(
 
 外接程序应使用 `ewsUrl` 属性来确定进行 EWS 调用时要使用的正确 URL。
 
-##### <a name="parameters"></a>参数：
+##### <a name="parameters"></a>Parameters
 
 |名称| 类型| 属性| 说明|
 |---|---|---|---|
-| `options` | 对象 | &lt;optional&gt; | 包含一个或多个以下属性的对象文本。 |
+| `options` | Object | &lt;可选&gt; | 包含一个或多个以下属性的对象文本。 |
 | `options.isRest` | 布尔值 |  &lt;可选&gt; | 确定所提供的令牌是否将用于 Outlook REST API 或 Exchange Web 服务。默认值为 `false`。 |
 | `options.asyncContext` | Object |  &lt;可选&gt; | 传递给异步方法的任何状态数据。 |
 |`callback`| 函数||方法完成后，使用单个参数 `callback`（一个 [`asyncResult`](/javascript/api/office/office.asyncresult) 对象）调用在 `AsyncResult` 参数中传递的函数。令牌作为 `asyncResult.value` 属性中的字符串提供。|
@@ -513,7 +511,7 @@ Office.context.mailbox.displayNewMessageForm(
 
 ##### <a name="example"></a>示例
 
-```js
+```javascript
 function getCallbackToken() {
   var options = {
     isRest: true,
@@ -540,7 +538,7 @@ function cb(asyncResult) {
 
 在撰写模式中，必须调用 [`saveAsync`](Office.context.mailbox.item.md#saveasyncoptions-callback) 方法来获取传递给 `getCallbackTokenAsync` 方法的项目标识符。应用必须具有调用 `saveAsync` 方法的 **ReadWriteItem** 权限。
 
-##### <a name="parameters"></a>参数：
+##### <a name="parameters"></a>Parameters
 
 |名称| 类型| 属性| 说明|
 |---|---|---|---|
@@ -557,7 +555,7 @@ function cb(asyncResult) {
 
 ##### <a name="example"></a>示例
 
-```js
+```javascript
 function getCallbackToken() {
   Office.context.mailbox.getCallbackTokenAsync(cb);
 }
@@ -573,7 +571,7 @@ function cb(asyncResult) {
 
 `getUserIdentityTokenAsync` 方法返回你可以用于在第三方系统上识别和 [验证外接程序和用户的令牌](https://docs.microsoft.com/outlook/add-ins/authentication)。
 
-##### <a name="parameters"></a>参数：
+##### <a name="parameters"></a>Parameters
 
 |名称| 类型| 属性| 说明|
 |---|---|---|---|
@@ -590,7 +588,7 @@ function cb(asyncResult) {
 
 ##### <a name="example"></a>示例
 
-```js
+```javascript
 function getIdentityToken() {
   Office.context.mailbox.getUserIdentityTokenAsync(cb);
 }
@@ -636,7 +634,7 @@ XML 请求必须指定 UTF-8 编码。
 
 当邮件应用程序运行在 Outlook 网页版中时，您不需要设置编码值。可以通过使用 mailbox.diagnostics.hostName 属性来确定您的邮件应用程序在 Outlook 中还是 Outlook 网页版中运行。可以通过使用 mailbox.diagnostics.hostVersion 属性来确定正在运行的是 Outlook 的哪个版本。
 
-##### <a name="parameters"></a>参数：
+##### <a name="parameters"></a>Parameters
 
 |名称| 类型| 属性| 说明|
 |---|---|---|---|
@@ -656,10 +654,10 @@ XML 请求必须指定 UTF-8 编码。
 
 下面的示例调用 `makeEwsRequestAsync` 以使用 `GetItem` 操作来获取项目的主题。
 
-```js
+```javascript
 function getSubjectRequest(id) {
-   // Return a GetItem operation request for the subject of the specified item.
-   var request =
+  // Return a GetItem operation request for the subject of the specified item.
+  var request =
     '<?xml version="1.0" encoding="utf-8"?>' +
     '<soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"' +
     '               xmlns:xsd="http://www.w3.org/2001/XMLSchema"' +
@@ -681,20 +679,20 @@ function getSubjectRequest(id) {
     '  </soap:Body>' +
     '</soap:Envelope>';
 
-   return request;
+  return request;
 }
 
 function sendRequest() {
-   // Create a local variable that contains the mailbox.
-   Office.context.mailbox.makeEwsRequestAsync(
+  // Create a local variable that contains the mailbox.
+  Office.context.mailbox.makeEwsRequestAsync(
     getSubjectRequest(mailbox.item.itemId), callback);
 }
 
 function callback(asyncResult)  {
-   var result = asyncResult.value;
-   var context = asyncResult.asyncContext;
+  var result = asyncResult.value;
+  var context = asyncResult.asyncContext;
 
-   // Process the returned response here.
+  // Process the returned response here.
 }
 ```
 
@@ -704,13 +702,13 @@ function callback(asyncResult)  {
 
 当前，唯一支持的事件类型是 `Office.EventType.ItemChanged`。
 
-##### <a name="parameters"></a>参数：
+##### <a name="parameters"></a>Parameters
 
 | 名称 | 类型 | 属性 | 说明 |
 |---|---|---|---|
 | `eventType` | [Office.EventType](office.md#eventtype-string) || 应撤销处理程序的事件。 |
-| `options` | 对象 | &lt;optional&gt; | 包含一个或多个以下属性的对象文本。 |
-| `options.asyncContext` | 对象 | &lt;optional&gt; | 开发人员可以提供他们想要在回调方法中访问的任何对象。 |
+| `options` | 对象 | &lt;可选&gt; | 包含一个或多个以下属性的对象文本。 |
+| `options.asyncContext` | 对象 | &lt;可选&gt; | 开发人员可以提供他们想要在回调方法中访问的任何对象。 |
 | `callback` | 函数| &lt;可选&gt;|方法完成后，使用单个参数 `callback`（一个 [`asyncResult`](/javascript/api/office/office.asyncresult) 对象）调用在 `AsyncResult` 参数中传递的函数。|
 
 ##### <a name="requirements"></a>Requirements

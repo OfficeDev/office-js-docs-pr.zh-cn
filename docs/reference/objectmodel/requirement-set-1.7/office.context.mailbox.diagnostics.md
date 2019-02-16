@@ -1,13 +1,14 @@
 ---
 title: Office.context.mailbox.diagnostics - 要求集 1.7
 description: ''
-ms.date: 10/11/2018
-ms.openlocfilehash: a15698a33e6cea68dcf221a48da84570fe552e5b
-ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
-ms.translationtype: HT
+ms.date: 02/15/2019
+localization_priority: Normal
+ms.openlocfilehash: d67f5bd4d30f78f6d21d78ad366a7058bd4a2c9b
+ms.sourcegitcommit: f26778b596b6b022814c39601485ff676ed4e2fa
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/22/2018
-ms.locfileid: "27432597"
+ms.lasthandoff: 02/16/2019
+ms.locfileid: "30067879"
 ---
 # <a name="diagnostics"></a>diagnostics
 
@@ -39,7 +40,7 @@ ms.locfileid: "27432597"
 
 可以是下列值之一的字符串：`Outlook`、`Mac Outlook`、`OutlookIOS` 或 `OutlookWebApp`。
 
-##### <a name="type"></a>类型:
+##### <a name="type"></a>Type
 
 *   String
 
@@ -57,7 +58,7 @@ ms.locfileid: "27432597"
 
 如果邮件外接程序正在 Outlook 桌面客户端或 Outlook for iOS 上运行，则 `hostVersion` 属性返回主机应用程序版本 Outlook。在 Outlook Web App 中，属性返回 Exchange Server 的版本。其中的一个示例是字符串 `15.0.468.0`。
 
-##### <a name="type"></a>类型:
+##### <a name="type"></a>Type
 
 *   String
 
@@ -83,7 +84,7 @@ Outlook Web App 具有三种视图，这些视图分别与屏幕和窗口的宽�
 *   `TwoColumns` 在屏幕较宽时显示。Outlook Web App 在大多数平板电脑上使用此视图。
 *   `ThreeColumns` 在屏幕为宽屏时显示。例如，Outlook Web App 在台式机的全屏窗口中使用此视图。
 
-##### <a name="type"></a>类型：
+##### <a name="type"></a>Type
 
 *   String
 

@@ -1,13 +1,14 @@
 ---
 title: Office.context - 要求集 1.4
 description: ''
-ms.date: 10/11/2018
-ms.openlocfilehash: e07ab0ea83147082aaf89271f222264f1a74b0d8
-ms.sourcegitcommit: 60fd8a3ac4a6d66cb9e075ce7e0cde3c888a5fe9
-ms.translationtype: HT
+ms.date: 02/15/2019
+localization_priority: Normal
+ms.openlocfilehash: 07358710a84321db7c249b911e59794b561acfca
+ms.sourcegitcommit: f26778b596b6b022814c39601485ff676ed4e2fa
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/28/2018
-ms.locfileid: "27457696"
+ms.lasthandoff: 02/16/2019
+ms.locfileid: "30068194"
 ---
 # <a name="context"></a>context
 
@@ -34,7 +35,7 @@ Office.context 命名空间提供所有 Office 应用中的加载项所使用的
 
 `displayLanguage` 值反映在 Office 主机应用程序中通过“**文件 > 选项 > 语言**”指定的当前“**显示语言**”设置。
 
-##### <a name="type"></a>类型：
+##### <a name="type"></a>Type
 
 *   String
 
@@ -47,7 +48,7 @@ Office.context 命名空间提供所有 Office 应用中的加载项所使用的
 
 ##### <a name="example"></a>示例
 
-```js
+```javascript
 function sayHelloWithDisplayLanguage() {
   var myDisplayLanguage = Office.context.displayLanguage;
   switch (myDisplayLanguage) {
@@ -59,6 +60,7 @@ function sayHelloWithDisplayLanguage() {
       break;
   }
 }
+
 // Function that writes to a div with id='message' on the page.
 function write(message){
   document.getElementById('message').innerText += message;
@@ -74,13 +76,13 @@ function write(message){
 
 通过使用 Office 主题颜色，你可以使外接程序的配色方案与用户（通过 **“文件”>“Office 帐户”>“Office 主题”UI**）选择的当前 Office 主题协调一致，这种做法适用于所有 Office 主机应用程序。使用 Office 主题颜色适用于邮件和任务窗格外接程序。
 
-##### <a name="type"></a>类型：
+##### <a name="type"></a>类型
 
 *   对象
 
 ##### <a name="properties"></a>属性：
 
-|名称| 类型| 描述|
+|名称| 类型| 说明|
 |---|---|---|
 |`bodyBackgroundColor`| String|获取十六进制三原色形式的 Office 主题正文背景色。|
 |`bodyForegroundColor`| String|获取十六进制三原色形式的 Office 主题正文前景色。|
@@ -96,7 +98,7 @@ function write(message){
 
 ##### <a name="example"></a>示例
 
-```js
+```javascript
 function applyOfficeTheme(){
   // Get office theme colors.
   var bodyBackgroundColor = Office.context.officeTheme.bodyBackgroundColor;
@@ -115,7 +117,7 @@ function applyOfficeTheme(){
 
 `RoamingSettings` 对象允许您存储和访问用户邮箱中存储的邮件外接程序的数据，以便从用于访问该邮箱的任何主机客户端应用程序中运行该外接程序时，该外接程序可以使用该数据。
 
-##### <a name="type"></a>类型:
+##### <a name="type"></a>类型
 
 *   [RoamingSettings](/javascript/api/outlook_1_4/office.RoamingSettings)
 
