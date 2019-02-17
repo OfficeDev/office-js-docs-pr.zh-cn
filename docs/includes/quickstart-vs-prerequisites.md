@@ -6,4 +6,4 @@
 - Office 2016 或更高版本
     
     > [!NOTE]
-    > 如果尚未安装 Office，可以[注册 1 个月免费试用版](https://products.office.com/en-US/try?legRedir=true&WT.intid1=ODC_ENUS_FX101785584_XT104056786&CorrelationId=64c762de-7a97-4dd1-bb96-e231d7485735)。
+    > 如果你还没有 Office，则可以[加入 Office 开发人员计划](https://developer.microsoft.com/zh-CN/office/dev-program)以获取执行开发和试验加载项的许可。
