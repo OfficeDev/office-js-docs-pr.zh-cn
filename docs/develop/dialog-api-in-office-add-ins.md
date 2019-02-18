@@ -1,14 +1,14 @@
 ---
 title: 在 Office 加载项中使用对话框 API
 description: ''
-ms.date: 02/12/2019
+ms.date: 02/13/2019
 localization_priority: Priority
-ms.openlocfilehash: d53fa5ddbafae5afb0e925762f9d738b9b78c9b0
-ms.sourcegitcommit: a59f4e322238efa187f388a75b7709462c71e668
+ms.openlocfilehash: 81154f039a87973e222188d894d5e4289d0bf647
+ms.sourcegitcommit: 70ef38a290c18a1d1a380fd02b263470207a5dc6
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "29982032"
+ms.lasthandoff: 02/15/2019
+ms.locfileid: "30052768"
 ---
 # <a name="use-the-dialog-api-in-your-office-add-ins"></a>在 Office 加载项中使用对话框 API
 
@@ -402,7 +402,6 @@ Office.context.ui.displayDialogAsync('https://myAddinDomain/myDialog.html?client
 有关使用此模式的示例加载项，请参阅：
 
 - [Insert Excel charts using Microsoft Graph in a PowerPoint add-in](https://github.com/OfficeDev/PowerPoint-Add-in-Microsoft-Graph-ASPNET-InsertChart)（在 PowerPoint 加载项中使用 Microsoft Graph 插入 Excel 图表）：对话框窗口最初打开的资源是没有自己视图的控制器方法。 然后，其重定向到 Office 365 登录页。
-- [Office Add-in Office 365 Client Authentication for AngularJS](https://github.com/OfficeDev/Word-Add-in-AngularJS-Client-OAuth)（Office 加载项 Office 365 客户端 AngularJS 身份验证）：对话框窗口最初打开的资源是一个页面。
 
 #### <a name="support-multiple-identity-providers"></a>支持多个标识提供程序
 

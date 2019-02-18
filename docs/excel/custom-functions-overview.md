@@ -3,12 +3,12 @@ ms.date: 01/30/2019
 description: 在 Excel 中使用 JavaScript 创建自定义函数。
 title: 在 Excel 中创建自定义函数（预览）
 localization_priority: Priority
-ms.openlocfilehash: 3359962f3419f35692829444ab835d3f5cdc915a
-ms.sourcegitcommit: a59f4e322238efa187f388a75b7709462c71e668
+ms.openlocfilehash: 312a590052f1f78c8ff5477c8cfb85eb94f03aad
+ms.sourcegitcommit: 70ef38a290c18a1d1a380fd02b263470207a5dc6
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "29982025"
+ms.lasthandoff: 02/15/2019
+ms.locfileid: "30052761"
 ---
 # <a name="create-custom-functions-in-excel-preview"></a>在 Excel 中创建自定义函数（预览）
 
@@ -288,6 +288,32 @@ function incrementValue(increment, handler){
 
 为了能够取消函数，必须在 JavaScript 函数中实现一个取消处理程序，并在说明函数的 JSON 元数据中指定 `options` 对象中的属性 `"cancelable": true`。 本文前一部分中的代码示例提供了这些方法的示例。
 
+## <a name="declaring-a-volatile-function"></a>声明可变函数
+
+[可变函数](https://docs.microsoft.com/office/client-developer/excel/excel-recalculation#volatile-and-non-volatile-functions)是指其值时刻更改的函数（即使此函数的自变量均未更改）。 每当 Excel 重新计算时，这些函数即会重新计算。 例如，假设某个单元格调用函数 `NOW`。 每当调用 `NOW` 时，它将自动返回当前的日期和时间。
+
+Excel 包含多个内置可变函数，例如 `RAND` 和 `TODAY`。 可参阅[可变函数和非可变函数](https://docs.microsoft.com/zh-CN/office/client-developer/excel/excel-recalculation#volatile-and-non-volatile-functions)，来获取 Excel 可变函数的完整列表。
+
+借助自定义函数，可以创建自己的可变函数。处理日期、时间、随机数字和建模时，可能会使用可变函数。 例如，Monte Carlo 模拟需要生成随机输入，来确定最佳解决方案。
+
+若要声明可变函数，则在 JSON 元数据文件内相应函数的 `options` 对象中添加 `"volatile": true`，如下面的代码示例所示。 请注意，无法同时将一个函数标记为 `"streaming": true` 和 `"volatile": true`；当同时将这两者标记为 `true` 时，将忽略可变选项。
+
+```json
+{
+ "id": "TOMORROW",
+  "name": "TOMORROW",
+  "description":  "Returns tomorrow’s date",
+  "helpUrl": "http://www.contoso.com",
+  "result": {
+      "type": "string",
+      "dimensionality": "scalar"
+  },
+  "options": {
+      "volatile": true
+  }
+}
+```
+
 ## <a name="saving-and-sharing-state"></a>保存和共享状态
 
 自定义函数可以将数据保存在全局 JavaScript 变量中，可用于后续调用。 当用户从多个单元格调用同一个自定义函数时，保存状态非常有用，因为函数的所有实例都可以访问该状态。 例如，可以保存调用某个 Web 资源时返回的数据，以避免再次调用同一个 Web 资源。
@@ -331,6 +357,11 @@ function refreshTemperature(thermometerID){
   }, 1000); // Wait 1 second before reading the thermometer again, and then update the saved temperature of thermometerID.
 }
 ```
+
+## <a name="co-authoring"></a>共同创作
+借助 Excel Online 和 Excel for Windows 以及 Office 365 订阅，可以共同创作文档，此功能可与自定义函数结合使用。 如果你的工作簿使用自定义函数，系统会提示你的同事加载自定义函数的加载项。 当你们均加载该加载项后，自定义函数会通过共同创作共享结果。
+
+有关共同创作的详细信息，请参阅[关于 Excel 中的共同创作](https://docs.microsoft.com/zh-CN/office/vba/excel/concepts/about-coauthoring-in-excel)。
 
 ## <a name="working-with-ranges-of-data"></a>使用数据区域
 
