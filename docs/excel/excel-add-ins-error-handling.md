@@ -4,10 +4,10 @@ description: ''
 ms.date: 10/16/2018
 localization_priority: Normal
 ms.openlocfilehash: 8c6de5d2a22fdb4614742ddfb7fbf566780c0f0f
-ms.sourcegitcommit: a59f4e322238efa187f388a75b7709462c71e668
+ms.sourcegitcommit: f26778b596b6b022814c39601485ff676ed4e2fa
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/13/2019
+ms.lasthandoff: 02/19/2019
 ms.locfileid: "29388960"
 ---
 # <a name="error-handling"></a>错误处理

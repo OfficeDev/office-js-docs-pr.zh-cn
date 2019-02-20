@@ -4,10 +4,10 @@ description: ''
 ms.date: 12/26/2018
 localization_priority: Normal
 ms.openlocfilehash: ba171026f410e59e81d3bbb6bc0f799c929a25a3
-ms.sourcegitcommit: a59f4e322238efa187f388a75b7709462c71e668
+ms.sourcegitcommit: f26778b596b6b022814c39601485ff676ed4e2fa
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/13/2019
+ms.lasthandoff: 02/19/2019
 ms.locfileid: "29387868"
 ---
 # <a name="work-with-multiple-ranges-simultaneously-in-excel-add-ins-preview"></a>同时在 Excel 加载项中处理多个区域（预览）

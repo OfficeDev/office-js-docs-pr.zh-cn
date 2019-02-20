@@ -1,15 +1,15 @@
 ---
 title: Identity API 要求集
 description: ''
-ms.date: 10/09/2018
+ms.date: 02/18/2019
 ms.prod: non-product-specific
 localization_priority: Normal
-ms.openlocfilehash: 8db095c54322f04781b7dfa7bfadd857800678e3
-ms.sourcegitcommit: 33dcf099c6b3d249811580d67ee9b790c0fdccfb
+ms.openlocfilehash: e0a04f084deb0b366600b4f2597658d1f54ab7f5
+ms.sourcegitcommit: 03773fef3d2a380028ba0804739d2241d4b320e5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "29742196"
+ms.lasthandoff: 02/20/2019
+ms.locfileid: "30091237"
 ---
 # <a name="identity-api-requirement-sets"></a>Identity API 要求集
 
@@ -17,11 +17,11 @@ ms.locfileid: "29742196"
 
 Office 外接程序在多个 Office 版本中运行。 下表列出了 Identity API 要求集、支持该要求集的 Office 主机应用程序，以及 Office 应用程序的内部版本或版本号。
 
-|  要求集  | Office 2013 for Windows | Office 365 for Windows   |  Office 365 for iPad  |  Office 365 for Mac  | Office Online  | SharePoint Online | OneDrive.com |Outlook.com & Exchange Online|
+|  要求集  | 适用于 Windows 的 Office 2013/2016/2019 | Office 365 for Windows   |  Office 365 for iPad  |  Office 365 for Mac  | Office Online  | SharePoint Online | OneDrive.com |Outlook.com & Exchange Online|
 |:-----|-----|:-----|:-----|:-----|:-----|:-----|:-----|:-----|
-| IdentityAPI 1.1  | 不适用 | 预览 **&#42;** | 即将推出 | 预览 **&#42;**| 预览 | 预览| 即将推出 | 即将推出 |
+| IdentityAPI 1.1  | N/A **& # 42;** | 预览 **&#42;** | 即将推出 | 预览 **&#42;**| 预览 | 预览| 即将推出 | 即将推出 |
 
-> **&#42;** 在预览阶段，仅为预览体验计划中使用“快速”选项的用户提供针对 Windows 2016 和 Mac 的 Identity API 支持。 若要加入预览体验计划，请参阅[成为 Office 预览体验成员](https://products.office.com/office-insider?tab=tab-1)。 若要切换到快速通道，请参阅[预览体验成员快速选项](https://answers.microsoft.com/en-us/msoffice/forum/msoffice_officeinsider-mso_win10-msoinsider_reg/its-here-office-insider-fast-for-office-2016-on/dbe8e7bb-9523-44a4-948b-9436fedfd961)。
+> **& # 42;** 在预览阶段, 标识 API 需要 office 365 (office 的订阅版本, 也称为 "单击以运行")。 你应该使用来自预览体验成员频道的最新每月版本和内部版本。 你可能需要成为 Office 预览体验成员，才能获取此版本。 有关详细信息，请参阅[成为 Office 预览体验成员](https://products.office.com/office-insider?tab=tab-1)。 请注意，当内部版本进入生产半年频道时，将关闭对该内部版本的预览功能（包括 SSO）的支持。
 
 若要详细了解版本、内部版本号和 Office Online Server，请参阅：
 

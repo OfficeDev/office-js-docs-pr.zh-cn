@@ -4,10 +4,10 @@ description: ''
 ms.date: 10/09/2018
 localization_priority: Normal
 ms.openlocfilehash: 1328dc40e98c321c9c4b7d3d692da8c8bdd29492
-ms.sourcegitcommit: a59f4e322238efa187f388a75b7709462c71e668
+ms.sourcegitcommit: f26778b596b6b022814c39601485ff676ed4e2fa
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/13/2019
+ms.lasthandoff: 02/19/2019
 ms.locfileid: "29389195"
 ---
 # <a name="webapplicationinfo-element"></a>WebApplicationInfo 元素
