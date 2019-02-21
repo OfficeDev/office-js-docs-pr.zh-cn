@@ -1,14 +1,14 @@
 ---
 title: 使用 Excel JavaScript API 处理工作表
 description: ''
-ms.date: 12/28/2018
+ms.date: 02/15/2018
 localization_priority: Priority
-ms.openlocfilehash: 62f64beaefcc938f91ee581594922b2c965f2655
-ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
+ms.openlocfilehash: 6d34807b1511573c507d43dad678811c5c1592ec
+ms.sourcegitcommit: 03773fef3d2a380028ba0804739d2241d4b320e5
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "29389527"
+ms.lasthandoff: 02/20/2019
+ms.locfileid: "30091244"
 ---
 # <a name="work-with-worksheets-using-the-excel-javascript-api"></a>使用 Excel JavaScript API 处理工作表
 
@@ -188,6 +188,9 @@ Excel.run(function (context) {
         });
 }).catch(errorHandlerFunction);
 ```
+
+> [!NOTE]
+> 不能使用 `delete` 方法删除可见性为 [VeryHidden](/javascript/api/excel/excel.sheetvisibility) 的工作表。 如果仍希望删除工作表，必须先更改可见性。
 
 ## <a name="rename-a-worksheet"></a>重命名工作表
 
