@@ -6,4 +6,4 @@
 - Office 2016 或更高版本
     
     > [!NOTE]
-    > 如果你还没有 Office，则可以[加入 Office 开发人员计划](https://developer.microsoft.com/zh-CN/office/dev-program)以获取执行开发和试验加载项的许可。
+    > 如果你还没有 Office，则可以[加入 Office 开发人员计划](https://developer.microsoft.com/office/dev-program)以获取执行开发和试验加载项的许可。
