@@ -4,12 +4,12 @@ description: ''
 ms.date: 02/18/2019
 ms.prod: non-product-specific
 localization_priority: Normal
-ms.openlocfilehash: e0a04f084deb0b366600b4f2597658d1f54ab7f5
-ms.sourcegitcommit: 03773fef3d2a380028ba0804739d2241d4b320e5
+ms.openlocfilehash: e627576d328dabafe6301c142519cb80befb9f77
+ms.sourcegitcommit: 8e20e7663be2aaa0f7a5436a965324d171bc667d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/20/2019
-ms.locfileid: "30091237"
+ms.lasthandoff: 02/28/2019
+ms.locfileid: "30199555"
 ---
 # <a name="identity-api-requirement-sets"></a>Identity API 要求集
 
@@ -17,7 +17,7 @@ ms.locfileid: "30091237"
 
 Office 外接程序在多个 Office 版本中运行。 下表列出了 Identity API 要求集、支持该要求集的 Office 主机应用程序，以及 Office 应用程序的内部版本或版本号。
 
-|  要求集  | 适用于 Windows 的 Office 2013/2016/2019 | Office 365 for Windows   |  Office 365 for iPad  |  Office 365 for Mac  | Office Online  | SharePoint Online | OneDrive.com |Outlook.com & Exchange Online|
+|  要求集  | 适用于 Windows 的 Office 2013 或更高版本 | Office 365 for Windows   |  Office 365 for iPad  |  Office 365 for Mac  | Office Online  | SharePoint Online | OneDrive.com |Outlook.com & Exchange Online|
 |:-----|-----|:-----|:-----|:-----|:-----|:-----|:-----|:-----|
 | IdentityAPI 1.1  | N/A **& # 42;** | 预览 **&#42;** | 即将推出 | 预览 **&#42;**| 预览 | 预览| 即将推出 | 即将推出 |
 

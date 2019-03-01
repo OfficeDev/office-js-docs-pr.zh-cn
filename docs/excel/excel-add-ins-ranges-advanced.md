@@ -1,17 +1,18 @@
 ---
 title: 使用 Excel JavaScript API 对区域执行操作（高级）
 description: ''
-ms.date: 12/26/2018
-ms.openlocfilehash: 43c32bb8f579a231eae289df4e026b45afac6dcb
-ms.sourcegitcommit: 8d248cd890dae1e9e8ef1bd47e09db4c1cf69593
-ms.translationtype: Auto
+ms.date: 02/20/2019
+localization_priority: Normal
+ms.openlocfilehash: ce4440798fdd23106ef0357df47cf850a5a5be71
+ms.sourcegitcommit: 8e20e7663be2aaa0f7a5436a965324d171bc667d
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/27/2018
-ms.locfileid: "27447237"
+ms.lasthandoff: 02/28/2019
+ms.locfileid: "30199597"
 ---
 # <a name="work-with-ranges-using-the-excel-javascript-api-advanced"></a>使用 Excel JavaScript API 对区域执行操作（高级）
 
-本文基于[使用 Excel JavaScript API 对区域执行操作（基本）](excel-add-ins-ranges.md)中包含的信息，它提供了显示如何使用 Excel JavaScript API 对区域执行更多高级任务的代码示例。 有关 **Range** 对象支持的属性和方法的完整列表，请参阅 [Range 对象 (Excel JavaScript API)](https://docs.microsoft.com/javascript/api/excel/excel.range)。
+本文基于[使用 Excel JavaScript API 对区域执行操作（基本）](excel-add-ins-ranges.md)中包含的信息，它提供了显示如何使用 Excel JavaScript API 对区域执行更多高级任务的代码示例。 有关 **Range** 对象支持的属性和方法的完整列表，请参阅 [Range 对象 (Excel JavaScript API)](/javascript/api/excel/excel.range)。
 
 ## <a name="work-with-dates-using-the-moment-msdate-plug-in"></a>使用 Moment-MSDate 插件处理日期
 
@@ -64,16 +65,14 @@ Excel.run(function (context) {
 ## <a name="work-with-multiple-ranges-simultaneously-preview"></a>同时处理多个区域（预览版）
 
 > [!NOTE]
-> `RangeAreas` 对象当前仅适用于公共预览版（beta 版本）。 若要使用此功能，必须使用 Office.js CDN 的 beta 版库：https://appsforoffice.microsoft.com/lib/beta/hosted/office.js。
-> 如果使用的是 TypeScript 或代码编辑器将 TypeScript 类型定义文件用于 IntelliSense，则使用 https://appsforoffice.microsoft.com/lib/beta/hosted/office.d.ts。
+> 该`RangeAreas`对象当前仅适用于公共预览版。 [!INCLUDE [Information about using preview APIs](../includes/using-preview-apis.md)]
 
 `RangeAreas` 对象允许外接程序每次在多个区域上执行操作。 这些区域可能但不必是连续区域。 `RangeAreas` 将进一步在[同时在 Excel 加载项中处理多个区域](excel-add-ins-multiple-ranges.md)一文中进行讨论。
 
 ## <a name="find-special-cells-within-a-range-preview"></a>查找区域内特殊单元格（预览）
 
 > [!NOTE]
-> `getSpecialCells` 和 `getSpecialCellsOrNullObject` 方法当前仅适用于公共预览版（beta 版本）。 若要使用此功能，必须使用 Office.js CDN 的 beta 版库：https://appsforoffice.microsoft.com/lib/beta/hosted/office.js。
-> 如果使用的是 TypeScript 或代码编辑器将 TypeScript 类型定义文件用于 IntelliSense，则使用 https://appsforoffice.microsoft.com/lib/beta/hosted/office.d.ts。
+> `getSpecialCells`和`getSpecialCellsOrNullObject`方法目前仅适用于公共预览版。 [!INCLUDE [Information about using preview APIs](../includes/using-preview-apis.md)]
 
 `Range.getSpecialCells()` 和 `Range.getSpecialCellsOrNullObject()` 方法根据单元格特征和值类型来查找区域。 这两种方法都返回 `RangeAreas` 对象。 以下是 TypeScript 数据类型文件中方法的签名：
 
@@ -182,8 +181,7 @@ Excel.run(function (context) {
 ## <a name="copy-and-paste-preview"></a>复制和粘贴（预览版）
 
 > [!NOTE]
-> `Range.copyFrom` 函数当前仅适用于公共预览版（beta 版本）。 若要使用此功能，必须使用 Office.js CDN 的 beta 版库：https://appsforoffice.microsoft.com/lib/beta/hosted/office.js。
-> 如果使用的是 TypeScript 或代码编辑器将 TypeScript 类型定义文件用于 IntelliSense，则使用 https://appsforoffice.microsoft.com/lib/beta/hosted/office.d.ts。
+> 此`Range.copyFrom`函数当前仅适用于公共预览版。 [!INCLUDE [Information about using preview APIs](../includes/using-preview-apis.md)]
 
 区域的 `copyFrom` 函数将复制 Excel UI 的“复制和粘贴”行为。 调用 `copyFrom` 的区域对象是目标。
 将要复制的源作为一个范围或一个表示范围的字符串地址进行传递。
@@ -247,8 +245,7 @@ Excel.run(function (context) {
 ## <a name="remove-duplicates-preview"></a>删除重复项（预览版）
 
 > [!NOTE]
-> 区域对象的 `removeDuplicates` 函数当前仅适用于公共预览版（beta 版本）。 若要使用此功能，必须使用 Office.js CDN 的 beta 版库：https://appsforoffice.microsoft.com/lib/beta/hosted/office.js。
-> 如果使用的是 TypeScript 或代码编辑器将 TypeScript 类型定义文件用于 IntelliSense，则使用 https://appsforoffice.microsoft.com/lib/beta/hosted/office.d.ts。
+> Range 对象的`removeDuplicates`函数当前仅适用于公共预览。 [!INCLUDE [Information about using preview APIs](../includes/using-preview-apis.md)]
 
 区域对象的 `removeDuplicates` 函数将删除在指定列中具有重复条目的行。 该函数将从区域最低值索引到最高值索引（从上到下）遍历区域中的每一行。 如果指定列中的值之前显示在区域中，则会删除该行。 在区域内位于已删除行下方的行将上移。 `removeDuplicates` 不影响该区域外的单元格位置。
 

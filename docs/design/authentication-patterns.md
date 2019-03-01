@@ -4,10 +4,10 @@ description: ''
 ms.date: 11/02/2018
 localization_priority: Normal
 ms.openlocfilehash: 937f1a78dfb4276df4aa17ab48dfa15cfd937861
-ms.sourcegitcommit: f26778b596b6b022814c39601485ff676ed4e2fa
+ms.sourcegitcommit: 8e20e7663be2aaa0f7a5436a965324d171bc667d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/19/2019
+ms.lasthandoff: 02/28/2019
 ms.locfileid: "29388862"
 ---
 # <a name="authentication-patterns"></a>身份验证模式
