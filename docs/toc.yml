@@ -207,16 +207,16 @@ items:
       items:
       - name: 使用 Angular
         displayName: Excel
-        href: excel/excel-add-ins-get-started-angular.md
+        href: quickstarts/excel-quickstart-angular.md
       - name: 使用 jQuery
         displayName: Excel
-        href: excel/excel-add-ins-get-started-jquery.md
+        href: quickstarts/excel-quickstart-jquery.md
       - name: 使用 React
         displayName: Excel
-        href: excel/excel-add-ins-get-started-react.md
+        href: quickstarts/excel-quickstart-react.md
       - name: 使用 Vue
         displayName: Excel
-        href: excel/excel-add-ins-get-started-vue.md
+        href: quickstarts/excel-quickstart-vue.md
     - name: Excel 加载项教程
       displayName: Excel
       href: tutorials/excel-tutorial.md
@@ -258,9 +258,18 @@ items:
         - name: 自定义函数最佳实践
           displayName: Excel
           href: excel/custom-functions-best-practices.md
+        - name: 自定义函数身份验证
+          displayName: Excel
+          href: excel/custom-functions-authentication.md
         - name: 自定义函数更改日志
           displayName: Excel
           href: excel/custom-functions-changelog.md
+        - name: 自定义函数要求
+          displayName: Excel
+          href: excel/custom-functions-requirements.md
+        - name: 自定义函数命名准则
+          displayName: Excel
+          href: excel/custom-functions-naming.md
       - name: 数据有效性
         displayName: Excel
         href: excel/excel-add-ins-data-validation.md
@@ -306,7 +315,7 @@ items:
     items:
     - name: 生成首个 Word 加载项
       displayName: Word
-      href: word/word-add-ins.md
+      href: quickstarts/word-quickstart.md
     - name: Word 加载项教程
       displayName: Word
       href: tutorials/word-tutorial.md
@@ -343,7 +352,7 @@ items:
     items:
     - name: 生成首个 PowerPoint 加载项
       displayName: PowerPoint
-      href: powerpoint/powerpoint-add-ins-get-started.md
+      href: quickstarts/powerpoint-quickstart.md
     - name: PowerPoint 加载项教程
       displayName: PowerPoint
       href: tutorials/powerpoint-tutorial.md
@@ -359,7 +368,7 @@ items:
     items:
     - name: 生成首个 OneNote 加载项
       displayName: OneNote
-      href: onenote/onenote-add-ins-getting-started.md
+      href: quickstarts/onenote-quickstart.md
     - name: 处理 OneNote 页面内容
       displayName: OneNote
       href: onenote/onenote-add-ins-page-content.md
@@ -375,7 +384,7 @@ items:
     items:
     - name: 生成首个 Project 加载项
       displayName: Project
-      href: project/project-add-ins-get-started.md
+      href: quickstarts/project-quickstart.md
     - name: 使用带有本地 OData 服务的 REST 创建一个 Project 加载项
       displayName: Project
       href: project/create-a-project-add-in-that-uses-rest-with-an-on-premises-odata-service.md
@@ -743,7 +752,7 @@ items:
         href: reference/manifest/officetab.md
       - name: Page
         href: reference/manifest/page.md
-      - name: Resources
+      - name: 资源
         href: reference/manifest/resources.md
       - name: Scopes
         href: reference/manifest/scopes.md
@@ -759,9 +768,9 @@ items:
         href: reference/manifest/webapplicationinfo.md
 - name: Resources
   href: resources/resources-links-help.md
-ms.openlocfilehash: 7ad59f66ad87a5bbdbcb52d0af4e98af2a69a6da
-ms.sourcegitcommit: 9afcb1bb295ec0c8940ed3a8364dbac08ef6b382
-ms.translationtype: HT
+ms.openlocfilehash: e2dde2b09439c3de60363cb29609df8dbb39365a
+ms.sourcegitcommit: 8e20e7663be2aaa0f7a5436a965324d171bc667d
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/08/2019
-ms.locfileid: "27770621"
+ms.lasthandoff: 02/28/2019
+ms.locfileid: "30199765"
