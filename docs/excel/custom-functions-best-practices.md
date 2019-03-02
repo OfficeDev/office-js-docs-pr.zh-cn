@@ -2,12 +2,13 @@
 ms.date: 01/08/2019
 description: 了解在 Excel 中开发自定义函数的最佳实践。
 title: 自定义函数最佳实践（预览）
-ms.openlocfilehash: 45618a61d0d1fdd0398ecec3aa0db21e493787fd
-ms.sourcegitcommit: 9afcb1bb295ec0c8940ed3a8364dbac08ef6b382
-ms.translationtype: HT
+localization_priority: Normal
+ms.openlocfilehash: 24c73ec643df073ac97dc399343a7feb0b0b4168
+ms.sourcegitcommit: f7f3d38ae4430e2218bf0abe7bb2976108de3579
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/08/2019
-ms.locfileid: "27770649"
+ms.lasthandoff: 03/01/2019
+ms.locfileid: "30359259"
 ---
 # <a name="custom-functions-best-practices-preview"></a>自定义函数最佳实践（预览）
 
@@ -37,9 +38,12 @@ function getComment(x) {
 
 ## <a name="troubleshooting"></a>故障排除
 
-如果要在 Windows 版 Office 中测试外接程序，则应启用**[运行时日志记录](../testing/troubleshoot-manifest.md#use-runtime-logging-to-debug-your-add-in)**，以解决外接程序的 XML 清单文件及多个安装和运行时条件问题。 运行时日志记录将 `console.log` 语句写入日志文件，以帮你发现问题。
+1. 如果要在 Windows 版 Office 中测试外接程序，则应启用**[运行时日志记录](../testing/troubleshoot-manifest.md#use-runtime-logging-to-debug-your-add-in)**，以解决外接程序的 XML 清单文件及多个安装和运行时条件问题。 运行时日志记录将 `console.log` 语句写入日志文件，以帮你发现问题。
 
-若要向 Excel 自定义函数团队报告有关此故障排除方法的反馈，请发送团队反馈。 若要执行此操作，请选择“**文件|反馈|发送哭脸**”。 发送哭脸将提供必要的日志，以帮助我们了解你遇到的问题。
+2. 如果一个或多个自定义函数与以前注册的外接程序的自定义函数冲突, 则不会加载外接程序。 在这种情况下, 您可以删除现有加载项, 或者如果在开发加载项时遇到此错误, 则可以在清单中指定不同的命名空间名称。
+
+3. 若要向 Excel 自定义函数团队报告有关此故障排除方法的反馈，请发送团队反馈。 若要执行此操作，请选择“**文件|反馈|发送哭脸**”。 发送哭脸将提供必要的日志，以帮助我们了解你遇到的问题。
+
 
 ## <a name="debugging"></a>调试
 

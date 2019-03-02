@@ -1,14 +1,14 @@
 ---
 title: Office 命名空间 - 预览要求集
 description: ''
-ms.date: 02/15/2019
+ms.date: 02/26/2019
 localization_priority: Normal
-ms.openlocfilehash: bbec602680da7914666daf33ed36c45751ae69c6
-ms.sourcegitcommit: f26778b596b6b022814c39601485ff676ed4e2fa
+ms.openlocfilehash: 7b27963a85f1dcdaa6f269fce242c45bf1bdd146
+ms.sourcegitcommit: f7f3d38ae4430e2218bf0abe7bb2976108de3579
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/16/2019
-ms.locfileid: "30068320"
+ms.lasthandoff: 03/01/2019
+ms.locfileid: "30359231"
 ---
 # <a name="office"></a>Office
 
@@ -42,7 +42,7 @@ ms.locfileid: "30068320"
 
 指定异步调用的结果。
 
-##### <a name="type"></a>Type
+##### <a name="type"></a>类型
 
 *   字符串
 
@@ -66,7 +66,7 @@ ms.locfileid: "30068320"
 
 指定如何强制由调用方法返回或设置的数据。
 
-##### <a name="type"></a>Type
+##### <a name="type"></a>类型
 
 *   字符串
 
@@ -90,7 +90,7 @@ ms.locfileid: "30068320"
 
 指定与事件处理程序相关联的事件。
 
-##### <a name="type"></a>Type
+##### <a name="type"></a>类型
 
 *   字符串
 
@@ -100,6 +100,7 @@ ms.locfileid: "30068320"
 |---|---|---|---|
 |`AppointmentTimeChanged`| 字符串 | 所选的约会或系列的日期或时间已更改。 | 1.7 |
 |`AttachmentsChanged`| 字符串 | 已将附件添加到项目或已从项目删除附件。 | 预览 |
+|`EnhancedLocationsChanged`| 字符串 | 所选约会的位置已更改。 | 预览 |
 |`ItemChanged`| 字符串 | 在任务窗格固定时，将选择不同的 Outlook 项进行查看。 | 1.5 |
 |`OfficeThemeChanged`| 字符串 | 邮箱上的 Office 主题已更改。 | 预览 |
 |`RecipientsChanged`| 字符串 | 选定项目或约会位置的收件人列表已更改。 | 1.7 |
@@ -118,16 +119,16 @@ ms.locfileid: "30068320"
 
 指定由调用方法返回的数据源。
 
-##### <a name="type"></a>Type
+##### <a name="type"></a>类型
 
-*   字符串
+*   String
 
 ##### <a name="properties"></a>属性：
 
-|名称| 类型| 描述|
+|名称| 类型| 说明|
 |---|---|---|
-|`Body`| 字符串|数据源来自邮件的正文。|
-|`Subject`| String|数据源来自邮件的主题。|
+|`Body`| String|数据源来自邮件的正文。|
+|`Subject`| 字符串|数据源来自邮件的主题。|
 
 ##### <a name="requirements"></a>要求
 

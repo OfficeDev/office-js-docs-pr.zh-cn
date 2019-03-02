@@ -1,14 +1,14 @@
 ---
 title: 在 iPad 和 Mac 上旁加载 Office 加载项以供测试
 description: ''
-ms.date: 12/04/2017
+ms.date: 02/25/2019
 localization_priority: Priority
-ms.openlocfilehash: cf27b72fe744358f902d36ebd2b89a432aa305f5
-ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
+ms.openlocfilehash: dc0fad24d7f4f062fb0115edcc58a37d8d9052da
+ms.sourcegitcommit: f7f3d38ae4430e2218bf0abe7bb2976108de3579
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "29388190"
+ms.lasthandoff: 03/01/2019
+ms.locfileid: "30359252"
 ---
 # <a name="sideload-office-add-ins-on-ipad-and-mac-for-testing"></a>在 iPad 和 Mac 上旁加载 Office 加载项以供测试
 
@@ -41,18 +41,12 @@ ms.locfileid: "29388190"
 1. 使用同步电缆将 iPad 连接到你的计算机。如果是第一次将 iPad 连接到计算机，系统将提示“**信任此计算机？**”。选择“**信任**”继续执行操作。
 
 2. 在 iTunes 中，选择菜单栏下的“**iPad**”图标。
-    
-    ![iTunes 中的 iPad 图标](../images/ipad.png)
 
-3. 在 iTunes 左侧的“**设置**”下，选择“**应用**”。
-    
-    ![iTunes 应用程序设置](../images/file-settings-apps.png)
+3. 在 iTunes 左侧的"设置"下，选择"应用程序"。
 
-4. 在 iTunes 右侧，向下滚动到“**文件共享**”，然后在“**外接程序**”列下选择“**Excel**”或“**Word**”。
-    
-    ![iTunes 文件共享](../images/file-sharing.png)
+4. 在 iTunes 右侧，向下滚动到"文件共享"，然后在"外接程序"列下选择"Excel"或"Word"。
 
-5. 在“**Excel**”或“**Word 文档**”列底部，选择“**添加文件**”，然后选择你要旁加载的外接程序的清单 .xml 文件。 
+5. 在"Excel"或"Word 文档"列底部，选择"添加文件"，然后选择您要旁加载的外接程序的清单 .xml 文件。 
     
 6. 在你的 iPad 上打开 Excel 或 Word 应用。如果 Excel 或 Word 应用已运行，则选择“**首页**”按钮，然后关闭并重新启动该应用。
     
@@ -97,4 +91,3 @@ ms.locfileid: "29388190"
 ## <a name="see-also"></a>另请参阅
 
 - [在 iPad 和 Mac 上调试 Office 加载项](debug-office-add-ins-on-ipad-and-mac.md)
-    

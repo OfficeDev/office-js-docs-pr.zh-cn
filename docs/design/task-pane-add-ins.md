@@ -1,14 +1,14 @@
 ---
 title: Office 加载项中的任务窗格
 description: 任务窗格允许用户访问界面控件，此类控件运行代码以修改文档或电子邮件，或显示数据源中的数据。
-ms.date: 12/04/2017
+ms.date: 2/28/2019
 localization_priority: Priority
-ms.openlocfilehash: f9cbbf3a696eb4b3b6a8622f275c2b1808aff643
-ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
+ms.openlocfilehash: 93210a4725e9878a214f1113f68644756f539fbc
+ms.sourcegitcommit: f7f3d38ae4430e2218bf0abe7bb2976108de3579
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "29389317"
+ms.lasthandoff: 03/01/2019
+ms.locfileid: "30359224"
 ---
 # <a name="task-panes-in-office-add-ins"></a>Office 加载项中的任务窗格
  
@@ -76,6 +76,5 @@ ms.locfileid: "29389317"
 ## <a name="see-also"></a>另请参阅
 
 - [Office 加载项中的 Office UI Fabric](office-ui-fabric.md) 
-- [适用于 Office 外接程序的 UX 设计模式](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code)
-
+- [适用于 Office 外接程序的 UX 设计模式](../design/ux-design-pattern-templates.md)
 

@@ -1,14 +1,14 @@
 ---
 title: "\"context.subname\"-\"邮箱\"-预览要求集"
 description: ''
-ms.date: 02/15/2019
+ms.date: 02/26/2019
 localization_priority: Normal
-ms.openlocfilehash: ed3926e7e77550f43b87306cf27cf1e96341bd82
-ms.sourcegitcommit: f26778b596b6b022814c39601485ff676ed4e2fa
+ms.openlocfilehash: 32c982631dd832af6361f68176fe2c17de88b057
+ms.sourcegitcommit: f7f3d38ae4430e2218bf0abe7bb2976108de3579
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/16/2019
-ms.locfileid: "30068243"
+ms.lasthandoff: 03/01/2019
+ms.locfileid: "30359301"
 ---
 # <a name="item"></a>item
 
@@ -201,7 +201,7 @@ Office.context.mailbox.item.body.getAsync(
 
 ```
 
-下面是传递给回调函数的 result 参数的示例。
+以下是传递到回调函数的结果参数的示例。
 
 ```json
 {
@@ -346,7 +346,7 @@ console.log("Appointment end: " + end);
 
 使用 [`Time.setAsync`](/javascript/api/outlook/office.time#setasync-datetime--options--callback-) 方法设置结束时间时，应使用 [`convertToUtcClientTime`](office.context.mailbox.md#converttoutcclienttimeinput--date) 方法将客户端的本地时间转换为服务器的 UTC。
 
-下面的示例使用[`setAsync`](/javascript/api/outlook/office.time#setasync-datetime--options--callback-) `Time`对象的方法设置约会的结束时间。
+以下示例使用 `Time` 对象的 [`setAsync`](/javascript/api/outlook/office.time#setasync-datetime--options--callback-) 方法设置约会的结束时间。
 
 ```javascript
 var endTime = new Date("3/14/2015");
@@ -491,7 +491,7 @@ function callback(asyncResult) {
 
 获取电子邮件的 Internet 消息标识符。仅限阅读模式。
 
-##### <a name="type"></a>Type
+##### <a name="type"></a>类型
 
 *   String
 
@@ -523,7 +523,7 @@ console.log("internetMessageId: " + internetMessageId);
 
 你可以创建用于扩展默认邮件类别的自定义邮件类别，例如，自定义约会邮件类别 `IPM.Appointment.Contoso`。
 
-##### <a name="type"></a>Type
+##### <a name="type"></a>类型
 
 *   String
 
@@ -551,7 +551,7 @@ console.log("Item class: " + itemClass);
 
 `itemId` 属性在撰写模式下不可用。如果需要项目标识符，[`saveAsync`](#saveasyncoptions-callback) 方法可用于将项目保存到存储，这将在回调函数的 [`AsyncResult.value`](/javascript/api/office/office.asyncresult) 参数中返回项目标识符。
 
-##### <a name="type"></a>Type
+##### <a name="type"></a>类型
 
 *   String
 
@@ -649,7 +649,7 @@ function callback(asyncResult) {
 
 normalizedSubject 属性获取包含由电子邮件程序添加的任何标准前缀（如 `RE:` 和 `FW:`）的项目主题。若要获取包含完整前缀的项目主题，请使用 [`subject`](#subject-stringsubjectjavascriptapioutlookofficesubject) 属性。
 
-##### <a name="type"></a>Type
+##### <a name="type"></a>类型
 
 *   String
 
@@ -1073,15 +1073,15 @@ function callback(asyncResult) {
 
 `addFileAttachmentAsync` 方法在指定的 URI 上载文件并将其附加到撰写窗体中的项目。
 
-你随后可以将该标识符与 [`removeAttachmentAsync`](#removeattachmentasyncattachmentid-options-callback) 方法一同使用，以删除同一个会话中的附件。
+随后可以将该标识符与 [`removeAttachmentAsync`](#removeattachmentasyncattachmentid-options-callback) 方法一同使用，以删除同一个会话中的附件。
 
-##### <a name="parameters"></a>Parameters
+##### <a name="parameters"></a>参数
 |名称|类型|属性|说明|
 |---|---|---|---|
 |`uri`|String||提供附加到邮件或约会的文件的位置的 URI。最大长度为 2048 个字符。|
 |`attachmentName`|字符串||在附件上载过程中显示的附件名称。最大长度为 255 个字符。|
-|`options`|Object|&lt;可选&gt;|包含一个或多个以下属性的对象文本。|
-|`options.asyncContext`|对象|&lt;可选&gt;|开发人员可以提供他们想要在回调方法中访问的任何对象。|
+|`options`|Object|&lt;optional&gt;|包含一个或多个以下属性的对象文本。|
+|`options.asyncContext`|对象|&lt;optional&gt;|开发人员可以提供他们想要在回调方法中访问的任何对象。|
 |`options.isInline`|布尔值|&lt;可选&gt;|如果为 `true`，则表示附件将在邮件正文中内联显示，并且不应显示在附件列表中。|
 |`callback`|函数|&lt;optional&gt;|方法完成后，使用单个参数 `asyncResult`（一个 [`AsyncResult`](/javascript/api/office/office.asyncresult) 对象）调用在 `callback` 参数中传递的函数。 <br/>如果成功，附件标识符将在 `asyncResult.value` 属性中提供。<br/>如果上传附件失败，`asyncResult` 对象将包含一个提供错误说明的 `Error` 对象。|
 
@@ -1150,13 +1150,13 @@ Office.context.mailbox.item.addFileAttachmentAsync(
 
 随后可以将该标识符与 [`removeAttachmentAsync`](#removeattachmentasyncattachmentid-options-callback) 方法一同使用，以删除同一个会话中的附件。
 
-##### <a name="parameters"></a>Parameters
+##### <a name="parameters"></a>参数
 |名称|类型|属性|说明|
 |---|---|---|---|
 |`base64File`|String||要添加到电子邮件或事件的图像或文件的 base64 编码内容。|
 |`attachmentName`|字符串||在附件上载过程中显示的附件名称。最大长度为 255 个字符。|
-|`options`|Object|&lt;可选&gt;|包含一个或多个以下属性的对象文本。|
-|`options.asyncContext`|对象|&lt;可选&gt;|开发人员可以提供他们想要在回调方法中访问的任何对象。|
+|`options`|Object|&lt;optional&gt;|包含一个或多个以下属性的对象文本。|
+|`options.asyncContext`|对象|&lt;optional&gt;|开发人员可以提供他们想要在回调方法中访问的任何对象。|
 |`options.isInline`|布尔值|&lt;可选&gt;|如果为 `true`，则表示附件将在邮件正文中内联显示，并且不应显示在附件列表中。|
 |`callback`|函数|&lt;optional&gt;|方法完成后，使用单个参数 `asyncResult`（一个 [`AsyncResult`](/javascript/api/office/office.asyncresult) 对象）调用在 `callback` 参数中传递的函数。 <br/>如果成功，附件标识符将在 `asyncResult.value` 属性中提供。<br/>如果上传附件失败，`asyncResult` 对象将包含一个提供错误说明的 `Error` 对象。|
 
@@ -1168,7 +1168,7 @@ Office.context.mailbox.item.addFileAttachmentAsync(
 |`FileTypeNotSupported`|该附件的扩展名不是允许的扩展名。|
 |`NumberOfAttachmentsExceeded`|邮件或约会具有的附件过多。|
 
-##### <a name="requirements"></a>Requirements
+##### <a name="requirements"></a>要求
 
 |要求|值|
 |---|---|
@@ -1201,16 +1201,16 @@ Office.context.mailbox.item.addFileAttachmentFromBase64Async(
 
 添加支持事件的事件处理程序。
 
-当前，支持的事件类型是 `Office.EventType.AttachmentsChanged`、`Office.EventType.AppointmentTimeChanged`、`Office.EventType.RecipientsChanged` 和 `Office.EventType.RecurrenceChanged`
+目前, 受支持的事件`Office.EventType.AttachmentsChanged`类型`Office.EventType.AppointmentTimeChanged`是`Office.EventType.EnhancedLocationsChanged`、 `Office.EventType.RecipientsChanged`、、 `Office.EventType.RecurrenceChanged`和。
 
-##### <a name="parameters"></a>Parameters
+##### <a name="parameters"></a>参数
 
 | 名称 | 类型 | 属性 | 说明 |
 |---|---|---|---|
 | `eventType` | [Office.EventType](office.md#eventtype-string) || 应调用处理程序的事件。 |
 | `handler` | 函数 || 用于处理事件的函数。此函数必须接受一个参数，即对象文本。参数上的 `type` 属性将匹配传递给 `addHandlerAsync` 的 `eventType` 参数。 |
-| `options` | Object | &lt;可选&gt; | 包含一个或多个以下属性的对象文本。 |
-| `options.asyncContext` | 对象 | &lt;可选&gt; | 开发人员可以提供他们想要在回调方法中访问的任何对象。 |
+| `options` | Object | &lt;optional&gt; | 包含一个或多个以下属性的对象文本。 |
+| `options.asyncContext` | 对象 | &lt;optional&gt; | 开发人员可以提供他们想要在回调方法中访问的任何对象。 |
 | `callback` | 函数| &lt;可选&gt;|方法完成后，使用单个参数 `callback`（一个 [`asyncResult`](/javascript/api/office/office.asyncresult) 对象）调用在 `AsyncResult` 参数中传递的函数。|
 
 ##### <a name="requirements"></a>Requirements
@@ -1245,14 +1245,14 @@ Office.context.mailbox.item.addHandlerAsync(Office.EventType.AttachmentsChanged,
 
 如果 Office 加载项在 Outlook Web App 中运行，则 `addItemAttachmentAsync` 方法可以将项目附加到项目（正在编辑的项目除外）中；然而，不支持也不建议这样做。
 
-##### <a name="parameters"></a>Parameters
+##### <a name="parameters"></a>参数
 
 |名称|类型|属性|说明|
 |---|---|---|---|
 |`itemId`|String||要附加的项目的 Exchange 标识符。最大长度为 100 个字符。|
-|`attachmentName`|字符串||要附加的项目的主题。 最大长度为 255 个字符。|
-|`options`|对象|&lt;可选&gt;|包含一个或多个以下属性的对象文本。|
-|`options.asyncContext`|对象|&lt;可选&gt;|开发人员可以提供他们想要在回调方法中访问的任何对象。|
+|`attachmentName`|String||要附加的项目的主题。 最大长度为 255 个字符。|
+|`options`|对象|&lt;optional&gt;|包含一个或多个以下属性的对象文本。|
+|`options.asyncContext`|对象|&lt;optional&gt;|开发人员可以提供他们想要在回调方法中访问的任何对象。|
 |`callback`|函数|&lt;可选&gt;|方法完成后，使用单个参数 `asyncResult`（一个 [`AsyncResult`](/javascript/api/office/office.asyncresult) 对象）调用在 `callback` 参数中传递的函数。 <br/>如果成功，附件标识符将在 `asyncResult.value` 属性中提供。<br/>如果添加附件失败，`asyncResult` 对象将包含一个提供错误说明的 `Error` 对象。|
 
 ##### <a name="errors"></a>错误
@@ -1313,7 +1313,7 @@ function addAttachment() {
 |[最低权限级别](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)|受限|
 |[适用的 Outlook 模式](https://docs.microsoft.com/outlook/add-ins/#extension-points)|撰写|
 
-#### <a name="displayreplyallformformdata-callback"></a>displayReplyAllForm (formData, [callback])
+#### <a name="displayreplyallformformdata-callback"></a>displayReplyAllForm(formData, [callback])
 
 显示答复窗体，其中包括所选邮件的发件人和所有收件人或所选约会的组织者和所有与会者。
 
@@ -1326,7 +1326,7 @@ function addAttachment() {
 
 当在 `formData.attachments` 参数中指定附件时，Outlook 和 Outlook Web App 尝试下载所有附件并将其附加到答复窗体。如果无法添加任何附件，则在窗体 UI 中显示错误。如果这不可能，则不引发错误消息。
 
-##### <a name="parameters"></a>Parameters
+##### <a name="parameters"></a>参数
 
 |名称|类型|属性|说明|
 |---|---|---|---|
@@ -1338,7 +1338,7 @@ function addAttachment() {
 |`formData.attachments.url`|String||仅在将 `type` 设置为 `file` 时使用。文件的位置的 URI。|
 |`formData.attachments.isInline`|Boolean||仅在将 `type` 设置为 `file` 时使用。如果为 `true`，则表示附件将在邮件正文中内联显示，并且不应显示在附件列表中。|
 |`formData.attachments.itemId`|String||仅在将 `type` 设置为 `item` 时使用。附件的 EWS 项目 ID。字符串最长为 100 个字符。|
-|`callback`|函数|&lt;可选&gt;|方法完成后，使用单个参数 `asyncResult`（一个 [AsyncResult](/javascript/api/office/office.asyncresult) 对象）调用在 `callback` 参数中传递的函数。|
+|`callback`|函数|&lt;optional&gt;|方法完成后，使用单个参数 `asyncResult`（一个 [AsyncResult](/javascript/api/office/office.asyncresult) 对象）调用在 `callback` 参数中传递的函数。|
 
 ##### <a name="requirements"></a>要求
 
@@ -1432,7 +1432,7 @@ Office.context.mailbox.item.displayReplyAllForm(
 });
 ```
 
-#### <a name="displayreplyformformdata-callback"></a>displayReplyForm (formData, [callback])
+#### <a name="displayreplyformformdata-callback"></a>displayReplyForm(formData, [callback])
 
 显示答复窗体，其中仅包括所选邮件的发件人或所选约会的组织者。
 
@@ -1445,7 +1445,7 @@ Office.context.mailbox.item.displayReplyAllForm(
 
 当在 `formData.attachments` 参数中指定附件时，Outlook 和 Outlook Web App 尝试下载所有附件并将其附加到答复窗体。如果无法添加任何附件，则在窗体 UI 中显示错误。如果这不可能，则不引发错误消息。
 
-##### <a name="parameters"></a>Parameters
+##### <a name="parameters"></a>参数
 
 |名称|类型|属性|说明|
 |---|---|---|---|
@@ -1457,7 +1457,7 @@ Office.context.mailbox.item.displayReplyAllForm(
 |`formData.attachments.url`|String||仅在将 `type` 设置为 `file` 时使用。文件的位置的 URI。|
 |`formData.attachments.isInline`|Boolean||仅在将 `type` 设置为 `file` 时使用。如果为 `true`，则表示附件将在邮件正文中内联显示，并且不应显示在附件列表中。|
 |`formData.attachments.itemId`|String||仅在将 `type` 设置为 `item` 时使用。附件的 EWS 项目 ID。字符串最长为 100 个字符。|
-|`callback`|函数|&lt;可选&gt;|方法完成后，使用单个参数 `asyncResult`（一个 [AsyncResult](/javascript/api/office/office.asyncresult) 对象）调用在 `callback` 参数中传递的函数。|
+|`callback`|函数|&lt;optional&gt;|方法完成后，使用单个参数 `asyncResult`（一个 [AsyncResult](/javascript/api/office/office.asyncresult) 对象）调用在 `callback` 参数中传递的函数。|
 
 ##### <a name="requirements"></a>要求
 
@@ -1557,14 +1557,14 @@ Office.context.mailbox.item.displayReplyForm(
 
 `getAttachmentContentAsync` 方法获取项目中带指定标识符的附件。 作为最佳做法，应使用标识符检索同一会话中的附件，在该会话中，使用 `getAttachmentsAsync` 或 `item.attachments` 调用检索附件 ID。 在 Outlook Web App 和适用于设备的 OWA 中，附件标识符只在同一个会话中才有效。 当用户关闭应用，或者如果用户开始在内嵌窗体中撰写，则随后弹出的窗体中继续在单独的窗口撰写时，会话即结束。
 
-##### <a name="parameters"></a>Parameters
+##### <a name="parameters"></a>参数
 
 |名称|类型|属性|说明|
 |---|---|---|---|
 |`attachmentId`|字符串||要获取的附件的标识符。|
-|`options`|对象|&lt;可选&gt;|包含一个或多个以下属性的对象文本。|
-|`options.asyncContext`|对象|&lt;可选&gt;|开发人员可以提供他们想要在回调方法中访问的任何对象。|
-|`callback`|函数|&lt;可选&gt;|方法完成后，使用单个参数 `asyncResult`（一个 [AsyncResult](/javascript/api/office/office.asyncresult) 对象）调用在 `callback` 参数中传递的函数。|
+|`options`|对象|&lt;optional&gt;|包含一个或多个以下属性的对象文本。|
+|`options.asyncContext`|对象|&lt;optional&gt;|开发人员可以提供他们想要在回调方法中访问的任何对象。|
+|`callback`|function|&lt;optional&gt;|方法完成后，使用单个参数 `asyncResult`（一个 [AsyncResult](/javascript/api/office/office.asyncresult) 对象）调用在 `callback` 参数中传递的函数。|
 
 ##### <a name="requirements"></a>要求
 
@@ -1614,12 +1614,12 @@ function handleAttachmentsCallback(result) {
 
 获取项目的附件作为数组。 仅限撰写模式。
 
-##### <a name="parameters"></a>Parameters
+##### <a name="parameters"></a>参数
 
 |名称|类型|属性|说明|
 |---|---|---|---|
-|`options`|Object|&lt;可选&gt;|包含一个或多个以下属性的对象文本。|
-|`options.asyncContext`|对象|&lt;可选&gt;|开发人员可以提供他们想要在回调方法中访问的任何对象。|
+|`options`|Object|&lt;optional&gt;|包含一个或多个以下属性的对象文本。|
+|`options.asyncContext`|对象|&lt;optional&gt;|开发人员可以提供他们想要在回调方法中访问的任何对象。|
 |`callback`|函数|&lt;可选&gt;|方法完成后，使用单个参数 `asyncResult`（一个 [AsyncResult](/javascript/api/office/office.asyncresult) 对象）调用在 `callback` 参数中传递的函数。|
 
 ##### <a name="requirements"></a>Requirements
@@ -1693,7 +1693,7 @@ var contacts = Office.context.mailbox.item.getEntities().contacts;
 > [!NOTE]
 > 在 Outlook for iOS 或 Outlook for Android 中不支持此方法。
 
-##### <a name="parameters"></a>Parameters
+##### <a name="parameters"></a>参数
 
 |名称|说明|说明|
 |---|---|---|
@@ -1752,7 +1752,7 @@ Office.initialize = function () {
 
 `getFilteredEntitiesByName` 方法返回匹配在具有指定 `FilterName` 元素值的清单 XML 文件中的 [ItemHasKnownEntity](/office/dev/add-ins/reference/manifest/rule#itemhasknownentity-rule) 规则元素中定义的正则表达式的实体。
 
-##### <a name="parameters"></a>Parameters
+##### <a name="parameters"></a>参数
 
 |名称|说明|说明|
 |---|---|---|
@@ -1779,11 +1779,11 @@ Office.initialize = function () {
 > [!NOTE]
 > 仅 Outlook 2016 for Windows 或更高版本（高于 16.0.8413.1000 的即点即用版本）和适用于 Office 365 的 Outlook 网页版支持此方法。
 
-##### <a name="parameters"></a>Parameters
+##### <a name="parameters"></a>参数
 |名称|类型|属性|说明|
 |---|---|---|---|
-|`options`|Object|&lt;可选&gt;|包含一个或多个以下属性的对象文本。|
-|`options.asyncContext`|对象|&lt;可选&gt;|开发人员可以提供他们想要在回调方法中访问的任何对象。|
+|`options`|Object|&lt;optional&gt;|包含一个或多个以下属性的对象文本。|
+|`options.asyncContext`|对象|&lt;optional&gt;|开发人员可以提供他们想要在回调方法中访问的任何对象。|
 |`callback`|函数|&lt;可选&gt;|方法完成后，使用单个参数 `asyncResult`（一个 [`AsyncResult`](/javascript/api/office/office.asyncresult) 对象）调用在 `callback` 参数中传递的函数。 <br/>成功后，`asyncResult.value` 属性便以字符串形式提供初始化数据。<br/>如果没有初始化上下文，`asyncResult` 对象包含 `Error` 对象，并将它的 `code` 和 `name` 属性分别设置为 `9020` 和 `GenericResponseError`。|
 
 ##### <a name="requirements"></a>要求
@@ -1895,7 +1895,7 @@ var veggies = allMatches.veggies;
 
 如果在项目的正文属性上指定 `ItemHasRegularExpressionMatch` 规则，则正则表达式应进一步筛选正文，不应尝试返回该项目的整个正文。使用正则表达式（如 `.*`）获取项目的整个正文并不总是返回预期的结果。
 
-##### <a name="parameters"></a>Parameters
+##### <a name="parameters"></a>参数
 
 |名称|说明|说明|
 |---|---|---|
@@ -1934,14 +1934,14 @@ var veggies = Office.context.mailbox.item.getRegExMatchesByName("veggies");
 
 如果没有选定内容，但光标位于正文或主题中，此方法将会为所选数据返回 null。如果选定的是字段，而不是正文或主题，则此方法返回 `InvalidSelection` 错误。
 
-##### <a name="parameters"></a>Parameters
+##### <a name="parameters"></a>参数
 
 |名称|类型|属性|说明|
 |---|---|---|---|
 |`coercionType`|[Office.CoercionType](office.md#coerciontype-string)||请求数据的格式。如果为文本，则此方法返回纯文本作为字符串，删除任何显示的 HTML 标记。如果为 HTML，则此方法返回所选文本，不论是纯文本还是 HTML。|
 |`options`|对象|&lt;可选&gt;|包含一个或多个以下属性的对象文本。|
 |`options.asyncContext`|对象|&lt;可选&gt;|开发人员可以提供他们想要在回调方法中访问的任何对象。|
-|`callback`|函数||方法完成后，使用单个参数 `asyncResult`（一个 [`AsyncResult`](/javascript/api/office/office.asyncresult) 对象）调用在 `callback` 参数中传递的函数。<br/><br/>若要从回调方法访问所选数据，请调用 `asyncResult.value.data`。 若要访问选定内容的源属性，请调用 `asyncResult.value.sourceProperty`，这将为 `body` 或 `subject`。|
+|`callback`|function||方法完成后，使用单个参数 `asyncResult`（一个 [`AsyncResult`](/javascript/api/office/office.asyncresult) 对象）调用在 `callback` 参数中传递的函数。<br/><br/>若要从回调方法访问所选数据，请调用 `asyncResult.value.data`。 若要访问选定内容的源属性，请调用 `asyncResult.value.sourceProperty`，这将为 `body` 或 `subject`。|
 
 ##### <a name="requirements"></a>Requirements
 
@@ -2070,13 +2070,13 @@ var veggies = selectedMatches.veggies;
 
 获取共享文件夹、日历或邮箱中所选约会或邮件的属性。
 
-##### <a name="parameters"></a>Parameters
+##### <a name="parameters"></a>参数
 
 |名称|类型|属性|说明|
 |---|---|---|---|
 |`options`|Object|&lt;可选&gt;|包含一个或多个以下属性的对象文本。|
 |`options.asyncContext`|对象|&lt;可选&gt;|开发人员可以提供他们想要在回调方法中访问的任何对象。|
-|`callback`|函数||方法完成后，使用单个参数 `asyncResult`（一个 [`AsyncResult`](/javascript/api/office/office.asyncresult) 对象）调用在 `callback` 参数中传递的函数。<br/><br/>共享属性作为 `asyncResult.value` 属性中的 [`SharedProperties`](/javascript/api/outlook/office.sharedproperties) 对象提供。 此对象可用于获取项目的共享属性。|
+|`callback`|function||方法完成后，使用单个参数 `asyncResult`（一个 [`AsyncResult`](/javascript/api/office/office.asyncresult) 对象）调用在 `callback` 参数中传递的函数。<br/><br/>共享属性作为 `asyncResult.value` 属性中的 [`SharedProperties`](/javascript/api/outlook/office.sharedproperties) 对象提供。 此对象可用于获取项目的共享属性。|
 
 ##### <a name="requirements"></a>要求
 
@@ -2103,7 +2103,7 @@ function callback (asyncResult) {
 
 自定义属性基于每个应用、每个项目存储为键/值对。此方法在回调中返回 `CustomProperties` 对象，该回调提供访问特定于当前项目和当前外接程序的自定义属性的方法。自定义属性未在项目上加密，因此这不应用作安全存储。
 
-##### <a name="parameters"></a>Parameters
+##### <a name="parameters"></a>参数
 
 |名称|类型|属性|说明|
 |---|---|---|---|
@@ -2151,13 +2151,13 @@ function saveCallback(asyncResult) {
 
 `removeAttachmentAsync` 方法删除项目中带指定标识符的附件。 最佳做法是，仅当同一个邮件应用程序在同一会话中添加了一个附件时，你才应使用该附件标识符来删除该附件。 在 Outlook Web App 和适用于设备的 OWA 中，附件标识符只在同一个会话中才有效。 当用户关闭应用，或者如果用户开始在内嵌窗体中撰写，则随后弹出的窗体中继续在单独的窗口撰写时，会话即结束。
 
-##### <a name="parameters"></a>Parameters
+##### <a name="parameters"></a>参数
 
 |名称|类型|属性|说明|
 |---|---|---|---|
 |`attachmentId`|字符串||要删除的附件的标识符。|
-|`options`|对象|&lt;可选&gt;|包含一个或多个以下属性的对象文本。|
-|`options.asyncContext`|对象|&lt;可选&gt;|开发人员可以提供他们想要在回调方法中访问的任何对象。|
+|`options`|对象|&lt;optional&gt;|包含一个或多个以下属性的对象文本。|
+|`options.asyncContext`|对象|&lt;optional&gt;|开发人员可以提供他们想要在回调方法中访问的任何对象。|
 |`callback`|函数|&lt;可选&gt;|方法完成后，使用单个参数 `callback`（一个 [`asyncResult`](/javascript/api/office/office.asyncresult) 对象）调用在 `AsyncResult` 参数中传递的函数。 <br/>如果删除附件失败，`asyncResult.error` 属性将包含一个说明失败原因的错误代码。|
 
 ##### <a name="errors"></a>错误
@@ -2193,15 +2193,15 @@ Office.context.mailbox.item.removeAttachmentAsync(
 
 删除受支持事件类型的事件处理程序。
 
-当前，支持的事件类型是 `Office.EventType.AttachmentsChanged`、`Office.EventType.AppointmentTimeChanged`、`Office.EventType.RecipientsChanged` 和 `Office.EventType.RecurrenceChanged`
+目前, 受支持的事件`Office.EventType.AttachmentsChanged`类型`Office.EventType.AppointmentTimeChanged`是`Office.EventType.EnhancedLocationsChanged`、 `Office.EventType.RecipientsChanged`、、 `Office.EventType.RecurrenceChanged`和。
 
-##### <a name="parameters"></a>Parameters
+##### <a name="parameters"></a>参数
 
 | 名称 | 类型 | 属性 | 说明 |
 |---|---|---|---|
 | `eventType` | [Office.EventType](office.md#eventtype-string) || 应撤销处理程序的事件。 |
-| `options` | 对象 | &lt;可选&gt; | 包含一个或多个以下属性的对象文本。 |
-| `options.asyncContext` | 对象 | &lt;可选&gt; | 开发人员可以提供他们想要在回调方法中访问的任何对象。 |
+| `options` | 对象 | &lt;optional&gt; | 包含一个或多个以下属性的对象文本。 |
+| `options.asyncContext` | 对象 | &lt;optional&gt; | 开发人员可以提供他们想要在回调方法中访问的任何对象。 |
 | `callback` | 函数| &lt;可选&gt;|方法完成后，使用单个参数 `callback`（一个 [`asyncResult`](/javascript/api/office/office.asyncresult) 对象）调用在 `AsyncResult` 参数中传递的函数。|
 
 ##### <a name="requirements"></a>Requirements
@@ -2229,12 +2229,12 @@ Office.context.mailbox.item.removeAttachmentAsync(
 > - Mac Outlook 不支持在撰写模式下对会议执行 `saveAsync` 操作。 对 Mac Outlook 中的会议调用 `saveAsync` 将会返回一个错误。
 > - 在撰写模式下的约会上调用 `saveAsync` 时，Outlook 网页版始终发送邀请或更新。
 
-##### <a name="parameters"></a>Parameters
+##### <a name="parameters"></a>参数
 
 |名称|类型|属性|说明|
 |---|---|---|---|
-|`options`|Object|&lt;可选&gt;|包含一个或多个以下属性的对象文本。|
-|`options.asyncContext`|对象|&lt;可选&gt;|开发人员可以提供他们想要在回调方法中访问的任何对象。|
+|`options`|Object|&lt;optional&gt;|包含一个或多个以下属性的对象文本。|
+|`options.asyncContext`|对象|&lt;optional&gt;|开发人员可以提供他们想要在回调方法中访问的任何对象。|
 |`callback`|函数||方法完成后，使用单个参数 `asyncResult`（一个 [`AsyncResult`](/javascript/api/office/office.asyncresult) 对象）调用在 `callback` 参数中传递的函数。<br/><br/>如果成功，该项目标识符将在 `asyncResult.value` 属性中提供。|
 
 ##### <a name="requirements"></a>要求
@@ -2269,12 +2269,12 @@ Office.context.mailbox.item.saveAsync(
 
 `setSelectedDataAsync` 方法将指定字符串插入到项目主题或正文的光标位置，或者，如果在编辑器中已选择文本，则该方法将替换选择的文本。如果光标不在正文或主题字段中，则返回错误。插入之后，光标会位于插入内容的末尾。
 
-##### <a name="parameters"></a>Parameters
+##### <a name="parameters"></a>参数
 
 |名称|类型|属性|说明|
 |---|---|---|---|
 |`data`|字符串||要插入的数据。数据不得超过 1,000,000 个字符。如果传入的数据超过 1,000,000 个字符，则会引发 `ArgumentOutOfRange` 异常。|
-|`options`|Object|&lt;可选&gt;|包含一个或多个以下属性的对象文本。|
+|`options`|Object|&lt;optional&gt;|包含一个或多个以下属性的对象文本。|
 |`options.asyncContext`|对象|&lt;可选&gt;|开发人员可以提供他们想要在回调方法中访问的任何对象。|
 |`options.coercionType`|[Office.CoercionType](office.md#coerciontype-string)|&lt;optional&gt;|如果为 `text`，则在 Outlook Web App 和 Outlook 中应用当前样式。如果该字段是 HTML 编辑器，则仅插入文本数据，即使数据为 HTML。<br/><br/>如果 `html` 和该字段支持 HTML（主题不支持），则在 Outlook Web App 中应用当前样式，而在 Outlook 中应用默认样式。如果该字段是文本字段，则返回 `InvalidDataFormat` 错误。<br/><br/>如果未设置 `coercionType`，则结果取决于该字段：如果该字段是 HTML，则使用 HTML；如果该字段是文本，则使用纯文本。|
 |`callback`|function||方法完成后，使用单个参数 `callback`（一个 [`asyncResult`](/javascript/api/office/office.asyncresult) 对象）调用在 `AsyncResult` 参数中传递的函数。|
