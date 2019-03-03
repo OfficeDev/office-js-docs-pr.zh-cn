@@ -1,14 +1,14 @@
 ---
 title: 在 Office 加载项中使用 Office UI Fabric React
 description: ''
-ms.date: 12/04/2017
+ms.date: 2/28/2019
 localization_priority: Priority
-ms.openlocfilehash: 6013275a9a7a4d5d01f37bbbd268a9258cc82f17
-ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
+ms.openlocfilehash: 7d3e280298ee6761be9e7ced96d3490defeef7f0
+ms.sourcegitcommit: f7f3d38ae4430e2218bf0abe7bb2976108de3579
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "29389282"
+ms.lasthandoff: 03/01/2019
+ms.locfileid: "30359238"
 ---
 # <a name="use-office-ui-fabric-react-in-office-add-ins"></a>在 Office 加载项中使用 Office UI Fabric React
 
@@ -114,7 +114,7 @@ export class ButtonPrimaryExample extends React.Component<IButtonProps, {}> {
 ## <a name="see-also"></a>另请参阅
 
 - [Office UI Fabric React](https://developer.microsoft.com/fabric)
+- [适用于 Office 加载项的 UX 设计模式](../design/ux-design-pattern-templates.md)
 - [Fabric React 代码示例入门](https://github.com/OfficeDev/Word-Add-in-GettingStartedFabricReact)
-- [用户体验设计模式（使用 Fabric 2.6.1）](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code)
 - [Office 外接程序 Fabric UI 示例（使用 Fabric 1.0）](https://github.com/OfficeDev/Office-Add-in-Fabric-UI-Sample)
 - [Office 的 yeoman 生成器](https://github.com/OfficeDev/generator-office)
