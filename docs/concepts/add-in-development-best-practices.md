@@ -1,14 +1,14 @@
 ---
 title: Office 加载项开发最佳做法
 description: ''
-ms.date: 01/23/2018
+ms.date: 02/28/2019
 localization_priority: Priority
-ms.openlocfilehash: 774dacc2fa48a75a95b88740d65eca88ad7dcfdd
-ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
+ms.openlocfilehash: 0227b73223d5d2284d697f98ff598dc4cf5dce81
+ms.sourcegitcommit: f7f3d38ae4430e2218bf0abe7bb2976108de3579
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "29388978"
+ms.lasthandoff: 03/01/2019
+ms.locfileid: "30359280"
 ---
 # <a name="best-practices-for-developing-office-add-ins"></a>Office 加载项开发最佳做法
 
@@ -50,7 +50,7 @@ ms.locfileid: "29388978"
 
 - 避免弹出窗口。如果必须使用它们，请引导用户启用弹出窗口。
 
-对于说明你在开发首次运行体验时可以应用的模式的模板，请参阅[适用于 Office 加载项的 UX 设计模式](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code)。
+如需你在开发首次运行体验时可应用的模式，请参阅[适用于 Office 加载项的 UX 设计模式](https://docs.microsoft.com/office/dev/add-ins/design/first-run-experience-patterns)。
 
 ## <a name="use-add-in-commands"></a>使用加载项命令
 
@@ -75,8 +75,6 @@ ms.locfileid: "29388978"
 - 考虑辅助功能 - 方便所有用户都可以与加载项轻松交互，并提供屏幕阅读器等辅助技术。
 
 - 针对所有平台和输入方法（包括鼠标/键盘和 [触摸](#optimize-for-touch)）的设计。确保 UI 可响应不同的外观设置。
-
-对于应用你在开发外接程序时可以使用和自定义的设计原则的模板，请参阅[适用于 Office 外接程序的 UX 设计模式](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code)。
 
 ### <a name="optimize-for-touch"></a>触摸优化
 

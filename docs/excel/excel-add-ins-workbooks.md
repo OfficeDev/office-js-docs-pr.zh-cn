@@ -1,14 +1,14 @@
 ---
 title: 使用 Excel JavaScript API 处理工作簿
 description: ''
-ms.date: 01/07/2019
+ms.date: 02/20/2019
 localization_priority: Priority
-ms.openlocfilehash: 9e88809ea7174df972dfc31110e8370a5294fb6c
-ms.sourcegitcommit: 70ef38a290c18a1d1a380fd02b263470207a5dc6
+ms.openlocfilehash: 3d0cbc21d7e6b5c987df5a29d1aa83790c5685bc
+ms.sourcegitcommit: 8e20e7663be2aaa0f7a5436a965324d171bc667d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/15/2019
-ms.locfileid: "30052754"
+ms.lasthandoff: 02/28/2019
+ms.locfileid: "30199590"
 ---
 # <a name="work-with-workbooks-using-the-excel-javascript-api"></a>使用 Excel JavaScript API 处理工作簿
 
@@ -75,8 +75,7 @@ reader.readAsDataURL(myFile.files[0]);
 ### <a name="insert-a-copy-of-an-existing-workbook-into-the-current-one"></a>将现有工作簿副本插入到当前工作簿中
 
 > [!NOTE]
-> `WorksheetCollection.addFromBase64` 函数当前仅适用于公共预览版（beta 版本）。 若要使用此功能，必须使用 Office.js CDN 的 beta 版库：https://appsforoffice.microsoft.com/lib/beta/hosted/office.js。
-> 如果使用的是 TypeScript 或代码编辑器将 TypeScript 类型定义文件用于 IntelliSense，则使用 https://appsforoffice.microsoft.com/lib/beta/hosted/office.d.ts。
+> `WorksheetCollection.addFromBase64` 函数当前仅适用于公共预览版。 [!INCLUDE [Information about using preview APIs](../includes/using-preview-apis.md)]
 
 上一示例显示从现有工作簿创建的新工作簿。 此外，还可以将所有或部分现有工作簿复制到当前与加载项关联的工作簿中。 工作簿的 [WorksheetCollection](/javascript/api/excel/excel.worksheetcollection) 可通过 `addFromBase64` 方法将目标工作簿的工作表副本插入到其本身。 其他工作簿文件将作为 base64 编码字符串传递，如 `Excel.createWorkbook` 调用一样。
 

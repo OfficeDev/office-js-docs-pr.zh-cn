@@ -1,14 +1,14 @@
 ---
 title: Outlook 外接程序 API 预览要求集
 description: ''
-ms.date: 01/30/2019
+ms.date: 02/26/2019
 localization_priority: Priority
-ms.openlocfilehash: 47db6824fa328a61e47d577a85375f43e73f16df
-ms.sourcegitcommit: bf5c56d9b8c573e42bf2268e10ca3fd4d2bb4ff9
+ms.openlocfilehash: 233bc6770faefaa0e101fd01c353e7ce0df972a1
+ms.sourcegitcommit: f7f3d38ae4430e2218bf0abe7bb2976108de3579
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/01/2019
-ms.locfileid: "29701783"
+ms.lasthandoff: 03/01/2019
+ms.locfileid: "30359245"
 ---
 # <a name="outlook-add-in-api-preview-requirement-set"></a>Outlook 外接程序 API 预览要求集
 
@@ -42,7 +42,7 @@ ms.locfileid: "29701783"
 - [Office.MailboxEnums.AttachmentStatus](/javascript/api/outlook/office.mailboxenums.attachmentstatus) - 新增了一个枚举，可指定是添加附件还是从邮件中删除附件。
 - [Office.MailboxEnums.DelegatePermissions](/javascript/api/outlook/office.mailboxenums.delegatepermissions) - 新增了一个位标记枚举，可指定代理权限。
 - [Office.MailboxEnums.LocationType](/javascript/api/outlook/office.mailboxenums.locationtype) - 新增了一个枚举，可指定约会位置的类型。
-- [Office.EventType](/javascript/api/office/office.eventtype) - 通过分别添加 `AttachmentsChanged` 和 `OfficeThemeChanged` 条目对支持 AttachmentsChanged 和 OfficeThemeChanged 事件进行修改。
+- [Office.EventType](/javascript/api/office/office.eventtype) - 通过分别添加 `AttachmentsChanged`、`EnhancedLocationsChanged` 和 `OfficeThemeChanged` 条目对支持 AttachmentsChanged、EnhancedLocationsChanged 和 OfficeThemeChanged 事件进行修改。
 - [SupportsSharedFolders manifest element](../../manifest/supportssharedfolders.md) - 添加了 [DesktopFormFactor](../../manifest/desktopformfactor.md) 清单元素的子元素。 它定义外接程序是否在代理应用场景中可用。
 
 ## <a name="see-also"></a>另请参阅

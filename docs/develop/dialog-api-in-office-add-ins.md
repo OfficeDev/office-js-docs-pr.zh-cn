@@ -1,14 +1,14 @@
 ---
 title: 在 Office 加载项中使用对话框 API
 description: ''
-ms.date: 02/13/2019
+ms.date: 02/28/2019
 localization_priority: Priority
-ms.openlocfilehash: 81154f039a87973e222188d894d5e4289d0bf647
-ms.sourcegitcommit: 70ef38a290c18a1d1a380fd02b263470207a5dc6
+ms.openlocfilehash: c474e0f3bf27b70565174b797d726a1651a55952
+ms.sourcegitcommit: f7f3d38ae4430e2218bf0abe7bb2976108de3579
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/15/2019
-ms.locfileid: "30052768"
+ms.lasthandoff: 03/01/2019
+ms.locfileid: "30359287"
 ---
 # <a name="use-the-dialog-api-in-your-office-add-ins"></a>在 Office 加载项中使用对话框 API
 
@@ -243,8 +243,6 @@ function processMessage(arg) {
 }
 ```
 
-有关使用此技术的示例，请参阅 [Office 加载项的用户体验设计模式](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code)存储库中的[对话框导航设计模式](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code/tree/master/templates/dialog/navigation)。
-
 即使你没有自己的关闭对话框 UI，最终用户也可以通过选择右上角的 **X** 关闭对话框。此操作将触发 `DialogEventReceived` 事件。如果主机窗格需要知道此事件何时发生，应为此事件声明一个处理程序。有关详细信息，请参阅[对话框窗口中的错误和事件](#errors-and-events-in-the-dialog-window)部分。
 
 ## <a name="handle-errors-and-events"></a>处理错误和事件
@@ -380,7 +378,7 @@ Office.context.ui.displayDialogAsync('https://myAddinDomain/myDialog.html?client
 3.  在主机页中调用 `displayDialogAsync`，打开 video.dialogbox.html。
 4.  如果外接程序需要知道用户何时关闭对话框，请为 `DialogEventReceived` 事件注册处理程序，并处理 12006 事件。有关详细信息，请参阅[对话框窗口中的错误和事件](#errors-and-events-in-the-dialog-window)部分。
 
-有关在对话框中显示视频的示例，请参阅 [Office 外接程序的用户体验设计模式](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code)存储库中的[视频展示位置设计模式](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code/tree/master/templates/first-run/video-placemat)。
+有关在对话框中显示视频的示例，请参阅[视频展示位置设计模式](https://docs.microsoft.com/office/dev/add-ins/design/first-run-experience-patterns#video-placemat)。
 
 ![在加载项对话框中显示的视频的屏幕截图](../images/video-placemats-dialog-open.png)
 

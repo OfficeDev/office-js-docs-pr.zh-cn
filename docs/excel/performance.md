@@ -1,14 +1,14 @@
 ---
 title: Excel JavaScript API 性能优化
 description: 使用 Excel JavaScript API 优化性能
-ms.date: 12/06/2018
+ms.date: 02/20/2019
 localization_priority: Priority
-ms.openlocfilehash: 0c288f3e29d2a956238d9597730312ae0608a7ec
-ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
+ms.openlocfilehash: d15a4b3ad4ae44399572282889855b1cdc32bc39
+ms.sourcegitcommit: 8e20e7663be2aaa0f7a5436a965324d171bc667d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "29389121"
+ms.lasthandoff: 02/28/2019
+ms.locfileid: "30199576"
 ---
 # <a name="performance-optimization-using-the-excel-javascript-api"></a>使用 Excel JavaScript API 优化性能
 
@@ -106,7 +106,7 @@ Excel.run(async function(ctx) {
     // Range value should be [1, 2, 3] now
     console.log(rangeToGet.values);
 
-    // Suspending recalc
+    // Suspending recalculation
     app.suspendApiCalculationUntilNextSync();
     rangeToSet = sheet.getRange("A1:B1");
     rangeToSet.values = [[10, 20]];
@@ -116,7 +116,7 @@ Excel.run(async function(ctx) {
     await ctx.sync();
     // Range value should be [10, 20, 3] when we load the property, because calculation is suspended at that point
     console.log(rangeToGet.values);
-    // Calculation mode should still be "Automatic" even with supend recalc
+    // Calculation mode should still be "Automatic" even with suspend recalculation
     console.log(app.calculationMode);
 
     rangeToGet.load("values");
@@ -129,7 +129,7 @@ Excel.run(async function(ctx) {
 ### <a name="suspend-screen-updating"></a>暂停屏幕更新
 
 > [!NOTE]
-> 本文中所述的 `suspendScreenUpdatingUntilNextSync()` 方法需要使用 [Office.js CDN](https://appsforoffice.microsoft.com/lib/beta/hosted/office.js) 中的 Beta 版 Office JavaScript 库。 [类型定义文件]（https://appsforoffice.microsoft.com/lib/beta/hosted/office.d.ts) 也可以在 CDN 中找到）。 有关即将推出的 API 的更多信息，请访问 GitHub 上的[开放性规范](https://github.com/OfficeDev/office-js-docs/tree/ExcelJs_OpenSpec)。
+> 本文中所述的 `suspendScreenUpdatingUntilNextSync` 方法当前仅适用于公共预览版。 [!INCLUDE [Information about using preview APIs](../includes/using-preview-apis.md)]
 
 Excel 大约会在代码发生更改时显示外接程序所进行的这些更改。 对于大型迭代数据集，你无需实时在屏幕上查看此进度。 在外接程序调用 `context.sync()` 或者在 `Excel.run` 结束（隐式调用 `context.sync`）之前，`Application.suspendScreenUpdatingUntilNextSync()` 将暂停对 Excel 的可视化更新。 请注意，在下次同步之前，Excel 不会显示任何活动迹象。你的外接程序应为用户提供相关指南，以便为此延迟做好准备，或者提供一个状态栏，以演示相关活动。
 
@@ -137,7 +137,7 @@ Excel 大约会在代码发生更改时显示外接程序所进行的这些更�
 
 可以通过禁用事件来改进加载项性能。 [使用事件](excel-add-ins-events.md#enable-and-disable-events)文章中的代码示例展示了如何启用和禁用事件。
 
-## <a name="update-all-cells-in-a-range"></a>更新区域中的所有单元格 
+## <a name="update-all-cells-in-a-range"></a>更新区域中的所有单元格
 
 当你需要更新区域中具有相同值或属性的所有单元格，通过重复指定相同值的二维数组来实现此操作可能会比较慢，因为此方法需要 Excel 遍历区域内的所有单元格，以分别设置每个单元格。 Excel 有一种更有效的方法来更新区域内具有相同值或属性的所有单元格。
 
@@ -182,7 +182,7 @@ Excel.run(async (ctx) => {
 
 JavaScript 层为加载项创建代理对象，以便与 Excel 工作簿和基础区域交互。 这些对象将一直保存在内存中，直到调用 `context.sync()`。 大型批处理操作可能会生成许多代理对象，加载项只需用到这些对象一次，并且可以在批处理执行之前从内存中释放。
 
-[Range.untrack()](/javascript/api/excel/excel.range#untrack--) 方法从内存中释放 Excel Range 对象。 在加载项处理完区域后调用此方法，应会在使用大量 Range 对象时产生明显的性能优势。 
+[Range.untrack()](/javascript/api/excel/excel.range#untrack--) 方法从内存中释放 Excel Range 对象。 在加载项处理完区域后调用此方法，应会在使用大量 Range 对象时产生明显的性能优势。
 
 > [!NOTE]
 > `Range.untrack()` 是 [ClientRequestContext.trackedObjects.remove(thisRange)](/javascript/api/office/officeextension.trackedobjects#remove-object-) 的快捷方式。 任何代理对象都可以通过从上下文中的跟踪对象列表中删除它来取消跟踪。 通常情况下，Range 对象是数量充足的用来证明取消跟踪合理性的惟一 Excel 对象。

@@ -1,18 +1,18 @@
 ---
 title: 使用 Excel JavaScript API 处理工作表
 description: ''
-ms.date: 02/15/2018
+ms.date: 02/20/2019
 localization_priority: Priority
-ms.openlocfilehash: 6d34807b1511573c507d43dad678811c5c1592ec
-ms.sourcegitcommit: 03773fef3d2a380028ba0804739d2241d4b320e5
+ms.openlocfilehash: 1597a21940dbe0fbecb4f5976f13088692a10b6f
+ms.sourcegitcommit: 8e20e7663be2aaa0f7a5436a965324d171bc667d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/20/2019
-ms.locfileid: "30091244"
+ms.lasthandoff: 02/28/2019
+ms.locfileid: "30199562"
 ---
 # <a name="work-with-worksheets-using-the-excel-javascript-api"></a>使用 Excel JavaScript API 处理工作表
 
-本文中的代码示例展示了如何使用 Excel JavaScript API 对工作表执行常见任务。 有关 **Worksheet** 和 **WorksheetCollection** 对象支持的属性和方法的完整列表，请参阅 [Worksheet 对象 (Excel JavaScript API)](https://docs.microsoft.com/javascript/api/excel/excel.worksheet) 和 [WorksheetCollection 对象 (Excel JavaScript API)](https://docs.microsoft.com/javascript/api/excel/excel.worksheetcollection)。
+本文中的代码示例展示了如何使用 Excel JavaScript API 对工作表执行常见任务。 有关 **Worksheet** 和 **WorksheetCollection** 对象支持的属性和方法的完整列表，请参阅 [Worksheet 对象 (Excel JavaScript API)](/javascript/api/excel/excel.worksheet) 和 [WorksheetCollection 对象 (Excel JavaScript API)](/javascript/api/excel/excel.worksheetcollection)。
 
 > [!NOTE]
 > 本文中的信息仅适用于常规工作表；不适用于“图表”或“宏”表。
@@ -282,8 +282,7 @@ Excel.run(function (context) {
 ## <a name="find-all-cells-with-matching-text-preview"></a>查找具有匹配文本 （预览） 所有单元格
 
 > [!NOTE]
-> 工作表对象的 `findAll` 函数当前仅适用于公共预览版（beta 版本）。 若要使用此功能，必须使用 Office.js CDN 的 beta 版库：https://appsforoffice.microsoft.com/lib/beta/hosted/office.js。
-> 如果使用的是 TypeScript 或代码编辑器将 TypeScript 类型定义文件用于 IntelliSense，则使用 https://appsforoffice.microsoft.com/lib/beta/hosted/office.d.ts。
+> 工作表对象的 `findAll` 函数当前仅适用于公共预览版。 [!INCLUDE [Information about using preview APIs](../includes/using-preview-apis.md)]
 
 `Worksheet` 对象具有 `find` 方法在工作表内搜索指定字符串。 返回 `RangeAreas` 对象，也就是可以进行一次性全部编辑的 `Range` 对象集。 以下代码示例查找值等于字符串 **完成** 的所有单元格，并标记为绿色。 请注意，若指定的字符串不存在于工作表中，`findAll` 将引发 `ItemNotFound` 错误。 若您预计到指定的字符串可能不存在工作表中，则可使用 [findAllOrNullObject](excel-add-ins-advanced-concepts.md#42ornullobject-methods) 方法，以便您的代码可正常处理该情况。
 
@@ -310,7 +309,7 @@ Excel.run(function (context) {
 
 ## <a name="data-protection"></a>数据保护
 
-加载项可以控制用户能否编辑工作表中的数据。 工作表的 `protection` 属性是包含 `protect()` 方法的 [WorksheetProtection](https://docs.microsoft.com/javascript/api/excel/excel.worksheetprotection) 对象。 下面的示例展示了关于切换活动工作表的完整保护的基本方案。
+加载项可以控制用户能否编辑工作表中的数据。 工作表的 `protection` 属性是包含 `protect()` 方法的 [WorksheetProtection](/javascript/api/excel/excel.worksheetprotection) 对象。 下面的示例展示了关于切换活动工作表的完整保护的基本方案。
 
 ```js
 Excel.run(function (context) {
@@ -327,7 +326,7 @@ Excel.run(function (context) {
 
 `protect` 方法包含两个可选参数：
 
-- `options`：定义具体编辑限制的 [WorksheetProtectionOptions](https://docs.microsoft.com/javascript/api/excel/excel.worksheetprotectionoptions) 对象。
+- `options`：定义具体编辑限制的 [WorksheetProtectionOptions](/javascript/api/excel/excel.worksheetprotectionoptions) 对象。
 - `password`：表示用户规避保护并编辑工作表所需使用的密码的字符串。
 
 [保护工作表](https://support.office.com/article/protect-a-worksheet-3179efdb-1285-4d49-a9c3-f4ca36276de6)一文详细介绍了工作表保护，以及如何通过 Excel UI 更改保护。
