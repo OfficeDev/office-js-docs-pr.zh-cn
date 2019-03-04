@@ -1,15 +1,15 @@
 ---
 title: Excel JavaScript API 要求集
 description: ''
-ms.date: 10/09/2018
+ms.date: 02/15/2019
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: 0cb01bffb2947c4269e377c39ff3c329c48591d9
-ms.sourcegitcommit: 33dcf099c6b3d249811580d67ee9b790c0fdccfb
+ms.openlocfilehash: 9985fabdf0c5e9e6c09cf490b55fffd7f87a195a
+ms.sourcegitcommit: 8e20e7663be2aaa0f7a5436a965324d171bc667d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "29742469"
+ms.lasthandoff: 02/28/2019
+ms.locfileid: "30199625"
 ---
 # <a name="excel-javascript-api-requirement-sets"></a>Excel JavaScript API 要求集
 
@@ -18,13 +18,13 @@ ms.locfileid: "29742469"
 Excel 加载项在多个 Office 版本中运行，包括 Office 2016 for Windows 或更高版本、Office for iPad、Office for Mac 和 Office Online。下表列出了 Excel 要求集、支持各个要求集的 Office 主机应用程序，以及这些应用程序的内部版本或版本号。
 
 > [!NOTE]
-> 标记为 **Beta** 的所有 API 均不可供最终用户使用。我们发布这些 API 的目的在于，让开发人员可以在测试和开发环境中试用。这并不意味着它们可用于生产/业务关键型文档。
-> 
-> 对于标记为 **Beta** 的要求集，请使用指定版本（或更高版本）的 Office 软件并使用 CDN 上的 Beta 库：https://appsforoffice.microsoft.com/lib/beta/hosted/office.js。未标记为 **Beta** 的条目一般可用，并且可以使用 CDN 上的生产库：https://appsforoffice.microsoft.com/lib/1/hosted/office.js。
+> 若要在任何编号的要求集中使用 API，你应该引用 CDN 上的**生产**库：https://appsforoffice.microsoft.com/lib/1/hosted/office.js。
+>
+> 有关使用预览 API 的信息，请参阅本文的 [Excel JavaScript 预览 API](#excel-javascript-preview-apis) 部分。
 
-|  要求集  |  Office 365 for Windows\*  |  Office 365 for iPad  |  Office 365 for Mac  | Office Online  |  Office Online Server  |
+|  要求集  |  Office 365 for Windows  |  Office 365 for iPad  |  Office 365 for Mac  | Office Online  |  Office Online Server  |
 |:-----|-----|:-----|:-----|:-----|:-----|
-| Beta  | 请访问 [Excel JavaScript API 开放性规范页面](https://github.com/OfficeDev/office-js-docs/tree/ExcelJs_OpenSpec)！ |
+| 预览  | 请使用最新的 Office 版本来试用预览 API（你可能需要加入 [Office 预览体验成员计划](https://products.office.com/office-insider)） |
 | ExcelApi1.8  | 版本 1808（内部版本 10730.20102）或更高版本 | 2.17 或更高版本 | 16.17 或更高版本 | 2018 年 9 月 | 即将推出 |
 | ExcelApi1.7  | 版本 1801（内部版本 9001.2171）或更高版本   | 2.9 或更高版本 | 16.9 或更高版本 | 2018 年 4 月 | 即将推出 |
 | ExcelApi1.6  | 版本 1704（生成号 8201.2001）或更高版本   | 2.2 或更高版本 |15.36 或更高版本| 2017 年 4 月 | 即将推出|
@@ -43,6 +43,581 @@ Excel 加载项在多个 Office 版本中运行，包括 Office 2016 for Windows
 - [使用的是哪一版 Office？](https://support.office.com/article/What-version-of-Office-am-I-using-932788b8-a3ce-44bf-bb09-e334518b8b19)
 - [在哪里可以找到 Office 365 客户端应用程序的版本号和内部版本号](https://support.office.com/article/version-and-build-numbers-of-update-channel-releases-ae942449-1fca-4484-898b-a933ea23def7)
 - [Office Online Server 概述](https://docs.microsoft.com/officeonlineserver/office-online-server-overview)
+
+## <a name="excel-javascript-preview-apis"></a>Excel JavaScript 预览 API
+
+新的 Excel JavaScript API 首先在“预览版”中引入，在进行充分测试并获得用户反馈后，它将成为编号的特定要求集的一部分。 下表列出了目前在预览版中提供的 API。 若要提供有关预览 API 的反馈，请使用在其内记录 API 的网页末尾的反馈机制。
+
+> [!NOTE]
+> 预览 API 可能会发生变更，不适合在生产环境中使用。 我们建议你仅在测试和开发环境中试用它们。 不要在生产环境或业务关键型文档中使用预览 API。
+>
+> 若要使用预览 API，你必须引用 CDN 上的 **beta** 库：https://appsforoffice.microsoft.com/lib/beta/hosted/office.js并且你可能还需要加入 Office 预览体验成员计划才能获得最新的 Office 版本。
+
+目前在预览版中提供了超过 400 个新的 Excel API。 第一个表提供了 API 的简明摘要，而后续表提供了详细列表。 请试用新功能并与我们分享你的反馈。
+
+| 功能区域 | 说明 | 相关对象 |
+|:--- |:--- |:--- |
+| 切片器 | 在表格和数据透视表中插入和配置切片器。 | [切片器](/javascript/api/excel/excel.slicer) |
+| 备注 | 添加、编辑和删除备注。 | [Comment](/javascript/api/excel/excel.comment)、[CommentCollection](/javascript/api/excel/excel.commentcollection) |
+| 形状 | 插入、定位和格式化图像、几何形状和文本框。 | [ShapeCollection](/javascript/api/excel/excel.shapecollection) [Shape](/javascript/api/excel/excel.shape) [GeometricShape](/javascript/api/excel/excel.geometricshape)  [Image](/javascript/api/excel/excel.image) |
+| 新图表 | 了解我们支持的新图表类型：地图、箱形图、瀑布图、旭日图、排列图 和漏斗图。 | [Chart](/javascript/api/excel/excel.charttype) |
+| 自动筛选 | 为区域添加筛选器。 | [AutoFilter](/javascript/api/excel/excel.autofilter) |
+| 区域 | 支持非连续区域。 | [RangeAreas](/javascript/api/excel/excel.rangeareas) |
+| 特殊单元格 | 获取在区域内包含日期、备注或公式的单元格。 | [Range](/javascript/api/excel/excel.range#getspecialcells-celltype--cellvaluetype-)|
+| 查找 | 查找区域或工作表中的值或公式。 | [Range](/javascript/api/excel/excel.range#find-text--criteria-)[Worksheet](/javascript/api/excel/excel.worksheet#findall-text--criteria-) |
+| 复制粘贴 | 将值、格式和公式从一个区域复制到另一个区域。 | [Range](/javascript/api/excel/excel.range#copyfrom-sourcerange--copytype--skipblanks--transpose-) |
+| RangeFormat | 新功能及区域格式。 | [Range](/javascript/api/excel/excel.rangeformat) |
+| 工作簿保存和关闭 | 保存和关闭工作簿。  | [Workbook](/javascript/api/excel/excel.workbook) |
+| 插入工作簿 | 将一个工作簿插入另一个工作簿。  | [Workbook](/javascript/api/excel/excel.worksheetcollection) |
+| 计算 | 更好地控制 Excel 计算引擎。 | [Application](/javascript/api/excel/excel.application) |
+
+以下是预览版中的 API 的完整列表。
+
+| 类 | 域 | 说明 |
+|:---|:---|:---|
+|[Application](/javascript/api/excel/excel.application)|[calculationEngineVersion](/javascript/api/excel/excel.application#calculationengineversion)|返回有关工作簿最近一次完全重新计算所使用的 Excel 计算引擎的版本号。 只读。|
+||[calculationState](/javascript/api/excel/excel.application#calculationstate)|返回用于指示应用程序的计算状态的 CalculationState。 有关详细信息，请参阅 Excel.CalculationState。 只读。|
+||[iterativeCalculation](/javascript/api/excel/excel.application#iterativecalculation)|返回“迭代计算”设置。|
+||[suspendScreenUpdatingUntilNextSync()](/javascript/api/excel/excel.application#suspendscreenupdatinguntilnextsync--)|在下一次调用“context.sync()”前暂停屏幕更新。|
+|[AutoFilter](/javascript/api/excel/excel.autofilter)|[apply(range: Range \| string, columnIndex?: number, criteria?: Excel.FilterCriteria)](/javascript/api/excel/excel.autofilter#apply-range--columnindex--criteria-)|如果指定了列索引和筛选条件，则对区域应用自动筛选并筛选列。|
+||[clearCriteria()](/javascript/api/excel/excel.autofilter#clearcriteria--)|如果自动筛选具有筛选器，则清除条件|
+||[getRange()](/javascript/api/excel/excel.autofilter#getrange--)|返回 Range 对象，该对象表示“自动筛选”应用的区域。|
+||[getRangeOrNullObject()](/javascript/api/excel/excel.autofilter#getrangeornullobject--)|如果存在与“自动筛选”关联的 Range 对象，则此方法将返回它。|
+||[criteria](/javascript/api/excel/excel.autofilter#criteria)|在自动筛选区域中保留所有筛选条件的数组。 只读。|
+||[enabled](/javascript/api/excel/excel.autofilter#enabled)|指示是否启用了自动筛选。 只读。|
+||[isDataFiltered](/javascript/api/excel/excel.autofilter#isdatafiltered)|指示自动筛选是否具有筛选条件。 只读。|
+||[reapply()](/javascript/api/excel/excel.autofilter#reapply--)|应用当前位于区域上的指定 Autofilter 对象。|
+||[remove()](/javascript/api/excel/excel.autofilter#remove--)|删除区域的自动筛选。|
+|[CellBorder](/javascript/api/excel/excel.cellborder)|[color](/javascript/api/excel/excel.cellborder#color)||
+||[style](/javascript/api/excel/excel.cellborder#style)||
+||[tintAndShade](/javascript/api/excel/excel.cellborder#tintandshade)||
+||[weight](/javascript/api/excel/excel.cellborder#weight)||
+|[CellBorderCollection](/javascript/api/excel/excel.cellbordercollection)|[bottom](/javascript/api/excel/excel.cellbordercollection#bottom)||
+||[diagonalDown](/javascript/api/excel/excel.cellbordercollection#diagonaldown)||
+||[diagonalUp](/javascript/api/excel/excel.cellbordercollection#diagonalup)||
+||[horizontal](/javascript/api/excel/excel.cellbordercollection#horizontal)||
+||[left](/javascript/api/excel/excel.cellbordercollection#left)||
+||[right](/javascript/api/excel/excel.cellbordercollection#right)||
+||[top](/javascript/api/excel/excel.cellbordercollection#top)||
+||[vertical](/javascript/api/excel/excel.cellbordercollection#vertical)||
+|[CellProperties](/javascript/api/excel/excel.cellproperties)|[address](/javascript/api/excel/excel.cellproperties#address)||
+||[addressLocal](/javascript/api/excel/excel.cellproperties#addresslocal)||
+||[hasSpill](/javascript/api/excel/excel.cellproperties#hasspill)||
+||[hidden](/javascript/api/excel/excel.cellproperties#hidden)||
+|[CellPropertiesFill](/javascript/api/excel/excel.cellpropertiesfill)|[color](/javascript/api/excel/excel.cellpropertiesfill#color)||
+||[pattern](/javascript/api/excel/excel.cellpropertiesfill#pattern)||
+||[patternColor](/javascript/api/excel/excel.cellpropertiesfill#patterncolor)||
+||[patternTintAndShade](/javascript/api/excel/excel.cellpropertiesfill#patterntintandshade)||
+||[tintAndShade](/javascript/api/excel/excel.cellpropertiesfill#tintandshade)||
+|[CellPropertiesFont](/javascript/api/excel/excel.cellpropertiesfont)|[bold](/javascript/api/excel/excel.cellpropertiesfont#bold)||
+||[color](/javascript/api/excel/excel.cellpropertiesfont#color)||
+||[italic](/javascript/api/excel/excel.cellpropertiesfont#italic)||
+||[name](/javascript/api/excel/excel.cellpropertiesfont#name)||
+||[size](/javascript/api/excel/excel.cellpropertiesfont#size)||
+||[strikethrough](/javascript/api/excel/excel.cellpropertiesfont#strikethrough)||
+||[subscript](/javascript/api/excel/excel.cellpropertiesfont#subscript)||
+||[superscript](/javascript/api/excel/excel.cellpropertiesfont#superscript)||
+||[tintAndShade](/javascript/api/excel/excel.cellpropertiesfont#tintandshade)||
+||[underline](/javascript/api/excel/excel.cellpropertiesfont#underline)||
+|[CellPropertiesFormat](/javascript/api/excel/excel.cellpropertiesformat)|[autoIndent](/javascript/api/excel/excel.cellpropertiesformat#autoindent)||
+||[Borders](/javascript/api/excel/excel.cellpropertiesformat#borders)||
+||[fill](/javascript/api/excel/excel.cellpropertiesformat#fill)||
+||[font](/javascript/api/excel/excel.cellpropertiesformat#font)||
+||[horizontalAlignment](/javascript/api/excel/excel.cellpropertiesformat#horizontalalignment)||
+||[indentLevel](/javascript/api/excel/excel.cellpropertiesformat#indentlevel)||
+||[protection](/javascript/api/excel/excel.cellpropertiesformat#protection)||
+||[readingOrder](/javascript/api/excel/excel.cellpropertiesformat#readingorder)||
+||[shrinkToFit](/javascript/api/excel/excel.cellpropertiesformat#shrinktofit)||
+||[textOrientation](/javascript/api/excel/excel.cellpropertiesformat#textorientation)||
+||[useStandardHeight](/javascript/api/excel/excel.cellpropertiesformat#usestandardheight)||
+||[useStandardHeight](/javascript/api/excel/excel.cellpropertiesformat#usestandardwidth)||
+||[verticalAlignment](/javascript/api/excel/excel.cellpropertiesformat#verticalalignment)||
+||[wrapText](/javascript/api/excel/excel.cellpropertiesformat#wraptext)|创建并打开新工作簿。  （可选）工作簿可以预先填充 base64 编码的 .xlsx 文件。|
+|[CellPropertiesProtection](/javascript/api/excel/excel.cellpropertiesprotection)|[formulaHidden](/javascript/api/excel/excel.cellpropertiesprotection#formulahidden)||
+||[locked](/javascript/api/excel/excel.cellpropertiesprotection#locked)||
+|[Chart](/javascript/api/excel/excel.chart)|[activate()](/javascript/api/excel/excel.chart#activate--)|在 Excel UI 中激活图表。|
+||[pivotOptions](/javascript/api/excel/excel.chart#pivotoptions)|封装数据透视图的选项。 只读。|
+|[ChartAreaFormat](/javascript/api/excel/excel.chartareaformat)|[colorScheme](/javascript/api/excel/excel.chartareaformat#colorscheme)|返回或设置一个用于表示图表配色方案的整数。 读/写。|
+||[roundedCorners](/javascript/api/excel/excel.chartareaformat#roundedcorners)|如果图表的图表区域使用圆角，则为 True。 读/写。|
+|[ChartAxis](/javascript/api/excel/excel.chartaxis)|[linkNumberFormat](/javascript/api/excel/excel.chartaxis#linknumberformat)|表示数字格式是否链接到单元格（以便在单元格中更改时标签中的数字格式会发生改变）。|
+|[ChartBinOptions](/javascript/api/excel/excel.chartbinoptions)|[allowOverflow](/javascript/api/excel/excel.chartbinoptions#allowoverflow)|返回或设置是否在直方图或排列图中启用容器溢出。 读/写。|
+||[allowUnderflow](/javascript/api/excel/excel.chartbinoptions#allowunderflow)|返回或设置是否在直方图或排列图中启用容器下溢。 读/写。|
+||[count](/javascript/api/excel/excel.chartbinoptions#count)|返回或设置直方图或排列图的容器计数。 读/写。|
+||[overflowValue](/javascript/api/excel/excel.chartbinoptions#overflowvalue)|返回或设置直方图或排列图的容器溢出值。 读/写。|
+||[type](/javascript/api/excel/excel.chartbinoptions#type)|返回或设置直方图或排列图的容器类型。 读/写。|
+||[underflowValue](/javascript/api/excel/excel.chartbinoptions#underflowvalue)|返回或设置直方图或排列图的容器下溢值。 读/写。|
+||[width](/javascript/api/excel/excel.chartbinoptions#width)|返回或设置直方图或排列图的容器宽度值。 读/写。|
+|[ChartBoxwhiskerOptions](/javascript/api/excel/excel.chartboxwhiskeroptions)|[quartileCalculation](/javascript/api/excel/excel.chartboxwhiskeroptions#quartilecalculation)|返回或设置箱形图的四分位点计算类型。 读/写。|
+||[showInnerPoints](/javascript/api/excel/excel.chartboxwhiskeroptions#showinnerpoints)|返回或设置是否在箱形图中显示内点。 读/写。|
+||[showMeanLine](/javascript/api/excel/excel.chartboxwhiskeroptions#showmeanline)|返回或设置是否在箱形图中显示中线。 读/写。|
+||[showMeanMarker](/javascript/api/excel/excel.chartboxwhiskeroptions#showmeanmarker)|返回或设置是否在箱形图中显示平均值标记。 读/写。|
+||[showOutlierPoints](/javascript/api/excel/excel.chartboxwhiskeroptions#showoutlierpoints)|返回或设置是否在箱形图中显示离群值点。 读/写。|
+|[ChartDataLabel](/javascript/api/excel/excel.chartdatalabel)|[linkNumberFormat](/javascript/api/excel/excel.chartdatalabel#linknumberformat)|布尔值，表示数字格式是否链接到单元格（以便在单元格中更改时标签中的数字格式会发生改变）。|
+|[ChartDataLabels](/javascript/api/excel/excel.chartdatalabels)|[linkNumberFormat](/javascript/api/excel/excel.chartdatalabels#linknumberformat)|表示数字格式是否链接到单元格（以便在单元格中更改时标签中的数字格式会发生改变）。|
+|[ChartErrorBars](/javascript/api/excel/excel.charterrorbars)|[endStyleCap](/javascript/api/excel/excel.charterrorbars#endstylecap)|表示误差线是否具有终止端样式。|
+||[include](/javascript/api/excel/excel.charterrorbars#include)|表示要包含的误差线部分。 有关详细信息，请参阅 Excel.ChartErrorBarsInclude。|
+||[format](/javascript/api/excel/excel.charterrorbars#format)|表示图表 ErrorBars 的格式。|
+||[type](/javascript/api/excel/excel.charterrorbars#type)|指定由误差线标记的区域。 有关详细信息，请参阅 Excel.ChartErrorBarsType。|
+||[visible](/javascript/api/excel/excel.charterrorbars#visible)|表示是否显示误差线。|
+|[ChartErrorBarsFormat](/javascript/api/excel/excel.charterrorbarsformat)|[line](/javascript/api/excel/excel.charterrorbarsformat#line)|表示图表线条格式。|
+|[ChartMapOptions](/javascript/api/excel/excel.chartmapoptions)|[labelStrategy](/javascript/api/excel/excel.chartmapoptions#labelstrategy)|返回或设置区域地图图表的系列地图标签策略。 读/写。|
+||[level](/javascript/api/excel/excel.chartmapoptions#level)|返回或设置区域地图图表的系列地图区域。 读/写。|
+||[projectionType](/javascript/api/excel/excel.chartmapoptions#projectiontype)|返回或设置区域地图图表的系列投影类型。 读/写。|
+|[ChartPivotOptions](/javascript/api/excel/excel.chartpivotoptions)|[showAxisFieldButtons](/javascript/api/excel/excel.chartpivotoptions#showaxisfieldbuttons)|表示是否在数据透视图上显示轴字段按钮。|
+||[showLegendFieldButtons](/javascript/api/excel/excel.chartpivotoptions#showlegendfieldbuttons)|表示是否在数据透视图上显示图例字段按钮。|
+||[showReportFilterFieldButtons](/javascript/api/excel/excel.chartpivotoptions#showreportfilterfieldbuttons)|表示是否在数据透视图上显示报表筛选字段按钮。|
+||[showValueFieldButtons](/javascript/api/excel/excel.chartpivotoptions#showvaluefieldbuttons)|表示是否在数据透视图上显示“显示​​值字段按钮”。|
+|[ChartSeries](/javascript/api/excel/excel.chartseries)|[bubbleScale](/javascript/api/excel/excel.chartseries#bubblescale)|返回或设置指定图表组中气泡的比例因子。 可以是从 0（零）到 300 的整数值，对应于默认大小的百分比。 仅适用于气泡图。 读/写。|
+||[gradientMaximumColor](/javascript/api/excel/excel.chartseries#gradientmaximumcolor)|返回或设置区域地图图表系列的最大值的颜色。 读/写。|
+||[gradientMaximumType](/javascript/api/excel/excel.chartseries#gradientmaximumtype)|返回或设置区域地图图表系列的最大值的类型。 读/写。|
+||[gradientMaximumValue](/javascript/api/excel/excel.chartseries#gradientmaximumvalue)|返回或设置区域地图图表系列的最大值。 读/写。|
+||[gradientMidpointColor](/javascript/api/excel/excel.chartseries#gradientmidpointcolor)|返回或设置区域地图图表系列的中间值的颜色。 读/写。|
+||[gradientMidpointType](/javascript/api/excel/excel.chartseries#gradientmidpointtype)|返回或设置区域地图图表系列的中间值的类型。 读/写。|
+||[gradientMidpointValue](/javascript/api/excel/excel.chartseries#gradientmidpointvalue)|返回或设置区域地图图表系列的中间值。 读/写。|
+||[gradientMinimumColor](/javascript/api/excel/excel.chartseries#gradientminimumcolor)|返回或设置区域地图图表系列的最小值的颜色。 读/写。|
+||[gradientMinimumType](/javascript/api/excel/excel.chartseries#gradientminimumtype)|返回或设置区域地图图表系列的最小值的类型。 读/写。|
+||[gradientMinimumValue](/javascript/api/excel/excel.chartseries#gradientminimumvalue)|返回或设置区域地图图表系列的最小值。 读/写。|
+||[gradientStyle](/javascript/api/excel/excel.chartseries#gradientstyle)|返回或设置区域地图图表的系列渐变样式。 读/写。|
+||[invertColor](/javascript/api/excel/excel.chartseries#invertcolor)|返回或设置系列中负数据点的填充颜色。 读/写。|
+||[parentLabelStrategy](/javascript/api/excel/excel.chartseries#parentlabelstrategy)|返回或设置树状图的系列父标签策略区域。 读/写。|
+||[binOptions](/javascript/api/excel/excel.chartseries#binoptions)|仅封装直方图和排列图的容器选项。 只读。|
+||[boxwhiskerOptions](/javascript/api/excel/excel.chartseries#boxwhiskeroptions)|封装箱形图的选项。 只读。|
+||[mapOptions](/javascript/api/excel/excel.chartseries#mapoptions)|封装地图图表的选项。 只读。|
+||[xerrorBars](/javascript/api/excel/excel.chartseries#xerrorbars)|表示图表系列的误差线对象。|
+||[yerrorBars](/javascript/api/excel/excel.chartseries#yerrorbars)|表示图表系列的误差线对象。|
+||[showConnectorLines](/javascript/api/excel/excel.chartseries#showconnectorlines)|返回或设置是否在瀑布图中显示连接线。 读/写。|
+||[showLeaderLines](/javascript/api/excel/excel.chartseries#showleaderlines)|如果 Microsoft Excel 显示系列中的每个数据标签的引导线，则为 True。 读/写。|
+||[splitValue](/javascript/api/excel/excel.chartseries#splitvalue)|返回或设置复合饼图或复合条饼图中分隔两部分的阈值。 读/写。|
+|[ChartTrendlineLabel](/javascript/api/excel/excel.charttrendlinelabel)|[linkNumberFormat](/javascript/api/excel/excel.charttrendlinelabel#linknumberformat)|布尔值，表示数字格式是否链接到单元格（以便在单元格中更改时标签中的数字格式会发生改变）。|
+|[ColumnProperties](/javascript/api/excel/excel.columnproperties)|[address](/javascript/api/excel/excel.columnproperties#address)||
+||[addressLocal](/javascript/api/excel/excel.columnproperties#addresslocal)||
+||[columnIndex](/javascript/api/excel/excel.columnproperties#columnindex)||
+||[hasSpill](/javascript/api/excel/excel.columnproperties#hasspill)||
+|[Comment](/javascript/api/excel/excel.comment)|[content](/javascript/api/excel/excel.comment#content)|获取/设置内容。|
+||[delete()](/javascript/api/excel/excel.comment#delete--)|删除批注线程。|
+||[id](/javascript/api/excel/excel.comment#id)|表示批注标识符。 只读。|
+||[isParent](/javascript/api/excel/excel.comment#isparent)|表示它是批注线程还是回复。 在此处始终返回 True。 只读。|
+||[replies](/javascript/api/excel/excel.comment#replies)|表示与批注关联的回复对象的集合。 只读。|
+|[CommentCollection](/javascript/api/excel/excel.commentcollection)|[add(content: string, cellAddress: Range \| string, contentType?: "Plain")](/javascript/api/excel/excel.commentcollection#add-content--celladdress--contenttype-)|根据单元格位置和内容创建新批注（批注线程）。 如果位置大于一个单元格，则引发无效参数。|
+||[add(content: string, cellAddress: Range \| string, contentType?: Excel.ContentType)](/javascript/api/excel/excel.commentcollection#add-content--celladdress--contenttype-)|根据单元格位置和内容创建新批注（批注线程）。 如果位置大于一个单元格，则引发无效参数。|
+||[getCount()](/javascript/api/excel/excel.commentcollection#getcount--)|获取集合中的批注数量。|
+||[getItem(commentId: string)](/javascript/api/excel/excel.commentcollection#getitem-commentid-)|返回由其 ID 标识的批注。 只读。|
+||[getItemAt(index: number)](/javascript/api/excel/excel.commentcollection#getitemat-index-)|根据其在集合中的位置获取批注。|
+||[getItemByCell(cellAddress: Range \| string)](/javascript/api/excel/excel.commentcollection#getitembycell-celladdress-)|获取有关集合中特定单元格的批注。|
+||[getItemByReplyId(replyId: string)](/javascript/api/excel/excel.commentcollection#getitembyreplyid-replyid-)|获取与集合中的回复 ID 相关的批注。|
+||[load(option?: OfficeExtension.LoadOption)](/javascript/api/excel/excel.commentcollection#load-option-)|将命令加入队列以加载对象的指定属性。 在读取属性之前，你必须调用“context.sync()”。|
+||[items](/javascript/api/excel/excel.commentcollection#items)|获取此集合中已加载的子项。|
+|[CommentReply](/javascript/api/excel/excel.commentreply)|[content](/javascript/api/excel/excel.commentreply#content)|获取/设置内容。|
+||[delete()](/javascript/api/excel/excel.commentreply#delete--)|删除批注回复。|
+||[getParentComment()](/javascript/api/excel/excel.commentreply#getparentcomment--)|获取此回复的父批注。|
+||[id](/javascript/api/excel/excel.commentreply#id)|表示批注回复标识符。 只读。|
+||[isParent](/javascript/api/excel/excel.commentreply#isparent)|表示它是批注线程还是回复。 在此处始终返回 False。 只读。|
+|[CommentReplyCollection](/javascript/api/excel/excel.commentreplycollection)|[add(content: string, contentType?: "Plain")](/javascript/api/excel/excel.commentreplycollection#add-content--contenttype-)|为批注创建批注回复。|
+||[add(content: string, contentType?: Excel.ContentType)](/javascript/api/excel/excel.commentreplycollection#add-content--contenttype-)|为批注创建批注回复。|
+||[getCount()](/javascript/api/excel/excel.commentreplycollection#getcount--)|获取集合中的批注回复数量。|
+||[getItem(commentReplyId: string)](/javascript/api/excel/excel.commentreplycollection#getitem-commentreplyid-)|返回由其 ID 标识的批注回复。 只读。|
+||[getItemAt(index: number)](/javascript/api/excel/excel.commentreplycollection#getitemat-index-)|根据其在集合中的位置获取批注回复。|
+||[load(option?: OfficeExtension.LoadOption)](/javascript/api/excel/excel.commentreplycollection#load-option-)|将命令加入队列以加载对象的指定属性。 在读取属性之前，你必须调用“context.sync()”。|
+||[items](/javascript/api/excel/excel.commentreplycollection#items)|获取此集合中已加载的子项。|
+|[ConditionalFormat](/javascript/api/excel/excel.conditionalformat)|[getRanges()](/javascript/api/excel/excel.conditionalformat#getranges--)|返回将为其应用条件格式的 RangeAreas，它包含一个或多个矩形区域。 只读。|
+|[DataValidation](/javascript/api/excel/excel.datavalidation)|[getInvalidCells()](/javascript/api/excel/excel.datavalidation#getinvalidcells--)|返回包含一个或多个矩形区域的 RangeAreas，它具有无效单元格值。 如果所有单元格值都有效，则此函数将引发 ItemNotFound 错误。|
+||[getInvalidCellsOrNullObject()](/javascript/api/excel/excel.datavalidation#getinvalidcellsornullobject--)|返回包含一个或多个矩形区域的 RangeAreas，它具有无效单元格值。 如果所有单元格值都有效，则此函数将返回 null。|
+|[FilterCriteria](/javascript/api/excel/excel.filtercriteria)|[subField](/javascript/api/excel/excel.filtercriteria#subfield)|筛选器使用该属性对 richvalue 执行丰富的筛选。|
+|[GeometricShape](/javascript/api/excel/excel.geometricshape)|[id](/javascript/api/excel/excel.geometricshape#id)|表示形状标识符。 只读。|
+||[shape](/javascript/api/excel/excel.geometricshape#shape)|返回几何形状的形状对象。 只读。|
+|[GroupShapeCollection](/javascript/api/excel/excel.groupshapecollection)|[getCount()](/javascript/api/excel/excel.groupshapecollection#getcount--)|返回形状组中的形状数量。 只读。|
+||[getItem(name: string)](/javascript/api/excel/excel.groupshapecollection#getitem-name-)|按名称获取形状。|
+||[getItemAt(index: number)](/javascript/api/excel/excel.groupshapecollection#getitemat-index-)|根据其在集合中的位置获取形状。|
+||[load(option?: OfficeExtension.LoadOption)](/javascript/api/excel/excel.groupshapecollection#load-option-)|将命令加入队列以加载对象的指定属性。 在读取属性之前，你必须调用“context.sync()”。|
+||[items](/javascript/api/excel/excel.groupshapecollection#items)|获取此集合中已加载的子项。|
+|[HeaderFooter](/javascript/api/excel/excel.headerfooter)|[centerFooter](/javascript/api/excel/excel.headerfooter#centerfooter)|获取或设置工作表的中心页脚。|
+||[centerHeader](/javascript/api/excel/excel.headerfooter#centerheader)|获取或设置工作表的中心页眉。|
+||[LeftFooter](/javascript/api/excel/excel.headerfooter#leftfooter)|获取或设置工作表的左侧页脚。|
+||[leftHeader](/javascript/api/excel/excel.headerfooter#leftheader)|获取或设置工作表的左侧页眉。|
+||[rightFooter](/javascript/api/excel/excel.headerfooter#rightfooter)|获取或设置工作表的右侧页脚。|
+||[rightHeader](/javascript/api/excel/excel.headerfooter#rightheader)|获取或设置工作表的右侧页眉。|
+|[HeaderFooterGroup](/javascript/api/excel/excel.headerfootergroup)|[defaultForAllPages](/javascript/api/excel/excel.headerfootergroup#defaultforallpages)|常规页眉/页脚，除非指定偶数页/奇数页或首页，否则适用于所有页面，|
+||[evenPages](/javascript/api/excel/excel.headerfootergroup#evenpages)|用于偶数页的页眉/页脚，需要为奇数页指定奇数页页眉/页脚。|
+||[firstPage](/javascript/api/excel/excel.headerfootergroup#firstpage)|首页的页眉/页脚，为所有其他页使用常规或偶数页/奇数页页眉/页脚。|
+||[oddPages](/javascript/api/excel/excel.headerfootergroup#oddpages)|用于奇数页的页眉/页脚，需要为偶数页指定偶数页页眉/页脚。|
+||[state](/javascript/api/excel/excel.headerfootergroup#state)|获取或设置所设置的页眉/页脚的状态。 有关详细信息，请参阅 Excel.HeaderFooterState。|
+||[useSheetMargins](/javascript/api/excel/excel.headerfootergroup#usesheetmargins)|获取或设置一个标记，指示页眉/页脚是否与工作表的页面布局选项中设置的页边距对齐。|
+||[useSheetScale](/javascript/api/excel/excel.headerfootergroup#usesheetscale)|获取或设置一个标记，指示是否应按照工作表的页面布局选项中设置的页面缩放百分比来缩放页眉/页脚。|
+|[Image](/javascript/api/excel/excel.image)|[format](/javascript/api/excel/excel.image#format)|返回图像的格式。 只读。|
+||[id](/javascript/api/excel/excel.image#id)|表示图像对象的形状标识符。 只读。|
+||[shape](/javascript/api/excel/excel.image#shape)|返回图像的形状对象。 只读。|
+|[IterativeCalculation](/javascript/api/excel/excel.iterativecalculation)|[enabled](/javascript/api/excel/excel.iterativecalculation#enabled)|如果 Excel 使用迭代来处理循环引用，则为 True。|
+||[maxChange](/javascript/api/excel/excel.iterativecalculation#maxchange)|返回或设置 Excel 处理循环引用时迭代之间的最大变化值。|
+||[maxIteration](/javascript/api/excel/excel.iterativecalculation#maxiteration)|返回或设置 Excel 处理循环引用的最大迭代次数。|
+|[Line](/javascript/api/excel/excel.line)|[connectorType](/javascript/api/excel/excel.line#connectortype)|表示线条的连接器类型。|
+||[id](/javascript/api/excel/excel.line#id)|表示形状标识符。 只读。|
+||[shape](/javascript/api/excel/excel.line#shape)|返回线条的形状对象。 只读。|
+|[ListDataValidation](/javascript/api/excel/excel.listdatavalidation)|[source](/javascript/api/excel/excel.listdatavalidation#source)|数据有效性列表源|
+|[PageBreak](/javascript/api/excel/excel.pagebreak)|[delete()](/javascript/api/excel/excel.pagebreak#delete--)|删除分页符对象。|
+||[getStartCell()](/javascript/api/excel/excel.pagebreak#getstartcell--)|获取分页符后的第一个单元格。|
+||[columnIndex](/javascript/api/excel/excel.pagebreak#columnindex)|表示分页符的列索引|
+||[rowIndex](/javascript/api/excel/excel.pagebreak#rowindex)|表示分页符的行索引|
+|[PageBreakCollection](/javascript/api/excel/excel.pagebreakcollection)|[add(pageBreakRange: Range \| string)](/javascript/api/excel/excel.pagebreakcollection#add-pagebreakrange-)|在指定区域的左上角单元格之前添加分页符。|
+||[getCount()](/javascript/api/excel/excel.pagebreakcollection#getcount--)|获取集合中的分页符数量。|
+||[getItem(index: number)](/javascript/api/excel/excel.pagebreakcollection#getitem-index-)|通过索引获取分页符对象。|
+||[load(option?: OfficeExtension.LoadOption)](/javascript/api/excel/excel.pagebreakcollection#load-option-)|将命令加入队列以加载对象的指定属性。 在读取属性之前，你必须调用“context.sync()”。|
+||[items](/javascript/api/excel/excel.pagebreakcollection#items)|获取此集合中已加载的子项。|
+||[removePageBreaks()](/javascript/api/excel/excel.pagebreakcollection#removepagebreaks--)|重置集合中的所有手动分页符。|
+|[PageLayout](/javascript/api/excel/excel.pagelayout)|[blackAndWhite](/javascript/api/excel/excel.pagelayout#blackandwhite)|获取或设置工作表的黑白打印选项。|
+||[bottomMargin](/javascript/api/excel/excel.pagelayout#bottommargin)|获取或设置要用于打印的工作表的底部页边距（以磅为单位）。|
+||[centerHorizontally](/javascript/api/excel/excel.pagelayout#centerhorizontally)|获取或设置工作表的中心水平标记。 此标记确定在打印时是否水平居中工作表。|
+||[centerVertically](/javascript/api/excel/excel.pagelayout#centervertically)|获取或设置工作表的中心垂直标记。 此标记确定在打印时是否垂直居中工作表。|
+||[draftMode](/javascript/api/excel/excel.pagelayout#draftmode)|获取或设置工作表的草稿模式选项。 如果为 True，则将打印没有图形的工作表。|
+||[firstPageNumber](/javascript/api/excel/excel.pagelayout#firstpagenumber)|获取或设置要打印的工作表的首页页码。 Null 值表示“自动”页码编号。|
+||[footerMargin](/javascript/api/excel/excel.pagelayout#footermargin)|获取或设置在打印时使用的工作表的页脚边距（以磅为单位）。|
+||[getPrintArea()](/javascript/api/excel/excel.pagelayout#getprintarea--)|获取包含一个或多个矩形区域的 RangeAreas 对象，它表示工作表的打印区域。 如果没有打印区域，则将引发 ItemNotFound 错误。|
+||[getPrintAreaOrNullObject()](/javascript/api/excel/excel.pagelayout#getprintareaornullobject--)|获取包含一个或多个矩形区域的 RangeAreas 对象，它表示工作表的打印区域。 如果没有打印区域，则将返回 null 对象。|
+||[getPrintTitleColumns()](/javascript/api/excel/excel.pagelayout#getprinttitlecolumns--)|获取表示标题列的 Range 对象。|
+||[getPrintTitleColumnsOrNullObject()](/javascript/api/excel/excel.pagelayout#getprinttitlecolumnsornullobject--)|获取表示标题列的 Range 对象。 如果未设置，则将返回 null 对象。|
+||[getPrintTitleRows()](/javascript/api/excel/excel.pagelayout#getprinttitlerows--)|获取表示标题行的 Range 对象。|
+||[getPrintTitleRowsOrNullObject()](/javascript/api/excel/excel.pagelayout#getprinttitlerowsornullobject--)|获取表示标题行的 Range 对象。 如果未设置，则将返回 null 对象。|
+||[headerMargin](/javascript/api/excel/excel.pagelayout#headermargin)|获取或设置在打印时使用的工作表的页眉边距（以磅为单位）。|
+||[leftMargin](/javascript/api/excel/excel.pagelayout#leftmargin)|获取或设置在打印时使用的工作表的左边距（以磅为单位）。|
+||[orientation](/javascript/api/excel/excel.pagelayout#orientation)|获取或设置工作表的页面方向。|
+||[paperSize](/javascript/api/excel/excel.pagelayout#papersize)|获取或设置工作表的页面纸张大小。|
+||[printComments](/javascript/api/excel/excel.pagelayout#printcomments)|获取或设置在打印时是否应该显示工作表的批注。|
+||[printErrors](/javascript/api/excel/excel.pagelayout#printerrors)|获取或设置工作表的打印错误选项。|
+||[printGridlines](/javascript/api/excel/excel.pagelayout#printgridlines)|获取或设置工作表的打印网格线标记。 此标记确定是否打印网格线。|
+||[printHeadings](/javascript/api/excel/excel.pagelayout#printheadings)|获取或设置工作表的打印标题标记。 此标记确定是否打印标题。|
+||[printOrder](/javascript/api/excel/excel.pagelayout#printorder)|获取或设置工作表的页面打印顺序选项。 它指定用于处理打印页码的顺序。|
+||[headersFooters](/javascript/api/excel/excel.pagelayout#headersfooters)|工作表的页眉和页脚配置。|
+||[rightMargin](/javascript/api/excel/excel.pagelayout#rightmargin)|获取或设置在打印时使用的工作表的右边距（以磅为单位）。|
+||[setPrintArea(printArea: Range \| RangeAreas \| string)](/javascript/api/excel/excel.pagelayout#setprintarea-printarea-)|设置工作表的打印区域。|
+||[setPrintMargins(unit: "Points" \| "Inches" \| "Centimeters", marginOptions: Excel.PageLayoutMarginOptions)](/javascript/api/excel/excel.pagelayout#setprintmargins-unit--marginoptions-)|设置带单位的工作表的页边距。|
+||[setPrintMargins(unit: Excel.PrintMarginUnit, marginOptions: Excel.PageLayoutMarginOptions)](/javascript/api/excel/excel.pagelayout#setprintmargins-unit--marginoptions-)|设置带单位的工作表的页边距。|
+||[setPrintTitleColumns(printTitleColumns: Range \| string)](/javascript/api/excel/excel.pagelayout#setprinttitlecolumns-printtitlecolumns-)|设置列，这些列包含要在打印的工作表的每页左侧重复的单元格。|
+||[setPrintTitleRows(printTitleRows: Range \| string)](/javascript/api/excel/excel.pagelayout#setprinttitlerows-printtitlerows-)|设置行，这些行包含要在打印的工作表的每页顶部重复的单元格。|
+||[topMargin](/javascript/api/excel/excel.pagelayout#topmargin)|获取或设置在打印时使用的工作表的上边距（以磅为单位）。|
+||[zoom](/javascript/api/excel/excel.pagelayout#zoom)|获取或设置工作表的打印缩放选项。|
+|[PageLayoutMarginOptions](/javascript/api/excel/excel.pagelayoutmarginoptions)|[bottom](/javascript/api/excel/excel.pagelayoutmarginoptions#bottom)|表示要在打印时使用的页面布局下边距（使用指定的单位）。|
+||[footer](/javascript/api/excel/excel.pagelayoutmarginoptions#footer)|表示要在打印时使用的页面布局页脚边距（使用指定的单位）。|
+||[header](/javascript/api/excel/excel.pagelayoutmarginoptions#header)|表示要在打印时使用的页面布局页眉边距（使用指定的单位）。|
+||[left](/javascript/api/excel/excel.pagelayoutmarginoptions#left)|表示要在打印时使用的页面布局左边距（使用指定的单位）。|
+||[right](/javascript/api/excel/excel.pagelayoutmarginoptions#right)|表示要在打印时使用的页面布局右边距（使用指定的单位）。|
+||[top](/javascript/api/excel/excel.pagelayoutmarginoptions#top)|表示要在打印时使用的页面布局上边距（使用指定的单位）。|
+|[PageLayoutZoomOptions](/javascript/api/excel/excel.pagelayoutzoomoptions)|[horizontalFitToPages](/javascript/api/excel/excel.pagelayoutzoomoptions#horizontalfittopages)|水平放置的页数。 如果使用百分比缩放，则此值可以为 null。|
+||[scale](/javascript/api/excel/excel.pagelayoutzoomoptions#scale)|打印页面缩放值可以介于 10 至 400 之间。 如果已指定适应页面高度或宽度，则此值可以为 null。|
+||[verticalFitToPages](/javascript/api/excel/excel.pagelayoutzoomoptions#verticalfittopages)|垂直放置的页数。 如果使用百分比缩放，则此值可以为 null。|
+|[PivotField](/javascript/api/excel/excel.pivotfield)|[sortByValues(sortby: "Ascending" \| "Descending", valuesHierarchy: Excel.DataPivotHierarchy, pivotItemScope?: Array<PivotItem \| string>)](/javascript/api/excel/excel.pivotfield#sortbyvalues-sortby--valueshierarchy--pivotitemscope-)|按给定范围中的指定值对 PivotField 进行排序。 该范围定义将使用哪些特定值进行排序|
+||[sortByValues(sortby: Excel.SortBy, valuesHierarchy: Excel.DataPivotHierarchy, pivotItemScope?: Array<PivotItem \| string>)](/javascript/api/excel/excel.pivotfield#sortbyvalues-sortby--valueshierarchy--pivotitemscope-)|按给定范围中的指定值对 PivotField 进行排序。 该范围定义将使用哪些特定值进行排序|
+|[PivotLayout](/javascript/api/excel/excel.pivotlayout)|[autoFormat](/javascript/api/excel/excel.pivotlayout#autoformat)|如果在刷新或移动字段时自动进行格式化，则为 True|
+||[enableFieldList](/javascript/api/excel/excel.pivotlayout#enablefieldlist)|如果应该在 UI 中显示或隐藏字段列表，则为 True。|
+||[getCell(dataHierarchy: DataPivotHierarchy \| string, rowItems: Array<PivotItem \| string>, columnItems: Array<PivotItem \| string>)](/javascript/api/excel/excel.pivotlayout#getcell-datahierarchy--rowitems--columnitems-)|获取数据透视表的数据主体中的单元格，其中包含指定的 dataHierarchy、rowItems 和 columnItems 的交集值。|
+||[getDataHierarchy(cell: Range \| string)](/javascript/api/excel/excel.pivotlayout#getdatahierarchy-cell-)|获取 DataHierarchy，它用于计算数据透视表中指定区域内的值。|
+||[getPivotItems(axis: "Unknown" \| "Row" \| "Column" \| "Data" \| "Filter", cell: Range \| string)](/javascript/api/excel/excel.pivotlayout#getpivotitems-axis--cell-)|从构成数据透视表中指定区域内的值的轴获取 PivotItems。|
+||[getPivotItems(axis: Excel.PivotAxis, cell: Range \| string)](/javascript/api/excel/excel.pivotlayout#getpivotitems-axis--cell-)|从构成数据透视表中指定区域内的值的轴获取 PivotItems。|
+||[preserveFormatting](/javascript/api/excel/excel.pivotlayout#preserveformatting)|如果在通过透视、排序或更改页面字段项等操作来刷新或重新计算报表时保留格式，则为 True。|
+||[setAutosortOnCell(cell: Range \| string, sortby: "Ascending" \| "Descending")](/javascript/api/excel/excel.pivotlayout#setautosortoncell-cell--sortby-)|使用指定的单元格设置自动排序，以自动选择排序的所有条件和上下文。|
+||[setAutosortOnCell(cell: Range \| string, sortby: Excel.SortBy)](/javascript/api/excel/excel.pivotlayout#setautosortoncell-cell--sortby-)|使用指定的单元格设置自动排序，以自动选择排序的所有条件和上下文。|
+|[PivotTable](/javascript/api/excel/excel.pivottable)|[enableDataValueEditing](/javascript/api/excel/excel.pivottable#enabledatavalueediting)|如果在排序时数据透视表应使用自定义列表，则为 True。|
+||[useCustomSortLists](/javascript/api/excel/excel.pivottable#usecustomsortlists)|如果在排序时数据透视表应使用自定义列表，则为 True。|
+|[Range](/javascript/api/excel/excel.range)|[autoFill(destinationRange: Range \| string, autoFillType?: "FillDefault" \| "FillCopy" \| "FillSeries" \| "FillFormats" \| "FillValues" \| "FillDays" \| "FillWeekdays" \| "FillMonths" \| "FillYears" \| "LinearTrend" \| "GrowthTrend" \| "FlashFill")](/javascript/api/excel/excel.range#autofill-destinationrange--autofilltype-)||
+||[autoFill(destinationRange: Range \| string, autoFillType?: Excel.AutoFillType)](/javascript/api/excel/excel.range#autofill-destinationrange--autofilltype-)||
+||[convertDataTypeToText()](/javascript/api/excel/excel.range#convertdatatypetotext--)|将具有数据类型的区域单元格转换为文本。|
+||[convertToLinkedDataType(serviceID: number, languageCulture: string)](/javascript/api/excel/excel.range#converttolinkeddatatype-serviceid--languageculture-)|将区域单元格转换为工作表中的链接数据类型。|
+||[copyFrom(sourceRange: Range \| RangeAreas \| string, copyType?: "All" \| "Formulas" \| "Values" \| "Formats", skipBlanks?: boolean, transpose?: boolean)](/javascript/api/excel/excel.range#copyfrom-sourcerange--copytype--skipblanks--transpose-)|将单元格数据或格式从源区域或 RangeAreas 复制到当前区域。|
+||[copyFrom(sourceRange: Range \| RangeAreas \| string, copyType?: Excel.RangeCopyType, skipBlanks?: boolean, transpose?: boolean)](/javascript/api/excel/excel.range#copyfrom-sourcerange--copytype--skipblanks--transpose-)|将单元格数据或格式从源区域或 RangeAreas 复制到当前区域。|
+||[find(text: string, criteria: Excel.SearchCriteria)](/javascript/api/excel/excel.range#find-text--criteria-)|根据指定的条件查找给定的字符串。|
+||[findOrNullObject(text: string, criteria: Excel.SearchCriteria)](/javascript/api/excel/excel.range#findornullobject-text--criteria-)|根据指定的条件查找给定的字符串。|
+||[getCellProperties(cellPropertiesLoadOptions: CellPropertiesLoadOptions)](/javascript/api/excel/excel.range#getcellproperties-cellpropertiesloadoptions-)|返回一个 2D 数组，其中封装了每个单元格的字体、填充、边框、对齐方式和其他属性数据。|
+||[getColumnProperties(columnPropertiesLoadOptions: ColumnPropertiesLoadOptions)](/javascript/api/excel/excel.range#getcolumnproperties-columnpropertiesloadoptions-)|返回一个一维数组，其中封装了每个列的字体、填充、边框、对齐方式和其他属性数据。  对于给定列中每个单元格不一致的属性，将返回 null。|
+||[getRowProperties(rowPropertiesLoadOptions: RowPropertiesLoadOptions)](/javascript/api/excel/excel.range#getrowproperties-rowpropertiesloadoptions-)|返回一个一维数组，其中封装了每个行的字体、填充、边框、对齐方式和其他属性数据。  对于给定行中每个单元格不一致的属性，将返回 null。|
+||[getSpecialCells(cellType: "ConditionalFormats" \| "DataValidations" \| "Blanks" \| "Comments" \| "Constants" \| "Formulas" \| "SameConditionalFormat" \| "SameDataValidation" \| "Visible", cellValueType?: "All" \| "Errors" \| "ErrorsLogical" \| "ErrorsNumbers" \| "ErrorsText" \| "ErrorsLogicalNumber" \| "ErrorsLogicalText" \| "ErrorsNumberText" \| "Logical" \| "LogicalNumbers" \| "LogicalText" \| "LogicalNumbersText" \| "Numbers" \| "NumbersText" \| "Text")](/javascript/api/excel/excel.range#getspecialcells-celltype--cellvaluetype-)|获取包含一个或多个矩形区域的 RangeAreas 对象，它表示匹配指定类型和值的所有单元格。|
+||[getSpecialCells(cellType: Excel.SpecialCellType, cellValueType?: Excel.SpecialCellValueType)](/javascript/api/excel/excel.range#getspecialcells-celltype--cellvaluetype-)|获取包含一个或多个矩形区域的 RangeAreas 对象，它表示匹配指定类型和值的所有单元格。|
+||[getSpecialCellsOrNullObject(cellType: "ConditionalFormats" \| "DataValidations" \| "Blanks" \| "Comments" \| "Constants" \| "Formulas" \| "SameConditionalFormat" \| "SameDataValidation" \| "Visible", cellValueType?: "All" \| "Errors" \| "ErrorsLogical" \| "ErrorsNumbers" \| "ErrorsText" \| "ErrorsLogicalNumber" \| "ErrorsLogicalText" \| "ErrorsNumberText" \| "Logical" \| "LogicalNumbers" \| "LogicalText" \| "LogicalNumbersText" \| "Numbers" \| "NumbersText" \| "Text")](/javascript/api/excel/excel.range#getspecialcellsornullobject-celltype--cellvaluetype-)|获取包含一个或多个区域的 RangeAreas 对象，它表示匹配指定类型和值的所有单元格。|
+||[getSpecialCellsOrNullObject(cellType: Excel.SpecialCellType, cellValueType?: Excel.SpecialCellValueType)](/javascript/api/excel/excel.range#getspecialcellsornullobject-celltype--cellvaluetype-)|获取包含一个或多个区域的 RangeAreas 对象，它表示匹配指定类型和值的所有单元格。|
+||[getSpillParent()](/javascript/api/excel/excel.range#getspillparent--)|获取 Range 对象，它包含要将某个单元格溢出到的定位单元格。 如果应用于具有多个单元格的区域，则会失败。 只读。|
+||[getSpillingToRange()](/javascript/api/excel/excel.range#getspillingtorange--)|获取 Range 对象，它在调用定位单元格时包含溢出区域。 如果应用于具有多个单元格的区域，则会失败。 只读。|
+||[getTables(fullyContained?: boolean)](/javascript/api/excel/excel.range#gettables-fullycontained-)|获取与区域重叠的限定范围的表格集合。|
+||[hasSpill](/javascript/api/excel/excel.range#hasspill)|表示所有单元格是否都具有溢出边框。|
+||[linkedDataTypeState](/javascript/api/excel/excel.range#linkeddatatypestate)|表示每个单元格的数据类型状态。 只读。|
+||[removeDuplicates(columns: number[], includesHeader: boolean)](/javascript/api/excel/excel.range#removeduplicates-columns--includesheader-)|从列指定的区域中删除重复值。|
+||[replaceAll(text: string, replacement: string, criteria: Excel.ReplaceCriteria)](/javascript/api/excel/excel.range#replaceall-text--replacement--criteria-)|根据当前区域内指定的条件查找并替换给定的字符串。|
+||[setCellProperties(cellPropertiesData: SettableCellProperties[][])](/javascript/api/excel/excel.range#setcellproperties-cellpropertiesdata-)|根据单元格属性的 2D 数组更新区域，它封装了字体、填充、边框、对齐方式等内容。|
+||[setColumnProperties(columnPropertiesData: SettableColumnProperties[])](/javascript/api/excel/excel.range#setcolumnproperties-columnpropertiesdata-)|根据列属性的一维数组更新区域，它封装了字体、填充、边框、对齐方式等内容。|
+||[setDirty()](/javascript/api/excel/excel.range#setdirty--)|设置下一次重新计算发生时要重新计算的区域。|
+||[setRowProperties(rowPropertiesData: SettableRowProperties[])](/javascript/api/excel/excel.range#setrowproperties-rowpropertiesdata-)|根据行属性的一维数组更新区域，它封装了字体、填充、边框、对齐方式等内容。|
+|[RangeAreas](/javascript/api/excel/excel.rangeareas)|[calculate()](/javascript/api/excel/excel.rangeareas#calculate--)|计算 RangeAreas 中的所有单元格。|
+||[clear(applyTo?: "All" \| "Formats" \| "Contents" \| "Hyperlinks" \| "RemoveHyperlinks")](/javascript/api/excel/excel.rangeareas#clear-applyto-)|清除包含此 RangeAreas 对象的每个区域的值、格式、填充、边框等。|
+||[clear(applyTo?: Excel.ClearApplyTo)](/javascript/api/excel/excel.rangeareas#clear-applyto-)|清除包含此 RangeAreas 对象的每个区域的值、格式、填充、边框等。|
+||[convertDataTypeToText()](/javascript/api/excel/excel.rangeareas#convertdatatypetotext--)|将 RangeAreas 中具有数据类型的所有单元格转换为文本。|
+||[convertToLinkedDataType(serviceID: number, languageCulture: string)](/javascript/api/excel/excel.rangeareas#converttolinkeddatatype-serviceid--languageculture-)|将 RangeAreas 中的所有单元格转换为链接数据类型。|
+||[copyFrom(sourceRange: Range \| RangeAreas \| string, copyType?: "All" \| "Formulas" \| "Values" \| "Formats", skipBlanks?: boolean, transpose?: boolean)](/javascript/api/excel/excel.rangeareas#copyfrom-sourcerange--copytype--skipblanks--transpose-)|将单元格数据或格式从源区域或 RangeAreas 复制到当前 RangeAreas。|
+||[copyFrom(sourceRange: Range \| RangeAreas \| string, copyType?: Excel.RangeCopyType, skipBlanks?: boolean, transpose?: boolean)](/javascript/api/excel/excel.rangeareas#copyfrom-sourcerange--copytype--skipblanks--transpose-)|将单元格数据或格式从源区域或 RangeAreas 复制到当前 RangeAreas。|
+||[getEntireColumn()](/javascript/api/excel/excel.rangeareas#getentirecolumn--)|返回表示 RangeAreas 的整个列的 RangeAreas 对象（例如，如果当前 RangeAreas 表示单元格“B4:E11, H2”，它将返回表示列“B:E, H:H”的 RangeAreas）。|
+||[getEntireRow()](/javascript/api/excel/excel.rangeareas#getentirerow--)|获取表示 RangeAreas 的整个行的 RangeAreas 对象（例如，如果当前 RangeAreas 表示单元格“B4:E11”，它将返回表示行“4:11”的 RangeAreas）。|
+||[getIntersection(anotherRange: Range \| RangeAreas \| string)](/javascript/api/excel/excel.rangeareas#getintersection-anotherrange-)|返回 RangeAreas 对象，它表示给定区域或 RangeAreas 的交集。 如果未找到任何交集，则将引发 ItemNotFound 错误。|
+||[getIntersectionOrNullObject(anotherRange: Range \| RangeAreas \| string)](/javascript/api/excel/excel.rangeareas#getintersectionornullobject-anotherrange-)|返回 RangeAreas 对象，它表示给定区域或 RangeAreas 的交集。 如果未找到任何交集，将返回 null 对象。|
+||[getOffsetRangeAreas(rowOffset: number, columnOffset: number)](/javascript/api/excel/excel.rangeareas#getoffsetrangeareas-rowoffset--columnoffset-)|返回 RangeAreas 对象，它按特定的行和列偏移量进行移动。 返回的 RangeAreas 的维度将与原始对象匹配。 如果生成的 RangeAreas 强行超出工作表网格的边界，则将引发错误。|
+||[getSpecialCells(cellType: "ConditionalFormats" \| "DataValidations" \| "Blanks" \| "Comments" \| "Constants" \| "Formulas" \| "SameConditionalFormat" \| "SameDataValidation" \| "Visible", cellValueType?: "All" \| "Errors" \| "ErrorsLogical" \| "ErrorsNumbers" \| "ErrorsText" \| "ErrorsLogicalNumber" \| "ErrorsLogicalText" \| "ErrorsNumberText" \| "Logical" \| "LogicalNumbers" \| "LogicalText" \| "LogicalNumbersText" \| "Numbers" \| "NumbersText" \| "Text")](/javascript/api/excel/excel.rangeareas#getspecialcells-celltype--cellvaluetype-)|返回一个 RangeAreas 对象，它表示匹配指定类型和值的所有单元格。 如果未找到符合条件的特殊单元格，则会引发错误。|
+||[getSpecialCells(cellType: Excel.SpecialCellType, cellValueType?: Excel.SpecialCellValueType)](/javascript/api/excel/excel.rangeareas#getspecialcells-celltype--cellvaluetype-)|返回一个 RangeAreas 对象，它表示匹配指定类型和值的所有单元格。 如果未找到符合条件的特殊单元格，则会引发错误。|
+||[getSpecialCellsOrNullObject(cellType: "ConditionalFormats" \| "DataValidations" \| "Blanks" \| "Comments" \| "Constants" \| "Formulas" \| "SameConditionalFormat" \| "SameDataValidation" \| "Visible", cellValueType?: "All" \| "Errors" \| "ErrorsLogical" \| "ErrorsNumbers" \| "ErrorsText" \| "ErrorsLogicalNumber" \| "ErrorsLogicalText" \| "ErrorsNumberText" \| "Logical" \| "LogicalNumbers" \| "LogicalText" \| "LogicalNumbersText" \| "Numbers" \| "NumbersText" \| "Text")](/javascript/api/excel/excel.rangeareas#getspecialcellsornullobject-celltype--cellvaluetype-)|返回一个 RangeAreas 对象，它表示匹配指定类型和值的所有单元格。 如果未找到符合条件的特殊单元格，则返回 null 对象。|
+||[getSpecialCellsOrNullObject(cellType: Excel.SpecialCellType, cellValueType?: Excel.SpecialCellValueType)](/javascript/api/excel/excel.rangeareas#getspecialcellsornullobject-celltype--cellvaluetype-)|返回一个 RangeAreas 对象，它表示匹配指定类型和值的所有单元格。 如果未找到符合条件的特殊单元格，则返回 null 对象。|
+||[getTables(fullyContained?: boolean)](/javascript/api/excel/excel.rangeareas#gettables-fullycontained-)|返回与此 RangeAreas 对象中的任何区域重叠的限定范围的表格集合。|
+||[getUsedRangeAreas(valuesOnly?: boolean)](/javascript/api/excel/excel.rangeareas#getusedrangeareas-valuesonly-)|返回使用的 RangeAreas，它包含 RangeAreas 对象中的各个矩形区域的所有已用区域。|
+||[getUsedRangeAreasOrNullObject(valuesOnly?: boolean)](/javascript/api/excel/excel.rangeareas#getusedrangeareasornullobject-valuesonly-)|返回使用的 RangeAreas，它包含 RangeAreas 对象中的各个矩形区域的所有已用区域。|
+||[address](/javascript/api/excel/excel.rangeareas#address)|返回 A1 样式中的 RageAreas 引用。 地址值将包含单元格的每个矩形块的工作表名称（例如“Sheet1!A1:B4, Sheet1!D1:D4”）。 只读。|
+||[addressLocal](/javascript/api/excel/excel.rangeareas#addresslocal)|返回用户区域设置中的 RageAreas 引用。 只读。|
+||[areaCount](/javascript/api/excel/excel.rangeareas#areacount)|返回包含此 RangeAreas 对象的矩形区域的数量。|
+||[areas](/javascript/api/excel/excel.rangeareas#areas)|返回包含此 RangeAreas 对象的矩形区域的集合。|
+||[cellCount](/javascript/api/excel/excel.rangeareas#cellcount)|返回 RangeAreas 对象中的单元格数量，即总计各个矩形区域的单元格计数。 如果单元格计数超过 2^31-1 (2,147,483,647)，则返回 -1。 只读。|
+||[conditionalFormats](/javascript/api/excel/excel.rangeareas#conditionalformats)|返回与此 RangeAreas 对象中的任何单元格相交的 ConditionalFormats 集合。 只读。|
+||[dataValidation](/javascript/api/excel/excel.rangeareas#datavalidation)|返回 RangeAreas 中的所有区域的 dataValidation 对象。|
+||[format](/javascript/api/excel/excel.rangeareas#format)|返回一个 rangeFormat 对象，其中封装了 RangeAreas 对象中的所有区域的字体、填充、边框、对齐方式和其他属性。 只读。|
+||[isEntireColumn](/javascript/api/excel/excel.rangeareas#isentirecolumn)|指示此 RangeAreas 对象上的所有区域是否表示整列（例如“A:C, Q:Z”）。 只读。|
+||[isEntireRow](/javascript/api/excel/excel.rangeareas#isentirerow)|指示此 RangeAreas 对象上的所有区域是否表示整行（例如“1:3, 5:7”）。 只读。|
+||[worksheet](/javascript/api/excel/excel.rangeareas#worksheet)|返回当前 RangeAreas 的工作表。 只读。|
+||[setDirty()](/javascript/api/excel/excel.rangeareas#setdirty--)|设置要在下一次重新计算时重新进行计算的 RangeAreas。|
+||[style](/javascript/api/excel/excel.rangeareas#style)|表示此 RangeAreas 对象中的所有区域的样式。|
+||[track()](/javascript/api/excel/excel.rangeareas#track--)|根据文档中的相应更改来跟踪对象，以便进行自动调整。 此调用是 context.trackedObjects.add(thisObject) 的缩写。 如果你在“.sync”调用之间和按顺序执行“.run”批处理之外使用此对象，并且在对象上设置属性或调用方法时出现“InvalidObjectPath”错误，则需要在首次创建对象时为跟踪的对象集合添加对象。|
+||[untrack()](/javascript/api/excel/excel.rangeareas#untrack--)|释放与此对象关联的内存（如果先前已跟踪过）。 此调用是 context.trackedObjects.add(thisObject) 的缩写。 拥有许多跟踪对象会降低主机应用程序的速度，因此请在使用完毕后释放所添加的任何对象。 在内存释放生效之前，你需要调用“context.sync()”。|
+|[RangeBorder](/javascript/api/excel/excel.rangeborder)|[tintAndShade](/javascript/api/excel/excel.rangeborder#tintandshade)|返回或设置一个使区域边框的颜色变亮或变暗的双精度数值，该值介于 -1（最暗）与 1（最亮）之间，初始颜色为 0。|
+|[RangeBorderCollection](/javascript/api/excel/excel.rangebordercollection)|[tintAndShade](/javascript/api/excel/excel.rangebordercollection#tintandshade)|返回或设置一个使区域边框的颜色变亮或变暗的双精度数值，该值介于 -1（最暗）与 1（最亮）之间，初始颜色为 0。|
+|[RangeCollection](/javascript/api/excel/excel.rangecollection)|[getCount()](/javascript/api/excel/excel.rangecollection#getcount--)|返回 RangeCollection 中的区域数量。|
+||[getItemAt(index: number)](/javascript/api/excel/excel.rangecollection#getitemat-index-)|根据其在 RangeCollection 中的位置返回 Range 对象。|
+||[load(option?: OfficeExtension.LoadOption)](/javascript/api/excel/excel.rangecollection#load-option-)|将命令加入队列以加载对象的指定属性。 在读取属性之前，你必须调用“context.sync()”。|
+||[items](/javascript/api/excel/excel.rangecollection#items)|获取此集合中已加载的子项。|
+|[RangeFill](/javascript/api/excel/excel.rangefill)|[pattern](/javascript/api/excel/excel.rangefill#pattern)|获取或设置区域的图案。 有关详细信息，请参阅 Excel.FillPattern。 不支持 LinearGradient 和 RectangularGradient。|
+||[patternColor](/javascript/api/excel/excel.rangefill#patterncolor)|设置 HTML 颜色代码，它表示窗体 #RRGGBB（例如“FFA500”）的区域图案颜色或作为已命名的 HTML 颜色（例如“orange”）。|
+||[patternTintAndShade](/javascript/api/excel/excel.rangefill#patterntintandshade)|返回或设置一个使区域填充的图案颜色变亮或变暗的双精度数值，该值介于 -1（最暗）与 1（最亮）之间，初始颜色为 0。|
+||[tintAndShade](/javascript/api/excel/excel.rangefill#tintandshade)|返回或设置一个使区域填充的颜色变亮或变暗的双精度数值，该值介于 -1（最暗）与 1（最亮）之间，初始颜色为 0。|
+|[RangeFont](/javascript/api/excel/excel.rangefont)|[strikethrough](/javascript/api/excel/excel.rangefont#strikethrough)|表示字体的删除线状态。 Null 值表示整个区域没有统一的删除线设置。|
+||[subscript](/javascript/api/excel/excel.rangefont#subscript)|表示字体的下标状态。|
+||[superscript](/javascript/api/excel/excel.rangefont#superscript)|表示字体的上标状态。|
+||[tintAndShade](/javascript/api/excel/excel.rangefont#tintandshade)|返回或设置一个使区域字体的颜色变亮或变暗的双精度数值，该值介于 -1（最暗）与 1（最亮）之间，初始颜色为 0。|
+|[RangeFormat](/javascript/api/excel/excel.rangeformat)|[autoIndent](/javascript/api/excel/excel.rangeformat#autoindent)|指示将文本对齐方式设为相等分布时文本是否会自动缩进。|
+||[indentLevel](/javascript/api/excel/excel.rangeformat#indentlevel)|0 到 250 之间的一个整数，指示缩进水平。|
+||[readingOrder](/javascript/api/excel/excel.rangeformat#readingorder)|区域的读取顺序。|
+||[shrinkToFit](/javascript/api/excel/excel.rangeformat#shrinktofit)|指示文本是否自动缩小以适合可用列宽。|
+|[RemoveDuplicatesResult](/javascript/api/excel/excel.removeduplicatesresult)|[removed](/javascript/api/excel/excel.removeduplicatesresult#removed)|由操作删除的重复行数。|
+||[uniqueRemaining](/javascript/api/excel/excel.removeduplicatesresult#uniqueremaining)|所生成的区域中存在的剩余唯一行数。|
+|[ReplaceCriteria](/javascript/api/excel/excel.replacecriteria)|[completeMatch](/javascript/api/excel/excel.replacecriteria#completematch)|指定匹配必须是完整匹配还是部分匹配。 默认值为 false（部分）。|
+||[matchCase](/javascript/api/excel/excel.replacecriteria#matchcase)|指定匹配是否区分大小写。 默认值为 false（不区分大小写）。|
+|[RowProperties](/javascript/api/excel/excel.rowproperties)|[address](/javascript/api/excel/excel.rowproperties#address)||
+||[addressLocal](/javascript/api/excel/excel.rowproperties#addresslocal)||
+||[hasSpill](/javascript/api/excel/excel.rowproperties#hasspill)||
+||[rowIndex](/javascript/api/excel/excel.rowproperties#rowindex)||
+|[SearchCriteria](/javascript/api/excel/excel.searchcriteria)|[completeMatch](/javascript/api/excel/excel.searchcriteria#completematch)|指定匹配必须是完整匹配还是部分匹配。 默认值为 false（部分）。|
+||[matchCase](/javascript/api/excel/excel.searchcriteria#matchcase)|指定匹配是否区分大小写。 默认值为 false（不区分大小写）。|
+||[searchDirection](/javascript/api/excel/excel.searchcriteria#searchdirection)|指定搜索方向。 默认值为向前。 请参阅 Excel.SearchDirection。|
+|[SettableCellProperties](/javascript/api/excel/excel.settablecellproperties)|[format](/javascript/api/excel/excel.settablecellproperties#format)||
+||[hyperlink](/javascript/api/excel/excel.settablecellproperties#hyperlink)||
+||[style](/javascript/api/excel/excel.settablecellproperties#style)||
+|[SettableColumnProperties](/javascript/api/excel/excel.settablecolumnproperties)|[columnHidden](/javascript/api/excel/excel.settablecolumnproperties#columnhidden)||
+||[columnWidth](/javascript/api/excel/excel.settablecolumnproperties#columnwidth)||
+|[SettableRowProperties](/javascript/api/excel/excel.settablerowproperties)|[rowHeight](/javascript/api/excel/excel.settablerowproperties#rowheight)||
+||[rowHidden](/javascript/api/excel/excel.settablerowproperties#rowhidden)||
+|[Setting](/javascript/api/excel/excel.setting)|[](/javascript/api/excel/excel.setting#replacestringdatewithdate)||
+|[Shape](/javascript/api/excel/excel.shape)|[altTextDescription](/javascript/api/excel/excel.shape#alttextdescription)|返回或设置当 Shape 对象保存为网页时，该对象的可选描述性文本字符串。|
+||[altTextTitle](/javascript/api/excel/excel.shape#alttexttitle)|返回或设置当 Shape 对象保存为网页时，该对象的可选标题文本字符串。|
+||[delete()](/javascript/api/excel/excel.shape#delete--)|删除形状|
+||[geometricShapeType](/javascript/api/excel/excel.shape#geometricshapetype)|表示指定形状的几何形状类型。 有关详细信息，请参阅 Excel.GeometricShapeType。 如果不是几何形状，则返回 null，例如获取线条或图表的 GeometricShapeType 将返回 null。|
+||[height](/javascript/api/excel/excel.shape#height)|表示形状的高度（以磅为单位）。|
+||[incrementLeft(increment: number)](/javascript/api/excel/excel.shape#incrementleft-increment-)|以指定磅数水平移动形状。|
+||[incrementRotation(increment: number)](/javascript/api/excel/excel.shape#incrementrotation-increment-)|更改形状围绕 z 轴旋转的特定度数。|
+||[incrementTop(increment: number)](/javascript/api/excel/excel.shape#incrementtop-increment-)|以指定磅数垂直移动形状。|
+||[left](/javascript/api/excel/excel.shape#left)|从形状左侧到工作表左侧的距离（以磅为单位）。|
+||[lockAspectRatio](/javascript/api/excel/excel.shape#lockaspectratio)|表示是否以布尔值锁定形状的纵横比。|
+||[name](/javascript/api/excel/excel.shape#name)|表示形状的名称。|
+||[placement](/javascript/api/excel/excel.shape#placement)|表示 Placement 值，它代表对象附加到对象下面的单元格的方式。|
+||[fill](/javascript/api/excel/excel.shape#fill)|返回 Shape 对象的填充格式。 只读。|
+||[geometricShape](/javascript/api/excel/excel.shape#geometricshape)|返回 Shape 对象的几何形状。 如果 Shape 对象是其他形状类型（如图像、SmartArt 等）而不是 GeometricShape，则会引发错误。|
+||[group](/javascript/api/excel/excel.shape#group)|返回 Shape 对象的形状组。 如果 Shape 对象是其他形状类型（如图像、SmartArt 等）而不是 GroupShape，则会引发错误。|
+||[id](/javascript/api/excel/excel.shape#id)|表示形状标识符。 只读。|
+||[image](/javascript/api/excel/excel.shape#image)|返回 Shape 对象的图像。 如果 Shape 对象是其他形状类型（如 GeometricShape、SmartArt 等）而不是图像，则会引发错误。|
+||[level](/javascript/api/excel/excel.shape#level)|表示指定形状的级别。 级别 0 表示形状不是任何组的一部分，级别 1 表示形状是顶级组的一部分等等。|
+||[line](/javascript/api/excel/excel.shape#line)|返回 Shape 对象的 Line 对象。 如果 Shape 对象是其他形状类型（如 GeometricShape、SmartArt 等）而不是图像，则会引发错误。|
+||[lineFormat](/javascript/api/excel/excel.shape#lineformat)|返回 Shape 对象的线条格式。 只读。|
+||[onActivated](/javascript/api/excel/excel.shape#onactivated)|当激活形状时发生此事件。|
+||[onDeactivated](/javascript/api/excel/excel.shape#ondeactivated)|当激活形状时发生此事件。|
+||[parentGroup](/javascript/api/excel/excel.shape#parentgroup)|表示指定形状的父组。|
+||[textFrame](/javascript/api/excel/excel.shape#textframe)|返回形状的 textFrame 对象。 只读。|
+||[type](/javascript/api/excel/excel.shape#type)|返回指定形状的类型。 只读。 有关详细信息，请参阅 Excel.ShapeType。|
+||[zorderPosition](/javascript/api/excel/excel.shape#zorderposition)|返回指定形状在 z 顺序中的位置，最底部形状的 z 顺序值为 0。 只读。|
+||[rotation](/javascript/api/excel/excel.shape#rotation)|表示形状的旋转度数。|
+||[saveAsPicture(format: "UNKNOWN" \| "BMP" \| "JPEG" \| "GIF" \| "PNG" \| "SVG")](/javascript/api/excel/excel.shape#saveaspicture-format-)|将形状另存为图片，通过将 DPI 设置为 96，以 base64 编码的字符串形式返回图片。 仅支持另存为 Excel.PictureFormat.BMP、Excel.PictureFormat.PNG、Excel.PictureFormat.JPEG 和 Excel.PictureFormat.GIF。|
+||[saveAsPicture(format: Excel.PictureFormat)](/javascript/api/excel/excel.shape#saveaspicture-format-)|将形状另存为图片，通过将 DPI 设置为 96，以 base64 编码的字符串形式返回图片。 仅支持另存为 Excel.PictureFormat.BMP、Excel.PictureFormat.PNG、Excel.PictureFormat.JPEG 和 Excel.PictureFormat.GIF。|
+||[scaleHeight(scaleFactor: number, scaleType: "CurrentSize" \| "OriginalSize", scaleFrom?: "ScaleFromTopLeft" \| "ScaleFromMiddle" \| "ScaleFromBottomRight")](/javascript/api/excel/excel.shape#scaleheight-scalefactor--scaletype--scalefrom-)|按指定因子缩放形状的高度。 对于图片，你可以说明是相对于原始尺寸还是当前尺寸缩放形状。 对于除图片以外的其他形状来说，缩放总是相对于其当前高度而言。|
+||[scaleHeight(scaleFactor: number, scaleType: Excel.ShapeScaleType, scaleFrom?: Excel.ShapeScaleFrom)](/javascript/api/excel/excel.shape#scaleheight-scalefactor--scaletype--scalefrom-)|按指定因子缩放形状的高度。 对于图片，你可以说明是相对于原始尺寸还是当前尺寸缩放形状。 对于除图片以外的其他形状来说，缩放总是相对于其当前高度而言。|
+||[scaleWidth(scaleFactor: number, scaleType: "CurrentSize" \| "OriginalSize", scaleFrom?: "ScaleFromTopLeft" \| "ScaleFromMiddle" \| "ScaleFromBottomRight")](/javascript/api/excel/excel.shape#scalewidth-scalefactor--scaletype--scalefrom-)|按指定因子缩放形状的宽度。 对于图片，你可以说明是相对于原始尺寸还是当前尺寸缩放形状。 对于除图片以外的其他形状来说，缩放总是相对于其当前宽度而言。|
+||[scaleWidth(scaleFactor: number, scaleType: Excel.ShapeScaleType, scaleFrom?: Excel.ShapeScaleFrom)](/javascript/api/excel/excel.shape#scalewidth-scalefactor--scaletype--scalefrom-)|按指定因子缩放形状的宽度。 对于图片，你可以说明是相对于原始尺寸还是当前尺寸缩放形状。 对于除图片以外的其他形状来说，缩放总是相对于其当前宽度而言。|
+||[setZOrder(value: "BringToFront" \| "BringForward" \| "SendToBack" \| "SendBackward")](/javascript/api/excel/excel.shape#setzorder-value-)|将指定形状移动到集合中的其他形状的前面或后面（即更改 z 顺序中的形状位置）。|
+||[setZOrder(value: Excel.ShapeZOrder)](/javascript/api/excel/excel.shape#setzorder-value-)|将指定形状移动到集合中的其他形状的前面或后面（即更改 z 顺序中的形状位置）。|
+||[top](/javascript/api/excel/excel.shape#top)|从形状上边缘到工作表顶部之间的距离（以磅为单位）。|
+||[visible](/javascript/api/excel/excel.shape#visible)|表示指定形状的可见性（以布尔值表示）。|
+||[width](/javascript/api/excel/excel.shape#width)|表示形状的宽度（以磅为单位）。|
+|[ShapeActivatedEventArgs](/javascript/api/excel/excel.shapeactivatedeventargs)|[shapeId](/javascript/api/excel/excel.shapeactivatedeventargs#shapeid)|获取已启用的形状的 ID。|
+||[type](/javascript/api/excel/excel.shapeactivatedeventargs#type)|获取事件的类型。 有关详细信息，请参阅 Excel.EventType。|
+||[worksheetId](/javascript/api/excel/excel.shapeactivatedeventargs#worksheetid)|获取其中的形状已启用的工作表的 ID。|
+|[ShapeCollection](/javascript/api/excel/excel.shapecollection)|[addGeometricShape(geometricShapeType: "LineInverse" \| "Triangle" \| "RightTriangle" \| "Rectangle" \| "Diamond" \| "Parallelogram" \| "Trapezoid" \| "NonIsoscelesTrapezoid" \| "Pentagon" \| "Hexagon" \| "Heptagon" \| "Octagon" \| "Decagon" \| "Dodecagon" \| "Star4" \| "Star5" \| "Star6" \| "Star7" \| "Star8" \| "Star10" \| "Star12" \| "Star16" \| "Star24" \| "Star32" \| "RoundRectangle" \| "Round1Rectangle" \| "Round2SameRectangle" \| "Round2DiagonalRectangle" \| "SnipRoundRectangle" \| "Snip1Rectangle" \| "Snip2SameRectangle" \| "Snip2DiagonalRectangle" \| "Plaque" \| "Ellipse" \| "Teardrop" \| "HomePlate" \| "Chevron" \| "PieWedge" \| "Pie" \| "BlockArc" \| "Donut" \| "NoSmoking" \| "RightArrow" \| "LeftArrow" \| "UpArrow" \| "DownArrow" \| "StripedRightArrow" \| "NotchedRightArrow" \| "BentUpArrow" \| "LeftRightArrow" \| "UpDownArrow" \| "LeftUpArrow" \| "LeftRightUpArrow" \| "QuadArrow" \| "LeftArrowCallout" \| "RightArrowCallout" \| "UpArrowCallout" \| "DownArrowCallout" \| "LeftRightArrowCallout" \| "UpDownArrowCallout" \| "QuadArrowCallout" \| "BentArrow" \| "UturnArrow" \| "CircularArrow" \| "LeftCircularArrow" \| "LeftRightCircularArrow" \| "CurvedRightArrow" \| "CurvedLeftArrow" \| "CurvedUpArrow" \| "CurvedDownArrow" \| "SwooshArrow" \| "Cube" \| "Can" \| "LightningBolt" \| "Heart" \| "Sun" \| "Moon" \| "SmileyFace" \| "IrregularSeal1" \| "IrregularSeal2" \| "FoldedCorner" \| "Bevel" \| "Frame" \| "HalfFrame" \| "Corner" \| "DiagonalStripe" \| "Chord" \| "Arc" \| "LeftBracket" \| "RightBracket" \| "LeftBrace" \| "RightBrace" \| "BracketPair" \| "BracePair" \| "Callout1" \| "Callout2" \| "Callout3" \| "AccentCallout1" \| "AccentCallout2" \| "AccentCallout3" \| "BorderCallout1" \| "BorderCallout2" \| "BorderCallout3" \| "AccentBorderCallout1" \| "AccentBorderCallout2" \| "AccentBorderCallout3" \| "WedgeRectCallout" \| "WedgeRRectCallout" \| "WedgeEllipseCallout" \| "CloudCallout" \| "Cloud" \| "Ribbon" \| "Ribbon2" \| "EllipseRibbon" \| "EllipseRibbon2" \| "LeftRightRibbon" \| "VerticalScroll" \| "HorizontalScroll" \| "Wave" \| "DoubleWave" \| "Plus" \| "FlowChartProcess" \| "FlowChartDecision" \| "FlowChartInputOutput" \| "FlowChartPredefinedProcess" \| "FlowChartInternalStorage" \| "FlowChartDocument" \| "FlowChartMultidocument" \| "FlowChartTerminator" \| "FlowChartPreparation" \| "FlowChartManualInput" \| "FlowChartManualOperation" \| "FlowChartConnector" \| "FlowChartPunchedCard" \| "FlowChartPunchedTape" \| "FlowChartSummingJunction" \| "FlowChartOr" \| "FlowChartCollate" \| "FlowChartSort" \| "FlowChartExtract" \| "FlowChartMerge" \| "FlowChartOfflineStorage" \| "FlowChartOnlineStorage" \| "FlowChartMagneticTape" \| "FlowChartMagneticDisk" \| "FlowChartMagneticDrum" \| "FlowChartDisplay" \| "FlowChartDelay" \| "FlowChartAlternateProcess" \| "FlowChartOffpageConnector" \| "ActionButtonBlank" \| "ActionButtonHome" \| "ActionButtonHelp" \| "ActionButtonInformation" \| "ActionButtonForwardNext" \| "ActionButtonBackPrevious" \| "ActionButtonEnd" \| "ActionButtonBeginning" \| "ActionButtonReturn" \| "ActionButtonDocument" \| "ActionButtonSound" \| "ActionButtonMovie" \| "Gear6" \| "Gear9" \| "Funnel" \| "MathPlus" \| "MathMinus" \| "MathMultiply" \| "MathDivide" \| "MathEqual" \| "MathNotEqual" \| "CornerTabs" \| "SquareTabs" \| "PlaqueTabs" \| "ChartX" \| "ChartStar" \| "ChartPlus", left: number, top: number, width: number, height: number)](/javascript/api/excel/excel.shapecollection#addgeometricshape-geometricshapetype--left--top--width--height-)|将几何形状添加到工作表。 返回一个 Shape 对象，该对象代表新图形。|
+||[addGeometricShape(geometricShapeType: Excel.GeometricShapeType, left: number, top: number, width: number, height: number)](/javascript/api/excel/excel.shapecollection#addgeometricshape-geometricshapetype--left--top--width--height-)|将几何形状添加到工作表。 返回一个 Shape 对象，该对象代表新图形。|
+||[addGroup(values: Array<string \| Shape>)](/javascript/api/excel/excel.shapecollection#addgroup-values-)|在工作表中对形状的子集进行分组。 返回表示新形状组的 Shape 对象。|
+||[addImage(base64ImageString: string)](/javascript/api/excel/excel.shapecollection#addimage-base64imagestring-)|从 base64 字符串创建图像并将其添加到工作表。 返回一个 Shape 对象，该对象代表新图像。|
+||[addLine(startLeft: number, startTop: number, endLeft: number, endTop: number, connectorType?: "Straight" \| "Elbow" \| "Curve")](/javascript/api/excel/excel.shapecollection#addline-startleft--starttop--endleft--endtop--connectortype-)|将线条添加到工作表。 返回表示新线条的 Shape 对象。|
+||[addLine(startLeft: number, startTop: number, endLeft: number, endTop: number, connectorType?: Excel.ConnectorType)](/javascript/api/excel/excel.shapecollection#addline-startleft--starttop--endleft--endtop--connectortype-)|将线条添加到工作表。 返回表示新线条的 Shape 对象。|
+||[addSVG(xmlImageString: string)](/javascript/api/excel/excel.shapecollection#addsvg-xmlimagestring-)|从 XML 字符串创建 SVG 并将其添加到工作表。 返回表示新图像的 Shape 对象。|
+||[addTextBox(text?: string)](/javascript/api/excel/excel.shapecollection#addtextbox-text-)|通过告诉文本内容，将文本框添加到工作表。 返回表示新文本框的 Shape 对象。|
+||[getCount()](/javascript/api/excel/excel.shapecollection#getcount--)|返回工作表中的形状数。 只读。|
+||[getItem(name: string)](/javascript/api/excel/excel.shapecollection#getitem-name-)|按名称获取形状。|
+||[getItemAt(index: number)](/javascript/api/excel/excel.shapecollection#getitemat-index-)|根据其在集合中的位置获取形状。|
+||[load(option?: OfficeExtension.LoadOption)](/javascript/api/excel/excel.shapecollection#load-option-)|将命令加入队列以加载对象的指定属性。 在读取属性之前，你必须调用“context.sync()”。|
+||[items](/javascript/api/excel/excel.shapecollection#items)|获取此集合中已加载的子项。|
+|[ShapeDeactivatedEventArgs](/javascript/api/excel/excel.shapedeactivatedeventargs)|[shapeId](/javascript/api/excel/excel.shapedeactivatedeventargs#shapeid)|获取已停用的形状的 ID。|
+||[type](/javascript/api/excel/excel.shapedeactivatedeventargs#type)|获取事件的类型。 有关详细信息，请参阅 Excel.EventType。|
+||[worksheetId](/javascript/api/excel/excel.shapedeactivatedeventargs#worksheetid)|获取其中的形状已停用的工作表的 ID。|
+|[ShapeFill](/javascript/api/excel/excel.shapefill)|[clear()](/javascript/api/excel/excel.shapefill#clear--)|清除 Shape 对象的填充格式。|
+||[foreColor](/javascript/api/excel/excel.shapefill#forecolor)|表示窗体 #RRGGBB（例如“FFA500”）的形状填充前颜色（采用 HTML 颜色格式）或作为已命名的 HTML 颜色（例如“orange”）|
+||[type](/javascript/api/excel/excel.shapefill#type)|返回形状的填充类型。 只读。 有关详细信息，请参阅 Excel.ShapeFillType。|
+||[setSolidColor(color: string)](/javascript/api/excel/excel.shapefill#setsolidcolor-color-)|将 Shape 对象的填充格式设置为统一颜色，并将填充类型更改为“纯色填充”。|
+||[transparency](/javascript/api/excel/excel.shapefill#transparency)|返回或设置指定填充的透明度，取值范围为 0.0（不透明）到 1.0（清晰）之间。 对于 API 不支持的形状类型或具有不一致透明度的特殊填充类型，返回 null。 例如，渐变填充类型可能具有不一致透明度。|
+|[ShapeFont](/javascript/api/excel/excel.shapefont)|[bold](/javascript/api/excel/excel.shapefont#bold)|表示字体的加粗状态。 如果 TextRange 包含粗体和非粗体文本片段，则返回 null。|
+||[color](/javascript/api/excel/excel.shapefont#color)|文本颜色的 HTML 颜色代码表示。 例如， #FF0000 代表红色。 如果 TextRange 包含具有不同颜色的文本片段，则返回 null。|
+||[italic](/javascript/api/excel/excel.shapefont#italic)|表示字体的斜体状态。 如果 TextRange 包含斜体和非斜体文本片段，则返回 null。|
+||[name](/javascript/api/excel/excel.shapefont#name)|表示字体名称（例如“Calibri”）。 如果文本是复杂脚本或东亚语言，则表示相应的字体名称，否则代表拉丁字体名称。|
+||[size](/javascript/api/excel/excel.shapefont#size)|表示以磅为单位的字体大小（例如 11）。 如果 TextRange 包含具有不同字体大小的文本片段，则返回 null。|
+||[underline](/javascript/api/excel/excel.shapefont#underline)|应用于字体的下划线类型。 如果 TextRange 包含具有不同下划线样式的文本片段，则返回 null。 有关详细信息，请参阅 Excel.ShapeFontUnderlineStyle。|
+|[ShapeGroup](/javascript/api/excel/excel.shapegroup)|[id](/javascript/api/excel/excel.shapegroup#id)|表示形状标识符。 只读。|
+||[shape](/javascript/api/excel/excel.shapegroup#shape)|返回组的 Shape 对象。 只读。|
+||[shapes](/javascript/api/excel/excel.shapegroup#shapes)|返回组中的形状集合。 只读。|
+||[ungroup()](/javascript/api/excel/excel.shapegroup#ungroup--)|取消分组指定形状组中的任何已分组形状。|
+|[ShapeLineFormat](/javascript/api/excel/excel.shapelineformat)|[color](/javascript/api/excel/excel.shapelineformat#color)|表示窗体 #RRGGBB（例如“FFA500”）的线条颜色（采用 HTML 颜色格式）或作为已命名的 HTML 颜色（例如“orange”）|
+||[dashStyle](/javascript/api/excel/excel.shapelineformat#dashstyle)|表示形状的线条样式。 如果线条不可见或具有混合虚线样式属性（例如形状的组类型），则返回 null。 有关详细信息，请参阅 Excel.ShapeLineStyle。|
+||[style](/javascript/api/excel/excel.shapelineformat#style)|表示 Shape 对象的线条样式。 如果线条不可见或具有混合线条可见属性（例如形状的组类型），则返回 null。 有关详细信息，请参阅 Excel.ShapeLineStyle。|
+||[transparency](/javascript/api/excel/excel.shapelineformat#transparency)|将指定线条的透明度表示为从 0.0（不透明）到 1.0（清晰）的值。 如果形状具有混合线条透明度属性（例如形状的组类型），则返回 null。|
+||[visible](/javascript/api/excel/excel.shapelineformat#visible)|表示形状元素的线条格式是否可见。 如果形状具有混合线条可见属性（例如形状的组类型），则返回 null。|
+||[weight](/javascript/api/excel/excel.shapelineformat#weight)|表示线条的粗细（以磅为单位）。 如果线条不可见或具有混合线条粗细属性（例如形状的组类型），则返回 null。|
+|[Slicer](/javascript/api/excel/excel.slicer)|[caption](/javascript/api/excel/excel.slicer#caption)|表示切片器的标题。|
+||[clearFilters()](/javascript/api/excel/excel.slicer#clearfilters--)|清除当前切片器上应用的所有筛选器。|
+||[delete()](/javascript/api/excel/excel.slicer#delete--)|删除切片器。|
+||[getSelectedItems()](/javascript/api/excel/excel.slicer#getselecteditems--)|返回所选项目名称的数组。 只读。|
+||[height](/javascript/api/excel/excel.slicer#height)|表示切片器的高度（以磅为单位）。|
+||[left](/javascript/api/excel/excel.slicer#left)|表示从切片器左侧到工作表左侧的距离（以磅为单位）。|
+||[name](/javascript/api/excel/excel.slicer#name)|表示切片器的名称。|
+||[nameInFormula](/javascript/api/excel/excel.slicer#nameinformula)|表示公式中使用的名称。|
+||[id](/javascript/api/excel/excel.slicer#id)|表示切片器的唯一 ID。 只读。|
+||[isFilterCleared](/javascript/api/excel/excel.slicer#isfiltercleared)|如果已清除当前切片器上应用的所有筛选器，则为 True。|
+||[slicerItems](/javascript/api/excel/excel.slicer#sliceritems)|表示作为切片器一部分的 SlicerItems 的集合。 只读。|
+||[worksheet](/javascript/api/excel/excel.slicer#worksheet)|表示包含切片器的工作表。 只读。|
+||[selectItems(items?: string[])](/javascript/api/excel/excel.slicer#selectitems-items-)|根据名称选择切片器项目。 之前的选择将被清除。|
+||[sortBy](/javascript/api/excel/excel.slicer#sortby)|表示切片器中的项目的排序顺序。|
+||[style](/javascript/api/excel/excel.slicer#style)|表示切片器样式的常量值。 可能的值为：SlicerStyleLight1 thru SlicerStyleLight6、TableStyleOther1 thru TableStyleOther2、SlicerStyleDark1 thru SlicerStyleDark6。 还可以指定工作簿中显示的用户定义的自定义样式。|
+||[top](/javascript/api/excel/excel.slicer#top)|表示从切片器上边缘到工作表右侧的距离（以磅为单位）。|
+||[width](/javascript/api/excel/excel.slicer#width)|表示切片器的宽度（以磅为单位）。|
+|[SlicerCollection](/javascript/api/excel/excel.slicercollection)|[add(slicerSource: string \| PivotTable \| Table, sourceField: string \| PivotField \| number \| TableColumn, slicerDestination?: string \| Worksheet)](/javascript/api/excel/excel.slicercollection#add-slicersource--sourcefield--slicerdestination-)|将新切片器添加到工作簿。|
+||[getCount()](/javascript/api/excel/excel.slicercollection#getcount--)|返回集合中的切片器数量。|
+||[getItem(key: string)](/javascript/api/excel/excel.slicercollection#getitem-key-)|使用其名称或 ID 获取 Slicer 对象。|
+||[getItemAt(index: number)](/javascript/api/excel/excel.slicercollection#getitemat-index-)|根据其在集合中的位置获取切片器。|
+||[getItemOrNullObject(key: string)](/javascript/api/excel/excel.slicercollection#getitemornullobject-key-)|使用其名称或 ID 获取切片器。如果没有切片器项，将返回 null 对象。|
+||[load(option?: OfficeExtension.LoadOption)](/javascript/api/excel/excel.slicercollection#load-option-)|将命令加入队列以加载对象的指定属性。 在读取属性之前，你必须调用“context.sync()”。|
+||[items](/javascript/api/excel/excel.slicercollection#items)|获取此集合中已加载的子项。|
+|[SlicerItem](/javascript/api/excel/excel.sliceritem)|[isSelected](/javascript/api/excel/excel.sliceritem#isselected)|如果选择了切片器项，则为 True。 设置此值不会清除其他 SlicerItems 的选定状态。|
+||[hasData](/javascript/api/excel/excel.sliceritem#hasdata)|如果切片器项包含数据，则为 True。|
+||[key](/javascript/api/excel/excel.sliceritem#key)|表示代表切片器项的唯一值。|
+||[name](/javascript/api/excel/excel.sliceritem#name)|表示 UI 上显示的值。|
+|[SlicerItemCollection](/javascript/api/excel/excel.sliceritemcollection)|[getCount()](/javascript/api/excel/excel.sliceritemcollection#getcount--)|返回切片器中的切片器项的数量。|
+||[getItem(key: string)](/javascript/api/excel/excel.sliceritemcollection#getitem-key-)|使用其键或名称获取切片器项对象。|
+||[getItemAt(index: number)](/javascript/api/excel/excel.sliceritemcollection#getitemat-index-)|根据其在集合中的位置获取切片器项。|
+||[getItemOrNullObject(key: string)](/javascript/api/excel/excel.sliceritemcollection#getitemornullobject-key-)|使用其键或名称获取切片器项。 如果没有切片器项，将返回 null 对象。|
+||[load(option?: OfficeExtension.LoadOption)](/javascript/api/excel/excel.sliceritemcollection#load-option-)|将命令加入队列以加载对象的指定属性。 在读取属性之前，你必须调用“context.sync()”。|
+||[items](/javascript/api/excel/excel.sliceritemcollection#items)|获取此集合中已加载的子项。|
+|[SortField](/javascript/api/excel/excel.sortfield)|[subField](/javascript/api/excel/excel.sortfield#subfield)|表示子字段，它是要排序的复合值的目标属性名称。|
+|[StyleCollection](/javascript/api/excel/excel.stylecollection)|[getCount()](/javascript/api/excel/excel.stylecollection#getcount--)|获取集合中的样式数量。|
+||[getItemAt(index: number)](/javascript/api/excel/excel.stylecollection#getitemat-index-)|根据其在集合中的位置获取样式。|
+|[Table](/javascript/api/excel/excel.table)|[clearStyle()](/javascript/api/excel/excel.table#clearstyle--)|将表格更改为使用默认表格样式。|
+||[autoFilter](/javascript/api/excel/excel.table#autofilter)|表示表格的 AutoFilter 对象。 只读。|
+||[onFiltered](/javascript/api/excel/excel.table#onfiltered)|在特定表格上应用筛选器时发生。|
+|[TableAddedEventArgs](/javascript/api/excel/excel.tableaddedeventargs)|[source](/javascript/api/excel/excel.tableaddedeventargs#source)|获取事件源。 有关详细信息，请参阅 Excel.EventSource。|
+||[tableId](/javascript/api/excel/excel.tableaddedeventargs#tableid)|获取已添加的表格的 ID。|
+||[type](/javascript/api/excel/excel.tableaddedeventargs#type)|获取事件的类型。 有关详细信息，请参阅 Excel.EventType。|
+||[worksheetId](/javascript/api/excel/excel.tableaddedeventargs#worksheetid)|获取已在其中添加表格的工作表的 ID。|
+|[TableCollection](/javascript/api/excel/excel.tablecollection)|[onAdded](/javascript/api/excel/excel.tablecollection#onadded)|在工作簿中添加新表格时发生。|
+||[onDeleted](/javascript/api/excel/excel.tablecollection#ondeleted)|在工作簿中删除指定的表格时发生。|
+||[onFiltered](/javascript/api/excel/excel.tablecollection#onfiltered)|在工作簿或工作表中的任何表格上应用筛选器时发生。|
+|[TableDeletedEventArgs](/javascript/api/excel/excel.tabledeletedeventargs)|[source](/javascript/api/excel/excel.tabledeletedeventargs#source)|指定时间源。 有关详细信息，请参阅 Excel.EventSource。|
+||[tableId](/javascript/api/excel/excel.tabledeletedeventargs#tableid)|指定已删除的表格的 ID。|
+||[tableName](/javascript/api/excel/excel.tabledeletedeventargs#tablename)|指定已删除的表格的名称。|
+||[type](/javascript/api/excel/excel.tabledeletedeventargs#type)|指定事件类型。 有关详细信息，请参阅 Excel.EventType。|
+||[worksheetId](/javascript/api/excel/excel.tabledeletedeventargs#worksheetid)|指定已在其内删除表格的工作表的 ID。|
+|[TableFilteredEventArgs](/javascript/api/excel/excel.tablefilteredeventargs)|[tableId](/javascript/api/excel/excel.tablefilteredeventargs#tableid)|表示应用筛选器的表格的 ID。|
+||[type](/javascript/api/excel/excel.tablefilteredeventargs#type)|表示事件的类型。 有关详细信息，请参阅 Excel.EventType。|
+||[worksheetId](/javascript/api/excel/excel.tablefilteredeventargs#worksheetid)|表示包含表格的工作表的 ID。|
+|[TableScopedCollection](/javascript/api/excel/excel.tablescopedcollection)|[getCount()](/javascript/api/excel/excel.tablescopedcollection#getcount--)|获取集合中的表数量。|
+||[getFirst()](/javascript/api/excel/excel.tablescopedcollection#getfirst--)|获取集合中的第一个表格。 集合中的表格按照从上到下、从左到右的顺序排列，因此左上表格是集合中的第一个表格。|
+||[getItem(key: string)](/javascript/api/excel/excel.tablescopedcollection#getitem-key-)|按名称或 ID 获取表。|
+||[load(option?: OfficeExtension.LoadOption)](/javascript/api/excel/excel.tablescopedcollection#load-option-)|将命令加入队列以加载对象的指定属性。 在读取属性之前，你必须调用“context.sync()”。|
+||[items](/javascript/api/excel/excel.tablescopedcollection#items)|获取此集合中已加载的子项。|
+|[TextFrame](/javascript/api/excel/excel.textframe)|[autoSize](/javascript/api/excel/excel.textframe#autosize)|获取或设置文本框的自动调整大小设置。 可以将文本框设置为自动调整文本大小以适应文本框，或自动调整文本框大小以适应文本，或者不使用自动调整大小设置。|
+||[bottomMargin](/javascript/api/excel/excel.textframe#bottommargin)|表示文本框的下边距（以磅为单位）。|
+||[deleteText()](/javascript/api/excel/excel.textframe#deletetext--)|删除 TextFrame 中的所有文本。|
+||[horizontalAlignment](/javascript/api/excel/excel.textframe#horizontalalignment)|表示文本框的水平对齐方式。|
+||[horizontalOverflow](/javascript/api/excel/excel.textframe#horizontaloverflow)|表示文本框的水平溢出类型。|
+||[leftMargin](/javascript/api/excel/excel.textframe#leftmargin)|表示文本框的左边距（以磅为单位）。|
+||[orientation](/javascript/api/excel/excel.textframe#orientation)|表示文本框的文本方向。|
+||[readingOrder](/javascript/api/excel/excel.textframe#readingorder)|表示文本框、RTL 或 LTR 的读取顺序。|
+||[hasText](/javascript/api/excel/excel.textframe#hastext)|指定 TextFrame 是否包含文本。|
+||[textRange](/javascript/api/excel/excel.textframe#textrange)||
+||[rightMargin](/javascript/api/excel/excel.textframe#rightmargin)|表示文本框的右边距（以磅为单位）。|
+||[topMargin](/javascript/api/excel/excel.textframe#topmargin)|表示文本框的上边距（以磅为单位）。|
+||[verticalAlignment](/javascript/api/excel/excel.textframe#verticalalignment)|表示文本框的垂直对齐方式。|
+||[verticalOverflow](/javascript/api/excel/excel.textframe#verticaloverflow)|表示文本框的垂直溢出类型。|
+|[TextRange](/javascript/api/excel/excel.textrange)|[getCharacters(start: number, length?: number)](/javascript/api/excel/excel.textrange#getcharacters-start--length-)|返回给定区域内字符的 TextRange 对象。|
+||[font](/javascript/api/excel/excel.textrange#font)|返回一个 ShapeFont 对象，该对象表示文本范围的字体属性。 只读。|
+||[text](/javascript/api/excel/excel.textrange#text)|表示文本范围的纯文本内容。|
+|[Workbook](/javascript/api/excel/excel.workbook)|[chartDataPointTrack](/javascript/api/excel/excel.workbook#chartdatapointtrack)|如果工作簿中的所有图表都跟踪它们所附加的实际数据点，则为 True。|
+||[close(closeBehavior?: "Save" \| "SkipSave")](/javascript/api/excel/excel.workbook#close-closebehavior-)|关闭当前工作簿。|
+||[close(closeBehavior?: Excel.CloseBehavior)](/javascript/api/excel/excel.workbook#close-closebehavior-)|关闭当前工作簿。|
+||[getActiveChart()](/javascript/api/excel/excel.workbook#getactivechart--)|获取工作簿中的当前活动图表。 如果没有活动图表，则在调用此语句时将引发异常|
+||[getActiveChartOrNullObject()](/javascript/api/excel/excel.workbook#getactivechartornullobject--)|获取工作簿中的当前活动图表。 如果没有活动图表，则返回 null 对象|
+||[getActiveSlicer()](/javascript/api/excel/excel.workbook#getactiveslicer--)|获取工作簿中当前处于活动状态的切片器。 如果没有活动切片器，则在调用此语句时将引发异常。|
+||[getActiveSlicerOrNullObject()](/javascript/api/excel/excel.workbook#getactiveslicerornullobject--)|获取工作簿中当前处于活动状态的切片器。 如果没有活动切片器，则返回 null 对象|
+||[getIsActiveCollabSession()](/javascript/api/excel/excel.workbook#getisactivecollabsession--)|如果多个用户正在编辑工作簿（共同创作），则为 True。|
+||[getSelectedRanges()](/javascript/api/excel/excel.workbook#getselectedranges--)|从工作簿中获取当前选定的一个或多个区域。 与 getSelectedRange() 不同，此方法返回表示所有选定区域的 RangeAreas 对象。|
+||[isDirty](/javascript/api/excel/excel.workbook#isdirty)|如果自上次保存以来未对指定的工作簿进行任何更改，则为 True。|
+||[autoSave](/javascript/api/excel/excel.workbook#autosave)|如果工作簿处于自动保存模式，则为 True。|
+||[calculationEngineVersion](/javascript/api/excel/excel.workbook#calculationengineversion)|返回有关 Excel 计算引擎的版本号。 只读。|
+||[comments](/javascript/api/excel/excel.workbook#comments)|表示与工作簿关联的批注集合。 只读。|
+||[onAutoSaveSettingChanged](/javascript/api/excel/excel.workbook#onautosavesettingchanged)|在工作簿上更改“自动保存”设置时发生。|
+||[previouslySaved](/javascript/api/excel/excel.workbook#previouslysaved)|如果工作簿已在本地或在线保存，则为 True。|
+||[slicers](/javascript/api/excel/excel.workbook#slicers)|表示与工作簿关联的切片器集合。 只读。|
+||[save(saveBehavior?: "Save" \| "Prompt")](/javascript/api/excel/excel.workbook#save-savebehavior-)|保存当前工作簿。|
+||[save(saveBehavior?: Excel.SaveBehavior)](/javascript/api/excel/excel.workbook#save-savebehavior-)|保存当前工作簿。|
+||[use1904DateSystem](/javascript/api/excel/excel.workbook#use1904datesystem)|如果工作簿使用 1904 日期系统，则为 True。|
+||[usePrecisionAsDisplayed](/javascript/api/excel/excel.workbook#useprecisionasdisplayed)|如果此工作簿中的计算仅使用显示的数字精度来完成，则为 True。|
+|[Worksheet](/javascript/api/excel/excel.worksheet)|[enableCalculation](/javascript/api/excel/excel.worksheet#enablecalculation)|获取或设置工作表的 enableCalculation 属性。|
+||[findAll(text: string, criteria: Excel.WorksheetSearchCriteria)](/javascript/api/excel/excel.worksheet#findall-text--criteria-)|根据指定的条件查找给定字符串的所有匹配项，并将它们作为包含一个或多个矩形区域的 RangeAreas 对象返回。|
+||[findAllOrNullObject(text: string, criteria: Excel.WorksheetSearchCriteria)](/javascript/api/excel/excel.worksheet#findallornullobject-text--criteria-)|根据指定的条件查找给定字符串的所有匹配项，并将它们作为包含一个或多个矩形区域的 RangeAreas 对象返回。|
+||[getRanges(address?: string)](/javascript/api/excel/excel.worksheet#getranges-address-)|获取按地址或名称指定的 RangeAreas 对象，它表示一个或多个矩形区域块。|
+||[autoFilter](/javascript/api/excel/excel.worksheet#autofilter)|表示工作表的 AutoFilter 对象。 只读。|
+||[comments](/javascript/api/excel/excel.worksheet#comments)|返回工作表上的所有 Comments 对象的集合。 只读。|
+||[horizontalPageBreaks](/javascript/api/excel/excel.worksheet#horizontalpagebreaks)|获取工作表的水平分页符集合。 此集合仅包含手动分页符。|
+||[onFiltered](/javascript/api/excel/excel.worksheet#onfiltered)|在特定工作表上应用筛选器时发生。|
+||[onFormatChanged](/javascript/api/excel/excel.worksheet#onformatchanged)|在特定工作表上更改格式时发生。|
+||[pageLayout](/javascript/api/excel/excel.worksheet#pagelayout)|获取工作表的 PageLayout 对象。|
+||[shapes](/javascript/api/excel/excel.worksheet#shapes)|返回工作表上的所有 Shape 对象的集合。 只读。|
+||[slicers](/javascript/api/excel/excel.worksheet#slicers)|返回作为工作表一部分的切片器集合。 只读。|
+||[verticalPageBreaks](/javascript/api/excel/excel.worksheet#verticalpagebreaks)|获取工作表的垂直分页符集合。 此集合仅包含手动分页符。|
+||[replaceAll(text: string, replacement: string, criteria: Excel.ReplaceCriteria)](/javascript/api/excel/excel.worksheet#replaceall-text--replacement--criteria-)|根据当前工作表中指定的条件查找并替换给定的字符串。|
+|[WorksheetCollection](/javascript/api/excel/excel.worksheetcollection)|[addFromBase64(base64File: string, sheetNamesToInsert?: string[], positionType?: "None" \| "Before" \| "After" \| "Beginning" \| "End", relativeTo?: Worksheet \| string)](/javascript/api/excel/excel.worksheetcollection#addfrombase64-base64file--sheetnamestoinsert--positiontype--relativeto-)|将工作簿的指定工作表插入当前工作簿。|
+||[addFromBase64(base64File: string, sheetNamesToInsert?: string[], positionType?: Excel.WorksheetPositionType, relativeTo?: Worksheet \| string)](/javascript/api/excel/excel.worksheetcollection#addfrombase64-base64file--sheetnamestoinsert--positiontype--relativeto-)|将工作簿的指定工作表插入当前工作簿。|
+||[onChanged](/javascript/api/excel/excel.worksheetcollection#onchanged)|在更改工作簿中的任何工作表时发生。|
+||[onFiltered](/javascript/api/excel/excel.worksheetcollection#onfiltered)|在工作簿中应用任何工作表的筛选器时发生。|
+||[onFormatChanged](/javascript/api/excel/excel.worksheetcollection#onformatchanged)|在更改工作簿中的任何工作表的格式时发生。|
+||[onSelectionChanged](/javascript/api/excel/excel.worksheetcollection#onselectionchanged)|在任何工作表上更改选择时发生。|
+|[WorksheetFilteredEventArgs](/javascript/api/excel/excel.worksheetfilteredeventargs)|[type](/javascript/api/excel/excel.worksheetfilteredeventargs#type)|表示事件的类型。 有关详细信息，请参阅 Excel.EventType。|
+||[worksheetId](/javascript/api/excel/excel.worksheetfilteredeventargs#worksheetid)|表示在其中应用筛选器的工作表的 ID。|
+|[WorksheetFormatChangedEventArgs](/javascript/api/excel/excel.worksheetformatchangedeventargs)|[address](/javascript/api/excel/excel.worksheetformatchangedeventargs#address)|获取区域地址，该地址表示特定工作表上的更改区域。|
+||[getRange(ctx: Excel.RequestContext)](/javascript/api/excel/excel.worksheetformatchangedeventargs#getrange-ctx-)|获取区域，该区域表示特定工作表上的更改区域。|
+||[getRangeOrNullObject(ctx: Excel.RequestContext)](/javascript/api/excel/excel.worksheetformatchangedeventargs#getrangeornullobject-ctx-)|获取区域，该区域表示特定工作表上的更改区域。 它可能会返回 null 对象。|
+||[source](/javascript/api/excel/excel.worksheetformatchangedeventargs#source)|获取事件源。 有关详细信息，请参阅 Excel.EventSource。|
+||[type](/javascript/api/excel/excel.worksheetformatchangedeventargs#type)|获取事件的类型。 有关详细信息，请参阅 Excel.EventType。|
+||[worksheetId](/javascript/api/excel/excel.worksheetformatchangedeventargs#worksheetid)|获取其中的数据发生更改的工作表的 ID。|
+|[WorksheetSearchCriteria](/javascript/api/excel/excel.worksheetsearchcriteria)|[completeMatch](/javascript/api/excel/excel.worksheetsearchcriteria#completematch)|指定匹配必须是完整匹配还是部分匹配。 默认值为 false（部分）。|
+||[matchCase](/javascript/api/excel/excel.worksheetsearchcriteria#matchcase)|指定匹配是否区分大小写。 默认值为 false（不区分大小写）。|
 
 ## <a name="whats-new-in-excel-javascript-api-18"></a>Excel JavaScript API 1.8 的最近更新
 
@@ -63,7 +638,6 @@ Excel JavaScript API 要求集 1.8 的功能包括适用于数据透视表、数
 ### <a name="events"></a>事件
 
 已为图表添加更多[事件](https://docs.microsoft.com/office/dev/add-ins/excel/excel-add-ins-events)。 让加载项处理用于与图表的交互。 此外，你还可以在整个工作簿中[触发事件](https://docs.microsoft.com/office/dev/add-ins/excel/performance#enable-and-disable-events)。
-
 
 |对象| 最近更新| 说明|要求集|
 |:----|:----|:----|:----|
