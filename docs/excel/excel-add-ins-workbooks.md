@@ -1,14 +1,14 @@
 ---
 title: 使用 Excel JavaScript API 处理工作簿
 description: ''
-ms.date: 02/20/2019
+ms.date: 02/28/2019
 localization_priority: Priority
-ms.openlocfilehash: 3d0cbc21d7e6b5c987df5a29d1aa83790c5685bc
-ms.sourcegitcommit: 8e20e7663be2aaa0f7a5436a965324d171bc667d
+ms.openlocfilehash: eb647fe7f82dc669f071de53f6bac705e303c652
+ms.sourcegitcommit: f7f3d38ae4430e2218bf0abe7bb2976108de3579
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/28/2019
-ms.locfileid: "30199590"
+ms.lasthandoff: 03/01/2019
+ms.locfileid: "30359266"
 ---
 # <a name="work-with-workbooks-using-the-excel-javascript-api"></a>使用 Excel JavaScript API 处理工作簿
 
@@ -86,14 +86,14 @@ addFromBase64(base64File: string, sheetNamesToInsert?: string[], positionType?: 
 在以下示例中，工作簿的工作表将插入到当前工作簿的活动工作表之后。 请注意，将为 `sheetNamesToInsert?: string[]` 参数传递 `null`。 这意味着将插入所有工作表。
 
 ```js
-var myFile = <HTMLInputElement>document.getElementById("file");
+var myFile = document.getElementById("file");
 var reader = new FileReader();
 
 reader.onload = (event) => {
     Excel.run((context) => {
         // strip off the metadata before the base64-encoded string
-        var startIndex = (<string>(<FileReader>event.target).result).indexOf("base64,");
-        var workbookContents = (<string>(<FileReader>event.target).result).substr(startIndex + 7);
+        var startIndex = event.target.result.indexOf("base64,");
+        var workbookContents = event.target.result.substr(startIndex + 7);
 
         var sheets = context.workbook.worksheets;
         sheets.addFromBase64(
@@ -260,6 +260,37 @@ Excel.run(async (context) => {
 
 ```js
 context.application.suspendApiCalculationUntilNextSync();
+```
+
+## <a name="save-the-workbook"></a>保存工作簿
+
+> [!NOTE]
+> `Workbook.save(saveBehavior)` 函数当前仅适用于公共预览版。 [!INCLUDE [Information about using preview APIs](../includes/using-preview-apis.md)]
+
+`Workbook.save(saveBehavior)` 会将工作簿保存到持久存储中。 `save` 方法采用一个简单的可选参数，该参数可为以下值之一：
+
+- `Excel.SaveBehavior.save`（默认）：保存文件，但不提示用户指示文件名和保存位置。 如果之前未保存文件，则文件保存到默认位置。 如果之前保存过文件，则保存到之前的位置。
+- `Excel.SaveBehavior.prompt`：如果之前未保存文件，则将提示用户指示文件名和保存位置。 如果之前已保存文件，则保存到之前的位置且不提示用户。
+
+> [!CAUTION]
+> 如果提示用户保存并取消操作，则 `save` 将引发异常。
+
+```js
+context.workbook.save(Excel.SaveBehavior.prompt);
+```
+
+## <a name="close-the-workbook"></a>关闭工作簿
+
+> [!NOTE]
+> `Workbook.close(closeBehavior)` 函数当前仅适用于公共预览版。 [!INCLUDE [Information about using preview APIs](../includes/using-preview-apis.md)]
+
+`Workbook.close(closeBehavior)` 会关闭工作簿，一并关闭与该工作簿关联的加载项（Excel 应用程序仍保持打开状态）。 `close` 方法采用一个简单的可选参数，该参数可为以下值之一：
+
+- `Excel.CloseBehavior.save`（默认）：在关闭前保存文件。 如果之前未保存文件，则将提示用户指示文件名和保存位置。
+- `Excel.CloseBehavior.skipSave`：立即关闭文件但不保存。 所有未保存的更改均将丢失。
+
+```js
+context.workbook.close(Excel.CloseBehavior.save);
 ```
 
 ## <a name="see-also"></a>另请参阅
