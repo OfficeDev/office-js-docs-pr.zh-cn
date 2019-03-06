@@ -1,13 +1,14 @@
 ---
 title: 清单文件中的 DesktopFormFactor 元素
 description: ''
-ms.date: 10/09/2018
-ms.openlocfilehash: dea632f7f8afa5d9b69f257798022e9e520e9394
-ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
-ms.translationtype: HT
+ms.date: 03/01/2019
+localization_priority: Normal
+ms.openlocfilehash: cddf76af01ec9f3016b28a3f7692aa6dfeb9bd60
+ms.sourcegitcommit: 7ebd383f16ae5809bb6980a5f213b695d410e62c
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/22/2018
-ms.locfileid: "27433738"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "30413620"
 ---
 # <a name="desktopformfactor-element"></a>DesktopFormFactor 元素
 
@@ -22,7 +23,7 @@ ms.locfileid: "27433738"
 | [ExtensionPoint](extensionpoint.md)   | 是      | 定义外接程序公开功能的位置。 |
 | [FunctionFile](functionfile.md)       | 是      | 包含 JavaScript 函数的文件的 URL。|
 | [GetStarted](getstarted.md)           | 否       | 定义在 Word、Excel 或 PowerPoint 主机中安装外接程序时将显示的标注。 |
-| [SupportsSharedFolders](supportssharedfolders.md) | 否 | 定义 Outlook 外接程序在代理应用场景中是否可用，默认设置为 *false*。<br><br>**重要说明**：此元素仅适用于针对 Exchange Online 的 Outlook 外接程序预览要求集。 使用此元素的外接程序无法发布到 AppSource 或通过集中部署进行部署。 |
+| [SupportsSharedFolders](supportssharedfolders.md) | 否 | 定义 Outlook 外接程序在代理应用场景中是否可用，默认设置为 *false*。<br><br>**重要说明**: 由于 Outlook 外接程序的代理访问当前处于预览阶段, 使用`SupportSharedFolders`元素的外接程序不能发布到 AppSource 或通过集中部署进行部署。 |
 
 ## <a name="desktopformfactor-example"></a>DesktopFormFactor 示例
 
