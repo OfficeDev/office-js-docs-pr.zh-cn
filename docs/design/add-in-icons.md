@@ -1,14 +1,14 @@
 ---
 title: Office 外接程序的图标准则
 description: ''
-ms.date: 06/27/2018
+ms.date: 03/02/2019
 localization_priority: Priority
-ms.openlocfilehash: d6e98014227250420c34c63afa85e06a351ba4a1
-ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
+ms.openlocfilehash: 8e741f70327584ddd1b6f51f19b276e072862229
+ms.sourcegitcommit: 7ebd383f16ae5809bb6980a5f213b695d410e62c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "29388092"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "30413634"
 ---
 # <a name="icons"></a>图标
 图标是行为或概念的可视化表示形式。 它们通常用于为控件和命令添加含义。 实际或符号化的视觉对象使用户能够以与标记帮助用户浏览其环境的相同方式浏览 UI。 这些视觉对象应简单明了，并且只包含所需的详细信息，以使客户能够快速分析他们在选择控件时将会发生的操作。
@@ -131,6 +131,9 @@ Office 图标通常是由具有操作和概念修饰符的基本元素构成的�
 
 
 ## <a name="icon-colors"></a>图标颜色
+
+> [!NOTE]
+> 这些颜色指南适用于[外接程序命令](add-in-commands.md)中使用的功能区图标。 这些图标不使用 Microsoft UI Fabric 呈现，调色板与 [Microsoft UI Fabric | 颜色 | 共享](https://fluentfabric.azurewebsites.net/#/color/shared)中描述的调色板不同。
 
 Office 图标具有一个有限的调色板。使用下表中列出的颜色确保与 Office UI 无缝集成。对颜色使用应用以下准则： 
 
