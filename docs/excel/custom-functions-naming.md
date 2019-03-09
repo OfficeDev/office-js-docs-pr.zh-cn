@@ -3,12 +3,12 @@ ms.date: 02/08/2019
 description: 了解 Excel 自定义函数名称的要求并避免出现常见命名缺陷。
 title: Excel 中自定义函数的命名准则 (预览)
 localization_priority: Normal
-ms.openlocfilehash: bdf31879fb6e750fb9dea51f66c55dbc83a2dc90
-ms.sourcegitcommit: 8e20e7663be2aaa0f7a5436a965324d171bc667d
+ms.openlocfilehash: 954753c35d2df59093661e3b8e92adfa1302e595
+ms.sourcegitcommit: 8e7b7b0cfb68b91a3a95585d094cf5f5ffd00178
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/22/2019
-ms.locfileid: "30203844"
+ms.lasthandoff: 03/09/2019
+ms.locfileid: "30512837"
 ---
 # <a name="naming-guidelines"></a>命名准则
 
@@ -16,7 +16,9 @@ ms.locfileid: "30203844"
 
 函数名称和函数 id 共享一些常见要求:
 
-- 它们必须仅使用字母数字字符 (包括 Unicode)、0到9、下划线和句点。
+- 函数 id 可能仅使用从 A 到 Z 的字符, 从零到九、下划线和数个句点。
+
+- 函数名称可以使用任何 Unicode 字母字符、下划线和句点。
 
 - 它们必须以字母开头, 最小限制为三个字符。
 

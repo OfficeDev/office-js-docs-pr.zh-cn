@@ -3,12 +3,12 @@ title: 清单文件中的 ExtensionPoint 元件
 description: ''
 ms.date: 10/09/2018
 localization_priority: Priority
-ms.openlocfilehash: ec00196521c2de18e63c9092064eb32a8a6e8c1a
-ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
+ms.openlocfilehash: 7555c5e4245da55fd4d01761e0484912fe54eccc
+ms.sourcegitcommit: 8e7b7b0cfb68b91a3a95585d094cf5f5ffd00178
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "29386839"
+ms.lasthandoff: 03/09/2019
+ms.locfileid: "30512872"
 ---
 # <a name="extensionpoint-element"></a>ExtensionPoint 元素
 
@@ -24,7 +24,7 @@ ms.locfileid: "29386839"
 
 - **CustomFunctions** - 针对 Excel 使用 JavaScript 编写的自定义函数。
 
-[此 XML 示例代码](https://github.com/OfficeDev/Excel-Custom-Functions/blob/master/customfunctions.xml)演示如何将 **ExtensionPoint** 元素与 **CustomFunctions** 属性值配合使用，以及如何使用子元素。
+[此 XML 示例代码](https://github.com/OfficeDev/Excel-Custom-Functions/blob/master/manifest.xml)演示如何将 **ExtensionPoint** 元素与 **CustomFunctions** 属性值配合使用，以及如何使用子元素。
 
 ## <a name="extension-points-for-word-excel-powerpoint-and-onenote-add-in-commands"></a>适用于 Word、Excel、PowerPoint 和 OneNote 加载项命令的扩展点
 
@@ -34,7 +34,7 @@ ms.locfileid: "29386839"
 下面的示例演示如何将  **ExtensionPoint** 元素与 **PrimaryCommandSurface** 和 **ContextMenu** 属性值配合使用，以及应彼此配合使用的子元素。
 
 > [!IMPORTANT] 
-> 对于包含 ID 属性的元素，请确保提供唯一 ID。我们建议您将您的公司名称与您的 ID 配合使用。例如，使用以下格式。
+> 对于包含 ID 属性的元素，请务必提供唯一的 ID。 建议将你的公司名称用于此 ID。 例如，使用以下格式。 <CustomTab id="mycompanyname.mygroupname">
 
 ```XML
 <ExtensionPoint xsi:type="PrimaryCommandSurface">
@@ -80,7 +80,7 @@ ms.locfileid: "29386839"
 |**Label**|必需。组标签。**resid** 属性必须设置为 **String** 元素的 **id** 属性的值。**String** 元素是 **ShortStrings** 元素的子元素，而 ShortStrings 元素是 **Resources** 元素的子元素。|
 |**Icon**|必需。指定将在小型设备上使用或在显示过多按钮的情况下使用的组图标。**resid** 属性必须设置为 **Image** 元素的 **id** 属性的值。**Image** 元素是 **Images** 元素的子元素，而 Images 元素是 **Resources** 元素的子元素。**size** 属性给出图像的大小（以像素为单位）。要求三种图像大小：16、32 和 80。也同样支持五种可选大小：20、24、40、48 和 64。|
 |**Tooltip**|可选。组的工具提示**resid** 属性必须设置为 **String** 元素的 **id** 属性的值。**String** 元素是 **LongStrings** 元素的子元素，而 LongStrings 元素是 **Resources** 元素的子元素。|
-|**Control**|每个组都要求至少有一个控件。**Control** 元素可以是 **Button**，也可以是 **Menu**。使用 **Menu** 可指定按钮控件的下拉列表。目前仅支持按钮和菜单。请参阅[按钮控件](control.md#button-control)和[菜单控件](control.md#menu-dropdown-button-controls)部分，了解详细信息。<br/>**注意**  为了使故障排除变得更简单，我们建议一次性添加 **Control** 元素和相关的 **Resources** 子元素。|
+|**Control**|每个组需要至少一个控件。 **Control** 元素可以是一个**按钮**，也可以是一个**菜单**。 使用**菜单**指定按钮控件的下拉列表。 目前，仅支持“按钮”和“菜单”。 请参阅[按钮控件](control.md#button-control)和[菜单控件](control.md#menu-dropdown-button-controls)各节了解详细信息。<br/>**注意**  为了使故障排除变得更简单，我们建议一次性添加 **Control** 元素和相关的 **Resources** 子元素。|
 |**Script**|使用自定义函数定义和注册代码链接到 JavaScript 文件。 在开发者预览版中不使用此元素。 实际上，HTML 页负责加载所有 JavaScript 文件。|
 |**Page**|链接到自定义函数的 HTML 页。|
 
