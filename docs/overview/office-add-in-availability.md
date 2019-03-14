@@ -1,18 +1,18 @@
 ---
 title: Office 外接程序主机和平台可用性
 description: Excel、Word、Outlook、PowerPoint、OneNote 和项目支持的要求集。
-ms.date: 02/20/2019
+ms.date: 03/07/2019
 localization_priority: Priority
-ms.openlocfilehash: a3e9c508a5bae0e7eb660458835b9242d0602818
-ms.sourcegitcommit: 8e20e7663be2aaa0f7a5436a965324d171bc667d
+ms.openlocfilehash: 636c6290d8c67901beb195990593727485467460
+ms.sourcegitcommit: 8e7b7b0cfb68b91a3a95585d094cf5f5ffd00178
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/28/2019
-ms.locfileid: "30199611"
+ms.lasthandoff: 03/09/2019
+ms.locfileid: "30512879"
 ---
 # <a name="office-add-in-host-and-platform-availability"></a>Office 外接程序主机和平台可用性
 
-若要按预期运行，Office 加载项可能会依赖特定的 Office 主机、要求集、API 成员或 API 版本。 下表列出了每个 Office 应用目前支持的可用平台、扩展点、API 要求集和通用 API。
+若要按预期运行，Office 加载项可能会依赖特定的 Office 主机、要求集、API 成员或 API 版本。下表列出了每个 Office 应用目前支持的可用平台、扩展点、API 要求集和通用 API。
 
 > [!NOTE]
 > 通过 MSI 安装的 Office 2016 的生成号为 16.0.4266.1001。此版本只包含 ExcelApi 1.1、WordApi 1.1 和通用 API 要求集。
@@ -203,6 +203,8 @@ ms.locfileid: "30199611"
         - TextCoercion</td>
   </tr>
 </table>
+
+*&ast; - 已添加发布后更新。*
 
 <br/>
 
@@ -511,6 +513,8 @@ ms.locfileid: "30199611"
   </tr>
 </table>
 
+*&ast; - 已添加发布后更新。*
+
 <br/>
 
 ## <a name="powerpoint"></a>PowerPoint
@@ -632,6 +636,8 @@ ms.locfileid: "30199611"
   </tr>
 </table>
 
+*&ast; - 已添加发布后更新。*
+
 <br/>
 
 ## <a name="onenote"></a>OneNote
@@ -657,8 +663,6 @@ ms.locfileid: "30199611"
          - TextCoercion</td>
   </tr>
 </table>
-*&ast; - 已添加发布后更新。*
-
 
 <br/>
 
