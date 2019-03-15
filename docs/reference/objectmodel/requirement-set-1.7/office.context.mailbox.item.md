@@ -3,18 +3,18 @@ title: "\"context\"-\"邮箱\"。项目-要求集1。7"
 description: ''
 ms.date: 02/15/2019
 localization_priority: Normal
-ms.openlocfilehash: 87ac31deaabda5fe1d2ca024972e326cfa168ea7
-ms.sourcegitcommit: f26778b596b6b022814c39601485ff676ed4e2fa
+ms.openlocfilehash: 94fcb090fb7e676ed0c30caef342e1d6cfc6e9f9
+ms.sourcegitcommit: 8fb60c3a31faedaea8b51b46238eb80c590a2491
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/16/2019
-ms.locfileid: "30068250"
+ms.lasthandoff: 03/14/2019
+ms.locfileid: "30600289"
 ---
 # <a name="item"></a>item
 
 ### <a name="officeofficemdcontextofficecontextmdmailboxofficecontextmailboxmditem"></a>[Office](office.md)[.context](office.context.md)[.mailbox](office.context.mailbox.md).item
 
-`item` 命名空间用于访问当前选定的邮件、会议请求或约会。可以通过使用 [itemType](#itemtype-officemailboxenumsitemtypejavascriptapioutlook17officemailboxenumsitemtype) 属性确定 `item` 的类型。
+`item` 命名空间用于访问当前选定的邮件、会议请求或约会。可以通过使用 [itemType](#itemtype-officemailboxenumsitemtype) 属性确定 `item` 的类型。
 
 ##### <a name="requirements"></a>Requirements
 
@@ -26,47 +26,47 @@ ms.locfileid: "30068250"
 
 ##### <a name="members-and-methods"></a>成员和方法
 
-| 成员 | 类型 |
+| Member | 类型 |
 |--------|------|
-| [attachments](#attachments-arrayattachmentdetailsjavascriptapioutlook17officeattachmentdetails) | 成员 |
-| [bcc](#bcc-recipientsjavascriptapioutlook17officerecipients) | 成员 |
-| [body](#body-bodyjavascriptapioutlook17officebody) | 成员 |
-| [cc](#cc-arrayemailaddressdetailsjavascriptapioutlook17officeemailaddressdetailsrecipientsjavascriptapioutlook17officerecipients) | 成员 |
-| [conversationId](#nullable-conversationid-string) | 成员 |
-| [dateTimeCreated](#datetimecreated-date) | 成员 |
-| [dateTimeModified](#datetimemodified-date) | 成员 |
-| [end](#end-datetimejavascriptapioutlook17officetime) | 成员 |
-| [from](#from-emailaddressdetailsjavascriptapioutlook17officeemailaddressdetailsfromjavascriptapioutlook17officefrom) | 成员 |
-| [internetMessageId](#internetmessageid-string) | 成员 |
-| [itemClass](#itemclass-string) | 成员 |
-| [itemId](#nullable-itemid-string) | 成员 |
-| [itemType](#itemtype-officemailboxenumsitemtypejavascriptapioutlook17officemailboxenumsitemtype) | 成员 |
-| [location](#location-stringlocationjavascriptapioutlook17officelocation) | 成员 |
-| [normalizedSubject](#normalizedsubject-string) | 成员 |
-| [notificationMessages](#notificationmessages-notificationmessagesjavascriptapioutlook17officenotificationmessages) | 成员 |
-| [optionalAttendees](#optionalattendees-arrayemailaddressdetailsjavascriptapioutlook17officeemailaddressdetailsrecipientsjavascriptapioutlook17officerecipients) | 成员 |
-| [organizer](#organizer-emailaddressdetailsjavascriptapioutlook17officeemailaddressdetailsorganizerjavascriptapioutlook17officeorganizer) | 成员 |
-| [recurrence](#nullable-recurrence-recurrencejavascriptapioutlook17officerecurrence) | Member |
-| [requiredAttendees](#requiredattendees-arrayemailaddressdetailsjavascriptapioutlook17officeemailaddressdetailsrecipientsjavascriptapioutlook17officerecipients) | 成员 |
-| [sender](#sender-emailaddressdetailsjavascriptapioutlook17officeemailaddressdetails) | 成员 |
-| [seriesId](#nullable-seriesid-string) | 成员 |
-| [start](#start-datetimejavascriptapioutlook17officetime) | 成员 |
-| [subject](#subject-stringsubjectjavascriptapioutlook17officesubject) | 成员 |
-| [to](#to-arrayemailaddressdetailsjavascriptapioutlook17officeemailaddressdetailsrecipientsjavascriptapioutlook17officerecipients) | 成员 |
+| [attachments](#attachments-arrayattachmentdetails) | Member |
+| [bcc](#bcc-recipients) | Member |
+| [body](#body-body) | Member |
+| [cc](#cc-arrayemailaddressdetails) | Member |
+| [conversationId](#nullable-conversationid-string) | Member |
+| [dateTimeCreated](#datetimecreated-date) | Member |
+| [dateTimeModified](#datetimemodified-date) | Member |
+| [end](#end-datetime) | Member |
+| [from](#from-emailaddressdetailsfrom) | Member |
+| [internetMessageId](#internetmessageid-string) | Member |
+| [itemClass](#itemclass-string) | Member |
+| [itemId](#nullable-itemid-string) | Member |
+| [itemType](#itemtype-officemailboxenumsitemtype) | Member |
+| [location](#location-stringlocation) | Member |
+| [normalizedSubject](#normalizedsubject-string) | Member |
+| [notificationMessages](#notificationmessages-notificationmessages) | Member |
+| [optionalAttendees](#optionalattendees-arrayemailaddressdetails) | Member |
+| [organizer](#organizer-emailaddressdetailsorganizer) | Member |
+| [定期](#nullable-recurrence-recurrence) | Member |
+| [requiredAttendees](#requiredattendees-arrayemailaddressdetails) | Member |
+| [sender](#sender-emailaddressdetails) | Member |
+| [webcasts&seriesid](#nullable-seriesid-string) | Member |
+| [start](#start-datetime) | Member |
+| [subject](#subject-stringsubject) | Member |
+| [to](#to-arrayemailaddressdetails) | 成员 |
 | [addFileAttachmentAsync](#addfileattachmentasyncuri-attachmentname-options-callback) | 方法 |
 | [addHandlerAsync](#addhandlerasynceventtype-handler-options-callback) | 方法 |
 | [addItemAttachmentAsync](#additemattachmentasyncitemid-attachmentname-options-callback) | 方法 |
 | [close](#close) | 方法 |
 | [displayReplyAllForm](#displayreplyallformformdata-callback) | 方法 |
 | [displayReplyForm](#displayreplyformformdata-callback) | 方法 |
-| [getEntities](#getentities--entitiesjavascriptapioutlook17officeentities) | 方法 |
-| [getEntitiesByType](#getentitiesbytypeentitytype--nullable-arraystringcontactjavascriptapioutlook17officecontactmeetingsuggestionjavascriptapioutlook17officemeetingsuggestionphonenumberjavascriptapioutlook17officephonenumbertasksuggestionjavascriptapioutlook17officetasksuggestion) | 方法 |
-| [getFilteredEntitiesByName](#getfilteredentitiesbynamename--nullable-arraystringcontactjavascriptapioutlook17officecontactmeetingsuggestionjavascriptapioutlook17officemeetingsuggestionphonenumberjavascriptapioutlook17officephonenumbertasksuggestionjavascriptapioutlook17officetasksuggestion) | 方法 |
+| [getEntities](#getentities--entities) | 方法 |
+| [getEntitiesByType](#getentitiesbytypeentitytype--nullable-arraystringcontact) | 方法 |
+| [getFilteredEntitiesByName](#getfilteredentitiesbynamename--nullable-arraystringcontact) | 方法 |
 | [getRegExMatches](#getregexmatches--object) | 方法 |
 | [getRegExMatchesByName](#getregexmatchesbynamename--nullable-array-string-) | 方法 |
 | [getSelectedDataAsync](#getselecteddataasynccoerciontype-options-callback--string) | 方法 |
-| [getSelectedEntities](#getselectedentities--entitiesjavascriptapioutlook17officeentities) | 方法 |
-| [getSelectedRegExMatches](#getselectedregexmatches--object) | 方法 |
+| [office.context.mailbox.item.getselectedentities](#getselectedentities--entities) | 方法 |
+| [office.context.mailbox.item.getselectedregexmatches](#getselectedregexmatches--object) | 方法 |
 | [loadCustomPropertiesAsync](#loadcustompropertiesasynccallback-usercontext) | 方法 |
 | [removeAttachmentAsync](#removeattachmentasyncattachmentid-options-callback) | 方法 |
 | [removeHandlerAsync](#removehandlerasynceventtype-options-callback) | 方法 |
@@ -172,7 +172,7 @@ function callback(asyncResult) {
 
 *   [Body](/javascript/api/outlook_1_7/office.body)
 
-##### <a name="requirements"></a>要求
+##### <a name="requirements"></a>Requirements
 
 |要求|值|
 |---|---|
@@ -194,7 +194,7 @@ Office.context.mailbox.item.body.getAsync(
 
 ```
 
-下面是传递给回调函数的 result 参数的示例。
+以下是传递到回调函数的结果参数的示例。
 
 ```json
 {
@@ -234,7 +234,7 @@ function callback(asyncResult) {
 
 *   Array.<[EmailAddressDetails](/javascript/api/outlook_1_7/office.emailaddressdetails)> | [Recipients](/javascript/api/outlook_1_7/office.recipients)
 
-##### <a name="requirements"></a>要求
+##### <a name="requirements"></a>Requirements
 
 |要求|值|
 |---|---|
@@ -254,7 +254,7 @@ function callback(asyncResult) {
 
 *   String
 
-##### <a name="requirements"></a>要求
+##### <a name="requirements"></a>Requirements
 
 |要求|值|
 |---|---|
@@ -277,7 +277,7 @@ console.log("conversationId: " + conversationId);
 
 *   日期
 
-##### <a name="requirements"></a>Requirements
+##### <a name="requirements"></a>要求
 
 |要求|值|
 |---|---|
@@ -322,7 +322,7 @@ console.log("Date and time modified: " + dateTimeModified);
 
 获取或设置约会结束的日期和时间。
 
-将 `end` 属性表示为协调世界时 (UTC) 的日期和时间值。可使用 [`convertToLocalClientTime`](office.context.mailbox.md#converttolocalclienttimetimevalue--localclienttimejavascriptapioutlook17officelocalclienttime) 方法将 end 属性值转换为客户端的本地日期和时间。
+将 `end` 属性表示为协调世界时 (UTC) 的日期和时间值。可使用 [`convertToLocalClientTime`](office.context.mailbox.md#converttolocalclienttimetimevalue--localclienttime) 方法将 end 属性值转换为客户端的本地日期和时间。
 
 ##### <a name="read-mode"></a>阅读模式
 
@@ -339,7 +339,7 @@ console.log("Appointment end: " + end);
 
 使用 [`Time.setAsync`](/javascript/api/outlook_1_7/office.time#setasync-datetime--options--callback-) 方法设置结束时间时，应使用 [`convertToUtcClientTime`](office.context.mailbox.md#converttoutcclienttimeinput--date) 方法将客户端的本地时间转换为服务器的 UTC。
 
-下面的示例使用[`setAsync`](/javascript/api/outlook_1_7/office.time#setasync-datetime--options--callback-) `Time`对象的方法设置约会的结束时间。
+以下示例使用 `Time` 对象的 [`setAsync`](/javascript/api/outlook_1_7/office.time#setasync-datetime--options--callback-) 方法设置约会的结束时间。
 
 ```javascript
 var endTime = new Date("3/14/2015");
@@ -361,7 +361,7 @@ Office.context.mailbox.item.end.setAsync(endTime, options, function(result) {
 
 *   Date | [Time](/javascript/api/outlook_1_7/office.time)
 
-##### <a name="requirements"></a>Requirements
+##### <a name="requirements"></a>要求
 
 |要求|值|
 |---|---|
@@ -369,18 +369,18 @@ Office.context.mailbox.item.end.setAsync(endTime, options, function(result) {
 |[最低权限级别](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)|ReadItem|
 |[适用的 Outlook 模式](https://docs.microsoft.com/outlook/add-ins/#extension-points)|撰写或阅读|
 
-#### <a name="from-emailaddressdetailsjavascriptapioutlook17officeemailaddressdetailsfromjavascriptapioutlook17officefrom"></a>from :[EmailAddressDetails](/javascript/api/outlook_1_7/office.emailaddressdetails)|[From](/javascript/api/outlook_1_7/office.from)
+#### <a name="from-emailaddressdetailsjavascriptapioutlook17officeemailaddressdetailsfromjavascriptapioutlook17officefrom"></a>发件人:[EmailAddressDetails](/javascript/api/outlook_1_7/office.emailaddressdetails)|[From](/javascript/api/outlook_1_7/office.from)
 
 获取邮件发件人的电子邮件地址。
 
-`from` 和 [`sender`](#sender-emailaddressdetailsjavascriptapioutlook17officeemailaddressdetails) 属性表示同一个人，邮件由代理人发送的除外。在此情况下，`from` 属性表示代理程序，而 sender 属性表示代理人。
+`from` 和 [`sender`](#sender-emailaddressdetails) 属性表示同一个人，邮件由代理人发送的除外。在此情况下，`from` 属性表示代理程序，而 sender 属性表示代理人。
 
 > [!NOTE]
 > `from` 属性中 `EmailAddressDetails` 对象的 `recipientType` 属性为 `undefined`。
 
-##### <a name="read-mode"></a>阅读模式
+##### <a name="read-mode"></a>读取模式
 
-`from` 属性返回一个 `EmailAddressDetails` 对象。
+`from`属性返回一个`EmailAddressDetails`对象。
 
 ```javascript
 var from = Office.context.mailbox.item.from;
@@ -389,7 +389,7 @@ console.log("From " + from);
 
 ##### <a name="compose-mode"></a>撰写模式
 
-`from` 属性返回一个 `From` 对象，该对象提供从值中进行获取的方法。
+`from`属性返回一个`From`对象, 该对象提供用于获取 "起始" 值的方法。
 
 ```javascript
 Office.context.mailbox.item.from.getAsync(callback);
@@ -401,9 +401,9 @@ function callback(asyncResult) {
 
 ##### <a name="type"></a>类型
 
-*   [EmailAddressDetails](/javascript/api/outlook_1_7/office.emailaddressdetails) | [From](/javascript/api/outlook_1_7/office.from)
+*   [EmailAddressDetails](/javascript/api/outlook_1_7/office.emailaddressdetails) | [](/javascript/api/outlook_1_7/office.from)
 
-##### <a name="requirements"></a>要求
+##### <a name="requirements"></a>Requirements
 
 |要求|||
 |---|---|---|
@@ -419,7 +419,7 @@ function callback(asyncResult) {
 
 *   String
 
-##### <a name="requirements"></a>要求
+##### <a name="requirements"></a>Requirements
 
 |要求|值|
 |---|---|
@@ -446,11 +446,11 @@ var internetMessageId = Office.context.mailbox.item.internetMessageId;
 
 你可以创建用于扩展默认邮件类别的自定义邮件类别，例如，自定义约会邮件类别 `IPM.Appointment.Contoso`。
 
-##### <a name="type"></a>Type
+##### <a name="type"></a>类型
 
 *   String
 
-##### <a name="requirements"></a>要求
+##### <a name="requirements"></a>Requirements
 
 |要求|值|
 |---|---|
@@ -478,7 +478,7 @@ console.log("Item class: " + itemClass);
 
 *   String
 
-##### <a name="requirements"></a>要求
+##### <a name="requirements"></a>Requirements
 
 |要求|值|
 |---|---|
@@ -570,13 +570,13 @@ function callback(asyncResult) {
 
 获取删除了所有前缀（包括 `RE:` 和 `FWD:`）的项目主题。仅限阅读模式。
 
-normalizedSubject 属性获取包含由电子邮件程序添加的任何标准前缀（如 `RE:` 和 `FW:`）的项目主题。若要获取包含完整前缀的项目主题，请使用 [`subject`](#subject-stringsubjectjavascriptapioutlook17officesubject) 属性。
+normalizedSubject 属性获取包含由电子邮件程序添加的任何标准前缀（如 `RE:` 和 `FW:`）的项目主题。若要获取包含完整前缀的项目主题，请使用 [`subject`](#subject-stringsubject) 属性。
 
 ##### <a name="type"></a>Type
 
 *   String
 
-##### <a name="requirements"></a>要求
+##### <a name="requirements"></a>Requirements
 
 |要求|值|
 |---|---|
@@ -657,13 +657,13 @@ function callback(asyncResult) {
 |[最低权限级别](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)|ReadItem|
 |[适用的 Outlook 模式](https://docs.microsoft.com/outlook/add-ins/#extension-points)|撰写或阅读|
 
-#### <a name="organizer-emailaddressdetailsjavascriptapioutlook17officeemailaddressdetailsorganizerjavascriptapioutlook17officeorganizer"></a>organizer :[EmailAddressDetails](/javascript/api/outlook_1_7/office.emailaddressdetails)|[Organizer](/javascript/api/outlook_1_7/office.organizer)
+#### <a name="organizer-emailaddressdetailsjavascriptapioutlook17officeemailaddressdetailsorganizerjavascriptapioutlook17officeorganizer"></a>组织者:[EmailAddressDetails](/javascript/api/outlook_1_7/office.emailaddressdetails)|[组织者](/javascript/api/outlook_1_7/office.organizer)
 
 获取指定会议的组织者的电子邮件地址。
 
-##### <a name="read-mode"></a>阅读模式
+##### <a name="read-mode"></a>读取模式
 
-`organizer` 属性返回 [EmailAddressDetails](/javascript/api/outlook_1_7/office.emailaddressdetails) 对象，它表示会议组织者。
+该`organizer`属性返回一个[EmailAddressDetails](/javascript/api/outlook_1_7/office.emailaddressdetails)对象, 该对象代表会议组织者。
 
 ```javascript
 var organizerName = Office.context.mailbox.item.organizer.displayName;
@@ -673,7 +673,7 @@ console.log("Organizer: " + organizerName + " (" + organizerAddress + ")");
 
 ##### <a name="compose-mode"></a>撰写模式
 
-`organizer` 属性返回 [Organizer](/javascript/api/outlook_1_7/office.organizer) 对象，该对象提供获取组织者值的方法。
+该`organizer`属性返回一个[管理](/javascript/api/outlook_1_7/office.organizer)器对象, 该对象提供获取组织者值的方法。
 
 ```javascript
 Office.context.mailbox.item.organizer.getAsync(
@@ -685,9 +685,9 @@ Office.context.mailbox.item.organizer.getAsync(
 
 ##### <a name="type"></a>类型
 
-*   [EmailAddressDetails](/javascript/api/outlook_1_7/office.emailaddressdetails) | [Organizer](/javascript/api/outlook_1_7/office.organizer)
+*   [EmailAddressDetails](/javascript/api/outlook_1_7/office.emailaddressdetails) | [组织者](/javascript/api/outlook_1_7/office.organizer)
 
-##### <a name="requirements"></a>要求
+##### <a name="requirements"></a>Requirements
 
 |要求|||
 |---|---|---|
@@ -695,17 +695,17 @@ Office.context.mailbox.item.organizer.getAsync(
 |[最低权限级别](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)|ReadItem|ReadWriteItem|
 |[适用的 Outlook 模式](https://docs.microsoft.com/outlook/add-ins/#extension-points)|阅读|撰写|
 
-#### <a name="nullable-recurrence-recurrencejavascriptapioutlook17officerecurrence"></a>(nullable) recurrence :[Recurrence](/javascript/api/outlook_1_7/office.recurrence)
+#### <a name="nullable-recurrence-recurrencejavascriptapioutlook17officerecurrence"></a>(可以为 null) 定期:[定期](/javascript/api/outlook_1_7/office.recurrence)
 
-获取或设置约会的定期模式。 获取或设置会议请求的定期模式。 阅读撰写约会项目的模式。 会议请求项目的阅读模式。
+获取或设置约会的定期模式。 获取会议请求的定期模式。 约会项目的阅读和撰写模式。 会议请求项目的阅读模式。
 
-如果项目是一个系列或系列中的一个实例，则 `recurrence` 属性将返回定期约会的 [recurrence](/javascript/api/outlook_1_7/office.recurrence) 对象或会议请求。 针对单个约会和单个约会的会议请求返回 `null`。 针对非会议请求的邮件返回 `undefined`。
+如果`recurrence`项目是系列中的一个系列或一个实例, 则该属性返回定期约会或会议请求的[定期](/javascript/api/outlook_1_7/office.recurrence)对象。 `null`返回单个约会的单个约会和会议请求。 `undefined`对于不是会议请求的邮件, 将返回。
 
-> 注意：会议请求的 `itemClass` 值为 IPM.Schedule.Meeting.Request。
+> 注意: 会议请求的`itemClass`值为 IPM。Schedule. 会议请求。
 
-> 注意：如果 recurrence 对象为 `null`，则这表示对象是单个约会或单个约会的会议请求，而不是系列的一部分。
+> 注意: 如果定期对象为`null`, 则表示该对象是单个约会的单个约会或会议请求, 而不是某个系列的一部分。
 
-##### <a name="read-mode"></a>阅读模式
+##### <a name="read-mode"></a>读取模式
 
 该`recurrence`属性返回一个代表约会定期的[定期](/javascript/api/outlook_1_7/office.recurrence)对象。 此功能适用于约会和会议请求。
 
@@ -745,7 +745,7 @@ Recurrence = {
 
 ##### <a name="type"></a>类型
 
-* [Recurrence](/javascript/api/outlook_1_7/office.recurrence)
+* [循环](/javascript/api/outlook_1_7/office.recurrence)
 
 |要求|值|
 |---|---|
@@ -797,7 +797,7 @@ function callback(asyncResult) {
 
 获取电子邮件发件人的电子邮件地址。仅限阅读模式。
 
-[`from`](#from-emailaddressdetailsjavascriptapioutlook17officeemailaddressdetailsfromjavascriptapioutlook17officefrom) 和 `sender` 属性表示同一个人，邮件由代理人发送的除外。在此情况下，`from` 属性表示代理程序，而 sender 属性表示代理人。
+[`from`](#from-emailaddressdetails) 和 `sender` 属性表示同一个人，邮件由代理人发送的除外。在此情况下，`from` 属性表示代理程序，而 sender 属性表示代理人。
 
 > [!NOTE]
 > `sender` 属性中 `EmailAddressDetails` 对象的 `recipientType` 属性为 `undefined`。
@@ -806,7 +806,7 @@ function callback(asyncResult) {
 
 *   [EmailAddressDetails](/javascript/api/outlook_1_7/office.emailaddressdetails)
 
-##### <a name="requirements"></a>Requirements
+##### <a name="requirements"></a>要求
 
 |要求|值|
 |---|---|
@@ -822,22 +822,22 @@ var senderAddress = Office.context.mailbox.item.sender.emailAddress;
 console.log("Sender: " + senderName + " (" + senderAddress + ")");
 ```
 
-#### <a name="nullable-seriesid-string"></a>(nullable) seriesId :String
+#### <a name="nullable-seriesid-string"></a>(可以为 null) webcasts&seriesid: String
 
-获取实例所属的系列的 ID。
+获取实例所属的系列的 id。
 
-在 OWA 和 Outlook 中，`seriesId` 返回此项目所属的父（系列）项目的 Exchange Web 服务 (EWS) ID。 但是，在 iOS 和 Android 中，`seriesId` 返回父项目的其余部分 ID。
+在 OWA 和 Outlook 中, `seriesId`返回此项所属的父 (系列) 项的 Exchange Web 服务 (EWS) ID。 但是, 在 iOS 和 Android 中, `seriesId`将返回父项的 REST ID。
 
 > [!NOTE]
-> `seriesId` 属性返回的标识符与 Exchange Web 服务项目标识符相同。 `seriesId` 属性与 Outlook REST API 使用的 Outlook ID 不同。 使用此值进行 REST API 调用前，应使用 [Office.context.mailbox.convertToRestId](office.context.mailbox.md#converttorestiditemid-restversion--string) 对它进行转换。 有关详细信息，请参阅[从 Outlook 加载项使用 Outlook REST API](https://docs.microsoft.com/outlook/add-ins/use-rest-api)。
+> `seriesId` 属性返回的标识符与 Exchange Web 服务项目标识符相同。 `seriesId`属性与 outlook REST API 使用的 outlook id 不相同。 使用此值进行 REST API 调用前，应使用 [Office.context.mailbox.convertToRestId](office.context.mailbox.md#converttorestiditemid-restversion--string) 对它进行转换。 有关详细信息，请参阅[从 Outlook 加载项使用 Outlook REST API](https://docs.microsoft.com/outlook/add-ins/use-rest-api)。
 
-`seriesId` 属性对于没有父项目（如单个约会、系列项目或会议请求）的项目返回 `null`，对于非会议请求的任何其他项目，返回 `undefined`。
+对于`seriesId`不包含`null`父项 (如单个约会、系列项或会议请求) 的项, 该属性将返回, `undefined`对于不是会议请求的任何其他项, 该属性返回。
 
 ##### <a name="type"></a>Type
 
 * String
 
-##### <a name="requirements"></a>要求
+##### <a name="requirements"></a>Requirements
 
 |要求|值|
 |---|---|
@@ -862,9 +862,9 @@ console.log("SeriesId is " + seriesId + " and isSeriesInstance is " + isSeriesIn
 
 获取或设置约会开始的日期和时间。
 
-将 `start` 属性表示为协调世界时 (UTC) 的日期和时间值。可使用 [`convertToLocalClientTime`](office.context.mailbox.md#converttolocalclienttimetimevalue--localclienttimejavascriptapioutlook17officelocalclienttime) 方法将该值转换为客户端的本地日期和时间。
+将 `start` 属性表示为协调世界时 (UTC) 的日期和时间值。可使用 [`convertToLocalClientTime`](office.context.mailbox.md#converttolocalclienttimetimevalue--localclienttime) 方法将该值转换为客户端的本地日期和时间。
 
-##### <a name="read-mode"></a>阅读模式
+##### <a name="read-mode"></a>读取模式
 
 `start` 属性返回 `Date` 对象。
 
@@ -943,7 +943,7 @@ function callback(asyncResult) {
 
 *   String | [Subject](/javascript/api/outlook_1_7/office.subject)
 
-##### <a name="requirements"></a>要求
+##### <a name="requirements"></a>Requirements
 
 |要求|值|
 |---|---|
@@ -997,17 +997,17 @@ function callback(asyncResult) {
 
 `addFileAttachmentAsync` 方法在指定的 URI 上载文件并将其附加到撰写窗体中的项目。
 
-你随后可以将该标识符与 [`removeAttachmentAsync`](#removeattachmentasyncattachmentid-options-callback) 方法一同使用，以删除同一个会话中的附件。
+随后可以将该标识符与 [`removeAttachmentAsync`](#removeattachmentasyncattachmentid-options-callback) 方法一同使用，以删除同一个会话中的附件。
 
-##### <a name="parameters"></a>Parameters
+##### <a name="parameters"></a>参数
 |名称|类型|属性|说明|
 |---|---|---|---|
 |`uri`|String||提供附加到邮件或约会的文件的位置的 URI。最大长度为 2048 个字符。|
 |`attachmentName`|字符串||在附件上载过程中显示的附件名称。最大长度为 255 个字符。|
-|`options`|Object|&lt;可选&gt;|包含一个或多个以下属性的对象文本。|
-|`options.asyncContext`|对象|&lt;可选&gt;|开发人员可以提供他们想要在回调方法中访问的任何对象。|
-|`options.isInline`|布尔值|&lt;可选&gt;|如果为 `true`，则表示附件将在邮件正文中内联显示，并且不应显示在附件列表中。|
-|`callback`|函数|&lt;optional&gt;|方法完成后，使用单个参数 `asyncResult`（一个 [`AsyncResult`](/javascript/api/office/office.asyncresult) 对象）调用在 `callback` 参数中传递的函数。 <br/>如果成功，附件标识符将在 `asyncResult.value` 属性中提供。<br/>如果上传附件失败，`asyncResult` 对象将包含一个提供错误说明的 `Error` 对象。|
+|`options`|对象|&lt;optional&gt;|包含一个或多个以下属性的对象文本。|
+|`options.asyncContext`|对象|&lt;optional&gt;|开发人员可以提供他们想要在回调方法中访问的任何对象。|
+|`options.isInline`|布尔值|&lt;optional&gt;|如果为 `true`，则表示附件将在邮件正文中内联显示，并且不应显示在附件列表中。|
+|`callback`|函数|&lt;可选&gt;|方法完成后，使用单个参数 `asyncResult`（一个 [`AsyncResult`](/javascript/api/office/office.asyncresult) 对象）调用在 `callback` 参数中传递的函数。 <br/>如果成功，附件标识符将在 `asyncResult.value` 属性中提供。<br/>如果上传附件失败，`asyncResult` 对象将包含一个提供错误说明的 `Error` 对象。|
 
 ##### <a name="errors"></a>错误
 
@@ -1017,7 +1017,7 @@ function callback(asyncResult) {
 |`FileTypeNotSupported`|该附件的扩展名不是允许的扩展名。|
 |`NumberOfAttachmentsExceeded`|邮件或约会具有的附件过多。|
 
-##### <a name="requirements"></a>要求
+##### <a name="requirements"></a>Requirements
 
 |要求|值|
 |---|---|
@@ -1070,16 +1070,16 @@ Office.context.mailbox.item.addFileAttachmentAsync(
 
 添加支持事件的事件处理程序。
 
-当前，支持的事件类型是 `Office.EventType.AppointmentTimeChanged`、`Office.EventType.RecipientsChanged` 和 `Office.EventType.RecurrenceChanged`
+目前, 受支持的事件`Office.EventType.AppointmentTimeChanged`类型`Office.EventType.RecipientsChanged`是、和`Office.EventType.RecurrenceChanged`
 
-##### <a name="parameters"></a>Parameters
+##### <a name="parameters"></a>参数
 
 | 名称 | 类型 | 属性 | 说明 |
 |---|---|---|---|
 | `eventType` | [Office.EventType](office.md#eventtype-string) || 应调用处理程序的事件。 |
 | `handler` | 函数 || 用于处理事件的函数。此函数必须接受一个参数，即对象文本。参数上的 `type` 属性将匹配传递给 `addHandlerAsync` 的 `eventType` 参数。 |
-| `options` | Object | &lt;可选&gt; | 包含一个或多个以下属性的对象文本。 |
-| `options.asyncContext` | 对象 | &lt;可选&gt; | 开发人员可以提供他们想要在回调方法中访问的任何对象。 |
+| `options` | 对象 | &lt;optional&gt; | 包含一个或多个以下属性的对象文本。 |
+| `options.asyncContext` | 对象 | &lt;optional&gt; | 开发人员可以提供他们想要在回调方法中访问的任何对象。 |
 | `callback` | 函数| &lt;可选&gt;|方法完成后，使用单个参数 `callback`（一个 [`asyncResult`](/javascript/api/office/office.asyncresult) 对象）调用在 `AsyncResult` 参数中传递的函数。|
 
 ##### <a name="requirements"></a>Requirements
@@ -1110,19 +1110,19 @@ Office.context.mailbox.item.addHandlerAsync(Office.EventType.AttachmentsChanged,
 
 `addItemAttachmentAsync` 方法将包含指定 Exchange 标识符的项目附加到撰写窗体中的项目。如果指定一个回调方法，此方法使用 `asyncResult` 参数调用，该参数包含一个附件标识符或代码，指示附加项目过程中出现的任何错误。可以使用 `options` 参数将状态信息传递给回调方法（如果需要）。
 
-随后可以将该标识符与 [`removeAttachmentAsync`](#removeattachmentasyncattachmentid-options-callback) 方法一同使用，以删除同一个会话中的附件。
+你随后可以将该标识符与 [`removeAttachmentAsync`](#removeattachmentasyncattachmentid-options-callback) 方法一同使用，以删除同一个会话中的附件。
 
 如果 Office 加载项在 Outlook Web App 中运行，则 `addItemAttachmentAsync` 方法可以将项目附加到项目（正在编辑的项目除外）中；然而，不支持也不建议这样做。
 
-##### <a name="parameters"></a>Parameters
+##### <a name="parameters"></a>参数
 
 |名称|类型|属性|说明|
 |---|---|---|---|
 |`itemId`|String||要附加的项目的 Exchange 标识符。最大长度为 100 个字符。|
-|`attachmentName`|字符串||要附加的项目的主题。 最大长度为 255 个字符。|
-|`options`|对象|&lt;可选&gt;|包含一个或多个以下属性的对象文本。|
-|`options.asyncContext`|对象|&lt;可选&gt;|开发人员可以提供他们想要在回调方法中访问的任何对象。|
-|`callback`|函数|&lt;可选&gt;|方法完成后，使用单个参数 `asyncResult`（一个 [`AsyncResult`](/javascript/api/office/office.asyncresult) 对象）调用在 `callback` 参数中传递的函数。 <br/>如果成功，附件标识符将在 `asyncResult.value` 属性中提供。<br/>如果添加附件失败，`asyncResult` 对象将包含一个提供错误说明的 `Error` 对象。|
+|`attachmentName`|String||要附加的项目的主题。 最大长度为 255 个字符。|
+|`options`|对象|&lt;optional&gt;|包含一个或多个以下属性的对象文本。|
+|`options.asyncContext`|对象|&lt;optional&gt;|开发人员可以提供他们想要在回调方法中访问的任何对象。|
+|`callback`|函数|&lt;optional&gt;|方法完成后，使用单个参数 `asyncResult`（一个 [`AsyncResult`](/javascript/api/office/office.asyncresult) 对象）调用在 `callback` 参数中传递的函数。 <br/>如果成功，附件标识符将在 `asyncResult.value` 属性中提供。<br/>如果添加附件失败，`asyncResult` 对象将包含一个提供错误说明的 `Error` 对象。|
 
 ##### <a name="errors"></a>错误
 
@@ -1174,7 +1174,7 @@ function addAttachment() {
 
 在 Outlook 桌面客户端中，如果邮件是内联答复，`close` 方法不起作用。
 
-##### <a name="requirements"></a>要求
+##### <a name="requirements"></a>Requirements
 
 |要求|值|
 |---|---|
@@ -1182,7 +1182,7 @@ function addAttachment() {
 |[最低权限级别](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)|受限|
 |[适用的 Outlook 模式](https://docs.microsoft.com/outlook/add-ins/#extension-points)|撰写|
 
-#### <a name="displayreplyallformformdata-callback"></a>displayReplyAllForm (formData, [callback])
+#### <a name="displayreplyallformformdata-callback"></a>displayReplyAllForm(formData, [callback])
 
 显示答复窗体，其中包括所选邮件的发件人和所有收件人或所选约会的组织者和所有与会者。
 
@@ -1195,21 +1195,21 @@ function addAttachment() {
 
 当在 `formData.attachments` 参数中指定附件时，Outlook 和 Outlook Web App 尝试下载所有附件并将其附加到答复窗体。如果无法添加任何附件，则在窗体 UI 中显示错误。如果这不可能，则不引发错误消息。
 
-##### <a name="parameters"></a>Parameters
+##### <a name="parameters"></a>参数
 
 |名称|类型|属性|说明|
 |---|---|---|---|
-|`formData`|字符串 &#124; 对象||一个包含文本和 HTML 且表示答复窗体的正文的字符串。字符串限制为 32 KB。<br/>**或**<br/>包含正文或附件数据和回调函数的对象。对象定义如下。|
-|`formData.htmlBody`|String|&lt;可选&gt;|一个包含文本和 HTML 且表示答复窗体的正文的字符串。字符串限制为 32 KB。
+|`formData`|字符串 &#124; 对象||一个包含文本和 HTML 且表示答复窗体的正文的字符串。 字符串限制为 32 KB。<br/>**或**<br/>包含正文或附件数据和回调函数的对象。对象定义如下。|
+|`formData.htmlBody`|String|&lt;optional&gt;|一个包含文本和 HTML 且表示答复窗体的正文的字符串。字符串限制为 32 KB。
 |`formData.attachments`|Array.&lt;Object&gt;|&lt;可选&gt;|JSON 对象（是文件或项目附件）的数组。|
 |`formData.attachments.type`|String||指示附件的类型。必须是文件附件的 `file` 或项目附件的 `item`。|
-|`formData.attachments.name`|字符串||一个包含附件的名称的字符串，最多包含 255 个字符。|
+|`formData.attachments.name`|String||一个包含附件的名称的字符串，最多包含 255 个字符。|
 |`formData.attachments.url`|String||仅在将 `type` 设置为 `file` 时使用。文件的位置的 URI。|
-|`formData.attachments.isInline`|Boolean||仅在将 `type` 设置为 `file` 时使用。如果为 `true`，则表示附件将在邮件正文中内联显示，并且不应显示在附件列表中。|
-|`formData.attachments.itemId`|String||仅在将 `type` 设置为 `item` 时使用。附件的 EWS 项目 ID。字符串最长为 100 个字符。|
+|`formData.attachments.isInline`|布尔||仅在将 `type` 设置为 `file` 时使用。如果为 `true`，则表示附件将在邮件正文中内联显示，并且不应显示在附件列表中。|
+|`formData.attachments.itemId`|字符串||仅在将 `type` 设置为 `item` 时使用。附件的 EWS 项目 ID。字符串最长为 100 个字符。|
 |`callback`|函数|&lt;可选&gt;|方法完成后，使用单个参数 `asyncResult`（一个 [AsyncResult](/javascript/api/office/office.asyncresult) 对象）调用在 `callback` 参数中传递的函数。|
 
-##### <a name="requirements"></a>Requirements
+##### <a name="requirements"></a>要求
 
 |要求|值|
 |---|---|
@@ -1301,7 +1301,7 @@ Office.context.mailbox.item.displayReplyAllForm(
 });
 ```
 
-#### <a name="displayreplyformformdata-callback"></a>displayReplyForm (formData, [callback])
+#### <a name="displayreplyformformdata-callback"></a>displayReplyForm(formData, [callback])
 
 显示答复窗体，其中仅包括所选邮件的发件人或所选约会的组织者。
 
@@ -1314,18 +1314,18 @@ Office.context.mailbox.item.displayReplyAllForm(
 
 当在 `formData.attachments` 参数中指定附件时，Outlook 和 Outlook Web App 尝试下载所有附件并将其附加到答复窗体。如果无法添加任何附件，则在窗体 UI 中显示错误。如果这不可能，则不引发错误消息。
 
-##### <a name="parameters"></a>Parameters
+##### <a name="parameters"></a>参数
 
 |名称|类型|属性|说明|
 |---|---|---|---|
-|`formData`|字符串 &#124; 对象||一个包含文本和 HTML 且表示答复窗体的正文的字符串。字符串限制为 32 KB。<br/>**或**<br/>包含正文或附件数据和回调函数的对象。对象定义如下。|
-|`formData.htmlBody`|String|&lt;可选&gt;|一个包含文本和 HTML 且表示答复窗体的正文的字符串。字符串限制为 32 KB。
+|`formData`|字符串 &#124; 对象||一个包含文本和 HTML 且表示答复窗体的正文的字符串。 字符串限制为 32 KB。<br/>**或**<br/>包含正文或附件数据和回调函数的对象。对象定义如下。|
+|`formData.htmlBody`|String|&lt;optional&gt;|一个包含文本和 HTML 且表示答复窗体的正文的字符串。字符串限制为 32 KB。
 |`formData.attachments`|Array.&lt;Object&gt;|&lt;可选&gt;|JSON 对象（是文件或项目附件）的数组。|
 |`formData.attachments.type`|String||指示附件的类型。必须是文件附件的 `file` 或项目附件的 `item`。|
-|`formData.attachments.name`|字符串||一个包含附件的名称的字符串，最多包含 255 个字符。|
+|`formData.attachments.name`|String||一个包含附件的名称的字符串，最多包含 255 个字符。|
 |`formData.attachments.url`|String||仅在将 `type` 设置为 `file` 时使用。文件的位置的 URI。|
-|`formData.attachments.isInline`|Boolean||仅在将 `type` 设置为 `file` 时使用。如果为 `true`，则表示附件将在邮件正文中内联显示，并且不应显示在附件列表中。|
-|`formData.attachments.itemId`|String||仅在将 `type` 设置为 `item` 时使用。附件的 EWS 项目 ID。字符串最长为 100 个字符。|
+|`formData.attachments.isInline`|布尔||仅在将 `type` 设置为 `file` 时使用。如果为 `true`，则表示附件将在邮件正文中内联显示，并且不应显示在附件列表中。|
+|`formData.attachments.itemId`|字符串||仅在将 `type` 设置为 `item` 时使用。附件的 EWS 项目 ID。字符串最长为 100 个字符。|
 |`callback`|函数|&lt;可选&gt;|方法完成后，使用单个参数 `asyncResult`（一个 [AsyncResult](/javascript/api/office/office.asyncresult) 对象）调用在 `callback` 参数中传递的函数。|
 
 ##### <a name="requirements"></a>Requirements
@@ -1427,7 +1427,7 @@ Office.context.mailbox.item.displayReplyForm(
 > [!NOTE]
 > 在 Outlook for iOS 或 Outlook for Android 中不支持此方法。
 
-##### <a name="requirements"></a>要求
+##### <a name="requirements"></a>Requirements
 
 |要求|值|
 |---|---|
@@ -1454,9 +1454,9 @@ var contacts = Office.context.mailbox.item.getEntities().contacts;
 > [!NOTE]
 > 在 Outlook for iOS 或 Outlook for Android 中不支持此方法。
 
-##### <a name="parameters"></a>Parameters
+##### <a name="parameters"></a>参数
 
-|名称|说明|说明|
+|名称|类型|说明|
 |---|---|---|
 |`entityType`|[Office.MailboxEnums.EntityType](/javascript/api/outlook_1_7/office.mailboxenums.entitytype)|EntityType 枚举值之一。|
 
@@ -1476,9 +1476,9 @@ var contacts = Office.context.mailbox.item.getEntities().contacts;
 
 |`entityType` 的值|返回的数组中对象的类型|所需权限级别|
 |---|---|---|
-|`Address`|字符串|**受限**|
-|`Contact`|Contact|**ReadItem**|
-|`EmailAddress`|String|**ReadItem**|
+|`Address`|String|**受限**|
+|`Contact`|联系人|**ReadItem**|
+|`EmailAddress`|字符串|**ReadItem**|
 |`MeetingSuggestion`|MeetingSuggestion|**ReadItem**|
 |`PhoneNumber`|PhoneNumber|**受限**|
 |`TaskSuggestion`|TaskSuggestion|**ReadItem**|
@@ -1513,11 +1513,11 @@ Office.initialize = function () {
 
 `getFilteredEntitiesByName` 方法返回匹配在具有指定 `FilterName` 元素值的清单 XML 文件中的 [ItemHasKnownEntity](/office/dev/add-ins/reference/manifest/rule#itemhasknownentity-rule) 规则元素中定义的正则表达式的实体。
 
-##### <a name="parameters"></a>Parameters
+##### <a name="parameters"></a>参数
 
-|名称|说明|说明|
+|名称|类型|说明|
 |---|---|---|
-|`name`|字符串|定义筛选器匹配的 `ItemHasKnownEntity` 规则元素的名称。|
+|`name`|String|定义筛选器匹配的 `ItemHasKnownEntity` 规则元素的名称。|
 
 ##### <a name="requirements"></a>要求
 
@@ -1579,9 +1579,7 @@ Office.initialize = function () {
 
 <dl class="param-type">
 
-<dt>
-类型</dt>
-
+<dt> 类型</dt>
 
 <dd>对象</dd>
 
@@ -1608,13 +1606,13 @@ var veggies = allMatches.veggies;
 
 如果在项目的正文属性上指定 `ItemHasRegularExpressionMatch` 规则，则正则表达式应进一步筛选正文，不应尝试返回该项目的整个正文。使用正则表达式（如 `.*`）获取项目的整个正文并不总是返回预期的结果。
 
-##### <a name="parameters"></a>Parameters
+##### <a name="parameters"></a>参数
 
-|名称|说明|说明|
+|名称|类型|说明|
 |---|---|---|
-|`name`|字符串|定义筛选器匹配的 `ItemHasRegularExpressionMatch` 规则元素的名称。|
+|`name`|String|定义筛选器匹配的 `ItemHasRegularExpressionMatch` 规则元素的名称。|
 
-##### <a name="requirements"></a>要求
+##### <a name="requirements"></a>Requirements
 
 |要求|值|
 |---|---|
@@ -1647,7 +1645,7 @@ var veggies = Office.context.mailbox.item.getRegExMatchesByName("veggies");
 
 如果没有选定内容，但光标位于正文或主题中，此方法将会为所选数据返回 null。如果选定的是字段，而不是正文或主题，则此方法返回 `InvalidSelection` 错误。
 
-##### <a name="parameters"></a>Parameters
+##### <a name="parameters"></a>参数
 
 |名称|类型|属性|说明|
 |---|---|---|---|
@@ -1656,7 +1654,7 @@ var veggies = Office.context.mailbox.item.getRegExMatchesByName("veggies");
 |`options.asyncContext`|对象|&lt;可选&gt;|开发人员可以提供他们想要在回调方法中访问的任何对象。|
 |`callback`|函数||方法完成后，使用单个参数 `asyncResult`（一个 [`AsyncResult`](/javascript/api/office/office.asyncresult) 对象）调用在 `callback` 参数中传递的函数。<br/><br/>若要从回调方法访问所选数据，请调用 `asyncResult.value.data`。 若要访问选定内容的源属性，请调用 `asyncResult.value.sourceProperty`，这将为 `body` 或 `subject`。|
 
-##### <a name="requirements"></a>要求
+##### <a name="requirements"></a>Requirements
 
 |要求|值|
 |---|---|
@@ -1674,7 +1672,7 @@ var veggies = Office.context.mailbox.item.getRegExMatchesByName("veggies");
 类型</dt>
 
 
-<dd>String</dd>
+<dd>字符串</dd>
 
 </dl>
 
@@ -1700,7 +1698,7 @@ function setCallback(asyncResult) {
 
 #### <a name="getselectedentities--entitiesjavascriptapioutlook17officeentities"></a>getSelectedEntities() → {[Entities](/javascript/api/outlook_1_7/office.entities)}
 
-获取在用户已选择的突出显示匹配项中找到的实体。突出显示匹配项适用于[上下文加载项](https://docs.microsoft.com/outlook/add-ins/contextual-outlook-add-ins)。
+获取在用户已选择的突出显示匹配项中找到的实体。 突出显示匹配项适用于[上下文外接程序](https://docs.microsoft.com/outlook/add-ins/contextual-outlook-add-ins)。
 
 > [!NOTE]
 > 在 Outlook for iOS 或 Outlook for Android 中不支持此方法。
@@ -1785,14 +1783,14 @@ var veggies = selectedMatches.veggies;
 
 自定义属性基于每个应用、每个项目存储为键/值对。此方法在回调中返回 `CustomProperties` 对象，该回调提供访问特定于当前项目和当前外接程序的自定义属性的方法。自定义属性未在项目上加密，因此这不应用作安全存储。
 
-##### <a name="parameters"></a>Parameters
+##### <a name="parameters"></a>参数
 
 |名称|类型|属性|说明|
 |---|---|---|---|
 |`callback`|函数||方法完成后，使用单个参数 `asyncResult`（一个 [`AsyncResult`](/javascript/api/office/office.asyncresult) 对象）调用在 `callback` 参数中传递的函数。<br/><br/>自定义属性作为 `asyncResult.value` 属性中的 [`CustomProperties`](/javascript/api/outlook_1_7/office.customproperties) 对象提供。 此对象可用于获取、设置以及从项目中删除自定义属性，并将自定义属性集的更改重新保存到服务器。|
 |`userContext`|对象|&lt;可选&gt;|开发人员可以提供他们想要在回调函数中访问的任何对象。 此对象可以通过回调函数中的 `asyncResult.asyncContext` 属性进行访问。|
 
-##### <a name="requirements"></a>要求
+##### <a name="requirements"></a>Requirements
 
 |要求|值|
 |---|---|
@@ -1833,14 +1831,14 @@ function saveCallback(asyncResult) {
 
 `removeAttachmentAsync` 方法删除项目中带指定标识符的附件。最佳做法是，仅当同一个邮件应用程序在同一会话中添加了一个附件时，你才应使用该附件标识符来删除该附件。在 Outlook Web App 和适用于设备的 OWA 中，附件标识符只在同一个会话中才有效。当用户关闭应用程序，或者如果用户开始在内嵌窗体中撰写，并在随后弹出的内嵌窗体中继续在单独的窗口撰写时，会话即结束。
 
-##### <a name="parameters"></a>Parameters
+##### <a name="parameters"></a>参数
 
 |名称|类型|属性|说明|
 |---|---|---|---|
-|`attachmentId`|字符串||要删除的附件的标识符。|
-|`options`|对象|&lt;可选&gt;|包含一个或多个以下属性的对象文本。|
-|`options.asyncContext`|对象|&lt;可选&gt;|开发人员可以提供他们想要在回调方法中访问的任何对象。|
-|`callback`|函数|&lt;可选&gt;|方法完成后，使用单个参数 `callback`（一个 [`asyncResult`](/javascript/api/office/office.asyncresult) 对象）调用在 `AsyncResult` 参数中传递的函数。 <br/>如果删除附件失败，`asyncResult.error` 属性将包含一个说明失败原因的错误代码。|
+|`attachmentId`|String||要删除的附件的标识符。|
+|`options`|对象|&lt;optional&gt;|包含一个或多个以下属性的对象文本。|
+|`options.asyncContext`|对象|&lt;optional&gt;|开发人员可以提供他们想要在回调方法中访问的任何对象。|
+|`callback`|function|&lt;可选&gt;|方法完成后，使用单个参数 `callback`（一个 [`asyncResult`](/javascript/api/office/office.asyncresult) 对象）调用在 `AsyncResult` 参数中传递的函数。 <br/>如果删除附件失败，`asyncResult.error` 属性将包含一个说明失败原因的错误代码。|
 
 ##### <a name="errors"></a>错误
 
@@ -1875,16 +1873,16 @@ Office.context.mailbox.item.removeAttachmentAsync(
 
 删除受支持事件类型的事件处理程序。
 
-当前，支持的事件类型是 `Office.EventType.AppointmentTimeChanged`、`Office.EventType.RecipientsChanged` 和 `Office.EventType.RecurrenceChanged`
+目前, 受支持的事件`Office.EventType.AppointmentTimeChanged`类型`Office.EventType.RecipientsChanged`是、和`Office.EventType.RecurrenceChanged`
 
-##### <a name="parameters"></a>Parameters
+##### <a name="parameters"></a>参数
 
 | 名称 | 类型 | 属性 | 说明 |
 |---|---|---|---|
 | `eventType` | [Office.EventType](office.md#eventtype-string) || 应调用处理程序的事件。 |
-| `options` | 对象 | &lt;可选&gt; | 包含一个或多个以下属性的对象文本。 |
-| `options.asyncContext` | 对象 | &lt;可选&gt; | 开发人员可以提供他们想要在回调方法中访问的任何对象。 |
-| `callback` | 函数| &lt;可选&gt;|方法完成后，使用单个参数 `callback`（一个 [`asyncResult`](/javascript/api/office/office.asyncresult) 对象）调用在 `AsyncResult` 参数中传递的函数。|
+| `options` | 对象 | &lt;optional&gt; | 包含一个或多个以下属性的对象文本。 |
+| `options.asyncContext` | 对象 | &lt;optional&gt; | 开发人员可以提供他们想要在回调方法中访问的任何对象。 |
+| `callback` | function| &lt;可选&gt;|方法完成后，使用单个参数 `callback`（一个 [`asyncResult`](/javascript/api/office/office.asyncresult) 对象）调用在 `AsyncResult` 参数中传递的函数。|
 
 ##### <a name="requirements"></a>Requirements
 
@@ -1925,15 +1923,15 @@ Office.initialize = function (reason) {
 > - Mac Outlook 不支持在撰写模式下对会议执行 `saveAsync` 操作。 对 Mac Outlook 中的会议调用 `saveAsync` 将会返回一个错误。
 > - 在撰写模式下的约会上调用 `saveAsync` 时，Outlook 网页版始终发送邀请或更新。
 
-##### <a name="parameters"></a>Parameters
+##### <a name="parameters"></a>参数
 
-|名称|类型|属性|说明|
+|名称|类型|属性|描述|
 |---|---|---|---|
-|`options`|对象|&lt;可选&gt;|包含一个或多个以下属性的对象文本。|
-|`options.asyncContext`|对象|&lt;可选&gt;|开发人员可以提供他们想要在回调方法中访问的任何对象。|
-|`callback`|函数||方法完成后，使用单个参数 `asyncResult`（一个 [`AsyncResult`](/javascript/api/office/office.asyncresult) 对象）调用在 `callback` 参数中传递的函数。<br/><br/>如果成功，该项目标识符将在 `asyncResult.value` 属性中提供。|
+|`options`|对象|&lt;optional&gt;|包含一个或多个以下属性的对象文本。|
+|`options.asyncContext`|对象|&lt;optional&gt;|开发人员可以提供他们想要在回调方法中访问的任何对象。|
+|`callback`|function||方法完成后，使用单个参数 `asyncResult`（一个 [`AsyncResult`](/javascript/api/office/office.asyncresult) 对象）调用在 `callback` 参数中传递的函数。<br/><br/>如果成功，该项目标识符将在 `asyncResult.value` 属性中提供。|
 
-##### <a name="requirements"></a>要求
+##### <a name="requirements"></a>Requirements
 
 |要求|值|
 |---|---|
@@ -1965,13 +1963,13 @@ Office.context.mailbox.item.saveAsync(
 
 `setSelectedDataAsync` 方法将指定字符串插入到项目主题或正文的光标位置，或者，如果在编辑器中已选择文本，则该方法将替换选择的文本。如果光标不在正文或主题字段中，则返回错误。插入之后，光标会位于插入内容的末尾。
 
-##### <a name="parameters"></a>Parameters
+##### <a name="parameters"></a>参数
 
 |名称|类型|属性|说明|
 |---|---|---|---|
-|`data`|字符串||要插入的数据。数据不得超过 1,000,000 个字符。如果传入的数据超过 1,000,000 个字符，则会引发 `ArgumentOutOfRange` 异常。|
-|`options`|Object|&lt;可选&gt;|包含一个或多个以下属性的对象文本。|
-|`options.asyncContext`|对象|&lt;可选&gt;|开发人员可以提供他们想要在回调方法中访问的任何对象。|
+|`data`|String||要插入的数据。数据不得超过 1,000,000 个字符。如果传入的数据超过 1,000,000 个字符，则会引发 `ArgumentOutOfRange` 异常。|
+|`options`|对象|&lt;optional&gt;|包含一个或多个以下属性的对象文本。|
+|`options.asyncContext`|对象|&lt;optional&gt;|开发人员可以提供他们想要在回调方法中访问的任何对象。|
 |`options.coercionType`|[Office.CoercionType](office.md#coerciontype-string)|&lt;optional&gt;|如果为 `text`，则在 Outlook Web App 和 Outlook 中应用当前样式。如果该字段是 HTML 编辑器，则仅插入文本数据，即使数据为 HTML。<br/><br/>如果 `html` 和该字段支持 HTML（主题不支持），则在 Outlook Web App 中应用当前样式，而在 Outlook 中应用默认样式。如果该字段是文本字段，则返回 `InvalidDataFormat` 错误。<br/><br/>如果未设置 `coercionType`，则结果取决于该字段：如果该字段是 HTML，则使用 HTML；如果该字段是文本，则使用纯文本。|
 |`callback`|function||方法完成后，使用单个参数 `callback`（一个 [`asyncResult`](/javascript/api/office/office.asyncresult) 对象）调用在 `AsyncResult` 参数中传递的函数。|
 
