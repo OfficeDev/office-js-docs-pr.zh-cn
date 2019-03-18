@@ -1,14 +1,14 @@
 ---
 title: 使用 Excel JavaScript API 处理图表
 description: ''
-ms.date: 12/04/2017
+ms.date: 03/11/2019
 localization_priority: Priority
-ms.openlocfilehash: 72724c4efd6f87bad90b64b4ac363c796de952bd
-ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
+ms.openlocfilehash: f058110c7c150a75c847a07df83aa2795c891025
+ms.sourcegitcommit: 8fb60c3a31faedaea8b51b46238eb80c590a2491
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "29387875"
+ms.lasthandoff: 03/14/2019
+ms.locfileid: "30600261"
 ---
 # <a name="work-with-charts-using-the-excel-javascript-api"></a>使用 Excel JavaScript API 处理图表
 
@@ -66,7 +66,7 @@ Excel.run(function (context) {
 
 ## <a name="set-chart-title"></a>设置图表标题
 
-下面的代码示例将工作表中的第一个图表标题设置为**年度销售数据**。 
+下面的代码示例将工作表中的第一个图表标题设置为**年度销售数据**。
 
 ```js
 Excel.run(function (context) {
@@ -186,6 +186,33 @@ Excel.run(function (context) {
 **带线性趋势线的图表**
 
 ![Excel 中带线性趋势线的图表](../images/excel-charts-trendline-linear.png)
+
+## <a name="export-a-chart-as-an-image"></a>将图表导出为图像
+
+图表可以呈现为 Excel 之外的图像。 `Chart.getImage` 将图表作为 base64 编码的字符串返回，将图表表示为 JPEG 图像。 以下代码显示如何获取图像字符串并将其记录到控制台。
+
+```js
+Excel.run(function (ctx) {
+    var chart = ctx.workbook.worksheets.getItem("Sheet1").charts.getItem("Chart1");
+    var imageAsString = chart.getImage();
+    return context.sync().then(function () {
+        console.log(imageAsString.value);
+        // Instead of logging, your add-in may use the base64-encoded string to save the image as a file or insert it in HTML.
+    });
+}).catch(errorHandlerFunction);
+```
+
+`Chart.getImage` 采用三个可选参数：宽度、高度和调整模式。
+
+```typescript
+getImage(width?: number, height?: number, fittingMode?: Excel.ImageFittingMode): OfficeExtension.ClientResult<string>;
+```
+
+这些参数决定图像的大小。 图像始终按比例缩放。 宽度和高度参数在缩放图像上设置上限或下限。 `ImageFittingMode` 具有三个值和以下行为：
+
+- `Fill`：图像的最小高度或宽度是指定的高度或宽度（缩放图像时首先达到的值）。 这是未指定调整模式时的默认行为。
+- `Fit`：图像的最大高度或宽度是指定的高度或宽度（缩放图像时首先达到的值）。
+- `FitAndCenter`：图像的最大高度或宽度是指定的高度或宽度（缩放图像时首先达到的值）。 生成的图像相对于另一个维度居中。
 
 ## <a name="see-also"></a>另请参阅
 
