@@ -1,14 +1,14 @@
 ---
 title: Office 加载项中的对话框
 description: ''
-ms.date: 2/28/2019
+ms.date: 02/28/2019
 localization_priority: Priority
-ms.openlocfilehash: 1710d609910cc3c15143605570f97d013a104194
-ms.sourcegitcommit: f7f3d38ae4430e2218bf0abe7bb2976108de3579
+ms.openlocfilehash: 3638006c30515a1fcae93ccfdbd43e0e92005c37
+ms.sourcegitcommit: c5daedf017c6dd5ab0c13607589208c3f3627354
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "30359217"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "30691102"
 ---
 # <a name="dialog-boxes-in-office-add-ins"></a>Office 加载项中的对话框
  

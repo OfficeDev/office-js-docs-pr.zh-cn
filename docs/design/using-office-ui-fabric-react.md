@@ -1,14 +1,14 @@
 ---
 title: 在 Office 加载项中使用 Office UI Fabric React
 description: ''
-ms.date: 2/28/2019
+ms.date: 02/28/2019
 localization_priority: Priority
-ms.openlocfilehash: 7d3e280298ee6761be9e7ced96d3490defeef7f0
-ms.sourcegitcommit: f7f3d38ae4430e2218bf0abe7bb2976108de3579
+ms.openlocfilehash: 11bb9daf99d85f1c4551363e9f04056870631378
+ms.sourcegitcommit: c5daedf017c6dd5ab0c13607589208c3f3627354
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "30359238"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "30691144"
 ---
 # <a name="use-office-ui-fabric-react-in-office-add-ins"></a>在 Office 加载项中使用 Office UI Fabric React
 
@@ -29,7 +29,7 @@ Office UI Fabric 是用于生成 Office 和 Office 365 用户体验的 JavaScrip
 2. 运行 `yo office`，为外接程序创建项目文件。
 3. 当系统提示你选择一个 Office 客户端应用程序时，请选择 **Word**。
 4. 确保位于包含项目文件的目录中，再运行 `npm start`。此时，显示旋转图标的浏览器窗口自动打开。
-5. [旁加载清单](..\testing\test-debug-office-add-ins.md)，以查看加载项的完整 UI。
+5. [旁加载清单](../testing/test-debug-office-add-ins.md)，以查看加载项的完整 UI。
 
 ## <a name="step-2---add-a-fabric-react-component"></a>第 2 步 - 添加 Fabric React 组件
 
