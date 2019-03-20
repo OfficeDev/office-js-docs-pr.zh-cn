@@ -4,7 +4,7 @@ items:
   href: index.yml
 - name: 概述
   items:
-  - name: 关于 Office 加载项
+  - name: 关于 Office 外接程序
     displayName: Excel, Word, Outlook, PowerPoint, OneNote, Project
     href: overview/office-add-ins.md
   - name: 主机和平台可用性
@@ -14,18 +14,21 @@ items:
   items:
   - name: 创建 Excel 加载项
     items:
-    - name: 使用 Angular
+    - name: 使用角度
       displayName: Excel
       href: quickstarts/excel-quickstart-angular.md
     - name: 使用 jQuery
       displayName: Excel
       href: quickstarts/excel-quickstart-jquery.md
-    - name: 使用 React
+    - name: 使用反应
       displayName: Excel
       href: quickstarts/excel-quickstart-react.md
     - name: 使用 Vue
       displayName: Excel
       href: quickstarts/excel-quickstart-vue.md
+    - name: 构建自定义函数
+      displayName: Excel
+      href: quickstarts/excel-custom-functions-quickstart.md
   - name: 创建 Word 加载项
     displayName: Word
     href: quickstarts/word-quickstart.md
@@ -57,17 +60,17 @@ items:
     href: tutorials/word-tutorial.md
 - name: 概念
   items:
-  - name: 运行加载项的要求
+  - name: 运行外接程序的要求
     href: concepts/requirements-for-running-office-add-ins.md
-  - name: 加载项开发的最佳做法
+  - name: 外接程序开发的最佳做法
     href: concepts/add-in-development-best-practices.md
-  - name: 加载项开发生命周期
+  - name: 外接程序开发生命周期
     href: concepts/add-in-development-lifecycle.md
   - name: 隐私和安全
     href: concepts/privacy-and-security.md
   - name: 性能
     href: concepts/resource-limits-and-performance-optimization.md
-- name: 操作说明指南
+- name: 操作方法指南
   items:
   - name: 设计用户界面
     href: design/add-in-design.md
@@ -87,14 +90,14 @@ items:
         href: design/add-in-typography.md
       - name: 颜色
         href: design/add-in-color.md
-      - name: 布局
+      - name: Layout
         href: design/add-in-layout.md
       - name: 图标
         href: design/add-in-icons.md
       - name: 使用动作
         displayName: Motion
         href: design/using-motion-office-addins.md
-    - name: 界面元素
+    - name: Interface 元素
       href: design/interface-elements.md
       items:
       - name: 加载项命令
@@ -105,7 +108,7 @@ items:
         href: design/dialog-boxes.md
       - name: 内容加载项
         href: design/content-add-ins.md
-    - name: 用户体验设计模板
+    - name: UX 设计模板
       href: design/ux-design-pattern-templates.md
       items:
       - name: 身份验证
@@ -120,7 +123,7 @@ items:
       items:
       - name: 设计工具包
         href: design/design-toolkits.md
-      - name: Office UI Fabric
+      - name: Office UI 结构
         href: design/office-ui-fabric.md
       - name: Fabric React 使用入门
         href: design/using-office-ui-fabric-react.md
@@ -128,31 +131,31 @@ items:
     items:
     - name: Office 版本和要求集
       href: develop/office-versions-and-requirement-sets.md
-    - name: 安装最新版 Office
+    - name: 安装最新的 Office 版本
       href: develop/install-latest-office-version.md
     - name: Office JavaScript API
       href: develop/understanding-the-javascript-api-for-office.md
       items:
-      - name: 对内容和任务窗格加载项的支持
+      - name: 对内容和任务窗格外接程序的支持
         href: develop/support-for-task-pane-and-content-add-ins.md
-      - name: 参考 Office js
+      - name: 引用的 node.js
         href: develop/referencing-the-javascript-api-for-office-library-from-its-cdn.md
-      - name: 加载 Office.js
+      - name: 加载 node.js
         href: develop/loading-the-dom-and-runtime-environment.md
       - name: Office JavaScript API 对象模型
         href: develop/office-javascript-api-object-model.md
       - name: Office 加载项中的异步编程
         href: develop/asynchronous-programming-in-office-add-ins.md
-      - name: 保持状态和设置
+      - name: 保留状态和设置
         href: develop/persisting-add-in-state-and-settings.md
     - name: 清单
       href: develop/add-in-manifests.md
       items:
-      - name: 创建加载项命令
+      - name: 创建外接命令
         href: develop/create-addin-commands.md
       - name: 指定 Office 主机
         href: develop/specify-office-hosts-and-api-requirements.md
-      - name: 在内容加载项和任务窗格加载项中请求获取 API 使用权限
+      - name: 在内容和任务窗格外接程序中请求 API 的使用权限
         href: develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md
       - name: 更新 API 和清单版本
         href: develop/update-your-javascript-api-for-office-and-manifest-schema-version.md
@@ -160,58 +163,58 @@ items:
         href: develop/manifest-element-ordering.md
     - name: 身份验证和授权
       items:
-      - name: 在加载项中启用 SSO
+      - name: 在外接程序中启用 SSO
         href: develop/sso-in-office-add-ins.md
         items:
         - name: 使用 ASP.NET 创建 SSO 外接程序
           href: develop/create-sso-office-add-ins-aspnet.md
-        - name: 使用 Node.js 创建 SSO 加载项
+        - name: 使用 node.js 创建 SSO 外接程序
           href: develop/create-sso-office-add-ins-nodejs.md
-        - name: 向 Azure AD v2.0 注册使用 SSO 的 Office 加载项
+        - name: 注册将 SSO 与 Azure AD 2.0 结合使用的 Office 外接程序
           href: develop/register-sso-add-in-aad-v2.md
-        - name: 同意管理员访问加载项
+        - name: 同意管理员访问外接程序
           href: develop/grant-admin-consent-to-an-add-in.md
         - name: 排查单一登录 (SSO) 错误消息
           href: develop/troubleshoot-sso-in-office-add-ins.md
       - name: 授权外部服务
         href: develop/auth-external-add-ins.md
-      - name: 对 Microsoft Graph 授权
+      - name: 授权给 Microsoft Graph
         href: develop/authorize-to-microsoft-graph.md
     - name: 使用对话框 API
       href: develop/dialog-api-in-office-add-ins.md
     - name: 随文档自动打开任务窗格
       href: develop/automatically-open-a-task-pane-with-a-document.md
-    - name: 解决同一来源策略限制
+    - name: 解决相同来源策略限制
       href: develop/addressing-same-origin-policy-limitations.md
     - name: 本地化
       href: develop/localization.md
-    - name: 使用 Visual Studio 开发加载项
+    - name: 使用 Visual Studio 开发外接程序
       items:
       - name: 在 Visual Studio 中创建和调试 Office 加载项
         href: develop/create-and-debug-office-add-ins-in-visual-studio.md
       - name: 在 Visual Studio 中获取 JavaScript IntelliSense
         href: develop/get-javascript-intellisense-in-visual-studio.md
-      - name: 将 JavaScript 转换成 TypeScript
+      - name: 将 JavaScript 转换为 TypeScript
         href: develop/convert-javascript-to-typescript.md
-    - name: 开发适用于 iPad 的加载项
+    - name: 开发 iPad 外接程序
       href: develop/develop-office-add-ins-for-the-ipad.md
-    - name: 使用 Angular 开发加载项
+    - name: 开发具有角度的外接程序
       href: develop/add-ins-with-angular2.md
-  - name: Excel 加载项
+  - name: Excel 外接程序
     displayName: Excel
     href: excel/excel-add-ins-overview.md
     items:
-    - name: 生成首个 Excel 加载项
+    - name: 构建您的第一个 Excel 外接程序
       displayName: Excel
       href: excel/excel-add-ins-get-started-overview.md
       items:
-      - name: 使用 Angular
+      - name: 使用角度
         displayName: Excel
         href: quickstarts/excel-quickstart-angular.md
       - name: 使用 jQuery
         displayName: Excel
         href: quickstarts/excel-quickstart-jquery.md
-      - name: 使用 React
+      - name: 使用反应
         displayName: Excel
         href: quickstarts/excel-quickstart-react.md
       - name: 使用 Vue
@@ -246,6 +249,9 @@ items:
         - name: 自定义函数概述
           displayName: Excel
           href: excel/custom-functions-overview.md
+        - name: 自定义函数快速入门
+          displayName: Excel
+          href: quickstarts/excel-custom-functions-quickstart.md
         - name: 自定义函数教程
           displayName: Excel
           href: tutorials/excel-tutorial-create-custom-functions.md
@@ -264,19 +270,25 @@ items:
         - name: 自定义函数更改日志
           displayName: Excel
           href: excel/custom-functions-changelog.md
+        - name: 自定义函数错误处理
+          displayName: Excel
+          href: excel/custom-functions-errors.md
         - name: 自定义函数要求
           displayName: Excel
           href: excel/custom-functions-requirements.md
         - name: 自定义函数命名准则
           displayName: Excel
           href: excel/custom-functions-naming.md
-      - name: 数据有效性
+        - name: 自定义函数疑难解答
+          displayName: Excel
+          href: excel/custom-functions-troubleshooting.md
+      - name: 数据验证
         displayName: Excel
         href: excel/excel-add-ins-data-validation.md
       - name: 错误处理
         displayName: Excel
         href: excel/excel-add-ins-error-handling.md
-      - name: 活动
+      - name: 事件
         displayName: Excel
         href: excel/excel-add-ins-events.md
       - name: 多个区域
@@ -285,22 +297,22 @@ items:
       - name: 性能优化
         displayName: Excel
         href: excel/performance.md
-      - name: 数据透视表
+      - name: PivotTables
         displayName: Excel
         href: excel/excel-add-ins-pivottables.md
-      - name: 区域（基本）
+      - name: 区域 (基本)
         displayName: Excel
         href: excel/excel-add-ins-ranges.md
-      - name: 区域（高级）
+      - name: 区域 (高级)
         displayName: Excel
         href: excel/excel-add-ins-ranges-advanced.md
       - name: 表
         displayName: Excel
         href: excel/excel-add-ins-tables.md
-      - name: 工作簿
+      - name: Workbooks
         displayName: Excel
         href: excel/excel-add-ins-workbooks.md
-      - name: 工作表
+      - name: Worksheets
         displayName: Excel
         href: excel/excel-add-ins-worksheets.md
     - name: Excel JavaScript API 概述
@@ -309,7 +321,7 @@ items:
     - name: Excel JavaScript API 参考
       displayName: Excel
       href: /javascript/api/excel
-  - name: Word 加载项
+  - name: Word 外接程序
     displayName: Word
     href: word/word-add-ins-programming-overview.md
     items:
@@ -322,13 +334,13 @@ items:
     - name: 使用 Office Open XML 创建更优质的 Word 加载项
       displayName: Word
       href: word/create-better-add-ins-for-word-with-office-open-xml.md
-    - name: 字典任务窗格加载项
+    - name: 字典任务窗格外接程序
       displayName: Word
       href: word/dictionary-task-pane-add-ins.md
-    - name: 通过加载项获取整个文档
+    - name: 从外接程序中获取整个文档
       displayName: Word
       href: word/get-the-whole-document-from-an-add-in-for-word.md
-    - name: 读取并将数据写入活动选择
+    - name: 读取数据并将数据写入活动选择
       displayName: Word
       href: develop/read-and-write-data-to-the-active-selection-in-a-document-or-spreadsheet.md
     - name: 绑定到文档中的区域
@@ -337,13 +349,13 @@ items:
     - name: 使用搜索选项在 Word 加载项中查找文本
       displayName: Word
       href: word/search-option-guidance.md
-    - name: Word JavaScript API 使用情况概述
+    - name: Word JavaScript API 使用概述
       displayName: Word
       href: https://docs.microsoft.com/office/dev/add-ins/reference/overview/word-add-ins-reference-overview
     - name: Word JavaScript API 参考
       displayName: Word
       href: /javascript/api/word
-  - name: Outlook 加载项
+  - name: Outlook 外接程序
     displayName: Outlook
     href: /outlook/add-ins/
   - name: PowerPoint 加载项
@@ -359,10 +371,10 @@ items:
     - name: 在 PowerPoint 加载项中使用文档主题
       displayName: PowerPoint
       href: powerpoint/use-document-themes-in-your-powerpoint-add-ins.md
-    - name: 通过加载项获取整个文档
+    - name: 从外接程序中获取整个文档
       displayName: PowerPoint
       href: powerpoint/get-the-whole-document-from-an-add-in-for-powerpoint.md
-  - name: OneNote 加载项
+  - name: OneNote 外接程序
     displayName: OneNote
     href: onenote/onenote-add-ins-programming-overview.md
     items:
@@ -385,10 +397,10 @@ items:
     - name: 生成首个 Project 加载项
       displayName: Project
       href: quickstarts/project-quickstart.md
-    - name: 使用带有本地 OData 服务的 REST 创建一个 Project 加载项
+    - name: 创建将 REST 与本地 OData 服务结合使用的 Project 加载项
       displayName: Project
       href: project/create-a-project-add-in-that-uses-rest-with-an-on-premises-odata-service.md
-    - name: 使用文本编辑器为 Project 生成首个任务窗格加载项
+    - name: 使用文本编辑器创建 Project 的第一个任务窗格加载项
       displayName: Project
       href: project/create-your-first-task-pane-add-in-for-project-by-using-a-text-editor.md
   - name: 测试和调试
@@ -402,38 +414,38 @@ items:
         href: testing/sideload-office-addin-using-sideload-command.md
       - name: 从任务窗格附加调试器
         href: testing/attach-debugger-from-task-pane.md
-      - name: 使用 F12 开发者工具调试
+      - name: 使用 F12 开发人员工具进行调试
         href: testing/debug-add-ins-using-f12-developer-tools-on-windows-10.md
     - name: Office Online
       items:
       - name: 在 Office Online 中旁加载 Office 加载项
         href: testing/sideload-office-add-ins-for-testing.md
-      - name: 在 Office Onlie 中调试
+      - name: 在 Office Online 中调试
         href: testing/debug-add-ins-in-office-online.md
     - name: iPad 和 Mac
       items:
       - name: 在 iPad 和 Mac 上旁加载 Office 加载项
         href: testing/sideload-an-office-add-in-on-ipad-and-mac.md
-      - name: 在 iPad 和 Mac 上进行调试
+      - name: 在 iPad 和 Mac 上调试
         href: testing/debug-office-add-ins-on-ipad-and-mac.md
     - name: 可用性测试
       href: develop/usability-testing.md
     - name: 排查用户错误
       href: testing/testing-and-troubleshooting.md
-    - name: 验证加载项清单并排查问题
+    - name: 验证外接程序清单并解决问题
       href: testing/troubleshoot-manifest.md
   - name: 发布
     href: publish/publish.md
     items:
     - name: 在 Microsoft Azure 上托管 Office 加载项
       href: publish/host-an-office-add-in-on-microsoft-azure.md
-    - name: 使用 Visual Studio 打包加载项
+    - name: 使用 Visual Studio 打包你的外接程序
       href: publish/package-your-add-in-using-visual-studio.md
-    - name: 通过集中部署发布加载项
+    - name: 通过集中部署发布外接程序
       href: publish/centralized-deployment.md
-    - name: 将加载项发布到 SharePoint 目录
+    - name: 将外接程序发布到 SharePoint 目录
       href: publish/publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md
-    - name: 将加载项发布到 AppSource
+    - name: 将外接程序发布到 AppSource
       href: /office/dev/store/submit-to-the-office-store
     - name: AppSource 验证策略
       href: /office/dev/store/validation-policies
@@ -449,7 +461,7 @@ items:
       href: reference/overview/onenote-add-ins-javascript-reference.md
     - name: PowerPoint API 概述
       href: reference/requirement-sets/powerpoint-and-project-note.md
-    - name: Project API 概述
+    - name: 项目 API 概述
       href: reference/requirement-sets/powerpoint-and-project-note.md
     - name: Visio API 概述
       href: reference/overview/visio-javascript-reference-overview.md
@@ -478,9 +490,9 @@ items:
       - name: 预览要求集
         href: reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md
         items:
-        - name: Office
+        - name: 办公室
           href: reference/objectmodel/preview-requirement-set/office.md
-        - name: Office.context
+        - name: Office. context
           href: reference/objectmodel/preview-requirement-set/Office.context.md
         - name: Office.context.mailbox
           href: reference/objectmodel/preview-requirement-set/Office.context.mailbox.md
@@ -492,12 +504,12 @@ items:
           href: reference/objectmodel/preview-requirement-set/Office.context.mailbox.userProfile.md
         - name: Outlook 预览 API 参考
           href: /javascript/api/outlook
-      - name: 要求集 1.7
+      - name: 要求集1。7
         href: reference/objectmodel/requirement-set-1.7/outlook-requirement-set-1.7.md
         items:
-        - name: Office
+        - name: 办公室
           href: reference/objectmodel/requirement-set-1.7/office.md
-        - name: Office.context
+        - name: Office. context
           href: reference/objectmodel/requirement-set-1.7/Office.context.md
         - name: Office.context.mailbox
           href: reference/objectmodel/requirement-set-1.7/Office.context.mailbox.md
@@ -509,12 +521,12 @@ items:
           href: reference/objectmodel/requirement-set-1.7/Office.context.mailbox.userProfile.md
         - name: Outlook 1.7 API 参考
           href: /javascript/api/outlook_1_7
-      - name: 要求集 1.6
+      - name: 要求集1。6
         href: reference/objectmodel/requirement-set-1.6/outlook-requirement-set-1.6.md
         items:
-        - name: Office
+        - name: 办公室
           href: reference/objectmodel/requirement-set-1.6/office.md
-        - name: Office.context
+        - name: Office. context
           href: reference/objectmodel/requirement-set-1.6/Office.context.md
         - name: Office.context.mailbox
           href: reference/objectmodel/requirement-set-1.6/Office.context.mailbox.md
@@ -526,12 +538,12 @@ items:
           href: reference/objectmodel/requirement-set-1.6/Office.context.mailbox.userProfile.md
         - name: Outlook 1.6 API 参考
           href: /javascript/api/outlook_1_6
-      - name: 要求集 1.5
+      - name: 要求集1。5
         href: reference/objectmodel/requirement-set-1.5/outlook-requirement-set-1.5.md
         items:
-        - name: Office
+        - name: 办公室
           href: reference/objectmodel/requirement-set-1.5/office.md
-        - name: Office.context
+        - name: Office. context
           href: reference/objectmodel/requirement-set-1.5/Office.context.md
         - name: Office.context.mailbox
           href: reference/objectmodel/requirement-set-1.5/Office.context.mailbox.md
@@ -543,12 +555,12 @@ items:
           href: reference/objectmodel/requirement-set-1.5/Office.context.mailbox.userProfile.md
         - name: Outlook 1.5 API 参考
           href: /javascript/api/outlook_1_5
-      - name: 要求集 1.4
+      - name: 要求集1。4
         href: reference/objectmodel/requirement-set-1.4/outlook-requirement-set-1.4.md
         items:
-        - name: Office
+        - name: 办公室
           href: reference/objectmodel/requirement-set-1.4/office.md
-        - name: Office.context
+        - name: Office. context
           href: reference/objectmodel/requirement-set-1.4/Office.context.md
         - name: Office.context.mailbox
           href: reference/objectmodel/requirement-set-1.4/Office.context.mailbox.md
@@ -560,12 +572,12 @@ items:
           href: reference/objectmodel/requirement-set-1.4/Office.context.mailbox.userProfile.md
         - name: Outlook 1.4 API 参考
           href: /javascript/api/outlook_1_4
-      - name: 要求集 1.3
+      - name: 要求集1。3
         href: reference/objectmodel/requirement-set-1.3/outlook-requirement-set-1.3.md
         items:
-        - name: Office
+        - name: 办公室
           href: reference/objectmodel/requirement-set-1.3/office.md
-        - name: Office.context
+        - name: Office. context
           href: reference/objectmodel/requirement-set-1.3/Office.context.md
         - name: Office.context.mailbox
           href: reference/objectmodel/requirement-set-1.3/Office.context.mailbox.md
@@ -577,12 +589,12 @@ items:
           href: reference/objectmodel/requirement-set-1.3/Office.context.mailbox.userProfile.md
         - name: Outlook 1.3 API 参考
           href: /javascript/api/outlook_1_3
-      - name: 要求集 1.2
+      - name: 要求集1。2
         href: reference/objectmodel/requirement-set-1.2/outlook-requirement-set-1.2.md
         items:
-        - name: Office
+        - name: 办公室
           href: reference/objectmodel/requirement-set-1.2/office.md
-        - name: Office.context
+        - name: Office. context
           href: reference/objectmodel/requirement-set-1.2/Office.context.md
         - name: Office.context.mailbox
           href: reference/objectmodel/requirement-set-1.2/Office.context.mailbox.md
@@ -594,12 +606,12 @@ items:
           href: reference/objectmodel/requirement-set-1.2/Office.context.mailbox.userProfile.md
         - name: Outlook 1.2 API 参考
           href: /javascript/api/outlook_1_2
-      - name: 要求集 1.1
+      - name: 要求集1。1
         href: reference/objectmodel/requirement-set-1.1/outlook-requirement-set-1.1.md
         items:
-        - name: Office
+        - name: 办公室
           href: reference/objectmodel/requirement-set-1.1/office.md
-        - name: Office.context
+        - name: Office. context
           href: reference/objectmodel/requirement-set-1.1/Office.context.md
         - name: Office.context.mailbox
           href: reference/objectmodel/requirement-set-1.1/Office.context.mailbox.md
@@ -647,7 +659,7 @@ items:
       href: reference/manifest/defaultlocale.md
     - name: DefaultSettings
       href: reference/manifest/defaultsettings.md
-    - name: Description
+    - name: 说明
       href: reference/manifest/description.md
     - name: DesktopSettings
       href: reference/manifest/desktopsettings.md
@@ -659,33 +671,33 @@ items:
       href: reference/manifest/disableentityhighlighting.md
     - name: DisplayName
       href: reference/manifest/displayname.md
-    - name: Form
+    - name: 窗体
       href: reference/manifest/form.md
     - name: FormSettings
       href: reference/manifest/formsettings.md
     - name: HighResolutionIconUrl
       href: reference/manifest/highresolutioniconurl.md
-    - name: Host
+    - name: 主机
       href: reference/manifest/host.md
-    - name: Hosts
+    - name: 主机
       href: reference/manifest/hosts.md
     - name: IconUrl
       href: reference/manifest/iconurl.md
     - name: Id
       href: reference/manifest/id.md
-    - name: Metadata
+    - name: 元数据
       href: reference/manifest/metadata.md
-    - name: Method
+    - name: 方法
       href: reference/manifest/method.md
-    - name: Methods
+    - name: 方法
       href: reference/manifest/methods.md
-    - name: Namespace
+    - name: 命名空间
       href: reference/manifest/namespace.md
     - name: OfficeApp
       href: reference/manifest/officeapp.md
-    - name: Override
+    - name: 首选参数
       href: reference/manifest/override.md
-    - name: Permissions
+    - name: 权限
       href: reference/manifest/permissions.md
     - name: PhoneSettings
       href: reference/manifest/phonesettings.md
@@ -699,7 +711,7 @@ items:
       href: reference/manifest/requestedwidth.md
     - name: Requirements
       href: reference/manifest/requirements.md
-    - name: Rule
+    - name: 规则
       href: reference/manifest/rule.md
     - name: Set
       href: reference/manifest/set.md
@@ -715,7 +727,7 @@ items:
       href: reference/manifest/targetdialect.md
     - name: TargetDialects
       href: reference/manifest/targetdialects.md
-    - name: Version
+    - name: 版本
       href: reference/manifest/version.md
     - name: VersionOverrides
       href: reference/manifest/versionoverrides.md
@@ -728,7 +740,7 @@ items:
         href: reference/manifest/control.md
       - name: CustomTab
         href: reference/manifest/customtab.md
-      - name: Event
+      - name: 事件
         href: reference/manifest/event.md
       - name: ExtensionPoint
         href: reference/manifest/extensionpoint.md
@@ -738,11 +750,11 @@ items:
         href: reference/manifest/functionfile.md
       - name: GetStarted
         href: reference/manifest/getstarted.md
-      - name: Group
+      - name: 组
         href: reference/manifest/group.md
-      - name: Hosts
+      - name: 主机
         href: reference/manifest/hosts.md
-      - name: Icon
+      - name: 图标
         href: reference/manifest/icon.md
       - name: MobileFormFactor
         href: reference/manifest/mobileformfactor.md
@@ -754,11 +766,11 @@ items:
         href: reference/manifest/page.md
       - name: 资源
         href: reference/manifest/resources.md
-      - name: Scopes
+      - name: scope
         href: reference/manifest/scopes.md
       - name: Script
         href: reference/manifest/script.md
-      - name: SourceLocation（自定义函数）
+      - name: SourceLocation (自定义函数)
         href: reference/manifest/customfunctionssourcelocation.md
       - name: Supertip
         href: reference/manifest/supertip.md
@@ -766,11 +778,11 @@ items:
         href: reference/manifest/supportssharedfolders.md
       - name: WebApplicationInfo
         href: reference/manifest/webapplicationinfo.md
-- name: Resources
+- name: 资源
   href: resources/resources-links-help.md
-ms.openlocfilehash: e2dde2b09439c3de60363cb29609df8dbb39365a
-ms.sourcegitcommit: 8e20e7663be2aaa0f7a5436a965324d171bc667d
+ms.openlocfilehash: 24f8d304d6b23c7abfcde3cc0177f9582a804252
+ms.sourcegitcommit: c5daedf017c6dd5ab0c13607589208c3f3627354
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/28/2019
-ms.locfileid: "30199765"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "30691207"
