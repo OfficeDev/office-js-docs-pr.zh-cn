@@ -1,14 +1,14 @@
 ---
 title: Office 外接程序主机和平台可用性
 description: Excel、Word、Outlook、PowerPoint、OneNote 和项目支持的要求集。
-ms.date: 03/15/2019
+ms.date: 03/19/2019
 localization_priority: Priority
-ms.openlocfilehash: 4348881c35e4c79975d34406e4668b2693405134
-ms.sourcegitcommit: c4d6ecdc41ea67291b6d155c3b246e31ec2e38b7
+ms.openlocfilehash: fe5b1d1278d2c14192fb6fd212f24bb08571d35d
+ms.sourcegitcommit: c5daedf017c6dd5ab0c13607589208c3f3627354
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/16/2019
-ms.locfileid: "30654961"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "30691123"
 ---
 # <a name="office-add-in-host-and-platform-availability"></a>Office 外接程序主机和平台可用性
 
@@ -331,8 +331,8 @@ ms.locfileid: "30654961"
     <td> - <a href="https://docs.microsoft.com/office/dev/add-ins/reference/objectmodel/requirement-set-1.1/outlook-requirement-set-1.1">Mailbox 1.1</a><br>
       - <a href="https://docs.microsoft.com/office/dev/add-ins/reference/objectmodel/requirement-set-1.2/outlook-requirement-set-1.2">Mailbox 1.2</a><br>
       - <a href="https://docs.microsoft.com/office/dev/add-ins/reference/objectmodel/requirement-set-1.3/outlook-requirement-set-1.3">Mailbox 1.3</a><br>
-      - <a href="https://docs.microsoft.com/office/dev/add-ins/reference/objectmodel/requirement-set-1.4/outlook-requirement-set-1.4">Mailbox 1.4</a></td>
-    <td>不可用</td>
+      - <a href="https://docs.microsoft.com/office/dev/add-ins/reference/objectmodel/requirement-set-1.4/outlook-requirement-set-1.4">Mailbox 1.4</a>*</td>
+    <td>暂无</td>
   </tr>
   <tr>
     <td>Office 2013 for Windows</td>
@@ -340,9 +340,9 @@ ms.locfileid: "30654961"
       - 邮件撰写</td>
     <td> - <a href="https://docs.microsoft.com/office/dev/add-ins/reference/objectmodel/requirement-set-1.1/outlook-requirement-set-1.1">Mailbox 1.1</a><br>
       - <a href="https://docs.microsoft.com/office/dev/add-ins/reference/objectmodel/requirement-set-1.2/outlook-requirement-set-1.2">Mailbox 1.2</a><br>
-      - <a href="https://docs.microsoft.com/office/dev/add-ins/reference/objectmodel/requirement-set-1.3/outlook-requirement-set-1.3">Mailbox 1.3</a><br>
-      - <a href="https://docs.microsoft.com/office/dev/add-ins/reference/objectmodel/requirement-set-1.4/outlook-requirement-set-1.4">Mailbox 1.4</a></td>
-    <td>不可用</td>
+      - <a href="https://docs.microsoft.com/office/dev/add-ins/reference/objectmodel/requirement-set-1.3/outlook-requirement-set-1.3">Mailbox 1.3</a>*<br>
+      - <a href="https://docs.microsoft.com/office/dev/add-ins/reference/objectmodel/requirement-set-1.4/outlook-requirement-set-1.4">Mailbox 1.4</a>*</td>
+    <td>暂无</td>
   </tr>
   <tr>
     <td>Office 365 for iOS</td>
@@ -406,6 +406,8 @@ ms.locfileid: "30654961"
     <td>不可用</td>
   </tr>
 </table>
+
+*&ast; - 已添加发布后更新。*
 
 <br/>
 
@@ -796,7 +798,8 @@ ms.locfileid: "30654961"
   <tr>
     <td>Office 2016 for Mac</td>
     <td> - 内容<br>
-         - 任务窗格/td> <td> - <a href="https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a>*</td>
+         - 任务窗格</td>
+    <td> - <a href="https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a>*</td>
     <td> - ActiveView<br>
          - CompressedFile<br>
          - DocumentEvents<br>
@@ -876,6 +879,6 @@ ms.locfileid: "30654961"
 ## <a name="see-also"></a>另请参阅
 
 - [Office 加载项平台概述](office-add-ins.md)
-- [通用 API 要求集](https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/office-add-in-requirement-sets)
-- [加载项命令要求集](https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets)
-- [适用于 Office 的 JavaScript API 参考](https://docs.microsoft.com/office/dev/add-ins/reference/javascript-api-for-office)
+- [通用 API 要求集](/office/dev/add-ins/reference/requirement-sets/office-add-in-requirement-sets)
+- [加载项命令要求集](/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets)
+- [适用于 Office 的 JavaScript API 参考](/office/dev/add-ins/reference/javascript-api-for-office)

@@ -1,23 +1,23 @@
 ---
 title: 生成首个 Word 加载项
 description: ''
-ms.date: 01/17/2019
+ms.date: 03/19/2019
 ms.prod: word
 localization_priority: Priority
-ms.openlocfilehash: 20f63c7e61fd4b576eda7c1d737d377439055fe2
-ms.sourcegitcommit: 33dcf099c6b3d249811580d67ee9b790c0fdccfb
+ms.openlocfilehash: 9da974ff604570367771c98e47d549ecc70eee7b
+ms.sourcegitcommit: c5daedf017c6dd5ab0c13607589208c3f3627354
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "29742321"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "30691172"
 ---
 # <a name="build-your-first-word-add-in"></a>生成首个 Word 加载项
 
-_适用于：Word 2016、Word for iPad、Word for Mac_
+_适用于：Word 2016 for Windows 或更高版本、Word for iPad、Word for Mac_
 
-本文将逐步介绍如何使用 jQuery 和 Word JavaScript API 生成 Word 加载项。 
+本文将逐步介绍如何使用 jQuery 和 Word JavaScript API 生成 Word 加载项。
 
-## <a name="create-the-add-in"></a>创建加载项 
+## <a name="create-the-add-in"></a>创建加载项
 
 [!include[Choose your editor](../includes/quickstart-choose-editor.md)]
 
@@ -30,13 +30,13 @@ _适用于：Word 2016、Word for iPad、Word for Mac_
 ### <a name="create-the-add-in-project"></a>创建加载项项目
 
 1. 在 Visual Studio 菜单栏中，依次选择“文件”**** > “新建”**** > “项目”****。
-    
+
 2. 在“Visual C#”**** 或“Visual Basic”**** 下的项目类型列表中，展开“Office/SharePoint”****，选择“加载项”****，再选择“Word Web 加载项”**** 作为项目类型。 
 
 3. 命名此项目，再选择“确定”****。
 
 4. 此时，Visual Studio 创建解决方案，且它的两个项目显示在“解决方案资源管理器”**** 中。**Home.html** 文件在 Visual Studio 中打开。
-    
+
 ### <a name="explore-the-visual-studio-solution"></a>探索 Visual Studio 解决方案
 
 [!include[Description of Visual Studio projects](../includes/quickstart-vs-solution.md)]
@@ -44,14 +44,14 @@ _适用于：Word 2016、Word for iPad、Word for Mac_
 ### <a name="update-the-code"></a>更新代码
 
 1. **Home.html** 指定在加载项的任务窗格中呈现的 HTML。 在 **Home.html** 中，将 `<body>` 元素替换为以下标记，并保存文件。
- 
+
     ```html
     <body>
         <div id="content-header">
             <div class="padding">
                 <h1>Welcome</h1>
             </div>
-        </div>    
+        </div>
         <div id="content-main">
             <div class="padding">
                 <p>Choose the buttons below to add boilerplate text to the document by using the Word JavaScript API.</p>
@@ -73,7 +73,7 @@ _适用于：Word 2016、Word for iPad、Word for Mac_
 
     ```js
     'use strict';
-    
+
     (function () {
 
         Office.onReady(function() {
@@ -191,7 +191,7 @@ _适用于：Word 2016、Word for iPad、Word for Mac_
         left: 0;
         right: 0;
         bottom: 0;
-        overflow: auto; 
+        overflow: auto;
     }
 
     .padding {
@@ -225,7 +225,7 @@ _适用于：Word 2016、Word for iPad、Word for Mac_
 
 1. 使用 Visual Studio 的同时，按 **F5** 或选择“开始”**** 按钮启动 Word，以测试新建的 Word 加载项，功能区中显示有“显示任务窗格”**** 加载项按钮。加载项本地托管在 IIS 上。
 
-2. 在 Word 中，依次选择“主页”**** 选项卡和功能区中的“显示任务窗格”**** 按钮，以打开加载项任务窗格。 （如果使用的是非订阅版 Office 2016，而不是 Office 365 版本，则无法使用自定义按钮。 相反，任务窗格将立即打开。）
+2. 在 Word 中，依次选择“开始”**** 选项卡和功能区中的“显示任务窗格”**** 按钮，以打开加载项任务窗格。 （如果使用的是 Office 的一次性购买版本，而不是 Office 365 版本，那么自定义按钮不受支持。 相反，任务窗格将立即打开。）
 
     ![突出显示了“显示任务窗格”按钮的 Word 应用屏幕截图](../images/word-quickstart-addin-0.png)
 
@@ -259,9 +259,9 @@ _适用于：Word 2016、Word for iPad、Word for Mac_
     - **要支持哪一个 Office 客户端应用?:** `Word`
 
     ![有关 Yeoman 生成器提示和回答的屏幕截图](../images/yo-office-word-jquery.png)
-    
+
     完成此向导后，生成器会创建项目，并安装支持的 Node 组件。
-    
+
 2. 导航到项目的根文件夹。
 
     ```bash
@@ -270,7 +270,7 @@ _适用于：Word 2016、Word for iPad、Word for Mac_
 
 ### <a name="update-the-code"></a>更新代码
 
-1. 在代码编辑器中，打开项目根目录中的“index.html”****。 此文件包含在加载项任务窗格中呈现的 HTML。 
+1. 在代码编辑器中，打开项目根目录中的“index.html”****。 此文件包含在加载项任务窗格中呈现的 HTML。
 
 2. 将 `<body>` 元素替换为以下标记，并保存文件。
 
@@ -300,11 +300,11 @@ _适用于：Word 2016、Word for iPad、Word for Mac_
     </body>
     ```
 
-2. 打开文件 **src/index.js**，指定加载项的脚本。 将整个内容替换为下列代码，并保存文件。 此脚本包含初始化代码以及用于更改 Word 文档的代码（具体方法是通过选择某个按钮将文本插入文档）。 
+3. 打开文件 **src/index.js**，指定加载项的脚本。 将整个内容替换为下列代码，并保存文件。 此脚本包含初始化代码以及用于更改 Word 文档的代码（具体方法是通过选择某个按钮将文本插入文档）。
 
     ```js
     'use strict';
-    
+
     (function () {
 
         Office.onReady(function() {
@@ -401,7 +401,7 @@ _适用于：Word 2016、Word for iPad、Word for Mac_
     })();
     ```
 
-3. 打开项目根目录中的文件“app.css”****，以指定加载项自定义样式。 将整个内容替换为以下内容，并保存文件。
+4. 打开项目根目录中的文件“app.css”****，以指定加载项自定义样式。 将整个内容替换为以下内容，并保存文件。
 
     ```css
     #content-header {
@@ -422,7 +422,7 @@ _适用于：Word 2016、Word for iPad、Word for Mac_
         left: 0;
         right: 0;
         bottom: 0;
-        overflow: auto; 
+        overflow: auto;
     }
 
     .padding {
@@ -484,5 +484,4 @@ _适用于：Word 2016、Word for iPad、Word for Mac_
 * [Word 加载项概述](../word/word-add-ins-programming-overview.md)
 * 
   [Word 加载项代码示例](https://developer.microsoft.com/en-us/office/gallery/?filterBy=Samples,Word)
-* [Word JavaScript API 参考](https://docs.microsoft.com/office/dev/add-ins/reference/overview/word-add-ins-reference-overview)
-
+* [Word JavaScript API 参考](/office/dev/add-ins/reference/overview/word-add-ins-reference-overview)

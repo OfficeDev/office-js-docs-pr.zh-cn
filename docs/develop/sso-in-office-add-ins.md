@@ -1,14 +1,14 @@
 ---
 title: 为 Office 加载项启用单一登录
 description: ''
-ms.date: 09/26/2018
+ms.date: 03/19/2019
 localization_priority: Priority
-ms.openlocfilehash: f76a1394bb55a260af9bbde2d18cd330bbf2688b
-ms.sourcegitcommit: bf5c56d9b8c573e42bf2268e10ca3fd4d2bb4ff9
+ms.openlocfilehash: dc9050d574e0a5e74ae8cae2c63817aa4f952eb9
+ms.sourcegitcommit: c5daedf017c6dd5ab0c13607589208c3f3627354
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/01/2019
-ms.locfileid: "29701790"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "30691193"
 ---
 # <a name="enable-single-sign-on-for-office-add-ins-preview"></a>为 Office 加载项启用单一登录（预览）
 
@@ -20,9 +20,9 @@ ms.locfileid: "29701790"
 
 当前只在预览中支持单一登录 API。 它可供开发人员进行实验，但不应用于生产加载项。 此外，在 [AppSource](https://appsource.microsoft.com) 中不接受使用 SSO 的加载项。
 
-SSO 需要 Office 365（Office 的订阅版本，也称为“即点即用版本”）。 你应该使用来自预览体验成员频道的最新每月版本和内部版本。 你可能需要成为 Office 预览体验成员，才能获取此版本。 有关详细信息，请参阅[成为 Office 预览体验成员](https://products.office.com/office-insider?tab=tab-1)。 请注意，当内部版本进入生产半年频道时，将关闭对该内部版本的预览功能（包括 SSO）的支持。
+SSO 要求使用 Office 365（Office 的订阅版本）。 你应该使用来自预览体验成员频道的最新每月版本和内部版本。 你可能需要成为 Office 预览体验成员，才能获取此版本。 有关详细信息，请参阅[成为 Office 预览体验成员](https://products.office.com/office-insider?tab=tab-1)。 请注意，当内部版本进入生产半年频道时，将关闭对该内部版本的预览功能（包括 SSO）的支持。
 
-并非所有 Office 应用程序都支持 SSO 预览。 可以在 Word、Excel、Outlook 和 PowerPoint 中使用此加载项。 若要详细了解目前支持单一登录 API 的平台，请参阅 [IdentityAPI 要求集](https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/identity-api-requirement-sets)。
+并非所有 Office 应用程序都支持 SSO 预览。 可以在 Word、Excel、Outlook 和 PowerPoint 中使用此加载项。 若要详细了解目前支持单一登录 API 的平台，请参阅 [IdentityAPI 要求集](/office/dev/add-ins/reference/requirement-sets/identity-api-requirement-sets)。
 
 ### <a name="requirements-and-best-practices"></a>要求和最佳做法
 
@@ -30,7 +30,7 @@ SSO 需要 Office 365（Office 的订阅版本，也称为“即点即用版本�
 
 如果使用的是 **Outlook** 加载项，请务必为 Office 365 租赁启用新式验证。 若要了解如何执行此操作，请参阅 [Exchange Online: How to enable your tenant for modern authentication](https://social.technet.microsoft.com/wiki/contents/articles/32711.exchange-online-how-to-enable-your-tenant-for-modern-authentication.aspx)（如何为租户启用新式体验）。
 
-*不应*依赖 SSO 作为加载项的唯一身份验证方法。 应实现备用身份验证系统，在某些错误情况下，加载项可以返回到该系统。 可以使用包含用户表和身份验证的系统，也可以利用其中某个社交登录提供者。 有关如何使用 Office 加载项执行此操作的详细信息，请参阅 [Authorize external services in your Office Add-in](https://docs.microsoft.com/zh-CN/office/dev/add-ins/develop/auth-external-add-ins)（对 Office 加载项中的外部服务授权）。 对于 *Outlook*，建议使用后备系统。 有关详细信息，请参阅[应用场景：在 Outlook 加载项中对服务实现单一登录](https://docs.microsoft.com/outlook/add-ins/implement-sso-in-outlook-add-in)。
+*不应*依赖 SSO 作为加载项的唯一身份验证方法。 应实现备用身份验证系统，在某些错误情况下，加载项可以返回到该系统。 可以使用包含用户表和身份验证的系统，也可以利用其中某个社交登录提供者。 有关如何使用 Office 加载项执行此操作的详细信息，请参阅 [Authorize external services in your Office Add-in](/office/dev/add-ins/develop/auth-external-add-ins)（对 Office 加载项中的外部服务授权）。 对于 *Outlook*，建议使用后备系统。 有关详细信息，请参阅[应用场景：在 Outlook 加载项中对服务实现单一登录](/outlook/add-ins/implement-sso-in-outlook-add-in)。
 
 ### <a name="how-sso-works-at-runtime"></a>运行时 SSO 的工作方式
 
@@ -56,7 +56,7 @@ SSO 需要 Office 365（Office 的订阅版本，也称为“即点即用版本�
 
 ### <a name="create-the-service-application"></a>创建服务应用程序
 
-在 Azure v2.0 端点的注册门户注册加载项：https://apps.dev.microsoft.com。 该流程用时 5-10 分钟，包括以下任务：
+在 Azure v2.0 终结点的注册门户注册外接程序：https://apps.dev.microsoft.com。该流程用时 5-10 分钟，包括以下任务：
 
 * 获取加载项的客户端 ID 和机密。
 * 指定加载项访问 AAD v 所需的权限。 2.0 端点（可选 Microsoft Graph）。 始终需要“profile”权限。
@@ -95,11 +95,11 @@ SSO 需要 Office 365（Office 的订阅版本，也称为“即点即用版本�
 
 将 JavaScript 添加到加载项，以执行以下操作：
 
-* 调用 [getAccessTokenAsync](https://docs.microsoft.com/office/dev/add-ins/develop/sso-in-office-add-ins#sso-api-reference).
+* 调用 [getAccessTokenAsync](/office/dev/add-ins/develop/sso-in-office-add-ins#sso-api-reference).
 
-* 解析访问令牌或将其传递到加载项的服务器端代码。 
+* 解析访问令牌或将其传递到加载项的服务器端代码。
 
-下面是调用 `getAccessTokenAsync` 的简单示例。 
+下面是调用 `getAccessTokenAsync` 的简单示例。
 
 > [!NOTE]
 > 此示例只显式处理一种错误。 有关更详细的错误处理的示例，请参阅 [Home.js in Office-Add-in-ASPNET-SSO](https://github.com/OfficeDev/Office-Add-in-ASPNET-SSO/blob/master/Complete/Office-Add-in-ASPNET-SSO-WebAPI/Scripts/Home.js) 和 [program.js in Office-Add-in-NodeJS-SSO](https://github.com/OfficeDev/Office-Add-in-NodeJS-SSO/blob/master/Completed/public/program.js)。 另请参阅[排查单一登录 (SSO) 错误消息](troubleshoot-sso-in-office-add-ins.md)
@@ -191,34 +191,34 @@ Web API 收到访问令牌后，必须在使用该令牌前对其进行验证。
 
 ### <a name="example-access-token"></a>示例访问令牌
 
-以下是访问令牌的典型解码有效负载。 有关属性的详细信息，请参阅 [Azure Active Directory v2.0 令牌参考](https://docs.microsoft.com/azure/active-directory/develop/active-directory-v2-tokens)。
+以下是访问令牌的典型解码有效负载。 有关属性的详细信息，请参阅 [Azure Active Directory v2.0 令牌参考](/azure/active-directory/develop/active-directory-v2-tokens)。
 
 
 ```js
 {
-    aud: "2c3caa80-93f9-425e-8b85-0745f50c0d24",         
-    iss: "https://login.microsoftonline.com/fec4f964-8bc9-4fac-b972-1c1da35adbcd/v2.0",         
-    iat: 1521143967,         
-    nbf: 1521143967,         
-    exp: 1521147867,         
-    aio: "ATQAy/8GAAAA0agfnU4DTJUlEqGLisMtBk5q6z+6DB+sgiRjB/Ni73q83y0B86yBHU/WFJnlMQJ8",         
-    azp: "e4590ed6-62b3-5102-beff-bad2292ab01c",         
-    azpacr: "0",         
-    e_exp: 262800,         
-    name: "Mila Nikolova",         
-    oid: "6467882c-fdfd-4354-a1ed-4e13f064be25",         
-    preferred_username: "milan@contoso.com",         
-    scp: "access_as_user",         
-    sub: "XkjgWjdmaZ-_xDmhgN1BMP2vL2YOfeVxfPT_o8GRWaw",         
-    tid: "fec4f964-8bc9-4fac-b972-1c1da35adbcd",         
-    uti: "MICAQyhrH02ov54bCtIDAA",         
+    aud: "2c3caa80-93f9-425e-8b85-0745f50c0d24",
+    iss: "https://login.microsoftonline.com/fec4f964-8bc9-4fac-b972-1c1da35adbcd/v2.0",
+    iat: 1521143967,
+    nbf: 1521143967,
+    exp: 1521147867,
+    aio: "ATQAy/8GAAAA0agfnU4DTJUlEqGLisMtBk5q6z+6DB+sgiRjB/Ni73q83y0B86yBHU/WFJnlMQJ8",
+    azp: "e4590ed6-62b3-5102-beff-bad2292ab01c",
+    azpacr: "0",
+    e_exp: 262800,
+    name: "Mila Nikolova",
+    oid: "6467882c-fdfd-4354-a1ed-4e13f064be25",
+    preferred_username: "milan@contoso.com",
+    scp: "access_as_user",
+    sub: "XkjgWjdmaZ-_xDmhgN1BMP2vL2YOfeVxfPT_o8GRWaw",
+    tid: "fec4f964-8bc9-4fac-b972-1c1da35adbcd",
+    uti: "MICAQyhrH02ov54bCtIDAA",
     ver: "2.0"
 }
 ```
 
 ## <a name="using-sso-with-an-outlook-add-in"></a>将 SSO 与 Outlook 加载项一起使用
 
-在 Outlook 加载项中使用 SSO 与在 Excel、PowerPoint 或 Word 加载项中使用 SSO 存在一些细微但却重要的差别。 请务必阅读[使用 Outlook 加载项的单一登录对用户进行身份验证](https://docs.microsoft.com/outlook/add-ins/authenticate-a-user-with-an-sso-token)和[：在 Outlook 加载项中为服务实现单一登录](https://docs.microsoft.com/outlook/add-ins/implement-sso-in-outlook-add-in)。
+在 Outlook 加载项中使用 SSO 与在 Excel、PowerPoint 或 Word 加载项中使用 SSO 存在一些细微但却重要的差别。 请务必阅读[使用 Outlook 加载项的单一登录对用户进行身份验证](/outlook/add-ins/authenticate-a-user-with-an-sso-token)和[：在 Outlook 加载项中为服务实现单一登录](/outlook/add-ins/implement-sso-in-outlook-add-in)。
 
 ## <a name="sso-api-reference"></a>SSO API 参考
 
@@ -230,27 +230,27 @@ Office Auth 命名空间 `Office.context.auth` 提供了一种方法 `getAccessT
 getAccessTokenAsync(options?: AuthOptions, callback?: (result: AsyncResult<string>) => void): void;
 ```
 
-该方法调用 Azure Active Directory V 2.0 端点以获取令牌来访问加载项的 Web 应用程序。 这样可以使加载项识别用户。 通过[“代表”OAuth 流](https://docs.microsoft.com/azure/active-directory/develop/active-directory-v2-protocols-oauth-on-behalf-of)，服务器端代码可以使用此令牌访问加载项 Web 应用程序的 Microsoft Graph。
+该方法调用 Azure Active Directory V 2.0 端点以获取令牌来访问加载项的 Web 应用程序。 这样可以使加载项识别用户。 通过[“代表”OAuth 流](/azure/active-directory/develop/active-directory-v2-protocols-oauth-on-behalf-of)，服务器端代码可以使用此令牌访问加载项 Web 应用程序的 Microsoft Graph。
 
 > [!NOTE]
 > 在 Outlook 中，如果加载项加载到 Outlook.com 或 Gmail 邮箱中，则此 API 不受支持。
 
-<table><tr><td>主机</td><td>Excel, OneNote, Outlook, PowerPoint, Word</td></tr>
-
- <tr><td>[要求集](https://docs.microsoft.com/office/dev/add-ins/develop/specify-office-hosts-and-api-requirements)</td><td>[IdentityAPI](https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/identity-api-requirement-sets)</td></tr></table>
+|主机|Excel, OneNote, Outlook, PowerPoint, Word|
+|---|---|
+|[要求集](/office/dev/add-ins/develop/specify-office-hosts-and-api-requirements)|[IdentityAPI](/office/dev/add-ins/reference/requirement-sets/identity-api-requirement-sets)|
 
 #### <a name="parameters"></a>参数
 
 `options` - 可选。 接受 `AuthOptions` 对象（参见下文）以定义登录行为。
 
-`callback` - 可选。 接受可以解析用户 ID 的令牌或使用“代表”流中的令牌来访问 Microsoft Graph 的回调方法。 如果 [AsyncResult](https://docs.microsoft.com/javascript/api/office/office.asyncresult) `.status`为“成功”，则 `AsyncResult.value` 是原始 AAD v。 2.0 格式的访问令牌。
+`callback` - 可选。 接受可以解析用户 ID 的令牌或使用“代表”流中的令牌来访问 Microsoft Graph 的回调方法。 如果 [AsyncResult](/javascript/api/office/office.asyncresult) `.status`为“成功”，则 `AsyncResult.value` 是原始 AAD v。 2.0 格式的访问令牌。
 
 当 Office 从 AAD v 获取加载项的访问令牌时，`AuthOptions` 接口提供用户体验选项。 2.0 使用 `getAccessTokenAsync` 方法。
 
 ```typescript
 interface AuthOptions {
     /**
-        * Causes Office to display the add-in consent experience. Useful if the add-in's Azure permissions have changed or if the user's consent has 
+        * Causes Office to display the add-in consent experience. Useful if the add-in's Azure permissions have changed or if the user's consent has
         * been revoked.
         */
     forceConsent?: boolean,
@@ -259,10 +259,10 @@ interface AuthOptions {
         */
     forceAddAccount?: boolean,
     /**
-        * Causes Office to prompt the user to provide the additional factor when the tenancy being targeted by Microsoft Graph requires multifactor 
-        * authentication. The string value identifies the type of additional factor that is required. In most cases, you won't know at development 
-        * time whether the user's tenant requires an additional factor or what the string should be. So this option would be used in a "second try" 
-        * call of getAccessTokenAsync after Microsoft Graph has sent an error requesting the additional factor and containing the string that should 
+        * Causes Office to prompt the user to provide the additional factor when the tenancy being targeted by Microsoft Graph requires multifactor
+        * authentication. The string value identifies the type of additional factor that is required. In most cases, you won't know at development
+        * time whether the user's tenant requires an additional factor or what the string should be. So this option would be used in a "second try"
+        * call of getAccessTokenAsync after Microsoft Graph has sent an error requesting the additional factor and containing the string that should
         * be used with the authChallenge option.
         */
     authChallenge?: string
@@ -272,6 +272,3 @@ interface AuthOptions {
     asyncContext?: any
 }
 ```
-
-
-

@@ -1,14 +1,14 @@
 ---
-ms.date: 01/30/2019
+ms.date: 03/19/2019
 description: 在 Excel 中使用 JavaScript 创建自定义函数。
 title: 在 Excel 中创建自定义函数（预览）
 localization_priority: Priority
-ms.openlocfilehash: 312a590052f1f78c8ff5477c8cfb85eb94f03aad
-ms.sourcegitcommit: 70ef38a290c18a1d1a380fd02b263470207a5dc6
+ms.openlocfilehash: 4a9e240646b41b737652b6e64eb83e03d0824178
+ms.sourcegitcommit: c5daedf017c6dd5ab0c13607589208c3f3627354
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/15/2019
-ms.locfileid: "30052761"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "30691200"
 ---
 # <a name="create-custom-functions-in-excel-preview"></a>在 Excel 中创建自定义函数（预览）
 
@@ -290,9 +290,9 @@ function incrementValue(increment, handler){
 
 ## <a name="declaring-a-volatile-function"></a>声明可变函数
 
-[可变函数](https://docs.microsoft.com/office/client-developer/excel/excel-recalculation#volatile-and-non-volatile-functions)是指其值时刻更改的函数（即使此函数的自变量均未更改）。 每当 Excel 重新计算时，这些函数即会重新计算。 例如，假设某个单元格调用函数 `NOW`。 每当调用 `NOW` 时，它将自动返回当前的日期和时间。
+[可变函数](/office/client-developer/excel/excel-recalculation#volatile-and-non-volatile-functions)是指其值时刻更改的函数（即使此函数的自变量均未更改）。 每当 Excel 重新计算时，这些函数即会重新计算。 例如，假设某个单元格调用函数 `NOW`。 每当调用 `NOW` 时，它将自动返回当前的日期和时间。
 
-Excel 包含多个内置可变函数，例如 `RAND` 和 `TODAY`。 可参阅[可变函数和非可变函数](https://docs.microsoft.com/zh-CN/office/client-developer/excel/excel-recalculation#volatile-and-non-volatile-functions)，来获取 Excel 可变函数的完整列表。
+Excel 包含多个内置可变函数，例如 `RAND` 和 `TODAY`。 有关 Excel 可变函数的完整列表，请参阅[可变函数和非可变函数](/office/client-developer/excel/excel-recalculation#volatile-and-non-volatile-functions)。
 
 借助自定义函数，可以创建自己的可变函数。处理日期、时间、随机数字和建模时，可能会使用可变函数。 例如，Monte Carlo 模拟需要生成随机输入，来确定最佳解决方案。
 
@@ -358,10 +358,10 @@ function refreshTemperature(thermometerID){
 }
 ```
 
-## <a name="co-authoring"></a>共同创作
-借助 Excel Online 和 Excel for Windows 以及 Office 365 订阅，可以共同创作文档，此功能可与自定义函数结合使用。 如果你的工作簿使用自定义函数，系统会提示你的同事加载自定义函数的加载项。 当你们均加载该加载项后，自定义函数会通过共同创作共享结果。
+## <a name="coauthoring"></a>共同创作
+借助 Excel Online 和 Excel for Windows 以及 Office 365 订阅，可以共同创作文档，此功能可与自定义函数结合使用。 如果你的工作簿使用自定义函数，系统会提示你的同事加载自定义函数的加载项。 当你们均加载此加载项后，自定义函数会通过共同创作共享结果。
 
-有关共同创作的详细信息，请参阅[关于 Excel 中的共同创作](https://docs.microsoft.com/zh-CN/office/vba/excel/concepts/about-coauthoring-in-excel)。
+若要详细了解共同创作，请参阅[关于 Excel 中的共同创作](/office/vba/excel/concepts/about-coauthoring-in-excel)。
 
 ## <a name="working-with-ranges-of-data"></a>使用数据区域
 
@@ -391,7 +391,7 @@ function secondHighest(values){
 
 在某些情况下，需要获取调用自定义函数的单元格地址。 这在以下类型的应用场景中非常有用：
 
-- 设置区域格式：将单元格地址用作键，以便将信息存储到 [AsyncStorage](https://docs.microsoft.com/office/dev/add-ins/excel/custom-functions-runtime#storing-and-accessing-data) 中。 然后，使用 Excel 中的 [onCalculated](https://docs.microsoft.com/javascript/api/excel/excel.worksheet#oncalculated) 从 `AsyncStorage` 加载该键。
+- 设置区域格式：将单元格地址用作键，以便将信息存储到 [AsyncStorage](/office/dev/add-ins/excel/custom-functions-runtime#storing-and-accessing-data) 中。 然后，使用 Excel 中的 [onCalculated](/javascript/api/excel/excel.worksheet#oncalculated) 从 `AsyncStorage` 加载该键。
 - 显示缓存值：如果脱机使用函数，将显示 `AsyncStorage` 中使用 `onCalculated` 存储的缓存值。
 - 协调：使用单元格地址发现原始单元格，以帮助你在处理时进行协调。
 
@@ -431,27 +431,6 @@ function getAddress(parameter1, invocationContext) {
 
 默认情况下，从 `getAddress` 函数返回的值遵循以下格式：`SheetName!CellNumber`。 例如，如果名为“Expense”的工作表中的 B2 单元格调用了函数，则返回的值为 `Expenses!B2`。
 
-## <a name="handling-errors"></a>处理错误
-
-在生成定义自定义函数的加载项时，请务必加入错误处理逻辑，以便解决运行时错误。 自定义函数的错误处理与 [Excel JavaScript API 的错误处理](excel-add-ins-error-handling.md)大致相同。 在以下代码示例中，`.catch` 将处理之前发生在代码中的任何错误。
-
-```js
-function getComment(x) {
-  let url = "https://www.contoso.com/comments/" + x;
-
-  return fetch(url)
-    .then(function (data) {
-      return data.json();
-    })
-    .then((json) => {
-      return json.body;
-    })
-    .catch(function (error) {
-      throw error;
-    })
-}
-```
-
 ## <a name="known-issues"></a>已知问题
 
 在 [Excel 自定义功能 GitHub 存储库](https://github.com/OfficeDev/Excel-Custom-Functions/issues)上查看已知问题。 
@@ -463,4 +442,3 @@ function getComment(x) {
 * [自定义函数最佳实践](custom-functions-best-practices.md)
 * [自定义函数更改日志](custom-functions-changelog.md)
 * [Excel 自定义函数教程](../tutorials/excel-tutorial-create-custom-functions.md)
-

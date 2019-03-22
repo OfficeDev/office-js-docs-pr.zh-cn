@@ -1,19 +1,19 @@
 ---
 title: Excel JavaScript API 要求集
 description: ''
-ms.date: 02/15/2019
+ms.date: 03/19/2019
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: 90cf68faaaa7e49d1aa8e77c644ac0ca134420b9
-ms.sourcegitcommit: 8fb60c3a31faedaea8b51b46238eb80c590a2491
+ms.openlocfilehash: e7d9eac6d06fdce8936e92a001ff213b04a50bc1
+ms.sourcegitcommit: c5daedf017c6dd5ab0c13607589208c3f3627354
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2019
-ms.locfileid: "30600310"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "30691228"
 ---
 # <a name="excel-javascript-api-requirement-sets"></a>Excel JavaScript API 要求集
 
-要求集是指各组已命名的 API 成员。Office 加载项使用清单中指定的要求集或执行运行时检查，以确定 Office 主机是否支持加载项所需的 API。有关详细信息，请参阅 [Office 版本和要求集](https://docs.microsoft.com/office/dev/add-ins/develop/office-versions-and-requirement-sets)。
+要求集是指各组已命名的 API 成员。Office 加载项使用清单中指定的要求集或执行运行时检查，以确定 Office 主机是否支持加载项所需的 API。有关详细信息，请参阅 [Office 版本和要求集](/office/dev/add-ins/develop/office-versions-and-requirement-sets)。
 
 Excel 加载项在多个 Office 版本中运行，包括 Office 2016 for Windows 或更高版本、Office for iPad、Office for Mac 和 Office Online。下表列出了 Excel 要求集、支持各个要求集的 Office 主机应用程序，以及这些应用程序的内部版本或版本号。
 
@@ -42,7 +42,7 @@ Excel 加载项在多个 Office 版本中运行，包括 Office 2016 for Windows
 - [更新频道发布的 Office 365 客户端版本号和内部版本号](https://support.office.com/article/version-and-build-numbers-of-update-channel-releases-ae942449-1fca-4484-898b-a933ea23def7)
 - [使用的是哪一版 Office？](https://support.office.com/article/What-version-of-Office-am-I-using-932788b8-a3ce-44bf-bb09-e334518b8b19)
 - [在哪里可以找到 Office 365 客户端应用程序的版本号和内部版本号](https://support.office.com/article/version-and-build-numbers-of-update-channel-releases-ae942449-1fca-4484-898b-a933ea23def7)
-- [Office Online Server 概述](https://docs.microsoft.com/officeonlineserver/office-online-server-overview)
+- [Office Online Server 概述](/officeonlineserver/office-online-server-overview)
 
 ## <a name="excel-javascript-preview-apis"></a>Excel JavaScript 预览 API
 
@@ -451,10 +451,7 @@ Excel 加载项在多个 Office 版本中运行，包括 Office 2016 for Windows
 ||[hyperlink](/javascript/api/excel/excel.settablecellproperties#hyperlink)||
 ||[style](/javascript/api/excel/excel.settablecellproperties#style)||
 |[SettableColumnProperties](/javascript/api/excel/excel.settablecolumnproperties)|[columnHidden](/javascript/api/excel/excel.settablecolumnproperties#columnhidden)||
-||[columnWidth](/javascript/api/excel/excel.settablecolumnproperties#columnwidth)||
-|[SettableRowProperties](/javascript/api/excel/excel.settablerowproperties)|[rowHeight](/javascript/api/excel/excel.settablerowproperties#rowheight)||
-||[rowHidden](/javascript/api/excel/excel.settablerowproperties#rowhidden)||
-|[Setting](/javascript/api/excel/excel.setting)|[](/javascript/api/excel/excel.setting#replacestringdatewithdate)||
+|[SettableRowProperties](/javascript/api/excel/excel.settablerowproperties)|[rowHidden](/javascript/api/excel/excel.settablerowproperties#rowhidden)||
 |[Shape](/javascript/api/excel/excel.shape)|[altTextDescription](/javascript/api/excel/excel.shape#alttextdescription)|返回或设置形状对象的可选说明文本。|
 ||[altTextTitle](/javascript/api/excel/excel.shape#alttexttitle)|返回或设置形状对象的可选标题文本。|
 ||[delete()](/javascript/api/excel/excel.shape#delete--)|从工作表删除形状。|
@@ -711,11 +708,11 @@ Excel JavaScript API 要求集 1.8 的功能包括适用于数据透视表、数
 
 ### <a name="pivottable"></a>数据透视表
 
-加载项通过数据透视表 API 的波形 2 设置数据透视表的层次结构。 现在可以控制数据及其聚合方式。 [数据透视表](https://docs.microsoft.com/office/dev/add-ins/excel/excel-add-ins-pivottables)一文详细介绍了新的数据透视表功能。
+加载项通过数据透视表 API 的波形 2 设置数据透视表的层次结构。 现在可以控制数据及其聚合方式。 [数据透视表](/office/dev/add-ins/excel/excel-add-ins-pivottables)一文详细介绍了新的数据透视表功能。
 
 ### <a name="data-validation"></a>数据有效性
 
-数据有效性可以控制用户在工作表中输入的内容。 可以将单元格限制为预定义的答案集，或者在用户输入无效数据时提供弹出警告。 立即详细了解[向区域添加数据有效性](https://docs.microsoft.com/office/dev/add-ins/excel/excel-add-ins-data-validation)。
+数据有效性可以控制用户在工作表中输入的内容。 可以将单元格限制为预定义的答案集，或者在用户输入无效数据时提供弹出警告。 立即详细了解[向区域添加数据有效性](/office/dev/add-ins/excel/excel-add-ins-data-validation)。
 
 ### <a name="charts"></a>图表
 
@@ -723,7 +720,7 @@ Excel JavaScript API 要求集 1.8 的功能包括适用于数据透视表、数
 
 ### <a name="events"></a>事件
 
-已为图表添加更多[事件](https://docs.microsoft.com/office/dev/add-ins/excel/excel-add-ins-events)。 让加载项处理用于与图表的交互。 此外，你还可以在整个工作簿中[触发事件](https://docs.microsoft.com/office/dev/add-ins/excel/performance#enable-and-disable-events)。
+已为图表添加更多[事件](/office/dev/add-ins/excel/excel-add-ins-events)。 让加载项处理用于与图表的交互。 此外，你还可以在整个工作簿中[触发事件](/office/dev/add-ins/excel/performance#enable-and-disable-events)。
 
 |对象| 最近更新| 说明|要求集|
 |:----|:----|:----|:----|
@@ -984,7 +981,7 @@ Excel JavaScript API 要求集 1.7 的功能包括用于图表、事件、工作
 
 ### <a name="events"></a>事件
 
-Excel 事件 API 提供了多个事件处理程序，以便加载项能够在发生特定事件时自动运行指定的函数。 可以将函数设计为执行方案所需的任何操作。 有关当前可用的事件列表，请参阅[使用 Excel JavaScript API 处理事件](https://docs.microsoft.com/office/dev/add-ins/excel/excel-add-ins-events)。
+Excel 事件 API 提供了多个事件处理程序，以便加载项能够在发生特定事件时自动运行指定的函数。 可以将函数设计为执行方案所需的任何操作。 有关当前可用的事件列表，请参阅[使用 Excel JavaScript API 处理事件](/office/dev/add-ins/excel/excel-add-ins-events)。
 
 ### <a name="customize-the-appearance-of-worksheets-and-ranges"></a>自定义工作表和区域的外观
 
@@ -1671,6 +1668,6 @@ Excel JavaScript API 1.1 是首版 API。有关 API 的详细信息，请参阅 
 
 ## <a name="see-also"></a>另请参阅
 
-- [Office 版本和要求集](https://docs.microsoft.com/office/dev/add-ins/develop/office-versions-and-requirement-sets)
-- [指定 Office 主机和 API 要求](https://docs.microsoft.com/office/dev/add-ins/develop/specify-office-hosts-and-api-requirements)
-- [Office 外接程序 XML 清单](https://docs.microsoft.com/office/dev/add-ins/develop/add-in-manifests)
+- [Office 版本和要求集](/office/dev/add-ins/develop/office-versions-and-requirement-sets)
+- [指定 Office 主机和 API 要求](/office/dev/add-ins/develop/specify-office-hosts-and-api-requirements)
+- [Office 外接程序 XML 清单](/office/dev/add-ins/develop/add-in-manifests)
