@@ -1,10 +1,10 @@
 ### YamlMime:YamlDocument
-ms.openlocfilehash: 1b4284d411cff093672f1d114798290b6e226467
-ms.sourcegitcommit: 33dcf099c6b3d249811580d67ee9b790c0fdccfb
+ms.openlocfilehash: 7967c6d41aa1d974bfb092ec4bed56cb25e60dae
+ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "29742236"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "30871022"
 documentType: LandingData
 title: Office 加载项文档
 metadata:
@@ -16,7 +16,7 @@ metadata:
   ms.date: 12/04/2017
   ms.author: o365devx
 abstract:
-  description: <a href="https://docs.microsoft.com/office/dev/add-ins/overview/office-add-ins">Office 加载项平台</a>使你能够生成解决方案，通过解决方案扩展 Office 应用程序，并与 Office 文档中的内容进行交互。 借助 Office 加载项，可以使用熟悉的 Web 技术，例如 HTML、CSS 和 JavaScript 来扩展 Word、Excel、PowerPoint、OneNote、Project 和 Outlook，并与其进行交互。 你的解决方案可以跨多个平台在 Office 中运行，包括 Office for Windows、Office Online、Office for Mac 和 Office for iPad。 了解如何利用快速入门、操作指南和 API 参考文档创建 Office 加载项。<br/><br/><b>注释：</b>有关 COM 或 VSTO 加载项的信息，请参阅 <a href="https://docs.microsoft.com/office/client-developer/office-client-development" target="_blank">Office 客户端开发文档</a>。
+  description: <a href="/office/dev/add-ins/overview/office-add-ins">Office 加载项平台</a>使你能够生成解决方案，通过解决方案扩展 Office 应用程序，并与 Office 文档中的内容进行交互。 借助 Office 加载项，可以使用熟悉的 Web 技术，例如 HTML、CSS 和 JavaScript 来扩展 Word、Excel、PowerPoint、OneNote、Project 和 Outlook，并与其进行交互。 你的解决方案可以跨多个平台在 Office 中运行，包括 Office for Windows、Office Online、Office for Mac 和 Office for iPad。 了解如何利用快速入门、操作指南和 API 参考文档创建 Office 加载项。<br/><br/><b>注释：</b>有关 COM 或 VSTO 加载项的信息，请参阅 <a href="/office/client-developer/office-client-development" target="_blank">Office 客户端开发文档</a>。
   aside:
     image:
       alt: 
@@ -88,8 +88,8 @@ sections:
     className: cardsD
     items:
     - title: 通用 API (2013)
-      html: <p><a href="https://docs.microsoft.com/office/dev/add-ins/reference/javascript-api-for-office" target="_blank">适用于 Office 的 JavaScript API</a></p>
+      html: <p><a href="/office/dev/add-ins/reference/javascript-api-for-office" target="_blank">适用于 Office 的 JavaScript API</a></p>
     - title: 主机特定的 API (2016)
-      html: <p><a href="https://docs.microsoft.com/office/dev/add-ins/reference/overview/excel-add-ins-reference-overview" target="_blank">Excel JavaScript API</a></p><p><a href="https://docs.microsoft.com/office/dev/add-ins/reference/overview/word-add-ins-reference-overview" target="_blank">Word JavaScript API</a></p><p><a href="https://docs.microsoft.com/office/dev/add-ins/reference/overview/onenote-add-ins-javascript-reference" target="_blank">OneNote JavaScript API</a></p><p><a href="https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets" target="_blank">Outlook JavaScript API</a></p>
+      html: <p><a href="/office/dev/add-ins/reference/overview/excel-add-ins-reference-overview" target="_blank">Excel JavaScript API</a></p><p><a href="/office/dev/add-ins/reference/overview/word-add-ins-reference-overview" target="_blank">Word JavaScript API</a></p><p><a href="/office/dev/add-ins/reference/overview/onenote-add-ins-javascript-reference" target="_blank">OneNote JavaScript API</a></p><p><a href="/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets" target="_blank">Outlook JavaScript API</a></p>
     - title: 其他
-      html: <p><a href="https://docs.microsoft.com/office/dev/add-ins/reference/openspec" target="_blank">API 开放性规范</a></p><p><a href="https://docs.microsoft.com/office/dev/add-ins/reference/manifest/allowsnapshot" target="_blank">Office 加载项清单</a></p>
+      html: <p><a href="/office/dev/add-ins/reference/openspec" target="_blank">API 开放性规范</a></p><p><a href="/office/dev/add-ins/reference/manifest/allowsnapshot" target="_blank">Office 加载项清单</a></p>
