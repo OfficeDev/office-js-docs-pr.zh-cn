@@ -1,34 +1,34 @@
 ---
-title: Office.context.mailbox.userProfile - 要求集 1.5
+title: "\"context.subname\": \"邮箱. userProfile-要求集 1.5\""
 description: ''
-ms.date: 02/15/2019
+ms.date: 03/19/2019
 localization_priority: Normal
-ms.openlocfilehash: e98e88cde184db121e69fdd267dff4e39d887b1f
-ms.sourcegitcommit: f26778b596b6b022814c39601485ff676ed4e2fa
+ms.openlocfilehash: fc20497cc8df8d091ba0195f7dca9b283ff4d1c2
+ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/16/2019
-ms.locfileid: "30067825"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "30871015"
 ---
 # <a name="userprofile"></a>userProfile
 
 ### <a name="officeofficemdcontextofficecontextmdmailboxofficecontextmailboxmduserprofile"></a>[Office](Office.md)[.context](Office.context.md)[.mailbox](Office.context.mailbox.md).userProfile
 
-##### <a name="requirements"></a>要求
+##### <a name="requirements"></a>Requirements
 
 |要求| 值|
 |---|---|
 |[最低版本的邮箱要求集](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
-|[最低权限级别](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
-|[适用的 Outlook 模式](https://docs.microsoft.com/outlook/add-ins/#extension-points)| 撰写或阅读|
+|[最低权限级别](/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
+|[适用的 Outlook 模式](/outlook/add-ins/#extension-points)| 撰写或阅读|
 
 ##### <a name="members-and-methods"></a>成员和方法
 
 | 成员 | 类型 |
 |--------|------|
-| [displayName](#displayname-string) | 成员 |
-| [emailAddress](#emailaddress-string) | 成员 |
-| [timeZone](#timezone-string) | 成员 |
+| [displayName](#displayname-string) | Member |
+| [emailAddress](#emailaddress-string) | Member |
+| [timeZone](#timezone-string) | Member |
 
 ### <a name="members"></a>成员
 
@@ -36,7 +36,7 @@ ms.locfileid: "30067825"
 
 获取用户的显示名称。
 
-##### <a name="type"></a>Type
+##### <a name="type"></a>类型
 
 *   String
 
@@ -45,8 +45,8 @@ ms.locfileid: "30067825"
 |要求| 值|
 |---|---|
 |[最低版本的邮箱要求集](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
-|[最低权限级别](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
-|[适用的 Outlook 模式](https://docs.microsoft.com/outlook/add-ins/#extension-points)| 撰写或阅读|
+|[最低权限级别](/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
+|[适用的 Outlook 模式](/outlook/add-ins/#extension-points)| 撰写或阅读|
 
 ##### <a name="example"></a>示例
 
@@ -59,7 +59,7 @@ console.log(Office.context.mailbox.userProfile.displayName);
 
 获取用户的 SMTP 电子邮件地址。
 
-##### <a name="type"></a>Type
+##### <a name="type"></a>类型
 
 *   String
 
@@ -68,8 +68,8 @@ console.log(Office.context.mailbox.userProfile.displayName);
 |要求| 值|
 |---|---|
 |[最低版本的邮箱要求集](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
-|[最低权限级别](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
-|[适用的 Outlook 模式](https://docs.microsoft.com/outlook/add-ins/#extension-points)| 撰写或阅读|
+|[最低权限级别](/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
+|[适用的 Outlook 模式](/outlook/add-ins/#extension-points)| 撰写或阅读|
 
 ##### <a name="example"></a>示例
 
@@ -82,7 +82,7 @@ console.log(Office.context.mailbox.userProfile.emailAddress);
 
 获取用户的默认时区。
 
-##### <a name="type"></a>Type
+##### <a name="type"></a>类型
 
 *   String
 
@@ -91,8 +91,8 @@ console.log(Office.context.mailbox.userProfile.emailAddress);
 |要求| 值|
 |---|---|
 |[最低版本的邮箱要求集](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
-|[最低权限级别](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
-|[适用的 Outlook 模式](https://docs.microsoft.com/outlook/add-ins/#extension-points)| 撰写或阅读|
+|[最低权限级别](/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
+|[适用的 Outlook 模式](/outlook/add-ins/#extension-points)| 撰写或阅读|
 
 ##### <a name="example"></a>示例
 

@@ -1,13 +1,14 @@
 ---
 title: 清单文件中的 TargetDialects 元素
 description: ''
-ms.date: 10/09/2018
-ms.openlocfilehash: 9dab79e10d332181da39f49f572597b7c24d9d88
-ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
-ms.translationtype: HT
+ms.date: 03/19/2019
+localization_priority: Normal
+ms.openlocfilehash: e5824f21144a86c700395b06b386ef5fdc28e16e
+ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/22/2018
-ms.locfileid: "27433773"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "30870203"
 ---
 # <a name="targetdialects-element"></a>TargetDialects 元素
 
@@ -29,5 +30,5 @@ ms.locfileid: "27433773"
 
 ## <a name="see-also"></a>另请参阅
 
-- [创建字典任务窗格外接程序](https://docs.microsoft.com/office/dev/add-ins/word/dictionary-task-pane-add-ins)
+- [创建字典任务窗格外接程序](/office/dev/add-ins/word/dictionary-task-pane-add-ins)
     

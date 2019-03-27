@@ -3,38 +3,18 @@ ms.date: 01/08/2019
 description: 了解在 Excel 中开发自定义函数的最佳实践。
 title: 自定义函数最佳实践（预览）
 localization_priority: Normal
-ms.openlocfilehash: 24c73ec643df073ac97dc399343a7feb0b0b4168
-ms.sourcegitcommit: f7f3d38ae4430e2218bf0abe7bb2976108de3579
+ms.openlocfilehash: ae04169044336f7e42d341c1e904090e55d568af
+ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "30359259"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "30871344"
 ---
 # <a name="custom-functions-best-practices-preview"></a>自定义函数最佳实践（预览）
 
 本文介绍了在 Excel 中开发自定义函数的最佳实践。
 
 [!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
-
-## <a name="error-handling"></a>错误处理
-
-在生成定义自定义函数的外接程序时，请务必加入错误处理逻辑，以便解决运行时错误。 自定义函数的错误处理与 [Excel JavaScript API 的错误处理](excel-add-ins-error-handling.md)大致相同。 在以下代码示例中，`.catch` 将处理之前发生在代码中的任何错误。
-
-```js
-function getComment(x) {
-  let url = "https://www.contoso.com/comments/" + x;
-  return fetch(url)
-    .then(function (data) {
-      return data.json();
-    })
-    .then((json) => {
-      return json.body;
-    })
-    .catch(function (error) {
-      throw error;
-    })
-}
-```
 
 ## <a name="troubleshooting"></a>故障排除
 
@@ -43,7 +23,6 @@ function getComment(x) {
 2. 如果一个或多个自定义函数与以前注册的外接程序的自定义函数冲突, 则不会加载外接程序。 在这种情况下, 您可以删除现有加载项, 或者如果在开发加载项时遇到此错误, 则可以在清单中指定不同的命名空间名称。
 
 3. 若要向 Excel 自定义函数团队报告有关此故障排除方法的反馈，请发送团队反馈。 若要执行此操作，请选择“**文件|反馈|发送哭脸**”。 发送哭脸将提供必要的日志，以帮助我们了解你遇到的问题。
-
 
 ## <a name="debugging"></a>调试
 
@@ -73,7 +52,7 @@ function add(first, second){
   return first + second;
 }
 
-CustomFunctions.associate("ADD", add); 
+CustomFunctions.associate("ADD", add);
 ```
 
 在 JavaScript 文件中创建自定义函数和在 JSON 元数据文件中指定相应信息时，请记住以下最佳实践。
@@ -133,6 +112,7 @@ CustomFunctions.associate("ADD", add);
     ```
 
 ## <a name="declaring-optional-parameters"></a>声明可选参数 
+
 在 Excel for Windows（版本 1812 或更高版本）中，可以声明自定义函数的可选参数。 当用户在 Excel 中调用函数时，可选参数将显示在括号中。 例如，具有一个名为 `parameter1` 的必需参数和一个名为 `parameter2` 的可选参数的函数 `FOO` 将在 Excel 中显示为 `=FOO(parameter1, [parameter2])`。
 
 若要使某个参数可选，请在定义函数的 JSON 元数据文件中将 `"optional": true` 添加到该参数。 以下示例显示对于函数 `=ADD(first, second, [third])` 会是怎么样的。 请注意，可选 `[third]` 参数后跟两个必需参数。 必需参数将先显示在 Excel 的公式 UI 中。

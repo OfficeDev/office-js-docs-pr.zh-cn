@@ -1,14 +1,14 @@
 ---
 title: 错误处理
 description: ''
-ms.date: 10/16/2018
+ms.date: 03/19/2019
 localization_priority: Normal
-ms.openlocfilehash: 8c6de5d2a22fdb4614742ddfb7fbf566780c0f0f
-ms.sourcegitcommit: 8e20e7663be2aaa0f7a5436a965324d171bc667d
+ms.openlocfilehash: 87401773ad4a27bf0a30bc80b229d2879dd5234f
+ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/28/2019
-ms.locfileid: "29388960"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "30871064"
 ---
 # <a name="error-handling"></a>错误处理
 
@@ -76,4 +76,4 @@ Excel.run(function (context) {
 ## <a name="see-also"></a>另请参阅
 
 - [Excel JavaScript API 基本编程概念](excel-add-ins-core-concepts.md)
-- [OfficeExtension.Error 对象（Excel JavaScript API）](https://docs.microsoft.com/javascript/api/office/officeextension.error)
+- [OfficeExtension.Error 对象（Excel JavaScript API）](/javascript/api/office/officeextension.error)

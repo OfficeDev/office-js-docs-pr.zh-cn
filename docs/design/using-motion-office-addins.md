@@ -1,13 +1,14 @@
 ---
 title: 在 Office 加载项中使用动作
 description: ''
-ms.date: 03/23/2018
-ms.openlocfilehash: 0003f7c52da190852dbd13ad58be26fa6e86911d
-ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
-ms.translationtype: HT
+ms.date: 03/19/2019
+localization_priority: Normal
+ms.openlocfilehash: d3be2454b36fe1003c0697f0bca3c29d743e5330
+ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/22/2018
-ms.locfileid: "27432961"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "30871533"
 ---
 # <a name="using-motion-in-office-add-ins"></a>在 Office 加载项中使用动作
 
@@ -22,8 +23,6 @@ Office 的重点是工作效率，因此 Office 动画语言支持帮助客户�
 
 加载项中使用的标准元素可以纳入动作，不仅有助于用户集中注意力、呈现元素之间的关系，还有助于验证用户操作。 将元素编排为加强层次结构和心理模型。
 
-
-
 ### <a name="best-practices"></a>最佳做法
 
 |允许事项|禁止事项|
@@ -33,20 +32,18 @@ Office 的重点是工作效率，因此 Office 动画语言支持帮助客户�
 
 ![左 gif 显示打开后移动元素最少的面板，右 gif 显示打开后包含许多移动元素的面板](../images/add-in-motion-purpose.gif)
 
-
-
 ## <a name="use-expected-motions"></a>使用符合预期的动作
+
 建议使用 [Office UI Fabric](https://developer.microsoft.com/fabric) 直观连接到 Office 平台，还建议使用 [Fabric 动画](https://developer.microsoft.com/fabric#/styles/animations)创建与 Fabric 动作语言一致的动作。 
 
 它可用于在 Office 中无缝集成。它有助于创建更侧重用户感受（而不是外观）的体验。动画 CSS 类提供方向、进入/退出和持续时间（强化 Office 心理模型），并为客户提供了解如何与加载项交互的机会。
 
 ### <a name="best-practices"></a>最佳做法
 
-
 |允许事项|禁止事项|
 |:-----|:-----|
-|应使用与 Fabric 行为一致的动作。| 不得创建干扰 Office 中常见动作模式或与其冲突的动作。 
-|应确保动作的跨元素应用一致。| 不得使用不同动作为同一组件或对象添加动画效果。|
+|应使用与 Fabric 行为一致的动作。| 不得创建干扰 Office 中常见动作模式或与其冲突的动作。
+|确保在 like 元素中有一致的运动应用程序。| 不得使用不同动作为同一组件或对象添加动画效果。|
 |应确保动画方向的使用一致。 例如，从右侧打开的面板应向右侧关闭。|不得使用多个方向为元素添加动画效果。
 
 ![左 gif 显示模式以预期方式打开，右 gif 显示模式以异常方式打开](../images/add-in-motion-expected.gif)
@@ -60,12 +57,11 @@ Office 的重点是工作效率，因此 Office 动画语言支持帮助客户�
 |允许事项|禁止事项|
 |:-----|:-----|
 | 应使用[建议的动作持续时间](https://developer.microsoft.com/fabric#/styles/animations)。 | 不得使用夸张的动画。 避免打造会分散客户注意力的花哨体验。
-| 请遵循[建议的缓和曲线](https://docs.microsoft.com/windows/uwp/design/motion/timing-and-easing#easing-in-fluent-motion)。  |不得用不连贯的方式移动元素。 避免占先、退回、橡皮筋或其他模拟自然世界物理学的效果。|
+| 请遵循[建议的缓和曲线](/windows/uwp/design/motion/timing-and-easing#easing-in-fluent-motion)。  |不得用不连贯的方式移动元素。 避免占先、退回、橡皮筋或其他模拟自然世界物理学的效果。|
 
 ![左 gif 显示使用缓和淡化效果加载磁贴，右 gif 显示使用退回效果加载磁贴](../images/add-in-motion-character.gif)
 
 ## <a name="see-also"></a>另请参阅
 
 * [Fabric 动画指南](https://developer.microsoft.com/fabric#/styles/animations)
-* [通用 Windows 平台应用动作](https://docs.microsoft.com/windows/uwp/design/motion)
-
+* [通用 Windows 平台应用动作](/windows/uwp/design/motion)

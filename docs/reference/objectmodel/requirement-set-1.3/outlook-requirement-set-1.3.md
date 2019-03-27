@@ -1,17 +1,18 @@
 ---
 title: Outlook 外接程序 API 要求集 1.3
 description: ''
-ms.date: 10/11/2018
-ms.openlocfilehash: c34be8f30a2c674035e5ab0ca223f630d9bb5e5a
-ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
-ms.translationtype: HT
+ms.date: 03/19/2019
+localization_priority: Normal
+ms.openlocfilehash: 276096870b128896e987bcb303b4cccdb77e0e50
+ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/22/2018
-ms.locfileid: "27432625"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "30871274"
 ---
 # <a name="outlook-add-in-api-requirement-set-13"></a>Outlook 外接程序 API 要求集 1.3
 
-适用于 Office 的 JavaScript API 的 Outlook 加载项 API 子集包括可以在 Outlook 加载项中使用的对象、方法、属性和事件。
+适用于 Office 的 JavaScript API 的 Outlook 外接程序 API 子集包括可以在 Outlook 外接程序中使用的对象、方法、属性和事件。
 
 > [!NOTE]
 > 本文档适用于最新要求集之外的[要求集](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)。 
@@ -20,7 +21,7 @@ ms.locfileid: "27432625"
 
 要求集 1.3 包括[要求集 1.2](../requirement-set-1.2/outlook-requirement-set-1.2.md) 的所有功能。它添加了下列功能。
 
-- 添加了对[外接程序命令](https://docs.microsoft.com/outlook/add-ins/add-in-commands-for-outlook)的支持。
+- 添加了对[外接程序命令](/outlook/add-ins/add-in-commands-for-outlook)的支持。
 - 添加了保存或关闭正在撰写的项目的功能。
 - 改进了 [Body](/javascript/api/outlook_1_3/office.body) 对象，允许外接程序获取或设置整个正文。
 - 添加了在 EWS 和 REST 格式之间转换 ID 的转换方法。
@@ -34,7 +35,7 @@ ms.locfileid: "27432625"
 - 添加了 [Event](/javascript/api/office/office.addincommands.event) 对象：作为参数传递到 Outlook 外接程序中的无用户界面命令函数。用来表示处理已完成。
 - 添加了 [Office.context.mailbox.item.close](office.context.mailbox.item.md#close)：关闭正在撰写的当前项。
 - 添加了 [Office.context.mailbox.item.saveAsync](office.context.mailbox.item.md#saveasyncoptions-callback)：异步保存项目。
-- 添加了 [Office.context.mailbox.item.notificationMessages](office.context.mailbox.item.md#notificationmessages-notificationmessagesjavascriptapioutlook13officenotificationmessages)：获取项目的通知邮件。
+- 添加了 [Office.context.mailbox.item.notificationMessages](office.context.mailbox.item.md#notificationmessages-notificationmessages)：获取项目的通知邮件。
 - 添加了 [Office.context.mailbox.convertToEwsId](office.context.mailbox.md#converttoewsiditemid-restversion--string)：将项目 ID 格式化（从 REST 转换为 EWS 格式）。
 - 添加了 [Office.context.mailbox.convertToRestId](office.context.mailbox.md#converttorestiditemid-restversion--string)：将项目 ID 格式化（从 EWS 转换为 REST 格式）。
 - 添加了 [Office.MailboxEnums.ItemNotificationMessageType](/javascript/api/outlook_1_3/office.mailboxenums.itemnotificationmessagetype)：为约会或邮件指定通知邮件类型。
@@ -44,6 +45,6 @@ ms.locfileid: "27432625"
 
 ## <a name="see-also"></a>另请参阅
 
-- [Outlook 加载项](https://docs.microsoft.com/outlook/add-ins/)
+- [Outlook 加载项](/outlook/add-ins/)
 - [Outlook 外接程序代码示例](https://developer.microsoft.com/outlook/gallery/?filterBy=Outlook,Samples,Add-ins)
-- [入门](https://docs.microsoft.com/outlook/add-ins/quick-start)
+- [入门](/outlook/add-ins/quick-start)

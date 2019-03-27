@@ -1,13 +1,14 @@
 ---
 title: Office 外接程序的语音准则
 description: ''
-ms.date: 06/27/2018
-ms.openlocfilehash: afd8d63095661634052c51ea528502368023140d
-ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
-ms.translationtype: HT
+ms.date: 03/19/2019
+localization_priority: Normal
+ms.openlocfilehash: 2982c8a09ba1f2f1265681dfb5850c3a324d704c
+ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/22/2018
-ms.locfileid: "27433283"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "30871764"
 ---
 # <a name="voice-guidelines"></a>语音准则
 
@@ -16,7 +17,7 @@ ms.locfileid: "27433283"
 要使文本与 Office 语音的准则相符，请执行以下操作：
 
 - **使用自然的风格。** 写下您说话的方式。避免使用行话和技术性太强的单词和短语。使用用户熟悉的术语。
-- **使用简单、直白的语言。** 在文本中使用短的单词和句子，使用主动语态。 
+- **使用简单、直白的语言。** 在文本中使用短的单词和句子，使用主动语态。
 - **保持一致。** 对相同的概念始终使用相同的措辞。
 - **吸引用户。** 将用户称为“您”。避免使用第三人称。对用户任务使用祈使句。
 - **乐于帮助用户并为用户设身处地着想。** 呈现积极、礼貌、鼓舞人心且能提供支持的文本。强调用户能够完成的任务，而不是无法完成的任务。
@@ -24,7 +25,7 @@ ms.locfileid: "27433283"
 
 ## <a name="see-also"></a>另请参阅
 
-- [所有功能编写](https://docs.microsoft.com/style-guide/accessibility/writing-all-abilities)准则
-- [有关 Microsoft 样式和语音的前 10 个提示](https://docs.microsoft.com/style-guide/top-10-tips-style-voice)
-- [字词选择](https://docs.microsoft.com/style-guide/word-choice/)指南
--  Office 外接程序[验证策略](https://docs.microsoft.com/office/dev/store/validation-policies)
+- [所有功能编写](/style-guide/accessibility/writing-all-abilities)准则
+- [有关 Microsoft 样式和语音的前 10 个提示](/style-guide/top-10-tips-style-voice)
+- [字词选择](/style-guide/word-choice/)指南
+- Office 外接程序[验证策略](/office/dev/store/validation-policies)

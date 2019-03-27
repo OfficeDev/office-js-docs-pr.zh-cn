@@ -1,13 +1,14 @@
 ---
 title: 清单文件中的 Methods 元素
 description: ''
-ms.date: 10/09/2018
-ms.openlocfilehash: 6e280cb49eadef587cd3a91e0664ece3c3d59f50
-ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
-ms.translationtype: HT
+ms.date: 03/19/2019
+localization_priority: Normal
+ms.openlocfilehash: 0d295c2657ef03451c26a324410a684490a180fb
+ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/22/2018
-ms.locfileid: "27432751"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "30871659"
 ---
 # <a name="methods-element"></a>Methods 元素
 
@@ -33,5 +34,5 @@ ms.locfileid: "27432751"
 
 ## <a name="remarks"></a>注释
 
-**Methods** 和 **Method** 元素不受邮件外接程序的支持。有关要求集的详细信息，请参阅 [Office 版本和要求集](https://docs.microsoft.com/office/dev/add-ins/develop/office-versions-and-requirement-sets)。
+**Methods** 和 **Method** 元素不受邮件外接程序的支持。有关要求集的详细信息，请参阅 [Office 版本和要求集](/office/dev/add-ins/develop/office-versions-and-requirement-sets)。
 

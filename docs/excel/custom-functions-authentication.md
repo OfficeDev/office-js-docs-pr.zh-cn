@@ -1,13 +1,13 @@
 ---
-ms.date: 03/06/2019
+ms.date: 03/19/2019
 description: 在 Excel 中使用自定义函数对用户进行身份验证。
 title: 自定义函数的身份验证
-ms.openlocfilehash: 4358d9f570ef8b31db98b1886c01ff4a89a6b1be
-ms.sourcegitcommit: 8e7b7b0cfb68b91a3a95585d094cf5f5ffd00178
+ms.openlocfilehash: 7db46e40758ea0282a2fd7c4d40739304a874e76
+ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "30512851"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "30871491"
 ---
 # <a name="authentication"></a>身份验证
 
@@ -15,7 +15,7 @@ ms.locfileid: "30512851"
   
 ## <a name="asyncstorage-object"></a>到 asyncstorage 对象
 
-自定义函数运行时在全局`localStorage`窗口中没有可用的对象, 您通常可能会在其中存储数据。 相反, 您应该使用[OfficeRuntime](https://docs.microsoft.com/javascript/api/office-runtime/officeruntime.asyncstorage)来设置和获取数据, 从而在自定义函数和任务窗格之间共享数据。
+自定义函数运行时在全局`localStorage`窗口中没有可用的对象, 您通常可能会在其中存储数据。 相反, 您应该使用[OfficeRuntime](/javascript/api/office-runtime/officeruntime.asyncstorage)来设置和获取数据, 从而在自定义函数和任务窗格之间共享数据。
 
 此外, 还提供了使用`AsyncStorage`的好处;它使用安全沙盒环境, 以便其他外接程序无法访问您的数据。
 
@@ -30,7 +30,7 @@ ms.locfileid: "30512851"
 > [!NOTE]
 > 自定义函数运行时使用与任务窗格使用的浏览器引擎运行时中的 dialog 对象略有不同的 dialog 对象。 它们都称为 "对话框 API", 但用于`Officeruntime.Dialog`在自定义函数运行时中对用户进行身份验证。
 
-有关如何使用的`OfficeRuntime.Dialog`信息, 请参阅[Custom 函数运行时](https://docs.microsoft.com/en-us/office/dev/add-ins/excel/custom-functions-runtime?view=office-js#displaying-a-dialog-box)。
+有关如何使用的`OfficeRuntime.Dialog`信息, 请参阅[Custom 函数运行时](/office/dev/add-ins/excel/custom-functions-runtime?view=office-js#displaying-a-dialog-box)。
 
 在整体上构思整个身份验证过程时, 将加载项的任务窗格和 UI 元素以及外接程序的自定义函数部分视为可通过`AsyncStorage`相互通信的单独实体可能会有所帮助。
 
@@ -42,7 +42,7 @@ ms.locfileid: "30512851"
 4. 然后, 您的`AsyncStorage`自定义函数会将此访问令牌设置为。
 5. 外接程序的任务窗格从`AsyncStorage`访问令牌。
 
-![协同工作的自定义函数、OfficeRuntime 和任务窗格的关系图。](../images/Authdiagram.png "身份验证图。")
+![自定义函数的关系图, 使用对话框 API 获取访问令牌, 然后通过到 asyncstorage API 与任务窗格共享令牌。](../images/authentication-diagram.png "身份验证图。")
 
 ## <a name="storing-the-token"></a>存储令牌
 
@@ -77,7 +77,7 @@ function ReceiveTokenFromCustomFunction() {
 
 ## <a name="general-guidance"></a>一般指南
 
-Office 外接程序是基于 web 的, 您可以使用任何 web 身份验证技术。 使用自定义函数实现自己的身份验证时, 必须遵循任何特定的模式或方法。 您可能希望参考有关各种身份验证模式的文档, 从本文开始,[了解如何通过外部服务进行授权](https://docs.microsoft.com/en-us/office/dev/add-ins/develop/auth-external-add-ins?view=office-js)。  
+Office 外接程序是基于 web 的, 您可以使用任何 web 身份验证技术。 使用自定义函数实现自己的身份验证时, 必须遵循任何特定的模式或方法。 您可能希望参考有关各种身份验证模式的文档, 从本文开始,[了解如何通过外部服务进行授权](/office/dev/add-ins/develop/auth-external-add-ins?view=office-js)。  
 
 在开发自定义函数时, 应避免使用以下位置来存储数据:  
 

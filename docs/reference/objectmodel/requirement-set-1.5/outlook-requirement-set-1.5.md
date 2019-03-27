@@ -1,18 +1,18 @@
 ---
 title: Outlook 加载项 API 要求集 1.5
 description: ''
-ms.date: 02/15/2019
+ms.date: 03/19/2019
 localization_priority: Normal
-ms.openlocfilehash: edc34bd088c1e8a2e88732518dcb335d38b8ba21
-ms.sourcegitcommit: f26778b596b6b022814c39601485ff676ed4e2fa
+ms.openlocfilehash: d0489e4efa763b3963fcdc78ec894db46fa06362
+ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/16/2019
-ms.locfileid: "30067921"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "30870863"
 ---
 # <a name="outlook-add-in-api-requirement-set-15"></a>Outlook 外接程序 API 要求集 1.5
 
-适用于 Office 的 JavaScript API 的 Outlook 加载项 API 子集包括可以在 Outlook 加载项中使用的对象、方法、属性和事件。
+适用于 Office 的 JavaScript API 的 Outlook 外接程序 API 子集包括可以在 Outlook 外接程序中使用的对象、方法、属性和事件。
 
 > [!NOTE]
 > 本文档适用于最新要求集之外的[要求集](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)。
@@ -21,8 +21,8 @@ ms.locfileid: "30067921"
 
 要求集 1.5 包括[要求集 1.4](../requirement-set-1.4/outlook-requirement-set-1.4.md) 的所有功能。它添加了下列功能。
 
-- 添加了对[可固定任务窗格](https://docs.microsoft.com/outlook/add-ins/pinnable-taskpane)的支持。
-- 添加了对 [REST API](https://docs.microsoft.com/outlook/add-ins/use-rest-api) 调用的支持。
+- 添加了对[可固定任务窗格](/outlook/add-ins/pinnable-taskpane)的支持。
+- 添加了对 [REST API](/outlook/add-ins/use-rest-api) 调用的支持。
 - 添加了将附件标记为内联的功能。
 - 添加了关闭任务窗格或对话框的功能。
 
@@ -40,6 +40,6 @@ ms.locfileid: "30067921"
 
 ## <a name="see-also"></a>另请参阅
 
-- [Outlook 加载项](https://docs.microsoft.com/outlook/add-ins/)
+- [Outlook 加载项](/outlook/add-ins/)
 - [Outlook 外接程序代码示例](https://developer.microsoft.com/outlook/gallery/?filterBy=Outlook,Samples,Add-ins)
-- [入门](https://docs.microsoft.com/outlook/add-ins/quick-start)
+- [入门](/outlook/add-ins/quick-start)

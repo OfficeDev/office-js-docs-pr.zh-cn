@@ -1,14 +1,14 @@
 ---
 title: 清单文件中的 Rule 元素
 description: ''
-ms.date: 12/27/2018
+ms.date: 03/19/2019
 localization_priority: Normal
-ms.openlocfilehash: 38e724e6962c48efd0902be315c49ebb4cf6c798
-ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
+ms.openlocfilehash: 07037c43c111f735a7354a048066e4c4a88f7637
+ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "29388498"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "30871512"
 ---
 # <a name="rule-element"></a>Rule 元素
 
@@ -45,7 +45,7 @@ ms.locfileid: "29388498"
 |:-----|:-----|:-----|
 | **ItemType** | 是 | 指定要匹配的项目类型。可以是 `Message` 或 `Appointment`。`Message` 项目类型包括电子邮件、会议请求、会议响应和会议取消。 |
 | **FormType** | 否（在 [ExtensionPoint](extensionpoint.md) 内），是（在 [OfficeApp](officeapp.md) 内） | 指定应用应出现在项目的读取还是编辑表单中。可以是以下值之一：`Read`、`Edit`、`ReadOrEdit`。如果在 `ExtensionPoint` 中的 `Rule` 上指定，则该值必须为 `Read`。 |
-| **ItemClass** | 否 | 指定要匹配的自定义邮件类别。有关详细信息，请参阅[在 Outlook 中为特定邮件类别激活邮件加载项](https://docs.microsoft.com/outlook/add-ins/activation-rules)。 |
+| **ItemClass** | 否 | 指定要匹配的自定义邮件类别。有关详细信息，请参阅[在 Outlook 中为特定邮件类别激活邮件外接程序](/outlook/add-ins/activation-rules)。 |
 | **IncludeSubClasses** | 否 | 指定当项目是指定邮件类别的子类时，该规则的计算结果是否应为 true；默认值为 `false`。 |
 
 ### <a name="example"></a>示例
@@ -72,7 +72,7 @@ ms.locfileid: "29388498"
 
 | 属性 | 必需 | 说明 |
 |:-----|:-----|:-----|
-| **EntityType** | 是 | 指定若想规则计算结果为 true 而必须存在的实体类型。可以为以下类型之一：`MeetingSuggestion`、`TaskSuggestion`、`Address`、`Url`、`PhoneNumber`、`EmailAddress` 或 `Contact`。 |
+| **EntityType** | 是 | 指定若想规则计算结果为 true 而必须存在的实体类型。可以是以下值之一：`MeetingSuggestion`、`TaskSuggestion`、`Address`、`Url`、`PhoneNumber`、`EmailAddress` 或 `Contact`。 |
 | **RegExFilter** | 否 | 指定一个针对此实体运行以进行激活的正则表达式。 |
 | **FilterName** | 否 | 指定正则表达式筛选器的名称，以便随后能够在你的外接程序代码中引用该名称。 |
 | **IgnoreCase** | 否 | 指定在匹配由 **RegExFilter** 属性指定的正则表达式时是否忽略大小写。 |
@@ -127,6 +127,6 @@ ms.locfileid: "29388498"
 
 ## <a name="see-also"></a>另请参阅
 
-- [Outlook 加载项的激活规则](https://docs.microsoft.com/outlook/add-ins/activation-rules)
-- [将 Outlook 项中的字符串作为已知实体进行匹配](https://docs.microsoft.com/outlook/add-ins/match-strings-in-an-item-as-well-known-entities)    
-- [使用正则表达式激活规则显示 Outlook 外接程序](https://docs.microsoft.com/outlook/add-ins/use-regular-expressions-to-show-an-outlook-add-in)
+- [Outlook 加载项的激活规则](/outlook/add-ins/activation-rules)
+- [将 Outlook 项中的字符串作为已知实体进行匹配](/outlook/add-ins/match-strings-in-an-item-as-well-known-entities)    
+- [使用正则表达式激活规则显示 Outlook 外接程序](/outlook/add-ins/use-regular-expressions-to-show-an-outlook-add-in)

@@ -1,14 +1,14 @@
 ---
-title: Office.context - 要求集 1.2
+title: Office。上下文要求集1。2
 description: ''
-ms.date: 02/15/2019
+ms.date: 03/19/2019
 localization_priority: Normal
-ms.openlocfilehash: 8e8d83500e1cb9de730f6a7bac75c3bcc0012b4e
-ms.sourcegitcommit: f26778b596b6b022814c39601485ff676ed4e2fa
+ms.openlocfilehash: 8c0c84d4c763e125992b06abfb33985085a56210
+ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/16/2019
-ms.locfileid: "30068131"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "30870301"
 ---
 # <a name="context"></a>context
 
@@ -17,16 +17,16 @@ ms.locfileid: "30068131"
 Office.context 命名空间提供所有 Office 应用中的加载项所使用的共享接口。此列表仅记录 Outlook 加载项所使用的接口。有关 Office.context 命名空间的完整列表，请参阅[通用 API 中的 Office.context 引用](/javascript/api/office/office.context)。
 
 
-##### <a name="requirements"></a>要求
+##### <a name="requirements"></a>Requirements
 
 |要求| 值|
 |---|---|
 |[最低版本的邮箱要求集](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
-|[适用的 Outlook 模式](https://docs.microsoft.com/outlook/add-ins/#extension-points)| 撰写或阅读|
+|[适用的 Outlook 模式](/outlook/add-ins/#extension-points)| 撰写或阅读|
 
 ### <a name="namespaces"></a>命名空间
 
-[邮箱](office.context.mailbox.md) - 提供对 Microsoft Outlook 和 Microsoft Outlook 网页版 Outlook 外接程序对象模型的访问权限。
+[邮箱](office.context.mailbox.md)-为 microsoft outlook 和 microsoft outlook 网页版提供对 outlook 外接程序对象模型的访问权限。
 
 ### <a name="members"></a>成员
 
@@ -36,7 +36,7 @@ Office.context 命名空间提供所有 Office 应用中的加载项所使用的
 
 `displayLanguage` 值反映在 Office 主机应用程序中通过“**文件 > 选项 > 语言**”指定的当前“**显示语言**”设置。
 
-##### <a name="type"></a>Type
+##### <a name="type"></a>类型
 
 *   String
 
@@ -45,7 +45,7 @@ Office.context 命名空间提供所有 Office 应用中的加载项所使用的
 |要求| 值|
 |---|---|
 |[最低版本的邮箱要求集](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
-|[适用的 Outlook 模式](https://docs.microsoft.com/outlook/add-ins/#extension-points)| 撰写或阅读|
+|[适用的 Outlook 模式](/outlook/add-ins/#extension-points)| 撰写或阅读|
 
 ##### <a name="example"></a>示例
 
@@ -78,10 +78,10 @@ function write(message){
 
 *   [RoamingSettings](/javascript/api/outlook_1_2/office.RoamingSettings)
 
-##### <a name="requirements"></a>要求
+##### <a name="requirements"></a>Requirements
 
 |要求| 值|
 |---|---|
 |[最低版本的邮箱要求集](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
-|[最低权限级别](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| 受限|
-|[适用的 Outlook 模式](https://docs.microsoft.com/outlook/add-ins/#extension-points)| 撰写或阅读|
+|[最低权限级别](/outlook/add-ins/understanding-outlook-add-in-permissions)| 受限|
+|[适用的 Outlook 模式](/outlook/add-ins/#extension-points)| 撰写或阅读|

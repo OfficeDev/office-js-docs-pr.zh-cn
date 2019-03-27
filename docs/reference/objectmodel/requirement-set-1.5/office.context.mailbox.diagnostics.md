@@ -1,14 +1,14 @@
 ---
-title: Office.context.mailbox.diagnostics - 要求集 1.5
+title: "\"context.subname\": \"邮箱\"。诊断-要求集1。5"
 description: ''
-ms.date: 02/15/2019
+ms.date: 03/19/2019
 localization_priority: Normal
-ms.openlocfilehash: 3a00c714a766bf13c83a63fc30a564a88f421a09
-ms.sourcegitcommit: f26778b596b6b022814c39601485ff676ed4e2fa
+ms.openlocfilehash: 7e554217831f2739ead3a0a90bd41b7d72e7b2d1
+ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/16/2019
-ms.locfileid: "30067942"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "30871113"
 ---
 # <a name="diagnostics"></a>diagnostics
 
@@ -16,21 +16,21 @@ ms.locfileid: "30067942"
 
 将诊断信息提供给 Outlook 外接程序。
 
-##### <a name="requirements"></a>要求
+##### <a name="requirements"></a>Requirements
 
 |要求| 值|
 |---|---|
 |[最低版本的邮箱要求集](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
-|[最低权限级别](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
-|[适用的 Outlook 模式](https://docs.microsoft.com/outlook/add-ins/#extension-points)| 撰写或阅读|
+|[最低权限级别](/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
+|[适用的 Outlook 模式](/outlook/add-ins/#extension-points)| 撰写或阅读|
 
 ##### <a name="members-and-methods"></a>成员和方法
 
 | 成员 | 类型 |
 |--------|------|
-| [hostName](#hostname-string) | 成员 |
-| [hostVersion](#hostversion-string) | 成员 |
-| [OWAView](#owaview-string) | 成员 |
+| [主机名](#hostname-string) | Member |
+| [diagnostics.hostversion](#hostversion-string) | Member |
+| [OWAView](#owaview-string) | Member |
 
 ### <a name="members"></a>成员
 
@@ -40,7 +40,7 @@ ms.locfileid: "30067942"
 
 可以是下列值之一的字符串：`Outlook`、`OutlookIOS` 或 `OutlookWebApp`。
 
-##### <a name="type"></a>Type
+##### <a name="type"></a>类型
 
 *   String
 
@@ -49,8 +49,8 @@ ms.locfileid: "30067942"
 |要求| 值|
 |---|---|
 |[最低版本的邮箱要求集](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
-|[最低权限级别](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
-|[适用的 Outlook 模式](https://docs.microsoft.com/outlook/add-ins/#extension-points)| 撰写或阅读|
+|[最低权限级别](/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
+|[适用的 Outlook 模式](/outlook/add-ins/#extension-points)| 撰写或阅读|
 
 ####  <a name="hostversion-string"></a>hostVersion :String
 
@@ -58,7 +58,7 @@ ms.locfileid: "30067942"
 
 如果邮件外接程序正在 Outlook 桌面客户端或 Outlook for iOS 上运行，则 `hostVersion` 属性返回主机应用程序版本 Outlook。在 Outlook Web App 中，属性返回 Exchange Server 的版本。其中的一个示例是字符串 `15.0.468.0`。
 
-##### <a name="type"></a>Type
+##### <a name="type"></a>类型
 
 *   String
 
@@ -67,8 +67,8 @@ ms.locfileid: "30067942"
 |要求| 值|
 |---|---|
 |[最低版本的邮箱要求集](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
-|[最低权限级别](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
-|[适用的 Outlook 模式](https://docs.microsoft.com/outlook/add-ins/#extension-points)| 撰写或阅读|
+|[最低权限级别](/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
+|[适用的 Outlook 模式](/outlook/add-ins/#extension-points)| 撰写或阅读|
 
 ####  <a name="owaview-string"></a>OWAView :String
 
@@ -84,7 +84,7 @@ Outlook Web App 具有三种视图，这些视图分别与屏幕和窗口的宽�
 *   `TwoColumns` 在屏幕较宽时显示。Outlook Web App 在大多数平板电脑上使用此视图。
 *   `ThreeColumns` 在屏幕为宽屏时显示。例如，Outlook Web App 在台式机的全屏窗口中使用此视图。
 
-##### <a name="type"></a>Type
+##### <a name="type"></a>类型
 
 *   String
 
@@ -93,5 +93,5 @@ Outlook Web App 具有三种视图，这些视图分别与屏幕和窗口的宽�
 |要求| 值|
 |---|---|
 |[最低版本的邮箱要求集](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
-|[最低权限级别](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
-|[适用的 Outlook 模式](https://docs.microsoft.com/outlook/add-ins/#extension-points)| 撰写或阅读|
+|[最低权限级别](/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
+|[适用的 Outlook 模式](/outlook/add-ins/#extension-points)| 撰写或阅读|

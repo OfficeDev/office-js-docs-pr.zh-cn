@@ -1,13 +1,14 @@
 ---
 title: 清单文件中的 Sets 元素
 description: ''
-ms.date: 10/09/2018
-ms.openlocfilehash: b7e78ae05f8409f38c885a1d6a328347d00d0df1
-ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
-ms.translationtype: HT
+ms.date: 03/19/2019
+localization_priority: Normal
+ms.openlocfilehash: 13777e54ec6bd2d97fa35609ebe194ed85ffa1b8
+ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/22/2018
-ms.locfileid: "27433654"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "30871771"
 ---
 # <a name="sets-element"></a>Sets 元素
 
@@ -33,13 +34,13 @@ ms.locfileid: "27433654"
 
 ## <a name="attributes"></a>属性
 
-|**属性**|**类型**|**必需**|**说明**|
+|**属性**|**类型**|**必需**|**描述**|
 |:-----|:-----|:-----|:-----|
 |DefaultMinVersion|字符串|可选|为所有子 **Set** 元素指定默认的 [MinVersion](set.md) 属性值。默认值为“1.1”。|
 
 ## <a name="remarks"></a>注释
 
-有关要求集的详细信息，请参阅 [Office 版本和要求集](https://docs.microsoft.com/office/dev/add-ins/develop/office-versions-and-requirement-sets)。
+有关要求集的详细信息，请参阅 [Office 版本和要求集](/office/dev/add-ins/develop/office-versions-and-requirement-sets)。
 
-有关 **Set** 元素的 **MinVersion** 属性和 **Sets** 元素的 **DefaultMinVersion** 属性的详细信息，请参阅[在清单中设置 Requirements 元素](https://docs.microsoft.com/office/dev/add-ins/develop/specify-office-hosts-and-api-requirements#set-the-requirements-element-in-the-manifest)。
+有关 **Set** 元素的 **MinVersion** 属性和 **Sets** 元素的 **DefaultMinVersion** 属性的详细信息，请参阅[在清单中设置 Requirements 元素](/office/dev/add-ins/develop/specify-office-hosts-and-api-requirements#set-the-requirements-element-in-the-manifest)。
 

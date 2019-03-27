@@ -1,14 +1,14 @@
 ---
 title: 清单文件中的 Action 元素
 description: ''
-ms.date: 11/14/2018
+ms.date: 03/19/2019
 localization_priority: Normal
-ms.openlocfilehash: 589a4af94c7abbcf61cd7a5210d5df29ba8a3a4e
-ms.sourcegitcommit: 2e4b97f0252ff3dd908a3aa7a9720f0cb50b855d
+ms.openlocfilehash: 59df6cce6af1277f365a1dd3cd0b3ef11230804e
+ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "29635893"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "30870826"
 ---
 # <a name="action-element"></a>Action 元素
 
@@ -60,7 +60,7 @@ ms.locfileid: "29635893"
 
 ## <a name="taskpaneid"></a>TaskpaneId
 
- **xsi:type** 是“ShowTaskpane”时的可选元素。 指定任务窗格容器的 ID。 具有多个“ShowTaskpane”操作时，如果想要让每个操作使用独立的窗格，则使用不同的 **TaskpaneId**。 若要让不同的操作共享同一个窗格，则使用同一个 **TaskpaneId**。 当用户选择共享同一个 **TaskpaneId** 的命令时，窗格容器将保持打开状态，但窗格的内容将被替换为相应的操作“SourceLocation”。
+ **xsi: type** 是“ShowTaskpane”时的可选元素。 指定任务窗格容器的 ID。 具有多个“ShowTaskpane”操作时，如果想要让每个操作使用独立的窗格，则使用不同的 **TaskpaneId**。 若要让不同的操作共享同一个窗格，则使用同一个 **TaskpaneId**。 当用户选择共享同一个 **TaskpaneId** 的命令时，窗格容器将保持打开状态，但窗格的内容将被替换为相应的操作“SourceLocation”。
 
 > [!NOTE]
 > Outlook 不支持此元素。
@@ -102,7 +102,7 @@ ms.locfileid: "29635893"
 
 ## <a name="title"></a>标题
 
- **xsi:type** 是“ShowTaskpane”时的可选元素。 指定此操作任务窗格的自定义标题。
+ **xsi: type** 是“ShowTaskpane”时的可选元素。 指定此操作任务窗格的自定义标题。
 
 下面的示例展示了两个使用 **Title** 元素的不同操作。
 
@@ -137,10 +137,10 @@ ms.locfileid: "29635893"
 
 ## <a name="supportspinning"></a>SupportsPinning
 
-**xsi:type** 是“ShowTaskpane”时的可选元素。 包含 [VersionOverrides](versionoverrides.md) 元素的 `xsi:type` 属性值必须为 `VersionOverridesV1_1`。 添加此元素时将值设为 `true` 可以支持任务窗格固定。 这样一来，用户可以“固定”任务窗格，即使用户选择其他对象，任务窗格也可以继续处于打开状态。 有关详细信息，请参阅[在 Outlook 中实现可固定的任务窗格](https://docs.microsoft.com/outlook/add-ins/pinnable-taskpane)。
+**xsi:type** 是“ShowTaskpane”时的可选元素。 包含 [VersionOverrides](versionoverrides.md) 元素的 `xsi:type` 属性值必须为 `VersionOverridesV1_1`。 添加此元素时将值设为 `true` 可以支持任务窗格固定。 这样一来，用户可以“固定”任务窗格，即使用户选择其他对象，任务窗格也可以继续处于打开状态。 有关详细信息，请参阅[在 Outlook 中实现可固定的任务窗格](/outlook/add-ins/pinnable-taskpane)。
 
 > [!NOTE]
-> SupportsPinning 目前仅支持 Windows （构建 7628.1000 或更高版本） 的 Outlook 2016 和 Outlook for Mac 的 2016年 (生成 16.13.503 或更高版本)。
+> SupportsPinning 目前仅支持 outlook 2016 for Windows (内部版本7628.1000 或更高版本) 和 outlook 2016 for Mac (内部版本16.13.503 或更高版本)。
 
 ```xml
 <Action xsi:type="ShowTaskpane">

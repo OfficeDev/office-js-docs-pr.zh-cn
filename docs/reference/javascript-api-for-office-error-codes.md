@@ -1,13 +1,14 @@
 ---
 title: 适用于 Office 的 JavaScript API 的错误代码
 description: ''
-ms.date: 11/27/2018
-ms.openlocfilehash: 1e7d479b9b6f6f8f619f799c34ba18ac83bd3afd
-ms.sourcegitcommit: 3f8eee355579f9234a8e46ae88090342002b4681
-ms.translationtype: HT
+ms.date: 03/19/2019
+localization_priority: Normal
+ms.openlocfilehash: 5e18a82c2536d5f5284588227b1cf767ebd2749e
+ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "26734019"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "30871940"
 ---
 # <a name="javascript-api-for-office-error-codes"></a>适用于 Office 的 JavaScript API 的错误代码
 
@@ -39,7 +40,7 @@ ms.locfileid: "26734019"
 |2005|数据写入错误|指定的 startRow 或 startColumn 值无效。|用户提供的 startRow 或 startCol 值无效。|
 |2006|无效格式错误|指定数据对象的格式无效。|解决方案开发人员提供了无效的 HTML 或 OOXML 字符串、格式错误的 HTML 字符串或无效的 OOXML 字符串。|
 |2007|数据对象无效|指定数据对象的类型与当前所选内容不兼容。|解决方案开发人员提供的数据对象与指定的强制类型不兼容。|
-|2008|数据写入错误|TBD|TBD|
+|2008|数据写入错误|待定|待定|
 |2009|数据写入错误|指定的数据对象太大。|用户尝试设置超过主机加载项指定数据限制的数据。|
 |2010|数据写入错误|如果表格包含合并单元格，则坐标参数不能用于强制类型"Table"。|用户尝试设置非统一表格（即包含合并单元格的表格）的部分数据。|
 |3000|绑定创建错误|无法绑定到当前所选内容。|用户所选内容不支持绑定。（例如，用户选择的是图像或其他不受支持的对象。）|
@@ -87,7 +88,7 @@ ms.locfileid: "26734019"
 |12006|||对话框已关闭，通常是因为用户选择了 **X** 按钮。 在对话框中引发并在主机页面中触发 `DialogEventReceived` 事件。|
 |12007|||已从此主机窗口打开了一个对话框。 主机窗口（如任务窗格）一次只能打开一个对话框。 由 `displayDialogAsync` 的调用引发。|
 |12009|||用户已选择忽略对话框。 联机版本的 Office 中可能会发生此错误，用户可能会选择不允许加载项显示对话框。 由 `displayDialogAsync` 的调用引发。|
-|13000 - 13010|||请参阅[导致 getAccessTokenAsync 生成错误的原因和处理方法](https://docs.microsoft.com/office/dev/add-ins/develop/troubleshoot-sso-in-office-add-ins#causes-and-handling-of-errors-from-getaccesstokenasync)。|
+|13000 - 13010|||请参阅[导致 getAccessTokenAsync 生成错误的原因和处理方法](/office/dev/add-ins/develop/troubleshoot-sso-in-office-add-ins#causes-and-handling-of-errors-from-getaccesstokenasync)。|
 
 ## <a name="binding-creation-error-conditions"></a>绑定创建错误条件
 
@@ -99,14 +100,14 @@ ms.locfileid: "26734019"
 
 |**指定绑定类型**|**实际选择**|**行为**|
 |:-----|:-----|:-----|
-|矩阵|单元格范围（包括表格和单个单元格范围内）|在选定单元格上创建_矩阵_类型的绑定。不得修改文档。|
-|Matrix|单元格中选定的文本|在整个单元格上创建_矩阵_类型的绑定。不得修改文档。|
-|Matrix|多重选择/选择无效（例如，用户选择了图片、对象或艺术字。）|无法创建绑定。|
-|Table|单元格范围（包括单个单元格）|无法创建绑定。|
-|Table|表格内单元格的范围（包括表格中单个单元格、整张表格或表格中单元格内的文本）|已在整张表格中创建绑定。|
-|Table|表格中和表格外的半选定|无法创建绑定。|
-|Table|单元格（而非表格）中选定的文本。|无法创建绑定。|
-|Table|多重选择/选择无效（例如，用户选择了图片、对象、艺术字等。）|无法创建绑定。|
+|Matrix|单元格范围（包括表格和单个单元格范围内）|在选定单元格上创建_矩阵_类型的绑定。不得修改文档。|
+|矩阵|单元格中选定的文本|在整个单元格上创建_矩阵_类型的绑定。不得修改文档。|
+|矩阵|多重选择/选择无效（例如，用户选择了图片、对象或艺术字。）|无法创建绑定。|
+|表格|单元格范围（包括单个单元格）|无法创建绑定。|
+|表格|表格内单元格的范围（包括表格中单个单元格、整张表格或表格中单元格内的文本）|已在整张表格中创建绑定。|
+|表格|表格中和表格外的半选定|无法创建绑定。|
+|表格|单元格（而非表格）中选定的文本。|无法创建绑定。|
+|表格|多重选择/选择无效（例如，用户选择了图片、对象、艺术字等。）|无法创建绑定。|
 |文本|单元格范围|无法创建绑定。|
 |文本|表格内的单元格范围|无法创建绑定。|
 |文本|单个单元格|_text_ 类型绑定已创建。|
@@ -119,12 +120,12 @@ ms.locfileid: "26734019"
 
 |**指定绑定类型**|**实际选择**|**行为**|
 |:-----|:-----|:-----|
-|矩阵|文本|无法创建绑定。|
+|Matrix|文本|无法创建绑定。|
 |Matrix|整张表格|_matrix_ 类型绑定已创建。文档已更改，内容控件必须打包表格。 |
 |Matrix|表格范围内|无法创建绑定。|
 |Matrix|选择无效（例如，多个对象、无效对象等。）|无法创建绑定。|
-|Table|文本|无法创建绑定。|
-|Table|整张表格|_text_ 类型绑定已创建。|
+|表格|文本|无法创建绑定。|
+|表格|整张表格|_text_ 类型绑定已创建。|
 |Table|表格范围内|无法创建绑定。|
 |Table|选择无效（例如，多个对象、无效对象等。）|无法创建绑定。|
 |文本|整张表格|_text_ 类型绑定已创建。|
@@ -134,5 +135,5 @@ ms.locfileid: "26734019"
 
 ## <a name="see-also"></a>另请参阅
    
-- [Office 加载项开发生命周期](https://docs.microsoft.com/office/dev/add-ins/concepts/add-in-development-lifecycle)
+- [Office 加载项开发生命周期](/office/dev/add-ins/concepts/add-in-development-lifecycle)
     

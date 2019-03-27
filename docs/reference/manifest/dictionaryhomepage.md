@@ -1,13 +1,14 @@
 ---
 title: 清单文件中的 DictionaryHomePage 元素
 description: ''
-ms.date: 10/09/2018
-ms.openlocfilehash: d4224863d92290960d881539569220478d568674
-ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
-ms.translationtype: HT
+ms.date: 03/19/2019
+localization_priority: Normal
+ms.openlocfilehash: 096ac8f110b8037e86a1a43a1c9e83c684ed1aee
+ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/22/2018
-ms.locfileid: "27433829"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "30871008"
 ---
 # <a name="dictionaryhomepage-element"></a>DictionaryHomePage 元素
 
@@ -27,5 +28,5 @@ ms.locfileid: "27433829"
 
 ## <a name="see-also"></a>另请参阅
 
-- [创建字典任务窗格外接程序](https://docs.microsoft.com/office/dev/add-ins/word/dictionary-task-pane-add-ins)
+- [创建字典任务窗格外接程序](/office/dev/add-ins/word/dictionary-task-pane-add-ins)
     

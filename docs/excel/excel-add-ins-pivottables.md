@@ -1,50 +1,51 @@
 ---
 title: 使用 Excel JavaScript API 处理数据透视表
-description: 使用 Excel JavaScript API 创建数据透视表并与其组件交互。
-ms.date: 09/21/2018
-ms.openlocfilehash: a3ff624f8e4e6652834f0a424b482b372c6f2401
-ms.sourcegitcommit: c53f05bbd4abdfe1ee2e42fdd4f82b318b363ad7
-ms.translationtype: HT
+description: 使用 Excel JavaScript API 创建数据透视表并与其组件进行交互。
+ms.date: 03/21/2019
+localization_priority: Normal
+ms.openlocfilehash: b53d734e676417a6438f1008bac720a38a244d1f
+ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "25505907"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "30870322"
 ---
 # <a name="work-with-pivottables-using-the-excel-javascript-api"></a>使用 Excel JavaScript API 处理数据透视表
 
-数据透视表可简化大型数据集。它们允许快速操作分组的数据。Excel JavaScript API 允许加载项创建数据透视表并与其组件进行交互。 
+数据透视表精简了较大的数据集。 它们允许快速操作分组数据。 Excel JavaScript API 允许你的外接程序创建数据透视表并与其组件进行交互。
 
-如果不熟悉数据透视表的功能，尝试以最终用户的身份了解它们的功能。请参阅 [创建数据透视表以分析工作表数据](https://support.office.com/en-us/article/Import-and-analyze-data-ccd3c4a6-272f-4c97-afbb-d3f27407fcde#ID0EAABAAA=PivotTables) ，了解这些工具的入门指导。 
+如果您对数据透视表的功能不熟悉, 请考虑将其作为最终用户来浏览。 有关这些工具的最佳入门知识, 请参阅[创建数据透视表以分析工作表数据](https://support.office.com/en-us/article/Import-and-analyze-data-ccd3c4a6-272f-4c97-afbb-d3f27407fcde#ID0EAABAAA=PivotTables)。 
 
-本文提供了常见方案的代码示例。若要进一步了解数据透视表 API，请参阅 [**数据透视表**](https://docs.microsoft.com/javascript/api/excel/excel.pivottable) 和 [**PivotTableCollection**](https://docs.microsoft.com/javascript/api/excel/excel.pivottable) 。
+本文提供了常见方案的代码示例。 若要进一步了解数据透视表 API, 请参阅[**数据透视表**](/javascript/api/excel/excel.pivottable)和[**PivotTableCollection**](/javascript/api/excel/excel.pivottable)。
 
 > [!IMPORTANT]
-> 目前不支持使用 OLAP 创建的数据透视表。
+> 目前不支持使用 OLAP 创建的数据透视表。 此外, 也不支持 Power Pivot。
 
-## <a name="hierarchies"></a>层次结构
+## <a name="hierarchies"></a>Hierarchies
 
-数据透视表根据四个层次结构类别进行组织：行、列、数据和筛选器。以下描述不同农场的水果销售的数据将被用于本文全文中。
+数据透视表基于四种层次结构类别进行组织: 行、列、数据和筛选器。 在本文中, 将使用从各个服务器场中描述水果销售的以下数据。
 
-![来自不同农场的不同类型水果销售的集合。](../images/excel-pivots-raw-data.png)
+![来自不同服务器场的不同类型的水果销售的集合。](../images/excel-pivots-raw-data.png)
 
-此数据具有五个层次结构： **Farms** 、 **Type** 、 **Classification** 、 **Crates Sold at Farm** 和 **Crates Sold Wholesale** 。每个层次结构可以仅存在于四种类型之一。如果 **Type** 被添加到列层次结构，然后又被添加到行层次结构，则它仅在后者保留。
+此数据具有五个层次**** 结构: 服务器场、**类型**、**分类**、**服务器场中销售的 Crates**和**Crates 销售批发**。 每个层次结构只能存在于四个类别之一中。 如果**Type**添加到列层次结构中, 然后添加到行层次结构中, 则它仅保留在后者中。
 
-行和列的层次结构定义了数据如何被分组。例如， **Farms** 的行层次结构将同一个农场的所有数据集组合在一起。行和列的层次结构之间的选择定义了数据透视表的方向。
+行和列层次结构定义数据的分组方式。 例如,**服务器场**的行层次结构将把来自同一个服务器场的所有数据集组合在一起。 在行和列层次结构之间进行选择, 以定义数据透视表的方向。
 
-数据层次结构是基于行和列层次结构进行聚合的值。具有 **Farms** 的行层次结构和 **Crates Sold Wholesale** 的数据层次结构的数据透视表显示了每个农场的所有不同水果的总和（默认）。
+数据层次结构是要根据行和列层次结构聚合的值。 具有**服务器场**的行层次结构和**Crates 销售**的数据层次结构的数据透视表显示每个服务器场的所有不同 fruits 的总和总计 (默认值)。
 
-筛选器层次结构根据该筛选类型中的值包含或排除枢纽的数据。选择 **Organic** 类型的 **Classification** 筛选器层次结构仅显示有机水果的数据。
+筛选器层次结构基于该筛选类型中的值包括或排除数据透视表中的数据。 选定类型为 "**有机**" 的**分类**筛选器层次结构仅显示用于随机水果的数据。
 
-这里又是农场数据，以及数据透视表。数据透视表使用 **Farm** 和 **Type** 作为行层次结构， **Crates Sold at Farm** 和 **Crates Sold Wholesale** 作为数据层次结构 （带总和的默认汇总函数），以及 **Classification**  作为筛选器层次结构（选中 **Organic**）。 
+下面是数据透视表旁边的服务器场数据。 数据透视表使用**服务器场**和**类型**作为行层次结构,**在服务器场中售出的 Crates**和**Crates 销售批发**作为数据层次结构 (具有 sum 的默认聚合函数) 和**分类**作为筛选器层次结构 (选择了**随机**选择的层次结构)。 
 
-![具有行、数据和筛选器层次结构的数据透视表旁边的水果销售数据的选定内容。](../images/excel-pivot-table-and-data.png)
+![选择了具有行、数据和筛选器层次结构的数据透视表旁边的水果销售数据。](../images/excel-pivot-table-and-data.png)
 
-无法通过 JavaScript API 或 Excel 用户界面生成此数据透视表。这两个选项允许通过加载项进行进一步的操作。
+此数据透视表可通过 JavaScript API 或 Excel UI 生成。 这两个选项都允许通过外接程序进行进一步操作。
 
 ## <a name="create-a-pivottable"></a>创建数据透视表
 
-数据透视表的需要名称、 源和目标。源可以是区域地址或表名称（作为 `Range` 、 `string`、或 `Table` 类型进行传递)。目标是某一区域地址 (作为 `Range` 或 `string` 给定)。下面的示例显示各种数据透视表创建技术。
+数据透视表需要名称、源和目标。 源可以是区域地址或表名称 (作为`Range`、 `string`或`Table`类型传递)。 目标是区域地址 (指定为`Range`或`string`)。 下面的示例展示了各种数据透视表创建技术。
 
-### <a name="create-a-pivottable-with-range-addresses"></a>创建带范围地址的数据透视表
+### <a name="create-a-pivottable-with-range-addresses"></a>创建包含区域地址的数据透视表
 
 ```typescript
 await Excel.run(async (context) => {
@@ -55,17 +56,17 @@ await Excel.run(async (context) => {
 });
 ```
 
-### <a name="create-a-pivottable-with-range-objects"></a>创建带范围对象的数据透视表
+### <a name="create-a-pivottable-with-range-objects"></a>创建包含 Range 对象的数据透视表
 
 ```typescript
-await Excel.run(async (context) => {    
+await Excel.run(async (context) => {
     // creating a PivotTable named "Farm Sales" on a worksheet called "PivotWorksheet" at cell A2
     // the data comes from the worksheet "DataWorksheet" across the range A1:E21
     const rangeToAnalyze = context.workbook.worksheets.getItem("DataWorksheet").getRange("A1:E21");
     const rangeToPlacePivot = context.workbook.worksheets.getItem("PivotWorksheet").getRange("A2");
     context.workbook.worksheets.getItem("PivotWorksheet").pivotTables.add(
         "Farm Sales", rangeToAnalyze, rangeToPlacePivot);
-    
+
     await context.sync();
 });
 ```
@@ -84,9 +85,9 @@ await Excel.run(async (context) => {
 
 ## <a name="use-an-existing-pivottable"></a>使用现有数据透视表
 
-手动创建的数据透视表亦可通过工作簿或者单个工作表的数据透视表集合进行访问。 
+手动创建的数据透视表也可通过工作簿或单个工作表的数据透视表集合进行访问。 
 
-以下代码获取工作簿中第一个数据透视表。然后给出了表的名称以方便用于将来的参考。
+下面的代码获取工作簿中的第一个数据透视表。 然后, 它将为表提供一个名称, 以便日后参考。
 
 ```typescript
 await Excel.run(async (context) => {
@@ -97,11 +98,11 @@ await Excel.run(async (context) => {
 
 ## <a name="add-rows-and-columns-to-a-pivottable"></a>向数据透视表添加行和列
 
-行和列按字段值相关的方式透视数据。
+数据透视这些字段的值周围的行和列。
 
-添加 **Farm** 列使所有销售数据以每个农场为中心运行。添加 **Type** 和 **Classification** 行进一步根据哪些水果已售出以及它是否是有机的，以此对数据进行分解。
+添加 "**服务器场**" 列将每个服务器场的所有销售额枢轴分布。 添加 "**类型**" 和 "**分类**" 行会根据所售的水果和是否为 "有随机" 来进一步细分数据。
 
-![带 Farm 列以及 Type 和 Classification 行的数据透视表。](../images/excel-pivots-table-rows-and-columns.png)
+![具有服务器场列和类型和分类行的数据透视表。](../images/excel-pivots-table-rows-and-columns.png)
 
 ```typescript
 await Excel.run(async (context) => {
@@ -109,14 +110,14 @@ await Excel.run(async (context) => {
 
     pivotTable.rowHierarchies.add(pivotTable.hierarchies.getItem("Type"));
     pivotTable.rowHierarchies.add(pivotTable.hierarchies.getItem("Classification"));
-    
+
     pivotTable.columnHierarchies.add(pivotTable.hierarchies.getItem("Farm"));
 
     await context.sync();
 });
 ```
 
-还可拥有仅带行或列的数据透视表。
+您还可以拥有仅包含行或列的数据透视表。
 
 ```typescript
 await Excel.run(async (context) => {
@@ -124,18 +125,18 @@ await Excel.run(async (context) => {
     pivotTable.rowHierarchies.add(pivotTable.hierarchies.getItem("Farm"));
     pivotTable.rowHierarchies.add(pivotTable.hierarchies.getItem("Type"));
     pivotTable.rowHierarchies.add(pivotTable.hierarchies.getItem("Classification"));
-    
+
     await context.sync();
 });
 ```
 
-## <a name="add-data-hierarchies-to-the-pivottable"></a>向数据透视表添加数据层次结构
+## <a name="add-data-hierarchies-to-the-pivottable"></a>向数据透视表中添加数据层次结构
 
-数据层次结构根据行和列在数据透视表中填充了信息。添加 **Crates Sold at Farm** 和 **Crates Sold Wholesale** 的数据层次结构为每行和列提供了那些图表的总和。 
+数据层次结构使用要基于行和列进行组合的信息填充数据透视表。 添加 Crates 的数据层次结构**在服务器场**和**Crates**售出销售批发为每个行和列提供这些数字的总和。 
 
-在示例中， **Farm** 和 **Type** 是行，而售出箱数属于数据。 
+在示例中, "**服务器场**" 和 "**类型**" 都是行, 而 "发货箱销售额" 作为数据。 
 
-![显示基于水果来源农场的不同水果总销售情况的数据透视表。](../images/excel-pivots-data-hierarchy.png)
+![显示基于其来源的服务器场的不同水果的总销售额的数据透视表。](../images/excel-pivots-data-hierarchy.png)
 
 ```typescript
 await Excel.run(async (context) => {
@@ -154,13 +155,13 @@ await Excel.run(async (context) => {
 });
 ```
 
-## <a name="change-aggregation-function"></a>更改汇总函数
+## <a name="change-aggregation-function"></a>更改聚合函数
 
-数据层次结构可以聚合赋值。对于数字的数据集，默认情况下为总和。 `summarizeBy` 属性根据[AggregrationFunction](https://docs.microsoft.com/javascript/api/excel/excel.aggregationfunction) 类型定义行为。 
+数据层次结构的值已聚合。 对于数字的数据集, 默认情况下, 这是一个总和。 该`summarizeBy`属性基于[AggregationFunction](/javascript/api/excel/excel.aggregationfunction)类型定义此行为。
 
-当前支持的汇总函数类型为 `Sum` 、 `Count` 、 `Average` 、 `Max` 、 `Min` 、 `Product` 、 `CountNumbers` 、 `StandardDeviation` 、 `StandardDeviationP` 、 `Variance` 、 `VarianceP` 、 和 `Automatic` （默认）。
+当前支持的聚合函数类型为`Sum`、 `Count` `Average` `Max` `Min` `Product` `CountNumbers` `StandardDeviation` `StandardDeviationP` `Variance`、、、、、、、、、和`Automatic` (默认值`VarianceP`)。
 
-以下代码示例将数据汇总更改为平均值。
+下面的代码示例将聚合更改为数据的平均值。
 
 ```typescript
 await Excel.run(async (context) => {
@@ -177,16 +178,17 @@ await Excel.run(async (context) => {
 
 ## <a name="change-calculations-with-a-showasrule"></a>使用 ShowAsRule 更改计算
 
-数据透视表在默认情况下独立聚合了行和列的层次结构的数据。一个 [ShowAsRule](https://docs.microsoft.com/javascript/api/excel/excel.showasrule)  根据数据透视表中的其他项改变了数据层次结构的输出值。
+默认情况下, 数据透视表将单独聚合其行和列层次结构的数据。 [ShowAsRule](/javascript/api/excel/excel.showasrule)将数据层次结构更改为基于数据透视表中的其他项的输出值。
 
-此 `ShowAsRule` 对象具有三种属性：
--   `calculation`：相对于数据层次结构的计算类型（默认是 `none`）。
--   `baseField`: 应用在计算前包含了基准数据层次结构内的字段。 [PivotField](https://docs.microsoft.com/javascript/api/excel/excel.pivotfield)  通常具有与其父层次结构相同的名称。
--   `baseItem`: 根据计算类型与基本字段的值进行比较的单项[PivotItem](https://docs.microsoft.com/javascript/api/excel/excel.pivotitem) 。并非所有计算都需要此字段。
+`ShowAsRule`对象具有三个属性:
 
-下面的示例将 **Sum of Crates Sold at Farm** 数据层次结构的计算设置为列总计的百分比。我们仍希望此粒度扩展到水果类型的级别，因此我们将使用 **Type** 行层次结构及其基础字段。此示例还将 **Farm** 作为第一个行层次结构，因此农场的总项还显示了每个农场负责生产的百分比。
+-   `calculation`: 要应用于数据层次结构的相对计算的类型 (默认值为`none`)。
+-   `baseField`: 层次结构中的字段, 其中包含在应用计算之前的基础数据。 [透视字段](/javascript/api/excel/excel.pivotfield)的名称通常与其父层次结构的名称相同。
+-   `baseItem`: 个人[PivotItem](/javascript/api/excel/excel.pivotitem)根据计算类型与基本字段的值进行比较。 并非所有计算都需要此字段。
 
-![数据透视表显示每个农场的水果销售额相对于总销售额的百分比，以及单个农场各水果类型所占销售额的百分比。](../images/excel-pivots-showas-percentage.png)
+以下示例将场数据层次结构中的 " **Crates**总数" 的计算设置为列总计的百分比。 我们仍希望将粒度扩展到水果类型级别, 因此我们将使用**类型**行层次结构及其基础字段。 该示例还将**服务器场**作为第一个行的层次结构, 因此服务器场总数将显示每个服务器场也负责生成的百分比。
+
+![显示与每个场中的单个服务器场和各个水果类型的总和相关的水果销售百分比的数据透视表。](../images/excel-pivots-showas-percentage.png)
 
 ``` TypeScript
 await Excel.run(async (context) => {
@@ -207,11 +209,12 @@ await Excel.run(async (context) => {
 });
 ```
 
-上面的示例将计算设置为列中，与单个行层次结构相对。当计算与单项相关时，使用 `baseItem` 属性。 
+上面的示例将计算设置为相对于单个行层次结构的列。 当计算与单个项目相关时, 请使用`baseItem`属性。
 
-下面的示例演示了 `differenceFrom` 计算。它会显示相对于“A Farms”的农场售出箱数的数据层次结构条目的差异。 `baseField` 是 **Farm** ，因此我们可以看到其他农场之间的不同，以及每种类型的类似水果（**Type**  也是在此示例中的行层次结构） 的明细。
+下面的示例演示了`differenceFrom`计算。 它显示服务器场与 "服务器场" 相关的 "销售数据" 层次结构条目的差异。
+`baseField`是**服务器场**, 因此我们看到其他服务器场之间的差异, 以及每种类型的类似水果 (在此示例中**类型**也是行层次结构) 的细目。
 
-![数据透视表将显示"A Farms"和其他农场之间的水果销售差异。此时将显示农场的总水果销售和各种水果类型的销售这两个差异。如果"A Farms"并不销售某种类型的水果，将显示"# n/A"。](../images/excel-pivots-showas-differencefrom.png)
+![显示 "一群" 和其他 "服务器场" 之间的水果销售差异的数据透视表。 这显示了服务器场的总水果销售和水果类型销售的差异。 如果 "服务器场" 未销售特定类型的水果, 则显示 "#N/a"。](../images/excel-pivots-showas-differencefrom.png)
 
 ``` TypeScript
 await Excel.run(async (context) => {
@@ -235,13 +238,13 @@ await Excel.run(async (context) => {
 
 ## <a name="pivottable-layouts"></a>数据透视表布局
 
-[PivotLayout](https://docs.microsoft.com/javascript/api/excel/excel.pivotlayout) 定义了层次结构和其数据的位置。您可访问此布局以确定存储数据的区域。 
+[PivotLayout](/javascript/api/excel/excel.pivotlayout)定义层次结构及其数据的位置。 您可以访问布局以确定存储数据的区域。
 
-下图显示了哪个布局函数调用对应哪个数据透视表范围。
+下图显示了哪些布局函数调用对应于数据透视表的区域。
 
-![此图显示数据透视表的哪些部分是由布局的获取范围函数返回的。](../images/excel-pivots-layout-breakdown.png)
+![显示由布局的 get range 函数返回的数据透视表的节的图表。](../images/excel-pivots-layout-breakdown.png)
 
-下面的代码演示如何通过仔细检查布局来获取数据透视表数据的最后一行。这些值随后相加以得出总和。
+下面的代码演示如何通过布局获取数据透视表数据的最后一行。 然后将这些值汇总到一起以进行总计。
 
 ```typescript
 await Excel.run(async (context) => {
@@ -260,21 +263,21 @@ await Excel.run(async (context) => {
 });
 ```
 
-数据透视表有三种布局样式：压缩、大纲和表格。我们已在上面的示例看到了压缩样式。 
+数据透视表具有三种布局样式: 紧凑、大纲和表格。 我们在前面的示例中看到了压缩样式。 
 
-下面的示例分别使用大纲和表格样式。代码示例演示如何在不同的布局之间循环。
+下面的示例分别使用大纲样式和表格样式。 此代码示例演示如何在不同的布局之间循环。
 
-### <a name="outline-layout"></a>大纲版式
+### <a name="outline-layout"></a>大纲布局
 
-![使用大纲版式的数据透视表。](../images/excel-pivots-outline-layout.png)
+![使用大纲布局的数据透视表。](../images/excel-pivots-outline-layout.png)
 
-### <a name="tabular-layout"></a>表格版式
+### <a name="tabular-layout"></a>表格布局
 
-![使用表格版式的数据透视表。](../images/excel-pivots-tabular-layout.png)
+![使用表格布局的数据透视表。](../images/excel-pivots-tabular-layout.png)
 
 ## <a name="change-hierarchy-names"></a>更改层次结构名称
 
-层次结构字段可以编辑。下面的代码演示了如何更改两个数据层次结构的显示名称。
+层次结构字段是可编辑的。 下面的代码演示如何更改两个数据层次结构的显示名称。
 
 ```typescript
 await Excel.run(async (context) => {
@@ -282,7 +285,7 @@ await Excel.run(async (context) => {
         .pivotTables.getItem("Farm Sales").dataHierarchies;
     dataHierarchies.load("no-properties-needed");
     await context.sync();
-    
+
     // changing the displayed names of these entries
     dataHierarchies.items[0].name = "Farm Sales";
     dataHierarchies.items[1].name = "Wholesale";
@@ -292,7 +295,7 @@ await Excel.run(async (context) => {
 
 ## <a name="delete-a-pivottable"></a>删除数据透视表
 
-使用数据透视表的名称删除数据透视表。
+使用它们的名称删除数据透视表。
 
 ```typescript
 await Excel.run(async (context) => {
@@ -304,5 +307,5 @@ await Excel.run(async (context) => {
 
 ## <a name="see-also"></a>另请参阅
 
-- [使用 Excel JavaScript API 的基本编程概念](excel-add-ins-core-concepts.md)
-- [Excel JavaScript API 参考](https://docs.microsoft.com/javascript/api/excel)
+- [Excel JavaScript API 基本编程概念](excel-add-ins-core-concepts.md)
+- [Excel JavaScript API 参考](/javascript/api/excel)

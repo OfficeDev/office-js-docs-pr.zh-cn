@@ -1,18 +1,18 @@
 ---
 title: Outlook 外接程序 API 要求集 1.2
 description: ''
-ms.date: 02/15/2019
+ms.date: 03/19/2019
 localization_priority: Normal
-ms.openlocfilehash: 1767b1b93f13de2c8a0731d2f08a1141b709b734
-ms.sourcegitcommit: f26778b596b6b022814c39601485ff676ed4e2fa
+ms.openlocfilehash: dfd61738fe9e941d7d0f3a70173ab1f087f9f552
+ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/16/2019
-ms.locfileid: "30068026"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "30869930"
 ---
 # <a name="outlook-add-in-api-requirement-set-12"></a>Outlook 外接程序 API 要求集 1.2
 
-适用于 Office 的 JavaScript API 的 Outlook 加载项 API 子集包括可以在 Outlook 加载项中使用的对象、方法、属性和事件。
+适用于 Office 的 JavaScript API 的 Outlook 外接程序 API 子集包括可以在 Outlook 外接程序中使用的对象、方法、属性和事件。
 
 > [!NOTE]
 > 本文档适用于最新要求集之外的[要求集](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)。 
@@ -30,6 +30,6 @@ ms.locfileid: "30068026"
 
 ## <a name="see-also"></a>另请参阅
 
-- [Outlook 加载项](https://docs.microsoft.com/outlook/add-ins/)
+- [Outlook 加载项](/outlook/add-ins/)
 - [Outlook 外接程序代码示例](https://developer.microsoft.com/outlook/gallery/?filterBy=Outlook,Samples,Add-ins)
-- [入门](https://docs.microsoft.com/outlook/add-ins/quick-start)
+- [入门](/outlook/add-ins/quick-start)

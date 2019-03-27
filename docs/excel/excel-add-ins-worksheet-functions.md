@@ -1,14 +1,14 @@
 ---
 title: 使用 Excel JavaScript API 调用内置 Excel 工作表函数
 description: ''
-ms.date: 01/24/2017
+ms.date: 03/19/2019
 localization_priority: Normal
-ms.openlocfilehash: 5ce8ac0c56a7d6a499f601fcc0767a1e76ea14cc
-ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
+ms.openlocfilehash: 6994a6075732b9eac7e9d8c911e7a9e2c5e87cb4
+ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "29388610"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "30871456"
 ---
 # <a name="call-built-in-excel-worksheet-functions"></a>调用内置 Excel 工作表函数
 
@@ -19,7 +19,7 @@ ms.locfileid: "29388610"
 
 ## <a name="calling-a-worksheet-function"></a>创建工作表函数
 
-下面的代码片段展示了如何调用工作表函数，其中 `sampleFunction()` 是占位符，应将它替换为要调用的函数名称和函数需要使用的输入参数。 工作表函数返回的 **FunctionResult** 对象的 **value** 属性包含指定函数的结果。 如此示例所示，必须先对 **FunctionResult** 对象的 **value** 属性执行 `load` 操作，然后才能读取它。 在此示例中，函数结果被直接写入控制台。 
+下面的代码片段展示了如何调用工作表函数，其中 `sampleFunction()` 是占位符，应将它替换为要调用的函数名称和函数需要使用的输入参数。 工作表函数返回的 **FunctionResult** 对象的 **value** 属性包含指定函数的结果。 如此示例所示，必须先对 `load` 对象的 **value** 属性执行 **** 操作，然后才能读取它。 在此示例中，函数结果被直接写入控制台。 
 
 ```js
 var functionResult = context.workbook.functions.sampleFunction(); 
@@ -60,13 +60,13 @@ Excel.run(function (context) {
 
 下面的代码示例向前述示例数据应用 `VLOOKUP` 函数，以分别确定 11 月和 12 月售出的扳手数。然后，应用 `SUM` 函数，以计算这两个月售出的扳手总数。 
 
-如此示例所示，如果一个或多个函数调用嵌套在另一个函数调用中，只需对随后要读取的最终结果（在此示例中为 `sumOfTwoLookups`）执行 `load` 操作即可。 系统会计算所有中间结果（在此示例中，为每个 `VLOOKUP` 函数的结果），并根据这些中间结果计算最终结果。
+如此示例所示，如果一个或多个函数调用嵌套在另一个函数调用中，只需对随后要读取的最终结果（在此示例中为 `load`）执行 `sumOfTwoLookups` 操作即可。 系统会计算所有中间结果（在此示例中，为每个 `VLOOKUP` 函数的结果），并根据这些中间结果计算最终结果。
 
 ```js
 Excel.run(function (context) {
     var range = context.workbook.worksheets.getItem("Sheet1").getRange("A1:D4");
     var sumOfTwoLookups = context.workbook.functions.sum(
-        context.workbook.functions.vlookup("Wrench", range, 2, false), 
+        context.workbook.functions.vlookup("Wrench", range, 2, false),
         context.workbook.functions.vlookup("Wrench", range, 3, false)
     );
     sumOfTwoLookups.load('value');
@@ -80,9 +80,9 @@ Excel.run(function (context) {
 
 ## <a name="supported-worksheet-functions"></a>支持的工作表函数
 
-可以使用 Excel JavaScript API 调用以下内置 Excel 工作表函数。 
+可以使用 Excel JavaScript API 调用以下内置 Excel 工作表函数。
 
-| 函数 | 返回类型 | 说明 |
+| 功能 | 返回类型 | 说明 |
 |:---------------|:-------------|:-----------|
 | <a href="https://support.office.com/article/ABS-function-3420200f-5628-4e8c-99da-c99d7c87713c" target="_blank">ABS 函数</a> | FunctionResult | 返回数字的绝对值 |
 | <a href="https://support.office.com/article/ACCRINT-function-fe45d089-6722-4fb3-9379-e1f911d8dc74" target="_blank">ACCRINT 函数</a> | FunctionResult | 返回定期支付利息的债券的应计利息 |
@@ -125,8 +125,8 @@ Excel.run(function (context) {
 | <a href="https://support.office.com/article/BITLSHIFT-function-c55bb27e-cacd-4c7c-b258-d80861a03c9c" target="_blank">BITLSHIFT 函数</a> | FunctionResult | 返回按照 shift_amount 位数左移后得到的数值 |
 | <a href="https://support.office.com/article/BITOR-function-f6ead5c8-5b98-4c9e-9053-8ad5234919b2" target="_blank">BITOR 函数</a> | FunctionResult | 返回 2 个数字的按位“或” |
 | <a href="https://support.office.com/article/BITRSHIFT-function-274d6996-f42c-4743-abdb-4ff95351222c" target="_blank">BITRSHIFT 函数</a> | FunctionResult | 返回按照 shift_amount 位数右移后得到的数值 |
-| <a href="https://support.office.com/article/BITXOR-function-c81306a1-03f9-4e89-85ac-b86c3cba10e4" target="_blank">BITXOR 函数</a> | FunctionResult | 返回两个数字的按位“异或”值 |
-| <a href="https://support.office.com/article/CEILINGMATH-function-80f95d2f-b499-4eee-9f16-f795a8e306c8" target="_blank">CEILING。数学、 ECMA_CEILING 函数</a> | FunctionResult | 将数值向上舍入为最接近的整数或最接近的基数的倍数 |
+| <a href="https://support.office.com/article/BITXOR-function-c81306a1-03f9-4e89-85ac-b86c3cba10e4" target="_blank">BITXOR Function</a> | FunctionResult | 返回两个数字的按位“异或”值 |
+| <a href="https://support.office.com/article/CEILINGMATH-function-80f95d2f-b499-4eee-9f16-f795a8e306c8" target="_blank">向上.数学、ECMA_CEILING 函数</a> | FunctionResult | 将数值向上舍入为最接近的整数或最接近的基数的倍数 |
 | <a href="https://support.office.com/article/CEILINGPRECISE-function-f366a774-527a-4c92-ba49-af0a196e66cb" target="_blank">CEILING.PRECISE 函数</a> | FunctionResult | 将数值四舍五入到最接近的整数或最接近的基数的倍数。不论数字是否带有符号，都将数字向上舍入。 |
 | <a href="https://support.office.com/article/CHAR-function-bbd249c8-b36e-4a91-8017-1c133f9b837a" target="_blank">CHAR 函数</a> | FunctionResult | 返回由代码数字指定的字符 |
 | <a href="https://support.office.com/article/CHISQDIST-function-8486b05e-5c05-4942-a9ea-f6b341518732" target="_blank">CHISQ.DIST 函数</a> | FunctionResult | 返回累积 beta 分布的概率密度函数 |
@@ -185,7 +185,7 @@ Excel.run(function (context) {
 | <a href="https://support.office.com/article/DISC-function-71fce9f3-3f05-4acf-a5a3-eac6ef4daa53" target="_blank">DISC 函数</a> | FunctionResult | 返回债券的贴现率 |
 | <a href="https://support.office.com/article/DMAX-function-f4e8209d-8958-4c3d-a1ee-6351665d41c2" target="_blank">DMAX 函数</a> | FunctionResult | 返回所选数据库条目中的最大值 |
 | <a href="https://support.office.com/article/DMIN-function-4ae6f1d9-1f26-40f1-a783-6dc3680192a3" target="_blank">DMIN 函数</a> | FunctionResult | 返回所选数据库条目中的最小值 |
-| <a href="https://support.office.com/article/DOLLAR-function-a6cd05d9-9740-4ad3-a469-8109d18ff611" target="_blank">美元、 USDOLLAR 函数</a> | FunctionResult | 使用 $（美元）货币格式将数字转换为文本 |
+| <a href="https://support.office.com/article/DOLLAR-function-a6cd05d9-9740-4ad3-a469-8109d18ff611" target="_blank">美元、USDOLLAR 函数</a> | FunctionResult | 使用 $（美元）货币格式将数字转换为文本 |
 | <a href="https://support.office.com/article/DOLLARDE-function-db85aab0-1677-428a-9dfd-a38476693427" target="_blank">DOLLARDE 函数</a> | FunctionResult | 将以分数表示的货币值转换为以小数表示的货币值 |
 | <a href="https://support.office.com/article/DOLLARFR-function-0835d163-3023-4a33-9824-3042c5d4f495" target="_blank">DOLLARFR 函数</a> | FunctionResult | 将以小数表示的货币值转换为以分数表示的货币值 |
 | <a href="https://support.office.com/article/DPRODUCT-function-4f96b13e-d49c-47a7-b769-22f6d017cb31" target="_blank">DPRODUCT 函数</a> | FunctionResult | 将与数据库中的条件匹配的记录的特定字段中的值相乘 |
@@ -257,7 +257,7 @@ Excel.run(function (context) {
 | <a href="https://support.office.com/article/IMPOWER-function-210fd2f5-f8ff-4c6a-9d60-30e34fbdef39" target="_blank">IMPOWER 函数</a> | FunctionResult | 返回复数的整数幂 |
 | <a href="https://support.office.com/article/IMPRODUCT-function-2fb8651a-a4f2-444f-975e-8ba7aab3a5ba" target="_blank">IMPRODUCT 函数</a> | FunctionResult | 返回从 2 到 255 个复数的乘积 |
 | <a href="https://support.office.com/article/IMREAL-function-d12bc4c0-25d0-4bb3-a25f-ece1938bf366" target="_blank">IMREAL 函数</a> | FunctionResult | 返回复数的实部系数 |
-| <a href="https://support.office.com/article/IMSEC-function-6df11132-4411-4df4-a3dc-1f17372459e0" target="_blank">IMSEC 函数</a> | FunctionResult | 返回复数的正割值 |
+| <a href="https://support.office.com/article/IMSEC-function-6df11132-4411-4df4-a3dc-1f17372459e0" target="_blank">IMSEC 函数</a>IMSEC 函数 | FunctionResult | 返回复数的正割值 |
 | <a href="https://support.office.com/article/IMSECH-function-f250304f-788b-4505-954e-eb01fa50903b" target="_blank">IMSECH 函数</a> | FunctionResult | 返回复数的双曲正割值 |
 | <a href="https://support.office.com/article/IMSIN-function-1ab02a39-a721-48de-82ef-f52bf37859f6" target="_blank">IMSIN 函数</a> | FunctionResult | 返回复数的正弦值 |
 | <a href="https://support.office.com/article/IMSINH-function-dfb9ec9e-8783-4985-8c42-b028e9e8da3d" target="_blank">IMSINH 函数</a> | FunctionResult | 返回复数的双曲正弦值 |
@@ -267,7 +267,7 @@ Excel.run(function (context) {
 | <a href="https://support.office.com/article/IMTAN-function-8478f45d-610a-43cf-8544-9fc0b553a132" target="_blank">IMTAN 函数</a> | FunctionResult | 返回复数的正切值 |
 | <a href="https://support.office.com/article/INT-function-a6c4af9e-356d-4369-ab6a-cb1fd9d343ef" target="_blank">INT 函数</a> | FunctionResult | 将数值向下舍入到最接近的整数 |
 | <a href="https://support.office.com/article/INTRATE-function-5cb34dde-a221-4cb6-b3eb-0b9e55e1316f" target="_blank">INTRATE 函数</a> | FunctionResult | 返回完全投资型债券的利率 |
-| <a href="https://support.office.com/article/IPMT-function-5cce0ad6-8402-4a41-8d29-61a0b054cb6f" target="_blank">IPMT 函数</a> | FunctionResult | 返回给定期间内投资所支付的利息 |
+| <a href="https://support.office.com/article/IPMT-function-5cce0ad6-8402-4a41-8d29-61a0b054cb6f" target="_blank">IPmt 函数</a> | FunctionResult | 返回给定期间内投资所支付的利息 |
 | <a href="https://support.office.com/article/IRR-function-64925eaa-9988-495b-b290-3ad0c163c1bc" target="_blank">IRR 函数</a> | FunctionResult | 返回一系列现金流的内部收益率 |
 | <a href="https://support.office.com/article/ISERR-function-0f2d7971-6019-40a0-a171-f2d869135665" target="_blank">ISERR 函数</a> | FunctionResult | 如果值是除 #N/A 之外的错误值，返回 `TRUE` |
 | <a href="https://support.office.com/article/ISERROR-function-0f2d7971-6019-40a0-a171-f2d869135665" target="_blank">ISERROR 函数</a> | FunctionResult | 如果值是任何错误值，返回 `TRUE` |
@@ -441,10 +441,10 @@ Excel.run(function (context) {
 | <a href="https://support.office.com/article/YIELD-function-f5f5ca43-c4bd-434f-8bd2-ed3c9727a4fe" target="_blank">YIELD 函数</a> | FunctionResult | 返回定期支付利息的债券的收益 |
 | <a href="https://support.office.com/article/YIELDDISC-function-a9dbdbae-7dae-46de-b995-615faffaaed7" target="_blank">YIELDDISC 函数</a> | FunctionResult | 返回已贴现债券的年收益；例如，短期国库券 |
 | <a href="https://support.office.com/article/YIELDMAT-function-ba7d1809-0d33-4bcb-96c7-6c56ec62ef6f" target="_blank">YIELDMAT 函数</a> | FunctionResult | 返回到期付息的债券的年收益 |
-| <a href="https://support.office.com/article/ZTEST-function-d633d5a3-2031-4614-a016-92180ad82bee" target="_blank">Z.TEST 函数</a> | FunctionResult | 返回 z 检验的单尾概率值 |
+| <a href="https://support.office.com/article/ZTEST-function-d633d5a3-2031-4614-a016-92180ad82bee" target="_blank">Z.TEST 函数</a> | FunctionResult | 返回 z 检验的收尾概率值 |
 
 ## <a name="see-also"></a>另请参阅
 
 - [Excel JavaScript API 基本编程概念](excel-add-ins-core-concepts.md)
-- [功能类 (针对 Excel 的 JavaScript API)](https://docs.microsoft.com/javascript/api/excel/excel.functions)
-- [工作簿功能对象 (Excel 的 JavaScript API)](https://docs.microsoft.com/javascript/api/excel/excel.workbook#functions)
+- [函数类 (适用于 Excel 的 JavaScript API)](/javascript/api/excel/excel.functions)
+- [工作簿函数对象 (适用于 Excel 的 JavaScript API)](/javascript/api/excel/excel.workbook#functions)

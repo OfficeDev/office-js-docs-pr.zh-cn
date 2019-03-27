@@ -1,14 +1,14 @@
 ---
 title: 使用 Excel JavaScript API 对区域执行操作（高级）
 description: ''
-ms.date: 02/20/2019
+ms.date: 03/19/2019
 localization_priority: Normal
-ms.openlocfilehash: ce4440798fdd23106ef0357df47cf850a5a5be71
-ms.sourcegitcommit: 8e20e7663be2aaa0f7a5436a965324d171bc667d
+ms.openlocfilehash: bca6ec8656450b4753287be95c047496b5d40435
+ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/28/2019
-ms.locfileid: "30199597"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "30871827"
 ---
 # <a name="work-with-ranges-using-the-excel-javascript-api-advanced"></a>使用 Excel JavaScript API 对区域执行操作（高级）
 
@@ -53,7 +53,7 @@ Excel.run(function (context) {
         var nowMoment = moment.fromOADate(nowMS);
         console.log(`get (moment): ${JSON.stringify(nowMoment)}`);
 
-        // log the date as a UNIX-style timestamp 
+        // log the date as a UNIX-style timestamp
         var now = nowMoment.unix();
         console.log(`get (timestamp): ${now}`);
     });
@@ -65,14 +65,14 @@ Excel.run(function (context) {
 ## <a name="work-with-multiple-ranges-simultaneously-preview"></a>同时处理多个区域（预览版）
 
 > [!NOTE]
-> 该`RangeAreas`对象当前仅适用于公共预览版。 [!INCLUDE [Information about using preview APIs](../includes/using-preview-apis.md)]
+> 该`RangeAreas`对象当前仅适用于公共预览版。 [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
 
 `RangeAreas` 对象允许外接程序每次在多个区域上执行操作。 这些区域可能但不必是连续区域。 `RangeAreas` 将进一步在[同时在 Excel 加载项中处理多个区域](excel-add-ins-multiple-ranges.md)一文中进行讨论。
 
 ## <a name="find-special-cells-within-a-range-preview"></a>查找区域内特殊单元格（预览）
 
 > [!NOTE]
-> `getSpecialCells`和`getSpecialCellsOrNullObject`方法目前仅适用于公共预览版。 [!INCLUDE [Information about using preview APIs](../includes/using-preview-apis.md)]
+> `getSpecialCells`和`getSpecialCellsOrNullObject`方法目前仅适用于公共预览版。 [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
 
 `Range.getSpecialCells()` 和 `Range.getSpecialCellsOrNullObject()` 方法根据单元格特征和值类型来查找区域。 这两种方法都返回 `RangeAreas` 对象。 以下是 TypeScript 数据类型文件中方法的签名：
 
@@ -105,7 +105,7 @@ Excel.run(function (context) {
 如果你希望具有目标特征的单元格始终存在，则你可能想要代码在没有这些单元格的时候引发错误。 若没有匹配单元格是一个有效应用场景，代码应该会检查这种可能的情况并按正常方式处理它，而不会引发错误。 可以用此 `getSpecialCellsOrNullObject` 方法及其返回的 `isNullObject` 属性实现此行为。 此示例使用此模式。 关于此代码，请注意以下几点：
 
 - `getSpecialCellsOrNullObject` 方法将始终返回代理对象，因此在一般的 JavaScript 认知中，它从不为 `null`。 但是，如果没有找到匹配的单元格，则对象的 `isNullObject` 属性将设置为 `true`。
-- 在测试 `isNullObject` 属性*之前*，它将调用 `context.sync`。 这是所有 `*OrNullObject` 方法和属性的要求，因为你必须始终加载和同步属性才能读取它。 但是，不必*明确*加载 `isNullObject` 属性。 即使未在对象上调用 `load`，`context.sync` 也会自动加载该属性。 有关详细信息，请参阅 [\*OrNullObject](https://docs.microsoft.com/office/dev/add-ins/excel/excel-add-ins-advanced-concepts#42ornullobject-methods)。
+- 在测试 `isNullObject` 属性*之前*，它将调用 `context.sync`。 这是所有 `*OrNullObject` 方法和属性的要求，因为你必须始终加载和同步属性才能读取它。 但是，不必*明确*加载 `isNullObject` 属性。 即使未在对象上调用 `load`，`context.sync` 也会自动加载该属性。 有关详细信息，请参阅 [\*OrNullObject](/office/dev/add-ins/excel/excel-add-ins-advanced-concepts#42ornullobject-methods)。
 - 你可以测试此代码，方法是先选择没有公式单元格的区域并运行它。 然后选择至少包含一个带公式的单元格的区域，并再次运行它。
 
 ```js
@@ -181,7 +181,7 @@ Excel.run(function (context) {
 ## <a name="copy-and-paste-preview"></a>复制和粘贴（预览版）
 
 > [!NOTE]
-> 此`Range.copyFrom`函数当前仅适用于公共预览版。 [!INCLUDE [Information about using preview APIs](../includes/using-preview-apis.md)]
+> `Range.copyFrom` 函数当前仅适用于公共预览版。 [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
 
 区域的 `copyFrom` 函数将复制 Excel UI 的“复制和粘贴”行为。 调用 `copyFrom` 的区域对象是目标。
 将要复制的源作为一个范围或一个表示范围的字符串地址进行传递。
@@ -245,7 +245,7 @@ Excel.run(function (context) {
 ## <a name="remove-duplicates-preview"></a>删除重复项（预览版）
 
 > [!NOTE]
-> Range 对象的`removeDuplicates`函数当前仅适用于公共预览。 [!INCLUDE [Information about using preview APIs](../includes/using-preview-apis.md)]
+> 区域对象的 `removeDuplicates` 函数当前仅适用于公共预览版。 [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
 
 区域对象的 `removeDuplicates` 函数将删除在指定列中具有重复条目的行。 该函数将从区域最低值索引到最高值索引（从上到下）遍历区域中的每一行。 如果指定列中的值之前显示在区域中，则会删除该行。 在区域内位于已删除行下方的行将上移。 `removeDuplicates` 不影响该区域外的单元格位置。
 

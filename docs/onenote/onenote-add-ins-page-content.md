@@ -1,14 +1,14 @@
 ---
 title: 处理 OneNote 页面内容
 description: ''
-ms.date: 01/10/2019
+ms.date: 03/19/2019
 localization_priority: Normal
-ms.openlocfilehash: b92f83ee85943ca4e819b04e2b6fa90e6d4fe4b3
-ms.sourcegitcommit: 70ef38a290c18a1d1a380fd02b263470207a5dc6
+ms.openlocfilehash: f60cdee7eb549acc0f2c84a1aa9acea7fe77274a
+ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/15/2019
-ms.locfileid: "30052719"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "30872184"
 ---
 # <a name="work-with-onenote-page-content"></a>处理 OneNote 页面内容
 
@@ -23,14 +23,14 @@ ms.locfileid: "30052719"
 
 若要创建空的 OneNote 页面，请使用下列方法之一：
 
-- [Section.addPage](https://docs.microsoft.com/javascript/api/onenote/onenote.section#addpage-title-)
-- [Page.insertPageAsSibling](https://docs.microsoft.com/javascript/api/onenote/onenote.section#insertsectionassibling-location--title-)
+- [Section.addPage](/javascript/api/onenote/onenote.section#addpage-title-)
+- [Page.insertPageAsSibling](/javascript/api/onenote/onenote.section#insertsectionassibling-location--title-)
 
 然后使用以下对象中的方法处理页面内容，如 `Page.addOutline` 和 `Outline.appendHtml`。
 
-- [Page](https://docs.microsoft.com/javascript/api/onenote/onenote.page)
-- [Outline](https://docs.microsoft.com/javascript/api/onenote/onenote.outline)
-- [Paragraph](https://docs.microsoft.com/javascript/api/onenote/onenote.paragraph)
+- [Page](/javascript/api/onenote/onenote.page)
+- [Outline](/javascript/api/onenote/onenote.outline)
+- [Paragraph](/javascript/api/onenote/onenote.paragraph)
 
 OneNote 页面的内容和结构由 HTML 进行表示。只有一部分 HTML 可用于创建或更新页面内容，如下所述。
 
@@ -61,6 +61,6 @@ OneNote 会尽力将 HTML 翻译成页面内容，同时确保用户的安全性
 ## <a name="see-also"></a>另请参阅
 
 - [OneNote JavaScript API 编程概述](onenote-add-ins-programming-overview.md)
-- [OneNote JavaScript API 参考](https://docs.microsoft.com/office/dev/add-ins/reference/overview/onenote-add-ins-javascript-reference)
+- [OneNote JavaScript API 参考](/office/dev/add-ins/reference/overview/onenote-add-ins-javascript-reference)
 - [Rubric Grader 示例](https://github.com/OfficeDev/OneNote-Add-in-Rubric-Grader)
 - [Office 加载项平台概述](../overview/office-add-ins.md)

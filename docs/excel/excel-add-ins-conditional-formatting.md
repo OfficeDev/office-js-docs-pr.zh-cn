@@ -1,26 +1,27 @@
 ---
 title: 通过 Excel JavaScript API 将条件格式应用于范围
 description: ''
-ms.date: 10/22/2018
-ms.openlocfilehash: f4baaea04ef487c26721ecfb2a90b8609ee96777
-ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
-ms.translationtype: HT
+ms.date: 03/19/2019
+localization_priority: Normal
+ms.openlocfilehash: 1c601782ca048fe1488f4ce578a7ee4d896b6b26
+ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/22/2018
-ms.locfileid: "27433178"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "30870378"
 ---
 # <a name="apply-conditional-formatting-to-excel-ranges"></a>将条件格式应用于特定 Excel 范围
 
 Excel JavaScript 库提供了用于将条件格式应用于工作表中的特定数据范围的 API。 借助此功能，可以轻松直观地解析大型数据集。 该格式还会基于相应范围内的更改进行动态更新。 
 
-> [!NOTE] 
+> [!NOTE]
 > 本文介绍了 Excel JavaScript 外接程序上下文中的条件格式。下面的文章提供了有关在 Excel 中实现完整条件格式功能的详细信息。
--   [添加、更改或清除条件格式](https://support.office.com/article/add-change-or-clear-conditional-formats-8a1cc355-b113-41b7-a483-58460332a1af)
--   [将公式用于条件格式](https://support.office.com/article/Use-formulas-with-conditional-formatting-FED60DFA-1D3F-4E13-9ECB-F1951FF89D7F)
+> -  [添加、更改或清除条件格式](https://support.office.com/article/add-change-or-clear-conditional-formats-8a1cc355-b113-41b7-a483-58460332a1af)
+> -  [将公式用于条件格式](https://support.office.com/article/Use-formulas-with-conditional-formatting-FED60DFA-1D3F-4E13-9ECB-F1951FF89D7F)
 
 ## <a name="programmatic-control-of-conditional-formatting"></a>条件格式的编程控制
 
-`Range.conditionalFormats` 属性是一个应用于相应范围的 [ConditionalFormat](https://docs.microsoft.com/javascript/api/excel/excel.conditionalformat) 对象的集合。  `ConditionalFormat` 对象包含多个属性，这些属性基于 [ConditionalFormatType](https://docs.microsoft.com/javascript/api/excel/excel.conditionalformattype) 定义要应用的格式。 
+`Range.conditionalFormats` 属性是一个应用于相应范围的 [ConditionalFormat](/javascript/api/excel/excel.conditionalformat) 对象的集合。  `ConditionalFormat` 对象包含多个属性，这些属性基于 [ConditionalFormatType](/javascript/api/excel/excel.conditionalformattype) 定义要应用的格式。 
 
 -   `cellValue`
 -   `colorScale`
@@ -32,17 +33,17 @@ Excel JavaScript 库提供了用于将条件格式应用于工作表中的特定
 -   `topBottom`
 
 > [!NOTE]
-> 每个格式属性都有相应的 `*OrNullObject` 变体。 在 [*OrNullObject 方法](https://docs.microsoft.com/office/dev/add-ins/excel/excel-add-ins-advanced-concepts#42ornullobject-methods)部分中了解有关该模式的更多信息。
+> 每个格式属性都有相应的 `*OrNullObject` 变体。 在 [*OrNullObject 方法](/office/dev/add-ins/excel/excel-add-ins-advanced-concepts#42ornullobject-methods)部分中了解有关该模式的更多信息。
 
-仅可为 ConditionalFormat 对象设置一种格式类型。 该格式类型由 `type` 属性确定，该属性是 [ConditionalFormatType](https://docs.microsoft.com/javascript/api/excel/excel.conditionalformattype) 枚举值。 `type` 是在向某一范围添加条件格式时设置的。 
+仅可为 ConditionalFormat 对象设置一种格式类型。 该格式类型由 `type` 属性确定，该属性是 [ConditionalFormatType](/javascript/api/excel/excel.conditionalformattype) 枚举值。 `type` 是在向某一范围添加条件格式时设置的。 
 
 ## <a name="creating-conditional-formatting-rules"></a>创建条件格式规则
 
 条件格式可通过使用 `conditionalFormats.add` 添加到某一范围。 添加后，可以设置特定于条件格式的属性。 以下示例展示了如何创建不同的格式类型。
 
-### <a name="cell-valuehttpsdocsmicrosoftcomjavascriptapiexcelexcelcellvalueconditionalformat"></a>[单元格值](https://docs.microsoft.com/javascript/api/excel/excel.cellvalueconditionalformat)
+### <a name="cell-valuejavascriptapiexcelexcelcellvalueconditionalformat"></a>[单元格值](/javascript/api/excel/excel.cellvalueconditionalformat)
 
-单元格值条件格式将基于 [ConditionalCellValueRule]( https://docs.microsoft.com/javascript/api/excel/excel.conditionalcellvaluerule) 中的一个或两个公式的结果应用用户定义的格式。 `operator` 属性是一个 [ConditionalCellValueOperator]( https://docs.microsoft.com/javascript/api/excel/excel.conditionalcellvalueoperator)，用于定义结果表达式与格式设置的关系。 
+单元格值条件格式将基于 [ConditionalCellValueRule](/javascript/api/excel/excel.conditionalcellvaluerule) 中的一个或两个公式的结果应用用户定义的格式。 `operator` 属性是一个 [ConditionalCellValueOperator](/javascript/api/excel/excel.conditionalcellvalueoperator)，用于定义结果表达式与格式设置的关系。
 
 以下示例展示的是将红色字体颜色设置应用于相应范围内小于零的任何值。
 
@@ -62,9 +63,9 @@ conditionalFormat.cellValue.rule = { formula1: "=0", operator: "LessThan" };
 await context.sync();
 ```
 
-### <a name="color-scalehttpsdocsmicrosoftcomjavascriptapiexcelexcelcolorscaleconditionalformat"></a>[色阶](https://docs.microsoft.com/javascript/api/excel/excel.colorscaleconditionalformat)
+### <a name="color-scalejavascriptapiexcelexcelcolorscaleconditionalformat"></a>[色阶](/javascript/api/excel/excel.colorscaleconditionalformat)
 
-色阶条件格式可将颜色渐变应用到相应数据范围。 `ColorScaleConditionalFormat` 上的 `criteria` 属性定义了三个 [ConditionalColorScaleCriterion](https://docs.microsoft.com/javascript/api/excel/excel.conditionalcolorscalecriterion)：`minimum`、`maximum` 以及可选的 `midpoint`。 每个条件色阶点都具有三个属性：
+色阶条件格式可将颜色渐变应用到相应数据范围。 `ColorScaleConditionalFormat` 上的 `criteria` 属性定义了三个 [ConditionalColorScaleCriterion](/javascript/api/excel/excel.conditionalcolorscalecriterion)：`minimum`、`maximum` 以及可选的 `midpoint`。 每个条件色阶点都具有三个属性：
 
 -   `color` - 端点的 HTML 颜色代码。
 -   `formula` - 表示端点的数字或公式。 如果 `type` 是 `lowestValue` 或 `highestValue`，该属性将为 `null`。
@@ -104,11 +105,11 @@ conditionalFormat.colorScale.criteria = criteria;
 await context.sync();
 ```
 
-### <a name="customhttpsdocsmicrosoftcomjavascriptapiexcelexcelcustomconditionalformat"></a>[自定义](https://docs.microsoft.com/javascript/api/excel/excel.customconditionalformat) 
+### <a name="customjavascriptapiexcelexcelcustomconditionalformat"></a>[自定义](/javascript/api/excel/excel.customconditionalformat)
 
-自定义条件格式根据任意复杂度的公式将用户定义的格式应用于单元格。 [ConditionalFormatRule](https://docs.microsoft.com/javascript/api/excel/excel.conditionalformatrule) 对象允许使用不同表示法定义公式：
+自定义条件格式根据任意复杂度的公式将用户定义的格式应用于单元格。 [ConditionalFormatRule](/javascript/api/excel/excel.conditionalformatrule) 对象允许使用不同表示法定义公式：
 
--   `formula` - 标准表示法。 
+-   `formula` - 标准表示法。
 -   `formulaLocal` - 根据用户的语言进行本地化。
 -   `formulaR1C1` - R1C1 样式表示法。
 
@@ -130,7 +131,7 @@ conditionalFormat.custom.format.font.color = "green";
 await context.sync();
 
 ```
-### <a name="data-barhttpsdocsmicrosoftcomjavascriptapiexcelexceldatabarconditionalformat"></a>[数据栏](https://docs.microsoft.com/javascript/api/excel/excel.databarconditionalformat)
+### <a name="data-barjavascriptapiexcelexceldatabarconditionalformat"></a>[数据栏](/javascript/api/excel/excel.databarconditionalformat)
 
 数据栏条件格式可将数据栏添加到单元格。 默认情况下，相应范围内的最小和最大值形成数据栏的边界和比例大小。 `DataBarConditionalFormat` 对象具有多个用于控制数据栏外观的属性。 
 
@@ -150,13 +151,13 @@ conditionalFormat.dataBar.barDirection = Excel.ConditionalDataBarDirection.leftT
 await context.sync();
 ```
 
-### <a name="icon-sethttpsdocsmicrosoftcomjavascriptapiexcelexceliconsetconditionalformat"></a>[图标集](https://docs.microsoft.com/javascript/api/excel/excel.iconsetconditionalformat)
+### <a name="icon-setjavascriptapiexcelexceliconsetconditionalformat"></a>[图标集](/javascript/api/excel/excel.iconsetconditionalformat)
 
-图标集条件格式使用 Excel [图标]( https://docs.microsoft.com/javascript/api/excel/excel.icon)来突出显示单元格。 `criteria` 属性是一个 [ConditionalIconCriterion](https://docs.microsoft.com/javascript/api/excel/excel.ConditionalIconCriterion) 数组，它定义要插入的符号以及插入该符号的条件。 此数组将使用具有默认属性的条件元素自动预填充。 个别属性不能被覆盖。 相反，必须替换整个条件对象。 
+图标集条件格式使用 Excel [图标](/javascript/api/excel/excel.icon)来突出显示单元格。 `criteria` 属性是一个 [ConditionalIconCriterion](/javascript/api/excel/excel.ConditionalIconCriterion) 数组，它定义要插入的符号以及插入该符号的条件。 此数组将使用具有默认属性的条件元素自动预填充。 个别属性不能被覆盖。 相反，必须替换整个条件对象。 
 
 下面的示例展示了应用于相应范围的三元素图标集。
 
-![一个用绿色的向上三角形表示值大于 1000，用黄线表示值介于 700 和 1000 之间，用红色的向下三角形表示值更低的范围。](../images/excel-conditional-format-iconset.png)
+![包含绿色上三角形的值范围为1000以上的值的范围、700和1000之间值的黄色线以及较低值之间的红色下三角形。](../images/excel-conditional-format-iconset.png)
 
 ```typescript
 const sheet = context.workbook.worksheets.getItem("Sample");
@@ -193,9 +194,9 @@ iconSetCF.criteria = [
 await context.sync();
 ```
 
-### <a name="preset-criteriahttpsdocsmicrosoftcomjavascriptapiexcelexcelpresetcriteriaconditionalformat"></a>[预设条件](https://docs.microsoft.com/javascript/api/excel/excel.presetcriteriaconditionalformat)
+### <a name="preset-criteriajavascriptapiexcelexcelpresetcriteriaconditionalformat"></a>[预设条件](/javascript/api/excel/excel.presetcriteriaconditionalformat)
 
-预设条件格式会基于所选标准规则将用户定义的格式应用于相应范围。 这些规则由 [ConditionalPresetCriteriaRule](https://docs.microsoft.com/javascript/api/excel/excel.conditionalpresetcriteriarule) 中的 [ConditionalFormatPresetCriterion](https://docs.microsoft.com/javascript/api/excel/excel.ConditionalFormatPresetCriterion) 定义。 
+预设条件格式会基于所选标准规则将用户定义的格式应用于相应范围。 这些规则由 [ConditionalPresetCriteriaRule](/javascript/api/excel/excel.conditionalpresetcriteriarule) 中的 [ConditionalFormatPresetCriterion](/javascript/api/excel/excel.ConditionalFormatPresetCriterion) 定义。 
 
 在下面的示例中，只要单元格的值比相应范围内的平均值高至少一个标准偏差，单元格的颜色便会被设置为白色。
 
@@ -217,9 +218,9 @@ conditionalFormat.preset.rule = {
 await context.sync();
 ```
 
-### <a name="text-comparisonhttpsdocsmicrosoftcomjavascriptapiexcelexceltextconditionalformat"></a>[文本比较](https://docs.microsoft.com/javascript/api/excel/excel.textconditionalformat)
+### <a name="text-comparisonjavascriptapiexcelexceltextconditionalformat"></a>[文本比较](/javascript/api/excel/excel.textconditionalformat)
 
-文本比较条件格式将字符串比较作为条件。 `rule` 属性是一个 [ConditionalTextComparisonRule](https://docs.microsoft.com/javascript/api/excel/excel.conditionaltextcomparisonrule)，用于定义要与单元格进行比较的字符串，以及用于指定比较类型的运算符。 
+文本比较条件格式将字符串比较作为条件。 `rule` 属性是一个 [ConditionalTextComparisonRule](/javascript/api/excel/excel.conditionaltextcomparisonrule)，用于定义要与单元格进行比较的字符串，以及用于指定比较类型的运算符。 
 
 在下面的示例中，当单元格的文本包含“Delayed”时，字体颜色将被设置为红色。
 
@@ -242,9 +243,9 @@ conditionalFormat.textComparison.rule = {
 await context.sync();
 ```
 
-### <a name="topbottomhttpsdocsmicrosoftcomjavascriptapiexcelexceltopbottomconditionalformat"></a>[顶/底](https://docs.microsoft.com/javascript/api/excel/excel.TopBottomconditionalformat)
+### <a name="topbottomjavascriptapiexcelexceltopbottomconditionalformat"></a>[顶/底](/javascript/api/excel/excel.TopBottomconditionalformat)
 
-顶/底条件格式将格式应用于相应范围中的最高值或最低值。 `rule` 属性的类型为 [ConditionalTopBottomRule](https://docs.microsoft.com/javascript/api/excel/excel.conditionaltopbottomrule)，用于设置条件是基于最高还是最低，以及评估是基于排名还是基于百分比。 
+顶/底条件格式将格式应用于相应范围中的最高值或最低值。 `rule` 属性的类型为 [ConditionalTopBottomRule](/javascript/api/excel/excel.conditionaltopbottomrule)，用于设置条件是基于最高还是最低，以及评估是基于排名还是基于百分比。 
 
 在下面的示例中，向相应范围中的最高值单元格应用了绿色突出显示。
 
@@ -334,8 +335,9 @@ await context.sync();
 ```
 
 ## <a name="see-also"></a>另请参阅
--   [Excel JavaScript API 基本编程概念]( https://docs.microsoft.com/office/dev/add-ins/excel/excel-add-ins-core-concepts)
--   [使用 Excel JavaScript API 处理特定范围](https://docs.microsoft.com/office/dev/add-ins/excel/excel-add-ins-ranges)
--   [ConditionalFormat 对象（适用于 Excel 的 JavaScript API）]( https://docs.microsoft.com/javascript/api/excel/excel.conditionalformat)
--   [添加、更改或清除条件格式](https://support.office.com/article/add-change-or-clear-conditional-formats-8a1cc355-b113-41b7-a483-58460332a1af)
--   [将公式用于条件格式](https://support.office.com/article/Use-formulas-with-conditional-formatting-FED60DFA-1D3F-4E13-9ECB-F1951FF89D7F)
+
+- [Excel JavaScript API 基本编程概念](/office/dev/add-ins/excel/excel-add-ins-core-concepts)
+- [使用 Excel JavaScript API 处理特定范围](/office/dev/add-ins/excel/excel-add-ins-ranges)
+- [ConditionalFormat 对象（适用于 Excel 的 JavaScript API）](/javascript/api/excel/excel.conditionalformat)
+- [添加、更改或清除条件格式](https://support.office.com/article/add-change-or-clear-conditional-formats-8a1cc355-b113-41b7-a483-58460332a1af)
+- [将公式用于条件格式](https://support.office.com/article/Use-formulas-with-conditional-formatting-FED60DFA-1D3F-4E13-9ECB-F1951FF89D7F)

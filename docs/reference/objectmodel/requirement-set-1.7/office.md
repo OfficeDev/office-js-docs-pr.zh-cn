@@ -1,33 +1,33 @@
 ---
-title: Office 命名空间 - 要求集 1.7
+title: Office 命名空间-要求集1。7
 description: ''
-ms.date: 02/15/2019
+ms.date: 03/19/2019
 localization_priority: Normal
-ms.openlocfilehash: d6422e470864d5a02db37e1fef295e8cbb82a213
-ms.sourcegitcommit: f26778b596b6b022814c39601485ff676ed4e2fa
+ms.openlocfilehash: 533e997fc7f8be6eb6d3aefefaf023e8c7666af2
+ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/16/2019
-ms.locfileid: "30067893"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "30870525"
 ---
 # <a name="office"></a>Office
 
 该 Office 命名空间提供所有 Office 应用中的加载项所使用的共享接口。此列表仅记录 Outlook 加载项所使用的接口。有关 Office 命名空间的完整列表，请参阅[公用 API](/javascript/api/office)。
 
-##### <a name="requirements"></a>要求
+##### <a name="requirements"></a>Requirements
 
 |要求| 值|
 |---|---|
 |[最低版本的邮箱要求集](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
-|[适用的 Outlook 模式](https://docs.microsoft.com/outlook/add-ins/#extension-points)| 撰写或阅读|
+|[适用的 Outlook 模式](/outlook/add-ins/#extension-points)| 撰写或阅读|
 
 ##### <a name="members-and-methods"></a>成员和方法
 
 | 成员 | 类型 |
 |--------|------|
-| [AsyncResultStatus](#asyncresultstatus-string) | 成员 |
-| [CoercionType](#coerciontype-string) | 成员 |
-| [EventType](#eventtype-string) | 成员 |
+| [AsyncResultStatus](#asyncresultstatus-string) | Member |
+| [CoercionType](#coerciontype-string) | Member |
+| [EventType](#eventtype-string) | Member |
 | [SourceProperty](#sourceproperty-string) | 成员 |
 
 ### <a name="namespaces"></a>命名空间
@@ -42,81 +42,7 @@ ms.locfileid: "30067893"
 
 指定异步调用的结果。
 
-##### <a name="type"></a>Type
-
-*   字符串
-
-##### <a name="properties"></a>属性：
-
-|名称| 类型| 描述|
-|---|---|---|
-|`Succeeded`| String|调用成功。|
-|`Failed`| 字符串|调用失败。|
-
-##### <a name="requirements"></a>要求
-
-|要求| 值|
-|---|---|
-|[最低版本的邮箱要求集](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
-|[适用的 Outlook 模式](https://docs.microsoft.com/outlook/add-ins/#extension-points)| 撰写或阅读|
-
----
-
-####  <a name="coerciontype-string"></a>CoercionType :String
-
-指定如何强制由调用方法返回或设置的数据。
-
-##### <a name="type"></a>Type
-
-*   字符串
-
-##### <a name="properties"></a>属性：
-
-|名称| 类型| 描述|
-|---|---|---|
-|`Html`| String|请求以 HTML 格式返回的数据。|
-|`Text`| 字符串|请求以文本格式返回的数据。|
-
-##### <a name="requirements"></a>要求
-
-|要求| 值|
-|---|---|
-|[最低版本的邮箱要求集](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
-|[适用的 Outlook 模式](https://docs.microsoft.com/outlook/add-ins/#extension-points)| 撰写或阅读|
-
----
-
-####  <a name="eventtype-string"></a>EventType :String
-
-指定与事件处理程序相关联的事件。
-
-##### <a name="type"></a>Type
-
-*   字符串
-
-##### <a name="properties"></a>属性：
-
-| 名称 | 类型 | 描述 | 最低要求集 |
-|---|---|---|---|
-|`AppointmentTimeChanged`| 字符串 | 所选的约会或系列的日期或时间已更改。 | 1.7 |
-|`ItemChanged`| 字符串 | 在任务窗格固定时，将选择不同的 Outlook 项进行查看。 | 1.5 |
-|`RecipientsChanged`| 字符串 | 选定项目或约会位置的收件人列表已更改。 | 1.7 |
-|`RecurrenceChanged`| 字符串 | 选定系列的定期模式已更改。 | 1.7 |
-
-##### <a name="requirements"></a>要求
-
-|要求| 值|
-|---|---|
-|[最低版本的邮箱要求集](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.5 |
-|[适用的 Outlook 模式](https://docs.microsoft.com/outlook/add-ins/#extension-points)| 撰写或阅读 |
-
----
-
-####  <a name="sourceproperty-string"></a>SourceProperty :String
-
-指定由调用方法返回的数据源。
-
-##### <a name="type"></a>Type
+##### <a name="type"></a>类型
 
 *   String
 
@@ -124,12 +50,86 @@ ms.locfileid: "30067893"
 
 |名称| 类型| 说明|
 |---|---|---|
-|`Body`| 字符串|数据源来自邮件的正文。|
-|`Subject`| String|数据源来自邮件的主题。|
+|`Succeeded`| String|调用成功。|
+|`Failed`| String|调用失败。|
 
-##### <a name="requirements"></a>要求
+##### <a name="requirements"></a>Requirements
 
 |要求| 值|
 |---|---|
 |[最低版本的邮箱要求集](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
-|[适用的 Outlook 模式](https://docs.microsoft.com/outlook/add-ins/#extension-points)| 撰写或阅读|
+|[适用的 Outlook 模式](/outlook/add-ins/#extension-points)| 撰写或阅读|
+
+---
+
+####  <a name="coerciontype-string"></a>CoercionType :String
+
+指定如何强制由调用方法返回或设置的数据。
+
+##### <a name="type"></a>类型
+
+*   String
+
+##### <a name="properties"></a>属性：
+
+|名称| 类型| 说明|
+|---|---|---|
+|`Html`| String|请求以 HTML 格式返回的数据。|
+|`Text`| String|请求以文本格式返回的数据。|
+
+##### <a name="requirements"></a>Requirements
+
+|要求| 值|
+|---|---|
+|[最低版本的邮箱要求集](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
+|[适用的 Outlook 模式](/outlook/add-ins/#extension-points)| 撰写或阅读|
+
+---
+
+####  <a name="eventtype-string"></a>EventType :String
+
+指定与事件处理程序相关联的事件。
+
+##### <a name="type"></a>类型
+
+*   String
+
+##### <a name="properties"></a>属性：
+
+| 名称 | 类型 | 说明 | 最低要求集 |
+|---|---|---|---|
+|`AppointmentTimeChanged`| String | 所选的约会或系列的日期或时间已更改。 | 1.7 |
+|`ItemChanged`| String | 在任务窗格固定时，将选择不同的 Outlook 项进行查看。 | 1.5 |
+|`RecipientsChanged`| String | 选定项目或约会位置的收件人列表已更改。 | 1.7 |
+|`RecurrenceChanged`| String | 选定系列的定期模式已更改。 | 1.7 |
+
+##### <a name="requirements"></a>Requirements
+
+|要求| 值|
+|---|---|
+|[最低版本的邮箱要求集](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.5 |
+|[适用的 Outlook 模式](/outlook/add-ins/#extension-points)| 撰写或阅读 |
+
+---
+
+####  <a name="sourceproperty-string"></a>SourceProperty :String
+
+指定由调用方法返回的数据源。
+
+##### <a name="type"></a>类型
+
+*   String
+
+##### <a name="properties"></a>属性：
+
+|名称| 类型| 说明|
+|---|---|---|
+|`Body`| String|数据源来自邮件的正文。|
+|`Subject`| String|数据源来自邮件的主题。|
+
+##### <a name="requirements"></a>Requirements
+
+|要求| 值|
+|---|---|
+|[最低版本的邮箱要求集](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
+|[适用的 Outlook 模式](/outlook/add-ins/#extension-points)| 撰写或阅读|

@@ -1,14 +1,14 @@
 ---
-title: Office.context - 要求集 1.4
+title: Office。上下文要求集1。4
 description: ''
-ms.date: 02/15/2019
+ms.date: 03/19/2019
 localization_priority: Normal
-ms.openlocfilehash: 07358710a84321db7c249b911e59794b561acfca
-ms.sourcegitcommit: f26778b596b6b022814c39601485ff676ed4e2fa
+ms.openlocfilehash: 01b03a425460acf5fd6f68214fd93d346920086e
+ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/16/2019
-ms.locfileid: "30068194"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "30871134"
 ---
 # <a name="context"></a>context
 
@@ -16,12 +16,12 @@ ms.locfileid: "30068194"
 
 Office.context 命名空间提供所有 Office 应用中的加载项所使用的共享接口。此列表仅记录 Outlook 加载项所使用的接口。有关 Office.context 命名空间的完整列表，请参阅[通用 API 中的 Office.context 引用](/javascript/api/office/office.context)。
 
-##### <a name="requirements"></a>要求
+##### <a name="requirements"></a>Requirements
 
 |要求| 值|
 |---|---|
 |[最低版本的邮箱要求集](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
-|[适用的 Outlook 模式](https://docs.microsoft.com/outlook/add-ins/#extension-points)| 撰写或阅读|
+|[适用的 Outlook 模式](/outlook/add-ins/#extension-points)| 撰写或阅读|
 
 ### <a name="namespaces"></a>命名空间
 
@@ -35,7 +35,7 @@ Office.context 命名空间提供所有 Office 应用中的加载项所使用的
 
 `displayLanguage` 值反映在 Office 主机应用程序中通过“**文件 > 选项 > 语言**”指定的当前“**显示语言**”设置。
 
-##### <a name="type"></a>Type
+##### <a name="type"></a>类型
 
 *   String
 
@@ -44,7 +44,7 @@ Office.context 命名空间提供所有 Office 应用中的加载项所使用的
 |要求| 值|
 |---|---|
 |[最低版本的邮箱要求集](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
-|[适用的 Outlook 模式](https://docs.microsoft.com/outlook/add-ins/#extension-points)| 撰写或阅读|
+|[适用的 Outlook 模式](/outlook/add-ins/#extension-points)| 撰写或阅读|
 
 ##### <a name="example"></a>示例
 
@@ -69,7 +69,7 @@ function write(message){
 
 ####  <a name="officetheme-object"></a>officeTheme :Object
 
-提供对 Office 主题颜色的属性的访问权限。
+提供了访问 Office 主题颜色的属性。
 
 > [!NOTE]
 > 在 Outlook for iOS 或 Outlook for Android 中不支持此成员。
@@ -86,15 +86,15 @@ function write(message){
 |---|---|---|
 |`bodyBackgroundColor`| String|获取十六进制三原色形式的 Office 主题正文背景色。|
 |`bodyForegroundColor`| String|获取十六进制三原色形式的 Office 主题正文前景色。|
-|`controlBackgroundColor`| 字符串|获取十六进制三原色形式的 Office 主题控制背景色。|
+|`controlBackgroundColor`| String|获取十六进制三原色形式的 Office 主题控制背景色。|
 |`controlForegroundColor`| 字符串|获取十六进制三原色形式的 Office 主题正文控制颜色。|
 
-##### <a name="requirements"></a>要求
+##### <a name="requirements"></a>Requirements
 
 |要求| 值|
 |---|---|
 |[最低版本的邮箱要求集](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.3|
-|[适用的 Outlook 模式](https://docs.microsoft.com/outlook/add-ins/#extension-points)| 撰写或阅读|
+|[适用的 Outlook 模式](/outlook/add-ins/#extension-points)| 撰写或阅读|
 
 ##### <a name="example"></a>示例
 
@@ -121,10 +121,10 @@ function applyOfficeTheme(){
 
 *   [RoamingSettings](/javascript/api/outlook_1_4/office.RoamingSettings)
 
-##### <a name="requirements"></a>要求
+##### <a name="requirements"></a>Requirements
 
 |要求| 值|
 |---|---|
 |[最低版本的邮箱要求集](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
-|[最低权限级别](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| 受限|
-|[适用的 Outlook 模式](https://docs.microsoft.com/outlook/add-ins/#extension-points)| 撰写或阅读|
+|[最低权限级别](/outlook/add-ins/understanding-outlook-add-in-permissions)| 受限|
+|[适用的 Outlook 模式](/outlook/add-ins/#extension-points)| 撰写或阅读|

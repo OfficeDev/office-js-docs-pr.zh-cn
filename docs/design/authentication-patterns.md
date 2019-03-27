@@ -1,14 +1,14 @@
 ---
 title: Office 外接程序的身份验证设计准则
 description: ''
-ms.date: 11/02/2018
+ms.date: 03/19/2019
 localization_priority: Normal
-ms.openlocfilehash: 937f1a78dfb4276df4aa17ab48dfa15cfd937861
-ms.sourcegitcommit: 8e20e7663be2aaa0f7a5436a965324d171bc667d
+ms.openlocfilehash: c8d61d42eabca0a57e1a09dda95ee8c0572d5ecb
+ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/28/2019
-ms.locfileid: "29388862"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "30870217"
 ---
 # <a name="authentication-patterns"></a>身份验证模式
 
@@ -26,6 +26,7 @@ ms.locfileid: "29388862"
 |为用户提供注销和重新进行身份验证的方法。    |强制用户卸载以切换标识。|
 
 ## <a name="authentication-flow"></a>身份验证流
+
 在单一登录处于预览期间，生产加载项应允许用户可以选择直接使用服务或 Microsoft 等标识提供者进行登录。
 
 1. 首先运行 Placemat - 将登录按钮设置为加载项初次运行体验中的明确号召性用语。
@@ -36,7 +37,7 @@ ms.locfileid: "29388862"
 
 
 
-3. 身份提供程序登录 - 身份提供程序将拥有其自己的 UI。 Microsoft Azure Active Directory 允许自定义登录和访问面板页面，以便与服务保持一致的外观和体验。 [了解详细信息](https://docs.microsoft.com/azure/active-directory/fundamentals/customize-branding)。
+3. 身份提供程序登录 - 身份提供程序将拥有其自己的 UI。 Microsoft Azure Active Directory 允许自定义登录和访问面板页面，以便与服务保持一致的外观和体验。 [了解详细信息](/azure/active-directory/fundamentals/customize-branding)。
 ![Office 应用程序中的身份提供程序登录对话框的屏幕截图](../images/add-in-auth-identity-sign-in.png)
 
 4. 进度 - 表示设置和 UI 加载时的进度。
@@ -48,7 +49,7 @@ ms.locfileid: "29388862"
 ## <a name="single-sign-on-authentication-flow-preview"></a>单一登录身份验证流程（预览）
 
 > [!NOTE]
-> 目前，Word、Excel、Outlook 和 PowerPoint 在预览版中支持单一登录 API。 有关单一登录支持的详细信息，请参阅  [IdentityAPI 要求集](https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/identity-api-requirement-sets)。 如果使用的是 Outlook 加载项，请务必为 Office 365 租赁启用新式验证。 若要了解如何执行此操作，请参阅  [Exchange Online: How to enable your tenant for modern authentication](https://social.technet.microsoft.com/wiki/contents/articles/32711.exchange-online-how-to-enable-your-tenant-for-modern-authentication.aspx)（Exchange Online：如何为租户启用新式验证）。
+> 目前，Word、Excel、Outlook 和 PowerPoint 在预览版中支持单一登录 API。 有关单一登录支持的详细信息，请参阅  [IdentityAPI 要求集](/office/dev/add-ins/reference/requirement-sets/identity-api-requirement-sets)。 如果使用的是 Outlook 加载项，请务必为 Office 365 租赁启用新式验证。 若要了解如何执行此操作，请参阅  [Exchange Online: How to enable your tenant for modern authentication](https://social.technet.microsoft.com/wiki/contents/articles/32711.exchange-online-how-to-enable-your-tenant-for-modern-authentication.aspx)（Exchange Online：如何为租户启用新式验证）。
 
 一旦用于生产加载项的单一登录正式发布后，即可使用该正式发布版获取流畅的最终用户体验。 Office 中的用户标识（Microsoft 帐户或 Office 365 标识）用于登录到加载项。 因此，用户只登录一次。 这样便使你的客户更容易上手，体验更为顺畅。
 
@@ -60,4 +61,5 @@ ms.locfileid: "29388862"
 ![Office 应用程序功能区中显示的加载项按钮的屏幕截图](../images/add-in-ribbon.png)
 
 ## <a name="see-also"></a>另请参阅
-- 详细了解[开发 SSO 加载项（预览版）](https://docs.microsoft.com/office/dev/add-ins/develop/sso-in-office-add-ins)
+
+- 详细了解[开发 SSO 加载项（预览版）](/office/dev/add-ins/develop/sso-in-office-add-ins)

@@ -1,14 +1,14 @@
 ---
 title: 清单文件中的 WebApplicationInfo 元素
 description: ''
-ms.date: 10/09/2018
+ms.date: 03/19/2019
 localization_priority: Normal
-ms.openlocfilehash: 1328dc40e98c321c9c4b7d3d692da8c8bdd29492
-ms.sourcegitcommit: 8e20e7663be2aaa0f7a5436a965324d171bc667d
+ms.openlocfilehash: 2ab06b7ec21bccf13039badcc94b9de0ce7b8600
+ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/28/2019
-ms.locfileid: "29389195"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "30870273"
 ---
 # <a name="webapplicationinfo-element"></a>WebApplicationInfo 元素
 
@@ -18,7 +18,7 @@ ms.locfileid: "29389195"
 - OAuth 2.0 *客户端*，可能需要访问 Microsoft Graph 的权限。
 
 > [!NOTE]
-> 目前，Word、Excel、Outlook 和 PowerPoint 在预览版中支持单一登录 API。 若要详细了解目前支持单一登录 API 的平台，请参阅 [IdentityAPI 要求集](https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/identity-api-requirement-sets)。 如果使用的是 Outlook 加载项，请务必为 Office 365 租赁启用新式验证。 要了解如何执行此操作，请参阅 [Exchange Online：如何为租户启用新式验证](https://social.technet.microsoft.com/wiki/contents/articles/32711.exchange-online-how-to-enable-your-tenant-for-modern-authentication.aspx)。
+> 目前，Word、Excel、Outlook 和 PowerPoint 在预览版中支持单一登录 API。 若要详细了解目前支持单一登录 API 的平台，请参阅 [IdentityAPI 要求集](/office/dev/add-ins/reference/requirement-sets/identity-api-requirement-sets)。 如果使用的是 Outlook 加载项，请务必为 Office 365 租赁启用新式验证。 要了解如何执行此操作，请参阅 [Exchange Online：如何为租户启用新式验证](https://social.technet.microsoft.com/wiki/contents/articles/32711.exchange-online-how-to-enable-your-tenant-for-modern-authentication.aspx)。
 
 **WebApplicationInfo** 是清单中的 [VersionOverrides](versionoverrides.md) 元素的子元素。  
 

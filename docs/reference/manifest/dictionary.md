@@ -1,13 +1,14 @@
 ---
 title: 清单文件中的 Dictionary 元素
 description: ''
-ms.date: 10/09/2018
-ms.openlocfilehash: 2a13763789d7c412bc0f35fdecd5aceb7605ce9f
-ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
-ms.translationtype: HT
+ms.date: 03/19/2019
+localization_priority: Normal
+ms.openlocfilehash: 506f6ecd7b9120dfbf591762faae3c7d033288b1
+ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/22/2018
-ms.locfileid: "27433465"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "30871925"
 ---
 # <a name="dictionary-element"></a>Dictionary 元素
 定义可实现其他字典支持的任务窗格外接程序的设置。
@@ -38,5 +39,5 @@ ms.locfileid: "27433465"
 
 ## <a name="see-also"></a>另请参阅
 
-- [创建字典任务窗格外接程序](https://docs.microsoft.com/office/dev/add-ins/word/dictionary-task-pane-add-ins)
+- [创建字典任务窗格外接程序](/office/dev/add-ins/word/dictionary-task-pane-add-ins)
     

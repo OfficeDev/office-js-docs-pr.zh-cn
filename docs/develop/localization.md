@@ -1,13 +1,14 @@
 ---
-title: Office 加载项的本地化
+title: Office 外接程序的本地化
 description: 可使用适用于 Office 的 JavaScript API 确定区域设置并根据主机应用程序的区域设置显示字符串，或者根据数据的区域设置来解读或显示数据。
-ms.date: 12/11/2018
-ms.openlocfilehash: 050880d8b2d5091cc0e5ab3e3dc14e632e0014f1
-ms.sourcegitcommit: 3007bf57515b0811ff98a7e1518ecc6fc9462276
-ms.translationtype: HT
+ms.date: 03/19/2019
+localization_priority: Normal
+ms.openlocfilehash: b01535b76485847783104ce840256949ce17ca26
+ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "27724891"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "30871708"
 ---
 # <a name="localization-for-office-add-ins"></a>Office 加载项的本地化
 
@@ -63,7 +64,7 @@ ms.locfileid: "27724891"
 
 
 > [!NOTE]
-> 可以仅为 Office 支持的语言环境对说明和显示名称进行本地化。 有关当前版本的 Office 的语言和区域设置列表，请参阅 [Office 2013 中的语言标识符和 OptionState ID 值](https://docs.microsoft.com/previous-versions/office/office-2013-resource-kit/cc179219(v=office.15))。
+> 可以仅为 Office 支持的语言环境对说明和显示名称进行本地化。 有关当前版本的 Office 的语言和区域设置列表，请参阅 [Office 2013 中的语言标识符和 OptionState ID 值](/previous-versions/office/office-2013-resource-kit/cc179219(v=office.15))。
 
 
 ### <a name="examples"></a>示例
@@ -183,10 +184,10 @@ ms.locfileid: "27724891"
 
 ### <a name="create-an-office-add-in-project"></a>创建 Office 加载项项目
 
-需要创建 Visual Studio 2017 Office 加载项项目。 
+需要创建 Visual Studio 2017 Office 加载项项目。
 
 > [!NOTE]
-> 如果未安装 Visual Studio 2017，请参阅 [Visual Studio IDE 页面](https://visualstudio.microsoft.com/vs/)，以获取下载说明。 在安装过程中，你需要选择 Office/SharePoint 开发工作负载。 如果之前已安装 Visual Studio 2017，请使用 [Visual Studio 安装程序](https://docs.microsoft.com/visualstudio/install/modify-visual-studio/)，以确保安装 Office/SharePoint 开发工作负载。
+> 如果未安装 Visual Studio 2017，请参阅 [Visual Studio IDE 页面](https://visualstudio.microsoft.com/vs/)，以获取下载说明。 在安装过程中，你需要选择 Office/SharePoint 开发工作负载。 如果之前已安装 Visual Studio 2017，请使用 [Visual Studio 安装程序](/visualstudio/install/modify-visual-studio/)，以确保安装 Office/SharePoint 开发工作负载。
 
 
 1. 在 Visual Studio 中，依次选择“文件”**** > “新建项目”****。
@@ -404,7 +405,7 @@ UIStrings.js 资源文件创建对象 **UIStrings**，其中包含加载项 UI �
 ## <a name="see-also"></a>另请参阅
 
 - [Office 加载项的设计准则](../design/add-in-design.md)
-- [Office 2013 中的语言标识符和 OptionState Id 值](https://docs.microsoft.com/previous-versions/office/office-2013-resource-kit/cc179219(v=office.15))
+- [Office 2013 中的语言标识符和 OptionState Id 值](/previous-versions/office/office-2013-resource-kit/cc179219(v=office.15))
 
 [DefaultLocale]:        https://docs.microsoft.com/office/dev/add-ins/reference/manifest/defaultlocale
 [说明]:          https://docs.microsoft.com/office/dev/add-ins/reference/manifest/description
@@ -413,7 +414,7 @@ UIStrings.js 资源文件创建对象 **UIStrings**，其中包含加载项 UI �
 [HighResolutionIconUrl]:https://docs.microsoft.com/office/dev/add-ins/reference/manifest/highresolutioniconurl
 [Resources]:            https://docs.microsoft.com/office/dev/add-ins/reference/manifest/resources
 [SourceLocation]:       https://docs.microsoft.com/office/dev/add-ins/reference/manifest/sourcelocation
-[替代]:             https://docs.microsoft.com/office/dev/add-ins/reference/manifest/override
+[Override]:             https://docs.microsoft.com/office/dev/add-ins/reference/manifest/override
 [DesktopSettings]:      https://docs.microsoft.com/office/dev/add-ins/reference/manifest/desktopsettings
 [TabletSettings]:       https://docs.microsoft.com/office/dev/add-ins/reference/manifest/tabletsettings
 [PhoneSettings]:        https://docs.microsoft.com/office/dev/add-ins/reference/manifest/phonesettings

@@ -3,12 +3,12 @@ ms.date: 02/06/2019
 description: 了解开发使用新 JavaScript 运行时的 Excel 自定义函数时的关键方案。
 title: Excel 自定义函数的运行时（预览）
 localization_priority: Normal
-ms.openlocfilehash: d891a41dc9e142ef3cfaa00c8b54d8d27913c57d
-ms.sourcegitcommit: a59f4e322238efa187f388a75b7709462c71e668
+ms.openlocfilehash: 85024b6c3559e2a5f32bae9297787f8052bba38d
+ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "29982039"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "30871778"
 ---
 # <a name="runtime-for-excel-custom-functions-preview"></a>Excel 自定义函数的运行时（预览）
 
@@ -20,9 +20,9 @@ ms.locfileid: "29982039"
 
 在自定义函数中，你可以使用 [Fetch](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) 等 API 或使用 [XmlHttpRequest (XHR)](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest)（一种发出与服务器交互的 HTTP 请求的标准 Web API）来请求外部数据。
 
-JavaScript 运行时使用的自定义函数内, XHR 通过要求[同源策略](https://developer.mozilla.org/en-US/docs/Web/Security/Same-origin_policy)和简单[CORS](https://www.w3.org/TR/cors/)实现其他安全措施。
+在自定义函数使用的 JavaScript 运行时中, XHR 通过要求使用[相同的源策略](https://developer.mozilla.org/en-US/docs/Web/Security/Same-origin_policy)和简单的[CORS](https://www.w3.org/TR/cors/)来实现其他安全措施。
 
-请注意的简单 CORS 实现不能使用 cookie，并仅支持简单方法 (GET、 标头，POST)。 简单 CORS 接受简单的标头包含字段名称`Accept`， `Accept-Language`， `Content-Language`。 您还可以使用`Content-Type`中简单 CORS 标头提供的内容类型是`application/x-www-form-urlencoded`， `text/plain`，或`multipart/form-data`。
+请注意, 简单的 CORS 实现无法使用 cookie, 仅支持简单方法 (GET、HEAD、POST)。 简单 CORS 接受包含字段名称`Accept`、 `Accept-Language`、 `Content-Language`的简单标头。 您还可以使用简单`Content-Type` CORS 中的标头, 只要内容类型为`application/x-www-form-urlencoded`、 `text/plain`或。 `multipart/form-data`
 
 ### <a name="xhr-example"></a>XHR 示例
 
@@ -67,10 +67,10 @@ function sendWebRequest(thermometerID, data) {
 
 ```typescript
 const ws = new WebSocket('wss://bundles.office.com');
-ws.onmessage = (message) => {
+ws.onmessage = function (message) {
     console.log(`Received: ${message}`);
-};
-ws.onerror = (error) => {
+}
+ws.onerror = function (error) {
     console.err(`Failed: ${error}`);
 }
 ```
@@ -96,105 +96,16 @@ ws.onerror = (error) => {
 
 ### <a name="asyncstorage-example"></a>AsyncStorage 示例 
 
-下面的代码示例调用 `AsyncStorage.getItem` 函数来从存储器中检索值。
+下面的代码示例调用`AsyncStorage.setItem`函数, 以将键和值设置为`AsyncStorage`。
 
-```typescript
-_goGetData = async () => {
-    try {
-        const value = await AsyncStorage.getItem('toDoItem');
-        if (value !== null) {
-            //data exists and you can do something with it here
-        }
-    } catch (error) {
-        //handle errors here
-    }
-}
-```
+```JavaScript
+function StoreValue(key, value) {
 
-## <a name="displaying-a-dialog-box"></a>显示对话框
-
-在自定义函数（或外接程序的任何其他部分）内，可以使用 `OfficeRuntime.displayWebDialog` API 来显示对话框。 此对话框 API 为可在任务窗格和附加程序命令内使用但无法在自定义函数中使用的[对话框 API](../develop/dialog-api-in-office-add-ins.md) 提供了一个替代方案。
-
-### <a name="dialog-api-example"></a>对话框 API 示例
-
-在下面的代码示例中，函数 `getTokenViaDialog` 使用对话框 API 的 `displayWebDialog` 函数来显示对话框。
-
-```js
-// Get auth token before calling my service, a hypothetical API that will deliver a stock price based on stock ticker string, such as "MSFT"
-
-function getStock (ticker) {
-  return new Promise(function (resolve, reject) {
-    // Get a token
-    getToken("https://www.contoso.com/auth")
-    .then(function (token) {
-
-      // Use token to get stock price
-      fetch("https://www.contoso.com/?token=token&ticker= + ticker")
-      .then(function (result) {
-
-        // Return stock price to cell
-        resolve(result);
-      });
-    })
-    .catch(function (error) {
-      reject(error);
-    });
+  return OfficeRuntime.AsyncStorage.setItem(key, value).then(function (result) {
+      return "Success: Item with key '" + key + "' saved to AsyncStorage.";
+  }, function (error) {
+      return "Error: Unable to save item with key '" + key + "' to AsyncStorage. " + error;
   });
-  
-  //Helper
-  function getToken(url) {
-    return new Promise(function (resolve,reject) {
-      if(_cachedToken) {
-        resolve(_cachedToken);
-      } else {
-        getTokenViaDialog(url)
-        .then(function (result) {
-          resolve(result);
-        })
-        .catch(function (result) {
-          reject(result);
-        });
-      }
-    });
-  }
-
-  function getTokenViaDialog(url) {
-    return new Promise (function (resolve, reject) {
-      if (_dialogOpen) {
-        // Can only have one dialog open at once, wait for previous dialog's token
-        let timeout = 5;
-        let count = 0;
-        var intervalId = setInterval(function () {
-          count++;
-          if(_cachedToken) {
-            resolve(_cachedToken);
-            clearInterval(intervalId);
-          }
-          if(count >= timeout) {
-            reject("Timeout while waiting for token");
-            clearInterval(intervalId);
-          }
-        }, 1000);
-      } else {
-        _dialogOpen = true;
-        OfficeRuntime.displayWebDialog(url, {
-          height: '50%',
-          width: '50%',
-          onMessage: function (message, dialog) {
-            _cachedToken = message;
-            resolve(message);
-            dialog.close();
-            return;
-          },
-          onRuntimeError: function(error, dialog) {
-            reject(error);
-          },
-        }).catch(function (e) {
-          reject(e);
-        });
-      }
-    });
-  }
 }
 ```
 

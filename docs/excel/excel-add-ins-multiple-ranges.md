@@ -3,19 +3,19 @@ title: 同时在 Excel 加载项中处理多个区域
 description: ''
 ms.date: 02/20/2019
 localization_priority: Normal
-ms.openlocfilehash: c6bbbaee6f6cbfda5d495f533caf3dbe1325401b
-ms.sourcegitcommit: 8e20e7663be2aaa0f7a5436a965324d171bc667d
+ms.openlocfilehash: d284f3cb12153b1c05cff0b7f7a66bbf98961443
+ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/28/2019
-ms.locfileid: "30199604"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "30870819"
 ---
 # <a name="work-with-multiple-ranges-simultaneously-in-excel-add-ins-preview"></a>同时在 Excel 加载项中处理多个区域（预览）
 
 Excel JavaScript 库允许你使用加载项同时在多个区域上执行操作和设置属性。 这些区域不必是连续区域。 除了简化代码以外，这种设置属性的方法还比为每个区域单独设置相同的属性要快得多。
 
 > [!NOTE]
-> 本文中所述的 API 需要 **Office 2016 即点即用版本 1809 内部版本 10820.20000** 或更高版本。 (你可能需要加入[Office 预览体验成员计划](https://products.office.com/office-insider)才能获取相应的版本。)[!INCLUDE [Information about using preview APIs](../includes/using-preview-apis.md)]
+> 本文中所述的 API 需要 **Office 2016 即点即用版本 1809 内部版本 10820.20000** 或更高版本。 (你可能需要加入[Office 预览体验成员计划](https://products.office.com/office-insider)才能获取相应的版本。)[!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
 
 ## <a name="rangeareas"></a>RangeAreas
 

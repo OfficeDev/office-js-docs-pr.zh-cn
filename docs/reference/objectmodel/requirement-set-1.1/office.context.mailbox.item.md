@@ -1,28 +1,28 @@
 ---
 title: "\"context\"-\"邮箱\"。项目-要求集1。1"
 description: ''
-ms.date: 02/15/2019
+ms.date: 03/19/2019
 localization_priority: Normal
-ms.openlocfilehash: 5a43029a64c63dec3d48136ffe0a9c3c76e18b6c
-ms.sourcegitcommit: f26778b596b6b022814c39601485ff676ed4e2fa
+ms.openlocfilehash: d3681f369570995c07256171fb6a65482648e85e
+ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/16/2019
-ms.locfileid: "30068159"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "30871617"
 ---
 # <a name="item"></a>item
 
-### [Office](office.md)[.context](office.context.md)[.mailbox](office.context.mailbox.md). item
+### [Office](office.md)[.context](office.context.md)[.mailbox](office.context.mailbox.md). 项目
 
-`item` 命名空间用于访问当前选定的邮件、会议请求或约会。可以通过使用 [itemType](#itemtype-officemailboxenumsitemtypejavascriptapioutlook11officemailboxenumsitemtype) 属性确定 `item` 的类型。
+`item` 命名空间用于访问当前选定的邮件、会议请求或约会。可以通过使用 [itemType](#itemtype-officemailboxenumsitemtype) 属性确定 `item` 的类型。
 
 ##### <a name="requirements"></a>Requirements
 
 |要求| 值|
 |---|---|
 |[最低版本的邮箱要求集](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
-|[最低权限级别](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| 受限|
-|[适用的 Outlook 模式](https://docs.microsoft.com/outlook/add-ins/#extension-points)| 撰写或阅读|
+|[最低权限级别](/outlook/add-ins/understanding-outlook-add-in-permissions)| 受限|
+|[适用的 Outlook 模式](/outlook/add-ins/#extension-points)| 撰写或阅读|
 
 ### <a name="example"></a>示例
 
@@ -60,8 +60,8 @@ Office.initialize = function () {
 |要求| 值|
 |---|---|
 |[最低版本的邮箱要求集](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
-|[最低权限级别](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
-|[适用的 Outlook 模式](https://docs.microsoft.com/outlook/add-ins/#extension-points)| 阅读|
+|[最低权限级别](/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
+|[适用的 Outlook 模式](/outlook/add-ins/#extension-points)| 阅读|
 
 ##### <a name="example"></a>示例
 
@@ -100,8 +100,8 @@ console.log(outputString);
 |要求| 值|
 |---|---|
 |[最低版本的邮箱要求集](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.1|
-|[最低权限级别](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
-|[适用的 Outlook 模式](https://docs.microsoft.com/outlook/add-ins/#extension-points)| 撰写|
+|[最低权限级别](/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
+|[适用的 Outlook 模式](/outlook/add-ins/#extension-points)| 撰写|
 
 ##### <a name="example"></a>示例
 
@@ -123,13 +123,13 @@ function callback(asyncResult) {
 
 *   [Body](/javascript/api/outlook_1_1/office.body)
 
-##### <a name="requirements"></a>要求
+##### <a name="requirements"></a>Requirements
 
 |要求| 值|
 |---|---|
 |[最低版本的邮箱要求集](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.1|
-|[最低权限级别](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
-|[适用的 Outlook 模式](https://docs.microsoft.com/outlook/add-ins/#extension-points)| 撰写或阅读|
+|[最低权限级别](/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
+|[适用的 Outlook 模式](/outlook/add-ins/#extension-points)| 撰写或阅读|
 
 ##### <a name="example"></a>示例
 
@@ -145,7 +145,7 @@ Office.context.mailbox.item.body.getAsync(
 
 ```
 
-下面是传递给回调函数的 result 参数的示例。
+以下是传递到回调函数的结果参数的示例。
 
 ```json
 {
@@ -185,13 +185,13 @@ function callback(asyncResult) {
 
 *   Array.<[EmailAddressDetails](/javascript/api/outlook_1_1/office.emailaddressdetails)> | [Recipients](/javascript/api/outlook_1_1/office.recipients)
 
-##### <a name="requirements"></a>要求
+##### <a name="requirements"></a>Requirements
 
 |要求| 值|
 |---|---|
 |[最低版本的邮箱要求集](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
-|[最低权限级别](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
-|[适用的 Outlook 模式](https://docs.microsoft.com/outlook/add-ins/#extension-points)| 撰写或阅读|
+|[最低权限级别](/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
+|[适用的 Outlook 模式](/outlook/add-ins/#extension-points)| 撰写或阅读|
 
 ####  <a name="nullable-conversationid-string"></a>(nullable) conversationId :String
 
@@ -205,13 +205,13 @@ function callback(asyncResult) {
 
 *   String
 
-##### <a name="requirements"></a>要求
+##### <a name="requirements"></a>Requirements
 
 |要求| 值|
 |---|---|
 |[最低版本的邮箱要求集](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
-|[最低权限级别](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
-|[适用的 Outlook 模式](https://docs.microsoft.com/outlook/add-ins/#extension-points)| 撰写或阅读|
+|[最低权限级别](/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
+|[适用的 Outlook 模式](/outlook/add-ins/#extension-points)| 撰写或阅读|
 
 ##### <a name="example"></a>示例
 
@@ -228,13 +228,13 @@ console.log("conversationId: " + conversationId);
 
 *   日期
 
-##### <a name="requirements"></a>Requirements
+##### <a name="requirements"></a>要求
 
 |要求| 值|
 |---|---|
 |[最低版本的邮箱要求集](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
-|[最低权限级别](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
-|[适用的 Outlook 模式](https://docs.microsoft.com/outlook/add-ins/#extension-points)| 阅读|
+|[最低权限级别](/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
+|[适用的 Outlook 模式](/outlook/add-ins/#extension-points)| 阅读|
 
 ##### <a name="example"></a>示例
 
@@ -259,8 +259,8 @@ console.log("Date and time created: " + dateTimeCreated);
 |要求| 值|
 |---|---|
 |[最低版本的邮箱要求集](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
-|[最低权限级别](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
-|[适用的 Outlook 模式](https://docs.microsoft.com/outlook/add-ins/#extension-points)| 阅读|
+|[最低权限级别](/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
+|[适用的 Outlook 模式](/outlook/add-ins/#extension-points)| 阅读|
 
 ##### <a name="example"></a>示例
 
@@ -273,7 +273,7 @@ console.log("Date and time modified: " + dateTimeModified);
 
 获取或设置约会结束的日期和时间。
 
-将 `end` 属性表示为协调世界时 (UTC) 的日期和时间值。可使用 [`convertToLocalClientTime`](office.context.mailbox.md#converttolocalclienttimetimevalue--localclienttimejavascriptapioutlook11officelocalclienttime) 方法将 end 属性值转换为客户端的本地日期和时间。
+将 `end` 属性表示为协调世界时 (UTC) 的日期和时间值。可使用 [`convertToLocalClientTime`](office.context.mailbox.md#converttolocalclienttimetimevalue--localclienttime) 方法将 end 属性值转换为客户端的本地日期和时间。
 
 ##### <a name="read-mode"></a>阅读模式
 
@@ -290,7 +290,7 @@ console.log("Appointment end: " + end);
 
 使用 [`Time.setAsync`](/javascript/api/outlook_1_1/office.time#setasync-datetime--options--callback-) 方法设置结束时间时，应使用 [`convertToUtcClientTime`](office.context.mailbox.md#converttoutcclienttimeinput--date) 方法将客户端的本地时间转换为服务器的 UTC。
 
-下面的示例使用[`setAsync`](/javascript/api/outlook_1_1/office.time#setasync-datetime--options--callback-) `Time`对象的方法设置约会的结束时间。
+以下示例使用 `Time` 对象的 [`setAsync`](/javascript/api/outlook_1_1/office.time#setasync-datetime--options--callback-) 方法设置约会的结束时间。
 
 ```javascript
 var endTime = new Date("3/14/2015");
@@ -317,14 +317,14 @@ Office.context.mailbox.item.end.setAsync(endTime, options, function(result) {
 |要求| 值|
 |---|---|
 |[最低版本的邮箱要求集](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
-|[最低权限级别](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
-|[适用的 Outlook 模式](https://docs.microsoft.com/outlook/add-ins/#extension-points)| 撰写或阅读|
+|[最低权限级别](/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
+|[适用的 Outlook 模式](/outlook/add-ins/#extension-points)| 撰写或阅读|
 
 #### <a name="from-emailaddressdetailsjavascriptapioutlook11officeemailaddressdetails"></a>from :[EmailAddressDetails](/javascript/api/outlook_1_1/office.emailaddressdetails)
 
 获取邮件发件人的电子邮件地址。仅限阅读模式。
 
-`from` 和 [`sender`](#sender-emailaddressdetailsjavascriptapioutlook11officeemailaddressdetails) 属性表示同一个人，邮件由代理人发送的除外。在此情况下，`from` 属性表示代理程序，而 sender 属性表示代理人。
+`from` 和 [`sender`](#sender-emailaddressdetails) 属性表示同一个人，邮件由代理人发送的除外。在此情况下，`from` 属性表示代理程序，而 sender 属性表示代理人。
 
 > [!NOTE]
 > `from` 属性中 `EmailAddressDetails` 对象的 `recipientType` 属性为 `undefined`。
@@ -338,8 +338,8 @@ Office.context.mailbox.item.end.setAsync(endTime, options, function(result) {
 |要求| 值|
 |---|---|
 |[最低版本的邮箱要求集](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
-|[最低权限级别](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
-|[适用的 Outlook 模式](https://docs.microsoft.com/outlook/add-ins/#extension-points)| 阅读|
+|[最低权限级别](/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
+|[适用的 Outlook 模式](/outlook/add-ins/#extension-points)| 阅读|
 
 ##### <a name="example"></a>示例
 
@@ -356,13 +356,13 @@ console.log("From " + from);
 
 *   String
 
-##### <a name="requirements"></a>要求
+##### <a name="requirements"></a>Requirements
 
 |要求| 值|
 |---|---|
 |[最低版本的邮箱要求集](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
-|[最低权限级别](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
-|[适用的 Outlook 模式](https://docs.microsoft.com/outlook/add-ins/#extension-points)| 阅读|
+|[最低权限级别](/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
+|[适用的 Outlook 模式](/outlook/add-ins/#extension-points)| 阅读|
 
 ##### <a name="example"></a>示例
 
@@ -383,17 +383,17 @@ var internetMessageId = Office.context.mailbox.item.internetMessageId;
 
 你可以创建用于扩展默认邮件类别的自定义邮件类别，例如，自定义约会邮件类别 `IPM.Appointment.Contoso`。
 
-##### <a name="type"></a>Type
+##### <a name="type"></a>类型
 
 *   String
 
-##### <a name="requirements"></a>要求
+##### <a name="requirements"></a>Requirements
 
 |要求| 值|
 |---|---|
 |[最低版本的邮箱要求集](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
-|[最低权限级别](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
-|[适用的 Outlook 模式](https://docs.microsoft.com/outlook/add-ins/#extension-points)| 阅读|
+|[最低权限级别](/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
+|[适用的 Outlook 模式](/outlook/add-ins/#extension-points)| 阅读|
 
 ##### <a name="example"></a>示例
 
@@ -407,19 +407,19 @@ console.log("Item class: " + itemClass);
 获取当前项目的 Exchange Web 服务项目标识符。仅限阅读模式。
 
 > [!NOTE]
-> `itemId` 属性返回的标识符与 Exchange Web 服务项目标识符相同。 `itemId` 属性与 Outlook 条目 ID 或 Outlook REST API 使用的 ID 不同。 使用此值进行 REST API 调用前，应使用 `Office.context.mailbox.convertToRestId`（可在要求集 1.3 的开头部分中找到）对它进行转换。 有关详细信息，请参阅[从 Outlook 加载项使用 Outlook REST API](https://docs.microsoft.com/outlook/add-ins/use-rest-api#get-the-item-id)。
+> `itemId` 属性返回的标识符与 Exchange Web 服务项目标识符相同。 `itemId` 属性与 Outlook 条目 ID 或 Outlook REST API 使用的 ID 不同。 在使用此值进行 REST API 调用之前, 应使用`Office.context.mailbox.convertToRestId`转换它, 这可从要求集1.3 中开始。 有关详细信息，请参阅[从 Outlook 加载项使用 Outlook REST API](/outlook/add-ins/use-rest-api#get-the-item-id)。
 
 ##### <a name="type"></a>Type
 
 *   String
 
-##### <a name="requirements"></a>要求
+##### <a name="requirements"></a>Requirements
 
 |要求| 值|
 |---|---|
 |[最低版本的邮箱要求集](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
-|[最低权限级别](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
-|[适用的 Outlook 模式](https://docs.microsoft.com/outlook/add-ins/#extension-points)| 阅读|
+|[最低权限级别](/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
+|[适用的 Outlook 模式](/outlook/add-ins/#extension-points)| 阅读|
 
 ##### <a name="example"></a>示例
 
@@ -444,13 +444,13 @@ if (itemId === null || itemId == undefined) {
 
 *   [Office.MailboxEnums.ItemType](/javascript/api/outlook_1_1/office.mailboxenums.itemtype)
 
-##### <a name="requirements"></a>要求
+##### <a name="requirements"></a>Requirements
 
 |要求| 值|
 |---|---|
 |[最低版本的邮箱要求集](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
-|[最低权限级别](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
-|[适用的 Outlook 模式](https://docs.microsoft.com/outlook/add-ins/#extension-points)| 撰写或阅读|
+|[最低权限级别](/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
+|[适用的 Outlook 模式](/outlook/add-ins/#extension-points)| 撰写或阅读|
 
 ##### <a name="example"></a>示例
 
@@ -498,26 +498,26 @@ function callback(asyncResult) {
 |要求| 值|
 |---|---|
 |[最低版本的邮箱要求集](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
-|[最低权限级别](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
-|[适用的 Outlook 模式](https://docs.microsoft.com/outlook/add-ins/#extension-points)| 撰写或阅读|
+|[最低权限级别](/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
+|[适用的 Outlook 模式](/outlook/add-ins/#extension-points)| 撰写或阅读|
 
 #### <a name="normalizedsubject-string"></a>normalizedSubject :String
 
 获取删除了所有前缀（包括 `RE:` 和 `FWD:`）的项目主题。仅限阅读模式。
 
-normalizedSubject 属性获取包含由电子邮件程序添加的任何标准前缀（如 `RE:` 和 `FW:`）的项目主题。若要获取包含完整前缀的项目主题，请使用 [`subject`](#subject-stringsubjectjavascriptapioutlook11officesubject) 属性。
+normalizedSubject 属性获取包含由电子邮件程序添加的任何标准前缀（如 `RE:` 和 `FW:`）的项目主题。若要获取包含完整前缀的项目主题，请使用 [`subject`](#subject-stringsubject) 属性。
 
 ##### <a name="type"></a>Type
 
 *   String
 
-##### <a name="requirements"></a>要求
+##### <a name="requirements"></a>Requirements
 
 |要求| 值|
 |---|---|
 |[最低版本的邮箱要求集](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
-|[最低权限级别](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
-|[适用的 Outlook 模式](https://docs.microsoft.com/outlook/add-ins/#extension-points)| 阅读|
+|[最低权限级别](/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
+|[适用的 Outlook 模式](/outlook/add-ins/#extension-points)| 阅读|
 
 ##### <a name="example"></a>示例
 
@@ -562,8 +562,8 @@ function callback(asyncResult) {
 |要求| 值|
 |---|---|
 |[最低版本的邮箱要求集](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
-|[最低权限级别](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
-|[适用的 Outlook 模式](https://docs.microsoft.com/outlook/add-ins/#extension-points)| 撰写或阅读|
+|[最低权限级别](/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
+|[适用的 Outlook 模式](/outlook/add-ins/#extension-points)| 撰写或阅读|
 
 #### <a name="organizer-emailaddressdetailsjavascriptapioutlook11officeemailaddressdetails"></a>organizer :[EmailAddressDetails](/javascript/api/outlook_1_1/office.emailaddressdetails)
 
@@ -578,8 +578,8 @@ function callback(asyncResult) {
 |要求| 值|
 |---|---|
 |[最低版本的邮箱要求集](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
-|[最低权限级别](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
-|[适用的 Outlook 模式](https://docs.microsoft.com/outlook/add-ins/#extension-points)| 阅读|
+|[最低权限级别](/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
+|[适用的 Outlook 模式](/outlook/add-ins/#extension-points)| 阅读|
 
 ##### <a name="example"></a>示例
 
@@ -626,14 +626,14 @@ function callback(asyncResult) {
 |要求| 值|
 |---|---|
 |[最低版本的邮箱要求集](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
-|[最低权限级别](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
-|[适用的 Outlook 模式](https://docs.microsoft.com/outlook/add-ins/#extension-points)| 撰写或阅读|
+|[最低权限级别](/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
+|[适用的 Outlook 模式](/outlook/add-ins/#extension-points)| 撰写或阅读|
 
 #### <a name="sender-emailaddressdetailsjavascriptapioutlook11officeemailaddressdetails"></a>sender :[EmailAddressDetails](/javascript/api/outlook_1_1/office.emailaddressdetails)
 
 获取电子邮件发件人的电子邮件地址。仅限阅读模式。
 
-[`from`](#from-emailaddressdetailsjavascriptapioutlook11officeemailaddressdetails) 和 `sender` 属性表示同一个人，邮件由代理人发送的除外。在此情况下，`from` 属性表示代理程序，而 sender 属性表示代理人。
+[`from`](#from-emailaddressdetails) 和 `sender` 属性表示同一个人，邮件由代理人发送的除外。在此情况下，`from` 属性表示代理程序，而 sender 属性表示代理人。
 
 > [!NOTE]
 > `from` 属性中 `EmailAddressDetails` 对象的 `recipientType` 属性为 `undefined`。
@@ -647,8 +647,8 @@ function callback(asyncResult) {
 |要求| 值|
 |---|---|
 |[最低版本的邮箱要求集](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
-|[最低权限级别](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
-|[适用的 Outlook 模式](https://docs.microsoft.com/outlook/add-ins/#extension-points)| 阅读|
+|[最低权限级别](/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
+|[适用的 Outlook 模式](/outlook/add-ins/#extension-points)| 阅读|
 
 ##### <a name="example"></a>示例
 
@@ -662,7 +662,7 @@ console.log("Sender: " + senderName + " (" + senderAddress + ")");
 
 获取或设置约会开始的日期和时间。
 
-将 `start` 属性表示为协调世界时 (UTC) 的日期和时间值。可使用 [`convertToLocalClientTime`](office.context.mailbox.md#converttolocalclienttimetimevalue--localclienttimejavascriptapioutlook11officelocalclienttime) 方法将该值转换为客户端的本地日期和时间。
+将 `start` 属性表示为协调世界时 (UTC) 的日期和时间值。可使用 [`convertToLocalClientTime`](office.context.mailbox.md#converttolocalclienttimetimevalue--localclienttime) 方法将该值转换为客户端的本地日期和时间。
 
 ##### <a name="read-mode"></a>阅读模式
 
@@ -706,8 +706,8 @@ Office.context.mailbox.item.start.setAsync(startTime, options, function(result) 
 |要求| 值|
 |---|---|
 |[最低版本的邮箱要求集](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
-|[最低权限级别](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
-|[适用的 Outlook 模式](https://docs.microsoft.com/outlook/add-ins/#extension-points)| 撰写或阅读|
+|[最低权限级别](/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
+|[适用的 Outlook 模式](/outlook/add-ins/#extension-points)| 撰写或阅读|
 
 ####  <a name="subject-stringsubjectjavascriptapioutlook11officesubject"></a>subject :String|[Subject](/javascript/api/outlook_1_1/office.subject)
 
@@ -741,13 +741,13 @@ function callback(asyncResult) {
 
 *   String | [Subject](/javascript/api/outlook_1_1/office.subject)
 
-##### <a name="requirements"></a>要求
+##### <a name="requirements"></a>Requirements
 
 |要求| 值|
 |---|---|
 |[最低版本的邮箱要求集](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
-|[最低权限级别](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
-|[适用的 Outlook 模式](https://docs.microsoft.com/outlook/add-ins/#extension-points)| 撰写或阅读|
+|[最低权限级别](/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
+|[适用的 Outlook 模式](/outlook/add-ins/#extension-points)| 撰写或阅读|
 
 ####  <a name="to-arrayemailaddressdetailsjavascriptapioutlook11officeemailaddressdetailsrecipientsjavascriptapioutlook11officerecipients"></a>to :Array.<[EmailAddressDetails](/javascript/api/outlook_1_1/office.emailaddressdetails)>|[Recipients](/javascript/api/outlook_1_1/office.recipients)
 
@@ -784,8 +784,8 @@ function callback(asyncResult) {
 |要求| 值|
 |---|---|
 |[最低版本的邮箱要求集](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
-|[最低权限级别](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
-|[适用的 Outlook 模式](https://docs.microsoft.com/outlook/add-ins/#extension-points)| 撰写或阅读|
+|[最低权限级别](/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
+|[适用的 Outlook 模式](/outlook/add-ins/#extension-points)| 撰写或阅读|
 
 ### <a name="methods"></a>方法
 
@@ -795,16 +795,16 @@ function callback(asyncResult) {
 
 `addFileAttachmentAsync` 方法在指定的 URI 上载文件并将其附加到撰写窗体中的项目。
 
-你随后可以将该标识符与 [`removeAttachmentAsync`](#removeattachmentasyncattachmentid-options-callback) 方法一同使用，以删除同一个会话中的附件。
+随后可以将该标识符与 [`removeAttachmentAsync`](#removeattachmentasyncattachmentid-options-callback) 方法一同使用，以删除同一个会话中的附件。
 
-##### <a name="parameters"></a>Parameters
+##### <a name="parameters"></a>参数
 
 |名称| 类型| 属性| 说明|
 |---|---|---|---|
 |`uri`| String||提供附加到邮件或约会的文件的位置的 URI。最大长度为 2048 个字符。|
 |`attachmentName`| 字符串||在附件上载过程中显示的附件名称。最大长度为 255 个字符。|
-|`options`| Object| &lt;可选&gt;|包含一个或多个以下属性的对象文本。|
-|`options.asyncContext`| 对象| &lt;可选&gt;|开发人员可以提供他们想要在回调方法中访问的任何对象。|
+|`options`| Object| &lt;optional&gt;|包含一个或多个以下属性的对象文本。|
+|`options.asyncContext`| 对象| &lt;optional&gt;|开发人员可以提供他们想要在回调方法中访问的任何对象。|
 |`callback`| 函数| &lt;可选&gt;|方法完成后，使用单个参数 `asyncResult`（一个 [`AsyncResult`](/javascript/api/office/office.asyncresult) 对象）调用在 `callback` 参数中传递的函数。 <br/>如果成功，附件标识符将在 `asyncResult.value` 属性中提供。<br/>如果上传附件失败，`asyncResult` 对象将包含一个提供错误说明的 `Error` 对象。|
 
 ##### <a name="errors"></a>错误
@@ -820,8 +820,8 @@ function callback(asyncResult) {
 |要求| 值|
 |---|---|
 |[最低版本的邮箱要求集](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.1|
-|[最低权限级别](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadWriteItem|
-|[适用的 Outlook 模式](https://docs.microsoft.com/outlook/add-ins/#extension-points)| 撰写|
+|[最低权限级别](/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadWriteItem|
+|[适用的 Outlook 模式](/outlook/add-ins/#extension-points)| 撰写|
 
 ##### <a name="example"></a>示例
 
@@ -853,15 +853,15 @@ function addAttachment() {
 
 如果 Office 加载项在 Outlook Web App 中运行，则 `addItemAttachmentAsync` 方法可以将项目附加到项目（正在编辑的项目除外）中；然而，不支持也不建议这样做。
 
-##### <a name="parameters"></a>Parameters
+##### <a name="parameters"></a>参数
 
 |名称| 类型| 属性| 说明|
 |---|---|---|---|
 |`itemId`| String||要附加的项目的 Exchange 标识符。最大长度为 100 个字符。|
 |`attachmentName`| String||要附加的项目的主题。 最大长度为 255 个字符。|
-|`options`| 对象| &lt;可选&gt;|包含一个或多个以下属性的对象文本。|
-|`options.asyncContext`| 对象| &lt;可选&gt;|开发人员可以提供他们想要在回调方法中访问的任何对象。|
-|`callback`| 函数| &lt;optional&gt;|方法完成后，使用单个参数 `asyncResult`（一个 [`AsyncResult`](/javascript/api/office/office.asyncresult) 对象）调用在 `callback` 参数中传递的函数。 <br/>如果成功，附件标识符将在 `asyncResult.value` 属性中提供。<br/>如果添加附件失败，`asyncResult` 对象将包含一个提供错误说明的 `Error` 对象。|
+|`options`| 对象| &lt;optional&gt;|包含一个或多个以下属性的对象文本。|
+|`options.asyncContext`| 对象| &lt;optional&gt;|开发人员可以提供他们想要在回调方法中访问的任何对象。|
+|`callback`| 函数| &lt;可选&gt;|方法完成后，使用单个参数 `asyncResult`（一个 [`AsyncResult`](/javascript/api/office/office.asyncresult) 对象）调用在 `callback` 参数中传递的函数。 <br/>如果成功，附件标识符将在 `asyncResult.value` 属性中提供。<br/>如果添加附件失败，`asyncResult` 对象将包含一个提供错误说明的 `Error` 对象。|
 
 ##### <a name="errors"></a>错误
 
@@ -874,8 +874,8 @@ function addAttachment() {
 |要求| 值|
 |---|---|
 |[最低版本的邮箱要求集](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.1|
-|[最低权限级别](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadWriteItem|
-|[适用的 Outlook 模式](https://docs.microsoft.com/outlook/add-ins/#extension-points)| 撰写|
+|[最低权限级别](/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadWriteItem|
+|[适用的 Outlook 模式](/outlook/add-ins/#extension-points)| 撰写|
 
 ##### <a name="example"></a>示例
 
@@ -901,7 +901,7 @@ function addAttachment() {
 }
 ```
 
-#### <a name="displayreplyallformformdata-callback"></a>displayReplyAllForm (formData, [callback])
+#### <a name="displayreplyallformformdata-callback"></a>displayReplyAllForm(formData, [callback])
 
 显示答复窗体，其中包括所选邮件的发件人和所有收件人或所选约会的组织者和所有与会者。
 
@@ -913,11 +913,11 @@ function addAttachment() {
 如果任意字符串参数超出其限制，`displayReplyAllForm` 将引发异常。
 
 > [!NOTE]
-> 要求集 1.1 不支持 `displayReplyAllForm` 在调用中包括附件的功能。 附件支持已添加到要求集 1.2 及以上的 `displayReplyAllForm` 中。
+> 要求集1.1 中不支持在呼叫`displayReplyAllForm`中包含附件的功能。 附件支持已添加到要求集 1.2 及以上的 `displayReplyAllForm` 中。
 
-##### <a name="parameters"></a>Parameters
+##### <a name="parameters"></a>参数
 
-|名称| 说明| 说明|
+|名称| 类型| 说明|
 |---|---|---|
 |`formData`| 字符串 &#124; 对象| |一个包含文本和 HTML 且表示答复窗体的正文的字符串。字符串限制为 32 KB。<br/>**或**<br/>包含正文或附件数据和回调函数的对象。对象定义如下。 |
 | `formData.htmlBody` | 字符串 | &lt;可选&gt; | 一个包含文本和 HTML 且表示答复窗体的正文的字符串。字符串限制为 32 KB。
@@ -928,8 +928,8 @@ function addAttachment() {
 |要求| 值|
 |---|---|
 |[最低版本的邮箱要求集](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
-|[最低权限级别](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
-|[适用的 Outlook 模式](https://docs.microsoft.com/outlook/add-ins/#extension-points)| 阅读|
+|[最低权限级别](/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
+|[适用的 Outlook 模式](/outlook/add-ins/#extension-points)| 阅读|
 
 ##### <a name="examples"></a>示例
 
@@ -968,7 +968,7 @@ Office.context.mailbox.item.displayReplyAllForm(
 });
 ```
 
-#### <a name="displayreplyformformdata-callback"></a>displayReplyForm (formData, [callback])
+#### <a name="displayreplyformformdata-callback"></a>displayReplyForm(formData, [callback])
 
 显示答复窗体，其中仅包括所选邮件的发件人或所选约会的组织者。
 
@@ -980,11 +980,11 @@ Office.context.mailbox.item.displayReplyAllForm(
 如果任意字符串参数超出其限制，`displayReplyForm` 将引发异常。
 
 > [!NOTE]
-> 要求集 1.1 不支持 `displayReplyForm` 在调用中包括附件的功能。 附件支持已添加到要求集 1.2 及以上的 `displayReplyForm` 中。
+> 要求集1.1 中不支持在呼叫`displayReplyForm`中包含附件的功能。 附件支持已添加到要求集 1.2 及以上的 `displayReplyForm` 中。
 
-##### <a name="parameters"></a>Parameters
+##### <a name="parameters"></a>参数
 
-|名称| 说明| 说明|
+|名称| 类型| 说明|
 |---|---|---|
 |`formData`| 字符串 &#124; 对象| | 一个包含文本和 HTML 且表示答复窗体的正文的字符串。字符串限制为 32 KB。<br/>**或**<br/>包含正文或附件数据和回调函数的对象。对象定义如下。 |
 | `formData.htmlBody` | 字符串 | &lt;可选&gt; | 一个包含文本和 HTML 且表示答复窗体的正文的字符串。字符串限制为 32 KB。
@@ -995,8 +995,8 @@ Office.context.mailbox.item.displayReplyAllForm(
 |要求| 值|
 |---|---|
 |[最低版本的邮箱要求集](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
-|[最低权限级别](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
-|[适用的 Outlook 模式](https://docs.microsoft.com/outlook/add-ins/#extension-points)| 阅读|
+|[最低权限级别](/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
+|[适用的 Outlook 模式](/outlook/add-ins/#extension-points)| 阅读|
 
 ##### <a name="examples"></a>示例
 
@@ -1047,8 +1047,8 @@ Office.context.mailbox.item.displayReplyForm(
 |要求| 值|
 |---|---|
 |[最低版本的邮箱要求集](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
-|[最低权限级别](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
-|[适用的 Outlook 模式](https://docs.microsoft.com/outlook/add-ins/#extension-points)| 阅读|
+|[最低权限级别](/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
+|[适用的 Outlook 模式](/outlook/add-ins/#extension-points)| 阅读|
 
 ##### <a name="returns"></a>返回：
 
@@ -1069,7 +1069,7 @@ var contacts = Office.context.mailbox.item.getEntities().contacts;
 > [!NOTE]
 > 在 Outlook for iOS 或 Outlook for Android 中不支持此方法。
 
-##### <a name="parameters"></a>Parameters
+##### <a name="parameters"></a>参数
 
 |名称| 类型| 说明|
 |---|---|---|
@@ -1080,8 +1080,8 @@ var contacts = Office.context.mailbox.item.getEntities().contacts;
 |要求| 值|
 |---|---|
 |[最低版本的邮箱要求集](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
-|[最低权限级别](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| 受限|
-|[适用的 Outlook 模式](https://docs.microsoft.com/outlook/add-ins/#extension-points)| 阅读|
+|[最低权限级别](/outlook/add-ins/understanding-outlook-add-in-permissions)| 受限|
+|[适用的 Outlook 模式](/outlook/add-ins/#extension-points)| 阅读|
 
 ##### <a name="returns"></a>返回：
 
@@ -1091,7 +1091,7 @@ var contacts = Office.context.mailbox.item.getEntities().contacts;
 
 | `entityType` 的值 | 返回的数组中对象的类型 | 所需权限级别 |
 | --- | --- | --- |
-| `Address` | 字符串 | **受限** |
+| `Address` | String | **受限** |
 | `Contact` | Contact | **ReadItem** |
 | `EmailAddress` | String | **ReadItem** |
 | `MeetingSuggestion` | MeetingSuggestion | **ReadItem** |
@@ -1129,19 +1129,19 @@ Office.initialize = function () {
 
 `getFilteredEntitiesByName` 方法返回匹配在具有指定 `FilterName` 元素值的清单 XML 文件中的 [ItemHasKnownEntity](/office/dev/add-ins/reference/manifest/rule#itemhasknownentity-rule) 规则元素中定义的正则表达式的实体。
 
-##### <a name="parameters"></a>Parameters
+##### <a name="parameters"></a>参数
 
 |名称| 类型| 说明|
 |---|---|---|
 |`name`| 字符串|定义筛选器匹配的 `ItemHasKnownEntity` 规则元素的名称。|
 
-##### <a name="requirements"></a>Requirements
+##### <a name="requirements"></a>要求
 
 |要求| 值|
 |---|---|
 |[最低版本的邮箱要求集](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
-|[最低权限级别](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
-|[适用的 Outlook 模式](https://docs.microsoft.com/outlook/add-ins/#extension-points)| 阅读|
+|[最低权限级别](/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
+|[适用的 Outlook 模式](/outlook/add-ins/#extension-points)| 阅读|
 
 ##### <a name="returns"></a>返回：
 
@@ -1182,15 +1182,15 @@ Office.initialize = function () {
 ```
 
 > [!NOTE]
-> 如果在项目的正文属性上指定 `ItemHasRegularExpressionMatch` 规则，则正则表达式应进一步筛选正文并应尝试返回该项目的整个正文。使用正则表达式（如 `.*`）获取项目的整个正文并不总是返回预期的结果。
+> 如果在项目的正文属性上指定 `ItemHasRegularExpressionMatch` 规则，则正则表达式应进一步筛选正文，不应尝试返回该项目的整个正文。使用正则表达式（如 `.*`）获取项目的整个正文并不总是返回预期的结果。
 
-##### <a name="requirements"></a>要求
+##### <a name="requirements"></a>Requirements
 
 |要求| 值|
 |---|---|
 |[最低版本的邮箱要求集](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
-|[最低权限级别](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
-|[适用的 Outlook 模式](https://docs.microsoft.com/outlook/add-ins/#extension-points)| 阅读|
+|[最低权限级别](/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
+|[适用的 Outlook 模式](/outlook/add-ins/#extension-points)| 阅读|
 
 ##### <a name="returns"></a>返回：
 
@@ -1227,19 +1227,19 @@ var veggies = allMatches.veggies;
 
 如果在项目的正文属性上指定 `ItemHasRegularExpressionMatch` 规则，则正则表达式应进一步筛选正文，不应尝试返回该项目的整个正文。使用正则表达式（如 `.*`）获取项目的整个正文并不总是返回预期的结果。
 
-##### <a name="parameters"></a>Parameters
+##### <a name="parameters"></a>参数
 
-|名称| 说明| 描述|
+|名称| 类型| 说明|
 |---|---|---|
-|`name`| 字符串|定义筛选器匹配的 `ItemHasRegularExpressionMatch` 规则元素的名称。|
+|`name`| String|定义筛选器匹配的 `ItemHasRegularExpressionMatch` 规则元素的名称。|
 
 ##### <a name="requirements"></a>Requirements
 
 |要求| 值|
 |---|---|
 |[最低版本的邮箱要求集](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
-|[最低权限级别](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
-|[适用的 Outlook 模式](https://docs.microsoft.com/outlook/add-ins/#extension-points)| 阅读|
+|[最低权限级别](/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
+|[适用的 Outlook 模式](/outlook/add-ins/#extension-points)| 阅读|
 
 ##### <a name="returns"></a>返回：
 
@@ -1266,20 +1266,20 @@ var veggies = Office.context.mailbox.item.getRegExMatchesByName("veggies");
 
 自定义属性基于每个应用、每个项目存储为键/值对。此方法在回调中返回 `CustomProperties` 对象，该回调提供访问特定于当前项目和当前外接程序的自定义属性的方法。自定义属性未在项目上加密，因此这不应用作安全存储。
 
-##### <a name="parameters"></a>Parameters
+##### <a name="parameters"></a>参数
 
 |名称| 类型| 属性| 说明|
 |---|---|---|---|
-|`callback`| 函数||方法完成后，使用单个参数 `asyncResult`（一个 [`AsyncResult`](/javascript/api/office/office.asyncresult) 对象）调用在 `callback` 参数中传递的函数。<br/><br/>自定义属性作为 `asyncResult.value` 属性中的 [`CustomProperties`](/javascript/api/outlook_1_1/office.customproperties) 对象提供。 此对象可用于获取、设置以及从项目中删除自定义属性，并将自定义属性集的更改重新保存到服务器。|
-|`userContext`| 对象| &lt;可选&gt;|开发人员可以提供他们想要在回调函数中访问的任何对象。 此对象可以通过回调函数中的 `asyncResult.asyncContext` 属性进行访问。|
+|`callback`| 函数||方法完成后，使用单个参数 `callback`（一个 [`asyncResult`](/javascript/api/office/office.asyncresult) 对象）调用在 `AsyncResult` 参数中传递的函数。<br/><br/>自定义属性作为 `asyncResult.value` 属性中的 [`CustomProperties`](/javascript/api/outlook_1_1/office.customproperties) 对象提供。 此对象可用于获取、设置以及从项目中删除自定义属性，并将自定义属性集的更改重新保存到服务器。|
+|`userContext`| Object| &lt;可选&gt;|开发人员可以提供他们想要在回调函数中访问的任何对象。 此对象可以通过回调函数中的 `asyncResult.asyncContext` 属性进行访问。|
 
-##### <a name="requirements"></a>要求
+##### <a name="requirements"></a>Requirements
 
 |要求| 值|
 |---|---|
 |[最低版本的邮箱要求集](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
-|[最低权限级别](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
-|[适用的 Outlook 模式](https://docs.microsoft.com/outlook/add-ins/#extension-points)| 撰写或阅读|
+|[最低权限级别](/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
+|[适用的 Outlook 模式](/outlook/add-ins/#extension-points)| 撰写或阅读|
 
 ##### <a name="example"></a>示例
 
@@ -1314,14 +1314,14 @@ function saveCallback(asyncResult) {
 
 `removeAttachmentAsync` 方法删除项目中带指定标识符的附件。最佳做法是，仅当同一个邮件应用程序在同一会话中添加了一个附件时，你才应使用该附件标识符来删除该附件。在 Outlook Web App 和适用于设备的 OWA 中，附件标识符只在同一个会话中才有效。当用户关闭应用程序，或者如果用户开始在内嵌窗体中撰写，并在随后弹出的内嵌窗体中继续在单独的窗口撰写时，会话即结束。
 
-##### <a name="parameters"></a>Parameters
+##### <a name="parameters"></a>参数
 
 |名称| 类型| 属性| 说明|
 |---|---|---|---|
 |`attachmentId`| 字符串||要删除的附件的标识符。|
-|`options`| 对象| &lt;可选&gt;|包含一个或多个以下属性的对象文本。|
-|`options.asyncContext`| 对象| &lt;可选&gt;|开发人员可以提供他们想要在回调方法中访问的任何对象。|
-|`callback`| 函数| &lt;可选&gt;|方法完成后，使用单个参数 `callback`（一个 [`asyncResult`](/javascript/api/office/office.asyncresult) 对象）调用在 `AsyncResult` 参数中传递的函数。 <br/>如果删除附件失败，`asyncResult.error` 属性将包含一个说明失败原因的错误代码。|
+|`options`| 对象| &lt;optional&gt;|包含一个或多个以下属性的对象文本。|
+|`options.asyncContext`| Object| &lt;optional&gt;|开发人员可以提供他们想要在回调方法中访问的任何对象。|
+|`callback`| 函数| &lt;可选&gt;|方法完成后，使用单个参数 `asyncResult`（一个 [`AsyncResult`](/javascript/api/office/office.asyncresult) 对象）调用在 `callback` 参数中传递的函数。 <br/>如果删除附件失败，`asyncResult.error` 属性将包含一个说明失败原因的错误代码。|
 
 ##### <a name="errors"></a>错误
 
@@ -1329,13 +1329,13 @@ function saveCallback(asyncResult) {
 |------------|-------------|
 | `InvalidAttachmentId` | 附件标识符不存在。 |
 
-##### <a name="requirements"></a>Requirements
+##### <a name="requirements"></a>要求
 
 |要求| 值|
 |---|---|
 |[最低版本的邮箱要求集](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.1|
-|[最低权限级别](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadWriteItem|
-|[适用的 Outlook 模式](https://docs.microsoft.com/outlook/add-ins/#extension-points)| 撰写|
+|[最低权限级别](/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadWriteItem|
+|[适用的 Outlook 模式](/outlook/add-ins/#extension-points)| 撰写|
 
 ##### <a name="example"></a>示例
 

@@ -1,25 +1,25 @@
 ---
-title: Office 命令空间 - 要求集 1.4
+title: Office 命名空间-要求集1。4
 description: ''
-ms.date: 02/15/2019
+ms.date: 03/19/2019
 localization_priority: Normal
-ms.openlocfilehash: af5e05e2243c0132018bc4eba7006f9a5aad4099
-ms.sourcegitcommit: f26778b596b6b022814c39601485ff676ed4e2fa
+ms.openlocfilehash: c60195ddfc42d962427127bf601bca3d41797566
+ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/16/2019
-ms.locfileid: "30067949"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "30872107"
 ---
 # <a name="office"></a>Office
 
 该 Office 命名空间提供所有 Office 应用中的加载项所使用的共享接口。此列表仅记录 Outlook 加载项所使用的接口。有关 Office 命名空间的完整列表，请参阅[公用 API](/javascript/api/office)。
 
-##### <a name="requirements"></a>要求
+##### <a name="requirements"></a>Requirements
 
 |要求| 值|
 |---|---|
 |[最低版本的邮箱要求集](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
-|[适用的 Outlook 模式](https://docs.microsoft.com/outlook/add-ins/#extension-points)| 撰写或阅读|
+|[适用的 Outlook 模式](/outlook/add-ins/#extension-points)| 撰写或阅读|
 
 ### <a name="namespaces"></a>命名空间
 
@@ -33,7 +33,7 @@ ms.locfileid: "30067949"
 
 指定异步调用的结果。
 
-##### <a name="type"></a>Type
+##### <a name="type"></a>类型
 
 *   String
 
@@ -49,13 +49,13 @@ ms.locfileid: "30067949"
 |要求| 值|
 |---|---|
 |[最低版本的邮箱要求集](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
-|[适用的 Outlook 模式](https://docs.microsoft.com/outlook/add-ins/#extension-points)| 撰写或阅读|
+|[适用的 Outlook 模式](/outlook/add-ins/#extension-points)| 撰写或阅读|
 
 ####  <a name="coerciontype-string"></a>CoercionType :String
 
 指定如何强制由调用方法返回或设置的数据。
 
-##### <a name="type"></a>Type
+##### <a name="type"></a>类型
 
 *   String
 
@@ -64,20 +64,20 @@ ms.locfileid: "30067949"
 |名称| 类型| 说明|
 |---|---|---|
 |`Html`| String|请求以 HTML 格式返回的数据。|
-|`Text`| 字符串|请求以文本格式返回的数据。|
+|`Text`| String|请求以文本格式返回的数据。|
 
-##### <a name="requirements"></a>要求
+##### <a name="requirements"></a>Requirements
 
 |要求| 值|
 |---|---|
 |[最低版本的邮箱要求集](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
-|[适用的 Outlook 模式](https://docs.microsoft.com/outlook/add-ins/#extension-points)| 撰写或阅读|
+|[适用的 Outlook 模式](/outlook/add-ins/#extension-points)| 撰写或阅读|
 
 ####  <a name="sourceproperty-string"></a>SourceProperty :String
 
 指定由调用方法返回的数据源。
 
-##### <a name="type"></a>Type
+##### <a name="type"></a>类型
 
 *   String
 
@@ -88,9 +88,9 @@ ms.locfileid: "30067949"
 |`Body`| String|数据源来自邮件的正文。|
 |`Subject`| String|数据源来自邮件的主题。|
 
-##### <a name="requirements"></a>要求
+##### <a name="requirements"></a>Requirements
 
 |要求| 值|
 |---|---|
 |[最低版本的邮箱要求集](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
-|[适用的 Outlook 模式](https://docs.microsoft.com/outlook/add-ins/#extension-points)| 撰写或阅读|
+|[适用的 Outlook 模式](/outlook/add-ins/#extension-points)| 撰写或阅读|

@@ -1,13 +1,14 @@
 ---
 title: 使用 Excel 加载项共同创作
 description: ''
-ms.date: 12/04/2017
-ms.openlocfilehash: 6831b829b7b40561a348335b4c9c9c07da27f6a3
-ms.sourcegitcommit: 60fd8a3ac4a6d66cb9e075ce7e0cde3c888a5fe9
-ms.translationtype: HT
+ms.date: 03/19/2019
+localization_priority: Normal
+ms.openlocfilehash: 774eee0c81f9fb99424070be0ee42860e44e46f5
+ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/28/2018
-ms.locfileid: "27457649"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "30870182"
 ---
 # <a name="coauthoring-in-excel-add-ins"></a>使用 Excel 加载项共同创作  
 
@@ -25,7 +26,7 @@ ms.locfileid: "27457649"
 - 适用于 Office 365 客户的 Excel for Windows Desktop（Windows 桌面内部版本 16.0.8326.2076 或更高版本，当前的渠道客户自 2017 年 8 月起可获取这些版本）
 
 ## <a name="coauthoring-overview"></a>共同创作功能概述
- 
+
 如果工作簿的内容有变化，Excel 会自动跨所有共同创作者同步这些更改。 共同创作者可以更改工作簿的内容，而 Excel 加载项中运行的代码也可以这样做。 例如，在 Office 加载项中运行以下 JavaScript 代码时，范围值会设置为 Contoso：
 
 ```js
@@ -33,10 +34,10 @@ range.values = [['Contoso']];
 ```
 跨所有共同创作者同步“Contoso”后，同一个工作簿的所有用户或其中运行的所有加载项都能看到新范围值。 
 
-共同创作功能仅同步共享工作簿中的内容。 不会同步从工作簿复制到 Excel 加载项中 JavaScript 变量的值。 例如，如果加载项将单元格值（如“Contoso”）存储在 JavaScript 变量中，然后共同创作者将此单元格值更改为“Example”，那么在同步后所有共同创作者都能在单元格中看到“Example”。 不过，JavaScript 变量值仍设置为“Contoso”。 此外，如果多个共同创作者使用同一个加载项，每个共同创作者都会拥有自己的变量副本，此副本是不会同步的。 如果你使用的变量使用工作簿内容，那么，在使用此变量前，请务必查看工作簿中的更新值。 
+共同创作功能仅同步共享工作簿中的内容。 不会同步从工作簿复制到 Excel 加载项中 JavaScript 变量的值。 例如，如果加载项将单元格值（如“Contoso”）存储在 JavaScript 变量中，然后共同创作者将此单元格值更改为“Example”，那么在同步后所有共同创作者都能在单元格中看到“Example”。 不过，JavaScript 变量值仍设置为“Contoso”。 此外，如果多个共同创作者使用同一个加载项，每个共同创作者都会拥有自己的变量副本，此副本是不会同步的。 如果你使用的变量使用工作簿内容，那么，在使用此变量前，请务必查看工作簿中的更新值。
 
 ## <a name="use-events-to-manage-the-in-memory-state-of-your-add-in"></a>使用事件管理外接程序的内存中状态
- 
+
 Excel 外接程序可以读取工作簿内容（通过隐藏工作表和设置对象），然后将内容存储在变量等数据结构中。 将原始值复制到其中的任意一个数据结构后，合著者可以更新原始的工作簿内容。 这表示现在数据结构中的复制值与工作簿内容不同步。 生成外接程序时，请务必考虑工作簿内容与数据结构中存储的值之间的这种独立性。
 
 例如，你可能要生成一个显示自定义可视化效果的内容外接程序。 自定义可视化效果的状态可能保存在隐藏工作表中。 当合著者使用同一个工作簿时，可能会发生以下情况：
@@ -44,17 +45,17 @@ Excel 外接程序可以读取工作簿内容（通过隐藏工作表和设置�
 - 用户 A 打开文档，自定义可视化效果在工作簿中显示。 自定义可视化效果从隐藏工作表中读取数据（例如，将可视化效果的颜色设置为蓝色）。
 - 用户 B 打开同一个文档，并开始修改自定义可视化效果。 用户 B 将自定义可视化效果的颜色设置为橙色。 橙色保存到隐藏工作表中。
 - 用户 A 的隐藏工作表更新为新值橙色。
-- 用户 A 的自定义可视化效果仍为蓝色。 
+- 用户 A 的自定义可视化效果仍为蓝色。
 
-如果希望用户 A 的自定义可视化效果响应共同创作者对隐藏工作表所做的更改，请使用 [BindingDataChanged](https://docs.microsoft.com/javascript/api/office/office.bindingdatachangedeventargs) 事件。 这可确保共同创作者对工作簿内容所做的更改反映到加载项状态中。
+如果希望用户 A 的自定义可视化效果响应共同创作者对隐藏工作表所做的更改，请使用 [BindingDataChanged](/javascript/api/office/office.bindingdatachangedeventargs) 事件。 这可确保共同创作者对工作簿内容所做的更改反映到加载项状态中。
 
-## <a name="caveats-to-using-events-with-coauthoring"></a>使用事件进行共同创作的注意事项 
+## <a name="caveats-to-using-events-with-coauthoring"></a>使用事件进行共同创作的注意事项
 
 如上所述，在某些情况下，对所有共同创作者触发事件可提升用户体验。 但是，请注意在一些应用场景下，此行为可能会导致不良的用户体验。 
 
-例如，在数据验证应用场景下，通常通过显示 UI 来响应事件。 本地用户或合著者（远程）通过绑定更改工作簿内容时，会运行前面部分中所述的 [BindingDataChanged](https://docs.microsoft.com/javascript/api/office/office.bindingdatachangedeventargs) 事件。 如果 **BindingDataChanged** 事件的事件处理程序显示 UI，用户就会看到与他们在工作簿中进行的更改无关的 UI，从而导致不良的用户体验。 在外接程序中使用事件时，请避免显示 UI。
+例如，在数据验证应用场景下，通常通过显示 UI 来响应事件。 本地用户或合著者（远程）通过绑定更改工作簿内容时，会运行前面部分中所述的 [BindingDataChanged](/javascript/api/office/office.bindingdatachangedeventargs) 事件。 如果 **BindingDataChanged** 事件的事件处理程序显示 UI，用户就会看到与他们在工作簿中进行的更改无关的 UI，从而导致不良的用户体验。 在外接程序中使用事件时，请避免显示 UI。
 
-## <a name="see-also"></a>另请参阅 
+## <a name="see-also"></a>另请参阅
 
-- [Excel 中的共同创作功能的相关信息 (VBA)](https://docs.microsoft.com/office/vba/excel/concepts/about-coauthoring-in-excel) 
-- [自动保存如何影响外接程序和宏 (VBA)](https://docs.microsoft.com/office/vba/library-reference/concepts/how-autosave-impacts-addins-and-macros) 
+- [Excel 中的共同创作功能的相关信息 (VBA)](/office/vba/excel/concepts/about-coauthoring-in-excel)
+- [自动保存如何影响外接程序和宏 (VBA)](/office/vba/library-reference/concepts/how-autosave-impacts-addins-and-macros)

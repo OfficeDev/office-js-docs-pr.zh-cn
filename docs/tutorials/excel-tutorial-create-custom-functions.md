@@ -1,16 +1,16 @@
 ---
 title: Excel 自定义函数教程（预览）
 description: 在本教程中，你将创建一个 Excel 外接程序，其中包含可执行计算、请求 Web 数据或流式传输 Web 数据的自定义函数。
-ms.date: 01/08/2019
+ms.date: 03/19/2019
 ms.prod: excel
 ms.topic: tutorial
 localization_priority: Normal
-ms.openlocfilehash: 4ac735e6fc19f13859d07df6cb3d2443e6dfe2fd
-ms.sourcegitcommit: a59f4e322238efa187f388a75b7709462c71e668
+ms.openlocfilehash: 328d4da7a4dfcc2098f7c5425f84b851bd9dd9d6
+ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "29982018"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "30870672"
 ---
 # <a name="tutorial-create-custom-functions-in-excel-preview"></a>教程：在 Excel 中创建自定义函数（预览）
 
@@ -89,7 +89,7 @@ npm run start
 此命令将启动 Web 服务器，并将自定义函数加载项旁加载到 Excel for Windows 中。
 
 > [!NOTE]
-> 如果加载项未加载，请检查是否已正确完成步骤 3。 您还可以**[运行时日志记录](../testing/troubleshoot-manifest.md#use-runtime-logging-to-debug-your-add-in)** 来解决问题的外接程序的 XML 指令清单文件，以及任何安装或运行时的问题。 运行时日志记录写入`console.log`语句日志文件以帮助您查找和修复问题。
+> 如果加载项未加载，请检查是否已正确完成步骤 3。 您还可以启用**[运行时日志记录](../testing/troubleshoot-manifest.md#use-runtime-logging-to-debug-your-add-in)** 以解决外接程序的 XML 清单文件中的问题, 以及任何安装或运行时问题。 运行时日志`console.log`记录将语句写入日志文件, 以帮助您查找和修复问题。
 
 # <a name="excel-onlinetabexcel-online"></a>[Excel Online](#tab/excel-online)
 
@@ -151,7 +151,7 @@ npm run start-web
 
 > [!NOTE]
 > In the January Insiders 1901 Build, there is a bug preventing fetch calls from executing which will result in #VALUE!.
-> To workaround this please use the [XMLHTTPRequest API](https://docs.microsoft.com/en-us/office/dev/add-ins/excel/custom-functions-runtime#requesting-external-data) to make the web request.
+> To workaround this please use the [XMLHTTPRequest API](/office/dev/add-ins/excel/custom-functions-runtime#requesting-external-data) to make the web request.
 
 3. In **customfunctions.js**, locate the line `CustomFunctions.associate("INCREMENT", increment);`. Add the following line of code immediately after that line, and save the file.
 

@@ -1,13 +1,14 @@
 ---
 title: 清单文件中的 CitationText 元素
 description: ''
-ms.date: 10/09/2018
-ms.openlocfilehash: 36f491752eb49876b90fd23b23600980b3a661fc
-ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
-ms.translationtype: HT
+ms.date: 03/19/2019
+localization_priority: Normal
+ms.openlocfilehash: 7882f415467cb8d8233625897e84b6ba8a54e11a
+ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/22/2018
-ms.locfileid: "27433360"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "30871302"
 ---
 # <a name="citationtext-element"></a>CitationText 元素
 
@@ -27,4 +28,4 @@ ms.locfileid: "27433360"
 
 ## <a name="see-also"></a>另请参阅
 
-- [创建字典任务窗格外接程序](https://docs.microsoft.com/office/dev/add-ins/word/dictionary-task-pane-add-ins)
+- [创建字典任务窗格外接程序](/office/dev/add-ins/word/dictionary-task-pane-add-ins)

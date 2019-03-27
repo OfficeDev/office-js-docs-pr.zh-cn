@@ -1,13 +1,14 @@
 ---
 title: 清单文件中的 QueryUri 元素
 description: ''
-ms.date: 10/09/2018
-ms.openlocfilehash: 824c29bb19e4430aa062a4fb3c7a1d1764a96a90
-ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
-ms.translationtype: HT
+ms.date: 03/19/2019
+localization_priority: Normal
+ms.openlocfilehash: 8695b87f84cf85f83b46f9abfa4cd412e9abe1ec
+ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/22/2018
-ms.locfileid: "27432884"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "30870119"
 ---
 # <a name="queryuri-element"></a>QueryUri 元素
 
@@ -27,5 +28,5 @@ ms.locfileid: "27432884"
 
 ## <a name="see-also"></a>另请参阅
 
-- [创建字典任务窗格外接程序](https://docs.microsoft.com/office/dev/add-ins/word/dictionary-task-pane-add-ins)
+- [创建字典任务窗格外接程序](/office/dev/add-ins/word/dictionary-task-pane-add-ins)
     

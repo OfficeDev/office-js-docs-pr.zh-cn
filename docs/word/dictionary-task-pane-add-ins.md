@@ -1,14 +1,14 @@
 ---
-title: 创建字典任务窗格外接程序
+title: 创建字典任务窗格加载项
 description: ''
-ms.date: 12/04/2017
+ms.date: 03/19/2019
 localization_priority: Normal
-ms.openlocfilehash: a97c378092da783e748f014515de587383201818
-ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
+ms.openlocfilehash: 5f48d4aa96609f92e7ea1e38dcdd93c91b61a755
+ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "29388211"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "30871204"
 ---
 # <a name="create-a-dictionary-task-pane-add-in"></a>创建字典任务窗格加载项
 
@@ -30,17 +30,17 @@ ms.locfileid: "29388211"
 ![定义上下文菜单](../images/dictionary-agave-02.jpg)
 
 
-*图 3：拼写和语法窗格中的定义*
+*图 3.“拼写”和“语法”窗格中的定义*
 
 ![“拼写”和“语法”窗格中的定义](../images/dictionary-agave-03.jpg)
 
 
-*图 4：同义词库窗格中的定义*
+*图 4.“同义词库”窗格中的定义*
 
 ![“同义词库”窗格中的定义](../images/dictionary-agave-04.jpg)
 
 
-*图 5：阅读模式中的定义*
+*图 5.“阅读模式”中的定义*
 
 ![“阅读模式”中的定义](../images/dictionary-agave-05.jpg)
 
@@ -274,7 +274,7 @@ public class WebService : System.Web.Services.WebService {
 
  **备注**
 
-在创建字典外接程序时，会将 **Dictionary** 元素及其子元素添加到任务窗格外接程序的清单中。
+在创建字典外接程序时，会将 **Dictionary**任务窗格 元素及其子元素添加到任务窗格外接程序的清单中。
 
 
 #### <a name="targetdialects-element"></a>TargetDialects 元素
@@ -352,7 +352,7 @@ public class WebService : System.Web.Services.WebService {
 
  **备注**
 
-这是用于字典提供程序的 XML Web 服务的 URI。将把正确转义的查询附加到此 URI。 
+这是字典提供程序的 XML Web 服务的 URI。被正确转义的查询将被追加到此 URI。 
 
  **示例**
 
@@ -416,7 +416,7 @@ public class WebService : System.Web.Services.WebService {
 
  `<Dictionary>`
 
- **备注**
+ **注解**
 
 此元素指定引文文本中的链接 URL。引文文本显示在从 Web 服务返回的内容之下的行中。
 
@@ -514,7 +514,7 @@ a:hover, a:active
 }
 ```
 
-*图 6：演示字典 UI*
+*图 6.演示词典 UI*
 
 ![演示字典 UI](../images/dictionary-agave-06.jpg)
 
@@ -522,22 +522,22 @@ a:hover, a:active
 ### <a name="writing-the-javascript-implementation"></a>编写 JavaScript 实现
 
 
-以下示例显示 Dictionary.js 文件中的 JavaScript 实现（该文件从外接程序的 HTML 页面调用，以提供演示字典外接程序的编程逻辑）。该脚本重新使用以前介绍的 XML Web 服务。脚本作为示例 Web 服务被置于同一目录中时将从该服务获取定义。它可以通过修改文件顶部的 `xmlServiceURL` 变量来使用符合 XML Web 服务的公用 OfficeDefinitions，然后将拼音的 Bing API 键替换为正确注册的键。
+以下示例显示 Dictionary.js 文件中的 JavaScript 实现（该文件从外接程序的 HTML 页面调用，以提供演示字典外接程序的编程逻辑）。 该脚本重新使用以前介绍的 XML Web 服务。 脚本作为示例 Web 服务被置于同一目录中时将从该服务获取定义。 它可以通过修改文件顶部的 `xmlServiceURL` 变量来使用符合 XML Web 服务的公用 OfficeDefinitions，然后将拼音的 Bing API 键替换为正确注册的键。
 
 从此实现中调用的 JavaScript API for Office (Office.js) 的主要成员如下：
 
 
-- **Office** 对象的 [initialize](https://docs.microsoft.com/javascript/api/office) 事件，该事件在初始化外接程序上下文时引发，并提供对 [Document](https://docs.microsoft.com/javascript/api/office/office.document) 对象实例（表示外接程序与之交互的文档）的访问权限。
+- [Office](/javascript/api/office) 对象的 **initialize** 事件，该事件在初始化外接程序上下文时引发，并提供对 [Document](/javascript/api/office/office.document) 对象实例（表示外接程序与之交互的文档）的访问权限。
     
-- **Document** 对象的 [addHandlerAsync](https://docs.microsoft.com/javascript/api/office/office.document#addhandlerasync-eventtype--handler--options--callback-) 方法，在 **initialize** 函数中调用该方法，以便为文档的 [SelectionChanged](https://docs.microsoft.com/javascript/api/office/office.documentselectionchangedeventargs) 事件添加事件处理程序，从而侦听用户选择更改。
+- [Document](/javascript/api/office/office.document#addhandlerasync-eventtype--handler--options--callback-) 对象的 **addHandlerAsync** 方法，在 **initialize** 函数中调用该方法，以便为文档的 [SelectionChanged](/javascript/api/office/office.documentselectionchangedeventargs) 事件添加事件处理程序，从而侦听用户选择更改。
     
-- **Document** 对象的 [getSelectedDataAsync](https://docs.microsoft.com/javascript/api/office/office.document#getselecteddataasync-coerciontype--options--callback-) 方法，在引发 **SelectionChanged** 事件处理程序时会在 `tryUpdatingSelectedWord()` 函数中调用该方法，以获取用户选择的字词或短语，将其强制为纯文本，然后执行 `selectedTextCallback` 异步回调函数。
+- [Document](/javascript/api/office/office.document#getselecteddataasync-coerciontype--options--callback-) 对象的 **getSelectedDataAsync** 方法，在引发 `tryUpdatingSelectedWord()` 事件处理程序时会在 **** 函数中调用该方法，以获取用户选择的字词或短语，将其强制为纯文本，然后执行 `selectedTextCallback` 异步回调函数。
     
-- 当 `selectTextCallback` 异步回调函数（作为 **getSelectedDataAsync** 方法的 _callback_ 参数传递）执行时，它在回调返回时获取所选文本的值。它通过使用返回的 [AsyncResult](https://docs.microsoft.com/javascript/api/office/office.asyncresult) 对象的 [value](https://docs.microsoft.com/javascript/api/office/office.asyncresult#status) 属性从回调的 _selectedText_ 参数（类型为 **AsyncResult**）获取该值。
+- 当 `selectTextCallback` 异步回调函数（作为 _getSelectedDataAsync_ 方法的 **callback** 参数传递）执行时，它在回调返回时获取所选文本的值。它通过使用返回的 _AsyncResult_ 对象的 [value](/javascript/api/office/office.asyncresult) 属性从回调的 [selectedText](/javascript/api/office/office.asyncresult#status) 参数（类型为 **AsyncResult**）获取该值。
     
 - `selectedTextCallback` 函数中剩余的代码查询定义的 XML Web 服务。它还调入 Microsoft Translator API，以提供具有所选字词拼音的 .wav 文件的 URL。
     
-- Dictionary.js 中的其余代码会在加载项的 HTML UI 中显示定义的列表和拼音链接。
+- Dictionary.js 中的其余代码会在外接程序的 HTML UI 中显示定义的列表和拼音链接。
     
 
 
