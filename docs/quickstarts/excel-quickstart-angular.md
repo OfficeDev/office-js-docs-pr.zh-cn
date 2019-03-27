@@ -1,15 +1,15 @@
 ---
 title: 使用 Angular 生成 Excel 加载项
 description: ''
-ms.date: 10/19/2018
+ms.date: 03/19/2019
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: da3e0ce9c6cb075ff828344956cfe25fb579a8fa
-ms.sourcegitcommit: 03773fef3d2a380028ba0804739d2241d4b320e5
+ms.openlocfilehash: e814fb2a1dd24a272a24ca9debead2d836aed5c8
+ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/20/2019
-ms.locfileid: "30091251"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "30870987"
 ---
 # <a name="build-an-excel-add-in-using-angular"></a>使用 Angular 生成 Excel 加载项
 
@@ -39,7 +39,7 @@ ms.locfileid: "30091251"
     - **要支持哪一个 Office 客户端应用？：**`Excel`
 
     ![Yeoman 生成器](../images/yo-office-excel-angular.png)
-    
+
     完成此向导后，生成器会创建项目，并安装支持的 Node 组件。
 
 2. 导航到项目的根文件夹。
@@ -60,7 +60,7 @@ ms.locfileid: "30091251"
         top: 0;
         left: 0;
         width: 100%;
-        height: 80px; 
+        height: 80px;
         overflow: hidden;
         font-family: Arial;
         padding-top: 25px;
@@ -73,7 +73,7 @@ ms.locfileid: "30091251"
         left: 0;
         right: 0;
         bottom: 0;
-        overflow: auto; 
+        overflow: auto;
         font-family: Arial;
     }
 
@@ -178,7 +178,6 @@ ms.locfileid: "30091251"
     - Excel Online：[在 Office Online 中旁加载 Office 加载项](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-in-office-online)
     - iPad 和 Mac：[在 iPad 和 Mac 上旁加载 Office 加载项](../testing/sideload-an-office-add-in-on-ipad-and-mac.md)
 
-   
 2. 在 Excel 中，依次选择的“**开始**”选项卡和功能区中的“**显示任务窗格**”按钮，以打开加载项任务窗格。
 
     ![Excel 加载项按钮](../images/excel-quickstart-addin-2b.png)
@@ -201,5 +200,4 @@ ms.locfileid: "30091251"
 * [Excel 加载项教程](../tutorials/excel-tutorial-create-table.md)
 * [Excel JavaScript API 基本编程概念](../excel/excel-add-ins-core-concepts.md)
 * [Excel 加载项代码示例](https://developer.microsoft.com/office/gallery/?filterBy=Samples,Excel)
-* [Excel JavaScript API 参考](https://docs.microsoft.com/office/dev/add-ins/reference/overview/excel-add-ins-reference-overview)
-
+* [Excel JavaScript API 参考](/office/dev/add-ins/reference/overview/excel-add-ins-reference-overview)

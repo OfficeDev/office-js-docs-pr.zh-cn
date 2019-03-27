@@ -1,29 +1,29 @@
 ---
 title: 指定 Office 主机和 API 要求
 description: ''
-ms.date: 12/04/2017
+ms.date: 03/19/2019
 localization_priority: Priority
-ms.openlocfilehash: 3ea0116d8c8e9dcf685db349d78ed43af91b1620
-ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
+ms.openlocfilehash: 9e1f92ae6708392157ccaa061cf0a064f3b5ece0
+ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "29386818"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "30870287"
 ---
 # <a name="specify-office-hosts-and-api-requirements"></a>指定 Office 主机和 API 要求
 
 你的 Office外接程序可能依赖于特定的 Office 主机、要求集、API 成员或 API 版本才能按预期运行。例如，你的外接程序可能：
 
 - 在单个 Office 应用程序（Word 或 Excel）或多个应用程序中运行。
-    
-- 使用仅在 Office 的某些版本中可用的 JavaScript API。例如，可能会在运行在 Excel 2016 中的外接程序中使用适用于 Excel 的 JavaScript API。 
-    
+
+- 使用仅在 Office 的某些版本中可用的 JavaScript API。例如，可能会在运行在 Excel 2016 中的外接程序中使用适用于 Excel 的 JavaScript API。
+
 - 只能在 Office 的某些版本中运行，这些版本支持供你的外接程序使用的 API 成员。
-    
+
 本文可帮助你了解应选择的选项，以确保你的外接程序按预期运行，并遍及可能的最广泛的访问群体。
 
 > [!NOTE]
-> 若要概览 Office 加载项的当前受支持情况，请参阅 [Office 加载项主机和平台可用性](../overview/office-add-in-availability.md)页面。 
+> 若要概览 Office 加载项的当前受支持情况，请参阅 [Office 加载项主机和平台可用性](../overview/office-add-in-availability.md)页面。
 
 下表列出了本文中讨论的核心概念。
 
@@ -31,7 +31,7 @@ ms.locfileid: "29386818"
 |:-----|:-----|
 |Office 应用程序、Office 主机应用程序、Office 主机或主机|Office 应用程序、Office 主机应用程序、Office 主机或主机|
 |平台|平台|
-|要求集|命名的一组相关的 API 成员。外接程序使用要求集来确定 Office 主机是否支持你的外接程序使用的 API 成员。测试对要求集的支持比对单个的 API 成员的支持更为容易。要求集支持根据 Office 主机和 Office 主机的版本变化。 <br >要求集在清单文件中指定。 当你在清单中指定要求集时，你可以设置 Office 主机必须提供的用于运行你的外接程序的最低级别的 API 支持。 不支持在清单中指定的要求集的 Office 主机不能运行加载项，并且加载项不会显示在“我的加载项”<span class="ui"></span>中。 有关要求集的完整列表，请参阅 [Office 加载项要求集](https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/office-add-in-requirement-sets)。|
+|要求集|命名的一组相关的 API 成员。外接程序使用要求集来确定 Office 主机是否支持你的外接程序使用的 API 成员。测试对要求集的支持比对单个的 API 成员的支持更为容易。要求集支持根据 Office 主机和 Office 主机的版本变化。 <br >要求集在清单文件中指定。 当你在清单中指定要求集时，你可以设置 Office 主机必须提供的用于运行你的外接程序的最低级别的 API 支持。 不支持在清单中指定的要求集的 Office 主机不能运行加载项，并且加载项不会显示在“我的加载项”<span class="ui"></span>中。 有关要求集的完整列表，请参阅 [Office 加载项要求集](/office/dev/add-ins/reference/requirement-sets/office-add-in-requirement-sets)。|
 |运行时检查|在运行时执行的一种测试，用以确定运行外接程序的 Office 主机是否支持要求集或外接程序使用的方法。若要执行运行时检查，请使用包含 **isSetSupported** 方法、要求集或不属于要求集的方法名称的 **if** 语句。使用运行时检查以确保达到的客户数目最大。与要求集不同，运行时检查不指定 Office 主机必须提供的用于运行外接程序的最低级别的 API 支持。相反，使用 **if** 语句来确定是否支持某个 API 成员。如果支持，则可以在外接程序中提供其他功能。使用运行时检查时，外接程序将始终在“**我的外接程序**”中显示。|
 
 ## <a name="before-you-begin"></a>开始之前
@@ -61,11 +61,11 @@ ms.locfileid: "29386818"
 ![指定 Office 主机或 API 要求时，选择最适用于加载项的选项](../images/options-for-office-hosts.png)
 
 - 如果加载项在 Office 主机中运行，请在清单中设置 **Hosts** 元素。有关详细信息，请参阅[设置 Hosts 元素](#set-the-hosts-element)。
-    
+
 - 若要设置 Office 主机必须支持的用以运行外接程序的最低要求集或 API 成员，请在清单中设置 **Requirements** 元素。有关详细信息，请参阅[在清单中设置 Requirements 元素](#set-the-requirements-element-in-the-manifest)。
-    
+
 - 如果特定要求集或 API 成员可在 Office 主机中使用，在这种情况下如果你想要提供其他功能，请在外接程序的 JavaScript 代码中执行运行时检查。例如，如果外接程序在 Excel 2016 中运行，你可能想要使用新的适用于 Excel 的 JavaScript API 中的 API 成员以提供附加功能。有关详细信息，请参阅[在你的 JavaScript 代码中使用运行时检查](#use-runtime-checks-in-your-javascript-code)。
-    
+
 ## <a name="set-the-hosts-element"></a>设置 Hosts 元素
 
 若要使外接程序运行在一个 Office 主机应用程序中，请使用清单中的 **Hosts** 和 **Host** 元素。如果未指定 **Hosts** 元素，你的外接程序将在所有主机中运行。
@@ -84,7 +84,7 @@ ms.locfileid: "29386818"
 |:--------------|:----------------------------------------------|
 | 数据库      | Access Web App                               |
 | 文档      | Word for Windows、Word for Mac、Word for iPad 和 Word Online        |
-| 邮箱       | Outlook for Windows、Outlook for Mac、Outlook Web 和 Outlook.com | 
+| 邮箱       | Outlook for Windows、Outlook for Mac、Outlook Web 和 Outlook.com |
 | 演示文稿  | PowerPoint for Windows、PowerPoint for Mac、PowerPoint for iPad 和 PowerPoint Online  |
 | 项目       | 项目                                       |
 | 工作簿      | Excel for Windows、Excel for Mac、Excel for iPad 和 Excel Online           |
@@ -103,9 +103,9 @@ ms.locfileid: "29386818"
 下面的代码示例展示了在支持以下内容的所有 Office 主机应用中加载的加载项：
 
 -  最低版本为 1.1 的 **TableBindings** 要求集。
-    
+
 -  最低版本为 1.1 的 **OOXML** 要求集。
-    
+
 -  **Document.getSelectedDataAsync** 方法。
 
 ```XML
@@ -121,15 +121,15 @@ ms.locfileid: "29386818"
 ```
 
 - **Requirements** 元素包含 **Sets** 和 **Methods** 子元素。
-    
+
 - **Sets** 元素可以包含一个或多个 **Set** 元素。**DefaultMinVersion** 指定所有 **Set** 子元素的默认 **MinVersion** 值。
-    
-- **Set** 元素指定 Office 主机要运行加载项所需支持的要求集。 **Name** 属性指定要求集的名称。 **MinVersion** 指定要求集的最低版本。 **MinVersion** 覆盖 **DefaultMinVersion** 的值。 有关 API 成员所属的要求集和要求集版本的详细信息，请参阅 [Office 加载项要求集](https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/office-add-in-requirement-sets)。
-    
+
+- **Set** 元素指定 Office 主机要运行加载项所需支持的要求集。 **Name** 属性指定要求集的名称。 **MinVersion** 指定要求集的最低版本。 **MinVersion** 覆盖 **DefaultMinVersion** 的值。 有关 API 成员所属的要求集和要求集版本的详细信息，请参阅 [Office 加载项要求集](/office/dev/add-ins/reference/requirement-sets/office-add-in-requirement-sets)。
+
 - **Methods** 元素可以包含一个或多个 **Method** 元素。不能将 **Methods** 元素和 Outlook 加载项结合使用。
-    
+
 - **Method** 元素指定在您的外接程序所运行 Office 主机中必须要支持的单个方法。 **Name** 属性为必需属性，并使用其父对象指定合格方法的名称。
-    
+
 
 ## <a name="use-runtime-checks-in-your-javascript-code"></a>使用运行时签入您的 JavaScript 代码
 
@@ -145,8 +145,7 @@ if (Office.context.requirements.isSetSupported(RequirementSetName , VersionNumbe
 
 ```
 
-
--  _RequirementSetName_（必填）是代表该要求集名称的字符串。 有关可用要求集的详细信息，请参阅 [Office 加载项要求集](https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/office-add-in-requirement-sets)。
+-  _RequirementSetName_（必填）是代表该要求集名称的字符串。 有关可用要求集的详细信息，请参阅 [Office 加载项要求集](/office/dev/add-ins/reference/requirement-sets/office-add-in-requirement-sets)。
     
 -  _VersionNumber_（可选）是要求集的版本。
     
@@ -158,9 +157,6 @@ if (Office.context.requirements.isSetSupported(RequirementSetName , VersionNumbe
 
 以下代码示例演示外接程序如何向支持不同要求集或 API 成员的不同 Office 主机提供不同功能。
 
-
-
-
 ```js
 if (Office.context.requirements.isSetSupported('WordApi', 1.1))
 {
@@ -168,9 +164,9 @@ if (Office.context.requirements.isSetSupported('WordApi', 1.1))
 }
 else if (Office.context.requirements.isSetSupported('CustomXmlParts'))
 {
-      // Run code that uses API members from the CustomXmlParts requirement set.
+    // Run code that uses API members from the CustomXmlParts requirement set.
 }
-else 
+else
 {
     // Run additional code when the Office host is not Word 2016, and when the Office host does not support the CustomXmlParts requirement set.
 }
@@ -180,17 +176,12 @@ else
 
 ## <a name="runtime-checks-using-methods-not-in-a-requirement-set"></a>使用不属于要求集的方法的运行时检查
 
-
-部分 API 成员不属于要求集 这仅适用于属于 [适用于 Office 的 JavaScript API](https://docs.microsoft.com/office/dev/add-ins/reference/javascript-api-for-office) 命名空间的 API 成员（Office 下的任何内容），而不适用于属于 Word JavaScript API（Word 中的任何内容）或 [Excel 外接程序 JavaScript API 引用](https://docs.microsoft.com/office/dev/add-ins/reference/overview/excel-add-ins-reference-overview)（Excel 中的任何内容）命名空间的 API 成员。 当外接程序依赖于某个不属于要求集的方法时，可以使用运行时检查来确定 Office 主机是否支持此方法，方法如以下代码示例所示。 有关不属于要求集的方法的完整列表，请参阅 [Office 加载项要求集](https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/office-add-in-requirement-sets)。
-
+部分 API 成员不属于要求集 这仅适用于属于 [适用于 Office 的 JavaScript API](/office/dev/add-ins/reference/javascript-api-for-office) 命名空间的 API 成员（Office 下的任何内容），而不适用于属于 Word JavaScript API（Word 中的任何内容）或 [Excel 外接程序 JavaScript API 引用](/office/dev/add-ins/reference/overview/excel-add-ins-reference-overview)（Excel 中的任何内容）命名空间的 API 成员。 当外接程序依赖于某个不属于要求集的方法时，可以使用运行时检查来确定 Office 主机是否支持此方法，方法如以下代码示例所示。 有关不属于要求集的方法的完整列表，请参阅 [Office 加载项要求集](/office/dev/add-ins/reference/requirement-sets/office-add-in-requirement-sets)。
 
 > [!NOTE]
 > 建议限制在加载项代码中使用此类型运行时检查。
 
 下面的代码示例检查主机是否支持 **document.setSelectedDataAsync**。
-
-
-
 
 ```js
 if (Office.context.document.setSelectedDataAsync)
@@ -203,5 +194,5 @@ if (Office.context.document.setSelectedDataAsync)
 ## <a name="see-also"></a>另请参阅
 
 - [Office 加载项 XML 清单](add-in-manifests.md)
-- [Office 加载项要求集](https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/office-add-in-requirement-sets)
+- [Office 加载项要求集](/office/dev/add-ins/reference/requirement-sets/office-add-in-requirement-sets)
 - [Word-Add-in-Get-Set-EditOpen-XML](https://github.com/OfficeDev/Word-Add-in-Get-Set-EditOpen-XML)

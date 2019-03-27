@@ -1,14 +1,14 @@
 ---
 title: 排查 Office 加载项中的用户错误
 description: ''
-ms.date: 01/23/2018
+ms.date: 03/19/2019
 localization_priority: Priority
-ms.openlocfilehash: 8996cab27fc2ad9368d959086cd9ca53902e9be1
-ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
+ms.openlocfilehash: 84f18543c7bafac905805095c89f8e19a855ea76
+ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "29388946"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "30871071"
 ---
 # <a name="troubleshoot-user-errors-with-office-add-ins"></a>排查 Office 加载项中的用户错误
 
@@ -16,7 +16,7 @@ ms.locfileid: "29388946"
 
 还可以使用 [Fiddler](https://www.telerik.com/fiddler) 发现和调试加载项问题。
 
-解决用户的问题后，可以[在 AppSource 中直接回复客户评论](https://docs.microsoft.com/office/dev/store/create-effective-office-store-listings)。
+解决用户的问题后，可以[在 AppSource 中直接回复客户评论](/office/dev/store/create-effective-office-store-listings)。
 
 ## <a name="common-errors-and-troubleshooting-steps"></a>常见错误和故障排除步骤
 
@@ -87,7 +87,7 @@ ms.locfileid: "29388946"
 3. 输入错误消息中显示的 URL，然后选择“**添加**”。
 4. 再次尝试使用外接程序。如果问题仍然存在，请验证其他安全区域的设置，并确保外接程序域与 Office 应用程序地址栏中显示的 URL 处于同一区域。
 
-在弹出模式中使用对话框 API 时，会出现此问题。若要避免出现此问题，请使用 [displayInFrame](https://docs.microsoft.com/javascript/api/office/office.ui) 标记。这要求页面支持在 iframe 中进行显示。以下示例演示如何使用此标记。
+在弹出模式中使用对话框 API 时，会出现此问题。若要避免出现此问题，请使用 [displayInFrame](/javascript/api/office/office.ui) 标记。这要求页面支持在 iframe 中进行显示。以下示例演示如何使用此标记。
 
 ```js
 

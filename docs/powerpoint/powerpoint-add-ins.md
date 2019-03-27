@@ -1,14 +1,14 @@
 ---
 title: PowerPoint 加载项
 description: ''
-ms.date: 01/24/2019
+ms.date: 03/19/2019
 localization_priority: Priority
-ms.openlocfilehash: da60c87993bc67057aeec6a4e754f57ae376ddd4
-ms.sourcegitcommit: b3812245ee1426c299e6484fdd2096a9212ce823
+ms.openlocfilehash: 8a7039981ee408dbb74c9f15be9ec98f1f631d5b
+ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/25/2019
-ms.locfileid: "29539861"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "30870931"
 ---
 # <a name="powerpoint-add-ins"></a>PowerPoint 加载项
 
@@ -33,13 +33,13 @@ ms.locfileid: "29539861"
 若要生成内容外接程序，则需要获取演示文稿的活动视图，并在 `ActiveViewChanged` 处理程序期间处理 `Office.Initialize` 事件。
 
 > [!NOTE]
-> 在 PowerPoint Online 中，[Document.ActiveViewChanged](https://docs.microsoft.com/javascript/api/office/office.document) 事件永远不会触发，因为幻灯片放映模式被视为新会话。 在这种情况下，加载项必须在加载时提取活动视图，如下面的代码示例所述。
+> 在 PowerPoint Online 中，[Document.ActiveViewChanged](/javascript/api/office/office.document) 事件永远不会触发，因为幻灯片放映模式被视为新会话。 在这种情况下，加载项必须在加载时提取活动视图，如下面的代码示例所述。
 
 在以下代码示例中：
 
-- `getActiveFileView` 函数将调用 [Document.getActiveViewAsync](https://docs.microsoft.com/javascript/api/office/office.document#getactiveviewasync-options--callback-) 方法，以返回演示文稿的当前视图是“编辑”（你可在其中编辑幻灯片的任何视图，如**普通**或**大纲视图**）还是“阅读”（**幻灯片放映**或**阅读视图**）。
+- `getActiveFileView` 函数将调用 [Document.getActiveViewAsync](/javascript/api/office/office.document#getactiveviewasync-options--callback-) 方法，以返回演示文稿的当前视图是“编辑”（你可在其中编辑幻灯片的任何视图，如**普通**或**大纲视图**）还是“阅读”（**幻灯片放映**或**阅读视图**）。
 
-- `registerActiveViewChanged` 函数调用 [addHandlerAsync](https://docs.microsoft.com/javascript/api/office/office.document#addhandlerasync-eventtype--handler--options--callback-) 方法，以注册 [Document.ActiveViewChanged](https://docs.microsoft.com/javascript/api/office/office.document) 事件的处理程序。
+- `registerActiveViewChanged` 函数调用 [addHandlerAsync](/javascript/api/office/office.document#addhandlerasync-eventtype--handler--options--callback-) 方法，以注册 [Document.ActiveViewChanged](/javascript/api/office/office.document) 事件的处理程序。
 
 
 ```js
@@ -88,7 +88,7 @@ function registerActiveViewChanged() {
 
 ## <a name="navigate-to-a-particular-slide-in-the-presentation"></a>转到演示文稿中的特定幻灯片
 
-在以下代码示例中，`getSelectedRange` 函数将调用 [Document.getSelectedDataAsync](https://docs.microsoft.com/javascript/api/office/office.document#getselecteddataasync-coerciontype--options--callback-) 方法已获取 `asyncResult.value` 返回的 JSON 对象，其中包括一个名为 **slides** 的数组。 **slides** 数组包含所选范围内的幻灯片（或当前幻灯片，如果未选择多张幻灯片）的 ID、标题和索引。 此外，它会将所选范围内的第一张幻灯片的 ID 保存为全局变量。
+在以下代码示例中，`getSelectedRange` 函数将调用 [Document.getSelectedDataAsync](/javascript/api/office/office.document#getselecteddataasync-coerciontype--options--callback-) 方法已获取 `asyncResult.value` 返回的 JSON 对象，其中包括一个名为 **slides** 的数组。 **slides** 数组包含所选范围内的幻灯片（或当前幻灯片，如果未选择多张幻灯片）的 ID、标题和索引。 此外，它会将所选范围内的第一张幻灯片的 ID 保存为全局变量。
 
 ```js
 function getSelectedRange() {
@@ -107,7 +107,7 @@ function getSelectedRange() {
 }
 ```
 
-在以下代码示例中，`goToFirstSlide` 函数将调用 [Document.goToByIdAsync](https://docs.microsoft.com/javascript/api/office/office.document#gotobyidasync-id--gototype--options--callback-) 方法，以导航至由之前显示的 `getSelectedRange` 函数标识的第一张幻灯片。
+在以下代码示例中，`goToFirstSlide` 函数将调用 [Document.goToByIdAsync](/javascript/api/office/office.document#gotobyidasync-id--gototype--options--callback-) 方法，以导航至由之前显示的 `getSelectedRange` 函数标识的第一张幻灯片。
 
 ```js
 function goToFirstSlide() {
@@ -146,7 +146,7 @@ function goToSlideByIndex() {
 
 ## <a name="get-the-url-of-the-presentation"></a>获取演示文稿的 URL
 
-在以下代码实例中，`getFileUrl` 函数将调用 [Document.getFileProperties](https://docs.microsoft.com/javascript/api/office/office.document#getfilepropertiesasync-options--callback-) 方法，以获取演示文稿文件的URL。
+在以下代码实例中，`getFileUrl` 函数将调用 [Document.getFileProperties](/javascript/api/office/office.document#getfilepropertiesasync-options--callback-) 方法，以获取演示文稿文件的URL。
 
 ```js
 function getFileUrl() {

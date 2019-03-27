@@ -1,22 +1,23 @@
 ---
 title: 使用搜索选项在 Word 加载项中查找文本
 description: ''
-ms.date: 07/20/2018
+ms.date: 03/19/2019
 localization_priority: Priority
-ms.openlocfilehash: 3e97a9ff41ac2969eddafe8c5b4e762bcc70289b
-ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
+ms.openlocfilehash: 343271b0863379d799c22f9b63a47a9acfd67b93
+ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "29386762"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "30870679"
 ---
-# <a name="use-search-options-to-find-text-in-your-word-add-in"></a>使用搜索选项在 Word 加载项中查找文本 
+# <a name="use-search-options-to-find-text-in-your-word-add-in"></a>使用搜索选项在 Word 加载项中查找文本
 
 加载项经常需要基于文档文本运行。
-每种内容控件均有公开的搜索函数（这些内容控件包括 [Body](https://docs.microsoft.com/javascript/api/word/word.body)、[Paragraph](https://docs.microsoft.com/javascript/api/word/word.paragraph)、[Range](https://docs.microsoft.com/javascript/api/word/word.range)、[Table](https://docs.microsoft.com/javascript/api/word/word.table)、[TableRow](https://docs.microsoft.com/javascript/api/word/word.tablerow) 和基本 [ContentControl](https://docs.microsoft.com/javascript/api/word/word.contentcontrol) 对象）。 此函数接受一个代表所搜索文本的字符串（如通配符表达式）和 [SearchOptions](https://docs.microsoft.com/javascript/api/word/word.searchoptions) 对象。 它返回与搜索文本匹配的区域集合。
+每种内容控件均有公开的搜索函数（这些内容控件包括 [Body](/javascript/api/word/word.body)、[Paragraph](/javascript/api/word/word.paragraph)、[Range](/javascript/api/word/word.range)、[Table](/javascript/api/word/word.table)、[TableRow](/javascript/api/word/word.tablerow) 和基本 [ContentControl](/javascript/api/word/word.contentcontrol) 对象）。 此函数接受一个代表所搜索文本的字符串（如通配符表达式）和 [SearchOptions](/javascript/api/word/word.searchoptions) 对象。 它返回与搜索文本匹配的区域集合。
 
 ## <a name="search-options"></a>搜索选项
-搜索选项为多个用于定义搜索参数处理方式的布尔值集合。 
+
+搜索选项为多个用于定义搜索参数处理方式的布尔值集合。
 
 | 属性     | 说明|
 |:---------------|:----|
@@ -29,6 +30,7 @@ ms.locfileid: "29386762"
 |matchWildcards|获取或设置一个值，该值指示搜索是否使用特殊搜索操作符执行。 对应于“查找和替换”对话框中的“使用通配符”复选框。|
 
 ## <a name="wildcard-guidance"></a>通配符指导
+
 下表提供了与 Word JavaScript API 的搜索通配符相关的指导。
 
 | 若要查找：         | 通配符 |  示例 |
@@ -50,6 +52,7 @@ ms.locfileid: "29386762"
 通配符搜索与正则表达式搜索大致相同。正则表达式中有特殊字符，包括“[”、“]”、“(”、“)”、“{”、“}”、“\*”、“?”、“<”、“>”、“!”和“@”。如果其中一个字符属于代码要搜索的文本字符串，则需要转义这个字符，以便让 Word 知道应该以文本形式（而不是作为正则表达式逻辑的一部分）处理这个字符。若要在 Word  UI 搜索中转义字符，请在字符前面添加“\'”字符。不过，若要以编程方式转义，请将字符置于“[]”字符之间。例如，“[\*]\*”搜索以“\*”开头、后跟任意数量的其他字符的所有字符串。 
 
 ## <a name="examples"></a>示例
+
 下面示例演示常见情况。
 
 ### <a name="ignore-punctuation-search"></a>忽略标点符号搜索
@@ -57,14 +60,14 @@ ms.locfileid: "29386762"
 ```js
 // Run a batch operation against the Word object model.
 Word.run(function (context) {
-    
+
     // Queue a command to search the document and ignore punctuation.
     var searchResults = context.document.body.search('video you', {ignorePunct: true});
 
     // Queue a command to load the search results and get the font property values.
     context.load(searchResults, 'font');
-    
-    // Synchronize the document state by executing the queued commands, 
+
+    // Synchronize the document state by executing the queued commands,
     // and return a promise to indicate task completion.
     return context.sync().then(function () {
         console.log('Found count: ' + searchResults.items.length);
@@ -75,8 +78,8 @@ Word.run(function (context) {
             searchResults.items[i].font.highlightColor = '#FFFF00'; //Yellow
             searchResults.items[i].font.bold = true;
         }
-        
-        // Synchronize the document state by executing the queued commands, 
+
+        // Synchronize the document state by executing the queued commands,
         // and return a promise to indicate task completion.
         return context.sync();
     });  
@@ -94,13 +97,13 @@ Word.run(function (context) {
 ```js
 // Run a batch operation against the Word object model.
 Word.run(function (context) {
-    
+
     // Queue a command to search the document based on a prefix.
     var searchResults = context.document.body.search('vid', {matchPrefix: true});
 
     // Queue a command to load the search results and get the font property values.
     context.load(searchResults, 'font');
-    
+
     // Synchronize the document state by executing the queued commands, 
     // and return a promise to indicate task completion.
     return context.sync().then(function () {
@@ -112,8 +115,8 @@ Word.run(function (context) {
             searchResults.items[i].font.highlightColor = '#FFFF00'; //Yellow
             searchResults.items[i].font.bold = true;
         }
-        
-        // Synchronize the document state by executing the queued commands, 
+
+        // Synchronize the document state by executing the queued commands,
         // and return a promise to indicate task completion.
         return context.sync();
     });  
@@ -137,8 +140,8 @@ Word.run(function (context) {
 
     // Queue a command to load the search results and get the font property values.
     context.load(searchResults, 'font');
-    
-    // Synchronize the document state by executing the queued commands, 
+
+    // Synchronize the document state by executing the queued commands,
     // and return a promise to indicate task completion.
     return context.sync().then(function () {
         console.log('Found count: ' + searchResults.items.length);
@@ -149,8 +152,8 @@ Word.run(function (context) {
             searchResults.items[i].font.highlightColor = 'black';
             searchResults.items[i].font.bold = true;
         }
-        
-        // Synchronize the document state by executing the queued commands, 
+
+        // Synchronize the document state by executing the queued commands,
         // and return a promise to indicate task completion.
         return context.sync();
     });  
@@ -168,14 +171,14 @@ Word.run(function (context) {
 ```js
 // Run a batch operation against the Word object model.
 Word.run(function (context) {
-    
+
     // Queue a command to search the document with a wildcard
     // for any string of characters that starts with 'to' and ends with 'n'.
     var searchResults = context.document.body.search('to*n', {matchWildCards: true});
 
     // Queue a command to load the search results and get the font property values.
     context.load(searchResults, 'font');
-    
+
     // Synchronize the document state by executing the queued commands, 
     // and return a promise to indicate task completion.
     return context.sync().then(function () {
@@ -187,8 +190,8 @@ Word.run(function (context) {
             searchResults.items[i].font.highlightColor = 'pink';
             searchResults.items[i].font.bold = true;
         }
-        
-        // Synchronize the document state by executing the queued commands, 
+
+        // Synchronize the document state by executing the queued commands,
         // and return a promise to indicate task completion.
         return context.sync();
     });  
@@ -201,4 +204,4 @@ Word.run(function (context) {
 });
 ```
 
-更多信息请参阅 [Word JavaScript API 参考](https://docs.microsoft.com/office/dev/add-ins/reference/overview/word-add-ins-reference-overview).
+更多信息请参阅 [Word JavaScript API 参考](/office/dev/add-ins/reference/overview/word-add-ins-reference-overview).

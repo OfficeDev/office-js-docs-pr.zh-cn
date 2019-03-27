@@ -1,21 +1,21 @@
 ---
 title: Office 加载项开发最佳做法
 description: ''
-ms.date: 02/28/2019
+ms.date: 03/19/2019
 localization_priority: Priority
-ms.openlocfilehash: 0227b73223d5d2284d697f98ff598dc4cf5dce81
-ms.sourcegitcommit: f7f3d38ae4430e2218bf0abe7bb2976108de3579
+ms.openlocfilehash: b5f5595d9109df10e910459b2fc61a71d5180bbf
+ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "30359280"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "30872254"
 ---
 # <a name="best-practices-for-developing-office-add-ins"></a>Office 加载项开发最佳做法
 
 有效的外接程序提供独特且极具吸引力的功能，采用具有视觉吸引力的方式扩展 Office 应用程序。若要创建出色的外接程序，需为用户提供极具吸引力的首次使用体验、设计一流的 UI 体验和优化外接程序的性能。将本文中描述的最佳实践应用于创建有助于您的用户快速有效地完成其任务的外接程序。
 
 > [!NOTE]
-> 如果计划将加载项[发布](../publish/publish.md)到 AppSource 并适用于 Office 体验，请务必遵循 [AppSource 验证策略](https://docs.microsoft.com/office/dev/store/validation-policies)。例如，加载项必须适用于支持已定义方法的所有平台，才能通过验证（有关详细信息，请参阅[第 4.12 部分](https://docs.microsoft.com/office/dev/store/validation-policies#4-apps-and-add-ins-behave-predictably)以及 [Office 加载项主机和可用性](../overview/office-add-in-availability.md)页面）。 
+> 如果计划将加载项[发布](../publish/publish.md)到 AppSource 并适用于 Office 体验，请务必遵循 [AppSource 验证策略](/office/dev/store/validation-policies)。例如，加载项必须适用于支持已定义方法的所有平台，才能通过验证（有关详细信息，请参阅[第 4.12 部分](/office/dev/store/validation-policies#4-apps-and-add-ins-behave-predictably)以及 [Office 加载项主机和可用性](../overview/office-add-in-availability.md)页面）。 
 
 ## <a name="provide-clear-value"></a>提供明确值
 
@@ -25,7 +25,7 @@ ms.locfileid: "30359280"
  - 在 Office 主机内嵌入补充服务。
  - 改善 Office 体验来提高工作效率。
 - 通过[创建极具吸引力的首次运行体验](#create-an-engaging-first-run-experience)，确保用户能够快速明确加载项的价值。
-- 创建[有效的 AppSource 一览](https://docs.microsoft.com/office/dev/store/create-effective-office-store-listings)。在标题和说明中明确介绍加载项的优势。请勿依赖品牌来传达加载项的用途。
+- 创建[有效的 AppSource 一览](/office/dev/store/create-effective-office-store-listings)。在标题和说明中明确介绍加载项的优势。请勿依赖品牌来传达加载项的用途。
 
 
 ## <a name="create-an-engaging-first-run-experience"></a>创建极具吸引力的首次运行体验
@@ -44,13 +44,13 @@ ms.locfileid: "30359280"
 
    ![显示没有数据的内容外接程序旁边具有数据的内容外接程序的屏幕截图](../images/add-in-title.png)
 
-- 提供[免费试用版](https://docs.microsoft.com/office/dev/store/decide-on-a-pricing-model)。如果加载项需要订阅，请让某些功能无需订阅也可使用。
+- 提供[免费试用版](/office/dev/store/decide-on-a-pricing-model)。如果加载项需要订阅，请让某些功能无需订阅也可使用。
 
 - 让注册非常简单。预先填充某些信息（如电子邮件、显示名称），并跳过电子邮件验证。
 
 - 避免弹出窗口。如果必须使用它们，请引导用户启用弹出窗口。
 
-如需你在开发首次运行体验时可应用的模式，请参阅[适用于 Office 加载项的 UX 设计模式](https://docs.microsoft.com/office/dev/add-ins/design/first-run-experience-patterns)。
+如需你在开发首次运行体验时可应用的模式，请参阅[适用于 Office 加载项的 UX 设计模式](/office/dev/add-ins/design/first-run-experience-patterns)。
 
 ## <a name="use-add-in-commands"></a>使用加载项命令
 
@@ -78,7 +78,7 @@ ms.locfileid: "30359280"
 
 ### <a name="optimize-for-touch"></a>触摸优化
 
-- 使用 [Context.touchEnabled](https://docs.microsoft.com/javascript/api/office/office.context) 属性检测运行加载项的主机应用是否已启用触控。
+- 使用 [Context.touchEnabled](/javascript/api/office/office.context) 属性检测运行加载项的主机应用是否已启用触控。
 
   > [!NOTE]
   > Outlook 不支持此属性。
@@ -125,7 +125,7 @@ ms.locfileid: "30359280"
 
 ## <a name="market-your-add-in"></a>加载项市场营销
 
-- 将加载项发布到 [AppSource](https://docs.microsoft.com/office/dev/store/submit-to-the-office-store)，并在网站中[对它进行宣传](https://docs.microsoft.com/office/dev/store/promote-your-office-store-solution)。创建[有效的 AppSource 一览](https://docs.microsoft.com/office/dev/store/create-effective-office-store-listings)。
+- 将加载项发布到 [AppSource](/office/dev/store/submit-to-the-office-store)，并在网站中[对它进行宣传](/office/dev/store/promote-your-office-store-solution)。创建[有效的 AppSource 一览](/office/dev/store/create-effective-office-store-listings)。
 
 - 使用简洁且富有描述性的加载项标题。字符数不得超过 128 个。
 

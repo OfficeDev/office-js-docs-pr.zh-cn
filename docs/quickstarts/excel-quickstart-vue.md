@@ -1,15 +1,15 @@
 ---
 title: 使用 Vue 生成 Excel 加载项
 description: ''
-ms.date: 10/18/2018
+ms.date: 03/19/2019
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: d68c30cbff61de9374dff483aa259864a1d86baf
-ms.sourcegitcommit: 33dcf099c6b3d249811580d67ee9b790c0fdccfb
+ms.openlocfilehash: 1925c9fcde0bb2f07cce4c0bcb0be99cc1c6061c
+ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "29742203"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "30870994"
 ---
 # <a name="build-an-excel-add-in-using-vue"></a>使用 Vue 生成 Excel 加载项
 
@@ -60,7 +60,7 @@ vue init webpack my-add-in
 2. 使用 Yeoman 生成器生成加载项清单文件。 运行下面的命令，再回答如下所示的提示问题。
 
     ```bash
-    yo office 
+    yo office
     ```
 
     - **选择项目类型:** `Office Add-in containing the manifest only`
@@ -68,7 +68,7 @@ vue init webpack my-add-in
     - **要支持哪一个 Office 客户端应用？：**`Excel`
 
     ![Yeoman 生成器](../images/yo-office.png)
-    
+
     该向导完成后，生成器会创建清单文件。
 
 ## <a name="secure-the-app"></a>保护应用程序
@@ -224,5 +224,5 @@ vue init webpack my-add-in
 * [Excel 加载项教程](../tutorials/excel-tutorial-create-table.md)
 * [Excel JavaScript API 基本编程概念](../excel/excel-add-ins-core-concepts.md)
 * [Excel 加载项代码示例](https://developer.microsoft.com/office/gallery/?filterBy=Samples,Excel)
-* [Excel JavaScript API 参考](https://docs.microsoft.com/office/dev/add-ins/reference/overview/excel-add-ins-reference-overview)
+* [Excel JavaScript API 参考](/office/dev/add-ins/reference/overview/excel-add-ins-reference-overview)
 

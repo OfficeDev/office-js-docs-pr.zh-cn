@@ -1,33 +1,33 @@
 ---
 title: 在 Visual Studio 中将 Office 加载项项目转换为使用 TypeScript
 description: ''
-ms.date: 10/30/2018
+ms.date: 03/19/2019
 localization_priority: Priority
-ms.openlocfilehash: 6587665d57121619f9730448b27b045630f9e1aa
-ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
+ms.openlocfilehash: 9b3916dc61fadb3b6d9bf61e43cb22bdc7ff68c8
+ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "29386601"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "30869951"
 ---
 # <a name="convert-an-office-add-in-project-in-visual-studio-to-typescript"></a>在 Visual Studio 中将 Office 加载项项目转换为使用 TypeScript
 
 可以使用 Visual Studio 中的 Office 加载项模板，创建使用 JavaScript 的加载项，再将加载项项目转换为使用 TypeScript。 本文介绍了 Excel 加载项的此转换过程。 可以按照相同的过程操作，在 Visual Studio 中将其他类型的 Office 外接程序项目从 JavaScript 转换为 TypeScript。
 
 > [!NOTE]
-> 若不想使用 Visual Studio 创建 Office 外接程序 TypeScript 项目，请按照任何 [5 分钟快速入门](../index.yml)的“任意编辑器”部分中的说明操作，并在[适用于 Office 外接程序的 Yeoman 生成器](https://github.com/OfficeDev/generator-office)显示提示时选择 `TypeScript`。
+> 若不想使用 Visual Studio 创建 Office 外接程序 TypeScript 项目，请按照任何 [5 分钟快速入门](../index.yml)的“任意编辑器”部分中的说明操作，并在[适用于 Office 外接程序的 Yeoman 生成器](https://github.com/officedev/generator-office)显示提示时选择 `TypeScript`。
 
 ## <a name="prerequisites"></a>先决条件
 
 - 安装了 **Office/SharePoint 开发**工作负载的 [Visual Studio 2017](https://www.visualstudio.com/vs/)
 
     > [!TIP]
-    > 如果之前已安装 Visual Studio 2017，请[使用 Visual Studio 安装程序](https://docs.microsoft.com/visualstudio/install/modify-visual-studio)，以确保安装 **Office/SharePoint 开发**工作负载。 如果尚未安装此工作负载，请使用 Visual Studio 安装程序进行[安装](https://docs.microsoft.com/en-us/visualstudio/install/modify-visual-studio?view=vs-2017#modify-workloads)。
+    > 如果之前已安装 Visual Studio 2017，请[使用 Visual Studio 安装程序](/visualstudio/install/modify-visual-studio)，以确保安装 **Office/SharePoint 开发**工作负载。 如果尚未安装此工作负载，请使用 Visual Studio 安装程序进行[安装](/visualstudio/install/modify-visual-studio?view=vs-2017#modify-workloads)。
 
 - TypeScript SDK 版本 2.3 或更高版本（适用于 Visual Studio 2017）
 
     > [!TIP]
-    > 在 [Visual Studio 安装程序](https://docs.microsoft.com/visualstudio/install/modify-visual-studio)中，选择“单个组件”**** 选项卡，然后向下滚动到“SDK、库和框架”**** 部分。 在该部分中，确保至少选择一个“TypeScript SDK”**** 组件（版本 2.3 或更高版本）。 如果一个“TypeScript SDK”**** 组件都没有选择，则选择最新可用版本的 SDK，然后选择“修改”**** 按钮以[安装该单个组件](https://docs.microsoft.com/en-us/visualstudio/install/modify-visual-studio?view=vs-2017#modify-individual-components)。 
+    > 在 [Visual Studio 安装程序](/visualstudio/install/modify-visual-studio)中，选择“单个组件”**** 选项卡，然后向下滚动到“SDK、库和框架”**** 部分。 在该部分中，确保至少选择一个“TypeScript SDK”**** 组件（版本 2.3 或更高版本）。 如果一个“TypeScript SDK”**** 组件都没有选择，则选择最新可用版本的 SDK，然后选择“修改”**** 按钮以[安装该单个组件](/visualstudio/install/modify-visual-studio?view=vs-2017#modify-individual-components)。 
 
 - Excel 2016 或更高版本
 
@@ -135,7 +135,7 @@ declare var fabric: any;
             var element = document.querySelector('.ms-MessageBanner');
             messageBanner = new fabric.MessageBanner(element);
             messageBanner.hideBanner();
-            
+
             // If not using Excel 2016, use fallback logic.
             if (!Office.context.requirements.isSetSupported('ExcelApi', 1.1)) {
                 $("#template-description").text("This sample will display the value of the cells that you have selected in the spreadsheet.");
@@ -149,7 +149,7 @@ declare var fabric: any;
             $("#template-description").text("This sample highlights the highest value from the cells you have selected in the spreadsheet.");
             $('#button-text').text("Highlight!");
             $('#button-desc').text("Highlights the largest number.");
-                
+
             loadSampleData();
 
             // Add a click event handler for the highlight button.

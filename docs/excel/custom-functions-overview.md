@@ -3,12 +3,12 @@ ms.date: 03/19/2019
 description: 在 Excel 中使用 JavaScript 创建自定义函数。
 title: 在 Excel 中创建自定义函数（预览）
 localization_priority: Priority
-ms.openlocfilehash: 4a9e240646b41b737652b6e64eb83e03d0824178
-ms.sourcegitcommit: c5daedf017c6dd5ab0c13607589208c3f3627354
+ms.openlocfilehash: ac3410267da415c4d567092da2e653fcffd10b72
+ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/20/2019
-ms.locfileid: "30691200"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "30870448"
 ---
 # <a name="create-custom-functions-in-excel-preview"></a>在 Excel 中创建自定义函数（预览）
 
@@ -203,91 +203,6 @@ function increment(incrementBy, callback) {
 > [!NOTE]
 > Excel 中的函数在前面追加 XML 清单文件中指定的命名空间作为前缀。 函数的命名空间在函数名称之前，并用句点分隔。 例如，若要在 Excel 工作表的单元格中调用函数 `ADD42`，需输入 `=CONTOSO.ADD42`，因为 `CONTOSO` 是命名空间，`ADD42` 是 JSON 文件中指定的函数的名称。 命名空间旨在作为公司或加载项的标识符使用。 命名空间只能包含字母数字字符和句点。
 
-## <a name="functions-that-return-data-from-external-sources"></a>从外部源返回数据的函数
-
-如果自定义函数从外部源（如 Web）检索数据，则必须：
-
-1. 将 JavaScript Promise 返回到 Excel。
-
-2. 使用回调函数解析带有最终值的 Promise。
-
-在 Excel 等待最终结果时，自定义函数会在单元格中显示一个 `#GETTING_DATA` 临时结果。 在等待结果时，用户可以与工作表的其余部分正常交互。
-
-在下面的代码示例中，`getTemperature()` 自定义函数检索温度计的当前温度。 注意，`sendWebRequest` 是一个假设函数（此处未指定），它使用 [XHR](custom-functions-runtime.md#xhr-example) 调用温度 Web 服务。
-
-```js
-function getTemperature(thermometerID){
-    return new Promise(function(setResult){
-        sendWebRequest(thermometerID, function(data){
-            setResult(data.temperature);
-        });
-    });
-}
-```
-
-## <a name="streaming-functions"></a>流式处理函数
-
-流式处理自定义函数使用户能够在不需要用户显式请求数据刷新的情况下，随着时间的推移向单元格重复输出数据。 下面的代码示例是一个自定义函数，它每秒向结果添加一个数字。 关于此代码，请注意以下几点：
-
-- Excel 使用 `setResult` 回调自动显示每个新值。
-
-- 当最终用户从自动完成菜单中选择函数时，不会在 Excel 中向其显示第二个输入参数 `handler`。
-
-- `onCanceled` 回调定义取消函数时执行的函数。 对于任何流式处理函数，都必须实现此类取消处理程序。 有关详细信息，请参阅[取消函数](#canceling-a-function)。
-
-```js
-function incrementValue(increment, handler){
-  var result = 0;
-  setInterval(function(){
-    result += increment;
-    handler.setResult(result);
-  }, 1000);
-
-  handler.onCanceled = function(){
-    clearInterval(timer);
-  }
-}
-```
-
-在 JSON 元数据文件中为流式处理函数指定元数据时，必须在 `options` 对象中设置属性 `"cancelable": true` 和 `"stream": true`，如以下示例所示。
-
-```json
-{
-  "id": "INCREMENT",
-  "name": "INCREMENT",
-  "description": "Periodically increment a value",
-  "helpUrl": "http://www.contoso.com",
-  "result": {
-    "type": "number",
-    "dimensionality": "scalar"
-  },
-  "parameters": [
-    {
-      "name": "increment",
-      "description": "Amount to increment",
-      "type": "number",
-      "dimensionality": "scalar"
-    }
-  ],
-  "options": {
-    "cancelable": true,
-    "stream": true
-  }
-}
-```
-
-## <a name="canceling-a-function"></a>取消函数
-
-在某些情况下，可能需要取消执行流式处理自定义函数，以减少其带宽消耗、工作内存和 CPU 负载。 Excel 会在以下情况下取消函数的执行：
-
-- 用户编辑或删除引用函数的单元格。
-
-- 函数的参数（输入）之一发生变化。 在这种情况下，取消之后还会触发新的函数调用。
-
-- 用户手动触发重新计算。 在这种情况下，取消之后还会触发新的函数调用。
-
-为了能够取消函数，必须在 JavaScript 函数中实现一个取消处理程序，并在说明函数的 JSON 元数据中指定 `options` 对象中的属性 `"cancelable": true`。 本文前一部分中的代码示例提供了这些方法的示例。
-
 ## <a name="declaring-a-volatile-function"></a>声明可变函数
 
 [可变函数](/office/client-developer/excel/excel-recalculation#volatile-and-non-volatile-functions)是指其值时刻更改的函数（即使此函数的自变量均未更改）。 每当 Excel 重新计算时，这些函数即会重新计算。 例如，假设某个单元格调用函数 `NOW`。 每当调用 `NOW` 时，它将自动返回当前的日期和时间。
@@ -359,6 +274,7 @@ function refreshTemperature(thermometerID){
 ```
 
 ## <a name="coauthoring"></a>共同创作
+
 借助 Excel Online 和 Excel for Windows 以及 Office 365 订阅，可以共同创作文档，此功能可与自定义函数结合使用。 如果你的工作簿使用自定义函数，系统会提示你的同事加载自定义函数的加载项。 当你们均加载此加载项后，自定义函数会通过共同创作共享结果。
 
 若要详细了解共同创作，请参阅[关于 Excel 中的共同创作](/office/vba/excel/concepts/about-coauthoring-in-excel)。
@@ -433,7 +349,7 @@ function getAddress(parameter1, invocationContext) {
 
 ## <a name="known-issues"></a>已知问题
 
-在 [Excel 自定义功能 GitHub 存储库](https://github.com/OfficeDev/Excel-Custom-Functions/issues)上查看已知问题。 
+在 [Excel 自定义功能 GitHub 存储库](https://github.com/OfficeDev/Excel-Custom-Functions/issues)上查看已知问题。
 
 ## <a name="see-also"></a>另请参阅
 

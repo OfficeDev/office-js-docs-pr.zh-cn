@@ -1,14 +1,14 @@
 ---
 title: 内容 Office 加载项
 description: 内容加载项是指可以直接嵌入 Excel 或 PowerPoint 文档的图面，用户可以通过它访问界面控件，运行代码以修改文档或显示数据源中的数据。
-ms.date: 12/13/2018
+ms.date: 03/19/2019
 localization_priority: Priority
-ms.openlocfilehash: 8114fe1d95739ba14fe54c379e44148f451010b2
-ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
+ms.openlocfilehash: 46268f963545c3f5b7f45b9b590dc772ba37292f
+ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "29389394"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "30870539"
 ---
 # <a name="content-office-add-ins"></a>内容 Office 加载项
 
@@ -49,12 +49,14 @@ Office 桌面版和 Office 365 中的 Excel 和 PowerPoint 的内容加载项大
 有关实现内容加载项的示例，请参阅 GitHub 上的 [Excel 内容加载项 Humongous Insurance](https://github.com/OfficeDev/Excel-Content-Add-in-Humongous-Insurance)。
 
 ## <a name="support-considerations"></a>支持注意事项
-- 检查 Office 加载项是否适用于[特定 Office 主机平台](https://docs.microsoft.com/office/dev/add-ins/overview/office-add-in-availability)。 
-- 一些内容加载项可能会要求用户“信任”加载项对 Excel 或 PowerPoint 执行读取和写入操作。 可以在加载项清单中声明要拥有的[权限级别](https://docs.microsoft.com/office/dev/add-ins/develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins)。  
+
+- 检查 Office 加载项是否适用于[特定 Office 主机平台](/office/dev/add-ins/overview/office-add-in-availability)。 
+- 一些内容加载项可能会要求用户“信任”加载项对 Excel 或 PowerPoint 执行读取和写入操作。 可以在加载项清单中声明要拥有的[权限级别](/office/dev/add-ins/develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins)。  
 - Office 2013 版本及更高版本中的 Excel 和 PowerPoint 支持内容加载项。 如果在不支持 Office Web 加载项的 Office 版本中打开加载项，加载项会显示为图像。
 
 ## <a name="see-also"></a>另请参阅
-- [Office 加载项主机和平台可用性](https://docs.microsoft.com/office/dev/add-ins/overview/office-add-in-availability)
-- [Office 加载项中的 Office UI Fabric](https://docs.microsoft.com/office/dev/add-ins/design/office-ui-fabric) 
-- [Office 加载项的用户体验设计模式](https://docs.microsoft.com/office/dev/add-ins/design/ux-design-pattern-templates)
-- [在内容加载项和任务窗格加载项中请求获取 API 使用权限](https://docs.microsoft.com/office/dev/add-ins/develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins)
+
+- [Office 加载项主机和平台可用性](/office/dev/add-ins/overview/office-add-in-availability)
+- [Office 加载项中的 Office UI Fabric](/office/dev/add-ins/design/office-ui-fabric)
+- [Office 加载项的用户体验设计模式](/office/dev/add-ins/design/ux-design-pattern-templates)
+- [在内容加载项和任务窗格加载项中请求获取 API 使用权限](/office/dev/add-ins/develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins)

@@ -1,21 +1,21 @@
 ---
 title: 使用 jQuery 生成首个 Excel 加载项
 description: ''
-ms.date: 01/17/2019
+ms.date: 03/19/2019
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: 7931e06899a94a0dcda2a5ab442d37ce21c119c0
-ms.sourcegitcommit: 33dcf099c6b3d249811580d67ee9b790c0fdccfb
+ms.openlocfilehash: 09c3819efde35b9f35847c8ca3bca558b391d98a
+ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "29742441"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "30872121"
 ---
 # <a name="build-an-excel-add-in-using-jquery"></a>使用 jQuery 生成 Excel 加载项
 
 本文将逐步介绍如何使用 jQuery 和 Excel JavaScript API 生成 Excel 加载项。 
 
-## <a name="create-the-add-in"></a>创建加载项 
+## <a name="create-the-add-in"></a>创建加载项
 
 [!include[Choose your editor](../includes/quickstart-choose-editor.md)]
 
@@ -28,7 +28,7 @@ ms.locfileid: "29742441"
 ### <a name="create-the-add-in-project"></a>创建加载项项目
 
 1. 在 Visual Studio 菜单栏中，依次选择“文件”**** > “新建”**** > “项目”****。
-    
+
 2. 在“Visual C#”**** 或“Visual Basic”**** 下的项目类型列表中，展开“Office/SharePoint”****，选择“加载项”****，再选择“Excel Web 加载项”**** 作为项目类型。 
 
 3. 命名此项目，再选择“确定”****。
@@ -36,7 +36,7 @@ ms.locfileid: "29742441"
 4. 在“创建 Office 加载项”**** 对话框窗口中，选择“将新功能添加到 Excel”****，再选择“完成”**** 以创建项目。
 
 5. 此时，Visual Studio 创建解决方案，且它的两个项目显示在“解决方案资源管理器”**** 中。**Home.html** 文件在 Visual Studio 中打开。
-    
+
 ### <a name="explore-the-visual-studio-solution"></a>探索 Visual Studio 解决方案
 
 [!include[Description of Visual Studio projects](../includes/quickstart-vs-solution.md)]
@@ -44,7 +44,7 @@ ms.locfileid: "29742441"
 ### <a name="update-the-code"></a>更新代码
 
 1. **Home.html** 指定在加载项的任务窗格中呈现的 HTML。 在 **Home.html** 中，将 `<body>` 元素替换为以下标记，并保存文件。
- 
+
     ```html
     <body class="ms-font-m ms-welcome">
         <div id="content-header">
@@ -184,7 +184,7 @@ ms.locfileid: "29742441"
     - **要支持哪一个 Office 客户端应用？：**`Excel`
 
     ![Yeoman 生成器](../images/yo-office-jquery.png)
-    
+
     完成此向导后，生成器会创建项目，并安装支持的 Node 组件。
 
 2. 导航到项目的根文件夹。
@@ -195,10 +195,10 @@ ms.locfileid: "29742441"
 
 ### <a name="update-the-code"></a>更新代码 
 
-1. 在代码编辑器中，打开项目根目录中的“index.html”****。 此文件指定在加载项任务窗格中呈现的 HTML。 
- 
+1. 在代码编辑器中，打开项目根目录中的 **index.html**。 此文件指定在加载项任务窗格中呈现的 HTML。 
+
 2. 在“**index.html**”中，将 `body` 标记替换为以下标记，再保存文件。
- 
+
     ```html
     <body class="ms-font-m ms-welcome">
         <div id="content-header">
@@ -216,14 +216,14 @@ ms.locfileid: "29742441"
         </div>
         <script type="text/javascript" src="node_modules/jquery/dist/jquery.js"></script>
         <script type="text/javascript" src="node_modules/office-ui-fabric-js/dist/js/fabric.js"></script>
-    </body>    
+    </body>
     ```
 
 3. 打开文件“**src/index.js**”，以指定加载项的脚本。 将整个内容替换为下列代码，并保存文件。
 
     ```js
     'use strict';
-    
+
     (function () {
         Office.onReady(function() {
             // Office is ready
@@ -259,7 +259,7 @@ ms.locfileid: "29742441"
         top: 0;
         left: 0;
         width: 100%;
-        height: 80px; 
+        height: 80px;
         overflow: hidden;
     }
 
@@ -270,7 +270,7 @@ ms.locfileid: "29742441"
         left: 0;
         right: 0;
         bottom: 0;
-        overflow: auto; 
+        overflow: auto;
     }
 
     .padding {
@@ -280,7 +280,7 @@ ms.locfileid: "29742441"
 
 ### <a name="update-the-manifest"></a>更新清单
 
-1. 打开文件“**manifest.xml**”以定义加载项的设置和功能。 
+1. 打开文件“**manifest.xml**”以定义加载项的设置和功能。
 
 2. `ProviderName` 元素具有占位符值。 将其替换为你的姓名。
 
@@ -334,5 +334,4 @@ ms.locfileid: "29742441"
 * [Excel 加载项教程](../tutorials/excel-tutorial-create-table.md)
 * [Excel JavaScript API 基本编程概念](../excel/excel-add-ins-core-concepts.md)
 * [Excel 加载项代码示例](https://developer.microsoft.com/office/gallery/?filterBy=Samples,Excel)
-* [Excel JavaScript API 参考](https://docs.microsoft.com/office/dev/add-ins/reference/overview/excel-add-ins-reference-overview)
-
+* [Excel JavaScript API 参考](/office/dev/add-ins/reference/overview/excel-add-ins-reference-overview)

@@ -1,14 +1,14 @@
 ---
 title: 在 Windows 10 上使用 F12 开发人员工具调试外接程序
 description: ''
-ms.date: 10/16/2018
+ms.date: 03/19/2019
 localization_priority: Priority
-ms.openlocfilehash: e2378a0449ea33551051b9c3788b84b23a51feb8
-ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
+ms.openlocfilehash: 750411bea187a0ade9b3723e3198d82f7c482c9f
+ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "29386902"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "30871232"
 ---
 # <a name="debug-add-ins-using-f12-developer-tools-on-windows-10"></a>在 Windows 10 上使用 F12 开发人员工具调试外接程序
 
@@ -58,7 +58,7 @@ Windows 10 中随附的 F12 开发人员工具可帮助您调试、测试和加�
     
 5. 设置断点。
     
-   若要在 **Home.js** 中设置断点，请选择第 144 行，它位于 `textChanged` 函数中。 你将在该行左侧和“调用堆栈和断点”（右下角）窗格中的对应行左侧看到一个红点。 有关设置断点的其他方法，请参阅[使用调试器检查正在运行的 JavaScript](https://docs.microsoft.com/previous-versions/windows/internet-explorer/ie-developer/samples/dn255007(v=vs.85))。 
+   若要在 **Home.js** 中设置断点，请选择第 144 行，它位于 `textChanged` 函数中。 你将在该行左侧和“调用堆栈和断点”（右下角）窗格中的对应行左侧看到一个红点。 有关设置断点的其他方法，请参阅[使用调试器检查正在运行的 JavaScript](/previous-versions/windows/internet-explorer/ie-developer/samples/dn255007(v=vs.85))。 
     
    ![断点位于 home.js 文件中的调试程序](../images/debugger-home-js-02.png)
 
@@ -71,5 +71,5 @@ Windows 10 中随附的 F12 开发人员工具可帮助您调试、测试和加�
 
 ## <a name="see-also"></a>另请参阅
 
-- [使用调试器检查正在运行的 JavaScript](https://docs.microsoft.com/previous-versions/windows/internet-explorer/ie-developer/samples/dn255007(v=vs.85))
-- [使用 F12 开发人员工具](https://docs.microsoft.com/previous-versions/windows/internet-explorer/ie-developer/samples/bg182326(v=vs.85))
+- [使用调试器检查正在运行的 JavaScript](/previous-versions/windows/internet-explorer/ie-developer/samples/dn255007(v=vs.85))
+- [使用 F12 开发人员工具](/previous-versions/windows/internet-explorer/ie-developer/samples/bg182326(v=vs.85))

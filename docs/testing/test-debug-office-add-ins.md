@@ -1,14 +1,14 @@
 ---
 title: 测试和调试 Office 加载项
 description: ''
-ms.date: 11/24/2017
+ms.date: 03/19/2019
 localization_priority: Priority
-ms.openlocfilehash: 7ffa281807ca1541f8ebcc5f722c1043db115509
-ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
+ms.openlocfilehash: c51823684dab4e85e2cf9e621365ea6230f21b8a
+ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "29388834"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "30872079"
 ---
 # <a name="test-and-debug-office-add-ins"></a>测试和调试 Office 加载项
 
@@ -24,7 +24,7 @@ ms.locfileid: "29388834"
 
 - [在 iPad 和 Mac 上旁加载 Office 加载项](sideload-an-office-add-in-on-ipad-and-mac.md)
 
-- [旁加载 Outlook 加载项以供测试](https://docs.microsoft.com/outlook/add-ins/sideload-outlook-add-ins-for-testing)
+- [旁加载 Outlook 加载项以供测试](/outlook/add-ins/sideload-outlook-add-ins-for-testing)
 
 ## <a name="debug-an-office-add-in"></a>调试 Office 加载项
 

@@ -1,14 +1,14 @@
 ---
 title: 从任务窗格附加调试器
 description: ''
-ms.date: 10/17/2018
+ms.date: 03/19/2019
 localization_priority: Priority
-ms.openlocfilehash: 1c2be843fcd911c1bfd87408d603bb750d6e738a
-ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
+ms.openlocfilehash: 941a67695f573cbf0955038916cb1e7ada9cc08f
+ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "29386475"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "30870427"
 ---
 # <a name="attach-a-debugger-from-the-task-pane"></a>从任务窗格附加调试器
 
@@ -37,8 +37,8 @@ Visual Studio 中的“解决方案资源管理器”**** 会显示代码文件�
 若要详细了解如何在 Visual Studio 中进行调试，请参阅以下内容：
 
 -   若要在 Visual Studio 中启动并使用 DOM 资源管理器，请参阅 [Building great-looking apps for Office using the new project templates](https://blogs.msdn.microsoft.com/officeapps/2013/04/16/building-great-looking-apps-for-office-using-the-new-project-templates)（使用新项目模板为 Office 生成漂亮应用）博客文章中[提示和技巧](https://blogs.msdn.microsoft.com/officeapps/2013/04/16/building-great-looking-apps-for-office-using-the-new-project-templates/#tips_tricks)部分的提示 4。
--   若要设置断点，请参阅[使用断点](https://docs.microsoft.com/visualstudio/debugger/using-breakpoints?view=vs-2015)。
--   若要使用 F12，请参阅[使用 F12 开发人员工具](https://docs.microsoft.com/previous-versions/windows/internet-explorer/ie-developer/samples/bg182326(v=vs.85))。
+-   若要设置断点，请参阅[使用断点](/visualstudio/debugger/using-breakpoints?view=vs-2015)。
+-   若要使用 F12，请参阅[使用 F12 开发人员工具](/previous-versions/windows/internet-explorer/ie-developer/samples/bg182326(v=vs.85))。
 
 ## <a name="see-also"></a>另请参阅
 

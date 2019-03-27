@@ -1,14 +1,14 @@
 ---
 title: Word 加载项概述
 description: ''
-ms.date: 09/24/2018
+ms.date: 03/19/2019
 localization_priority: Priority
-ms.openlocfilehash: b279034b285a1b73fd32d21d55b6cced6e40818a
-ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
+ms.openlocfilehash: b6fa62a41e97c6814e282db4a5c338d2d422d0fc
+ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "29389387"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "30871890"
 ---
 # <a name="word-add-ins-overview"></a>Word 加载项概述
 
@@ -17,7 +17,7 @@ ms.locfileid: "29389387"
 Word 外接程序是 [Office 外接程序平台](../overview/office-add-ins.md)上众多开发选项中的一项。外接程序命令可用于扩展 Word 用户界面并启动运行 JavaScript 并与 Word 文档中内容交互的任务窗格。在浏览器中可以运行的任何代码均可在 Word 外接程序中运行。与 Word 文档内容进行交互的外接程序可创建作用于 Word 对象的请求并同步对象状态。 
 
 > [!NOTE]
-> 生成加载项时，如果计划将加载项[发布](../publish/publish.md)到 AppSource，请务必遵循 [AppSource 验证策略](https://docs.microsoft.com/office/dev/store/validation-policies)。例如，加载项必须适用于支持已定义方法的所有平台，才能通过验证（有关详细信息，请参阅[第 4.12 部分](https://docs.microsoft.com/office/dev/store/validation-policies#4-apps-and-add-ins-behave-predictably)以及 [Office 加载项主机和可用性](../overview/office-add-in-availability.md)页面）。
+> 生成加载项时，如果计划将加载项[发布](../publish/publish.md)到 AppSource，请务必遵循 [AppSource 验证策略](/office/dev/store/validation-policies)。例如，加载项必须适用于支持已定义方法的所有平台，才能通过验证（有关详细信息，请参阅[第 4.12 部分](/office/dev/store/validation-policies#4-apps-and-add-ins-behave-predictably)以及 [Office 加载项主机和可用性](../overview/office-add-in-availability.md)页面）。
 
 下图中的示例展示了在任务窗格中运行的 Word 加载项。
 
@@ -56,7 +56,7 @@ Word.run(function (context) {
 
 第二组是 [Word JavaScript API](../reference/overview/word-add-ins-reference-overview.md)。这是强类型对象模型，可用于创建面向适用于 Mac 和 Windows 的 Word 2016 的 Word 外接程序。此对象模型使用承诺模式，并提供对特定于 Word 对象（如[正文](/javascript/api/word/word.body)、[内容控件](/javascript/api/word/word.contentcontrol)、[内联图片](/javascript/api/word/word.inlinepicture)和[段落](/javascript/api/word/word.paragraph)）的访问权限。Word JavaScript API 包括 TypeScript 定义和 vsdoc 文件，这样，您可以在 IDE 中获得代码提示。
 
-目前，所有 Word 客户端均支持共享的适用于 Office 的 JavaScript API，大多数客户端支持 Word JavaScript API。有关受支持的客户端的详细信息，请参阅 [API 参考文档](https://docs.microsoft.com/office/dev/add-ins/reference/javascript-api-for-office?product=word)。
+目前，所有 Word 客户端均支持共享的适用于 Office 的 JavaScript API，大多数客户端支持 Word JavaScript API。有关受支持的客户端的详细信息，请参阅 [API 参考文档](/office/dev/add-ins/reference/javascript-api-for-office?product=word)。
 
 我们建议从 Word JavaScript API 开始，因为对象模型更易于使用。如果需要执行以下操作，请使用 Word JavaScript API：
 
@@ -74,7 +74,7 @@ Word.run(function (context) {
 
 ## <a name="next-steps"></a>后续步骤
 
-准备好创建首个 Word 加载项了吗？请参阅[生成首个 Word 加载项](word-add-ins.md)。还可以尝试感受交互式[入门体验](https://docs.microsoft.com/office/dev/add-ins/?product=Word)。请使用[加载项清单](../develop/add-in-manifests.md)描述加载项的托管位置和显示方式，并定义权限和其他信息。
+准备好创建首个 Word 加载项了吗？请参阅[生成首个 Word 加载项](word-add-ins.md)。还可以尝试感受交互式[入门体验](/office/dev/add-ins/?product=Word)。请使用[加载项清单](../develop/add-in-manifests.md)描述加载项的托管位置和显示方式，并定义权限和其他信息。
 
 若要了解如何设计世界一流的 Word 外接程序来为用户打造具有吸引力的体验，请参阅[设计指南](../design/add-in-design.md)和[最佳实践](../concepts/add-in-development-best-practices.md)。
 
@@ -82,10 +82,9 @@ Word.run(function (context) {
 
 ## <a name="whats-coming-up-for-word-add-ins"></a>Word 加载项未来发展趋势如何？
 
-随着我们设计和开发适用于 Word 加载项的新 API，我们将会发布这些 API，以供大家在 [API 开放性规范](https://docs.microsoft.com/office/dev/add-ins/reference/openspec)页面上提供反馈。请了解即将推出的 Word JavaScript API 新功能，并提供对设计规范的宝贵意见。
+随着我们设计和开发适用于 Word 加载项的新 API，我们将会发布这些 API，以供大家在 [API 开放性规范](/office/dev/add-ins/reference/openspec)页面上提供反馈。请了解即将推出的 Word JavaScript API 新功能，并提供对设计规范的宝贵意见。
 
 ## <a name="see-also"></a>另请参阅
 
 * [Office 加载项平台概述](../overview/office-add-ins.md)
-* [Word JavaScript API 参考](https://docs.microsoft.com/office/dev/add-ins/reference/overview/word-add-ins-reference-overview)
-
+* [Word JavaScript API 参考](/office/dev/add-ins/reference/overview/word-add-ins-reference-overview)

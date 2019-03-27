@@ -1,14 +1,14 @@
 ---
 title: 使用 Angular 开发 Office 加载项
 description: ''
-ms.date: 11/02/2018
+ms.date: 03/19/2019
 localization_priority: Priority
-ms.openlocfilehash: a385fb1abc0e43423471d02f2a05bfb1824f8aeb
-ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
+ms.openlocfilehash: 20e66fe1a7a6cce17428424290d4e4c99995efb2
+ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "29388869"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "30872226"
 ---
 # <a name="develop-office-add-ins-with-angular"></a>使用 Angular 开发 Office 加载项
 
@@ -20,7 +20,8 @@ ms.locfileid: "29388869"
 有关使用 Angular 框架生成的 Office 加载项示例，请参阅[使用 Angular 生成的 Word 样式检查加载项](https://github.com/OfficeDev/Word-Add-in-Angular2-StyleChecker)。
 
 ## <a name="install-the-typescript-type-definitions"></a>安装 TypeScript 类型定义
-打开 nodejs 窗口，并在命令行处输入以下命令： 
+
+打开 nodejs 窗口，并在命令行处输入以下命令：
 
 ```bash
 npm install --save-dev @types/office-js
@@ -73,7 +74,7 @@ const routes: Routes = // route definitions go here
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
-```   
+```
 
 
 ## <a name="consider-wrapping-fabric-components-with-angular-components"></a>考虑使用 Angular 组件包装 Fabric 组件
@@ -83,9 +84,9 @@ export class AppRoutingModule { }
 
 ## <a name="using-the-office-dialog-api-with-angular"></a>将 Office 对话框 API 与 Angular 结合使用
 
-Office 加载项对话框 API 可使加载项打开半模态对话框中的页面，该页面可与主页面交换信息，这在任务窗格中是典型操作。 
+Office 加载项对话框 API 可使加载项打开半模态对话框中的页面，该页面可与主页面交换信息，这在任务窗格中是典型操作。
 
-[displayDialogAsync](https://docs.microsoft.com/javascript/api/office/office.ui) 方法采用指定应在对话框中打开的页面的 URL 的参数。外接程序可具有单独的 HTML 页面（与基本页不同）来传递此参数，或在 Angular 应用程序中传递路由的 URL。 
+[displayDialogAsync](/javascript/api/office/office.ui) 方法采用指定应在对话框中打开的页面的 URL 的参数。外接程序可具有单独的 HTML 页面（与基本页不同）来传递此参数，或在 Angular 应用程序中传递路由的 URL。 
 
 要记住的重要一点是，如果传递路由，则该对话框将创建具有自身执行上下文的新窗口。基本页及其所有初始化和引导代码将在新上下文中再次运行，且任何变量都将被设置为对话框中的初始值。所以，此技术在对话框中启动了单页应用程序的第二个实例。更改了对话框中的变量的代码不会更改同一变量的任务窗格版本。同样，对话框有其自己的会话存储，而任务窗格中的代码不能对其访问。  
 
@@ -106,7 +107,7 @@ export class MyComponent {
     });
   }
 }
-``` 
+```
 
 ## <a name="using-observable"></a>使用 Observable 对象
 

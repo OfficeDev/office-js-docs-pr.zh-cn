@@ -1,14 +1,14 @@
 ---
 title: Office 加载项 XML 清单
 description: ''
-ms.date: 12/26/2018
+ms.date: 03/19/2019
 localization_priority: Priority
-ms.openlocfilehash: 0b5672b14950d275ab34973aa3dc534455e43cd6
-ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
+ms.openlocfilehash: de7b2c991b149f1eb40080e3423044d24dfbf0b9
+ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "29386804"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "30871694"
 ---
 # <a name="office-add-ins-xml-manifest"></a>Office 加载项 XML 清单
 
@@ -29,7 +29,7 @@ Office 外接程序的 XML 清单文件描述，当最终用户安装外接程�
 * 对于 Outlook 外接程序，定义一个或多个规则，以指定将在其中激活规则并与邮件、约会或会议请求项目交互的上下文。
 
 > [!NOTE]
-> 如果计划将加载项[发布](../publish/publish.md)到 AppSource 并适用于 Office 体验，请务必遵循 [AppSource 验证策略](https://docs.microsoft.com/office/dev/store/validation-policies)。例如，加载项必须适用于支持已定义方法的所有平台，才能通过验证（有关详细信息，请参阅[第 4.12 部分](https://docs.microsoft.com/office/dev/store/validation-policies#4-apps-and-add-ins-behave-predictably)以及 [Office 加载项主机和可用性](../overview/office-add-in-availability.md)页面）。
+> 如果计划将加载项[发布](../publish/publish.md)到 AppSource 并适用于 Office 体验，请务必遵循 [AppSource 验证策略](/office/dev/store/validation-policies)。例如，加载项必须适用于支持已定义方法的所有平台，才能通过验证（有关详细信息，请参阅[第 4.12 部分](/office/dev/store/validation-policies#4-apps-and-add-ins-behave-predictably)以及 [Office 加载项主机和可用性](../overview/office-add-in-availability.md)页面）。
 
 ## <a name="required-elements"></a>必需元素
 
@@ -104,26 +104,26 @@ _\*Office 加载项清单架构版本 1.1 中新增_
 
 所有图像 URI（如用于[外接程序命令][]的 URI）都必须支持缓存。 托管图像的服务器不得在 HTTP 响应中返回指定 `no-cache`、`no-store` 或类似选项的 `Cache-Control` 标头。
 
-所有 URL（如 [SourceLocation](https://docs.microsoft.com/office/dev/add-ins/reference/manifest/sourcelocation) 元素中指定的源文件位置）都应**受 SSL 保护 (HTTPS)**。 [!include[HTTPS guidance](../includes/https-guidance.md)]
+所有 URL（如 [SourceLocation](/office/dev/add-ins/reference/manifest/sourcelocation) 元素中指定的源文件位置）都应**受 SSL 保护 (HTTPS)**。 [!include[HTTPS guidance](../includes/https-guidance.md)]
 
 ## <a name="best-practices-for-submitting-to-appsource"></a>关于提交到 AppSource 的最佳做法
 
 确保外接程序 ID 有效且具有唯一 GUID。Web 上提供可用于创建唯一 GUID 的各种 GUID 生成器工具。
 
-提交到 AppSource 的加载项还必须包括 [SupportUrl](https://docs.microsoft.com/office/dev/add-ins/reference/manifest/supporturl) 元素。 有关详细信息，请参阅[提交到 AppSource 的应用和加载项的验证策略](https://docs.microsoft.com/office/dev/store/validation-policies)。
+提交到 AppSource 的加载项还必须包括 [SupportUrl](/office/dev/add-ins/reference/manifest/supporturl) 元素。 有关详细信息，请参阅[提交到 AppSource 的应用和加载项的验证策略](/office/dev/store/validation-policies)。
 
-仅使用 [AppDomain](https://docs.microsoft.com/office/dev/add-ins/reference/manifest/appdomains) 元素指定域（除了在 [SourceLocation](https://docs.microsoft.com/office/dev/add-ins/reference/manifest/sourcelocation) 元素中指定的用于身份验证方案的域）。
+仅使用 [AppDomain](/office/dev/add-ins/reference/manifest/appdomains) 元素指定域（除了在 [SourceLocation](/office/dev/add-ins/reference/manifest/sourcelocation) 元素中指定的用于身份验证方案的域）。
 
 ## <a name="specify-domains-you-want-to-open-in-the-add-in-window"></a>指定要在外接程序窗口中打开的域
 
-在 Office Online 中运行时，可以将任务窗格导航到任何 URL。 但在桌面平台中，如果外接程序尝试转到托管起始页（如清单文件的 [SourceLocation](https://docs.microsoft.com/office/dev/add-ins/reference/manifest/sourcelocation) 元素中所指定的）的域之外的域中的 URL，则该 URL 将在 Office 主机应用程序的外接程序窗格外的新浏览器窗口中打开。
+在 Office Online 中运行时，可以将任务窗格导航到任何 URL。 但在桌面平台中，如果外接程序尝试转到托管起始页（如清单文件的 [SourceLocation](/office/dev/add-ins/reference/manifest/sourcelocation) 元素中所指定的）的域之外的域中的 URL，则该 URL 将在 Office 主机应用程序的外接程序窗格外的新浏览器窗口中打开。
 
-若要重写此（桌面版 Office）操作，请在清单文件的 [AppDomains](https://docs.microsoft.com/office/dev/add-ins/reference/manifest/appdomains) 元素中指定的域列表中指定要在外接程序窗口中打开的每个域。 如果外接程序尝试转至该列表的域中的 URL，则它将在桌面版 Office 和 Office Online 中的任务窗口中打开。 如果它尝试转至列表之外的域中的 URL，则在桌面版 Office 中，该 URL 将在新的浏览器窗口中（外接程序窗格之外）打开。
+若要重写此（桌面版 Office）操作，请在清单文件的 [AppDomains](/office/dev/add-ins/reference/manifest/appdomains) 元素中指定的域列表中指定要在外接程序窗口中打开的每个域。 如果外接程序尝试转至该列表的域中的 URL，则它将在桌面版 Office 和 Office Online 中的任务窗口中打开。 如果它尝试转至列表之外的域中的 URL，则在桌面版 Office 中，该 URL 将在新的浏览器窗口中（外接程序窗格之外）打开。
 
 > [!NOTE]
 > 此操作仅适用于外接程序的根窗格。 如果外接程序页面中嵌入有 iframe，则可以将该 iframe 定向到任何 URL，不论它是否列在 **AppDomains** 中，即使在桌面版 Office 中也是如此。
 
-以下 XML 清单示例在 **SourceLocation** 元素中指定的 `https://www.contoso.com` 域中托管其外接程序页面。 它还指定 **AppDomains** 元素列表内 [AppDomain](https://docs.microsoft.com/office/dev/add-ins/reference/manifest/appdomain) 元素中的 `https://www.northwindtraders.com` 域。 如果外接程序转至 www.northwindtraders.com 域中的页面，则该页面将在外接程序窗格中打开，即使在 Office 桌面版中也是如此。
+以下 XML 清单示例在 **SourceLocation** 元素中指定的 `https://www.contoso.com` 域中托管其外接程序页面。 它还指定 **AppDomains** 元素列表内 [AppDomain](/office/dev/add-ins/reference/manifest/appdomain) 元素中的 `https://www.northwindtraders.com` 域。 如果外接程序转至 www.northwindtraders.com 域中的页面，则该页面将在外接程序窗格中打开，即使在 Office 桌面版中也是如此。
 
 ```XML
 <?xml version="1.0" encoding="UTF-8"?>
@@ -210,7 +210,7 @@ _\*Office 加载项清单架构版本 1.1 中新增_
                 <Label resid="Contoso.Tab1.GroupLabel" />
                 <Icon>
                   <!-- Sample Todo: Each size needs its own icon resource or it will look distorted when resized -->
-                  <!--Icons. Required sizes 16,31,80, optional 20, 24, 40, 48, 64. Strongly recommended to provide all sizes for great UX -->
+                  <!--Icons. Required sizes: 16, 32, 80; optional: 20, 24, 40, 48, 64. You should provide as many sizes as possible for a great user experience. -->
                   <!--Use PNG icons and remember that all URLs on the resources section must use HTTPS -->
                   <bt:Image size="16" resid="Contoso.TaskpaneButton.Icon" />
                   <bt:Image size="32" resid="Contoso.TaskpaneButton.Icon" />

@@ -1,15 +1,15 @@
 ---
 title: Word JavaScript API 概述
 description: ''
-ms.date: 10/09/2018
+ms.date: 03/19/2019
 ms.prod: word
 localization_priority: Priority
-ms.openlocfilehash: 9a884e0e092779cc5959aa9b32ae6a5c4f3c0893
-ms.sourcegitcommit: 33dcf099c6b3d249811580d67ee9b790c0fdccfb
+ms.openlocfilehash: 19e3b7732fb5372228ea1458c57df5e79b08078a
+ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "29742301"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "30870574"
 ---
 # <a name="word-javascript-api-overview"></a>Word JavaScript API 概述
 
@@ -37,7 +37,7 @@ Word JavaScript API 通过 Office.js 进行加载，改变了你与文档和段�
 
 ## <a name="running-word-add-ins"></a>运行 Word 外接程序
 
-若要运行外接程序，请使用 Office.initialize 事件处理程序。若要详细了解如何初始化外接程序，请参阅[了解 API](https://docs.microsoft.com/office/dev/add-ins/develop/understanding-the-javascript-api-for-office)。
+若要运行外接程序，请使用 Office.initialize 事件处理程序。若要详细了解如何初始化外接程序，请参阅[了解 API](/office/dev/add-ins/develop/understanding-the-javascript-api-for-office)。
 
 面向 Word 2016 或更高版本的外接程序通过向 **Word.run()** 方法传递函数来执行。 传递到 **run** 方法的函数必须具有上下文参数。 此[上下文对象](/javascript/api/word/word.requestcontext)不同于从 Office 对象获取的上下文对象，但它同样可以用于与 Word 运行时环境交互。 此上下文对象可提供对 Word JavaScript API 对象模型的访问。 以下示例显示如何使用 **Word.run()** 方法初始化和运行 Word。
 
@@ -137,6 +137,6 @@ Word.run(function (context) {
 
 ## <a name="see-also"></a>另请参阅
 
-* [Word 外接程序概述](https://docs.microsoft.com/office/dev/add-ins/word/word-add-ins-programming-overview)
-* [Office 外接程序平台概述](https://docs.microsoft.com/office/dev/add-ins/overview/office-add-ins)
+* [Word 外接程序概述](/office/dev/add-ins/word/word-add-ins-programming-overview)
+* [Office 外接程序平台概述](/office/dev/add-ins/overview/office-add-ins)
 * [GitHub Word 上的外接程序示例](https://github.com/OfficeDev?utf8=%E2%9C%93&q=Word)

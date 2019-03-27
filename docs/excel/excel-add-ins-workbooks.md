@@ -3,12 +3,12 @@ title: 使用 Excel JavaScript API 处理工作簿
 description: ''
 ms.date: 02/28/2019
 localization_priority: Priority
-ms.openlocfilehash: eb647fe7f82dc669f071de53f6bac705e303c652
-ms.sourcegitcommit: f7f3d38ae4430e2218bf0abe7bb2976108de3579
+ms.openlocfilehash: 4ced2fe36e4429b3dc0836f18ef0bdc7a823b3bf
+ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "30359266"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "30870308"
 ---
 # <a name="work-with-workbooks-using-the-excel-javascript-api"></a>使用 Excel JavaScript API 处理工作簿
 
@@ -75,7 +75,7 @@ reader.readAsDataURL(myFile.files[0]);
 ### <a name="insert-a-copy-of-an-existing-workbook-into-the-current-one"></a>将现有工作簿副本插入到当前工作簿中
 
 > [!NOTE]
-> `WorksheetCollection.addFromBase64` 函数当前仅适用于公共预览版。 [!INCLUDE [Information about using preview APIs](../includes/using-preview-apis.md)]
+> `WorksheetCollection.addFromBase64` 函数当前仅适用于公共预览版。 [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
 
 上一示例显示从现有工作簿创建的新工作簿。 此外，还可以将所有或部分现有工作簿复制到当前与加载项关联的工作簿中。 工作簿的 [WorksheetCollection](/javascript/api/excel/excel.worksheetcollection) 可通过 `addFromBase64` 方法将目标工作簿的工作表副本插入到其本身。 其他工作簿文件将作为 base64 编码字符串传递，如 `Excel.createWorkbook` 调用一样。
 
@@ -265,7 +265,7 @@ context.application.suspendApiCalculationUntilNextSync();
 ## <a name="save-the-workbook"></a>保存工作簿
 
 > [!NOTE]
-> `Workbook.save(saveBehavior)` 函数当前仅适用于公共预览版。 [!INCLUDE [Information about using preview APIs](../includes/using-preview-apis.md)]
+> `Workbook.save(saveBehavior)` 函数当前仅适用于公共预览版。 [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
 
 `Workbook.save(saveBehavior)` 会将工作簿保存到持久存储中。 `save` 方法采用一个简单的可选参数，该参数可为以下值之一：
 
@@ -282,7 +282,7 @@ context.workbook.save(Excel.SaveBehavior.prompt);
 ## <a name="close-the-workbook"></a>关闭工作簿
 
 > [!NOTE]
-> `Workbook.close(closeBehavior)` 函数当前仅适用于公共预览版。 [!INCLUDE [Information about using preview APIs](../includes/using-preview-apis.md)]
+> `Workbook.close(closeBehavior)` 函数当前仅适用于公共预览版。 [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
 
 `Workbook.close(closeBehavior)` 会关闭工作簿，一并关闭与该工作簿关联的加载项（Excel 应用程序仍保持打开状态）。 `close` 方法采用一个简单的可选参数，该参数可为以下值之一：
 

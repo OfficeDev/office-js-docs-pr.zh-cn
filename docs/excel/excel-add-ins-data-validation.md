@@ -1,13 +1,14 @@
 ---
 title: 向特定 Excel 范围添加数据验证
 description: ''
-ms.date: 10/03/2018
-ms.openlocfilehash: e584d80403969ca15527afb69251832a96f3003e
-ms.sourcegitcommit: 979e8d2b0fbc537f9c01527062767c026592aa62
+ms.date: 03/19/2019
+localization_priority: Priority
+ms.openlocfilehash: b0b2d886ceb9026ebe41414fed4ef8be1b59cc95
+ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "25852915"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "30872149"
 ---
 # <a name="add-data-validation-to-excel-ranges"></a>向特定 Excel 范围添加数据验证
 
@@ -19,11 +20,11 @@ Excel JavaScript 库提供的 API 可支持使用外接程序来向表格、列�
 
 ## <a name="programmatic-control-of-data-validation"></a>数据验证的编程控制
 
-`Range.dataValidation` 属性（使用 [DataValidation](https://docs.microsoft.com/javascript/api/excel/excel.datavalidation) 对象）是在 Excel 中对数据验证进行编程控制的切入点。 `DataValidation` 对象有到五个属性：
+`Range.dataValidation` 属性（使用 [DataValidation](/javascript/api/excel/excel.datavalidation) 对象）是在 Excel 中对数据验证进行编程控制的切入点。 `DataValidation` 对象有到五个属性：
 
-- `rule` &#8212; 为相应范围定义构成有效数据的条件。 请参阅 [DataValidationRule](https://docs.microsoft.com/javascript/api/excel/excel.datavalidationrule)。
-- `errorAlert` &#8212; 指定如果用户输入无效数据，是否弹出错误，并定义警报文本、标题和样式，例如，**Informational**、**Warning** 和 **Stop**。 请参阅 [DataValidationErrorAlert](https://docs.microsoft.com/javascript/api/excel/excel.datavalidationerroralert)。
-- `prompt` &#8212; 指定当用户将鼠标悬停在相应范围上时是否显示提示语并定义提示语消息。 请参阅 [DataValidationPrompt](https://docs.microsoft.com/javascript/api/excel/excel.datavalidationprompt)。
+- `rule` &#8212; 为相应范围定义构成有效数据的条件。 请参阅 [DataValidationRule](/javascript/api/excel/excel.datavalidationrule)。
+- `errorAlert` &#8212; 指定如果用户输入无效数据，是否弹出错误，并定义警报文本、标题和样式，例如，**Informational**、**Warning** 和 **Stop**。 请参阅 [DataValidationErrorAlert](/javascript/api/excel/excel.datavalidationerroralert)。
+- `prompt` &#8212; 指定当用户将鼠标悬停在相应范围上时是否显示提示语并定义提示语消息。 请参阅 [DataValidationPrompt](/javascript/api/excel/excel.datavalidationprompt)。
 - `ignoreBlanks` &#8212; 指定数据验证规则是否应用于相应范围内的空白单元格。 默认为 `true`。
 - `type` &#8212; 验证类型的只读标识，例如 WholeNumber、Date、TextLength 等。在设置 `rule` 属性时会间接设置该属性。
 
@@ -32,11 +33,11 @@ Excel JavaScript 库提供的 API 可支持使用外接程序来向表格、列�
 
 ## <a name="creating-validation-rules"></a>创建验证规则
 
-若要为某个范围添加数据验证，你的代码必须在 `Range.dataValidation` 中设置 `DataValidation` 对象的 `rule` 属性。 这会用到 [DataValidationRule](https://docs.microsoft.com/javascript/api/excel/excel.datavalidationrule) 对象，该对象具有七个可选属性。 *任何 `DataValidationRule` 对象中都最多只能有一个上述属性。* 其中包括的属性将决定验证的类型。
+若要为某个范围添加数据验证，你的代码必须在 `Range.dataValidation` 中设置 `DataValidation` 对象的 `rule` 属性。 这会用到 [DataValidationRule](/javascript/api/excel/excel.datavalidationrule) 对象，该对象具有七个可选属性。 *任何 `DataValidationRule` 对象中都最多只能有一个上述属性。* 其中包括的属性将决定验证的类型。
 
 ### <a name="basic-and-datetime-validation-rule-types"></a>基本和日期/时间验证规则类型
 
-前三个 `DataValidationRule` 属性（即验证规则类型）会取 [BasicDataValidation](https://docs.microsoft.com/javascript/api/excel/excel.basicdatavalidation) 对象作为其值。
+前三个 `DataValidationRule` 属性（即验证规则类型）会取 [BasicDataValidation](/javascript/api/excel/excel.basicdatavalidation) 对象作为其值。
 
 - `wholeNumber` &#8212; 除了 `BasicDataValidation` 对象指定的任何其他验证之外，还需要一个整数。
 - `decimal` &#8212; 除了 `BasicDataValidation` 对象指定的任何其他验证之外，还需要一个小数。
@@ -51,7 +52,7 @@ Excel JavaScript 库提供的 API 可支持使用外接程序来向表格、列�
 Excel.run(function (context) {
     var sheet = context.workbook.worksheets.getActiveWorksheet();
     var range = sheet.getRange("B2:C5");
-   
+
     range.dataValidation.rule = {
             wholeNumber: {
                 formula1: 0,
@@ -63,7 +64,7 @@ Excel.run(function (context) {
 })
 ```
 
-如需其他二进制运算符的列表，请参阅 [BasicDataValidation](https://docs.microsoft.com/javascript/api/excel/excel.basicdatavalidation)。 
+如需其他二进制运算符的列表，请参阅 [BasicDataValidation](/javascript/api/excel/excel.basicdatavalidation)。 
 
 此外，还有两个三元运算符：“Between”和“NotBetween”。 若要使用这些运算符，则必须指定可选的 `formula2` 属性。 `formula1` 和 `formula2` 值为边界操作数。 用户试图在单元格中输入的值是第三个（被评估）操作数。 以下是使用“Between”运算符的示例：
 
@@ -71,7 +72,7 @@ Excel.run(function (context) {
 Excel.run(function (context) {
     var sheet = context.workbook.worksheets.getActiveWorksheet();
     var range = sheet.getRange("B2:C5");
-   
+
     range.dataValidation.rule = {
             decimal: {
                 formula1: 0,
@@ -84,7 +85,7 @@ Excel.run(function (context) {
 })
 ```
 
-接下来的两个规则属性均取 [DateTimeDataValidation](https://docs.microsoft.com/javascript/api/excel/excel.datetimedatavalidation) 对象作为其值。
+接下来的两个规则属性均取 [DateTimeDataValidation](/javascript/api/excel/excel.datetimedatavalidation) 对象作为其值。
 
 - `date`
 - `time`
@@ -95,7 +96,7 @@ Excel.run(function (context) {
 Excel.run(function (context) {
     var sheet = context.workbook.worksheets.getActiveWorksheet();
     var range = sheet.getRange("B2:C5");
-   
+
     range.dataValidation.rule = {
             date: {
                 formula1: "2018-04-01",
@@ -144,7 +145,7 @@ Excel.run(function (context) {
 ```js
 Excel.run(function (context) {
     var sheet = context.workbook.worksheets.getActiveWorksheet();
-    var range = sheet.getRange("B2:C5");   
+    var range = sheet.getRange("B2:C5");
     var commentsRange = sheet.tables.getItem("AthletesTable").columns.getItem("Comments").getDataBodyRange();
 
     commentsRange.dataValidation.rule = {
@@ -164,26 +165,25 @@ Excel.run(function (context) {
 - `style` 属性决定用户是会收到信息警报、警告还是“停止”警报。 实际上，只有 `Stop` 会阻止用户添加无效数据。 `Warning` 和 `Information` 弹出窗口都具有允许用户输入无效数据的选项。
 - `showAlert` 属性默认为 `true`。 这意味着除非创建自定义警报，在其中将 `showAlert` 设置为 `false` 或者设置自定义消息、标题和样式，否则 Excel 主机将会弹出（类型 `Stop` 的）一般性警报。 以下代码设置了自定义消息和标题。
 
-
 ```js
 Excel.run(function (context) {
     var sheet = context.workbook.worksheets.getActiveWorksheet();
     var range = sheet.getRange("B2:C5");
-   
+
     range.dataValidation.errorAlert = {
             message: "Sorry, only positive whole numbers are allowed",
             showAlert: true, // default is 'true'
             style: "Stop", // other possible values: Warning, Information
             title: "Negative or Decimal Number Entered"
         };
-    
+
     // Set range.dataValidation.rule and optionally .prompt here.
 
     return context.sync();
 })
 ```
 
-有关详细信息，请参阅 [DataValidationErrorAlert](https://docs.microsoft.com/javascript/api/excel/excel.datavalidationerroralert)。
+有关详细信息，请参阅 [DataValidationErrorAlert](/javascript/api/excel/excel.datavalidationerroralert)。
 
 ## <a name="create-validation-prompts"></a>创建验证提示语
 
@@ -193,24 +193,24 @@ Excel.run(function (context) {
 Excel.run(function (context) {
     var sheet = context.workbook.worksheets.getActiveWorksheet();
     var range = sheet.getRange("B2:C5");
-   
+
     range.dataValidation.prompt = {
             message: "Please enter a positive whole number.",
             showPrompt: true, // default is 'false'
             title: "Positive Whole Numbers Only."
         };
-    
+
     // Set range.dataValidation.rule and optionally .errorAlert here.
 
     return context.sync();
 })
 ```
 
-有关详细信息，请参阅 [DataValidationPrompt](https://docs.microsoft.com/javascript/api/excel/excel.datavalidationprompt)。
+有关详细信息，请参阅 [DataValidationPrompt](/javascript/api/excel/excel.datavalidationprompt)。
 
 ## <a name="remove-data-validation-from-a-range"></a>从某个范围删除数据验证
 
-若要从某个范围删除数据验证，请调用 [Range.dataValidation.clear()](https://docs.microsoft.com/javascript/api/excel/excel.datavalidation#clear--) 方法。
+若要从某个范围删除数据验证，请调用 [Range.dataValidation.clear()](/javascript/api/excel/excel.datavalidation#clear--) 方法。
 
 ```js
 myrange.dataValidation.clear()
@@ -224,9 +224,5 @@ myrange.dataValidation.clear()
 ## <a name="see-also"></a>另请参阅
 
 - [Excel JavaScript API 基本编程概念](excel-add-ins-core-concepts.md)
-- [DataValidation 对象（适用于 Excel 的 JavaScript API）](https://docs.microsoft.com/javascript/api/excel/excel.datavalidation)
-- [Range 对象（适用于 Excel 的 JavaScript API）](https://docs.microsoft.com/javascript/api/excel/excel.range)
-
-
-
- 
+- [DataValidation 对象（适用于 Excel 的 JavaScript API）](/javascript/api/excel/excel.datavalidation)
+- [Range 对象（适用于 Excel 的 JavaScript API）](/javascript/api/excel/excel.range)

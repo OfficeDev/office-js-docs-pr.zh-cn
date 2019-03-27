@@ -1,14 +1,14 @@
 ---
 title: 从内容传送网络 (CDN) 引用适用于 Office 的 JavaScript API 库
 description: ''
-ms.date: 01/23/2018
+ms.date: 03/19/2019
 localization_priority: Priority
-ms.openlocfilehash: 1d19121c5f641b509c1e32d74b20f7095abe7d8d
-ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
+ms.openlocfilehash: 4993a6a36004ced94ad37487f8e63d6b9f3f3f48
+ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "29388022"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "30871589"
 ---
 # <a name="referencing-the-javascript-api-for-office-library-from-its-content-delivery-network-cdn"></a>从内容传送网络 (CDN) 引用适用于 Office 的 JavaScript API 库
 
@@ -19,7 +19,7 @@ ms.locfileid: "29388022"
 > npm install --save-dev @types/office-js
 > ```
 
-[适用于 Office 的 JavaScript API](https://docs.microsoft.com/office/dev/add-ins/reference/javascript-api-for-office) 库包含 Office.js 文件和关联的主机应用专用 .js 文件（如 Excel-15.js 和 Outlook-15.js）。 
+[适用于 Office 的 JavaScript API](/office/dev/add-ins/reference/javascript-api-for-office) 库包含 Office.js 文件和关联的主机应用专用 .js 文件（如 Excel-15.js 和 Outlook-15.js）。 
 
 
 引用 API 的最简单方法是，通过向页面的 `<head>` 标记添加以下 `<script>` 来使用我们的 CDN：  
@@ -33,10 +33,9 @@ ms.locfileid: "29388022"
 如果计划从 AppSource 发布 Office 加载项，必须使用此 CDN 引用。本地引用仅适用于内部、开发和调试应用场景。
 
 > [!IMPORTANT]
->  开发任何 Office 主机应用的加载项时，请从页面的 `<head>` 部分引用适用于 Office 的 JavaScript API。这样可确保 API 先于所有正文元素完全初始化。Office 主机要求，加载项必须在激活后的 5 秒内初始化。如果加载项未在此阈值内激活，则会被声明为无响应，并且用户会看到错误消息。       
+> 开发任何 Office 主机应用的加载项时，请从页面的 `<head>` 部分引用适用于 Office 的 JavaScript API。这样可确保 API 先于所有正文元素完全初始化。Office 主机要求，加载项必须在激活后的 5 秒内初始化。如果加载项未在此阈值内激活，则会被声明为无响应，并且用户会看到错误消息。
 
 ## <a name="see-also"></a>另请参阅
 
-- [了解适用于 Office 的 JavaScript API](understanding-the-javascript-api-for-office.md)    
-- [适用于 Office 的 JavaScript API](https://docs.microsoft.com/office/dev/add-ins/reference/javascript-api-for-office)
-    
+- [了解适用于 Office 的 JavaScript API](understanding-the-javascript-api-for-office.md)
+- [适用于 Office 的 JavaScript API](/office/dev/add-ins/reference/javascript-api-for-office)

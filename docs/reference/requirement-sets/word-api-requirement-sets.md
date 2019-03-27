@@ -1,19 +1,19 @@
 ---
 title: Word JavaScript API 要求集
 description: ''
-ms.date: 11/14/2018
+ms.date: 03/19/2019
 ms.prod: word
 localization_priority: Priority
-ms.openlocfilehash: ec33a55c20fbc1b7b2cb0603034bd74f54b0b4b2
-ms.sourcegitcommit: 33dcf099c6b3d249811580d67ee9b790c0fdccfb
+ms.openlocfilehash: 21bd99dda479c0c2181f546303e79e50f33ded00
+ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "29742455"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "30870798"
 ---
 # <a name="word-javascript-api-requirement-sets"></a>Word JavaScript API 要求集
 
-要求集是指各组已命名的 API 成员。Office 加载项使用清单中指定的要求集或执行运行时检查，以确定 Office 主机是否支持加载项所需的 API。有关详细信息，请参阅 [Office 版本和要求集](https://docs.microsoft.com/office/dev/add-ins/develop/office-versions-and-requirement-sets)。
+要求集是指各组已命名的 API 成员。Office 加载项使用清单中指定的要求集或执行运行时检查，以确定 Office 主机是否支持加载项所需的 API。有关详细信息，请参阅 [Office 版本和要求集](/office/dev/add-ins/develop/office-versions-and-requirement-sets)。
 
 Word 外接程序可在多个 Office 版本中运行，包括 Office 2016 for Windows 或更高版本、Office for iPad、Office for Mac 和 Office Online。 下表列出了 Word 要求集、支持该要求集的 Office 主机应用程序，以及这些应用程序的内部版本或版本号。
 
@@ -36,7 +36,7 @@ Word 外接程序可在多个 Office 版本中运行，包括 Office 2016 for Wi
 - [更新频道发布的 Office 365 客户端版本号和内部版本号](https://support.office.com/article/version-and-build-numbers-of-update-channel-releases-ae942449-1fca-4484-898b-a933ea23def7)
 - [使用的是哪一版 Office？](https://support.office.com/article/What-version-of-Office-am-I-using-932788b8-a3ce-44bf-bb09-e334518b8b19)
 - [在哪里可以找到 Office 365 客户端应用程序的版本号和内部版本号](https://support.office.com/article/version-and-build-numbers-of-update-channel-releases-ae942449-1fca-4484-898b-a933ea23def7)
-- [Office Online Server 概述](https://docs.microsoft.com/officeonlineserver/office-online-server-overview)
+- [Office Online Server 概述](/officeonlineserver/office-online-server-overview)
 
 ## <a name="office-common-api-requirement-sets"></a>Office 通用 API 要求集
 
@@ -292,10 +292,10 @@ Word 外接程序可在多个 Office 版本中运行，包括 Office 2016 for Wi
 
 ## <a name="word-javascript-api-11"></a>Word JavaScript API 1.1
 
-Word JavaScript API 1.1 是首版 API。有关 API 的详细信息，请参阅 [Word JavaScript API](/javascript/api/word) 参考主题。 
+Word JavaScript API 1.1 是首版 API。 有关 API 的详细信息，请参阅 [Word JavaScript API](/javascript/api/word) 参考主题。 
 
 ## <a name="see-also"></a>另请参阅
 
-- [Office 版本和要求集](https://docs.microsoft.com/office/dev/add-ins/develop/office-versions-and-requirement-sets)
-- [指定 Office 主机和 API 要求](https://docs.microsoft.com/office/dev/add-ins/develop/specify-office-hosts-and-api-requirements)
-- [Office 外接程序 XML 清单](https://docs.microsoft.com/office/dev/add-ins/develop/add-in-manifests)
+- [Office 版本和要求集](/office/dev/add-ins/develop/office-versions-and-requirement-sets)
+- [指定 Office 主机和 API 要求](/office/dev/add-ins/develop/specify-office-hosts-and-api-requirements)
+- [Office 外接程序 XML 清单](/office/dev/add-ins/develop/add-in-manifests)

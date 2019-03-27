@@ -1,14 +1,14 @@
 ---
 title: 在 iPad 和 Mac 上旁加载 Office 加载项以供测试
 description: ''
-ms.date: 02/25/2019
+ms.date: 03/19/2019
 localization_priority: Priority
-ms.openlocfilehash: dc0fad24d7f4f062fb0115edcc58a37d8d9052da
-ms.sourcegitcommit: f7f3d38ae4430e2218bf0abe7bb2976108de3579
+ms.openlocfilehash: e2f9ee912395e0f54130f0e78109cab4479b6567
+ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "30359252"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "30871974"
 ---
 # <a name="sideload-office-add-ins-on-ipad-and-mac-for-testing"></a>在 iPad 和 Mac 上旁加载 Office 加载项以供测试
 
@@ -60,7 +60,7 @@ ms.locfileid: "30359252"
 ## <a name="sideload-an-add-in-on-office-for-mac"></a>在 Office for Mac 上旁加载加载项
 
 > [!NOTE]
-> 若要旁加载 Outlook for Mac 加载项，请参阅[旁加载 Outlook 加载项以供测试](https://docs.microsoft.com/outlook/add-ins/sideload-outlook-add-ins-for-testing)。
+> 若要旁加载 Outlook for Mac 加载项，请参阅[旁加载 Outlook 加载项以供测试](/outlook/add-ins/sideload-outlook-add-ins-for-testing)。
 
 1. 打开“**终端**”并转到以下文件夹之一，你将在其中保存外接程序的清单文件。如果 `wef` 文件夹在你的计算机上不存在，请创建它。
     

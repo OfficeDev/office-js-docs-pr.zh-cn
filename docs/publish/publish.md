@@ -1,14 +1,14 @@
 ---
 title: 部署和发布 Office 加载项 | Microsoft Docs
 description: 部署 Office 加载项以进行测试或分发给用户的方法和选项。
-ms.date: 01/23/2018
+ms.date: 03/19/2019
 localization_priority: Priority
-ms.openlocfilehash: 0a99218a3eed3143f70ace6e63f5a01b952a5623
-ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
+ms.openlocfilehash: eeaf4b61948952ff7e536f3e1a6b38dc46adb93e
+ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "29388764"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "30871701"
 ---
 # <a name="deploy-and-publish-your-office-add-in"></a>部署和发布 Office 加载项
 
@@ -19,12 +19,12 @@ ms.locfileid: "29388764"
 |[旁加载](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)|在开发过程中测试在 Windows、Office Online、iPad 或 Mac 上运行的加载项。|
 |[集中部署](centralized-deployment.md)|在云或混合部署中，使用 Office 365 管理中心将加载项分发给组织中的用户。|
 |[SharePoint 目录](publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md)|在本地环境中，用于向组织用户分发加载项。|
-|[AppSource](https://docs.microsoft.com/office/dev/store/submit-to-the-office-store)|用于向用户公开分发加载项。|
+|[AppSource](/office/dev/store/submit-to-the-office-store)|用于向用户公开分发加载项。|
 |[Exchange 服务器](#outlook-add-in-deployment)|在本地或在线环境中，用于向用户分发 Outlook 加载项。|
 |[网络共享](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)|在网络上的 Windows 计算机中（要在其中托管加载项），转到要用作共享文件夹目录的文件夹的父文件夹或驱动器号。|
 
 > [!NOTE]
-> 如果计划将加载项[发布](../publish/publish.md)到 AppSource 并适用于 Office 体验，请务必遵循 [AppSource 验证策略](https://docs.microsoft.com/office/dev/store/validation-policies)。例如，加载项必须适用于支持已定义方法的所有平台，才能通过验证（有关详细信息，请参阅[第 4.12 部分](https://docs.microsoft.com/office/dev/store/validation-policies#4-apps-and-add-ins-behave-predictably)以及 [Office 加载项主机和可用性](../overview/office-add-in-availability.md)页面）。
+> 如果计划将加载项[发布](../publish/publish.md)到 AppSource 并适用于 Office 体验，请务必遵循 [AppSource 验证策略](/office/dev/store/validation-policies)。例如，加载项必须适用于支持已定义方法的所有平台，才能通过验证（有关详细信息，请参阅[第 4.12 部分](/office/dev/store/validation-policies#4-apps-and-add-ins-behave-predictably)以及 [Office 加载项主机和可用性](../overview/office-add-in-availability.md)页面）。
 
 ## <a name="deployment-options-by-office-host"></a>Office 主机提供的部署选项
 
@@ -66,11 +66,11 @@ SharePoint 加载项目录是特殊网站集，创建后可用于托管 Word、E
 如果要在本地环境中部署外接程序，请使用 SharePoint 目录。有关详细信息，请参阅[将任务窗格和内容外接程序发布到 SharePoint 目录](publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md)。
 
 > [!NOTE]
-> SharePoint 目录不支持 Office for Mac。 若要向 Mac 客户端部署 Office 加载项，必须将其提交到 [AppSource](https://docs.microsoft.com/office/dev/store/submit-to-the-office-store)。 
+> SharePoint 目录不支持 Office for Mac。 若要向 Mac 客户端部署 Office 加载项，必须将其提交到 [AppSource](/office/dev/store/submit-to-the-office-store)。
 
 ### <a name="outlook-add-in-deployment"></a>Outlook 加载项部署
 
-对于不使用 Azure AD 标识服务的本地和联机环境，可以通过 Exchange 服务器部署 Outlook 外接程序。 
+对于不使用 Azure AD 标识服务的本地和联机环境，可以通过 Exchange 服务器部署 Outlook 外接程序。
 
 Outlook 外接程序部署需要以下内容：
 
@@ -84,7 +84,7 @@ Outlook 外接程序部署需要以下内容：
 - [旁加载 Outlook 加载项以供测试](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)
 - [提交到 AppSource][AppSource]
 - [Office 加载项的设计准则](../design/add-in-design.md)
-- [创建有效的 AppSource 一览](https://docs.microsoft.com/office/dev/store/create-effective-office-store-listings)
+- [创建有效的 AppSource 一览](/office/dev/store/create-effective-office-store-listings)
 - [排查 Office 加载项中的用户错误](../testing/testing-and-troubleshooting.md)
 
 [AppSource]: https://docs.microsoft.com/office/dev/store/submit-to-the-office-store

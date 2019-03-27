@@ -1,14 +1,14 @@
 ---
 title: 在 iPad 和 Mac 上调试 Office 外接程序
 description: ''
-ms.date: 02/01/2019
+ms.date: 03/19/2019
 localization_priority: Priority
-ms.openlocfilehash: b283cf14563345834e7076cdd4de4f15a26692b6
-ms.sourcegitcommit: 33dcf099c6b3d249811580d67ee9b790c0fdccfb
+ms.openlocfilehash: 5bf626c4c18bcedccd331570b6b892a8c6a903fd
+ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "29742329"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "30870399"
 ---
 # <a name="debug-office-add-ins-on-ipad-and-mac"></a>在 iPad 和 Mac 上调试 Office 外接程序
 
@@ -95,7 +95,7 @@ ms.locfileid: "29742329"
 
 3.  打开浏览器窗口，并转到 `https://localhost:1337`（即 Vorlon.JS 界面）。
 
-4. 旁加载外接程序。 如果是 Excel、PowerPoint 或 Word 加载项，请按照[在 iPad 和 Mac 上旁加载 Office 加载项](sideload-an-office-add-in-on-ipad-and-mac.md)中的说明操作，执行旁加载。 如果是 Outlook 加载项，请按照[旁加载 Outlook 加载项以供测试](https://docs.microsoft.com/outlook/add-ins/sideload-outlook-add-ins-for-testing)中的说明操作，执行旁加载。 如果加载项不使用加载项命令，它会立即打开。 否则，请选择用于打开加载项的按钮。 按钮位于“**主页**”选项卡或“**外接程序**”选项卡上，具体取决于 Office 主机应用程序版本。
+4. 旁加载外接程序。 如果是 Excel、PowerPoint 或 Word 加载项，请按照[在 iPad 和 Mac 上旁加载 Office 加载项](sideload-an-office-add-in-on-ipad-and-mac.md)中的说明操作，执行旁加载。 如果是 Outlook 加载项，请按照[旁加载 Outlook 加载项以供测试](/outlook/add-ins/sideload-outlook-add-ins-for-testing)中的说明操作，执行旁加载。 如果加载项不使用加载项命令，它会立即打开。 否则，请选择用于打开加载项的按钮。 按钮位于“**主页**”选项卡或“**外接程序**”选项卡上，具体取决于 Office 主机应用程序版本。
 
 外接程序将在 Vorlon.JS（在 Vorlon.JS 界面左侧）的客户端列表中显示为 **{OS} - n**，*n* 代表数字，而 *{OS}* 表示设备类型，例如“Macintosh”。
 

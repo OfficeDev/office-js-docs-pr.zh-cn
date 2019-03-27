@@ -1,14 +1,14 @@
 ---
 title: Excel、Word 和 PowerPoint 加载项命令
 description: ''
-ms.date: 01/23/2018
+ms.date: 03/19/2019
 localization_priority: Priority
-ms.openlocfilehash: f375a7f59a6918e812fb03b46c55bf964e62419d
-ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
+ms.openlocfilehash: e255e6e517f6292b7e7cb7df7b59476b21306911
+ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "29388407"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "30872247"
 ---
 # <a name="add-in-commands-for-excel-word-and-powerpoint"></a>Excel、Word 和 PowerPoint 加载项命令
 
@@ -17,7 +17,7 @@ ms.locfileid: "29388407"
 有关此功能的概述，请观看视频 [Office 功能区中的加载项命令](https://channel9.msdn.com/events/Build/2016/P551)。
 
 > [!NOTE]
-> SharePoint 目录不支持加载项命令。可以通过[集中部署](../publish/centralized-deployment.md)或 [AppSource](https://docs.microsoft.com/office/dev/store/submit-to-the-office-store) 部署加载项命令，也可以使用[旁加载](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)部署加载项命令以供测试。 
+> SharePoint 目录不支持加载项命令。可以通过[集中部署](../publish/centralized-deployment.md)或 [AppSource](/office/dev/store/submit-to-the-office-store) 部署加载项命令，也可以使用[旁加载](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)部署加载项命令以供测试。 
 
 *图 1：在 Excel Desktop 中运行命令的加载项*
 
@@ -28,6 +28,7 @@ ms.locfileid: "29388407"
 ![Excel Online 中的加载项命令屏幕截图](../images/add-in-commands-2.png)
 
 ## <a name="command-capabilities"></a>命令功能
+
 目前支持下列命令功能。
 
 > [!NOTE]
@@ -46,7 +47,7 @@ ms.locfileid: "29388407"
 **操作**
 
 - ShowTaskpane - 显示一个或多个在其中加载自定义 HTML 页的窗格。
-- ExecuteFunction - 加载一个不可见的 HTML 页，然后在其中执行一个 JavaScript 函数。若要在你的函数（例如错误、进度或其他输入）中显示 UI，你可以使用 [displayDialog](https://docs.microsoft.com/javascript/api/office/office.ui) API。  
+- ExecuteFunction - 加载一个不可见的 HTML 页，然后在其中执行一个 JavaScript 函数。若要在你的函数（例如错误、进度或其他输入）中显示 UI，你可以使用 [displayDialog](/javascript/api/office/office.ui) API。  
 
 ## <a name="supported-platforms"></a>支持的平台
 
@@ -67,12 +68,12 @@ ms.locfileid: "29388407"
 - 关于命令在 Office 功能区中的位置：
     - 将命令放置在现有的选项卡（插入、审阅等）上，如果提供的功能适合那个位置。例如，如果外接程序允许用户插入媒体，则将组添加到“插入”选项卡。请注意，并非所有选项卡都在所有的 Office 版本之间可用。有关详细信息，请参阅 [Office 外接程序 XML 清单](../develop/add-in-manifests.md)。 
     - 如果功能不适合其他选项卡，并且你拥有少于 6 个的顶级命令，将命令放置在“开始”选项卡上。如果外接程序需要跨 Office 版本（如 Office Desktop 和 Office Online）运行，并且某个选项卡并非在所有版本中（例如，“设计”选项卡不存在于 Office Online 中）都提供，你也可以将命令添加到“开始”选项卡。  
-    - 如果你拥有 6 个以上的顶级命令命令，将命令放置在自定义选项卡上。 
+    - 如果你拥有 6 个以上的顶级命令命令，将命令放置在自定义选项卡上。
     - 对组进行命名以与外接程序的名称相匹配。如果你拥有多个组，则基于对应组中的命令提供的功能为每个组命名。
     - 请勿添加不必要的按钮，这样会增加加载项占用的空间。
 
      > [!NOTE]
-     > 占用过多空间的加载项可能无法通过 [AppSource 验证](https://docs.microsoft.com/office/dev/store/validation-policies)。
+     > 占用过多空间的加载项可能无法通过 [AppSource 验证](/office/dev/store/validation-policies)。
 
 - 对于所有图标，请遵循[图标设计准则](add-in-icons.md)。
 - 提供也可以在不支持命令的主机上运行的加载项的版本。 单个加载项清单可以在命令感知（带有命令）和非命令感知（作为任务窗格）的主机中工作。
@@ -86,4 +87,4 @@ ms.locfileid: "29388407"
 
 加载项命令的最佳入门方式是参照 GitHub 上的 [Office 加载项命令示例](https://github.com/OfficeDev/Office-Add-in-Commands-Samples/)。
 
-若要详细了解如何在清单中指定加载项命令，请参阅[在清单中创建加载项命令](../develop/create-addin-commands.md)和 [VersionOverrides](https://docs.microsoft.com/office/dev/add-ins/reference/manifest/versionoverrides) 参考内容。
+若要详细了解如何在清单中指定加载项命令，请参阅[在清单中创建加载项命令](../develop/create-addin-commands.md)和 [VersionOverrides](/office/dev/add-ins/reference/manifest/versionoverrides) 参考内容。

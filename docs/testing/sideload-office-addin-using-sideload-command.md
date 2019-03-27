@@ -1,14 +1,14 @@
 ---
 title: 使用旁加载命令旁加载 Office 加载项
 description: ''
-ms.date: 07/24/2018
+ms.date: 03/19/201907/24/2018
 localization_priority: Priority
-ms.openlocfilehash: 2231e05d798dce4f4b5428627a3653ddcdecfc65
-ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
+ms.openlocfilehash: dfa231374133ad857554afaf343362f1415788f4
+ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "29387672"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "30870112"
 ---
 # <a name="sideload-office-add-ins-for-testing-using-the-sideload-command"></a>使用**旁加载命令**旁加载 Office 加载项以供测试
  >[!NOTE]
@@ -18,7 +18,7 @@ ms.locfileid: "29387672"
 > 
 > - [在 Office Online 中旁加载 Office 外接程序进行测试](sideload-office-add-ins-for-testing.md)
 > - [在 iPad 和 Mac 上旁加载 Office 外接程序进行测试](sideload-an-office-add-in-on-ipad-and-mac.md)
-> - [旁加载 Outlook 加载项以供测试](https://docs.microsoft.com/outlook/add-ins/sideload-outlook-add-ins-for-testing)
+> - [旁加载 Outlook 加载项以供测试](/outlook/add-ins/sideload-outlook-add-ins-for-testing)
 
 1. 以管理员身份打开命令提示符。
 

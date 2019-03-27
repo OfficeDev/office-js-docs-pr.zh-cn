@@ -1,14 +1,14 @@
 ---
 title: Excel JavaScript API 性能优化
 description: 使用 Excel JavaScript API 优化性能
-ms.date: 02/20/2019
+ms.date: 03/19/2019
 localization_priority: Priority
-ms.openlocfilehash: d15a4b3ad4ae44399572282889855b1cdc32bc39
-ms.sourcegitcommit: 8e20e7663be2aaa0f7a5436a965324d171bc667d
+ms.openlocfilehash: f48b62b47c4000b128043fe2e01f949af7179e73
+ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/28/2019
-ms.locfileid: "30199576"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "30872135"
 ---
 # <a name="performance-optimization-using-the-excel-javascript-api"></a>使用 Excel JavaScript API 优化性能
 
@@ -53,15 +53,15 @@ worksheet.getRange("A1").set({
 在 Excel JavaScript API 中，需要显式加载代理对象的属性。 虽然可以使用空的 ```load()``` 调用一次性加载所有属性，但这种方法可能会产生大量的性能开销。 我们转为建议只加载必要的属性，特别是对于那些具有大量属性的对象。
 
 例如，如果你只想读取区域对象的 **address** 属性，则在调用 **load()** 方法时仅指定该属性：
- 
+
 ```js
 range.load('address');
 ```
- 
+
 可以通过以下任意方式调用 **load()** 方法：
- 
+
 _语法：_
- 
+
 ```js
 object.load(string: properties);
 // or
@@ -69,11 +69,11 @@ object.load(array: properties);
 // or
 object.load({ loadOption });
 ```
- 
+
 _其中：_
- 
-* `properties` 列出了要加载的属性，指定为逗号分隔的字符串或名称数组。 有关详细信息，请参阅 [Excel JavaScript API 参考](https://docs.microsoft.com/office/dev/add-ins/reference/overview/excel-add-ins-reference-overview)中为对象定义的 **load()** 方法。
-* `loadOption` 指定的对象描述了选择、展开、置顶和跳过选项。有关详细信息，请参阅对象加载[选项](https://docs.microsoft.com/javascript/api/office/officeextension.loadoption)。
+
+* `properties` 列出了要加载的属性，指定为逗号分隔的字符串或名称数组。 有关详细信息，请参阅 [Excel JavaScript API 参考](/office/dev/add-ins/reference/overview/excel-add-ins-reference-overview)中为对象定义的 **load()** 方法。
+* `loadOption` 指定的对象描述了选择、展开、置顶和跳过选项。有关详细信息，请参阅对象加载[选项](/javascript/api/office/officeextension.loadoption)。
 
 请注意，一个对象下的某些“属性”可能与另一个对象同名。 例如，`format` 是区域对象下的一个属性，但 `format` 本身也是一个对象。 因此，如果发出 `range.load("format")` 之类的调用，这就相当于 `range.format.load()`，后者是一个空 load() 调用，它可能会导致前面所述的性能问题。 若要避免这种情况，代码应仅加载对象树中的“叶节点”。 
 
@@ -85,7 +85,7 @@ Excel 中的多个后台任务将反应来自用户和外接程序的输入。 �
 
 如果你试图在大量单元格上执行操作（例如，设置一个大范围对象的值），而且不介意在操作完成时暂停 Excel 中的计算，建议暂停计算，直到调用下一个 `context.sync()`。
 
-有关如何使用 `suspendApiCalculationUntilNextSync()` API 以便捷的方式暂停和重新激活计算的信息，请参阅[应用程序对象](https://docs.microsoft.com/javascript/api/excel/excel.application)参考文档。 下面的代码演示了如何暂停计算：
+有关如何使用 `suspendApiCalculationUntilNextSync()` API 以便捷的方式暂停和重新激活计算的信息，请参阅[应用程序对象](/javascript/api/excel/excel.application)参考文档。 下面的代码演示了如何暂停计算：
 
 ```js
 Excel.run(async function(ctx) {
@@ -97,7 +97,7 @@ Excel.run(async function(ctx) {
     await ctx.sync();
     // Calculation mode should be "Automatic" by default
     console.log(app.calculationMode);
-    
+
     rangeToSet = sheet.getRange("A1:C1");
     rangeToSet.values = [[1, 2, "=SUM(A1:B1)"]];
     rangeToGet = sheet.getRange("A1:C1");
@@ -129,7 +129,7 @@ Excel.run(async function(ctx) {
 ### <a name="suspend-screen-updating"></a>暂停屏幕更新
 
 > [!NOTE]
-> 本文中所述的 `suspendScreenUpdatingUntilNextSync` 方法当前仅适用于公共预览版。 [!INCLUDE [Information about using preview APIs](../includes/using-preview-apis.md)]
+> 本文中所述的 `suspendScreenUpdatingUntilNextSync` 方法当前仅适用于公共预览版。 [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
 
 Excel 大约会在代码发生更改时显示外接程序所进行的这些更改。 对于大型迭代数据集，你无需实时在屏幕上查看此进度。 在外接程序调用 `context.sync()` 或者在 `Excel.run` 结束（隐式调用 `context.sync`）之前，`Application.suspendScreenUpdatingUntilNextSync()` 将暂停对 Excel 的可视化更新。 请注意，在下次同步之前，Excel 不会显示任何活动迹象。你的外接程序应为用户提供相关指南，以便为此延迟做好准备，或者提供一个状态栏，以演示相关活动。
 
@@ -150,7 +150,7 @@ Excel 大约会在代码发生更改时显示外接程序所进行的这些更�
 
 ## <a name="importing-data-into-tables"></a>将数据导入表
 
-当试图将大量数据直接导入到 [Table](https://docs.microsoft.com/javascript/api/excel/excel.table) 对象中时（例如，通过使用 `TableRowCollection.add()`），可能会遇到性能缓慢的问题。 如果尝试添加一个新表，应首先通过设置 `range.values` 来填充数据，然后调用 `worksheet.tables.add()` 在该区域内创建一个表。 如果尝试将数据写入现有表，请通过 `table.getDataBodyRange()` 将数据写入一个 range 对象，表将自动展开。 
+当试图将大量数据直接导入到 [Table](/javascript/api/excel/excel.table) 对象中时（例如，通过使用 `TableRowCollection.add()`），可能会遇到性能缓慢的问题。 如果尝试添加一个新表，应首先通过设置 `range.values` 来填充数据，然后调用 `worksheet.tables.add()` 在该区域内创建一个表。 如果尝试将数据写入现有表，请通过 `table.getDataBodyRange()` 将数据写入一个 range 对象，表将自动展开。 
 
 下面是此方法的一个示例：
 
@@ -215,4 +215,4 @@ Excel.run(async (context) => {
 - [Excel JavaScript API 高级编程概念](excel-add-ins-advanced-concepts.md)
 - [Office 外接程序的资源限制和性能优化](../concepts/resource-limits-and-performance-optimization.md)
 - [Excel JavaScript API 开放性规范](https://github.com/OfficeDev/office-js-docs/tree/ExcelJs_OpenSpec)
-- [工作表函数对象（适用于 Excel 的 JavaScript API）](https://docs.microsoft.com/javascript/api/excel/excel.functions)
+- [工作表函数对象（适用于 Excel 的 JavaScript API）](/javascript/api/excel/excel.functions)

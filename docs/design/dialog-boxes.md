@@ -1,14 +1,14 @@
 ---
 title: Office 加载项中的对话框
 description: ''
-ms.date: 02/28/2019
+ms.date: 03/19/2019
 localization_priority: Priority
-ms.openlocfilehash: 3638006c30515a1fcae93ccfdbd43e0e92005c37
-ms.sourcegitcommit: c5daedf017c6dd5ab0c13607589208c3f3627354
+ms.openlocfilehash: 396fdc6d25dd898d6ace957bef755481fa5b8f13
+ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/20/2019
-ms.locfileid: "30691102"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "30871638"
 ---
 # <a name="dialog-boxes-in-office-add-ins"></a>Office 加载项中的对话框
  
@@ -31,7 +31,5 @@ ms.locfileid: "30691102"
 
 ## <a name="see-also"></a>另请参阅 
 
-- [Dialog 对象](https://docs.microsoft.com/javascript/api/office/office.dialog)
+- [Dialog 对象](/javascript/api/office/office.dialog)
 - [适用于 Office 加载项的 UX 设计模式](../design/ux-design-pattern-templates.md)
-
-

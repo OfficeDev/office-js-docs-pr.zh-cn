@@ -1,14 +1,14 @@
 ---
 title: 使用 Office Open XML 创建更优质的 Word 加载项
 description: ''
-ms.date: 12/17/2018
+ms.date: 03/19/2019
 localization_priority: Priority
-ms.openlocfilehash: ce27c326b5e4ac9dd7e4966f72348d2c4cfbac60
-ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
+ms.openlocfilehash: e13911da0dbdb9fdb0215d433a9559bf1b747eb9
+ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "29387301"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "30872142"
 ---
 # <a name="create-better-add-ins-for-word-with-office-open-xml"></a>使用 Office Open XML 创建更优质的 Word 加载项
 
@@ -103,7 +103,7 @@ Microsoft Office 提供了大量 SmartArt 图表布局（可以使用 Office Ope
 
 ![Word 中的图表。](../images/office15-app-create-wd-app-using-ooxml-fig11.png)
 
-你可以在 Word 文档中插入 Excel 图表作为实时图表，这也意味着你可以在 Word 外接程序中使用这些图表。如上述示例中所示，你可以使用 Office Open XML 强制转换，以插入用户可以插入其自己的文档中的几乎任何类型的内容。获取所需的 Office Open XML 标记有两种简单的方法。将多种格式的内容添加到一个原本空白的 Word 文档中，然后将文件保存为 Word XML 文档格式，或通过 [getSelectedDataAsync](https://docs.microsoft.com/javascript/api/office/office.document#getselecteddataasync-coerciontype--options--callback-) 方法，使用测试外接程序来捕捉标记。两种方法都可以获得几乎相同的结果。
+你可以在 Word 文档中插入 Excel 图表作为实时图表，这也意味着你可以在 Word 外接程序中使用这些图表。如上述示例中所示，你可以使用 Office Open XML 强制转换，以插入用户可以插入其自己的文档中的几乎任何类型的内容。获取所需的 Office Open XML 标记有两种简单的方法。将多种格式的内容添加到一个原本空白的 Word 文档中，然后将文件保存为 Word XML 文档格式，或通过 [getSelectedDataAsync](/javascript/api/office/office.document#getselecteddataasync-coerciontype--options--callback-) 方法，使用测试外接程序来捕捉标记。两种方法都可以获得几乎相同的结果。
 
 
 > [!NOTE]
@@ -114,7 +114,7 @@ Microsoft Office 提供了大量 SmartArt 图表布局（可以使用 Office Ope
 ## <a name="exploring-the-office-open-xml-document-package"></a>探讨 Office Open XML 文档包
 
 
-在使用 [getSelectedDataAsync](https://docs.microsoft.com/javascript/api/office/office.document#getselecteddataasync-coerciontype--options--callback-) 检索选定内容的 Office Open XML 时（或在将文档保存为 Word XML 文档格式时），获取的内容不仅仅是描述选定内容的标记；它是带有您几乎肯定不需要的多个选项和设置的整个文档。事实上，如果对包含任务窗格外接程序的文档使用此方法，则获取的标记甚至包括您的任务窗格。
+在使用 [getSelectedDataAsync](/javascript/api/office/office.document#getselecteddataasync-coerciontype--options--callback-) 检索选定内容的 Office Open XML 时（或在将文档保存为 Word XML 文档格式时），获取的内容不仅仅是描述选定内容的标记；它是带有您几乎肯定不需要的多个选项和设置的整个文档。事实上，如果对包含任务窗格外接程序的文档使用此方法，则获取的标记甚至包括您的任务窗格。
 
 即使是简单的 Word 文档包，除了实际内容的部件之外，还包括文档属性、样式、主题（格式设置）、Web 设置、字体等的部件。
 
@@ -216,7 +216,7 @@ Microsoft Office 提供了大量 SmartArt 图表布局（可以使用 Office Ope
 
 将前面的 Office Open XML 保存为解决方案可访问的 XML 文件后，就可以使用以下函数设置使用 Office Open XML 强制转换的文档中的格式化文本内容。 
 
-在此函数中，请注意除了最后一行，其他都用于获取已保存的标记，以用于函数末尾的 [setSelectedDataAsync](https://docs.microsoft.com/javascript/api/office/office.document#setselecteddataasync-data--options--callback-) 方法调用。**setSelectedDataASync** 仅要求您指定要插入的内容以及强制类型。
+在此函数中，请注意除了最后一行，其他都用于获取已保存的标记，以用于函数末尾的 [setSelectedDataAsync](/javascript/api/office/office.document#setselecteddataasync-data--options--callback-) 方法调用。**setSelectedDataASync** 仅要求您指定要插入的内容以及强制类型。
 
 
 > [!NOTE]
@@ -550,7 +550,7 @@ function addAndBindControl() {
 此处所示的代码执行以下步骤：
 
 
-- 尝试使用 [addFromNamedItemAsync](https://docs.microsoft.com/javascript/api/office/office.bindings#addfromnameditemasync-itemname--bindingtype--options--callback-) 绑定到命名内容控件。
+- 尝试使用 [addFromNamedItemAsync](/javascript/api/office/office.bindings#addfromnameditemasync-itemname--bindingtype--options--callback-) 绑定到命名内容控件。
 
   如果你的外接程序有可能出现这样一种情况，在执行代码时，文档中已存在命名控件，那么请先执行此步骤。例如，如果外接程序已插入并使用已设计为与该外接程序一起使用的模板进行保存，其中事先放置了该控件，那么你需要执行此操作。如果你需要绑定到该外接程序之前放置的控件，那么你也需要执行此操作。
 
@@ -852,6 +852,6 @@ SmartArt 图表具有四个关联的部件，但始终需要的只有两个。�
 
 ## <a name="see-also"></a>另请参阅
 
-- [适用于 Office 的 JavaScript API](https://docs.microsoft.com/office/dev/add-ins/reference/javascript-api-for-office)
+- [适用于 Office 的 JavaScript API](/office/dev/add-ins/reference/javascript-api-for-office)
 - [标准 ECMA-376：Office Open XML 文件格式](https://www.ecma-international.org/publications/standards/Ecma-376.htm)（其中收录了 Open XML 的完整语言参考和相关文档）
 - [探索适用于 Office 的 JavaScript API：数据绑定和自定义 XML 部分](https://msdn.microsoft.com/magazine/dn166930.aspx)

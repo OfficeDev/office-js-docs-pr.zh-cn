@@ -1,18 +1,18 @@
 ---
 title: 使用 Excel JavaScript API 处理图表
 description: ''
-ms.date: 03/11/2019
+ms.date: 03/19/2019
 localization_priority: Priority
-ms.openlocfilehash: f058110c7c150a75c847a07df83aa2795c891025
-ms.sourcegitcommit: 8fb60c3a31faedaea8b51b46238eb80c590a2491
+ms.openlocfilehash: adaae105050a01968525e38deb6db570b962ddde
+ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2019
-ms.locfileid: "30600261"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "30870882"
 ---
 # <a name="work-with-charts-using-the-excel-javascript-api"></a>使用 Excel JavaScript API 处理图表
 
-本文提供了代码示例，介绍如何使用 Excel JavaScript API 对图表执行常见任务。 有关 **Chart** 和 **ChartCollection** 对象支持的属性和方法的完整列表，请参阅 [Chart 对象 (Excel JavaScript API)](https://docs.microsoft.com/javascript/api/excel/excel.chart) 和 [Chart Collection 对象 (Excel JavaScript API)](https://docs.microsoft.com/javascript/api/excel/excel.chartcollection)。
+本文提供了代码示例，介绍如何使用 Excel JavaScript API 对图表执行常见任务。 有关 **Chart** 和 **ChartCollection** 对象支持的属性和方法的完整列表，请参阅 [Chart 对象 (Excel JavaScript API)](/javascript/api/excel/excel.chart) 和 [Chart Collection 对象 (Excel JavaScript API)](/javascript/api/excel/excel.chartcollection)。
 
 ## <a name="create-a-chart"></a>创建图表
 

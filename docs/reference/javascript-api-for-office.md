@@ -1,18 +1,18 @@
 ---
 title: 适用于 Office 的 JavaScript API
 description: ''
-ms.date: 10/09/2018
+ms.date: 03/19/2019
 localization_priority: Priority
-ms.openlocfilehash: 51ae2a2391a63ab20a33e8ae590834f33311230a
-ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
+ms.openlocfilehash: c8b33bbf9d0107786c0272410c59b1a3fe998cba
+ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "29387840"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "30870616"
 ---
 # <a name="javascript-api-for-office"></a>适用于 Office 的 JavaScript API
 
-借助适用于 Office 的 JavaScript API，您可以创建可与 Office 主机应用程序中的对象模型进行交互的 Web 应用程序。您的应用程序将引用 office.js 库中，该库是一个脚本加载程序。Office.js 库加载适用于正在运行外接程序的 Office 应用程序的对象模型。您可以使用以下 JavaScript 对象模型：
+借助适用于 Office 的 JavaScript API，您可以创建可与 Office 主机应用程序中的对象模型进行交互的 Web 应用程序。 你的应用程序将引用 office.js 库中，该库是一个脚本加载程序。 Office.js 库加载适用于正在运行外接程序的 Office 应用程序的对象模型。 你可以使用以下 JavaScript 对象模型：
 
 - **公用 API** - 与 **Office 2013** 一起引入的 API。 这为**所有 Office 主机应用程序**加载 API，并将外接程序应用程序与 Office 客户端应用程序相连接。 对象模型包含特定于 Office 客户端的 API 以及适用于多个 Office 客户端主机应用程序的 API。 所有这些内容位于**通用 API** 下。 此对象模型使用回调。 
 
@@ -40,4 +40,4 @@ ms.locfileid: "29387840"
 
 ## <a name="see-also"></a>另请参阅
 
-- [Office JavaScript API 参考](https://docs.microsoft.com/javascript/api/overview/office)
+- [Office JavaScript API 参考](/javascript/api/overview/office)

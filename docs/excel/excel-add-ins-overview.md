@@ -1,23 +1,23 @@
 ---
 title: Excel 加载项概述
 description: ''
-ms.date: 01/23/2018
+ms.date: 03/19/2019
 localization_priority: Priority
-ms.openlocfilehash: 747b9b28f8e15de71a7af7e72bced61f8063139e
-ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
+ms.openlocfilehash: 3a6e00ebb5c91af135d709c1ae9f86fc5d2e2924
+ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "29386734"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "30872212"
 ---
 # <a name="excel-add-ins-overview"></a>Excel 加载项概述
 
 使用 Excel 加载项，可以跨多个平台扩展 Excel 应用功能，包括 Office for Windows、Office Online、Office for Mac 和 Office for iPad。在工作簿内使用 Excel 加载项，可以：
 
-- 与 Excel 对象交互、读取和写入 Excel 数据。 
-- 使用基于 Web 的任务窗格或内容窗格扩展功能 
+- 与 Excel 对象交互、读取和写入 Excel 数据。
+- 使用基于 Web 的任务窗格或内容窗格扩展功能
 - 添加自定义功能区按钮或上下文菜单项
-- 使用对话框窗口提供更丰富的交互 
+- 使用对话框窗口提供更丰富的交互
 
 Office 加载项平台提供框架和 Office.js JavaScript API，使你能够创建和运行 Excel 加载项。通过使用 Office 加载项平台创建 Excel 加载项，可以获得以下好处：
 
@@ -29,11 +29,11 @@ Office 加载项平台提供框架和 Office.js JavaScript API，使你能够创
 > [!NOTE]
 > Excel 加载项不同于 COM 和 VSTO 加载项，后者是旧 Office 集成解决方案，只能在 Office for Windows 上运行。 与 COM 加载项不同的是，Excel 加载项不需要你在用户设备上，或在 Excel 中安装任何代码。 
 
-## <a name="components-of-an-excel-add-in"></a>Excel 加载项的组件 
+## <a name="components-of-an-excel-add-in"></a>Excel 加载项的组件
 
 Excel 加载项包括两个基本组件：Web 应用程序和称为“清单文件”的配置文件。 
 
-Web 应用程序使用 [Office JavaScript API](https://docs.microsoft.com/office/dev/add-ins/reference/javascript-api-for-office) 与 Excel 中的对象进行交互，并且还有助于与在线资源进行交互。 例如，加载项可以执行下列任意任务：
+Web 应用程序使用 [Office JavaScript API](/office/dev/add-ins/reference/javascript-api-for-office) 与 Excel 中的对象进行交互，并且还有助于与在线资源进行交互。 例如，加载项可以执行下列任意任务：
 
 * 创建、读取、更新和删除工作簿中的数据（工作表、区域、表、图表、已命名项等）。
 * 使用标准 OAuth 2.0 流通过在线服务执行用户身份验证。
@@ -41,7 +41,7 @@ Web 应用程序使用 [Office JavaScript API](https://docs.microsoft.com/office
 
 Web 应用程序可以托管在任何 Web 服务器上，并且可以使用客户端框架（如 Angular、React、jQuery）或服务器端技术（如 ASP.NET、Node.js、PHP）进行构建。
 
-[清单](../develop/add-in-manifests.md)是 XML 配置文件，它定义加载项如何通过指定以下设置和功能与 Office 客户端集成： 
+[清单](../develop/add-in-manifests.md)是 XML 配置文件，它定义加载项如何通过指定以下设置和功能与 Office 客户端集成：
 
 * 加载项 Web 应用程序的 URL。
 * 加载项的显示名称、说明、ID、版本和默认区域设置。
@@ -76,7 +76,7 @@ Web 应用程序可以托管在任何 Web 服务器上，并且可以使用客�
 
 ### <a name="dialog-boxes"></a>对话框
 
-对话框是浮动在活动的 Excel 应用程序窗口之上的界面。 可以将对话框用于以下任务，如显示无法直接在任务窗格中打开的登录页、请求用户确认操作，或托管如果局限在任务窗格中可能过小的视频。 若要在 Excel 加载项中打开对话框，请使用[对话框 API](https://docs.microsoft.com/javascript/api/office/office.ui)。
+对话框是浮动在活动的 Excel 应用程序窗口之上的界面。 可以将对话框用于以下任务，如显示无法直接在任务窗格中打开的登录页、请求用户确认操作，或托管如果局限在任务窗格中可能过小的视频。 若要在 Excel 加载项中打开对话框，请使用[对话框 API](/javascript/api/office/office.ui)。
 
 **对话框**
 
@@ -96,9 +96,9 @@ Web 应用程序可以托管在任何 Web 服务器上，并且可以使用客�
 
 ## <a name="javascript-apis-to-interact-with-workbook-content"></a>要与工作簿内容交互的 JavaScript API
 
-Excel 加载项通过使用 [Office JavaScript API](https://docs.microsoft.com/office/dev/add-ins/reference/javascript-api-for-office) 与 Excel 中的对象进行交互，其中包括两个 JavaScript 对象模型：
+Excel 加载项通过使用 [Office JavaScript API](/office/dev/add-ins/reference/javascript-api-for-office) 与 Excel 中的对象进行交互，其中包括两个 JavaScript 对象模型：
 
-* **Excel JavaScript API**：[Excel JavaScript API](https://docs.microsoft.com/office/dev/add-ins/reference/overview/excel-add-ins-reference-overview) 随 Office 2016 引入，提供强类型的 Excel 对象，可用于访问工作表、区域、表、图表等。 
+* **Excel JavaScript API**：[Excel JavaScript API](/office/dev/add-ins/reference/overview/excel-add-ins-reference-overview) 随 Office 2016 引入，提供强类型的 Excel 对象，可用于访问工作表、区域、表、图表等。 
 
 * **通用 API**：通用 API 随 Office 2013 引入，使用它可以访问多种类型的主机应用程序（如 Word、Excel 和 PowerPoint ）中常见的 UI、对话框和客户端设置等功能。 由于通用 API 确实为 Excel 交互提供了有限的功能，因此，如果加载项需要在 Excel 2013 上运行，则可以使用它。
 
@@ -112,4 +112,4 @@ Excel 加载项通过使用 [Office JavaScript API](https://docs.microsoft.com/o
 - [开发 Office 加载项的最佳做法](../concepts/add-in-development-best-practices.md)
 - [Office 加载项的设计准则](../design/add-in-design.md)
 - [Excel JavaScript API 基本编程概念](excel-add-ins-core-concepts.md)
-- [Excel JavaScript API 参考](https://docs.microsoft.com/office/dev/add-ins/reference/overview/excel-add-ins-reference-overview)
+- [Excel JavaScript API 参考](/office/dev/add-ins/reference/overview/excel-add-ins-reference-overview)
