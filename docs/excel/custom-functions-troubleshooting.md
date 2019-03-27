@@ -1,14 +1,14 @@
 ---
-ms.date: 03/06/2019
+ms.date: 03/19/2019
 description: Excel 自定义函数中的常见问题疑难解答。
 title: 自定义函数疑难解答（预览版）
 localization_priority: Priority
-ms.openlocfilehash: ada60fb4184095f194ff425823b04456a7bf0e76
-ms.sourcegitcommit: c5daedf017c6dd5ab0c13607589208c3f3627354
+ms.openlocfilehash: 19c3dcccce7618289dc49c3f61ce781744c24369
+ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/20/2019
-ms.locfileid: "30693755"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "30871337"
 ---
 # <a name="troubleshoot-custom-functions"></a>自定义函数疑难解答
 
@@ -18,11 +18,11 @@ ms.locfileid: "30693755"
 
 ## <a name="enable-runtime-logging"></a>启用运行时日志记录
 
-如果在 Windows 上的 Office 中测试加载项，应[启用运行时日志记录](https://docs.microsoft.com/zh-CN/office/dev/add-ins/testing/troubleshoot-manifest#use-runtime-logging-to-debug-your-add-in)。 运行时日志记录将 `console.log` 语句传递给创建的单独日志文件，以帮助发现问题。 这些语句涵盖了各种错误，其中包括加载项的 XML 清单文件、运行时条件或自定义函数安装的相关错误。  有关运行时日志记录的详细信息，请参阅[使用运行时日志记录调试加载项](https://docs.microsoft.com/zh-CN/office/dev/add-ins/testing/troubleshoot-manifest#use-runtime-logging-to-debug-your-add-in)。  
+如果在 Windows 上的 Office 中测试加载项，应[启用运行时日志记录](/office/dev/add-ins/testing/troubleshoot-manifest#use-runtime-logging-to-debug-your-add-in)。 运行时日志记录将 `console.log` 语句传递给创建的单独日志文件，以帮助发现问题。 这些语句涵盖了各种错误，其中包括加载项的 XML 清单文件、运行时条件或自定义函数安装的相关错误。  有关运行时日志记录的详细信息，请参阅[使用运行时日志记录调试加载项](/office/dev/add-ins/testing/troubleshoot-manifest#use-runtime-logging-to-debug-your-add-in)。  
 
 ### <a name="check-for-excel-error-messages"></a>检查 Excel 错误消息
 
-Excel 有许多内置错误消息，如果存在计算错误，系统会将向单元格返回这些错误消息。 自定义函数仅使用以下错误消息：`#NULL!`、`#DIV/0!`、`#VALUE!`、`#REF!`、`#NAME?`、`#NUM!`、`#N/A` 和 `#GETTING_DATA`。
+Excel 有许多内置错误消息，如果存在计算错误，系统会将向单元格返回这些错误消息。 自定义函数仅使用以下错误消息：`#NULL!`、`#DIV/0!`、`#VALUE!`、`#REF!`、`#NAME?`、`#NUM!`、`#N/A` 和 `#BUSY!`。
 
 ## <a name="common-issues"></a>常见问题
 
@@ -44,11 +44,11 @@ function add(first, second){
 CustomFunctions.associate("ADD", add);
 ```
 
-有关此过程的更多信息，请参阅[将函数名称与 JSON 元数据相关联](https://docs.microsoft.com/zh-CN/office/dev/add-ins/excel/custom-functions-best-practices#associating-function-names-with-json-metadata)。
+有关此过程的更多信息，请参阅[将函数名称与 JSON 元数据相关联](/office/dev/add-ins/excel/custom-functions-best-practices#associating-function-names-with-json-metadata)。
 
 ### <a name="ensure-promises-return"></a>确保返回 promise
 
-在 Excel 等待自定义函数完成时，它会在单元格中显示 #GETTING_DATA。 如果自定义函数代码返回一个 promise，但 promise 不返回结果，Excel 将继续显示 #GETTING_DATA。 查看函数以确保所有 promise 都正确地向单元格返回结果。
+在 Excel 等待自定义函数完成时，它会在单元格中 显示 #BUSY!。 如果自定义函数代码返回一个 promise，但 promise 不返回结果，则 Excel 将继续显示 #BUSY!。 查看函数以确保所有 promise 都正确地向单元格返回结果。
 
 ## <a name="reporting-feedback"></a>报告反馈
 

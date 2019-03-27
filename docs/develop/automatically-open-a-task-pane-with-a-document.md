@@ -1,14 +1,14 @@
 ---
 title: 随文档自动打开任务窗格
 description: ''
-ms.date: 05/02/2018
+ms.date: 03/19/2019
 localization_priority: Priority
-ms.openlocfilehash: dd0fb8befdfe41ec96f1f418b3e4eb43f6ba98da
-ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
+ms.openlocfilehash: a231255200d6edd1fc923a82711c8c24819bf914
+ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "29386755"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "30870238"
 ---
 # <a name="automatically-open-a-task-pane-with-a-document"></a>随文档自动打开任务窗格
 
@@ -25,7 +25,7 @@ ms.locfileid: "29386755"
 
 ## <a name="support-and-availability"></a>支持和可用性
 
-Autoopen 功能目前<!-- in **developer preview** and it is only -->在以下产品和平台中受支持。
+目前支持在以下产品和平台中 <!-- in **developer preview** and it is only --> 使用 Autoopen 功能。
 
 |**产品**|**平台**|
 |:-----------|:------------|
@@ -60,7 +60,7 @@ Autoopen 功能目前<!-- in **developer preview** and it is only -->在以下�
 
 ### <a name="step-1-specify-the-task-pane-to-open"></a>第 1 步：指定要打开的任务窗格
 
-若要指定要自动打开的任务窗格，请将 [TaskpaneId](https://docs.microsoft.com/office/dev/add-ins/reference/manifest/action#taskpaneid) 值设置为 **Office.AutoShowTaskpaneWithDocument**。只能在一个任务窗格上设置此值。如果在多个任务窗格上设置此值，将识别值的第一个匹配项，而忽略其他。
+若要指定要自动打开的任务窗格，请将 [TaskpaneId](/office/dev/add-ins/reference/manifest/action#taskpaneid) 值设置为 **Office.AutoShowTaskpaneWithDocument**。只能在一个任务窗格上设置此值。如果在多个任务窗格上设置此值，将识别值的第一个匹配项，而忽略其他。
 
 在下面的示例中，TaskPaneId 值设置为 Office.AutoShowTaskpaneWithDocument。
 
@@ -78,7 +78,7 @@ Autoopen 功能目前<!-- in **developer preview** and it is only -->在以下�
 
 #### <a name="tag-the-document-on-the-client-side"></a>在客户端上标记文档
 
-使用 Office.js [settings.set](https://docs.microsoft.com/javascript/api/office/office.settings) 方法将 **Office.AutoShowTaskpaneWithDocument** 设置为“**true**”，如以下示例所示。
+使用 Office.js [settings.set](/javascript/api/office/office.settings) 方法将 **Office.AutoShowTaskpaneWithDocument** 设置为“**true**”，如以下示例所示。
 
 ```js
 Office.context.document.settings.set("Office.AutoShowTaskpaneWithDocument", true);
@@ -159,10 +159,10 @@ Office.context.document.settings.saveAsync();
 </we:webextension>
 ```
 
-若要测试以前示例，请考虑加入 [Office 365 开发人员计划](https://docs.microsoft.com/office/developer-program/office-365-developer-program)，并注册以获取一个 [Office 365 开发人员帐户](https://developer.microsoft.com/office/dev-program)（如果还没有 Office 365 订阅）。 可以实际测试驱动集中部署，并验证外接程序是否按预期工作。
+若要测试以前示例，请考虑加入 [Office 365 开发人员计划](/office/developer-program/office-365-developer-program)，并注册以获取一个 [Office 365 开发人员帐户](https://developer.microsoft.com/office/dev-program)（如果还没有 Office 365 订阅）。 可以实际测试驱动集中部署，并验证外接程序是否按预期工作。
 
 
 ## <a name="see-also"></a>另请参阅
 
 有关演示如何使用 AutoOpen 功能的示例，请参阅 [Office 外接程序命令示例](https://github.com/OfficeDev/Office-Add-in-Commands-Samples/tree/master/AutoOpenTaskpane)。
-[加入 Office 365 开发人员计划](https://docs.microsoft.com/office/developer-program/office-365-developer-program)。
+[加入 Office 365 开发人员计划](/office/developer-program/office-365-developer-program)。

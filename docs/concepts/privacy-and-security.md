@@ -1,14 +1,14 @@
 ---
 title: Office 加载项的隐私和安全
 description: ''
-ms.date: 01/23/2018
+ms.date: 03/19/2019
 localization_priority: Priority
-ms.openlocfilehash: 0edde27eebed667040ae3aded5bbc4268f0f5d58
-ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
+ms.openlocfilehash: 95188063ac133d6683478b1aed4d48b825cee87f
+ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "29388813"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "30872002"
 ---
 # <a name="privacy-and-security-for-office-add-ins"></a>Office 加载项的隐私和安全
 
@@ -34,7 +34,8 @@ Office 外接程序受到外接程序运行时环境、多层权限模型和性�
 
 以下各节简要介绍在基于 Windows 的设备上、OS X Mac 设备上以及 Web 上的 Office Online 客户端中，运行时体系结构如何支持在 Office 客户端中运行加载项。
 
-> **注意**：若要了解如何将 WIP 和 Intune 与 Office 加载项结合使用，请参阅[使用 WIP 和 Intune 保护运行 Office 加载项的文档中的企业数据](https://docs.microsoft.com/microsoft-365/enterprise/office-add-ins-wip)。
+> [!NOTE]
+> 要了解如何将 WIP 和 Intune 与 Office 加载项结合使用，请参阅[使用 WIP和 Intune 保护运行 Office 加载项的文档中的企业数据](/microsoft-365/enterprise/office-add-ins-wip)。
 
 ### <a name="clients-for-windows-and-os-x-devices"></a>适用于 Windows 和 OS X 设备的客户端
 
@@ -91,7 +92,7 @@ Office 加载项是使用浏览器控件或 **iframe** 中运行的 Web 技术�
 
 - 在共享一个文档时，用户也会共享已插入该文档或与该文档关联的加载项。如果用户打开一个包含其之前未使用的加载项的文档，则主机应用程序会提示用户向加载项授予在文档中运行的权限。在组织环境中，如果文档来自外部源，则 Office 主机应用程序也会提示用户。
 
-- 用户可以启用或禁用对 AppSource 的访问权限。对于内容和任务窗格加载项，用户通过主机 Office 客户端上的“信任中心”****（通过“文件”**** > “选项”**** > “信任中心”**** > “信任中心设置”**** > “受信任的加载项目录”**** 打开），管理对受信任的加载项和目录的访问权限。对于 Outlook 加载项，用户可以通过选择“管理加载项”**** 按钮管理加载项，具体操作为：在 Outlook for Windows 中，依次选择“文件”**** > “管理加载项”****；在 Outlook for Mac 中，选择加载项栏上的“管理加载项”**** 按钮；在 Outlook Web App 中，依次选择“设置”**** 菜单（齿轮图标）>“管理加载项”****。管理员还可以通过[使用组策略](https://docs.microsoft.com/previous-versions/office/office-2013-resource-kit/jj219429(v=office.15)#using-group-policy-to-manage-how-users-can-install-and-use-apps-for-office)管理此访问权限。
+- 用户可以启用或禁用对 AppSource 的访问权限。对于内容和任务窗格加载项，用户通过主机 Office 客户端上的“信任中心”****（通过“文件”**** > “选项”**** > “信任中心”**** > “信任中心设置”**** > “受信任的加载项目录”**** 打开），管理对受信任的加载项和目录的访问权限。对于 Outlook 加载项，用户可以通过选择“管理加载项”**** 按钮管理加载项，具体操作为：在 Outlook for Windows 中，依次选择“文件”**** > “管理加载项”****；在 Outlook for Mac 中，选择加载项栏上的“管理加载项”**** 按钮；在 Outlook Web App 中，依次选择“设置”**** 菜单（齿轮图标）>“管理加载项”****。管理员还可以通过[使用组策略](/previous-versions/office/office-2013-resource-kit/jj219429(v=office.15)#using-group-policy-to-manage-how-users-can-install-and-use-apps-for-office)管理此访问权限。
 
 - 加载项平台的设计在以下方面为最终用户提供了安全和性能保障：
 
@@ -99,13 +100,13 @@ Office 加载项是使用浏览器控件或 **iframe** 中运行的 Web 技术�
 
   - 在 Web 浏览器控件中运行可允许加载项完成在浏览器中运行的常规网页可执行的所有操作，但同时将限制加载项遵守针对域隔离和安全区域的同源策略。
 
-Outlook 外接程序通过特定的资源使用率监视提供额外安全和性能功能。有关详细信息，请参阅 [Outlook 外接程序的隐私、权限和安全性](https://docs.microsoft.com/outlook/add-ins/privacy-and-security)。
+Outlook 外接程序通过特定的资源使用率监视提供额外安全和性能功能。有关详细信息，请参阅 [Outlook 外接程序的隐私、权限和安全性](/outlook/add-ins/privacy-and-security)。
 
 ### <a name="developer-guidelines-to-handle-pii"></a>开发人员处理 PII 的准则
 
 下面列出了一些特定于 Office 加载项开发人员的 PII 保护准则：
 
-- [Settings](https://docs.microsoft.com/javascript/api/office/office.settings) 对象旨在保存内容加载项或任务窗格加载项的会话之间的加载项设置和状态数据，但不会在 **Settings** 对象中存储密码和其他敏感 PII。最终用户无法查看 **Settings** 对象中的数据，但该数据存储为文档的易于访问的文件格式的一部分。你应该限制加载项对 PII 的使用，并将加载项所需的任何 PII 存储在将加载项作为用户保护的资源托管的服务器上。
+- [Settings](/javascript/api/office/office.settings) 对象旨在保存内容加载项或任务窗格加载项的会话之间的加载项设置和状态数据，但不会在 **Settings** 对象中存储密码和其他敏感 PII。最终用户无法查看 **Settings** 对象中的数据，但该数据存储为文档的易于访问的文件格式的一部分。你应该限制加载项对 PII 的使用，并将加载项所需的任何 PII 存储在将加载项作为用户保护的资源托管的服务器上。
 
 - 使用某些应用程序可能会泄露 PII。请确保安全地存储用户的身份、位置、访问时间和任何其他凭据数据，以便该加载项的其他用户无法访问该数据。
 
@@ -119,7 +120,7 @@ Outlook 外接程序通过特定的资源使用率监视提供额外安全和性
 
 ### <a name="permissions-choices"></a>权限选择
 
-加载项平台中提供了一个权限模型，供加载项用于声明实现其功能所需的对用数据的访问级别。 每个权限级别对应适用于 Office 的 JavaScript API 的子集，加载项通过这些权限级别实现其功能。 例如，内容和任务窗格加载项的 **WriteDocument** 权限可访问 [Document.setSelectedDataAsync](https://docs.microsoft.com/javascript/api/office/office.document) 方法，该方法允许加载项对用户文档执行写入操作，但不允许访问任何读取文档中的数据的方法。 此权限级别对于只需要对文档执行写入操作的加载项很有用，例如用户可以查询要插入到其文档的数据的加载项。
+加载项平台中提供了一个权限模型，供加载项用于声明实现其功能所需的对用数据的访问级别。 每个权限级别对应适用于 Office 的 JavaScript API 的子集，加载项通过这些权限级别实现其功能。 例如，内容和任务窗格加载项的 **WriteDocument** 权限可访问 [Document.setSelectedDataAsync](/javascript/api/office/office.document) 方法，该方法允许加载项对用户文档执行写入操作，但不允许访问任何读取文档中的数据的方法。 此权限级别对于只需要对文档执行写入操作的加载项很有用，例如用户可以查询要插入到其文档的数据的加载项。
 
 最佳做法是应该基于“_最小特权_”原则请求权限。即应该请求外接程序正常运行所需的 API 的最小子集的访问权限。例如，如果外接程序只需要读取其功能的用户文档中的数据，则应仅请求“**ReadDocument**”权限。（但是，请注意如果请求权限不足，则会导致外接程序平台阻止外接程序使用部分 API 并将生成运行时错误。）
 
@@ -140,13 +141,13 @@ Outlook 外接程序通过特定的资源使用率监视提供额外安全和性
 </OfficeApp>
 ```
 
-若要详细了解任务窗格和内容加载项权限，请参阅[在内容和任务窗格加载项中请求获取 API 使用权限](https://docs.microsoft.com/office/dev/add-ins/develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins)。
+若要详细了解任务窗格和内容加载项权限，请参阅[在内容和任务窗格加载项中请求获取 API 使用权限](/office/dev/add-ins/develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins)。
 
 若要详细了解 Outlook 加载项权限，请参阅以下主题：
 
-- [Outlook 加载项的隐私、权限和安全](https://docs.microsoft.com/outlook/add-ins/privacy-and-security)
+- [Outlook 加载项的隐私、权限和安全](/outlook/add-ins/privacy-and-security)
 
-- [了解 Outlook 外接程序权限](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)
+- [了解 Outlook 外接程序权限](/outlook/add-ins/understanding-outlook-add-in-permissions)
 
 ### <a name="same-origin-policy"></a>同源策略
 
@@ -193,7 +194,7 @@ Exchange 和 SharePoint 提供了客户端代理以实现跨域访问。通常�
 
 - 使用 [encodeURIComponent](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/encodeuricomponent) 或 [encodeURI](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/encodeuri) 函数可对应为来自用户输入或包含用户输入的 URL 的文本进行编码。
 
-- 有关创建更安全的 Web 解决方案的更多最佳做法，请参阅[开发安全加载项](https://docs.microsoft.com/previous-versions/windows/apps/hh849625(v=win.10))。
+- 有关创建更安全的 Web 解决方案的更多最佳做法，请参阅[开发安全加载项](/previous-versions/windows/apps/hh849625(v=win.10))。
 
 ### <a name="tips-to-prevent-clickjacking"></a>防止“点击劫持”的提示
 
@@ -242,19 +243,30 @@ Exchange 和 SharePoint 提供了客户端代理以实现跨域访问。通常�
   - 制定概述遵从性隐私策略的声明。
   - 准备好在提交加载项后签订合约协议。
 
-除资源使用率规则之外，Outlook 外接程序的开发人员还应确保其外接程序遵守有关指定激活规则和使用 JavaScript API 的限制。有关详细信息，请参阅[激活限制和适用于 Outlook 外接程序的 JavaScript API](https://docs.microsoft.com/outlook/add-ins/limits-for-activation-and-javascript-api-for-outlook-add-ins)。
+除资源使用率规则之外，Outlook 外接程序的开发人员还应确保其外接程序遵守有关指定激活规则和使用 JavaScript API 的限制。有关详细信息，请参阅[激活限制和适用于 Outlook 外接程序的 JavaScript API](/outlook/add-ins/limits-for-activation-and-javascript-api-for-outlook-add-ins)。
 
 ## <a name="it-administrators-control"></a>IT 管理员控制
 
 在企业设置中，对于启用或禁用对 AppSource 和任何专用目录的访问权限，IT 管理员拥有最高权限。
 
+Office 设置的管理和执行由组策略设置完成。 这些操作可通过 [Office 部署工具](https://docs.microsoft.com/deployoffice/overview-of-the-office-2016-deployment-tool)和 [Office 自定义工具](https://docs.microsoft.com/DeployOffice/overview-of-the-office-customization-tool-for-click-to-run)进行配置。
+
+| 设置名称 | 说明 |
+|--------------|-------------|
+| 允许不安全的 Web 加载项和目录 | 允许用户运行不安全的加载项，这些加载项的网页或目录位置不受 SSL 保护 (https://) 且不在用户的 Internet 区域中。 |
+| 阻止 Web 加载项 | 允许阻止用户使用 Web 加载项。 |
+| 阻止 Office 应用商店 |  允许阻止用户使用或插入来自 Office 应用商店的 Web 加载项。 |
+
+> [!IMPORTANT]
+> 如果你的工作组正在使用 Office 的多个版本，则必须为每个版本配置组策略设置。 要详细了解针对 Office 2013 的组策略设置，请参阅 [Office 2013 相关应用概述](https://docs.microsoft.com/previous-versions/office/office-2013-resource-kit/jj219429(v%3doffice.15))一文中的[使用组策略来管理用户可如何安装和使用 Office 相关应用](https://docs.microsoft.com/previous-versions/office/office-2013-resource-kit/jj219429(v=office.15)#using-group-policy-to-manage-how-users-can-install-and-use-apps-for-office)。
+
 ## <a name="see-also"></a>另请参阅
 
-- [在内容和任务窗格加载项中请求获取 API 使用权限](https://docs.microsoft.com/office/dev/add-ins/develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins)
-- [Outlook 外接程序的隐私、权限和安全性](https://docs.microsoft.com/outlook/add-ins/privacy-and-security)
-- [了解 Outlook 外接程序权限](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)
-- [Outlook 外接程序的激活和 JavaScript API 限制](https://docs.microsoft.com/outlook/add-ins/limits-for-activation-and-javascript-api-for-outlook-add-ins)
-- [解决 Office 外接程序中的同源策略限制](https://docs.microsoft.com/office/dev/add-ins/develop/addressing-same-origin-policy-limitations)
+- [在内容和任务窗格加载项中请求获取 API 使用权限](/office/dev/add-ins/develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins)
+- [Outlook 外接程序的隐私、权限和安全性](/outlook/add-ins/privacy-and-security)
+- [了解 Outlook 外接程序权限](/outlook/add-ins/understanding-outlook-add-in-permissions)
+- [Outlook 外接程序的激活和 JavaScript API 限制](/outlook/add-ins/limits-for-activation-and-javascript-api-for-outlook-add-ins)
+- [解决 Office 外接程序中的同源策略限制](/office/dev/add-ins/develop/addressing-same-origin-policy-limitations)
 - [同源策略](https://www.w3.org/Security/wiki/Same_Origin_Policy)
 - [同源策略第 1 部分：不准偷看](https://blogs.msdn.com/b/ieinternals/archive/2009/08/28/explaining-same-origin-policy-part-1-deny-read.aspx)
 - [针对 JavaScript 的同源策略](https://developer.mozilla.org/docs/Web/Security/Same-origin_policy)

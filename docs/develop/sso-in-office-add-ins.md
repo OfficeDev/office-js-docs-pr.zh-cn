@@ -1,14 +1,14 @@
 ---
 title: 为 Office 加载项启用单一登录
 description: ''
-ms.date: 03/19/2019
+ms.date: 03/22/2019
 localization_priority: Priority
-ms.openlocfilehash: dc9050d574e0a5e74ae8cae2c63817aa4f952eb9
-ms.sourcegitcommit: c5daedf017c6dd5ab0c13607589208c3f3627354
+ms.openlocfilehash: ef2e2c275a3b7d157029d873e34cc17339dcee66
+ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/20/2019
-ms.locfileid: "30691193"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "30870035"
 ---
 # <a name="enable-single-sign-on-for-office-add-ins-preview"></a>为 Office 加载项启用单一登录（预览）
 
@@ -26,7 +26,8 @@ SSO 要求使用 Office 365（Office 的订阅版本）。 你应该使用来自
 
 ### <a name="requirements-and-best-practices"></a>要求和最佳做法
 
-若要使用 SSO，必须从加载项的启动 HTML 页面中的 `https://appsforoffice.microsoft.com/lib/beta/hosted/office.js` 加载 Office JavaScript 库的 Beta 版。
+> [!NOTE]
+> [!INCLUDE [Information about using preview APIs](../includes/using-preview-apis.md)]
 
 如果使用的是 **Outlook** 加载项，请务必为 Office 365 租赁启用新式验证。 若要了解如何执行此操作，请参阅 [Exchange Online: How to enable your tenant for modern authentication](https://social.technet.microsoft.com/wiki/contents/articles/32711.exchange-online-how-to-enable-your-tenant-for-modern-authentication.aspx)（如何为租户启用新式体验）。
 
@@ -224,7 +225,7 @@ Web API 收到访问令牌后，必须在使用该令牌前对其进行验证。
 
 ### <a name="getaccesstokenasync"></a>getAccessTokenAsync
 
-Office Auth 命名空间 `Office.context.auth` 提供了一种方法 `getAccessTokenAsync`，使 Office 主机能够获得加载项的 Web 应用程序的访问令牌。 这也使加载项能够间接访问已登录用户的 Microsoft Graph 数据，而不需要用户第二次登录。
+Office [Auth](/javascript/api/office/office.auth) 命令空间 `Office.context.auth` 提供了方法 `getAccessTokenAsync`，它使 Office 主机能够获取加载项的 Web 应用程序的访问令牌。 这也使加载项能够间接访问已登录用户的 Microsoft Graph 数据，而不需要用户第二次登录。
 
 ```typescript
 getAccessTokenAsync(options?: AuthOptions, callback?: (result: AsyncResult<string>) => void): void;
@@ -241,34 +242,8 @@ getAccessTokenAsync(options?: AuthOptions, callback?: (result: AsyncResult<strin
 
 #### <a name="parameters"></a>参数
 
-`options` - 可选。 接受 `AuthOptions` 对象（参见下文）以定义登录行为。
+`options` - 可选。 接受 [AuthOptions](/javascript/api/office/office.authoptions) 对象（参见下文）以定义登录行为。
 
 `callback` - 可选。 接受可以解析用户 ID 的令牌或使用“代表”流中的令牌来访问 Microsoft Graph 的回调方法。 如果 [AsyncResult](/javascript/api/office/office.asyncresult) `.status`为“成功”，则 `AsyncResult.value` 是原始 AAD v。 2.0 格式的访问令牌。
 
-当 Office 从 AAD v 获取加载项的访问令牌时，`AuthOptions` 接口提供用户体验选项。 2.0 使用 `getAccessTokenAsync` 方法。
-
-```typescript
-interface AuthOptions {
-    /**
-        * Causes Office to display the add-in consent experience. Useful if the add-in's Azure permissions have changed or if the user's consent has
-        * been revoked.
-        */
-    forceConsent?: boolean,
-    /**
-        * Prompts the user to add their Office account (or to switch to it, if it is already added).
-        */
-    forceAddAccount?: boolean,
-    /**
-        * Causes Office to prompt the user to provide the additional factor when the tenancy being targeted by Microsoft Graph requires multifactor
-        * authentication. The string value identifies the type of additional factor that is required. In most cases, you won't know at development
-        * time whether the user's tenant requires an additional factor or what the string should be. So this option would be used in a "second try"
-        * call of getAccessTokenAsync after Microsoft Graph has sent an error requesting the additional factor and containing the string that should
-        * be used with the authChallenge option.
-        */
-    authChallenge?: string
-    /**
-        * A user-defined item of any type that is returned, unchanged, in the asyncContext property of the AsyncResult object that is passed to a callback.
-        */
-    asyncContext?: any
-}
-```
+当 Office 从 AAD v 获取加载项的访问令牌时，[AuthOptions](/javascript/api/office/office.authoptions) 接口会提供用户体验选项。 2.0 使用 `getAccessTokenAsync` 方法。

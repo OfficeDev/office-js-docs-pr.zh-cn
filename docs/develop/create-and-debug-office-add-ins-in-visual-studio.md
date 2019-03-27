@@ -1,14 +1,14 @@
 ---
 title: 在 Visual Studio 中创建和调试 Office 外接程序
 description: 使用 Visual Studio 在 Windows 的 Office 桌面客户端上创建和调试 Office 外接程序
-ms.date: 11/02/2018
+ms.date: 03/19/2019
 localization_priority: Priority
-ms.openlocfilehash: eb7a64d9ad5096af7eb900a6d29b682e950c1bed
-ms.sourcegitcommit: 33dcf099c6b3d249811580d67ee9b790c0fdccfb
+ms.openlocfilehash: f9a52719ed7990063ed3f2dbb7d6bd5866e73760
+ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "29742378"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "30870714"
 ---
 # <a name="create-and-debug-office-add-ins-in-visual-studio"></a>在 Visual Studio 中创建和调试 Office 外接程序
 
@@ -17,7 +17,7 @@ ms.locfileid: "29742378"
 > [!NOTE]
 > Visual Studio 不支持为 OneNote 或 Project 创建 Office 外接程序，但你可以使用 [Office 外接程序的 Yeoman 生成器](https://github.com/OfficeDev/generator-office)来创建这些类型的外接程序。
 > - 若要开始使用 OneNote 的外接程序，请参阅[生成首个 OneNote 外接程序](../quickstarts/onenote-quickstart.md)。
-> 
+>
 > - 若要开始使用 Project 的外接程序，请参阅[生成首个 Project 外接程序](../quickstarts/project-quickstart.md)。
 
 ## <a name="prerequisites"></a>先决条件
@@ -25,7 +25,7 @@ ms.locfileid: "29742378"
 - 安装了 **Office/SharePoint 开发**工作负载的 [Visual Studio 2017](https://www.visualstudio.com/vs/)
 
     > [!TIP]
-    > 如果你之前安装过 Visual Studio 2017，请[使用 Visual Studio 安装程序](https://docs.microsoft.com/visualstudio/install/modify-visual-studio)，以确保已安装 **Office/SharePoint 开发**工作负载。 如果尚未安装此工作负载，请使用 Visual Studio 安装程序进行[安装](https://docs.microsoft.com/en-us/visualstudio/install/modify-visual-studio?view=vs-2017#modify-workloads)。
+    > 如果之前已安装 Visual Studio 2017，请[使用 Visual Studio 安装程序](/visualstudio/install/modify-visual-studio)，以确保安装 **Office/SharePoint 开发**工作负载。 如果尚未安装此工作负载，请使用 Visual Studio 安装程序进行[安装](/visualstudio/install/modify-visual-studio?view=vs-2017#modify-workloads)。
 
 - Office 2013 或更高版本
 
@@ -126,7 +126,7 @@ Web 应用程序项目包含可用于实现入门的默认 HTML 文件、JavaScr
 |**电子邮件地址**<br/>（仅限 Outlook 外接程序）|指定你想在 Exchange Server 或 Exchange Online 中用来测试 Outlook 外接程序的用户帐户的电子邮件地址。|
 |**EWS Url**<br/>（仅限 Outlook 外接程序）|Exchange Web 服务 URL（例如：`https://www.contoso.com/ews/exchange.aspx`）。 |
 |**OWA Url**<br/>（仅限 Outlook 外接程序）|Outlook Web App URL（例如，`https://www.contoso.com/owa`）。|
-|**使用多重身份验证**<br/>（仅限 Outlook 外接程序）|布尔值，指示是否应使用多重身份验证。|
+|**使用多重身份验证**<br/>（仅限 Outlook 加载项）|布尔值，指示是否应使用多重身份验证。|
 |**用户名**<br/>（仅限 Outlook 外接程序）|指定你想在 Exchange Server 或 Exchange Online 中用来测试 Outlook 外接程序的用户帐户的名称。|
 |**项目文件**|指定包含生成、配置和有关项目的其他信息的文件名称。|
 |**项目文件夹**|项目文件的位置。|
@@ -157,13 +157,13 @@ Web 应用程序项目包含可用于实现入门的默认 HTML 文件、JavaScr
 如果你有一个文档包含要在调试 Excel、PowerPoint 或 Word 外接程序时使用的测试数据，则可以将 Visual Studio 配置为在启动项目时打开该文档。 若要指定在调试外接程序时要使用的现有文档，请完成以下步骤。
 
 1. 在“**解决方案资源管理器**”中，选择外接程序项目（*而不是* Web 应用程序项目）。
-    
+
 2. 从菜单栏中，选择“**项目**” > “**添加现有项**”。
-    
+
 3. 在“**添加现有项**”对话框中，找到并选择要添加的文档。
-    
+
 4. 选择“**添加**”按钮以将文档添加到项目中。
-    
+
 5. 在“**解决方案资源管理器**”中，选择外接程序项目（*而不是* Web 应用程序项目）。
 
 6. 在菜单栏中，依次选择“**视图**” > “**属性窗口**”。
@@ -180,21 +180,21 @@ Web 应用程序项目包含可用于实现入门的默认 HTML 文件、JavaScr
 当 Visual Studio 生成项目时，它执行以下任务：
 
 1. 创建 XML 清单文件的副本并将其添加到 `_ProjectName_\bin\Debug\OfficeAppManifests` 目录。 启动 Visual Studio 并调试外接程序时，主机应用程序将使用此副本。
-    
+
 2. 在计算机上创建一组允许外接程序在主机应用程序中显示的注册表项。
-    
-3. 生成 Web 应用程序项目，然后将其部署到本地 IIS Web 服务器 (https://localhost))。 
-    
+
+3. 生成 Web 应用程序项目，然后将其部署到本地 IIS Web 服务器 (https://localhost))。
+
 接下来，Visual Studio 会执行以下操作：
 
-1. 通过将 `~remoteAppUrl` 标记替换为起始页的完全限定地址（例如，`https://localhost:44302/Home.html`）来修改 XML 清单文件的 [SourceLocation](https://docs.microsoft.com/office/dev/add-ins/reference/manifest/sourcelocation) 元素。
-    
+1. 通过将 `~remoteAppUrl` 标记替换为起始页的完全限定地址（例如，`https://localhost:44302/Home.html`）来修改 XML 清单文件的 [SourceLocation](/office/dev/add-ins/reference/manifest/sourcelocation) 元素。
+
 2. 在 IIS Express 中启动 Web 应用程序项目。
-    
-3. 打开主机应用程序。 
-    
-生成项目时，Visual Studio 不会显示“**输出**”窗口中的验证错误。 Visual Studio 报告“**错误列表**”窗口中出现的错误和警告。 通过在代码和文本编辑器中显示不同颜色的波浪下划线（称为波浪线），Visual Studio 还报告验证错误。 通过这些标志，你可以得知 Visual Studio 在你的代码中检测到的问题。 有关详细信息，请参阅[代码和文本编辑器](https://msdn.microsoft.com/library/se2f663y(v=vs.140).aspx)。 有关如何启用或禁用验证的详细信息，请参阅[选项、文本编辑器、JavaScript、IntelliSense](https://docs.microsoft.com/en-us/visualstudio/ide/reference/options-text-editor-javascript-intellisense?view=vs-2017)。
-    
+
+3. 打开主机应用程序。
+
+生成项目时，Visual Studio 不会显示“**输出**”窗口中的验证错误。 Visual Studio 报告“**错误列表**”窗口中出现的错误和警告。 通过在代码和文本编辑器中显示不同颜色的波浪下划线（称为波浪线），Visual Studio 还报告验证错误。 通过这些标志，你可以得知 Visual Studio 在你的代码中检测到的问题。 有关详细信息，请参阅[代码和文本编辑器](https://msdn.microsoft.com/library/se2f663y(v=vs.140).aspx)。 有关如何启用或禁用验证的详细信息，请参阅[选项、文本编辑器、JavaScript、IntelliSense](/visualstudio/ide/reference/options-text-editor-javascript-intellisense?view=vs-2017)。
+
 要查看项目中 XML 清单文件的验证规则，请参阅 [Office 外接程序 XML 清单](../develop/add-in-manifests.md)。
 
 ### <a name="debug-the-code-for-an-excel-powerpoint-or-word-add-in"></a>调试 Excel、PowerPoint 或 Word 外接程序的代码
@@ -234,4 +234,3 @@ Web 应用程序项目包含可用于实现入门的默认 HTML 文件、JavaScr
 ## <a name="next-steps"></a>后续步骤
 
 在外接程序正常工作后，请参阅[部署和发布 Office 外接程序](../publish/publish.md)，以了解可用于将外接程序分发给用户的方法。
-    
