@@ -1,13 +1,14 @@
 ---
 title: 适用于 Office 外接程序的 UX 设计模式
 description: ''
-ms.date: 06/27/2018
-ms.openlocfilehash: 635fc27d18a2c671dd1ac5a521c9d0a920c154ed
-ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
+ms.date: 03/19/2019
+localization_priority: Priority
+ms.openlocfilehash: 40b36fb138169bdf848e5f58569e6fc3dee8c09b
+ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/22/2018
-ms.locfileid: "27432471"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "30871540"
 ---
 # <a name="ux-design-patterns-for-office-add-ins"></a>适用于 Office 外接程序的 UX 设计模式
 
@@ -27,7 +28,6 @@ Office UI Fabric 呈现外观和行为类似于 Office 部件的组件。 利用
 * 构建以可视方式与默认 Office UI 集成的外接程序。
 * 形成 UX 概念并将其可视化。
 
-
 ## <a name="getting-started"></a>入门
 
 该模式按照外接程序中的常见按键操作或体验来进行组织。 主要的组包括：
@@ -39,15 +39,12 @@ Office UI Fabric 呈现外观和行为类似于 Office 部件的组件。 利用
 
 浏览每个分组，了解如何使用最佳做法来设计外接程序。
 
-
-
->注意：本文档中显示的所有示例屏幕均是以 **1366x768** 的分辨率来设计和显示
-
-
-
+> [!NOTE]
+> 本文档中显示的所有示例屏幕均按 **1366x768** 的分辨率进行设计和显示。
 
 ## <a name="see-also"></a>另请参阅
+
 * [设计工具包](design-toolkits.md)
 * [Office UI Fabric](https://developer.microsoft.com/fabric)
-* [开发 Office 外接程序的最佳做法](https://docs.microsoft.com/office/dev/add-ins/concepts/add-in-development-best-practices)
-* [Fabric React 使用入门](https://docs.microsoft.com/office/dev/add-ins/design/using-office-ui-fabric-react)
+* [开发 Office 外接程序的最佳做法](/office/dev/add-ins/concepts/add-in-development-best-practices)
+* [Fabric React 使用入门](/office/dev/add-ins/design/using-office-ui-fabric-react)

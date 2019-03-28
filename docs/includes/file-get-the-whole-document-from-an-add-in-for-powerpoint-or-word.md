@@ -7,15 +7,15 @@
 本文假定您使用文本编辑器创建 PowerPoint 或 Word 任务窗格外接程序。若要创建任务窗格外接程序，您必须创建以下文件：
 
 - 在共享网络文件夹或 Web 服务器上，您需要以下文件：
-    
+
     - HTML 文件 (GetDoc_App.html)，其中包含用户界面、指向 JavaScript 文件（包括 office.js 和主机特定的 .js 文件）的链接和级联样式表 (CSS) 文件。
-           
+
     - 要包含外接程序编程逻辑的 JavaScript 文件 (GetDoc_App.js)。
-    
+
     - 一个要包含外接程序的样式和格式的 CSS 文件 (Program.css)。
-    
+
 - 共享网络文件夹或外接程序目录中提供的外接程序的 XML 清单文件 (GetDoc_App.xml)。该清单文件必须指向前面提到的 HTML 文件的位置。
-    
+
 也可以使用 [Visual Studio](../quickstarts/powerpoint-quickstart.md?tabs=visual-studio) 或[任意编辑器](../quickstarts/powerpoint-quickstart.md?tabs=visual-studio-code)创建 PowerPoint 加载项，或使用 [Visual Studio](../quickstarts/word-quickstart.md?tabs=visual-studio) 或[任意编辑器](../quickstarts/word-quickstart.md?tabs=visual-studio-code)创建 Word 加载项。 
 
 ### <a name="core-concepts-to-know-for-creating-a-task-pane-add-in"></a>创建任务窗格加载项需要了解的核心概念
@@ -24,36 +24,35 @@
 
 ## <a name="create-the-manifest-for-the-add-in"></a>为外接程序创建清单
 
-
 PowerPoint 外接程序的 XML 清单文件提供有关外接程序的重要信息：可以托管它的应用程序、HTML 文件的位置、外接程序标题和说明以及许多其他特征。
 
 1. 在文本编辑器中，将以下代码添加到清单文件中。
-    
+
     ```xml  
-    <?xml version="1.0" encoding="utf-8" ?> 
-    <OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.1" 
-    xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance" 
+    <?xml version="1.0" encoding="utf-8" ?>
+    <OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.1"
+    xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance"
     xsi:type="TaskPaneApp">
-        <Id>[Replace_With_Your_GUID]</Id> 
-        <Version>1.0</Version> 
-        <ProviderName>[Provider Name]</ProviderName> 
-        <DefaultLocale>EN-US</DefaultLocale> 
-        <DisplayName DefaultValue="Get Doc add-in" /> 
-        <Description DefaultValue="My get PowerPoint or Word document add-in." /> 
-        <IconUrl DefaultValue="http://officeimg.vo.msecnd.net/_layouts/images/general/office_logo.jpg" /> 
+        <Id>[Replace_With_Your_GUID]</Id>
+        <Version>1.0</Version>
+        <ProviderName>[Provider Name]</ProviderName>
+        <DefaultLocale>EN-US</DefaultLocale>
+        <DisplayName DefaultValue="Get Doc add-in" />
+        <Description DefaultValue="My get PowerPoint or Word document add-in." />
+        <IconUrl DefaultValue="http://officeimg.vo.msecnd.net/_layouts/images/general/office_logo.jpg" />
         <Hosts>
-        <Host Name="Document" /> 
-        <Host Name="Presentation" /> 
+        <Host Name="Document" />
+        <Host Name="Presentation" />
         </Hosts>
         <DefaultSettings>
-        <SourceLocation DefaultValue="[Network location of app]/GetDoc_App.html" /> 
+        <SourceLocation DefaultValue="[Network location of app]/GetDoc_App.html" />
         </DefaultSettings>
-        <Permissions>ReadWriteDocument</Permissions> 
+        <Permissions>ReadWriteDocument</Permissions>
     </OfficeApp>
     ```
 
 2. 使用 UTF-8 编码将文件以 GetDoc_App.xml 形式保存到网络位置或外接程序目录。
-    
+
 ## <a name="create-the-user-interface-for-the-add-in"></a>为外接程序创建用户界面
 
 要为外接程序创建用户界面，可使用直接写入 GetDoc_App.html 文件的 HTML。外接程序的编程逻辑和功能必须包含在 JavaScript 文件（如 GetDoc_App.js）中。
@@ -61,7 +60,7 @@ PowerPoint 外接程序的 XML 清单文件提供有关外接程序的重要信�
 使用以下过程可为该外接程序创建一个包含标题和单个按钮的简单用户界面。
 
 1. 在文本编辑器的新文件中，添加以下 HTML。
-        
+
     ```html
     <!DOCTYPE html>
     <html>
@@ -96,7 +95,7 @@ PowerPoint 外接程序的 XML 清单文件提供有关外接程序的重要信�
     我们将使用一些 CSS 为外接程序提供一个简洁、现代且具专业水准的外观。使用以下 CSS 可定义外接程序的样式。
 
 3. 在文本编辑器的新文件中，添加以下 CSS。
-        
+
     ```css  
     body
     {
@@ -106,23 +105,23 @@ PowerPoint 外接程序的 XML 清单文件提供有关外接程序的重要信�
     {
         text-decoration-color:#4ec724;
     }
-    input [type="submit"], input[type="button"] 
-    { 
-        height:24px; 
-        padding-left:1em; 
-        padding-right:1em; 
-        background-color:white; 
-        border:1px solid grey; 
-        border-color: #dedfe0 #b9b9b9 #b9b9b9 #dedfe0; 
-        cursor:pointer; 
+    input [type="submit"], input[type="button"]
+    {
+        height:24px;
+        padding-left:1em;
+        padding-right:1em;
+        background-color:white;
+        border:1px solid grey;
+        border-color: #dedfe0 #b9b9b9 #b9b9b9 #dedfe0;
+        cursor:pointer;
     }
     ```
 
 4. 使用 UTF-8 编码将该文件以 Program.css 形式保存到网络位置，或保存到 GetDoc_App.html 文件所在的 Web 服务器。
-    
+
 ## <a name="add-the-javascript-to-get-the-document"></a>添加 JavaScript 以获取文档
 
-在外接程序的代码中，[Office.initialize](https://docs.microsoft.com/javascript/api/office) 事件的处理程序会向表单上**提交**按钮的 Click 事件中添加处理程序，并告知用户外接程序准备就绪。
+在外接程序的代码中，[Office.initialize](/javascript/api/office) 事件的处理程序会向表单上**提交**按钮的 Click 事件中添加处理程序，并告知用户外接程序准备就绪。
 
 以下代码示例演示  **Office.initialize** 事件的事件处理程序，以及用于写入状态 div 的 Helper 函数 `updateStatus`。
 
@@ -133,30 +132,30 @@ Office.initialize = function (reason) {
     // Checks for the DOM to load using the jQuery ready function.
     $(document).ready(function () {
 
-        // Execute sendFile when submit is clicked 
+        // Execute sendFile when submit is clicked
         $('#submit').click(function () {
             sendFile();
         });
 
-        // Update status        
+        // Update status
         updateStatus("Ready to send file.");
     });
 }
 
-// Create a function for writing to the status div. 
+// Create a function for writing to the status div.
 function updateStatus(message) {
     var statusInfo = $('#status');
     statusInfo.innerHTML += message + "<br/>";
 }
 ```
 
-当您选择 UI 中的**提交**按钮时，外接程序会调用 `sendFile` 函数（包含对 [Document.getFileAsync](https://docs.microsoft.com/javascript/api/office/office.document#getfileasync-filetype--options--callback-) 方法的调用）。**getFileAsync** 方法使用异步模式，这与 JavaScript API for Office 中的其他方法类似。它包含一个必需参数 _fileType_ 以及两个可选参数 _options_ 和 _callback_。 
+当您选择 UI 中的**提交**按钮时，外接程序会调用 `sendFile` 函数（包含对 [Document.getFileAsync](/javascript/api/office/office.document#getfileasync-filetype--options--callback-) 方法的调用）。**getFileAsync** 方法使用异步模式，这与 JavaScript API for Office 中的其他方法类似。它包含一个必需参数 _fileType_ 以及两个可选参数 _options_ 和 _callback_。 
 
-_fileType_ 形参需要 [FileType](https://docs.microsoft.com/javascript/api/office/office.filetype) 枚举中三个常量中的一个：**Office.FileType.Compressed** ("compressed")、**Office.FileType.PDF** ("pdf") 或 **Office.FileType.Text** ("text")。PowerPoint 仅支持将 **Compressed** 作为实参；Word 支持这三者。当您为 **fileType** 形参传入 _Compressed_ 时，**getFileAsync** 方法将通过在本地计算机上创建文件的临时副本，来将文档作为 PowerPoint 2013 演示文稿文件 (*.pptx) 或 Word 2013 文档文件 (*.docx) 返回。
+_fileType_ 形参需要 [FileType](/javascript/api/office/office.filetype) 枚举中三个常量中的一个：**Office.FileType.Compressed** ("compressed")、**Office.FileType.PDF** ("pdf") 或 **Office.FileType.Text** ("text")。PowerPoint 仅支持将 **Compressed** 作为实参；Word 支持这三者。当您为 **fileType** 形参传入 _Compressed_ 时，**getFileAsync** 方法将通过在本地计算机上创建文件的临时副本，来将文档作为 PowerPoint 2013 演示文稿文件 (*.pptx) 或 Word 2013 文档文件 (*.docx) 返回。
 
-**getFileAsync** 方法将对文件的引用作为 [File](https://docs.microsoft.com/javascript/api/office/office.file) 对象返回。**File** 对象公开四个成员：[size](https://docs.microsoft.com/javascript/api/office/office.file#size) 属性、[sliceCount](https://docs.microsoft.com/javascript/api/office/office.file#slicecount) 属性、[getSliceAsync](https://docs.microsoft.com/javascript/api/office/office.file#getsliceasync-sliceindex--callback-) 方法和 [closeAsync](https://docs.microsoft.com/javascript/api/office/office.file#closeasync-callback-) 方法。**size** 属性返回文件中的字节数。**sliceCount** 返回文件中 [Slice](https://docs.microsoft.com/javascript/api/office/office.slice) 对象（在下文中讨论）的数目。
+**getFileAsync** 方法将对文件的引用作为 [File](/javascript/api/office/office.file) 对象返回。**File** 对象公开四个成员：[size](/javascript/api/office/office.file#size) 属性、[sliceCount](/javascript/api/office/office.file#slicecount) 属性、[getSliceAsync](/javascript/api/office/office.file#getsliceasync-sliceindex--callback-) 方法和 [closeAsync](/javascript/api/office/office.file#closeasync-callback-) 方法。**size** 属性返回文件中的字节数。**sliceCount** 返回文件中 [Slice](/javascript/api/office/office.slice) 对象（在下文中讨论）的数目。
 
-使用以下代码时，将通过  **Document.getFileAsync** 方法以 **File** 对象的形式获取 PowerPoint 或 Word 文档，然后调用本地定义的 `getSlice` 函数。请注意，在调用匿名对象中的 `getSlice` 时，将传入 **File** 对象（一个计数器变量）以及文件中切片的总数。
+使用以下代码时，将通过  **Document.getFileAsync** 方法以 **File** 对象的形式获取 PowerPoint 或 Word 文档，然后调用本地定义的 `getSlice` 函数。请注意，在调用匿名对象中的 **** 时，将传入 `getSlice` 对象（一个计数器变量）以及文件中切片的总数。
 
 ```js
 // Get all of the content from a PowerPoint or Word document in 100-KB chunks of text.
@@ -164,7 +163,7 @@ function sendFile() {
     Office.context.document.getFileAsync("compressed",
         { sliceSize: 100000 },
         function (result) {
-            
+
             if (result.status == Office.AsyncResultStatus.Succeeded) {
 
                 // Get the File object from the result.
@@ -187,7 +186,7 @@ function sendFile() {
 
 本地函数  `getSlice` 可对 **File.getSliceAsync** 方法进行调用，以从 **File** 对象中检索切片。 **getSliceAsync** 方法返回切片集合中的 **Slice** 对象。它具有两个必需参数： _sliceIndex_ 和 _callback_。 _sliceIndex_ 参数将整数作为切块集合中的索引器。与 JavaScript API for Office 中的其他函数一样， **getSliceAsync** 方法还将回调函数作为参数，以处理方法调用的结果。
 
-**切片**对象提供对文件中包含的数据的访问权限。 **切片**对象的大小为 4 MB，除非 **getFileAsync** 方法的_选项_参数中另有指定。 **切片**对象公开三个属性：[大小](https://docs.microsoft.com/javascript/api/office/office.slice#size)、[数据](https://docs.microsoft.com/javascript/api/office/office.slice#data)和[索引](https://docs.microsoft.com/javascript/api/office/office.slice#index)。 **大小**属性获取以字节为单位的切片大小。 **索引**属性获取一个整数，表示切片在切片集合中的位置。
+**切片**对象提供对文件中包含的数据的访问权限。 **切片**对象的大小为 4 MB，除非 **getFileAsync** 方法的_选项_参数中另有指定。 **切片**对象公开三个属性：[大小](/javascript/api/office/office.slice#size)、[数据](/javascript/api/office/office.slice#data)和[索引](/javascript/api/office/office.slice#index)。 **大小**属性获取以字节为单位的切片大小。 **索引**属性获取一个整数，表示切片在切片集合中的位置。
 
 ```js
 // Get a slice from the file and then call sendSlice.
@@ -224,16 +223,16 @@ function sendSlice(slice, state) {
     if (data) {
 
         // Encode the slice data, a byte array, as a Base64 string.
-        // NOTE: The implementation of myEncodeBase64(input) function isn't 
+        // NOTE: The implementation of myEncodeBase64(input) function isn't
         // included with this example. For information about Base64 encoding with
         // JavaScript, see https://developer.mozilla.org/docs/Web/JavaScript/Base64_encoding_and_decoding.
         var fileData = myEncodeBase64(data);
 
-        // Create a new HTTP request. You need to send the request 
+        // Create a new HTTP request. You need to send the request
         // to a webpage that can receive a post.
         var request = new XMLHttpRequest();
 
-        // Create a handler function to update the status 
+        // Create a handler function to update the status
         // when the request has been sent.
         request.onreadystatechange = function () {
             if (request.readyState == 4) {
@@ -253,7 +252,7 @@ function sendSlice(slice, state) {
         request.open("POST", "[Your receiving page or service]");
         request.setRequestHeader("Slice-Number", slice.index);
 
-        // Send the file as the body of an HTTP POST 
+        // Send the file as the body of an HTTP POST
         // request to the web server.
         request.send(fileData);
     }
