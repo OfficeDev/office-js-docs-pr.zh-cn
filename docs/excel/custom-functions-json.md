@@ -1,22 +1,31 @@
 ---
-ms.date: 01/08/2019
+ms.date: 03/29/2019
 description: 在 Excel 中定义自定义函数的元数据。
 title: Excel 中的自定义函数的元数据（预览）
 localization_priority: Normal
-ms.openlocfilehash: 43ec436d15d118346bb04dcd4d16f5eb180ecbd3
-ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
+ms.openlocfilehash: 28a9a0207f7439af164eb9ca7c4b9ed9e966b3ed
+ms.sourcegitcommit: 14ceac067e0e130869b861d289edb438b5e3eff9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "30872086"
+ms.lasthandoff: 04/04/2019
+ms.locfileid: "31477549"
 ---
 # <a name="custom-functions-metadata-preview"></a>自定义函数元数据（预览）
 
-在 Excel 加载项中定义[自定义函数](custom-functions-overview.md)时，加载项项目必须包含 JSON 元数据文件，该文件提供 Excel 注册自定义函数并使其可供最终用户使用所需的信息。 本文介绍了 JSON 元数据文件的格式。
+在 Excel 加载项中定义[自定义函数](custom-functions-overview.md)时, 加载项项目包含 JSON 元数据文件, 该文件提供了 Excel 注册自定义函数并使其可供最终用户使用的信息。 此文件的生成方式为:
+
+- 您, 在手写 JSON 文件中
+- 从您在函数开头输入的 JSDoc 注释
+
+自定义函数在用户首次运行外接程序且在所有工作簿中对同一用户可用时注册。
+
+本文介绍了 JSON 元数据文件的格式, 假定您正在手动编写元数据文件。 有关 JSDoc 注释 JSON 文件生成的信息, 请参阅[为自定义函数生成 JSON 元数据](custom-functions-json-autogeneration.md)。
 
 有关为启用自定义函数必须在加载项项目中包含的其他文件的信息，请参阅[在 Excel 中创建自定义函数](custom-functions-overview.md)。
 
 [!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
+
+> 托管 JSON 文件的服务器上的服务器设置必须启用 [CORS](https://developer.mozilla.org/docs/Web/HTTP/CORS)，以便自定义函数在 Excel Online 中正常工作。
 
 ## <a name="example-metadata"></a>示例元数据
 
@@ -104,7 +113,7 @@ ms.locfileid: "30872086"
 ```
 
 > [!NOTE]
-> 在 [OfficeDev/Excel-Custom-Functions](https://github.com/OfficeDev/Excel-Custom-Functions/blob/master/config/customfunctions.json) GitHub 存储库中提供了完整的示例 JSON 文件。
+> 在 [OfficeDev/Excel-Custom-Functions](https://github.com/OfficeDev/Excel-Custom-Functions/blob/master/src/functions/functions.json) GitHub 存储库中提供了完整的示例 JSON 文件。
 
 ## <a name="functions"></a>functions 
 
@@ -116,7 +125,7 @@ ms.locfileid: "30872086"
 |  `helpUrl`  |  string  |   否  |  提供有关函数的信息的 URL。 （它显示在任务窗格中。）例如，**http://contoso.com/help/convertcelsiustofahrenheit.html**。 |
 | `id`     | string | 是 | 函数的唯一 ID。 此 ID 只能包含字母数字字符和句点，设置后不应更改。 |
 |  `name`  |  string  |  是  |  最终用户在 Excel 中看到的函数的名称。 在 Excel 中，此函数名称将以 XML 清单文件中指定的自定义函数命名空间为前缀。 |
-|  `options`  |  对象  |  否  |  使用户能够自定义 Excel 执行函数的方式和时间。 有关详细信息，请参阅[选项](#options)。 |
+|  `options`  |  object  |  否  |  使用户能够自定义 Excel 执行函数的方式和时间。 有关详细信息，请参阅[选项](#options)。 |
 |  `parameters`  |  array  |  是  |  定义函数的输入参数的数组。 有关详细信息，请参阅[参数](#parameters)。 |
 |  `result`  |  object  |  是  |  定义函数返回的信息类型的对象。 有关详细信息，请参阅[结果](#result)。 |
 

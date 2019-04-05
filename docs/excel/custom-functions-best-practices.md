@@ -3,12 +3,12 @@ ms.date: 01/08/2019
 description: 了解在 Excel 中开发自定义函数的最佳实践。
 title: 自定义函数最佳实践（预览）
 localization_priority: Normal
-ms.openlocfilehash: ae04169044336f7e42d341c1e904090e55d568af
-ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
+ms.openlocfilehash: 4efcd0ba5efb0dc7450192694e8f0750de43b8a8
+ms.sourcegitcommit: 14ceac067e0e130869b861d289edb438b5e3eff9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "30871344"
+ms.lasthandoff: 04/04/2019
+ms.locfileid: "31477542"
 ---
 # <a name="custom-functions-best-practices-preview"></a>自定义函数最佳实践（预览）
 
@@ -24,26 +24,9 @@ ms.locfileid: "30871344"
 
 3. 若要向 Excel 自定义函数团队报告有关此故障排除方法的反馈，请发送团队反馈。 若要执行此操作，请选择“**文件|反馈|发送哭脸**”。 发送哭脸将提供必要的日志，以帮助我们了解你遇到的问题。
 
-## <a name="debugging"></a>调试
-
-目前，有关调试 Excel 自定义函数的最佳方法是先[旁加载](../testing/sideload-office-add-ins-for-testing.md) **Excel Online** 内的外接程序。 然后，你可以通过使用[浏览器本机的 F12 调试工具](../testing/debug-add-ins-in-office-online.md)并结合以下技巧调试自定义函数：
-
-- 使用自定义函数代码中的 `console.log` 语句，将输出实时发送到控制台。
-
-- 使用自定义函数代码中的 `debugger;` 语句来指定当 F12 窗口打开时执行将暂停的断点。 例如，如果在 F12 窗口打开时运行以下函数，则执行将在 `debugger;` 语句上暂停，使你可以在函数返回之前手动检查参数值。 当 F12 窗口未打开时，`debugger;` 语句在 Excel Online 中无效。 目前，`debugger;` 语句对 Windows 版 Excel 无效。
-
-    ```js
-    function add(first, second){
-      debugger;
-      return first + second;
-    }
-    ```
-
-如果你的外接程序无法注册，请验证是否为托管外接应用程序的 Web 服务器[正确配置了 SSL 证书](https://github.com/OfficeDev/generator-office/blob/master/src/docs/ssl.md)。
-
 ## <a name="associating-function-names-with-json-metadata"></a>将函数名称与 JSON 元数据相关联
 
-如[自定义函数概述](custom-functions-overview.md)文章中所述，自定义函数项目必须包含 JSON 元数据文件和脚本（JavaScript 或 TypeScript）文件才能构成完整的函数。 要使函数正常工作，需要将脚本文件中的函数名称绑定到 JSON 文件中列出的 ID。 此过程称为“关联”。 请记住在 JavaScript 代码文件的末尾包含关联，否则，函数将无法正常工作。
+如[自定义函数概述](custom-functions-overview.md)文章中所述，自定义函数项目必须包含 JSON 元数据文件和脚本（JavaScript 或 TypeScript）文件才能构成完整的函数。 若要使函数正常工作, 需要将 id 与 JavaScript 实现相关联。 请确保存在关联, 否则将不会调用该函数。
 
 以下代码示例展示了如何执行此关联操作。 该示例定义了自定义函数 `add`，并将其与 JSON 元数据文件中的对象关联，其中 `id` 属性的值为 **ADD**。
 
@@ -58,8 +41,6 @@ CustomFunctions.associate("ADD", add);
 在 JavaScript 文件中创建自定义函数和在 JSON 元数据文件中指定相应信息时，请记住以下最佳实践。
 
 * 在 JSON 元数据文件中，函数的 `name` 和 `id` 只能使用大写字母。 不要使用大小写字母混合或仅使用小写字母。 如果这样做，你最终可能会得到两个值，这些值只会因情况而异，从而导致意外覆盖你的函数。 例如，`id` 值为 **add** 的函数对象稍后可以通过声明在 `id` 值为 **ADD** 的函数对象文件中覆盖。 此外，`name` 属性还会定义最终用户将在 Excel 中看到的函数名称。 使用大写字母作为每个自定义函数的名称可在 Excel 中提供一致的体验，其中所有内置函数名称均为大写。
-
-* 但是，在关联时没有必要将函数的 `name` 大写。 例如，`CustomFunctions.associate("add", add)` 等同于 `CustomFunctions.associate("ADD", add)`。
 
 * 在 JSON 元数据文件中，确保每个 `id` 属性的值仅包含字母数字字符和句点。
 

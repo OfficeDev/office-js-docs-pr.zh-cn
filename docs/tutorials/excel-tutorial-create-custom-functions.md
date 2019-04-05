@@ -5,12 +5,12 @@ ms.date: 03/19/2019
 ms.prod: excel
 ms.topic: tutorial
 localization_priority: Normal
-ms.openlocfilehash: 328d4da7a4dfcc2098f7c5425f84b851bd9dd9d6
-ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
+ms.openlocfilehash: 76f4d88b9da39a4d71927982836ee061b329a9b3
+ms.sourcegitcommit: 14ceac067e0e130869b861d289edb438b5e3eff9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "30870672"
+ms.lasthandoff: 04/04/2019
+ms.locfileid: "31477570"
 ---
 # <a name="tutorial-create-custom-functions-in-excel-preview"></a>教程：在 Excel 中创建自定义函数（预览）
 
@@ -54,8 +54,8 @@ ms.locfileid: "30870672"
     yo office
     ```
     
-    * 选择项目类型：`Excel Custom Functions Add-in project (...)`
-    * 选择脚本类型：`JavaScript`
+    * 选择项目类型: `Excel Custom Functions Add-in project (...)`
+    * 选择脚本类型: `JavaScript`
     * 要如何命名加载项？ `stock-ticker`
     
     ![自定义函数的 Office 外接程序提示的 Yeoman 生成器](../images/12-10-fork-cf-pic.jpg)
@@ -78,12 +78,12 @@ ms.locfileid: "30870672"
 
 5. 启动在 Node.js 中运行的本地 Web 服务器。 你可以在 Excel for Windows 或 Excel Online 中尝试使用自定义函数加载项。
 
-# <a name="excel-for-windowstabexcel-windows"></a>[Excel for Windows](#tab/excel-windows)
+# [<a name="excel-for-windows"></a>Excel for Windows](#tab/excel-windows)
 
 运行以下命令。
 
 ```
-npm run start
+npm start desktop
 ```
 
 此命令将启动 Web 服务器，并将自定义函数加载项旁加载到 Excel for Windows 中。
@@ -91,12 +91,12 @@ npm run start
 > [!NOTE]
 > 如果加载项未加载，请检查是否已正确完成步骤 3。 您还可以启用**[运行时日志记录](../testing/troubleshoot-manifest.md#use-runtime-logging-to-debug-your-add-in)** 以解决外接程序的 XML 清单文件中的问题, 以及任何安装或运行时问题。 运行时日志`console.log`记录将语句写入日志文件, 以帮助您查找和修复问题。
 
-# <a name="excel-onlinetabexcel-online"></a>[Excel Online](#tab/excel-online)
+# [<a name="excel-online"></a>Excel Online](#tab/excel-online)
 
 运行以下命令。
 
 ```
-npm run start-web
+npm start web
 ```
 
 此命令将启动 Web 服务器。 使用以下步骤来旁加载你的加载项。
@@ -116,7 +116,7 @@ npm run start-web
     
 ## <a name="try-out-a-prebuilt-custom-function"></a>尝试预生成的自定义函数
 
-你创建的自定义函数项目已经有两个预生成的自定义函数，名为 ADD 和 INCREMENT。 这些预生成的函数的代码位于 **src/customfunctions.js** 文件中。 **./manifest.xml** 文件指定所有自定义函数均属于 `CONTOSO` 命名空间。 你将使用 CONTOSO 命名空间来访问 Excel 中的自定义函数。
+你创建的自定义函数项目已经有两个预生成的自定义函数，名为 ADD 和 INCREMENT。 这些预构建函数的代码位于**src/函数/函数 .js**文件中。 **./manifest.xml** 文件指定所有自定义函数均属于 `CONTOSO` 命名空间。 你将使用 CONTOSO 命名空间来访问 Excel 中的自定义函数。
 
 接下来，通过完成以下步骤来尝试使用 `ADD` 自定义函数：
 
@@ -130,9 +130,9 @@ npm run start-web
 
 集成来自 Web 的数据是通过自定义函数来扩展 Excel 的好方法。 接下来，你将创建一个名为 `stockPrice` 的自定义函数，该函数从 Web API 获取股票报价并将结果返回到工作表的单元格。 你将使用使用 IEX Trading API，该 API 是免费的，并且不需要身份验证。
 
-1. 在 **stock-ticker** 项目中，找到文件 **src/customfunctions.js** 并在代码编辑器中打开它。
+1. 在**股票报价**项目中, 找到文件**src/函数/函数 .js**并在代码编辑器中打开它。
 
-2. 在 **customfunctions.js** 中，找到 `increment` 函数并将以下代码添加到该函数后面。
+2. 在**函数 .js**中, 找到`increment`函数并在该函数后面紧接着添加以下代码。
 
     ```js
     function stockPrice(ticker) {
@@ -153,7 +153,7 @@ npm run start-web
 > In the January Insiders 1901 Build, there is a bug preventing fetch calls from executing which will result in #VALUE!.
 > To workaround this please use the [XMLHTTPRequest API](/office/dev/add-ins/excel/custom-functions-runtime#requesting-external-data) to make the web request.
 
-3. In **customfunctions.js**, locate the line `CustomFunctions.associate("INCREMENT", increment);`. Add the following line of code immediately after that line, and save the file.
+3. In **functions.js**, locate the line `CustomFunctions.associate("INCREMENT", increment);`. Add the following line of code immediately after that line, and save the file.
 
     ```js
     CustomFunctions.associate("STOCKPRICE", stockprice);
@@ -164,7 +164,7 @@ npm run start-web
     在 Excel 能够使用你的自定义函数之前，你需要先使用元数据来描述它。 你需要先定义在 `associate` 方法中使用的 `id` 以及某些其他元数据。
 
 
-4. 打开 **config/customfunctions.json** 文件。 将 JSON 对象添加到“函数”数组中，然后保存该文件。
+4. 打开 " **src/函数/函数. json** " 文件。 将 JSON 对象添加到“函数”数组中，然后保存该文件。
 
     ```JSON
     {
@@ -191,7 +191,7 @@ npm run start-web
 
 5. 在 Excel 中重新注册加载项，以便新函数可用。 
 
-# <a name="excel-for-windowstabexcel-windows"></a>[Excel for Windows](#tab/excel-windows)
+# [<a name="excel-for-windows"></a>Excel for Windows](#tab/excel-windows)
 
 1. 关闭 Excel，然后重新打开 Excel。
 
@@ -200,7 +200,7 @@ npm run start-web
 3. 在可用加载项列表中，找到“**开发人员加载项**”部分并选择 **stock-ticker** 加载项进行注册。
     ![Excel for Windows 中的“插入”功能区，同时在“我的加载项”列表中突出显示“Excel 自定义函数”加载项](../images/excel-cf-register-add-in-2.png)
 
-# <a name="excel-onlinetabexcel-online"></a>[Excel Online](#tab/excel-online)
+# [<a name="excel-online"></a>Excel Online](#tab/excel-online)
 
 1. 在 Excel Online 中，选择“插入”**** 选项卡，然后选择“加载项”****。![Excel Online 中的“插入”功能区，同时突出显示“我的加载项”图标](../images/excel-cf-online-register-add-in-1.png)
 
@@ -220,7 +220,7 @@ npm run start-web
 
 `stockPrice` 函数将返回特定时刻的股票价格，但股票价格一直在变化。 接下来，将创建一个名为 `stockPriceStream` 的自定义函数，该函数每隔 1000 毫秒获取一次股票价格。
 
-1. 在 **stock-ticker** 项目中，将以下代码添加到 **src/customfunctions.js** 并保存该文件。
+1. 在**股票报价**项目中, 将以下代码添加到**src/函数/函数 .js**中并保存文件。
 
     ```js
     function stockPriceStream(ticker, handler) {
@@ -261,7 +261,7 @@ npm run start-web
     
     在 Excel 能够使用你的自定义函数之前，你需要先使用元数据来描述它。
     
-2. 在 **stock-ticker** 项目中，将以下对象添加到 **config/customfunctions.json** 文件中的 `functions` 数组，并保存该文件。
+2. 在**股票报价**项目中, 将以下对象添加到`functions` **src/函数/函数-json**文件中的数组, 并保存文件。
     
     ```json
     { 
@@ -292,7 +292,7 @@ npm run start-web
 
 3. 在 Excel 中重新注册加载项，以便新函数可用。
 
-# <a name="excel-for-windowstabexcel-windows"></a>[Excel for Windows](#tab/excel-windows)
+# [<a name="excel-for-windows"></a>Excel for Windows](#tab/excel-windows)
 
 1. 关闭 Excel，然后重新打开 Excel。
 
@@ -301,7 +301,7 @@ npm run start-web
 3. 在可用加载项列表中，找到“**开发人员加载项**”部分并选择 **stock-ticker** 加载项进行注册。
     ![Excel for Windows 中的“插入”功能区，同时在“我的加载项”列表中突出显示“Excel 自定义函数”加载项](../images/excel-cf-register-add-in-2.png)
 
-# <a name="excel-onlinetabexcel-online"></a>[Excel Online](#tab/excel-online)
+# [<a name="excel-online"></a>Excel Online](#tab/excel-online)
 
 1. 在 Excel Online 中，选择“插入”**** 选项卡，然后选择“加载项”****。![Excel Online 中的“插入”功能区，同时突出显示“我的加载项”图标](../images/excel-cf-online-register-add-in-1.png)
 
@@ -317,10 +317,9 @@ npm run start-web
 <li>尝试使用新函数。 在单元格 <strong>C1</strong> 中，键入文本 <strong>=CONTOSO.STOCKPRICESTREAM("MSFT")</strong>，然后按 Enter。 假设股票市场开盘，应该会看到单元格 <strong>C1</strong> 中的结果在不断更新，以反映 Microsoft 一股股票的实时价格。</li>
 </ol>
 
-
 ## <a name="next-steps"></a>后续步骤
 
-恭喜！ 你已经创建新的自定义函数项目，尝试了预生成的函数，创建了从 Web 请求数据的自定义函数，并创建了从 Web 传送实时数据的自定义函数。 若要详细了解 Excel 中的自定义函数，请继续阅读以下文章：
+恭喜！ 你已经创建新的自定义函数项目，尝试了预生成的函数，创建了从 Web 请求数据的自定义函数，并创建了从 Web 传送实时数据的自定义函数。 您也可以尝试使用[自定义函数调试指令](../excel/custom-functions-debugging.md)来调试此函数。 若要详细了解 Excel 中的自定义函数，请继续阅读以下文章：
 
 > [!div class="nextstepaction"]
 > [在 Excel 中创建自定义函数](../excel/custom-functions-overview.md)
