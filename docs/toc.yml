@@ -190,7 +190,7 @@ items:
       href: develop/localization.md
     - name: 使用 Visual Studio 开发外接程序
       items:
-      - name: 在 Visual Studio 中创建和调试 Office 加载项
+      - name: 在 Visual Studio 中创建和调试 Office 外接程序
         href: develop/create-and-debug-office-add-ins-in-visual-studio.md
       - name: 在 Visual Studio 中获取 JavaScript IntelliSense
         href: develop/get-javascript-intellisense-in-visual-studio.md
@@ -267,9 +267,15 @@ items:
         - name: 自定义函数元数据
           displayName: Excel
           href: excel/custom-functions-json.md
+        - name: 创建自定义函数元数据
+          displayName: Excel
+          href: excel/custom-functions-json-autogeneration.md
         - name: 自定义函数最佳实践
           displayName: Excel
           href: excel/custom-functions-best-practices.md
+        - name: 自定义函数调试
+          displayName: Excel
+          href: excel/custom-functions-debugging.md
         - name: 自定义函数身份验证
           displayName: Excel
           href: excel/custom-functions-authentication.md
@@ -744,7 +750,7 @@ items:
     - name: VersionOverrides
       href: reference/manifest/versionoverrides.md
       items:
-      - name: Action
+      - name: 操作
         href: reference/manifest/action.md
       - name: AllFormFactors
         href: reference/manifest/allformfactors.md
@@ -792,9 +798,9 @@ items:
         href: reference/manifest/webapplicationinfo.md
 - name: 资源
   href: resources/resources-links-help.md
-ms.openlocfilehash: 7b872ef8236dd2f0ce4000772755ff93eb66abc4
-ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
+ms.openlocfilehash: 86f9006398dc54fa4fc9af11b88c2ccb15a0a8b4
+ms.sourcegitcommit: 14ceac067e0e130869b861d289edb438b5e3eff9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "30872198"
+ms.lasthandoff: 04/04/2019
+ms.locfileid: "31477577"
