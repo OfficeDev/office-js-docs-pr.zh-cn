@@ -1,25 +1,25 @@
 ---
 title: 使用 Excel JavaScript API 处理表格
 description: ''
-ms.date: 03/19/2019
+ms.date: 04/04/2019
 localization_priority: Priority
-ms.openlocfilehash: a628c182ccb570fcda3db813f7debb237682b915
-ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
+ms.openlocfilehash: 1b409e27c12d4741f59a027dd4962fdee65b96bf
+ms.sourcegitcommit: 63219bcc1bb5e3bed7eb6c6b0adb73a4829c7e8f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "30869972"
+ms.lasthandoff: 04/05/2019
+ms.locfileid: "31479716"
 ---
-# <a name="work-with-tables-using-the-excel-javascript-api"></a><span data-ttu-id="a3e7e-102">使用 Excel JavaScript API 处理表格</span><span class="sxs-lookup"><span data-stu-id="a3e7e-102">Work with tables using the Excel JavaScript API</span></span>
+# <a name="work-with-tables-using-the-excel-javascript-api"></a><span data-ttu-id="3d158-102">使用 Excel JavaScript API 处理表格</span><span class="sxs-lookup"><span data-stu-id="3d158-102">Work with tables using the Excel JavaScript API</span></span>
 
-<span data-ttu-id="a3e7e-p101">本文中的代码示例展示了如何使用 Excel JavaScript API 对表格执行常见任务。 有关 **Table** 和 **TableCollection** 对象支持的属性和方法的完整列表，请参阅 [Table 对象 (Excel JavaScript API)](/javascript/api/excel/excel.table) 和 [TableCollection 对象 (Excel JavaScript API)](/javascript/api/excel/excel.tablecollection)。</span><span class="sxs-lookup"><span data-stu-id="a3e7e-p101">This article provides code samples that show how to perform common tasks with tables using the Excel JavaScript API. For the complete list of properties and methods that the **Table** and **TableCollection** objects support, see [Table Object (JavaScript API for Excel)](/javascript/api/excel/excel.table) and [TableCollection Object (JavaScript API for Excel)](/javascript/api/excel/excel.tablecollection).</span></span>
+<span data-ttu-id="3d158-p101">本文中的代码示例展示了如何使用 Excel JavaScript API 对表格执行常见任务。 有关 **Table** 和 **TableCollection** 对象支持的属性和方法的完整列表，请参阅 [Table 对象 (Excel JavaScript API)](/javascript/api/excel/excel.table) 和 [TableCollection 对象 (Excel JavaScript API)](/javascript/api/excel/excel.tablecollection)。</span><span class="sxs-lookup"><span data-stu-id="3d158-p101">This article provides code samples that show how to perform common tasks with tables using the Excel JavaScript API. For the complete list of properties and methods that the **Table** and **TableCollection** objects support, see [Table Object (JavaScript API for Excel)](/javascript/api/excel/excel.table) and [TableCollection Object (JavaScript API for Excel)](/javascript/api/excel/excel.tablecollection).</span></span>
 
-## <a name="create-a-table"></a><span data-ttu-id="a3e7e-105">创建表</span><span class="sxs-lookup"><span data-stu-id="a3e7e-105">Create a table</span></span>
+## <a name="create-a-table"></a><span data-ttu-id="3d158-105">创建表</span><span class="sxs-lookup"><span data-stu-id="3d158-105">Create a table</span></span>
 
-<span data-ttu-id="a3e7e-p102">下面的代码示例在名为 **Sample** 的工作表中创建一个表。 此表包含标题，并且包含四列和七行数据。 如果在其中运行代码的 Excel 主机应用程序支持[要求集](/office/dev/add-ins/reference/requirement-sets/excel-api-requirement-sets) **ExcelApi 1.2**，则为表中的当前数据设置最佳列宽和行高。</span><span class="sxs-lookup"><span data-stu-id="a3e7e-p102">The following code sample creates a table in the worksheet named **Sample**. The table has headers and contains four columns and seven rows of data. If the Excel host application where the code is running supports [requirement set](/office/dev/add-ins/reference/requirement-sets/excel-api-requirement-sets) **ExcelApi 1.2**, the width of the columns and height of the rows are set to best fit the current data in the table.</span></span>
+<span data-ttu-id="3d158-p102">下面的代码示例在名为 **Sample** 的工作表中创建一个表。 此表包含标题，并且包含四列和七行数据。 如果在其中运行代码的 Excel 主机应用程序支持[要求集](/office/dev/add-ins/reference/requirement-sets/excel-api-requirement-sets) **ExcelApi 1.2**，则为表中的当前数据设置最佳列宽和行高。</span><span class="sxs-lookup"><span data-stu-id="3d158-p102">The following code sample creates a table in the worksheet named **Sample**. The table has headers and contains four columns and seven rows of data. If the Excel host application where the code is running supports [requirement set](/office/dev/add-ins/reference/requirement-sets/excel-api-requirement-sets) **ExcelApi 1.2**, the width of the columns and height of the rows are set to best fit the current data in the table.</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="a3e7e-109">若要指定表格名称，必须先创建表格，再设置它的 **name** 属性，如下面的示例所示。</span><span class="sxs-lookup"><span data-stu-id="a3e7e-109">To specify a name for a table, you must first create the table and then set its **name** property, as shown in the example below.</span></span>
+> <span data-ttu-id="3d158-109">若要指定表格名称，必须先创建表格，再设置它的 **name** 属性，如下面的示例所示。</span><span class="sxs-lookup"><span data-stu-id="3d158-109">To specify a name for a table, you must first create the table and then set its **name** property, as shown in the example below.</span></span>
 
 ```js
 Excel.run(function (context) {
@@ -50,16 +50,16 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
-<span data-ttu-id="a3e7e-110">**新建表格**</span><span class="sxs-lookup"><span data-stu-id="a3e7e-110">**New table**</span></span>
+**<span data-ttu-id="3d158-110">新表</span><span class="sxs-lookup"><span data-stu-id="3d158-110">New table</span></span>**
 
 ![Excel 中的新表](../images/excel-tables-create.png)
 
-## <a name="add-rows-to-a-table"></a><span data-ttu-id="a3e7e-112">向表添加行</span><span class="sxs-lookup"><span data-stu-id="a3e7e-112">Add rows to a table</span></span>
+## <a name="add-rows-to-a-table"></a><span data-ttu-id="3d158-112">向表添加行</span><span class="sxs-lookup"><span data-stu-id="3d158-112">Add rows to a table</span></span>
 
-<span data-ttu-id="a3e7e-p103">下面的代码示例将七个新行添加到名为 **Sample** 的工作表内的 **ExpensesTable** 表中。 新行被添加到表的末尾。 如果在其中运行代码的 Excel 主机应用程序支持[要求集](/office/dev/add-ins/reference/requirement-sets/excel-api-requirement-sets) **ExcelApi 1.2**，则为表中的当前数据设置最佳列宽和行高。</span><span class="sxs-lookup"><span data-stu-id="a3e7e-p103">The following code sample adds seven new rows to the table named **ExpensesTable** within the worksheet named **Sample**. The new rows are added to the end of the table. If the Excel host application where the code is running supports [requirement set](/office/dev/add-ins/reference/requirement-sets/excel-api-requirement-sets) **ExcelApi 1.2**, the width of the columns and height of the rows are set to best fit the current data in the table.</span></span>
+<span data-ttu-id="3d158-p103">下面的代码示例将七个新行添加到名为 **Sample** 的工作表内的 **ExpensesTable** 表中。 新行被添加到表的末尾。 如果在其中运行代码的 Excel 主机应用程序支持[要求集](/office/dev/add-ins/reference/requirement-sets/excel-api-requirement-sets) **ExcelApi 1.2**，则为表中的当前数据设置最佳列宽和行高。</span><span class="sxs-lookup"><span data-stu-id="3d158-p103">The following code sample adds seven new rows to the table named **ExpensesTable** within the worksheet named **Sample**. The new rows are added to the end of the table. If the Excel host application where the code is running supports [requirement set](/office/dev/add-ins/reference/requirement-sets/excel-api-requirement-sets) **ExcelApi 1.2**, the width of the columns and height of the rows are set to best fit the current data in the table.</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="a3e7e-p104">**TableRow** 对象的 [index](/javascript/api/excel/excel.tablerow) 属性表示表格行集合内行的索引编号。 **TableRow** 对象不包含可用作标识行的唯一键的 **id** 属性。</span><span class="sxs-lookup"><span data-stu-id="a3e7e-p104">The **index** property of a [TableRow](/javascript/api/excel/excel.tablerow) object indicates the index number of the row within the rows collection of the table. A **TableRow** object does not contain an **id** property that can be used as a unique key to identify the row.</span></span>
+> <span data-ttu-id="3d158-p104">**TableRow** 对象的 [index](/javascript/api/excel/excel.tablerow) 属性表示表格行集合内行的索引编号。 **TableRow** 对象不包含可用作标识行的唯一键的 **id** 属性。</span><span class="sxs-lookup"><span data-stu-id="3d158-p104">The **index** property of a [TableRow](/javascript/api/excel/excel.tablerow) object indicates the index number of the row within the rows collection of the table. A **TableRow** object does not contain an **id** property that can be used as a unique key to identify the row.</span></span>
 
 ```js
 Excel.run(function (context) {
@@ -85,20 +85,20 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
-<span data-ttu-id="a3e7e-118">**包含新行的表**</span><span class="sxs-lookup"><span data-stu-id="a3e7e-118">**Table with new rows**</span></span>
+**<span data-ttu-id="3d158-118">包含新行的表</span><span class="sxs-lookup"><span data-stu-id="3d158-118">Table with new rows</span></span>**
 
 ![Excel 中包含新行的表](../images/excel-tables-add-rows.png)
 
-## <a name="add-a-column-to-a-table"></a><span data-ttu-id="a3e7e-120">向表添加列</span><span class="sxs-lookup"><span data-stu-id="a3e7e-120">Add a column to a table</span></span>
+## <a name="add-a-column-to-a-table"></a><span data-ttu-id="3d158-120">向表添加列</span><span class="sxs-lookup"><span data-stu-id="3d158-120">Add a column to a table</span></span>
 
-<span data-ttu-id="a3e7e-p105">下面的示例演示如何向表添加列。 第一个示例使用静态值填充新列；第二个示例使用公式填充新列。</span><span class="sxs-lookup"><span data-stu-id="a3e7e-p105">These examples show how to add a column to a table. The first example populates the new column with static values; the second example populates the new column with formulas.</span></span>
+<span data-ttu-id="3d158-p105">下面的示例演示如何向表添加列。 第一个示例使用静态值填充新列；第二个示例使用公式填充新列。</span><span class="sxs-lookup"><span data-stu-id="3d158-p105">These examples show how to add a column to a table. The first example populates the new column with static values; the second example populates the new column with formulas.</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="a3e7e-p106">**TableColumn** 对象的 [index](/javascript/api/excel/excel.tablecolumn) 属性表示表格列集合内列的索引编号。 **TableColumn** 对象的 **id** 属性包含用于标识列的唯一键。</span><span class="sxs-lookup"><span data-stu-id="a3e7e-p106">The **index** property of a [TableColumn](/javascript/api/excel/excel.tablecolumn) object indicates the index number of the column within the columns collection of the table. The **id** property of a **TableColumn** object contains a unique key that identifies the column.</span></span>
+> <span data-ttu-id="3d158-p106">**TableColumn** 对象的 [index](/javascript/api/excel/excel.tablecolumn) 属性表示表格列集合内列的索引编号。 **TableColumn** 对象的 **id** 属性包含用于标识列的唯一键。</span><span class="sxs-lookup"><span data-stu-id="3d158-p106">The **index** property of a [TableColumn](/javascript/api/excel/excel.tablecolumn) object indicates the index number of the column within the columns collection of the table. The **id** property of a **TableColumn** object contains a unique key that identifies the column.</span></span>
 
-### <a name="add-a-column-that-contains-static-values"></a><span data-ttu-id="a3e7e-125">添加包含静态值的列</span><span class="sxs-lookup"><span data-stu-id="a3e7e-125">Add a column that contains static values</span></span>
+### <a name="add-a-column-that-contains-static-values"></a><span data-ttu-id="3d158-125">添加包含静态值的列</span><span class="sxs-lookup"><span data-stu-id="3d158-125">Add a column that contains static values</span></span>
 
-<span data-ttu-id="a3e7e-p107">下面的代码示例将一个新列添加到名为 **Sample** 的工作表内的 **ExpensesTable** 表中。 新列添加到表中所有现有列后面，并且包含一个标题（“星期几”），以及用于填充列中单元格的数据。 如果在其中运行代码的 Excel 主机应用程序支持[要求集](/office/dev/add-ins/reference/requirement-sets/excel-api-requirement-sets) **ExcelApi 1.2**，则为表中的当前数据设置最佳列宽和行高。</span><span class="sxs-lookup"><span data-stu-id="a3e7e-p107">The following code sample adds a new column to the table named **ExpensesTable** within the worksheet named **Sample**. The new column is added after all existing columns in the table and contains a header ("Day of the Week") as well as data to populate the cells in the column. If the Excel host application where the code is running supports [requirement set](/office/dev/add-ins/reference/requirement-sets/excel-api-requirement-sets) **ExcelApi 1.2**, the width of the columns and height of the rows are set to best fit the current data in the table.</span></span>
+<span data-ttu-id="3d158-p107">下面的代码示例将一个新列添加到名为 **Sample** 的工作表内的 **ExpensesTable** 表中。 新列添加到表中所有现有列后面，并且包含一个标题（“星期几”），以及用于填充列中单元格的数据。 如果在其中运行代码的 Excel 主机应用程序支持[要求集](/office/dev/add-ins/reference/requirement-sets/excel-api-requirement-sets) **ExcelApi 1.2**，则为表中的当前数据设置最佳列宽和行高。</span><span class="sxs-lookup"><span data-stu-id="3d158-p107">The following code sample adds a new column to the table named **ExpensesTable** within the worksheet named **Sample**. The new column is added after all existing columns in the table and contains a header ("Day of the Week") as well as data to populate the cells in the column. If the Excel host application where the code is running supports [requirement set](/office/dev/add-ins/reference/requirement-sets/excel-api-requirement-sets) **ExcelApi 1.2**, the width of the columns and height of the rows are set to best fit the current data in the table.</span></span>
 
 ```js
 Excel.run(function (context) {
@@ -125,13 +125,13 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
-<span data-ttu-id="a3e7e-129">**包含新列的表**</span><span class="sxs-lookup"><span data-stu-id="a3e7e-129">**Table with new column**</span></span>
+**<span data-ttu-id="3d158-129">包含新列的表</span><span class="sxs-lookup"><span data-stu-id="3d158-129">Table with new column</span></span>**
 
 ![Excel 中包含新列的表](../images/excel-tables-add-column.png)
 
-### <a name="add-a-column-that-contains-formulas"></a><span data-ttu-id="a3e7e-131">添加包含公式的列</span><span class="sxs-lookup"><span data-stu-id="a3e7e-131">Add a column that contains formulas</span></span>
+### <a name="add-a-column-that-contains-formulas"></a><span data-ttu-id="3d158-131">添加包含公式的列</span><span class="sxs-lookup"><span data-stu-id="3d158-131">Add a column that contains formulas</span></span>
 
-<span data-ttu-id="a3e7e-p108">下面的代码示例将一个新列添加到名为 **Sample** 的工作表内的 **ExpensesTable** 表中。 新列添加到表的末尾，包含标题（“日期类型”），并使用一个公式来填充列中的每个数据单元格。 如果在其中运行代码的 Excel 主机应用程序支持[要求集](/office/dev/add-ins/reference/requirement-sets/excel-api-requirement-sets) **ExcelApi 1.2**，则为表中的当前数据设置最佳列宽和行高。</span><span class="sxs-lookup"><span data-stu-id="a3e7e-p108">The following code sample adds a new column to the table named **ExpensesTable** within the worksheet named **Sample**. The new column is added to the end of the table, contains a header ("Type of the Day"), and uses a formula to populate each data cell in the column. If the Excel host application where the code is running supports [requirement set](/office/dev/add-ins/reference/requirement-sets/excel-api-requirement-sets) **ExcelApi 1.2**, the width of the columns and height of the rows are set to best fit the current data in the table.</span></span>
+<span data-ttu-id="3d158-p108">下面的代码示例将一个新列添加到名为 **Sample** 的工作表内的 **ExpensesTable** 表中。 新列添加到表的末尾，包含标题（“日期类型”），并使用一个公式来填充列中的每个数据单元格。 如果在其中运行代码的 Excel 主机应用程序支持[要求集](/office/dev/add-ins/reference/requirement-sets/excel-api-requirement-sets) **ExcelApi 1.2**，则为表中的当前数据设置最佳列宽和行高。</span><span class="sxs-lookup"><span data-stu-id="3d158-p108">The following code sample adds a new column to the table named **ExpensesTable** within the worksheet named **Sample**. The new column is added to the end of the table, contains a header ("Type of the Day"), and uses a formula to populate each data cell in the column. If the Excel host application where the code is running supports [requirement set](/office/dev/add-ins/reference/requirement-sets/excel-api-requirement-sets) **ExcelApi 1.2**, the width of the columns and height of the rows are set to best fit the current data in the table.</span></span>
 
 ```js
 Excel.run(function (context) {
@@ -158,13 +158,13 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
-<span data-ttu-id="a3e7e-135">**包含新的计算列的表**</span><span class="sxs-lookup"><span data-stu-id="a3e7e-135">**Table with new calculated column**</span></span>
+**<span data-ttu-id="3d158-135">包含新的计算列的表</span><span class="sxs-lookup"><span data-stu-id="3d158-135">Table with new calculated column</span></span>**
 
 ![Excel 中包含新的计算列的表](../images/excel-tables-add-calculated-column.png)
 
-## <a name="update-column-name"></a><span data-ttu-id="a3e7e-137">更新列名称</span><span class="sxs-lookup"><span data-stu-id="a3e7e-137">Update column name</span></span>
+## <a name="update-column-name"></a><span data-ttu-id="3d158-137">更新列名称</span><span class="sxs-lookup"><span data-stu-id="3d158-137">Update column name</span></span>
 
-<span data-ttu-id="a3e7e-p109">下面的代码示例将表格中第一列的名称更新为“购买日期”\*\*\*\*。如果运行代码的 Excel 主机应用支持[要求集](/office/dev/add-ins/reference/requirement-sets/excel-api-requirement-sets) **ExcelApi 1.2**，那么列宽和行高会设置为最适应表格中的当前数据。</span><span class="sxs-lookup"><span data-stu-id="a3e7e-p109">The following code sample updates the name of the first column in the table to **Purchase date**. If the Excel host application where the code is running supports [requirement set](/office/dev/add-ins/reference/requirement-sets/excel-api-requirement-sets) **ExcelApi 1.2**, the width of the columns and height of the rows are set to best fit the current data in the table.</span></span>
+<span data-ttu-id="3d158-p109">下面的代码示例将表格中第一列的名称更新为“购买日期”\*\*\*\*。如果运行代码的 Excel 主机应用支持[要求集](/office/dev/add-ins/reference/requirement-sets/excel-api-requirement-sets) **ExcelApi 1.2**，那么列宽和行高会设置为最适应表格中的当前数据。</span><span class="sxs-lookup"><span data-stu-id="3d158-p109">The following code sample updates the name of the first column in the table to **Purchase date**. If the Excel host application where the code is running supports [requirement set](/office/dev/add-ins/reference/requirement-sets/excel-api-requirement-sets) **ExcelApi 1.2**, the width of the columns and height of the rows are set to best fit the current data in the table.</span></span>
 
 ```js
 Excel.run(function (context) {
@@ -187,13 +187,13 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
-<span data-ttu-id="a3e7e-140">**包含新列名称的表格**</span><span class="sxs-lookup"><span data-stu-id="a3e7e-140">**Table with new column name**</span></span>
+**<span data-ttu-id="3d158-140">包含新列名称的表</span><span class="sxs-lookup"><span data-stu-id="3d158-140">Table with new column name</span></span>**
 
 ![Excel 中包含新的列名称的表](../images/excel-tables-update-column-name.png)
 
-## <a name="get-data-from-a-table"></a><span data-ttu-id="a3e7e-142">从表中获取数据</span><span class="sxs-lookup"><span data-stu-id="a3e7e-142">Get data from a table</span></span>
+## <a name="get-data-from-a-table"></a><span data-ttu-id="3d158-142">从表中获取数据</span><span class="sxs-lookup"><span data-stu-id="3d158-142">Get data from a table</span></span>
 
-<span data-ttu-id="a3e7e-143">下面的代码示例从名为 **Sample** 的工作表内的 **ExpensesTable** 表中读取数据，然后在同一工作表中的表下输出该数据。</span><span class="sxs-lookup"><span data-stu-id="a3e7e-143">The following code sample reads data from a table named **ExpensesTable** in the worksheet named **Sample** and then outputs that data below the table in the same worksheet.</span></span>
+<span data-ttu-id="3d158-143">下面的代码示例从名为 **Sample** 的工作表内的 **ExpensesTable** 表中读取数据，然后在同一工作表中的表下输出该数据。</span><span class="sxs-lookup"><span data-stu-id="3d158-143">The following code sample reads data from a table named **ExpensesTable** in the worksheet named **Sample** and then outputs that data below the table in the same worksheet.</span></span>
 
 ```js
 Excel.run(function (context) {
@@ -233,13 +233,37 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
-<span data-ttu-id="a3e7e-144">**表和数据输出**</span><span class="sxs-lookup"><span data-stu-id="a3e7e-144">**Table and data output**</span></span>
+**<span data-ttu-id="3d158-144">表和数据输出</span><span class="sxs-lookup"><span data-stu-id="3d158-144">Table and data output</span></span>**
 
 ![Excel 中的表数据](../images/excel-tables-get-data.png)
 
-## <a name="sort-data-in-a-table"></a><span data-ttu-id="a3e7e-146">在表中对数据进行排序</span><span class="sxs-lookup"><span data-stu-id="a3e7e-146">Sort data in a table</span></span>
+## <a name="detect-data-changes"></a><span data-ttu-id="3d158-146">检测数据更改</span><span class="sxs-lookup"><span data-stu-id="3d158-146">Detect data changes</span></span>
 
-<span data-ttu-id="a3e7e-147">下面的代码示例根据表中第四列的值，对表数据按降序进行排序。</span><span class="sxs-lookup"><span data-stu-id="a3e7e-147">The following code sample sorts table data in descending order according to the values in the fourth column of the table.</span></span>
+<span data-ttu-id="3d158-147">外接程序可能需要回应对表中的数据进行更改的用户。</span><span class="sxs-lookup"><span data-stu-id="3d158-147">Your add-in may need to react to users changing the data in a table.</span></span> <span data-ttu-id="3d158-148">若要检测这些更改，你可以为表的 `onChanged` 事件[注册事件处理程序](excel-add-ins-events.md#register-an-event-handler)。</span><span class="sxs-lookup"><span data-stu-id="3d158-148">To detect these changes, you can [register an event handler](excel-add-ins-events.md#register-an-event-handler) for the `onChanged` event of a table.</span></span> <span data-ttu-id="3d158-149">当事件触发时，`onChanged` 事件的事件处理程序将收到 [TableChangedEventArgs](/javascript/api/excel/excel.tablechangedeventargs) 对象。</span><span class="sxs-lookup"><span data-stu-id="3d158-149">Event handlers for the `onChanged` event receive a [TableChangedEventArgs](/javascript/api/excel/excel.tablechangedeventargs) object when the event fires.</span></span>
+
+<span data-ttu-id="3d158-150">`TableChangedEventArgs` 对象提供有关更改和来源的信息。</span><span class="sxs-lookup"><span data-stu-id="3d158-150">The `TableChangedEventArgs` object provides information about the changes and the source.</span></span> <span data-ttu-id="3d158-151">由于 `onChanged` 会在数据的格式或值发生变化时触发，因此让外接程序检查值是否已实际更改可能很有用。</span><span class="sxs-lookup"><span data-stu-id="3d158-151">Since `onChanged` fires when either the format or value of the data changes, it can be useful to have your add-in check if the values have actually changed.</span></span> <span data-ttu-id="3d158-152">`details` 属性以 [ChangedEventDetail](/javascript/api/excel/excel.changedeventdetail) 的形式封装此信息。</span><span class="sxs-lookup"><span data-stu-id="3d158-152">The `details` property encapsulates this information as a [ChangedEventDetail](/javascript/api/excel/excel.changedeventdetail).</span></span> <span data-ttu-id="3d158-153">以下代码示例演示如何显示已更改的单元格的之前和之后的值及类型。</span><span class="sxs-lookup"><span data-stu-id="3d158-153">The following code sample shows how to display the before and after values and types of a cell that has been changed.</span></span>
+
+> [!NOTE]
+> `TableChangedEventArgs.details` <span data-ttu-id="3d158-154">它当前仅适用于公共预览版。</span><span class="sxs-lookup"><span data-stu-id="3d158-154">The  function is currently available only in public preview.</span></span> [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
+
+```js
+// This function would be used as an event handler for the Table.onChanged event.
+function onTableChanged(eventArgs) {
+    Excel.run(function (context) {
+        var details = eventArgs.details;
+        var address = eventArgs.address;
+
+        // Print the before and after types and values to the console.
+        console.log(`Change at ${address}: was ${details.valueBefore}(${details.valueTypeBefore}),`
+            + ` now is ${details.valueAfter}(${details.valueTypeAfter})`);
+        return context.sync();
+    });
+}
+```
+
+## <a name="sort-data-in-a-table"></a><span data-ttu-id="3d158-155">对表格中的数据进行排序</span><span class="sxs-lookup"><span data-stu-id="3d158-155">Sort data in a table</span></span>
+
+<span data-ttu-id="3d158-156">下面的代码示例根据表中第四列的值，对表数据按降序进行排序。</span><span class="sxs-lookup"><span data-stu-id="3d158-156">The following code sample sorts table data in descending order according to the values in the fourth column of the table.</span></span>
 
 ```js
 Excel.run(function (context) {
@@ -260,13 +284,13 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
-<span data-ttu-id="a3e7e-148">**按金额排序的表数据（降序）**</span><span class="sxs-lookup"><span data-stu-id="a3e7e-148">**Table data sorted by Amount (descending)**</span></span>
+**<span data-ttu-id="3d158-157">按金额排序的表数据（降序）</span><span class="sxs-lookup"><span data-stu-id="3d158-157">Table data sorted by Amount (descending)</span></span>**
 
 ![Excel 中的表数据](../images/excel-tables-sort.png)
 
-## <a name="apply-filters-to-a-table"></a><span data-ttu-id="a3e7e-150">将筛选器应用于表</span><span class="sxs-lookup"><span data-stu-id="a3e7e-150">Apply filters to a table</span></span>
+## <a name="apply-filters-to-a-table"></a><span data-ttu-id="3d158-159">将筛选器应用于表</span><span class="sxs-lookup"><span data-stu-id="3d158-159">Apply filters to a table</span></span>
 
-<span data-ttu-id="a3e7e-p110">下面的代码示例将筛选器应用到表中的**金额**列和**类别**列。 筛选器筛选的结果是，仅显示符合以下条件的行：**类别**为其中一个指定值且**金额**低于所有行的平均值。</span><span class="sxs-lookup"><span data-stu-id="a3e7e-p110">The following code sample applies filters to the **Amount** column and the **Category** column within a table. As a result of the filters, only rows where **Category** is one of the specified values and **Amount** is below the average value for all rows is shown.</span></span>
+<span data-ttu-id="3d158-p113">下面的代码示例将筛选器应用到表中的**金额**列和**类别**列。 筛选器筛选的结果是，仅显示符合以下条件的行：**类别**为其中一个指定值且**金额**低于所有行的平均值。</span><span class="sxs-lookup"><span data-stu-id="3d158-p113">The following code sample applies filters to the **Amount** column and the **Category** column within a table. As a result of the filters, only rows where **Category** is one of the specified values and **Amount** is below the average value for all rows is shown.</span></span>
 
 ```js
 Excel.run(function (context) {
@@ -292,13 +316,13 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
-<span data-ttu-id="a3e7e-153">**将筛选器应用于类别和金额的表数据**</span><span class="sxs-lookup"><span data-stu-id="a3e7e-153">**Table data with filters applied for Category and Amount**</span></span>
+**<span data-ttu-id="3d158-162">将筛选器应用于类别和金额的表数据</span><span class="sxs-lookup"><span data-stu-id="3d158-162">Table data with filters applied for Category and Amount</span></span>**
 
 ![Excel 中经过筛选的表数据](../images/excel-tables-filters-apply.png)
 
-## <a name="clear-table-filters"></a><span data-ttu-id="a3e7e-155">清除表筛选器</span><span class="sxs-lookup"><span data-stu-id="a3e7e-155">Clear table filters</span></span>
+## <a name="clear-table-filters"></a><span data-ttu-id="3d158-164">清除表筛选器</span><span class="sxs-lookup"><span data-stu-id="3d158-164">Clear table filters</span></span>
 
-<span data-ttu-id="a3e7e-156">下面的代码示例清除当前应用于表的所有筛选器。</span><span class="sxs-lookup"><span data-stu-id="a3e7e-156">The following code sample clears any filters currently applied on the table.</span></span>
+<span data-ttu-id="3d158-165">下面的代码示例清除当前应用于表的所有筛选器。</span><span class="sxs-lookup"><span data-stu-id="3d158-165">The following code sample clears any filters currently applied on the table.</span></span>
 
 ```js
 Excel.run(function (context) {
@@ -311,13 +335,13 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
-<span data-ttu-id="a3e7e-157">**没有应用任何筛选器的表数据**</span><span class="sxs-lookup"><span data-stu-id="a3e7e-157">**Table data with no filters applied**</span></span>
+**<span data-ttu-id="3d158-166">没有应用任何筛选器的表数据</span><span class="sxs-lookup"><span data-stu-id="3d158-166">Table data with no filters applied</span></span>**
 
 ![Excel 中未经筛选的表数据](../images/excel-tables-filters-clear.png)
 
-## <a name="get-the-visible-range-from-a-filtered-table"></a><span data-ttu-id="a3e7e-159">从筛选表中获取可见区域</span><span class="sxs-lookup"><span data-stu-id="a3e7e-159">Get the visible range from a filtered table</span></span>
+## <a name="get-the-visible-range-from-a-filtered-table"></a><span data-ttu-id="3d158-168">从筛选表中获取可见区域</span><span class="sxs-lookup"><span data-stu-id="3d158-168">Get the visible range from a filtered table</span></span>
 
-<span data-ttu-id="a3e7e-p111">下面的代码示例获取一个区域，其中只包含当前在指定表中可见的单元格数据，然后将该区域的值写入控制台。 可以使用如下所示的 **getVisibleView()** 方法，在应用列筛选器时，都能获取表的可见内容。</span><span class="sxs-lookup"><span data-stu-id="a3e7e-p111">The following code sample gets a range that contains data only for cells that are currently visible within the specified table, and then writes the values of that range to the console. You can use the **getVisibleView()** method as shown below to get the visible contents of a table whenever column filters have been applied.</span></span>
+<span data-ttu-id="3d158-p114">下面的代码示例获取一个区域，其中只包含当前在指定表中可见的单元格数据，然后将该区域的值写入控制台。 可以使用如下所示的 **getVisibleView()** 方法，在应用列筛选器时，都能获取表的可见内容。</span><span class="sxs-lookup"><span data-stu-id="3d158-p114">The following code sample gets a range that contains data only for cells that are currently visible within the specified table, and then writes the values of that range to the console. You can use the **getVisibleView()** method as shown below to get the visible contents of a table whenever column filters have been applied.</span></span>
 
 ```js
 Excel.run(function (context) {
@@ -334,9 +358,9 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
-## <a name="format-a-table"></a><span data-ttu-id="a3e7e-162">设置表格式</span><span class="sxs-lookup"><span data-stu-id="a3e7e-162">Format a table</span></span>
+## <a name="format-a-table"></a><span data-ttu-id="3d158-171">设置表格式</span><span class="sxs-lookup"><span data-stu-id="3d158-171">Format a table</span></span>
 
-<span data-ttu-id="a3e7e-p112">下面的代码示例将格式应用于表。 它为表的标题行、正文、第二行以及第一列指定不同的填充颜色。 有关可以用来指定格式的属性的信息，请参阅 [RangeFormat 对象 (Excel JavaScript API)](/javascript/api/excel/excel.rangeformat)。</span><span class="sxs-lookup"><span data-stu-id="a3e7e-p112">The following code sample applies formatting to a table. It specifies different fill colors for the header row of the table, the body of the table, the second row of the table, and the first column of the table. For information about the properties you can use to specify format, see [RangeFormat Object (JavaScript API for Excel)](/javascript/api/excel/excel.rangeformat).</span></span>
+<span data-ttu-id="3d158-p115">下面的代码示例将格式应用于表。 它为表的标题行、正文、第二行以及第一列指定不同的填充颜色。 有关可以用来指定格式的属性的信息，请参阅 [RangeFormat 对象 (Excel JavaScript API)](/javascript/api/excel/excel.rangeformat)。</span><span class="sxs-lookup"><span data-stu-id="3d158-p115">The following code sample applies formatting to a table. It specifies different fill colors for the header row of the table, the body of the table, the second row of the table, and the first column of the table. For information about the properties you can use to specify format, see [RangeFormat Object (JavaScript API for Excel)](/javascript/api/excel/excel.rangeformat).</span></span>
 
 ```js
 Excel.run(function (context) {
@@ -352,13 +376,13 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
-<span data-ttu-id="a3e7e-166">**应用格式设置的表**</span><span class="sxs-lookup"><span data-stu-id="a3e7e-166">**Table after formatting is applied**</span></span>
+**<span data-ttu-id="3d158-175">应用了格式设置的表</span><span class="sxs-lookup"><span data-stu-id="3d158-175">Table after formatting is applied</span></span>**
 
 ![Excel 中应用了格式设置的表](../images/excel-tables-formatting-after.png)
 
-## <a name="convert-a-range-to-a-table"></a><span data-ttu-id="a3e7e-168">将区域转换为表</span><span class="sxs-lookup"><span data-stu-id="a3e7e-168">Convert a range to a table</span></span>
+## <a name="convert-a-range-to-a-table"></a><span data-ttu-id="3d158-177">将区域转换为表</span><span class="sxs-lookup"><span data-stu-id="3d158-177">Convert a range to a table</span></span>
 
-<span data-ttu-id="a3e7e-169">下面的代码示例创建一个数据区域，然后将该区域转换为表。</span><span class="sxs-lookup"><span data-stu-id="a3e7e-169">The following code sample creates a range of data and then converts that range to a table.</span></span>
+<span data-ttu-id="3d158-178">下面的代码示例创建一个数据区域，然后将该区域转换为表。</span><span class="sxs-lookup"><span data-stu-id="3d158-178">The following code sample creates a range of data and then converts that range to a table.</span></span>
 
 ```js
 Excel.run(function (context) {
@@ -392,17 +416,17 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
-<span data-ttu-id="a3e7e-170">**内的数据（在区域转换为表之前）**</span><span class="sxs-lookup"><span data-stu-id="a3e7e-170">**Data in the range (before the range is converted to a table)**</span></span>
+**<span data-ttu-id="3d158-179">区域内的数据（在区域转换为表之前）</span><span class="sxs-lookup"><span data-stu-id="3d158-179">Data in the range (before the range is converted to a table)</span></span>**
 
 ![Excel 中区域内的数据](../images/excel-ranges.png)
 
-<span data-ttu-id="a3e7e-172">**表中的数据（在区域转换为表之后）**</span><span class="sxs-lookup"><span data-stu-id="a3e7e-172">**Data in the table (after the range is converted to a table)**</span></span>
+**<span data-ttu-id="3d158-181">表中的数据（在区域转换为表之后）</span><span class="sxs-lookup"><span data-stu-id="3d158-181">Data in the table (after the range is converted to a table)</span></span>**
 
 ![Excel 中表的数据](../images/excel-tables-from-range.png)
 
-## <a name="import-json-data-into-a-table"></a><span data-ttu-id="a3e7e-174">将 JSON 数据导入表</span><span class="sxs-lookup"><span data-stu-id="a3e7e-174">Import JSON data into a table</span></span>
+## <a name="import-json-data-into-a-table"></a><span data-ttu-id="3d158-183">将 JSON 数据导入表</span><span class="sxs-lookup"><span data-stu-id="3d158-183">Import JSON data into a table</span></span>
 
-<span data-ttu-id="a3e7e-p113">下面的代码示例在名为 **Sample** 的工作表中创建一个表，然后使用定义了两行数据的 JSON 对象来填充表。 如果在其中运行代码的 Excel 主机应用程序支持[要求集](/office/dev/add-ins/reference/requirement-sets/excel-api-requirement-sets) **ExcelApi 1.2**，则为表中的当前数据设置最佳列宽和行高。</span><span class="sxs-lookup"><span data-stu-id="a3e7e-p113">The following code sample creates a table in the worksheet named **Sample** and then populates the table by using a JSON object that defines two rows of data. If the Excel host application where the code is running supports [requirement set](/office/dev/add-ins/reference/requirement-sets/excel-api-requirement-sets) **ExcelApi 1.2**, the width of the columns and height of the rows are set to best fit the current data in the table.</span></span>
+<span data-ttu-id="3d158-p116">下面的代码示例在名为 **Sample** 的工作表中创建一个表，然后使用定义了两行数据的 JSON 对象来填充表。 如果在其中运行代码的 Excel 主机应用程序支持[要求集](/office/dev/add-ins/reference/requirement-sets/excel-api-requirement-sets) **ExcelApi 1.2**，则为表中的当前数据设置最佳列宽和行高。</span><span class="sxs-lookup"><span data-stu-id="3d158-p116">The following code sample creates a table in the worksheet named **Sample** and then populates the table by using a JSON object that defines two rows of data. If the Excel host application where the code is running supports [requirement set](/office/dev/add-ins/reference/requirement-sets/excel-api-requirement-sets) **ExcelApi 1.2**, the width of the columns and height of the rows are set to best fit the current data in the table.</span></span>
 
 ```js
 Excel.run(function (context) {
@@ -443,10 +467,10 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
-<span data-ttu-id="a3e7e-177">**新建表**</span><span class="sxs-lookup"><span data-stu-id="a3e7e-177">**New table**</span></span>
+**<span data-ttu-id="3d158-186">新表</span><span class="sxs-lookup"><span data-stu-id="3d158-186">New table</span></span>**
 
-![Excel 中的新表格](../images/excel-tables-create-from-json.png)
+![Excel 中的新表](../images/excel-tables-create-from-json.png)
 
-## <a name="see-also"></a><span data-ttu-id="a3e7e-179">另请参阅</span><span class="sxs-lookup"><span data-stu-id="a3e7e-179">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="3d158-188">另请参阅</span><span class="sxs-lookup"><span data-stu-id="3d158-188">See also</span></span>
 
-- [<span data-ttu-id="a3e7e-180">Excel JavaScript API 基本编程概念</span><span class="sxs-lookup"><span data-stu-id="a3e7e-180">Fundamental programming concepts with the Excel JavaScript API</span></span>](excel-add-ins-core-concepts.md)
+- [<span data-ttu-id="3d158-189">Excel JavaScript API 基本编程概念</span><span class="sxs-lookup"><span data-stu-id="3d158-189">Fundamental programming concepts with the Excel JavaScript API</span></span>](excel-add-ins-core-concepts.md)

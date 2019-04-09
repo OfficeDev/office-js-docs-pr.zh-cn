@@ -1,26 +1,26 @@
 ---
-ms.date: 03/19/2019
+ms.date: 03/29/2019
 description: 在 Excel 中使用 JavaScript 创建自定义函数。
 title: 在 Excel 中创建自定义函数（预览）
 localization_priority: Priority
-ms.openlocfilehash: ac3410267da415c4d567092da2e653fcffd10b72
-ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
+ms.openlocfilehash: 59620b19cb8613e411abb84ed6766da94cae02c4
+ms.sourcegitcommit: 14ceac067e0e130869b861d289edb438b5e3eff9
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "30870448"
+ms.lasthandoff: 04/04/2019
+ms.locfileid: "31477556"
 ---
-# <a name="create-custom-functions-in-excel-preview"></a><span data-ttu-id="61026-103">在 Excel 中创建自定义函数（预览）</span><span class="sxs-lookup"><span data-stu-id="61026-103">Create custom functions in Excel (preview)</span></span>
+# <a name="create-custom-functions-in-excel-preview"></a><span data-ttu-id="e031f-103">在 Excel 中创建自定义函数（预览）</span><span class="sxs-lookup"><span data-stu-id="e031f-103">Create custom functions in Excel (preview)</span></span>
 
-<span data-ttu-id="61026-104">开发人员可以借助自定义函数向 Excel 添加新函数，方法是在 JavaScript 中将这些函数定义为加载项的一部分。</span><span class="sxs-lookup"><span data-stu-id="61026-104">Custom functions enable developers to add new functions to Excel by defining those functions in JavaScript as part of an add-in.</span></span> <span data-ttu-id="61026-105">Excel 中的用户可以访问自定义函数，就像他们访问 Excel 中的任何本机函数一样，比如 `SUM()`。</span><span class="sxs-lookup"><span data-stu-id="61026-105">Users within Excel can access custom functions just as they would any native function in Excel, such as `SUM()`.</span></span> <span data-ttu-id="61026-106">本文介绍了如何在 Excel 中创建自定义函数。</span><span class="sxs-lookup"><span data-stu-id="61026-106">This article describes how to create custom functions in Excel.</span></span>
+<span data-ttu-id="e031f-104">开发人员可以借助自定义函数向 Excel 添加新函数，方法是在 JavaScript 中将这些函数定义为加载项的一部分。</span><span class="sxs-lookup"><span data-stu-id="e031f-104">Custom functions enable developers to add new functions to Excel by defining those functions in JavaScript as part of an add-in.</span></span> <span data-ttu-id="e031f-105">Excel 中的用户可以访问自定义函数，就像他们访问 Excel 中的任何本机函数一样，比如 `SUM()`。</span><span class="sxs-lookup"><span data-stu-id="e031f-105">Users within Excel can access custom functions just as they would any native function in Excel, such as `SUM()`.</span></span> <span data-ttu-id="e031f-106">本文介绍了如何在 Excel 中创建自定义函数。</span><span class="sxs-lookup"><span data-stu-id="e031f-106">This article describes how to create custom functions in Excel.</span></span>
 
 [!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
-<span data-ttu-id="61026-107">下图演示最终用户将自定义函数插入到 Excel 工作表单元格的过程。</span><span class="sxs-lookup"><span data-stu-id="61026-107">The following illustration shows an end user inserting a custom function into a cell of an Excel worksheet.</span></span> <span data-ttu-id="61026-108">`CONTOSO.ADD42` 自定义函数旨在向用户指定作为函数输入参数的数字对添加 42。</span><span class="sxs-lookup"><span data-stu-id="61026-108">The `CONTOSO.ADD42` custom function is designed to add 42 to the pair of numbers that the user specifies as input parameters to the function.</span></span>
+<span data-ttu-id="e031f-107">下图演示最终用户将自定义函数插入到 Excel 工作表单元格的过程。</span><span class="sxs-lookup"><span data-stu-id="e031f-107">The following illustration shows an end user inserting a custom function into a cell of an Excel worksheet.</span></span> <span data-ttu-id="e031f-108">`CONTOSO.ADD42` 自定义函数旨在向用户指定作为函数输入参数的数字对添加 42。</span><span class="sxs-lookup"><span data-stu-id="e031f-108">The `CONTOSO.ADD42` custom function is designed to add 42 to the pair of numbers that the user specifies as input parameters to the function.</span></span>
 
 <img alt="animated image showing an end user inserting the CONTOSO.ADD42 custom function into a cell of an Excel worksheet" src="../images/custom-function.gif" width="579" height="383" />
 
-<span data-ttu-id="61026-109">以下代码定义 `ADD42` 自定义函数。</span><span class="sxs-lookup"><span data-stu-id="61026-109">The following code defines the `ADD42` custom function.</span></span>
+<span data-ttu-id="e031f-109">以下代码定义 `ADD42` 自定义函数。</span><span class="sxs-lookup"><span data-stu-id="e031f-109">The following code defines the `ADD42` custom function.</span></span>
 
 ```js
 function add42(a, b) {
@@ -29,127 +29,48 @@ function add42(a, b) {
 ```
 
 > [!NOTE]
-> <span data-ttu-id="61026-110">本文后面的[已知问题](#known-issues)部分指定自定义函数的当前限制。</span><span class="sxs-lookup"><span data-stu-id="61026-110">The [Known issues](#known-issues) section later in this article specifies current limitations of custom functions.</span></span>
+> <span data-ttu-id="e031f-110">本文后面的[已知问题](#known-issues)部分指定自定义函数的当前限制。</span><span class="sxs-lookup"><span data-stu-id="e031f-110">The [Known issues](#known-issues) section later in this article specifies current limitations of custom functions.</span></span>
 
-## <a name="components-of-a-custom-functions-add-in-project"></a><span data-ttu-id="61026-111">自定义函数加载项项目的组件</span><span class="sxs-lookup"><span data-stu-id="61026-111">Components of a custom functions add-in project</span></span>
+## <a name="components-of-a-custom-functions-add-in-project"></a><span data-ttu-id="e031f-111">自定义函数加载项项目的组件</span><span class="sxs-lookup"><span data-stu-id="e031f-111">Components of a custom functions add-in project</span></span>
 
-<span data-ttu-id="61026-112">如果使用 [Yo Office 生成器](https://github.com/OfficeDev/generator-office)创建 Excel 自定义函数加载项项目，将在生成器创建的项目中看到以下文件：</span><span class="sxs-lookup"><span data-stu-id="61026-112">If you use the [Yo Office generator](https://github.com/OfficeDev/generator-office) to create an Excel custom functions add-in project, you'll see the following files in the project that the generator creates:</span></span>
+<span data-ttu-id="e031f-112">如果使用 [Yo Office 生成器](https://github.com/OfficeDev/generator-office)创建 Excel 自定义函数加载项项目，会发现它可创建全面控制函数、任务窗格和加载项的文件。</span><span class="sxs-lookup"><span data-stu-id="e031f-112">If you use the [Yo Office generator](https://github.com/OfficeDev/generator-office) to create an Excel custom functions add-in project, you'll find that it creates files which control your functions, your task pane, and your add-in overall.</span></span> <span data-ttu-id="e031f-113">我们将专注于对自定义函数至关重要的文件：</span><span class="sxs-lookup"><span data-stu-id="e031f-113">We'll concentrate on the files that are important to custom functions:</span></span> 
 
-| <span data-ttu-id="61026-113">文件</span><span class="sxs-lookup"><span data-stu-id="61026-113">File</span></span> | <span data-ttu-id="61026-114">文件格式</span><span class="sxs-lookup"><span data-stu-id="61026-114">File format</span></span> | <span data-ttu-id="61026-115">说明</span><span class="sxs-lookup"><span data-stu-id="61026-115">Description</span></span> |
+| <span data-ttu-id="e031f-114">文件</span><span class="sxs-lookup"><span data-stu-id="e031f-114">File</span></span> | <span data-ttu-id="e031f-115">文件格式</span><span class="sxs-lookup"><span data-stu-id="e031f-115">File format</span></span> | <span data-ttu-id="e031f-116">说明</span><span class="sxs-lookup"><span data-stu-id="e031f-116">Description</span></span> |
 |------|-------------|-------------|
-| <span data-ttu-id="61026-116">**./src/customfunctions.js**</span><span class="sxs-lookup"><span data-stu-id="61026-116">**./src/customfunctions.js**</span></span><br/><span data-ttu-id="61026-117">或</span><span class="sxs-lookup"><span data-stu-id="61026-117">or</span></span><br/><span data-ttu-id="61026-118">**./src/customfunctions.ts**</span><span class="sxs-lookup"><span data-stu-id="61026-118">**./src/customfunctions.ts**</span></span> | <span data-ttu-id="61026-119">JavaScript</span><span class="sxs-lookup"><span data-stu-id="61026-119">JavaScript</span></span><br/><span data-ttu-id="61026-120">或</span><span class="sxs-lookup"><span data-stu-id="61026-120">or</span></span><br/><span data-ttu-id="61026-121">TypeScript</span><span class="sxs-lookup"><span data-stu-id="61026-121">TypeScript</span></span> | <span data-ttu-id="61026-122">包含定义自定义函数的代码。</span><span class="sxs-lookup"><span data-stu-id="61026-122">Contains the code that defines custom functions.</span></span> |
-| <span data-ttu-id="61026-123">**./config/customfunctions.json**</span><span class="sxs-lookup"><span data-stu-id="61026-123">**./config/customfunctions.json**</span></span> | <span data-ttu-id="61026-124">JSON</span><span class="sxs-lookup"><span data-stu-id="61026-124">JSON</span></span> | <span data-ttu-id="61026-125">包含描述自定义函数的元数据，使 Excel 能够注册自定义函数，并使其可供最终用户使用。</span><span class="sxs-lookup"><span data-stu-id="61026-125">Contains metadata that describes custom functions and enables Excel to register the custom functions and make them available to end users.</span></span> |
-| <span data-ttu-id="61026-126">**./index.html**</span><span class="sxs-lookup"><span data-stu-id="61026-126">**./index.html**</span></span> | <span data-ttu-id="61026-127">HTML</span><span class="sxs-lookup"><span data-stu-id="61026-127">HTML</span></span> | <span data-ttu-id="61026-128">提供对定义自定义函数的 JavaScript 文件的&lt;脚本&gt;引用。</span><span class="sxs-lookup"><span data-stu-id="61026-128">Provides a &lt;script&gt; reference to the JavaScript file that defines custom functions.</span></span> |
-| <span data-ttu-id="61026-129">**./manifest.xml**</span><span class="sxs-lookup"><span data-stu-id="61026-129">**./manifest.xml**</span></span> | <span data-ttu-id="61026-130">XML</span><span class="sxs-lookup"><span data-stu-id="61026-130">XML</span></span> | <span data-ttu-id="61026-131">指定加载项中所有自定义函数的命名空间以及此表中前面列出的 JavaScript、JSON 和 HTML 文件的位置。</span><span class="sxs-lookup"><span data-stu-id="61026-131">Specifies the namespace for all custom functions within the add-in and the location of the JavaScript, JSON, and HTML files that are listed previously in this table.</span></span> |
+| **<span data-ttu-id="e031f-117">./src/functions/functions.js</span><span class="sxs-lookup"><span data-stu-id="e031f-117">./src/functions/functions.js</span></span>**<br/><span data-ttu-id="e031f-118">或</span><span class="sxs-lookup"><span data-stu-id="e031f-118">or</span></span><br/>**<span data-ttu-id="e031f-119">./src/functions/functions.ts</span><span class="sxs-lookup"><span data-stu-id="e031f-119">./src/functions/functions.ts</span></span>** | <span data-ttu-id="e031f-120">JavaScript</span><span class="sxs-lookup"><span data-stu-id="e031f-120">JavaScript</span></span><br/><span data-ttu-id="e031f-121">或</span><span class="sxs-lookup"><span data-stu-id="e031f-121">or</span></span><br/><span data-ttu-id="e031f-122">TypeScript</span><span class="sxs-lookup"><span data-stu-id="e031f-122">TypeScript</span></span> | <span data-ttu-id="e031f-123">包含定义自定义函数的代码。</span><span class="sxs-lookup"><span data-stu-id="e031f-123">Contains the code that defines custom functions.</span></span> |
+| **<span data-ttu-id="e031f-124">./src/functions/functions.html</span><span class="sxs-lookup"><span data-stu-id="e031f-124">./src/functions/functions.html</span></span>** | <span data-ttu-id="e031f-125">HTML</span><span class="sxs-lookup"><span data-stu-id="e031f-125">HTML</span></span> | <span data-ttu-id="e031f-126">提供对定义自定义函数的 JavaScript 文件的&lt;脚本&gt;引用。</span><span class="sxs-lookup"><span data-stu-id="e031f-126">Provides a &lt;script&gt; reference to the JavaScript file that defines custom functions.</span></span> |
+| **<span data-ttu-id="e031f-127">./manifest.xml</span><span class="sxs-lookup"><span data-stu-id="e031f-127">./manifest.xml</span></span>** | <span data-ttu-id="e031f-128">XML</span><span class="sxs-lookup"><span data-stu-id="e031f-128">XML</span></span> | <span data-ttu-id="e031f-129">指定加载项中所有自定义函数的命名空间以及此表中前面列出的 JavaScript 和 HTML 文件的位置。</span><span class="sxs-lookup"><span data-stu-id="e031f-129">Specifies the namespace for all custom functions within the add-in and the location of the JavaScript, JSON, and HTML files that are listed previously in this table.</span></span> <span data-ttu-id="e031f-130">它还列出了加载项可能使用的其他文件的位置，如任务窗格文件和命令文件。</span><span class="sxs-lookup"><span data-stu-id="e031f-130">It also lists the locations of other files your add-in might make use of, such as the task pane files and command files.</span></span> |
 
-<span data-ttu-id="61026-132">下列部分将提供有关这些文件的详细信息。</span><span class="sxs-lookup"><span data-stu-id="61026-132">The following sections provide more information about these files.</span></span>
+### <a name="script-file"></a><span data-ttu-id="e031f-131">脚本文件</span><span class="sxs-lookup"><span data-stu-id="e031f-131">Script file</span></span>
 
-### <a name="script-file"></a><span data-ttu-id="61026-133">脚本文件</span><span class="sxs-lookup"><span data-stu-id="61026-133">Script file</span></span>
+<span data-ttu-id="e031f-132">脚本文件（Yo Office 生成器创建的项目中的 **./src/functions/functions.js** 或 **./src/functions/functions.ts**）包含定义自定义函数、定义函数的注释，并将自定义函数名称关联到 [JSON 元数据文件](#json-metadata-file)中的对象的代码。</span><span class="sxs-lookup"><span data-stu-id="e031f-132">The script file (**./src/customfunctions.js** or **./src/customfunctions.ts** in the project that the Yo Office generator creates) contains the code that defines custom functions and maps the names of the custom functions to objects in the [JSON metadata file](#json-metadata-file).</span></span>
 
-<span data-ttu-id="61026-134">脚本文件（Yo Office 生成器创建的项目中的 **./src/customfunctions.js** 或 **./src/customfunctions.ts**）包含定义自定义函数并将自定义函数名称映射到 [JSON 元数据文件](#json-metadata-file)中的对象的代码。</span><span class="sxs-lookup"><span data-stu-id="61026-134">The script file (**./src/customfunctions.js** or **./src/customfunctions.ts** in the project that the Yo Office generator creates) contains the code that defines custom functions and maps the names of the custom functions to objects in the [JSON metadata file](#json-metadata-file).</span></span> 
+<span data-ttu-id="e031f-133">以下代码定义自定义函数 `add`，然后指定该函数的关联信息。</span><span class="sxs-lookup"><span data-stu-id="e031f-133">The following code defines the custom function `add`  and then specifies association information for the function.</span></span> <span data-ttu-id="e031f-134">有关关联函数的详细信息，请参阅[自定义函数最佳做法](custom-functions-best-practices.md#associating-function-names-with-json-metadata)。</span><span class="sxs-lookup"><span data-stu-id="e031f-134">For more information, see [Custom functions best practices (preview)](custom-functions-best-practices.md#associating-function-names-with-json-metadata).</span></span>
 
-<span data-ttu-id="61026-135">例如，以下代码定义自定义函数 `add` 和 `increment`，然后指定这两个函数的关联信息。</span><span class="sxs-lookup"><span data-stu-id="61026-135">For example, the following code defines the custom functions `add` and `increment` and then specifies association information for both functions.</span></span> <span data-ttu-id="61026-136">将 `add` 函数关联到 JSON 元数据文件中的对象，其中 `id` 属性的值为 **ADD**，将 `increment` 函数关联到元数据文件中的对象，其中 `id` 属性的值为 **INCREMENT**。</span><span class="sxs-lookup"><span data-stu-id="61026-136">The `add` function is associated with the object in the JSON metadata file where the value of the `id` property is **ADD**, and the `increment` function is associated with the object in the metadata file where the value of the `id` property is **INCREMENT**.</span></span> <span data-ttu-id="61026-137">有关将脚本文件中的函数名称关联到 JSON 元数据文件中的对象的更多信息，请参阅[自定义函数最佳实践](custom-functions-best-practices.md#associating-function-names-with-json-metadata)。</span><span class="sxs-lookup"><span data-stu-id="61026-137">See [Custom functions best practices](custom-functions-best-practices.md#associating-function-names-with-json-metadata) for more information about associating function names in the script file to objects in the JSON metadata file.</span></span>
+<span data-ttu-id="e031f-135">下面的代码还提供了定义函数的代码注释。</span><span class="sxs-lookup"><span data-stu-id="e031f-135">The following code also provides code comments which define the function.</span></span> <span data-ttu-id="e031f-136">首先声明所需的 `@customfunction` 注释，指示这是一个自定义函数。</span><span class="sxs-lookup"><span data-stu-id="e031f-136">The required `@customfunction` comment is declared first, to indicate that this is a custom function.</span></span> <span data-ttu-id="e031f-137">此外，你将注意到声明了两个参数，即 `first` 和 `second`，后跟其 `description` 属性。</span><span class="sxs-lookup"><span data-stu-id="e031f-137">Additionally, you'll notice two parameters are declared, `first` and `second`, which are followed by their `description` properties.</span></span> <span data-ttu-id="e031f-138">最后提供了 `returns` 描述。</span><span class="sxs-lookup"><span data-stu-id="e031f-138">Finally, a `returns` description is given.</span></span> <span data-ttu-id="e031f-139">有关自定义函数所需注释的更多信息，请参阅[为自定义函数生成 JSON 元数据](custom-functions-json-autogeneration.md)。</span><span class="sxs-lookup"><span data-stu-id="e031f-139">For more information about what comments are required for your custom function, see [Generate JSON metadata for custom functions](custom-functions-json-autogeneration.md).</span></span>
 
 ```js
+/**
+ * Adds two numbers.
+ * @customfunction 
+ * @param first First number
+ * @param second Second number
+ * @returns The sum of the two numbers.
+ */
+
 function add(first, second){
   return first + second;
 }
 
-function increment(incrementBy, callback) {
-  var result = 0;
-  var timer = setInterval(function() {
-    result += incrementBy;
-    callback.setResult(result);
-  }, 1000);
-
-  callback.onCanceled = function() {
-    clearInterval(timer);
-  };
-}
-
 // associate `id` values in the JSON metadata file to the JavaScript function names
  CustomFunctions.associate("ADD", add);
- CustomFunctions.associate("INCREMENT", increment);
 ```
 
-### <a name="json-metadata-file"></a><span data-ttu-id="61026-138">JSON 元数据文件</span><span class="sxs-lookup"><span data-stu-id="61026-138">JSON metadata file</span></span>
+### <a name="manifest-file"></a><span data-ttu-id="e031f-140">清单文件</span><span class="sxs-lookup"><span data-stu-id="e031f-140">Manifest file</span></span>
 
-<span data-ttu-id="61026-139">自定义函数元数据文件（Yo Office 生成器创建的项目中的 **./config/customfunctions.json**）提供 Excel 注册自定义函数并使其可供最终用户使用所需的信息。</span><span class="sxs-lookup"><span data-stu-id="61026-139">The custom functions metadata file (**./config/customfunctions.json** in the project that the Yo Office generator creates) provides the information that Excel requires to register custom functions and make them available to end users.</span></span> <span data-ttu-id="61026-140">自定义函数在用户首次运行加载项时注册。</span><span class="sxs-lookup"><span data-stu-id="61026-140">Custom functions are registered when a user runs an add-in for the first time.</span></span> <span data-ttu-id="61026-141">之后，它们可在所有工作簿（即，不仅仅是在加载项初始运行的工作簿）中供同一用户使用。</span><span class="sxs-lookup"><span data-stu-id="61026-141">After that, they are available to that same user in all workbooks (i.e., not only in the workbook where the add-in initially ran.)</span></span>
+<span data-ttu-id="e031f-141">定义自定义函数的加载项的 XML 清单文件（Yo Office 生成器创建的项目中的 **./manifest.xml**）指定加载项中所有自定义函数的命名空间以及 JavaScript、JSON 和 HTML 文件的位置。</span><span class="sxs-lookup"><span data-stu-id="e031f-141">The XML manifest file for an add-in that defines custom functions (**./manifest.xml** in the project that the Yo Office generator creates) specifies the namespace for all custom functions within the add-in and the location of the JavaScript, JSON, and HTML files.</span></span> 
 
-> [!TIP]
-> <span data-ttu-id="61026-142">托管 JSON 文件的服务器上的服务器设置必须启用 [CORS](https://developer.mozilla.org/docs/Web/HTTP/CORS)，以便自定义函数在 Excel Online 中正常工作。</span><span class="sxs-lookup"><span data-stu-id="61026-142">Server settings on the server that hosts the JSON file must have [CORS](https://developer.mozilla.org/docs/Web/HTTP/CORS) enabled in order for custom functions to work correctly in Excel Online.</span></span>
-
-<span data-ttu-id="61026-143">**customfunctions.json** 中的以下代码指定上述 `add` 函数和 `increment` 函数的元数据。</span><span class="sxs-lookup"><span data-stu-id="61026-143">The following code in **customfunctions.json** specifies the metadata for the `add` function and the `increment` function that were described previously.</span></span> <span data-ttu-id="61026-144">此代码示例后面的表提供了有关此 JSON 对象中各个属性的详细信息。</span><span class="sxs-lookup"><span data-stu-id="61026-144">The table that follows this code sample provides detailed information about the individual properties within this JSON object.</span></span> <span data-ttu-id="61026-145">有关在 JSON 元数据文件中指定 `id` 和 `name` 属性值的详细信息，请参阅[自定义函数最佳实践](custom-functions-best-practices.md#associating-function-names-with-json-metadata)。</span><span class="sxs-lookup"><span data-stu-id="61026-145">See [Custom functions best practices](custom-functions-best-practices.md#associating-function-names-with-json-metadata) for more information about specifying the value of `id` and `name` properties in the JSON metadata file.</span></span>
-
-```json
-{
-  "$schema": "https://developer.microsoft.com/en-us/json-schemas/office-js/custom-functions.schema.json",
-  "functions": [
-    {
-      "id": "ADD",
-      "name": "ADD",
-      "description": "Add two numbers",
-      "helpUrl": "http://www.contoso.com",
-      "result": {
-        "type": "number",
-        "dimensionality": "scalar"
-      },
-      "parameters": [
-        {
-          "name": "first",
-          "description": "first number to add",
-          "type": "number",
-          "dimensionality": "scalar"
-        },
-        {
-          "name": "second",
-          "description": "second number to add",
-          "type": "number",
-          "dimensionality": "scalar"
-        }
-      ]
-    },
-    {
-      "id": "INCREMENT",
-      "name": "INCREMENT",
-      "description": "Periodically increment a value",
-      "helpUrl": "http://www.contoso.com",
-      "result": {
-          "type": "number",
-          "dimensionality": "scalar"
-    },
-    "parameters": [
-        {
-            "name": "increment",
-            "description": "Amount to increment",
-            "type": "number",
-            "dimensionality": "scalar"
-        }
-    ],
-    "options": {
-        "cancelable": true,
-        "stream": true
-      }
-    }
-  ]
-}
-```
-
-<span data-ttu-id="61026-146">下表列出了 JSON 元数据文件中的常见属性。</span><span class="sxs-lookup"><span data-stu-id="61026-146">The following table lists the properties that are typically present in the JSON metadata file.</span></span> <span data-ttu-id="61026-147">有关 JSON 元数据文件的更多详细信息，请参阅[自定义函数元数据](custom-functions-json.md)。</span><span class="sxs-lookup"><span data-stu-id="61026-147">For more detailed information about the JSON metadata file, see [Custom functions metadata](custom-functions-json.md).</span></span>
-
-| <span data-ttu-id="61026-148">属性</span><span class="sxs-lookup"><span data-stu-id="61026-148">Property</span></span>  | <span data-ttu-id="61026-149">说明</span><span class="sxs-lookup"><span data-stu-id="61026-149">Description</span></span> |
-|---------|---------|
-| `id` | <span data-ttu-id="61026-150">函数的唯一 ID。</span><span class="sxs-lookup"><span data-stu-id="61026-150">A unique ID for the function.</span></span> <span data-ttu-id="61026-151">此 ID 只能包含字母数字字符和句点，设置后不应更改。</span><span class="sxs-lookup"><span data-stu-id="61026-151">This ID can only contain alphanumeric characters and periods and should not be changed after it is set.</span></span> |
-| `name` | <span data-ttu-id="61026-152">最终用户在 Excel 中看到的函数名称。</span><span class="sxs-lookup"><span data-stu-id="61026-152">Name of the function that the end user sees in Excel.</span></span> <span data-ttu-id="61026-153">在 Excel 中，此函数名称将以 [XML 清单文件](#manifest-file)中指定的自定义函数命名空间作为前缀。</span><span class="sxs-lookup"><span data-stu-id="61026-153">In Excel, this function name will be prefixed by the custom functions namespace that's specified in the [XML manifest file](#manifest-file).</span></span> |
-| `helpUrl` | <span data-ttu-id="61026-154">当用户请求帮助时显示的页面的 URL。</span><span class="sxs-lookup"><span data-stu-id="61026-154">URL for the page that is shown when a user requests help.</span></span> |
-| `description` | <span data-ttu-id="61026-155">说明函数的功能。</span><span class="sxs-lookup"><span data-stu-id="61026-155">Describes what the function does.</span></span> <span data-ttu-id="61026-156">当函数是 Excel 自动完成菜单中的选中项时，此值将作为工具提示显示。</span><span class="sxs-lookup"><span data-stu-id="61026-156">This value appears as a tooltip when the function is the selected item in the autocomplete menu within Excel.</span></span> |
-| `result`  | <span data-ttu-id="61026-157">定义函数返回的信息类型的对象。</span><span class="sxs-lookup"><span data-stu-id="61026-157">Object that defines the type of information that is returned by the function.</span></span> <span data-ttu-id="61026-158">有关此对象的详细信息，请参阅[结果](custom-functions-json.md#result)。</span><span class="sxs-lookup"><span data-stu-id="61026-158">For detailed information about this object, see [result](custom-functions-json.md#result).</span></span> |
-| `parameters` | <span data-ttu-id="61026-159">定义函数的输入参数的数组。</span><span class="sxs-lookup"><span data-stu-id="61026-159">Array that defines the input parameters for the function.</span></span> <span data-ttu-id="61026-160">有关此对象的详细信息，请参阅[参数](custom-functions-json.md#parameters)。</span><span class="sxs-lookup"><span data-stu-id="61026-160">For detailed information about this object, see [parameters](custom-functions-json.md#parameters).</span></span> |
-| `options` | <span data-ttu-id="61026-161">使用户能够自定义 Excel 执行函数的方式和时间。</span><span class="sxs-lookup"><span data-stu-id="61026-161">Enables you to customize some aspects of how and when Excel executes the function.</span></span> <span data-ttu-id="61026-162">有关如何使用此属性的详细信息，请参阅[流式处理函数](#streaming-functions)和[取消函数](#canceling-a-function)。</span><span class="sxs-lookup"><span data-stu-id="61026-162">For more information about how this property can be used, see [Streaming functions](#streaming-functions) and [canceling a function](#canceling-a-function).</span></span> |
-
-### <a name="manifest-file"></a><span data-ttu-id="61026-163">清单文件</span><span class="sxs-lookup"><span data-stu-id="61026-163">Manifest file</span></span>
-
-<span data-ttu-id="61026-164">定义自定义函数的加载项的 XML 清单文件（Yo Office 生成器创建的项目中的 **./manifest.xml**）指定加载项中所有自定义函数的命名空间以及 JavaScript、JSON 和 HTML 文件的位置。</span><span class="sxs-lookup"><span data-stu-id="61026-164">The XML manifest file for an add-in that defines custom functions (**./manifest.xml** in the project that the Yo Office generator creates) specifies the namespace for all custom functions within the add-in and the location of the JavaScript, JSON, and HTML files.</span></span> <span data-ttu-id="61026-165">下面的 XML 标记显示了 `<ExtensionPoint>` 和 `<Resources>` 元素的一个示例，必须在加载项清单中包含这些元素才能启用自定义函数。</span><span class="sxs-lookup"><span data-stu-id="61026-165">The following XML markup shows an example of the `<ExtensionPoint>` and `<Resources>` elements that you must include in an add-in's manifest to enable custom functions.</span></span>  
+<span data-ttu-id="e031f-142">下面的基本 XML 标记显示了 `<ExtensionPoint>` 和 `<Resources>` 元素的一个示例，必须在加载项清单中包含这些元素才能启用自定义函数。</span><span class="sxs-lookup"><span data-stu-id="e031f-142">The following XML markup shows an example of the `<ExtensionPoint>` and `<Resources>` elements that you must include in an add-in's manifest to enable custom functions.</span></span> <span data-ttu-id="e031f-143">如果使用 Yo Office 生成器，生成的自定义函数文件将包含更复杂的清单文件，可以在[此 Github 存储库](https://github.com/OfficeDev/Excel-Custom-Functions/blob/generate-metadata/manifest.xml)中对其进行比较。</span><span class="sxs-lookup"><span data-stu-id="e031f-143">If using the Yo Office generator, your generated custom function files will contain a more complex manifest file, which you can compare on t[his Github repository](https://github.com/OfficeDev/Excel-Custom-Functions/blob/generate-metadata/manifest.xml).</span></span>
 
 ```xml
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
@@ -201,17 +122,17 @@ function increment(incrementBy, callback) {
 ```
 
 > [!NOTE]
-> <span data-ttu-id="61026-166">Excel 中的函数在前面追加 XML 清单文件中指定的命名空间作为前缀。</span><span class="sxs-lookup"><span data-stu-id="61026-166">Functions in Excel are prepended by the namespace specified in your XML manifest file.</span></span> <span data-ttu-id="61026-167">函数的命名空间在函数名称之前，并用句点分隔。</span><span class="sxs-lookup"><span data-stu-id="61026-167">A function's namespace comes before the function name and they are separated by a period.</span></span> <span data-ttu-id="61026-168">例如，若要在 Excel 工作表的单元格中调用函数 `ADD42`，需输入 `=CONTOSO.ADD42`，因为 `CONTOSO` 是命名空间，`ADD42` 是 JSON 文件中指定的函数的名称。</span><span class="sxs-lookup"><span data-stu-id="61026-168">For example, to call the function `ADD42` in the cell of an Excel worksheet, you would type `=CONTOSO.ADD42`, because `CONTOSO` is the namespace and `ADD42` is the name of the function specified in the JSON file.</span></span> <span data-ttu-id="61026-169">命名空间旨在作为公司或加载项的标识符使用。</span><span class="sxs-lookup"><span data-stu-id="61026-169">The namespace is intended to be used as an identifier for your company or the add-in.</span></span> <span data-ttu-id="61026-170">命名空间只能包含字母数字字符和句点。</span><span class="sxs-lookup"><span data-stu-id="61026-170">A namespace can only contain alphanumeric characters and periods.</span></span>
+> <span data-ttu-id="e031f-144">Excel 中的函数在前面追加 XML 清单文件中指定的命名空间作为前缀。</span><span class="sxs-lookup"><span data-stu-id="e031f-144">Functions in Excel are prepended by the namespace specified in your XML manifest file.</span></span> <span data-ttu-id="e031f-145">函数的命名空间在函数名称之前，并用句点分隔。</span><span class="sxs-lookup"><span data-stu-id="e031f-145">A function's namespace comes before the function name and they are separated by a period.</span></span> <span data-ttu-id="e031f-146">例如，若要在 Excel 工作表的单元格中调用函数 `ADD42`，需输入 `=CONTOSO.ADD42`，因为 `CONTOSO` 是命名空间，`ADD42` 是 JSON 文件中指定的函数的名称。</span><span class="sxs-lookup"><span data-stu-id="e031f-146">For example, to call the function `ADD42` in the cell of an Excel worksheet, you would type `=CONTOSO.ADD42`, because `CONTOSO` is the namespace and `ADD42` is the name of the function specified in the JSON file.</span></span> <span data-ttu-id="e031f-147">命名空间旨在作为公司或加载项的标识符使用。</span><span class="sxs-lookup"><span data-stu-id="e031f-147">The namespace is intended to be used as an identifier for your company or the add-in.</span></span> <span data-ttu-id="e031f-148">命名空间只能包含字母数字字符和句点。</span><span class="sxs-lookup"><span data-stu-id="e031f-148">A namespace can only contain alphanumeric characters and periods.</span></span>
 
-## <a name="declaring-a-volatile-function"></a><span data-ttu-id="61026-171">声明可变函数</span><span class="sxs-lookup"><span data-stu-id="61026-171">Declaring a volatile function</span></span>
+## <a name="declaring-a-volatile-function"></a><span data-ttu-id="e031f-149">声明可变函数</span><span class="sxs-lookup"><span data-stu-id="e031f-149">Declaring a volatile function</span></span>
 
-<span data-ttu-id="61026-172">[可变函数](/office/client-developer/excel/excel-recalculation#volatile-and-non-volatile-functions)是指其值时刻更改的函数（即使此函数的自变量均未更改）。</span><span class="sxs-lookup"><span data-stu-id="61026-172">[Volatile functions](/office/client-developer/excel/excel-recalculation#volatile-and-non-volatile-functions) are functions in which the value changes from moment to moment, even if none of the function's arguments have changed.</span></span> <span data-ttu-id="61026-173">每当 Excel 重新计算时，这些函数即会重新计算。</span><span class="sxs-lookup"><span data-stu-id="61026-173">These functions recalculate every time Excel recalculates.</span></span> <span data-ttu-id="61026-174">例如，假设某个单元格调用函数 `NOW`。</span><span class="sxs-lookup"><span data-stu-id="61026-174">For example, imagine a cell that calls the function `NOW`.</span></span> <span data-ttu-id="61026-175">每当调用 `NOW` 时，它将自动返回当前的日期和时间。</span><span class="sxs-lookup"><span data-stu-id="61026-175">Every time `NOW` is called, it will automatically return the current date and time.</span></span>
+<span data-ttu-id="e031f-150">[可变函数](/office/client-developer/excel/excel-recalculation#volatile-and-non-volatile-functions)是指其值时刻更改的函数（即使此函数的自变量均未更改）。</span><span class="sxs-lookup"><span data-stu-id="e031f-150">[Volatile functions](/office/client-developer/excel/excel-recalculation#volatile-and-non-volatile-functions) are functions in which the value changes from moment to moment, even if none of the function's arguments have changed.</span></span> <span data-ttu-id="e031f-151">每当 Excel 重新计算时，这些函数即会重新计算。</span><span class="sxs-lookup"><span data-stu-id="e031f-151">These functions recalculate every time Excel recalculates.</span></span> <span data-ttu-id="e031f-152">例如，假设某个单元格调用函数 `NOW`。</span><span class="sxs-lookup"><span data-stu-id="e031f-152">For example, imagine a cell that calls the function `NOW`.</span></span> <span data-ttu-id="e031f-153">每当调用 `NOW` 时，它将自动返回当前的日期和时间。</span><span class="sxs-lookup"><span data-stu-id="e031f-153">Every time `NOW` is called, it will automatically return the current date and time.</span></span>
 
-<span data-ttu-id="61026-176">Excel 包含多个内置可变函数，例如 `RAND` 和 `TODAY`。</span><span class="sxs-lookup"><span data-stu-id="61026-176">Excel contains several built-in volatile functions, such as `RAND` and `TODAY`.</span></span> <span data-ttu-id="61026-177">有关 Excel 可变函数的完整列表，请参阅[可变函数和非可变函数](/office/client-developer/excel/excel-recalculation#volatile-and-non-volatile-functions)。</span><span class="sxs-lookup"><span data-stu-id="61026-177">For a comprehensive list of Excel's volatile functions, see [Volatile and Non-Volatile Functions](/office/client-developer/excel/excel-recalculation#volatile-and-non-volatile-functions).</span></span>
+<span data-ttu-id="e031f-154">Excel 包含多个内置可变函数，例如 `RAND` 和 `TODAY`。</span><span class="sxs-lookup"><span data-stu-id="e031f-154">Excel contains several built-in volatile functions, such as `RAND` and `TODAY`.</span></span> <span data-ttu-id="e031f-155">有关 Excel 可变函数的完整列表，请参阅[可变函数和非可变函数](/office/client-developer/excel/excel-recalculation#volatile-and-non-volatile-functions)。</span><span class="sxs-lookup"><span data-stu-id="e031f-155">For a comprehensive list of Excel's volatile functions, see [Volatile and Non-Volatile Functions](/office/client-developer/excel/excel-recalculation#volatile-and-non-volatile-functions).</span></span>
 
-<span data-ttu-id="61026-178">借助自定义函数，可以创建自己的可变函数。处理日期、时间、随机数字和建模时，可能会使用可变函数。</span><span class="sxs-lookup"><span data-stu-id="61026-178">Custom functions allow you to create your own volatile functions, which may be useful when handling dates, times, random numbers, and modelling.</span></span> <span data-ttu-id="61026-179">例如，Monte Carlo 模拟需要生成随机输入，来确定最佳解决方案。</span><span class="sxs-lookup"><span data-stu-id="61026-179">For example, Monte Carlo simulations require generation of random inputs to determine an optimal solution.</span></span>
+<span data-ttu-id="e031f-156">借助自定义函数，可以创建自己的可变函数。处理日期、时间、随机数字和建模时，可能会使用可变函数。</span><span class="sxs-lookup"><span data-stu-id="e031f-156">Custom functions allow you to create your own volatile functions, which may be useful when handling dates, times, random numbers, and modelling.</span></span> <span data-ttu-id="e031f-157">例如，Monte Carlo 模拟需要生成随机输入，来确定最佳解决方案。</span><span class="sxs-lookup"><span data-stu-id="e031f-157">For example, Monte Carlo simulations require generation of random inputs to determine an optimal solution.</span></span>
 
-<span data-ttu-id="61026-180">若要声明可变函数，则在 JSON 元数据文件内相应函数的 `options` 对象中添加 `"volatile": true`，如下面的代码示例所示。</span><span class="sxs-lookup"><span data-stu-id="61026-180">To declare a function volatile, add `"volatile": true` within the `options` object  for the function in the JSON metadata file, as shown in the following code sample.</span></span> <span data-ttu-id="61026-181">请注意，无法同时将一个函数标记为 `"streaming": true` 和 `"volatile": true`；当同时将这两者标记为 `true` 时，将忽略可变选项。</span><span class="sxs-lookup"><span data-stu-id="61026-181">Note that a function cannot be marked both `"streaming": true` and `"volatile": true`; in the case where both are marked `true` the volatile option will be ignored.</span></span>
+<span data-ttu-id="e031f-158">若要声明可变函数，则在 JSON 元数据文件内相应函数的 `options` 对象中添加 `"volatile": true`，如下面的代码示例所示。</span><span class="sxs-lookup"><span data-stu-id="e031f-158">To declare a function volatile, add `"volatile": true` within the `options` object  for the function in the JSON metadata file, as shown in the following code sample.</span></span> <span data-ttu-id="e031f-159">请注意，无法同时将一个函数标记为 `"streaming": true` 和 `"volatile": true`；当同时将这两者标记为 `true` 时，将忽略可变选项。</span><span class="sxs-lookup"><span data-stu-id="e031f-159">Note that a function cannot be marked both `"streaming": true` and `"volatile": true`; in the case where both are marked `true` the volatile option will be ignored.</span></span>
 
 ```json
 {
@@ -229,19 +150,19 @@ function increment(incrementBy, callback) {
 }
 ```
 
-## <a name="saving-and-sharing-state"></a><span data-ttu-id="61026-182">保存和共享状态</span><span class="sxs-lookup"><span data-stu-id="61026-182">Saving and sharing state</span></span>
+## <a name="saving-and-sharing-state"></a><span data-ttu-id="e031f-160">保存和共享状态</span><span class="sxs-lookup"><span data-stu-id="e031f-160">Saving and sharing state</span></span>
 
-<span data-ttu-id="61026-183">自定义函数可以将数据保存在全局 JavaScript 变量中，可用于后续调用。</span><span class="sxs-lookup"><span data-stu-id="61026-183">Custom functions can save data in global JavaScript variables, which can be used in subsequent calls.</span></span> <span data-ttu-id="61026-184">当用户从多个单元格调用同一个自定义函数时，保存状态非常有用，因为函数的所有实例都可以访问该状态。</span><span class="sxs-lookup"><span data-stu-id="61026-184">Saved state is useful when users call the same custom function from more than one cell, because all instances of the function can access the state.</span></span> <span data-ttu-id="61026-185">例如，可以保存调用某个 Web 资源时返回的数据，以避免再次调用同一个 Web 资源。</span><span class="sxs-lookup"><span data-stu-id="61026-185">For example, you may save the data returned from a call to a web resource to avoid making additional calls to the same web resource.</span></span>
+<span data-ttu-id="e031f-161">自定义函数可以将数据保存在全局 JavaScript 变量中，可用于后续调用。</span><span class="sxs-lookup"><span data-stu-id="e031f-161">Custom functions can save data in global JavaScript variables, which can be used in subsequent calls.</span></span> <span data-ttu-id="e031f-162">当用户从多个单元格调用同一个自定义函数时，保存状态非常有用，因为函数的所有实例都可以访问该状态。</span><span class="sxs-lookup"><span data-stu-id="e031f-162">Saved state is useful when users call the same custom function from more than one cell, because all instances of the function can access the state.</span></span> <span data-ttu-id="e031f-163">例如，可以保存调用某个 Web 资源时返回的数据，以避免再次调用同一个 Web 资源。</span><span class="sxs-lookup"><span data-stu-id="e031f-163">For example, you may save the data returned from a call to a web resource to avoid making additional calls to the same web resource.</span></span>
 
-<span data-ttu-id="61026-186">下面的代码示例演示温度流式处理函数的实现过程，该函数在全局范围内保存状态。</span><span class="sxs-lookup"><span data-stu-id="61026-186">The following code sample shows an implementation of a temperature-streaming function that saves state globally.</span></span> <span data-ttu-id="61026-187">关于此代码，请注意以下几点：</span><span class="sxs-lookup"><span data-stu-id="61026-187">Note the following about this code:</span></span>
+<span data-ttu-id="e031f-164">下面的代码示例演示温度流式处理函数的实现过程，该函数在全局范围内保存状态。</span><span class="sxs-lookup"><span data-stu-id="e031f-164">The following code sample shows an implementation of a temperature-streaming function that saves state globally.</span></span> <span data-ttu-id="e031f-165">关于此代码，请注意以下几点：</span><span class="sxs-lookup"><span data-stu-id="e031f-165">Note the following about this code:</span></span>
 
-- <span data-ttu-id="61026-188">`streamTemperature` 函数每秒更新单元格中显示的温度值，并使用 `savedTemperatures` 变量作为其数据源。</span><span class="sxs-lookup"><span data-stu-id="61026-188">The `streamTemperature` function updates the temperature value that's displayed in the cell every second and it uses the `savedTemperatures` variable as its data source.</span></span>
+- <span data-ttu-id="e031f-166">`streamTemperature` 函数每秒更新单元格中显示的温度值，并使用 `savedTemperatures` 变量作为其数据源。</span><span class="sxs-lookup"><span data-stu-id="e031f-166">The `streamTemperature` function updates the temperature value that's displayed in the cell every second and it uses the `savedTemperatures` variable as its data source.</span></span>
 
-- <span data-ttu-id="61026-189">因为 `streamTemperature` 是一个流式处理函数，它将实现一个取消处理程序，当函数被取消时该处理程序将运行。</span><span class="sxs-lookup"><span data-stu-id="61026-189">Because `streamTemperature` is a streaming function, it implements a cancellation handler that will run when the function is canceled.</span></span>
+- <span data-ttu-id="e031f-167">因为 `streamTemperature` 是一个流式处理函数，它将实现一个取消处理程序，当函数被取消时该处理程序将运行。</span><span class="sxs-lookup"><span data-stu-id="e031f-167">Because `streamTemperature` is a streaming function, it implements a cancellation handler that will run when the function is canceled.</span></span>
 
-- <span data-ttu-id="61026-190">如果用户从 Excel 中的多个单元格调用 `streamTemperature` 函数，则 `streamTemperature` 函数在每次运行时都会从相同的 `savedTemperatures` 变量读取数据。</span><span class="sxs-lookup"><span data-stu-id="61026-190">If a user calls the `streamTemperature` function from multiple cells in Excel, the `streamTemperature` function reads data from the same `savedTemperatures` variable each time it runs.</span></span> 
+- <span data-ttu-id="e031f-168">如果用户从 Excel 中的多个单元格调用 `streamTemperature` 函数，则 `streamTemperature` 函数在每次运行时都会从相同的 `savedTemperatures` 变量读取数据。</span><span class="sxs-lookup"><span data-stu-id="e031f-168">If a user calls the `streamTemperature` function from multiple cells in Excel, the `streamTemperature` function reads data from the same `savedTemperatures` variable each time it runs.</span></span> 
 
-- <span data-ttu-id="61026-191">`refreshTemperature` 函数每秒读取特定温度计的温度，并将结果存储在 `savedTemperatures` 变量中。</span><span class="sxs-lookup"><span data-stu-id="61026-191">The `refreshTemperature` function reads the temperature of a particular thermometer every second and stores the result in the `savedTemperatures` variable.</span></span> <span data-ttu-id="61026-192">因为 `refreshTemperature` 函数不在 Excel 中向最终用户显示，所以不需要在 JSON 文件中注册。</span><span class="sxs-lookup"><span data-stu-id="61026-192">Because the `refreshTemperature` function is not exposed to end users in Excel, it does not need to be registered in the JSON file.</span></span>
+- <span data-ttu-id="e031f-169">`refreshTemperature` 函数每秒读取特定温度计的温度，并将结果存储在 `savedTemperatures` 变量中。</span><span class="sxs-lookup"><span data-stu-id="e031f-169">The `refreshTemperature` function reads the temperature of a particular thermometer every second and stores the result in the `savedTemperatures` variable.</span></span> <span data-ttu-id="e031f-170">因为 `refreshTemperature` 函数不在 Excel 中向最终用户显示，所以不需要在 JSON 文件中注册。</span><span class="sxs-lookup"><span data-stu-id="e031f-170">Because the `refreshTemperature` function is not exposed to end users in Excel, it does not need to be registered in the JSON file.</span></span>
 
 ```js
 var savedTemperatures;
@@ -273,17 +194,17 @@ function refreshTemperature(thermometerID){
 }
 ```
 
-## <a name="coauthoring"></a><span data-ttu-id="61026-193">共同创作</span><span class="sxs-lookup"><span data-stu-id="61026-193">Coauthoring</span></span>
+## <a name="coauthoring"></a><span data-ttu-id="e031f-171">共同创作</span><span class="sxs-lookup"><span data-stu-id="e031f-171">Coauthoring</span></span>
 
-<span data-ttu-id="61026-194">借助 Excel Online 和 Excel for Windows 以及 Office 365 订阅，可以共同创作文档，此功能可与自定义函数结合使用。</span><span class="sxs-lookup"><span data-stu-id="61026-194">Excel Online and Excel for Windows with an Office 365 subscription allow you to coauthor documents and this feature works with custom functions.</span></span> <span data-ttu-id="61026-195">如果你的工作簿使用自定义函数，系统会提示你的同事加载自定义函数的加载项。</span><span class="sxs-lookup"><span data-stu-id="61026-195">If your workbook uses a custom function, your colleague will be prompted to load the custom function's add-in.</span></span> <span data-ttu-id="61026-196">当你们均加载此加载项后，自定义函数会通过共同创作共享结果。</span><span class="sxs-lookup"><span data-stu-id="61026-196">Once you both have loaded the add-in, the custom function will share results through coauthoring.</span></span>
+<span data-ttu-id="e031f-172">借助 Excel Online 和 Excel for Windows 以及 Office 365 订阅，可以共同创作文档，此功能可与自定义函数结合使用。</span><span class="sxs-lookup"><span data-stu-id="e031f-172">Excel Online and Excel for Windows with an Office 365 subscription allow you to coauthor documents and this feature works with custom functions.</span></span> <span data-ttu-id="e031f-173">如果你的工作簿使用自定义函数，系统会提示你的同事加载自定义函数的加载项。</span><span class="sxs-lookup"><span data-stu-id="e031f-173">If your workbook uses a custom function, your colleague will be prompted to load the custom function's add-in.</span></span> <span data-ttu-id="e031f-174">当你们均加载此加载项后，自定义函数会通过共同创作共享结果。</span><span class="sxs-lookup"><span data-stu-id="e031f-174">Once you both have loaded the add-in, the custom function will share results through coauthoring.</span></span>
 
-<span data-ttu-id="61026-197">若要详细了解共同创作，请参阅[关于 Excel 中的共同创作](/office/vba/excel/concepts/about-coauthoring-in-excel)。</span><span class="sxs-lookup"><span data-stu-id="61026-197">For more information on coauthoring, see [About coauthoring in Excel](/office/vba/excel/concepts/about-coauthoring-in-excel).</span></span>
+<span data-ttu-id="e031f-175">若要详细了解共同创作，请参阅[关于 Excel 中的共同创作](/office/vba/excel/concepts/about-coauthoring-in-excel)。</span><span class="sxs-lookup"><span data-stu-id="e031f-175">For more information on coauthoring, see [About coauthoring in Excel](/office/vba/excel/concepts/about-coauthoring-in-excel).</span></span>
 
-## <a name="working-with-ranges-of-data"></a><span data-ttu-id="61026-198">使用数据区域</span><span class="sxs-lookup"><span data-stu-id="61026-198">Working with ranges of data</span></span>
+## <a name="working-with-ranges-of-data"></a><span data-ttu-id="e031f-176">使用数据区域</span><span class="sxs-lookup"><span data-stu-id="e031f-176">Working with ranges of data</span></span>
 
-<span data-ttu-id="61026-199">自定义函数可以接受数据区域作为输入参数，也可以返回数据区域。</span><span class="sxs-lookup"><span data-stu-id="61026-199">Your custom function may accept a range of data as an input parameter, or it may return a range of data.</span></span> <span data-ttu-id="61026-200">在 JavaScript，数据区域表示为一个二维数组。</span><span class="sxs-lookup"><span data-stu-id="61026-200">In JavaScript, a range of data is represented as a two-dimensional array.</span></span>
+<span data-ttu-id="e031f-177">自定义函数可以接受数据区域作为输入参数，也可以返回数据区域。</span><span class="sxs-lookup"><span data-stu-id="e031f-177">Your custom function may accept a range of data as an input parameter, or it may return a range of data.</span></span> <span data-ttu-id="e031f-178">在 JavaScript，数据区域表示为一个二维数组。</span><span class="sxs-lookup"><span data-stu-id="e031f-178">In JavaScript, a range of data is represented as a two-dimensional array.</span></span>
 
-<span data-ttu-id="61026-201">例如，假设函数从 Excel 中存储的数字区域返回第二个最高值。</span><span class="sxs-lookup"><span data-stu-id="61026-201">For example, suppose that your function returns the second highest value from a range of numbers stored in Excel.</span></span> <span data-ttu-id="61026-202">下面的函数接受参数 `values`，即 `Excel.CustomFunctionDimensionality.matrix` 类型。</span><span class="sxs-lookup"><span data-stu-id="61026-202">The following function accepts the parameter `values`, which is of type `Excel.CustomFunctionDimensionality.matrix`.</span></span> <span data-ttu-id="61026-203">请注意，在此函数的 JSON 元数据中，将参数的 `type` 属性设置为 `matrix`。</span><span class="sxs-lookup"><span data-stu-id="61026-203">Note that in the JSON metadata for this function, you would set the parameter's `type` property to `matrix`.</span></span>
+<span data-ttu-id="e031f-179">例如，假设函数从 Excel 中存储的数字区域返回第二个最高值。</span><span class="sxs-lookup"><span data-stu-id="e031f-179">For example, suppose that your function returns the second highest value from a range of numbers stored in Excel.</span></span> <span data-ttu-id="e031f-180">下面的函数接受参数 `values`，即 `Excel.CustomFunctionDimensionality.matrix` 类型。</span><span class="sxs-lookup"><span data-stu-id="e031f-180">The following function accepts the parameter `values`, which is of type `Excel.CustomFunctionDimensionality.matrix`.</span></span> <span data-ttu-id="e031f-181">请注意，在此函数的 JSON 元数据中，将参数的 `type` 属性设置为 `matrix`。</span><span class="sxs-lookup"><span data-stu-id="e031f-181">Note that in the JSON metadata for this function, you would set the parameter's `type` property to `matrix`.</span></span>
 
 ```js
 function secondHighest(values){
@@ -303,15 +224,15 @@ function secondHighest(values){
 }
 ```
 
-## <a name="determine-which-cell-invoked-your-custom-function"></a><span data-ttu-id="61026-204">确定调用自定义函数的单元格</span><span class="sxs-lookup"><span data-stu-id="61026-204">Determine which cell invoked your custom function</span></span>
+## <a name="determine-which-cell-invoked-your-custom-function"></a><span data-ttu-id="e031f-182">确定调用自定义函数的单元格</span><span class="sxs-lookup"><span data-stu-id="e031f-182">Determine which cell invoked your custom function</span></span>
 
-<span data-ttu-id="61026-205">在某些情况下，需要获取调用自定义函数的单元格地址。</span><span class="sxs-lookup"><span data-stu-id="61026-205">In some cases you'll need to get the address of the cell that invoked your custom function.</span></span> <span data-ttu-id="61026-206">这在以下类型的应用场景中非常有用：</span><span class="sxs-lookup"><span data-stu-id="61026-206">This may be useful in the following types of scenarios:</span></span>
+<span data-ttu-id="e031f-183">在某些情况下，需要获取调用自定义函数的单元格地址。</span><span class="sxs-lookup"><span data-stu-id="e031f-183">In some cases you'll need to get the address of the cell that invoked your custom function.</span></span> <span data-ttu-id="e031f-184">这在以下类型的应用场景中非常有用：</span><span class="sxs-lookup"><span data-stu-id="e031f-184">This may be useful in the following types of scenarios:</span></span>
 
-- <span data-ttu-id="61026-207">设置区域格式：将单元格地址用作键，以便将信息存储到 [AsyncStorage](/office/dev/add-ins/excel/custom-functions-runtime#storing-and-accessing-data) 中。</span><span class="sxs-lookup"><span data-stu-id="61026-207">Formatting ranges: Use the cell's address as the key to store information in [AsyncStorage](/office/dev/add-ins/excel/custom-functions-runtime#storing-and-accessing-data).</span></span> <span data-ttu-id="61026-208">然后，使用 Excel 中的 [onCalculated](/javascript/api/excel/excel.worksheet#oncalculated) 从 `AsyncStorage` 加载该键。</span><span class="sxs-lookup"><span data-stu-id="61026-208">Then, use [onCalculated](/javascript/api/excel/excel.worksheet#oncalculated) in Excel to load the key from `AsyncStorage`.</span></span>
-- <span data-ttu-id="61026-209">显示缓存值：如果脱机使用函数，将显示 `AsyncStorage` 中使用 `onCalculated` 存储的缓存值。</span><span class="sxs-lookup"><span data-stu-id="61026-209">Displaying cached values: If your function is used offline, display stored cached values from `AsyncStorage` using `onCalculated`.</span></span>
-- <span data-ttu-id="61026-210">协调：使用单元格地址发现原始单元格，以帮助你在处理时进行协调。</span><span class="sxs-lookup"><span data-stu-id="61026-210">Reconciliation: Use the cell's address to discover an origin cell to help you reconcile where processing is occurring.</span></span>
+- <span data-ttu-id="e031f-185">设置区域格式：将单元格地址用作键，以便将信息存储到 [AsyncStorage](/office/dev/add-ins/excel/custom-functions-runtime#storing-and-accessing-data) 中。</span><span class="sxs-lookup"><span data-stu-id="e031f-185">Formatting ranges: Use the cell's address as the key to store information in [AsyncStorage](/office/dev/add-ins/excel/custom-functions-runtime#storing-and-accessing-data).</span></span> <span data-ttu-id="e031f-186">然后，使用 Excel 中的 [onCalculated](/javascript/api/excel/excel.worksheet#oncalculated) 从 `AsyncStorage` 加载该键。</span><span class="sxs-lookup"><span data-stu-id="e031f-186">Then, use [onCalculated](/javascript/api/excel/excel.worksheet#oncalculated) in Excel to load the key from `AsyncStorage`.</span></span>
+- <span data-ttu-id="e031f-187">显示缓存值：如果脱机使用函数，将显示 `AsyncStorage` 中使用 `onCalculated` 存储的缓存值。</span><span class="sxs-lookup"><span data-stu-id="e031f-187">Displaying cached values: If your function is used offline, display stored cached values from `AsyncStorage` using `onCalculated`.</span></span>
+- <span data-ttu-id="e031f-188">协调：使用单元格地址发现原始单元格，以帮助你在处理时进行协调。</span><span class="sxs-lookup"><span data-stu-id="e031f-188">Reconciliation: Use the cell's address to discover an origin cell to help you reconcile where processing is occurring.</span></span>
 
-<span data-ttu-id="61026-211">仅当函数 JSON 元数据文件中的 `requiresAddress` 被标记为 `true` 时，才会公开与单元格地址相关的信息。</span><span class="sxs-lookup"><span data-stu-id="61026-211">The information about a cell's address is exposed only if `requiresAddress` is marked as `true` in the function's JSON metadata file.</span></span> <span data-ttu-id="61026-212">以下示例诠释了此情况：</span><span class="sxs-lookup"><span data-stu-id="61026-212">The following sample gives an example of this:</span></span>
+<span data-ttu-id="e031f-189">仅当函数 JSON 元数据文件中的 `requiresAddress` 被标记为 `true` 时，才会公开与单元格地址相关的信息。</span><span class="sxs-lookup"><span data-stu-id="e031f-189">The information about a cell's address is exposed only if `requiresAddress` is marked as `true` in the function's JSON metadata file.</span></span> <span data-ttu-id="e031f-190">以下示例诠释了此情况：</span><span class="sxs-lookup"><span data-stu-id="e031f-190">The following sample gives an example of this:</span></span>
 
 ```JSON
 {
@@ -337,7 +258,7 @@ function secondHighest(values){
 }
 ```
 
-<span data-ttu-id="61026-213">此外，需要在脚本文件 (**./src/customfunctions.js** 或 **./src/customfunctions.ts**) 中添加 `getAddress` 函数，以查找单元格地址。</span><span class="sxs-lookup"><span data-stu-id="61026-213">In the script file (**./src/customfunctions.js** or **./src/customfunctions.ts**), you'll also need to add a `getAddress` function to find a cell's address.</span></span> <span data-ttu-id="61026-214">此函数可能会使用参数，如以下示例 `parameter1` 所示。</span><span class="sxs-lookup"><span data-stu-id="61026-214">This function may take parameters, as shown in the following sample as `parameter1`.</span></span> <span data-ttu-id="61026-215">最后一个参数始终为 `invocationContext`，该对象包含 JSON 元数据文件中的 `requiresAddress` 被标记为 `true` 时 Excel 传递的单元格位置。</span><span class="sxs-lookup"><span data-stu-id="61026-215">The last parameter will always be `invocationContext`, an object containing the cell's location that Excel passes down when `requiresAddress` is marked as `true` in your JSON metadata file.</span></span>
+<span data-ttu-id="e031f-191">此外，需要在脚本文件（**./src/functions/functions.js** 或 **./src/functions/functions.ts**）中添加 `getAddress` 函数，以查找单元格地址。</span><span class="sxs-lookup"><span data-stu-id="e031f-191">In the script file (**./src/customfunctions.js** or **./src/customfunctions.ts**), you'll also need to add a `getAddress` function to find a cell's address.</span></span> <span data-ttu-id="e031f-192">此函数可能会使用参数，如以下示例 `parameter1` 所示。</span><span class="sxs-lookup"><span data-stu-id="e031f-192">This function may take parameters, as shown in the following sample as `parameter1`.</span></span> <span data-ttu-id="e031f-193">最后一个参数始终为 `invocationContext`，该对象包含 JSON 元数据文件中的 `requiresAddress` 被标记为 `true` 时 Excel 传递的单元格位置。</span><span class="sxs-lookup"><span data-stu-id="e031f-193">The last parameter will always be `invocationContext`, an object containing the cell's location that Excel passes down when `requiresAddress` is marked as `true` in your JSON metadata file.</span></span>
 
 ```js
 function getAddress(parameter1, invocationContext) {
@@ -345,16 +266,17 @@ function getAddress(parameter1, invocationContext) {
 }
 ```
 
-<span data-ttu-id="61026-216">默认情况下，从 `getAddress` 函数返回的值遵循以下格式：`SheetName!CellNumber`。</span><span class="sxs-lookup"><span data-stu-id="61026-216">By default, values returned from a `getAddress` function follow the following format: `SheetName!CellNumber`.</span></span> <span data-ttu-id="61026-217">例如，如果名为“Expense”的工作表中的 B2 单元格调用了函数，则返回的值为 `Expenses!B2`。</span><span class="sxs-lookup"><span data-stu-id="61026-217">For example, if a function was called from a sheet called Expenses in cell B2, the returned value would be `Expenses!B2`.</span></span>
+<span data-ttu-id="e031f-194">默认情况下，从 `getAddress` 函数返回的值遵循以下格式：`SheetName!CellNumber`。</span><span class="sxs-lookup"><span data-stu-id="e031f-194">By default, values returned from a `getAddress` function follow the following format: `SheetName!CellNumber`.</span></span> <span data-ttu-id="e031f-195">例如，如果名为“Expense”的工作表中的 B2 单元格调用了函数，则返回的值为 `Expenses!B2`。</span><span class="sxs-lookup"><span data-stu-id="e031f-195">For example, if a function was called from a sheet called Expenses in cell B2, the returned value would be `Expenses!B2`.</span></span>
 
-## <a name="known-issues"></a><span data-ttu-id="61026-218">已知问题</span><span class="sxs-lookup"><span data-stu-id="61026-218">Known issues</span></span>
+## <a name="known-issues"></a><span data-ttu-id="e031f-196">已知问题</span><span class="sxs-lookup"><span data-stu-id="e031f-196">Known issues</span></span>
 
-<span data-ttu-id="61026-219">在 [Excel 自定义功能 GitHub 存储库](https://github.com/OfficeDev/Excel-Custom-Functions/issues)上查看已知问题。</span><span class="sxs-lookup"><span data-stu-id="61026-219">See known issues on our [Excel Custom Functions GitHub repo](https://github.com/OfficeDev/Excel-Custom-Functions/issues).</span></span>
+<span data-ttu-id="e031f-197">在 [Excel 自定义功能 GitHub 存储库](https://github.com/OfficeDev/Excel-Custom-Functions/issues)上查看已知问题。</span><span class="sxs-lookup"><span data-stu-id="e031f-197">See known issues on our [Excel Custom Functions GitHub repo](https://github.com/OfficeDev/Excel-Custom-Functions/issues).</span></span>
 
-## <a name="see-also"></a><span data-ttu-id="61026-220">另请参阅</span><span class="sxs-lookup"><span data-stu-id="61026-220">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="e031f-198">另请参阅</span><span class="sxs-lookup"><span data-stu-id="e031f-198">See also</span></span>
 
-* [<span data-ttu-id="61026-221">自定义函数元数据</span><span class="sxs-lookup"><span data-stu-id="61026-221">Custom functions metadata</span></span>](custom-functions-json.md)
-* [<span data-ttu-id="61026-222">Excel 自定义函数的运行时</span><span class="sxs-lookup"><span data-stu-id="61026-222">Runtime for Excel custom functions</span></span>](custom-functions-runtime.md)
-* [<span data-ttu-id="61026-223">自定义函数最佳实践</span><span class="sxs-lookup"><span data-stu-id="61026-223">Custom functions best practices</span></span>](custom-functions-best-practices.md)
-* [<span data-ttu-id="61026-224">自定义函数更改日志</span><span class="sxs-lookup"><span data-stu-id="61026-224">Custom functions changelog</span></span>](custom-functions-changelog.md)
-* [<span data-ttu-id="61026-225">Excel 自定义函数教程</span><span class="sxs-lookup"><span data-stu-id="61026-225">Excel custom functions tutorial</span></span>](../tutorials/excel-tutorial-create-custom-functions.md)
+* [<span data-ttu-id="e031f-199">自定义函数元数据</span><span class="sxs-lookup"><span data-stu-id="e031f-199">Custom functions metadata</span></span>](custom-functions-json.md)
+* [<span data-ttu-id="e031f-200">Excel 自定义函数的运行时</span><span class="sxs-lookup"><span data-stu-id="e031f-200">Runtime for Excel custom functions</span></span>](custom-functions-runtime.md)
+* [<span data-ttu-id="e031f-201">自定义函数最佳做法</span><span class="sxs-lookup"><span data-stu-id="e031f-201">Custom functions best practices</span></span>](custom-functions-best-practices.md)
+* [<span data-ttu-id="e031f-202">自定义函数更改日志</span><span class="sxs-lookup"><span data-stu-id="e031f-202">Custom functions changelog</span></span>](custom-functions-changelog.md)
+* [<span data-ttu-id="e031f-203">Excel 自定义函数教程</span><span class="sxs-lookup"><span data-stu-id="e031f-203">Excel custom functions tutorial</span></span>](../tutorials/excel-tutorial-create-custom-functions.md)
+* [<span data-ttu-id="e031f-204">自定义函数调试</span><span class="sxs-lookup"><span data-stu-id="e031f-204">Custom functions debugging</span></span>](custom-functions-debugging.md)
