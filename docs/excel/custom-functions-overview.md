@@ -1,14 +1,14 @@
 ---
-ms.date: 03/19/2019
+ms.date: 03/29/2019
 description: 在 Excel 中使用 JavaScript 创建自定义函数。
 title: 在 Excel 中创建自定义函数（预览）
 localization_priority: Priority
-ms.openlocfilehash: ac3410267da415c4d567092da2e653fcffd10b72
-ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
+ms.openlocfilehash: 59620b19cb8613e411abb84ed6766da94cae02c4
+ms.sourcegitcommit: 14ceac067e0e130869b861d289edb438b5e3eff9
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "30870448"
+ms.lasthandoff: 04/04/2019
+ms.locfileid: "31477556"
 ---
 # <a name="create-custom-functions-in-excel-preview"></a>在 Excel 中创建自定义函数（预览）
 
@@ -33,123 +33,44 @@ function add42(a, b) {
 
 ## <a name="components-of-a-custom-functions-add-in-project"></a>自定义函数加载项项目的组件
 
-如果使用 [Yo Office 生成器](https://github.com/OfficeDev/generator-office)创建 Excel 自定义函数加载项项目，将在生成器创建的项目中看到以下文件：
+如果使用 [Yo Office 生成器](https://github.com/OfficeDev/generator-office)创建 Excel 自定义函数加载项项目，会发现它可创建全面控制函数、任务窗格和加载项的文件。 我们将专注于对自定义函数至关重要的文件： 
 
 | 文件 | 文件格式 | 说明 |
 |------|-------------|-------------|
-| **./src/customfunctions.js**<br/>或<br/>**./src/customfunctions.ts** | JavaScript<br/>或<br/>TypeScript | 包含定义自定义函数的代码。 |
-| **./config/customfunctions.json** | JSON | 包含描述自定义函数的元数据，使 Excel 能够注册自定义函数，并使其可供最终用户使用。 |
-| **./index.html** | HTML | 提供对定义自定义函数的 JavaScript 文件的&lt;脚本&gt;引用。 |
-| **./manifest.xml** | XML | 指定加载项中所有自定义函数的命名空间以及此表中前面列出的 JavaScript、JSON 和 HTML 文件的位置。 |
-
-下列部分将提供有关这些文件的详细信息。
+| **./src/functions/functions.js**<br/>或<br/>**./src/functions/functions.ts** | JavaScript<br/>或<br/>TypeScript | 包含定义自定义函数的代码。 |
+| **./src/functions/functions.html** | HTML | 提供对定义自定义函数的 JavaScript 文件的&lt;脚本&gt;引用。 |
+| **./manifest.xml** | XML | 指定加载项中所有自定义函数的命名空间以及此表中前面列出的 JavaScript 和 HTML 文件的位置。 它还列出了加载项可能使用的其他文件的位置，如任务窗格文件和命令文件。 |
 
 ### <a name="script-file"></a>脚本文件
 
-脚本文件（Yo Office 生成器创建的项目中的 **./src/customfunctions.js** 或 **./src/customfunctions.ts**）包含定义自定义函数并将自定义函数名称映射到 [JSON 元数据文件](#json-metadata-file)中的对象的代码。 
+脚本文件（Yo Office 生成器创建的项目中的 **./src/functions/functions.js** 或 **./src/functions/functions.ts**）包含定义自定义函数、定义函数的注释，并将自定义函数名称关联到 [JSON 元数据文件](#json-metadata-file)中的对象的代码。
 
-例如，以下代码定义自定义函数 `add` 和 `increment`，然后指定这两个函数的关联信息。 将 `add` 函数关联到 JSON 元数据文件中的对象，其中 `id` 属性的值为 **ADD**，将 `increment` 函数关联到元数据文件中的对象，其中 `id` 属性的值为 **INCREMENT**。 有关将脚本文件中的函数名称关联到 JSON 元数据文件中的对象的更多信息，请参阅[自定义函数最佳实践](custom-functions-best-practices.md#associating-function-names-with-json-metadata)。
+以下代码定义自定义函数 `add`，然后指定该函数的关联信息。 有关关联函数的详细信息，请参阅[自定义函数最佳做法](custom-functions-best-practices.md#associating-function-names-with-json-metadata)。
+
+下面的代码还提供了定义函数的代码注释。 首先声明所需的 `@customfunction` 注释，指示这是一个自定义函数。 此外，你将注意到声明了两个参数，即 `first` 和 `second`，后跟其 `description` 属性。 最后提供了 `returns` 描述。 有关自定义函数所需注释的更多信息，请参阅[为自定义函数生成 JSON 元数据](custom-functions-json-autogeneration.md)。
 
 ```js
+/**
+ * Adds two numbers.
+ * @customfunction 
+ * @param first First number
+ * @param second Second number
+ * @returns The sum of the two numbers.
+ */
+
 function add(first, second){
   return first + second;
 }
 
-function increment(incrementBy, callback) {
-  var result = 0;
-  var timer = setInterval(function() {
-    result += incrementBy;
-    callback.setResult(result);
-  }, 1000);
-
-  callback.onCanceled = function() {
-    clearInterval(timer);
-  };
-}
-
 // associate `id` values in the JSON metadata file to the JavaScript function names
  CustomFunctions.associate("ADD", add);
- CustomFunctions.associate("INCREMENT", increment);
 ```
-
-### <a name="json-metadata-file"></a>JSON 元数据文件
-
-自定义函数元数据文件（Yo Office 生成器创建的项目中的 **./config/customfunctions.json**）提供 Excel 注册自定义函数并使其可供最终用户使用所需的信息。 自定义函数在用户首次运行加载项时注册。 之后，它们可在所有工作簿（即，不仅仅是在加载项初始运行的工作簿）中供同一用户使用。
-
-> [!TIP]
-> 托管 JSON 文件的服务器上的服务器设置必须启用 [CORS](https://developer.mozilla.org/docs/Web/HTTP/CORS)，以便自定义函数在 Excel Online 中正常工作。
-
-**customfunctions.json** 中的以下代码指定上述 `add` 函数和 `increment` 函数的元数据。 此代码示例后面的表提供了有关此 JSON 对象中各个属性的详细信息。 有关在 JSON 元数据文件中指定 `id` 和 `name` 属性值的详细信息，请参阅[自定义函数最佳实践](custom-functions-best-practices.md#associating-function-names-with-json-metadata)。
-
-```json
-{
-  "$schema": "https://developer.microsoft.com/en-us/json-schemas/office-js/custom-functions.schema.json",
-  "functions": [
-    {
-      "id": "ADD",
-      "name": "ADD",
-      "description": "Add two numbers",
-      "helpUrl": "http://www.contoso.com",
-      "result": {
-        "type": "number",
-        "dimensionality": "scalar"
-      },
-      "parameters": [
-        {
-          "name": "first",
-          "description": "first number to add",
-          "type": "number",
-          "dimensionality": "scalar"
-        },
-        {
-          "name": "second",
-          "description": "second number to add",
-          "type": "number",
-          "dimensionality": "scalar"
-        }
-      ]
-    },
-    {
-      "id": "INCREMENT",
-      "name": "INCREMENT",
-      "description": "Periodically increment a value",
-      "helpUrl": "http://www.contoso.com",
-      "result": {
-          "type": "number",
-          "dimensionality": "scalar"
-    },
-    "parameters": [
-        {
-            "name": "increment",
-            "description": "Amount to increment",
-            "type": "number",
-            "dimensionality": "scalar"
-        }
-    ],
-    "options": {
-        "cancelable": true,
-        "stream": true
-      }
-    }
-  ]
-}
-```
-
-下表列出了 JSON 元数据文件中的常见属性。 有关 JSON 元数据文件的更多详细信息，请参阅[自定义函数元数据](custom-functions-json.md)。
-
-| 属性  | 说明 |
-|---------|---------|
-| `id` | 函数的唯一 ID。 此 ID 只能包含字母数字字符和句点，设置后不应更改。 |
-| `name` | 最终用户在 Excel 中看到的函数名称。 在 Excel 中，此函数名称将以 [XML 清单文件](#manifest-file)中指定的自定义函数命名空间作为前缀。 |
-| `helpUrl` | 当用户请求帮助时显示的页面的 URL。 |
-| `description` | 说明函数的功能。 当函数是 Excel 自动完成菜单中的选中项时，此值将作为工具提示显示。 |
-| `result`  | 定义函数返回的信息类型的对象。 有关此对象的详细信息，请参阅[结果](custom-functions-json.md#result)。 |
-| `parameters` | 定义函数的输入参数的数组。 有关此对象的详细信息，请参阅[参数](custom-functions-json.md#parameters)。 |
-| `options` | 使用户能够自定义 Excel 执行函数的方式和时间。 有关如何使用此属性的详细信息，请参阅[流式处理函数](#streaming-functions)和[取消函数](#canceling-a-function)。 |
 
 ### <a name="manifest-file"></a>清单文件
 
-定义自定义函数的加载项的 XML 清单文件（Yo Office 生成器创建的项目中的 **./manifest.xml**）指定加载项中所有自定义函数的命名空间以及 JavaScript、JSON 和 HTML 文件的位置。 下面的 XML 标记显示了 `<ExtensionPoint>` 和 `<Resources>` 元素的一个示例，必须在加载项清单中包含这些元素才能启用自定义函数。  
+定义自定义函数的加载项的 XML 清单文件（Yo Office 生成器创建的项目中的 **./manifest.xml**）指定加载项中所有自定义函数的命名空间以及 JavaScript、JSON 和 HTML 文件的位置。 
+
+下面的基本 XML 标记显示了 `<ExtensionPoint>` 和 `<Resources>` 元素的一个示例，必须在加载项清单中包含这些元素才能启用自定义函数。 如果使用 Yo Office 生成器，生成的自定义函数文件将包含更复杂的清单文件，可以在[此 Github 存储库](https://github.com/OfficeDev/Excel-Custom-Functions/blob/generate-metadata/manifest.xml)中对其进行比较。
 
 ```xml
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
@@ -337,7 +258,7 @@ function secondHighest(values){
 }
 ```
 
-此外，需要在脚本文件 (**./src/customfunctions.js** 或 **./src/customfunctions.ts**) 中添加 `getAddress` 函数，以查找单元格地址。 此函数可能会使用参数，如以下示例 `parameter1` 所示。 最后一个参数始终为 `invocationContext`，该对象包含 JSON 元数据文件中的 `requiresAddress` 被标记为 `true` 时 Excel 传递的单元格位置。
+此外，需要在脚本文件（**./src/functions/functions.js** 或 **./src/functions/functions.ts**）中添加 `getAddress` 函数，以查找单元格地址。 此函数可能会使用参数，如以下示例 `parameter1` 所示。 最后一个参数始终为 `invocationContext`，该对象包含 JSON 元数据文件中的 `requiresAddress` 被标记为 `true` 时 Excel 传递的单元格位置。
 
 ```js
 function getAddress(parameter1, invocationContext) {
@@ -355,6 +276,7 @@ function getAddress(parameter1, invocationContext) {
 
 * [自定义函数元数据](custom-functions-json.md)
 * [Excel 自定义函数的运行时](custom-functions-runtime.md)
-* [自定义函数最佳实践](custom-functions-best-practices.md)
+* [自定义函数最佳做法](custom-functions-best-practices.md)
 * [自定义函数更改日志](custom-functions-changelog.md)
 * [Excel 自定义函数教程](../tutorials/excel-tutorial-create-custom-functions.md)
+* [自定义函数调试](custom-functions-debugging.md)

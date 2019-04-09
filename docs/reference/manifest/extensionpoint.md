@@ -1,14 +1,14 @@
 ---
 title: 清单文件中的 ExtensionPoint 元件
 description: ''
-ms.date: 10/09/2018
+ms.date: 03/11/2018
 localization_priority: Priority
-ms.openlocfilehash: 7555c5e4245da55fd4d01761e0484912fe54eccc
-ms.sourcegitcommit: 8e7b7b0cfb68b91a3a95585d094cf5f5ffd00178
+ms.openlocfilehash: 4473790a0dd0daeae8042f8ba15421b8e3f9dc64
+ms.sourcegitcommit: 14ceac067e0e130869b861d289edb438b5e3eff9
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "30512872"
+ms.lasthandoff: 04/04/2019
+ms.locfileid: "31477563"
 ---
 # <a name="extensionpoint-element"></a>ExtensionPoint 元素
 
@@ -34,7 +34,7 @@ ms.locfileid: "30512872"
 下面的示例演示如何将  **ExtensionPoint** 元素与 **PrimaryCommandSurface** 和 **ContextMenu** 属性值配合使用，以及应彼此配合使用的子元素。
 
 > [!IMPORTANT] 
-> 对于包含 ID 属性的元素，请务必提供唯一的 ID。 建议将你的公司名称用于此 ID。 例如，使用以下格式。 <CustomTab id="mycompanyname.mygroupname">
+> 对于包含 ID 属性的元素，请确保提供唯一 ID。我们建议您将您的公司名称与您的 ID 配合使用。例如，使用以下格式。 <CustomTab id="mycompanyname.mygroupname">
 
 ```XML
 <ExtensionPoint xsi:type="PrimaryCommandSurface">
@@ -228,7 +228,7 @@ ms.locfileid: "30512872"
 
 |  元素 |  说明  |
 |:-----|:-----|
-|  [Group](group.md) |  将按钮组添加到命令界面。  |
+|  [组](group.md) |  将按钮组添加到命令界面。  |
 
 此种类型的 **ExtensionPoint** 元素仅能具有一个子元素，即 **Group** 元素。
 
@@ -276,7 +276,7 @@ ms.locfileid: "30512872"
 
 |  元素 |  说明  |
 |:-----|:-----|
-|  [Label](#label) |  在上下文窗口中指定外接程序的标签。  |
+|  [标签](#label) |  在上下文窗口中指定外接程序的标签。  |
 |  [SourceLocation](sourcelocation.md) |  指定上下文窗口的 URL。  |
 |  [Rule](rule.md) |  指定确定外接程序激活时间的一个或多个规则。  |
 

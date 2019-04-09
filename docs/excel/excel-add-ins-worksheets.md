@@ -1,14 +1,14 @@
 ---
 title: 使用 Excel JavaScript API 处理工作表
 description: ''
-ms.date: 02/20/2019
+ms.date: 04/04/2019
 localization_priority: Priority
-ms.openlocfilehash: 825ae88afd98afbcd268716c93ddcb13d24a9a1e
-ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
+ms.openlocfilehash: 0c66022112e6a6742753feb9945300a5d214e9bb
+ms.sourcegitcommit: 63219bcc1bb5e3bed7eb6c6b0adb73a4829c7e8f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "30871554"
+ms.lasthandoff: 04/05/2019
+ms.locfileid: "31479723"
 ---
 # <a name="work-with-worksheets-using-the-excel-javascript-api"></a>使用 Excel JavaScript API 处理工作表
 
@@ -277,6 +277,30 @@ Excel.run(function (context) {
             console.log(`The value of the cell in row 2, column 5 is "${cell.values[0][0]}" and the address of that cell is "${cell.address}"`);
         })
 }).catch(errorHandlerFunction);
+```
+
+## <a name="detect-data-changes"></a>检测数据更改
+
+加载项可能需要回应对工作表中的数据进行更改的用户。 若要检测这些更改，可以为工作表的 `onChanged` 事件[注册事件处理程序](excel-add-ins-events.md#register-an-event-handler)。 当事件触发时，`onChanged` 事件的事件处理程序将收到 [WorksheetChangedEventArgs](/javascript/api/excel/excel.worksheetchangedeventargs) 对象。
+
+`WorksheetChangedEventArgs` 对象提供有关更改和来源的信息。 由于 `onChanged` 会在数据的格式或值发生变化时触发，因此让加载项检查值是否已实际更改可能很有用。 `details` 属性以 [ChangedEventDetail](/javascript/api/excel/excel.changedeventdetail) 的形式封装此信息。 以下代码示例演示如何显示已更改的单元格的之前和之后的值及类型。
+
+> [!NOTE]
+> `WorksheetChangedEventArgs.details` 它当前仅适用于公共预览版。 [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
+
+```js
+// This function would be used as an event handler for the Worksheet.onChanged event.
+function onWorksheetChanged(eventArgs) {
+    Excel.run(function (context) {
+        var details = eventArgs.details;
+        var address = eventArgs.address;
+
+        // Print the before and after types and values to the console.
+        console.log(`Change at ${address}: was ${details.valueBefore}(${details.valueTypeBefore}),`
+            + ` now is ${details.valueAfter}(${details.valueTypeAfter})`);
+        return context.sync();
+    });
+}
 ```
 
 ## <a name="find-all-cells-with-matching-text-preview"></a>查找具有匹配文本 （预览） 所有单元格

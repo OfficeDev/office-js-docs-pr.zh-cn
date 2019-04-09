@@ -1,14 +1,14 @@
 ---
 title: 使用 Excel JavaScript API 处理表格
 description: ''
-ms.date: 03/19/2019
+ms.date: 04/04/2019
 localization_priority: Priority
-ms.openlocfilehash: a628c182ccb570fcda3db813f7debb237682b915
-ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
+ms.openlocfilehash: 1b409e27c12d4741f59a027dd4962fdee65b96bf
+ms.sourcegitcommit: 63219bcc1bb5e3bed7eb6c6b0adb73a4829c7e8f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "30869972"
+ms.lasthandoff: 04/05/2019
+ms.locfileid: "31479716"
 ---
 # <a name="work-with-tables-using-the-excel-javascript-api"></a>使用 Excel JavaScript API 处理表格
 
@@ -50,7 +50,7 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
-**新建表格**
+**新表**
 
 ![Excel 中的新表](../images/excel-tables-create.png)
 
@@ -187,7 +187,7 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
-**包含新列名称的表格**
+**包含新列名称的表**
 
 ![Excel 中包含新的列名称的表](../images/excel-tables-update-column-name.png)
 
@@ -237,7 +237,31 @@ Excel.run(function (context) {
 
 ![Excel 中的表数据](../images/excel-tables-get-data.png)
 
-## <a name="sort-data-in-a-table"></a>在表中对数据进行排序
+## <a name="detect-data-changes"></a>检测数据更改
+
+外接程序可能需要回应对表中的数据进行更改的用户。 若要检测这些更改，你可以为表的 `onChanged` 事件[注册事件处理程序](excel-add-ins-events.md#register-an-event-handler)。 当事件触发时，`onChanged` 事件的事件处理程序将收到 [TableChangedEventArgs](/javascript/api/excel/excel.tablechangedeventargs) 对象。
+
+`TableChangedEventArgs` 对象提供有关更改和来源的信息。 由于 `onChanged` 会在数据的格式或值发生变化时触发，因此让外接程序检查值是否已实际更改可能很有用。 `details` 属性以 [ChangedEventDetail](/javascript/api/excel/excel.changedeventdetail) 的形式封装此信息。 以下代码示例演示如何显示已更改的单元格的之前和之后的值及类型。
+
+> [!NOTE]
+> `TableChangedEventArgs.details` 它当前仅适用于公共预览版。 [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
+
+```js
+// This function would be used as an event handler for the Table.onChanged event.
+function onTableChanged(eventArgs) {
+    Excel.run(function (context) {
+        var details = eventArgs.details;
+        var address = eventArgs.address;
+
+        // Print the before and after types and values to the console.
+        console.log(`Change at ${address}: was ${details.valueBefore}(${details.valueTypeBefore}),`
+            + ` now is ${details.valueAfter}(${details.valueTypeAfter})`);
+        return context.sync();
+    });
+}
+```
+
+## <a name="sort-data-in-a-table"></a>对表格中的数据进行排序
 
 下面的代码示例根据表中第四列的值，对表数据按降序进行排序。
 
@@ -352,7 +376,7 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
-**应用格式设置的表**
+**应用了格式设置的表**
 
 ![Excel 中应用了格式设置的表](../images/excel-tables-formatting-after.png)
 
@@ -392,7 +416,7 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
-**内的数据（在区域转换为表之前）**
+**区域内的数据（在区域转换为表之前）**
 
 ![Excel 中区域内的数据](../images/excel-ranges.png)
 
@@ -443,9 +467,9 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
-**新建表**
+**新表**
 
-![Excel 中的新表格](../images/excel-tables-create-from-json.png)
+![Excel 中的新表](../images/excel-tables-create-from-json.png)
 
 ## <a name="see-also"></a>另请参阅
 
