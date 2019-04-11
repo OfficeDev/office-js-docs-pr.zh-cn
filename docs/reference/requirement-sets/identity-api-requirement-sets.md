@@ -1,15 +1,15 @@
 ---
 title: Identity API 要求集
 description: ''
-ms.date: 03/19/2019
+ms.date: 04/09/2019
 ms.prod: non-product-specific
 localization_priority: Normal
-ms.openlocfilehash: e1f646df7756f16467d1191f926f831ba375752e
-ms.sourcegitcommit: c5daedf017c6dd5ab0c13607589208c3f3627354
+ms.openlocfilehash: 9229483bcf2916d35bd1fc8961c2c2a73cf9caed
+ms.sourcegitcommit: fbe2a799fda71aab73ff1c5546c936edbac14e47
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/20/2019
-ms.locfileid: "30691158"
+ms.lasthandoff: 04/10/2019
+ms.locfileid: "31764388"
 ---
 # <a name="identity-api-requirement-sets"></a>Identity API 要求集
 
@@ -19,13 +19,13 @@ Office 外接程序在多个 Office 版本中运行。 下表列出了 Identity 
 
 |  要求集  | 适用于 Windows 的 Office 2013 或更高版本 | Office 365 for Windows   |  Office 365 for iPad  |  Office 365 for Mac  | Office Online  | SharePoint Online | OneDrive.com |Outlook.com & Exchange Online|
 |:-----|-----|:-----|:-----|:-----|:-----|:-----|:-----|:-----|
-| IdentityAPI 1.1  | N/A **& # 42;** | 预览 **&#42;** | 即将推出 | 预览 **&#42;**| 预览 | 预览| 即将推出 | 即将推出 |
+| IdentityAPI 1.1  | 不适用 | 预览<b>*</b> | 即将推出 | 预览<b>*</b> | 预览<b>*</b> | 预览<b>*</b>| 即将推出 | 即将推出 |
 
 > **& # 42;** 在预览阶段, 标识 API 需要 office 365 (office 的订阅版本)。 你应该使用来自预览体验成员频道的最新每月版本和内部版本。 你可能需要成为 Office 预览体验成员，才能获取此版本。 有关详细信息，请参阅[成为 Office 预览体验成员](https://products.office.com/office-insider?tab=tab-1)。 请注意，当内部版本进入生产半年频道时，将关闭对该内部版本的预览功能（包括 SSO）的支持。
 
 若要详细了解版本、内部版本号和 Office Online Server，请参阅：
 
-- [更新频道发布的 Office 365 客户端版本号和内部版本号](https://support.office.com/article/version-and-build-numbers-of-update-channel-releases-ae942449-1fca-4484-898b-a933ea23def7)
+- [Office 365 客户端的更新频道发布的版本号和内部版本号](https://support.office.com/article/version-and-build-numbers-of-update-channel-releases-ae942449-1fca-4484-898b-a933ea23def7)
 - [使用的是哪一版 Office？](https://support.office.com/article/What-version-of-Office-am-I-using-932788b8-a3ce-44bf-bb09-e334518b8b19)
 - [在哪里可以找到 Office 365 客户端应用程序的版本号和内部版本号](https://support.office.com/article/version-and-build-numbers-of-update-channel-releases-ae942449-1fca-4484-898b-a933ea23def7)
 - [Office Online Server 概述](/officeonlineserver/office-online-server-overview)
@@ -42,4 +42,4 @@ Office 外接程序在多个 Office 版本中运行。 下表列出了 Identity 
 
 - [Office 版本和要求集](/office/dev/add-ins/develop/office-versions-and-requirement-sets)
 - [指定 Office 主机和 API 要求](/office/dev/add-ins/develop/specify-office-hosts-and-api-requirements)
-- [Office 外接程序 XML 清单](/office/dev/add-ins/develop/add-in-manifests)
+- [Office 加载项 XML 清单](/office/dev/add-ins/develop/add-in-manifests)

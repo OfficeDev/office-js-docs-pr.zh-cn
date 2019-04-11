@@ -213,7 +213,7 @@ function getSlice(state) {
 添加以下代码，将切片发送到 Web 服务。
 
 > [!NOTE]
-> 此代码通过多个切片将 PowerPoint 或 Word 文件发送到 Web 服务器。Web 服务器或服务必须将每个单独切片编译为一个 .pptx 文件，之后您才能对其执行任何操作。
+> 此代码将 PowerPoint 或 Word 文件发送到多个切片中的 web 服务器。 web 服务器或服务必须将每个单独的切片追加到一个文件中, 然后将其另存为 .pptx 或 .docx 文件, 然后才能对其执行任何操作。
 
 ```js
 function sendSlice(slice, state) {
