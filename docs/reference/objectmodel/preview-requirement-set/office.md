@@ -1,20 +1,20 @@
 ---
 title: Office 命名空间 - 预览要求集
 description: ''
-ms.date: 03/19/2019
+ms.date: 04/12/2019
 localization_priority: Normal
-ms.openlocfilehash: e426ea87c14c4ad21ebdbfd3df05988ba848b906
-ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
+ms.openlocfilehash: 7effc930d196aa009c3c779b702e082ae388fada
+ms.sourcegitcommit: 95ed6dfbfa680dbb40ff9757020fa7e5be4760b6
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "30872233"
+ms.lasthandoff: 04/13/2019
+ms.locfileid: "31838513"
 ---
 # <a name="office"></a>Office
 
 该 Office 命名空间提供所有 Office 应用中的加载项所使用的共享接口。此列表仅记录 Outlook 加载项所使用的接口。有关 Office 命名空间的完整列表，请参阅[公用 API](/javascript/api/office)。
 
-##### <a name="requirements"></a>Requirements
+##### <a name="requirements"></a>要求
 
 |要求| 值|
 |---|---|
@@ -53,13 +53,14 @@ ms.locfileid: "30872233"
 |`Succeeded`| String|调用成功。|
 |`Failed`| String|调用失败。|
 
-##### <a name="requirements"></a>Requirements
+##### <a name="requirements"></a>要求
 
 |要求| 值|
 |---|---|
 |[最低版本的邮箱要求集](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
 |[适用的 Outlook 模式](/outlook/add-ins/#extension-points)| 撰写或阅读|
 
+---
 ---
 
 ####  <a name="coerciontype-string"></a>CoercionType :String
@@ -77,13 +78,14 @@ ms.locfileid: "30872233"
 |`Html`| String|请求以 HTML 格式返回的数据。|
 |`Text`| String|请求以文本格式返回的数据。|
 
-##### <a name="requirements"></a>Requirements
+##### <a name="requirements"></a>要求
 
 |要求| 值|
 |---|---|
 |[最低版本的邮箱要求集](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
 |[适用的 Outlook 模式](/outlook/add-ins/#extension-points)| 撰写或阅读|
 
+---
 ---
 
 ####  <a name="eventtype-string"></a>EventType :String
@@ -106,13 +108,14 @@ ms.locfileid: "30872233"
 |`RecipientsChanged`| String | 选定项目或约会位置的收件人列表已更改。 | 1.7 |
 |`RecurrenceChanged`| String | 选定系列的定期模式已更改。 | 1.7 |
 
-##### <a name="requirements"></a>Requirements
+##### <a name="requirements"></a>要求
 
 |要求| 值|
 |---|---|
 |[最低版本的邮箱要求集](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.5 |
 |[适用的 Outlook 模式](/outlook/add-ins/#extension-points)| 撰写或阅读 |
 
+---
 ---
 
 ####  <a name="sourceproperty-string"></a>SourceProperty :String
@@ -130,7 +133,7 @@ ms.locfileid: "30872233"
 |`Body`| String|数据源来自邮件的正文。|
 |`Subject`| String|数据源来自邮件的主题。|
 
-##### <a name="requirements"></a>Requirements
+##### <a name="requirements"></a>要求
 
 |要求| 值|
 |---|---|

@@ -1,14 +1,14 @@
 ---
 title: Office。上下文要求集1。7
 description: ''
-ms.date: 03/19/2019
+ms.date: 04/12/2019
 localization_priority: Normal
-ms.openlocfilehash: 6a6c7e01df7a063759d3658283f6d724a2b16ca7
-ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
+ms.openlocfilehash: dddf0035f52daadc926ca5a707383730a97c1002
+ms.sourcegitcommit: 95ed6dfbfa680dbb40ff9757020fa7e5be4760b6
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "30871351"
+ms.lasthandoff: 04/13/2019
+ms.locfileid: "31838471"
 ---
 # <a name="context"></a>context
 
@@ -16,7 +16,7 @@ ms.locfileid: "30871351"
 
 Office.context 命名空间提供所有 Office 应用中的加载项所使用的共享接口。此列表仅记录 Outlook 加载项所使用的接口。有关 Office.context 命名空间的完整列表，请参阅[通用 API 中的 Office.context 引用](/javascript/api/office/office.context)。
 
-##### <a name="requirements"></a>Requirements
+##### <a name="requirements"></a>要求
 
 |要求| 值|
 |---|---|
@@ -75,6 +75,9 @@ function write(message){
 }
 ```
 
+---
+---
+
 ####  <a name="officetheme-object"></a>officeTheme :Object
 
 提供了访问 Office 主题颜色的属性。
@@ -97,7 +100,7 @@ function write(message){
 |`controlBackgroundColor`| String|获取十六进制三原色形式的 Office 主题控制背景色。|
 |`controlForegroundColor`| 字符串|获取十六进制三原色形式的 Office 主题正文控制颜色。|
 
-##### <a name="requirements"></a>Requirements
+##### <a name="requirements"></a>要求
 
 |要求| 值|
 |---|---|
@@ -119,6 +122,9 @@ function applyOfficeTheme(){
 }
 ```
 
+---
+---
+
 ####  <a name="roamingsettings-roamingsettingsjavascriptapioutlook17officeroamingsettings"></a>roamingSettings :[RoamingSettings](/javascript/api/outlook_1_7/office.RoamingSettings)
 
 获取一个对象，它表示保存到用户邮箱的邮件外接程序的自定义设置或状态。
@@ -129,7 +135,7 @@ function applyOfficeTheme(){
 
 *   [RoamingSettings](/javascript/api/outlook_1_7/office.RoamingSettings)
 
-##### <a name="requirements"></a>Requirements
+##### <a name="requirements"></a>要求
 
 |要求| 值|
 |---|---|

@@ -1,20 +1,20 @@
 ---
 title: "\"context.subname\": \"邮箱. userProfile-要求集 1.7\""
 description: ''
-ms.date: 03/19/2019
+ms.date: 04/12/2019
 localization_priority: Normal
-ms.openlocfilehash: 335c20a242d08031e6f21c48e99c8527dab6d714
-ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
+ms.openlocfilehash: 8cfee874bbb5183d62cc3a9ce8b042a76617ec72
+ms.sourcegitcommit: 95ed6dfbfa680dbb40ff9757020fa7e5be4760b6
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "30871736"
+ms.lasthandoff: 04/13/2019
+ms.locfileid: "31838520"
 ---
 # <a name="userprofile"></a>userProfile
 
 ### <a name="officeofficemdcontextofficecontextmdmailboxofficecontextmailboxmduserprofile"></a>[Office](Office.md)[.context](Office.context.md)[.mailbox](Office.context.mailbox.md).userProfile
 
-##### <a name="requirements"></a>Requirements
+##### <a name="requirements"></a>要求
 
 |要求| 值|
 |---|---|
@@ -65,6 +65,9 @@ ms.locfileid: "30871736"
 console.log(Office.context.mailbox.userProfile.accountType);
 ```
 
+---
+---
+
 ####  <a name="displayname-string"></a>displayName :String
 
 获取用户的显示名称。
@@ -88,6 +91,9 @@ console.log(Office.context.mailbox.userProfile.accountType);
 console.log(Office.context.mailbox.userProfile.displayName);
 ```
 
+---
+---
+
 ####  <a name="emailaddress-string"></a>emailAddress :String
 
 获取用户的 SMTP 电子邮件地址。
@@ -110,6 +116,9 @@ console.log(Office.context.mailbox.userProfile.displayName);
 // Example: allieb@contoso.com
 console.log(Office.context.mailbox.userProfile.emailAddress);
 ```
+
+---
+---
 
 ####  <a name="timezone-string"></a>timeZone :String
 

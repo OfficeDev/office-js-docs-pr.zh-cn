@@ -1,14 +1,14 @@
 ---
 title: "\"context.subname\": \"邮箱\"。诊断-预览要求集"
 description: ''
-ms.date: 03/19/2019
+ms.date: 04/12/2019
 localization_priority: Normal
-ms.openlocfilehash: 3bcc1004ddcee638965c15c7f320e2320a6faf06
-ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
+ms.openlocfilehash: dc68aac6e50005415d0a76780c5d56c083709992
+ms.sourcegitcommit: 95ed6dfbfa680dbb40ff9757020fa7e5be4760b6
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "30871897"
+ms.lasthandoff: 04/13/2019
+ms.locfileid: "31838394"
 ---
 # <a name="diagnostics"></a>diagnostics
 
@@ -16,7 +16,7 @@ ms.locfileid: "30871897"
 
 将诊断信息提供给 Outlook 外接程序。
 
-##### <a name="requirements"></a>Requirements
+##### <a name="requirements"></a>要求
 
 |要求| 值|
 |---|---|
@@ -52,6 +52,9 @@ ms.locfileid: "30871897"
 |[最低权限级别](/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
 |[适用的 Outlook 模式](/outlook/add-ins/#extension-points)| 撰写或阅读|
 
+---
+---
+
 ####  <a name="hostversion-string"></a>hostVersion :String
 
 获取表示主机应用程序或 Exchange Server 的版本的字符串。
@@ -69,6 +72,9 @@ ms.locfileid: "30871897"
 |[最低版本的邮箱要求集](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
 |[最低权限级别](/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
 |[适用的 Outlook 模式](/outlook/add-ins/#extension-points)| 撰写或阅读|
+
+---
+---
 
 ####  <a name="owaview-string"></a>OWAView :String
 
