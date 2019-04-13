@@ -3,12 +3,12 @@ ms.date: 03/29/2019
 description: 在 Excel 中使用 JavaScript 创建自定义函数。
 title: 在 Excel 中创建自定义函数（预览）
 localization_priority: Priority
-ms.openlocfilehash: 59620b19cb8613e411abb84ed6766da94cae02c4
-ms.sourcegitcommit: 14ceac067e0e130869b861d289edb438b5e3eff9
+ms.openlocfilehash: 7a461728061ace532a11a8473d27ec4340eebb97
+ms.sourcegitcommit: fbe2a799fda71aab73ff1c5546c936edbac14e47
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/04/2019
-ms.locfileid: "31477556"
+ms.lasthandoff: 04/10/2019
+ms.locfileid: "31764409"
 ---
 # <a name="create-custom-functions-in-excel-preview"></a>在 Excel 中创建自定义函数（预览）
 
@@ -43,7 +43,7 @@ function add42(a, b) {
 
 ### <a name="script-file"></a>脚本文件
 
-脚本文件（Yo Office 生成器创建的项目中的 **./src/functions/functions.js** 或 **./src/functions/functions.ts**）包含定义自定义函数、定义函数的注释，并将自定义函数名称关联到 [JSON 元数据文件](#json-metadata-file)中的对象的代码。
+脚本文件（Yo Office 生成器创建的项目中的 **./src/functions/functions.js** 或 **./src/functions/functions.ts**）包含定义自定义函数的代码、定义函数的注释，并将自定义函数名称关联到 JSON 元数据文件中的对象。
 
 以下代码定义自定义函数 `add`，然后指定该函数的关联信息。 有关关联函数的详细信息，请参阅[自定义函数最佳做法](custom-functions-best-practices.md#associating-function-names-with-json-metadata)。
 
@@ -71,6 +71,9 @@ function add(first, second){
 定义自定义函数的加载项的 XML 清单文件（Yo Office 生成器创建的项目中的 **./manifest.xml**）指定加载项中所有自定义函数的命名空间以及 JavaScript、JSON 和 HTML 文件的位置。 
 
 下面的基本 XML 标记显示了 `<ExtensionPoint>` 和 `<Resources>` 元素的一个示例，必须在加载项清单中包含这些元素才能启用自定义函数。 如果使用 Yo Office 生成器，生成的自定义函数文件将包含更复杂的清单文件，可以在[此 Github 存储库](https://github.com/OfficeDev/Excel-Custom-Functions/blob/generate-metadata/manifest.xml)中对其进行比较。
+
+> [!NOTE] 
+> 在自定义函数 JavaScript、JSON 和 HTML 文件的清单文件中指定的 URL 必须可公开访问，并具有相同的子域。
 
 ```xml
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
@@ -109,9 +112,9 @@ function add(first, second){
     </Hosts>
     <Resources>
       <bt:Urls>
-        <bt:Url id="JSON-URL" DefaultValue="https://localhost:8081/config/customfunctions.json"/>
-        <bt:Url id="JS-URL" DefaultValue="https://localhost:8081/dist/win32/ship/index.win32.bundle"/>
-        <bt:Url id="HTML-URL" DefaultValue="https://localhost:8081/index.html"/>
+        <bt:Url id="JSON-URL" DefaultValue="https://subdomain.contoso.com/config/customfunctions.json"/>
+        <bt:Url id="JS-URL" DefaultValue="https://subdomain.contoso.com/dist/win32/ship/index.win32.bundle"/>
+        <bt:Url id="HTML-URL" DefaultValue="https://subdomain.contoso.com/index.html"/>
       </bt:Urls>
       <bt:ShortStrings>
         <bt:String id="namespace" DefaultValue="CONTOSO"/>
@@ -276,7 +279,7 @@ function getAddress(parameter1, invocationContext) {
 
 * [自定义函数元数据](custom-functions-json.md)
 * [Excel 自定义函数的运行时](custom-functions-runtime.md)
-* [自定义函数最佳做法](custom-functions-best-practices.md)
+* [自定义函数最佳实践](custom-functions-best-practices.md)
 * [自定义函数更改日志](custom-functions-changelog.md)
 * [Excel 自定义函数教程](../tutorials/excel-tutorial-create-custom-functions.md)
 * [自定义函数调试](custom-functions-debugging.md)

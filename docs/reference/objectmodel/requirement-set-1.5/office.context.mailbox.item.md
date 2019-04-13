@@ -1,14 +1,14 @@
 ---
 title: Office.context.mailbox.item - 要求集 1.5
 description: ''
-ms.date: 03/19/2019
+ms.date: 04/12/2019
 localization_priority: Priority
-ms.openlocfilehash: c31deaf3fad0fbfbf4075d85c422a05a418707de
-ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
+ms.openlocfilehash: 2f9394751180296d876d8c577d68adc1b5abb692
+ms.sourcegitcommit: 95ed6dfbfa680dbb40ff9757020fa7e5be4760b6
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "30871785"
+ms.lasthandoff: 04/13/2019
+ms.locfileid: "31838576"
 ---
 # <a name="item"></a>item
 
@@ -31,7 +31,7 @@ ms.locfileid: "30871785"
 | [attachments](#attachments-arrayattachmentdetails) | 成员 |
 | [bcc](#bcc-recipients) | 成员 |
 | [body](#body-body) | 成员 |
-| [cc](#cc-arrayemailaddressdetails) | 成员 |
+| [cc](#cc-arrayemailaddressdetailsrecipients) | 成员 |
 | [conversationId](#nullable-conversationid-string) | 成员 |
 | [dateTimeCreated](#datetimecreated-date) | 成员 |
 | [dateTimeModified](#datetimemodified-date) | 成员 |
@@ -44,21 +44,21 @@ ms.locfileid: "30871785"
 | [location](#location-stringlocation) | 成员 |
 | [normalizedSubject](#normalizedsubject-string) | 成员 |
 | [notificationMessages](#notificationmessages-notificationmessages) | 成员 |
-| [optionalAttendees](#optionalattendees-arrayemailaddressdetails) | 成员 |
+| [optionalAttendees](#optionalattendees-arrayemailaddressdetailsrecipients) | 成员 |
 | [organizer](#organizer-emailaddressdetails) | 成员 |
-| [requiredAttendees](#requiredattendees-arrayemailaddressdetails) | Member |
+| [requiredAttendees](#requiredattendees-arrayemailaddressdetailsrecipients) | Member |
 | [sender](#sender-emailaddressdetails) | 成员 |
 | [start](#start-datetime) | 成员 |
 | [subject](#subject-stringsubject) | 成员 |
-| [to](#to-arrayemailaddressdetails) | 成员 |
+| [to](#to-arrayemailaddressdetailsrecipients) | 成员 |
 | [addFileAttachmentAsync](#addfileattachmentasyncuri-attachmentname-options-callback) | 方法 |
 | [addItemAttachmentAsync](#additemattachmentasyncitemid-attachmentname-options-callback) | 方法 |
 | [close](#close) | 方法 |
 | [displayReplyAllForm](#displayreplyallformformdata-callback) | 方法 |
 | [displayReplyForm](#displayreplyformformdata-callback) | 方法 |
 | [getEntities](#getentities--entities) | 方法 |
-| [getEntitiesByType](#getentitiesbytypeentitytype--nullable-arraystringcontact) | 方法 |
-| [getFilteredEntitiesByName](#getfilteredentitiesbynamename--nullable-arraystringcontact) | 方法 |
+| [getEntitiesByType](#getentitiesbytypeentitytype--nullable-arraystringcontactmeetingsuggestionphonenumbertasksuggestion) | 方法 |
+| [getFilteredEntitiesByName](#getfilteredentitiesbynamename--nullable-arraystringcontactmeetingsuggestionphonenumbertasksuggestion) | 方法 |
 | [getRegExMatches](#getregexmatches--object) | 方法 |
 | [getRegExMatchesByName](#getregexmatchesbynamename--nullable-array-string-) | 方法 |
 | [getSelectedDataAsync](#getselecteddataasynccoerciontype-options-callback--string) | 方法 |
