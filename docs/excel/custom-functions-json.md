@@ -3,12 +3,12 @@ ms.date: 03/29/2019
 description: 在 Excel 中定义自定义函数的元数据。
 title: Excel 中的自定义函数的元数据（预览）
 localization_priority: Normal
-ms.openlocfilehash: 28a9a0207f7439af164eb9ca7c4b9ed9e966b3ed
-ms.sourcegitcommit: 14ceac067e0e130869b861d289edb438b5e3eff9
+ms.openlocfilehash: 3703699348e99fd076fe0e3affac88038e3aaf59
+ms.sourcegitcommit: 6d375518c119d09c8d3fb5f0cc4583ba5b20ac03
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/04/2019
-ms.locfileid: "31477549"
+ms.lasthandoff: 04/18/2019
+ms.locfileid: "31914254"
 ---
 # <a name="custom-functions-metadata-preview"></a>自定义函数元数据（预览）
 
@@ -136,6 +136,7 @@ ms.locfileid: "31477549"
 |  属性  |  数据类型  |  必需  |  说明  |
 |:-----|:-----|:-----|:-----|
 |  `cancelable`  |  boolean  |  否<br/><br/>默认值为 `false`。  |  如果为 `true`，则每次用户执行具有取消函数效果的操作时，Excel 都会调用 `onCanceled` 处理程序；例如，手动触发重新计算或编辑函数引用的单元格。 如果使用此选项，Excel 将使用额外的 `caller` 参数调用 JavaScript 函数。 （请***不要***在 `parameters` 属性中注册此参数）。 在函数正文中，必须将处理程序分配给 `caller.onCanceled` 成员。 有关详细信息，请参阅[取消函数](custom-functions-web-reqs.md#canceling-a-function)。 |
+|  `requiresAddress`  | boolean | 否 <br/><br/>默认值为 `false`。 | <br /><br /> 如果为 true, 则自定义函数可以访问调用自定义函数的单元格的地址。 若要获取调用自定义函数的单元格的地址, 请在自定义函数中使用 context。 有关详细信息，请参阅[确定调用自定义函数的单元格](/office/dev/add-ins/excel/custom-functions-overview#determine-which-cell-invoked-your-custom-function)。 不能将自定义函数同时设置为流式处理和 requiresAddress。 使用此选项时, "invocationContext" 参数必须是在 options 中传递的最后一个参数。 |
 |  `stream`  |  boolean  |  否<br/><br/>默认值为 `false`。  |  如果为 `true`，即使只调用一次，该函数也可能会重复输出到单元格。 此选项对于快速变化的数据源（如股票价格）非常有用。 如果使用此选项，Excel 将使用额外的 `caller` 参数调用 JavaScript 函数。 （请***不要***在 `parameters` 属性中注册此参数）。 函数不应存在 `return` 语句。 相反，结果值将作为 `caller.setResult` 回调方法的参数传递。 有关详细信息，请参阅[流式处理函数](custom-functions-web-reqs.md#streaming-functions)。 |
 |  `volatile`  | boolean | 否 <br/><br/>默认值为 `false`。 | <br /><br /> 如果为 `true`，则该函数会在每次 Excel 重新计算时（而不是仅当公式的从属值发生更改时）进行重新计算。 函数不能同时为流式处理和可变。 如果 `stream` 和 `volatile` 属性同时设置为 `true`，则将忽略可变选项。 |
 

@@ -3,12 +3,12 @@ ms.date: 03/13/2019
 description: 在 Excel 中调试自定义函数。
 title: 自定义函数调试 (预览)
 localization_priority: Normal
-ms.openlocfilehash: 66b55855fdbdc3b3cfc7a316cb8fd7e06f073213
-ms.sourcegitcommit: 14ceac067e0e130869b861d289edb438b5e3eff9
+ms.openlocfilehash: 08563ef630ebc457219c4c622328b84d13e6acab
+ms.sourcegitcommit: 6d375518c119d09c8d3fb5f0cc4583ba5b20ac03
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/04/2019
-ms.locfileid: "31478952"
+ms.lasthandoff: 04/18/2019
+ms.locfileid: "31914387"
 ---
 # <a name="custom-functions-debugging-preview"></a>自定义函数调试 (预览)
 
@@ -27,18 +27,18 @@ ms.locfileid: "31478952"
 [!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
 > [!NOTE]
-> 为简单起见, 本文介绍了如何在使用 Visual Studio Code 编辑、运行任务以及某些情况下使用调试视图的上下文中进行调试。 如果使用的是其他编辑器或命令行工具, 请参阅本文末尾的[命令行说明](#Use-the-command-line-tools-to-debug)。
+> 为简单起见, 本文介绍了如何在使用 Visual Studio Code 编辑、运行任务以及某些情况下使用调试视图的上下文中进行调试。 如果使用的是其他编辑器或命令行工具, 请参阅本文末尾的[命令行说明](#use-the-command-line-tools-to-debug)。
 
 ## <a name="requirements"></a>Requirements
 
-开始调试之前, 应使用 Yo Office 生成器创建自定义函数外接程序项目, 并确保您的项目具有受信任的自签名证书。 有关创建项目的说明, 请参阅[自定义函数教程](https://review.docs.microsoft.com/office/dev/add-ins/tutorials/excel-tutorial-create-custom-functions)。 有关信任证书的说明, 请参阅[将自签名证书添加为受信任的根证书](https://github.com/OfficeDev/generator-office/blob/master/src/docs/ssl.md)。
+开始调试之前, 应使用 Yo Office 生成器创建自定义函数外接程序项目, 并确保您的项目具有受信任的自签名证书。 有关创建项目的说明, 请参阅[自定义函数教程](../tutorials/excel-tutorial-create-custom-functions.md)。 有关信任证书的说明, 请参阅[将自签名证书添加为受信任的根证书](https://github.com/OfficeDev/generator-office/blob/master/src/docs/ssl.md)。
 
 ## <a name="use-the-vs-code-debugger-for-excel-desktop"></a>对 Excel 桌面使用 VS 代码调试器
 
 您可以使用 VS 代码在桌面上调试 Office Excel 中的自定义函数。
 
 > [!NOTE]
-> 对 Mac 的桌面调试不可用, 但可通过[使用浏览器工具来调试 Excel Online](#debug-in-excel-online-by-using-the-browser-developer-tools)来实现。
+> 对 Mac 的桌面调试不可用, 但可通过[使用浏览器工具来调试 Excel Online](#use-the-browser-developer-tools-to-debug-custom-functions-in-excel-online)来实现。
 
 ### <a name="run-your-add-in-from-vs-code"></a>从 VS 代码运行外接程序
 
@@ -145,7 +145,7 @@ ms.locfileid: "31478952"
     
     `npm run start web`
     
-    对于 Excel Online, 还需要旁加载您的外接程序。 按照[旁加载您的外接程序](#Sideload-your-add-in)中的步骤, 旁加载你的外接程序。 然后继续转到下一节以开始调试。
+    对于 Excel Online, 还需要旁加载您的外接程序。 按照[旁加载您的外接程序](#sideload-your-add-in)中的步骤, 旁加载你的外接程序。 然后继续转到下一节以开始调试。
     
 4. 在浏览器中打开开发人员工具。 对于 Chrome 和大多数浏览器 F12 将打开开发人员工具。
 5. 在开发人员工具中, 打开源代码脚本文件 (函数 .js 或函数)。 您的自定义函数代码可能位于文件末尾附近。

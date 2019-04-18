@@ -1,13 +1,13 @@
 ---
-ms.date: 03/19/2019
+ms.date: 04/15/2019
 description: 在 Excel 中使用自定义函数对用户进行身份验证。
 title: 自定义函数的身份验证
-ms.openlocfilehash: 7db46e40758ea0282a2fd7c4d40739304a874e76
-ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
+ms.openlocfilehash: 75ffb82c0dc9350c35b22b1d1676990598ea0c44
+ms.sourcegitcommit: 6d375518c119d09c8d3fb5f0cc4583ba5b20ac03
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "30871491"
+ms.lasthandoff: 04/18/2019
+ms.locfileid: "31914184"
 ---
 # <a name="authentication"></a>身份验证
 
@@ -30,7 +30,7 @@ ms.locfileid: "30871491"
 > [!NOTE]
 > 自定义函数运行时使用与任务窗格使用的浏览器引擎运行时中的 dialog 对象略有不同的 dialog 对象。 它们都称为 "对话框 API", 但用于`Officeruntime.Dialog`在自定义函数运行时中对用户进行身份验证。
 
-有关如何使用的`OfficeRuntime.Dialog`信息, 请参阅[Custom 函数运行时](/office/dev/add-ins/excel/custom-functions-runtime?view=office-js#displaying-a-dialog-box)。
+有关如何使用的`OfficeRuntime.Dialog`信息, 请参阅[自定义函数对话框](/office/dev/add-ins/excel/custom-functions-dialog)。
 
 在整体上构思整个身份验证过程时, 将加载项的任务窗格和 UI 元素以及外接程序的自定义函数部分视为可通过`AsyncStorage`相互通信的单独实体可能会有所帮助。
 

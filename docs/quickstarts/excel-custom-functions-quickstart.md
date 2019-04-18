@@ -2,13 +2,14 @@
 ms.date: 03/06/2019
 description: 在 Excel 快速入门指南中开发自定义函数。
 title: 自定义函数快速入门 (预览)
+ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: 9dd3e5a99f08ce0b931e705fac3312ab10c19e18
-ms.sourcegitcommit: 8fb60c3a31faedaea8b51b46238eb80c590a2491
+ms.openlocfilehash: 80c500e1e30e8751a7d969d33cd7e13b7943b1b5
+ms.sourcegitcommit: 6d375518c119d09c8d3fb5f0cc4583ba5b20ac03
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2019
-ms.locfileid: "30632700"
+ms.lasthandoff: 04/18/2019
+ms.locfileid: "31914296"
 ---
 # <a name="get-started-developing-excel-custom-functions"></a>开始开发 Excel 自定义函数
 
