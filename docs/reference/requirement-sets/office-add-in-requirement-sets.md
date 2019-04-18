@@ -1,15 +1,15 @@
 ---
 title: Office 通用 API 要求集
 description: ''
-ms.date: 04/09/2019
+ms.date: 04/10/2019
 ms.prod: non-product-specific
 localization_priority: Priority
-ms.openlocfilehash: 05b1c4a3dde09f223a3383b49bf2f48e15f1e3e7
-ms.sourcegitcommit: fbe2a799fda71aab73ff1c5546c936edbac14e47
+ms.openlocfilehash: f3aa63b65768ab27015d59687ec9929a82bc99ab
+ms.sourcegitcommit: 95ed6dfbfa680dbb40ff9757020fa7e5be4760b6
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/10/2019
-ms.locfileid: "31764402"
+ms.lasthandoff: 04/13/2019
+ms.locfileid: "31838597"
 ---
 # <a name="office-common-api-requirement-sets"></a>Office 通用 API 要求集
 
@@ -33,7 +33,7 @@ ms.locfileid: "31764402"
 
 ### <a name="activeview"></a>ActiveView
 
-|**Office 主机**|**集内的方法**|
+|**Office 主机**|**要求集内的方法**|
 |:-----|:-----|
 | PowerPoint<br>PowerPoint Online<br>PowerPoint for iPad<br>PowerPoint for Mac|Document.getActiveViewAsync|
 
@@ -47,7 +47,7 @@ ms.locfileid: "31764402"
 
 ### <a name="bindingevents"></a>BindingEvents
 
-|**Office 主机**|**集内的方法**|
+|**Office 主机**|**要求集内的方法**|
 |:-----|:-----|
 | Access Web 应用<br>Excel<br>Excel Online<br>Excel for iPad<br>Excel for Mac<br>Word 2013 及更高版本<br>Word 2016 for Mac 及更高版本<br>Word Online<br>Word for iPad|Binding.addHanderAsync<br>Binding.removeHanderAsync|
 
@@ -55,7 +55,7 @@ ms.locfileid: "31764402"
 
 ### <a name="compressedfile"></a>CompressedFile
 
-|**Office 主机**|**集内的方法**|
+|**Office 主机**|**要求集内的方法**|
 |:-----|:-----|
 | Excel<br>Excel Online<br>Excel for iPad<br>Excel for Mac<br>PowerPoint<br>PowerPoint Online<br>PowerPoint for iPad<br>PowerPoint for Mac<br>Word 2013 及更高版本<br>Word 2016 for Mac 及更高版本<br>Word Online<br>Word for iPad|支持使用 Document.getFileAsync 方法时输出作为字节数组 (Office.FileType.Compressed) 的 Office Open XML (OOXML) 格式<br>。|
 
@@ -63,7 +63,7 @@ ms.locfileid: "31764402"
 
 ### <a name="customxmlparts"></a>CustomXmlParts
 
-|**Office 主机**|**集内的方法**|
+|**Office 主机**|**要求集内的方法**|
 |:-----|:-----|
 | Word 2013 及更高版本<br>Word 2016 for Mac 及更高版本<br>Word Online<br>Word for iPad|CustomXmlNode.getNodesAsync<br>CustomXmlNode.getNodeValueAsync<br>CustomXmlNode.getTextAsync<br>CustomXmlNode.getXmlAsync<br>CustomXmlNode.setNodeValueAsync<br>CustomXmlNode.setTextAsync<br>CustomXmlNode.setXmlAsync<br>CustomXmlPart.addHandlerAsync<br>CustomXmlPart.deleteAsync<br>CustomXmlPart.getNodesAsync<br>CustomXmlPart.getXmlAsync<br>CustomXmlPart.removeHandlerAsync<br>CustomXmlParts.addAsync<br>CustomXmlParts.getByIdAsync<br>CustomXmlParts.getByNamespaceAsync<br>CustomXmlPrefixMappings.addNamespaceAsync<br>CustomXmlPrefixMappings.getNamespaceAsync<br>CustomXmlPrefixMappings.getPrefixAsync|
 
@@ -71,7 +71,7 @@ ms.locfileid: "31764402"
 
 ### <a name="dialogapi"></a>DialogApi
 
-|**Office 主机**|**集内的方法**|
+|**Office 主机**|**要求集内的方法**|
 |:-----|:-----|
 | 请参阅 [Dialog API 要求集](dialog-api-requirement-sets.md)。 | UI.messageParent<br>UI.displayDialogAsync<br>UI.closeContainer<br>UI.Dialog |
 
@@ -79,15 +79,15 @@ ms.locfileid: "31764402"
 
 ### <a name="documentevents"></a>DocumentEvents
 
-|**Office 主机**|**集内的方法**|
+|**Office 主机**|**要求集内的方法**|
 |:-----|:-----|
 | Excel<br>Excel Online<br>Excel for iPad<br>Excel for Mac<br>OneNote Online<br>PowerPoint<br>PowerPoint Online<br>PowerPoint for iPad<br>PowerPoint for Mac<br>Word 2013 及更高版本<br>Word 2016 for Mac 及更高版本<br>Word Online<br>Word for iPad|Document.addHandlerAsync<br>Document.removeHandlerAsync|
 
 ---
 
-### <a name="file"></a>File
+### <a name="file"></a>文件
 
-|**Office 主机**|**集内的方法**|
+|**Office 主机**|**要求集内的方法**|
 |:-----|:-----|
 | Excel<br>Excel Online<br>Excel for iPad<br>Excel for Mac<br>PowerPoint<br>PowerPoint Online<br>PowerPoint for iPad<br>PowerPoint for Mac<br>Word 2013 及更高版本<br>Word 2016 for Mac 及更高版本<br>Word Online<br>Word for iPad|Document.getFileAsync<br>File.closeAsync<br>File.getSliceAsync|
 
@@ -95,7 +95,7 @@ ms.locfileid: "31764402"
 
 ### <a name="htmlcoercion"></a>HtmlCoercion
 
-|**Office 主机**|**集内的方法**|
+|**Office 主机**|**要求集内的方法**|
 |:-----|:-----|
 | OneNote Online<br>Word 2013 及更高版本<br>Word 2016 for Mac 及更高版本<br>Word Online<br>Word for iPad|支持在使用 Document.getSelectedDataAsync、Document.setSelectedDataAsync、Binding.getDataAsync 或 Binding.setDataAsync 方法读取和写入数据时强制转换为 HTML (Office.CoercionType.Html)<br>。|
 
@@ -103,7 +103,7 @@ ms.locfileid: "31764402"
 
 ### <a name="identityapi"></a>IdentityAPI
 
-|**Office 主机**|**集内的方法**|
+|**Office 主机**|**要求集内的方法**|
 |:-----|:-----|
 | 请参阅 [Identity API 要求集](identity-api-requirement-sets.md)。 | Auth.getAccessTokenAsync |
 
@@ -111,7 +111,7 @@ ms.locfileid: "31764402"
 
 ### <a name="imagecoercion"></a>ImageCoercion
 
-|**Office 主机**|**集内的方法**|
+|**Office 主机**|**要求集内的方法**|
 |:-----|:-----|
 | Excel<br>Excel for iPad<br>Excel for Mac<br>OneNote Online<br>PowerPoint<br>PowerPoint Online<br>PowerPoint for iPad<br>PowerPoint for Mac<br>Word 2013 及更高版本<br>Word 2016 for Mac 及更高版本<br>Word Online<br>Word for iPad|支持在使用 Document.setSelectedDataAsync 方法写入数据时转换为图像 (Office.CoercionType.Image)。|
 
@@ -119,7 +119,7 @@ ms.locfileid: "31764402"
 
 ### <a name="mailbox"></a>邮箱
 
-|**Office 主机**|**集内的方法**|
+|**Office 主机**|**要求集内的方法**|
 |:-----|:-----|
 |Outlook for Windows<br>Outlook for web<br>Outlook for Android<br>Outlook for Mac<br>Outlook Web App |请参阅[了解 Outlook API 要求集](outlook-api-requirement-sets.md)。|
 
@@ -127,15 +127,15 @@ ms.locfileid: "31764402"
 
 ### <a name="matrixbindings"></a>MatrixBindings
 
-|**Office 主机**|**集内的方法**|
+|**Office 主机**|**要求集内的方法**|
 |:-----|:-----|
-| Excel<br>Excel Online<br>Excel for iPad<br>Excel for Mac<br>Word<br>Word Online<br>Word for iPad<br>Word for Mac|Bindings.addFromNamedItemAsync<br>Bindings.addFromSelectionAsync<br>Bindings.getAllAsync<br>Bindings.getByIdAsync<br>Bindings.releaseByIdAsyncMatrix<br>Binding.getDataAsyncMatrix<br>Binding.setDataAsync|
+| Excel<br>Excel Online<br>Excel for iPad<br>Excel for Mac<br>Word<br>Word Online<br>Word for iPad<br>Word for Mac|Bindings.addFromNamedItemAsync<br>Bindings.addFromSelectionAsync<br>Bindings.getAllAsync<br>Bindings.getByIdAsync<br>Bindings.releaseByIdAsync<br>Binding.getDataAsync<br>Binding.setDataAsync|
 
 ---
 
 ### <a name="matrixcoercion"></a>MatrixCoercion
 
-|**Office 主机**|**集内的方法**|
+|**Office 主机**|**要求集内的方法**|
 |:-----|:-----|
 | Excel<br>Excel Online<br>Excel for iPad<br>Excel for Mac<br>Word 2013 及更高版本<br>Word 2016 for Mac 及更高版本<br>Word Online<br>Word for iPad|支持在使用 Document.getSelectedDataAsync、Document.setSelectedDataAsync、Binding.getDataAsync 或 Binding.setDataAsync 方法读取和写入数据时强制转换为“矩阵”（数组的数组）数据结构 (Office.CoercionType.Matrix)。|
 
@@ -143,7 +143,7 @@ ms.locfileid: "31764402"
 
 ### <a name="ooxmlcoercion"></a>OoxmlCoercion
 
-|**Office 主机**|**集内的方法**|
+|**Office 主机**|**要求集内的方法**|
 |:-----|:-----|
 | Word 2013 及更高版本<br>Word 2016 for Mac 及更高版本<br>Word Online<br>Word for iPad|支持在使用 Document.getSelectedDataAsync、Document.setSelectedDataAsync、Binding.getDataAsync 或 Binding.setDataAsync 方法读取和写入数据时强制转换为 Open Office XML (OOXML) 格式 (Office.CoercionType.Ooxml)。|
 
@@ -151,7 +151,7 @@ ms.locfileid: "31764402"
 
 ### <a name="partialtablebindings"></a>PartialTableBindings
 
-|**Office 主机**|**集内的方法**|
+|**Office 主机**|**要求集内的方法**|
 |:-----|:-----|
 | Access Web 应用||
 
@@ -159,7 +159,7 @@ ms.locfileid: "31764402"
 
 ### <a name="pdffile"></a>PdfFile
 
-|**Office 主机**|**集内的方法**|
+|**Office 主机**|**要求集内的方法**|
 |:-----|:-----|
 | Excel for Mac<br>PowerPoint<br>PowerPoint Online<br>PowerPoint for iPad<br>PowerPoint for Mac<br>Word 2013 及更高版本<br>Word 2016 for Mac 及更高版本<br>Word Online<br>Word for iPad|支持使用 Document.getFileAsync 方法时输出 PDF 格式 (Office.FileType.Pdf)<br>。|
 
@@ -167,7 +167,7 @@ ms.locfileid: "31764402"
 
 ### <a name="selection"></a>Selection
 
-|**Office 主机**|**集内的方法**|
+|**Office 主机**|**要求集内的方法**|
 |:-----|:-----|
 | Excel<br>Excel Online<br>Excel for iPad<br>Excel for Mac<br>PowerPoint<br>PowerPoint Online<br>PowerPoint for iPad<br>PowerPoint for Mac<br>Project<br>Word 2013 及更高版本<br>Word 2016 for Mac 及更高版本<br>Word Online<br>Word for iPad|Document.getSelectedDataAsync<br>Document.setSelectedDataAsync|
 
@@ -175,7 +175,7 @@ ms.locfileid: "31764402"
 
 ### <a name="settings"></a>Settings
 
-|**Office 主机**|**集内的方法**|
+|**Office 主机**|**要求集内的方法**|
 |:-----|:-----|
 | Access Web 应用<br>Excel<br>Excel Online<br>Excel for iPad<br>Excel for Mac<br>OneNote Online<br>PowerPoint<br>PowerPoint Online<br>PowerPoint for iPad<br>PowerPoint for Mac<br>Word 2013 及更高版本<br>Word 2016 for Mac 及更高版本<br>Word Online<br>Word for iPad|Settings.get<br>Settings.remove<br>Settings.saveAsync<br>Settings.set|
 
@@ -183,15 +183,15 @@ ms.locfileid: "31764402"
 
 ### <a name="tablebindings"></a>TableBindings
 
-|**Office 主机**|**集内的方法**|
+|**Office 主机**|**要求集内的方法**|
 |:-----|:-----|
-| Access Web 应用<br>Excel<br>Excel Online<br>Excel for iPad<br>Excel for Mac<br>Word 2013 及更高版本<br>Word 2016 for Mac 及更高版本<br>Word Online<br>Word for iPad|Bindings.addFromNamedItemAsync<br>Bindings.addFromSelectionAsync<br>Bindings.getAllAsync<br>Bindings.getByIdAsync<br>Bindings.releaseByIdAsyncTable<br>Binding.addColumnsAsyncTable<br>Binding.addRowsAsyncTable<br>Binding.deleteAllDataValuesAsyncTable<br>Binding.getDataAsyncTable<br>Binding.setDataAsync|
+| Access Web 应用<br>Excel<br>Excel Online<br>Excel for iPad<br>Excel for Mac<br>Word 2013 及更高版本<br>Word 2016 for Mac 及更高版本<br>Word Online<br>Word for iPad|Bindings.addFromNamedItemAsync<br>Bindings.addFromSelectionAsync<br>Bindings.getAllAsync<br>Bindings.getByIdAsync<br>Bindings.releaseByIdAsync<br>Binding.addColumnsAsync<br>Binding.addRowsAsync<br>Binding.deleteAllDataValuesAsync<br>Binding.getDataAsync<br>Binding.setDataAsync|
 
 ---
 
 ### <a name="tablecoercion"></a>TableCoercion
 
-|**Office 主机**|**集内的方法**|
+|**Office 主机**|**要求集内的方法**|
 |:-----|:-----|
 | Access Web 应用<br>Excel<br>Excel Online<br>Excel for iPad<br>Excel for Mac<br>Word 2013 及更高版本<br>Word 2016 for Mac 及更高版本<br>Word Online<br>Word for iPad|支持在使用 Document.getSelectedDataAsync、Document.setSelectedDataAsync、Binding.getDataAsync 或 Binding.setDataAsync 方法读取和写入数据时强制转换为“表格”数据结构 (Office.CoercionType.Table)。|
 
@@ -199,15 +199,15 @@ ms.locfileid: "31764402"
 
 ### <a name="textbindings"></a>TextBindings
 
-|**Office 主机**|**集内的方法**|
+|**Office 主机**|**要求集内的方法**|
 |:-----|:-----|
-| Excel<br>Excel Online<br>Excel for iPad<br>Excel for Mac<br>Word 2013 及更高版本<br>Word 2016 for Mac 及更高版本<br>Word Online<br>Word for iPad|Bindings.addFromNamedItemAsync<br>Bindings.addFromSelectionAsync<br>Bindings.getAllAsync<br>Bindings.getByIdAsync<br>Bindings.releaseByIdAsyncText<br>Binding.getDataAsyncText<br>Binding.setDataAsync|
+| Excel<br>Excel Online<br>Excel for iPad<br>Excel for Mac<br>Word 2013 及更高版本<br>Word 2016 for Mac 及更高版本<br>Word Online<br>Word for iPad|Bindings.addFromNamedItemAsync<br>Bindings.addFromSelectionAsync<br>Bindings.getAllAsync<br>Bindings.getByIdAsync<br>Bindings.releaseByIdAsync<br>Binding.getDataAsync<br>Binding.setDataAsync|
 
 ---
 
 ### <a name="textcoercion"></a>TextCoercion
 
-|**Office 主机**|**集内的方法**|
+|**Office 主机**|**要求集内的方法**|
 |:-----|:-----|
 | Excel<br>Excel Online<br>Excel for iPad<br>OneNote Online<br>PowerPoint<br>PowerPoint Online<br>PowerPoint for iPad<br>PowerPoint for Mac<br>Project<br>Word 2013 及更高版本<br>Word 2016 for Mac 及更高版本<br>Word Online<br>Word for iPad|支持在使用 Document.getSelectedDataAsync、Document.setSelectedDataAsync、Binding.getDataAsync 或 Binding.setDataAsync 方法读取和写入数据时强制转换为文本格式 (Office.CoercionType.Text)。|
 
@@ -215,7 +215,7 @@ ms.locfileid: "31764402"
 
 ### <a name="textfile"></a>TextFile
 
-|**Office 主机**|**集内的方法**|
+|**Office 主机**|**要求集内的方法**|
 |:-----|:-----|
 | Word 2013 及更高版本<br>Word 2016 for Mac 及更高版本<br>Word Online<br>Word for iPad|支持在使用 Document.getFileAsync 方法时输出文本格式 (Office.FileType.Text)。|
 
@@ -248,4 +248,4 @@ ms.locfileid: "31764402"
 
 - [Office 版本和要求集](/office/dev/add-ins/develop/office-versions-and-requirement-sets)
 - [指定 Office 主机和 API 要求](/office/dev/add-ins/develop/specify-office-hosts-and-api-requirements)
-- [Office 加载项 XML 清单](/office/dev/add-ins/develop/add-in-manifests)
+- [Office 外接程序 XML 清单](/office/dev/add-ins/develop/add-in-manifests)

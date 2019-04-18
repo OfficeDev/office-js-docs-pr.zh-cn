@@ -3,12 +3,12 @@ title: 在 Visual Studio 中创建和调试 Office 外接程序
 description: 使用 Visual Studio 在 Windows 的 Office 桌面客户端上创建和调试 Office 外接程序
 ms.date: 03/19/2019
 localization_priority: Priority
-ms.openlocfilehash: f9a52719ed7990063ed3f2dbb7d6bd5866e73760
-ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
+ms.openlocfilehash: 74a1430482b507d04f1be60683242fd9ae4a4393
+ms.sourcegitcommit: 95ed6dfbfa680dbb40ff9757020fa7e5be4760b6
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "30870714"
+ms.lasthandoff: 04/13/2019
+ms.locfileid: "31838506"
 ---
 # <a name="create-and-debug-office-add-ins-in-visual-studio"></a>在 Visual Studio 中创建和调试 Office 外接程序
 
@@ -175,7 +175,7 @@ Web 应用程序项目包含可用于实现入门的默认 HTML 文件、JavaScr
 从菜单栏中依次选择“**调试**” > “**开始调试**”，可启动项目。 Visual Studio 将自动生成解决方案并启动 Office 以托管外接程序。
 
 > [!NOTE]
-> 启动 Outlook 外接程序项目时，系统会提示你输入登录凭据。 如果系统要求你重复登录，则可能会禁用 Office 365 租户上帐户的基本身份验证。 在这种情况下，请尝试使用 Microsoft 帐户。
+> 启动 Outlook 外接程序项目时，系统会提示你输入登录凭据。 如果系统要求你重复登录，或者如果收到指示未经授权的错误，则可能会禁用 Office 365 租户上帐户的基本身份验证。 在这种情况下，请尝试使用 Microsoft 帐户。 可能还需要在“Outlook Web 加载项”项目属性对话框中将属性“使用多重身份验证”设置为 True。
 
 当 Visual Studio 生成项目时，它执行以下任务：
 
@@ -184,6 +184,13 @@ Web 应用程序项目包含可用于实现入门的默认 HTML 文件、JavaScr
 2. 在计算机上创建一组允许外接程序在主机应用程序中显示的注册表项。
 
 3. 生成 Web 应用程序项目，然后将其部署到本地 IIS Web 服务器 (https://localhost))。
+
+4. 如果这是你已部署到本地 IIS Web 服务器的第一个加载项项目，系统可能会提示你将自签名证书安装到当前用户的受信任的根证书存储中。 若要使 IIS Express 正确显示加载项内容，这是必需的操作。
+
+
+> [!NOTE]
+> 在 Windows 10 上运行时，最新版本的 Office 可能会使用较新的 Web 控件来显示加载项内容。 如果是这种情况，Visual Studio 可能会提示你添加本地网络环回豁免。 在 Office 主机应用程序中，需要这样做才能使 Web 控件访问部署到本地 IIS Web 服务器的网站。 还可以在 Visual Studio 中的“工具” > “选项” > “Office 工具(Web)” > “Web 加载项调试”下随时更改此设置****************。
+
 
 接下来，Visual Studio 会执行以下操作：
 
