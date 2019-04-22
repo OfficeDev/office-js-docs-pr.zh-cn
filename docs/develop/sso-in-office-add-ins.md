@@ -1,14 +1,14 @@
 ---
 title: 为 Office 加载项启用单一登录
 description: ''
-ms.date: 03/22/2019
+ms.date: 04/10/2019
 localization_priority: Priority
-ms.openlocfilehash: ef2e2c275a3b7d157029d873e34cc17339dcee66
-ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
+ms.openlocfilehash: 27a5d8e1dba55f1479fbdc4c23706e4322181c62
+ms.sourcegitcommit: 6d375518c119d09c8d3fb5f0cc4583ba5b20ac03
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "30870035"
+ms.lasthandoff: 04/18/2019
+ms.locfileid: "31914317"
 ---
 # <a name="enable-single-sign-on-for-office-add-ins-preview"></a>为 Office 加载项启用单一登录（预览）
 
@@ -45,7 +45,7 @@ SSO 要求使用 Office 365（Office 的订阅版本）。 你应该使用来自
 4. Office 主机应用程序从当前用户的 Azure AD v2.0 终结点请求获取**加载项令牌**。
 5. Azure AD 将加载项令牌发送给 Office 主机应用程序。
 6. Office 主机应用程序在 `getAccessTokenAsync` 调用返回的结果对象中，将“**加载项令牌**”发送给加载项。
-7. 加载项中的 JavaScript 可以解析令牌并提取所需信息，如用户的电子邮件地址。 
+7. 加载项中的 JavaScript 可以解析令牌并提取所需信息，如用户的电子邮件地址。
 8. （可选）加载项可以向其服务器端发送 HTTP 请求以获取关于用户的更多数据，如用户的偏好。 此外，访问令牌本身也可发送到服务器端以进行解析和验证。
 
 ## <a name="develop-an-sso-add-in"></a>开发 SSO 加载项
@@ -57,7 +57,7 @@ SSO 要求使用 Office 365（Office 的订阅版本）。 你应该使用来自
 
 ### <a name="create-the-service-application"></a>创建服务应用程序
 
-在 Azure v2.0 终结点的注册门户注册外接程序：https://apps.dev.microsoft.com。该流程用时 5-10 分钟，包括以下任务：
+在 Azure v2.0 终结点的注册门户注册外接程序。该流程用时 5-10 分钟，包括以下任务：
 
 * 获取加载项的客户端 ID 和机密。
 * 指定加载项访问 AAD v 所需的权限。 2.0 端点（可选 Microsoft Graph）。 始终需要“profile”权限。

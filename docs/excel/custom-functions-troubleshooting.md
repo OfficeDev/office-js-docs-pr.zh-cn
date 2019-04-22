@@ -1,20 +1,20 @@
 ---
-ms.date: 03/19/2019
+ms.date: 04/15/2019
 description: Excel 自定义函数中的常见问题疑难解答。
 title: 自定义函数疑难解答（预览版）
 localization_priority: Priority
-ms.openlocfilehash: 19c3dcccce7618289dc49c3f61ce781744c24369
-ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
+ms.openlocfilehash: 6a11b733c528028a2ea9fc48b08e9308a2cf6e97
+ms.sourcegitcommit: 6d375518c119d09c8d3fb5f0cc4583ba5b20ac03
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "30871337"
+ms.lasthandoff: 04/18/2019
+ms.locfileid: "31914219"
 ---
 # <a name="troubleshoot-custom-functions"></a>自定义函数疑难解答
 
 开发自定义函数时，创建和测试函数可能会遇到产品错误。
 
-若要解决这些问题，可以[启用运行时日志记录以捕获错误](#enable-runtime-logging)，并参考[Excel 的本机错误消息](#check-for-excel-error-messages)。 另外，检查常见错误，例如未正确[验证 SSL 证书](#verify-ssl-certificates)、[有未解析的 promise](#ensure-promises-return)，以及忘记[关联函数](#associate-your-functions)。
+若要解决这些问题，可以[启用运行时日志记录以捕获错误](#enable-runtime-logging)，并参考[Excel 的本机错误消息](#check-for-excel-error-messages)。 另外，检查常见错误，例如未正确[验证 SSL 证书](#my-add-in-wont-load-verify-certificates)、[有未解析的 promise](#ensure-promises-return)，以及忘记[关联函数](#my-functions-wont-load-associate-functions)。
 
 ## <a name="enable-runtime-logging"></a>启用运行时日志记录
 
@@ -26,7 +26,7 @@ Excel 有许多内置错误消息，如果存在计算错误，系统会将向�
 
 ## <a name="common-issues"></a>常见问题
 
-### <a name="my-add-in-wont-load-verify-certifications"></a>我的加载项无法加载：验证证书
+### <a name="my-add-in-wont-load-verify-certificates"></a>我的加载项无法加载：验证证书
 
 如果加载项无法安装，请验证是否为托管加载项的 Web 服务器正确配置了 SSL 证书。 通常，如果 SSL 证书存在问题，将会在 Excel 警告中看到一条错误消息，提示无法正确安装加载项。 有关详细信息，请参阅[添加自签名证书作为受信任的根证书](https://github.com/OfficeDev/generator-office/blob/master/src/docs/ssl.md)。
 

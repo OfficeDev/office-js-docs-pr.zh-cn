@@ -1,14 +1,14 @@
 ---
 title: Outlook 外接程序 API 预览要求集
 description: ''
-ms.date: 03/19/2019
+ms.date: 04/17/2019
 localization_priority: Priority
-ms.openlocfilehash: d24c4647116b4af56d85a434f3ece5ccf4662a39
-ms.sourcegitcommit: c5daedf017c6dd5ab0c13607589208c3f3627354
+ms.openlocfilehash: 9a3d09a78a7644b3b26c345ba2588a1fae59c1eb
+ms.sourcegitcommit: 6d375518c119d09c8d3fb5f0cc4583ba5b20ac03
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/20/2019
-ms.locfileid: "30691165"
+ms.lasthandoff: 04/18/2019
+ms.locfileid: "31914268"
 ---
 # <a name="outlook-add-in-api-preview-requirement-set"></a>Outlook 外接程序 API 预览要求集
 
@@ -30,6 +30,8 @@ ms.locfileid: "30691165"
 新增了可选参数 `options`，它是有效值为 `allowEvent` 的字典。 此值可用于取消执行事件。
 
 **适用对象**：Outlook 网页版（经典）
+
+---
 
 ### <a name="attachments"></a>附件
 
@@ -75,6 +77,53 @@ ms.locfileid: "30691165"
 
 **适用于**：Outlook for Windows (Office 365)
 
+---
+
+### <a name="categories"></a>类别
+
+在 Outlook 中，用户可以使用类别对邮件和约会进行颜色编码。 用户在其邮箱的主列表中定义类别。 然后，他们可以将一个或多个类别应用于项目。
+
+> [!NOTE]
+> 在 Outlook for iOS 或 Outlook for Android 中不支持此功能。
+
+#### <a name="categoriesjavascriptapioutlookofficecategories"></a>[类别](/javascript/api/outlook/office.categories)
+
+新增了一个表示项目类别的对象。
+
+**适用于**：Outlook for Windows (Office 365)
+
+#### <a name="categorydetailsjavascriptapioutlookofficecategorydetails"></a>[CategoryDetails](/javascript/api/outlook/office.categorydetails)
+
+新增了一个表示类别详细信息（其名称以及对应的颜色）的对象。
+
+**适用于**：Outlook for Windows (Office 365)
+
+#### <a name="mastercategoriesjavascriptapioutlookofficemastercategories"></a>[MasterCategories](/javascript/api/outlook/office.mastercategories)
+
+新增了一个表示邮箱上类别主列表的对象。
+
+**适用于**：Outlook for Windows (Office 365)
+
+#### <a name="officecontextmailboxmastercategoriesjavascriptapioutlookofficemailboxmastercategories"></a>[Office.context.mailbox.masterCategories](/javascript/api/outlook/office.mailbox#mastercategories)
+
+新增了一个表示邮箱上类别主列表的属性。
+
+**适用于**：Outlook for Windows (Office 365)
+
+#### <a name="officecontextmailboxitemcategoriesjavascriptapioutlookofficeitemcategories"></a>[Office.context.mailbox.item.categories](/javascript/api/outlook/office.item#categories)
+
+新增了一个表示项目上类别集的属性。
+
+**适用于**：Outlook for Windows (Office 365)
+
+#### <a name="officemailboxenumscategorycolorjavascriptapioutlookofficemailboxenumscategorycolor"></a>[Office.MailboxEnums.CategoryColor](/javascript/api/outlook/office.mailboxenums.categorycolor)
+
+新增了一个指定可用于与类别关联的颜色的枚举。
+
+**适用于**：Outlook for Windows (Office 365)
+
+---
+
 ### <a name="delegate-access"></a>委托访问
 
 #### <a name="sharedpropertiesjavascriptapioutlookofficesharedproperties"></a>[SharedProperties](/javascript/api/outlook/office.sharedproperties)
@@ -100,6 +149,8 @@ ms.locfileid: "30691165"
 向 [DesktopFormFactor](../../manifest/desktopformfactor.md) 清单元素中添加了子元素。 它定义外接程序是否在代理应用场景中可用。
 
 **适用于**：Outlook for Windows (Office 365)
+
+---
 
 ### <a name="enhanced-location"></a>增强位置
 
@@ -139,6 +190,8 @@ ms.locfileid: "30691165"
 
 **适用于**：Outlook for Windows (Office 365)
 
+---
+
 ### <a name="integration-with-actionable-messages"></a>与可操作邮件集成
 
 #### <a name="officecontextmailboxitemgetinitializationcontextasyncofficecontextmailboxitemmdgetinitializationcontextasyncoptions-callback"></a>[Office.context.mailbox.item.getInitializationContextAsync](office.context.mailbox.item.md#getinitializationcontextasyncoptions-callback)
@@ -146,6 +199,8 @@ ms.locfileid: "30691165"
 新增了一个函数，当外接程序[由可操作邮件激活时](/outlook/actionable-messages/invoke-add-in-from-actionable-message)，返回传递的初始化数据。
 
 **适用于**：Outlook for Windows (Office 365)、Outlook 网页版（经典）
+
+---
 
 ### <a name="internet-headers"></a>Internet 标头：
 
@@ -161,6 +216,8 @@ ms.locfileid: "30691165"
 
 **适用于**：Outlook for Windows (Office 365)
 
+---
+
 ### <a name="office-theme"></a>Office 主题
 
 #### <a name="officecontextmailboxofficethemejavascriptapiofficeofficeofficetheme"></a>[Office.context.mailbox.officeTheme](/javascript/api/office/office.officetheme)
@@ -174,6 +231,8 @@ ms.locfileid: "30691165"
 向 `Mailbox` 中添加了 `OfficeThemeChanged` 事件。
 
 **适用于**：Outlook for Windows (Office 365)
+
+---
 
 ### <a name="sso"></a>SSO
 

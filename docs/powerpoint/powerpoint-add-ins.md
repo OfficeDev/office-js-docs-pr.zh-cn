@@ -1,22 +1,22 @@
 ---
 title: PowerPoint 加载项
 description: ''
-ms.date: 03/19/2019
+ms.date: 04/15/2019
 localization_priority: Priority
-ms.openlocfilehash: 8a7039981ee408dbb74c9f15be9ec98f1f631d5b
-ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
+ms.openlocfilehash: 6e518d0bfd37291e39ee17e96ded8debb183c19f
+ms.sourcegitcommit: 6d375518c119d09c8d3fb5f0cc4583ba5b20ac03
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "30870931"
+ms.lasthandoff: 04/18/2019
+ms.locfileid: "31914226"
 ---
 # <a name="powerpoint-add-ins"></a>PowerPoint 加载项
 
 可以使用 PowerPoint 加载项生成有吸引力的跨平台（包括 Windows、iOS、Office Online 和 Mac）解决方案，从而有效展示用户的演示文稿。 可以创建以下两种类型的 PowerPoint 加载项：
 
-- 使用**内容外接程序**向演示文稿添加动态 HTML5 内容。有关示例，请参阅可用于将交互关系图从 LucidChart 插入面板的 [PowerPoint 的 LucidChart 关系图](https://store.office.com/app.aspx?assetid=WA104380117&ui=en-US&rs=en-US&ad=US&clickedfilter=OfficeProductFilter%3APowerPoint&productgroup=PowerPoint&homprd=PowerPoint&sourcecorrid=950950b7-aa6c-4766-95fa-e75d37266c21&homappcat=Productivity&homapppos=3&homchv=2&appredirect=false)外接程序。
+- 使用**内容外接程序**向演示文稿添加动态 HTML5 内容。有关示例，请参阅可用于将交互关系图从 LucidChart 插入面板的 [PowerPoint 的 LucidChart 关系图](https://appsource.microsoft.com/product/office/WA104380117)外接程序。
 
-- 使用**任务窗格加载项**引入参考信息或通过服务将数据插入演示文稿。 有关示例，请参阅可用于在演示文稿中添加专业照片的 [Shutterstock 图像](https://store.office.com/app.aspx?assetid=WA104380169&ui=en-US&rs=en-US&ad=US&clickedfilter=OfficeProductFilter%3APowerPoint&productgroup=PowerPoint&homprd=PowerPoint&sourcecorrid=950950b7-aa6c-4766-95fa-e75d37266c21&homappcat=Editor%2527s%2BPicks&homapppos=0&homchv=1&appredirect=false)加载项。 
+- 使用**任务窗格加载项**引入参考信息或通过服务将数据插入演示文稿。 有关示例，请参阅可用于在演示文稿中添加专业照片的 [Pixton 漫画人物](https://appsource.microsoft.com/product/office/WA104380907)加载项。 
 
 ## <a name="powerpoint-add-in-scenarios"></a>PowerPoint 加载项方案
 
@@ -191,8 +191,7 @@ reader.readAsDataURL(myFile.files[0]);
 
 ## <a name="see-also"></a>另请参阅
 
-- 
-  [PowerPoint 代码示例](https://developer.microsoft.com/en-us/office/gallery/?filterBy=Samples,PowerPoint)
+- [PowerPoint 代码示例](https://developer.microsoft.com/office/gallery/?filterBy=Samples,PowerPoint)
 - [如何每文档保存内容和任务窗格加载项的加载项状态和设置](../develop/persisting-add-in-state-and-settings.md#how-to-save-add-in-state-and-settings-per-document-for-content-and-task-pane-add-ins)
 - [对文档或电子表格中的活动选择执行数据读取和写入操作](../develop/read-and-write-data-to-the-active-selection-in-a-document-or-spreadsheet.md)
 - [通过 PowerPoint 或 Word 加载项获取整个文档](../powerpoint/get-the-whole-document-from-an-add-in-for-powerpoint.md)

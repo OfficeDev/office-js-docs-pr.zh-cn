@@ -1,14 +1,14 @@
 ---
 title: 创建使用单一登录的 Node.js Office 加载项
 description: ''
-ms.date: 03/19/2019
+ms.date: 04/15/2019
 localization_priority: Priority
-ms.openlocfilehash: e304813422dea5917202ed8933c9e53df18ba9de
-ms.sourcegitcommit: c5daedf017c6dd5ab0c13607589208c3f3627354
+ms.openlocfilehash: 2050f20139389ed1459cea7aba5e5e92858d00bc
+ms.sourcegitcommit: 6d375518c119d09c8d3fb5f0cc4583ba5b20ac03
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/20/2019
-ms.locfileid: "30691214"
+ms.lasthandoff: 04/18/2019
+ms.locfileid: "31914324"
 ---
 # <a name="create-a-nodejs-office-add-in-that-uses-single-sign-on-preview"></a>创建使用单一登录的 Node.js Office 加载项（预览）
 
@@ -77,7 +77,7 @@ ms.locfileid: "30691214"
 
 1. 对于 `audience` 属性，将占位符 `{audience GUID}` 替换为注册外接程序时保存的应用程序 ID。（即分配给 `client_id` 属性的同一值）。
   
-1. 在分配给 `issuer` 属性的字符串中，将看到占位符 *{O365 tenant GUID}*。 将此占位符替换为 Office 365 租户 ID。 使用[查找 Office 365 租户 ID](/onedrive/find-your-office-365-tenant-id) 中的一种方法来获取 ID。 完成后，`issuer` 属性值应如下所示：
+1. 在分配给 `issuer` 属性的字符串中，将看到占位符 *{O365 tenant GUID}*。 将此占位符替换为 Office 365 租户 ID。 如果在使用 AAD 注册外接程序时未复制租户 ID，使用[查找 Office 365 租户 ID](/onedrive/find-your-office-365-tenant-id) 中的一种方法来获取 ID。 完成后，`issuer` 属性值应如下所示：
 
     `https://login.microsoftonline.com/12345678-1234-1234-1234-123456789012/v2.0`
 
@@ -321,7 +321,7 @@ ms.locfileid: "30691214"
     }
     ```
 
-1. 将 `TODO11` 替换为下面的代码。 关于此代码，请注意以下几点：
+1. 将 `TODO11` 替换为下列代码。关于此代码，请注意以下几点：
 
     * 一些 Azure Active Directory 配置要求用户，必须提供其他一个或多个身份验证因素，才能访问一些 Microsoft Graph 目标（例如 OneDrive），即使用户仅使用密码就能登录 Office，也不例外。在这种情况下，AAD 将发送包含错误 50076 的响应（具有 `Claims` 属性）。
     * Office 主机应获取新令牌（使用 **Claims** 值作为 `authChallenge` 选项）。 这就指示 AAD 提示用户进行所有必需形式的身份验证。

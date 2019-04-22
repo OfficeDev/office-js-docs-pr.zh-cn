@@ -3,12 +3,12 @@ ms.date: 04/03/2019
 description: 使用 JSDOC 标记动态创建自定义函数 JSON 元数据。
 title: 创建自定义函数的 JSON 元数据（预览）
 localization_priority: Priority
-ms.openlocfilehash: c6d89684da2d0773ccfb1763e5e3e426e647523b
-ms.sourcegitcommit: 14ceac067e0e130869b861d289edb438b5e3eff9
+ms.openlocfilehash: 2efe2a9a5a83ba60ef327273d5bd599f82916d48
+ms.sourcegitcommit: 6d375518c119d09c8d3fb5f0cc4583ba5b20ac03
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/04/2019
-ms.locfileid: "31478951"
+ms.lasthandoff: 04/18/2019
+ms.locfileid: "31914282"
 ---
 # <a name="create-json-metadata-for-custom-functions-preview"></a>创建自定义函数的 JSON 元数据（预览）
 
@@ -16,7 +16,7 @@ ms.locfileid: "31478951"
 
 为 JavaScript 或 TypeScript 函数添加代码注释中的 `@customfunction` 标记以将其标记为自定义函数。
 
-可以使用 JavaScript 中的 [@param](#param) 标记或从 TypeScript 中的[函数类型](http://www.typescriptlang.org/docs/handbook/functions.html)提供函数参数类型。 有关详细信息，请参阅 [@param](#param) 标记和[类型](#Types)部分。
+可以使用 JavaScript 中的 [@param](#param) 标记或从 TypeScript 中的[函数类型](https://www.typescriptlang.org/docs/handbook/functions.html)提供函数参数类型。 有关详细信息，请参阅 [@param](#param) 标记和[类型](#types)部分。
 
 ## <a name="jsdoc-tags"></a>JSDoc 标记
 Excel 自定义函数支持以下 JSDoc 标记：
@@ -87,7 +87,7 @@ id 用作存储在文档中的自定义函数的固定标识符。 不得更改�
 JavaScript 语法：@param {type} name _description_
 
 * `{type}` 应在大括号内指定类型信息。 有关可能使用的类型的详细信息，请参阅[类型](##types)。 可选：如果未指定，则使用类型 `any`。
-* `name` 指定 @param 标记应用于哪个参数。 必需。
+* `name` 指定 @param 标记适用于哪个参数。 必需。
 * `description` 为函数参数提供显示在 Excel 中的说明。 可选。
 
 若要将自定义函数参数表示为可选，请执行以下操作：
@@ -103,8 +103,8 @@ TypeScript 语法：@param name _description_
 有关可能使用的函数参数类型的详细信息，请参阅[类型](##types)。
 
 若要将自定义函数参数表示为可选，请执行以下操作之一：
-* 使用可选参数。 例如： `function f(text?: string)`
-* 为该参数提供默认值。 例如： `function f(text: string = "abc")`
+* 使用可选参数。 例如：`function f(text?: string)`
+* 为该参数提供默认值。 例如：`function f(text: string = "abc")`
 
 有关 @param 的详细说明，请参阅：[JSDoc](http://usejsdoc.org/tags-param.html)
 

@@ -1,14 +1,14 @@
 ---
 title: 创建使用单一登录的 ASP.NET Office 加载项
 description: ''
-ms.date: 03/19/2019
+ms.date: 04/15/2019
 localization_priority: Priority
-ms.openlocfilehash: 3dd78866c53863a5847fe6f6cf1083d804b2ca2f
-ms.sourcegitcommit: c5daedf017c6dd5ab0c13607589208c3f3627354
+ms.openlocfilehash: ebcf5cd72f841f5d97093e3b5f43833e97fa9947
+ms.sourcegitcommit: 6d375518c119d09c8d3fb5f0cc4583ba5b20ac03
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/20/2019
-ms.locfileid: "30691109"
+ms.lasthandoff: 04/18/2019
+ms.locfileid: "31914303"
 ---
 # <a name="create-an-aspnet-office-add-in-that-uses-single-sign-on-preview"></a>创建使用单一登录的 ASP.NET Office 加载项（预览）
 
@@ -67,9 +67,9 @@ ms.locfileid: "30691109"
 
 [!INCLUDE[](../includes/grant-admin-consent-to-an-add-in-include.md)]
 
-## <a name="configure-the-add-in"></a>配置外接程序
+## <a name="configure-the-add-in"></a>配置加载项
 
-1. 在下面的字符串中，将占位符“{tenant_ID}”替换为 Office 365 租户 ID。 使用[查找 Office 365 租户 ID](/onedrive/find-your-office-365-tenant-id) 中的一种方法来获取 ID。
+1. 在下面的字符串中，将占位符“{tenant_ID}”替换为 Office 365 租户 ID。 如果在使用 AAD 注册外接程序时未复制租户 ID，使用[查找 Office 365 租户 ID](/onedrive/find-your-office-365-tenant-id) 中的一种方法来获取 ID。
 
     `https://login.microsoftonline.com/{tenant_ID}/v2.0`
 
@@ -373,7 +373,7 @@ ms.locfileid: "30691109"
     var message = JSON.parse(result.responseText).Message;
     ```
 
-1. 将 `TODO12` 替换为下面的代码。 关于此代码，请注意以下几点：
+1. 将 `TODO12` 替换为以下代码。关于此代码，请注意以下几点：
 
     * 如果 Microsoft Graph 要求进行其他形式的身份验证，错误 50076 发生。
     * Office 主机应获取新令牌（使用 **Claims** 值作为 `authChallenge` 选项）。 这就指示 AAD 提示用户进行所有必需形式的身份验证。
@@ -415,7 +415,7 @@ ms.locfileid: "30691109"
     }
     ```
 
-1. 将 `TODO13B` 替换为下面的代码。 关于此代码，请注意以下几点：
+1. 将 `TODO13B` 替换为下列代码。关于此代码，请注意以下几点：
 
     * 错误 70011 有多重含义。对于此加载项而言，最重要的含义是已请求获取的范围（权限）无效。因此，代码会检查是否有完整错误说明，而不仅仅是数字。
     * 加载项应报告此错误。
@@ -670,7 +670,7 @@ ms.locfileid: "30691109"
     }  
     ```
 
-1. 将 `TODO4` 替换为以下代码。 关于此代码，请注意以下几点：
+1. 将 `TODO4` 替换为以下代码。关于此代码，请注意以下几点：
 
     * `GraphApiHelper` 和 `ODataHelper` 类在 **Helpers** 文件夹的文件中定义。`OneDriveItem` 类在 **Models** 文件夹的一个文件中定义。 这些类的详细讨论内容与授权或 SSO 无关，因此不在本文的讨论范围内。
     * 通过只请求 Microsoft Graph 提供实际所需数据，可以提升性能，因此代码使用 `$select` 查询参数来指定仅需要 name 属性，并使用 `$top` 参数来指定仅需要前 3 个文件夹或文件名。
