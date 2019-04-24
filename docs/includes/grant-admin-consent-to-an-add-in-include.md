@@ -6,7 +6,7 @@
 
 1. 导航到 " [Azure 门户-应用程序注册](https://go.microsoft.com/fwlink/?linkid=2083908)" 页以查看您的应用注册。
 
-1. 使用***管理员***凭据登录 Office 365 租赁。 例如, MyName@contoso.onmicrosoft.com。
+1. 使用***管理员***凭据登录 Office 365 租户。 例如，MyName@contoso.onmicrosoft.com。
 
 1. 选择显示名称 **$ADD 名称 $** 的应用程序。
 

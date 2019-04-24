@@ -4,11 +4,11 @@ description: 如何使用 Office Online 测试和调试加载项。
 ms.date: 03/19/2019
 localization_priority: Priority
 ms.openlocfilehash: ff77f3d8b3e332288d4ccb3e2d2305d1b1c4a825
-ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
+ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "30871148"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "32451526"
 ---
 # <a name="debug-add-ins-in-office-online"></a>在 Office Online 中调试加载项
 

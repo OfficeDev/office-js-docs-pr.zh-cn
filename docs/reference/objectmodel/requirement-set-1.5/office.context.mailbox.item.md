@@ -4,11 +4,11 @@ description: ''
 ms.date: 04/12/2019
 localization_priority: Priority
 ms.openlocfilehash: 2f9394751180296d876d8c577d68adc1b5abb692
-ms.sourcegitcommit: 95ed6dfbfa680dbb40ff9757020fa7e5be4760b6
+ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/13/2019
-ms.locfileid: "31838576"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "32451827"
 ---
 # <a name="item"></a>item
 

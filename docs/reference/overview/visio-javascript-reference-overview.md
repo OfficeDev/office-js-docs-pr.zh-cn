@@ -5,11 +5,11 @@ ms.date: 10/11/2018
 ms.prod: visio
 localization_priority: Priority
 ms.openlocfilehash: 22b22db1cc515145ef4f18a30de189a3bbd04f60
-ms.sourcegitcommit: 33dcf099c6b3d249811580d67ee9b790c0fdccfb
+ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "29742392"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "32451789"
 ---
 # <a name="visio-javascript-api-overview"></a>Visio JavaScript API 概述
 

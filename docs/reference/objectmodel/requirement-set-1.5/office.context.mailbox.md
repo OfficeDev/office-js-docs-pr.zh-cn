@@ -4,11 +4,11 @@ description: ''
 ms.date: 03/19/2019
 localization_priority: Priority
 ms.openlocfilehash: d2b210db9ee8816d8fedf8720d1744da80eeab8d
-ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
+ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "30870903"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "32451883"
 ---
 # <a name="mailbox"></a>邮箱
 

@@ -5,11 +5,11 @@ ms.date: 03/19/2019
 ms.prod: excel
 localization_priority: Priority
 ms.openlocfilehash: e7d9eac6d06fdce8936e92a001ff213b04a50bc1
-ms.sourcegitcommit: c5daedf017c6dd5ab0c13607589208c3f3627354
+ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/20/2019
-ms.locfileid: "30691228"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "32451610"
 ---
 # <a name="excel-javascript-api-requirement-sets"></a>Excel JavaScript API 要求集
 
