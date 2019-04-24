@@ -4,11 +4,11 @@ description: ''
 ms.date: 03/19/2019
 localization_priority: Normal
 ms.openlocfilehash: aeb75d2dbdcae5636bbe81820b9387bd840120c7
-ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
+ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "30870924"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "32449307"
 ---
 # <a name="office-javascript-api-support-for-content-and-task-pane-add-ins-in-office-2013"></a>对 Office 2013 中内容和任务窗格外接程序的 Office JavaScript API 支持
 
@@ -167,4 +167,4 @@ Office.context.document.settings.set('themeColor', 'green');
 
 - [Office JavaScript API](/office/dev/add-ins/reference/javascript-api-for-office)
 - [Office 外接程序清单的架构参考](../develop/add-in-manifests.md)
-- [解决 Office 外接程序中的用户错误](../testing/testing-and-troubleshooting.md)
+- [排查 Office 加载项中的用户错误](../testing/testing-and-troubleshooting.md)

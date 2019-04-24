@@ -2,12 +2,13 @@
 title: 清单文件中的 Group 元素
 description: ''
 ms.date: 10/09/2018
-ms.openlocfilehash: 13cd9bbe6f602fd1779caea487e34177c3e9d483
-ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
-ms.translationtype: HT
+localization_priority: Normal
+ms.openlocfilehash: 7cc1f4c398eeb013eb6033b207b395466f7d72ca
+ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/22/2018
-ms.locfileid: "27433694"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "32450707"
 ---
 # <a name="group-element"></a>Group 元素
 
@@ -19,9 +20,9 @@ ms.locfileid: "27433694"
 |:-----|:-----|:-----|
 |  [id](#id-attribute)  |  是  | 组的唯一 ID。|
 
-### <a name="id-attribute"></a>id 属性
+### <a name="id-attribute"></a>id attribute
 
-必需。组的唯一标识符。是一个最多为 125 个字符的字符串。该字符串在清单内必须是唯一的，否则组将不能呈现。
+必需。 组的唯一标识符。 是一个最多为 125 个字符的字符串。 该字符串在清单内必须是唯一的，否则组将不能呈现。
 
 ## <a name="child-elements"></a>子元素
 |  元素 |  必需  |  说明  |
@@ -33,7 +34,7 @@ ms.locfileid: "27433694"
 
 必需。组的标签。 **resid** 属性必须设置为 **ShortStrings** 元素（位于 **Resources** 元素）中 **String** 元素的 [id](resources.md) 属性的值。
 
-### <a name="control"></a>控件
+### <a name="control"></a>Control
 一个组需要至少一个控件。
 
 ```xml

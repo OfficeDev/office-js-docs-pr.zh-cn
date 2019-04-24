@@ -4,11 +4,11 @@ description: ''
 ms.date: 03/19/2019
 localization_priority: Normal
 ms.openlocfilehash: 629d0e5cde637ef209736dd9359ea59d0f6e0e47
-ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
+ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "30870602"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "32450350"
 ---
 # <a name="mailbox"></a>邮箱
 
@@ -16,7 +16,7 @@ ms.locfileid: "30870602"
 
 为 Microsoft Outlook 和 Microsoft Outlook 网页版提供对 Outlook 加载项对象模型的访问权限。
 
-##### <a name="requirements"></a>Requirements
+##### <a name="requirements"></a>要求
 
 |要求| 值|
 |---|---|
@@ -43,11 +43,11 @@ ms.locfileid: "30870602"
 
 远程服务可使用 `ewsUrl` 值对用户邮箱进行 EWS 调用。例如，可以创建远程服务来 [获取选定项目中的附件](/outlook/add-ins/get-attachments-of-an-outlook-item)。
 
-##### <a name="type"></a>Type
+##### <a name="type"></a>类型
 
 *   String
 
-##### <a name="requirements"></a>要求
+##### <a name="requirements"></a>Requirements
 
 |要求| 值|
 |---|---|
@@ -67,9 +67,9 @@ Outlook 或 Outlook Web App 邮件应用程序的日期和时间可以使用不�
 
 ##### <a name="parameters"></a>参数
 
-|名称| 类型| 说明|
+|名称| 类型| 描述|
 |---|---|---|
-|`timeValue`| Date|一个 Date 对象|
+|`timeValue`| 日期|一个 Date 对象|
 
 ##### <a name="requirements"></a>Requirements
 
@@ -113,7 +113,7 @@ Outlook 或 Outlook Web App 邮件应用程序的日期和时间可以使用不�
 类型</dt>
 
 
-<dd>Date</dd>
+<dd>日期</dd>
 
 </dl>
 
@@ -136,7 +136,7 @@ Outlook 或 Outlook Web App 邮件应用程序的日期和时间可以使用不�
 
 |名称| 类型| 说明|
 |---|---|---|
-|`itemId`| String|现有日历约会的 Exchange Web 服务 (EWS) 标识符。|
+|`itemId`| 字符串|现有日历约会的 Exchange Web 服务 (EWS) 标识符。|
 
 ##### <a name="requirements"></a>Requirements
 
@@ -171,9 +171,9 @@ Office.context.mailbox.displayAppointmentForm(appointmentId);
 
 |名称| 类型| 说明|
 |---|---|---|
-|`itemId`| String|现有消息的 Exchange Web 服务 (EWS) 标识符。|
+|`itemId`| 字符串|现有消息的 Exchange Web 服务 (EWS) 标识符。|
 
-##### <a name="requirements"></a>Requirements
+##### <a name="requirements"></a>要求
 
 |要求| 值|
 |---|---|
@@ -204,7 +204,7 @@ Office.context.mailbox.displayMessageForm(messageId);
 
 ##### <a name="parameters"></a>参数
 
-|名称| 类型| 说明|
+|名称| 类型| 描述|
 |---|---|---|
 | `parameters` | Object | 描述新约会的参数字典。 |
 | `parameters.requiredAttendees` | Array.&lt;String&gt; &#124; Array.&lt;[EmailAddressDetails](/javascript/api/outlook_1_1/office.emailaddressdetails)&gt; | 包含电子邮件地址的字符串数组或包含约会的每个必需与会者的 `EmailAddressDetails` 对象的数组。数组限制为最多 100 个条目。 |
@@ -214,7 +214,7 @@ Office.context.mailbox.displayMessageForm(messageId);
 | `parameters.location` | String | 包含约会位置的字符串。字符串长度限制为最多 255 个字符。 |
 | `parameters.resources` | Array.&lt;String&gt; | 包含约会所需资源的字符串数组。数组限制为最多 100 个条目。 |
 | `parameters.subject` | String | 包含约会主题的字符串。字符串长度限制为最多 255 个字符。 |
-| `parameters.body` | String | 约会的正文。正文内容限制为最大 32 KB。 |
+| `parameters.body` | 字符串 | 约会的正文。正文内容限制为最大 32 KB。 |
 
 ##### <a name="requirements"></a>Requirements
 
@@ -258,10 +258,10 @@ Office.context.mailbox.displayNewAppointmentForm(
 
 |名称| 类型| 属性| 说明|
 |---|---|---|---|
-|`callback`| 函数||方法完成后，使用单个参数 `callback`（一个 [`asyncResult`](/javascript/api/office/office.asyncresult) 对象）调用在 `AsyncResult` 参数中传递的函数。<br/><br/>令牌作为 `asyncResult.value` 属性中的字符串提供。|
-|`userContext`| 对象| &lt;可选&gt;|传递给异步方法的任何状态数据。|
+|`callback`| 函数||方法完成后，使用单个参数 `asyncResult`（一个 [`AsyncResult`](/javascript/api/office/office.asyncresult) 对象）调用在 `callback` 参数中传递的函数。<br/><br/>令牌作为 `asyncResult.value` 属性中的字符串提供。|
+|`userContext`| Object| &lt;可选&gt;|传递给异步方法的任何状态数据。|
 
-##### <a name="requirements"></a>Requirements
+##### <a name="requirements"></a>要求
 
 |要求| 值|
 |---|---|
@@ -291,10 +291,10 @@ function cb(asyncResult) {
 
 |名称| 类型| 属性| 说明|
 |---|---|---|---|
-|`callback`| 函数||方法完成后，使用单个参数 `callback`（一个 [`asyncResult`](/javascript/api/office/office.asyncresult) 对象）调用在 `AsyncResult` 参数中传递的函数。<br/><br/>令牌作为 `asyncResult.value` 属性中的字符串提供。|
-|`userContext`| 对象| &lt;可选&gt;|传递给异步方法的任何状态数据。|
+|`callback`| 函数||方法完成后，使用单个参数 `asyncResult`（一个 [`AsyncResult`](/javascript/api/office/office.asyncresult) 对象）调用在 `callback` 参数中传递的函数。<br/><br/>令牌作为 `asyncResult.value` 属性中的字符串提供。|
+|`userContext`| Object| &lt;可选&gt;|传递给异步方法的任何状态数据。|
 
-##### <a name="requirements"></a>Requirements
+##### <a name="requirements"></a>要求
 
 |要求| 值|
 |---|---|
@@ -354,11 +354,11 @@ XML 请求必须指定 UTF-8 编码。
 
 |名称| 类型| 属性| 说明|
 |---|---|---|---|
-|`data`| String||EWS 请求。|
-|`callback`| function||方法完成后，使用单个参数 `callback`（一个 [`asyncResult`](/javascript/api/office/office.asyncresult) 对象）调用在 `AsyncResult` 参数中传递的函数。<br/><br/>EWS 调用的 XML 结果作为 `asyncResult.value` 属性中的字符串提供。 如果结果大小超过 1 MB，则改为返回一条错误消息。|
+|`data`| 字符串||EWS 请求。|
+|`callback`| 函数||方法完成后，使用单个参数 `asyncResult`（一个 [`AsyncResult`](/javascript/api/office/office.asyncresult) 对象）调用在 `callback` 参数中传递的函数。<br/><br/>EWS 调用的 XML 结果作为 `asyncResult.value` 属性中的字符串提供。 如果结果大小超过 1 MB，则改为返回一条错误消息。|
 |`userContext`| 对象| &lt;可选&gt;|传递给异步方法的任何状态数据。|
 
-##### <a name="requirements"></a>Requirements
+##### <a name="requirements"></a>要求
 
 |要求| 值|
 |---|---|

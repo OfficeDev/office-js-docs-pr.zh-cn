@@ -2,12 +2,13 @@
 title: 清单文件中的 Version 元素
 description: ''
 ms.date: 10/09/2018
-ms.openlocfilehash: a1e71e32959948b5bf5a26f9e734e7d67d198b75
-ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
-ms.translationtype: HT
+localization_priority: Normal
+ms.openlocfilehash: 677eab570bc89f492dea625f5b6fc18fea559f93
+ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/22/2018
-ms.locfileid: "27432674"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "32451967"
 ---
 # <a name="version-element"></a>Version 元素
 

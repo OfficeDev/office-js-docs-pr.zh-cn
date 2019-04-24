@@ -3,11 +3,11 @@ ms.date: 04/15/2019
 description: 在 Excel 中使用自定义函数对用户进行身份验证。
 title: 自定义函数的身份验证
 ms.openlocfilehash: 75ffb82c0dc9350c35b22b1d1676990598ea0c44
-ms.sourcegitcommit: 6d375518c119d09c8d3fb5f0cc4583ba5b20ac03
+ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "31914184"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "32449316"
 ---
 # <a name="authentication"></a>身份验证
 

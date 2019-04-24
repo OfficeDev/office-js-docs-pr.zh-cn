@@ -4,11 +4,11 @@ description: ''
 ms.date: 03/19/2019
 localization_priority: Normal
 ms.openlocfilehash: 03cdc13845bff0fbd3855f29f43298cd770e5ad9
-ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
+ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "30869909"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "32451841"
 ---
 # <a name="userprofile"></a>userProfile
 

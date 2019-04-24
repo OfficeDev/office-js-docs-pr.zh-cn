@@ -4,11 +4,11 @@ description: ''
 ms.date: 03/19/2019
 localization_priority: Normal
 ms.openlocfilehash: 13777e54ec6bd2d97fa35609ebe194ed85ffa1b8
-ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
+ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "30871771"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "32450420"
 ---
 # <a name="sets-element"></a>Sets 元素
 

@@ -5,11 +5,11 @@ ms.date: 04/09/2019
 ms.prod: non-product-specific
 localization_priority: Normal
 ms.openlocfilehash: 9229483bcf2916d35bd1fc8961c2c2a73cf9caed
-ms.sourcegitcommit: fbe2a799fda71aab73ff1c5546c936edbac14e47
+ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/10/2019
-ms.locfileid: "31764388"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "32451582"
 ---
 # <a name="identity-api-requirement-sets"></a>Identity API 要求集
 
@@ -25,7 +25,7 @@ Office 外接程序在多个 Office 版本中运行。 下表列出了 Identity 
 
 若要详细了解版本、内部版本号和 Office Online Server，请参阅：
 
-- [Office 365 客户端的更新频道发布的版本号和内部版本号](https://support.office.com/article/version-and-build-numbers-of-update-channel-releases-ae942449-1fca-4484-898b-a933ea23def7)
+- [更新频道发布的 Office 365 客户端版本号和内部版本号](https://support.office.com/article/version-and-build-numbers-of-update-channel-releases-ae942449-1fca-4484-898b-a933ea23def7)
 - [使用的是哪一版 Office？](https://support.office.com/article/What-version-of-Office-am-I-using-932788b8-a3ce-44bf-bb09-e334518b8b19)
 - [在哪里可以找到 Office 365 客户端应用程序的版本号和内部版本号](https://support.office.com/article/version-and-build-numbers-of-update-channel-releases-ae942449-1fca-4484-898b-a933ea23def7)
 - [Office Online Server 概述](/officeonlineserver/office-online-server-overview)
@@ -42,4 +42,4 @@ Office 外接程序在多个 Office 版本中运行。 下表列出了 Identity 
 
 - [Office 版本和要求集](/office/dev/add-ins/develop/office-versions-and-requirement-sets)
 - [指定 Office 主机和 API 要求](/office/dev/add-ins/develop/specify-office-hosts-and-api-requirements)
-- [Office 加载项 XML 清单](/office/dev/add-ins/develop/add-in-manifests)
+- [Office 外接程序 XML 清单](/office/dev/add-ins/develop/add-in-manifests)

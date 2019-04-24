@@ -2,12 +2,13 @@
 title: 清单文件中的 DefaultSettings 元素
 description: ''
 ms.date: 10/09/2018
-ms.openlocfilehash: 0c109d5d893cf9d3502f1cbf1724007f01e623e6
-ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
-ms.translationtype: HT
+localization_priority: Normal
+ms.openlocfilehash: 199acf8be888ba51fda83d159937a74685ca48e0
+ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/22/2018
-ms.locfileid: "27433752"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "32450623"
 ---
 # <a name="defaultsettings-element"></a>DefaultSettings 元素
 
@@ -29,7 +30,7 @@ ms.locfileid: "27433752"
 
 ## <a name="can-contain"></a>可以包含
 
-|**元素**|**Content**|**Mail**|**TaskPane**|
+|**Element**|**Content**|**Mail**|**TaskPane**|
 |:-----|:-----|:-----|:-----|
 |[SourceLocation](sourcelocation.md)|x||x|
 |[RequestedWidth](requestedwidth.md)|x|||

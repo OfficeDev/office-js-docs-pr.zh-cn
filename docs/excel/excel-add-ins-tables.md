@@ -1,14 +1,14 @@
 ---
 title: 使用 Excel JavaScript API 处理表格
 description: ''
-ms.date: 04/04/2019
+ms.date: 04/18/2019
 localization_priority: Priority
-ms.openlocfilehash: 1b409e27c12d4741f59a027dd4962fdee65b96bf
-ms.sourcegitcommit: 63219bcc1bb5e3bed7eb6c6b0adb73a4829c7e8f
+ms.openlocfilehash: ba48fce1bee28bf4cad8b5d0ab91d9c1fb12fea8
+ms.sourcegitcommit: 44c61926d35809152cbd48f7b97feb694c7fa3de
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/05/2019
-ms.locfileid: "31479716"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "31959130"
 ---
 # <a name="work-with-tables-using-the-excel-javascript-api"></a>使用 Excel JavaScript API 处理表格
 
@@ -50,7 +50,7 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
-**新表**
+**新建表格**
 
 ![Excel 中的新表](../images/excel-tables-create.png)
 
@@ -187,7 +187,7 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
-**包含新列名称的表**
+**包含新列名称的表格**
 
 ![Excel 中包含新的列名称的表](../images/excel-tables-update-column-name.png)
 
@@ -241,10 +241,10 @@ Excel.run(function (context) {
 
 外接程序可能需要回应对表中的数据进行更改的用户。 若要检测这些更改，你可以为表的 `onChanged` 事件[注册事件处理程序](excel-add-ins-events.md#register-an-event-handler)。 当事件触发时，`onChanged` 事件的事件处理程序将收到 [TableChangedEventArgs](/javascript/api/excel/excel.tablechangedeventargs) 对象。
 
-`TableChangedEventArgs` 对象提供有关更改和来源的信息。 由于 `onChanged` 会在数据的格式或值发生变化时触发，因此让外接程序检查值是否已实际更改可能很有用。 `details` 属性以 [ChangedEventDetail](/javascript/api/excel/excel.changedeventdetail) 的形式封装此信息。 以下代码示例演示如何显示已更改的单元格的之前和之后的值及类型。
+`TableChangedEventArgs` 对象提供有关更改和来源的信息。 由于 `onChanged` 会在数据的格式或值发生变化时触发，因此让加载项检查值是否已实际更改可能很有用。 `details` 属性以 [ChangedEventDetail](/javascript/api/excel/excel.changedeventdetail) 的形式封装此信息。 以下代码示例演示如何显示已更改的单元格的之前和之后的值及类型。
 
 > [!NOTE]
-> `TableChangedEventArgs.details` 它当前仅适用于公共预览版。 [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
+> `TableChangedEventArgs.details` 当前仅适用于公共预览版。 [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
 
 ```js
 // This function would be used as an event handler for the Table.onChanged event.
@@ -358,6 +358,35 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
+## <a name="autofilter"></a>AutoFilter
+
+> [!NOTE]
+> `Table.autoFilter` 当前仅适用于公共预览版。 [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
+
+加载项可使用表的 [AutoFilter](/javascript/api/excel/excel.autofilter) 对象筛选数据。 `AutoFilter` 对象是表或范围的整个筛选结构。 本文之前讨论的所有筛选操作均与 auto-filter 兼容。 通过单一访问点可以轻松访问和管理多个筛选器。
+
+以下代码示例显示与[之前的代码示例相同的数据筛选](#apply-filters-to-a-table)，但完全通过 auto-filter 完成。
+
+```js
+Excel.run(function (context) {
+    var sheet = context.workbook.worksheets.getItem("Sample");
+    var expensesTable = sheet.tables.getItem("ExpensesTable");
+
+    expensesTable.autoFilter.apply(expensesTable.getRange(), 2, {
+        filterOn: Excel.FilterOn.values,
+        values: ["Restaurant", "Groceries"]
+    });
+    expensesTable.autoFilter.apply(expensesTable.getRange(), 3, {
+        filterOn: Excel.FilterOn.dynamic,
+        dynamicCriteria: Excel.DynamicFilterCriteria.belowAverage
+    });
+
+    return context.sync();
+}).catch(errorHandlerFunction);
+```
+
+`AutoFilter` 也可应用于工作表级别的范围。 有关详细信息，请参阅[使用 Excel JavaScript API 处理工作表](excel-add-ins-worksheets.md#filter-data)。
+
 ## <a name="format-a-table"></a>设置表格式
 
 下面的代码示例将格式应用于表。 它为表的标题行、正文、第二行以及第一列指定不同的填充颜色。 有关可以用来指定格式的属性的信息，请参阅 [RangeFormat 对象 (Excel JavaScript API)](/javascript/api/excel/excel.rangeformat)。
@@ -376,7 +405,7 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
-**应用了格式设置的表**
+**应用格式设置的表**
 
 ![Excel 中应用了格式设置的表](../images/excel-tables-formatting-after.png)
 
@@ -416,7 +445,7 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
-**区域内的数据（在区域转换为表之前）**
+**内的数据（在区域转换为表之前）**
 
 ![Excel 中区域内的数据](../images/excel-ranges.png)
 
@@ -467,9 +496,9 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
-**新表**
+**新建表**
 
-![Excel 中的新表](../images/excel-tables-create-from-json.png)
+![Excel 中的新表格](../images/excel-tables-create-from-json.png)
 
 ## <a name="see-also"></a>另请参阅
 

@@ -6,11 +6,11 @@ ms.prod: word
 ms.topic: tutorial
 localization_priority: Normal
 ms.openlocfilehash: 019329db156e63148a047466b9b3770128cb7fbf
-ms.sourcegitcommit: 33dcf099c6b3d249811580d67ee9b790c0fdccfb
+ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "29742399"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "32451172"
 ---
 # <a name="tutorial-create-a-word-task-pane-add-in"></a>教程：创建 Word 任务窗格加载项
 
@@ -102,7 +102,7 @@ ms.locfileid: "29742399"
     }
     ```
 
-8. 将 `TODO4` 替换为下面的代码。请注意以下几点：
+8. 将 `TODO4` 替换为以下代码。 请注意以下几点：
 
    - `insertParagraph` 方法的第一个参数是新段落的文本。
 
@@ -231,7 +231,7 @@ ms.locfileid: "29742399"
     }
     ``` 
 
-6. 将 `TODO1` 替换为下面的代码。 请注意，此代码应用的自定义样式尚不存在。 将在[测试加载项](#test-the-add-in)步骤中创建 **MyCustomStyle** 样式。
+6. 将 `TODO1` 替换为下面的代码。 请注意，此代码应用的自定义样式尚不存在。 将在**测试加载项**步骤中创建 [MyCustomStyle](#test-the-add-in) 样式。
 
     ```js
     var lastParagraph = context.document.body.paragraphs.getLast();
@@ -277,7 +277,7 @@ ms.locfileid: "29742399"
     }
     ``` 
 
-6. 将 `TODO1` 替换为下面的代码。 请注意，此代码使用链接到 `Paragraph.getNext` 方法的 `ParagraphCollection.getFirst` 方法，获取对第二个段落的引用。
+6. 将 `TODO1` 替换为下面的代码。 请注意，此代码使用链接到 `ParagraphCollection.getFirst` 方法的 `Paragraph.getNext` 方法，获取对第二个段落的引用。
 
     ```js
     var secondParagraph = context.document.body.paragraphs.getFirst().getNext();
@@ -364,7 +364,7 @@ ms.locfileid: "29742399"
     }
     ``` 
 
-7. 将 `TODO1` 替换为下面的代码。请注意以下几点：
+7. 将 `TODO1` 替换为以下代码。请注意以下几点：
 
    - 此方法用于在“即点即用”文本区域末尾插入缩写 ["(C2R)"]。 它做了一个简化假设，即存在字符串，且用户已选择它。
 
@@ -500,7 +500,7 @@ function insertTextIntoRange() {
     }
     ```
 
-6. 将 `TODO1` 替换为下面的代码。请注意以下几点：
+6. 将 `TODO1` 替换为以下代码。请注意以下几点：
 
    - 此方法用于在文本为“Office 365”的区域前添加文本为“Office 2019”的区域。 它做了一个简化假设，即存在字符串，且用户已选择它。
 
@@ -717,7 +717,7 @@ function insertTextIntoRange() {
     }
     ```
 
-6. 将 `TODO1` 替换为下面的代码。请注意以下几点：
+6. 将 `TODO1` 替换为以下代码。请注意以下几点：
 
    - 第一行代码在文档末尾添加空白段落。 
 
@@ -776,7 +776,7 @@ function insertTextIntoRange() {
     var secondParagraph = context.document.body.paragraphs.getFirst().getNext();
     ```
 
-7. 将 `TODO2` 替换为下面的代码。请注意以下几点：
+7. 将 `TODO2` 替换为以下代码。 请注意以下几点：
 
    - `insertTable` 方法的前两个参数指定行数和列数。
 
@@ -868,7 +868,7 @@ function insertTextIntoRange() {
     }
     ```
 
-7. 将 `TODO1` 替换为下面的代码。请注意以下几点：
+7. 将 `TODO1` 替换为以下代码。请注意以下几点：
 
    - 此代码用于在内容控件中包装短语“Office 365”。 它做了一个简化假设，即存在字符串，且用户已选择它。
 

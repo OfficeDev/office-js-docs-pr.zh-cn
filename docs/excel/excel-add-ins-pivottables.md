@@ -4,11 +4,11 @@ description: 使用 Excel JavaScript API 创建数据透视表并与其组件进
 ms.date: 03/21/2019
 localization_priority: Normal
 ms.openlocfilehash: b53d734e676417a6438f1008bac720a38a244d1f
-ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
+ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "30870322"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "32449346"
 ---
 # <a name="work-with-pivottables-using-the-excel-javascript-api"></a>使用 Excel JavaScript API 处理数据透视表
 

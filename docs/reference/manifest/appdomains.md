@@ -2,12 +2,13 @@
 title: 清单文件中的 AppDomains 元素
 description: ''
 ms.date: 12/13/2018
-ms.openlocfilehash: cc2f5ade0bdda214c85490f8e474b42f921edbe8
-ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
-ms.translationtype: HT
+localization_priority: Normal
+ms.openlocfilehash: 65391c9529e7ddaa9726d0b58accf90c5b9babef
+ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/22/2018
-ms.locfileid: "27433676"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "32450644"
 ---
 # <a name="appdomains-element"></a>AppDomains 元素
 

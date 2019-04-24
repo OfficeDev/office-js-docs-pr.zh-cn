@@ -2,12 +2,13 @@
 title: 清单文件中的 Script 元素
 description: ''
 ms.date: 10/09/2018
-ms.openlocfilehash: 95e4cbadc35302b4f76108e0ff2a51d31ca89aac
-ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
-ms.translationtype: HT
+localization_priority: Normal
+ms.openlocfilehash: 8352ada0eeb6af071d5f20f750dcdeaefe31e918
+ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/22/2018
-ms.locfileid: "27433136"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "32450434"
 ---
 # <a name="script-element"></a>Script 元素
 

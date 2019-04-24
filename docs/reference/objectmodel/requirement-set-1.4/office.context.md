@@ -4,11 +4,11 @@ description: ''
 ms.date: 03/19/2019
 localization_priority: Normal
 ms.openlocfilehash: 01b03a425460acf5fd6f68214fd93d346920086e
-ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
+ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "30871134"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "32451834"
 ---
 # <a name="context"></a>context
 
@@ -76,17 +76,17 @@ function write(message){
 
 通过使用 Office 主题颜色，你可以使外接程序的配色方案与用户（通过 **“文件”>“Office 帐户”>“Office 主题”UI**）选择的当前 Office 主题协调一致，这种做法适用于所有 Office 主机应用程序。使用 Office 主题颜色适用于邮件和任务窗格外接程序。
 
-##### <a name="type"></a>类型
+##### <a name="type"></a>Type
 
 *   对象
 
 ##### <a name="properties"></a>属性：
 
-|名称| 类型| 说明|
+|名称| 类型| 描述|
 |---|---|---|
-|`bodyBackgroundColor`| String|获取十六进制三原色形式的 Office 主题正文背景色。|
+|`bodyBackgroundColor`| 字符串|获取十六进制三原色形式的 Office 主题正文背景色。|
 |`bodyForegroundColor`| String|获取十六进制三原色形式的 Office 主题正文前景色。|
-|`controlBackgroundColor`| String|获取十六进制三原色形式的 Office 主题控制背景色。|
+|`controlBackgroundColor`| 字符串|获取十六进制三原色形式的 Office 主题控制背景色。|
 |`controlForegroundColor`| 字符串|获取十六进制三原色形式的 Office 主题正文控制颜色。|
 
 ##### <a name="requirements"></a>Requirements
@@ -117,7 +117,7 @@ function applyOfficeTheme(){
 
 `RoamingSettings` 对象允许您存储和访问用户邮箱中存储的邮件外接程序的数据，以便从用于访问该邮箱的任何主机客户端应用程序中运行该外接程序时，该外接程序可以使用该数据。
 
-##### <a name="type"></a>类型
+##### <a name="type"></a>Type
 
 *   [RoamingSettings](/javascript/api/outlook_1_4/office.RoamingSettings)
 

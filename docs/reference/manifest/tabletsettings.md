@@ -2,12 +2,13 @@
 title: 清单文件中的 TabletSettings 元素
 description: ''
 ms.date: 10/09/2018
-ms.openlocfilehash: e5ffb99102c44f57281639962d9980505cbc25da
-ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
-ms.translationtype: HT
+localization_priority: Normal
+ms.openlocfilehash: 16ef4f47cd9a499407cf9b8637376bd0b35a5d10
+ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/22/2018
-ms.locfileid: "27432226"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "32451988"
 ---
 # <a name="tabletsettings-element"></a>TabletSettings 元素
 

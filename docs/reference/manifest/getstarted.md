@@ -2,12 +2,13 @@
 title: 清单文件中的 GetStarted 元素
 description: ''
 ms.date: 10/09/2018
-ms.openlocfilehash: e6fb1c56d051e9de607e97979225e484adb9affb
-ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
-ms.translationtype: HT
+localization_priority: Normal
+ms.openlocfilehash: d9ebcba7881b388544eeb3e2c3028bff9bdcf9a6
+ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/22/2018
-ms.locfileid: "27433109"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "32452079"
 ---
 # <a name="getstarted-element"></a>GetStarted 元素
 
@@ -17,17 +18,17 @@ ms.locfileid: "27433109"
 
 | 元素                       | 必需 | 说明                                        |
 |:------------------------------|:--------:|:---------------------------------------------------|
-| [Title](#title)               | 是      | 定义外接程序公开功能的位置。     |
+| [标题](#title)               | 是      | 定义外接程序公开功能的位置。     |
 | [说明](#description)   | 是      | 包含 JavaScript 函数的文件的 URL。|
 | [LearnMoreUrl](#learnmoreurl) | 否       | 指向详细说明外接程序的页面的 URL。   |
 
 ### <a name="title"></a>标题 
 
-必需。用于标注顶部的标题。**resid** 属性引用 [Resources](resources.md) 分区的 **ShortStrings** 元素中的有效 ID。
+必需。 用于标注顶部的标题。 **resid** 属性引用 **Resources** 分区的 [ShortStrings](resources.md) 元素中的有效 ID。
 
 ### <a name="description"></a>说明
 
-必需。标注的说明/正文内容。**resid** 属性引用 [Resources](resources.md) 分区的 **LongStrings** 元素中的有效 ID。
+必需。 标注的说明/正文内容。 **resid** 属性引用 **Resources** 分区的 [LongStrings](resources.md) 元素中的有效 ID。
 
 ### <a name="learnmoreurl"></a>LearnMoreUrl
 

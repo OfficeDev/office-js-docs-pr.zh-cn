@@ -2,12 +2,13 @@
 title: 清单文件中的 DisplayName 元素
 description: ''
 ms.date: 10/09/2018
-ms.openlocfilehash: 75f337a4b9d5e52b068802002e653584e6324df1
-ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
-ms.translationtype: HT
+localization_priority: Normal
+ms.openlocfilehash: f3c986c92bfcdfa0ea419d81d0ae0c4c8db3f61f
+ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/22/2018
-ms.locfileid: "27433416"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "32450490"
 ---
 # <a name="displayname-element"></a>DisplayName 元素
 

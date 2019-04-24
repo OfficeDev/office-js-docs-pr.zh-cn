@@ -1,14 +1,14 @@
 ---
-ms.date: 04/15/2019
+ms.date: 04/18/2019
 description: Excel 自定义函数中的常见问题疑难解答。
 title: 自定义函数疑难解答（预览版）
 localization_priority: Priority
-ms.openlocfilehash: 6a11b733c528028a2ea9fc48b08e9308a2cf6e97
-ms.sourcegitcommit: 6d375518c119d09c8d3fb5f0cc4583ba5b20ac03
+ms.openlocfilehash: cf54aa3b719b7893799df5d1c5206c6fb904be69
+ms.sourcegitcommit: 44c61926d35809152cbd48f7b97feb694c7fa3de
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "31914219"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "31959102"
 ---
 # <a name="troubleshoot-custom-functions"></a>自定义函数疑难解答
 
@@ -45,6 +45,10 @@ CustomFunctions.associate("ADD", add);
 ```
 
 有关此过程的更多信息，请参阅[将函数名称与 JSON 元数据相关联](/office/dev/add-ins/excel/custom-functions-best-practices#associating-function-names-with-json-metadata)。
+
+### <a name="cant-open-add-in-from-localhost-use-a-local-loopback-exception"></a>无法从 localhost 打开加载项：使用本地环回异常
+
+如果看到错误“我们无法从 localhost 打开此加载项”，则需要启用本地环回异常。 有关如何执行此操作的详细信息，请参阅[此 Microsoft 支持文章](https://support.microsoft.com/zh-CN/help/4490419/local-loopback-exemption-does-not-work)。
 
 ### <a name="ensure-promises-return"></a>确保返回 promise
 

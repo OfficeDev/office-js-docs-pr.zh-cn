@@ -4,11 +4,11 @@ description: ''
 ms.date: 04/12/2019
 localization_priority: Normal
 ms.openlocfilehash: 0f84e657644b198fbca722a0628a5bafcce84377
-ms.sourcegitcommit: 95ed6dfbfa680dbb40ff9757020fa7e5be4760b6
+ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/13/2019
-ms.locfileid: "31838548"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "32450224"
 ---
 # <a name="mailbox"></a>邮箱
 
@@ -72,7 +72,7 @@ ms.locfileid: "31838548"
 
 *   String
 
-##### <a name="requirements"></a>要求
+##### <a name="requirements"></a>Requirements
 
 |要求| 值|
 |---|---|
@@ -97,7 +97,7 @@ ms.locfileid: "31838548"
 
 *   String
 
-##### <a name="requirements"></a>要求
+##### <a name="requirements"></a>Requirements
 
 |要求| 值|
 |---|---|
@@ -164,7 +164,7 @@ function loadNewItem(eventArgs) {
 
 ##### <a name="parameters"></a>参数
 
-|名称| 类型| 说明|
+|名称| 类型| 描述|
 |---|---|---|
 |`itemId`| 字符串|Outlook REST API 的格式化的项目 ID。|
 |`restVersion`| [Office.MailboxEnums.RestVersion](/javascript/api/outlook_1_7/office.mailboxenums.restversion)|指示用于检索项目 ID 的 Outlook REST API 的版本。|
@@ -208,7 +208,7 @@ Outlook 或 Outlook Web App 邮件应用程序的日期和时间可以使用不�
 |---|---|---|
 |`timeValue`| 日期|一个 Date 对象|
 
-##### <a name="requirements"></a>要求
+##### <a name="requirements"></a>Requirements
 
 |要求| 值|
 |---|---|
@@ -234,12 +234,12 @@ Outlook 或 Outlook Web App 邮件应用程序的日期和时间可以使用不�
 
 ##### <a name="parameters"></a>参数
 
-|名称| 类型| 说明|
+|名称| 类型| 描述|
 |---|---|---|
-|`itemId`| String|适用于 Exchange Web 服务 (EWS) 的项目 ID 格式化。|
+|`itemId`| 字符串|适用于 Exchange Web 服务 (EWS) 的项目 ID 格式化。|
 |`restVersion`| [Office.MailboxEnums.RestVersion](/javascript/api/outlook_1_7/office.mailboxenums.restversion)|值指示转换的 ID 所使用的 Outlook REST API 的版本。|
 
-##### <a name="requirements"></a>要求
+##### <a name="requirements"></a>Requirements
 
 |要求| 值|
 |---|---|
@@ -276,7 +276,7 @@ var restId = Office.context.mailbox.convertToRestId(ewsId, Office.MailboxEnums.R
 |---|---|---|
 |`input`| [LocalClientTime](/javascript/api/outlook_1_7/office.LocalClientTime)|要转换的本地时间值。|
 
-##### <a name="requirements"></a>要求
+##### <a name="requirements"></a>Requirements
 
 |要求| 值|
 |---|---|
@@ -318,11 +318,11 @@ var restId = Office.context.mailbox.convertToRestId(ewsId, Office.MailboxEnums.R
 
 ##### <a name="parameters"></a>参数
 
-|名称| 类型| 说明|
+|名称| 类型| 描述|
 |---|---|---|
-|`itemId`| String|现有日历约会的 Exchange Web 服务 (EWS) 标识符。|
+|`itemId`| 字符串|现有日历约会的 Exchange Web 服务 (EWS) 标识符。|
 
-##### <a name="requirements"></a>要求
+##### <a name="requirements"></a>Requirements
 
 |要求| 值|
 |---|---|
@@ -356,7 +356,7 @@ Office.context.mailbox.displayAppointmentForm(appointmentId);
 
 ##### <a name="parameters"></a>参数
 
-|名称| 类型| 说明|
+|名称| 类型| 描述|
 |---|---|---|
 |`itemId`| 字符串|现有消息的 Exchange Web 服务 (EWS) 标识符。|
 
@@ -459,17 +459,17 @@ Office.context.mailbox.displayNewAppointmentForm(
 | `parameters.toRecipients` | Array.&lt;String&gt; &#124; Array.&lt;[EmailAddressDetails](/javascript/api/outlook_1_7/office.emailaddressdetails)&gt; | 包含电子邮件地址的字符串数组, 或包含 "收件人" `EmailAddressDetails`行中每个收件人的对象的数组。 数组限制为最多 100 个条目。 |
 | `parameters.ccRecipients` | Array.&lt;String&gt; &#124; Array.&lt;[EmailAddressDetails](/javascript/api/outlook_1_7/office.emailaddressdetails)&gt; | 包含电子邮件地址的字符串数组, 或包含 "抄送" `EmailAddressDetails`行上每个收件人的对象的数组。 数组限制为最多 100 个条目。 |
 | `parameters.bccRecipients` | Array.&lt;String&gt; &#124; Array.&lt;[EmailAddressDetails](/javascript/api/outlook_1_7/office.emailaddressdetails)&gt; | 包含电子邮件地址的字符串数组, 或包含 Bcc 行上`EmailAddressDetails`每个收件人的对象的数组。 数组限制为最多 100 个条目。 |
-| `parameters.subject` | String | 包含邮件主题的字符串。 字符串长度限制为最多 255 个字符。 |
-| `parameters.htmlBody` | String | 邮件的 HTML 正文。 正文内容限制为最大 32 KB。 |
+| `parameters.subject` | 字符串 | 包含邮件主题的字符串。 字符串长度限制为最多 255 个字符。 |
+| `parameters.htmlBody` | 字符串 | 邮件的 HTML 正文。 正文内容限制为最大 32 KB。 |
 | `parameters.attachments` | Array.&lt;Object&gt; | JSON 对象（是文件或项目附件）的数组。 |
 | `parameters.attachments.type` | String | 指示附件的类型。必须是文件附件的 `file` 或项目附件的 `item`。 |
-| `parameters.attachments.name` | String | 一个包含附件的名称的字符串，最多包含 255 个字符。|
-| `parameters.attachments.url` | String | 仅在将 `type` 设置为 `file` 时使用。文件的位置的 URI。 |
+| `parameters.attachments.name` | 字符串 | 一个包含附件的名称的字符串，最多包含 255 个字符。|
+| `parameters.attachments.url` | 字符串 | 仅在将 `type` 设置为 `file` 时使用。文件的位置的 URI。 |
 | `parameters.attachments.isInline` | 布尔 | 仅在将 `type` 设置为 `file` 时使用。如果为 `true`，则表示附件将在邮件正文中内联显示，并且不应显示在附件列表中。 |
 | `parameters.attachments.itemId` | 字符串 | 仅在 `type` 设置为 `item` 时使用。 要附加到新邮件的现有电子邮件的 EWS 项目 id。 字符串最长为 100 个字符。 |
 
 
-##### <a name="requirements"></a>要求
+##### <a name="requirements"></a>Requirements
 
 |要求| 值|
 |---|---|
@@ -527,12 +527,12 @@ Office.context.mailbox.displayNewMessageForm(
 
 |名称| 类型| 属性| 说明|
 |---|---|---|---|
-| `options` | 对象 | &lt;可选&gt; | 包含一个或多个以下属性的对象文本。 |
+| `options` | Object | &lt;可选&gt; | 包含一个或多个以下属性的对象文本。 |
 | `options.isRest` | 布尔值 |  &lt;可选&gt; | 确定所提供的令牌是否将用于 Outlook REST API 或 Exchange Web 服务。默认值为 `false`。 |
 | `options.asyncContext` | Object |  &lt;可选&gt; | 传递给异步方法的任何状态数据。 |
 |`callback`| 函数||方法完成后，使用单个参数 `callback`（一个 [`asyncResult`](/javascript/api/office/office.asyncresult) 对象）调用在 `AsyncResult` 参数中传递的函数。令牌作为 `asyncResult.value` 属性中的字符串提供。|
 
-##### <a name="requirements"></a>要求
+##### <a name="requirements"></a>Requirements
 
 |要求| 值|
 |---|---|
@@ -577,7 +577,7 @@ function cb(asyncResult) {
 |名称| 类型| 属性| 说明|
 |---|---|---|---|
 |`callback`| 函数||方法完成后，使用单个参数 `callback`（一个 [`asyncResult`](/javascript/api/office/office.asyncresult) 对象）调用在 `AsyncResult` 参数中传递的函数。令牌作为 `asyncResult.value` 属性中的字符串提供。|
-|`userContext`| 对象| &lt;可选&gt;|传递给异步方法的任何状态数据。|
+|`userContext`| Object| &lt;可选&gt;|传递给异步方法的任何状态数据。|
 
 ##### <a name="requirements"></a>要求
 
@@ -613,7 +613,7 @@ function cb(asyncResult) {
 |名称| 类型| 属性| 说明|
 |---|---|---|---|
 |`callback`| function||方法完成后，使用单个参数 `callback`（一个 [`asyncResult`](/javascript/api/office/office.asyncresult) 对象）调用在 `AsyncResult` 参数中传递的函数。<br/><br/>令牌作为 `asyncResult.value` 属性中的字符串提供。|
-|`userContext`| 对象| &lt;可选&gt;|传递给异步方法的任何状态数据。|
+|`userContext`| Object| &lt;可选&gt;|传递给异步方法的任何状态数据。|
 
 ##### <a name="requirements"></a>要求
 
@@ -676,7 +676,7 @@ XML 请求必须指定 UTF-8 编码。
 
 ##### <a name="parameters"></a>参数
 
-|名称| 类型| 属性| 说明|
+|名称| 类型| 属性| 描述|
 |---|---|---|---|
 |`data`| 字符串||EWS 请求。|
 |`callback`| function||方法完成后，使用单个参数 `asyncResult`（一个 [`AsyncResult`](/javascript/api/office/office.asyncresult) 对象）调用在 `callback` 参数中传递的函数。<br/><br/>EWS 调用的 XML 结果作为 `asyncResult.value` 属性中的字符串提供。 如果结果大小超过 1 MB，则改为返回一条错误消息。|
@@ -751,7 +751,7 @@ function callback(asyncResult)  {
 |---|---|---|---|
 | `eventType` | [Office.EventType](office.md#eventtype-string) || 应撤销处理程序的事件。 |
 | `options` | 对象 | &lt;可选&gt; | 包含一个或多个以下属性的对象文本。 |
-| `options.asyncContext` | 对象 | &lt;可选&gt; | 开发人员可以提供他们想要在回调方法中访问的任何对象。 |
+| `options.asyncContext` | Object | &lt;可选&gt; | 开发人员可以提供他们想要在回调方法中访问的任何对象。 |
 | `callback` | 函数| &lt;可选&gt;|方法完成后，使用单个参数 `callback`（一个 [`asyncResult`](/javascript/api/office/office.asyncresult) 对象）调用在 `AsyncResult` 参数中传递的函数。|
 
 ##### <a name="requirements"></a>Requirements

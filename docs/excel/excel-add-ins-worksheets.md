@@ -1,14 +1,14 @@
 ---
 title: 使用 Excel JavaScript API 处理工作表
 description: ''
-ms.date: 04/04/2019
+ms.date: 04/18/2019
 localization_priority: Priority
-ms.openlocfilehash: 0c66022112e6a6742753feb9945300a5d214e9bb
-ms.sourcegitcommit: 63219bcc1bb5e3bed7eb6c6b0adb73a4829c7e8f
+ms.openlocfilehash: 5df0bbdd1b6cf1cf3ef7a6aa14b7e00dee7ad9b2
+ms.sourcegitcommit: 44c61926d35809152cbd48f7b97feb694c7fa3de
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/05/2019
-ms.locfileid: "31479723"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "31959116"
 ---
 # <a name="work-with-worksheets-using-the-excel-javascript-api"></a>使用 Excel JavaScript API 处理工作表
 
@@ -286,7 +286,7 @@ Excel.run(function (context) {
 `WorksheetChangedEventArgs` 对象提供有关更改和来源的信息。 由于 `onChanged` 会在数据的格式或值发生变化时触发，因此让加载项检查值是否已实际更改可能很有用。 `details` 属性以 [ChangedEventDetail](/javascript/api/excel/excel.changedeventdetail) 的形式封装此信息。 以下代码示例演示如何显示已更改的单元格的之前和之后的值及类型。
 
 > [!NOTE]
-> `WorksheetChangedEventArgs.details` 它当前仅适用于公共预览版。 [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
+> `WorksheetChangedEventArgs.details` 当前仅适用于公共预览版。 [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
 
 ```js
 // This function would be used as an event handler for the Worksheet.onChanged event.
@@ -306,7 +306,7 @@ function onWorksheetChanged(eventArgs) {
 ## <a name="find-all-cells-with-matching-text-preview"></a>查找具有匹配文本 （预览） 所有单元格
 
 > [!NOTE]
-> 工作表对象的 `findAll` 函数当前仅适用于公共预览版。 [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
+> 工作表对象的 `findAll` 函数当前仅适用于公共预览版。[!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
 
 `Worksheet` 对象具有 `find` 方法在工作表内搜索指定字符串。 返回 `RangeAreas` 对象，也就是可以进行一次性全部编辑的 `Range` 对象集。 以下代码示例查找值等于字符串 **完成** 的所有单元格，并标记为绿色。 请注意，若指定的字符串不存在于工作表中，`findAll` 将引发 `ItemNotFound` 错误。 若您预计到指定的字符串可能不存在工作表中，则可使用 [findAllOrNullObject](excel-add-ins-advanced-concepts.md#ornullobject-methods) 方法，以便您的代码可正常处理该情况。
 
@@ -330,6 +330,52 @@ Excel.run(function (context) {
 > - 有关展示如何使用 `Range` 对象获取工作表中区域的示例，请参阅 [使用 Excel JavaScript API 处理区域](excel-add-ins-ranges.md)。
 > - 有关展示如何从 `Table` 对象获取区域的示例，请参阅 [使用 Excel JavaScript API 处理表](excel-add-ins-tables.md)。
 > - 有关显示如何基于单元格特性进行多个子区域的较大区域搜索示例，请参阅 [使用 Excel 加载项同时处理多个区域](excel-add-ins-multiple-ranges.md)。
+
+## <a name="filter-data"></a>筛选数据
+
+> [!NOTE]
+> `AutoFilter` 当前仅适用于公共预览版。 [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
+
+[自动筛选](/javascript/api/excel/excel.autofilter)在工作表的一个范围内应用数据筛选器。 这是通过 `Worksheet.autoFilter.apply` 创建的，它具有以下属性：
+
+- `range`：应用筛选器的范围，指定为 `Range` 对象或字符串。
+- `columnIndex`：从零开始的列索引，根据该索引评估筛选条件。
+- `criteria`：[FilterCriteria](/javascript/api/excel/excel.filtercriteria) 对象，该对象确定应基于列的单元格筛选哪些行。
+
+第一个代码示例显示如何将筛选器添加到工作表的已使用区域。 此筛选器将基于列 **3** 中的值，隐藏不在前 25% 内的条目。
+
+```js
+Excel.run(function (context) {
+    var sheet = context.workbook.worksheets.getActiveWorksheet();
+    var farmData = sheet.getUsedRange();
+
+    // This filter will only show the rows with the top 25% of values in column 3.
+    sheet.autoFilter.apply(farmData, 3, { criterion1: "25", filterOn: Excel.FilterOn.topPercent });
+    return context.sync();
+}).catch(errorHandlerFunction);
+```
+
+下一个代码示例显示如何使用 `reapply` 方法刷新 auto-filter。 当范围中的数据更改时，应执行此操作。
+
+```js
+Excel.run(function (context) {
+    var sheet = context.workbook.worksheets.getActiveWorksheet();
+    sheet.autoFilter.reapply();
+    return context.sync();
+}).catch(errorHandlerFunction);
+```
+
+最终的自动筛选代码示例显示如何使用 `remove` 方法将 auto-filter 从工作表移除。
+
+```js
+Excel.run(function (context) {
+    var sheet = context.workbook.worksheets.getActiveWorksheet();
+    sheet.autoFilter.remove();
+    return context.sync();
+}).catch(errorHandlerFunction);
+```
+
+`AutoFilter` 也可应用到单个表。 有关详细信息，请参阅[使用 Excel JavaScript API 处理表](excel-add-ins-tables.md#autofilter)。
 
 ## <a name="data-protection"></a>数据保护
 

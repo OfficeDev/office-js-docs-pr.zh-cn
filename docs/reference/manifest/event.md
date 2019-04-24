@@ -2,19 +2,20 @@
 title: 清单文件中的 Event 元素
 description: ''
 ms.date: 10/09/2018
-ms.openlocfilehash: eda895b01e106d67eef70f199be64086e9372bef
-ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
-ms.translationtype: HT
+localization_priority: Normal
+ms.openlocfilehash: 51bbcd5a3d5abe60b850e88e4063e6bbc2da37bc
+ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/22/2018
-ms.locfileid: "27432737"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "32450588"
 ---
 # <a name="event-element"></a>Event 元素
 
 定义外接程序中的事件处理程序。
 
 > [!NOTE] 
-> 目前仅 Office 365 中的 Outlook 网页版支持 `Event` 元素。
+> 目前`Event` , Outlook 在 Office 365 中的网站仅支持该元素。
 
 ## <a name="attributes"></a>属性
 
@@ -34,7 +35,7 @@ ms.locfileid: "27432737"
 
 ### <a name="functionexecution-attribute"></a>FunctionExecution 属性
 
-必需。必须设置为 `synchronous`。
+必需。 必须设置为 `synchronous`。
 
 ### <a name="functionname-attribute"></a>FunctionName 属性
 

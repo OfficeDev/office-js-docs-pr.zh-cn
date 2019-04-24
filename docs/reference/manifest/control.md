@@ -2,12 +2,13 @@
 title: 清单文件中的 Control 元素
 description: ''
 ms.date: 10/09/2018
-ms.openlocfilehash: e5d8574e322c21e768fb9f66fe9bbb0c12a34ed4
-ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
-ms.translationtype: HT
+localization_priority: Normal
+ms.openlocfilehash: d77b464fde9898ef216ef9e47c651fb5750e4453
+ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/22/2018
-ms.locfileid: "27433934"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "32450637"
 ---
 # <a name="control-element"></a>Control 元素
 
@@ -17,7 +18,7 @@ ms.locfileid: "27433934"
 
 |  属性  |  必需  |  说明  |
 |:-----|:-----|:-----|
-|**xsi:type**|必需|正在定义的控件类型。可以是 `Button`、`Menu` 或 `MobileButton`。 |
+|**xsi:type**|是|正在定义的控件类型。可以是 `Button`、`Menu` 或 `MobileButton`。 |
 |**id**|否|控件元素的 ID。最多可包含 125 个字符。|
 
 > [!NOTE]
@@ -30,10 +31,10 @@ ms.locfileid: "27433934"
 ### <a name="child-elements"></a>子元素
 |  元素 |  必需  |  说明  |
 |:-----|:-----|:-----|
-|  **Label**     | 是 |  按钮文本。**resid** 属性必须设置为 **ShortStrings** 元素（位于 [Resources](resources.md) 元素）中 **String** 元素的 **id** 属性的值。        |
+|  **Label**     | 是 |  按钮文本。 **resid** 属性必须设置为 **ShortStrings** 元素（位于 **Resources** 元素）中 **String** 元素的 [id](resources.md) 属性的值。        |
 |  **ToolTip**  |否|按钮的工具提示。**resid** 属性必须设置为 **String** 元素的 **id** 属性的值。**String** 元素是 **LongStrings** 元素的子元素，而 LongStrings 元素是 [Resources](resources.md) 元素的子元素。|        
 |  [Supertip](supertip.md)  | 是 |  按钮的 supertip。    |
-|  [Icon](icon.md)      | 是 |  按钮的图像。         |
+|  [图标](icon.md)      | 是 |  按钮的图像。         |
 |  [Action](action.md)    | 是 |  指定要执行的操作。  |
 
 ### <a name="executefunction-button-example"></a>ExecuteFunction 按钮示例
@@ -144,7 +145,7 @@ ms.locfileid: "27433934"
 
 |  元素 |  必需  |  说明  |
 |:-----|:-----|:-----|
-|  **Label**     | 是 |  按钮文本。**resid** 属性必须设置为 **ShortStrings** 元素（位于 [Resources](resources.md) 元素）中 **String** 元素的 **id** 属性的值。      |
+|  **Label**     | 是 |  按钮文本。**resid** 属性必须设置为 **ShortStrings** 元素（位于 **Resources** 元素）中 **String** 元素的 [id](resources.md) 属性的值。      |
 |  **ToolTip**  |否|按钮的工具提示。**resid** 属性必须设置为 **String** 元素的 **id** 属性的值。**String** 元素是 **LongStrings** 元素的子元素，而 LongStrings 元素是 [Resources](resources.md) 元素的子元素。|        
 |  [Supertip](supertip.md)  | 是 |  此按钮的 supertip。    |
 |  [Icon](icon.md)      | 是 |  按钮的图像。         |
@@ -243,7 +244,7 @@ ms.locfileid: "27433934"
 ### <a name="child-elements"></a>子元素
 |  元素 |  必需  |  说明  |
 |:-----|:-----|:-----|
-|  **Label**     | 是 |  按钮文本。**resid** 属性必须设置为 **ShortStrings** 元素（位于 [Resources](resources.md) 元素）中 **String** 元素的 **id** 属性的值。        |
+|  **Label**     | 是 |  按钮文本。**resid** 属性必须设置为 **ShortStrings** 元素（位于 **Resources** 元素）中 **String** 元素的 [id](resources.md) 属性的值。        |
 |  [Icon](icon.md)      | 是 |  按钮的图像。         |
 |  [Action](action.md)    | 是 |  指定要执行的操作。  |
 

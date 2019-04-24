@@ -4,11 +4,11 @@ description: 在 Excel 中调试自定义函数。
 title: 自定义函数调试 (预览)
 localization_priority: Normal
 ms.openlocfilehash: 08563ef630ebc457219c4c622328b84d13e6acab
-ms.sourcegitcommit: 6d375518c119d09c8d3fb5f0cc4583ba5b20ac03
+ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "31914387"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "32448751"
 ---
 # <a name="custom-functions-debugging-preview"></a>自定义函数调试 (预览)
 

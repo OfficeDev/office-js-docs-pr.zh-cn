@@ -4,11 +4,11 @@ description: ''
 ms.date: 03/21/2019
 localization_priority: Normal
 ms.openlocfilehash: 8216603c87a7dcafde84d25a82f068c9aa86ed96
-ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
+ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "30870406"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "32450749"
 ---
 # <a name="appdomain-element"></a>AppDomain 元素
 

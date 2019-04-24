@@ -2,12 +2,13 @@
 title: 清单文件中的 Scopes 元素
 description: ''
 ms.date: 10/09/2018
-ms.openlocfilehash: 01d34481b14ac6a9186de07d352b9985dc1695a4
-ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
-ms.translationtype: HT
+localization_priority: Normal
+ms.openlocfilehash: 903f7ff68313549234c07926cc63dc7e783ae400
+ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/22/2018
-ms.locfileid: "27432639"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "32451939"
 ---
 # <a name="scopes-element"></a>Scopes 元素
 
@@ -15,7 +16,7 @@ ms.locfileid: "27432639"
 
 ## <a name="child-elements"></a>子元素
 
-|  元素 |  类型  |  说明  |
+|  元素 |  类型  |  描述  |
 |:-----|:-----|:-----|
 |  **Scope**                |  string     |   Microsoft Graph 权限的名称，例如，Files.Read.All。 |
 

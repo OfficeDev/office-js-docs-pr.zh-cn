@@ -2,12 +2,13 @@
 title: 清单文件中的 Resources 元素
 description: ''
 ms.date: 10/09/2018
-ms.openlocfilehash: 0707df137d075a9922836e5d960216d089c56675
-ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
-ms.translationtype: HT
+localization_priority: Normal
+ms.openlocfilehash: e29e7e36585be8fd728eb46128d7ead538ea8069
+ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/22/2018
-ms.locfileid: "27433899"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "32452051"
 ---
 # <a name="resources-element"></a>Resources 元素
 
@@ -17,12 +18,12 @@ ms.locfileid: "27433899"
 
 ## <a name="child-elements"></a>子元素
 
-|  元素 |  类型  |  说明  |
+|  元素 |  类型  |  描述  |
 |:-----|:-----|:-----|
 |  [Images](#images)            |  image   |  提供指向图标图像的 HTTPS URL。 |
 |  **Urls**                |  url     |  提供 HTTPS URL 位置。一个 URL 最多可包含 2048 个字符。 |
-|  **ShortStrings** |  string  |  **Label** 和 **Title** 元素的文本。每个 **String** 最多可包含 125 个字符。|
-|  **LongStrings**  |  字符串  | **Description** 属性的文本。每个 **String** 最多可包含 250 个字符。|
+|  **ShortStrings** |  字符串  |  **Label** 和 **Title** 元素的文本。每个 **String** 最多可包含 125 个字符。|
+|  **LongStrings**  |  string  | **Description** 属性的文本。每个 **String** 最多可包含 250 个字符。|
 
 > [!NOTE]
 > 必须对 **Image** 和 **Url** 元素中的所有 URL 使用安全套接字层 (SSL)。

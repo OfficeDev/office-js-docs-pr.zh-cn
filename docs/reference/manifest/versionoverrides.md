@@ -4,11 +4,11 @@ description: ''
 ms.date: 01/29/2019
 localization_priority: Normal
 ms.openlocfilehash: 897c2203ef6ae84911b7f269ee8a2c88aec36bd0
-ms.sourcegitcommit: 2e4b97f0252ff3dd908a3aa7a9720f0cb50b855d
+ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "29635907"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "32452065"
 ---
 # <a name="versionoverrides-element"></a>VersionOverrides 元素
 
@@ -18,17 +18,17 @@ ms.locfileid: "29635907"
 
 |  属性  |  必需  |  说明  |
 |:-----|:-----|:-----|
-|  **xmlns**       |  是  |  若 `xsi:type` 为 `VersionOverridesV1_0`，架构位置必须是 `http://schemas.microsoft.com/office/mailappversionoverrides`；若 `xsi:type` 为 `VersionOverridesV1_1`，架构位置必须是 `http://schemas.microsoft.com/office/mailappversionoverrides/1.1`。|
+|  **xmlns**       |  是  |  若 `http://schemas.microsoft.com/office/mailappversionoverrides` 为 `xsi:type`，架构位置必须是 `VersionOverridesV1_0`；若 `http://schemas.microsoft.com/office/mailappversionoverrides/1.1` 为 `xsi:type`，架构位置必须是 `VersionOverridesV1_1`。|
 |  **xsi:type**  |  是  | 架构版本。目前的唯一有效值为 `VersionOverridesV1_0` 和 `VersionOverridesV1_1`。 |
 
 > [!NOTE]
-> 仅当前 Outlook 2016 或更高版本支持 VersionOverrides v1.1 架构和`VersionOverridesV1_1`类型。
+> 目前, 只有 Outlook 2016 或更高版本支持 VersionOverrides v1.1 架构和`VersionOverridesV1_1`类型。
 
 ## <a name="child-elements"></a>子元素
 
 |  元素 |  必需  |  说明  |
 |:-----|:-----|:-----|
-|  **Description**    |  否   |  描述外接程序。这会替代清单中任何父级部分中的 `Description` 元素。说明文本包含在 [Rescources](./resources.md) 元素中的 **LongString** 元素的子元素中。**Description** 元素的 `resid` 属性被设置为包含文本的 `String` 元素的 `id` 属性的值。|
+|  **说明**    |  否   |  描述外接程序。这会替代清单中任何父级部分中的 `Description` 元素。说明文本包含在 **Rescources** 元素中的 [LongString](./resources.md) 元素的子元素中。`resid` 元素的 **** 属性被设置为包含文本的 `id` 元素的 `String` 属性的值。|
 |  **Requirements**  |  否   |  指定外接程序要求的最低要求集和 Office.js 的版本。这会替代清单中父级部分中的 `Requirements` 元素。|
 |  [Hosts](./hosts.md)                |  是  |  指定 Office 主机的集合。子级 Hosts 元素替代清单中父级部分中的 Hosts 元素。  |
 |  [Resources](./resources.md)    |  是  | 定义其他清单元素引用一组的资源（字符串、URL 和图像）。|
@@ -37,7 +37,7 @@ ms.locfileid: "29635907"
 
 ### <a name="versionoverrides-example"></a>VersionOverrides 示例
 
-下面是典型的示例`<VersionOverrides>`元素，包括不是必需的但通常使用的一些子元素。
+下面是典型`<VersionOverrides>`元素的一个示例, 其中包括一些不需要但通常使用的子元素。
 
 ```xml
 <OfficeApp>

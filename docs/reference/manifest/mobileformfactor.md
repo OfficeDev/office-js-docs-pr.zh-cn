@@ -2,12 +2,13 @@
 title: 清单文件中的 MobileFormFactor 元素
 description: ''
 ms.date: 10/09/2018
-ms.openlocfilehash: f0a68c7127f7872207a58ed252def7a2977c33ed
-ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
-ms.translationtype: HT
+localization_priority: Normal
+ms.openlocfilehash: aead8ea0b60130109c5537dc0017f3a9e3ef986f
+ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/22/2018
-ms.locfileid: "27433690"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "32450567"
 ---
 # <a name="mobileformfactor-element"></a>MobileFormFactor 元素
 

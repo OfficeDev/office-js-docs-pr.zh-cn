@@ -2,12 +2,13 @@
 title: 清单文件中的 RequestedWidth 元素
 description: ''
 ms.date: 11/13/2018
-ms.openlocfilehash: 3347c06744fb561d3c5f0415f802a1e4c0e4604d
-ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
-ms.translationtype: HT
+localization_priority: Normal
+ms.openlocfilehash: f80e7f2c62a0b736b1dfa4de9d6144cfa65b02d9
+ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/22/2018
-ms.locfileid: "27433311"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "32451946"
 ---
 # <a name="requestedwidth-element"></a>RequestedWidth 元素
 

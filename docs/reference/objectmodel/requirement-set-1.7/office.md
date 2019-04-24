@@ -4,17 +4,17 @@ description: ''
 ms.date: 04/12/2019
 localization_priority: Normal
 ms.openlocfilehash: 523df189b28fc568ac32e8d17d4a226b52cbd23c
-ms.sourcegitcommit: 95ed6dfbfa680dbb40ff9757020fa7e5be4760b6
+ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/13/2019
-ms.locfileid: "31838450"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "32451617"
 ---
 # <a name="office"></a>Office
 
 该 Office 命名空间提供所有 Office 应用中的加载项所使用的共享接口。此列表仅记录 Outlook 加载项所使用的接口。有关 Office 命名空间的完整列表，请参阅[公用 API](/javascript/api/office)。
 
-##### <a name="requirements"></a>要求
+##### <a name="requirements"></a>Requirements
 
 |要求| 值|
 |---|---|
@@ -48,12 +48,12 @@ ms.locfileid: "31838450"
 
 ##### <a name="properties"></a>属性：
 
-|名称| 类型| 说明|
+|名称| 类型| 描述|
 |---|---|---|
-|`Succeeded`| String|调用成功。|
-|`Failed`| String|调用失败。|
+|`Succeeded`| 字符串|调用成功。|
+|`Failed`| 字符串|调用失败。|
 
-##### <a name="requirements"></a>要求
+##### <a name="requirements"></a>Requirements
 
 |要求| 值|
 |---|---|
@@ -73,12 +73,12 @@ ms.locfileid: "31838450"
 
 ##### <a name="properties"></a>属性：
 
-|名称| 类型| 说明|
+|名称| 类型| 描述|
 |---|---|---|
-|`Html`| String|请求以 HTML 格式返回的数据。|
-|`Text`| String|请求以文本格式返回的数据。|
+|`Html`| 字符串|请求以 HTML 格式返回的数据。|
+|`Text`| 字符串|请求以文本格式返回的数据。|
 
-##### <a name="requirements"></a>要求
+##### <a name="requirements"></a>Requirements
 
 |要求| 值|
 |---|---|
@@ -98,14 +98,14 @@ ms.locfileid: "31838450"
 
 ##### <a name="properties"></a>属性：
 
-| 名称 | 类型 | 说明 | 最低要求集 |
+| 名称 | 类型 | 描述 | 最低要求集 |
 |---|---|---|---|
-|`AppointmentTimeChanged`| String | 所选的约会或系列的日期或时间已更改。 | 1.7 |
-|`ItemChanged`| String | 在任务窗格固定时，将选择不同的 Outlook 项进行查看。 | 1.5 |
-|`RecipientsChanged`| String | 选定项目或约会位置的收件人列表已更改。 | 1.7 |
-|`RecurrenceChanged`| String | 选定系列的定期模式已更改。 | 1.7 |
+|`AppointmentTimeChanged`| 字符串 | 所选的约会或系列的日期或时间已更改。 | 1.7 |
+|`ItemChanged`| 字符串 | 在任务窗格固定时，将选择不同的 Outlook 项进行查看。 | 1.5 |
+|`RecipientsChanged`| 字符串 | 选定项目或约会位置的收件人列表已更改。 | 1.7 |
+|`RecurrenceChanged`| 字符串 | 选定系列的定期模式已更改。 | 1.7 |
 
-##### <a name="requirements"></a>要求
+##### <a name="requirements"></a>Requirements
 
 |要求| 值|
 |---|---|
@@ -125,12 +125,12 @@ ms.locfileid: "31838450"
 
 ##### <a name="properties"></a>属性：
 
-|名称| 类型| 说明|
+|名称| 类型| 描述|
 |---|---|---|
-|`Body`| String|数据源来自邮件的正文。|
+|`Body`| 字符串|数据源来自邮件的正文。|
 |`Subject`| String|数据源来自邮件的主题。|
 
-##### <a name="requirements"></a>要求
+##### <a name="requirements"></a>Requirements
 
 |要求| 值|
 |---|---|

@@ -4,11 +4,11 @@ description: ''
 ms.date: 03/19/2019
 localization_priority: Normal
 ms.openlocfilehash: c60195ddfc42d962427127bf601bca3d41797566
-ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
+ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "30872107"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "32450322"
 ---
 # <a name="office"></a>Office
 
@@ -39,10 +39,10 @@ ms.locfileid: "30872107"
 
 ##### <a name="properties"></a>属性：
 
-|名称| 类型| 说明|
+|名称| 类型| 描述|
 |---|---|---|
-|`Succeeded`| String|调用成功。|
-|`Failed`| String|调用失败。|
+|`Succeeded`| 字符串|调用成功。|
+|`Failed`| 字符串|调用失败。|
 
 ##### <a name="requirements"></a>Requirements
 
@@ -61,10 +61,10 @@ ms.locfileid: "30872107"
 
 ##### <a name="properties"></a>属性：
 
-|名称| 类型| 说明|
+|名称| 类型| 描述|
 |---|---|---|
-|`Html`| String|请求以 HTML 格式返回的数据。|
-|`Text`| String|请求以文本格式返回的数据。|
+|`Html`| 字符串|请求以 HTML 格式返回的数据。|
+|`Text`| 字符串|请求以文本格式返回的数据。|
 
 ##### <a name="requirements"></a>Requirements
 
@@ -83,9 +83,9 @@ ms.locfileid: "30872107"
 
 ##### <a name="properties"></a>属性：
 
-|名称| 类型| 说明|
+|名称| 类型| 描述|
 |---|---|---|
-|`Body`| String|数据源来自邮件的正文。|
+|`Body`| 字符串|数据源来自邮件的正文。|
 |`Subject`| String|数据源来自邮件的主题。|
 
 ##### <a name="requirements"></a>Requirements

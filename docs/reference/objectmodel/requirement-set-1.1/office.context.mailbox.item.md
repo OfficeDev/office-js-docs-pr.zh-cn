@@ -4,11 +4,11 @@ description: ''
 ms.date: 03/19/2019
 localization_priority: Normal
 ms.openlocfilehash: d3681f369570995c07256171fb6a65482648e85e
-ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
+ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "30871617"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "32450378"
 ---
 # <a name="item"></a>item
 
@@ -51,7 +51,7 @@ Office.initialize = function () {
 > [!NOTE]
 > 由于潜在的安全问题，某些类型的文件会受到 Outlook 阻止，并且不会返回。 如需了解更多信息，请参阅 [Outlook 中阻止的附件](https://support.office.com/article/Blocked-attachments-in-Outlook-434752E1-02D3-4E90-9124-8B81E49A8519)。
 
-##### <a name="type"></a>类型
+##### <a name="type"></a>Type
 
 *   Array.<[AttachmentDetails](/javascript/api/outlook_1_1/office.attachmentdetails)>
 
@@ -91,7 +91,7 @@ console.log(outputString);
 
 获取对象，该对象提供用于获取或更新邮件的密件抄送 (Bcc) 行上的收件人的方法。 仅限撰写模式。
 
-##### <a name="type"></a>类型
+##### <a name="type"></a>Type
 
 *   [收件人](/javascript/api/outlook_1_1/office.recipients)
 
@@ -119,7 +119,7 @@ function callback(asyncResult) {
 
 获取一个提供用于处理项目正文的方法的对象。
 
-##### <a name="type"></a>类型
+##### <a name="type"></a>Type
 
 *   [Body](/javascript/api/outlook_1_1/office.body)
 
@@ -181,7 +181,7 @@ function callback(asyncResult) {
 }
 ```
 
-##### <a name="type"></a>类型
+##### <a name="type"></a>Type
 
 *   Array.<[EmailAddressDetails](/javascript/api/outlook_1_1/office.emailaddressdetails)> | [Recipients](/javascript/api/outlook_1_1/office.recipients)
 
@@ -250,7 +250,7 @@ console.log("Date and time created: " + dateTimeCreated);
 > [!NOTE]
 > 在 Outlook for iOS 或 Outlook for Android 中不支持此成员。
 
-##### <a name="type"></a>类型
+##### <a name="type"></a>Type
 
 *   日期
 
@@ -308,7 +308,7 @@ Office.context.mailbox.item.end.setAsync(endTime, options, function(result) {
 });
 ```
 
-##### <a name="type"></a>类型
+##### <a name="type"></a>Type
 
 *   Date | [Time](/javascript/api/outlook_1_1/office.time)
 
@@ -553,7 +553,7 @@ function callback(asyncResult) {
 }
 ```
 
-##### <a name="type"></a>类型
+##### <a name="type"></a>Type
 
 *   Array.<[EmailAddressDetails](/javascript/api/outlook_1_1/office.emailaddressdetails)> | [Recipients](/javascript/api/outlook_1_1/office.recipients)
 
@@ -569,7 +569,7 @@ function callback(asyncResult) {
 
 获取指定会议的会议组织者的电子邮件地址。仅限阅读模式。
 
-##### <a name="type"></a>类型
+##### <a name="type"></a>Type
 
 *   [EmailAddressDetails](/javascript/api/outlook_1_1/office.emailaddressdetails)
 
@@ -638,7 +638,7 @@ function callback(asyncResult) {
 > [!NOTE]
 > `from` 属性中 `EmailAddressDetails` 对象的 `recipientType` 属性为 `undefined`。
 
-##### <a name="type"></a>类型
+##### <a name="type"></a>Type
 
 *   [EmailAddressDetails](/javascript/api/outlook_1_1/office.emailaddressdetails)
 
@@ -801,7 +801,7 @@ function callback(asyncResult) {
 
 |名称| 类型| 属性| 说明|
 |---|---|---|---|
-|`uri`| String||提供附加到邮件或约会的文件的位置的 URI。最大长度为 2048 个字符。|
+|`uri`| 字符串||提供附加到邮件或约会的文件的位置的 URI。最大长度为 2048 个字符。|
 |`attachmentName`| 字符串||在附件上载过程中显示的附件名称。最大长度为 255 个字符。|
 |`options`| Object| &lt;optional&gt;|包含一个或多个以下属性的对象文本。|
 |`options.asyncContext`| 对象| &lt;optional&gt;|开发人员可以提供他们想要在回调方法中访问的任何对象。|
@@ -857,10 +857,10 @@ function addAttachment() {
 
 |名称| 类型| 属性| 说明|
 |---|---|---|---|
-|`itemId`| String||要附加的项目的 Exchange 标识符。最大长度为 100 个字符。|
+|`itemId`| 字符串||要附加的项目的 Exchange 标识符。最大长度为 100 个字符。|
 |`attachmentName`| String||要附加的项目的主题。 最大长度为 255 个字符。|
 |`options`| 对象| &lt;optional&gt;|包含一个或多个以下属性的对象文本。|
-|`options.asyncContext`| 对象| &lt;optional&gt;|开发人员可以提供他们想要在回调方法中访问的任何对象。|
+|`options.asyncContext`| Object| &lt;optional&gt;|开发人员可以提供他们想要在回调方法中访问的任何对象。|
 |`callback`| 函数| &lt;可选&gt;|方法完成后，使用单个参数 `asyncResult`（一个 [`AsyncResult`](/javascript/api/office/office.asyncresult) 对象）调用在 `callback` 参数中传递的函数。 <br/>如果成功，附件标识符将在 `asyncResult.value` 属性中提供。<br/>如果添加附件失败，`asyncResult` 对象将包含一个提供错误说明的 `Error` 对象。|
 
 ##### <a name="errors"></a>错误
@@ -1231,7 +1231,7 @@ var veggies = allMatches.veggies;
 
 |名称| 类型| 说明|
 |---|---|---|
-|`name`| String|定义筛选器匹配的 `ItemHasRegularExpressionMatch` 规则元素的名称。|
+|`name`| 字符串|定义筛选器匹配的 `ItemHasRegularExpressionMatch` 规则元素的名称。|
 
 ##### <a name="requirements"></a>Requirements
 
@@ -1270,7 +1270,7 @@ var veggies = Office.context.mailbox.item.getRegExMatchesByName("veggies");
 
 |名称| 类型| 属性| 说明|
 |---|---|---|---|
-|`callback`| 函数||方法完成后，使用单个参数 `callback`（一个 [`asyncResult`](/javascript/api/office/office.asyncresult) 对象）调用在 `AsyncResult` 参数中传递的函数。<br/><br/>自定义属性作为 `asyncResult.value` 属性中的 [`CustomProperties`](/javascript/api/outlook_1_1/office.customproperties) 对象提供。 此对象可用于获取、设置以及从项目中删除自定义属性，并将自定义属性集的更改重新保存到服务器。|
+|`callback`| 函数||方法完成后，使用单个参数 `asyncResult`（一个 [`AsyncResult`](/javascript/api/office/office.asyncresult) 对象）调用在 `callback` 参数中传递的函数。<br/><br/>自定义属性作为 `asyncResult.value` 属性中的 [`CustomProperties`](/javascript/api/outlook_1_1/office.customproperties) 对象提供。 此对象可用于获取、设置以及从项目中删除自定义属性，并将自定义属性集的更改重新保存到服务器。|
 |`userContext`| Object| &lt;可选&gt;|开发人员可以提供他们想要在回调函数中访问的任何对象。 此对象可以通过回调函数中的 `asyncResult.asyncContext` 属性进行访问。|
 
 ##### <a name="requirements"></a>Requirements
@@ -1319,9 +1319,9 @@ function saveCallback(asyncResult) {
 |名称| 类型| 属性| 说明|
 |---|---|---|---|
 |`attachmentId`| 字符串||要删除的附件的标识符。|
-|`options`| 对象| &lt;optional&gt;|包含一个或多个以下属性的对象文本。|
+|`options`| Object| &lt;optional&gt;|包含一个或多个以下属性的对象文本。|
 |`options.asyncContext`| Object| &lt;optional&gt;|开发人员可以提供他们想要在回调方法中访问的任何对象。|
-|`callback`| 函数| &lt;可选&gt;|方法完成后，使用单个参数 `asyncResult`（一个 [`AsyncResult`](/javascript/api/office/office.asyncresult) 对象）调用在 `callback` 参数中传递的函数。 <br/>如果删除附件失败，`asyncResult.error` 属性将包含一个说明失败原因的错误代码。|
+|`callback`| 函数| &lt;可选&gt;|方法完成后，使用单个参数 `callback`（一个 [`asyncResult`](/javascript/api/office/office.asyncresult) 对象）调用在 `AsyncResult` 参数中传递的函数。 <br/>如果删除附件失败，`asyncResult.error` 属性将包含一个说明失败原因的错误代码。|
 
 ##### <a name="errors"></a>错误
 

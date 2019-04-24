@@ -2,12 +2,13 @@
 title: 清单文件中的 OfficeApp 元素
 description: ''
 ms.date: 10/09/2018
-ms.openlocfilehash: 42b6fe2e1c33322b90016d5e7ceec7b1bfe5b72d
-ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
-ms.translationtype: HT
+localization_priority: Normal
+ms.openlocfilehash: 86f38ab77e98bb01370e40c8ada38bae171e0c2d
+ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/22/2018
-ms.locfileid: "27433164"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "32450455"
 ---
 # <a name="officeapp-element"></a>OfficeApp 元素
 
@@ -35,7 +36,7 @@ Office 外接程序清单中的根元素。
 |**元素**|**Content**|**Mail**|**TaskPane**|
 |:-----|:-----|:-----|:-----|
 |[Id](id.md)|x|x|x|
-|[Version](version.md)|x|x|x|
+|[版本](version.md)|x|x|x|
 |[ProviderName](providername.md)|x|x|x|
 |[DefaultLocale](defaultlocale.md)|x|x|x|
 |[DefaultSettings](defaultsettings.md)|x||x|
@@ -47,7 +48,7 @@ Office 外接程序清单中的根元素。
 
 ## <a name="can-contain"></a>可以包含
 
-|**元素**|**Content**|**Mail**|**TaskPane**|
+|**Element**|**Content**|**Mail**|**TaskPane**|
 |:-----|:-----|:-----|:-----|
 |[AlternateId](alternateid.md)|x|x|x|
 |[IconUrl](iconurl.md)|x|x|x|

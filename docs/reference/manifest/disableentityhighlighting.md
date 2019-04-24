@@ -2,12 +2,13 @@
 title: 清单文件中的 DisableEntityHighlighting 元素
 description: ''
 ms.date: 10/09/2018
-ms.openlocfilehash: 12b3c308246389d1c0870fd4e0193b5da25bbb43
-ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
-ms.translationtype: HT
+localization_priority: Normal
+ms.openlocfilehash: 58f9b865f0f8db9b68c138fc184b62cfe0958778
+ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/22/2018
-ms.locfileid: "27433290"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "32450497"
 ---
 # <a name="disableentityhighlighting-element"></a>DisableEntityHighlighting 元素
 

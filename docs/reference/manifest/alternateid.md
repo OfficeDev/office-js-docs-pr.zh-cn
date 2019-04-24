@@ -2,12 +2,13 @@
 title: 清单文件中的 AlternateId 元素
 description: ''
 ms.date: 10/09/2018
-ms.openlocfilehash: db7c8e97f880fcbef0aff8fa5ceae48bf2604230
-ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
-ms.translationtype: HT
+localization_priority: Normal
+ms.openlocfilehash: 7a19715fa987978a4540b717f1d30fbff97157c5
+ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/22/2018
-ms.locfileid: "27433745"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "32450665"
 ---
 # <a name="alternateid-element"></a>AlternateId 元素
 

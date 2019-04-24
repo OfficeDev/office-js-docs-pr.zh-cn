@@ -2,12 +2,13 @@
 title: 清单文件中的 AllFormFactors 元素
 description: ''
 ms.date: 10/09/2018
-ms.openlocfilehash: de7fcdce48e175d15ca6268f24082e37b2085b05
-ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
-ms.translationtype: HT
+localization_priority: Normal
+ms.openlocfilehash: 8059501f88f966b285398ac7cf243e6b0e4e44ea
+ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/22/2018
-ms.locfileid: "27433276"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "32450735"
 ---
 # <a name="allformfactors-element"></a>AllFormFactors 元素
 

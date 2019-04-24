@@ -2,12 +2,13 @@
 title: 清单文件中的 Supertip 元素
 description: ''
 ms.date: 10/09/2018
-ms.openlocfilehash: bae997eda8e1055c5be76382456ba83acca7b91c
-ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
-ms.translationtype: HT
+localization_priority: Normal
+ms.openlocfilehash: cdbba342fa591ddff3faf94ecd63a4740fb904da
+ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/22/2018
-ms.locfileid: "27433668"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "32450539"
 ---
 # <a name="supertip"></a>Supertip
 
@@ -17,10 +18,10 @@ ms.locfileid: "27433668"
 
 |  元素 |  必需  |  说明  |
 |:-----|:-----|:-----|
-|  [Title](#title)        | 是 |   supertip 的文本。         |
+|  [标题](#title)        | 是 |   supertip 的文本。         |
 |  [说明](#description)  | 是 |  supertip 的说明。    |
 
-### <a name="title"></a>标题
+### <a name="title"></a>Title
 
 必需。SuperTip 的文本。 **resid** 属性必须设置为 **ShortStrings** 元素（位于 **Resources** 元素）中 **String** 元素的 [id](resources.md) 属性的值。
 

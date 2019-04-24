@@ -5,11 +5,11 @@ ms.date: 03/19/2019
 ms.prod: onenote
 localization_priority: Normal
 ms.openlocfilehash: 53b120fbe2bba3967c1b89699daef6bd452b5c24
-ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
+ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "30870546"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "32450252"
 ---
 # <a name="onenote-javascript-api-overview"></a>OneNote JavaScript API 概述
 
@@ -53,7 +53,7 @@ ms.locfileid: "30870546"
 
 ## <a name="onenote-javascript-api-requirement-sets"></a>OneNote JavaScript API 要求集
 
-要求集是指各组已命名的 API 成员。 Office 外接程序使用清单中指定的要求集或执行运行时检查，以确定 Office 主机是否支持外接程序所需的 API。 有关 OneNote JavaScript API 要求集的详细信息，请参阅 [OneNote JavaScript API 要求集](../requirement-sets/onenote-api-requirement-sets.md)文章。
+要求集是指各组已命名的 API 成员。 Office 加载项使用清单中指定的要求集或执行运行时检查，以确定 Office 主机是否支持加载项所需的 API。 有关 OneNote JavaScript API 要求集的详细信息，请参阅 [OneNote JavaScript API 要求集](../requirement-sets/onenote-api-requirement-sets.md)文章。
 
 ## <a name="onenote-javascript-api-reference"></a>OneNote JavaScript API 参考
 

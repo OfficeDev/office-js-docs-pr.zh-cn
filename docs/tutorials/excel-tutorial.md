@@ -6,11 +6,11 @@ ms.prod: excel
 ms.topic: tutorial
 localization_priority: Normal
 ms.openlocfilehash: 410b2391d207f7c83f9accb349448dbc0c92a0e2
-ms.sourcegitcommit: 33dcf099c6b3d249811580d67ee9b790c0fdccfb
+ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "29742448"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "32451286"
 ---
 # <a name="tutorial-create-an-excel-task-pane-add-in"></a>教程：创建 Excel 任务窗格加载项
 
@@ -34,7 +34,7 @@ ms.locfileid: "29742448"
 
 - [Git Bash](https://git-scm.com/downloads)（或其他 Git 客户端）
 
-- 您需要具有 Internet 连接，以在本教程中测试外接程序。
+- 您需要具有 Internet 连接才能在本教程中测试外接程序。
 
 ## <a name="create-your-add-in-project"></a>创建加载项项目
 
@@ -66,7 +66,7 @@ ms.locfileid: "29742448"
 
 4. 打开 app.js 文件。
 
-5. 将 `TODO1` 替换为下面的代码。 此代码用于确定用户的 Excel 版本是否支持包含本系列教程将使用的所有 API 的 Excel.js 版本。 在生产加载项中，若要隐藏或禁用调用不受支持的 API 的 UI，请使用条件块的主体。 这样一来，用户仍可以使用 Excel 版本支持的加载项部分。
+5. 将 `TODO1` 替换为以下代码。 此代码用于确定用户的 Excel 版本是否支持包含本系列教程将使用的所有 API 的 Excel.js 版本。 在生产加载项中，若要隐藏或禁用调用不受支持的 API 的 UI，请使用条件块的主体。 这样一来，用户仍可以使用 Excel 版本支持的加载项部分。
 
     ```js
     if (!Office.context.requirements.isSetSupported('ExcelApi', 1.7)) {
@@ -109,7 +109,7 @@ ms.locfileid: "29742448"
     }
     ```
 
-8. 将 `TODO4` 替换为以下代码。注意：
+8. 将 `TODO4` 替换为下面的代码。请注意以下几点：
 
    - 此代码通过使用工作表的表格集合的 `add` 方法来创建表格，即使是空的，也始终存在。 这是创建 Excel.js 对象的标准方式。 没有类构造函数 API，切勿使用 `new` 运算符创建 Excel 对象。 相反，请添加到父集合对象。
 
@@ -123,7 +123,7 @@ ms.locfileid: "29742448"
     expensesTable.name = "ExpensesTable";
     ```
 
-9. 将 `TODO5` 替换为以下代码。注意：
+9. 将 `TODO5` 替换为以下代码。 注意：
 
    - 范围的单元格值是通过一组数组进行设置。
 
@@ -144,7 +144,7 @@ ms.locfileid: "29742448"
     ]);
     ```
 
-10. 将 `TODO6` 替换为以下代码。注意：
+10. 将 `TODO6` 替换为以下代码。 注意：
 
    - 此代码将从零开始编制的索引传递给表格的列集合的 `getItemAt` 方法，以获取对“金额”**** 列的引用。
 
@@ -229,9 +229,9 @@ ms.locfileid: "29742448"
     }
     ```
 
-7. 将 `TODO1` 替换为以下代码。注意：
+7. 将 `TODO1` 替换为下面的代码。 注意：
 
-   - 代码先将列名称传递给 `getItem` 方法（而不是像 `createTable` 方法一样将列索引传递给 `getItemAt` 方法），获取对需要筛选的列的引用。 由于用户可以移动表格列，因此给定索引处的列可能会在表格创建后更改。 所以，更安全的做法是，使用列名称获取对列的引用。 上一教程安全地使用了 `getItemAt`，因为是在与创建表格完全相同的方法中使用了它，所以用户没有机会移动列。
+   - 代码先将列名称传递给 `getItem` 方法（而不是像 `getItemAt` 方法一样将列索引传递给 `createTable` 方法），获取对需要筛选的列的引用。 由于用户可以移动表格列，因此给定索引处的列可能会在表格创建后更改。 所以，更安全的做法是，使用列名称获取对列的引用。 上一教程安全地使用了 `getItemAt`，因为是在与创建表格完全相同的方法中使用了它，所以用户没有机会移动列。
 
    - `applyValuesFilter` 方法是对 `Filter` 对象执行的多种筛选方法之一。
 
@@ -281,11 +281,11 @@ ms.locfileid: "29742448"
     }
     ```
 
-6. 将 `TODO1` 替换为以下代码。注意：
+6. 将 `TODO1` 替换为以下代码。 请注意以下几点：
 
    - 此代码创建一组 `SortField` 对象，其中只有一个成员，因为加载项只对“商家”列进行了排序。
 
-   - `SortField` 对象的 `key` 属性是要排序的列的从零开始编制索引。
+   - `key` 对象的 `SortField` 属性是要排序的列的从零开始编制索引。
 
    - `Table` 的 `sort` 成员是 `TableSort` 对象，并不是方法。 `SortField` 传递到 `TableSort` 对象的 `apply` 方法。
 
@@ -311,7 +311,7 @@ ms.locfileid: "29742448"
 
 2. 运行命令 `npm run build`，将 ES6 源代码转换为 Internet Explorer 支持的旧版 JavaScript（Excel 在后台用来运行 Excel 加载项）。
 
-3. 运行命令 `npm start`，启动在本地主机上运行的 Web 服务器。
+3. 运行命令 `npm start`，启动在 localhost 上运行的 Web 服务器。
 
 4. 通过关闭任务窗格来重新加载它，再选择“**开始**”菜单上的“**显示任务窗格**”，以重新打开加载项。
 
@@ -421,7 +421,7 @@ ms.locfileid: "29742448"
 
 5. 如果出于某种原因在工作表中打不开表格，请在任务窗格中依次选择“**创建表**”、“**筛选表**”和“**排序表**”按钮（按顺序和倒序中的任一顺序排序皆可）。
 
-6. 选择“**创建图表**”按钮。 此时，图表创建完成，其中仅包含筛选出的行中的数据。 底部数据点上的标签按图表的排序顺序进行排序，即按商家名称的字母倒序排序。
+6. 选择“创建图表”**** 按钮。 此时，图表创建完成，其中仅包含筛选出的行中的数据。 底部数据点上的标签按图表的排序顺序进行排序，即按商家名称的字母倒序排序。
 
     ![Excel 教程 - 创建图表](../images/excel-tutorial-create-chart.png)
 
@@ -554,15 +554,15 @@ ms.locfileid: "29742448"
     ```
 
    > [!NOTE] 
-   > 在生产加载项中，不建议对两个不同的按钮使用相同的图标；但为了简单起见，本教程将采用这样的做法。 因此，新 `Control` 中的 `Icon` 标记直接就是现有 `Control` 中 `Icon` 元素的副本。 
+   > 在生产加载项中，不建议对两个不同的按钮使用相同的图标；但为了简单起见，本教程将采用这样的做法。 因此，新 `Icon` 中的 `Control` 标记直接就是现有 `Icon` 中 `Control` 元素的副本。 
 
-6. 虽然清单中现有原始 `Control` 元素内的 `Action` 元素的类型设置为 `ShowTaskpane`，但新按钮不会要打开任务窗格，而是要运行在后续步骤中创建的自定义函数。 因此，将 `TODO5` 替换为 `ExecuteFunction`，即触发自定义函数的按钮的操作类型。 开始 `Action` 标记应如下面的代码所示：
+6. 虽然清单中现有原始 `Action` 元素内的 `Control` 元素的类型设置为 `ShowTaskpane`，但新按钮不会要打开任务窗格，而是要运行在后续步骤中创建的自定义函数。 因此，将 `TODO5` 替换为 `ExecuteFunction`，即触发自定义函数的按钮的操作类型。 开始 `Action` 标记应如下面的代码所示：
  
     ```xml
     <Action xsi:type="ExecuteFunction">
     ```
 
-7. 原始 `Action` 元素的子元素指定任务窗格 ID，以及应当在任务窗格中打开的页面 URL。 不过，`ExecuteFunction` 类型的 `Action` 元素只有一个子元素，用于命名控件执行的函数。 此函数（名为 `toggleProtection`）将在后续步骤中创建。 因此，将 `TODO6` 替换为以下标记：
+7. 原始 `Action` 元素的子元素指定任务窗格 ID，以及应当在任务窗格中打开的页面 URL。 不过，`Action` 类型的 `ExecuteFunction` 元素只有一个子元素，用于命名控件执行的函数。 此函数（名为 `toggleProtection`）将在后续步骤中创建。 因此，将 `TODO6` 替换为以下标记：
  
     ```xml
     <FunctionName>toggleProtection</FunctionName>
@@ -608,7 +608,7 @@ ms.locfileid: "29742448"
 
 1. 打开文件 \function-file\function-file.js。
 
-2. 此文件已有立即调用函数表达式 (IIFE)。 *IIFE 之外*，添加以下代码。 请注意，我们向方法指定了 `args` 参数，因此方法的最后一行为 `args.completed`。 **ExecuteFunction** 类型的所有加载项命令都必须满足这项要求。 它会指示 Office 主机应用，函数已完成，且 UI 可以再次变成响应式。
+2. 此文件已有立即调用函数表达式 (IIFE)。 *在 IIFE 外部*, 添加以下代码。 请注意，我们向方法指定了 `args` 参数，因此方法的最后一行为 `args.completed`。 **ExecuteFunction** 类型的所有加载项命令都必须满足这项要求。 它会指示 Office 主机应用，函数已完成，且 UI 可以再次变成响应式。
 
     ```js
     function toggleProtection(args) {
@@ -673,9 +673,9 @@ ms.locfileid: "29742448"
         //        does not run until the toggle logic has been queued.
     ``` 
 
-2. 由于不能在同一取消分支代码路径中有两个 `return` 语句，因此请删除 `Excel.run` 末尾的最后一行代码 `return context.sync();`。 新的最后一行代码 `context.sync`将在后续步骤中添加。
+2. 由于不能在同一取消分支代码路径中有两个 `return` 语句，因此请删除 `return context.sync();` 末尾的最后一行代码 `Excel.run`。 新的最后一行代码 `context.sync`将在后续步骤中添加。
 
-3. 剪切并粘贴 `toggleProtection` 函数中的 `if ... else` 结构，以替换 `TODO3`。
+3. 剪切并粘贴 `if ... else` 函数中的 `toggleProtection` 结构，以替换 `TODO3`。
 
 4. 将 `TODO4` 替换为以下代码。注意：
 
@@ -828,7 +828,7 @@ ms.locfileid: "29742448"
     }());
     ```
 
-6. 将 `TODO1` 替换为下面的代码。 将在下一步中创建 `sendStringToParentPage` 函数。
+6. 将 `TODO1` 替换为下列代码。 将在下一步中创建 `sendStringToParentPage` 函数。
 
     ```js
     $('#ok-button').click(sendStringToParentPage);
@@ -890,7 +890,7 @@ ms.locfileid: "29742448"
     }
     ```
 
-8. 将 `TODO1` 替换为以下代码。注意：
+8. 将 `TODO1` 替换为以下代码。 注意：
 
    - `displayDialogAsync` 方法在屏幕中央打开对话框。
 

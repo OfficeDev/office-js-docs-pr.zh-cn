@@ -4,11 +4,11 @@ description: 可使用适用于 Office 的 JavaScript API 确定区域设置并�
 ms.date: 03/19/2019
 localization_priority: Normal
 ms.openlocfilehash: b01535b76485847783104ce840256949ce17ca26
-ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
+ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "30871708"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "32449775"
 ---
 # <a name="localization-for-office-add-ins"></a>Office 加载项的本地化
 

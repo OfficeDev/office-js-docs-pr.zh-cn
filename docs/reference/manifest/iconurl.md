@@ -4,11 +4,11 @@ description: ''
 ms.date: 03/19/2019
 localization_priority: Normal
 ms.openlocfilehash: f7eda7ec9e4c5da8ad0b19e5e10649696d4e85c1
-ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
+ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "30871722"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "32452107"
 ---
 # <a name="iconurl-element"></a>IconUrl 元素
 

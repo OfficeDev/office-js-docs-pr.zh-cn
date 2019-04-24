@@ -2,12 +2,13 @@
 title: 清单文件中的 CustomTab 元素
 description: ''
 ms.date: 10/09/2018
-ms.openlocfilehash: 7d609ad216ba5e8e7358bbc741f7b6c992bc97e2
-ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
-ms.translationtype: HT
+localization_priority: Normal
+ms.openlocfilehash: c1c3c6883a1feb94299feb35c078431e6e2e322c
+ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/22/2018
-ms.locfileid: "27433605"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "32450630"
 ---
 # <a name="customtab-element"></a>CustomTab 元素
 

@@ -4,11 +4,11 @@ description: ''
 ms.date: 03/19/2019
 localization_priority: Normal
 ms.openlocfilehash: 8c0c84d4c763e125992b06abfb33985085a56210
-ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
+ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "30870301"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "32451855"
 ---
 # <a name="context"></a>context
 
@@ -74,7 +74,7 @@ function write(message){
 
 `RoamingSettings` 对象允许您存储和访问用户邮箱中存储的邮件外接程序的数据，以便从用于访问该邮箱的任何主机客户端应用程序中运行该外接程序时，该外接程序可以使用该数据。
 
-##### <a name="type"></a>类型
+##### <a name="type"></a>Type
 
 *   [RoamingSettings](/javascript/api/outlook_1_2/office.RoamingSettings)
 

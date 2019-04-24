@@ -6,11 +6,11 @@ ms.prod: powerpoint
 ms.topic: tutorial
 localization_priority: Normal
 ms.openlocfilehash: 9f5e30929c0881c0216b7ca77fbfa4b989fabc6e
-ms.sourcegitcommit: 33dcf099c6b3d249811580d67ee9b790c0fdccfb
+ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "29742413"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "32451652"
 ---
 # <a name="tutorial-create-a-powerpoint-task-pane-add-in"></a>教程：创建 PowerPoint 任务窗格加载项
 
@@ -50,7 +50,7 @@ ms.locfileid: "29742413"
 
 请按照下面的步骤编辑加载项代码，以创建在本教程后续步骤中实现加载项功能的框架。
 
-1. **Home.html** 指定在加载项的任务窗格中呈现的 HTML。 在 **Home.html** 文件中，查找包含 `id="content-main"` 的 **div**，并将找到的整个 **div** 替换为以下标记，再保存此文件。
+1. **Home.html** 指定在加载项任务窗格中呈现的 HTML。 在 **Home.html** 文件中，查找包含 **** 的 `id="content-main"`，并将找到的整个 **div** 替换为以下标记，再保存此文件。
 
     ```html
     <!-- TODO2: Create the content-header div. -->
@@ -64,7 +64,7 @@ ms.locfileid: "29742413"
     </div>
     ```
 
-2. 打开 Web 应用程序项目根目录中的文件 **Home.js**。 此文件指定加载项脚本。 将整个内容替换为下列代码，并保存文件。
+2. 打开 Web 应用项目根目录中的文件“Home.js”****。 此文件指定加载项脚本。 将整个内容替换为以下代码，并保存文件。
 
     ```javascript
     (function () {

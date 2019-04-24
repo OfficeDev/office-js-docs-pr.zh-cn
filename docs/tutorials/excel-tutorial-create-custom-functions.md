@@ -6,11 +6,11 @@ ms.prod: excel
 ms.topic: tutorial
 localization_priority: Normal
 ms.openlocfilehash: 76f4d88b9da39a4d71927982836ee061b329a9b3
-ms.sourcegitcommit: 14ceac067e0e130869b861d289edb438b5e3eff9
+ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/04/2019
-ms.locfileid: "31477570"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "32451404"
 ---
 # <a name="tutorial-create-custom-functions-in-excel-preview"></a>教程：在 Excel 中创建自定义函数（预览）
 
@@ -54,8 +54,8 @@ ms.locfileid: "31477570"
     yo office
     ```
     
-    * 选择项目类型: `Excel Custom Functions Add-in project (...)`
-    * 选择脚本类型: `JavaScript`
+    * 选择项目类型：`Excel Custom Functions Add-in project (...)`
+    * 选择脚本类型：`JavaScript`
     * 要如何命名加载项？ `stock-ticker`
     
     ![自定义函数的 Office 外接程序提示的 Yeoman 生成器](../images/12-10-fork-cf-pic.jpg)
@@ -78,7 +78,7 @@ ms.locfileid: "31477570"
 
 5. 启动在 Node.js 中运行的本地 Web 服务器。 你可以在 Excel for Windows 或 Excel Online 中尝试使用自定义函数加载项。
 
-# [<a name="excel-for-windows"></a>Excel for Windows](#tab/excel-windows)
+# <a name="excel-for-windowstabexcel-windows"></a>[Excel for Windows](#tab/excel-windows)
 
 运行以下命令。
 
@@ -91,7 +91,7 @@ npm start desktop
 > [!NOTE]
 > 如果加载项未加载，请检查是否已正确完成步骤 3。 您还可以启用**[运行时日志记录](../testing/troubleshoot-manifest.md#use-runtime-logging-to-debug-your-add-in)** 以解决外接程序的 XML 清单文件中的问题, 以及任何安装或运行时问题。 运行时日志`console.log`记录将语句写入日志文件, 以帮助您查找和修复问题。
 
-# [<a name="excel-online"></a>Excel Online](#tab/excel-online)
+# <a name="excel-onlinetabexcel-online"></a>[Excel Online](#tab/excel-online)
 
 运行以下命令。
 
@@ -191,7 +191,7 @@ npm start web
 
 5. 在 Excel 中重新注册加载项，以便新函数可用。 
 
-# [<a name="excel-for-windows"></a>Excel for Windows](#tab/excel-windows)
+# <a name="excel-for-windowstabexcel-windows"></a>[Excel for Windows](#tab/excel-windows)
 
 1. 关闭 Excel，然后重新打开 Excel。
 
@@ -200,7 +200,7 @@ npm start web
 3. 在可用加载项列表中，找到“**开发人员加载项**”部分并选择 **stock-ticker** 加载项进行注册。
     ![Excel for Windows 中的“插入”功能区，同时在“我的加载项”列表中突出显示“Excel 自定义函数”加载项](../images/excel-cf-register-add-in-2.png)
 
-# [<a name="excel-online"></a>Excel Online](#tab/excel-online)
+# <a name="excel-onlinetabexcel-online"></a>[Excel Online](#tab/excel-online)
 
 1. 在 Excel Online 中，选择“插入”**** 选项卡，然后选择“加载项”****。![Excel Online 中的“插入”功能区，同时突出显示“我的加载项”图标](../images/excel-cf-online-register-add-in-1.png)
 
@@ -292,7 +292,7 @@ npm start web
 
 3. 在 Excel 中重新注册加载项，以便新函数可用。
 
-# [<a name="excel-for-windows"></a>Excel for Windows](#tab/excel-windows)
+# <a name="excel-for-windowstabexcel-windows"></a>[Excel for Windows](#tab/excel-windows)
 
 1. 关闭 Excel，然后重新打开 Excel。
 
@@ -301,7 +301,7 @@ npm start web
 3. 在可用加载项列表中，找到“**开发人员加载项**”部分并选择 **stock-ticker** 加载项进行注册。
     ![Excel for Windows 中的“插入”功能区，同时在“我的加载项”列表中突出显示“Excel 自定义函数”加载项](../images/excel-cf-register-add-in-2.png)
 
-# [<a name="excel-online"></a>Excel Online](#tab/excel-online)
+# <a name="excel-onlinetabexcel-online"></a>[Excel Online](#tab/excel-online)
 
 1. 在 Excel Online 中，选择“插入”**** 选项卡，然后选择“加载项”****。![Excel Online 中的“插入”功能区，同时突出显示“我的加载项”图标](../images/excel-cf-online-register-add-in-1.png)
 

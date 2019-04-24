@@ -2,12 +2,13 @@
 title: 清单文件中的 FunctionFile 元素
 description: ''
 ms.date: 10/09/2018
-ms.openlocfilehash: 634d383498698b55990dc73e66ec11616396f968
-ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
-ms.translationtype: HT
+localization_priority: Normal
+ms.openlocfilehash: 5f87d10428b58adfb89f1119ba5741599079afba
+ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/22/2018
-ms.locfileid: "27432695"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "32450581"
 ---
 # <a name="functionfile-element"></a>FunctionFile 元素
 
@@ -75,4 +76,4 @@ function writeText(event) {
 ```
 
 > [!IMPORTANT]
-> 调用 **event.completed** 表示你已成功处理了事件。 当某个函数被多次调用时（例如多次单击同一加载项命令时），所有事件将自动排队。 首个事件将自动运行，而其他事件仍保持在队列中。 当函数调用 **event.completed** 时，将运行队列中下一个对此函数的调用。 必须调用 **event.completed**，否则函数将不会运行。
+> 调用 **event.completed** 表示你已成功处理了事件。 当某个函数被多次调用时（例如多次单击同一加载项命令时），所有事件将自动排队。 第一个事件将自动运行，而其他事件仍保持在队列中。 当函数调用 **event.completed** 时，将运行队列中下一个对此函数的调用。 必须调用 **event.completed**，否则函数将不会运行。
