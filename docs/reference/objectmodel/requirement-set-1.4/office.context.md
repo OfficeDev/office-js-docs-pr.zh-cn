@@ -4,49 +4,49 @@ description: ''
 ms.date: 03/19/2019
 localization_priority: Normal
 ms.openlocfilehash: 01b03a425460acf5fd6f68214fd93d346920086e
-ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
+ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "30871134"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "32451834"
 ---
-# <a name="context"></a><span data-ttu-id="f4d03-102">context</span><span class="sxs-lookup"><span data-stu-id="f4d03-102">context</span></span>
+# <a name="context"></a><span data-ttu-id="08dbc-102">context</span><span class="sxs-lookup"><span data-stu-id="08dbc-102">context</span></span>
 
-### <a name="officeofficemdcontext"></a><span data-ttu-id="f4d03-103">[Office](Office.md).context</span><span class="sxs-lookup"><span data-stu-id="f4d03-103">[Office](Office.md).context</span></span>
+### <a name="officeofficemdcontext"></a><span data-ttu-id="08dbc-103">[Office](Office.md).context</span><span class="sxs-lookup"><span data-stu-id="08dbc-103">[Office](Office.md).context</span></span>
 
-<span data-ttu-id="f4d03-p101">Office.context 命名空间提供所有 Office 应用中的加载项所使用的共享接口。此列表仅记录 Outlook 加载项所使用的接口。有关 Office.context 命名空间的完整列表，请参阅[通用 API 中的 Office.context 引用](/javascript/api/office/office.context)。</span><span class="sxs-lookup"><span data-stu-id="f4d03-p101">The Office.context namespace provides shared interfaces that are used by add-ins in all of the Office apps. This listing documents only those interfaces that are used by Outlook add-ins. For a full listing of the Office.context namespace, see the [Office.context reference in the Common API](/javascript/api/office/office.context).</span></span>
+<span data-ttu-id="08dbc-p101">Office.context 命名空间提供所有 Office 应用中的加载项所使用的共享接口。此列表仅记录 Outlook 加载项所使用的接口。有关 Office.context 命名空间的完整列表，请参阅[通用 API 中的 Office.context 引用](/javascript/api/office/office.context)。</span><span class="sxs-lookup"><span data-stu-id="08dbc-p101">The Office.context namespace provides shared interfaces that are used by add-ins in all of the Office apps. This listing documents only those interfaces that are used by Outlook add-ins. For a full listing of the Office.context namespace, see the [Office.context reference in the Common API](/javascript/api/office/office.context).</span></span>
 
-##### <a name="requirements"></a><span data-ttu-id="f4d03-106">Requirements</span><span class="sxs-lookup"><span data-stu-id="f4d03-106">Requirements</span></span>
+##### <a name="requirements"></a><span data-ttu-id="08dbc-106">Requirements</span><span class="sxs-lookup"><span data-stu-id="08dbc-106">Requirements</span></span>
 
-|<span data-ttu-id="f4d03-107">要求</span><span class="sxs-lookup"><span data-stu-id="f4d03-107">Requirement</span></span>| <span data-ttu-id="f4d03-108">值</span><span class="sxs-lookup"><span data-stu-id="f4d03-108">Value</span></span>|
+|<span data-ttu-id="08dbc-107">要求</span><span class="sxs-lookup"><span data-stu-id="08dbc-107">Requirement</span></span>| <span data-ttu-id="08dbc-108">值</span><span class="sxs-lookup"><span data-stu-id="08dbc-108">Value</span></span>|
 |---|---|
-|[<span data-ttu-id="f4d03-109">最低版本的邮箱要求集</span><span class="sxs-lookup"><span data-stu-id="f4d03-109">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| <span data-ttu-id="f4d03-110">1.0</span><span class="sxs-lookup"><span data-stu-id="f4d03-110">1.0</span></span>|
-|[<span data-ttu-id="f4d03-111">适用的 Outlook 模式</span><span class="sxs-lookup"><span data-stu-id="f4d03-111">Applicable Outlook mode</span></span>](/outlook/add-ins/#extension-points)| <span data-ttu-id="f4d03-112">撰写或阅读</span><span class="sxs-lookup"><span data-stu-id="f4d03-112">Compose or Read</span></span>|
+|[<span data-ttu-id="08dbc-109">最低版本的邮箱要求集</span><span class="sxs-lookup"><span data-stu-id="08dbc-109">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| <span data-ttu-id="08dbc-110">1.0</span><span class="sxs-lookup"><span data-stu-id="08dbc-110">1.0</span></span>|
+|[<span data-ttu-id="08dbc-111">适用的 Outlook 模式</span><span class="sxs-lookup"><span data-stu-id="08dbc-111">Applicable Outlook mode</span></span>](/outlook/add-ins/#extension-points)| <span data-ttu-id="08dbc-112">撰写或阅读</span><span class="sxs-lookup"><span data-stu-id="08dbc-112">Compose or Read</span></span>|
 
-### <a name="namespaces"></a><span data-ttu-id="f4d03-113">命名空间</span><span class="sxs-lookup"><span data-stu-id="f4d03-113">Namespaces</span></span>
+### <a name="namespaces"></a><span data-ttu-id="08dbc-113">命名空间</span><span class="sxs-lookup"><span data-stu-id="08dbc-113">Namespaces</span></span>
 
-<span data-ttu-id="f4d03-114">[mailbox](office.context.mailbox.md)：为 Microsoft Outlook 和 Microsoft Outlook 网页版提供对 Outlook 外接程序对象模型的访问权限。</span><span class="sxs-lookup"><span data-stu-id="f4d03-114">[mailbox](office.context.mailbox.md): Provides access to the Outlook add-in object model for Microsoft Outlook and Microsoft Outlook on the web.</span></span>
+<span data-ttu-id="08dbc-114">[mailbox](office.context.mailbox.md)：为 Microsoft Outlook 和 Microsoft Outlook 网页版提供对 Outlook 外接程序对象模型的访问权限。</span><span class="sxs-lookup"><span data-stu-id="08dbc-114">[mailbox](office.context.mailbox.md): Provides access to the Outlook add-in object model for Microsoft Outlook and Microsoft Outlook on the web.</span></span>
 
-### <a name="members"></a><span data-ttu-id="f4d03-115">成员</span><span class="sxs-lookup"><span data-stu-id="f4d03-115">Members</span></span>
+### <a name="members"></a><span data-ttu-id="08dbc-115">成员</span><span class="sxs-lookup"><span data-stu-id="08dbc-115">Members</span></span>
 
-####  <a name="displaylanguage-string"></a><span data-ttu-id="f4d03-116">displayLanguage :String</span><span class="sxs-lookup"><span data-stu-id="f4d03-116">displayLanguage :String</span></span>
+####  <a name="displaylanguage-string"></a><span data-ttu-id="08dbc-116">displayLanguage :String</span><span class="sxs-lookup"><span data-stu-id="08dbc-116">displayLanguage :String</span></span>
 
-<span data-ttu-id="f4d03-117">获取用户针对 Office 主机应用程序的 UI 指定的 RFC 1766 语言标记格式的区域设置（语言）。</span><span class="sxs-lookup"><span data-stu-id="f4d03-117">Gets the locale (language) in RFC 1766 Language tag format specified by the user for the UI of the Office host application.</span></span>
+<span data-ttu-id="08dbc-117">获取用户针对 Office 主机应用程序的 UI 指定的 RFC 1766 语言标记格式的区域设置（语言）。</span><span class="sxs-lookup"><span data-stu-id="08dbc-117">Gets the locale (language) in RFC 1766 Language tag format specified by the user for the UI of the Office host application.</span></span>
 
-<span data-ttu-id="f4d03-118">`displayLanguage` 值反映在 Office 主机应用程序中通过“**文件 > 选项 > 语言**”指定的当前“**显示语言**”设置。</span><span class="sxs-lookup"><span data-stu-id="f4d03-118">The `displayLanguage` value reflects the current **Display Language** setting specified with **File > Options > Language** in the Office host application.</span></span>
+<span data-ttu-id="08dbc-118">`displayLanguage` 值反映在 Office 主机应用程序中通过“**文件 > 选项 > 语言**”指定的当前“**显示语言**”设置。</span><span class="sxs-lookup"><span data-stu-id="08dbc-118">The `displayLanguage` value reflects the current **Display Language** setting specified with **File > Options > Language** in the Office host application.</span></span>
 
-##### <a name="type"></a><span data-ttu-id="f4d03-119">类型</span><span class="sxs-lookup"><span data-stu-id="f4d03-119">Type</span></span>
+##### <a name="type"></a><span data-ttu-id="08dbc-119">类型</span><span class="sxs-lookup"><span data-stu-id="08dbc-119">Type</span></span>
 
-*   <span data-ttu-id="f4d03-120">String</span><span class="sxs-lookup"><span data-stu-id="f4d03-120">String</span></span>
+*   <span data-ttu-id="08dbc-120">String</span><span class="sxs-lookup"><span data-stu-id="08dbc-120">String</span></span>
 
-##### <a name="requirements"></a><span data-ttu-id="f4d03-121">要求</span><span class="sxs-lookup"><span data-stu-id="f4d03-121">Requirements</span></span>
+##### <a name="requirements"></a><span data-ttu-id="08dbc-121">要求</span><span class="sxs-lookup"><span data-stu-id="08dbc-121">Requirements</span></span>
 
-|<span data-ttu-id="f4d03-122">要求</span><span class="sxs-lookup"><span data-stu-id="f4d03-122">Requirement</span></span>| <span data-ttu-id="f4d03-123">值</span><span class="sxs-lookup"><span data-stu-id="f4d03-123">Value</span></span>|
+|<span data-ttu-id="08dbc-122">要求</span><span class="sxs-lookup"><span data-stu-id="08dbc-122">Requirement</span></span>| <span data-ttu-id="08dbc-123">值</span><span class="sxs-lookup"><span data-stu-id="08dbc-123">Value</span></span>|
 |---|---|
-|[<span data-ttu-id="f4d03-124">最低版本的邮箱要求集</span><span class="sxs-lookup"><span data-stu-id="f4d03-124">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| <span data-ttu-id="f4d03-125">1.0</span><span class="sxs-lookup"><span data-stu-id="f4d03-125">1.0</span></span>|
-|[<span data-ttu-id="f4d03-126">适用的 Outlook 模式</span><span class="sxs-lookup"><span data-stu-id="f4d03-126">Applicable Outlook mode</span></span>](/outlook/add-ins/#extension-points)| <span data-ttu-id="f4d03-127">撰写或阅读</span><span class="sxs-lookup"><span data-stu-id="f4d03-127">Compose or Read</span></span>|
+|[<span data-ttu-id="08dbc-124">最低版本的邮箱要求集</span><span class="sxs-lookup"><span data-stu-id="08dbc-124">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| <span data-ttu-id="08dbc-125">1.0</span><span class="sxs-lookup"><span data-stu-id="08dbc-125">1.0</span></span>|
+|[<span data-ttu-id="08dbc-126">适用的 Outlook 模式</span><span class="sxs-lookup"><span data-stu-id="08dbc-126">Applicable Outlook mode</span></span>](/outlook/add-ins/#extension-points)| <span data-ttu-id="08dbc-127">撰写或阅读</span><span class="sxs-lookup"><span data-stu-id="08dbc-127">Compose or Read</span></span>|
 
-##### <a name="example"></a><span data-ttu-id="f4d03-128">示例</span><span class="sxs-lookup"><span data-stu-id="f4d03-128">Example</span></span>
+##### <a name="example"></a><span data-ttu-id="08dbc-128">示例</span><span class="sxs-lookup"><span data-stu-id="08dbc-128">Example</span></span>
 
 ```javascript
 function sayHelloWithDisplayLanguage() {
@@ -67,36 +67,36 @@ function write(message){
 }
 ```
 
-####  <a name="officetheme-object"></a><span data-ttu-id="f4d03-129">officeTheme :Object</span><span class="sxs-lookup"><span data-stu-id="f4d03-129">officeTheme :Object</span></span>
+####  <a name="officetheme-object"></a><span data-ttu-id="08dbc-129">officeTheme :Object</span><span class="sxs-lookup"><span data-stu-id="08dbc-129">officeTheme :Object</span></span>
 
-<span data-ttu-id="f4d03-130">提供了访问 Office 主题颜色的属性。</span><span class="sxs-lookup"><span data-stu-id="f4d03-130">Provides access to the properties for Office theme colors.</span></span>
+<span data-ttu-id="08dbc-130">提供了访问 Office 主题颜色的属性。</span><span class="sxs-lookup"><span data-stu-id="08dbc-130">Provides access to the properties for Office theme colors.</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="f4d03-131">在 Outlook for iOS 或 Outlook for Android 中不支持此成员。</span><span class="sxs-lookup"><span data-stu-id="f4d03-131">This member is not supported in Outlook for iOS or Outlook for Android.</span></span>
+> <span data-ttu-id="08dbc-131">在 Outlook for iOS 或 Outlook for Android 中不支持此成员。</span><span class="sxs-lookup"><span data-stu-id="08dbc-131">This member is not supported in Outlook for iOS or Outlook for Android.</span></span>
 
-<span data-ttu-id="f4d03-p102">通过使用 Office 主题颜色，你可以使外接程序的配色方案与用户（通过 **“文件”>“Office 帐户”>“Office 主题”UI**）选择的当前 Office 主题协调一致，这种做法适用于所有 Office 主机应用程序。使用 Office 主题颜色适用于邮件和任务窗格外接程序。</span><span class="sxs-lookup"><span data-stu-id="f4d03-p102">Using Office theme colors let's you coordinate the color scheme of your add-in with the current Office theme selected by the user with **File > Office Account > Office Theme UI**, which is applied across all Office host applications. Using Office theme colors is appropriate for mail and task pane add-ins.</span></span>
+<span data-ttu-id="08dbc-p102">通过使用 Office 主题颜色，你可以使外接程序的配色方案与用户（通过 **“文件”>“Office 帐户”>“Office 主题”UI**）选择的当前 Office 主题协调一致，这种做法适用于所有 Office 主机应用程序。使用 Office 主题颜色适用于邮件和任务窗格外接程序。</span><span class="sxs-lookup"><span data-stu-id="08dbc-p102">Using Office theme colors let's you coordinate the color scheme of your add-in with the current Office theme selected by the user with **File > Office Account > Office Theme UI**, which is applied across all Office host applications. Using Office theme colors is appropriate for mail and task pane add-ins.</span></span>
 
-##### <a name="type"></a><span data-ttu-id="f4d03-134">类型</span><span class="sxs-lookup"><span data-stu-id="f4d03-134">Type</span></span>
+##### <a name="type"></a><span data-ttu-id="08dbc-134">Type</span><span class="sxs-lookup"><span data-stu-id="08dbc-134">Type</span></span>
 
-*   <span data-ttu-id="f4d03-135">对象</span><span class="sxs-lookup"><span data-stu-id="f4d03-135">Object</span></span>
+*   <span data-ttu-id="08dbc-135">对象</span><span class="sxs-lookup"><span data-stu-id="08dbc-135">Object</span></span>
 
-##### <a name="properties"></a><span data-ttu-id="f4d03-136">属性：</span><span class="sxs-lookup"><span data-stu-id="f4d03-136">Properties:</span></span>
+##### <a name="properties"></a><span data-ttu-id="08dbc-136">属性：</span><span class="sxs-lookup"><span data-stu-id="08dbc-136">Properties:</span></span>
 
-|<span data-ttu-id="f4d03-137">名称</span><span class="sxs-lookup"><span data-stu-id="f4d03-137">Name</span></span>| <span data-ttu-id="f4d03-138">类型</span><span class="sxs-lookup"><span data-stu-id="f4d03-138">Type</span></span>| <span data-ttu-id="f4d03-139">说明</span><span class="sxs-lookup"><span data-stu-id="f4d03-139">Description</span></span>|
+|<span data-ttu-id="08dbc-137">名称</span><span class="sxs-lookup"><span data-stu-id="08dbc-137">Name</span></span>| <span data-ttu-id="08dbc-138">类型</span><span class="sxs-lookup"><span data-stu-id="08dbc-138">Type</span></span>| <span data-ttu-id="08dbc-139">描述</span><span class="sxs-lookup"><span data-stu-id="08dbc-139">Description</span></span>|
 |---|---|---|
-|`bodyBackgroundColor`| <span data-ttu-id="f4d03-140">String</span><span class="sxs-lookup"><span data-stu-id="f4d03-140">String</span></span>|<span data-ttu-id="f4d03-141">获取十六进制三原色形式的 Office 主题正文背景色。</span><span class="sxs-lookup"><span data-stu-id="f4d03-141">Gets the Office theme body background color as a hexadecimal color triplet.</span></span>|
-|`bodyForegroundColor`| <span data-ttu-id="f4d03-142">String</span><span class="sxs-lookup"><span data-stu-id="f4d03-142">String</span></span>|<span data-ttu-id="f4d03-143">获取十六进制三原色形式的 Office 主题正文前景色。</span><span class="sxs-lookup"><span data-stu-id="f4d03-143">Gets the Office theme body foreground color as a hexadecimal color triplet.</span></span>|
-|`controlBackgroundColor`| <span data-ttu-id="f4d03-144">String</span><span class="sxs-lookup"><span data-stu-id="f4d03-144">String</span></span>|<span data-ttu-id="f4d03-145">获取十六进制三原色形式的 Office 主题控制背景色。</span><span class="sxs-lookup"><span data-stu-id="f4d03-145">Gets the Office theme control background color as a hexadecimal color triplet.</span></span>|
-|`controlForegroundColor`| <span data-ttu-id="f4d03-146">字符串</span><span class="sxs-lookup"><span data-stu-id="f4d03-146">String</span></span>|<span data-ttu-id="f4d03-147">获取十六进制三原色形式的 Office 主题正文控制颜色。</span><span class="sxs-lookup"><span data-stu-id="f4d03-147">Gets the Office theme body control color as a hexadecimal color triplet.</span></span>|
+|`bodyBackgroundColor`| <span data-ttu-id="08dbc-140">字符串</span><span class="sxs-lookup"><span data-stu-id="08dbc-140">String</span></span>|<span data-ttu-id="08dbc-141">获取十六进制三原色形式的 Office 主题正文背景色。</span><span class="sxs-lookup"><span data-stu-id="08dbc-141">Gets the Office theme body background color as a hexadecimal color triplet.</span></span>|
+|`bodyForegroundColor`| <span data-ttu-id="08dbc-142">String</span><span class="sxs-lookup"><span data-stu-id="08dbc-142">String</span></span>|<span data-ttu-id="08dbc-143">获取十六进制三原色形式的 Office 主题正文前景色。</span><span class="sxs-lookup"><span data-stu-id="08dbc-143">Gets the Office theme body foreground color as a hexadecimal color triplet.</span></span>|
+|`controlBackgroundColor`| <span data-ttu-id="08dbc-144">字符串</span><span class="sxs-lookup"><span data-stu-id="08dbc-144">String</span></span>|<span data-ttu-id="08dbc-145">获取十六进制三原色形式的 Office 主题控制背景色。</span><span class="sxs-lookup"><span data-stu-id="08dbc-145">Gets the Office theme control background color as a hexadecimal color triplet.</span></span>|
+|`controlForegroundColor`| <span data-ttu-id="08dbc-146">字符串</span><span class="sxs-lookup"><span data-stu-id="08dbc-146">String</span></span>|<span data-ttu-id="08dbc-147">获取十六进制三原色形式的 Office 主题正文控制颜色。</span><span class="sxs-lookup"><span data-stu-id="08dbc-147">Gets the Office theme body control color as a hexadecimal color triplet.</span></span>|
 
-##### <a name="requirements"></a><span data-ttu-id="f4d03-148">Requirements</span><span class="sxs-lookup"><span data-stu-id="f4d03-148">Requirements</span></span>
+##### <a name="requirements"></a><span data-ttu-id="08dbc-148">Requirements</span><span class="sxs-lookup"><span data-stu-id="08dbc-148">Requirements</span></span>
 
-|<span data-ttu-id="f4d03-149">要求</span><span class="sxs-lookup"><span data-stu-id="f4d03-149">Requirement</span></span>| <span data-ttu-id="f4d03-150">值</span><span class="sxs-lookup"><span data-stu-id="f4d03-150">Value</span></span>|
+|<span data-ttu-id="08dbc-149">要求</span><span class="sxs-lookup"><span data-stu-id="08dbc-149">Requirement</span></span>| <span data-ttu-id="08dbc-150">值</span><span class="sxs-lookup"><span data-stu-id="08dbc-150">Value</span></span>|
 |---|---|
-|[<span data-ttu-id="f4d03-151">最低版本的邮箱要求集</span><span class="sxs-lookup"><span data-stu-id="f4d03-151">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| <span data-ttu-id="f4d03-152">1.3</span><span class="sxs-lookup"><span data-stu-id="f4d03-152">1.3</span></span>|
-|[<span data-ttu-id="f4d03-153">适用的 Outlook 模式</span><span class="sxs-lookup"><span data-stu-id="f4d03-153">Applicable Outlook mode</span></span>](/outlook/add-ins/#extension-points)| <span data-ttu-id="f4d03-154">撰写或阅读</span><span class="sxs-lookup"><span data-stu-id="f4d03-154">Compose or Read</span></span>|
+|[<span data-ttu-id="08dbc-151">最低版本的邮箱要求集</span><span class="sxs-lookup"><span data-stu-id="08dbc-151">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| <span data-ttu-id="08dbc-152">1.3</span><span class="sxs-lookup"><span data-stu-id="08dbc-152">1.3</span></span>|
+|[<span data-ttu-id="08dbc-153">适用的 Outlook 模式</span><span class="sxs-lookup"><span data-stu-id="08dbc-153">Applicable Outlook mode</span></span>](/outlook/add-ins/#extension-points)| <span data-ttu-id="08dbc-154">撰写或阅读</span><span class="sxs-lookup"><span data-stu-id="08dbc-154">Compose or Read</span></span>|
 
-##### <a name="example"></a><span data-ttu-id="f4d03-155">示例</span><span class="sxs-lookup"><span data-stu-id="f4d03-155">Example</span></span>
+##### <a name="example"></a><span data-ttu-id="08dbc-155">示例</span><span class="sxs-lookup"><span data-stu-id="08dbc-155">Example</span></span>
 
 ```javascript
 function applyOfficeTheme(){
@@ -111,20 +111,20 @@ function applyOfficeTheme(){
 }
 ```
 
-####  <a name="roamingsettings-roamingsettingsjavascriptapioutlook14officeroamingsettings"></a><span data-ttu-id="f4d03-156">roamingSettings :[RoamingSettings](/javascript/api/outlook_1_4/office.RoamingSettings)</span><span class="sxs-lookup"><span data-stu-id="f4d03-156">roamingSettings :[RoamingSettings](/javascript/api/outlook_1_4/office.RoamingSettings)</span></span>
+####  <a name="roamingsettings-roamingsettingsjavascriptapioutlook14officeroamingsettings"></a><span data-ttu-id="08dbc-156">roamingSettings :[RoamingSettings](/javascript/api/outlook_1_4/office.RoamingSettings)</span><span class="sxs-lookup"><span data-stu-id="08dbc-156">roamingSettings :[RoamingSettings](/javascript/api/outlook_1_4/office.RoamingSettings)</span></span>
 
-<span data-ttu-id="f4d03-157">获取一个对象，它表示保存到用户邮箱的邮件外接程序的自定义设置或状态。</span><span class="sxs-lookup"><span data-stu-id="f4d03-157">Gets an object that represents the custom settings or state of a mail add-in saved to a user's mailbox.</span></span>
+<span data-ttu-id="08dbc-157">获取一个对象，它表示保存到用户邮箱的邮件外接程序的自定义设置或状态。</span><span class="sxs-lookup"><span data-stu-id="08dbc-157">Gets an object that represents the custom settings or state of a mail add-in saved to a user's mailbox.</span></span>
 
-<span data-ttu-id="f4d03-158">`RoamingSettings` 对象允许您存储和访问用户邮箱中存储的邮件外接程序的数据，以便从用于访问该邮箱的任何主机客户端应用程序中运行该外接程序时，该外接程序可以使用该数据。</span><span class="sxs-lookup"><span data-stu-id="f4d03-158">The `RoamingSettings` object lets you store and access data for a mail add-in that is stored in a user's mailbox, so that is available to that add-in when it is running from any host client application used to access that mailbox.</span></span>
+<span data-ttu-id="08dbc-158">`RoamingSettings` 对象允许您存储和访问用户邮箱中存储的邮件外接程序的数据，以便从用于访问该邮箱的任何主机客户端应用程序中运行该外接程序时，该外接程序可以使用该数据。</span><span class="sxs-lookup"><span data-stu-id="08dbc-158">The `RoamingSettings` object lets you store and access data for a mail add-in that is stored in a user's mailbox, so that is available to that add-in when it is running from any host client application used to access that mailbox.</span></span>
 
-##### <a name="type"></a><span data-ttu-id="f4d03-159">类型</span><span class="sxs-lookup"><span data-stu-id="f4d03-159">Type</span></span>
+##### <a name="type"></a><span data-ttu-id="08dbc-159">Type</span><span class="sxs-lookup"><span data-stu-id="08dbc-159">Type</span></span>
 
-*   [<span data-ttu-id="f4d03-160">RoamingSettings</span><span class="sxs-lookup"><span data-stu-id="f4d03-160">RoamingSettings</span></span>](/javascript/api/outlook_1_4/office.RoamingSettings)
+*   [<span data-ttu-id="08dbc-160">RoamingSettings</span><span class="sxs-lookup"><span data-stu-id="08dbc-160">RoamingSettings</span></span>](/javascript/api/outlook_1_4/office.RoamingSettings)
 
-##### <a name="requirements"></a><span data-ttu-id="f4d03-161">Requirements</span><span class="sxs-lookup"><span data-stu-id="f4d03-161">Requirements</span></span>
+##### <a name="requirements"></a><span data-ttu-id="08dbc-161">Requirements</span><span class="sxs-lookup"><span data-stu-id="08dbc-161">Requirements</span></span>
 
-|<span data-ttu-id="f4d03-162">要求</span><span class="sxs-lookup"><span data-stu-id="f4d03-162">Requirement</span></span>| <span data-ttu-id="f4d03-163">值</span><span class="sxs-lookup"><span data-stu-id="f4d03-163">Value</span></span>|
+|<span data-ttu-id="08dbc-162">要求</span><span class="sxs-lookup"><span data-stu-id="08dbc-162">Requirement</span></span>| <span data-ttu-id="08dbc-163">值</span><span class="sxs-lookup"><span data-stu-id="08dbc-163">Value</span></span>|
 |---|---|
-|[<span data-ttu-id="f4d03-164">最低版本的邮箱要求集</span><span class="sxs-lookup"><span data-stu-id="f4d03-164">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| <span data-ttu-id="f4d03-165">1.0</span><span class="sxs-lookup"><span data-stu-id="f4d03-165">1.0</span></span>|
-|[<span data-ttu-id="f4d03-166">最低权限级别</span><span class="sxs-lookup"><span data-stu-id="f4d03-166">Minimum permission level</span></span>](/outlook/add-ins/understanding-outlook-add-in-permissions)| <span data-ttu-id="f4d03-167">受限</span><span class="sxs-lookup"><span data-stu-id="f4d03-167">Restricted</span></span>|
-|[<span data-ttu-id="f4d03-168">适用的 Outlook 模式</span><span class="sxs-lookup"><span data-stu-id="f4d03-168">Applicable Outlook mode</span></span>](/outlook/add-ins/#extension-points)| <span data-ttu-id="f4d03-169">撰写或阅读</span><span class="sxs-lookup"><span data-stu-id="f4d03-169">Compose or Read</span></span>|
+|[<span data-ttu-id="08dbc-164">最低版本的邮箱要求集</span><span class="sxs-lookup"><span data-stu-id="08dbc-164">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| <span data-ttu-id="08dbc-165">1.0</span><span class="sxs-lookup"><span data-stu-id="08dbc-165">1.0</span></span>|
+|[<span data-ttu-id="08dbc-166">最低权限级别</span><span class="sxs-lookup"><span data-stu-id="08dbc-166">Minimum permission level</span></span>](/outlook/add-ins/understanding-outlook-add-in-permissions)| <span data-ttu-id="08dbc-167">受限</span><span class="sxs-lookup"><span data-stu-id="08dbc-167">Restricted</span></span>|
+|[<span data-ttu-id="08dbc-168">适用的 Outlook 模式</span><span class="sxs-lookup"><span data-stu-id="08dbc-168">Applicable Outlook mode</span></span>](/outlook/add-ins/#extension-points)| <span data-ttu-id="08dbc-169">撰写或阅读</span><span class="sxs-lookup"><span data-stu-id="08dbc-169">Compose or Read</span></span>|

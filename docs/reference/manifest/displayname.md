@@ -2,31 +2,32 @@
 title: 清单文件中的 DisplayName 元素
 description: ''
 ms.date: 10/09/2018
-ms.openlocfilehash: 75f337a4b9d5e52b068802002e653584e6324df1
-ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
-ms.translationtype: HT
+localization_priority: Normal
+ms.openlocfilehash: f3c986c92bfcdfa0ea419d81d0ae0c4c8db3f61f
+ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/22/2018
-ms.locfileid: "27433416"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "32450490"
 ---
-# <a name="displayname-element"></a><span data-ttu-id="4a526-102">DisplayName 元素</span><span class="sxs-lookup"><span data-stu-id="4a526-102">DisplayName element</span></span>
+# <a name="displayname-element"></a><span data-ttu-id="f4754-102">DisplayName 元素</span><span class="sxs-lookup"><span data-stu-id="f4754-102">DisplayName element</span></span>
 
-<span data-ttu-id="4a526-103">指定 Office 外接程序的名称为最长 125 个字符的字符串。</span><span class="sxs-lookup"><span data-stu-id="4a526-103">Specifies the name for your Office Add-in as a string up to 125 characters long.</span></span>
+<span data-ttu-id="f4754-103">指定 Office 外接程序的名称为最长 125 个字符的字符串。</span><span class="sxs-lookup"><span data-stu-id="f4754-103">Specifies the name for your Office Add-in as a string up to 125 characters long.</span></span>
 
-<span data-ttu-id="4a526-104">**加载项类型：** 内容、任务窗格和邮件</span><span class="sxs-lookup"><span data-stu-id="4a526-104">**Add-in type:** Content, Task pane, Mail</span></span>
+<span data-ttu-id="f4754-104">**加载项类型：** 内容、任务窗格和邮件</span><span class="sxs-lookup"><span data-stu-id="f4754-104">**Add-in type:** Content, Task pane, Mail</span></span>
 
-## <a name="syntax"></a><span data-ttu-id="4a526-105">语法</span><span class="sxs-lookup"><span data-stu-id="4a526-105">Syntax</span></span>
+## <a name="syntax"></a><span data-ttu-id="f4754-105">语法</span><span class="sxs-lookup"><span data-stu-id="f4754-105">Syntax</span></span>
 
 ```XML
 <DisplayName DefaultValue="string" />
 ```
 
-## <a name="contained-in"></a><span data-ttu-id="4a526-106">包含于</span><span class="sxs-lookup"><span data-stu-id="4a526-106">Contained in</span></span>
+## <a name="contained-in"></a><span data-ttu-id="f4754-106">包含于</span><span class="sxs-lookup"><span data-stu-id="f4754-106">Contained in</span></span>
 
-[<span data-ttu-id="4a526-107">OfficeApp</span><span class="sxs-lookup"><span data-stu-id="4a526-107">OfficeApp</span></span>](officeapp.md)
+[<span data-ttu-id="f4754-107">OfficeApp</span><span class="sxs-lookup"><span data-stu-id="f4754-107">OfficeApp</span></span>](officeapp.md)
 
 
-## <a name="can-contain"></a><span data-ttu-id="4a526-108">可以包含</span><span class="sxs-lookup"><span data-stu-id="4a526-108">Can contain</span></span>
+## <a name="can-contain"></a><span data-ttu-id="f4754-108">可以包含</span><span class="sxs-lookup"><span data-stu-id="f4754-108">Can contain</span></span>
 
-[<span data-ttu-id="4a526-109">Override</span><span class="sxs-lookup"><span data-stu-id="4a526-109">Override</span></span>](override.md)
+[<span data-ttu-id="f4754-109">Override</span><span class="sxs-lookup"><span data-stu-id="f4754-109">Override</span></span>](override.md)
 
