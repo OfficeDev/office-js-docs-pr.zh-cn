@@ -4,11 +4,11 @@ description: Excel 自定义函数中的常见问题疑难解答。
 title: 自定义函数疑难解答（预览版）
 localization_priority: Priority
 ms.openlocfilehash: cf54aa3b719b7893799df5d1c5206c6fb904be69
-ms.sourcegitcommit: 44c61926d35809152cbd48f7b97feb694c7fa3de
+ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "31959102"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "32449216"
 ---
 # <a name="troubleshoot-custom-functions"></a>自定义函数疑难解答
 

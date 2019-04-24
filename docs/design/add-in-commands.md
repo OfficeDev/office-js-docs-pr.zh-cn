@@ -4,11 +4,11 @@ description: ''
 ms.date: 04/05/2019
 localization_priority: Priority
 ms.openlocfilehash: 0a2a28e09061248851e8ee1037d0219c7fcda1a5
-ms.sourcegitcommit: fbe2a799fda71aab73ff1c5546c936edbac14e47
+ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/10/2019
-ms.locfileid: "31764395"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "32448725"
 ---
 # <a name="add-in-commands-for-excel-word-and-powerpoint"></a>Excel、Word 和 PowerPoint 加载项命令
 
@@ -19,11 +19,11 @@ ms.locfileid: "31764395"
 > [!NOTE]
 > SharePoint 目录不支持加载项命令。可以通过[集中部署](../publish/centralized-deployment.md)或 [AppSource](/office/dev/store/submit-to-the-office-store) 部署加载项命令，也可以使用[旁加载](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)部署加载项命令以供测试。 
 
-*图 1. 命令在 Excel Desktop 中运行的加载项*
+*图 1：在 Excel Desktop 中运行命令的加载项*
 
 ![Excel 中的加载项命令屏幕截图](../images/add-in-commands-1.png)
 
-*图 2. 命令在 Excel Online 中运行的外接程序*
+*图 2：在 Excel Online 中运行命令的加载项*
 
 ![Excel Online 中的加载项命令屏幕截图](../images/add-in-commands-2.png)
 
@@ -37,7 +37,7 @@ ms.locfileid: "31764395"
 **扩展点**
 
 - 功能区选项卡 - 扩展内置选项卡或新建自定义选项卡。
-- 上下文菜单 - 扩展所选上下文菜单。
+- 上下文菜单 - 扩展选定上下文菜单。
 
 **控件类型**
 

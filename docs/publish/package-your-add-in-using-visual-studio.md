@@ -4,11 +4,11 @@ description: 如何使用 Visual Studio 2017 部署 Web 项目并打包加载项
 ms.date: 03/19/2019
 localization_priority: Priority
 ms.openlocfilehash: 9233ebed217c9e4cc5def0dace67043f29462296
-ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
+ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "30871260"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "32451085"
 ---
 # <a name="package-your-add-in-using-visual-studio-to-prepare-for-publishing"></a>使用 Visual Studio 打包加载项以准备发布
 

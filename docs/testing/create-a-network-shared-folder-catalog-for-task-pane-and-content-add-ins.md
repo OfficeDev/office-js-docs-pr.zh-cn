@@ -4,11 +4,11 @@ description: ''
 ms.date: 03/19/2019
 localization_priority: Priority
 ms.openlocfilehash: 79d1bfc9332208e59e750e94a14abd6f1192ebe6
-ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
+ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "30871582"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "32450190"
 ---
 # <a name="sideload-office-add-ins-for-testing"></a>旁加载 Office 加载项以供测试
 

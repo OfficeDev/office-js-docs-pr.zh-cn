@@ -4,11 +4,11 @@ description: ''
 ms.date: 02/12/2019
 localization_priority: Priority
 ms.openlocfilehash: 6420107f29fd285e52839cd737f19472194b835f
-ms.sourcegitcommit: a59f4e322238efa187f388a75b7709462c71e668
+ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "29981997"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "32448782"
 ---
 # <a name="authorize-external-services-in-your-office-add-in"></a>在 Office 加载项中授权外部服务
 
@@ -18,7 +18,7 @@ ms.locfileid: "29981997"
 
 OAuth 的基本概念是，应用程序本身可以是一个安全主体，就像一个用户或组，拥有其自己的标识和权限集。 在最典型的应用场景中，当用户在需要联机服务的 Office 加载项中进行操作时，加载项会向服务发送请求，请求为用户帐户提供一组特定权限。 然后，该服务会提示用户向加载项授予这些权限。 授予权限之后，该服务会向外接程序发送一个小的编码*访问令牌*。 外接程序可以通过在其向服务 API 发送的所有请求中包含令牌来使用该服务。 但外接程序只能在用户授予它的权限范围内进行操作。 令牌还会在某个指定时间后过期。
 
-几种称为*流*或*授权类型*的 OAuth 模式专为不同方案而设计。 以下两种模式最常实现：
+针对不同方案，设计了几种 OAuth 模式（称为*流*或*授权类型*）。 以下两种模式最常实现：
 
 - **隐式流**：加载项与在线服务的通信是通过客户端 JavaScript 实现。
 - **授权代码流**：加载项 Web 应用与在线服务的通信是*服务器间*通信。因此，它是通过服务器端代码实现。

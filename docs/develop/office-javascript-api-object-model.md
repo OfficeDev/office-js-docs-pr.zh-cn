@@ -4,11 +4,11 @@ description: ''
 ms.date: 03/19/2019
 localization_priority: Priority
 ms.openlocfilehash: 2d5067b8cd6942bee04602d5dc38effc47c504f3
-ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
+ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "30870483"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "32449755"
 ---
 # <a name="office-javascript-api-object-model"></a>Office JavaScript API 对象模型
 

@@ -5,11 +5,11 @@ ms.date: 03/19/2019
 ms.prod: onenote
 localization_priority: Priority
 ms.openlocfilehash: 378d691d1994a2d22166afc5338007400f7a48af
-ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
+ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "30871918"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "32450883"
 ---
 # <a name="build-your-first-onenote-add-in"></a>生成首个 OneNote 加载项
 

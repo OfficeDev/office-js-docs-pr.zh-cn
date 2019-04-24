@@ -5,11 +5,11 @@ ms.date: 01/17/2019
 ms.prod: powerpoint
 localization_priority: Priority
 ms.openlocfilehash: 21641e1eaf424b77af118fc5f7fb394102f77402
-ms.sourcegitcommit: 33dcf099c6b3d249811580d67ee9b790c0fdccfb
+ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "29742434"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "32451225"
 ---
 # <a name="build-your-first-powerpoint-add-in"></a>生成首个 PowerPoint 加载项
 

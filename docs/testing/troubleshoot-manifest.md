@@ -4,11 +4,11 @@ description: 使用这些方法验证 Office 加载项清单。
 ms.date: 11/02/2018
 localization_priority: Priority
 ms.openlocfilehash: 921adf6f1f398887d96031790facc1fb1425af2b
-ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
+ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "29388373"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "32451150"
 ---
 # <a name="validate-and-troubleshoot-issues-with-your-manifest"></a>验证并排查清单问题
 

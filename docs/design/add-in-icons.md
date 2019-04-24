@@ -4,11 +4,11 @@ description: ''
 ms.date: 03/02/2019
 localization_priority: Priority
 ms.openlocfilehash: 8e741f70327584ddd1b6f51f19b276e072862229
-ms.sourcegitcommit: 7ebd383f16ae5809bb6980a5f213b695d410e62c
+ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "30413634"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "32448863"
 ---
 # <a name="icons"></a>图标
 图标是行为或概念的可视化表示形式。 它们通常用于为控件和命令添加含义。 实际或符号化的视觉对象使用户能够以与标记帮助用户浏览其环境的相同方式浏览 UI。 这些视觉对象应简单明了，并且只包含所需的详细信息，以使客户能够快速分析他们在选择控件时将会发生的操作。

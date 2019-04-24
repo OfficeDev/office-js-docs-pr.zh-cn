@@ -5,11 +5,11 @@ ms.date: 01/17/2019
 ms.prod: project
 localization_priority: Priority
 ms.openlocfilehash: 4d0dfa98d36d6da56fe2b9687922371eea29062a
-ms.sourcegitcommit: 33dcf099c6b3d249811580d67ee9b790c0fdccfb
+ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "29742231"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "32450766"
 ---
 # <a name="build-your-first-project-add-in"></a>生成首个 Project 加载项
 

@@ -4,11 +4,11 @@ description: ''
 ms.date: 03/19/2019
 localization_priority: Priority
 ms.openlocfilehash: 5a6846133fc5aeed5eab84f961d76b93b31e562f
-ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
+ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "30872023"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "32449741"
 ---
 # <a name="persisting-add-in-state-and-settings"></a>暂留加载项状态和设置
 

@@ -4,11 +4,11 @@ description: 了解如何在不同平台上使用自定义函数。
 title: 自定义函数要求（预览版）
 localization_priority: Priority
 ms.openlocfilehash: 0226c5e129794e8105966e753e791ec20766e10c
-ms.sourcegitcommit: 33dcf099c6b3d249811580d67ee9b790c0fdccfb
+ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "29745402"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "32449244"
 ---
 # <a name="custom-functions-requirements"></a>自定义函数要求
 

@@ -4,11 +4,11 @@ description: ''
 ms.date: 03/22/2019
 localization_priority: Priority
 ms.openlocfilehash: 1b885834304ebedd62eea206f02dae4bacefba5c
-ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
+ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "30872156"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "32449958"
 ---
 # <a name="troubleshoot-error-messages-for-single-sign-on-sso-preview"></a>排查单一登录 (SSO) 错误消息（预览）
 

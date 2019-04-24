@@ -4,11 +4,11 @@ description: ''
 ms.date: 04/18/2019
 localization_priority: Priority
 ms.openlocfilehash: ba48fce1bee28bf4cad8b5d0ab91d9c1fb12fea8
-ms.sourcegitcommit: 44c61926d35809152cbd48f7b97feb694c7fa3de
+ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "31959130"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "32449515"
 ---
 # <a name="work-with-tables-using-the-excel-javascript-api"></a>使用 Excel JavaScript API 处理表格
 

@@ -5,11 +5,11 @@ ms.date: 03/19/2019
 ms.prod: non-product-specific
 localization_priority: Priority
 ms.openlocfilehash: 656639f8383ca30b5bf4c9ed78f46d3ec6cbcefc
-ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
+ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "30870728"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "32450238"
 ---
 # <a name="powerpoint-and-project-in-the-javascript-api"></a>JavaScript API 中的 PowerPoint 和 Project
 

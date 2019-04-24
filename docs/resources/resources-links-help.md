@@ -4,11 +4,11 @@ description: ''
 ms.date: 04/12/2018
 localization_priority: Priority
 ms.openlocfilehash: d3f2ef2d8dde3807843f295765232851ccdd7913
-ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
+ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "29386447"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "32451323"
 ---
 # <a name="office-add-ins-additional-resources"></a>Office 加载项其他资源
 

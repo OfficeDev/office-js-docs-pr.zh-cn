@@ -4,11 +4,11 @@ description: 使用 Visual Studio 在 Windows 的 Office 桌面客户端上创�
 ms.date: 03/19/2019
 localization_priority: Priority
 ms.openlocfilehash: 74a1430482b507d04f1be60683242fd9ae4a4393
-ms.sourcegitcommit: 95ed6dfbfa680dbb40ff9757020fa7e5be4760b6
+ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/13/2019
-ms.locfileid: "31838506"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "32449906"
 ---
 # <a name="create-and-debug-office-add-ins-in-visual-studio"></a>在 Visual Studio 中创建和调试 Office 外接程序
 

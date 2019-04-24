@@ -4,11 +4,11 @@ description: ''
 ms.date: 02/28/2019
 localization_priority: Priority
 ms.openlocfilehash: 11bb9daf99d85f1c4551363e9f04056870631378
-ms.sourcegitcommit: c5daedf017c6dd5ab0c13607589208c3f3627354
+ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/20/2019
-ms.locfileid: "30691144"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "32449027"
 ---
 # <a name="use-office-ui-fabric-react-in-office-add-ins"></a>在 Office 加载项中使用 Office UI Fabric React
 

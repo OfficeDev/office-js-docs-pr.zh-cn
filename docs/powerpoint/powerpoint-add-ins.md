@@ -4,11 +4,11 @@ description: ''
 ms.date: 04/15/2019
 localization_priority: Priority
 ms.openlocfilehash: 6e518d0bfd37291e39ee17e96ded8debb183c19f
-ms.sourcegitcommit: 6d375518c119d09c8d3fb5f0cc4583ba5b20ac03
+ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "31914226"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "32450910"
 ---
 # <a name="powerpoint-add-ins"></a>PowerPoint 加载项
 
