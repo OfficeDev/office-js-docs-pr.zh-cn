@@ -4,11 +4,11 @@ description: ''
 ms.date: 01/23/2018
 localization_priority: Priority
 ms.openlocfilehash: ad0c948be710f6274d50c341854e43fc42639ee8
-ms.sourcegitcommit: 33dcf099c6b3d249811580d67ee9b790c0fdccfb
+ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "29742259"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "32448447"
 ---
 # <a name="get-started-with-excel-add-ins"></a>开始使用 Excel 加载项
 

@@ -4,11 +4,11 @@ description: ''
 ms.date: 12/04/2017
 localization_priority: Priority
 ms.openlocfilehash: 70faca768f5af70baf389c16fe8259427a85e8d9
-ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
+ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "29388715"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "32448152"
 ---
 # <a name="design-your-office-add-ins"></a>设计 Office 加载项
 

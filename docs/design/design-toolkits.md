@@ -4,11 +4,11 @@ description: ''
 ms.date: 06/27/2018
 localization_priority: Priority
 ms.openlocfilehash: d950792d285c14f94eb9d56b2faff1cf129dba4d
-ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
+ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "29386741"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "32446711"
 ---
 # <a name="design-toolkits"></a>设计工具包
 

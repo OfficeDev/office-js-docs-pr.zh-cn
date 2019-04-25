@@ -4,11 +4,11 @@ description: 使用 Excel JavaScript API 生成 Excel 加载项。
 ms.date: 03/19/2019
 localization_priority: Priority
 ms.openlocfilehash: c6552ff5df3a8cf9c6c329dcfbbbe001a6a2ed6b
-ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
+ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "30871850"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "32448187"
 ---
 # <a name="fundamental-programming-concepts-with-the-excel-javascript-api"></a>Excel JavaScript API 基本编程概念
 

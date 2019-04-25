@@ -4,11 +4,11 @@ description: 任务窗格允许用户访问界面控件，此类控件运行代�
 ms.date: 02/28/2019
 localization_priority: Priority
 ms.openlocfilehash: 7720f476333f9fd3ed654574f612bf7da735867f
-ms.sourcegitcommit: c5daedf017c6dd5ab0c13607589208c3f3627354
+ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/20/2019
-ms.locfileid: "30691116"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "32446266"
 ---
 # <a name="task-panes-in-office-add-ins"></a>Office 加载项中的任务窗格
  
