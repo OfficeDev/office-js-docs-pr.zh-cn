@@ -4,11 +4,11 @@ description: ''
 ms.date: 03/21/2019
 localization_priority: Normal
 ms.openlocfilehash: e4d01c387fff01d68cb26369240a1e06e723a54c
-ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
+ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "30926647"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "32448262"
 ---
 # <a name="work-with-shapes-using-the-excel-javascript-api-preview"></a>使用 Excel JavaScript API 处理形状 (预览)
 
@@ -23,7 +23,7 @@ excel 将形状定义为位于 Excel 绘图层的任何对象。 这意味着单
 
 使用关联的方法添加以下类型的形状:
 
-| Shape | Add 方法 | 签名 |
+| 型号 | Add 方法 | 签名 |
 |-------|------------|-----------|
 | 几何形状 | [addGeometricShape](/javascript/api/excel/excel.shapecollection#addgeometricshape-geometricshapetype-) | `addGeometricShape(geometricShapeType: Excel.GeometricShapeType): Excel.Shape` |
 | 图像 (JPEG 或 PNG) | [addImage](/javascript/api/excel/excel.shapecollection#addimage-base64imagestring-) | `addImage(base64ImageString: string): Excel.Shape` |

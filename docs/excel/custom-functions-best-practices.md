@@ -4,11 +4,11 @@ description: 了解在 Excel 中开发自定义函数的最佳实践。
 title: 自定义函数最佳实践（预览）
 localization_priority: Normal
 ms.openlocfilehash: 4efcd0ba5efb0dc7450192694e8f0750de43b8a8
-ms.sourcegitcommit: 14ceac067e0e130869b861d289edb438b5e3eff9
+ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/04/2019
-ms.locfileid: "31477542"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "32448607"
 ---
 # <a name="custom-functions-best-practices-preview"></a>自定义函数最佳实践（预览）
 

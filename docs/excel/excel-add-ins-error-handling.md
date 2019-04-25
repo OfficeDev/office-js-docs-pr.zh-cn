@@ -4,11 +4,11 @@ description: ''
 ms.date: 03/19/2019
 localization_priority: Normal
 ms.openlocfilehash: 87401773ad4a27bf0a30bc80b229d2879dd5234f
-ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
+ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "30871064"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "32448159"
 ---
 # <a name="error-handling"></a>错误处理
 
@@ -53,7 +53,7 @@ Excel.run(function (context) {
 
 |error.code | error.message |
 |:----------|:--------------|
-|InvalidArgument |参数无效或缺少或格式不正确。|
+|InvalidArgument |自变量无效、缺少或格式不正确。|
 |InvalidRequest  |无法处理此请求。|
 |InvalidReference|此引用对于当前操作无效。|
 |InvalidBinding  |由于之前的更新，此对象绑定不再有效。|

@@ -4,11 +4,11 @@ description: 了解开发使用新 JavaScript 运行时的 Excel 自定义函数
 title: Excel 自定义函数的运行时（预览）
 localization_priority: Normal
 ms.openlocfilehash: 85024b6c3559e2a5f32bae9297787f8052bba38d
-ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
+ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "30871778"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "32448215"
 ---
 # <a name="runtime-for-excel-custom-functions-preview"></a>Excel 自定义函数的运行时（预览）
 
@@ -22,7 +22,7 @@ ms.locfileid: "30871778"
 
 在自定义函数使用的 JavaScript 运行时中, XHR 通过要求使用[相同的源策略](https://developer.mozilla.org/en-US/docs/Web/Security/Same-origin_policy)和简单的[CORS](https://www.w3.org/TR/cors/)来实现其他安全措施。
 
-请注意, 简单的 CORS 实现无法使用 cookie, 仅支持简单方法 (GET、HEAD、POST)。 简单 CORS 接受包含字段名称`Accept`、 `Accept-Language`、 `Content-Language`的简单标头。 您还可以使用简单`Content-Type` CORS 中的标头, 只要内容类型为`application/x-www-form-urlencoded`、 `text/plain`或。 `multipart/form-data`
+请注意，简单的 CORS 实施不能使用 cookie，且仅支持简单的方法（GET、HEAD、POST）。 简单的 CORS 接受字段名称为 `Accept`、`Accept-Language`、`Content-Language` 的简单标题。 您还可以使用简单`Content-Type` CORS 中的标头, 只要内容类型为`application/x-www-form-urlencoded`、 `text/plain`或。 `multipart/form-data`
 
 ### <a name="xhr-example"></a>XHR 示例
 

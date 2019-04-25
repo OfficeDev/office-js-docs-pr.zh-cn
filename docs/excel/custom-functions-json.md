@@ -4,11 +4,11 @@ description: 在 Excel 中定义自定义函数的元数据。
 title: Excel 中的自定义函数的元数据（预览）
 localization_priority: Normal
 ms.openlocfilehash: 3703699348e99fd076fe0e3affac88038e3aaf59
-ms.sourcegitcommit: 6d375518c119d09c8d3fb5f0cc4583ba5b20ac03
+ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "31914254"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "32448203"
 ---
 # <a name="custom-functions-metadata-preview"></a>自定义函数元数据（预览）
 
