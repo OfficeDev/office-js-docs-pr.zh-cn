@@ -3,12 +3,12 @@ title: 使用 Excel JavaScript API 处理工作表
 description: ''
 ms.date: 04/18/2019
 localization_priority: Priority
-ms.openlocfilehash: 5df0bbdd1b6cf1cf3ef7a6aa14b7e00dee7ad9b2
-ms.sourcegitcommit: 44c61926d35809152cbd48f7b97feb694c7fa3de
+ms.openlocfilehash: 002c5763ebcfbbecbcfc5cb416d200b357c45bf2
+ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "31959116"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "32448460"
 ---
 # <a name="work-with-worksheets-using-the-excel-javascript-api"></a>使用 Excel JavaScript API 处理工作表
 
@@ -400,6 +400,45 @@ Excel.run(function (context) {
 - `password`：表示用户规避保护并编辑工作表所需使用的密码的字符串。
 
 [保护工作表](https://support.office.com/article/protect-a-worksheet-3179efdb-1285-4d49-a9c3-f4ca36276de6)一文详细介绍了工作表保护，以及如何通过 Excel UI 更改保护。
+
+## <a name="page-layout-and-print-settings"></a>页面布局和打印设置
+
+> [!NOTE]
+> 此部分中与页面布局关联的 API 目前仅在公共预览版中可用。 [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
+
+加载项可以在工作表级别访问页面布局设置。 这些控制打印工作表的方式。 `Worksheet` 对象有三个与布局相关的属性：`horizontalPageBreaks`、`verticalPageBreaks`、`pageLayout`。
+
+`Worksheet.horizontalPageBreaks` 和 `Worksheet.verticalPageBreaks` 是 [PageBreakCollections](/javascript/api/excel/excel.pagebreakcollection)。 这些是 [PageBreaks](/javascript/api/excel/excel.pagebreak) 的集合，其中指定插入手动分页符的范围。 以下代码示例在第 **21** 行上方添加了水平分页符。
+
+```js
+Excel.run(function (context) {
+    var sheet = context.workbook.worksheets.getActiveWorksheet();
+    sheet.horizontalPageBreaks.add("A21:E21"); // The page break is added above this range.
+    return context.sync();
+}).catch(errorHandlerFunction);
+```
+
+`Worksheet.pageLayout` 是 [PageLayout](/javascript/api/excel/excel.pagelayout) 对象。 此对象包含不依赖于任何打印机特定实现的布局和打印设置。 这些设置包括页边距、方向、页码编号、标题行，并打印区域。
+
+以下代码示例使页面居中（垂直和水平），设置将在每页顶部打印的标题行，并将打印区域设置为工作表的子部分。
+
+```js
+Excel.run(function (context) {
+    var sheet = context.workbook.worksheets.getActiveWorksheet();
+
+    // Center the page in both directions.
+    sheet.pageLayout.centerHorizontally = true;
+    sheet.pageLayout.centerVertically = true;
+
+    // Set the first row as the title row for every page.
+    sheet.pageLayout.setPrintTitleRows("$1:$1");
+
+    // Limit the area to be printed to the range "A1:D100".
+    sheet.pageLayout.setPrintArea("A1:D100");
+
+    return context.sync();
+}).catch(errorHandlerFunction);
+```
 
 ## <a name="see-also"></a>另请参阅
 
