@@ -1,14 +1,14 @@
 ---
-ms.date: 03/21/2019
+ms.date: 04/20/2019
 description: 使用 Excel 中的自定义函数请求、流式处理和取消流式处理工作簿的外部数据
 title: 使用自定义函数进行 Web 请求和其他数据处理（预览版）
 localization_priority: Priority
-ms.openlocfilehash: 9256e2aa87ec6d7b314314a1e4bc2b3793f1df5c
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: 2942ec56e46d6eb586b516eedab17c1eeb98d9c8
+ms.sourcegitcommit: 7462409209264dc7f8f89f3808a7a6249fcd739e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32449706"
+ms.lasthandoff: 04/26/2019
+ms.locfileid: "33353263"
 ---
 # <a name="receiving-and-handling-data-with-custom-functions"></a>使用自定义函数接收和处理数据
 
@@ -148,32 +148,7 @@ function incrementValue(increment, handler){
 CustomFunctions.associate("INCREMENTVALUE", incrementValue);
 ```
 
-在 JSON 元数据文件中为流式处理函数指定元数据时，必须在 options 对象中设置属性 "cancelable": true 和 "stream": true，如以下示例所示。
-
-```JSON
-{
-  "id": "INCREMENT",
-  "name": "INCREMENT",
-  "description": "Periodically increment a value",
-  "helpUrl": "http://www.contoso.com",
-  "result": {
-    "type": "number",
-    "dimensionality": "scalar"
-  },
-  "parameters": [
-    {
-      "name": "increment",
-      "description": "Amount to increment",
-      "type": "number",
-      "dimensionality": "scalar"
-    }
-  ],
-  "options": {
-    "cancelable": true,
-    "stream": true
-  }
-}
-```
+在 JSON 元数据文件中为流式处理函数指定元数据时，可在函数的脚本文件中使用 `@streaming` JSDOC 注释标记自动生成它。 有关更多详细信息，请参阅[创建自定义函数的 JSON 元数据](custom-functions-json-autogeneration.md)。
 
 ## <a name="canceling-a-function"></a>取消函数
 
@@ -183,12 +158,13 @@ CustomFunctions.associate("INCREMENTVALUE", incrementValue);
 - 函数的参数（输入）之一发生变化。 在这种情况下，取消之后还会触发新的函数调用。
 - 用户手动触发重新计算。 在这种情况下，取消之后还会触发新的函数调用。
 
-若要使函数可取消，请在函数代码中实施一个处理程序，以告诉它在取消时要执行的操作。 此外，指定描述函数的 JSON 元数据中 options 对象中的属性 `"cancelable": true`。 本文前一部分中的代码示例提供了这些方法的示例。
+若要使函数可取消，请在函数代码中实施一个处理程序，以告诉它在取消时要执行的操作。 此外，请在函数的脚本文件中使用 `@cancelable` JSDOC 注释标记。 有关更多详细信息，请参阅[创建自定义函数的 JSON 元数据](custom-functions-json-autogeneration.md)。
 
 ## <a name="see-also"></a>另请参阅
 
 * [Excel 自定义函数教程](../tutorials/excel-tutorial-create-custom-functions.md)
 * [自定义函数元数据](custom-functions-json.md)
+* [创建自定义函数的 JSON 元数据](custom-functions-json-autogeneration.md)
 * [Excel 自定义函数的运行时](custom-functions-runtime.md)
 * [自定义函数最佳实践](custom-functions-best-practices.md)
 * [自定义函数更改日志](custom-functions-changelog.md)

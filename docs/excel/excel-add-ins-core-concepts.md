@@ -1,14 +1,14 @@
 ---
 title: Excel JavaScript API 基本编程概念
 description: 使用 Excel JavaScript API 生成 Excel 加载项。
-ms.date: 03/19/2019
+ms.date: 04/25/2019
 localization_priority: Priority
-ms.openlocfilehash: c6552ff5df3a8cf9c6c329dcfbbbe001a6a2ed6b
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: 26822d9caa91f4a65a9dbb82f82db989b4409214
+ms.sourcegitcommit: 7462409209264dc7f8f89f3808a7a6249fcd739e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32448187"
+ms.lasthandoff: 04/26/2019
+ms.locfileid: "33353256"
 ---
 # <a name="fundamental-programming-concepts-with-the-excel-javascript-api"></a>Excel JavaScript API 基本编程概念
 
@@ -26,14 +26,14 @@ ms.locfileid: "32448187"
 
 ```js
 Excel.run(function (context) {
-  // You can use the Excel JavaScript API here in the batch function
-  // to execute actions on the Excel object model.
-  console.log('Your code goes here.');
+    // You can use the Excel JavaScript API here in the batch function
+    // to execute actions on the Excel object model.
+    console.log('Your code goes here.');
 }).catch(function (error) {
-  console.log('error: ' + error);
-  if (error instanceof OfficeExtension.Error) {
-    console.log('Debug info: ' + JSON.stringify(error.debugInfo));
-  }
+    console.log('error: ' + error);
+    if (error instanceof OfficeExtension.Error) {
+        console.log('Debug info: ' + JSON.stringify(error.debugInfo));
+    }
 });
 ```
 
@@ -41,7 +41,7 @@ Excel.run(function (context) {
 
 **Excel.run** 包含需要使用 [RunOptions](/javascript/api/excel/excel.runoptions) 对象的重载。 这包含一组影响函数运行时平台行为的属性。 目前，支持以下属性：
 
- - `delayForCellEdit`：确定 Excel 是否将批处理请求延迟到用户退出单元格编辑模式时执行。 若为 **true**，批处理请求延迟到用户退出单元格编辑模式时执行。 若为 **false**，批处理请求会在用户处于单元格编辑模式时（导致无法访问用户的错误出现）自动失败。 未指定 `delayForCellEdit` 属性的默认行为等同于此属性为 **false**。
+- `delayForCellEdit`：确定 Excel 是否将批处理请求延迟到用户退出单元格编辑模式时执行。 若为 **true**，批处理请求延迟到用户退出单元格编辑模式时执行。 若为 **false**，批处理请求会在用户处于单元格编辑模式时（导致无法访问用户的错误出现）自动失败。 未指定 `delayForCellEdit` 属性的默认行为等同于此属性为 **false**。
 
 ```js
 Excel.run({ delayForCellEdit: true }, function (context) { ... })
@@ -58,7 +58,7 @@ Excel 和加载项在两个不同的进程中运行。由于它们使用不同�
 例如，下面的代码段声明本地 JavaScript 对象 **selectedRange** 以引用 Excel 文档中选定的区域，然后在该对象上设置某些属性。 **SelectedRange** 对象是一个代理对象，因此在该对象上所设置的属性以及调用的方法将不会反映在 Excel 文档中，直到加载项调用 **context.sync()**。
 
 ```js
-const selectedRange = context.workbook.getSelectedRange();
+var selectedRange = context.workbook.getSelectedRange();
 selectedRange.format.fill.color = "#4472C4";
 selectedRange.format.font.color = "white";
 selectedRange.format.autofitColumns();
@@ -72,17 +72,17 @@ selectedRange.format.autofitColumns();
 
 ```js
 Excel.run(function (context) {
-  const selectedRange = context.workbook.getSelectedRange();
-  selectedRange.load('address');
-  return context.sync()
-    .then(function () {
-      console.log('The selected range is: ' + selectedRange.address);
-  });
+    var selectedRange = context.workbook.getSelectedRange();
+    selectedRange.load('address');
+    return context.sync()
+      .then(function () {
+        console.log('The selected range is: ' + selectedRange.address);
+    });
 }).catch(function (error) {
-  console.log('error: ' + error);
-  if (error instanceof OfficeExtension.Error) {
-    console.log('Debug info: ' + JSON.stringify(error.debugInfo));
-  }
+    console.log('error: ' + error);
+    if (error instanceof OfficeExtension.Error) {
+        console.log('Debug info: ' + JSON.stringify(error.debugInfo));
+    }
 });
 ```
 
@@ -103,26 +103,26 @@ Excel.run(function (context) {
 
 ```js
 Excel.run(function (context) {
-  const sheetName = 'Sheet1';
-  const rangeAddress = 'A1:B2';
-  const myRange = context.workbook.worksheets.getItem(sheetName).getRange(rangeAddress);
+    var sheetName = 'Sheet1';
+    var rangeAddress = 'A1:B2';
+    var myRange = context.workbook.worksheets.getItem(sheetName).getRange(rangeAddress);
 
-  myRange.load(['address', 'format/*', 'format/fill', 'entireRow' ]);
+    myRange.load(['address', 'format/*', 'format/fill', 'entireRow' ]);
 
-  return context.sync()
-    .then(function () {
-      console.log (myRange.address);              // ok
-      console.log (myRange.format.wrapText);      // ok
-      console.log (myRange.format.fill.color);    // ok
-      //console.log (myRange.format.font.color);  // not ok as it was not loaded
-  });
-}).then(function () {
-  console.log('done');
+    return context.sync()
+      .then(function () {
+        console.log (myRange.address);              // ok
+        console.log (myRange.format.wrapText);      // ok
+        console.log (myRange.format.fill.color);    // ok
+        //console.log (myRange.format.font.color);  // not ok as it was not loaded
+        });
+    }).then(function () {
+        console.log('done');
 }).catch(function (error) {
-  console.log('Error: ' + error);
-  if (error instanceof OfficeExtension.Error) {
-    console.log('Debug info: ' + JSON.stringify(error.debugInfo));
-  }
+    console.log('Error: ' + error);
+    if (error instanceof OfficeExtension.Error) {
+        console.log('Debug info: ' + JSON.stringify(error.debugInfo));
+    }
 });
 ```
 
@@ -161,18 +161,18 @@ range.format.fill.color =  null;
 
 如果指定区域内存在不同的值，诸如 `size` 和 `color` 等格式化属性将在响应中包含 `null` 值。 例如，如果你检索某个区域并加载其 `format.font.color` 属性：
 
-* 如果区域中的所有单元格都具有相同的字体颜色，则 `range.format.font.color` 会指定该颜色。
-* 如果该区域内存在多种字体颜色，则 `range.format.font.color` 为 `null`。
+- 如果区域中的所有单元格都具有相同的字体颜色，则 `range.format.font.color` 会指定该颜色。
+- 如果该区域内存在多种字体颜色，则 `range.format.font.color` 为 `null`。
 
 ### <a name="blank-input-for-a-property"></a>属性的空白输入
 
 如果为属性指定空白值（即两个引号之间没有空格 `''`），它会被解释为属性清除或重置指令。例如：
 
-* 如果为区域的 `values` 属性指定空白值，此区域的内容会被清除。
+- 如果为区域的 `values` 属性指定空白值，此区域的内容会被清除。
 
-* 如果为 `numberFormat` 属性指定一个空值，则数字格式会重置为 `General`。
+- 如果为 `numberFormat` 属性指定一个空值，则数字格式会重置为 `General`。
 
-* 如果为 `formula` 属性和 `formulaLocale` 属性指定一个空值，则公式值将被清除。
+- 如果为 `formula` 属性和 `formulaLocale` 属性指定一个空值，则公式值将被清除。
 
 ### <a name="blank-property-values-in-the-response"></a>响应中的空属性值
 
@@ -191,9 +191,9 @@ range.formula = [['', '', '=Rand()']];
 ### <a name="read-an-unbounded-range"></a>读取无限区域
 
 无限区域地址是指定整个列（一列或多列）或整个行（一行或多行）的区域地址。例如：
- 
-* 包含整个列（一列或多列）的区域地址：<ul><li>`C:C`</li><li>`A:F`</li></ul>
-* 包含整个行的区域地址：<ul><li>`2:2`</li><li>`1:4`</li></ul>
+
+- 包含整个列（一列或多列）的区域地址：<ul><li>`C:C`</li><li>`A:F`</li></ul>
+- 包含整个行的区域地址：<ul><li>`2:2`</li><li>`1:4`</li></ul>
 
 API 发出请求以检索无限区域时（例如，`getRange('C:C')`），该响应将包含单元格级别属性（如 `null`、`values`、`text` 和 `numberFormat`）的 `formula` 值。 其他区域属性（如 `address` 和 `cellCount`）将包含无限区域的有效值。
 
@@ -202,13 +202,16 @@ API 发出请求以检索无限区域时（例如，`getRange('C:C')`），该�
 由于输入请求过大，因此不能在无限区域中设置单元格级别的属性，如 `values`、`numberFormat` 和 `formula`。 例如，下面的代码段无效，因为它尝试为无限区域指定 `values`。 如果尝试为无限区域设置单元格级别的属性，API 将返回一个错误。
 
 ```js
-const range = context.workbook.worksheets.getActiveWorksheet().getRange('A:B');
+var range = context.workbook.worksheets.getActiveWorksheet().getRange('A:B');
 range.values = 'Due Date';
 ```
 
 ## <a name="read-or-write-to-a-large-range"></a>读取或写入较大区域
 
 如果区域中包含大量单元格、值、数字格式和/或公式，它可能无法在该区域运行 API 操作。 API 将始终尽量尝试在区域内运行所请求的操作（即检索或写入指定的数据），但尝试对较大区域执行读取或写入操作可能会因资源利用率过高而导致 API 错误。 为避免此类错误，建议为较大区域的较小子集运行单独的读取或写入操作，而不是尝试在较大区域内运行单个读取或写入操作。
+
+> [!IMPORTANT]
+> Excel Online 将请求和响应的有效负载大小限制为 **5MB**。 如果超过该限制，将引发 `RichAPI.Error`。
 
 ## <a name="update-all-cells-in-a-range"></a>更新区域中的所有单元格
 
@@ -218,24 +221,24 @@ range.values = 'Due Date';
 
 ```js
 Excel.run(function (context) {
-  const sheetName = 'Sheet1';
-  const rangeAddress = 'A1:A20';
-  const worksheet = context.workbook.worksheets.getItem(sheetName);
+    var sheetName = 'Sheet1';
+    var rangeAddress = 'A1:A20';
+    var worksheet = context.workbook.worksheets.getItem(sheetName);
 
-  const range = worksheet.getRange(rangeAddress);
-  range.numberFormat = 'm/d/yyyy';
-  range.values = '3/11/2015';
-  range.load('text');
+    var range = worksheet.getRange(rangeAddress);
+    range.numberFormat = 'm/d/yyyy';
+    range.values = '3/11/2015';
+    range.load('text');
 
-  return context.sync()
-    .then(function () {
-      console.log(range.text);
-  });
+    return context.sync()
+      .then(function () {
+        console.log(range.text);
+    });
 }).catch(function (error) {
-  console.log('Error: ' + error);
-  if (error instanceof OfficeExtension.Error) {
-    console.log('Debug info: ' + JSON.stringify(error.debugInfo));
-  }
+    console.log('Error: ' + error);
+    if (error instanceof OfficeExtension.Error) {
+      console.log('Debug info: ' + JSON.stringify(error.debugInfo));
+    }
 });
 ```
 
@@ -245,8 +248,8 @@ Excel.run(function (context) {
 
 ## <a name="see-also"></a>另请参阅
 
-* [开始使用 Excel 加载项](excel-add-ins-get-started-overview.md)
-* [Excel 加载项代码示例](https://developer.microsoft.com/office/gallery/?filterBy=Samples)
-* [Excel JavaScript API 高级编程概念](excel-add-ins-advanced-concepts.md)
-* [Excel JavaScript API 性能优化](/office/dev/add-ins/excel/performance)
-* [Excel JavaScript API 参考](/office/dev/add-ins/reference/overview/excel-add-ins-reference-overview)
+- [开始使用 Excel 加载项](excel-add-ins-get-started-overview.md)
+- [Excel 加载项代码示例](https://developer.microsoft.com/office/gallery/?filterBy=Samples)
+- [Excel JavaScript API 高级编程概念](excel-add-ins-advanced-concepts.md)
+- [Excel JavaScript API 性能优化](/office/dev/add-ins/excel/performance)
+- [Excel JavaScript API 参考](/office/dev/add-ins/reference/overview/excel-add-ins-reference-overview)

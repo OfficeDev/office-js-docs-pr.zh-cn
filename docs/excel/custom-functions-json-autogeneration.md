@@ -1,14 +1,14 @@
 ---
-ms.date: 04/03/2019
+ms.date: 04/25/2019
 description: 使用 JSDOC 标记动态创建自定义函数 JSON 元数据。
 title: 创建自定义函数的 JSON 元数据（预览）
 localization_priority: Priority
-ms.openlocfilehash: 2efe2a9a5a83ba60ef327273d5bd599f82916d48
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: f13c9b2ff0adfd1bda493433761dc74cb9ea37dc
+ms.sourcegitcommit: 7462409209264dc7f8f89f3808a7a6249fcd739e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32449251"
+ms.lasthandoff: 04/26/2019
+ms.locfileid: "33353270"
 ---
 # <a name="create-json-metadata-for-custom-functions-preview"></a>创建自定义函数的 JSON 元数据（预览）
 
@@ -53,7 +53,7 @@ Excel 自定义函数支持以下 JSDoc 标记：
 
 还应调用 `CustomFunctions.associate("id", functionName);`
 
-#### <a name="id"></a>id 
+#### <a name="id"></a>id
 
 id 用作存储在文档中的自定义函数的固定标识符。 不得更改。
 
@@ -63,7 +63,7 @@ id 用作存储在文档中的自定义函数的固定标识符。 不得更改�
 
 #### <a name="name"></a>name
 
-提供自定义函数的显示名称。 
+提供自定义函数的显示名称。
 
 * 如果未提供名称，则 id 还会用作名称。
 * 允许使用的字符：字母 [Unicode 字母字符](https://www.unicode.org/reports/tr44/tr44-22.html#Alphabetic)、数字、句点 (.) 和下划线 (\_)。
@@ -93,6 +93,9 @@ JavaScript 语法：@param {type} name _description_
 若要将自定义函数参数表示为可选，请执行以下操作：
 * 为参数名称加上方括号。 例如：`@param {string} [text] Optional text`。
 
+> [!NOTE]
+> 可选参数的默认值为 `null`。
+
 #### <a name="typescript"></a>TypeScript
 
 TypeScript 语法：@param name _description_
@@ -107,6 +110,9 @@ TypeScript 语法：@param name _description_
 * 为该参数提供默认值。 例如：`function f(text: string = "abc")`
 
 有关 @param 的详细说明，请参阅：[JSDoc](http://usejsdoc.org/tags-param.html)
+
+> [!NOTE]
+> 可选参数的默认值为 `null`。
 
 ---
 ### <a name="requiresaddress"></a>@requiresAddress

@@ -1,14 +1,14 @@
 ---
-ms.date: 03/29/2019
+ms.date: 04/20/2019
 description: 在 Excel 中使用 JavaScript 创建自定义函数。
 title: 在 Excel 中创建自定义函数（预览）
 localization_priority: Priority
-ms.openlocfilehash: 7a461728061ace532a11a8473d27ec4340eebb97
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: 634b76ed90a30c7aa8252da346ba3f95684967a4
+ms.sourcegitcommit: 7462409209264dc7f8f89f3808a7a6249fcd739e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32448469"
+ms.lasthandoff: 04/26/2019
+ms.locfileid: "33353249"
 ---
 # <a name="create-custom-functions-in-excel-preview"></a>在 Excel 中创建自定义函数（预览）
 
@@ -47,7 +47,7 @@ function add42(a, b) {
 
 以下代码定义自定义函数 `add`，然后指定该函数的关联信息。 有关关联函数的详细信息，请参阅[自定义函数最佳做法](custom-functions-best-practices.md#associating-function-names-with-json-metadata)。
 
-下面的代码还提供了定义函数的代码注释。 首先声明所需的 `@customfunction` 注释，指示这是一个自定义函数。 此外，你将注意到声明了两个参数，即 `first` 和 `second`，后跟其 `description` 属性。 最后提供了 `returns` 描述。 有关自定义函数所需注释的更多信息，请参阅[为自定义函数生成 JSON 元数据](custom-functions-json-autogeneration.md)。
+下面的代码还提供了定义函数的代码注释。 首先声明所需的 `@customfunction` 注释，指示这是一个自定义函数。 此外，你将注意到声明了两个参数，即 `first` 和 `second`，后跟其 `description` 属性。 最后提供了 `returns` 描述。 要详细了解自定义函数需要哪些注释，请参阅[为自定义函数创建 JSON 元数据](custom-functions-json-autogeneration.md)。
 
 ```js
 /**
@@ -235,7 +235,7 @@ function secondHighest(values){
 - 显示缓存值：如果脱机使用函数，将显示 `AsyncStorage` 中使用 `onCalculated` 存储的缓存值。
 - 协调：使用单元格地址发现原始单元格，以帮助你在处理时进行协调。
 
-仅当函数 JSON 元数据文件中的 `requiresAddress` 被标记为 `true` 时，才会公开与单元格地址相关的信息。 以下示例诠释了此情况：
+仅当函数 JSON 元数据文件中的 `requiresAddress` 被标记为 `true` 时，才会公开与单元格地址相关的信息。 如果要手动编写此 JSON 文件，可查看以下示例进行参考。 如果要自动生成 JSON 文件，也可使用 `@requiresAddress` 标记。 有关详细信息，请参阅 [JSON 自动生成](custom-functions-json-autogeneration.md)。
 
 ```JSON
 {
