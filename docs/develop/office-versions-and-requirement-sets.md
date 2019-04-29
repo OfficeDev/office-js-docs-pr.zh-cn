@@ -4,11 +4,11 @@ description: ''
 ms.date: 04/19/2019
 localization_priority: Priority
 ms.openlocfilehash: e1047501cdac8dc88ab9f7778b846e171ee02d44
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.sourcegitcommit: 7462409209264dc7f8f89f3808a7a6249fcd739e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32449694"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "33440036"
 ---
 # <a name="office-versions-and-requirement-sets"></a>Office 版本和要求集
 

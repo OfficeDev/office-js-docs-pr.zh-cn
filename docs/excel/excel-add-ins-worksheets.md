@@ -4,11 +4,11 @@ description: ''
 ms.date: 04/18/2019
 localization_priority: Priority
 ms.openlocfilehash: 002c5763ebcfbbecbcfc5cb416d200b357c45bf2
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.sourcegitcommit: 7462409209264dc7f8f89f3808a7a6249fcd739e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32448460"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "33440029"
 ---
 # <a name="work-with-worksheets-using-the-excel-javascript-api"></a>使用 Excel JavaScript API 处理工作表
 
