@@ -4,12 +4,12 @@ description: ''
 ms.date: 03/19/2019
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: 1925c9fcde0bb2f07cce4c0bcb0be99cc1c6061c
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: b3c65d2594e2d260f3e332fd20cdee2e56b02fcf
+ms.sourcegitcommit: 68872372d181cca5bee37ade73c2250c4a56bab6
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32450853"
+ms.lasthandoff: 05/01/2019
+ms.locfileid: "33517049"
 ---
 # <a name="build-an-excel-add-in-using-vue"></a>使用 Vue 生成 Excel 加载项
 
@@ -21,13 +21,13 @@ ms.locfileid: "32450853"
 
 - 全局安装 [Vue CLI](https://github.com/vuejs/vue-cli)。
 
-    ```bash
+    ```command&nbsp;line
     npm install -g vue-cli
     ```
 
 - 全局安装最新版 [Yeoman](https://github.com/yeoman/yo) 和[适用于 Office 加载项的 Yeoman 生成器](https://github.com/OfficeDev/generator-office)。
 
-    ```bash
+    ```command&nbsp;line
     npm install -g yo generator-office
     ```
 
@@ -35,7 +35,7 @@ ms.locfileid: "32450853"
 
 使用 Vue CLI 生成新 Vue 应用程序。 通过终端运行以下命令，再回答如下所示的提示问题。
 
-```bash
+```command&nbsp;line
 vue init webpack my-add-in
 ```
 
@@ -53,13 +53,13 @@ vue init webpack my-add-in
 
 1. 转到应用程序文件夹。
 
-    ```bash
+    ```command&nbsp;line
     cd my-add-in
     ```
 
 2. 使用 Yeoman 生成器生成加载项清单文件。 运行下面的命令，再回答如下所示的提示问题。
 
-    ```bash
+    ```command&nbsp;line
     yo office
     ```
 
@@ -186,7 +186,7 @@ vue init webpack my-add-in
 
 1. 通过终端运行下面的命令，以启动开发人员服务器。
 
-    ```bash
+    ```command&nbsp;line
     npm start
     ```
 

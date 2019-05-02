@@ -1,6 +1,6 @@
 1. 打开项目根目录 (**[...]/My Office Add-in**) 中的 bash 终端，并运行下面的命令以启动开发服务器。
 
-    ```bash
+    ```command&nbsp;line
     npm start
     ```
 

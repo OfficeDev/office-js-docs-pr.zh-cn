@@ -4,12 +4,12 @@ description: ''
 ms.date: 01/17/2019
 ms.prod: powerpoint
 localization_priority: Priority
-ms.openlocfilehash: 21641e1eaf424b77af118fc5f7fb394102f77402
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: 85e0e3ce4899951c3fb2718eb38b834e4c5bbe35
+ms.sourcegitcommit: 68872372d181cca5bee37ade73c2250c4a56bab6
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32451225"
+ms.lasthandoff: 05/01/2019
+ms.locfileid: "33517058"
 ---
 # <a name="build-your-first-powerpoint-add-in"></a>生成首个 PowerPoint 加载项
 
@@ -186,7 +186,7 @@ ms.locfileid: "32451225"
 
 - 全局安装最新版 [Yeoman](https://github.com/yeoman/yo) 和 [Office 加载项的 Yeoman 生成器](https://github.com/OfficeDev/generator-office)。
 
-    ```bash
+    ```command&nbsp;line
     npm install -g yo generator-office
     ```
 
@@ -194,7 +194,7 @@ ms.locfileid: "32451225"
 
 1. 使用 Yeoman 生成器创建 PowerPoint 加载项项目。 运行下面的命令，再回答如下所示的提示问题：
 
-    ```bash
+    ```command&nbsp;line
     yo office
     ```
 
@@ -209,7 +209,7 @@ ms.locfileid: "32451225"
     
 2. 导航到项目的根文件夹。
 
-    ```bash
+    ```command&nbsp;line
     cd "My Office Add-in"
     ```
 

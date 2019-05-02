@@ -4,12 +4,12 @@ description: ''
 ms.date: 03/19/2019
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: 09c3819efde35b9f35847c8ca3bca558b391d98a
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: d1783d257b0d46c42f16cf5e1f261407a355a63d
+ms.sourcegitcommit: 68872372d181cca5bee37ade73c2250c4a56bab6
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32450923"
+ms.lasthandoff: 05/01/2019
+ms.locfileid: "33517077"
 ---
 # <a name="build-an-excel-add-in-using-jquery"></a>使用 jQuery 生成 Excel 加载项
 
@@ -166,7 +166,7 @@ ms.locfileid: "32450923"
 - [Node.js](https://nodejs.org)
 
 - 全局安装最新版 [Yeoman](https://github.com/yeoman/yo) 和 [Office 加载项的 Yeoman 生成器](https://github.com/OfficeDev/generator-office)。
-    ```bash
+    ```command&nbsp;line
     npm install -g yo generator-office
     ```
 
@@ -174,7 +174,7 @@ ms.locfileid: "32450923"
 
 1. 使用 Yeoman 生成器创建 Excel 加载项项目。 运行下面的命令，再回答如下所示的提示问题：
 
-    ```bash
+    ```command&nbsp;line
     yo office
     ```
 
@@ -189,7 +189,7 @@ ms.locfileid: "32450923"
 
 2. 导航到项目的根文件夹。
 
-    ```bash
+    ```command&nbsp;line
     cd "My Office Add-in"
     ```
 
