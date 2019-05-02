@@ -4,16 +4,16 @@ description: 在 Excel 快速入门指南中开发自定义函数。
 title: 自定义函数快速入门 (预览)
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: 80c500e1e30e8751a7d969d33cd7e13b7943b1b5
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: 3ea7ec4c2089aaa4e9f193a45e7c4a31c691f213
+ms.sourcegitcommit: 68872372d181cca5bee37ade73c2250c4a56bab6
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32450835"
+ms.lasthandoff: 05/01/2019
+ms.locfileid: "33517070"
 ---
 # <a name="get-started-developing-excel-custom-functions"></a>开始开发 Excel 自定义函数
 
-通过自定义函数, 开发人员现在可以通过在 JavaScript 或 Typescript 中将新函数定义为外接程序的一部分, 将它们添加到 Excel 中。 excel 用户可以像对待 excel 中的任何本机函数一样访问自定义函数, 例如`SUM()`。
+通过自定义函数, 开发人员现在可以通过在 JavaScript 或 Typescript 中将新函数定义为外接程序的一部分, 将它们添加到 Excel 中。 Excel 用户可以像对待 Excel 中的任何本机函数一样访问自定义函数, 例如`SUM()`。
 
 ## <a name="prerequisites"></a>先决条件
 
@@ -27,7 +27,7 @@ ms.locfileid: "32450835"
 
 - 最新版本的 [Yeoman](https://yeoman.io/) 和[适用于 Office 外接程序的 Yeoman 生成器](https://www.npmjs.com/package/generator-office)。若要全局安装这些工具，请从命令提示符处运行以下命令：
 
-    ```
+    ```command&nbsp;line
     npm install -g yo generator-office
     ```
 
@@ -40,7 +40,7 @@ ms.locfileid: "32450835"
 
 1. 运行下面的命令，再回答如下所示的提示问题。
 
-    ```
+    ```command&nbsp;line
     yo office
     ```
 
@@ -56,7 +56,7 @@ ms.locfileid: "32450835"
 
 2. 导航到刚创建的项目文件夹。
 
-    ```
+    ```command&nbsp;line
     cd stock-ticker
     ```
 
@@ -64,7 +64,7 @@ ms.locfileid: "32450835"
 
 4. 生成项目。
 
-    ```
+    ```command&nbsp;line
     npm run build
     ```
 
@@ -72,20 +72,20 @@ ms.locfileid: "32450835"
 
     - 如果使用 Excel for Windows 测试自定义函数, 请运行以下命令来启动本地 web 服务器, 启动 Excel, 并旁加载外接程序:
 
-        ```
+        ```command&nbsp;line
          npm run start
         ```
         运行此命令后, 命令提示符将显示有关启动 web 服务器的详细信息。 Excel 将从加载的加载项开始。 如果加载项未加载，请检查是否已正确完成步骤 3。
 
     - 如果使用 Excel Online 测试自定义函数, 请运行以下命令来启动本地 web 服务器:
 
-        ```
+        ```command&nbsp;line
         npm run start-web
         ```
 
          运行此命令后, 命令提示符将显示有关启动 web 服务器的详细信息。 若要使用您的函数, 请在 Excel Online 中打开一个新工作簿。 在此工作簿中, 需要加载外接程序。 
 
-        若要执行此操作, 请选择功能区上的 "**插入**" 选项卡, 然后选择 "**获取外接程序**"。在生成的新窗口中, 确保您在 "**我的外接程序**" 选项卡上。接下来, 选择 "**管理我的外接程序" > 上传我的外接程序**。 浏览清单文件并将其上传。 如果加载项未加载, 请检查是否已正确完成步骤3。
+        若要执行此操作, 请选择功能区上的 "**插入**" 选项卡, 然后选择 "**获取外接程序**"。在生成的新窗口中, 确保您在 "**我的外接程序**" 选项卡上。接下来, 选择 "**管理我的外接程序" _GT_ 上传我的外接程序**。 浏览清单文件并将其上传。 如果加载项未加载, 请检查是否已正确完成步骤3。
 
 ## <a name="try-out-the-prebuilt-custom-functions"></a>尝试预生成的自定义函数
 
