@@ -1,14 +1,14 @@
 ---
 title: 在 Office Online 中旁加载 Office 加载项以供测试
 description: 通过旁加载在 Office Online 中测试 Office 加载项
-ms.date: 03/19/2019
+ms.date: 04/29/2019
 localization_priority: Priority
-ms.openlocfilehash: 8870e955ca30c4a3b35f2b51e0e16a3ee634960d
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: 2bcab7b41fa7f5b9590aacc19645253ee822eeb8
+ms.sourcegitcommit: 68872372d181cca5bee37ade73c2250c4a56bab6
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32451425"
+ms.lasthandoff: 05/01/2019
+ms.locfileid: "33517084"
 ---
 # <a name="sideload-office-add-ins-in-office-online-for-testing"></a>在 Office Online 中旁加载 Office 加载项以供测试
 
@@ -25,28 +25,7 @@ ms.locfileid: "32451425"
 
 > [!VIDEO https://www.youtube.com/embed/XXsAw2UUiQo]
 
-## <a name="sideload-an-office-add-in-in-office-365"></a>在 Office 365 上旁加载 Office 加载项
-
-
-1. 登录 Office 365 帐户。
-    
-2. 打开工具栏最左端的应用启动器，选择“Excel”****、“Word”**** 或“PowerPoint”****，再新建文档。
-    
-3. 打开功能区上的“**插入**”选项卡，然后在“**外接程序**”部分中，选择“**Office 外接程序**”。
-    
-4. 在“Office 加载项”**** 对话框中，依次选择“我的组织”**** 选项卡和“上传我的加载项”****。
-    
-    ![标题为“Office 加载项”的对话框，左上角附近有链接“上传我的加载项”](../images/office-add-ins.png)
-
-5.  **转到**加载项清单文件，再选择“上传”****。
-    
-    ![包含“浏览”、“上传”和“取消”按钮的“上传加载项”对话框](../images/upload-add-in.png)
-
-6. 验证是否已安装外接程序。例如，如果它是一个外接程序命令，它应显示在功能区或上下文菜单上。如果它是一个任务窗格外接程序，则应显示窗格。
-    
-
 ## <a name="sideload-an-office-add-in-in-office-online"></a>在 Office Online 中旁加载 Office 加载项
-
 
 1. 打开 [Microsoft Office Online](https://office.live.com/)。
     
@@ -72,6 +51,16 @@ ms.locfileid: "32451425"
 > - 在 Edge 搜索栏中输入“**about:flags**”以调出“开发人员设置”选项。  选中“**允许本地主机环回**”选项，然后重新启动 Edge。
 
 >    ![选中此框后，Edge 会允许本地主机环回选项。](../images/allow-localhost-loopback.png)
+
+
+## <a name="sideload-an-office-add-in-in-office-365"></a>在 Office 365 上旁加载 Office 加载项
+
+1. 登录 Office 365 帐户。
+    
+2. 打开工具栏最左端的应用启动器，选择“Excel”****、“Word”**** 或“PowerPoint”****，再新建文档。
+    
+3. 步骤 3 - 6 与上一部分**在 Office Online 中旁加载 Office 加载项**相同。
+
 
 ## <a name="sideload-an-add-in-when-using-visual-studio"></a>使用 Visual Studio 时旁加载加载项
 
