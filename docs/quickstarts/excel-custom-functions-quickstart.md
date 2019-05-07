@@ -1,15 +1,15 @@
 ---
-ms.date: 03/06/2019
+ms.date: 05/02/2019
 description: 在 Excel 快速入门指南中开发自定义函数。
-title: 自定义函数快速入门 (预览)
+title: 自定义功能快速入门
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: 3ea7ec4c2089aaa4e9f193a45e7c4a31c691f213
-ms.sourcegitcommit: 68872372d181cca5bee37ade73c2250c4a56bab6
+ms.openlocfilehash: 8eb2630526ce939273024eebd533bd99fa5e94a1
+ms.sourcegitcommit: 47b792755e655043d3db2f1fdb9a1eeb7453c636
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/01/2019
-ms.locfileid: "33517070"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "33619891"
 ---
 # <a name="get-started-developing-excel-custom-functions"></a>开始开发 Excel 自定义函数
 
@@ -17,79 +17,83 @@ ms.locfileid: "33517070"
 
 ## <a name="prerequisites"></a>先决条件
 
-[!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
+[!include[Yeoman generator prerequisites](../includes/quickstart-yo-prerequisites.md)]
 
-您需要以下工具和相关资源来开始创建自定义函数。
+* Excel for Windows（64 位，版本 1810 或更高版本）或 Excel Online
 
-- [Node.js](https://nodejs.org/en/)（版本 8.0.0 或更高版本）
-
-- [Git Bash](https://git-scm.com/downloads)（或其他 Git 客户端）
-
-- 最新版本的 [Yeoman](https://yeoman.io/) 和[适用于 Office 外接程序的 Yeoman 生成器](https://www.npmjs.com/package/generator-office)。若要全局安装这些工具，请从命令提示符处运行以下命令：
-
-    ```command&nbsp;line
-    npm install -g yo generator-office
-    ```
-
-    > [!NOTE]
-    > 即使以前安装了 Yeoman 生成器, 我们也建议您将程序包从 npm 更新到最新版本。
+* 加入 [Office 预览体验计划](https://products.office.com/office-insider)（**预览体验成员**级别 - 以前称为“预览体验成员 - 快”）
 
 ## <a name="build-your-first-custom-functions-project"></a>生成第一个自定义函数项目
 
 首先，使用 Yeoman 生成器创建自定义函数项目。 这将为你的项目设置开始对自定义函数进行编码所需的正确文件夹结构、源文件和依存关系。
 
-1. 运行下面的命令，再回答如下所示的提示问题。
+1. 在所选的文件夹中, 运行以下命令, 然后按如下所示回答提示。
 
     ```command&nbsp;line
     yo office
     ```
 
-    - 选择项目类型：`Excel Custom Functions Add-in project (...)`
+    - **选择项目类型:** `Excel Custom Functions Add-in project (...)`
+    - **选择脚本类型:** `JavaScript`
+    - **要如何命名加载项?** `stock-ticker`
 
-    - 选择脚本类型：`JavaScript`
-
-    - 要如何命名加载项？ `stock-ticker`
-
-    ![自定义函数的 Office 外接程序提示的 Yeoman 生成器](../images/12-10-fork-cf-pic.jpg)
+    ![自定义函数的 Office 外接程序提示的 Yeoman 生成器](../images/yo-office-excel-cf.png)
 
     Yeoman 生成器将创建项目文件并安装支持的 Node 组件。
 
-2. 导航到刚创建的项目文件夹。
+2. Yeoman 生成器将为您提供有关如何处理项目的命令行中的一些说明, 但忽略它们并继续按照我们的说明操作。 导航到项目的根文件夹。
 
     ```command&nbsp;line
     cd stock-ticker
     ```
 
-3. 信任自签名证书, 您需要运行此项目。 有关适用于 Windows 或 Mac 的详细说明，请参阅[将自签名证书添加为受信任的根证书](https://github.com/OfficeDev/generator-office/blob/master/src/docs/ssl.md)。  
-
-4. 生成项目。
+3. 生成项目。 这还将安装项目正常运行所需的证书。 
 
     ```command&nbsp;line
     npm run build
     ```
 
-5. 启动在 Node.js 中运行的本地 Web 服务器。
+4. 启动在 Node.js 中运行的本地 Web 服务器。 您可以在 Excel for Windows 或 Excel Online 中试用自定义函数外接程序。 系统可能会提示您打开加载项的任务窗格, 但这是可选的。 您仍可以运行自定义函数, 而无需打开加载项的任务窗格。
 
-    - 如果使用 Excel for Windows 测试自定义函数, 请运行以下命令来启动本地 web 服务器, 启动 Excel, 并旁加载外接程序:
+> [!NOTE]
+> Office 外接程序应使用 HTTPS, 而不是 HTTP, 即使在开发时也是如此。 如果在运行`npm run start:desktop`后系统提示您安装证书, 请接受安装 Yeoman 生成器提供的证书的提示。
 
-        ```command&nbsp;line
-         npm run start
-        ```
-        运行此命令后, 命令提示符将显示有关启动 web 服务器的详细信息。 Excel 将从加载的加载项开始。 如果加载项未加载，请检查是否已正确完成步骤 3。
+# <a name="excel-for-windowstabexcel-windows"></a>[Excel for Windows](#tab/excel-windows)
 
-    - 如果使用 Excel Online 测试自定义函数, 请运行以下命令来启动本地 web 服务器:
+若要在 Excel for Windows 中测试外接程序, 请运行以下命令。 运行此命令时, 本地 web 服务器将启动, 并且 Excel 将在加载的外接程序中打开。
 
-        ```command&nbsp;line
-        npm run start-web
-        ```
+```command&nbsp;line
+npm run start:desktop
+```
 
-         运行此命令后, 命令提示符将显示有关启动 web 服务器的详细信息。 若要使用您的函数, 请在 Excel Online 中打开一个新工作簿。 在此工作簿中, 需要加载外接程序。 
+# <a name="excel-onlinetabexcel-online"></a>[Excel Online](#tab/excel-online)
 
-        若要执行此操作, 请选择功能区上的 "**插入**" 选项卡, 然后选择 "**获取外接程序**"。在生成的新窗口中, 确保您在 "**我的外接程序**" 选项卡上。接下来, 选择 "**管理我的外接程序" _GT_ 上传我的外接程序**。 浏览清单文件并将其上传。 如果加载项未加载, 请检查是否已正确完成步骤3。
+若要在 Excel Online 中测试外接程序, 请运行以下命令。 运行此命令时, 本地 web 服务器将启动。
 
-## <a name="try-out-the-prebuilt-custom-functions"></a>尝试预生成的自定义函数
+```command&nbsp;line
+npm run start:web
+```
 
-使用 Yeoman 生成器创建的自定义函数项目包含一些预生成的自定义函数，这些函数在 **src/customfunction.js** 文件中定义。 项目根目录中的 **manifest.xml** 文件指定所有自定义函数均属于 `CONTOSO` 名称空间。
+> [!NOTE]
+> Office 外接程序应使用 HTTPS, 而不是 HTTP, 即使在开发时也是如此。 如果在运行`npm run start:web`后系统提示您安装证书, 请接受安装 Yeoman 生成器提供的证书的提示。
+
+若要使用自定义函数外接程序, 请在 Excel Online 中打开一个新工作簿。 在此工作簿中, 完成以下步骤以旁加载您的外接程序。
+
+1. 在 Excel Online 中，依次选择“插入”**** 选项卡和“加载项”****。
+
+   ![在 Excel Online 中插入带突出显示 "我的外接程序" 图标的功能区](../images/excel-cf-online-register-add-in-1.png)
+   
+2. 选择“管理我的加载项”****，然后选择“上载我的加载项”****。
+
+3. 选择“浏览...”****，并导航到 Yeoman 生成器创建的项目的根目录。
+
+4. 依次选择文件“manifest.xml”****，“打开”****，然后选择“上载”****。
+
+---
+
+## <a name="try-out-a-prebuilt-custom-function"></a>尝试预生成的自定义函数
+
+使用 Yeoman 生成器创建的自定义函数项目包含一些预生成的自定义函数, 这些函数是在 **/src/functions/functions.js**文件中定义的。 项目根目录中的 **/manifest.xml**文件指定所有自定义函数均属于该`CONTOSO`命名空间。
 
 在 Excel 工作簿中, 通过完成`ADD`以下步骤来尝试使用自定义函数:
 

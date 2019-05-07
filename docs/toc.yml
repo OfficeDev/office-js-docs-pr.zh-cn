@@ -16,19 +16,19 @@
   items:
     - name: 创建 Excel 加载项
       items:
-        - name: 使用角度
-          href: quickstarts/excel-quickstart-angular.md
-          displayName: Excel
-        - name: 使用 jQuery
+        - name: 任务窗格
           href: quickstarts/excel-quickstart-jquery.md
           displayName: Excel
-        - name: 使用反应
+        - name: 任务窗格 (角)
+          href: quickstarts/excel-quickstart-angular.md
+          displayName: Excel
+        - name: 任务窗格 (响应)
           href: quickstarts/excel-quickstart-react.md
           displayName: Excel
-        - name: 使用 Vue
+        - name: 任务窗格 (Vue)
           href: quickstarts/excel-quickstart-vue.md
           displayName: Excel
-        - name: 构建自定义函数
+        - name: 自定义函数
           href: quickstarts/excel-custom-functions-quickstart.md
           displayName: Excel
     - name: 创建 Word 加载项
@@ -64,6 +64,8 @@
   items:
     - name: 运行外接程序的要求
       href: concepts/requirements-for-running-office-add-ins.md
+    - name: Office 外接程序使用的 Web 查看器
+      href: concepts/web-viewers-used-by-office-web-add-ins.md
     - name: 外接程序开发的最佳做法
       href: concepts/add-in-development-best-practices.md
     - name: 外接程序开发生命周期
@@ -223,17 +225,20 @@
             - name: 开始使用 Excel 加载项
               href: excel/excel-add-ins-get-started-overview.md
               displayName: Excel
-            - name: 使用角度
-              href: quickstarts/excel-quickstart-angular.md
-              displayName: Excel
-            - name: 使用 jQuery
+            - name: 任务窗格
               href: quickstarts/excel-quickstart-jquery.md
               displayName: Excel
-            - name: 使用反应
+            - name: 任务窗格 (角)
+              href: quickstarts/excel-quickstart-angular.md
+              displayName: Excel
+            - name: 任务窗格 (响应)
               href: quickstarts/excel-quickstart-react.md
               displayName: Excel
-            - name: 使用 Vue
+            - name: 任务窗格 (Vue)
               href: quickstarts/excel-quickstart-vue.md
+              displayName: Excel
+            - name: 自定义函数
+              href: quickstarts/excel-custom-functions-quickstart.md
               displayName: Excel
         - name: Excel 加载项教程
           href: tutorials/excel-tutorial.md
@@ -264,32 +269,20 @@
                 - name: 概述
                   href: excel/custom-functions-overview.md
                   displayName: Excel
-                - name: 体系结构
-                  href: excel/custom-functions-architecture.md
-                  displayName: Excel
                 - name: 快速入门
                   href: quickstarts/excel-custom-functions-quickstart.md
                   displayName: Excel
                 - name: 教程
                   href: tutorials/excel-tutorial-create-custom-functions.md
                   displayName: Excel
-                - name: Web 请求
-                  href: excel/custom-functions-web-reqs.md
+                - name: 体系结构
+                  href: excel/custom-functions-architecture.md
                   displayName: Excel
-                - name: 语言
-                  href: excel/custom-functions-runtime.md
+                - name: 身份验证
+                  href: excel/custom-functions-authentication.md
                   displayName: Excel
-                - name: 可变函数
-                  href: excel/custom-functions-volatile.md
-                  displayName: Excel
-                - name: 自定义函数参数选项
-                  href: excel/custom-functions-parameter-options.md
-                  displayName: Excel
-                - name: 元数据
-                  href: excel/custom-functions-json.md
-                  displayName: Excel
-                - name: 元数据生成
-                  href: excel/custom-functions-json-autogeneration.md
+                - name: 批处理
+                  href: excel/custom-functions-batching.md
                   displayName: Excel
                 - name: 最佳做法
                   href: excel/custom-functions-best-practices.md
@@ -297,35 +290,47 @@
                 - name: 调试
                   href: excel/custom-functions-debugging.md
                   displayName: Excel
-                - name: 身份验证
-                  href: excel/custom-functions-authentication.md
-                  displayName: Excel
                 - name: Dialog
                   href: excel/custom-functions-dialog.md
-                  displayName: Excel
-                - name: 更改日志
-                  href: excel/custom-functions-changelog.md
                   displayName: Excel
                 - name: 错误处理
                   href: excel/custom-functions-errors.md
                   displayName: Excel
-                - name: Requirements
-                  href: excel/custom-functions-requirements.md
-                  displayName: Excel
-                - name: 命名准则
-                  href: excel/custom-functions-naming.md
+                - name: 标识等效 XLL
+                  href: excel/make-custom-functions-compatible-with-xll-udf.md
                   displayName: Excel
                 - name: 本地化
                   href: excel/custom-functions-localize.md
                   displayName: Excel
-                - name: 标识等效 XLL
-                  href: excel/make-custom-functions-compatible-with-xll-udf.md
+                - name: 元数据
+                  href: excel/custom-functions-json.md
                   displayName: Excel
-                - name: 批处理
-                  href: excel/custom-functions-batching.md
+                - name: 元数据生成
+                  href: excel/custom-functions-json-autogeneration.md
+                  displayName: Excel
+                - name: 命名准则
+                  href: excel/custom-functions-naming.md
+                  displayName: Excel
+                - name: 参数选项
+                  href: excel/custom-functions-parameter-options.md
+                  displayName: Excel
+                - name: 要求
+                  href: excel/custom-functions-requirements.md
+                  displayName: Excel
+                - name: 语言
+                  href: excel/custom-functions-runtime.md
+                  displayName: Excel
+                - name: 保存和共享状态
+                  href: excel/custom-functions-save-state.md
                   displayName: Excel
                 - name: 故障排除
                   href: excel/custom-functions-troubleshooting.md
+                  displayName: Excel
+                - name: 可变函数
+                  href: excel/custom-functions-volatile.md
+                  displayName: Excel
+                - name: Web 请求
+                  href: excel/custom-functions-web-reqs.md
                   displayName: Excel
             - name: 数据验证
               href: excel/excel-add-ins-data-validation.md
@@ -405,7 +410,7 @@
         - name: Word JavaScript API 参考
           href: /javascript/api/word
           displayName: Word
-    - name: Outlook 外接程序
+    - name: Outlook 加载项
       href: /outlook/add-ins/
       displayName: Outlook
     - name: PowerPoint 加载项
@@ -751,7 +756,7 @@
           href: reference/manifest/highresolutioniconurl.md
         - name: 主机
           href: reference/manifest/host.md
-        - name: 主机
+        - name: Hosts
           href: reference/manifest/hosts.md
         - name: IconUrl
           href: reference/manifest/iconurl.md
@@ -783,7 +788,7 @@
           href: reference/manifest/requestedheight.md
         - name: RequestedWidth
           href: reference/manifest/requestedwidth.md
-        - name: Requirements
+        - name: 要求
           href: reference/manifest/requirements.md
         - name: Rule
           href: reference/manifest/rule.md
@@ -803,7 +808,7 @@
           href: reference/manifest/targetdialects.md
         - name: 类型
           href: reference/manifest/type.md
-        - name: 版本
+        - name: Version
           href: reference/manifest/version.md
         - name: VersionOverrides
           items:
@@ -829,7 +834,7 @@
               href: reference/manifest/getstarted.md
             - name: 组
               href: reference/manifest/group.md
-            - name: 主机
+            - name: Hosts
               href: reference/manifest/hosts.md
             - name: Icon
               href: reference/manifest/icon.md

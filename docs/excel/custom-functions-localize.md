@@ -1,22 +1,27 @@
 ---
-ms.date: 04/30/2019
+ms.date: 05/03/2019
 description: 本地化您的 Excel 自定义函数。
-title: 本地化自定义函数 (预览)
+title: 本地化自定义函数
 localization_priority: Normal
-ms.openlocfilehash: 1c7fba297996c8cf050eb23b34823debf87b4e88
-ms.sourcegitcommit: 68872372d181cca5bee37ade73c2250c4a56bab6
+ms.openlocfilehash: 5dbe2f78f1d24c3d8c8214f4e604e66f097adba3
+ms.sourcegitcommit: ff73cc04e5718765fcbe74181505a974db69c3f5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/01/2019
-ms.locfileid: "33527302"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "33628030"
 ---
 # <a name="localize-custom-functions"></a>本地化自定义函数
 
-若要使自定义函数在世界范围内正常工作, 请将它们本地化为不同的语言。 若要本地化自定义函数, 需要在函数的 JSON 文件中提供本地化的函数名称, 并在 XML 清单文件中提供区域设置信息。 自动生成的元数据不能用于本地化, 因此您需要手动更新 JSON 文件。
+您可以本地化您的外接程序和自定义函数名称。 您需要在函数的 JSON 文件中提供本地化的函数名称, 并在 XML 清单文件中提供区域设置信息。
+
+[!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
+
+>[!IMPORTANT]
+> 自动生成的元数据不能用于本地化, 因此您需要手动更新 JSON 文件。
 
 ## <a name="localize-function-names"></a>本地化函数名称
 
-若要本地化自定义函数, 请为每种语言创建一个新的 JSON 元数据文件。 在每个语言 JSON 文件中`name` , `description`在目标语言中创建和属性。 英语的默认文件命名为**函数 json**。 建议您在文件名中为每个附加的 JSON 文件 (如**函数-。 JSON** ) 使用区域设置来帮助识别这些文件。 
+若要本地化自定义函数, 请为每种语言创建一个新的 JSON 元数据文件。 在每个语言 JSON 文件中`name` , `description`在目标语言中创建和属性。 英语的默认文件命名为**函数 json**。 建议您在文件名中为每个附加的 JSON 文件 (如**函数-。 JSON** ) 使用区域设置来帮助识别这些文件。
 
 `name`并`description`将显示在 Excel 中并进行本地化。 但是, 每`id`个函数的不本地化。 `id`属性是 Excel 将函数标识为唯一的, 并且在设置后不应更改。
 
@@ -91,13 +96,14 @@ ms.locfileid: "33527302"
 </Resources>
 ```
 
-
 有关本地化外接程序的过程的详细信息, 请参阅[Office 外接程序的本地化](../develop/localization.md#control-localization-from-the-manifest)。
+
+## <a name="next-steps"></a>后续步骤
+了解[自定义函数的命名约定](custom-functions-naming.md)或发现[错误处理最佳实践](custom-functions-errors.md)。
 
 ## <a name="see-also"></a>另请参阅
 
-* [在 Excel 中创建自定义函数](custom-functions-overview.md)
 * [自定义函数元数据](custom-functions-json.md)
+* [自动生成自定义函数的 JSON 元数据](custom-functions-json-autogeneration.md)
 * [自定义函数最佳实践](custom-functions-best-practices.md)
-* [自定义函数更改日志](custom-functions-changelog.md)
-* [Excel 自定义函数教程](../tutorials/excel-tutorial-create-custom-functions.md)
+* [在 Excel 中创建自定义函数](custom-functions-overview.md)

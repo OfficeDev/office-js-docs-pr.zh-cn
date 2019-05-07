@@ -1,18 +1,22 @@
 ---
-ms.date: 03/29/2019
+ms.date: 05/03/2019
 description: 在 Excel 中定义自定义函数的元数据。
-title: Excel 中的自定义函数的元数据（预览）
+title: Excel 中自定义函数的元数据
 localization_priority: Normal
-ms.openlocfilehash: 3703699348e99fd076fe0e3affac88038e3aaf59
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: 92e2b1aaae46d376cc8033b304192d7ce8489fd8
+ms.sourcegitcommit: ff73cc04e5718765fcbe74181505a974db69c3f5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32448203"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "33628072"
 ---
-# <a name="custom-functions-metadata-preview"></a>自定义函数元数据（预览）
+# <a name="custom-functions-metadata"></a>自定义函数元数据
 
-在 Excel 加载项中定义[自定义函数](custom-functions-overview.md)时, 加载项项目包含 JSON 元数据文件, 该文件提供了 Excel 注册自定义函数并使其可供最终用户使用的信息。 此文件的生成方式为:
+在 Excel 加载项中定义[自定义函数](custom-functions-overview.md)时, 加载项项目包含 JSON 元数据文件, 该文件提供了 Excel 注册自定义函数并使其可供最终用户使用的信息。
+
+[!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
+
+此文件的生成方式为:
 
 - 您, 在手写 JSON 文件中
 - 从您在函数开头输入的 JSDoc 注释
@@ -23,9 +27,7 @@ ms.locfileid: "32448203"
 
 有关为启用自定义函数必须在加载项项目中包含的其他文件的信息，请参阅[在 Excel 中创建自定义函数](custom-functions-overview.md)。
 
-[!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
-
-> 托管 JSON 文件的服务器上的服务器设置必须启用 [CORS](https://developer.mozilla.org/docs/Web/HTTP/CORS)，以便自定义函数在 Excel Online 中正常工作。
+托管 JSON 文件的服务器上的服务器设置必须启用 [CORS](https://developer.mozilla.org/docs/Web/HTTP/CORS)，以便自定义函数在 Excel Online 中正常工作。
 
 ## <a name="example-metadata"></a>示例元数据
 
@@ -64,7 +66,7 @@ ms.locfileid: "32448203"
       "description": "Get the day of the week",
       "helpUrl": "http://www.contoso.com/help",
       "result": {
-        "type": "string"
+        "dimensionality": "scalar"
       },
       "parameters": []
     },
@@ -74,7 +76,6 @@ ms.locfileid: "32448203"
       "description":  "Count up from zero",
       "helpUrl": "http://www.contoso.com/help",
       "result": {
-        "type": "number",
         "dimensionality": "scalar"
       },
       "parameters": [
@@ -96,7 +97,6 @@ ms.locfileid: "32448203"
       "description":  "Get the second highest number from a range",
       "helpUrl": "http://www.contoso.com/help",
       "result": {
-        "type": "number",
         "dimensionality": "scalar"
       },
       "parameters": [
@@ -125,7 +125,7 @@ ms.locfileid: "32448203"
 |  `helpUrl`  |  string  |   否  |  提供有关函数的信息的 URL。 （它显示在任务窗格中。）例如，**http://contoso.com/help/convertcelsiustofahrenheit.html**。 |
 | `id`     | string | 是 | 函数的唯一 ID。 此 ID 只能包含字母数字字符和句点，设置后不应更改。 |
 |  `name`  |  string  |  是  |  最终用户在 Excel 中看到的函数的名称。 在 Excel 中，此函数名称将以 XML 清单文件中指定的自定义函数命名空间为前缀。 |
-|  `options`  |  object  |  否  |  使用户能够自定义 Excel 执行函数的方式和时间。 有关详细信息，请参阅[选项](#options)。 |
+|  `options`  |  对象  |  否  |  使用户能够自定义 Excel 执行函数的方式和时间。 有关详细信息，请参阅[选项](#options)。 |
 |  `parameters`  |  array  |  是  |  定义函数的输入参数的数组。 有关详细信息，请参阅[参数](#parameters)。 |
 |  `result`  |  object  |  是  |  定义函数返回的信息类型的对象。 有关详细信息，请参阅[结果](#result)。 |
 
@@ -135,9 +135,9 @@ ms.locfileid: "32448203"
 
 |  属性  |  数据类型  |  必需  |  说明  |
 |:-----|:-----|:-----|:-----|
-|  `cancelable`  |  boolean  |  否<br/><br/>默认值为 `false`。  |  如果为 `true`，则每次用户执行具有取消函数效果的操作时，Excel 都会调用 `onCanceled` 处理程序；例如，手动触发重新计算或编辑函数引用的单元格。 如果使用此选项，Excel 将使用额外的 `caller` 参数调用 JavaScript 函数。 （请***不要***在 `parameters` 属性中注册此参数）。 在函数正文中，必须将处理程序分配给 `caller.onCanceled` 成员。 有关详细信息，请参阅[取消函数](custom-functions-web-reqs.md#canceling-a-function)。 |
+|  `cancelable`  |  boolean  |  否<br/><br/>默认值为 `false`。  |  如果为 `true`，则每次用户执行具有取消函数效果的操作时，Excel 都会调用 `onCanceled` 处理程序；例如，手动触发重新计算或编辑函数引用的单元格。 如果使用此选项，Excel 将使用额外的 `caller` 参数调用 JavaScript 函数。 （请***不要***在 `parameters` 属性中注册此参数）。 在函数正文中，必须将处理程序分配给 `caller.onCanceled` 成员。 有关详细信息，请参阅[取消函数](custom-functions-web-reqs.md#stream-and-cancel-functions)。 |
 |  `requiresAddress`  | boolean | 否 <br/><br/>默认值为 `false`。 | <br /><br /> 如果为 true, 则自定义函数可以访问调用自定义函数的单元格的地址。 若要获取调用自定义函数的单元格的地址, 请在自定义函数中使用 context。 有关详细信息，请参阅[确定调用自定义函数的单元格](/office/dev/add-ins/excel/custom-functions-overview#determine-which-cell-invoked-your-custom-function)。 不能将自定义函数同时设置为流式处理和 requiresAddress。 使用此选项时, "invocationContext" 参数必须是在 options 中传递的最后一个参数。 |
-|  `stream`  |  boolean  |  否<br/><br/>默认值为 `false`。  |  如果为 `true`，即使只调用一次，该函数也可能会重复输出到单元格。 此选项对于快速变化的数据源（如股票价格）非常有用。 如果使用此选项，Excel 将使用额外的 `caller` 参数调用 JavaScript 函数。 （请***不要***在 `parameters` 属性中注册此参数）。 函数不应存在 `return` 语句。 相反，结果值将作为 `caller.setResult` 回调方法的参数传递。 有关详细信息，请参阅[流式处理函数](custom-functions-web-reqs.md#streaming-functions)。 |
+|  `stream`  |  boolean  |  否<br/><br/>默认值为 `false`。  |  如果为 `true`，即使只调用一次，该函数也可能会重复输出到单元格。 此选项对于快速变化的数据源（如股票价格）非常有用。 如果使用此选项，Excel 将使用额外的 `caller` 参数调用 JavaScript 函数。 （请***不要***在 `parameters` 属性中注册此参数）。 函数不应存在 `return` 语句。 相反，结果值将作为 `caller.setResult` 回调方法的参数传递。 有关详细信息，请参阅[流式处理函数](custom-functions-web-reqs.md#stream-and-cancel-functions)。 |
 |  `volatile`  | boolean | 否 <br/><br/>默认值为 `false`。 | <br /><br /> 如果为 `true`，则该函数会在每次 Excel 重新计算时（而不是仅当公式的从属值发生更改时）进行重新计算。 函数不能同时为流式处理和可变。 如果 `stream` 和 `volatile` 属性同时设置为 `true`，则将忽略可变选项。 |
 
 ## <a name="parameters"></a>参数
@@ -152,9 +152,6 @@ ms.locfileid: "32448203"
 |  `type`  |  string  |  否  |  参数的数据类型。 可以是 **boolean**、**number**、**string** 或 **any**，允许使用前三种类型中的任何一种。 如果未指定此属性，则数据类型默认为 **any**。 |
 |  `optional`  | boolean | 否 | 如果为 `true`，则参数是可选的。 |
 
->[!NOTE]
-> 如果可选参数的 `type` 属性未指定或设置为 `any`，则可能会发现 IDE 中的 lint 错误以及当将函数输入到 Excel 的单元格中时未显示可选参数等问题。 预计将于 2018 年 12 月有所改变。
-
 ## <a name="result"></a>结果
 
 `result` 对象定义函数返回的信息类型。 下表列出了 `result` 对象的属性。
@@ -162,12 +159,13 @@ ms.locfileid: "32448203"
 |  属性  |  数据类型  |  必需  |  说明  |
 |:-----|:-----|:-----|:-----|
 |  `dimensionality`  |  string  |  否  |  必须是**标量**（非数组值）或**矩阵**（二维数组）。 |
-|  `type`  |  string  |  是  |  参数的数据类型。 必须是 **boolean**、**number**、**string** 或 **any**，允许使用前三种类型中的任何一种。 |
+
+## <a name="next-steps"></a>后续步骤
+了解[有关命名函数](custom-functions-naming.md)或了解如何使用前面所述的手写 JSON 方法对[函数进行本地化](custom-functions-localize.md)的最佳做法。
 
 ## <a name="see-also"></a>另请参阅
 
-* [在 Excel 中创建自定义函数](custom-functions-overview.md)
-* [Excel 自定义函数的运行时](custom-functions-runtime.md)
+* [自动生成自定义函数的 JSON 元数据](custom-functions-json-autogeneration.md)
+* [自定义函数参数选项](custom-functions-parameter-options.md)
 * [自定义函数最佳实践](custom-functions-best-practices.md)
-* [自定义函数更改日志](custom-functions-changelog.md)
-* [Excel 自定义函数教程](../tutorials/excel-tutorial-create-custom-functions.md)
+* [在 Excel 中创建自定义函数](custom-functions-overview.md)
