@@ -1,0 +1,2 @@
+> [!NOTE]
+> <span data-ttu-id="94dff-101">即使以前安装了 Yeoman 生成器, 我们也建议您将程序包从 npm 更新到最新版本。</span><span class="sxs-lookup"><span data-stu-id="94dff-101">Even if you've previously installed the Yeoman generator, we recommend you update your package to the latest version from npm.</span></span>

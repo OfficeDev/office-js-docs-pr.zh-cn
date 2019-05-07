@@ -1,115 +1,119 @@
 ---
-ms.date: 03/06/2019
+ms.date: 05/02/2019
 description: 在 Excel 快速入门指南中开发自定义函数。
-title: 自定义函数快速入门 (预览)
+title: 自定义功能快速入门
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: 3ea7ec4c2089aaa4e9f193a45e7c4a31c691f213
-ms.sourcegitcommit: 68872372d181cca5bee37ade73c2250c4a56bab6
+ms.openlocfilehash: 8eb2630526ce939273024eebd533bd99fa5e94a1
+ms.sourcegitcommit: 47b792755e655043d3db2f1fdb9a1eeb7453c636
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/01/2019
-ms.locfileid: "33517070"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "33619891"
 ---
-# <a name="get-started-developing-excel-custom-functions"></a><span data-ttu-id="d68e4-103">开始开发 Excel 自定义函数</span><span class="sxs-lookup"><span data-stu-id="d68e4-103">Get started developing Excel custom functions</span></span>
+# <a name="get-started-developing-excel-custom-functions"></a><span data-ttu-id="fa6ae-103">开始开发 Excel 自定义函数</span><span class="sxs-lookup"><span data-stu-id="fa6ae-103">Get started developing Excel custom functions</span></span>
 
-<span data-ttu-id="d68e4-104">通过自定义函数, 开发人员现在可以通过在 JavaScript 或 Typescript 中将新函数定义为外接程序的一部分, 将它们添加到 Excel 中。</span><span class="sxs-lookup"><span data-stu-id="d68e4-104">With custom functions, developers can now add new functions to Excel by defining them in JavaScript or Typescript as part of an add-in.</span></span> <span data-ttu-id="d68e4-105">Excel 用户可以像对待 Excel 中的任何本机函数一样访问自定义函数, 例如`SUM()`。</span><span class="sxs-lookup"><span data-stu-id="d68e4-105">Excel users can access custom functions just as they would any native function in Excel, such as `SUM()`.</span></span>
+<span data-ttu-id="fa6ae-104">通过自定义函数, 开发人员现在可以通过在 JavaScript 或 Typescript 中将新函数定义为外接程序的一部分, 将它们添加到 Excel 中。</span><span class="sxs-lookup"><span data-stu-id="fa6ae-104">With custom functions, developers can now add new functions to Excel by defining them in JavaScript or Typescript as part of an add-in.</span></span> <span data-ttu-id="fa6ae-105">Excel 用户可以像对待 Excel 中的任何本机函数一样访问自定义函数, 例如`SUM()`。</span><span class="sxs-lookup"><span data-stu-id="fa6ae-105">Excel users can access custom functions just as they would any native function in Excel, such as `SUM()`.</span></span>
 
-## <a name="prerequisites"></a><span data-ttu-id="d68e4-106">先决条件</span><span class="sxs-lookup"><span data-stu-id="d68e4-106">Prerequisites</span></span>
+## <a name="prerequisites"></a><span data-ttu-id="fa6ae-106">先决条件</span><span class="sxs-lookup"><span data-stu-id="fa6ae-106">Prerequisites</span></span>
 
-[!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
+[!include[Yeoman generator prerequisites](../includes/quickstart-yo-prerequisites.md)]
 
-<span data-ttu-id="d68e4-107">您需要以下工具和相关资源来开始创建自定义函数。</span><span class="sxs-lookup"><span data-stu-id="d68e4-107">You'll need the following tools and related resources to begin creating custom functions.</span></span>
+* <span data-ttu-id="fa6ae-107">Excel for Windows（64 位，版本 1810 或更高版本）或 Excel Online</span><span class="sxs-lookup"><span data-stu-id="fa6ae-107">Excel for Windows (64-bit version 1810 or later) or Excel Online</span></span>
 
-- <span data-ttu-id="d68e4-108">[Node.js](https://nodejs.org/en/)（版本 8.0.0 或更高版本）</span><span class="sxs-lookup"><span data-stu-id="d68e4-108">[Node.js](https://nodejs.org/en/) (version 8.0.0 or later)</span></span>
+* <span data-ttu-id="fa6ae-108">加入 [Office 预览体验计划](https://products.office.com/office-insider)（**预览体验成员**级别 - 以前称为“预览体验成员 - 快”）</span><span class="sxs-lookup"><span data-stu-id="fa6ae-108">Join the [Office Insider program](https://products.office.com/office-insider) (**Insider** level -- formerly called "Insider Fast")</span></span>
 
-- <span data-ttu-id="d68e4-109">[Git Bash](https://git-scm.com/downloads)（或其他 Git 客户端）</span><span class="sxs-lookup"><span data-stu-id="d68e4-109">[Git Bash](https://git-scm.com/downloads) (or another Git client)</span></span>
+## <a name="build-your-first-custom-functions-project"></a><span data-ttu-id="fa6ae-109">生成第一个自定义函数项目</span><span class="sxs-lookup"><span data-stu-id="fa6ae-109">Build your first custom functions project</span></span>
 
-- <span data-ttu-id="d68e4-110">最新版本的 [Yeoman](https://yeoman.io/) 和[适用于 Office 外接程序的 Yeoman 生成器](https://www.npmjs.com/package/generator-office)。若要全局安装这些工具，请从命令提示符处运行以下命令：</span><span class="sxs-lookup"><span data-stu-id="d68e4-110">The latest version of [Yeoman](https://yeoman.io/) and the [Yeoman generator for Office Add-ins](https://www.npmjs.com/package/generator-office). To install these tools globally, run the following command via the command prompt:</span></span>
+<span data-ttu-id="fa6ae-110">首先，使用 Yeoman 生成器创建自定义函数项目。</span><span class="sxs-lookup"><span data-stu-id="fa6ae-110">To start, you'll use the Yeoman generator to create the custom functions project.</span></span> <span data-ttu-id="fa6ae-111">这将为你的项目设置开始对自定义函数进行编码所需的正确文件夹结构、源文件和依存关系。</span><span class="sxs-lookup"><span data-stu-id="fa6ae-111">This will set up your project with the correct folder structure, source files, and dependencies to begin coding your custom functions.</span></span>
 
-    ```command&nbsp;line
-    npm install -g yo generator-office
-    ```
-
-    > [!NOTE]
-    > <span data-ttu-id="d68e4-111">即使以前安装了 Yeoman 生成器, 我们也建议您将程序包从 npm 更新到最新版本。</span><span class="sxs-lookup"><span data-stu-id="d68e4-111">Even if you've previously installed the Yeoman generator, we recommend you update your package to the latest version from npm.</span></span>
-
-## <a name="build-your-first-custom-functions-project"></a><span data-ttu-id="d68e4-112">生成第一个自定义函数项目</span><span class="sxs-lookup"><span data-stu-id="d68e4-112">Build your first custom functions project</span></span>
-
-<span data-ttu-id="d68e4-113">首先，使用 Yeoman 生成器创建自定义函数项目。</span><span class="sxs-lookup"><span data-stu-id="d68e4-113">To start, you'll use the Yeoman generator to create the custom functions project.</span></span> <span data-ttu-id="d68e4-114">这将为你的项目设置开始对自定义函数进行编码所需的正确文件夹结构、源文件和依存关系。</span><span class="sxs-lookup"><span data-stu-id="d68e4-114">This will set up your project with the correct folder structure, source files, and dependencies to begin coding your custom functions.</span></span>
-
-1. <span data-ttu-id="d68e4-115">运行下面的命令，再回答如下所示的提示问题。</span><span class="sxs-lookup"><span data-stu-id="d68e4-115">Run the following command and then answer the prompts as follows.</span></span>
+1. <span data-ttu-id="fa6ae-112">在所选的文件夹中, 运行以下命令, 然后按如下所示回答提示。</span><span class="sxs-lookup"><span data-stu-id="fa6ae-112">In a folder of your choice, run the following command and then answer the prompts as follows.</span></span>
 
     ```command&nbsp;line
     yo office
     ```
 
-    - <span data-ttu-id="d68e4-116">选择项目类型：`Excel Custom Functions Add-in project (...)`</span><span class="sxs-lookup"><span data-stu-id="d68e4-116">Choose a project type: `Excel Custom Functions Add-in project (...)`</span></span>
+    - <span data-ttu-id="fa6ae-113">**选择项目类型:** `Excel Custom Functions Add-in project (...)`</span><span class="sxs-lookup"><span data-stu-id="fa6ae-113">**Choose a project type:** `Excel Custom Functions Add-in project (...)`</span></span>
+    - <span data-ttu-id="fa6ae-114">**选择脚本类型:** `JavaScript`</span><span class="sxs-lookup"><span data-stu-id="fa6ae-114">**Choose a script type:** `JavaScript`</span></span>
+    - <span data-ttu-id="fa6ae-115">**要如何命名加载项?**</span><span class="sxs-lookup"><span data-stu-id="fa6ae-115">**What do you want to name your add-in?**</span></span> `stock-ticker`
 
-    - <span data-ttu-id="d68e4-117">选择脚本类型：`JavaScript`</span><span class="sxs-lookup"><span data-stu-id="d68e4-117">Choose a script type: `JavaScript`</span></span>
+    ![自定义函数的 Office 外接程序提示的 Yeoman 生成器](../images/yo-office-excel-cf.png)
 
-    - <span data-ttu-id="d68e4-118">要如何命名加载项？</span><span class="sxs-lookup"><span data-stu-id="d68e4-118">What do you want to name your add-in?</span></span> `stock-ticker`
+    <span data-ttu-id="fa6ae-117">Yeoman 生成器将创建项目文件并安装支持的 Node 组件。</span><span class="sxs-lookup"><span data-stu-id="fa6ae-117">The Yeoman generator will create the project files and install supporting Node components.</span></span>
 
-    ![自定义函数的 Office 外接程序提示的 Yeoman 生成器](../images/12-10-fork-cf-pic.jpg)
-
-    <span data-ttu-id="d68e4-120">Yeoman 生成器将创建项目文件并安装支持的 Node 组件。</span><span class="sxs-lookup"><span data-stu-id="d68e4-120">The Yeoman generator will create the project files and install supporting Node components.</span></span>
-
-2. <span data-ttu-id="d68e4-121">导航到刚创建的项目文件夹。</span><span class="sxs-lookup"><span data-stu-id="d68e4-121">Navigate to the project folder you just created.</span></span>
+2. <span data-ttu-id="fa6ae-118">Yeoman 生成器将为您提供有关如何处理项目的命令行中的一些说明, 但忽略它们并继续按照我们的说明操作。</span><span class="sxs-lookup"><span data-stu-id="fa6ae-118">The Yeoman generator will give you some instructions in your command line about what to do with the project, but ignore them and continue to follow our instructions.</span></span> <span data-ttu-id="fa6ae-119">导航到项目的根文件夹。</span><span class="sxs-lookup"><span data-stu-id="fa6ae-119">Navigate to the root folder of the project.</span></span>
 
     ```command&nbsp;line
     cd stock-ticker
     ```
 
-3. <span data-ttu-id="d68e4-122">信任自签名证书, 您需要运行此项目。</span><span class="sxs-lookup"><span data-stu-id="d68e4-122">Trust the self-signed certificate you need to run this project.</span></span> <span data-ttu-id="d68e4-123">有关适用于 Windows 或 Mac 的详细说明，请参阅[将自签名证书添加为受信任的根证书](https://github.com/OfficeDev/generator-office/blob/master/src/docs/ssl.md)。</span><span class="sxs-lookup"><span data-stu-id="d68e4-123">For detailed instructions for either Windows or Mac, see [Adding Self Signed Certificates as Trusted Root Certificate](https://github.com/OfficeDev/generator-office/blob/master/src/docs/ssl.md).</span></span>  
-
-4. <span data-ttu-id="d68e4-124">生成项目。</span><span class="sxs-lookup"><span data-stu-id="d68e4-124">Build the project.</span></span>
+3. <span data-ttu-id="fa6ae-120">生成项目。</span><span class="sxs-lookup"><span data-stu-id="fa6ae-120">Build the project.</span></span> <span data-ttu-id="fa6ae-121">这还将安装项目正常运行所需的证书。</span><span class="sxs-lookup"><span data-stu-id="fa6ae-121">This will also install certificates that your project needs in order to function properly.</span></span> 
 
     ```command&nbsp;line
     npm run build
     ```
 
-5. <span data-ttu-id="d68e4-125">启动在 Node.js 中运行的本地 Web 服务器。</span><span class="sxs-lookup"><span data-stu-id="d68e4-125">Start the local web server, which runs in Node.js.</span></span>
+4. <span data-ttu-id="fa6ae-122">启动在 Node.js 中运行的本地 Web 服务器。</span><span class="sxs-lookup"><span data-stu-id="fa6ae-122">Start the local web server, which runs in Node.js.</span></span> <span data-ttu-id="fa6ae-123">您可以在 Excel for Windows 或 Excel Online 中试用自定义函数外接程序。</span><span class="sxs-lookup"><span data-stu-id="fa6ae-123">You can try out the custom function add-in in Excel for Windows or Excel Online.</span></span> <span data-ttu-id="fa6ae-124">系统可能会提示您打开加载项的任务窗格, 但这是可选的。</span><span class="sxs-lookup"><span data-stu-id="fa6ae-124">You may be prompted to open the add-in's task pane, although this is optional.</span></span> <span data-ttu-id="fa6ae-125">您仍可以运行自定义函数, 而无需打开加载项的任务窗格。</span><span class="sxs-lookup"><span data-stu-id="fa6ae-125">You can still run your custom functions without opening your add-in's task pane.</span></span>
 
-    - <span data-ttu-id="d68e4-126">如果使用 Excel for Windows 测试自定义函数, 请运行以下命令来启动本地 web 服务器, 启动 Excel, 并旁加载外接程序:</span><span class="sxs-lookup"><span data-stu-id="d68e4-126">If you use Excel for Windows to test your custom functions, run the following command to start the local web server, launch Excel, and sideload the add-in:</span></span>
+> [!NOTE]
+> <span data-ttu-id="fa6ae-126">Office 外接程序应使用 HTTPS, 而不是 HTTP, 即使在开发时也是如此。</span><span class="sxs-lookup"><span data-stu-id="fa6ae-126">Office Add-ins should use HTTPS, not HTTP, even when you are developing.</span></span> <span data-ttu-id="fa6ae-127">如果在运行`npm run start:desktop`后系统提示您安装证书, 请接受安装 Yeoman 生成器提供的证书的提示。</span><span class="sxs-lookup"><span data-stu-id="fa6ae-127">If you are prompted to install a certificate after you run `npm run start:desktop`, accept the prompt to install the certificate that the Yeoman generator provides.</span></span>
 
-        ```command&nbsp;line
-         npm run start
-        ```
-        <span data-ttu-id="d68e4-127">运行此命令后, 命令提示符将显示有关启动 web 服务器的详细信息。</span><span class="sxs-lookup"><span data-stu-id="d68e4-127">After running this command, your command prompt will show details about starting the web server.</span></span> <span data-ttu-id="d68e4-128">Excel 将从加载的加载项开始。</span><span class="sxs-lookup"><span data-stu-id="d68e4-128">Excel will start with your add-in loaded.</span></span> <span data-ttu-id="d68e4-129">如果加载项未加载，请检查是否已正确完成步骤 3。</span><span class="sxs-lookup"><span data-stu-id="d68e4-129">If you add-in does not load, check that you have completed step 3 properly.</span></span>
+# <a name="excel-for-windowstabexcel-windows"></a>[<span data-ttu-id="fa6ae-128">Excel for Windows</span><span class="sxs-lookup"><span data-stu-id="fa6ae-128">Excel for Windows</span></span>](#tab/excel-windows)
 
-    - <span data-ttu-id="d68e4-130">如果使用 Excel Online 测试自定义函数, 请运行以下命令来启动本地 web 服务器:</span><span class="sxs-lookup"><span data-stu-id="d68e4-130">If you use Excel Online to test your custom functions, run the following command to start the local web server:</span></span>
+<span data-ttu-id="fa6ae-129">若要在 Excel for Windows 中测试外接程序, 请运行以下命令。</span><span class="sxs-lookup"><span data-stu-id="fa6ae-129">To test your add-in in Excel for Windows, run the following command.</span></span> <span data-ttu-id="fa6ae-130">运行此命令时, 本地 web 服务器将启动, 并且 Excel 将在加载的外接程序中打开。</span><span class="sxs-lookup"><span data-stu-id="fa6ae-130">When you run this command, the local web server will start and Excel will open with your add-in loaded.</span></span>
 
-        ```command&nbsp;line
-        npm run start-web
-        ```
+```command&nbsp;line
+npm run start:desktop
+```
 
-         <span data-ttu-id="d68e4-131">运行此命令后, 命令提示符将显示有关启动 web 服务器的详细信息。</span><span class="sxs-lookup"><span data-stu-id="d68e4-131">After running this command, your command prompt will show details about starting the web server.</span></span> <span data-ttu-id="d68e4-132">若要使用您的函数, 请在 Excel Online 中打开一个新工作簿。</span><span class="sxs-lookup"><span data-stu-id="d68e4-132">To use your functions, open a new workbook in Excel Online.</span></span> <span data-ttu-id="d68e4-133">在此工作簿中, 需要加载外接程序。</span><span class="sxs-lookup"><span data-stu-id="d68e4-133">In this workbook, you'll need to load your add-in.</span></span> 
+# <a name="excel-onlinetabexcel-online"></a>[<span data-ttu-id="fa6ae-131">Excel Online</span><span class="sxs-lookup"><span data-stu-id="fa6ae-131">Excel Online</span></span>](#tab/excel-online)
 
-        <span data-ttu-id="d68e4-134">若要执行此操作, 请选择功能区上的 "**插入**" 选项卡, 然后选择 "**获取外接程序**"。在生成的新窗口中, 确保您在 "**我的外接程序**" 选项卡上。接下来, 选择 "**管理我的外接程序" _GT_ 上传我的外接程序**。</span><span class="sxs-lookup"><span data-stu-id="d68e4-134">To do this, select the **Insert** tab on the ribbon and select **Get Add-ins**. In the resulting new window, ensure you are on the **My Add-ins** tab. Next, select **Manage My Add-ins > Upload My Add-in**.</span></span> <span data-ttu-id="d68e4-135">浏览清单文件并将其上传。</span><span class="sxs-lookup"><span data-stu-id="d68e4-135">Browse for your manifest file and upload it.</span></span> <span data-ttu-id="d68e4-136">如果加载项未加载, 请检查是否已正确完成步骤3。</span><span class="sxs-lookup"><span data-stu-id="d68e4-136">If your add-in does not load, check you've completed step 3 correctly.</span></span>
+<span data-ttu-id="fa6ae-132">若要在 Excel Online 中测试外接程序, 请运行以下命令。</span><span class="sxs-lookup"><span data-stu-id="fa6ae-132">To test your add-in in Excel Online, run the following command.</span></span> <span data-ttu-id="fa6ae-133">运行此命令时, 本地 web 服务器将启动。</span><span class="sxs-lookup"><span data-stu-id="fa6ae-133">When you run this command, the local web server will start.</span></span>
 
-## <a name="try-out-the-prebuilt-custom-functions"></a><span data-ttu-id="d68e4-137">尝试预生成的自定义函数</span><span class="sxs-lookup"><span data-stu-id="d68e4-137">Try out the prebuilt custom functions</span></span>
+```command&nbsp;line
+npm run start:web
+```
 
-<span data-ttu-id="d68e4-138">使用 Yeoman 生成器创建的自定义函数项目包含一些预生成的自定义函数，这些函数在 **src/customfunction.js** 文件中定义。</span><span class="sxs-lookup"><span data-stu-id="d68e4-138">The custom functions project that you created by using the Yeoman generator contains some prebuilt custom functions, defined within the **src/customfunctions.js** file.</span></span> <span data-ttu-id="d68e4-139">项目根目录中的 **manifest.xml** 文件指定所有自定义函数均属于 `CONTOSO` 名称空间。</span><span class="sxs-lookup"><span data-stu-id="d68e4-139">The **manifest.xml** file in the root directory of the project specifies that all custom functions belong to the `CONTOSO` namespace.</span></span>
+> [!NOTE]
+> <span data-ttu-id="fa6ae-134">Office 外接程序应使用 HTTPS, 而不是 HTTP, 即使在开发时也是如此。</span><span class="sxs-lookup"><span data-stu-id="fa6ae-134">Office Add-ins should use HTTPS, not HTTP, even when you are developing.</span></span> <span data-ttu-id="fa6ae-135">如果在运行`npm run start:web`后系统提示您安装证书, 请接受安装 Yeoman 生成器提供的证书的提示。</span><span class="sxs-lookup"><span data-stu-id="fa6ae-135">If you are prompted to install a certificate after you run `npm run start:web`, accept the prompt to install the certificate that the Yeoman generator provides.</span></span>
 
-<span data-ttu-id="d68e4-140">在 Excel 工作簿中, 通过完成`ADD`以下步骤来尝试使用自定义函数:</span><span class="sxs-lookup"><span data-stu-id="d68e4-140">In your Excel workbook, try out the `ADD` custom function by completing the following steps:</span></span>
+<span data-ttu-id="fa6ae-136">若要使用自定义函数外接程序, 请在 Excel Online 中打开一个新工作簿。</span><span class="sxs-lookup"><span data-stu-id="fa6ae-136">To use your custom functions add-in, open a new workbook in Excel Online.</span></span> <span data-ttu-id="fa6ae-137">在此工作簿中, 完成以下步骤以旁加载您的外接程序。</span><span class="sxs-lookup"><span data-stu-id="fa6ae-137">In this workbook, complete the following steps to sideload your add-in.</span></span>
 
-1. <span data-ttu-id="d68e4-141">选择一个单元格并`=CONTOSO`键入。</span><span class="sxs-lookup"><span data-stu-id="d68e4-141">Select a cell and type `=CONTOSO`.</span></span> <span data-ttu-id="d68e4-142">请注意，自动完成菜单将显示 `CONTOSO` 命名空间中所有函数的列表。</span><span class="sxs-lookup"><span data-stu-id="d68e4-142">Notice that the autocomplete menu shows the list of all functions in the `CONTOSO` namespace.</span></span>
+1. <span data-ttu-id="fa6ae-138">在 Excel Online 中，依次选择“插入”\*\*\*\* 选项卡和“加载项”\*\*\*\*。</span><span class="sxs-lookup"><span data-stu-id="fa6ae-138">In Excel Online, choose the **Insert** tab and then choose **Add-ins**.</span></span>
 
-2. <span data-ttu-id="d68e4-143">通过在`CONTOSO.ADD`单元格中键入值`10` `=CONTOSO.ADD(10,200)`并`200`按 enter 来运行函数, 并使用数字和作为输入参数。</span><span class="sxs-lookup"><span data-stu-id="d68e4-143">Run the `CONTOSO.ADD` function, using numbers `10` and `200` as input parameters, by typing the value `=CONTOSO.ADD(10,200)` in the cell and pressing enter.</span></span>
+   ![在 Excel Online 中插入带突出显示 "我的外接程序" 图标的功能区](../images/excel-cf-online-register-add-in-1.png)
+   
+2. <span data-ttu-id="fa6ae-140">选择“管理我的加载项”\*\*\*\*，然后选择“上载我的加载项”\*\*\*\*。</span><span class="sxs-lookup"><span data-stu-id="fa6ae-140">Choose **Manage My Add-ins** and select **Upload My Add-in**.</span></span>
 
-<span data-ttu-id="d68e4-144">`ADD` 自定义函数计算指定为输入参数的两个数字的总和。</span><span class="sxs-lookup"><span data-stu-id="d68e4-144">The `ADD` custom function computes the sum of the two numbers that you specify as input parameters.</span></span> <span data-ttu-id="d68e4-145">键入 `=CONTOSO.ADD(10,200)` 应在按下 Enter 后在单元格中生成结果 **210**。</span><span class="sxs-lookup"><span data-stu-id="d68e4-145">Typing `=CONTOSO.ADD(10,200)` should produce the result **210** in the cell after you press enter.</span></span>
+3. <span data-ttu-id="fa6ae-141">选择“浏览...”\*\*\*\*，并导航到 Yeoman 生成器创建的项目的根目录。</span><span class="sxs-lookup"><span data-stu-id="fa6ae-141">Choose **Browse...** and navigate to the root directory of the project that the Yeoman generator created.</span></span>
 
-## <a name="next-steps"></a><span data-ttu-id="d68e4-146">后续步骤</span><span class="sxs-lookup"><span data-stu-id="d68e4-146">Next steps</span></span>
+4. <span data-ttu-id="fa6ae-142">依次选择文件“manifest.xml”\*\*\*\*，“打开”\*\*\*\*，然后选择“上载”\*\*\*\*。</span><span class="sxs-lookup"><span data-stu-id="fa6ae-142">Select the file **manifest.xml** and choose **Open**, then choose **Upload**.</span></span>
 
-<span data-ttu-id="d68e4-147">恭喜! 你已成功在 Excel 加载项中创建了自定义函数!</span><span class="sxs-lookup"><span data-stu-id="d68e4-147">Congratulations, you've successfully created a custom function in an Excel add-in!</span></span> <span data-ttu-id="d68e4-148">接下来, 使用流式数据功能生成更复杂的加载项。</span><span class="sxs-lookup"><span data-stu-id="d68e4-148">Next, build a more complex add-in with streaming data capability.</span></span> <span data-ttu-id="d68e4-149">下面的链接将指导您完成 Excel 加载项的自定义函数教程中的后续步骤。</span><span class="sxs-lookup"><span data-stu-id="d68e4-149">The following link takes you through the next steps in the Excel add-in with custom functions tutorial.</span></span>
+---
+
+## <a name="try-out-a-prebuilt-custom-function"></a><span data-ttu-id="fa6ae-143">尝试预生成的自定义函数</span><span class="sxs-lookup"><span data-stu-id="fa6ae-143">Try out a prebuilt custom function</span></span>
+
+<span data-ttu-id="fa6ae-144">使用 Yeoman 生成器创建的自定义函数项目包含一些预生成的自定义函数, 这些函数是在 **/src/functions/functions.js**文件中定义的。</span><span class="sxs-lookup"><span data-stu-id="fa6ae-144">The custom functions project that you created by using the Yeoman generator contains some prebuilt custom functions, defined within the **./src/functions/functions.js** file.</span></span> <span data-ttu-id="fa6ae-145">项目根目录中的 **/manifest.xml**文件指定所有自定义函数均属于该`CONTOSO`命名空间。</span><span class="sxs-lookup"><span data-stu-id="fa6ae-145">The **./manifest.xml** file in the root directory of the project specifies that all custom functions belong to the `CONTOSO` namespace.</span></span>
+
+<span data-ttu-id="fa6ae-146">在 Excel 工作簿中, 通过完成`ADD`以下步骤来尝试使用自定义函数:</span><span class="sxs-lookup"><span data-stu-id="fa6ae-146">In your Excel workbook, try out the `ADD` custom function by completing the following steps:</span></span>
+
+1. <span data-ttu-id="fa6ae-147">选择一个单元格并`=CONTOSO`键入。</span><span class="sxs-lookup"><span data-stu-id="fa6ae-147">Select a cell and type `=CONTOSO`.</span></span> <span data-ttu-id="fa6ae-148">请注意，自动完成菜单将显示 `CONTOSO` 命名空间中所有函数的列表。</span><span class="sxs-lookup"><span data-stu-id="fa6ae-148">Notice that the autocomplete menu shows the list of all functions in the `CONTOSO` namespace.</span></span>
+
+2. <span data-ttu-id="fa6ae-149">通过在`CONTOSO.ADD`单元格中键入值`10` `=CONTOSO.ADD(10,200)`并`200`按 enter 来运行函数, 并使用数字和作为输入参数。</span><span class="sxs-lookup"><span data-stu-id="fa6ae-149">Run the `CONTOSO.ADD` function, using numbers `10` and `200` as input parameters, by typing the value `=CONTOSO.ADD(10,200)` in the cell and pressing enter.</span></span>
+
+<span data-ttu-id="fa6ae-150">`ADD` 自定义函数计算指定为输入参数的两个数字的总和。</span><span class="sxs-lookup"><span data-stu-id="fa6ae-150">The `ADD` custom function computes the sum of the two numbers that you specify as input parameters.</span></span> <span data-ttu-id="fa6ae-151">键入 `=CONTOSO.ADD(10,200)` 应在按下 Enter 后在单元格中生成结果 **210**。</span><span class="sxs-lookup"><span data-stu-id="fa6ae-151">Typing `=CONTOSO.ADD(10,200)` should produce the result **210** in the cell after you press enter.</span></span>
+
+## <a name="next-steps"></a><span data-ttu-id="fa6ae-152">后续步骤</span><span class="sxs-lookup"><span data-stu-id="fa6ae-152">Next steps</span></span>
+
+<span data-ttu-id="fa6ae-153">恭喜! 你已成功在 Excel 加载项中创建了自定义函数!</span><span class="sxs-lookup"><span data-stu-id="fa6ae-153">Congratulations, you've successfully created a custom function in an Excel add-in!</span></span> <span data-ttu-id="fa6ae-154">接下来, 使用流式数据功能生成更复杂的加载项。</span><span class="sxs-lookup"><span data-stu-id="fa6ae-154">Next, build a more complex add-in with streaming data capability.</span></span> <span data-ttu-id="fa6ae-155">下面的链接将指导您完成 Excel 加载项的自定义函数教程中的后续步骤。</span><span class="sxs-lookup"><span data-stu-id="fa6ae-155">The following link takes you through the next steps in the Excel add-in with custom functions tutorial.</span></span>
 
 > [!div class="nextstepaction"]
-> [<span data-ttu-id="d68e4-150">Excel 自定义函数加载项教程</span><span class="sxs-lookup"><span data-stu-id="d68e4-150">Excel custom functions add-in tutorial</span></span>](../tutorials/excel-tutorial-create-custom-functions.md#create-a-custom-function-that-requests-data-from-the-web
+> [<span data-ttu-id="fa6ae-156">Excel 自定义函数加载项教程</span><span class="sxs-lookup"><span data-stu-id="fa6ae-156">Excel custom functions add-in tutorial</span></span>](../tutorials/excel-tutorial-create-custom-functions.md#create-a-custom-function-that-requests-data-from-the-web
 )
 
-## <a name="see-also"></a><span data-ttu-id="d68e4-151">另请参阅</span><span class="sxs-lookup"><span data-stu-id="d68e4-151">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="fa6ae-157">另请参阅</span><span class="sxs-lookup"><span data-stu-id="fa6ae-157">See also</span></span>
 
-* [<span data-ttu-id="d68e4-152">自定义函数概述</span><span class="sxs-lookup"><span data-stu-id="d68e4-152">Custom functions overview</span></span>](../excel/custom-functions-overview.md)
-* [<span data-ttu-id="d68e4-153">自定义函数元数据</span><span class="sxs-lookup"><span data-stu-id="d68e4-153">Custom functions metadata</span></span>](../excel/custom-functions-json.md)
-* [<span data-ttu-id="d68e4-154">Excel 自定义函数的运行时</span><span class="sxs-lookup"><span data-stu-id="d68e4-154">Runtime for Excel custom functions</span></span>](../excel/custom-functions-runtime.md)
-* [<span data-ttu-id="d68e4-155">自定义函数最佳实践</span><span class="sxs-lookup"><span data-stu-id="d68e4-155">Custom functions best practices</span></span>](../excel/custom-functions-best-practices.md)
+* [<span data-ttu-id="fa6ae-158">自定义函数概述</span><span class="sxs-lookup"><span data-stu-id="fa6ae-158">Custom functions overview</span></span>](../excel/custom-functions-overview.md)
+* [<span data-ttu-id="fa6ae-159">自定义函数元数据</span><span class="sxs-lookup"><span data-stu-id="fa6ae-159">Custom functions metadata</span></span>](../excel/custom-functions-json.md)
+* [<span data-ttu-id="fa6ae-160">Excel 自定义函数的运行时</span><span class="sxs-lookup"><span data-stu-id="fa6ae-160">Runtime for Excel custom functions</span></span>](../excel/custom-functions-runtime.md)
+* [<span data-ttu-id="fa6ae-161">自定义函数最佳实践</span><span class="sxs-lookup"><span data-stu-id="fa6ae-161">Custom functions best practices</span></span>](../excel/custom-functions-best-practices.md)
