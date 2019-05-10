@@ -3,12 +3,12 @@ ms.date: 05/03/2019
 description: 在 Excel 中使用 JavaScript 创建自定义函数。
 title: 在 Excel 中创建自定义函数
 localization_priority: Priority
-ms.openlocfilehash: 53a1ab09075e2b26d0ac0a6f4ac3a5a97081fd07
-ms.sourcegitcommit: ff73cc04e5718765fcbe74181505a974db69c3f5
+ms.openlocfilehash: 5a31cc8ddfe98b880ab09803c7c0b7b615ba85db
+ms.sourcegitcommit: 5b9c2b39dfe76cabd98bf28d5287d9718788e520
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "33628037"
+ms.lasthandoff: 05/07/2019
+ms.locfileid: "33659647"
 ---
 # <a name="create-custom-functions-in-excel"></a>在 Excel 中创建自定义函数 
 
@@ -29,8 +29,7 @@ ms.locfileid: "33628037"
  * @param {number} radius
  */
 function sphereVolume(radius) {
-  const pi = 3.14159265
-  return Math.pow(radius, 3)*4*pi
+  return Math.pow(radius, 3) * 4 * Math.PI / 3;
 }
 CustomFunctions.associate("SPHEREVOLUME", sphereVolume)
 ```
@@ -152,7 +151,9 @@ function add(first, second){
 
 ## <a name="next-steps"></a>后续步骤
 
-想要试用自定义函数？ 检查简单的[自定义函数入门](../quickstarts/excel-custom-functions-quickstart.md)或更深入的[自定义函数教程](../tutorials/excel-tutorial-create-custom-functions.md)（如果还没有）。
+想要试用自定义函数？ 检查简单的[自定义函数入门](../quickstarts/excel-custom-functions-quickstart.md)或更深入的[自定义函数教程](../tutorials/excel-tutorial-create-custom-functions.md)（如果还没有）。 
+
+另一个尝试自定义函数的简单方法就是使用[脚本实验室](https://appsource.microsoft.com/product/office/WA104380862?src=office&corrid=1ada79ac-6392-438d-bb16-fce6994a2a7e&omexanonuid=f7b03101-ec22-4270-a274-bcf16c762039&referralurl=https%3a%2f%2fgithub.com%2fofficedev%2fscript-lab)，这是一个允许您在 Excel 中试验自定义函数的加载项。 可以尝试创建自己的自定义函数或使用提供的示例。
 
 准备详细了解自定义函数的功能？ 了解[自定义函数架构](custom-functions-architecture.md)的概述。
 
