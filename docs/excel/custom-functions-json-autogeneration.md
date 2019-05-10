@@ -1,18 +1,20 @@
 ---
-ms.date: 04/25/2019
+ms.date: 05/03/2019
 description: 使用 JSDOC 标记动态创建自定义函数 JSON 元数据。
-title: 创建自定义函数的 JSON 元数据（预览）
+title: 为自定义函数自动生成 JSON 元数据
 localization_priority: Priority
-ms.openlocfilehash: f13c9b2ff0adfd1bda493433761dc74cb9ea37dc
-ms.sourcegitcommit: 7462409209264dc7f8f89f3808a7a6249fcd739e
+ms.openlocfilehash: df1c0114597e2aa98a15db48c515469fb9db6cd9
+ms.sourcegitcommit: ff73cc04e5718765fcbe74181505a974db69c3f5
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/26/2019
-ms.locfileid: "33353270"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "33628086"
 ---
-# <a name="create-json-metadata-for-custom-functions-preview"></a>创建自定义函数的 JSON 元数据（预览）
+# <a name="autogenerate-json-metadata-for-custom-functions"></a>为自定义函数自动生成 JSON 元数据
 
 在 JavaScript 或 TypeScript 中写入 Excel 自定义函数时，使用 JSDoc 标记提供有关自定义函数的额外信息。 然后在生成时使用 JSDoc 标记创建 [JSON 元数据文件](custom-functions-json.md)。 使用 JSDoc 标记使您免除手动编辑 JSON 元数据文件的工作。
+
+[!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
 为 JavaScript 或 TypeScript 函数添加代码注释中的 `@customfunction` 标记以将其标记为自定义函数。
 
@@ -109,7 +111,7 @@ TypeScript 语法：@param name _description_
 * 使用可选参数。 例如：`function f(text?: string)`
 * 为该参数提供默认值。 例如：`function f(text: string = "abc")`
 
-有关 @param 的详细说明，请参阅：[JSDoc](http://usejsdoc.org/tags-param.html)
+有关 @param 的详细说明，请参阅：[JSDoc](https://usejsdoc.org/tags-param.html)
 
 > [!NOTE]
 > 可选参数的默认值为 `null`。
@@ -183,11 +185,11 @@ TypeScript 语法：@param name _description_
 
 任何其他类型都将被视为错误。
 
+## <a name="next-steps"></a>后续步骤
+了解[自定义函数的命名约定](custom-functions-naming.md)。 或者，了解如何[本地化函数](custom-functions-localize.md)，这需要你[手动编写 JSON 文件](custom-functions-json.md)。
+
 ## <a name="see-also"></a>另请参阅
 
 * [自定义函数元数据](custom-functions-json.md)
-* [Excel 自定义函数的运行时](custom-functions-runtime.md)
 * [自定义函数最佳实践](custom-functions-best-practices.md)
-* [自定义函数更改日志](custom-functions-changelog.md)
-* [Excel 自定义函数教程](../tutorials/excel-tutorial-create-custom-functions.md)
-* [自定义函数调试](custom-functions-debugging.md)
+* [在 Excel 中创建自定义函数](custom-functions-overview.md)

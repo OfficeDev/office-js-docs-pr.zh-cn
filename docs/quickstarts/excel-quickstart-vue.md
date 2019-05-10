@@ -1,34 +1,28 @@
 ---
-title: 使用 Vue 生成 Excel 加载项
+title: 使用 Vue 生成 Excel 任务窗格加载项
 description: ''
-ms.date: 03/19/2019
+ms.date: 05/02/2019
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: b3c65d2594e2d260f3e332fd20cdee2e56b02fcf
-ms.sourcegitcommit: 68872372d181cca5bee37ade73c2250c4a56bab6
+ms.openlocfilehash: 228301b9711f4ac33fb5435e66cfcd0254041e19
+ms.sourcegitcommit: 47b792755e655043d3db2f1fdb9a1eeb7453c636
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/01/2019
-ms.locfileid: "33517049"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "33619580"
 ---
-# <a name="build-an-excel-add-in-using-vue"></a>使用 Vue 生成 Excel 加载项
+# <a name="build-an-excel-task-pane-add-in-using-vue"></a>使用 Vue 生成 Excel 任务窗格加载项
 
-本文将逐步介绍如何使用 Vue 和 Excel JavaScript API 生成 Excel 加载项。
+本文将逐步介绍如何使用 Vue 和 Excel JavaScript API 生成 Excel 任务加载项。
 
 ## <a name="prerequisites"></a>先决条件
 
-- [Node.js](https://nodejs.org)
+[!include[Yeoman generator prerequisites](../includes/quickstart-yo-prerequisites.md)]
 
 - 全局安装 [Vue CLI](https://github.com/vuejs/vue-cli)。
 
     ```command&nbsp;line
     npm install -g vue-cli
-    ```
-
-- 全局安装最新版 [Yeoman](https://github.com/yeoman/yo) 和[适用于 Office 加载项的 Yeoman 生成器](https://github.com/OfficeDev/generator-office)。
-
-    ```command&nbsp;line
-    npm install -g yo generator-office
     ```
 
 ## <a name="generate-a-new-vue-app"></a>生成新 Vue 应用程序
@@ -63,11 +57,11 @@ vue init webpack my-add-in
     yo office
     ```
 
-    - **选择项目类型:** `Office Add-in containing the manifest only`
-    - **要如何命名加载项?:** `My Office Add-in`
-    - **要支持哪一个 Office 客户端应用？：**`Excel`
+    - **选择项目类型:** `Office Add-in project containing the manifest only`
+    - **要如何命名加载项?** `My Office Add-in`
+    - **要支持哪一个 Office 客户端应用程序?** `Excel`
 
-    ![Yeoman 生成器](../images/yo-office.png)
+    ![Yeoman 生成器](../images/yo-office-manifest-only-vue.png)
 
     该向导完成后，生成器会创建清单文件。
 
@@ -214,7 +208,7 @@ vue init webpack my-add-in
 
 ## <a name="next-steps"></a>后续步骤
 
-恭喜！已使用 Vue 成功创建 Excel 加载项！接下来，请详细了解 Excel 加载项功能，并跟着 Excel 加载项教程一起操作，生成更复杂的加载项。
+祝贺，你已使用 Vue 成功创建了 Excel 任务窗格加载项！ 接下来，请详细了解 Excel 加载项功能，并跟着 Excel 加载项教程一起操作，生成更复杂的加载项。
 
 > [!div class="nextstepaction"]
 > [Excel 加载项教程](../tutorials/excel-tutorial.md)

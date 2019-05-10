@@ -1,22 +1,26 @@
 ---
-ms.date: 04/22/2019
+ms.date: 05/03/2019
 description: 将自定义函数集体进行批处理，以减少对远程服务的网络调用。
 title: 对远程服务的自定义函数调用进行批处理
 localization_priority: Priority
-ms.openlocfilehash: 2e31d6aa212e27967448f07fdcb2bd024a7511f9
-ms.sourcegitcommit: 7462409209264dc7f8f89f3808a7a6249fcd739e
+ms.openlocfilehash: da9f3ee3243b52df5d49f32c8ab6cbada97e17ca
+ms.sourcegitcommit: ff73cc04e5718765fcbe74181505a974db69c3f5
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/26/2019
-ms.locfileid: "33356850"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "33628128"
 ---
 # <a name="batching-custom-function-calls-for-a-remote-service"></a>对远程服务的自定义函数调用进行批处理
 
-如果自定义函数调用远程服务，可以使用批处理模式来减少对远程服务的网络调用次数。 为了减少网络往返，你可以将所有调用批处理为对 Web 服务的单个调用。 当重新计算电子表格时，此方法非常合适。 例如，如果有人在电子表格的 100 个单元格中使用了自定义函数，然后重新计算电子表格，则自定义函数将运行 100 次并进行 100 次网络调用。 通过使用批处理模式，可以将这些调用组合起来，在单次网络调用中完成总共 100 次计算。
+如果自定义函数调用远程服务，可以使用批处理模式来减少对远程服务的网络调用次数。 为了减少网络往返，你可以将所有调用批处理为对 Web 服务的单个调用。 当重新计算电子表格时，此方法非常合适。
+
+例如，如果有人在电子表格的 100 个单元格中使用了自定义函数，然后重新计算电子表格，则自定义函数将运行 100 次并进行 100 次网络调用。 通过使用批处理模式，可以将这些调用组合起来，在单次网络调用中完成总共 100 次计算。
+
+[!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
 ## <a name="view-the-completed-sample"></a>查看已完成的示例
 
-你可以按照本文操作，将代码示例粘贴到自己的项目中。 例如，可以使用 yo office 为 TypeScript 创建一个新的自定义函数项目，然后将本文中的所有代码添加到该项目中。 然后，可以运行代码并尝试执行。
+你可以按照本文操作，将代码示例粘贴到自己的项目中。 例如，可以使用 [Yo Office 生成器](https://github.com/OfficeDev/generator-office)为 TypeScript 创建一个新的自定义函数项目，然后将本文中的所有代码添加到该项目中。 然后，可以运行代码并尝试执行。
 
 此外，还可以在[自定义函数批处理模式](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Excel-custom-functions/Batching)处下载或查看完整的示例项目。 如果要在进一步阅读之前查看完整代码，请查看[脚本文件](https://github.com/OfficeDev/PnP-OfficeAddins/blob/master/Excel-custom-functions/Batching/src/functions/functions.ts)。
 
@@ -28,7 +32,7 @@ ms.locfileid: "33356850"
 2. 用以在批处理就绪时发出远程请求的函数。
 3. 用以响应批处理请求、计算所有运算结果并返回值的服务器代码。
 
-以下部分将为你展示如何构造代码（每次一个示例）。 你将把各个代码示例添加到 functions.ts 文件中。 建议使用 yo office 创建全新的自定义函数项目。 若要创建新项目，请参阅[开始开发 Excel 自定义函数](../quickstarts/excel-custom-functions-quickstart.md)并使用 TypeScript，而不是 JavaScript。
+以下部分将为你展示如何构造代码（每次一个示例）。 你将把各个代码示例添加到 **functions.ts** 文件中。 建议使用 yo office 生成器创建全新的自定义函数项目。 若要创建新项目，请参阅[开始开发 Excel 自定义函数](../quickstarts/excel-custom-functions-quickstart.md)并使用 TypeScript，而不是 JavaScript。
 
 ## <a name="batch-each-call-to-your-custom-function"></a>批处理对自定义函数的每次调用
 
@@ -67,7 +71,7 @@ interface IBatchEntry {
 }
 ```
 
-接下来，创建使用上一个接口的批处理数组。 若要跟踪是否已安排某个批处理，请创建一个 `_isBatchedRequestSchedule 变量。  这一点在稍后对远程服务的批处理调用进行计时时很重要。
+接下来，创建使用上一个接口的批处理数组。 若要跟踪是否已安排某个批处理，请创建一个 `_isBatchedRequestSchedule` 变量。 这一点在稍后对远程服务的批处理调用进行计时时很重要。
 
 ```typescript
 const _batch: IBatchEntry[] = [];
@@ -114,7 +118,7 @@ function _pushOperation(op: string, args: any[]) {
 
 ## <a name="make-the-remote-request"></a>发出远程请求
 
-`_makeRemoteRequest` 函数的目的是将一批运算传递给远程服务，然后将结果返回给每个自定义函数。 它首先创建批处理数组的副本。 这样，来自 Excel 的并发自定义函数调用便可以立即在新数组中开始批处理。 然后将副本转换为不包含承诺信息的较简单的数组。 将这些承诺传递给远程服务是没有意义的，因为它们不会发生作用。 `_makeRemoteRequest 将根据远程服务返回的内容拒绝或解决每个承诺。
+`_makeRemoteRequest` 函数的目的是将一批运算传递给远程服务，然后将结果返回给每个自定义函数。 它首先创建批处理数组的副本。 这样，来自 Excel 的并发自定义函数调用便可以立即在新数组中开始批处理。 然后将副本转换为不包含承诺信息的较简单的数组。 将这些承诺传递给远程服务是没有意义的，因为它们不会发生作用。 `_makeRemoteRequest` 将根据远程服务返回的内容拒绝或解决每个承诺。
 
 ### <a name="add-the-following-makeremoterequest-method-to-functionsts"></a>将以下 `_makeRemoteRequest` 方法添加到 functions.ts
 
@@ -157,7 +161,7 @@ function _makeRemoteRequest() {
 
 ## <a name="process-the-batch-call-on-the-remote-service"></a>处理远程服务上的批处理调用
 
-最后一步是处理远程服务中的批处理调用。 下面的代码示例展示了 `_fetchFromRemoteService` 函数。 此函数会解包每个运算，执行指定的运算，并返回结果。 出于学习目的，在本文中，`_fetchFromRemoteService` 函数适用于在 Web 加载项中运行并模拟远程服务。 你可以将此代码添加到 functions.ts 文件中，这样就可以研究和运行本文中的所有代码，而无需设置实际的远程服务。
+最后一步是处理远程服务中的批处理调用。 下面的代码示例展示了 `_fetchFromRemoteService` 函数。 此函数会解包每个运算，执行指定的运算，并返回结果。 出于学习目的，在本文中，`_fetchFromRemoteService` 函数适用于在 Web 加载项中运行并模拟远程服务。 你可以将此代码添加到 **functions.ts** 文件中，这样就可以研究和运行本文中的所有代码，而无需设置实际的远程服务。
 
 ### <a name="add-the-following-fetchfromremoteservice-function-to-functionsts"></a>将以下 `_fetchFromRemoteService` 函数添加到 functions.ts
 
@@ -213,9 +217,12 @@ function pause(ms: number) {
 - 应用相应的身份验证机制。 确保只有正确的调用者才可以访问该函数。
 - 将代码放入远程服务。
 
+## <a name="next-steps"></a>后续步骤
+了解可以在自定义函数中使用的[各种参数](custom-functions-parameter-options.md)。 或者查阅[通过自定义函数进行 Web 调用](custom-functions-web-reqs.md)后面的基础知识。
+
 ## <a name="see-also"></a>另请参阅
 
+* [函数中的可变值](custom-functions-volatile.md)
 * [自定义函数最佳实践](custom-functions-best-practices.md)
-* [自定义函数元数据](custom-functions-json.md)
-* [自定义函数更改日志](custom-functions-changelog.md)
+* [在 Excel 中创建自定义函数](custom-functions-overview.md)
 * [Excel 自定义函数教程](../tutorials/excel-tutorial-create-custom-functions.md)

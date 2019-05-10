@@ -1,14 +1,14 @@
 ---
 title: 清单文件中的 Supertip 元素
 description: ''
-ms.date: 10/09/2018
+ms.date: 05/07/2019
 localization_priority: Normal
-ms.openlocfilehash: cdbba342fa591ddff3faf94ecd63a4740fb904da
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: 269a3723db6f98cdb25c61e5a88608c5fb5f3191
+ms.sourcegitcommit: 5b9c2b39dfe76cabd98bf28d5287d9718788e520
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32450539"
+ms.lasthandoff: 05/07/2019
+ms.locfileid: "33659652"
 ---
 # <a name="supertip"></a>Supertip
 
@@ -18,8 +18,8 @@ ms.locfileid: "32450539"
 
 |  元素 |  必需  |  说明  |
 |:-----|:-----|:-----|
-|  [标题](#title)        | 是 |   supertip 的文本。         |
-|  [说明](#description)  | 是 |  supertip 的说明。    |
+| [标题](#title) | 是 | supertip 的文本。 |
+| [说明](#description) | 是 | supertip 的说明。<br>**注意**: (Outlook) 仅支持 Windows 和 Mac 客户端。 |
 
 ### <a name="title"></a>Title
 
@@ -28,6 +28,9 @@ ms.locfileid: "32450539"
 ### <a name="description"></a>说明
 
 必需。SuperTip 的描述。 **resid** 属性必须设置为 **LongStrings** 元素（位于 **Resources** 元素）中 **String** 元素的 [id](resources.md) 属性的值。
+
+> [!NOTE]
+> 对于 Outlook, 只有 Windows 和 Mac 客户端支持**Description**元素。
 
 ## <a name="example"></a>示例
 

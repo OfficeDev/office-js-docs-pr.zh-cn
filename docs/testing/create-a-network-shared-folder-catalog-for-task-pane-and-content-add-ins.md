@@ -3,32 +3,29 @@ title: 旁加载 Office 加载项以供测试
 description: ''
 ms.date: 03/19/2019
 localization_priority: Priority
-ms.openlocfilehash: 79d1bfc9332208e59e750e94a14abd6f1192ebe6
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: 24c7719969ddc59d8bb6e525af804515331a51ad
+ms.sourcegitcommit: 47b792755e655043d3db2f1fdb9a1eeb7453c636
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32450190"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "33619042"
 ---
 # <a name="sideload-office-add-ins-for-testing"></a>旁加载 Office 加载项以供测试
 
 你可以安装 Office 外接程序以在 Windows 上运行的 Office 客户端中进行测试（通过使用共享文件夹，以将清单发布到网络文件共享）。
 
 > [!NOTE]
-> 如果你的加载项项目是使用 [**yo office** 工具](https://github.com/OfficeDev/generator-office)创建的，则可以使用另一种方法来旁加载它，这可能对你有用。 有关详细信息，请参阅[使用旁加载命令旁加载 Office 加载项](sideload-office-addin-using-sideload-command.md)。
+> 如果你的加载项项目是使用[适合于 Office 加载项的 Yeoman 生成器](https://github.com/OfficeDev/generator-office)创建，则可以使用另一种方法来旁加载加载项，这可能对你有用。 有关详细信息，请参阅[使用旁加载命令旁加载 Office 加载项](sideload-office-addin-using-sideload-command.md)。
 
-本文仅适用于在 Windows 上测试 Word、Excel 或 PowerPoint 加载项。 如果要在其他平台上进行测试或要测试 Outlook 加载项，请参阅以下主题之一以旁加载你的加载项：
+本文仅适用于在 Windows 上测试 Word、Excel、PowerPoint 和 Project 加载项。 如果要在其他平台上进行测试或要测试 Outlook 加载项，请参阅以下主题之一以旁加载你的加载项：
 
 - [在 Office Online 中旁加载 Office 外接程序进行测试](sideload-office-add-ins-for-testing.md)
 - [在 iPad 和 Mac 上旁加载 Office 外接程序进行测试](sideload-an-office-add-in-on-ipad-and-mac.md)
 - [旁加载 Outlook 加载项以供测试](/outlook/add-ins/sideload-outlook-add-ins-for-testing)
 
-
 下面的视频逐步展示了如何使用共享文件夹目录在 Office 桌面或 Office Online 上旁加载加载项。  
 
-
 > [!VIDEO https://www.youtube.com/embed/XXsAw2UUiQo]
-
 
 ## <a name="share-a-folder"></a>共享文件夹
 
@@ -50,9 +47,9 @@ ms.locfileid: "32450190"
 
 ## <a name="specify-the-shared-folder-as-a-trusted-catalog"></a>将共享文件夹指定为受信任的目录
       
-1. 在 Excel、Word 或 PowerPoint 中打开一个新文档。
+1. 在 Excel、Word、PowerPoint 或 Project 中打开一个新的文档。
     
-2. 选择“**文件**”选项卡，然后选择“**选项**”。
+2. 选择“文件”**** 选项卡，然后选择“选项”****。
     
 3. 选择“**信任中心**”，然后选择“**信任中心设置**”按钮。
     
@@ -81,12 +78,11 @@ ms.locfileid: "32450190"
     > [!IMPORTANT]
     > [!include[HTTPS guidance](../includes/https-guidance.md)]
 
-2. 在 Excel、Word 或 PowerPoint 中，选择功能区上“**插入**”选项卡中的“**我的加载项**”。
+2. 在 Excel、Word 或 PowerPoint 中，选择功能区上“**插入**”选项卡中的“**我的加载项**”。 在 Project 中，选择功能区“**Project**”选项卡上的“**我的加载项**”。 
 
 3. 在“**Office 外接程序**”对话框的顶部，选择“**共享文件夹**”。
 
 4. 依次选择加载项名称和“确定”****，以插入加载项。
-
 
 ## <a name="see-also"></a>另请参阅
 

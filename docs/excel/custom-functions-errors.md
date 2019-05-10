@@ -1,14 +1,14 @@
 ---
-ms.date: 02/08/2019
+ms.date: 05/03/2019
 description: 处理 Excel 自定义函数中的错误。
-title: Excel 中自定义函数的错误处理（预览）
+title: 在 Excel 中处理自定义函数时出错
 localization_priority: Priority
-ms.openlocfilehash: 6c1c7f780aea125977510e4eb0e320933cd6ed9c
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: 188ece6c77bc2cafad6f22448fb698e0c0370ef8
+ms.sourcegitcommit: ff73cc04e5718765fcbe74181505a974db69c3f5
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32448320"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "33628156"
 ---
 # <a name="error-handling-within-custom-functions"></a>自定义函数中的错误处理
 
@@ -19,6 +19,11 @@ ms.locfileid: "32448320"
 在以下代码示例中，`.catch` 将处理之前发生在代码中的任何错误。
 
 ```js
+/**
+ * Gets a comment from the hypothetical contoso.com/comments API.
+ * @customfunction
+ * @param {number} commentID ID of a comment.
+ */
 function getComment(commentID) {
   let url = "https://www.contoso.com/comments/" + x;
 
@@ -35,10 +40,11 @@ function getComment(commentID) {
 }
 ```
 
+## <a name="next-steps"></a>后续步骤
+了解如何[解决自定义函数中的问题](custom-functions-troubleshooting.md)。
+
 ## <a name="see-also"></a>另请参阅
 
-* [Excel 自定义函数教程](../tutorials/excel-tutorial-create-custom-functions.md)
-* [自定义函数元数据](custom-functions-json.md)
-* [Excel 自定义函数的运行时](custom-functions-runtime.md)
-* [自定义函数最佳实践](custom-functions-best-practices.md)
-* [自定义函数更改日志](custom-functions-changelog.md)
+* [自定义函数调试](custom-functions-debugging.md)
+* [自定义函数要求](custom-functions-requirements.md)
+* [在 Excel 中创建自定义函数](custom-functions-overview.md)
