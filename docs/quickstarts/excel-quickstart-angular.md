@@ -1,203 +1,79 @@
 ---
-title: 使用 Angular 生成 Excel 加载项
+title: 使用 Angular 生成 Excel 任务窗格加载项
 description: ''
-ms.date: 03/19/2019
+ms.date: 05/02/2019
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: e814fb2a1dd24a272a24ca9debead2d836aed5c8
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: 66c85ba9914b783295e9ed2143dc9ce107f64c4c
+ms.sourcegitcommit: 47b792755e655043d3db2f1fdb9a1eeb7453c636
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32450947"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "33619905"
 ---
-# <a name="build-an-excel-add-in-using-angular"></a><span data-ttu-id="7c190-102">使用 Angular 生成 Excel 加载项</span><span class="sxs-lookup"><span data-stu-id="7c190-102">Build an Excel add-in using Angular</span></span>
+# <a name="build-an-excel-task-pane-add-in-using-angular"></a><span data-ttu-id="2fd2c-102">使用 Angular 生成 Excel 任务窗格加载项</span><span class="sxs-lookup"><span data-stu-id="2fd2c-102">Build an Excel add-in using Angular</span></span>
 
-<span data-ttu-id="7c190-103">本文将逐步介绍如何使用 Angular 和 Excel JavaScript API 生成 Excel 加载项。</span><span class="sxs-lookup"><span data-stu-id="7c190-103">In this article, you'll walk through the process of building an Excel add-in using Angular and the Excel JavaScript API.</span></span>
+<span data-ttu-id="2fd2c-103">本文将逐步介绍如何使用 Angular 和 Excel JavaScript API 生成 Excel 任务加载项。</span><span class="sxs-lookup"><span data-stu-id="2fd2c-103">In this article, you'll walk through the process of building an Excel add-in using Angular and the Excel JavaScript API.</span></span>
 
-## <a name="prerequisites"></a><span data-ttu-id="7c190-104">先决条件</span><span class="sxs-lookup"><span data-stu-id="7c190-104">Prerequisites</span></span>
+## <a name="prerequisites"></a><span data-ttu-id="2fd2c-104">先决条件</span><span class="sxs-lookup"><span data-stu-id="2fd2c-104">Prerequisites</span></span>
 
-- [<span data-ttu-id="7c190-105">Node.js</span><span class="sxs-lookup"><span data-stu-id="7c190-105">Node.js</span></span>](https://nodejs.org)
+[!include[Yeoman generator prerequisites](../includes/quickstart-yo-prerequisites.md)]
 
-- <span data-ttu-id="7c190-106">全局安装最新版 [Yeoman](https://github.com/yeoman/yo) 和 [Office 加载项的 Yeoman 生成器](https://github.com/OfficeDev/generator-office)。</span><span class="sxs-lookup"><span data-stu-id="7c190-106">Install the latest version of [Yeoman](https://github.com/yeoman/yo) and the [Yeoman generator for Office Add-ins](https://github.com/OfficeDev/generator-office) globally.</span></span>
+## <a name="create-the-add-in-project"></a><span data-ttu-id="2fd2c-105">创建加载项项目</span><span class="sxs-lookup"><span data-stu-id="2fd2c-105">Create the add-in project</span></span>
 
-    ```bash
-    npm install -g yo generator-office
-    ```
+1. <span data-ttu-id="2fd2c-106">使用 Yeoman 生成器创建 Excel 加载项项目。</span><span class="sxs-lookup"><span data-stu-id="2fd2c-106">Use the Yeoman generator to create an Excel add-in project.</span></span> <span data-ttu-id="2fd2c-107">运行下面的命令，再回答如下所示的提示问题：</span><span class="sxs-lookup"><span data-stu-id="2fd2c-107">Run the following command and then answer the prompts as follows:</span></span>
 
-## <a name="create-the-web-app"></a><span data-ttu-id="7c190-107">创建 Web 应用</span><span class="sxs-lookup"><span data-stu-id="7c190-107">Create the web app</span></span>
-
-1. <span data-ttu-id="7c190-108">使用 Yeoman 生成器创建 Excel 加载项项目。</span><span class="sxs-lookup"><span data-stu-id="7c190-108">Use the Yeoman generator to create an Excel add-in project.</span></span> <span data-ttu-id="7c190-109">运行下面的命令，再回答如下所示的提示问题：</span><span class="sxs-lookup"><span data-stu-id="7c190-109">Run the following command and then answer the prompts as follows:</span></span>
-
-    ```bash
+    ```command&nbsp;line
     yo office
     ```
 
-    - <span data-ttu-id="7c190-110">**选择项目类型:** `Office Add-in project using Angular framework`</span><span class="sxs-lookup"><span data-stu-id="7c190-110">**Choose a project type:** `Office Add-in project using Angular framework`</span></span>
-    - <span data-ttu-id="7c190-111">**选择脚本类型:** `Typescript`</span><span class="sxs-lookup"><span data-stu-id="7c190-111">**Choose a script type:** `Typescript`</span></span>
-    - <span data-ttu-id="7c190-112">**要如何命名加载项?:** `My Office Add-in`</span><span class="sxs-lookup"><span data-stu-id="7c190-112">**What do you want to name your add-in?:** `My Office Add-in`</span></span>
-    - <span data-ttu-id="7c190-113">**要支持哪一个 Office 客户端应用？：**`Excel`</span><span class="sxs-lookup"><span data-stu-id="7c190-113">**Which Office client application would you like to support?:** `Excel`</span></span>
+    - <span data-ttu-id="2fd2c-108">**选择项目类型:** `Office Add-in Task Pane project using Angular framework`</span><span class="sxs-lookup"><span data-stu-id="2fd2c-108">**Choose a project type:** `Office Add-in Task Pane project using Angular framework`</span></span>
+    - <span data-ttu-id="2fd2c-109">**选择脚本类型:** `TypeScript`</span><span class="sxs-lookup"><span data-stu-id="2fd2c-109">**Choose a script type:** `TypeScript`</span></span>
+    - <span data-ttu-id="2fd2c-110">**要如何命名加载项?**</span><span class="sxs-lookup"><span data-stu-id="2fd2c-110">**What do you want to name your add-in?**</span></span> `My Office Add-in`
+    - <span data-ttu-id="2fd2c-111">**要支持哪一个 Office 客户端应用程序?**</span><span class="sxs-lookup"><span data-stu-id="2fd2c-111">**Which Office client application would you like to support?**</span></span> `Excel`
 
-    ![Yeoman 生成器](../images/yo-office-excel-angular.png)
+    ![Yeoman 生成器](../images/yo-office-excel-angular-2.png)
 
-    <span data-ttu-id="7c190-115">完成此向导后，生成器会创建项目，并安装支持的 Node 组件。</span><span class="sxs-lookup"><span data-stu-id="7c190-115">After you complete the wizard, the generator will create the project and install supporting Node components.</span></span>
+    <span data-ttu-id="2fd2c-113">完成此向导后，生成器会创建项目，并安装支持的 Node 组件。</span><span class="sxs-lookup"><span data-stu-id="2fd2c-113">After you complete the wizard, the generator will create the project and install supporting Node components.</span></span>
 
-2. <span data-ttu-id="7c190-116">导航到项目的根文件夹。</span><span class="sxs-lookup"><span data-stu-id="7c190-116">Navigate to the root folder of the project.</span></span>
+2. <span data-ttu-id="2fd2c-114">导航到项目的根文件夹。</span><span class="sxs-lookup"><span data-stu-id="2fd2c-114">Navigate to the root folder of the project.</span></span>
 
-    ```bash
+    ```command&nbsp;line
     cd "My Office Add-in"
     ```
+## <a name="explore-the-project"></a><span data-ttu-id="2fd2c-115">浏览项目</span><span class="sxs-lookup"><span data-stu-id="2fd2c-115">Explore the project</span></span>
 
-## <a name="update-the-code"></a><span data-ttu-id="7c190-117">更新代码</span><span class="sxs-lookup"><span data-stu-id="7c190-117">Update the code</span></span>
+<span data-ttu-id="2fd2c-116">使用 Yeoman 生成器创建的加载项项目包含适合于基础任务窗格加载项的示例代码。</span><span class="sxs-lookup"><span data-stu-id="2fd2c-116">The add-in project that you've created with the Yeoman generator contains sample code for a very basic task pane add-in.</span></span> <span data-ttu-id="2fd2c-117">如果想要浏览加载项项目的主要组件，请在代码编辑器中打开项目并检查下面列出的文件。</span><span class="sxs-lookup"><span data-stu-id="2fd2c-117">If you'd like to explore the key components of your add-in project, open the project in your code editor and review the files listed below.</span></span> <span data-ttu-id="2fd2c-118">准备好试用加载项时，请转至下一部分。</span><span class="sxs-lookup"><span data-stu-id="2fd2c-118">When you're ready to try out your add-in, proceed to the next section.</span></span>
 
-1. <span data-ttu-id="7c190-118">在代码编辑器中，打开文件“**app.css**”，将以下样式添加到文件的末尾，然后保存文件。</span><span class="sxs-lookup"><span data-stu-id="7c190-118">In your code editor, open the file **app.css**, add the following styles to the end of the file, and save the file.</span></span>
+- <span data-ttu-id="2fd2c-119">项目根目录中的 **manifest.xml** 文件定义加载项的设置和功能。</span><span class="sxs-lookup"><span data-stu-id="2fd2c-119">The **manifest.xml** file in the root directory of the project defines the settings and capabilities of the add-in.</span></span>
+- <span data-ttu-id="2fd2c-120">**./src/taskpane/app/app.component.html** 文件包含组成任务窗格的 HTML。</span><span class="sxs-lookup"><span data-stu-id="2fd2c-120">The **./src/taskpane/app/app.component.html** file contains the HTML markup for the task pane.</span></span>
+- <span data-ttu-id="2fd2c-121">**./src/taskpane/taskpane.css** 文件包含应用于任务窗格中的内容的 CSS。</span><span class="sxs-lookup"><span data-stu-id="2fd2c-121">The **./src/taskpane/taskpane.css** file contains the CSS that's applied to content in the task pane.</span></span>
+- <span data-ttu-id="2fd2c-122">**./src/taskpane/app/app.component.ts** 文件包含用于加快任务窗格与 Excel 之间的交互的 Office JavaScript API 代码。</span><span class="sxs-lookup"><span data-stu-id="2fd2c-122">The **./src/taskpane/app/app.component.ts** file contains the Office JavaScript API code that facilitates interaction between the task pane and Excel.</span></span>
 
-    ```css
-    #content-header {
-        background: #2a8dd4;
-        color: #fff;
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 80px;
-        overflow: hidden;
-        font-family: Arial;
-        padding-top: 25px;
-    }
+## <a name="try-it-out"></a><span data-ttu-id="2fd2c-123">试用</span><span class="sxs-lookup"><span data-stu-id="2fd2c-123">Try it out</span></span>
 
-    #content-main {
-        background: #fff;
-        position: fixed;
-        top: 80px;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        overflow: auto;
-        font-family: Arial;
-    }
+1. [!include[Start server section](../includes/quickstart-yo-start-server-excel.md)] 
 
-    .padding {
-        padding: 15px;
-    }
+2. <span data-ttu-id="2fd2c-124">在 Excel 中，依次选择的“**开始**”选项卡和功能区中的“**显示任务窗格**”按钮，以打开加载项任务窗格。</span><span class="sxs-lookup"><span data-stu-id="2fd2c-124">In Excel, choose the **Home** tab, and then choose the **Show Taskpane** button in the ribbon to open the add-in task pane.</span></span>
 
-    .padding-sm {
-        padding: 4px;
-    }
+    ![Excel 加载项按钮](../images/excel-quickstart-addin-3b.png)
 
-    .normal-button {
-        width: 80px;
-        padding: 2px;
-    }
-    ```
+3. <span data-ttu-id="2fd2c-126">选择工作表中的任何一系列单元格。</span><span class="sxs-lookup"><span data-stu-id="2fd2c-126">Select any range of cells in the worksheet.</span></span>
 
-2. <span data-ttu-id="7c190-119">打开文件“**src/app/app.component.html**”，将全部内容替换为以下代码，然后保存文件。</span><span class="sxs-lookup"><span data-stu-id="7c190-119">Open the file **src/app/app.component.html**, replace the entire contents with the following code, and save the file.</span></span>
+4. <span data-ttu-id="2fd2c-127">在任务窗格的底部，选择“**运行**”链接，价格选定范围的颜色设为黄色。</span><span class="sxs-lookup"><span data-stu-id="2fd2c-127">At the bottom of the task pane, choose the **Run** link to set the color of the selected range to yellow.</span></span>
 
-    ```html
-    <div id="content-header">
-        <div class="padding">
-            <h1>{{welcomeMessage}}</h1>
-        </div>
-    </div>
-    <div id="content-main">
-        <div class="padding">
-            <p>Choose the button below to set the color of the selected range to green.</p>
-            <br />
-            <h3>Try it out</h3>
-            <br />
-            <div role="button" class="ms-Button" (click)="setColor()">
-                <span class="ms-Button-label">Set color</span>
-                <span class="ms-Button-icon"><i class="ms-Icon ms-Icon--ChevronRight"></i></span>
-            </div>
-        </div>
-    </div>
-    ```
+    ![Excel 加载项](../images/excel-quickstart-addin-3c.png)
 
-3. <span data-ttu-id="7c190-120">打开文件“**src/app/app.component.ts**”，将全部内容替换为以下代码，然后保存文件。</span><span class="sxs-lookup"><span data-stu-id="7c190-120">Open the file **src/app/app.component.ts**, replace the entire contents with the following code, and save the file.</span></span>
+## <a name="next-steps"></a><span data-ttu-id="2fd2c-129">后续步骤</span><span class="sxs-lookup"><span data-stu-id="2fd2c-129">Next steps</span></span>
 
-    ```typescript
-    import { Component } from '@angular/core';
-    import * as OfficeHelpers from '@microsoft/office-js-helpers';
-
-    const template = require('./app.component.html');
-
-    @Component({
-        selector: 'app-home',
-        template
-    })
-    export default class AppComponent {
-        welcomeMessage = 'Welcome';
-
-        async setColor() {
-            try {
-                await Excel.run(async context => {
-                    const range = context.workbook.getSelectedRange();
-                    range.load('address');
-                    range.format.fill.color = 'green';
-                    await context.sync();
-                    console.log(`The range address was ${range.address}.`);
-                });
-            } catch (error) {
-                OfficeHelpers.UI.notify(error);
-                OfficeHelpers.Utilities.log(error);
-            }
-        }
-
-    }
-    ```
-
-## <a name="update-the-manifest"></a><span data-ttu-id="7c190-121">更新清单</span><span class="sxs-lookup"><span data-stu-id="7c190-121">Update the manifest</span></span>
-
-1. <span data-ttu-id="7c190-122">打开文件“**manifest.xml**”以定义加载项的设置和功能。</span><span class="sxs-lookup"><span data-stu-id="7c190-122">Open the file **manifest.xml** to define the add-in's settings and capabilities.</span></span> 
-
-2. <span data-ttu-id="7c190-p102">`ProviderName` 元素具有占位符值。 将其替换为你的姓名。</span><span class="sxs-lookup"><span data-stu-id="7c190-p102">The `ProviderName` element has a placeholder value. Replace it with your name.</span></span>
-
-3. <span data-ttu-id="7c190-125">`Description` 元素的 `DefaultValue` 属性有占位符。</span><span class="sxs-lookup"><span data-stu-id="7c190-125">The `DefaultValue` attribute of the `Description` element has a placeholder.</span></span> <span data-ttu-id="7c190-126">将它替换为“A task pane add-in for Excel”\*\*\*\*。</span><span class="sxs-lookup"><span data-stu-id="7c190-126">Replace it with **A task pane add-in for Excel**.</span></span>
-
-4. <span data-ttu-id="7c190-127">保存文件。</span><span class="sxs-lookup"><span data-stu-id="7c190-127">Save the file.</span></span>
-
-    ```xml
-    ...
-    <ProviderName>John Doe</ProviderName>
-    <DefaultLocale>en-US</DefaultLocale>
-    <!-- The display name of your add-in. Used on the store and various places of the Office UI such as the add-ins dialog. -->
-    <DisplayName DefaultValue="My Office Add-in" />
-    <Description DefaultValue="A task pane add-in for Excel"/>
-    ...
-    ```
-
-## <a name="start-the-dev-server"></a><span data-ttu-id="7c190-128">启动开发人员服务器</span><span class="sxs-lookup"><span data-stu-id="7c190-128">Start the dev server</span></span>
-
-[!include[Start server section](../includes/quickstart-yo-start-server.md)] 
-
-## <a name="try-it-out"></a><span data-ttu-id="7c190-129">试用</span><span class="sxs-lookup"><span data-stu-id="7c190-129">Try it out</span></span>
-
-1. <span data-ttu-id="7c190-130">请按照运行加载项和在 Excel 中旁加载加载项时所用平台对应的说明操作。</span><span class="sxs-lookup"><span data-stu-id="7c190-130">Follow the instructions for the platform you'll be using to run your add-in and sideload the add-in within Excel.</span></span>
-
-    - <span data-ttu-id="7c190-131">Windows：[在 Windows 上旁加载 Office 加载项](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)</span><span class="sxs-lookup"><span data-stu-id="7c190-131">Windows: [Sideload Office Add-ins on Windows](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)</span></span>
-    - <span data-ttu-id="7c190-132">Excel Online：[在 Office Online 中旁加载 Office 加载项](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-in-office-online)</span><span class="sxs-lookup"><span data-stu-id="7c190-132">Excel Online: [Sideload Office Add-ins in Office Online](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-in-office-online)</span></span>
-    - <span data-ttu-id="7c190-133">iPad 和 Mac：[在 iPad 和 Mac 上旁加载 Office 加载项](../testing/sideload-an-office-add-in-on-ipad-and-mac.md)</span><span class="sxs-lookup"><span data-stu-id="7c190-133">iPad and Mac: [Sideload Office Add-ins on iPad and Mac](../testing/sideload-an-office-add-in-on-ipad-and-mac.md)</span></span>
-
-2. <span data-ttu-id="7c190-134">在 Excel 中，依次选择的“**开始**”选项卡和功能区中的“**显示任务窗格**”按钮，以打开加载项任务窗格。</span><span class="sxs-lookup"><span data-stu-id="7c190-134">In Excel, choose the **Home** tab, and then choose the **Show Taskpane** button in the ribbon to open the add-in task pane.</span></span>
-
-    ![Excel 加载项按钮](../images/excel-quickstart-addin-2b.png)
-
-3. <span data-ttu-id="7c190-136">选择工作表中的任何一系列单元格。</span><span class="sxs-lookup"><span data-stu-id="7c190-136">Select any range of cells in the worksheet.</span></span>
-
-4. <span data-ttu-id="7c190-137">在任务窗格中，选择“**设置颜色**”按钮，将选定区域的颜色设置为绿色。</span><span class="sxs-lookup"><span data-stu-id="7c190-137">In the task pane, choose the **Set color** button to set the color of the selected range to green.</span></span>
-
-    ![Excel 加载项](../images/excel-quickstart-addin-2c.png)
-
-## <a name="next-steps"></a><span data-ttu-id="7c190-139">后续步骤</span><span class="sxs-lookup"><span data-stu-id="7c190-139">Next steps</span></span>
-
-<span data-ttu-id="7c190-p104">恭喜！已使用 Angular 成功创建 Excel 加载项！接下来，请详细了解 Excel 加载项功能，并跟着 Excel 加载项教程一起操作，生成更复杂的加载项。</span><span class="sxs-lookup"><span data-stu-id="7c190-p104">Congratulations, you've successfully created an Excel add-in using Angular! Next, learn more about the capabilities of an Excel add-in and build a more complex add-in by following along with the Excel add-in tutorial.</span></span>
+<span data-ttu-id="2fd2c-130">祝贺，你已使用 Angular 成功创建了 Excel 任务窗格加载项！</span><span class="sxs-lookup"><span data-stu-id="2fd2c-130">Congratulations, you've successfully created an Excel add-in using Angular!</span></span> <span data-ttu-id="2fd2c-131">接下来，请详细了解 Excel 加载项功能，并跟着 Excel 加载项教程一起操作，生成更复杂的加载项。</span><span class="sxs-lookup"><span data-stu-id="2fd2c-131">Congratulations, you've successfully created an Excel add-in using jQuery! Next, learn more about the capabilities of an Excel add-in and build a more complex add-in by following along with the Excel add-in tutorial.</span></span>
 
 > [!div class="nextstepaction"]
-> [<span data-ttu-id="7c190-142">Excel 加载项教程</span><span class="sxs-lookup"><span data-stu-id="7c190-142">Excel add-in tutorial</span></span>](../tutorials/excel-tutorial.md)
+> [<span data-ttu-id="2fd2c-132">Excel 加载项教程</span><span class="sxs-lookup"><span data-stu-id="2fd2c-132">Excel add-in tutorial</span></span>](../tutorials/excel-tutorial.md)
 
-## <a name="see-also"></a><span data-ttu-id="7c190-143">另请参阅</span><span class="sxs-lookup"><span data-stu-id="7c190-143">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="2fd2c-133">另请参阅</span><span class="sxs-lookup"><span data-stu-id="2fd2c-133">See also</span></span>
 
-* [<span data-ttu-id="7c190-144">Excel 加载项教程</span><span class="sxs-lookup"><span data-stu-id="7c190-144">Excel add-in tutorial</span></span>](../tutorials/excel-tutorial-create-table.md)
-* [<span data-ttu-id="7c190-145">Excel JavaScript API 基本编程概念</span><span class="sxs-lookup"><span data-stu-id="7c190-145">Fundamental programming concepts with the Excel JavaScript API</span></span>](../excel/excel-add-ins-core-concepts.md)
-* [<span data-ttu-id="7c190-146">Excel 加载项代码示例</span><span class="sxs-lookup"><span data-stu-id="7c190-146">Excel add-in code samples</span></span>](https://developer.microsoft.com/office/gallery/?filterBy=Samples,Excel)
-* [<span data-ttu-id="7c190-147">Excel JavaScript API 参考</span><span class="sxs-lookup"><span data-stu-id="7c190-147">Excel JavaScript API reference</span></span>](/office/dev/add-ins/reference/overview/excel-add-ins-reference-overview)
+* [<span data-ttu-id="2fd2c-134">Excel 加载项教程</span><span class="sxs-lookup"><span data-stu-id="2fd2c-134">Excel add-in tutorial</span></span>](../tutorials/excel-tutorial-create-table.md)
+* [<span data-ttu-id="2fd2c-135">Excel JavaScript API 基本编程概念</span><span class="sxs-lookup"><span data-stu-id="2fd2c-135">Fundamental programming concepts with the Excel JavaScript API</span></span>](../excel/excel-add-ins-core-concepts.md)
+* [<span data-ttu-id="2fd2c-136">Excel 加载项代码示例</span><span class="sxs-lookup"><span data-stu-id="2fd2c-136">Excel add-in code samples</span></span>](https://developer.microsoft.com/office/gallery/?filterBy=Samples,Excel)
+* [<span data-ttu-id="2fd2c-137">Excel JavaScript API 参考</span><span class="sxs-lookup"><span data-stu-id="2fd2c-137">Excel JavaScript API reference</span></span>](/office/dev/add-ins/reference/overview/excel-add-ins-reference-overview)
