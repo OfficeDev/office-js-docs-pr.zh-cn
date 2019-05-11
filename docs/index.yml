@@ -7,10 +7,10 @@ metadata:
   author: o365devx
   ms.topic: landing-page
   ms.prod: non-product-specific
-  ms.date: 12/04/2017
+  ms.date: 05/08/2019
   ms.author: o365devx
 abstract:
-  description: <a href="/office/dev/add-ins/overview/office-add-ins">Office 加载项平台</a>使你能够生成解决方案，通过解决方案扩展 Office 应用程序，并与 Office 文档中的内容进行交互。 借助 Office 加载项，可以使用熟悉的 Web 技术，例如 HTML、CSS 和 JavaScript 来扩展 Word、Excel、PowerPoint、OneNote、Project 和 Outlook，并与其进行交互。 你的解决方案可以跨多个平台在 Office 中运行，包括 Office for Windows、Office Online、Office for Mac 和 Office for iPad。 了解如何利用快速入门、操作指南和 API 参考文档创建 Office 加载项。<br/><br/><b>注释：</b>有关 COM 或 VSTO 加载项的信息，请参阅 <a href="/office/client-developer/office-client-development" target="_blank">Office 客户端开发文档</a>。
+  description: <a href="/office/dev/add-ins/overview/office-add-ins">Office 加载项平台</a>使你能够生成解决方案，通过解决方案扩展 Office 应用程序，并与 Office 文档中的内容进行交互。 借助 Office 加载项，可以使用熟悉的 Web 技术，例如 HTML、CSS 和 JavaScript 来扩展 Word、Excel、PowerPoint、OneNote、Project 和 Outlook，并与其进行交互。 您的解决方案可以跨多个平台 (包括 Windows 上的 Office、Office Online、Office for Mac 和 Office for iPad) 在 Office 中运行。 了解如何利用快速入门、操作指南和 API 参考文档创建 Office 加载项。<br/><br/><b>注释：</b>有关 COM 或 VSTO 加载项的信息，请参阅 <a href="/office/client-developer/office-client-development" target="_blank">Office 客户端开发文档</a>。
   aside:
     image:
       alt: null
