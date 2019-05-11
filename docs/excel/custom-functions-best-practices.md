@@ -1,14 +1,14 @@
 ---
-ms.date: 05/06/2019
+ms.date: 05/08/2019
 description: 了解在 Excel 中开发自定义函数的最佳实践。
 title: 自定义函数最佳实践
 localization_priority: Normal
-ms.openlocfilehash: 7369faa463966dd309258bf431eae8719407be38
-ms.sourcegitcommit: ff73cc04e5718765fcbe74181505a974db69c3f5
+ms.openlocfilehash: d825f5a9f14e240ca5af3c3325cb646248d99ca9
+ms.sourcegitcommit: a99be9c4771c45f3e07e781646e0e649aa47213f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "33628136"
+ms.lasthandoff: 05/11/2019
+ms.locfileid: "33952101"
 ---
 # <a name="custom-functions-best-practices"></a>自定义函数最佳实践
 
@@ -99,13 +99,13 @@ CustomFunctions.associate("ADD", add);
 
 ## <a name="additional-considerations"></a>其他注意事项
 
-避免从自定义函数中直接或间接访问文档对象模型 (DOM) (例如, 使用 jQuery)。 在自定义函数会使用 [JavaScript 运行时](custom-functions-runtime.md)的 Windows 版 Excel 中，自定义函数无法访问 DOM。
+避免从自定义函数中直接或间接访问文档对象模型 (DOM) (例如, 使用 jQuery)。 在 Windows 的 Excel 中, 自定义函数使用[JavaScript 运行时](custom-functions-runtime.md), 自定义函数无法访问 DOM。
 
 ## <a name="next-steps"></a>后续步骤
 了解如何[使用自定义函数执行 web 请求](custom-functions-web-reqs.md)。
 
 ## <a name="see-also"></a>另请参阅
 
-* [自动生成自定义函数的 JSON 元数据](custom-functions-json-autogeneration.md)
+* [为自定义函数自动生成 JSON 元数据](custom-functions-json-autogeneration.md)
 * [自定义函数元数据](custom-functions-json.md)
 * [在 Excel 中创建自定义函数](custom-functions-overview.md)

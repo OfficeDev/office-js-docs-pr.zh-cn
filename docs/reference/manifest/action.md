@@ -1,14 +1,14 @@
 ---
 title: 清单文件中的 Action 元素
 description: ''
-ms.date: 03/19/2019
+ms.date: 05/08/2019
 localization_priority: Normal
-ms.openlocfilehash: 59df6cce6af1277f365a1dd3cd0b3ef11230804e
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: 58dcbae57ea2c0e55c9e7708b122484b99e956fe
+ms.sourcegitcommit: a99be9c4771c45f3e07e781646e0e649aa47213f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32450700"
+ms.lasthandoff: 05/11/2019
+ms.locfileid: "33952402"
 ---
 # <a name="action-element"></a>Action 元素
 
@@ -140,7 +140,7 @@ ms.locfileid: "32450700"
 **xsi:type** 是“ShowTaskpane”时的可选元素。 包含 [VersionOverrides](versionoverrides.md) 元素的 `xsi:type` 属性值必须为 `VersionOverridesV1_1`。 添加此元素时将值设为 `true` 可以支持任务窗格固定。 这样一来，用户可以“固定”任务窗格，即使用户选择其他对象，任务窗格也可以继续处于打开状态。 有关详细信息，请参阅[在 Outlook 中实现可固定的任务窗格](/outlook/add-ins/pinnable-taskpane)。
 
 > [!NOTE]
-> SupportsPinning 目前仅支持 outlook 2016 for Windows (内部版本7628.1000 或更高版本) 和 outlook 2016 for Mac (内部版本16.13.503 或更高版本)。
+> SupportsPinning 目前仅支持 Windows 上的 Outlook 2016 (内部版本7628.1000 或更高版本) 和 Outlook 2016 for Mac (内部版本16.13.503 或更高版本)。
 
 ```xml
 <Action xsi:type="ShowTaskpane">

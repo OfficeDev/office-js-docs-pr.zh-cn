@@ -1,15 +1,15 @@
 ---
-ms.date: 05/02/2019
+ms.date: 05/08/2019
 description: 在 Excel 快速入门指南中开发自定义函数。
 title: 自定义功能快速入门
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: 8eb2630526ce939273024eebd533bd99fa5e94a1
-ms.sourcegitcommit: 47b792755e655043d3db2f1fdb9a1eeb7453c636
+ms.openlocfilehash: 233e1b608eda4a696b14d833fe4e071b2fcffd67
+ms.sourcegitcommit: a99be9c4771c45f3e07e781646e0e649aa47213f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "33619891"
+ms.lasthandoff: 05/11/2019
+ms.locfileid: "33952381"
 ---
 # <a name="get-started-developing-excel-custom-functions"></a>开始开发 Excel 自定义函数
 
@@ -19,7 +19,7 @@ ms.locfileid: "33619891"
 
 [!include[Yeoman generator prerequisites](../includes/quickstart-yo-prerequisites.md)]
 
-* Excel for Windows（64 位，版本 1810 或更高版本）或 Excel Online
+* Windows 上的 Excel (64 位版本1810或更高版本) 或 Excel Online
 
 * 加入 [Office 预览体验计划](https://products.office.com/office-insider)（**预览体验成员**级别 - 以前称为“预览体验成员 - 快”）
 
@@ -53,14 +53,14 @@ ms.locfileid: "33619891"
     npm run build
     ```
 
-4. 启动在 Node.js 中运行的本地 Web 服务器。 您可以在 Excel for Windows 或 Excel Online 中试用自定义函数外接程序。 系统可能会提示您打开加载项的任务窗格, 但这是可选的。 您仍可以运行自定义函数, 而无需打开加载项的任务窗格。
+4. 启动在 Node.js 中运行的本地 Web 服务器。 可以在 Windows 或 Excel Online 上试用 Excel 中的自定义函数加载项。 系统可能会提示您打开加载项的任务窗格, 但这是可选的。 您仍可以运行自定义函数, 而无需打开加载项的任务窗格。
 
 > [!NOTE]
-> Office 外接程序应使用 HTTPS, 而不是 HTTP, 即使在开发时也是如此。 如果在运行`npm run start:desktop`后系统提示您安装证书, 请接受安装 Yeoman 生成器提供的证书的提示。
+> Office 加载项应使用 HTTPS，而不是 HTTP（即便是在开发时也是如此）。 如果系统在运行 `npm run start:desktop` 后提示你安装证书，请接受提示以安装 Yeoman 生成器提供的证书。
 
-# <a name="excel-for-windowstabexcel-windows"></a>[Excel for Windows](#tab/excel-windows)
+# <a name="excel-on-windowstabexcel-windows"></a>[Windows 上的 Excel](#tab/excel-windows)
 
-若要在 Excel for Windows 中测试外接程序, 请运行以下命令。 运行此命令时, 本地 web 服务器将启动, 并且 Excel 将在加载的外接程序中打开。
+若要在 Windows 中的 Excel 中测试外接程序, 请运行以下命令。 运行此命令时, 本地 web 服务器将启动, 并且 Excel 将在加载的外接程序中打开。
 
 ```command&nbsp;line
 npm run start:desktop
@@ -68,14 +68,14 @@ npm run start:desktop
 
 # <a name="excel-onlinetabexcel-online"></a>[Excel Online](#tab/excel-online)
 
-若要在 Excel Online 中测试外接程序, 请运行以下命令。 运行此命令时, 本地 web 服务器将启动。
+若要在 Excel Online 中测试外接程序, 请运行以下命令。 运行此命令时，本地 Web 服务器将启动。
 
 ```command&nbsp;line
 npm run start:web
 ```
 
 > [!NOTE]
-> Office 外接程序应使用 HTTPS, 而不是 HTTP, 即使在开发时也是如此。 如果在运行`npm run start:web`后系统提示您安装证书, 请接受安装 Yeoman 生成器提供的证书的提示。
+> Office 加载项应使用 HTTPS，而不是 HTTP（即便是在开发时也是如此）。 如果系统在运行 `npm run start:web` 后提示你安装证书，请接受提示以安装 Yeoman 生成器提供的证书。
 
 若要使用自定义函数外接程序, 请在 Excel Online 中打开一个新工作簿。 在此工作簿中, 完成以下步骤以旁加载您的外接程序。
 

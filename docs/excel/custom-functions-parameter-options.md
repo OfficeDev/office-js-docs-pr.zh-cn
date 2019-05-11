@@ -1,21 +1,23 @@
 ---
-ms.date: 04/30/2019
+ms.date: 05/09/2019
 description: 了解如何在自定义函数中使用不同的参数, 例如 Excel 范围、可选参数、调用上下文等。
-title: Excel 自定义函数的选项 (预览)
+title: Excel 自定义函数的选项
 localization_priority: Normal
-ms.openlocfilehash: b5dba59431f4c6ec4ee08c563e7cb3affeb06608
-ms.sourcegitcommit: 68872372d181cca5bee37ade73c2250c4a56bab6
+ms.openlocfilehash: ba437f3a49ec3129b72f3396e85fcbd46af82cb7
+ms.sourcegitcommit: a99be9c4771c45f3e07e781646e0e649aa47213f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/01/2019
-ms.locfileid: "33527300"
+ms.lasthandoff: 05/11/2019
+ms.locfileid: "33952073"
 ---
 # <a name="custom-functions-parameter-options"></a>自定义函数参数选项
 
-自定义函数可通过多个不同的参数选项进行配置: 
+自定义函数可通过多个不同的参数选项进行配置:
 - [可选参数](#custom-functions-optional-parameters)
 - [范围参数](#range-parameters)
 - [调用上下文参数](#invocation-parameter)
+
+[!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
 ## <a name="custom-functions-optional-parameters"></a>自定义函数可选参数
 
@@ -74,7 +76,7 @@ function getWeatherReport(zipCode, dayOfWeek)
 /**
  * Returns the second highest value in a matrixed range of values.
  * @customfunction
- * @param {[][]} values Multiple ranges of values.  
+ * @param {number[][]} values Multiple ranges of values.  
  */
 function secondHighest(values){
   let highest = values[0][0], secondHighest = values[0][0];
@@ -118,10 +120,10 @@ CustomFunctions.associate("ADD", add);
 
 ### <a name="addressing-cells-context-parameter"></a>寻址单元格的上下文参数
 
-在某些情况下, 您需要获取调用自定义函数的单元格的地址。 这在以下类型的方案中非常有用:
+在某些情况下, 您需要获取调用自定义函数的单元格的地址。 这在以下情况下很有用:
 
-- 格式区域: 将单元格的地址用作存储在[Office](/office/dev/add-ins/excel/custom-functions-runtime#storing-and-accessing-data)中的信息的密钥。 然后，使用 Excel 中的 [onCalculated](/javascript/api/excel/excel.worksheet#oncalculated) 从 `Office.storage` 加载该键。
-- 显示缓存值：如果脱机使用函数，将显示 `Office.storage` 中使用 `onCalculated` 存储的缓存值。
+- 格式区域: 将单元格的地址用作存储[OfficeRuntime](/office/dev/add-ins/excel/custom-functions-runtime#storing-and-accessing-data)中的信息的密钥。 然后，使用 Excel 中的 [onCalculated](/javascript/api/excel/excel.worksheet#oncalculated) 从 `OfficeRuntime.storage` 加载该键。
+- 显示缓存值：如果脱机使用函数，将显示 `OfficeRuntime.storage` 中使用 `onCalculated` 存储的缓存值。
 - 协调：使用单元格地址发现原始单元格，以帮助你在处理时进行协调。
 
 若要在函数中请求寻址单元格的上下文, 您需要使用函数来查找单元格的地址, 如以下示例所示。 仅当`@requiresAddress`在函数的注释中对单元格地址进行了标记时, 才会公开该单元格地址的相关信息。
@@ -143,10 +145,14 @@ CustomFunctions.associate("GETADDRESS", getAddress);
 
 默认情况下，从 `getAddress` 函数返回的值遵循以下格式：`SheetName!CellNumber`。 例如，如果名为“Expense”的工作表中的 B2 单元格调用了函数，则返回的值为 `Expenses!B2`。
 
+## <a name="next-steps"></a>后续步骤
+了解如何[在自定义函数中保存状态](custom-functions-save-state.md), 或[在自定义函数中使用可变值](custom-functions-volatile.md)。
+
 ## <a name="see-also"></a>另请参阅
 
-* [在 Excel 中创建自定义函数](custom-functions-overview.md)
-* [自定义函数元数据](custom-functions-json.md)
+* [使用自定义函数接收和处理数据](custom-functions-web-reqs.md)
 * [自定义函数最佳实践](custom-functions-best-practices.md)
-* [自定义函数更改日志](custom-functions-changelog.md)
+* [自定义函数元数据](custom-functions-json.md)
+* [为自定义函数自动生成 JSON 元数据](custom-functions-json-autogeneration.md)
+* [在 Excel 中创建自定义函数](custom-functions-overview.md)
 * [Excel 自定义函数教程](../tutorials/excel-tutorial-create-custom-functions.md)

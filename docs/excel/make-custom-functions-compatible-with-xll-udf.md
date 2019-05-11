@@ -1,18 +1,18 @@
 ---
 title: 使用 XLL 用户定义的函数扩展自定义函数
 description: 启用与自定义函数具有等效功能的 Excel XLL 用户定义函数的兼容性 (预览)
-ms.date: 05/06/2019
+ms.date: 05/08/2019
 localization_priority: Normal
-ms.openlocfilehash: 93e1b52606fca7ea6fbbb9ae3545e4edd7f78742
-ms.sourcegitcommit: ff73cc04e5718765fcbe74181505a974db69c3f5
+ms.openlocfilehash: 3e1782c5df227d3e173f4291ba88f2057200b1c5
+ms.sourcegitcommit: a99be9c4771c45f3e07e781646e0e649aa47213f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "33628102"
+ms.lasthandoff: 05/11/2019
+ms.locfileid: "33951884"
 ---
 # <a name="extend-custom-functions-with-xll-user-defined-functions-preview"></a>使用 XLL 用户定义的函数扩展自定义函数 (预览)
 
-如果您有现有的 Excel Xll, 则可以在 Excel 外接程序中构建等效的自定义函数, 以将解决方案功能扩展到其他平台 (如 online 或 macOS)。 但是, Excel 外接程序没有在 Xll 中提供的所有功能。 根据您的解决方案使用的功能, XLL 可以提供比 Excel for Windows 上的 Excel 加载项自定义函数更好的体验。
+如果您有现有的 Excel Xll, 则可以在 Excel 外接程序中构建等效的自定义函数, 以将解决方案功能扩展到其他平台 (如 online 或 macOS)。 但是, Excel 外接程序没有在 Xll 中提供的所有功能。 根据您的解决方案使用的功能, XLL 可以提供比 excel 在 Windows 上运行的 Excel 外接程序自定义函数更好的体验。
 
 [!include[COM add-in and XLL UDF compatibility note](../includes/xll-compatibility-note.md)]
 

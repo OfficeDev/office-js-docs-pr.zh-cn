@@ -1,14 +1,14 @@
 ---
 title: 开发适用于 iPad 的 Office 外接程序
 description: ''
-ms.date: 03/19/2019
+ms.date: 05/08/2019
 localization_priority: Normal
-ms.openlocfilehash: 6fca7948c97f0a12f46742846ed9faca4179f362
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: 3ac8f651ccb87b32679a28684f0d08fad53aa773
+ms.sourcegitcommit: a99be9c4771c45f3e07e781646e0e649aa47213f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32449804"
+ms.lasthandoff: 05/11/2019
+ms.locfileid: "33952087"
 ---
 # <a name="develop-office-add-ins-for-the-ipad"></a>开发适用于 iPad 的 Office 加载项
 
@@ -16,7 +16,7 @@ ms.locfileid: "32449804"
 下表列出了开发 Office 外接程序要执行的任务，以使其能够在 Office for iPad 中运行。
 
 
-|**任务**|**描述**|**资源**|
+|**任务**|**说明**|**资源**|
 |:-----|:-----|:-----|
 |更新外接程序以支持 Office.js 版本 1.1。|将 Office 外接程序项目中使用的 JavaScript 文件（Office.js 和特定于应用的 .js 文件）和外接程序清单验证文件更新到版本 1.1。|[JavaScript API 中的更改内容](/office/dev/add-ins/reference/what's-changed-in-the-javascript-api-for-office)|
 |应用 UI 设计最佳实践。|将外接程序 UI 与 iOS 体验无缝集成。|[针对 iOS 进行设计](https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/MobileHIG/)|
@@ -38,7 +38,7 @@ ms.locfileid: "32449804"
 
 -  **使用 Visual Studio 开发外接程序。**
 
-    如果使用 Visual Studio 开发外接程序，则在 iPad 或 Mac 上旁加载外接程序前，可以在 Windows 上运行的 Office 主机应用程序中 [设置断点并调试其代码](../develop/create-and-debug-office-add-ins-in-visual-studio.md)。因为在 Office for iOS 或 Office for Mac 中运行的外接程序支持在 Office for Windows 中作为外接程序运行的同一 API，所以外接程序的代码在这两种平台上的运行方式应当是相同的。
+    如果使用 Visual Studio 开发外接程序，则在 iPad 或 Mac 上旁加载外接程序前，可以在 Windows 上运行的 Office 主机应用程序中 [设置断点并调试其代码](../develop/create-and-debug-office-add-ins-in-visual-studio.md)。 由于在 Office for iOS 或 Office for Mac 中运行的外接程序支持与在 Windows 上运行的加载项相同的 Api, 因此外接程序的代码在这两个平台上的运行方式都相同。
 
 -  **在外接程序清单中或通过运行时检查指定 API 要求。**
 

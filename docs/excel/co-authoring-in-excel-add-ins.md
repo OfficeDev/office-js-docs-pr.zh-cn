@@ -1,14 +1,14 @@
 ---
 title: 使用 Excel 加载项共同创作
 description: ''
-ms.date: 03/19/2019
+ms.date: 05/08/2019
 localization_priority: Normal
-ms.openlocfilehash: 774eee0c81f9fb99424070be0ee42860e44e46f5
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: 281f981bd7248b68c60563f02746ba68d88617b8
+ms.sourcegitcommit: a99be9c4771c45f3e07e781646e0e649aa47213f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32449286"
+ms.lasthandoff: 05/11/2019
+ms.locfileid: "33952045"
 ---
 # <a name="coauthoring-in-excel-add-ins"></a>使用 Excel 加载项共同创作  
 
@@ -21,9 +21,9 @@ ms.locfileid: "32449286"
 
 - Excel Online
 - Excel for Android
-- Excel for iOS
-- Excel Mobile for Windows 10
-- 适用于 Office 365 客户的 Excel for Windows Desktop（Windows 桌面内部版本 16.0.8326.2076 或更高版本，当前的渠道客户自 2017 年 8 月起可获取这些版本）
+- Excel for iPad
+- Windows 10 上的 Excel Mobile
+- 适用于 Office 365 客户的 windows desktop 中的 Excel (windows desktop build 16.0.8326.2076 或更高版本, 可供当前渠道客户在8月 8 2017 日生效)
 
 ## <a name="coauthoring-overview"></a>共同创作功能概述
 

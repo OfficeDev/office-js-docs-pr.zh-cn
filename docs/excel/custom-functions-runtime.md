@@ -1,20 +1,22 @@
 ---
-ms.date: 02/06/2019
+ms.date: 05/08/2019
 description: 了解开发使用新 JavaScript 运行时的 Excel 自定义函数时的关键方案。
-title: Excel 自定义函数的运行时（预览）
+title: Excel 自定义函数的运行时
 localization_priority: Normal
-ms.openlocfilehash: 85024b6c3559e2a5f32bae9297787f8052bba38d
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: bc8635e370a7b48af07bc169c2d2334ef0fba8ef
+ms.sourcegitcommit: a99be9c4771c45f3e07e781646e0e649aa47213f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32448215"
+ms.lasthandoff: 05/11/2019
+ms.locfileid: "33951975"
 ---
-# <a name="runtime-for-excel-custom-functions-preview"></a>Excel 自定义函数的运行时（预览）
+# <a name="runtime-for-excel-custom-functions"></a>Excel 自定义函数的运行时
 
-自定义函数使用的是与外接程序的其他部分（例如任务窗格或其他 UI 元素）使用的运行时不同的新 JavaScript 运行时。 这种 JavaScript 运行时旨在优化自定义函数中的计算性能，并支持可用于在自定义函数中执行常见 Web 操作（例如请求外部数据或通过与服务器的持久连接交换数据）的新 API。 JavaScript 运行时还可提供对 `OfficeRuntime` 命名空间内的新 API 的访问，这些 API 可在自定义函数内或由外接程序的其他部分使用，用于存储数据或显示对话框。 本文介绍了如何在自定义函数内使用这些 API，还概述了在开发自定义函数时需要牢记的其他注意事项。
+自定义函数使用的是与外接程序的其他部分（例如任务窗格或其他 UI 元素）使用的运行时不同的新 JavaScript 运行时。 这种 JavaScript 运行时旨在优化自定义函数中的计算性能，并支持可用于在自定义函数中执行常见 Web 操作（例如请求外部数据或通过与服务器的持久连接交换数据）的新 API。
 
 [!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
+
+JavaScript 运行时还可提供对 `OfficeRuntime` 命名空间内的新 API 的访问，这些 API 可在自定义函数内或由外接程序的其他部分使用，用于存储数据或显示对话框。 本文介绍了如何在自定义函数内使用这些 API，还概述了在开发自定义函数时需要牢记的其他注意事项。
 
 ## <a name="requesting-external-data"></a>请求外部数据
 
@@ -63,9 +65,9 @@ function sendWebRequest(thermometerID, data) {
 
 ### <a name="websockets-example"></a>WebSocket 示例
 
-下面的代码示例建立了一个 `WebSocket` 连接，然后记录来自服务器的每一条传入消息。 
+下面的代码示例建立了一个 `WebSocket` 连接，然后记录来自服务器的每一条传入消息。
 
-```typescript
+```JavaScript
 const ws = new WebSocket('wss://bundles.office.com');
 ws.onmessage = function (message) {
     console.log(`Received: ${message}`);
@@ -77,46 +79,50 @@ ws.onerror = function (error) {
 
 ## <a name="storing-and-accessing-data"></a>存储和访问数据
 
-在自定义函数（或外接程序的任何其他部分）内，可以使用 `OfficeRuntime.AsyncStorage` 对象来存储和访问数据。 `AsyncStorage` 是一种未加密的持久键值存储系统，为无法在自定义函数内使用的 [localStorage](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage) 提供了一种替代方案。 一个外接程序可以使用 `AsyncStorage` 存储最多 10 MB 的数据。
+在自定义函数（或外接程序的任何其他部分）内，可以使用 `OfficeRuntime.storage` 对象来存储和访问数据。 `Storage` 是一种未加密的持久键值存储系统，为无法在自定义函数内使用的 [localStorage](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage) 提供了一种替代方案。 `Storage`每个域提供 10 MB 的数据。 域可由多个加载项共享。
 
-`AsyncStorage` 旨在作为共享存储解决方案，这意味着外接程序的多个部分将能访问相同数据。 例如，用户身份验证令牌可能存储在 `AsyncStorage` 中，因为自定义函数和任务窗格等外接程序 UI 元素都有可能会访问该数据。 同样，如果两个外接程序共享同一个域（例如 www.contoso.com/addin1、www.contoso.com/addin2），则也可以通过 `AsyncStorage` 来回共享信息。 注意，具有不同子域的外接程序将具有不同的 `AsyncStorage` 实例（例如 subdomain.contoso.com/addin1、differentsubdomain.contoso.com/addin2） 
+`Storage` 旨在作为共享存储解决方案，这意味着外接程序的多个部分将能访问相同数据。 例如，用户身份验证令牌可能存储在 `storage` 中，因为自定义函数和任务窗格等外接程序 UI 元素都有可能会访问该数据。 同样，如果两个外接程序共享同一个域（例如 www.contoso.com/addin1、www.contoso.com/addin2），则也可以通过 `storage` 来回共享信息。 注意，具有不同子域的外接程序将具有不同的 `storage` 实例（例如 subdomain.contoso.com/addin1、differentsubdomain.contoso.com/addin2）
 
-由于 `AsyncStorage` 可能是共享的位置，因此一定要认识到，可能会存在替代键值对的情况。
+由于 `storage` 可能是共享的位置，因此一定要认识到，可能会存在替代键值对的情况。
 
-`AsyncStorage` 对象支持以下方法：
- 
+`storage` 对象支持以下方法：
+
  - `getItem`
+ - `getItems`
  - `setItem`
+ - `setItems`
  - `removeItem`
- - `getAllKeys`
- - `flushGetRequests`
- - `multiGet`
- - `multiSet`
- - `multiRemove`：你会注意到，我们没有实施可用于清除所有信息的方法（例如 `clear`）。 相反，需要使用 `multiRemove` 来一次性删除多个条目。
+ - `removeItems`
+ - `getKeys`
 
-### <a name="asyncstorage-example"></a>AsyncStorage 示例 
+.[!NOTE]
+> 没有用于清除所有信息的方法 (例如`clear`)。 相反，需要使用 `removeItems` 来一次性删除多个条目。
 
-下面的代码示例调用`AsyncStorage.setItem`函数, 以将键和值设置为`AsyncStorage`。
+### <a name="officeruntimestorage-example"></a>OfficeRuntime 示例
+
+下面的代码示例调用`OfficeRuntime.storage.setItem`函数, 以将键和值设置为`storage`。
 
 ```JavaScript
 function StoreValue(key, value) {
 
-  return OfficeRuntime.AsyncStorage.setItem(key, value).then(function (result) {
-      return "Success: Item with key '" + key + "' saved to AsyncStorage.";
+  return OfficeRuntime.storage.setItem(key, value).then(function (result) {
+      return "Success: Item with key '" + key + "' saved to storage.";
   }, function (error) {
-      return "Error: Unable to save item with key '" + key + "' to AsyncStorage. " + error;
+      return "Error: Unable to save item with key '" + key + "' to storage. " + error;
   });
 }
 ```
 
 ## <a name="additional-considerations"></a>其他注意事项
 
-为创建一个可在多个平台（Office 外接程序的关键租户之一）上运行的外接程序，请勿访问自定义函数中的文档对象模型 (DOM) 或使用 jQuery 等这类依赖于 DOM 的库。 在自定义函数会使用 JavaScript 运行时的 Windows 版 Excel 中，自定义函数无法访问 DOM。
+为创建一个可在多个平台（Office 外接程序的关键租户之一）上运行的外接程序，请勿访问自定义函数中的文档对象模型 (DOM) 或使用 jQuery 等这类依赖于 DOM 的库。 在 Windows 的 Excel 中, 自定义函数使用 JavaScript 运行时, 自定义函数无法访问 DOM。
+
+## <a name="next-steps"></a>后续步骤
+了解[自定义函数的一些关键最佳实践](custom-functions-best-practices.md)。
 
 ## <a name="see-also"></a>另请参阅
 
 * [在 Excel 中创建自定义函数](custom-functions-overview.md)
-* [自定义函数元数据](custom-functions-json.md)
-* [自定义函数最佳实践](custom-functions-best-practices.md)
-* [自定义函数更改日志](custom-functions-changelog.md)
-* [Excel 自定义函数教程](../tutorials/excel-tutorial-create-custom-functions.md)
+* [自定义函数体系结构](custom-functions-architecture.md)
+* [在自定义函数中显示对话框](custom-functions-dialog.md)
+* [自定义函数教程](../tutorials/excel-tutorial-create-custom-functions.md)
