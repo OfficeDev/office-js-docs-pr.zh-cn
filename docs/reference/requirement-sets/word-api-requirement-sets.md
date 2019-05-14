@@ -1,28 +1,28 @@
 ---
 title: Word JavaScript API 要求集
 description: ''
-ms.date: 03/19/2019
+ms.date: 05/08/2019
 ms.prod: word
 localization_priority: Priority
-ms.openlocfilehash: 21bd99dda479c0c2181f546303e79e50f33ded00
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: 0f9d17669a8000f5d8d9f0b2d1da04eb0175315c
+ms.sourcegitcommit: a99be9c4771c45f3e07e781646e0e649aa47213f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32451519"
+ms.lasthandoff: 05/11/2019
+ms.locfileid: "33952234"
 ---
 # <a name="word-javascript-api-requirement-sets"></a>Word JavaScript API 要求集
 
 要求集是指各组已命名的 API 成员。Office 加载项使用清单中指定的要求集或执行运行时检查，以确定 Office 主机是否支持加载项所需的 API。有关详细信息，请参阅 [Office 版本和要求集](/office/dev/add-ins/develop/office-versions-and-requirement-sets)。
 
-Word 外接程序可在多个 Office 版本中运行，包括 Office 2016 for Windows 或更高版本、Office for iPad、Office for Mac 和 Office Online。 下表列出了 Word 要求集、支持该要求集的 Office 主机应用程序，以及这些应用程序的内部版本或版本号。
+Word 加载项可在多个 Office 版本中运行，包括 Windows 版 Office 2016 或更高版本、Office for iPad、Office for Mac 和 Office Online。 下表列出了 Word 要求集、支持该要求集的 Office 主机应用程序，以及这些应用程序的内部版本或版本号。
 
 > [!NOTE]
 > 对于标记为 Beta 的要求集，请使用 Office 软件的指定版本（或更高版本），并使用 CDN 的 Beta 库：https://appsforoffice.microsoft.com/lib/beta/hosted/office.js。
 > 
 > 未列为 Beta 的条目已全面发布，可以继续使用生产 CDN 库：https://appsforoffice.microsoft.com/lib/1/hosted/office.js
 
-|  要求集  |   Office 365 for Windows\*  |  Office 365 for iPad  |  Office 365 for Mac  | Office Online  | Office Online Server  |
+|  要求集  |   Windows 版 Office\*<br>（连接到 Office 365）  |  Office for iPad<br>（连接到 Office 365）  |  Office for Mac<br>（连接到 Office 365）  | Office Online  | Office Online Server  |
 |:-----|-----|:-----|:-----|:-----|:-----|
 | WordApi 1.3 | 版本 1612（内部版本 7668.1000）或更高版本| 2017 年 3 月，2.22 或更高版本 | 2017 年 3 月，15.32 或更高版本| 2017 年 3 月 ||
 | WordApi 1.2  | 2015 年 12 月更新，版本 1601（内部版本 6568.1000）或更高版本 | 2016 年 1 月，1.18 或更高版本 | 2016 年 1 月，15.19 或更高版本| 2016 年 9 月 | |

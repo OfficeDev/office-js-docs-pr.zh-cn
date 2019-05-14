@@ -1,21 +1,21 @@
 ---
 title: Office 版本和要求集
 description: ''
-ms.date: 04/19/2019
+ms.date: 05/08/2019
 localization_priority: Priority
-ms.openlocfilehash: e1047501cdac8dc88ab9f7778b846e171ee02d44
-ms.sourcegitcommit: 7462409209264dc7f8f89f3808a7a6249fcd739e
+ms.openlocfilehash: 6d0952c32c08c9a4a3e9b07ee8bbcf209084c3d0
+ms.sourcegitcommit: a99be9c4771c45f3e07e781646e0e649aa47213f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "33440036"
+ms.lasthandoff: 05/11/2019
+ms.locfileid: "33952115"
 ---
 # <a name="office-versions-and-requirement-sets"></a>Office 版本和要求集
 
 Office 跨多个平台运行且有许多版本，它们并非全都支持 Office JavaScript API (Office.js) 中的所有 API。 不一定总能控制用户安装的 Office 版本。  为了应对这种情况，我们提供了名为“要求集”的系统，以帮助确定 Office 主机是否支持 Office 加载项需要的功能。 
 
 > [!NOTE]
-> - Office 跨多个平台运行，其中包括 Office for Windows、Office Online、Office for Mac 和 Office for iPad。
+> - Office 跨多个平台运行，其中包括 Windows 版 Office、Office Online、Office for Mac 和 Office for iPad。
 > - Office 主机示例包括 Excel、Word、PowerPoint、Outlook、OneNote 等 Office 产品。  
 > - 要求集是 API 成员（如 `ExcelApi 1.5`、`WordApi 1.3` 等）的已命名组。  
 
@@ -25,7 +25,6 @@ Office 跨多个平台运行且有许多版本，它们并非全都支持 Office
 若要确定使用的 Office 版本，请在 Office 应用程序中，依次选择“文件”**** 菜单和“帐户”****。 Office 版本显示在“产品信息”**** 部分中。 例如，下面的屏幕截图指明 Office 版本 1802（生成号 9026.1000）：
 
 ![检查 Office 版本](../images/office-version-number-ui.jpg)
-
 
 ## <a name="office-requirement-sets-availability"></a>Office 要求集可用性
 
@@ -37,7 +36,7 @@ Office 加载项可使用 API 要求集，以确定 Office 主机是否支持需
 
 加载项使用的要求集中的 API 只能是受运行加载项的 Office 主机版本支持的 API。 若要确切了解适用于特定 Office 主机版本的要求集，请参阅以下主机专用要求集文章：
 
-- [Excel JavaScript API 要求集](/office/dev/add-ins/reference/requirement-sets/excel-api-requirement-sets) (ExcelApi)
+- [Excel JavaScript API 要求集](/office/dev/add-ins/reference/requirement-sets/excel-api-requirement-sets)（ExcelApi、[CustomFunctionsRuntime](../excel/custom-functions-architecture.md)）
 - [Word JavaScript API 要求集](/office/dev/add-ins/reference/requirement-sets/word-api-requirement-sets) (WordApi)
 - [OneNote JavaScript API 要求集](/office/dev/add-ins/reference/requirement-sets/onenote-api-requirement-sets) (OneNoteApi)
 - [了解 Outlook API 要求集](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets) (MailBox)

@@ -1,14 +1,14 @@
 ---
 title: 在 Visual Studio 中创建和调试 Office 外接程序
-description: 使用 Visual Studio 在 Windows 的 Office 桌面客户端上创建和调试 Office 外接程序
-ms.date: 03/19/2019
+description: 使用 Visual Studio 在 Windows 上的 Office 桌面客户端中创建和调试 Office 加载项
+ms.date: 05/08/2019
 localization_priority: Priority
-ms.openlocfilehash: 74a1430482b507d04f1be60683242fd9ae4a4393
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: c60599ed63c327d10b157e642e109542c3cefc47
+ms.sourcegitcommit: a99be9c4771c45f3e07e781646e0e649aa47213f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32449906"
+ms.lasthandoff: 05/11/2019
+ms.locfileid: "33952094"
 ---
 # <a name="create-and-debug-office-add-ins-in-visual-studio"></a>在 Visual Studio 中创建和调试 Office 外接程序
 
@@ -210,7 +210,7 @@ Web 应用程序项目包含可用于实现入门的默认 HTML 文件、JavaScr
 
 1. 在 Excel、PowerPoint 或 Word 中，选择“**插入**”选项卡，然后选择“**我的外接程序**”右侧的向下箭头。
 
-    ![Windows 版 Excel 的“插入”功能区及突出显示的“我的外接程序”箭头](../images/excel-cf-register-add-in-1b.png)
+    ![Windows 版 Excel 的“插入”功能区及突出显示的“我的加载项”箭头](../images/excel-cf-register-add-in-1b.png)
 
 2. 在可用外接程序列表中，找到“**开发人员外接程序**”部分并选择你的外接程序进行注册。
 

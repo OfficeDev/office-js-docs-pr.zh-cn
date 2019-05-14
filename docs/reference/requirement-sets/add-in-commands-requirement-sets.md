@@ -1,15 +1,15 @@
 ---
 title: 加载项命令要求集
 description: ''
-ms.date: 03/19/2019
+ms.date: 05/08/2019
 ms.prod: non-product-specific
 localization_priority: Priority
-ms.openlocfilehash: a40107b968603311d3dea35cdd0d055adb14bf5a
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: 60ef114159490cd34a837f12f2e691a6b02b6e41
+ms.sourcegitcommit: a99be9c4771c45f3e07e781646e0e649aa47213f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32451743"
+ms.lasthandoff: 05/11/2019
+ms.locfileid: "33952374"
 ---
 # <a name="add-in-commands-requirement-sets"></a>加载项命令要求集
 
@@ -19,17 +19,17 @@ ms.locfileid: "32451743"
 
 外接程序命令的初始版本没有相应的要求集（即，没有 AddinCommands 1.0 要求集）。下表列出了支持初始版本的 Office 主机应用程序，以及这些应用程序的内部版本或版本号。  
 
-| 发布   |  Office 2013 for Windows | Office 2016 for Windows 或更高版本 | Office 365 for Windows   |  Office 365 for iPad  |  Office 365 for Mac  | Office Online  |  
-|:-----|:-----|:-----|:-----|:-----|:-----|:-----|
-| 加载项命令（初始版本，无要求集） | 不适用 | *仅 Outlook 支持* 16.0.4678.1000 |版本 1603（内部版本 6769.0000）或更高版本 | 不适用 | 15.33 或更高版本| 2016 年 1 月 |
+| 发布   |  Windows 版 Office 2013<br>（一次性购买） | Windows 版 Office 2016<br>（一次性购买） | Windows 版 Office 2019<br>（一次性购买） | Windows 版 Office<br>（连接到 Office 365）   |  Office for iPad<br>（连接到 Office 365）  |  Office for Mac<br>（连接到 Office 365）  | Office Online  |
+|:-----|:-----|:-----|:-----|:-----|:-----|:-----|:-----|
+| 加载项命令（初始版本，无要求集） | 不适用 | *仅 Outlook 支持* 16.0.4678.1000 | 版本 1809（内部版本 10827.20150）或更高版本 |版本 1603（内部版本 6769.0000）或更高版本 | 不适用 | 15.33 或更高版本| 2016 年 1 月 |
 
 外接程序命令 1.1 要求集介绍了[随文档自动打开任务窗格](/office/dev/add-ins/develop/automatically-open-a-task-pane-with-a-document)的功能。
 
 下表列出了外接程序命令 1.1 要求集、支持该要求集的 Office 主机应用程序，以及 Office 应用程序的内部版本或版本号。
 
-|  要求集  |  Office 2013 for Windows | Office 2016 for Windows 或更高版本 | Office 365 for Windows   |  Office 365 for iPad  |  Office 365 for Mac  | Office Online  |  
-|:-----|:-----|:-----|:-----|:-----|:-----|:-----|
-| AddinCommands 1.1  | 不适用 | *仅 Outlook 支持* 16.0.4678.1000  | 版本 1705（内部版本 8121.1000）或更高版本 | 不适用 | 15.34 或更高版本\*| 2017 年 5 月 |
+|  要求集  |  Windows 版 Office 2013<br>（一次性购买） | Windows 版 Office 2016<br>（一次性购买） | Windows 版 Office 2019<br>（一次性购买） | Windows 版 Office<br>（连接到 Office 365）   |  Office for iPad<br>（连接到 Office 365）  |  Office for Mac<br>（连接到 Office 365）  | Office Online  |  
+|:-----|:-----|:-----|:-----|:-----|:-----|:-----|:-----|
+| AddinCommands 1.1  | 不适用 | *仅 Outlook 支持* 16.0.4678.1000  | 版本 1809（内部版本 10827.20150）或更高版本 | 版本 1705（内部版本 8121.1000）或更高版本 | 不适用 | 15.34 或更高版本\*| 2017 年 5 月 |
 
 >\*针对版本 16.9 &ndash; 16.14（含），[Office.context.requirements.isSetSupported](/javascript/api/office/office.requirementsetsupport#issetsupported-name--minversion-) 方法将错误地返回 `false`，但这些版本*支持*需求集。
 

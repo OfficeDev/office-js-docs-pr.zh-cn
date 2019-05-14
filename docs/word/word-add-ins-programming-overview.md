@@ -1,14 +1,14 @@
 ---
 title: Word 加载项概述
 description: ''
-ms.date: 03/19/2019
+ms.date: 05/08/2019
 localization_priority: Priority
-ms.openlocfilehash: b6fa62a41e97c6814e282db4a5c338d2d422d0fc
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: 143f5b431aff2133c084b6d0f9c390562116dd4e
+ms.sourcegitcommit: a99be9c4771c45f3e07e781646e0e649aa47213f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32449820"
+ms.lasthandoff: 05/11/2019
+ms.locfileid: "33952171"
 ---
 # <a name="word-add-ins-overview"></a>Word 加载项概述
 
@@ -43,10 +43,10 @@ Word.run(function (context) {
 
 通过 Word JavaScript API 可使应用程序访问 Word 文档中的对象和元数据。这些 API 可用于创建面向以下应用程序的外接程序：
 
-* Word 2013 for Windows 或更高版本
+* Windows 版 Word 2013 或更高版本
 * Word Online
 * Word 2016 for Mac 或更高版本
-* Word for iOS
+* Word for iPad
 
 外接程序只需编写一次，即可跨多个平台在所有版本 Word 中运行。有关详细信息，请参阅 [Office 外接程序主机和平台可用性](../overview/office-add-in-availability.md)。
 

@@ -1,14 +1,14 @@
 ---
 title: Office 外接程序主机和平台可用性
 description: Excel、Word、Outlook、PowerPoint、OneNote 和项目支持的要求集。
-ms.date: 04/03/2019
+ms.date: 05/08/2019
 localization_priority: Priority
-ms.openlocfilehash: a9ecd44edf9221a403eb42756cd1e9f5e676ad01
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: 19f2fa7f744345823c2700b04524ec20705035a8
+ms.sourcegitcommit: a99be9c4771c45f3e07e781646e0e649aa47213f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32448145"
+ms.lasthandoff: 05/11/2019
+ms.locfileid: "33952367"
 ---
 # <a name="office-add-in-host-and-platform-availability"></a>Office 外接程序主机和平台可用性
 
@@ -30,6 +30,7 @@ ms.locfileid: "32448145"
     <td>Office Online</td>
     <td> - 任务窗格<br>
         - 内容<br>
+        - 自定义函数<br>
         - <a href="/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">加载项命令</a>
     </td>
     <td>
@@ -41,6 +42,7 @@ ms.locfileid: "32448145"
         - <a href="/office/dev/add-ins/reference/requirement-sets/excel-api-requirement-sets">ExcelApi 1.6</a><br>
         - <a href="/office/dev/add-ins/reference/requirement-sets/excel-api-requirement-sets">ExcelApi 1.7</a><br>
         - <a href="/office/dev/add-ins/reference/requirement-sets/excel-api-requirement-sets">ExcelApi 1.8</a><br>
+        - <a href="/office/dev/add-ins/reference/requirement-sets/excel-api-requirement-sets">ExcelApi 1.9</a><br>
         - <a href="/office/dev/add-ins/reference/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a></td>
     <td>
         - BindingEvents<br>
@@ -57,9 +59,10 @@ ms.locfileid: "32448145"
         - TextCoercion</td>
   </tr>
   <tr>
-    <td>Office 365 for Windows</td>
+    <td>Windows 版 Office<br>（连接到 Office 365）</td>
     <td> - 任务窗格<br>
         - 内容<br>
+        - 自定义函数<br>
         - <a href="/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">加载项命令</a>
     </td>
     <td>
@@ -71,6 +74,7 @@ ms.locfileid: "32448145"
         - <a href="/office/dev/add-ins/reference/requirement-sets/excel-api-requirement-sets">ExcelApi 1.6</a><br>
         - <a href="/office/dev/add-ins/reference/requirement-sets/excel-api-requirement-sets">ExcelApi 1.7</a><br>
         - <a href="/office/dev/add-ins/reference/requirement-sets/excel-api-requirement-sets">ExcelApi 1.8</a><br>
+        - <a href="/office/dev/add-ins/reference/requirement-sets/excel-api-requirement-sets">ExcelApi 1.9</a><br>
         - <a href="/office/dev/add-ins/reference/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a></td>
     <td>
         - BindingEvents<br>
@@ -87,7 +91,7 @@ ms.locfileid: "32448145"
         - TextCoercion</td>
   </tr>
   <tr>
-    <td>Office 2019 for Windows</td>
+    <td>Windows 版 Office 2019<br>（一次性购买）</td>
     <td>- 任务窗格<br>
         - 内容<br>
         - <a href="/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">加载项命令</a></td>
@@ -115,7 +119,7 @@ ms.locfileid: "32448145"
         - TextCoercion</td>
   </tr>
   <tr>
-    <td>Office 2016 for Windows</td>
+    <td>Windows 版 Office 2016<br>（一次性购买）</td>
     <td>- 任务窗格<br>
         - 内容</td>
     <td>- <a href="/office/dev/add-ins/reference/requirement-sets/excel-api-requirement-sets">ExcelApi 1.1</a><br>
@@ -135,7 +139,7 @@ ms.locfileid: "32448145"
         - TextCoercion</td>
   </tr>
   <tr>
-    <td>Office 2013 for Windows</td>
+    <td>Windows 版 Office 2013<br>（一次性购买）</td>
     <td>
         - 任务窗格<br>
         - 内容</td>
@@ -156,9 +160,10 @@ ms.locfileid: "32448145"
         - TextCoercion</td>
   </tr>
   <tr>
-    <td>Office 365 for iPad</td>
+    <td>Office for iPad<br>（连接到 Office 365）</td>
     <td>- 任务窗格<br>
-        - 内容</td>
+        - 内容<br>
+        - 自定义函数</td>
     <td>- <a href="/office/dev/add-ins/reference/requirement-sets/excel-api-requirement-sets">ExcelApi 1.1</a><br>
         - <a href="/office/dev/add-ins/reference/requirement-sets/excel-api-requirement-sets">ExcelApi 1.2</a><br>
         - <a href="/office/dev/add-ins/reference/requirement-sets/excel-api-requirement-sets">ExcelApi 1.3</a><br>
@@ -166,10 +171,10 @@ ms.locfileid: "32448145"
         - <a href="/office/dev/add-ins/reference/requirement-sets/excel-api-requirement-sets">ExcelApi 1.5</a><br>
         - <a href="/office/dev/add-ins/reference/requirement-sets/excel-api-requirement-sets">ExcelApi 1.6</a><br>
         - <a href="/office/dev/add-ins/reference/requirement-sets/excel-api-requirement-sets">ExcelApi 1.7</a><br>
-         - <a href="/office/dev/add-ins/reference/requirement-sets/excel-api-requirement-sets">ExcelApi 1.8</a><br>
+        - <a href="/office/dev/add-ins/reference/requirement-sets/excel-api-requirement-sets">ExcelApi 1.8</a><br>
+        - <a href="/office/dev/add-ins/reference/requirement-sets/excel-api-requirement-sets">ExcelApi 1.9</a><br>
         - <a href="/office/dev/add-ins/reference/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a></td>
     <td>- BindingEvents<br>
-        - CompressedFile<br>
         - DocumentEvents<br>
         - File<br>
         - ImageCoercion<br>
@@ -183,7 +188,38 @@ ms.locfileid: "32448145"
         - TextCoercion</td>
   </tr>
   <tr>
-    <td>Office 365 for Mac</td>
+    <td>Office for Mac<br>（连接到 Office 365）</td>
+    <td>- 任务窗格<br>
+        - 内容<br>
+        - 自定义函数<br>
+        - <a href="/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">外接程序命令</a></td>
+    <td>- <a href="/office/dev/add-ins/reference/requirement-sets/excel-api-requirement-sets">ExcelApi 1.1</a><br>
+        - <a href="/office/dev/add-ins/reference/requirement-sets/excel-api-requirement-sets">ExcelApi 1.2</a><br>
+        - <a href="/office/dev/add-ins/reference/requirement-sets/excel-api-requirement-sets">ExcelApi 1.3</a><br>
+        - <a href="/office/dev/add-ins/reference/requirement-sets/excel-api-requirement-sets">ExcelApi 1.4</a><br>
+        - <a href="/office/dev/add-ins/reference/requirement-sets/excel-api-requirement-sets">ExcelApi 1.5</a><br>
+        - <a href="/office/dev/add-ins/reference/requirement-sets/excel-api-requirement-sets">ExcelApi 1.6</a><br>
+        - <a href="/office/dev/add-ins/reference/requirement-sets/excel-api-requirement-sets">ExcelApi 1.7</a><br>
+        - <a href="/office/dev/add-ins/reference/requirement-sets/excel-api-requirement-sets">ExcelApi 1.8</a><br>
+        - <a href="/office/dev/add-ins/reference/requirement-sets/excel-api-requirement-sets">ExcelApi 1.9</a><br>
+        - <a href="/office/dev/add-ins/reference/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a></td>
+    <td>- BindingEvents<br>
+        - CompressedFile<br>
+        - DocumentEvents<br>
+        - File<br>
+        - ImageCoercion<br>
+        - MatrixBindings<br>
+        - MatrixCoercion<br>
+        - PdfFile<br>
+        - Selection<br>
+        - Settings<br>
+        - TableBindings<br>
+        - TableCoercion<br>
+        - TextBindings<br>
+        - TextCoercion</td>
+  </tr>
+  <tr>
+    <td>Office 2019 for Mac<br>（一次性购买）</td>
     <td>- 任务窗格<br>
         - 内容<br>
         - <a href="/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">加载项命令</a></td>
@@ -212,36 +248,7 @@ ms.locfileid: "32448145"
         - TextCoercion</td>
   </tr>
   <tr>
-    <td>Office 2019 for Mac</td>
-    <td>- 任务窗格<br>
-        - 内容<br>
-        - <a href="/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">加载项命令</a></td>
-    <td>- <a href="/office/dev/add-ins/reference/requirement-sets/excel-api-requirement-sets">ExcelApi 1.1</a><br>
-        - <a href="/office/dev/add-ins/reference/requirement-sets/excel-api-requirement-sets">ExcelApi 1.2</a><br>
-        - <a href="/office/dev/add-ins/reference/requirement-sets/excel-api-requirement-sets">ExcelApi 1.3</a><br>
-        - <a href="/office/dev/add-ins/reference/requirement-sets/excel-api-requirement-sets">ExcelApi 1.4</a><br>
-        - <a href="/office/dev/add-ins/reference/requirement-sets/excel-api-requirement-sets">ExcelApi 1.5</a><br>
-        - <a href="/office/dev/add-ins/reference/requirement-sets/excel-api-requirement-sets">ExcelApi 1.6</a><br>
-        - <a href="/office/dev/add-ins/reference/requirement-sets/excel-api-requirement-sets">ExcelApi 1.7</a><br>
-        - <a href="/office/dev/add-ins/reference/requirement-sets/excel-api-requirement-sets">ExcelApi 1.8</a><br>
-        - <a href="/office/dev/add-ins/reference/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a></td>
-    <td>- BindingEvents<br>
-        - CompressedFile<br>
-        - DocumentEvents<br>
-        - File<br>
-        - ImageCoercion<br>
-        - MatrixBindings<br>
-        - MatrixCoercion<br>
-        - PdfFile<br>
-        - Selection<br>
-        - Settings<br>
-        - TableBindings<br>
-        - TableCoercion<br>
-        - TextBindings<br>
-        - TextCoercion</td>
-  </tr>
-  <tr>
-    <td>Office 2016 for Mac</td>
+    <td>Office 2016 for Mac<br>（一次性购买）</td>
     <td>- 任务窗格<br>
         - 内容</td>
     <td>- <a href="/office/dev/add-ins/reference/requirement-sets/excel-api-requirement-sets">ExcelApi 1.1</a><br>
@@ -265,7 +272,52 @@ ms.locfileid: "32448145"
 
 *&ast; - 已添加发布后更新。*
 
-<br/>
+## <a name="custom-functions"></a>自定义函数
+
+<table style="width:80%">
+  <tr>
+    <th style="width:10%">平台</th>
+    <th style="width:10%">扩展点</th>
+    <th style="width:20%">API 要求集</th>
+    <th style="width:40%"><a href="/office/dev/add-ins/reference/requirement-sets/office-add-in-requirement-sets"><b>通用 API</b></a></th>
+  </tr>
+  <tr>
+    <td>Office Online</td>
+    <td>
+        - 自定义函数</td>
+    <td>
+        - <a href="/office/dev/add-ins/reference/requirement-sets/excel-api-requirement-sets">CustomFunctionsRuntime 1.1</a></td>
+    <td>
+    </td>
+  </tr>
+  <tr>
+    <td>Windows 版 Office<br>（连接到 Office 365）</td>
+    <td>
+        - 自定义函数</td>
+    <td>
+        - <a href="/office/dev/add-ins/reference/requirement-sets/excel-api-requirement-sets">CustomFunctionsRuntime 1.1</a></td>
+    <td>
+    </td>
+  </tr>
+  <tr>
+    <td>Office for iPad<br>（连接到 Office 365）</td>
+    <td>
+        - 自定义函数</td>
+    <td>
+        - <a href="/office/dev/add-ins/reference/requirement-sets/excel-api-requirement-sets">CustomFunctionsRuntime 1.1</a></td>
+    <td>
+    </td>
+  </tr>
+  <tr>
+    <td>Office for Mac<br>（连接到 Office 365）</td>
+    <td>
+        - 自定义函数</td>
+    <td>
+        - <a href="/office/dev/add-ins/reference/requirement-sets/excel-api-requirement-sets">CustomFunctionsRuntime 1.1</a></td>
+    <td>
+    </td>
+  </tr>
+</table>
 
 ## <a name="outlook"></a>Outlook
 
@@ -291,7 +343,7 @@ ms.locfileid: "32448145"
     <td>不可用</td>
   </tr>
   <tr>
-    <td>Office 365 for Windows</td>
+    <td>Windows 版 Office<br>（连接到 Office 365）</td>
     <td> - 邮件阅读<br>
       - 邮件撰写<br>
       - <a href="/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">加载项命令</a><br>
@@ -306,7 +358,7 @@ ms.locfileid: "32448145"
     <td>不可用</td>
   </tr>
   <tr>
-    <td>Office 2019 for Windows</td>
+    <td>Windows 版 Office 2019<br>（一次性购买）</td>
     <td> - 邮件阅读<br>
       - 邮件撰写<br>
       - <a href="/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">加载项命令</a><br>
@@ -321,7 +373,7 @@ ms.locfileid: "32448145"
     <td>不可用</td>
   </tr>
   <tr>
-    <td>Office 2016 for Windows</td>
+    <td>Windows 版 Office 2016<br>（一次性购买）</td>
     <td> - 邮件阅读<br>
       - 邮件撰写<br>
       - <a href="/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">加载项命令</a><br>
@@ -330,20 +382,20 @@ ms.locfileid: "32448145"
       - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.2/outlook-requirement-set-1.2">Mailbox 1.2</a><br>
       - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.3/outlook-requirement-set-1.3">Mailbox 1.3</a><br>
       - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.4/outlook-requirement-set-1.4">Mailbox 1.4</a>*</td>
-    <td>暂无</td>
+    <td>不可用</td>
   </tr>
   <tr>
-    <td>Office 2013 for Windows</td>
+    <td>Windows 版 Office 2013<br>（一次性购买）</td>
     <td> - 邮件阅读<br>
       - 邮件撰写</td>
     <td> - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.1/outlook-requirement-set-1.1">Mailbox 1.1</a><br>
       - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.2/outlook-requirement-set-1.2">Mailbox 1.2</a><br>
       - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.3/outlook-requirement-set-1.3">Mailbox 1.3</a>*<br>
       - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.4/outlook-requirement-set-1.4">Mailbox 1.4</a>*</td>
-    <td>暂无</td>
+    <td>不可用</td>
   </tr>
   <tr>
-    <td>Office 365 for iOS</td>
+    <td>Office for iOS<br>（连接到 Office 365）</td>
     <td> - 邮件阅读<br>
       - <a href="/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">加载项命令</a></td>
     <td> - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.1/outlook-requirement-set-1.1">Mailbox 1.1</a><br>
@@ -354,7 +406,7 @@ ms.locfileid: "32448145"
     <td>不可用</td>
   </tr>
   <tr>
-    <td>Office 365 for Mac</td>
+    <td>Office for Mac<br>（连接到 Office 365）</td>
     <td> - 邮件阅读<br>
       - 邮件撰写<br>
       - <a href="/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">加载项命令</a></td>
@@ -367,7 +419,7 @@ ms.locfileid: "32448145"
     <td>不可用</td>
   </tr>
   <tr>
-    <td>Office 2019 for Mac</td>
+    <td>Office 2019 for Mac<br>（一次性购买）</td>
     <td> - 邮件阅读<br>
       - 邮件撰写<br>
       - <a href="/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">加载项命令</a></td>
@@ -380,7 +432,7 @@ ms.locfileid: "32448145"
     <td>不可用</td>
   </tr>
   <tr>
-    <td>Office 2016 for Mac</td>
+    <td>Office 2016 for Mac<br>（一次性购买）</td>
     <td> - 邮件阅读<br>
       - 邮件撰写<br>
       - <a href="/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">加载项命令</a></td>
@@ -393,7 +445,7 @@ ms.locfileid: "32448145"
     <td>不可用</td>
   </tr>
   <tr>
-    <td>Office 365 for Android</td>
+    <td>Office for Android<br>（连接到 Office 365）</td>
     <td> - 邮件阅读<br>
       - <a href="/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">加载项命令</a></td>
     <td> - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.1/outlook-requirement-set-1.1">Mailbox 1.1</a><br>
@@ -445,7 +497,7 @@ ms.locfileid: "32448145"
          - TextFile</td>
   </tr>
   <tr>
-    <td>Office 365 for Windows</td>
+    <td>Windows 版 Office<br>（连接到 Office 365）</td>
     <td> - 任务窗格<br>
          - <a href="/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">外接程序命令</a></td>
     <td> - <a href="/office/dev/add-ins/reference/requirement-sets/word-api-requirement-sets">WordApi 1.1</a><br>
@@ -472,7 +524,7 @@ ms.locfileid: "32448145"
          - TextFile </td>
   </tr>
   <tr>
-    <td>Office 2019 for Windows</td>
+    <td>Windows 版 Office 2019<br>（一次性购买）</td>
     <td> - 任务窗格<br>
          - <a href="/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">外接程序命令</a></td>
     <td> - <a href="/office/dev/add-ins/reference/requirement-sets/word-api-requirement-sets">WordApi 1.1</a><br>
@@ -499,7 +551,7 @@ ms.locfileid: "32448145"
          - TextFile </td>
   </tr>
   <tr>
-    <td>Office 2016 for Windows</td>
+    <td>Windows 版 Office 2016<br>（一次性购买）</td>
     <td> - 任务窗格</td>
     <td> - <a href="/office/dev/add-ins/reference/requirement-sets/word-api-requirement-sets">WordApi 1.1</a><br>
          - <a href="/office/dev/add-ins/reference/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a>*</td>
@@ -523,7 +575,7 @@ ms.locfileid: "32448145"
          - TextFile </td>
   </tr>
   <tr>
-    <td>Office 2013 for Windows</td>
+    <td>Windows 版 Office 2013<br>（一次性购买）</td>
     <td> - 任务窗格</td>
     <td> - <a href="/office/dev/add-ins/reference/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a>*</td>
     <td> - BindingEvents<br>
@@ -546,7 +598,7 @@ ms.locfileid: "32448145"
          - TextFile</td>
   </tr>
   <tr>
-    <td>Office 365 for iPad</td>
+    <td>Office for iPad<br>（连接到 Office 365）</td>
     <td> - 任务窗格</td>
     <td> - <a href="/office/dev/add-ins/reference/requirement-sets/word-api-requirement-sets">WordApi 1.1</a><br>
          - <a href="/office/dev/add-ins/reference/requirement-sets/word-api-requirement-sets">WordApi 1.2</a><br>
@@ -573,7 +625,7 @@ ms.locfileid: "32448145"
          - TextFile </td>
   </tr>
   <tr>
-    <td>Office 365 for Mac</td>
+    <td>Office for Mac<br>（连接到 Office 365）</td>
     <td> - 任务窗格<br>
          - <a href="/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">外接程序命令</a></td>
     <td> - <a href="/office/dev/add-ins/reference/requirement-sets/word-api-requirement-sets">WordApi 1.1</a><br>
@@ -601,7 +653,7 @@ ms.locfileid: "32448145"
          - TextFile </td>
   </tr>
   <tr>
-    <td>Office 2019 for Mac</td>
+    <td>Office 2019 for Mac<br>（一次性购买）</td>
     <td> - 任务窗格<br>
          - <a href="/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">外接程序命令</a></td>
     <td> - <a href="/office/dev/add-ins/reference/requirement-sets/word-api-requirement-sets">WordApi 1.1</a><br>
@@ -629,7 +681,7 @@ ms.locfileid: "32448145"
          - TextFile </td>
   </tr>
   <tr>
-    <td>Office 2016 for Mac</td>
+    <td>Office 2016 for Mac<br>（一次性购买）</td>
     <td> - 任务窗格</td>
     <td> - <a href="/office/dev/add-ins/reference/requirement-sets/word-api-requirement-sets">WordApi 1.1</a><br>
         - <a href="/office/dev/add-ins/reference/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a>*</td>
@@ -684,7 +736,7 @@ ms.locfileid: "32448145"
          - TextCoercion</td>
   </tr>
   <tr>
-    <td>Office 365 for Windows</td>
+    <td>Windows 版 Office<br>（连接到 Office 365）</td>
     <td> - 内容<br>
          - 任务窗格<br>
          - <a href="/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">外接程序命令</a></td>
@@ -700,7 +752,7 @@ ms.locfileid: "32448145"
          - TextCoercion</td>
   </tr>
   <tr>
-    <td>Office 2019 for Windows</td>
+    <td>Windows 版 Office 2019<br>（一次性购买）</td>
     <td> - 内容<br>
          - 任务窗格<br>
          - <a href="/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">外接程序命令</a></td>
@@ -716,7 +768,7 @@ ms.locfileid: "32448145"
          - TextCoercion</td>
   </tr>
   <tr>
-    <td>Office 2016 for Windows</td>
+    <td>Windows 版 Office 2016<br>（一次性购买）</td>
     <td> - 内容<br>
          - 任务窗格</td>
     <td> - <a href="/office/dev/add-ins/reference/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a>*</td>
@@ -731,7 +783,7 @@ ms.locfileid: "32448145"
          - TextCoercion</td>
   </tr>
   <tr>
-    <td>Office 2013 for Windows</td>
+    <td>Windows 版 Office 2013<br>（一次性购买）</td>
     <td> - 内容<br>
          - 任务窗格<br>
     </td>
@@ -747,11 +799,11 @@ ms.locfileid: "32448145"
          - TextCoercion</td>
   </tr>
   <tr>
-    <td>Office 365 for iPad</td>
+    <td>Office for iPad<br>（连接到 Office 365）</td>
     <td> - 内容<br>
          - 任务窗格</td>
     <td> - <a href="/office/dev/add-ins/reference/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a></td>
-     <td> - ActiveView<br>
+    <td> - ActiveView<br>
          - CompressedFile<br>
          - DocumentEvents<br>
          - File<br>
@@ -762,7 +814,7 @@ ms.locfileid: "32448145"
          - ImageCoercion</td>
   </tr>
   <tr>
-    <td>Office 365 for Mac</td>
+    <td>Office for Mac<br>（连接到 Office 365）</td>
     <td> - 内容<br>
          - 任务窗格<br>
          - <a href="/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">外接程序命令</a></td>
@@ -778,7 +830,7 @@ ms.locfileid: "32448145"
          - TextCoercion</td>
   </tr>
   <tr>
-    <td>Office 2019 for Mac</td>
+    <td>Office 2019 for Mac<br>（一次性购买）</td>
     <td> - 内容<br>
          - 任务窗格<br>
          - <a href="/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">外接程序命令</a></td>
@@ -794,7 +846,7 @@ ms.locfileid: "32448145"
          - TextCoercion</td>
   </tr>
   <tr>
-    <td>Office 2016 for Mac</td>
+    <td>Office 2016 for Mac<br>（一次性购买）</td>
     <td> - 内容<br>
          - 任务窗格</td>
     <td> - <a href="/office/dev/add-ins/reference/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a>*</td>
@@ -850,21 +902,21 @@ ms.locfileid: "32448145"
     <th><a href="/office/dev/add-ins/reference/requirement-sets/office-add-in-requirement-sets"><b>通用 API</b></a></th>
   </tr>
   <tr>
-    <td>Office 2019 for Windows</td>
+    <td>Windows 版 Office 2019<br>（一次性购买）</td>
     <td> - 任务窗格</td>
     <td> - <a href="/office/dev/add-ins/reference/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a></td>
     <td> - Selection<br>
          - TextCoercion</td>
   </tr>
   <tr>
-    <td>Office 2016 for Windows</td>
+    <td>Windows 版 Office 2016<br>（一次性购买）</td>
     <td> - 任务窗格</td>
     <td> - <a href="/office/dev/add-ins/reference/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a></td>
     <td> - Selection<br>
          - TextCoercion</td>
   </tr>
   <tr>
-    <td>Office 2013 for Windows</td>
+    <td>Windows 版 Office 2013<br>（一次性购买）</td>
     <td> - 任务窗格</td>
     <td> - <a href="/office/dev/add-ins/reference/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a></td>
     <td> - Selection<br>
@@ -877,10 +929,13 @@ ms.locfileid: "32448145"
 ## <a name="see-also"></a>另请参阅
 
 - [Office 加载项平台概述](office-add-ins.md)
+- [Office 版本和要求集](/office/dev/add-ins/develop/office-versions-and-requirement-sets)
 - [通用 API 要求集](/office/dev/add-ins/reference/requirement-sets/office-add-in-requirement-sets)
 - [加载项命令要求集](/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets)
 - [适用于 Office 的 JavaScript API 参考](/office/dev/add-ins/reference/javascript-api-for-office)
+- [Office 365 ProPlus 的更新历史记录](/officeupdates/update-history-office365-proplus-by-date)
 - [Office 2016 和 2019 更新历史记录（即点即用）](/officeupdates/update-history-office-2019)
 - [Office 2013 更新历史记录（即点即用）](/officeupdates/update-history-office-2013)
 - [Office 2010、2013 和 2016 更新历史记录 (MSI)](/officeupdates/office-updates-msi)
 - [Outlook 2010、2013 和 2016 更新历史记录 (MSI)](/officeupdates/outlook-updates-msi)
+- [Office for Mac 更新历史记录](/officeupdates/update-history-office-for-mac)

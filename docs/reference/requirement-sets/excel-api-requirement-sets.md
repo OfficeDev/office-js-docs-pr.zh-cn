@@ -1,28 +1,28 @@
 ---
 title: Excel JavaScript API 要求集
 description: ''
-ms.date: 05/06/2019
+ms.date: 05/08/2019
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: 1735c01a8c17c31e632432d914770a800846508e
-ms.sourcegitcommit: 5b9c2b39dfe76cabd98bf28d5287d9718788e520
+ms.openlocfilehash: aebb85250743255cbc9c139d59e7e2fa5ef4e442
+ms.sourcegitcommit: a99be9c4771c45f3e07e781646e0e649aa47213f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/07/2019
-ms.locfileid: "33659640"
+ms.lasthandoff: 05/11/2019
+ms.locfileid: "33952360"
 ---
 # <a name="excel-javascript-api-requirement-sets"></a>Excel JavaScript API 要求集
 
 要求集是指各组已命名的 API 成员。Office 加载项使用清单中指定的要求集或执行运行时检查，以确定 Office 主机是否支持加载项所需的 API。有关详细信息，请参阅 [Office 版本和要求集](/office/dev/add-ins/develop/office-versions-and-requirement-sets)。
 
-Excel 加载项在多个 Office 版本中运行，包括 Office 2016 for Windows 或更高版本、Office for iPad、Office for Mac 和 Office Online。下表列出了 Excel 要求集、支持各个要求集的 Office 主机应用程序，以及这些应用程序的内部版本或版本号。
+Excel 加载项在多个 Office 版本中运行，包括 Windows 版 Office 2016 或更高版本、Office for iPad、Office for Mac 和 Office Online。下表列出了 Excel 要求集、支持各个要求集的 Office 主机应用程序，以及这些应用程序的内部版本或版本号。
 
 > [!NOTE]
 > 若要在任何编号的要求集中使用 API，你应该引用 CDN 上的**生产**库：https://appsforoffice.microsoft.com/lib/1/hosted/office.js。
 >
 > 有关使用预览 API 的信息，请参阅本文的 [Excel JavaScript 预览 API](#excel-javascript-preview-apis) 部分。
 
-|  要求集  |  Office 365 for Windows  |  Office 365 for iPad  |  Office 365 for Mac  | Office Online  |  Office Online Server  |
+|  要求集  |  Windows 版 Office<br>（连接到 Office 365）  |  Office for iPad<br>（连接到 Office 365）  |  Office for Mac<br>（连接到 Office 365）  | Office Online  |  Office Online Server  |
 |:-----|-----|:-----|:-----|:-----|:-----|
 | [预览](/javascript/api/excel)  | 请使用最新的 Office 版本来试用预览 API（你可能需要加入 [Office 预览体验成员计划](https://products.office.com/office-insider)） |
 | ExcelApi 1.9  | 版本 1903 (内部版本 11425.20204) 或更高版本 | 2.24 或更高版本 | 16.24 或更高版本 | 2019 年 5 月       | 即将推出 |
@@ -42,7 +42,7 @@ Excel 加载项在多个 Office 版本中运行，包括 Office 2016 for Windows
 
 [自定义函数](../../excel/custom-functions-overview.md)使用独立于核心 Excel JavaScript API 的要求集。 下表列出了自定义函数要求集、支持的 Office 主机应用程序，以及这些应用程序的内部版本或版本号。
 
-|  要求集  |  Office 365 for Windows  |  Office 365 for iPad  |  Office 365 for Mac  | Office Online | Office Online Server |
+|  要求集  |  Windows 版 Office<br>（连接到 Office 365）  |  Office for iPad<br>（连接到 Office 365）  |  Office for Mac<br>（连接到 Office 365）  | Office Online | Office Online Server |
 |:-----|-----|:-----|:-----|:-----|:-----|
 | CustomFunctionsRuntime 1.1 | 版本 1904（内部版本 11601.20144）或更高版本 | 不支持 | 16.24 或更高版本 | 2019 年 4 月 | 即将推出 |
 

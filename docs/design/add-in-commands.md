@@ -1,14 +1,14 @@
 ---
 title: Excel、Word 和 PowerPoint 加载项命令
 description: ''
-ms.date: 04/05/2019
+ms.date: 05/08/2019
 localization_priority: Priority
-ms.openlocfilehash: 0a2a28e09061248851e8ee1037d0219c7fcda1a5
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: 7b85d3016b195b353b1e7f314aceb761cf4e31b3
+ms.sourcegitcommit: a99be9c4771c45f3e07e781646e0e649aa47213f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32448725"
+ms.lasthandoff: 05/11/2019
+ms.locfileid: "33952178"
 ---
 # <a name="add-in-commands-for-excel-word-and-powerpoint"></a>Excel、Word 和 PowerPoint 加载项命令
 
@@ -53,8 +53,11 @@ ms.locfileid: "32448725"
 
 目前，以下平台支持加载项命令：
 
-- Office 2016 for Windows 或更高版本（内部版本 16.0.6769+）
-- Office for Mac（内部版本 15.33+）
+- Windows 版 Outlook 2016（内部版本 16.0.4678.1000+）
+- 连接到 Office 365 的 Windows 版 Office（内部版本 16.0.6769+）
+- Windows 版 Office 2019
+- 连接到 Office 365 的 Office for Mac（内部版本 15.33+）
+- Office 2019 for Mac
 - Office Online
 
 即将推出更多受支持的平台。
@@ -70,7 +73,7 @@ ms.locfileid: "32448725"
 - 使用命令来表示会给用户带来明确具体结果的特定操作。不要在单个按钮中组合多个操作。
 - 提供使您的外接程序中的常见任务执行效率更高的具体操作。尽量减少完成一个操作的步骤。
 - 关于命令在 Office 功能区中的位置：
-    - 将命令放置在现有的选项卡（插入、审阅等）上，如果提供的功能适合那个位置。例如，如果外接程序允许用户插入媒体，则将组添加到“插入”选项卡。请注意，并非所有选项卡都在所有的 Office 版本之间可用。有关详细信息，请参阅 [Office 外接程序 XML 清单](../develop/add-in-manifests.md)。 
+    - 将命令放置在现有的选项卡（插入、审阅等）上，如果提供的功能适合那个位置。例如，如果外接程序允许用户插入媒体，则将组添加到“插入”选项卡。请注意，并非所有选项卡都在所有的 Office 版本之间可用。有关详细信息，请参阅 [Office 外接程序 XML 清单](../develop/add-in-manifests.md)。
     - 如果功能不适合其他选项卡，并且你拥有少于 6 个的顶级命令，将命令放置在“开始”选项卡上。如果外接程序需要跨 Office 版本（如 Office Desktop 和 Office Online）运行，并且某个选项卡并非在所有版本中（例如，“设计”选项卡不存在于 Office Online 中）都提供，你也可以将命令添加到“开始”选项卡。  
     - 如果你拥有 6 个以上的顶级命令命令，将命令放置在自定义选项卡上。
     - 对组进行命名以与外接程序的名称相匹配。如果你拥有多个组，则基于对应组中的命令提供的功能为每个组命名。

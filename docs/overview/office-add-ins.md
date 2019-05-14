@@ -1,18 +1,18 @@
 ---
 title: Office 加载项平台概述 | Microsoft Docs
 description: 使用熟悉的 Web 技术，例如 HTML、CSS 和 JavaScript 来扩展 Word、Excel、PowerPoint、OneNote、Project 和 Outlook，并与其进行交互。
-ms.date: 03/19/2019
+ms.date: 05/08/2019
 localization_priority: Priority
-ms.openlocfilehash: 480228c20b20de52a9e1224f6691696b5560986c
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: dc0a7755027e1d6a741e97928f3f2bc25f62f6c3
+ms.sourcegitcommit: a99be9c4771c45f3e07e781646e0e649aa47213f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32448561"
+ms.lasthandoff: 05/11/2019
+ms.locfileid: "33952346"
 ---
 # <a name="office-add-ins-platform-overview"></a>Office 加载项平台概述
 
-可以使用 Office 外接程序平台来生成解决方案，通过解决方案扩展 Office 应用程序，并与 Office 文档中的内容进行交互。通过 Office 外接程序，可以使用熟悉的 Web 技术，例如 HTML、CSS 和 JavaScript 来扩展 Word、Excel、PowerPoint、OneNote，Project 和 Outlook，并与其进行交互。解决方案可以跨多个平台在 Office 中运行，包括 Office for Windows、Office Online、Office for Mac 和 Office for iPad。
+可以使用 Office 加载项平台来生成解决方案，通过解决方案扩展 Office 应用程序，并与 Office 文档中的内容进行交互。通过 Office 加载项，可以使用熟悉的 Web 技术，例如 HTML、CSS 和 JavaScript 来扩展 Word、Excel、PowerPoint、OneNote，Project 和 Outlook，并与其进行交互。解决方案可以跨多个平台在 Office 中运行，包括 Windows 版 Office、Office Online、Office for Mac 和 Office for iPad。
 
 网页在浏览器中能执行的操作，Office 加载项差不多都能执行。使用 Office 加载项平台可以执行下列操作：
 
@@ -22,11 +22,11 @@ ms.locfileid: "32448561"
 
 ## <a name="how-are-office-add-ins-different-from-com-and-vsto-add-ins"></a>Office 加载项与 COM 和 VSTO 加载项有何不同？
 
-COM 或 VSTO 加载项是旧 Office 集成解决方案，仅在 Office for Windows 上运行。与 COM 加载项不同，Office 加载项不涉及在用户设备或 Office 客户端中运行的代码。对于 Office 加载项，主机应用（例如 Excel）会读取加载项清单，并挂钩 UI 中的加载项自定义功能区按钮和菜单命令。如果需要，它加载加载项的 JavaScript 和 HTML 代码，此代码在沙盒中的浏览器上下文范围内执行。
+COM 或 VSTO 加载项是旧 Office 集成解决方案，仅在 Windows 版 Office 上运行。与 COM 加载项不同，Office 加载项不涉及在用户设备或 Office 客户端中运行的代码。对于 Office 加载项，主机应用程序（例如 Excel）会读取加载项清单，并挂钩 UI 中的加载项自定义功能区按钮和菜单命令。如果需要，它加载加载项的 JavaScript 和 HTML 代码，此代码在沙盒中的浏览器上下文范围内执行。
 
 相较于使用 VBA、COM 或 VSTO 生成的加载项，Office 加载项提供以下优势：
 
-- 跨平台支持：Office 加载项在 Office for Windows、Mac、iOS 和 Office Online 中运行。
+- 跨平台支持：Office 加载项在 Windows 版 Office、Mac 版 Office、iOS 版 Office 和 Office Online 中运行。
 
 - 集中部署和分发：管理员可以在整个组织内集中部署 Office 加载项。
 
@@ -80,7 +80,7 @@ Office 外接程序可以在 Office 主机应用程序中执行下列操作：
 
 #### <a name="custom-buttons-and-menu-commands"></a>自定义按钮和菜单命令  
 
-可以向 Office for Windows Desktop 和 Office Online 中的功能区添加自定义功能区按钮和菜单项。这便于用户直接从他们的 Office 应用程序访问外接程序。命令按钮可以启动不同操作，如显示带有自定义 HTML 的任务窗格或执行一个 JavaScript 函数。  
+可以向 Windows 桌面版 Office 和 Office Online 中的功能区添加自定义功能区按钮和菜单项。这便于用户直接从他们的 Office 应用程序访问加载项。命令按钮可以启动不同操作，如显示带有自定义 HTML 的任务窗格或执行一个 JavaScript 函数。  
 
 *图 3. 功能区中的加载项命令*
 

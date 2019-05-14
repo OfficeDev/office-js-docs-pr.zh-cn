@@ -1,14 +1,14 @@
 ---
 title: Excel JavaScript API 基本编程概念
 description: 使用 Excel JavaScript API 生成 Excel 加载项。
-ms.date: 04/25/2019
+ms.date: 05/08/2019
 localization_priority: Priority
-ms.openlocfilehash: 26822d9caa91f4a65a9dbb82f82db989b4409214
-ms.sourcegitcommit: 7462409209264dc7f8f89f3808a7a6249fcd739e
+ms.openlocfilehash: 3cd1abcb71eadbf9a5ec2ab8a27b1e427b24e83d
+ms.sourcegitcommit: a99be9c4771c45f3e07e781646e0e649aa47213f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/26/2019
-ms.locfileid: "33353256"
+ms.lasthandoff: 05/11/2019
+ms.locfileid: "33951926"
 ---
 # <a name="fundamental-programming-concepts-with-the-excel-javascript-api"></a>Excel JavaScript API 基本编程概念
 
@@ -16,7 +16,7 @@ ms.locfileid: "33353256"
 
 ## <a name="asynchronous-nature-of-excel-apis"></a>Excel API 的异步特性
 
-基于 Web 的 Excel 加载项在浏览器容器内运行，该容器内嵌在基于桌面平台（如 Office for Windows）上的 Office 应用程序中，并在 Office Online 中的 HTML iFrame 内运行。 出于性能考虑，启用 Office.js API 以与所有支持平台上的 Excel 主机进行同步交互是不可行的。 因此，Office.js 中的 **sync()** API 调用返回 [promise](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise)，当 Excel 应用程序完成请求的读取或写入操作时将实现该承诺。 此外，可以将多个操作加入队列，例如设置属性或调用方法，并通过对 **sync()** 的单一调用将它们作为一批命令运行，而不是为每个操作发送单独的请求。 以下部分描述了如何使用 **Excel.run()** 和 **sync()** API 来实现。
+基于 Web 的 Excel 加载项在浏览器容器内运行，该容器内嵌在基于桌面平台（如 Windows 版 Office）上的 Office 应用程序中，并在 Office Online 中的 HTML iFrame 内运行。出于性能考虑，启用 Office.js API 以与所有支持平台上的 Excel 主机进行同步交互是不可行的。因此，Office.js 中的 **sync()** API 调用返回 [promise](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise)，当 Excel 应用程序完成请求的读取或写入操作时将实现该承诺。此外，可以将多个操作加入队列，例如设置属性或调用方法，并通过对 **sync()** 的单一调用将它们作为一批命令运行，而不是为每个操作发送单独的请求。以下部分描述了如何使用 **Excel.run()** 和 **sync()** API 来实现。
 
 ## <a name="excelrun"></a>Excel.run
 

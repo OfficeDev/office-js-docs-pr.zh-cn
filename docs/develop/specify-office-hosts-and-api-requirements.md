@@ -1,14 +1,14 @@
 ---
 title: 指定 Office 主机和 API 要求
 description: ''
-ms.date: 03/19/2019
+ms.date: 05/08/2019
 localization_priority: Priority
-ms.openlocfilehash: 9e1f92ae6708392157ccaa061cf0a064f3b5ece0
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: 7209998e488e56b66b206d50c7bceb1465fb7206
+ms.sourcegitcommit: a99be9c4771c45f3e07e781646e0e649aa47213f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32449400"
+ms.lasthandoff: 05/11/2019
+ms.locfileid: "33952143"
 ---
 # <a name="specify-office-hosts-and-api-requirements"></a>指定 Office 主机和 API 要求
 
@@ -70,7 +70,7 @@ ms.locfileid: "32449400"
 
 若要使外接程序运行在一个 Office 主机应用程序中，请使用清单中的 **Hosts** 和 **Host** 元素。如果未指定 **Hosts** 元素，你的外接程序将在所有主机中运行。
 
-例如，以下 **Hosts** 和 **Host** 声明指定外接程序将使用任何版本的 Excel，其中包括适用于 Windows 的 Excel、Excel Online 和适用于 iPad 的 Excel。
+例如，以下 **Hosts** 和 **Host** 声明指定加载项将使用任何版本的 Excel，其中包括 Windows 版 Excel、Excel Online 和 Excel for iPad。
 
 ```xml
 <Hosts>
@@ -80,14 +80,14 @@ ms.locfileid: "32449400"
 
 **Hosts** 元素可以包含一个或多个 **Host** 元素。**Host** 元素指定外接程序要求的 Office 主机。**Name** 属性是必需的，且可以被设置为下列值之一。
 
-| 名称          | Office 主机应用程序                      |
-|:--------------|:----------------------------------------------|
-| 数据库      | Access Web App                               |
-| 文档      | Word for Windows、Word for Mac、Word for iPad 和 Word Online        |
-| 邮箱       | Outlook for Windows、Outlook for Mac、Outlook Web 和 Outlook.com |
-| 演示文稿  | PowerPoint for Windows、PowerPoint for Mac、PowerPoint for iPad 和 PowerPoint Online  |
-| 项目       | 项目                                       |
-| 工作簿      | Excel for Windows、Excel for Mac、Excel for iPad 和 Excel Online           |
+| 名称          | Office 主机应用程序                                                              |
+|:--------------|:--------------------------------------------------------------------------------------|
+| 数据库      | Access Web App                                                                       |
+| Document      | Windows 版 Word、Word for Mac、Word for iPad 和 Word Online                         |
+| 邮箱       | Windows 版 Outlook、Outlook for Mac、Outlook 网页版 和 Outlook.com              |
+| 演示文稿  | Windows 版 PowerPoint、PowerPoint for Mac、PowerPoint for iPad 和 PowerPoint Online |
+| Project       | 项目                                                                               |
+| Workbook      | Windows 版 Excel、Excel for Mac、Excel for iPad 和 Excel Online                     |
 
 > [!NOTE]
 > `Name` 属性指定可以运行加载项的 Office 主机应用。Office 主机受不同平台支持，且可在台式机、Web 浏览器、平板电脑和移动设备上运行。不能指定用于运行加载项的平台。例如，如果指定 `Mailbox`，那么 Outlook 和 Outlook Web App 都可以用来运行加载项。 
@@ -98,7 +98,7 @@ ms.locfileid: "32449400"
 **Requirements** 元素指定运行外接程序时 Office 主机需要支持的最小要求集或 API 成员。**Requirements** 元素可以指定要求集和外接程序中使用的各个方法。在 1.1 版外接程序清单架构中，除 Outlook 外接程序外，**Requirements** 元素对于所有外接程序均为可选项。
 
 > [!WARNING]
-> **Requirements** 元素只能用于指定加载项必须使用的关键要求集或 API 成员。如果 Office 主机或平台不支持在 **Requirements** 元素中指定的要求集或 API 成员，加载项将无法在相应主机或平台上运行，并且不会显示在“我的加载项”**** 中。相反，建议让加载项适用于 Office 主机的所有平台，如 Excel for Windows、Excel Online 和 Excel for iPad。若要让加载项适用于_所有_ Office 主机和平台，请使用运行时检查，而不是 **Requirements** 元素。
+> **Requirements** 元素只能用于指定加载项必须使用的关键要求集或 API 成员。如果 Office 主机或平台不支持在 **Requirements** 元素中指定的要求集或 API 成员，加载项将无法在相应主机或平台上运行，并且不会显示在“**我的加载项**”中。相反，建议让加载项适用于 Office 主机的所有平台，如 Windows 版 Excel、Excel Online 和 Excel for iPad。若要让加载项适用于_所有_ Office 主机和平台，请使用运行时检查，而不是 **Requirements** 元素。
 
 下面的代码示例展示了在支持以下内容的所有 Office 主机应用中加载的加载项：
 
