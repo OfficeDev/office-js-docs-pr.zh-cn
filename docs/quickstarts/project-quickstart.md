@@ -1,216 +1,125 @@
 ---
-title: 生成首个 Project 加载项
+title: 生成首个 Project 任务窗格加载项
 description: ''
-ms.date: 01/17/2019
+ms.date: 05/08/2019
 ms.prod: project
 localization_priority: Priority
-ms.openlocfilehash: 4d0dfa98d36d6da56fe2b9687922371eea29062a
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: d61f8d83b88dbe69ff0ba9cd4b0afef77a4f03d6
+ms.sourcegitcommit: a99be9c4771c45f3e07e781646e0e649aa47213f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32450766"
+ms.lasthandoff: 05/11/2019
+ms.locfileid: "33952245"
 ---
-# <a name="build-your-first-project-add-in"></a><span data-ttu-id="83a3f-102">生成首个 Project 加载项</span><span class="sxs-lookup"><span data-stu-id="83a3f-102">Build your first Project add-in</span></span>
+# <a name="build-your-first-project-task-pane-add-in"></a><span data-ttu-id="29e98-102">生成首个 Project 任务窗格加载项</span><span class="sxs-lookup"><span data-stu-id="29e98-102">Build your first PowerPoint task pane add-in</span></span>
 
-<span data-ttu-id="83a3f-103">本文将逐步介绍如何使用 jQuery 和 Office JavaScript API 生成 Project 加载项。</span><span class="sxs-lookup"><span data-stu-id="83a3f-103">In this article, you'll walk through the process of building a Project add-in by using jQuery and the Office JavaScript API.</span></span>
+<span data-ttu-id="29e98-103">本文将逐步介绍如何生成 Project 任务窗格加载项。</span><span class="sxs-lookup"><span data-stu-id="29e98-103">In this article, you'll walk through the process of building a PowerPoint task pane add-in.</span></span>
 
-## <a name="prerequisites"></a><span data-ttu-id="83a3f-104">先决条件</span><span class="sxs-lookup"><span data-stu-id="83a3f-104">Prerequisites</span></span>
+## <a name="prerequisites"></a><span data-ttu-id="29e98-104">先决条件</span><span class="sxs-lookup"><span data-stu-id="29e98-104">Prerequisites</span></span>
 
-- [<span data-ttu-id="83a3f-105">Node.js</span><span class="sxs-lookup"><span data-stu-id="83a3f-105">Node.js</span></span>](https://nodejs.org)
+[!include[Yeoman generator prerequisites](../includes/quickstart-yo-prerequisites.md)]
 
-- <span data-ttu-id="83a3f-106">全局安装最新版 [Yeoman](https://github.com/yeoman/yo) 和 [Office 加载项的 Yeoman 生成器](https://github.com/OfficeDev/generator-office)。</span><span class="sxs-lookup"><span data-stu-id="83a3f-106">Install the latest version of [Yeoman](https://github.com/yeoman/yo) and the [Yeoman generator for Office Add-ins](https://github.com/OfficeDev/generator-office) globally.</span></span>
+- <span data-ttu-id="29e98-105">Windows 版 Project 2016 或更高版本</span><span class="sxs-lookup"><span data-stu-id="29e98-105">Project 2016 or later on Windows</span></span>
 
-    ```bash
-    npm install -g yo generator-office
-    ```
+## <a name="create-the-add-in"></a><span data-ttu-id="29e98-106">创建加载项</span><span class="sxs-lookup"><span data-stu-id="29e98-106">Create the add-in</span></span>
 
-## <a name="create-the-add-in"></a><span data-ttu-id="83a3f-107">创建加载项</span><span class="sxs-lookup"><span data-stu-id="83a3f-107">Create the add-in</span></span>
+1. <span data-ttu-id="29e98-107">使用 Yeoman 生成器创建 Project 加载项项目。</span><span class="sxs-lookup"><span data-stu-id="29e98-107">Use the Yeoman generator to create a Project add-in project.</span></span> <span data-ttu-id="29e98-108">运行下面的命令，再回答如下所示的提示问题：</span><span class="sxs-lookup"><span data-stu-id="29e98-108">Run the following command and then answer the prompts as follows:</span></span>
 
-1. <span data-ttu-id="83a3f-108">使用 Yeoman 生成器创建 Project 加载项项目。</span><span class="sxs-lookup"><span data-stu-id="83a3f-108">Use the Yeoman generator to create a Project add-in project.</span></span> <span data-ttu-id="83a3f-109">运行下面的命令，再回答如下所示的提示问题：</span><span class="sxs-lookup"><span data-stu-id="83a3f-109">Run the following command and then answer the prompts as follows:</span></span>
-
-    ```bash
+    ```command&nbsp;line
     yo office
     ```
 
-    - <span data-ttu-id="83a3f-110">**选择项目类型:** `Office Add-in project using Jquery framework`</span><span class="sxs-lookup"><span data-stu-id="83a3f-110">**Choose a project type:** `Office Add-in project using Jquery framework`</span></span>
-    - <span data-ttu-id="83a3f-111">**选择脚本类型:** `Javascript`</span><span class="sxs-lookup"><span data-stu-id="83a3f-111">**Choose a script type:** `Javascript`</span></span>
-    - <span data-ttu-id="83a3f-112">**要如何命名加载项?:** `My Office Add-in`</span><span class="sxs-lookup"><span data-stu-id="83a3f-112">**What do you want to name your add-in?:** `My Office Add-in`</span></span>
-    - <span data-ttu-id="83a3f-113">**要支持哪一个 Office 客户端应用?:** `Project`</span><span class="sxs-lookup"><span data-stu-id="83a3f-113">**Which Office client application would you like to support?:** `Project`</span></span>
+    - <span data-ttu-id="29e98-109">**选择项目类型:** `Office Add-in Task Pane project`</span><span class="sxs-lookup"><span data-stu-id="29e98-109">**Choose a project type:** `Office Add-in Task Pane project`</span></span>
+    - <span data-ttu-id="29e98-110">**选择脚本类型:** `Javascript`</span><span class="sxs-lookup"><span data-stu-id="29e98-110">**Choose a script type:** `Javascript`</span></span>
+    - <span data-ttu-id="29e98-111">**要如何命名加载项?**</span><span class="sxs-lookup"><span data-stu-id="29e98-111">**What do you want to name your add-in?**</span></span> `My Office Add-in`
+    - <span data-ttu-id="29e98-112">**要支持哪一个 Office 客户端应用程序?**</span><span class="sxs-lookup"><span data-stu-id="29e98-112">**Which Office client application would you like to support?**</span></span> `Project`
 
-    ![有关 Yeoman 生成器提示和回答的屏幕截图](../images/yo-office-project-jquery.png)
+    ![有关 Yeoman 生成器提示和回答的屏幕截图](../images/yo-office-project.png)
     
-    <span data-ttu-id="83a3f-115">完成此向导后，生成器会创建项目，并安装支持的 Node 组件。</span><span class="sxs-lookup"><span data-stu-id="83a3f-115">After you complete the wizard, the generator will create the project and install supporting Node components.</span></span>
+    <span data-ttu-id="29e98-114">完成此向导后，生成器会创建项目，并安装支持的 Node 组件。</span><span class="sxs-lookup"><span data-stu-id="29e98-114">After you complete the wizard, the generator will create the project and install supporting Node components.</span></span>
     
-2. <span data-ttu-id="83a3f-116">导航到项目的根文件夹。</span><span class="sxs-lookup"><span data-stu-id="83a3f-116">Navigate to the root folder of the project.</span></span>
+2. <span data-ttu-id="29e98-115">导航到项目的根文件夹。</span><span class="sxs-lookup"><span data-stu-id="29e98-115">Navigate to the root folder of the project.</span></span>
 
-    ```bash
+    ```command&nbsp;line
     cd "My Office Add-in"
     ```
 
-## <a name="update-the-code"></a><span data-ttu-id="83a3f-117">更新代码</span><span class="sxs-lookup"><span data-stu-id="83a3f-117">Update the code</span></span>
+## <a name="explore-the-project"></a><span data-ttu-id="29e98-116">浏览项目</span><span class="sxs-lookup"><span data-stu-id="29e98-116">Explore the project</span></span>
 
-1. <span data-ttu-id="83a3f-p102">在代码编辑器中，打开项目根目录中的“index.html”\*\*\*\*。 此文件包含在加载项任务窗格中呈现的 HTML。</span><span class="sxs-lookup"><span data-stu-id="83a3f-p102">In your code editor, open **index.html** in the root of the project. This file contains the HTML that will be rendered in the add-in's task pane.</span></span>
+<span data-ttu-id="29e98-117">使用 Yeoman 生成器创建的加载项项目包含适合于基础任务窗格加载项的示例代码。</span><span class="sxs-lookup"><span data-stu-id="29e98-117">The add-in project that you've created with the Yeoman generator contains sample code for a very basic task pane add-in.</span></span> 
 
-2. <span data-ttu-id="83a3f-120">用以下标记替换 `<body>` 元素。</span><span class="sxs-lookup"><span data-stu-id="83a3f-120">Replace the `<body>` element with the following markup.</span></span>
+- <span data-ttu-id="29e98-118">项目根目录中的 **./manifest.xml** 文件定义加载项的设置和功能。</span><span class="sxs-lookup"><span data-stu-id="29e98-118">The **./manifest.xml** file in the root directory of the project defines the settings and capabilities of the add-in.</span></span>
+- <span data-ttu-id="29e98-119">**./src/taskpane/taskpane.html** 文件包含组成任务窗格的 HTML。</span><span class="sxs-lookup"><span data-stu-id="29e98-119">The **./src/taskpane/taskpane.html** file contains the HTML markup for the task pane.</span></span>
+- <span data-ttu-id="29e98-120">**./src/taskpane/taskpane.css** 文件包含应用于任务窗格中的内容的 CSS。</span><span class="sxs-lookup"><span data-stu-id="29e98-120">The **./src/taskpane/taskpane.css** file contains the CSS that's applied to content in the task pane.</span></span>
+- <span data-ttu-id="29e98-121">**./src/taskpane/taskpane.js** 文件包含用于加快任务窗格与 Office 托管应用程序之间的交互的 Office JavaScript API 代码。</span><span class="sxs-lookup"><span data-stu-id="29e98-121">The **./src/taskpane/taskpane.js** file contains the Office JavaScript API code that facilitates interaction between the task pane and the Office host application.</span></span>
 
-    ```html
-    <body class="ms-font-m ms-welcome">
-        <div id="content-header">
-            <div class="padding">
-                <h1>Welcome</h1>
-            </div>
-        </div>
-        <div id="content-main">
-            <div class="padding">
-                <p>Select a task and then choose the buttons below and observe the output in the <b>Results</b> textbox.</p>
-                <h3>Try it out</h3>
-                <button class="ms-Button" id="get-task-guid">Get Task GUID</button>
-                <br/><br/>
-                <button class="ms-Button" id="get-task">Get Task data</button>
-                <br/>
-                <h4>Results:</h4>
-                <textarea id="result" rows="6" cols="25"></textarea>
-            </div>
-        </div>
-        <script type="text/javascript" src="node_modules/jquery/dist/jquery.js"></script>
-        <script type="text/javascript" src="node_modules/office-ui-fabric-js/dist/js/fabric.js"></script>
-    </body>
-    ```
+## <a name="update-the-code"></a><span data-ttu-id="29e98-122">更新代码</span><span class="sxs-lookup"><span data-stu-id="29e98-122">Update the code</span></span>
 
-3. <span data-ttu-id="83a3f-121">打开文件 **src/index.js**，指定加载项的脚本。</span><span class="sxs-lookup"><span data-stu-id="83a3f-121">Open the file **src/index.js** to specify the script for the add-in.</span></span> <span data-ttu-id="83a3f-122">将整个内容替换为下列代码，并保存文件。</span><span class="sxs-lookup"><span data-stu-id="83a3f-122">Replace the entire contents with the following code and save the file.</span></span>
+<span data-ttu-id="29e98-123">在代码编辑器中，打开文件 **./src/taskpane/taskpane.js** 并在 **run** 函数中添加以下代码。</span><span class="sxs-lookup"><span data-stu-id="29e98-123">In your code editor, open the file **./src/taskpane/taskpane.js** and add the following code within the **run** function.</span></span> <span data-ttu-id="29e98-124">此代码使用 Office JavaScript API 设置所选任务的 `Name` 字段和 `Notes` 字段。</span><span class="sxs-lookup"><span data-stu-id="29e98-124">This code uses the Office JavaScript API to set the `Name` field and `Notes` field of the selected task.</span></span>
 
-    ```js
-    'use strict';
+```js
+var taskGuid;
 
-    (function () {
+// Get the GUID of the selected task
+Office.context.document.getSelectedTaskAsync(
+    function (result) {
+        if (result.status === Office.AsyncResultStatus.Succeeded) {
+            taskGuid = result.value;
 
-        var taskGuid;
+            // Set the specified fields for the selected task.
+            var targetFields = [Office.ProjectTaskFields.Name, Office.ProjectTaskFields.Notes];
+            var fieldValues = ['New task name', 'Notes for the task.'];
 
-        Office.onReady(function() {
-            // Office is ready
-            $(document).ready(function () {
-                // The document is ready
-                $('#get-task-guid').click(getTaskGUID);
-                $('#get-task').click(getTask);
-            });
-        });
-
-        function getTaskGUID() {
-            Office.context.document.getSelectedTaskAsync(function (asyncResult) {
-                if (asyncResult.status == Office.AsyncResultStatus.Succeeded) {
-                    result.value = "Task GUID: " + asyncResult.value;
-                    taskGuid = asyncResult.value;
-                }
-                else {
-                    console.log(asyncResult.error.message);
-                }
-            });
-        }
-
-        function getTask() {
-            if (taskGuid != undefined) {
-                Office.context.document.getTaskAsync(
+            // Set the field value. If the call is successful, set the next field.
+            for (var i = 0; i < targetFields.length; i++) {
+                Office.context.document.setTaskFieldAsync(
                     taskGuid,
-                    function (asyncResult) {
-                        if (asyncResult.status === Office.AsyncResultStatus.Succeeded) {
-                            var taskInfo = asyncResult.value;
-                            var taskOutput = "Task name: " + taskInfo.taskName +
-                                            "\nGUID: " + taskGuid +
-                                            "\nWSS Id: " + taskInfo.wssTaskId +
-                                            "\nResource names: " + taskInfo.resourceNames;
-                            result.value = taskOutput;
-                        } else {
-                            console.log(asyncResult.error.message);
+                    targetFields[i],
+                    fieldValues[i],
+                    function (result) {
+                        if (result.status === Office.AsyncResultStatus.Succeeded) {
+                            i++;
+                        }
+                        else {
+                            var err = result.error;
+                            console.log(err.name + ' ' + err.code + ' ' + err.message);
                         }
                     }
                 );
-            } else {
-                result.value = 'Task GUID not valid:\n' + taskGuid;
-            } 
+            }
+        } else {
+            var err = result.error;
+            console.log(err.name + ' ' + err.code + ' ' + err.message);
         }
-    })();
+    }
+);
+```
+
+## <a name="try-it-out"></a><span data-ttu-id="29e98-125">试用</span><span class="sxs-lookup"><span data-stu-id="29e98-125">Try it out</span></span>
+
+1. <span data-ttu-id="29e98-126">通过运行以下命令启用本地 Web 服务器：</span><span class="sxs-lookup"><span data-stu-id="29e98-126">Start the local web server by running the following command:</span></span>
+
+    ```command&nbsp;line
+    npm start
     ```
 
-4. <span data-ttu-id="83a3f-p104">打开项目根目录中的文件“app.css”\*\*\*\*，以指定加载项自定义样式。 将整个内容替换为以下内容，并保存文件。</span><span class="sxs-lookup"><span data-stu-id="83a3f-p104">Open the file **app.css** in the root of the project to specify the custom styles for the add-in. Replace the entire contents with the following and save the file.</span></span>
+    > [!NOTE]
+    > <span data-ttu-id="29e98-127">Office 加载项应使用 HTTPS，而不是 HTTP（即便是在开发时也是如此）。</span><span class="sxs-lookup"><span data-stu-id="29e98-127">Office Add-ins should use HTTPS, not HTTP, even when you are developing.</span></span> <span data-ttu-id="29e98-128">如果系统在运行 `npm start` 后提示你安装证书，请接受提示以安装 Yeoman 生成器提供的证书。</span><span class="sxs-lookup"><span data-stu-id="29e98-128">If you are prompted to install a certificate after you run `npm start`, accept the prompt to install the certificate that the Yeoman generator provides.</span></span> 
 
-    ```css
-    #content-header {
-        background: #2a8dd4;
-        color: #fff;
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 80px; 
-        overflow: hidden;
-    }
+2. <span data-ttu-id="29e98-129">在 Project 中，创建一个简单的项目计划。</span><span class="sxs-lookup"><span data-stu-id="29e98-129">In Project, create a simple project plan.</span></span>
 
-    #content-main {
-        background: #fff;
-        position: fixed;
-        top: 80px;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        overflow: auto; 
-    }
+3. <span data-ttu-id="29e98-130">按照[在 Windows 上旁加载 Office 加载项](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)中的说明，在 Project 中加载你的加载项。</span><span class="sxs-lookup"><span data-stu-id="29e98-130">Load your add-in in Project by following the instructions in [Sideload Office Add-ins on Windows](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md).</span></span>
 
-    .padding {
-        padding: 15px;
-    }
-    ```
+4. <span data-ttu-id="29e98-131">在项目中选择单个任务。</span><span class="sxs-lookup"><span data-stu-id="29e98-131">Select a single task within the project.</span></span>
 
-## <a name="update-the-manifest"></a><span data-ttu-id="83a3f-125">更新清单</span><span class="sxs-lookup"><span data-stu-id="83a3f-125">Update the manifest</span></span>
+5. <span data-ttu-id="29e98-132">在任务窗格的底部，选择“**运行**”链接以重命名所选任务并向所选任务添加备注。</span><span class="sxs-lookup"><span data-stu-id="29e98-132">At the bottom of the task pane, choose the **Run** link to rename the selected task and add notes to the selected task.</span></span>
 
-1. <span data-ttu-id="83a3f-126">打开文件“**manifest.xml**”以定义加载项的设置和功能。</span><span class="sxs-lookup"><span data-stu-id="83a3f-126">Open the file **manifest.xml** to define the add-in's settings and capabilities.</span></span>
+    ![加载了任务窗格加载项的 Project 应用程序的屏幕截图](../images/project-quickstart-addin-1.png)
 
-2. <span data-ttu-id="83a3f-p105">`ProviderName` 元素具有占位符值。 将其替换为你的姓名。</span><span class="sxs-lookup"><span data-stu-id="83a3f-p105">The `ProviderName` element has a placeholder value. Replace it with your name.</span></span>
+## <a name="next-steps"></a><span data-ttu-id="29e98-134">后续步骤</span><span class="sxs-lookup"><span data-stu-id="29e98-134">Next steps</span></span>
 
-3. <span data-ttu-id="83a3f-129">`Description` 元素的 `DefaultValue` 属性有占位符。</span><span class="sxs-lookup"><span data-stu-id="83a3f-129">The `DefaultValue` attribute of the `Description` element has a placeholder.</span></span> <span data-ttu-id="83a3f-130">将它替换为“A task pane add-in for Project”\*\*\*\*。</span><span class="sxs-lookup"><span data-stu-id="83a3f-130">Replace it with **A task pane add-in for Project**.</span></span>
-
-4. <span data-ttu-id="83a3f-131">保存文件。</span><span class="sxs-lookup"><span data-stu-id="83a3f-131">Save the file.</span></span>
-
-    ```xml
-    ...
-    <ProviderName>John Doe</ProviderName>
-    <DefaultLocale>en-US</DefaultLocale>
-    <!-- The display name of your add-in. Used on the store and various places of the Office UI such as the add-ins dialog. -->
-    <DisplayName DefaultValue="My Office Add-in" />
-    <Description DefaultValue="A task pane add-in for Project"/>
-    ...
-    ```
-
-## <a name="start-the-dev-server"></a><span data-ttu-id="83a3f-132">启动开发人员服务器</span><span class="sxs-lookup"><span data-stu-id="83a3f-132">Start the dev server</span></span>
-
-[!include[Start server section](../includes/quickstart-yo-start-server.md)] 
-
-## <a name="try-it-out"></a><span data-ttu-id="83a3f-133">试用</span><span class="sxs-lookup"><span data-stu-id="83a3f-133">Try it out</span></span>
-
-1. <span data-ttu-id="83a3f-134">在 Project 中，创建至少有一个任务的简单项目。</span><span class="sxs-lookup"><span data-stu-id="83a3f-134">In Project, create a simple project that has at least one task.</span></span>
-
-2. <span data-ttu-id="83a3f-135">请按照运行加载项所用平台对应的说明操作，以在 Project 中旁加载加载项。</span><span class="sxs-lookup"><span data-stu-id="83a3f-135">Follow the instructions for the platform you'll use to run your add-in to sideload the add-in within Project.</span></span>
-
-    - <span data-ttu-id="83a3f-136">Windows：[在 Windows 上旁加载 Office 加载项](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)</span><span class="sxs-lookup"><span data-stu-id="83a3f-136">Windows: [Sideload Office Add-ins on Windows](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)</span></span>
-    - <span data-ttu-id="83a3f-137">Project Online：[在 Office Online 中旁加载 Office 加载项](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-in-office-online)</span><span class="sxs-lookup"><span data-stu-id="83a3f-137">Project Online: [Sideload Office Add-ins in Office Online](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-in-office-online)</span></span>
-    - <span data-ttu-id="83a3f-138">iPad 和 Mac：[在 iPad 和 Mac 上旁加载 Office 加载项](../testing/sideload-an-office-add-in-on-ipad-and-mac.md)</span><span class="sxs-lookup"><span data-stu-id="83a3f-138">iPad and Mac: [Sideload Office Add-ins on iPad and Mac](../testing/sideload-an-office-add-in-on-ipad-and-mac.md)</span></span>
-
-3. <span data-ttu-id="83a3f-139">在 Project 中，选择一个任务。</span><span class="sxs-lookup"><span data-stu-id="83a3f-139">In Project, select a task.</span></span>
-
-    ![Project 中已选择一个任务的项目计划的屏幕截图](../images/project_quickstart_addin_1.png)
-
-4. <span data-ttu-id="83a3f-141">在任务窗格中，选择“获取任务 GUID”\*\*\*\* 按钮，将任务 GUID 写入到“结果”\*\*\*\* 文本框。</span><span class="sxs-lookup"><span data-stu-id="83a3f-141">In the task pane, choose the **Get Task GUID** button to write the task GUID to the **Results** textbox.</span></span>
-
-    ![Project 中已选择一个任务的项目计划，且任务 GUID 写入到任务窗格中文本框的屏幕截图](../images/project_quickstart_addin_2.png)
-
-5. <span data-ttu-id="83a3f-143">在任务窗格中，选择“获取任务数据”\*\*\*\* 按钮，将选定任务的多个属性写入到“结果”\*\*\*\* 文本框。</span><span class="sxs-lookup"><span data-stu-id="83a3f-143">In the task pane, choose the **Get Task data** button to write several properties of the selected task to the **Results** textbox.</span></span>
-
-    ![Project 中已选择一个任务的项目计划，且多个任务属性写入到任务窗格中文本框的屏幕截图](../images/project_quickstart_addin_3.png)
-
-## <a name="next-steps"></a><span data-ttu-id="83a3f-145">后续步骤</span><span class="sxs-lookup"><span data-stu-id="83a3f-145">Next steps</span></span>
-
-<span data-ttu-id="83a3f-p107">恭喜！已成功创建 Project 加载项！ 接下来，请详细了解 Project 加载项功能，并探索常见方案。</span><span class="sxs-lookup"><span data-stu-id="83a3f-p107">Congratulations, you've successfully created a Project add-in! Next, learn more about the capabilities of a Project add-in and explore common scenarios.</span></span>
+<span data-ttu-id="29e98-135">恭喜！已成功创建 Project 任务窗格加载项！</span><span class="sxs-lookup"><span data-stu-id="29e98-135">Congratulations, you've successfully created a PowerPoint task pane add-in!</span></span> <span data-ttu-id="29e98-136">接下来，请详细了解 Project 加载项功能，并探索常见方案。</span><span class="sxs-lookup"><span data-stu-id="29e98-136">Next, learn more about the capabilities of a Project add-in and explore common scenarios.</span></span>
 
 > [!div class="nextstepaction"]
-> [<span data-ttu-id="83a3f-148">Project 加载项</span><span class="sxs-lookup"><span data-stu-id="83a3f-148">Project add-ins</span></span>](../project/project-add-ins.md)
+> [<span data-ttu-id="29e98-137">Project 加载项</span><span class="sxs-lookup"><span data-stu-id="29e98-137">Project add-ins</span></span>](../project/project-add-ins.md)
 
