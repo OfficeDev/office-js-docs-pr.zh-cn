@@ -64,7 +64,7 @@
   items:
     - name: 运行外接程序的要求
       href: concepts/requirements-for-running-office-add-ins.md
-    - name: Office 外接程序使用的 Web 查看器
+    - name: Office 加载项使用的 Web 查看器
       href: concepts/web-viewers-used-by-office-web-add-ins.md
     - name: 外接程序开发的最佳做法
       href: concepts/add-in-development-best-practices.md
@@ -323,7 +323,7 @@
                 - name: 保存和共享状态
                   href: excel/custom-functions-save-state.md
                   displayName: Excel
-                - name: 故障排除
+                - name: 疑难解答
                   href: excel/custom-functions-troubleshooting.md
                   displayName: Excel
                 - name: 可变函数
@@ -359,7 +359,7 @@
             - name: 形状
               href: excel/excel-add-ins-shapes.md
               displayName: Excel
-            - name: 表
+            - name: Tables
               href: excel/excel-add-ins-tables.md
               displayName: Excel
             - name: Workbooks
@@ -711,7 +711,9 @@
         - name: Word API 参考
           href: /javascript/api/word
     - name: API 开放性规范
-      href: reference/openspec.md
+      items:
+        - name: 概述
+          href: reference/openspec/openspec.md
     - name: 错误代码
       href: reference/javascript-api-for-office-error-codes.md
     - name: Office 加载项清单参考
@@ -808,7 +810,7 @@
           href: reference/manifest/targetdialects.md
         - name: 类型
           href: reference/manifest/type.md
-        - name: Version
+        - name: 版本
           href: reference/manifest/version.md
         - name: VersionOverrides
           items:
