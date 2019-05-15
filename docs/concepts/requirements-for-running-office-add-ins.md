@@ -1,14 +1,14 @@
 ---
 title: 运行 Office 加载项的要求
 description: ''
-ms.date: 03/19/2019
+ms.date: 05/14/2019
 localization_priority: Priority
-ms.openlocfilehash: c57534a8d00904336af518d9d32606373b2edab6
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: 2dcdfb2562233550016cd2d04571239318ffffa3
+ms.sourcegitcommit: 944cbb5c6ce055f6db1833182b24d490d1dce01d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32448224"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "33992180"
 ---
 # <a name="requirements-for-running-office-add-ins"></a>运行 Office 加载项的要求
 
@@ -28,7 +28,7 @@ ms.locfileid: "32448224"
 [!include[HTTPS guidance](../includes/https-guidance.md)]
 
 > [!TIP]
-> 在 Visual Studio 中开发和调试加载项时，Visual Studio 使用 IIS Express 在本地部署并运行加载项的网页文件，无需使用其他 Web 服务器。 
+> 在 Visual Studio 中开发和调试加载项时，Visual Studio 使用 IIS Express 在本地部署并运行加载项的网页文件，无需使用其他 Web 服务器。
 
 对于内容和任务窗格外接程序，在受支持的 Office 主机应用程序（Access Web App、Word、Excel、PowerPoint 或 Project）中，你还需要 SharePoint 上的一个 [外接程序目录](../publish/publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md)才能上载外接程序的 XML 清单文件。
 
@@ -48,12 +48,12 @@ ms.locfileid: "32448224"
 
   如果拥有有效的 Office 365 订阅但无权访问 Office 客户端，则可[下载并安装最新版的 Office](https://support.office.com/article/download-and-install-or-reinstall-office-365-or-office-2019-on-a-pc-or-mac-4414eaaf-0478-48be-9c42-23adc4716658)。
 
-- 必须安装的 Internet Explorer 11 或更高版本无需是默认浏览器。为了支持 Office 外接程序，充当主机的 Office 客户端所使用的浏览器组件是 Internet Explorer 11 或更高版本的一部分。
+- 必须安装 Internet Explorer 11 或 Microsoft Edge（由 Windows 和 Office 版本而定），但它们不能是默认浏览器。 为支持 Office 加载项，充当主机的 Office 客户端使用了 Internet Explorer 11 或 Microsoft Edge 所包含的浏览器组件。 有关更多详细信息，请参阅 [Office加载项使用的 Web 查看器](web-viewers-used-by-office-web-add-ins.md)。
 
   > [!NOTE]
   > 必须关闭 Internet Explorer 的增强安全配置 (ESC) 才能使 Office Web 加载项正常工作。 如果在开发加载项时使用 Windows Server 计算机作为客户端，请注意 Windows Server 中会默认打开 ESC。
 
-- 将以下任一浏览器作为默认浏览器：Internet Explorer 11 或更高版本，或 Microsoft Edge、Chrome、Firefox 或 Safari (Mac OS) 的最新版本。
+- 默认浏览器是下述软件之一：Internet Explorer 11，或者 Microsoft Edge、Chrome、Firefox 或 Safari (Mac OS) 的最新版。
 - HTML 和 JavaScript 编辑器（如记事本）、[Visual Studio 和 Microsoft 开发人员工具](https://www.visualstudio.com/features/office-tools-vs) 或第三方 Web 开发工具。
 
 ## <a name="client-requirements-os-x-desktop"></a>客户端要求：OS X 桌面
@@ -68,7 +68,7 @@ ms.locfileid: "32448224"
 
 ## <a name="client-requirements-browser-support-for-office-online-web-clients-and-sharepoint"></a>客户端要求：针对 Office Online Web 客户端和 SharePoint 的浏览器支持
 
-支持 ECMAScript 5.1、HTML5 和 CSS3 的任何浏览器，如 Internet Explorer 11 或更高版本、或 Microsoft Edge、Chrome、Firefox 或 Safari (Mac OS) 的最新版本。
+支持 ECMAScript 5.1、HTML5 和 CSS3（例如 Internet Explorer 11，或者 Microsoft Edge、Chrome、Firefox 或 Safari (Mac OS) 的最新版）的任意浏览器。
 
 
 ## <a name="client-requirements-non-windows-smartphone-and-tablet"></a>客户端要求：非 Windows 智能手机和平板电脑
@@ -89,4 +89,5 @@ ms.locfileid: "32448224"
 ## <a name="see-also"></a>另请参阅
 
 - [Office 加载项平台概述](../overview/office-add-ins.md)
-- [Office 加载项主机和平台可用性](../overview/office-add-in-availability.md)
+- [Office 外接程序主机和平台可用性](../overview/office-add-in-availability.md)
+- [Office 加载项使用的 Web 查看器](web-viewers-used-by-office-web-add-ins.md)

@@ -3,12 +3,12 @@ title: Office 加载项使用的 Web 查看器
 description: ''
 ms.date: 05/03/2019
 localization_priority: Priority
-ms.openlocfilehash: 632f62cbc02917d9e28ab260f3710498156194db
-ms.sourcegitcommit: 47b792755e655043d3db2f1fdb9a1eeb7453c636
+ms.openlocfilehash: 6cb0d6e97dd559727b6a1e140d8417e1146e479a
+ms.sourcegitcommit: 944cbb5c6ce055f6db1833182b24d490d1dce01d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "33630403"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "33992124"
 ---
 # <a name="web-viewers-used-by-office-add-ins"></a>Office 加载项使用的 Web 查看器
 
@@ -30,12 +30,12 @@ Office 加载项为 Web 应用程序，因此，它们需要通过 Web 页面查
 |Windows/非订阅版 Office 2013 或更高版本|Internet Explorer 11|
 |Windows 10 版本 < 1903 / Office 365|Internet Explorer 11|
 |Windows 10 版本 >= 1903 / Office 365 ver < 16.0.11629|Internet Explorer 11|
-|Windows 10 版本 >= 1903 / Office 365 ver >= 16.0.11629|Edge\*|
+|Windows 10 版本 >= 1903 / Office 365 ver >= 16.0.11629|Microsoft Edge\*|
 
-\*如果使用的是 Edge，则 Windows 10 Narrator（有时称为“屏幕阅读器”）将会读取在任务窗格中打开的页面中的 `<title>` 标记。 如果使用的是 Internet Explorer 11，则Narrator 将会读取任务窗格的标题栏，它来自加载项清单中的 `<DisplayName>` 值。
+\*使用 Microsoft Edge 时，Windows 10 讲述人（有时称为“屏幕阅读器”）会读出页面中在任务窗格中打开的 `<title>` 标记。 如果使用的是 Internet Explorer 11，则Narrator 将会读取任务窗格的标题栏，它来自加载项清单中的 `<DisplayName>` 值。
 
 > [!IMPORTANT]
-> Internet Explorer 11 不支持高于 ES5 的 JavaScript 版本。 如果任何加载项用户安装的是使用 Internet Explorer 11 的平台，若要使用 ECMAScript 2015 或更高版本的语法和功能，则必须将 JavaScript 转换为 ES5 或使用填充代码。 此外，Internet Explorer 11 不支持部分 HTML 5 功能，如媒体、录音和位置。
+> Internet Explorer 11 不支持高于 ES5 的 JavaScript 版本。 如果任何加载项用户安装的是使用 Internet Explorer 11 的平台，若要使用 ECMAScript 2015 或更高版本的语法和功能，则必须将 JavaScript 转换为 ES5 或使用填充代码。 此外，Internet Explorer 11 不支持媒体、录制和位置等部分 HTML5 功能。
 
 > [!NOTE]
 > 在它们公开发布之前，你需要是 Windows 预览体验成员才能获得 Windows 版本 1903 或更高版本，并且需要是 Office 预览体验成员才能获得 Office 版本 16.0.11629 或更高版本。
