@@ -1,2 +1,3 @@
 > [!IMPORTANT]
-> 自定义函数功能当前处于预览阶段, 可能会发生更改。 暂不支持在生产环境中使用。 有关详细信息, 请参阅[自定义函数要求](../excel/custom-functions-requirements.md)。
+> 自定义函数功能即将发布到生产环境! [在此博客文章中](https://developer.microsoft.com/en-us/office/blogs/office-extensibility-build-2019/)发现自定义函数的最新更新。
+

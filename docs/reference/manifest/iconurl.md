@@ -1,14 +1,14 @@
 ---
 title: 清单文件中的 IconUrl 元素
 description: ''
-ms.date: 03/19/2019
+ms.date: 05/20/2019
 localization_priority: Normal
-ms.openlocfilehash: f7eda7ec9e4c5da8ad0b19e5e10649696d4e85c1
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: 0f518741f0139c9cb240196592edae22b1b09ee7
+ms.sourcegitcommit: b0e71ae0ae09c57b843d4de277081845c108a645
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32452107"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "34337200"
 ---
 # <a name="iconurl-element"></a>IconUrl 元素
 
@@ -37,3 +37,5 @@ ms.locfileid: "32452107"
 对于邮件外接程序，该图标显示在“**文件**” > “**管理外接程序**”UI (Outlook) 或“**设置**” > “**管理外接程序**”UI (Outlook Web App) 中。对于内容或任务窗格外接程序，图标显示在“**插入**” > “**外接程序**”UI 中。对于所有外接程序类型，如果你将外接程序发布到 Office 应用商店，则该图标也将用于 Office 应用商店网站上。
 
 图像必须采用下列任一文件格式进行保存：GIF、JPG、PNG、EXIF、BMP 或 TIFF。 对于内容和任务窗格应用程序，指定的图像必须是 32 x 32 像素。 对于邮件应用程序，推荐的图像分辨率是 64 x 64 像素。 此外，还应指定用于使用 [HighResolutionIconUrl](highresolutioniconurl.md) 元素在高 DPI 屏幕上运行的 Office 主机应用程序的图标。 有关详细信息，请参阅[在 AppSource 和 Office 中创建有效的应用一览](/office/dev/store/create-effective-office-store-listings#create-a-consistent-visual-identity)中的_为你的应用创建一致的视觉标识_部分。
+
+当前不支持在运行`IconUrl`时更改元素的值。

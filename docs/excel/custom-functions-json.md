@@ -3,12 +3,12 @@ ms.date: 05/03/2019
 description: 在 Excel 中定义自定义函数的元数据。
 title: Excel 中自定义函数的元数据
 localization_priority: Normal
-ms.openlocfilehash: 92e2b1aaae46d376cc8033b304192d7ce8489fd8
-ms.sourcegitcommit: ff73cc04e5718765fcbe74181505a974db69c3f5
+ms.openlocfilehash: d6cfd61eabc5b27105414082675b35d3ff0ceb41
+ms.sourcegitcommit: b0e71ae0ae09c57b843d4de277081845c108a645
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "33628072"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "34337165"
 ---
 # <a name="custom-functions-metadata"></a>自定义函数元数据
 
@@ -122,10 +122,10 @@ ms.locfileid: "33628072"
 |  属性  |  数据类型  |  必需  |  说明  |
 |:-----|:-----|:-----|:-----|
 |  `description`  |  string  |  否  |  最终用户在 Excel 中看到的函数的说明。 例如，**将摄氏度值转换为华氏度**。 |
-|  `helpUrl`  |  string  |   否  |  提供有关函数的信息的 URL。 （它显示在任务窗格中。）例如，**http://contoso.com/help/convertcelsiustofahrenheit.html**。 |
+|  `helpUrl`  |  字符串  |   否  |  提供有关函数的信息的 URL。 （它显示在任务窗格中。）例如，`http://contoso.com/help/convertcelsiustofahrenheit.html`。 |
 | `id`     | string | 是 | 函数的唯一 ID。 此 ID 只能包含字母数字字符和句点，设置后不应更改。 |
 |  `name`  |  string  |  是  |  最终用户在 Excel 中看到的函数的名称。 在 Excel 中，此函数名称将以 XML 清单文件中指定的自定义函数命名空间为前缀。 |
-|  `options`  |  对象  |  否  |  使用户能够自定义 Excel 执行函数的方式和时间。 有关详细信息，请参阅[选项](#options)。 |
+|  `options`  |  object  |  否  |  使用户能够自定义 Excel 执行函数的方式和时间。 有关详细信息，请参阅[选项](#options)。 |
 |  `parameters`  |  array  |  是  |  定义函数的输入参数的数组。 有关详细信息，请参阅[参数](#parameters)。 |
 |  `result`  |  object  |  是  |  定义函数返回的信息类型的对象。 有关详细信息，请参阅[结果](#result)。 |
 
@@ -147,7 +147,7 @@ ms.locfileid: "33628072"
 |  属性  |  数据类型  |  必需  |  说明  |
 |:-----|:-----|:-----|:-----|
 |  `description`  |  string  |  否 |  参数的说明。 这显示在 Excel 的 intelliSense 中。  |
-|  `dimensionality`  |  string  |  否  |  必须是**标量**（非数组值）或**矩阵**（二维数组）。  |
+|  `dimensionality`  |  字符串  |  否  |  必须是**标量**（非数组值）或**矩阵**（二维数组）。  |
 |  `name`  |  string  |  是  |  参数的名称。 此名称显示在 Excel 的 intelliSense 中。  |
 |  `type`  |  string  |  否  |  参数的数据类型。 可以是 **boolean**、**number**、**string** 或 **any**，允许使用前三种类型中的任何一种。 如果未指定此属性，则数据类型默认为 **any**。 |
 |  `optional`  | boolean | 否 | 如果为 `true`，则参数是可选的。 |
@@ -165,7 +165,7 @@ ms.locfileid: "33628072"
 
 ## <a name="see-also"></a>另请参阅
 
-* [自动生成自定义函数的 JSON 元数据](custom-functions-json-autogeneration.md)
+* [为自定义函数自动生成 JSON 元数据](custom-functions-json-autogeneration.md)
 * [自定义函数参数选项](custom-functions-parameter-options.md)
 * [自定义函数最佳实践](custom-functions-best-practices.md)
 * [在 Excel 中创建自定义函数](custom-functions-overview.md)

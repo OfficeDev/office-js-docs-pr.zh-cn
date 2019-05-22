@@ -1,14 +1,14 @@
 ---
 title: 清单文件中的 AppDomain 元素
 description: ''
-ms.date: 03/21/2019
+ms.date: 05/15/2019
 localization_priority: Normal
-ms.openlocfilehash: 8216603c87a7dcafde84d25a82f068c9aa86ed96
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: b1d71648cc7646eec246f3d0a8113c843eed2e74
+ms.sourcegitcommit: b0e71ae0ae09c57b843d4de277081845c108a645
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32450749"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "34337193"
 ---
 # <a name="appdomain-element"></a>AppDomain 元素
 
