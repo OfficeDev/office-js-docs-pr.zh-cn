@@ -1,14 +1,14 @@
 ---
-ms.date: 05/08/2019
+ms.date: 05/15/2019
 description: 在 Excel 中使用 JavaScript 创建自定义函数。
 title: 在 Excel 中创建自定义函数
 localization_priority: Priority
-ms.openlocfilehash: d939d91e2c3fad239436621ae2704309f4f0f868
-ms.sourcegitcommit: a99be9c4771c45f3e07e781646e0e649aa47213f
+ms.openlocfilehash: 3eeedd482a432166a7fa26eff6da4b075847a292
+ms.sourcegitcommit: adaee1329ae9bb69e49bde7f54a4c0444c9ba642
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/11/2019
-ms.locfileid: "33952129"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "34432166"
 ---
 # <a name="create-custom-functions-in-excel"></a>在 Excel 中创建自定义函数 
 
@@ -18,7 +18,7 @@ ms.locfileid: "33952129"
 
 以下动态图像显示调用你使用 JavaScript 或 Typescript 创建的函数的工作簿。 在此示例中，自定义函数 `=MYFUNCTION.SPHEREVOLUME` 计算球的体积。
 
-<img alt="animated image showing an end user inserting the MYFUNCTION.SPHEREVOLUME custom function into a cell of an Excel worksheet" src="../images/SphereVolume.gif" />
+<img alt="animated image showing an end user inserting the MYFUNCTION.SPHEREVOLUME custom function into a cell of an Excel worksheet" src="../images/SphereVolumeNew.gif" />
 
 以下代码定义 `=MYFUNCTION.SPHEREVOLUME` 自定义函数。
 
