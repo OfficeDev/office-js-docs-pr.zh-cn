@@ -1,15 +1,15 @@
 ---
-ms.date: 05/08/2019
+ms.date: 05/15/2019
 description: 在 Excel 快速入门指南中开发自定义函数。
 title: 自定义功能快速入门
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: 233e1b608eda4a696b14d833fe4e071b2fcffd67
-ms.sourcegitcommit: a99be9c4771c45f3e07e781646e0e649aa47213f
+ms.openlocfilehash: 372e493d85add0a942a8f18ad67f65d08c92f6f2
+ms.sourcegitcommit: adaee1329ae9bb69e49bde7f54a4c0444c9ba642
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/11/2019
-ms.locfileid: "33952381"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "34432249"
 ---
 # <a name="get-started-developing-excel-custom-functions"></a>开始开发 Excel 自定义函数
 
@@ -21,8 +21,6 @@ ms.locfileid: "33952381"
 
 * Windows 上的 Excel (64 位版本1810或更高版本) 或 Excel Online
 
-* 加入 [Office 预览体验计划](https://products.office.com/office-insider)（**预览体验成员**级别 - 以前称为“预览体验成员 - 快”）
-
 ## <a name="build-your-first-custom-functions-project"></a>生成第一个自定义函数项目
 
 首先，使用 Yeoman 生成器创建自定义函数项目。 这将为你的项目设置开始对自定义函数进行编码所需的正确文件夹结构、源文件和依存关系。
@@ -33,11 +31,11 @@ ms.locfileid: "33952381"
     yo office
     ```
 
-    - **选择项目类型:** `Excel Custom Functions Add-in project (...)`
+    - **选择项目类型:** `Excel Custom Functions Add-in project`
     - **选择脚本类型:** `JavaScript`
     - **要如何命名加载项?** `stock-ticker`
 
-    ![自定义函数的 Office 外接程序提示的 Yeoman 生成器](../images/yo-office-excel-cf.png)
+    ![自定义函数的 Office 外接程序提示的 Yeoman 生成器](../images/UpdatedYoOfficePrompt.png)
 
     Yeoman 生成器将创建项目文件并安装支持的 Node 组件。
 

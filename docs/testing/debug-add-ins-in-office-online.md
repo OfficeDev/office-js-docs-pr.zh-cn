@@ -1,14 +1,14 @@
 ---
 title: 在 Office Online 中调试加载项
 description: 如何使用 Office Online 测试和调试加载项。
-ms.date: 03/19/2019
+ms.date: 05/16/2019
 localization_priority: Priority
-ms.openlocfilehash: ff77f3d8b3e332288d4ccb3e2d2305d1b1c4a825
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: 6d6ab8a6ca85a9f462bfe4e5ae283eb3dccd9425
+ms.sourcegitcommit: b0e71ae0ae09c57b843d4de277081845c108a645
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32451526"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "34337179"
 ---
 # <a name="debug-add-ins-in-office-online"></a>在 Office Online 中调试加载项
 
@@ -56,7 +56,7 @@ ms.locfileid: "32451526"
     
 - 您看到的一些 JavaScript 错误可能源自 Office Online。
       
-- 浏览器可能会显示无效证书错误，您需绕过此错误。
+- 浏览器可能会显示无效证书错误，您需绕过此错误。 执行此操作的过程因浏览器而异，而且用于执行此操作的各种浏览器的 UI 会定期进行更改。 有关说明，可搜索浏览器的“帮助”或“联机搜索”。 （例如，搜索“Edge 无效证书警告”。）大多数浏览器在“警告”页面上都有一个链接，可以通过此链接单击进入“加载项”页。 例如，Microsoft Edge 有一个链接“转到网页（不推荐）”。 但是每次加载项重新加载时，通常都必须通过此链接来完成。 如需更长久的绕过，请参阅建议的帮助。
       
 - 如果在代码中设置了断点，Office Online 可能会抛出错误，指示无法保存。
 

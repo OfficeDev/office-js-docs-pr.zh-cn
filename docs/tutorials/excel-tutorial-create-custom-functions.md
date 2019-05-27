@@ -1,16 +1,16 @@
 ---
 title: Excel 自定义函数教程
 description: 在本教程中，你将创建一个 Excel 外接程序，其中包含可执行计算、请求 Web 数据或流 Web 数据的自定义函数。
-ms.date: 05/08/2019
+ms.date: 05/16/2019
 ms.prod: excel
 ms.topic: tutorial
 localization_priority: Normal
-ms.openlocfilehash: ed9f16bdb330aa3f092e7d437ccfad6e056e07d4
-ms.sourcegitcommit: a99be9c4771c45f3e07e781646e0e649aa47213f
+ms.openlocfilehash: 63b5728057559e3c7190d1fb9645032a1b7cdc71
+ms.sourcegitcommit: adaee1329ae9bb69e49bde7f54a4c0444c9ba642
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/11/2019
-ms.locfileid: "33952192"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "34432269"
 ---
 # <a name="tutorial-create-custom-functions-in-excel"></a>教程：在 Excel 中创建自定义函数
 
@@ -29,8 +29,6 @@ ms.locfileid: "33952192"
 
 * Windows 上的 Excel (64 位版本1810或更高版本) 或 Excel Online
 
-* 加入 [Office 预览体验计划](https://products.office.com/office-insider)（**预览体验成员**级别 - 以前称为“预览体验成员 - 快”）
-
 ## <a name="create-a-custom-functions-project"></a>创建自定义函数项目
 
  首先，创建代码项目以构建自定义函数加载项。 [Office 外接程序的 Yeoman 生成器](https://www.npmjs.com/package/generator-office)将使用一些预生成的自定义函数来设置您的项目, 您可以试用这些函数。如果已运行自定义函数 "快速启动" 并生成了一个项目, 请继续使用该项目, 然后跳到[此步骤](#create-a-custom-function-that-requests-data-from-the-web)。
@@ -41,11 +39,11 @@ ms.locfileid: "33952192"
     yo office
     ```
     
-    * **选择项目类型:** `Excel Custom Functions Add-in project (...)`
+    * **选择项目类型:** `Excel Custom Functions Add-in project`
     * **选择脚本类型:** `JavaScript`
     * **要如何命名加载项?** `stock-ticker`
 
-    ![自定义函数的 Office 外接程序提示的 Yeoman 生成器](../images/yo-office-excel-cf.png)
+    ![自定义函数的 Office 外接程序提示的 Yeoman 生成器](../images/UpdatedYoOfficePrompt.png)
     
     Yeoman 生成器将创建项目文件并安装支持的 Node 组件。
 
@@ -117,7 +115,7 @@ npm run start:web
 
 1. 在**股票报价**项目中, 找到 **/src/functions/functions.js**并在代码编辑器中打开该文件。
 
-2. 在**函数 .Js**中, 找到`increment`函数并在该函数后面添加以下代码。
+2. 在**函数 .js**中, 找到`increment`函数并在该函数后面添加以下代码。
 
     ```js
     /**
@@ -181,7 +179,7 @@ npm run start:web
 
 `stockPrice` 函数将返回特定时刻的股票价格，但股票价格一直在变化。 接下来，将创建一个名为 `stockPriceStream` 的自定义函数，该函数每隔 1000 毫秒获取一次股票价格。
 
-1. 在**股票报价**项目中, 将以下代码添加到 **。/src/functions/functions.js**并保存文件。
+1. 在**股票报价**项目中, 将以下代码添加到 **./src/functions/functions.js**并保存文件。
 
     ```js
     /**

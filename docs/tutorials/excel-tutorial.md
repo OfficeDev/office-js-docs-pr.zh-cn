@@ -1,16 +1,16 @@
 ---
 title: Excel 加载项教程
 description: 在本教程中，你将学习如何构建一个 Excel 外接程序，用于创建、填充、筛选和排序表格、创建图表、冻结表格标题、保护工作表并打开对话框。
-ms.date: 01/28/2019
+ms.date: 05/23/2019
 ms.prod: excel
 ms.topic: tutorial
 localization_priority: Normal
-ms.openlocfilehash: d32b5b03b29ddfa2213b0dd91d9f02e72b173fbf
-ms.sourcegitcommit: 47b792755e655043d3db2f1fdb9a1eeb7453c636
+ms.openlocfilehash: 863c5720c9e23738ba907b722a50a974044cab11
+ms.sourcegitcommit: adaee1329ae9bb69e49bde7f54a4c0444c9ba642
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "33619068"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "34432213"
 ---
 # <a name="tutorial-create-an-excel-task-pane-add-in"></a>教程：创建 Excel 任务窗格加载项
 
@@ -165,9 +165,9 @@ ms.locfileid: "33619068"
 
 1. 打开 Git Bash 窗口或已启用 Node.JS 的系统命令提示符，并转到项目的“开始”**** 文件夹。
 
-2. 运行命令 `npm run build`，将 ES6 源代码转换为 Internet Explorer 支持的旧版 JavaScript（Excel 在后台用来运行 Excel 加载项）。
+2. 运行命令`npm run build`以将您的 ES6 源代码转换为较早版本的 JavaScript, 该版本受 Internet Explorer (用于运行 excel 外接程序的某些版本的 excel 所使用) 支持。
 
-3. 运行命令 `npm start`，启动在 localhost 上运行的 Web 服务器。
+3. 运行命令 `npm start`，以启动在 localhost 上运行的 Web 服务器。
 
 4. 通过以下方法之一旁加载加载项：
 
@@ -307,11 +307,11 @@ ms.locfileid: "33619068"
 1. 如果上一阶段教程中的 Git Bash 窗口或已启用 Node.JS 的系统命令提示符仍处于打开状态，请按 **Ctrl+C** 两次，停止正在运行的 Web 服务器。 否则，打开 Git Bash 窗口或已启用 Node.JS 的系统命令提示符，并转到项目的“开始”**** 文件夹。
 
      > [!NOTE]
-     > 虽然只要更改任意文件（包括 app.js 文件），浏览器同步服务器就会在任务窗格中重新加载加载项，但它不会重新转换 JavaScript。因此，必须重复执行生成命令，这样对 app.js 做出的更改才会生效。 为此，需要终止服务器进程，这样就可以获得提示符来输入生成命令。 生成后，重启服务器。 接下来的几步执行的就是此进程。
+     > 虽然只要更改任意文件（包括 app.js 文件），浏览器同步服务器就会在任务窗格中重新加载加载项，但它不会重新转换 JavaScript。因此，必须重复执行生成命令，这样对 app.js 做出的更改才会生效。 为此，需要终止服务器进程，这样就可以获得提示符来输入生成命令。 生成后，重启服务器。 接下来的几步操作就是在执行此过程。
 
-2. 运行命令 `npm run build`，将 ES6 源代码转换为 Internet Explorer 支持的旧版 JavaScript（Excel 在后台用来运行 Excel 加载项）。
+2. 运行命令`npm run build`以将您的 ES6 源代码转换为较早版本的 JavaScript, 该版本受 Internet Explorer (用于运行 excel 外接程序的某些版本的 excel 所使用) 支持。
 
-3. 运行命令 `npm start`，启动在 localhost 上运行的 Web 服务器。
+3. 运行命令 `npm start`，以启动在 localhost 上运行的 Web 服务器。
 
 4. 通过关闭任务窗格来重新加载它，再选择“**开始**”菜单上的“**显示任务窗格**”，以重新打开加载项。
 
@@ -413,9 +413,9 @@ ms.locfileid: "33619068"
      > [!NOTE]
      > 虽然只要更改任意文件（包括 app.js 文件），浏览器同步服务器就会在任务窗格中重新加载加载项，但它不会重新转换 JavaScript。因此，必须重复执行生成命令，这样对 app.js 做出的更改才会生效。 为此，需要终止服务器进程，这样就可以通提示符输入生成命令。 生成后，重启服务器。 接下来的几步执行的就是此进程。
 
-2. 运行命令 `npm run build`，将 ES6 源代码转换为 Internet Explorer 支持的旧版 JavaScript（Excel 在后台用来运行 Excel 加载项）。
+2. 运行命令`npm run build`以将您的 ES6 源代码转换为较早版本的 JavaScript, 该版本受 Internet Explorer (用于运行 excel 外接程序的某些版本的 excel 所使用) 支持。
 
-3. 运行命令 `npm start`，启动在 localhost 上运行的 Web 服务器。
+3. 运行命令 `npm start`，以启动在 localhost 上运行的 Web 服务器。
 
 4. 通过关闭任务窗格来重新加载它，再选择“**开始**”菜单上的“**显示任务窗格**”，以重新打开加载项。
 
@@ -488,9 +488,9 @@ ms.locfileid: "33619068"
      > [!NOTE]
      > 虽然只要更改任意文件（包括 app.js 文件），浏览器同步服务器就会在任务窗格中重新加载加载项，但它不会重新转换 JavaScript。因此，必须重复执行生成命令，这样对 app.js 做出的更改才会生效。 为此，需要终止服务器进程，这样就可以通提示符输入生成命令。 生成后，重启服务器。 接下来的几步执行的就是此进程。
 
-2. 运行命令 `npm run build`，将 ES6 源代码转换为 Internet Explorer 支持的旧版 JavaScript（Excel 在后台用来运行 Excel 加载项）。
+2. 运行命令`npm run build`以将您的 ES6 源代码转换为较早版本的 JavaScript, 该版本受 Internet Explorer (用于运行 excel 外接程序的某些版本的 excel 所使用) 支持。
 
-3. 运行命令 `npm start`，启动在 localhost 上运行的 Web 服务器。
+3. 运行命令 `npm start`，以启动在 localhost 上运行的 Web 服务器。
 
 4. 通过关闭任务窗格来重新加载它，再选择“主页”**** 菜单上的“显示任务窗格”****，重新打开加载项。
 
@@ -732,7 +732,9 @@ ms.locfileid: "33619068"
 
     - 对于 Windows：`%LOCALAPPDATA%\Microsoft\Office\16.0\Wef\`。
 
-    - 对于 Mac：`/Users/{your_name_on_the_device}/Library/Containers/com.Microsoft.OsfWebHost/Data/`。
+    - 对于 Mac：`~/Library/Containers/com.Microsoft.OsfWebHost/Data/`。 
+    
+        [!include[additional cache folders on Mac](../includes/mac-cache-folders.md)]
 
 3. 如果服务器出于任何原因而未运行，请在 Git Bash 窗口或已启用 Node.JS 的系统命令提示符中，转到项目的“开始”**** 文件夹，再运行命令 `npm start`。 无需重新生成项目，因为唯一更改的 JavaScript 文件不属于已生成的 bundle.js。
 
@@ -843,10 +845,10 @@ ms.locfileid: "33619068"
     }
     ```
 
-8. 保存文件。
+8. 保存此文件。
 
    > [!NOTE]
-   > popup.html 文件及其加载的 popup.js 文件在完全独立于加载项任务窗格的 Internet Explorer 进程中运行。 如果将 popup.js 转换为与 app.js 文件相同的 bundle.js 文件，加载项必须加载 bundle.js 文件的两个副本，这就违背了绑定目的。 此外，popup.js 文件不包含任何不受 IE 支持的 JavaScript。 出于这两点原因，此加载项根本不会转换 popup.js。
+   > Popup 文件以及它加载的 popup 文件, 从外接程序的任务窗格的完全独立的边缘或 Internet Explorer 11 进程中运行。 如果将 popup.js 转换为与 app.js 文件相同的 bundle.js 文件，加载项必须加载 bundle.js 文件的两个副本，这就违背了绑定目的。 此外, 弹出 .js 文件不包含 Internet Explorer 11 不支持的任何 JavaScript。 出于这两点原因，此加载项根本不会转换 popup.js。
 
 ### <a name="open-the-dialog-from-the-task-pane"></a>从任务窗格打开对话框
 
@@ -940,9 +942,9 @@ ms.locfileid: "33619068"
      > [!NOTE]
      > 虽然只要更改任意文件（包括 app.js 文件），浏览器同步服务器就会在任务窗格中重新加载加载项，但它不会重新转换 JavaScript。因此，必须重复执行生成命令，这样对 app.js 做出的更改才会生效。 为此，需要终止服务器进程，这样就可以通提示符输入生成命令。 生成后，重启服务器。 接下来的几步执行的就是此进程。
 
-2. 运行命令 `npm run build`，将 ES6 源代码转换为 Internet Explorer 支持的旧版 JavaScript（Excel 在后台用来运行 Excel 加载项）。
+2. 运行命令`npm run build`以将您的 ES6 源代码转换为较早版本的 JavaScript, 该版本受 Internet Explorer (用于运行 excel 外接程序的某些版本的 excel 所使用) 支持。
 
-3. 运行命令 `npm start`，启动在 localhost 上运行的 Web 服务器。
+3. 运行命令 `npm start`，以启动在 localhost 上运行的 Web 服务器。
 
 4. 通过关闭任务窗格来重新加载它，再选择“主页”**** 菜单上的“显示任务窗格”****，重新打开加载项。
 
