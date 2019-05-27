@@ -1,14 +1,14 @@
 ---
 title: 验证并排查清单问题
 description: 使用这些方法验证 Office 加载项清单。
-ms.date: 11/02/2018
+ms.date: 05/21/2019
 localization_priority: Priority
-ms.openlocfilehash: 921adf6f1f398887d96031790facc1fb1425af2b
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: 5b9bd22ad724bac68587a41ad56f4290f3a6edbd
+ms.sourcegitcommit: adaee1329ae9bb69e49bde7f54a4c0444c9ba642
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32451150"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "34432262"
 ---
 # <a name="validate-and-troubleshoot-issues-with-your-manifest"></a>验证并排查清单问题
 
@@ -30,7 +30,7 @@ ms.locfileid: "32451150"
 
 2. 以管理员身份打开命令提示符/终端，并运行下面的命令，以全局安装 Office 加载项验证程序及其依赖项：
 
-    ```bash
+    ```command&nbsp;line
     npm install -g office-addin-validator
     ```
     
@@ -39,7 +39,7 @@ ms.locfileid: "32451150"
 
 3. 运行下面的命令来验证清单。将 MANIFEST.XML 替换为清单 XML 文件路径。
 
-    ```bash
+    ```command&nbsp;line
     validate-office-addin MANIFEST.XML
     ```
 
@@ -55,7 +55,7 @@ ms.locfileid: "32451150"
 
 2.  运行下面的命令。将 `XSD_FILE` 替换为清单 XSD 文件路径，并将 `XML_FILE` 替换为清单 XML 文件路径。
     
-    ```bash
+    ```command&nbsp;line
     xmllint --noout --schema XSD_FILE XML_FILE
     ```
 
@@ -63,7 +63,7 @@ ms.locfileid: "32451150"
 
 如果已使用[适用于 Office 加载项的 Yeoman 生成器](https://www.npmjs.com/package/generator-office)创建 Office 加载项，则可以通过在项目的根目录中运行以下命令来确保清单文件遵循正确的架构：
 
-```bash
+```command&nbsp;line
 npm run validate
 ```
 
@@ -140,7 +140,9 @@ npm run validate
 删除文件夹 `%LOCALAPPDATA%\Microsoft\Office\16.0\Wef\` 的内容。
 
 #### <a name="for-mac"></a>对于 Mac：
-删除文件夹 `/Users/{your_name_on_the_device}/Library/Containers/com.Microsoft.OsfWebHost/Data/` 的内容。
+删除文件夹 `~/Library/Containers/com.Microsoft.OsfWebHost/Data/` 的内容。 
+
+[!include[additional cache folders on Mac](../includes/mac-cache-folders.md)]
 
 #### <a name="for-ios"></a>对于 iOS：
 在加载项中通过 JavaScript 调用 `window.location.reload(true)`，以强制重载。也可以重新安装 Office。
