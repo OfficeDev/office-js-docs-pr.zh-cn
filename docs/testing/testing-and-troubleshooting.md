@@ -1,14 +1,14 @@
 ---
 title: 排查 Office 加载项中的用户错误
 description: ''
-ms.date: 03/19/2019
+ms.date: 05/21/2019
 localization_priority: Priority
-ms.openlocfilehash: 84f18543c7bafac905805095c89f8e19a855ea76
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: 2e03e841253914a8ee1dd23aef201a38b4bea6d1
+ms.sourcegitcommit: adaee1329ae9bb69e49bde7f54a4c0444c9ba642
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32449811"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "34432180"
 ---
 # <a name="troubleshoot-user-errors-with-office-add-ins"></a>排查 Office 加载项中的用户错误
 
@@ -90,18 +90,20 @@ ms.locfileid: "32449811"
 在弹出模式中使用对话框 API 时，会出现此问题。若要避免出现此问题，请使用 [displayInFrame](/javascript/api/office/office.ui) 标记。这要求页面支持在 iframe 中进行显示。以下示例演示如何使用此标记。
 
 ```js
-
 Office.context.ui.displayDialogAsync(startAddress, {displayInFrame:true}, callback);
 ```
 
 ## <a name="changes-to-add-in-commands-including-ribbon-buttons-and-menu-items-do-not-take-effect"></a>对加载项命令（包括功能区按钮和菜单项）的更改未生效
-有时，对加载项命令（如功能区按钮图标或菜单项文本）的更改似乎未生效。请清除旧版的 Office 缓存。
+
+如果在清单中进行的更改（如功能区按钮图标的文件名或菜单项的文本）似乎没有生效，请尝试清除计算机上的 Office 缓存。 
 
 #### <a name="for-windows"></a>对于 Windows：
 删除文件夹 `%LOCALAPPDATA%\Microsoft\Office\16.0\Wef\` 的内容。
 
 #### <a name="for-mac"></a>对于 Mac：
-删除文件夹 `/Users/{your_name_on_the_device}/Library/Containers/com.Microsoft.OsfWebHost/Data/` 的内容。
+删除文件夹 `~/Library/Containers/com.Microsoft.OsfWebHost/Data/` 的内容。 
+
+[!include[additional cache folders on Mac](../includes/mac-cache-folders.md)]
 
 #### <a name="for-ios"></a>对于 iOS：
 在加载项中通过 JavaScript 调用 `window.location.reload(true)`，以强制重载。也可以重新安装 Office。
