@@ -1,14 +1,14 @@
 ---
 title: "\"Context.subname\"-\"邮箱\"-预览要求集"
 description: ''
-ms.date: 05/08/2019
+ms.date: 05/30/2019
 localization_priority: Normal
-ms.openlocfilehash: d72d7acc285b1a5cf371b1c5e6b2a0a1653d2091
-ms.sourcegitcommit: a99be9c4771c45f3e07e781646e0e649aa47213f
+ms.openlocfilehash: 12ec5d5558b558c87587e34472c33116478d14b3
+ms.sourcegitcommit: b299b8a5dfffb6102cb14b431bdde4861abfb47f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/11/2019
-ms.locfileid: "33952242"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "34589200"
 ---
 # <a name="item"></a>item
 
@@ -875,7 +875,7 @@ Office.context.mailbox.item.organizer.getAsync(
 
 如果`recurrence`项目是系列中的一个系列或一个实例, 则该属性返回定期约会或会议请求的[定期](/javascript/api/outlook/office.recurrence)对象。 `null`返回单个约会的单个约会和会议请求。 `undefined`对于不是会议请求的邮件, 将返回。
 
-> 注意: 会议请求的`itemClass`值为 IPM。Schedule。会议请求。
+> 注意: 会议请求的`itemClass`值为 IPM。Schedule. 会议请求。
 
 > 注意: 如果定期对象为`null`, 则表示该对象是单个约会的单个约会或会议请求, 而不是某个系列的一部分。
 
@@ -1750,7 +1750,7 @@ function handleAttachmentsCallback(result) {
 ---
 ---
 
-#### <a name="getattachmentsasyncoptions-callback--arrayattachmentdetailsjavascriptapioutlookofficeattachmentdetails"></a>getAttachmentsAsync ([options], [callback]) → Array。 <[AttachmentDetails](/javascript/api/outlook/office.attachmentdetails)>
+#### <a name="getattachmentsasyncoptions-callback--arrayattachmentdetailsjavascriptapioutlookofficeattachmentdetails"></a>getAttachmentsAsync ([options], [callback]) → Array. <[AttachmentDetails](/javascript/api/outlook/office.attachmentdetails)>
 
 以数组的形式获取项目的附件。 仅限撰写模式。
 
@@ -2409,7 +2409,7 @@ Office.context.mailbox.item.removeAttachmentAsync(
 > [!NOTE]
 > 以下客户端在撰写模式下对约会上的 `saveAsync` 具有不同的行为：
 >
-> - Mac Outlook 不支持在撰写模式下对会议执行 `saveAsync` 操作。 对 Mac Outlook 中的会议调用 `saveAsync` 将会返回一个错误。
+> - Outlook for Mac 不支持`saveAsync`撰写模式中的会议。 因此, 在该`saveAsync`方案中进行的调用将返回错误。 若要解决此问题, 请参阅[使用 OFFICE JS API 将会议保存为 Outlook For Mac 中的草稿](https://support.microsoft.com/help/4505745)。
 > - 在撰写模式下的约会上调用 `saveAsync` 时，Outlook 网页版始终发送邀请或更新。
 
 ##### <a name="parameters"></a>参数

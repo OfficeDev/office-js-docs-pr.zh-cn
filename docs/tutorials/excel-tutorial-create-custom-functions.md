@@ -5,12 +5,12 @@ ms.date: 05/16/2019
 ms.prod: excel
 ms.topic: tutorial
 localization_priority: Normal
-ms.openlocfilehash: 63b5728057559e3c7190d1fb9645032a1b7cdc71
-ms.sourcegitcommit: adaee1329ae9bb69e49bde7f54a4c0444c9ba642
+ms.openlocfilehash: 7d4d87a6bb3910c1b46698d5a2ff211ea1bbc6dd
+ms.sourcegitcommit: b299b8a5dfffb6102cb14b431bdde4861abfb47f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "34432269"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "34589172"
 ---
 # <a name="tutorial-create-custom-functions-in-excel"></a>教程：在 Excel 中创建自定义函数
 
@@ -59,18 +59,18 @@ ms.locfileid: "34432269"
     npm run build
     ```
 
+    > [!NOTE]
+    > Office 加载项应使用 HTTPS，而不是 HTTP（即便是在开发时也是如此）。 如果系统在运行 `npm run build` 后提示你安装证书，请接受提示以安装 Yeoman 生成器提供的证书。
+
 4. 启动在 Node.js 中运行的本地 Web 服务器。 可以在 Windows 或 Excel Online 上试用 Excel 中的自定义函数加载项。
 
 # <a name="excel-on-windowstabexcel-windows"></a>[Windows 上的 Excel](#tab/excel-windows)
 
-若要在 Windows 中的 Excel 中测试外接程序, 请运行以下命令。 运行此命令时, 本地 web 服务器将启动, 并且 Windows 上的 Excel 将在加载的外接程序中打开。
+若要在 Windows 中的 Excel 中测试外接程序, 请运行以下命令。 运行此命令时, 本地 web 服务器将启动, 并且 Excel 将在加载的外接程序中打开。
 
 ```command&nbsp;line
 npm run start:desktop
 ```
-
-> [!NOTE]
-> Office 加载项应使用 HTTPS，而不是 HTTP（即便是在开发时也是如此）。 如果系统在运行 `npm run start:desktop` 后提示你安装证书，请接受提示以安装 Yeoman 生成器提供的证书。
 
 # <a name="excel-onlinetabexcel-online"></a>[Excel Online](#tab/excel-online)
 
@@ -79,9 +79,6 @@ npm run start:desktop
 ```command&nbsp;line
 npm run start:web
 ```
-
-> [!NOTE]
-> Office 加载项应使用 HTTPS，而不是 HTTP（即便是在开发时也是如此）。 如果系统在运行 `npm run start:web` 后提示你安装证书，请接受提示以安装 Yeoman 生成器提供的证书。
 
 若要使用自定义函数外接程序, 请在 Excel Online 中打开一个新工作簿。 在此工作簿中, 完成以下步骤以旁加载您的外接程序。
 
