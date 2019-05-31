@@ -4,12 +4,12 @@ description: ''
 ms.date: 05/02/2019
 ms.prod: powerpoint
 localization_priority: Priority
-ms.openlocfilehash: 01e2c961ad7bc9a50a6934732fa4cc57220f033c
-ms.sourcegitcommit: 47b792755e655043d3db2f1fdb9a1eeb7453c636
+ms.openlocfilehash: 75b59e576ea0ed1a6012a08ab75e806cc68390f9
+ms.sourcegitcommit: b299b8a5dfffb6102cb14b431bdde4861abfb47f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "33619735"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "34589228"
 ---
 # <a name="build-your-first-powerpoint-task-pane-add-in"></a>生成首个 PowerPoint 任务加载项
 
@@ -213,18 +213,25 @@ ms.locfileid: "33619735"
 
 ### <a name="try-it-out"></a>试用
 
-1. 启动本地 Web 服务器并旁加载你的加载项。
+1. 完成以下步骤，以启动本地 Web 服务器并旁加载你的加载项。
 
     > [!NOTE]
-    > Office 加载项应使用 HTTPS，而不是 HTTP（即便是在开发时也是如此）。 如果系统在运行以下命令之一后提示你安装证书，请接受提示以安装 Yeoman 生成器提供的证书。 
+    > Office 加载项应使用 HTTPS，而不是 HTTP（即便是在开发时也是如此）。 如果系统在运行以下命令之一后提示你安装证书，请接受提示以安装 Yeoman 生成器提供的证书。
 
-    - 若要在 PowerPoint 中测试加载项，请运行以下命令。 运行此命令时，本地 Web 服务器将启动，PowerPoint 将打开且加载项已载入。
+    > [!TIP]
+    > 如果在 Mac 上测试加载项，请先运行以下命令，然后再继续。 运行此命令时，本地 Web 服务器将启动。
+    >
+    > ```command&nbsp;line
+    > npm run dev-server
+    > ```
+
+    - 若要在 PowerPoint 中测试加载项，请在项目的根目录中运行以下命令。 运行此命令时，本地 Web 服务器将启动（如尚未运行），PowerPoint 将打开且加载项已载入。
 
         ```command&nbsp;line
         npm start
         ```
 
-    - 若要在 PowerPoint Online 中测试加载项，请运行以下命令。 运行此命令时，本地 Web 服务器将启动。
+    - 若要在 PowerPoint Online 中测试加载项，请在项目的根目录中运行以下命令。 运行此命令时，本地 Web 服务器将启动（如果尚未运行）。
 
         ```command&nbsp;line
         npm run start:web

@@ -3,12 +3,12 @@ ms.date: 05/03/2019
 description: 使用 JSDOC 标记动态创建自定义函数 JSON 元数据。
 title: 为自定义函数自动生成 JSON 元数据
 localization_priority: Priority
-ms.openlocfilehash: df1c0114597e2aa98a15db48c515469fb9db6cd9
-ms.sourcegitcommit: ff73cc04e5718765fcbe74181505a974db69c3f5
+ms.openlocfilehash: 67026e7c19580c3420638b4f37e333e50fce1b44
+ms.sourcegitcommit: b299b8a5dfffb6102cb14b431bdde4861abfb47f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "33628086"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "34589130"
 ---
 # <a name="autogenerate-json-metadata-for-custom-functions"></a>为自定义函数自动生成 JSON 元数据
 
@@ -59,9 +59,9 @@ Excel 自定义函数支持以下 JSDoc 标记：
 
 id 用作存储在文档中的自定义函数的固定标识符。 不得更改。
 
-* 如果未提供 id，JavaScript/TypeScript 函数名称将转换为大写形式，并删除不允许使用的字符。
+* 如果未提供 ID，请将 JavaScript/TypeScript 函数名称转换为大写并删除禁用字符。
 * id 对于所有自定义函数必须是唯一的。
-* 允许使用的字符仅限于：A-Z、a-z、0-9 和句点 (.)。
+* 允许使用的字符限为：A-Z、a-z、0-9、下划线 (\_) 和句点 (.)。
 
 #### <a name="name"></a>name
 

@@ -3,12 +3,12 @@ title: 运行 Office 加载项的要求
 description: ''
 ms.date: 05/14/2019
 localization_priority: Priority
-ms.openlocfilehash: 2dcdfb2562233550016cd2d04571239318ffffa3
-ms.sourcegitcommit: 944cbb5c6ce055f6db1833182b24d490d1dce01d
+ms.openlocfilehash: 650f5555eb120cbb541370c2ea5e2b2078c98ad9
+ms.sourcegitcommit: b299b8a5dfffb6102cb14b431bdde4861abfb47f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "33992180"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "34589102"
 ---
 # <a name="requirements-for-running-office-add-ins"></a>运行 Office 加载项的要求
 
@@ -48,7 +48,7 @@ ms.locfileid: "33992180"
 
   如果拥有有效的 Office 365 订阅但无权访问 Office 客户端，则可[下载并安装最新版的 Office](https://support.office.com/article/download-and-install-or-reinstall-office-365-or-office-2019-on-a-pc-or-mac-4414eaaf-0478-48be-9c42-23adc4716658)。
 
-- 必须安装 Internet Explorer 11 或 Microsoft Edge（由 Windows 和 Office 版本而定），但它们不能是默认浏览器。 为支持 Office 加载项，充当主机的 Office 客户端使用了 Internet Explorer 11 或 Microsoft Edge 所包含的浏览器组件。 有关更多详细信息，请参阅 [Office加载项使用的 Web 查看器](web-viewers-used-by-office-web-add-ins.md)。
+- 必须安装 Internet Explorer 11 或 Microsoft Edge（由 Windows 和 Office 版本而定），但它们不能是默认浏览器。 为支持 Office 加载项，充当主机的 Office 客户端使用了 Internet Explorer 11 或 Microsoft Edge 所包含的浏览器组件。 有关更多详细信息，请参阅 [Office加载项使用的浏览器](browsers-used-by-office-web-add-ins.md)。
 
   > [!NOTE]
   > 必须关闭 Internet Explorer 的增强安全配置 (ESC) 才能使 Office Web 加载项正常工作。 如果在开发加载项时使用 Windows Server 计算机作为客户端，请注意 Windows Server 中会默认打开 ESC。
@@ -90,4 +90,4 @@ ms.locfileid: "33992180"
 
 - [Office 加载项平台概述](../overview/office-add-ins.md)
 - [Office 外接程序主机和平台可用性](../overview/office-add-in-availability.md)
-- [Office 加载项使用的 Web 查看器](web-viewers-used-by-office-web-add-ins.md)
+- [Office 加载项使用的浏览器](browsers-used-by-office-web-add-ins.md)

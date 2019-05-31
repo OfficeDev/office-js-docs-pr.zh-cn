@@ -4,12 +4,12 @@ description: ''
 ms.date: 05/08/2019
 ms.prod: project
 localization_priority: Priority
-ms.openlocfilehash: d61f8d83b88dbe69ff0ba9cd4b0afef77a4f03d6
-ms.sourcegitcommit: a99be9c4771c45f3e07e781646e0e649aa47213f
+ms.openlocfilehash: 7a7c907eeeb85b2a686c49ebba0558f4ec20568d
+ms.sourcegitcommit: b299b8a5dfffb6102cb14b431bdde4861abfb47f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/11/2019
-ms.locfileid: "33952245"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "34589207"
 ---
 # <a name="build-your-first-project-task-pane-add-in"></a>生成首个 Project 任务窗格加载项
 
@@ -97,14 +97,14 @@ Office.context.document.getSelectedTaskAsync(
 
 ## <a name="try-it-out"></a>试用
 
-1. 通过运行以下命令启用本地 Web 服务器：
+> [!NOTE]
+> Office 加载项应使用 HTTPS，而不是 HTTP（即便是在开发时也是如此）。 如果系统在运行以下命令后提示你安装证书，请接受提示以安装 Yeoman 生成器提供的证书。
+
+1. 在项目的根目录中运行以下命令。 运行此命令时，本地 Web 服务器将启动。
 
     ```command&nbsp;line
     npm start
     ```
-
-    > [!NOTE]
-    > Office 加载项应使用 HTTPS，而不是 HTTP（即便是在开发时也是如此）。 如果系统在运行 `npm start` 后提示你安装证书，请接受提示以安装 Yeoman 生成器提供的证书。 
 
 2. 在 Project 中，创建一个简单的项目计划。
 

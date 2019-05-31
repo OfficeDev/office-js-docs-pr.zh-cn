@@ -4,12 +4,12 @@ description: ''
 ms.date: 05/08/2019
 ms.prod: word
 localization_priority: Priority
-ms.openlocfilehash: f0fda0c7dcdebdc1fd1b6daf4e35c1794a56e950
-ms.sourcegitcommit: a99be9c4771c45f3e07e781646e0e649aa47213f
+ms.openlocfilehash: 5164d6cb49ea5c4aed0aeffb5b3f7a0ed96f07c9
+ms.sourcegitcommit: b299b8a5dfffb6102cb14b431bdde4861abfb47f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/11/2019
-ms.locfileid: "33952262"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "34589221"
 ---
 # <a name="build-your-first-word-task-pane-add-in"></a>生成首个 Word 任务窗格加载项
 
@@ -268,18 +268,25 @@ _适用于：Windows 版 Word 2016 或更高版本、Word for iPad、Word for Ma
 
 ### <a name="try-it-out"></a>试用
 
-1. 启动本地 Web 服务器并旁加载你的加载项。
+1. 完成以下步骤，以启动本地 Web 服务器并旁加载你的加载项。
 
     > [!NOTE]
-    > Office 加载项应使用 HTTPS，而不是 HTTP（即便是在开发时也是如此）。 如果系统在运行以下命令之一后提示你安装证书，请接受提示以安装 Yeoman 生成器提供的证书。 
+    > Office 加载项应使用 HTTPS，而不是 HTTP（即便是在开发时也是如此）。 如果系统在运行以下命令之一后提示你安装证书，请接受提示以安装 Yeoman 生成器提供的证书。
 
-    - 若要在 Word 中测试加载项，请运行以下命令。 运行此命令时，本地 Web 服务器将启动，Word 将打开且加载项已载入。
+    > [!TIP]
+    > 如果在 Mac 上测试加载项，请先运行以下命令，然后再继续。 运行此命令时，本地 Web 服务器将启动。
+    >
+    > ```command&nbsp;line
+    > npm run dev-server
+    > ```
+
+    - 若要在 Word 中测试加载项，请在项目的根目录中运行以下命令。 运行此命令时，本地 Web 服务器将启动（如尚未运行），Word 将打开且加载项已载入。
 
         ```command&nbsp;line
         npm start
         ```
 
-    - 若要在 Word Online 中测试加载项，请运行以下命令。 运行此命令时，本地 Web 服务器将启动。
+    - 若要在 Word Online 中测试加载项，请在项目的根目录中运行以下命令。 运行此命令时，本地 Web 服务器将启动（如果尚未运行）。
 
         ```command&nbsp;line
         npm run start:web
@@ -308,5 +315,5 @@ _适用于：Windows 版 Word 2016 或更高版本、Word for iPad、Word for Ma
 
 * [Word 加载项概述](../word/word-add-ins-programming-overview.md)
 * 
-  [Word 加载项代码示例](https://developer.microsoft.com/en-us/office/gallery/?filterBy=Samples,Word)
+  [Word 加载项代码示例](https://developer.microsoft.com/zh-CN/office/gallery/?filterBy=Samples,Word)
 * [Word JavaScript API 参考](/office/dev/add-ins/reference/overview/word-add-ins-reference-overview)
