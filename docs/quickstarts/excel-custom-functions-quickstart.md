@@ -1,15 +1,15 @@
 ---
-ms.date: 05/15/2019
+ms.date: 05/30/2019
 description: 在 Excel 快速入门指南中开发自定义函数。
 title: 自定义功能快速入门
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: 2ef7e05390750173c1679cdb53ed96ff19020e67
-ms.sourcegitcommit: b299b8a5dfffb6102cb14b431bdde4861abfb47f
+ms.openlocfilehash: 4bf0d6a5bf020ee4196ce89d763fa994b3fd489c
+ms.sourcegitcommit: 567aa05d6ee6b3639f65c50188df2331b7685857
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/30/2019
-ms.locfileid: "34589109"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "34706040"
 ---
 # <a name="get-started-developing-excel-custom-functions"></a>开始开发 Excel 自定义函数
 
@@ -19,7 +19,7 @@ ms.locfileid: "34589109"
 
 [!include[Yeoman generator prerequisites](../includes/quickstart-yo-prerequisites.md)]
 
-* Windows 上的 Excel (64 位版本1810或更高版本) 或 Excel Online
+* Windows (版本1810或更高版本) 或 Excel Online 中的 excel
 
 ## <a name="build-your-first-custom-functions-project"></a>生成第一个自定义函数项目
 

@@ -1,16 +1,16 @@
 ---
 title: Excel 自定义函数教程
 description: 在本教程中，你将创建一个 Excel 外接程序，其中包含可执行计算、请求 Web 数据或流 Web 数据的自定义函数。
-ms.date: 05/16/2019
+ms.date: 05/30/2019
 ms.prod: excel
 ms.topic: tutorial
 localization_priority: Normal
-ms.openlocfilehash: 7d4d87a6bb3910c1b46698d5a2ff211ea1bbc6dd
-ms.sourcegitcommit: b299b8a5dfffb6102cb14b431bdde4861abfb47f
+ms.openlocfilehash: f167125fcc24e47f0805d6c46e5338455d94b277
+ms.sourcegitcommit: 567aa05d6ee6b3639f65c50188df2331b7685857
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/30/2019
-ms.locfileid: "34589172"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "34706370"
 ---
 # <a name="tutorial-create-custom-functions-in-excel"></a>教程：在 Excel 中创建自定义函数
 
@@ -27,7 +27,7 @@ ms.locfileid: "34589172"
 
 [!include[Yeoman generator prerequisites](../includes/quickstart-yo-prerequisites.md)]
 
-* Windows 上的 Excel (64 位版本1810或更高版本) 或 Excel Online
+* Windows (版本1810或更高版本) 或 Excel Online 中的 excel
 
 ## <a name="create-a-custom-functions-project"></a>创建自定义函数项目
 

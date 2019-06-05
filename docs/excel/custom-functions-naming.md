@@ -3,12 +3,12 @@ ms.date: 05/03/2019
 description: 了解 Excel 自定义函数名称的要求并避免出现常见命名缺陷。
 title: Excel 中自定义函数的命名准则
 localization_priority: Normal
-ms.openlocfilehash: 3abe04eebfa703666b70ecbde1c68ab0c942003c
-ms.sourcegitcommit: ff73cc04e5718765fcbe74181505a974db69c3f5
+ms.openlocfilehash: 64420171a90b29732745891cb691b8cd4309c53d
+ms.sourcegitcommit: 567aa05d6ee6b3639f65c50188df2331b7685857
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "33628044"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "34706076"
 ---
 # <a name="naming-guidelines"></a>命名准则
 
@@ -49,6 +49,7 @@ Excel 使用大写字母作为内置函数名称 (例如`SUM`)。 因此, 请考
 - 函数名称应指示函数的操作, 例如 ( `=GETZIPCODE`而不是) `ZIPCODE`。
 - 避免函数名称中不明确的缩写。 清晰度比简洁性更重要。 选择一个名称 ( `=INCREASETIME`而不`=INC`是)。
 - 对执行类似操作的函数始终使用相同的动作。 `=DELETEZIPCODE`例如, 使用`=DELETEADDRESS`和, 而不是`=DELETEZIPCODE`和`=REMOVEADDRESS`。
+- 在命名流式处理函数时, 请考虑在函数的说明中添加对该效果的注释或`STREAM`添加到函数名称的末尾。
 
 ## <a name="localizing-function-names"></a>对函数名称进行本地化
 

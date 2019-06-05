@@ -1,14 +1,14 @@
 ---
-ms.date: 05/09/2019
+ms.date: 05/30/2019
 description: 了解如何在自定义函数中使用不同的参数, 例如 Excel 范围、可选参数、调用上下文等。
 title: Excel 自定义函数的选项
 localization_priority: Normal
-ms.openlocfilehash: 7bf195bbae696274518966e2a24bd9819e9c3f4b
-ms.sourcegitcommit: b0e71ae0ae09c57b843d4de277081845c108a645
+ms.openlocfilehash: 7bc907157810ce88330fe41b21ca6ff115525491
+ms.sourcegitcommit: 567aa05d6ee6b3639f65c50188df2331b7685857
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "34337186"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "34706055"
 ---
 # <a name="custom-functions-parameter-options"></a>自定义函数参数选项
 
@@ -98,7 +98,7 @@ CustomFunctions.associate("SECONDHIGHEST", secondHighest);
 
 ## <a name="invocation-parameter"></a>调用参数
 
-每个自定义函数自动传递`invocation`一个参数作为最后一个参数。 此参数可用于检索其他上下文, 如调用单元格的地址。 也可以用于向 Excel 发送信息, 例如用于[取消函数](custom-functions-web-reqs.md#stream-and-cancel-functions)的函数处理程序。 即使不声明参数, 您的自定义函数也有此参数。 在 Excel 中, 用户不会看到此参数。 如果要在自定义`invocation`函数中使用, 则将其声明为最后一个参数。
+每个自定义函数自动传递`invocation`一个参数作为最后一个参数。 此参数可用于检索其他上下文, 如调用单元格的地址。 也可以用于向 Excel 发送信息, 例如用于[取消函数](custom-functions-web-reqs.md#make-a-streaming-function)的函数处理程序。 即使不声明参数, 您的自定义函数也有此参数。 在 Excel 中, 用户不会看到此参数。 如果要在自定义`invocation`函数中使用, 则将其声明为最后一个参数。
 
 在下面的代码示例中, `invocation`将显式声明上下文以供参考。
 
