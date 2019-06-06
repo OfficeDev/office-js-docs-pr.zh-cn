@@ -188,7 +188,7 @@ CustomFunctions.associate("INCREMENT", increment);
 
 ## <a name="next-steps"></a>后续步骤
 
-* 了解[您的函数可以使用的不同参数类型](custom-functions-parameter-options.md)。
+* 了解[你的函数可以使用的不同参数类型](custom-functions-parameter-options.md)。
 * 发现如何[批处理多个 API 调用](custom-functions-batching.md)。
 
 ## <a name="see-also"></a>另请参阅
