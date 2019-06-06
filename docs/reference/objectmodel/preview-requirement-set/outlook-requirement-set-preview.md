@@ -1,14 +1,14 @@
 ---
 title: Outlook 外接程序 API 预览要求集
 description: ''
-ms.date: 05/17/2019
+ms.date: 06/03/2019
 localization_priority: Priority
-ms.openlocfilehash: d97efe8bbdfdadb252190458960b4356e0c8a564
-ms.sourcegitcommit: b0e71ae0ae09c57b843d4de277081845c108a645
+ms.openlocfilehash: 6d7dceba80929c2abace9daec859302c43913f98
+ms.sourcegitcommit: 567aa05d6ee6b3639f65c50188df2331b7685857
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "34337172"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "34706349"
 ---
 # <a name="outlook-add-in-api-preview-requirement-set"></a>Outlook 外接程序 API 预览要求集
 
@@ -129,6 +129,12 @@ ms.locfileid: "34337172"
 #### <a name="sharedpropertiesjavascriptapioutlookofficesharedproperties"></a>[SharedProperties](/javascript/api/outlook/office.sharedproperties)
 
 新增了一个对象，表示共享文件夹、日历或邮箱中的约会或邮件项目的属性。
+
+**适用对象**：Windows 版 Outlook（连接到 Office 365）
+
+#### <a name="officecontextmailboxitemgetitemidasyncofficecontextmailboxitemmdgetitemidasyncoptions-callback"></a>[Office.context.mailbox.item.getItemIdAsync](office.context.mailbox.item.md#getitemidasyncoptions-callback)
+
+添加了新的方法，用于获取已保存约会或消息项的 ID。
 
 **适用对象**：Windows 版 Outlook（连接到 Office 365）
 

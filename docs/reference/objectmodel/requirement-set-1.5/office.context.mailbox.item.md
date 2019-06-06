@@ -3,12 +3,12 @@ title: Office.context.mailbox.item - 要求集 1.5
 description: ''
 ms.date: 05/30/2019
 localization_priority: Priority
-ms.openlocfilehash: 59e21676e670d8ba4da95319567364948f374790
-ms.sourcegitcommit: b299b8a5dfffb6102cb14b431bdde4861abfb47f
+ms.openlocfilehash: aba1590d570a55ed512f1eb223b7d927c953dbaf
+ms.sourcegitcommit: 567aa05d6ee6b3639f65c50188df2331b7685857
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/30/2019
-ms.locfileid: "34589179"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "34706335"
 ---
 # <a name="item"></a>item
 
@@ -1637,7 +1637,7 @@ Office.context.mailbox.item.removeAttachmentAsync(
 > [!NOTE]
 > 以下客户端在撰写模式下对约会上的 `saveAsync` 具有不同的行为：
 >
-> - Outlook for Mac 不支持在撰写模式下对会议执行 `saveAsync` 操作。 因此，在此情况下调用 `saveAsync` 将会返回错误。 若需解决办法，请参阅[无法在 Outlook for Mac 中使用 Office JS API 将会议另存为草稿](https://support.microsoft.com/help/4505745)。
+> - Outlook for Mac 不支持保存会议。 在撰写模式下从会议调用时，`saveAsync` 方法将会失败。 若需解决办法，请参阅[无法在 Outlook for Mac 中使用 Office JS API 将会议另存为草稿](https://support.microsoft.com/help/4505745)。
 > - 在撰写模式下的约会上调用 `saveAsync` 时，Outlook 网页版始终发送邀请或更新。
 
 ##### <a name="parameters"></a>参数
