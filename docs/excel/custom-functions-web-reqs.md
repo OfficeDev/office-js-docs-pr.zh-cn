@@ -1,14 +1,14 @@
 ---
-ms.date: 05/07/2019
+ms.date: 05/30/2019
 description: 使用 Excel 中的自定义函数请求、流式处理和取消流式处理工作簿的外部数据
 title: 使用自定义函数接收和处理数据
 localization_priority: Priority
-ms.openlocfilehash: 61f4d0fdaea4277faedddbe075a587fb23842c08
-ms.sourcegitcommit: 5b9c2b39dfe76cabd98bf28d5287d9718788e520
+ms.openlocfilehash: add6a3bc91b28ff7dbd0f0b298ed8f38ed5dd1bc
+ms.sourcegitcommit: 567aa05d6ee6b3639f65c50188df2331b7685857
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/07/2019
-ms.locfileid: "33659633"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "34706142"
 ---
 # <a name="receive-and-handle-data-with-custom-functions"></a>使用自定义函数接收和处理数据
 
@@ -25,9 +25,9 @@ ms.locfileid: "33659633"
 1. 将 JavaScript Promise 返回到 Excel。
 2. 使用回调函数解析带有最终值的 Promise。
 
-你可以通过 API（如 [`Fetch`](https://developer.mozilla.org/zh-CN/docs/Web/API/Fetch_API)）或使用 `XmlHttpRequest` [(XHR)](https://developer.mozilla.org/zh-CN/docs/Web/API/XMLHttpRequest)（一种发出与服务器交互的 HTTP 请求的标准 Web API）来请求外部数据。
+你可以通过 API（如 [`Fetch`](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API)）或使用 `XmlHttpRequest` [(XHR)](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest)（一种发出与服务器交互的 HTTP 请求的标准 Web API）来请求外部数据。
 
-在自定义函数运行时内，XHR 通过要求[相同来源策略](https://developer.mozilla.org/zh-CN/docs/Web/Security/Same-origin_policy)和简单 [CORS](https://www.w3.org/TR/cors/) 来实施附加安全措施。
+在自定义函数运行时内，XHR 通过要求[相同来源策略](https://developer.mozilla.org/en-US/docs/Web/Security/Same-origin_policy)和简单 [CORS](https://www.w3.org/TR/cors/) 来实施附加安全措施。
 
 请注意，简单的 CORS 实施不能使用 cookie，且仅支持简单的方法（GET、HEAD、POST）。 简单的 CORS 接受字段名称为 `Accept`、`Accept-Language`、`Content-Language` 的简单标题。 你还可以在简单 CORS 中使用内容类型标题，前提是内容类型为 `application/x-www-form-urlencoded`、`text/plain` 或 `multipart/form-data`。
 
@@ -137,13 +137,37 @@ ws.onerror(error){
 }
 ```
 
-## <a name="stream-and-cancel-functions"></a>流式处理和取消函数
+## <a name="make-a-streaming-function"></a>生成流式处理函数
 
-流式处理自定义函数使用户能够在不需要用户显式刷新数据的情况下，向重复更新的单元格输出数据。
+流式处理自定义函数使用户能够在不需要用户显式刷新数据的情况下，向重复更新的单元格输出数据。 这对于检查联机服务中的实时数据非常有用，如[自定义函数教程](/tutorials/excel-tutorial-create-custom-functions)中的函数。
 
-可取消的自定义函数使用户能够取消执行流式处理自定义函数，以减少其带宽消耗、工作内存和 CPU 负载。
+若要声明函数，请使用 JSDoc 批注标记 `@stream`。 若要提醒用户你的函数可能会根据新的信息重新提升，请考虑使用流或其他措辞，以在函数的名称或描述中说明此情况。
 
-若要将函数声明为流式传输或可取消，请使用 JSDOC 注释标记 `@stream` 或 `@cancelable`。
+以下示例显示了每秒按你指定的幅度提高给定数值的流式函数。
+
+```JS
+/**
+ * Increments a value once a second.
+ * @customfunction INC increment
+ * @param {number} incrementBy Amount to increment
+ * @param {CustomFunctions.StreamingInvocation<number>} invocation
+ */
+function increment(incrementBy, invocation) {
+  let result = 0;
+  const timer = setInterval(() => {
+    result += incrementBy;
+    invocation.setResult(result);
+  }, 1000);
+
+  invocation.onCanceled = () => {
+    clearInterval(timer);
+  };
+}
+CustomFunctions.associate("INC", increment);
+```
+
+>[!NOTE]
+> 请注意，还有一类函数被称为可取消函数，它们与流式函数*无*关。 以前版本的自定义函数需要在手写的 JSON 中声明 `"cancelable": true` 和 `"streaming": true`。 引入自动生成的元数据之后，仅返回一个值的异步自定义函数可取消。 可取消函数允许在请求中间终止 Web 请求，它使用 [`CancelableInvocation`](https://docs.microsoft.com/javascript/api/custom-functions-runtime/customfunctions.cancelableinvocation?view=office-js) 来决定取消时需要采取的操作。 使用标记 `@cancelable` 声明可取消函数。
 
 ### <a name="using-an-invocation-parameter"></a>使用调用参数
 
