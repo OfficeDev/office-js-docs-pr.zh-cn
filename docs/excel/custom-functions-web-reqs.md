@@ -3,12 +3,12 @@ ms.date: 05/30/2019
 description: 使用 Excel 中的自定义函数请求、流式处理和取消流式处理工作簿的外部数据
 title: 使用自定义函数接收和处理数据
 localization_priority: Priority
-ms.openlocfilehash: add6a3bc91b28ff7dbd0f0b298ed8f38ed5dd1bc
-ms.sourcegitcommit: 567aa05d6ee6b3639f65c50188df2331b7685857
+ms.openlocfilehash: 22f79c8b4e7e39569d3b955477e9397a053e1a8f
+ms.sourcegitcommit: 3f84b2caa73d7fe1eb0d15e32ea4dec459e2ff53
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "34706142"
+ms.lasthandoff: 06/12/2019
+ms.locfileid: "34910334"
 ---
 # <a name="receive-and-handle-data-with-custom-functions"></a>使用自定义函数接收和处理数据
 
@@ -16,7 +16,7 @@ ms.locfileid: "34706142"
 
 [!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
-下面的文档说明了 Web 请求的一些示例，但是若要为自己构建流式处理函数，请尝试[自定义函数教程](https://docs.microsoft.com/office/dev/add-ins/tutorials/excel-tutorial-create-custom-functions?tabs=excel-windows)。
+下面的文档说明了 Web 请求的一些示例，但是若要为自己构建流式处理函数，请尝试[自定义函数教程](../tutorials/excel-tutorial-create-custom-functions.md)。
 
 ## <a name="functions-that-return-data-from-external-sources"></a>从外部源返回数据的函数
 
@@ -72,7 +72,7 @@ CustomFunctions.associate("GETTEMPERATURE", getTemperature);
 
 ### <a name="fetch-example"></a>提取示例
 
-在以下代码示例中，`stockPriceStream` 函数使用股票代码符号来获取每 1000 毫秒的股票价格。 有关此示例的更多详细信息，请参阅[自定义函数教程](https://docs.microsoft.com/office/dev/add-ins/tutorials/excel-tutorial-create-custom-functions?tabs=excel-windows#create-a-streaming-asynchronous-custom-function)。
+在以下代码示例中，`stockPriceStream` 函数使用股票代码符号来获取每 1000 毫秒的股票价格。 有关此示例的更多详细信息，请参阅[自定义函数教程](../tutorials/excel-tutorial-create-custom-functions.md#create-a-streaming-asynchronous-custom-function)。
 
 ```js
 /**
@@ -139,7 +139,7 @@ ws.onerror(error){
 
 ## <a name="make-a-streaming-function"></a>生成流式处理函数
 
-流式处理自定义函数使用户能够在不需要用户显式刷新数据的情况下，向重复更新的单元格输出数据。 这对于检查联机服务中的实时数据非常有用，如[自定义函数教程](/tutorials/excel-tutorial-create-custom-functions)中的函数。
+流式处理自定义函数使用户能够在不需要用户显式刷新数据的情况下，向重复更新的单元格输出数据。 这对于检查联机服务中的实时数据非常有用，如[自定义函数教程](../tutorials/excel-tutorial-create-custom-functions.md)中的函数。
 
 若要声明函数，请使用 JSDoc 批注标记 `@stream`。 若要提醒用户你的函数可能会根据新的信息重新提升，请考虑使用流或其他措辞，以在函数的名称或描述中说明此情况。
 
@@ -167,7 +167,7 @@ CustomFunctions.associate("INC", increment);
 ```
 
 >[!NOTE]
-> 请注意，还有一类函数被称为可取消函数，它们与流式函数*无*关。 以前版本的自定义函数需要在手写的 JSON 中声明 `"cancelable": true` 和 `"streaming": true`。 引入自动生成的元数据之后，仅返回一个值的异步自定义函数可取消。 可取消函数允许在请求中间终止 Web 请求，它使用 [`CancelableInvocation`](https://docs.microsoft.com/javascript/api/custom-functions-runtime/customfunctions.cancelableinvocation?view=office-js) 来决定取消时需要采取的操作。 使用标记 `@cancelable` 声明可取消函数。
+> 请注意，还有一类函数被称为可取消函数，它们与流式函数*无*关。 以前版本的自定义函数需要在手写的 JSON 中声明 `"cancelable": true` 和 `"streaming": true`。 引入自动生成的元数据之后，仅返回一个值的异步自定义函数可取消。 可取消函数允许在请求中间终止 Web 请求，它使用 [`CancelableInvocation`](/javascript/api/custom-functions-runtime/customfunctions.cancelableinvocation) 来决定取消时需要采取的操作。 使用标记 `@cancelable` 声明可取消函数。
 
 ### <a name="using-an-invocation-parameter"></a>使用调用参数
 

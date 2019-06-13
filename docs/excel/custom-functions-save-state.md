@@ -3,14 +3,14 @@ ms.date: 05/08/2019
 description: 使用 `OfficeRuntime.storage` 保存自定义函数中的状态。
 title: 保存并共享自定义函数中的状态
 localization_priority: Priority
-ms.openlocfilehash: b1472b0623d15882dabff16f8be3f74756e3b3de
-ms.sourcegitcommit: a99be9c4771c45f3e07e781646e0e649aa47213f
+ms.openlocfilehash: fb73c349a9f1048ccc4e01a0958c8efd41cb2b78
+ms.sourcegitcommit: 3f84b2caa73d7fe1eb0d15e32ea4dec459e2ff53
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/11/2019
-ms.locfileid: "33951968"
+ms.lasthandoff: 06/12/2019
+ms.locfileid: "34910348"
 ---
-## <a name="save-and-share-state-in-custom-functions"></a>保存并共享自定义函数中的状态
+# <a name="save-and-share-state-in-custom-functions"></a>保存并共享自定义函数中的状态
 
 使用 `OfficeRuntime.storage` 对象保存与加载项中的自定义函数或任务窗格相关的状态。 存储限制为每个域 10 MB（可以在多个加载项中共享）。 在 Windows 版 Excel 中，`storage` 对象是自定义函数运行时内的单独位置，但对于 Excel Online 和 Excel for Mac，`storage` 对象与浏览器的 `localStorage` 相同。
 

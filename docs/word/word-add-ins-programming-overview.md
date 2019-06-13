@@ -3,12 +3,12 @@ title: Word 加载项概述
 description: ''
 ms.date: 05/08/2019
 localization_priority: Priority
-ms.openlocfilehash: 143f5b431aff2133c084b6d0f9c390562116dd4e
-ms.sourcegitcommit: a99be9c4771c45f3e07e781646e0e649aa47213f
+ms.openlocfilehash: 4b20b6007dba879b16ae8f6a586cf933f2f4fef0
+ms.sourcegitcommit: 3f84b2caa73d7fe1eb0d15e32ea4dec459e2ff53
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/11/2019
-ms.locfileid: "33952171"
+ms.lasthandoff: 06/12/2019
+ms.locfileid: "34910278"
 ---
 # <a name="word-add-ins-overview"></a>Word 加载项概述
 
@@ -82,7 +82,7 @@ Word.run(function (context) {
 
 ## <a name="whats-coming-up-for-word-add-ins"></a>Word 加载项未来发展趋势如何？
 
-随着我们设计和开发适用于 Word 加载项的新 API，我们将会发布这些 API，以供大家在 [API 开放性规范](/office/dev/add-ins/reference/openspec)页面上提供反馈。请了解即将推出的 Word JavaScript API 新功能，并提供对设计规范的宝贵意见。
+随着我们设计和开发适用于 Word 加载项的新 API，我们将会发布这些 API，以供大家在 [API 开放性规范](/office/dev/add-ins/reference/openspec/openspec)页面上提供反馈。请了解即将推出的 Word JavaScript API 新功能，并提供对设计规范的宝贵意见。
 
 ## <a name="see-also"></a>另请参阅
 
