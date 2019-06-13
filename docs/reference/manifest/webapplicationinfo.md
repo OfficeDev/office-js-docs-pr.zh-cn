@@ -3,12 +3,12 @@ title: 清单文件中的 WebApplicationInfo 元素
 description: ''
 ms.date: 03/19/2019
 localization_priority: Normal
-ms.openlocfilehash: 2ab06b7ec21bccf13039badcc94b9de0ce7b8600
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: bdd327f942009e255dd2515fb926d294212ecec8
+ms.sourcegitcommit: 3f84b2caa73d7fe1eb0d15e32ea4dec459e2ff53
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32450385"
+ms.lasthandoff: 06/12/2019
+ms.locfileid: "34910315"
 ---
 # <a name="webapplicationinfo-element"></a>WebApplicationInfo 元素
 
@@ -42,7 +42,7 @@ ms.locfileid: "32450385"
     ...
     <WebApplicationInfo>
       <Id>12345678-abcd-1234-efab-123456789abc</Id>
-      <Resource>api://myDomain.com/12345678-abcd-1234-efab-123456789abc<Resource>
+      <Resource>api://myDomain.com/12345678-abcd-1234-efab-123456789abc</Resource>
       <Scopes>
         <Scope>Files.Read.All</Scope>
         <Scope>offline_access</Scope>

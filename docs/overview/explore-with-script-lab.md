@@ -2,14 +2,14 @@
 title: 使用脚本实验室浏览 Office JavaScript API
 description: 使用脚本实验室浏览 Office JS API 并建立原型功能。
 ms.topic: article
-ms.date: 05/08/2019
+ms.date: 06/07/2019
 localization_priority: Normal
-ms.openlocfilehash: 968f1c748558ee0d14898a3ad0dbe44bdc7a532a
-ms.sourcegitcommit: a99be9c4771c45f3e07e781646e0e649aa47213f
+ms.openlocfilehash: 0bab566b08ba25dd3c01cff72f331b2dc9ce304d
+ms.sourcegitcommit: 3f84b2caa73d7fe1eb0d15e32ea4dec459e2ff53
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/11/2019
-ms.locfileid: "33952222"
+ms.lasthandoff: 06/12/2019
+ms.locfileid: "34910188"
 ---
 # <a name="explore-office-javascript-api-using-script-lab"></a>使用脚本实验室浏览 Office JavaScript API
 
@@ -17,7 +17,7 @@ ms.locfileid: "33952222"
 
 ## <a name="what-is-script-lab"></a>什么是脚本实验室？
 
-脚本实验室是任何希望了解如何使用 Excel、Word 或 PowerPoint 中的 Office JavaScript API 开发 Office 外接程序的工具。 它提供了智能感知功能, 以便您可以查看在摩纳哥框架 (由 Visual Studio Code 使用的相同框架) 中构建的可用功能。 通过脚本实验室, 您可以访问示例库以快速试用功能, 也可以选择示例作为自己的代码的基础。 此外, 您还可以通过向[office js](https://github.com/OfficeDev/office-js-snippets#office-js-snippets)存储库添加代码段来扩展示例库。 脚本实验室的另一个激动人心的功能是 beta 或 preview 功能, 如可以尝试使用[自定义函数](/office/dev/add-ins/excel/custom-functions-overview)。
+脚本实验室是任何希望了解如何使用 Excel、Word 或 PowerPoint 中的 Office JavaScript API 开发 Office 外接程序的工具。 它提供了智能感知功能, 以便您可以查看在摩纳哥框架 (由 Visual Studio Code 使用的相同框架) 中构建的可用功能。 通过脚本实验室, 您可以访问示例库以快速试用功能, 也可以选择示例作为自己的代码的基础。 此外, 您还可以通过向[office js](https://github.com/OfficeDev/office-js-snippets#office-js-snippets)存储库添加代码段来扩展示例库。 脚本实验室的另一个激动人心的功能是 beta 或 preview 功能可供您尝试。
 
 > [!TIP]
 > 若要参与 beta 或 preview, 您可能需要注册[Office 预览体验成员计划](https://products.office.com/office-insider)。
@@ -30,7 +30,7 @@ ms.locfileid: "33952222"
 
 以下客户端上的 Excel、Word 和 PowerPoint 支持脚本实验室。
 
-- Windows 上的 Office (连接到 Office 365)
+- Windows 上的 office (连接到 Office 365)
 - Office for Mac (已连接到 Office 365)
 - Office Online
 - Windows 上的 Office 2013 或更高版本
