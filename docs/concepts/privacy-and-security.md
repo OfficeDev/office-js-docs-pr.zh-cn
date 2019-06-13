@@ -3,12 +3,12 @@ title: Office 加载项的隐私和安全
 description: ''
 ms.date: 05/08/2019
 localization_priority: Priority
-ms.openlocfilehash: 071cea42c90df30dce7cc2666136de616373bf06
-ms.sourcegitcommit: b0e71ae0ae09c57b843d4de277081845c108a645
+ms.openlocfilehash: e62720cdfc4fbc92615c869f71b250d5957ea0ce
+ms.sourcegitcommit: 3f84b2caa73d7fe1eb0d15e32ea4dec459e2ff53
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "34337207"
+ms.lasthandoff: 06/12/2019
+ms.locfileid: "34910208"
 ---
 # <a name="privacy-and-security-for-office-add-ins"></a>Office 加载项的隐私和安全
 
@@ -82,7 +82,7 @@ Office 外接程序运行时管理进程间通信、JavaScript API 调用和事�
 
 ### <a name="end-users-perspective"></a>从最终用户的角度出发
 
-Office 加载项是使用浏览器控件或 **iframe** 中运行的 Web 技术而生成。因此，使用加载项与转到 Internet 或 Intranet 上的网站类似。加载项可以位于组织外部（如果从 AppSource 获取加载项的话），也可以位于组织内部（如果从 Exchange Server 加载项目录、SharePoint 加载项目录或组织网络上的文件共享获取加载项的话）。加载项对网络的访问权限受限，大部分加载项都可以对活动文档或邮件项执行读取或写入操作。在用户或管理员安装或启动加载项前，加载项平台就施加了特定约束。不过，与任何扩展性模型一样，用户在启动未知加载项之前应非常谨慎。
+Office 加载项是使用浏览器控件或 **iframe** 中运行的 Web 技术而生成。因此，使用加载项与转到 Internet 或 Intranet 上的网站类似。加载项可以位于组织外部（如果从 AppSource 获取加载项的话），也可以位于组织内部（如果从 Exchange Server 加载项目录、SharePoint 应用目录或组织网络上的文件共享获取加载项的话）。加载项对网络的访问权限受限，大部分加载项都可以对活动文档或邮件项执行读取或写入操作。在用户或管理员安装或启动加载项前，加载项平台就施加了特定约束。不过，与任何扩展性模型一样，用户在启动未知加载项之前应非常谨慎。
 
 加载项平台解决了最终用户的隐私问题，具体方式如下：
 

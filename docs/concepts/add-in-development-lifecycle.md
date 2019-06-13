@@ -3,12 +3,12 @@ title: Office 加载项开发生命周期
 description: ''
 ms.date: 03/19/2019
 localization_priority: Priority
-ms.openlocfilehash: 86c384128640d64c47185a290bc224ffe7b59274
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: ec38bb3cfba98153d644431f5e6f23c1d37b0a06
+ms.sourcegitcommit: 3f84b2caa73d7fe1eb0d15e32ea4dec459e2ff53
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32448362"
+ms.lasthandoff: 06/12/2019
+ms.locfileid: "34910161"
 ---
 # <a name="office-add-ins-development-lifecycle"></a>Office 加载项开发生命周期
 
@@ -80,7 +80,7 @@ Office 加载项的典型开发生命周期包括下列步骤：
 
 ## <a name="7-publish-the-add-in"></a>7. 发布加载项
 
-可以将加载项提交到 AppSource，客户从中能够安装加载项。此外，还可以向 SharePoint 上的专有文件夹加载项目录或共享网络文件夹发布任务窗格和内容加载项，并在组织的 Exchange 服务器上直接部署 Outlook 加载项。有关详细信息，请参阅[发布 Office 加载项](../publish/publish.md)。
+可以将加载项提交到 AppSource，客户从中能够安装加载项。此外，还可以向 SharePoint 上的应用目录或共享网络文件夹发布任务窗格和内容加载项，并在组织的 Exchange 服务器上直接部署 Outlook 加载项。有关详细信息，请参阅[发布 Office 加载项](../publish/publish.md)。
 
 
 ## <a name="8-maintain-the-add-in"></a>8. 维护加载项

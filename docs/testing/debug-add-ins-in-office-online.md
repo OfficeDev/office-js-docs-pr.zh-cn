@@ -3,12 +3,12 @@ title: 在 Office Online 中调试加载项
 description: 如何使用 Office Online 测试和调试加载项。
 ms.date: 05/16/2019
 localization_priority: Priority
-ms.openlocfilehash: 6d6ab8a6ca85a9f462bfe4e5ae283eb3dccd9425
-ms.sourcegitcommit: b0e71ae0ae09c57b843d4de277081845c108a645
+ms.openlocfilehash: f6cdb1f0b92a8519315bcff272cd1bc235c57653
+ms.sourcegitcommit: 3f84b2caa73d7fe1eb0d15e32ea4dec459e2ff53
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "34337179"
+ms.lasthandoff: 06/12/2019
+ms.locfileid: "34910160"
 ---
 # <a name="debug-add-ins-in-office-online"></a>在 Office Online 中调试加载项
 
@@ -24,7 +24,7 @@ ms.locfileid: "34337179"
   > [!NOTE]
   > 若要注册免费 Office 365 开发人员订阅，请加入 [Office 365 开发人员计划](https://developer.microsoft.com/office/dev-program)。 请参阅 [Office 365 开发人员计划文档](/office/developer-program/office-365-developer-program)，逐步了解如何加入 Office 365 开发人员计划并注册和配置订阅。
      
-- 对 Office 365 (SharePoint Online) 设置加载项目录。加载项目录是 SharePoint Online 中的专用网站集，用于托管 Office 加载项的文档库。如果有自己的 SharePoint 网站，可以设置加载项目录文档库。有关详细信息，请参阅[向 SharePoint 上的加载项目录发布任务窗格和内容加载项](../publish/publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md)。
+- 对 Office 365 (SharePoint Online) 设置应用目录。应用目录是 SharePoint Online 中的专用网站集，用于托管 Office 加载项的文档库。如果有自己的 SharePoint 网站，可以设置应用目录文档库。有关详细信息，请参阅[向 SharePoint 上的应用目录发布任务窗格和内容加载项](../publish/publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md)。
     
 
 ## <a name="debug-your-add-in-from-excel-online-or-word-online"></a>通过 Excel Online 或 Word Online 调试加载项
@@ -42,7 +42,7 @@ ms.locfileid: "34337179"
     <SourceLocation DefaultValue="https://localhost:44300/App/Home/Home.html" />
     ```
     
-3. 将清单上传到 SharePoint 上加载项目录中的“Office 加载项”库。
+3. 将清单上传到 SharePoint 上应用目录中的“Office 加载项”库。
     
 4. 从 Office 365 中的应用程序启动程序启动 Excel Online 或 Word Online，并打开一个新文档。
     

@@ -3,12 +3,12 @@ title: 创建将 REST 与本地 Project Server OData 服务结合使用的 Proje
 description: ''
 ms.date: 03/19/2019
 localization_priority: Priority
-ms.openlocfilehash: d2a3b490a0f82d57444dad4b5281f2f7e3bf2959
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: 1e50d90b844e78620866e94e44377c903b169783
+ms.sourcegitcommit: 3f84b2caa73d7fe1eb0d15e32ea4dec459e2ff53
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32451348"
+ms.lasthandoff: 06/12/2019
+ms.locfileid: "34910355"
 ---
 # <a name="create-a-project-add-in-that-uses-rest-with-an-on-premises-project-server-odata-service"></a>创建将 REST 与本地 Project Server OData 服务结合使用的 Project 加载项
 
@@ -1096,7 +1096,7 @@ Table styles
 
 ## <a name="next-steps"></a>后续步骤
 
-如果 **HelloProjectOData** 是要在 AppSource 中销售或通过 SharePoint 加载项目录分发的生产加载项，它的设计将有所不同。例如，文本框中没有调试输出，并且可能没有按钮可用于获取 **ProjectData** 终结点。还必须将 **retireveOData** 函数重写为，处理包含超过 100 个项目的 Project Web App 实例。
+如果 **HelloProjectOData** 是要在 AppSource 中销售或通过 SharePoint 应用目录分发的生产加载项，它的设计将有所不同。例如，文本框中没有调试输出，并且可能没有按钮可用于获取 **ProjectData** 终结点。还必须将 **retireveOData** 函数重写为，处理包含超过 100 个项目的 Project Web App 实例。
 
 加载项应当包含其他错误检查以及相关逻辑以便了解并说明或演示边界情况。例如，如果某个 Project Web App 实例具有 1000 个项目（项目的平均持续时间为 5 天，平均成本为 2400 美元），且该活动项目是唯一一个持续时间大于 20 天的项目，则成本和工作对比可能会不均衡。这可以采用频率图显示。您可以添加选项以显示持续时间、对比类似长度的项目或对比相同或不同部门的项目。或者，为用户添加一种方法以供用户从要显示的字段列表中选择。
 

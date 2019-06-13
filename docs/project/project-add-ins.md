@@ -3,12 +3,12 @@ title: Project 任务窗格加载项
 description: ''
 ms.date: 03/19/2019
 localization_priority: Priority
-ms.openlocfilehash: 668e7130d6ef478752f74468130139ca02b1d1e1
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: 6f08f45e81fa40a869d07acea066b43c2720876a
+ms.sourcegitcommit: 3f84b2caa73d7fe1eb0d15e32ea4dec459e2ff53
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32450965"
+ms.lasthandoff: 06/12/2019
+ms.locfileid: "34910327"
 ---
 # <a name="task-pane-add-ins-for-project"></a>Project 任务窗格加载项
 
@@ -184,7 +184,7 @@ Project 加载项方案包括以下几种：
 
 ## <a name="distributing-project-add-ins"></a>分发 Project 加载项
 
-可通过文件共享、SharePoint 库中的加载项目录或 AppSource 分发加载项。有关详细信息，请参阅[发布 Office 加载项](../publish/publish.md)。
+可通过文件共享、SharePoint 库中的应用目录或 AppSource 分发加载项。有关详细信息，请参阅[发布 Office 加载项](../publish/publish.md)。
 
 ## <a name="see-also"></a>另请参阅
 

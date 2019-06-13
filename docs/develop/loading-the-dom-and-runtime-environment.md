@@ -3,12 +3,12 @@ title: 加载 DOM 和运行时环境
 description: ''
 ms.date: 03/19/2019
 localization_priority: Priority
-ms.openlocfilehash: b1f63d9fe012ed8c8a5cf4a0f7de862ddabcd4d3
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: e975db391276129e453d5001fe0bac8ad36f6080
+ms.sourcegitcommit: 3f84b2caa73d7fe1eb0d15e32ea4dec459e2ff53
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32449836"
+ms.lasthandoff: 06/12/2019
+ms.locfileid: "34910215"
 ---
 # <a name="loading-the-dom-and-runtime-environment"></a>加载 DOM 和运行时环境
 
@@ -24,7 +24,7 @@ ms.locfileid: "32449836"
 
 1. 用户打开已包含加载项的文档，或在文档中插入加载项。
 
-2. Office 主机应用从 AppSource、SharePoint 上的加载项目录或源自的共享文件夹目录中读取加载项 XML 清单。
+2. Office 主机应用从 AppSource、SharePoint 上的应用目录或源自的共享文件夹目录中读取加载项 XML 清单。
 
 3. Office 主机应用在浏览器控件中打开加载项的 HTML 页面。
 

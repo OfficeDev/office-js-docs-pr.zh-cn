@@ -3,12 +3,12 @@ title: 通过 Office 365 管理中心进行集中部署来发布 Office 加载�
 description: ''
 ms.date: 04/16/2019
 localization_priority: Priority
-ms.openlocfilehash: ab308620c71cfb6fb08243973997fbd189b0625f
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: 5cecd9306bf3357d2f9b99cf01f8863ae3d3fe1f
+ms.sourcegitcommit: 3f84b2caa73d7fe1eb0d15e32ea4dec459e2ff53
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32451038"
+ms.lasthandoff: 06/12/2019
+ms.locfileid: "34910180"
 ---
 # <a name="publish-office-add-ins-using-centralized-deployment-via-the-office-365-admin-center"></a>通过 Office 365 管理中心进行集中部署来发布 Office 加载项
 
@@ -28,7 +28,7 @@ Office 365 管理中心当前支持以下方案：
 如果组织满足使用集中部署的所有要求，则建议 Office 365 管理员通过集中部署在组织内部署 Office 加载项。 有关如何确定组织是否可以使用集中部署的信息，请参阅[确定加载项集中部署是否适用于你的 Office 365 组织](/office365/admin/manage/centralized-deployment-of-add-ins)。
 
 > [!NOTE]
-> 在没有连接到 Office 365 的本地环境中，或若要部署 SharePoint 加载项或定目标到 Office 2013 的 Office 加载项，请使用 [SharePoint 加载项目录](publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md)。 若要部署 COM/VSTO 加载项，请使用 ClickOnce 或 Windows Installer，如[部署 Office 解决方案](/visualstudio/vsto/deploying-an-office-solution)中所述。
+> 在没有连接到 Office 365 的本地环境中，或若要部署 SharePoint 加载项或定目标到 Office 2013 的 Office 加载项，请使用 [SharePoint 应用目录](publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md)。若要部署 COM/VSTO 加载项，请使用 ClickOnce 或 Windows Installer，如[部署 Office 解决方案](/visualstudio/vsto/deploying-an-office-solution)中所述。
 
 ## <a name="recommended-approach-for-deploying-office-add-ins"></a>部署 Office 加载项的推荐方法
 

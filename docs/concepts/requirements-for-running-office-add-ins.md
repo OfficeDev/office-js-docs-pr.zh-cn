@@ -3,12 +3,12 @@ title: 运行 Office 加载项的要求
 description: ''
 ms.date: 05/14/2019
 localization_priority: Priority
-ms.openlocfilehash: 650f5555eb120cbb541370c2ea5e2b2078c98ad9
-ms.sourcegitcommit: b299b8a5dfffb6102cb14b431bdde4861abfb47f
+ms.openlocfilehash: ed502900916fb2e780725af6f3840c7c2287c1a3
+ms.sourcegitcommit: 3f84b2caa73d7fe1eb0d15e32ea4dec459e2ff53
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/30/2019
-ms.locfileid: "34589102"
+ms.lasthandoff: 06/12/2019
+ms.locfileid: "34910096"
 ---
 # <a name="requirements-for-running-office-add-ins"></a>运行 Office 加载项的要求
 
@@ -30,7 +30,7 @@ ms.locfileid: "34589102"
 > [!TIP]
 > 在 Visual Studio 中开发和调试加载项时，Visual Studio 使用 IIS Express 在本地部署并运行加载项的网页文件，无需使用其他 Web 服务器。
 
-对于内容和任务窗格外接程序，在受支持的 Office 主机应用程序（Access Web App、Word、Excel、PowerPoint 或 Project）中，你还需要 SharePoint 上的一个 [外接程序目录](../publish/publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md)才能上载外接程序的 XML 清单文件。
+对于内容和任务窗格外接程序，在受支持的 Office 主机应用程序（Access Web App、Word、Excel、PowerPoint 或 Project）中，你还需要 SharePoint 上的一个[应用目录](../publish/publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md)才能上载外接程序的 XML 清单文件。
 
 要测试和运行 Outlook 外接程序，用户的 Outlook 电子邮件帐户必须位于 Exchange 2013 或更高版本上，可通过 Office 365、Exchange Online 或本地安装获得此软件。用户或管理员在该服务器上安装 Outlook 外接程序的清单文件。
 

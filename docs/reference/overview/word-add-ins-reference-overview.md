@@ -1,15 +1,15 @@
 ---
 title: Word JavaScript API 概述
 description: ''
-ms.date: 03/19/2019
+ms.date: 06/10/2019
 ms.prod: word
 localization_priority: Priority
-ms.openlocfilehash: 19e3b7732fb5372228ea1458c57df5e79b08078a
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: 92b66b98776c1ad6b2d824af8bf13b01f2807384
+ms.sourcegitcommit: 3f84b2caa73d7fe1eb0d15e32ea4dec459e2ff53
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32450091"
+ms.lasthandoff: 06/12/2019
+ms.locfileid: "34910201"
 ---
 # <a name="word-javascript-api-overview"></a>Word JavaScript API 概述
 
@@ -28,8 +28,8 @@ Word JavaScript API 通过 Office.js 进行加载，改变了你与文档和段�
 
 可以从以下位置引用 Office.js：
 
-* https://appsforoffice.microsoft.com/lib/1/hosted/office.js - 将此资源用于生产外接程序。
-* https://appsforoffice.microsoft.com/lib/beta/hosted/office.js - 在试用预览功能时使用此资源。
+- https://appsforoffice.microsoft.com/lib/1/hosted/office.js - 将此资源用于生产外接程序。
+- https://appsforoffice.microsoft.com/lib/beta/hosted/office.js - 在试用预览功能时使用此资源。
 
 如果你使用的是 [Visual Studio](https://www.visualstudio.com/products/free-developer-offers-vs)，则可以下载 [Office 开发人员工具](https://www.visualstudio.com/features/office-tools-vs.aspx)，从而获取包含 Office.js 的项目模板。你还可以使用 [nuget 获取 Office.js](https://www.nuget.org/packages/Microsoft.Office.js/)。
 
@@ -100,7 +100,6 @@ Word 代理对象具有用于访问和更新对象模型的方法。这些方法
 
 下面的示例展示了命令队列的工作原理。调用 **context.sync()** 时，用于加载正文文本的命令会在 Word 中执行。然后，用于在正文中插入文本的命令会在 Word 中执行。接下来，结果会返回到正文代理对象。Word JavaScript API 中 **body.text** 属性的值为在将文本插入 Word 文档<u>之前</u> Word 文档正文的值。
 
-
 ```js
 // Run a batch operation against the Word JavaScript API.
 Word.run(function (context) {
@@ -123,10 +122,6 @@ Word.run(function (context) {
 })
 ```
 
-## <a name="word-javascript-api-open-specifications"></a>Word JavaScript API 开放性规范
-
-在我们设计和开发新的 API 以用于创建 Word 外接程序时，我们会公开它们，以便你可以在我们的[开放性 API 规范](../openspec.md)页面上提供反馈。了解即将推出的面向 Word JavaScript API 的新功能，并提供你对我们的设计规范的宝贵意见。
-
 ## <a name="word-javascript-api-requirement-sets"></a>Word JavaScript API 要求集
 
 要求集是指各组已命名的 API 成员。 Office 外接程序使用清单中指定的要求集或执行运行时检查，以确定 Office 主机是否支持外接程序所需的 API。 有关 Word JavaScript API 要求集的详细信息，请参阅 [Word JavaScript API 要求集](../requirement-sets/word-api-requirement-sets.md)文章。
@@ -137,6 +132,7 @@ Word.run(function (context) {
 
 ## <a name="see-also"></a>另请参阅
 
-* [Word 外接程序概述](/office/dev/add-ins/word/word-add-ins-programming-overview)
-* [Office 外接程序平台概述](/office/dev/add-ins/overview/office-add-ins)
-* [GitHub Word 上的外接程序示例](https://github.com/OfficeDev?utf8=%E2%9C%93&q=Word)
+- [Word 外接程序概述](/office/dev/add-ins/word/word-add-ins-programming-overview)
+- [Office 外接程序平台概述](/office/dev/add-ins/overview/office-add-ins)
+- [GitHub Word 上的外接程序示例](https://github.com/OfficeDev?utf8=%E2%9C%93&q=Word)
+- [API 开放性规范](../openspec/openspec.md)

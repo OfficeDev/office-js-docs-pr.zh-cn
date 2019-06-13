@@ -3,12 +3,12 @@ title: 部署和发布 Office 加载项 | Microsoft Docs
 description: 部署 Office 加载项以进行测试或分发给用户的方法和选项。
 ms.date: 03/19/2019
 localization_priority: Priority
-ms.openlocfilehash: eeaf4b61948952ff7e536f3e1a6b38dc46adb93e
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: ba32e0bbe594b8da8fad0d230b818faf59e64ce6
+ms.sourcegitcommit: 3f84b2caa73d7fe1eb0d15e32ea4dec459e2ff53
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32452058"
+ms.lasthandoff: 06/12/2019
+ms.locfileid: "34910152"
 ---
 # <a name="deploy-and-publish-your-office-add-in"></a>部署和发布 Office 加载项
 
@@ -59,9 +59,9 @@ ms.locfileid: "32452058"
 
 有关详细信息，请参阅[通过 Office 365 管理中心进行集中部署来发布 Office 加载项](centralized-deployment.md)。
 
-### <a name="sharepoint-catalog-deployment"></a>SharePoint 目录部署
+### <a name="sharepoint-app-catalog-deployment"></a>SharePoint 应用目录部署
 
-SharePoint 加载项目录是特殊网站集，创建后可用于托管 Word、Excel 和 PowerPoint 加载项。由于 SharePoint 目录不支持在清单的 `VersionOverrides` 节点中实现的新加载项功能（包括加载项命令），因此建议尽可能通过管理中心进行集中部署。通过 SharePoint 目录部署的加载项命令默认在任务窗格中打开。
+SharePoint 应用目录是特殊网站集，创建后可用于托管 Word、Excel 和 PowerPoint 加载项。由于 SharePoint 目录不支持在清单的 `VersionOverrides` 节点中实现的新加载项功能（包括加载项命令），因此建议尽可能通过管理中心进行集中部署。通过 SharePoint 目录部署的加载项命令默认在任务窗格中打开。
 
 如果要在本地环境中部署外接程序，请使用 SharePoint 目录。有关详细信息，请参阅[将任务窗格和内容外接程序发布到 SharePoint 目录](publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md)。
 
