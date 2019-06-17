@@ -1,54 +1,35 @@
 ---
-title: 将任务窗格和内容加载项发布到 SharePoint 目录
-description: 为使组织内的用户可访问 Office 加载项，管理员可以将 Office 加载项清单文件上传到组织的加载项目录中。
-ms.date: 05/22/2019
+title: 将任务窗格和内容加载项发布到 SharePoint 应用程序目录
+description: 为使组织内的用户可访问 Office 加载项，管理员可以将 Office 加载项清单文件上传到组织的应用程序目录中。
+ms.date: 06/05/2019
 localization_priority: Priority
-ms.openlocfilehash: bffbf3e83a2e6d8d0c63252c27ba54826611f78b
-ms.sourcegitcommit: adaee1329ae9bb69e49bde7f54a4c0444c9ba642
+ms.openlocfilehash: eba503a9e3d46e8ef187ef564ffa82fa984f3726
+ms.sourcegitcommit: 3f84b2caa73d7fe1eb0d15e32ea4dec459e2ff53
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "34432241"
+ms.lasthandoff: 06/12/2019
+ms.locfileid: "34910314"
 ---
-# <a name="publish-task-pane-and-content-add-ins-to-a-sharepoint-catalog"></a>将任务窗格和内容加载项发布到 SharePoint 目录
+# <a name="publish-task-pane-and-content-add-ins-to-a-sharepoint-app-catalog"></a>将任务窗格和内容加载项发布到 SharePoint 应用程序目录
 
-加载项目录是 SharePoint Web 应用或 SharePoint Online 租赁中的专用网站集，用于托管 Office 和 SharePoint 加载项的文档库。若要向组织用户分发 Office 加载项，管理员可以将 Office 加载项清单文件上传到组织的加载项目录。如果管理员将加载项目录注册为受信任的目录，用户就可以通过 Office 客户端应用中的插入 UI 插入加载项。
+应用程序目录是 SharePoint Web 应用程序或 SharePoint Online 租户中的专用网站集，用于托管 Office 和 SharePoint 加载项的文档库。若要向组织用户分发 Office 加载项，管理员可以将 Office 加载项清单文件上传到组织的应用程序目录。如果管理员将应用程序目录注册为受信任的目录，用户就可以通过 Office 客户端应用程序中的插入 UI 插入加载项。
 
 > [!IMPORTANT]
-> - SharePoint 上的加载项目录不支持在[加载项清单](../develop/add-in-manifests.md)的 `VersionOverrides` 节点中实现的加载项功能（如加载项命令）。
+> - SharePoint 上的应用程序目录不支持在[加载项清单](../develop/add-in-manifests.md)的 `VersionOverrides` 节点中实现的加载项功能（如加载项命令）。
 > - 如果面向的是云或混合环境，建议通过 [Office 365 管理中心使用集中部署](../publish/centralized-deployment.md)来发布加载项。
-> - SharePoint 目录不支持 Office for Mac。 若要向 Mac 客户端部署 Office 加载项，必须将其提交到 [AppSource](/office/dev/store/submit-to-the-office-store)。   
+> - Office for Mac 不支持 SharePoint 上的应用程序目录。 若要向 Mac 客户端部署 Office 加载项，必须将其提交到 [AppSource](/office/dev/store/submit-to-the-office-store)。
 
-## <a name="create-an-add-in-catalog"></a>创建加载项目录
+## <a name="create-an-app-catalog"></a>创建应用程序目录
 
-完成以下部分之一中的步骤，以在 SharePoint 或 Office 365 上设置加载项目录。
+完成以下某个部分中的步骤，以使用本地 SharePoint Server 或 Office 365 创建应用程序目录。
 
-### <a name="to-create-an-add-in-catalog-for-on-premises-sharepoint"></a>为本地 SharePoint 创建加载项目录
+### <a name="to-create-an-app-catalog-for-on-premises-sharepoint-server"></a>为本地 SharePoint Server 创建应用程序目录
 
-> [!NOTE]
-> 本地 SharePoint 中的 UI 仍将加载项称为**应用程序**。
+若要创建 SharePoint 应用程序目录，请按照[配置 Web 应用程序的应用程序目录网站](https://docs.microsoft.com/zh-CN/sharepoint/administration/manage-the-app-catalog)中的说明进行操作。
 
-1. 浏览到**管理中心网站**。
+创建应用程序目录后，请按照相关步骤[发布 Office 加载项](#publish-an-office-add-in)。
 
-2. 在左侧的任务窗格中，选择“**应用程序**”。
-
-3. 在“**应用程序**”页的“**应用程序管理**”下方，选择“**管理应用程序目录**”。
-
-4. 在“**管理应用程序目录**”页上，确保在“**Web 应用程序选择器**”中选择了正确的 Web 应用程序。
-
-5. 选择“**查看网站设置**”。
-
-6. 在“**网站设置**”页上选择“**网站集管理员**”以指定网站集管理员，然后选择“**确定**”。
-
-7. 若要向用户授予网站权限，请选择“**网站权限**”，然后选择“**授予权限**”。
-
-8. 在“**共享‘应用程序目录网站’**”对话框中，指定一个或多个网站用户，为他们设置相应的权限，选择性地设置其他选项，然后选择“**共享**”。
-
-9. 若要向 Office 加载项加载项目录添加加载项，请选择“**针对 Office 的应用程序**”。
-
-### <a name="to-create-an-app-catalog-on-office-365"></a>在 Office 365 上创建应用目录
-
-尽管 SharePoint 会将此目录命名为“应用”目录，但你仍可以在应用目录中注册 Office 加载项。
+### <a name="to-create-an-app-catalog-on-office-365"></a>在 Office 365 上创建应用程序目录
 
 1. 转到 Microsoft 365 管理中心。 有关如何查找管理中心的信息，请参阅[关于 Microsoft 365 管理中心](https://docs.microsoft.com/office365/admin/admin-overview/about-the-admin-center)。
 
@@ -61,9 +42,9 @@ ms.locfileid: "34432241"
 
 4. 在“**应用程序**”页面上，选择“**应用程序目录**”。
     > [!NOTE]
-    > 如果已创建应用程序目录并且它显示在此页面上，则你可以跳过其余步骤并转至本文下一章节，将你的加载项分步至目录。
+    > 如果已创建应用程序目录并且它显示在此页面上，则你可以跳过其余步骤并转至本文下一章节，将你的加载项发布到目录。
 
-5. 在“**应用程序目录网站**”页上，选择“**确定**”以接受默认选项并创建新的加载项目录网站。
+5. 在“**应用程序目录网站**”页上，选择“**确定**”以接受默认选项并创建新的应用程序目录网站。
 
 6. 在“**创建应用程序目录网站集**”页上，指定应用程序目录网站的标题。
 
@@ -75,11 +56,11 @@ ms.locfileid: "34432241"
 
 10. 选择“**确定**”。
 
-现在已创建应用程序目录。
+## <a name="publish-an-office-add-in"></a>发布 Office 加载项
 
-## <a name="publish-an-add-in-to-an-app-catalog"></a>将加载项发布到应用程序目录
+完成以下某个部分中的步骤，以将 Office 加载项发布到 Office 365 或本地 SharePoint Server 上的应用程序目录。
 
-若要将加载项发布到现有应用程序目录中，请完成以下步骤。
+### <a name="to-publish-an-office-add-in-to-a-sharepoint-app-catalog-on-office-365"></a>将 Office 加载项发布到 Office 365 上的 SharePoint 应用程序目录
 
 1. 转到 Microsoft 365 管理中心。 有关如何查找管理中心的信息，请参阅[关于 Microsoft 365 管理中心](https://docs.microsoft.com/office365/admin/admin-overview/about-the-admin-center)。
 2. 在 Microsoft 365 管理中心页面上，展开“**管理中心**”列表，然后选择“**SharePoint**”。
@@ -93,24 +74,42 @@ ms.locfileid: "34432241"
 8. 找到并指定要上传的“[清单文件](../develop/add-in-manifests.md)”，并选择“**打开**”。
 9. 在“**添加文档**”对话框中，选择“**确定**”。
 
-    此目录中的内容和任务窗格外接程序现在可从“**Office 外接程序**”对话框提供。若要访问这些外接程序，请在“**插入**”选项卡上选择“**我的外接程序**”，然后选择“**我的组织**”。
+### <a name="to-publish-an-add-in-to-an-app-catalog-with-on-premises-sharepoint-server"></a>使用本地 SharePoint Server 将加载项发布到应用程序目录
 
-## <a name="end-user-experience-with-the-add-in-catalog"></a>加载项目录的最终用户体验
+1. 打开“**管理中心**”页。
+2. 在左侧的任务窗格中，选择“**应用程序**”。
+3. 在“**应用程序**”页的“**应用程序管理**”下方，选择“**管理应用程序目录**”。
+4. 在“**管理应用程序目录**”页上，确保在“**Web 应用程序**”选择器中选择了正确的 Web 应用程序。
+5. 选择“**网站 URL**”下的 URL 以打开应用程序目录网站。
+6. 选择“**分发 Office 应用程序**”。
+7. 在“**Office 应用程序**”页中，选择“**新建**”。
+8. 在“**添加文档**”对话框中，选择“**选择文件**”按钮。
+9. 找到并指定要上传的“[清单文件](../develop/add-in-manifests.md)”，并选择“**打开**”。
+10. 在“**添加文档**”对话框中，选择“**确定**”。
 
-最终用户可以通过完成以下步骤来访问 Office 应用程序中的加载项目录：
+## <a name="insert-office-add-ins-from-the-app-catalog"></a>从应用程序目录插入 Office 加载项
 
-1. 在 Office 应用程序中，转到“文件”**** > “选项”****“信任中心” > **** > 信任中心设置**** > “受信任的加载项目录”****。
+对于联机 Office 应用程序，你可以通过完成以下步骤从应用程序目录中找到 Office 加载项。
 
-2. 指定加载项目录的_父级 SharePoint 网站集_的 URL。 
+1. 打开联机 Office 应用程序（Excel、PowerPoint 或 Word）。
+2. 创建或打开文档。
+3. 选择“**插入**” > “**加载项**”。
+4. 在“Office 加载项”对话框中，选择“**我的组织**”选项卡。此时将列出 Office 加载项。
+5. 选择 Office 加载项，然后选择“**添加**”。
 
-    例如，如果 Office 加载项目录的 URL 是：
+对于桌面上的 Office 应用程序，你可以通过完成以下步骤从应用程序目录中找到 Office 加载项。
 
-    - `https:// _domain_ /sites/ _AddinCatalogSiteCollection_ /AgaveCatalog`
-
+1. 打开桌面版 Office 应用程序（Excel、Word 或 PowerPoint）
+2. 选择“**文件**” > “**选项**” > “**信任中心**” > “**信任中心设置**” > “**受信任的加载项目录**”。
+3. 在“**目录 URL**”框中输入 SharePoint 应用程序目录的 URL，然后选择“**添加目录**”。
+    使用较短形式的 URL。 例如，如果 SharePoint 应用程序目录的 URL 为：
+    - `https://<domain>/sites/<AddinCatalogSiteCollection>/AgaveCatalog`
+    
     仅指定父网站集的 URL：
+    - `https://<domain>/sites/<AddinCatalogSiteCollection>`
+4. 关闭并重新打开 Office 应用程序。 
+5. 选择“**插入**” > “**获取加载项**”。
+4. 在“Office 加载项”对话框中，选择“**我的组织**”选项卡。此时将列出 Office 加载项。
+5. 选择 Office 加载项，然后选择“**添加**”。
 
-    - `https:// _domain_ /sites/ _AddinCatalogSiteCollection_`
-
-3. 关闭并重新打开 Office 应用。此时，加载项目录会出现在“**Office 加载项**”对话框中。
-
-或者，管理员可以使用组策略在 SharePoint 上指定 Office 加载项目录。 有关详细信息，请参阅[使用组策略管理用户如何安装和使用 Office 加载项](/previous-versions/office/office-2013-resource-kit/jj219429(v=office.15)#using-group-policy-to-manage-how-users-can-install-and-use-apps-for-office)一节。
+或者，管理员可以使用组策略在 SharePoint 上指定应用程序目录。 有关详细信息，请参阅[使用组策略管理用户如何安装和使用 Office 加载项](/previous-versions/office/office-2013-resource-kit/jj219429(v=office.15)#using-group-policy-to-manage-how-users-can-install-and-use-apps-for-office)一节。

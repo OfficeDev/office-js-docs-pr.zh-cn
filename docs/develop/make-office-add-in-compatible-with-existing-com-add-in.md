@@ -1,87 +1,87 @@
 ---
-title: 使 Excel 外接程序与现有 COM 外接程序兼容
-description: 启用与与 Excel 外接程序具有相同功能的等效 COM 加载项的兼容性
-ms.date: 05/06/2019
+title: 让 Office 加载项与现有 COM 加载项兼容
+description: 启用 Office 加载项和等效 COM 加载项之间的兼容性
+ms.date: 06/13/2019
 localization_priority: Normal
-ms.openlocfilehash: 0890e14466a2cd8f5aff2d1bcf307a43cff28127
-ms.sourcegitcommit: ff73cc04e5718765fcbe74181505a974db69c3f5
+ms.openlocfilehash: 1dd6de5e07d835cc017f95cd1a992a5f5d188ef1
+ms.sourcegitcommit: ee5b4935b5ee1db567a13627b2f87471ee8b8165
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "33628170"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "34933756"
 ---
 # <a name="make-your-office-add-in-compatible-with-an-existing-com-add-in-preview"></a>使您的 Office 外接程序与现有 COM 加载项兼容 (预览)
 
-如果您有一个现有的 COM 加载项, 则可以在 Excel 加载项中构建等效的功能, 以将解决方案功能扩展到其他平台 (如 online 或 macOS)。 但是, Excel 外接程序没有在 COM 加载项中提供的所有功能。你的 COM 加载项可以提供比 Windows 上的 Excel 外接程序更好的体验。
+如果您有一个现有的 COM 加载项, 则可以在 Office 加载项中构建等效功能, 从而使您的解决方案能够在其他平台 (如 web 或 Mac 上的 Office) 上运行。 在某些情况下, Office 外接程序可能无法提供相应 COM 外接程序中提供的所有功能。 在这些情况下, 您的 COM 外接程序在 Windows 上提供的用户体验可能比相应的 Office 外接程序提供的更好。
 
-您可以配置 Excel 加载项, 以便在用户的计算机上已安装等效的 COM 加载项时, Office 将运行 COM 加载项, 而不是 Excel 外接程序。 COM 加载项称为 "等效", 因为 Office 将根据 Windows 上安装的 COM 加载项和 Excel 加载项之间无缝转换。
+您可以配置 Office 加载项, 以便在用户的计算机上已安装等效的 COM 加载项时, Windows 上的 Office 将运行 COM 加载项, 而不是 Office 外接程序。 COM 加载项称为 "等效", 因为 Office 将根据安装了用户计算机的加载项和 Office 加载项在 COM 加载项之间进行无缝转换。
 
-[!include[COM add-in and XLL UDF compatibility requirements note](../includes/xll-compatibility-note.md)]
+> [!NOTE]
+> 此功能当前处于预览阶段, 不受支持在生产环境中使用。 它在 Excel、Word 和 PowerPoint 版本16.0.11629.20214 或更高版本中可用。 若要访问此版本, 您必须拥有 Office 365 订阅, 并在**内幕**级加入[Office 预览体验成员](https://products.office.com/office-insider)计划。
 
 ## <a name="specify-an-equivalent-com-add-in-in-the-manifest"></a>在清单中指定等效的 COM 加载项
 
-若要启用与现有 COM 加载项的兼容性, 请在 Excel 外接程序的清单中标识等效的 COM 加载项。 然后, 在 Windows 上运行时, Office 将使用 COM 加载项, 而不是 Excel 外接程序。
+若要在 Office 外接程序和 COM 加载项之间启用兼容性, 请在 Office 外接程序的[清单](add-in-manifests.md)中标识等效的 COM 加载项。 然后, Windows 上的 Office 将使用 COM 加载项, 而不是 Office 加载项 (如果已安装)。
 
-`ProgID`指定等效 COM 加载项的。 在安装 COM 加载项时, Office 将使用 COM 加载项 UI, 而不是 Excel 外接程序的 UI。
-
-下面的示例演示如何将 COM 外接程序和 XLL 都指定为等效项。 通常, 出于完整性的考虑, 这两个示例都会在上下文中显示这两个示例。 它们`ProgID` `FileName`分别由各自标识。 有关 XLL 兼容性的详细信息, 请参阅[使您的自定义函数与 xll 用户定义的函数兼容](../excel/make-custom-functions-compatible-with-xll-udf.md)。
+以下示例显示了将 COM 加载项指定为等效加载项的清单部分。 `ProgID`元素的值标识 COM 加载项。
 
 ```xml
 <VersionOverrides>
-...
-<EquivalentAddins>
-  <EquivalentAddin>
-    <ProgID>ContosoCOMAddin</ProgID>
-    <Type>COM</Type>
-  </EquivalentAddin>
-
-  <EquivalentAddin>
-    <FileName>contosofunctions.xll</FileName>
-    <Type>XLL</Type>
-  </EquivalentAddin>
-<EquivalentAddins>
-...
+  ...
+  <EquivalentAddins>
+    <EquivalentAddin>
+      <ProgID>ContosoCOMAddin</ProgID>
+      <Type>COM</Type>
+    </EquivalentAddin>
+  <EquivalentAddins>
+  ...
 </VersionOverrides>
 ```
 
+> [!TIP]
+> 有关 COM 加载项和 XLL UDF 兼容性的信息, 请参阅[使您的自定义函数与 XLL 用户定义的函数兼容](../excel/make-custom-functions-compatible-with-xll-udf.md)。
+
 ## <a name="equivalent-behavior-for-users"></a>用户的等效行为
 
-当在 Excel 外接程序清单中指定了等效的 COM 加载项时, Office 将在安装等效 COM 加载项时禁止在 Windows 上使用 Excel 外接程序的 UI。 这不会影响其他平台 (如 online 或 macOS) 上的 Excel 外接程序 UI。 Office 仅隐藏功能区按钮, 不会阻止安装。 因此, Excel 外接程序仍将显示在以下 UI 位置:
+在 Office 外接程序清单中指定等效的 COM 外接程序时, 如果安装了等效的 COM 加载项, 则 Windows 上的 Office 将不会显示 Office 加载项的用户界面 (UI)。 Office 仅隐藏 Office 加载项的功能区按钮, 不会阻止安装。 因此, 你的 Office 外接程序仍将显示在 UI 中的以下位置:
 
-- 在 **"我的外接程序**" 下, 因为它已安装技术。
-- 作为功能区管理器中的条目。
+- 在 **"我的外接程序**" 下
+- 作为功能区管理器中的条目
 
-以下方案描述了根据用户获取 Excel 加载项的方式而发生的情况。
+> [!NOTE]
+> 在清单中指定等效的 COM 加载项不会对其他平台 (如 web 上的 Office 或 Office for Mac) 产生影响。
 
-### <a name="appsource-acquisition-of-an-excel-add-in"></a>AppSource 获取 Excel 外接程序
+以下方案描述了根据用户获取 Office 加载项的方式而发生的情况。
 
-如果用户从 AppSource 下载 Excel 加载项, 并且已安装等效的 COM 加载项, 则 Office 将执行以下操作:
+### <a name="appsource-acquisition-of-an-office-add-in"></a>AppSource Office 外接程序的获取
 
-1. 安装 Excel 加载项。
-2. 在功能区中隐藏 Excel 加载项 UI。
+如果用户从 AppSource 获取 Office 加载项, 并且已安装等效的 COM 加载项, 则 Office 将:
+
+1. 安装 Office 加载项。
+2. 在功能区中隐藏 Office 加载项 UI。
 3. 为用户显示一个指出 "COM 加载项" 功能区按钮的调用。
 
-### <a name="centralized-deployment-of-excel-add-in"></a>Excel 加载项的集中部署
+### <a name="centralized-deployment-of-office-add-in"></a>Office 加载项的集中部署
 
-如果管理员使用集中部署将 Excel 加载项部署到其租户, 并且已安装等效的 COM 加载项, 则用户需要先重新启动 Office, 然后他们才会看到任何更改。 Office 重启后, 将执行以下操作:
+如果管理员使用集中部署将 Office 加载项部署到其租户, 并且已安装了等效的 COM 加载项, 则用户必须重新启动 Office 才能看到任何更改。 Office 重启后, 将执行以下操作:
 
-1. 安装 Excel 加载项。
-2. 在功能区中隐藏 Excel 加载项 UI。
+1. 安装 Office 加载项。
+2. 在功能区中隐藏 Office 加载项 UI。
 3. 为用户显示一个指出 "COM 加载项" 功能区按钮的调用。
 
-### <a name="document-shared-with-embedded-excel-add-in"></a>与嵌入的 Excel 加载项共享的文档
+### <a name="document-shared-with-embedded-office-add-in"></a>与嵌入的 Office 加载项共享的文档
 
-如果用户安装了 COM 外接程序, 然后使用嵌入的 Excel 加载项获取共享文档, 然后当他们打开文档时, Office 将执行以下操作:
+如果用户安装了 COM 加载项, 然后使用嵌入的 Office 外接程序获取共享文档, 然后当他们打开文档时, Office 将执行以下操作:
 
-1. 提示用户信任 Excel 加载项。
-2. 如果受信任, 将安装 Excel 加载项。
-3. 在功能区中隐藏 Excel 加载项 UI。
+1. 提示用户信任 Office 加载项。
+2. 如果受信任, Office 加载项将会安装。
+3. 在功能区中隐藏 Office 加载项 UI。
 
 ## <a name="other-com-add-in-behavior"></a>其他 COM 加载项行为
 
-如果用户卸载 COM 加载项, 则 Office 将在 Windows 上还原 Excel 外接程序 UI, 以获取等效的已安装 Excel 加载项。
+如果用户卸载等效的 COM 加载项, 则 Windows 上的 Office 将还原 Office 加载项 UI。
 
-为 Excel 加载项指定等效的 COM 加载项后, Office 将停止处理 Excel 加载项的更新。 用户必须卸载 COM 加载项, 才能获取 Excel 外接程序的最新更新。
+为 Office 外接程序指定等效的 COM 外接程序后, Office 将停止处理 Office 外接程序的更新。 若要获取 Office 外接程序的最新更新, 用户必须先卸载 COM 加载项。
 
 ## <a name="see-also"></a>另请参阅
 

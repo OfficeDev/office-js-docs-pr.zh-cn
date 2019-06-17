@@ -1,14 +1,14 @@
 ---
 title: Word 加载项概述
 description: ''
-ms.date: 05/08/2019
+ms.date: 06/12/2019
 localization_priority: Priority
-ms.openlocfilehash: 4b20b6007dba879b16ae8f6a586cf933f2f4fef0
-ms.sourcegitcommit: 3f84b2caa73d7fe1eb0d15e32ea4dec459e2ff53
+ms.openlocfilehash: bf0b481ef9c982f06ea04aaecb70a76a790846d2
+ms.sourcegitcommit: ee5b4935b5ee1db567a13627b2f87471ee8b8165
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/12/2019
-ms.locfileid: "34910278"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "34933770"
 ---
 # <a name="word-add-ins-overview"></a>Word 加载项概述
 
@@ -74,15 +74,11 @@ Word.run(function (context) {
 
 ## <a name="next-steps"></a>后续步骤
 
-准备好创建首个 Word 加载项了吗？请参阅[生成首个 Word 加载项](word-add-ins.md)。还可以尝试感受交互式[入门体验](/office/dev/add-ins/?product=Word)。请使用[加载项清单](../develop/add-in-manifests.md)描述加载项的托管位置和显示方式，并定义权限和其他信息。
+准备好创建首个 Word 加载项了吗？请参阅[构建首个 Word 加载项](word-add-ins.md)。请使用[加载项清单](../develop/add-in-manifests.md)描述加载项的托管位置和显示方式，并定义权限和其他信息。
 
 若要了解如何设计世界一流的 Word 外接程序来为用户打造具有吸引力的体验，请参阅[设计指南](../design/add-in-design.md)和[最佳实践](../concepts/add-in-development-best-practices.md)。
 
 开发加载项后，可以将它[发布](../publish/publish.md)到网络共享、应用目录或 AppSource。
-
-## <a name="whats-coming-up-for-word-add-ins"></a>Word 加载项未来发展趋势如何？
-
-随着我们设计和开发适用于 Word 加载项的新 API，我们将会发布这些 API，以供大家在 [API 开放性规范](/office/dev/add-ins/reference/openspec/openspec)页面上提供反馈。请了解即将推出的 Word JavaScript API 新功能，并提供对设计规范的宝贵意见。
 
 ## <a name="see-also"></a>另请参阅
 

@@ -1,14 +1,14 @@
 ---
-ms.date: 05/03/2019
-description: 使用 JSDOC 标记动态创建自定义函数 JSON 元数据。
+ms.date: 06/10/2019
+description: 使用 JSDoc 标记动态创建自定义函数 JSON 元数据。
 title: 为自定义函数自动生成 JSON 元数据
 localization_priority: Priority
-ms.openlocfilehash: 67026e7c19580c3420638b4f37e333e50fce1b44
-ms.sourcegitcommit: b299b8a5dfffb6102cb14b431bdde4861abfb47f
+ms.openlocfilehash: 960e1eca1e01aec21967733d802a5fdd48122cbc
+ms.sourcegitcommit: 3f84b2caa73d7fe1eb0d15e32ea4dec459e2ff53
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/30/2019
-ms.locfileid: "34589130"
+ms.lasthandoff: 06/12/2019
+ms.locfileid: "34910299"
 ---
 # <a name="autogenerate-json-metadata-for-custom-functions"></a>为自定义函数自动生成 JSON 元数据
 
@@ -19,6 +19,23 @@ ms.locfileid: "34589130"
 为 JavaScript 或 TypeScript 函数添加代码注释中的 `@customfunction` 标记以将其标记为自定义函数。
 
 可以使用 JavaScript 中的 [@param](#param) 标记或从 TypeScript 中的[函数类型](https://www.typescriptlang.org/docs/handbook/functions.html)提供函数参数类型。 有关详细信息，请参阅 [@param](#param) 标记和[类型](#types)部分。
+
+### <a name="adding-a-description-to-a-function"></a>为函数添加说明
+
+当用户需要帮助来了解自定义函数的功能时，将向用户显示用作帮助文本的说明。 说明不需要任何特定标记。 只需在 JSDoc 注释中输入简短的文本说明即可。 一般来说，说明位于 JSDoc 注释部分的开头，但无论位于何处，它都有用。
+
+若要查看内置函数说明的示例，请打开 Excel，转到“**公式**”选项卡，然后选择“**插入函数**”。 然后，你可以浏览所有函数说明，还可以查看列出的自定义函数。
+
+在以下示例中，短语“计算球体的体积” 就是自定义函数的相关说明。
+
+```JS
+/**
+/* Calculates the volume of a sphere
+/* @customfunction VOLUME
+...
+ */
+```
+
 
 ## <a name="jsdoc-tags"></a>JSDoc 标记
 Excel 自定义函数支持以下 JSDoc 标记：
@@ -57,20 +74,32 @@ Excel 自定义函数支持以下 JSDoc 标记：
 
 #### <a name="id"></a>id
 
-id 用作存储在文档中的自定义函数的固定标识符。 不得更改。
+`id` 是自定义函数的固定标识符。
 
-* 如果未提供 ID，请将 JavaScript/TypeScript 函数名称转换为大写并删除禁用字符。
-* id 对于所有自定义函数必须是唯一的。
+* 如果未提供 `id`，请将 JavaScript/TypeScript 函数名称转换为大写并删除禁用字符。
+* `id` 对于所有自定义函数必须是唯一的。
 * 允许使用的字符限为：A-Z、a-z、0-9、下划线 (\_) 和句点 (.)。
 
-#### <a name="name"></a>name
+#### <a name="name"></a>名称
 
-提供自定义函数的显示名称。
+提供自定义函数的显示`name`。
 
 * 如果未提供名称，则 id 还会用作名称。
 * 允许使用的字符：字母 [Unicode 字母字符](https://www.unicode.org/reports/tr44/tr44-22.html#Alphabetic)、数字、句点 (.) 和下划线 (\_)。
 * 必须以字母开头。
 * 最大长度为 128 个字符。
+
+### <a name="description"></a>说明
+
+说明不需要任何特定标记。 通过在 JSDoc 注释中添加一个短语来描述函数的功能，为自定义函数添加说明。 默认情况下，JSDoc 注释部分中未标记的任何文本都是该函数的说明。 当 Excel 中的用户进入该函数时，将向其显示相关说明。 在以下示例中，短语“对两个数字求和的函数”是 id 属性为 `SUM` 的自定义函数的相关说明。
+
+```JS
+/**
+/* @customfunction SUM
+/* A function that sums two numbers
+...
+ */
+```
 
 ---
 ### <a name="helpurl"></a>@helpurl
@@ -153,7 +182,7 @@ TypeScript 语法：@param name _description_
 ### <a name="volatile"></a>@volatile
 <a id="volatile"/>
 
-可变函数是其结果不能假定为即使不采用任何参数或参数未发生更改也始终保持不变的函数。 Excel 在每次完成计算后，都会重新计算包含可变函数和所有依赖项的单元格。 因此，过于依赖可变函数会使重新计算时间变慢，请谨慎使用。
+可变函数是指其结果不断变化的函数，即使不采用任何参数或参数未发生更改都是如此。 Excel 在每次完成计算后，都会重新计算包含可变函数和所有依赖项的单元格。 因此，过于依赖可变函数会使重新计算时间变慢，请谨慎使用。
 
 流式处理函数不能为可变函数。
 
@@ -175,7 +204,7 @@ TypeScript 语法：@param name _description_
 
 非流式处理函数可以通过返回错误类型来指示错误。
 
-流式处理函数可以通过使用错误类型调用 setResult() 来指示错误。
+流式处理函数可以通过使用错误类型调用 `setResult()` 来指示错误。
 
 ### <a name="promise"></a>Promise
 
