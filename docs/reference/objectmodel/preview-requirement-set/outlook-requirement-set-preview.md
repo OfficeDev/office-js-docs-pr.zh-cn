@@ -1,14 +1,14 @@
 ---
 title: Outlook 外接程序 API 预览要求集
 description: ''
-ms.date: 06/03/2019
+ms.date: 06/14/2019
 localization_priority: Priority
-ms.openlocfilehash: 6d7dceba80929c2abace9daec859302c43913f98
-ms.sourcegitcommit: 567aa05d6ee6b3639f65c50188df2331b7685857
+ms.openlocfilehash: 346750557e68508f2a5707433dea122052bc2016
+ms.sourcegitcommit: e112a9b29376b1f574ee13b01c818131b2c7889d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "34706349"
+ms.lasthandoff: 06/15/2019
+ms.locfileid: "34997370"
 ---
 # <a name="outlook-add-in-api-preview-requirement-set"></a>Outlook 外接程序 API 预览要求集
 
@@ -246,7 +246,7 @@ ms.locfileid: "34706349"
 
 添加了对 `getAccessTokenAsync` 的访问，使外接程序[能够访问](/outlook/add-ins/authenticate-a-user-with-an-sso-token) Microsoft Graph API 的访问令牌。
 
-**适用对象**：Windows 版 Outlook（连接到 Office 365）、Outlook for Mac（连接到 Office 365）、Outlook 网页版（Outlook.com 和连接到 Office 365）、Outlook 网页版（经典）
+**适用对象**：Windows 版 Outlook（连接到 Office 365）、Outlook for Mac（连接到 Office 365）、Outlook 网页版（全新）、Outlook 网页版（经典）
 
 ## <a name="see-also"></a>另请参阅
 

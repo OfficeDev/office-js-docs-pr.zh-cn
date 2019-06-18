@@ -1,15 +1,15 @@
 ---
 title: Word JavaScript API 要求集
 description: ''
-ms.date: 05/08/2019
+ms.date: 06/11/2019
 ms.prod: word
 localization_priority: Priority
-ms.openlocfilehash: 0f9d17669a8000f5d8d9f0b2d1da04eb0175315c
-ms.sourcegitcommit: a99be9c4771c45f3e07e781646e0e649aa47213f
+ms.openlocfilehash: be2c9834fbf3ceabcbbca6f2378b4356095ab387
+ms.sourcegitcommit: e112a9b29376b1f574ee13b01c818131b2c7889d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/11/2019
-ms.locfileid: "33952234"
+ms.lasthandoff: 06/15/2019
+ms.locfileid: "34997391"
 ---
 # <a name="word-javascript-api-requirement-sets"></a>Word JavaScript API 要求集
 
@@ -19,11 +19,12 @@ Word 加载项可在多个 Office 版本中运行，包括 Windows 版 Office 20
 
 > [!NOTE]
 > 对于标记为 Beta 的要求集，请使用 Office 软件的指定版本（或更高版本），并使用 CDN 的 Beta 库：https://appsforoffice.microsoft.com/lib/beta/hosted/office.js。
-> 
+>
 > 未列为 Beta 的条目已全面发布，可以继续使用生产 CDN 库：https://appsforoffice.microsoft.com/lib/1/hosted/office.js
 
 |  要求集  |   Windows 版 Office\*<br>（连接到 Office 365）  |  Office for iPad<br>（连接到 Office 365）  |  Office for Mac<br>（连接到 Office 365）  | Office Online  | Office Online Server  |
 |:-----|-----|:-----|:-----|:-----|:-----|
+| [预览](/javascript/api/word)  | 请使用最新的 Office 版本来试用预览 API（你可能需要加入 [Office 预览体验成员计划](https://products.office.com/office-insider)） |
 | WordApi 1.3 | 版本 1612（内部版本 7668.1000）或更高版本| 2017 年 3 月，2.22 或更高版本 | 2017 年 3 月，15.32 或更高版本| 2017 年 3 月 ||
 | WordApi 1.2  | 2015 年 12 月更新，版本 1601（内部版本 6568.1000）或更高版本 | 2016 年 1 月，1.18 或更高版本 | 2016 年 1 月，15.19 或更高版本| 2016 年 9 月 | |
 | WordApi 1.1  | 版本 1509（内部版本 4266.1001）或更高版本| 2016 年 1 月，1.18 或更高版本 | 2016 年 1 月，15.19 或更高版本| 2016 年 9 月 | |
@@ -38,16 +39,86 @@ Word 加载项可在多个 Office 版本中运行，包括 Windows 版 Office 20
 - [在哪里可以找到 Office 365 客户端应用程序的版本号和内部版本号](https://support.office.com/article/version-and-build-numbers-of-update-channel-releases-ae942449-1fca-4484-898b-a933ea23def7)
 - [Office Online Server 概述](/officeonlineserver/office-online-server-overview)
 
-## <a name="office-common-api-requirement-sets"></a>Office 通用 API 要求集
+## <a name="word-javascript-preview-apis"></a>Word JavaScript 预览 API
 
-若要了解通用 API 要求集，请参阅 [Office 通用 API 要求集](office-add-in-requirement-sets.md)。
+新的 Word JavaScript API 首先在“预览版”中引入，在进行充分测试并获得用户反馈后，它将成为编号的特定要求集的一部分。
 
-## <a name="whats-new-in-word-javascript-api-13"></a>Word JavaScript API 1.3 的最近更新 
+> [!NOTE]
+> 预览 API 可能会发生变更，不适合在生产环境中使用。 我们建议你仅在测试和开发环境中试用它们。 不要在生产环境或业务关键型文档中使用预览 API。
+>
+> 若要使用预览 API，你必须引用 CDN 上的 **beta** 库（https://appsforoffice.microsoft.com/lib/beta/hosted/office.js)并且你可能还需要加入 Office 预览体验成员计划才能获得新的 Office 版本。
 
-下面介绍了要求集 1.3 中 Word JavaScript API 的新增内容。 
+以下是当前预览版中的 API 的完整列表。
 
-|对象| 最近更新| 说明|要求集| 
-|:-----|-----|:----|:----| 
+| Class | 域 | 说明 |
+|:---|:---|:---|
+|[ContentControl](/javascript/api/word/word.contentcontrol)|[onDataChanged](/javascript/api/word/word.contentcontrol#ondatachanged)|内容控件中的数据更改时发生。 若要获取新文本，请在处理程序中加载此内容控件。 若要获取旧文本，则不要加载此控件。|
+||[onDeleted](/javascript/api/word/word.contentcontrol#ondeleted)|删除内容控件时发生。 不要在处理程序中加载此内容控件，否则将无法获取其原始属性。|
+||[onSelectionChanged](/javascript/api/word/word.contentcontrol#onselectionchanged)|内容控件中的选定内容更改时发生。|
+|[ContentControlEventArgs](/javascript/api/word/word.contentcontroleventargs)|[contentControl](/javascript/api/word/word.contentcontroleventargs#contentcontrol)|引发事件的对象。 请加载此对象以获取其属性。|
+||[eventType](/javascript/api/word/word.contentcontroleventargs#eventtype)|事件类型。 有关详细信息，请参阅 Word.EventType。|
+|[CustomXmlPart](/javascript/api/word/word.customxmlpart)|[delete()](/javascript/api/word/word.customxmlpart#delete--)|删除自定义 XML 部件。|
+||[deleteAttribute(xpath: string, namespaceMappings: any, name: string)](/javascript/api/word/word.customxmlpart#deleteattribute-xpath--namespacemappings--name-)|从 xpath 标识的元素中删除具有给定名称的属性。|
+||[deleteElement(xpath: string, namespaceMappings: any)](/javascript/api/word/word.customxmlpart#deleteelement-xpath--namespacemappings-)|删除由 xpath 标识的元素。|
+||[getXml()](/javascript/api/word/word.customxmlpart#getxml--)|获取自定义 XML 部件的完整 XML 内容。|
+||[insertAttribute(xpath: string, namespaceMappings: any, name: string, value: string)](/javascript/api/word/word.customxmlpart#insertattribute-xpath--namespacemappings--name--value-)|将具有给定名称和值的属性插入到由 xpath 标识的元素中。|
+||[insertElement(xpath: string, xml: string, namespaceMappings: any, index?: number)](/javascript/api/word/word.customxmlpart#insertelement-xpath--xml--namespacemappings--index-)|将给定的 XML 插入到子位置索引处由 xpath 标识的父元素下。|
+||[query(xpath: string, namespaceMappings: any)](/javascript/api/word/word.customxmlpart#query-xpath--namespacemappings-)|查询自定义 XML 部件的 XML 内容。|
+||[id](/javascript/api/word/word.customxmlpart#id)|获取自定义 XML 部件的 ID。 只读。|
+||[namespaceUri](/javascript/api/word/word.customxmlpart#namespaceuri)|获取自定义 XML 部件的命名空间 URI。 只读。|
+||[setXml(xml: string)](/javascript/api/word/word.customxmlpart#setxml-xml-)|设置自定义 XML 部件的完整 XML 内容。|
+||[updateAttribute(xpath: string, namespaceMappings: any, name: string, value: string)](/javascript/api/word/word.customxmlpart#updateattribute-xpath--namespacemappings--name--value-)|更新 xpath 所标识元素中具有给定名称的属性的值。|
+||[updateElement(xpath: string, xml: string, namespaceMappings: any)](/javascript/api/word/word.customxmlpart#updateelement-xpath--xml--namespacemappings-)|更新由 xpath 标识的元素的 XML。|
+|[CustomXmlPartCollection](/javascript/api/word/word.customxmlpartcollection)|[add(xml: string)](/javascript/api/word/word.customxmlpartcollection#add-xml-)|向文档添加新的自定义 XML 部件。|
+||[getByNamespace(namespaceUri: string)](/javascript/api/word/word.customxmlpartcollection#getbynamespace-namespaceuri-)|获取其命名空间匹配给定命名空间的自定义 XML 部件的新作用域内集合。|
+||[getCount()](/javascript/api/word/word.customxmlpartcollection#getcount--)|获取集合中项的数目。|
+||[getItem(id: string)](/javascript/api/word/word.customxmlpartcollection#getitem-id-)|根据 ID 获取自定义 XML 部件。 只读。|
+||[getItemOrNullObject(id: string)](/javascript/api/word/word.customxmlpartcollection#getitemornullobject-id-)|根据 ID 获取自定义 XML 部件。 如果 CustomXmlPart 不存在，则返回 null 对象。|
+||[项目](/javascript/api/word/word.customxmlpartcollection#items)|获取此集合中已加载的子项。|
+|[CustomXmlPartScopedCollection](/javascript/api/word/word.customxmlpartscopedcollection)|[getCount()](/javascript/api/word/word.customxmlpartscopedcollection#getcount--)|获取集合中项的数目。|
+||[getItem(id: string)](/javascript/api/word/word.customxmlpartscopedcollection#getitem-id-)|根据 ID 获取自定义 XML 部件。 只读。|
+||[getItemOrNullObject(id: string)](/javascript/api/word/word.customxmlpartscopedcollection#getitemornullobject-id-)|根据 ID 获取自定义 XML 部件。 如果集合中不存在 CustomXmlPart，则返回 null 对象。|
+||[getOnlyItem()](/javascript/api/word/word.customxmlpartscopedcollection#getonlyitem--)|如果集合仅包含一个项，则此方法返回该项。 否则，此方法将产生错误。|
+||[getOnlyItemOrNullObject()](/javascript/api/word/word.customxmlpartscopedcollection#getonlyitemornullobject--)|如果集合仅包含一个项，则此方法返回该项。 否则，此方法返回 null 对象。|
+||[项目](/javascript/api/word/word.customxmlpartscopedcollection#items)|获取此集合中已加载的子项。|
+|[Document](/javascript/api/word/word.document)|[deleteBookmark(name: string)](/javascript/api/word/word.document#deletebookmark-name-)|从文档中删除某个书签（如果存在）。|
+||[getBookmarkRange(name: string)](/javascript/api/word/word.document#getbookmarkrange-name-)|获取某个书签的范围。 当相应书签不存在时引发。|
+||[getBookmarkRangeOrNullObject(name: string)](/javascript/api/word/word.document#getbookmarkrangeornullobject-name-)|获取某个书签的范围。 如果该书签不存在，则返回 null 对象。|
+||[customXmlParts](/javascript/api/word/word.document#customxmlparts)|获取文档中的自定义 XML 部件。 只读。|
+||[onContentControlAdded](/javascript/api/word/word.document#oncontentcontroladded)|添加内容控件时发生。 在处理程序中运行 context.sync() 以获取新内容控件的属性。|
+||[settings](/javascript/api/word/word.document#settings)|获取文档中的外接程序的设置。 只读。|
+|[DocumentCreated](/javascript/api/word/word.documentcreated)|[deleteBookmark(name: string)](/javascript/api/word/word.documentcreated#deletebookmark-name-)|从文档中删除某个书签（如果存在）。|
+||[getBookmarkRange(name: string)](/javascript/api/word/word.documentcreated#getbookmarkrange-name-)|获取某个书签的范围。 当相应书签不存在时引发。|
+||[getBookmarkRangeOrNullObject(name: string)](/javascript/api/word/word.documentcreated#getbookmarkrangeornullobject-name-)|获取某个书签的范围。 如果该书签不存在，则返回 null 对象。|
+||[customXmlParts](/javascript/api/word/word.documentcreated#customxmlparts)|获取文档中的自定义 XML 部件。 只读。|
+||[settings](/javascript/api/word/word.documentcreated#settings)|获取文档中的外接程序的设置。 只读。|
+|[InlinePicture](/javascript/api/word/word.inlinepicture)|[imageFormat](/javascript/api/word/word.inlinepicture#imageformat)|获取嵌入式图像的格式。 只读。|
+|[List](/javascript/api/word/word.list)|[getLevelFont(level: number)](/javascript/api/word/word.list#getlevelfont-level-)|获取列表中指定级别的项目符号、编号或图片的字体。|
+||[getLevelPicture(level: number)](/javascript/api/word/word.list#getlevelpicture-level-)|获取表示列表中指定级别的图片的 base64 编码字符串。|
+||[resetLevelFont(level: number, resetFontName?: boolean)](/javascript/api/word/word.list#resetlevelfont-level--resetfontname-)|重置列表中指定级别的项目符号、编号或图片的字体。|
+||[setLevelPicture(level: number, base64EncodedImage?: string)](/javascript/api/word/word.list#setlevelpicture-level--base64encodedimage-)|设置列表中指定级别的图片。|
+|[Range](/javascript/api/word/word.range)|[getBookmarks(includeHidden?: boolean, includeAdjacent?: boolean)](/javascript/api/word/word.range#getbookmarks-includehidden--includeadjacent-)|获取相应范围内或与该范围交叠的所有书签的名称。 如果书签名称以下划线字符开头，则隐藏该书签。|
+||[insertBookmark(name: string)](/javascript/api/word/word.range#insertbookmark-name-)|在相应范围内插入书签。 如果某处存在同名书签，则首先将其删除。|
+|[Setting](/javascript/api/word/word.setting)|[delete()](/javascript/api/word/word.setting#delete--)|删除设置。|
+||[key](/javascript/api/word/word.setting#key)|获取设置的键。 只读。|
+||[value](/javascript/api/word/word.setting#value)|获取或设置设置的值。|
+|[SettingCollection](/javascript/api/word/word.settingcollection)|[add(key: string, value: any)](/javascript/api/word/word.settingcollection#add-key--value-)|创建新设置或设置现有设置。|
+||[deleteAll()](/javascript/api/word/word.settingcollection#deleteall--)|删除该外接程序中的所有设置。|
+||[getCount()](/javascript/api/word/word.settingcollection#getcount--)|获取设置的计数。|
+||[getItem(key: string)](/javascript/api/word/word.settingcollection#getitem-key-)|通过键（区分大小写）获取设置对象。 当设置不存在时引发。|
+||[getItemOrNullObject(key: string)](/javascript/api/word/word.settingcollection#getitemornullobject-key-)|通过键（区分大小写）获取设置对象。 如果设置不存在，则返回 null 对象。|
+||[项目](/javascript/api/word/word.settingcollection#items)|获取此集合中已加载的子项。|
+|[Table](/javascript/api/word/word.table)|[mergeCells(topRow: number, firstCell: number, bottomRow: number, lastCell: number)](/javascript/api/word/word.table#mergecells-toprow--firstcell--bottomrow--lastcell-)|合并第一个和最后一个单元格所包围的单元格。|
+|[TableCell](/javascript/api/word/word.tablecell)|[split(rowCount: number, columnCount: number)](/javascript/api/word/word.tablecell#split-rowcount--columncount-)|将单元格拆分为指定的行数和列数。|
+|[TableRow](/javascript/api/word/word.tablerow)|[insertContentControl()](/javascript/api/word/word.tablerow#insertcontentcontrol--)|在行上插入内容控件。|
+||[merge()](/javascript/api/word/word.tablerow#merge--)|将行合并到一个单元格中。|
+
+## <a name="whats-new-in-word-javascript-api-13"></a>Word JavaScript API 1.3 的最近更新
+
+下面介绍了要求集 1.3 中 Word JavaScript API 的新增内容。
+
+|对象| 最近更新| 说明|要求集|
+|:-----|-----|:----|:----|
 |[application](/javascript/api/word/word.application)|_方法_ > createDocument(base64File: string) | 使用 base64 编码的.docx 文件创建新文档。 只读。|1.3|
 |[body](/javascript/api/word/word.body)|_关系_ > lists|获取 body 中的一组 list 对象。只读。|1.3|
 |[body](/javascript/api/word/word.body)|_关系_ > parentBody|获取 body 的父正文。例如，表格单元格 body 的父正文可能是标题。只读。|1.3|
