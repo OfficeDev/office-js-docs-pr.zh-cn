@@ -1,20 +1,18 @@
 ---
-ms.date: 05/03/2019
+ms.date: 06/17/2019
 description: 使用 Excel 中的自定义函数对用户进行身份验证。
 title: 自定义函数的身份验证
 localization_priority: Priority
-ms.openlocfilehash: bfb3acde2e03c8fc13d312977a2ab3c85107a42f
-ms.sourcegitcommit: 3f84b2caa73d7fe1eb0d15e32ea4dec459e2ff53
+ms.openlocfilehash: 30ff1b91db8bf7f0183a44f1e7e078a6308c1351
+ms.sourcegitcommit: 4bf5159a3821f4277c07d89e88808c4c3a25ff81
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/12/2019
-ms.locfileid: "34910306"
+ms.lasthandoff: 06/18/2019
+ms.locfileid: "35059739"
 ---
 # <a name="authentication-for-custom-functions"></a>自定义函数的身份验证
 
 在某些情况下，你的自定义函数需要对用户进行身份验证才能访问受保护的资源。 虽然自定义函数不需要特定的身份验证方法，但你应该知道自定义函数在与加载项的任务窗格和其他 UI 元素不同的运行时中运行。 因此，你需要使用 `OfficeRuntime.storage` 对象和对话框 API 在两个运行时之间来回传递数据。
-
-[!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
 ## <a name="officeruntimestorage-object"></a>OfficeRuntime.storage 对象
 

@@ -1,20 +1,18 @@
 ---
-ms.date: 05/06/2019
+ms.date: 06/17/2019
 description: 在 Excel 中使用 JavaScript 通过自定义函数创建对话框。
 title: 通过自定义函数显示对话框
 localization_priority: Priority
-ms.openlocfilehash: 3d7a657402c319b2394c7331b69314b2e5591890
-ms.sourcegitcommit: ff73cc04e5718765fcbe74181505a974db69c3f5
+ms.openlocfilehash: cdbd199e8d8484f317d78a91833088c69db18685
+ms.sourcegitcommit: 4bf5159a3821f4277c07d89e88808c4c3a25ff81
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "33628141"
+ms.lasthandoff: 06/18/2019
+ms.locfileid: "35059872"
 ---
 # <a name="display-a-dialog-box-from-a-custom-function"></a>通过自定义函数显示对话框
 
 如果你的自定义函数需要与用户进行交互，可以使用[`Office.Dialog`对象](/javascript/api/office-runtime/officeruntime.dialog?view=office-js)创建对话框。 使用该对话框的常见方案是对用户进行身份验证，以便你的自定义函数可以访问 Web 服务。 有关使用自定义函数进行身份验证的详细信息，请参阅[自定义函数身份验证](./custom-functions-authentication.md)。
-
-[!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
 >[!NOTE]
 > `Office.Dialog` 对象是自定义函数运行时的一部分。 任务窗格不使用 `Dialog` 对象。 若要从任务窗格创建对话框，请参阅[对话框 API](/office/dev/add-ins/develop/dialog-api-in-office-add-ins)。
