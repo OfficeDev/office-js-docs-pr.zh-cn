@@ -1,14 +1,14 @@
 ---
 title: 使用 XLL 用户定义的函数扩展自定义函数
 description: 启用与自定义函数具有等效功能的 Excel XLL 用户定义函数的兼容性 (预览)
-ms.date: 05/08/2019
+ms.date: 06/19/2019
 localization_priority: Normal
-ms.openlocfilehash: 3e1782c5df227d3e173f4291ba88f2057200b1c5
-ms.sourcegitcommit: a99be9c4771c45f3e07e781646e0e649aa47213f
+ms.openlocfilehash: 8d476ecf777561b79b8bf9c5cf1e4712d7869d0e
+ms.sourcegitcommit: 4bf5159a3821f4277c07d89e88808c4c3a25ff81
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/11/2019
-ms.locfileid: "33951884"
+ms.lasthandoff: 06/18/2019
+ms.locfileid: "35059690"
 ---
 # <a name="extend-custom-functions-with-xll-user-defined-functions-preview"></a>使用 XLL 用户定义的函数扩展自定义函数 (预览)
 
@@ -22,23 +22,22 @@ ms.locfileid: "33951884"
 
 若要设置自定义函数的等效 XLL, 请指定`FileName` XLL 的。 当用户使用 XLL 中的函数打开工作簿时, Excel 会将函数转换为兼容函数。 在 Windows 上的 Excel 中打开时, 工作簿将使用 XLL, 并且在联机或在 macOS 中打开时, 它将使用 Excel 外接程序中的自定义函数。
 
-下面的示例演示如何将 COM 外接程序和 XLL 都指定为等效项。 通常, 出于完整性的考虑, 这两个示例都会在上下文中显示这两个示例。 它们`ProgID` `FileName`分别由各自标识。 有关 COM 加载项兼容性的详细信息, 请参阅[使您的 Excel 外接程序与现有的 com 外](../develop/make-office-add-in-compatible-with-existing-com-add-in.md)接程序兼容。
+下面的示例演示如何将 COM 外接程序和 XLL 都指定为等效项。 通常, 出于完整性的考虑, 这两个示例都会在上下文中显示这两个示例。 它们`ProgId` `FileName`分别由各自标识。 `EquivalentAddins`元素必须紧跟在结束`VersionOverrides`标记之前。 有关 COM 加载项兼容性的详细信息, 请参阅[使您的 Excel 外接程序与现有的 com 外](../develop/make-office-add-in-compatible-with-existing-com-add-in.md)接程序兼容。
 
 ```xml
 <VersionOverrides>
-...
-<EquivalentAddins>
-  <EquivalentAddin>
-    <ProgID>ContosoCOMAddin</ProgID>
-    <Type>COM</Type>
-  </EquivalentAddin>
+  ...
+  <EquivalentAddins>
+    <EquivalentAddin>
+      <ProgId>ContosoCOMAddin</ProgId>
+      <Type>COM</Type>
+    </EquivalentAddin>
 
-  <EquivalentAddin>
-    <FileName>contosofunctions.xll</FileName>
-    <Type>XLL</Type>
-  </EquivalentAddin>
-<EquivalentAddins>
-...
+    <EquivalentAddin>
+      <FileName>contosofunctions.xll</FileName>
+      <Type>XLL</Type>
+    </EquivalentAddin>
+  <EquivalentAddins>
 </VersionOverrides>
 ```
 
@@ -65,7 +64,7 @@ ms.locfileid: "33951884"
 | 可变函数 | 是 | 是 | 是 |
 | 多线程重新计算支持 | 是 | 是 | 是 |
 | 计算行为 | 无 UI。 在计算过程中, Excel 可能会无响应。 | 用户将看到 #BUSY! 在返回结果之前。 | 用户将看到 #BUSY! 在返回结果之前。 |
-| 要求集 | 无 | Customfunctions.js 1.1 及更高版本 | Customfunctions.js 1.1 及更高版本 |
+| 要求集 | 不适用 | Customfunctions.js 1.1 及更高版本 | Customfunctions.js 1.1 及更高版本 |
 
 ## <a name="see-also"></a>另请参阅
 

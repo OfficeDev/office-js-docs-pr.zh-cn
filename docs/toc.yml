@@ -287,6 +287,9 @@
                 - name: 最佳做法
                   href: excel/custom-functions-best-practices.md
                   displayName: Excel
+                - name: COM 加载项和 XLL UDF 兼容性要求
+                  href: excel/xll-compatibility-requirements.md
+                  displayName: Excel
                 - name: 调试
                   href: excel/custom-functions-debugging.md
                   displayName: Excel
@@ -780,7 +783,7 @@
           href: reference/manifest/permissions.md
         - name: PhoneSettings
           href: reference/manifest/phonesettings.md
-        - name: ProgID
+        - name: ProgId
           href: reference/manifest/progid.md
         - name: ProviderName
           href: reference/manifest/providername.md

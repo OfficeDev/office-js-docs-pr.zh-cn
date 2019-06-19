@@ -1,20 +1,18 @@
 ---
-ms.date: 05/30/2019
+ms.date: 06/17/2019
 description: 在 Excel 中定义自定义函数的元数据。
 title: Excel 中自定义函数的元数据
 localization_priority: Normal
-ms.openlocfilehash: e51e4e8ee89eb1f345ee0c564e9b2ff8119806b2
-ms.sourcegitcommit: 567aa05d6ee6b3639f65c50188df2331b7685857
+ms.openlocfilehash: a7715bcdd125d44ec887f8b779ac0673b4a12af0
+ms.sourcegitcommit: 4bf5159a3821f4277c07d89e88808c4c3a25ff81
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "34706121"
+ms.lasthandoff: 06/18/2019
+ms.locfileid: "35059858"
 ---
 # <a name="custom-functions-metadata"></a>自定义函数元数据
 
 在 Excel 加载项中定义[自定义函数](custom-functions-overview.md)时, 加载项项目包含 JSON 元数据文件, 该文件提供了 Excel 注册自定义函数并使其可供最终用户使用的信息。
-
-[!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
 此文件的生成方式为:
 
@@ -113,7 +111,7 @@ ms.locfileid: "34706121"
 ```
 
 > [!NOTE]
-> 在 [OfficeDev/Excel-Custom-Functions](https://github.com/OfficeDev/Excel-Custom-Functions/blob/master/src/functions/functions.json) GitHub 存储库中提供了完整的示例 JSON 文件。
+> [OfficeDev/Excel 自定义函数](https://github.com/OfficeDev/Excel-Custom-Functions/blob/77760adb1dcc53469183049bea08196734dbc114/config/customfunctions.json)GitHub 存储库的提交历史记录中提供了完整的示例 JSON 文件。 随着项目已调整为自动生成 JSON, 手写 JSON 的完整示例仅在项目的早期版本中可用。
 
 ## <a name="functions"></a>functions 
 
@@ -122,7 +120,7 @@ ms.locfileid: "34706121"
 |  属性  |  数据类型  |  必需  |  说明  |
 |:-----|:-----|:-----|:-----|
 |  `description`  |  string  |  否  |  最终用户在 Excel 中看到的函数的说明。 例如，**将摄氏度值转换为华氏度**。 |
-|  `helpUrl`  |  字符串  |   否  |  提供有关函数的信息的 URL。 （它显示在任务窗格中。）例如，`http://contoso.com/help/convertcelsiustofahrenheit.html`。 |
+|  `helpUrl`  |  string  |   否  |  提供有关函数的信息的 URL。 （它显示在任务窗格中。）例如，`http://contoso.com/help/convertcelsiustofahrenheit.html`。 |
 | `id`     | string | 是 | 函数的唯一 ID。 此 ID 只能包含字母数字字符和句点，设置后不应更改。 |
 |  `name`  |  string  |  是  |  最终用户在 Excel 中看到的函数的名称。 在 Excel 中，此函数名称将以 XML 清单文件中指定的自定义函数命名空间为前缀。 |
 |  `options`  |  object  |  否  |  使用户能够自定义 Excel 执行函数的方式和时间。 有关详细信息，请参阅[选项](#options)。 |
@@ -147,7 +145,7 @@ ms.locfileid: "34706121"
 |  属性  |  数据类型  |  必需  |  说明  |
 |:-----|:-----|:-----|:-----|
 |  `description`  |  string  |  否 |  参数的说明。 这显示在 Excel 的 intelliSense 中。  |
-|  `dimensionality`  |  字符串  |  否  |  必须是**标量**（非数组值）或**矩阵**（二维数组）。  |
+|  `dimensionality`  |  string  |  否  |  必须是**标量**（非数组值）或**矩阵**（二维数组）。  |
 |  `name`  |  string  |  是  |  参数的名称。 此名称显示在 Excel 的 intelliSense 中。  |
 |  `type`  |  string  |  否  |  参数的数据类型。 可以是 **boolean**、**number**、**string** 或 **any**，允许使用前三种类型中的任何一种。 如果未指定此属性，则数据类型默认为 **any**。 |
 |  `optional`  | boolean | 否 | 如果为 `true`，则参数是可选的。 |

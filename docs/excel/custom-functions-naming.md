@@ -1,20 +1,18 @@
 ---
-ms.date: 05/03/2019
+ms.date: 06/17/2019
 description: 了解 Excel 自定义函数名称的要求并避免出现常见命名缺陷。
 title: Excel 中自定义函数的命名准则
 localization_priority: Normal
-ms.openlocfilehash: 64420171a90b29732745891cb691b8cd4309c53d
-ms.sourcegitcommit: 567aa05d6ee6b3639f65c50188df2331b7685857
+ms.openlocfilehash: 2c5b78b2ecd1ccdbdc3fcb5bf6601c06193a1ef1
+ms.sourcegitcommit: 4bf5159a3821f4277c07d89e88808c4c3a25ff81
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "34706076"
+ms.lasthandoff: 06/18/2019
+ms.locfileid: "35059823"
 ---
 # <a name="naming-guidelines"></a>命名准则
 
 自定义函数由 JSON 元数据文件中的**id**和**name**属性标识。
-
-[!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
 - 函数`id`用于唯一标识 JavaScript 代码中的自定义函数。 
 - 函数`name`用作在 Excel 中向用户显示的显示名称。 
@@ -35,7 +33,7 @@ Excel 使用大写字母作为内置函数名称 (例如`SUM`)。 因此, 请考
 
 - A1 到 XFD1048576 之间的任何单元格, 或从 R1C1 到 R1048576C16384 之间的任何单元格。
 
-- 任何 Excel 4.0 宏函数 (例如`RUN`, `ECHO`)。  有关这些函数的完整列表, 请参阅[本文](https://www.microsoft.com/en-us/download/details.aspx?id=1465)。
+- 任何 Excel 4.0 宏函数 (例如`RUN`, `ECHO`)。  有关这些函数的完整列表, 请参阅[此 Excel 宏函数参考文档](https://d13ot9o61jdzpp.cloudfront.net/files/Excel%204.0%20Macro%20Functions%20Reference.pdf)。
 
 ## <a name="naming-conflicts"></a>命名冲突
 

@@ -1,16 +1,16 @@
 ---
-ms.date: 03/13/2019
+ms.date: 06/17/2019
 description: 在 Excel 中调试自定义函数。
-title: 自定义函数调试 (预览)
+title: 自定义函数调试
 localization_priority: Normal
-ms.openlocfilehash: 08563ef630ebc457219c4c622328b84d13e6acab
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: 414944e66a6c55228ea009291be42218038fc6fa
+ms.sourcegitcommit: 4bf5159a3821f4277c07d89e88808c4c3a25ff81
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32448751"
+ms.lasthandoff: 06/18/2019
+ms.locfileid: "35059865"
 ---
-# <a name="custom-functions-debugging-preview"></a>自定义函数调试 (预览)
+# <a name="custom-functions-debugging"></a>自定义函数调试
 
 自定义函数的调试可以通过多种方式来完成, 具体取决于您使用的平台。
 
@@ -24,37 +24,35 @@ ms.locfileid: "32448751"
 - [Excel Online 和浏览器工具](#use-the-browser-developer-tools-to-debug-custom-functions-in-excel-online)
 - [命令行](#use-the-command-line-tools-to-debug)
 
-[!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
-
 > [!NOTE]
-> 为简单起见, 本文介绍了如何在使用 Visual Studio Code 编辑、运行任务以及某些情况下使用调试视图的上下文中进行调试。 如果使用的是其他编辑器或命令行工具, 请参阅本文末尾的[命令行说明](#use-the-command-line-tools-to-debug)。
+> 为简单起见, 本文介绍了如何在使用 Visual Studio Code 编辑、运行任务以及某些情况下使用调试视图的上下文中进行调试。 如果使用的是其他编辑器或命令行工具, 请参阅本文末尾的[命令行说明](#commands-for-building-and-running-your-add-in)。
 
-## <a name="requirements"></a>Requirements
+## <a name="requirements"></a>要求
 
-开始调试之前, 应使用 Yo Office 生成器创建自定义函数外接程序项目, 并确保您的项目具有受信任的自签名证书。 有关创建项目的说明, 请参阅[自定义函数教程](../tutorials/excel-tutorial-create-custom-functions.md)。 有关信任证书的说明, 请参阅[将自签名证书添加为受信任的根证书](https://github.com/OfficeDev/generator-office/blob/master/src/docs/ssl.md)。
+开始调试之前, 应使用[Office 外接程序的 Yeoman 生成器](https://github.com/OfficeDev/generator-office)创建自定义函数项目。 有关如何创建自定义函数项目的指南, 请参阅[自定义函数教程](../tutorials/excel-tutorial-create-custom-functions.md)。
 
 ## <a name="use-the-vs-code-debugger-for-excel-desktop"></a>对 Excel 桌面使用 VS 代码调试器
 
 您可以使用 VS 代码在桌面上调试 Office Excel 中的自定义函数。
 
 > [!NOTE]
-> 对 Mac 的桌面调试不可用, 但可通过[使用浏览器工具来调试 Excel Online](#use-the-browser-developer-tools-to-debug-custom-functions-in-excel-online)来实现。
+> 对 Mac 的桌面调试不可用, 但可通过[使用浏览器工具和命令行来调试 Excel Online 来](#use-the-command-line-tools-to-debug)实现。
 
 ### <a name="run-your-add-in-from-vs-code"></a>从 VS 代码运行外接程序
 
 1. 打开[VS 代码](https://code.visualstudio.com/)中的自定义函数根项目文件夹。
-2. 选择 "**终端 > 运行任务**", 然后键入或选择 "**监视**"。 这将监视和重建任何文件更改。
-3. 选择 "**终端 > 运行任务**", 然后键入或选择 " **Dev Server**"。 
+2. 选择 "**终端 > 运行任务**" 并键入或选择 "**监视**"。 这将监视和重建任何文件更改。
+3. 选择 "**终端 > 运行任务**", 然后键入或选择 " **Dev Server**"。
 
 ### <a name="start-the-vs-code-debugger"></a>启动 VS 代码调试器
 
 4. 选择 "**查看 > 调试**" 或输入**Ctrl + Shift + D**以切换到 "调试" 视图。
 5. 从 "调试" 选项中, 选择 " **Excel 桌面**"。
-6. 选择**F5** (或从菜单中选择 **> 启动调试**) 以开始调试。 将打开一个新的 Excel 工作簿, 您的外接程序已旁加载并可供使用。
+6. 选择**F5** (或从菜单中选择**Debug-> 启动调试**) 开始调试。 将打开一个新的 Excel 工作簿, 您的外接程序已旁加载并可供使用。
 
 ### <a name="start-debugging"></a>开始调试
 
-1. 在 VS 代码中, 打开源代码脚本文件 (函数 .js 或函数)。
+1. 在 VS 代码中, 打开源代码脚本文件 (**函数 .js**或**函数**)。
 2. 在自定义函数源代码中[设置断点](https://code.visualstudio.com/Docs/editor/debugging#_breakpoints)。
 3. 在 Excel 工作簿中, 输入使用自定义函数的公式。
 
@@ -62,22 +60,22 @@ ms.locfileid: "32448751"
 
 ## <a name="use-the-vs-code-debugger-for-excel-online-in-microsoft-edge"></a>在 Microsoft Edge 中将 VS 代码调试程序与 Excel Online 一起使用
 
-您可以使用 VS 代码在 Microsoft Edge 浏览器的 Excel Online 中调试自定义函数。 若要将 VS 代码与 microsoft edge 结合使用, 必须[为 microsoft edge](https://marketplace.visualstudio.com/items?itemName=msjsdiag.debugger-for-edge)扩展安装调试器。
+您可以使用 VS 代码在 Microsoft Edge 浏览器的 Excel Online 中调试自定义函数。 若要将 VS 代码与 Microsoft Edge 结合使用, 必须[为 Microsoft edge](https://marketplace.visualstudio.com/items?itemName=msjsdiag.debugger-for-edge)扩展安装调试器。
 
 ### <a name="run-your-add-in-from-vs-code"></a>从 VS 代码运行外接程序
 
 1. 打开[VS 代码](https://code.visualstudio.com/)中的自定义函数根项目文件夹。
-2. 选择 "**终端 > 运行任务**", 然后键入或选择 "**监视**"。 这将监视和重建任何文件更改。
+2. 选择 "**终端 > 运行任务**" 并键入或选择 "**监视**"。 这将监视和重建任何文件更改。
 3. 选择 "**终端 > 运行任务**", 然后键入或选择 " **Dev Server**"。 
 
 ### <a name="start-the-vs-code-debugger"></a>启动 VS 代码调试器
 
 4. 选择 "**查看 > 调试**" 或输入**Ctrl + Shift + D**以切换到 "调试" 视图。
-5. 从 "调试" 选项中, 选择 " **Office Online (边缘)**"。
-6. 使用 Microsoft Edge 浏览器打开 excel online, 打开 excel Online, 并创建新的工作簿。
+5. 从 "调试" 选项中, 选择 " **Office Online (Microsoft Edge)**"。
+6. 使用 Microsoft Edge 浏览器打开 Excel Online, 打开 Excel Online, 并创建新的工作簿。
 7. 在功能区中选择 "**共享**", 然后复制此新工作簿的 URL 的链接。
-8. 选择**F5** (或从菜单中选择 "**调试" > "启动调试**") 开始调试。 将显示提示, 询问您的文档的 URL。
-9. 粘贴到工作簿的 URL 中, 然后按 enter。
+8. 选择**F5** (或从菜单中选择 "**调试" > 启动调试**) 以开始调试。 将显示提示, 询问您的文档的 URL。
+9. 粘贴到工作簿的 URL 中, 然后按 Enter。
 
 ### <a name="sideload-your-add-in"></a>旁加载加载项   
 
@@ -92,7 +90,7 @@ ms.locfileid: "32448751"
 
 
 ### <a name="set-breakpoints"></a>设置断点
-1. 在 VS 代码中, 打开源代码脚本文件 (函数 .js 或函数)。
+1. 在 VS 代码中, 打开源代码脚本文件 (**函数 .js**或**函数**)。
 2. 在自定义函数源代码中[设置断点](https://code.visualstudio.com/Docs/editor/debugging#_breakpoints)。
 3. 在 Excel 工作簿中, 输入使用自定义函数的公式。
 
@@ -103,7 +101,7 @@ ms.locfileid: "32448751"
 ### <a name="run-your-add-in-from-visual-studio-code"></a>从 Visual Studio Code 运行外接程序
 
 1. 在[Visual Studio Code (VS code)](https://code.visualstudio.com/)中打开您的自定义函数根项目文件夹。
-2. 选择 "**终端 > 运行任务**", 然后键入或选择 "**监视**"。 这将监视和重建任何文件更改。
+2. 选择 "**终端 > 运行任务**" 并键入或选择 "**监视**"。 这将监视和重建任何文件更改。
 3. 选择 "**终端 > 运行任务**", 然后键入或选择 " **Dev Server**"。 
 
 ### <a name="sideload-your-add-in"></a>旁加载加载项   
@@ -125,7 +123,7 @@ ms.locfileid: "32448751"
 ### <a name="start-debugging"></a>开始调试
 
 1. 在浏览器中打开开发人员工具。 对于 Chrome 和大多数浏览器 F12 将打开开发人员工具。
-2. 在开发人员工具中, 使用**Cmd + p**或**Ctrl + p**打开源代码脚本文件 (函数 .js 或函数)。
+2. 在开发人员工具中, 使用**Cmd + p**或**Ctrl + p**打开源代码脚本文件 (**函数 .js**或**函数**)。
 3. 在自定义函数源代码中[设置断点](https://code.visualstudio.com/Docs/editor/debugging#_breakpoints)。 
 
 如果您需要更改代码, 您可以在 VS 代码中进行编辑并保存所做的更改。 刷新浏览器以查看加载的更改。
@@ -139,16 +137,16 @@ ms.locfileid: "32448751"
 
 3. 如果要在 Excel 的桌面版本中启动外接程序, 请运行以下命令
     
-    `npm run start desktop`
+    `npm run start:desktop`
     
     或者, 如果您更愿意在 Excel Online 中启动加载项, 请运行以下命令
     
-    `npm run start web`
+    `npm run start:web`
     
     对于 Excel Online, 还需要旁加载您的外接程序。 按照[旁加载您的外接程序](#sideload-your-add-in)中的步骤, 旁加载你的外接程序。 然后继续转到下一节以开始调试。
     
 4. 在浏览器中打开开发人员工具。 对于 Chrome 和大多数浏览器 F12 将打开开发人员工具。
-5. 在开发人员工具中, 打开源代码脚本文件 (函数 .js 或函数)。 您的自定义函数代码可能位于文件末尾附近。
+5. 在开发人员工具中, 打开源代码脚本文件 (**函数 .js**或**函数**)。 您的自定义函数代码可能位于文件末尾附近。
 6. 在自定义函数源代码中, 通过选择一行代码来应用断点。
 
 如果您需要更改代码, 您可以在 Visual Studio 中进行编辑并保存所做的更改。 刷新浏览器以查看加载的更改。
@@ -162,14 +160,16 @@ ms.locfileid: "32448751"
 - `npm run dev-server`: 运行用于开发的 web 服务器
 
 您可以使用以下任务在桌面或联机时开始调试。
-- `npm run start desktop`: 在桌面上启动 Excel 并将您的外接程序。
-- `npm run start web`: 启动 Excel Online 并将您的外接程序。
+- `npm run start:desktop`: 在桌面上启动 Excel 并将您的外接程序。
+- `npm run start:web`: 启动 Excel Online 并将您的外接程序。
 - `npm run stop`: 停止 Excel 和调试。
+
+## <a name="next-steps"></a>后续步骤
+了解[自定义函数中的身份验证方法](custom-functions-authentication.md)。 或者, 查看[自定义函数的独特体系结构](custom-functions-architecture.md)。
 
 ## <a name="see-also"></a>另请参阅
 
-* [自定义函数元数据](custom-functions-json.md)
-* [Excel 自定义函数的运行时](custom-functions-runtime.md)
+* [自定义函数疑难解答](custom-functions-troubleshooting.md)
 * [自定义函数最佳实践](custom-functions-best-practices.md)
-* [自定义函数更改日志](custom-functions-changelog.md)
-* [Excel 自定义函数教程](../tutorials/excel-tutorial-create-custom-functions.md)
+* [让自定义函数与 XLL 用户定义的函数兼容](make-custom-functions-compatible-with-xll-udf.md)
+* [在 Excel 中创建自定义函数](custom-functions-overview.md)
