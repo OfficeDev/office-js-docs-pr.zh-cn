@@ -1,22 +1,25 @@
 ---
-ms.date: 05/15/2019
+ms.date: 06/17/2019
 description: 了解如何在不同平台上使用自定义函数。
 title: 自定义函数要求
 localization_priority: Priority
-ms.openlocfilehash: 3ae110bf32b260be1d480a9bce27fffbddee86f5
-ms.sourcegitcommit: adaee1329ae9bb69e49bde7f54a4c0444c9ba642
+ms.openlocfilehash: 0f1d18410f32620a168622ae7d9824cb2e785933
+ms.sourcegitcommit: 4bf5159a3821f4277c07d89e88808c4c3a25ff81
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "34432199"
+ms.lasthandoff: 06/18/2019
+ms.locfileid: "35059893"
 ---
 # <a name="custom-functions-requirements"></a>自定义函数要求
 
 自定义函数目前可在以下平台上使用：
 
-- Excel Online
-- Windows 版 Excel（64 位版本 1810 或更高版本）
-- Excel for Mac（版本 13.329 或更高版本）
+- Excel 网页版
+- Windows 上的 Excel（版本 1904 或更高版本，已连接到 Office 365 订阅）
+- Mac 上的 Excel（版本 16.24 或更高版本，已连接到 Office 365 订阅）
+
+>[!NOTE]
+>Office 2019（一次性购买）不支持 Excel 自定义函数。
 
 ## <a name="excel-online"></a>Excel Online
 若要在 Excel Online 中使用自定义函数，请使用 Office 365 订阅或 [Microsoft 帐户](https://account.microsoft.com/account)进行登录。

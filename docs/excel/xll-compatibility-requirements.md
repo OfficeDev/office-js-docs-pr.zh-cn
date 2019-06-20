@@ -1,21 +1,21 @@
 ---
-ms.date: 05/08/2019
+ms.date: 06/17/2019
 description: 了解使用 COM 加载项和 XLL UDF 兼容性功能的要求。
 title: COM 加载项和 XLL UDF 要求
 localization_priority: Priority
-ms.openlocfilehash: a707f5413f05e4f3d65ca039e1ffbc88aecbe252
-ms.sourcegitcommit: adaee1329ae9bb69e49bde7f54a4c0444c9ba642
+ms.openlocfilehash: 133c9f20c2b82051ee3d42488596707e99a364bc
+ms.sourcegitcommit: 4bf5159a3821f4277c07d89e88808c4c3a25ff81
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "34432234"
+ms.lasthandoff: 06/18/2019
+ms.locfileid: "35059683"
 ---
 # <a name="com-add-in-and-xll-udf-compatibility-requirements-preview"></a>COM 加载项和 XLL UDF 兼容性要求（预览版）
 
-当前以下平台提供有 COM 加载项和 XLL UDF 兼容性：
+当前以下平台提供有 COM 加载项和 XLL UDF 兼容性，它们都需要 Office 365 订阅：
 
-- Excel Online
-- Windows 版 Excel（64 位版本 1810 或更高版本）
+- Excel 网页版
+- Windows 上的 Excel（版本 1904 或更高版本）
 - Excel for Mac（版本 13.329 或更高版本）
 
 ## <a name="excel-online"></a>Excel Online

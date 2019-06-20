@@ -1,14 +1,14 @@
 ---
-ms.date: 05/08/2019
+ms.date: 06/17/2019
 description: Excel 自定义函数中的常见问题疑难解答。
 title: 自定义函数疑难解答
 localization_priority: Priority
-ms.openlocfilehash: 999b1fb9b89050ab5c6bcf87e1aac9d2fce13702
-ms.sourcegitcommit: a99be9c4771c45f3e07e781646e0e649aa47213f
+ms.openlocfilehash: f407e103d8f628710c5f58a9787b3a802dcd39c8
+ms.sourcegitcommit: 4bf5159a3821f4277c07d89e88808c4c3a25ff81
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/11/2019
-ms.locfileid: "33952052"
+ms.lasthandoff: 06/18/2019
+ms.locfileid: "35059900"
 ---
 # <a name="troubleshoot-custom-functions"></a>自定义函数疑难解答
 
@@ -65,6 +65,10 @@ CustomFunctions.associate("ADD", add);
 ### <a name="cant-open-add-in-from-localhost-use-a-local-loopback-exception"></a>无法从 localhost 打开加载项：使用本地环回异常
 
 如果看到错误“我们无法从 localhost 打开此加载项”，则需要启用本地环回异常。 有关如何执行此操作的详细信息，请参阅[此 Microsoft 支持文章](https://support.microsoft.com/zh-CN/help/4490419/local-loopback-exemption-does-not-work)。
+
+### <a name="runtime-logging-reports-typeerror-network-request-failed-on-excel-for-windows"></a>Excel for Windows 上的运行时日志记录报告“TypeError：网络请求失败”
+
+如果在调用 localhost 服务器时在[运行时日志](custom-functions-troubleshooting.md#enable-runtime-logging)中看到错误“TypeError：网络请求失败”，则需要启用本地环回异常。 有关如何执行此操作的详细信息，请参阅[此 Microsoft 支持文章](https://support.microsoft.com/zh-CN/help/4490419/local-loopback-exemption-does-not-work)。
 
 ### <a name="ensure-promises-return"></a>确保返回 promise
 
