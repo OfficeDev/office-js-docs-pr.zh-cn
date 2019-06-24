@@ -1,27 +1,29 @@
 ---
-ms.date: 06/17/2019
+ms.date: 06/20/2019
 description: 使用 `OfficeRuntime.storage` 保存自定义函数中的状态。
 title: 保存并共享自定义函数中的状态
 localization_priority: Priority
-ms.openlocfilehash: c0825b67bfb97cea75e09704969e915d9560e39e
-ms.sourcegitcommit: 4bf5159a3821f4277c07d89e88808c4c3a25ff81
+ms.openlocfilehash: c6689393e5d118c779b7b261b0de04ead56aff83
+ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "35059886"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "35127833"
 ---
-# <a name="save-and-share-state-in-custom-functions"></a><span data-ttu-id="a6d21-103">保存并共享自定义函数中的状态</span><span class="sxs-lookup"><span data-stu-id="a6d21-103">Save and share state in custom functions</span></span>
+# <a name="save-and-share-state-in-custom-functions"></a><span data-ttu-id="29790-103">保存并共享自定义函数中的状态</span><span class="sxs-lookup"><span data-stu-id="29790-103">Save and share state in custom functions</span></span>
 
-<span data-ttu-id="a6d21-104">使用 `OfficeRuntime.storage` 对象保存与加载项中的自定义函数或任务窗格相关的状态。</span><span class="sxs-lookup"><span data-stu-id="a6d21-104">Use the `OfficeRuntime.storage` object to save state related to custom functions or the task pane in your add-in.</span></span> <span data-ttu-id="a6d21-105">存储限制为每个域 10 MB（可以在多个加载项中共享）。</span><span class="sxs-lookup"><span data-stu-id="a6d21-105">Storage is limited to 10 MB per domain (which may be shared across multiple add-ins).</span></span> <span data-ttu-id="a6d21-106">在 Windows 版 Excel 中，`storage` 对象是自定义函数运行时内的单独位置，但对于 Excel Online 和 Excel for Mac，`storage` 对象与浏览器的 `localStorage` 相同。</span><span class="sxs-lookup"><span data-stu-id="a6d21-106">In Excel on Windows, the `storage` object is a separate location within the custom functions runtime, but for Excel Online and Excel for Mac, the `storage` object is the same as the browser's `localStorage`.</span></span>
+<span data-ttu-id="29790-104">使用 `OfficeRuntime.storage` 对象保存与加载项中的自定义函数或任务窗格相关的状态。</span><span class="sxs-lookup"><span data-stu-id="29790-104">Use the `OfficeRuntime.storage` object to save state related to custom functions or the task pane in your add-in.</span></span> <span data-ttu-id="29790-105">存储限制为每个域 10 MB（可以在多个加载项中共享）。</span><span class="sxs-lookup"><span data-stu-id="29790-105">Storage is limited to 10 MB per domain (which may be shared across multiple add-ins).</span></span> <span data-ttu-id="29790-106">在 Windows 版 Excel 中，`storage` 对象是自定义函数运行时内的单独位置；但对于 Excel 网页版和 Mac 版 Excel，`storage` 对象与浏览器的 `localStorage` 相同。</span><span class="sxs-lookup"><span data-stu-id="29790-106">In Excel on Windows, the `storage` object is a separate location within the custom functions runtime, but for Excel Online and Excel for Mac, the `storage` object is the same as the browser's `localStorage`.</span></span>
 
-<span data-ttu-id="a6d21-107">可以通过多种方式使用 `storage` 进行状态管理：</span><span class="sxs-lookup"><span data-stu-id="a6d21-107">There are multiple ways to use `storage` for state management:</span></span>
+[!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
-- <span data-ttu-id="a6d21-108">可以存储自定义函数的默认值，以便在你离线和无法触及网页资源时使用。</span><span class="sxs-lookup"><span data-stu-id="a6d21-108">You can store default values for custom functions to use when you are offline and unable to reach a web resource.</span></span>
-- <span data-ttu-id="a6d21-109">可以存储自定义函数值，以免额外调用网页资源。</span><span class="sxs-lookup"><span data-stu-id="a6d21-109">You can save values for custom functions to use to avoid making additional calls to a web resource.</span></span>
-- <span data-ttu-id="a6d21-110">可以保存自定义函数中的值。</span><span class="sxs-lookup"><span data-stu-id="a6d21-110">You can save values from your custom function.</span></span>
-- <span data-ttu-id="a6d21-111">可以存储任务窗格中的值。</span><span class="sxs-lookup"><span data-stu-id="a6d21-111">You can store values from your task pane.</span></span>
+<span data-ttu-id="29790-107">可以通过多种方式使用 `storage` 进行状态管理：</span><span class="sxs-lookup"><span data-stu-id="29790-107">There are multiple ways to use `storage` for state management:</span></span>
 
-<span data-ttu-id="a6d21-112">以下代码示例演示了如何将项存储于 `storage` 中并检索它。</span><span class="sxs-lookup"><span data-stu-id="a6d21-112">The following code sample illustrates how to store an item into `storage` and retrieve it.</span></span>
+- <span data-ttu-id="29790-108">可以存储自定义函数的默认值，以便在你离线和无法触及网页资源时使用。</span><span class="sxs-lookup"><span data-stu-id="29790-108">You can store default values for custom functions to use when you are offline and unable to reach a web resource.</span></span>
+- <span data-ttu-id="29790-109">可以存储自定义函数值，以免额外调用网页资源。</span><span class="sxs-lookup"><span data-stu-id="29790-109">You can save values for custom functions to use to avoid making additional calls to a web resource.</span></span>
+- <span data-ttu-id="29790-110">可以保存自定义函数中的值。</span><span class="sxs-lookup"><span data-stu-id="29790-110">You can save values from your custom function.</span></span>
+- <span data-ttu-id="29790-111">可以存储任务窗格中的值。</span><span class="sxs-lookup"><span data-stu-id="29790-111">You can store values from your task pane.</span></span>
+
+<span data-ttu-id="29790-112">以下代码示例演示了如何将项存储于 `storage` 中并检索它。</span><span class="sxs-lookup"><span data-stu-id="29790-112">The following code sample illustrates how to store an item into `storage` and retrieve it.</span></span>
 
 ```js
 function storeValue(key, value) {
@@ -40,18 +42,18 @@ CustomFunctions.associate("STOREVALUE", StoreValue);
 CustomFunctions.associate("GETVALUE", GetValue);
 ```
 
-<span data-ttu-id="a6d21-113">[GitHub 上的更详细代码示例](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Excel-custom-functions/AsyncStorage)提供了将此信息传递到任务窗格的示例。</span><span class="sxs-lookup"><span data-stu-id="a6d21-113">[A more detailed code sample on GitHub](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Excel-custom-functions/AsyncStorage) gives an example of passing this information to the task pane.</span></span>
+<span data-ttu-id="29790-113">[GitHub 上的更详细代码示例](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Excel-custom-functions/AsyncStorage)提供了将此信息传递到任务窗格的示例。</span><span class="sxs-lookup"><span data-stu-id="29790-113">[A more detailed code sample on GitHub](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Excel-custom-functions/AsyncStorage) gives an example of passing this information to the task pane.</span></span>
 
 >[!NOTE]
-> <span data-ttu-id="a6d21-114">`storage` 对象取代了先前名为 `AsyncStorage` 的存储对象（现已启用）。</span><span class="sxs-lookup"><span data-stu-id="a6d21-114">The `storage` object replaces the previous storage object named `AsyncStorage` which is now deprecated.</span></span> <span data-ttu-id="a6d21-115">如果在当前的自定义函数代码中使用 `AsyncStorage` 对象，请将其更新为使用 `storage` 对象。</span><span class="sxs-lookup"><span data-stu-id="a6d21-115">If using the `AsyncStorage` object in your current custom functions code, please update it to use the `storage` object.</span></span>
+> <span data-ttu-id="29790-114">`storage` 对象取代了先前名为 `AsyncStorage` 的存储对象（现已启用）。</span><span class="sxs-lookup"><span data-stu-id="29790-114">The `storage` object replaces the previous storage object named `AsyncStorage` which is now deprecated.</span></span> <span data-ttu-id="29790-115">如果在当前的自定义函数代码中使用 `AsyncStorage` 对象，请将其更新为使用 `storage` 对象。</span><span class="sxs-lookup"><span data-stu-id="29790-115">If using the `AsyncStorage` object in your current custom functions code, please update it to use the `storage` object.</span></span>
 
-## <a name="next-steps"></a><span data-ttu-id="a6d21-116">后续步骤</span><span class="sxs-lookup"><span data-stu-id="a6d21-116">Next steps</span></span>
-<span data-ttu-id="a6d21-117">了解如何[为自定义函数自动生成 JSON 元数据](custom-functions-json-autogeneration.md)。</span><span class="sxs-lookup"><span data-stu-id="a6d21-117">Learn how to [autogenerate the JSON metadata for your custom functions](custom-functions-json-autogeneration.md).</span></span> 
+## <a name="next-steps"></a><span data-ttu-id="29790-116">后续步骤</span><span class="sxs-lookup"><span data-stu-id="29790-116">Next steps</span></span>
+<span data-ttu-id="29790-117">了解如何[为自定义函数自动生成 JSON 元数据](custom-functions-json-autogeneration.md)。</span><span class="sxs-lookup"><span data-stu-id="29790-117">Learn how to [autogenerate the JSON metadata for your custom functions](custom-functions-json-autogeneration.md).</span></span> 
 
-## <a name="see-also"></a><span data-ttu-id="a6d21-118">另请参阅</span><span class="sxs-lookup"><span data-stu-id="a6d21-118">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="29790-118">另请参阅</span><span class="sxs-lookup"><span data-stu-id="29790-118">See also</span></span>
 
-* [<span data-ttu-id="a6d21-119">自定义函数元数据</span><span class="sxs-lookup"><span data-stu-id="a6d21-119">Custom functions metadata</span></span>](custom-functions-json.md)
-* [<span data-ttu-id="a6d21-120">Excel 自定义函数的运行时</span><span class="sxs-lookup"><span data-stu-id="a6d21-120">Runtime for Excel custom functions</span></span>](custom-functions-runtime.md)
-* [<span data-ttu-id="a6d21-121">自定义函数最佳实践</span><span class="sxs-lookup"><span data-stu-id="a6d21-121">Custom functions best practices</span></span>](custom-functions-best-practices.md)
-* [<span data-ttu-id="a6d21-122">Excel 自定义函数教程</span><span class="sxs-lookup"><span data-stu-id="a6d21-122">Excel custom functions tutorial</span></span>](../tutorials/excel-tutorial-create-custom-functions.md)
-* [<span data-ttu-id="a6d21-123">自定义函数调试</span><span class="sxs-lookup"><span data-stu-id="a6d21-123">Custom functions debugging</span></span>](custom-functions-debugging.md)
+* [<span data-ttu-id="29790-119">自定义函数元数据</span><span class="sxs-lookup"><span data-stu-id="29790-119">Custom functions metadata</span></span>](custom-functions-json.md)
+* [<span data-ttu-id="29790-120">Excel 自定义函数的运行时</span><span class="sxs-lookup"><span data-stu-id="29790-120">Runtime for Excel custom functions</span></span>](custom-functions-runtime.md)
+* [<span data-ttu-id="29790-121">自定义函数最佳实践</span><span class="sxs-lookup"><span data-stu-id="29790-121">Custom functions best practices</span></span>](custom-functions-best-practices.md)
+* [<span data-ttu-id="29790-122">Excel 自定义函数教程</span><span class="sxs-lookup"><span data-stu-id="29790-122">Excel custom functions tutorial</span></span>](../tutorials/excel-tutorial-create-custom-functions.md)
+* [<span data-ttu-id="29790-123">自定义函数调试</span><span class="sxs-lookup"><span data-stu-id="29790-123">Custom functions debugging</span></span>](custom-functions-debugging.md)

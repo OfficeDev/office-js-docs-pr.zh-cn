@@ -1,97 +1,97 @@
 ---
-title: "\"context.subname\": \"邮箱\"。诊断-要求集1。5"
+title: "\"Context.subname\": \"邮箱\"。诊断-要求集1。5"
 description: ''
-ms.date: 03/19/2019
+ms.date: 04/24/2019
 localization_priority: Normal
-ms.openlocfilehash: 7e554217831f2739ead3a0a90bd41b7d72e7b2d1
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: 58325b88019988d55c565b5dc83efc25aca7266b
+ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32450245"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "35127343"
 ---
-# <a name="diagnostics"></a><span data-ttu-id="45beb-102">diagnostics</span><span class="sxs-lookup"><span data-stu-id="45beb-102">diagnostics</span></span>
+# <a name="diagnostics"></a><span data-ttu-id="73bdf-102">diagnostics</span><span class="sxs-lookup"><span data-stu-id="73bdf-102">diagnostics</span></span>
 
-### <a name="officeofficemdcontextofficecontextmdmailboxofficecontextmailboxmddiagnostics"></a><span data-ttu-id="45beb-103">[Office](Office.md)[.context](Office.context.md)[.mailbox](Office.context.mailbox.md).diagnostics</span><span class="sxs-lookup"><span data-stu-id="45beb-103">[Office](Office.md)[.context](Office.context.md)[.mailbox](Office.context.mailbox.md).diagnostics</span></span>
+### <a name="officeofficemdcontextofficecontextmdmailboxofficecontextmailboxmddiagnostics"></a><span data-ttu-id="73bdf-103">[Office](Office.md)[.context](Office.context.md)[.mailbox](Office.context.mailbox.md).diagnostics</span><span class="sxs-lookup"><span data-stu-id="73bdf-103">[Office](Office.md)[.context](Office.context.md)[.mailbox](Office.context.mailbox.md).diagnostics</span></span>
 
-<span data-ttu-id="45beb-104">将诊断信息提供给 Outlook 外接程序。</span><span class="sxs-lookup"><span data-stu-id="45beb-104">Provides diagnostic information to an Outlook add-in.</span></span>
+<span data-ttu-id="73bdf-104">将诊断信息提供给 Outlook 外接程序。</span><span class="sxs-lookup"><span data-stu-id="73bdf-104">Provides diagnostic information to an Outlook add-in.</span></span>
 
-##### <a name="requirements"></a><span data-ttu-id="45beb-105">Requirements</span><span class="sxs-lookup"><span data-stu-id="45beb-105">Requirements</span></span>
+##### <a name="requirements"></a><span data-ttu-id="73bdf-105">要求</span><span class="sxs-lookup"><span data-stu-id="73bdf-105">Requirements</span></span>
 
-|<span data-ttu-id="45beb-106">要求</span><span class="sxs-lookup"><span data-stu-id="45beb-106">Requirement</span></span>| <span data-ttu-id="45beb-107">值</span><span class="sxs-lookup"><span data-stu-id="45beb-107">Value</span></span>|
+|<span data-ttu-id="73bdf-106">要求</span><span class="sxs-lookup"><span data-stu-id="73bdf-106">Requirement</span></span>| <span data-ttu-id="73bdf-107">值</span><span class="sxs-lookup"><span data-stu-id="73bdf-107">Value</span></span>|
 |---|---|
-|[<span data-ttu-id="45beb-108">最低版本的邮箱要求集</span><span class="sxs-lookup"><span data-stu-id="45beb-108">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| <span data-ttu-id="45beb-109">1.0</span><span class="sxs-lookup"><span data-stu-id="45beb-109">1.0</span></span>|
-|[<span data-ttu-id="45beb-110">最低权限级别</span><span class="sxs-lookup"><span data-stu-id="45beb-110">Minimum permission level</span></span>](/outlook/add-ins/understanding-outlook-add-in-permissions)| <span data-ttu-id="45beb-111">ReadItem</span><span class="sxs-lookup"><span data-stu-id="45beb-111">ReadItem</span></span>|
-|[<span data-ttu-id="45beb-112">适用的 Outlook 模式</span><span class="sxs-lookup"><span data-stu-id="45beb-112">Applicable Outlook mode</span></span>](/outlook/add-ins/#extension-points)| <span data-ttu-id="45beb-113">撰写或阅读</span><span class="sxs-lookup"><span data-stu-id="45beb-113">Compose or Read</span></span>|
+|[<span data-ttu-id="73bdf-108">最低版本的邮箱要求集</span><span class="sxs-lookup"><span data-stu-id="73bdf-108">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| <span data-ttu-id="73bdf-109">1.0</span><span class="sxs-lookup"><span data-stu-id="73bdf-109">1.0</span></span>|
+|[<span data-ttu-id="73bdf-110">最低权限级别</span><span class="sxs-lookup"><span data-stu-id="73bdf-110">Minimum permission level</span></span>](/outlook/add-ins/understanding-outlook-add-in-permissions)| <span data-ttu-id="73bdf-111">ReadItem</span><span class="sxs-lookup"><span data-stu-id="73bdf-111">ReadItem</span></span>|
+|[<span data-ttu-id="73bdf-112">适用的 Outlook 模式</span><span class="sxs-lookup"><span data-stu-id="73bdf-112">Applicable Outlook mode</span></span>](/outlook/add-ins/#extension-points)| <span data-ttu-id="73bdf-113">撰写或阅读</span><span class="sxs-lookup"><span data-stu-id="73bdf-113">Compose or Read</span></span>|
 
-##### <a name="members-and-methods"></a><span data-ttu-id="45beb-114">成员和方法</span><span class="sxs-lookup"><span data-stu-id="45beb-114">Members and methods</span></span>
+##### <a name="members-and-methods"></a><span data-ttu-id="73bdf-114">成员和方法</span><span class="sxs-lookup"><span data-stu-id="73bdf-114">Members and methods</span></span>
 
-| <span data-ttu-id="45beb-115">成员</span><span class="sxs-lookup"><span data-stu-id="45beb-115">Member</span></span> | <span data-ttu-id="45beb-116">类型</span><span class="sxs-lookup"><span data-stu-id="45beb-116">Type</span></span> |
+| <span data-ttu-id="73bdf-115">成员</span><span class="sxs-lookup"><span data-stu-id="73bdf-115">Member</span></span> | <span data-ttu-id="73bdf-116">类型</span><span class="sxs-lookup"><span data-stu-id="73bdf-116">Type</span></span> |
 |--------|------|
-| [<span data-ttu-id="45beb-117">主机名</span><span class="sxs-lookup"><span data-stu-id="45beb-117">hostName</span></span>](#hostname-string) | <span data-ttu-id="45beb-118">Member</span><span class="sxs-lookup"><span data-stu-id="45beb-118">Member</span></span> |
-| [<span data-ttu-id="45beb-119">diagnostics.hostversion</span><span class="sxs-lookup"><span data-stu-id="45beb-119">hostVersion</span></span>](#hostversion-string) | <span data-ttu-id="45beb-120">Member</span><span class="sxs-lookup"><span data-stu-id="45beb-120">Member</span></span> |
-| [<span data-ttu-id="45beb-121">OWAView</span><span class="sxs-lookup"><span data-stu-id="45beb-121">OWAView</span></span>](#owaview-string) | <span data-ttu-id="45beb-122">Member</span><span class="sxs-lookup"><span data-stu-id="45beb-122">Member</span></span> |
+| [<span data-ttu-id="73bdf-117">主机名</span><span class="sxs-lookup"><span data-stu-id="73bdf-117">hostName</span></span>](#hostname-string) | <span data-ttu-id="73bdf-118">Member</span><span class="sxs-lookup"><span data-stu-id="73bdf-118">Member</span></span> |
+| [<span data-ttu-id="73bdf-119">Diagnostics.hostversion</span><span class="sxs-lookup"><span data-stu-id="73bdf-119">hostVersion</span></span>](#hostversion-string) | <span data-ttu-id="73bdf-120">Member</span><span class="sxs-lookup"><span data-stu-id="73bdf-120">Member</span></span> |
+| [<span data-ttu-id="73bdf-121">OWAView</span><span class="sxs-lookup"><span data-stu-id="73bdf-121">OWAView</span></span>](#owaview-string) | <span data-ttu-id="73bdf-122">Member</span><span class="sxs-lookup"><span data-stu-id="73bdf-122">Member</span></span> |
 
-### <a name="members"></a><span data-ttu-id="45beb-123">成员</span><span class="sxs-lookup"><span data-stu-id="45beb-123">Members</span></span>
+### <a name="members"></a><span data-ttu-id="73bdf-123">Members</span><span class="sxs-lookup"><span data-stu-id="73bdf-123">Members</span></span>
 
-####  <a name="hostname-string"></a><span data-ttu-id="45beb-124">hostName :String</span><span class="sxs-lookup"><span data-stu-id="45beb-124">hostName :String</span></span>
+#### <a name="hostname-string"></a><span data-ttu-id="73bdf-124">hostName: String</span><span class="sxs-lookup"><span data-stu-id="73bdf-124">hostName: String</span></span>
 
-<span data-ttu-id="45beb-125">获取表示主机应用程序的名称的字符串。</span><span class="sxs-lookup"><span data-stu-id="45beb-125">Gets a string that represents the name of the host application.</span></span>
+<span data-ttu-id="73bdf-125">获取表示主机应用程序的名称的字符串。</span><span class="sxs-lookup"><span data-stu-id="73bdf-125">Gets a string that represents the name of the host application.</span></span>
 
-<span data-ttu-id="45beb-126">可以是下列值之一的字符串：`Outlook`、`OutlookIOS` 或 `OutlookWebApp`。</span><span class="sxs-lookup"><span data-stu-id="45beb-126">A string that can be one of the following values: `Outlook`, `OutlookIOS`, or `OutlookWebApp`.</span></span>
+<span data-ttu-id="73bdf-126">可以是下列值之一的字符串：`Outlook`、`OutlookIOS` 或 `OutlookWebApp`。</span><span class="sxs-lookup"><span data-stu-id="73bdf-126">A string that can be one of the following values: `Outlook`, `OutlookIOS`, or `OutlookWebApp`.</span></span>
 
-##### <a name="type"></a><span data-ttu-id="45beb-127">类型</span><span class="sxs-lookup"><span data-stu-id="45beb-127">Type</span></span>
+##### <a name="type"></a><span data-ttu-id="73bdf-127">类型</span><span class="sxs-lookup"><span data-stu-id="73bdf-127">Type</span></span>
 
-*   <span data-ttu-id="45beb-128">String</span><span class="sxs-lookup"><span data-stu-id="45beb-128">String</span></span>
+*   <span data-ttu-id="73bdf-128">String</span><span class="sxs-lookup"><span data-stu-id="73bdf-128">String</span></span>
 
-##### <a name="requirements"></a><span data-ttu-id="45beb-129">要求</span><span class="sxs-lookup"><span data-stu-id="45beb-129">Requirements</span></span>
+##### <a name="requirements"></a><span data-ttu-id="73bdf-129">要求</span><span class="sxs-lookup"><span data-stu-id="73bdf-129">Requirements</span></span>
 
-|<span data-ttu-id="45beb-130">要求</span><span class="sxs-lookup"><span data-stu-id="45beb-130">Requirement</span></span>| <span data-ttu-id="45beb-131">值</span><span class="sxs-lookup"><span data-stu-id="45beb-131">Value</span></span>|
+|<span data-ttu-id="73bdf-130">要求</span><span class="sxs-lookup"><span data-stu-id="73bdf-130">Requirement</span></span>| <span data-ttu-id="73bdf-131">值</span><span class="sxs-lookup"><span data-stu-id="73bdf-131">Value</span></span>|
 |---|---|
-|[<span data-ttu-id="45beb-132">最低版本的邮箱要求集</span><span class="sxs-lookup"><span data-stu-id="45beb-132">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| <span data-ttu-id="45beb-133">1.0</span><span class="sxs-lookup"><span data-stu-id="45beb-133">1.0</span></span>|
-|[<span data-ttu-id="45beb-134">最低权限级别</span><span class="sxs-lookup"><span data-stu-id="45beb-134">Minimum permission level</span></span>](/outlook/add-ins/understanding-outlook-add-in-permissions)| <span data-ttu-id="45beb-135">ReadItem</span><span class="sxs-lookup"><span data-stu-id="45beb-135">ReadItem</span></span>|
-|[<span data-ttu-id="45beb-136">适用的 Outlook 模式</span><span class="sxs-lookup"><span data-stu-id="45beb-136">Applicable Outlook mode</span></span>](/outlook/add-ins/#extension-points)| <span data-ttu-id="45beb-137">撰写或阅读</span><span class="sxs-lookup"><span data-stu-id="45beb-137">Compose or Read</span></span>|
+|[<span data-ttu-id="73bdf-132">最低版本的邮箱要求集</span><span class="sxs-lookup"><span data-stu-id="73bdf-132">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| <span data-ttu-id="73bdf-133">1.0</span><span class="sxs-lookup"><span data-stu-id="73bdf-133">1.0</span></span>|
+|[<span data-ttu-id="73bdf-134">最低权限级别</span><span class="sxs-lookup"><span data-stu-id="73bdf-134">Minimum permission level</span></span>](/outlook/add-ins/understanding-outlook-add-in-permissions)| <span data-ttu-id="73bdf-135">ReadItem</span><span class="sxs-lookup"><span data-stu-id="73bdf-135">ReadItem</span></span>|
+|[<span data-ttu-id="73bdf-136">适用的 Outlook 模式</span><span class="sxs-lookup"><span data-stu-id="73bdf-136">Applicable Outlook mode</span></span>](/outlook/add-ins/#extension-points)| <span data-ttu-id="73bdf-137">撰写或阅读</span><span class="sxs-lookup"><span data-stu-id="73bdf-137">Compose or Read</span></span>|
 
-####  <a name="hostversion-string"></a><span data-ttu-id="45beb-138">hostVersion :String</span><span class="sxs-lookup"><span data-stu-id="45beb-138">hostVersion :String</span></span>
+#### <a name="hostversion-string"></a><span data-ttu-id="73bdf-138">Diagnostics.hostversion: String</span><span class="sxs-lookup"><span data-stu-id="73bdf-138">hostVersion: String</span></span>
 
-<span data-ttu-id="45beb-139">获取表示主机应用程序或 Exchange Server 的版本的字符串。</span><span class="sxs-lookup"><span data-stu-id="45beb-139">Gets a string that represents the version of either the host application or the Exchange Server.</span></span>
+<span data-ttu-id="73bdf-139">获取表示主机应用程序或 Exchange Server 的版本的字符串。</span><span class="sxs-lookup"><span data-stu-id="73bdf-139">Gets a string that represents the version of either the host application or the Exchange Server.</span></span>
 
-<span data-ttu-id="45beb-p101">如果邮件外接程序正在 Outlook 桌面客户端或 Outlook for iOS 上运行，则 `hostVersion` 属性返回主机应用程序版本 Outlook。在 Outlook Web App 中，属性返回 Exchange Server 的版本。其中的一个示例是字符串 `15.0.468.0`。</span><span class="sxs-lookup"><span data-stu-id="45beb-p101">If the mail add-in is running on the Outlook desktop client or Outlook for iOS, the `hostVersion` property returns the version of the host application, Outlook. In Outlook Web App, the property returns the version of the Exchange Server. An example is the string `15.0.468.0`.</span></span>
+<span data-ttu-id="73bdf-140">如果邮件外接程序在 Outlook 桌面客户端或 iOS 上运行, 则该`hostVersion`属性返回主机应用程序 (Outlook) 的版本。</span><span class="sxs-lookup"><span data-stu-id="73bdf-140">If the mail add-in is running on the Outlook desktop client or iOS, the `hostVersion` property returns the version of the host application, Outlook.</span></span> <span data-ttu-id="73bdf-141">在 Outlook 网页版中, 该属性返回的是 Exchange 服务器的版本。</span><span class="sxs-lookup"><span data-stu-id="73bdf-141">In Outlook on the web, the property returns the version of the Exchange Server.</span></span> <span data-ttu-id="73bdf-142">例如，字符串 `15.0.468.0`。</span><span class="sxs-lookup"><span data-stu-id="73bdf-142">An example is the string `15.0.468.0`.</span></span>
 
-##### <a name="type"></a><span data-ttu-id="45beb-143">类型</span><span class="sxs-lookup"><span data-stu-id="45beb-143">Type</span></span>
+##### <a name="type"></a><span data-ttu-id="73bdf-143">类型</span><span class="sxs-lookup"><span data-stu-id="73bdf-143">Type</span></span>
 
-*   <span data-ttu-id="45beb-144">String</span><span class="sxs-lookup"><span data-stu-id="45beb-144">String</span></span>
+*   <span data-ttu-id="73bdf-144">String</span><span class="sxs-lookup"><span data-stu-id="73bdf-144">String</span></span>
 
-##### <a name="requirements"></a><span data-ttu-id="45beb-145">要求</span><span class="sxs-lookup"><span data-stu-id="45beb-145">Requirements</span></span>
+##### <a name="requirements"></a><span data-ttu-id="73bdf-145">要求</span><span class="sxs-lookup"><span data-stu-id="73bdf-145">Requirements</span></span>
 
-|<span data-ttu-id="45beb-146">要求</span><span class="sxs-lookup"><span data-stu-id="45beb-146">Requirement</span></span>| <span data-ttu-id="45beb-147">值</span><span class="sxs-lookup"><span data-stu-id="45beb-147">Value</span></span>|
+|<span data-ttu-id="73bdf-146">要求</span><span class="sxs-lookup"><span data-stu-id="73bdf-146">Requirement</span></span>| <span data-ttu-id="73bdf-147">值</span><span class="sxs-lookup"><span data-stu-id="73bdf-147">Value</span></span>|
 |---|---|
-|[<span data-ttu-id="45beb-148">最低版本的邮箱要求集</span><span class="sxs-lookup"><span data-stu-id="45beb-148">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| <span data-ttu-id="45beb-149">1.0</span><span class="sxs-lookup"><span data-stu-id="45beb-149">1.0</span></span>|
-|[<span data-ttu-id="45beb-150">最低权限级别</span><span class="sxs-lookup"><span data-stu-id="45beb-150">Minimum permission level</span></span>](/outlook/add-ins/understanding-outlook-add-in-permissions)| <span data-ttu-id="45beb-151">ReadItem</span><span class="sxs-lookup"><span data-stu-id="45beb-151">ReadItem</span></span>|
-|[<span data-ttu-id="45beb-152">适用的 Outlook 模式</span><span class="sxs-lookup"><span data-stu-id="45beb-152">Applicable Outlook mode</span></span>](/outlook/add-ins/#extension-points)| <span data-ttu-id="45beb-153">撰写或阅读</span><span class="sxs-lookup"><span data-stu-id="45beb-153">Compose or Read</span></span>|
+|[<span data-ttu-id="73bdf-148">最低版本的邮箱要求集</span><span class="sxs-lookup"><span data-stu-id="73bdf-148">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| <span data-ttu-id="73bdf-149">1.0</span><span class="sxs-lookup"><span data-stu-id="73bdf-149">1.0</span></span>|
+|[<span data-ttu-id="73bdf-150">最低权限级别</span><span class="sxs-lookup"><span data-stu-id="73bdf-150">Minimum permission level</span></span>](/outlook/add-ins/understanding-outlook-add-in-permissions)| <span data-ttu-id="73bdf-151">ReadItem</span><span class="sxs-lookup"><span data-stu-id="73bdf-151">ReadItem</span></span>|
+|[<span data-ttu-id="73bdf-152">适用的 Outlook 模式</span><span class="sxs-lookup"><span data-stu-id="73bdf-152">Applicable Outlook mode</span></span>](/outlook/add-ins/#extension-points)| <span data-ttu-id="73bdf-153">撰写或阅读</span><span class="sxs-lookup"><span data-stu-id="73bdf-153">Compose or Read</span></span>|
 
-####  <a name="owaview-string"></a><span data-ttu-id="45beb-154">OWAView :String</span><span class="sxs-lookup"><span data-stu-id="45beb-154">OWAView :String</span></span>
+#### <a name="owaview-string"></a><span data-ttu-id="73bdf-154">OWAView: String</span><span class="sxs-lookup"><span data-stu-id="73bdf-154">OWAView: String</span></span>
 
-<span data-ttu-id="45beb-155">获取表示 Outlook Web App 的当前视图的字符串。</span><span class="sxs-lookup"><span data-stu-id="45beb-155">Gets a string that represents the current view of Outlook Web App.</span></span>
+<span data-ttu-id="73bdf-155">获取表示 web 上的 Outlook 的当前视图的字符串。</span><span class="sxs-lookup"><span data-stu-id="73bdf-155">Gets a string that represents the current view of Outlook on the web.</span></span>
 
-<span data-ttu-id="45beb-156">返回的字符串可以是下列值之一：`OneColumn`、`TwoColumns` 或 `ThreeColumns`。</span><span class="sxs-lookup"><span data-stu-id="45beb-156">The returned string can be one of the following values: `OneColumn`, `TwoColumns`, or `ThreeColumns`.</span></span>
+<span data-ttu-id="73bdf-156">返回的字符串可以是下列值之一：`OneColumn`、`TwoColumns` 或 `ThreeColumns`。</span><span class="sxs-lookup"><span data-stu-id="73bdf-156">The returned string can be one of the following values: `OneColumn`, `TwoColumns`, or `ThreeColumns`.</span></span>
 
-<span data-ttu-id="45beb-157">如果主机应用程序不是 Outlook Web App，则访问此属性将导致返回 `undefined`。</span><span class="sxs-lookup"><span data-stu-id="45beb-157">If the host application is not Outlook Web App, then accessing this property results in `undefined`.</span></span>
+<span data-ttu-id="73bdf-157">如果主机应用程序不是 web 上的 Outlook, 则访问此属性将导致`undefined`。</span><span class="sxs-lookup"><span data-stu-id="73bdf-157">If the host application is not Outlook on the web, then accessing this property results in `undefined`.</span></span>
 
-<span data-ttu-id="45beb-158">Outlook Web App 具有三种视图，这些视图分别与屏幕和窗口的宽度以及可以显示的列数相对应：</span><span class="sxs-lookup"><span data-stu-id="45beb-158">Outlook Web App has three views that correspond to the width of the screen and the window, and the number of columns that can be displayed:</span></span>
+<span data-ttu-id="73bdf-158">Web 上的 Outlook 具有三个视图, 分别对应于屏幕的宽度和窗口, 以及可以显示的列数:</span><span class="sxs-lookup"><span data-stu-id="73bdf-158">Outlook on the web has three views that correspond to the width of the screen and the window, and the number of columns that can be displayed:</span></span>
 
-*   <span data-ttu-id="45beb-p102">`OneColumn` 在屏幕较窄时显示。Outlook Web App 在智能手机的整个屏幕上使用此单列布局。</span><span class="sxs-lookup"><span data-stu-id="45beb-p102">`OneColumn`, which is displayed when the screen is narrow. Outlook Web App uses this single-column layout on the entire screen of a smartphone.</span></span>
-*   <span data-ttu-id="45beb-p103">`TwoColumns` 在屏幕较宽时显示。Outlook Web App 在大多数平板电脑上使用此视图。</span><span class="sxs-lookup"><span data-stu-id="45beb-p103">`TwoColumns`, which is displayed when the screen is wider. Outlook Web App uses this view on most tablets.</span></span>
-*   <span data-ttu-id="45beb-p104">`ThreeColumns` 在屏幕为宽屏时显示。例如，Outlook Web App 在台式机的全屏窗口中使用此视图。</span><span class="sxs-lookup"><span data-stu-id="45beb-p104">`ThreeColumns`, which is displayed when the screen is wide. For example, Outlook Web App uses this view in a full screen window on a desktop computer.</span></span>
+*   <span data-ttu-id="73bdf-159">`OneColumn` 在屏幕较窄时显示。</span><span class="sxs-lookup"><span data-stu-id="73bdf-159">`OneColumn`, which is displayed when the screen is narrow.</span></span> <span data-ttu-id="73bdf-160">Web 上的 Outlook 在智能手机的整个屏幕上使用此单列布局。</span><span class="sxs-lookup"><span data-stu-id="73bdf-160">Outlook on the web uses this single-column layout on the entire screen of a smartphone.</span></span>
+*   <span data-ttu-id="73bdf-161">`TwoColumns` 在屏幕较宽时显示。</span><span class="sxs-lookup"><span data-stu-id="73bdf-161">`TwoColumns`, which is displayed when the screen is wider.</span></span> <span data-ttu-id="73bdf-162">Outlook 网页版在大多数平板电脑上使用此视图。</span><span class="sxs-lookup"><span data-stu-id="73bdf-162">Outlook on the web uses this view on most tablets.</span></span>
+*   <span data-ttu-id="73bdf-163">`ThreeColumns` 在屏幕为宽屏时显示。</span><span class="sxs-lookup"><span data-stu-id="73bdf-163">`ThreeColumns`, which is displayed when the screen is wide.</span></span> <span data-ttu-id="73bdf-164">例如, web 上的 Outlook 在桌面计算机上的全屏窗口中使用此视图。</span><span class="sxs-lookup"><span data-stu-id="73bdf-164">For example, Outlook on the web uses this view in a full screen window on a desktop computer.</span></span>
 
-##### <a name="type"></a><span data-ttu-id="45beb-165">类型</span><span class="sxs-lookup"><span data-stu-id="45beb-165">Type</span></span>
+##### <a name="type"></a><span data-ttu-id="73bdf-165">类型</span><span class="sxs-lookup"><span data-stu-id="73bdf-165">Type</span></span>
 
-*   <span data-ttu-id="45beb-166">String</span><span class="sxs-lookup"><span data-stu-id="45beb-166">String</span></span>
+*   <span data-ttu-id="73bdf-166">String</span><span class="sxs-lookup"><span data-stu-id="73bdf-166">String</span></span>
 
-##### <a name="requirements"></a><span data-ttu-id="45beb-167">要求</span><span class="sxs-lookup"><span data-stu-id="45beb-167">Requirements</span></span>
+##### <a name="requirements"></a><span data-ttu-id="73bdf-167">要求</span><span class="sxs-lookup"><span data-stu-id="73bdf-167">Requirements</span></span>
 
-|<span data-ttu-id="45beb-168">要求</span><span class="sxs-lookup"><span data-stu-id="45beb-168">Requirement</span></span>| <span data-ttu-id="45beb-169">值</span><span class="sxs-lookup"><span data-stu-id="45beb-169">Value</span></span>|
+|<span data-ttu-id="73bdf-168">要求</span><span class="sxs-lookup"><span data-stu-id="73bdf-168">Requirement</span></span>| <span data-ttu-id="73bdf-169">值</span><span class="sxs-lookup"><span data-stu-id="73bdf-169">Value</span></span>|
 |---|---|
-|[<span data-ttu-id="45beb-170">最低版本的邮箱要求集</span><span class="sxs-lookup"><span data-stu-id="45beb-170">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| <span data-ttu-id="45beb-171">1.0</span><span class="sxs-lookup"><span data-stu-id="45beb-171">1.0</span></span>|
-|[<span data-ttu-id="45beb-172">最低权限级别</span><span class="sxs-lookup"><span data-stu-id="45beb-172">Minimum permission level</span></span>](/outlook/add-ins/understanding-outlook-add-in-permissions)| <span data-ttu-id="45beb-173">ReadItem</span><span class="sxs-lookup"><span data-stu-id="45beb-173">ReadItem</span></span>|
-|[<span data-ttu-id="45beb-174">适用的 Outlook 模式</span><span class="sxs-lookup"><span data-stu-id="45beb-174">Applicable Outlook mode</span></span>](/outlook/add-ins/#extension-points)| <span data-ttu-id="45beb-175">撰写或阅读</span><span class="sxs-lookup"><span data-stu-id="45beb-175">Compose or Read</span></span>|
+|[<span data-ttu-id="73bdf-170">最低版本的邮箱要求集</span><span class="sxs-lookup"><span data-stu-id="73bdf-170">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| <span data-ttu-id="73bdf-171">1.0</span><span class="sxs-lookup"><span data-stu-id="73bdf-171">1.0</span></span>|
+|[<span data-ttu-id="73bdf-172">最低权限级别</span><span class="sxs-lookup"><span data-stu-id="73bdf-172">Minimum permission level</span></span>](/outlook/add-ins/understanding-outlook-add-in-permissions)| <span data-ttu-id="73bdf-173">ReadItem</span><span class="sxs-lookup"><span data-stu-id="73bdf-173">ReadItem</span></span>|
+|[<span data-ttu-id="73bdf-174">适用的 Outlook 模式</span><span class="sxs-lookup"><span data-stu-id="73bdf-174">Applicable Outlook mode</span></span>](/outlook/add-ins/#extension-points)| <span data-ttu-id="73bdf-175">撰写或阅读</span><span class="sxs-lookup"><span data-stu-id="73bdf-175">Compose or Read</span></span>|
