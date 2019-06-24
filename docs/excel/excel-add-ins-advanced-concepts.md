@@ -1,14 +1,14 @@
 ---
 title: Excel JavaScript API 高级编程概念
 description: ''
-ms.date: 05/08/2019
+ms.date: 06/20/2019
 localization_priority: Priority
-ms.openlocfilehash: 43d1f79b629b238afd227978e9c6dc90b9a6d992
-ms.sourcegitcommit: a99be9c4771c45f3e07e781646e0e649aa47213f
+ms.openlocfilehash: da85bf8ec00134b86fcf6ae561366f9536f21303
+ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/11/2019
-ms.locfileid: "33952157"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "35127795"
 ---
 # <a name="advanced-programming-concepts-with-the-excel-javascript-api"></a>Excel JavaScript API 高级编程概念
 
@@ -60,7 +60,7 @@ else {
 ```
 
 > [!NOTE]
-> 若要让加载项适用于 Office 主机的所有平台（如 Windows 版 Excel、Excel Online 和 Excel for iPad），建议在运行时检查是否有要求支持，而不是在清单中定义要求集支持。
+> 为了让加载项适用于 Office 主机的所有平台（如 Excel 网页版、Windows 版 Excel 和 iPad 版 Excel），建议在运行时检查是否有要求支持，而不是在清单中定义要求集支持。
 
 ### <a name="requirement-sets-for-the-officejs-common-api"></a>Office.js 通用 API 的要求集
 

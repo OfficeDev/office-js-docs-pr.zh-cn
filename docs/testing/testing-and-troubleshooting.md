@@ -1,14 +1,14 @@
 ---
 title: 排查 Office 加载项中的用户错误
 description: ''
-ms.date: 05/21/2019
+ms.date: 06/20/2019
 localization_priority: Priority
-ms.openlocfilehash: 2e03e841253914a8ee1dd23aef201a38b4bea6d1
-ms.sourcegitcommit: adaee1329ae9bb69e49bde7f54a4c0444c9ba642
+ms.openlocfilehash: a82dc05789b4c35a954337a64197d3ac1a190b96
+ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "34432180"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "35126902"
 ---
 # <a name="troubleshoot-user-errors-with-office-add-ins"></a>排查 Office 加载项中的用户错误
 
@@ -73,7 +73,7 @@ ms.locfileid: "34432180"
 
 |**受影响的浏览器**|**受影响的平台**|
 |:--------------------|:---------------------|
-|Internet Explorer、Microsoft Edge|Office Online|
+|Internet Explorer、Microsoft Edge|Office 网页版|
 
 若要解决此问题，最终用户或管理员可以向 Internet Explorer 中的受信任站点列表添加外接程序的域。无论使用的是 Internet Explorer 还是 Microsoft Edge 浏览器，请使用相同过程。
 
@@ -110,7 +110,7 @@ Office.context.ui.displayDialogAsync(startAddress, {displayInFrame:true}, callba
 
 ## <a name="see-also"></a>另请参阅
 
-- [在 Office Online 中调试加载项](debug-add-ins-in-office-online.md) 
+- [在 Office 网页版中调试加载项](debug-add-ins-in-office-online.md) 
 - [将 Office 外接程序旁加载到 iPad 和 Mac 上](sideload-an-office-add-in-on-ipad-and-mac.md)  
 - [在 iPad 和 Mac 上调试 Office 外接程序](debug-office-add-ins-on-ipad-and-mac.md)  
 - [验证并排查清单问题](troubleshoot-manifest.md)

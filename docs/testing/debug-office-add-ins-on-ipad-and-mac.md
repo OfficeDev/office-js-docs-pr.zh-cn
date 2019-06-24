@@ -1,14 +1,14 @@
 ---
 title: 在 Mac 上调试 Office 加载项
 description: ''
-ms.date: 05/21/2019
+ms.date: 06/20/2019
 localization_priority: Priority
-ms.openlocfilehash: 0505dcc49ea98040f1c4891621c8e30a8cbeaff4
-ms.sourcegitcommit: adaee1329ae9bb69e49bde7f54a4c0444c9ba642
+ms.openlocfilehash: 88f7cbf6c944a0f6510306cfe2d07db59e40bdeb
+ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "34432276"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "35126930"
 ---
 # <a name="debug-office-add-ins-on-a-mac"></a>在 Mac 上调试 Office 加载项
 
@@ -41,7 +41,7 @@ ms.locfileid: "34432276"
 
 ## <a name="clearing-the-office-applications-cache-on-a-mac"></a>在 Mac 上清除 Office 应用程序缓存
 
-出于性能方面的考虑，外接程序通常在 Office for Mac 中缓存。通常情况下，将通过重载加载项清除缓存。如果同一文档中存在多个外接程序，则重载后自动清除缓存的过程可能不可靠。
+出于性能方面的考虑，加载项通常在 Mac 版 Office 中缓存。通常情况下，将通过重载加载项清除缓存。如果同一文档中存在多个加载项，则重载后自动清除缓存的过程可能不可靠。
 
 在 Mac 上，通过删除 `~/Library/Containers/com.Microsoft.OsfWebHost/Data/` 文件夹中的内容可以手动清除缓存。 
 

@@ -1,20 +1,20 @@
 ---
-title: "\"context.subname\": \"邮箱. userProfile-要求集 1.7\""
+title: "\"Context.subname\": \"邮箱. userProfile-要求集 1.7\""
 description: ''
-ms.date: 04/24/2019
+ms.date: 06/20/2019
 localization_priority: Normal
-ms.openlocfilehash: 036f18e4cb98cfe510a19d85a5a79f393ca8bd17
-ms.sourcegitcommit: 7462409209264dc7f8f89f3808a7a6249fcd739e
+ms.openlocfilehash: 45533fb3a879e4e34e91adfb04dd8ce55f815749
+ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/26/2019
-ms.locfileid: "33353291"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "35127140"
 ---
 # <a name="userprofile"></a>userProfile
 
 ### <a name="officeofficemdcontextofficecontextmdmailboxofficecontextmailboxmduserprofile"></a>[Office](Office.md)[.context](Office.context.md)[.mailbox](Office.context.mailbox.md).userProfile
 
-##### <a name="requirements"></a>Requirements
+##### <a name="requirements"></a>要求
 
 |要求| 值|
 |---|---|
@@ -36,7 +36,7 @@ ms.locfileid: "33353291"
 #### <a name="accounttype-string"></a>accountType: String
 
 > [!NOTE]
-> 此成员目前仅支持适用于 Mac 的 Outlook 2016 (内部版本16.9.1212 或更高版本)。
+> 此成员目前仅受 Outlook 2016 或更高版本的 Mac (内部版本16.9.1212 或更高版本) 支持。
 
 获取与邮箱关联的用户的帐户类型。 下表中列出了可能的值。
 

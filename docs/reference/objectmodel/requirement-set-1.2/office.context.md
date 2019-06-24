@@ -1,14 +1,14 @@
 ---
 title: Office。上下文要求集1。2
 description: ''
-ms.date: 03/19/2019
+ms.date: 06/20/2019
 localization_priority: Normal
-ms.openlocfilehash: 8c0c84d4c763e125992b06abfb33985085a56210
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: cdf6b76ca090eb78d31fc1a6f328ce83c606e1f5
+ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32451855"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "35128424"
 ---
 # <a name="context"></a>context
 
@@ -17,7 +17,7 @@ ms.locfileid: "32451855"
 Office.context 命名空间提供所有 Office 应用中的加载项所使用的共享接口。此列表仅记录 Outlook 加载项所使用的接口。有关 Office.context 命名空间的完整列表，请参阅[通用 API 中的 Office.context 引用](/javascript/api/office/office.context)。
 
 
-##### <a name="requirements"></a>Requirements
+##### <a name="requirements"></a>要求
 
 |要求| 值|
 |---|---|
@@ -26,11 +26,11 @@ Office.context 命名空间提供所有 Office 应用中的加载项所使用的
 
 ### <a name="namespaces"></a>命名空间
 
-[邮箱](office.context.mailbox.md)-为 microsoft outlook 和 microsoft outlook 网页版提供对 outlook 外接程序对象模型的访问权限。
+[邮箱](office.context.mailbox.md)-提供对 Microsoft Outlook 的 outlook 外接程序对象模型的访问权限。
 
-### <a name="members"></a>成员
+### <a name="members"></a>Members
 
-####  <a name="displaylanguage-string"></a>displayLanguage :String
+#### <a name="displaylanguage-string"></a>displayLanguage: String
 
 获取用户针对 Office 主机应用程序的 UI 指定的 RFC 1766 语言标记格式的区域设置（语言）。
 
@@ -68,17 +68,17 @@ function write(message){
 }
 ```
 
-####  <a name="roamingsettings-roamingsettingsjavascriptapioutlook12officeroamingsettings"></a>roamingSettings :[RoamingSettings](/javascript/api/outlook_1_2/office.RoamingSettings)
+#### <a name="roamingsettings-roamingsettingsjavascriptapioutlook12officeroamingsettings"></a>roamingSettings: [roamingSettings](/javascript/api/outlook_1_2/office.RoamingSettings)
 
 获取一个对象，它表示保存到用户邮箱的邮件外接程序的自定义设置或状态。
 
 `RoamingSettings` 对象允许您存储和访问用户邮箱中存储的邮件外接程序的数据，以便从用于访问该邮箱的任何主机客户端应用程序中运行该外接程序时，该外接程序可以使用该数据。
 
-##### <a name="type"></a>Type
+##### <a name="type"></a>类型
 
 *   [RoamingSettings](/javascript/api/outlook_1_2/office.RoamingSettings)
 
-##### <a name="requirements"></a>Requirements
+##### <a name="requirements"></a>要求
 
 |要求| 值|
 |---|---|

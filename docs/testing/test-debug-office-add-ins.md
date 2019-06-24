@@ -1,14 +1,14 @@
 ---
 title: 测试和调试 Office 加载项
 description: ''
-ms.date: 03/19/2019
+ms.date: 06/20/2019
 localization_priority: Priority
-ms.openlocfilehash: c51823684dab4e85e2cf9e621365ea6230f21b8a
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: 3c841608d36f5004a876bec2c899d0e5659d47a7
+ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32451099"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "35126916"
 ---
 # <a name="test-and-debug-office-add-ins"></a>测试和调试 Office 加载项
 
@@ -20,7 +20,7 @@ ms.locfileid: "32451099"
 
 - [在 Windows 上旁加载 Office 加载项](create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)
 
-- [在 Office Online 中旁加载 Office 加载项](sideload-office-add-ins-for-testing.md)
+- [在 Office 网页版中旁加载 Office 加载项](sideload-office-add-ins-for-testing.md)
 
 - [在 iPad 和 Mac 上旁加载 Office 加载项](sideload-an-office-add-in-on-ipad-and-mac.md)
 
@@ -34,7 +34,7 @@ Office 加载项的调试过程也因平台而异。 下面的文章分别介绍
 
 - [在 Windows 10 上使用 F12 开发人员工具调试加载项](debug-add-ins-using-f12-developer-tools-on-windows-10.md)
 
-- [在 Office Online 中调试加载项](debug-add-ins-in-office-online.md)
+- [在 Office 网页版中调试加载项](debug-add-ins-in-office-online.md)
 
 - [在 iPad 和 Mac 上调试 Office 加载项](debug-office-add-ins-on-ipad-and-mac.md)
 

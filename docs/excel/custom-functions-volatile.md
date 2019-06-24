@@ -3,16 +3,18 @@ ms.date: 06/17/2019
 description: 了解如何实现易失性和脱机流式处理自定义函数。
 title: 函数中的可变值
 localization_priority: Normal
-ms.openlocfilehash: 0edf4071ce366c40300663233f1de318a544169b
-ms.sourcegitcommit: 4bf5159a3821f4277c07d89e88808c4c3a25ff81
+ms.openlocfilehash: bcaef092ec386a7d80760c1e2a567b9de1fdad21
+ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "35059844"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "35127814"
 ---
 # <a name="volatile-values-in-functions"></a>函数中的可变值
 
 可变函数是值在每次计算单元格时更改的函数。 即使函数的所有参数都不变, 该值也可以更改。 每当 Excel 重新计算时，这些函数即会重新计算。 例如，假设某个单元格调用函数 `NOW`。 每当调用 `NOW` 时，它将自动返回当前的日期和时间。
+
+[!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
 Excel 包含多个内置可变函数，例如 `RAND` 和 `TODAY`。 可参阅[可变函数和非可变函数](/office/client-developer/excel/excel-recalculation#volatile-and-non-volatile-functions)，来获取 Excel 可变函数的完整列表。
 

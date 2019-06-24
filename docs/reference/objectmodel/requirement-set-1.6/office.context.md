@@ -1,14 +1,14 @@
 ---
 title: Office。上下文要求集1。6
 description: ''
-ms.date: 03/19/2019
+ms.date: 06/20/2019
 localization_priority: Normal
-ms.openlocfilehash: 1b0e5e72ce6e9142a987b246a2034d9029654d45
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: ad831be8438945775d1acb935adfb05f50b1926f
+ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32451736"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "35127196"
 ---
 # <a name="context"></a>context
 
@@ -16,7 +16,7 @@ ms.locfileid: "32451736"
 
 Office.context 命名空间提供所有 Office 应用中的加载项所使用的共享接口。此列表仅记录 Outlook 加载项所使用的接口。有关 Office.context 命名空间的完整列表，请参阅[通用 API 中的 Office.context 引用](/javascript/api/office/office.context)。
 
-##### <a name="requirements"></a>Requirements
+##### <a name="requirements"></a>要求
 
 |要求| 值|
 |---|---|
@@ -33,11 +33,11 @@ Office.context 命名空间提供所有 Office 应用中的加载项所使用的
 
 ### <a name="namespaces"></a>命名空间
 
-[mailbox](office.context.mailbox.md)：为 Microsoft Outlook 和 Microsoft Outlook 网页版提供对 Outlook 外接程序对象模型的访问权限。
+[邮箱](office.context.mailbox.md): 提供对 Microsoft Outlook 的 outlook 外接程序对象模型的访问权限。
 
-### <a name="members"></a>成员
+### <a name="members"></a>Members
 
-####  <a name="displaylanguage-string"></a>displayLanguage :String
+#### <a name="displaylanguage-string"></a>displayLanguage: String
 
 获取用户针对 Office 主机应用程序的 UI 指定的 RFC 1766 语言标记格式的区域设置（语言）。
 
@@ -75,29 +75,29 @@ function write(message){
 }
 ```
 
-####  <a name="officetheme-object"></a>officeTheme :Object
+#### <a name="officetheme-object"></a>officeTheme: Object
 
 提供了访问 Office 主题颜色的属性。
 
 > [!NOTE]
-> 在 Outlook for iOS 或 Outlook for Android 中不支持此成员。
+> IOS 或 Android 上的 Outlook 不支持此成员。
 
 通过使用 Office 主题颜色，你可以使外接程序的配色方案与用户（通过 **“文件”>“Office 帐户”>“Office 主题”UI**）选择的当前 Office 主题协调一致，这种做法适用于所有 Office 主机应用程序。使用 Office 主题颜色适用于邮件和任务窗格外接程序。
 
-##### <a name="type"></a>Type
+##### <a name="type"></a>类型
 
 *   对象
 
 ##### <a name="properties"></a>属性：
 
-|名称| 类型| 描述|
+|名称| 类型| 说明|
 |---|---|---|
-|`bodyBackgroundColor`| 字符串|获取十六进制三原色形式的 Office 主题正文背景色。|
+|`bodyBackgroundColor`| String|获取十六进制三原色形式的 Office 主题正文背景色。|
 |`bodyForegroundColor`| String|获取十六进制三原色形式的 Office 主题正文前景色。|
-|`controlBackgroundColor`| 字符串|获取十六进制三原色形式的 Office 主题控制背景色。|
+|`controlBackgroundColor`| String|获取十六进制三原色形式的 Office 主题控制背景色。|
 |`controlForegroundColor`| 字符串|获取十六进制三原色形式的 Office 主题正文控制颜色。|
 
-##### <a name="requirements"></a>Requirements
+##### <a name="requirements"></a>要求
 
 |要求| 值|
 |---|---|
@@ -119,17 +119,17 @@ function applyOfficeTheme(){
 }
 ```
 
-####  <a name="roamingsettings-roamingsettingsjavascriptapioutlook16officeroamingsettings"></a>roamingSettings :[RoamingSettings](/javascript/api/outlook_1_6/office.RoamingSettings)
+#### <a name="roamingsettings-roamingsettingsjavascriptapioutlook16officeroamingsettings"></a>roamingSettings: [roamingSettings](/javascript/api/outlook_1_6/office.RoamingSettings)
 
 获取一个对象，它表示保存到用户邮箱的邮件外接程序的自定义设置或状态。
 
 `RoamingSettings` 对象允许您存储和访问用户邮箱中存储的邮件外接程序的数据，以便从用于访问该邮箱的任何主机客户端应用程序中运行该外接程序时，该外接程序可以使用该数据。
 
-##### <a name="type"></a>Type
+##### <a name="type"></a>类型
 
 *   [RoamingSettings](/javascript/api/outlook_1_6/office.RoamingSettings)
 
-##### <a name="requirements"></a>Requirements
+##### <a name="requirements"></a>要求
 
 |要求| 值|
 |---|---|

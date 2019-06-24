@@ -1,42 +1,42 @@
 ---
 title: 在 iPad 和 Mac 上旁加载 Office 加载项以供测试
 description: ''
-ms.date: 05/21/2019
+ms.date: 06/20/2019
 localization_priority: Priority
-ms.openlocfilehash: f666ffee2c7c139ea18859d995384281a31238dd
-ms.sourcegitcommit: adaee1329ae9bb69e49bde7f54a4c0444c9ba642
+ms.openlocfilehash: b97da347064fdceda847403785e0bf792846dfaa
+ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "34432220"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "35126965"
 ---
 # <a name="sideload-office-add-ins-on-ipad-and-mac-for-testing"></a>在 iPad 和 Mac 上旁加载 Office 加载项以供测试
 
-若要查看你的外接程序在 Office for iOS 中如何运行，可以使用 iTunes 将你的外接程序的清单旁加载到 iPad，或直接将你的外接程序的清单旁加载到 Office for Mac 中。此操作并不能使你在运行时对其设置断点和调试代码，但你可以查看其行为方式，并验证 UI 可用且正确呈现。 
+若要查看加载项在 iOS 版 Office 中如何运行，可以使用 iTunes 将加载项的清单旁加载到 iPad，或直接将加载项的清单旁加载到 Mac 版 Office 中。此操作并不能使你在运行时对其设置断点和调试代码，但你可以查看其行为方式，并验证 UI 可用且正确呈现。 
 
-## <a name="prerequisites-for-office-for-ios"></a>Office for iOS 的先决条件
+## <a name="prerequisites-for-office-on-ios"></a>iOS 版 Office 的先决条件
 
 - 安装了 [iTunes](https://www.apple.com/itunes/download/) 的 Windows 或 Mac 计算机。
     
-- 安装了 [Excel for iPad](https://itunes.apple.com/us/app/microsoft-excel/id586683407?mt=8) 的 iPad（运行 iOS 8.2 或更高版本）以及同步电缆。
-    
-- 您要测试的外接程序的清单 .xml 文件。
-    
-
-## <a name="prerequisites-for-office-for-mac"></a>Office for Mac 的先决条件
-
-- 在已安装 [Office for Mac](https://products.office.com/buy/compare-microsoft-office-products?tab=omac) 的情况下可运行 OS X v10.10 "Yosemite" 或更高版本的 Mac。
-    
-- Word for Mac 版本 15.18 (160109)。
-   
-- Excel for Mac 版本 15.19 (160206)。
-
-- PowerPoint for Mac 版本 15.24 (160614)
+- 安装了 [iPad 版 Excel](https://itunes.apple.com/us/app/microsoft-excel/id586683407?mt=8) 的 iPad（运行 iOS 8.2 或更高版本）以及同步电缆。
     
 - 你想要测试的外接程序的清单 .xml 文件。
     
 
-## <a name="sideload-an-add-in-on-excel-or-word-for-ipad"></a>将外接程序旁加载到 Excel for iPad 或 Word for iPad 上
+## <a name="prerequisites-for-office-on-mac"></a>Mac 版 Office 的先决条件
+
+- 在已安装 [Mac 版 Office](https://products.office.com/buy/compare-microsoft-office-products?tab=omac) 的情况下可运行 OS X v10.10 "Yosemite" 或更高版本的 Mac。
+    
+- Mac 版本 15.18 (160109) 上的 Word。
+   
+- Mac 版本 15.19 (160206) 上的 Excel。
+
+- Mac 版本 15.24 (160614) 上的 PowerPoint
+    
+- 你想要测试的外接程序的清单 .xml 文件。
+    
+
+## <a name="sideload-an-add-in-on-excel-or-word-on-ipad"></a>在 iPad 版 Excel 或 iPad 版 Word 上旁加载加载项
 
 1. 使用同步电缆将 iPad 连接到你的计算机。如果是第一次将 iPad 连接到计算机，系统将提示“**信任此计算机？**”。选择“**信任**”继续执行操作。
 
@@ -57,10 +57,10 @@ ms.locfileid: "34432220"
     ![在 Excel 应用程序中插入的加载项](../images/excel-insert-add-in.png)
 
 
-## <a name="sideload-an-add-in-on-office-for-mac"></a>在 Office for Mac 上旁加载加载项
+## <a name="sideload-an-add-in-in-office-on-mac"></a>在 Mac 版 Office 中旁加载加载项
 
 > [!NOTE]
-> 若要旁加载 Outlook for Mac 加载项，请参阅[旁加载 Outlook 加载项以供测试](/outlook/add-ins/sideload-outlook-add-ins-for-testing)。
+> 若要旁加载 Mac 版 Outlook 加载项，请参阅[旁加载 Outlook 加载项进行测试](/outlook/add-ins/sideload-outlook-add-ins-for-testing)。
 
 1. 打开“**终端**”并转到以下文件夹之一，你将在其中保存外接程序的清单文件。如果 `wef` 文件夹在你的计算机上不存在，请创建它。
     
@@ -70,24 +70,24 @@ ms.locfileid: "34432220"
     
 2. 在“**查找程序**”中使用命令 `open .`（包括句点或点）打开该文件夹。将你的外接程序的清单文件复制到该文件夹中。
     
-    ![Office for Mac 中的 Wef 文件夹](../images/all-my-files.png)
+    ![Mac 版 Office 中的 Wef 文件夹](../images/all-my-files.png)
 
 3. 打开 Word，然后打开一个文档。如果 Word 已运行，则重新启动它。
     
 4. 在 Word 中，选择“**插入**” > “**外接程序**” > “**我的外接程序**”（下拉菜单），然后选择外接程序。
     
-    ![Office for Mac 中的“我的加载项”](../images/my-add-ins-wikipedia.png)
+    ![Mac 版 Office 中的“我的加载项”](../images/my-add-ins-wikipedia.png)
 
     > [!IMPORTANT]
     > 旁加载的加载项不会显示在“我的加载项”对话框中。它们仅显示在下拉菜单中（单击“插入”**** 选项卡上“我的加载项”右侧的向下小箭头）。旁加载的加载项在此菜单中的“开发人员加载项”**** 标题下列出。 
     
 5. 验证加载项是否在 Word 中显示。
     
-    ![Office for Mac 中显示的 Office 加载项](../images/lorem-ipsum-wikipedia.png)
+    ![Mac 版 Office 中显示的 Office 加载项](../images/lorem-ipsum-wikipedia.png)
     
 ### <a name="clearing-the-office-applications-cache-on-a-mac"></a>在 Mac 上清除 Office 应用程序缓存
 
-出于性能方面的考虑，加载项通常在 Office for Mac 中缓存。 通常情况下，将通过重载外接程序清除缓存。 如果同一文档中存在多个外接程序，则重载后自动清除缓存的过程可能不可靠。
+出于性能方面的考虑，加载项通常在 Mac 版 Office 中缓存。 通常情况下，将通过重载外接程序清除缓存。 如果同一文档中存在多个外接程序，则重载后自动清除缓存的过程可能不可靠。
 
 在 Mac 上，通过删除 `~/Library/Containers/com.Microsoft.OsfWebHost/Data/` 文件夹中的内容可以手动清除缓存。 
 

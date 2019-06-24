@@ -1,15 +1,15 @@
 ---
 title: Visio JavaScript API 概述
 description: ''
-ms.date: 10/11/2018
+ms.date: 06/20/2019
 ms.prod: visio
 localization_priority: Priority
-ms.openlocfilehash: 22b22db1cc515145ef4f18a30de189a3bbd04f60
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: 77a3b3f0b4535d366f492f265087bb4f5988c14f
+ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32451789"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "35127112"
 ---
 # <a name="visio-javascript-api-overview"></a>Visio JavaScript API 概述
 
@@ -25,11 +25,11 @@ ms.locfileid: "32451789"
 * 为绘图中的鼠标事件编写自定义处理程序。
 * 向解决方案公开图表数据，如形状文本、形状数据和超链接。
 
-本文介绍了如何通过结合使用 Visio JavaScript API 和 Visio Online 来生成 SharePoint Online 解决方案。具体介绍了有关使用 API（如 **EmbeddedSession**、**RequestContext**、JavaScript 代理对象、**sync()**、**Visio.run()** 和 **load()** 方法）的基本概念。下面这些代码示例展示了如何应用这些概念。
+本文介绍了如何通过结合使用 Visio JavaScript API 和 Visio 网页版来生成 SharePoint Online 解决方案。具体介绍了有关使用 API（如 **EmbeddedSession**、**RequestContext**、JavaScript 代理对象、**sync()**、**Visio.run()** 和 **load()** 方法）的基本概念。下面这些代码示例展示了如何应用这些概念。
 
 ## <a name="embeddedsession"></a>EmbeddedSession
 
-EmbeddedSession 对象初始化开发者框架和 Visio Online 框架之间的通信。
+EmbeddedSession 对象在浏览器中初始化开发人员框架和 Visio 框架之间的通信。
 
 ```js
 var session = new OfficeExtension.EmbeddedSession(url, { id: "embed-iframe",container: document.getElementById("iframeHost") });
@@ -46,7 +46,7 @@ session.init().then(function () {
 
 ## <a name="requestcontext"></a>RequestContext
 
-RequestContext 对象可方便对 Visio 应用程序提出请求。 由于开发者框架和 Visio Online 应用程序在两个不同的 iframe 中运行，因此 RequestContext 对象（下一个示例中的上下文）必须能够从开发者框架访问 Visio 和相关对象（如页面和形状）。
+RequestContext 对象可方便对 Visio 应用程序提出请求。 由于开发人员框架和 Visio Web 客户端在两个不同的 iframe 中运行，因此 RequestContext 对象（下一个示例中的上下文）必须能够从开发人员框架访问 Visio 和相关对象（如页面和形状）。
 
 ```js
 function hideToolbars() {
@@ -194,15 +194,11 @@ function getSelectedShapeText() {
 </script>
 ```
 
-完成此操作之后，只需使用你想要使用的 Visio 图表的 URL。 只需将 Visio 图表上传到 SharePoint Online 并在 Visio Online 将其打开。 在这里打开嵌入对话框，然后使用以上示例中的嵌入 URL。
+完成此操作之后，只需使用你想要使用的 Visio 图表的 URL。 只需将 Visio 图表上传到 SharePoint Online 并在 Visio 网页版将其打开。 在这里打开嵌入对话框，然后使用以上示例中的嵌入 URL。
 
 ![复制嵌入对话框中的 Visio 文件 URL](../images/Visio-embed-url.png)
 
-如果在编辑模式下使用 Visio Online，请通过选择“文件”**** > “共享”**** > “嵌入”**** 打开嵌入对话框。 如果在视图模式下使用 Visio Online，请通过选择“...”和“嵌入”**** 打开嵌入对话框。
-
-## <a name="open-api-specifications"></a>开放性 API 规范
-
-在设计和开发新的 API 时，我们会“[开放性 API 规范](../openspec.md)”页面上提供这些 API，以便你向我们提供反馈。了解管道中的新增功能，并提供你对我们的设计规范的宝贵意见。
+如果在编辑模式下使用 Visio 网页版，请通过依次选择“**文件**” > “**共享**” > “**嵌入**”来打开嵌入对话框。 如果在视图模式下使用 Visio 网页版，请通过选择“...”和“**嵌入**”来打开嵌入对话框。
 
 ## <a name="visio-javascript-api-reference"></a>Visio JavaScript API 参考
 

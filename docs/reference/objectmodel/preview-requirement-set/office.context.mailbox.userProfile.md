@@ -1,20 +1,20 @@
 ---
-title: "\"context.subname\": \"邮箱. userProfile-预览要求集\""
+title: "\"Context.subname\": \"邮箱. userProfile-预览要求集\""
 description: ''
-ms.date: 04/12/2019
+ms.date: 06/20/2019
 localization_priority: Normal
-ms.openlocfilehash: 29111314f16bb9c6518b350254a3036ffa125796
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: 051615f28db420ad1d198e21d9a9eeb1cad3fe7a
+ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32451960"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "35127525"
 ---
 # <a name="userprofile"></a>userProfile
 
 ### <a name="officeofficemdcontextofficecontextmdmailboxofficecontextmailboxmduserprofile"></a>[Office](Office.md)[.context](Office.context.md)[.mailbox](Office.context.mailbox.md).userProfile
 
-##### <a name="requirements"></a>Requirements
+##### <a name="requirements"></a>要求
 
 |要求| 值|
 |---|---|
@@ -33,10 +33,10 @@ ms.locfileid: "32451960"
 
 ### <a name="members"></a>Members
 
-####  <a name="accounttype-string"></a>accountType: String
+#### <a name="accounttype-string"></a>accountType: String
 
 > [!NOTE]
-> 此成员目前仅在 Outlook 2016 或更高版本 for Mac (内部版本16.9.1212 或更高版本) 中受支持。
+> 此成员目前仅在 Outlook 2016 或更高版本 (内部版本16.9.1212 或更高版本) 中受支持。
 
 获取与邮箱关联的用户的帐户类型。 下表中列出了可能的值。
 
@@ -68,7 +68,7 @@ console.log(Office.context.mailbox.userProfile.accountType);
 ---
 ---
 
-####  <a name="displayname-string"></a>displayName :String
+#### <a name="displayname-string"></a>displayName: String
 
 获取用户的显示名称。
 
@@ -94,7 +94,7 @@ console.log(Office.context.mailbox.userProfile.displayName);
 ---
 ---
 
-####  <a name="emailaddress-string"></a>emailAddress :String
+#### <a name="emailaddress-string"></a>emailAddress: String
 
 获取用户的 SMTP 电子邮件地址。
 
@@ -120,7 +120,7 @@ console.log(Office.context.mailbox.userProfile.emailAddress);
 ---
 ---
 
-####  <a name="timezone-string"></a>timeZone :String
+#### <a name="timezone-string"></a>时区: 字符串
 
 获取用户的默认时区。
 

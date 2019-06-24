@@ -1,18 +1,18 @@
 ---
 title: 清单文件中的 DesktopFormFactor 元素
 description: ''
-ms.date: 05/08/2019
+ms.date: 06/20/2019
 localization_priority: Normal
-ms.openlocfilehash: b46536886d59692d03976083412a8b8d2e6ae859
-ms.sourcegitcommit: a99be9c4771c45f3e07e781646e0e649aa47213f
+ms.openlocfilehash: d1f09203518a38f1568b13e6c1a9c70752697152
+ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/11/2019
-ms.locfileid: "33952388"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "35128515"
 ---
 # <a name="desktopformfactor-element"></a>DesktopFormFactor 元素
 
-指定对桌面外形规格的外接程序的设置。 桌面外形规格包括 Windows 上的 Office、Office for Mac 和 Office Online。 它包含该外形规格的所有外接程序信息（**资源**节点的信息除外）。
+指定对桌面外形规格的外接程序的设置。 桌面外形规格包括 web、Windows 和 Mac 上的 Office。 它包含该外形规格的所有外接程序信息（**资源**节点的信息除外）。
 
 每个 DesktopFormFactor 定义均包含 **FunctionFile** 元素和一个或多个 **ExtensionPoint** 元素。有关详细信息，请参阅 [FunctionFile 元素](functionfile.md) 和 [ExtensionPoint 元素](extensionpoint.md)。
 

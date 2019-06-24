@@ -1,18 +1,18 @@
 ---
-title: 在 Office Online 中旁加载 Office 加载项以供测试
-description: 通过旁加载在 Office Online 中测试 Office 加载项
-ms.date: 04/29/2019
+title: 在 Office 网页版中旁加载 Office 加载项进行测试
+description: 通过旁加载在 Office 网页版中测试 Office 加载项
+ms.date: 06/20/2019
 localization_priority: Priority
-ms.openlocfilehash: 2bcab7b41fa7f5b9590aacc19645253ee822eeb8
-ms.sourcegitcommit: 68872372d181cca5bee37ade73c2250c4a56bab6
+ms.openlocfilehash: e382e4de62df28584da2c827433af3102486e057
+ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/01/2019
-ms.locfileid: "33517084"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "35126944"
 ---
-# <a name="sideload-office-add-ins-in-office-online-for-testing"></a>在 Office Online 中旁加载 Office 加载项以供测试
+# <a name="sideload-office-add-ins-in-office-on-the-web-for-testing"></a>在 Office 网页版中旁加载 Office 加载项进行测试
 
-可以通过使用旁加载来安装 Office 加载项以供测试，而无需先将它添加到加载项目录中。 在 Office 365 或 Office Online 中都可以进行旁加载。 该过程使用的两个平台略有不同。 
+可以通过使用旁加载来安装 Office 加载项以供测试，而无需先将它添加到加载项目录中。 在 Office 365 或 Office 网页版中都可以进行旁加载。 该过程使用的两个平台略有不同。 
 
 当旁加载外接程序时，外接程序清单存储在浏览器的本地存储区中，因此如果清除浏览器的缓存，或切换到另一个浏览器，就必须再次旁加载该外接程序。
 
@@ -20,14 +20,14 @@ ms.locfileid: "33517084"
 > [!NOTE]
 > 如本文所述，Word、Excel 和 PowerPoint 支持旁加载。若要旁加载 Outlook 外接程序，请参阅[旁加载 Outlook 外接程序进行测试](/outlook/add-ins/sideload-outlook-add-ins-for-testing)。
 
-下面的视频逐步展示了如何在 Office 桌面或 Office Online 上旁加载加载项。  
+下面的视频逐步展示了如何在 Office 网页版或桌面上旁加载加载项。
 
 
 > [!VIDEO https://www.youtube.com/embed/XXsAw2UUiQo]
 
-## <a name="sideload-an-office-add-in-in-office-online"></a>在 Office Online 中旁加载 Office 加载项
+## <a name="sideload-an-office-add-in-in-office-on-the-web"></a>在 Office 网页版中旁加载 Office 加载项
 
-1. 打开 [Microsoft Office Online](https://office.live.com/)。
+1. 打开 [Microsoft Office 网页版](https://office.live.com/)。
     
 2. 在“**立即开始使用在线应用**”中，选择 **Excel**、**Word** 或 **PowerPoint**；然后打开一个新文档。
     
@@ -44,11 +44,11 @@ ms.locfileid: "33517084"
 6. 验证是否已安装外接程序。例如，如果它是一个外接程序命令，它应显示在功能区或上下文菜单上。如果它是一个任务窗格外接程序，则应显示窗格。
 
 > [!NOTE]
->若要使用 Edge 测试 Office 加载项，需要执行两个配置步骤： 
+>若要使用 Microsoft Edge 测试 Office 加载项，需要执行两个配置步骤： 
 >
 > - 在 Windows 命令提示符下，运行以下行：`CheckNetIsolation LoopbackExempt -a -n="Microsoft.MicrosoftEdge_8wekyb3d8bbwe"`
 >
-> - 在 Edge 搜索栏中输入“**about:flags**”以调出“开发人员设置”选项。  选中“**允许本地主机环回**”选项，然后重新启动 Edge。
+> - 在 Microsoft Edge 搜索栏中输入“**about:flags**”以调出“开发人员设置”选项。  选中“**允许本地主机环回**”选项，然后重新启动 Microsoft Edge。
 
 >    ![选中此框后，Edge 会允许本地主机环回选项。](../images/allow-localhost-loopback.png)
 
@@ -59,7 +59,7 @@ ms.locfileid: "33517084"
     
 2. 打开工具栏最左端的应用启动器，选择“Excel”****、“Word”**** 或“PowerPoint”****，再新建文档。
     
-3. 步骤 3 - 6 与上一部分**在 Office Online 中旁加载 Office 加载项**相同。
+3. 步骤 3 - 6 与上一部分**在 Office 网页版中旁加载 Office 加载项**相同。
 
 
 ## <a name="sideload-an-add-in-when-using-visual-studio"></a>使用 Visual Studio 时旁加载加载项
@@ -67,7 +67,7 @@ ms.locfileid: "33517084"
 如果使用 Visual Studio 来开发加载项，则旁加载的过程类似。 唯一的区别是，必须更新清单中 **SourceURL** 元素的值以包含部署加载项位置的完整 URL。
 
 > [!NOTE]
-> 虽然可以将加载项从 Visual Studio 旁加载到 Office Online，但无法从 Visual Studio 调试它们。 若要进行调试，需要使用浏览器调试工具。 有关详细信息，请参阅[在 Office Online 中调试加载项](debug-add-ins-in-office-online.md)。
+> 虽然可以将加载项从 Visual Studio 旁加载到 Office 网页版，但无法从 Visual Studio 调试它们。 若要进行调试，需要使用浏览器调试工具。 有关详细信息，请参阅[在 Office 网页版中调试加载项](debug-add-ins-in-office-online.md)。
 
 1. 在 Visual Studio 中，通过选择**视图** -> **属性窗口**来显示**属性**窗口。
 2. 在**解决方案资源管理器**中，选择 Web 项目。 这将在**属性**窗口中显示项目的属性。
@@ -76,4 +76,4 @@ ms.locfileid: "33517084"
 5. 使用刚复制的 SSL URL 来搜索和替换 **~remoteAppUrl/** 的所有实例。 将看到多个替换，具体取决于项目类型。将显示新 URL，类似于 `https://localhost:44300/Home.html`。
 6. 保存 XML 文件。
 7. 右键单击 Web 项目，然后选择**调试** -> **启动新实例**。 这将在不启动 Office 的情况下运行 Web 项目。
-8. 从 Office Online，使用之前[在 Office Online 中加载 Office 加载项](#sideload-an-office-add-in-in-office-online)中所述的步骤旁加载加载项。
+8. 从 Office 网页版，使用之前[在 Office 网页版中加载 Office 加载项](#sideload-an-office-add-in-in-office-on-the-web)中所述的步骤旁加载加载项。

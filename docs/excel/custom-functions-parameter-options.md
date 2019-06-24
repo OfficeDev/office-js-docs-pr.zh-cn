@@ -1,14 +1,14 @@
 ---
-ms.date: 06/17/2019
+ms.date: 06/18/2019
 description: 了解如何在自定义函数中使用不同的参数, 例如 Excel 范围、可选参数、调用上下文等。
 title: Excel 自定义函数的选项
 localization_priority: Normal
-ms.openlocfilehash: f20fd00cb751cc1ab258db6442785f67f3460817
-ms.sourcegitcommit: 4bf5159a3821f4277c07d89e88808c4c3a25ff81
+ms.openlocfilehash: dca85df87f0153c03b2ddd027748e16d3ec79924
+ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "35059879"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "35128337"
 ---
 # <a name="custom-functions-parameter-options"></a>自定义函数参数选项
 
@@ -16,6 +16,8 @@ ms.locfileid: "35059879"
 - [可选参数](#custom-functions-optional-parameters)
 - [范围参数](#range-parameters)
 - [调用上下文参数](#invocation-parameter)
+
+[!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
 ## <a name="custom-functions-optional-parameters"></a>自定义函数可选参数
 

@@ -1,20 +1,20 @@
 ---
-title: "\"context.subname\"-\"邮箱-要求集 1.1\""
+title: "\"Context.subname\"-\"邮箱-要求集 1.1\""
 description: ''
-ms.date: 03/19/2019
+ms.date: 06/20/2019
 localization_priority: Normal
-ms.openlocfilehash: 629d0e5cde637ef209736dd9359ea59d0f6e0e47
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: 256bd2b992531fa52953098893025e4a006caf08
+ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32450350"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "35127490"
 ---
 # <a name="mailbox"></a>邮箱
 
 ### <a name="officeofficemdcontextofficecontextmdmailbox"></a>[Office](Office.md)[.context](Office.context.md).mailbox
 
-为 Microsoft Outlook 和 Microsoft Outlook 网页版提供对 Outlook 加载项对象模型的访问权限。
+提供对 Microsoft Outlook 的 Outlook 外接程序对象模型的访问权限。
 
 ##### <a name="requirements"></a>要求
 
@@ -34,12 +34,12 @@ ms.locfileid: "32450350"
 
 ### <a name="members"></a>成员
 
-#### <a name="ewsurl-string"></a>ewsUrl :String
+#### <a name="ewsurl-string"></a>Mailbox.ewsurl: String
 
-获取此电子邮件帐户的 Exchange Web 服务 (EWS) 终结点的 URL。仅限阅读模式。
+获取此电子邮件帐户的 Exchange Web Services (EWS) 终点的 URL。 仅限阅读模式。
 
 > [!NOTE]
-> 在 Outlook for iOS 或 Outlook for Android 中不支持此成员。
+> IOS 或 Android 上的 Outlook 不支持此成员。
 
 远程服务可使用 `ewsUrl` 值对用户邮箱进行 EWS 调用。例如，可以创建远程服务来 [获取选定项目中的附件](/outlook/add-ins/get-attachments-of-an-outlook-item)。
 
@@ -47,7 +47,7 @@ ms.locfileid: "32450350"
 
 *   String
 
-##### <a name="requirements"></a>Requirements
+##### <a name="requirements"></a>要求
 
 |要求| 值|
 |---|---|
@@ -57,13 +57,13 @@ ms.locfileid: "32450350"
 
 ### <a name="methods"></a>方法
 
-####  <a name="converttolocalclienttimetimevalue--localclienttimejavascriptapioutlook11officelocalclienttime"></a>convertToLocalClientTime(timeValue) → {[LocalClientTime](/javascript/api/outlook_1_1/office.LocalClientTime)}
+#### <a name="converttolocalclienttimetimevalue--localclienttimejavascriptapioutlook11officelocalclienttime"></a>convertToLocalClientTime(timeValue) → {[LocalClientTime](/javascript/api/outlook_1_1/office.LocalClientTime)}
 
 获取包含以本地客户端时间表示的时间信息的字典。
 
-Outlook 或 Outlook Web App 邮件应用程序的日期和时间可以使用不同的时区。Outlook 使用客户端计算机时区；Outlook Web App 使用 Exchange 管理中心 (EAC) 中设置的时区。应对日期和时间值进行处理，以便用户界面上显示的值始终与用户预期的时区一致。
+适用于桌面或 web 上的 Outlook 的邮件应用程序可以对日期和时间使用不同的时区。 桌面上的 Outlook 使用客户端计算机时区;Web 上的 Outlook 使用 Exchange 管理中心 (EAC) 上设置的时区。 应对日期和时间值进行处理，以便用户界面上显示的值始终与用户预期的时区一致。
 
-如果邮件应用程序在 Outlook 中运行，`convertToLocalClientTime` 方法将返回一个值设置为客户端计算机时区的字典对象。如果邮件应用程序在 Outlook Web App 中运行，`convertToLocalClientTime` 方法将返回值设置为 EAC 中指定的时区的字典对象。
+如果邮件应用程序在桌面客户端上的 Outlook 中运行, `convertToLocalClientTime`则该方法将返回一个 dictionary 对象, 并将值设置为客户端计算机时区。 如果邮件应用程序在 web 上的 Outlook 中运行, 则`convertToLocalClientTime`该方法将返回一个 dictionary 对象, 其中的值设置为 EAC 中指定的时区。
 
 ##### <a name="parameters"></a>参数
 
@@ -71,7 +71,7 @@ Outlook 或 Outlook Web App 邮件应用程序的日期和时间可以使用不�
 |---|---|---|
 |`timeValue`| 日期|一个 Date 对象|
 
-##### <a name="requirements"></a>Requirements
+##### <a name="requirements"></a>要求
 
 |要求| 值|
 |---|---|
@@ -83,7 +83,7 @@ Outlook 或 Outlook Web App 邮件应用程序的日期和时间可以使用不�
 
 类型：[LocalClientTime](/javascript/api/outlook_1_1/office.LocalClientTime)
 
-####  <a name="converttoutcclienttimeinput--date"></a>convertToUtcClientTime(input) → {Date}
+#### <a name="converttoutcclienttimeinput--date"></a>convertToUtcClientTime(input) → {Date}
 
 从包含时间信息的字典中获取 Date 对象。
 
@@ -95,7 +95,7 @@ Outlook 或 Outlook Web App 邮件应用程序的日期和时间可以使用不�
 |---|---|---|
 |`input`| [LocalClientTime](/javascript/api/outlook_1_1/office.LocalClientTime)|要转换的本地时间值。|
 
-##### <a name="requirements"></a>Requirements
+##### <a name="requirements"></a>要求
 
 |要求| 值|
 |---|---|
@@ -117,18 +117,18 @@ Outlook 或 Outlook Web App 邮件应用程序的日期和时间可以使用不�
 
 </dl>
 
-####  <a name="displayappointmentformitemid"></a>displayAppointmentForm(itemId)
+#### <a name="displayappointmentformitemid"></a>displayAppointmentForm(itemId)
 
 显示现有日历约会。
 
 > [!NOTE]
-> 在 Outlook for iOS 或 Outlook for Android 中不支持此方法。
+> IOS 或 Android 上的 Outlook 不支持此方法。
 
 `displayAppointmentForm` 方法将打开桌面新窗口中或移动设备对话框中的现有日历约会。
 
-在 Outlook for Mac 中，您可以使用此方法来显示不属于定期系列的单个约会，或显示定期系列的主约会，但无法显示该系列的实例。这是因为在 Outlook for Mac 中，无法访问定期系列实例的属性（包括项目 ID）。
+在 Mac 上的 Outlook 中, 可以使用此方法显示不是定期系列的一部分的单个约会, 也可以是定期系列的主约会, 但不能显示该系列的实例。 这是因为在 Mac 上的 Outlook 中, 无法访问定期系列的实例的属性 (包括项目 ID)。
 
-在 Outlook Web App 中，此方法仅在窗体正文小于或等于 32KB 字符数时，才会打开指定的窗体。
+在 web 上的 Outlook 中, 仅当窗体的正文小于或等于32KB 个字符时, 此方法才会打开指定的窗体。
 
 如果指定的项标识符没有识别现有约会，将在客户端计算机或设备上打开一个空白窗格，并且不会返回错误消息。
 
@@ -138,7 +138,7 @@ Outlook 或 Outlook Web App 邮件应用程序的日期和时间可以使用不�
 |---|---|---|
 |`itemId`| 字符串|现有日历约会的 Exchange Web 服务 (EWS) 标识符。|
 
-##### <a name="requirements"></a>Requirements
+##### <a name="requirements"></a>要求
 
 |要求| 值|
 |---|---|
@@ -152,16 +152,16 @@ Outlook 或 Outlook Web App 邮件应用程序的日期和时间可以使用不�
 Office.context.mailbox.displayAppointmentForm(appointmentId);
 ```
 
-####  <a name="displaymessageformitemid"></a>displayMessageForm(itemId)
+#### <a name="displaymessageformitemid"></a>displayMessageForm(itemId)
 
 显示现有邮件。
 
 > [!NOTE]
-> 在 Outlook for iOS 或 Outlook for Android 中不支持此方法。
+> IOS 或 Android 上的 Outlook 不支持此方法。
 
 `displayMessageForm` 方法将打开桌面新窗口中或移动设备对话框中的现有邮件。
 
-在 Outlook Web App 中，此方法仅在窗体正文小于或等于 32 KB 字符数时，才会打开指定的窗体。
+在 web 上的 Outlook 中, 仅当窗体的正文小于或等于 32 KB 的字符数时, 此方法才会打开指定的窗体。
 
 如果指定的项标识符未识别现有消息，则客户端计算机上不会显示任何消息，并且也不会返回错误消息。
 
@@ -171,7 +171,7 @@ Office.context.mailbox.displayAppointmentForm(appointmentId);
 
 |名称| 类型| 说明|
 |---|---|---|
-|`itemId`| 字符串|现有消息的 Exchange Web 服务 (EWS) 标识符。|
+|`itemId`| String|现有消息的 Exchange Web 服务 (EWS) 标识符。|
 
 ##### <a name="requirements"></a>要求
 
@@ -192,11 +192,11 @@ Office.context.mailbox.displayMessageForm(messageId);
 显示用于新建日历约会的表单。
 
 > [!NOTE]
-> 在 Outlook for iOS 或 Outlook for Android 中不支持此方法。
+> IOS 或 Android 上的 Outlook 不支持此方法。
 
 `displayNewAppointmentForm` 方法打开可让用户新建约会或会议的窗体。如果指定了参数，将使用参数的内容自动填充约会窗体字段。
 
-在 Outlook Web App 和适用于设备的 OWA 中，此方法始终显示包含与会者字段的窗体。如果你未将任何与会者指定为输入参数，该方法将显示为一个包含“**保存**”按钮的窗体。如果已指定与会者，窗体将包含与会者和“**发送**”按钮。
+在 web 和移动设备上的 Outlook 中, 此方法始终显示一个包含 "与会者" 字段的窗体。 如果你未将任何与会者指定为输入参数，该方法将显示为一个包含“**保存**”按钮的窗体。 如果已指定与会者，窗体将包含与会者和“**发送**”按钮。
 
 在 Outlook 富客户端和 Outlook RT 中，如果在 `requiredAttendees`、`optionalAttendees` 或 `resources` 参数中指定任何与会者或资源，此方法将显示会议窗体，其中包含一个“**发送**”按钮。如果未指定任何收件人，此方法将显示一个包含“**保存并关闭**”按钮的约会窗体。
 
@@ -206,7 +206,7 @@ Office.context.mailbox.displayMessageForm(messageId);
 
 |名称| 类型| 描述|
 |---|---|---|
-| `parameters` | Object | 描述新约会的参数字典。 |
+| `parameters` | 对象 | 描述新约会的参数字典。 |
 | `parameters.requiredAttendees` | Array.&lt;String&gt; &#124; Array.&lt;[EmailAddressDetails](/javascript/api/outlook_1_1/office.emailaddressdetails)&gt; | 包含电子邮件地址的字符串数组或包含约会的每个必需与会者的 `EmailAddressDetails` 对象的数组。数组限制为最多 100 个条目。 |
 | `parameters.optionalAttendees` | Array.&lt;String&gt; &#124; Array.&lt;[EmailAddressDetails](/javascript/api/outlook_1_1/office.emailaddressdetails)&gt; | 包含电子邮件地址的字符串数组或包含约会的每个可选与会者的 `EmailAddressDetails` 对象的数组。数组限制为最多 100 个条目。 |
 | `parameters.start` | 日期 | 指定约会的开始日期和时间的 `Date` 对象。 |
@@ -216,7 +216,7 @@ Office.context.mailbox.displayMessageForm(messageId);
 | `parameters.subject` | String | 包含约会主题的字符串。字符串长度限制为最多 255 个字符。 |
 | `parameters.body` | 字符串 | 约会的正文。正文内容限制为最大 32 KB。 |
 
-##### <a name="requirements"></a>Requirements
+##### <a name="requirements"></a>要求
 
 |要求| 值|
 |---|---|
@@ -259,7 +259,7 @@ Office.context.mailbox.displayNewAppointmentForm(
 |名称| 类型| 属性| 说明|
 |---|---|---|---|
 |`callback`| 函数||方法完成后，使用单个参数 `asyncResult`（一个 [`AsyncResult`](/javascript/api/office/office.asyncresult) 对象）调用在 `callback` 参数中传递的函数。<br/><br/>令牌作为 `asyncResult.value` 属性中的字符串提供。|
-|`userContext`| Object| &lt;可选&gt;|传递给异步方法的任何状态数据。|
+|`userContext`| 对象| &lt;可选&gt;|传递给异步方法的任何状态数据。|
 
 ##### <a name="requirements"></a>要求
 
@@ -281,7 +281,7 @@ function cb(asyncResult) {
 }
 ```
 
-####  <a name="getuseridentitytokenasynccallback-usercontext"></a>getUserIdentityTokenAsync(callback, [userContext])
+#### <a name="getuseridentitytokenasynccallback-usercontext"></a>getUserIdentityTokenAsync(callback, [userContext])
 
 获取用于标识用户和 Office 外接程序的令牌。
 
@@ -292,7 +292,7 @@ function cb(asyncResult) {
 |名称| 类型| 属性| 说明|
 |---|---|---|---|
 |`callback`| 函数||方法完成后，使用单个参数 `asyncResult`（一个 [`AsyncResult`](/javascript/api/office/office.asyncresult) 对象）调用在 `callback` 参数中传递的函数。<br/><br/>令牌作为 `asyncResult.value` 属性中的字符串提供。|
-|`userContext`| Object| &lt;可选&gt;|传递给异步方法的任何状态数据。|
+|`userContext`| 对象| &lt;可选&gt;|传递给异步方法的任何状态数据。|
 
 ##### <a name="requirements"></a>要求
 
@@ -314,13 +314,13 @@ function cb(asyncResult) {
 }
 ```
 
-####  <a name="makeewsrequestasyncdata-callback-usercontext"></a>makeEwsRequestAsync(data, callback, [userContext])
+#### <a name="makeewsrequestasyncdata-callback-usercontext"></a>makeEwsRequestAsync(data, callback, [userContext])
 
 向托管用户邮箱的 Exchange 服务器上的 Exchange Web 服务 (EWS) 发出异步请求。
 
 > [!NOTE]
 > 此方法在下列应用场景不受支持。
-> - 在 Outlook for iOS 或 Outlook for Android 中
+> - 在 iOS 或 Android 上的 Outlook 中
 > - 当加载项载入 Gmail 邮箱中时
 > 
 > 在这些情况下，加载项应该[使用 REST API](/outlook/add-ins/use-rest-api) 来改为访问用户的邮箱。

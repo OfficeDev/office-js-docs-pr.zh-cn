@@ -1,20 +1,20 @@
 ---
 title: Office.context.mailbox - 要求集 1.5
 description: ''
-ms.date: 03/19/2019
+ms.date: 04/24/2019
 localization_priority: Priority
-ms.openlocfilehash: d2b210db9ee8816d8fedf8720d1744da80eeab8d
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: a0c1a45fd3eaa9cf324a6854120d642eb7520132
+ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32451883"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "35127280"
 ---
 # <a name="mailbox"></a>邮箱
 
 ### <a name="officeofficemdcontextofficecontextmdmailbox"></a>[Office](Office.md)[.context](Office.context.md).mailbox
 
-为 Microsoft Outlook 和 Microsoft Outlook 网页版提供对 Outlook 加载项对象模型的访问权限。
+为 Microsoft Outlook 提供对 Outlook 加载项对象模型的访问权限。
 
 ##### <a name="requirements"></a>要求
 
@@ -52,14 +52,14 @@ ms.locfileid: "32451883"
 
 [userProfile](Office.context.mailbox.userProfile.md)：提供有关 Outlook 外接程序中的用户的信息。
 
-### <a name="members"></a>成员
+### <a name="members"></a>Members
 
-#### <a name="ewsurl-string"></a>ewsUrl :String
+#### <a name="ewsurl-string"></a>ewsUrl：String
 
 获取此电子邮件帐户的 Exchange Web 服务 (EWS) 终结点的 URL。仅限阅读模式。
 
 > [!NOTE]
-> 在 Outlook for iOS 或 Outlook for Android 中不支持此成员。
+> iOS 版 Outlook 或 Android 版 Outlook 不支持此成员。
 
 远程服务可使用 `ewsUrl` 值对用户邮箱进行 EWS 调用。例如，可以创建远程服务来 [获取选定项目中的附件](/outlook/add-ins/get-attachments-of-an-outlook-item)。
 
@@ -79,7 +79,7 @@ ms.locfileid: "32451883"
 |[最低权限级别](/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
 |[适用的 Outlook 模式](/outlook/add-ins/#extension-points)| 撰写或阅读|
 
-#### <a name="resturl-string"></a>restUrl :String
+#### <a name="resturl-string"></a>restUrl：String
 
 获取此电子邮件帐户的 REST 终结点的 URL。
 
@@ -106,7 +106,7 @@ ms.locfileid: "32451883"
 
 ### <a name="methods"></a>方法
 
-####  <a name="addhandlerasynceventtype-handler-options-callback"></a>addHandlerAsync(eventType, handler, [options], [callback])
+#### <a name="addhandlerasynceventtype-handler-options-callback"></a>addHandlerAsync(eventType, handler, [options], [callback])
 
 添加支持事件的事件处理程序。
 
@@ -149,12 +149,12 @@ function loadNewItem(eventArgs) {
 };
 ```
 
-####  <a name="converttoewsiditemid-restversion--string"></a>convertToEwsId(itemId, restVersion) → {String}
+#### <a name="converttoewsiditemid-restversion--string"></a>convertToEwsId(itemId, restVersion) → {String}
 
 将项目 ID 格式化（从 REST 转换为 EWS 格式）。
 
 > [!NOTE]
-> 在 Outlook for iOS 或 Outlook for Android 中不支持此方法。
+> iOS 版 Outlook 或 Android 版 Outlook 不支持此方法。
 
 通过 REST API 检索的项 ID（如 [Outlook 邮件 API](/previous-versions/office/office-365-api/api/version-2.0/mail-rest-operations) 或 [Microsoft Graph](https://graph.microsoft.io/)）使用与 Exchange Web 服务 (EWS) 所使用格式不同的格式。`convertToEwsId` 方法将 REST 格式化的 ID 转换为正确的 EWS 格式。
 
@@ -187,15 +187,15 @@ var restId = 'AAMkAGVlOTZjNTM3LW...';
 var ewsId = Office.context.mailbox.convertToEwsId(restId, Office.MailboxEnums.RestVersion.v2_0);
 ```
 
-####  <a name="converttolocalclienttimetimevalue--localclienttimejavascriptapioutlook15officelocalclienttime"></a>convertToLocalClientTime(timeValue) → {[LocalClientTime](/javascript/api/outlook_1_5/office.LocalClientTime)}
+#### <a name="converttolocalclienttimetimevalue--localclienttimejavascriptapioutlook15officelocalclienttime"></a>convertToLocalClientTime(timeValue) → {[LocalClientTime](/javascript/api/outlook_1_5/office.LocalClientTime)}
 
 获取包含以本地客户端时间表示的时间信息的字典。
 
-Outlook 或 Outlook Web App 邮件应用程序的日期和时间可以使用不同的时区。Outlook 使用客户端计算机时区；Outlook Web App 使用 Exchange 管理中心 (EAC) 中设置的时区。应对日期和时间值进行处理，以便用户界面上显示的值始终与用户预期的时区一致。
+Outlook 桌面版或 Outlook 网页版邮件应用可以对日期和时间使用不同的时区。Outlook 桌面版使用客户端计算机时区；Outlook 网页版使用 Exchange 管理中心 (EAC) 中设置的时区。你应处理日期和时间值，让用户界面上显示的值始终与用户预期的时区一致。
 
-如果邮件应用程序在 Outlook 中运行，`convertToLocalClientTime` 方法将返回一个值设置为客户端计算机时区的字典对象。如果邮件应用程序在 Outlook Web App 中运行，`convertToLocalClientTime` 方法将返回值设置为 EAC 中指定的时区的字典对象。
+如果邮件应用是在 Outlook 桌面版客户端中运行，`convertToLocalClientTime` 方法返回值设置为客户端计算机时区的字典对象。如果邮件应用是在 Outlook 网页版中运行，`convertToLocalClientTime` 方法返回值设置为 EAC 中指定时区的字典对象。
 
-##### <a name="parameters"></a>参数
+##### <a name="parameters"></a>Parameters
 
 |名称| 类型| 描述|
 |---|---|---|
@@ -213,12 +213,12 @@ Outlook 或 Outlook Web App 邮件应用程序的日期和时间可以使用不�
 
 类型：[LocalClientTime](/javascript/api/outlook_1_5/office.LocalClientTime)
 
-####  <a name="converttorestiditemid-restversion--string"></a>convertToRestId(itemId, restVersion) → {String}
+#### <a name="converttorestiditemid-restversion--string"></a>convertToRestId(itemId, restVersion) → {String}
 
 将项目 ID 格式化（从 EWS 转换为 REST 格式）。
 
 > [!NOTE]
-> 在 Outlook for iOS 或 Outlook for Android 中不支持此方法。
+> iOS 版 Outlook 或 Android 版 Outlook 不支持此方法。
 
 与 REST API 所使用的格式比较，通过 EWS 或通过 `itemId` 属性检索的项目 ID 使用不同的格式（例如 [Outlook Mail API](/previous-versions/office/office-365-api/api/version-2.0/mail-rest-operations) 或 [Microsoft Graph](https://graph.microsoft.io/)）。`convertToRestId` 方法将 EWS 格式化的 ID 转换为正确的 REST 格式。
 
@@ -251,7 +251,7 @@ var ewsId = Office.context.mailbox.item.itemId;
 var restId = Office.context.mailbox.convertToRestId(ewsId, Office.MailboxEnums.RestVersion.v2_0);
 ```
 
-####  <a name="converttoutcclienttimeinput--date"></a>convertToUtcClientTime(input) → {Date}
+#### <a name="converttoutcclienttimeinput--date"></a>convertToUtcClientTime(input) → {Date}
 
 从包含时间信息的字典中获取 Date 对象。
 
@@ -285,18 +285,18 @@ var restId = Office.context.mailbox.convertToRestId(ewsId, Office.MailboxEnums.R
 
 </dl>
 
-####  <a name="displayappointmentformitemid"></a>displayAppointmentForm(itemId)
+#### <a name="displayappointmentformitemid"></a>displayAppointmentForm(itemId)
 
 显示现有日历约会。
 
 > [!NOTE]
-> 在 Outlook for iOS 或 Outlook for Android 中不支持此方法。
+> iOS 版 Outlook 或 Android 版 Outlook 不支持此方法。
 
 `displayAppointmentForm` 方法将打开桌面新窗口中或移动设备对话框中的现有日历约会。
 
-在 Outlook for Mac 中，您可以使用此方法来显示不属于定期系列的单个约会，或显示定期系列的主约会，但无法显示该系列的实例。这是因为在 Outlook for Mac 中，无法访问定期系列实例的属性（包括项目 ID）。
+在 Mac 版 Outlook 中，可以使用此方法来显示不属于重复时序的一个约会，或显示重复时序的主约会，但无法显示重复时序的实例。这是因为在 Mac 版 Outlook 中，无法访问重复时序的实例属性（包括项 ID）。
 
-在 Outlook Web App 中，此方法仅在窗体正文小于或等于 32KB 字符数时，才会打开指定的窗体。
+在 Outlook 网页版中，此方法仅在窗体正文的字符数小于或等于 32KB 时，才会打开指定的窗体。
 
 如果指定的项标识符没有识别现有约会，将在客户端计算机或设备上打开一个空白窗格，并且不会返回错误消息。
 
@@ -320,16 +320,16 @@ var restId = Office.context.mailbox.convertToRestId(ewsId, Office.MailboxEnums.R
 Office.context.mailbox.displayAppointmentForm(appointmentId);
 ```
 
-####  <a name="displaymessageformitemid"></a>displayMessageForm(itemId)
+#### <a name="displaymessageformitemid"></a>displayMessageForm(itemId)
 
 显示现有邮件。
 
 > [!NOTE]
-> 在 Outlook for iOS 或 Outlook for Android 中不支持此方法。
+> iOS 版 Outlook 或 Android 版 Outlook 不支持此方法。
 
 `displayMessageForm` 方法将打开桌面新窗口中或移动设备对话框中的现有邮件。
 
-在 Outlook Web App 中，此方法仅在窗体正文小于或等于 32 KB 字符数时，才会打开指定的窗体。
+在 Outlook 网页版中，此方法仅在窗体正文的字符数小于或等于 32KB 时，才会打开指定的窗体。
 
 如果指定的项标识符未识别现有消息，则客户端计算机上不会显示任何消息，并且也不会返回错误消息。
 
@@ -360,11 +360,11 @@ Office.context.mailbox.displayMessageForm(messageId);
 显示用于新建日历约会的表单。
 
 > [!NOTE]
-> 在 Outlook for iOS 或 Outlook for Android 中不支持此方法。
+> iOS 版 Outlook 或 Android 版 Outlook 不支持此方法。
 
 `displayNewAppointmentForm` 方法打开可让用户新建约会或会议的窗体。如果指定了参数，将使用参数的内容自动填充约会窗体字段。
 
-在 Outlook Web App 和适用于设备的 OWA 中，此方法始终显示包含与会者字段的窗体。如果你未将任何与会者指定为输入参数，该方法将显示为一个包含“**保存**”按钮的窗体。如果已指定与会者，窗体将包含与会者和“**发送**”按钮。
+在 Outlook 网页版和移动设备版中，此方法始终显示包含与会者字段的窗体。如果你未将任何与会者指定为输入参数，此方法显示包含“保存”**** 按钮的窗体。如果你已指定与会者，窗体包含与会者和“发送”**** 按钮。
 
 在 Outlook 富客户端和 Outlook RT 中，如果在 `requiredAttendees`、`optionalAttendees` 或 `resources` 参数中指定任何与会者或资源，此方法将显示会议窗体，其中包含一个“**发送**”按钮。如果未指定任何收件人，此方法将显示一个包含“**保存并关闭**”按钮的约会窗体。
 
@@ -507,7 +507,7 @@ function cb(asyncResult) {
 }
 ```
 
-####  <a name="getuseridentitytokenasynccallback-usercontext"></a>getUserIdentityTokenAsync(callback, [userContext])
+#### <a name="getuseridentitytokenasynccallback-usercontext"></a>getUserIdentityTokenAsync(callback, [userContext])
 
 获取用于标识用户和 Office 外接程序的令牌。
 
@@ -540,13 +540,13 @@ function cb(asyncResult) {
 }
 ```
 
-####  <a name="makeewsrequestasyncdata-callback-usercontext"></a>makeEwsRequestAsync(data, callback, [userContext])
+#### <a name="makeewsrequestasyncdata-callback-usercontext"></a>makeEwsRequestAsync(data, callback, [userContext])
 
 向托管用户邮箱的 Exchange 服务器上的 Exchange Web 服务 (EWS) 发出异步请求。
 
 > [!NOTE]
 > 此方法在下列应用场景不受支持。
-> - 在 Outlook for iOS 或 Outlook for Android 中
+> - 在 iOS 版 Outlook 或 Android 版 Outlook 中
 > - 当加载项载入 Gmail 邮箱中时
 > 
 > 在这些情况下，加载项应该[使用 REST API](/outlook/add-ins/use-rest-api) 来改为访问用户的邮箱。
@@ -638,7 +638,7 @@ function callback(asyncResult)  {
 }
 ```
 
-####  <a name="removehandlerasynceventtype-options-callback"></a>removeHandlerAsync(eventType, [options], [callback])
+#### <a name="removehandlerasynceventtype-options-callback"></a>removeHandlerAsync(eventType, [options], [callback])
 
 删除受支持事件类型的事件处理程序。
 

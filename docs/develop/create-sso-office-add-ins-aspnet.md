@@ -3,12 +3,12 @@ title: 创建使用单一登录的 ASP.NET Office 加载项
 description: ''
 ms.date: 04/15/2019
 localization_priority: Priority
-ms.openlocfilehash: ebcf5cd72f841f5d97093e3b5f43833e97fa9947
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: a28178fb309450f59435d678c013a7a73bb60978
+ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32450161"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "35128152"
 ---
 # <a name="create-an-aspnet-office-add-in-that-uses-single-sign-on-preview"></a>创建使用单一登录的 ASP.NET Office 加载项（预览）
 
@@ -153,7 +153,7 @@ ms.locfileid: "32450161"
 
         2. 将现有文件重命名为 `MailAppVersionOverridesV1_1.old`。
 
-        3. 将此修改后的文件版本复制到文件夹中：[修改后的 MailAppVersionOverrides 架构](https://github.com/OfficeDev/outlook-add-in-attachments-demo/blob/sso-conversion/manifest-schema-fix/MailAppVersionOverridesV1_1.xsd)
+        3. 将此修改后的文件版本复制到文件夹中：[修改后的 MailAppVersionOverrides 架构](https://github.com/OfficeDev/outlook-add-in-attachments-demo/blob/master/manifest-schema-fix/MailAppVersionOverridesV1_1.xsd)
 
 1. 在 Visual Studio 中保存并关闭该主清单文件。
 

@@ -1,14 +1,14 @@
 ---
-ms.date: 05/15/2019
+ms.date: 06/20/2019
 description: 在 Excel 中使用 JavaScript 创建自定义函数。
 title: 在 Excel 中创建自定义函数
 localization_priority: Priority
-ms.openlocfilehash: 3eeedd482a432166a7fa26eff6da4b075847a292
-ms.sourcegitcommit: adaee1329ae9bb69e49bde7f54a4c0444c9ba642
+ms.openlocfilehash: e8f53919ebd5e44fe04e45dfd05192c77324f3aa
+ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "34432166"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "35127889"
 ---
 # <a name="create-custom-functions-in-excel"></a>在 Excel 中创建自定义函数 
 
@@ -82,7 +82,7 @@ function add(first, second){
 
 定义自定义函数的加载项的 XML 清单文件（Yo Office 生成器创建的项目中的 **./manifest.xml**）指定加载项中所有自定义函数的命名空间以及 JavaScript、JSON 和 HTML 文件的位置。 
 
-下面的基本 XML 标记显示了 `<ExtensionPoint>` 和 `<Resources>` 元素的一个示例，必须在加载项清单中包含这些元素才能启用自定义函数。 如果使用 Yo Office 生成器，生成的自定义函数文件将包含更复杂的清单文件，可以在[此 Github 存储库](https://github.com/OfficeDev/Excel-Custom-Functions/blob/generate-metadata/manifest.xml)中对其进行比较。
+下面的基本 XML 标记显示了 `<ExtensionPoint>` 和 `<Resources>` 元素的一个示例，必须在加载项清单中包含这些元素才能启用自定义函数。 如果使用 Yo Office 生成器，生成的自定义函数文件将包含更复杂的清单文件，可以在[此 Github 存储库](https://github.com/OfficeDev/Excel-Custom-Functions/blob/master/manifest.xml)中对其进行比较。
 
 > [!NOTE] 
 > 在自定义函数 JavaScript、JSON 和 HTML 文件的清单文件中指定的 URL 必须可公开访问，并具有相同的子域。
@@ -141,7 +141,7 @@ function add(first, second){
 
 ## <a name="coauthoring"></a>共同创作
 
-借助 Excel Online 和 Windows 版 Excel 以及 Office 365 订阅，可以共同创作文档，此功能可与自定义函数结合使用。 如果你的工作簿使用自定义函数，系统会提示你的同事加载自定义函数的加载项。 当你们均加载此加载项后，自定义函数会通过共同创作共享结果。
+借助已连接到 Office 365 订阅的 Excel 网页版和 Windows 版 Excel，可以共同创作文档；此功能可与自定义函数结合使用。 如果你的工作簿使用自定义函数，系统会提示你的同事加载自定义函数的加载项。 当你们均加载此加载项后，自定义函数会通过共同创作共享结果。
 
 若要详细了解共同创作，请参阅[关于 Excel 中的共同创作](/office/vba/excel/concepts/about-coauthoring-in-excel)。
 

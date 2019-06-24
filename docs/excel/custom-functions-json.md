@@ -1,18 +1,20 @@
 ---
-ms.date: 06/17/2019
+ms.date: 06/20/2019
 description: 在 Excel 中定义自定义函数的元数据。
 title: Excel 中自定义函数的元数据
 localization_priority: Normal
-ms.openlocfilehash: a7715bcdd125d44ec887f8b779ac0673b4a12af0
-ms.sourcegitcommit: 4bf5159a3821f4277c07d89e88808c4c3a25ff81
+ms.openlocfilehash: f97a339972a8ac134bd30c87b86c4701cb4b5fc4
+ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "35059858"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "35127868"
 ---
 # <a name="custom-functions-metadata"></a>自定义函数元数据
 
 在 Excel 加载项中定义[自定义函数](custom-functions-overview.md)时, 加载项项目包含 JSON 元数据文件, 该文件提供了 Excel 注册自定义函数并使其可供最终用户使用的信息。
+
+[!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
 此文件的生成方式为:
 
@@ -25,7 +27,7 @@ ms.locfileid: "35059858"
 
 有关为启用自定义函数必须在加载项项目中包含的其他文件的信息，请参阅[在 Excel 中创建自定义函数](custom-functions-overview.md)。
 
-托管 JSON 文件的服务器上的服务器设置必须启用 [CORS](https://developer.mozilla.org/docs/Web/HTTP/CORS)，以便自定义函数在 Excel Online 中正常工作。
+承载 JSON 文件的服务器上的服务器设置必须启用[CORS](https://developer.mozilla.org/docs/Web/HTTP/CORS) , 才能使自定义函数在 web 上的 Excel 中正常工作。
 
 ## <a name="example-metadata"></a>示例元数据
 

@@ -1,15 +1,15 @@
 ---
-ms.date: 06/17/2019
+ms.date: 06/20/2019
 description: 在 Excel 快速入门指南中开发自定义函数。
 title: 自定义功能快速入门
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: f172139f3aafb374eec3c1350b127ed3194d00e0
-ms.sourcegitcommit: 4bf5159a3821f4277c07d89e88808c4c3a25ff81
+ms.openlocfilehash: 8e7fbf247df04a12c38ad24d9ba6335a7f7bdaf8
+ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "35059928"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "35128578"
 ---
 # <a name="get-started-developing-excel-custom-functions"></a>开始开发 Excel 自定义函数
 
@@ -58,7 +58,7 @@ ms.locfileid: "35059928"
     > [!NOTE]
     > Office 加载项应使用 HTTPS，而不是 HTTP（即便是在开发时也是如此）。 如果系统在运行 `npm run build` 后提示你安装证书，请接受提示以安装 Yeoman 生成器提供的证书。
 
-4. 启动在 Node.js 中运行的本地 Web 服务器。 可以在 Windows 或 Excel Online 上试用 Excel 中的自定义函数加载项。 系统可能会提示您打开加载项的任务窗格, 但这是可选的。 您仍可以运行自定义函数, 而无需打开加载项的任务窗格。
+4. 启动在 Node.js 中运行的本地 Web 服务器。 您可以在 Excel 网页或 Windows 中试用自定义函数加载项。 系统可能会提示您打开加载项的任务窗格, 但这是可选的。 您仍可以运行自定义函数, 而无需打开加载项的任务窗格。
 
 # <a name="excel-on-windowstabexcel-windows"></a>[Windows 上的 Excel](#tab/excel-windows)
 
@@ -68,19 +68,19 @@ ms.locfileid: "35059928"
 npm run start:desktop
 ```
 
-# <a name="excel-onlinetabexcel-online"></a>[Excel Online](#tab/excel-online)
+# <a name="excel-on-the-webtabexcel-online"></a>[在 web 上的 Excel](#tab/excel-online)
 
-若要在 Excel Online 中测试外接程序, 请运行以下命令。 运行此命令时，本地 Web 服务器将启动。
+若要在 Excel 网页上测试您的外接程序, 请运行以下命令。 运行此命令时，本地 Web 服务器将启动。
 
 ```command&nbsp;line
 npm run start:web
 ```
 
-若要使用自定义函数外接程序, 请在 Excel Online 中打开一个新工作簿。 在此工作簿中, 完成以下步骤以旁加载您的外接程序。
+若要使用自定义函数外接程序, 请在 Excel 中的浏览器中打开一个新工作簿。 在此工作簿中, 完成以下步骤以旁加载您的外接程序。
 
-1. 在 Excel Online 中，依次选择“插入”**** 选项卡和“加载项”****。
+1. 在 Excel 中, 选择 "**插入**" 选项卡, 然后选择 "**外接程序**"。
 
-   ![在 Excel Online 中插入带突出显示 "我的外接程序" 图标的功能区](../images/excel-cf-online-register-add-in-1.png)
+   ![在 Excel 中的 "我的外接程序" 图标突出显示的网页中插入功能区](../images/excel-cf-online-register-add-in-1.png)
    
 2. 选择“管理我的加载项”****，然后选择“上载我的加载项”****。
 

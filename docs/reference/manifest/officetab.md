@@ -1,14 +1,14 @@
 ---
 title: 清单文件中的 OfficeTab 元素
 description: ''
-ms.date: 05/08/2019
+ms.date: 06/20/2019
 localization_priority: Normal
-ms.openlocfilehash: 1bf9f1d1e08a8147b52f93923229ef8fb8556fcf
-ms.sourcegitcommit: a99be9c4771c45f3e07e781646e0e649aa47213f
+ms.openlocfilehash: d073d712cec2fd58e957ffe8f344d7443d1e896e
+ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/11/2019
-ms.locfileid: "33952269"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "35127560"
 ---
 # <a name="officetab-element"></a>OfficeTab 元素
 
@@ -20,7 +20,7 @@ ms.locfileid: "33952269"
 |:-----|:-----|:-----|
 |  组      | 是 |  定义一组命令。对于每个外接程序，只能将一个组添加到默认选项卡。  |
 
-下面是主机的有效选项卡 `id` 值。 以**粗体显示**的值在桌面和联机状态中均受支持 (例如, Windows 和 word online 中的 Word 2016 或更高版本)。
+下面是主机的有效选项卡 `id` 值。 以**粗体显示**的值在桌面和联机状态中均受支持 (例如, Windows 和 web 上的 word 中的 word 2016 或更高版本)。
 
 ### <a name="outlook"></a>Outlook
 

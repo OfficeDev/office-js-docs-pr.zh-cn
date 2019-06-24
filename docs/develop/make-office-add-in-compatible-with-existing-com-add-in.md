@@ -1,14 +1,14 @@
 ---
 title: 让 Office 加载项与现有 COM 加载项兼容
 description: 启用 Office 加载项和等效 COM 加载项之间的兼容性
-ms.date: 06/19/2019
+ms.date: 06/20/2019
 localization_priority: Normal
-ms.openlocfilehash: a18adb9841a9580d77c5110a0346f365e38e3746
-ms.sourcegitcommit: 4bf5159a3821f4277c07d89e88808c4c3a25ff81
+ms.openlocfilehash: 3577b8fe4b4a26ac5d0af85cc5c2f96a7a8dc010
+ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "35059718"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "35128050"
 ---
 # <a name="make-your-office-add-in-compatible-with-an-existing-com-add-in-preview"></a>使您的 Office 外接程序与现有 COM 加载项兼容 (预览)
 
@@ -48,7 +48,7 @@ ms.locfileid: "35059718"
 - 作为功能区管理器中的条目
 
 > [!NOTE]
-> 在清单中指定等效的 COM 加载项不会对其他平台 (如 web 上的 Office 或 Office for Mac) 产生影响。
+> 在清单中指定等效的 COM 加载项不会对 web 或 Mac 等其他平台 (如 Office) 产生影响。
 
 以下方案描述了根据用户获取 Office 加载项的方式而发生的情况。
 

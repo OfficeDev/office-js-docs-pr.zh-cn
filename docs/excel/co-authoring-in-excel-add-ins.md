@@ -1,14 +1,14 @@
 ---
 title: 使用 Excel 加载项共同创作
 description: ''
-ms.date: 05/08/2019
+ms.date: 06/20/2019
 localization_priority: Normal
-ms.openlocfilehash: 281f981bd7248b68c60563f02746ba68d88617b8
-ms.sourcegitcommit: a99be9c4771c45f3e07e781646e0e649aa47213f
+ms.openlocfilehash: 65401f30448db2edbefb42b3d64d580a79250404
+ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/11/2019
-ms.locfileid: "33952045"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "35128001"
 ---
 # <a name="coauthoring-in-excel-add-ins"></a>使用 Excel 加载项共同创作  
 
@@ -17,14 +17,6 @@ ms.locfileid: "33952045"
 > [!IMPORTANT]
 > 在 Excel for Office 365 中，便会发现左上角显示有“自动保存”。 启用“自动保存”后，将实时向合著者显示你的更改。 请考虑此行为对 Excel 外接程序设计的影响。 用户可以通过 Excel 窗口左上方的开关禁用“自动保存”。
 
-共同创作功能在以下平台上可用：
-
-- Excel Online
-- Excel for Android
-- Excel for iPad
-- Windows 10 上的 Excel Mobile
-- 适用于 Office 365 客户的 windows desktop 中的 Excel (windows desktop build 16.0.8326.2076 或更高版本, 可供当前渠道客户在8月 8 2017 日生效)
-
 ## <a name="coauthoring-overview"></a>共同创作功能概述
 
 如果工作簿的内容有变化，Excel 会自动跨所有共同创作者同步这些更改。 共同创作者可以更改工作簿的内容，而 Excel 加载项中运行的代码也可以这样做。 例如，在 Office 加载项中运行以下 JavaScript 代码时，范围值会设置为 Contoso：
@@ -32,7 +24,7 @@ ms.locfileid: "33952045"
 ```js
 range.values = [['Contoso']];
 ```
-跨所有共同创作者同步“Contoso”后，同一个工作簿的所有用户或其中运行的所有加载项都能看到新范围值。 
+跨所有共同创作者同步“Contoso”后，同一个工作簿的所有用户或其中运行的所有加载项都能看到新范围值。
 
 共同创作功能仅同步共享工作簿中的内容。 不会同步从工作簿复制到 Excel 加载项中 JavaScript 变量的值。 例如，如果加载项将单元格值（如“Contoso”）存储在 JavaScript 变量中，然后共同创作者将此单元格值更改为“Example”，那么在同步后所有共同创作者都能在单元格中看到“Example”。 不过，JavaScript 变量值仍设置为“Contoso”。 此外，如果多个共同创作者使用同一个加载项，每个共同创作者都会拥有自己的变量副本，此副本是不会同步的。 如果你使用的变量使用工作簿内容，那么，在使用此变量前，请务必查看工作簿中的更新值。
 

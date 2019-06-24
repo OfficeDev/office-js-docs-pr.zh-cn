@@ -1,14 +1,14 @@
 ---
 title: 清单文件中的 Host 元素
 description: ''
-ms.date: 10/09/2018
+ms.date: 06/20/2019
 localization_priority: Normal
-ms.openlocfilehash: f496e3e0c16f24d20e1d1db76208e61267235131
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: debb4d59f75ce974ffb21d853c6b65a579c4e685
+ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32450504"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "35127567"
 ---
 # <a name="host-element"></a>Host 元素
 
@@ -19,7 +19,7 @@ ms.locfileid: "32450504"
 
 ## <a name="basic-manifest"></a>基本清单
 
-在基本清单（在 [OfficeApp](officeapp.md) 下）中定义时，主机类型由 `Name` 属性决定。   
+在基本清单（在 [OfficeApp](officeapp.md) 下）中定义时，主机类型由 `Name` 属性决定。
 
 ### <a name="attributes"></a>属性
 
@@ -60,7 +60,7 @@ ms.locfileid: "32450504"
 |  元素 |  必需  |  说明  |
 |:-----|:-----|:-----|
 |  [DesktopFormFactor](desktopformfactor.md)    |  是   |  定义桌面外形规格的设置。 |
-|  [MobileFormFactor](mobileformfactor.md)    |  否   |  定义移动外形规格的设置。**注意：** 仅在 Outlook for iOS 中支持此元素。 |
+|  [MobileFormFactor](mobileformfactor.md)    |  否   |  定义移动设备规格的设置。 **注意:** 仅在 iOS 上的 Outlook 中支持此元素。 |
 |  [AllFormFactors](allformfactors.md)    |  否   |  定义所有外形规格的设置。 仅用于 Excel 中的自定义函数。 |
 
 ### <a name="xsitype"></a>xsi:type
@@ -68,7 +68,7 @@ ms.locfileid: "32450504"
 控制所包含的设置适用的 Office 主机类别（Word、Excel、PowerPoint、Outlook 和 OneNote）。 值必须为以下值之一：
 
 - `Document` (Word)
-- `MailHost` (Outlook)    
+- `MailHost` (Outlook)
 - `Notebook` (OneNote)
 - `Presentation` (PowerPoint)
 - `Workbook` (Excel)

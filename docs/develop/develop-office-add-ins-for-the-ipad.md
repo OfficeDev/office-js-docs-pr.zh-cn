@@ -1,19 +1,19 @@
 ---
-title: 开发适用于 iPad 的 Office 外接程序
+title: 开发适用于 iPad 的 Office 加载项
 description: ''
-ms.date: 05/08/2019
+ms.date: 06/20/2019
 localization_priority: Normal
-ms.openlocfilehash: 3ac8f651ccb87b32679a28684f0d08fad53aa773
-ms.sourcegitcommit: a99be9c4771c45f3e07e781646e0e649aa47213f
+ms.openlocfilehash: cdc35b83c2cb32984d0dc73d85af250bddfa8c0a
+ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/11/2019
-ms.locfileid: "33952087"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "35128169"
 ---
 # <a name="develop-office-add-ins-for-the-ipad"></a>开发适用于 iPad 的 Office 加载项
 
 
-下表列出了开发 Office 外接程序要执行的任务，以使其能够在 Office for iPad 中运行。
+下表列出了要执行的任务, 以开发 Office 外接程序以在 iPad 上的 Office 中运行。
 
 
 |**任务**|**说明**|**资源**|
@@ -38,7 +38,7 @@ ms.locfileid: "33952087"
 
 -  **使用 Visual Studio 开发外接程序。**
 
-    如果使用 Visual Studio 开发外接程序，则在 iPad 或 Mac 上旁加载外接程序前，可以在 Windows 上运行的 Office 主机应用程序中 [设置断点并调试其代码](../develop/create-and-debug-office-add-ins-in-visual-studio.md)。 由于在 Office for iOS 或 Office for Mac 中运行的外接程序支持与在 Windows 上运行的加载项相同的 Api, 因此外接程序的代码在这两个平台上的运行方式都相同。
+    如果使用 Visual Studio 开发外接程序，则在 iPad 或 Mac 上旁加载外接程序前，可以在 Windows 上运行的 Office 主机应用程序中 [设置断点并调试其代码](../develop/create-and-debug-office-add-ins-in-visual-studio.md)。 由于在 iOS 或 Mac 上的 Office 中运行的外接程序支持与在 Windows 上运行的加载项相同的 Api, 因此外接程序的代码在这两个平台上的运行方式都相同。
 
 -  **在外接程序清单中或通过运行时检查指定 API 要求。**
 

@@ -1,14 +1,14 @@
 ---
 title: Office 加载项的隐私和安全
 description: ''
-ms.date: 05/08/2019
+ms.date: 06/20/2019
 localization_priority: Priority
-ms.openlocfilehash: e62720cdfc4fbc92615c869f71b250d5957ea0ce
-ms.sourcegitcommit: 3f84b2caa73d7fe1eb0d15e32ea4dec459e2ff53
+ms.openlocfilehash: 26b9184eb1e52422122288659f068719bd43075b
+ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/12/2019
-ms.locfileid: "34910208"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "35127756"
 ---
 # <a name="privacy-and-security-for-office-add-ins"></a>Office 加载项的隐私和安全
 
@@ -30,18 +30,18 @@ Office 外接程序受到外接程序运行时环境、多层权限模型和性�
 
 - 可以轻松安装和卸载加载项。
 
-此外，还可以调控 Office 外接程序使用的内存、CPU 和网络资源，以确保维持良好的性能和可靠性。 
+此外，还可以调控 Office 外接程序使用的内存、CPU 和网络资源，以确保维持良好的性能和可靠性。
 
-以下各节简要介绍在基于 Windows 的设备上、OS X Mac 设备上以及 Web 上的 Office Online 客户端中，运行时体系结构如何支持在 Office 客户端中运行加载项。
+以下各节简要介绍运行时体系结构如何支持在基于 Windows 的设备上的 Office 客户端、OS X Mac 设备以及 Web 浏览器中运行加载项。
 
 > [!NOTE]
 > 要了解如何将 WIP 和 Intune 与 Office 加载项结合使用，请参阅[使用 WIP和 Intune 保护运行 Office 加载项的文档中的企业数据](/microsoft-365/enterprise/office-add-ins-wip)。
 
 ### <a name="clients-on-windows-and-os-x-devices"></a>Windows 和 OS X 设备上的客户端
 
-在支持的台式机和平板电脑设备的客户端（如 Excel、Outlook 和适用于 Mac 的 Outlook）中，通过集成进程内组件 Office 外接程序运行时来支持 Office 外接程序，该组件管理外接程序的生命周期，并实现外接程序和客户端应用程序之间的互操作性。外接程序网页本身托管在进程外。如图 1 中所示，在 Windows 台式机或平板电脑设备上，外接程序网页托管在 Internet Explorer 控件内部，而 Internet Explorer 控件托管在外接程序运行时进程内部，提供安全和性能隔离。
+在支持的台式机和平板电脑设备的客户端（如 Windows 版 Excel、Windows 版 Outlook 和 Mac 版 Outlook）中，通过集成进程内组件 Office 加载项运行时来支持 Office 加载项，该组件管理加载项的生命周期，并实现加载项和客户端应用程序之间的互操作性。加载项网页本身托管在进程外。如图 1 中所示，在 Windows 台式机或平板电脑设备上，加载项网页托管在 Internet Explorer 控件内部，而 Internet Explorer 控件托管在加载项运行时进程内部，提供安全和性能隔离。
 
-在 Windows 桌面设备上，必须为受限网站区域启用 Internet Explorer 保护模式。通常情况下，此模式默认启用。如果禁用，则会在尝试启动外接程序时[看到错误消息](https://support.microsoft.com/help/2761180/apps-for-office-don-t-start-if-you-disable-protected-mode-for-the-restricted-sites-zone-in-internet-explorer)。
+在 Windows 桌面设备上，必须为受限网站区域启用 Internet Explorer 保护模式。通常情况下，此模式默认启用。如果禁用，则会在尝试启动加载项时[看到错误消息](https://support.microsoft.com/help/2761180/apps-for-office-don-t-start-if-you-disable-protected-mode-for-the-restricted-sites-zone-in-internet-explorer)。
 
 *图 1.基于 Windows 的台式机和平板电脑客户端中的 Office 外接程序运行时环境*
 
@@ -57,7 +57,7 @@ Office 外接程序运行时管理进程间通信、JavaScript API 调用和事�
 
 ### <a name="web-clients"></a>Web 客户端
 
-在支持的 Web 客户端（如 Excel Online 和 Outlook Web App）中，Office 加载项托管在使用 HTML5 **sandbox** 属性运行的 **iframe** 中。不得使用 ActiveX 组件或导航 Web 客户端的主页。Web 客户端通过集成适用于 Office 的 JavaScript API，启用 Office 加载项支持。JavaScript API 管理加载项生命周期，以及加载项与 Web 客户端之间的互操作性，与桌面客户端应用采取的方式类似。此互操作性是使用特殊的交叉框架公告消息通信基础结构进行实现。在桌面客户端上使用的相同 JavaScript 库 (Office.js) 可用于与 Web 客户端进行交互。下图展示了支持 Office Online 中 Office 加载项（在浏览器中运行）的基础结构，以及支持这些加载项所需的相关组件（Web 客户端、**iframe**、Office 加载项运行时和适用于 Office 的 JavaScript API）。
+在支持的 Web 客户端中，Office 加载项托管在使用 HTML5 **sandbox** 属性运行的 **iframe** 中。不得使用 ActiveX 组件或导航 Web 客户端的主页。Web 客户端通过集成适用于 Office 的 JavaScript API，启用 Office 加载项支持。JavaScript API 管理加载项生命周期，以及加载项与 Web 客户端之间的互操作性，与桌面客户端应用采取的方式类似。此互操作性是使用特殊的交叉框架公告消息通信基础结构进行实现。在桌面客户端上使用的相同 JavaScript 库 (Office.js) 可用于与 Web 客户端进行交互。下图展示了支持在浏览器中运行的 Office 中的加载项的基础结构，以及支持这些加载项所需的相关组件（Web 客户端、**iframe**、Office 加载项运行时和适用于 Office 的 JavaScript API）。
 
 *图 3：支持 Office Web 客户端中 Office 加载项的基础结构*
 
@@ -92,7 +92,7 @@ Office 加载项是使用浏览器控件或 **iframe** 中运行的 Web 技术�
 
 - 在共享一个文档时，用户也会共享已插入该文档或与该文档关联的加载项。如果用户打开一个包含其之前未使用的加载项的文档，则主机应用程序会提示用户向加载项授予在文档中运行的权限。在组织环境中，如果文档来自外部源，则 Office 主机应用程序也会提示用户。
 
-- 用户可启用或禁用对 AppSource 的访问。 对于内容和任务窗格加载项，用户通过主机 Office 客户端上的“**信任中心**”管理受信任的加载项和目录的访问权限（通过“**文件**” > “**选项**” > “**信任中心**” > “**信任中心设置**” > “**受信任的加载项目录**”打开）。 对于 Outlook 加载项，用户可以通过选择“**管理加载项**”按钮管理加载项：在 Windows 版 Outlook 中依次选择“**文件**” > “**管理加载项**”。在 Outlook for Mac 中选择加载项栏上的“**管理加载项**”按钮。 在 Outlook Web 应用中，依次选择“**设置**”菜单（齿轮图标）>“**管理加载项**”。管理员还可以[通过使用组策略](/previous-versions/office/office-2013-resource-kit/jj219429(v=office.15)#using-group-policy-to-manage-how-users-can-install-and-use-apps-for-office)来管理此访问。
+- 用户可启用或禁用对 AppSource 的访问。 对于内容和任务窗格加载项，用户通过主机 Office 客户端上的“**信任中心**”管理受信任的加载项和目录的访问权限（通过“**文件**” > “**选项**” > “**信任中心**” > “**信任中心设置**” > “**受信任的加载项目录**”打开）。 对于 Outlook 加载项，用户可以通过选择“**管理加载项**”按钮管理加载项：在 Windows 版 Outlook 中依次选择“**文件**” > “**管理加载项**”。在 Mac 版 Outlook 中选择加载项栏上的“**管理加载项**”按钮。 在 Outlook 网页版中，依次选择“**设置**”菜单（齿轮图标）>“**管理加载项**”。管理员还可以[通过使用组策略](/previous-versions/office/office-2013-resource-kit/jj219429(v=office.15)#using-group-policy-to-manage-how-users-can-install-and-use-apps-for-office)来管理此访问。
 
 - 加载项平台的设计在以下方面为最终用户提供了安全和性能保障：
 
@@ -198,7 +198,7 @@ Exchange 和 SharePoint 提供了客户端代理以实现跨域访问。通常�
 
 ### <a name="tips-to-prevent-clickjacking"></a>防止“点击劫持”的提示
 
-由于 Office 加载项通过 Office Online 主机应用程序运行在浏览器中时呈现在 iframe 中，请使用以下提示来尽量降低[点击劫持](https://en.wikipedia.org/wiki/Clickjacking)（一种黑客用来欺骗用户泄露机密信息的技术）的风险。
+由于 Office 加载项通过 Office 主机应用程序运行在浏览器中时呈现在 iframe 中，请使用以下提示来尽量降低[点击劫持](https://en.wikipedia.org/wiki/Clickjacking)（一种黑客用来欺骗用户泄露机密信息的技术）的风险。
 
 首先，确定您的加载项可以执行的敏感操作。其中包括未授权的用户可能恶意使用的任何操作，如启动金融交易或发布敏感数据。例如，您的加载项可能让用户将款项发送到用户定义的接收人。
 

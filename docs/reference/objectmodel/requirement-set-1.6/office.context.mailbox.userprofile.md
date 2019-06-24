@@ -1,20 +1,20 @@
 ---
-title: "\"context.subname\": \"邮箱. userProfile-要求集 1.6\""
+title: "\"Context.subname\": \"邮箱. userProfile-要求集 1.6\""
 description: ''
-ms.date: 03/19/2019
+ms.date: 06/20/2019
 localization_priority: Normal
-ms.openlocfilehash: 9bb4335690236bdbbf2004f04f9af924747366d4
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: 3ca06925dcd37d8e68f086daf4705b10fb936623
+ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32450217"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "35127203"
 ---
 # <a name="userprofile"></a>userProfile
 
 ### <a name="officeofficemdcontextofficecontextmdmailboxofficecontextmailboxmduserprofile"></a>[Office](Office.md)[.context](Office.context.md)[.mailbox](Office.context.mailbox.md).userProfile
 
-##### <a name="requirements"></a>Requirements
+##### <a name="requirements"></a>要求
 
 |要求| 值|
 |---|---|
@@ -33,10 +33,10 @@ ms.locfileid: "32450217"
 
 ### <a name="members"></a>Members
 
-####  <a name="accounttype-string"></a>accountType: String
+#### <a name="accounttype-string"></a>accountType: String
 
 > [!NOTE]
-> 此成员目前仅在 Outlook 2016 或更高版本 for Mac (内部版本16.9.1212 或更高版本) 中受支持。
+> 此成员目前仅在 Outlook 2016 或更高版本 (内部版本16.9.1212 或更高版本) 中受支持。
 
 获取与邮箱关联的用户的帐户类型。 下表中列出了可能的值。
 
@@ -65,7 +65,7 @@ ms.locfileid: "32450217"
 console.log(Office.context.mailbox.userProfile.accountType);
 ```
 
-####  <a name="displayname-string"></a>displayName :String
+#### <a name="displayname-string"></a>displayName: String
 
 获取用户的显示名称。
 
@@ -88,7 +88,7 @@ console.log(Office.context.mailbox.userProfile.accountType);
 console.log(Office.context.mailbox.userProfile.displayName);
 ```
 
-####  <a name="emailaddress-string"></a>emailAddress :String
+#### <a name="emailaddress-string"></a>emailAddress: String
 
 获取用户的 SMTP 电子邮件地址。
 
@@ -111,7 +111,7 @@ console.log(Office.context.mailbox.userProfile.displayName);
 console.log(Office.context.mailbox.userProfile.emailAddress);
 ```
 
-####  <a name="timezone-string"></a>timeZone :String
+#### <a name="timezone-string"></a>时区: 字符串
 
 获取用户的默认时区。
 

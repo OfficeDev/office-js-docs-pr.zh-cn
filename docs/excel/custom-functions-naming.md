@@ -1,21 +1,23 @@
 ---
-ms.date: 06/17/2019
+ms.date: 06/18/2019
 description: 了解 Excel 自定义函数名称的要求并避免出现常见命名缺陷。
 title: Excel 中自定义函数的命名准则
 localization_priority: Normal
-ms.openlocfilehash: 2c5b78b2ecd1ccdbdc3fcb5bf6601c06193a1ef1
-ms.sourcegitcommit: 4bf5159a3821f4277c07d89e88808c4c3a25ff81
+ms.openlocfilehash: 18858c45224b833c099c021920ff3d568ad2b3c3
+ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "35059823"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "35128309"
 ---
 # <a name="naming-guidelines"></a>命名准则
 
 自定义函数由 JSON 元数据文件中的**id**和**name**属性标识。
 
-- 函数`id`用于唯一标识 JavaScript 代码中的自定义函数。 
-- 函数`name`用作在 Excel 中向用户显示的显示名称。 
+- 函数`id`用于唯一标识 JavaScript 代码中的自定义函数。
+- 函数`name`用作在 Excel 中向用户显示的显示名称。
+
+[!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
 函数`name`可以与函数`id`不同, 例如出于本地化目的。 通常情况下, 如果没有`name`明显的原因, 函数应`id`保持与的相同。
 

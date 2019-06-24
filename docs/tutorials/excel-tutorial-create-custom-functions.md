@@ -1,16 +1,16 @@
 ---
 title: Excel 自定义函数教程
 description: 在本教程中，你将创建一个 Excel 外接程序，其中包含可执行计算、请求 Web 数据或流 Web 数据的自定义函数。
-ms.date: 06/17/2019
+ms.date: 06/20/2019
 ms.prod: excel
 ms.topic: tutorial
 localization_priority: Normal
-ms.openlocfilehash: 70c1d68f585bd4db43c8d66a6fafd142556bd03b
-ms.sourcegitcommit: 4bf5159a3821f4277c07d89e88808c4c3a25ff81
+ms.openlocfilehash: 3ae7896c082e7a1a45fb153dc69772f206a433de
+ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "35059802"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "35126979"
 ---
 # <a name="tutorial-create-custom-functions-in-excel"></a>教程：在 Excel 中创建自定义函数
 
@@ -27,7 +27,7 @@ ms.locfileid: "35059802"
 
 [!include[Yeoman generator prerequisites](../includes/quickstart-yo-prerequisites.md)]
 
-* Windows 上的 Excel (版本1904或更高版本, 连接到 Office 365 订阅) 或 web 上的 Excel
+* Windows (版本1904或更高版本, 连接到 Office 365 订阅) 或 web 上的 Excel
 
 ## <a name="create-a-custom-functions-project"></a>创建自定义函数项目
 
@@ -62,7 +62,7 @@ ms.locfileid: "35059802"
     > [!NOTE]
     > Office 加载项应使用 HTTPS，而不是 HTTP（即便是在开发时也是如此）。 如果系统在运行 `npm run build` 后提示你安装证书，请接受提示以安装 Yeoman 生成器提供的证书。
 
-4. 启动在 Node.js 中运行的本地 Web 服务器。 可以在 Windows 或 Excel Online 上试用 Excel 中的自定义函数加载项。
+4. 启动在 Node.js 中运行的本地 Web 服务器。 您可以在 Excel 网页或 Windows 中试用自定义函数加载项。
 
 # <a name="excel-on-windowstabexcel-windows"></a>[Windows 上的 Excel](#tab/excel-windows)
 
@@ -72,19 +72,19 @@ ms.locfileid: "35059802"
 npm run start:desktop
 ```
 
-# <a name="excel-onlinetabexcel-online"></a>[Excel Online](#tab/excel-online)
+# <a name="excel-on-the-webtabexcel-online"></a>[在 web 上的 Excel](#tab/excel-online)
 
-若要在 Excel Online 中测试外接程序, 请运行以下命令。 运行此命令时，本地 Web 服务器将启动。
+若要在 Excel 中的浏览器上测试外接程序, 请运行以下命令。 运行此命令时，本地 Web 服务器将启动。
 
 ```command&nbsp;line
 npm run start:web
 ```
 
-若要使用自定义函数外接程序, 请在 Excel Online 中打开一个新工作簿。 在此工作簿中, 完成以下步骤以旁加载您的外接程序。
+若要使用自定义函数外接程序, 请在 web 上的 Excel 中打开一个新工作簿。 在此工作簿中, 完成以下步骤以旁加载您的外接程序。
 
-1. 在 Excel Online 中，依次选择“插入”**** 选项卡和“加载项”****。
+1. 在 Excel 中, 选择 "**插入**" 选项卡, 然后选择 "**外接程序**"。
 
-   ![在 Excel Online 中插入带突出显示 "我的外接程序" 图标的功能区](../images/excel-cf-online-register-add-in-1.png)
+   ![在 Excel 中的 "我的外接程序" 图标突出显示的网页中插入功能区](../images/excel-cf-online-register-add-in-1.png)
    
 2. 选择“管理我的加载项”****，然后选择“上载我的加载项”****。
 
@@ -149,7 +149,7 @@ npm run start:web
     npm run build
     ```
 
-4. 完成以下步骤 (针对 Windows 或 Excel Online 上的 Excel), 以便在 Excel 中重新注册加载项。 您必须完成这些步骤, 新函数才可用。 
+4. 完成以下步骤 (对于 web 上的 Excel 或 Windows), 以便在 Excel 中重新注册加载项。 您必须完成这些步骤, 新函数才可用。
 
 # <a name="excel-on-windowstabexcel-windows"></a>[Windows 上的 Excel](#tab/excel-windows)
 
@@ -160,13 +160,13 @@ npm run start:web
 3. 在可用加载项列表中，找到“**开发人员加载项**”部分并选择 **stock-ticker** 加载项进行注册。
     ![在 Windows Excel 中插入带有 "我的外接程序" 列表中突出显示 Excel 自定义函数外接程序的功能区](../images/list-stock-ticker-red.png)
 
-# <a name="excel-onlinetabexcel-online"></a>[Excel Online](#tab/excel-online)
+# <a name="excel-on-the-webtabexcel-online"></a>[在 web 上的 Excel](#tab/excel-online)
 
-1. 在 Excel Online 中，选择“插入”**** 选项卡，然后选择“加载项”****。![Excel Online 中的“插入”功能区，同时突出显示“我的加载项”图标](../images/excel-cf-online-register-add-in-1.png)
+1. 在 Excel 中, 选择 "**插入**" 选项卡, 然后选择 "**外接程序**"。 ![在 Excel 中的 "我的外接程序" 图标突出显示的网页中插入功能区](../images/excel-cf-online-register-add-in-1.png)
 
-2. 选择“管理我的加载项”****，然后选择“上载我的加载项”****。 
+2. 选择“管理我的加载项”****，然后选择“上载我的加载项”****。
 
-3. 选择“浏览...”****，并导航到 Yeoman 生成器创建的项目的根目录。 
+3. 选择“浏览...”****，并导航到 Yeoman 生成器创建的项目的根目录。
 
 4. 依次选择文件“manifest.xml”****，“打开”****，然后选择“上载”****。
 
@@ -233,7 +233,7 @@ npm run start:web
     npm run build
     ```
 
-3. 完成以下步骤 (针对 Windows 或 Excel Online 上的 Excel), 以便在 Excel 中重新注册加载项。 您必须完成这些步骤, 新函数才可用。 
+3. 完成以下步骤 (对于 web 上的 Excel 或 Windows), 以便在 Excel 中重新注册加载项。 您必须完成这些步骤, 新函数才可用。 
 
 # <a name="excel-on-windowstabexcel-windows"></a>[Windows 上的 Excel](#tab/excel-windows)
 
@@ -244,9 +244,9 @@ npm run start:web
 3. 在可用加载项列表中，找到“**开发人员加载项**”部分并选择 **stock-ticker** 加载项进行注册。
     ![在 Windows Excel 中插入带有 "我的外接程序" 列表中突出显示 Excel 自定义函数外接程序的功能区](../images/list-stock-ticker-red.png)
 
-# <a name="excel-onlinetabexcel-online"></a>[Excel Online](#tab/excel-online)
+# <a name="excel-on-the-webtabexcel-online"></a>[在 web 上的 Excel](#tab/excel-online)
 
-1. 在 Excel Online 中，选择“插入”**** 选项卡，然后选择“加载项”****。![Excel Online 中的“插入”功能区，同时突出显示“我的加载项”图标](../images/excel-cf-online-register-add-in-1.png)
+1. 在 Excel 中, 选择 "**插入**" 选项卡, 然后选择 "**外接程序**"。 ![在 Excel 中的 "我的外接程序" 图标突出显示的网页中插入功能区](../images/excel-cf-online-register-add-in-1.png)
 
 2. 选择“管理我的加载项”****，然后选择“上载我的加载项”****。
 

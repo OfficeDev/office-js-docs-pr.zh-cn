@@ -1,14 +1,14 @@
 ---
-ms.date: 05/08/2019
+ms.date: 06/18/2019
 description: 了解在 Excel 中开发自定义函数的最佳实践。
 title: 自定义函数最佳实践
 localization_priority: Normal
-ms.openlocfilehash: d825f5a9f14e240ca5af3c3325cb646248d99ca9
-ms.sourcegitcommit: a99be9c4771c45f3e07e781646e0e649aa47213f
+ms.openlocfilehash: 7c836119a783f5cc7e1e7f4f52f1d21b86091bfe
+ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/11/2019
-ms.locfileid: "33952101"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "35127931"
 ---
 # <a name="custom-functions-best-practices"></a>自定义函数最佳实践
 

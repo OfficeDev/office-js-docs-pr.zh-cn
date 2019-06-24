@@ -1,18 +1,20 @@
 ---
-ms.date: 06/17/2019
+ms.date: 06/20/2019
 description: 使用 `OfficeRuntime.storage` 保存自定义函数中的状态。
 title: 保存并共享自定义函数中的状态
 localization_priority: Priority
-ms.openlocfilehash: c0825b67bfb97cea75e09704969e915d9560e39e
-ms.sourcegitcommit: 4bf5159a3821f4277c07d89e88808c4c3a25ff81
+ms.openlocfilehash: c6689393e5d118c779b7b261b0de04ead56aff83
+ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "35059886"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "35127833"
 ---
 # <a name="save-and-share-state-in-custom-functions"></a>保存并共享自定义函数中的状态
 
-使用 `OfficeRuntime.storage` 对象保存与加载项中的自定义函数或任务窗格相关的状态。 存储限制为每个域 10 MB（可以在多个加载项中共享）。 在 Windows 版 Excel 中，`storage` 对象是自定义函数运行时内的单独位置，但对于 Excel Online 和 Excel for Mac，`storage` 对象与浏览器的 `localStorage` 相同。
+使用 `OfficeRuntime.storage` 对象保存与加载项中的自定义函数或任务窗格相关的状态。 存储限制为每个域 10 MB（可以在多个加载项中共享）。 在 Windows 版 Excel 中，`storage` 对象是自定义函数运行时内的单独位置；但对于 Excel 网页版和 Mac 版 Excel，`storage` 对象与浏览器的 `localStorage` 相同。
+
+[!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
 可以通过多种方式使用 `storage` 进行状态管理：
 

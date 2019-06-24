@@ -1,14 +1,14 @@
 ---
 title: 了解适用于 Office 的 JavaScript API
 description: ''
-ms.date: 03/19/2019
+ms.date: 06/20/2019
 localization_priority: Priority
-ms.openlocfilehash: c1666745e9ffeb6c0e9ecf763b2a30c97c609b4f
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: 45cccadaa3d82f3435579650ae5161b20d7a425a
+ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32449300"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "35127987"
 ---
 # <a name="understanding-the-javascript-api-for-office"></a>了解适用于 Office 的 JavaScript API
 
@@ -179,7 +179,7 @@ Office.initialize = function (reason) {
 |||||||||
 |:-----|:-----|:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|
 ||**主机名**|数据库|工作簿|邮箱|演示文稿|文档|Project|
-||**支持的****主机应用程序**|Access Web App|Excel、<br/>Excel Online|Outlook、<br/>Outlook Web App、<br/>适用于设备的 OWA|PowerPoint、<br/>PowerPoint Online|Word|项目|
+||**支持的****主机应用程序**|Access Web 应用|Windows 版 Excel、<br/>Excel 网页版|Windows 版 Outlook、<br/>Outlook 网页版、<br/>Android 版 Outlook、<br>iOS 版 Outlook|Windows 版 PowerPoint、<br/>PowerPoint 网页版|Windows 版 Word|Windows 版 Project|
 |**支持的外接程序类型**|内容|Y|Y||Y|||
 ||任务窗格||Y||Y|Y|Y|
 ||Outlook|||Y||||

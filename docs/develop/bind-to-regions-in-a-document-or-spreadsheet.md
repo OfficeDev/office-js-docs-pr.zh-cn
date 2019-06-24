@@ -1,14 +1,14 @@
 ---
 title: 绑定到文档或电子表格中的区域
 description: ''
-ms.date: 03/19/2019
+ms.date: 06/20/2019
 localization_priority: Priority
-ms.openlocfilehash: be633fc99d4a80257a9c8f68b5e9569727ac30a5
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: 9f2a201178826e1f049e9e9bd067260741028c84
+ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32448791"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "35127616"
 ---
 # <a name="bind-to-regions-in-a-document-or-spreadsheet"></a>绑定到文档或电子表格中的区域
 
@@ -335,7 +335,7 @@ myBinding.setDataAsync('Hello World!', function (asyncResult) { });
 传入函数的匿名函数是在操作完成时执行的回调。该函数用单个参数 `asyncResult` 来调用，其中包含结果的状态。
 
 > [!NOTE]
-> 自 Excel 2013 SP1 发行版及相应的 Excel Online 版本起，现在可以[在对绑定表格执行数据写入和更新时设置格式](../excel/excel-add-ins-tables.md)。
+> 自 Excel 2013 SP1 发行版及相应的 Excel 网页版内部版本起，现在可以[在绑定表中写入和更新数据时设置格式](../excel/excel-add-ins-tables.md)。
 
 
 ## <a name="detect-changes-to-data-or-the-selection-in-a-binding"></a>检测绑定中数据或选择内的更改

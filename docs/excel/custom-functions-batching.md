@@ -3,18 +3,20 @@ ms.date: 06/17/2019
 description: 将自定义函数集体进行批处理，以减少对远程服务的网络调用。
 title: 对远程服务的自定义函数调用进行批处理
 localization_priority: Priority
-ms.openlocfilehash: 2e01c981dd71a4b6eebf0e191302ba2f8f71ef2a
-ms.sourcegitcommit: 4bf5159a3821f4277c07d89e88808c4c3a25ff81
+ms.openlocfilehash: aa1b9c956c0f54a4d59e49ca157dd67c8349b143
+ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "35059837"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "35127938"
 ---
 # <a name="batching-custom-function-calls-for-a-remote-service"></a>对远程服务的自定义函数调用进行批处理
 
 如果自定义函数调用远程服务，可以使用批处理模式来减少对远程服务的网络调用次数。 为了减少网络往返，你可以将所有调用批处理为对 Web 服务的单个调用。 当重新计算电子表格时，此方法非常合适。
 
 例如，如果有人在电子表格的 100 个单元格中使用了自定义函数，然后重新计算电子表格，则自定义函数将运行 100 次并进行 100 次网络调用。 通过使用批处理模式，可以将这些调用组合起来，在单次网络调用中完成总共 100 次计算。
+
+[!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
 ## <a name="view-the-completed-sample"></a>查看已完成的示例
 

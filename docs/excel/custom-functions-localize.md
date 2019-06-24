@@ -1,14 +1,14 @@
 ---
-ms.date: 06/17/2019
+ms.date: 06/18/2019
 description: 本地化您的 Excel 自定义函数。
 title: 本地化自定义函数
 localization_priority: Normal
-ms.openlocfilehash: 7c289f65a7d75f1c1c07770d43e09f92568ca73b
-ms.sourcegitcommit: 4bf5159a3821f4277c07d89e88808c4c3a25ff81
+ms.openlocfilehash: 7348562a232f87607d5f9becad85e897f22ad99d
+ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "35059711"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "35127861"
 ---
 # <a name="localize-custom-functions"></a>本地化自定义函数
 
@@ -16,6 +16,8 @@ ms.locfileid: "35059711"
 
 >[!IMPORTANT]
 > 自动生成的元数据不能用于本地化, 因此您需要手动更新 JSON 文件。
+
+[!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
 ## <a name="localize-function-names"></a>本地化函数名称
 

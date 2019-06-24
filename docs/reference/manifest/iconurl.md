@@ -1,14 +1,14 @@
 ---
 title: 清单文件中的 IconUrl 元素
 description: ''
-ms.date: 05/20/2019
+ms.date: 06/20/2019
 localization_priority: Normal
-ms.openlocfilehash: 0f518741f0139c9cb240196592edae22b1b09ee7
-ms.sourcegitcommit: b0e71ae0ae09c57b843d4de277081845c108a645
+ms.openlocfilehash: d4451409a457fa5522e27ab5efd203b9c37a2052
+ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "34337200"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "35127553"
 ---
 # <a name="iconurl-element"></a>IconUrl 元素
 
@@ -34,7 +34,7 @@ ms.locfileid: "34337200"
 
 ## <a name="remarks"></a>注解
 
-对于邮件外接程序，该图标显示在“**文件**” > “**管理外接程序**”UI (Outlook) 或“**设置**” > “**管理外接程序**”UI (Outlook Web App) 中。对于内容或任务窗格外接程序，图标显示在“**插入**” > “**外接程序**”UI 中。对于所有外接程序类型，如果你将外接程序发布到 Office 应用商店，则该图标也将用于 Office 应用商店网站上。
+对于邮件外接程序, 该图标显示在 "**文件** > **管理外接程序**" ui (outlook) 中, 或**设置** > "**管理外接程序**" ui (outlook 网页版)。 For a content or task pane add-in, the icon is displayed in the **Insert** > **Add-ins** UI. For all add-in types, the icon is also used on the Office Store site, if you publish your add-in to the Office Store.
 
 图像必须采用下列任一文件格式进行保存：GIF、JPG、PNG、EXIF、BMP 或 TIFF。 对于内容和任务窗格应用程序，指定的图像必须是 32 x 32 像素。 对于邮件应用程序，推荐的图像分辨率是 64 x 64 像素。 此外，还应指定用于使用 [HighResolutionIconUrl](highresolutioniconurl.md) 元素在高 DPI 屏幕上运行的 Office 主机应用程序的图标。 有关详细信息，请参阅[在 AppSource 和 Office 中创建有效的应用一览](/office/dev/store/create-effective-office-store-listings#create-a-consistent-visual-identity)中的_为你的应用创建一致的视觉标识_部分。
 

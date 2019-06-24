@@ -1,14 +1,14 @@
 ---
 title: 适用于 Office 的 JavaScript API 的错误代码
 description: ''
-ms.date: 03/19/2019
+ms.date: 06/20/2019
 localization_priority: Normal
-ms.openlocfilehash: 5e18a82c2536d5f5284588227b1cf767ebd2749e
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: b259d592d465dfae6569ecc2a442f249104916af
+ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32450728"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "35128529"
 ---
 # <a name="javascript-api-for-office-error-codes"></a>适用于 Office 的 JavaScript API 的错误代码
 
@@ -66,7 +66,7 @@ ms.locfileid: "32450728"
 |5006|会话超时|文档会话超时。重新加载文档。 |会话已超时。|
 |5007|无效的 API 调用|当前上下文中不支持枚举。|当前上下文中不支持枚举。|
 |5009|权限被拒绝|访问被拒绝|加载项没有调用特定 API 的权限。|
-|5012|会话无效或超时|你的 Office Online 会话已过期，或无效。 若要继续操作，请刷新页面。|Office 客户端和服务器之间的会话已过期，或你的计算机上的日期、时间或时区不正确。|
+|5012|会话无效或超时|您的 Office 浏览器会话已过期或无效。 若要继续操作，请刷新页面。|Office 客户端和服务器之间的会话已过期，或你的计算机上的日期、时间或时区不正确。|
 |6000|无效节点|未找到指定节点。|找不到 **CustomXmlPart** 节点。|
 |6100|自定义 XML 错误|自定义 XML 错误|无效的 API 调用。|
 |7000|ID 无效|指定 ID 不存在。|ID 无效。|

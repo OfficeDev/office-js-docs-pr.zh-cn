@@ -1,19 +1,19 @@
 ---
 title: OneNote JavaScript API 概述
 description: ''
-ms.date: 03/19/2019
+ms.date: 06/20/2019
 ms.prod: onenote
 localization_priority: Normal
-ms.openlocfilehash: 53b120fbe2bba3967c1b89699daef6bd452b5c24
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: 68ac6f94921ba3b1ea14f364988b57ef86809890
+ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32450252"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "35127126"
 ---
 # <a name="onenote-javascript-api-overview"></a>OneNote JavaScript API 概述
 
-适用于：OneNote Online
+适用于: OneNote 在 web 上
 
 下面的链接展示了 API 中的高级 OneNote 对象。 每个对象页面链接包含对象可用的属性、事件和方法的描述。 如需了解详细信息，请浏览相应链接。 
     

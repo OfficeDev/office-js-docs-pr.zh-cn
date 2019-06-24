@@ -1,33 +1,33 @@
 ---
 title: Word JavaScript API 要求集
 description: ''
-ms.date: 06/11/2019
+ms.date: 06/20/2019
 ms.prod: word
 localization_priority: Priority
-ms.openlocfilehash: be2c9834fbf3ceabcbbca6f2378b4356095ab387
-ms.sourcegitcommit: e112a9b29376b1f574ee13b01c818131b2c7889d
+ms.openlocfilehash: 927dce7bc196c1871fd44d4b91e67ba04a3fbb16
+ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/15/2019
-ms.locfileid: "34997391"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "35127000"
 ---
 # <a name="word-javascript-api-requirement-sets"></a>Word JavaScript API 要求集
 
 要求集是指各组已命名的 API 成员。Office 加载项使用清单中指定的要求集或执行运行时检查，以确定 Office 主机是否支持加载项所需的 API。有关详细信息，请参阅 [Office 版本和要求集](/office/dev/add-ins/develop/office-versions-and-requirement-sets)。
 
-Word 加载项可在多个 Office 版本中运行，包括 Windows 版 Office 2016 或更高版本、Office for iPad、Office for Mac 和 Office Online。 下表列出了 Word 要求集、支持该要求集的 Office 主机应用程序，以及这些应用程序的内部版本或版本号。
+Word 加载项可在多个 Office 版本中运行，包括 Windows 版 Office 2016 或更高版本、Office 网页版、iPad 版 Office 和 Mac 版 Office。 下表列出了 Word 要求集、支持该要求集的 Office 主机应用程序，以及这些应用程序的内部版本或版本号。
 
 > [!NOTE]
 > 对于标记为 Beta 的要求集，请使用 Office 软件的指定版本（或更高版本），并使用 CDN 的 Beta 库：https://appsforoffice.microsoft.com/lib/beta/hosted/office.js。
 >
 > 未列为 Beta 的条目已全面发布，可以继续使用生产 CDN 库：https://appsforoffice.microsoft.com/lib/1/hosted/office.js
 
-|  要求集  |   Windows 版 Office\*<br>（连接到 Office 365）  |  Office for iPad<br>（连接到 Office 365）  |  Office for Mac<br>（连接到 Office 365）  | Office Online  | Office Online Server  |
+|  要求集  |   Windows 版 Office\*<br>（连接到 Office 365 订阅）  |  iPad 版 Office<br>（连接到 Office 365 订阅）  |  Mac 版 Office<br>（连接到 Office 365 订阅）  | Office 网页版  | Office Online Server  |
 |:-----|-----|:-----|:-----|:-----|:-----|
 | [预览](/javascript/api/word)  | 请使用最新的 Office 版本来试用预览 API（你可能需要加入 [Office 预览体验成员计划](https://products.office.com/office-insider)） |
-| WordApi 1.3 | 版本 1612（内部版本 7668.1000）或更高版本| 2017 年 3 月，2.22 或更高版本 | 2017 年 3 月，15.32 或更高版本| 2017 年 3 月 ||
-| WordApi 1.2  | 2015 年 12 月更新，版本 1601（内部版本 6568.1000）或更高版本 | 2016 年 1 月，1.18 或更高版本 | 2016 年 1 月，15.19 或更高版本| 2016 年 9 月 | |
-| WordApi 1.1  | 版本 1509（内部版本 4266.1001）或更高版本| 2016 年 1 月，1.18 或更高版本 | 2016 年 1 月，15.19 或更高版本| 2016 年 9 月 | |
+| WordApi 1.3 | 版本 1612（内部版本 7668.1000）或更高版本| 2017 年 3 月，2.22 或更高版本 | 2017 年 3 月，15.32 或更高版本| 2017 年 3 月 | 不适用 |
+| WordApi 1.2  | 2015 年 12 月更新，版本 1601（内部版本 6568.1000）或更高版本 | 2016 年 1 月，1.18 或更高版本 | 2016 年 1 月，15.19 或更高版本| 2016 年 9 月 | 不适用 |
+| WordApi 1.1  | 版本 1509（内部版本 4266.1001）或更高版本| 2016 年 1 月，1.18 或更高版本 | 2016 年 1 月，15.19 或更高版本| 2016 年 9 月 | 不适用 |
 
 > [!NOTE]
 > 通过 MSI 安装的 Office 2016 的内部版本号为 16.0.4266.1001。 此版本只包含 WordApi 1.1 要求集。

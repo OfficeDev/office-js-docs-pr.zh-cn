@@ -1,14 +1,14 @@
 ---
 title: "\"Context\"-\"邮箱\"。项目-要求集1。3"
 description: ''
-ms.date: 05/30/2019
+ms.date: 06/20/2019
 localization_priority: Normal
-ms.openlocfilehash: 350e476c7f965e825ac08027533b7d0938e1c222
-ms.sourcegitcommit: 567aa05d6ee6b3639f65c50188df2331b7685857
+ms.openlocfilehash: 843254fa570ab06e1bff4120d65c51781c851055
+ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "34706363"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "35128431"
 ---
 # <a name="item"></a>item
 
@@ -245,10 +245,10 @@ console.log("Date and time created: " + dateTimeCreated);
 
 #### <a name="datetimemodified-date"></a>dateTimeModified: Date
 
-获取项目最近一次修改的日期和时间。仅限阅读模式。
+获取项目最近一次修改的日期和时间。 仅限阅读模式。
 
 > [!NOTE]
-> 在 Outlook for iOS 或 Outlook for Android 中不支持此成员。
+> IOS 或 Android 上的 Outlook 不支持此成员。
 
 ##### <a name="type"></a>类型
 
@@ -880,7 +880,7 @@ function addAttachment() {
 
 随后可以将该标识符与 [`removeAttachmentAsync`](#removeattachmentasyncattachmentid-options-callback) 方法一同使用，以删除同一个会话中的附件。
 
-如果 Office 加载项在 Outlook Web App 中运行，则 `addItemAttachmentAsync` 方法可以将项目附加到项目（正在编辑的项目除外）中；然而，不支持也不建议这样做。
+如果 Office 外接程序在 web 上的 Outlook 中运行, 则该`addItemAttachmentAsync`方法可以将项目附加到您正在编辑的项目之外的项目中;但是, 不支持这种情况, 建议不要这样做。
 
 ##### <a name="parameters"></a>参数
 
@@ -955,13 +955,13 @@ function addAttachment() {
 显示答复窗体，其中包括所选邮件的发件人和所有收件人或所选约会的组织者和所有与会者。
 
 > [!NOTE]
-> 在 Outlook for iOS 或 Outlook for Android 中不支持此方法。
+> IOS 或 Android 上的 Outlook 不支持此方法。
 
-在 Outlook Web App 中，答复窗体显示为包含 3 列视图的弹出式窗体以及包含 2 列或 1 列视图的弹出式窗体。
+在 web 上的 Outlook 中, 答复窗体显示为3列视图中的弹出窗体和2列或1列视图中的弹出式窗体。
 
 如果任意字符串参数超出其限制，`displayReplyAllForm` 将引发异常。
 
-当在 `formData.attachments` 参数中指定附件时，Outlook 和 Outlook Web App 尝试下载所有附件并将其附加到答复窗体。如果无法添加任何附件，则在窗体 UI 中显示错误。如果这不可能，则不引发错误消息。
+如果在`formData.attachments`参数中指定了附件, 则 web 上的 Outlook 和桌面客户端将尝试下载所有附件并将其附加到答复窗体。 如果无法添加任何附件，则在窗体 UI 中显示错误。 如果这不可能，则不引发错误消息。
 
 ##### <a name="parameters"></a>参数
 
@@ -1073,13 +1073,13 @@ Office.context.mailbox.item.displayReplyAllForm(
 显示答复窗体，其中仅包括所选邮件的发件人或所选约会的组织者。
 
 > [!NOTE]
-> 在 Outlook for iOS 或 Outlook for Android 中不支持此方法。
+> IOS 或 Android 上的 Outlook 不支持此方法。
 
-在 Outlook Web App 中，答复窗体显示为包含 3 列视图的弹出式窗体以及包含 2 列或 1 列视图的弹出式窗体。
+在 web 上的 Outlook 中, 答复窗体显示为3列视图中的弹出窗体和2列或1列视图中的弹出式窗体。
 
 如果任意字符串参数超出其限制，`displayReplyForm` 将引发异常。
 
-当在 `formData.attachments` 参数中指定附件时，Outlook 和 Outlook Web App 尝试下载所有附件并将其附加到答复窗体。如果无法添加任何附件，则在窗体 UI 中显示错误。如果这不可能，则不引发错误消息。
+如果在`formData.attachments`参数中指定了附件, 则 web 上的 Outlook 和桌面客户端将尝试下载所有附件并将其附加到答复窗体。 如果无法添加任何附件，则在窗体 UI 中显示错误。 如果这不可能，则不引发错误消息。
 
 ##### <a name="parameters"></a>参数
 
@@ -1191,7 +1191,7 @@ Office.context.mailbox.item.displayReplyForm(
 获取在所选项目的正文中找到的实体。
 
 > [!NOTE]
-> 在 Outlook for iOS 或 Outlook for Android 中不支持此方法。
+> IOS 或 Android 上的 Outlook 不支持此方法。
 
 ##### <a name="requirements"></a>要求
 
@@ -1218,7 +1218,7 @@ var contacts = Office.context.mailbox.item.getEntities().contacts;
 获取所选项目的正文中找到的指定实体类型的所有实体的数组。
 
 > [!NOTE]
-> 在 Outlook for iOS 或 Outlook for Android 中不支持此方法。
+> IOS 或 Android 上的 Outlook 不支持此方法。
 
 ##### <a name="parameters"></a>参数
 
@@ -1275,7 +1275,7 @@ Office.initialize = function () {
 返回传递清单 XML 文件中定义的命名筛选器的所选项目中的已知实体。
 
 > [!NOTE]
-> 在 Outlook for iOS 或 Outlook for Android 中不支持此方法。
+> IOS 或 Android 上的 Outlook 不支持此方法。
 
 `getFilteredEntitiesByName` 方法返回匹配在具有指定 `FilterName` 元素值的清单 XML 文件中的 [ItemHasKnownEntity](/office/dev/add-ins/reference/manifest/rule#itemhasknownentity-rule) 规则元素中定义的正则表达式的实体。
 
@@ -1283,7 +1283,7 @@ Office.initialize = function () {
 
 |名称| 类型| 说明|
 |---|---|---|
-|`name`| String|定义筛选器匹配的 `ItemHasKnownEntity` 规则元素的名称。|
+|`name`| 字符串|定义筛选器匹配的 `ItemHasKnownEntity` 规则元素的名称。|
 
 ##### <a name="requirements"></a>要求
 
@@ -1304,7 +1304,7 @@ Office.initialize = function () {
 返回所选项目中匹配在清单 XML 文件中定义的正则表达式的字符串值。
 
 > [!NOTE]
-> 在 Outlook for iOS 或 Outlook for Android 中不支持此方法。
+> IOS 或 Android 上的 Outlook 不支持此方法。
 
 `getRegExMatches` 方法返回匹配在清单 XML 文件中的每个 `ItemHasRegularExpressionMatch` 或 `ItemHasKnownEntity` 规则元素中定义的正则表达式的字符串。对于 `ItemHasRegularExpressionMatch` 规则，匹配字符串必须发生在该规则指定的项目的属性中。`PropertyName` 简单类型定义支持的属性。
 
@@ -1368,7 +1368,7 @@ var veggies = allMatches.veggies;
 返回匹配在清单 XML 文件中定义的命名正则表达式的所选项目中的字符串值。
 
 > [!NOTE]
-> 在 Outlook for iOS 或 Outlook for Android 中不支持此方法。
+> IOS 或 Android 上的 Outlook 不支持此方法。
 
 `getRegExMatchesByName` 方法返回匹配在具有指定 `RegExName` 元素值的清单 XML 文件中的 `ItemHasRegularExpressionMatch` 规则元素中定义的正则表达式的字符串。
 
@@ -1378,7 +1378,7 @@ var veggies = allMatches.veggies;
 
 |名称| 类型| 说明|
 |---|---|---|
-|`name`| String|定义筛选器匹配的 `ItemHasRegularExpressionMatch` 规则元素的名称。|
+|`name`| 字符串|定义筛选器匹配的 `ItemHasRegularExpressionMatch` 规则元素的名称。|
 
 ##### <a name="requirements"></a>要求
 
@@ -1516,15 +1516,15 @@ function saveCallback(asyncResult) {
 
 将附件从邮件或约会中删除。
 
-`removeAttachmentAsync` 方法删除项目中带指定标识符的附件。最佳做法是，仅当同一个邮件应用程序在同一会话中添加了一个附件时，你才应使用该附件标识符来删除该附件。在 Outlook Web App 和适用于设备的 OWA 中，附件标识符只在同一个会话中才有效。当用户关闭应用程序，或者如果用户开始在内嵌窗体中撰写，并在随后弹出的内嵌窗体中继续在单独的窗口撰写时，会话即结束。
+`removeAttachmentAsync` 方法删除项目中带指定标识符的附件。 最佳做法是，仅当同一个邮件应用程序在同一会话中添加了一个附件时，你才应使用该附件标识符来删除该附件。 在 web 和移动设备上的 Outlook 中, 附件标识符仅在同一个会话中有效。 当用户关闭应用程序，或者如果用户开始在内嵌窗体中撰写，并在随后弹出的内嵌窗体中继续在单独的窗口撰写时，会话即结束。
 
 ##### <a name="parameters"></a>参数
 
 |名称| 类型| 属性| 说明|
 |---|---|---|---|
 |`attachmentId`| String||要删除的附件的标识符。|
-|`options`| 对象| &lt;optional&gt;|包含一个或多个以下属性的对象文本。|
-|`options.asyncContext`| 对象| &lt;optional&gt;|开发人员可以提供他们想要在回调方法中访问的任何对象。|
+|`options`| 对象| &lt;可选&gt;|包含一个或多个以下属性的对象文本。|
+|`options.asyncContext`| 对象| &lt;可选&gt;|开发人员可以提供他们想要在回调方法中访问的任何对象。|
 |`callback`| 函数| &lt;可选&gt;|方法完成后，使用单个参数 `callback`（一个 [`asyncResult`](/javascript/api/office/office.asyncresult) 对象）调用在 `AsyncResult` 参数中传递的函数。 <br/>如果删除附件失败，`asyncResult.error` 属性将包含一个说明失败原因的错误代码。|
 
 ##### <a name="errors"></a>错误
@@ -1560,7 +1560,7 @@ Office.context.mailbox.item.removeAttachmentAsync(
 
 异步保存项目。
 
-调用时，此方法将当前邮件保存为草稿，并通过回调方法返回项目 ID。在 Outlook Web App 或 Outlook 联机模式下，该项目被保存到服务器中。在 Outlook 缓存模式下，该项目被保存到本地缓存中。
+调用时，此方法将当前邮件保存为草稿，并通过回调方法返回项目 ID。 在 Outlook 网页或 Outlook 的联机模式中, 将项目保存到服务器。 在 Outlook 缓存模式下，该项目被保存到本地缓存中。
 
 > [!NOTE]
 > 如果加载项在撰写模式下对某个项目调用 `saveAsync` 来获得 `itemId`，以便与 EWS 或 REST API 一同使用，请注意，当 Outlook 处于高速缓存模式时，可能需要一段时间项目才能真正同步到服务器。 在项目同步前，使用 `itemId` 将返回一个错误。
@@ -1570,7 +1570,7 @@ Office.context.mailbox.item.removeAttachmentAsync(
 > [!NOTE]
 > 以下客户端在撰写模式下对约会上的 `saveAsync` 具有不同的行为：
 >
-> - Outlook for Mac 不支持保存会议。 在`saveAsync`撰写模式下从会议中调用时, 此方法将失败。 若要解决此问题, 请参阅[使用 OFFICE JS API 将会议保存为 Outlook For Mac 中的草稿](https://support.microsoft.com/help/4505745)。
+> - Mac 上的 Outlook 不支持保存会议。 在`saveAsync`撰写模式下从会议中调用时, 此方法将失败。 若要解决此问题, 请参阅[使用 OFFICE JS API 将会议保存为 Outlook For Mac 中的草稿](https://support.microsoft.com/help/4505745)。
 > - 在撰写模式下的约会上调用 `saveAsync` 时，Outlook 网页版始终发送邀请或更新。
 
 ##### <a name="parameters"></a>参数
@@ -1620,7 +1620,7 @@ Office.context.mailbox.item.saveAsync(
 |`data`| 字符串||要插入的数据。数据不得超过 1,000,000 个字符。如果传入的数据超过 1,000,000 个字符，则会引发 `ArgumentOutOfRange` 异常。|
 |`options`| Object| &lt;可选&gt;|包含一个或多个以下属性的对象文本。|
 |`options.asyncContext`| 对象| &lt;可选&gt;|开发人员可以提供他们想要在回调方法中访问的任何对象。|
-|`options.coercionType`| [Office.CoercionType](office.md#coerciontype-string)| &lt;optional&gt;|如果为 `text`，则在 Outlook Web App 和 Outlook 中应用当前样式。如果该字段是 HTML 编辑器，则仅插入文本数据，即使数据为 HTML。<br/><br/>如果 `html` 和该字段支持 HTML（主题不支持），则在 Outlook Web App 中应用当前样式，而在 Outlook 中应用默认样式。如果该字段是文本字段，则返回 `InvalidDataFormat` 错误。<br/><br/>如果未设置 `coercionType`，则结果取决于该字段：如果该字段是 HTML，则使用 HTML；如果该字段是文本，则使用纯文本。|
+|`options.coercionType`|[Office.CoercionType](office.md#coerciontype-string)|&lt;optional&gt;|如果`text`为, 则当前样式应用于 web 上的 Outlook 和桌面客户端。 如果该字段是 HTML 编辑器，则仅插入文本数据，即使数据为 HTML。<br/><br/>如果`html`和字段支持 HTML (主题不), 则当前样式应用于 web 上的 outlook, 并且在 outlook 桌面客户端中应用了默认样式。 如果该字段是文本字段，则返回 `InvalidDataFormat` 错误。<br/><br/>如果未设置 `coercionType`，则结果取决于该字段：如果该字段是 HTML，则使用 HTML；如果该字段是文本，则使用纯文本。|
 |`callback`| function||方法完成后，使用单个参数 `callback`（一个 [`asyncResult`](/javascript/api/office/office.asyncresult) 对象）调用在 `AsyncResult` 参数中传递的函数。 |
 
 ##### <a name="requirements"></a>Requirements
