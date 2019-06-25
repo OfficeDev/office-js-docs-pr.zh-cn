@@ -1,14 +1,14 @@
 ---
 title: Office 加载项中的异步编程
 description: ''
-ms.date: 04/15/2019
+ms.date: 06/20/2019
 localization_priority: Priority
-ms.openlocfilehash: 6fad9030ecfbb89d515e6cd3b7bb3eeae0e17379
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: 98247c401fa5214dc3c0e39ec9e1b4c409cfdc25
+ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32448994"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "35127637"
 ---
 # <a name="asynchronous-programming-in-office-add-ins"></a>Office 加载项中的异步编程
 
@@ -16,13 +16,13 @@ ms.locfileid: "32448994"
 
 API 中所有这些异步方法的名称均以“Async”结尾，如 [Document.getSelectedDataAsync](/javascript/api/office/office.document#getselecteddataasync-coerciontype--options--callback-)、[Binding.getDataAsync](/javascript/api/office/office.binding#getdataasync-options--callback-) 或 [Item.loadCustomPropertiesAsync](/javascript/api/outlook/office.item#loadcustompropertiesasync-callback--usercontext-) 方法。调用某个“Async”方法时，该方法会立即执行，并且任何后续脚本执行都可以继续。传递给“Async”方法的可选回调函数在数据或请求操作准备就绪后便会立即执行。虽然是立即执行，但在它返回之前可能会略有延迟。
 
-下图显示了一个调用"Async"方法的执行流，该方法可读取用户在基于服务器的 Word Online 或 Excel Online 中打开的文档中选择的数据。"Async"调用开始时，JavaScript 执行线程空闲，可以执行任何额外的客户端处理。（但图中没有显示。）当"Async"方法返回时，回调在线程上恢复执行，外接程序可以访问数据、处理数据并显示结果。当使用 Office 富客户端主机应用程序（如，Word 2013 或 Excel 2013）时，可保持同样的异步执行模式。
+下图显示了一个调用"Async"方法的执行流，该方法可读取用户在基于服务器的 Word 或 Excel 中打开的文档中选择的数据。“Async”调用开始时，JavaScript 执行线程空闲，可以执行任何额外的客户端处理（但图中没有显示）。当“Async”方法返回时，回调在线程上恢复执行，加载项可以访问数据、处理数据并显示结果。当使用 Office 富客户端主机应用程序（如，Word 2013 或 Excel 2013）时，可保持同样的异步执行模式。
 
-*图 1.异步编程执行流*
+*图 1. 异步编程执行流*
 
 ![异步编程线程执行流](../images/office15-app-async-prog-fig01.png)
 
-在富客户端和 Web 客户端中支持此异步设计是 Office 外接程序开发模型"写入一次，跨平台运行"设计目标的一部分。例如，您可以使用将在 Excel 2013 和 Excel Online 中运行的单一基本代码创建一个内容应用程序或任务窗格外接程序。
+在富客户端和 Web 客户端中支持此异步设计是 Office 加载项开发模型"写入一次，跨平台运行"设计目标的一部分。例如，可以使用将在 Excel 2013 和 Excel 网页版中运行的单一基本代码创建一个内容应用程序或任务窗格加载项。
 
 ## <a name="writing-the-callback-function-for-an-async-method"></a>编写"Async"方法的回调函数
 

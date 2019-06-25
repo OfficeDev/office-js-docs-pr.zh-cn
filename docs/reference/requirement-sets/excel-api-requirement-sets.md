@@ -1,39 +1,39 @@
 ---
 title: Excel JavaScript API 要求集
 description: ''
-ms.date: 05/08/2019
+ms.date: 06/20/2019
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: 9123714dff894d01475563b4d960c1fad682789a
-ms.sourcegitcommit: e112a9b29376b1f574ee13b01c818131b2c7889d
+ms.openlocfilehash: a1710fcc89eeafa1e6314e06ded99b3527972244
+ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/15/2019
-ms.locfileid: "34997412"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "35128445"
 ---
 # <a name="excel-javascript-api-requirement-sets"></a>Excel JavaScript API 要求集
 
 要求集是指各组已命名的 API 成员。Office 加载项使用清单中指定的要求集或执行运行时检查，以确定 Office 主机是否支持加载项所需的 API。有关详细信息，请参阅 [Office 版本和要求集](/office/dev/add-ins/develop/office-versions-and-requirement-sets)。
 
-Excel 加载项在多个 Office 版本中运行，包括 Windows 版 Office 2016 或更高版本、Office for iPad、Office for Mac 和 Office Online。下表列出了 Excel 要求集、支持各个要求集的 Office 主机应用程序，以及这些应用程序的内部版本或版本号。
+Excel 加载项跨多个版本 Office 运行，包括 Windows 版 Office 2016 或更高版本、Office 网页版、Mac 版 Office 和 iPad 版 Office。下表列出了 Excel 要求集、支持各个要求集的 Office 主机应用程序，以及这些应用程序的内部版本或生成号。
 
 > [!NOTE]
 > 若要在任何编号的要求集中使用 API，你应该引用 CDN 上的**生产**库：https://appsforoffice.microsoft.com/lib/1/hosted/office.js。
 >
 > 有关使用预览 API 的信息，请参阅本文的 [Excel JavaScript 预览 API](#excel-javascript-preview-apis) 部分。
 
-|  要求集  |  Windows 版 Office<br>（连接到 Office 365）  |  Office for iPad<br>（连接到 Office 365）  |  Office for Mac<br>（连接到 Office 365）  | Office Online  |  Office Online Server  |
+|  要求集  |  Windows 版 Office<br>（已连接到 Office 365 订阅）  |  iPad 版 Office<br>（已连接到 Office 365 订阅）  |  Mac 版 Office<br>（已连接到 Office 365 订阅）  | Office 网页版  |  Office Online Server  |
 |:-----|-----|:-----|:-----|:-----|:-----|
 | [预览](/javascript/api/excel)  | 请使用最新的 Office 版本来试用预览 API（你可能需要加入 [Office 预览体验成员计划](https://products.office.com/office-insider)） |
-| ExcelApi 1.9  | 版本 1903 (内部版本 11425.20204) 或更高版本 | 2.24 或更高版本 | 16.24 或更高版本 | 2019 年 5 月       | 即将推出 |
-| ExcelApi 1.8  | 版本 1808（内部版本 10730.20102）或更高版本 | 2.17 或更高版本 | 16.17 或更高版本 | 2018 年 9 月 | 即将推出 |
-| ExcelApi 1.7  | 版本 1801（内部版本 9001.2171）或更高版本   | 2.9 或更高版本  | 16.9 或更高版本  | 2018 年 4 月     | 即将推出 |
-| ExcelApi 1.6  | 版本 1704（生成号 8201.2001）或更高版本   | 2.2 或更高版本  | 15.36 或更高版本 | 2017 年 4 月     | 即将推出 |
-| ExcelApi 1.5  | 版本 1703（内部版本 8067.2070）或更高版本   | 2.2 或更高版本  | 15.36 或更高版本 | 2017 年 3 月     | 即将推出 |
-| ExcelApi 1.4  | 版本 1701（内部版本 7870.2024）或更高版本   | 2.2 或更高版本  | 15.36 或更高版本 | 2017 年 1 月   | 即将推出 |
+| ExcelApi 1.9  | 版本 1903 (内部版本 11425.20204) 或更高版本 | 2.24 或更高版本 | 16.24 或更高版本 | 2019 年 5 月       | 无 |
+| ExcelApi 1.8  | 版本 1808（内部版本 10730.20102）或更高版本 | 2.17 或更高版本 | 16.17 或更高版本 | 2018 年 9 月 | 无 |
+| ExcelApi 1.7  | 版本 1801（内部版本 9001.2171）或更高版本   | 2.9 或更高版本  | 16.9 或更高版本  | 2018 年 4 月     | 无 |
+| ExcelApi 1.6  | 版本 1704（生成号 8201.2001）或更高版本   | 2.2 或更高版本  | 15.36 或更高版本 | 2017 年 4 月     | 无 |
+| ExcelApi 1.5  | 版本 1703（内部版本 8067.2070）或更高版本   | 2.2 或更高版本  | 15.36 或更高版本 | 2017 年 3 月     | 无 |
+| ExcelApi 1.4  | 版本 1701（内部版本 7870.2024）或更高版本   | 2.2 或更高版本  | 15.36 或更高版本 | 2017 年 1 月   | 无 |
 | ExcelApi 1.3  | 版本 1608（内部版本 7369.2055）或更高版本   | 1.27 或更高版本 | 15.27 或更高版本 | 2016 年 9 月 | 版本 1608（内部版本 7601.6800）或更高版本|
-| ExcelApi 1.2  | 版本 1601（内部版本 6741.2088）或更高版本   | 1.21 或更高版本 | 15.22 或更高版本 | 2016 年 1 月   ||
-| ExcelApi 1.1  | 版本 1509（内部版本 4266.1001）或更高版本   | 1.19 或更高版本 | 15.20 或更高版本 | 2016 年 1 月   ||
+| ExcelApi 1.2  | 版本 1601（内部版本 6741.2088）或更高版本   | 1.21 或更高版本 | 15.22 或更高版本 | 2016 年 1 月   | 无 |
+| ExcelApi 1.1  | 版本 1509（内部版本 4266.1001）或更高版本   | 1.19 或更高版本 | 15.20 或更高版本 | 2016 年 1 月   | 无|
 
 > [!NOTE]
 > 通过 MSI 安装的 Office 2016 的内部版本号为 16.0.4266.1001。 此版本只包含 ExcelApi 1.1 要求集。
@@ -42,9 +42,9 @@ Excel 加载项在多个 Office 版本中运行，包括 Windows 版 Office 2016
 
 [自定义函数](../../excel/custom-functions-overview.md)使用独立于核心 Excel JavaScript API 的要求集。 下表列出了自定义函数要求集、支持的 Office 主机应用程序，以及这些应用程序的内部版本或版本号。
 
-|  要求集  |  Windows 版 Office<br>（连接到 Office 365）  |  Office for iPad<br>（连接到 Office 365）  |  Office for Mac<br>（连接到 Office 365）  | Office Online | Office Online Server |
+|  要求集  |  Windows 版 Office<br>（已连接到 Office 365 订阅）  |  iPad 版 Office<br>（已连接到 Office 365 订阅）  |  Mac 版 Office<br>（已连接到 Office 365 订阅）  | Office 网页版 | Office Online Server |
 |:-----|-----|:-----|:-----|:-----|:-----|
-| CustomFunctionsRuntime 1.1 | 版本 1904（内部版本 11601.20144）或更高版本 | 不支持 | 16.24 或更高版本 | 2019 年 4 月 | 即将推出 |
+| CustomFunctionsRuntime 1.1 | 版本 1904（内部版本 11601.20144）或更高版本 | 不支持 | 16.24 或更高版本 | 2019 年 4 月 | 无 |
 
 有关版本、内部版本号和 Office Online Server 的详细信息，请参阅：
 

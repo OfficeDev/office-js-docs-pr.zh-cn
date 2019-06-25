@@ -1,14 +1,14 @@
 ---
 title: Excel JavaScript API 性能优化
 description: 使用 Excel JavaScript API 优化性能
-ms.date: 03/19/2019
+ms.date: 06/20/2019
 localization_priority: Priority
-ms.openlocfilehash: f48b62b47c4000b128043fe2e01f949af7179e73
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: bd3446b5bb33549002c2ad2325a11ea563c6b7d1
+ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32449153"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "35128302"
 ---
 # <a name="performance-optimization-using-the-excel-javascript-api"></a>使用 Excel JavaScript API 优化性能
 
@@ -16,7 +16,7 @@ ms.locfileid: "32449153"
 
 ## <a name="minimize-the-number-of-sync-calls"></a>减少 sync() 调用次数
 
-在 Excel JavaScript API 中，```sync()``` 是唯一的异步操作，在某些情况下可能会很慢，尤其是对于 Excel Online。 若要优化性能，在调用之前，通过尽可能多地将更改加入队列来最大程度减少调用 ```sync()``` 的次数。
+在 Excel JavaScript API 中，```sync()``` 是唯一的异步操作，在某些情况下可能会很慢，尤其是对于 Excel 网页版。 若要优化性能，在调用之前，通过尽可能多地将更改加入队列来最大程度减少调用 ```sync()``` 的次数。
 
 有关按照此做法操作的代码示例，请参阅[核心概念 - sync()](excel-add-ins-core-concepts.md#sync)。
 
@@ -127,9 +127,6 @@ Excel.run(async function(ctx) {
 ```
 
 ### <a name="suspend-screen-updating"></a>暂停屏幕更新
-
-> [!NOTE]
-> 本文中所述的 `suspendScreenUpdatingUntilNextSync` 方法当前仅适用于公共预览版。 [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
 
 Excel 大约会在代码发生更改时显示外接程序所进行的这些更改。 对于大型迭代数据集，你无需实时在屏幕上查看此进度。 在外接程序调用 `context.sync()` 或者在 `Excel.run` 结束（隐式调用 `context.sync`）之前，`Application.suspendScreenUpdatingUntilNextSync()` 将暂停对 Excel 的可视化更新。 请注意，在下次同步之前，Excel 不会显示任何活动迹象。你的外接程序应为用户提供相关指南，以便为此延迟做好准备，或者提供一个状态栏，以演示相关活动。
 

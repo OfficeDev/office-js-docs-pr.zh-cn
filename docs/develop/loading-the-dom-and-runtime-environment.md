@@ -1,14 +1,14 @@
 ---
 title: 加载 DOM 和运行时环境
 description: ''
-ms.date: 03/19/2019
+ms.date: 06/20/2019
 localization_priority: Priority
-ms.openlocfilehash: e975db391276129e453d5001fe0bac8ad36f6080
-ms.sourcegitcommit: 3f84b2caa73d7fe1eb0d15e32ea4dec459e2ff53
+ms.openlocfilehash: 78ddd10e9106e6668e2bb8cd40f58cbdb7b862d9
+ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/12/2019
-ms.locfileid: "34910215"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "35128099"
 ---
 # <a name="loading-the-dom-and-runtime-environment"></a>加载 DOM 和运行时环境
 
@@ -106,7 +106,7 @@ Office.initialize = function () {
 >Office.initialize = function () {};
 >```
 >
-> 如果未调用 **Office.onReady** 或分配 **Office.initialize** 事件处理程序，则加载项在启动时可能会引发错误。 而且，如果某个用户尝试通过 Office Online Web 客户端（例如 Excel Online、PowerPoint Online 或 Outlook Web App）使用你的外接程序，则外接程序会无法运行。
+> 如果未调用 **Office.onReady** 或分配 **Office.initialize** 事件处理程序，则加载项在启动时可能会引发错误。 而且，如果某个用户尝试通过 Office Web 客户端（例如 Excel、PowerPoint 或 Outlook）使用你的加载项，则加载项会无法运行。
 >
 > 如果你的加载项包括多个页，则在每次加载新页时，该页面必须调用 **Office.onReady** 或分配 **Office.initialize** 事件处理程序。
 

@@ -1,14 +1,14 @@
 ---
 title: 在清单中创建 Excel、Word 和 PowerPoint 加载项命令
 description: 在清单中使用 VersionOverrides 定义 Excel、Word 和 PowerPoint 加载项命令。 加载项命令可用于创建 UI 元素，也可用于添加按钮或列表，同时还能执行操作。
-ms.date: 04/15/2019
+ms.date: 06/20/2019
 localization_priority: Priority
-ms.openlocfilehash: a85d6a693995c8d0327c1b511e85e2159e51a042
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: 9917eaa7b28ea843703a1de566b41277517b20fa
+ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32448700"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "35128176"
 ---
 # <a name="create-add-in-commands-in-your-manifest-for-excel-word-and-powerpoint"></a>在清单中创建 Excel、Word 和 PowerPoint 加载项命令
 
@@ -118,7 +118,7 @@ ms.locfileid: "32448700"
 
 **Hosts** 元素包含一个或多个 **Host** 元素。一个 **Host** 元素指定一个特定的 Office 主机。**Host** 元素包含子元素，这些子元素用于指定在对应的 Office 主机安装外接程序后要显示的外接程序命令。若要在两个或更多个不同的 Office 主机中显示相同的外接程序命令，必须在每个 **Host** 中使用相同的子元素。
 
-**DesktopFormFactor** 元素指定运行在 Windows 桌面的 Office 上和运行在 Office Online（在浏览器中）中的外接程序的相关设置。
+**DesktopFormFactor** 元素指定在 Office 网页版（浏览器版）和 Windows 版 Office 中运行的加载项的设置。
 
 以下是一个包含 **Hosts**、**Host** 和 **DesktopFormFactor** 元素的示例。
 

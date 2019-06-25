@@ -1,14 +1,14 @@
 ---
 title: 创建将 REST 与本地 Project Server OData 服务结合使用的 Project 加载项
 description: ''
-ms.date: 03/19/2019
+ms.date: 06/20/2019
 localization_priority: Priority
-ms.openlocfilehash: 1e50d90b844e78620866e94e44377c903b169783
-ms.sourcegitcommit: 3f84b2caa73d7fe1eb0d15e32ea4dec459e2ff53
+ms.openlocfilehash: 454ef57095102458be1a2bcaa74342add86c7f16
+ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/12/2019
-ms.locfileid: "34910355"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "35128606"
 ---
 # <a name="create-a-project-add-in-that-uses-rest-with-an-on-premises-project-server-odata-service"></a>创建将 REST 与本地 Project Server OData 服务结合使用的 Project 加载项
 
@@ -29,7 +29,7 @@ ms.locfileid: "34910355"
 
 - 带有 Visual Studio 的 Office 开发人员工具的 Visual Studio 2015 中包括用于创建 Office 和 SharePoint 外接程序的模板。请确保你已安装最新版本的 Office 开发人员工具；请参阅 [Office 外接程序和 SharePoint 下载](https://developer.microsoft.com/office/docs)的_工具_部分。
 
-- 本文中的过程和代码示例可访问本地域中 Project Server 2013 的  **ProjectData** 服务。本文中的 jQuery 方法不适用于 Project Online。
+- 本文中的过程和代码示例在本地域中访问 Project Server 2013 的 **ProjectData** 服务。本文中的 jQuery 方法不适用于 Project 网页版。
 
     验证可从你的开发计算机访问 **ProjectData** 服务。
 
@@ -369,7 +369,7 @@ HelloProjectOData.js 文件的剩余部分包含两个函数：当用户选择�
 3. 添加 **retrieveOData** 函数，此函数连接 REST 查询的值并调用 jQuery 中的 **ajax** 函数以获取 **ProjectData** 服务中的请求数据。**support.cors** 变量通过 **ajax** 函数启用跨域资源共享 (CORS)。如果 **support.cors** 语句丢失或设置为 **false**，则 **ajax** 函数会返回一个**无传输**错误。
 
    > [!NOTE]
-   > 下面的代码适用于 Project Server 2013 本地安装。对于 Project Online，可以使用 OAuth 执行基于令牌的身份验证。有关详细信息，请参阅[解决 Office 加载项中的同源策略限制](../develop/addressing-same-origin-policy-limitations.md)。
+   > 下面的代码适用于 Project Server 2013 本地安装。对于 Project 网页版，可以使用 OAuth 执行基于令牌的身份验证。有关详细信息，请参阅[解决 Office 加载项中的同源策略限制](../develop/addressing-same-origin-policy-limitations.md)。
 
    在 **ajax** 调用中，可以使用 _headers_ 参数或 _beforeSend_ 参数。_complete_ 参数是匿名函数，这样它就与 **retrieveOData** 中的变量处于同一范围内。_complete_ 参数对应的函数在 **odataText** 控件中显示结果，并且还调用 **parseODataResult** 方法来分析和显示 JSON 响应。_error_ 参数指定命名函数 **getProjectDataErrorHandler**（将错误消息写入 **odataText** 控件），并且还使用 **throwError** 方法显示弹出消息。
 
@@ -386,7 +386,7 @@ HelloProjectOData.js 文件的剩余部分包含两个函数：当用户选择�
         accept.toLocaleLowerCase();
 
         // Enable cross-origin scripting (required by jQuery 1.5 and later).
-        // This does not work with Project Online.
+        // This does not work with Project on the web.
         $.support.cors = true;
 
         $.ajax({
@@ -842,7 +842,7 @@ function retrieveOData() {
     accept.toLocaleLowerCase();
 
     // Enable cross-origin scripting (required by jQuery 1.5 and later).
-    // This does not work with Project Online.
+    // This does not work with Project on the web.
     $.support.cors = true;
 
     $.ajax({

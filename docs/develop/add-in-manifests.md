@@ -1,14 +1,14 @@
 ---
 title: Office 加载项 XML 清单
 description: ''
-ms.date: 03/19/2019
+ms.date: 06/20/2019
 localization_priority: Priority
-ms.openlocfilehash: de7b2c991b149f1eb40080e3423044d24dfbf0b9
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: bf1b62c4ba6e9790cd70a7070dd3c8d682b2dc56
+ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32449020"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "35127679"
 ---
 # <a name="office-add-ins-xml-manifest"></a>Office 加载项 XML 清单
 
@@ -116,9 +116,9 @@ _\*Office 加载项清单架构版本 1.1 中新增_
 
 ## <a name="specify-domains-you-want-to-open-in-the-add-in-window"></a>指定要在外接程序窗口中打开的域
 
-在 Office Online 中运行时，可以将任务窗格导航到任何 URL。 但在桌面平台中，如果外接程序尝试转到托管起始页（如清单文件的 [SourceLocation](/office/dev/add-ins/reference/manifest/sourcelocation) 元素中所指定的）的域之外的域中的 URL，则该 URL 将在 Office 主机应用程序的外接程序窗格外的新浏览器窗口中打开。
+在 Office 网页版中运行时，可以将任务窗格导航到任何 URL。 但在桌面平台中，如果外接程序尝试转到托管起始页（如清单文件的 [SourceLocation](/office/dev/add-ins/reference/manifest/sourcelocation) 元素中所指定的）的域之外的域中的 URL，则该 URL 将在 Office 主机应用程序的外接程序窗格外的新浏览器窗口中打开。
 
-若要重写此（桌面版 Office）操作，请在清单文件的 [AppDomains](/office/dev/add-ins/reference/manifest/appdomains) 元素中指定的域列表中指定要在外接程序窗口中打开的每个域。 如果外接程序尝试转至该列表的域中的 URL，则它将在桌面版 Office 和 Office Online 中的任务窗口中打开。 如果它尝试转至列表之外的域中的 URL，则在桌面版 Office 中，该 URL 将在新的浏览器窗口中（外接程序窗格之外）打开。
+若要重写此（桌面版 Office）操作，请在清单文件的 [AppDomains](/office/dev/add-ins/reference/manifest/appdomains) 元素中指定的域列表中指定要在外接程序窗口中打开的每个域。 如果加载项尝试转至该列表的域中的 URL，则它将在 Office 网页版和桌面版中的任务窗口中打开。 如果它尝试转至列表之外的域中的 URL，则在桌面版 Office 中，该 URL 将在新的浏览器窗口中（外接程序窗格之外）打开。
 
 > [!NOTE]
 > 此操作仅适用于外接程序的根窗格。 如果外接程序页面中嵌入有 iframe，则可以将该 iframe 定向到任何 URL，不论它是否列在 **AppDomains** 中，即使在桌面版 Office 中也是如此。
@@ -410,7 +410,7 @@ _\*Office 加载项清单架构版本 1.1 中新增_
     receive without leaving your email client.">
     <Override Locale="fr-fr" Value="Visualisez les vidéos
       YouTube références dans vos courriers électronique
-      directement depuis Outlook et Outlook Web App."/>
+      directement depuis Outlook."/>
   </Description>
   <!-- Change the following lines to specify    -->
   <!-- the web server that hosts the icon files. -->

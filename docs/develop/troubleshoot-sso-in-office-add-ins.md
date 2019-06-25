@@ -1,14 +1,14 @@
 ---
 title: 排查单一登录 (SSO) 错误消息
 description: ''
-ms.date: 03/22/2019
+ms.date: 06/20/2019
 localization_priority: Priority
-ms.openlocfilehash: 1b885834304ebedd62eea206f02dae4bacefba5c
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: f9c69eb937b8931dde3e702cf1f287e0e8c5fdbc
+ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32449958"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "35128029"
 ---
 # <a name="troubleshoot-error-messages-for-single-sign-on-sso-preview"></a>排查单一登录 (SSO) 错误消息（预览）
 
@@ -52,7 +52,7 @@ ms.locfileid: "32449958"
 
 用户未登录 Office。 代码应重新调用 `getAccessTokenAsync` 方法，并在 [options](/office/dev/add-ins/develop/sso-in-office-add-ins#sso-api-reference) 参数中传递选项 `forceAddAccount: true`。 但是不要多次执行此操作。 用户可能已决定不登录。
 
-Office Online 中绝不会出现此错误。 如果用户的 Cookie 到期，Office Online 返回的是错误 13006。
+Office 网页版中绝不会出现此错误。 如果用户的 Cookie 到期，Office 返回的是错误 13006。
 
 ### <a name="13002"></a>13002
 
@@ -75,7 +75,7 @@ Office Online 中绝不会出现此错误。 如果用户的 Cookie 到期，Off
 
 ### <a name="13006"></a>13006
 
-客户端错误。代码应提示用户注销并重启 Office，或重启 Office Online 会话。
+客户端错误。代码应提示用户注销并重启 Office，或重启 Office 浏览器会话。
 
 ### <a name="13007"></a>13007
 
@@ -101,7 +101,7 @@ Office 主机无法获取对加载项 Web 服务的访问令牌。
 
 ### <a name="13010"></a>13010
 
-用户正在 Office Online 上运行加载项，但使用的是 Edge 或 Internet Explorer。 用户的 Office 365 域和 login.microsoftonline.com 域位于浏览器设置中的不同安全区域。 如果此错误返回，用户将已看到对此进行解释的错误，并链接到关于如何更改区域配置的页面。 如果加载项提供的功能无需用户登录，代码应捕获此错误，并让加载项继续正常运行。
+用户正在 Office 上运行加载项，但使用的是 Microsoft Edge 或 Internet Explorer。用户的 Office 365 域和 login.microsoftonline.com 域位于浏览器设置中的不同安全区域。如果此错误返回，用户将已看到对此进行解释的错误，并链接到关于如何更改区域配置的页面。如果加载项提供的功能无需用户登录，代码应捕获此错误，并让加载项继续正常运行。
 
 ### <a name="13012"></a>13012
 

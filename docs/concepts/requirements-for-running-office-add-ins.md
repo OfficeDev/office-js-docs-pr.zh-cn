@@ -1,14 +1,14 @@
 ---
 title: 运行 Office 加载项的要求
 description: ''
-ms.date: 05/14/2019
+ms.date: 06/20/2019
 localization_priority: Priority
-ms.openlocfilehash: ed502900916fb2e780725af6f3840c7c2287c1a3
-ms.sourcegitcommit: 3f84b2caa73d7fe1eb0d15e32ea4dec459e2ff53
+ms.openlocfilehash: 3a167777068b398c191f41adfa8dfa590d18edc2
+ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/12/2019
-ms.locfileid: "34910096"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "35127700"
 ---
 # <a name="requirements-for-running-office-add-ins"></a>运行 Office 加载项的要求
 
@@ -58,29 +58,29 @@ ms.locfileid: "34910096"
 
 ## <a name="client-requirements-os-x-desktop"></a>客户端要求：OS X 桌面
 
-作为 Office 365 的一部分分发的 适用于 Mac 的 Outlook 支持 Outlook 外接程序。在 适用于 Mac 的 Outlook 上运行 Outlook 外接程序与 适用于 Mac 的 Outlook 本身的要求相同：操作系统必须至少为 OS X v10.10"Yosemite"。由于 适用于 Mac 的 Outlook 使用 WebKit 作为布局引擎以呈现外接程序页，因此没有其他浏览器依赖项。
+作为 Office 365 的一部分分发的 Mac 版 Outlook 支持 Outlook 加载项。在 Mac 版 Outlook 中运行 Outlook 加载项的要求与 Mac 版 Outlook 本身的要求相同：操作系统必须至少为 OS X v10.10 “Yosemite”。 由于 Mac 版 Outlook 使用 WebKit 作为布局引擎以呈现加载项页，因此没有其他浏览器依赖项。
 
-以下是支持 Office 外接程序的 Office for Mac 的最低客户端版本：
+以下是支持 Office 加载项的 Mac 版 Office 的最低客户端版本。
 
-- Word for Mac 版本 15.18 (160109)
-- Excel for Mac 版本 15.19 (160206)
-- PowerPoint for Mac 版本 15.24 (160614)
+- Word 版本 15.18 (160109)
+- Excel 版本 15.19 (160206)
+- PowerPoint 版本 15.24 (160614)
 
-## <a name="client-requirements-browser-support-for-office-online-web-clients-and-sharepoint"></a>客户端要求：针对 Office Online Web 客户端和 SharePoint 的浏览器支持
+## <a name="client-requirements-browser-support-for-office-web-clients-and-sharepoint"></a>客户端要求：针对 Office Web 客户端和 SharePoint 的浏览器支持
 
 支持 ECMAScript 5.1、HTML5 和 CSS3（例如 Internet Explorer 11，或者 Microsoft Edge、Chrome、Firefox 或 Safari (Mac OS) 的最新版）的任意浏览器。
 
 
 ## <a name="client-requirements-non-windows-smartphone-and-tablet"></a>客户端要求：非 Windows 智能手机和平板电脑
 
-尤其对于在智能手机或非 Windows 平板电脑设备上的浏览器中运行的 Outlook Web 应用，需要以下软件才能测试和运行 Outlook 加载项。
+尤其对于在智能手机或非 Windows 平板电脑设备上的浏览器中运行的 Outlook，需要以下软件才能测试和运行 Outlook 加载项。
 
 
 | 主机应用程序 | 设备 | 操作系统 | Exchange 帐户 | 移动浏览器 |
 |:-----|:-----|:-----|:-----|:-----|
-|Outlook for Android|Android 平板电脑和智能手机|Android 4.4 KitKat 及更高版本|在 Office 365 for Business 或 Exchange Online 的最新更新上|Android 版本机应用（不适用于浏览器）|
-|Outlook for iOS|iPad 平板电脑，iPhone 智能手机|iOS 11 或更高版本|在 Office 365 for Business 或 Exchange Online 的最新更新上|iOS 版本机应用（不适用于浏览器）|
-|Outlook Web App|iPhone 4 或更高版本、iPad 2 或更高版本、iPod Touch 4 或更高版本|iOS 5 或更高版本|在 Office 365、Exchange Online、或者本地 Exchange Server 2013 或更高版本|Safari|
+|Android 版 Outlook|Android 平板电脑和智能手机|Android 4.4 KitKat 及更高版本|在 Office 365 for Business 或 Exchange Online 的最新更新上|Android 版本机应用（不适用于浏览器）|
+|iOS 版 Outlook|iPad 平板电脑，iPhone 智能手机|iOS 11 或更高版本|在 Office 365 for Business 或 Exchange Online 的最新更新上|iOS 版本机应用（不适用于浏览器）|
+|Outlook 网页版|iPhone 4 或更高版本、iPad 2 或更高版本、iPod Touch 4 或更高版本|iOS 5 或更高版本|在 Office 365、Exchange Online、或者本地 Exchange Server 2013 或更高版本|Safari|
 
 > [!NOTE]
 > Android 版本机应用 OWA、iPad 版 OWA 和 iPhone 版 OWA 现已[弃用](https://support.office.com/article/Microsoft-OWA-mobile-apps-are-being-retired-076ec122-4576-4900-bc26-937f84d25a4b)且之后无需这些软件即可测试 Outlook 加载项。

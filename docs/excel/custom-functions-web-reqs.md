@@ -1,14 +1,14 @@
 ---
-ms.date: 05/30/2019
+ms.date: 06/21/2019
 description: 使用 Excel 中的自定义函数请求、流式处理和取消流式处理工作簿的外部数据
 title: 使用自定义函数接收和处理数据
 localization_priority: Priority
-ms.openlocfilehash: 22f79c8b4e7e39569d3b955477e9397a053e1a8f
-ms.sourcegitcommit: 3f84b2caa73d7fe1eb0d15e32ea4dec459e2ff53
+ms.openlocfilehash: 39be2f0913e2eee4b1e5e7d5f704a47dee279cf5
+ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/12/2019
-ms.locfileid: "34910334"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "35128253"
 ---
 # <a name="receive-and-handle-data-with-custom-functions"></a>使用自定义函数接收和处理数据
 
@@ -74,6 +74,9 @@ CustomFunctions.associate("GETTEMPERATURE", getTemperature);
 
 在以下代码示例中，`stockPriceStream` 函数使用股票代码符号来获取每 1000 毫秒的股票价格。 有关此示例的更多详细信息，请参阅[自定义函数教程](../tutorials/excel-tutorial-create-custom-functions.md#create-a-streaming-asynchronous-custom-function)。
 
+> [!NOTE]
+> 下面的代码使用 IEX 贸易 API 请求获取股票报价。 必须先[使用 IEX Cloud 创建免费帐户](https://iexcloud.io/)，以获取 API 请求所必需的 API 令牌，然后才能运行此代码。
+
 ```js
 /**
  * Streams a stock price.
@@ -91,7 +94,8 @@ function stockPriceStream(ticker, invocation) {
             return;
         }
 
-        var url = "https://api.iextrading.com/1.0/stock/" + ticker + "/price";
+        //Note: In the following line, replace <YOUR_TOKEN_HERE> with the API token that you've obtained through your IEX Cloud account.
+        var url = "https://cloud.iexapis.com/stable/stock/" + ticker + "/quote/latestPrice?token=<YOUR_TOKEN_HERE>"
         isPending = true;
 
         fetch(url)

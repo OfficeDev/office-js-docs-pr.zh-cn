@@ -11,17 +11,17 @@
 > npm run dev-server
 > ```
 
-- 若要在 Excel 中测试加载项，请在项目的根目录中运行以下命令。 运行此命令时，本地 Web 服务器将启动（如尚未运行），Excel 将打开且加载项已载入。
+- 若要在 Excel 中测试加载项，请在项目的根目录中运行以下命令。 如果你运行此命令，本地 Web 服务器将启动（如果尚未运行的话），而且 Excel 也将打开并载入加载项。
 
     ```command&nbsp;line
     npm start
     ```
 
-- 若要在 Excel Online 中测试加载项，请在项目的根目录中运行以下命令。 运行此命令时，本地 Web 服务器将启动（如果尚未运行）。
+- 若要在浏览器版 Excel 中测试加载项，请在项目的根目录中运行以下命令。 如果你运行此命令，本地 Web 服务器将启动（如果尚未运行的话）。
 
     ```command&nbsp;line
     npm run start:web
     ```
 
-    若要使用加载项，请在 Excel Online 中打开新的工作簿，然后按照[在 Office Online 中旁加载 Office 加载项](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-in-office-online)中的说明旁加载你的加载项。
+    若要使用加载项，请在 Excel 网页版中打开新的工作簿，并按照[在 Office 网页版中旁加载 Office 加载项](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-in-office-on-the-web)中的说明操作，以旁加载你的加载项。
 

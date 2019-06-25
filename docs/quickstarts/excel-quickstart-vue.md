@@ -1,15 +1,15 @@
 ---
 title: 使用 Vue 生成 Excel 任务窗格加载项
 description: ''
-ms.date: 05/02/2019
+ms.date: 06/20/2019
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: 228301b9711f4ac33fb5435e66cfcd0254041e19
-ms.sourcegitcommit: 47b792755e655043d3db2f1fdb9a1eeb7453c636
+ms.openlocfilehash: 8935a22a631699ac0314aac89936fbd8c2552212
+ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "33619580"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "35128564"
 ---
 # <a name="build-an-excel-task-pane-add-in-using-vue"></a>使用 Vue 生成 Excel 任务窗格加载项
 
@@ -186,14 +186,14 @@ vue init webpack my-add-in
 
 2. 在 Web 浏览器中，转到 `https://localhost:8080`。 如果浏览器指明网站证书不受信任，需要将计算机配置为信任证书。 
 
-3. 如果浏览器在加载加载项页面后没有显示任何证书错误，就可以准备测试加载项了。 
+3. 如果浏览器在加载加载项页面后没有显示任何证书错误，就可以准备测试加载项了。
 
 ## <a name="try-it-out"></a>试用
 
 1. 请按照运行加载项和在 Excel 中旁加载加载项时所用平台对应的说明操作。
 
     - Windows：[在 Windows 上旁加载 Office 加载项](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)
-    - Excel Online：[在 Office Online 中旁加载 Office 加载项](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-in-office-online)
+    - Web 浏览器：[在 Office 网页版中旁加载 Office 加载项](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-in-office-on-the-web)
     - iPad 和 Mac：[在 iPad 和 Mac 上旁加载 Office 加载项](../testing/sideload-an-office-add-in-on-ipad-and-mac.md)
 
 2. 在 Excel 中，依次选择的“**开始**”选项卡和功能区中的“**显示任务窗格**”按钮，以打开加载项任务窗格。

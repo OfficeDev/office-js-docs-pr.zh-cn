@@ -1,18 +1,18 @@
 ---
 title: PowerPoint 加载项
 description: ''
-ms.date: 04/15/2019
+ms.date: 06/20/2019
 localization_priority: Priority
-ms.openlocfilehash: 6e518d0bfd37291e39ee17e96ded8debb183c19f
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: 78430c06757433ee2cce5155565ae57cc078d6eb
+ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32450910"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "35128592"
 ---
 # <a name="powerpoint-add-ins"></a>PowerPoint 加载项
 
-可以使用 PowerPoint 加载项生成有吸引力的跨平台（包括 Windows、iOS、Office Online 和 Mac）解决方案，从而有效展示用户的演示文稿。 可以创建以下两种类型的 PowerPoint 加载项：
+使用 PowerPoint 加载项，可以跨平台（包括 Windows、iOS、Mac 和浏览器）生成极具吸引力的解决方案，从而有效展示用户的演示文稿。 可以创建以下两种类型的 PowerPoint 加载项：
 
 - 使用**内容外接程序**向演示文稿添加动态 HTML5 内容。有关示例，请参阅可用于将交互关系图从 LucidChart 插入面板的 [PowerPoint 的 LucidChart 关系图](https://appsource.microsoft.com/product/office/WA104380117)外接程序。
 
@@ -33,7 +33,7 @@ ms.locfileid: "32450910"
 若要生成内容外接程序，则需要获取演示文稿的活动视图，并在 `ActiveViewChanged` 处理程序期间处理 `Office.Initialize` 事件。
 
 > [!NOTE]
-> 在 PowerPoint Online 中，[Document.ActiveViewChanged](/javascript/api/office/office.document) 事件永远不会触发，因为幻灯片放映模式被视为新会话。 在这种情况下，加载项必须在加载时提取活动视图，如下面的代码示例所述。
+> 在 PowerPoint 网页版中，[Document.ActiveViewChanged](/javascript/api/office/office.document) 事件永远不会触发，因为幻灯片放映模式被视为新会话。 在这种情况下，加载项必须在加载时提取活动视图，如下面的代码示例所述。
 
 在以下代码示例中：
 

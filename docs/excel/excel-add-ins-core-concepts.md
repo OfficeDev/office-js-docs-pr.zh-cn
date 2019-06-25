@@ -1,14 +1,14 @@
 ---
 title: Excel JavaScript API 基本编程概念
 description: 使用 Excel JavaScript API 生成 Excel 加载项。
-ms.date: 05/08/2019
+ms.date: 06/20/2019
 localization_priority: Priority
-ms.openlocfilehash: 3cd1abcb71eadbf9a5ec2ab8a27b1e427b24e83d
-ms.sourcegitcommit: a99be9c4771c45f3e07e781646e0e649aa47213f
+ms.openlocfilehash: 08d4c22190e1493331397e390dc72b4dae6cf979
+ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/11/2019
-ms.locfileid: "33951926"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "35128211"
 ---
 # <a name="fundamental-programming-concepts-with-the-excel-javascript-api"></a>Excel JavaScript API 基本编程概念
 
@@ -16,7 +16,7 @@ ms.locfileid: "33951926"
 
 ## <a name="asynchronous-nature-of-excel-apis"></a>Excel API 的异步特性
 
-基于 Web 的 Excel 加载项在浏览器容器内运行，该容器内嵌在基于桌面平台（如 Windows 版 Office）上的 Office 应用程序中，并在 Office Online 中的 HTML iFrame 内运行。出于性能考虑，启用 Office.js API 以与所有支持平台上的 Excel 主机进行同步交互是不可行的。因此，Office.js 中的 **sync()** API 调用返回 [promise](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise)，当 Excel 应用程序完成请求的读取或写入操作时将实现该承诺。此外，可以将多个操作加入队列，例如设置属性或调用方法，并通过对 **sync()** 的单一调用将它们作为一批命令运行，而不是为每个操作发送单独的请求。以下部分描述了如何使用 **Excel.run()** 和 **sync()** API 来实现。
+基于 Web 的 Excel 加载项在浏览器容器内运行，此容器内嵌在基于桌面的平台版 Office 应用程序（如 Windows 版 Office）中，并在 Office 网页版中的 HTML iFrame 内运行。出于性能考虑，启用 Office.js API 以跨所有受支持的平台与 Excel 主机进行同步交互是不可行的。因此，Office.js 中的 **sync()** API 调用返回 [promise](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise)，它在 Excel 应用程序完成请求的读取或写入操作时进行解析。此外，还可以将多个操作排入队列（如设置属性或调用方法），并通过一次调用 **sync()** 将它们作为一批命令运行，而不是为每个操作单独发送请求。以下几个部分介绍了如何使用 **Excel.run()** 和 **sync()** API 来实现此目的。
 
 ## <a name="excelrun"></a>Excel.run
 
@@ -211,7 +211,7 @@ range.values = 'Due Date';
 如果区域中包含大量单元格、值、数字格式和/或公式，它可能无法在该区域运行 API 操作。 API 将始终尽量尝试在区域内运行所请求的操作（即检索或写入指定的数据），但尝试对较大区域执行读取或写入操作可能会因资源利用率过高而导致 API 错误。 为避免此类错误，建议为较大区域的较小子集运行单独的读取或写入操作，而不是尝试在较大区域内运行单个读取或写入操作。
 
 > [!IMPORTANT]
-> Excel Online 将请求和响应的有效负载大小限制为 **5MB**。 如果超过该限制，将引发 `RichAPI.Error`。
+> Excel 网页版将请求和响应的有效负载大小限制为 **5MB**。 如果超过该限制，将引发 `RichAPI.Error`。
 
 ## <a name="update-all-cells-in-a-range"></a>更新区域中的所有单元格
 

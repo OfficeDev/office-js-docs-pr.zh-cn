@@ -1,18 +1,18 @@
 ---
 title: Office 加载项平台概述 | Microsoft Docs
 description: 使用熟悉的 Web 技术，例如 HTML、CSS 和 JavaScript 来扩展 Word、Excel、PowerPoint、OneNote、Project 和 Outlook，并与其进行交互。
-ms.date: 05/08/2019
+ms.date: 06/20/2019
 localization_priority: Priority
-ms.openlocfilehash: dc0a7755027e1d6a741e97928f3f2bc25f62f6c3
-ms.sourcegitcommit: a99be9c4771c45f3e07e781646e0e649aa47213f
+ms.openlocfilehash: 600a1655dd9a3cfc40f56f46f0a8956f54883ffa
+ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/11/2019
-ms.locfileid: "33952346"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "35128613"
 ---
 # <a name="office-add-ins-platform-overview"></a>Office 加载项平台概述
 
-可以使用 Office 加载项平台来生成解决方案，通过解决方案扩展 Office 应用程序，并与 Office 文档中的内容进行交互。通过 Office 加载项，可以使用熟悉的 Web 技术，例如 HTML、CSS 和 JavaScript 来扩展 Word、Excel、PowerPoint、OneNote，Project 和 Outlook，并与其进行交互。解决方案可以跨多个平台在 Office 中运行，包括 Windows 版 Office、Office Online、Office for Mac 和 Office for iPad。
+可以使用 Office 加载项平台来生成解决方案，用于扩展 Office 应用程序，并与 Office 文档中的内容进行交互。通过 Office 加载项，可以使用熟悉的 Web 技术（如 HTML、CSS 和 JavaScript）来扩展 Word、Excel、PowerPoint、OneNote，Project 和 Outlook，并与之交互。解决方案可以跨多个平台（包括 Windows、Mac、iPad 和浏览器）在 Office 中运行。
 
 网页在浏览器中能执行的操作，Office 加载项差不多都能执行。使用 Office 加载项平台可以执行下列操作：
 
@@ -26,7 +26,7 @@ COM 或 VSTO 加载项是旧 Office 集成解决方案，仅在 Windows 版 Offi
 
 相较于使用 VBA、COM 或 VSTO 生成的加载项，Office 加载项提供以下优势：
 
-- 跨平台支持：Office 加载项在 Windows 版 Office、Mac 版 Office、iOS 版 Office 和 Office Online 中运行。
+- 跨平台支持。Office 加载项在 Office 网页版、Windows 版 Office、Mac 版 Office 和 iPad 版 Office中运行。
 
 - 集中部署和分发：管理员可以在整个组织内集中部署 Office 加载项。
 
@@ -80,7 +80,7 @@ Office 外接程序可以在 Office 主机应用程序中执行下列操作：
 
 #### <a name="custom-buttons-and-menu-commands"></a>自定义按钮和菜单命令  
 
-可以向 Windows 桌面版 Office 和 Office Online 中的功能区添加自定义功能区按钮和菜单项。这便于用户直接从他们的 Office 应用程序访问加载项。命令按钮可以启动不同操作，如显示带有自定义 HTML 的任务窗格或执行一个 JavaScript 函数。  
+可以向 Office 网页版和 Windows 版 Office 中的功能区添加自定义功能区按钮和菜单项。这样一来，用户可以直接从 Office 应用程序访问加载项。命令按钮可以启动不同的操作，如显示包含自定义 HTML 的任务窗格或执行 JavaScript 函数。  
 
 *图 3. 功能区中的加载项命令*
 
@@ -88,7 +88,7 @@ Office 外接程序可以在 Office 主机应用程序中执行下列操作：
 
 #### <a name="task-panes"></a>任务窗格  
 
-除了使用加载项命令以外，还可以使用任务窗格，让用户与解决方案交互。不支持加载项命令的客户端（Office 2013 和 Office for iPad）会以任务窗格的形式运行加载项。用户通过“插入”**** 选项卡上的“我的加载项”**** 按钮，启动任务窗格加载项。 
+除了通过加载项命令以外，用户还可以使用任务窗格与解决方案进行交互。不支持加载项命令的客户端（Office 2013 和 iPad 版 Office）以任务窗格的形式运行加载项。用户通过“插入”**** 选项卡上的“我的加载项”**** 按钮，启动任务窗格加载项。
 
 *图 4：任务窗格*
 
@@ -98,7 +98,7 @@ Office 外接程序可以在 Office 主机应用程序中执行下列操作：
 
 Outlook 外接程序可扩展 Office 功能区，还可以在查看或撰写 Outlook 项目时在其旁边的上下文中显示。当用户查看接收的项目或回复或创建新项目时，它们可以与电子邮件、会议请求、会议响应、会议取消或约会一起使用。 
 
-Outlook 加载项可以通过项访问上下文信息（如地址或跟踪 ID），再使用此类数据访问服务器和 Web 服务上的其他信息，以打造有吸引力的用户体验。大多数情况下，Outlook 加载项无需经过修改，即可在各种支持的主机应用（包括 Outlook、Outlook for Mac、Outlook Web App，以及适用于设备的 Outlook Web App）上运行，从而在桌面设备、Web 设备、平板电脑和移动设备上提供无缝体验。 
+Outlook 加载项可以访问邮件项目中的上下文信息（如地址或跟踪 ID），然后使用此类数据来访问服务器和 Web 服务上的其他信息，以打造极具吸引力的用户体验。在大多数情况下，Outlook 加载项无需修改即可在 Outlook 主机应用程序上运行，以在桌面、Web 以及平板电脑和移动设备上提供无缝体验。
 
 有关 Outlook 加载项的概述，请参阅 [Outlook 加载项概述](/outlook/add-ins/)。
 
@@ -118,7 +118,7 @@ Office JavaScript API 包含的对象和成员适用于生成加载项，并与 
 
 要详细了解如何开始构建 Office 加载项，请尝试 [5 分钟快速入门](/office/dev/add-ins/)。 可以使用 Visual Studio 或任何其他编辑器立即开始构建加载项。 
 
-若要开始计划解决方案并打造有吸引力的有效用户体验，请熟悉 Office 加载项的[设计指南](../design/add-in-design.md)和[最佳做法](../concepts/add-in-development-best-practices.md)。    
+若要开始计划解决方案并打造有吸引力的有效用户体验，请熟悉 Office 加载项的[设计指南](../design/add-in-design.md)和[最佳做法](../concepts/add-in-development-best-practices.md)。
 
 ## <a name="see-also"></a>另请参阅
 

@@ -1,14 +1,14 @@
 ---
 title: Excel、Word 和 PowerPoint 加载项命令
 description: ''
-ms.date: 05/08/2019
+ms.date: 06/20/2019
 localization_priority: Priority
-ms.openlocfilehash: 7b85d3016b195b353b1e7f314aceb761cf4e31b3
-ms.sourcegitcommit: a99be9c4771c45f3e07e781646e0e649aa47213f
+ms.openlocfilehash: cbdc01a439bf34b089806faf20fffa12c916fea1
+ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/11/2019
-ms.locfileid: "33952178"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "35127735"
 ---
 # <a name="add-in-commands-for-excel-word-and-powerpoint"></a>Excel、Word 和 PowerPoint 加载项命令
 
@@ -23,9 +23,9 @@ ms.locfileid: "33952178"
 
 ![Excel 中的加载项命令屏幕截图](../images/add-in-commands-1.png)
 
-*图 2：在 Excel Online 中运行命令的加载项*
+*图 2：在 Excel 网页版中运行命令的加载项*
 
-![Excel Online 中的加载项命令屏幕截图](../images/add-in-commands-2.png)
+![Excel 网页版中加载项命令的屏幕截图](../images/add-in-commands-2.png)
 
 ## <a name="command-capabilities"></a>命令功能
 
@@ -51,20 +51,20 @@ ms.locfileid: "33952178"
 
 ## <a name="supported-platforms"></a>支持的平台
 
-目前，以下平台支持加载项命令：
+目前，以下平台支持加载项命令。
 
 - Windows 版 Outlook 2016（内部版本 16.0.4678.1000+）
-- 连接到 Office 365 的 Windows 版 Office（内部版本 16.0.6769+）
+- Windows 版 Office（生成号 16.0.6769 及更高版本，已连接到 Office 365 订阅）
 - Windows 版 Office 2019
-- 连接到 Office 365 的 Office for Mac（内部版本 15.33+）
-- Office 2019 for Mac
-- Office Online
+- Mac 版 Office（生成号 15.33 及更高版本，已连接到 Office 365 订阅）
+- Mac 版 Office 2019
+- Office 网页版
 
 即将推出更多受支持的平台。
 
 ## <a name="debugging"></a>调试
 
-若要调试加载项命令，你必须在 Office Online 中运行命令。 有关详细信息，请参阅[在 Office Online 中调试加载项](../testing/debug-add-ins-in-office-online.md)。
+必须在 Office 网页版中运行加载项命令，才能调试命令。 有关详细信息，请参阅[在 Office 网页版中调试加载项](../testing/debug-add-ins-in-office-online.md)。
 
 ## <a name="best-practices"></a>最佳做法
 
@@ -74,7 +74,7 @@ ms.locfileid: "33952178"
 - 提供使您的外接程序中的常见任务执行效率更高的具体操作。尽量减少完成一个操作的步骤。
 - 关于命令在 Office 功能区中的位置：
     - 将命令放置在现有的选项卡（插入、审阅等）上，如果提供的功能适合那个位置。例如，如果外接程序允许用户插入媒体，则将组添加到“插入”选项卡。请注意，并非所有选项卡都在所有的 Office 版本之间可用。有关详细信息，请参阅 [Office 外接程序 XML 清单](../develop/add-in-manifests.md)。
-    - 如果功能不适合其他选项卡，并且你拥有少于 6 个的顶级命令，将命令放置在“开始”选项卡上。如果外接程序需要跨 Office 版本（如 Office Desktop 和 Office Online）运行，并且某个选项卡并非在所有版本中（例如，“设计”选项卡不存在于 Office Online 中）都提供，你也可以将命令添加到“开始”选项卡。  
+    - 如果此功能不适合其他选项卡，且顶级命令少于 6 个，请将命令置于“开始”选项卡中。此外，如果加载项需要跨 Office 版本（如 Office 网页版或 Office 桌面版）运行，且并非所有版本都有相应选项卡（例如，Office 网页版中没有“设计”选项卡），也可以将命令添加到“开始”选项卡中。  
     - 如果你拥有 6 个以上的顶级命令命令，将命令放置在自定义选项卡上。
     - 对组进行命名以与外接程序的名称相匹配。如果你拥有多个组，则基于对应组中的命令提供的功能为每个组命名。
     - 请勿添加不必要的按钮，这样会增加加载项占用的空间。

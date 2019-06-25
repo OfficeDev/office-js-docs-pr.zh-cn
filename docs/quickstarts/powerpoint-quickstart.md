@@ -1,15 +1,15 @@
 ---
 title: 生成首个 PowerPoint 任务加载项
 description: ''
-ms.date: 05/02/2019
+ms.date: 06/20/2019
 ms.prod: powerpoint
 localization_priority: Priority
-ms.openlocfilehash: 75b59e576ea0ed1a6012a08ab75e806cc68390f9
-ms.sourcegitcommit: b299b8a5dfffb6102cb14b431bdde4861abfb47f
+ms.openlocfilehash: 5ede96910c9e9b4462fa5eb566ba25bb4d16ba02
+ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/30/2019
-ms.locfileid: "34589228"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "35128543"
 ---
 # <a name="build-your-first-powerpoint-task-pane-add-in"></a>生成首个 PowerPoint 任务加载项
 
@@ -225,19 +225,19 @@ ms.locfileid: "34589228"
     > npm run dev-server
     > ```
 
-    - 若要在 PowerPoint 中测试加载项，请在项目的根目录中运行以下命令。 运行此命令时，本地 Web 服务器将启动（如尚未运行），PowerPoint 将打开且加载项已载入。
+    - 若要在 PowerPoint 中测试加载项，请在项目的根目录中运行以下命令。 如果你运行此命令，本地 Web 服务器将启动（如果尚未运行的话），而且 PowerPoint 也将打开并载入加载项。
 
         ```command&nbsp;line
         npm start
         ```
 
-    - 若要在 PowerPoint Online 中测试加载项，请在项目的根目录中运行以下命令。 运行此命令时，本地 Web 服务器将启动（如果尚未运行）。
+    - 若要在浏览器版 PowerPoint 中测试加载项，请在项目的根目录中运行以下命令。 如果你运行此命令，本地 Web 服务器将启动（如果尚未运行的话）。
 
         ```command&nbsp;line
         npm run start:web
         ```
 
-        若要使用加载项，请在 PowerPoint Online 中打开新的文档，然后按照[在 Office Online 中旁加载 Office 加载项](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-in-office-online)中的说明旁加载你的加载项。
+        若要使用加载项，请在 PowerPoint 网页版中打开新的文档，并按照[在 Office 网页版中旁加载 Office 加载项](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-in-office-on-the-web)中的说明操作，以旁加载你的加载项。
 
 2. 在 PowerPoint 中，插入新的空白幻灯片，再依次选择“主页”**** 选项卡和功能区中的“显示任务窗格”**** 按钮，以打开加载项任务窗格。
 

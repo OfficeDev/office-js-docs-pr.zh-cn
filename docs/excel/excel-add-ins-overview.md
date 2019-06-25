@@ -1,18 +1,18 @@
 ---
 title: Excel 加载项概述
 description: ''
-ms.date: 05/08/2019
+ms.date: 06/20/2019
 localization_priority: Priority
-ms.openlocfilehash: cbeb1fa6ae0d88724b7da3fbcb45f8216b6010a6
-ms.sourcegitcommit: a99be9c4771c45f3e07e781646e0e649aa47213f
+ms.openlocfilehash: 696e1b3dfcab986125eb3f5f1d9f7547a59282e5
+ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/11/2019
-ms.locfileid: "33951919"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "35128232"
 ---
 # <a name="excel-add-ins-overview"></a>Excel 加载项概述
 
-使用 Excel 加载项，可以跨多个平台扩展 Excel 应用程序功能，包括 Windows 版 Office、Office Online、Office for Mac 和 Office for iPad。在工作簿内使用 Excel 加载项，可以：
+使用 Excel 加载项，可以跨多个平台（包括 Windows、Mac、iPad 和浏览器）扩展 Excel 应用程序功能。在工作簿内使用 Excel 加载项，可以：
 
 - 与 Excel 对象交互、读取和写入 Excel 数据。
 - 使用基于 Web 的任务窗格或内容窗格扩展功能
@@ -21,7 +21,7 @@ ms.locfileid: "33951919"
 
 Office 加载项平台提供框架和 Office.js JavaScript API，使你能够创建和运行 Excel 加载项。通过使用 Office 加载项平台创建 Excel 加载项，可以获得以下好处：
 
-* **跨平台支持**：Excel 加载项在 Windows 版 Office、Windows 版 Mac、Windows 版 iOS 和 Office Online 中运行。
+* **跨平台支持**：Excel 加载项在 Office 网页版、Windows 版 Office、Mac 版 Office 和 iPad 版 Office中运行。
 * **集中式部署**：管理员可以在整个组织内为用户快速而轻松地部署 Excel 加载项。
 * **使用标准 Web 技术**：使用熟悉的 Web 技术（如 HTML、CSS 和 JavaScript）创建 Excel 加载项。
 * **通过 AppSource 分发**：将 Excel 加载项发布到 [AppSource](https://appsource.microsoft.com/marketplace/apps?product=office&page=1&src=office&corrid=53245fad-fcbe-41f8-9f97-b0840264f97c&omexanonuid=4a0102fb-b31a-4b9f-9bb0-39d4cc6b789d)，供广大受众使用。

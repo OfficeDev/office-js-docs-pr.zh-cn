@@ -1,19 +1,19 @@
 ---
 title: 生成首个 Word 任务窗格加载项
 description: ''
-ms.date: 05/08/2019
+ms.date: 06/20/2019
 ms.prod: word
 localization_priority: Priority
-ms.openlocfilehash: 5164d6cb49ea5c4aed0aeffb5b3f7a0ed96f07c9
-ms.sourcegitcommit: b299b8a5dfffb6102cb14b431bdde4861abfb47f
+ms.openlocfilehash: 24b6dd035ae25f97f08e3b8e68154a1f4a1a1769
+ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/30/2019
-ms.locfileid: "34589221"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "35128571"
 ---
 # <a name="build-your-first-word-task-pane-add-in"></a>生成首个 Word 任务窗格加载项
 
-_适用于：Windows 版 Word 2016 或更高版本、Word for iPad、Word for Mac_
+_适用于：Windows 版 Word 2016 或更高版本、iPad 版 Word 和 Mac 版 Word_
 
 本文将逐步介绍如何生成 Word 任务窗格加载项。
 
@@ -280,19 +280,19 @@ _适用于：Windows 版 Word 2016 或更高版本、Word for iPad、Word for Ma
     > npm run dev-server
     > ```
 
-    - 若要在 Word 中测试加载项，请在项目的根目录中运行以下命令。 运行此命令时，本地 Web 服务器将启动（如尚未运行），Word 将打开且加载项已载入。
+    - 若要在 Word 中测试加载项，请在项目的根目录中运行以下命令。 如果你运行此命令，本地 Web 服务器将启动（如果尚未运行的话），而且 Word 也将打开并载入加载项。
 
         ```command&nbsp;line
         npm start
         ```
 
-    - 若要在 Word Online 中测试加载项，请在项目的根目录中运行以下命令。 运行此命令时，本地 Web 服务器将启动（如果尚未运行）。
+    - 若要在浏览器版 Word 中测试加载项，请在项目的根目录中运行以下命令。 如果你运行此命令，本地 Web 服务器将启动（如果尚未运行的话）。
 
         ```command&nbsp;line
         npm run start:web
         ```
 
-        若要使用加载项，请在 Word Online 中打开新的文档，然后按照[在 Office Online 中旁加载 Office 加载项](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-in-office-online)中的说明旁加载你的加载项。
+        若要使用加载项，请在 Word 网页版中打开新的文档，并按照[在 Office 网页版中旁加载 Office 加载项](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-in-office-on-the-web)中的说明操作，以旁加载你的加载项。
 
 2. 在 Word 中，打开新的文档，依次选择“**主页**”选项卡和功能区中的“**显示任务窗格**”按钮，以打开加载项任务窗格。
 

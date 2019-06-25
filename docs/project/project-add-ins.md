@@ -1,14 +1,14 @@
 ---
 title: Project 任务窗格加载项
 description: ''
-ms.date: 03/19/2019
+ms.date: 06/20/2019
 localization_priority: Priority
-ms.openlocfilehash: 6f08f45e81fa40a869d07acea066b43c2720876a
-ms.sourcegitcommit: 3f84b2caa73d7fe1eb0d15e32ea4dec459e2ff53
+ms.openlocfilehash: c04b2d3d2da3f258751585e0d30a9c726af373e6
+ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/12/2019
-ms.locfileid: "34910327"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "35128599"
 ---
 # <a name="task-pane-add-ins-for-project"></a>Project 任务窗格加载项
 
@@ -24,7 +24,7 @@ Project Standard 2013 和 Project Professional 2013（版本 15.1 或更高版�
 项目经理可以使用 Project 任务窗格加载项来帮助执行项目管理活动。不必离开 Project 并打开其他应用程序来搜索常用信息，项目经理可以直接在 Project 内访问信息。根据选定的任务、资源、视图或甘特图单元格中的其他数据、任务使用状况视图或资源使用状况视图，任务窗格加载项中的内容可以是上下文相关的。
 
 > [!NOTE]
-> 通过 Project Professional 2013，可以开发任务窗格加载项，以访问 Project Server 2013 本地安装、Project Online 以及本地或在线 SharePoint 2013。Project Standard 2013 不支持与 Project Server 数据或与 Project Server 同步的 SharePoint 任务列表直接集成。
+> 使用 Project Professional 2013，可以开发访问 Project 网页版、Project Server 2013 本地安装以及本地或联机 SharePoint 2013 的任务窗格加载项。 Project Standard 2013 不支持与 Project Server 数据或与 Project Server 同步的 SharePoint 任务列表直接集成。
 
 Project 加载项方案包括以下几种：
 
@@ -184,7 +184,7 @@ Project 加载项方案包括以下几种：
 
 ## <a name="distributing-project-add-ins"></a>分发 Project 加载项
 
-可通过文件共享、SharePoint 库中的应用目录或 AppSource 分发加载项。有关详细信息，请参阅[发布 Office 加载项](../publish/publish.md)。
+可通过文件共享、SharePoint 库中的应用程序目录或 AppSource 分发加载项。 有关详细信息，请参阅[发布 Office 加载项](../publish/publish.md)。
 
 ## <a name="see-also"></a>另请参阅
 

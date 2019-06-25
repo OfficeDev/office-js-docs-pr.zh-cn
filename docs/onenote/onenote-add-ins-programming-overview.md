@@ -1,18 +1,18 @@
 ---
 title: OneNote JavaScript API 编程概述
 description: ''
-ms.date: 03/19/2019
+ms.date: 06/20/2019
 localization_priority: Priority
-ms.openlocfilehash: b83c79a4165aed1ec06c63a9a52db9fe919a3866
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: 852c68bc9edf370d0eef687fb4869b23d4f59fe4
+ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32448303"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "35128634"
 ---
 # <a name="onenote-javascript-api-programming-overview"></a>OneNote JavaScript API 编程概述
 
-OneNote 引入了适用于 OneNote Online 外接程序的 JavaScript API。你可以创建任务窗格外接程序、内容外接程序和与 OneNote 对象交互并连接至 Web 服务或其他基于 Web 的资源的外接程序命令。
+OneNote 引入了适用于 OneNote 网页版加载项的 JavaScript API。 可以创建任务窗格加载项、内容加载项，以及与 OneNote 对象交互并连接到 Web 服务或其他基于 Web 的资源的加载项命令。
 
 > [!NOTE]
 > 如果计划将加载项[发布](../publish/publish.md)到 AppSource 并适用于 Office 体验，请务必遵循 [AppSource 验证策略](/office/dev/store/validation-policies)。例如，加载项必须适用于支持已定义方法的所有平台，才能通过验证（有关详细信息，请参阅[第 4.12 部分](/office/dev/store/validation-policies#4-apps-and-add-ins-behave-predictably)以及 [Office 加载项主机和可用性](../overview/office-add-in-availability.md)页面）。
@@ -21,7 +21,7 @@ OneNote 引入了适用于 OneNote Online 外接程序的 JavaScript API。你�
 
 加载项由两个基本部分组成：
 
-- **Web 应用程序**包含网页和任何所需的 JavaScript、CSS 或其他文件。这些文件托管在 Web 服务器或 Web 托管服务上，例如 Microsoft Azure。在 OneNote Online 中，Web 应用程序在浏览器控件或 iframe 中显示。
+- 包含网页和所有相应 JavaScript、CSS 或其他文件的 **Web 应用程序**。 这些文件托管在 Web 服务器或 Web 托管服务上，例如 Microsoft Azure。 在 OneNote 网页版中，Web 应用程序在浏览器控件或 iframe 中显示。
 
 - **XML 清单**指定外接程序网页的 URL 和适用于外接程序的任何访问要求、设置和功能。此文件存储在客户端上。OneNote 外接程序使用与其他 Office 外接程序相同的 [清单](../develop/add-in-manifests.md)格式。
 

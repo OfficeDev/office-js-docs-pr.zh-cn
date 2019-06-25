@@ -1,14 +1,14 @@
 ---
 title: 对文档或电子表格中的活动选择执行数据读取和写入操作
 description: ''
-ms.date: 03/19/2019
+ms.date: 06/20/2019
 localization_priority: Priority
-ms.openlocfilehash: 2fe847fcc04e3670db294a421388dbd2faad6f2f
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: b831de475a1946d6e0f9f13463e2750efe6cca5b
+ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32449734"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "35128043"
 ---
 # <a name="read-and-write-data-to-the-active-selection-in-a-document-or-spreadsheet"></a>对文档或电子表格中的活动选择执行数据读取和写入操作
 
@@ -74,7 +74,7 @@ function write(message){
 作为  [callback](/javascript/api/office/office.document#setselecteddataasync-data--options--callback-) 参数传入 _setSelectedDataAsync_ 方法的匿名函数在异步调用完成时执行。在您使用 **setSelectedDataAsync** 方法向选定内容中写入数据时，回调的 _asyncResult_ 参数只提供对调用状态以及 [Error](/javascript/api/office/office.error) 对象（如果调用失败）的访问。
 
 > [!NOTE]
-> 自 Excel 2013 SP1 发行版及相应的 Excel Online 版本起，现在可以[在将表格写入当前选择时设置格式](../excel/excel-add-ins-tables.md)。
+> 自 Excel 2013 SP1 发行版及相应的 Excel 网页版起，现在可以[在将表格写入当前选择时设置格式](../excel/excel-add-ins-tables.md)。
 
 
 ## <a name="detect-changes-in-the-selection"></a>检测选择中的更改

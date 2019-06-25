@@ -1,15 +1,15 @@
 ---
 title: 生成首个 OneNote 任务窗格加载项
 description: ''
-ms.date: 05/02/2019
+ms.date: 06/20/2019
 ms.prod: onenote
 localization_priority: Priority
-ms.openlocfilehash: 48cd9395b269a83630608c52d972508828c5c007
-ms.sourcegitcommit: b299b8a5dfffb6102cb14b431bdde4861abfb47f
+ms.openlocfilehash: ccbfa5ca976da507574821f53e1ea3d0422298c7
+ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/30/2019
-ms.locfileid: "34589214"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "35128536"
 ---
 # <a name="build-your-first-onenote-task-pane-add-in"></a>生成首个 OneNote 任务窗格加载项
 
@@ -89,13 +89,13 @@ try {
 > npm run dev-server
 > ```
 
-1. 在项目的根目录中运行以下命令。 运行此命令时，本地 Web 服务器将启动（如果尚未运行）。
+1. 在项目的根目录中运行以下命令。 如果你运行此命令，本地 Web 服务器将启动（如果尚未运行的话）。
 
     ```command&nbsp;line
     npm run start:web
     ```
 
-2. 在 [OneNote Online](https://www.onenote.com/notebooks) 中，打开一个笔记本并创建新的页面。
+2. 在 [OneNote 网页版](https://www.onenote.com/notebooks)中，打开笔记本并新建页面。
 
 3. 依次选择“插入”>“Office 加载项”****，打开“Office 加载项”对话框。
 

@@ -1,14 +1,14 @@
 ---
 title: 将任务窗格和内容加载项发布到 SharePoint 应用程序目录
 description: 为使组织内的用户可访问 Office 加载项，管理员可以将 Office 加载项清单文件上传到组织的应用程序目录中。
-ms.date: 06/05/2019
+ms.date: 06/20/2019
 localization_priority: Priority
-ms.openlocfilehash: eba503a9e3d46e8ef187ef564ffa82fa984f3726
-ms.sourcegitcommit: 3f84b2caa73d7fe1eb0d15e32ea4dec459e2ff53
+ms.openlocfilehash: 20b97855ce50e3f70e602f511882761c6fd80655
+ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/12/2019
-ms.locfileid: "34910314"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "35128557"
 ---
 # <a name="publish-task-pane-and-content-add-ins-to-a-sharepoint-app-catalog"></a>将任务窗格和内容加载项发布到 SharePoint 应用程序目录
 
@@ -17,7 +17,7 @@ ms.locfileid: "34910314"
 > [!IMPORTANT]
 > - SharePoint 上的应用程序目录不支持在[加载项清单](../develop/add-in-manifests.md)的 `VersionOverrides` 节点中实现的加载项功能（如加载项命令）。
 > - 如果面向的是云或混合环境，建议通过 [Office 365 管理中心使用集中部署](../publish/centralized-deployment.md)来发布加载项。
-> - Office for Mac 不支持 SharePoint 上的应用程序目录。 若要向 Mac 客户端部署 Office 加载项，必须将其提交到 [AppSource](/office/dev/store/submit-to-the-office-store)。
+> - Mac 版 Office 不支持 SharePoint 上的应用程序目录。 若要向 Mac 客户端部署 Office 加载项，必须将其提交到 [AppSource](/office/dev/store/submit-to-the-office-store)。
 
 ## <a name="create-an-app-catalog"></a>创建应用程序目录
 

@@ -1,14 +1,14 @@
 ---
 title: 设计 Office 加载项
 description: ''
-ms.date: 12/04/2017
+ms.date: 06/20/2019
 localization_priority: Priority
-ms.openlocfilehash: 70faca768f5af70baf389c16fe8259427a85e8d9
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: 766110b9b1ff9d22a783f592f1e38eb848b8b737
+ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32448152"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "35127672"
 ---
 # <a name="design-your-office-add-ins"></a>设计 Office 加载项
 
@@ -22,7 +22,7 @@ Office 应用程序遵循一套常规交互原则。应用共享内容并具有�
 
 若要打造积极的加载项体验，请遵循 Office 设计原则：
 
-- **对 Office 进行明确设计。** 外接程序的功能、外观和感受必须和谐地完善 Office 体验。外接程序应该让人感觉就像安装在本机一样。它们应无缝融入 iPad 或 PowerPoint Online 上的 Word。设计良好的外接程序将恰当地融合体验、平台和 Office 应用程序。请考虑使用 Office UI Fabric 作为设计语言。在适当的位置应用文档和 UI 主题。
+- **对 Office 进行明确设计。** 加载项的功能、外观和感受必须和谐地完善 Office 体验。加载项应该让人感觉就像安装在本机一样。它们应无缝融入 iPad 版 Word 或 PowerPoint 网页版。设计良好的加载项将恰当地融合体验、平台和 Office 应用程序。请考虑使用 Office UI Fabric 作为设计语言。在适当的位置应用文档和 UI 主题。
 
 - **重点关注几个关键任务；好好完成。** 帮助客户在不影响其他工作的情况下完成一项工作。为客户提供真正的价值。与 Office 文档交互时，关注常见用例并认真挑选出用户最受益的。
 
@@ -33,6 +33,7 @@ Office 应用程序遵循一套常规交互原则。应用共享内容并具有�
 - **针对所有平台和输入方法进行设计**。外接程序设计用于 Office 支持的所有平台，您的外接程序 UI 应该进行优化，以便跨平台和外形规格运行。支持鼠标/键盘和触摸输入设备，确保您的自定义 HTML UI 响应迅速，可适应不同的外形规格。有关详细信息，请参阅[触摸](../concepts/add-in-development-best-practices.md#optimize-for-touch)。 
 
 ## <a name="see-also"></a>另请参阅
-- [Office UI Fabric](https://developer.microsoft.com/zh-CN/fabric) 
+- 
+  [Office UI Fabric](https://developer.microsoft.com/zh-CN/fabric) 
 - [加载项开发最佳做法](../concepts/add-in-development-best-practices.md)
 

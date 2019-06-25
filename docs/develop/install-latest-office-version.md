@@ -1,14 +1,14 @@
 ---
 title: 安装最新版本 Office
 description: 与如何选择获取最新版 Office 相关的信息。
-ms.date: 03/19/2019
+ms.date: 06/20/2019
 localization_priority: Priority
-ms.openlocfilehash: 345b7ad49bab672b9e9dd3a055bd8bfeed2962e3
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: adfed2e5e35e2ad86295faafc2ffed91cf728bcd
+ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32449890"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "35128323"
 ---
 # <a name="install-the-latest-version-of-office"></a>安装最新版本 Office
 
@@ -21,7 +21,7 @@ ms.locfileid: "32449890"
 - 如果你是 Office 365 家庭版、个人版或大专院校版订阅者，请参阅[成为 Office 预览体验成员](https://products.office.com/office-insider)。
 - 如果你是 Office 365 商业版客户，请参阅 [为 Office 365 商业版客户安装首次发布](https://support.office.com/article/Install-the-First-Release-build-for-Office-365-for-business-customers-4dd8ba40-73c0-4468-b778-c7b744d03ead)。
 - 如果在 Mac 上运行 Office：
-    - 启动 Office for Mac 程序。
+    - 启动 Office 应用程序。
     - 选择“帮助”菜单上的“检查更新”****。
     - 选中“Microsoft 自动更新”框，以加入 Office 预览体验成员计划。
 

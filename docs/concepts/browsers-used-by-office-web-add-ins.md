@@ -1,29 +1,29 @@
 ---
 title: Office 加载项使用的浏览器
 description: 指定操作系统和 Office 版本如何确定 Office 加载项使用的浏览器。
-ms.date: 05/28/2019
+ms.date: 06/20/2019
 localization_priority: Priority
-ms.openlocfilehash: 92218bb012ae9031ebfc429606885a0ec0ea85b3
-ms.sourcegitcommit: b299b8a5dfffb6102cb14b431bdde4861abfb47f
+ms.openlocfilehash: 56b74c0e43c8e9709ecd03a8c60a89d3869e44f8
+ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/30/2019
-ms.locfileid: "34592127"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "35128106"
 ---
 # <a name="browsers-used-by-office-add-ins"></a>Office 加载项使用的浏览器
 
-Office 加载项是使用 iFrames（在 Office Online 中运行时）和使用 Office 桌面版和移动版客户端中的嵌入式浏览器控件显示的 Web 应用程序。 加载项还需要使用 JavaScript 引擎来运行 JavaScript。 嵌入式浏览器和引擎均由用户计算机上安装的浏览器提供。
+Office 加载项是使用 iFrames（在 Office 网页版中运行时）和使用 Office 桌面版和移动版客户端中的嵌入式浏览器控件显示的 Web 应用程序。 加载项还需要使用 JavaScript 引擎来运行 JavaScript。 嵌入式浏览器和引擎均由用户计算机上安装的浏览器提供。
 
 要使用的浏览器取决于：
 
 - 计算机的操作系统。
-- 加载项是在 Office Online、Office 365 还是非订阅版 Office 2013 或更高版本中运行。
+- 加载项是在 Office 网页版、Office 365 还是非订阅版 Office 2013 或更高版本中运行。
 
 下表显示在不同平台和操作系统中使用的浏览器。
 
-|**操作系统/平台**|**浏览器**|
+|**操作系统/平台**|**Browser**|
 |:-----|:-----|:-----|:-----|:-----|:-----|:-----|
-|Office Online|在其中打开 Office Online 的浏览器。|
+|Office 网页版|在其中打开 Office 的浏览器。|
 |Mac|Safari|
 |iOS|Safari|
 |Android|Chrome|

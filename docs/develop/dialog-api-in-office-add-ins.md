@@ -1,14 +1,14 @@
 ---
 title: 在 Office 加载项中使用对话框 API
 description: ''
-ms.date: 03/19/2019
+ms.date: 06/20/2019
 localization_priority: Priority
-ms.openlocfilehash: 64740d6965209bf6e8b824cae7b149e3ee4f02e6
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: 12e741650b7441557ac9b28306b6eba0f1894922
+ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32448676"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "35128204"
 ---
 # <a name="use-the-dialog-api-in-your-office-add-ins"></a>在 Office 加载项中使用对话框 API
 
@@ -68,22 +68,22 @@ Office.context.ui.displayDialogAsync('https://myDomain/myDialog.html', {height: 
 > [!NOTE]
 > 只能从主机窗口打开一个对话框。如果尝试再打开一个对话框，就会生成错误。比方说，如果用户从任务窗格打开一个对话框，她就无法再从任务窗格中的其他页面打开第二个对话框。不过，如果对话框是通过[加载项命令](../design/add-in-commands.md)打开，那么只要选择此命令，就会打开新 HTML 文件（但不可见）。这会新建（不可见的）主机窗口，所以每个这样的窗口都可以启动自己的对话框。有关详细信息，请参阅 [displayDialogAsync 返回的错误](#errors-from-displaydialogasync)。
 
-### <a name="take-advantage-of-a-performance-option-in-office-online"></a>利用 Office Online 中的性能选项
+### <a name="take-advantage-of-a-performance-option-in-office-on-the-web"></a>利用 Office 网页版中的性能选项
 
-`displayInIframe` 属性是可以传递到 `displayDialogAsync` 的配置对象中的附加属性。如果将此属性设置为 `true`，且加载项在 Office Online 打开的文档中运行，对话框就会以浮动 iframe（而不是独立窗口）的形式打开，从而加快对话框的打开速度。示例如下：
+`displayInIframe` 属性是配置对象中可以传递到 `displayDialogAsync` 的附加属性。如果此属性设置为 `true`，且加载项在使用 Office 网页版打开的文档中运行，对话框就会以浮动 iframe（而不是独立窗口）的形式打开，从而加快打开速度。示例如下：
 
 ```js
 Office.context.ui.displayDialogAsync('https://myDomain/myDialog.html', {height: 30, width: 20, displayInIframe: true});
 ```
 
-默认值为 `false`，与完全省略此属性时相同。 如果加载项没有在 Office Online 中运行，`displayInIframe` 将被忽略。
+默认值为 `false`，等同于完全忽略此属性。如果加载项没有在 Office 网页版中运行，`displayInIframe` 会遭忽略。
 
 > [!NOTE]
 > 如果对话框始终重定向到无法在 iframe 中打开的页面，**不**得使用 `displayInIframe: true`。例如，许多热门 Web 服务（如 Google 和 Microsoft 帐户）的登录页都无法在 iframe 中打开。
 
-### <a name="handling-pop-up-blockers-with-office-online"></a>使用 Office Online 处理弹出窗口阻止程序
+### <a name="handling-pop-up-blockers-with-office-on-the-web"></a>使用 Office 网页版处理弹出窗口阻止程序
 
-如果尝试在使用 Office Online 时显示对话框，可能会导致浏览器的弹出窗口阻止程序阻止对话框。 如果加载项用户先同意加载项发出的提示，可以避开浏览器的弹出窗口阻止程序。 `displayDialogAsync` 的 [DialogOptions](/javascript/api/office/office.dialogoptions) 包含可触发此类弹出窗口的 `promptBeforeOpen` 属性。 `promptBeforeOpen` 是提供以下行为的布尔值：
+如果尝试在使用 Office 网页版时显示对话框，可能会导致浏览器的弹出窗口阻止程序阻止对话框。 如果加载项用户先同意加载项发出的提示，可以避开浏览器的弹出窗口阻止程序。 `displayDialogAsync` 的 [DialogOptions](/javascript/api/office/office.dialogoptions) 包含可触发此类弹出窗口的 `promptBeforeOpen` 属性。 `promptBeforeOpen` 是提供以下行为的布尔值：
 
  - `true` - 框架显示用于触发导航的弹出窗口，并避开浏览器的弹出窗口阻止程序。 
  - `false` - 对话框不会显示，开发人员必须处理弹出窗口（通过提供用户界面项目来触发导航）。 
@@ -388,7 +388,7 @@ Office.context.ui.displayDialogAsync('https://myAddinDomain/myDialog.html?client
 对话框 API 的主要应用场景是为不允许在 Iframe 中打开登录页的资源或标识提供程序（如 Microsoft 帐户、Office 365、Google 和 Facebook）启用身份验证。
 
 > [!NOTE]
-> 若要将对话框 API 用于此应用场景，请*勿*在调用 `displayDialogAsync` 时使用 `displayInIframe: true` 选项。请参阅本文前面的[使用 Office Online 中的性能选项](#take-advantage-of-a-performance-option-in-office-online)，详细了解此选项。
+> 若要将对话框 API 用于此方案，请*勿*在调用 `displayDialogAsync` 时使用 `displayInIframe: true` 选项。若要详细了解此选项，请参阅本文前面的[利用 Office 网页版中的性能选项](#take-advantage-of-a-performance-option-in-office-on-the-web)。
 
 下面展示了简单的典型身份验证流：
 

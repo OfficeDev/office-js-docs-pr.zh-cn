@@ -1,14 +1,14 @@
 ---
 title: 在 Visual Studio 中创建和调试 Office 外接程序
 description: 使用 Visual Studio 在 Windows 上的 Office 桌面客户端中创建和调试 Office 加载项
-ms.date: 05/08/2019
+ms.date: 06/20/2019
 localization_priority: Priority
-ms.openlocfilehash: c60599ed63c327d10b157e642e109542c3cefc47
-ms.sourcegitcommit: a99be9c4771c45f3e07e781646e0e649aa47213f
+ms.openlocfilehash: 9cc4d50d9b61daa4b1f55f7dd4c1e1156f8d959c
+ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/11/2019
-ms.locfileid: "33952094"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "35128183"
 ---
 # <a name="create-and-debug-office-add-ins-in-visual-studio"></a>在 Visual Studio 中创建和调试 Office 外接程序
 
@@ -30,7 +30,7 @@ ms.locfileid: "33952094"
 - Office 2013 或更高版本
 
     > [!TIP]
-    > 如果你还没有 Office，则可加入 [Office 365 开发人员计划](https://developer.microsoft.com/office/dev-program)以获取 Office 365 订阅，或者你可以[注册免费 1 个月的试用版](https://products.office.com/en-US/try?legRedir=true&WT.intid1=ODC_ENUS_FX101785584_XT104056786&CorrelationId=64c762de-7a97-4dd1-bb96-e231d7485735)。
+    > 如果你还没有 Office，则可加入 [Office 365 开发人员计划](https://developer.microsoft.com/office/dev-program)以获取 Office 365 订阅，或者你可以[注册免费 1 个月的试用版](https://products.office.com/zh-CN/try?legRedir=true&WT.intid1=ODC_ENUS_FX101785584_XT104056786&CorrelationId=64c762de-7a97-4dd1-bb96-e231d7485735)。
 
 ## <a name="create-the-add-in-project-in-visual-studio"></a>在 Visual Studio 中创建外接程序项目
 
@@ -102,7 +102,7 @@ Web 应用程序项目包含可用于实现入门的默认 HTML 文件、JavaScr
 - [调试 Outlook 外接程序的代码](#debug-the-code-for-an-outlook-add-in)
 
 > [!NOTE]
-> 你无法使用 Visual Studio 在 Office Online 或 Office for Mac 中调试 Office 外接程序。 有关在这些平台上进行调试的信息，请参阅[在 Office Online 中调试 Office 外接程序](../testing/debug-add-ins-in-office-online.md)或[在 iPad 和 Mac 上调试 Office 外接程序](../testing/debug-office-add-ins-on-ipad-and-mac.md)
+> 无法使用 Visual Studio 在 Office 网页版或 Mac 版 Office 中调试加载项。 若要了解如何在这些平台上进行调试，请参阅[在 Office 网页版中调试 Office 加载项](../testing/debug-add-ins-in-office-online.md)，或[调试 iPad 版和 Mac 版 Office 加载项](../testing/debug-office-add-ins-on-ipad-and-mac.md)
 
 ### <a name="review-the-build-and-debug-properties"></a>查看生成和调试属性
 
@@ -125,7 +125,7 @@ Web 应用程序项目包含可用于实现入门的默认 HTML 文件、JavaScr
 |**Web 项目**|指定与外接程序关联的 Web 项目的名称。|
 |**电子邮件地址**<br/>（仅限 Outlook 外接程序）|指定你想在 Exchange Server 或 Exchange Online 中用来测试 Outlook 外接程序的用户帐户的电子邮件地址。|
 |**EWS Url**<br/>（仅限 Outlook 外接程序）|Exchange Web 服务 URL（例如：`https://www.contoso.com/ews/exchange.aspx`）。 |
-|**OWA Url**<br/>（仅限 Outlook 外接程序）|Outlook Web App URL（例如，`https://www.contoso.com/owa`）。|
+|**OWA Url**<br/>（仅限 Outlook 外接程序）|Outlook 网页版 URL（例如：`https://www.contoso.com/owa`）。|
 |**使用多重身份验证**<br/>（仅限 Outlook 加载项）|布尔值，指示是否应使用多重身份验证。|
 |**用户名**<br/>（仅限 Outlook 外接程序）|指定你想在 Exchange Server 或 Exchange Online 中用来测试 Outlook 外接程序的用户帐户的名称。|
 |**项目文件**|指定包含生成、配置和有关项目的其他信息的文件名称。|

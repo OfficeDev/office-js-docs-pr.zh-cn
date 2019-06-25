@@ -1,14 +1,14 @@
 ---
 title: Word 加载项概述
 description: ''
-ms.date: 06/12/2019
+ms.date: 06/20/2019
 localization_priority: Priority
-ms.openlocfilehash: bf0b481ef9c982f06ea04aaecb70a76a790846d2
-ms.sourcegitcommit: ee5b4935b5ee1db567a13627b2f87471ee8b8165
+ms.openlocfilehash: 5516e4dc847d4872a12f769530d0a5cb7d779c7c
+ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "34933770"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "35126804"
 ---
 # <a name="word-add-ins-overview"></a>Word 加载项概述
 
@@ -44,9 +44,9 @@ Word.run(function (context) {
 通过 Word JavaScript API 可使应用程序访问 Word 文档中的对象和元数据。这些 API 可用于创建面向以下应用程序的外接程序：
 
 * Windows 版 Word 2013 或更高版本
-* Word Online
-* Word 2016 for Mac 或更高版本
-* Word for iPad
+* Word 网页版
+* Mac 版 Word 2016 或更高版本
+* iPad 版 Word
 
 外接程序只需编写一次，即可跨多个平台在所有版本 Word 中运行。有关详细信息，请参阅 [Office 外接程序主机和平台可用性](../overview/office-add-in-availability.md)。
 
@@ -54,7 +54,7 @@ Word.run(function (context) {
 
 有两组 JavaScript API 可用于与 Word 文档中的对象和元数据进行交互。 第一组是在 Office 2013 中引入的[通用 API](../reference/javascript-api-for-office.md)。 通用 API 中的许多对象可以在由两个或多个 Office 客户端托管的加载项中使用。 此 API 广泛使用回调。
 
-第二组是 [Word JavaScript API](../reference/overview/word-add-ins-reference-overview.md)。这是强类型对象模型，可用于创建面向适用于 Mac 和 Windows 的 Word 2016 的 Word 外接程序。此对象模型使用承诺模式，并提供对特定于 Word 对象（如[正文](/javascript/api/word/word.body)、[内容控件](/javascript/api/word/word.contentcontrol)、[内联图片](/javascript/api/word/word.inlinepicture)和[段落](/javascript/api/word/word.paragraph)）的访问权限。Word JavaScript API 包括 TypeScript 定义和 vsdoc 文件，这样，您可以在 IDE 中获得代码提示。
+第二组是 [Word JavaScript API](../reference/overview/word-add-ins-reference-overview.md)。这是强类型对象模型，可用于创建面向 Mac 和 Windows 版的 Word 2016 的 Word 加载项。此对象模型使用承诺模式，并提供对特定于 Word 对象（如[正文](/javascript/api/word/word.body)、[内容控件](/javascript/api/word/word.contentcontrol)、[内联图片](/javascript/api/word/word.inlinepicture)和[段落](/javascript/api/word/word.paragraph)）的访问权限。Word JavaScript API 包括 TypeScript 定义和 vsdoc 文件，这样，你可以在 IDE 中获得代码提示。
 
 目前，所有 Word 客户端均支持共享的适用于 Office 的 JavaScript API，大多数客户端支持 Word JavaScript API。有关受支持的客户端的详细信息，请参阅 [API 参考文档](/office/dev/add-ins/reference/javascript-api-for-office?product=word)。
 

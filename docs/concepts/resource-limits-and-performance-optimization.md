@@ -1,18 +1,18 @@
 ---
 title: Office 加载项的资源限制和性能优化
 description: ''
-ms.date: 03/19/2019
+ms.date: 06/20/2019
 localization_priority: Priority
-ms.openlocfilehash: ead376bb12701f7ee810cfc4e536ae4866d2f1b5
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: 7feaef4d3b76cbef71a367099382f3f26ea50314
+ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32448138"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "35127686"
 ---
 # <a name="resource-limits-and-performance-optimization-for-office-add-ins"></a>Office 加载项的资源限制和性能优化
 
-为了向用户提供最佳体验，请确保 Office 加载项不超过 CPU 内核和内存使用、可靠性以及计算正则表达式的响应时间（对于 Outlook 加载项）方面的特定限制。这些运行时资源使用限制仅适用于在 Windows 和 OS X 的 Office 客户端上运行的加载项，而不适用于 Office Online、Outlook Web App 或适用于设备的 OWA。 
+为了向用户提供最佳体验，请确保 Office 加载项不超过 CPU 内核和内存使用、可靠性以及计算正则表达式的响应时间（对于 Outlook 加载项）方面的特定限制。这些运行时资源使用限制仅适用于在 Windows 和 OS X 的 Office 客户端上运行的加载项，而不适用于移动应用或浏览器上的加载项。
 
 此外，还可以在加载项设计和实现中优化资源使用，从而优化加载项在台式机和移动设备上的性能。
 
@@ -41,7 +41,7 @@ ms.locfileid: "32448138"
 如果任何 Outlook 外接程序超过上述 CPU 内核或内存使用率阈值，或者故障容忍度限制，则 Outlook 会禁用该外接程序。Exchange 管理中心会显示应用程序的禁用状态。
 
 > [!NOTE]
-> 尽管只有 Outlook 丰富客户端（而不是 Outlook Web App 或适用于设备的 OWA）监视资源使用，如果丰富客户端禁用 Outlook 加载项，加载项也禁用于 Outlook Web App 和适用于设备的 OWA。
+> 尽管只有 Outlook 丰富客户端（而不是 Outlook 网页版或移动设备）监视资源使用，如果丰富客户端禁用 Outlook 加载项，加载项也禁用于Outlook 网页版和移动设备。
 
 除了 CPU 内核、内存和可靠性规则之外，Outlook 加载项还应在激活后遵循以下规则：
 
@@ -49,7 +49,7 @@ ms.locfileid: "32448138"
 
     通过使用 Windows 注册表中的组策略或应用程序特定设置，管理员可以在 **OutlookActivationAlertThreshold** 设置中调整此 1,000 毫秒的默认阈值。
 
-- **正则表达式重新计算** - Outlook 重新计算清单中的所有正则表达式的默认限制为三次。如果三次计算均因超过适用阈值（默认值为 1,000 毫秒或 **OutlookActivationAlertThreshold** 指定的值，如果 Windows 注册表中存在该设置）而失败，则 Outlook 将禁用该 Outlook 外接程序。Exchange 管理中心会显示禁用状态，该外接程序被禁止在 Outlook 富客户端、Outlook Web App 和适用于设备的 OWA 中使用。
+- **正则表达式重新计算** - Outlook 重新计算清单中的所有正则表达式的默认限制为三次。如果三次计算均因超过适用阈值（默认值为 1,000 毫秒或 **OutlookActivationAlertThreshold** 指定的值，如果 Windows 注册表中存在该设置）而失败，则 Outlook 将禁用该 Outlook 加载项。Exchange 管理中心会显示禁用状态，该加载项被禁止在 Outlook 富客户端、Outlook 网页版或移动设备中使用。
 
     通过使用 Windows 注册表中的组策略或特定于应用程序的设置，管理员可以调整该时间数，以在 **OutlookActivationManagerRetryLimit** 设置中重试该评估。
 

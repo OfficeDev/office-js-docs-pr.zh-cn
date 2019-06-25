@@ -1,14 +1,14 @@
 ---
 title: 使用 Excel JavaScript API 处理工作表
 description: ''
-ms.date: 04/18/2019
+ms.date: 06/20/2019
 localization_priority: Priority
-ms.openlocfilehash: 002c5763ebcfbbecbcfc5cb416d200b357c45bf2
-ms.sourcegitcommit: 7462409209264dc7f8f89f3808a7a6249fcd739e
+ms.openlocfilehash: 6267c9f0ef46bda0beeed1612acce5d620f1e74f
+ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "33440029"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "35128344"
 ---
 # <a name="work-with-worksheets-using-the-excel-javascript-api"></a>使用 Excel JavaScript API 处理工作表
 
@@ -41,7 +41,7 @@ Excel.run(function (context) {
 ```
 
 > [!NOTE]
-> 工作表的 **id** 属性用于唯一标识指定工作簿中的工作表，即使工作表被重命名或移动，其值仍不变。 在 Excel for Mac 工作簿中删除工作表时，已删除工作表的 **id** 可能会重新分配到后续创建的新工作表。
+> 工作表的 **id** 属性用于唯一标识指定工作簿中的工作表，即使工作表被重命名或移动，此属性的值也仍保持不变。如果工作表从 Mac 版 Excel 的工作簿中删除，已删除工作表的 **id** 可能会重新分配给后续创建的新工作表。
 
 ## <a name="get-the-active-worksheet"></a>获取活动工作表
 
@@ -285,9 +285,6 @@ Excel.run(function (context) {
 
 `WorksheetChangedEventArgs` 对象提供有关更改和来源的信息。 由于 `onChanged` 会在数据的格式或值发生变化时触发，因此让加载项检查值是否已实际更改可能很有用。 `details` 属性以 [ChangedEventDetail](/javascript/api/excel/excel.changedeventdetail) 的形式封装此信息。 以下代码示例演示如何显示已更改的单元格的之前和之后的值及类型。
 
-> [!NOTE]
-> `WorksheetChangedEventArgs.details` 当前仅适用于公共预览版。 [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
-
 ```js
 // This function would be used as an event handler for the Worksheet.onChanged event.
 function onWorksheetChanged(eventArgs) {
@@ -303,10 +300,7 @@ function onWorksheetChanged(eventArgs) {
 }
 ```
 
-## <a name="find-all-cells-with-matching-text-preview"></a>查找具有匹配文本 （预览） 所有单元格
-
-> [!NOTE]
-> 工作表对象的 `findAll` 函数当前仅适用于公共预览版。[!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
+## <a name="find-all-cells-with-matching-text"></a>查找所有包含匹配文本的单元格
 
 `Worksheet` 对象具有 `find` 方法在工作表内搜索指定字符串。 返回 `RangeAreas` 对象，也就是可以进行一次性全部编辑的 `Range` 对象集。 以下代码示例查找值等于字符串 **完成** 的所有单元格，并标记为绿色。 请注意，若指定的字符串不存在于工作表中，`findAll` 将引发 `ItemNotFound` 错误。 若您预计到指定的字符串可能不存在工作表中，则可使用 [findAllOrNullObject](excel-add-ins-advanced-concepts.md#ornullobject-methods) 方法，以便您的代码可正常处理该情况。
 
@@ -332,9 +326,6 @@ Excel.run(function (context) {
 > - 有关显示如何基于单元格特性进行多个子区域的较大区域搜索示例，请参阅 [使用 Excel 加载项同时处理多个区域](excel-add-ins-multiple-ranges.md)。
 
 ## <a name="filter-data"></a>筛选数据
-
-> [!NOTE]
-> `AutoFilter` 当前仅适用于公共预览版。 [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
 
 [自动筛选](/javascript/api/excel/excel.autofilter)在工作表的一个范围内应用数据筛选器。 这是通过 `Worksheet.autoFilter.apply` 创建的，它具有以下属性：
 
@@ -402,9 +393,6 @@ Excel.run(function (context) {
 [保护工作表](https://support.office.com/article/protect-a-worksheet-3179efdb-1285-4d49-a9c3-f4ca36276de6)一文详细介绍了工作表保护，以及如何通过 Excel UI 更改保护。
 
 ## <a name="page-layout-and-print-settings"></a>页面布局和打印设置
-
-> [!NOTE]
-> 此部分中与页面布局关联的 API 目前仅在公共预览版中可用。 [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
 
 加载项可以在工作表级别访问页面布局设置。 这些控制打印工作表的方式。 `Worksheet` 对象有三个与布局相关的属性：`horizontalPageBreaks`、`verticalPageBreaks`、`pageLayout`。
 
