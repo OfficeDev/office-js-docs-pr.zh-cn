@@ -3,20 +3,18 @@ title: 排查 Office 加载项中的用户错误
 description: ''
 ms.date: 06/20/2019
 localization_priority: Priority
-ms.openlocfilehash: a82dc05789b4c35a954337a64197d3ac1a190b96
-ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
+ms.openlocfilehash: 3222e8b7bc46608996c73284e2ee9b7c26c7afbe
+ms.sourcegitcommit: 6d1cb188c76c09d320025abfcc99db1b16b7e37b
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "35126902"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "35226781"
 ---
 # <a name="troubleshoot-user-errors-with-office-add-ins"></a>排查 Office 加载项中的用户错误
 
 有时，您的用户在使用您开发的 Office 外接程序时可能会遇到问题。例如，外接程序无法加载或无法访问。使用本文中的信息有助于解决您的用户在使用 Office 外接程序时遇到的常见问题。 
 
 还可以使用 [Fiddler](https://www.telerik.com/fiddler) 发现和调试加载项问题。
-
-解决用户的问题后，可以[在 AppSource 中直接回复客户评论](/office/dev/store/create-effective-office-store-listings)。
 
 ## <a name="common-errors-and-troubleshooting-steps"></a>常见错误和故障排除步骤
 

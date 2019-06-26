@@ -1,14 +1,14 @@
 ---
 title: 了解适用于 Office 的 JavaScript API
 description: ''
-ms.date: 06/20/2019
+ms.date: 06/21/2019
 localization_priority: Priority
-ms.openlocfilehash: 45cccadaa3d82f3435579650ae5161b20d7a425a
-ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
+ms.openlocfilehash: afbb24cd056d3a11c8d19f9a4316caeaafc7f066
+ms.sourcegitcommit: 6d1cb188c76c09d320025abfcc99db1b16b7e37b
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "35127987"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "35226739"
 ---
 # <a name="understanding-the-javascript-api-for-office"></a>了解适用于 Office 的 JavaScript API
 
@@ -170,36 +170,3 @@ Office.initialize = function (reason) {
 ## <a name="office-javascript-api-object-model"></a>Office JavaScript API 对象模型
 
 初始化后，加载项可与主机进行交互（例如，Excel、Outlook）。 [Office JavaScript API 对象模型](office-javascript-api-object-model.md)页提供了有关特定使用模式的更为详细的信息。 还提供了有关[通用 API](/office/dev/add-ins/reference/javascript-api-for-office) 和主机特定 API 的详细参考文档。
-
-## <a name="api-support-matrix"></a>API 支持矩阵
-
-下表总结了各种类型的加载项（内容、任务窗格和 Outlook）支持的 API 和功能，以及使用[适用于 Office 的 JavaScript API v1.1 支持的 1.1 加载项清单架构和功能](update-your-javascript-api-for-office-and-manifest-schema-version.md)指定加载项支持的 Office 主机应用时，可以托管它们的 Office 应用。
-
-
-|||||||||
-|:-----|:-----|:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|
-||**主机名**|数据库|工作簿|邮箱|演示文稿|文档|Project|
-||**支持的****主机应用程序**|Access Web 应用|Windows 版 Excel、<br/>Excel 网页版|Windows 版 Outlook、<br/>Outlook 网页版、<br/>Android 版 Outlook、<br>iOS 版 Outlook|Windows 版 PowerPoint、<br/>PowerPoint 网页版|Windows 版 Word|Windows 版 Project|
-|**支持的外接程序类型**|内容|Y|Y||Y|||
-||任务窗格||Y||Y|Y|Y|
-||Outlook|||Y||||
-|**支持的 API 功能**|读/写文本||Y||Y|Y|是<br/>（只读）|
-||读/写矩阵||Y|||Y||
-||读/写表||Y|||Y||
-||读/写 HTML|||||是||
-||读/写<br/>Office Open XML|||||是||
-||读取任务、资源、视图和字段属性||||||Y|
-||选择已更改事件||Y|||Y||
-||获取整个文档||||Y|是||
-||绑定和绑定事件|是<br/>（仅限完全和部分表格绑定）|是|||是||
-||读/写自定义 XML 部分|||||是||
-||暂留加载项状态数据（设置）|是<br/>（每主机加载项）|是<br/>（每文档）|是<br/>（每邮箱）|是<br/>（每文档）|是<br/>（每文档）||
-||设置更改事件|Y|Y||Y|是||
-||获取活动视图模式<br/>和视图更改事件||||是|||
-||转到文档中<br/>的相应位置||是||Y|是||
-||使用规则和 RegEx <br/>执行上下文式激活|||是||||
-||读取项目属性|||Y||||
-||读取用户配置文件|||Y||||
-||获取附件|||Y||||
-||获取用户标识令牌|||Y||||
-||调用 Exchange Web 服务|||Y||||
