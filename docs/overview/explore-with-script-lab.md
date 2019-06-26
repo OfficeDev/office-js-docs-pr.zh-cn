@@ -4,12 +4,12 @@ description: 使用脚本实验室浏览 Office JS API 并建立原型功能。
 ms.topic: article
 ms.date: 06/20/2019
 localization_priority: Normal
-ms.openlocfilehash: 9ef81443fade450a7bea519a99cb607c320dd4f6
-ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
+ms.openlocfilehash: b74a7787507aed1970ddcb06d3cb3eb79653615a
+ms.sourcegitcommit: 6d1cb188c76c09d320025abfcc99db1b16b7e37b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "35128644"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "35226774"
 ---
 # <a name="explore-office-javascript-api-using-script-lab"></a>使用脚本实验室浏览 Office JavaScript API
 
@@ -42,7 +42,7 @@ ms.locfileid: "35128644"
 
 ### <a name="save-and-share-snippets"></a>保存和共享代码段
 
-默认情况下, 在脚本实验室中打开的代码段将保存到您的浏览器缓存中。 若要永久保存代码段, 可以将其导出到[GitHub gist](https://gist.github.com)。 创建一个机密 gist 以仅用于您自己使用的代码段, 或者创建共享的 gist (如果您计划与其他人共享它)。
+默认情况下, 在脚本实验室中打开的代码段将保存到您的浏览器缓存中。 若要永久保存代码段, 可以将其导出到[GitHub gist](https://gist.github.com)。 创建一个机密 gist 以仅用于您自己使用的代码段, 或者创建一个公用 gist (如果您计划与其他人共享它)。
 
 ![共享选项](../images/script-lab-share.jpg)
 

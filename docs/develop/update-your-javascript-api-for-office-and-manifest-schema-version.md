@@ -3,12 +3,12 @@ title: 更新到适用于 Office 的 JavaScript API 最新库和第 1.1 版加�
 description: 将在 Office 加载项项目中的 JavaScript 文件（Office.js 和特定于应用程序的 .js 文件）和加载项清单验证文件更新到版本 1.1。
 ms.date: 03/19/2019
 localization_priority: Normal
-ms.openlocfilehash: 7cbda821897b33a19e4bc9eeac27a096e01bc217
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: dc3d1983d653a1b914331c9aeac1d6dae9fcc772
+ms.sourcegitcommit: 6d1cb188c76c09d320025abfcc99db1b16b7e37b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32448712"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "35226767"
 ---
 # <a name="update-to-the-latest-javascript-api-for-office-library-and-version-11-add-in-manifest-schema"></a>更新到适用于 Office 的 JavaScript API 最新库和第 1.1 版加载项清单架构
 
@@ -19,7 +19,7 @@ ms.locfileid: "32448712"
 
 ## <a name="use-the-most-up-to-date-project-files"></a>使用最新项目文件
 
-如果你使用 Visual Studio 来开发你的加载项，以使用适用于 Office 的 JavaScript API 的[最新 API 成员](/office/dev/add-ins/reference/what's-changed-in-the-javascript-api-for-office)和[加载项清单 v1.1 功能](../develop/add-in-manifests.md)（根据 offappmanifest-1.1.xsd 进行了验证），则你需要下载 Visual Studio 2017。 要下载 Visual Studio 2017，请参阅 [Visual Studio IDE 页面](https://visualstudio.microsoft.com/vs/)。 在安装过程中，你需要选择 Office/SharePoint 开发工作负载。
+如果你使用 Visual Studio 来开发你的加载项，以使用适用于 Office 的 JavaScript API 的最新 API 成员和[加载项清单 v1.1 功能](../develop/add-in-manifests.md)（根据 offappmanifest-1.1.xsd 进行了验证），则你需要下载 Visual Studio 2017。 要下载 Visual Studio 2017，请参阅 [Visual Studio IDE 页面](https://visualstudio.microsoft.com/vs/)。 在安装过程中，你需要选择 Office/SharePoint 开发工作负载。
 
 如果您使用文本编辑器或 Visual Studio 以外的 IDE 开发您的 外接程序，则您需要针对在 外接程序 的清单中引用的 Office.js 和架构版本，将引用更新到 CDN。
 
