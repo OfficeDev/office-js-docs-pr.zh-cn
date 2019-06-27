@@ -1,14 +1,14 @@
 ---
-ms.date: 06/18/2019
+ms.date: 06/21/2019
 description: 使用 JSDoc 标记动态创建自定义函数 JSON 元数据。
 title: 为自定义函数自动生成 JSON 元数据
 localization_priority: Priority
-ms.openlocfilehash: a02ca5fd67f29e1997579385e04d045f01e63bdb
-ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
+ms.openlocfilehash: cc28eca4e1ab1a03186983c81380a00bcf5eb85a
+ms.sourcegitcommit: 6d1cb188c76c09d320025abfcc99db1b16b7e37b
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "35127903"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "35226760"
 ---
 # <a name="autogenerate-json-metadata-for-custom-functions"></a>为自定义函数自动生成 JSON 元数据
 
@@ -28,9 +28,9 @@ ms.locfileid: "35127903"
 
 在以下示例中，短语“计算球体的体积” 就是自定义函数的相关说明。
 
-```JS
+```js
 /**
-/* Calculates the volume of a sphere
+/* Calculates the volume of a sphere.
 /* @customfunction VOLUME
 ...
  */
@@ -66,11 +66,21 @@ Excel 自定义函数支持以下 JSDoc 标记：
 
 语法：@customfunction _id_ _name_
 
-指定此标记以将 JavaScript/TypeScript 函数视为 Excel 自定义函数。
+指定此标记以将 JavaScript/TypeScript 函数视为 Excel 自定义函数。 
 
 需要此标记才能创建自定义函数的元数据。
 
 还应调用 `CustomFunctions.associate("id", functionName);`
+
+下面的示例显示了声明自定义函数的最简单方法。
+
+```js
+/**
+ * Increments a value once a second.
+ * @customfunction
+ * ...
+ */
+```
 
 #### <a name="id"></a>id
 
@@ -80,7 +90,17 @@ Excel 自定义函数支持以下 JSDoc 标记：
 * `id` 对于所有自定义函数必须是唯一的。
 * 允许使用的字符限为：A-Z、a-z、0-9、下划线 (\_) 和句点 (.)。
 
-#### <a name="name"></a>名称
+在下面的示例中，增量是函数的 `id` 和 `name`。
+
+```js
+/**
+ * Increments a value once a second.
+ * @customfunction INCREMENT
+ * ...
+ */
+```
+
+#### <a name="name"></a>name
 
 提供自定义函数的显示`name`。
 
@@ -89,15 +109,27 @@ Excel 自定义函数支持以下 JSDoc 标记：
 * 必须以字母开头。
 * 最大长度为 128 个字符。
 
+在下面的示例中，INC 是函数的 `id`，并且 `increment` 是 `name`。
+
+```js
+/**
+ * Increments a value once a second.
+ * @customfunction INC INCREMENT
+ * ...
+ */
+```
+
 ### <a name="description"></a>说明
 
-说明不需要任何特定标记。 通过在 JSDoc 注释中添加一个短语来描述函数的功能，为自定义函数添加说明。 默认情况下，JSDoc 注释部分中未标记的任何文本都是该函数的说明。 当 Excel 中的用户进入该函数时，将向其显示相关说明。 在以下示例中，短语“对两个数字求和的函数”是 id 属性为 `SUM` 的自定义函数的相关说明。
+说明不需要任何特定标记。 通过在 JSDoc 注释中添加一个短语来描述函数的功能，为自定义函数添加说明。 默认情况下，JSDoc 注释部分中未标记的任何文本都是该函数的说明。 当 Excel 中的用户进入该函数时，将向其显示相关说明。 在以下示例中，短语“对两个数字求和的函数”是 id 属性为 `ADD` 的自定义函数的相关说明。
 
-```JS
+在下面的示例中，ADD 是函数的 `id` 和 `name`，并且提供了说明。
+
+```js
 /**
-/* @customfunction SUM
-/* A function that sums two numbers
-...
+ * A function that adds two numbers.
+ * @customfunction ADD
+ * ...
  */
 ```
 
@@ -108,6 +140,17 @@ Excel 自定义函数支持以下 JSDoc 标记：
 语法：@helpurl _url_
 
 提供的 _url_ 显示在 Excel 中。
+
+在下面的示例中，`helpurl` 是 www.contoso.com/weatherhelp。
+
+```js
+/**
+ * A function which streams the temperature in a town you specify.
+ * @customfunction getTemperature
+ * @helpurl www.contoso.com/weatherhelp
+ * ...
+ */
+```
 
 ---
 ### <a name="param"></a>@param
@@ -127,6 +170,19 @@ JavaScript 语法：@param {type} name _description_
 > [!NOTE]
 > 可选参数的默认值为 `null`。
 
+下面的示例显示了 ADD 函数，该函数将两个或三个数字相加，第三个数字作为可选参数。
+
+```js
+/**
+ * A function which sums two, or optionally three, numbers.
+ * @customfunction ADDNUMBERS
+ * @param firstNumber {number} First number to add.
+ * @param secondNumber {number} Second number to add.
+ * @param [thirdNumber] {number} Optional third number you wish to add.
+ * ...
+ */
+```
+
 #### <a name="typescript"></a>TypeScript
 
 TypeScript 语法：@param name _description_
@@ -145,13 +201,28 @@ TypeScript 语法：@param name _description_
 > [!NOTE]
 > 可选参数的默认值为 `null`。
 
+下面的示例显示了将两个数字相加的 `add` 函数。
+
+```ts
+/**
+ * Adds two numbers.
+ * @customfunction 
+ * @param first First number
+ * @param second Second number
+ * @returns The sum of the two numbers.
+ */
+function add(first: number, second: number): number {
+  return first + second;
+}
+```
+
 ---
 ### <a name="requiresaddress"></a>@requiresAddress
 <a id="requiresAddress"/>
 
-表示应提供计算函数所在的单元格的地址。 
+表示应提供计算函数所在的单元格的地址。
 
-最后一个函数参数的类型必须是 `CustomFunctions.Invocation` 或派生类型。 调用函数时，`address` 属性将包含地址。
+最后一个函数参数的类型必须是 `CustomFunctions.Invocation` 或派生类型。 调用函数时，`address` 属性将包含地址。 有关使用 `@requiresAddress` 标记的函数示例，请参阅[寻址单元格的上下文参数](./custom-functions-parameter-options.md#addressing-cells-context-parameter)。
 
 ---
 ### <a name="returns"></a>@returns
@@ -162,6 +233,21 @@ TypeScript 语法：@param name _description_
 提供返回值的类型。
 
 如果省略 `{type}`，则将使用 TypeScript 类型信息。 如果没有类型信息，则类型将为 `any`。
+
+下面的示例显示了使用 `@returns` 标记的 `add` 函数。
+
+```ts
+/**
+ * Adds two numbers.
+ * @customfunction 
+ * @param first First number
+ * @param second Second number
+ * @returns The sum of the two numbers.
+ */
+function add(first: number, second: number): number {
+  return first + second;
+}
+```
 
 ---
 ### <a name="streaming"></a>@streaming
@@ -174,7 +260,7 @@ TypeScript 语法：@param name _description_
 
 流式处理函数不直接返回值，而是应该使用最后一个参数调用 `setResult(result: ResultType)`。
 
-由流式处理函数引发的异常将被忽略。 `setResult()` 可能称为“错误”，以指示错误结果。
+由流式处理函数引发的异常将被忽略。 `setResult()` 可能称为“错误”，以指示错误结果。 有关流式处理函数的示例和更多信息，请参阅[生成流式处理函数](./custom-functions-web-reqs.md#make-a-streaming-function)。
 
 流式处理函数不能标记为 [@volatile](#volatile)。
 
@@ -185,6 +271,19 @@ TypeScript 语法：@param name _description_
 可变函数是指其结果不断变化的函数，即使不采用任何参数或参数未发生更改都是如此。 Excel 在每次完成计算后，都会重新计算包含可变函数和所有依赖项的单元格。 因此，过于依赖可变函数会使重新计算时间变慢，请谨慎使用。
 
 流式处理函数不能为可变函数。
+
+以下函数是可变函数并使用 `@volatile` 标记。
+
+```js
+/**
+ * Simulates rolling a 6-sided dice.
+ * @customfunction
+ * @volatile
+ */
+function roll6sided(): number {
+  return Math.floor(Math.random() * 6) + 1;
+}
+```
 
 ---
 
