@@ -1,272 +1,257 @@
 ---
 title: Excel 自定义函数教程
 description: 在本教程中，你将创建一个 Excel 外接程序，其中包含可执行计算、请求 Web 数据或流 Web 数据的自定义函数。
-ms.date: 06/20/2019
+ms.date: 06/27/2019
 ms.prod: excel
 ms.topic: tutorial
 localization_priority: Normal
-ms.openlocfilehash: 3ae7896c082e7a1a45fb153dc69772f206a433de
-ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
+ms.openlocfilehash: 1aa05581d1b0dfb1f5affa019e51b84126c8d199
+ms.sourcegitcommit: 90c2d8236c6b30d80ac2b13950028a208ef60973
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "35126979"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "35454722"
 ---
-# <a name="tutorial-create-custom-functions-in-excel"></a><span data-ttu-id="a17ef-103">教程：在 Excel 中创建自定义函数</span><span class="sxs-lookup"><span data-stu-id="a17ef-103">Tutorial: Create custom functions in Excel</span></span>
+# <a name="tutorial-create-custom-functions-in-excel"></a><span data-ttu-id="17a59-103">教程：在 Excel 中创建自定义函数</span><span class="sxs-lookup"><span data-stu-id="17a59-103">Tutorial: Create custom functions in Excel</span></span>
 
-<span data-ttu-id="a17ef-104">用户可以借助自定义函数向 Excel 添加新函数，方法是在 JavaScript 中将这些函数定义为加载项的一部分。</span><span class="sxs-lookup"><span data-stu-id="a17ef-104">Custom functions enable you to add new functions to Excel by defining those functions in JavaScript as part of an add-in.</span></span> <span data-ttu-id="a17ef-105">Excel 中的用户可以访问自定义函数，就像他们访问 Excel 中的任何本机函数一样，比如 `SUM()`。</span><span class="sxs-lookup"><span data-stu-id="a17ef-105">Users within Excel can access custom functions as they would any native function in Excel, such as `SUM()`.</span></span> <span data-ttu-id="a17ef-106">可以创建自定义函数，以执行简单的任务（如计算）或更复杂的任务（如将实时数据从 Web 传送到工作表中）。</span><span class="sxs-lookup"><span data-stu-id="a17ef-106">You can create custom functions that perform simple tasks like calculations or more complex tasks such as streaming real-time data from the web into a worksheet.</span></span>
+<span data-ttu-id="17a59-104">用户可以借助自定义函数向 Excel 添加新函数，方法是在 JavaScript 中将这些函数定义为加载项的一部分。</span><span class="sxs-lookup"><span data-stu-id="17a59-104">Custom functions enable you to add new functions to Excel by defining those functions in JavaScript as part of an add-in.</span></span> <span data-ttu-id="17a59-105">Excel 中的用户可以访问自定义函数，就像他们访问 Excel 中的任何本机函数一样，比如 `SUM()`。</span><span class="sxs-lookup"><span data-stu-id="17a59-105">Users within Excel can access custom functions as they would any native function in Excel, such as `SUM()`.</span></span> <span data-ttu-id="17a59-106">可以创建自定义函数，以执行简单的任务（如计算）或更复杂的任务（如将实时数据从 Web 传送到工作表中）。</span><span class="sxs-lookup"><span data-stu-id="17a59-106">You can create custom functions that perform simple tasks like calculations or more complex tasks such as streaming real-time data from the web into a worksheet.</span></span>
 
-<span data-ttu-id="a17ef-107">在本教程中，你将：</span><span class="sxs-lookup"><span data-stu-id="a17ef-107">In this tutorial, you will:</span></span>
+<span data-ttu-id="17a59-107">在本教程中，你将：</span><span class="sxs-lookup"><span data-stu-id="17a59-107">In this tutorial, you will:</span></span>
 > [!div class="checklist"]
-> * <span data-ttu-id="a17ef-108">使用[适用于 Office 加载项的 Yeoman 生成器](https://www.npmjs.com/package/generator-office)来创建自定义函数加载项。</span><span class="sxs-lookup"><span data-stu-id="a17ef-108">Create a custom function add-in using the [Yeoman generator for Office Add-ins](https://www.npmjs.com/package/generator-office).</span></span> 
-> * <span data-ttu-id="a17ef-109">使用预生成的自定义函数来执行简单计算。</span><span class="sxs-lookup"><span data-stu-id="a17ef-109">Use a prebuilt custom function to perform a simple calculation.</span></span>
-> * <span data-ttu-id="a17ef-110">创建从 Web 获取数据的自定义函数。</span><span class="sxs-lookup"><span data-stu-id="a17ef-110">Create a custom function that gets data from the web.</span></span>
-> * <span data-ttu-id="a17ef-111">创建从 Web 传送实时数据的自定义函数。</span><span class="sxs-lookup"><span data-stu-id="a17ef-111">Create a custom function that streams real-time data from the web.</span></span>
+> * <span data-ttu-id="17a59-108">使用[适用于 Office 加载项的 Yeoman 生成器](https://www.npmjs.com/package/generator-office)来创建自定义函数加载项。</span><span class="sxs-lookup"><span data-stu-id="17a59-108">Create a custom function add-in using the [Yeoman generator for Office Add-ins](https://www.npmjs.com/package/generator-office).</span></span> 
+> * <span data-ttu-id="17a59-109">使用预生成的自定义函数来执行简单计算。</span><span class="sxs-lookup"><span data-stu-id="17a59-109">Use a prebuilt custom function to perform a simple calculation.</span></span>
+> * <span data-ttu-id="17a59-110">创建从 Web 获取数据的自定义函数。</span><span class="sxs-lookup"><span data-stu-id="17a59-110">Create a custom function that gets data from the web.</span></span>
+> * <span data-ttu-id="17a59-111">创建从 Web 传送实时数据的自定义函数。</span><span class="sxs-lookup"><span data-stu-id="17a59-111">Create a custom function that streams real-time data from the web.</span></span>
 
-## <a name="prerequisites"></a><span data-ttu-id="a17ef-112">先决条件</span><span class="sxs-lookup"><span data-stu-id="a17ef-112">Prerequisites</span></span>
+## <a name="prerequisites"></a><span data-ttu-id="17a59-112">先决条件</span><span class="sxs-lookup"><span data-stu-id="17a59-112">Prerequisites</span></span>
 
 [!include[Yeoman generator prerequisites](../includes/quickstart-yo-prerequisites.md)]
 
-* <span data-ttu-id="a17ef-113">Windows (版本1904或更高版本, 连接到 Office 365 订阅) 或 web 上的 Excel</span><span class="sxs-lookup"><span data-stu-id="a17ef-113">Excel on Windows (version 1904 or later, connected to Office 365 subscription) or on the web</span></span>
+* <span data-ttu-id="17a59-113">Windows (版本1904或更高版本, 连接到 Office 365 订阅) 或 web 上的 Excel</span><span class="sxs-lookup"><span data-stu-id="17a59-113">Excel on Windows (version 1904 or later, connected to Office 365 subscription) or on the web</span></span>
 
-## <a name="create-a-custom-functions-project"></a><span data-ttu-id="a17ef-114">创建自定义函数项目</span><span class="sxs-lookup"><span data-stu-id="a17ef-114">Create a custom functions project</span></span>
+## <a name="create-a-custom-functions-project"></a><span data-ttu-id="17a59-114">创建自定义函数项目</span><span class="sxs-lookup"><span data-stu-id="17a59-114">Create a custom functions project</span></span>
 
- <span data-ttu-id="a17ef-115">首先，创建代码项目以构建自定义函数加载项。</span><span class="sxs-lookup"><span data-stu-id="a17ef-115">To start, you'll create the code project to build your custom function add-in.</span></span> <span data-ttu-id="a17ef-116">[Office 外接程序的 Yeoman 生成器](https://www.npmjs.com/package/generator-office)将使用一些预生成的自定义函数来设置您的项目, 您可以试用这些函数。如果已运行自定义函数 "快速启动" 并生成了一个项目, 请继续使用该项目, 然后跳到[此步骤](#create-a-custom-function-that-requests-data-from-the-web)。</span><span class="sxs-lookup"><span data-stu-id="a17ef-116">The [Yeoman generator for Office Add-ins](https://www.npmjs.com/package/generator-office) will set up your project with some prebuilt custom functions that you can try out. If you have already run the custom functions quick start and generated a project, continue to use that project and skip to [this step](#create-a-custom-function-that-requests-data-from-the-web) instead.</span></span>
+ <span data-ttu-id="17a59-115">首先，创建代码项目以构建自定义函数加载项。</span><span class="sxs-lookup"><span data-stu-id="17a59-115">To start, you'll create the code project to build your custom function add-in.</span></span> <span data-ttu-id="17a59-116">[Office 外接程序的 Yeoman 生成器](https://www.npmjs.com/package/generator-office)将使用一些预生成的自定义函数来设置您的项目, 您可以试用这些函数。如果已运行自定义函数 "快速启动" 并生成了一个项目, 请继续使用该项目, 然后跳到[此步骤](#create-a-custom-function-that-requests-data-from-the-web)。</span><span class="sxs-lookup"><span data-stu-id="17a59-116">The [Yeoman generator for Office Add-ins](https://www.npmjs.com/package/generator-office) will set up your project with some prebuilt custom functions that you can try out. If you have already run the custom functions quick start and generated a project, continue to use that project and skip to [this step](#create-a-custom-function-that-requests-data-from-the-web) instead.</span></span>
 
-1. <span data-ttu-id="a17ef-117">运行下面的命令，再回答如下所示的提示问题。</span><span class="sxs-lookup"><span data-stu-id="a17ef-117">Run the following command and then answer the prompts as follows.</span></span>
+1. <span data-ttu-id="17a59-117">运行下面的命令，再回答如下所示的提示问题。</span><span class="sxs-lookup"><span data-stu-id="17a59-117">Run the following command and then answer the prompts as follows.</span></span>
     
     ```command&nbsp;line
     yo office
     ```
     
-    * <span data-ttu-id="a17ef-118">**选择项目类型:** `Excel Custom Functions Add-in project`</span><span class="sxs-lookup"><span data-stu-id="a17ef-118">**Choose a project type:** `Excel Custom Functions Add-in project`</span></span>
-    * <span data-ttu-id="a17ef-119">**选择脚本类型:** `JavaScript`</span><span class="sxs-lookup"><span data-stu-id="a17ef-119">**Choose a script type:** `JavaScript`</span></span>
-    * <span data-ttu-id="a17ef-120">**要如何命名加载项?**</span><span class="sxs-lookup"><span data-stu-id="a17ef-120">**What do you want to name your add-in?**</span></span> `stock-ticker`
+    * <span data-ttu-id="17a59-118">**选择项目类型:** `Excel Custom Functions Add-in project`</span><span class="sxs-lookup"><span data-stu-id="17a59-118">**Choose a project type:** `Excel Custom Functions Add-in project`</span></span>
+    * <span data-ttu-id="17a59-119">**选择脚本类型:** `JavaScript`</span><span class="sxs-lookup"><span data-stu-id="17a59-119">**Choose a script type:** `JavaScript`</span></span>
+    * <span data-ttu-id="17a59-120">**要如何命名加载项?**</span><span class="sxs-lookup"><span data-stu-id="17a59-120">**What do you want to name your add-in?**</span></span> `starcount`
 
-    ![自定义函数的 Office 外接程序提示的 Yeoman 生成器](../images/UpdatedYoOfficePrompt.png)
+    ![自定义函数的 Office 外接程序提示的 Yeoman 生成器](../images/starcountPrompt.png)
     
-    <span data-ttu-id="a17ef-122">Yeoman 生成器将创建项目文件并安装支持的 Node 组件。</span><span class="sxs-lookup"><span data-stu-id="a17ef-122">The Yeoman generator will create the project files and install supporting Node components.</span></span>
+    <span data-ttu-id="17a59-122">Yeoman 生成器将创建项目文件并安装支持的 Node 组件。</span><span class="sxs-lookup"><span data-stu-id="17a59-122">The Yeoman generator will create the project files and install supporting Node components.</span></span>
 
-2. <span data-ttu-id="a17ef-123">导航到项目的根文件夹。</span><span class="sxs-lookup"><span data-stu-id="a17ef-123">Navigate to the root folder of the project.</span></span>
+2. <span data-ttu-id="17a59-123">导航到项目的根文件夹。</span><span class="sxs-lookup"><span data-stu-id="17a59-123">Navigate to the root folder of the project.</span></span>
     
     ```command&nbsp;line
-    cd stock-ticker
+    cd starcount
     ```
 
-3. <span data-ttu-id="a17ef-124">生成项目。</span><span class="sxs-lookup"><span data-stu-id="a17ef-124">Build the project.</span></span>
+3. <span data-ttu-id="17a59-124">生成项目。</span><span class="sxs-lookup"><span data-stu-id="17a59-124">Build the project.</span></span>
     
     ```command&nbsp;line
     npm run build
     ```
 
     > [!NOTE]
-    > <span data-ttu-id="a17ef-125">Office 加载项应使用 HTTPS，而不是 HTTP（即便是在开发时也是如此）。</span><span class="sxs-lookup"><span data-stu-id="a17ef-125">Office Add-ins should use HTTPS, not HTTP, even when you are developing.</span></span> <span data-ttu-id="a17ef-126">如果系统在运行 `npm run build` 后提示你安装证书，请接受提示以安装 Yeoman 生成器提供的证书。</span><span class="sxs-lookup"><span data-stu-id="a17ef-126">If you are prompted to install a certificate after you run `npm run build`, accept the prompt to install the certificate that the Yeoman generator provides.</span></span>
+    > <span data-ttu-id="17a59-125">Office 加载项应使用 HTTPS，而不是 HTTP（即便是在开发时也是如此）。</span><span class="sxs-lookup"><span data-stu-id="17a59-125">Office Add-ins should use HTTPS, not HTTP, even when you are developing.</span></span> <span data-ttu-id="17a59-126">如果系统在运行 `npm run build` 后提示你安装证书，请接受提示以安装 Yeoman 生成器提供的证书。</span><span class="sxs-lookup"><span data-stu-id="17a59-126">If you are prompted to install a certificate after you run `npm run build`, accept the prompt to install the certificate that the Yeoman generator provides.</span></span>
 
-4. <span data-ttu-id="a17ef-127">启动在 Node.js 中运行的本地 Web 服务器。</span><span class="sxs-lookup"><span data-stu-id="a17ef-127">Start the local web server, which runs in Node.js.</span></span> <span data-ttu-id="a17ef-128">您可以在 Excel 网页或 Windows 中试用自定义函数加载项。</span><span class="sxs-lookup"><span data-stu-id="a17ef-128">You can try out the custom function add-in in Excel on the web or Windows.</span></span>
+4. <span data-ttu-id="17a59-127">启动在 Node.js 中运行的本地 Web 服务器。</span><span class="sxs-lookup"><span data-stu-id="17a59-127">Start the local web server, which runs in Node.js.</span></span> <span data-ttu-id="17a59-128">您可以在 Excel 网页或 Windows 中试用自定义函数加载项。</span><span class="sxs-lookup"><span data-stu-id="17a59-128">You can try out the custom function add-in in Excel on the web or Windows.</span></span>
 
-# <a name="excel-on-windowstabexcel-windows"></a>[<span data-ttu-id="a17ef-129">Windows 上的 Excel</span><span class="sxs-lookup"><span data-stu-id="a17ef-129">Excel on Windows</span></span>](#tab/excel-windows)
+# <a name="excel-on-windowstabexcel-windows"></a>[<span data-ttu-id="17a59-129">Windows 上的 Excel</span><span class="sxs-lookup"><span data-stu-id="17a59-129">Excel on Windows</span></span>](#tab/excel-windows)
 
-<span data-ttu-id="a17ef-130">若要在 Windows 中的 Excel 中测试外接程序, 请运行以下命令。</span><span class="sxs-lookup"><span data-stu-id="a17ef-130">To test your add-in in Excel on Windows, run the following command.</span></span> <span data-ttu-id="a17ef-131">运行此命令时, 本地 web 服务器将启动, 并且 Excel 将在加载的外接程序中打开。</span><span class="sxs-lookup"><span data-stu-id="a17ef-131">When you run this command, the local web server will start and Excel will open with your add-in loaded.</span></span>
+<span data-ttu-id="17a59-130">若要在 Windows 中的 Excel 中测试外接程序, 请运行以下命令。</span><span class="sxs-lookup"><span data-stu-id="17a59-130">To test your add-in in Excel on Windows, run the following command.</span></span> <span data-ttu-id="17a59-131">运行此命令时, 本地 web 服务器将启动, 并且 Excel 将在加载的外接程序中打开。</span><span class="sxs-lookup"><span data-stu-id="17a59-131">When you run this command, the local web server will start and Excel will open with your add-in loaded.</span></span>
 
 ```command&nbsp;line
 npm run start:desktop
 ```
 
-# <a name="excel-on-the-webtabexcel-online"></a>[<span data-ttu-id="a17ef-132">在 web 上的 Excel</span><span class="sxs-lookup"><span data-stu-id="a17ef-132">Excel on the web</span></span>](#tab/excel-online)
+# <a name="excel-on-the-webtabexcel-online"></a>[<span data-ttu-id="17a59-132">在 web 上的 Excel</span><span class="sxs-lookup"><span data-stu-id="17a59-132">Excel on the web</span></span>](#tab/excel-online)
 
-<span data-ttu-id="a17ef-133">若要在 Excel 中的浏览器上测试外接程序, 请运行以下命令。</span><span class="sxs-lookup"><span data-stu-id="a17ef-133">To test your add-in in Excel on a browser, run the following command.</span></span> <span data-ttu-id="a17ef-134">运行此命令时，本地 Web 服务器将启动。</span><span class="sxs-lookup"><span data-stu-id="a17ef-134">When you run this command, the local web server will start.</span></span>
+<span data-ttu-id="17a59-133">若要在 Excel 中的浏览器上测试外接程序, 请运行以下命令。</span><span class="sxs-lookup"><span data-stu-id="17a59-133">To test your add-in in Excel on a browser, run the following command.</span></span> <span data-ttu-id="17a59-134">运行此命令时，本地 Web 服务器将启动。</span><span class="sxs-lookup"><span data-stu-id="17a59-134">When you run this command, the local web server will start.</span></span>
 
 ```command&nbsp;line
 npm run start:web
 ```
 
-<span data-ttu-id="a17ef-135">若要使用自定义函数外接程序, 请在 web 上的 Excel 中打开一个新工作簿。</span><span class="sxs-lookup"><span data-stu-id="a17ef-135">To use your custom functions add-in, open a new workbook in Excel on the web.</span></span> <span data-ttu-id="a17ef-136">在此工作簿中, 完成以下步骤以旁加载您的外接程序。</span><span class="sxs-lookup"><span data-stu-id="a17ef-136">In this workbook, complete the following steps to sideload your add-in.</span></span>
+<span data-ttu-id="17a59-135">若要使用自定义函数外接程序, 请在 web 上的 Excel 中打开一个新工作簿。</span><span class="sxs-lookup"><span data-stu-id="17a59-135">To use your custom functions add-in, open a new workbook in Excel on the web.</span></span> <span data-ttu-id="17a59-136">在此工作簿中, 完成以下步骤以旁加载您的外接程序。</span><span class="sxs-lookup"><span data-stu-id="17a59-136">In this workbook, complete the following steps to sideload your add-in.</span></span>
 
-1. <span data-ttu-id="a17ef-137">在 Excel 中, 选择 "**插入**" 选项卡, 然后选择 "**外接程序**"。</span><span class="sxs-lookup"><span data-stu-id="a17ef-137">In Excel, choose the **Insert** tab and then choose **Add-ins**.</span></span>
+1. <span data-ttu-id="17a59-137">在 Excel 中, 选择 "**插入**" 选项卡, 然后选择 "**外接程序**"。</span><span class="sxs-lookup"><span data-stu-id="17a59-137">In Excel, choose the **Insert** tab and then choose **Add-ins**.</span></span>
 
    ![在 Excel 中的 "我的外接程序" 图标突出显示的网页中插入功能区](../images/excel-cf-online-register-add-in-1.png)
    
-2. <span data-ttu-id="a17ef-139">选择“管理我的加载项”\*\*\*\*，然后选择“上载我的加载项”\*\*\*\*。</span><span class="sxs-lookup"><span data-stu-id="a17ef-139">Choose **Manage My Add-ins** and select **Upload My Add-in**.</span></span>
+2. <span data-ttu-id="17a59-139">选择“管理我的加载项”\*\*\*\*，然后选择“上载我的加载项”\*\*\*\*。</span><span class="sxs-lookup"><span data-stu-id="17a59-139">Choose **Manage My Add-ins** and select **Upload My Add-in**.</span></span>
 
-3. <span data-ttu-id="a17ef-140">选择“浏览...”\*\*\*\*，并导航到 Yeoman 生成器创建的项目的根目录。</span><span class="sxs-lookup"><span data-stu-id="a17ef-140">Choose **Browse...** and navigate to the root directory of the project that the Yeoman generator created.</span></span>
+3. <span data-ttu-id="17a59-140">选择“浏览...”\*\*\*\*，并导航到 Yeoman 生成器创建的项目的根目录。</span><span class="sxs-lookup"><span data-stu-id="17a59-140">Choose **Browse...** and navigate to the root directory of the project that the Yeoman generator created.</span></span>
 
-4. <span data-ttu-id="a17ef-141">依次选择文件“manifest.xml”\*\*\*\*，“打开”\*\*\*\*，然后选择“上载”\*\*\*\*。</span><span class="sxs-lookup"><span data-stu-id="a17ef-141">Select the file **manifest.xml** and choose **Open**, then choose **Upload**.</span></span>
+4. <span data-ttu-id="17a59-141">依次选择文件“manifest.xml”\*\*\*\*，“打开”\*\*\*\*，然后选择“上载”\*\*\*\*。</span><span class="sxs-lookup"><span data-stu-id="17a59-141">Select the file **manifest.xml** and choose **Open**, then choose **Upload**.</span></span>
 
 --- 
     
-## <a name="try-out-a-prebuilt-custom-function"></a><span data-ttu-id="a17ef-142">尝试预生成的自定义函数</span><span class="sxs-lookup"><span data-stu-id="a17ef-142">Try out a prebuilt custom function</span></span>
+## <a name="try-out-a-prebuilt-custom-function"></a><span data-ttu-id="17a59-142">尝试预生成的自定义函数</span><span class="sxs-lookup"><span data-stu-id="17a59-142">Try out a prebuilt custom function</span></span>
 
-<span data-ttu-id="a17ef-143">您创建的自定义函数项目包含一些预生成的自定义函数, 这些函数是在 **/src/functions/functions.js**文件中定义的。</span><span class="sxs-lookup"><span data-stu-id="a17ef-143">The custom functions project that you created contains some prebuilt custom functions, defined within the **./src/functions/functions.js** file.</span></span> <span data-ttu-id="a17ef-144">**./manifest.xml** 文件指定所有自定义函数均属于 `CONTOSO` 命名空间。</span><span class="sxs-lookup"><span data-stu-id="a17ef-144">The **./manifest.xml** file specifies that all custom functions belong to the `CONTOSO` namespace.</span></span> <span data-ttu-id="a17ef-145">你将使用 CONTOSO 命名空间来访问 Excel 中的自定义函数。</span><span class="sxs-lookup"><span data-stu-id="a17ef-145">You'll use the CONTOSO namespace to access the custom functions in Excel.</span></span>
+<span data-ttu-id="17a59-143">您创建的自定义函数项目包含一些预生成的自定义函数, 这些函数是在 **/src/functions/functions.js**文件中定义的。</span><span class="sxs-lookup"><span data-stu-id="17a59-143">The custom functions project that you created contains some prebuilt custom functions, defined within the **./src/functions/functions.js** file.</span></span> <span data-ttu-id="17a59-144">**./manifest.xml** 文件指定所有自定义函数均属于 `CONTOSO` 命名空间。</span><span class="sxs-lookup"><span data-stu-id="17a59-144">The **./manifest.xml** file specifies that all custom functions belong to the `CONTOSO` namespace.</span></span> <span data-ttu-id="17a59-145">你将使用 CONTOSO 命名空间来访问 Excel 中的自定义函数。</span><span class="sxs-lookup"><span data-stu-id="17a59-145">You'll use the CONTOSO namespace to access the custom functions in Excel.</span></span>
 
-<span data-ttu-id="a17ef-146">接下来，通过完成以下步骤来尝试使用 `ADD` 自定义函数：</span><span class="sxs-lookup"><span data-stu-id="a17ef-146">Next you'll try out the `ADD` custom function by completing the following steps:</span></span>
+<span data-ttu-id="17a59-146">接下来，通过完成以下步骤来尝试使用 `ADD` 自定义函数：</span><span class="sxs-lookup"><span data-stu-id="17a59-146">Next you'll try out the `ADD` custom function by completing the following steps:</span></span>
 
-1. <span data-ttu-id="a17ef-147">在 Excel 中，转至任意单元格并输入 `=CONTOSO`。</span><span class="sxs-lookup"><span data-stu-id="a17ef-147">In Excel, go to any cell and enter `=CONTOSO`.</span></span> <span data-ttu-id="a17ef-148">请注意，自动完成菜单将显示 `CONTOSO` 命名空间中所有函数的列表。</span><span class="sxs-lookup"><span data-stu-id="a17ef-148">Notice that the autocomplete menu shows the list of all functions in the `CONTOSO` namespace.</span></span>
+1. <span data-ttu-id="17a59-147">在 Excel 中，转至任意单元格并输入 `=CONTOSO`。</span><span class="sxs-lookup"><span data-stu-id="17a59-147">In Excel, go to any cell and enter `=CONTOSO`.</span></span> <span data-ttu-id="17a59-148">请注意，自动完成菜单将显示 `CONTOSO` 命名空间中所有函数的列表。</span><span class="sxs-lookup"><span data-stu-id="17a59-148">Notice that the autocomplete menu shows the list of all functions in the `CONTOSO` namespace.</span></span>
 
-2. <span data-ttu-id="a17ef-149">通过在单元格中指定值 `=CONTOSO.ADD(10,200)` 并按 Enter 来运行 `CONTOSO.ADD` 函数，并将数字 `10` 和 `200` 作为输入参数。</span><span class="sxs-lookup"><span data-stu-id="a17ef-149">Run the `CONTOSO.ADD` function, with numbers `10` and `200` as input parameters, by typing the value `=CONTOSO.ADD(10,200)` in the cell and pressing enter.</span></span>
+2. <span data-ttu-id="17a59-149">通过在单元格中指定值 `=CONTOSO.ADD(10,200)` 并按 Enter 来运行 `CONTOSO.ADD` 函数，并将数字 `10` 和 `200` 作为输入参数。</span><span class="sxs-lookup"><span data-stu-id="17a59-149">Run the `CONTOSO.ADD` function, with numbers `10` and `200` as input parameters, by typing the value `=CONTOSO.ADD(10,200)` in the cell and pressing enter.</span></span>
 
-<span data-ttu-id="a17ef-150">`ADD` 自定义函数将计算你提供的两个数字的总和，并返回结果 **210**。</span><span class="sxs-lookup"><span data-stu-id="a17ef-150">The `ADD` custom function computes the sum of the two numbers that you provided and returns the result of **210**.</span></span>
+<span data-ttu-id="17a59-150">`ADD` 自定义函数将计算你提供的两个数字的总和，并返回结果 **210**。</span><span class="sxs-lookup"><span data-stu-id="17a59-150">The `ADD` custom function computes the sum of the two numbers that you provided and returns the result of **210**.</span></span>
 
-## <a name="create-a-custom-function-that-requests-data-from-the-web"></a><span data-ttu-id="a17ef-151">创建从 Web 请求数据的自定义函数</span><span class="sxs-lookup"><span data-stu-id="a17ef-151">Create a custom function that requests data from the web</span></span>
+## <a name="create-a-custom-function-that-requests-data-from-the-web"></a><span data-ttu-id="17a59-151">创建从 Web 请求数据的自定义函数</span><span class="sxs-lookup"><span data-stu-id="17a59-151">Create a custom function that requests data from the web</span></span>
 
-<span data-ttu-id="a17ef-152">集成来自 Web 的数据是通过自定义函数来扩展 Excel 的好方法。</span><span class="sxs-lookup"><span data-stu-id="a17ef-152">Integrating data from the Web is a great way to extend Excel through custom functions.</span></span> <span data-ttu-id="a17ef-153">接下来，你将创建一个名为 `stockPrice` 的自定义函数，该函数从 Web API 获取股票报价并将结果返回到工作表的单元格。</span><span class="sxs-lookup"><span data-stu-id="a17ef-153">Next you’ll create a custom function named `stockPrice` that gets a stock quote from a Web API and returns the result to the cell of a worksheet.</span></span> 
+<span data-ttu-id="17a59-152">集成来自 Web 的数据是通过自定义函数来扩展 Excel 的好方法。</span><span class="sxs-lookup"><span data-stu-id="17a59-152">Integrating data from the Web is a great way to extend Excel through custom functions.</span></span> <span data-ttu-id="17a59-153">接下来, 将创建一个名为`getStarCount`的自定义函数, 该函数显示给定 Github 存储库拥有的星星数。</span><span class="sxs-lookup"><span data-stu-id="17a59-153">Next you’ll create a custom function named `getStarCount` that shows how many stars a given Github repository possesses.</span></span>
 
-> [!NOTE]
-> <span data-ttu-id="a17ef-154">下面的代码使用 IEX 贸易 API 请求股票报价。</span><span class="sxs-lookup"><span data-stu-id="a17ef-154">The following code requests a stock quote using the IEX Trading API.</span></span> <span data-ttu-id="a17ef-155">在运行代码之前, 您需要[使用 IEX 云创建一个免费帐户](https://iexcloud.io/), 以便您可以在 api 请求中获取所需的 api 令牌。</span><span class="sxs-lookup"><span data-stu-id="a17ef-155">Before you can run the code, you'll need to [create a free account with IEX Cloud](https://iexcloud.io/) so that you can get the API token that's required in the API request.</span></span>  
+1. <span data-ttu-id="17a59-154">在**starcount**项目中, 找到 **/src/functions/functions.js**并在代码编辑器中打开该文件。</span><span class="sxs-lookup"><span data-stu-id="17a59-154">In the **starcount** project, find the file **./src/functions/functions.js** and open it in your code editor.</span></span> 
 
-1. <span data-ttu-id="a17ef-156">在**股票报价**项目中, 找到 **/src/functions/functions.js**并在代码编辑器中打开该文件。</span><span class="sxs-lookup"><span data-stu-id="a17ef-156">In the **stock-ticker** project, find the file **./src/functions/functions.js** and open it in your code editor.</span></span>
+2. <span data-ttu-id="17a59-155">在**函数 .js**中, 添加以下代码:</span><span class="sxs-lookup"><span data-stu-id="17a59-155">In **function.js**, add the following code:</span></span> 
 
-2. <span data-ttu-id="a17ef-157">在**函数 .js**中, 找到`increment`函数并在该函数后面添加以下代码。</span><span class="sxs-lookup"><span data-stu-id="a17ef-157">In **functions.js**, locate the `increment` function and add the following code after that function.</span></span>
+```JS
+ /**
+   * Gets the star count for a given Github repository.
+   * @customfunction 
+   * @param {string} userName string name of Github user or organization.
+   * @param {string} repoName string name of the Github repository.
+   * @return {number} number of stars given to a Github repository.
+   */
+    async function getStarCount(userName, repoName) {
+      try {
+        //You can change this URL to any web request you want to work with.
+        const url = "https://api.github.com/repos/" + userName + "/" + repoName;
+        const response = await fetch(url);
+        //Expect that status code is in 200-299 range
+        if (!response.ok) {
+          throw new Error(response.statusText)
+        }
+          const jsonResponse = await response.json();
+          return jsonResponse.watchers_count;
+      }
+      catch (error) {
+        return error;
+      }
+      }
+    CustomFunctions.associate("GETSTARCOUNT", getStarCount);
+```
 
-    ```js
-    /**
-    * Fetches current stock price
-    * @customfunction 
-    * @param {string} ticker Stock symbol
-    * @returns {number} The current stock price.
-    */
-    function stockPrice(ticker) {
-        //Note: In the following line, replace <YOUR_TOKEN_HERE> with the API token that you've obtained through your IEX Cloud account.
-        var url = "https://cloud.iexapis.com/stable/stock/" + ticker + "/quote/latestPrice?token=<YOUR_TOKEN_HERE>"
-        return fetch(url)
-            .then(function(response) {
-                return response.text();
-            })
-            .then(function(text) {
-                return parseFloat(text);
-            });
+<span data-ttu-id="17a59-156">`CustomFunctions.associate` 代码会将函数的 `id` 与 JavaScript 中的 `getStarCount` 的函数地址相关联，以便 Excel 能够调用你的函数。</span><span class="sxs-lookup"><span data-stu-id="17a59-156">The `CustomFunctions.associate` code associates the `id` of the function with the function address of `getStarCount` in JavaScript so that Excel can call your function.</span></span>
 
-        // Note: in case of an error, the returned rejected Promise
-        //    will be bubbled up to Excel to indicate an error.
-    }
-    CustomFunctions.associate("STOCKPRICE", stockPrice);
-    ```
-
-    <span data-ttu-id="a17ef-158">`CustomFunctions.associate` 代码会将函数的 `id` 与 JavaScript 中的 `stockPrice` 的函数地址相关联，以便 Excel 能够调用你的函数。</span><span class="sxs-lookup"><span data-stu-id="a17ef-158">The `CustomFunctions.associate` code associates the `id` of the function with the function address of `stockPrice` in JavaScript so that Excel can call your function.</span></span>
-
-3. <span data-ttu-id="a17ef-159">运行以下命令以重建项目。</span><span class="sxs-lookup"><span data-stu-id="a17ef-159">Run the following command to rebuild the project.</span></span>
+3. <span data-ttu-id="17a59-157">运行以下命令以重建项目。</span><span class="sxs-lookup"><span data-stu-id="17a59-157">Run the following command to rebuild the project.</span></span>
 
     ```command&nbsp;line
     npm run build
     ```
 
-4. <span data-ttu-id="a17ef-160">完成以下步骤 (对于 web 上的 Excel 或 Windows), 以便在 Excel 中重新注册加载项。</span><span class="sxs-lookup"><span data-stu-id="a17ef-160">Complete the following steps (for either Excel on the web or Windows) to re-register the add-in in Excel.</span></span> <span data-ttu-id="a17ef-161">您必须完成这些步骤, 新函数才可用。</span><span class="sxs-lookup"><span data-stu-id="a17ef-161">You must complete these steps before the new function will be available.</span></span>
+4. <span data-ttu-id="17a59-158">完成以下步骤 (对于 web 上的 Excel 或 Windows), 以便在 Excel 中重新注册加载项。</span><span class="sxs-lookup"><span data-stu-id="17a59-158">Complete the following steps (for either Excel on the web or Windows) to re-register the add-in in Excel.</span></span> <span data-ttu-id="17a59-159">您必须完成这些步骤, 新函数才可用。</span><span class="sxs-lookup"><span data-stu-id="17a59-159">You must complete these steps before the new function will be available.</span></span>
 
-# <a name="excel-on-windowstabexcel-windows"></a>[<span data-ttu-id="a17ef-162">Windows 上的 Excel</span><span class="sxs-lookup"><span data-stu-id="a17ef-162">Excel on Windows</span></span>](#tab/excel-windows)
+### <a name="excel-on-windowstabexcel-windows"></a>[<span data-ttu-id="17a59-160">Windows 上的 Excel</span><span class="sxs-lookup"><span data-stu-id="17a59-160">Excel on Windows</span></span>](#tab/excel-windows)
 
-1. <span data-ttu-id="a17ef-163">关闭 Excel，然后重新打开 Excel。</span><span class="sxs-lookup"><span data-stu-id="a17ef-163">Close Excel and then reopen Excel.</span></span>
+1. <span data-ttu-id="17a59-161">关闭 Excel，然后重新打开 Excel。</span><span class="sxs-lookup"><span data-stu-id="17a59-161">Close Excel and then reopen Excel.</span></span>
 
-2. <span data-ttu-id="a17ef-164">在 Excel 中, 选择 "**插入**" 选项卡, 然后选择位于 **"我的外接程序**" 右侧的向下箭头。 ![在 Excel 中的 "我的外接程序" 箭头突出显示 Windows 中插入功能区](../images/select-insert.png)</span><span class="sxs-lookup"><span data-stu-id="a17ef-164">In Excel, choose the **Insert** tab and then choose the down-arrow located to the right of **My Add-ins**.  ![Insert ribbon in Excel on Windows with the My Add-ins arrow highlighted](../images/select-insert.png)</span></span>
+2. <span data-ttu-id="17a59-162">在 Excel 中, 选择 "**插入**" 选项卡, 然后选择位于 **"我的外接程序**" 右侧的向下箭头。 ![在 Excel 中的 "我的外接程序" 箭头突出显示 Windows 中插入功能区](../images/select-insert.png)</span><span class="sxs-lookup"><span data-stu-id="17a59-162">In Excel, choose the **Insert** tab and then choose the down-arrow located to the right of **My Add-ins**.  ![Insert ribbon in Excel on Windows with the My Add-ins arrow highlighted](../images/select-insert.png)</span></span>
 
-3. <span data-ttu-id="a17ef-165">在可用加载项列表中，找到“**开发人员加载项**”部分并选择 **stock-ticker** 加载项进行注册。</span><span class="sxs-lookup"><span data-stu-id="a17ef-165">In the list of available add-ins, find the **Developer Add-ins** section and select the **stock-ticker** add-in to register it.</span></span>
-    <span data-ttu-id="a17ef-166">![在 Windows Excel 中插入带有 "我的外接程序" 列表中突出显示 Excel 自定义函数外接程序的功能区](../images/list-stock-ticker-red.png)</span><span class="sxs-lookup"><span data-stu-id="a17ef-166">![Insert ribbon in Excel on Windows with the Excel Custom Functions add-in highlighted in the My Add-ins list](../images/list-stock-ticker-red.png)</span></span>
+3. <span data-ttu-id="17a59-163">在可用加载项列表中, 找到 "**开发人员外**接程序" 部分, 然后选择 " **starcount** " 外接程序进行注册。</span><span class="sxs-lookup"><span data-stu-id="17a59-163">In the list of available add-ins, find the **Developer Add-ins** section and select the **starcount** add-in to register it.</span></span>
+    <span data-ttu-id="17a59-164">![在 Windows Excel 中插入带有 "我的外接程序" 列表中突出显示 Excel 自定义函数外接程序的功能区](../images/list-starcount.png)</span><span class="sxs-lookup"><span data-stu-id="17a59-164">![Insert ribbon in Excel on Windows with the Excel Custom Functions add-in highlighted in the My Add-ins list](../images/list-starcount.png)</span></span>
 
-# <a name="excel-on-the-webtabexcel-online"></a>[<span data-ttu-id="a17ef-167">在 web 上的 Excel</span><span class="sxs-lookup"><span data-stu-id="a17ef-167">Excel on the web</span></span>](#tab/excel-online)
 
-1. <span data-ttu-id="a17ef-168">在 Excel 中, 选择 "**插入**" 选项卡, 然后选择 "**外接程序**"。 ![在 Excel 中的 "我的外接程序" 图标突出显示的网页中插入功能区](../images/excel-cf-online-register-add-in-1.png)</span><span class="sxs-lookup"><span data-stu-id="a17ef-168">In Excel, choose the **Insert** tab and then choose **Add-ins**.  ![Insert ribbon in Excel on the web with the My Add-ins icon highlighted](../images/excel-cf-online-register-add-in-1.png)</span></span>
+# <a name="excel-on-the-webtabexcel-online"></a>[<span data-ttu-id="17a59-165">在 web 上的 Excel</span><span class="sxs-lookup"><span data-stu-id="17a59-165">Excel on the web</span></span>](#tab/excel-online)
 
-2. <span data-ttu-id="a17ef-169">选择“管理我的加载项”\*\*\*\*，然后选择“上载我的加载项”\*\*\*\*。</span><span class="sxs-lookup"><span data-stu-id="a17ef-169">Choose **Manage My Add-ins** and select **Upload My Add-in**.</span></span>
+1. <span data-ttu-id="17a59-166">在 Excel 中, 选择 "**插入**" 选项卡, 然后选择 "**外接程序**"。 ![在 Excel 中的 "我的外接程序" 图标突出显示的网页中插入功能区](../images/excel-cf-online-register-add-in-1.png)</span><span class="sxs-lookup"><span data-stu-id="17a59-166">In Excel, choose the **Insert** tab and then choose **Add-ins**.  ![Insert ribbon in Excel on the web with the My Add-ins icon highlighted](../images/excel-cf-online-register-add-in-1.png)</span></span>
 
-3. <span data-ttu-id="a17ef-170">选择“浏览...”\*\*\*\*，并导航到 Yeoman 生成器创建的项目的根目录。</span><span class="sxs-lookup"><span data-stu-id="a17ef-170">Choose **Browse...** and navigate to the root directory of the project that the Yeoman generator created.</span></span>
+2. <span data-ttu-id="17a59-167">选择“管理我的加载项”\*\*\*\*，然后选择“上载我的加载项”\*\*\*\*。</span><span class="sxs-lookup"><span data-stu-id="17a59-167">Choose **Manage My Add-ins** and select **Upload My Add-in**.</span></span>
 
-4. <span data-ttu-id="a17ef-171">依次选择文件“manifest.xml”\*\*\*\*，“打开”\*\*\*\*，然后选择“上载”\*\*\*\*。</span><span class="sxs-lookup"><span data-stu-id="a17ef-171">Select the file **manifest.xml** and choose **Open**, then choose **Upload**.</span></span>
+3. <span data-ttu-id="17a59-168">选择“浏览...”\*\*\*\*，并导航到 Yeoman 生成器创建的项目的根目录。</span><span class="sxs-lookup"><span data-stu-id="17a59-168">Choose **Browse...** and navigate to the root directory of the project that the Yeoman generator created.</span></span>
+
+4. <span data-ttu-id="17a59-169">依次选择文件“manifest.xml”\*\*\*\*，“打开”\*\*\*\*，然后选择“上载”\*\*\*\*。</span><span class="sxs-lookup"><span data-stu-id="17a59-169">Select the file **manifest.xml** and choose **Open**, then choose **Upload**.</span></span>
 
 ---
 
 <ol start="5">
-<li> <span data-ttu-id="a17ef-172">尝试使用新函数。</span><span class="sxs-lookup"><span data-stu-id="a17ef-172">Try out the new function.</span></span> <span data-ttu-id="a17ef-173">在单元格 <strong>B1</strong> 中，键入文本 <strong>=CONTOSO.STOCKPRICE("MSFT")</strong>，然后按 Enter。</span><span class="sxs-lookup"><span data-stu-id="a17ef-173">In cell <strong>B1</strong>, type the text <strong>=CONTOSO.STOCKPRICE("MSFT")</strong> and press enter.</span></span> <span data-ttu-id="a17ef-174">应看到单元格 <strong>B1</strong> 中的结果是 Microsoft 一股股票的当前股票价格。</span><span class="sxs-lookup"><span data-stu-id="a17ef-174">You should see that the result in cell <strong>B1</strong> is the current stock price for one share of Microsoft stock.</span></span></li>
+<li> <span data-ttu-id="17a59-170">尝试使用新函数。</span><span class="sxs-lookup"><span data-stu-id="17a59-170">Try out the new function.</span></span> <span data-ttu-id="17a59-171">在单元格<strong>B1</strong>中, 键入文本<strong>= CONTOSO。GETSTARCOUNT ("OfficeDev", "Excel-自定义函数")</strong> , 然后按 enter。</span><span class="sxs-lookup"><span data-stu-id="17a59-171">In cell <strong>B1</strong>, type the text <strong>=CONTOSO.GETSTARCOUNT("OfficeDev", "Excel-Custom-Functions")</strong> and press enter.</span></span> <span data-ttu-id="17a59-172">您应该会看到单元格<strong>B1</strong>中的结果是为[Excel 自定义函数 Github 存储库](https://github.com/OfficeDev/Excel-Custom-Functions)提供的当前星数。</span><span class="sxs-lookup"><span data-stu-id="17a59-172">You should see that the result in cell <strong>B1</strong> is the current number of stars given to the [Excel-Custom-Functions Github repository](https://github.com/OfficeDev/Excel-Custom-Functions).</span></span></li>
 </ol>
 
-## <a name="create-a-streaming-asynchronous-custom-function"></a><span data-ttu-id="a17ef-175">创建流式处理异步自定义函数</span><span class="sxs-lookup"><span data-stu-id="a17ef-175">Create a streaming asynchronous custom function</span></span>
+## <a name="create-a-streaming-asynchronous-custom-function"></a><span data-ttu-id="17a59-173">创建流式处理异步自定义函数</span><span class="sxs-lookup"><span data-stu-id="17a59-173">Create a streaming asynchronous custom function</span></span>
 
-<span data-ttu-id="a17ef-176">`stockPrice` 函数将返回特定时刻的股票价格，但股票价格一直在变化。</span><span class="sxs-lookup"><span data-stu-id="a17ef-176">The `stockPrice` function returns the price of a stock at a specific moment in time, but stock prices are always changing.</span></span> <span data-ttu-id="a17ef-177">接下来，将创建一个名为 `stockPriceStream` 的自定义函数，该函数每隔 1000 毫秒获取一次股票价格。</span><span class="sxs-lookup"><span data-stu-id="a17ef-177">Next you’ll create a custom function named `stockPriceStream` that gets the price of a stock every 1000 milliseconds.</span></span>
+<span data-ttu-id="17a59-174">`getStarCount`函数返回存储库在特定时间点的星数。</span><span class="sxs-lookup"><span data-stu-id="17a59-174">The `getStarCount` function returns the number of stars a repository has at a specific moment in time.</span></span> <span data-ttu-id="17a59-175">自定义函数还可以返回不断变化的数据。</span><span class="sxs-lookup"><span data-stu-id="17a59-175">Custom functions can also return data that is continuously changing.</span></span> <span data-ttu-id="17a59-176">这些函数称为流式处理函数。</span><span class="sxs-lookup"><span data-stu-id="17a59-176">These functions are called streaming functions.</span></span> <span data-ttu-id="17a59-177">它们必须包含一个`invocation`参数, 该参数引用函数的调用位置的单元格。</span><span class="sxs-lookup"><span data-stu-id="17a59-177">They must include an `invocation` parameter which refers to the cell where the function was called from.</span></span> <span data-ttu-id="17a59-178">此`invocation`参数用于在任何时间更新单元格的内容。</span><span class="sxs-lookup"><span data-stu-id="17a59-178">The `invocation` parameter is used to update the contents of the cell at any time.</span></span>  
 
-1. <span data-ttu-id="a17ef-178">在**股票报价**项目中, 将以下代码添加到 **./src/functions/functions.js**并保存文件。</span><span class="sxs-lookup"><span data-stu-id="a17ef-178">In the **stock-ticker** project, add the following code to **./src/functions/functions.js** and save the file.</span></span>
+<span data-ttu-id="17a59-179">在下面的代码示例中, 您会注意到有两个函数`currentTime`和`clock`。</span><span class="sxs-lookup"><span data-stu-id="17a59-179">In the following code sample, you'll notice that there are two functions, `currentTime` and `clock`.</span></span> <span data-ttu-id="17a59-180">`currentTime`函数是不使用流式处理的静态函数。</span><span class="sxs-lookup"><span data-stu-id="17a59-180">The `currentTime` function is a static function that does not use streaming.</span></span> <span data-ttu-id="17a59-181">它以字符串的形式返回日期。</span><span class="sxs-lookup"><span data-stu-id="17a59-181">It returns the date as a string.</span></span> <span data-ttu-id="17a59-182">`clock`函数使用`currentTime`函数在 Excel 中每秒向单元格提供新时间。</span><span class="sxs-lookup"><span data-stu-id="17a59-182">The `clock` function uses the `currentTime` function to provide the new time every second to a cell in Excel.</span></span> <span data-ttu-id="17a59-183">它使用`invocation.setResult`将时间传递到 Excel 单元格, 并`invocation.onCanceled`处理取消该函数时发生的情况。</span><span class="sxs-lookup"><span data-stu-id="17a59-183">It uses `invocation.setResult` to deliver the time to the Excel cell and `invocation.onCanceled` to handle what occurs when the function is canceled.</span></span>
 
-    ```js
-    /**
-    * Streams real time stock price
-    * @customfunction 
-    * @param {string} ticker Stock symbol
-    * @param {CustomFunctions.StreamingInvocation<number>} invocation
-    */
-    function stockPriceStream(ticker, invocation) {
-        var updateFrequency = 1000 /* milliseconds*/;
-        var isPending = false;
+1. <span data-ttu-id="17a59-184">在 " **starcount** " 项目中, 将以下代码添加到 **./src/functions/functions.js**并保存文件。</span><span class="sxs-lookup"><span data-stu-id="17a59-184">In the **starcount** project, add the following code to **./src/functions/functions.js** and save the file.</span></span>
 
-        var timer = setInterval(function() {
-            // If there is already a pending request, skip this iteration:
-            if (isPending) {
-                return;
-            }
+```JS
+/**
+ * Returns the current time
+ * @returns {string} String with the current time formatted for the current locale.
+ */
+function currentTime() {
+  return new Date().toLocaleTimeString();
+}
 
-            //Note: In the following line, replace <YOUR_TOKEN_HERE> with the API token that you've obtained through your IEX Cloud account.
-            var url = "https://cloud.iexapis.com/stable/stock/" + ticker + "/quote/latestPrice?token=<YOUR_TOKEN_HERE>"
-            isPending = true;
+CustomFunctions.associate("CURRENTTIME", currentTime); 
 
-            fetch(url)
-                .then(function(response) {
-                    return response.text();
-                })
-                .then(function(text) {
-                    invocation.setResult(parseFloat(text));
-                })
-                .catch(function(error) {
-                    invocation.setResult(error);
-                })
-                .then(function() {
-                    isPending = false;
-                });
-        }, updateFrequency);
+ /**
+ * Displays the current time once a second
+ * @customfunction
+ * @param {CustomFunctions.StreamingInvocation<string>} invocation Custom function invocation
+ */
+function clock(invocation) {
+  const timer = setInterval(() => {
+    const time = currentTime();
+    invocation.setResult(time);
+  }, 1000);
 
-        invocation.onCanceled = () => {
-            clearInterval(timer);
-        };
-    }
-    CustomFunctions.associate("STOCKPRICESTREAM", stockPriceStream);
-    ```
-    
-    <span data-ttu-id="a17ef-179">`CustomFunctions.associate` 代码会将函数的 `id` 与 JavaScript 中的 `stockPriceStream` 的函数地址相关联，以便 Excel 能够调用你的函数。</span><span class="sxs-lookup"><span data-stu-id="a17ef-179">The `CustomFunctions.associate` code associates the `id` of the function with the function address of `stockPriceStream` in JavaScript so that Excel can call your function.</span></span>
-    
-2. <span data-ttu-id="a17ef-180">运行以下命令以重建项目。</span><span class="sxs-lookup"><span data-stu-id="a17ef-180">Run the following command to rebuild the project.</span></span>
+  invocation.onCanceled = () => {
+    clearInterval(timer);
+  };
+}
+CustomFunctions.associate("CLOCK", clock);
+```
+
+<span data-ttu-id="17a59-185">`CustomFunctions.associate` 代码会将函数的 `id` 与 JavaScript 中的 `CLOCK` 的函数地址相关联，以便 Excel 能够调用你的函数。</span><span class="sxs-lookup"><span data-stu-id="17a59-185">The `CustomFunctions.associate` code associates the `id` of the function with the function address of `CLOCK` in JavaScript so that Excel can call your function.</span></span>
+
+2. <span data-ttu-id="17a59-186">运行以下命令以重建项目。</span><span class="sxs-lookup"><span data-stu-id="17a59-186">Run the following command to rebuild the project.</span></span>
 
     ```command&nbsp;line
     npm run build
     ```
 
-3. <span data-ttu-id="a17ef-181">完成以下步骤 (对于 web 上的 Excel 或 Windows), 以便在 Excel 中重新注册加载项。</span><span class="sxs-lookup"><span data-stu-id="a17ef-181">Complete the following steps (for either Excel on the web or Windows) to re-register the add-in in Excel.</span></span> <span data-ttu-id="a17ef-182">您必须完成这些步骤, 新函数才可用。</span><span class="sxs-lookup"><span data-stu-id="a17ef-182">You must complete these steps before the new function will be available.</span></span> 
+3. <span data-ttu-id="17a59-187">完成以下步骤 (对于 web 上的 Excel 或 Windows), 以便在 Excel 中重新注册加载项。</span><span class="sxs-lookup"><span data-stu-id="17a59-187">Complete the following steps (for either Excel on the web or Windows) to re-register the add-in in Excel.</span></span> <span data-ttu-id="17a59-188">您必须完成这些步骤, 新函数才可用。</span><span class="sxs-lookup"><span data-stu-id="17a59-188">You must complete these steps before the new function will be available.</span></span> 
 
-# <a name="excel-on-windowstabexcel-windows"></a>[<span data-ttu-id="a17ef-183">Windows 上的 Excel</span><span class="sxs-lookup"><span data-stu-id="a17ef-183">Excel on Windows</span></span>](#tab/excel-windows)
+# <a name="excel-on-windowstabexcel-windows"></a>[<span data-ttu-id="17a59-189">Windows 上的 Excel</span><span class="sxs-lookup"><span data-stu-id="17a59-189">Excel on Windows</span></span>](#tab/excel-windows)
 
-1. <span data-ttu-id="a17ef-184">关闭 Excel，然后重新打开 Excel。</span><span class="sxs-lookup"><span data-stu-id="a17ef-184">Close Excel and then reopen Excel.</span></span>
+1. <span data-ttu-id="17a59-190">关闭 Excel，然后重新打开 Excel。</span><span class="sxs-lookup"><span data-stu-id="17a59-190">Close Excel and then reopen Excel.</span></span>
 
-2. <span data-ttu-id="a17ef-185">在 Excel 中, 选择 "**插入**" 选项卡, 然后选择位于 **"我的外接程序**" 右侧的向下箭头。 ![在 Excel 中的 "我的外接程序" 箭头突出显示 Windows 中插入功能区](../images/select-insert.png)</span><span class="sxs-lookup"><span data-stu-id="a17ef-185">In Excel, choose the **Insert** tab and then choose the down-arrow located to the right of **My Add-ins**.  ![Insert ribbon in Excel on Windows with the My Add-ins arrow highlighted](../images/select-insert.png)</span></span>
+2. <span data-ttu-id="17a59-191">在 Excel 中, 选择 "**插入**" 选项卡, 然后选择位于 **"我的外接程序**" 右侧的向下箭头。 ![在 Excel 中的 "我的外接程序" 箭头突出显示 Windows 中插入功能区](../images/select-insert.png)</span><span class="sxs-lookup"><span data-stu-id="17a59-191">In Excel, choose the **Insert** tab and then choose the down-arrow located to the right of **My Add-ins**.  ![Insert ribbon in Excel on Windows with the My Add-ins arrow highlighted](../images/select-insert.png)</span></span>
 
-3. <span data-ttu-id="a17ef-186">在可用加载项列表中，找到“**开发人员加载项**”部分并选择 **stock-ticker** 加载项进行注册。</span><span class="sxs-lookup"><span data-stu-id="a17ef-186">In the list of available add-ins, find the **Developer Add-ins** section and select the **stock-ticker** add-in to register it.</span></span>
-    <span data-ttu-id="a17ef-187">![在 Windows Excel 中插入带有 "我的外接程序" 列表中突出显示 Excel 自定义函数外接程序的功能区](../images/list-stock-ticker-red.png)</span><span class="sxs-lookup"><span data-stu-id="a17ef-187">![Insert ribbon in Excel on Windows with the Excel Custom Functions add-in highlighted in the My Add-ins list](../images/list-stock-ticker-red.png)</span></span>
+3. <span data-ttu-id="17a59-192">在可用加载项列表中, 找到 "**开发人员外**接程序" 部分, 然后选择 " **starcount** " 外接程序进行注册。</span><span class="sxs-lookup"><span data-stu-id="17a59-192">In the list of available add-ins, find the **Developer Add-ins** section and select the **starcount** add-in to register it.</span></span>
+    <span data-ttu-id="17a59-193">![在 Windows Excel 中插入带有 "我的外接程序" 列表中突出显示 Excel 自定义函数外接程序的功能区](../images/list-starcount.png)</span><span class="sxs-lookup"><span data-stu-id="17a59-193">![Insert ribbon in Excel on Windows with the Excel Custom Functions add-in highlighted in the My Add-ins list](../images/list-starcount.png)</span></span>
 
-# <a name="excel-on-the-webtabexcel-online"></a>[<span data-ttu-id="a17ef-188">在 web 上的 Excel</span><span class="sxs-lookup"><span data-stu-id="a17ef-188">Excel on the web</span></span>](#tab/excel-online)
+# <a name="excel-on-the-webtabexcel-online"></a>[<span data-ttu-id="17a59-194">在 web 上的 Excel</span><span class="sxs-lookup"><span data-stu-id="17a59-194">Excel on the web</span></span>](#tab/excel-online)
 
-1. <span data-ttu-id="a17ef-189">在 Excel 中, 选择 "**插入**" 选项卡, 然后选择 "**外接程序**"。 ![在 Excel 中的 "我的外接程序" 图标突出显示的网页中插入功能区](../images/excel-cf-online-register-add-in-1.png)</span><span class="sxs-lookup"><span data-stu-id="a17ef-189">In Excel, choose the **Insert** tab and then choose **Add-ins**.  ![Insert ribbon in Excel on the web with the My Add-ins icon highlighted](../images/excel-cf-online-register-add-in-1.png)</span></span>
+1. <span data-ttu-id="17a59-195">在 Excel 中, 选择 "**插入**" 选项卡, 然后选择 "**外接程序**"。 ![在 Excel 中的 "我的外接程序" 图标突出显示的网页中插入功能区](../images/excel-cf-online-register-add-in-1.png)</span><span class="sxs-lookup"><span data-stu-id="17a59-195">In Excel, choose the **Insert** tab and then choose **Add-ins**.  ![Insert ribbon in Excel on the web with the My Add-ins icon highlighted](../images/excel-cf-online-register-add-in-1.png)</span></span>
 
-2. <span data-ttu-id="a17ef-190">选择“管理我的加载项”\*\*\*\*，然后选择“上载我的加载项”\*\*\*\*。</span><span class="sxs-lookup"><span data-stu-id="a17ef-190">Choose **Manage My Add-ins** and select **Upload My Add-in**.</span></span>
+2. <span data-ttu-id="17a59-196">选择“管理我的加载项”\*\*\*\*，然后选择“上载我的加载项”\*\*\*\*。</span><span class="sxs-lookup"><span data-stu-id="17a59-196">Choose **Manage My Add-ins** and select **Upload My Add-in**.</span></span>
 
-3. <span data-ttu-id="a17ef-191">选择“浏览...”\*\*\*\*，并导航到 Yeoman 生成器创建的项目的根目录。</span><span class="sxs-lookup"><span data-stu-id="a17ef-191">Choose **Browse...** and navigate to the root directory of the project that the Yeoman generator created.</span></span>
+3. <span data-ttu-id="17a59-197">选择“浏览...”\*\*\*\*，并导航到 Yeoman 生成器创建的项目的根目录。</span><span class="sxs-lookup"><span data-stu-id="17a59-197">Choose **Browse...** and navigate to the root directory of the project that the Yeoman generator created.</span></span>
 
-4. <span data-ttu-id="a17ef-192">依次选择文件“manifest.xml”\*\*\*\*，“打开”\*\*\*\*，然后选择“上载”\*\*\*\*。</span><span class="sxs-lookup"><span data-stu-id="a17ef-192">Select the file **manifest.xml** and choose **Open**, then choose **Upload**.</span></span>
+4. <span data-ttu-id="17a59-198">依次选择文件“manifest.xml”\*\*\*\*，“打开”\*\*\*\*，然后选择“上载”\*\*\*\*。</span><span class="sxs-lookup"><span data-stu-id="17a59-198">Select the file **manifest.xml** and choose **Open**, then choose **Upload**.</span></span>
 
 --- 
 
 <ol start="4">
-<li><span data-ttu-id="a17ef-193">尝试使用新函数。</span><span class="sxs-lookup"><span data-stu-id="a17ef-193">Try out the new function.</span></span> <span data-ttu-id="a17ef-194">在单元格 <strong>C1</strong> 中，键入文本 <strong>=CONTOSO.STOCKPRICESTREAM("MSFT")</strong>，然后按 Enter。</span><span class="sxs-lookup"><span data-stu-id="a17ef-194">In cell <strong>C1</strong>, type the text <strong>=CONTOSO.STOCKPRICESTREAM("MSFT")</strong> and press enter.</span></span> <span data-ttu-id="a17ef-195">假设股票市场开盘，应该会看到单元格 <strong>C1</strong> 中的结果在不断更新，以反映 Microsoft 一股股票的实时价格。</span><span class="sxs-lookup"><span data-stu-id="a17ef-195">Provided that the stock market is open, you should see that the result in cell <strong>C1</strong> is constantly updated to reflect the real-time price for one share of Microsoft stock.</span></span></li>
+<li><span data-ttu-id="17a59-199">尝试使用新函数。</span><span class="sxs-lookup"><span data-stu-id="17a59-199">Try out the new function.</span></span> <span data-ttu-id="17a59-200">在单元格<strong>C1</strong>中, 键入文本<strong>= CONTOSO。CLOCK ())</strong> , 然后按 enter。</span><span class="sxs-lookup"><span data-stu-id="17a59-200">In cell <strong>C1</strong>, type the text <strong>=CONTOSO.CLOCK())</strong> and press enter.</span></span> <span data-ttu-id="17a59-201">您应看到当前日期, 该日期每秒处理一次更新。</span><span class="sxs-lookup"><span data-stu-id="17a59-201">You should see the current date, which streams an update every second.</span></span> <span data-ttu-id="17a59-202">虽然此时钟只是循环中的计时器, 但在对实时数据发出 web 请求的更复杂的函数上设置计时器时, 可以使用相同的想法。</span><span class="sxs-lookup"><span data-stu-id="17a59-202">While this clock is just a timer on a loop, you can use the same idea of setting a timer on more complex functions that make web requests for real-time data.</span></span></li>
 </ol>
 
-## <a name="next-steps"></a><span data-ttu-id="a17ef-196">后续步骤</span><span class="sxs-lookup"><span data-stu-id="a17ef-196">Next steps</span></span>
+## <a name="next-steps"></a><span data-ttu-id="17a59-203">后续步骤</span><span class="sxs-lookup"><span data-stu-id="17a59-203">Next steps</span></span>
 
-<span data-ttu-id="a17ef-197">恭喜！</span><span class="sxs-lookup"><span data-stu-id="a17ef-197">Congratulations!</span></span> <span data-ttu-id="a17ef-198">你已经创建新的自定义函数项目，尝试了预生成的函数，创建了从 Web 请求数据的自定义函数，并创建了从 Web 传送实时数据的自定义函数。</span><span class="sxs-lookup"><span data-stu-id="a17ef-198">You've created a new custom functions project, tried out a prebuilt function, created a custom function that requests data from the web, and created a custom function that streams real-time data from the web.</span></span> <span data-ttu-id="a17ef-199">您也可以尝试使用[自定义函数调试指令](../excel/custom-functions-debugging.md)来调试此函数。</span><span class="sxs-lookup"><span data-stu-id="a17ef-199">You can also try out debugging this function using [the custom function debugging instructions](../excel/custom-functions-debugging.md).</span></span> <span data-ttu-id="a17ef-200">若要详细了解 Excel 中的自定义函数，请继续阅读以下文章：</span><span class="sxs-lookup"><span data-stu-id="a17ef-200">To learn more about custom functions in Excel, continue to the following article:</span></span>
+<span data-ttu-id="17a59-204">恭喜！</span><span class="sxs-lookup"><span data-stu-id="17a59-204">Congratulations!</span></span> <span data-ttu-id="17a59-205">您已创建新的自定义函数项目, 并试用一个预建函数, 创建了一个从 web 请求数据的自定义函数, 并创建了一个流式处理数据的自定义函数。</span><span class="sxs-lookup"><span data-stu-id="17a59-205">You've created a new custom functions project, tried out a prebuilt function, created a custom function that requests data from the web, and created a custom function that streams data.</span></span> <span data-ttu-id="17a59-206">您也可以尝试使用[自定义函数调试指令](../excel/custom-functions-debugging.md)来调试此函数。</span><span class="sxs-lookup"><span data-stu-id="17a59-206">You can also try out debugging this function using [the custom function debugging instructions](../excel/custom-functions-debugging.md).</span></span> <span data-ttu-id="17a59-207">若要详细了解 Excel 中的自定义函数，请继续阅读以下文章：</span><span class="sxs-lookup"><span data-stu-id="17a59-207">To learn more about custom functions in Excel, continue to the following article:</span></span>
 
 > [!div class="nextstepaction"]
-> [<span data-ttu-id="a17ef-201">在 Excel 中创建自定义函数</span><span class="sxs-lookup"><span data-stu-id="a17ef-201">Create custom functions in Excel</span></span>](../excel/custom-functions-overview.md)
-
-### <a name="legal-information"></a><span data-ttu-id="a17ef-202">法律信息</span><span class="sxs-lookup"><span data-stu-id="a17ef-202">Legal information</span></span>
-
-<span data-ttu-id="a17ef-203">[IEX](https://iextrading.com/developer/) 免费提供的数据。</span><span class="sxs-lookup"><span data-stu-id="a17ef-203">Data provided free by [IEX](https://iextrading.com/developer/).</span></span> <span data-ttu-id="a17ef-204">查看 [IEX 使用条款](https://iextrading.com/api-exhibit-a/)。</span><span class="sxs-lookup"><span data-stu-id="a17ef-204">View [IEX's Terms of Use](https://iextrading.com/api-exhibit-a/).</span></span> <span data-ttu-id="a17ef-205">Microsoft 在本教程中使用的 IEX API 仅供教学使用。</span><span class="sxs-lookup"><span data-stu-id="a17ef-205">Microsoft's use of the IEX API in this tutorial is for educational purposes only.</span></span>
+> [<span data-ttu-id="17a59-208">在 Excel 中创建自定义函数</span><span class="sxs-lookup"><span data-stu-id="17a59-208">Create custom functions in Excel</span></span>](../excel/custom-functions-overview.md)

@@ -479,7 +479,7 @@
               href: testing/sideload-office-addin-using-sideload-command.md
             - name: 从任务窗格附加调试器
               href: testing/attach-debugger-from-task-pane.md
-            - name: 使用 F12 开发人员工具进行调试
+            - name: 使用开发人员工具进行调试
               href: testing/debug-add-ins-using-f12-developer-tools-on-windows-10.md
         - name: Web 浏览器
           items:
