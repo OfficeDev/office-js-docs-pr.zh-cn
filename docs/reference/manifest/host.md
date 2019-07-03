@@ -1,14 +1,14 @@
 ---
 title: 清单文件中的 Host 元素
 description: ''
-ms.date: 06/20/2019
+ms.date: 07/01/2019
 localization_priority: Normal
-ms.openlocfilehash: debb4d59f75ce974ffb21d853c6b65a579c4e685
-ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
+ms.openlocfilehash: e7b557034f70b03ed57598b7ffb9f43878db7392
+ms.sourcegitcommit: 90c2d8236c6b30d80ac2b13950028a208ef60973
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "35127567"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "35454893"
 ---
 # <a name="host-element"></a>Host 元素
 
@@ -28,7 +28,8 @@ ms.locfileid: "35127567"
 | [Name](#name) | string | 必需 | Office 主机应用程序的类型名称。 |
 
 ### <a name="name"></a>名称
-指定此外接程序面向的主机类型。值必须为以下值之一：
+
+指定此外接程序面向的主机类型。 值必须是下列值之一。
 
 - `Document` (Word)
 - `Database` (Access)
@@ -38,7 +39,11 @@ ms.locfileid: "35127567"
 - `Project` (Project)
 - `Workbook` (Excel)
 
+> [!IMPORTANT]
+> 我们不建议在 SharePoint 中创建和使用 Access Web 应用和数据库。 作为一种替代方法，我们建议你使用 [Microsoft PowerApps](https://powerapps.microsoft.com/) 生成适用于 Web 和移动设备的无代码业务解决方案。
+
 ### <a name="example"></a>示例
+
 ```xml
 <Hosts>
     <Host Name="Mailbox">
@@ -47,6 +52,7 @@ ms.locfileid: "35127567"
 ```
 
 ## <a name="versionoverrides-node"></a>VersionOverrides 节点
+
 在 [VersionOverrides](versionoverrides.md) 中定义时，主机类型由 `xsi:type` 属性决定。 
 
 ### <a name="attributes"></a>属性
@@ -74,6 +80,7 @@ ms.locfileid: "35127567"
 - `Workbook` (Excel)
 
 ## <a name="host-example"></a>主机示例 
+
 ```xml
 <Hosts>
     <Host xsi:type="MailHost">

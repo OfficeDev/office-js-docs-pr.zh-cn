@@ -4,12 +4,12 @@ description: 在 Excel 快速入门指南中开发自定义函数。
 title: 自定义功能快速入门
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: 8e7fbf247df04a12c38ad24d9ba6335a7f7bdaf8
-ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
+ms.openlocfilehash: b0f32f2239ff25ef22a9b72908d30734f25741d6
+ms.sourcegitcommit: 90c2d8236c6b30d80ac2b13950028a208ef60973
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "35128578"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "35454907"
 ---
 # <a name="get-started-developing-excel-custom-functions"></a>开始开发 Excel 自定义函数
 
@@ -37,16 +37,16 @@ ms.locfileid: "35128578"
 
     - **选择项目类型:** `Excel Custom Functions Add-in project`
     - **选择脚本类型:** `JavaScript`
-    - **要如何命名加载项?** `stock-ticker`
+    - **要如何命名加载项?** `starcount`
 
-    ![自定义函数的 Office 外接程序提示的 Yeoman 生成器](../images/UpdatedYoOfficePrompt.png)
+    ![自定义函数的 Office 外接程序提示的 Yeoman 生成器](../images/starcountPrompt.png)
 
     Yeoman 生成器将创建项目文件并安装支持的 Node 组件。
 
 2. Yeoman 生成器将为您提供有关如何处理项目的命令行中的一些说明, 但忽略它们并继续按照我们的说明操作。 导航到项目的根文件夹。
 
     ```command&nbsp;line
-    cd stock-ticker
+    cd starcount
     ```
 
 3. 生成项目。 

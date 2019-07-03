@@ -1,14 +1,14 @@
 ---
 title: Outlook 外接程序 API 要求集 1.3
 description: ''
-ms.date: 03/19/2019
+ms.date: 06/25/2019
 localization_priority: Normal
-ms.openlocfilehash: 276096870b128896e987bcb303b4cccdb77e0e50
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: 6e1c8fade7a95cdac4fbcf5b571f4b9be9092e95
+ms.sourcegitcommit: 90c2d8236c6b30d80ac2b13950028a208ef60973
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32450399"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "35454886"
 ---
 # <a name="outlook-add-in-api-requirement-set-13"></a>Outlook 外接程序 API 要求集 1.3
 
@@ -31,7 +31,6 @@ ms.locfileid: "32450399"
 
 - 添加了 [Body.getAsync](/javascript/api/outlook_1_3/office.body#getasync-coerciontype--options--callback-)：使用指定格式返回当前正文。
 - 添加了 [Body.setAsync](/javascript/api/outlook_1_3/office.body#setasync-data--options--callback-)：将整个正文替换为指定文本。
-- 添加了 [Office.context.officeTheme](office.context.md#officetheme-object)：提供了对 Office 主题颜色的访问权限。
 - 添加了 [Event](/javascript/api/office/office.addincommands.event) 对象：作为参数传递到 Outlook 外接程序中的无用户界面命令函数。用来表示处理已完成。
 - 添加了 [Office.context.mailbox.item.close](office.context.mailbox.item.md#close)：关闭正在撰写的当前项。
 - 添加了 [Office.context.mailbox.item.saveAsync](office.context.mailbox.item.md#saveasyncoptions-callback)：异步保存项目。

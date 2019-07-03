@@ -1,14 +1,14 @@
 ---
 title: Office。上下文要求集1。7
 description: ''
-ms.date: 06/20/2019
+ms.date: 06/25/2019
 localization_priority: Normal
-ms.openlocfilehash: ff816b3bb51ebb5dc8ef124af8488405fdc3fd39
-ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
+ms.openlocfilehash: 8f21389d40181db0f62a8e13a882aaf4cb9b5072
+ms.sourcegitcommit: 90c2d8236c6b30d80ac2b13950028a208ef60973
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "35127133"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "35454858"
 ---
 # <a name="context"></a>context
 
@@ -28,7 +28,6 @@ Office.context 命名空间提供所有 Office 应用中的加载项所使用的
 | 成员 | 类型 |
 |--------|------|
 | [displayLanguage](#displaylanguage-string) | Member |
-| [officeTheme](#officetheme-object) | Member |
 | [roamingSettings](#roamingsettings-roamingsettings) | 成员 |
 
 ### <a name="namespaces"></a>命名空间
@@ -72,53 +71,6 @@ function sayHelloWithDisplayLanguage() {
 // Function that writes to a div with id='message' on the page.
 function write(message){
   document.getElementById('message').innerText += message;
-}
-```
-
----
----
-
-#### <a name="officetheme-object"></a>officeTheme: Object
-
-提供了访问 Office 主题颜色的属性。
-
-> [!NOTE]
-> IOS 或 Android 上的 Outlook 不支持此成员。
-
-通过使用 Office 主题颜色，你可以使外接程序的配色方案与用户（通过 **“文件”>“Office 帐户”>“Office 主题”UI**）选择的当前 Office 主题协调一致，这种做法适用于所有 Office 主机应用程序。使用 Office 主题颜色适用于邮件和任务窗格外接程序。
-
-##### <a name="type"></a>类型
-
-*   对象
-
-##### <a name="properties"></a>属性：
-
-|名称| 类型| 说明|
-|---|---|---|
-|`bodyBackgroundColor`| String|获取十六进制三原色形式的 Office 主题正文背景色。|
-|`bodyForegroundColor`| String|获取十六进制三原色形式的 Office 主题正文前景色。|
-|`controlBackgroundColor`| String|获取十六进制三原色形式的 Office 主题控制背景色。|
-|`controlForegroundColor`| 字符串|获取十六进制三原色形式的 Office 主题正文控制颜色。|
-
-##### <a name="requirements"></a>要求
-
-|要求| 值|
-|---|---|
-|[最低版本的邮箱要求集](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.3|
-|[适用的 Outlook 模式](/outlook/add-ins/#extension-points)| 撰写或阅读|
-
-##### <a name="example"></a>示例
-
-```javascript
-function applyOfficeTheme(){
-  // Get office theme colors.
-  var bodyBackgroundColor = Office.context.officeTheme.bodyBackgroundColor;
-  var bodyForegroundColor = Office.context.officeTheme.bodyForegroundColor;
-  var controlBackgroundColor = Office.context.officeTheme.controlBackgroundColor
-  var controlForegroundColor = Office.context.officeTheme.controlForegroundColor;
-
-  // Apply body background color to a CSS class.
-  $('.body').css('background-color', bodyBackgroundColor);
 }
 ```
 

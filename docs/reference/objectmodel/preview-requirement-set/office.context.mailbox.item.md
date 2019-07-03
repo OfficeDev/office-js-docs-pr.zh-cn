@@ -1,14 +1,14 @@
 ---
 title: "\"Context.subname\"-\"邮箱\"-预览要求集"
 description: ''
-ms.date: 06/20/2019
+ms.date: 06/25/2019
 localization_priority: Normal
-ms.openlocfilehash: 9e3a969540d84891eba49b98c34b69396ee702a8
-ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
+ms.openlocfilehash: 537ac59649b149d9bb54b09f8e16704adb813f58
+ms.sourcegitcommit: 90c2d8236c6b30d80ac2b13950028a208ef60973
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "35128494"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "35454900"
 ---
 # <a name="item"></a>item
 
@@ -530,7 +530,7 @@ function callback(asyncResult) {
 
 #### <a name="internetheaders-internetheadersjavascriptapioutlookofficeinternetheaders"></a>internetHeaders: [internetHeaders](/javascript/api/outlook/office.internetheaders)
 
-获取或设置邮件的 internet 邮件头。
+获取或设置邮件的自定义 internet 邮件头。
 
 ##### <a name="type"></a>类型
 

@@ -1,14 +1,14 @@
 ---
 title: Office. context-预览要求集
 description: ''
-ms.date: 06/20/2019
+ms.date: 06/25/2019
 localization_priority: Normal
-ms.openlocfilehash: 7e5d25c4788ec9f35a97f3bd3da6cca6a7314fb4
-ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
+ms.openlocfilehash: 998e752cf2292eec4e05901325a0192e158c0b7f
+ms.sourcegitcommit: 90c2d8236c6b30d80ac2b13950028a208ef60973
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "35127483"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "35454830"
 ---
 # <a name="context"></a>context
 
@@ -83,9 +83,9 @@ function write(message){
 提供了访问 Office 主题颜色的属性。
 
 > [!NOTE]
-> IOS 或 Android 上的 Outlook 不支持此成员。
+> 此成员仅在 Windows 中的 Outlook 中受支持。
 
-通过使用 Office 主题颜色，你可以使外接程序的配色方案与用户（通过 **“文件”>“Office 帐户”>“Office 主题”UI**）选择的当前 Office 主题协调一致，这种做法适用于所有 Office 主机应用程序。使用 Office 主题颜色适用于邮件和任务窗格外接程序。
+使用 Office 主题颜色, 您可以将加载项的配色方案与用户选择的当前 Office 主题进行协调, 以供用户使用**office > Office 帐户 > Office 主题 UI**, 该用户在所有 Office 主机应用程序中应用。 使用 Office 主题颜色适用于邮件和任务窗格外接程序。
 
 ##### <a name="type"></a>类型
 
@@ -104,7 +104,7 @@ function write(message){
 
 |要求| 值|
 |---|---|
-|[最低版本的邮箱要求集](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.3|
+|[最低版本的邮箱要求集](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 预览|
 |[适用的 Outlook 模式](/outlook/add-ins/#extension-points)| 撰写或阅读|
 
 ##### <a name="example"></a>示例

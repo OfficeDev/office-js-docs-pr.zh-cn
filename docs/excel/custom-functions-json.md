@@ -3,12 +3,12 @@ ms.date: 06/20/2019
 description: 在 Excel 中定义自定义函数的元数据。
 title: Excel 中自定义函数的元数据
 localization_priority: Normal
-ms.openlocfilehash: f97a339972a8ac134bd30c87b86c4701cb4b5fc4
-ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
+ms.openlocfilehash: a9fbefb7ea1c5474d26b668d3a4f64ed68ae36f7
+ms.sourcegitcommit: 90c2d8236c6b30d80ac2b13950028a208ef60973
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "35127868"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "35454634"
 ---
 # <a name="custom-functions-metadata"></a>自定义函数元数据
 
@@ -136,7 +136,7 @@ ms.locfileid: "35127868"
 |  属性  |  数据类型  |  必需  |  说明  |
 |:-----|:-----|:-----|:-----|
 |  `cancelable`  |  boolean  |  否<br/><br/>默认值为 `false`。  |  如果为 `true`，则每次用户执行具有取消函数效果的操作时，Excel 都会调用 `CancelableInvocation` 处理程序；例如，手动触发重新计算或编辑函数引用的单元格。 可取消函数通常仅用于返回单个结果的异步函数, 并需要处理对数据请求的取消操作。 函数不能同时为流式处理和可取消。 有关详细信息, 请参阅[Make a 流式处理函数](custom-functions-web-reqs.md#make-a-streaming-function)结尾附近的注释。 |
-|  `requiresAddress`  | boolean | 否 <br/><br/>默认值为 `false`。 | <br /><br /> 如果为 true, 则自定义函数可以访问调用自定义函数的单元格的地址。 若要获取调用自定义函数的单元格的地址, 请在自定义函数中使用 context。 有关详细信息，请参阅[确定调用自定义函数的单元格](/office/dev/add-ins/excel/custom-functions-overview#determine-which-cell-invoked-your-custom-function)。 不能将自定义函数同时设置为流式处理和 requiresAddress。 使用此选项时, "调用" 参数必须是在 options 中传递的最后一个参数。 |
+|  `requiresAddress`  | boolean | 否 <br/><br/>默认值为 `false`。 | 如果`true`为, 则自定义函数可以访问调用自定义函数的单元格的地址。 若要获取调用自定义函数的单元格的地址, 请在自定义函数中使用 context。 有关详细信息, 请参阅[寻址单元格的上下文参数](/office/dev/add-ins/excel/custom-functions-parameter-options#addressing-cells-context-parameter)。 不能将自定义函数同时设置为流式处理和 requiresAddress。 使用此选项时, "调用" 参数必须是在 options 中传递的最后一个参数。 |
 |  `stream`  |  boolean  |  否<br/><br/>默认值为 `false`。  |  如果为 `true`，即使只调用一次，该函数也可能会重复输出到单元格。 此选项对于快速变化的数据源（如股票价格）非常有用。 函数不应存在 `return` 语句。 相反，结果值将作为 `StreamingInvocation.setResult` 回调方法的参数传递。 有关详细信息，请参阅[流式处理函数](custom-functions-web-reqs.md#make-a-streaming-function)。 |
 |  `volatile`  | boolean | 否 <br/><br/>默认值为 `false`。 | <br /><br /> 如果为 `true`，则该函数会在每次 Excel 重新计算时（而不是仅当公式的从属值发生更改时）进行重新计算。 函数不能同时为流式处理和可变。 如果 `stream` 和 `volatile` 属性同时设置为 `true`，则将忽略可变选项。 |
 

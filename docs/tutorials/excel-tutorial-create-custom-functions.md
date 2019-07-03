@@ -1,16 +1,16 @@
 ---
 title: Excel 自定义函数教程
 description: 在本教程中，你将创建一个 Excel 外接程序，其中包含可执行计算、请求 Web 数据或流 Web 数据的自定义函数。
-ms.date: 06/20/2019
+ms.date: 06/27/2019
 ms.prod: excel
 ms.topic: tutorial
 localization_priority: Normal
-ms.openlocfilehash: 3ae7896c082e7a1a45fb153dc69772f206a433de
-ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
+ms.openlocfilehash: 1aa05581d1b0dfb1f5affa019e51b84126c8d199
+ms.sourcegitcommit: 90c2d8236c6b30d80ac2b13950028a208ef60973
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "35126979"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "35454722"
 ---
 # <a name="tutorial-create-custom-functions-in-excel"></a>教程：在 Excel 中创建自定义函数
 
@@ -41,16 +41,16 @@ ms.locfileid: "35126979"
     
     * **选择项目类型:** `Excel Custom Functions Add-in project`
     * **选择脚本类型:** `JavaScript`
-    * **要如何命名加载项?** `stock-ticker`
+    * **要如何命名加载项?** `starcount`
 
-    ![自定义函数的 Office 外接程序提示的 Yeoman 生成器](../images/UpdatedYoOfficePrompt.png)
+    ![自定义函数的 Office 外接程序提示的 Yeoman 生成器](../images/starcountPrompt.png)
     
     Yeoman 生成器将创建项目文件并安装支持的 Node 组件。
 
 2. 导航到项目的根文件夹。
     
     ```command&nbsp;line
-    cd stock-ticker
+    cd starcount
     ```
 
 3. 生成项目。
@@ -108,40 +108,40 @@ npm run start:web
 
 ## <a name="create-a-custom-function-that-requests-data-from-the-web"></a>创建从 Web 请求数据的自定义函数
 
-集成来自 Web 的数据是通过自定义函数来扩展 Excel 的好方法。 接下来，你将创建一个名为 `stockPrice` 的自定义函数，该函数从 Web API 获取股票报价并将结果返回到工作表的单元格。 
+集成来自 Web 的数据是通过自定义函数来扩展 Excel 的好方法。 接下来, 将创建一个名为`getStarCount`的自定义函数, 该函数显示给定 Github 存储库拥有的星星数。
 
-> [!NOTE]
-> 下面的代码使用 IEX 贸易 API 请求股票报价。 在运行代码之前, 您需要[使用 IEX 云创建一个免费帐户](https://iexcloud.io/), 以便您可以在 api 请求中获取所需的 api 令牌。  
+1. 在**starcount**项目中, 找到 **/src/functions/functions.js**并在代码编辑器中打开该文件。 
 
-1. 在**股票报价**项目中, 找到 **/src/functions/functions.js**并在代码编辑器中打开该文件。
+2. 在**函数 .js**中, 添加以下代码: 
 
-2. 在**函数 .js**中, 找到`increment`函数并在该函数后面添加以下代码。
+```JS
+ /**
+   * Gets the star count for a given Github repository.
+   * @customfunction 
+   * @param {string} userName string name of Github user or organization.
+   * @param {string} repoName string name of the Github repository.
+   * @return {number} number of stars given to a Github repository.
+   */
+    async function getStarCount(userName, repoName) {
+      try {
+        //You can change this URL to any web request you want to work with.
+        const url = "https://api.github.com/repos/" + userName + "/" + repoName;
+        const response = await fetch(url);
+        //Expect that status code is in 200-299 range
+        if (!response.ok) {
+          throw new Error(response.statusText)
+        }
+          const jsonResponse = await response.json();
+          return jsonResponse.watchers_count;
+      }
+      catch (error) {
+        return error;
+      }
+      }
+    CustomFunctions.associate("GETSTARCOUNT", getStarCount);
+```
 
-    ```js
-    /**
-    * Fetches current stock price
-    * @customfunction 
-    * @param {string} ticker Stock symbol
-    * @returns {number} The current stock price.
-    */
-    function stockPrice(ticker) {
-        //Note: In the following line, replace <YOUR_TOKEN_HERE> with the API token that you've obtained through your IEX Cloud account.
-        var url = "https://cloud.iexapis.com/stable/stock/" + ticker + "/quote/latestPrice?token=<YOUR_TOKEN_HERE>"
-        return fetch(url)
-            .then(function(response) {
-                return response.text();
-            })
-            .then(function(text) {
-                return parseFloat(text);
-            });
-
-        // Note: in case of an error, the returned rejected Promise
-        //    will be bubbled up to Excel to indicate an error.
-    }
-    CustomFunctions.associate("STOCKPRICE", stockPrice);
-    ```
-
-    `CustomFunctions.associate` 代码会将函数的 `id` 与 JavaScript 中的 `stockPrice` 的函数地址相关联，以便 Excel 能够调用你的函数。
+`CustomFunctions.associate` 代码会将函数的 `id` 与 JavaScript 中的 `getStarCount` 的函数地址相关联，以便 Excel 能够调用你的函数。
 
 3. 运行以下命令以重建项目。
 
@@ -151,14 +151,15 @@ npm run start:web
 
 4. 完成以下步骤 (对于 web 上的 Excel 或 Windows), 以便在 Excel 中重新注册加载项。 您必须完成这些步骤, 新函数才可用。
 
-# <a name="excel-on-windowstabexcel-windows"></a>[Windows 上的 Excel](#tab/excel-windows)
+### <a name="excel-on-windowstabexcel-windows"></a>[Windows 上的 Excel](#tab/excel-windows)
 
 1. 关闭 Excel，然后重新打开 Excel。
 
 2. 在 Excel 中, 选择 "**插入**" 选项卡, 然后选择位于 **"我的外接程序**" 右侧的向下箭头。 ![在 Excel 中的 "我的外接程序" 箭头突出显示 Windows 中插入功能区](../images/select-insert.png)
 
-3. 在可用加载项列表中，找到“**开发人员加载项**”部分并选择 **stock-ticker** 加载项进行注册。
-    ![在 Windows Excel 中插入带有 "我的外接程序" 列表中突出显示 Excel 自定义函数外接程序的功能区](../images/list-stock-ticker-red.png)
+3. 在可用加载项列表中, 找到 "**开发人员外**接程序" 部分, 然后选择 " **starcount** " 外接程序进行注册。
+    ![在 Windows Excel 中插入带有 "我的外接程序" 列表中突出显示 Excel 自定义函数外接程序的功能区](../images/list-starcount.png)
+
 
 # <a name="excel-on-the-webtabexcel-online"></a>[在 web 上的 Excel](#tab/excel-online)
 
@@ -173,60 +174,48 @@ npm run start:web
 ---
 
 <ol start="5">
-<li> 尝试使用新函数。 在单元格 <strong>B1</strong> 中，键入文本 <strong>=CONTOSO.STOCKPRICE("MSFT")</strong>，然后按 Enter。 应看到单元格 <strong>B1</strong> 中的结果是 Microsoft 一股股票的当前股票价格。</li>
+<li> 尝试使用新函数。 在单元格<strong>B1</strong>中, 键入文本<strong>= CONTOSO。GETSTARCOUNT ("OfficeDev", "Excel-自定义函数")</strong> , 然后按 enter。 您应该会看到单元格<strong>B1</strong>中的结果是为[Excel 自定义函数 Github 存储库](https://github.com/OfficeDev/Excel-Custom-Functions)提供的当前星数。</li>
 </ol>
 
 ## <a name="create-a-streaming-asynchronous-custom-function"></a>创建流式处理异步自定义函数
 
-`stockPrice` 函数将返回特定时刻的股票价格，但股票价格一直在变化。 接下来，将创建一个名为 `stockPriceStream` 的自定义函数，该函数每隔 1000 毫秒获取一次股票价格。
+`getStarCount`函数返回存储库在特定时间点的星数。 自定义函数还可以返回不断变化的数据。 这些函数称为流式处理函数。 它们必须包含一个`invocation`参数, 该参数引用函数的调用位置的单元格。 此`invocation`参数用于在任何时间更新单元格的内容。  
 
-1. 在**股票报价**项目中, 将以下代码添加到 **./src/functions/functions.js**并保存文件。
+在下面的代码示例中, 您会注意到有两个函数`currentTime`和`clock`。 `currentTime`函数是不使用流式处理的静态函数。 它以字符串的形式返回日期。 `clock`函数使用`currentTime`函数在 Excel 中每秒向单元格提供新时间。 它使用`invocation.setResult`将时间传递到 Excel 单元格, 并`invocation.onCanceled`处理取消该函数时发生的情况。
 
-    ```js
-    /**
-    * Streams real time stock price
-    * @customfunction 
-    * @param {string} ticker Stock symbol
-    * @param {CustomFunctions.StreamingInvocation<number>} invocation
-    */
-    function stockPriceStream(ticker, invocation) {
-        var updateFrequency = 1000 /* milliseconds*/;
-        var isPending = false;
+1. 在 " **starcount** " 项目中, 将以下代码添加到 **./src/functions/functions.js**并保存文件。
 
-        var timer = setInterval(function() {
-            // If there is already a pending request, skip this iteration:
-            if (isPending) {
-                return;
-            }
+```JS
+/**
+ * Returns the current time
+ * @returns {string} String with the current time formatted for the current locale.
+ */
+function currentTime() {
+  return new Date().toLocaleTimeString();
+}
 
-            //Note: In the following line, replace <YOUR_TOKEN_HERE> with the API token that you've obtained through your IEX Cloud account.
-            var url = "https://cloud.iexapis.com/stable/stock/" + ticker + "/quote/latestPrice?token=<YOUR_TOKEN_HERE>"
-            isPending = true;
+CustomFunctions.associate("CURRENTTIME", currentTime); 
 
-            fetch(url)
-                .then(function(response) {
-                    return response.text();
-                })
-                .then(function(text) {
-                    invocation.setResult(parseFloat(text));
-                })
-                .catch(function(error) {
-                    invocation.setResult(error);
-                })
-                .then(function() {
-                    isPending = false;
-                });
-        }, updateFrequency);
+ /**
+ * Displays the current time once a second
+ * @customfunction
+ * @param {CustomFunctions.StreamingInvocation<string>} invocation Custom function invocation
+ */
+function clock(invocation) {
+  const timer = setInterval(() => {
+    const time = currentTime();
+    invocation.setResult(time);
+  }, 1000);
 
-        invocation.onCanceled = () => {
-            clearInterval(timer);
-        };
-    }
-    CustomFunctions.associate("STOCKPRICESTREAM", stockPriceStream);
-    ```
-    
-    `CustomFunctions.associate` 代码会将函数的 `id` 与 JavaScript 中的 `stockPriceStream` 的函数地址相关联，以便 Excel 能够调用你的函数。
-    
+  invocation.onCanceled = () => {
+    clearInterval(timer);
+  };
+}
+CustomFunctions.associate("CLOCK", clock);
+```
+
+`CustomFunctions.associate` 代码会将函数的 `id` 与 JavaScript 中的 `CLOCK` 的函数地址相关联，以便 Excel 能够调用你的函数。
+
 2. 运行以下命令以重建项目。
 
     ```command&nbsp;line
@@ -241,8 +230,8 @@ npm run start:web
 
 2. 在 Excel 中, 选择 "**插入**" 选项卡, 然后选择位于 **"我的外接程序**" 右侧的向下箭头。 ![在 Excel 中的 "我的外接程序" 箭头突出显示 Windows 中插入功能区](../images/select-insert.png)
 
-3. 在可用加载项列表中，找到“**开发人员加载项**”部分并选择 **stock-ticker** 加载项进行注册。
-    ![在 Windows Excel 中插入带有 "我的外接程序" 列表中突出显示 Excel 自定义函数外接程序的功能区](../images/list-stock-ticker-red.png)
+3. 在可用加载项列表中, 找到 "**开发人员外**接程序" 部分, 然后选择 " **starcount** " 外接程序进行注册。
+    ![在 Windows Excel 中插入带有 "我的外接程序" 列表中突出显示 Excel 自定义函数外接程序的功能区](../images/list-starcount.png)
 
 # <a name="excel-on-the-webtabexcel-online"></a>[在 web 上的 Excel](#tab/excel-online)
 
@@ -257,16 +246,12 @@ npm run start:web
 --- 
 
 <ol start="4">
-<li>尝试使用新函数。 在单元格 <strong>C1</strong> 中，键入文本 <strong>=CONTOSO.STOCKPRICESTREAM("MSFT")</strong>，然后按 Enter。 假设股票市场开盘，应该会看到单元格 <strong>C1</strong> 中的结果在不断更新，以反映 Microsoft 一股股票的实时价格。</li>
+<li>尝试使用新函数。 在单元格<strong>C1</strong>中, 键入文本<strong>= CONTOSO。CLOCK ())</strong> , 然后按 enter。 您应看到当前日期, 该日期每秒处理一次更新。 虽然此时钟只是循环中的计时器, 但在对实时数据发出 web 请求的更复杂的函数上设置计时器时, 可以使用相同的想法。</li>
 </ol>
 
 ## <a name="next-steps"></a>后续步骤
 
-恭喜！ 你已经创建新的自定义函数项目，尝试了预生成的函数，创建了从 Web 请求数据的自定义函数，并创建了从 Web 传送实时数据的自定义函数。 您也可以尝试使用[自定义函数调试指令](../excel/custom-functions-debugging.md)来调试此函数。 若要详细了解 Excel 中的自定义函数，请继续阅读以下文章：
+恭喜！ 您已创建新的自定义函数项目, 并试用一个预建函数, 创建了一个从 web 请求数据的自定义函数, 并创建了一个流式处理数据的自定义函数。 您也可以尝试使用[自定义函数调试指令](../excel/custom-functions-debugging.md)来调试此函数。 若要详细了解 Excel 中的自定义函数，请继续阅读以下文章：
 
 > [!div class="nextstepaction"]
 > [在 Excel 中创建自定义函数](../excel/custom-functions-overview.md)
-
-### <a name="legal-information"></a>法律信息
-
-[IEX](https://iextrading.com/developer/) 免费提供的数据。 查看 [IEX 使用条款](https://iextrading.com/api-exhibit-a/)。 Microsoft 在本教程中使用的 IEX API 仅供教学使用。
