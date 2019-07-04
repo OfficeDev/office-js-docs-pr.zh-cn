@@ -1,14 +1,14 @@
 ---
 title: Outlook 外接程序 API 预览要求集
 description: ''
-ms.date: 06/20/2019
+ms.date: 06/25/2019
 localization_priority: Priority
-ms.openlocfilehash: b46fada2fa69f3526c929a0289341f7dab5b58b8
-ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
+ms.openlocfilehash: b59b4523bf0cc45a69a5c86e1670a0b224ad029c
+ms.sourcegitcommit: 90c2d8236c6b30d80ac2b13950028a208ef60973
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "35128473"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "35454851"
 ---
 # <a name="outlook-add-in-api-preview-requirement-set"></a>Outlook 外接程序 API 预览要求集
 
@@ -212,13 +212,13 @@ ms.locfileid: "35128473"
 
 #### <a name="internetheadersjavascriptapioutlookofficeinternetheaders"></a>[InternetHeaders](/javascript/api/outlook/office.internetheaders)
 
-新增了一个对象，显示邮件项目的 Internet 标头。
+添加了一个表示邮件项目的自定义 Internet 标头的新对象。
 
 **适用于**：Windows 版 Outlook（已连接到 Office 365 订阅）
 
 #### <a name="officecontextmailboxiteminternetheadersofficecontextmailboxitemmdinternetheaders-internetheaders"></a>[Office.context.mailbox.item.internetHeaders](office.context.mailbox.item.md#internetheaders-internetheaders)
 
-新增了一个属性，显示邮件项目的 Internet 标头。
+添加了一个表示邮件项目的自定义 Internet 标头的新属性。
 
 **适用于**：Windows 版 Outlook（已连接到 Office 365 订阅）
 
@@ -226,7 +226,7 @@ ms.locfileid: "35128473"
 
 ### <a name="office-theme"></a>Office 主题
 
-#### <a name="officecontextmailboxofficethemejavascriptapiofficeofficeofficetheme"></a>[Office.context.mailbox.officeTheme](/javascript/api/office/office.officetheme)
+#### <a name="officecontextofficethemejavascriptapiofficeofficecontextofficetheme"></a>[Office.context.officeTheme](/javascript/api/office/office.context#officetheme)
 
 增加了获取 Office 主题的功能。
 

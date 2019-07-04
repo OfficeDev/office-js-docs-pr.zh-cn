@@ -1,14 +1,14 @@
 ---
 title: 指定 Office 主机和 API 要求
 description: ''
-ms.date: 06/20/2019
+ms.date: 07/01/2019
 localization_priority: Priority
-ms.openlocfilehash: b08ef0a304190540ffc82acc4d5d08fc6783014e
-ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
+ms.openlocfilehash: 4355f86b6173e84c80bbd0791f571e034c8ae12d
+ms.sourcegitcommit: 90c2d8236c6b30d80ac2b13950028a208ef60973
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "35128036"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "35454620"
 ---
 # <a name="specify-office-hosts-and-api-requirements"></a>指定 Office 主机和 API 要求
 
@@ -32,7 +32,7 @@ ms.locfileid: "35128036"
 |Office 应用程序、Office 主机应用程序、Office 主机或主机|用于运行加载项的 Office 应用程序。例如 Word、Excel 等。|
 |平台|运行 Office 主机的位置，例如在浏览器或 iPad 中。|
 |要求集|命名的一组相关的 API 成员。外接程序使用要求集来确定 Office 主机是否支持你的外接程序使用的 API 成员。测试对要求集的支持比对单个的 API 成员的支持更为容易。要求集支持根据 Office 主机和 Office 主机的版本变化。 <br >要求集在清单文件中指定。 当你在清单中指定要求集时，你可以设置 Office 主机必须提供的用于运行你的外接程序的最低级别的 API 支持。 不支持在清单中指定的要求集的 Office 主机不能运行加载项，并且加载项不会显示在“<span class="ui">我的加载项</span>”中。这限制了加载项的使用位置。 在使用运行时检查的代码中。 有关要求集的完整列表，请参阅 [Office 加载项要求集](/office/dev/add-ins/reference/requirement-sets/office-add-in-requirement-sets)。|
-|运行时检查|在运行时执行的一种测试，用以确定运行外接程序的 Office 主机是否支持要求集或外接程序使用的方法。若要执行运行时检查，请使用包含 **isSetSupported** 方法、要求集或不属于要求集的方法名称的 **if** 语句。使用运行时检查以确保达到的客户数目最大。与要求集不同，运行时检查不指定 Office 主机必须提供的用于运行外接程序的最低级别的 API 支持。相反，使用 **if** 语句来确定是否支持某个 API 成员。如果支持，则可以在外接程序中提供其他功能。使用运行时检查时，外接程序将始终在“**我的外接程序**”中显示。|
+|运行时检查|在运行时执行的一种测试，用以确定运行加载项的 Office 主机是否支持要求集或加载项使用的方法。 若要执行运行时检查，你可以使用 **if** 语句，以及 **isSetSupported** 方法、要求集或不是要求集一部分的方法名称。 使用运行时检查可确保加载项能够覆盖最大数量的客户。 与要求集不同，运行时检查不指定 Office 主机必须提供的用于运行加载项的最低级别的 API 支持。 相反，使用 **if** 来确定是否支持某个 API 成员。 如果支持，则可以在外接程序中提供其他功能。 使用运行时检查时，你的外接程序将始终在“**我的外接程序**”中显示。|
 
 ## <a name="before-you-begin"></a>开始之前
 
@@ -83,14 +83,17 @@ ms.locfileid: "35128036"
 | 名称          | Office 主机应用程序                                                                  |
 |:--------------|:------------------------------------------------------------------------------------------|
 | 数据库      | Access Web App                                                                           |
-| Document      | Windows 版 Word、Mac 版 Word、iPad 版 Word 和 Word 网页版                           |
+| 文档      | Windows 版 Word、Mac 版 Word、iPad 版 Word、Word 网页版                               |
 | 邮箱       | Windows 版 Outlook、Mac 版 Outlook、Outlook 网页版、Android 版 Outlook 和 iOS 版 Outlook|
-| 演示文稿  | Windows 版 PowerPoint、Mac 版 PowerPoint、iPad 版 PowerPoint 和 PowerPoint 网页版   |
-| Project       | Windows 版 Project                                                                        |
-| 工作簿      | Windows 版 Excel、Mac 版 Excel、iPad 版 Excel 和 Excel 网页版                       |
+| 演示文稿  | Windows 版 PowerPoint、Mac 版 PowerPoint、iPad 版 PowerPoint、PowerPoint 网页版       |
+| 项目       | Windows 版 Project                                                                        |
+| 工作簿      | Windows 版 Excel、Mac 版 Excel、iPad 版 Excel、Excel 网页版                           |
 
 > [!NOTE]
 > `Name` 属性指定可以运行你的外接程序的 Office 主机应用程序。 Office 主机支持不同的平台，且可在台式机、Web 浏览器、平板电脑和移动设备上运行。 不能指定用于运行外接程序的平台。 例如，如果你指定 `Mailbox`，则 Windows 版 Outlook 和 Outlook 网页版都可以用来运行你的加载项。
+
+> [!IMPORTANT]
+> 我们不建议在 SharePoint 中创建和使用 Access Web 应用和数据库。 作为一种替代方法，我们建议你使用 [Microsoft PowerApps](https://powerapps.microsoft.com/) 生成适用于 Web 和移动设备的无代码业务解决方案。
 
 
 ## <a name="set-the-requirements-element-in-the-manifest"></a>在清单中设置 Requirements 元素

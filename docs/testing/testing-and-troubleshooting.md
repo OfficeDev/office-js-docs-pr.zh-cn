@@ -3,12 +3,12 @@ title: 排查 Office 加载项中的用户错误
 description: ''
 ms.date: 06/20/2019
 localization_priority: Priority
-ms.openlocfilehash: 3222e8b7bc46608996c73284e2ee9b7c26c7afbe
-ms.sourcegitcommit: 6d1cb188c76c09d320025abfcc99db1b16b7e37b
+ms.openlocfilehash: 425788d86bb36009c963f8ef625e959d239f315e
+ms.sourcegitcommit: 90c2d8236c6b30d80ac2b13950028a208ef60973
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "35226781"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "35454872"
 ---
 # <a name="troubleshoot-user-errors-with-office-add-ins"></a>排查 Office 加载项中的用户错误
 
@@ -29,6 +29,14 @@ ms.locfileid: "35226781"
 |错误：对象不 支持此属性或方法 "defineProperty"|确认 Internet Explorer 不是在兼容模式下运行。转到“工具”>“**兼容性视图设置**”。|
 |很抱歉，我们无法加载 该应用程序，因为您的浏览器 版本不受支持。 单击此处查看 支持的浏览器版本的列表。|确保浏览器支持 HTML5 本地存储，或重置您的 Internet Explorer 设置。有关受支持的浏览器的信息，请参阅 [运行 Office 加载项的要求](../concepts/requirements-for-running-office-add-ins.md)。|
 
+## <a name="when-installing-an-add-in-you-see-error-loading-add-in-in-the-status-bar"></a>安装加载项时，状态栏中会显示“加载加载项时出错”
+
+1. 关闭 Office。
+2. 验证清单是否有效
+3. 重启加载项
+4. 再次安装加载项。
+
+你还可以向我们提供反馈：如果使用 Windows 版 Excel 或 Mac 版 Excel，可以直接从 Excel 向 Office 扩展性团队报告反馈。 若要执行此操作，请选择“**文件**” | “**反馈**” | “**发送哭脸**”。 发送哭脸将提供必要的日志，以帮助我们了解该问题。
 
 ## <a name="outlook-add-in-doesnt-work-correctly"></a>Outlook 外接程序不能正常工作
 

@@ -1,14 +1,14 @@
 ---
 title: Office 加载项开发生命周期
 description: ''
-ms.date: 03/19/2019
+ms.date: 07/01/2019
 localization_priority: Priority
-ms.openlocfilehash: ec38bb3cfba98153d644431f5e6f23c1d37b0a06
-ms.sourcegitcommit: 3f84b2caa73d7fe1eb0d15e32ea4dec459e2ff53
+ms.openlocfilehash: 44e2792f030662bd89b272998ad47fd0a645d785
+ms.sourcegitcommit: 90c2d8236c6b30d80ac2b13950028a208ef60973
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/12/2019
-ms.locfileid: "34910161"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "35454571"
 ---
 # <a name="office-add-ins-development-lifecycle"></a>Office 加载项开发生命周期
 
@@ -33,7 +33,7 @@ Office 加载项的典型开发生命周期包括下列步骤：
 
 ## <a name="2-identify-the-data-and-data-source-for-the-add-in"></a>2. 确定加载项的数据和数据源
 
-- 是文档、工作簿、演示文稿、项目中的数据，还是基于 Access 浏览器的数据库中的数据？
+- 数据是在文档、工作簿、演示文稿还是项目中？
 
 - 数据是否关于 Exchange Server 或 Exchange Online 邮箱中的一个或多个项？
 
@@ -44,11 +44,11 @@ Office 加载项的典型开发生命周期包括下列步骤：
 
 为确定方案，请考虑以下几点：
 
-- 客户是否要使用加载项来丰富文档或基于 Access 浏览器的数据库的内容？如果是，建议考虑创建**内容加载项**。
+- 客户是否要使用加载项来丰富文档的内容？如果是，建议考虑创建**内容加载项**。
 
 - 客户是否要在查看或撰写电子邮件或约会时使用该外接程序？能够根据当前上下文公开外接程序是否很重要？是否优先考虑使外接程序不仅在台式机上可用，而且在平板电脑或智能手机上也可用？
 
-    如果上述任一问题的答案是肯定的，请考虑创建 **Outlook 加载项**。然后，确定加载项的触发上下文（例如，撰写表单中的用户、特定消息类型、是否有附件、地址、任务建议、会议建议，或电子邮件或约会内容中的特定字符串模式）。 
+    如果上述任一问题的答案是肯定的，请考虑创建 **Outlook 加载项**。然后，确定加载项的触发上下文（例如，撰写表单中的用户、特定消息类型、是否有附件、地址、任务建议、会议建议，或电子邮件或约会内容中的特定字符串模式）。
 
     若要了解如何根据上下文激活 Outlook 加载项，请参阅 [Outlook 加载项的激活规则](/outlook/add-ins/activation-rules)。
 

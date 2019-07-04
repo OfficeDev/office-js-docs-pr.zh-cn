@@ -1,35 +1,48 @@
 ---
-title: 在 Windows 10 上使用 F12 开发人员工具调试外接程序
+title: 使用 Windows 10 上的开发人员工具调试加载项
 description: ''
-ms.date: 03/19/2019
+ms.date: 07/01/2019
 localization_priority: Priority
-ms.openlocfilehash: 750411bea187a0ade9b3723e3198d82f7c482c9f
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: a2090eca41f59f0e7fab1a172aff96cbbca28ed7
+ms.sourcegitcommit: 90c2d8236c6b30d80ac2b13950028a208ef60973
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32450139"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "35454879"
 ---
-# <a name="debug-add-ins-using-f12-developer-tools-on-windows-10"></a>在 Windows 10 上使用 F12 开发人员工具调试外接程序
+# <a name="debug-add-ins-using-developer-tools-on-windows-10"></a>使用 Windows 10 上的开发人员工具调试加载项
 
-Windows 10 中随附的 F12 开发人员工具可帮助您调试、测试和加速您的网页。 如果您未使用 IDE（如 Visual Studio），或者如果您需要调查在 IDE 外部运行外接程序时出现的问题，您还可以使用该工具开发和调试您的 Office 外接程序。 本文介绍如何在 Windows 10 中使用 F12 开发人员工具中的调试器工具来测试你的 Office 加载项。
+在 IDE 之外，还有一些开发人员工具可用于帮助你在 Windows 10 上调试加载项。 当你在 IDE 之外运行加载项的同时，需要调查问题时，这些工具非常有用。
+
+所使用的工具取决于加载项是在 Microsoft Edge 还是在 Internet Explorer 中运行。 这取决于计算机上安装的 Windows 10 版本和 Office 版本。 若要确定开发计算机上使用的浏览器，请参阅 [Office 加载项使用的浏览器](../concepts/browsers-used-by-office-web-add-ins.md)。 
+
 
 > [!NOTE]
 > 本文中的说明不能用于调试使用 Execute 函数的 Outlook 加载项。 若要调试使用 Execute 函数的 Outlook 加载项，我们建议你在脚本模式下附加到 Visual Studio 或附加到某些其他脚本调试器。
 
-## <a name="prerequisites"></a>先决条件
+## <a name="when-the-add-in-is-running-in-edge"></a>当加载项在 Microsoft Edge 中运行时
 
-您需要安装以下软件：
+当加载项在 Microsoft Edge 中运行时，可使用 [Microsoft Edge 开发人员工具](https://www.microsoft.com/p/microsoft-edge-devtools-preview/9mzbfrmz0mnj?activetab=pivot%3Aoverviewtab)。 
 
-- Windows 10 随附的 F12 开发人员工具 
-    
-- 托管您的外接程序的 Office 客户端应用程序。  
-    
-- 您的外接程序。  
+1. 运行加载项。 
 
-## <a name="using-the-debugger"></a>使用调试器
+2. 运行 Microsoft Edge 开发人员工具。
 
-本文介绍了如何在 Windows 10 上使用 F12 开发人员工具中的调试器工具，测试 Office 加载项。可以测试从 AppSource 获取的加载项，也可以测试从其他位置添加的加载项。F12 工具在单独的窗口中显示，并不使用 Visual Studio。 运行加载项后，可以启动 F12 开发人员工具。 F12 工具显示在单独的窗口中，并不使用 Visual Studio。
+3. 在工具中，打开“**本地**”选项卡。加载项将按其名称列出。
+
+4. 单击加载项名称，将其在工具中打开。
+
+5. 打开“**调试器**”选项卡。 
+
+6. 选择“**脚本**”（左）窗格上方的文件夹图标。 从下拉列表中显示的可用文件列表中，选择要调试的 JavaScript 文件。
+
+7. 若要设置断点，请选择该行。 你将在该行左侧和“**调用堆栈**”（右下角）窗格中的对应行左侧看到一个红点。
+
+8. 根据需要在加载项中执行函数以触发断点。
+
+## <a name="when-the-add-in-is-running-in-internet-explorer"></a>当加载项在 Internet Explorer 中运行时
+
+当加载项在 Internet Explorer 中运行时，可以使用 Windows 10 中 F12 开发人员工具中的调试器来测试加载项。 运行加载项后，可以启动 F12 开发人员工具。 F12 工具显示在单独的窗口中，并不使用 Visual Studio。
 
 > [!NOTE]
 > 调试器属于 Windows 10 和 Internet Explorer 上的 F12 开发人员工具。旧版 Windows 不包含调试器。 

@@ -1,14 +1,14 @@
 ---
-ms.date: 06/21/2019
+ms.date: 06/27/2019
 description: 使用 JSDoc 标记动态创建自定义函数 JSON 元数据。
 title: 为自定义函数自动生成 JSON 元数据
 localization_priority: Priority
-ms.openlocfilehash: cc28eca4e1ab1a03186983c81380a00bcf5eb85a
-ms.sourcegitcommit: 6d1cb188c76c09d320025abfcc99db1b16b7e37b
+ms.openlocfilehash: 1230e1bfdeead306531a218373c2756b29fa4abe
+ms.sourcegitcommit: 90c2d8236c6b30d80ac2b13950028a208ef60973
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "35226760"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "35454655"
 ---
 # <a name="autogenerate-json-metadata-for-custom-functions"></a>为自定义函数自动生成 JSON 元数据
 
@@ -160,7 +160,7 @@ Excel 自定义函数支持以下 JSDoc 标记：
 
 JavaScript 语法：@param {type} name _description_
 
-* `{type}` 应在大括号内指定类型信息。 有关可能使用的类型的详细信息，请参阅[类型](##types)。 可选：如果未指定，则使用类型 `any`。
+* `{type}` 应在大括号内指定类型信息。 有关可能使用的类型的详细信息，请参阅[类型](#types)部分。 可选：如果未指定，则使用类型 `any`。
 * `name` 指定 @param 标记适用于哪个参数。 必需。
 * `description` 为函数参数提供显示在 Excel 中的说明。 可选。
 
@@ -190,7 +190,7 @@ TypeScript 语法：@param name _description_
 * `name` 指定 @param 标记适用于哪个参数。 必需。
 * `description` 为函数参数提供显示在 Excel 中的说明。 可选。
 
-有关可能使用的函数参数类型的详细信息，请参阅[类型](##types)。
+有关可能使用的函数参数类型的详细信息，请参阅[类型](#types)部分。
 
 若要将自定义函数参数表示为可选，请执行以下操作之一：
 * 使用可选参数。 例如：`function f(text?: string)`
