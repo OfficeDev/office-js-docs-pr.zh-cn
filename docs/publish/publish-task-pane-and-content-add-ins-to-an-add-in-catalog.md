@@ -3,12 +3,12 @@ title: 将任务窗格和内容加载项发布到 SharePoint 应用程序目录
 description: 为使组织内的用户可访问 Office 加载项，管理员可以将 Office 加载项清单文件上传到组织的应用程序目录中。
 ms.date: 06/20/2019
 localization_priority: Priority
-ms.openlocfilehash: 20b97855ce50e3f70e602f511882761c6fd80655
-ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
+ms.openlocfilehash: af1f96615c74065d9a194f4372e69853caa2c6e3
+ms.sourcegitcommit: c3673cc693fa7070e1b397922bd735ba3f9342f3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "35128557"
+ms.lasthandoff: 07/05/2019
+ms.locfileid: "35575301"
 ---
 # <a name="publish-task-pane-and-content-add-ins-to-a-sharepoint-app-catalog"></a>将任务窗格和内容加载项发布到 SharePoint 应用程序目录
 
@@ -25,13 +25,13 @@ ms.locfileid: "35128557"
 
 ### <a name="to-create-an-app-catalog-for-on-premises-sharepoint-server"></a>为本地 SharePoint Server 创建应用程序目录
 
-若要创建 SharePoint 应用程序目录，请按照[配置 Web 应用程序的应用程序目录网站](https://docs.microsoft.com/zh-CN/sharepoint/administration/manage-the-app-catalog)中的说明进行操作。
+若要创建 SharePoint 应用程序目录，请按照[配置 Web 应用程序的应用程序目录网站](/sharepoint/administration/manage-the-app-catalog)中的说明进行操作。
 
 创建应用程序目录后，请按照相关步骤[发布 Office 加载项](#publish-an-office-add-in)。
 
 ### <a name="to-create-an-app-catalog-on-office-365"></a>在 Office 365 上创建应用程序目录
 
-1. 转到 Microsoft 365 管理中心。 有关如何查找管理中心的信息，请参阅[关于 Microsoft 365 管理中心](https://docs.microsoft.com/office365/admin/admin-overview/about-the-admin-center)。
+1. 转到 Microsoft 365 管理中心。 有关如何查找管理中心的信息，请参阅[关于 Microsoft 365 管理中心](/office365/admin/admin-overview/about-the-admin-center)。
 
 2. 在 Microsoft 365 管理中心页面上，展开“**管理中心**”列表，然后选择“**SharePoint**”。
 
@@ -62,7 +62,7 @@ ms.locfileid: "35128557"
 
 ### <a name="to-publish-an-office-add-in-to-a-sharepoint-app-catalog-on-office-365"></a>将 Office 加载项发布到 Office 365 上的 SharePoint 应用程序目录
 
-1. 转到 Microsoft 365 管理中心。 有关如何查找管理中心的信息，请参阅[关于 Microsoft 365 管理中心](https://docs.microsoft.com/office365/admin/admin-overview/about-the-admin-center)。
+1. 转到 Microsoft 365 管理中心。 有关如何查找管理中心的信息，请参阅[关于 Microsoft 365 管理中心](/office365/admin/admin-overview/about-the-admin-center)。
 2. 在 Microsoft 365 管理中心页面上，展开“**管理中心**”列表，然后选择“**SharePoint**”。
     > [!NOTE]
     > 需要使用经典 SharePoint 管理中心才能创建目录。 如果位于新的 SharePoint 管理中心，请在左侧窗格中选择“**经典 SharePoint 管理中心**”。
