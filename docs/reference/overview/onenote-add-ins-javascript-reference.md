@@ -1,67 +1,44 @@
 ---
 title: OneNote JavaScript API 概述
 description: ''
-ms.date: 06/20/2019
+ms.date: 07/05/2019
 ms.prod: onenote
 localization_priority: Normal
-ms.openlocfilehash: 68ac6f94921ba3b1ea14f364988b57ef86809890
-ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
+ms.openlocfilehash: b6e5cd5f083013a84e75dfd57b30af87eabb42e8
+ms.sourcegitcommit: c3673cc693fa7070e1b397922bd735ba3f9342f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "35127126"
+ms.lasthandoff: 07/05/2019
+ms.locfileid: "35575315"
 ---
 # <a name="onenote-javascript-api-overview"></a>OneNote JavaScript API 概述
 
-适用于: OneNote 在 web 上
+OneNote 加载项通过使用适用于 Office 的 JavaScript API 与 web 上的 OneNote 中的对象进行交互, 其中包括两个 JavaScript 对象模型:
 
-下面的链接展示了 API 中的高级 OneNote 对象。 每个对象页面链接包含对象可用的属性、事件和方法的描述。 如需了解详细信息，请浏览相应链接。 
-    
-- [Application](/javascript/api/onenote/onenote.application)：用于访问所有全局可寻址的 OneNote 对象（如活动笔记本和活动分区）的顶级对象。
+* **Onenote JAVASCRIPT api**: 随 Office 2016 引入, [onenote javascript api](/javascript/api/onenote)提供了强类型的对象, 可用于访问 web 上的 OneNote 中的对象。 
 
-- [笔记本](/javascript/api/onenote/onenote.notebook)：一个笔记本。笔记本包含分区组合和分区。
-    - [NotebookCollection](/javascript/api/onenote/onenote.notebookcollection)：笔记本的集合。
+* **通用 api**: 随 office 2013 引入,[通用 API](/javascript/api/office)可用于访问多个类型的 Office 应用程序中常见的 UI、对话框和客户端设置等功能。
 
-- [SectionGroup](/javascript/api/onenote/onenote.sectiongroup)：一个分区组。分区组包含分区组和分区。
-    - [SectionGroupCollection](/javascript/api/onenote/onenote.sectiongroupcollection)：分区组的集合。
+文档的本部分重点介绍了 OneNote JavaScript API, 您将使用它在面向 web 上的 OneNote 的外接程序中开发大多数功能。 有关通用 API 的信息, 请参阅适用[于 Office 的 JAVASCRIPT API](../javascript-api-for-office.md)。 
 
-- [Section](/javascript/api/onenote/onenote.section)：一个分区。分区包含页面。
-    - [SectionCollection](/javascript/api/onenote/onenote.sectioncollection)：分区的集合。
+## <a name="learn-programming-concepts"></a>了解编程概念
 
-- [Page](/javascript/api/onenote/onenote.page)：一个页面。页面包含 PageContent 对象。
-    - [PageCollection](/javascript/api/onenote/onenote.pagecollection)：页面的集合。
+有关重要编程概念的信息, 请参阅以下文章:
 
-- [PageContent](/javascript/api/onenote/onenote.pagecontent)：页面上包含内容类型的顶级地区，例如 Outline 或 Image。可在页面上为 PageContent 对象分配一个位置。
-    - [PageContentCollection](/javascript/api/onenote/onenote.pagecontentcollection)：PageContent 对象的集合，表示页面的内容。
+- [OneNote JavaScript API 编程概述](../../onenote/onenote-add-ins-programming-overview.md)
 
-- [Outline](/javascript/api/onenote/onenote.outline)：Paragraph 对象的容器。Outline 是 PageContent 对象的直接子级。
+- [使用 OneNote 页内容](../../onenote/onenote-add-ins-page-content.md)
 
-- [Image](/javascript/api/onenote/onenote.image)：Image 对象。Image 可以是 PageContent 对象或 Paragraph 的直接子级。
+## <a name="learn-about-api-capabilities"></a>了解 API 功能
 
-- [Paragraph](/javascript/api/onenote/onenote.paragraph)：页面上可见内容的容器。Paragraph 是 Outline 的直接子级。
-    - [ParagraphCollection](/javascript/api/onenote/onenote.paragraphcollection)：Outline 中 Paragraph 对象的集合。
+若要获取使用 OneNote JavaScript API 与 web 上的 OneNote 中的内容进行交互的实践体验, 请完成[OneNote 加载项快速入门](../../quickstarts/onenote-quickstart.md)。 
 
-- [RichText](/javascript/api/onenote/onenote.richtext)：RichText 对象。
-
-- [表格](/javascript/api/onenote/onenote.table)：TableRow 对象的容器。
-
-- [TableRow](/javascript/api/onenote/onenote.tablerow)：TableCell 对象的容器。
-    - [TableRowCollection](/javascript/api/onenote/onenote.tablerowcollection)：表中 TableRow 对象的集合。
- 
-- [TableCell](/javascript/api/onenote/onenote.tablecell)：段落对象的容器。
-    - [TableCellCollection](/javascript/api/onenote/onenote.tablecellcollection)：TableRow 中 TableCell 对象的集合。
-
-## <a name="onenote-javascript-api-requirement-sets"></a>OneNote JavaScript API 要求集
-
-要求集是指各组已命名的 API 成员。 Office 加载项使用清单中指定的要求集或执行运行时检查，以确定 Office 主机是否支持加载项所需的 API。 有关 OneNote JavaScript API 要求集的详细信息，请参阅 [OneNote JavaScript API 要求集](../requirement-sets/onenote-api-requirement-sets.md)文章。
-
-## <a name="onenote-javascript-api-reference"></a>OneNote JavaScript API 参考
-
-有关 OneNote JavaScript API 的详细信息，请参阅 [OneNote JavaScript API 参考文档](/javascript/api/onenote)。
+有关 OneNote JavaScript API 对象模型的详细信息, 请参阅[Onenote JAVASCRIPT api 参考文档](/javascript/api/onenote)。
 
 ## <a name="see-also"></a>另请参阅
 
-- [OneNote JavaScript API 编程概述](/office/dev/add-ins/onenote/onenote-add-ins-programming-overview)
-- [生成第一个 OneNote 外接程序](../../quickstarts/onenote-quickstart.md)
-- [Rubric Grader 示例](https://github.com/OfficeDev/OneNote-Add-in-Rubric-Grader)
-- [Office 加载项平台概述](/office/dev/add-ins/overview/office-add-ins)
+- [OneNote 外接程序文档](../../onenote/index.md)
+- [OneNote 加载项概述](../../onenote/onenote-add-ins-programming-overview.md)
+- [OneNote JavaScript API 参考](/javascript/api/onenote)
+- [Office 外接程序主机和平台可用性](../../overview/office-add-in-availability.md)
+
