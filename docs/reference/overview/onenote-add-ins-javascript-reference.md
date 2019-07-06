@@ -1,67 +1,44 @@
 ---
 title: OneNote JavaScript API 概述
 description: ''
-ms.date: 06/20/2019
+ms.date: 07/05/2019
 ms.prod: onenote
 localization_priority: Normal
-ms.openlocfilehash: 68ac6f94921ba3b1ea14f364988b57ef86809890
-ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
+ms.openlocfilehash: b6e5cd5f083013a84e75dfd57b30af87eabb42e8
+ms.sourcegitcommit: c3673cc693fa7070e1b397922bd735ba3f9342f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "35127126"
+ms.lasthandoff: 07/05/2019
+ms.locfileid: "35575315"
 ---
-# <a name="onenote-javascript-api-overview"></a><span data-ttu-id="10f37-102">OneNote JavaScript API 概述</span><span class="sxs-lookup"><span data-stu-id="10f37-102">OneNote JavaScript API overview</span></span>
+# <a name="onenote-javascript-api-overview"></a><span data-ttu-id="f41b1-102">OneNote JavaScript API 概述</span><span class="sxs-lookup"><span data-stu-id="f41b1-102">OneNote JavaScript API overview</span></span>
 
-<span data-ttu-id="10f37-103">适用于: OneNote 在 web 上</span><span class="sxs-lookup"><span data-stu-id="10f37-103">Applies to: OneNote on the web</span></span>
+<span data-ttu-id="f41b1-103">OneNote 加载项通过使用适用于 Office 的 JavaScript API 与 web 上的 OneNote 中的对象进行交互, 其中包括两个 JavaScript 对象模型:</span><span class="sxs-lookup"><span data-stu-id="f41b1-103">A OneNote add-in interacts with objects in OneNote on the web by using the JavaScript API for Office, which includes two JavaScript object models:</span></span>
 
-<span data-ttu-id="10f37-104">下面的链接展示了 API 中的高级 OneNote 对象。</span><span class="sxs-lookup"><span data-stu-id="10f37-104">The following links show the high level OneNote objects available in the API.</span></span> <span data-ttu-id="10f37-105">每个对象页面链接包含对象可用的属性、事件和方法的描述。</span><span class="sxs-lookup"><span data-stu-id="10f37-105">Each object page link contains a description of the properties, events, and methods available on the object.</span></span> <span data-ttu-id="10f37-106">如需了解详细信息，请浏览相应链接。</span><span class="sxs-lookup"><span data-stu-id="10f37-106">Explore these links to learn more.</span></span> 
-    
-- <span data-ttu-id="10f37-107">[Application](/javascript/api/onenote/onenote.application)：用于访问所有全局可寻址的 OneNote 对象（如活动笔记本和活动分区）的顶级对象。</span><span class="sxs-lookup"><span data-stu-id="10f37-107">[Application](/javascript/api/onenote/onenote.application): The top-level object used to access all globally addressable OneNote objects, such as the active notebook and the active section.</span></span>
+* <span data-ttu-id="f41b1-104">**Onenote JAVASCRIPT api**: 随 Office 2016 引入, [onenote javascript api](/javascript/api/onenote)提供了强类型的对象, 可用于访问 web 上的 OneNote 中的对象。</span><span class="sxs-lookup"><span data-stu-id="f41b1-104">**OneNote JavaScript API**: Introduced with Office 2016, the [OneNote JavaScript API](/javascript/api/onenote) provides strongly-typed objects that you can use to access objects in OneNote on the web.</span></span> 
 
-- <span data-ttu-id="10f37-p102">[笔记本](/javascript/api/onenote/onenote.notebook)：一个笔记本。笔记本包含分区组合和分区。</span><span class="sxs-lookup"><span data-stu-id="10f37-p102">[Notebook](/javascript/api/onenote/onenote.notebook): A notebook. Notebooks contain section groups and sections.</span></span>
-    - <span data-ttu-id="10f37-110">[NotebookCollection](/javascript/api/onenote/onenote.notebookcollection)：笔记本的集合。</span><span class="sxs-lookup"><span data-stu-id="10f37-110">[NotebookCollection](/javascript/api/onenote/onenote.notebookcollection): A collection of notebooks.</span></span>
+* <span data-ttu-id="f41b1-105">**通用 api**: 随 office 2013 引入,[通用 API](/javascript/api/office)可用于访问多个类型的 Office 应用程序中常见的 UI、对话框和客户端设置等功能。</span><span class="sxs-lookup"><span data-stu-id="f41b1-105">**Common APIs**: Introduced with Office 2013, the [Common API](/javascript/api/office) can be used to access features such as UI, dialogs, and client settings that are common across multiple types of Office applications.</span></span>
 
-- <span data-ttu-id="10f37-p103">[SectionGroup](/javascript/api/onenote/onenote.sectiongroup)：一个分区组。分区组包含分区组和分区。</span><span class="sxs-lookup"><span data-stu-id="10f37-p103">[SectionGroup](/javascript/api/onenote/onenote.sectiongroup): A section group. Section groups contain section groups and sections.</span></span>
-    - <span data-ttu-id="10f37-113">[SectionGroupCollection](/javascript/api/onenote/onenote.sectiongroupcollection)：分区组的集合。</span><span class="sxs-lookup"><span data-stu-id="10f37-113">[SectionGroupCollection](/javascript/api/onenote/onenote.sectiongroupcollection): A collection of section groups.</span></span>
+<span data-ttu-id="f41b1-106">文档的本部分重点介绍了 OneNote JavaScript API, 您将使用它在面向 web 上的 OneNote 的外接程序中开发大多数功能。</span><span class="sxs-lookup"><span data-stu-id="f41b1-106">This section of the documentation focuses on the OneNote JavaScript API, which you'll use to develop the majority of functionality in add-ins that target OneNote on the web.</span></span> <span data-ttu-id="f41b1-107">有关通用 API 的信息, 请参阅适用[于 Office 的 JAVASCRIPT API](../javascript-api-for-office.md)。</span><span class="sxs-lookup"><span data-stu-id="f41b1-107">For information about the Common API, see [JavaScript API for Office](../javascript-api-for-office.md).</span></span> 
 
-- <span data-ttu-id="10f37-p104">[Section](/javascript/api/onenote/onenote.section)：一个分区。分区包含页面。</span><span class="sxs-lookup"><span data-stu-id="10f37-p104">[Section](/javascript/api/onenote/onenote.section): A section. Sections contain pages.</span></span>
-    - <span data-ttu-id="10f37-116">[SectionCollection](/javascript/api/onenote/onenote.sectioncollection)：分区的集合。</span><span class="sxs-lookup"><span data-stu-id="10f37-116">[SectionCollection](/javascript/api/onenote/onenote.sectioncollection): A collection of sections.</span></span>
+## <a name="learn-programming-concepts"></a><span data-ttu-id="f41b1-108">了解编程概念</span><span class="sxs-lookup"><span data-stu-id="f41b1-108">Learn programming concepts</span></span>
 
-- <span data-ttu-id="10f37-p105">[Page](/javascript/api/onenote/onenote.page)：一个页面。页面包含 PageContent 对象。</span><span class="sxs-lookup"><span data-stu-id="10f37-p105">[Page](/javascript/api/onenote/onenote.page): A page. Pages contain PageContent objects.</span></span>
-    - <span data-ttu-id="10f37-119">[PageCollection](/javascript/api/onenote/onenote.pagecollection)：页面的集合。</span><span class="sxs-lookup"><span data-stu-id="10f37-119">[PageCollection](/javascript/api/onenote/onenote.pagecollection): A collection of pages.</span></span>
+<span data-ttu-id="f41b1-109">有关重要编程概念的信息, 请参阅以下文章:</span><span class="sxs-lookup"><span data-stu-id="f41b1-109">See the following articles for information about important programming concepts:</span></span>
 
-- <span data-ttu-id="10f37-p106">[PageContent](/javascript/api/onenote/onenote.pagecontent)：页面上包含内容类型的顶级地区，例如 Outline 或 Image。可在页面上为 PageContent 对象分配一个位置。</span><span class="sxs-lookup"><span data-stu-id="10f37-p106">[PageContent](/javascript/api/onenote/onenote.pagecontent): A top-level region on a page that contains content types such as Outline or Image. A PageContent object can be assigned a position on the page.</span></span>
-    - <span data-ttu-id="10f37-122">[PageContentCollection](/javascript/api/onenote/onenote.pagecontentcollection)：PageContent 对象的集合，表示页面的内容。</span><span class="sxs-lookup"><span data-stu-id="10f37-122">[PageContentCollection](/javascript/api/onenote/onenote.pagecontentcollection): A collection of PageContent objects, which represents the contents of a page.</span></span>
+- [<span data-ttu-id="f41b1-110">OneNote JavaScript API 编程概述</span><span class="sxs-lookup"><span data-stu-id="f41b1-110">OneNote JavaScript API programming overview</span></span>](../../onenote/onenote-add-ins-programming-overview.md)
 
-- <span data-ttu-id="10f37-p107">[Outline](/javascript/api/onenote/onenote.outline)：Paragraph 对象的容器。Outline 是 PageContent 对象的直接子级。</span><span class="sxs-lookup"><span data-stu-id="10f37-p107">[Outline](/javascript/api/onenote/onenote.outline): A container for Paragraph objects. An Outline is a direct child of a PageContent object.</span></span>
+- [<span data-ttu-id="f41b1-111">使用 OneNote 页内容</span><span class="sxs-lookup"><span data-stu-id="f41b1-111">Work with OneNote page content</span></span>](../../onenote/onenote-add-ins-page-content.md)
 
-- <span data-ttu-id="10f37-p108">[Image](/javascript/api/onenote/onenote.image)：Image 对象。Image 可以是 PageContent 对象或 Paragraph 的直接子级。</span><span class="sxs-lookup"><span data-stu-id="10f37-p108">[Image](/javascript/api/onenote/onenote.image): An Image object. An Image can be a direct child of a PageContent object or a Paragraph.</span></span>
+## <a name="learn-about-api-capabilities"></a><span data-ttu-id="f41b1-112">了解 API 功能</span><span class="sxs-lookup"><span data-stu-id="f41b1-112">Learn about API capabilities</span></span>
 
-- <span data-ttu-id="10f37-p109">[Paragraph](/javascript/api/onenote/onenote.paragraph)：页面上可见内容的容器。Paragraph 是 Outline 的直接子级。</span><span class="sxs-lookup"><span data-stu-id="10f37-p109">[Paragraph](/javascript/api/onenote/onenote.paragraph): A container for the visible content on a page. A Paragraph is a direct child of an Outline.</span></span>
-    - <span data-ttu-id="10f37-129">[ParagraphCollection](/javascript/api/onenote/onenote.paragraphcollection)：Outline 中 Paragraph 对象的集合。</span><span class="sxs-lookup"><span data-stu-id="10f37-129">[ParagraphCollection](/javascript/api/onenote/onenote.paragraphcollection): A collection of Paragraph objects in an Outline.</span></span>
+<span data-ttu-id="f41b1-113">若要获取使用 OneNote JavaScript API 与 web 上的 OneNote 中的内容进行交互的实践体验, 请完成[OneNote 加载项快速入门](../../quickstarts/onenote-quickstart.md)。</span><span class="sxs-lookup"><span data-stu-id="f41b1-113">For hands-on experience using the OneNote JavaScript API to interact with content in OneNote on the web, complete the [OneNote add-in quick start](../../quickstarts/onenote-quickstart.md).</span></span> 
 
-- <span data-ttu-id="10f37-130">[RichText](/javascript/api/onenote/onenote.richtext)：RichText 对象。</span><span class="sxs-lookup"><span data-stu-id="10f37-130">[RichText](/javascript/api/onenote/onenote.richtext): A RichText object.</span></span>
+<span data-ttu-id="f41b1-114">有关 OneNote JavaScript API 对象模型的详细信息, 请参阅[Onenote JAVASCRIPT api 参考文档](/javascript/api/onenote)。</span><span class="sxs-lookup"><span data-stu-id="f41b1-114">For detailed information about the OneNote JavaScript API object model, see the [OneNote JavaScript API reference documentation](/javascript/api/onenote).</span></span>
 
-- <span data-ttu-id="10f37-131">[表格](/javascript/api/onenote/onenote.table)：TableRow 对象的容器。</span><span class="sxs-lookup"><span data-stu-id="10f37-131">[Table](/javascript/api/onenote/onenote.table): A container for TableRow objects.</span></span>
+## <a name="see-also"></a><span data-ttu-id="f41b1-115">另请参阅</span><span class="sxs-lookup"><span data-stu-id="f41b1-115">See also</span></span>
 
-- <span data-ttu-id="10f37-132">[TableRow](/javascript/api/onenote/onenote.tablerow)：TableCell 对象的容器。</span><span class="sxs-lookup"><span data-stu-id="10f37-132">[TableRow](/javascript/api/onenote/onenote.tablerow): A container for TableCell objects.</span></span>
-    - <span data-ttu-id="10f37-133">[TableRowCollection](/javascript/api/onenote/onenote.tablerowcollection)：表中 TableRow 对象的集合。</span><span class="sxs-lookup"><span data-stu-id="10f37-133">[TableRowCollection](/javascript/api/onenote/onenote.tablerowcollection): A collection of TableRow objects in a Table.</span></span>
- 
-- <span data-ttu-id="10f37-134">[TableCell](/javascript/api/onenote/onenote.tablecell)：段落对象的容器。</span><span class="sxs-lookup"><span data-stu-id="10f37-134">[TableCell](/javascript/api/onenote/onenote.tablecell): A container for Paragraph objects.</span></span>
-    - <span data-ttu-id="10f37-135">[TableCellCollection](/javascript/api/onenote/onenote.tablecellcollection)：TableRow 中 TableCell 对象的集合。</span><span class="sxs-lookup"><span data-stu-id="10f37-135">[TableCellCollection](/javascript/api/onenote/onenote.tablecellcollection): A collection of TableCell objects in a TableRow.</span></span>
+- [<span data-ttu-id="f41b1-116">OneNote 外接程序文档</span><span class="sxs-lookup"><span data-stu-id="f41b1-116">OneNote add-ins documentation</span></span>](../../onenote/index.md)
+- [<span data-ttu-id="f41b1-117">OneNote 加载项概述</span><span class="sxs-lookup"><span data-stu-id="f41b1-117">OneNote add-ins overview</span></span>](../../onenote/onenote-add-ins-programming-overview.md)
+- [<span data-ttu-id="f41b1-118">OneNote JavaScript API 参考</span><span class="sxs-lookup"><span data-stu-id="f41b1-118">OneNote JavaScript API reference</span></span>](/javascript/api/onenote)
+- [<span data-ttu-id="f41b1-119">Office 外接程序主机和平台可用性</span><span class="sxs-lookup"><span data-stu-id="f41b1-119">Office Add-in host and platform availability</span></span>](../../overview/office-add-in-availability.md)
 
-## <a name="onenote-javascript-api-requirement-sets"></a><span data-ttu-id="10f37-136">OneNote JavaScript API 要求集</span><span class="sxs-lookup"><span data-stu-id="10f37-136">OneNote JavaScript API requirement sets</span></span>
-
-<span data-ttu-id="10f37-137">要求集是指各组已命名的 API 成员。</span><span class="sxs-lookup"><span data-stu-id="10f37-137">Requirement sets are named groups of API members.</span></span> <span data-ttu-id="10f37-138">Office 加载项使用清单中指定的要求集或执行运行时检查，以确定 Office 主机是否支持加载项所需的 API。</span><span class="sxs-lookup"><span data-stu-id="10f37-138">Office Add-ins use requirement sets specified in the manifest or use a runtime check to determine whether an Office host supports APIs that an add-in needs.</span></span> <span data-ttu-id="10f37-139">有关 OneNote JavaScript API 要求集的详细信息，请参阅 [OneNote JavaScript API 要求集](../requirement-sets/onenote-api-requirement-sets.md)文章。</span><span class="sxs-lookup"><span data-stu-id="10f37-139">For detailed information about OneNote JavaScript API requirement sets, see the [OneNote JavaScript API requirement sets](../requirement-sets/onenote-api-requirement-sets.md) article.</span></span>
-
-## <a name="onenote-javascript-api-reference"></a><span data-ttu-id="10f37-140">OneNote JavaScript API 参考</span><span class="sxs-lookup"><span data-stu-id="10f37-140">OneNote JavaScript API reference</span></span>
-
-<span data-ttu-id="10f37-141">有关 OneNote JavaScript API 的详细信息，请参阅 [OneNote JavaScript API 参考文档](/javascript/api/onenote)。</span><span class="sxs-lookup"><span data-stu-id="10f37-141">For detailed information about the OneNote JavaScript API, see the [OneNote JavaScript API reference documentation](/javascript/api/onenote).</span></span>
-
-## <a name="see-also"></a><span data-ttu-id="10f37-142">另请参阅</span><span class="sxs-lookup"><span data-stu-id="10f37-142">See also</span></span>
-
-- [<span data-ttu-id="10f37-143">OneNote JavaScript API 编程概述</span><span class="sxs-lookup"><span data-stu-id="10f37-143">OneNote JavaScript API programming overview</span></span>](/office/dev/add-ins/onenote/onenote-add-ins-programming-overview)
-- [<span data-ttu-id="10f37-144">生成第一个 OneNote 外接程序</span><span class="sxs-lookup"><span data-stu-id="10f37-144">Build your first OneNote add-in</span></span>](../../quickstarts/onenote-quickstart.md)
-- [<span data-ttu-id="10f37-145">Rubric Grader 示例</span><span class="sxs-lookup"><span data-stu-id="10f37-145">Rubric Grader sample</span></span>](https://github.com/OfficeDev/OneNote-Add-in-Rubric-Grader)
-- [<span data-ttu-id="10f37-146">Office 加载项平台概述</span><span class="sxs-lookup"><span data-stu-id="10f37-146">Office Add-ins platform overview</span></span>](/office/dev/add-ins/overview/office-add-ins)
