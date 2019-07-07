@@ -1,0 +1,1 @@
+<span data-ttu-id="a5494-101"><b>注意</b>：有关针对所有类型 Office 加载项的全套文章，请参阅本文档的 <a href="../overview/index.md">Office 加载项指南</a>部分。</span><span class="sxs-lookup"><span data-stu-id="a5494-101"><b>Note</b>: See the <a href="../overview/index.md">Office Add-ins guidance</a> section of this documentation for the full set of articles that apply to all types of Office Add-ins.</span></span>
