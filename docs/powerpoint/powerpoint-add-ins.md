@@ -1,14 +1,14 @@
 ---
 title: PowerPoint 加载项
 description: ''
-ms.date: 06/20/2019
+ms.date: 07/05/2019
 localization_priority: Priority
-ms.openlocfilehash: 78430c06757433ee2cce5155565ae57cc078d6eb
-ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
+ms.openlocfilehash: 29b8a54584446cce77c22684d4d105f9391cfc5e
+ms.sourcegitcommit: c3673cc693fa7070e1b397922bd735ba3f9342f3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "35128592"
+ms.lasthandoff: 07/05/2019
+ms.locfileid: "35575357"
 ---
 # <a name="powerpoint-add-ins"></a>PowerPoint 加载项
 
@@ -191,6 +191,7 @@ reader.readAsDataURL(myFile.files[0]);
 
 ## <a name="see-also"></a>另请参阅
 
+- [PowerPoint 加载项文档](index.md)
 - [PowerPoint 代码示例](https://developer.microsoft.com/office/gallery/?filterBy=Samples,PowerPoint)
 - [如何每文档保存内容和任务窗格加载项的加载项状态和设置](../develop/persisting-add-in-state-and-settings.md#how-to-save-add-in-state-and-settings-per-document-for-content-and-task-pane-add-ins)
 - [对文档或电子表格中的活动选择执行数据读取和写入操作](../develop/read-and-write-data-to-the-active-selection-in-a-document-or-spreadsheet.md)

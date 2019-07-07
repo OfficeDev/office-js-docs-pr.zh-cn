@@ -1,14 +1,14 @@
 ---
 title: 适用于 Office 的 JavaScript API
 description: ''
-ms.date: 03/19/2019
+ms.date: 05/13/2019
 localization_priority: Priority
-ms.openlocfilehash: c8b33bbf9d0107786c0272410c59b1a3fe998cba
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: 8d834aee4c21448210d9619fedd42d5ebb79e09d
+ms.sourcegitcommit: c3673cc693fa7070e1b397922bd735ba3f9342f3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32450714"
+ms.lasthandoff: 07/05/2019
+ms.locfileid: "35575322"
 ---
 # <a name="javascript-api-for-office"></a>适用于 Office 的 JavaScript API
 
@@ -18,25 +18,27 @@ ms.locfileid: "32450714"
 
   **Outlook** 还使用通用 API 语法。 代码中的别名 Office 下的全部内容包含可以用于编写与 Office 文档、工作簿、演示文稿、邮件项以及 Office 加载项中的项目中的内容交互的脚本的对象。如果加载项面向 Office 2013 及更高版本，则必须使用这些通用 API。 此对象模型使用回调。
 
-- **特定于主机的 API** - 与 **Office 2016** 一起引入的 API。 此对象模型提供特定于主机的强类型对象，这些对象对应于使用 Office 客户端时所看到的熟悉对象，并表示 Office JavaScript API 的未来。 特定于主机的 API 目前包括 Word JavaScript API 和 Excel JavaScript API。
+- **特定于主机的 API** - 与 **Office 2016** 一起引入的 API。 此对象模型提供特定于主机的强类型对象，这些对象对应于使用 Office 客户端时所看到的熟悉对象，并表示 Office JavaScript API 的未来。 特定于主机的 JavaScript API 当前可用于 Excel、OneNote、PowerPoint 和 Word。
 
 ## <a name="supported-host-applications"></a>支持的主机应用程序
 
 - [Excel](overview/excel-add-ins-reference-overview.md)
 - [OneNote](overview/onenote-add-ins-javascript-reference.md)
 - [Outlook](requirement-sets/outlook-api-requirement-sets.md)
+- [PowerPoint](overview/powerpoint-add-ins-reference-overview.md)
+- [项目](overview/project-add-ins-reference-overview.md)
 - [Visio](overview/visio-javascript-reference-overview.md)
 - [Word](overview/word-add-ins-reference-overview.md)
 - [通用 API](requirement-sets/office-add-in-requirement-sets.md)
 
 > [!NOTE] 
-> [PowerPoint 和 Project](requirement-sets/powerpoint-and-project-note.md) 支持通过 JavaScript API 创建的加载项。 但是，它们当前没有特定于主机的 API。 你可以通过通用 API 与这些主机交互。
+> [Project](overview/project-add-ins-reference-overview.md) 支持使用 JavaScript API 制作的加载项，但目前没有专为与 Project 交互而设计的 JavaScript API。 你可以使用通用 API 来创建 Project 加载项。
 
 了解有关[支持的主机和其他要求](../concepts/requirements-for-running-office-add-ins.md)的详细信息。
 
 ## <a name="open-api-specifications"></a>开放 API 规范
 
-在我们设计和开发新的 API 以用于 Office 外接程序时，我们将使它们适用于[开放 API 规范](openspec.md)页的反馈。了解管道中的新增功能，并提供您对我们的设计规范的宝贵意见。
+在我们设计和开发新的 API 以用于 Office 外接程序时，我们将使它们适用于[开放 API 规范](openspec/openspec.md)页的反馈。了解管道中的新增功能，并提供您对我们的设计规范的宝贵意见。
 
 ## <a name="see-also"></a>另请参阅
 
