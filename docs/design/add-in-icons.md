@@ -3,12 +3,12 @@ title: Office 外接程序的图标准则
 description: ''
 ms.date: 03/02/2019
 localization_priority: Priority
-ms.openlocfilehash: 8e741f70327584ddd1b6f51f19b276e072862229
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: 189139aaff3807ec5758462dd2bd1ad8916f65ae
+ms.sourcegitcommit: 9c5a836d4464e49846c9795bf44cfe23e9fc8fbe
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32448863"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "35617070"
 ---
 # <a name="icons"></a>图标
 图标是行为或概念的可视化表示形式。 它们通常用于为控件和命令添加含义。 实际或符号化的视觉对象使用户能够以与标记帮助用户浏览其环境的相同方式浏览 UI。 这些视觉对象应简单明了，并且只包含所需的详细信息，以使客户能够快速分析他们在选择控件时将会发生的操作。
@@ -111,10 +111,10 @@ Office 图标通常是由具有操作和概念修饰符的基本元素构成的�
 - 将概念修饰符置于右下方。
 - 限制图标中的元素数。在 32 像素中，将修饰符数限制为最多两个。在 16 像素中，将修饰符数限制为一个。
 
-###<a name="base-element-padding"></a>基准元素填充
+### <a name="base-element-padding"></a>基准元素填充
 放置与大小相一致的基本元素。如果基本元素不能在框架居中显示，则将其对齐到左上方，并将多余的像素保留在右下方。为了获得最佳效果，请应用下表中列出的填充准则。
 
-###<a name="modifiers"></a>修饰符
+### <a name="modifiers"></a>修饰符
 所有修饰符在每个元素间都应具有 1 像素的透明切割区，包括背景。元素不应直接重叠。在规则和边缘之间创建空白空间。修饰符在大小上可能略有不同，但会将这些尺寸作为起点使用。
 
 
