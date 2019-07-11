@@ -1,15 +1,15 @@
 ---
 title: Dialog API 要求集
 description: ''
-ms.date: 06/20/2019
+ms.date: 07/05/2019
 ms.prod: non-product-specific
 localization_priority: Normal
-ms.openlocfilehash: 3135c65120248194603b91510450519f106e0ad1
-ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
+ms.openlocfilehash: a524edf6734618a56e050d2c25eedbd23ca13973
+ms.sourcegitcommit: 9c5a836d4464e49846c9795bf44cfe23e9fc8fbe
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "35127119"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "35617018"
 ---
 # <a name="dialog-api-requirement-sets"></a>Dialog API 要求集
 
@@ -17,9 +17,11 @@ ms.locfileid: "35127119"
 
 Office 外接程序在多个 Office 版本中运行。下表列出了 Dialog API 要求集、支持该要求集的 Office 主机应用程序，以及 Office 应用程序的内部版本或版本号。
 
-|  要求集  | Windows 版 Office 2013<br>（一次性购买） | Windows 上的 Office 2016 或更高版本<br>（一次性购买）   | Windows 版 Office<br>(连接到 Office 365 订阅) |  IPad 上的 Office<br>(连接到 Office 365 订阅)  |  Mac 上的 Office<br>(连接到 Office 365 订阅)  | 网上的 Office  |  Office Online Server  |
+|  要求集  | Windows 版 Office 2013\*<br>（一次性购买） | Windows 上的 Office 2016 或更高版本\*<br>（一次性购买）   | Windows 版 Office<br>(连接到 Office 365 订阅) |  IPad 上的 Office<br>(连接到 Office 365 订阅)  |  Mac 上的 Office<br>(连接到 Office 365 订阅)  | 网上的 Office  |  Office Online Server  |
 |:-----|-----|:-----|:-----|:-----|:-----|:-----|:-----|
-| DialogApi 1.1  | 生成号 15.0.4855.1000 或更高版本 | 生成号 16.0.4390.1000 或更高版本 | 版本 1602（生成号 6741.0000）或更高版本 | 1.22 或更高版本 | 15.20 或更高版本| 2017 年 1 月 | 版本 1608（生成号 7601.6800）或更高版本|
+| DialogApi 1.1  | 生成号 15.0.4855.1000 或更高版本 | 生成号 16.0.4390.1000 或更高版本 | 版本 1602（生成号 6741.0000）或更高版本 | 1.22 或更高版本 | 15.20 或更高版本| 2017 年 1 月 | 版本 1608（内部版本 7601.6800）或更高版本|
+
+>\*一次性购买 Office 的用户可能未接受所有修补和更新。 如果是这样, 即使在用户的计算机上未安装支持 DialogApi 所需的更新的 Dll, Office 用来在 UI 中报告其版本的 DLL 可能也会大于此处列出的版本。 若要确保安装了所需的修补程序, 用户必须转到 Office 更新列表 ([office 2013 列表](/officeupdates/msp-files-office-2013)或[office 2016 列表](/officeupdates/msp-files-office-2016)), 搜索**osfclient-x**, 并安装列出的修补程序。 
 
 若要详细了解版本、内部版本号和 Office Online Server，请参阅：
 

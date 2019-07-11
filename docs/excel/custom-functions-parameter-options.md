@@ -1,31 +1,30 @@
 ---
-ms.date: 06/18/2019
+ms.date: 07/01/2019
 description: 了解如何在自定义函数中使用不同的参数, 例如 Excel 范围、可选参数、调用上下文等。
 title: Excel 自定义函数的选项
 localization_priority: Normal
-ms.openlocfilehash: dca85df87f0153c03b2ddd027748e16d3ec79924
-ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
+ms.openlocfilehash: 9416653d697bdf36ca698271e00d9742ff0e75a9
+ms.sourcegitcommit: 9c5a836d4464e49846c9795bf44cfe23e9fc8fbe
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "35128337"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "35617042"
 ---
 # <a name="custom-functions-parameter-options"></a>自定义函数参数选项
 
-自定义函数可通过多个不同的参数选项进行配置:
-- [可选参数](#custom-functions-optional-parameters)
-- [范围参数](#range-parameters)
-- [调用上下文参数](#invocation-parameter)
+自定义函数可通过多个不同的参数选项进行配置。
 
 [!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
-## <a name="custom-functions-optional-parameters"></a>自定义函数可选参数
+## <a name="optional-parameters"></a>可选参数
 
 而常规参数是必需的, 而可选参数则不是。 当用户在 Excel 中调用函数时，可选参数将显示在括号中。 在下面的示例中, add 函数可以选择添加第三个数字。 在 Excel 中, `=CONTOSO.ADD(first, second, [third])`此函数显示为。
 
+#### <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
+
 ```js
 /**
- * Add two numbers
+ * Calculates the sum of the specified numbers
  * @customfunction 
  * @param {number} first First number.
  * @param {number} second Second number.
@@ -33,31 +32,58 @@ ms.locfileid: "35128337"
  * @returns {number} The sum of the numbers.
  */
 function add(first, second, third) {
-  if (third !== undefined) {
-    return first + second + third;
+  if (third === null) {
+    third = 0;
   }
-  return first + second;
+  return first + second + third;
 }
 CustomFunctions.associate("ADD", add);
 ```
 
-定义包含一个或多个可选参数的函数时，应指定未定义可选参数时会发生什么情况。 在以下示例中，`zipCode` 和 `dayOfWeek` 都是 `getWeatherReport` 函数的可选参数。 如果未`zipCode`定义此参数, 则默认值将设置为`98052`。 如果未定义 `dayOfWeek` 参数，则会将其设置为星期三。
+#### <a name="typescripttabtypescript"></a>[TypeScript](#tab/typescript)
+
+```typescript
+/**
+ * Calculates the sum of the specified numbers
+ * @customfunction 
+ * @param first First number.
+ * @param second Second number.
+ * @param [third] Third number to add. If omitted, third = 0.
+ * @returns The sum of the numbers.
+ */
+function add(first: number, second: number, third?: number): number {
+  if (third === null) {
+    third = 0;
+  }
+  return first + second + third;
+}
+CustomFunctions.associate("ADD", add);
+```
+
+---
+
+> [!NOTE]
+> 如果没有为可选参数指定任何值, 则 Excel 会为其分配`null`值。 这意味着 TypeScript 中的默认初始化参数不会按预期工作。 因此, 请不要使用语法`function add(first:number, second:number, third=0):number` , 因为它不会`third`初始化为0。 而是使用上一示例中所示的 TypeScript 语法。
+
+在定义包含一个或多个可选参数的函数时, 应指定可选参数为 null 时所发生的情况。 在以下示例中，`zipCode` 和 `dayOfWeek` 都是 `getWeatherReport` 函数的可选参数。 如果`zipCode`参数为 null, 则默认值设置为`98052`。 如果`dayOfWeek`参数为 null, 则将其设置为星期三。
+
+#### <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
 
 ```js
 /**
  * Gets a weather report for a specified zipCode and dayOfWeek
  * @customfunction
- * @param {number} zipCode Zip code. If omitted, zipCode = 98052.
- * @param {string} dayOfWeek Day of the week. If omitted, dayOfWeek = Wednesday.
+ * @param {number} [zipCode] Zip code. If omitted, zipCode = 98052.
+ * @param {string} [dayOfWeek] Day of the week. If omitted, dayOfWeek = Wednesday.
  * @returns {string} Weather report for the day of the week in that zip code.
  */
 function getWeatherReport(zipCode, dayOfWeek)
 {
-  if (zipCode === undefined) {
-      zipCode = "98052";
+  if (zipCode === null) {
+    zipCode = 98052;
   }
 
-  if (dayOfWeek === undefined) {
+  if (dayOfWeek === null) {
     dayOfWeek = "Wednesday";
   }
 
@@ -65,6 +91,33 @@ function getWeatherReport(zipCode, dayOfWeek)
   // ...
 }
 ```
+
+#### <a name="typescripttabtypescript"></a>[TypeScript](#tab/typescript)
+
+```typescript
+/**
+ * Gets a weather report for a specified zipCode and dayOfWeek
+ * @customfunction
+ * @param zipCode Zip code. If omitted, zipCode = 98052.
+ * @param [dayOfWeek] Day of the week. If omitted, dayOfWeek = Wednesday.
+ * @returns Weather report for the day of the week in that zip code.
+ */
+function getWeatherReport(zipCode?: number, dayOfWeek?: string): string
+{
+  if (zipCode === null) {
+    zipCode = 98052;
+  }
+
+  if (dayOfWeek === null) {
+    dayOfWeek = "Wednesday";
+  }
+
+  // Get weather report for specified zipCode and dayOfWeek.
+  // ...
+}
+```
+
+---
 
 ## <a name="range-parameters"></a>范围参数
 
