@@ -1,14 +1,14 @@
 ---
 title: Office 加载项平台概述 | Microsoft Docs
 description: 使用熟悉的 Web 技术，例如 HTML、CSS 和 JavaScript 来扩展 Word、Excel、PowerPoint、OneNote、Project 和 Outlook，并与其进行交互。
-ms.date: 06/20/2019
+ms.date: 07/05/2019
 localization_priority: Priority
-ms.openlocfilehash: 600a1655dd9a3cfc40f56f46f0a8956f54883ffa
-ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
+ms.openlocfilehash: afe9b819cc7834729e0653463c4bd22a36157460
+ms.sourcegitcommit: 9c5a836d4464e49846c9795bf44cfe23e9fc8fbe
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "35128613"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "35617063"
 ---
 # <a name="office-add-ins-platform-overview"></a>Office 加载项平台概述
 
@@ -116,12 +116,12 @@ Office JavaScript API 包含的对象和成员适用于生成加载项，并与 
 
 ## <a name="next-steps"></a>后续步骤
 
-要详细了解如何开始构建 Office 加载项，请尝试 [5 分钟快速入门](/office/dev/add-ins/)。 可以使用 Visual Studio 或任何其他编辑器立即开始构建加载项。 
+若要在不到 5 分钟的时间内构建你的首个 Office 加载项，请尝试使用 [Excel](../quickstarts/excel-quickstart-jquery.md)、[Outlook](/outlook/add-ins/quick-start?context=office/dev/add-ins/context)、[Word](../quickstarts/word-quickstart.md)、[OneNote](../quickstarts/onenote-quickstart.md)、[PowerPoint](../quickstarts/powerpoint-quickstart.md) 或 [Project](../quickstarts/project-quickstart.md) 快速入门。 可以使用 Visual Studio 或任何其他编辑器立即开始构建加载项。 
 
 若要开始计划解决方案并打造有吸引力的有效用户体验，请熟悉 Office 加载项的[设计指南](../design/add-in-design.md)和[最佳做法](../concepts/add-in-development-best-practices.md)。
 
 ## <a name="see-also"></a>另请参阅
 
-- [Office 加载项示例](https://developer.microsoft.com/office/gallery/?filterBy=Samples)
+- [Office 加载项示例](https://developer.microsoft.com/office/gallery/?filterBy=Samples,Excel,Outlook,PowerPoint,Word)
 - [了解适用于 Office 的 JavaScript API](../develop/understanding-the-javascript-api-for-office.md)
 - [Office 外接程序主机和平台可用性](../overview/office-add-in-availability.md)

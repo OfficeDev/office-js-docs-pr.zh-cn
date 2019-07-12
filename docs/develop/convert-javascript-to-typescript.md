@@ -1,21 +1,21 @@
 ---
 title: 在 Visual Studio 中将 Office 加载项项目转换为使用 TypeScript
 description: ''
-ms.date: 03/19/2019
+ms.date: 07/10/2019
 localization_priority: Priority
-ms.openlocfilehash: 9b3916dc61fadb3b6d9bf61e43cb22bdc7ff68c8
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: 3163052dde98122dceb0d8a1d550e3d8acf788db
+ms.sourcegitcommit: 9c5a836d4464e49846c9795bf44cfe23e9fc8fbe
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32448768"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "35617007"
 ---
 # <a name="convert-an-office-add-in-project-in-visual-studio-to-typescript"></a>在 Visual Studio 中将 Office 加载项项目转换为使用 TypeScript
 
 可以使用 Visual Studio 中的 Office 加载项模板，创建使用 JavaScript 的加载项，再将加载项项目转换为使用 TypeScript。 本文介绍了 Excel 加载项的此转换过程。 可以按照相同的过程操作，在 Visual Studio 中将其他类型的 Office 外接程序项目从 JavaScript 转换为 TypeScript。
 
 > [!NOTE]
-> 若不想使用 Visual Studio 创建 Office 外接程序 TypeScript 项目，请按照任何 [5 分钟快速入门](../index.yml)的“任意编辑器”部分中的说明操作，并在[适用于 Office 外接程序的 Yeoman 生成器](https://github.com/officedev/generator-office)显示提示时选择 `TypeScript`。
+> 若不想使用 Visual Studio 创建 Office 外接程序 TypeScript 项目，请按照任何 [5 分钟快速入门](../index.md)的“任意编辑器”部分中的说明操作，并在[适用于 Office 外接程序的 Yeoman 生成器](https://github.com/OfficeDev/generator-office)显示提示时选择 `TypeScript`。
 
 ## <a name="prerequisites"></a>先决条件
 
@@ -72,7 +72,8 @@ ms.locfileid: "32448768"
     {
         "compilerOptions": {
             "skipLibCheck": true,
-            "lib": [ "es5", "dom", "es2015.promise" ]
+            "lib": [ "es5", "dom", "es2015.promise" ],
+            "sourceMap": true
         }
     }
     ```
@@ -83,13 +84,22 @@ ms.locfileid: "32448768"
     declare var fabric: any;
     ```
 
-12. 在“Home.ts”**** 文件中，将下面行中的“'1.1'”**** 更改为“1.1”****（即删除引号）：
+12. 在 **Home.ts** 文件中，找到 `Office.initialize = function (reason) {` 行并在其后面紧接着添加一行以填充全局 `window.Promise`，如下所示：
+
+    ```typescript
+    Office.initialize = function (reason) {
+        // add the following line
+        (window as any).Promise = OfficeExtension.Promise;
+        ...
+    ```
+
+13. 在“Home.ts”**** 文件中，将下面行中的“'1.1'”**** 更改为“1.1”****（即删除引号）：
 
     ```typescript
     if (!Office.context.requirements.isSetSupported('ExcelApi', '1.1')) {
     ```
 
-13. 在“Home.ts”**** 文件中，找到 `displaySelectedCells` 函数，将整个函数替换为以下代码，并保存该文件：
+14. 在“Home.ts”**** 文件中，找到 `displaySelectedCells` 函数，将整个函数替换为以下代码，并保存该文件：
 
     ```typescript
     function displaySelectedCells() {
@@ -130,6 +140,8 @@ declare var fabric: any;
 
     // The initialize function must be run each time a new page is loaded.
     Office.initialize = function (reason) {
+        (window as any).Promise = OfficeExtension.Promise;
+
         $(document).ready(function () {
             // Initialize the FabricUI notification mechanism and hide it
             var element = document.querySelector('.ms-MessageBanner');

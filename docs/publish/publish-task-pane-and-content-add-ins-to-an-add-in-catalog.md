@@ -3,12 +3,12 @@ title: 将任务窗格和内容加载项发布到 SharePoint 应用程序目录
 description: 为使组织内的用户可访问 Office 加载项，管理员可以将 Office 加载项清单文件上传到组织的应用程序目录中。
 ms.date: 06/20/2019
 localization_priority: Priority
-ms.openlocfilehash: af1f96615c74065d9a194f4372e69853caa2c6e3
-ms.sourcegitcommit: c3673cc693fa7070e1b397922bd735ba3f9342f3
+ms.openlocfilehash: 106dfd2b1610be92f1b53dc1644ff3f8c60c0543
+ms.sourcegitcommit: 9c5a836d4464e49846c9795bf44cfe23e9fc8fbe
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/05/2019
-ms.locfileid: "35575301"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "35617028"
 ---
 # <a name="publish-task-pane-and-content-add-ins-to-a-sharepoint-app-catalog"></a>将任务窗格和内容加载项发布到 SharePoint 应用程序目录
 
@@ -112,4 +112,4 @@ ms.locfileid: "35575301"
 4. 在“Office 加载项”对话框中，选择“**我的组织**”选项卡。此时将列出 Office 加载项。
 5. 选择 Office 加载项，然后选择“**添加**”。
 
-或者，管理员可以使用组策略在 SharePoint 上指定应用程序目录。 有关详细信息，请参阅[使用组策略管理用户如何安装和使用 Office 加载项](/previous-versions/office/office-2013-resource-kit/jj219429(v=office.15)#using-group-policy-to-manage-how-users-can-install-and-use-apps-for-office)一节。
+或者，管理员可以使用组策略在 SharePoint 上指定应用目录。 [适用于 Office 365 专业增强版、Office 2019 和 Office 2016 的管理模板文件 (ADMX/ADML)](https://www.microsoft.com/download/details.aspx?id=49030) 中提供了相关的策略设置，可在 **User Configuration\Policies\Administrative Templates\Microsoft Office 2016\Security Settings\Trust Center\Trusted Catalogs** 下找到。

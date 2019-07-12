@@ -3,12 +3,12 @@ title: Excel JavaScript API 基本编程概念
 description: 使用 Excel JavaScript API 生成 Excel 加载项。
 ms.date: 06/20/2019
 localization_priority: Priority
-ms.openlocfilehash: 08d4c22190e1493331397e390dc72b4dae6cf979
-ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
+ms.openlocfilehash: dad6aadf64b87ec799a17fb8efd0198be5af08b5
+ms.sourcegitcommit: 9c5a836d4464e49846c9795bf44cfe23e9fc8fbe
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "35128211"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "35617035"
 ---
 # <a name="fundamental-programming-concepts-with-the-excel-javascript-api"></a>Excel JavaScript API 基本编程概念
 
@@ -248,8 +248,8 @@ Excel.run(function (context) {
 
 ## <a name="see-also"></a>另请参阅
 
-- [开始使用 Excel 加载项](excel-add-ins-get-started-overview.md)
-- [Excel 加载项代码示例](https://developer.microsoft.com/office/gallery/?filterBy=Samples)
+- [生成首个 Excel 加载项](../quickstarts/excel-quickstart-jquery.md)
+- [Excel 加载项代码示例](https://developer.microsoft.com/office/gallery/?filterBy=Samples,Excel)
 - [Excel JavaScript API 高级编程概念](excel-add-ins-advanced-concepts.md)
 - [Excel JavaScript API 性能优化](/office/dev/add-ins/excel/performance)
 - [Excel JavaScript API 参考](/office/dev/add-ins/reference/overview/excel-add-ins-reference-overview)
