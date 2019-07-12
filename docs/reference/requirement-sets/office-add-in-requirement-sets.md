@@ -1,15 +1,15 @@
 ---
 title: Office 通用 API 要求集
 description: ''
-ms.date: 06/20/2019
+ms.date: 07/11/2019
 ms.prod: non-product-specific
 localization_priority: Priority
-ms.openlocfilehash: 71c59331e59ab508cf6a681bc9c594d5b30af9fe
-ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
+ms.openlocfilehash: e08659908b4634b0d6fef58548fb1557e149759f
+ms.sourcegitcommit: 61f8f02193ce05da957418d938f0d94cb12c468d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "35127028"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "35630520"
 ---
 # <a name="office-common-api-requirement-sets"></a>Office 通用 API 要求集
 
@@ -29,7 +29,7 @@ ms.locfileid: "35127028"
 
 ## <a name="common-api-requirement-sets"></a>通用 API 要求集
 
-下表列出了通用 API 要求集、每个集内的方法，以及支持相应要求集的 Office 主机应用程序。所有这些 API 要求集都是第 1.1 版。
+下表列出了通用 API 要求集、每个集内的方法，以及支持相应要求集的 Office 主机应用程序。除非另行指定，否则所有这些 API 要求集都是第 1.1 版。
 
 ### <a name="activeview"></a>ActiveView
 
@@ -97,7 +97,7 @@ ms.locfileid: "35127028"
 
 |**Office 主机**|**要求集内的方法**|
 |:-----|:-----|
-| OneNote 网页版<br>Windows 版 Word 2013 及更高版本<br>Mac 版 Word 2016 及更高版本<br>Word 网页版<br>iPad 版 Word|支持在使用 Document.getSelectedDataAsync、Document.setSelectedDataAsync、Binding.getDataAsync 或 Binding.setDataAsync 方法读取和写入数据时强制转换为 HTML (Office.CoercionType.Html)<br>。|
+| OneNote 网页版<br>Windows 版 Word 2013 及更高版本<br>Mac 版 Word 2016 及更高版本<br>Word 网页版<br>iPad 版 Word|支持在使用 Document.getSelectedDataAsync、Document.setSelectedDataAsync、Binding.getDataAsync 或 Binding.setDataAsync 方法读取和写入数据时强制转换为 HTML (Office.CoercionType.Html)。|
 
 ---
 
@@ -113,11 +113,11 @@ ms.locfileid: "35127028"
 
 |**Office 主机**|**要求集内的方法**|
 |:-----|:-----|
-| Windows 版 Excel<br>iPad 版 Excel<br>Mac 版 Excel<br>OneNote 网页版<br>Windows 版 PowerPoint<br>PowerPoint 网页版<br>iPad 版 PowerPoint<br>Mac 版 PowerPoint<br>Windows 版 Word 2013 及更高版本<br>Mac 版 Word 2016 及更高版本<br>Word 网页版<br>iPad 版 Word|支持在使用 Document.setSelectedDataAsync 方法写入数据时转换为图像 (Office.CoercionType.Image)。|
+| 请参阅[图像强制要求集](image-coercion-requirement-sets.md)。 | Document.setSelectedDataAsync 方法|
 
 ---
 
-### <a name="mailbox"></a>邮箱
+### <a name="mailbox"></a>Mailbox
 
 |**Office 主机**|**要求集内的方法**|
 |:-----|:-----|
