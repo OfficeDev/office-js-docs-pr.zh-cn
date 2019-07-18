@@ -4,12 +4,12 @@ description: ''
 ms.date: 06/20/2019
 ms.prod: onenote
 localization_priority: Priority
-ms.openlocfilehash: ccbfa5ca976da507574821f53e1ea3d0422298c7
-ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
+ms.openlocfilehash: 65bcbbbece1e56b5c49abb0d8e31221c0b513340
+ms.sourcegitcommit: bb44c9694f88cde32ffbb642689130db44456964
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "35128536"
+ms.lasthandoff: 07/17/2019
+ms.locfileid: "35771770"
 ---
 # <a name="build-your-first-onenote-task-pane-add-in"></a>生成首个 OneNote 任务窗格加载项
 
@@ -21,27 +21,21 @@ ms.locfileid: "35128536"
 
 ## <a name="create-the-add-in-project"></a>创建加载项项目
 
-1. 使用 Yeoman 生成器创建 OneNote 加载项项目。 运行下面的命令，再回答如下所示的提示问题：
+使用 Yeoman 生成器创建 OneNote 加载项项目。 运行下面的命令，再回答如下所示的提示问题：
 
-    ```command&nbsp;line
-    yo office
-    ```
+```command&nbsp;line
+yo office
+```
 
-    - **选择项目类型:** `Office Add-in Task Pane project`
-    - **选择脚本类型:** `Javascript`
-    - **要如何命名加载项?** `My Office Add-in`
-    - **要支持哪一个 Office 客户端应用程序?** `OneNote`
+- **选择项目类型:** `Office Add-in Task Pane project`
+- **选择脚本类型:** `Javascript`
+- **要如何命名加载项?** `My Office Add-in`
+- **要支持哪一个 Office 客户端应用程序?** `OneNote`
 
-    ![有关 Yeoman 生成器提示和回答的屏幕截图](../images/yo-office-onenote.png)
+![有关 Yeoman 生成器提示和回答的屏幕截图](../images/yo-office-onenote.png)
+
+完成此向导后，生成器会创建项目，并安装支持的 Node 组件。
     
-    完成此向导后，生成器会创建项目，并安装支持的 Node 组件。
-    
-2. 导航到项目的根文件夹。
-
-    ```command&nbsp;line
-    cd "My Office Add-in"
-    ```
-
 ## <a name="explore-the-project"></a>浏览项目
 
 使用 Yeoman 生成器创建的加载项项目包含适合于基础任务窗格加载项的示例代码。 
@@ -79,25 +73,33 @@ try {
 
 ## <a name="try-it-out"></a>试用
 
-> [!NOTE]
-> Office 加载项应使用 HTTPS，而不是 HTTP（即便是在开发时也是如此）。 如果系统在运行以下命令之一后提示你安装证书，请接受提示以安装 Yeoman 生成器提供的证书。
+1. 导航到项目的根文件夹。
 
-> [!TIP]
-> 如果在 Mac 上测试加载项，请先运行以下命令，然后再继续。 运行此命令时，本地 Web 服务器将启动。
->
-> ```command&nbsp;line
-> npm run dev-server
-> ```
+    ```command&nbsp;line
+    cd "My Office Add-in"
+    ```
 
-1. 在项目的根目录中运行以下命令。 如果你运行此命令，本地 Web 服务器将启动（如果尚未运行的话）。
+2. 启动本地 Web 服务器并旁加载你的加载项。
+
+    > [!NOTE]
+    > Office 加载项应使用 HTTPS，而不是 HTTP（即便是在开发时也是如此）。 如果系统在运行以下命令之一后提示你安装证书，请接受提示以安装 Yeoman 生成器提供的证书。
+
+    > [!TIP]
+    > 如果在 Mac 上测试加载项，请先运行以下命令，然后再继续。 运行此命令时，本地 Web 服务器将启动。
+    >
+    > ```command&nbsp;line
+    > npm run dev-server
+    > ```
+
+    在项目的根目录中运行以下命令。 如果你运行此命令，本地 Web 服务器将启动（如果尚未运行的话）。
 
     ```command&nbsp;line
     npm run start:web
     ```
 
-2. 在 [OneNote 网页版](https://www.onenote.com/notebooks)中，打开笔记本并新建页面。
+3. 在 [OneNote 网页版](https://www.onenote.com/notebooks)中，打开笔记本并新建页面。
 
-3. 依次选择“插入”>“Office 加载项”****，打开“Office 加载项”对话框。
+4. 依次选择“插入”>“Office 加载项”****，打开“Office 加载项”对话框。
 
     - 如果使用使用者帐户登录，请依次选择“我的加载项”**** 选项卡和“上传我的加载项”****。
 
@@ -107,11 +109,11 @@ try {
 
     <img alt="The Office Add-ins dialog showing the MY ADD-INS tab" src="../images/onenote-office-add-ins-dialog.png" width="500">
 
-3. 在“**上传加载项**”对话框中，转到项目文件夹中的 manifest.xml，然后选择“**上传**”。 
+5. 在“**上传加载项**”对话框中，转到项目文件夹中的 manifest.xml，然后选择“**上传**”。 
 
-4. 在“**开始**”选项卡上，选择位于功能区的“**显示任务窗格**”按钮。 该加载项窗格在 OneNote 页旁的 iFrame 中打开。
+6. 在“**开始**”选项卡上，选择位于功能区的“**显示任务窗格**”按钮。 该加载项窗格在 OneNote 页旁的 iFrame 中打开。
 
-5. 在任务窗格底部，选择“**运行**”链接以设置页面标题并在页面正文中添加大纲。
+7. 在任务窗格底部，选择“**运行**”链接以设置页面标题并在页面正文中添加大纲。
 
     ![通过此演练生成的 OneNote 加载项](../images/onenote-first-add-in-4.png)
 

@@ -4,12 +4,12 @@ description: ''
 ms.date: 05/08/2019
 ms.prod: project
 localization_priority: Priority
-ms.openlocfilehash: 7a7c907eeeb85b2a686c49ebba0558f4ec20568d
-ms.sourcegitcommit: b299b8a5dfffb6102cb14b431bdde4861abfb47f
+ms.openlocfilehash: ccc243b17b25dbdf4142e4a11086df78ef4a2670
+ms.sourcegitcommit: bb44c9694f88cde32ffbb642689130db44456964
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/30/2019
-ms.locfileid: "34589207"
+ms.lasthandoff: 07/17/2019
+ms.locfileid: "35771735"
 ---
 # <a name="build-your-first-project-task-pane-add-in"></a>生成首个 Project 任务窗格加载项
 
@@ -23,26 +23,20 @@ ms.locfileid: "34589207"
 
 ## <a name="create-the-add-in"></a>创建加载项
 
-1. 使用 Yeoman 生成器创建 Project 加载项项目。 运行下面的命令，再回答如下所示的提示问题：
+使用 Yeoman 生成器创建 Project 加载项项目。 运行下面的命令，再回答如下所示的提示问题：
 
-    ```command&nbsp;line
-    yo office
-    ```
+```command&nbsp;line
+yo office
+```
 
-    - **选择项目类型:** `Office Add-in Task Pane project`
-    - **选择脚本类型:** `Javascript`
-    - **要如何命名加载项?** `My Office Add-in`
-    - **要支持哪一个 Office 客户端应用程序?** `Project`
+- **选择项目类型:** `Office Add-in Task Pane project`
+- **选择脚本类型:** `Javascript`
+- **要如何命名加载项?** `My Office Add-in`
+- **要支持哪一个 Office 客户端应用程序?** `Project`
 
-    ![有关 Yeoman 生成器提示和回答的屏幕截图](../images/yo-office-project.png)
-    
-    完成此向导后，生成器会创建项目，并安装支持的 Node 组件。
-    
-2. 导航到项目的根文件夹。
+![有关 Yeoman 生成器提示和回答的屏幕截图](../images/yo-office-project.png)
 
-    ```command&nbsp;line
-    cd "My Office Add-in"
-    ```
+完成此向导后，生成器会创建项目，并安装支持的 Node 组件。
 
 ## <a name="explore-the-project"></a>浏览项目
 
@@ -97,22 +91,30 @@ Office.context.document.getSelectedTaskAsync(
 
 ## <a name="try-it-out"></a>试用
 
-> [!NOTE]
-> Office 加载项应使用 HTTPS，而不是 HTTP（即便是在开发时也是如此）。 如果系统在运行以下命令后提示你安装证书，请接受提示以安装 Yeoman 生成器提供的证书。
+1. 导航到项目的根文件夹。
 
-1. 在项目的根目录中运行以下命令。 运行此命令时，本地 Web 服务器将启动。
+    ```command&nbsp;line
+    cd "My Office Add-in"
+    ```
+
+2. 启动本地 Web 服务器。
+
+    > [!NOTE]
+    > Office 加载项应使用 HTTPS，而不是 HTTP（即便是在开发时也是如此）。 如果系统在运行以下命令后提示你安装证书，请接受提示以安装 Yeoman 生成器提供的证书。
+
+    在项目的根目录中运行以下命令。 运行此命令时，本地 Web 服务器将启动。
 
     ```command&nbsp;line
     npm start
     ```
 
-2. 在 Project 中，创建一个简单的项目计划。
+3. 在 Project 中，创建一个简单的项目计划。
 
-3. 按照[在 Windows 上旁加载 Office 加载项](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)中的说明，在 Project 中加载你的加载项。
+4. 按照[在 Windows 上旁加载 Office 加载项](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)中的说明，在 Project 中加载你的加载项。
 
-4. 在项目中选择单个任务。
+5. 在项目中选择单个任务。
 
-5. 在任务窗格的底部，选择“**运行**”链接以重命名所选任务并向所选任务添加备注。
+6. 在任务窗格的底部，选择“**运行**”链接以重命名所选任务并向所选任务添加备注。
 
     ![加载了任务窗格加载项的 Project 应用程序的屏幕截图](../images/project-quickstart-addin-1.png)
 

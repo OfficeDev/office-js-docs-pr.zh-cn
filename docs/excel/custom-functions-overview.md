@@ -1,14 +1,14 @@
 ---
-ms.date: 06/20/2019
+ms.date: 07/10/2019
 description: 在 Excel 中使用 JavaScript 创建自定义函数。
 title: 在 Excel 中创建自定义函数
 localization_priority: Priority
-ms.openlocfilehash: e8f53919ebd5e44fe04e45dfd05192c77324f3aa
-ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
+ms.openlocfilehash: c5b31b494d7b22112e36e245603f58748559bed5
+ms.sourcegitcommit: bb44c9694f88cde32ffbb642689130db44456964
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "35127889"
+ms.lasthandoff: 07/17/2019
+ms.locfileid: "35771402"
 ---
 # <a name="create-custom-functions-in-excel"></a>在 Excel 中创建自定义函数 
 
@@ -31,7 +31,6 @@ ms.locfileid: "35127889"
 function sphereVolume(radius) {
   return Math.pow(radius, 3) * 4 * Math.PI / 3;
 }
-CustomFunctions.associate("SPHEREVOLUME", sphereVolume)
 ```
 
 > [!NOTE]
@@ -49,11 +48,9 @@ CustomFunctions.associate("SPHEREVOLUME", sphereVolume)
 
 ### <a name="script-file"></a>脚本文件
 
-脚本文件（**./src/functions/functions.js** 或 **./src/functions/functions.ts**）包含定义自定义函数的代码、定义函数的注释，并将自定义函数名称关联到 JSON 元数据文件中的对象。
+脚本文件 (**./src/functions/functions.js** or **./src/functions/functions.ts**) 包含定义自定义函数的代码以及定义函数的注释。
 
 以下代码定义 `add` 自定义函数。 代码注释用于生成描述 Excel 自定义函数的 JSON 元数据。 首先声明所需的 `@customfunction` 注释，指示这是一个自定义函数。 此外，你将注意到声明了两个参数，即 `first` 和 `second`，后跟其 `description` 属性。 最后提供了 `returns` 描述。 要详细了解自定义函数需要哪些注释，请参阅[为自定义函数创建 JSON 元数据](custom-functions-json-autogeneration.md)。
-
-以下代码还调用 `CustomFunctions.associate("ADD", add)`，以将函数 `add()` 与其在 JSON 元数据文件 `ADD` 中的 ID 关联。 有关关联函数的详细信息，请参阅[自定义函数最佳做法](custom-functions-best-practices.md#associating-function-names-with-json-metadata)。
 
 ```js
 /**
@@ -67,9 +64,6 @@ CustomFunctions.associate("SPHEREVOLUME", sphereVolume)
 function add(first, second){
   return first + second;
 }
-
-// associate `id` values in the JSON metadata file to the JavaScript function names
- CustomFunctions.associate("ADD", add);
 ```
 
 请注意，控制自定义函数运行时加载的 **functions.html** 文件必须链接至自定义函数的当前 CDN。 准备有当前版本的 Yo Office 生成器的项目引用正确的 CDN。 如果更新 2019 年 3 月或更早的自定义函数项目，则需要将以下代码复制到 **functions.html** 页面。
@@ -80,7 +74,7 @@ function add(first, second){
 
 ### <a name="manifest-file"></a>清单文件
 
-定义自定义函数的加载项的 XML 清单文件（Yo Office 生成器创建的项目中的 **./manifest.xml**）指定加载项中所有自定义函数的命名空间以及 JavaScript、JSON 和 HTML 文件的位置。 
+定义自定义函数的加载项的 XML 清单文件（Yo Office 生成器创建的项目中的 **./manifest.xml**）指定加载项中所有自定义函数的命名空间以及 JavaScript、JSON 和 HTML 文件的位置。
 
 下面的基本 XML 标记显示了 `<ExtensionPoint>` 和 `<Resources>` 元素的一个示例，必须在加载项清单中包含这些元素才能启用自定义函数。 如果使用 Yo Office 生成器，生成的自定义函数文件将包含更复杂的清单文件，可以在[此 Github 存储库](https://github.com/OfficeDev/Excel-Custom-Functions/blob/master/manifest.xml)中对其进行比较。
 
@@ -151,14 +145,13 @@ function add(first, second){
 
 ## <a name="next-steps"></a>后续步骤
 
-想要试用自定义函数？ 检查简单的[自定义函数入门](../quickstarts/excel-custom-functions-quickstart.md)或更深入的[自定义函数教程](../tutorials/excel-tutorial-create-custom-functions.md)（如果还没有）。 
+想要试用自定义函数？ 检查简单的[自定义函数入门](../quickstarts/excel-custom-functions-quickstart.md)或更深入的[自定义函数教程](../tutorials/excel-tutorial-create-custom-functions.md)（如果还没有）。
 
 另一个尝试自定义函数的简单方法就是使用[脚本实验室](https://appsource.microsoft.com/product/office/WA104380862?src=office&corrid=1ada79ac-6392-438d-bb16-fce6994a2a7e&omexanonuid=f7b03101-ec22-4270-a274-bcf16c762039&referralurl=https%3a%2f%2fgithub.com%2fofficedev%2fscript-lab)，这是一个允许您在 Excel 中试验自定义函数的加载项。 可以尝试创建自己的自定义函数或使用提供的示例。
 
 准备详细了解自定义函数的功能？ 了解[自定义函数架构](custom-functions-architecture.md)的概述。
 
 ## <a name="see-also"></a>另请参阅 
-* [自定义函数要求](custom-functions-requirements.md)
+* [自定义函数要求](custom-functions-requirement-sets.md)
 * [命名准则](custom-functions-naming.md)
-* [最佳做法](custom-functions-best-practices.md)
 * [让自定义函数与 XLL 用户定义的函数兼容](make-custom-functions-compatible-with-xll-udf.md)

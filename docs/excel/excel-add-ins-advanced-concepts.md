@@ -3,12 +3,12 @@ title: Excel JavaScript API 高级编程概念
 description: ''
 ms.date: 06/20/2019
 localization_priority: Priority
-ms.openlocfilehash: da85bf8ec00134b86fcf6ae561366f9536f21303
-ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
+ms.openlocfilehash: 4439ecf494a5d619e0d57604170c771e07b2e2b6
+ms.sourcegitcommit: bb44c9694f88cde32ffbb642689130db44456964
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "35127795"
+ms.lasthandoff: 07/17/2019
+ms.locfileid: "35771496"
 ---
 # <a name="advanced-programming-concepts-with-the-excel-javascript-api"></a>Excel JavaScript API 高级编程概念
 
@@ -20,7 +20,7 @@ Excel 加载项通过使用适用于 Office 的 JavaScript API 与 Excel 中的�
 
 * **Excel JavaScript API**：[Excel JavaScript API](/office/dev/add-ins/reference/overview/excel-add-ins-reference-overview) 随 Office 2016 一起引入，提供了强类型的对象，可用于访问工作表、区域、表格、图表等。 
 
-* **通用 API**：[通用 API](../reference/javascript-api-for-office.md)随 Office 2013 引入，它可用于访问多种类型的主机应用程序（如 Word、Excel 和 PowerPoint）中常见的 UI、对话框和客户端设置等功能。
+* **通用 API**：[通用 API](/javascript/api/office) 随 Office 2013 引入，可用于访问多种类型的 Office 应用程序中常见的 UI、对话框和客户端设置等功能。
 
 你可能会使用 Excel JavaScript API 开发面向 Excel 2016 或更高版本的加载项中的大部分功能，同时还可以使用通用 API 中的对象。 例如：
 
@@ -37,7 +37,7 @@ Excel 加载项通过使用适用于 Office 的 JavaScript API 与 Excel 中的�
 以下代码示例显示如何确定运行加载项的主机应用程序是否支持指定的 API 要求集。
 
 ```js
-if (Office.context.requirements.isSetSupported('ExcelApi', 1.3) === true) {
+if (Office.context.requirements.isSetSupported('ExcelApi', '1.3') === true) {
   /// perform actions
 }
 else {

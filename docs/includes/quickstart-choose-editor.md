@@ -1,1 +1,1 @@
-可以使用 Visual Studio 或其他任何编辑器创建 Office 加载项。 通过选择以下选项卡之一，告诉我们要使用哪个编辑器：
+可以使用 [ Office 加载项的 Yeoman 生成器](https://github.com/OfficeDev/generator-office)或 Visual Studio 创建 Office 加载项。 Yeoman 生成器将创建一个可通过 Visual Studio 代码或任何其他编辑器管理的 Node.js 项目，而 Visual Studio 将创建一个 Visual Studio 解决方案。 选择适合于想要使用的方法的选项卡，然后按照说明创建加载项并在本地测试。
