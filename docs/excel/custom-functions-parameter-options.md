@@ -1,14 +1,14 @@
 ---
-ms.date: 07/01/2019
+ms.date: 07/15/2019
 description: 了解如何在自定义函数中使用不同的参数, 例如 Excel 范围、可选参数、调用上下文等。
 title: Excel 自定义函数的选项
 localization_priority: Normal
-ms.openlocfilehash: 9416653d697bdf36ca698271e00d9742ff0e75a9
-ms.sourcegitcommit: 9c5a836d4464e49846c9795bf44cfe23e9fc8fbe
+ms.openlocfilehash: e5b75b098d64d5998b0393d5995896f0289337fc
+ms.sourcegitcommit: bb44c9694f88cde32ffbb642689130db44456964
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "35617042"
+ms.lasthandoff: 07/17/2019
+ms.locfileid: "35771418"
 ---
 # <a name="custom-functions-parameter-options"></a>自定义函数参数选项
 
@@ -25,7 +25,7 @@ ms.locfileid: "35617042"
 ```js
 /**
  * Calculates the sum of the specified numbers
- * @customfunction 
+ * @customfunction
  * @param {number} first First number.
  * @param {number} second Second number.
  * @param {number} [third] Third number to add. If omitted, third = 0.
@@ -37,7 +37,6 @@ function add(first, second, third) {
   }
   return first + second + third;
 }
-CustomFunctions.associate("ADD", add);
 ```
 
 #### <a name="typescripttabtypescript"></a>[TypeScript](#tab/typescript)
@@ -45,7 +44,7 @@ CustomFunctions.associate("ADD", add);
 ```typescript
 /**
  * Calculates the sum of the specified numbers
- * @customfunction 
+ * @customfunction
  * @param first First number.
  * @param second Second number.
  * @param [third] Third number to add. If omitted, third = 0.
@@ -57,7 +56,6 @@ function add(first: number, second: number, third?: number): number {
   }
   return first + second + third;
 }
-CustomFunctions.associate("ADD", add);
 ```
 
 ---
@@ -77,8 +75,7 @@ CustomFunctions.associate("ADD", add);
  * @param {string} [dayOfWeek] Day of the week. If omitted, dayOfWeek = Wednesday.
  * @returns {string} Weather report for the day of the week in that zip code.
  */
-function getWeatherReport(zipCode, dayOfWeek)
-{
+function getWeatherReport(zipCode, dayOfWeek) {
   if (zipCode === null) {
     zipCode = 98052;
   }
@@ -102,8 +99,7 @@ function getWeatherReport(zipCode, dayOfWeek)
  * @param [dayOfWeek] Day of the week. If omitted, dayOfWeek = Wednesday.
  * @returns Weather report for the day of the week in that zip code.
  */
-function getWeatherReport(zipCode?: number, dayOfWeek?: string): string
-{
+function getWeatherReport(zipCode?: number, dayOfWeek?: string): string {
   if (zipCode === null) {
     zipCode = 98052;
   }
@@ -129,25 +125,110 @@ function getWeatherReport(zipCode?: number, dayOfWeek?: string): string
 /**
  * Returns the second highest value in a matrixed range of values.
  * @customfunction
- * @param {number[][]} values Multiple ranges of values.  
+ * @param {number[][]} values Multiple ranges of values.
  */
-function secondHighest(values){
-  let highest = values[0][0], secondHighest = values[0][0];
-  for(var i = 0; i < values.length; i++){
-    for(var j = 0; j < values[i].length; j++){
-      if(values[i][j] >= highest){
+function secondHighest(values) {
+  let highest = values[0][0],
+    secondHighest = values[0][0];
+  for (var i = 0; i < values.length; i++) {
+    for (var j = 0; j < values[i].length; j++) {
+      if (values[i][j] >= highest) {
         secondHighest = highest;
         highest = values[i][j];
-      }
-      else if(values[i][j] >= secondHighest){
+      } else if (values[i][j] >= secondHighest) {
         secondHighest = values[i][j];
       }
     }
   }
   return secondHighest;
 }
-CustomFunctions.associate("SECONDHIGHEST", secondHighest);
 ```
+
+## <a name="repeating-parameters"></a>重复参数
+
+重复参数允许用户在函数中输入一系列可选的参数。 调用函数时, 将在参数的数组中提供值。 如果参数名称以数字结尾, 则每个参数将递增该数, 例如`ADD(number1, [number2], [number3],…)`。 这与用于内置 Excel 函数的约定相匹配。
+
+下面的函数汇总了数字、单元格地址和区域的总和 (如果已输入)。
+
+```TS
+/**
+* The sum of all of the numbers.
+* @customfunction
+* @param operands A number (such as 1 or 3.1415), a cell address (such as A1 or $E$11), or a range of cell addresses (such as B3:F12)
+*/
+
+function ADD(operands: number[][][]): number {
+  let total: number = 0;
+
+  operands.forEach(range => {
+    range.forEach(row => {
+      row.forEach(num => {
+        total += num;
+      });
+    });
+  });
+
+  return total;
+}
+```
+
+此函数显示`=CONTOSO.ADD([operands], [operands]...)`在 Excel 工作簿中。
+
+<img alt="The ADD custom function being entered into cell of an Excel worksheet" src="../images/operands.png" />
+
+### <a name="repeating-single-value-parameter"></a>重复单个值参数
+
+一个重复的单值参数允许传递多个单个值。 例如, 用户可以输入 ADD (1, B2, 3)。 下面的示例演示如何声明单个值参数。
+
+```JS
+/**
+ * @customfunction
+ * @param {number[]} singleValue An array of numbers that are repeating parameters.
+ */
+function addSingleValue(singleValue) {
+  let total = 0;
+  singleValue.forEach(value => {
+    total += value;
+  })
+
+  return total;
+}
+```
+
+### <a name="single-range-parameter"></a>单个范围参数
+
+从技术上讲, 单个 range 参数并不是重复参数, 但此处包含此参数, 这是因为声明与重复参数非常相似。 它向用户显示为 "添加" (A2: B3), 其中单个范围是从 Excel 中传递的。 下面的示例展示了如何声明一个 range 参数。
+
+```JS
+/**
+ * @customfunction
+ * @param {number[][]} singleRange
+ */
+function addSingleRange(singleRange) {
+  let total = 0;
+  singleRange.forEach(setOfSingleValues => {
+    setOfSingleValues.forEach(value => {
+      total += value;
+    })
+  })
+  return total;
+}
+```
+
+### <a name="repeating-range-parameter"></a>重复区域参数
+
+重复区域参数允许传递多个区域或数字。 例如, 用户可以输入 ADD (5, B2, C3, 8, E5: E8)。 重复区域通常是使用类型为三维`number[][][]`矩阵的类型指定的。 有关示例, 请参阅为重复参数列出的主示例 (#repeating 参数)。
+
+
+### <a name="declaring-repeating-parameters"></a>声明重复参数
+在 Typescript 中, 指示参数是多维的。 例如, `ADD(values: number[])`将指示一维数组, `ADD(values:number[][])`指示二维数组, 依此类推。
+
+在 JavaScript 中, `@param values {number[]}`对于二维数组使用一维`@param <name> {number[][]}`数组, 对更多维度使用。
+
+对于 "手动创作的 JSON", 请确保在 JSON `"repeating": true`文件中将参数指定为, 并检查参数是否标记为`"dimensionality”: matrix`。
+
+>[!NOTE]
+>包含重复参数的函数将自动包含一个调用参数作为最后一个参数。 有关调用参数的详细信息, 请参阅下一节。
 
 ## <a name="invocation-parameter"></a>调用参数
 
@@ -158,7 +239,7 @@ CustomFunctions.associate("SECONDHIGHEST", secondHighest);
 ```js
 /**
  * Add two numbers.
- * @customfunction 
+ * @customfunction
  * @param {number} first First number.
  * @param {number} second Second number.
  * @returns {number} The sum of the two (or optionally three) numbers.
@@ -166,7 +247,6 @@ CustomFunctions.associate("SECONDHIGHEST", secondHighest);
 function add(first, second, invocation) {
   return first + second;
 }
-CustomFunctions.associate("ADD", add);
 ```
 
 参数允许您获取调用单元格的上下文, 这在某些方案中非常有用, 包括[查找调用自定义函数的单元格的地址](#addressing-cells-context-parameter)。
@@ -193,18 +273,17 @@ CustomFunctions.associate("ADD", add);
 function getAddress(invocation) {
   return invocation.address;
 }
-CustomFunctions.associate("GETADDRESS", getAddress);
 ```
 
 默认情况下，从 `getAddress` 函数返回的值遵循以下格式：`SheetName!CellNumber`。 例如，如果名为“Expense”的工作表中的 B2 单元格调用了函数，则返回的值为 `Expenses!B2`。
 
 ## <a name="next-steps"></a>后续步骤
+
 了解如何[在自定义函数中保存状态](custom-functions-save-state.md), 或[在自定义函数中使用可变值](custom-functions-volatile.md)。
 
 ## <a name="see-also"></a>另请参阅
 
 * [使用自定义函数接收和处理数据](custom-functions-web-reqs.md)
-* [自定义函数最佳实践](custom-functions-best-practices.md)
 * [自定义函数元数据](custom-functions-json.md)
 * [为自定义函数自动生成 JSON 元数据](custom-functions-json-autogeneration.md)
 * [在 Excel 中创建自定义函数](custom-functions-overview.md)

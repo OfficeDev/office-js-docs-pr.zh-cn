@@ -16,7 +16,7 @@
 
 - 共享网络文件夹或外接程序目录中提供的外接程序的 XML 清单文件 (GetDoc_App.xml)。该清单文件必须指向前面提到的 HTML 文件的位置。
 
-也可以使用 [Visual Studio](../quickstarts/powerpoint-quickstart.md?tabs=visual-studio) 或[任意编辑器](../quickstarts/powerpoint-quickstart.md?tabs=visual-studio-code)创建 PowerPoint 加载项，或使用 [Visual Studio](../quickstarts/word-quickstart.md?tabs=visual-studio) 或[任意编辑器](../quickstarts/word-quickstart.md?tabs=visual-studio-code)创建 Word 加载项。 
+您还可以使用[Visual studio](../quickstarts/powerpoint-quickstart.md?tabs=visualstudio)或[Yeoman 生成器 for office 外接](../quickstarts/powerpoint-quickstart.md?tabs=yeomangenerator)程序或 Word 通过使用[Office 外接程序](../quickstarts/word-quickstart.md?tabs=yeomangenerator)的[Visual studio](../quickstarts/word-quickstart.md?tabs=visualstudio)或 Yeoman 生成器来创建 PowerPoint 外接程序。
 
 ### <a name="core-concepts-to-know-for-creating-a-task-pane-add-in"></a>创建任务窗格加载项需要了解的核心概念
 
@@ -213,7 +213,7 @@ function getSlice(state) {
 添加以下代码，将切片发送到 Web 服务。
 
 > [!NOTE]
-> 此代码将 PowerPoint 或 Word 文件发送到多个切片中的 web 服务器。 web 服务器或服务必须将每个单独的切片追加到一个文件中, 然后将其另存为 .pptx 或 .docx 文件, 然后才能对其执行任何操作。
+> 此代码将 PowerPoint 或 Word 文件发送到多个切片中的 web 服务器。 Web 服务器或服务必须将每个单独的切片追加到一个文件中, 然后将其另存为 .pptx 或 .docx 文件, 然后才能对其执行任何操作。
 
 ```js
 function sendSlice(slice, state) {

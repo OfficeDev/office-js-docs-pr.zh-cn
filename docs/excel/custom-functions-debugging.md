@@ -1,14 +1,14 @@
 ---
-ms.date: 06/20/2019
+ms.date: 07/10/2019
 description: 在 Excel 中调试自定义函数。
 title: 自定义函数调试
 localization_priority: Normal
-ms.openlocfilehash: d7c7f44ffcb22f66e8dccc58c12e957eefe07524
-ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
+ms.openlocfilehash: 987df4fc638b94b7a5002c99aee6e36642f4e4a4
+ms.sourcegitcommit: bb44c9694f88cde32ffbb642689130db44456964
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "35128389"
+ms.lasthandoff: 07/17/2019
+ms.locfileid: "35771454"
 ---
 # <a name="custom-functions-debugging"></a>自定义函数调试
 
@@ -172,6 +172,5 @@ ms.locfileid: "35128389"
 ## <a name="see-also"></a>另请参阅
 
 * [自定义函数疑难解答](custom-functions-troubleshooting.md)
-* [自定义函数最佳实践](custom-functions-best-practices.md)
 * [让自定义函数与 XLL 用户定义的函数兼容](make-custom-functions-compatible-with-xll-udf.md)
 * [在 Excel 中创建自定义函数](custom-functions-overview.md)

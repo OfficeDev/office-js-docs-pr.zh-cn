@@ -2,18 +2,18 @@
 title: 使用脚本实验室浏览 Office JavaScript API
 description: 使用脚本实验室浏览 Office JS API 并建立原型功能。
 ms.topic: article
-ms.date: 06/20/2019
+ms.date: 07/05/2019
 localization_priority: Normal
-ms.openlocfilehash: b74a7787507aed1970ddcb06d3cb3eb79653615a
-ms.sourcegitcommit: 6d1cb188c76c09d320025abfcc99db1b16b7e37b
+ms.openlocfilehash: f9f4a644c2d7b188c70142f4dcd2fd85dac035a7
+ms.sourcegitcommit: bb44c9694f88cde32ffbb642689130db44456964
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "35226774"
+ms.lasthandoff: 07/17/2019
+ms.locfileid: "35771854"
 ---
 # <a name="explore-office-javascript-api-using-script-lab"></a>使用脚本实验室浏览 Office JavaScript API
 
-通过 Office 应用商店免费提供的[脚本实验室外接程序](https://store.office.com/app.aspx?assetid=WA104380862), 您可以在使用 office 程序 (如 Excel 或 Word) 时浏览 OFFICE JavaScript API。 当您在外接程序中原型和验证所需功能时, 脚本实验室是一个方便的工具, 可将其添加到开发工具包中。
+[脚本实验室外接程序](https://appsource.microsoft.com/product/office/WA104380862)(从 AppSource 中免费获取) 使您能够在使用 office 程序 (如 Excel 或 Word) 时浏览 OFFICE JavaScript API。 当您在外接程序中原型和验证所需功能时, 脚本实验室是一个方便的工具, 可将其添加到开发工具包中。
 
 ## <a name="what-is-script-lab"></a>什么是脚本实验室？
 
@@ -29,7 +29,7 @@ ms.locfileid: "35226774"
 
 ### <a name="explore-samples"></a>浏览示例
 
-使用内置示例代码段集合快速入门, 其中展示了如何使用 API 完成特定任务。 您可以运行示例来即时查看任务窗格或文档中的结果, 检查示例以了解 API 的工作原理, 甚至将示例代码段用作您自己的外接程序的原型功能的基础。
+使用内置示例代码段集合快速入门, 其中展示了如何使用 API 完成任务。 您可以运行示例来即时查看任务窗格或文档中的结果, 检查示例以了解 API 的工作原理, 甚至使用示例来原型自己的外接程序。
 
 ![示例](../images/script-lab-samples.jpg)
 
@@ -62,12 +62,14 @@ ms.locfileid: "35226774"
 
 ## <a name="next-steps"></a>后续步骤
 
+若要在 Excel、Word 或 PowerPoint 中使用脚本实验室, 请从 AppSource 安装[脚本实验室加载项](https://appsource.microsoft.com/product/office/WA104380862)。 
+
 欢迎您通过将新代码片段发布到[office js](https://github.com/OfficeDev/office-js-snippets#office-js-snippets)的 GitHub 存储库来扩展脚本实验室中的示例库。
 
-当您准备好创建 Office 加载项时, 请参阅首选 Office 应用程序的[5 分钟快速入门](/office/dev/add-ins/#5-minute-quick-starts)。
+当您准备好创建第一个 Office 加载项时, 请试用[Excel](../quickstarts/excel-quickstart-jquery.md)、 [Outlook](/outlook/add-ins/quick-start?context=office/dev/add-ins/context)、 [Word](../quickstarts/word-quickstart.md)、 [OneNote](../quickstarts/onenote-quickstart.md)、 [PowerPoint](../quickstarts/powerpoint-quickstart.md)或[Project](../quickstarts/project-quickstart.md)的快速入门。
 
 ## <a name="see-also"></a>另请参阅
 
-- [获取脚本实验室](https://store.office.com/app.aspx?assetid=WA104380862)
+- [获取脚本实验室](https://appsource.microsoft.com/product/office/WA104380862)
 - [了解有关脚本实验室的详细信息](https://github.com/OfficeDev/script-lab#script-lab-a-microsoft-garage-project)
 - [注册开发计划](https://developer.microsoft.com/office/dev-program)

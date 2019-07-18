@@ -5,12 +5,12 @@ ms.date: 06/20/2019
 ms.prod: excel
 ms.topic: tutorial
 localization_priority: Normal
-ms.openlocfilehash: afd5d06e08a899d4441da51fc619d86de45e52d3
-ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
+ms.openlocfilehash: 9efbd1380587244fae60551fe104f859d22b4aa2
+ms.sourcegitcommit: bb44c9694f88cde32ffbb642689130db44456964
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "35126986"
+ms.lasthandoff: 07/17/2019
+ms.locfileid: "35771882"
 ---
 # <a name="tutorial-create-an-excel-task-pane-add-in"></a>教程：创建 Excel 任务窗格加载项
 
@@ -69,7 +69,7 @@ ms.locfileid: "35126986"
 5. 将 `TODO1` 替换为以下代码。 此代码用于确定用户的 Excel 版本是否支持包含本系列教程将使用的所有 API 的 Excel.js 版本。 在生产加载项中，若要隐藏或禁用调用不受支持的 API 的 UI，请使用条件块的主体。 这样一来，用户仍可以使用 Excel 版本支持的加载项部分。
 
     ```js
-    if (!Office.context.requirements.isSetSupported('ExcelApi', 1.7)) {
+    if (!Office.context.requirements.isSetSupported('ExcelApi', '1.7')) {
         console.log('Sorry. The tutorial add-in uses Excel.js APIs that are not available in your version of Office.');
     }
     ```
@@ -848,7 +848,7 @@ ms.locfileid: "35126986"
 8. 保存此文件。
 
    > [!NOTE]
-   > Popup 文件以及它加载的 popup 文件, 从外接程序的任务窗格的完全独立的边缘或 Internet Explorer 11 进程中运行。 如果将 popup.js 转换为与 app.js 文件相同的 bundle.js 文件，加载项必须加载 bundle.js 文件的两个副本，这就违背了绑定目的。 此外, 弹出 .js 文件不包含 Internet Explorer 11 不支持的任何 JavaScript。 出于这两点原因，此加载项根本不会转换 popup.js。
+   > Popup 文件以及它加载的 popup 文件, 从外接程序的任务窗格中的完全独立的 Microsoft Edge 或 Internet Explorer 11 进程中运行。 如果将 popup.js 转换为与 app.js 文件相同的 bundle.js 文件，加载项必须加载 bundle.js 文件的两个副本，这就违背了绑定目的。 此外, 弹出 .js 文件不包含 Internet Explorer 11 不支持的任何 JavaScript。 出于这两点原因，此加载项根本不会转换 popup.js。
 
 ### <a name="open-the-dialog-from-the-task-pane"></a>从任务窗格打开对话框
 

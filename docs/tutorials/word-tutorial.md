@@ -5,12 +5,12 @@ ms.date: 06/20/2019
 ms.prod: word
 ms.topic: tutorial
 localization_priority: Normal
-ms.openlocfilehash: a9383128569a2cbe9b300ff9fee78d1dcb20e632
-ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
+ms.openlocfilehash: 60397eb4afce60a0880f19be8296ad5fdce315a8
+ms.sourcegitcommit: bb44c9694f88cde32ffbb642689130db44456964
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "35126909"
+ms.lasthandoff: 07/17/2019
+ms.locfileid: "35771868"
 ---
 # <a name="tutorial-create-a-word-task-pane-add-in"></a>教程：创建 Word 任务窗格加载项
 
@@ -66,7 +66,7 @@ ms.locfileid: "35126909"
 5. 将 `TODO1` 替换为下面的代码。 此代码用于确定用户的 Word 版本是否支持包含本教程所有阶段使用的全部 API 的 Word.js 版本。 在生产加载项中，若要隐藏或禁用调用不受支持的 API 的 UI，请使用条件块的主体。 这样一来，用户仍可以使用 Word 版本支持的加载项部分。
 
     ```js
-    if (!Office.context.requirements.isSetSupported('WordApi', 1.3)) {
+    if (!Office.context.requirements.isSetSupported('WordApi', '1.3')) {
         console.log('Sorry. The tutorial add-in uses Word.js APIs that are not available in your version of Office.');
     }
     ```

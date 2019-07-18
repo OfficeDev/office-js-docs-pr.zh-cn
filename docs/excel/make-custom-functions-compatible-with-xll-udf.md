@@ -3,12 +3,12 @@ title: 使用 XLL 用户定义的函数扩展自定义函数
 description: 启用与自定义函数具有等效功能的 Excel XLL 用户定义函数的兼容性 (预览)
 ms.date: 06/19/2019
 localization_priority: Normal
-ms.openlocfilehash: 8d476ecf777561b79b8bf9c5cf1e4712d7869d0e
-ms.sourcegitcommit: 4bf5159a3821f4277c07d89e88808c4c3a25ff81
+ms.openlocfilehash: fa80597d48859a29bcdbb5b900c251382dc87caa
+ms.sourcegitcommit: bb44c9694f88cde32ffbb642689130db44456964
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "35059690"
+ms.lasthandoff: 07/17/2019
+ms.locfileid: "35771651"
 ---
 # <a name="extend-custom-functions-with-xll-user-defined-functions-preview"></a>使用 XLL 用户定义的函数扩展自定义函数 (预览)
 
@@ -69,5 +69,4 @@ ms.locfileid: "35059690"
 ## <a name="see-also"></a>另请参阅
 
 - [使 Excel 外接程序与现有 COM 外接程序兼容](../develop/make-office-add-in-compatible-with-existing-com-add-in.md)
-- [自定义函数最佳实践](custom-functions-best-practices.md)
 - [Excel 自定义函数教程](../tutorials/excel-tutorial-create-custom-functions.md)

@@ -1,14 +1,14 @@
 ---
-ms.date: 06/17/2019
+ms.date: 07/15/2019
 description: 了解如何实现易失性和脱机流式处理自定义函数。
 title: 函数中的可变值
 localization_priority: Normal
-ms.openlocfilehash: bcaef092ec386a7d80760c1e2a567b9de1fdad21
-ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
+ms.openlocfilehash: 92d61aff4c3f4b4cbc79a3981db12ed1ce0ffb9d
+ms.sourcegitcommit: bb44c9694f88cde32ffbb642689130db44456964
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "35127814"
+ms.lasthandoff: 07/17/2019
+ms.locfileid: "35771644"
 ---
 # <a name="volatile-values-in-functions"></a>函数中的可变值
 
@@ -20,7 +20,7 @@ Excel 包含多个内置可变函数，例如 `RAND` 和 `TODAY`。 可参阅[�
 
 利用自定义函数, 您可以创建自己的可变函数, 这在处理日期、时间、随机编号和建模时可能很有用。 例如, [Monte Carlo 模拟](https://en.wikipedia.org/wiki/Monte_Carlo_method)要求生成随机输入以确定最佳解决方案。
 
-如果选择自动生成 JSON 文件, 则使用 JSDOC 注释标记`@volatile`声明一个可变函数。 有关自动生成的详细信息, 请参阅[CREATE JSON metadata for custom 函数](custom-functions-json-autogeneration.md)。
+如果选择自动生成 JSON 文件, 则使用 JSDoc 注释标记`@volatile`声明一个可变函数。 有关自动生成的详细信息, 请参阅[CREATE JSON metadata for custom 函数](custom-functions-json-autogeneration.md)。
 
 可变自定义函数的示例如下所示, 模拟掷出六个侧骰子的情况。
 

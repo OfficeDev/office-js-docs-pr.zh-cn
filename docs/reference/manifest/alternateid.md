@@ -3,16 +3,16 @@ title: 清单文件中的 AlternateId 元素
 description: ''
 ms.date: 10/09/2018
 localization_priority: Normal
-ms.openlocfilehash: 7a19715fa987978a4540b717f1d30fbff97157c5
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: 6f340f106b5eef85249297f771b1267940509384
+ms.sourcegitcommit: bb44c9694f88cde32ffbb642689130db44456964
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32450665"
+ms.lasthandoff: 07/17/2019
+ms.locfileid: "35771707"
 ---
 # <a name="alternateid-element"></a>AlternateId 元素
 
-指定由 Office 应用商店发布的 Office 外接程序的备用 ID。
+指定由 AppSource 发布的 Office 外接程序的备用 ID。
 
 **加载项类型：** 内容、任务窗格和邮件
 
@@ -28,5 +28,5 @@ ms.locfileid: "32450665"
 
 ## <a name="remarks"></a>注解
 
-您不必自己创建此值；当您将外接程序提交至 Office 应用商店时，系统会为此外接程序分配该值。
+您不会自己创建此值;将其提交到 AppSource 时, 会将其分配给你的外接程序。
 

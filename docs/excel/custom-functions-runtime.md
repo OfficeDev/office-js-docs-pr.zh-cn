@@ -3,12 +3,12 @@ ms.date: 05/08/2019
 description: 了解开发使用新 JavaScript 运行时的 Excel 自定义函数时的关键方案。
 title: Excel 自定义函数的运行时
 localization_priority: Normal
-ms.openlocfilehash: bc8635e370a7b48af07bc169c2d2334ef0fba8ef
-ms.sourcegitcommit: a99be9c4771c45f3e07e781646e0e649aa47213f
+ms.openlocfilehash: e0246170bc80ec63705031cb32a36b5033d42f3a
+ms.sourcegitcommit: bb44c9694f88cde32ffbb642689130db44456964
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/11/2019
-ms.locfileid: "33951975"
+ms.lasthandoff: 07/17/2019
+ms.locfileid: "35771388"
 ---
 # <a name="runtime-for-excel-custom-functions"></a>Excel 自定义函数的运行时
 
@@ -118,7 +118,7 @@ function StoreValue(key, value) {
 为创建一个可在多个平台（Office 外接程序的关键租户之一）上运行的外接程序，请勿访问自定义函数中的文档对象模型 (DOM) 或使用 jQuery 等这类依赖于 DOM 的库。 在 Windows 的 Excel 中, 自定义函数使用 JavaScript 运行时, 自定义函数无法访问 DOM。
 
 ## <a name="next-steps"></a>后续步骤
-了解[自定义函数的一些关键最佳实践](custom-functions-best-practices.md)。
+了解如何[使用自定义函数执行 web 请求](custom-functions-web-reqs.md)。
 
 ## <a name="see-also"></a>另请参阅
 

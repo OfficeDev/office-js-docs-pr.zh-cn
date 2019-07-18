@@ -1,14 +1,14 @@
 ---
-ms.date: 06/18/2019
+ms.date: 07/10/2019
 description: 了解 Excel 自定义函数名称的要求并避免出现常见命名缺陷。
 title: Excel 中自定义函数的命名准则
 localization_priority: Normal
-ms.openlocfilehash: 18858c45224b833c099c021920ff3d568ad2b3c3
-ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
+ms.openlocfilehash: 79d0bfb069fe5abefeb6d0e88428d0728f3869e3
+ms.sourcegitcommit: bb44c9694f88cde32ffbb642689130db44456964
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "35128309"
+ms.lasthandoff: 07/17/2019
+ms.locfileid: "35771531"
 ---
 # <a name="naming-guidelines"></a>命名准则
 
@@ -63,6 +63,5 @@ Excel 使用大写字母作为内置函数名称 (例如`SUM`)。 因此, 请考
 ## <a name="see-also"></a>另请参阅
 
 * [自定义函数元数据](custom-functions-json.md)
-* [自定义函数最佳实践](custom-functions-best-practices.md)
 * [Excel 自定义函数教程](../tutorials/excel-tutorial-create-custom-functions.md)
 * [Excel 自定义函数的运行时](custom-functions-runtime.md)

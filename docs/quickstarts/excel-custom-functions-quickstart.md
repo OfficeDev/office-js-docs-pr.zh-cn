@@ -1,15 +1,15 @@
 ---
-ms.date: 06/20/2019
+ms.date: 07/10/2019
 description: 在 Excel 快速入门指南中开发自定义函数。
 title: 自定义功能快速入门
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: b0f32f2239ff25ef22a9b72908d30734f25741d6
-ms.sourcegitcommit: 90c2d8236c6b30d80ac2b13950028a208ef60973
+ms.openlocfilehash: 3b7ca82a618ef686b14604f96c17dd43b484f901
+ms.sourcegitcommit: bb44c9694f88cde32ffbb642689130db44456964
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "35454907"
+ms.lasthandoff: 07/17/2019
+ms.locfileid: "35771826"
 ---
 # <a name="get-started-developing-excel-custom-functions"></a>开始开发 Excel 自定义函数
 
@@ -115,4 +115,3 @@ npm run start:web
 * [自定义函数概述](../excel/custom-functions-overview.md)
 * [自定义函数元数据](../excel/custom-functions-json.md)
 * [Excel 自定义函数的运行时](../excel/custom-functions-runtime.md)
-* [自定义函数最佳实践](../excel/custom-functions-best-practices.md)

@@ -1,25 +1,22 @@
 ---
 title: 使用 Excel JavaScript API 处理形状
 description: ''
-ms.date: 03/21/2019
+ms.date: 07/19/2019
 localization_priority: Normal
-ms.openlocfilehash: e4d01c387fff01d68cb26369240a1e06e723a54c
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: fb3aa7495efb54332b2ae0bb4dee8b11249afd3a
+ms.sourcegitcommit: bb44c9694f88cde32ffbb642689130db44456964
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32448262"
+ms.lasthandoff: 07/17/2019
+ms.locfileid: "35771679"
 ---
-# <a name="work-with-shapes-using-the-excel-javascript-api-preview"></a>使用 Excel JavaScript API 处理形状 (预览)
+# <a name="work-with-shapes-using-the-excel-javascript-api"></a>使用 Excel JavaScript API 处理形状
 
-> [!NOTE]
-> 本文中讨论的 api 目前仅适用于公共预览版。 [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
-
-excel 将形状定义为位于 Excel 绘图层的任何对象。 这意味着单元格之外的任何内容都是形状。 本文介绍如何将几何形状、线条和图像与 [Shape]/javascript/api/excel/excel.shape) 和[ShapeCollection](/javascript/api/excel/excel.shapecollection) api 结合使用。 [图表](/javascript/api/excel/excel.chart)在其自己的文章中进行了介绍, [使用 Excel JavaScript API 处理图表]] (Excel 外接程序-charts.md))。
+Excel 将形状定义为位于 Excel 绘图层的任何对象。 这意味着单元格之外的任何内容都是形状。 本文介绍如何将几何图形形状、线条和图像与[Shape](/javascript/api/excel/excel.shape)和[ShapeCollection](/javascript/api/excel/excel.shapecollection) api 结合使用。 [图表](/javascript/api/excel/excel.chart)在其自己的文章中介绍, 使用[Excel JavaScript API 处理图表](excel-add-ins-charts.md)。
 
 ## <a name="create-shapes"></a>创建形状
 
-形状是通过工作表的形状集合 (`Worksheet.shapes`) 创建和存储的。 `ShapeCollection`有几`.add*`种方法可以实现此目的。 在将所有形状添加到集合中时, 都会为它们生成名称和 id。 它们分别是`name`和`id`属性。 `name`可通过外接程序进行设置以便使用`ShapeCollection.getItem(name)`方法轻松检索。
+形状是通过工作表的形状集合 (`Worksheet.shapes`) 创建和存储的。 `ShapeCollection`有几`.add*`种方法可以实现此目的。 在将所有形状添加到集合中时, 都会为它们生成名称和 Id。 它们分别是`name`和`id`属性。 `name`可通过外接程序进行设置以便使用`ShapeCollection.getItem(name)`方法轻松检索。
 
 使用关联的方法添加以下类型的形状:
 
@@ -140,7 +137,7 @@ Excel.run(function (context) {
 
 几何形状可以包含文本。 形状具有类型`textFrame`为[TextFrame](/javascript/api/excel/excel.textframe)的属性。 `TextFrame`对象管理文本显示选项 (如边距和文本溢出)。 `TextFrame.textRange`是一个带有 "文本内容" 和 "字体" 设置的[TextRange](/javascript/api/excel/excel.textrange)对象。
 
-下面的代码示例创建一个名为 "Wave" 的几何形状, 其中包含文本 "shape text"。 它还调整形状和文本颜色, 并将文本的水平对齐方式设置为居中。
+下面的代码示例创建一个名为 "Wave" 的几何形状, 其中包含文本 "Shape Text"。 它还调整形状和文本颜色, 并将文本的水平对齐方式设置为居中。
 
 ```js
 // This sample creates a light-blue wave shape and adds the purple text "Shape text" to the center.
@@ -214,7 +211,7 @@ Excel.run(function (context) {
 
 ## <a name="export-shapes-as-images"></a>将形状导出为图像
 
-任何`Shape`对象都可以转换为图像。 [getAsImage](/javascript/api/excel/excel.shape#getasimage-format-)返回 base64 编码的字符串。 图像的格式被指定为传递给[](/javascript/api/excel/excel.pictureformat) `getAsImage`的 PictureFormat 枚举。
+任何`Shape`对象都可以转换为图像。 [GetAsImage](/javascript/api/excel/excel.shape#getasimage-format-)返回 base64 编码的字符串。 图像的格式被指定为传递给[](/javascript/api/excel/excel.pictureformat) `getAsImage`的 PictureFormat 枚举。
 
 ```js
 Excel.run(function (context) {

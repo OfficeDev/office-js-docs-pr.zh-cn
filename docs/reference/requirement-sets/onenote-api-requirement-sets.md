@@ -4,12 +4,12 @@ description: ''
 ms.date: 06/20/2019
 ms.prod: onenote
 localization_priority: Normal
-ms.openlocfilehash: 4664cb042a9b641f2439d0979d2bf9947a2689f8
-ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
+ms.openlocfilehash: eae488d4da33afc7d6e24f711135d4973eedbf0a
+ms.sourcegitcommit: bb44c9694f88cde32ffbb642689130db44456964
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "35127056"
+ms.lasthandoff: 07/17/2019
+ms.locfileid: "35771903"
 ---
 # <a name="onenote-javascript-api-requirement-sets"></a>OneNote JavaScript API 要求集
 
@@ -34,7 +34,7 @@ OneNote JavaScript API 1.1 是该 API 的第一版。 有关此 API 的详细信
 在运行时中, 外接程序可以通过执行以下操作来检查特定主机是否支持 API 要求集。
 
 ```js
-if (Office.context.requirements.isSetSupported('OneNoteApi', 1.1) === true) {
+if (Office.context.requirements.isSetSupported('OneNoteApi', '1.1') === true) {
   // Perform actions.
 }
 else {

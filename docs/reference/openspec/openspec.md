@@ -3,12 +3,12 @@ title: Office JavaScript API 开放性规范
 description: ''
 ms.date: 06/10/2019
 localization_priority: Normal
-ms.openlocfilehash: f3212e411363abce0aca824dc82bbb4921b80d1d
-ms.sourcegitcommit: 3f84b2caa73d7fe1eb0d15e32ea4dec459e2ff53
+ms.openlocfilehash: c7681ad307f290819a3f65185855dfb9c234ce38
+ms.sourcegitcommit: bb44c9694f88cde32ffbb642689130db44456964
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/12/2019
-ms.locfileid: "34910264"
+ms.lasthandoff: 07/17/2019
+ms.locfileid: "35771777"
 ---
 # <a name="api-open-specifications"></a>API 开放性规范
 
@@ -24,7 +24,7 @@ Office JavaScript API 开放规范提供了有关为 Excel、Outlook 和其他�
 ## <a name="see-also"></a>另请参阅
 
 - [Excel 预览 API 参考](/javascript/api/excel)
-- [Excel JavaScript API 预览要求集](../requirement-sets/excel-api-requirement-sets.md#excel-javascript-preview-apis)
+- [Excel JavaScript API 预览要求集](../requirement-sets/excel-preview-apis.md)
 - [Outlook 预览 API 参考](/javascript/api/outlook)
 - [Outlook JavaScript API 预览要求集](..//objectmodel/preview-requirement-set/outlook-requirement-set-preview.md)
 - [Word preview API 参考](/javascript/api/word)
