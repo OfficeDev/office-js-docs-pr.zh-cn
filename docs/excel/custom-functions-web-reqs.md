@@ -1,14 +1,14 @@
 ---
-ms.date: 06/27/2019
+ms.date: 07/10/2019
 description: 使用 Excel 中的自定义函数请求、流式处理和取消流式处理工作簿的外部数据
 title: 使用自定义函数接收和处理数据
 localization_priority: Priority
-ms.openlocfilehash: 42281b8a98b1172ba32b1525176fd8cadd0f094c
-ms.sourcegitcommit: 9c5a836d4464e49846c9795bf44cfe23e9fc8fbe
+ms.openlocfilehash: 1e73898b068ba4ae2d49db7e8de17d5cd8883b24
+ms.sourcegitcommit: bb44c9694f88cde32ffbb642689130db44456964
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "35617049"
+ms.lasthandoff: 07/17/2019
+ms.locfileid: "35771510"
 ---
 # <a name="receive-and-handle-data-with-custom-functions"></a>使用自定义函数接收和处理数据
 
@@ -47,8 +47,6 @@ function webRequest() {
       })
   })
 }
-
-CustomFunctions.associate("WEBREQUEST", webRequest);
 ```
 
 >[!NOTE]
@@ -130,7 +128,6 @@ function increment(incrementBy, invocation) {
     clearInterval(timer);
   };
 }
-CustomFunctions.associate("INC", increment);
 ```
 
 除了了解 `onCanceled` 回调外，你还应该知道 Excel 会在以下情况下取消函数的执行：
@@ -181,6 +178,5 @@ ws.onerror(error){
 - [创建自定义函数的 JSON 元数据](custom-functions-json-autogeneration.md)
 - [自定义函数元数据](custom-functions-json.md)
 - [Excel 自定义函数的运行时](custom-functions-runtime.md)
-- [自定义函数最佳实践](custom-functions-best-practices.md)
 - [在 Excel 中创建自定义函数](custom-functions-overview.md)
 - [Excel 自定义函数教程](../tutorials/excel-tutorial-create-custom-functions.md)

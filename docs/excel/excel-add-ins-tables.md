@@ -1,14 +1,14 @@
 ---
 title: 使用 Excel JavaScript API 处理表格
 description: ''
-ms.date: 04/18/2019
+ms.date: 04/30/2019
 localization_priority: Priority
-ms.openlocfilehash: ba48fce1bee28bf4cad8b5d0ab91d9c1fb12fea8
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: 572e4d5d83d60932ec463962d74868848452dad4
+ms.sourcegitcommit: bb44c9694f88cde32ffbb642689130db44456964
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32449515"
+ms.lasthandoff: 07/17/2019
+ms.locfileid: "35771728"
 ---
 # <a name="work-with-tables-using-the-excel-javascript-api"></a>使用 Excel JavaScript API 处理表格
 
@@ -39,7 +39,7 @@ Excel.run(function (context) {
         ["1/15/2017", "Best For You Organics Company", "Groceries", "$97"]
     ]);
 
-    if (Office.context.requirements.isSetSupported("ExcelApi", 1.2)) {
+    if (Office.context.requirements.isSetSupported("ExcelApi", "1.2")) {
         sheet.getUsedRange().format.autofitColumns();
         sheet.getUsedRange().format.autofitRows();
     }
@@ -243,9 +243,6 @@ Excel.run(function (context) {
 
 `TableChangedEventArgs` 对象提供有关更改和来源的信息。 由于 `onChanged` 会在数据的格式或值发生变化时触发，因此让加载项检查值是否已实际更改可能很有用。 `details` 属性以 [ChangedEventDetail](/javascript/api/excel/excel.changedeventdetail) 的形式封装此信息。 以下代码示例演示如何显示已更改的单元格的之前和之后的值及类型。
 
-> [!NOTE]
-> `TableChangedEventArgs.details` 当前仅适用于公共预览版。 [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
-
 ```js
 // This function would be used as an event handler for the Table.onChanged event.
 function onTableChanged(eventArgs) {
@@ -359,9 +356,6 @@ Excel.run(function (context) {
 ```
 
 ## <a name="autofilter"></a>AutoFilter
-
-> [!NOTE]
-> `Table.autoFilter` 当前仅适用于公共预览版。 [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
 
 加载项可使用表的 [AutoFilter](/javascript/api/excel/excel.autofilter) 对象筛选数据。 `AutoFilter` 对象是表或范围的整个筛选结构。 本文之前讨论的所有筛选操作均与 auto-filter 兼容。 通过单一访问点可以轻松访问和管理多个筛选器。
 

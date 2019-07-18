@@ -1,14 +1,14 @@
 ---
-ms.date: 06/17/2019
+ms.date: 07/10/2019
 description: 将自定义函数集体进行批处理，以减少对远程服务的网络调用。
 title: 对远程服务的自定义函数调用进行批处理
 localization_priority: Priority
-ms.openlocfilehash: aa1b9c956c0f54a4d59e49ca157dd67c8349b143
-ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
+ms.openlocfilehash: 185e6434f963a6dbcc4eefbcb8bbee4d922662e6
+ms.sourcegitcommit: bb44c9694f88cde32ffbb642689130db44456964
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "35127938"
+ms.lasthandoff: 07/17/2019
+ms.locfileid: "35771395"
 ---
 # <a name="batching-custom-function-calls-for-a-remote-service"></a>对远程服务的自定义函数调用进行批处理
 
@@ -56,8 +56,6 @@ function div2(dividend: number, divisor: number) {
     [dividend, divisor]
   );
 }
-
-CustomFunctions.associate("DIV2", div2);
 ```
 
 接下来，你将定义批处理数组，该数组将存储要在一个网络调用中传递的所有运算。 以下代码展示了如何定义描述数组中每个批处理条目的接口。 接口定义了一个运算，是要运行的运算的字符串名称。 例如，如果有两个分别名为 `multiply` 和 `divide` 的自定义函数，则可以在批处理条目中将它们作为运算名称重复使用。 `args` 将保留从 Excel 传递到自定义函数的参数。 最后，`resolve` 或 `reject` 将存储一个承诺，其中存有远程服务返回的信息。
@@ -223,6 +221,5 @@ function pause(ms: number) {
 ## <a name="see-also"></a>另请参阅
 
 * [函数中的可变值](custom-functions-volatile.md)
-* [自定义函数最佳实践](custom-functions-best-practices.md)
 * [在 Excel 中创建自定义函数](custom-functions-overview.md)
 * [Excel 自定义函数教程](../tutorials/excel-tutorial-create-custom-functions.md)

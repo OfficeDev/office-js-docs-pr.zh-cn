@@ -3,12 +3,12 @@ ms.date: 06/18/2019
 description: 处理 Excel 自定义函数中的错误。
 title: 在 Excel 中处理自定义函数时出错
 localization_priority: Priority
-ms.openlocfilehash: 3818d33121ed26bb7d65c56bf6c504f2fb049c72
-ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
+ms.openlocfilehash: 30c83ea930b16e717b48b9c02ffa0e278eb78b36
+ms.sourcegitcommit: bb44c9694f88cde32ffbb642689130db44456964
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "35127917"
+ms.lasthandoff: 07/17/2019
+ms.locfileid: "35771573"
 ---
 # <a name="error-handling-within-custom-functions"></a>自定义函数中的错误处理
 
@@ -46,5 +46,5 @@ function getComment(commentID) {
 ## <a name="see-also"></a>另请参阅
 
 * [自定义函数调试](custom-functions-debugging.md)
-* [自定义函数要求](custom-functions-requirements.md)
+* [自定义函数要求](custom-functions-requirement-sets.md)
 * [在 Excel 中创建自定义函数](custom-functions-overview.md)
