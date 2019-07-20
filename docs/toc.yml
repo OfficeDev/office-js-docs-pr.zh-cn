@@ -864,8 +864,22 @@
           href: reference/overview/word-add-ins-reference-overview.md
           displayName: Word
         - name: API 要求集
-          href: reference/requirement-sets/word-api-requirement-sets.md
-          displayName: Word
+          items:
+            - name: 概述
+              href: reference/requirement-sets/word-api-requirement-sets.md
+              displayName: Word
+            - name: Word 预览 Api
+              href: reference/requirement-sets/word-preview-apis.md
+              displayName: Word
+            - name: WordApi 1.3 要求集
+              href: reference/requirement-sets/word-api-1-3-requirement-set.md
+              displayName: Word
+            - name: WordApi 1.2 要求集
+              href: reference/requirement-sets/word-api-1-2-requirement-set.md
+              displayName: Word
+            - name: WordApi 1.1 要求集
+              href: reference/requirement-sets/word-api-1-1-requirement-set.md
+              displayName: Word
         - name: API 参考
           href: /javascript/api/word
           displayName: Word
