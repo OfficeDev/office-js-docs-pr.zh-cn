@@ -1,14 +1,14 @@
 ---
 title: 使用 Excel JavaScript API 处理表格
 description: ''
-ms.date: 04/30/2019
+ms.date: 07/18/2019
 localization_priority: Priority
-ms.openlocfilehash: 572e4d5d83d60932ec463962d74868848452dad4
-ms.sourcegitcommit: bb44c9694f88cde32ffbb642689130db44456964
+ms.openlocfilehash: 826afb9444fbb83e032f59316de00100cfdb2402
+ms.sourcegitcommit: 6d9b4820a62a914c50cef13af8b80ce626034c26
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/17/2019
-ms.locfileid: "35771728"
+ms.lasthandoff: 07/19/2019
+ms.locfileid: "35804637"
 ---
 # <a name="work-with-tables-using-the-excel-javascript-api"></a>使用 Excel JavaScript API 处理表格
 
@@ -76,7 +76,7 @@ Excel.run(function (context) {
         ["1/31/2017", "BEST FOR YOU ORGANICS COMPANY", "Groceries", "$97"]
     ]);
 
-    if (Office.context.requirements.isSetSupported("ExcelApi", 1.2)) {
+    if (Office.context.requirements.isSetSupported("ExcelApi", "1.2")) {
         sheet.getUsedRange().format.autofitColumns();
         sheet.getUsedRange().format.autofitRows();
     }
@@ -116,7 +116,7 @@ Excel.run(function (context) {
         ["Monday"]
     ]);
 
-    if (Office.context.requirements.isSetSupported("ExcelApi", 1.2)) {
+    if (Office.context.requirements.isSetSupported("ExcelApi", "1.2")) {
         sheet.getUsedRange().format.autofitColumns();
         sheet.getUsedRange().format.autofitRows();
     }
@@ -149,7 +149,7 @@ Excel.run(function (context) {
         ['=IF(OR((TEXT([DATE], "dddd") = "Saturday"), (TEXT([DATE], "dddd") = "Sunday")), "Weekend", "Weekday")']
     ]);
 
-    if (Office.context.requirements.isSetSupported("ExcelApi", 1.2)) {
+    if (Office.context.requirements.isSetSupported("ExcelApi", "1.2")) {
         sheet.getUsedRange().format.autofitColumns();
         sheet.getUsedRange().format.autofitRows();
     }
@@ -177,7 +177,7 @@ Excel.run(function (context) {
         .then(function () {
             expensesTable.columns.items[0].name = "Purchase date";
 
-            if (Office.context.requirements.isSetSupported("ExcelApi", 1.2)) {
+            if (Office.context.requirements.isSetSupported("ExcelApi", "1.2")) {
                 sheet.getUsedRange().format.autofitColumns();
                 sheet.getUsedRange().format.autofitRows();
             }
@@ -424,7 +424,7 @@ Excel.run(function (context) {
     var range = sheet.getRange("A1:E7");
     range.values = values;
 
-    if (Office.context.requirements.isSetSupported("ExcelApi", 1.2)) {
+    if (Office.context.requirements.isSetSupported("ExcelApi", "1.2")) {
         sheet.getUsedRange().format.autofitColumns();
         sheet.getUsedRange().format.autofitRows();
     }
@@ -479,7 +479,7 @@ Excel.run(function (context) {
 
     expensesTable.rows.add(null, newData);
 
-    if (Office.context.requirements.isSetSupported("ExcelApi", 1.2)) {
+    if (Office.context.requirements.isSetSupported("ExcelApi", "1.2")) {
         sheet.getUsedRange().format.autofitColumns();
         sheet.getUsedRange().format.autofitRows();
     }

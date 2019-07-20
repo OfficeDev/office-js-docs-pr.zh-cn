@@ -1,18 +1,18 @@
 ---
-ms.date: 06/27/2019
+ms.date: 07/15/2019
 description: 使用 JSDoc 标记动态创建自定义函数 JSON 元数据。
 title: 为自定义函数自动生成 JSON 元数据
 localization_priority: Priority
-ms.openlocfilehash: 1230e1bfdeead306531a218373c2756b29fa4abe
-ms.sourcegitcommit: 90c2d8236c6b30d80ac2b13950028a208ef60973
+ms.openlocfilehash: afcfb6ff869acf1d508ebda7fc242dd9724bf165
+ms.sourcegitcommit: bb44c9694f88cde32ffbb642689130db44456964
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "35454655"
+ms.lasthandoff: 07/17/2019
+ms.locfileid: "35771313"
 ---
 # <a name="autogenerate-json-metadata-for-custom-functions"></a>为自定义函数自动生成 JSON 元数据
 
-在 JavaScript 或 TypeScript 中写入 Excel 自定义函数时，使用 JSDoc 标记提供有关自定义函数的额外信息。 然后在生成时使用 JSDoc 标记创建 [JSON 元数据文件](custom-functions-json.md)。 使用 JSDoc 标记使您免除手动编辑 JSON 元数据文件的工作。
+在使用 JavaScript 或 TypeScript 编写 Excel 自定义函数时，使用 [JSDoc 标记](https://jsdoc.app/)提供有关自定义函数的额外信息。 然后在生成时使用 JSDoc 标记创建 [JSON 元数据文件](custom-functions-json.md)。 使用 JSDoc 标记使您免除手动编辑 JSON 元数据文件的工作。
 
 [!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
@@ -66,11 +66,9 @@ Excel 自定义函数支持以下 JSDoc 标记：
 
 语法：@customfunction _id_ _name_
 
-指定此标记以将 JavaScript/TypeScript 函数视为 Excel 自定义函数。 
+指定此标记以将 JavaScript/TypeScript 函数视为 Excel 自定义函数。
 
 需要此标记才能创建自定义函数的元数据。
-
-还应调用 `CustomFunctions.associate("id", functionName);`
 
 下面的示例显示了声明自定义函数的最简单方法。
 
@@ -222,7 +220,7 @@ function add(first: number, second: number): number {
 
 表示应提供计算函数所在的单元格的地址。
 
-最后一个函数参数的类型必须是 `CustomFunctions.Invocation` 或派生类型。 调用函数时，`address` 属性将包含地址。 有关使用 `@requiresAddress` 标记的函数示例，请参阅[寻址单元格的上下文参数](./custom-functions-parameter-options.md#addressing-cells-context-parameter)。
+最后一个函数参数的类型必须是 `CustomFunctions.Invocation` 或派生类型。 调用函数时，`address` 属性将包含地址。 有关使用 `@requiresAddress` 标记的函数示例，请参阅[寻址单元格的上下文参数](custom-functions-parameter-options.md#addressing-cells-context-parameter)。
 
 ---
 ### <a name="returns"></a>@returns
@@ -297,7 +295,7 @@ function roll6sided(): number {
 
 ### <a name="matrix-type"></a>矩阵类型
 
-使用二维数组类型将参数或返回值变为值的矩阵。 例如，类型 `number[][]` 表示数字的矩阵。 `string[][]` 表示字符串的矩阵。 
+使用二维数组类型将参数或返回值变为值的矩阵。 例如，类型 `number[][]` 表示数字的矩阵。 `string[][]` 表示字符串的矩阵。
 
 ### <a name="error-type"></a>错误类型
 
@@ -319,5 +317,4 @@ function roll6sided(): number {
 ## <a name="see-also"></a>另请参阅
 
 * [自定义函数元数据](custom-functions-json.md)
-* [自定义函数最佳实践](custom-functions-best-practices.md)
 * [在 Excel 中创建自定义函数](custom-functions-overview.md)

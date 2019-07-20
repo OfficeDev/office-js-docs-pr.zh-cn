@@ -1,15 +1,15 @@
 ---
 title: 生成首个 PowerPoint 任务加载项
-description: ''
-ms.date: 06/20/2019
+description: 了解如何使用 Office JS API 生成简单的 PowerPoint 任务窗格加载项。
+ms.date: 07/17/2019
 ms.prod: powerpoint
 localization_priority: Priority
-ms.openlocfilehash: 5ede96910c9e9b4462fa5eb566ba25bb4d16ba02
-ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
+ms.openlocfilehash: 5b946d1c4ae08a5d0fcd2213f249bd2c7e8b9204
+ms.sourcegitcommit: bb44c9694f88cde32ffbb642689130db44456964
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "35128543"
+ms.lasthandoff: 07/17/2019
+ms.locfileid: "35771847"
 ---
 # <a name="build-your-first-powerpoint-task-pane-add-in"></a>生成首个 PowerPoint 任务加载项
 
@@ -19,7 +19,76 @@ ms.locfileid: "35128543"
 
 [!include[Choose your editor](../includes/quickstart-choose-editor.md)]
 
-# <a name="visual-studiotabvisual-studio"></a>[Visual Studio](#tab/visual-studio)
+# <a name="yeoman-generatortabyeomangenerator"></a>[Yeoman 生成器](#tab/yeomangenerator)
+
+### <a name="prerequisites"></a>先决条件
+
+[!include[Yeoman generator prerequisites](../includes/quickstart-yo-prerequisites.md)]
+
+### <a name="create-the-add-in-project"></a>创建加载项项目
+
+使用 Yeoman 生成器创建 PowerPoint 加载项项目。 运行下面的命令，再回答如下所示的提示问题：
+
+```command&nbsp;line
+yo office
+```
+
+- **选择项目类型:** `Office Add-in Task Pane project`
+- **选择脚本类型:** `Javascript`
+- **要如何命名加载项?** `My Office Add-in`
+- **要支持哪一个 Office 客户端应用程序?** `PowerPoint`
+
+![有关 Yeoman 生成器提示和回答的屏幕截图](../images/yo-office-powerpoint.png)
+
+完成此向导后，生成器会创建项目，并安装支持的 Node 组件。
+
+### <a name="explore-the-project"></a>浏览项目
+
+[!include[Yeoman generator add-in project components](../includes/yo-task-pane-project-components-js.md)]
+
+### <a name="try-it-out"></a>试用
+
+1. 导航到项目的根文件夹。
+
+    ```command&nbsp;line
+    cd "My Office Add-in"
+    ```
+
+2. 完成以下步骤，以启动本地 Web 服务器并旁加载你的加载项。
+
+    > [!NOTE]
+    > Office 加载项应使用 HTTPS，而不是 HTTP（即便是在开发时也是如此）。 如果系统在运行以下命令之一后提示你安装证书，请接受提示以安装 Yeoman 生成器提供的证书。
+
+    > [!TIP]
+    > 如果在 Mac 上测试加载项，请先运行以下命令，然后再继续。 运行此命令时，本地 Web 服务器将启动。
+    >
+    > ```command&nbsp;line
+    > npm run dev-server
+    > ```
+
+    - 若要在 PowerPoint 中测试加载项，请在项目的根目录中运行以下命令。 这将启动本地的 Web 服务器（如果尚未运行的话），并使用加载的加载项打开 PowerPoint。
+
+        ```command&nbsp;line
+        npm start
+        ```
+
+    - 若要在浏览器版 PowerPoint 中测试加载项，请在项目的根目录中运行以下命令。 如果你运行此命令，本地 Web 服务器将启动（如果尚未运行的话）。
+
+        ```command&nbsp;line
+        npm run start:web
+        ```
+
+        若要使用加载项，请在 PowerPoint 网页版中打开新的文档，并按照[在 Office 网页版中旁加载 Office 加载项](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-in-office-on-the-web)中的说明操作，以旁加载你的加载项。
+
+3. 在 PowerPoint 中，插入新的空白幻灯片，再依次选择“主页”**** 选项卡和功能区中的“显示任务窗格”**** 按钮，以打开加载项任务窗格。
+
+    ![突出显示了“显示任务窗格”按钮的 PowerPoint 屏幕截图](../images/powerpoint_quickstart_addin_1c.png)
+
+4. 在任务窗格底部，选择“**运行**”链接，以将文字“Hello World”插入到当前幻灯片中。
+
+    ![幻灯片上显示有狗图像和文本“Hello World”的 PowerPoint 屏幕截图](../images/powerpoint_quickstart_addin_3c.png)
+
+# <a name="visual-studiotabvisualstudio"></a>[Visual Studio](#tab/visualstudio)
 
 ### <a name="prerequisites"></a>先决条件
 
@@ -177,75 +246,6 @@ ms.locfileid: "35128543"
 4. 在任务窗格中，选择“插入文本”**** 按钮，以便将文本添加到选定幻灯片。
 
     ![幻灯片上显示有狗图像和文本“Hello World”的 PowerPoint 屏幕截图](../images/powerpoint_quickstart_addin_3.png)
-
-# <a name="any-editortabvisual-studio-code"></a>[任意编辑器](#tab/visual-studio-code)
-
-### <a name="prerequisites"></a>先决条件
-
-[!include[Yeoman generator prerequisites](../includes/quickstart-yo-prerequisites.md)]
-
-### <a name="create-the-add-in-project"></a>创建加载项项目
-
-1. 使用 Yeoman 生成器创建 PowerPoint 加载项项目。 运行下面的命令，再回答如下所示的提示问题：
-
-    ```command&nbsp;line
-    yo office
-    ```
-
-    - **选择项目类型:** `Office Add-in Task Pane project`
-    - **选择脚本类型:** `Javascript`
-    - **要如何命名加载项?** `My Office Add-in`
-    - **要支持哪一个 Office 客户端应用程序?** `PowerPoint`
-
-    ![有关 Yeoman 生成器提示和回答的屏幕截图](../images/yo-office-powerpoint.png)
-    
-    完成此向导后，生成器会创建项目，并安装支持的 Node 组件。
-    
-2. 导航到项目的根文件夹。
-
-    ```command&nbsp;line
-    cd "My Office Add-in"
-    ```
-
-### <a name="explore-the-project"></a>浏览项目
-
-[!include[Yeoman generator add-in project components](../includes/yo-task-pane-project-components-js.md)]
-
-### <a name="try-it-out"></a>试用
-
-1. 完成以下步骤，以启动本地 Web 服务器并旁加载你的加载项。
-
-    > [!NOTE]
-    > Office 加载项应使用 HTTPS，而不是 HTTP（即便是在开发时也是如此）。 如果系统在运行以下命令之一后提示你安装证书，请接受提示以安装 Yeoman 生成器提供的证书。
-
-    > [!TIP]
-    > 如果在 Mac 上测试加载项，请先运行以下命令，然后再继续。 运行此命令时，本地 Web 服务器将启动。
-    >
-    > ```command&nbsp;line
-    > npm run dev-server
-    > ```
-
-    - 若要在 PowerPoint 中测试加载项，请在项目的根目录中运行以下命令。 如果你运行此命令，本地 Web 服务器将启动（如果尚未运行的话），而且 PowerPoint 也将打开并载入加载项。
-
-        ```command&nbsp;line
-        npm start
-        ```
-
-    - 若要在浏览器版 PowerPoint 中测试加载项，请在项目的根目录中运行以下命令。 如果你运行此命令，本地 Web 服务器将启动（如果尚未运行的话）。
-
-        ```command&nbsp;line
-        npm run start:web
-        ```
-
-        若要使用加载项，请在 PowerPoint 网页版中打开新的文档，并按照[在 Office 网页版中旁加载 Office 加载项](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-in-office-on-the-web)中的说明操作，以旁加载你的加载项。
-
-2. 在 PowerPoint 中，插入新的空白幻灯片，再依次选择“主页”**** 选项卡和功能区中的“显示任务窗格”**** 按钮，以打开加载项任务窗格。
-
-    ![突出显示了“显示任务窗格”按钮的 PowerPoint 屏幕截图](../images/powerpoint_quickstart_addin_1c.png)
-
-3. 在任务窗格底部，选择“**运行**”链接，以将文字“Hello World”插入到当前幻灯片中。
-
-    ![幻灯片上显示有狗图像和文本“Hello World”的 PowerPoint 屏幕截图](../images/powerpoint_quickstart_addin_3c.png)
 
 ---
 

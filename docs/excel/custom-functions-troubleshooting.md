@@ -1,14 +1,14 @@
 ---
-ms.date: 06/21/2019
+ms.date: 07/15/2019
 description: Excel 自定义函数中的常见问题疑难解答。
 title: 自定义函数疑难解答
 localization_priority: Priority
-ms.openlocfilehash: f42e9e6ac3e2d868f90ab4f5129684308750b8e2
-ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
+ms.openlocfilehash: 10d54cc19700cb7d1dbb72f17f57b8149500d186
+ms.sourcegitcommit: bb44c9694f88cde32ffbb642689130db44456964
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "35128281"
+ms.lasthandoff: 07/17/2019
+ms.locfileid: "35771381"
 ---
 # <a name="troubleshoot-custom-functions"></a>自定义函数疑难解答
 
@@ -16,7 +16,7 @@ ms.locfileid: "35128281"
 
 [!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
-若要解决这些问题，可以[启用运行时日志记录以捕获错误](#enable-runtime-logging)，并参考[Excel 的本机错误消息](#check-for-excel-error-messages)。 另外，检查常见错误，例如未正确[有未解析的 promise](#ensure-promises-return) 以及忘记[关联函数](#my-functions-wont-load-associate-functions)。
+若要解决这些问题，可以[启用运行时日志记录以捕获错误](#enable-runtime-logging)，并参考[Excel 的本机错误消息](#check-for-excel-error-messages)。 另外，检查常见错误，例如[没有解析 promise](#ensure-promises-return)。
 
 ## <a name="enable-runtime-logging"></a>启用运行时日志记录
 
@@ -29,19 +29,35 @@ Excel 有许多内置错误消息，如果存在计算错误，系统会将向�
 通常情况下，这些错误可能对应于你在 Excel 中熟悉的错误。 有一些特定于自定义函数的异常，如下所示：
 
 - `#NAME` 错误通常意味着注册函数时出错。
-- `#VALUE` 错误通常是指函数的脚本文件中出现了错误。
 - `#N/A` 错误也可能是注册的函数无法运行的迹象。 这通常是因为缺少 `CustomFunctions.associate` 命令。
+- `#VALUE` 错误通常是指函数的脚本文件中出现了错误。
 - `#REF!` 错误可能指示函数名称与已存在的加载项中的函数名称相同。
 
 ## <a name="clear-the-office-cache"></a>清除 Office 缓存
 
-与自定义函数相关的信息由 Office 缓存。 有时候，开发和反复重新加载带有自定义函数的加载项时，变更可能不会显示。 可以通过清除 Office 缓存修复此问题。 有关详细信息，请参阅[使用清单验证和解决问题](https://docs.microsoft.com/office/dev/add-ins/testing/troubleshoot-manifest?branch=master#clear-the-office-cache)一文中的“清除 Office 缓存”部分。
+与自定义函数相关的信息由 Office 缓存。 有时候，开发和反复重新加载带有自定义函数的加载项时，变更可能不会显示。 可以通过清除 Office 缓存修复此问题。 有关详细信息，请参阅[验证并排查清单问题](../testing/troubleshoot-manifest.md#clear-the-office-cache)一文中的“清除 Office 缓存”部分。
 
 ## <a name="common-issues"></a>常见问题
 
+### <a name="cant-open-add-in-from-localhost-use-a-local-loopback-exception"></a>无法从 localhost 打开加载项：使用本地环回异常
+
+如果看到错误“我们无法从 localhost 打开此加载项”，则需要启用本地环回异常。 有关如何执行此操作的详细信息，请参阅[此 Microsoft 支持文章](https://support.microsoft.com/zh-CN/help/4490419/local-loopback-exemption-does-not-work)。
+
+### <a name="runtime-logging-reports-typeerror-network-request-failed-on-excel-on-windows"></a>Windows 版 Excel 上的运行时日志记录报告“TypeError:网络请求失败”
+
+如果在调用 localhost 服务器时在[运行时日志](custom-functions-troubleshooting.md#enable-runtime-logging)中看到错误“TypeError:网络请求失败”，必须启用本地环回异常。 若要详细了解如何执行此操作，请参阅[这篇 Microsoft 支持文章](https://support.microsoft.com/zh-CN/help/4490419/local-loopback-exemption-does-not-work)中的*选项 #2*。
+
+### <a name="ensure-promises-return"></a>确保返回 promise
+
+在 Excel 等待自定义函数完成时，它会在单元格中 显示 #BUSY!。 如果自定义函数代码返回一个 promise，但该 promise 不返回结果，则 Excel 将继续显示 `#BUSY!`。 查看函数以确保所有 promise 都正确地向单元格返回结果。
+
+### <a name="error-the-dev-server-is-already-running-on-port-3000"></a>错误：开发服务器已在端口 3000 上运行
+
+有时候，运行 `npm start` 时，你可能会看到开发服务器已在端口 3000（或加载项使用的任何端口）上运行的错误。 可以通过运行 `npm stop` 或关闭 Node.js 窗口停止开发服务器运行。 但在某些情况下，开发服务器可能需要几分钟才能实际停止运行。
+
 ### <a name="my-functions-wont-load-associate-functions"></a>我的函数无法加载：关联函数
 
-在自定义函数的脚本文件中，需要将每个自定义函数与在 [JSON 元数据文件](custom-functions-json.md)中指定的 ID 相关联。 使用 `CustomFunctions.associate()` 方法可实现此操作。 通常，在每个函数之后或脚本文件的末尾调用此方法。 如果没有关联自定义函数，它将不起作用。
+如果尚未注册 JSON 并且已编写了自己的 JSON 元数据，则可能会看到 `#VALUE!` 错误，或收到无法加载加载项的通知。 这通常意味着需要将每个自定义函数与为其在 [JSON 元数据文件](custom-functions-json.md)中指定的 `id` 属性相关联。 使用 `CustomFunctions.associate()` 方法可实现此操作。 通常，在每个函数之后或脚本文件的末尾调用此方法。 如果没有关联自定义函数，它将不起作用。
 
 下面的示例显示了一个 add 函数，后跟一个与相应的 JSON ID `ADD` 相关联的函数名称 `add`。
 
@@ -60,23 +76,7 @@ function add(first, second) {
 CustomFunctions.associate("ADD", add);
 ```
 
-有关此过程的更多信息，请参阅[将函数名称与 JSON 元数据相关联](/office/dev/add-ins/excel/custom-functions-best-practices#associating-function-names-with-json-metadata)。
-
-### <a name="cant-open-add-in-from-localhost-use-a-local-loopback-exception"></a>无法从 localhost 打开加载项：使用本地环回异常
-
-如果看到错误“我们无法从 localhost 打开此加载项”，则需要启用本地环回异常。 有关如何执行此操作的详细信息，请参阅[此 Microsoft 支持文章](https://support.microsoft.com/zh-CN/help/4490419/local-loopback-exemption-does-not-work)。
-
-### <a name="runtime-logging-reports-typeerror-network-request-failed-on-excel-on-windows"></a>Windows 版 Excel 上的运行时日志记录报告“TypeError:网络请求失败”
-
-如果在调用 localhost 服务器时在[运行时日志](custom-functions-troubleshooting.md#enable-runtime-logging)中看到错误“TypeError:网络请求失败”，必须启用本地环回异常。 若要详细了解如何执行此操作，请参阅[这篇 Microsoft 支持文章](https://support.microsoft.com/zh-CN/help/4490419/local-loopback-exemption-does-not-work)中的*选项 #2*。
-
-### <a name="ensure-promises-return"></a>确保返回 promise
-
-在 Excel 等待自定义函数完成时，它会在单元格中 显示 #BUSY!。 如果自定义函数代码返回一个 promise，但 promise 不返回结果，则 Excel 将继续显示 #BUSY!。 查看函数以确保所有 promise 都正确地向单元格返回结果。
-
-### <a name="error-the-dev-server-is-already-running-on-port-3000"></a>错误：开发服务器已在端口 3000 上运行
-
-有时候，运行 `npm start` 时，你可能会看到开发服务器已在端口 3000（或加载项使用的任何端口）上运行的错误。 可以通过运行 `npm stop` 或关闭 Node.js 窗口停止开发服务器运行。 但在某些情况下，开发服务器可能需要几分钟才能实际停止运行。
+有关此过程的更多信息，请参阅[将函数名称与 JSON 元数据相关联](/office/dev/add-ins/excel/custom-functions-json#associating-function-names-with-json-metadata)。
 
 ## <a name="reporting-feedback"></a>报告反馈
 
@@ -97,6 +97,5 @@ CustomFunctions.associate("ADD", add);
 
 * [自定义函数元数据自动生成](custom-functions-json-autogeneration.md)
 * [Excel 自定义函数的运行时](custom-functions-runtime.md)
-* [自定义函数最佳实践](custom-functions-best-practices.md)
 * [让自定义函数与 XLL 用户定义的函数兼容](make-custom-functions-compatible-with-xll-udf.md)
 * [在 Excel 中创建自定义函数](custom-functions-overview.md)
