@@ -1,14 +1,14 @@
 ---
 title: Outlook 外接程序 API 预览要求集
 description: ''
-ms.date: 06/25/2019
+ms.date: 07/18/2019
 localization_priority: Priority
-ms.openlocfilehash: b59b4523bf0cc45a69a5c86e1670a0b224ad029c
-ms.sourcegitcommit: 90c2d8236c6b30d80ac2b13950028a208ef60973
+ms.openlocfilehash: f2030ca40a83694c1c1c92ca4b956a9294cb3e0a
+ms.sourcegitcommit: 6d9b4820a62a914c50cef13af8b80ce626034c26
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "35454851"
+ms.lasthandoff: 07/19/2019
+ms.locfileid: "35804988"
 ---
 # <a name="outlook-add-in-api-preview-requirement-set"></a>Outlook 外接程序 API 预览要求集
 
@@ -29,43 +29,43 @@ ms.locfileid: "35454851"
 
 新增了表示附件内容的对象。
 
-**适用于**：Windows 版 Outlook（已连接到 Office 365 订阅）
+**适用于**：Windows 版 Outlook（已连接到 Office 365 订阅）、Outlook 网页版（新式）
 
 #### <a name="officecontextmailboxitemaddfileattachmentfrombase64asyncofficecontextmailboxitemmdaddfileattachmentfrombase64asyncbase64file-attachmentname-options-callback"></a>[Office.context.mailbox.item.addFileAttachmentFromBase64Async](office.context.mailbox.item.md#addfileattachmentfrombase64asyncbase64file-attachmentname-options-callback)
 
 新增了一个方法，可将 base64 编码字符串形式的文件附加到邮件或约会。
 
-**适用于**：Windows 版 Outlook（已连接到 Office 365 订阅）
+**适用于**：Windows 版 Outlook（已连接到 Office 365 订阅）、Outlook 网页版（新式）
 
 #### <a name="officecontextmailboxitemgetattachmentcontentasyncofficecontextmailboxitemmdgetattachmentcontentasyncattachmentid-options-callback--attachmentcontent"></a>[Office.context.mailbox.item.getAttachmentContentAsync](office.context.mailbox.item.md#getattachmentcontentasyncattachmentid-options-callback--attachmentcontent)
 
 新增了一个方法，可获取特定附件的内容。
 
-**适用于**：Windows 版 Outlook（已连接到 Office 365 订阅）
+**适用于**：Windows 版 Outlook（已连接到 Office 365 订阅）、Outlook 网页版（新式）
 
 #### <a name="officecontextmailboxitemgetattachmentsasyncofficecontextmailboxitemmdgetattachmentsasyncoptions-callback--arrayattachmentdetails"></a>[Office.context.mailbox.item.getAttachmentsAsync](office.context.mailbox.item.md#getattachmentsasyncoptions-callback--arrayattachmentdetails)
 
 新增了一个方法，可在撰写模式下获取项目附件。
 
-**适用于**：Windows 版 Outlook（已连接到 Office 365 订阅）
+**适用于**：Windows 版 Outlook（已连接到 Office 365 订阅）、Outlook 网页版（新式）
 
 #### <a name="officemailboxenumsattachmentcontentformatjavascriptapioutlookofficemailboxenumsattachmentcontentformat"></a>[Office.MailboxEnums.AttachmentContentFormat](/javascript/api/outlook/office.mailboxenums.attachmentcontentformat)
 
 新增了一个枚举，可指定应用于附件内容的格式设置。
 
-**适用于**：Windows 版 Outlook（已连接到 Office 365 订阅）
+**适用于**：Windows 版 Outlook（已连接到 Office 365 订阅）、Outlook 网页版（新式）
 
 #### <a name="officemailboxenumsattachmentstatusjavascriptapioutlookofficemailboxenumsattachmentstatus"></a>[Office.MailboxEnums.AttachmentStatus](/javascript/api/outlook/office.mailboxenums.attachmentstatus)
 
 新增了一个枚举，可指定将附件添加至项目还是从项目中删除附件。
 
-**适用于**：Windows 版 Outlook（已连接到 Office 365 订阅）
+**适用于**：Windows 版 Outlook（已连接到 Office 365 订阅）、Outlook 网页版（新式）
 
 #### <a name="officeeventtypeattachmentschangedjavascriptapiofficeofficeeventtype"></a>[Office.EventType.AttachmentsChanged](/javascript/api/office/office.eventtype)
 
 向 `Item` 中添加了 `AttachmentsChanged` 事件。
 
-**适用于**：Windows 版 Outlook（已连接到 Office 365 订阅）
+**适用于**：Windows 版 Outlook（已连接到 Office 365 订阅）、Outlook 网页版（新式）
 
 ---
 
@@ -130,31 +130,31 @@ ms.locfileid: "35454851"
 
 新增了一个对象，表示共享文件夹、日历或邮箱中的约会或邮件项目的属性。
 
-**适用于**：Windows 版 Outlook（已连接到 Office 365 订阅）
+**适用于**：Windows 版 Outlook（已连接到 Office 365 订阅）、Outlook 网页版（新式）
 
 #### <a name="officecontextmailboxitemgetitemidasyncofficecontextmailboxitemmdgetitemidasyncoptions-callback"></a>[Office.context.mailbox.item.getItemIdAsync](office.context.mailbox.item.md#getitemidasyncoptions-callback)
 
 添加了用于获取已保存约会或邮件项目的 ID 的新方法。
 
-**适用于**：Windows 版 Outlook（已连接到 Office 365 订阅）
+**适用于**：Windows 版 Outlook（已连接到 Office 365 订阅）、Outlook 网页版（新式）
 
 #### <a name="officecontextmailboxitemgetsharedpropertiesasyncofficecontextmailboxitemmdgetsharedpropertiesasyncoptions-callback"></a>[Office.context.mailbox.item.getSharedPropertiesAsync](office.context.mailbox.item.md#getsharedpropertiesasyncoptions-callback)
 
 新增了一个对象，用于获取表示约会或邮件项目的 sharedProperties 的对象。
 
-**适用于**：Windows 版 Outlook（已连接到 Office 365 订阅）
+**适用于**：Windows 版 Outlook（已连接到 Office 365 订阅）、Outlook 网页版（新式）
 
 #### <a name="officemailboxenumsdelegatepermissionsjavascriptapioutlookofficemailboxenumsdelegatepermissions"></a>[Office.MailboxEnums.DelegatePermissions](/javascript/api/outlook/office.mailboxenums.delegatepermissions)
 
 新增了一个位标志枚举，可指定委派权限。
 
-**适用于**：Windows 版 Outlook（已连接到 Office 365 订阅）
+**适用于**：Windows 版 Outlook（已连接到 Office 365 订阅）、Outlook 网页版（新式）
 
 #### <a name="supportssharedfolders-manifest-elementmanifestsupportssharedfoldersmd"></a>[SupportsSharedFolders manifest element](../../manifest/supportssharedfolders.md)
 
 向 [DesktopFormFactor](../../manifest/desktopformfactor.md) 清单元素中添加了子元素。 它定义外接程序是否在代理应用场景中可用。
 
-**适用于**：Windows 版 Outlook（已连接到 Office 365 订阅）
+**适用于**：Windows 版 Outlook（已连接到 Office 365 订阅）、Outlook 网页版（新式）
 
 ---
 
@@ -164,37 +164,37 @@ ms.locfileid: "35454851"
 
 新增了一个对象，显示约会的位置。
 
-**适用于**：Windows 版 Outlook（已连接到 Office 365 订阅）
+**适用于**：Windows 版 Outlook（已连接到 Office 365 订阅）、Outlook 网页版（新式）
 
 #### <a name="locationdetailsjavascriptapioutlookofficelocationdetails"></a>[LocationDetails](/javascript/api/outlook/office.locationdetails)
 
 新增了一个表示位置的对象。 只读。
 
-**适用于**：Windows 版 Outlook（已连接到 Office 365 订阅）
+**适用于**：Windows 版 Outlook（已连接到 Office 365 订阅）、Outlook 网页版（新式）
 
 #### <a name="locationidentifierjavascriptapioutlookofficelocationidentifier"></a>[LocationIdentifier](/javascript/api/outlook/office.locationidentifier)
 
 新增了一个表示位置 ID 的对象。
 
-**适用于**：Windows 版 Outlook（已连接到 Office 365 订阅）
+**适用于**：Windows 版 Outlook（已连接到 Office 365 订阅）、Outlook 网页版（新式）
 
 #### <a name="officecontextmailboxitemenhancedlocationofficecontextmailboxitemmdenhancedlocation-enhancedlocation"></a>[Office.context.mailbox.item.enhancedLocation](office.context.mailbox.item.md#enhancedlocation-enhancedlocation)
 
 新增了一个表示约会位置的属性。
 
-**适用于**：Windows 版 Outlook（已连接到 Office 365 订阅）
+**适用于**：Windows 版 Outlook（已连接到 Office 365 订阅）、Outlook 网页版（新式）
 
 #### <a name="officemailboxenumslocationtypejavascriptapioutlookofficemailboxenumslocationtype"></a>[Office.MailboxEnums.LocationType](/javascript/api/outlook/office.mailboxenums.locationtype)
 
 新增了一个用于指定约会位置类型的枚举。
 
-**适用于**：Windows 版 Outlook（已连接到 Office 365 订阅）
+**适用于**：Windows 版 Outlook（已连接到 Office 365 订阅）、Outlook 网页版（新式）
 
 #### <a name="officeeventtypeenhancedlocationschangedjavascriptapiofficeofficeeventtype"></a>[Office.EventType.EnhancedLocationsChanged](/javascript/api/office/office.eventtype)
 
 向 `Item` 中添加了 `EnhancedLocationsChanged` 事件。
 
-**适用于**：Windows 版 Outlook（已连接到 Office 365 订阅）
+**适用于**：Windows 版 Outlook（已连接到 Office 365 订阅）、Outlook 网页版（新式）
 
 ---
 
@@ -246,10 +246,11 @@ ms.locfileid: "35454851"
 
 添加了对 `getAccessTokenAsync` 的访问，使外接程序[能够访问](/outlook/add-ins/authenticate-a-user-with-an-sso-token) Microsoft Graph API 的访问令牌。
 
-**适用于**：Windows 版 Outlook（已连接到 Office 365 订阅）、Mac 版 Outlook（已连接到 Office 365 订阅）、Outlook 网页版（新）、Outlook 网页版（经典）
+**适用于**：Windows 版 Outlook（已连接到 Office 365 订阅）、Mac 版 Outlook（已连接到 Office 365 订阅）、Outlook 网页版（新式）、Outlook 网页版（经典）
 
 ## <a name="see-also"></a>另请参阅
 
 - [Outlook 加载项](/outlook/add-ins/)
 - [Outlook 外接程序代码示例](https://developer.microsoft.com/outlook/gallery/?filterBy=Outlook,Samples,Add-ins)
 - [入门](/outlook/add-ins/quick-start)
+- [要求集和支持的客户端](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)

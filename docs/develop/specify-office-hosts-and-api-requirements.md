@@ -1,14 +1,14 @@
 ---
 title: 指定 Office 主机和 API 要求
 description: ''
-ms.date: 07/01/2019
+ms.date: 07/18/2019
 localization_priority: Priority
-ms.openlocfilehash: 4355f86b6173e84c80bbd0791f571e034c8ae12d
-ms.sourcegitcommit: 90c2d8236c6b30d80ac2b13950028a208ef60973
+ms.openlocfilehash: 9699379d39e4c1a9f4e1380cf6360eaf027f05f0
+ms.sourcegitcommit: 6d9b4820a62a914c50cef13af8b80ce626034c26
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "35454620"
+ms.lasthandoff: 07/19/2019
+ms.locfileid: "35804616"
 ---
 # <a name="specify-office-hosts-and-api-requirements"></a>指定 Office 主机和 API 要求
 
@@ -105,9 +105,9 @@ ms.locfileid: "35454620"
 
 以下代码示例说明在支持以下内容的所有 Office 主机应用程序中加载的外接程序：
 
--  最低版本为 1.1 的 **TableBindings** 要求集。
+-  最低版本为“1.1”的 **TableBindings** 要求集。
 
--  最低版本为 1.1 的 **OOXML** 要求集。
+-  最低版本为“1.1”的 **OOXML** 要求集。
 
 -  **Document.getSelectedDataAsync** 方法。
 
@@ -166,7 +166,7 @@ if (Office.context.requirements.isSetSupported(RequirementSetName, VersionNumber
 以下代码示例演示外接程序如何向支持不同要求集或 API 成员的不同 Office 主机提供不同功能。
 
 ```js
-if (Office.context.requirements.isSetSupported('WordApi', 1.1))
+if (Office.context.requirements.isSetSupported('WordApi', '1.1'))
 {
     // Run code that provides additional functionality using the Word JavaScript API when the add-in runs in Word 2016 or later.
 }
