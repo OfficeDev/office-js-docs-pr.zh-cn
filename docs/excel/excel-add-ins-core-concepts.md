@@ -3,12 +3,12 @@ title: Excel JavaScript API 基本编程概念
 description: 使用 Excel JavaScript API 生成 Excel 加载项。
 ms.date: 06/20/2019
 localization_priority: Priority
-ms.openlocfilehash: dad6aadf64b87ec799a17fb8efd0198be5af08b5
-ms.sourcegitcommit: 9c5a836d4464e49846c9795bf44cfe23e9fc8fbe
+ms.openlocfilehash: cd811a61ccd74496ab31c8b9a59ecd1c6e42aa42
+ms.sourcegitcommit: 5e90a90175909e0f4f392f5c98bd1273f444fe49
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "35617035"
+ms.lasthandoff: 07/24/2019
+ms.locfileid: "35851579"
 ---
 # <a name="fundamental-programming-concepts-with-the-excel-javascript-api"></a>Excel JavaScript API 基本编程概念
 
@@ -128,7 +128,7 @@ Excel.run(function (context) {
 
 在上一示例中，由于在调用 **myRange.load()** 时未指定 `format/font`，因此无法读取 `format.font.color` 属性。
 
-为了优化性能，应在对对象使用 **load()** 方法时，显式指定要加载的属性和关系，如 [Excel JavaScript API 性能优化](performance.md)中所述。 若要详细了解 **load()** 方法，请参阅 [Excel JavaScript API 高级编程概念](excel-add-ins-advanced-concepts.md)。
+为了优化性能，应在对对象使用 **load()** 方法时，显式指定要加载的属性，如 [Excel JavaScript API 性能优化](performance.md)中所述。 若要详细了解 **load()** 方法，请参阅 [Excel JavaScript API 高级编程概念](excel-add-ins-advanced-concepts.md)。
 
 ## <a name="null-or-blank-property-values"></a>null 或空属性值
 
