@@ -432,7 +432,7 @@
             - name: Excel 预览 Api
               href: reference/requirement-sets/excel-preview-apis.md
               displayName: Excel
-            - name: ExcelApi 1.9 要求 et
+            - name: ExcelApi 1.9 要求集
               href: reference/requirement-sets/excel-api-1-9-requirement-set.md
               displayName: Excel
             - name: ExcelApi 1.8 要求集
