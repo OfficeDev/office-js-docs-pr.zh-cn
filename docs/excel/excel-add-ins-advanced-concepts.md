@@ -3,12 +3,12 @@ title: Excel JavaScript API 高级编程概念
 description: ''
 ms.date: 07/17/2019
 localization_priority: Priority
-ms.openlocfilehash: 0336362906f2f3c96c1ac5ff2e06d6409637e9b6
-ms.sourcegitcommit: 6d9b4820a62a914c50cef13af8b80ce626034c26
+ms.openlocfilehash: 0270ca30e0add99dadc9fcfaf4a71cdb3fb68f46
+ms.sourcegitcommit: 5e90a90175909e0f4f392f5c98bd1273f444fe49
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "35804609"
+ms.lasthandoff: 07/24/2019
+ms.locfileid: "35851586"
 ---
 # <a name="advanced-programming-concepts-with-the-excel-javascript-api"></a>Excel JavaScript API 高级编程概念
 
@@ -18,15 +18,15 @@ ms.locfileid: "35804609"
 
 Excel 加载项通过使用适用于 Office 的 JavaScript API 与 Excel 中的对象进行交互，适用于 Office 的 JavaScript API包括两个 JavaScript 对象模型：
 
-* **Excel JavaScript API**：[Excel JavaScript API](/office/dev/add-ins/reference/overview/excel-add-ins-reference-overview) 随 Office 2016 一起引入，提供了强类型的对象，可用于访问工作表、区域、表格、图表等。 
+* **Excel JavaScript API**：[Excel JavaScript API](/office/dev/add-ins/reference/overview/excel-add-ins-reference-overview) 随 Office 2016 一起引入，提供了强类型的对象，可用于访问工作表、区域、表格、图表等。
 
 * **通用 API**：[通用 API](/javascript/api/office) 随 Office 2013 引入，可用于访问多种类型的 Office 应用程序中常见的 UI、对话框和客户端设置等功能。
 
 你可能会使用 Excel JavaScript API 开发面向 Excel 2016 或更高版本的加载项中的大部分功能，同时还可以使用通用 API 中的对象。 例如：
 
-- [Context](/javascript/api/office/office.context)：**Context** 对象表示加载项的运行时环境，并提供对 API 关键对象的访问权限。 它由工作簿配置详细信息（如 `contentLanguage` 和 `officeTheme`）组成，并提供有关加载项的运行时环境（如 `host` 和 `platform`）的信息。 此外，它还提供了 `requirements.isSetSupported()` 方法，可用于检查运行加载项的 Excel 应用程序是否支持指定的要求集。 
+- [Context](/javascript/api/office/office.context)：**Context** 对象表示加载项的运行时环境，并提供对 API 关键对象的访问权限。 它由工作簿配置详细信息（如 `contentLanguage` 和 `officeTheme`）组成，并提供有关加载项的运行时环境（如 `host` 和 `platform`）的信息。 此外，它还提供了 `requirements.isSetSupported()` 方法，可用于检查运行加载项的 Excel 应用程序是否支持指定的要求集。
 
-- [Document](/javascript/api/office/office.document)：**Document** 对象提供 `getFileAsync()` 方法，用于下载运行加载项的 Excel 文件。 
+- [Document](/javascript/api/office/office.document)：**Document** 对象提供 `getFileAsync()` 方法，用于下载运行加载项的 Excel 文件。
 
 ## <a name="requirement-sets"></a>要求集
 
@@ -47,7 +47,7 @@ else {
 
 ### <a name="defining-requirement-set-support-in-the-manifest"></a>在清单中定义要求集支持
 
-可以在加载项清单中使用[要求元素](/office/dev/add-ins/reference/manifest/requirements)指定加载项要求激活的最小要求集和/或 API 方法。 如果 Office 主机或平台不支持清单的 **Requirements** 元素中指定的要求集或 API 方法，该加载项不会在该主机或平台中运行，而且不会显示在“我的加载项”**** 中显示的加载项列表中。 
+可以在加载项清单中使用[要求元素](/office/dev/add-ins/reference/manifest/requirements)指定加载项要求激活的最小要求集和/或 API 方法。 如果 Office 主机或平台不支持清单的 **Requirements** 元素中指定的要求集或 API 方法，该加载项不会在该主机或平台中运行，而且不会显示在“我的加载项”**** 中显示的加载项列表中。
 
 以下代码示例显示加载项清单中的 **Requirements** 元素，该元素指定应在支持 ExcelApi 要求集版本 1.3 或更高版本的所有 Office 主机应用程序中加载该加载项。
 
@@ -68,7 +68,7 @@ else {
 
 ## <a name="loading-the-properties-of-an-object"></a>加载对象的属性
 
-在 Excel JavaScript 对象上调用 `load()` 方法指示 API 在 `sync()` 方法运行时将对象加载到 JavaScript 内存中。 `load()` 方法接受字符串（其中包含要加载的以逗号分隔的属性名称）或对象（指定要加载的属性、分页选项等）。 
+在 Excel JavaScript 对象上调用 `load()` 方法指示 API 在 `sync()` 方法运行时将对象加载到 JavaScript 内存中。 `load()` 方法接受字符串（其中包含要加载的以逗号分隔的属性名称）或对象（指定要加载的属性、分页选项等）。
 
 > [!NOTE]
 > 如果对对象（或集合）调用 `load()` 方法，而未指定任何参数，将会加载对象的所有标量属性（或集合中全部对象的所有标量属性）。 为了减少 Excel 主机应用程序和加载项之间的数据传输量，应避免在没有明确指定要加载的属性的情况下调用 `load()` 方法。
@@ -89,9 +89,9 @@ object.load(param);
 
 |**参数**|**类型**|**说明**|
 |:------------|:-------|:----------|
-|`param`|对象|可选。 接受参数和关系名称作为逗号分隔的字符串或数组。 也可以传递对象来设置选择和导航属性（如下面的示例所示）。|
+|`param`|object|可选。 接受属性名称作为逗号分隔的字符串或数组。 也可以传递对象来设置选择和导航属性（如下面的示例所示）。|
 
-#### <a name="returns"></a>返回以
+#### <a name="returns"></a>返回
 
 void
 
@@ -123,18 +123,18 @@ Excel.run(function (ctx) {
 
 ### <a name="load-option-properties"></a>加载选项属性
 
-作为调用 `load()` 方法时传递逗号分隔的字符串或数组的替代方法，可以传递一个包含以下属性的对象。 
+作为调用 `load()` 方法时传递逗号分隔的字符串或数组的替代方法，可以传递一个包含以下属性的对象。
 
 |**属性**|**类型**|**说明**|
 |:-----------|:-------|:----------|
-|`select`|object|包含参数/关系名称的逗号分隔列表或数组。可选。|
-|`expand`|object|包含关系名称的逗号分隔列表或数组。可选。|
+|`select`|object|包含标量属性名称的逗号分隔列表或数组。可选。|
+|`expand`|object|包含导航属性名称的逗号分隔列表或数组。可选。|
 |`top`|int| 指定结果中可以包含的集合项最大数量。可选。使用对象表示法选项时，仅可使用此选项。|
 |`skip`|int|指定要跳过且不包含在结果中的集合中的项数目。如果指定 `top`，跳过指定数目的项目后将会启动结果集。可选。使用对象表示法选项时，仅可使用此选项。|
 
 以下代码示例通过为集合中的每个工作表的所用区域选择 `name` 属性和 `address` 来加载工作表集合。 它还指定只能加载集合中的前五个工作表。 可以通过将 `top: 10` 和 `skip: 5` 指定为属性值来处理下一组五个工作表。
 
-```js 
+```js
 myWorksheets.load({
     select: 'name, userRange/address',
     expand: 'tables',
@@ -145,7 +145,7 @@ myWorksheets.load({
 
 ## <a name="scalar-and-navigation-properties"></a>标量和导航属性
 
-在 Excel JavaScript API 参考文档中，你可能会注意到，对象成员分为两类：**属性**和**关系**。 对象的属性是一个标量成员（如字符串、整数或布尔值），而对象的关系（也称为“导航属性”）是一个对象/对象集合成员。 例如，`name` 对象中的 `position` 和 [](/javascript/api/excel/excel.worksheet) 成员是标量属性，而 `protection` 和 `tables` 是关系（导航属性）。 
+属性分为两种类别：**标量**和**导航**。 标量属性是可分配的类型，如字符串、整数和 JSON 结构。 导航属性是只读对象和已分配字段的对象的集合，而不是直接分配属性。 例如，[Worksheet](/javascript/api/excel/excel.worksheet) 对象上的 `name`和 `position` 成员是标量属性，而 `protection` 和 `tables` 是导航属性。 [DataValidation] 对象上的 `prompt` 是必须使用 JSON 对象 (`dv.prompt = { title: "MyPrompt"}`) 设置的标量属性的示例，而不是设置子属性 (`dv.prompt.title = "MyPrompt" // will not set the title`)。
 
 ### <a name="scalar-properties-and-navigation-properties-with-objectload"></a>使用 `object.load()` 的标量属性和导航属性
 
