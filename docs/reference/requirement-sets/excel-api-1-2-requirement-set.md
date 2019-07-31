@@ -1,15 +1,15 @@
 ---
 title: Excel JavaScript API 要求集1。2
 description: 有关 ExcelApi 1.2 要求集的详细信息
-ms.date: 07/11/2019
+ms.date: 07/26/2019
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: 887c0430feab71b3ff1c644074d35811e544861c
-ms.sourcegitcommit: bb44c9694f88cde32ffbb642689130db44456964
+ms.openlocfilehash: b3d4e7a7596ad47a728ffe6c7b6fd6272e8893ad
+ms.sourcegitcommit: cb5e1726849aff591f19b07391198a96d5749243
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/17/2019
-ms.locfileid: "35772056"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "35940778"
 ---
 # <a name="whats-new-in-excel-javascript-api-12"></a>Excel JavaScript API 1.2 的最近更新
 
@@ -17,7 +17,7 @@ ExcelApi 1.2 增加了对表筛选和对内置 Excel 函数的访问支持。
 
 ## <a name="api-list"></a>API 列表
 
-| Class | 域 | 说明 |
+|| Class | 域 | 说明 |
 |:---|:---|:---|
 |[Binding](/javascript/api/excel/excel.binding)|[onDataChanged](/javascript/api/excel/excel.binding#ondatachanged)|当绑定内的数据或格式变化时发生。|
 ||[onSelectionChanged](/javascript/api/excel/excel.binding#onselectionchanged)|当绑定中的所选内容更改时发生。|
@@ -27,18 +27,13 @@ ExcelApi 1.2 增加了对表筛选和对内置 Excel 函数的访问支持。
 ||[rowCount](/javascript/api/excel/excel.bindingselectionchangedeventargs#rowcount)|获取选择的行数。|
 ||[startColumn](/javascript/api/excel/excel.bindingselectionchangedeventargs#startcolumn)|获取所选内容第一列的索引（从零开始）。|
 ||[startRow](/javascript/api/excel/excel.bindingselectionchangedeventargs#startrow)|获取选择的第一行的索引（基于零）。|
-|[Chart](/javascript/api/excel/excel.chart)|[getImage (width？: number, height？: number, fittingMode？: "Fit" \| "FitAndCenter" \| "Fill")](/javascript/api/excel/excel.chart#getimage-width--height--fittingmode-)|通过缩放图表以适应指定的尺寸，将图表呈现为 base64 编码的图像。|
-||[getImage (width？: number, height？: number, fittingMode？: ImageFittingMode)](/javascript/api/excel/excel.chart#getimage-width--height--fittingmode-)|通过缩放图表以适应指定的尺寸，将图表呈现为 base64 编码的图像。|
+|[Chart](/javascript/api/excel/excel.chart)|[getImage (width？: number, height？: number, fittingMode？: ImageFittingMode)](/javascript/api/excel/excel.chart#getimage-width--height--fittingmode-)|通过缩放图表以适应指定的尺寸，将图表呈现为 base64 编码的图像。|
 ||[worksheet](/javascript/api/excel/excel.chart#worksheet)|包含当前 chart 的 worksheet 对象。 只读。|
-|[ChartCollectionLoadOptions](/javascript/api/excel/excel.chartcollectionloadoptions)|[worksheet](/javascript/api/excel/excel.chartcollectionloadoptions#worksheet)|对于集合中的每一项: 包含当前图表的工作表。|
-|[ChartLoadOptions](/javascript/api/excel/excel.chartloadoptions)|[worksheet](/javascript/api/excel/excel.chartloadoptions#worksheet)|包含当前 chart 的 worksheet 对象。|
 |[Filter](/javascript/api/excel/excel.filter)|[apply (criteria: FilterCriteria)](/javascript/api/excel/excel.filter#apply-criteria-)|在给定列中应用给定的筛选条件。|
 ||[applyBottomItemsFilter(count: number)](/javascript/api/excel/excel.filter#applybottomitemsfilter-count-)|将“Bottom Item”筛选器应用于列，获取给定数量的元素。|
 ||[applyBottomPercentFilter(percent: number)](/javascript/api/excel/excel.filter#applybottompercentfilter-percent-)|将“Bottom Percent”筛选器应用于列，获取给定百分比的元素。|
 ||[applyCellColorFilter(color: string)](/javascript/api/excel/excel.filter#applycellcolorfilter-color-)|将“Cell Color”筛选器应用于列，以获取给定颜色。|
-||[applyCustomFilter (criteria1: string, criteria2？: string, oper？: "And" \| "Or")](/javascript/api/excel/excel.filter#applycustomfilter-criteria1--criteria2--oper-)|将 "Icon" 筛选器应用于列, 以查找给定的条件字符串。|
 ||[applyCustomFilter (criteria1: string, criteria2？: string, oper？: Excel. FilterOperator)](/javascript/api/excel/excel.filter#applycustomfilter-criteria1--criteria2--oper-)|将 "Icon" 筛选器应用于列, 以查找给定的条件字符串。|
-||[applyDynamicFilter (criteria: "Unknown" \| "AboveAverage" \| "AllDatesInPeriodApril" \| "AllDatesInPeriodAugust" \| "AllDatesInPeriodDecember" \| "AllDatesInPeriodFebruray \| " "AllDatesInPeriodJanuary " \| " AllDatesInPeriodJuly " \| " AllDatesInPeriodJune " \| " AllDatesInPeriodMarch " \| " AllDatesInPeriodMay " \| " AllDatesInPeriodNovember " \| " AllDatesInPeriodOctober "\| "AllDatesInPeriodQuarter1" \| "AllDatesInPeriodQuarter2" \| "AllDatesInPeriodQuarter3" \| "AllDatesInPeriodQuarter4" \| "AllDatesInPeriodSeptember" \| "BelowAverage" \| "LastMonth " \| " LastQuarter " \| " LastWeek " \| " LastYear " \| " NextMonth " \| " NextQuarter " \| " NextWeek " \| " NextYear " \| " \| ThisMonth "" ThisQuarter " \| "ThisWeek " \| " ThisYear " \|今天" \| "明天" \| "YearToDate" \| "昨天")](/javascript/api/excel/excel.filter#applydynamicfilter-criteria-)|将“Dynamic”筛选器应用于列。|
 ||[applyDynamicFilter (criteria: DynamicFilterCriteria)](/javascript/api/excel/excel.filter#applydynamicfilter-criteria-)|将“Dynamic”筛选器应用于列。|
 ||[applyFontColorFilter(color: string)](/javascript/api/excel/excel.filter#applyfontcolorfilter-color-)|将“Font Color”筛选器应用于列，以获取给定颜色。|
 ||[applyIconFilter (图标: "Excel" 图标)](/javascript/api/excel/excel.filter#applyiconfilter-icon-)|将 "Icon" 筛选器应用于列, 以获取给定图标。|
@@ -55,29 +50,12 @@ ExcelApi 1.2 增加了对表筛选和对内置 Excel 函数的访问支持。
 ||[icon](/javascript/api/excel/excel.filtercriteria#icon)|用于筛选单元格的图标。 与“图标”筛选一起使用。|
 ||[接线员](/javascript/api/excel/excel.filtercriteria#operator)|使用“自定义”筛选时，用于组合条件 1 和 2 的运算符。|
 ||[values](/javascript/api/excel/excel.filtercriteria#values)|一组用于“values”筛选器的值。|
-|[FilterData](/javascript/api/excel/excel.filterdata)|[criteria](/javascript/api/excel/excel.filterdata#criteria)|给定列上当前应用的筛选器。 只读。|
 |[FilterDatetime](/javascript/api/excel/excel.filterdatetime)|[date](/javascript/api/excel/excel.filterdatetime#date)|用于筛选数据的采用 ISO8601 格式的日期。|
 ||[specificity](/javascript/api/excel/excel.filterdatetime#specificity)|用于保留数据的日期的具体程度。 例如，如果日期是 2005-04-02 并且将特殊性设置为“月”，则筛选操作将保留包含 2009 年 4 月日期的所有行。|
-|[FilterLoadOptions](/javascript/api/excel/excel.filterloadoptions)|[$all](/javascript/api/excel/excel.filterloadoptions#$all)||
-||[criteria](/javascript/api/excel/excel.filterloadoptions#criteria)|给定列上当前应用的筛选器。 只读。|
 |[FormatProtection](/javascript/api/excel/excel.formatprotection)|[formulaHidden](/javascript/api/excel/excel.formatprotection#formulahidden)|表示 Excel 是否隐藏区域中的单元格公式。指示整个区域不具有统一公式隐藏设置的空值。|
 ||[locked](/javascript/api/excel/excel.formatprotection#locked)|指示 Excel 是否将对象中的单元格锁定。 指示整个区域不具有统一锁定设置的空值。|
-||[set (properties: FormatProtection)](/javascript/api/excel/excel.formatprotection#set-properties-)|基于现有加载的对象同时设置该对象的多个属性。|
-||[set (properties: FormatProtectionUpdateData, options？: Officeextension.error)](/javascript/api/excel/excel.formatprotection#set-properties--options-)|同时设置一个对象的多个属性。 您可以传递具有相应属性的纯对象或相同类型的其他 API 对象。|
-|[FormatProtectionData](/javascript/api/excel/excel.formatprotectiondata)|[formulaHidden](/javascript/api/excel/excel.formatprotectiondata#formulahidden)|表示 Excel 是否隐藏区域中的单元格公式。指示整个区域不具有统一公式隐藏设置的空值。|
-||[locked](/javascript/api/excel/excel.formatprotectiondata#locked)|指示 Excel 是否将对象中的单元格锁定。 指示整个区域不具有统一锁定设置的空值。|
-|[FormatProtectionLoadOptions](/javascript/api/excel/excel.formatprotectionloadoptions)|[$all](/javascript/api/excel/excel.formatprotectionloadoptions#$all)||
-||[formulaHidden](/javascript/api/excel/excel.formatprotectionloadoptions#formulahidden)|表示 Excel 是否隐藏区域中的单元格公式。指示整个区域不具有统一公式隐藏设置的空值。|
-||[locked](/javascript/api/excel/excel.formatprotectionloadoptions#locked)|指示 Excel 是否将对象中的单元格锁定。 指示整个区域不具有统一锁定设置的空值。|
-|[FormatProtectionUpdateData](/javascript/api/excel/excel.formatprotectionupdatedata)|[formulaHidden](/javascript/api/excel/excel.formatprotectionupdatedata#formulahidden)|表示 Excel 是否隐藏区域中的单元格公式。指示整个区域不具有统一公式隐藏设置的空值。|
-||[locked](/javascript/api/excel/excel.formatprotectionupdatedata#locked)|指示 Excel 是否将对象中的单元格锁定。 指示整个区域不具有统一锁定设置的空值。|
 |[FunctionResult](/javascript/api/excel/excel.functionresult)|[error](/javascript/api/excel/excel.functionresult#error)|表示错误的错误值 (如 "#DIV/0")。 如果未设置错误字符串, 则函数成功, 并将其结果写入值字段。 该错误始终位于英语区域设置中。|
 ||[value](/javascript/api/excel/excel.functionresult#value)|函数计算的值。 仅当未发生错误 (即, 未设置 Error 属性) 时, 才会填充 "值" 字段。|
-|[FunctionResultData](/javascript/api/excel/excel.functionresultdata)|[error](/javascript/api/excel/excel.functionresultdata#error)|表示错误的错误值 (如 "#DIV/0")。 如果未设置错误字符串, 则函数成功, 并将其结果写入值字段。 该错误始终位于英语区域设置中。|
-||[value](/javascript/api/excel/excel.functionresultdata#value)|函数计算的值。 仅当未发生错误 (即, 未设置 Error 属性) 时, 才会填充 "值" 字段。|
-|[FunctionResultLoadOptions](/javascript/api/excel/excel.functionresultloadoptions)|[$all](/javascript/api/excel/excel.functionresultloadoptions#$all)||
-||[error](/javascript/api/excel/excel.functionresultloadoptions#error)|表示错误的错误值 (如 "#DIV/0")。 如果未设置错误字符串, 则函数成功, 并将其结果写入值字段。 该错误始终位于英语区域设置中。|
-||[value](/javascript/api/excel/excel.functionresultloadoptions#value)|函数计算的值。 仅当未发生错误 (即, 未设置 Error 属性) 时, 才会填充 "值" 字段。|
 |[Functions](/javascript/api/excel/excel.functions)|[abs (number: number \| \| excel. RangeReference \| FunctionResult<any>)](/javascript/api/excel/excel.functions#abs-number-)|返回一个数的绝对值, 即不带其正负号的数字。|
 ||[accrInt (问题: 数字\| string \|布尔\|值\| , excel. RangeReference \| FunctionResult<any>, firstInterest: number \| string \| boolean \| excel。 range \|\| RangeReference Excel. FunctionResult<any>, 结算: Number \| string \| boolean \| \| \| 。 FunctionResult<any>, rate: number\|字符串\|布尔\|值\| RangeReference \| 。 FunctionResult<any>, par: number \| string \| boolean \| Excel。 range \|\| RangeReference FunctionResult<any>, frequency: number \| string \| boolean \| excel. FunctionResult \| \| <any>, basis？: number。\|字符串\|布尔\| \|值 excel \| 。 RangeReference FunctionResult<any>, calcMethod？: number \| string \| boolean \| Excel. range \|RangeReference \| Excel. FunctionResult<any>)](/javascript/api/excel/excel.functions#accrint-issue--firstinterest--settlement--rate--par--frequency--basis--calcmethod-)|返回定期付息有价证券的应计利息。|
 ||[accrIntM (问题: 数字\|字符串\|布尔\|值\| , excel. RangeReference \| FunctionResult<any>, 结算: number \| string \| boolean \| excel. range \|RangeReference \| Excel.<any>FunctionResult, rate: number \| string \| boolean \| excel \| \| . FunctionResult<any>, par: number \|字符串\|布尔\| \|值 excel \| . RangeReference FunctionResult<any>, basis？: number \| string \| boolean \| Excel。 Range \|RangeReference \| Excel. FunctionResult<any>)](/javascript/api/excel/excel.functions#accrintm-issue--settlement--rate--par--basis-)|返回到期一次性付息有价证券的应计利息。|
@@ -445,7 +423,6 @@ ExcelApi 1.2 增加了对表筛选和对内置 Excel 函数的访问支持。
 ||[yieldMat (结算: 数字\| string \| Boolean \| excel \| . RangeReference \| FunctionResult<any>, 成熟度: number \| string \| boolean \| excel。 range \|RangeReference \| :<any>FunctionResult, issue: 数字\| string \| boolean \| excel \| \| . FunctionResult<any>, rate: number \|字符串\|布尔\|值\| RangeReference \| 。 FunctionResult<any>, pr: number \| string \| boolean \| excel \| . RangeReference\| <any>FunctionResult, basis？: Number \| string \| boolean \| \| 。 RangeReference \| FunctionResult)<any>](/javascript/api/excel/excel.functions#yieldmat-settlement--maturity--issue--rate--pr--basis-)|返回到期付息的债券的年收益。|
 ||[z_Test (array: number \| \| \| excel. RangeReference FunctionResult<any>, x: number \| \| excel. RangeReference \| excel. FunctionResult<any>, sigma？: number \|\| Excel. RangeReference \| FunctionResult<any>)](/javascript/api/excel/excel.functions#z_test-array--x--sigma-)|返回 z 检验的单尾 P 值。|
 |[Icon](/javascript/api/excel/excel.icon)|[index](/javascript/api/excel/excel.icon#index)|表示 icon 在给定集中的索引。|
-||[set](/javascript/api/excel/excel.icon#set)|表示图标所属的集合。|
 |[Range](/javascript/api/excel/excel.range)|[columnHidden](/javascript/api/excel/excel.range#columnhidden)|表示当前 range 的所有列均已隐藏。|
 ||[formulasR1C1](/javascript/api/excel/excel.range#formulasr1c1)|表示采用 R1C1 表示法的公式。|
 ||[getColumnsAfter (count？: 数字)](/javascript/api/excel/excel.range#getcolumnsafter-count-)|获取当前范围对象右侧的一定数量的列。|
@@ -459,34 +436,13 @@ ExcelApi 1.2 增加了对表筛选和对内置 Excel 函数的访问支持。
 ||[sort](/javascript/api/excel/excel.range#sort)|表示当前 range 的区域排序。 只读。|
 ||[rowHidden](/javascript/api/excel/excel.range#rowhidden)|表示当前 range 的所有行均已隐藏。|
 ||[unmerge()](/javascript/api/excel/excel.range#unmerge--)|将范围单元格取消合并为各个单元格。|
-|[RangeData](/javascript/api/excel/excel.rangedata)|[columnHidden](/javascript/api/excel/excel.rangedata#columnhidden)|表示当前 range 的所有列均已隐藏。|
-||[formulasR1C1](/javascript/api/excel/excel.rangedata#formulasr1c1)|表示采用 R1C1 表示法的公式。|
-||[hidden](/javascript/api/excel/excel.rangedata#hidden)|表示当前区域中的所有单元格是否隐藏。 只读。|
-||[rowHidden](/javascript/api/excel/excel.rangedata#rowhidden)|表示当前 range 的所有行均已隐藏。|
 |[RangeFormat](/javascript/api/excel/excel.rangeformat)|[autofitColumns()](/javascript/api/excel/excel.rangeformat#autofitcolumns--)|根据列中的当前数据，更改当前区域的列宽以达到最佳宽度。|
 ||[autofitRows()](/javascript/api/excel/excel.rangeformat#autofitrows--)|根据列中的当前数据，更改当前范围的行高以达到最佳高度。|
 ||[columnWidth](/javascript/api/excel/excel.rangeformat#columnwidth)|获取或设置区域内的所有列的宽度。 如果列宽不统一，则返回 NULL。|
 ||[protection](/javascript/api/excel/excel.rangeformat#protection)|返回某一区域的格式 protection 对象。 只读。|
 ||[rowHeight](/javascript/api/excel/excel.rangeformat#rowheight)|获取或设置区域中所有行的高度。 如果行高不一致, 则将返回 null。|
-|[RangeFormatData](/javascript/api/excel/excel.rangeformatdata)|[columnWidth](/javascript/api/excel/excel.rangeformatdata#columnwidth)|获取或设置区域内的所有列的宽度。 如果列宽不统一，则返回 NULL。|
-||[protection](/javascript/api/excel/excel.rangeformatdata#protection)|返回某一区域的格式 protection 对象。 只读。|
-||[rowHeight](/javascript/api/excel/excel.rangeformatdata#rowheight)|获取或设置区域中所有行的高度。 如果行高不一致, 则将返回 null。|
-|[RangeFormatLoadOptions](/javascript/api/excel/excel.rangeformatloadoptions)|[columnWidth](/javascript/api/excel/excel.rangeformatloadoptions#columnwidth)|获取或设置区域内的所有列的宽度。 如果列宽不统一，则返回 NULL。|
-||[protection](/javascript/api/excel/excel.rangeformatloadoptions#protection)|返回某一区域的格式 protection 对象。|
-||[rowHeight](/javascript/api/excel/excel.rangeformatloadoptions#rowheight)|获取或设置区域中所有行的高度。 如果行高不一致, 则将返回 null。|
-|[RangeFormatUpdateData](/javascript/api/excel/excel.rangeformatupdatedata)|[columnWidth](/javascript/api/excel/excel.rangeformatupdatedata#columnwidth)|获取或设置区域内的所有列的宽度。 如果列宽不统一，则返回 NULL。|
-||[protection](/javascript/api/excel/excel.rangeformatupdatedata#protection)|返回某一区域的格式 protection 对象。|
-||[rowHeight](/javascript/api/excel/excel.rangeformatupdatedata#rowheight)|获取或设置区域中所有行的高度。 如果行高不一致, 则将返回 null。|
-|[RangeLoadOptions](/javascript/api/excel/excel.rangeloadoptions)|[columnHidden](/javascript/api/excel/excel.rangeloadoptions#columnhidden)|表示当前 range 的所有列均已隐藏。|
-||[formulasR1C1](/javascript/api/excel/excel.rangeloadoptions#formulasr1c1)|表示采用 R1C1 表示法的公式。|
-||[hidden](/javascript/api/excel/excel.rangeloadoptions#hidden)|表示当前区域中的所有单元格是否隐藏。 只读。|
-||[rowHidden](/javascript/api/excel/excel.rangeloadoptions#rowhidden)|表示当前 range 的所有行均已隐藏。|
 |[RangeReference](/javascript/api/excel/excel.rangereference)|[address](/javascript/api/excel/excel.rangereference#address)|获取或设置区域的地址。例如, "SheetName!A1: B5 '。|
-|[RangeSort](/javascript/api/excel/excel.rangesort)|[apply (fields: SortField [], matchCase？: boolean, hasHeaders？: boolean, 取向？: "Rows" \| "Columns", method？: "拼音" \| "StrokeCount")](/javascript/api/excel/excel.rangesort#apply-fields--matchcase--hasheaders--orientation--method-)|执行排序操作。|
-||[apply (fields: SortField [], matchCase？: boolean, hasHeaders？: boolean, 取向？: SortOrientation, method？: Excel. SortMethod)](/javascript/api/excel/excel.rangesort#apply-fields--matchcase--hasheaders--orientation--method-)|执行排序操作。|
-|[RangeUpdateData](/javascript/api/excel/excel.rangeupdatedata)|[columnHidden](/javascript/api/excel/excel.rangeupdatedata#columnhidden)|表示当前 range 的所有列均已隐藏。|
-||[formulasR1C1](/javascript/api/excel/excel.rangeupdatedata#formulasr1c1)|表示采用 R1C1 表示法的公式。|
-||[rowHidden](/javascript/api/excel/excel.rangeupdatedata#rowhidden)|表示当前 range 的所有行均已隐藏。|
+|[RangeSort](/javascript/api/excel/excel.rangesort)|[apply (fields: SortField [], matchCase？: boolean, hasHeaders？: boolean, 取向？: SortOrientation, method？: Excel. SortMethod)](/javascript/api/excel/excel.rangesort#apply-fields--matchcase--hasheaders--orientation--method-)|执行排序操作。|
 |[SelectionChangedEventArgs](/javascript/api/excel/excel.selectionchangedeventargs)|[工作簿](/javascript/api/excel/excel.selectionchangedeventargs#workbook)|获取引发了 SelectionChanged 事件的 Workbook 对象。|
 |[SortField](/javascript/api/excel/excel.sortfield)|[ascending](/javascript/api/excel/excel.sortfield#ascending)|表示是否执行升序排序。|
 ||[color](/javascript/api/excel/excel.sortfield#color)|表示按字体或单元格颜色进行排序时，条件的目标颜色。|
@@ -499,44 +455,20 @@ ExcelApi 1.2 增加了对表筛选和对内置 Excel 函数的访问支持。
 ||[sort](/javascript/api/excel/excel.table#sort)|表示表的排序。 只读。|
 ||[worksheet](/javascript/api/excel/excel.table#worksheet)|包含当前表格的工作表。 只读。|
 ||[reapplyFilters()](/javascript/api/excel/excel.table#reapplyfilters--)|重新应用当前在 table 上应用的所有 filter。|
-|[TableCollectionLoadOptions](/javascript/api/excel/excel.tablecollectionloadoptions)|[sort](/javascript/api/excel/excel.tablecollectionloadoptions#sort)|对于集合中的每一项: 表示对表的排序。|
-||[worksheet](/javascript/api/excel/excel.tablecollectionloadoptions#worksheet)|对于集合中的每一项: 包含当前表的工作表。|
 |[TableColumn](/javascript/api/excel/excel.tablecolumn)|[filter](/javascript/api/excel/excel.tablecolumn#filter)|检索应用于列的筛选器。 只读。|
-|[TableColumnCollectionLoadOptions](/javascript/api/excel/excel.tablecolumncollectionloadoptions)|[filter](/javascript/api/excel/excel.tablecolumncollectionloadoptions#filter)|对于集合中的每一项: 检索应用于列的筛选器。|
-|[TableColumnData](/javascript/api/excel/excel.tablecolumndata)|[filter](/javascript/api/excel/excel.tablecolumndata#filter)|检索应用于列的筛选器。 只读。|
-|[TableColumnLoadOptions](/javascript/api/excel/excel.tablecolumnloadoptions)|[filter](/javascript/api/excel/excel.tablecolumnloadoptions#filter)|检索应用于列的筛选器。|
-|[TableData](/javascript/api/excel/excel.tabledata)|[sort](/javascript/api/excel/excel.tabledata#sort)|表示表的排序。 只读。|
-|[TableLoadOptions](/javascript/api/excel/excel.tableloadoptions)|[sort](/javascript/api/excel/excel.tableloadoptions#sort)|表示表的排序。|
-||[worksheet](/javascript/api/excel/excel.tableloadoptions#worksheet)|包含当前表格的工作表。|
-|[TableSort](/javascript/api/excel/excel.tablesort)|[apply (fields: SortField [], matchCase？: boolean, method？: "拼音" \| "StrokeCount")](/javascript/api/excel/excel.tablesort#apply-fields--matchcase--method-)|执行排序操作。|
-||[apply (fields: SortField [], matchCase？: boolean, method？: SortMethod)](/javascript/api/excel/excel.tablesort#apply-fields--matchcase--method-)|执行排序操作。|
+|[TableSort](/javascript/api/excel/excel.tablesort)|[apply (fields: SortField [], matchCase？: boolean, method？: SortMethod)](/javascript/api/excel/excel.tablesort#apply-fields--matchcase--method-)|执行排序操作。|
 ||[clear()](/javascript/api/excel/excel.tablesort#clear--)|清除表上的当前排序。尽管这不能修改表的排序，但它会清除标题按钮的状态。|
 ||[fields](/javascript/api/excel/excel.tablesort#fields)|表示最后一次对表排序所使用的当前条件。 只读。|
 ||[matchCase](/javascript/api/excel/excel.tablesort#matchcase)|表示最后一次对表进行排序时大小写是否有影响。 只读。|
 ||[method](/javascript/api/excel/excel.tablesort#method)|表示最后一次对表排序所使用的中文字符排序方法。 只读。|
 ||[reapply()](/javascript/api/excel/excel.tablesort#reapply--)|对 table 重新应用当前的排序参数。|
-|[TableSortData](/javascript/api/excel/excel.tablesortdata)|[fields](/javascript/api/excel/excel.tablesortdata#fields)|表示最后一次对表排序所使用的当前条件。 只读。|
-||[matchCase](/javascript/api/excel/excel.tablesortdata#matchcase)|表示最后一次对表进行排序时大小写是否有影响。 只读。|
-||[method](/javascript/api/excel/excel.tablesortdata#method)|表示最后一次对表排序所使用的中文字符排序方法。 只读。|
-|[TableSortLoadOptions](/javascript/api/excel/excel.tablesortloadoptions)|[$all](/javascript/api/excel/excel.tablesortloadoptions#$all)||
-||[fields](/javascript/api/excel/excel.tablesortloadoptions#fields)|表示最后一次对表排序所使用的当前条件。 只读。|
-||[matchCase](/javascript/api/excel/excel.tablesortloadoptions#matchcase)|表示最后一次对表进行排序时大小写是否有影响。 只读。|
-||[method](/javascript/api/excel/excel.tablesortloadoptions#method)|表示最后一次对表排序所使用的中文字符排序方法。 只读。|
 |[Workbook](/javascript/api/excel/excel.workbook)|[作用](/javascript/api/excel/excel.workbook#functions)|代表可用于计算的工作表函数的集合。 只读。|
 ||[onSelectionChanged](/javascript/api/excel/excel.workbook#onselectionchanged)|文档中的选择更改时发生。|
 |[Worksheet](/javascript/api/excel/excel.worksheet)|[getUsedRange (valuesOnly？: 布尔值)](/javascript/api/excel/excel.worksheet#getusedrange-valuesonly-)|使用的区域是包含分配了值或格式化的任何单元格的最小区域。 如果整个工作表为空, 则此函数将返回左上角单元格 (即, 它*不*会引发错误)。|
 ||[protection](/javascript/api/excel/excel.worksheet#protection)|返回表工作表的工作表保护对象。 只读。|
-|[WorksheetCollectionLoadOptions](/javascript/api/excel/excel.worksheetcollectionloadoptions)|[protection](/javascript/api/excel/excel.worksheetcollectionloadoptions#protection)|对于集合中的每一项: 返回工作表的工作表保护对象。|
-|[WorksheetData](/javascript/api/excel/excel.worksheetdata)|[protection](/javascript/api/excel/excel.worksheetdata#protection)|返回表工作表的工作表保护对象。 只读。|
-|[WorksheetLoadOptions](/javascript/api/excel/excel.worksheetloadoptions)|[protection](/javascript/api/excel/excel.worksheetloadoptions#protection)|返回表工作表的工作表保护对象。|
 |[WorksheetProtection](/javascript/api/excel/excel.worksheetprotection)|[保护 (options？: WorksheetProtectionOptions, password？: string)](/javascript/api/excel/excel.worksheetprotection#protect-options--password-)|保护 worksheet。 如果工作表已受到保护, 则失败。|
 ||[options](/javascript/api/excel/excel.worksheetprotection#options)|工作表保护选项。 只读。|
 ||[受保护](/javascript/api/excel/excel.worksheetprotection#protected)|表示该工作表是否受保护。 只读。|
-|[WorksheetProtectionData](/javascript/api/excel/excel.worksheetprotectiondata)|[options](/javascript/api/excel/excel.worksheetprotectiondata#options)|工作表保护选项。 只读。|
-||[受保护](/javascript/api/excel/excel.worksheetprotectiondata#protected)|表示该工作表是否受保护。 只读。|
-|[WorksheetProtectionLoadOptions](/javascript/api/excel/excel.worksheetprotectionloadoptions)|[$all](/javascript/api/excel/excel.worksheetprotectionloadoptions#$all)||
-||[options](/javascript/api/excel/excel.worksheetprotectionloadoptions#options)|工作表保护选项。 只读。|
-||[受保护](/javascript/api/excel/excel.worksheetprotectionloadoptions#protected)|表示该工作表是否受保护。 只读。|
 |[WorksheetProtectionOptions](/javascript/api/excel/excel.worksheetprotectionoptions)|[allowAutoFilter](/javascript/api/excel/excel.worksheetprotectionoptions#allowautofilter)|表示允许使用自动筛选功能的工作表保护选项。|
 ||[allowDeleteColumns](/javascript/api/excel/excel.worksheetprotectionoptions#allowdeletecolumns)|表示允许删除列的工作表保护选项。|
 ||[allowDeleteRows](/javascript/api/excel/excel.worksheetprotectionoptions#allowdeleterows)|表示允许删除行的工作表保护选项。|

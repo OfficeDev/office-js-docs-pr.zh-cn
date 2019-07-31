@@ -4,18 +4,18 @@ description: ''
 ms.date: 07/05/2019
 ms.prod: powerpoint
 localization_priority: Priority
-ms.openlocfilehash: ffb6372500c6f6a8a292d0af93c737b39720c83c
-ms.sourcegitcommit: c3673cc693fa7070e1b397922bd735ba3f9342f3
+ms.openlocfilehash: 045b5ff2af3523930e696f5faa296be7c777fe8b
+ms.sourcegitcommit: cb5e1726849aff591f19b07391198a96d5749243
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/05/2019
-ms.locfileid: "35576783"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "35940814"
 ---
 # <a name="javascript-api-for-powerpoint"></a>适用于 PowerPoint 的 JavaScript API
 
 PowerPoint 加载项通过使用 Office JavaScript API 与 PowerPoint 中的对象进行交互，其中包括两个 JavaScript 对象模型：
 
-* **PowerPoint JavaScript API**：[PowerPoint JavaScript API](/javascript/api/powerpoint) 提供可用于访问 PowerPoint 中的对象的强类型对象。 
+* **PowerPoint JavaScript API**：[PowerPoint JavaScript API](/javascript/api/powerpoint) 提供可用于访问 PowerPoint 中的对象的强类型对象。
 
 * **通用 API**：[通用 API](/javascript/api/office) 随 Office 2013 引入，可用于访问多种类型的 Office 应用程序中常见的 UI、对话框和客户端设置等功能。
 
@@ -25,9 +25,9 @@ PowerPoint 加载项通过使用 Office JavaScript API 与 PowerPoint 中的对�
 
 ## <a name="learn-about-api-capabilities"></a>了解 API 功能
 
-有关使用通用 API 与 PowerPoint 中的内容进行交互的实践体验，请完成 [PowerPoint 加载项教程](../../tutorials/powerpoint-tutorial.md)。 
+有关使用通用 API 与 PowerPoint 中的内容进行交互的实践体验，请完成 [PowerPoint 加载项教程](../../tutorials/powerpoint-tutorial.md)。
 
-有关 PowerPoint JavaScript API 对象模型的详细信息，请参阅 [PowerPoint JavaScript API 参考文档](/javascript/api/powerpoint)。 
+有关 PowerPoint JavaScript API 对象模型的详细信息，请参阅 [PowerPoint JavaScript API 参考文档](/javascript/api/powerpoint)。
 
 ## <a name="try-out-code-samples-in-script-lab"></a>试用 Script Lab 中的代码示例
 

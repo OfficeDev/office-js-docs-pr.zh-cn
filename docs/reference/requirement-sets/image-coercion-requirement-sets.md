@@ -4,12 +4,12 @@ description: 支持跨 Excel、PowerPoint 和 Word 的 Office 外接程序对图
 ms.date: 07/11/2019
 ms.prod: non-product-specific
 localization_priority: Normal
-ms.openlocfilehash: 046a3f1f16d8b48cddbd64bddf80a31ed1e50583
-ms.sourcegitcommit: 61f8f02193ce05da957418d938f0d94cb12c468d
+ms.openlocfilehash: bffe6c074d9e0734299d0087f2488524875931ed
+ms.sourcegitcommit: cb5e1726849aff591f19b07391198a96d5749243
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "35633989"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "35940842"
 ---
 # <a name="image-coercion-requirement-sets"></a>图像强制要求集
 
@@ -19,7 +19,7 @@ Office 外接程序在多个 Office 版本中运行。 下表列出了图像强�
 
 ## <a name="imagecoercion-11"></a>ImageCoercion 1。1
 
-在使用[`Document.setSelectedDataAsync`](/javascript/api/office/document#setselecteddataasync-data--options--callback-)方法写入数据时, ImageCoercion`Office.CoercionType.Image`1.1 支持转换为 image ()。 支持以下主机:
+在使用[`Document.setSelectedDataAsync`](/javascript/api/office/office.document#setselecteddataasync-data--options--callback-)方法写入数据时, ImageCoercion`Office.CoercionType.Image`1.1 支持转换为 image ()。 支持以下主机:
 
 - Excel 2013 及更高版本的 Windows
 - Excel 2016 及更高版本 Mac
@@ -37,7 +37,7 @@ Office 外接程序在多个 Office 版本中运行。 下表列出了图像强�
 
 ## <a name="imagecoercion-12"></a>ImageCoercion 1。2
 
-ImageCoercion 1.2 支持在使用`Office.CoercionType.XmlSvg` [`Document.setSelectedDataAsync`](/javascript/api/office/document#setselecteddataasync-data--options--callback-)方法写入数据时转换为 SVG 格式 ()。 支持以下主机:
+ImageCoercion 1.2 支持在使用`Office.CoercionType.XmlSvg` [`Document.setSelectedDataAsync`](/javascript/api/office/office.document#setselecteddataasync-data--options--callback-)方法写入数据时转换为 SVG 格式 ()。 支持以下主机:
 
 - Windows 上的 Excel (连接到 Office 365 订阅)
 - Mac 上的 Excel (连接到 Office 365 订阅)

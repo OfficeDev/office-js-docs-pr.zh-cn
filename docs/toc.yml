@@ -802,6 +802,9 @@
         - name: 概述
           href: reference/overview/powerpoint-add-ins-reference-overview.md
           displayName: PowerPoint
+        - name: API 要求集
+          href: reference/requirement-sets/powerpoint-api-requirement-sets.md
+          displayName: PowerPoint
         - name: API 参考
           href: /javascript/api/powerpoint
           displayName: PowerPoint
