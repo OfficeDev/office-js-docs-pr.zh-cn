@@ -1,20 +1,26 @@
 ---
 title: 使用 XLL 用户定义的函数扩展自定义函数
-description: 启用与自定义函数具有等效功能的 Excel XLL 用户定义函数的兼容性 (预览)
-ms.date: 06/19/2019
+description: 启用与自定义函数具有等效功能的 Excel XLL 用户定义函数的兼容性
+ms.date: 07/31/2019
 localization_priority: Normal
-ms.openlocfilehash: fa80597d48859a29bcdbb5b900c251382dc87caa
-ms.sourcegitcommit: bb44c9694f88cde32ffbb642689130db44456964
+ms.openlocfilehash: 955a286956987615f904e8041a16b3c29cc80461
+ms.sourcegitcommit: d49643c4218ed8ad57575d58170dfcdbaf312d14
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/17/2019
-ms.locfileid: "35771651"
+ms.lasthandoff: 08/01/2019
+ms.locfileid: "36048286"
 ---
-# <a name="extend-custom-functions-with-xll-user-defined-functions-preview"></a>使用 XLL 用户定义的函数扩展自定义函数 (预览)
+# <a name="extend-custom-functions-with-xll-user-defined-functions"></a>使用 XLL 用户定义的函数扩展自定义函数
 
 如果您有现有的 Excel Xll, 则可以在 Excel 外接程序中构建等效的自定义函数, 以将解决方案功能扩展到其他平台 (如 online 或 macOS)。 但是, Excel 外接程序没有在 Xll 中提供的所有功能。 根据您的解决方案使用的功能, XLL 可以提供比 excel 在 Windows 上运行的 Excel 外接程序自定义函数更好的体验。
 
-[!include[COM add-in and XLL UDF compatibility note](../includes/xll-compatibility-note.md)]
+> [!NOTE]
+> 当连接到 Office 365 订阅时, 以下平台支持 COM 加载项和 XLL UDF 兼容性:
+> - 在 web 上的 Excel
+> - Windows 上的 Excel (版本1904或更高版本)
+> - Excel for Mac (版本13.329 或更高版本)
+> 
+> 若要在 web 上的 Excel 中使用 COM 加载项并 XLL UDF 兼容性, 请使用 Office 365 订阅或[Microsoft 帐户](https://account.microsoft.com/account)登录。 如果还没有 Office 365 订阅，可以通过加入 [Office 365 开发人员计划](https://developer.microsoft.com/office/dev-program)获取一个订阅。
 
 ## <a name="specify-equivalent-xll-in-the-manifest"></a>在清单中指定等效 XLL
 

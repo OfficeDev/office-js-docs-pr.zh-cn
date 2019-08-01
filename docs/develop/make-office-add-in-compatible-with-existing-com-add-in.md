@@ -1,23 +1,26 @@
 ---
 title: 让 Office 加载项与现有 COM 加载项兼容
 description: 启用 Office 加载项和等效 COM 加载项之间的兼容性
-ms.date: 06/20/2019
+ms.date: 07/31/2019
 localization_priority: Normal
-ms.openlocfilehash: 3577b8fe4b4a26ac5d0af85cc5c2f96a7a8dc010
-ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
+ms.openlocfilehash: 8d826dec35bbbca91a1606d902d563f1a794e688
+ms.sourcegitcommit: d49643c4218ed8ad57575d58170dfcdbaf312d14
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "35128050"
+ms.lasthandoff: 08/01/2019
+ms.locfileid: "36048279"
 ---
-# <a name="make-your-office-add-in-compatible-with-an-existing-com-add-in-preview"></a>使您的 Office 外接程序与现有 COM 加载项兼容 (预览)
+# <a name="make-your-office-add-in-compatible-with-an-existing-com-add-in"></a>让 Office 加载项与现有 COM 加载项兼容
 
 如果您有一个现有的 COM 加载项, 则可以在 Office 加载项中构建等效功能, 从而使您的解决方案能够在其他平台 (如 web 或 Mac 上的 Office) 上运行。 在某些情况下, Office 外接程序可能无法提供相应 COM 外接程序中提供的所有功能。 在这些情况下, 您的 COM 外接程序在 Windows 上提供的用户体验可能比相应的 Office 外接程序提供的更好。
 
 您可以配置 Office 加载项, 以便在用户的计算机上已安装等效的 COM 加载项时, Windows 上的 Office 将运行 COM 加载项, 而不是 Office 外接程序。 COM 加载项称为 "等效", 因为 Office 将根据安装了用户计算机的加载项和 Office 加载项在 COM 加载项之间进行无缝转换。
 
 > [!NOTE]
-> 此功能当前处于预览阶段, 不受支持在生产环境中使用。 它在 Excel、Word 和 PowerPoint 版本16.0.11629.20214 或更高版本中可用。 若要访问此版本, 您必须拥有 Office 365 订阅, 并在**内幕**级加入[Office 预览体验成员](https://products.office.com/office-insider)计划。
+> 当连接到 Office 365 订阅时, 以下平台支持此功能:
+> - 网页上的 Excel、Word 和 PowerPoint
+> - Windows 上的 Excel、Word 和 PowerPoint (版本1904或更高版本)
+> - Excel、Word 和 PowerPoint on Mac (版本13.329 或更高版本)
 
 ## <a name="specify-an-equivalent-com-add-in-in-the-manifest"></a>在清单中指定等效的 COM 加载项
 
