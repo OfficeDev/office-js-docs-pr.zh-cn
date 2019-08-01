@@ -536,9 +536,6 @@
         - name: 批处理
           href: excel/custom-functions-batching.md
           displayName: 'Excel, Custom Functions'
-        - name: COM 加载项和 XLL UDF 兼容性要求
-          href: excel/xll-compatibility-requirements.md
-          displayName: 'Excel, Custom Functions'
         - name: 调试
           href: excel/custom-functions-debugging.md
           displayName: 'Excel, Custom Functions'
