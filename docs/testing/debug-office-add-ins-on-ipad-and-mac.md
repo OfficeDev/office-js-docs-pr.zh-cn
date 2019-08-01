@@ -1,18 +1,18 @@
 ---
 title: 在 Mac 上调试 Office 加载项
 description: ''
-ms.date: 06/20/2019
+ms.date: 07/29/2019
 localization_priority: Priority
-ms.openlocfilehash: 88f7cbf6c944a0f6510306cfe2d07db59e40bdeb
-ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
+ms.openlocfilehash: 10b1181cab23252137df299736341c990978aa1d
+ms.sourcegitcommit: cb5e1726849aff591f19b07391198a96d5749243
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "35126930"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "35940680"
 ---
 # <a name="debug-office-add-ins-on-a-mac"></a>在 Mac 上调试 Office 加载项
 
-你可以使用 Visual Studio 在 Windows 上开发和调试加载项，但不能使用它在 Mac 上调试加载项。由于加载项是使用 HTML 和 JavaScript 开发的，因此它们可以跨平台工作，但不同浏览器呈现 HTML 的方式可能存在细微差别。本文介绍如何调试在 Mac 上运行的加载项。
+由于加载项是使用 HTML 和 JavaScript 开发的，因此它们可以跨平台工作，但不同浏览器呈现 HTML 的方式可能存在细微差别。本文介绍如何调试在 Mac 上运行的加载项。
 
 ## <a name="debugging-with-safari-web-inspector-on-a-mac"></a>在 Mac 上使用 Safari Web 检查器进行调试
 
@@ -39,10 +39,6 @@ ms.locfileid: "35126930"
 > 3. 将对话框调整为原始大小。
 > 4. 根据需要使用检查器。
 
-## <a name="clearing-the-office-applications-cache-on-a-mac"></a>在 Mac 上清除 Office 应用程序缓存
-
-出于性能方面的考虑，加载项通常在 Mac 版 Office 中缓存。通常情况下，将通过重载加载项清除缓存。如果同一文档中存在多个加载项，则重载后自动清除缓存的过程可能不可靠。
-
-在 Mac 上，通过删除 `~/Library/Containers/com.Microsoft.OsfWebHost/Data/` 文件夹中的内容可以手动清除缓存。 
+## <a name="clearing-the-office-applications-cache-on-a-mac"></a>在 Mac 上清除 Office 应用程序的缓存
 
 [!include[additional cache folders on Mac](../includes/mac-cache-folders.md)]

@@ -3,12 +3,12 @@ title: 使用 Excel JavaScript API 处理工作表
 description: ''
 ms.date: 06/20/2019
 localization_priority: Priority
-ms.openlocfilehash: 6267c9f0ef46bda0beeed1612acce5d620f1e74f
-ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
+ms.openlocfilehash: 7fd6821797269b13ad7fb1900b2024035e27d37b
+ms.sourcegitcommit: cb5e1726849aff591f19b07391198a96d5749243
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "35128344"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "35940736"
 ---
 # <a name="work-with-worksheets-using-the-excel-javascript-api"></a>使用 Excel JavaScript API 处理工作表
 

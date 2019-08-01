@@ -1,14 +1,14 @@
 ---
 title: Office 版本和要求集
 description: ''
-ms.date: 06/20/2019
+ms.date: 07/17/2019
 localization_priority: Priority
-ms.openlocfilehash: 3f63d9f6d6ce62b39fa97efc62ceb964f2b55394
-ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
+ms.openlocfilehash: cfa72f63fc3e74809b743584b131ee5b1fb57676
+ms.sourcegitcommit: cb5e1726849aff591f19b07391198a96d5749243
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "35128316"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "35940638"
 ---
 # <a name="office-versions-and-requirement-sets"></a>Office 版本和要求集
 
@@ -18,7 +18,6 @@ Office 跨多个平台运行且有许多版本，它们并非全都支持 Office
 > - Office 跨多个平台（包括 Windows、浏览器、Mac 和 iPad）运行。
 > - Office 主机示例包括 Excel、Word、PowerPoint、Outlook、OneNote 等 Office 产品。  
 > - 要求集是 API 成员（如 `ExcelApi 1.5`、`WordApi 1.3` 等）的已命名组。  
-
 
 ## <a name="how-to-check-your-office-version"></a>如何检查 Office 版本
 
@@ -39,6 +38,7 @@ Office 加载项可使用 API 要求集，以确定 Office 主机是否支持需
 - [Excel JavaScript API 要求集](/office/dev/add-ins/reference/requirement-sets/excel-api-requirement-sets)（ExcelApi、[CustomFunctionsRuntime](../excel/custom-functions-architecture.md)）
 - [Word JavaScript API 要求集](/office/dev/add-ins/reference/requirement-sets/word-api-requirement-sets) (WordApi)
 - [OneNote JavaScript API 要求集](/office/dev/add-ins/reference/requirement-sets/onenote-api-requirement-sets) (OneNoteApi)
+- [PowerPoint JavaScript API 要求集](/office/dev/add-ins/reference/requirement-sets/powerpoint-api-requirement-sets) (PowerPointApi)
 - [了解 Outlook API 要求集](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets) (MailBox)
 
 一些要求集包含任何 Office 主机都能使用的 API。 若要了解这些要求集，请参阅以下文章：
@@ -55,7 +55,6 @@ Office 加载项可使用 API 要求集，以确定 Office 主机是否支持需
 ## <a name="specify-office-hosts-and-requirement-sets"></a>指定 Office 主机和要求集
 
 可通过多种方法来指定加载项需要的 Office 主机和要求集。  有关详细信息，请参阅[指定 Office 主机和 API 要求](/office/dev/add-ins/develop/specify-office-hosts-and-api-requirements)
-
 
 ## <a name="see-also"></a>另请参阅
 

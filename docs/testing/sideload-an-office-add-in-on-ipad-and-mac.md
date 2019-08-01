@@ -1,14 +1,14 @@
 ---
 title: 在 iPad 和 Mac 上旁加载 Office 加载项以供测试
 description: ''
-ms.date: 06/20/2019
+ms.date: 07/29/2019
 localization_priority: Priority
-ms.openlocfilehash: b97da347064fdceda847403785e0bf792846dfaa
-ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
+ms.openlocfilehash: 010812cf02bb96f26db64aa89d6e9fd3ce679ea9
+ms.sourcegitcommit: cb5e1726849aff591f19b07391198a96d5749243
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "35126965"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "35940869"
 ---
 # <a name="sideload-office-add-ins-on-ipad-and-mac-for-testing"></a>在 iPad 和 Mac 上旁加载 Office 加载项以供测试
 
@@ -64,9 +64,9 @@ ms.locfileid: "35126965"
 
 1. 打开“**终端**”并转到以下文件夹之一，你将在其中保存外接程序的清单文件。如果 `wef` 文件夹在你的计算机上不存在，请创建它。
     
-    - 对于 Word：`/Users/<username>/Library/Containers/com.microsoft.Word/Data/documents/wef`    
-    - 对于 Excel：`/Users/<username>/Library/Containers/com.microsoft.Excel/Data/documents/wef`
-    - 对于 PowerPoint：`/Users/<username>/Library/Containers/com.microsoft.Powerpoint/Data/documents/wef`
+    - 对于 Word：`/Users/<username>/Library/Containers/com.microsoft.Word/Data/Documents/wef`    
+    - 对于 Excel：`/Users/<username>/Library/Containers/com.microsoft.Excel/Data/Documents/wef`
+    - 对于 PowerPoint：`/Users/<username>/Library/Containers/com.microsoft.Powerpoint/Data/Documents/wef`
     
 2. 在“**查找程序**”中使用命令 `open .`（包括句点或点）打开该文件夹。将你的外接程序的清单文件复制到该文件夹中。
     
@@ -85,11 +85,7 @@ ms.locfileid: "35126965"
     
     ![Mac 版 Office 中显示的 Office 加载项](../images/lorem-ipsum-wikipedia.png)
     
-### <a name="clearing-the-office-applications-cache-on-a-mac"></a>在 Mac 上清除 Office 应用程序缓存
-
-出于性能方面的考虑，加载项通常在 Mac 版 Office 中缓存。 通常情况下，将通过重载外接程序清除缓存。 如果同一文档中存在多个外接程序，则重载后自动清除缓存的过程可能不可靠。
-
-在 Mac 上，通过删除 `~/Library/Containers/com.Microsoft.OsfWebHost/Data/` 文件夹中的内容可以手动清除缓存。 
+### <a name="clearing-the-office-applications-cache-on-a-mac"></a>在 Mac 上清除 Office 应用程序的缓存
 
 [!include[additional cache folders on Mac](../includes/mac-cache-folders.md)]
 

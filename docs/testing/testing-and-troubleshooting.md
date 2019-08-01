@@ -1,14 +1,14 @@
 ---
 title: 排查 Office 加载项中的用户错误
 description: ''
-ms.date: 06/20/2019
+ms.date: 07/29/2019
 localization_priority: Priority
-ms.openlocfilehash: 425788d86bb36009c963f8ef625e959d239f315e
-ms.sourcegitcommit: 90c2d8236c6b30d80ac2b13950028a208ef60973
+ms.openlocfilehash: d6ede08411d9f6c69fa9fb31256ab377682fbca0
+ms.sourcegitcommit: cb5e1726849aff591f19b07391198a96d5749243
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "35454872"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "35940862"
 ---
 # <a name="troubleshoot-user-errors-with-office-add-ins"></a>排查 Office 加载项中的用户错误
 
@@ -107,7 +107,6 @@ Office.context.ui.displayDialogAsync(startAddress, {displayInFrame:true}, callba
 删除文件夹 `%LOCALAPPDATA%\Microsoft\Office\16.0\Wef\` 的内容。
 
 #### <a name="for-mac"></a>对于 Mac：
-删除文件夹 `~/Library/Containers/com.Microsoft.OsfWebHost/Data/` 的内容。 
 
 [!include[additional cache folders on Mac](../includes/mac-cache-folders.md)]
 

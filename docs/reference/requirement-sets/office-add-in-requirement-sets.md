@@ -1,15 +1,15 @@
 ---
 title: Office 通用 API 要求集
 description: ''
-ms.date: 07/11/2019
+ms.date: 07/17/2019
 ms.prod: non-product-specific
 localization_priority: Priority
-ms.openlocfilehash: bd03113b7a91a4cc713cd00336a9582d2e47db5f
-ms.sourcegitcommit: bb44c9694f88cde32ffbb642689130db44456964
+ms.openlocfilehash: bd06b1955d426db4c2c777fe3a370ccaea774bb4
+ms.sourcegitcommit: cb5e1726849aff591f19b07391198a96d5749243
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/17/2019
-ms.locfileid: "35771896"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "35940827"
 ---
 # <a name="office-common-api-requirement-sets"></a>Office 通用 API 要求集
 
@@ -19,9 +19,10 @@ ms.locfileid: "35771896"
 
 正在寻找*主机专用* API 要求集吗？ 请参阅下列 API 要求集：
 
-- [Excel JavaScript API 要求集](./excel-api-requirement-sets.md) (ExcelApi)
+- [Excel JavaScript API 要求集](excel-api-requirement-sets.md) (ExcelApi)
 - [Word JavaScript API 要求集](word-api-requirement-sets.md) (WordApi)
 - [OneNote JavaScript API 要求集](onenote-api-requirement-sets.md) (OneNoteApi)
+- [PowerPoint JavaScript API 要求集](powerpoint-api-requirement-sets.md) (PowerPointApi)
 - [了解 Outlook API 要求集](outlook-api-requirement-sets.md) (MailBox)
 
 > [!IMPORTANT]
@@ -29,7 +30,7 @@ ms.locfileid: "35771896"
 
 ## <a name="common-api-requirement-sets"></a>通用 API 要求集
 
-下表列出了通用 API 要求集、每个集内的方法，以及支持相应要求集的 Office 主机应用程序。除非另行指定，否则所有这些 API 要求集都是第 1.1 版。
+以下部分列出了通用 API 要求集、每个集内的方法，以及支持相应要求集的 Office 主机应用程序。 除非另行指定，否则这些 API 要求集都是第 1.1 版。
 
 ### <a name="activeview"></a>ActiveView
 

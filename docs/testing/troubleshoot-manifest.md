@@ -1,14 +1,14 @@
 ---
 title: 验证并排查清单问题
 description: 使用这些方法验证 Office 加载项清单。
-ms.date: 07/01/2019
+ms.date: 07/29/2019
 localization_priority: Priority
-ms.openlocfilehash: b6d95f6c5658e33c2f52cc46d7bba686bea5cc44
-ms.sourcegitcommit: 9c5a836d4464e49846c9795bf44cfe23e9fc8fbe
+ms.openlocfilehash: 70ebe8be4b669167d1ba230d9dcbf19cb2289efe
+ms.sourcegitcommit: cb5e1726849aff591f19b07391198a96d5749243
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "35617056"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "35940662"
 ---
 # <a name="validate-and-troubleshoot-issues-with-your-manifest"></a>验证并排查清单问题
 
@@ -120,7 +120,6 @@ npm run validate
 删除文件夹 `%LOCALAPPDATA%\Microsoft\Office\16.0\Wef\` 的内容。
 
 #### <a name="for-mac"></a>对于 Mac：
-删除文件夹 `~/Library/Containers/com.Microsoft.OsfWebHost/Data/` 的内容。 
 
 [!include[additional cache folders on Mac](../includes/mac-cache-folders.md)]
 
