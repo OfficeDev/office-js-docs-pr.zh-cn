@@ -3,12 +3,12 @@ title: Office.context.mailbox - 要求集 1.5
 description: ''
 ms.date: 04/24/2019
 localization_priority: Priority
-ms.openlocfilehash: a0c1a45fd3eaa9cf324a6854120d642eb7520132
-ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
+ms.openlocfilehash: 9ffb0d4d33af80a669fd81bc0130f14f673e9400
+ms.sourcegitcommit: 3f5d7f4794e3d3c8bc3a79fa05c54157613b9376
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "35127280"
+ms.lasthandoff: 08/02/2019
+ms.locfileid: "36064751"
 ---
 # <a name="mailbox"></a>邮箱
 
@@ -163,7 +163,7 @@ function loadNewItem(eventArgs) {
 |名称| 类型| 描述|
 |---|---|---|
 |`itemId`| 字符串|Outlook REST API 的格式化的项目 ID。|
-|`restVersion`| [Office.MailboxEnums.RestVersion](/javascript/api/outlook_1_5/office.mailboxenums.restversion)|指示用于检索项目 ID 的 Outlook REST API 的版本。|
+|`restVersion`| [Office.MailboxEnums.RestVersion](/javascript/api/outlook/office.mailboxenums.restversion?view=outlook-js-1.5)|指示用于检索项目 ID 的 Outlook REST API 的版本。|
 
 ##### <a name="requirements"></a>要求
 
@@ -187,7 +187,7 @@ var restId = 'AAMkAGVlOTZjNTM3LW...';
 var ewsId = Office.context.mailbox.convertToEwsId(restId, Office.MailboxEnums.RestVersion.v2_0);
 ```
 
-#### <a name="converttolocalclienttimetimevalue--localclienttimejavascriptapioutlook15officelocalclienttime"></a>convertToLocalClientTime(timeValue) → {[LocalClientTime](/javascript/api/outlook_1_5/office.LocalClientTime)}
+#### <a name="converttolocalclienttimetimevalue--localclienttimejavascriptapioutlookofficelocalclienttimeviewoutlook-js-15"></a>convertToLocalClientTime(timeValue) → {[LocalClientTime](/javascript/api/outlook/office.LocalClientTime?view=outlook-js-1.5)}
 
 获取包含以本地客户端时间表示的时间信息的字典。
 
@@ -211,7 +211,7 @@ Outlook 桌面版或 Outlook 网页版邮件应用可以对日期和时间使用
 
 ##### <a name="returns"></a>返回：
 
-类型：[LocalClientTime](/javascript/api/outlook_1_5/office.LocalClientTime)
+类型：[LocalClientTime](/javascript/api/outlook/office.LocalClientTime?view=outlook-js-1.5)
 
 #### <a name="converttorestiditemid-restversion--string"></a>convertToRestId(itemId, restVersion) → {String}
 
@@ -227,7 +227,7 @@ Outlook 桌面版或 Outlook 网页版邮件应用可以对日期和时间使用
 |名称| 类型| 描述|
 |---|---|---|
 |`itemId`| 字符串|适用于 Exchange Web 服务 (EWS) 的项目 ID 格式化。|
-|`restVersion`| [Office.MailboxEnums.RestVersion](/javascript/api/outlook_1_5/office.mailboxenums.restversion)|值指示转换的 ID 所使用的 Outlook REST API 的版本。|
+|`restVersion`| [Office.MailboxEnums.RestVersion](/javascript/api/outlook/office.mailboxenums.restversion?view=outlook-js-1.5)|值指示转换的 ID 所使用的 Outlook REST API 的版本。|
 
 ##### <a name="requirements"></a>要求
 
@@ -261,7 +261,7 @@ var restId = Office.context.mailbox.convertToRestId(ewsId, Office.MailboxEnums.R
 
 |名称| 类型| 说明|
 |---|---|---|
-|`input`| [LocalClientTime](/javascript/api/outlook_1_5/office.LocalClientTime)|要转换的本地时间值。|
+|`input`| [LocalClientTime](/javascript/api/outlook/office.LocalClientTime?view=outlook-js-1.5)|要转换的本地时间值。|
 
 ##### <a name="requirements"></a>要求
 
@@ -375,8 +375,8 @@ Office.context.mailbox.displayMessageForm(messageId);
 |名称| 类型| 描述|
 |---|---|---|
 | `parameters` | 对象 | 描述新约会的参数字典。 |
-| `parameters.requiredAttendees` | Array.&lt;String&gt; &#124; Array.&lt;[EmailAddressDetails](/javascript/api/outlook_1_5/office.emailaddressdetails)&gt; | 包含电子邮件地址的字符串数组或包含约会的每个必需与会者的 `EmailAddressDetails` 对象的数组。数组限制为最多 100 个条目。 |
-| `parameters.optionalAttendees` | Array.&lt;String&gt; &#124; Array.&lt;[EmailAddressDetails](/javascript/api/outlook_1_5/office.emailaddressdetails)&gt; | 包含电子邮件地址的字符串数组或包含约会的每个可选与会者的 `EmailAddressDetails` 对象的数组。数组限制为最多 100 个条目。 |
+| `parameters.requiredAttendees` | Array.&lt;String&gt; &#124; Array.&lt;[EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails?view=outlook-js-1.5)&gt; | 包含电子邮件地址的字符串数组或包含约会的每个必需与会者的 `EmailAddressDetails` 对象的数组。数组限制为最多 100 个条目。 |
+| `parameters.optionalAttendees` | Array.&lt;String&gt; &#124; Array.&lt;[EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails?view=outlook-js-1.5)&gt; | 包含电子邮件地址的字符串数组或包含约会的每个可选与会者的 `EmailAddressDetails` 对象的数组。数组限制为最多 100 个条目。 |
 | `parameters.start` | 日期 | 指定约会的开始日期和时间的 `Date` 对象。 |
 | `parameters.end` | Date | 指定约会的结束日期和时间的 `Date` 对象。 |
 | `parameters.location` | String | 包含约会位置的字符串。字符串长度限制为最多 255 个字符。 |

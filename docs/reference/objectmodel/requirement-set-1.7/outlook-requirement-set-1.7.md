@@ -3,12 +3,12 @@ title: Outlook 外接程序 API 要求集 1.7
 description: ''
 ms.date: 03/20/2019
 localization_priority: Priority
-ms.openlocfilehash: 8daf10239a704206d53a544185e030afa6b6a27a
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: aa5033422d30c41d455ad54aa71cc29c3c4c0c91
+ms.sourcegitcommit: 3f5d7f4794e3d3c8bc3a79fa05c54157613b9376
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32450280"
+ms.lasthandoff: 08/02/2019
+ms.locfileid: "36064464"
 ---
 # <a name="outlook-add-in-api-requirement-set-17"></a>Outlook 外接程序 API 要求集 1.7
 
@@ -24,22 +24,22 @@ ms.locfileid: "32450280"
 
 ### <a name="change-log"></a>更改日志
 
-- 添加了 [From](/javascript/api/outlook_1_7/office.from)：添加了一个新对象，该对象可提供用于获取收件人值的方法。
-- 添加了 [Organizer](/javascript/api/outlook_1_7/office.organizer)：添加了一个新对象，该对象可提供用于获取组织者值的方法。
-- 添加了 [Recurrence](/javascript/api/outlook_1_7/office.recurrence)：添加了一个新对象，该对象可提供用于获取和设置约会的定期模式以及仅获取会议请求型消息的定期模式的方法。
-- 添加了 [RecurrenceTimeZone](/javascript/api/outlook_1_7/office.recurrencetimezone)：添加了一个新对象，该对象代表定期模式的时区配置。
-- 添加了 [SeriesTime](/javascript/api/outlook_1_7/office.seriestime)：添加了一个新对象，该对象可提供用于获取和设置定期系列约会的日期和时间以及获取定期系列会议请求的日期和时间的方法。
+- 添加了 [From](/javascript/api/outlook/office.from?view=outlook-js-1.7)：添加了一个新对象，该对象可提供用于获取收件人值的方法。
+- 添加了 [Organizer](/javascript/api/outlook/office.organizer?view=outlook-js-1.7)：添加了一个新对象，该对象可提供用于获取组织者值的方法。
+- 添加了 [Recurrence](/javascript/api/outlook/office.recurrence?view=outlook-js-1.7)：添加了一个新对象，该对象可提供用于获取和设置约会的定期模式以及仅获取会议请求型消息的定期模式的方法。
+- 添加了 [RecurrenceTimeZone](/javascript/api/outlook/office.recurrencetimezone?view=outlook-js-1.7)：添加了一个新对象，该对象代表定期模式的时区配置。
+- 添加了 [SeriesTime](/javascript/api/outlook/office.seriestime?view=outlook-js-1.7)：添加了一个新对象，该对象可提供用于获取和设置定期系列约会的日期和时间以及获取定期系列会议请求的日期和时间的方法。
 - 添加了 [Office.context.mailbox.item.addHandlerAsync](office.context.mailbox.item.md#addhandlerasynceventtype-handler-options-callback)：添加了一种新方法，该方法可添加相应支持事件的事件处理程序。
 - 修改了 [Office.context.mailbox.item.from](office.context.mailbox.item.md#from-emailaddressdetailsfrom)：添加在撰写模式下获取收件人值的功能。
 - 修改了 [Office.context.mailbox.item.organizer](office.context.mailbox.item.md#organizer-emailaddressdetailsorganizer)：添加在撰写模式下获取组织者值的功能。
 - 添加了 [Office.context.mailbox.item.recurrence](office.context.mailbox.item.md#nullable-recurrence-recurrence)：添加了一个新属性，该属性用于获取或设置可提供约会项目定期模式的管理方法的对象。 该属性还可用于获取会议请求项目的定期模式。
 - 添加了 [Office.context.mailbox.item.removeHandlerAsync](office.context.mailbox.item.md#removehandlerasynceventtype-options-callback)：添加了一种新方法，该方法可删除受支持的事件类型的事件处理程序。
 - 添加了 [Office.context.mailbox.item.seriesId](office.context.mailbox.item.md#nullable-seriesid-string)，添加了一个新属性，该属性可获取事件所属系列的 ID。
-- 添加了 [Office.MailboxEnums.Days](/javascript/api/outlook_1_7/office.mailboxenums.days)：添加了一个新枚举，该枚举指定星期几或日期类型。
-- 添加了 [Office.MailboxEnums.Month](/javascript/api/outlook_1_7/office.mailboxenums.month)：添加了一个新枚举，该枚举指定月份。
-- 添加了 [Office.MailboxEnums.RecurrenceTimeZone](/javascript/api/outlook_1_7/office.mailboxenums.recurrencetimezone)：添加了一个新枚举，该枚举指定对重复周期应用的时区。
-- 添加了 [Office.MailboxEnums.RecurrenceType](/javascript/api/outlook_1_7/office.mailboxenums.recurrencetype)：添加了一个新枚举，该枚举指定重复周期的类型。
-- 添加了 [Office.MailboxEnums.WeekNumber](/javascript/api/outlook_1_7/office.mailboxenums.weeknumber)：添加了一个新枚举，该枚举指定是当月的第几周。
+- 添加了 [Office.MailboxEnums.Days](/javascript/api/outlook/office.mailboxenums.days?view=outlook-js-1.7)：添加了一个新枚举，该枚举指定星期几或日期类型。
+- 添加了 [Office.MailboxEnums.Month](/javascript/api/outlook/office.mailboxenums.month?view=outlook-js-1.7)：添加了一个新枚举，该枚举指定月份。
+- 添加了 [Office.MailboxEnums.RecurrenceTimeZone](/javascript/api/outlook/office.mailboxenums.recurrencetimezone?view=outlook-js-1.7)：添加了一个新枚举，该枚举指定对重复周期应用的时区。
+- 添加了 [Office.MailboxEnums.RecurrenceType](/javascript/api/outlook/office.mailboxenums.recurrencetype?view=outlook-js-1.7)：添加了一个新枚举，该枚举指定重复周期的类型。
+- 添加了 [Office.MailboxEnums.WeekNumber](/javascript/api/outlook/office.mailboxenums.weeknumber?view=outlook-js-1.7)：添加了一个新枚举，该枚举指定是当月的第几周。
 - 修改了 [Office.EventType](/javascript/api/office/office.eventtype)：添加对 `RecurrenceChanged`、`RecipientsChanged` 和 `AppointmentTimeChanged` 事件的支持。
 
 ## <a name="see-also"></a>另请参阅

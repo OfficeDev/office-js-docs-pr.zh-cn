@@ -3,12 +3,12 @@ title: 使用 Angular 开发 Office 加载项
 description: ''
 ms.date: 03/19/2019
 localization_priority: Priority
-ms.openlocfilehash: 20e66fe1a7a6cce17428424290d4e4c99995efb2
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: 5e71b9f6db78308c1e1d1d237f3f78600c1a99a4
+ms.sourcegitcommit: 68872372d181cca5bee37ade73c2250c4a56bab6
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32448985"
+ms.lasthandoff: 05/01/2019
+ms.locfileid: "33517364"
 ---
 # <a name="develop-office-add-ins-with-angular"></a>使用 Angular 开发 Office 加载项
 
@@ -23,7 +23,7 @@ ms.locfileid: "32448985"
 
 打开 nodejs 窗口，并在命令行处输入以下命令：
 
-```bash
+```command&nbsp;line
 npm install --save-dev @types/office-js
 ```
 
@@ -152,7 +152,7 @@ const subscription = source.subscribe(
 
 若要使用 AOT 编译器，请将 `--aot` 添加到 `ng build` 或 `ng serve` 命令：
 
-```bash
+```command&nbsp;line
 ng build --aot
 ng serve --aot
 ```
