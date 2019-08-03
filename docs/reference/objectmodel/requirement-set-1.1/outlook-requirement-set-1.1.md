@@ -3,12 +3,12 @@ title: Outlook 外接程序 API 要求集 1.1
 description: ''
 ms.date: 03/19/2019
 localization_priority: Normal
-ms.openlocfilehash: cd284a5871139b7f6bf006a9deb3671a937682f6
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: 537c99e8662d04ad006eb1bac6d76c0f753e8785
+ms.sourcegitcommit: 3f5d7f4794e3d3c8bc3a79fa05c54157613b9376
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32450301"
+ms.lasthandoff: 08/02/2019
+ms.locfileid: "36064415"
 ---
 # <a name="outlook-add-in-api-requirement-set-11"></a>Outlook 外接程序 API 要求集 1.1
 
@@ -23,17 +23,17 @@ ms.locfileid: "32450301"
 
 ### <a name="change-log"></a>更改日志
 
-- 添加了 [Body](/javascript/api/outlook_1_1/office.body) 对象：提供用于在 Outlook 外接程序中添加和更新项目内容的方法。
-- 添加了 [Location](/javascript/api/outlook_1_1/office.location) 对象：提供用于获取和设置 Outlook 外接程序中的会议地点的方法。
-- 添加了 [Recipients](/javascript/api/outlook_1_1/office.recipients) 对象：提供用于获取和设置 Outlook 外接程序中的约会或邮件的收件人的方法。
-- 添加了 [Subject](/javascript/api/outlook_1_1/office.subject) 对象：提供用于获取和设置 Outlook 外接程序中的约会或邮件的主题的方法。
-- 添加了 [Time](/javascript/api/outlook_1_1/office.time) 对象：提供用于获取和设置 Outlook 外接程序中的会议开始或结束时间的方法。
+- 添加了 [Body](/javascript/api/outlook/office.body?view=outlook-js-1.1) 对象：提供用于在 Outlook 外接程序中添加和更新项目内容的方法。
+- 添加了 [Location](/javascript/api/outlook/office.location?view=outlook-js-1.1) 对象：提供用于获取和设置 Outlook 外接程序中的会议地点的方法。
+- 添加了 [Recipients](/javascript/api/outlook/office.recipients?view=outlook-js-1.1) 对象：提供用于获取和设置 Outlook 外接程序中的约会或邮件的收件人的方法。
+- 添加了 [Subject](/javascript/api/outlook/office.subject?view=outlook-js-1.1) 对象：提供用于获取和设置 Outlook 外接程序中的约会或邮件的主题的方法。
+- 添加了 [Time](/javascript/api/outlook/office.time?view=outlook-js-1.1) 对象：提供用于获取和设置 Outlook 外接程序中的会议开始或结束时间的方法。
 - 添加了 [Office.context.mailbox.item.addFileAttachmentAsync](office.context.mailbox.item.md#addfileattachmentasyncuri-attachmentname-options-callback)：将文件作为附件添加到邮件或约会。
 - 添加了 [Office.context.mailbox.item.addItemAttachmentAsync](office.context.mailbox.item.md#additemattachmentasyncitemid-attachmentname-options-callback)：将 Exchange 项目（如邮件）作为附件添加到邮件或约会。
 - 添加了 [Office.context.mailbox.item.removeAttachmentAsync](office.context.mailbox.item.md#removeattachmentasyncattachmentid-options-callback)：将附件从邮件或约会中删除。
 - 添加了 [Office.context.mailbox.item.body](office.context.mailbox.item.md#body-body)：获取一个提供用于处理项目正文的方法的对象。
 - 添加了邮件的["密件抄送"](office.context.mailbox.item.md#bcc-recipients)行。
-- 添加了 [Office.MailboxEnums.RecipientType](/javascript/api/outlook_1_1/office.mailboxenums.recipienttype)：指定约会收件人的类型。
+- 添加了 [Office.MailboxEnums.RecipientType](/javascript/api/outlook/office.mailboxenums.recipienttype?view=outlook-js-1.1)：指定约会收件人的类型。
 
 ## <a name="see-also"></a>另请参阅
 

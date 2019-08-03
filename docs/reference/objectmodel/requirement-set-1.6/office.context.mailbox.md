@@ -3,12 +3,12 @@ title: "\"Context.subname\"-\"邮箱-要求集 1.6\""
 description: ''
 ms.date: 06/20/2019
 localization_priority: Normal
-ms.openlocfilehash: 5e85610c93d1001f0a866afa90689c172387fbbc
-ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
+ms.openlocfilehash: 2ddf26fea8c2285bd577a2f6fb6408431016cc59
+ms.sourcegitcommit: 3f5d7f4794e3d3c8bc3a79fa05c54157613b9376
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "35127308"
+ms.lasthandoff: 08/02/2019
+ms.locfileid: "36064667"
 ---
 # <a name="mailbox"></a>邮箱
 
@@ -161,7 +161,7 @@ function loadNewItem(eventArgs) {
 |名称| 类型| 说明|
 |---|---|---|
 |`itemId`| 字符串|Outlook REST API 的格式化的项目 ID。|
-|`restVersion`| [Office.MailboxEnums.RestVersion](/javascript/api/outlook_1_6/office.mailboxenums.restversion)|指示用于检索项目 ID 的 Outlook REST API 的版本。|
+|`restVersion`| [Office.MailboxEnums.RestVersion](/javascript/api/outlook/office.mailboxenums.restversion?view=outlook-js-1.6)|指示用于检索项目 ID 的 Outlook REST API 的版本。|
 
 ##### <a name="requirements"></a>要求
 
@@ -185,7 +185,7 @@ var restId = 'AAMkAGVlOTZjNTM3LW...';
 var ewsId = Office.context.mailbox.convertToEwsId(restId, Office.MailboxEnums.RestVersion.v2_0);
 ```
 
-#### <a name="converttolocalclienttimetimevalue--localclienttimejavascriptapioutlook16officelocalclienttime"></a>convertToLocalClientTime(timeValue) → {[LocalClientTime](/javascript/api/outlook_1_6/office.LocalClientTime)}
+#### <a name="converttolocalclienttimetimevalue--localclienttimejavascriptapioutlookofficelocalclienttimeviewoutlook-js-16"></a>convertToLocalClientTime(timeValue) → {[LocalClientTime](/javascript/api/outlook/office.LocalClientTime?view=outlook-js-1.6)}
 
 获取包含以本地客户端时间表示的时间信息的字典。
 
@@ -209,7 +209,7 @@ var ewsId = Office.context.mailbox.convertToEwsId(restId, Office.MailboxEnums.Re
 
 ##### <a name="returns"></a>返回：
 
-类型：[LocalClientTime](/javascript/api/outlook_1_6/office.LocalClientTime)
+类型：[LocalClientTime](/javascript/api/outlook/office.LocalClientTime?view=outlook-js-1.6)
 
 #### <a name="converttorestiditemid-restversion--string"></a>convertToRestId(itemId, restVersion) → {String}
 
@@ -225,7 +225,7 @@ var ewsId = Office.context.mailbox.convertToEwsId(restId, Office.MailboxEnums.Re
 |名称| 类型| 说明|
 |---|---|---|
 |`itemId`| String|适用于 Exchange Web 服务 (EWS) 的项目 ID 格式化。|
-|`restVersion`| [Office.MailboxEnums.RestVersion](/javascript/api/outlook_1_6/office.mailboxenums.restversion)|值指示转换的 ID 所使用的 Outlook REST API 的版本。|
+|`restVersion`| [Office.MailboxEnums.RestVersion](/javascript/api/outlook/office.mailboxenums.restversion?view=outlook-js-1.6)|值指示转换的 ID 所使用的 Outlook REST API 的版本。|
 
 ##### <a name="requirements"></a>要求
 
@@ -259,7 +259,7 @@ var restId = Office.context.mailbox.convertToRestId(ewsId, Office.MailboxEnums.R
 
 |名称| 类型| 说明|
 |---|---|---|
-|`input`| [LocalClientTime](/javascript/api/outlook_1_6/office.LocalClientTime)|要转换的本地时间值。|
+|`input`| [LocalClientTime](/javascript/api/outlook/office.LocalClientTime?view=outlook-js-1.6)|要转换的本地时间值。|
 
 ##### <a name="requirements"></a>要求
 
@@ -376,8 +376,8 @@ Office.context.mailbox.displayMessageForm(messageId);
 |名称| 类型| 说明|
 |---|---|---|
 | `parameters` | 对象 | 描述新约会的参数字典。 |
-| `parameters.requiredAttendees` | Array.&lt;String&gt; &#124; Array.&lt;[EmailAddressDetails](/javascript/api/outlook_1_6/office.emailaddressdetails)&gt; | 包含电子邮件地址的字符串数组或包含约会的每个必需与会者的 `EmailAddressDetails` 对象的数组。数组限制为最多 100 个条目。 |
-| `parameters.optionalAttendees` | Array.&lt;String&gt; &#124; Array.&lt;[EmailAddressDetails](/javascript/api/outlook_1_6/office.emailaddressdetails)&gt; | 包含电子邮件地址的字符串数组或包含约会的每个可选与会者的 `EmailAddressDetails` 对象的数组。数组限制为最多 100 个条目。 |
+| `parameters.requiredAttendees` | Array.&lt;String&gt; &#124; Array.&lt;[EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails?view=outlook-js-1.6)&gt; | 包含电子邮件地址的字符串数组或包含约会的每个必需与会者的 `EmailAddressDetails` 对象的数组。数组限制为最多 100 个条目。 |
+| `parameters.optionalAttendees` | Array.&lt;String&gt; &#124; Array.&lt;[EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails?view=outlook-js-1.6)&gt; | 包含电子邮件地址的字符串数组或包含约会的每个可选与会者的 `EmailAddressDetails` 对象的数组。数组限制为最多 100 个条目。 |
 | `parameters.start` | Date | 指定约会的开始日期和时间的 `Date` 对象。 |
 | `parameters.end` | Date | 指定约会的结束日期和时间的 `Date` 对象。 |
 | `parameters.location` | 字符串 | 包含约会位置的字符串。字符串长度限制为最多 255 个字符。 |
@@ -429,9 +429,9 @@ Office.context.mailbox.displayNewAppointmentForm(
 |名称| 类型| 说明|
 |---|---|---|
 | `parameters` | 对象 | 描述新邮件的参数的字典。 |
-| `parameters.toRecipients` | Array.&lt;String&gt; &#124; Array.&lt;[EmailAddressDetails](/javascript/api/outlook_1_6/office.emailaddressdetails)&gt; | 包含电子邮件地址的字符串数组, 或包含 "收件人" `EmailAddressDetails`行中每个收件人的对象的数组。 数组限制为最多 100 个条目。 |
-| `parameters.ccRecipients` | Array.&lt;String&gt; &#124; Array.&lt;[EmailAddressDetails](/javascript/api/outlook_1_6/office.emailaddressdetails)&gt; | 包含电子邮件地址的字符串数组, 或包含 "抄送" `EmailAddressDetails`行上每个收件人的对象的数组。 数组限制为最多 100 个条目。 |
-| `parameters.bccRecipients` | Array.&lt;String&gt; &#124; Array.&lt;[EmailAddressDetails](/javascript/api/outlook_1_6/office.emailaddressdetails)&gt; | 包含电子邮件地址的字符串数组, 或包含 Bcc 行上`EmailAddressDetails`每个收件人的对象的数组。 数组限制为最多 100 个条目。 |
+| `parameters.toRecipients` | Array.&lt;String&gt; &#124; Array.&lt;[EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails?view=outlook-js-1.6)&gt; | 包含电子邮件地址的字符串数组, 或包含 "收件人" `EmailAddressDetails`行中每个收件人的对象的数组。 数组限制为最多 100 个条目。 |
+| `parameters.ccRecipients` | Array.&lt;String&gt; &#124; Array.&lt;[EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails?view=outlook-js-1.6)&gt; | 包含电子邮件地址的字符串数组, 或包含 "抄送" `EmailAddressDetails`行上每个收件人的对象的数组。 数组限制为最多 100 个条目。 |
+| `parameters.bccRecipients` | Array.&lt;String&gt; &#124; Array.&lt;[EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails?view=outlook-js-1.6)&gt; | 包含电子邮件地址的字符串数组, 或包含 Bcc 行上`EmailAddressDetails`每个收件人的对象的数组。 数组限制为最多 100 个条目。 |
 | `parameters.subject` | String | 包含邮件主题的字符串。 字符串长度限制为最多 255 个字符。 |
 | `parameters.htmlBody` | String | 邮件的 HTML 正文。 正文内容限制为最大 32 KB。 |
 | `parameters.attachments` | Array.&lt;Object&gt; | JSON 对象（是文件或项目附件）的数组。 |

@@ -4,12 +4,12 @@ description: 有关 ExcelApi 1.7 要求集的详细信息
 ms.date: 07/26/2019
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: 7a4d0dde78a290de61fb6edc1966ea66dc2ba3b0
-ms.sourcegitcommit: cb5e1726849aff591f19b07391198a96d5749243
+ms.openlocfilehash: 5e923cb096c7335fbe65d18b6af0280d78be1fb2
+ms.sourcegitcommit: 3f5d7f4794e3d3c8bc3a79fa05c54157613b9376
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "35940694"
+ms.lasthandoff: 08/02/2019
+ms.locfileid: "36064856"
 ---
 # <a name="whats-new-in-excel-javascript-api-17"></a>Excel JavaScript API 1.7 的最近更新
 
@@ -64,6 +64,8 @@ Excel 事件 API 提供了多个事件处理程序，以便加载项能够在发
 * 获取活动单元格 - 使用此 API 可获取工作表中的活动单元格。
 
 ## <a name="api-list"></a>API 列表
+
+下表列出了 Excel JavaScript API 要求集1.7 中的 Api。 若要查看 Excel JavaScript API 要求集1.7 或更早版本支持的所有 Api 的 API 参考文档, 请参阅[要求集1.7 或更早版本中的 Excel api](/javascript/api/excel?view=excel-js-1.7)。
 
 | Class | 域 | 说明 |
 |:---|:---|:---|
@@ -334,5 +336,5 @@ Excel 事件 API 提供了多个事件处理程序，以便加载项能够在发
 
 ## <a name="see-also"></a>另请参阅
 
-- [Excel JavaScript API 参考文档](/javascript/api/excel)
+- [Excel JavaScript API 参考文档](/javascript/api/excel?view=excel-js-1.7)
 - [Excel JavaScript API 要求集](./excel-api-requirement-sets.md)

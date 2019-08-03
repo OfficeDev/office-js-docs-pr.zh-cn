@@ -1,15 +1,15 @@
 ---
 title: Word JavaScript 预览 Api
 description: 有关即将推出的 Word JavaScript Api 的详细信息
-ms.date: 07/17/2019
+ms.date: 07/25/2019
 ms.prod: word
 localization_priority: Normal
-ms.openlocfilehash: 3a539f0e69db7c4c567b6fda14f30d6d41a420cf
-ms.sourcegitcommit: 6d9b4820a62a914c50cef13af8b80ce626034c26
+ms.openlocfilehash: 584b6ade9e4ae2d28b13eb717027361d85c4aa45
+ms.sourcegitcommit: 3f5d7f4794e3d3c8bc3a79fa05c54157613b9376
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "35805282"
+ms.lasthandoff: 08/02/2019
+ms.locfileid: "36064842"
 ---
 # <a name="word-javascript-preview-apis"></a>Word JavaScript 预览 Api
 
@@ -22,7 +22,7 @@ ms.locfileid: "35805282"
 
 ## <a name="api-list"></a>API 列表
 
-下表列出了当前预览中的 Api。
+下表列出了当前预览中的 Word JavaScript Api。 若要查看所有 Word JavaScript Api (包括预览 Api 和之前发布的 Api) 的完整列表, 请参阅[所有 Word Javascript api](/javascript/api/word?view=word-js-preview)。
 
 | Class | 域 | 说明 |
 |:---|:---|:---|

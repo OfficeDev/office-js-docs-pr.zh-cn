@@ -3,12 +3,12 @@ title: Office。上下文要求集1。7
 description: ''
 ms.date: 06/25/2019
 localization_priority: Normal
-ms.openlocfilehash: 8f21389d40181db0f62a8e13a882aaf4cb9b5072
-ms.sourcegitcommit: 90c2d8236c6b30d80ac2b13950028a208ef60973
+ms.openlocfilehash: b7845450f81d85ca561088a1c944955228c502c3
+ms.sourcegitcommit: 3f5d7f4794e3d3c8bc3a79fa05c54157613b9376
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "35454858"
+ms.lasthandoff: 08/02/2019
+ms.locfileid: "36064471"
 ---
 # <a name="context"></a>context
 
@@ -77,7 +77,7 @@ function write(message){
 ---
 ---
 
-#### <a name="roamingsettings-roamingsettingsjavascriptapioutlook17officeroamingsettings"></a>roamingSettings: [roamingSettings](/javascript/api/outlook_1_7/office.RoamingSettings)
+#### <a name="roamingsettings-roamingsettingsjavascriptapioutlookofficeroamingsettingsviewoutlook-js-17"></a>roamingSettings: [roamingSettings](/javascript/api/outlook/office.RoamingSettings?view=outlook-js-1.7)
 
 获取一个对象，它表示保存到用户邮箱的邮件外接程序的自定义设置或状态。
 
@@ -85,7 +85,7 @@ function write(message){
 
 ##### <a name="type"></a>类型
 
-*   [RoamingSettings](/javascript/api/outlook_1_7/office.RoamingSettings)
+*   [RoamingSettings](/javascript/api/outlook/office.RoamingSettings?view=outlook-js-1.7)
 
 ##### <a name="requirements"></a>要求
 

@@ -1,15 +1,15 @@
 ---
 title: Word JavaScript API 要求集1。2
 description: 有关 WordApi 1.2 要求集的详细信息
-ms.date: 07/17/2019
+ms.date: 07/25/2019
 ms.prod: word
 localization_priority: Normal
-ms.openlocfilehash: c6244b7ce9ff7b5cbde68baad26e60a6326199d8
-ms.sourcegitcommit: 6d9b4820a62a914c50cef13af8b80ce626034c26
+ms.openlocfilehash: f6fce3994daa77cb556ebcea6cad7d38a48c2da5
+ms.sourcegitcommit: 3f5d7f4794e3d3c8bc3a79fa05c54157613b9376
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "35804704"
+ms.lasthandoff: 08/02/2019
+ms.locfileid: "36064884"
 ---
 # <a name="whats-new-in-word-javascript-api-12"></a>Word JavaScript API 1.2 的最近更新
 
@@ -17,7 +17,7 @@ WordApi 1.2 增加了对内嵌图片的支持。
 
 ## <a name="api-list"></a>API 列表
 
-下表列出了作为 WordApi 1.2 要求集的一部分添加的 Api。
+下表列出了 Word JavaScript API 要求集1.2 中的 Api。 若要查看 Word JavaScript API 要求集1.2 或更早版本支持的所有 Api 的 API 参考文档, 请参阅[要求集1.2 或更早版本中的 Word api](/javascript/api/word?view=word-js-1.2)。
 
 | Class | 域 | 说明 |
 |:---|:---|:---|

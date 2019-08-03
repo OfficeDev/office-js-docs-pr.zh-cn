@@ -1,20 +1,20 @@
 ---
 title: Office 命名空间-要求集1。5
 description: ''
-ms.date: 03/19/2019
+ms.date: 04/24/2019
 localization_priority: Normal
-ms.openlocfilehash: d8c51646818681629fa0c184962776beffe22a55
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: 36faf4569ac58693dcc1218c42a19347816d9abd
+ms.sourcegitcommit: 3f5d7f4794e3d3c8bc3a79fa05c54157613b9376
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32450259"
+ms.lasthandoff: 08/02/2019
+ms.locfileid: "36064675"
 ---
 # <a name="office"></a>Office
 
 该 Office 命名空间提供所有 Office 应用中的加载项所使用的共享接口。此列表仅记录 Outlook 加载项所使用的接口。有关 Office 命名空间的完整列表，请参阅[公用 API](/javascript/api/office)。
 
-##### <a name="requirements"></a>Requirements
+##### <a name="requirements"></a>要求
 
 |要求| 值|
 |---|---|
@@ -34,11 +34,11 @@ ms.locfileid: "32450259"
 
 [context](office.context.md)：提供 Office 加载项 API 的上下文命名空间中的共享接口以便在 Outlook 加载项 API 中使用。
 
-[MailboxEnums](/javascript/api/outlook_1_5/office.mailboxenums.attachmenttype)：包括 ItemType、EntityType、AttachmentType、RecipientType、ResponseType 和 ItemNotificationMessageType 枚举。
+[MailboxEnums](/javascript/api/outlook/office.mailboxenums.attachmenttype?view=outlook-js-1.5)：包括 ItemType、EntityType、AttachmentType、RecipientType、ResponseType 和 ItemNotificationMessageType 枚举。
 
 ### <a name="members"></a>成员
 
-####  <a name="asyncresultstatus-string"></a>AsyncResultStatus :String
+#### <a name="asyncresultstatus-string"></a>AsyncResultStatus: String
 
 指定异步调用的结果。
 
@@ -50,10 +50,10 @@ ms.locfileid: "32450259"
 
 |名称| 类型| 说明|
 |---|---|---|
-|`Succeeded`| 字符串|调用成功。|
-|`Failed`| 字符串|调用失败。|
+|`Succeeded`| String|调用成功。|
+|`Failed`| String|调用失败。|
 
-##### <a name="requirements"></a>Requirements
+##### <a name="requirements"></a>要求
 
 |要求| 值|
 |---|---|
@@ -62,7 +62,7 @@ ms.locfileid: "32450259"
 
 ---
 
-####  <a name="coerciontype-string"></a>CoercionType :String
+#### <a name="coerciontype-string"></a>CoercionType: String
 
 指定如何强制由调用方法返回或设置的数据。
 
@@ -74,10 +74,10 @@ ms.locfileid: "32450259"
 
 |名称| 类型| 说明|
 |---|---|---|
-|`Html`| 字符串|请求以 HTML 格式返回的数据。|
-|`Text`| 字符串|请求以文本格式返回的数据。|
+|`Html`| String|请求以 HTML 格式返回的数据。|
+|`Text`| String|请求以文本格式返回的数据。|
 
-##### <a name="requirements"></a>Requirements
+##### <a name="requirements"></a>要求
 
 |要求| 值|
 |---|---|
@@ -86,7 +86,7 @@ ms.locfileid: "32450259"
 
 ---
 
-####  <a name="eventtype-string"></a>EventType :String
+#### <a name="eventtype-string"></a>事件类型: String
 
 指定与事件处理程序相关联的事件。
 
@@ -98,9 +98,9 @@ ms.locfileid: "32450259"
 
 | 名称 | 类型 | 说明 |
 |---|---|---|
-|`ItemChanged`| 字符串 | 在任务窗格固定时，将选择不同的 Outlook 项进行查看。 |
+|`ItemChanged`| String | 在任务窗格固定时，将选择不同的 Outlook 项进行查看。 |
 
-##### <a name="requirements"></a>Requirements
+##### <a name="requirements"></a>要求
 
 |要求| 值|
 |---|---|
@@ -109,7 +109,7 @@ ms.locfileid: "32450259"
 
 ---
 
-####  <a name="sourceproperty-string"></a>SourceProperty :String
+#### <a name="sourceproperty-string"></a>SourceProperty: String
 
 指定由调用方法返回的数据源。
 
@@ -121,10 +121,10 @@ ms.locfileid: "32450259"
 
 |名称| 类型| 说明|
 |---|---|---|
-|`Body`| 字符串|数据源来自邮件的正文。|
+|`Body`| String|数据源来自邮件的正文。|
 |`Subject`| String|数据源来自邮件的主题。|
 
-##### <a name="requirements"></a>Requirements
+##### <a name="requirements"></a>要求
 
 |要求| 值|
 |---|---|

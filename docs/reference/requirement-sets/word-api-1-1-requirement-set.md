@@ -1,15 +1,15 @@
 ---
 title: Word JavaScript API 要求集1。1
 description: 有关 WordApi 1.1 要求集的详细信息
-ms.date: 07/17/2019
+ms.date: 07/25/2019
 ms.prod: word
 localization_priority: Normal
-ms.openlocfilehash: 7c9ecbb8edaf1134b9f8801a6ade77b1b30e332f
-ms.sourcegitcommit: 6d9b4820a62a914c50cef13af8b80ce626034c26
+ms.openlocfilehash: a2839a2553d42701956fd2e75a86564c133d9a93
+ms.sourcegitcommit: 3f5d7f4794e3d3c8bc3a79fa05c54157613b9376
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "35805289"
+ms.lasthandoff: 08/02/2019
+ms.locfileid: "36064912"
 ---
 # <a name="whats-new-in-word-javascript-api-11"></a>Word JavaScript API 1.1 中的新增功能
 
@@ -17,7 +17,7 @@ WordApi 1.1 是 Word JavaScript API 的第一个要求集。 它是 Word 2016 �
 
 ## <a name="api-list"></a>API 列表
 
-下表列出了作为 WordApi 1.1 要求集的一部分添加的 Api。
+下表列出了 Word JavaScript API 要求集1.1 中的 Api。 若要查看 Word JavaScript API 要求集1.1 支持的所有 Api 的 API 参考文档, 请参阅[要求集1.1 中的 Word api](/javascript/api/word?view=word-js-1.1)。
 
 | Class | 域 | 说明 |
 |:---|:---|:---|

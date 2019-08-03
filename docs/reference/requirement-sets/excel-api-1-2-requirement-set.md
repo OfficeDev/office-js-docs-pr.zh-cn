@@ -4,12 +4,12 @@ description: 有关 ExcelApi 1.2 要求集的详细信息
 ms.date: 07/26/2019
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: b3d4e7a7596ad47a728ffe6c7b6fd6272e8893ad
-ms.sourcegitcommit: cb5e1726849aff591f19b07391198a96d5749243
+ms.openlocfilehash: 88943ce69154b3ea303bbbafabf144a51ae6e674
+ms.sourcegitcommit: 3f5d7f4794e3d3c8bc3a79fa05c54157613b9376
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "35940778"
+ms.lasthandoff: 08/02/2019
+ms.locfileid: "36064478"
 ---
 # <a name="whats-new-in-excel-javascript-api-12"></a>Excel JavaScript API 1.2 的最近更新
 
@@ -17,11 +17,10 @@ ExcelApi 1.2 增加了对表筛选和对内置 Excel 函数的访问支持。
 
 ## <a name="api-list"></a>API 列表
 
-|| Class | 域 | 说明 |
+下表列出了 Excel JavaScript API 要求集1.2 中的 Api。 若要查看 Excel JavaScript API 要求集1.2 或更早版本支持的所有 Api 的 API 参考文档, 请参阅[要求集1.2 或更早版本中的 Excel api](/javascript/api/excel?view=excel-js-1.2)。
+
+| Class | 域 | 说明 |
 |:---|:---|:---|
-|[Binding](/javascript/api/excel/excel.binding)|[onDataChanged](/javascript/api/excel/excel.binding#ondatachanged)|当绑定内的数据或格式变化时发生。|
-||[onSelectionChanged](/javascript/api/excel/excel.binding#onselectionchanged)|当绑定中的所选内容更改时发生。|
-|[BindingDataChangedEventArgs](/javascript/api/excel/excel.bindingdatachangedeventargs)|[binding](/javascript/api/excel/excel.bindingdatachangedeventargs#binding)|获取表示引发了 DataChanged 事件的绑定的 Binding 对象。|
 |[BindingSelectionChangedEventArgs](/javascript/api/excel/excel.bindingselectionchangedeventargs)|[binding](/javascript/api/excel/excel.bindingselectionchangedeventargs#binding)|获取表示引发了 SelectionChanged 事件的绑定的 Binding 对象。|
 ||[columnCount](/javascript/api/excel/excel.bindingselectionchangedeventargs#columncount)|获取选择的列数。|
 ||[rowCount](/javascript/api/excel/excel.bindingselectionchangedeventargs#rowcount)|获取选择的行数。|
@@ -483,5 +482,5 @@ ExcelApi 1.2 增加了对表筛选和对内置 Excel 函数的访问支持。
 
 ## <a name="see-also"></a>另请参阅
 
-- [Excel JavaScript API 参考文档](/javascript/api/excel)
+- [Excel JavaScript API 参考文档](/javascript/api/excel?view=excel-js-1.2)
 - [Excel JavaScript API 要求集](./excel-api-requirement-sets.md)

@@ -3,12 +3,12 @@ title: "\"Context.subname\"-\"邮箱-要求集 1.2\""
 description: ''
 ms.date: 06/20/2019
 localization_priority: Normal
-ms.openlocfilehash: 879b6440a91f63568d282b6659aafdf49a5cdb37
-ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
+ms.openlocfilehash: de7c48faf966f9b3f5d1bb76f69aa16810a5381f
+ms.sourcegitcommit: 3f5d7f4794e3d3c8bc3a79fa05c54157613b9376
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "35128438"
+ms.lasthandoff: 08/02/2019
+ms.locfileid: "36064366"
 ---
 # <a name="mailbox"></a>邮箱
 
@@ -57,7 +57,7 @@ ms.locfileid: "35128438"
 
 ### <a name="methods"></a>方法
 
-#### <a name="converttolocalclienttimetimevalue--localclienttimejavascriptapioutlook12officelocalclienttime"></a>convertToLocalClientTime(timeValue) → {[LocalClientTime](/javascript/api/outlook_1_2/office.LocalClientTime)}
+#### <a name="converttolocalclienttimetimevalue--localclienttimejavascriptapioutlookofficelocalclienttimeviewoutlook-js-12"></a>convertToLocalClientTime(timeValue) → {[LocalClientTime](/javascript/api/outlook/office.LocalClientTime?view=outlook-js-1.2)}
 
 获取包含以本地客户端时间表示的时间信息的字典。
 
@@ -81,7 +81,7 @@ ms.locfileid: "35128438"
 
 ##### <a name="returns"></a>返回：
 
-类型：[LocalClientTime](/javascript/api/outlook_1_2/office.LocalClientTime)
+类型：[LocalClientTime](/javascript/api/outlook/office.LocalClientTime?view=outlook-js-1.2)
 
 #### <a name="converttoutcclienttimeinput--date"></a>convertToUtcClientTime(input) → {Date}
 
@@ -93,7 +93,7 @@ ms.locfileid: "35128438"
 
 |名称| 类型| 说明|
 |---|---|---|
-|`input`| [LocalClientTime](/javascript/api/outlook_1_2/office.LocalClientTime)|要转换的本地时间值。|
+|`input`| [LocalClientTime](/javascript/api/outlook/office.LocalClientTime?view=outlook-js-1.2)|要转换的本地时间值。|
 
 ##### <a name="requirements"></a>要求
 
@@ -207,8 +207,8 @@ Office.context.mailbox.displayMessageForm(messageId);
 |名称| 类型| 描述|
 |---|---|---|
 | `parameters` | 对象 | 描述新约会的参数字典。 |
-| `parameters.requiredAttendees` | Array.&lt;String&gt; &#124; Array.&lt;[EmailAddressDetails](/javascript/api/outlook_1_2/office.emailaddressdetails)&gt; | 包含电子邮件地址的字符串数组或包含约会的每个必需与会者的 `EmailAddressDetails` 对象的数组。数组限制为最多 100 个条目。 |
-| `parameters.optionalAttendees` | Array.&lt;String&gt; &#124; Array.&lt;[EmailAddressDetails](/javascript/api/outlook_1_2/office.emailaddressdetails)&gt; | 包含电子邮件地址的字符串数组或包含约会的每个可选与会者的 `EmailAddressDetails` 对象的数组。数组限制为最多 100 个条目。 |
+| `parameters.requiredAttendees` | Array.&lt;String&gt; &#124; Array.&lt;[EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails?view=outlook-js-1.2)&gt; | 包含电子邮件地址的字符串数组或包含约会的每个必需与会者的 `EmailAddressDetails` 对象的数组。数组限制为最多 100 个条目。 |
+| `parameters.optionalAttendees` | Array.&lt;String&gt; &#124; Array.&lt;[EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails?view=outlook-js-1.2)&gt; | 包含电子邮件地址的字符串数组或包含约会的每个可选与会者的 `EmailAddressDetails` 对象的数组。数组限制为最多 100 个条目。 |
 | `parameters.start` | 日期 | 指定约会的开始日期和时间的 `Date` 对象。 |
 | `parameters.end` | Date | 指定约会的结束日期和时间的 `Date` 对象。 |
 | `parameters.location` | String | 包含约会位置的字符串。字符串长度限制为最多 255 个字符。 |

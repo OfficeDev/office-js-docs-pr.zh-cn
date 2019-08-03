@@ -1,15 +1,15 @@
 ---
 title: Excel JavaScript 预览 API
 description: 有关即将推出的 Excel JavaScript Api 的详细信息
-ms.date: 07/11/2019
+ms.date: 07/25/2019
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: 2199b7c115a1edd66bb7b1fef86eb3bc7bba473e
-ms.sourcegitcommit: bb44c9694f88cde32ffbb642689130db44456964
+ms.openlocfilehash: 200b187b059c1b03ae3713b5afa11b2152aba0da
+ms.sourcegitcommit: 3f5d7f4794e3d3c8bc3a79fa05c54157613b9376
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/17/2019
-ms.locfileid: "35771951"
+ms.lasthandoff: 08/02/2019
+ms.locfileid: "36064849"
 ---
 # <a name="excel-javascript-preview-apis"></a>Excel JavaScript 预览 API
 
@@ -30,6 +30,8 @@ ms.locfileid: "35771951"
 | [插入工作簿](../../excel/excel-add-ins-workbooks.md#insert-a-copy-of-an-existing-workbook-into-the-current-one-preview) | 将一个工作簿插入另一个工作簿。  | [Workbook](/javascript/api/excel/excel.worksheetcollection) |
 
 ## <a name="api-list"></a>API 列表
+
+下表列出了当前预览中的 Excel JavaScript Api。 若要查看所有 Excel JavaScript Api (包括预览 Api 和之前发布的 Api) 的完整列表, 请参阅[所有 Excel Javascript api](/javascript/api/excel?view=excel-js-preview)。
 
 | Class | 域 | 说明 |
 |:---|:---|:---|
@@ -416,5 +418,5 @@ ms.locfileid: "35771951"
 
 ## <a name="see-also"></a>另请参阅
 
-- [Excel JavaScript API 参考文档](/javascript/api/excel)
+- [Excel JavaScript API 参考文档](/javascript/api/excel?view=excel-js-preview)
 - [Excel JavaScript API 要求集](./excel-api-requirement-sets.md)

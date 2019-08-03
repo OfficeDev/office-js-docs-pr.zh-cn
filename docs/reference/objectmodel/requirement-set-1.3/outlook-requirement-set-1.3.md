@@ -3,12 +3,12 @@ title: Outlook 外接程序 API 要求集 1.3
 description: ''
 ms.date: 06/25/2019
 localization_priority: Normal
-ms.openlocfilehash: 6e1c8fade7a95cdac4fbcf5b571f4b9be9092e95
-ms.sourcegitcommit: 90c2d8236c6b30d80ac2b13950028a208ef60973
+ms.openlocfilehash: 83d15038aedeeae2ce873207f17fe61dd1d3b3a7
+ms.sourcegitcommit: 3f5d7f4794e3d3c8bc3a79fa05c54157613b9376
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "35454886"
+ms.lasthandoff: 08/02/2019
+ms.locfileid: "36064695"
 ---
 # <a name="outlook-add-in-api-requirement-set-13"></a>Outlook 外接程序 API 要求集 1.3
 
@@ -23,24 +23,24 @@ ms.locfileid: "35454886"
 
 - 添加了对[外接程序命令](/outlook/add-ins/add-in-commands-for-outlook)的支持。
 - 添加了保存或关闭正在撰写的项目的功能。
-- 改进了 [Body](/javascript/api/outlook_1_3/office.body) 对象，允许外接程序获取或设置整个正文。
+- 改进了 [Body](/javascript/api/outlook/office.body?view=outlook-js-1.3) 对象，允许外接程序获取或设置整个正文。
 - 添加了在 EWS 和 REST 格式之间转换 ID 的转换方法。
 - 添加了将通知邮件添加到项目的信息栏中的功能。
 
 ### <a name="change-log"></a>更改日志
 
-- 添加了 [Body.getAsync](/javascript/api/outlook_1_3/office.body#getasync-coerciontype--options--callback-)：使用指定格式返回当前正文。
-- 添加了 [Body.setAsync](/javascript/api/outlook_1_3/office.body#setasync-data--options--callback-)：将整个正文替换为指定文本。
+- 添加了 [Body.getAsync](/javascript/api/outlook/office.body?view=outlook-js-1.3#getasync-coerciontype--options--callback-)：使用指定格式返回当前正文。
+- 添加了 [Body.setAsync](/javascript/api/outlook/office.body?view=outlook-js-1.3#setasync-data--options--callback-)：将整个正文替换为指定文本。
 - 添加了 [Event](/javascript/api/office/office.addincommands.event) 对象：作为参数传递到 Outlook 外接程序中的无用户界面命令函数。用来表示处理已完成。
 - 添加了 [Office.context.mailbox.item.close](office.context.mailbox.item.md#close)：关闭正在撰写的当前项。
 - 添加了 [Office.context.mailbox.item.saveAsync](office.context.mailbox.item.md#saveasyncoptions-callback)：异步保存项目。
 - 添加了 [Office.context.mailbox.item.notificationMessages](office.context.mailbox.item.md#notificationmessages-notificationmessages)：获取项目的通知邮件。
 - 添加了 [Office.context.mailbox.convertToEwsId](office.context.mailbox.md#converttoewsiditemid-restversion--string)：将项目 ID 格式化（从 REST 转换为 EWS 格式）。
 - 添加了 [Office.context.mailbox.convertToRestId](office.context.mailbox.md#converttorestiditemid-restversion--string)：将项目 ID 格式化（从 EWS 转换为 REST 格式）。
-- 添加了 [Office.MailboxEnums.ItemNotificationMessageType](/javascript/api/outlook_1_3/office.mailboxenums.itemnotificationmessagetype)：为约会或邮件指定通知邮件类型。
-- 添加了 [Office.MailboxEnums.RestVersion](/javascript/api/outlook_1_3/office.mailboxenums.restversion)：指定对应于 REST 格式的项目 ID 的 REST API 的版本。
-- 添加了 [NotificationMessages](/javascript/api/outlook_1_3/office.notificationmessages) 对象：提供用于访问 Outlook 外接程序中的通知邮件的方法。
-- 添加了 [NotificationMessageDetails](/javascript/api/outlook_1_3/office.notificationmessagedetails) 类型：由 `NotificationMessages.getAllAsync` 方法返回。
+- 添加了 [Office.MailboxEnums.ItemNotificationMessageType](/javascript/api/outlook/office.mailboxenums.itemnotificationmessagetype?view=outlook-js-1.3)：为约会或邮件指定通知邮件类型。
+- 添加了 [Office.MailboxEnums.RestVersion](/javascript/api/outlook/office.mailboxenums.restversion?view=outlook-js-1.3)：指定对应于 REST 格式的项目 ID 的 REST API 的版本。
+- 添加了 [NotificationMessages](/javascript/api/outlook/office.notificationmessages?view=outlook-js-1.3) 对象：提供用于访问 Outlook 外接程序中的通知邮件的方法。
+- 添加了 [NotificationMessageDetails](/javascript/api/outlook/office.notificationmessagedetails?view=outlook-js-1.3) 类型：由 `NotificationMessages.getAllAsync` 方法返回。
 
 ## <a name="see-also"></a>另请参阅
 

@@ -4,12 +4,12 @@ description: 有关 ExcelApi 1.5 要求集的详细信息
 ms.date: 07/26/2019
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: f59708133504c8e470cfa978611f254fdabf3991
-ms.sourcegitcommit: cb5e1726849aff591f19b07391198a96d5749243
+ms.openlocfilehash: 4860ef7153abea059d04cda5e8709c7bdbd88855
+ms.sourcegitcommit: 3f5d7f4794e3d3c8bc3a79fa05c54157613b9376
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "35940708"
+ms.lasthandoff: 08/02/2019
+ms.locfileid: "36064758"
 ---
 # <a name="whats-new-in-excel-javascript-api-15"></a>Excel JavaScript API 1.5 的最近更新
 
@@ -29,6 +29,8 @@ ExcelApi 1.5 添加自定义 XML 部件。 可通过工作簿对象中的[自定
 * 插入、更新和删除属性。
 
 ## <a name="api-list"></a>API 列表
+
+下表列出了 Excel JavaScript API 要求集1.5 中的 Api。 若要查看 Excel JavaScript API 要求集1.5 或更早版本支持的所有 Api 的 API 参考文档, 请参阅[要求集1.5 或更早版本中的 Excel api](/javascript/api/excel?view=excel-js-1.5)。
 
 | Class | 域 | 说明 |
 |:---|:---|:---|
@@ -60,5 +62,5 @@ ExcelApi 1.5 添加自定义 XML 部件。 可通过工作簿对象中的[自定
 
 ## <a name="see-also"></a>另请参阅
 
-- [Excel JavaScript API 参考文档](/javascript/api/excel)
+- [Excel JavaScript API 参考文档](/javascript/api/excel?view=excel-js-1.5)
 - [Excel JavaScript API 要求集](./excel-api-requirement-sets.md)

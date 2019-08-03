@@ -1,15 +1,15 @@
 ---
 title: Word JavaScript API 要求集1。3
 description: 有关 WordApi 1.3 要求集的详细信息
-ms.date: 07/17/2019
+ms.date: 07/25/2019
 ms.prod: word
 localization_priority: Normal
-ms.openlocfilehash: ca18822a60a384f15149531a59245a7b57ea39c3
-ms.sourcegitcommit: 6d9b4820a62a914c50cef13af8b80ce626034c26
+ms.openlocfilehash: 24a960b5ddab1ba96b0b45d155e1f70cb0f1a35c
+ms.sourcegitcommit: 3f5d7f4794e3d3c8bc3a79fa05c54157613b9376
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "35805296"
+ms.lasthandoff: 08/02/2019
+ms.locfileid: "36064877"
 ---
 # <a name="whats-new-in-word-javascript-api-13"></a>Word JavaScript API 1.3 的最近更新
 
@@ -17,7 +17,7 @@ WordApi 1.3 增加了对内容控件、自定义 XML 和文档级设置的更多
 
 ## <a name="api-list"></a>API 列表
 
-下表列出了作为 WordApi 1.3 要求集的一部分添加的 Api。
+下表列出了 Word JavaScript API 要求集1.3 中的 Api。 若要查看 Word JavaScript API 要求集1.3 或更早版本支持的所有 Api 的 API 参考文档, 请参阅[要求集1.3 或更早版本中的 Word api](/javascript/api/word?view=word-js-1.3)。
 
 | Class | 域 | 说明 |
 |:---|:---|:---|

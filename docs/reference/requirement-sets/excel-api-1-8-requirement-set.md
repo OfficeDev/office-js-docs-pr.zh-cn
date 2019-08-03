@@ -4,12 +4,12 @@ description: 有关 ExcelApi 1.8 要求集的详细信息
 ms.date: 07/26/2019
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: 297e84a5e86eae42696e5a1c067f81e137d4779a
-ms.sourcegitcommit: cb5e1726849aff591f19b07391198a96d5749243
+ms.openlocfilehash: 6849ccb3dc83275509d26c63054a518d41cb060e
+ms.sourcegitcommit: 3f5d7f4794e3d3c8bc3a79fa05c54157613b9376
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "35940652"
+ms.lasthandoff: 08/02/2019
+ms.locfileid: "36064891"
 ---
 # <a name="whats-new-in-excel-javascript-api-18"></a>Excel JavaScript API 1.8 中的新增功能
 
@@ -32,6 +32,8 @@ Excel JavaScript API 要求集 1.8 的功能包括适用于数据透视表、数
 已为图表添加更多[事件](/office/dev/add-ins/excel/excel-add-ins-events)。 让加载项处理用于与图表的交互。 此外，你还可以在整个工作簿中[触发事件](/office/dev/add-ins/excel/performance#enable-and-disable-events)。
 
 ## <a name="api-list"></a>API 列表
+
+下表列出了 Excel JavaScript API 要求集1.8 中的 Api。 若要查看 Excel JavaScript API 要求集1.8 或更早版本支持的所有 Api 的 API 参考文档, 请参阅[要求集1.8 或更早版本中的 Excel api](/javascript/api/excel?view=excel-js-1.8)。
 
 | Class | 域 | 说明 |
 |:---|:---|:---|
@@ -285,5 +287,5 @@ Excel JavaScript API 要求集 1.8 的功能包括适用于数据透视表、数
 
 ## <a name="see-also"></a>另请参阅
 
-- [Excel JavaScript API 参考文档](/javascript/api/excel)
+- [Excel JavaScript API 参考文档](/javascript/api/excel?view=excel-js-1.8)
 - [Excel JavaScript API 要求集](./excel-api-requirement-sets.md)

@@ -4,12 +4,12 @@ description: 有关 ExcelApi 1.6 要求集的详细信息
 ms.date: 07/26/2019
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: 1c81a2241d7e82e7fd2146189638c43ec1865296
-ms.sourcegitcommit: cb5e1726849aff591f19b07391198a96d5749243
+ms.openlocfilehash: c38dd942c3002af05f847846145bc89f1cbbccbe
+ms.sourcegitcommit: 3f5d7f4794e3d3c8bc3a79fa05c54157613b9376
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "35940764"
+ms.lasthandoff: 08/02/2019
+ms.locfileid: "36064905"
 ---
 # <a name="whats-new-in-excel-javascript-api-16"></a>Excel JavaScript API 1.6 的最近更新
 
@@ -31,6 +31,8 @@ ms.locfileid: "35940764"
 * 清除当前指定区域中处于活动状态的所有条件格式。
 
 ## <a name="api-list"></a>API 列表
+
+下表列出了 Excel JavaScript API 要求集1.6 中的 Api。 若要查看 Excel JavaScript API 要求集1.6 或更早版本支持的所有 Api 的 API 参考文档, 请参阅[要求集1.6 或更早版本中的 Excel api](/javascript/api/excel?view=excel-js-1.6)。
 
 | Class | 域 | 说明 |
 |:---|:---|:---|
@@ -147,5 +149,5 @@ ms.locfileid: "35940764"
 
 ## <a name="see-also"></a>另请参阅
 
-- [Excel JavaScript API 参考文档](/javascript/api/excel)
+- [Excel JavaScript API 参考文档](/javascript/api/excel?view=excel-js-1.6)
 - [Excel JavaScript API 要求集](./excel-api-requirement-sets.md)
