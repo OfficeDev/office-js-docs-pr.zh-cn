@@ -3,12 +3,12 @@ title: Office 加载项的隐私和安全
 description: ''
 ms.date: 06/20/2019
 localization_priority: Priority
-ms.openlocfilehash: 26b9184eb1e52422122288659f068719bd43075b
-ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
+ms.openlocfilehash: 5a930f9c2d4d2c7fe049517ac812c72a8a239b40
+ms.sourcegitcommit: c3673cc693fa7070e1b397922bd735ba3f9342f3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "35127756"
+ms.lasthandoff: 07/05/2019
+ms.locfileid: "35575553"
 ---
 # <a name="privacy-and-security-for-office-add-ins"></a>Office 加载项的隐私和安全
 
@@ -249,7 +249,7 @@ Exchange 和 SharePoint 提供了客户端代理以实现跨域访问。通常�
 
 在企业设置中，对于启用或禁用对 AppSource 和任何专用目录的访问权限，IT 管理员拥有最高权限。
 
-Office 设置的管理和执行由组策略设置完成。 这些操作可通过 [Office 部署工具](https://docs.microsoft.com/deployoffice/overview-of-the-office-2016-deployment-tool)和 [Office 自定义工具](https://docs.microsoft.com/DeployOffice/overview-of-the-office-customization-tool-for-click-to-run)进行配置。
+Office 设置的管理和执行由组策略设置完成。 这些操作可通过 [Office 部署工具](/deployoffice/overview-of-the-office-2016-deployment-tool)和 [Office 自定义工具](/deployoffice/overview-of-the-office-customization-tool-for-click-to-run)进行配置。
 
 | 设置名称 | 说明 |
 |--------------|-------------|
@@ -258,7 +258,7 @@ Office 设置的管理和执行由组策略设置完成。 这些操作可通过
 | 阻止 Office 应用商店 |  允许阻止用户使用或插入来自 Office 应用商店的 Web 加载项。 |
 
 > [!IMPORTANT]
-> 如果你的工作组正在使用 Office 的多个版本，则必须为每个版本配置组策略设置。 要详细了解针对 Office 2013 的组策略设置，请参阅 [Office 2013 相关应用概述](https://docs.microsoft.com/previous-versions/office/office-2013-resource-kit/jj219429(v%3doffice.15))一文中的[使用组策略来管理用户可如何安装和使用 Office 相关应用](https://docs.microsoft.com/previous-versions/office/office-2013-resource-kit/jj219429(v=office.15)#using-group-policy-to-manage-how-users-can-install-and-use-apps-for-office)。
+> 如果你的工作组正在使用 Office 的多个版本，则必须为每个版本配置组策略设置。 要详细了解针对 Office 2013 的组策略设置，请参阅 [Office 2013 相关应用概述](/previous-versions/office/office-2013-resource-kit/jj219429(v%3doffice.15))一文中的[使用组策略来管理用户可如何安装和使用 Office 相关应用](/previous-versions/office/office-2013-resource-kit/jj219429(v=office.15)#using-group-policy-to-manage-how-users-can-install-and-use-apps-for-office)。
 
 ## <a name="see-also"></a>另请参阅
 

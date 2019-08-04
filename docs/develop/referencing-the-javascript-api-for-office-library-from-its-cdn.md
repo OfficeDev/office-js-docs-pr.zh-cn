@@ -3,19 +3,19 @@ title: 从内容传送网络 (CDN) 引用适用于 Office 的 JavaScript API 库
 description: ''
 ms.date: 03/19/2019
 localization_priority: Priority
-ms.openlocfilehash: 4993a6a36004ced94ad37487f8e63d6b9f3f3f48
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: 249d367c7a7032d8ec165661da1d182df4047199
+ms.sourcegitcommit: 68872372d181cca5bee37ade73c2250c4a56bab6
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32449748"
+ms.lasthandoff: 05/01/2019
+ms.locfileid: "33517385"
 ---
 # <a name="referencing-the-javascript-api-for-office-library-from-its-content-delivery-network-cdn"></a>从内容传送网络 (CDN) 引用适用于 Office 的 JavaScript API 库
 
 > [!NOTE]
 > 如果想要使用 TypeScript 获取 Intellisense，除了本文中所述的步骤之外，还需要在项目文件夹根目录的节点支持系统提示框（或 Git Bash 窗口）中运行以下命令。 必须安装 [Node.js](https://nodejs.org)（包括 npm）。
 > 
-> ```bash
+> ```command&nbsp;line
 > npm install --save-dev @types/office-js
 > ```
 

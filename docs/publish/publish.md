@@ -3,12 +3,12 @@ title: 部署和发布 Office 加载项 | Microsoft Docs
 description: 部署 Office 加载项以进行测试或分发给用户的方法和选项。
 ms.date: 06/20/2019
 localization_priority: Priority
-ms.openlocfilehash: 9fefdece308647dda79a769acc9e8493cbca06f8
-ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
+ms.openlocfilehash: 9515157f0e6f3d294d381013442f958c903a63c0
+ms.sourcegitcommit: c3673cc693fa7070e1b397922bd735ba3f9342f3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "35128550"
+ms.lasthandoff: 07/05/2019
+ms.locfileid: "35575644"
 ---
 # <a name="deploy-and-publish-your-office-add-in"></a>部署和发布 Office 加载项
 
@@ -87,5 +87,5 @@ Outlook 外接程序部署需要以下内容：
 - [创建有效的 AppSource 一览](/office/dev/store/create-effective-office-store-listings)
 - [排查 Office 加载项中的用户错误](../testing/testing-and-troubleshooting.md)
 
-[AppSource]: https://docs.microsoft.com/office/dev/store/submit-to-the-office-store
+[AppSource]: /office/dev/store/submit-to-the-office-store
 [Office Add-in host and platform availability]: ../overview/office-add-in-availability
