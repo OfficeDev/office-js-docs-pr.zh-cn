@@ -3,12 +3,12 @@ title: 在 Office 网页版中调试加载项
 description: 如何使用 Office 网页版来测试和调试加载项。
 ms.date: 06/20/2019
 localization_priority: Priority
-ms.openlocfilehash: c8c67be0fe35d6aa4ebe7771fb261101d58d1c3d
-ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
+ms.openlocfilehash: ebc1296c0d6f13d5327f666e72907e016fbe8c6e
+ms.sourcegitcommit: c3673cc693fa7070e1b397922bd735ba3f9342f3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "35128403"
+ms.lasthandoff: 07/05/2019
+ms.locfileid: "35575679"
 ---
 # <a name="debug-add-ins-in-office-on-the-web"></a>在 Office 网页版中调试加载项
 
@@ -56,7 +56,7 @@ ms.locfileid: "35128403"
 
 - 你看到的一些 JavaScript 错误可能源自 Office 网页版。
 
-- 浏览器可能会显示无效证书错误，你需要忽略此错误。 执行此操作的过程因浏览器而异，而且用于执行此操作的各种浏览器的 UI 会定期进行更改。 有关说明，可搜索浏览器的“帮助”或“联机搜索”。 （例如，搜索“Edge 无效证书警告”。）大多数浏览器在“警告”页面上都有一个链接，可以通过此链接单击进入“加载项”页。 例如，Microsoft Edge 有一个链接“转到网页（不推荐）”。 但是每次加载项重新加载时，通常都必须通过此链接来完成。 如需更长久地忽略，请参阅建议的帮助。
+- 浏览器可能会显示无效证书错误，你需要忽略此错误。 执行此操作的过程因浏览器而异，而且用于执行此操作的各种浏览器的 UI 会定期进行更改。 有关说明，可搜索浏览器的“帮助”或“联机搜索”。 （例如，搜索“Microsoft Edge 无效证书警告”。）大多数浏览器在“警告”页面上都有一个链接，可以通过此链接单击进入“加载项”页。 例如，Microsoft Edge 有一个链接“转到网页（不推荐）”。 但是每次加载项重新加载时，通常都必须通过此链接来完成。 如需更长久地忽略，请参阅建议的帮助。
 
 - 如果你在代码中设置了断点，Office 网页版可能会抛出错误，指明它无法保存。
 

@@ -3,12 +3,12 @@ title: 使用 Windows 10 上的开发人员工具调试加载项
 description: ''
 ms.date: 07/01/2019
 localization_priority: Priority
-ms.openlocfilehash: a2090eca41f59f0e7fab1a172aff96cbbca28ed7
-ms.sourcegitcommit: 90c2d8236c6b30d80ac2b13950028a208ef60973
+ms.openlocfilehash: 2e6f3c10aa7e1e08aa6c4bb1b4a7724cc9e6531d
+ms.sourcegitcommit: c3673cc693fa7070e1b397922bd735ba3f9342f3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "35454879"
+ms.lasthandoff: 07/05/2019
+ms.locfileid: "35575672"
 ---
 # <a name="debug-add-ins-using-developer-tools-on-windows-10"></a>使用 Windows 10 上的开发人员工具调试加载项
 
@@ -20,7 +20,7 @@ ms.locfileid: "35454879"
 > [!NOTE]
 > 本文中的说明不能用于调试使用 Execute 函数的 Outlook 加载项。 若要调试使用 Execute 函数的 Outlook 加载项，我们建议你在脚本模式下附加到 Visual Studio 或附加到某些其他脚本调试器。
 
-## <a name="when-the-add-in-is-running-in-edge"></a>当加载项在 Microsoft Edge 中运行时
+## <a name="when-the-add-in-is-running-in-microsoft-edge"></a>当加载项在 Microsoft Edge 中运行时
 
 当加载项在 Microsoft Edge 中运行时，可使用 [Microsoft Edge 开发人员工具](https://www.microsoft.com/p/microsoft-edge-devtools-preview/9mzbfrmz0mnj?activetab=pivot%3Aoverviewtab)。 
 

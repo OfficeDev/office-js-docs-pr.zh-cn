@@ -1,64 +1,50 @@
 ---
 title: Excel JavaScript API 概述
 description: ''
-ms.date: 06/10/2019
+ms.date: 07/05/2019
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: aa9574a93252c0011b211c39e37cc013beb64432
-ms.sourcegitcommit: 3f84b2caa73d7fe1eb0d15e32ea4dec459e2ff53
+ms.openlocfilehash: e6064bf7e7dce6931079fc2d3eb262533da7edf3
+ms.sourcegitcommit: c3673cc693fa7070e1b397922bd735ba3f9342f3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/12/2019
-ms.locfileid: "34910145"
+ms.lasthandoff: 07/05/2019
+ms.locfileid: "35575630"
 ---
 # <a name="excel-javascript-api-overview"></a>Excel JavaScript API 概述
 
-可以使用 Excel JavaScript API 构建适用于 Excel 2016 或更高版本的加载项。 以下列表显示在 API 中可用的高级 Excel 对象。 每个对象页面链接包含对象可用的属性、事件和方法的描述。 如需了解详细信息，请从菜单中浏览相应链接。
+Excel 加载项通过使用适用于 Office 的 JavaScript API 与 Excel 中的对象进行交互，适用于 Office 的 JavaScript API包括两个 JavaScript 对象模型：
 
-为了方便起见，下面列出了一些核心 Excel 对象：
+* **Excel JavaScript API**：[Excel JavaScript API](/javascript/api/excel) 随 Office 2016 一起引入，提供了强类型的对象，可用于访问工作表、区域、表格、图表等。 
 
-- [工作簿](/javascript/api/excel/excel.workbook)：包含相关 workbook 对象的顶级对象，例如 worksheet、table、range 等。它还可以用于列出相关的参考。
+* **通用 API**：[通用 API](/javascript/api/office) 随 Office 2013 引入，可用于访问多种类型的 Office 应用程序中常见的 UI、对话框和客户端设置等功能。
 
-- [Worksheet](/javascript/api/excel/excel.worksheet)：表示工作簿中的工作表。
-  - [WorksheetCollection](/javascript/api/excel/excel.worksheetcollection)：工作簿中 **Worksheet** 对象的集合。
-  - [WorksheetProtection](/javascript/api/excel/excel.worksheetprotection)：表示对 **Worksheet** 对象的保护。
+文档的本部分着重介绍了 Excel JavaScript API，它可用于开发面向 Excel 网页版或 Excel 2016 或更高版本的加载项中的大部分功能。 有关通用 API 的信息，请参阅[适用于 Office 的 JavaScript API](../javascript-api-for-office.md)。 
 
-- [Range](/javascript/api/excel/excel.range)：表示某一单元格、某一行、某一列、某一单元格选定区域（其中包含一个或多个相邻单元格块）。
-  - [ConditionalFormat](/javascript/api/excel/excel.conditionalformat)：定义满足规则条件时应用到该区域的规则和格式的对象。
-  - [DataValidation](/javascript/api/excel/excel.datavalidation)：根据各种条件将用户输入限制在某个区域内的对象。
-  - [RangeSort](/javascript/api/excel/excel.rangesort)：表示管理区域中排序操作的对象。
+## <a name="learn-programming-concepts"></a>了解编程概念
 
-- [Table](/javascript/api/excel/excel.table)：表示有组织的单元格的集合，设计用于简化数据管理。
-  - [TableCollection](/javascript/api/excel/excel.tablecollection)：工作簿或工作表中的表的集合。
-  - [TableColumnCollection](/javascript/api/excel/excel.tablecolumncollection)：表中所有列的集合。
-  - [TableRowCollection](/javascript/api/excel/excel.tablerowcollection)：表中所有行的集合。
-  - [TableSort](/javascript/api/excel/excel.tablesort)：表示管理区域中排序操作的对象。
+有关重要编程概念的信息，请参阅以下文章：
+ 
+- [Excel JavaScript API 基本编程概念](../../excel/excel-add-ins-core-concepts.md)
 
-- [Chart](/javascript/api/excel/excel.chart)：表示工作表中的 chart 对象，它是基础数据的可视表示形式。
-  - [ChartCollection](/javascript/api/excel/excel.chartcollection)：工作表中的图表的集合。
+- [Excel JavaScript API 高级编程概念](../../excel/excel-add-ins-advanced-concepts.md)
 
-- [PivotTable](/javascript/api/excel/excel.pivottable)：表示 Excel 数据透视表，它是数据的分层分组表示。
-  - [TableCollection](/javascript/api/excel/excel.pivottablecollection)：工作表中的数据透视表的集合。
+## <a name="learn-about-api-capabilities"></a>了解 API 功能
 
-- [Filter](/javascript/api/excel/excel.filter)：表示管理表格列筛选的对象。
+阅读此文档部分中的其他文章，了解如何处理[事件](../../excel/excel-add-ins-events.md)、[图表](../../excel/excel-add-ins-charts.md)、[区域](../../excel/excel-add-ins-ranges.md)、[表格](../../excel/excel-add-ins-tables.md)、[工作表](../../excel/excel-add-ins-worksheets.md)等。 在此部分中，你还可以找到有关 Excel JavaScript API 概念的指南，例如[使用 Excel 加载项共同创作](../../excel/co-authoring-in-excel-add-ins.md)、[数据验证](../../excel/excel-add-ins-data-validation.md)、[错误处理](../../excel/excel-add-ins-error-handling.md)和[性能优化](../../excel/performance.md)。 有关可用文章的完整列表，请参阅目录。
 
-- [NamedItem](/javascript/api/excel/excel.nameditem)：表示单元格区域或值的定义名称。
-  - [NamedItemCollection](/javascript/api/excel/excel.nameditemcollection)：工作簿中 **NamedItem** 对象的集合。
+有关使用 Excel JavaScript API 访问 Excel 中对象的实际经验，请完成 [Excel 加载项教程](../../tutorials/excel-tutorial.md)。 
 
-- [Binding](/javascript/api/excel/excel.binding)：表示对工作簿的某一部分的绑定的抽象类。
-  - [BindingCollection](/javascript/api/excel/excel.bindingcollection)：工作簿中 **Binding** 对象的集合。
+有关 Excel JavaScript API 对象模型的详细信息，请参阅 [Excel JavaScript API 参考文档](/javascript/api/excel)。
 
-## <a name="excel-javascript-api-requirement-sets"></a>Excel JavaScript API 要求集
+## <a name="try-out-code-samples-in-script-lab"></a>试用 Script Lab 中的代码示例
 
-要求集是指各组已命名的 API 成员。 Office 加载项使用清单中指定的要求集或执行运行时检查，以确定 Office 主机是否支持加载项所需的 API。 有关 Excel JavaScript API 要求集的详细信息，请参阅 [Excel JavaScript API 要求集](../requirement-sets/excel-api-requirement-sets.md)文章。
-
-## <a name="excel-javascript-api-reference"></a>Excel JavaScript API 参考
-
-有关 Excel JavaScript API 的详细信息，请参阅 [Excel JavaScript API 参考文档](/javascript/api/excel)。
+使用 [Script Lab](../../overview/explore-with-script-lab.md) 快速熟悉一系列展示如何使用 API 完成任务的内置示例。 你可以运行 Script Lab 中的示例来立即查看任务窗格或工作表中的结果，检查示例来了解 API 的工作原理，甚至可以使用示例来构建自己的加载项的原型。
 
 ## <a name="see-also"></a>另请参阅
 
-- [Excel 加载项概述](/office/dev/add-ins/excel/excel-add-ins-overview)
-- [Office 加载项平台概述](/office/dev/add-ins/overview/office-add-ins)
-- [GitHub 上的 Excel 加载项示例](https://github.com/OfficeDev?utf8=%E2%9C%93&q=Excel)
+- [Excel 加载项文档](../../excel/index.md)
+- [Excel 加载项概述](../../excel/excel-add-ins-overview.md)
+- [Excel JavaScript API 参考](/javascript/api/excel)
+- [Office 加载项主机和平台可用性](../../overview/office-add-in-availability.md)
 - [API 开放性规范](../openspec/openspec.md)
