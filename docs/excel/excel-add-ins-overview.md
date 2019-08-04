@@ -1,14 +1,14 @@
 ---
 title: Excel 加载项概述
 description: ''
-ms.date: 06/20/2019
+ms.date: 07/05/2019
 localization_priority: Priority
-ms.openlocfilehash: 696e1b3dfcab986125eb3f5f1d9f7547a59282e5
-ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
+ms.openlocfilehash: fbb0f69e7c32776fdd0bce6e5c10f39c562a5cbe
+ms.sourcegitcommit: c3673cc693fa7070e1b397922bd735ba3f9342f3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "35128232"
+ms.lasthandoff: 07/05/2019
+ms.locfileid: "35575567"
 ---
 # <a name="excel-add-ins-overview"></a>Excel 加载项概述
 
@@ -17,6 +17,7 @@ ms.locfileid: "35128232"
 - 与 Excel 对象交互、读取和写入 Excel 数据。
 - 使用基于 Web 的任务窗格或内容窗格扩展功能
 - 添加自定义功能区按钮或上下文菜单项
+- 添加自定义函数
 - 使用对话框窗口提供更丰富的交互
 
 Office 加载项平台提供框架和 Office.js JavaScript API，使你能够创建和运行 Excel 加载项。通过使用 Office 加载项平台创建 Excel 加载项，可以获得以下好处：
@@ -52,7 +53,7 @@ Web 应用程序可以托管在任何 Web 服务器上，并且可以使用客�
 
 ## <a name="capabilities-of-an-excel-add-in"></a>Excel 加载项的功能
 
-除了能够与工作簿内容进行交互外，Excel 加载项还可以添加自定义功能区按钮或菜单命令、插入任务窗格、打开对话框，甚至还能在工作表中嵌入基于 Web 的丰富对象（如图表或交互式可视化）。
+除了能够与工作簿内容进行交互外，Excel 加载项还可以添加自定义功能区按钮或菜单命令、插入任务窗格、添加自定义函数、打开对话框，甚至还能在工作表中嵌入基于 Web 的丰富对象（如图表或交互式可视化效果）。
 
 ### <a name="add-in-commands"></a>加载项命令
 
@@ -73,6 +74,16 @@ Web 应用程序可以托管在任何 Web 服务器上，并且可以使用客�
 ![Excel 中的任务窗格加载项](../images/excel-add-in-task-pane-insights.png)
 
 有关任务窗格的详细信息，请参阅 [Office 加载项中的任务窗格](../design/task-pane-add-ins.md)。有关在 Excel 中实现任务窗格的示例，请参阅 [Excel 加载项 JS WoodGrove Expense Trends](https://github.com/OfficeDev/Excel-Add-in-WoodGrove-Expense-Trends)。
+
+### <a name="custom-functions"></a>自定义函数
+
+开发人员可以借助自定义函数向 Excel 添加新函数，方法是在 JavaScript 中将这些函数定义为加载项的一部分。 Excel 中的用户可以访问自定义函数，就像他们访问 Excel 中的任何本机函数一样，比如 `SUM()`。 
+
+**自定义函数**
+
+<img alt="animated image showing an end user inserting the MYFUNCTION.SPHEREVOLUME custom function into a cell of an Excel worksheet" src="../images/SphereVolumeNew.gif" />
+
+有关自定义函数的详细信息，请参阅[在 Excel 中创建自定义函数](custom-functions-overview.md)。
 
 ### <a name="dialog-boxes"></a>对话框
 
@@ -100,14 +111,15 @@ Excel 加载项通过使用 [Office JavaScript API](/office/dev/add-ins/referenc
 
 * **Excel JavaScript API**：[Excel JavaScript API](/office/dev/add-ins/reference/overview/excel-add-ins-reference-overview) 随 Office 2016 引入，提供强类型的 Excel 对象，可用于访问工作表、区域、表、图表等。 
 
-* **通用 API**：通用 API 随 Office 2013 引入，使用它可以访问多种类型的主机应用程序（如 Word、Excel 和 PowerPoint ）中常见的 UI、对话框和客户端设置等功能。 由于通用 API 确实为 Excel 交互提供了有限的功能，因此，如果加载项需要在 Excel 2013 上运行，则可以使用它。
+* **通用 API**：通用 API 随 Office 2013 引入，可用于访问多种类型的 Office 应用程序中常见的 UI、对话框和客户端设置等功能。 由于通用 API 确实为 Excel 交互提供了有限的功能，因此，如果加载项需要在 Excel 2013 上运行，则可以使用它。
 
 ## <a name="next-steps"></a>后续步骤
 
-通过[创建第一个 Excel 加载项](excel-add-ins-get-started-overview.md)开始使用。 接下来，请详细了解与生成 Excel 加载项有关的[核心概念](excel-add-ins-core-concepts.md)。
+通过[创建第一个 Excel 加载项](../quickstarts/excel-quickstart-jquery.md)开始使用。 接下来，请详细了解与生成 Excel 加载项有关的[核心概念](excel-add-ins-core-concepts.md)。
 
 ## <a name="see-also"></a>另请参阅
 
+- [Excel 加载项文档](index.md)
 - [Office 加载项平台概述](../overview/office-add-ins.md)
 - [开发 Office 加载项的最佳做法](../concepts/add-in-development-best-practices.md)
 - [Office 加载项的设计准则](../design/add-in-design.md)

@@ -1,14 +1,14 @@
 ---
 title: OneNote JavaScript API 编程概述
 description: ''
-ms.date: 06/20/2019
+ms.date: 07/05/2019
 localization_priority: Priority
-ms.openlocfilehash: 852c68bc9edf370d0eef687fb4869b23d4f59fe4
-ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
+ms.openlocfilehash: 223d7cdf6770d21a16272b9a8602201cec77d111
+ms.sourcegitcommit: c3673cc693fa7070e1b397922bd735ba3f9342f3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "35128634"
+ms.lasthandoff: 07/05/2019
+ms.locfileid: "35575658"
 ---
 # <a name="onenote-javascript-api-programming-overview"></a>OneNote JavaScript API 编程概述
 
@@ -87,6 +87,10 @@ function getPagesInSection() {
 
 可以在 [API 参考](/office/dev/add-ins/reference/overview/onenote-add-ins-javascript-reference) 中找到受支持的 OneNote 对象和操作。
 
+#### <a name="onenote-javascript-api-requirement-sets"></a>OneNote JavaScript API 要求集
+
+要求集是指各组已命名的 API 成员。 Office 外接程序使用清单中指定的要求集或执行运行时检查，以确定 Office 主机是否支持外接程序所需的 API。 有关 OneNote JavaScript API 要求集的详细信息，请参阅 [OneNote JavaScript API 要求集](../reference/requirement-sets/onenote-api-requirement-sets.md)。
+
 ### <a name="accessing-the-common-api-through-the-document-object"></a>通过 *Document* 对象访问通用 API
 
 使用 **Document** 对象以访问通用 API，例如 [getSelectedDataAsync](/javascript/api/office/office.document#getselecteddataasync-coerciontype--options--callback-) 和 [setSelectedDataAsync](/javascript/api/office/office.document#setselecteddataasync-data--options--callback-) 方法。 
@@ -131,6 +135,7 @@ OneNote 加载项仅支持以下通用 API：
 
 ## <a name="see-also"></a>另请参阅
 
+- [OneNote 加载项文档](index.md)
 - [生成首个 OneNote 加载项](../quickstarts/onenote-quickstart.md)
 - [OneNote JavaScript API 参考](/office/dev/add-ins/reference/overview/onenote-add-ins-javascript-reference)
 - [Rubric Grader 示例](https://github.com/OfficeDev/OneNote-Add-in-Rubric-Grader)

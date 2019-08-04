@@ -3,12 +3,12 @@ title: 旁加载 Office 加载项以供测试
 description: ''
 ms.date: 06/20/2019
 localization_priority: Priority
-ms.openlocfilehash: acd16bb8a8d08aa6dd05f0f56921e285ee1e2e1f
-ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
+ms.openlocfilehash: 81b931ab7bc88675ae438edf6d0d05ebb040387e
+ms.sourcegitcommit: c3673cc693fa7070e1b397922bd735ba3f9342f3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "35127015"
+ms.lasthandoff: 07/05/2019
+ms.locfileid: "35575686"
 ---
 # <a name="sideload-office-add-ins-for-testing"></a>旁加载 Office 加载项以供测试
 
@@ -82,7 +82,7 @@ ms.locfileid: "35127015"
 
 3. 在“**Office 外接程序**”对话框的顶部，选择“**共享文件夹**”。
 
-4. 依次选择加载项名称和“确定”****，以插入加载项。
+4. 选择加载项的名称，然后选择“**添加**”以插入加载项。
 
 ## <a name="see-also"></a>另请参阅
 

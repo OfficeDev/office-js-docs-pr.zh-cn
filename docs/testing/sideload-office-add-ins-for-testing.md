@@ -3,12 +3,12 @@ title: 在 Office 网页版中旁加载 Office 加载项进行测试
 description: 通过旁加载在 Office 网页版中测试 Office 加载项
 ms.date: 06/20/2019
 localization_priority: Priority
-ms.openlocfilehash: e382e4de62df28584da2c827433af3102486e057
-ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
+ms.openlocfilehash: 6a61a8bfb4860ac31803c40d8ecea1b550f79368
+ms.sourcegitcommit: c3673cc693fa7070e1b397922bd735ba3f9342f3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "35126944"
+ms.lasthandoff: 07/05/2019
+ms.locfileid: "35575602"
 ---
 # <a name="sideload-office-add-ins-in-office-on-the-web-for-testing"></a>在 Office 网页版中旁加载 Office 加载项进行测试
 
@@ -48,9 +48,9 @@ ms.locfileid: "35126944"
 >
 > - 在 Windows 命令提示符下，运行以下行：`CheckNetIsolation LoopbackExempt -a -n="Microsoft.MicrosoftEdge_8wekyb3d8bbwe"`
 >
-> - 在 Microsoft Edge 搜索栏中输入“**about:flags**”以调出“开发人员设置”选项。  选中“**允许本地主机环回**”选项，然后重新启动 Microsoft Edge。
+> - 在 Microsoft Edge 搜索栏中输入“**about:flags**”以调出“开发人员设置”选项。  选中“**允许使用 localhost 环回**”选项，然后重新启动 Microsoft Edge。
 
->    ![选中此框后，Edge 会允许本地主机环回选项。](../images/allow-localhost-loopback.png)
+>    ![Microsoft Edge 的“允许使用 localhost 环回”选项（该复选框已选中）。](../images/allow-localhost-loopback.png)
 
 
 ## <a name="sideload-an-office-add-in-in-office-365"></a>在 Office 365 上旁加载 Office 加载项

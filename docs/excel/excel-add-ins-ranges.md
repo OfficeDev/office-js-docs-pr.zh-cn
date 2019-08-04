@@ -1,14 +1,14 @@
 ---
 title: 使用 Excel JavaScript API 对区域执行操作（基本）
 description: ''
-ms.date: 02/20/2019
+ms.date: 04/30/2019
 localization_priority: Priority
-ms.openlocfilehash: bb3971a88b6721206424a62c007ce2bcdbd7d3a0
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: b434042be7328a6598d46716f2b7020e5972823e
+ms.sourcegitcommit: 47b792755e655043d3db2f1fdb9a1eeb7453c636
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32449615"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "33620396"
 ---
 # <a name="work-with-ranges-using-the-excel-javascript-api"></a>使用 Excel JavaScript API 处理区域
 
@@ -23,7 +23,7 @@ ms.locfileid: "32449615"
 
 ### <a name="get-range-by-address"></a>按地址获取区域
 
-下面的代码示例从名为 **Sample** 的工作表中获取地址为 **B2:B5** 的区域，加载其 **address** 属性，并向控制台写入一条消息。
+下面的代码示例从名为 **Sample** 的工作表中获取地址为 **B2:C5** 的区域，加载其 **address** 属性，并向控制台写入一条消息。
 
 ```js
 Excel.run(function (context) {
@@ -543,10 +543,7 @@ Excel.run(function (context) {
 
 范围可以根据条件将格式应用于个别单元格。 有关此操作的详细信息，请参阅[将条件格式应用于 Excel 范围](excel-add-ins-conditional-formatting.md)。
 
-## <a name="find-a-cell-using-string-matching-preview"></a>查找使用字符串匹配 （预览） 的单元格
-
-> [!NOTE]
-> 区域对象的 `find` 函数当前仅适用于公共预览版。 [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
+## <a name="find-a-cell-using-string-matching"></a>使用字符串匹配查找单元格
 
 `Range` 对象具有 `find` 方法在区域内搜索指定字符串。 返回有匹配文本的第一个单元格区域。 以下代码示例查找值等于字符串 **食品** 的第一个单元格，并将其地址记录到控制台。 请注意，若指定的字符串不存在于区域中，`find` 将引发 `ItemNotFound` 错误。 若您预计到指定的字符串可能不存在区域中，则可使用 [findOrNullObject](excel-add-ins-advanced-concepts.md#ornullobject-methods) 方法，以便您的代码可正常处理该情况。
 
