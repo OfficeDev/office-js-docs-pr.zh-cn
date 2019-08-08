@@ -1,14 +1,14 @@
 ---
 title: 从任务窗格附加调试器
 description: ''
-ms.date: 05/08/2019
+ms.date: 08/06/2019
 localization_priority: Priority
-ms.openlocfilehash: 03926ea18963b98f44702f7213dd1768e9924265
-ms.sourcegitcommit: a99be9c4771c45f3e07e781646e0e649aa47213f
+ms.openlocfilehash: 4433eccc165d616c7b8ebff428e1426c4b98be49
+ms.sourcegitcommit: dc78ee2a89fe3d4cd6f748be1eec9081c1077502
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/11/2019
-ms.locfileid: "33952276"
+ms.lasthandoff: 08/07/2019
+ms.locfileid: "36231303"
 ---
 # <a name="attach-a-debugger-from-the-task-pane"></a>从任务窗格附加调试器
 
@@ -30,7 +30,7 @@ Visual Studio 中的“解决方案资源管理器”**** 会显示代码文件�
 
 > [!NOTE]
 > 如果你没有看到“个性”菜单，则可以使用 Visual Studio 调试加载项。 确保你的任务窗格加载项已在 Office 中打开，然后按照以下步骤操作：
-
+>
 > 1. 在 Visual Studio 中，依次选择“**调试**” > “**附加到进程**”。
 > 2. 在“**附加到进程**”对话框中，选择所有可用的 Iexplore.exe 进程，然后选择“**附加**”按钮。
 
