@@ -3,12 +3,12 @@ title: Office.context.mailbox.diagnostics - 要求集 1.2
 description: ''
 ms.date: 06/20/2019
 localization_priority: Normal
-ms.openlocfilehash: 4dc49e913be4373936eb45e9954b6fd86e4d2d11
-ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
+ms.openlocfilehash: f2e613816884a5c1c00e5b96565d378434747e8e
+ms.sourcegitcommit: dc78ee2a89fe3d4cd6f748be1eec9081c1077502
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "35128452"
+ms.lasthandoff: 08/07/2019
+ms.locfileid: "36231268"
 ---
 # <a name="diagnostics"></a>diagnostics
 
@@ -48,7 +48,7 @@ ms.locfileid: "35128452"
 
 获取表示主机应用程序或 Exchange Server 的版本的字符串。
 
-如果邮件外接程序在 Outlook 桌面客户端或 iOS 上运行, 则该`hostVersion`属性返回主机应用程序 (Outlook) 的版本。 在 Outlook 网页版中, 该属性返回的是 Exchange 服务器的版本。 例如，字符串 `15.0.468.0`。
+如果邮件外接程序在 Outlook 桌面客户端或 iOS 上运行, 则该`hostVersion`属性返回主机应用程序 (Outlook) 的版本。 在 Outlook 网页版中, 该属性返回的是 Exchange 服务器的版本。 一个示例是字符串 "15.0.468.0"。
 
 ##### <a name="type"></a>类型
 
