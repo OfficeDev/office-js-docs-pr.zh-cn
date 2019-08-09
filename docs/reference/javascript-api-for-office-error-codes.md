@@ -1,14 +1,14 @@
 ---
 title: 适用于 Office 的 JavaScript API 的错误代码
 description: ''
-ms.date: 06/20/2019
+ms.date: 08/06/2019
 localization_priority: Normal
-ms.openlocfilehash: b259d592d465dfae6569ecc2a442f249104916af
-ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
+ms.openlocfilehash: f51d7860c0e7b4de530d30326f56380b28b03736
+ms.sourcegitcommit: 654ac1a0c477413662b48cffc0faee5cb65fc25f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "35128529"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "36268562"
 ---
 # <a name="javascript-api-for-office-error-codes"></a>适用于 Office 的 JavaScript API 的错误代码
 
@@ -81,6 +81,7 @@ ms.locfileid: "35128529"
 |8021|超出范围|列索引值超出允许的范围。请使用一个小于列数的正值（大于等于 0）。|列索引大于表格最大列索引或小于 0。|
 |8022|超出范围|值超出允许的范围。|格式中的某些值超出支持的范围。|
 |9016|权限被拒绝|权限被拒绝|访问被拒绝。|
+|9041|网络错误|用户不再连接到网络。 请检查你的网络连接, 然后重试。|用户不再拥有网络或 internet 访问权限。|
 |12002|||下列一种含义：<br> - 传递给 `displayDialogAsync` 的 URL 没有对应的页面。<br> - 传递给 `displayDialogAsync` 的页面已加载，但对话框定向到找不到或无法加载的页面，或者已定向到使用无效语法的 URL。 在对话框中引发并在主机页面中触发 `DialogEventReceived` 事件。|
 |12003|||对话框定向到使用 HTTP 协议的 URL。 必须使用 HTTPS。 在对话框中引发并在主机页面中触发 `DialogEventReceived` 事件。|
 |12004|||传递给 `displayDialogAsync` 的 URL 的域不受信任。 此域必须与主机页的域相同（包括协议和端口号）。 由 `displayDialogAsync` 的调用引发。|

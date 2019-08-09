@@ -1,14 +1,14 @@
 ---
 title: "\"Context.subname\"-\"邮箱-要求集 1.2\""
 description: ''
-ms.date: 06/20/2019
+ms.date: 08/08/2019
 localization_priority: Normal
-ms.openlocfilehash: de7c48faf966f9b3f5d1bb76f69aa16810a5381f
-ms.sourcegitcommit: 3f5d7f4794e3d3c8bc3a79fa05c54157613b9376
+ms.openlocfilehash: 7e5bbe4e5769cf92de8073d439c3d3472b5c3899
+ms.sourcegitcommit: 654ac1a0c477413662b48cffc0faee5cb65fc25f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/02/2019
-ms.locfileid: "36064366"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "36268416"
 ---
 # <a name="mailbox"></a>邮箱
 
@@ -23,6 +23,20 @@ ms.locfileid: "36064366"
 |[最低版本的邮箱要求集](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
 |[最低权限级别](/outlook/add-ins/understanding-outlook-add-in-permissions)| 受限|
 |[适用的 Outlook 模式](/outlook/add-ins/#extension-points)| 撰写或阅读|
+
+##### <a name="members-and-methods"></a>成员和方法
+
+| 成员 | 类型 |
+|--------|------|
+| [ewsUrl](#ewsurl-string) | 成员 |
+| [convertToLocalClientTime](#converttolocalclienttimetimevalue--localclienttime) | 方法 |
+| [convertToUtcClientTime](#converttoutcclienttimeinput--date) | 方法 |
+| [displayAppointmentForm](#displayappointmentformitemid) | 方法 |
+| [displayMessageForm](#displaymessageformitemid) | 方法 |
+| [displayNewAppointmentForm](#displaynewappointmentformparameters) | 方法 |
+| [getCallbackTokenAsync](#getcallbacktokenasynccallback-usercontext) | 方法 |
+| [getUserIdentityTokenAsync](#getuseridentitytokenasynccallback-usercontext) | 方法 |
+| [makeEwsRequestAsync](#makeewsrequestasyncdata-callback-usercontext) | 方法 |
 
 ### <a name="namespaces"></a>命名空间
 
@@ -258,8 +272,16 @@ Office.context.mailbox.displayNewAppointmentForm(
 
 |名称| 类型| 属性| 说明|
 |---|---|---|---|
-|`callback`| 函数||方法完成后，使用单个参数 `asyncResult`（一个 [`AsyncResult`](/javascript/api/office/office.asyncresult) 对象）调用在 `callback` 参数中传递的函数。<br/><br/>令牌作为 `asyncResult.value` 属性中的字符串提供。|
-|`userContext`| 对象| &lt;可选&gt;|传递给异步方法的任何状态数据。|
+|`callback`| 函数||方法完成后，使用单个参数 `asyncResult`（一个 [`AsyncResult`](/javascript/api/office/office.asyncresult) 对象）调用在 `callback` 参数中传递的函数。<br/><br/>令牌作为 `asyncResult.value` 属性中的字符串提供。<br><br>如果出现错误, 则`asyncResult.error`和`asyncResult.diagnostics`属性可能会提供其他信息。|
+|`userContext`| Object| &lt;可选&gt;|传递给异步方法的任何状态数据。|
+
+##### <a name="errors"></a>错误
+
+|错误代码|说明|
+|------------|-------------|
+|`HTTPRequestFailure`|请求失败。 请查看 HTTP 错误代码的 diagnostics 对象。|
+|`InternalServerError`|Exchange 服务器返回错误。 有关详细信息, 请参阅 diagnostics 对象。|
+|`NetworkError`|用户不再连接到网络。 请检查你的网络连接, 然后重试。|
 
 ##### <a name="requirements"></a>要求
 
@@ -291,8 +313,16 @@ function cb(asyncResult) {
 
 |名称| 类型| 属性| 说明|
 |---|---|---|---|
-|`callback`| 函数||方法完成后，使用单个参数 `asyncResult`（一个 [`AsyncResult`](/javascript/api/office/office.asyncresult) 对象）调用在 `callback` 参数中传递的函数。<br/><br/>令牌作为 `asyncResult.value` 属性中的字符串提供。|
+|`callback`| 函数||方法完成后，使用单个参数 `callback`（一个 [`asyncResult`](/javascript/api/office/office.asyncresult) 对象）调用在 `AsyncResult` 参数中传递的函数。<br/><br/>令牌作为 `asyncResult.value` 属性中的字符串提供。<br><br>如果出现错误, 则`asyncResult.error`和`asyncResult.diagnostics`属性可能会提供其他信息。|
 |`userContext`| 对象| &lt;可选&gt;|传递给异步方法的任何状态数据。|
+
+##### <a name="errors"></a>错误
+
+|错误代码|说明|
+|------------|-------------|
+|`HTTPRequestFailure`|请求失败。 请查看 HTTP 错误代码的 diagnostics 对象。|
+|`InternalServerError`|Exchange 服务器返回错误。 有关详细信息, 请参阅 diagnostics 对象。|
+|`NetworkError`|用户不再连接到网络。 请检查你的网络连接, 然后重试。|
 
 ##### <a name="requirements"></a>要求
 

@@ -3,12 +3,12 @@ ms.date: 07/09/2019
 description: 使用 Excel 中的自定义函数对用户进行身份验证。
 title: 自定义函数的身份验证
 localization_priority: Priority
-ms.openlocfilehash: 74e1524eaf9c5328754fee8c225cd5aca83188da
-ms.sourcegitcommit: bb44c9694f88cde32ffbb642689130db44456964
+ms.openlocfilehash: f746947122da7ef3d54a0dd3b4f90dd059e5830f
+ms.sourcegitcommit: 654ac1a0c477413662b48cffc0faee5cb65fc25f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/17/2019
-ms.locfileid: "35771468"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "36268136"
 ---
 # <a name="authentication-for-custom-functions"></a>自定义函数的身份验证
 
@@ -90,7 +90,7 @@ function receiveTokenFromCustomFunction() {
 
 ## <a name="general-guidance"></a>一般指导
 
-Office 加载项基于 Web，你可以使用任何 Web 身份验证技术。 使用自定义函数实施自己的身份验证时，不必遵循特定的模式或方法。 你可能希望查阅有关各种身份验证模式的文档，请先参阅[这篇关于通过外部服务进行授权的文章](/office/dev/add-ins/develop/auth-external-add-ins?view=office-js)。  
+Office 加载项基于 Web，你可以使用任何 Web 身份验证技术。 使用自定义函数实施自己的身份验证时，不必遵循特定的模式或方法。 你可能希望查阅有关各种身份验证模式的文档，请先参阅[这篇关于通过外部服务进行授权的文章](/office/dev/add-ins/develop/auth-external-add-ins)。  
 
 在开发自定义函数时，避免使用以下位置存储数据：  
 

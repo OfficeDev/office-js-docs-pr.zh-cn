@@ -1,20 +1,20 @@
 ---
-title: "\"context.subname\": \"邮箱. userProfile-要求集 1.1\""
+title: "\"Context.subname\": \"邮箱. userProfile-要求集 1.1\""
 description: ''
-ms.date: 03/19/2019
+ms.date: 08/08/2019
 localization_priority: Normal
-ms.openlocfilehash: 7a10a35887d31a8803d0662eedbe190543d2326a
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: af9a7f790f56124a86af08567690452b7f497408
+ms.sourcegitcommit: 654ac1a0c477413662b48cffc0faee5cb65fc25f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32451918"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "36268486"
 ---
 # <a name="userprofile"></a>userProfile
 
 ### <a name="officeofficemdcontextofficecontextmdmailboxofficecontextmailboxmduserprofile"></a>[Office](Office.md)[.context](Office.context.md)[.mailbox](Office.context.mailbox.md).userProfile
 
-##### <a name="requirements"></a>Requirements
+##### <a name="requirements"></a>要求
 
 |要求| 值|
 |---|---|
@@ -22,9 +22,17 @@ ms.locfileid: "32451918"
 |[最低权限级别](/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
 |[适用的 Outlook 模式](/outlook/add-ins/#extension-points)| 撰写或阅读|
 
-### <a name="members"></a>成员
+##### <a name="members-and-methods"></a>成员和方法
 
-####  <a name="displayname-string"></a>displayName :String
+| 成员 | 类型 |
+|--------|------|
+| [displayName](#displayname-string) | Member |
+| [emailAddress](#emailaddress-string) | Member |
+| [timeZone](#timezone-string) | Member |
+
+### <a name="members"></a>Members
+
+#### <a name="displayname-string"></a>displayName: String
 
 获取用户的显示名称。
 
@@ -47,7 +55,7 @@ ms.locfileid: "32451918"
 console.log(Office.context.mailbox.userProfile.displayName);
 ```
 
-####  <a name="emailaddress-string"></a>emailAddress :String
+#### <a name="emailaddress-string"></a>emailAddress: String
 
 获取用户的 SMTP 电子邮件地址。
 
@@ -70,7 +78,7 @@ console.log(Office.context.mailbox.userProfile.displayName);
 console.log(Office.context.mailbox.userProfile.emailAddress);
 ```
 
-####  <a name="timezone-string"></a>timeZone :String
+#### <a name="timezone-string"></a>时区: 字符串
 
 获取用户的默认时区。
 

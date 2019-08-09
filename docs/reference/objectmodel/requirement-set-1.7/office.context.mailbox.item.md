@@ -1,14 +1,14 @@
 ---
 title: "\"Context\"-\"邮箱\"。项目-要求集1。7"
 description: ''
-ms.date: 06/20/2019
+ms.date: 08/08/2019
 localization_priority: Normal
-ms.openlocfilehash: 040da976019cd970c8b28ddd793024b3252c6d76
-ms.sourcegitcommit: 3f5d7f4794e3d3c8bc3a79fa05c54157613b9376
+ms.openlocfilehash: 3c2f991137441e5e425a050eeeba146c2ed540a3
+ms.sourcegitcommit: 654ac1a0c477413662b48cffc0faee5cb65fc25f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/02/2019
-ms.locfileid: "36064576"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "36268724"
 ---
 # <a name="item"></a>item
 
@@ -695,7 +695,7 @@ function callback(asyncResult) {
 
 ##### <a name="type"></a>类型
 
-*   Array.<[EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails)> | [Recipients](/javascript/api/outlook/office.recipients?view=outlook-js-1.7)
+*   Array.<[EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails?view=outlook-js-1.7)> | [Recipients](/javascript/api/outlook/office.recipients?view=outlook-js-1.7)
 
 ##### <a name="requirements"></a>要求
 

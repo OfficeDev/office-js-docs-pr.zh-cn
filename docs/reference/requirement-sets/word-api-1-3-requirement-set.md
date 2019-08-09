@@ -4,12 +4,12 @@ description: 有关 WordApi 1.3 要求集的详细信息
 ms.date: 07/25/2019
 ms.prod: word
 localization_priority: Normal
-ms.openlocfilehash: 24a960b5ddab1ba96b0b45d155e1f70cb0f1a35c
-ms.sourcegitcommit: 3f5d7f4794e3d3c8bc3a79fa05c54157613b9376
+ms.openlocfilehash: fe72a3047fdbdd719fd115858e4010fbc2c639e5
+ms.sourcegitcommit: 654ac1a0c477413662b48cffc0faee5cb65fc25f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/02/2019
-ms.locfileid: "36064877"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "36268556"
 ---
 # <a name="whats-new-in-word-javascript-api-13"></a>Word JavaScript API 1.3 的最近更新
 
@@ -201,16 +201,9 @@ WordApi 1.3 增加了对内容控件、自定义 XML 和文档级设置的更多
 ||[getRange (rangeLocation？: RangeLocation)](/javascript/api/word/word.table#getrange-rangelocation-)|获取包含此表格的范围，或包含此表格的开头或结尾的范围。|
 ||[headerRowCount](/javascript/api/word/word.table#headerrowcount)|获取并设置标题行数。|
 ||[horizontalAlignment](/javascript/api/word/word.table#horizontalalignment)|获取并设置 table 中每个单元格的水平对齐方式。 该值可以是 "Left"、"居中"、"Right" 或 "两端对齐"。|
-||[ignorePunct](/javascript/api/word/word.table#ignorepunct)||
-||[ignoreSpace](/javascript/api/word/word.table#ignorespace)||
 ||[insertContentControl()](/javascript/api/word/word.table#insertcontentcontrol--)|在表格中插入内容控件。|
 ||[insertParagraph (paragraphText: string, insertLocation: InsertLocation)](/javascript/api/word/word.table#insertparagraph-paragraphtext--insertlocation-)|在指定位置插入段落。 insertLocation 值可以为“Before”或“After”。|
 ||[insertTable (rowCount: number, columnCount: number, insertLocation: InsertLocation, values？: string [] [])](/javascript/api/word/word.table#inserttable-rowcount--columncount--insertlocation--values-)|插入包含指定行数和列数的 table。 insertLocation 值可以为“Before”或“After”。|
-||[matchCase](/javascript/api/word/word.table#matchcase)||
-||[matchPrefix](/javascript/api/word/word.table#matchprefix)||
-||[matchSuffix](/javascript/api/word/word.table#matchsuffix)||
-||[matchWholeWord](/javascript/api/word/word.table#matchwholeword)||
-||[matchWildcards](/javascript/api/word/word.table#matchwildcards)||
 ||[font](/javascript/api/word/word.table#font)|获取字体。 使用此关系可获取并设置字体名称、大小、颜色和其他属性。 只读。|
 ||[isUniform](/javascript/api/word/word.table#isuniform)|指明所有表行是否一致。 只读。|
 ||[nestingLevel](/javascript/api/word/word.table#nestinglevel)|获取 table 的嵌套级别。 顶级 table 的级别为 1。 只读。|
@@ -224,7 +217,7 @@ WordApi 1.3 增加了对内容控件、自定义 XML 和文档级设置的更多
 ||[rowCount](/javascript/api/word/word.table#rowcount)|获取表格中的行数。 只读。|
 ||[rows](/javascript/api/word/word.table#rows)|获取所有表格行。 只读。|
 ||[表](/javascript/api/word/word.table#tables)|获取嵌套一级的子 table。 只读。|
-||[search (searchText: string, searchOptions？: SearchOptions](/javascript/api/word/word.table#search-searchtext--searchoptions--ignorepunct--ignorespace--matchcase--matchprefix--matchsuffix--matchwholeword--matchwildcards-)|在表对象的作用域上使用指定的 SearchOptions 执行搜索。 搜索结果是 range 对象的集合。|
+||[search (searchText: string, searchOptions？: SearchOptions](/javascript/api/word/word.table#search-searchtext--searchoptions-)|在表对象的作用域上使用指定的 SearchOptions 执行搜索。 搜索结果是 range 对象的集合。|
 ||[select (selectionMode？: SelectionMode)](/javascript/api/word/word.table#select-selectionmode-)|选择表格或其开头或结尾位置，然后将 Word UI 导航到相应位置。|
 ||[setCellPadding (cellPaddingLocation: CellPaddingLocation, cellPadding: 数字)](/javascript/api/word/word.table#setcellpadding-cellpaddinglocation--cellpadding-)|设置单元格填充（以磅为单位）。|
 ||[shadingColor](/javascript/api/word/word.table#shadingcolor)|获取并设置底纹色。 按“#RRGGBB”格式或使用颜色名称指定颜色。|
@@ -274,14 +267,7 @@ WordApi 1.3 增加了对内容控件、自定义 XML 和文档级设置的更多
 ||[getNext ()](/javascript/api/word/word.tablerow#getnext--)|获取下一行。 如果此行是最后一个, 则引发。|
 ||[getNextOrNullObject()](/javascript/api/word/word.tablerow#getnextornullobject--)|获取下一行。 如果此行是最后一个, 则返回一个 null 对象。|
 ||[horizontalAlignment](/javascript/api/word/word.tablerow#horizontalalignment)|获取并设置行中每个单元格的水平对齐方式。 该值可以是 "Left"、"居中"、"Right" 或 "两端对齐"。|
-||[ignorePunct](/javascript/api/word/word.tablerow#ignorepunct)||
-||[ignoreSpace](/javascript/api/word/word.tablerow#ignorespace)||
 ||[insertRows (insertLocation: InsertLocation, rowCount: number, values？: string [] [])](/javascript/api/word/word.tablerow#insertrows-insertlocation--rowcount--values-)|使用此行作为模板插入行。 如果值已指定，请将值插入新行。|
-||[matchCase](/javascript/api/word/word.tablerow#matchcase)||
-||[matchPrefix](/javascript/api/word/word.tablerow#matchprefix)||
-||[matchSuffix](/javascript/api/word/word.tablerow#matchsuffix)||
-||[matchWholeWord](/javascript/api/word/word.tablerow#matchwholeword)||
-||[matchWildcards](/javascript/api/word/word.tablerow#matchwildcards)||
 ||[preferredHeight](/javascript/api/word/word.tablerow#preferredheight)|获取并设置行的首选高度（以磅为单位）。|
 ||[cellCount](/javascript/api/word/word.tablerow#cellcount)|获取行中的单元格数。 只读。|
 ||[单元](/javascript/api/word/word.tablerow#cells)|获取单元格。 只读。|
@@ -289,7 +275,7 @@ WordApi 1.3 增加了对内容控件、自定义 XML 和文档级设置的更多
 ||[isHeader](/javascript/api/word/word.tablerow#isheader)|检查该行是否为标题行。 只读。 若要设置标题行数，请对 Table 对象使用 HeaderRowCount。|
 ||[parentTable](/javascript/api/word/word.tablerow#parenttable)|获取父表。 只读。|
 ||[rowIndex](/javascript/api/word/word.tablerow#rowindex)|获取其父表中的行索引。 只读。|
-||[search (searchText: string, searchOptions？: SearchOptions)](/javascript/api/word/word.tablerow#search-searchtext--searchoptions--ignorepunct--ignorespace--matchcase--matchprefix--matchsuffix--matchwholeword--matchwildcards-)|在行的作用域上使用指定的 SearchOptions 执行搜索。 搜索结果是 range 对象的集合。|
+||[search (searchText: string, searchOptions？: SearchOptions)](/javascript/api/word/word.tablerow#search-searchtext--searchoptions-)|在行的作用域上使用指定的 SearchOptions 执行搜索。 搜索结果是 range 对象的集合。|
 ||[select (selectionMode？: SelectionMode)](/javascript/api/word/word.tablerow#select-selectionmode-)|选择行，然后将 Word UI 导航到相应位置。|
 ||[setCellPadding (cellPaddingLocation: CellPaddingLocation, cellPadding: 数字)](/javascript/api/word/word.tablerow#setcellpadding-cellpaddinglocation--cellpadding-)|设置单元格填充（以磅为单位）。|
 ||[shadingColor](/javascript/api/word/word.tablerow#shadingcolor)|获取并设置底纹色。 按“#RRGGBB”格式或使用颜色名称指定颜色。|

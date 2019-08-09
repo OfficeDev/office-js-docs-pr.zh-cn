@@ -3,12 +3,12 @@ title: Office 外接程序的数据可视化样式指南
 description: ''
 ms.date: 12/04/2017
 localization_priority: Normal
-ms.openlocfilehash: 77e7724725e87ccef60406d00a97d0957059cdd5
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: 134153f0705c810e777fd47b27a5a440e2e7bc9e
+ms.sourcegitcommit: 654ac1a0c477413662b48cffc0faee5cb65fc25f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32447291"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "36268143"
 ---
 # <a name="data-visualization-style-guidelines-for-office-add-ins"></a>Office 加载项的数据可视化样式指南
 
@@ -59,10 +59,9 @@ ms.locfileid: "32447291"
 
 有关在数据可视化中使用颜色的最佳做法，请参阅以下内容：
 
-
 - [为什么彩虹色不是数据可视化的最佳选择](https://www.poynter.org/2013/why-rainbow-colors-arent-always-the-best-options-for-data-visualizations/224413/)
 - [Color Brewer 2.0：制图的颜色建议](http://colorbrewer2.org/)
-- [我想要的色调](http://tools.medialab.sciences-po.fr/iwanthue/)
+- [我想要的色调](https://tools.medialab.sciences-po.fr/iwanthue/)
 
 ### <a name="gridlines"></a>网格线
 

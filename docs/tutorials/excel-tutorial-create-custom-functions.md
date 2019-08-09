@@ -5,12 +5,12 @@ ms.date: 07/09/2019
 ms.prod: excel
 ms.topic: tutorial
 localization_priority: Normal
-ms.openlocfilehash: 9e1dc93079a3930fc5ebd88ef4d91ef2b899e51c
-ms.sourcegitcommit: bb44c9694f88cde32ffbb642689130db44456964
+ms.openlocfilehash: 4b74463eafd5ac1b70e59cef6ef1f9f33cf0ffa2
+ms.sourcegitcommit: 654ac1a0c477413662b48cffc0faee5cb65fc25f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/17/2019
-ms.locfileid: "35771805"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "36268178"
 ---
 # <a name="tutorial-create-custom-functions-in-excel"></a>教程：在 Excel 中创建自定义函数
 
@@ -64,9 +64,9 @@ ms.locfileid: "35771805"
 
 4. 启动在 Node.js 中运行的本地 Web 服务器。 您可以在 Excel 网页或 Windows 中试用自定义函数加载项。
 
-# <a name="excel-on-windowstabexcel-windows"></a>[Windows 上的 Excel](#tab/excel-windows)
+# <a name="excel-on-windows-or-mactabexcel-windows"></a>[Windows 或 Mac 上的 Excel](#tab/excel-windows)
 
-若要在 Windows 中的 Excel 中测试外接程序, 请运行以下命令。 运行此命令时, 本地 web 服务器将启动, 并且 Excel 将在加载的外接程序中打开。
+若要在 Excel 中的 Windows 或 Mac 上测试外接程序, 请运行以下命令。 运行此命令时, 本地 web 服务器将启动, 并且 Excel 将在加载的外接程序中打开。
 
 ```command&nbsp;line
 npm run start:desktop
@@ -146,9 +146,9 @@ npm run start:web
     npm run build
     ```
 
-4. 完成以下步骤 (对于 web 上的 Excel 或 Windows), 以便在 Excel 中重新注册加载项。 您必须完成这些步骤, 新函数才可用。
+4. 完成以下步骤 (适用于 web、Windows 或 Mac 上的 Excel), 以便在 Excel 中重新注册加载项。 您必须完成这些步骤, 新函数才可用。
 
-### <a name="excel-on-windowstabexcel-windows"></a>[Windows 上的 Excel](#tab/excel-windows)
+### <a name="excel-on-windows-or-mactabexcel-windows"></a>[Windows 或 Mac 上的 Excel](#tab/excel-windows)
 
 1. 关闭 Excel，然后重新打开 Excel。
 
@@ -214,9 +214,9 @@ function clock(invocation) {
     npm run build
     ```
 
-3. 完成以下步骤 (对于 web 上的 Excel 或 Windows), 以便在 Excel 中重新注册加载项。 您必须完成这些步骤, 新函数才可用。 
+3. 完成以下步骤 (适用于 web、Windows 或 Mac 上的 Excel), 以便在 Excel 中重新注册加载项。 您必须完成这些步骤, 新函数才可用。 
 
-# <a name="excel-on-windowstabexcel-windows"></a>[Windows 上的 Excel](#tab/excel-windows)
+# <a name="excel-on-windows-or-mactabexcel-windows"></a>[Windows 或 Mac 上的 Excel](#tab/excel-windows)
 
 1. 关闭 Excel，然后重新打开 Excel。
 

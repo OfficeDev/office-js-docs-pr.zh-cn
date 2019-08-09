@@ -1,14 +1,14 @@
 ---
 title: Office 命名空间-要求集1。3
 description: ''
-ms.date: 04/24/2019
+ms.date: 08/08/2019
 localization_priority: Normal
-ms.openlocfilehash: ec9c1e9982dd5dc0e3d7460a82a704193b5c579d
-ms.sourcegitcommit: 3f5d7f4794e3d3c8bc3a79fa05c54157613b9376
+ms.openlocfilehash: 0b22574693fb129be6a08a89b58beceb746fa283
+ms.sourcegitcommit: 654ac1a0c477413662b48cffc0faee5cb65fc25f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/02/2019
-ms.locfileid: "36064709"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "36268395"
 ---
 # <a name="office"></a>Office
 
@@ -20,6 +20,14 @@ ms.locfileid: "36064709"
 |---|---|
 |[最低版本的邮箱要求集](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
 |[适用的 Outlook 模式](/outlook/add-ins/#extension-points)| 撰写或阅读|
+
+##### <a name="members-and-methods"></a>成员和方法
+
+| 成员 | 类型 |
+|--------|------|
+| [AsyncResultStatus](#asyncresultstatus-string) | Member |
+| [CoercionType](#coerciontype-string) | Member |
+| [SourceProperty](#sourceproperty-string) | 成员 |
 
 ### <a name="namespaces"></a>命名空间
 

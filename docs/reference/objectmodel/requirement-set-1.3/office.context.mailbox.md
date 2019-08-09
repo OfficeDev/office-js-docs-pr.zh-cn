@@ -1,14 +1,14 @@
 ---
 title: "\"Context.subname\"-\"邮箱-要求集 1.3\""
 description: ''
-ms.date: 06/20/2019
+ms.date: 08/08/2019
 localization_priority: Normal
-ms.openlocfilehash: 04c8e3be7531e83279283a3d07e0ce14e1b11938
-ms.sourcegitcommit: 3f5d7f4794e3d3c8bc3a79fa05c54157613b9376
+ms.openlocfilehash: acc304e302e3bb4d912ecbafee51cc35c88c091c
+ms.sourcegitcommit: 654ac1a0c477413662b48cffc0faee5cb65fc25f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/02/2019
-ms.locfileid: "36064744"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "36268668"
 ---
 # <a name="mailbox"></a>邮箱
 
@@ -23,6 +23,8 @@ ms.locfileid: "36064744"
 |[最低版本的邮箱要求集](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
 |[最低权限级别](/outlook/add-ins/understanding-outlook-add-in-permissions)| 受限|
 |[适用的 Outlook 模式](/outlook/add-ins/#extension-points)| 撰写或阅读|
+
+| [mailbox.ewsurl](#ewsurl-string) |Member | |[office.context.mailbox.converttoewsid](#converttoewsiditemid-restversion--string) |方法 | |[convertToLocalClientTime](#converttolocalclienttimetimevalue--localclienttime) |方法 | |[office.context.mailbox.converttorestid](#converttorestiditemid-restversion--string) |方法 | |[convertToUtcClientTime](#converttoutcclienttimeinput--date) |方法 | |[displayAppointmentForm](#displayappointmentformitemid) |方法 | |[displayMessageForm](#displaymessageformitemid) |方法 | |[displayNewAppointmentForm](#displaynewappointmentformparameters) |方法 | |[mailbox.getcallbacktokenasync](#getcallbacktokenasynccallback-usercontext) |方法 | |[getUserIdentityTokenAsync](#getuseridentitytokenasynccallback-usercontext) |方法 | |[makeEwsRequestAsync](#makeewsrequestasyncdata-callback-usercontext) |方法 |
 
 ### <a name="namespaces"></a>命名空间
 
@@ -340,14 +342,22 @@ Office.context.mailbox.displayNewAppointmentForm(
 
 |名称| 类型| 属性| 说明|
 |---|---|---|---|
-|`callback`| 函数||方法完成后，使用单个参数 `callback`（一个 [`asyncResult`](/javascript/api/office/office.asyncresult) 对象）调用在 `AsyncResult` 参数中传递的函数。令牌作为 `asyncResult.value` 属性中的字符串提供。|
+|`callback`| function||方法完成后，使用单个参数 `callback`（一个 [`asyncResult`](/javascript/api/office/office.asyncresult) 对象）调用在 `AsyncResult` 参数中传递的函数。<br/><br/>令牌作为 `asyncResult.value` 属性中的字符串提供。<br><br>如果出现错误, 则`asyncResult.error`和`asyncResult.diagnostics`属性可能会提供其他信息。|
 |`userContext`| 对象| &lt;可选&gt;|传递给异步方法的任何状态数据。|
+
+##### <a name="errors"></a>错误
+
+|错误代码|说明|
+|------------|-------------|
+|`HTTPRequestFailure`|请求失败。 请查看 HTTP 错误代码的 diagnostics 对象。|
+|`InternalServerError`|Exchange 服务器返回错误。 有关详细信息, 请参阅 diagnostics 对象。|
+|`NetworkError`|用户不再连接到网络。 请检查你的网络连接, 然后重试。|
 
 ##### <a name="requirements"></a>要求
 
 |要求| 值|
 |---|---|
-|[最低版本的邮箱要求集](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.3|
+|[最低版本的邮箱要求集](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
 |[最低权限级别](/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
 |[适用的 Outlook 模式](/outlook/add-ins/#extension-points)| 撰写和阅读|
 
@@ -373,8 +383,16 @@ function cb(asyncResult) {
 
 |名称| 类型| 属性| 说明|
 |---|---|---|---|
-|`callback`| function||方法完成后，使用单个参数 `callback`（一个 [`asyncResult`](/javascript/api/office/office.asyncresult) 对象）调用在 `AsyncResult` 参数中传递的函数。<br/><br/>令牌作为 `asyncResult.value` 属性中的字符串提供。|
+|`callback`| function||方法完成后，使用单个参数 `callback`（一个 [`asyncResult`](/javascript/api/office/office.asyncresult) 对象）调用在 `AsyncResult` 参数中传递的函数。<br/><br/>令牌作为 `asyncResult.value` 属性中的字符串提供。<br><br>如果出现错误, 则`asyncResult.error`和`asyncResult.diagnostics`属性可能会提供其他信息。|
 |`userContext`| 对象| &lt;可选&gt;|传递给异步方法的任何状态数据。|
+
+##### <a name="errors"></a>错误
+
+|错误代码|说明|
+|------------|-------------|
+|`HTTPRequestFailure`|请求失败。 请查看 HTTP 错误代码的 diagnostics 对象。|
+|`InternalServerError`|Exchange 服务器返回错误。 有关详细信息, 请参阅 diagnostics 对象。|
+|`NetworkError`|用户不再连接到网络。 请检查你的网络连接, 然后重试。|
 
 ##### <a name="requirements"></a>要求
 
@@ -437,7 +455,7 @@ XML 请求必须指定 UTF-8 编码。
 |名称| 类型| 属性| 说明|
 |---|---|---|---|
 |`data`| 字符串||EWS 请求。|
-|`callback`| function||方法完成后，使用单个参数 `asyncResult`（一个 [`AsyncResult`](/javascript/api/office/office.asyncresult) 对象）调用在 `callback` 参数中传递的函数。<br/><br/>EWS 调用的 XML 结果作为 `asyncResult.value` 属性中的字符串提供。 如果结果大小超过 1 MB，则改为返回一条错误消息。|
+|`callback`| 函数||方法完成后，使用单个参数 `asyncResult`（一个 [`AsyncResult`](/javascript/api/office/office.asyncresult) 对象）调用在 `callback` 参数中传递的函数。<br/><br/>EWS 调用的 XML 结果作为 `asyncResult.value` 属性中的字符串提供。 如果结果大小超过 1 MB，则改为返回一条错误消息。|
 |`userContext`| 对象| &lt;可选&gt;|传递给异步方法的任何状态数据。|
 
 ##### <a name="requirements"></a>要求

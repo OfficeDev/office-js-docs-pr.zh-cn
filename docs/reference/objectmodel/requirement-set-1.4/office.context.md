@@ -1,14 +1,14 @@
 ---
 title: Office。上下文要求集1。4
 description: ''
-ms.date: 06/25/2019
+ms.date: 08/08/2019
 localization_priority: Normal
-ms.openlocfilehash: 7f4637a1d6a4a9bc2f97d039ed4404ab549a2b34
-ms.sourcegitcommit: 3f5d7f4794e3d3c8bc3a79fa05c54157613b9376
+ms.openlocfilehash: 738c6a5ffbe6bb59f77e3bb82baee78a40be136e
+ms.sourcegitcommit: 654ac1a0c477413662b48cffc0faee5cb65fc25f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/02/2019
-ms.locfileid: "36064646"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "36268308"
 ---
 # <a name="context"></a>context
 
@@ -22,6 +22,13 @@ Office.context 命名空间提供所有 Office 应用中的加载项所使用的
 |---|---|
 |[最低版本的邮箱要求集](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
 |[适用的 Outlook 模式](/outlook/add-ins/#extension-points)| 撰写或阅读|
+
+##### <a name="members-and-methods"></a>成员和方法
+
+| 成员 | 类型 |
+|--------|------|
+| [displayLanguage](#displaylanguage-string) | Member |
+| [roamingSettings](#roamingsettings-roamingsettings) | 成员 |
 
 ### <a name="namespaces"></a>命名空间
 

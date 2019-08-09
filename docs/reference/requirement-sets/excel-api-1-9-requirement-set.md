@@ -4,12 +4,12 @@ description: 有关 ExcelApi 1.9 要求集的详细信息
 ms.date: 07/26/2019
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: b28406f9792278e554ff055a59ef4833be915aba
-ms.sourcegitcommit: 3f5d7f4794e3d3c8bc3a79fa05c54157613b9376
+ms.openlocfilehash: e27c4e6a93890c94f759eee451eb5168a30b1817
+ms.sourcegitcommit: 654ac1a0c477413662b48cffc0faee5cb65fc25f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/02/2019
-ms.locfileid: "36064863"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "36268619"
 ---
 # <a name="whats-new-in-excel-javascript-api-19"></a>Excel JavaScript API 1.9 中的新增功能
 
@@ -336,12 +336,8 @@ ms.locfileid: "36064863"
 ||[hyperlink](/javascript/api/excel/excel.settablecellproperties#hyperlink)|表示`hyperlink`属性。|
 ||[style](/javascript/api/excel/excel.settablecellproperties#style)|表示`style`属性。|
 |[SettableColumnProperties](/javascript/api/excel/excel.settablecolumnproperties)|[columnHidden](/javascript/api/excel/excel.settablecolumnproperties#columnhidden)|表示`columnHidden`属性。|
-||[columnWidth](/javascript/api/excel/excel.settablecolumnproperties#columnwidth)||
-||[格式: CellPropertiesFormat & {
-            columnWidth？](/javascript/api/excel/excel.settablecolumnproperties # format)|表示`format`属性。|
-|[SettableRowProperties](/javascript/api/excel/excel.settablerowproperties)|[格式: CellPropertiesFormat & {
-            rowHeight？](/javascript/api/excel/excel.settablerowproperties # format)|表示`format`属性。|
-||[rowHeight](/javascript/api/excel/excel.settablerowproperties#rowheight)||
+||[格式：Excel.CellPropertiesFormat](/javascript/api/excel/excel.settablecolumnproperties#format)|表示`format`属性。|
+|[SettableRowProperties](/javascript/api/excel/excel.settablerowproperties)|[格式：Excel.CellPropertiesFormat](/javascript/api/excel/excel.settablerowproperties#format)|表示`format`属性。|
 ||[rowHidden](/javascript/api/excel/excel.settablerowproperties#rowhidden)|表示`rowHidden`属性。|
 |[Shape](/javascript/api/excel/excel.shape)|[altTextDescription](/javascript/api/excel/excel.shape#alttextdescription)|返回或设置形状对象的可选说明文本。|
 ||[altTextTitle](/javascript/api/excel/excel.shape#alttexttitle)|返回或设置形状对象的可选标题文本。|

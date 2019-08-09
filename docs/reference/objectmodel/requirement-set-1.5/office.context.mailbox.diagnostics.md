@@ -1,14 +1,14 @@
 ---
 title: "\"Context.subname\": \"邮箱\"。诊断-要求集1。5"
 description: ''
-ms.date: 04/24/2019
+ms.date: 08/08/2019
 localization_priority: Normal
-ms.openlocfilehash: 9ecbf4382f10b86ecdea41706211094029be09d2
-ms.sourcegitcommit: dc78ee2a89fe3d4cd6f748be1eec9081c1077502
+ms.openlocfilehash: 1a31a859eb79625943c3a2191f77c91535418b5e
+ms.sourcegitcommit: 654ac1a0c477413662b48cffc0faee5cb65fc25f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2019
-ms.locfileid: "36231254"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "36268626"
 ---
 # <a name="diagnostics"></a>diagnostics
 
@@ -40,6 +40,9 @@ ms.locfileid: "36231254"
 
 可以是下列值之一的字符串：`Outlook`、`OutlookIOS` 或 `OutlookWebApp`。
 
+> [!NOTE]
+> 对`Outlook`桌面客户端 (即 Windows 和 Mac) 上的 Outlook 返回值。
+
 ##### <a name="type"></a>类型
 
 *   String
@@ -54,9 +57,9 @@ ms.locfileid: "36231254"
 
 #### <a name="hostversion-string"></a>Diagnostics.hostversion: String
 
-获取表示主机应用程序或 Exchange Server 的版本的字符串。
+获取表示主机应用程序或 Exchange 服务器的版本的字符串 (例如, "15.0.468.0")。
 
-如果邮件外接程序在 Outlook 桌面客户端或 iOS 上运行, 则该`hostVersion`属性返回主机应用程序 (Outlook) 的版本。 在 Outlook 网页版中, 该属性返回的是 Exchange 服务器的版本。 一个示例是字符串 "15.0.468.0"。
+如果邮件外接程序在 Outlook 桌面客户端或 iOS 上运行, 则该`hostVersion`属性返回主机应用程序 (Outlook) 的版本。 在 Outlook 网页版中, 该属性返回的是 Exchange 服务器的版本。
 
 ##### <a name="type"></a>类型
 

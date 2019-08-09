@@ -3,16 +3,16 @@ ms.date: 06/18/2019
 description: 在 Excel 中使用 JavaScript 通过自定义函数创建对话框。
 title: 通过自定义函数显示对话框
 localization_priority: Priority
-ms.openlocfilehash: b8a2a6a68f23121fe4d3931c13fd45af6034c7d2
-ms.sourcegitcommit: cb5e1726849aff591f19b07391198a96d5749243
+ms.openlocfilehash: 67a61bde409d45b2c96118de95f0839e7a73ddfe
+ms.sourcegitcommit: 654ac1a0c477413662b48cffc0faee5cb65fc25f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "35940631"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "36268150"
 ---
 # <a name="display-a-dialog-box-from-a-custom-function"></a>通过自定义函数显示对话框
 
-如果你的自定义函数需要与用户进行交互，可以使用[`Office.Dialog`对象](/javascript/api/office-runtime/officeruntime.dialog?view=office-js)创建对话框。 使用该对话框的常见方案是对用户进行身份验证，以便你的自定义函数可以访问 Web 服务。 有关使用自定义函数进行身份验证的详细信息，请参阅[自定义函数身份验证](./custom-functions-authentication.md)。
+如果你的自定义函数需要与用户进行交互，可以使用[`Office.Dialog`对象](/javascript/api/office-runtime/officeruntime.dialog)创建对话框。 使用该对话框的常见方案是对用户进行身份验证，以便你的自定义函数可以访问 Web 服务。 有关使用自定义函数进行身份验证的详细信息，请参阅[自定义函数身份验证](./custom-functions-authentication.md)。
 
 [!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 

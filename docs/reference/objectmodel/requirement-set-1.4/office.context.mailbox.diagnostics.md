@@ -1,14 +1,14 @@
 ---
 title: "\"Context.subname\": \"邮箱\"。诊断-要求集1。4"
 description: ''
-ms.date: 06/20/2019
+ms.date: 08/08/2019
 localization_priority: Normal
-ms.openlocfilehash: 055cf4ac61a89625ab814e443d865d53024714f5
-ms.sourcegitcommit: dc78ee2a89fe3d4cd6f748be1eec9081c1077502
+ms.openlocfilehash: 212afc72cb32bb5c842e1ea606c2edfb64f398ec
+ms.sourcegitcommit: 654ac1a0c477413662b48cffc0faee5cb65fc25f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2019
-ms.locfileid: "36231282"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "36268353"
 ---
 # <a name="diagnostics"></a>diagnostics
 
@@ -24,6 +24,14 @@ ms.locfileid: "36231282"
 |[最低权限级别](/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
 |[适用的 Outlook 模式](/outlook/add-ins/#extension-points)| 撰写或阅读|
 
+##### <a name="members-and-methods"></a>成员和方法
+
+| 成员 | 类型 |
+|--------|------|
+| [主机名](#hostname-string) | Member |
+| [Diagnostics.hostversion](#hostversion-string) | Member |
+| [OWAView](#owaview-string) | Member |
+
 ### <a name="members"></a>Members
 
 #### <a name="hostname-string"></a>hostName: String
@@ -31,6 +39,9 @@ ms.locfileid: "36231282"
 获取表示主机应用程序的名称的字符串。
 
 可以是下列值之一的字符串：`Outlook`、`OutlookIOS` 或 `OutlookWebApp`。
+
+> [!NOTE]
+> 对`Outlook`桌面客户端 (即 Windows 和 Mac) 上的 Outlook 返回值。
 
 ##### <a name="type"></a>类型
 
@@ -46,9 +57,9 @@ ms.locfileid: "36231282"
 
 #### <a name="hostversion-string"></a>Diagnostics.hostversion: String
 
-获取表示主机应用程序或 Exchange Server 的版本的字符串。
+获取表示主机应用程序或 Exchange 服务器的版本的字符串 (例如, "15.0.468.0")。
 
-如果邮件外接程序在 Outlook 桌面客户端或 iOS 上运行, 则该`hostVersion`属性返回主机应用程序 (Outlook) 的版本。 在 Outlook 网页版中, 该属性返回的是 Exchange 服务器的版本。 一个示例是字符串 "15.0.468.0"。
+如果邮件外接程序在 Outlook 桌面客户端或 iOS 上运行, 则该`hostVersion`属性返回主机应用程序 (Outlook) 的版本。 在 Outlook 网页版中, 该属性返回的是 Exchange 服务器的版本。
 
 ##### <a name="type"></a>类型
 
