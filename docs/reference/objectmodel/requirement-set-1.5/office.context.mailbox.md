@@ -1,14 +1,14 @@
 ---
 title: Office.context.mailbox - 要求集 1.5
 description: ''
-ms.date: 04/24/2019
+ms.date: 08/06/2019
 localization_priority: Priority
-ms.openlocfilehash: 9ffb0d4d33af80a669fd81bc0130f14f673e9400
-ms.sourcegitcommit: 3f5d7f4794e3d3c8bc3a79fa05c54157613b9376
+ms.openlocfilehash: 68912520250789b2259d59fb14387f97b24c5c7d
+ms.sourcegitcommit: 654ac1a0c477413662b48cffc0faee5cb65fc25f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/02/2019
-ms.locfileid: "36064751"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "36268640"
 ---
 # <a name="mailbox"></a>邮箱
 
@@ -441,7 +441,15 @@ Office.context.mailbox.displayNewAppointmentForm(
 | `options` | Object | &lt;可选&gt; | 包含一个或多个以下属性的对象文本。 |
 | `options.isRest` | 布尔值 |  &lt;可选&gt; | 确定所提供的令牌是否将用于 Outlook REST API 或 Exchange Web 服务。默认值为 `false`。 |
 | `options.asyncContext` | Object |  &lt;可选&gt; | 传递给异步方法的任何状态数据。 |
-|`callback`| 函数||方法完成后，使用单个参数 `callback`（一个 [`asyncResult`](/javascript/api/office/office.asyncresult) 对象）调用在 `AsyncResult` 参数中传递的函数。令牌作为 `asyncResult.value` 属性中的字符串提供。|
+|`callback`| 函数||方法完成后，使用单个参数 `asyncResult`（一个 [`AsyncResult`](/javascript/api/office/office.asyncresult) 对象）调用在 `callback` 参数中传递的函数。<br/><br/>令牌作为 `asyncResult.value` 属性中的字符串提供。<br><br>如果出现错误，则 `asyncResult.error` 和 `asyncResult.diagnostics` 属性可能会提供其他信息。|
+
+##### <a name="errors"></a>错误
+
+|错误代码|说明|
+|------------|-------------|
+|`HTTPRequestFailure`|请求失败。 请查看诊断对象，了解 HTTP 错误代码。|
+|`InternalServerError`|Exchange 服务器返回了错误。 请查看诊断对象，了解详细信息。|
+|`NetworkError`|用户不再连接到网络。 请检查网络连接并重试。|
 
 ##### <a name="requirements"></a>要求
 
@@ -484,14 +492,22 @@ function cb(asyncResult) {
 
 |名称| 类型| 属性| 说明|
 |---|---|---|---|
-|`callback`| 函数||方法完成后，使用单个参数 `callback`（一个 [`asyncResult`](/javascript/api/office/office.asyncresult) 对象）调用在 `AsyncResult` 参数中传递的函数。令牌作为 `asyncResult.value` 属性中的字符串提供。|
+|`callback`| 函数||方法完成后，使用单个参数 `asyncResult`（一个 [`AsyncResult`](/javascript/api/office/office.asyncresult) 对象）调用在 `callback` 参数中传递的函数。<br/><br/>令牌作为 `asyncResult.value` 属性中的字符串提供。<br><br>如果出现错误，则 `asyncResult.error` 和 `asyncResult.diagnostics` 属性可能会提供其他信息。|
 |`userContext`| 对象| &lt;可选&gt;|传递给异步方法的任何状态数据。|
+
+##### <a name="errors"></a>错误
+
+|错误代码|说明|
+|------------|-------------|
+|`HTTPRequestFailure`|请求失败。 请查看诊断对象，了解 HTTP 错误代码。|
+|`InternalServerError`|Exchange 服务器返回了错误。 请查看诊断对象，了解详细信息。|
+|`NetworkError`|用户不再连接到网络。 请检查网络连接并重试。|
 
 ##### <a name="requirements"></a>要求
 
 |要求| 值|
 |---|---|
-|[最低版本的邮箱要求集](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.3|
+|[最低版本的邮箱要求集](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
 |[最低权限级别](/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
 |[适用的 Outlook 模式](/outlook/add-ins/#extension-points)| 撰写和阅读|
 
@@ -517,8 +533,16 @@ function cb(asyncResult) {
 
 |名称| 类型| 属性| 说明|
 |---|---|---|---|
-|`callback`| 函数||方法完成后，使用单个参数 `asyncResult`（一个 [`AsyncResult`](/javascript/api/office/office.asyncresult) 对象）调用在 `callback` 参数中传递的函数。<br/><br/>令牌作为 `asyncResult.value` 属性中的字符串提供。|
+|`callback`| 函数||方法完成后，使用单个参数 `asyncResult`（一个 [`AsyncResult`](/javascript/api/office/office.asyncresult) 对象）调用在 `callback` 参数中传递的函数。<br/><br/>令牌作为 `asyncResult.value` 属性中的字符串提供。<br><br>如果出现错误，则 `asyncResult.error` 和 `asyncResult.diagnostics` 属性可能会提供其他信息。|
 |`userContext`| 对象| &lt;可选&gt;|传递给异步方法的任何状态数据。|
+
+##### <a name="errors"></a>错误
+
+|错误代码|说明|
+|------------|-------------|
+|`HTTPRequestFailure`|请求失败。 请查看诊断对象，了解 HTTP 错误代码。|
+|`InternalServerError`|Exchange 服务器返回了错误。 请查看诊断对象，了解详细信息。|
+|`NetworkError`|用户不再连接到网络。 请检查网络连接并重试。|
 
 ##### <a name="requirements"></a>要求
 
