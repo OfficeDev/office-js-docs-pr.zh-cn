@@ -1,0 +1,2 @@
+> [!IMPORTANT]
+> 当前外接程序项目名称或创建外接程序项目的文件夹路径中的任何位置都不允许使用空格。 如果外接程序的项目名称或文件夹路径中包含空格, 则在运行`npm start`或`npm run start:web`时本地 web 服务器将不会启动。 此限制是临时性的, 当在 Office 外接程序的 Yeoman 生成器中解决基础[问题](https://github.com/OfficeDev/generator-office/issues/476)时, 将会消除此限制。

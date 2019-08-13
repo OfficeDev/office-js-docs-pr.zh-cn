@@ -4,12 +4,12 @@ description: 在 Excel 快速入门指南中开发自定义函数。
 title: 自定义功能快速入门
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: 3b7ca82a618ef686b14604f96c17dd43b484f901
-ms.sourcegitcommit: bb44c9694f88cde32ffbb642689130db44456964
+ms.openlocfilehash: 59f0b0483befda8646d823c50295d035ab7e64c6
+ms.sourcegitcommit: 1dc1bb0befe06d19b587961da892434bd0512fb5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/17/2019
-ms.locfileid: "35771826"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "36308013"
 ---
 # <a name="get-started-developing-excel-custom-functions"></a>开始开发 Excel 自定义函数
 
@@ -28,6 +28,8 @@ ms.locfileid: "35771826"
 ## <a name="build-your-first-custom-functions-project"></a>生成第一个自定义函数项目
 
 首先，使用 Yeoman 生成器创建自定义函数项目。 这将为你的项目设置开始对自定义函数进行编码所需的正确文件夹结构、源文件和依存关系。
+
+[!include[note about Yeoman generator bug](../includes/note-yeoman-generator-bug-201908.md)]
 
 1. 在所选的文件夹中, 运行以下命令, 然后按如下所示回答提示。
 
