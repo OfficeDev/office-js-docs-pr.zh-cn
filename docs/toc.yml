@@ -106,10 +106,20 @@
           href: develop/addressing-same-origin-policy-limitations.md
         - name: 身份验证和授权
           items:
+            - name: 身份验证和授权概述
+              href: develop/overview-authn-authz.md
+            - name: 使用 Office 对话框 API 进行身份验证和授权
+              href: develop/auth-with-office-dialog-api.md
+            - name: 授权外部服务
+              href: develop/auth-external-add-ins.md
+            - name: 向不带 SSO 的 Microsoft Graph 授权
+              href: develop/authorize-to-microsoft-graph-without-sso.md
             - name: 在外接程序中启用 SSO
               items:
                 - name: 启用单一登录
                   href: develop/sso-in-office-add-ins.md
+                - name: 使用 SSO 向 Microsoft Graph 授权
+                  href: develop/authorize-to-microsoft-graph.md
                 - name: 使用 ASP.NET 创建 SSO 外接程序
                   href: develop/create-sso-office-add-ins-aspnet.md
                 - name: 使用 node.js 创建 SSO 外接程序
@@ -120,10 +130,6 @@
                   href: develop/grant-admin-consent-to-an-add-in.md
                 - name: 排查单一登录 (SSO) 错误消息
                   href: develop/troubleshoot-sso-in-office-add-ins.md
-            - name: 授权外部服务
-              href: develop/auth-external-add-ins.md
-            - name: 授权给 Microsoft Graph
-              href: develop/authorize-to-microsoft-graph.md
         - name: 随文档自动打开任务窗格
           href: develop/automatically-open-a-task-pane-with-a-document.md
         - name: 开发 iPad 外接程序
