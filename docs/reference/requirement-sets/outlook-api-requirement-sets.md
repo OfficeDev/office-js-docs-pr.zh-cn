@@ -1,15 +1,15 @@
 ---
 title: Outlook JavaScript API 要求集
 description: ''
-ms.date: 07/18/2019
+ms.date: 08/13/2019
 ms.prod: outlook
 localization_priority: Priority
-ms.openlocfilehash: 71cea37784bd3668d3cb44a136ce12e78256f8ec
-ms.sourcegitcommit: 6d9b4820a62a914c50cef13af8b80ce626034c26
+ms.openlocfilehash: 010dd0519ff6b82f29e2ee7c3cdebb9a64106ac9
+ms.sourcegitcommit: 1c7e555733ee6d5a08e444a3c4c16635d998e032
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "35804630"
+ms.lasthandoff: 08/14/2019
+ms.locfileid: "36395657"
 ---
 # <a name="outlook-javascript-api-requirement-sets"></a>Outlook JavaScript API 要求集
 
@@ -29,11 +29,16 @@ Outlook 外接程序通过在其清单中使用 Requirements 元素来声明所�
 
 在清单中设置最低要求集版本可控制外接程序会显示在哪个 Outlook 客户端中。如果客户端不支持最低要求集，则不会加载外接程序。例如，如果指定要求集版本 1.3，则意味着外接程序不会显示在任何不支持 1.3 及以上版本的 Outlook 客户端中。
 
+> [!NOTE]
+> 要在任何带编号的要求集中使用 API，应引用 CDN 上的**生产**库：https://appsforoffice.microsoft.com/lib/1/hosted/office.js)。
+>
+> 要了解如何使用预览 API，请参阅本文稍后的[使用预览 API](#using-preview-apis) 部分。
+
 ## <a name="using-apis-from-later-requirement-sets"></a>使用更高版本要求集中的 API
 
-设置要求集不会限制外接程序可使用的可用 API。例如，如果外接程序指定要求集 1.1，但它在支持 1.3 的 Outlook 客户端中运行，则外接程序可以使用要求集 1.3 中的 API。
+设置要求集不会限制外接程序可使用的可用 API。 例如，如果加载项指定要求集 1.1，但它在支持版本 1.3 的 Outlook 客户端中运行，则该加载项从要求集 1.3 使用 API。
 
-若要使用较新的 API，开发人员可以通过执行以下操作来检查特定主机是否支持相应要求集。
+要使用较新的 API，开发人员可执行以下操作来检查特定主机是否支持相应的要求集。
 
 ```js
 if (Office.context.requirements.isSetSupported('Mailbox', '1.3')) {

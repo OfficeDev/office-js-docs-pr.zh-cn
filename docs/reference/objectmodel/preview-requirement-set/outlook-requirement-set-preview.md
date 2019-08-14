@@ -1,21 +1,26 @@
 ---
 title: Outlook 外接程序 API 预览要求集
 description: ''
-ms.date: 07/24/2019
+ms.date: 08/13/2019
 localization_priority: Priority
-ms.openlocfilehash: 2ff1873afb0e0800c3056ae8de4033c56f357b2f
-ms.sourcegitcommit: 5e90a90175909e0f4f392f5c98bd1273f444fe49
+ms.openlocfilehash: b563d6cfc279a18a6a61f39c33a5ab42e1bd6984
+ms.sourcegitcommit: 1c7e555733ee6d5a08e444a3c4c16635d998e032
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "35851565"
+ms.lasthandoff: 08/14/2019
+ms.locfileid: "36395706"
 ---
 # <a name="outlook-add-in-api-preview-requirement-set"></a>Outlook 外接程序 API 预览要求集
 
 适用于 Office 的 JavaScript API 的 Outlook 外接程序 API 子集包括可以在 Outlook 外接程序中使用的对象、方法、属性和事件。
 
 > [!NOTE]
-> 本文档适用于**预览**[要求集](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)。 此要求集尚未完全实现，客户端不会准确报告对它的支持。 不应在外接程序清单中指定此要求集。 在此要求集中引入的方法和属性应在使用前单独测试其可用性。 此外，你还需要加入 [Office 预览体验成员计划](https://products.office.com/office-insider)。
+> 本文档适用于**预览**[要求集](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)。 此要求集尚未完全实现，客户端不会准确报告对它的支持。 不应在外接程序清单中指定此要求集。 在此要求集中引入的方法和属性应在使用前单独测试其可用性。
+>
+> 要使用预览 API：
+>
+> - 必须参考 CDN 上的 **beta** 库 (https://appsforoffice.microsoft.com/lib/beta/hosted/office.js)。
+> - 还可能需要加入 [Office 预览体验计划](https://products.office.com/office-insider)才能访问更新的 Office 版本。
 
 预览要求集包括[要求集 1.7](../requirement-set-1.7/outlook-requirement-set-1.7.md) 的所有功能。
 
