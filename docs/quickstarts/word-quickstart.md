@@ -4,115 +4,115 @@ description: 了解如何使用 Office JS API 生成简单的 Word 任务窗格�
 ms.date: 07/17/2019
 ms.prod: word
 localization_priority: Priority
-ms.openlocfilehash: 9f3c345257bb222e2fdf1aab0b558442d830e89a
-ms.sourcegitcommit: bb44c9694f88cde32ffbb642689130db44456964
+ms.openlocfilehash: 5b65d20a10b98dc3a4ba1e95c4ef52ff91647e97
+ms.sourcegitcommit: 1dc1bb0befe06d19b587961da892434bd0512fb5
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/17/2019
-ms.locfileid: "35771814"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "36308041"
 ---
-# <a name="build-your-first-word-task-pane-add-in"></a><span data-ttu-id="a024a-103">生成首个 Word 任务窗格加载项</span><span class="sxs-lookup"><span data-stu-id="a024a-103">Build your first Word task pane add-in</span></span>
+# <a name="build-your-first-word-task-pane-add-in"></a><span data-ttu-id="46bce-103">生成首个 Word 任务窗格加载项</span><span class="sxs-lookup"><span data-stu-id="46bce-103">Build your first Word task pane add-in</span></span>
 
-<span data-ttu-id="a024a-104">_适用于：Windows 版 Word 2016 或更高版本、iPad 版 Word 和 Mac 版 Word_</span><span class="sxs-lookup"><span data-stu-id="a024a-104">_Applies to: Word 2016 or later on Windows, Word for iPad, Word for Mac_</span></span>
+<span data-ttu-id="46bce-104">_适用于：Windows 版 Word 2016 或更高版本、iPad 版 Word 和 Mac 版 Word_</span><span class="sxs-lookup"><span data-stu-id="46bce-104">_Applies to: Word 2016 or later on Windows, Word for iPad, Word for Mac_</span></span>
 
-<span data-ttu-id="a024a-105">本文将逐步介绍如何生成 Word 任务窗格加载项。</span><span class="sxs-lookup"><span data-stu-id="a024a-105">In this article, you'll walk through the process of building a Word task pane add-in.</span></span>
+<span data-ttu-id="46bce-105">本文将逐步介绍如何生成 Word 任务窗格加载项。</span><span class="sxs-lookup"><span data-stu-id="46bce-105">In this article, you'll walk through the process of building a Word task pane add-in.</span></span>
 
-## <a name="create-the-add-in"></a><span data-ttu-id="a024a-106">创建加载项</span><span class="sxs-lookup"><span data-stu-id="a024a-106">Create the add-in</span></span>
+## <a name="create-the-add-in"></a><span data-ttu-id="46bce-106">创建加载项</span><span class="sxs-lookup"><span data-stu-id="46bce-106">Create the add-in</span></span>
 
 [!include[Choose your editor](../includes/quickstart-choose-editor.md)]
 
-# <a name="yeoman-generatortabyeomangenerator"></a>[<span data-ttu-id="a024a-107">Yeoman 生成器</span><span class="sxs-lookup"><span data-stu-id="a024a-107">Yeoman generator</span></span>](#tab/yeomangenerator)
+# <a name="yeoman-generatortabyeomangenerator"></a>[<span data-ttu-id="46bce-107">Yeoman 生成器</span><span class="sxs-lookup"><span data-stu-id="46bce-107">Yeoman generator</span></span>](#tab/yeomangenerator)
 
-### <a name="prerequisites"></a><span data-ttu-id="a024a-108">先决条件</span><span class="sxs-lookup"><span data-stu-id="a024a-108">Prerequisites</span></span>
+### <a name="prerequisites"></a><span data-ttu-id="46bce-108">先决条件</span><span class="sxs-lookup"><span data-stu-id="46bce-108">Prerequisites</span></span>
 
 [!include[Yeoman generator prerequisites](../includes/quickstart-yo-prerequisites.md)]
 
-### <a name="create-the-add-in-project"></a><span data-ttu-id="a024a-109">创建加载项项目</span><span class="sxs-lookup"><span data-stu-id="a024a-109">Create the add-in project</span></span>
+### <a name="create-the-add-in-project"></a><span data-ttu-id="46bce-109">创建加载项项目</span><span class="sxs-lookup"><span data-stu-id="46bce-109">Create the add-in project</span></span>
 
-<span data-ttu-id="a024a-110">使用 Yeoman 生成器创建 Word 加载项项目。</span><span class="sxs-lookup"><span data-stu-id="a024a-110">Use the Yeoman generator to create a Word add-in project.</span></span> <span data-ttu-id="a024a-111">运行下面的命令，再回答如下所示的提示问题：</span><span class="sxs-lookup"><span data-stu-id="a024a-111">Run the following command and then answer the prompts as follows:</span></span>
+[!include[note about Yeoman generator bug](../includes/note-yeoman-generator-bug-201908.md)]
+
+<span data-ttu-id="46bce-110">使用 Yeoman 生成器创建 Word 加载项项目。</span><span class="sxs-lookup"><span data-stu-id="46bce-110">Use the Yeoman generator to create a Word add-in project.</span></span> <span data-ttu-id="46bce-111">运行下面的命令，再回答如下所示的提示问题：</span><span class="sxs-lookup"><span data-stu-id="46bce-111">Run the following command and then answer the prompts as follows:</span></span>
 
 ```command&nbsp;line
 yo office
 ```
 
-- <span data-ttu-id="a024a-112">**选择项目类型:** `Office Add-in Task Pane project`</span><span class="sxs-lookup"><span data-stu-id="a024a-112">**Choose a project type:** `Office Add-in Task Pane project`</span></span>
-- <span data-ttu-id="a024a-113">**选择脚本类型:** `Javascript`</span><span class="sxs-lookup"><span data-stu-id="a024a-113">**Choose a script type:** `Javascript`</span></span>
-- <span data-ttu-id="a024a-114">**要如何命名加载项?**</span><span class="sxs-lookup"><span data-stu-id="a024a-114">**What do you want to name your add-in?**</span></span> `My Office Add-in`
-- <span data-ttu-id="a024a-115">**要支持哪一个 Office 客户端应用程序?**</span><span class="sxs-lookup"><span data-stu-id="a024a-115">**Which Office client application would you like to support?**</span></span> `Word`
+- <span data-ttu-id="46bce-112">**选择项目类型:** `Office Add-in Task Pane project`</span><span class="sxs-lookup"><span data-stu-id="46bce-112">**Choose a project type:** `Office Add-in Task Pane project`</span></span>
+- <span data-ttu-id="46bce-113">**选择脚本类型:** `Javascript`</span><span class="sxs-lookup"><span data-stu-id="46bce-113">**Choose a script type:** `Javascript`</span></span>
+- <span data-ttu-id="46bce-114">**要如何命名加载项?**</span><span class="sxs-lookup"><span data-stu-id="46bce-114">**What do you want to name your add-in?**</span></span> `my-office-add-in`
+- <span data-ttu-id="46bce-115">**要支持哪一个 Office 客户端应用程序?**</span><span class="sxs-lookup"><span data-stu-id="46bce-115">**Which Office client application would you like to support?**</span></span> `Word`
 
-![有关 Yeoman 生成器提示和回答的屏幕截图](../images/yo-office-word.png)
+<span data-ttu-id="46bce-116">完成此向导后，生成器会创建项目，并安装支持的 Node 组件。</span><span class="sxs-lookup"><span data-stu-id="46bce-116">After you complete the wizard, the generator will create the project and install supporting Node components.</span></span>
 
-<span data-ttu-id="a024a-117">完成此向导后，生成器会创建项目，并安装支持的 Node 组件。</span><span class="sxs-lookup"><span data-stu-id="a024a-117">After you complete the wizard, the generator will create the project and install supporting Node components.</span></span>
-
-### <a name="explore-the-project"></a><span data-ttu-id="a024a-118">浏览项目</span><span class="sxs-lookup"><span data-stu-id="a024a-118">Explore the project</span></span>
+### <a name="explore-the-project"></a><span data-ttu-id="46bce-117">浏览项目</span><span class="sxs-lookup"><span data-stu-id="46bce-117">Explore the project</span></span>
 
 [!include[Yeoman generator add-in project components](../includes/yo-task-pane-project-components-js.md)]
 
-### <a name="try-it-out"></a><span data-ttu-id="a024a-119">试用</span><span class="sxs-lookup"><span data-stu-id="a024a-119">Try it out</span></span>
+### <a name="try-it-out"></a><span data-ttu-id="46bce-118">试用</span><span class="sxs-lookup"><span data-stu-id="46bce-118">Try it out</span></span>
 
-1. <span data-ttu-id="a024a-120">导航到项目的根文件夹。</span><span class="sxs-lookup"><span data-stu-id="a024a-120">Navigate to the root folder of the project.</span></span>
+1. <span data-ttu-id="46bce-119">导航到项目的根文件夹。</span><span class="sxs-lookup"><span data-stu-id="46bce-119">Navigate to the root folder of the project.</span></span>
 
     ```command&nbsp;line
-    cd "My Office Add-in"
+    cd "my-office-add-in"
     ```
 
-2. <span data-ttu-id="a024a-121">完成以下步骤，以启动本地 Web 服务器并旁加载你的加载项。</span><span class="sxs-lookup"><span data-stu-id="a024a-121">Complete the following steps to start the local web server and sideload your add-in.</span></span>
+2. <span data-ttu-id="46bce-120">完成以下步骤，以启动本地 Web 服务器并旁加载你的加载项。</span><span class="sxs-lookup"><span data-stu-id="46bce-120">Complete the following steps to start the local web server and sideload your add-in.</span></span>
 
     > [!NOTE]
-    > <span data-ttu-id="a024a-122">Office 加载项应使用 HTTPS，而不是 HTTP（即便是在开发时也是如此）。</span><span class="sxs-lookup"><span data-stu-id="a024a-122">Office Add-ins should use HTTPS, not HTTP, even when you are developing.</span></span> <span data-ttu-id="a024a-123">如果系统在运行以下命令之一后提示你安装证书，请接受提示以安装 Yeoman 生成器提供的证书。</span><span class="sxs-lookup"><span data-stu-id="a024a-123">If you are prompted to install a certificate after you run one of the following commands, accept the prompt to install the certificate that the Yeoman generator provides.</span></span>
+    > <span data-ttu-id="46bce-121">Office 加载项应使用 HTTPS，而不是 HTTP（即便是在开发时也是如此）。</span><span class="sxs-lookup"><span data-stu-id="46bce-121">Office Add-ins should use HTTPS, not HTTP, even when you are developing.</span></span> <span data-ttu-id="46bce-122">如果系统在运行以下命令之一后提示你安装证书，请接受提示以安装 Yeoman 生成器提供的证书。</span><span class="sxs-lookup"><span data-stu-id="46bce-122">If you are prompted to install a certificate after you run one of the following commands, accept the prompt to install the certificate that the Yeoman generator provides.</span></span>
 
     > [!TIP]
-    > <span data-ttu-id="a024a-124">如果在 Mac 上测试加载项，请先运行以下命令，然后再继续。</span><span class="sxs-lookup"><span data-stu-id="a024a-124">If you're testing your add-in on Mac, run the following command before proceeding.</span></span> <span data-ttu-id="a024a-125">运行此命令时，本地 Web 服务器将启动。</span><span class="sxs-lookup"><span data-stu-id="a024a-125">When you run this command, the local web server will start.</span></span>
+    > <span data-ttu-id="46bce-123">如果在 Mac 上测试加载项，请先运行以下命令，然后再继续。</span><span class="sxs-lookup"><span data-stu-id="46bce-123">If you're testing your add-in on Mac, run the following command before proceeding.</span></span> <span data-ttu-id="46bce-124">运行此命令时，本地 Web 服务器将启动。</span><span class="sxs-lookup"><span data-stu-id="46bce-124">When you run this command, the local web server will start.</span></span>
     >
     > ```command&nbsp;line
     > npm run dev-server
     > ```
 
-    - <span data-ttu-id="a024a-126">若要在 Word 中测试加载项，请在项目的根目录中运行以下命令。</span><span class="sxs-lookup"><span data-stu-id="a024a-126">To test your add-in in Word, run the following command in the root directory of your project.</span></span> <span data-ttu-id="a024a-127">这将启动本地的 Web 服务器（如果尚未运行的话），并使用加载的加载项打开 Word。</span><span class="sxs-lookup"><span data-stu-id="a024a-127">This starts the local web server (if it's not already running) and opens Word with your add-in loaded.</span></span>
+    - <span data-ttu-id="46bce-125">若要在 Word 中测试加载项，请在项目的根目录中运行以下命令。</span><span class="sxs-lookup"><span data-stu-id="46bce-125">To test your add-in in Word, run the following command in the root directory of your project.</span></span> <span data-ttu-id="46bce-126">这将启动本地的 Web 服务器（如果尚未运行的话），并使用加载的加载项打开 Word。</span><span class="sxs-lookup"><span data-stu-id="46bce-126">This starts the local web server (if it's not already running) and opens Word with your add-in loaded.</span></span>
 
         ```command&nbsp;line
         npm start
         ```
 
-    - <span data-ttu-id="a024a-128">若要在浏览器版 Word 中测试加载项，请在项目的根目录中运行以下命令。</span><span class="sxs-lookup"><span data-stu-id="a024a-128">To test your add-in in Word on a browser, run the following command in the root directory of your project.</span></span> <span data-ttu-id="a024a-129">如果你运行此命令，本地 Web 服务器将启动（如果尚未运行的话）。</span><span class="sxs-lookup"><span data-stu-id="a024a-129">When you run this command, the local web server will start.</span></span>
+    - <span data-ttu-id="46bce-127">若要在浏览器版 Word 中测试加载项，请在项目的根目录中运行以下命令。</span><span class="sxs-lookup"><span data-stu-id="46bce-127">To test your add-in in Word on a browser, run the following command in the root directory of your project.</span></span> <span data-ttu-id="46bce-128">如果你运行此命令，本地 Web 服务器将启动（如果尚未运行的话）。</span><span class="sxs-lookup"><span data-stu-id="46bce-128">When you run this command, the local web server will start.</span></span>
 
         ```command&nbsp;line
         npm run start:web
         ```
 
-        <span data-ttu-id="a024a-130">若要使用加载项，请在 Word 网页版中打开新的文档，并按照[在 Office 网页版中旁加载 Office 加载项](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-in-office-on-the-web)中的说明操作，以旁加载你的加载项。</span><span class="sxs-lookup"><span data-stu-id="a024a-130">To use your add-in, open a new document in Word Online and then sideload your add-in by following the instructions in [Sideload Office Add-ins in Office Online](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-in-office-on-the-web).</span></span>
+        <span data-ttu-id="46bce-129">若要使用加载项，请在 Word 网页版中打开新的文档，并按照[在 Office 网页版中旁加载 Office 加载项](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-in-office-on-the-web)中的说明操作，以旁加载你的加载项。</span><span class="sxs-lookup"><span data-stu-id="46bce-129">To use your add-in, open a new document in Word Online and then sideload your add-in by following the instructions in [Sideload Office Add-ins in Office Online](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-in-office-on-the-web).</span></span>
 
-3. <span data-ttu-id="a024a-131">在 Word 中，打开新的文档，依次选择“**主页**”选项卡和功能区中的“**显示任务窗格**”按钮，以打开加载项任务窗格。</span><span class="sxs-lookup"><span data-stu-id="a024a-131">In Word, open a new document, choose the **Home** tab, and then choose the **Show Taskpane** button in the ribbon to open the add-in task pane.</span></span>
+3. <span data-ttu-id="46bce-130">在 Word 中，打开新的文档，依次选择“**主页**”选项卡和功能区中的“**显示任务窗格**”按钮，以打开加载项任务窗格。</span><span class="sxs-lookup"><span data-stu-id="46bce-130">In Word, open a new document, choose the **Home** tab, and then choose the **Show Taskpane** button in the ribbon to open the add-in task pane.</span></span>
 
     ![突出显示了“显示任务窗格”按钮的 Word 应用程序屏幕截图](../images/word-quickstart-addin-2b.png)
 
-4. <span data-ttu-id="a024a-133">在任务窗格底部，选择“**运行**”链接，以将文本“Hello World”以蓝色字体添加到文档中。</span><span class="sxs-lookup"><span data-stu-id="a024a-133">At the bottom of the task pane, choose the **Run** link to add the text "Hello World" to the document in blue font.</span></span>
+4. <span data-ttu-id="46bce-132">在任务窗格底部，选择“**运行**”链接，以将文本“Hello World”以蓝色字体添加到文档中。</span><span class="sxs-lookup"><span data-stu-id="46bce-132">At the bottom of the task pane, choose the **Run** link to add the text "Hello World" to the document in blue font.</span></span>
 
     ![加载了任务窗格加载项的 Word 应用程序的屏幕截图](../images/word-quickstart-addin-1c.png)
 
-# <a name="visual-studiotabvisualstudio"></a>[<span data-ttu-id="a024a-135">Visual Studio</span><span class="sxs-lookup"><span data-stu-id="a024a-135">Visual Studio</span></span>](#tab/visualstudio)
+# <a name="visual-studiotabvisualstudio"></a>[<span data-ttu-id="46bce-134">Visual Studio</span><span class="sxs-lookup"><span data-stu-id="46bce-134">Visual Studio</span></span>](#tab/visualstudio)
 
-### <a name="prerequisites"></a><span data-ttu-id="a024a-136">先决条件</span><span class="sxs-lookup"><span data-stu-id="a024a-136">Prerequisites</span></span>
+### <a name="prerequisites"></a><span data-ttu-id="46bce-135">先决条件</span><span class="sxs-lookup"><span data-stu-id="46bce-135">Prerequisites</span></span>
 
 [!include[Quick Start prerequisites](../includes/quickstart-vs-prerequisites.md)]
 
-### <a name="create-the-add-in-project"></a><span data-ttu-id="a024a-137">创建加载项项目</span><span class="sxs-lookup"><span data-stu-id="a024a-137">Create the add-in project</span></span>
+### <a name="create-the-add-in-project"></a><span data-ttu-id="46bce-136">创建加载项项目</span><span class="sxs-lookup"><span data-stu-id="46bce-136">Create the add-in project</span></span>
 
-1. <span data-ttu-id="a024a-138">在 Visual Studio 菜单栏中，依次选择“文件”\*\*\*\* > “新建”\*\*\*\* > “项目”\*\*\*\*。</span><span class="sxs-lookup"><span data-stu-id="a024a-138">On the Visual Studio menu bar, choose  **File** > **New** > **Project**.</span></span>
+1. <span data-ttu-id="46bce-137">在 Visual Studio 菜单栏中，依次选择“文件”\*\*\*\* > “新建”\*\*\*\* > “项目”\*\*\*\*。</span><span class="sxs-lookup"><span data-stu-id="46bce-137">On the Visual Studio menu bar, choose  **File** > **New** > **Project**.</span></span>
 
-2. <span data-ttu-id="a024a-139">在“Visual C#”\*\*\*\* 或“Visual Basic”\*\*\*\* 下的项目类型列表中，展开“Office/SharePoint”\*\*\*\*，选择“加载项”\*\*\*\*，再选择“Word Web 加载项”\*\*\*\* 作为项目类型。</span><span class="sxs-lookup"><span data-stu-id="a024a-139">In the list of project types under **Visual C#** or **Visual Basic**, expand  **Office/SharePoint**, choose **Add-ins**, and then choose **Word Web Add-in** as the project type.</span></span> 
+2. <span data-ttu-id="46bce-138">在“Visual C#”\*\*\*\* 或“Visual Basic”\*\*\*\* 下的项目类型列表中，展开“Office/SharePoint”\*\*\*\*，选择“加载项”\*\*\*\*，再选择“Word Web 加载项”\*\*\*\* 作为项目类型。</span><span class="sxs-lookup"><span data-stu-id="46bce-138">In the list of project types under **Visual C#** or **Visual Basic**, expand  **Office/SharePoint**, choose **Add-ins**, and then choose **Word Web Add-in** as the project type.</span></span> 
 
-3. <span data-ttu-id="a024a-140">命名此项目，再选择“确定”\*\*\*\*。</span><span class="sxs-lookup"><span data-stu-id="a024a-140">Name the project, and then choose **OK**.</span></span>
+3. <span data-ttu-id="46bce-139">命名此项目，再选择“确定”\*\*\*\*。</span><span class="sxs-lookup"><span data-stu-id="46bce-139">Name the project, and then choose **OK**.</span></span>
 
-4. <span data-ttu-id="a024a-p106">此时，Visual Studio 创建解决方案，且它的两个项目显示在“解决方案资源管理器”\*\*\*\* 中。**Home.html** 文件在 Visual Studio 中打开。</span><span class="sxs-lookup"><span data-stu-id="a024a-p106">Visual Studio creates a solution and its two projects appear in **Solution Explorer**. The **Home.html** file opens in Visual Studio.</span></span>
+4. <span data-ttu-id="46bce-p106">此时，Visual Studio 创建解决方案，且它的两个项目显示在“解决方案资源管理器”\*\*\*\* 中。**Home.html** 文件在 Visual Studio 中打开。</span><span class="sxs-lookup"><span data-stu-id="46bce-p106">Visual Studio creates a solution and its two projects appear in **Solution Explorer**. The **Home.html** file opens in Visual Studio.</span></span>
 
-### <a name="explore-the-visual-studio-solution"></a><span data-ttu-id="a024a-143">探索 Visual Studio 解决方案</span><span class="sxs-lookup"><span data-stu-id="a024a-143">Explore the Visual Studio solution</span></span>
+### <a name="explore-the-visual-studio-solution"></a><span data-ttu-id="46bce-142">探索 Visual Studio 解决方案</span><span class="sxs-lookup"><span data-stu-id="46bce-142">Explore the Visual Studio solution</span></span>
 
 [!include[Description of Visual Studio projects](../includes/quickstart-vs-solution.md)]
 
-### <a name="update-the-code"></a><span data-ttu-id="a024a-144">更新代码</span><span class="sxs-lookup"><span data-stu-id="a024a-144">Update the code</span></span>
+### <a name="update-the-code"></a><span data-ttu-id="46bce-143">更新代码</span><span class="sxs-lookup"><span data-stu-id="46bce-143">Update the code</span></span>
 
-1. <span data-ttu-id="a024a-p107">**Home.html** 指定在加载项的任务窗格中呈现的 HTML。 在 **Home.html** 中，将 `<body>` 元素替换为以下标记，并保存文件。</span><span class="sxs-lookup"><span data-stu-id="a024a-p107">**Home.html** specifies the HTML that will be rendered in the add-in's task pane. In **Home.html**, replace the `<body>` element with the following markup and save the file.</span></span>
+1. <span data-ttu-id="46bce-p107">**Home.html** 指定在加载项的任务窗格中呈现的 HTML。 在 **Home.html** 中，将 `<body>` 元素替换为以下标记，并保存文件。</span><span class="sxs-lookup"><span data-stu-id="46bce-p107">**Home.html** specifies the HTML that will be rendered in the add-in's task pane. In **Home.html**, replace the `<body>` element with the following markup and save the file.</span></span>
 
     ```html
     <body>
@@ -138,7 +138,7 @@ yo office
     </body>
     ```
 
-2. <span data-ttu-id="a024a-p108">打开 Web 应用项目根目录中的文件“Home.js”\*\*\*\*。 此文件指定加载项脚本。 将整个内容替换为以下代码，并保存文件。</span><span class="sxs-lookup"><span data-stu-id="a024a-p108">Open the file **Home.js** in the root of the web application project. This file specifies the script for the add-in. Replace the entire contents with the following code and save the file.</span></span>
+2. <span data-ttu-id="46bce-p108">打开 Web 应用项目根目录中的文件“Home.js”\*\*\*\*。 此文件指定加载项脚本。 将整个内容替换为以下代码，并保存文件。</span><span class="sxs-lookup"><span data-stu-id="46bce-p108">Open the file **Home.js** in the root of the web application project. This file specifies the script for the add-in. Replace the entire contents with the following code and save the file.</span></span>
 
     ```js
     'use strict';
@@ -239,7 +239,7 @@ yo office
     })();
     ```
 
-3. <span data-ttu-id="a024a-p109">打开 Web 应用项目根目录中的文件“Home.css”\*\*\*\*。 此文件指定加载项自定义样式。 将整个内容替换为以下代码，并保存文件。</span><span class="sxs-lookup"><span data-stu-id="a024a-p109">Open the file **Home.css** in the root of the web application project. This file specifies the custom styles for the add-in. Replace the entire contents with the following code and save the file.</span></span>
+3. <span data-ttu-id="46bce-p109">打开 Web 应用项目根目录中的文件“Home.css”\*\*\*\*。 此文件指定加载项自定义样式。 将整个内容替换为以下代码，并保存文件。</span><span class="sxs-lookup"><span data-stu-id="46bce-p109">Open the file **Home.css** in the root of the web application project. This file specifies the custom styles for the add-in. Replace the entire contents with the following code and save the file.</span></span>
 
     ```css
     #content-header {
@@ -268,17 +268,17 @@ yo office
     }
     ```
 
-### <a name="update-the-manifest"></a><span data-ttu-id="a024a-153">更新清单</span><span class="sxs-lookup"><span data-stu-id="a024a-153">Update the manifest</span></span>
+### <a name="update-the-manifest"></a><span data-ttu-id="46bce-152">更新清单</span><span class="sxs-lookup"><span data-stu-id="46bce-152">Update the manifest</span></span>
 
-1. <span data-ttu-id="a024a-154">打开加载项项目中的 XML 清单文件。</span><span class="sxs-lookup"><span data-stu-id="a024a-154">Open the XML manifest file in the add-in project.</span></span> <span data-ttu-id="a024a-155">此文件定义的是加载项设置和功能。</span><span class="sxs-lookup"><span data-stu-id="a024a-155">This file defines the add-in's settings and capabilities.</span></span>
+1. <span data-ttu-id="46bce-153">打开加载项项目中的 XML 清单文件。</span><span class="sxs-lookup"><span data-stu-id="46bce-153">Open the XML manifest file in the add-in project.</span></span> <span data-ttu-id="46bce-154">此文件定义的是加载项设置和功能。</span><span class="sxs-lookup"><span data-stu-id="46bce-154">This file defines the add-in's settings and capabilities.</span></span>
 
-2. <span data-ttu-id="a024a-p111">`ProviderName` 元素具有占位符值。 将其替换为你的姓名。</span><span class="sxs-lookup"><span data-stu-id="a024a-p111">The `ProviderName` element has a placeholder value. Replace it with your name.</span></span>
+2. <span data-ttu-id="46bce-p111">`ProviderName` 元素具有占位符值。 将其替换为你的姓名。</span><span class="sxs-lookup"><span data-stu-id="46bce-p111">The `ProviderName` element has a placeholder value. Replace it with your name.</span></span>
 
-3. <span data-ttu-id="a024a-158">`DisplayName` 元素的 `DefaultValue` 属性有占位符。</span><span class="sxs-lookup"><span data-stu-id="a024a-158">The `DefaultValue` attribute of the `DisplayName` element has a placeholder.</span></span> <span data-ttu-id="a024a-159">将它替换为“My Office Add-in”\*\*\*\*。</span><span class="sxs-lookup"><span data-stu-id="a024a-159">Replace it with **My Office Add-in**.</span></span>
+3. <span data-ttu-id="46bce-157">`DisplayName` 元素的 `DefaultValue` 属性有占位符。</span><span class="sxs-lookup"><span data-stu-id="46bce-157">The `DefaultValue` attribute of the `DisplayName` element has a placeholder.</span></span> <span data-ttu-id="46bce-158">将它替换为“My Office Add-in”\*\*\*\*。</span><span class="sxs-lookup"><span data-stu-id="46bce-158">Replace it with **My Office Add-in**.</span></span>
 
-4. <span data-ttu-id="a024a-160">`Description` 元素的 `DefaultValue` 属性有占位符。</span><span class="sxs-lookup"><span data-stu-id="a024a-160">The `DefaultValue` attribute of the `Description` element has a placeholder.</span></span> <span data-ttu-id="a024a-161">将它替换为“A task pane add-in for Word”\*\*\*\*。</span><span class="sxs-lookup"><span data-stu-id="a024a-161">Replace it with **A task pane add-in for Word**.</span></span>
+4. <span data-ttu-id="46bce-159">`Description` 元素的 `DefaultValue` 属性有占位符。</span><span class="sxs-lookup"><span data-stu-id="46bce-159">The `DefaultValue` attribute of the `Description` element has a placeholder.</span></span> <span data-ttu-id="46bce-160">将它替换为“A task pane add-in for Word”\*\*\*\*。</span><span class="sxs-lookup"><span data-stu-id="46bce-160">Replace it with **A task pane add-in for Word**.</span></span>
 
-5. <span data-ttu-id="a024a-162">保存文件。</span><span class="sxs-lookup"><span data-stu-id="a024a-162">Save the file.</span></span>
+5. <span data-ttu-id="46bce-161">保存文件。</span><span class="sxs-lookup"><span data-stu-id="46bce-161">Save the file.</span></span>
 
     ```xml
     ...
@@ -290,30 +290,30 @@ yo office
     ...
     ```
 
-### <a name="try-it-out"></a><span data-ttu-id="a024a-163">试用</span><span class="sxs-lookup"><span data-stu-id="a024a-163">Try it out</span></span>
+### <a name="try-it-out"></a><span data-ttu-id="46bce-162">试用</span><span class="sxs-lookup"><span data-stu-id="46bce-162">Try it out</span></span>
 
-1. <span data-ttu-id="a024a-p114">使用 Visual Studio 的同时，按 **F5** 或选择“开始”\*\*\*\* 按钮启动 Word，以测试新建的 Word 加载项，功能区中显示有“显示任务窗格”\*\*\*\* 加载项按钮。加载项本地托管在 IIS 上。</span><span class="sxs-lookup"><span data-stu-id="a024a-p114">Using Visual Studio, test the newly created Word add-in by pressing **F5** or choosing the **Start** button to launch Word with the **Show Taskpane** add-in button displayed in the ribbon. The add-in will be hosted locally on IIS.</span></span>
+1. <span data-ttu-id="46bce-p114">使用 Visual Studio 的同时，按 **F5** 或选择“开始”\*\*\*\* 按钮启动 Word，以测试新建的 Word 加载项，功能区中显示有“显示任务窗格”\*\*\*\* 加载项按钮。加载项本地托管在 IIS 上。</span><span class="sxs-lookup"><span data-stu-id="46bce-p114">Using Visual Studio, test the newly created Word add-in by pressing **F5** or choosing the **Start** button to launch Word with the **Show Taskpane** add-in button displayed in the ribbon. The add-in will be hosted locally on IIS.</span></span>
 
-2. <span data-ttu-id="a024a-166">在 Word 中，依次选择“开始”\*\*\*\* 选项卡和功能区中的“显示任务窗格”\*\*\*\* 按钮，以打开加载项任务窗格。</span><span class="sxs-lookup"><span data-stu-id="a024a-166">In Word, choose the **Home** tab, and then choose the **Show Taskpane** button in the ribbon to open the add-in task pane.</span></span> <span data-ttu-id="a024a-167">（如果使用的是 Office 的一次性购买版本，而不是 Office 365 版本，那么自定义按钮不受支持。</span><span class="sxs-lookup"><span data-stu-id="a024a-167">(If you are using the one-time purchase version of Office, instead of the Office 365 version, then custom buttons are not supported.</span></span> <span data-ttu-id="a024a-168">相反，任务窗格将立即打开。）</span><span class="sxs-lookup"><span data-stu-id="a024a-168">Instead, the task pane will open immediately.)</span></span>
+2. <span data-ttu-id="46bce-165">在 Word 中，依次选择“开始”\*\*\*\* 选项卡和功能区中的“显示任务窗格”\*\*\*\* 按钮，以打开加载项任务窗格。</span><span class="sxs-lookup"><span data-stu-id="46bce-165">In Word, choose the **Home** tab, and then choose the **Show Taskpane** button in the ribbon to open the add-in task pane.</span></span> <span data-ttu-id="46bce-166">（如果使用的是 Office 的一次性购买版本，而不是 Office 365 版本，那么自定义按钮不受支持。</span><span class="sxs-lookup"><span data-stu-id="46bce-166">(If you are using the one-time purchase version of Office, instead of the Office 365 version, then custom buttons are not supported.</span></span> <span data-ttu-id="46bce-167">相反，任务窗格将立即打开。）</span><span class="sxs-lookup"><span data-stu-id="46bce-167">Instead, the task pane will open immediately.)</span></span>
 
     ![突出显示了“显示任务窗格”按钮的 Word 应用屏幕截图](../images/word-quickstart-addin-0.png)
 
-3. <span data-ttu-id="a024a-170">选择任务窗格中的任意按钮，将样本文字添加到文档。</span><span class="sxs-lookup"><span data-stu-id="a024a-170">In the task pane, choose any of the buttons to add boilerplate text to the document.</span></span>
+3. <span data-ttu-id="46bce-169">选择任务窗格中的任意按钮，将样本文字添加到文档。</span><span class="sxs-lookup"><span data-stu-id="46bce-169">In the task pane, choose any of the buttons to add boilerplate text to the document.</span></span>
 
     ![加载了样本加载项的 Word 应用的屏幕截图](../images/word-quickstart-addin-1b.png)
 
 ---
 
-## <a name="next-steps"></a><span data-ttu-id="a024a-172">后续步骤</span><span class="sxs-lookup"><span data-stu-id="a024a-172">Next steps</span></span>
+## <a name="next-steps"></a><span data-ttu-id="46bce-171">后续步骤</span><span class="sxs-lookup"><span data-stu-id="46bce-171">Next steps</span></span>
 
-<span data-ttu-id="a024a-173">恭喜！已成功创建 Word 任务窗格加载项！</span><span class="sxs-lookup"><span data-stu-id="a024a-173">Congratulations, you've successfully created a Word task pane add-in!</span></span> <span data-ttu-id="a024a-174">接下来，请详细了解 Word 加载项功能，并跟着 Word 加载项教程一起操作，生成更复杂的加载项。</span><span class="sxs-lookup"><span data-stu-id="a024a-174">Next, learn more about the capabilities of a Word add-in and build a more complex add-in by following along with the Word add-in tutorial.</span></span>
+<span data-ttu-id="46bce-172">恭喜！已成功创建 Word 任务窗格加载项！</span><span class="sxs-lookup"><span data-stu-id="46bce-172">Congratulations, you've successfully created a Word task pane add-in!</span></span> <span data-ttu-id="46bce-173">接下来，请详细了解 Word 加载项功能，并跟着 Word 加载项教程一起操作，生成更复杂的加载项。</span><span class="sxs-lookup"><span data-stu-id="46bce-173">Next, learn more about the capabilities of a Word add-in and build a more complex add-in by following along with the Word add-in tutorial.</span></span>
 
 > [!div class="nextstepaction"]
-> [<span data-ttu-id="a024a-175">Word 加载项教程</span><span class="sxs-lookup"><span data-stu-id="a024a-175">Word add-in tutorial</span></span>](../tutorials/word-tutorial.md)
+> [<span data-ttu-id="46bce-174">Word 加载项教程</span><span class="sxs-lookup"><span data-stu-id="46bce-174">Word add-in tutorial</span></span>](../tutorials/word-tutorial.md)
 
-## <a name="see-also"></a><span data-ttu-id="a024a-176">另请参阅</span><span class="sxs-lookup"><span data-stu-id="a024a-176">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="46bce-175">另请参阅</span><span class="sxs-lookup"><span data-stu-id="46bce-175">See also</span></span>
 
-* [<span data-ttu-id="a024a-177">Word 加载项概述</span><span class="sxs-lookup"><span data-stu-id="a024a-177">Word add-ins overview</span></span>](../word/word-add-ins-programming-overview.md)
-* <span data-ttu-id="a024a-178">
-  [Word 加载项代码示例](https://developer.microsoft.com/zh-CN/office/gallery/?filterBy=Samples,Word)</span><span class="sxs-lookup"><span data-stu-id="a024a-178">[Word add-in code samples](https://developer.microsoft.com/en-us/office/gallery/?filterBy=Samples,Word)</span></span>
-* [<span data-ttu-id="a024a-179">Word JavaScript API 参考</span><span class="sxs-lookup"><span data-stu-id="a024a-179">Word JavaScript API reference</span></span>](/office/dev/add-ins/reference/overview/word-add-ins-reference-overview)
+* [<span data-ttu-id="46bce-176">Word 加载项概述</span><span class="sxs-lookup"><span data-stu-id="46bce-176">Word add-ins overview</span></span>](../word/word-add-ins-programming-overview.md)
+* <span data-ttu-id="46bce-177">
+  [Word 加载项代码示例](https://developer.microsoft.com/zh-CN/office/gallery/?filterBy=Samples,Word)</span><span class="sxs-lookup"><span data-stu-id="46bce-177">[Word add-in code samples](https://developer.microsoft.com/en-us/office/gallery/?filterBy=Samples,Word)</span></span>
+* [<span data-ttu-id="46bce-178">Word JavaScript API 参考</span><span class="sxs-lookup"><span data-stu-id="46bce-178">Word JavaScript API reference</span></span>](/office/dev/add-ins/reference/overview/word-add-ins-reference-overview)
