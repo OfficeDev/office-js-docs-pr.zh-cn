@@ -4,12 +4,12 @@ description: ''
 ms.date: 06/20/2019
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: 8935a22a631699ac0314aac89936fbd8c2552212
-ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
+ms.openlocfilehash: e343e8eec053bb41cc4438ef42ef0a420319be94
+ms.sourcegitcommit: 1dc1bb0befe06d19b587961da892434bd0512fb5
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "35128564"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "36302586"
 ---
 # <a name="build-an-excel-task-pane-add-in-using-vue"></a>使用 Vue 生成 Excel 任务窗格加载项
 
@@ -58,7 +58,7 @@ vue init webpack my-add-in
     ```
 
     - **选择项目类型:** `Office Add-in project containing the manifest only`
-    - **要如何命名加载项?** `My Office Add-in`
+    - **要如何命名加载项?** `my-office-add-in`
     - **要支持哪一个 Office 客户端应用程序?** `Excel`
 
     ![Yeoman 生成器](../images/yo-office-manifest-only-vue.png)
@@ -77,7 +77,7 @@ vue init webpack my-add-in
 
 ## <a name="update-the-app"></a>更新应用程序
 
-1. 在代码编辑器中，打开 Yo Office 在 Vue 项目根创建的文件夹 **My Office Add-in**。 在该文件夹中，您将看到定义加载项的设置的清单文件：**manifest.xml**。
+1. 在代码编辑器中，打开 Yo Office 在 Vue 项目根处创建的文件夹 **my-office-add-in**。 在该文件夹中，您将看到定义加载项的设置的清单文件：**manifest.xml**。
 
 2. 打开清单文件，将所有 `https://localhost:3000` 都替换为 `https://localhost:8080`，然后保存文件。
 

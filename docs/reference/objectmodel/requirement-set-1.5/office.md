@@ -1,14 +1,14 @@
 ---
 title: Office 命名空间-要求集1。5
 description: ''
-ms.date: 04/24/2019
+ms.date: 08/13/2019
 localization_priority: Normal
-ms.openlocfilehash: 36faf4569ac58693dcc1218c42a19347816d9abd
-ms.sourcegitcommit: 3f5d7f4794e3d3c8bc3a79fa05c54157613b9376
+ms.openlocfilehash: 402737f0f6648e42f569906df59be0fa26991146
+ms.sourcegitcommit: 1c7e555733ee6d5a08e444a3c4c16635d998e032
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/02/2019
-ms.locfileid: "36064675"
+ms.lasthandoff: 08/14/2019
+ms.locfileid: "36395685"
 ---
 # <a name="office"></a>Office
 
@@ -34,9 +34,9 @@ ms.locfileid: "36064675"
 
 [context](office.context.md)：提供 Office 加载项 API 的上下文命名空间中的共享接口以便在 Outlook 加载项 API 中使用。
 
-[MailboxEnums](/javascript/api/outlook/office.mailboxenums.attachmenttype?view=outlook-js-1.5)：包括 ItemType、EntityType、AttachmentType、RecipientType、ResponseType 和 ItemNotificationMessageType 枚举。
+[MailboxEnums](/javascript/api/outlook/office.mailboxenums.attachmenttype?view=outlook-js-1.5): 包含多个`ItemType`枚举, 例如`EntityType` `AttachmentType` `RecipientType` `ResponseType`、、、、和`ItemNotificationMessageType`。
 
-### <a name="members"></a>成员
+### <a name="members"></a>Members
 
 #### <a name="asyncresultstatus-string"></a>AsyncResultStatus: String
 

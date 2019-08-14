@@ -4,12 +4,12 @@ description: 了解如何使用 Office JS API 生成简单的 Excel 任务窗格
 ms.date: 07/17/2019
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: 568f27a596fda77f263a53b551eefebc287e68e3
-ms.sourcegitcommit: bb44c9694f88cde32ffbb642689130db44456964
+ms.openlocfilehash: 781e2c3e7cd563e6ebeeaff3e8bf0624b64aec76
+ms.sourcegitcommit: 1dc1bb0befe06d19b587961da892434bd0512fb5
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/17/2019
-ms.locfileid: "35771861"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "36308048"
 ---
 # <a name="build-an-excel-task-pane-add-in"></a>生成 Excel 任务窗格加载项
 
@@ -27,6 +27,8 @@ ms.locfileid: "35771861"
 
 ### <a name="create-the-add-in-project"></a>创建加载项项目
 
+[!include[note about Yeoman generator bug](../includes/note-yeoman-generator-bug-201908.md)]
+
 使用 Yeoman 生成器创建 Excel 加载项项目。 运行下面的命令，再回答如下所示的提示问题：
 
 ```command&nbsp;line
@@ -35,10 +37,8 @@ yo office
 
 - **选择项目类型:** `Office Add-in Task Pane project`
 - **选择脚本类型:** `Javascript`
-- **要如何命名加载项?** `My Office Add-in`
+- **要如何命名加载项?** `my-office-add-in`
 - **要支持哪一个 Office 客户端应用程序?** `Excel`
-
-![Yeoman 生成器](../images/yo-office-excel.png)
 
 完成此向导后，生成器会创建项目，并安装支持的 Node 组件。
 
@@ -51,7 +51,7 @@ yo office
 1. 导航到项目的根文件夹。
 
     ```command&nbsp;line
-    cd "My Office Add-in"
+    cd "my-office-add-in"
     ```
 
 2. [!include[Start server section](../includes/quickstart-yo-start-server-excel.md)] 

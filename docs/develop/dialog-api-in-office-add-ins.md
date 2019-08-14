@@ -1,14 +1,14 @@
 ---
 title: 在 Office 加载项中使用对话框 API
 description: ''
-ms.date: 06/20/2019
+ms.date: 08/07/2019
 localization_priority: Priority
-ms.openlocfilehash: 12e741650b7441557ac9b28306b6eba0f1894922
-ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
+ms.openlocfilehash: 5cafb2396c92576bd5ac6d6d52105e0bb5ee579d
+ms.sourcegitcommit: 1dc1bb0befe06d19b587961da892434bd0512fb5
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "35128204"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "36302579"
 ---
 # <a name="use-the-dialog-api-in-your-office-add-ins"></a>在 Office 加载项中使用对话框 API
 
@@ -17,7 +17,7 @@ ms.locfileid: "35128204"
 > [!NOTE]
 > 若要了解对话框 API 目前的受支持情况，请参阅[对话框 API 要求集](/office/dev/add-ins/reference/requirement-sets/dialog-api-requirement-sets)。目前，Word、Excel、PowerPoint 和 Outlook 支持对话框 API。
 
-> 对话框 API 的主要应用场景是为 Google 或 Facebook 等资源启用身份验证。
+对话框 API 的主要应用场景是为 Google、Facebook 或 Microsoft Graph 等资源启用身份验证。 有关详细信息，请在熟悉本文*之后*，参阅[使用 Office 对话框 API 进行身份验证](auth-with-office-dialog-api.md)。
 
 不妨通过任务窗格/内容加载项/[加载项命令](../design/add-in-commands.md)打开对话框，以便执行下列操作：
 
@@ -70,13 +70,13 @@ Office.context.ui.displayDialogAsync('https://myDomain/myDialog.html', {height: 
 
 ### <a name="take-advantage-of-a-performance-option-in-office-on-the-web"></a>利用 Office 网页版中的性能选项
 
-`displayInIframe` 属性是配置对象中可以传递到 `displayDialogAsync` 的附加属性。如果此属性设置为 `true`，且加载项在使用 Office 网页版打开的文档中运行，对话框就会以浮动 iframe（而不是独立窗口）的形式打开，从而加快打开速度。示例如下：
+`displayInIframe` 属性是配置对象中另一个可以传递到 `displayDialogAsync` 的属性。 如果将此属性设置为 `true`，且加载项在 Office 网页版打开的文档中运行，对话框就会以浮动 iframe（而不是独立窗口）的形式打开，从而加快对话框的打开速度。 示例如下：
 
 ```js
 Office.context.ui.displayDialogAsync('https://myDomain/myDialog.html', {height: 30, width: 20, displayInIframe: true});
 ```
 
-默认值为 `false`，等同于完全忽略此属性。如果加载项没有在 Office 网页版中运行，`displayInIframe` 会遭忽略。
+默认值为 `false`，与完全省略此属性时相同。 如果加载项没有在 Office 网页版中运行，`displayInIframe` 将被忽略。
 
 > [!NOTE]
 > 如果对话框始终重定向到无法在 iframe 中打开的页面，**不**得使用 `displayInIframe: true`。例如，许多热门 Web 服务（如 Google 和 Microsoft 帐户）的登录页都无法在 iframe 中打开。
@@ -385,52 +385,12 @@ Office.context.ui.displayDialogAsync('https://myAddinDomain/myDialog.html?client
 
 ## <a name="use-the-dialog-apis-in-an-authentication-flow"></a>在身份验证流中使用对话框 API
 
-对话框 API 的主要应用场景是为不允许在 Iframe 中打开登录页的资源或标识提供程序（如 Microsoft 帐户、Office 365、Google 和 Facebook）启用身份验证。
+请参阅[使用 Office 对话框 API 进行身份验证](auth-with-office-dialog-api.md)。
 
-> [!NOTE]
-> 若要将对话框 API 用于此方案，请*勿*在调用 `displayDialogAsync` 时使用 `displayInIframe: true` 选项。若要详细了解此选项，请参阅本文前面的[利用 Office 网页版中的性能选项](#take-advantage-of-a-performance-option-in-office-on-the-web)。
+## <a name="using-the-office-dialog-api-with-single-page-applications-and-client-side-routing"></a>将 Office 对话框 API 与单页应用程序和客户端路由结合使用
 
-下面展示了简单的典型身份验证流：
+如果加载项使用客户端路由（单页应用程序 (SPA) 通常这样做），则可以选择将路由 URL 传递给 [ displayDialogAsync ](/javascript/api/office/office.ui) 方法（*不建议这样做*），而不是传递各个完整 HTML 页面的 URL。
 
-1. 对话框中打开的第一个页面是加载项域（即主机窗口域）中托管的本地页面（或其他资源）。此页面可以显示简单的 UI，提示用户“请稍候，我们正在将你重定向到可以登录 *NAME-OF-PROVIDER* 的页面。”此页面中的代码使用传递给对话框的信息，构造标识提供程序的登录页 URL，如[向对话框传递信息](#pass-information-to-the-dialog-box)中所述。
-2. 然后，对话框窗口重定向到登录页。URL 包含一个查询参数，用于提示标识提供程序在用户登录特定页面后重定向对话框窗口。在本文中，我们将此页面称为 "redirectPage.html"。（*此页面必须与主机窗口位于相同域中*，因为对话框窗口传递登录尝试结果的唯一方法就是调用 `messageParent`，而它只能在与主机窗口位于同一域的页面上调用）。
-2. 标识提供程序的服务处理来自对话框窗口的传入 GET 请求。如果用户已经登录，它会立即将窗口重定向到 redirectPage.html，并将用户数据作为查询参数添加。如果用户尚未登录，提供程序的登录页会显示在窗口中，以便用户登录。对于大多数提供程序，如果用户无法成功登录，提供程序会在对话框窗口中显示错误页面，而不会重定向到 redirectPage.html。用户必须通过选择右上角的 **X** 来关闭窗口。如果用户成功登录，则对话框窗口会重定向到 redirectPage.html，并且用户数据会作为查询参数添加。
-3. 当 redirectPage.html 页面打开时，它会调用 `messageParent` 向主机页报告登录是否成功，而且还会视情况报告用户数据或错误数据。
-4. `DialogMessageReceived` 事件在主机页中触发，其处理程序关闭对话框窗口，并视情况对消息进行其他处理。
+对话框位于有自己执行上下文的新窗口中。 如果你传递路由，则基本页及其所有初始化和引导代码会在这个新的上下文中再次运行，且所有变量都会在对话框中设置为各自的初始值。 因此，此技术将在对话窗口中加载和启动另一个应用程序实例，这将部分破坏 SPA 的作用。 此外，更改对话框窗口中变量的代码不会更改任务窗格版本的相同变量。 同样，对话框窗口有其自己的会话存储，任务窗格中的代码无法访问此类存储。
 
-有关使用此模式的示例加载项，请参阅：
-
-- [Insert Excel charts using Microsoft Graph in a PowerPoint add-in](https://github.com/OfficeDev/PowerPoint-Add-in-Microsoft-Graph-ASPNET-InsertChart)（在 PowerPoint 加载项中使用 Microsoft Graph 插入 Excel 图表）：对话框窗口最初打开的资源是没有自己视图的控制器方法。 然后，其重定向到 Office 365 登录页。
-
-#### <a name="support-multiple-identity-providers"></a>支持多个标识提供程序
-
-如果外接程序允许用户选择提供程序（如 Microsoft 帐户、Google 或 Facebook），你需要使用本地第一个页面（见前一部分），为用户提供用于选择提供程序的 UI。用户的选择会触发登录 URL 的构建并重定向到该 URL。
-
-#### <a name="authorization-of-the-add-in-to-an-external-resource"></a>在外接程序中授权外部资源
-
-在现代网络中，Web 应用程序是安全主体（就像用户一样），拥有自己的标识以及对联机资源（如 Office 365、Google Plus、Facebook 或 LinkedIn）的权限。在部署前，需要先向资源提供程序注册应用程序。注册内容包括：
-
-- 应用程序访问用户资源所需的权限的列表。
-- 当应用访问服务时，资源服务应向其返回访问令牌的 URL。  
-
-如果用户在应用中调用访问资源服务中用户数据的函数，系统会先提示用户登录相应服务，再提示用户向应用授予访问用户资源所需的权限。然后，服务将登录窗口重定向到先前注册的 URL，并传递访问令牌。应用使用访问令牌访问用户资源。
-
-可以使用对话框 API 来管理此过程，具体方法是使用与用户登录流类似的流。只有下面两处不同：
-
-- 如果用户先前未向应用程序授予所需的权限，则登录后会在对话框中看到这样做的提示。
-- 对话框窗口使用 `messageParent` 发送字符串化访问令牌，或将访问令牌存储在主机窗口可以检索到的位置，从而将访问令牌发送给主机窗口。令牌具有时间限制，但在持续期间，主机窗口可以使用它直接访问用户资源，而无需进一步提示。
-
-下面的示例使用对话框 API 实现此目的：
-- [Insert Excel charts using Microsoft Graph in a PowerPoint add-in](https://github.com/OfficeDev/PowerPoint-Add-in-Microsoft-Graph-ASPNET-InsertChart)（在 PowerPoint 加载项中使用 Microsoft Graph 插入 Excel 图表） - 将访问令牌存储在数据库中。
-
-若要详细了解加载项中的身份验证和授权，请参阅：
-- [在 Office 加载项中授权外部服务](auth-external-add-ins.md)
-- [Office JavaScript API 帮助程序库](https://github.com/OfficeDev/office-js-helpers)
-
-
-## <a name="use-the-office-dialog-api-with-single-page-applications-and-client-side-routing"></a>将 Office Dialog API 与单页应用程序和客户端路由结合使用
-
-如果外接程序使用客户端路由（单页应用程序通常这样做），则可以选择将路由 URL 传递给 [ displayDialogAsync ](/javascript/api/office/office.ui) 方法，而不是传递各个完整 HTML 页面的 URL。
-
-> [!IMPORTANT]
->对话框位于有自己执行上下文的新窗口中。如果传递路由，基页面及其所有初始化和启动代码都会在这个新上下文中再次运行，且所有变量都会在对话框中设置为各自的初始值。所以，此技术会在对话框窗口中启动应用的第二个实例。更改对话框窗口中变量的代码不会更改任务窗格版本的相同变量。同样，对话框窗口有自己的会话存储，任务窗格中的代码无法访问此类存储。
+因此，如果将路由传递给 `displayDialogAsync` 方法，则你并非真正拥有 SPA；你拥有的是相同 SPA 的两个实例。 此外，任务窗格实例中的大部分代码将永远不会用于该实例中，并且对话框实例中的大部分代码也永远不会用于该实例中。 这相当于相同捆绑包中拥有两个 SPA。 如果想要在对话框中运行的代码非常复杂，则可能想要显式执行此操作；也就是说，在相同域的不同文件夹中包含两个 SPA。 但是在大多数情况下，对话框中只需要一个简单的逻辑。 在这种情况下，只需将嵌入式或引用的 JavaScript 的简单 HTML 页面托管到 SPA 域中即可显著简化你的项目。 将页面的 URL 传递给 `displayDialogAsync` 方法。 这可能意味着，你将偏移单页应用程序的本意；但正如上面所提到的，在使用对话框时，你并没有真正拥有单个 SPA 实例。

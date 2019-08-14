@@ -1,16 +1,16 @@
 ---
-title: 在 Office 加载项中对 Microsoft Graph 授权
+title: 使用 SSO 对 Microsoft Graph 授权
 description: ''
-ms.date: 03/19/2019
+ms.date: 08/09/2019
 localization_priority: Priority
-ms.openlocfilehash: 5c34e00a2083f3554480f5900929806e10576350
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: 98b1219c0fe5459c497a27b915d31108545f14ae
+ms.sourcegitcommit: 1dc1bb0befe06d19b587961da892434bd0512fb5
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32448805"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "36302558"
 ---
-# <a name="authorize-to-microsoft-graph-in-your-office-add-in-preview"></a>在 Office 加载项中对 Microsoft Graph 授权（预览）
+# <a name="authorize-to-microsoft-graph-with-sso-preview"></a>使用 SSO 对 Microsoft Graph 授权（预览版）
 
 用户可以使用自己的个人 Microsoft 帐户/工作或学校 (Office 365) 帐户，登录 Office（在线、移动和桌面平台）。 在 Office 加载项中获取对 [Microsoft Graph](https://developer.microsoft.com/graph/docs) 的访问权限的最佳方式是使用用户的 Office 登录凭据。 这使用户能够访问其 Microsoft Graph 数据，而无需再次登录。 
 

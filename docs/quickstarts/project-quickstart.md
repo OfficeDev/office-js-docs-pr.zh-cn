@@ -4,12 +4,12 @@ description: ''
 ms.date: 05/08/2019
 ms.prod: project
 localization_priority: Priority
-ms.openlocfilehash: ccc243b17b25dbdf4142e4a11086df78ef4a2670
-ms.sourcegitcommit: bb44c9694f88cde32ffbb642689130db44456964
+ms.openlocfilehash: 466c8354a047c8e36741711881ad1b0e2993ddaf
+ms.sourcegitcommit: 1dc1bb0befe06d19b587961da892434bd0512fb5
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/17/2019
-ms.locfileid: "35771735"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "36308006"
 ---
 # <a name="build-your-first-project-task-pane-add-in"></a>生成首个 Project 任务窗格加载项
 
@@ -23,6 +23,8 @@ ms.locfileid: "35771735"
 
 ## <a name="create-the-add-in"></a>创建加载项
 
+[!include[note about Yeoman generator bug](../includes/note-yeoman-generator-bug-201908.md)]
+
 使用 Yeoman 生成器创建 Project 加载项项目。 运行下面的命令，再回答如下所示的提示问题：
 
 ```command&nbsp;line
@@ -31,10 +33,8 @@ yo office
 
 - **选择项目类型:** `Office Add-in Task Pane project`
 - **选择脚本类型:** `Javascript`
-- **要如何命名加载项?** `My Office Add-in`
+- **要如何命名加载项?** `my-office-add-in`
 - **要支持哪一个 Office 客户端应用程序?** `Project`
-
-![有关 Yeoman 生成器提示和回答的屏幕截图](../images/yo-office-project.png)
 
 完成此向导后，生成器会创建项目，并安装支持的 Node 组件。
 
@@ -94,7 +94,7 @@ Office.context.document.getSelectedTaskAsync(
 1. 导航到项目的根文件夹。
 
     ```command&nbsp;line
-    cd "My Office Add-in"
+    cd "my-office-add-in"
     ```
 
 2. 启动本地 Web 服务器。

@@ -1,14 +1,14 @@
 ---
 title: 使用 Excel JavaScript API 对区域执行操作（高级）
 description: ''
-ms.date: 04/15/2019
+ms.date: 04/30/2019
 localization_priority: Normal
-ms.openlocfilehash: aacbe930e2cf3da4d10b61bfe8f34efe1094c113
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: c8fbe1dcc75080c932b4c3e2946fe62747d35c6b
+ms.sourcegitcommit: 1c7e555733ee6d5a08e444a3c4c16635d998e032
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32448405"
+ms.lasthandoff: 08/14/2019
+ms.locfileid: "36395594"
 ---
 # <a name="work-with-ranges-using-the-excel-javascript-api-advanced"></a>使用 Excel JavaScript API 对区域执行操作（高级）
 
@@ -62,17 +62,11 @@ Excel.run(function (context) {
 
 你的加载项将必须对范围进行格式化才能以更可读的形式显示日期。 `"[$-409]m/d/yy h:mm AM/PM;@"` 的示例显示类似“12/3/18 3:57 PM”的时间。 有关日期和时间数字格式的详细信息，请参阅[查看自定义数字格式的准则](https://support.office.com/article/review-guidelines-for-customizing-a-number-format-c0a1d1fa-d3f4-4018-96b7-9c9354dd99f5)一文中的“日期和时间格式的准则”。
 
-## <a name="work-with-multiple-ranges-simultaneously-preview"></a>同时处理多个区域（预览版）
-
-> [!NOTE]
-> 该`RangeAreas`对象当前仅适用于公共预览版。 [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
+## <a name="work-with-multiple-ranges-simultaneously"></a>同时处理多个区域
 
 `RangeAreas` 对象允许外接程序每次在多个区域上执行操作。 这些区域可能但不必是连续区域。 `RangeAreas` 将进一步在[同时在 Excel 加载项中处理多个区域](excel-add-ins-multiple-ranges.md)一文中进行讨论。
 
-## <a name="find-special-cells-within-a-range-preview"></a>查找区域内特殊单元格（预览）
-
-> [!NOTE]
-> `getSpecialCells`和`getSpecialCellsOrNullObject`方法目前仅适用于公共预览版。 [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
+## <a name="find-special-cells-within-a-range"></a>查找区域中的特殊单元格
 
 `Range.getSpecialCells()` 和 `Range.getSpecialCellsOrNullObject()` 方法根据单元格特征和值类型来查找区域。 这两种方法都返回 `RangeAreas` 对象。 以下是 TypeScript 数据类型文件中方法的签名：
 
@@ -178,10 +172,7 @@ Excel.run(function (context) {
 })
 ```
 
-## <a name="copy-and-paste-preview"></a>复制和粘贴（预览版）
-
-> [!NOTE]
-> `Range.copyFrom` 函数当前仅适用于公共预览版。 [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
+## <a name="copy-and-paste"></a>Copy and paste
 
 区域的 `copyFrom` 函数将复制 Excel UI 的“复制和粘贴”行为。 调用 `copyFrom` 的区域对象是目标。
 将要复制的源作为一个范围或一个表示范围的字符串地址进行传递。
@@ -190,7 +181,7 @@ Excel.run(function (context) {
 ```js
 Excel.run(function (context) {
     var sheet = context.workbook.worksheets.getItem("Sample");
-    // copy a range starting at a single cell destination
+    // copy everything from "A1:E1" into "G1" and the cells afterwards ("G1:K1")
     sheet.getRange("G1").copyFrom("A1:E1");
     return context.sync();
 }).catch(errorHandlerFunction);
@@ -242,10 +233,7 @@ Excel.run(function (context) {
 
 ![在区域中运行复制方法之后的 Excel 中的数据](../images/excel-range-copyfrom-skipblanks-after.png)
 
-## <a name="remove-duplicates-preview"></a>删除重复项（预览版）
-
-> [!NOTE]
-> 区域对象的 `removeDuplicates` 函数当前仅适用于公共预览版。 [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
+## <a name="remove-duplicates"></a>删除重复项
 
 区域对象的 `removeDuplicates` 函数将删除在指定列中具有重复条目的行。 该函数将从区域最低值索引到最高值索引（从上到下）遍历区域中的每一行。 如果指定列中的值之前显示在区域中，则会删除该行。 在区域内位于已删除行下方的行将上移。 `removeDuplicates` 不影响该区域外的单元格位置。
 
