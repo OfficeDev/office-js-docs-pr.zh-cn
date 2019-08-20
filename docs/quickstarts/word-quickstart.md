@@ -314,6 +314,5 @@ yo office
 ## <a name="see-also"></a>另请参阅
 
 * [Word 加载项概述](../word/word-add-ins-programming-overview.md)
-* 
-  [Word 加载项代码示例](https://developer.microsoft.com/zh-CN/office/gallery/?filterBy=Samples,Word)
+* [Word 加载项代码示例](https://developer.microsoft.com/zh-CN/office/gallery/?filterBy=Samples,Word)
 * [Word JavaScript API 参考](/office/dev/add-ins/reference/overview/word-add-ins-reference-overview)
