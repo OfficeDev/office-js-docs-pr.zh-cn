@@ -1,24 +1,26 @@
 ---
 title: 清单文件中的 Scopes 元素
 description: ''
-ms.date: 10/09/2018
+ms.date: 08/12/2019
 localization_priority: Normal
-ms.openlocfilehash: cdc9ebeb6fe4167a5ed5e9407f6ecc82d5b8d507
-ms.sourcegitcommit: bb44c9694f88cde32ffbb642689130db44456964
+ms.openlocfilehash: 1e36bdcd0cdcaa8c842e924c2543d56bdc4e26a7
+ms.sourcegitcommit: da8e6148f4bd9884ab9702db3033273a383d15f0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/17/2019
-ms.locfileid: "35771784"
+ms.lasthandoff: 08/20/2019
+ms.locfileid: "36477731"
 ---
 # <a name="scopes-element"></a>Scopes 元素
 
-包含加载项需要拥有的对 Microsoft Graph 的访问权限。 AppSource 使用 Scope 元素创建同意对话框。 当用户安装应用商店中的加载项时，系统会提示他们授予加载项对用户 Microsoft Graph 数据的指定访问权限。
+包含外接程序需要外部资源的权限, 如 Microsoft Graph。 当 Microsoft Graph 是资源时, AppSource 使用 Scope 元素创建同意对话框。 当用户安装应用商店中的加载项时，系统会提示他们授予加载项对用户 Microsoft Graph 数据的指定访问权限。
+
+**作用域**是清单中的[WebApplicationInfo](webapplicationinfo.md)和[授权](authorization.md)元素的子元素。
 
 ## <a name="child-elements"></a>子元素
 
-|  元素 |  类型  |  说明  |
+|  元素 |  必需  |  说明  |
 |:-----|:-----|:-----|
-|  **Scope**                |  string     |   Microsoft Graph 权限的名称，例如，Files.Read.All。 |
+|  **Scope**                |  是     |   权限的名称;例如, Files. All 或 profile。 |
 
 ## <a name="example"></a>示例
 

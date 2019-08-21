@@ -1,15 +1,15 @@
 ---
 title: Excel JavaScript 预览 API
 description: 有关即将推出的 Excel JavaScript Api 的详细信息
-ms.date: 08/06/2019
+ms.date: 08/15/2019
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: 4362a5e13e0031408236f34c718f0fcb3c4527e2
-ms.sourcegitcommit: 654ac1a0c477413662b48cffc0faee5cb65fc25f
+ms.openlocfilehash: c0b0a5757df2f5766f0e29b599e3e9b36dfd3983
+ms.sourcegitcommit: da8e6148f4bd9884ab9702db3033273a383d15f0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "36268731"
+ms.lasthandoff: 08/20/2019
+ms.locfileid: "36477904"
 ---
 # <a name="excel-javascript-preview-apis"></a>Excel JavaScript 预览 API
 
@@ -17,10 +17,7 @@ ms.locfileid: "36268731"
 
 第一个表提供了 API 的简明摘要，而后续表提供了详细列表。
 
-> [!NOTE]
-> 预览 API 可能会发生变更，不适合在生产环境中使用。 我们建议你仅在测试和开发环境中试用它们。 不要在生产环境或业务关键型文档中使用预览 API。
->
-> 若要使用预览 API，你必须引用 CDN 上的 **beta** 库（https://appsforoffice.microsoft.com/lib/beta/hosted/office.js)并且你可能还需要加入 Office 预览体验成员计划才能获得新的 Office 版本。
+[!INCLUDE [Information about using preview APIs](../../includes/using-preview-apis-host.md)]
 
 | 功能区域 | 说明 | 相关对象 |
 |:--- |:--- |:--- |

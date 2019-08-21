@@ -1,24 +1,21 @@
 ---
 title: Word JavaScript 预览 Api
 description: 有关即将推出的 Word JavaScript Api 的详细信息
-ms.date: 07/25/2019
+ms.date: 08/15/2019
 ms.prod: word
 localization_priority: Normal
-ms.openlocfilehash: 584b6ade9e4ae2d28b13eb717027361d85c4aa45
-ms.sourcegitcommit: 3f5d7f4794e3d3c8bc3a79fa05c54157613b9376
+ms.openlocfilehash: 1bc6cf2f4b8d8bf876d0b28ead9643f14c81fde1
+ms.sourcegitcommit: da8e6148f4bd9884ab9702db3033273a383d15f0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/02/2019
-ms.locfileid: "36064842"
+ms.lasthandoff: 08/20/2019
+ms.locfileid: "36477899"
 ---
 # <a name="word-javascript-preview-apis"></a>Word JavaScript 预览 Api
 
 新 Word JavaScript Api 是在 "预览" 中首次引入的, 并且在完成了充分的测试并获取了用户反馈之后, 它们将成为特定的编号要求集的一部分。
 
-> [!NOTE]
-> 预览 API 可能会发生变更，不适合在生产环境中使用。 我们建议你仅在测试和开发环境中试用它们。 不要在生产环境或业务关键型文档中使用预览 API。
->
-> 若要使用预览 API，你必须引用 CDN 上的 **beta** 库（https://appsforoffice.microsoft.com/lib/beta/hosted/office.js)并且你可能还需要加入 Office 预览体验成员计划才能获得新的 Office 版本。
+[!INCLUDE [Information about using preview APIs](../../includes/using-preview-apis-host.md)]
 
 ## <a name="api-list"></a>API 列表
 

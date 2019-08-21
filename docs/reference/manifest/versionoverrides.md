@@ -1,14 +1,14 @@
 ---
 title: 清单文件中的 VersionOverrides 元素
 description: ''
-ms.date: 01/29/2019
+ms.date: 08/12/2019
 localization_priority: Normal
-ms.openlocfilehash: 897c2203ef6ae84911b7f269ee8a2c88aec36bd0
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: ce65cdced1b3cf885cee09732c2cda0081a53cfc
+ms.sourcegitcommit: da8e6148f4bd9884ab9702db3033273a383d15f0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32452065"
+ms.lasthandoff: 08/20/2019
+ms.locfileid: "36477878"
 ---
 # <a name="versionoverrides-element"></a>VersionOverrides 元素
 
@@ -29,11 +29,13 @@ ms.locfileid: "32452065"
 |  元素 |  必需  |  说明  |
 |:-----|:-----|:-----|
 |  **说明**    |  否   |  描述外接程序。这会替代清单中任何父级部分中的 `Description` 元素。说明文本包含在 **Rescources** 元素中的 [LongString](./resources.md) 元素的子元素中。`resid` 元素的 **** 属性被设置为包含文本的 `id` 元素的 `String` 属性的值。|
+| **EquivalentAddins** | 否 | 指定与等效的 COM 外接程序、XLL 或这两者的向后兼容性。 |
 |  **Requirements**  |  否   |  指定外接程序要求的最低要求集和 Office.js 的版本。这会替代清单中父级部分中的 `Requirements` 元素。|
 |  [Hosts](./hosts.md)                |  是  |  指定 Office 主机的集合。子级 Hosts 元素替代清单中父级部分中的 Hosts 元素。  |
-|  [Resources](./resources.md)    |  是  | 定义其他清单元素引用一组的资源（字符串、URL 和图像）。|
+|  [Resources](./resources.md)    |  是  | 定义其他清单元素引用的资源集合（字符串、URL 和图像）。|
+|  [EquivalentAddins](./equivalentaddins.md)    |  否  | 指定与 web 外接程序等效的本机 (COM/XLL) 加载项。 如果安装了等效的本机加载项, 则不会激活 web 外接程序。|
 |  **VersionOverrides**    |  否  | 在新版架构下定义外接程序命令。有关详细信息，请参阅[实现多个版本](#implementing-multiple-versions)。 |
-|  **WebApplicationInfo**    |  否  | 指定加载项关联 Web 应用程序的详细信息。 |
+|  [WebApplicationInfo](./webapplicationinfo.md)    |  否  | 指定有关使用安全令牌颁发者 (如 Azure Active Directory v2.0) 的加载项注册的详细信息。 |
 
 ### <a name="versionoverrides-example"></a>VersionOverrides 示例
 

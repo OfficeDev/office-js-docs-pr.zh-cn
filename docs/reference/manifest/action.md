@@ -3,12 +3,12 @@ title: 清单文件中的 Action 元素
 description: ''
 ms.date: 06/20/2019
 localization_priority: Normal
-ms.openlocfilehash: 06b0e3aa9c25346135167ea8c34e69344ef9863d
-ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
+ms.openlocfilehash: db05538fdb3f655a61050e0eeafa0b5ceb0dfd18
+ms.sourcegitcommit: da8e6148f4bd9884ab9702db3033273a383d15f0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "35128522"
+ms.lasthandoff: 08/20/2019
+ms.locfileid: "36477934"
 ---
 # <a name="action-element"></a>Action 元素
 
@@ -104,35 +104,27 @@ ms.locfileid: "35128522"
 
  **xsi: type** 是“ShowTaskpane”时的可选元素。 指定此操作任务窗格的自定义标题。
 
-下面的示例展示了两个使用 **Title** 元素的不同操作。
+下面的示例演示使用**Title**元素的操作。 请注意, 您不会直接向字符串分配**标题**。 而是为其分配一个资源 ID (resid), 该 ID 在清单的 "**资源**" 部分中定义。
 
 ```xml
 <Action xsi:type="ShowTaskpane">
-<TaskpaneId>Office.AutoShowTaskpaneWithDocument</TaskpaneId>
-<SourceLocation resid="PG.Code.Url" />
-<Title resid="PG.CodeCommand.Title" />
+    <TaskpaneId>Office.AutoShowTaskpaneWithDocument</TaskpaneId>
+    <SourceLocation resid="PG.Code.Url" />
+    <Title resid="PG.CodeCommand.Title" />
 </Action>
-```
 
-```xml
-<Action xsi:type="ShowTaskpane">
-<SourceLocation resid="PG.Run.Url" />
-<Title resid="PG.RunCommand.Title" />
-</Action>
-```
-
-```xml
-<bt:Urls>
-<bt:Url id="PG.Code.Url" DefaultValue="https://localhost:3000?commands=1" />
-<bt:Url id="PG.Run.Url" DefaultValue="https://localhost:3000/run.html" />
-</bt:Urls>
-```
-
-```xml
-<bt:ShortStrings>
-<bt:String id="PG.CodeCommand.Title" DefaultValue="Code" />
-<bt:String id="PG.RunCommand.Title" DefaultValue="Run" />
-</bt:ShortStrings>
+ ... Other markup omitted ...
+<Resources>
+    <bt:Images> ...
+    </bt:Images>
+    <bt:Urls>
+        <bt:Url id="PG.Code.Url" DefaultValue="https://localhost:3000?commands=1" />
+    </bt:Urls>
+    <bt:ShortStrings>
+        <bt:String id="PG.CodeCommand.Title" DefaultValue="Code" />
+    </bt:ShortStrings>
+ ... Other markup omitted ...
+</Resources>
 ```
 
 ## <a name="supportspinning"></a>SupportsPinning

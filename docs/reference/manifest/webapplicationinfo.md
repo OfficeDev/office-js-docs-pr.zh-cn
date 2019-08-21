@@ -1,14 +1,14 @@
 ---
 title: 清单文件中的 WebApplicationInfo 元素
 description: ''
-ms.date: 03/19/2019
+ms.date: 08/12/2019
 localization_priority: Normal
-ms.openlocfilehash: bdd327f942009e255dd2515fb926d294212ecec8
-ms.sourcegitcommit: 3f84b2caa73d7fe1eb0d15e32ea4dec459e2ff53
+ms.openlocfilehash: e10aee1bf3fb99099d282acd428fa0348229701c
+ms.sourcegitcommit: da8e6148f4bd9884ab9702db3033273a383d15f0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/12/2019
-ms.locfileid: "34910315"
+ms.lasthandoff: 08/20/2019
+ms.locfileid: "36477864"
 ---
 # <a name="webapplicationinfo-element"></a>WebApplicationInfo 元素
 
@@ -27,11 +27,10 @@ ms.locfileid: "34910315"
 |  元素 |  必需  |  说明  |
 |:-----|:-----|:-----|
 |  **Id**    |  是   |  在 Azure Active Directory v2.0 终结点中注册的加载项关联服务的**应用程序 ID**。|
+|  **MsaId**    |  否   |  在 msm.live.com 中注册的用于 MSA 的外接程序 web 应用程序的客户端 ID。|
 |  **Resource**  |  是   |  指定在 Azure Active Directory v2.0 终结点中注册的加载项的**应用程序 ID URI**。|
-|  [Scopes](scopes.md)                |  否  |  指定加载项需要拥有的对 Microsoft Graph 的访问权限。  |
-
-> [!NOTE] 
-> 目前，加载项的 Resource 必须与其 Host 一致。 Office 不会请求获取加载项令牌，除非可以证明所有权。目前，这是通过在 Resource 的完全限定的域名下托管加载项来完成。
+|  [Scopes](scopes.md)                |  是  |  指定外接程序对资源所需的权限, 如 Microsoft Graph。  |
+|  [审核](authorizations.md)  |  否   | 指定加载项的 web 应用程序需要对其进行授权的外部资源以及所需的权限。|
 
 ## <a name="webapplicationinfo-example"></a>WebApplicationInfo 示例
 
@@ -47,8 +46,16 @@ ms.locfileid: "34910315"
         <Scope>Files.Read.All</Scope>
         <Scope>offline_access</Scope>
         <Scope>openid</Scope>
-        <Scope>profile</Scope>        
+        <Scope>profile</Scope>
       </Scopes>
+      <Authorizations>
+        <Authorization>
+          <Resource>https://api.contoso.com</Resource>
+            <Scopes>
+              <Scope>profile</Scope>
+          </Scopes>
+        </Authorization>
+      </Authorizations>
     </WebApplicationInfo>
   </VersionOverrides>
 ...
