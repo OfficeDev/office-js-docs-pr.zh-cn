@@ -1,14 +1,14 @@
 ---
 title: Office 加载项 XML 清单
 description: ''
-ms.date: 07/03/2019
+ms.date: 08/14/2019
 localization_priority: Priority
-ms.openlocfilehash: 0446147f7a2ca44853c3843f11c9375d020f14d0
-ms.sourcegitcommit: c3673cc693fa7070e1b397922bd735ba3f9342f3
+ms.openlocfilehash: da8e865a78b666d4790df854403604cc03d6a47a
+ms.sourcegitcommit: da8e6148f4bd9884ab9702db3033273a383d15f0
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/05/2019
-ms.locfileid: "35575574"
+ms.lasthandoff: 08/20/2019
+ms.locfileid: "36477913"
 ---
 # <a name="office-add-ins-xml-manifest"></a>Office 加载项 XML 清单
 
@@ -121,7 +121,10 @@ _\*Office 加载项清单架构版本 1.1 中新增_
 若要重写此（桌面版 Office）操作，请在清单文件的 [AppDomains](/office/dev/add-ins/reference/manifest/appdomains) 元素中指定的域列表中指定要在外接程序窗口中打开的每个域。 如果加载项尝试转至该列表的域中的 URL，则它将在 Office 网页版和桌面版中的任务窗口中打开。 如果它尝试转至列表之外的域中的 URL，则在桌面版 Office 中，该 URL 将在新的浏览器窗口中（外接程序窗格之外）打开。
 
 > [!NOTE]
-> 此操作仅适用于外接程序的根窗格。 如果外接程序页面中嵌入有 iframe，则可以将该 iframe 定向到任何 URL，不论它是否列在 **AppDomains** 中，即使在桌面版 Office 中也是如此。
+> 该行为有两个例外情况：
+> 
+> - 它仅适用于外接程序的根窗格。 如果外接程序页面中嵌入有 iframe，则可以将该 iframe 定向到任何 URL，不论它是否列在 **AppDomains** 中，即使在桌面版 Office 中也是如此。
+> - 使用 [displayDialogAsync](/javascript/api/office/office.ui?view=common-js#displaydialogasync-startaddress--options--callback-) API 打开对话框时，传递到方法的 URL 必须与外接程序位于相同的域，但是之后对话框可以定向到任意 URL，无论其是否列入 **AppDomains** 甚至桌面 Office 中。 
 
 以下 XML 清单示例在 **SourceLocation** 元素中指定的 `https://www.contoso.com` 域中托管其外接程序页面。 它还指定 **AppDomains** 元素列表内 [AppDomain](/office/dev/add-ins/reference/manifest/appdomain) 元素中的 `https://www.northwindtraders.com` 域。 如果外接程序转至 www.northwindtraders.com 域中的页面，则该页面将在外接程序窗格中打开，即使在 Office 桌面版中也是如此。
 

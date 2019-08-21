@@ -1,14 +1,14 @@
 ---
 title: 验证并排查清单问题
 description: 使用这些方法验证 Office 加载项清单。
-ms.date: 07/29/2019
+ms.date: 08/15/2019
 localization_priority: Priority
-ms.openlocfilehash: 70ebe8be4b669167d1ba230d9dcbf19cb2289efe
-ms.sourcegitcommit: cb5e1726849aff591f19b07391198a96d5749243
+ms.openlocfilehash: bf70aca68135073ed92d2e4d2c176b944836c7ad
+ms.sourcegitcommit: da8e6148f4bd9884ab9702db3033273a383d15f0
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "35940662"
+ms.lasthandoff: 08/20/2019
+ms.locfileid: "36477920"
 ---
 # <a name="validate-and-troubleshoot-issues-with-your-manifest"></a>验证并排查清单问题
 
@@ -27,17 +27,22 @@ npm run validate
 > [!NOTE]
 > 若要访问此功能，必须使用[适用于 Office 加载项的 Yeoman 生成器](https://www.npmjs.com/package/generator-office)版本 1.1.17 或更高版本创建加载项项目。
 
-## <a name="validate-your-manifest-with-office-toolbox"></a>使用 office-toolbox 验证清单
+## <a name="validate-your-manifest-with-office-addin-manifest"></a>使用 office-addin-manifest 验证清单
 
-如果你未使用[适用于 Office 加载项的 Yeoman 生成器](https://www.npmjs.com/package/generator-office)来创建加载项，则可以使用 [office-toolbox](https://www.npmjs.com/package/office-toolbox) 来验证清单。
+如果你未使用[适用于 Office 加载项的 Yeoman 生成器](https://www.npmjs.com/package/generator-office)来创建加载项，则可以使用 [office-addin-manifest](https://www.npmjs.com/package/office-addin-manifest)。
 
 1. 安装 [Node.js](https://nodejs.org/download/)。
 
 2. 在项目的根目录中运行以下命令。 将 `MANIFEST_FILE` 替换为清单文件的名称。
 
     ```command&nbsp;line
-    npx office-toolbox validate -m MANIFEST_FILE
+    npx office-addin-manifest validate MANIFEST_FILE
     ```
+
+    > [!NOTE]
+    > 如果运行此命令导致错误消息“命令语法无效。” （因为 `validate` 命令无法识别），运行以下命令验证清单（用清单文件的名称替换 `MANIFEST_FILE`）： 
+    > 
+    > `npx --ignore-existing office-addin-manifest validate MANIFEST_FILE`
 
 ## <a name="validate-your-manifest-against-the-xml-schema"></a>根据 XML 架构验证清单
 

@@ -1,14 +1,14 @@
 ---
 title: 指定 Office 主机和 API 要求
 description: ''
-ms.date: 07/18/2019
+ms.date: 08/14/2019
 localization_priority: Priority
-ms.openlocfilehash: 9699379d39e4c1a9f4e1380cf6360eaf027f05f0
-ms.sourcegitcommit: 6d9b4820a62a914c50cef13af8b80ce626034c26
+ms.openlocfilehash: bd70f33952b4306b906896b6f4c8e00e0d768265
+ms.sourcegitcommit: da8e6148f4bd9884ab9702db3033273a383d15f0
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "35804616"
+ms.lasthandoff: 08/20/2019
+ms.locfileid: "36477773"
 ---
 # <a name="specify-office-hosts-and-api-requirements"></a>指定 Office 主机和 API 要求
 
@@ -133,24 +133,24 @@ ms.locfileid: "35804616"
 
 - **Method** 元素指定在您的外接程序所运行 Office 主机中必须要支持的单个方法。 **Name** 属性为必需属性，并使用其父对象指定合格方法的名称。
 
-
 ## <a name="use-runtime-checks-in-your-javascript-code"></a>在你的 JavaScript 代码中使用运行时检查
-
 
 如果 Office 主机支持某些要求集，你可能想要在你的外接程序中提供其他功能。 例如，如果你的加载项在 Word 2016 中运行，则你可能想要在现有的加载项中使用 Word JavaScript API。 若要执行此操作，你可以使用含有要求集名称的 [isSetSupported](/javascript/api/office/office.requirementsetsupport#issetsupported-name--minversion-) 方法。 **isSetSupported** 确定在运行时运行外接程序的 Office 主机是否支持此要求集。 如果要求集受支持，则 **isSetSupported** 返回 **true** 并运行使用此要求集中 API 成员的其他代码。 如果 Office 主机不支持此要求集，则 **isSetSupported** 返回 **false** 且不会运行其他代码。 以下代码显示与 **isSetSupported** 结合使用的语法。
 
-
 ```js
-if (Office.context.requirements.isSetSupported(RequirementSetName, VersionNumber))
+if (Office.context.requirements.isSetSupported(RequirementSetName, MinimumVersion))
 {
    // Code that uses API members from RequirementSetName.
 }
 
 ```
 
--  _RequirementSetName_（必填）是代表该要求集名称的字符串。 有关可用要求集的详细信息，请参阅 [Office 加载项要求集](/office/dev/add-ins/reference/requirement-sets/office-add-in-requirement-sets)。
-    
--  _VersionNumber_（可选）是要求集的版本。
+- _RequirementSetName_（必填）是代表该要求集名称的字符串（例如，“**ExcelApi**”、“**Mailbox**”等）。 有关可用要求集的详细信息，请参阅 [Office 加载项要求集](/office/dev/add-ins/reference/requirement-sets/office-add-in-requirement-sets)。
+- _MinimumVersion_（可选）是指定要求集的最低版本的字符串，主机必须支持该版本以便运行 `if` 语句中的代码（例如“**1.9**”）。
+
+> [!WARNING]
+> 调用 **isSetSupported** 方法时，`MinimumVersion` 参数（如果指定）应为字符串。 这是因为 JavaScript 分析器无法区分数值，例如 1.1 和 1.10，因为它可以用于字符串值，例如“1.1”和“1.10”。
+> `number` 重载已弃用。
 
 使用包含与以下 Office 主机关联的 **RequirementSetName** 的 **isSetSupported**。
 
@@ -180,7 +180,6 @@ else
 }
 
 ```
-
 
 ## <a name="runtime-checks-using-methods-not-in-a-requirement-set"></a>使用不属于要求集的方法的运行时检查
 

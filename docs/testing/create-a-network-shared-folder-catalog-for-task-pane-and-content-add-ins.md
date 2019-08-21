@@ -1,21 +1,21 @@
 ---
 title: 旁加载 Office 加载项以供测试
 description: ''
-ms.date: 06/20/2019
+ms.date: 08/15/2019
 localization_priority: Priority
-ms.openlocfilehash: 81b931ab7bc88675ae438edf6d0d05ebb040387e
-ms.sourcegitcommit: c3673cc693fa7070e1b397922bd735ba3f9342f3
+ms.openlocfilehash: 19cd599ea743fc577a5139d3f278dd3f993ec5b1
+ms.sourcegitcommit: da8e6148f4bd9884ab9702db3033273a383d15f0
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/05/2019
-ms.locfileid: "35575686"
+ms.lasthandoff: 08/20/2019
+ms.locfileid: "36477927"
 ---
 # <a name="sideload-office-add-ins-for-testing"></a>旁加载 Office 加载项以供测试
 
 你可以安装 Office 外接程序以在 Windows 上运行的 Office 客户端中进行测试（通过使用共享文件夹，以将清单发布到网络文件共享）。
 
 > [!NOTE]
-> 如果你的加载项项目是使用[适合于 Office 加载项的 Yeoman 生成器](https://github.com/OfficeDev/generator-office)创建，则可以使用另一种方法来旁加载加载项，这可能对你有用。 有关详细信息，请参阅[使用旁加载命令旁加载 Office 加载项](sideload-office-addin-using-sideload-command.md)。
+> 如果你的外接程序项目是使用[外接程序的 Yeoman 生成器](https://github.com/OfficeDev/generator-office)的足够使用的版本，运行 `npm start` 时将自动在 Office 桌面客户端中旁加载外接程序。
 
 本文仅适用于在 Windows 上测试 Word、Excel、PowerPoint 和 Project 加载项。 如果要在其他平台上进行测试或要测试 Outlook 加载项，请参阅以下主题之一以旁加载你的加载项：
 
