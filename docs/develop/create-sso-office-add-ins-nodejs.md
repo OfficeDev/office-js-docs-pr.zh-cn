@@ -1,14 +1,14 @@
 ---
 title: 创建使用单一登录的 Node.js Office 加载项
 description: ''
-ms.date: 04/15/2019
+ms.date: 08/21/2019
 localization_priority: Priority
-ms.openlocfilehash: 2050f20139389ed1459cea7aba5e5e92858d00bc
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: a5f607ce582408307165e3bc03eeeaf48d3587e3
+ms.sourcegitcommit: 70c6dcecfa2ff7a0dd89987084dc1c8e36ee85fc
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32448618"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "36564593"
 ---
 # <a name="create-a-nodejs-office-add-in-that-uses-single-sign-on-preview"></a>创建使用单一登录的 Node.js Office 加载项（预览）
 
@@ -38,8 +38,9 @@ ms.locfileid: "32448618"
     > * **Before** 文件夹是初学者项目。未直接连接到 SSO 或授权的外接程序的 UI 和其他方面已经完成。本文后续章节将引导你完成此过程。
     > * 如果完成了本文中的过程，该示例的**已完成**版本会与所生成的外接程序类似，只不过完成的项目具有对本文文本冗余的代码注释。若要使用已完成的版本，请按照本文中的说明进行操作即可，但需要将“Before”替换为“Completed”，并跳过**编写客户端代码**和**编写服务器端代码**部分。
     > * “已完成的多租户”**** 版本是支持多租户的已完成示例。 如果要使用 SSO 从不同域支持 Microsoft 帐户，则浏览此示例。
-    >
-    > _不论使用何种版本，都需要信任本地主机的证书。请参阅存储库自述文件中的“重要”说明。_
+
+    > [!IMPORTANT]
+    > 无论使用哪个版本，都需要信任 localhost 的证书。 按照[安装自签名证书](https://github.com/OfficeDev/generator-office/blob/master/src/docs/ssl.md)的说明操作，但此存储库中每个版本的 `certs` 文件夹位于 `/src` 文件夹中，而不是根文件夹中。
 
 1. 在“Before”**** 文件夹中打开 Git bash 控制台。
 
