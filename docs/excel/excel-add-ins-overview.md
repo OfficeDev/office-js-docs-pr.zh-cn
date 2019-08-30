@@ -2,13 +2,15 @@
 title: Excel 加载项概述
 description: ''
 ms.date: 07/05/2019
+ms.topic: overview
+scenarios: getting-started
 localization_priority: Priority
-ms.openlocfilehash: fbb0f69e7c32776fdd0bce6e5c10f39c562a5cbe
-ms.sourcegitcommit: c3673cc693fa7070e1b397922bd735ba3f9342f3
+ms.openlocfilehash: 9e5094984546a5e5b61ea658835dd71f2bd908f7
+ms.sourcegitcommit: 49af31060aa56c1e1ec1e08682914d3cbefc3f1c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/05/2019
-ms.locfileid: "35575567"
+ms.lasthandoff: 08/29/2019
+ms.locfileid: "36672766"
 ---
 # <a name="excel-add-ins-overview"></a>Excel 加载项概述
 

@@ -2,13 +2,15 @@
 title: Office 加载项平台概述 | Microsoft Docs
 description: 使用熟悉的 Web 技术，例如 HTML、CSS 和 JavaScript 来扩展 Word、Excel、PowerPoint、OneNote、Project 和 Outlook，并与其进行交互。
 ms.date: 07/05/2019
+ms.topic: overview
+scenarios: getting-started
 localization_priority: Priority
-ms.openlocfilehash: afe9b819cc7834729e0653463c4bd22a36157460
-ms.sourcegitcommit: 9c5a836d4464e49846c9795bf44cfe23e9fc8fbe
+ms.openlocfilehash: 9ed898db70eb86f32efd2acc9bcf98b6bdbc5b4b
+ms.sourcegitcommit: 49af31060aa56c1e1ec1e08682914d3cbefc3f1c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "35617063"
+ms.lasthandoff: 08/29/2019
+ms.locfileid: "36672815"
 ---
 # <a name="office-add-ins-platform-overview"></a>Office 加载项平台概述
 

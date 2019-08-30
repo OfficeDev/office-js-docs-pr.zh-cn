@@ -3,13 +3,15 @@ title: Visio JavaScript API 概述
 description: ''
 ms.date: 06/20/2019
 ms.prod: visio
+ms.topic: overview
+scenarios: getting-started
 localization_priority: Priority
-ms.openlocfilehash: 77a3b3f0b4535d366f492f265087bb4f5988c14f
-ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
+ms.openlocfilehash: 785b53bd95a34c684b58990236a051aea316c93a
+ms.sourcegitcommit: 49af31060aa56c1e1ec1e08682914d3cbefc3f1c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "35127112"
+ms.lasthandoff: 08/29/2019
+ms.locfileid: "36672857"
 ---
 # <a name="visio-javascript-api-overview"></a>Visio JavaScript API 概述
 

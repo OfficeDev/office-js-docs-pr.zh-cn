@@ -2,13 +2,15 @@
 title: Word 加载项概述
 description: ''
 ms.date: 07/05/2019
+ms.topic: overview
+scenarios: getting-started
 localization_priority: Priority
-ms.openlocfilehash: 82983ee372ff24b089b975023e8d851fdaf3e795
-ms.sourcegitcommit: c3673cc693fa7070e1b397922bd735ba3f9342f3
+ms.openlocfilehash: 382bd7a10a6258c84c00d6d93ee1024016640b84
+ms.sourcegitcommit: 49af31060aa56c1e1ec1e08682914d3cbefc3f1c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/05/2019
-ms.locfileid: "35575581"
+ms.lasthandoff: 08/29/2019
+ms.locfileid: "36672850"
 ---
 # <a name="word-add-ins-overview"></a>Word 加载项概述
 
