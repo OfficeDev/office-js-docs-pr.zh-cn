@@ -3,14 +3,13 @@ title: Word 加载项教程
 description: 本教程将介绍如何生成 Word 加载项，用于插入（和替换）文本区域、段落、图像、HTML、表格和内容控件。 此外，还将介绍如何设置文本格式，以及如何插入（和替换）内容控件中的内容。
 ms.date: 07/17/2019
 ms.prod: word
-ms.topic: tutorial
 localization_priority: Normal
-ms.openlocfilehash: ff57f9b46fbdc50b39890598c78f8d0f194e8a89
-ms.sourcegitcommit: 6d9b4820a62a914c50cef13af8b80ce626034c26
+ms.openlocfilehash: b689dc8993ad61045dac54c1024b3fbd1e1a19ad
+ms.sourcegitcommit: 49af31060aa56c1e1ec1e08682914d3cbefc3f1c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "35804651"
+ms.lasthandoff: 08/29/2019
+ms.locfileid: "36672864"
 ---
 # <a name="tutorial-create-a-word-task-pane-add-in"></a>教程：创建 Word 任务窗格加载项
 

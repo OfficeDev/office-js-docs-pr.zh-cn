@@ -3,14 +3,13 @@ title: Excel 加载项教程
 description: 在本教程中，你将学习如何构建一个 Excel 外接程序，用于创建、填充、筛选和排序表格、创建图表、冻结表格标题、保护工作表并打开对话框。
 ms.date: 07/17/2019
 ms.prod: excel
-ms.topic: tutorial
 localization_priority: Normal
-ms.openlocfilehash: a445b916eacf8ab711bcbb712197bf995b41baa8
-ms.sourcegitcommit: 6d9b4820a62a914c50cef13af8b80ce626034c26
+ms.openlocfilehash: 43bd629a27f09c8923ca0ca56aece5faf55cd28f
+ms.sourcegitcommit: 49af31060aa56c1e1ec1e08682914d3cbefc3f1c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "35804658"
+ms.lasthandoff: 08/29/2019
+ms.locfileid: "36672878"
 ---
 # <a name="tutorial-create-an-excel-task-pane-add-in"></a>教程：创建 Excel 任务窗格加载项
 

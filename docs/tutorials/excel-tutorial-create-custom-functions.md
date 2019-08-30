@@ -3,14 +3,13 @@ title: Excel 自定义函数教程
 description: 在本教程中，你将创建一个 Excel 外接程序，其中包含可执行计算、请求 Web 数据或流 Web 数据的自定义函数。
 ms.date: 07/09/2019
 ms.prod: excel
-ms.topic: tutorial
 localization_priority: Normal
-ms.openlocfilehash: c7417c284beef787e35850ecbbb93b25ea5e1e87
-ms.sourcegitcommit: 1dc1bb0befe06d19b587961da892434bd0512fb5
+ms.openlocfilehash: 2832df467f7e155ed026fe7f04837f18a4d2309d
+ms.sourcegitcommit: 49af31060aa56c1e1ec1e08682914d3cbefc3f1c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "36302607"
+ms.lasthandoff: 08/29/2019
+ms.locfileid: "36672871"
 ---
 # <a name="tutorial-create-custom-functions-in-excel"></a>教程：在 Excel 中创建自定义函数
 
