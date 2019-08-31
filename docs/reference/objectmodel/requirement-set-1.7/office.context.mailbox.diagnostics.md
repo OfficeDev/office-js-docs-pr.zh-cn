@@ -3,12 +3,12 @@ title: "\"Context.subname\": \"邮箱\"。诊断-要求集1。7"
 description: ''
 ms.date: 08/08/2019
 localization_priority: Normal
-ms.openlocfilehash: 65fcaf2d7d04f56703ea6138d2d7820a34e5821c
-ms.sourcegitcommit: 654ac1a0c477413662b48cffc0faee5cb65fc25f
+ms.openlocfilehash: 3f17f21bd4fcf48496ba7f387a57752256d4a038
+ms.sourcegitcommit: 1fb99b1b4e63868a0e81a928c69a34c42bf7e209
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "36268318"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "36695964"
 ---
 # <a name="diagnostics"></a>diagnostics
 
@@ -55,6 +55,8 @@ ms.locfileid: "36268318"
 |[最低权限级别](/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
 |[适用的 Outlook 模式](/outlook/add-ins/#extension-points)| 撰写或阅读|
 
+<br>
+
 ---
 ---
 
@@ -75,6 +77,8 @@ ms.locfileid: "36268318"
 |[最低版本的邮箱要求集](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
 |[最低权限级别](/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
 |[适用的 Outlook 模式](/outlook/add-ins/#extension-points)| 撰写或阅读|
+
+<br>
 
 ---
 ---

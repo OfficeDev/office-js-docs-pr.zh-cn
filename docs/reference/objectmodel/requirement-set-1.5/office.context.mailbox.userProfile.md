@@ -1,20 +1,20 @@
 ---
-title: "\"context.subname\": \"邮箱. userProfile-要求集 1.5\""
+title: "\"Context.subname\": \"邮箱. userProfile-要求集 1.5\""
 description: ''
-ms.date: 03/19/2019
+ms.date: 04/24/2019
 localization_priority: Normal
-ms.openlocfilehash: fc20497cc8df8d091ba0195f7dca9b283ff4d1c2
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: 993fad674fcc616483ac927619e7ca64d81b7326
+ms.sourcegitcommit: 1fb99b1b4e63868a0e81a928c69a34c42bf7e209
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32451820"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "36696090"
 ---
 # <a name="userprofile"></a>userProfile
 
 ### <a name="officeofficemdcontextofficecontextmdmailboxofficecontextmailboxmduserprofile"></a>[Office](Office.md)[.context](Office.context.md)[.mailbox](Office.context.mailbox.md).userProfile
 
-##### <a name="requirements"></a>Requirements
+##### <a name="requirements"></a>要求
 
 |要求| 值|
 |---|---|
@@ -30,9 +30,9 @@ ms.locfileid: "32451820"
 | [emailAddress](#emailaddress-string) | Member |
 | [timeZone](#timezone-string) | Member |
 
-### <a name="members"></a>成员
+### <a name="members"></a>Members
 
-####  <a name="displayname-string"></a>displayName :String
+#### <a name="displayname-string"></a>displayName: String
 
 获取用户的显示名称。
 
@@ -50,12 +50,17 @@ ms.locfileid: "32451820"
 
 ##### <a name="example"></a>示例
 
-```javascript
+```js
 // Example: Allie Bellew
 console.log(Office.context.mailbox.userProfile.displayName);
 ```
 
-####  <a name="emailaddress-string"></a>emailAddress :String
+<br>
+
+---
+---
+
+#### <a name="emailaddress-string"></a>emailAddress: String
 
 获取用户的 SMTP 电子邮件地址。
 
@@ -73,12 +78,17 @@ console.log(Office.context.mailbox.userProfile.displayName);
 
 ##### <a name="example"></a>示例
 
-```javascript
+```js
 // Example: allieb@contoso.com
 console.log(Office.context.mailbox.userProfile.emailAddress);
 ```
 
-####  <a name="timezone-string"></a>timeZone :String
+<br>
+
+---
+---
+
+#### <a name="timezone-string"></a>时区: 字符串
 
 获取用户的默认时区。
 
@@ -96,7 +106,7 @@ console.log(Office.context.mailbox.userProfile.emailAddress);
 
 ##### <a name="example"></a>示例
 
-```javascript
+```js
 // Example: Pacific Standard Time
 console.log(Office.context.mailbox.userProfile.timeZone);
 ```

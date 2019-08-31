@@ -3,12 +3,12 @@ title: "\"Context.subname\": \"邮箱. userProfile-要求集 1.3\""
 description: ''
 ms.date: 08/08/2019
 localization_priority: Normal
-ms.openlocfilehash: 8924d8b0dfa5bb43be8867cbd0e83ee01ff788cb
-ms.sourcegitcommit: 654ac1a0c477413662b48cffc0faee5cb65fc25f
+ms.openlocfilehash: 20393d0ac650de34054b912d9e53a9ac167fddb2
+ms.sourcegitcommit: 1fb99b1b4e63868a0e81a928c69a34c42bf7e209
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "36268388"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "36696251"
 ---
 # <a name="userprofile"></a>userProfile
 
@@ -50,10 +50,15 @@ ms.locfileid: "36268388"
 
 ##### <a name="example"></a>示例
 
-```javascript
+```js
 // Example: Allie Bellew
 console.log(Office.context.mailbox.userProfile.displayName);
 ```
+
+<br>
+
+---
+---
 
 #### <a name="emailaddress-string"></a>emailAddress: String
 
@@ -73,10 +78,15 @@ console.log(Office.context.mailbox.userProfile.displayName);
 
 ##### <a name="example"></a>示例
 
-```javascript
+```js
 // Example: allieb@contoso.com
 console.log(Office.context.mailbox.userProfile.emailAddress);
 ```
+
+<br>
+
+---
+---
 
 #### <a name="timezone-string"></a>时区: 字符串
 
@@ -96,7 +106,7 @@ console.log(Office.context.mailbox.userProfile.emailAddress);
 
 ##### <a name="example"></a>示例
 
-```javascript
+```js
 // Example: Pacific Standard Time
 console.log(Office.context.mailbox.userProfile.timeZone);
 ```

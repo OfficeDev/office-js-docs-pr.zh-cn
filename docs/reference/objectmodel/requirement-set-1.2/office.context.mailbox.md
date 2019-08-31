@@ -1,14 +1,14 @@
 ---
 title: "\"Context.subname\"-\"邮箱-要求集 1.2\""
 description: ''
-ms.date: 08/08/2019
+ms.date: 08/30/2019
 localization_priority: Normal
-ms.openlocfilehash: 7e5bbe4e5769cf92de8073d439c3d3472b5c3899
-ms.sourcegitcommit: 654ac1a0c477413662b48cffc0faee5cb65fc25f
+ms.openlocfilehash: 2002b7784d0d7295762d1f692e7a0115f1f97059
+ms.sourcegitcommit: 1fb99b1b4e63868a0e81a928c69a34c42bf7e209
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "36268416"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "36696342"
 ---
 # <a name="mailbox"></a>邮箱
 
@@ -97,6 +97,11 @@ ms.locfileid: "36268416"
 
 类型：[LocalClientTime](/javascript/api/outlook/office.LocalClientTime?view=outlook-js-1.2)
 
+<br>
+
+---
+---
+
 #### <a name="converttoutcclienttimeinput--date"></a>convertToUtcClientTime(input) → {Date}
 
 从包含时间信息的字典中获取 Date 对象。
@@ -121,15 +126,34 @@ ms.locfileid: "36268416"
 
 包含以 UTC 表示的时间的 Date 对象。
 
-<dl class="param-type">
+类型: Date
 
-<dt>
-类型</dt>
+##### <a name="example"></a>示例
 
+```js
+// Represents 3:37 PM PDT on Monday, August 26, 2019.
+var input = {
+  date: 26,
+  hours: 15,
+  milliseconds: 2,
+  minutes: 37,
+  month: 7,
+  seconds: 2,
+  timezoneOffset: -420,
+  year: 2019
+};
 
-<dd>日期</dd>
+// result should be a Date object.
+var result = Office.context.mailbox.convertToUtcClientTime(input);
 
-</dl>
+// Output should be "2019-08-26T22:37:02.002Z".
+console.log(result.toISOString());
+```
+
+<br>
+
+---
+---
 
 #### <a name="displayappointmentformitemid"></a>displayAppointmentForm(itemId)
 
@@ -162,9 +186,14 @@ ms.locfileid: "36268416"
 
 ##### <a name="example"></a>示例
 
-```javascript
+```js
 Office.context.mailbox.displayAppointmentForm(appointmentId);
 ```
+
+<br>
+
+---
+---
 
 #### <a name="displaymessageformitemid"></a>displayMessageForm(itemId)
 
@@ -197,9 +226,14 @@ Office.context.mailbox.displayAppointmentForm(appointmentId);
 
 ##### <a name="example"></a>示例
 
-```javascript
+```js
 Office.context.mailbox.displayMessageForm(messageId);
 ```
+
+<br>
+
+---
+---
 
 #### <a name="displaynewappointmentformparameters"></a>displayNewAppointmentForm(parameters)
 
@@ -240,7 +274,7 @@ Office.context.mailbox.displayMessageForm(messageId);
 
 ##### <a name="example"></a>示例
 
-```javascript
+```js
 var start = new Date();
 var end = new Date();
 end.setHours(start.getHours() + 1);
@@ -257,6 +291,11 @@ Office.context.mailbox.displayNewAppointmentForm(
     body: 'Hello World!'
   });
 ```
+
+<br>
+
+---
+---
 
 #### <a name="getcallbacktokenasynccallback-usercontext"></a>getCallbackTokenAsync(callback, [userContext])
 
@@ -293,7 +332,7 @@ Office.context.mailbox.displayNewAppointmentForm(
 
 ##### <a name="example"></a>示例
 
-```javascript
+```js
 function getCallbackToken() {
   Office.context.mailbox.getCallbackTokenAsync(cb);
 }
@@ -302,6 +341,11 @@ function cb(asyncResult) {
   var token = asyncResult.value;
 }
 ```
+
+<br>
+
+---
+---
 
 #### <a name="getuseridentitytokenasynccallback-usercontext"></a>getUserIdentityTokenAsync(callback, [userContext])
 
@@ -334,7 +378,7 @@ function cb(asyncResult) {
 
 ##### <a name="example"></a>示例
 
-```javascript
+```js
 function getIdentityToken() {
   Office.context.mailbox.getUserIdentityTokenAsync(cb);
 }
@@ -343,6 +387,11 @@ function cb(asyncResult) {
   var token = asyncResult.value;
 }
 ```
+
+<br>
+
+---
+---
 
 #### <a name="makeewsrequestasyncdata-callback-usercontext"></a>makeEwsRequestAsync(data, callback, [userContext])
 
@@ -400,7 +449,7 @@ XML 请求必须指定 UTF-8 编码。
 
 下面的示例调用 `makeEwsRequestAsync` 以使用 `GetItem` 操作来获取项目的主题。
 
-```javascript
+```js
 function getSubjectRequest(id) {
   // Return a GetItem operation request for the subject of the specified item.
   var request =

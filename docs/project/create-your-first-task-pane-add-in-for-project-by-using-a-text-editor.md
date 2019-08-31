@@ -3,16 +3,16 @@ title: 使用文本编辑器为 Microsoft Project 创建首个任务窗格加载
 description: ''
 ms.date: 03/19/2019
 localization_priority: Normal
-ms.openlocfilehash: 84e08c1851312f6ecca6d7c779d0b594666922b4
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: 8c6a961881ca80bc61c75c78405d9f80f8a9420b
+ms.sourcegitcommit: 1fb99b1b4e63868a0e81a928c69a34c42bf7e209
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32450987"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "36695768"
 ---
 # <a name="create-your-first-task-pane-add-in-for-microsoft-project-by-using-a-text-editor"></a>使用文本编辑器为 Microsoft Project 创建首个任务窗格加载项
 
-您可以使用 Office 外接程序的 Yeoman 生成器, 为 project Standard 2013、project Professional 2013 或更高版本创建任务窗格外接程序。本文介绍如何创建一个简单的外接程序, 该外接程序使用指向文件共享上的 HTML 文件的 XML 清单。 Project OM Test 示例加载项用于测试一些 JavaScript 功能，这些功能为加载项使用对象模型。使用 Project 中的“信任中心”**** 注册包含清单文件的文件共享后，你可以从功能区上的“Project”**** 选项卡打开任务窗格加载项。 （本文中的示例代码基于 Microsoft Corporation 的 Arvind lyer 所做的测试应用程序。）
+您可以使用 Office 外接程序的 Yeoman 生成器, 为 Project Standard 2013、Project Professional 2013 或更高版本创建任务窗格外接程序。本文介绍如何创建一个简单的外接程序, 该外接程序使用指向文件共享上的 HTML 文件的 XML 清单。 Project OM Test 示例加载项用于测试一些 JavaScript 功能，这些功能为加载项使用对象模型。使用 Project 中的“信任中心”**** 注册包含清单文件的文件共享后，你可以从功能区上的“Project”**** 选项卡打开任务窗格加载项。 （本文中的示例代码基于 Microsoft Corporation 的 Arvind lyer 所做的测试应用程序。）
 
 Project 与其他 Microsoft Office 客户端使用相同的加载项清单架构以及许多相同的 JavaScript API。 Project 2013 SDK 下载的 `Samples\Apps` 子目录中提供了本文所述的加载项的完整代码。
 
@@ -109,7 +109,7 @@ JSOMCall.html 示例使用 office.js 文件和 project-15.js 文件中包含的 
 
    **\_projDoc** 变量是使用 **ProjectDocument** 对象进行初始化。代码包含一些简单的错误处理函数，以及获取应用上下文和项目文档上下文属性的 **getContextValues** 函数。若要详细了解 Project 的 JavaScript 对象模型，请参阅[适用于 Office 的 JavaScript API](/office/dev/add-ins/reference/javascript-api-for-office)。
 
-    ```javascript
+    ```js
     /*
     * JavaScript functions for the Project OM Test example app
     * in the Project 2013 SDK.
@@ -193,7 +193,7 @@ JSOMCall.html 示例使用 office.js 文件和 project-15.js 文件中包含的 
 
    以下代码的每个函数中都包含由 `function (asyncResult)` 指定的匿名函数，该函数是获取异步结果的回叫。你可以使用命名函数，而不是匿名函数，前者有助于实现复杂外接程序的可维护性。
 
-    ```javascript
+    ```js
     // Get the data in the selected cells of the grid in the active view.
     function getSelectedDataAsync() {
         _projDoc.getSelectedDataAsync(
@@ -550,7 +550,7 @@ JSOMCall.html 示例使用 office.js 文件和 project-15.js 文件中包含的 
 
    **manageTaskEventHandler**、**manageResourceEventHandler** 和 **manageViewEventHandler** 函数可以添加或删除 _docMethod_ 参数指定的事件处理程序。
 
-    ```javascript
+    ```js
     // Task selection changed event handler.
     function onTaskSelectionChanged(eventArgs) {
         text.value = "In task selection change event handler";
@@ -904,7 +904,7 @@ Project 2013 SDK 下载包含 JSOMCall.html 文件、JSOM_Sample.js 文件和相
 
 对于简单示例，下列代码中的错误输出包括 **actionMessage** 变量，该变量指定为避免 **getSelectedResourceAsync** 函数出错而执行的操作。
 
-```javascript
+```js
 function logError(errorText) {
     text.value = "Error in " + errorText;
 }
@@ -935,7 +935,7 @@ Project 2013 SDK 下载中的 **HelloProject_OData** 示例包含使用 JQuery �
 
 SurfaceErrors.js 文件中的以下代码包括创建 **Toast** 对象的 **throwError** 函数。
 
-```javascript
+```js
 /*
  * Show error messages in a "toast" notification.
  */
@@ -1072,7 +1072,7 @@ var Toast = {
 
 <br/>
 
-```javascript
+```js
 function logMethodError(methodName, errorName, errorMessage, actionMessage) {
     logError(methodName + " method.\nError name: " + errorName
         + "\nMessage: " + errorMessage

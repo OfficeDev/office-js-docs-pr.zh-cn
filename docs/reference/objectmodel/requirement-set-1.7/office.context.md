@@ -3,12 +3,12 @@ title: Office。上下文要求集1。7
 description: ''
 ms.date: 06/25/2019
 localization_priority: Normal
-ms.openlocfilehash: b7845450f81d85ca561088a1c944955228c502c3
-ms.sourcegitcommit: 3f5d7f4794e3d3c8bc3a79fa05c54157613b9376
+ms.openlocfilehash: f930864c5d68de43da991b4004d75a0038135080
+ms.sourcegitcommit: 1fb99b1b4e63868a0e81a928c69a34c42bf7e209
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/02/2019
-ms.locfileid: "36064471"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "36695838"
 ---
 # <a name="context"></a>context
 
@@ -55,7 +55,7 @@ Office.context 命名空间提供所有 Office 应用中的加载项所使用的
 
 ##### <a name="example"></a>示例
 
-```javascript
+```js
 function sayHelloWithDisplayLanguage() {
   var myDisplayLanguage = Office.context.displayLanguage;
   switch (myDisplayLanguage) {
@@ -73,6 +73,8 @@ function write(message){
   document.getElementById('message').innerText += message;
 }
 ```
+
+<br>
 
 ---
 ---

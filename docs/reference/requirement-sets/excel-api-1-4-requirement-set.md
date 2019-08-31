@@ -4,12 +4,12 @@ description: 有关 ExcelApi 1.4 要求集的详细信息
 ms.date: 07/26/2019
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: 8dd672dc8ff30a47f7858934d995d809070eb3cf
-ms.sourcegitcommit: 3f5d7f4794e3d3c8bc3a79fa05c54157613b9376
+ms.openlocfilehash: b0f74d4de5ec867e21e4bec1cd9ab1983a87bab1
+ms.sourcegitcommit: 1fb99b1b4e63868a0e81a928c69a34c42bf7e209
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/02/2019
-ms.locfileid: "36064737"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "36695831"
 ---
 # <a name="whats-new-in-excel-javascript-api-14"></a>Excel JavaScript API 1.4 的最近更新
 
@@ -42,7 +42,7 @@ Api 包括`getItem()`通过键获取设置条目并`add()`将指定的键: value
 * `range.getColumnsAfter(count: number)` 和 `range.getColumnsBefore(count: number)` 分别用于获取当前 Range 对象的右/左侧的一定数量的列。
 * [Get item 或 null 对象函数](../../excel/excel-add-ins-advanced-concepts.md#ornullobject-methods): 此功能允许使用键获取对象。 如果该对象不存在, 则返回的对象的`isNullObject`属性将为 true。 这样, 开发人员就可以检查某个对象是否存在, 而无需通过异常处理处理它。 此`*OrNullObject`方法可用于大多数集合对象。
 
-```javascript
+```js
 worksheet.getItemOrNullObject("itemName")
 ```
 

@@ -1,14 +1,14 @@
 ---
 title: "\"Context\"-\"邮箱-预览要求集\""
 description: ''
-ms.date: 08/06/2019
+ms.date: 08/30/2019
 localization_priority: Normal
-ms.openlocfilehash: 8f7345532e3c65f9945f424520c37f707634bf3b
-ms.sourcegitcommit: 654ac1a0c477413662b48cffc0faee5cb65fc25f
+ms.openlocfilehash: 951bb4ff338507f369f23e7c095debdb6e7a945e
+ms.sourcegitcommit: 1fb99b1b4e63868a0e81a928c69a34c42bf7e209
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "36268717"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "36696475"
 ---
 # <a name="mailbox"></a>邮箱
 
@@ -81,6 +81,8 @@ ms.locfileid: "36268717"
 |[最低权限级别](/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
 |[适用的 Outlook 模式](/outlook/add-ins/#extension-points)| 撰写或阅读|
 
+<br>
+
 ---
 ---
 
@@ -107,7 +109,7 @@ ms.locfileid: "36268717"
 
 本示例获取此邮箱的类别主列表。
 
-```javascript
+```js
 Office.context.mailbox.masterCategories.getAsync(function (asyncResult) {
   if (asyncResult.status === Office.AsyncResultStatus.Failed) {
     console.log("Action failed with error: " + asyncResult.error.message);
@@ -116,6 +118,8 @@ Office.context.mailbox.masterCategories.getAsync(function (asyncResult) {
   }
 });
 ```
+
+<br>
 
 ---
 ---
@@ -170,7 +174,7 @@ Office.context.mailbox.masterCategories.getAsync(function (asyncResult) {
 
 ##### <a name="example"></a>示例
 
-```javascript
+```js
 Office.initialize = function (reason) {
   $(document).ready(function () {
     Office.context.mailbox.addHandlerAsync(Office.EventType.ItemChanged, loadNewItem, function (result) {
@@ -186,6 +190,8 @@ function loadNewItem(eventArgs) {
   loadProps(Office.context.mailbox.item);
 }
 ```
+
+<br>
 
 ---
 ---
@@ -220,13 +226,15 @@ function loadNewItem(eventArgs) {
 
 ##### <a name="example"></a>示例
 
-```javascript
+```js
 // Get an item's ID from a REST API.
 var restId = 'AAMkAGVlOTZjNTM3LW...';
 
 // Treat restId as coming from the v2.0 version of the Outlook Mail API.
 var ewsId = Office.context.mailbox.convertToEwsId(restId, Office.MailboxEnums.RestVersion.v2_0);
 ```
+
+<br>
 
 ---
 ---
@@ -256,6 +264,8 @@ var ewsId = Office.context.mailbox.convertToEwsId(restId, Office.MailboxEnums.Re
 ##### <a name="returns"></a>返回：
 
 类型：[LocalClientTime](/javascript/api/outlook/office.LocalClientTime)
+
+<br>
 
 ---
 ---
@@ -290,13 +300,15 @@ var ewsId = Office.context.mailbox.convertToEwsId(restId, Office.MailboxEnums.Re
 
 ##### <a name="example"></a>示例
 
-```javascript
+```js
 // Get the currently selected item's ID.
 var ewsId = Office.context.mailbox.item.itemId;
 
 // Convert to a REST ID for the v2.0 version of the Outlook Mail API.
 var restId = Office.context.mailbox.convertToRestId(ewsId, Office.MailboxEnums.RestVersion.v2_0);
 ```
+
+<br>
 
 ---
 ---
@@ -325,15 +337,31 @@ var restId = Office.context.mailbox.convertToRestId(ewsId, Office.MailboxEnums.R
 
 包含以 UTC 表示的时间的 Date 对象。
 
-<dl class="param-type">
+类型: Date
 
-<dt>
-类型</dt>
+##### <a name="example"></a>示例
 
+```js
+// Represents 3:37 PM PDT on Monday, August 26, 2019.
+var input = {
+  date: 26,
+  hours: 15,
+  milliseconds: 2,
+  minutes: 37,
+  month: 7,
+  seconds: 2,
+  timezoneOffset: -420,
+  year: 2019
+};
 
-<dd>日期</dd>
+// result should be a Date object.
+var result = Office.context.mailbox.convertToUtcClientTime(input);
 
-</dl>
+// Output should be "2019-08-26T22:37:02.002Z".
+console.log(result.toISOString());
+```
+
+<br>
 
 ---
 ---
@@ -369,9 +397,11 @@ var restId = Office.context.mailbox.convertToRestId(ewsId, Office.MailboxEnums.R
 
 ##### <a name="example"></a>示例
 
-```javascript
+```js
 Office.context.mailbox.displayAppointmentForm(appointmentId);
 ```
+
+<br>
 
 ---
 ---
@@ -407,9 +437,11 @@ Office.context.mailbox.displayAppointmentForm(appointmentId);
 
 ##### <a name="example"></a>示例
 
-```javascript
+```js
 Office.context.mailbox.displayMessageForm(messageId);
 ```
+
+<br>
 
 ---
 ---
@@ -456,7 +488,7 @@ Office.context.mailbox.displayMessageForm(messageId);
 
 ##### <a name="example"></a>示例
 
-```javascript
+```js
 var start = new Date();
 var end = new Date();
 end.setHours(start.getHours() + 1);
@@ -473,6 +505,8 @@ Office.context.mailbox.displayNewAppointmentForm(
     body: 'Hello World!'
   });
 ```
+
+<br>
 
 ---
 ---
@@ -516,7 +550,7 @@ Office.context.mailbox.displayNewAppointmentForm(
 
 ##### <a name="example"></a>示例
 
-```javascript
+```js
 Office.context.mailbox.displayNewMessageForm(
   {
     // Copy the To line from current item.
@@ -534,6 +568,8 @@ Office.context.mailbox.displayNewMessageForm(
     ]
   });
 ```
+
+<br>
 
 ---
 ---
@@ -587,7 +623,7 @@ Office.context.mailbox.displayNewMessageForm(
 
 ##### <a name="example"></a>示例
 
-```javascript
+```js
 function getCallbackToken() {
   var options = {
     isRest: true,
@@ -601,6 +637,8 @@ function cb(asyncResult) {
   var token = asyncResult.value;
 }
 ```
+
+<br>
 
 ---
 ---
@@ -642,7 +680,7 @@ function cb(asyncResult) {
 
 ##### <a name="example"></a>示例
 
-```javascript
+```js
 function getCallbackToken() {
   Office.context.mailbox.getCallbackTokenAsync(cb);
 }
@@ -651,6 +689,8 @@ function cb(asyncResult) {
   var token = asyncResult.value;
 }
 ```
+
+<br>
 
 ---
 ---
@@ -686,7 +726,7 @@ function cb(asyncResult) {
 
 ##### <a name="example"></a>示例
 
-```javascript
+```js
 function getIdentityToken() {
   Office.context.mailbox.getUserIdentityTokenAsync(cb);
 }
@@ -695,6 +735,8 @@ function cb(asyncResult) {
   var token = asyncResult.value;
 }
 ```
+
+<br>
 
 ---
 ---
@@ -755,7 +797,7 @@ XML 请求必须指定 UTF-8 编码。
 
 下面的示例调用 `makeEwsRequestAsync` 以使用 `GetItem` 操作来获取项目的主题。
 
-```javascript
+```js
 function getSubjectRequest(id) {
   // Return a GetItem operation request for the subject of the specified item.
   var request =
@@ -796,6 +838,8 @@ function callback(asyncResult)  {
   // Process the returned response here.
 }
 ```
+
+<br>
 
 ---
 ---

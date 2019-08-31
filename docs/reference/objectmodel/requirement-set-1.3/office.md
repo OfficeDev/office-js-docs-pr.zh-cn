@@ -3,12 +3,12 @@ title: Office 命名空间-要求集1。3
 description: ''
 ms.date: 08/13/2019
 localization_priority: Normal
-ms.openlocfilehash: fb6036606f3a25cff5101351bd7df2b1b4cd2f21
-ms.sourcegitcommit: 1c7e555733ee6d5a08e444a3c4c16635d998e032
+ms.openlocfilehash: 2d451e9425f900c7a9cfa5ce9d3baadfa112396c
+ms.sourcegitcommit: 1fb99b1b4e63868a0e81a928c69a34c42bf7e209
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/14/2019
-ms.locfileid: "36395629"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "36696237"
 ---
 # <a name="office"></a>Office
 
@@ -59,6 +59,11 @@ ms.locfileid: "36395629"
 |[最低版本的邮箱要求集](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
 |[适用的 Outlook 模式](/outlook/add-ins/#extension-points)| 撰写或阅读|
 
+<br>
+
+---
+---
+
 #### <a name="coerciontype-string"></a>CoercionType: String
 
 指定如何强制由调用方法返回或设置的数据。
@@ -80,6 +85,11 @@ ms.locfileid: "36395629"
 |---|---|
 |[最低版本的邮箱要求集](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
 |[适用的 Outlook 模式](/outlook/add-ins/#extension-points)| 撰写或阅读|
+
+<br>
+
+---
+---
 
 #### <a name="sourceproperty-string"></a>SourceProperty: String
 

@@ -3,12 +3,12 @@ title: "\"Context\"-\"邮箱\"。项目-要求集1。2"
 description: ''
 ms.date: 08/08/2019
 localization_priority: Normal
-ms.openlocfilehash: 536c8b7bece6df6f9609406f3eccc50b330d7925
-ms.sourcegitcommit: 654ac1a0c477413662b48cffc0faee5cb65fc25f
+ms.openlocfilehash: 7475e62c26d24ed9d191ca89934dd5d183b477fa
+ms.sourcegitcommit: 1fb99b1b4e63868a0e81a928c69a34c42bf7e209
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "36268689"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "36696412"
 ---
 # <a name="item"></a>item
 
@@ -68,7 +68,7 @@ ms.locfileid: "36268689"
 
 以下 JavaScript 代码示例显示了如何访问 Outlook 中当前项目的 `subject` 属性。
 
-```javascript
+```js
 // The initialize function is required for all apps.
 Office.initialize = function () {
   // Checks for the DOM to load using the jQuery ready function.
@@ -107,7 +107,7 @@ Office.initialize = function () {
 
 以下代码使用当前项目上所有附件的详细信息构成 HTML 字符串。
 
-```javascript
+```js
 var item = Office.context.mailbox.item;
 var outputString = "";
 
@@ -127,6 +127,11 @@ if (item.attachments.length > 0) {
 console.log(outputString);
 ```
 
+<br>
+
+---
+---
+
 #### <a name="bcc-recipientsjavascriptapioutlookofficerecipientsviewoutlook-js-12"></a>密件抄送:[收件人](/javascript/api/outlook/office.recipients?view=outlook-js-1.2)
 
 获取对象，该对象提供用于获取或更新邮件的密件抄送 (Bcc) 行上的收件人的方法。 仅限撰写模式。
@@ -145,7 +150,7 @@ console.log(outputString);
 
 ##### <a name="example"></a>示例
 
-```javascript
+```js
 Office.context.mailbox.item.bcc.setAsync( ['alice@contoso.com', 'bob@contoso.com'] );
 Office.context.mailbox.item.bcc.addAsync( ['jason@contoso.com'] );
 Office.context.mailbox.item.bcc.getAsync(callback);
@@ -154,6 +159,11 @@ function callback(asyncResult) {
   var arrayOfBccRecipients = asyncResult.value;
 }
 ```
+
+<br>
+
+---
+---
 
 #### <a name="body-bodyjavascriptapioutlookofficebodyviewoutlook-js-12"></a>正文:[正文](/javascript/api/outlook/office.body?view=outlook-js-1.2)
 
@@ -175,7 +185,7 @@ function callback(asyncResult) {
 
 本示例获取纯文本格式的邮件正文。
 
-```javascript
+```js
 Office.context.mailbox.item.body.getAsync(
   "text",
   { asyncContext: "This is passed to the callback" },
@@ -195,6 +205,11 @@ Office.context.mailbox.item.body.getAsync(
 }
 ```
 
+<br>
+
+---
+---
+
 #### <a name="cc-arrayemailaddressdetailsjavascriptapioutlookofficeemailaddressdetailsviewoutlook-js-12recipientsjavascriptapioutlookofficerecipientsviewoutlook-js-12"></a><[EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails?view=outlook-js-1.2)>|[收件人](/javascript/api/outlook/office.recipients?view=outlook-js-1.2)的抄送: Array
 
 提供对邮件的抄送 (Cc) 收件人的访问权限。 对象的类型和访问级别取决于当前项目的模式。
@@ -203,7 +218,7 @@ Office.context.mailbox.item.body.getAsync(
 
 `cc` 属性返回包含邮件的**抄送**行上所列的每个收件人的 `EmailAddressDetails` 对象的数组。集合上限为 100 个成员。
 
-```javascript
+```js
 console.log(JSON.stringify(Office.context.mailbox.item.cc));
 ```
 
@@ -211,7 +226,7 @@ console.log(JSON.stringify(Office.context.mailbox.item.cc));
 
 `cc` 属性返回一个 `Recipients` 对象，该对象提供用于获取或更新邮件的“**抄送**”行上收件人的方法。
 
-```javascript
+```js
 Office.context.mailbox.item.cc.setAsync( ['alice@contoso.com', 'bob@contoso.com'] );
 Office.context.mailbox.item.cc.addAsync( ['jason@contoso.com'] );
 Office.context.mailbox.item.cc.getAsync(callback);
@@ -232,6 +247,11 @@ function callback(asyncResult) {
 |[最低版本的邮箱要求集](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
 |[最低权限级别](/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
 |[适用的 Outlook 模式](/outlook/add-ins/#extension-points)| 撰写或阅读|
+
+<br>
+
+---
+---
 
 #### <a name="nullable-conversationid-string"></a>(可以为 null) conversationId: String
 
@@ -255,10 +275,15 @@ function callback(asyncResult) {
 
 ##### <a name="example"></a>示例
 
-```javascript
+```js
 var conversationId = Office.context.mailbox.item.conversationId;
 console.log("conversationId: " + conversationId);
 ```
+
+<br>
+
+---
+---
 
 #### <a name="datetimecreated-date"></a>dateTimeCreated: Date
 
@@ -278,10 +303,15 @@ console.log("conversationId: " + conversationId);
 
 ##### <a name="example"></a>示例
 
-```javascript
+```js
 var dateTimeCreated = Office.context.mailbox.item.dateTimeCreated;
 console.log("Date and time created: " + dateTimeCreated);
 ```
+
+<br>
+
+---
+---
 
 #### <a name="datetimemodified-date"></a>dateTimeModified: Date
 
@@ -304,10 +334,15 @@ console.log("Date and time created: " + dateTimeCreated);
 
 ##### <a name="example"></a>示例
 
-```javascript
+```js
 var dateTimeModified = Office.context.mailbox.item.dateTimeModified;
 console.log("Date and time modified: " + dateTimeModified);
 ```
+
+<br>
+
+---
+---
 
 #### <a name="end-datetimejavascriptapioutlookofficetimeviewoutlook-js-12"></a>结束: 日期 |[时间](/javascript/api/outlook/office.time?view=outlook-js-1.2)
 
@@ -319,7 +354,7 @@ console.log("Date and time modified: " + dateTimeModified);
 
 `end` 属性返回 `Date` 对象。
 
-```javascript
+```js
 var end = Office.context.mailbox.item.end;
 console.log("Appointment end: " + end);
 ```
@@ -332,7 +367,7 @@ console.log("Appointment end: " + end);
 
 以下示例使用 `Time` 对象的 [`setAsync`](/javascript/api/outlook/office.time?view=outlook-js-1.2#setasync-datetime--options--callback-) 方法设置约会的结束时间。
 
-```javascript
+```js
 var endTime = new Date("3/14/2015");
 var options = {
   // Pass information that can be used in the callback.
@@ -360,6 +395,11 @@ Office.context.mailbox.item.end.setAsync(endTime, options, function(result) {
 |[最低权限级别](/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
 |[适用的 Outlook 模式](/outlook/add-ins/#extension-points)| 撰写或阅读|
 
+<br>
+
+---
+---
+
 #### <a name="from-emailaddressdetailsjavascriptapioutlookofficeemailaddressdetailsviewoutlook-js-12"></a>发件人: [EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails?view=outlook-js-1.2)
 
 获取邮件发件人的电子邮件地址。仅限阅读模式。
@@ -383,10 +423,15 @@ Office.context.mailbox.item.end.setAsync(endTime, options, function(result) {
 
 ##### <a name="example"></a>示例
 
-```javascript
+```js
 var from = Office.context.mailbox.item.from;
 console.log("From " + from);
 ```
+
+<br>
+
+---
+---
 
 #### <a name="internetmessageid-string"></a>internetMessageId: String
 
@@ -406,9 +451,14 @@ console.log("From " + from);
 
 ##### <a name="example"></a>示例
 
-```javascript
+```js
 var internetMessageId = Office.context.mailbox.item.internetMessageId;
 ```
+
+<br>
+
+---
+---
 
 #### <a name="itemclass-string"></a>itemClass: String
 
@@ -437,10 +487,15 @@ var internetMessageId = Office.context.mailbox.item.internetMessageId;
 
 ##### <a name="example"></a>示例
 
-```javascript
+```js
 var itemClass = Office.context.mailbox.item.itemClass;
 console.log("Item class: " + itemClass);
 ```
+
+<br>
+
+---
+---
 
 #### <a name="nullable-itemid-string"></a>(可以为 null) itemId: String
 
@@ -465,7 +520,7 @@ console.log("Item class: " + itemClass);
 
 以下代码检查项目标识符是否存在。如果 `itemId` 属性返回 `null` 或 `undefined`，则将项目保存到存储，并从异步结果中获取项目标识符。
 
-```javascript
+```js
 var itemId = Office.context.mailbox.item.itemId;
 if (itemId === null || itemId == undefined) {
   Office.context.mailbox.item.saveAsync(function(result) {
@@ -473,6 +528,11 @@ if (itemId === null || itemId == undefined) {
   });
 }
 ```
+
+<br>
+
+---
+---
 
 #### <a name="itemtype-officemailboxenumsitemtypejavascriptapioutlookofficemailboxenumsitemtypeviewoutlook-js-12"></a>itemType: [MailboxEnums](/javascript/api/outlook/office.mailboxenums.itemtype?view=outlook-js-1.2)
 
@@ -494,13 +554,18 @@ if (itemId === null || itemId == undefined) {
 
 ##### <a name="example"></a>示例
 
-```javascript
+```js
 if (Office.context.mailbox.item.itemType === Office.MailboxEnums.ItemType.Message) {
   // Do something.
 } else {
   // Do something else.
 }
 ```
+
+<br>
+
+---
+---
 
 #### <a name="location-stringlocationjavascriptapioutlookofficelocationviewoutlook-js-12"></a>位置: 字符串 |[位置](/javascript/api/outlook/office.location?view=outlook-js-1.2)
 
@@ -510,7 +575,7 @@ if (Office.context.mailbox.item.itemType === Office.MailboxEnums.ItemType.Messag
 
 `location` 属性返回一个包含约会位置的字符串。
 
-```javascript
+```js
 var location = Office.context.mailbox.item.location;
 console.log("location: " + location);
 ```
@@ -519,7 +584,7 @@ console.log("location: " + location);
 
 `location` 属性返回一个 `Location` 对象，该对象提供用于获取和设置约会位置的方法。
 
-```javascript
+```js
 var userContext = { value : 1 };
 Office.context.mailbox.item.location.getAsync( { context: userContext}, callback);
 
@@ -541,6 +606,11 @@ function callback(asyncResult) {
 |[最低权限级别](/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
 |[适用的 Outlook 模式](/outlook/add-ins/#extension-points)| 撰写或阅读|
 
+<br>
+
+---
+---
+
 #### <a name="normalizedsubject-string"></a>normalizedSubject: String
 
 获取删除了所有前缀（包括 `RE:` 和 `FWD:`）的项目主题。仅限阅读模式。
@@ -561,10 +631,15 @@ normalizedSubject 属性获取包含由电子邮件程序添加的任何标准�
 
 ##### <a name="example"></a>示例
 
-```javascript
+```js
 var normalizedSubject = Office.context.mailbox.item.normalizedSubject;
 console.log("Normalized subject: " + normalizedSubject);
 ```
+
+<br>
+
+---
+---
 
 #### <a name="optionalattendees-arrayemailaddressdetailsjavascriptapioutlookofficeemailaddressdetailsviewoutlook-js-12recipientsjavascriptapioutlookofficerecipientsviewoutlook-js-12"></a>optionalAttendees: <[EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails?view=outlook-js-1.2)>|[收件人](/javascript/api/outlook/office.recipients?view=outlook-js-1.2)的数组
 
@@ -574,7 +649,7 @@ console.log("Normalized subject: " + normalizedSubject);
 
 `optionalAttendees` 属性返回一个数组，其中包含每个可选与会者的 `EmailAddressDetails` 对象。
 
-```javascript
+```js
 var optionalAttendees = Office.context.mailbox.item.optionalAttendees;
 console.log("Optional attendees: " + JSON.stringify(optionalAttendees));
 ```
@@ -583,7 +658,7 @@ console.log("Optional attendees: " + JSON.stringify(optionalAttendees));
 
 `optionalAttendees` 属性返回一个 `Recipients` 对象，该对象提供用于获取或更新可选与会者的方法。
 
-```javascript
+```js
 Office.context.mailbox.item.optionalAttendees.setAsync( ['alice@contoso.com', 'bob@contoso.com'] );
 Office.context.mailbox.item.optionalAttendees.addAsync( ['jason@contoso.com'] );
 Office.context.mailbox.item.optionalAttendees.getAsync(callback);
@@ -605,6 +680,11 @@ function callback(asyncResult) {
 |[最低权限级别](/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
 |[适用的 Outlook 模式](/outlook/add-ins/#extension-points)| 撰写或阅读|
 
+<br>
+
+---
+---
+
 #### <a name="organizer-emailaddressdetailsjavascriptapioutlookofficeemailaddressdetailsviewoutlook-js-12"></a>组织者: [EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails?view=outlook-js-1.2)
 
 获取指定会议的会议组织者的电子邮件地址。仅限阅读模式。
@@ -623,11 +703,16 @@ function callback(asyncResult) {
 
 ##### <a name="example"></a>示例
 
-```javascript
+```js
 var organizerName = Office.context.mailbox.item.organizer.displayName;
 var organizerAddress = Office.context.mailbox.item.organizer.emailAddress;
 console.log("Organizer: " + organizerName + " (" + organizerAddress + ")");
 ```
+
+<br>
+
+---
+---
 
 #### <a name="requiredattendees-arrayemailaddressdetailsjavascriptapioutlookofficeemailaddressdetailsviewoutlook-js-12recipientsjavascriptapioutlookofficerecipientsviewoutlook-js-12"></a>requiredAttendees: <[EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails?view=outlook-js-1.2)>|[收件人](/javascript/api/outlook/office.recipients?view=outlook-js-1.2)的数组
 
@@ -637,7 +722,7 @@ console.log("Organizer: " + organizerName + " (" + organizerAddress + ")");
 
 `requiredAttendees` 属性返回一个数组，其中包含每个必需与会者的 `EmailAddressDetails` 对象。
 
-```javascript
+```js
 var requiredAttendees = Office.context.mailbox.item.requiredAttendees;
 console.log("Required attendees: " + JSON.stringify(requiredAttendees));
 ```
@@ -646,7 +731,7 @@ console.log("Required attendees: " + JSON.stringify(requiredAttendees));
 
 `requiredAttendees` 属性返回一个 `Recipients` 对象，该对象提供用于获取或更新必需与会者的方法。
 
-```javascript
+```js
 Office.context.mailbox.item.requiredAttendees.setAsync( ['alice@contoso.com', 'bob@contoso.com'] );
 Office.context.mailbox.item.requiredAttendees.addAsync( ['jason@contoso.com'] );
 Office.context.mailbox.item.requiredAttendees.getAsync(callback);
@@ -668,6 +753,11 @@ function callback(asyncResult) {
 |[最低版本的邮箱要求集](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
 |[最低权限级别](/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
 |[适用的 Outlook 模式](/outlook/add-ins/#extension-points)| 撰写或阅读|
+
+<br>
+
+---
+---
 
 #### <a name="sender-emailaddressdetailsjavascriptapioutlookofficeemailaddressdetailsviewoutlook-js-12"></a>发件人: [EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails?view=outlook-js-1.2)
 
@@ -692,11 +782,16 @@ function callback(asyncResult) {
 
 ##### <a name="example"></a>示例
 
-```javascript
+```js
 var senderName = Office.context.mailbox.item.sender.displayName;
 var senderAddress = Office.context.mailbox.item.sender.emailAddress;
 console.log("Sender: " + senderName + " (" + senderAddress + ")");
 ```
+
+<br>
+
+---
+---
 
 #### <a name="start-datetimejavascriptapioutlookofficetimeviewoutlook-js-12"></a>开始日期: 日期 |[时间](/javascript/api/outlook/office.time?view=outlook-js-1.2)
 
@@ -708,7 +803,7 @@ console.log("Sender: " + senderName + " (" + senderAddress + ")");
 
 `start` 属性返回 `Date` 对象。
 
-```javascript
+```js
 var start = Office.context.mailbox.item.start;
 console.log("Appointment start: " + JSON.stringify(start));
 ```
@@ -720,7 +815,7 @@ console.log("Appointment start: " + JSON.stringify(start));
 使用 [`Time.setAsync`](/javascript/api/outlook/office.time?view=outlook-js-1.2#setasync-datetime--options--callback-) 方法设置开始时间时，应使用 [`convertToUtcClientTime`](office.context.mailbox.md#converttoutcclienttimeinput--date) 方法将客户端的本地时间转换为服务器的 UTC。
 以下示例通过使用 `Time` 对象的 [`setAsync`](/javascript/api/outlook/office.time?view=outlook-js-1.2#setasync-datetime--options--callback-) 方法，设置撰写模式下约会的开始时间。
 
-```javascript
+```js
 var startTime = new Date("3/14/2015");
 var options = {
   // Pass information that can be used in the callback.
@@ -748,6 +843,11 @@ Office.context.mailbox.item.start.setAsync(startTime, options, function(result) 
 |[最低权限级别](/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
 |[适用的 Outlook 模式](/outlook/add-ins/#extension-points)| 撰写或阅读|
 
+<br>
+
+---
+---
+
 #### <a name="subject-stringsubjectjavascriptapioutlookofficesubjectviewoutlook-js-12"></a>subject: String |[主题](/javascript/api/outlook/office.subject?view=outlook-js-1.2)
 
 获取或设置显示在项目的主题字段中的说明。
@@ -758,7 +858,7 @@ Office.context.mailbox.item.start.setAsync(startTime, options, function(result) 
 
 `subject` 属性返回一个字符串。使用 [`normalizedSubject`](#normalizedsubject-string) 属性获取不带任何前导前缀（如 `RE:` 和 `FW:`）的主题。
 
-```javascript
+```js
 var subject = Office.context.mailbox.item.subject;
 console.log(subject);
 ```
@@ -767,7 +867,7 @@ console.log(subject);
 
 `subject` 属性返回一个 `Subject` 对象，该对象提供用于获取和设置主题的方法。
 
-```javascript
+```js
 Office.context.mailbox.item.subject.getAsync(callback);
 
 function callback(asyncResult) {
@@ -788,6 +888,11 @@ function callback(asyncResult) {
 |[最低权限级别](/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
 |[适用的 Outlook 模式](/outlook/add-ins/#extension-points)| 撰写或阅读|
 
+<br>
+
+---
+---
+
 #### <a name="to-arrayemailaddressdetailsjavascriptapioutlookofficeemailaddressdetailsviewoutlook-js-12recipientsjavascriptapioutlookofficerecipientsviewoutlook-js-12"></a>to: <[EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails?view=outlook-js-1.2)>|[收件人](/javascript/api/outlook/office.recipients?view=outlook-js-1.2)的数组
 
 提供对邮件的“**收件人**”行上的收件人的访问权限。 对象的类型和访问级别取决于当前项目的模式。
@@ -796,7 +901,7 @@ function callback(asyncResult) {
 
 `to` 属性返回包含邮件的**收件人**行上所列的每个收件人的 `EmailAddressDetails` 对象的数组。集合上限为 100 个成员。
 
-```javascript
+```js
 console.log(JSON.stringify(Office.context.mailbox.item.to));
 ```
 
@@ -804,7 +909,7 @@ console.log(JSON.stringify(Office.context.mailbox.item.to));
 
 `to` 属性返回一个 `Recipients` 对象，该对象提供用于获取或更新邮件的“**收件人**”行上收件人的方法。
 
-```javascript
+```js
 Office.context.mailbox.item.to.setAsync( ['alice@contoso.com', 'bob@contoso.com'] );
 Office.context.mailbox.item.to.addAsync( ['jason@contoso.com'] );
 Office.context.mailbox.item.to.getAsync(callback);
@@ -864,7 +969,7 @@ function callback(asyncResult) {
 
 ##### <a name="example"></a>示例
 
-```javascript
+```js
 function callback(result) {
   if (result.error) {
     console.log(result.error);
@@ -881,6 +986,11 @@ function addAttachment() {
   Office.context.mailbox.item.addFileAttachmentAsync(attachmentURL, attachmentURL, options, callback);
 }
 ```
+
+<br>
+
+---
+---
 
 #### <a name="additemattachmentasyncitemid-attachmentname-options-callback"></a>addItemAttachmentAsync(itemId, attachmentName, [options], [callback])
 
@@ -920,7 +1030,7 @@ function addAttachment() {
 
 以下示例将现有的 Outlook 项目添加为名为 `My Attachment` 的附件。
 
-```javascript
+```js
 function callback(result) {
   if (result.error) {
     console.log(result.error);
@@ -939,6 +1049,11 @@ function addAttachment() {
   Office.context.mailbox.item.addItemAttachmentAsync(itemId, "My Attachment", options, callback);
 }
 ```
+
+<br>
+
+---
+---
 
 #### <a name="displayreplyallformformdata-callback"></a>displayReplyAllForm(formData, [callback])
 
@@ -978,20 +1093,20 @@ function addAttachment() {
 
 以下代码将一个字符串传递到 `displayReplyAllForm` 函数。
 
-```javascript
+```js
 Office.context.mailbox.item.displayReplyAllForm('hello there');
 Office.context.mailbox.item.displayReplyAllForm('<b>hello there</b>');
 ```
 
 使用空白正文答复。
 
-```javascript
+```js
 Office.context.mailbox.item.displayReplyAllForm({});
 ```
 
 仅使用正文答复。
 
-```javascript
+```js
 Office.context.mailbox.item.displayReplyAllForm(
 {
   'htmlBody' : 'hi'
@@ -1000,7 +1115,7 @@ Office.context.mailbox.item.displayReplyAllForm(
 
 使用正文和文件附件答复。
 
-```javascript
+```js
 Office.context.mailbox.item.displayReplyAllForm(
 {
   'htmlBody' : 'hi',
@@ -1017,7 +1132,7 @@ Office.context.mailbox.item.displayReplyAllForm(
 
 使用正文和项目附件答复。
 
-```javascript
+```js
 Office.context.mailbox.item.displayReplyAllForm(
 {
   'htmlBody' : 'hi',
@@ -1034,7 +1149,7 @@ Office.context.mailbox.item.displayReplyAllForm(
 
 使用正文、文件附件、项目附件和回调答复。
 
-```javascript
+```js
 Office.context.mailbox.item.displayReplyAllForm(
 {
   'htmlBody' : 'hi',
@@ -1057,6 +1172,11 @@ Office.context.mailbox.item.displayReplyAllForm(
   }
 });
 ```
+
+<br>
+
+---
+---
 
 #### <a name="displayreplyformformdata-callback"></a>displayReplyForm(formData, [callback])
 
@@ -1096,20 +1216,20 @@ Office.context.mailbox.item.displayReplyAllForm(
 
 以下代码将一个字符串传递到 `displayReplyForm` 函数。
 
-```javascript
+```js
 Office.context.mailbox.item.displayReplyForm('hello there');
 Office.context.mailbox.item.displayReplyForm('<b>hello there</b>');
 ```
 
 使用空白正文答复。
 
-```javascript
+```js
 Office.context.mailbox.item.displayReplyForm({});
 ```
 
 仅使用正文答复。
 
-```javascript
+```js
 Office.context.mailbox.item.displayReplyForm(
 {
   'htmlBody' : 'hi'
@@ -1118,7 +1238,7 @@ Office.context.mailbox.item.displayReplyForm(
 
 使用正文和文件附件答复。
 
-```javascript
+```js
 Office.context.mailbox.item.displayReplyForm(
 {
   'htmlBody' : 'hi',
@@ -1135,7 +1255,7 @@ Office.context.mailbox.item.displayReplyForm(
 
 使用正文和项目附件答复。
 
-```javascript
+```js
 Office.context.mailbox.item.displayReplyForm(
 {
   'htmlBody' : 'hi',
@@ -1152,7 +1272,7 @@ Office.context.mailbox.item.displayReplyForm(
 
 使用正文、文件附件、项目附件和回调答复。
 
-```javascript
+```js
 Office.context.mailbox.item.displayReplyForm(
 {
   'htmlBody' : 'hi',
@@ -1175,6 +1295,11 @@ Office.context.mailbox.item.displayReplyForm(
   }
 });
 ```
+
+<br>
+
+---
+---
 
 #### <a name="getentities--entitiesjavascriptapioutlookofficeentitiesviewoutlook-js-12"></a>getEntities() → {[Entities](/javascript/api/outlook/office.entities?view=outlook-js-1.2)}
 
@@ -1199,9 +1324,14 @@ Office.context.mailbox.item.displayReplyForm(
 
 以下示例访问当前项目的正文中的联系人实体。
 
-```javascript
+```js
 var contacts = Office.context.mailbox.item.getEntities().contacts;
 ```
+
+<br>
+
+---
+---
 
 #### <a name="getentitiesbytypeentitytype--nullable-arraystringcontactjavascriptapioutlookofficecontactviewoutlook-js-12meetingsuggestionjavascriptapioutlookofficemeetingsuggestionviewoutlook-js-12phonenumberjavascriptapioutlookofficephonenumberviewoutlook-js-12tasksuggestionjavascriptapioutlookofficetasksuggestionviewoutlook-js-12"></a>getEntitiesByType(entityType) → (nullable) {Array.<(String|[Contact](/javascript/api/outlook/office.contact?view=outlook-js-1.2)|[MeetingSuggestion](/javascript/api/outlook/office.meetingsuggestion?view=outlook-js-1.2)|[PhoneNumber](/javascript/api/outlook/office.phonenumber?view=outlook-js-1.2)|[TaskSuggestion](/javascript/api/outlook/office.tasksuggestion?view=outlook-js-1.2))>}
 
@@ -1246,7 +1376,7 @@ var contacts = Office.context.mailbox.item.getEntities().contacts;
 
 以下示例显示了如何访问表示当前项目的正文中的邮政地址的字符串数组。
 
-```javascript
+```js
 // The initialize function is required for all apps.
 Office.initialize = function () {
   // Checks for the DOM to load using the jQuery ready function.
@@ -1259,6 +1389,11 @@ Office.initialize = function () {
   });
 }
 ```
+
+<br>
+
+---
+---
 
 #### <a name="getfilteredentitiesbynamename--nullable-arraystringcontactjavascriptapioutlookofficecontactviewoutlook-js-12meetingsuggestionjavascriptapioutlookofficemeetingsuggestionviewoutlook-js-12phonenumberjavascriptapioutlookofficephonenumberviewoutlook-js-12tasksuggestionjavascriptapioutlookofficetasksuggestionviewoutlook-js-12"></a>getFilteredEntitiesByName(name) → (nullable) {Array.<(String|[Contact](/javascript/api/outlook/office.contact?view=outlook-js-1.2)|[MeetingSuggestion](/javascript/api/outlook/office.meetingsuggestion?view=outlook-js-1.2)|[PhoneNumber](/javascript/api/outlook/office.phonenumber?view=outlook-js-1.2)|[TaskSuggestion](/javascript/api/outlook/office.tasksuggestion?view=outlook-js-1.2))>}
 
@@ -1288,6 +1423,11 @@ Office.initialize = function () {
 如果具有匹配 `name` 参数的 `FilterName` 元素值的清单中没有任何 `ItemHasKnownEntity` 元素，则该方法返回 `null`。如果 `name` 参数匹配清单中的 `ItemHasKnownEntity` 元素，但在匹配的当前项目中没有实体，则该方法返回一个空数组。
 
 类型：Array.<(String|[Contact](/javascript/api/outlook/office.contact?view=outlook-js-1.2)|[MeetingSuggestion](/javascript/api/outlook/office.meetingsuggestion?view=outlook-js-1.2)|[PhoneNumber](/javascript/api/outlook/office.phonenumber?view=outlook-js-1.2)|[TaskSuggestion](/javascript/api/outlook/office.tasksuggestion?view=outlook-js-1.2))>
+
+<br>
+
+---
+---
 
 #### <a name="getregexmatches--object"></a>getRegExMatches() → {Object}
 
@@ -1334,25 +1474,22 @@ Office.initialize = function () {
 
 一个包含匹配在清单 XML 文件中定义的正则表达式的字符串数组的对象。每个数组的名称等于匹配 `ItemHasRegularExpressionMatch` 规则的 `RegExName` 属性或匹配 `ItemHasKnownEntity` 规则的 `FilterName` 属性的相应值。
 
-<dl class="param-type">
-
-<dt>
-类型</dt>
-
-
-<dd>对象</dd>
-
-</dl>
+类型: 对象
 
 ##### <a name="example"></a>示例
 
 以下示例显示了如何访问正则表达式 <rule> 元素 `fruits` 和 `veggies` 的匹配项的数组，这些元素在清单中指定。</rule>
 
-```javascript
+```js
 var allMatches = Office.context.mailbox.item.getRegExMatches();
 var fruits = allMatches.fruits;
 var veggies = allMatches.veggies;
 ```
+
+<br>
+
+---
+---
 
 #### <a name="getregexmatchesbynamename--nullable-array-string-"></a>getRegExMatchesByName(name) → (nullable) {Array.<String>}
 
@@ -1383,20 +1520,19 @@ var veggies = allMatches.veggies;
 
 一个包含匹配在清单 XML 文件中定义的正则表达式的字符串的数组。
 
-<dl class="param-type">
-
-<dt>类型</dt>
-
-<dd>Array.< String ></dd>
-
-</dl>
+类型: Array. < 字符串 >
 
 ##### <a name="example"></a>示例
 
-```javascript
+```js
 var fruits = Office.context.mailbox.item.getRegExMatchesByName("fruits");
 var veggies = Office.context.mailbox.item.getRegExMatchesByName("veggies");
 ```
+
+<br>
+
+---
+---
 
 #### <a name="getselecteddataasynccoerciontype-options-callback--string"></a>getSelectedDataAsync(coercionType, [options], callback) → {String}
 
@@ -1409,8 +1545,8 @@ var veggies = Office.context.mailbox.item.getRegExMatchesByName("veggies");
 |名称| 类型| 属性| 说明|
 |---|---|---|---|
 |`coercionType`| [Office.CoercionType](office.md#coerciontype-string)||请求数据的格式。如果为文本，则此方法返回纯文本作为字符串，删除任何显示的 HTML 标记。如果为 HTML，则此方法返回所选文本，不论是纯文本还是 HTML。|
-|`options`| Object| &lt;可选&gt;|包含一个或多个以下属性的对象文本。|
-|`options.asyncContext`| Object| &lt;可选&gt;|开发人员可以提供他们想要在回调方法中访问的任何对象。|
+|`options`| 对象| &lt;可选&gt;|包含一个或多个以下属性的对象文本。|
+|`options.asyncContext`| 对象| &lt;可选&gt;|开发人员可以提供他们想要在回调方法中访问的任何对象。|
 |`callback`| function||方法完成后，使用单个参数 `callback`（一个 [`asyncResult`](/javascript/api/office/office.asyncresult) 对象）调用在 `AsyncResult` 参数中传递的函数。<br/><br/>若要从回调方法访问所选数据，请调用 `asyncResult.value.data`。 若要访问选定内容的源属性，请调用 `asyncResult.value.sourceProperty`，这将为 `body` 或 `subject`。|
 
 ##### <a name="requirements"></a>要求
@@ -1425,19 +1561,11 @@ var veggies = Office.context.mailbox.item.getRegExMatchesByName("veggies");
 
 作为字符串的所选数据的格式由 `coercionType` 确定。
 
-<dl class="param-type">
-
-<dt>
-类型</dt>
-
-
-<dd>字符串</dd>
-
-</dl>
+类型：字符串
 
 ##### <a name="example"></a>示例
 
-```javascript
+```js
 // Get selected data.
 Office.initialize = function () {
   Office.context.mailbox.item.getSelectedDataAsync(Office.CoercionType.Text, {}, getCallback);
@@ -1455,6 +1583,11 @@ function setCallback(asyncResult) {
 }
 ```
 
+<br>
+
+---
+---
+
 #### <a name="loadcustompropertiesasynccallback-usercontext"></a>loadCustomPropertiesAsync(callback, [userContext])
 
 异步加载所选项目上此外接程序的自定义属性。
@@ -1466,7 +1599,7 @@ function setCallback(asyncResult) {
 |名称| 类型| 属性| 说明|
 |---|---|---|---|
 |`callback`| 函数||方法完成后，使用单个参数 `asyncResult`（一个 [`AsyncResult`](/javascript/api/office/office.asyncresult) 对象）调用在 `callback` 参数中传递的函数。<br/><br/>自定义属性作为 `asyncResult.value` 属性中的 [`CustomProperties`](/javascript/api/outlook/office.customproperties?view=outlook-js-1.2) 对象提供。 此对象可用于获取、设置以及从项目中删除自定义属性，并将自定义属性集的更改重新保存到服务器。|
-|`userContext`| Object| &lt;可选&gt;|开发人员可以提供他们想要在回调函数中访问的任何对象。 此对象可以通过回调函数中的 `asyncResult.asyncContext` 属性进行访问。|
+|`userContext`| 对象| &lt;可选&gt;|开发人员可以提供他们想要在回调函数中访问的任何对象。 此对象可以通过回调函数中的 `asyncResult.asyncContext` 属性进行访问。|
 
 ##### <a name="requirements"></a>要求
 
@@ -1480,7 +1613,7 @@ function setCallback(asyncResult) {
 
 以下代码示例显示了如何使用 `loadCustomPropertiesAsync` 方法异步加载特定于当前项目的自定义属性。该示例还显示了如何使用 `CustomProperties.saveAsync` 方法将这些属性重新保存到服务器。加载自定义属性后，该代码示例将使用 `CustomProperties.get` 方法读取自定义属性 `myProp`，使用 `CustomProperties.set` 方法写入自定义属性 `otherProp`，最后调用 `saveAsync` 方法保存这些自定义属性。
 
-```javascript
+```js
 // The initialize function is required for all add-ins.
 Office.initialize = function () {
   // Checks for the DOM to load using the jQuery ready function.
@@ -1503,6 +1636,11 @@ function saveCallback(asyncResult) {
 }
 ```
 
+<br>
+
+---
+---
+
 #### <a name="removeattachmentasyncattachmentid-options-callback"></a>removeAttachmentAsync(attachmentId, [options], [callback])
 
 将附件从邮件或约会中删除。
@@ -1513,9 +1651,9 @@ function saveCallback(asyncResult) {
 
 |名称| 类型| 属性| 说明|
 |---|---|---|---|
-|`attachmentId`| String||要删除的附件的标识符。|
+|`attachmentId`| 字符串||要删除的附件的标识符。|
 |`options`| 对象| &lt;可选&gt;|包含一个或多个以下属性的对象文本。|
-|`options.asyncContext`| 对象| &lt;optional&gt;|开发人员可以提供他们想要在回调方法中访问的任何对象。|
+|`options.asyncContext`| 对象| &lt;可选&gt;|开发人员可以提供他们想要在回调方法中访问的任何对象。|
 |`callback`| 函数| &lt;可选&gt;|方法完成后，使用单个参数 `callback`（一个 [`asyncResult`](/javascript/api/office/office.asyncresult) 对象）调用在 `AsyncResult` 参数中传递的函数。 <br/>如果删除附件失败，`asyncResult.error` 属性将包含一个说明失败原因的错误代码。|
 
 ##### <a name="errors"></a>错误
@@ -1536,7 +1674,7 @@ function saveCallback(asyncResult) {
 
 以下代码删除包含标识符 '0' 的附件。
 
-```javascript
+```js
 Office.context.mailbox.item.removeAttachmentAsync(
   '0',
   { asyncContext : null },
@@ -1546,6 +1684,11 @@ Office.context.mailbox.item.removeAttachmentAsync(
   }
 );
 ```
+
+<br>
+
+---
+---
 
 #### <a name="setselecteddataasyncdata-options-callback"></a>setSelectedDataAsync(data, [options], callback)
 
@@ -1573,7 +1716,7 @@ Office.context.mailbox.item.removeAttachmentAsync(
 
 ##### <a name="example"></a>示例
 
-```javascript
+```js
 Office.context.mailbox.item.setSelectedDataAsync("Hello World!");
 Office.context.mailbox.item.setSelectedDataAsync("<b>Hello World!</b>", { coercionType : "html" });
 ```

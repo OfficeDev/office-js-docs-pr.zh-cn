@@ -3,12 +3,12 @@ title: Office。上下文要求集1。6
 description: ''
 ms.date: 06/25/2019
 localization_priority: Normal
-ms.openlocfilehash: 35e2f69de7f94d96a1c2d4ae25ea482e892bb7fc
-ms.sourcegitcommit: 3f5d7f4794e3d3c8bc3a79fa05c54157613b9376
+ms.openlocfilehash: 10453801f023ee928e9d5f4fcff3fc22f8cd0319
+ms.sourcegitcommit: 1fb99b1b4e63868a0e81a928c69a34c42bf7e209
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/02/2019
-ms.locfileid: "36064653"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "36695992"
 ---
 # <a name="context"></a>context
 
@@ -55,7 +55,7 @@ Office.context 命名空间提供所有 Office 应用中的加载项所使用的
 
 ##### <a name="example"></a>示例
 
-```javascript
+```js
 function sayHelloWithDisplayLanguage() {
   var myDisplayLanguage = Office.context.displayLanguage;
   switch (myDisplayLanguage) {
@@ -73,6 +73,11 @@ function write(message){
   document.getElementById('message').innerText += message;
 }
 ```
+
+<br>
+
+---
+---
 
 #### <a name="roamingsettings-roamingsettingsjavascriptapioutlookofficeroamingsettingsviewoutlook-js-16"></a>roamingSettings: [roamingSettings](/javascript/api/outlook/office.RoamingSettings?view=outlook-js-1.6)
 

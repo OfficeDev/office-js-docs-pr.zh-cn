@@ -3,12 +3,12 @@ title: Outlook 外接程序 API 预览要求集
 description: ''
 ms.date: 08/15/2019
 localization_priority: Priority
-ms.openlocfilehash: 14f40830bb8f0f0e0232e6ae2305d60e400ca145
-ms.sourcegitcommit: da8e6148f4bd9884ab9702db3033273a383d15f0
+ms.openlocfilehash: aa3f46c505e8c87508699f6e84194272ee4d13bb
+ms.sourcegitcommit: 1fb99b1b4e63868a0e81a928c69a34c42bf7e209
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/20/2019
-ms.locfileid: "36477886"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "36696454"
 ---
 # <a name="outlook-add-in-api-preview-requirement-set"></a>Outlook 外接程序 API 预览要求集
 
@@ -69,6 +69,8 @@ ms.locfileid: "36477886"
 
 **适用于**：Windows 版 Outlook（已连接到 Office 365 订阅）、Outlook 网页版（新式）、Mac 版 Outlook（已连接到 Office 365 订阅）
 
+<br>
+
 ---
 
 ### <a name="block-on-send"></a>阻止发送
@@ -78,6 +80,8 @@ ms.locfileid: "36477886"
 新增了可选参数 `options`，它是有效值为 `allowEvent` 的字典。 此值可用于取消执行事件。
 
 **适用于**：Outlook 网页版（经典）、Windows 版 Outlook（已连接到 Office 365 订阅）、Mac 版 Outlook（已连接到 Office 365 订阅）
+
+<br>
 
 ---
 
@@ -124,6 +128,8 @@ ms.locfileid: "36477886"
 
 **适用于**：Windows 版 Outlook（已连接到 Office 365 订阅）、Mac 版 Outlook（已连接到 Office 365 订阅）
 
+<br>
+
 ---
 
 ### <a name="delegate-access"></a>委托访问
@@ -157,6 +163,8 @@ ms.locfileid: "36477886"
 向 [DesktopFormFactor](../../manifest/desktopformfactor.md) 清单元素中添加了子元素。 它定义外接程序是否在代理应用场景中可用。
 
 **适用于**：Windows 版 Outlook（已连接到 Office 365 订阅）、Outlook 网页版（新式）、Mac 版 Outlook（已连接到 Office 365 订阅）
+
+<br>
 
 ---
 
@@ -198,6 +206,8 @@ ms.locfileid: "36477886"
 
 **适用于**：Windows 版 Outlook（已连接到 Office 365 订阅）、Outlook 网页版（新式）、Mac 版 Outlook（已连接到 Office 365 订阅）
 
+<br>
+
 ---
 
 ### <a name="integration-with-actionable-messages"></a>与可操作邮件集成
@@ -207,6 +217,8 @@ ms.locfileid: "36477886"
 新增了一个函数，当外接程序[由可操作邮件激活时](/outlook/actionable-messages/invoke-add-in-from-actionable-message)，返回传递的初始化数据。
 
 **适用于**：Windows 版 Outlook（已连接到 Office 365 订阅）、Outlook 网页版（经典）
+
+<br>
 
 ---
 
@@ -224,6 +236,8 @@ ms.locfileid: "36477886"
 
 **适用于**：Windows 版 Outlook（已连接到 Office 365 订阅）、Mac 版 Outlook（已连接到 Office 365 订阅）
 
+<br>
+
 ---
 
 ### <a name="office-theme"></a>Office 主题
@@ -239,6 +253,8 @@ ms.locfileid: "36477886"
 向 `Mailbox` 中添加了 `OfficeThemeChanged` 事件。
 
 **适用于**：Windows 版 Outlook（已连接到 Office 365 订阅）
+
+<br>
 
 ---
 

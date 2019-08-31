@@ -3,12 +3,12 @@ title: "\"Context.subname\": \"邮箱\"。诊断-要求集1。4"
 description: ''
 ms.date: 08/08/2019
 localization_priority: Normal
-ms.openlocfilehash: 212afc72cb32bb5c842e1ea606c2edfb64f398ec
-ms.sourcegitcommit: 654ac1a0c477413662b48cffc0faee5cb65fc25f
+ms.openlocfilehash: 9c6543cad17d464ce139381270ad1495d43d5cd9
+ms.sourcegitcommit: 1fb99b1b4e63868a0e81a928c69a34c42bf7e209
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "36268353"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "36696258"
 ---
 # <a name="diagnostics"></a>diagnostics
 
@@ -55,6 +55,11 @@ ms.locfileid: "36268353"
 |[最低权限级别](/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
 |[适用的 Outlook 模式](/outlook/add-ins/#extension-points)| 撰写或阅读|
 
+<br>
+
+---
+---
+
 #### <a name="hostversion-string"></a>Diagnostics.hostversion: String
 
 获取表示主机应用程序或 Exchange 服务器的版本的字符串 (例如, "15.0.468.0")。
@@ -72,6 +77,11 @@ ms.locfileid: "36268353"
 |[最低版本的邮箱要求集](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
 |[最低权限级别](/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
 |[适用的 Outlook 模式](/outlook/add-ins/#extension-points)| 撰写或阅读|
+
+<br>
+
+---
+---
 
 #### <a name="owaview-string"></a>OWAView: String
 

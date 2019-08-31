@@ -4,12 +4,12 @@ description: 在本教程中，将生成 PowerPoint 加载项，用于插入图�
 ms.date: 12/31/2018
 ms.prod: powerpoint
 localization_priority: Normal
-ms.openlocfilehash: a004a510a4cc874ecaab8260862b7379efaf9cf2
-ms.sourcegitcommit: 49af31060aa56c1e1ec1e08682914d3cbefc3f1c
+ms.openlocfilehash: 0ffd3eedf0cb1d3a118edd0a22b3066cc396d320
+ms.sourcegitcommit: 1fb99b1b4e63868a0e81a928c69a34c42bf7e209
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2019
-ms.locfileid: "36672885"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "36696027"
 ---
 # <a name="tutorial-create-a-powerpoint-task-pane-add-in"></a>教程：创建 PowerPoint 任务窗格加载项
 
@@ -65,7 +65,7 @@ ms.locfileid: "36672885"
 
 2. 打开 Web 应用项目根目录中的文件“Home.js”****。 此文件指定加载项脚本。 将整个内容替换为以下代码，并保存文件。
 
-    ```javascript
+    ```js
     (function () {
         "use strict";
 
@@ -179,13 +179,13 @@ ms.locfileid: "36672885"
 
 7. 在 **Home.js** 文件中，将 `TODO1` 替换为下列代码，以分配“插入图像”**** 按钮的事件处理程序。
 
-    ```javascript
+    ```js
     $('#insert-image').click(insertImage);
     ```
 
 8. 在 **Home.js** 文件中，将 `TODO2` 替换为下列代码，以定义 **insertImage** 函数。 此函数从必应 Web 服务提取图像，再调用 `insertImageFromBase64String` 函数将相应图像插入文档。
 
-    ```javascript
+    ```js
     function insertImage() {
         // Get image from from web service (as a Base64 encoded string).
         $.ajax({
@@ -204,7 +204,7 @@ ms.locfileid: "36672885"
 
     - `asyncResult` 对象封装 `setSelectedDataAsync` 请求的结果，包括状态和错误消息（如果请求失败的话）。
 
-    ```javascript
+    ```js
     function insertImageFromBase64String(image) {
         // Call Office.js to insert the image into the document.
         Office.context.document.setSelectedDataAsync(image, {
@@ -291,13 +291,13 @@ ms.locfileid: "36672885"
 
 2. 在 **Home.js** 文件中，将 `TODO4` 替换为下列代码，以分配“插入文本”**** 按钮的事件处理程序。
 
-    ```javascript
+    ```js
     $('#insert-text').click(insertText);
     ```
 
 3. 在 **Home.js** 文件中，将 `TODO5` 替换为下列代码，以定义 **insertText** 函数。 此函数将文本插入当前幻灯片。
 
-    ```javascript
+    ```js
     function insertText() {
         Office.context.document.setSelectedDataAsync('Hello World!',
             function (asyncResult) {
@@ -348,13 +348,13 @@ ms.locfileid: "36672885"
 
 2. 在 **Home.js** 文件中，将 `TODO6` 替换为下列代码，以分配“获取幻灯片元数据”**** 按钮的事件处理程序。
 
-    ```javascript
+    ```js
     $('#get-slide-metadata').click(getSlideMetadata);
     ```
 
 3. 在 **Home.js** 文件中，将 `TODO7` 替换为下列代码，以定义 **getSlideMetadata** 函数。 此函数检索选定一张或多张幻灯片的元数据，并将它写入加载项任务窗格内的弹出对话框窗口。
 
-    ```javascript
+    ```js
     function getSlideMetadata() {
         Office.context.document.getSelectedDataAsync(Office.CoercionType.SlideRange,
             function (asyncResult) {
@@ -421,7 +421,7 @@ ms.locfileid: "36672885"
 
 2. 在 **Home.js** 文件中，将 `TODO8` 替换为下列代码，以分配四个导航按钮的事件处理程序。
 
-    ```javascript
+    ```js
     $('#go-to-first-slide').click(goToFirstSlide);
     $('#go-to-next-slide').click(goToNextSlide);
     $('#go-to-previous-slide').click(goToPreviousSlide);
@@ -430,7 +430,7 @@ ms.locfileid: "36672885"
 
 3. 在 **Home.js** 文件中，将 `TODO9` 替换为下列代码，以定义导航函数。 以下各函数均使用 `goToByIdAsync` 函数，以根据幻灯片在文档中的位置（第一张、最后一张、上一张和下一张）选择幻灯片。
 
-    ```javascript
+    ```js
     function goToFirstSlide() {
         Office.context.document.goToByIdAsync(Office.Index.First, Office.GoToType.Index,
             function (asyncResult) {

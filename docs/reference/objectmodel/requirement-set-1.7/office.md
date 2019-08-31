@@ -3,12 +3,12 @@ title: Office 命名空间-要求集1。7
 description: ''
 ms.date: 08/13/2019
 localization_priority: Normal
-ms.openlocfilehash: be0223e7ed274abf0e742be13f258c14f6dccf91
-ms.sourcegitcommit: 1c7e555733ee6d5a08e444a3c4c16635d998e032
+ms.openlocfilehash: 8d22ce8400916dffe12a15bba35f70ceca4db510
+ms.sourcegitcommit: 1fb99b1b4e63868a0e81a928c69a34c42bf7e209
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/14/2019
-ms.locfileid: "36395692"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "36695866"
 ---
 # <a name="office"></a>Office
 
@@ -60,6 +60,8 @@ ms.locfileid: "36395692"
 |[最低版本的邮箱要求集](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
 |[适用的 Outlook 模式](/outlook/add-ins/#extension-points)| 撰写或阅读|
 
+<br>
+
 ---
 ---
 
@@ -84,6 +86,8 @@ ms.locfileid: "36395692"
 |---|---|
 |[最低版本的邮箱要求集](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
 |[适用的 Outlook 模式](/outlook/add-ins/#extension-points)| 撰写或阅读|
+
+<br>
 
 ---
 ---
@@ -111,6 +115,8 @@ ms.locfileid: "36395692"
 |---|---|
 |[最低版本的邮箱要求集](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.5 |
 |[适用的 Outlook 模式](/outlook/add-ins/#extension-points)| 撰写或阅读 |
+
+<br>
 
 ---
 ---
