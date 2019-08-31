@@ -3,12 +3,12 @@ title: Excel JavaScript API 性能优化
 description: 使用 Excel JavaScript API 优化性能
 ms.date: 06/20/2019
 localization_priority: Priority
-ms.openlocfilehash: bd3446b5bb33549002c2ad2325a11ea563c6b7d1
-ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
+ms.openlocfilehash: 7ffca45d1d7f6619fa1d942befed1856f77934d9
+ms.sourcegitcommit: 1fb99b1b4e63868a0e81a928c69a34c42bf7e209
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "35128302"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "36695845"
 ---
 # <a name="performance-optimization-using-the-excel-javascript-api"></a>使用 Excel JavaScript API 优化性能
 
@@ -24,7 +24,7 @@ ms.locfileid: "35128302"
 
 避免重复创建同一个代理对象。 如果多个操作需要同一个代理对象，则改为创建一次并将其分配给一个变量，然后在代码中使用该变量。
 
-```javascript
+```js
 // BAD: repeated calls to .getRange() to create the same proxy object
 worksheet.getRange("A1").format.fill.color = "red";
 worksheet.getRange("A1").numberFormat = "0.00%";

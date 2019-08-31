@@ -3,12 +3,12 @@ title: 在清单中创建 Excel、Word 和 PowerPoint 加载项命令
 description: 在清单中使用 VersionOverrides 定义 Excel、Word 和 PowerPoint 加载项命令。 加载项命令可用于创建 UI 元素，也可用于添加按钮或列表，同时还能执行操作。
 ms.date: 06/20/2019
 localization_priority: Priority
-ms.openlocfilehash: 9917eaa7b28ea843703a1de566b41277517b20fa
-ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
+ms.openlocfilehash: a614d2786652058c42dbcca726546575e71f12ef
+ms.sourcegitcommit: 1fb99b1b4e63868a0e81a928c69a34c42bf7e209
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "35128176"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "36695894"
 ---
 # <a name="create-add-in-commands-in-your-manifest-for-excel-word-and-powerpoint"></a>在清单中创建 Excel、Word 和 PowerPoint 加载项命令
 
@@ -166,7 +166,7 @@ ms.locfileid: "35128176"
 
 下面的代码展示了如何实现 **FunctionName** 使用的函数。
 
-```javascript
+```js
 
 <script>
     // The initialize function must be run each time a new page is loaded.

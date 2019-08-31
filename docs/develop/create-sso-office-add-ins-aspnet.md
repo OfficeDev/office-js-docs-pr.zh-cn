@@ -3,12 +3,12 @@ title: 创建使用单一登录的 ASP.NET Office 加载项
 description: ''
 ms.date: 04/15/2019
 localization_priority: Priority
-ms.openlocfilehash: a28178fb309450f59435d678c013a7a73bb60978
-ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
+ms.openlocfilehash: bc8c2427171f06865de6c809a5d7311018fcc278
+ms.sourcegitcommit: 1fb99b1b4e63868a0e81a928c69a34c42bf7e209
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "35128152"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "36695803"
 ---
 # <a name="create-an-aspnet-office-add-in-that-uses-single-sign-on-preview"></a>创建使用单一登录的 ASP.NET Office 加载项（预览）
 
@@ -169,7 +169,7 @@ ms.locfileid: "35128152"
     * 加载项中的错误处理有时会自动尝试使用一组不同的选项，重新获取访问令牌。 计数器变量 `timesGetOneDriveFilesHasRun` 和标志变量 `triedWithoutForceConsent` 用于确保用户不会重复循环失败的尝试来获取令牌。
     * 虽然 `getDataWithToken` 方法是在下一步中创建，但请注意，它会将 `forceConsent` 选项设置为 `false`。有关详细信息，请参阅下一步。
 
-    ```javascript
+    ```js
     var timesGetOneDriveFilesHasRun = 0;
     var triedWithoutForceConsent = false;
 
@@ -187,7 +187,7 @@ ms.locfileid: "35128152"
     * options 参数将 `forceConsent` 设置为 `false`，因此用户不会在每次使用加载项时都看到提示，要求其许可向 Office 主机授予对加载项的访问权限。 用户首次运行加载项时，`getAccessTokenAsync` 调用会失败，但在后续步骤中添加的错误处理逻辑会自动重新调用（`forceConsent` 选项设置为 `true`），并提示用户许可，但仅限首次运行。
     * `handleClientSideErrors` 方法将在后续步骤中创建。
 
-    ```javascript
+    ```js
     function getDataWithToken(options) {
     Office.context.auth.getAccessTokenAsync(options,
         function (result) {
@@ -203,7 +203,7 @@ ms.locfileid: "35128152"
 
 1. 用以下行替换 TODO1。可以在后续步骤中创建 `getData` 方法和服务器端“/api/values”路由。相对 URL 用于终结点，因为它必须与外接程序托管在相同的域中。
 
-    ```javascript
+    ```js
     accessToken = result.value;
     getData("/api/values", accessToken);
     ```
@@ -213,7 +213,7 @@ ms.locfileid: "35128152"
     * 此方法调用指定 Web API 终结点，并向它传递访问令牌，这也是 Office 主机应用用于获取对加载项的访问权限的令牌。在服务器端，此访问令牌将用于“代表”流，以获取对 Microsoft Graph 的访问令牌。
     * `handleServerSideErrors` 方法将在后续步骤中创建。
 
-    ```javascript
+    ```js
     function getData(relativeUrl, accessToken) {
         $.ajax({
             url: relativeUrl,
@@ -233,7 +233,7 @@ ms.locfileid: "35128152"
 
 1. 在 `getData` 方法下方，添加下列方法。 当 Office 主机无法获取对加载项 Web 服务的访问令牌时，此方法便会处理加载项客户端中的错误。 这些错误通过错误代码进行报告，因此下面的方法使用 `switch` 语句区分它们。
 
-    ```javascript
+    ```js
     function handleClientSideErrors(result) {
 
         switch (result.error.code) {
@@ -266,7 +266,7 @@ ms.locfileid: "35128152"
 
 1. 将 `TODO2` 替换为以下代码。 如果用户未登录或用户取消（未响应）提供辅助身份验证因素的提示，错误 13001 发生。 无论属于上述哪种情况，代码都会重新运行 `getDataWithToken` 方法，并设置强制登录提示选项。
 
-    ```javascript
+    ```js
     case 13001:
         getDataWithToken({ forceAddAccount: true });
         break;
@@ -274,7 +274,7 @@ ms.locfileid: "35128152"
 
 1. 将 `TODO3` 替换为以下代码。 如果用户登录或许可被中止，错误 13002 发生。 建议用户重试一次，但只能重试一次。
 
-    ```javascript
+    ```js
     case 13002:
         if (timesGetOneDriveFilesHasRun < 2) {
             showResult(['Your sign-in or consent was aborted before completion. Please try that operation again.']);
@@ -286,7 +286,7 @@ ms.locfileid: "35128152"
 
 1. 将 `TODO4` 替换为下面的代码。 如果用户用于登录的帐户既不是工作帐户或学校帐户，也不是 Microsoft 帐户，错误 13003 发生。 建议用户注销，然后使用受支持的帐户类型重新登录。
 
-    ```javascript
+    ```js
     case 13003:
         showResult(['Please sign out of Office and sign in again with a work or school account, or Microsoft account. Other kinds of accounts, like corporate domain accounts do not work.']);
         break;
@@ -297,7 +297,7 @@ ms.locfileid: "35128152"
 
 1. 将 `TODO5` 替换为下面的代码。 如果 Office 未经授权访问加载项的 Web 服务，或用户未授予对 `profile` 的服务权限，就会发生错误 13005。
 
-    ```javascript
+    ```js
     case 13005:
         getDataWithToken({ forceConsent: true });
         break;
@@ -305,7 +305,7 @@ ms.locfileid: "35128152"
 
 1. 将 `TODO6` 替换为下列代码。如果 Office 主机中出现可能表明主机处于不稳定状态的未指定错误，就会发生错误 13006。建议用户重启 Office。
 
-    ```javascript
+    ```js
     case 13006:
         showResult(['Please save your work, sign out of Office, close all Office applications, and restart this Office application.']);
         break;
@@ -313,7 +313,7 @@ ms.locfileid: "35128152"
 
 1. 将 `TODO7` 替换为以下代码。 如果 Office 主机与 AAD 之间的交互出现问题，导致主机无法获得对加载项 Web 服务/应用的访问令牌，错误 13007 发生。 这可能由于暂时网络问题所致。 建议用户稍后重试。
 
-    ```javascript
+    ```js
     case 13007:
         showResult(['That operation cannot be done at this time. Please try again later.']);
         break;
@@ -321,7 +321,7 @@ ms.locfileid: "35128152"
 
 1. 将 `TODO8` 替换为下面的代码。 如果用户触发的操作未等到上一次调用完成就调用了 `getAccessTokenAsync`，错误 13008 发生。
 
-    ```javascript
+    ```js
     case 13008:
         showResult(['Please try that operation again after the current operation has finished.']);
         break;
@@ -329,7 +329,7 @@ ms.locfileid: "35128152"
 
 1. 将 `TODO9` 替换为以下代码。 如果加载项不支持强制许可，但调用 `getAccessTokenAsync` 时 `forceConsent` 选项设置为 `true`，错误 13009 发生。 通常情况下，如果发生这种情况，代码应自动重新运行 `getAccessTokenAsync`，同时将许可选项设置为 `false`。 不过，在某些情况下，调用将 `forceConsent` 设置为 `true` 的方法本身就是在自动响应调用将选项设置为 `false` 的方法时出现的错误。 此时，不得重试代码，而是应建议用户注销并重新登录。
 
-    ```javascript
+    ```js
     case 13009:
         if (triedWithoutForceConsent) {
             showResult(['Please sign out of Office and sign in again with a work or school account, or Microsoft account.']);
@@ -341,7 +341,7 @@ ms.locfileid: "35128152"
 
 1. 将 `TODO10` 替换为下面的代码。
 
-    ```javascript
+    ```js
     default:
         logError(result);
         break;
@@ -350,7 +350,7 @@ ms.locfileid: "35128152"
 
 1. 在 `handleClientSideErrors` 方法下方，添加下列方法。此方法可处理加载项 Web 服务中发生的以下错误：无法执行代表流，或无法从 Microsoft Graph 获取数据。
 
-    ```javascript
+    ```js
     function handleServerSideErrors(result) {
 
         // TODO11: Parse the JSON response.
@@ -368,7 +368,7 @@ ms.locfileid: "35128152"
 
 1. 将 `TODO11` 替换为以下代码。 请注意，对于加载项 Web 服务传递给加载项客户端的大多数 `4xx` 错误，响应中都有 **ExceptionMessage** 属性，其中包含 AADSTS（Azure Active Directory 安全令牌服务）错误号和其他数据。 不过，如果 AAD 向加载项的 Web 服务发送消息，请求执行其他身份验证，那么消息包含特殊的 **Claims** 属性，用于指定（使用代码编号）需要执行其他什么身份验证。 由于创建并向客户端发送 HTTP Response 的 ASP.NET API 并不知道此 **Claims** 属性，因此它们不会在 Response 对象中添加这个属性。 将在后续步骤中创建的服务器端代码负责处理这个问题，具体方法是手动向 Response 对象添加 **Claims** 值。 因为此值位于 **Message** 属性中，所以代码也需要解析相应属性。
 
-    ```javascript
+    ```js
     var exceptionMessage = JSON.parse(result.responseText).ExceptionMessage;
     var message = JSON.parse(result.responseText).Message;
     ```
@@ -378,7 +378,7 @@ ms.locfileid: "35128152"
     * 如果 Microsoft Graph 要求进行其他形式的身份验证，错误 50076 发生。
     * Office 主机应获取新令牌（使用 **Claims** 值作为 `authChallenge` 选项）。 这就指示 AAD 提示用户进行所有必需形式的身份验证。
 
-    ```javascript
+    ```js
     if (message) {
         if (message.indexOf("AADSTS50076") !== -1) {
             var claims = JSON.parse(message).Claims;
@@ -390,7 +390,7 @@ ms.locfileid: "35128152"
 
 1. 将 `TODO13` 替换为下面的代码。 将此代码中的三处 `TODO` 替换为下几个步骤中的*内部*条件块。
 
-    ```javascript
+    ```js
     else if (exceptionMessage) {
 
         // TODO13A: Handle the case where consent has not been granted, or has been revoked.
@@ -409,7 +409,7 @@ ms.locfileid: "35128152"
     * 错误 65001 表示未许可授予（或已撤消）一个或多个对 Microsoft Graph 的访问权限。
     * 加载项应获取新令牌（`forceConsent` 选项设置为 `true`）。
 
-    ```javascript
+    ```js
     if (exceptionMessage.indexOf('AADSTS65001') !== -1) {
        getDataWithToken({ forceConsent: true });
     }
@@ -420,7 +420,7 @@ ms.locfileid: "35128152"
     * 错误 70011 有多重含义。对于此加载项而言，最重要的含义是已请求获取的范围（权限）无效。因此，代码会检查是否有完整错误说明，而不仅仅是数字。
     * 加载项应报告此错误。
 
-    ```javascript
+    ```js
      else if (exceptionMessage.indexOf("AADSTS70011: The provided value for the input parameter 'scope' is not valid.") !== -1) {
         showResult(['The add-in is asking for a type of permission that is not recognized.']);
     }
@@ -431,7 +431,7 @@ ms.locfileid: "35128152"
     * 如果 `access_as_user` 范围（权限）不在访问令牌中，此令牌由加载项客户端发送到 AAD 以便在代表流中使用，那么在后续步骤中创建的服务器端代码将发送消息 `Missing access_as_user`。
     * 外接程序应报告此错误。
 
-    ```javascript
+    ```js
     else if (exceptionMessage.indexOf('Missing access_as_user.') !== -1) {
         showResult(['Microsoft Office does not have permission to get Microsoft Graph data on behalf of the current user.']);
     }
@@ -442,7 +442,7 @@ ms.locfileid: "35128152"
     * 要在服务器端代码中使用的标识库（Microsoft 身份验证库 (MSAL)）应确保没有向 Microsoft Graph 发送任何到期或无效令牌；但如果这种情况确实发生，从 Microsoft Graph 返回到加载项 Web 服务的错误包含代码 `InvalidAuthenticationToken`。 在后续步骤中创建的服务器端代码会将此消息中继到加载项的客户端。
     * 在这种情况下，加载项应重置计数器和标志变量，再重新调用按钮处理程序方法，以从头开始执行整个身份验证流程。
 
-    ```javascript
+    ```js
     // If the token sent to MS Graph is expired or invalid, start the whole process over.
     else if (result.code === 'InvalidAuthenticationToken') {
         timesGetOneDriveFilesHasRun = 0;
@@ -453,7 +453,7 @@ ms.locfileid: "35128152"
 
 1. 将 `TODO15` 替换为下面的代码。
 
-    ```javascript
+    ```js
     else {
         logError(result);
     }
