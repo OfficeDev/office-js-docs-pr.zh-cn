@@ -68,7 +68,7 @@
 
 1.  建立 GitHub 帐户以参与此项目。如果还未进行此操作，请转至 [GitHub](https://github.com/join) 立即进行。
 2.  在计算机上安装 Git。 按[安装 Git] 教程中的步骤操作。
-3.  创建此存储库的你自己的分支。 为此，在页面顶部，选择“**分叉**”按钮。
+3.  对此存储库创建你自己的分叉。为此，在页面顶部，选择“分叉”**** 按钮。
 4.  将自己的分叉复制到计算机上。打开 Git Bash 以完成此步骤。在命令提示符中输入：
 
         git clone https://github.com/<your user name>/<repo name>.git
