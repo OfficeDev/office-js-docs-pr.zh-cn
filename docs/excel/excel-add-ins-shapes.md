@@ -1,14 +1,14 @@
 ---
 title: 使用 Excel JavaScript API 处理形状
 description: ''
-ms.date: 07/19/2019
+ms.date: 09/03/2019
 localization_priority: Normal
-ms.openlocfilehash: fb3aa7495efb54332b2ae0bb4dee8b11249afd3a
-ms.sourcegitcommit: bb44c9694f88cde32ffbb642689130db44456964
+ms.openlocfilehash: 2461416bcd7e64c2ea300d98e504ff27edcb14ac
+ms.sourcegitcommit: 78998a9f0ebb81c4dd2b77574148b16fe6725cfc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/17/2019
-ms.locfileid: "35771679"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "36715604"
 ---
 # <a name="work-with-shapes-using-the-excel-javascript-api"></a>使用 Excel JavaScript API 处理形状
 
@@ -62,8 +62,8 @@ var reader = new FileReader();
 
 reader.onload = (event) => {
     Excel.run(function (context) {
-        var startIndex = event.target.result.indexOf("base64,");
-        var myBase64 = event.target.result.substr(startIndex + 7);
+        var startIndex = reader.result.toString().indexOf("base64,");
+        var myBase64 = reader.result.toString().substr(startIndex + 7);
         var sheet = context.workbook.worksheets.getItem("MyWorksheet");
         var image = sheet.shapes.addImage(myBase64);
         image.name = "Image";
