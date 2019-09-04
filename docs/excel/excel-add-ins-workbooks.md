@@ -1,14 +1,14 @@
 ---
 title: 使用 Excel JavaScript API 处理工作簿
 description: ''
-ms.date: 05/01/2019
+ms.date: 09/03/2019
 localization_priority: Priority
-ms.openlocfilehash: e7ec76846a9097ea9e1ef6269661d51c42c21f62
-ms.sourcegitcommit: 47b792755e655043d3db2f1fdb9a1eeb7453c636
+ms.openlocfilehash: eb2313203e770e173d4db12d2bbc03048a08acaa
+ms.sourcegitcommit: 78998a9f0ebb81c4dd2b77574148b16fe6725cfc
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "33620162"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "36715618"
 ---
 # <a name="work-with-workbooks-using-the-excel-javascript-api"></a>使用 Excel JavaScript API 处理工作簿
 
@@ -60,8 +60,8 @@ var reader = new FileReader();
 reader.onload = (function (event) {
     Excel.run(function (context) {
         // strip off the metadata before the base64-encoded string
-        var startIndex = event.target.result.indexOf("base64,");
-        var workbookContents = event.target.result.substr(startIndex + 7);
+        var startIndex = reader.result.toString().indexOf("base64,");
+        var workbookContents = reader.result.toString().substr(startIndex + 7);
 
         Excel.createWorkbook(workbookContents);
         return context.sync();
@@ -92,8 +92,8 @@ var reader = new FileReader();
 reader.onload = (event) => {
     Excel.run((context) => {
         // strip off the metadata before the base64-encoded string
-        var startIndex = event.target.result.indexOf("base64,");
-        var workbookContents = event.target.result.substr(startIndex + 7);
+        var startIndex = reader.result.toString().indexOf("base64,");
+        var workbookContents = reader.result.toString().substr(startIndex + 7);
 
         var sheets = context.workbook.worksheets;
         sheets.addFromBase64(

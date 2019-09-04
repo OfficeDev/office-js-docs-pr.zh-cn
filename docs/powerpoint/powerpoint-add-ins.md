@@ -1,16 +1,16 @@
 ---
 title: PowerPoint 加载项
 description: ''
-ms.date: 07/05/2019
+ms.date: 09/03/2019
 ms.topic: overview
 scenarios: getting-started
 localization_priority: Priority
-ms.openlocfilehash: 202799e47b9392c4c41b3b1bf8574d64bb5e4c33
-ms.sourcegitcommit: 49af31060aa56c1e1ec1e08682914d3cbefc3f1c
+ms.openlocfilehash: 9a5b9746acab2916288a3c63d8ff14fa3b9f46f8
+ms.sourcegitcommit: 78998a9f0ebb81c4dd2b77574148b16fe6725cfc
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2019
-ms.locfileid: "36672787"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "36715597"
 ---
 # <a name="powerpoint-add-ins"></a>PowerPoint 加载项
 
@@ -181,8 +181,8 @@ var reader = new FileReader();
 
 reader.onload = function (event) {
     // strip off the metadata before the base64-encoded string
-    var startIndex = event.target.result.indexOf("base64,");
-    var copyBase64 = event.target.result.substr(startIndex + 7);
+    var startIndex = reader.result.toString().indexOf("base64,");
+    var copyBase64 = reader.result.toString().substr(startIndex + 7);
 
     PowerPoint.createPresentation(copyBase64);
 };
