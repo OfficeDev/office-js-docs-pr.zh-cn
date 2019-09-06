@@ -1,14 +1,14 @@
 ---
 title: 清单文件中的 ExtensionPoint 元件
 description: ''
-ms.date: 08/23/2019
+ms.date: 09/05/2019
 localization_priority: Priority
-ms.openlocfilehash: 4f6a6347ac61e48f5bdefb7759d8bddbca64ea7e
-ms.sourcegitcommit: 49af31060aa56c1e1ec1e08682914d3cbefc3f1c
+ms.openlocfilehash: ed26c5e81a2c8229faad2c8af6b1edaff2f288e5
+ms.sourcegitcommit: d34aa0b282cc76ffff579da2a7945efd12fb7340
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2019
-ms.locfileid: "36672791"
+ms.lasthandoff: 09/05/2019
+ms.locfileid: "36769587"
 ---
 # <a name="extensionpoint-element"></a>ExtensionPoint 元素
 
@@ -251,7 +251,7 @@ ms.locfileid: "36672791"
 此扩展点添加了指定事件的事件处理程序。
 
 > [!NOTE]
-> 仅 Office 365 中的 Outlook 网页版支持此元素类型。
+> 经典 Outlook 网页版、以及 Windows、Mac 上的[预览版](../objectmodel/preview-requirement-set/outlook-requirement-set-preview.md)以及新式 Outlook 网页版支持此元素类型。 还需要 Office 365 订阅。
 
 | 元素 | 说明  |
 |:-----|:-----|
@@ -260,9 +260,9 @@ ms.locfileid: "36672791"
 #### <a name="itemsend-event-example"></a>ItemSend 事件示例
 
 ```xml
-<ExtensionPoint xsi:type="Events"> 
-  <Event Type="ItemSend" FunctionExecution="synchronous" FunctionName="itemSendHandler" /> 
-</ExtensionPoint> 
+<ExtensionPoint xsi:type="Events">
+  <Event Type="ItemSend" FunctionExecution="synchronous" FunctionName="itemSendHandler" />
+</ExtensionPoint>
 ```
 
 ### <a name="detectedentity"></a>DetectedEntity
@@ -272,7 +272,7 @@ ms.locfileid: "36672791"
 包含 [VersionOverrides](versionoverrides.md) 元素的 `xsi:type` 属性值必须为 `VersionOverridesV1_1`。
 
 > [!NOTE]
-> 此元素类型适用于[支持要求集 1.6 和更高版本的 Outlook 客户端](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets#clients)。
+> 此元素类型适用于[支持要求集 1.6 和更高版本的 Outlook 客户端](../requirement-sets/outlook-api-requirement-sets.md#clients)。
 
 |  元素 |  说明  |
 |:-----|:-----|

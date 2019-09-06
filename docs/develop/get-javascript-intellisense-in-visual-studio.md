@@ -3,12 +3,12 @@ title: 在 Visual Studio 2017 中获取 JavaScript IntelliSense
 description: ''
 ms.date: 03/19/2019
 localization_priority: Priority
-ms.openlocfilehash: 7a4e2962933ccef0912ba3f96ed67af580fab60b
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: 78a774397069d0c6ff91cc098cad0fd9b8e5c7b9
+ms.sourcegitcommit: d34aa0b282cc76ffff579da2a7945efd12fb7340
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32449085"
+ms.lasthandoff: 09/05/2019
+ms.locfileid: "36769545"
 ---
 # <a name="get-javascript-intellisense-in-visual-studio-2017"></a>在 Visual Studio 2017 中获取 JavaScript IntelliSense
 
@@ -68,7 +68,7 @@ function myFunc() {
 
 }
 ```
-![返回值的 Intellisense](../images/intellisense-vs17-return.png)
+![返回值的 IntelliSense](../images/intellisense-vs17-return.png)
 
 ### <a name="complex-types"></a>复杂类型
 
