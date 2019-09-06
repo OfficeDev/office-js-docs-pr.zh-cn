@@ -1,40 +1,40 @@
 ---
 title: 清单文件中的 ExtensionPoint 元件
 description: ''
-ms.date: 08/23/2019
+ms.date: 09/05/2019
 localization_priority: Priority
-ms.openlocfilehash: 4f6a6347ac61e48f5bdefb7759d8bddbca64ea7e
-ms.sourcegitcommit: 49af31060aa56c1e1ec1e08682914d3cbefc3f1c
+ms.openlocfilehash: ed26c5e81a2c8229faad2c8af6b1edaff2f288e5
+ms.sourcegitcommit: d34aa0b282cc76ffff579da2a7945efd12fb7340
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2019
-ms.locfileid: "36672791"
+ms.lasthandoff: 09/05/2019
+ms.locfileid: "36769587"
 ---
-# <a name="extensionpoint-element"></a><span data-ttu-id="4e0cf-102">ExtensionPoint 元素</span><span class="sxs-lookup"><span data-stu-id="4e0cf-102">ExtensionPoint element</span></span>
+# <a name="extensionpoint-element"></a><span data-ttu-id="3a8ac-102">ExtensionPoint 元素</span><span class="sxs-lookup"><span data-stu-id="3a8ac-102">ExtensionPoint element</span></span>
 
- <span data-ttu-id="4e0cf-103">定义 Office UI 中加载项公开功能的位置。</span><span class="sxs-lookup"><span data-stu-id="4e0cf-103">Defines where an add-in exposes functionality in the Office UI.</span></span> <span data-ttu-id="4e0cf-104">**ExtensionPoint** 元素是 [AllFormFactors](allformfactors.md)、[DesktopFormFactor](desktopformfactor.md) 或 [MobileFormFactor](mobileformfactor.md) 的子元素。</span><span class="sxs-lookup"><span data-stu-id="4e0cf-104">The **ExtensionPoint** element is a child element of [AllFormFactors](allformfactors.md), [DesktopFormFactor](desktopformfactor.md) or [MobileFormFactor](mobileformfactor.md).</span></span> 
+ <span data-ttu-id="3a8ac-103">定义 Office UI 中加载项公开功能的位置。</span><span class="sxs-lookup"><span data-stu-id="3a8ac-103">Defines where an add-in exposes functionality in the Office UI.</span></span> <span data-ttu-id="3a8ac-104">**ExtensionPoint** 元素是 [AllFormFactors](allformfactors.md)、[DesktopFormFactor](desktopformfactor.md) 或 [MobileFormFactor](mobileformfactor.md) 的子元素。</span><span class="sxs-lookup"><span data-stu-id="3a8ac-104">The **ExtensionPoint** element is a child element of [AllFormFactors](allformfactors.md), [DesktopFormFactor](desktopformfactor.md) or [MobileFormFactor](mobileformfactor.md).</span></span> 
 
-## <a name="attributes"></a><span data-ttu-id="4e0cf-105">属性</span><span class="sxs-lookup"><span data-stu-id="4e0cf-105">Attributes</span></span>
+## <a name="attributes"></a><span data-ttu-id="3a8ac-105">属性</span><span class="sxs-lookup"><span data-stu-id="3a8ac-105">Attributes</span></span>
 
-|  <span data-ttu-id="4e0cf-106">属性</span><span class="sxs-lookup"><span data-stu-id="4e0cf-106">Attribute</span></span>  |  <span data-ttu-id="4e0cf-107">必需</span><span class="sxs-lookup"><span data-stu-id="4e0cf-107">Required</span></span>  |  <span data-ttu-id="4e0cf-108">说明</span><span class="sxs-lookup"><span data-stu-id="4e0cf-108">Description</span></span>  |
+|  <span data-ttu-id="3a8ac-106">属性</span><span class="sxs-lookup"><span data-stu-id="3a8ac-106">Attribute</span></span>  |  <span data-ttu-id="3a8ac-107">必需</span><span class="sxs-lookup"><span data-stu-id="3a8ac-107">Required</span></span>  |  <span data-ttu-id="3a8ac-108">说明</span><span class="sxs-lookup"><span data-stu-id="3a8ac-108">Description</span></span>  |
 |:-----|:-----|:-----|
-|  <span data-ttu-id="4e0cf-109">**xsi:type**</span><span class="sxs-lookup"><span data-stu-id="4e0cf-109">**xsi:type**</span></span>  |  <span data-ttu-id="4e0cf-110">是</span><span class="sxs-lookup"><span data-stu-id="4e0cf-110">Yes</span></span>  | <span data-ttu-id="4e0cf-111">定义的扩展点类型。</span><span class="sxs-lookup"><span data-stu-id="4e0cf-111">The type of extension point being defined.</span></span>|
+|  <span data-ttu-id="3a8ac-109">**xsi:type**</span><span class="sxs-lookup"><span data-stu-id="3a8ac-109">**xsi:type**</span></span>  |  <span data-ttu-id="3a8ac-110">是</span><span class="sxs-lookup"><span data-stu-id="3a8ac-110">Yes</span></span>  | <span data-ttu-id="3a8ac-111">定义的扩展点类型。</span><span class="sxs-lookup"><span data-stu-id="3a8ac-111">The type of extension point being defined.</span></span>|
 
-## <a name="extension-points-for-excel-only"></a><span data-ttu-id="4e0cf-112">仅适用于 Excel 的扩展点</span><span class="sxs-lookup"><span data-stu-id="4e0cf-112">Extension points for Excel only</span></span>
+## <a name="extension-points-for-excel-only"></a><span data-ttu-id="3a8ac-112">仅适用于 Excel 的扩展点</span><span class="sxs-lookup"><span data-stu-id="3a8ac-112">Extension points for Excel only</span></span>
 
-- <span data-ttu-id="4e0cf-113">**CustomFunctions** - 针对 Excel 使用 JavaScript 编写的自定义函数。</span><span class="sxs-lookup"><span data-stu-id="4e0cf-113">**CustomFunctions** - A custom function written in JavaScript for Excel.</span></span>
+- <span data-ttu-id="3a8ac-113">**CustomFunctions** - 针对 Excel 使用 JavaScript 编写的自定义函数。</span><span class="sxs-lookup"><span data-stu-id="3a8ac-113">**CustomFunctions** - A custom function written in JavaScript for Excel.</span></span>
 
-<span data-ttu-id="4e0cf-114">[此 XML 示例代码](https://github.com/OfficeDev/Excel-Custom-Functions/blob/master/manifest.xml)演示如何将 **ExtensionPoint** 元素与 **CustomFunctions** 属性值配合使用，以及如何使用子元素。</span><span class="sxs-lookup"><span data-stu-id="4e0cf-114">[This XML code sample](https://github.com/OfficeDev/Excel-Custom-Functions/blob/master/manifest.xml) shows how to use the **ExtensionPoint** element with the **CustomFunctions** attribute value, and the child elements to be used.</span></span>
+<span data-ttu-id="3a8ac-114">[此 XML 示例代码](https://github.com/OfficeDev/Excel-Custom-Functions/blob/master/manifest.xml)演示如何将 **ExtensionPoint** 元素与 **CustomFunctions** 属性值配合使用，以及如何使用子元素。</span><span class="sxs-lookup"><span data-stu-id="3a8ac-114">[This XML code sample](https://github.com/OfficeDev/Excel-Custom-Functions/blob/master/manifest.xml) shows how to use the **ExtensionPoint** element with the **CustomFunctions** attribute value, and the child elements to be used.</span></span>
 
-## <a name="extension-points-for-word-excel-powerpoint-and-onenote-add-in-commands"></a><span data-ttu-id="4e0cf-115">适用于 Word、Excel、PowerPoint 和 OneNote 加载项命令的扩展点</span><span class="sxs-lookup"><span data-stu-id="4e0cf-115">Extension points for Word, Excel, PowerPoint, and OneNote add-in commands</span></span>
+## <a name="extension-points-for-word-excel-powerpoint-and-onenote-add-in-commands"></a><span data-ttu-id="3a8ac-115">适用于 Word、Excel、PowerPoint 和 OneNote 加载项命令的扩展点</span><span class="sxs-lookup"><span data-stu-id="3a8ac-115">Extension points for Word, Excel, PowerPoint, and OneNote add-in commands</span></span>
 
-- <span data-ttu-id="4e0cf-116">**PrimaryCommandSurface** - Office 中的功能区。</span><span class="sxs-lookup"><span data-stu-id="4e0cf-116">**PrimaryCommandSurface** - The ribbon in Office.</span></span>
-- <span data-ttu-id="4e0cf-117">**ContextMenu** - Office UI 中右键单击时出现的快捷菜单。</span><span class="sxs-lookup"><span data-stu-id="4e0cf-117">**ContextMenu** - The shortcut menu that appears when you right-click in the Office UI.</span></span>
+- <span data-ttu-id="3a8ac-116">**PrimaryCommandSurface** - Office 中的功能区。</span><span class="sxs-lookup"><span data-stu-id="3a8ac-116">**PrimaryCommandSurface** - The ribbon in Office.</span></span>
+- <span data-ttu-id="3a8ac-117">**ContextMenu** - Office UI 中右键单击时出现的快捷菜单。</span><span class="sxs-lookup"><span data-stu-id="3a8ac-117">**ContextMenu** - The shortcut menu that appears when you right-click in the Office UI.</span></span>
 
-<span data-ttu-id="4e0cf-118">下面的示例演示如何将  **ExtensionPoint** 元素与 **PrimaryCommandSurface** 和 **ContextMenu** 属性值配合使用，以及应彼此配合使用的子元素。</span><span class="sxs-lookup"><span data-stu-id="4e0cf-118">The following examples show how to use the  **ExtensionPoint** element with **PrimaryCommandSurface** and **ContextMenu** attribute values, and the child elements that should be used with each.</span></span>
+<span data-ttu-id="3a8ac-118">下面的示例演示如何将  **ExtensionPoint** 元素与 **PrimaryCommandSurface** 和 **ContextMenu** 属性值配合使用，以及应彼此配合使用的子元素。</span><span class="sxs-lookup"><span data-stu-id="3a8ac-118">The following examples show how to use the  **ExtensionPoint** element with **PrimaryCommandSurface** and **ContextMenu** attribute values, and the child elements that should be used with each.</span></span>
 
 > [!IMPORTANT] 
-> <span data-ttu-id="4e0cf-p102">对于包含 ID 属性的元素，请务必提供唯一 ID。建议将公司名称与 ID 结合使用。例如，请使用以下格式：<CustomTab id="mycompanyname.mygroupname"></span><span class="sxs-lookup"><span data-stu-id="4e0cf-p102">For elements that contain an ID attribute, make sure you provide a unique ID. We recommend that you use your company's name along with your ID. For example, use the following format. <CustomTab id="mycompanyname.mygroupname"></span></span>
+> <span data-ttu-id="3a8ac-p102">对于包含 ID 属性的元素，请务必提供唯一 ID。建议将公司名称与 ID 结合使用。例如，请使用以下格式：<CustomTab id="mycompanyname.mygroupname"></span><span class="sxs-lookup"><span data-stu-id="3a8ac-p102">For elements that contain an ID attribute, make sure you provide a unique ID. We recommend that you use your company's name along with your ID. For example, use the following format. <CustomTab id="mycompanyname.mygroupname"></span></span>
 
 ```XML
 <ExtensionPoint xsi:type="PrimaryCommandSurface">
@@ -69,43 +69,43 @@ ms.locfileid: "36672791"
         </ExtensionPoint>
 ```
 
-#### <a name="child-elements"></a><span data-ttu-id="4e0cf-122">子元素</span><span class="sxs-lookup"><span data-stu-id="4e0cf-122">Child elements</span></span>
+#### <a name="child-elements"></a><span data-ttu-id="3a8ac-122">子元素</span><span class="sxs-lookup"><span data-stu-id="3a8ac-122">Child elements</span></span>
  
-|<span data-ttu-id="4e0cf-123">**元素**</span><span class="sxs-lookup"><span data-stu-id="4e0cf-123">**Element**</span></span>|<span data-ttu-id="4e0cf-124">**说明**</span><span class="sxs-lookup"><span data-stu-id="4e0cf-124">**Description**</span></span>|
+|<span data-ttu-id="3a8ac-123">**元素**</span><span class="sxs-lookup"><span data-stu-id="3a8ac-123">**Element**</span></span>|<span data-ttu-id="3a8ac-124">**说明**</span><span class="sxs-lookup"><span data-stu-id="3a8ac-124">**Description**</span></span>|
 |:-----|:-----|
-|<span data-ttu-id="4e0cf-125">**CustomTab**</span><span class="sxs-lookup"><span data-stu-id="4e0cf-125">**CustomTab**</span></span>|<span data-ttu-id="4e0cf-p103">如果想要（使用 **PrimaryCommandSurface**）向功能区添加自定义选项卡，则为必需项。如果使用 **CustomTab** 元素，则不能使用 **OfficeTab** 元素。**id** 属性是必需的。</span><span class="sxs-lookup"><span data-stu-id="4e0cf-p103">Required if you want to add a custom tab to the ribbon (using  **PrimaryCommandSurface**). If you use the  **CustomTab** element, you can't use the **OfficeTab** element. The **id** attribute is required.</span></span>|
-|<span data-ttu-id="4e0cf-129">**OfficeTab**</span><span class="sxs-lookup"><span data-stu-id="4e0cf-129">**OfficeTab**</span></span>|<span data-ttu-id="4e0cf-p104">如果想要（使用 **PrimaryCommandSurface**）扩展默认 Office 功能区选项卡，则为必需项。如果使用 **OfficeTab** 元素，则不能使用 **CustomTab** 元素。有关详细信息，请参阅 [OfficeTab](officetab.md)。</span><span class="sxs-lookup"><span data-stu-id="4e0cf-p104">Required if you want to extend a default Office ribbon tab (using **PrimaryCommandSurface**). If you use the  **OfficeTab** element, you can't use the **CustomTab** element. For details, see [OfficeTab](officetab.md).</span></span>|
-|<span data-ttu-id="4e0cf-133">**OfficeMenu**</span><span class="sxs-lookup"><span data-stu-id="4e0cf-133">**OfficeMenu**</span></span>|<span data-ttu-id="4e0cf-p105">如果正（使用 **ContextMenu**）将外接程序命令添加到默认上下文菜单中，则为必需项。**id** 属性必须设置为： </span><span class="sxs-lookup"><span data-stu-id="4e0cf-p105">Required if you're adding add-in commands to a default context menu (using  **ContextMenu**). The  **id** attribute must be set to: </span></span><br/> <span data-ttu-id="4e0cf-p106">适用于 Excel 或 Word 的 - **ContextMenuText**当用户选定文本，然后右键单击所选定的文本时显示上下文菜单上的项。 </span><span class="sxs-lookup"><span data-stu-id="4e0cf-p106">- **ContextMenuText** for Excel or Word. Displays the item on the context menu when text is selected and then the user right-clicks on the selected text. </span></span><br/> <span data-ttu-id="4e0cf-p107">适用于 Excel 的 - **ContextMenuCell**当用户右键单击电子表格中的某个单元格时显示上下文菜单上的项。</span><span class="sxs-lookup"><span data-stu-id="4e0cf-p107">- **ContextMenuCell** for Excel. Displays the  item on the context menu when the user right-clicks on a cell on the spreadsheet.</span></span>|
-|<span data-ttu-id="4e0cf-140">**Group**</span><span class="sxs-lookup"><span data-stu-id="4e0cf-140">**Group**</span></span>|<span data-ttu-id="4e0cf-p108">选项卡上的一组用户界面扩展点。一个组可以有最多六个控件。 **id** 属性是必需项。它是最多使用 125 个字符的字符串。</span><span class="sxs-lookup"><span data-stu-id="4e0cf-p108">A group of user interface extension points on a tab. A group can have up to six controls. The  **id** attribute is required. It's a string with a maximum of 125 characters.</span></span>|
-|<span data-ttu-id="4e0cf-144">**Label**</span><span class="sxs-lookup"><span data-stu-id="4e0cf-144">**Label**</span></span>|<span data-ttu-id="4e0cf-p109">必需。组标签。**resid** 属性必须设置为 **String** 元素的 **id** 属性的值。**String** 元素是 **ShortStrings** 元素的子元素，而 ShortStrings 元素是 **Resources** 元素的子元素。</span><span class="sxs-lookup"><span data-stu-id="4e0cf-p109">Required. The label of the group. The  **resid** attribute must be set to the value of the **id** attribute of a **String** element. The **String** element is a child element of the **ShortStrings** element, which is a child element of the **Resources** element.</span></span>|
-|<span data-ttu-id="4e0cf-149">**Icon**</span><span class="sxs-lookup"><span data-stu-id="4e0cf-149">**Icon**</span></span>|<span data-ttu-id="4e0cf-p110">必需。指定将在小型设备上使用或在显示过多按钮的情况下使用的组图标。**resid** 属性必须设置为 **Image** 元素的 **id** 属性的值。**Image** 元素是 **Images** 元素的子元素，而 Images 元素是 **Resources** 元素的子元素。**size** 属性给出图像的大小（以像素为单位）。要求三种图像大小：16、32 和 80。也同样支持五种可选大小：20、24、40、48 和 64。</span><span class="sxs-lookup"><span data-stu-id="4e0cf-p110">Required. Specifies the group's icon to be used on small form factor devices, or when too many buttons are displayed. The  **resid** attribute must be set to the value of the **id** attribute of an **Image** element. The **Image** element is a child element of the **Images** element, which is a child element of the **Resources** element. The **size** attribute gives the size, in pixels, of the image. Three image sizes are required: 16, 32, and 80. Five optional sizes are also supported: 20, 24, 40, 48, and 64.</span></span>|
-|<span data-ttu-id="4e0cf-157">**Tooltip**</span><span class="sxs-lookup"><span data-stu-id="4e0cf-157">**Tooltip**</span></span>|<span data-ttu-id="4e0cf-p111">可选。组的工具提示**resid** 属性必须设置为 **String** 元素的 **id** 属性的值。**String** 元素是 **LongStrings** 元素的子元素，而 LongStrings 元素是 **Resources** 元素的子元素。</span><span class="sxs-lookup"><span data-stu-id="4e0cf-p111">Optional. The tooltip of the group. The  **resid** attribute must be set to the value of the **id** attribute of a **String** element. The **String** element is a child element of the **LongStrings** element, which is a child element of the **Resources** element.</span></span>|
-|<span data-ttu-id="4e0cf-162">**Control**</span><span class="sxs-lookup"><span data-stu-id="4e0cf-162">**Control**</span></span>|<span data-ttu-id="4e0cf-163">每个组需要至少一个控件。</span><span class="sxs-lookup"><span data-stu-id="4e0cf-163">Each group requires at least one control.</span></span> <span data-ttu-id="4e0cf-164">**Control** 元素可以是一个**按钮**，也可以是一个**菜单**。</span><span class="sxs-lookup"><span data-stu-id="4e0cf-164">A  **Control** element can be either a **Button** or a **Menu**.</span></span> <span data-ttu-id="4e0cf-165">使用**菜单**指定按钮控件的下拉列表。</span><span class="sxs-lookup"><span data-stu-id="4e0cf-165">Use  **Menu** to specify a drop-down list of button controls.</span></span> <span data-ttu-id="4e0cf-166">目前，仅支持“按钮”和“菜单”。</span><span class="sxs-lookup"><span data-stu-id="4e0cf-166">Currently, only buttons and menus are supported.</span></span> <span data-ttu-id="4e0cf-167">请参阅[按钮控件](control.md#button-control)和[菜单控件](control.md#menu-dropdown-button-controls)各节了解详细信息。</span><span class="sxs-lookup"><span data-stu-id="4e0cf-167">See the [Button controls](control.md#button-control) and [Menu controls](control.md#menu-dropdown-button-controls) sections for more information.</span></span><br/><span data-ttu-id="4e0cf-168">**注意**  为了使故障排除变得更简单，我们建议一次性添加 **Control** 元素和相关的 **Resources** 子元素。</span><span class="sxs-lookup"><span data-stu-id="4e0cf-168">**Note:**  To make troubleshooting easier, we recommend that a  **Control** element and the related **Resources** child elements be added one at a time.</span></span>|
-|<span data-ttu-id="4e0cf-169">**Script**</span><span class="sxs-lookup"><span data-stu-id="4e0cf-169">**Script**</span></span>|<span data-ttu-id="4e0cf-170">使用自定义函数定义和注册代码链接到 JavaScript 文件。</span><span class="sxs-lookup"><span data-stu-id="4e0cf-170">Links to the JavaScript file with the custom function definition and registration code.</span></span> <span data-ttu-id="4e0cf-171">在开发者预览版中不使用此元素。</span><span class="sxs-lookup"><span data-stu-id="4e0cf-171">This element is not used in the Developer Preview.</span></span> <span data-ttu-id="4e0cf-172">实际上，HTML 页负责加载所有 JavaScript 文件。</span><span class="sxs-lookup"><span data-stu-id="4e0cf-172">Instead, the HTML page is responsible for loading all JavaScript files.</span></span>|
-|<span data-ttu-id="4e0cf-173">**Page**</span><span class="sxs-lookup"><span data-stu-id="4e0cf-173">**Page**</span></span>|<span data-ttu-id="4e0cf-174">链接到自定义函数的 HTML 页。</span><span class="sxs-lookup"><span data-stu-id="4e0cf-174">Links to the HTML page for your custom functions.</span></span>|
+|<span data-ttu-id="3a8ac-125">**CustomTab**</span><span class="sxs-lookup"><span data-stu-id="3a8ac-125">**CustomTab**</span></span>|<span data-ttu-id="3a8ac-p103">如果想要（使用 **PrimaryCommandSurface**）向功能区添加自定义选项卡，则为必需项。如果使用 **CustomTab** 元素，则不能使用 **OfficeTab** 元素。**id** 属性是必需的。</span><span class="sxs-lookup"><span data-stu-id="3a8ac-p103">Required if you want to add a custom tab to the ribbon (using  **PrimaryCommandSurface**). If you use the  **CustomTab** element, you can't use the **OfficeTab** element. The **id** attribute is required.</span></span>|
+|<span data-ttu-id="3a8ac-129">**OfficeTab**</span><span class="sxs-lookup"><span data-stu-id="3a8ac-129">**OfficeTab**</span></span>|<span data-ttu-id="3a8ac-p104">如果想要（使用 **PrimaryCommandSurface**）扩展默认 Office 功能区选项卡，则为必需项。如果使用 **OfficeTab** 元素，则不能使用 **CustomTab** 元素。有关详细信息，请参阅 [OfficeTab](officetab.md)。</span><span class="sxs-lookup"><span data-stu-id="3a8ac-p104">Required if you want to extend a default Office ribbon tab (using **PrimaryCommandSurface**). If you use the  **OfficeTab** element, you can't use the **CustomTab** element. For details, see [OfficeTab](officetab.md).</span></span>|
+|<span data-ttu-id="3a8ac-133">**OfficeMenu**</span><span class="sxs-lookup"><span data-stu-id="3a8ac-133">**OfficeMenu**</span></span>|<span data-ttu-id="3a8ac-p105">如果正（使用 **ContextMenu**）将外接程序命令添加到默认上下文菜单中，则为必需项。**id** 属性必须设置为： </span><span class="sxs-lookup"><span data-stu-id="3a8ac-p105">Required if you're adding add-in commands to a default context menu (using  **ContextMenu**). The  **id** attribute must be set to: </span></span><br/> <span data-ttu-id="3a8ac-p106">适用于 Excel 或 Word 的 - **ContextMenuText**当用户选定文本，然后右键单击所选定的文本时显示上下文菜单上的项。 </span><span class="sxs-lookup"><span data-stu-id="3a8ac-p106">- **ContextMenuText** for Excel or Word. Displays the item on the context menu when text is selected and then the user right-clicks on the selected text. </span></span><br/> <span data-ttu-id="3a8ac-p107">适用于 Excel 的 - **ContextMenuCell**当用户右键单击电子表格中的某个单元格时显示上下文菜单上的项。</span><span class="sxs-lookup"><span data-stu-id="3a8ac-p107">- **ContextMenuCell** for Excel. Displays the  item on the context menu when the user right-clicks on a cell on the spreadsheet.</span></span>|
+|<span data-ttu-id="3a8ac-140">**Group**</span><span class="sxs-lookup"><span data-stu-id="3a8ac-140">**Group**</span></span>|<span data-ttu-id="3a8ac-p108">选项卡上的一组用户界面扩展点。一个组可以有最多六个控件。 **id** 属性是必需项。它是最多使用 125 个字符的字符串。</span><span class="sxs-lookup"><span data-stu-id="3a8ac-p108">A group of user interface extension points on a tab. A group can have up to six controls. The  **id** attribute is required. It's a string with a maximum of 125 characters.</span></span>|
+|<span data-ttu-id="3a8ac-144">**Label**</span><span class="sxs-lookup"><span data-stu-id="3a8ac-144">**Label**</span></span>|<span data-ttu-id="3a8ac-p109">必需。组标签。**resid** 属性必须设置为 **String** 元素的 **id** 属性的值。**String** 元素是 **ShortStrings** 元素的子元素，而 ShortStrings 元素是 **Resources** 元素的子元素。</span><span class="sxs-lookup"><span data-stu-id="3a8ac-p109">Required. The label of the group. The  **resid** attribute must be set to the value of the **id** attribute of a **String** element. The **String** element is a child element of the **ShortStrings** element, which is a child element of the **Resources** element.</span></span>|
+|<span data-ttu-id="3a8ac-149">**Icon**</span><span class="sxs-lookup"><span data-stu-id="3a8ac-149">**Icon**</span></span>|<span data-ttu-id="3a8ac-p110">必需。指定将在小型设备上使用或在显示过多按钮的情况下使用的组图标。**resid** 属性必须设置为 **Image** 元素的 **id** 属性的值。**Image** 元素是 **Images** 元素的子元素，而 Images 元素是 **Resources** 元素的子元素。**size** 属性给出图像的大小（以像素为单位）。要求三种图像大小：16、32 和 80。也同样支持五种可选大小：20、24、40、48 和 64。</span><span class="sxs-lookup"><span data-stu-id="3a8ac-p110">Required. Specifies the group's icon to be used on small form factor devices, or when too many buttons are displayed. The  **resid** attribute must be set to the value of the **id** attribute of an **Image** element. The **Image** element is a child element of the **Images** element, which is a child element of the **Resources** element. The **size** attribute gives the size, in pixels, of the image. Three image sizes are required: 16, 32, and 80. Five optional sizes are also supported: 20, 24, 40, 48, and 64.</span></span>|
+|<span data-ttu-id="3a8ac-157">**Tooltip**</span><span class="sxs-lookup"><span data-stu-id="3a8ac-157">**Tooltip**</span></span>|<span data-ttu-id="3a8ac-p111">可选。组的工具提示**resid** 属性必须设置为 **String** 元素的 **id** 属性的值。**String** 元素是 **LongStrings** 元素的子元素，而 LongStrings 元素是 **Resources** 元素的子元素。</span><span class="sxs-lookup"><span data-stu-id="3a8ac-p111">Optional. The tooltip of the group. The  **resid** attribute must be set to the value of the **id** attribute of a **String** element. The **String** element is a child element of the **LongStrings** element, which is a child element of the **Resources** element.</span></span>|
+|<span data-ttu-id="3a8ac-162">**Control**</span><span class="sxs-lookup"><span data-stu-id="3a8ac-162">**Control**</span></span>|<span data-ttu-id="3a8ac-163">每个组需要至少一个控件。</span><span class="sxs-lookup"><span data-stu-id="3a8ac-163">Each group requires at least one control.</span></span> <span data-ttu-id="3a8ac-164">**Control** 元素可以是一个**按钮**，也可以是一个**菜单**。</span><span class="sxs-lookup"><span data-stu-id="3a8ac-164">A  **Control** element can be either a **Button** or a **Menu**.</span></span> <span data-ttu-id="3a8ac-165">使用**菜单**指定按钮控件的下拉列表。</span><span class="sxs-lookup"><span data-stu-id="3a8ac-165">Use  **Menu** to specify a drop-down list of button controls.</span></span> <span data-ttu-id="3a8ac-166">目前，仅支持“按钮”和“菜单”。</span><span class="sxs-lookup"><span data-stu-id="3a8ac-166">Currently, only buttons and menus are supported.</span></span> <span data-ttu-id="3a8ac-167">请参阅[按钮控件](control.md#button-control)和[菜单控件](control.md#menu-dropdown-button-controls)各节了解详细信息。</span><span class="sxs-lookup"><span data-stu-id="3a8ac-167">See the [Button controls](control.md#button-control) and [Menu controls](control.md#menu-dropdown-button-controls) sections for more information.</span></span><br/><span data-ttu-id="3a8ac-168">**注意**  为了使故障排除变得更简单，我们建议一次性添加 **Control** 元素和相关的 **Resources** 子元素。</span><span class="sxs-lookup"><span data-stu-id="3a8ac-168">**Note:**  To make troubleshooting easier, we recommend that a  **Control** element and the related **Resources** child elements be added one at a time.</span></span>|
+|<span data-ttu-id="3a8ac-169">**Script**</span><span class="sxs-lookup"><span data-stu-id="3a8ac-169">**Script**</span></span>|<span data-ttu-id="3a8ac-170">使用自定义函数定义和注册代码链接到 JavaScript 文件。</span><span class="sxs-lookup"><span data-stu-id="3a8ac-170">Links to the JavaScript file with the custom function definition and registration code.</span></span> <span data-ttu-id="3a8ac-171">在开发者预览版中不使用此元素。</span><span class="sxs-lookup"><span data-stu-id="3a8ac-171">This element is not used in the Developer Preview.</span></span> <span data-ttu-id="3a8ac-172">实际上，HTML 页负责加载所有 JavaScript 文件。</span><span class="sxs-lookup"><span data-stu-id="3a8ac-172">Instead, the HTML page is responsible for loading all JavaScript files.</span></span>|
+|<span data-ttu-id="3a8ac-173">**Page**</span><span class="sxs-lookup"><span data-stu-id="3a8ac-173">**Page**</span></span>|<span data-ttu-id="3a8ac-174">链接到自定义函数的 HTML 页。</span><span class="sxs-lookup"><span data-stu-id="3a8ac-174">Links to the HTML page for your custom functions.</span></span>|
 
-## <a name="extension-points-for-outlook"></a><span data-ttu-id="4e0cf-175">仅适用于 Outlook 的扩展点</span><span class="sxs-lookup"><span data-stu-id="4e0cf-175">Extension points for Outlook</span></span>
+## <a name="extension-points-for-outlook"></a><span data-ttu-id="3a8ac-175">仅适用于 Outlook 的扩展点</span><span class="sxs-lookup"><span data-stu-id="3a8ac-175">Extension points for Outlook</span></span>
 
-- [<span data-ttu-id="4e0cf-176">MessageReadCommandSurface</span><span class="sxs-lookup"><span data-stu-id="4e0cf-176">MessageReadCommandSurface</span></span>](#messagereadcommandsurface) 
-- [<span data-ttu-id="4e0cf-177">MessageComposeCommandSurface</span><span class="sxs-lookup"><span data-stu-id="4e0cf-177">MessageComposeCommandSurface</span></span>](#messagecomposecommandsurface) 
-- [<span data-ttu-id="4e0cf-178">AppointmentOrganizerCommandSurface</span><span class="sxs-lookup"><span data-stu-id="4e0cf-178">AppointmentOrganizerCommandSurface</span></span>](#appointmentorganizercommandsurface) 
-- [<span data-ttu-id="4e0cf-179">AppointmentAttendeeCommandSurface</span><span class="sxs-lookup"><span data-stu-id="4e0cf-179">AppointmentAttendeeCommandSurface</span></span>](#appointmentattendeecommandsurface)
-- <span data-ttu-id="4e0cf-180">[Module](#module)（仅能在 [DesktopFormFactor](desktopformfactor.md) 中使用。）</span><span class="sxs-lookup"><span data-stu-id="4e0cf-180">[Module](#module) (Can only be used in the [DesktopFormFactor](desktopformfactor.md).)</span></span>
-- [<span data-ttu-id="4e0cf-181">MobileMessageReadCommandSurface</span><span class="sxs-lookup"><span data-stu-id="4e0cf-181">MobileMessageReadCommandSurface</span></span>](#mobilemessagereadcommandsurface)
-- [<span data-ttu-id="4e0cf-182">Events</span><span class="sxs-lookup"><span data-stu-id="4e0cf-182">Events</span></span>](#events)
-- [<span data-ttu-id="4e0cf-183">DetectedEntity</span><span class="sxs-lookup"><span data-stu-id="4e0cf-183">DetectedEntity</span></span>](#detectedentity)
+- [<span data-ttu-id="3a8ac-176">MessageReadCommandSurface</span><span class="sxs-lookup"><span data-stu-id="3a8ac-176">MessageReadCommandSurface</span></span>](#messagereadcommandsurface) 
+- [<span data-ttu-id="3a8ac-177">MessageComposeCommandSurface</span><span class="sxs-lookup"><span data-stu-id="3a8ac-177">MessageComposeCommandSurface</span></span>](#messagecomposecommandsurface) 
+- [<span data-ttu-id="3a8ac-178">AppointmentOrganizerCommandSurface</span><span class="sxs-lookup"><span data-stu-id="3a8ac-178">AppointmentOrganizerCommandSurface</span></span>](#appointmentorganizercommandsurface) 
+- [<span data-ttu-id="3a8ac-179">AppointmentAttendeeCommandSurface</span><span class="sxs-lookup"><span data-stu-id="3a8ac-179">AppointmentAttendeeCommandSurface</span></span>](#appointmentattendeecommandsurface)
+- <span data-ttu-id="3a8ac-180">[Module](#module)（仅能在 [DesktopFormFactor](desktopformfactor.md) 中使用。）</span><span class="sxs-lookup"><span data-stu-id="3a8ac-180">[Module](#module) (Can only be used in the [DesktopFormFactor](desktopformfactor.md).)</span></span>
+- [<span data-ttu-id="3a8ac-181">MobileMessageReadCommandSurface</span><span class="sxs-lookup"><span data-stu-id="3a8ac-181">MobileMessageReadCommandSurface</span></span>](#mobilemessagereadcommandsurface)
+- [<span data-ttu-id="3a8ac-182">Events</span><span class="sxs-lookup"><span data-stu-id="3a8ac-182">Events</span></span>](#events)
+- [<span data-ttu-id="3a8ac-183">DetectedEntity</span><span class="sxs-lookup"><span data-stu-id="3a8ac-183">DetectedEntity</span></span>](#detectedentity)
 
-### <a name="messagereadcommandsurface"></a><span data-ttu-id="4e0cf-184">MessageReadCommandSurface</span><span class="sxs-lookup"><span data-stu-id="4e0cf-184">MessageReadCommandSurface</span></span>
-<span data-ttu-id="4e0cf-p114">此扩展点将按钮放置在邮件阅读窗体的命令界面。在 Outlook 桌面，它显示在功能区中。</span><span class="sxs-lookup"><span data-stu-id="4e0cf-p114">This extension point puts buttons in the command surface for the mail read view. In Outlook desktop, this appears in the ribbon.</span></span>
+### <a name="messagereadcommandsurface"></a><span data-ttu-id="3a8ac-184">MessageReadCommandSurface</span><span class="sxs-lookup"><span data-stu-id="3a8ac-184">MessageReadCommandSurface</span></span>
+<span data-ttu-id="3a8ac-p114">此扩展点将按钮放置在邮件阅读窗体的命令界面。在 Outlook 桌面，它显示在功能区中。</span><span class="sxs-lookup"><span data-stu-id="3a8ac-p114">This extension point puts buttons in the command surface for the mail read view. In Outlook desktop, this appears in the ribbon.</span></span>
 
-#### <a name="child-elements"></a><span data-ttu-id="4e0cf-187">子元素</span><span class="sxs-lookup"><span data-stu-id="4e0cf-187">Child elements</span></span>
+#### <a name="child-elements"></a><span data-ttu-id="3a8ac-187">子元素</span><span class="sxs-lookup"><span data-stu-id="3a8ac-187">Child elements</span></span>
 
-|  <span data-ttu-id="4e0cf-188">元素</span><span class="sxs-lookup"><span data-stu-id="4e0cf-188">Element</span></span> |  <span data-ttu-id="4e0cf-189">说明</span><span class="sxs-lookup"><span data-stu-id="4e0cf-189">Description</span></span>  |
+|  <span data-ttu-id="3a8ac-188">元素</span><span class="sxs-lookup"><span data-stu-id="3a8ac-188">Element</span></span> |  <span data-ttu-id="3a8ac-189">说明</span><span class="sxs-lookup"><span data-stu-id="3a8ac-189">Description</span></span>  |
 |:-----|:-----|
-|  [<span data-ttu-id="4e0cf-190">OfficeTab</span><span class="sxs-lookup"><span data-stu-id="4e0cf-190">OfficeTab</span></span>](officetab.md) |  <span data-ttu-id="4e0cf-191">将命令添加到默认功能区选项卡。</span><span class="sxs-lookup"><span data-stu-id="4e0cf-191">Adds the command(s) to the default ribbon tab.</span></span>  |
-|  [<span data-ttu-id="4e0cf-192">CustomTab</span><span class="sxs-lookup"><span data-stu-id="4e0cf-192">CustomTab</span></span>](customtab.md) |  <span data-ttu-id="4e0cf-193">将命令添加到自定义功能区选项卡。</span><span class="sxs-lookup"><span data-stu-id="4e0cf-193">Adds the command(s) to the custom ribbon tab.</span></span>  |
+|  [<span data-ttu-id="3a8ac-190">OfficeTab</span><span class="sxs-lookup"><span data-stu-id="3a8ac-190">OfficeTab</span></span>](officetab.md) |  <span data-ttu-id="3a8ac-191">将命令添加到默认功能区选项卡。</span><span class="sxs-lookup"><span data-stu-id="3a8ac-191">Adds the command(s) to the default ribbon tab.</span></span>  |
+|  [<span data-ttu-id="3a8ac-192">CustomTab</span><span class="sxs-lookup"><span data-stu-id="3a8ac-192">CustomTab</span></span>](customtab.md) |  <span data-ttu-id="3a8ac-193">将命令添加到自定义功能区选项卡。</span><span class="sxs-lookup"><span data-stu-id="3a8ac-193">Adds the command(s) to the custom ribbon tab.</span></span>  |
 
-#### <a name="officetab-example"></a><span data-ttu-id="4e0cf-194">OfficeTab 示例</span><span class="sxs-lookup"><span data-stu-id="4e0cf-194">OfficeTab example</span></span>
+#### <a name="officetab-example"></a><span data-ttu-id="3a8ac-194">OfficeTab 示例</span><span class="sxs-lookup"><span data-stu-id="3a8ac-194">OfficeTab example</span></span>
 ```xml
 <ExtensionPoint xsi:type="MessageReadCommandSurface">
   <OfficeTab id="TabDefault">
@@ -114,7 +114,7 @@ ms.locfileid: "36672791"
 </ExtensionPoint>
 ```
 
-#### <a name="customtab-example"></a><span data-ttu-id="4e0cf-195">CustomTab 示例</span><span class="sxs-lookup"><span data-stu-id="4e0cf-195">CustomTab example</span></span>
+#### <a name="customtab-example"></a><span data-ttu-id="3a8ac-195">CustomTab 示例</span><span class="sxs-lookup"><span data-stu-id="3a8ac-195">CustomTab example</span></span>
 ```xml
 <ExtensionPoint xsi:type="MessageReadCommandSurface">
   <CustomTab id="TabCustom1">
@@ -123,17 +123,17 @@ ms.locfileid: "36672791"
 </ExtensionPoint>
 ```
 
-### <a name="messagecomposecommandsurface"></a><span data-ttu-id="4e0cf-196">MessageComposeCommandSurface</span><span class="sxs-lookup"><span data-stu-id="4e0cf-196">MessageComposeCommandSurface</span></span>
-<span data-ttu-id="4e0cf-197">此扩展点将按钮置于使用电子邮件撰写窗体的外接程序的功能区上。</span><span class="sxs-lookup"><span data-stu-id="4e0cf-197">This extension point puts buttons on the ribbon for add-ins using mail compose form.</span></span> 
+### <a name="messagecomposecommandsurface"></a><span data-ttu-id="3a8ac-196">MessageComposeCommandSurface</span><span class="sxs-lookup"><span data-stu-id="3a8ac-196">MessageComposeCommandSurface</span></span>
+<span data-ttu-id="3a8ac-197">此扩展点将按钮置于使用电子邮件撰写窗体的外接程序的功能区上。</span><span class="sxs-lookup"><span data-stu-id="3a8ac-197">This extension point puts buttons on the ribbon for add-ins using mail compose form.</span></span> 
 
-#### <a name="child-elements"></a><span data-ttu-id="4e0cf-198">子元素</span><span class="sxs-lookup"><span data-stu-id="4e0cf-198">Child elements</span></span>
+#### <a name="child-elements"></a><span data-ttu-id="3a8ac-198">子元素</span><span class="sxs-lookup"><span data-stu-id="3a8ac-198">Child elements</span></span>
 
-|  <span data-ttu-id="4e0cf-199">元素</span><span class="sxs-lookup"><span data-stu-id="4e0cf-199">Element</span></span> |  <span data-ttu-id="4e0cf-200">说明</span><span class="sxs-lookup"><span data-stu-id="4e0cf-200">Description</span></span>  |
+|  <span data-ttu-id="3a8ac-199">元素</span><span class="sxs-lookup"><span data-stu-id="3a8ac-199">Element</span></span> |  <span data-ttu-id="3a8ac-200">说明</span><span class="sxs-lookup"><span data-stu-id="3a8ac-200">Description</span></span>  |
 |:-----|:-----|
-|  [<span data-ttu-id="4e0cf-201">OfficeTab</span><span class="sxs-lookup"><span data-stu-id="4e0cf-201">OfficeTab</span></span>](officetab.md) |  <span data-ttu-id="4e0cf-202">将命令添加到默认功能区选项卡。</span><span class="sxs-lookup"><span data-stu-id="4e0cf-202">Adds the command(s) to the default ribbon tab.</span></span>  |
-|  [<span data-ttu-id="4e0cf-203">CustomTab</span><span class="sxs-lookup"><span data-stu-id="4e0cf-203">CustomTab</span></span>](customtab.md) |  <span data-ttu-id="4e0cf-204">将命令添加到自定义功能区选项卡。</span><span class="sxs-lookup"><span data-stu-id="4e0cf-204">Adds the command(s) to the custom ribbon tab.</span></span>  |
+|  [<span data-ttu-id="3a8ac-201">OfficeTab</span><span class="sxs-lookup"><span data-stu-id="3a8ac-201">OfficeTab</span></span>](officetab.md) |  <span data-ttu-id="3a8ac-202">将命令添加到默认功能区选项卡。</span><span class="sxs-lookup"><span data-stu-id="3a8ac-202">Adds the command(s) to the default ribbon tab.</span></span>  |
+|  [<span data-ttu-id="3a8ac-203">CustomTab</span><span class="sxs-lookup"><span data-stu-id="3a8ac-203">CustomTab</span></span>](customtab.md) |  <span data-ttu-id="3a8ac-204">将命令添加到自定义功能区选项卡。</span><span class="sxs-lookup"><span data-stu-id="3a8ac-204">Adds the command(s) to the custom ribbon tab.</span></span>  |
 
-#### <a name="officetab-example"></a><span data-ttu-id="4e0cf-205">OfficeTab 示例</span><span class="sxs-lookup"><span data-stu-id="4e0cf-205">OfficeTab example</span></span>
+#### <a name="officetab-example"></a><span data-ttu-id="3a8ac-205">OfficeTab 示例</span><span class="sxs-lookup"><span data-stu-id="3a8ac-205">OfficeTab example</span></span>
 ```xml
 <ExtensionPoint xsi:type="MessageComposeCommandSurface">
   <OfficeTab id="TabDefault">
@@ -142,7 +142,7 @@ ms.locfileid: "36672791"
 </ExtensionPoint>
 ```
 
-#### <a name="customtab-example"></a><span data-ttu-id="4e0cf-206">CustomTab 示例</span><span class="sxs-lookup"><span data-stu-id="4e0cf-206">CustomTab example</span></span>
+#### <a name="customtab-example"></a><span data-ttu-id="3a8ac-206">CustomTab 示例</span><span class="sxs-lookup"><span data-stu-id="3a8ac-206">CustomTab example</span></span>
 
 ```xml
 <ExtensionPoint xsi:type="MessageComposeCommandSurface">
@@ -152,18 +152,18 @@ ms.locfileid: "36672791"
 </ExtensionPoint>
 ```
 
-### <a name="appointmentorganizercommandsurface"></a><span data-ttu-id="4e0cf-207">AppointmentOrganizerCommandSurface</span><span class="sxs-lookup"><span data-stu-id="4e0cf-207">AppointmentOrganizerCommandSurface</span></span>
+### <a name="appointmentorganizercommandsurface"></a><span data-ttu-id="3a8ac-207">AppointmentOrganizerCommandSurface</span><span class="sxs-lookup"><span data-stu-id="3a8ac-207">AppointmentOrganizerCommandSurface</span></span>
 
-<span data-ttu-id="4e0cf-208">此扩展点将按钮置于向会议的组织者显示的窗体的功能区上。</span><span class="sxs-lookup"><span data-stu-id="4e0cf-208">This extension point puts buttons on the ribbon for the form that's displayed to the organizer of the meeting.</span></span> 
+<span data-ttu-id="3a8ac-208">此扩展点将按钮置于向会议的组织者显示的窗体的功能区上。</span><span class="sxs-lookup"><span data-stu-id="3a8ac-208">This extension point puts buttons on the ribbon for the form that's displayed to the organizer of the meeting.</span></span> 
 
-#### <a name="child-elements"></a><span data-ttu-id="4e0cf-209">子元素</span><span class="sxs-lookup"><span data-stu-id="4e0cf-209">Child elements</span></span>
+#### <a name="child-elements"></a><span data-ttu-id="3a8ac-209">子元素</span><span class="sxs-lookup"><span data-stu-id="3a8ac-209">Child elements</span></span>
 
-|  <span data-ttu-id="4e0cf-210">元素</span><span class="sxs-lookup"><span data-stu-id="4e0cf-210">Element</span></span> |  <span data-ttu-id="4e0cf-211">说明</span><span class="sxs-lookup"><span data-stu-id="4e0cf-211">Description</span></span>  |
+|  <span data-ttu-id="3a8ac-210">元素</span><span class="sxs-lookup"><span data-stu-id="3a8ac-210">Element</span></span> |  <span data-ttu-id="3a8ac-211">说明</span><span class="sxs-lookup"><span data-stu-id="3a8ac-211">Description</span></span>  |
 |:-----|:-----|
-|  [<span data-ttu-id="4e0cf-212">OfficeTab</span><span class="sxs-lookup"><span data-stu-id="4e0cf-212">OfficeTab</span></span>](officetab.md) |  <span data-ttu-id="4e0cf-213">将命令添加到默认功能区选项卡。</span><span class="sxs-lookup"><span data-stu-id="4e0cf-213">Adds the command(s) to the default ribbon tab.</span></span>  |
-|  [<span data-ttu-id="4e0cf-214">CustomTab</span><span class="sxs-lookup"><span data-stu-id="4e0cf-214">CustomTab</span></span>](customtab.md) |  <span data-ttu-id="4e0cf-215">将命令添加到自定义功能区选项卡。</span><span class="sxs-lookup"><span data-stu-id="4e0cf-215">Adds the command(s) to the custom ribbon tab.</span></span>  |
+|  [<span data-ttu-id="3a8ac-212">OfficeTab</span><span class="sxs-lookup"><span data-stu-id="3a8ac-212">OfficeTab</span></span>](officetab.md) |  <span data-ttu-id="3a8ac-213">将命令添加到默认功能区选项卡。</span><span class="sxs-lookup"><span data-stu-id="3a8ac-213">Adds the command(s) to the default ribbon tab.</span></span>  |
+|  [<span data-ttu-id="3a8ac-214">CustomTab</span><span class="sxs-lookup"><span data-stu-id="3a8ac-214">CustomTab</span></span>](customtab.md) |  <span data-ttu-id="3a8ac-215">将命令添加到自定义功能区选项卡。</span><span class="sxs-lookup"><span data-stu-id="3a8ac-215">Adds the command(s) to the custom ribbon tab.</span></span>  |
 
-#### <a name="officetab-example"></a><span data-ttu-id="4e0cf-216">OfficeTab 示例</span><span class="sxs-lookup"><span data-stu-id="4e0cf-216">OfficeTab example</span></span>
+#### <a name="officetab-example"></a><span data-ttu-id="3a8ac-216">OfficeTab 示例</span><span class="sxs-lookup"><span data-stu-id="3a8ac-216">OfficeTab example</span></span>
 ```xml
 <ExtensionPoint xsi:type="AppointmentOrganizerCommandSurface">
   <OfficeTab id="TabDefault">
@@ -172,7 +172,7 @@ ms.locfileid: "36672791"
 </ExtensionPoint>
 ```
 
-#### <a name="customtab-example"></a><span data-ttu-id="4e0cf-217">CustomTab 示例</span><span class="sxs-lookup"><span data-stu-id="4e0cf-217">CustomTab example</span></span>
+#### <a name="customtab-example"></a><span data-ttu-id="3a8ac-217">CustomTab 示例</span><span class="sxs-lookup"><span data-stu-id="3a8ac-217">CustomTab example</span></span>
 ```xml
 <ExtensionPoint xsi:type="AppointmentOrganizerCommandSurface">
   <CustomTab id="TabCustom1">
@@ -181,18 +181,18 @@ ms.locfileid: "36672791"
 </ExtensionPoint>
 ```
 
-### <a name="appointmentattendeecommandsurface"></a><span data-ttu-id="4e0cf-218">AppointmentAttendeeCommandSurface</span><span class="sxs-lookup"><span data-stu-id="4e0cf-218">AppointmentAttendeeCommandSurface</span></span>
+### <a name="appointmentattendeecommandsurface"></a><span data-ttu-id="3a8ac-218">AppointmentAttendeeCommandSurface</span><span class="sxs-lookup"><span data-stu-id="3a8ac-218">AppointmentAttendeeCommandSurface</span></span>
 
-<span data-ttu-id="4e0cf-219">此扩展点将按钮置于向会议与会者显示的窗体的功能区上。</span><span class="sxs-lookup"><span data-stu-id="4e0cf-219">This extension point puts buttons on the ribbon for the form that's displayed to the attendee of the meeting.</span></span> 
+<span data-ttu-id="3a8ac-219">此扩展点将按钮置于向会议与会者显示的窗体的功能区上。</span><span class="sxs-lookup"><span data-stu-id="3a8ac-219">This extension point puts buttons on the ribbon for the form that's displayed to the attendee of the meeting.</span></span> 
 
-#### <a name="child-elements"></a><span data-ttu-id="4e0cf-220">子元素</span><span class="sxs-lookup"><span data-stu-id="4e0cf-220">Child elements</span></span>
+#### <a name="child-elements"></a><span data-ttu-id="3a8ac-220">子元素</span><span class="sxs-lookup"><span data-stu-id="3a8ac-220">Child elements</span></span>
 
-|  <span data-ttu-id="4e0cf-221">元素</span><span class="sxs-lookup"><span data-stu-id="4e0cf-221">Element</span></span> |  <span data-ttu-id="4e0cf-222">说明</span><span class="sxs-lookup"><span data-stu-id="4e0cf-222">Description</span></span>  |
+|  <span data-ttu-id="3a8ac-221">元素</span><span class="sxs-lookup"><span data-stu-id="3a8ac-221">Element</span></span> |  <span data-ttu-id="3a8ac-222">说明</span><span class="sxs-lookup"><span data-stu-id="3a8ac-222">Description</span></span>  |
 |:-----|:-----|
-|  [<span data-ttu-id="4e0cf-223">OfficeTab</span><span class="sxs-lookup"><span data-stu-id="4e0cf-223">OfficeTab</span></span>](officetab.md) |  <span data-ttu-id="4e0cf-224">将命令添加到默认功能区选项卡。</span><span class="sxs-lookup"><span data-stu-id="4e0cf-224">Adds the command(s) to the default ribbon tab.</span></span>  |
-|  [<span data-ttu-id="4e0cf-225">CustomTab</span><span class="sxs-lookup"><span data-stu-id="4e0cf-225">CustomTab</span></span>](customtab.md) |  <span data-ttu-id="4e0cf-226">将命令添加到自定义功能区选项卡。</span><span class="sxs-lookup"><span data-stu-id="4e0cf-226">Adds the command(s) to the custom ribbon tab.</span></span>  |
+|  [<span data-ttu-id="3a8ac-223">OfficeTab</span><span class="sxs-lookup"><span data-stu-id="3a8ac-223">OfficeTab</span></span>](officetab.md) |  <span data-ttu-id="3a8ac-224">将命令添加到默认功能区选项卡。</span><span class="sxs-lookup"><span data-stu-id="3a8ac-224">Adds the command(s) to the default ribbon tab.</span></span>  |
+|  [<span data-ttu-id="3a8ac-225">CustomTab</span><span class="sxs-lookup"><span data-stu-id="3a8ac-225">CustomTab</span></span>](customtab.md) |  <span data-ttu-id="3a8ac-226">将命令添加到自定义功能区选项卡。</span><span class="sxs-lookup"><span data-stu-id="3a8ac-226">Adds the command(s) to the custom ribbon tab.</span></span>  |
 
-#### <a name="officetab-example"></a><span data-ttu-id="4e0cf-227">OfficeTab 示例</span><span class="sxs-lookup"><span data-stu-id="4e0cf-227">OfficeTab example</span></span>
+#### <a name="officetab-example"></a><span data-ttu-id="3a8ac-227">OfficeTab 示例</span><span class="sxs-lookup"><span data-stu-id="3a8ac-227">OfficeTab example</span></span>
 ```xml
 <ExtensionPoint xsi:type="AppointmentAttendeeCommandSurface">
   <OfficeTab id="TabDefault">
@@ -201,7 +201,7 @@ ms.locfileid: "36672791"
 </ExtensionPoint>
 ```
 
-#### <a name="customtab-example"></a><span data-ttu-id="4e0cf-228">CustomTab 示例</span><span class="sxs-lookup"><span data-stu-id="4e0cf-228">CustomTab example</span></span>
+#### <a name="customtab-example"></a><span data-ttu-id="3a8ac-228">CustomTab 示例</span><span class="sxs-lookup"><span data-stu-id="3a8ac-228">CustomTab example</span></span>
 ```xml
 <ExtensionPoint xsi:type="AppointmentAttendeeCommandSurface">
   <CustomTab id="TabCustom1">
@@ -210,31 +210,31 @@ ms.locfileid: "36672791"
 </ExtensionPoint>
 ```
 
-### <a name="module"></a><span data-ttu-id="4e0cf-229">Module</span><span class="sxs-lookup"><span data-stu-id="4e0cf-229">Module</span></span>
+### <a name="module"></a><span data-ttu-id="3a8ac-229">Module</span><span class="sxs-lookup"><span data-stu-id="3a8ac-229">Module</span></span>
 
-<span data-ttu-id="4e0cf-230">此扩展点将按钮置于模块扩展的功能区上。</span><span class="sxs-lookup"><span data-stu-id="4e0cf-230">This extension point puts buttons on the ribbon for the module extension.</span></span> 
+<span data-ttu-id="3a8ac-230">此扩展点将按钮置于模块扩展的功能区上。</span><span class="sxs-lookup"><span data-stu-id="3a8ac-230">This extension point puts buttons on the ribbon for the module extension.</span></span> 
 
-#### <a name="child-elements"></a><span data-ttu-id="4e0cf-231">子元素</span><span class="sxs-lookup"><span data-stu-id="4e0cf-231">Child elements</span></span>
+#### <a name="child-elements"></a><span data-ttu-id="3a8ac-231">子元素</span><span class="sxs-lookup"><span data-stu-id="3a8ac-231">Child elements</span></span>
 
-|  <span data-ttu-id="4e0cf-232">元素</span><span class="sxs-lookup"><span data-stu-id="4e0cf-232">Element</span></span> |  <span data-ttu-id="4e0cf-233">说明</span><span class="sxs-lookup"><span data-stu-id="4e0cf-233">Description</span></span>  |
+|  <span data-ttu-id="3a8ac-232">元素</span><span class="sxs-lookup"><span data-stu-id="3a8ac-232">Element</span></span> |  <span data-ttu-id="3a8ac-233">说明</span><span class="sxs-lookup"><span data-stu-id="3a8ac-233">Description</span></span>  |
 |:-----|:-----|
-|  [<span data-ttu-id="4e0cf-234">OfficeTab</span><span class="sxs-lookup"><span data-stu-id="4e0cf-234">OfficeTab</span></span>](officetab.md) |  <span data-ttu-id="4e0cf-235">将命令添加到默认功能区选项卡。</span><span class="sxs-lookup"><span data-stu-id="4e0cf-235">Adds the command(s) to the default ribbon tab.</span></span>  |
-|  [<span data-ttu-id="4e0cf-236">CustomTab</span><span class="sxs-lookup"><span data-stu-id="4e0cf-236">CustomTab</span></span>](customtab.md) |  <span data-ttu-id="4e0cf-237">将命令添加到自定义功能区选项卡。</span><span class="sxs-lookup"><span data-stu-id="4e0cf-237">Adds the command(s) to the custom ribbon tab.</span></span>  |
+|  [<span data-ttu-id="3a8ac-234">OfficeTab</span><span class="sxs-lookup"><span data-stu-id="3a8ac-234">OfficeTab</span></span>](officetab.md) |  <span data-ttu-id="3a8ac-235">将命令添加到默认功能区选项卡。</span><span class="sxs-lookup"><span data-stu-id="3a8ac-235">Adds the command(s) to the default ribbon tab.</span></span>  |
+|  [<span data-ttu-id="3a8ac-236">CustomTab</span><span class="sxs-lookup"><span data-stu-id="3a8ac-236">CustomTab</span></span>](customtab.md) |  <span data-ttu-id="3a8ac-237">将命令添加到自定义功能区选项卡。</span><span class="sxs-lookup"><span data-stu-id="3a8ac-237">Adds the command(s) to the custom ribbon tab.</span></span>  |
 
-### <a name="mobilemessagereadcommandsurface"></a><span data-ttu-id="4e0cf-238">MobileMessageReadCommandSurface</span><span class="sxs-lookup"><span data-stu-id="4e0cf-238">MobileMessageReadCommandSurface</span></span>
-<span data-ttu-id="4e0cf-239">此扩展点将按钮置于移动外形规格中的邮件阅读视图的命令界面中。</span><span class="sxs-lookup"><span data-stu-id="4e0cf-239">This extension point puts buttons in the command surface for the mail read view in the mobile form factor.</span></span>
+### <a name="mobilemessagereadcommandsurface"></a><span data-ttu-id="3a8ac-238">MobileMessageReadCommandSurface</span><span class="sxs-lookup"><span data-stu-id="3a8ac-238">MobileMessageReadCommandSurface</span></span>
+<span data-ttu-id="3a8ac-239">此扩展点将按钮置于移动外形规格中的邮件阅读视图的命令界面中。</span><span class="sxs-lookup"><span data-stu-id="3a8ac-239">This extension point puts buttons in the command surface for the mail read view in the mobile form factor.</span></span>
 
-#### <a name="child-elements"></a><span data-ttu-id="4e0cf-240">子元素</span><span class="sxs-lookup"><span data-stu-id="4e0cf-240">Child elements</span></span>
+#### <a name="child-elements"></a><span data-ttu-id="3a8ac-240">子元素</span><span class="sxs-lookup"><span data-stu-id="3a8ac-240">Child elements</span></span>
 
-|  <span data-ttu-id="4e0cf-241">元素</span><span class="sxs-lookup"><span data-stu-id="4e0cf-241">Element</span></span> |  <span data-ttu-id="4e0cf-242">说明</span><span class="sxs-lookup"><span data-stu-id="4e0cf-242">Description</span></span>  |
+|  <span data-ttu-id="3a8ac-241">元素</span><span class="sxs-lookup"><span data-stu-id="3a8ac-241">Element</span></span> |  <span data-ttu-id="3a8ac-242">说明</span><span class="sxs-lookup"><span data-stu-id="3a8ac-242">Description</span></span>  |
 |:-----|:-----|
-|  [<span data-ttu-id="4e0cf-243">Group</span><span class="sxs-lookup"><span data-stu-id="4e0cf-243">Group</span></span>](group.md) |  <span data-ttu-id="4e0cf-244">将按钮组添加到命令界面。</span><span class="sxs-lookup"><span data-stu-id="4e0cf-244">Adds a group of buttons to the command surface.</span></span>  |
+|  [<span data-ttu-id="3a8ac-243">Group</span><span class="sxs-lookup"><span data-stu-id="3a8ac-243">Group</span></span>](group.md) |  <span data-ttu-id="3a8ac-244">将按钮组添加到命令界面。</span><span class="sxs-lookup"><span data-stu-id="3a8ac-244">Adds a group of buttons to the command surface.</span></span>  |
 
-<span data-ttu-id="4e0cf-245">此种类型的 **ExtensionPoint** 元素仅能具有一个子元素，即 **Group** 元素。</span><span class="sxs-lookup"><span data-stu-id="4e0cf-245">**ExtensionPoint** elements of this type can only have one child element: a **Group** element.</span></span>
+<span data-ttu-id="3a8ac-245">此种类型的 **ExtensionPoint** 元素仅能具有一个子元素，即 **Group** 元素。</span><span class="sxs-lookup"><span data-stu-id="3a8ac-245">**ExtensionPoint** elements of this type can only have one child element: a **Group** element.</span></span>
 
-<span data-ttu-id="4e0cf-246">此扩展点中包含的 **Control** 元素必须将 **xsi:type** 属性设置为 `MobileButton`。</span><span class="sxs-lookup"><span data-stu-id="4e0cf-246">**Control** elements contained in this extension point must have the **xsi:type** attribute set to `MobileButton`.</span></span>
+<span data-ttu-id="3a8ac-246">此扩展点中包含的 **Control** 元素必须将 **xsi:type** 属性设置为 `MobileButton`。</span><span class="sxs-lookup"><span data-stu-id="3a8ac-246">**Control** elements contained in this extension point must have the **xsi:type** attribute set to `MobileButton`.</span></span>
 
-#### <a name="example"></a><span data-ttu-id="4e0cf-247">示例</span><span class="sxs-lookup"><span data-stu-id="4e0cf-247">Example</span></span>
+#### <a name="example"></a><span data-ttu-id="3a8ac-247">示例</span><span class="sxs-lookup"><span data-stu-id="3a8ac-247">Example</span></span>
 ```xml
 <ExtensionPoint xsi:type="MobileMessageReadCommandSurface">
   <Group id="mobileGroupID">
@@ -246,56 +246,56 @@ ms.locfileid: "36672791"
 </ExtensionPoint>
 ```
 
-### <a name="events"></a><span data-ttu-id="4e0cf-248">事件</span><span class="sxs-lookup"><span data-stu-id="4e0cf-248">Events</span></span>
+### <a name="events"></a><span data-ttu-id="3a8ac-248">事件</span><span class="sxs-lookup"><span data-stu-id="3a8ac-248">Events</span></span>
 
-<span data-ttu-id="4e0cf-249">此扩展点添加了指定事件的事件处理程序。</span><span class="sxs-lookup"><span data-stu-id="4e0cf-249">This extension point adds an event handler for a specified event.</span></span>
+<span data-ttu-id="3a8ac-249">此扩展点添加了指定事件的事件处理程序。</span><span class="sxs-lookup"><span data-stu-id="3a8ac-249">This extension point adds an event handler for a specified event.</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="4e0cf-250">仅 Office 365 中的 Outlook 网页版支持此元素类型。</span><span class="sxs-lookup"><span data-stu-id="4e0cf-250">This element type is only supported by Outlook on the web in Office 365.</span></span>
+> <span data-ttu-id="3a8ac-250">经典 Outlook 网页版、以及 Windows、Mac 上的[预览版](../objectmodel/preview-requirement-set/outlook-requirement-set-preview.md)以及新式 Outlook 网页版支持此元素类型。</span><span class="sxs-lookup"><span data-stu-id="3a8ac-250">This element type is supported by classic Outlook on the web, and in [preview](../objectmodel/preview-requirement-set/outlook-requirement-set-preview.md) on Windows, Mac, and modern Outlook on the web.</span></span> <span data-ttu-id="3a8ac-251">还需要 Office 365 订阅。</span><span class="sxs-lookup"><span data-stu-id="3a8ac-251">An Office 365 subscription is also required.</span></span>
 
-| <span data-ttu-id="4e0cf-251">元素</span><span class="sxs-lookup"><span data-stu-id="4e0cf-251">Element</span></span> | <span data-ttu-id="4e0cf-252">说明</span><span class="sxs-lookup"><span data-stu-id="4e0cf-252">Description</span></span>  |
+| <span data-ttu-id="3a8ac-252">元素</span><span class="sxs-lookup"><span data-stu-id="3a8ac-252">Element</span></span> | <span data-ttu-id="3a8ac-253">说明</span><span class="sxs-lookup"><span data-stu-id="3a8ac-253">Description</span></span>  |
 |:-----|:-----|
-|  [<span data-ttu-id="4e0cf-253">Event</span><span class="sxs-lookup"><span data-stu-id="4e0cf-253">Event</span></span>](event.md) |  <span data-ttu-id="4e0cf-254">指定事件和事件处理程序函数。</span><span class="sxs-lookup"><span data-stu-id="4e0cf-254">Specifies the event and event handler function.</span></span>  |
+|  [<span data-ttu-id="3a8ac-254">Event</span><span class="sxs-lookup"><span data-stu-id="3a8ac-254">Event</span></span>](event.md) |  <span data-ttu-id="3a8ac-255">指定事件和事件处理程序函数。</span><span class="sxs-lookup"><span data-stu-id="3a8ac-255">Specifies the event and event handler function.</span></span>  |
 
-#### <a name="itemsend-event-example"></a><span data-ttu-id="4e0cf-255">ItemSend 事件示例</span><span class="sxs-lookup"><span data-stu-id="4e0cf-255">ItemSend event example</span></span>
+#### <a name="itemsend-event-example"></a><span data-ttu-id="3a8ac-256">ItemSend 事件示例</span><span class="sxs-lookup"><span data-stu-id="3a8ac-256">ItemSend event example</span></span>
 
 ```xml
-<ExtensionPoint xsi:type="Events"> 
-  <Event Type="ItemSend" FunctionExecution="synchronous" FunctionName="itemSendHandler" /> 
-</ExtensionPoint> 
+<ExtensionPoint xsi:type="Events">
+  <Event Type="ItemSend" FunctionExecution="synchronous" FunctionName="itemSendHandler" />
+</ExtensionPoint>
 ```
 
-### <a name="detectedentity"></a><span data-ttu-id="4e0cf-256">DetectedEntity</span><span class="sxs-lookup"><span data-stu-id="4e0cf-256">DetectedEntity</span></span>
+### <a name="detectedentity"></a><span data-ttu-id="3a8ac-257">DetectedEntity</span><span class="sxs-lookup"><span data-stu-id="3a8ac-257">DetectedEntity</span></span>
 
-<span data-ttu-id="4e0cf-257">此扩展点在指定实体类型上添加上下文外接程序激活。</span><span class="sxs-lookup"><span data-stu-id="4e0cf-257">This extension point adds a contextual add-in activation on a specified entity type.</span></span>
+<span data-ttu-id="3a8ac-258">此扩展点在指定实体类型上添加上下文外接程序激活。</span><span class="sxs-lookup"><span data-stu-id="3a8ac-258">This extension point adds a contextual add-in activation on a specified entity type.</span></span>
 
-<span data-ttu-id="4e0cf-258">包含 [VersionOverrides](versionoverrides.md) 元素的 `xsi:type` 属性值必须为 `VersionOverridesV1_1`。</span><span class="sxs-lookup"><span data-stu-id="4e0cf-258">The containing [VersionOverrides](versionoverrides.md) element must have an `xsi:type` attribute value of `VersionOverridesV1_1`.</span></span>
+<span data-ttu-id="3a8ac-259">包含 [VersionOverrides](versionoverrides.md) 元素的 `xsi:type` 属性值必须为 `VersionOverridesV1_1`。</span><span class="sxs-lookup"><span data-stu-id="3a8ac-259">The containing [VersionOverrides](versionoverrides.md) element must have an `xsi:type` attribute value of `VersionOverridesV1_1`.</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="4e0cf-259">此元素类型适用于[支持要求集 1.6 和更高版本的 Outlook 客户端](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets#clients)。</span><span class="sxs-lookup"><span data-stu-id="4e0cf-259">This element type is available to [Outlook clients that support requirement sets 1.6 and later](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets#clients).</span></span>
+> <span data-ttu-id="3a8ac-260">此元素类型适用于[支持要求集 1.6 和更高版本的 Outlook 客户端](../requirement-sets/outlook-api-requirement-sets.md#clients)。</span><span class="sxs-lookup"><span data-stu-id="3a8ac-260">This element type is available to [Outlook clients that support requirement sets 1.6 and later](../requirement-sets/outlook-api-requirement-sets.md#clients).</span></span>
 
-|  <span data-ttu-id="4e0cf-260">元素</span><span class="sxs-lookup"><span data-stu-id="4e0cf-260">Element</span></span> |  <span data-ttu-id="4e0cf-261">说明</span><span class="sxs-lookup"><span data-stu-id="4e0cf-261">Description</span></span>  |
+|  <span data-ttu-id="3a8ac-261">元素</span><span class="sxs-lookup"><span data-stu-id="3a8ac-261">Element</span></span> |  <span data-ttu-id="3a8ac-262">说明</span><span class="sxs-lookup"><span data-stu-id="3a8ac-262">Description</span></span>  |
 |:-----|:-----|
-|  [<span data-ttu-id="4e0cf-262">Label</span><span class="sxs-lookup"><span data-stu-id="4e0cf-262">Label</span></span>](#label) |  <span data-ttu-id="4e0cf-263">在上下文窗口中指定外接程序的标签。</span><span class="sxs-lookup"><span data-stu-id="4e0cf-263">Specifies the label for the add-in in the contextual window.</span></span>  |
-|  [<span data-ttu-id="4e0cf-264">SourceLocation</span><span class="sxs-lookup"><span data-stu-id="4e0cf-264">SourceLocation</span></span>](sourcelocation.md) |  <span data-ttu-id="4e0cf-265">指定上下文窗口的 URL。</span><span class="sxs-lookup"><span data-stu-id="4e0cf-265">Specifies the URL for the contextual window.</span></span>  |
-|  [<span data-ttu-id="4e0cf-266">Rule</span><span class="sxs-lookup"><span data-stu-id="4e0cf-266">Rule</span></span>](rule.md) |  <span data-ttu-id="4e0cf-267">指定确定外接程序激活时间的一个或多个规则。</span><span class="sxs-lookup"><span data-stu-id="4e0cf-267">Specifies the rule or rules that determine when an add-in activates.</span></span>  |
+|  [<span data-ttu-id="3a8ac-263">Label</span><span class="sxs-lookup"><span data-stu-id="3a8ac-263">Label</span></span>](#label) |  <span data-ttu-id="3a8ac-264">在上下文窗口中指定外接程序的标签。</span><span class="sxs-lookup"><span data-stu-id="3a8ac-264">Specifies the label for the add-in in the contextual window.</span></span>  |
+|  [<span data-ttu-id="3a8ac-265">SourceLocation</span><span class="sxs-lookup"><span data-stu-id="3a8ac-265">SourceLocation</span></span>](sourcelocation.md) |  <span data-ttu-id="3a8ac-266">指定上下文窗口的 URL。</span><span class="sxs-lookup"><span data-stu-id="3a8ac-266">Specifies the URL for the contextual window.</span></span>  |
+|  [<span data-ttu-id="3a8ac-267">Rule</span><span class="sxs-lookup"><span data-stu-id="3a8ac-267">Rule</span></span>](rule.md) |  <span data-ttu-id="3a8ac-268">指定确定外接程序激活时间的一个或多个规则。</span><span class="sxs-lookup"><span data-stu-id="3a8ac-268">Specifies the rule or rules that determine when an add-in activates.</span></span>  |
 
-#### <a name="label"></a><span data-ttu-id="4e0cf-268">标签</span><span class="sxs-lookup"><span data-stu-id="4e0cf-268">Label</span></span>
+#### <a name="label"></a><span data-ttu-id="3a8ac-269">标签</span><span class="sxs-lookup"><span data-stu-id="3a8ac-269">Label</span></span>
 
-<span data-ttu-id="4e0cf-p115">必需。组的标签。 **resid** 属性必须设置为 **ShortStrings** 元素（位于 **Resources** 元素）中 **String** 元素的 [id](resources.md) 属性的值。</span><span class="sxs-lookup"><span data-stu-id="4e0cf-p115">Required. The label of the group. The  **resid** attribute must be set to the value of the **id** attribute of a **String** element in the **ShortStrings** element in the [Resources](resources.md) element.</span></span>
+<span data-ttu-id="3a8ac-p116">必需。组的标签。 **resid** 属性必须设置为 **ShortStrings** 元素（位于 **Resources** 元素）中 **String** 元素的 [id](resources.md) 属性的值。</span><span class="sxs-lookup"><span data-stu-id="3a8ac-p116">Required. The label of the group. The  **resid** attribute must be set to the value of the **id** attribute of a **String** element in the **ShortStrings** element in the [Resources](resources.md) element.</span></span>
 
-#### <a name="highlight-requirements"></a><span data-ttu-id="4e0cf-272">突出显示要求</span><span class="sxs-lookup"><span data-stu-id="4e0cf-272">Highlight requirements</span></span>
+#### <a name="highlight-requirements"></a><span data-ttu-id="3a8ac-273">突出显示要求</span><span class="sxs-lookup"><span data-stu-id="3a8ac-273">Highlight requirements</span></span>
 
-<span data-ttu-id="4e0cf-p116">用户可以激活上下文外接程序的唯一方法是与突出显示实体进行交互。开发人员可以使用 `ItemHasKnownEntity` 和`ItemHasRegularExpressionMatch` 规则类型的 `Rule` 元素的 `Highlight` 属性来控制突出显示哪些实体。</span><span class="sxs-lookup"><span data-stu-id="4e0cf-p116">The only way a user can activate a contextual add-in is to interact with a highlighted entity. Developers can control which entities are highlighted by using the `Highlight` attribute of the `Rule` element for `ItemHasKnownEntity` and `ItemHasRegularExpressionMatch` rule types.</span></span>
+<span data-ttu-id="3a8ac-p117">用户可以激活上下文外接程序的唯一方法是与突出显示实体进行交互。开发人员可以使用 `ItemHasKnownEntity` 和`ItemHasRegularExpressionMatch` 规则类型的 `Rule` 元素的 `Highlight` 属性来控制突出显示哪些实体。</span><span class="sxs-lookup"><span data-stu-id="3a8ac-p117">The only way a user can activate a contextual add-in is to interact with a highlighted entity. Developers can control which entities are highlighted by using the `Highlight` attribute of the `Rule` element for `ItemHasKnownEntity` and `ItemHasRegularExpressionMatch` rule types.</span></span>
 
-<span data-ttu-id="4e0cf-p117">但是，存在一些需要注意的限制。存在这些限制是为了确保在适用的邮件或约会中始终存在一个突出显示实体，以便为用户提供一种激活外接程序的方法。</span><span class="sxs-lookup"><span data-stu-id="4e0cf-p117">However, there are some limitations to be aware of. These limitations are in place to ensure that there will always be a highlighted entity in applicable messages or appointments to give the user a way to activate the add-in.</span></span>
+<span data-ttu-id="3a8ac-p118">但是，存在一些需要注意的限制。存在这些限制是为了确保在适用的邮件或约会中始终存在一个突出显示实体，以便为用户提供一种激活外接程序的方法。</span><span class="sxs-lookup"><span data-stu-id="3a8ac-p118">However, there are some limitations to be aware of. These limitations are in place to ensure that there will always be a highlighted entity in applicable messages or appointments to give the user a way to activate the add-in.</span></span>
 
-- <span data-ttu-id="4e0cf-277">无法突出显示 `EmailAddress` 和 `Url` 实体类型，因此不能用于激活外接程序。</span><span class="sxs-lookup"><span data-stu-id="4e0cf-277">The `EmailAddress` and `Url` entity types cannot be highlighted, and therefore cannot be used to activate an add-in.</span></span>
-- <span data-ttu-id="4e0cf-278">如果使用单个规则，`Highlight` 必须设置为 `all`。</span><span class="sxs-lookup"><span data-stu-id="4e0cf-278">If using a single rule, `Highlight` MUST be set to `all`.</span></span>
-- <span data-ttu-id="4e0cf-279">如果使用具有 `Mode="AND"` 的 `RuleCollection` 规则类型来组合多个规则，则至少其中有一个规则必须将 `Highlight` 设置为 `all`。</span><span class="sxs-lookup"><span data-stu-id="4e0cf-279">If using a `RuleCollection` rule type with `Mode="AND"` to combine multiple rules, at least one of the rules MUST have `Highlight` set to `all`.</span></span>
-- <span data-ttu-id="4e0cf-280">如果使用具有 `Mode="OR"` 的 `RuleCollection` 规则类型来组合多个规则，则所有规则必须将 `Highlight` 设置为 `all`。</span><span class="sxs-lookup"><span data-stu-id="4e0cf-280">If using a `RuleCollection` rule type with `Mode="OR"` to combine multiple rules, all of the rules MUST have `Highlight` set to `all`.</span></span>
+- <span data-ttu-id="3a8ac-278">无法突出显示 `EmailAddress` 和 `Url` 实体类型，因此不能用于激活外接程序。</span><span class="sxs-lookup"><span data-stu-id="3a8ac-278">The `EmailAddress` and `Url` entity types cannot be highlighted, and therefore cannot be used to activate an add-in.</span></span>
+- <span data-ttu-id="3a8ac-279">如果使用单个规则，`Highlight` 必须设置为 `all`。</span><span class="sxs-lookup"><span data-stu-id="3a8ac-279">If using a single rule, `Highlight` MUST be set to `all`.</span></span>
+- <span data-ttu-id="3a8ac-280">如果使用具有 `Mode="AND"` 的 `RuleCollection` 规则类型来组合多个规则，则至少其中有一个规则必须将 `Highlight` 设置为 `all`。</span><span class="sxs-lookup"><span data-stu-id="3a8ac-280">If using a `RuleCollection` rule type with `Mode="AND"` to combine multiple rules, at least one of the rules MUST have `Highlight` set to `all`.</span></span>
+- <span data-ttu-id="3a8ac-281">如果使用具有 `Mode="OR"` 的 `RuleCollection` 规则类型来组合多个规则，则所有规则必须将 `Highlight` 设置为 `all`。</span><span class="sxs-lookup"><span data-stu-id="3a8ac-281">If using a `RuleCollection` rule type with `Mode="OR"` to combine multiple rules, all of the rules MUST have `Highlight` set to `all`.</span></span>
 
-#### <a name="detectedentity-event-example"></a><span data-ttu-id="4e0cf-281">DetectedEntity 事件示例</span><span class="sxs-lookup"><span data-stu-id="4e0cf-281">DetectedEntity event example</span></span>
+#### <a name="detectedentity-event-example"></a><span data-ttu-id="3a8ac-282">DetectedEntity 事件示例</span><span class="sxs-lookup"><span data-stu-id="3a8ac-282">DetectedEntity event example</span></span>
 
 ```xml
 <ExtensionPoint xsi:type="DetectedEntity">
