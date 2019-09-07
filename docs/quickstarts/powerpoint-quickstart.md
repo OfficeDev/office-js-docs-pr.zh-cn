@@ -1,15 +1,15 @@
 ---
 title: 生成首个 PowerPoint 任务加载项
 description: 了解如何使用 Office JS API 生成简单的 PowerPoint 任务窗格加载项。
-ms.date: 07/17/2019
+ms.date: 09/06/2019
 ms.prod: powerpoint
 localization_priority: Priority
-ms.openlocfilehash: c2e6d32de346b13e2dc353ca758fa7839c8ace87
-ms.sourcegitcommit: 1dc1bb0befe06d19b587961da892434bd0512fb5
+ms.openlocfilehash: 93ce98921ea429778505577575eef0f992be93f1
+ms.sourcegitcommit: ce7e7087a4550b9c090dc565fee5eac08a2985a2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "36308055"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "36782245"
 ---
 # <a name="build-your-first-powerpoint-task-pane-add-in"></a>生成首个 PowerPoint 任务加载项
 
@@ -27,8 +27,6 @@ ms.locfileid: "36308055"
 
 ### <a name="create-the-add-in-project"></a>创建加载项项目
 
-[!include[note about Yeoman generator bug](../includes/note-yeoman-generator-bug-201908.md)]
-
 使用 Yeoman 生成器创建 PowerPoint 加载项项目。 运行下面的命令，再回答如下所示的提示问题：
 
 ```command&nbsp;line
@@ -37,8 +35,10 @@ yo office
 
 - **选择项目类型:** `Office Add-in Task Pane project`
 - **选择脚本类型:** `Javascript`
-- **要如何命名加载项?** `my-office-add-in`
+- **要如何命名加载项?** `My Office Add-in`
 - **要支持哪一个 Office 客户端应用程序?** `PowerPoint`
+
+![有关 Yeoman 生成器提示和回答的屏幕截图](../images/yo-office-powerpoint.png)
 
 完成此向导后，生成器会创建项目，并安装支持的 Node 组件。
 
@@ -51,7 +51,7 @@ yo office
 1. 导航到项目的根文件夹。
 
     ```command&nbsp;line
-    cd "my-office-add-in"
+    cd "My Office Add-in"
     ```
 
 2. 完成以下步骤，以启动本地 Web 服务器并旁加载你的加载项。

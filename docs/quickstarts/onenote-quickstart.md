@@ -1,15 +1,15 @@
 ---
 title: 生成首个 OneNote 任务窗格加载项
 description: ''
-ms.date: 06/20/2019
+ms.date: 09/06/2019
 ms.prod: onenote
 localization_priority: Priority
-ms.openlocfilehash: 24c8854cb1f9332371f3726409f91f7cdbf53243
-ms.sourcegitcommit: 1dc1bb0befe06d19b587961da892434bd0512fb5
+ms.openlocfilehash: 7e31933b5d38cede00983d6f3f31a284043bb769
+ms.sourcegitcommit: ce7e7087a4550b9c090dc565fee5eac08a2985a2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "36308020"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "36782259"
 ---
 # <a name="build-your-first-onenote-task-pane-add-in"></a>生成首个 OneNote 任务窗格加载项
 
@@ -21,8 +21,6 @@ ms.locfileid: "36308020"
 
 ## <a name="create-the-add-in-project"></a>创建加载项项目
 
-[!include[note about Yeoman generator bug](../includes/note-yeoman-generator-bug-201908.md)]
-
 使用 Yeoman 生成器创建 OneNote 加载项项目。 运行下面的命令，再回答如下所示的提示问题：
 
 ```command&nbsp;line
@@ -31,8 +29,10 @@ yo office
 
 - **选择项目类型:** `Office Add-in Task Pane project`
 - **选择脚本类型:** `Javascript`
-- **要如何命名加载项?** `my-office-add-in`
+- **要如何命名加载项?** `My Office Add-in`
 - **要支持哪一个 Office 客户端应用程序?** `OneNote`
+
+![有关 Yeoman 生成器提示和回答的屏幕截图](../images/yo-office-onenote.png)
 
 完成此向导后，生成器会创建项目，并安装支持的 Node 组件。
     
@@ -76,7 +76,7 @@ try {
 1. 导航到项目的根文件夹。
 
     ```command&nbsp;line
-    cd "my-office-add-in"
+    cd "My Office Add-in"
     ```
 
 2. 启动本地 Web 服务器并旁加载你的加载项。

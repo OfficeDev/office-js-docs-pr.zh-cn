@@ -1,14 +1,14 @@
 ---
 title: 在 Office 加载项中使用 Office UI Fabric React
 description: 了解如何在 Office 加载项中使用 Office UI Fabric React。
-ms.date: 07/11/2019
+ms.date: 09/06/2019
 localization_priority: Priority
-ms.openlocfilehash: c738521b82d0cb8f234fd28dc8bb24740962b817
-ms.sourcegitcommit: 1dc1bb0befe06d19b587961da892434bd0512fb5
+ms.openlocfilehash: e0f552cbb6471fbafbc25e53b5e786038adea83d
+ms.sourcegitcommit: ce7e7087a4550b9c090dc565fee5eac08a2985a2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "36302595"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "36782224"
 ---
 # <a name="use-office-ui-fabric-react-in-office-add-ins"></a>在 Office 加载项中使用 Office UI Fabric React
 
@@ -29,8 +29,6 @@ Office UI Fabric 是用于生成 Office 和 Office 365 用户体验的 JavaScrip
 
 ### <a name="create-the-project"></a>创建项目
 
-[!include[note about Yeoman generator bug](../includes/note-yeoman-generator-bug-201908.md)]
-
 使用 Yeoman 生成器创建 Word 加载项项目。 运行下面的命令，再回答如下所示的提示问题：
 
 ```command&nbsp;line
@@ -39,8 +37,10 @@ yo office
 
 - **选择项目类型:** `Office Add-in Task Pane project using React framework`
 - **选择脚本类型:** `TypeScript`
-- **要如何命名加载项?** `my-office-add-in`
+- **要如何命名加载项?** `My Office Add-in`
 - **要支持哪一个 Office 客户端应用程序?** `Word`
+
+![Yeoman 生成器](../images/yo-office-word-react.png)
 
 完成此向导后，生成器会创建项目，并安装支持的 Node 组件。
 
@@ -49,7 +49,7 @@ yo office
 1. 导航到项目的根文件夹。
 
     ```command&nbsp;line
-    cd "my-office-add-in"
+    cd "My Office Add-in"
     ```
 
 2. 完成以下步骤，以启动本地 Web 服务器并旁加载你的加载项。
