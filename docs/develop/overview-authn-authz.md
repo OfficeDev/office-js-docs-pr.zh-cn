@@ -1,18 +1,18 @@
 ---
 title: Office 加载项中的身份验证和授权概述
 description: ''
-ms.date: 08/07/2019
+ms.date: 08/09/2019
 localization_priority: Priority
-ms.openlocfilehash: 2733f8af9f236347e52269c9e73b322b4310e2a9
-ms.sourcegitcommit: 1dc1bb0befe06d19b587961da892434bd0512fb5
+ms.openlocfilehash: dab5eec14a95aea9c27e1d26151b121ac2ed82ac
+ms.sourcegitcommit: 24303ca235ebd7144a1d913511d8e4fb7c0e8c0d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "36302933"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "36838506"
 ---
 # <a name="overview-of-authentication-and-authorization-in-office-add-ins"></a>Office 加载项中的身份验证和授权概述
 
-Web 应用程序和 Office 加载项默认允许匿名访问，但你可要求用户通过登录进行身份验证。 具体而言，你可要求用户使用 Microsoft 帐户或工作/学校 (Office 365) 帐户登录。 此任务被称为“用户身份验证”，因为它让加载项能够知道用户的身份。
+Web 应用程序和 Office 加载项默认允许匿名访问，但你可要求用户通过登录进行身份验证。 例如，可以要求用户使用 Microsoft 帐户、Office 365 工作或学校帐户或者其他常用帐户登录。 此任务被称为“用户身份验证”，因为它让加载项能够知道用户的身份。
 
 你的加载项还能够获得用户的同意来访问其 Microsoft Graph 数据（例如其 Office 365 个人资料、OneDrive 文件和 SharePoint 数据），或者访问 Google、Facebook、领英、SalesForce 和 GitHub 等其他外部源中的数据。 此任务被称为“加载项（或应用）授权”，因为要获得授权的是*加载项*，而不是用户。
 

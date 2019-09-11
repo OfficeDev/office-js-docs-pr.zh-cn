@@ -1,14 +1,14 @@
 ---
 title: 排查 Office 加载项中的用户错误
 description: ''
-ms.date: 07/29/2019
+ms.date: 09/09/2019
 localization_priority: Priority
-ms.openlocfilehash: d6ede08411d9f6c69fa9fb31256ab377682fbca0
-ms.sourcegitcommit: cb5e1726849aff591f19b07391198a96d5749243
+ms.openlocfilehash: 8c1a39e4574f7e8ea60cdf32ff3139d9b929fe5d
+ms.sourcegitcommit: 24303ca235ebd7144a1d913511d8e4fb7c0e8c0d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "35940862"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "36838527"
 ---
 # <a name="troubleshoot-user-errors-with-office-add-ins"></a>排查 Office 加载项中的用户错误
 
@@ -40,7 +40,7 @@ ms.locfileid: "35940862"
 
 ## <a name="outlook-add-in-doesnt-work-correctly"></a>Outlook 外接程序不能正常工作
 
-如果在 Windows 上运行的 Outlook 外接程序不能正常工作，请尝试在 Internet Explorer 中启用脚本调试。 
+如果在 Windows 上运行并[使用 Internet Explorer](../concepts/browsers-used-by-office-web-add-ins.md) 的 Outlook 加载项不能正常工作，请尝试在 Internet Explorer 中启用脚本调试。 
 
 
 - 转到“工具”>“**Internet 选项**” > “**高级**”。
@@ -88,7 +88,7 @@ ms.locfileid: "35940862"
 
 要将 URL 添加到受信任站点的列表中，请执行以下操作：
 
-1. 在 Internet Explorer 中，选择“工具”按钮，然后转到“**Internet 选项**” > “**安全**”。
+1. 在“**控制面板**”中，转到“**Internet 选项**” > “**安全性**”。
 2. 选择“**受信任站点**”区域，并选择“**网站**”。
 3. 输入错误消息中显示的 URL，然后选择“**添加**”。
 4. 再次尝试使用外接程序。如果问题仍然存在，请验证其他安全区域的设置，并确保外接程序域与 Office 应用程序地址栏中显示的 URL 处于同一区域。

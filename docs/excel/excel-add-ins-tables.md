@@ -1,14 +1,14 @@
 ---
 title: 使用 Excel JavaScript API 处理表格
 description: ''
-ms.date: 07/18/2019
+ms.date: 09/09/2019
 localization_priority: Priority
-ms.openlocfilehash: 826afb9444fbb83e032f59316de00100cfdb2402
-ms.sourcegitcommit: 6d9b4820a62a914c50cef13af8b80ce626034c26
+ms.openlocfilehash: 7803690b4a20aa89908a20cf557f8076f5fea70a
+ms.sourcegitcommit: 24303ca235ebd7144a1d913511d8e4fb7c0e8c0d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "35804637"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "36838548"
 ---
 # <a name="work-with-tables-using-the-excel-javascript-api"></a>使用 Excel JavaScript API 处理表格
 
@@ -284,6 +284,8 @@ Excel.run(function (context) {
 **按金额排序的表数据（降序）**
 
 ![Excel 中的表数据](../images/excel-tables-sort.png)
+
+在工作表中对数据进行排序时，会触发事件通知。 要详细了解有关排序的事件以及加载项如何注册事件处理程序来响应此类事件，请参阅[处理排序事件（预览版）](excel-add-ins-worksheets.md#handle-sorting-events-preview)。
 
 ## <a name="apply-filters-to-a-table"></a>将筛选器应用于表
 

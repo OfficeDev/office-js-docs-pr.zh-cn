@@ -1,14 +1,14 @@
 ---
 title: 使用 Excel JavaScript API 处理工作表
 description: ''
-ms.date: 06/20/2019
+ms.date: 09/09/2019
 localization_priority: Priority
-ms.openlocfilehash: 7fd6821797269b13ad7fb1900b2024035e27d37b
-ms.sourcegitcommit: cb5e1726849aff591f19b07391198a96d5749243
+ms.openlocfilehash: 3c06e3660c2c8d6bf362b38185b96c8012dc4b90
+ms.sourcegitcommit: 24303ca235ebd7144a1d913511d8e4fb7c0e8c0d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "35940736"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "36838561"
 ---
 # <a name="work-with-worksheets-using-the-excel-javascript-api"></a>使用 Excel JavaScript API 处理工作表
 
@@ -298,6 +298,56 @@ function onWorksheetChanged(eventArgs) {
         return context.sync();
     });
 }
+```
+
+## <a name="handle-sorting-events-preview"></a>处理排序事件（预览版）
+
+> [!NOTE]
+> 这些与排序相关的事件的 API 现在仅推出公共预览版。 [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
+
+`onColumnSorted` 和 `onRowSorted` 事件表示工作表数据已排序。 这些事件连接到各 `Worksheet` 对象和工作簿的 `WorkbookCollection` 无论是通过编程排序还是通过 Excel 用户界面手动执行排序，它们都会触发。
+
+> [!NOTE]
+> 通过从左到右排序操作对列排序时，触发 `onColumnSorted` 通过从上到下排序操作对行排序时，触发 `onRowSorted` 使用列标题上的下拉菜单对表格进行排序时，将触发 `onRowSorted` 事件。 该事件对应于正在移动的内容，而不是排序条件。
+
+`onColumnSorted` 和 `onRowSorted` 事件为它们的回叫分别提供 [WorksheetColumnSortedEventArgs](/javascript/api/excel/excel.worksheetcolumnsortedeventargs) 或 [WorksheetRowSortedEventArgs](/javascript/api/excel/excel.worksheetrowsortedeventargs) 它们提供有关事件的更多详细信息。 特别的一点是，两个 `EventArgs` 都有 `address` 属性，表示排序操作移动的行或列。 已添加包含排序内容的所有单元格，即使单元格的值未包含在排序条件中，也是如此。
+
+下图显示了排序事件的 `address` 属性返回的范围。 首先是排序前的示例数据：
+
+![排序前 Excel 中的表格数据](../images/excel-sort-event-before.png)
+
+如果对“**Q1**”（“**B**”中的值）执行从上到下排序，则 `WorksheetRowSortedEventArgs.address` 返回以下突出显示的行：
+
+![从上到下排序后 Excel 中的表格数据。 已移动的行会突出显示。](../images/excel-sort-event-after-row.png)
+
+如果对原始数据中“**柑橘**”（“**4**”中的值）执行从左到右排序，则 `WorksheetColumnsSortedEventArgs.address` 返回以下突出显示的列：
+
+![从左到右排序后 Excel 中的表格数据。 已移动的列会突出显示。](../images/excel-sort-event-after-column.png)
+
+下面的代码示例演示如何为 `Worksheet.onRowSorted` 事件注册事件处理程序。 处理程序的回叫会清除该范围的填充颜色，然后填充已移动行的单元格。
+
+```js
+Excel.run(function (context) {
+    var sheet = context.workbook.worksheets.getActiveWorksheet();
+
+    // This will fire whenever a row has been moved as the result of a sort action.
+    sheet.onRowSorted.add(function (event) {
+        return Excel.run(function (context) {
+            console.log("Row sorted: " + event.address);
+            var sheet = context.workbook.worksheets.getActiveWorksheet();
+
+            // Clear formatting for section, then highlight the sorted area.
+            sheet.getRange("A1:E5").format.fill.clear();
+            if (event.address !== "") {
+                sheet.getRanges(event.address).format.fill.color = "yellow";
+            }
+
+            return context.sync();
+        });
+    });
+
+    return context.sync();
+}).catch(errorHandlerFunction);
 ```
 
 ## <a name="find-all-cells-with-matching-text"></a>查找所有包含匹配文本的单元格

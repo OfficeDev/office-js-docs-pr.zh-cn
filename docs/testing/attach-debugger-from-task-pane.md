@@ -1,14 +1,14 @@
 ---
 title: 从任务窗格附加调试器
 description: ''
-ms.date: 08/06/2019
+ms.date: 09/09/2019
 localization_priority: Priority
-ms.openlocfilehash: 4433eccc165d616c7b8ebff428e1426c4b98be49
-ms.sourcegitcommit: dc78ee2a89fe3d4cd6f748be1eec9081c1077502
+ms.openlocfilehash: 39d952cc1162107881f6f6860a36be45c7eb4d30
+ms.sourcegitcommit: 24303ca235ebd7144a1d913511d8e4fb7c0e8c0d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2019
-ms.locfileid: "36231303"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "36838471"
 ---
 # <a name="attach-a-debugger-from-the-task-pane"></a>从任务窗格附加调试器
 
@@ -32,13 +32,14 @@ Visual Studio 中的“解决方案资源管理器”**** 会显示代码文件�
 > 如果你没有看到“个性”菜单，则可以使用 Visual Studio 调试加载项。 确保你的任务窗格加载项已在 Office 中打开，然后按照以下步骤操作：
 >
 > 1. 在 Visual Studio 中，依次选择“**调试**” > “**附加到进程**”。
-> 2. 在“**附加到进程**”对话框中，选择所有可用的 Iexplore.exe 进程，然后选择“**附加**”按钮。
+> 2. 在“**可用进程**”中，选择**“所有可用 `Iexplore.exe` 进程”或**“所有可用 `MicrosoftEdge*.exe` 进程”（具体取决于[加载项是使用 Internet Explorer 还是 Microsoft Edge](../concepts/browsers-used-by-office-web-add-ins.md)），然后选择“附加”**** 按钮。
 
 若要详细了解如何在 Visual Studio 中进行调试，请参阅以下内容：
 
 -   若要在 Visual Studio 中启动并使用 DOM 资源管理器，请参阅 [Building great-looking apps for Office using the new project templates](https://blogs.msdn.microsoft.com/officeapps/2013/04/16/building-great-looking-apps-for-office-using-the-new-project-templates)（使用新项目模板为 Office 生成漂亮应用）博客文章中[提示和技巧](https://blogs.msdn.microsoft.com/officeapps/2013/04/16/building-great-looking-apps-for-office-using-the-new-project-templates/#tips_tricks)部分的提示 4。
 -   若要设置断点，请参阅[使用断点](/visualstudio/debugger/using-breakpoints?view=vs-2015)。
 -   若要使用 F12，请参阅[使用 F12 开发人员工具](/previous-versions/windows/internet-explorer/ie-developer/samples/bg182326(v=vs.85))。
+-   要使用 Microsoft Edge 开发人员工具，请参阅 [Microsoft Edge DevTools](https://www.microsoft.com/p/microsoft-edge-devtools-preview/9mzbfrmz0mnj?activetab=pivot%3Aoverviewtab)。
 
 ## <a name="see-also"></a>另请参阅
 

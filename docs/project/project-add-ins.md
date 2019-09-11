@@ -1,16 +1,16 @@
 ---
 title: Project 任务窗格加载项
 description: ''
-ms.date: 07/05/2019
+ms.date: 09/09/2019
 ms.topic: overview
 scenarios: getting-started
 localization_priority: Priority
-ms.openlocfilehash: 290693da0a9b73fe00798b22d957373120bd7589
-ms.sourcegitcommit: 49af31060aa56c1e1ec1e08682914d3cbefc3f1c
+ms.openlocfilehash: d2d4019fc5f47e05ea3918d2077006468afc4bec
+ms.sourcegitcommit: 24303ca235ebd7144a1d913511d8e4fb7c0e8c0d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2019
-ms.locfileid: "36672843"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "36838534"
 ---
 # <a name="task-pane-add-ins-for-project"></a>Project 任务窗格加载项
 
@@ -145,7 +145,7 @@ Project 加载项方案包括以下几种：
 在文件共享中可以有多个外接程序清单 XML 文件和子目录。可以通过使用 Project 2013 中的“**信任中心**“对话框中“**受信任的外接程序目录**”选项卡来添加或删除清单目录位置和目录。若要显示 Project 中的外接程序，清单中的 **SourceLocation** 元素必须指向现有网站或 HTML 源文件。
 
 > [!NOTE]
-> 必须安装 Internet Explorer 9（或更高版本），但它不一定是默认浏览器。Office 加载项需要 Internet Explorer 9 中的组件。默认浏览器可以是 Internet Explorer 9、Safari 5.0.6、Firefox 5、Chrome 13 或上述浏览器之一的更高版本。
+> 如果要在 Windows 计算机上开发，则必须安装 Internet Explorer 或 Microsoft Edge。 有关详细信息，请参阅 [Office 加载项使用的浏览器](../concepts/browsers-used-by-office-web-add-ins.md)。
 
 在过程 2 中，在安装 Project 2013 的本地计算机上安装 Bing 搜索加载项。但是，由于加载项基础架构不直接使用本地文件路径，如  `C:\Project\AppManifests`，因此您可以在本地计算机上创建网络共享。如果您喜欢，可以在远程计算机上创建文件共享。
 
