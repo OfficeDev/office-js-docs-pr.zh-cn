@@ -1,14 +1,14 @@
 ---
 title: Office 加载项的隐私和安全
 description: ''
-ms.date: 06/20/2019
+ms.date: 09/09/2019
 localization_priority: Priority
-ms.openlocfilehash: 5a930f9c2d4d2c7fe049517ac812c72a8a239b40
-ms.sourcegitcommit: c3673cc693fa7070e1b397922bd735ba3f9342f3
+ms.openlocfilehash: 43caca7b255d11d94c3627ad87d048d1f677cd67
+ms.sourcegitcommit: 24303ca235ebd7144a1d913511d8e4fb7c0e8c0d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/05/2019
-ms.locfileid: "35575553"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "36838515"
 ---
 # <a name="privacy-and-security-for-office-add-ins"></a>Office 加载项的隐私和安全
 
@@ -39,7 +39,7 @@ Office 外接程序受到外接程序运行时环境、多层权限模型和性�
 
 ### <a name="clients-on-windows-and-os-x-devices"></a>Windows 和 OS X 设备上的客户端
 
-在支持的台式机和平板电脑设备的客户端（如 Windows 版 Excel、Windows 版 Outlook 和 Mac 版 Outlook）中，通过集成进程内组件 Office 加载项运行时来支持 Office 加载项，该组件管理加载项的生命周期，并实现加载项和客户端应用程序之间的互操作性。加载项网页本身托管在进程外。如图 1 中所示，在 Windows 台式机或平板电脑设备上，加载项网页托管在 Internet Explorer 控件内部，而 Internet Explorer 控件托管在加载项运行时进程内部，提供安全和性能隔离。
+在支持的台式机和平板电脑设备的客户端（如 Windows 版 Excel、Windows 版 Outlook 和 Mac 版 Outlook）中，通过集成进程内组件 Office 加载项运行时来支持 Office 加载项，该组件管理加载项的生命周期，并实现加载项和客户端应用程序之间的互操作性。加载项网页本身托管在进程外。如图 1 中所示，在 Windows 台式机或平板电脑设备上，[加载项网页托管在 Internet Explorer 或 Microsoft Edge 控件内部](browsers-used-by-office-web-add-ins.md)，而 Internet Explorer 控件托管在加载项运行时进程内部，提供安全和性能隔离。
 
 在 Windows 桌面设备上，必须为受限网站区域启用 Internet Explorer 保护模式。通常情况下，此模式默认启用。如果禁用，则会在尝试启动加载项时[看到错误消息](https://support.microsoft.com/help/2761180/apps-for-office-don-t-start-if-you-disable-protected-mode-for-the-restricted-sites-zone-in-internet-explorer)。
 
@@ -190,7 +190,7 @@ Exchange 和 SharePoint 提供了客户端代理以实现跨域访问。通常�
 
 - 如果要使用 jQuery，请使用 [.text()](https://api.jquery.com/text/) 方法，而非 [.html()](https://api.jquery.com/html/) 方法。
 
-- 使用 [toStaticHTML](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference) 方法可在将用户输入传递到 **innerHTML** 之前删除用户输入中的所有动态 HTML 元素和属性。
+- 使用 [toStaticHTML](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Reference) 方法可在将用户输入传递到 **innerHTML** 之前删除用户输入中的所有动态 HTML 元素和属性。
 
 - 使用 [encodeURIComponent](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/encodeuricomponent) 或 [encodeURI](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/encodeuri) 函数可对应为来自用户输入或包含用户输入的 URL 的文本进行编码。
 
@@ -223,11 +223,11 @@ Exchange 和 SharePoint 提供了客户端代理以实现跨域访问。通常�
 
 - 开发人员不得在 Office 加载项中使用 ActiveX 控件，因为 ActiveX 控件不支持加载项平台的跨平台特性。
 
-- 内容和任务窗格加载项使用 Internet Explorer 默认使用的相同 SSL 设置，并允许大部分内容仅通过 SSL 传送。Outlook 加载项要求所有内容都通过 SSL 传送。开发人员必须在加载项清单的 **SourceLocation** 元素中指定使用 HTTPS 的 URL，以标识加载项的 HTML 文件位置。
+- 内容和任务窗格加载项使用浏览器默认使用的相同 SSL 设置，并允许大部分内容仅通过 SSL 传送。Outlook 加载项要求所有内容都通过 SSL 传送。开发人员必须在加载项清单的 **SourceLocation** 元素中指定使用 HTTPS 的 URL，以标识加载项的 HTML 文件位置。
 
-    若要确保加载项不使用 HTTP 交付内容，在测试加载项时，开发人员应确保在 Internet Explorer 中选择以下设置且其测试方案中不显示任何安全警告：
+    若要确保加载项不使用 HTTP 交付内容，在测试加载项时，开发人员应确保在“**控制窗格**”中的“**Internet 选项**”中选择以下设置且其测试方案中不显示任何安全警告：
 
-    - 确保针对“**Internet**”区域的安全设置“**显示混合内容**”设置为“**提示**”。可以通过在 Internet Explorer 中选择以下项目来完成此设置：在“**Internet 选项**”对话框的“**安全**”选项卡上，选择“**Internet**”区域，然后选择“**自定义级别**”，滚动查找“**显示混合内容**”并选择“**提示**”（如果未选择）。
+    - 确保针对“**Internet**”区域的安全设置“**显示混合内容**”设置为“**提示**”。可以通过在“**Internet 选项**”中选择以下项目来完成此设置：在“**安全**”选项卡上，选择“**Internet**”区域，然后选择“**自定义级别**”，滚动查找“**显示混合内容**”并选择“**提示**”（如果未选择）。
 
     - 确保在“Internet 选项”**** 对话框的“高级”**** 选项卡中，选中了“在安全和非安全模式之间转换时发出警告”****。
 

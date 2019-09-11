@@ -3,12 +3,12 @@ title: 在不使用 SSO 的情况下对 Microsoft Graph 授权
 description: ''
 ms.date: 08/07/2019
 localization_priority: Priority
-ms.openlocfilehash: 0bf79daa74542d36d90976dfd3f699591a8646a6
-ms.sourcegitcommit: 1dc1bb0befe06d19b587961da892434bd0512fb5
+ms.openlocfilehash: 9636077553904e7250cf1d6dc740febe9eac61e2
+ms.sourcegitcommit: 24303ca235ebd7144a1d913511d8e4fb7c0e8c0d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "36302931"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "36838485"
 ---
 # <a name="authorize-to-microsoft-graph-without-sso"></a>在不使用 SSO 的情况下对 Microsoft Graph 授权
 
@@ -26,7 +26,7 @@ ms.locfileid: "36302931"
 - 对于使用基于 NodeJS 的服务器端的加载项, 请使用[Passport Azure AD](https://github.com/AzureAD/passport-azure-ad)。
 - 对于使用隐式流的加载项，请使用[msal.js](https://github.com/AzureAD/microsoft-authentication-library-for-js/wiki)。
 
-有关使用 Microsoft 标识平台 (以前称为 "AAD v. 2.0") 的推荐库的详细信息，请参阅Microsoft 标识平台身份验证库](/azure/active-directory/develop/reference-v2-libraries.md)。
+有关使用 Microsoft 标识平台 (以前称为 "AAD v. 2.0") 的推荐库的详细信息，请参阅[Microsoft 标识平台身份验证库](/azure/active-directory/develop/reference-v2-libraries)。
 
 以下示例从 Office 加载项获取 Microsoft Graph 数据：
 
