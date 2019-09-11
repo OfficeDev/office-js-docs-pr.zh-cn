@@ -33,7 +33,6 @@ Office 应用程序遵循一套常规交互原则。应用共享内容并具有�
 - **针对所有平台和输入方法进行设计**。外接程序设计用于 Office 支持的所有平台，您的外接程序 UI 应该进行优化，以便跨平台和外形规格运行。支持鼠标/键盘和触摸输入设备，确保您的自定义 HTML UI 响应迅速，可适应不同的外形规格。有关详细信息，请参阅[触摸](../concepts/add-in-development-best-practices.md#optimize-for-touch)。 
 
 ## <a name="see-also"></a>另请参阅
-- 
-  [Office UI Fabric](https://developer.microsoft.com/zh-CN/fabric) 
+- [Office UI Fabric](https://developer.microsoft.com/zh-CN/fabric) 
 - [加载项开发最佳做法](../concepts/add-in-development-best-practices.md)
 
