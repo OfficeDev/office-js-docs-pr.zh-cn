@@ -1,0 +1,2 @@
+> [!TIP]
+> <span data-ttu-id="76658-101">您可以忽略 Yeoman 生成器在创建外接程序项目后提供的*后续步骤*指南。</span><span class="sxs-lookup"><span data-stu-id="76658-101">You can ignore the *next steps* guidance that the Yeoman generator provides after the add-in project's been created.</span></span> <span data-ttu-id="76658-102">本文中的分步说明提供了完成本教程所需的所有指南。</span><span class="sxs-lookup"><span data-stu-id="76658-102">The step-by-step instructions within this article provide all of the guidance you'll need to complete this tutorial.</span></span>
