@@ -1,15 +1,15 @@
 ---
 title: Excel 自定义函数教程
 description: 在本教程中，你将创建一个 Excel 外接程序，其中包含可执行计算、请求 Web 数据或流 Web 数据的自定义函数。
-ms.date: 09/06/2019
+ms.date: 09/18/2019
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: d7af566d228c3b4da87be2d3d8bfba049f8b5509
-ms.sourcegitcommit: ce7e7087a4550b9c090dc565fee5eac08a2985a2
+ms.openlocfilehash: 4481d63cc167c2ce05ec70331ccd7fd472d7846b
+ms.sourcegitcommit: a0257feabcfe665061c14b8bdb70cf82f7aca414
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "36782266"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "37035446"
 ---
 # <a name="tutorial-create-custom-functions-in-excel"></a>教程：在 Excel 中创建自定义函数
 
@@ -32,11 +32,7 @@ ms.locfileid: "36782266"
 
  首先，创建代码项目以构建自定义函数加载项。 [Office 外接程序的 Yeoman 生成器](https://www.npmjs.com/package/generator-office)将使用一些预生成的自定义函数来设置您的项目，您可以试用这些函数。如果已运行自定义函数 "快速启动" 并生成了一个项目，请继续使用该项目，然后跳到[此步骤](#create-a-custom-function-that-requests-data-from-the-web)。
 
-1. 运行下面的命令，再回答如下所示的提示问题。
-    
-    ```command&nbsp;line
-    yo office
-    ```
+1. [!include[Yeoman generator create project guidance](../includes/yo-office-command-guidance.md)]
     
     * **选择项目类型:** `Excel Custom Functions Add-in project`
     * **选择脚本类型:** `JavaScript`
@@ -45,6 +41,8 @@ ms.locfileid: "36782266"
     ![自定义函数的 Office 外接程序提示的 Yeoman 生成器](../images/starcountPrompt.png)
     
     Yeoman 生成器将创建项目文件并安装支持的 Node 组件。
+
+    [!include[Yeoman generator next steps](../includes/yo-office-next-steps.md)]
 
 2. 导航到项目的根文件夹。
     

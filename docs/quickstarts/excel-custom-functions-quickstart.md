@@ -1,15 +1,15 @@
 ---
-ms.date: 09/06/2019
+ms.date: 09/18/2019
 description: 在 Excel 快速入门指南中开发自定义函数。
 title: 自定义功能快速入门
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: b3344b19ec29b24407c83bb043dcbaa613d5e8ec
-ms.sourcegitcommit: ce7e7087a4550b9c090dc565fee5eac08a2985a2
+ms.openlocfilehash: f34a8817a7c8ef2679fc8ce0a6ad17cec600531b
+ms.sourcegitcommit: a0257feabcfe665061c14b8bdb70cf82f7aca414
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "36782231"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "37035327"
 ---
 # <a name="get-started-developing-excel-custom-functions"></a>开始开发 Excel 自定义函数
 
@@ -29,11 +29,7 @@ ms.locfileid: "36782231"
 
 首先，使用 Yeoman 生成器创建自定义函数项目。 这将为你的项目设置开始对自定义函数进行编码所需的正确文件夹结构、源文件和依存关系。
 
-1. 在所选的文件夹中，运行以下命令，然后按如下所示回答提示。
-
-    ```command&nbsp;line
-    yo office
-    ```
+1. [!include[Yeoman generator create project guidance](../includes/yo-office-command-guidance.md)]
 
     - **选择项目类型:** `Excel Custom Functions Add-in project`
     - **选择脚本类型:** `JavaScript`

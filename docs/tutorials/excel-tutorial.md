@@ -1,15 +1,15 @@
 ---
 title: Excel 加载项教程
 description: 在本教程中，你将学习如何构建一个 Excel 外接程序，用于创建、填充、筛选和排序表格、创建图表、冻结表格标题、保护工作表并打开对话框。
-ms.date: 07/17/2019
+ms.date: 09/18/2019
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: 43bd629a27f09c8923ca0ca56aece5faf55cd28f
-ms.sourcegitcommit: 49af31060aa56c1e1ec1e08682914d3cbefc3f1c
+ms.openlocfilehash: ef68834085486827bb0c09b86ce60bee9c9b7b3f
+ms.sourcegitcommit: a0257feabcfe665061c14b8bdb70cf82f7aca414
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2019
-ms.locfileid: "36672878"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "37035403"
 ---
 # <a name="tutorial-create-an-excel-task-pane-add-in"></a>教程：创建 Excel 任务窗格加载项
 
@@ -23,29 +23,27 @@ ms.locfileid: "36672878"
 > * 保护工作表
 > * 打开对话框
 
+> [!TIP]
+> 如果已完成 "[生成 Excel 任务窗格外接程序](../quickstarts/excel-quickstart-jquery.md)" 快速入门，并希望将该项目用作本教程的起始点，请直接转到 "[创建表](#create-a-table)" 部分以启动本教程。
+
 ## <a name="prerequisites"></a>先决条件
 
-若要使用本教程，需要安装以下项。 
-
-- Excel 2016 版本 1711（生成号 8730.1000 即点即用）或更高版本。 可能必须成为 Office 预览体验成员，才能获取此版本。 有关详细信息，请参阅[成为 Office 预览体验成员](https://products.office.com/office-insider?tab=tab-1)。
-
-- [Node](https://nodejs.org/en/) 
-
-- [Git Bash](https://git-scm.com/downloads)（或其他 Git 客户端）
-
-- 您需要具有 Internet 连接才能在本教程中测试外接程序。
+[!include[Yeoman generator prerequisites](../includes/quickstart-yo-prerequisites.md)]
 
 ## <a name="create-your-add-in-project"></a>创建加载项项目
 
-完成以下步骤以创建将用作本教程基础的 Excel 加载项项目。
+[!include[Yeoman generator create project guidance](../includes/yo-office-command-guidance.md)]
 
-1. 克隆 GitHub 存储库 [Excel 加载项教程](https://github.com/OfficeDev/Excel-Add-in-Tutorial)。
+- **选择项目类型:** `Office Add-in Task Pane project`
+- **选择脚本类型:** `Javascript`
+- **要如何命名加载项?** `My Office Add-in`
+- **要支持哪一个 Office 客户端应用程序?** `Excel`
 
-2. 打开 Git Bash 窗口或已启用 Node.JS 的系统命令提示符，并转到项目的“开始”**** 文件夹。
+![Yeoman 生成器](../images/yo-office-excel.png)
 
-3. 运行命令 `npm install`，以安装 package.json 文件中列出的工具和库。 
+完成此向导后，生成器将创建项目并安装支持节点组件。
 
-4. 执行[安装自签名证书](https://github.com/OfficeDev/generator-office/blob/master/src/docs/ssl.md)以信任开发计算机操作系统的证书中的步骤。
+[!include[Yeoman generator next steps](../includes/yo-office-next-steps.md)]
 
 ## <a name="create-a-table"></a>创建表格
 
@@ -55,47 +53,57 @@ ms.locfileid: "36672878"
 
 1. 在代码编辑器中打开项目。
 
-2. 打开文件 index.html。
+2. 打开文件 **./src/taskpane/taskpane.html**。  此文件包含任务窗格的 HTML 标记。
 
-3. 将 `TODO1` 替换为以下标记：
+3. 找到`<main>`元素并删除在开始`<main>`标记后面和结束`</main>`标记之前出现的所有行。
+
+4. 紧跟在开始`<main>`标记后面添加以下标记：
 
     ```html
-    <button class="ms-Button" id="create-table">Create Table</button>
+    <button class="ms-Button" id="create-table">Create Table</button><br/><br/>
     ```
 
-4. 打开 app.js 文件。
+5. 打开 **/src/taskpane/taskpane.js**。 此文件包含 Office JavaScript API 代码，可促进任务窗格和 Office 主机应用程序之间的交互。
 
-5. 将 `TODO1` 替换为以下代码。 此代码用于确定用户的 Excel 版本是否支持包含本系列教程将使用的所有 API 的 Excel.js 版本。 在生产加载项中，若要隐藏或禁用调用不受支持的 API 的 UI，请使用条件块的主体。 这样一来，用户仍可以使用 Excel 版本支持的加载项部分。
+6. 执行以下操作，删除`run`对按钮和`run()`函数的所有引用：
+
+    - 找到并删除该行`document.getElementById("run").onclick = run;`。
+
+    - 找到并删除整个`run()`函数。
+
+7. 在`Office.onReady`方法调用中，找到行`if (info.host === Office.HostType.Excel) {` ，并在该行后面紧接着添加以下代码。 注意：
+
+    - 此代码的第一部分确定用户的 Excel 版本是否支持包含此系列教程将使用的所有 Api 的 Excel 的版本。 在生产加载项中，若要隐藏或禁用调用不受支持的 API 的 UI，请使用条件块的主体。 这样一来，用户仍可以使用 Excel 版本支持的加载项部分。
+
+    - 此代码的第二部分添加`create-table`按钮的事件处理程序。
 
     ```js
+    // Determine if the user's version of Office supports all the Office.js APIs that are used in the tutorial.
     if (!Office.context.requirements.isSetSupported('ExcelApi', '1.7')) {
         console.log('Sorry. The tutorial add-in uses Excel.js APIs that are not available in your version of Office.');
     }
+
+    // Assign event handlers and other initialization logic.
+    document.getElementById("create-table").onclick = createTable;
     ```
 
-6. 将 `TODO2` 替换为以下代码：
+8. 将以下函数添加到文件末尾。 注意：
 
-    ```js
-    $('#create-table').click(createTable);
-    ```
+    - Excel.js 业务逻辑将添加到传递给 `Excel.run` 的函数。 此逻辑不立即执行。 相反，它会被添加到挂起的命令队列中。
 
-7. 将 `TODO3` 替换为以下代码。 注意：
+    - `context.sync` 方法将所有已排入队列的命令发送到 Excel 以供执行。
 
-   - Excel.js 业务逻辑将添加到传递给 `Excel.run` 的函数。 此逻辑不立即执行。 相反，它会被添加到挂起的命令队列中。
-
-   - `context.sync` 方法将所有已排入队列的命令发送到 Excel 以供执行。
-
-   - `Excel.run` 后跟 `catch` 块。 这是应始终遵循的最佳做法。 
+    - `Excel.run` 后跟 `catch` 块。 这是应始终遵循的最佳做法。 
 
     ```js
     function createTable() {
         Excel.run(function (context) {
 
-            // TODO4: Queue table creation logic here.
+            // TODO1: Queue table creation logic here.
 
-            // TODO5: Queue commands to populate the table with data.
+            // TODO2: Queue commands to populate the table with data.
 
-            // TODO6: Queue commands to format the table.
+            // TODO3: Queue commands to format the table.
 
             return context.sync();
         })
@@ -108,13 +116,13 @@ ms.locfileid: "36672878"
     }
     ```
 
-8. 将 `TODO4` 替换为下面的代码。请注意以下几点：
+9. 在`createTable()`函数中，将`TODO1`替换为以下代码。 注意：
 
-   - 此代码通过使用工作表的表格集合的 `add` 方法来创建表格，即使是空的，也始终存在。 这是创建 Excel.js 对象的标准方式。 没有类构造函数 API，切勿使用 `new` 运算符创建 Excel 对象。 相反，请添加到父集合对象。
+    - 此代码通过使用工作表的表格集合的 `add` 方法来创建表格，即使是空的，也始终存在。 这是创建 Excel.js 对象的标准方式。 没有类构造函数 API，切勿使用 `new` 运算符创建 Excel 对象。 相反，请添加到父集合对象。
 
-   - `add` 方法的第一个参数仅是表格最上面一行的范围，而不是表格最终使用的整个范围。 这是因为当加载项填充数据行时（在下一步中），它将新行添加到表中，而不是将值写入现有行的单元格。 这是更为常见的模式，因为在创建表时表的行数通常是未知的。
+    - `add` 方法的第一个参数仅是表格最上面一行的范围，而不是表格最终使用的整个范围。 这是因为当加载项填充数据行时（在下一步中），它将新行添加到表中，而不是将值写入现有行的单元格。 这是更为常见的模式，因为在创建表时表的行数通常是未知的。
 
-   - 表名称必须在整个工作簿中都是唯一的，而不仅仅是在工作表一级。
+    - 表名称必须在整个工作簿中都是唯一的，而不仅仅是在工作表一级。
 
     ```js
     var currentWorksheet = context.workbook.worksheets.getActiveWorksheet();
@@ -122,11 +130,11 @@ ms.locfileid: "36672878"
     expensesTable.name = "ExpensesTable";
     ```
 
-9. 将 `TODO5` 替换为以下代码。 注意：
+10. 在`createTable()`函数中，将`TODO2`替换为以下代码。 注意：
 
-   - 范围的单元格值是通过一组数组进行设置。
+    - 范围的单元格值是通过一组数组进行设置。
 
-   - 表格中的新行是通过调用表格的行集合的 `add` 方法进行创建。 通过在作为第二个参数传递的父数组中添加多个单元格值数组，可以在一次 `add` 调用中添加多个行。
+    - 表格中的新行是通过调用表格的行集合的 `add` 方法进行创建。 通过在作为第二个参数传递的父数组中添加多个单元格值数组，可以在一次 `add` 调用中添加多个行。
 
     ```js
     expensesTable.getHeaderRowRange().values =
@@ -143,44 +151,60 @@ ms.locfileid: "36672878"
     ]);
     ```
 
-10. 将 `TODO6` 替换为以下代码。 注意：
+11. 在`createTable()`函数中，将`TODO3`替换为以下代码。 注意：
 
-   - 此代码将从零开始编制的索引传递给表格的列集合的 `getItemAt` 方法，以获取对“金额”**** 列的引用。
+    - 此代码将从零开始编制的索引传递给表格的列集合的 `getItemAt` 方法，以获取对“金额”**** 列的引用。
 
-     > [!NOTE]
-     > Excel.js 集合对象（如 `TableCollection`、`WorksheetCollection` 和 `TableColumnCollection`）有 `items` 属性，此属性是子对象类型的数组（如 `Table`、`Worksheet` 或 `TableColumn`），但 `*Collection` 对象本身并不是数组。
+        > [!NOTE]
+        > Excel.js 集合对象（如 `TableCollection`、`WorksheetCollection` 和 `TableColumnCollection`）有 `items` 属性，此属性是子对象类型的数组（如 `Table`、`Worksheet` 或 `TableColumn`），但 `*Collection` 对象本身并不是数组。
 
-   - 然后，此代码将“金额”**** 列的范围格式化为欧元（精确到小数点后两位）。 
+    - 然后，此代码将“金额”**** 列的范围格式化为欧元（精确到小数点后两位）。 
 
-   - 最后，它确保了列宽和行高足以容纳最长（或最高）的数据项。 请注意，此代码必须获取要格式化的 `Range` 对象。 `TableColumn` 和 `TableRow` 对象没有格式属性。
+    - 最后，它确保了列宽和行高足以容纳最长（或最高）的数据项。 请注意，此代码必须获取要格式化的 `Range` 对象。 `TableColumn` 和 `TableRow` 对象没有格式属性。
 
-        ```js
-        expensesTable.columns.getItemAt(3).getRange().numberFormat = [['€#,##0.00']];
-        expensesTable.getRange().format.autofitColumns();
-        expensesTable.getRange().format.autofitRows();
-        ```
+    ```js
+    expensesTable.columns.getItemAt(3).getRange().numberFormat = [['€#,##0.00']];
+    expensesTable.getRange().format.autofitColumns();
+    expensesTable.getRange().format.autofitRows();
+    ```
+
+12. 验证是否已保存对项目所做的所有更改。
 
 ### <a name="test-the-add-in"></a>测试加载项
 
-1. 打开 Git Bash 窗口或已启用 Node.JS 的系统命令提示符，并转到项目的“开始”**** 文件夹。
+1. 完成以下步骤以启动本地 web 服务器并旁加载您的外接程序。
 
-2. 运行命令`npm run build`以将您的 ES6 源代码转换为较早版本的 JavaScript, 该版本受 Internet Explorer (用于运行 excel 外接程序的某些版本的 excel 所使用) 支持。
+    > [!NOTE]
+    > Office 加载项应使用 HTTPS，而不是 HTTP（即便是在开发时也是如此）。 如果系统在运行以下命令之一后提示你安装证书，请接受提示以安装 Yeoman 生成器提供的证书。
 
-3. 运行命令 `npm start`，以启动在 localhost 上运行的 Web 服务器。
+    > [!TIP]
+    > 如果你要在 Mac 上测试外接程序，请先在项目的根目录中运行以下命令，然后再继续。 运行此命令时，本地 web 服务器将启动。
+    >
+    > ```command&nbsp;line
+    > npm run dev-server
+    > ```
 
-4. 通过以下方法之一旁加载加载项：
+    - 若要在 Excel 中测试外接程序，请在项目的根目录中运行以下命令。 这将启动本地 web 服务器（如果尚未运行），并在加载外接程序的情况中打开 Excel。
 
-    - Windows：[在 Windows 上旁加载 Office 加载项](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)
+        ```command&nbsp;line
+        npm start
+        ```
 
-    - Web 浏览器: 在[web 上的 office 中旁加载 Office 外接程序](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-in-office-on-the-web)
+    - 若要在 web 上的 Excel 中测试外接程序，请在项目的根目录中运行以下命令。 运行此命令时，本地 web 服务器将启动（如果尚未运行）。
 
-    - iPad 和 Mac：[在 iPad 和 Mac 上旁加载 Office 加载项](../testing/sideload-an-office-add-in-on-ipad-and-mac.md)
+        ```command&nbsp;line
+        npm run start:web
+        ```
 
-5. 在“**开始**”菜单上，选择“**显示任务窗格**”。
+        若要使用外接程序，请在 web 上的 Excel 中打开一个新文档，然后按照旁加载中的 office[加载项旁加载 Office 加载项](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-in-office-on-the-web)中的说明操作，以重新添加外接程序。
 
-6. 在任务窗格中，选择“**创建表**”。
+2. 在 Excel 中，依次选择的“**开始**”选项卡和功能区中的“**显示任务窗格**”按钮，以打开加载项任务窗格。
 
-    ![Excel 教程 - 创建表格](../images/excel-tutorial-create-table.png)
+    ![Excel 加载项按钮](../images/excel-quickstart-addin-3b.png)
+
+3. 在任务窗格中，选择 "**创建表**" 按钮。
+
+    ![Excel 教程 - 创建表格](../images/excel-tutorial-create-table-2.png)
 
 ## <a name="filter-and-sort-a-table"></a>筛选和排序表格
 
@@ -188,27 +212,23 @@ ms.locfileid: "36672878"
 
 ### <a name="filter-the-table"></a>筛选表格
 
-1. 在代码编辑器中打开项目。
+1. 打开文件 **./src/taskpane/taskpane.html**。
 
-2. 打开文件 index.html。
-
-3. 在包含 `create-table` 按钮的 `div` 正下方，添加下列标记：
+2. 找到`create-table`按钮`<button>`的元素，并在该行后面添加以下标记：
 
     ```html
-    <div class="padding">
-        <button class="ms-Button" id="filter-table">Filter Table</button>
-    </div>
+    <button class="ms-Button" id="filter-table">Filter Table</button><br/><br/>
     ```
 
-4. 打开 app.js 文件。
+3. 打开 **/src/taskpane/taskpane.js**。
 
-5. 在向 `create-table` 按钮分配单击处理程序的代码行正下方，添加下列代码：
+4. 在`Office.onReady`方法调用中，找到将单击处理程序分配给`create-table`按钮的行，并在该行后面添加以下代码：
 
     ```js
-    $('#filter-table').click(filterTable);
+    document.getElementById("filter-table").onclick = filterTable;
     ```
 
-6. 在 `createTable` 函数正下方，添加下列函数：
+5. 将以下函数添加到文件末尾：
 
     ```js
     function filterTable() {
@@ -228,7 +248,7 @@ ms.locfileid: "36672878"
     }
     ```
 
-7. 将 `TODO1` 替换为下面的代码。 注意：
+6. 在`filterTable()`函数中，将`TODO1`替换为以下代码。 注意：
 
    - 代码先将列名称传递给 `getItem` 方法（而不是像 `getItemAt` 方法一样将列索引传递给 `createTable` 方法），获取对需要筛选的列的引用。 由于用户可以移动表格列，因此给定索引处的列可能会在表格创建后更改。 所以，更安全的做法是，使用列名称获取对列的引用。 上一教程安全地使用了 `getItemAt`，因为是在与创建表格完全相同的方法中使用了它，所以用户没有机会移动列。
 
@@ -238,30 +258,28 @@ ms.locfileid: "36672878"
     var currentWorksheet = context.workbook.worksheets.getActiveWorksheet();
     var expensesTable = currentWorksheet.tables.getItem('ExpensesTable');
     var categoryFilter = expensesTable.columns.getItem('Category').filter;
-    categoryFilter.applyValuesFilter(["Education", "Groceries"]);
+    categoryFilter.applyValuesFilter(['Education', 'Groceries']);
     ``` 
 
 ### <a name="sort-the-table"></a>排序表格
 
-1. 打开文件 index.html。
+1. 打开文件 **./src/taskpane/taskpane.html**。
 
-2. 在包含 `filter-table` 按钮的 `div` 下方，添加下列标记：
+2. 找到`filter-table`按钮`<button>`的元素，并在该行后面添加以下标记： 
 
     ```html
-    <div class="padding">
-        <button class="ms-Button" id="sort-table">Sort Table</button>
-    </div>
+    <button class="ms-Button" id="sort-table">Sort Table</button><br/><br/>
     ```
 
-3. 打开 app.js 文件。
+3. 打开 **/src/taskpane/taskpane.js**。
 
-4. 在向 `filter-table` 按钮分配单击处理程序的代码行下方，添加下列代码：
+4. 在`Office.onReady`方法调用中，找到将单击处理程序分配给`filter-table`按钮的行，并在该行后面添加以下代码：
 
     ```js
-    $('#sort-table').click(sortTable);
+    document.getElementById("sort-table").onclick = sortTable;
     ```
 
-5. 在 `filterTable` 函数下方，添加下列函数。
+5. 将以下函数添加到文件末尾：
 
     ```js
     function sortTable() {
@@ -280,7 +298,7 @@ ms.locfileid: "36672878"
     }
     ```
 
-6. 将 `TODO1` 替换为以下代码。 请注意以下几点：
+6. 在`sortTable()`函数中，将`TODO1`替换为以下代码。 请注意以下几点：
 
    - 此代码创建一组 `SortField` 对象，其中只有一个成员，因为加载项只对“商家”列进行了排序。
 
@@ -301,24 +319,19 @@ ms.locfileid: "36672878"
     expensesTable.sort.apply(sortFields);
     ```
 
+7. 验证是否已保存对项目所做的所有更改。
+
 ### <a name="test-the-add-in"></a>测试加载项
 
-1. 如果上一阶段教程中的 Git Bash 窗口或已启用 Node.JS 的系统命令提示符仍处于打开状态，请按 **Ctrl+C** 两次，停止正在运行的 Web 服务器。 否则，打开 Git Bash 窗口或已启用 Node.JS 的系统命令提示符，并转到项目的“开始”**** 文件夹。
+1. [!include[Start server and sideload add-in instructions](../includes/tutorial-excel-start-server.md)]
 
-     > [!NOTE]
-     > 虽然只要更改任意文件（包括 app.js 文件），浏览器同步服务器就会在任务窗格中重新加载加载项，但它不会重新转换 JavaScript。因此，必须重复执行生成命令，这样对 app.js 做出的更改才会生效。 为此，需要终止服务器进程，这样就可以获得提示符来输入生成命令。 生成后，重启服务器。 接下来的几步操作就是在执行此过程。
+2. 如果加载项任务窗格尚未在 Excel 中打开，请转到 "**开始**" 选项卡，然后选择功能区中的 "**显示任务**窗格" 按钮以将其打开。
 
-2. 运行命令`npm run build`以将您的 ES6 源代码转换为较早版本的 JavaScript, 该版本受 Internet Explorer (用于运行 excel 外接程序的某些版本的 excel 所使用) 支持。
+3. 如果您之前在本教程中添加的表不在打开的工作表中，请在任务窗格中选择 "**创建表**" 按钮。
 
-3. 运行命令 `npm start`，以启动在 localhost 上运行的 Web 服务器。
+4. 按任意顺序选择 "**筛选表**" 按钮和 "**排序表**" 按钮。
 
-4. 通过关闭任务窗格来重新加载它，再选择“**开始**”菜单上的“**显示任务窗格**”，以重新打开加载项。
-
-5. 如果表格因任何原因未在打开的工作表中，请在任务窗格中选择“**创建表**”。
-
-6. 选择“**筛选表**”和“**排序表**”（按顺序和倒序中的任一顺序排序皆可）。
-
-    ![Excel 教程 - 筛选和排序表格](../images/excel-tutorial-filter-and-sort-table.png)
+    ![Excel 教程 - 筛选和排序表格](../images/excel-tutorial-filter-and-sort-table-2.png)
 
 ## <a name="create-a-chart"></a>创建图表
 
@@ -326,27 +339,23 @@ ms.locfileid: "36672878"
 
 ### <a name="chart-a-chart-using-table-data"></a>使用表格数据绘制图表
 
-1. 在代码编辑器中打开项目。
+1. 打开文件 **./src/taskpane/taskpane.html**。
 
-2. 打开文件 index.html。
-
-3. 在包含 `sort-table` 按钮的 `div` 下方，添加下列标记：
+2. 找到`sort-table`按钮`<button>`的元素，并在该行后面添加以下标记： 
 
     ```html
-    <div class="padding">
-        <button class="ms-Button" id="create-chart">Create Chart</button>
-    </div>
+    <button class="ms-Button" id="create-chart">Create Chart</button><br/><br/>
     ```
 
-4. 打开 app.js 文件。
+3. 打开 **/src/taskpane/taskpane.js**。
 
-5. 在向 `sort-chart` 按钮分配单击处理程序的代码行下方，添加下列代码：
+4. 在`Office.onReady`方法调用中，找到将单击处理程序分配给`sort-table`按钮的行，并在该行后面添加以下代码：
 
     ```js
-    $('#create-chart').click(createChart);
+    document.getElementById("create-chart").onclick = createChart;
     ```
 
-6. 在 `sortTable` 函数下方，添加下列函数。
+5. 将以下函数添加到文件末尾：
 
     ```js
     function createChart() {
@@ -369,7 +378,7 @@ ms.locfileid: "36672878"
     }
     ```
 
-7. 将 `TODO1` 替换为下列代码。请注意，为了排除标题行，此代码使用 `Table.getDataBodyRange` 方法（而不是 `getRange` 方法），获取要绘制成图表的数据的范围。
+6. 在`createChart()`函数中，将`TODO1`替换为以下代码。 请注意，为了排除标题行，此代码使用 `Table.getDataBodyRange` 方法（而不是 `getRange` 方法），获取要绘制成图表的数据的范围。
 
     ```js
     var currentWorksheet = context.workbook.worksheets.getActiveWorksheet();
@@ -377,7 +386,7 @@ ms.locfileid: "36672878"
     var dataRange = expensesTable.getDataBodyRange();
     ```
 
-8. 将 `TODO2` 替换为下列代码。 请注意以下参数：
+7. 在`createChart()`函数中，将`TODO2`替换为以下代码。 请注意以下参数：
 
    - `add` 方法的第一个参数指定图表类型。有几十种类型。
 
@@ -389,7 +398,7 @@ ms.locfileid: "36672878"
     var chart = currentWorksheet.charts.add('ColumnClustered', dataRange, 'auto');
     ```
 
-9. 将 `TODO3` 替换为以下代码。 此代码的大部分内容非常直观明了。 请注意几下几点：
+8. 在`createChart()`函数中，将`TODO3`替换为以下代码。 此代码的大部分内容非常直观明了。 请注意几下几点：
    
    - `setPosition` 方法的参数指定应包含图表的工作表区域的左上角和右下角单元格。 Excel 可以调整行宽等设置，以便图表能够适应所提供的空间。
    
@@ -405,24 +414,19 @@ ms.locfileid: "36672878"
     chart.series.getItemAt(0).name = 'Value in €';
     ```
 
+9. 验证是否已保存对项目所做的所有更改。
+
 ### <a name="test-the-add-in"></a>测试加载项
 
-1. 如果上一阶段教程中的 Git Bash 窗口或已启用 Node.JS 的系统命令提示符仍处于打开状态，请按 **Ctrl+C** 两次，停止正在运行的 Web 服务器。 否则，打开 Git Bash 窗口或已启用 Node.JS 的系统命令提示符，并转到项目的“开始”**** 文件夹。
+1. [!include[Start server and sideload add-in instructions](../includes/tutorial-excel-start-server.md)]
 
-     > [!NOTE]
-     > 虽然只要更改任意文件（包括 app.js 文件），浏览器同步服务器就会在任务窗格中重新加载加载项，但它不会重新转换 JavaScript。因此，必须重复执行生成命令，这样对 app.js 做出的更改才会生效。 为此，需要终止服务器进程，这样就可以通提示符输入生成命令。 生成后，重启服务器。 接下来的几步执行的就是此进程。
+2. 如果加载项任务窗格尚未在 Excel 中打开，请转到 "**开始**" 选项卡，然后选择功能区中的 "**显示任务**窗格" 按钮以将其打开。
 
-2. 运行命令`npm run build`以将您的 ES6 源代码转换为较早版本的 JavaScript, 该版本受 Internet Explorer (用于运行 excel 外接程序的某些版本的 excel 所使用) 支持。
+3. 如果之前在本教程中添加的表不在打开的工作表中，请依次选择 "**创建表**" 按钮、"**筛选表**" 按钮和 "**排序表**" 按钮。
 
-3. 运行命令 `npm start`，以启动在 localhost 上运行的 Web 服务器。
+4. 选择“创建图表”**** 按钮。 此时，图表创建完成，其中仅包含筛选出的行中的数据。 底部数据点上的标签按图表的排序顺序进行排序，即按商家名称的字母倒序排序。
 
-4. 通过关闭任务窗格来重新加载它，再选择“**开始**”菜单上的“**显示任务窗格**”，以重新打开加载项。
-
-5. 如果出于某种原因在工作表中打不开表格，请在任务窗格中依次选择“**创建表**”、“**筛选表**”和“**排序表**”按钮（按顺序和倒序中的任一顺序排序皆可）。
-
-6. 选择“创建图表”**** 按钮。 此时，图表创建完成，其中仅包含筛选出的行中的数据。 底部数据点上的标签按图表的排序顺序进行排序，即按商家名称的字母倒序排序。
-
-    ![Excel 教程 - 创建图表](../images/excel-tutorial-create-chart.png)
+    ![Excel 教程 - 创建图表](../images/excel-tutorial-create-chart-2.png)
 
 ## <a name="freeze-a-table-header"></a>冻结表格标题
 
@@ -430,27 +434,23 @@ ms.locfileid: "36672878"
 
 ### <a name="freeze-the-tables-header-row"></a>冻结表格的标题行
 
-1. 在代码编辑器中打开项目。
+1. 打开文件 **./src/taskpane/taskpane.html**。
 
-2. 打开文件 index.html。
-
-3. 在包含 `create-chart` 按钮的 `div` 下方，添加下列标记：
+2. 找到`create-chart`按钮`<button>`的元素，并在该行后面添加以下标记： 
 
     ```html
-    <div class="padding">
-        <button class="ms-Button" id="freeze-header">Freeze Header</button>
-    </div>
+    <button class="ms-Button" id="freeze-header">Freeze Header</button><br/><br/>
     ```
 
-4. 打开 app.js 文件。
+3. 打开 **/src/taskpane/taskpane.js**。
 
-5. 在向 `create-chart` 按钮分配单击处理程序的代码行下方，添加下列代码：
+4. 在`Office.onReady`方法调用中，找到将单击处理程序分配给`create-chart`按钮的行，并在该行后面添加以下代码：
 
     ```js
-    $('#freeze-header').click(freezeHeader);
+    document.getElementById("freeze-header").onclick = freezeHeader;
     ```
 
-6. 在 `createChart` 函数下方，添加下列函数：
+5. 将以下函数添加到文件末尾：
 
     ```js
     function freezeHeader() {
@@ -469,7 +469,7 @@ ms.locfileid: "36672878"
     }
     ```
 
-7. 将 `TODO1` 替换为以下代码。请注意以下几点：
+6. 在`freezeHeader()`函数中，将`TODO1`替换为以下代码。 注意：
 
    - `Worksheet.freezePanes` 集合是工作表中的一组窗格，在工作表滚动时就地固定或冻结。
 
@@ -480,28 +480,23 @@ ms.locfileid: "36672878"
     currentWorksheet.freezePanes.freezeRows(1);
     ```
 
+7. 验证是否已保存对项目所做的所有更改。
+
 ### <a name="test-the-add-in"></a>测试加载项
 
-1. 如果上一阶段教程中的 Git Bash 窗口或已启用 Node.JS 的系统命令提示符仍处于打开状态，请按 **Ctrl+C** 两次，停止正在运行的 Web 服务器。 否则，打开 Git Bash 窗口或已启用 Node.JS 的系统命令提示符，并转到项目的“开始”**** 文件夹。
+1. [!include[Start server and sideload add-in instructions](../includes/tutorial-excel-start-server.md)]
 
-     > [!NOTE]
-     > 虽然只要更改任意文件（包括 app.js 文件），浏览器同步服务器就会在任务窗格中重新加载加载项，但它不会重新转换 JavaScript。因此，必须重复执行生成命令，这样对 app.js 做出的更改才会生效。 为此，需要终止服务器进程，这样就可以通提示符输入生成命令。 生成后，重启服务器。 接下来的几步执行的就是此进程。
+2. 如果加载项任务窗格尚未在 Excel 中打开，请转到 "**开始**" 选项卡，然后选择功能区中的 "**显示任务**窗格" 按钮以将其打开。
 
-2. 运行命令`npm run build`以将您的 ES6 源代码转换为较早版本的 JavaScript, 该版本受 Internet Explorer (用于运行 excel 外接程序的某些版本的 excel 所使用) 支持。
+3. 如果之前在本教程中添加的表在工作表中存在，请将其删除。
 
-3. 运行命令 `npm start`，以启动在 localhost 上运行的 Web 服务器。
+4. 在任务窗格中，选择 "**创建表**" 按钮。
 
-4. 通过关闭任务窗格来重新加载它，再选择“主页”**** 菜单上的“显示任务窗格”****，重新打开加载项。
+5. 在任务窗格中，选择 "**冻结标题**" 按钮。
 
-5. 如果表格在工作表中，请删除它。
+6. 向下滚动工作表，以查看在顶部滚动时，即使较高的行无法看到，表标题仍显示在顶部。
 
-6. 在任务窗格中，选择“**创建表**”。
-
-7. 选择“**冻结标题**”按钮。
-
-8. 向下滚动工作表，直到在上面的行不可见时表格标题在顶部依然可见。
-
-    ![Excel 教程 - 冻结标题](../images/excel-tutorial-freeze-header.png)
+    ![Excel 教程 - 冻结标题](../images/excel-tutorial-freeze-header-2.png)
 
 ## <a name="protect-a-worksheet"></a>保护工作表
 
@@ -509,9 +504,9 @@ ms.locfileid: "36672878"
 
 ### <a name="configure-the-manifest-to-add-a-second-ribbon-button"></a>将清单配置为添加第二个功能区按钮
 
-1. 打开清单文件 my-office-add-in-manifest.xml。
+1. 打开清单文件 " **/manifest.xml**"。
 
-2. 找到 `<Control>` 元素。 此元素定义了“主页”**** 功能区上一直用于启动加载项的“显示任务窗格”**** 按钮。 将向“主页”**** 功能区上的相同组添加第二个按钮。 在结束 Control 标记 (`</Control>`) 和结束 Group 标记 (`</Group>`) 之间，添加下列标记。
+2. 找到`<Control>`元素。 此元素定义了“主页”**** 功能区上一直用于启动加载项的“显示任务窗格”**** 按钮。 将向“主页”**** 功能区上的相同组添加第二个按钮。 在结束 Control 标记 (`</Control>`) 和结束 Group 标记 (`</Group>`) 之间，添加下列标记。
 
     ```xml
     <Control xsi:type="Button" id="<!--TODO1: Unique (in manifest) name for button -->">
@@ -521,9 +516,9 @@ ms.locfileid: "36672878"
             <Description resid="<!-- TODO4: Button tool tip description -->" />
         </Supertip>
         <Icon>
-            <bt:Image size="16" resid="Contoso.tpicon_16x16" />
-            <bt:Image size="32" resid="Contoso.tpicon_32x32" />
-            <bt:Image size="80" resid="Contoso.tpicon_80x80" />
+            <bt:Image size="16" resid="Icon.16x16"/>
+            <bt:Image size="32" resid="Icon.32x32"/>
+            <bt:Image size="80" resid="Icon.80x80"/>
         </Icon>
         <Action xsi:type="<!-- TODO5: Specify the type of action-->">
             <!-- TODO6: Identify the function.-->
@@ -531,19 +526,19 @@ ms.locfileid: "36672878"
     </Control>
     ```
 
-3. 将 `TODO1` 替换为字符串，以便向按钮提供在此清单文件内唯一的 ID。 由于按钮将启用和禁用工作表保护，因此请使用“ToggleProtection”。 完成后，整个开始 Control 标记应如下所示：
+3. 在刚刚添加到清单文件中的 XML 中，将`TODO1`其替换为一个字符串，该字符串为按钮提供了一个在此清单文件内唯一的 ID。 由于按钮将启用和禁用工作表保护，因此请使用“ToggleProtection”。 完成后， `Control`元素的开始标记应如下所示：
 
     ```xml
     <Control xsi:type="Button" id="ToggleProtection">
     ```
 
-4. 接下来的三个 `TODO` 设置“resid”（这是资源 ID 的简称）。 资源是字符串，这三个字符串将在后续步骤中创建。 现在，需要向资源提供 ID。 虽然按钮标签应名为“切换保护”，但此字符串的 *ID* 应为“ProtectionButtonLabel”。因此，完成的 `Label` 元素应如下面的代码所示：
+4. 接下来的三个 `TODO` 设置“resid”（这是资源 ID 的简称）。 资源是字符串，这三个字符串将在后续步骤中创建。 现在，需要向资源提供 ID。 按钮标签应显示 "切换保护"，但此字符串的*ID*应为 "ProtectionButtonLabel"，因此`Label`元素应如下所示：
 
     ```xml
     <Label resid="ProtectionButtonLabel" />
     ```
 
-5. `SuperTip` 元素定义了按钮的工具提示。 由于工具提示标题应与按钮标签相同，因此使用完全相同的资源 ID，即“ProtectionButtonLabel”。 工具提示说明为“单击即可启用和禁用工作表保护”。 不过，`ID` 应为“ProtectionButtonToolTip”。 因此，完成后，整个 `SuperTip` 标记应如下面的代码所示： 
+5. `SuperTip` 元素定义了按钮的工具提示。 由于工具提示标题应与按钮标签相同，因此使用完全相同的资源 ID，即“ProtectionButtonLabel”。 工具提示说明为“单击即可启用和禁用工作表保护”。 不过，`ID` 应为“ProtectionButtonToolTip”。 因此，完成后， `SuperTip`元素应如下所示： 
 
     ```xml
     <Supertip>            
@@ -555,7 +550,7 @@ ms.locfileid: "36672878"
    > [!NOTE] 
    > 在生产加载项中，不建议对两个不同的按钮使用相同的图标；但为了简单起见，本教程将采用这样的做法。 因此，新 `Icon` 中的 `Control` 标记直接就是现有 `Icon` 中 `Control` 元素的副本。 
 
-6. 虽然清单中现有原始 `Action` 元素内的 `Control` 元素的类型设置为 `ShowTaskpane`，但新按钮不会要打开任务窗格，而是要运行在后续步骤中创建的自定义函数。 因此，将 `TODO5` 替换为 `ExecuteFunction`，即触发自定义函数的按钮的操作类型。 开始 `Action` 标记应如下面的代码所示：
+6. 虽然清单中现有原始 `Action` 元素内的 `Control` 元素的类型设置为 `ShowTaskpane`，但新按钮不会要打开任务窗格，而是要运行在后续步骤中创建的自定义函数。 因此，将 `TODO5` 替换为 `ExecuteFunction`，即触发自定义函数的按钮的操作类型。 该`Action`元素的开始标记应如下所示：
  
     ```xml
     <Action xsi:type="ExecuteFunction">
@@ -577,9 +572,9 @@ ms.locfileid: "36672878"
             <Description resid="ProtectionButtonToolTip" />
         </Supertip>
         <Icon>
-            <bt:Image size="16" resid="Contoso.tpicon_16x16" />
-            <bt:Image size="32" resid="Contoso.tpicon_32x32" />
-            <bt:Image size="80" resid="Contoso.tpicon_80x80" />
+            <bt:Image size="16" resid="Icon.16x16"/>
+            <bt:Image size="32" resid="Icon.32x32"/>
+            <bt:Image size="80" resid="Icon.80x80"/>
         </Icon>
         <Action xsi:type="ExecuteFunction">
            <FunctionName>toggleProtection</FunctionName>
@@ -605,9 +600,9 @@ ms.locfileid: "36672878"
 
 ### <a name="create-the-function-that-protects-the-sheet"></a>创建工作表保护函数
 
-1. 打开文件 \function-file\function-file.js。
+1. 打开文件 **.\commands\commands.js**。
 
-2. 此文件已有立即调用函数表达式 (IIFE)。 *在 IIFE 外部*, 添加以下代码。 请注意，我们向方法指定了 `args` 参数，因此方法的最后一行为 `args.completed`。 **ExecuteFunction** 类型的所有加载项命令都必须满足这项要求。 它会指示 Office 主机应用，函数已完成，且 UI 可以再次变成响应式。
+2. 在`action`函数后面紧接着添加以下函数。 请注意，我们为`args`函数和函数调用`args.completed`的最后一行指定了参数。 **ExecuteFunction** 类型的所有加载项命令都必须满足这项要求。 它会指示 Office 主机应用，函数已完成，且 UI 可以再次变成响应式。
 
     ```js
     function toggleProtection(args) {
@@ -627,7 +622,13 @@ ms.locfileid: "36672878"
     }
     ```
 
-3. 将 `TODO1` 替换为以下代码。 此代码使用处于标准切换模式的工作表对象 protection 属性。 `TODO2` 将在下一部分中进行介绍。
+3. 将以下行添加到文件末尾：
+
+    ```js
+    g.toggleProtection = toggleProtection;
+    ```
+
+4. 在`toggleProtection`函数中，将`TODO1`替换为以下代码。 此代码使用处于标准切换模式的工作表对象 protection 属性。 `TODO2` 将在下一部分中进行介绍。
 
     ```js
     var sheet = context.workbook.worksheets.getActiveWorksheet();
@@ -635,7 +636,7 @@ ms.locfileid: "36672878"
     // TODO2: Queue command to load the sheet's "protection.protected" property from
     //        the document and re-synchronize the document and task pane.
 
-     if (sheet.protection.protected) {
+    if (sheet.protection.protected) {
         sheet.protection.unprotect();
     } else {
         sheet.protection.protect();
@@ -644,7 +645,7 @@ ms.locfileid: "36672878"
 
 ### <a name="add-code-to-fetch-document-properties-into-the-task-panes-script-objects"></a>添加代码以将文档属性提取到任务窗格的脚本对象
 
-在本系列教程前面的所有函数中，都是将命令排入队列，以对 Office 文档执行*写入*操作。 每个函数结束时都会调用 `context.sync()` 方法，从而将排入队列的命令发送到文档，以供执行。 不过，在上一步中添加的代码调用的是 `sheet.protection.protected` 属性，这与之前编写的函数明显不同，因为 `sheet` 对象只是任务窗格脚本中的代理对象。 它并不了解文档的实际保护状态，因此它的 `protection.protected` 属性无法有实值。 必须先从文档提取保护状态，再用它设置 `sheet.protection.protected` 值。 只有这样，才能调用 `sheet.protection.protected`，而不导致异常抛出。 此提取过程分为三步：
+在本教程中创建的每个函数中，您现在可以将命令排入队列，以*写入*Office 文档。 每个函数结束时都会调用 `context.sync()` 方法，从而将排入队列的命令发送到文档，以供执行。 不过，在上一步中添加的代码调用的是 `sheet.protection.protected` 属性，这与之前编写的函数明显不同，因为 `sheet` 对象只是任务窗格脚本中的代理对象。 它并不了解文档的实际保护状态，因此它的 `protection.protected` 属性无法有实值。 必须先从文档提取保护状态，再用它设置 `sheet.protection.protected` 值。 只有这样，才能调用 `sheet.protection.protected`，而不导致异常抛出。 此提取过程分为三步：
 
    1. 将命令排入队列，以加载（即提取）代码需要读取的属性。
 
@@ -654,7 +655,7 @@ ms.locfileid: "36672878"
 
 只要代码需要从 Office 文档*读取*信息，就必须完成这些步骤。
 
-1. 在 `toggleProtection` 函数中，将 `TODO2` 替换为下列代码。请注意以下几点：
+1. 在`toggleProtection`函数中，将`TODO2`替换为以下代码。 请注意以下几点：
    
    - 每个 Excel 对象都有 `load` 方法。 对于要在参数中读取的对象属性，将它们指定为逗号分隔名称字符串。 在此示例中，需要读取的属性为 `protection` 属性的子属性。 引用子属性的方法与在代码中的其他任何地方引用属性几乎完全一样，不同之处在于使用的是正斜杠（“/”）字符，而不是“.”字符。
 
@@ -716,12 +717,7 @@ ms.locfileid: "36672878"
     }
     ```
 
-### <a name="configure-the-script-loading-html-file"></a>配置脚本加载 HTML 文件
-
-打开 /function-file/function-file.html 文件。 这是在用户按“切换工作表保护”**** 按钮时调用的无 UI HTML 文件。 用于加载应当在按钮按下时运行的 JavaScript 方法。 将不更改此文件。 只需注意，第二个 `<script>` 标记加载 functionfile.js。
-
-   > [!NOTE]
-   > function-file.html 文件及其加载的 function-file.js 文件在完全独立于加载项任务窗格的 IE 进程中运行。 如果将 function-file.js 转换为与 app.js 文件相同的 bundle.js 文件，加载项必须加载 bundle.js 文件的两个副本，这就违背了绑定目的。 此外，function-file.js 文件不包含任何不受 IE 支持的 JavaScript。 出于这两点原因，此加载项根本不会转换 function-file.js。 
+5. 验证是否已保存对项目所做的所有更改。
 
 ### <a name="test-the-add-in"></a>测试加载项
 
@@ -733,27 +729,36 @@ ms.locfileid: "36672878"
 
     - 对于 Mac：`~/Library/Containers/com.Microsoft.OsfWebHost/Data/`。 
     
-        [!include[additional cache folders on Mac](../includes/mac-cache-folders.md)]
+        > [!NOTE]
+        > 如果该文件夹不存在，请检查以下文件夹，如果找到，则删除该文件夹的内容：
+        >    - `~/Library/Containers/com.microsoft.{host}/Data/Library/Caches/`其中`{host}` ，是 Office 主机（例如， `Excel`）
+        >    - `com.microsoft.Office365ServiceV2/Data/Caches/com.microsoft.Office365ServiceV2/`
 
-3. 如果服务器出于任何原因而未运行，请在 Git Bash 窗口或已启用 Node.JS 的系统命令提示符中，转到项目的“开始”**** 文件夹，再运行命令 `npm start`。 无需重新生成项目，因为唯一更改的 JavaScript 文件不属于已生成的 bundle.js。
+3. 如果本地 web 服务器已在运行，请关闭 "节点" 命令窗口以将其停止。
 
-4. 使用更改后的新版清单文件，并通过下列方法之一，重复旁加载进程。 *应覆盖清单文件的旧副本。*
+4. 由于您的清单文件已更新，因此您必须使用更新的清单文件再次旁加载外接程序。 启动本地 web 服务器并旁加载您的外接程序： 
 
-    - Windows：[在 Windows 上旁加载 Office 加载项](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)
+    - 若要在 Excel 中测试外接程序，请在项目的根目录中运行以下命令。 这将启动本地 web 服务器（如果尚未运行），并在加载外接程序的情况中打开 Excel。
 
-    - Web 浏览器: 在[web 上的 office 中旁加载 Office 外接程序](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-in-office-on-the-web)
+        ```command&nbsp;line
+        npm start
+        ```
 
-    - iPad 和 Mac：[在 iPad 和 Mac 上旁加载 Office 加载项](../testing/sideload-an-office-add-in-on-ipad-and-mac.md)
+    - 若要在 web 上的 Excel 中测试外接程序，请在项目的根目录中运行以下命令。 运行此命令时，本地 web 服务器将启动（如果尚未运行）。
 
-5. 打开 Excel 中的任意工作表。
+        ```command&nbsp;line
+        npm run start:web
+        ```
 
-6. 在“开始”**** 功能区上，选择“切换工作表保护”****。请注意，功能区上的大部分控件都处于禁用状态（灰显），如下面的屏幕截图所示。 
+        若要使用外接程序，请在 web 上的 Excel 中打开一个新文档，然后按照旁加载中的 office[加载项旁加载 Office 加载项](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-in-office-on-the-web)中的说明操作，以重新添加外接程序。
 
-7. 选择要更改其内容的单元格。 此时，将会看到一条错误消息，提示工作表受保护。
+5. 在 Excel 中的 "**主页**" 选项卡上，选择 "**切换工作表保护**" 按钮。 请注意，功能区上的大部分控件都被禁用（并以可视方式灰显），如以下屏幕截图所示。 
 
-8. 再次选择“切换工作表保护”****，此时控件重新启用，可以再次更改单元格值了。
+    ![Excel 教程 - 在功能区上启用工作表保护](../images/excel-tutorial-ribbon-with-protection-on-2.png)
 
-    ![Excel 教程 - 在功能区上启用工作表保护](../images/excel-tutorial-ribbon-with-protection-on.png)
+6. 选择要更改其内容的单元格。 Excel 将显示一条错误消息，指示工作表处于保护状态。
+
+7. 再次选择 "**切换工作表保护**" 按钮，然后重新启用控件，您可以再次更改单元格值。
 
 ## <a name="open-a-dialog"></a>打开对话框
 
@@ -761,17 +766,17 @@ ms.locfileid: "36672878"
 
 ### <a name="create-the-dialog-page"></a>创建对话框页面
 
-1. 在代码编辑器中打开项目。
+1. 在位于项目根目录的 **./src**文件夹中，创建一个名为 "**对话**" 的新文件夹。
 
-2. 在项目的根目录（其中包含 index.html）中，创建 popup.html 文件。
+2. 在 " **./src/dialogs** " 文件夹中，创建新的名为 "**弹出 html**" 的文件。
 
-3. 将下面的标记添加到 popup.html 中。请注意以下几点：
+3. 将以下标记添加到**popup. html**。 注意：
 
    - 此页面包含可供用户输入用户名的 `<input>`，并包含将用户名发送到任务窗格中用户名显示页面的按钮。
 
-   - 此标记加载在后续步骤中创建的 popup.js 脚本。
+   - 该标记将加载一个名为 " **popup** " 的脚本，您将在后续步骤中创建。
 
-   - 此标记还加载 Office.JS 库和 jQuery，因为 popup.js 将使用它们。
+   - 它还会加载该 node.js 库，因为它将在**popup**中使用。
 
     ```html
     <!DOCTYPE html>
@@ -781,35 +786,26 @@ ms.locfileid: "36672878"
             <meta charset="UTF-8">
             <meta name="viewport" content="width=device-width, initial-scale=1">
 
-            <link rel="stylesheet" href="node_modules/office-ui-fabric-js/dist/css/fabric.min.css" />
-            <link rel="stylesheet" href="node_modules/office-ui-fabric-js/dist/css/fabric.components.css" />
-            <link rel="stylesheet" href="app.css" />
+            <!-- For more information on Office UI Fabric, visit https://developer.microsoft.com/fabric. -->
+            <link rel="stylesheet" href="https://static2.sharepointonline.com/files/fabric/office-ui-fabric-core/9.6.1/css/fabric.min.css"/>
 
             <script type="text/javascript" src="https://appsforoffice.microsoft.com/lib/1.1/hosted/office.js"></script>
-            <script type="text/javascript" src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.2.1.min.js"></script>
             <script type="text/javascript" src="popup.js"></script>
 
         </head>
         <body style="display:flex;flex-direction:column;align-items:center;justify-content:center">
-            <div class="padding">
-                <p class="ms-font-xl">ENTER YOUR NAME</p>
-            </div>
-            <div class="padding">
-                <input id="name-box" type="text"/>
-            </div>
-            <div class="padding">
-                <button id="ok-button" class="ms-Button">OK</button>
-            </div>
+            <p class="ms-font-xl">ENTER YOUR NAME</p>
+            <input id="name-box" type="text"/><br/><br/>
+            <button id="ok-button" class="ms-Button">OK</button>
         </body>
     </html>
     ```
 
-4. 在项目的根目录中，创建 popup.js 文件。
+4. 在 " **./src/dialogs** " 文件夹中，创建新的名为 " **popup**" 的文件。
 
-5. 将下面的代码添加到 popup.js 中。 关于此代码，请注意以下几点：
+5. 将以下代码添加到**弹出 .js**中。 关于此代码，请注意以下几点：
 
-   - *每个调用 Office.JS 库中的 API 的页面均必须首先确保该库已完成初始化。* 执行此操作的最佳方法是调用 `Office.onReady()` 方法。 如果加载项具有其自己的初始化任务，则代码应位于链接至 `Office.onReady()` 调用的 `then()` 方法中。 有关示例，请参阅项目根目录中的 app.js 文件。 必须在调用 Office.JS 之前运行 `Office.onReady()` 调用；因此，作业位于由页面加载的脚本文件中，如同本示例中一样。
-   - 将在 `then()` 方法内调用 jQuery `ready` 函数。 在大多数情况下，应在链接至 `Office.onReady()` 调用的 `then()` 方法内加载、初始化或启动其他 JavaScript 库代码。
+   - *调用 Office .js 库中的 Api 的每个页面都必须首先确保该库已完全初始化。* 执行此操作的最佳方法是调用 `Office.onReady()` 方法。 如果加载项具有其自己的初始化任务，则代码应位于链接至 `Office.onReady()` 调用的 `then()` 方法中。 在对 node.js `Office.onReady()`的任何调用之前，必须运行的调用。因此，工作分配位于由页面加载的脚本文件中，就像在此示例中一样。
 
     ```js
     (function () {
@@ -817,11 +813,9 @@ ms.locfileid: "36672878"
 
         Office.onReady()
             .then(function() {
-                $(document).ready(function () {  
 
-                    // TODO1: Assign handler to the OK button.
+                // TODO1: Assign handler to the OK button.
 
-                });
             });
 
         // TODO2: Create the OK button handler
@@ -832,58 +826,120 @@ ms.locfileid: "36672878"
 6. 将 `TODO1` 替换为下列代码。 将在下一步中创建 `sendStringToParentPage` 函数。
 
     ```js
-    $('#ok-button').click(sendStringToParentPage);
+    document.getElementById("ok-button").onclick = sendStringToParentPage;
     ```
 
 7. 将 `TODO2` 替换为以下代码。 `messageParent` 方法将它的参数传递到父页面（在此示例中，为任务窗格中的页面）。 参数可以是布尔值或字符串，其中包含可串行化为字符串的任何内容（如 XML 或 JSON）。
 
     ```js
     function sendStringToParentPage() {
-        var userName = $('#name-box').val();
+        var userName = document.getElementById("name-box").value;
         Office.context.ui.messageParent(userName);
     }
     ```
 
-8. 保存此文件。
+> [!NOTE]
+> **Popup**文件以及它加载的**popup**文件，从外接程序的任务窗格中的完全独立的 Microsoft Edge 或 Internet Explorer 11 进程中运行。 如果**将**转换导入到与 **.js**文件相同的**绑定 .js**文件中，则外接程序将必须加载**包 .js**文件的两个副本，这与绑定的目的不一致。 因此，此加载项根本不转换**弹出 .js**文件。
 
-   > [!NOTE]
-   > Popup 文件以及它加载的 popup 文件, 从外接程序的任务窗格中的完全独立的 Microsoft Edge 或 Internet Explorer 11 进程中运行。 如果将 popup.js 转换为与 app.js 文件相同的 bundle.js 文件，加载项必须加载 bundle.js 文件的两个副本，这就违背了绑定目的。 此外, 弹出 .js 文件不包含 Internet Explorer 11 不支持的任何 JavaScript。 出于这两点原因，此加载项根本不会转换 popup.js。
+### <a name="update-webpack-config-settings"></a>更新 webpack 配置设置
+
+在项目的根目录中打开文件 " **webpack** "，并完成以下步骤。
+
+1. 在 `config` 对象内找到 `entry` 对象并为 `popup` 添加新条目。
+
+    ```js
+    popup: "./src/dialogs/popup.js"
+    ```
+
+    完成此操作之后，新的 `entry` 对象将与此类似：
+
+    ```js
+    entry: {
+      polyfill: "@babel/polyfill",
+      taskpane: "./src/taskpane/taskpane.js",
+      commands: "./src/commands/commands.js",
+      popup: "./src/dialogs/popup.js"
+    },
+    ```
+  
+2. 找到`config`对象`plugins`中的数组，并将以下对象添加到该数组的末尾。
+
+    ```js
+    new HtmlWebpackPlugin({
+      filename: "popup.html",
+      template: "./src/dialogs/popup.html",
+      chunks: ["polyfill", "popup"]
+    })
+    ```
+
+    完成此操作之后，新的 `plugins` 数组将与此类似：
+
+    ```js
+    plugins: [
+      new CleanWebpackPlugin(),
+      new HtmlWebpackPlugin({
+        filename: "taskpane.html",
+        template: "./src/taskpane/taskpane.html",
+        chunks: ['polyfill', 'taskpane']
+      }),
+      new CopyWebpackPlugin([
+      {
+        to: "taskpane.css",
+        from: "./src/taskpane/taskpane.css"
+      }
+      ]),
+      new HtmlWebpackPlugin({
+        filename: "commands.html",
+        template: "./src/commands/commands.html",
+        chunks: ["polyfill", "commands"]
+      }),
+      new HtmlWebpackPlugin({
+        filename: "popup.html",
+        template: "./src/dialogs/popup.html",
+        chunks: ["polyfill", "popup"]
+      })
+    ],
+    ```
+
+3. 如果本地 web 服务器正在运行，请关闭 "节点" 命令窗口以将其停止。
+
+4. 运行以下命令以重建项目。
+
+    ```command&nbsp;line
+    npm run build
+    ```
 
 ### <a name="open-the-dialog-from-the-task-pane"></a>从任务窗格打开对话框
 
-1. 打开文件 index.html。
+1. 打开文件 **./src/taskpane/taskpane.html**。
 
-2. 在包含 `freeze-header` 按钮的 `div` 下方，添加下列标记：
-
-    ```html
-    <div class="padding">
-        <button class="ms-Button" id="open-dialog">Open Dialog</button>
-    </div>
-    ```
-
-3. 对话框会提示用户输入用户名，并将用户名传递到任务窗格。 任务窗格将在标签中显示用户名。 在刚刚添加的 `div` 正下方，添加下列标记：
+2. 找到`freeze-header`按钮`<button>`的元素，并在该行后面添加以下标记：
 
     ```html
-    <div class="padding">
-        <label id="user-name"></label>
-    </div>
+    <button class="ms-Button" id="open-dialog">Open Dialog</button><br/><br/>
     ```
 
-4. 打开 app.js 文件。
+3. 对话框会提示用户输入用户名，并将用户名传递到任务窗格。 任务窗格将在标签中显示用户名。 `button`紧接着刚添加的，添加以下标记：
 
-5. 在向 `freeze-header` 按钮分配单击处理程序的代码行下方，添加下列代码。 `openDialog` 方法是在后续步骤中创建。
+    ```html
+    <label id="user-name"></label><br/><br/>
+    ```
+
+4. 打开 **/src/taskpane/taskpane.js**。
+
+5. 在`Office.onReady`方法调用中，找到将单击处理程序分配给`freeze-header`按钮的行，并在该行后面添加以下代码。 将在后续步骤中创建 `openDialog` 方法。
 
     ```js
-    $('#open-dialog').click(openDialog);
+    document.getElementById("open-dialog").onclick = openDialog;
     ```
 
-6. 在 `freezeHeader` 函数下方，添加下列声明。此变量用于保留父页面执行上下文中的对象，以用作对话框页面执行上下文的中间对象。
+6. 将以下声明添加到文件末尾。 此变量用于保留父页面执行上下文中的对象，以用作对话框页面执行上下文的中间对象。
 
     ```js
     var dialog = null;
     ```
 
-7. 在 `dialog` 声明下方，添加下列函数。 关于此代码，请务必注意它*不*包含的内容，即不含 `Excel.run` 调用。 这是因为对话框打开 API 跨所有 Office 主机共享，所以它属于 Office JavaScript 公用 API，而不属于 Excel 专用 API。
+7. 将以下函数添加到文件末尾（在声明后`dialog`）。 关于此代码，请务必注意它*不*包含的内容，即不含 `Excel.run` 调用。 这是因为对话框打开 API 跨所有 Office 主机共享，所以它属于 Office JavaScript 公用 API，而不属于 Excel 专用 API。
 
     ```js
     function openDialog() {
@@ -910,7 +966,7 @@ ms.locfileid: "36672878"
 
 ### <a name="process-the-message-from-the-dialog-and-close-the-dialog"></a>处理对话框发送的消息并关闭对话框
 
-1. 继续使用 app.js 文件，将 `TODO2` 替换为下列代码。请注意以下几点：
+1. 在/src/taskpane/taskpane.js `openDialog`中的函数内****，将替换`TODO2`为以下代码。 请注意以下几点：
 
    - 回调在对话框成功打开后，且当用户在对话框中执行任何操作前立即执行。
 
@@ -925,37 +981,32 @@ ms.locfileid: "36672878"
     }
     ```
 
-2. 在 `openDialog` 函数下方，添加下列函数。
+2. 在 `openDialog` 函数后面添加以下函数。
 
     ```js
     function processMessage(arg) {
-        $('#user-name').text(arg.message);
+        document.getElementById("user-name").innerHTML = arg.message;
         dialog.close();
     }
     ```
 
+3. 验证是否已保存对项目所做的所有更改。
+
 ### <a name="test-the-add-in"></a>测试加载项
 
-1. 如果上一阶段教程中的 Git Bash 窗口或已启用 Node.JS 的系统命令提示符仍处于打开状态，请按 **Ctrl+C** 两次，停止正在运行的 Web 服务器。 否则，打开 Git Bash 窗口或已启用 Node.JS 的系统命令提示符，并转到项目的“开始”**** 文件夹。
+1. [!include[Start server and sideload add-in instructions](../includes/tutorial-excel-start-server.md)]
 
-     > [!NOTE]
-     > 虽然只要更改任意文件（包括 app.js 文件），浏览器同步服务器就会在任务窗格中重新加载加载项，但它不会重新转换 JavaScript。因此，必须重复执行生成命令，这样对 app.js 做出的更改才会生效。 为此，需要终止服务器进程，这样就可以通提示符输入生成命令。 生成后，重启服务器。 接下来的几步执行的就是此进程。
+2. 如果加载项任务窗格尚未在 Excel 中打开，请转到 "**开始**" 选项卡，然后选择功能区中的 "**显示任务**窗格" 按钮以将其打开。
 
-2. 运行命令`npm run build`以将您的 ES6 源代码转换为较早版本的 JavaScript, 该版本受 Internet Explorer (用于运行 excel 外接程序的某些版本的 excel 所使用) 支持。
+3. 选择任务窗格中的“打开对话框”**** 按钮。
 
-3. 运行命令 `npm start`，以启动在 localhost 上运行的 Web 服务器。
+4. 对话框打开后，拖动它并重设大小。 请注意，你可以与工作表进行交互并按任务窗格上的其他按钮，但无法从同一任务窗格页面启动第二个对话框。
 
-4. 通过关闭任务窗格来重新加载它，再选择“主页”**** 菜单上的“显示任务窗格”****，重新打开加载项。
+5. 在对话框中，输入一个名称，然后选择 **"确定"** 按钮。 此时，用户名显示在任务窗格上，且对话框关闭。
 
-5. 选择任务窗格中的“打开对话框”**** 按钮。
+6. （可选）注释掉 `processMessage` 函数中的代码行 `dialog.close();`。 然后，重复执行此部分的步骤。 这样一来，对话框便会继续处于打开状态，可供用户更改用户名。 按右上角的“X”**** 按钮，可手动关闭对话框。
 
-6. 对话框打开后，拖动它并重设大小。 请注意，你可以与工作表进行交互并按任务窗格上的其他按钮，但无法从同一任务窗格页面启动第二个对话框。
-
-7. 在对话框中，输入用户名，再选择“确定”****。 此时，用户名显示在任务窗格上，且对话框关闭。
-
-8. （可选）注释掉 `processMessage` 函数中的代码行 `dialog.close();`。 然后，重复执行此部分的步骤。 这样一来，对话框便会继续处于打开状态，可供用户更改用户名。 按右上角的“X”**** 按钮，可手动关闭对话框。
-
-    ![Excel 教程 - 对话框](../images/excel-tutorial-dialog-open.png)
+    ![Excel 教程 - 对话框](../images/excel-tutorial-dialog-open-2.png)
 
 ## <a name="next-steps"></a>后续步骤
 
