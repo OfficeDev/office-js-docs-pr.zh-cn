@@ -3,12 +3,12 @@ title: 在不使用 SSO 的情况下对 Microsoft Graph 授权
 description: ''
 ms.date: 08/07/2019
 localization_priority: Priority
-ms.openlocfilehash: 9636077553904e7250cf1d6dc740febe9eac61e2
-ms.sourcegitcommit: 24303ca235ebd7144a1d913511d8e4fb7c0e8c0d
+ms.openlocfilehash: 1d696783003fc475f98d5d1d37f60348aacec5eb
+ms.sourcegitcommit: f781d7cfd980cd866d6d1d00c5b9d16c8a4b7f9b
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/11/2019
-ms.locfileid: "36838485"
+ms.lasthandoff: 09/20/2019
+ms.locfileid: "37053310"
 ---
 # <a name="authorize-to-microsoft-graph-without-sso"></a>在不使用 SSO 的情况下对 Microsoft Graph 授权
 
@@ -30,6 +30,6 @@ ms.locfileid: "36838485"
 
 以下示例从 Office 加载项获取 Microsoft Graph 数据：
 
-- [Office 加载项 Microsoft Graph ASP.NET](https://github.com/OfficeDev/office-add-in-microsoft-graph-aspnet)
-- [Outlook 加载项 Microsoft Graph ASP.NET](https://github.com/OfficeDev/outlook-add-in-microsoft-graph-aspnet)
+- [Office 加载项 Microsoft Graph ASP.NET](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Samples/auth/Office-Add-in-Microsoft-Graph-ASPNET)
+- [Outlook 加载项 Microsoft Graph ASP.NET](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Samples/auth/Outlook-Add-in-Microsoft-Graph-ASPNET)
 
