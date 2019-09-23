@@ -1,15 +1,15 @@
 ---
 title: 生成首个 Project 任务窗格加载项
 description: ''
-ms.date: 09/06/2019
+ms.date: 09/18/2019
 ms.prod: project
 localization_priority: Priority
-ms.openlocfilehash: 0a7684f3d1bd4f404ba42a798908bb9d2ba2f8d2
-ms.sourcegitcommit: ce7e7087a4550b9c090dc565fee5eac08a2985a2
+ms.openlocfilehash: 78712a1fec9af2c45f6e42825740364a7cd23987
+ms.sourcegitcommit: a0257feabcfe665061c14b8bdb70cf82f7aca414
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "36782280"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "37035285"
 ---
 # <a name="build-your-first-project-task-pane-add-in"></a>生成首个 Project 任务窗格加载项
 
@@ -23,11 +23,7 @@ ms.locfileid: "36782280"
 
 ## <a name="create-the-add-in"></a>创建加载项
 
-使用 Yeoman 生成器创建 Project 加载项项目。 运行下面的命令，再回答如下所示的提示问题：
-
-```command&nbsp;line
-yo office
-```
+[!include[Yeoman generator create project guidance](../includes/yo-office-command-guidance.md)]
 
 - **选择项目类型:** `Office Add-in Task Pane project`
 - **选择脚本类型:** `Javascript`
@@ -37,6 +33,8 @@ yo office
 ![有关 Yeoman 生成器提示和回答的屏幕截图](../images/yo-office-project.png)
 
 完成此向导后，生成器会创建项目，并安装支持的 Node 组件。
+
+[!include[Yeoman generator next steps](../includes/yo-office-next-steps.md)]
 
 ## <a name="explore-the-project"></a>浏览项目
 

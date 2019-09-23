@@ -1,15 +1,15 @@
 ---
 title: 使用 Angular 生成 Excel 任务窗格加载项
 description: ''
-ms.date: 09/06/2019
+ms.date: 09/18/2019
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: ed805cf5d19a38d543b7fcbba49508dd3f2d6d97
-ms.sourcegitcommit: ce7e7087a4550b9c090dc565fee5eac08a2985a2
+ms.openlocfilehash: 4c2cfb061dff9b5eb24642facdcb9996432d873b
+ms.sourcegitcommit: a0257feabcfe665061c14b8bdb70cf82f7aca414
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "36782252"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "37035271"
 ---
 # <a name="build-an-excel-task-pane-add-in-using-angular"></a>使用 Angular 生成 Excel 任务窗格加载项
 
@@ -21,11 +21,7 @@ ms.locfileid: "36782252"
 
 ## <a name="create-the-add-in-project"></a>创建加载项项目
 
-使用 Yeoman 生成器创建 Excel 加载项项目。 运行下面的命令，再回答如下所示的提示问题：
-
-```command&nbsp;line
-yo office
-```
+[!include[Yeoman generator create project guidance](../includes/yo-office-command-guidance.md)]
 
 - **选择项目类型:** `Office Add-in Task Pane project using Angular framework`
 - **选择脚本类型:** `TypeScript`
@@ -35,6 +31,8 @@ yo office
 ![Yeoman 生成器](../images/yo-office-excel-angular-2.png)
 
 完成此向导后，生成器会创建项目，并安装支持的 Node 组件。
+
+[!include[Yeoman generator next steps](../includes/yo-office-next-steps.md)]
 
 ## <a name="explore-the-project"></a>浏览项目
 
