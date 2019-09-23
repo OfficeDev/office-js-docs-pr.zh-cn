@@ -1,14 +1,14 @@
 ---
 title: 验证并排查清单问题
 description: 使用这些方法验证 Office 加载项清单。
-ms.date: 08/15/2019
+ms.date: 09/18/2019
 localization_priority: Priority
-ms.openlocfilehash: bf70aca68135073ed92d2e4d2c176b944836c7ad
-ms.sourcegitcommit: da8e6148f4bd9884ab9702db3033273a383d15f0
+ms.openlocfilehash: c320c05b944bba9e24a4d3c0e5ef514ac13cc3c6
+ms.sourcegitcommit: a0257feabcfe665061c14b8bdb70cf82f7aca414
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/20/2019
-ms.locfileid: "36477920"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "37035334"
 ---
 # <a name="validate-and-troubleshoot-issues-with-your-manifest"></a>验证并排查清单问题
 
@@ -65,12 +65,10 @@ npm run validate
 > [!NOTE]
 > 运行时日志记录功能暂适用于 Office 2016 桌面版。
 
-### <a name="to-turn-on-runtime-logging"></a>启用运行时日志记录功能的具体步骤
-
 > [!IMPORTANT]
-> 运行时日志记录功能影响性能。仅在需要调试加载项清单问题时，才启用此功能。
+> 运行时日志记录影响性能。 请仅在需要调试外接程序清单中的问题时启用此功能。
 
-若要启用运行时日志记录功能，请执行以下操作：
+### <a name="runtime-logging-on-windows"></a>Windows 上的运行时日志记录
 
 1. 确保运行的是 Office 2016 桌面版 **16.0.7019** 或更高版本。 
 
@@ -89,6 +87,47 @@ npm run validate
 注册表应如下图所示。 若要禁用此功能，请从注册表中删除 `RuntimeLogging`。 
 
 ![包含 RuntimeLogging 注册表项的注册表编辑器屏幕截图](http://i.imgur.com/Sa9TyI6.png)
+
+### <a name="runtime-logging-on-mac"></a>Mac 上的运行时日志记录
+
+1. 确保运行的是 Office 2016 桌面版 **16.27** (19071500) 或更高版本。
+
+2. 打开**终端**并使用 `defaults` 命令设置运行时日志记录首选项：
+    
+    ```command&nbsp;line
+    defaults write <bundle id> CEFRuntimeLoggingFile -string <file_name>
+    ```
+
+    `<bundle id>` 确定了主机要对哪些运行时日志记录。 `<file_name>` 是要将日志写入的文本文件的名称。
+
+    将 `<bundle id>` 设置为下述值之一，从而为相应主机启用运行时日志记录：
+
+    - `com.microsoft.Word`
+    - `com.microsoft.Excel`
+    - `com.microsoft.Powerpoint`
+    - `com.microsoft.Outlook`
+
+以下示例会为 Word 启用运行时日志记录，然后打开日志文件：
+
+```command&nbsp;line
+defaults write com.microsoft.Word CEFRuntimeLoggingFile -string "runtime_logs.txt"
+open ~/library/Containers/com.microsoft.Word/Data/runtime_logs.txt
+```
+
+> [!NOTE] 
+> 运行 `defaults` 命令来启用运行时日志记录后，需要重启 Office。
+
+要关闭运行时日志记录，请使用 `defaults delete` 命令：
+
+```command&nbsp;line
+defaults delete <bundle id> CEFRuntimeLoggingFile
+```
+
+以下示例将为 Word 关闭运行时日志记录：
+
+```command&nbsp;line
+defaults delete com.microsoft.Word CEFRuntimeLoggingFile
+```
 
 ### <a name="to-troubleshoot-issues-with-your-manifest"></a>排查清单问题的具体步骤
 

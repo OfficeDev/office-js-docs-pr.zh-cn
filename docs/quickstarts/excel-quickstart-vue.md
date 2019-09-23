@@ -1,15 +1,15 @@
 ---
 title: 使用 Vue 生成 Excel 任务窗格加载项
 description: ''
-ms.date: 09/04/2019
+ms.date: 09/18/2019
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: 9947852a586570345ba9f3dfe09340af6d01ace6
-ms.sourcegitcommit: 78998a9f0ebb81c4dd2b77574148b16fe6725cfc
+ms.openlocfilehash: bcd4f84ce6d09db813c643d2cac8fcc5ce5f76c3
+ms.sourcegitcommit: a0257feabcfe665061c14b8bdb70cf82f7aca414
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "36715626"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "37035299"
 ---
 # <a name="build-an-excel-task-pane-add-in-using-vue"></a>使用 Vue 生成 Excel 任务窗格加载项
 
@@ -41,23 +41,31 @@ vue create my-add-in
 
 1. 转到应用程序文件夹。
 
-   ```command&nbsp;line
-   cd my-add-in
-   ```
+    ```command&nbsp;line
+    cd my-add-in
+    ```
 
-2. 使用 Yeoman 生成器生成加载项清单文件。 运行下面的命令，再回答如下所示的提示问题。
+2. 通过运行以下命令，使用 Yeoman 生成器生成加载项清单文件：
 
-   ```command&nbsp;line
-   yo office
-   ```
+    ```command&nbsp;line
+    yo office
+    ```
 
-   ![Yeoman 生成器](../images/yo-office-manifest-only-vue.png)
+    > [!NOTE]
+    > 运行该`yo office`命令时，可能会收到有关 Yeoman 和 Office 加载项 CLI 工具的数据收集策略的提示。 根据你的需要，使用提供的信息来响应提示。 如果在对第二条提示的响应中选择“**退出**”，则在准备好创建加载项项目时，需要再次运行 `yo office` 命令。
 
-   - **选择项目类型:** `Office Add-in project containing the manifest only`
-   - **要如何命名加载项?** `my-office-add-in`
-   - **要支持哪一个 Office 客户端应用程序?** `Excel`
+    出现提示时，请提供以下信息来创建加载项项目：
+
+    - **选择项目类型:** `Office Add-in project containing the manifest only`
+    - **要如何命名加载项?** `my-office-add-in`
+    - **要支持哪一个 Office 客户端应用程序?** `Excel`
+
+    ![Yeoman 生成器](../images/yo-office-manifest-only-vue.png)
 
 完成向导后，会创建一个 `my-office-add-in` 文件夹，其中包含一个 `manifest.xml` 文件。 你将在本快速入门结束时使用该清单旁加载和测试你的加载项。
+
+> [!TIP]
+> 创建加载项项目后，可忽略 Yeoman 生成器提供的*后续步骤*指南。 本文中的分步说明提供了完成本教程所需的全部指南。
 
 ## <a name="secure-the-app"></a>保护应用
 

@@ -1,14 +1,14 @@
 ---
 title: 使用 Angular 开发 Office 加载项
 description: ''
-ms.date: 03/19/2019
+ms.date: 09/18/2019
 localization_priority: Priority
-ms.openlocfilehash: 5e71b9f6db78308c1e1d1d237f3f78600c1a99a4
-ms.sourcegitcommit: 68872372d181cca5bee37ade73c2250c4a56bab6
+ms.openlocfilehash: 6687cb5a661217e3bc6b240ce550edd082e565c7
+ms.sourcegitcommit: a0257feabcfe665061c14b8bdb70cf82f7aca414
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/01/2019
-ms.locfileid: "33517364"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "37035215"
 ---
 # <a name="develop-office-add-ins-with-angular"></a>使用 Angular 开发 Office 加载项
 
@@ -79,7 +79,13 @@ export class AppRoutingModule { }
 
 ## <a name="consider-wrapping-fabric-components-with-angular-components"></a>考虑使用 Angular 组件包装 Fabric 组件
 
-建议在外接程序中使用 [Office UI Fabric](https://developer.microsoft.com/fabric#/fabric-js) 样式。Fabric 包括多个版本的组件，其中包括[基于 TypeScript](https://github.com/OfficeDev/office-ui-fabric-js) 的版本。考虑使用 Angular 组件包装 Fabric 组件，从而在外接程序中使用 Fabric 组件。有关具体操作方法的示例，请参阅[使用 Angular 生成的 Word 样式检查外接程序](https://github.com/OfficeDev/Word-Add-in-Angular2-StyleChecker)。例如，请注意 [fabric.textfield.wrapper](https://github.com/OfficeDev/Word-Add-in-Angular2-StyleChecker/blob/master/app/shared/office-fabric-component-wrappers/fabric.textfield.wrapper.component.ts) 中定义的 Angular 组件如何导入定义了 Fabric 组件的 Fabric 文件 TextField.ts。 
+建议在加载项中使用 [UI Fabric](https://developer.microsoft.com/fabric#) 样式。 Web 的 UI Fabric 有下面两种风格： 
+
+- [Fabric React](https://developer.microsoft.com/fabric#/controls/web) 提供高度可自定义的可靠、最新且易于访问的组件。
+
+- [Fabric Core](https://developer.microsoft.com/fabric#/styles/web) 是 CSS 类和 Sass 混合的集合，让你能够访问 Fabric 的颜色、动画、字体、图标和网格。
+
+考虑使用 Angular 组件包装 Fabric 组件，从而在外接程序中使用 Fabric 组件。 有关具体操作方法的示例，请参阅[使用 Angular 生成的 Word 样式检查外接程序](https://github.com/OfficeDev/Word-Add-in-Angular2-StyleChecker)。 例如，请注意 [fabric.textfield.wrapper](https://github.com/OfficeDev/Word-Add-in-Angular2-StyleChecker/blob/master/app/shared/office-fabric-component-wrappers/fabric.textfield.wrapper.component.ts) 中定义的 Angular 组件如何导入定义了 Fabric 组件的 Fabric 文件 TextField.ts。 
 
 
 ## <a name="using-the-office-dialog-api-with-angular"></a>将 Office 对话框 API 与 Angular 结合使用

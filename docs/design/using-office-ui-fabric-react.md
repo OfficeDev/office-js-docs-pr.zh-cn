@@ -1,14 +1,14 @@
 ---
 title: 在 Office 加载项中使用 Office UI Fabric React
 description: 了解如何在 Office 加载项中使用 Office UI Fabric React。
-ms.date: 09/06/2019
+ms.date: 09/18/2019
 localization_priority: Priority
-ms.openlocfilehash: e0f552cbb6471fbafbc25e53b5e786038adea83d
-ms.sourcegitcommit: ce7e7087a4550b9c090dc565fee5eac08a2985a2
+ms.openlocfilehash: 5c266a7b7f87e431f5a1dc4660a5026a7a163d5a
+ms.sourcegitcommit: a0257feabcfe665061c14b8bdb70cf82f7aca414
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "36782224"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "37035240"
 ---
 # <a name="use-office-ui-fabric-react-in-office-add-ins"></a>在 Office 加载项中使用 Office UI Fabric React
 
@@ -29,11 +29,7 @@ Office UI Fabric 是用于生成 Office 和 Office 365 用户体验的 JavaScrip
 
 ### <a name="create-the-project"></a>创建项目
 
-使用 Yeoman 生成器创建 Word 加载项项目。 运行下面的命令，再回答如下所示的提示问题：
-
-```command&nbsp;line
-yo office
-```
+[!include[Yeoman generator create project guidance](../includes/yo-office-command-guidance.md)]
 
 - **选择项目类型:** `Office Add-in Task Pane project using React framework`
 - **选择脚本类型:** `TypeScript`
@@ -43,6 +39,8 @@ yo office
 ![Yeoman 生成器](../images/yo-office-word-react.png)
 
 完成此向导后，生成器会创建项目，并安装支持的 Node 组件。
+
+[!include[Yeoman generator next steps](../includes/yo-office-next-steps.md)]
 
 ### <a name="try-it-out"></a>试用
 
