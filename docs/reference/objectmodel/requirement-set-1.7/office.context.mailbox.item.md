@@ -1,14 +1,14 @@
 ---
 title: "\"Context\"-\"邮箱\"。项目-要求集1。7"
 description: ''
-ms.date: 08/08/2019
+ms.date: 09/23/2019
 localization_priority: Normal
-ms.openlocfilehash: ec990b79ef1f1daaa0bdedc77688a927c1a87e23
-ms.sourcegitcommit: 1fb99b1b4e63868a0e81a928c69a34c42bf7e209
+ms.openlocfilehash: 9667ccfea2a27a543ead6df98b24bfa4ca233af4
+ms.sourcegitcommit: 3c84fe6302341668c3f9f6dd64e636a97d03023c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/30/2019
-ms.locfileid: "36695971"
+ms.lasthandoff: 09/26/2019
+ms.locfileid: "37167324"
 ---
 # <a name="item"></a>item
 
@@ -93,7 +93,7 @@ Office.initialize = function () {
 
 ### <a name="members"></a>成员
 
-#### <a name="attachments-arrayattachmentdetailsjavascriptapioutlookofficeattachmentdetailsviewoutlook-js-17"></a>附件: Array. <[AttachmentDetails](/javascript/api/outlook/office.attachmentdetails?view=outlook-js-1.7)>
+#### <a name="attachments-arrayattachmentdetailsjavascriptapioutlookofficeattachmentdetailsviewoutlook-js-17"></a>附件： Array. <[AttachmentDetails](/javascript/api/outlook/office.attachmentdetails?view=outlook-js-1.7)>
 
 获取项目的附件数组。仅限阅读模式。
 
@@ -141,7 +141,7 @@ console.log(outputString);
 ---
 ---
 
-#### <a name="bcc-recipientsjavascriptapioutlookofficerecipientsviewoutlook-js-17"></a>密件抄送:[收件人](/javascript/api/outlook/office.recipients?view=outlook-js-1.7)
+#### <a name="bcc-recipientsjavascriptapioutlookofficerecipientsviewoutlook-js-17"></a>密件抄送：[收件人](/javascript/api/outlook/office.recipients?view=outlook-js-1.7)
 
 获取对象，该对象提供用于获取或更新邮件的密件抄送 (Bcc) 行上的收件人的方法。 仅限撰写模式。
 
@@ -174,7 +174,7 @@ function callback(asyncResult) {
 ---
 ---
 
-#### <a name="body-bodyjavascriptapioutlookofficebodyviewoutlook-js-17"></a>正文:[正文](/javascript/api/outlook/office.body?view=outlook-js-1.7)
+#### <a name="body-bodyjavascriptapioutlookofficebodyviewoutlook-js-17"></a>正文：[正文](/javascript/api/outlook/office.body?view=outlook-js-1.7)
 
 获取一个提供用于处理项目正文的方法的对象。
 
@@ -219,7 +219,7 @@ Office.context.mailbox.item.body.getAsync(
 ---
 ---
 
-#### <a name="cc-arrayemailaddressdetailsjavascriptapioutlookofficeemailaddressdetailsviewoutlook-js-17recipientsjavascriptapioutlookofficerecipientsviewoutlook-js-17"></a><[EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails?view=outlook-js-1.7)>|[收件人](/javascript/api/outlook/office.recipients?view=outlook-js-1.7)的抄送: Array
+#### <a name="cc-arrayemailaddressdetailsjavascriptapioutlookofficeemailaddressdetailsviewoutlook-js-17recipientsjavascriptapioutlookofficerecipientsviewoutlook-js-17"></a><[EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails?view=outlook-js-1.7)>|[收件人](/javascript/api/outlook/office.recipients?view=outlook-js-1.7)的抄送： Array
 
 提供对邮件的抄送 (Cc) 收件人的访问权限。 对象的类型和访问级别取决于当前项目的模式。
 
@@ -262,7 +262,7 @@ function callback(asyncResult) {
 ---
 ---
 
-#### <a name="nullable-conversationid-string"></a>(可以为 null) conversationId: String
+#### <a name="nullable-conversationid-string"></a>（可以为 null） conversationId： String
 
 获取包含特定消息的电子邮件会话的标识符。
 
@@ -294,7 +294,7 @@ console.log("conversationId: " + conversationId);
 ---
 ---
 
-#### <a name="datetimecreated-date"></a>dateTimeCreated: Date
+#### <a name="datetimecreated-date"></a>dateTimeCreated： Date
 
 获取项目创建的日期和时间。仅限阅读模式。
 
@@ -322,7 +322,7 @@ console.log("Date and time created: " + dateTimeCreated);
 ---
 ---
 
-#### <a name="datetimemodified-date"></a>dateTimeModified: Date
+#### <a name="datetimemodified-date"></a>dateTimeModified： Date
 
 获取项目最近一次修改的日期和时间。 仅限阅读模式。
 
@@ -353,7 +353,7 @@ console.log("Date and time modified: " + dateTimeModified);
 ---
 ---
 
-#### <a name="end-datetimejavascriptapioutlookofficetimeviewoutlook-js-17"></a>结束: 日期 |[时间](/javascript/api/outlook/office.time?view=outlook-js-1.7)
+#### <a name="end-datetimejavascriptapioutlookofficetimeviewoutlook-js-17"></a>结束：日期 |[时间](/javascript/api/outlook/office.time?view=outlook-js-1.7)
 
 获取或设置约会结束的日期和时间。
 
@@ -409,7 +409,7 @@ Office.context.mailbox.item.end.setAsync(endTime, options, function(result) {
 ---
 ---
 
-#### <a name="from-emailaddressdetailsjavascriptapioutlookofficeemailaddressdetailsviewoutlook-js-17fromjavascriptapioutlookofficefromviewoutlook-js-17"></a>发件人: [EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails?view=outlook-js-1.7)|[From](/javascript/api/outlook/office.from?view=outlook-js-1.7)
+#### <a name="from-emailaddressdetailsjavascriptapioutlookofficeemailaddressdetailsviewoutlook-js-17fromjavascriptapioutlookofficefromviewoutlook-js-17"></a>发件人： [EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails?view=outlook-js-1.7)|[From](/javascript/api/outlook/office.from?view=outlook-js-1.7)
 
 获取邮件发件人的电子邮件地址。
 
@@ -429,7 +429,7 @@ console.log("From " + from);
 
 ##### <a name="compose-mode"></a>撰写模式
 
-`from`属性返回一个`From`对象, 该对象提供用于获取 "起始" 值的方法。
+`from`属性返回一个`From`对象，该对象提供用于获取 "起始" 值的方法。
 
 ```js
 Office.context.mailbox.item.from.getAsync(callback);
@@ -456,7 +456,7 @@ function callback(asyncResult) {
 ---
 ---
 
-#### <a name="internetmessageid-string"></a>internetMessageId: String
+#### <a name="internetmessageid-string"></a>internetMessageId： String
 
 获取电子邮件的 Internet 消息标识符。仅限阅读模式。
 
@@ -483,7 +483,7 @@ var internetMessageId = Office.context.mailbox.item.internetMessageId;
 ---
 ---
 
-#### <a name="itemclass-string"></a>itemClass: String
+#### <a name="itemclass-string"></a>itemClass： String
 
 获取选定项目的 Exchange Web 服务项目类。仅限阅读模式。
 
@@ -520,7 +520,7 @@ console.log("Item class: " + itemClass);
 ---
 ---
 
-#### <a name="nullable-itemid-string"></a>(可以为 null) itemId: String
+#### <a name="nullable-itemid-string"></a>（可以为 null） itemId： String
 
 获取当前项目的 Exchange Web 服务项目标识符。仅限阅读模式。
 
@@ -559,7 +559,7 @@ if (itemId === null || itemId == undefined) {
 ---
 ---
 
-#### <a name="itemtype-officemailboxenumsitemtypejavascriptapioutlookofficemailboxenumsitemtypeviewoutlook-js-17"></a>itemType: [MailboxEnums](/javascript/api/outlook/office.mailboxenums.itemtype?view=outlook-js-1.7)
+#### <a name="itemtype-officemailboxenumsitemtypejavascriptapioutlookofficemailboxenumsitemtypeviewoutlook-js-17"></a>itemType： [MailboxEnums](/javascript/api/outlook/office.mailboxenums.itemtype?view=outlook-js-1.7)
 
 获取实例表示的项的类型。
 
@@ -592,7 +592,7 @@ if (Office.context.mailbox.item.itemType === Office.MailboxEnums.ItemType.Messag
 ---
 ---
 
-#### <a name="location-stringlocationjavascriptapioutlookofficelocationviewoutlook-js-17"></a>位置: 字符串 |[位置](/javascript/api/outlook/office.location?view=outlook-js-1.7)
+#### <a name="location-stringlocationjavascriptapioutlookofficelocationviewoutlook-js-17"></a>位置：字符串 |[位置](/javascript/api/outlook/office.location?view=outlook-js-1.7)
 
 获取或设置约会的位置。
 
@@ -636,7 +636,7 @@ function callback(asyncResult) {
 ---
 ---
 
-#### <a name="normalizedsubject-string"></a>normalizedSubject: String
+#### <a name="normalizedsubject-string"></a>normalizedSubject： String
 
 获取删除了所有前缀（包括 `RE:` 和 `FWD:`）的项目主题。仅限阅读模式。
 
@@ -666,7 +666,7 @@ console.log("Normalized subject: " + normalizedSubject);
 ---
 ---
 
-#### <a name="notificationmessages-notificationmessagesjavascriptapioutlookofficenotificationmessagesviewoutlook-js-17"></a>notificationMessages: [notificationMessages](/javascript/api/outlook/office.notificationmessages?view=outlook-js-1.7)
+#### <a name="notificationmessages-notificationmessagesjavascriptapioutlookofficenotificationmessagesviewoutlook-js-17"></a>notificationMessages： [notificationMessages](/javascript/api/outlook/office.notificationmessages?view=outlook-js-1.7)
 
 获取项目的通知邮件。
 
@@ -698,7 +698,7 @@ Office.context.mailbox.item.notificationMessages.getAllAsync(
 ---
 ---
 
-#### <a name="optionalattendees-arrayemailaddressdetailsjavascriptapioutlookofficeemailaddressdetailsviewoutlook-js-17recipientsjavascriptapioutlookofficerecipientsviewoutlook-js-17"></a>optionalAttendees: <[EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails?view=outlook-js-1.7)>|[收件人](/javascript/api/outlook/office.recipients?view=outlook-js-1.7)的数组
+#### <a name="optionalattendees-arrayemailaddressdetailsjavascriptapioutlookofficeemailaddressdetailsviewoutlook-js-17recipientsjavascriptapioutlookofficerecipientsviewoutlook-js-17"></a>optionalAttendees： <[EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails?view=outlook-js-1.7)>|[收件人](/javascript/api/outlook/office.recipients?view=outlook-js-1.7)的数组
 
 提供对事件的可选与会者的访问权限。 对象的类型和访问级别取决于当前项目的模式。
 
@@ -742,13 +742,13 @@ function callback(asyncResult) {
 ---
 ---
 
-#### <a name="organizer-emailaddressdetailsjavascriptapioutlookofficeemailaddressdetailsviewoutlook-js-17organizerjavascriptapioutlookofficeorganizerviewoutlook-js-17"></a>组织者: [EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails?view=outlook-js-1.7)|[组织者](/javascript/api/outlook/office.organizer?view=outlook-js-1.7)
+#### <a name="organizer-emailaddressdetailsjavascriptapioutlookofficeemailaddressdetailsviewoutlook-js-17organizerjavascriptapioutlookofficeorganizerviewoutlook-js-17"></a>组织者： [EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails?view=outlook-js-1.7)|[组织者](/javascript/api/outlook/office.organizer?view=outlook-js-1.7)
 
 获取指定会议的组织者的电子邮件地址。
 
 ##### <a name="read-mode"></a>阅读模式
 
-该`organizer`属性返回一个[EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails?view=outlook-js-1.7)对象, 该对象代表会议组织者。
+该`organizer`属性返回一个[EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails?view=outlook-js-1.7)对象，该对象代表会议组织者。
 
 ```js
 var organizerName = Office.context.mailbox.item.organizer.displayName;
@@ -758,7 +758,7 @@ console.log("Organizer: " + organizerName + " (" + organizerAddress + ")");
 
 ##### <a name="compose-mode"></a>撰写模式
 
-该`organizer`属性返回一个[管理](/javascript/api/outlook/office.organizer?view=outlook-js-1.7)器对象, 该对象提供获取组织者值的方法。
+该`organizer`属性返回一个[管理](/javascript/api/outlook/office.organizer?view=outlook-js-1.7)器对象，该对象提供获取组织者值的方法。
 
 ```js
 Office.context.mailbox.item.organizer.getAsync(
@@ -785,15 +785,15 @@ Office.context.mailbox.item.organizer.getAsync(
 ---
 ---
 
-#### <a name="nullable-recurrence-recurrencejavascriptapioutlookofficerecurrenceviewoutlook-js-17"></a>(可以为 null) 定期:[定期](/javascript/api/outlook/office.recurrence?view=outlook-js-1.7)
+#### <a name="nullable-recurrence-recurrencejavascriptapioutlookofficerecurrenceviewoutlook-js-17"></a>（可以为 null）定期：[定期](/javascript/api/outlook/office.recurrence?view=outlook-js-1.7)
 
 获取或设置约会的定期模式。 获取会议请求的定期模式。 约会项目的阅读和撰写模式。 会议请求项目的阅读模式。
 
-如果`recurrence`项目是系列中的一个系列或一个实例, 则该属性返回定期约会或会议请求的[定期](/javascript/api/outlook/office.recurrence?view=outlook-js-1.7)对象。 `null`返回单个约会的单个约会和会议请求。 `undefined`对于不是会议请求的邮件, 将返回。
+如果`recurrence`项目是系列中的一个系列或一个实例，则该属性返回定期约会或会议请求的[定期](/javascript/api/outlook/office.recurrence?view=outlook-js-1.7)对象。 `null`返回单个约会的单个约会和会议请求。 `undefined`对于不是会议请求的邮件，将返回。
 
-> 注意: 会议请求的`itemClass`值为 IPM。Schedule. 会议请求。
+> 注意：会议请求的`itemClass`值为 IPM。Schedule. 会议请求。
 
-> 注意: 如果定期对象为`null`, 则表示该对象是单个约会的单个约会或会议请求, 而不是某个系列的一部分。
+> 注意：如果定期对象为`null`，则表示该对象是单个约会的单个约会或会议请求，而不是某个系列的一部分。
 
 ##### <a name="read-mode"></a>阅读模式
 
@@ -806,7 +806,7 @@ console.log("Recurrence: " + JSON.stringify(recurrence));
 
 ##### <a name="compose-mode"></a>撰写模式
 
-该`recurrence`属性返回一个[定期](/javascript/api/outlook/office.recurrence?view=outlook-js-1.7)对象, 该对象提供用于管理约会周期的方法。 这可用于约会。
+该`recurrence`属性返回一个[定期](/javascript/api/outlook/office.recurrence?view=outlook-js-1.7)对象，该对象提供用于管理约会周期的方法。 这可用于约会。
 
 ```js
 Office.context.mailbox.item.recurrence.getAsync(callback);
@@ -848,7 +848,7 @@ Recurrence = {
 ---
 ---
 
-#### <a name="requiredattendees-arrayemailaddressdetailsjavascriptapioutlookofficeemailaddressdetailsviewoutlook-js-17recipientsjavascriptapioutlookofficerecipientsviewoutlook-js-17"></a>requiredAttendees: <[EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails?view=outlook-js-1.7)>|[收件人](/javascript/api/outlook/office.recipients?view=outlook-js-1.7)的数组
+#### <a name="requiredattendees-arrayemailaddressdetailsjavascriptapioutlookofficeemailaddressdetailsviewoutlook-js-17recipientsjavascriptapioutlookofficerecipientsviewoutlook-js-17"></a>requiredAttendees： <[EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails?view=outlook-js-1.7)>|[收件人](/javascript/api/outlook/office.recipients?view=outlook-js-1.7)的数组
 
 提供对事件的必需与会者的访问权限。 对象的类型和访问级别取决于当前项目的模式。
 
@@ -893,7 +893,7 @@ function callback(asyncResult) {
 ---
 ---
 
-#### <a name="sender-emailaddressdetailsjavascriptapioutlookofficeemailaddressdetailsviewoutlook-js-17"></a>发件人: [EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails?view=outlook-js-1.7)
+#### <a name="sender-emailaddressdetailsjavascriptapioutlookofficeemailaddressdetailsviewoutlook-js-17"></a>发件人： [EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails?view=outlook-js-1.7)
 
 获取电子邮件发件人的电子邮件地址。仅限阅读模式。
 
@@ -927,16 +927,16 @@ console.log("Sender: " + senderName + " (" + senderAddress + ")");
 ---
 ---
 
-#### <a name="nullable-seriesid-string"></a>(可以为 null) Webcasts&seriesid: String
+#### <a name="nullable-seriesid-string"></a>（可以为 null） Webcasts&seriesid： String
 
 获取实例所属的系列的 id。
 
-在 web 上的 Outlook 和桌面客户端中`seriesId` , 返回此项所属的父 (系列) 项的 Exchange web 服务 (EWS) ID。 但是, 在 iOS 和 Android 中, `seriesId`将返回父项的 REST ID。
+在 web 上的 Outlook 和桌面客户端中`seriesId` ，返回此项所属的父（系列）项的 Exchange web 服务（EWS） ID。 但是，在 iOS 和 Android 中， `seriesId`将返回父项的 REST ID。
 
 > [!NOTE]
 > `seriesId` 属性返回的标识符与 Exchange Web 服务项目标识符相同。 `seriesId`属性与 OUTLOOK REST API 使用的 outlook id 不相同。 使用此值进行 REST API 调用前，应使用 [Office.context.mailbox.convertToRestId](office.context.mailbox.md#converttorestiditemid-restversion--string) 对它进行转换。 有关详细信息，请参阅[从 Outlook 加载项使用 Outlook REST API](/outlook/add-ins/use-rest-api)。
 
-对于`seriesId`不包含`null`父项 (如单个约会、系列项或会议请求) 的项, 该属性将返回, `undefined`对于不是会议请求的任何其他项, 该属性返回。
+对于`seriesId`不包含`null`父项（如单个约会、系列项或会议请求）的项，该属性将返回， `undefined`对于不是会议请求的任何其他项，该属性返回。
 
 ##### <a name="type"></a>Type
 
@@ -968,7 +968,7 @@ console.log("SeriesId is " + seriesId + " and isSeriesInstance is " + isSeriesIn
 ---
 ---
 
-#### <a name="start-datetimejavascriptapioutlookofficetimeviewoutlook-js-17"></a>开始日期: 日期 |[时间](/javascript/api/outlook/office.time?view=outlook-js-1.7)
+#### <a name="start-datetimejavascriptapioutlookofficetimeviewoutlook-js-17"></a>开始日期：日期 |[时间](/javascript/api/outlook/office.time?view=outlook-js-1.7)
 
 获取或设置约会开始的日期和时间。
 
@@ -1024,7 +1024,7 @@ Office.context.mailbox.item.start.setAsync(startTime, options, function(result) 
 ---
 ---
 
-#### <a name="subject-stringsubjectjavascriptapioutlookofficesubjectviewoutlook-js-17"></a>subject: String |[主题](/javascript/api/outlook/office.subject?view=outlook-js-1.7)
+#### <a name="subject-stringsubjectjavascriptapioutlookofficesubjectviewoutlook-js-17"></a>subject： String |[主题](/javascript/api/outlook/office.subject?view=outlook-js-1.7)
 
 获取或设置显示在项目的主题字段中的说明。
 
@@ -1071,7 +1071,7 @@ function callback(asyncResult) {
 ---
 ---
 
-#### <a name="to-arrayemailaddressdetailsjavascriptapioutlookofficeemailaddressdetailsviewoutlook-js-17recipientsjavascriptapioutlookofficerecipientsviewoutlook-js-17"></a>to: <[EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails?view=outlook-js-1.7)>|[收件人](/javascript/api/outlook/office.recipients?view=outlook-js-1.7)的数组
+#### <a name="to-arrayemailaddressdetailsjavascriptapioutlookofficeemailaddressdetailsviewoutlook-js-17recipientsjavascriptapioutlookofficerecipientsviewoutlook-js-17"></a>to： <[EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails?view=outlook-js-1.7)>|[收件人](/javascript/api/outlook/office.recipients?view=outlook-js-1.7)的数组
 
 提供对邮件的“**收件人**”行上的收件人的访问权限。 对象的类型和访问级别取决于当前项目的模式。
 
@@ -1195,7 +1195,7 @@ Office.context.mailbox.item.addFileAttachmentAsync(
 
 添加支持事件的事件处理程序。
 
-目前, 受支持的事件`Office.EventType.AppointmentTimeChanged`类型`Office.EventType.RecipientsChanged`是、和`Office.EventType.RecurrenceChanged`
+目前，受支持的事件`Office.EventType.AppointmentTimeChanged`类型`Office.EventType.RecipientsChanged`是、和`Office.EventType.RecurrenceChanged`
 
 ##### <a name="parameters"></a>参数
 
@@ -1242,7 +1242,7 @@ Office.context.mailbox.item.addHandlerAsync(Office.EventType.AttachmentsChanged,
 
 随后可以将该标识符与 [`removeAttachmentAsync`](#removeattachmentasyncattachmentid-options-callback) 方法一同使用，以删除同一个会话中的附件。
 
-如果 Office 外接程序在 web 上的 Outlook 中运行, 则该`addItemAttachmentAsync`方法可以将项目附加到您正在编辑的项目之外的项目中;但是, 不支持这种情况, 建议不要这样做。
+如果 Office 外接程序在 web 上的 Outlook 中运行，则该`addItemAttachmentAsync`方法可以将项目附加到您正在编辑的项目之外的项目中;但是，不支持这种情况，建议不要这样做。
 
 ##### <a name="parameters"></a>参数
 
@@ -1329,11 +1329,11 @@ function addAttachment() {
 > [!NOTE]
 > IOS 或 Android 上的 Outlook 不支持此方法。
 
-在 web 上的 Outlook 中, 答复窗体显示为3列视图中的弹出窗体和2列或1列视图中的弹出式窗体。
+在 web 上的 Outlook 中，答复窗体显示为3列视图中的弹出窗体和2列或1列视图中的弹出式窗体。
 
 如果任意字符串参数超出其限制，`displayReplyAllForm` 将引发异常。
 
-如果在`formData.attachments`参数中指定了附件, 则 web 上的 Outlook 和桌面客户端将尝试下载所有附件并将其附加到答复窗体。 如果无法添加任何附件，则在窗体 UI 中显示错误。 如果这不可能，则不引发错误消息。
+如果在`formData.attachments`参数中指定了附件，则 web 上的 Outlook 和桌面客户端将尝试下载所有附件并将其附加到答复窗体。 如果无法添加任何附件，则在窗体 UI 中显示错误。 如果这不可能，则不引发错误消息。
 
 ##### <a name="parameters"></a>参数
 
@@ -1453,11 +1453,11 @@ Office.context.mailbox.item.displayReplyAllForm(
 > [!NOTE]
 > IOS 或 Android 上的 Outlook 不支持此方法。
 
-在 web 上的 Outlook 中, 答复窗体显示为3列视图中的弹出窗体和2列或1列视图中的弹出式窗体。
+在 web 上的 Outlook 中，答复窗体显示为3列视图中的弹出窗体和2列或1列视图中的弹出式窗体。
 
 如果任意字符串参数超出其限制，`displayReplyForm` 将引发异常。
 
-如果在`formData.attachments`参数中指定了附件, 则 web 上的 Outlook 和桌面客户端将尝试下载所有附件并将其附加到答复窗体。 如果无法添加任何附件，则在窗体 UI 中显示错误。 如果这不可能，则不引发错误消息。
+如果在`formData.attachments`参数中指定了附件，则 web 上的 Outlook 和桌面客户端将尝试下载所有附件并将其附加到答复窗体。 如果无法添加任何附件，则在窗体 UI 中显示错误。 如果这不可能，则不引发错误消息。
 
 ##### <a name="parameters"></a>参数
 
@@ -1742,7 +1742,7 @@ Office.initialize = function () {
 
 一个包含匹配在清单 XML 文件中定义的正则表达式的字符串数组的对象。每个数组的名称等于匹配 `ItemHasRegularExpressionMatch` 规则的 `RegExName` 属性或匹配 `ItemHasKnownEntity` 规则的 `FilterName` 属性的相应值。
 
-类型: 对象
+类型：对象
 
 ##### <a name="example"></a>示例
 
@@ -1788,7 +1788,7 @@ var veggies = allMatches.veggies;
 
 一个包含匹配在清单 XML 文件中定义的正则表达式的字符串的数组。
 
-类型: Array. < 字符串 >
+类型： Array. < 字符串 >
 
 ##### <a name="example"></a>示例
 
@@ -1822,7 +1822,7 @@ var veggies = Office.context.mailbox.item.getRegExMatchesByName("veggies");
 |要求|值|
 |---|---|
 |[最低版本的邮箱要求集](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|1.2|
-|[最低权限级别](/outlook/add-ins/understanding-outlook-add-in-permissions)|ReadWriteItem|
+|[最低权限级别](/outlook/add-ins/understanding-outlook-add-in-permissions)|ReadItem|
 |[适用的 Outlook 模式](/outlook/add-ins/#extension-points)|撰写|
 
 ##### <a name="returns"></a>返回：
@@ -2004,7 +2004,7 @@ function saveCallback(asyncResult) {
 
 将附件从邮件或约会中删除。
 
-`removeAttachmentAsync` 方法删除项目中带指定标识符的附件。 最佳做法是，仅当同一个邮件应用程序在同一会话中添加了一个附件时，你才应使用该附件标识符来删除该附件。 在 web 和移动设备上的 Outlook 中, 附件标识符仅在同一个会话中有效。 当用户关闭应用程序，或者如果用户开始在内嵌窗体中撰写，并在随后弹出的内嵌窗体中继续在单独的窗口撰写时，会话即结束。
+`removeAttachmentAsync` 方法删除项目中带指定标识符的附件。 最佳做法是，仅当同一个邮件应用程序在同一会话中添加了一个附件时，你才应使用该附件标识符来删除该附件。 在 web 和移动设备上的 Outlook 中，附件标识符仅在同一个会话中有效。 当用户关闭应用程序，或者如果用户开始在内嵌窗体中撰写，并在随后弹出的内嵌窗体中继续在单独的窗口撰写时，会话即结束。
 
 ##### <a name="parameters"></a>参数
 
@@ -2053,7 +2053,7 @@ Office.context.mailbox.item.removeAttachmentAsync(
 
 删除受支持事件类型的事件处理程序。
 
-目前, 受支持的事件`Office.EventType.AppointmentTimeChanged`类型`Office.EventType.RecipientsChanged`是、和`Office.EventType.RecurrenceChanged`
+目前，受支持的事件`Office.EventType.AppointmentTimeChanged`类型`Office.EventType.RecipientsChanged`是、和`Office.EventType.RecurrenceChanged`
 
 ##### <a name="parameters"></a>参数
 
@@ -2095,7 +2095,7 @@ Office.initialize = function (reason) {
 
 异步保存项目。
 
-调用时，此方法将当前邮件保存为草稿，并通过回调方法返回项目 ID。 在 Outlook 网页或 Outlook 的联机模式中, 将项目保存到服务器。 在 Outlook 缓存模式下，该项目被保存到本地缓存中。
+调用时，此方法将当前邮件保存为草稿，并通过回调方法返回项目 ID。 在 Outlook 网页或 Outlook 的联机模式中，将项目保存到服务器。 在 Outlook 缓存模式下，该项目被保存到本地缓存中。
 
 > [!NOTE]
 > 如果加载项在撰写模式下对某个项目调用 `saveAsync` 来获得 `itemId`，以便与 EWS 或 REST API 一同使用，请注意，当 Outlook 处于高速缓存模式时，可能需要一段时间项目才能真正同步到服务器。 在项目同步前，使用 `itemId` 将返回一个错误。
@@ -2105,15 +2105,15 @@ Office.initialize = function (reason) {
 > [!NOTE]
 > 以下客户端在撰写模式下对约会上的 `saveAsync` 具有不同的行为：
 >
-> - Mac 上的 Outlook 不支持保存会议。 在`saveAsync`撰写模式下从会议中调用时, 此方法将失败。 若要解决此问题, 请参阅[使用 OFFICE JS API 将会议保存为 Outlook For Mac 中的草稿](https://support.microsoft.com/help/4505745)。
+> - Mac 上的 Outlook 不支持保存会议。 在`saveAsync`撰写模式下从会议中调用时，此方法将失败。 若要解决此问题，请参阅[使用 OFFICE JS API 将会议保存为 Outlook For Mac 中的草稿](https://support.microsoft.com/help/4505745)。
 > - 在撰写模式下的约会上调用 `saveAsync` 时，Outlook 网页版始终发送邀请或更新。
 
 ##### <a name="parameters"></a>参数
 
 |名称|类型|属性|说明|
 |---|---|---|---|
-|`options`|对象|&lt;可选&gt;|包含一个或多个以下属性的对象文本。|
-|`options.asyncContext`|对象|&lt;可选&gt;|开发人员可以提供他们想要在回调方法中访问的任何对象。|
+|`options`|对象|&lt;optional&gt;|包含一个或多个以下属性的对象文本。|
+|`options.asyncContext`|对象|&lt;optional&gt;|开发人员可以提供他们想要在回调方法中访问的任何对象。|
 |`callback`|函数||方法完成后，使用单个参数 `asyncResult`（一个 [`AsyncResult`](/javascript/api/office/office.asyncresult) 对象）调用在 `callback` 参数中传递的函数。<br/><br/>如果成功，该项目标识符将在 `asyncResult.value` 属性中提供。|
 
 ##### <a name="requirements"></a>要求
@@ -2160,7 +2160,7 @@ Office.context.mailbox.item.saveAsync(
 |`data`|字符串||要插入的数据。数据不得超过 1,000,000 个字符。如果传入的数据超过 1,000,000 个字符，则会引发 `ArgumentOutOfRange` 异常。|
 |`options`|Object|&lt;可选&gt;|包含一个或多个以下属性的对象文本。|
 |`options.asyncContext`|对象|&lt;可选&gt;|开发人员可以提供他们想要在回调方法中访问的任何对象。|
-|`options.coercionType`|[Office.CoercionType](office.md#coerciontype-string)|&lt;optional&gt;|如果`text`为, 则当前样式应用于 web 上的 Outlook 和桌面客户端。 如果该字段是 HTML 编辑器，则仅插入文本数据，即使数据为 HTML。<br/><br/>如果`html`和字段支持 HTML (主题不), 则当前样式应用于 web 上的 outlook, 并且在 outlook 桌面客户端中应用了默认样式。 如果该字段是文本字段，则返回 `InvalidDataFormat` 错误。<br/><br/>如果未设置 `coercionType`，则结果取决于该字段：如果该字段是 HTML，则使用 HTML；如果该字段是文本，则使用纯文本。|
+|`options.coercionType`|[Office.CoercionType](office.md#coerciontype-string)|&lt;optional&gt;|如果`text`为，则当前样式应用于 web 上的 Outlook 和桌面客户端。 如果该字段是 HTML 编辑器，则仅插入文本数据，即使数据为 HTML。<br/><br/>如果`html`和字段支持 HTML （主题不），则当前样式应用于 web 上的 outlook，并且在 outlook 桌面客户端中应用了默认样式。 如果该字段是文本字段，则返回 `InvalidDataFormat` 错误。<br/><br/>如果未设置 `coercionType`，则结果取决于该字段：如果该字段是 HTML，则使用 HTML；如果该字段是文本，则使用纯文本。|
 |`callback`|function||方法完成后，使用单个参数 `callback`（一个 [`asyncResult`](/javascript/api/office/office.asyncresult) 对象）调用在 `AsyncResult` 参数中传递的函数。|
 
 ##### <a name="requirements"></a>Requirements
