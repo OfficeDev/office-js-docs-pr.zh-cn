@@ -1,14 +1,14 @@
 ---
 title: Office.context.mailbox.item - 要求集 1.5
 description: ''
-ms.date: 08/08/2019
+ms.date: 09/23/2019
 localization_priority: Priority
-ms.openlocfilehash: bd4c8a8e376639da5504ea696bf5ae7f7fed8e99
-ms.sourcegitcommit: 1fb99b1b4e63868a0e81a928c69a34c42bf7e209
+ms.openlocfilehash: a76440c2353483d0754aa0ba2fed98f051bc1c6f
+ms.sourcegitcommit: 3c84fe6302341668c3f9f6dd64e636a97d03023c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/30/2019
-ms.locfileid: "36696132"
+ms.lasthandoff: 09/26/2019
+ms.locfileid: "37167366"
 ---
 # <a name="item"></a>item
 
@@ -1640,7 +1640,7 @@ var veggies = Office.context.mailbox.item.getRegExMatchesByName("veggies");
 |要求| 值|
 |---|---|
 |[最低版本的邮箱要求集](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.2|
-|[最低权限级别](/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadWriteItem|
+|[最低权限级别](/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
 |[适用的 Outlook 模式](/outlook/add-ins/#extension-points)| 撰写|
 
 ##### <a name="returns"></a>返回：
