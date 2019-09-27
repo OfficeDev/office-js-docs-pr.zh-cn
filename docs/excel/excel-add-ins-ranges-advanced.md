@@ -1,14 +1,14 @@
 ---
 title: 使用 Excel JavaScript API 对区域执行操作（高级）
 description: ''
-ms.date: 04/30/2019
+ms.date: 09/18/2019
 localization_priority: Normal
-ms.openlocfilehash: c8fbe1dcc75080c932b4c3e2946fe62747d35c6b
-ms.sourcegitcommit: 1c7e555733ee6d5a08e444a3c4c16635d998e032
+ms.openlocfilehash: d260ee6140d0153b426e530304e95025dc235b74
+ms.sourcegitcommit: c8914ce0f48a0c19bbfc3276a80d090bb7ce68e1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/14/2019
-ms.locfileid: "36395594"
+ms.lasthandoff: 09/26/2019
+ms.locfileid: "37235328"
 ---
 # <a name="work-with-ranges-using-the-excel-javascript-api-advanced"></a>使用 Excel JavaScript API 对区域执行操作（高级）
 
@@ -64,11 +64,11 @@ Excel.run(function (context) {
 
 ## <a name="work-with-multiple-ranges-simultaneously"></a>同时处理多个区域
 
-`RangeAreas` 对象允许外接程序每次在多个区域上执行操作。 这些区域可能但不必是连续区域。 `RangeAreas` 将进一步在[同时在 Excel 加载项中处理多个区域](excel-add-ins-multiple-ranges.md)一文中进行讨论。
+[RangeAreas](/javascript/api/excel/excel.rangeareas)对象允许外接程序一次在多个区域上执行操作。 这些区域可能但不必是连续区域。 `RangeAreas` 将进一步在[同时在 Excel 加载项中处理多个区域](excel-add-ins-multiple-ranges.md)一文中进行讨论。
 
 ## <a name="find-special-cells-within-a-range"></a>查找区域中的特殊单元格
 
-`Range.getSpecialCells()` 和 `Range.getSpecialCellsOrNullObject()` 方法根据单元格特征和值类型来查找区域。 这两种方法都返回 `RangeAreas` 对象。 以下是 TypeScript 数据类型文件中方法的签名：
+[GetSpecialCells](/javascript/api/excel/excel.range#getspecialcells-celltype--cellvaluetype-)和[getSpecialCellsOrNullObject](/javascript/api/excel/excel.range#getspecialcellsornullobject-celltype--cellvaluetype-)方法根据单元格的特征和单元格的值类型来查找区域。 这两种方法都返回 `RangeAreas` 对象。 以下是 TypeScript 数据类型文件中方法的签名：
 
 ```typescript
 getSpecialCells(cellType: Excel.SpecialCellType, cellValueType?: Excel.SpecialCellValueType): Excel.RangeAreas;
@@ -94,7 +94,7 @@ Excel.run(function (context) {
 })
 ```
 
-如果区域中不存在具有目标特征的单元格，`getSpecialCells` 会引发 **ItemNotFound**错误。 这会将控制流转移到 `catch` 信息块（如果存在）。 如果不存在 `catch` 信息块，则错误会终止函数。
+如果区域中不存在具有目标特征的单元格，`getSpecialCells` 会引发 **ItemNotFound**错误。 这会将控制流转移到 `catch` 信息块（如果存在）。 如果没有`catch`块，则错误停止方法。
 
 如果你希望具有目标特征的单元格始终存在，则你可能想要代码在没有这些单元格的时候引发错误。 若没有匹配单元格是一个有效应用场景，代码应该会检查这种可能的情况并按正常方式处理它，而不会引发错误。 可以用此 `getSpecialCellsOrNullObject` 方法及其返回的 `isNullObject` 属性实现此行为。 此示例使用此模式。 关于此代码，请注意以下几点：
 
@@ -174,8 +174,8 @@ Excel.run(function (context) {
 
 ## <a name="copy-and-paste"></a>Copy and paste
 
-区域的 `copyFrom` 函数将复制 Excel UI 的“复制和粘贴”行为。 调用 `copyFrom` 的区域对象是目标。
-将要复制的源作为一个范围或一个表示范围的字符串地址进行传递。
+[CopyFrom](/javascript/api/excel/excel.range#copyfrom-sourcerange--copytype--skipblanks--transpose-)方法复制 Excel UI 的复制和粘贴行为。 调用 `copyFrom` 的区域对象是目标。 将要复制的源作为一个范围或一个表示范围的字符串地址进行传递。
+
 以下代码示例将数据从“A1:E1”**** 复制到“G1”**** 开始的范围（粘贴到“G1:K1”**** 结束）。
 
 ```js
@@ -235,11 +235,11 @@ Excel.run(function (context) {
 
 ## <a name="remove-duplicates"></a>删除重复项
 
-区域对象的 `removeDuplicates` 函数将删除在指定列中具有重复条目的行。 该函数将从区域最低值索引到最高值索引（从上到下）遍历区域中的每一行。 如果指定列中的值之前显示在区域中，则会删除该行。 在区域内位于已删除行下方的行将上移。 `removeDuplicates` 不影响该区域外的单元格位置。
+[RemoveDuplicates](/javascript/api/excel/excel.range#removeduplicates-columns--includesheader-)方法删除指定列中具有重复条目的行。 该方法将从最小值索引到范围中的最高值索引的范围中的每一行（从上到下）进行遍历。 如果指定列中的值之前显示在区域中，则会删除该行。 在区域内位于已删除行下方的行将上移。 `removeDuplicates` 不影响该区域外的单元格位置。
 
-`removeDuplicates` 使用 `number[]` 来表示已执行重复项检查的列索引。 此数组从零开始并且与区域而不是与工作表相关。 该函数还使用一个布尔参数来指定第一行是否为标题。 如果为 **true**，则在考虑重复项时将忽略顶行。 `removeDuplicates` 函数将返回 `RemoveDuplicatesResult` 对象，用于指定已删除的行数和剩余的唯一行数。
+`removeDuplicates` 使用 `number[]` 来表示已执行重复项检查的列索引。 此数组从零开始并且与区域而不是与工作表相关。 此方法还采用一个布尔参数，用于指定第一行是否为标头。 如果为 **true**，则在考虑重复项时将忽略顶行。 `removeDuplicates`方法返回一个`RemoveDuplicatesResult`对象，该对象指定删除的行数和剩余的唯一行数。
 
-在使用区域的 `removeDuplicates` 函数时，应记住以下几点：
+使用区域的`removeDuplicates`方法时，请记住以下几点：
 
 - `removeDuplicates` 会考虑单元格值，而不是函数结果。 如果两个不同的函数具有相同的求值结果，则不会将单元格值视为重复项。
 - `removeDuplicates` 不会忽略空单元格。 空单元格的值与任何其他值具有相同的处理方式。 这意味着区域内所含的空行将包含在 `RemoveDuplicatesResult` 中。
@@ -247,7 +247,7 @@ Excel.run(function (context) {
 以下示例显示删除第一列中具有重复值的条目。
 
 ```js
-Excel.run(async (context) => {
+Excel.run(function (context) {
     var sheet = context.workbook.worksheets.getItem("Sample");
     var range = sheet.getRange("B2:D11");
 
@@ -268,6 +268,48 @@ Excel.run(async (context) => {
 *在上一个函数已运行之后。*
 
 ![在区域中运行删除重复项方法之后的 Excel 中的数据](../images/excel-ranges-remove-duplicates-after.png)
+
+## <a name="group-data-for-an-outline"></a>分级显示的组数据
+
+> [!NOTE]
+> 用于分组行和列的大纲 Api 当前仅适用于公共预览版。 [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
+
+可以将区域中的行或列组合在一起，以创建[分级显示](https://support.office.com/article/Outline-group-data-in-a-worksheet-08CE98C4-0063-4D42-8AC7-8278C49E9AFF)。 可以对这些组进行折叠和扩展以隐藏和显示相应的单元格。 这样可以更轻松地快速分析顶线数据。 使用[Range](/javascript/api/excel/excel.range#group-groupoption-)可以创建这些分级显示组。
+
+大纲可以有层次结构，其中较小的组嵌套在更大的组下。 这样，可以在不同的级别查看大纲。 更改可见大纲级别可以通过[showOutlineLevels](/javascript/api/excel/excel.range#showOutlineLevels-rowLevels--columnLevels-)方法以编程方式完成。 请注意，Excel 仅支持八种级别的分级显示组。
+
+下面的代码示例演示如何创建一个大纲，其中包含两个级别的行和列的组。 随后的图像显示该轮廓的分组。 请注意，在代码示例中，被分组的区域不包括大纲控件的行或列（本例中为 "汇总"）。 组定义将折叠的内容，而不是控件的行或列。
+
+```js
+Excel.run(function (context) {
+    var sheet = context.workbook.worksheets.getItem("Sample");
+
+    // Group the larger, main level. Note that the outline controls
+    // will be on row 10, meaning 4-9 will collapse and expand.
+    sheet.getRange("4:9").group(Excel.GroupOption.byRows);
+
+    // Group the smaller, sublevels. Note that the outline controls
+    // will be on rows 6 and 9, meaning 4-5 and 7-8 will collapse and expand.
+    sheet.getRange("4:5").group(Excel.GroupOption.byRows);
+    sheet.getRange("7:8").group(Excel.GroupOption.byRows);
+
+    // Group the larger, main level. Note that the outline controls
+    // will be on column R, meaning C-Q will collapse and expand.
+    sheet.getRange("C:Q").group(Excel.GroupOption.byColumns);
+
+    // Group the smaller, sublevels. Note that the outline controls
+    // will be on columns G, L, and R, meaning C-F, H-K, and M-P will collapse and expand.
+    sheet.getRange("C:F").group(Excel.GroupOption.byColumns);
+    sheet.getRange("H:K").group(Excel.GroupOption.byColumns);
+    sheet.getRange("M:P").group(Excel.GroupOption.byColumns);
+    return context.sync();
+}).catch(errorHandlerFunction);
+
+```
+
+![具有两个级别的两维轮廓的范围](../images/excel-outline.png)
+
+若要取消行或列组的分组，请使用[upgroup](/javascript/api/excel/excel.range#ungroup-groupoption-)方法。 这将从大纲中删除最外面的级别。 如果同一行或列类型的多个组在指定区域中的同一级别，则所有这些组都将被取消组合。
 
 ## <a name="see-also"></a>另请参阅
 
