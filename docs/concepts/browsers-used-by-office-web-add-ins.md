@@ -1,14 +1,14 @@
 ---
 title: Office 加载项使用的浏览器
 description: 指定操作系统和 Office 版本如何确定 Office 加载项使用的浏览器。
-ms.date: 06/20/2019
+ms.date: 09/25/2019
 localization_priority: Priority
-ms.openlocfilehash: 56b74c0e43c8e9709ecd03a8c60a89d3869e44f8
-ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
+ms.openlocfilehash: b5d7198e556f020bccdf7ba1e0a0fcffa3a9171b
+ms.sourcegitcommit: c8914ce0f48a0c19bbfc3276a80d090bb7ce68e1
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "35128106"
+ms.lasthandoff: 09/26/2019
+ms.locfileid: "37235293"
 ---
 # <a name="browsers-used-by-office-add-ins"></a>Office 加载项使用的浏览器
 
@@ -49,6 +49,21 @@ Office 加载项是使用 iFrames（在 Office 网页版中运行时）和使用
 > 
 > 1. 转至 [Office 预览体验成员入门](https://insider.office.com/join)。
 > 2. 按照加入页面上的说明操作。 系统要求你指定频道时，请选择预览体验成员。
+
+## <a name="troubleshooting-microsoft-edge-issues"></a>Microsoft Edge 问题疑难解答
+
+### <a name="scroll-bar-does-not-appear-in-task-pane"></a>任务窗格中不显示滚动条
+
+默认情况下，Microsoft Edge 中的滚动条是隐藏的，直到在其上悬停时。 适用于任务窗格中页面的 `<body>` 元素的 CSS 样式应包含 [-ms-overflow-style](https://developer.mozilla.org/docs/Web/CSS/-ms-overflow-style) 属性，且应将其设置为 `scrollbar`。 
+
+### <a name="when-debugging-with-the-microsoft-edge-devtools-the-add-in-crashes-or-reloads"></a>使用 Microsoft Edge 开发工具进行调试时，加载项会崩溃或重新加载
+
+[Microsoft Edge 开发工具](https://www.microsoft.com/p/microsoft-edge-devtools-preview/9mzbfrmz0mnj?rtc=1&activetab=pivot%3Aoverviewtab)中的设置断点可能导致 Office 认为该加载项已挂起。 发生这种情况时，它将自动重新加载该加载项。 为防止这种情况，请将以下注册表项和值添加到开发计算机：`[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Office\16.0\Wef]"AlertInterval"=dword:00000000`。
+
+### <a name="when-the-add-in-tries-to-open-get-add-in-error-we-cant-open-this-add-in-from-the-localhost-error"></a>加载项尝试打开时，出现“加载项错误 我们无法从 localhost 打开此加载项”错误
+
+一个已知的原因是 Microsoft Edge 要求在开发计算机上为本地主机提供环回豁免。 按照[无法从 localhost 打开加载项](/office/troubleshoot/error-messages/cannot-open-add-in-from-localhost)中的说明操作。
+
 
 ## <a name="see-also"></a>另请参阅
 
