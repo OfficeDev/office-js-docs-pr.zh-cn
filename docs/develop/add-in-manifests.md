@@ -1,75 +1,72 @@
 ---
 title: Office 加载项 XML 清单
 description: ''
-ms.date: 08/14/2019
+ms.date: 09/26/2019
 localization_priority: Priority
-ms.openlocfilehash: da8e865a78b666d4790df854403604cc03d6a47a
-ms.sourcegitcommit: da8e6148f4bd9884ab9702db3033273a383d15f0
+ms.openlocfilehash: 1249278dd542de4ca5db3065b0ee41066b642339
+ms.sourcegitcommit: 528577145b2cf0a42bc64c56145d661c4d019fb8
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/20/2019
-ms.locfileid: "36477913"
+ms.lasthandoff: 10/02/2019
+ms.locfileid: "37353830"
 ---
-# <a name="office-add-ins-xml-manifest"></a><span data-ttu-id="66aef-102">Office 加载项 XML 清单</span><span class="sxs-lookup"><span data-stu-id="66aef-102">Office Add-ins XML manifest</span></span>
+# <a name="office-add-ins-xml-manifest"></a><span data-ttu-id="664bc-102">Office 加载项 XML 清单</span><span class="sxs-lookup"><span data-stu-id="664bc-102">Office Add-ins XML manifest</span></span>
 
-<span data-ttu-id="66aef-103">Office 外接程序的 XML 清单文件描述，当最终用户安装外接程序并将其与 Office 文档和应用程序配合使用时，应如何激活外接程序。</span><span class="sxs-lookup"><span data-stu-id="66aef-103">The XML manifest file of an Office Add-in describes how your add-in should be activated when an end user installs and uses it with Office documents and applications.</span></span>
+<span data-ttu-id="664bc-103">Office 外接程序的 XML 清单文件描述，当最终用户安装外接程序并将其与 Office 文档和应用程序配合使用时，应如何激活外接程序。</span><span class="sxs-lookup"><span data-stu-id="664bc-103">The XML manifest file of an Office Add-in describes how your add-in should be activated when an end user installs and uses it with Office documents and applications.</span></span>
 
-<span data-ttu-id="66aef-104">基于此架构的 XML 清单文件允许 Office 外接程序执行以下内容：</span><span class="sxs-lookup"><span data-stu-id="66aef-104">An XML manifest file based on this schema enables an Office Add-in to do the following:</span></span>
+<span data-ttu-id="664bc-104">基于此架构的 XML 清单文件允许 Office 外接程序执行以下内容：</span><span class="sxs-lookup"><span data-stu-id="664bc-104">An XML manifest file based on this schema enables an Office Add-in to do the following:</span></span>
 
-* <span data-ttu-id="66aef-105">通过提供 ID、版本、说明、显示名称和默认区域设置进行自我描述。</span><span class="sxs-lookup"><span data-stu-id="66aef-105">Describe itself by providing an ID, version, description, display name, and default locale.</span></span>
+* <span data-ttu-id="664bc-105">通过提供 ID、版本、说明、显示名称和默认区域设置进行自我描述。</span><span class="sxs-lookup"><span data-stu-id="664bc-105">Describe itself by providing an ID, version, description, display name, and default locale.</span></span>
 
-* <span data-ttu-id="66aef-106">指定用于为外接程序塑造品牌的图像，以及用于 Office 功能区中[外接程序命令][]的图标。</span><span class="sxs-lookup"><span data-stu-id="66aef-106">Specify the images used for branding the add-in and iconography used for [add-in commands][] in the Office Ribbon.</span></span>
+* <span data-ttu-id="664bc-106">指定用于为外接程序塑造品牌的图像，以及用于 Office 功能区中[外接程序命令][]的图标。</span><span class="sxs-lookup"><span data-stu-id="664bc-106">Specify the images used for branding the add-in and iconography used for [add-in commands][] in the Office Ribbon.</span></span>
 
-* <span data-ttu-id="66aef-107">指定外接程序如何与 Office 集成，包括任何自定义 UI，如外接程序创建的功能区按钮。</span><span class="sxs-lookup"><span data-stu-id="66aef-107">Specify how the add-in integrates with Office, including any custom UI, such as ribbon buttons the add-in creates.</span></span>
+* <span data-ttu-id="664bc-107">指定外接程序如何与 Office 集成，包括任何自定义 UI，如外接程序创建的功能区按钮。</span><span class="sxs-lookup"><span data-stu-id="664bc-107">Specify how the add-in integrates with Office, including any custom UI, such as ribbon buttons the add-in creates.</span></span>
 
-* <span data-ttu-id="66aef-108">指定内容外接程序请求的默认尺寸和 Outlook 外接程序请求的高度。</span><span class="sxs-lookup"><span data-stu-id="66aef-108">Specify the requested default dimensions for content add-ins, and requested height for Outlook add-ins.</span></span>
+* <span data-ttu-id="664bc-108">指定内容外接程序请求的默认尺寸和 Outlook 外接程序请求的高度。</span><span class="sxs-lookup"><span data-stu-id="664bc-108">Specify the requested default dimensions for content add-ins, and requested height for Outlook add-ins.</span></span>
 
-* <span data-ttu-id="66aef-109">声明 Office 外接程序所需的权限，例如读取或写入文档。</span><span class="sxs-lookup"><span data-stu-id="66aef-109">Declare permissions that the Office Add-in requires, such as reading or writing to the document.</span></span>
+* <span data-ttu-id="664bc-109">声明 Office 外接程序所需的权限，例如读取或写入文档。</span><span class="sxs-lookup"><span data-stu-id="664bc-109">Declare permissions that the Office Add-in requires, such as reading or writing to the document.</span></span>
 
-* <span data-ttu-id="66aef-110">对于 Outlook 外接程序，定义一个或多个规则，以指定将在其中激活规则并与邮件、约会或会议请求项目交互的上下文。</span><span class="sxs-lookup"><span data-stu-id="66aef-110">For Outlook add-ins, define the rule or rules that specify the context in which they will be activated and interact with a message, appointment, or meeting request item.</span></span>
-
-> [!NOTE]
-> <span data-ttu-id="66aef-p101">如果计划将加载项[发布](../publish/publish.md)到 AppSource 并适用于 Office 体验，请务必遵循 [AppSource 验证策略](/office/dev/store/validation-policies)。例如，加载项必须适用于支持已定义方法的所有平台，才能通过验证（有关详细信息，请参阅[第 4.12 部分](/office/dev/store/validation-policies#4-apps-and-add-ins-behave-predictably)以及 [Office 加载项主机和可用性](../overview/office-add-in-availability.md)页面）。</span><span class="sxs-lookup"><span data-stu-id="66aef-p101">If you plan to [publish](../publish/publish.md) your add-in to AppSource and make it available within the Office experience, make sure that you conform to the [AppSource validation policies](/office/dev/store/validation-policies). For example, to pass validation, your add-in must work across all platforms that support the methods that you define (for more information, see [section 4.12](/office/dev/store/validation-policies#4-apps-and-add-ins-behave-predictably) and the [Office Add-in host and availability page](../overview/office-add-in-availability.md)).</span></span>
-
-## <a name="required-elements"></a><span data-ttu-id="66aef-113">必需元素</span><span class="sxs-lookup"><span data-stu-id="66aef-113">Required elements</span></span>
-
-<span data-ttu-id="66aef-114">下表指定了三种类型 Office 加载项的必需元素。</span><span class="sxs-lookup"><span data-stu-id="66aef-114">The following table specifies the elements that are required for the three types of Office Add-ins.</span></span>
+* <span data-ttu-id="664bc-110">对于 Outlook 外接程序，定义一个或多个规则，以指定将在其中激活规则并与邮件、约会或会议请求项目交互的上下文。</span><span class="sxs-lookup"><span data-stu-id="664bc-110">For Outlook add-ins, define the rule or rules that specify the context in which they will be activated and interact with a message, appointment, or meeting request item.</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="66aef-115">还存在强制性命令，其中元素必须出现在其父元素中。</span><span class="sxs-lookup"><span data-stu-id="66aef-115">There is also a mandatory order in which elements must appear within their parent element.</span></span> <span data-ttu-id="66aef-116">有关详细信息，请参阅[如何查找清单元素的正确顺序](manifest-element-ordering.md)。</span><span class="sxs-lookup"><span data-stu-id="66aef-116">For more information see [How to find the proper order of manifest elements](manifest-element-ordering.md).</span></span>
+> <span data-ttu-id="664bc-p101">如果计划将加载项[发布](../publish/publish.md)到 AppSource 并适用于 Office 体验，请务必遵循 [AppSource 验证策略](/office/dev/store/validation-policies)。例如，加载项必须适用于支持已定义方法的所有平台，才能通过验证（有关详细信息，请参阅[第 4.12 部分](/office/dev/store/validation-policies#4-apps-and-add-ins-behave-predictably)以及 [Office 加载项主机和可用性](../overview/office-add-in-availability.md)页面）。</span><span class="sxs-lookup"><span data-stu-id="664bc-p101">If you plan to [publish](../publish/publish.md) your add-in to AppSource and make it available within the Office experience, make sure that you conform to the [AppSource validation policies](/office/dev/store/validation-policies). For example, to pass validation, your add-in must work across all platforms that support the methods that you define (for more information, see [section 4.12](/office/dev/store/validation-policies#4-apps-and-add-ins-behave-predictably) and the [Office Add-in host and availability page](../overview/office-add-in-availability.md)).</span></span>
+
+## <a name="required-elements"></a><span data-ttu-id="664bc-113">必需元素</span><span class="sxs-lookup"><span data-stu-id="664bc-113">Required elements</span></span>
+
+<span data-ttu-id="664bc-114">下表指定了三种类型 Office 加载项的必需元素。</span><span class="sxs-lookup"><span data-stu-id="664bc-114">The following table specifies the elements that are required for the three types of Office Add-ins.</span></span>
+
+> [!NOTE]
+> <span data-ttu-id="664bc-115">还存在强制性命令，其中元素必须出现在其父元素中。</span><span class="sxs-lookup"><span data-stu-id="664bc-115">There is also a mandatory order in which elements must appear within their parent element.</span></span> <span data-ttu-id="664bc-116">有关详细信息，请参阅[如何查找清单元素的正确顺序](manifest-element-ordering.md)。</span><span class="sxs-lookup"><span data-stu-id="664bc-116">For more information see [How to find the proper order of manifest elements](manifest-element-ordering.md).</span></span>
 
 
-### <a name="required-elements-by-office-add-in-type"></a><span data-ttu-id="66aef-117">Office 加载项类型的必需元素</span><span class="sxs-lookup"><span data-stu-id="66aef-117">Required elements by Office Add-in type</span></span>
+### <a name="required-elements-by-office-add-in-type"></a><span data-ttu-id="664bc-117">Office 加载项类型的必需元素</span><span class="sxs-lookup"><span data-stu-id="664bc-117">Required elements by Office Add-in type</span></span>
 
-| <span data-ttu-id="66aef-118">元素</span><span class="sxs-lookup"><span data-stu-id="66aef-118">Element</span></span>                                                                                      | <span data-ttu-id="66aef-119">内容</span><span class="sxs-lookup"><span data-stu-id="66aef-119">Content</span></span> | <span data-ttu-id="66aef-120">任务窗格</span><span class="sxs-lookup"><span data-stu-id="66aef-120">Task pane</span></span> | <span data-ttu-id="66aef-121">Outlook</span><span class="sxs-lookup"><span data-stu-id="66aef-121">Outlook</span></span> |
+| <span data-ttu-id="664bc-118">元素</span><span class="sxs-lookup"><span data-stu-id="664bc-118">Element</span></span>                                                                                      | <span data-ttu-id="664bc-119">内容</span><span class="sxs-lookup"><span data-stu-id="664bc-119">Content</span></span> | <span data-ttu-id="664bc-120">任务窗格</span><span class="sxs-lookup"><span data-stu-id="664bc-120">Task pane</span></span> | <span data-ttu-id="664bc-121">Outlook</span><span class="sxs-lookup"><span data-stu-id="664bc-121">Outlook</span></span> |
 | :------------------------------------------------------------------------------------------- | :-----: | :-------: | :-----: |
-| <span data-ttu-id="66aef-122">[OfficeApp][]</span><span class="sxs-lookup"><span data-stu-id="66aef-122">[OfficeApp][]</span></span>                                                                                |    <span data-ttu-id="66aef-123">X</span><span class="sxs-lookup"><span data-stu-id="66aef-123">X</span></span>    |     <span data-ttu-id="66aef-124">X</span><span class="sxs-lookup"><span data-stu-id="66aef-124">X</span></span>     |    <span data-ttu-id="66aef-125">X</span><span class="sxs-lookup"><span data-stu-id="66aef-125">X</span></span>    |
-| <span data-ttu-id="66aef-126">
-  [Id][]</span><span class="sxs-lookup"><span data-stu-id="66aef-126">[Id][]</span></span>                                                                                       |    <span data-ttu-id="66aef-127">X</span><span class="sxs-lookup"><span data-stu-id="66aef-127">X</span></span>    |     <span data-ttu-id="66aef-128">X</span><span class="sxs-lookup"><span data-stu-id="66aef-128">X</span></span>     |    <span data-ttu-id="66aef-129">X</span><span class="sxs-lookup"><span data-stu-id="66aef-129">X</span></span>    |
-| <span data-ttu-id="66aef-130">[版本][]</span><span class="sxs-lookup"><span data-stu-id="66aef-130">[Version][]</span></span>                                                                                  |    <span data-ttu-id="66aef-131">X</span><span class="sxs-lookup"><span data-stu-id="66aef-131">X</span></span>    |     <span data-ttu-id="66aef-132">X</span><span class="sxs-lookup"><span data-stu-id="66aef-132">X</span></span>     |    <span data-ttu-id="66aef-133">X</span><span class="sxs-lookup"><span data-stu-id="66aef-133">X</span></span>    |
-| <span data-ttu-id="66aef-134">[ProviderName][]</span><span class="sxs-lookup"><span data-stu-id="66aef-134">[ProviderName][]</span></span>                                                                             |    <span data-ttu-id="66aef-135">X</span><span class="sxs-lookup"><span data-stu-id="66aef-135">X</span></span>    |     <span data-ttu-id="66aef-136">X</span><span class="sxs-lookup"><span data-stu-id="66aef-136">X</span></span>     |    <span data-ttu-id="66aef-137">X</span><span class="sxs-lookup"><span data-stu-id="66aef-137">X</span></span>    |
-| <span data-ttu-id="66aef-138">[DefaultLocale][]</span><span class="sxs-lookup"><span data-stu-id="66aef-138">[DefaultLocale][]</span></span>                                                                            |    <span data-ttu-id="66aef-139">X</span><span class="sxs-lookup"><span data-stu-id="66aef-139">X</span></span>    |     <span data-ttu-id="66aef-140">X</span><span class="sxs-lookup"><span data-stu-id="66aef-140">X</span></span>     |    <span data-ttu-id="66aef-141">X</span><span class="sxs-lookup"><span data-stu-id="66aef-141">X</span></span>    |
-| <span data-ttu-id="66aef-142">[DisplayName][]</span><span class="sxs-lookup"><span data-stu-id="66aef-142">[DisplayName][]</span></span>                                                                              |    <span data-ttu-id="66aef-143">X</span><span class="sxs-lookup"><span data-stu-id="66aef-143">X</span></span>    |     <span data-ttu-id="66aef-144">X</span><span class="sxs-lookup"><span data-stu-id="66aef-144">X</span></span>     |    <span data-ttu-id="66aef-145">X</span><span class="sxs-lookup"><span data-stu-id="66aef-145">X</span></span>    |
-| <span data-ttu-id="66aef-146">[说明][]</span><span class="sxs-lookup"><span data-stu-id="66aef-146">[Description][]</span></span>                                                                              |    <span data-ttu-id="66aef-147">X</span><span class="sxs-lookup"><span data-stu-id="66aef-147">X</span></span>    |     <span data-ttu-id="66aef-148">X</span><span class="sxs-lookup"><span data-stu-id="66aef-148">X</span></span>     |    <span data-ttu-id="66aef-149">X</span><span class="sxs-lookup"><span data-stu-id="66aef-149">X</span></span>    |
-| <span data-ttu-id="66aef-150">[IconUrl][]</span><span class="sxs-lookup"><span data-stu-id="66aef-150">[IconUrl][]</span></span>                                                                                  |    <span data-ttu-id="66aef-151">X</span><span class="sxs-lookup"><span data-stu-id="66aef-151">X</span></span>    |     <span data-ttu-id="66aef-152">X</span><span class="sxs-lookup"><span data-stu-id="66aef-152">X</span></span>     |    <span data-ttu-id="66aef-153">X</span><span class="sxs-lookup"><span data-stu-id="66aef-153">X</span></span>    |
-| <span data-ttu-id="66aef-154">[DefaultSettings (ContentApp)][]</span><span class="sxs-lookup"><span data-stu-id="66aef-154">[DefaultSettings (ContentApp)][]</span></span><br/><span data-ttu-id="66aef-155">[DefaultSettings (TaskPaneApp)][]</span><span class="sxs-lookup"><span data-stu-id="66aef-155">[DefaultSettings (TaskPaneApp)][]</span></span>                       |    <span data-ttu-id="66aef-156">X</span><span class="sxs-lookup"><span data-stu-id="66aef-156">X</span></span>    |     <span data-ttu-id="66aef-157">X</span><span class="sxs-lookup"><span data-stu-id="66aef-157">X</span></span>     |         |
-| <span data-ttu-id="66aef-158">[SourceLocation (ContentApp)][]</span><span class="sxs-lookup"><span data-stu-id="66aef-158">[SourceLocation (ContentApp)][]</span></span><br/><span data-ttu-id="66aef-159">[SourceLocation (TaskPaneApp)][]</span><span class="sxs-lookup"><span data-stu-id="66aef-159">[SourceLocation (TaskPaneApp)][]</span></span>                         |    <span data-ttu-id="66aef-160">X</span><span class="sxs-lookup"><span data-stu-id="66aef-160">X</span></span>    |     <span data-ttu-id="66aef-161">X</span><span class="sxs-lookup"><span data-stu-id="66aef-161">X</span></span>     |         |
-| <span data-ttu-id="66aef-162">[DesktopSettings][]</span><span class="sxs-lookup"><span data-stu-id="66aef-162">[DesktopSettings][]</span></span>                                                                          |         |           |    <span data-ttu-id="66aef-163">X</span><span class="sxs-lookup"><span data-stu-id="66aef-163">X</span></span>    |
-| <span data-ttu-id="66aef-164">[SourceLocation (MailApp)][]</span><span class="sxs-lookup"><span data-stu-id="66aef-164">[SourceLocation (MailApp)][]</span></span>                                                                 |         |           |    <span data-ttu-id="66aef-165">X</span><span class="sxs-lookup"><span data-stu-id="66aef-165">X</span></span>    |
-| <span data-ttu-id="66aef-166">
-  [Permissions (ContentApp)][]</span><span class="sxs-lookup"><span data-stu-id="66aef-166">[Permissions (ContentApp)][]</span></span><br/><span data-ttu-id="66aef-167">
-  [Permissions (TaskPaneApp)][]</span><span class="sxs-lookup"><span data-stu-id="66aef-167">[Permissions (TaskPaneApp)][]</span></span><br/><span data-ttu-id="66aef-168">
-  [Permissions (MailApp)][]</span><span class="sxs-lookup"><span data-stu-id="66aef-168">[Permissions (MailApp)][]</span></span> |    <span data-ttu-id="66aef-169">X</span><span class="sxs-lookup"><span data-stu-id="66aef-169">X</span></span>    |     <span data-ttu-id="66aef-170">X</span><span class="sxs-lookup"><span data-stu-id="66aef-170">X</span></span>     |    <span data-ttu-id="66aef-171">X</span><span class="sxs-lookup"><span data-stu-id="66aef-171">X</span></span>    |
-| <span data-ttu-id="66aef-172">
-  [Rule (RuleCollection)][]</span><span class="sxs-lookup"><span data-stu-id="66aef-172">[Rule (RuleCollection)][]</span></span><br/><span data-ttu-id="66aef-173">
-  [Rule (MailApp)][]</span><span class="sxs-lookup"><span data-stu-id="66aef-173">[Rule (MailApp)][]</span></span>                                             |         |           |    <span data-ttu-id="66aef-174">X</span><span class="sxs-lookup"><span data-stu-id="66aef-174">X</span></span>    |
-| <span data-ttu-id="66aef-175">[Requirements (MailApp)\*][]</span><span class="sxs-lookup"><span data-stu-id="66aef-175">[Requirements (MailApp)\*][]</span></span>                                                                  |         |           |    <span data-ttu-id="66aef-176">X</span><span class="sxs-lookup"><span data-stu-id="66aef-176">X</span></span>    |
-| <span data-ttu-id="66aef-177">[Set\*][]</span><span class="sxs-lookup"><span data-stu-id="66aef-177">[Set\*][]</span></span><br/><span data-ttu-id="66aef-178">[Sets (MailAppRequirements)\*][]</span><span class="sxs-lookup"><span data-stu-id="66aef-178">[Sets (MailAppRequirements)\*][]</span></span>                                                 |         |           |    <span data-ttu-id="66aef-179">X</span><span class="sxs-lookup"><span data-stu-id="66aef-179">X</span></span>    |
-| <span data-ttu-id="66aef-180">[Form\*][]</span><span class="sxs-lookup"><span data-stu-id="66aef-180">[Form\*][]</span></span><br/><span data-ttu-id="66aef-181">[FormSettings\*][]</span><span class="sxs-lookup"><span data-stu-id="66aef-181">[FormSettings\*][]</span></span>                                                              |         |           |    <span data-ttu-id="66aef-182">X</span><span class="sxs-lookup"><span data-stu-id="66aef-182">X</span></span>    |
-| <span data-ttu-id="66aef-183">[Sets (Requirements)\*][]</span><span class="sxs-lookup"><span data-stu-id="66aef-183">[Sets (Requirements)\*][]</span></span>                                                                     |    <span data-ttu-id="66aef-184">X</span><span class="sxs-lookup"><span data-stu-id="66aef-184">X</span></span>    |     <span data-ttu-id="66aef-185">X</span><span class="sxs-lookup"><span data-stu-id="66aef-185">X</span></span>     |         |
-| <span data-ttu-id="66aef-186">[Hosts\*][]</span><span class="sxs-lookup"><span data-stu-id="66aef-186">[Hosts\*][]</span></span>                                                                                   |    <span data-ttu-id="66aef-187">X</span><span class="sxs-lookup"><span data-stu-id="66aef-187">X</span></span>    |     <span data-ttu-id="66aef-188">X</span><span class="sxs-lookup"><span data-stu-id="66aef-188">X</span></span>     |         |
+| <span data-ttu-id="664bc-122">[OfficeApp][]</span><span class="sxs-lookup"><span data-stu-id="664bc-122">[OfficeApp][]</span></span>                                                                                |    <span data-ttu-id="664bc-123">X</span><span class="sxs-lookup"><span data-stu-id="664bc-123">X</span></span>    |     <span data-ttu-id="664bc-124">X</span><span class="sxs-lookup"><span data-stu-id="664bc-124">X</span></span>     |    <span data-ttu-id="664bc-125">X</span><span class="sxs-lookup"><span data-stu-id="664bc-125">X</span></span>    |
+| <span data-ttu-id="664bc-126">[Id][]</span><span class="sxs-lookup"><span data-stu-id="664bc-126">[Id][]</span></span>                                                                                       |    <span data-ttu-id="664bc-127">X</span><span class="sxs-lookup"><span data-stu-id="664bc-127">X</span></span>    |     <span data-ttu-id="664bc-128">X</span><span class="sxs-lookup"><span data-stu-id="664bc-128">X</span></span>     |    <span data-ttu-id="664bc-129">X</span><span class="sxs-lookup"><span data-stu-id="664bc-129">X</span></span>    |
+| <span data-ttu-id="664bc-130">[Version][]</span><span class="sxs-lookup"><span data-stu-id="664bc-130">[Version][]</span></span>                                                                                  |    <span data-ttu-id="664bc-131">X</span><span class="sxs-lookup"><span data-stu-id="664bc-131">X</span></span>    |     <span data-ttu-id="664bc-132">X</span><span class="sxs-lookup"><span data-stu-id="664bc-132">X</span></span>     |    <span data-ttu-id="664bc-133">X</span><span class="sxs-lookup"><span data-stu-id="664bc-133">X</span></span>    |
+| <span data-ttu-id="664bc-134">[ProviderName][]</span><span class="sxs-lookup"><span data-stu-id="664bc-134">[ProviderName][]</span></span>                                                                             |    <span data-ttu-id="664bc-135">X</span><span class="sxs-lookup"><span data-stu-id="664bc-135">X</span></span>    |     <span data-ttu-id="664bc-136">X</span><span class="sxs-lookup"><span data-stu-id="664bc-136">X</span></span>     |    <span data-ttu-id="664bc-137">X</span><span class="sxs-lookup"><span data-stu-id="664bc-137">X</span></span>    |
+| <span data-ttu-id="664bc-138">[DefaultLocale][]</span><span class="sxs-lookup"><span data-stu-id="664bc-138">[DefaultLocale][]</span></span>                                                                            |    <span data-ttu-id="664bc-139">X</span><span class="sxs-lookup"><span data-stu-id="664bc-139">X</span></span>    |     <span data-ttu-id="664bc-140">X</span><span class="sxs-lookup"><span data-stu-id="664bc-140">X</span></span>     |    <span data-ttu-id="664bc-141">X</span><span class="sxs-lookup"><span data-stu-id="664bc-141">X</span></span>    |
+| <span data-ttu-id="664bc-142">[DisplayName][]</span><span class="sxs-lookup"><span data-stu-id="664bc-142">[DisplayName][]</span></span>                                                                              |    <span data-ttu-id="664bc-143">X</span><span class="sxs-lookup"><span data-stu-id="664bc-143">X</span></span>    |     <span data-ttu-id="664bc-144">X</span><span class="sxs-lookup"><span data-stu-id="664bc-144">X</span></span>     |    <span data-ttu-id="664bc-145">X</span><span class="sxs-lookup"><span data-stu-id="664bc-145">X</span></span>    |
+| <span data-ttu-id="664bc-146">[Description][]</span><span class="sxs-lookup"><span data-stu-id="664bc-146">[Description][]</span></span>                                                                              |    <span data-ttu-id="664bc-147">X</span><span class="sxs-lookup"><span data-stu-id="664bc-147">X</span></span>    |     <span data-ttu-id="664bc-148">X</span><span class="sxs-lookup"><span data-stu-id="664bc-148">X</span></span>     |    <span data-ttu-id="664bc-149">X</span><span class="sxs-lookup"><span data-stu-id="664bc-149">X</span></span>    |
+| <span data-ttu-id="664bc-150">[IconUrl][]</span><span class="sxs-lookup"><span data-stu-id="664bc-150">[IconUrl][]</span></span>                                                                                  |    <span data-ttu-id="664bc-151">X</span><span class="sxs-lookup"><span data-stu-id="664bc-151">X</span></span>    |     <span data-ttu-id="664bc-152">X</span><span class="sxs-lookup"><span data-stu-id="664bc-152">X</span></span>     |    <span data-ttu-id="664bc-153">X</span><span class="sxs-lookup"><span data-stu-id="664bc-153">X</span></span>    |
+| <span data-ttu-id="664bc-154">[SupportUrl][]\*\*</span><span class="sxs-lookup"><span data-stu-id="664bc-154">[SupportUrl][]</span></span>                                                                           |    <span data-ttu-id="664bc-155">X</span><span class="sxs-lookup"><span data-stu-id="664bc-155">X</span></span>    |     <span data-ttu-id="664bc-156">X</span><span class="sxs-lookup"><span data-stu-id="664bc-156">X</span></span>     |    <span data-ttu-id="664bc-157">X</span><span class="sxs-lookup"><span data-stu-id="664bc-157">X</span></span>    |
+| <span data-ttu-id="664bc-158">[DefaultSettings (ContentApp)][]</span><span class="sxs-lookup"><span data-stu-id="664bc-158">[DefaultSettings (ContentApp)][]</span></span><br/><span data-ttu-id="664bc-159">[DefaultSettings (TaskPaneApp)][]</span><span class="sxs-lookup"><span data-stu-id="664bc-159">[DefaultSettings (TaskPaneApp)][]</span></span>                       |    <span data-ttu-id="664bc-160">X</span><span class="sxs-lookup"><span data-stu-id="664bc-160">X</span></span>    |     <span data-ttu-id="664bc-161">X</span><span class="sxs-lookup"><span data-stu-id="664bc-161">X</span></span>     |         |
+| <span data-ttu-id="664bc-162">[SourceLocation (ContentApp)][]</span><span class="sxs-lookup"><span data-stu-id="664bc-162">[SourceLocation (ContentApp)][]</span></span><br/><span data-ttu-id="664bc-163">[SourceLocation (TaskPaneApp)][]</span><span class="sxs-lookup"><span data-stu-id="664bc-163">[SourceLocation (TaskPaneApp)][]</span></span>                         |    <span data-ttu-id="664bc-164">X</span><span class="sxs-lookup"><span data-stu-id="664bc-164">X</span></span>    |     <span data-ttu-id="664bc-165">X</span><span class="sxs-lookup"><span data-stu-id="664bc-165">X</span></span>     |         |
+| <span data-ttu-id="664bc-166">[DesktopSettings][]</span><span class="sxs-lookup"><span data-stu-id="664bc-166">[DesktopSettings][]</span></span>                                                                          |         |           |    <span data-ttu-id="664bc-167">X</span><span class="sxs-lookup"><span data-stu-id="664bc-167">X</span></span>    |
+| <span data-ttu-id="664bc-168">[SourceLocation (MailApp)][]</span><span class="sxs-lookup"><span data-stu-id="664bc-168">[SourceLocation (MailApp)][]</span></span>                                                                 |         |           |    <span data-ttu-id="664bc-169">X</span><span class="sxs-lookup"><span data-stu-id="664bc-169">X</span></span>    |
+| <span data-ttu-id="664bc-170">[Permissions (ContentApp)][]</span><span class="sxs-lookup"><span data-stu-id="664bc-170">[Permissions (ContentApp)][]</span></span><br/><span data-ttu-id="664bc-171">[Permissions (TaskPaneApp)][]</span><span class="sxs-lookup"><span data-stu-id="664bc-171">[Permissions (TaskPaneApp)][]</span></span><br/><span data-ttu-id="664bc-172">[Permissions (MailApp)][]</span><span class="sxs-lookup"><span data-stu-id="664bc-172">[Permissions (MailApp)][]</span></span> |    <span data-ttu-id="664bc-173">X</span><span class="sxs-lookup"><span data-stu-id="664bc-173">X</span></span>    |     <span data-ttu-id="664bc-174">X</span><span class="sxs-lookup"><span data-stu-id="664bc-174">X</span></span>     |    <span data-ttu-id="664bc-175">X</span><span class="sxs-lookup"><span data-stu-id="664bc-175">X</span></span>    |
+| <span data-ttu-id="664bc-176">[Rule (RuleCollection)][]</span><span class="sxs-lookup"><span data-stu-id="664bc-176">[Rule (RuleCollection)][]</span></span><br/><span data-ttu-id="664bc-177">[Rule (MailApp)][]</span><span class="sxs-lookup"><span data-stu-id="664bc-177">[Rule (MailApp)][]</span></span>                                             |         |           |    <span data-ttu-id="664bc-178">X</span><span class="sxs-lookup"><span data-stu-id="664bc-178">X</span></span>    |
+| <span data-ttu-id="664bc-179">[Requirements (MailApp)\*][]</span><span class="sxs-lookup"><span data-stu-id="664bc-179">[Requirements (MailApp)\*][]</span></span>                                                                  |         |           |    <span data-ttu-id="664bc-180">X</span><span class="sxs-lookup"><span data-stu-id="664bc-180">X</span></span>    |
+| <span data-ttu-id="664bc-181">[Set\*][]</span><span class="sxs-lookup"><span data-stu-id="664bc-181">[Set\*][]</span></span><br/><span data-ttu-id="664bc-182">[Sets (MailAppRequirements)\*][]</span><span class="sxs-lookup"><span data-stu-id="664bc-182">[Sets (MailAppRequirements)\*][]</span></span>                                                 |         |           |    <span data-ttu-id="664bc-183">X</span><span class="sxs-lookup"><span data-stu-id="664bc-183">X</span></span>    |
+| <span data-ttu-id="664bc-184">[Form\*][]</span><span class="sxs-lookup"><span data-stu-id="664bc-184">[Form\*][]</span></span><br/><span data-ttu-id="664bc-185">[FormSettings\*][]</span><span class="sxs-lookup"><span data-stu-id="664bc-185">[FormSettings\*][]</span></span>                                                              |         |           |    <span data-ttu-id="664bc-186">X</span><span class="sxs-lookup"><span data-stu-id="664bc-186">X</span></span>    |
+| <span data-ttu-id="664bc-187">[Sets (Requirements)\*][]</span><span class="sxs-lookup"><span data-stu-id="664bc-187">[Sets (Requirements)\*][]</span></span>                                                                     |    <span data-ttu-id="664bc-188">X</span><span class="sxs-lookup"><span data-stu-id="664bc-188">X</span></span>    |     <span data-ttu-id="664bc-189">X</span><span class="sxs-lookup"><span data-stu-id="664bc-189">X</span></span>     |         |
+| <span data-ttu-id="664bc-190">[Hosts\*][]</span><span class="sxs-lookup"><span data-stu-id="664bc-190">[Hosts\*][]</span></span>                                                                                   |    <span data-ttu-id="664bc-191">X</span><span class="sxs-lookup"><span data-stu-id="664bc-191">X</span></span>    |     <span data-ttu-id="664bc-192">X</span><span class="sxs-lookup"><span data-stu-id="664bc-192">X</span></span>     |         |
 
-<span data-ttu-id="66aef-189">_\*Office 加载项清单架构版本 1.1 中新增_</span><span class="sxs-lookup"><span data-stu-id="66aef-189">_\*Added in the Office Add-in Manifest Schema version 1.1._</span></span>
+<span data-ttu-id="664bc-193">_\*Office 加载项清单架构版本 1.1 中新增_</span><span class="sxs-lookup"><span data-stu-id="664bc-193">_\*Added in the Office Add-in Manifest Schema version 1.1._</span></span>
+
+<span data-ttu-id="664bc-194">_\*\* 仅通过 AppSource 分发的加载项才需要 SupportUrl。_</span><span class="sxs-lookup"><span data-stu-id="664bc-194">_\*\* SupportUrl is only required for add-ins that are distributed through AppSource._</span></span>
 
 <!-- Links for above table -->
 
@@ -81,6 +78,8 @@ ms.locfileid: "36477913"
 [displayname]: /office/dev/add-ins/reference/manifest/displayname
 [description]: /office/dev/add-ins/reference/manifest/description
 [iconurl]: /office/dev/add-ins/reference/manifest/iconurl
+[supporturl]: /office/dev/add-ins/reference/manifest/supporturl
+[SupportUrl]: /office/dev/add-ins/reference/manifest/supporturl
 [defaultsettings (contentapp)]: /office/dev/add-ins/reference/manifest/defaultsettings
 [defaultsettings (taskpaneapp)]: /office/dev/add-ins/reference/manifest/defaultsettings
 [sourcelocation (contentapp)]: /office/dev/add-ins/reference/manifest/sourcelocation
@@ -100,43 +99,45 @@ ms.locfileid: "36477913"
 [sets (requirements)*]: /office/dev/add-ins/reference/manifest/sets
 [hosts*]: /office/dev/add-ins/reference/manifest/hosts
 
-## <a name="hosting-requirements"></a><span data-ttu-id="66aef-216">托管要求</span><span class="sxs-lookup"><span data-stu-id="66aef-216">Hosting requirements</span></span>
+## <a name="hosting-requirements"></a><span data-ttu-id="664bc-222">托管要求</span><span class="sxs-lookup"><span data-stu-id="664bc-222">Hosting requirements</span></span>
 
-<span data-ttu-id="66aef-217">所有图像 URI（如用于[外接程序命令][]的 URI）都必须支持缓存。</span><span class="sxs-lookup"><span data-stu-id="66aef-217">All image URIs, such as those used for [add-in commands][], must support caching.</span></span> <span data-ttu-id="66aef-218">托管图像的服务器不得在 HTTP 响应中返回指定 `no-cache`、`no-store` 或类似选项的 `Cache-Control` 标头。</span><span class="sxs-lookup"><span data-stu-id="66aef-218">The server hosting the image should not return a `Cache-Control` header specifying `no-cache`, `no-store`, or similar options in the HTTP response.</span></span>
+<span data-ttu-id="664bc-223">所有图像 URI（如用于[外接程序命令][]的 URI）都必须支持缓存。</span><span class="sxs-lookup"><span data-stu-id="664bc-223">All image URIs, such as those used for [add-in commands][], must support caching.</span></span> <span data-ttu-id="664bc-224">托管图像的服务器不得在 HTTP 响应中返回指定 `no-cache`、`no-store` 或类似选项的 `Cache-Control` 标头。</span><span class="sxs-lookup"><span data-stu-id="664bc-224">The server hosting the image should not return a `Cache-Control` header specifying `no-cache`, `no-store`, or similar options in the HTTP response.</span></span>
 
-<span data-ttu-id="66aef-219">所有 URL（如 [SourceLocation](/office/dev/add-ins/reference/manifest/sourcelocation) 元素中指定的源文件位置）都应**受 SSL 保护 (HTTPS)**。</span><span class="sxs-lookup"><span data-stu-id="66aef-219">All URLs, such as the source file locations specified in the [SourceLocation](/office/dev/add-ins/reference/manifest/sourcelocation) element, should be **SSL-secured (HTTPS)**.</span></span> [!include[HTTPS guidance](../includes/https-guidance.md)]
+<span data-ttu-id="664bc-225">所有 URL（如 [SourceLocation](/office/dev/add-ins/reference/manifest/sourcelocation) 元素中指定的源文件位置）都应**受 SSL 保护 (HTTPS)**。</span><span class="sxs-lookup"><span data-stu-id="664bc-225">All URLs, such as the source file locations specified in the [SourceLocation](/office/dev/add-ins/reference/manifest/sourcelocation) element, should be **SSL-secured (HTTPS)**.</span></span> [!include[HTTPS guidance](../includes/https-guidance.md)]
 
-## <a name="best-practices-for-submitting-to-appsource"></a><span data-ttu-id="66aef-220">关于提交到 AppSource 的最佳做法</span><span class="sxs-lookup"><span data-stu-id="66aef-220">Best practices for submitting to AppSource</span></span>
+## <a name="best-practices-for-submitting-to-appsource"></a><span data-ttu-id="664bc-226">关于提交到 AppSource 的最佳做法</span><span class="sxs-lookup"><span data-stu-id="664bc-226">Best practices for submitting to AppSource</span></span>
 
-<span data-ttu-id="66aef-p104">确保外接程序 ID 有效且具有唯一 GUID。Web 上提供可用于创建唯一 GUID 的各种 GUID 生成器工具。</span><span class="sxs-lookup"><span data-stu-id="66aef-p104">Make sure that the add-in ID is a valid and unique GUID. Various GUID generator tools are available on the web that you can use to create a unique GUID.</span></span>
+<span data-ttu-id="664bc-p104">确保外接程序 ID 有效且具有唯一 GUID。Web 上提供可用于创建唯一 GUID 的各种 GUID 生成器工具。</span><span class="sxs-lookup"><span data-stu-id="664bc-p104">Make sure that the add-in ID is a valid and unique GUID. Various GUID generator tools are available on the web that you can use to create a unique GUID.</span></span>
 
-<span data-ttu-id="66aef-223">提交到 AppSource 的加载项还必须包括 [SupportUrl](/office/dev/add-ins/reference/manifest/supporturl) 元素。</span><span class="sxs-lookup"><span data-stu-id="66aef-223">Add-ins submitted to AppSource must also include the [SupportUrl](/office/dev/add-ins/reference/manifest/supporturl) element.</span></span> <span data-ttu-id="66aef-224">有关详细信息，请参阅[提交到 AppSource 的应用和加载项的验证策略](/office/dev/store/validation-policies)。</span><span class="sxs-lookup"><span data-stu-id="66aef-224">For more information, see [Validation policies for apps and add-ins submitted to AppSource](/office/dev/store/validation-policies).</span></span>
+<span data-ttu-id="664bc-229">提交到 AppSource 的加载项还必须包括 [SupportUrl](/office/dev/add-ins/reference/manifest/supporturl) 元素。</span><span class="sxs-lookup"><span data-stu-id="664bc-229">Add-ins submitted to AppSource must also include the [SupportUrl](/office/dev/add-ins/reference/manifest/supporturl) element.</span></span> <span data-ttu-id="664bc-230">有关详细信息，请参阅[提交到 AppSource 的应用和加载项的验证策略](/office/dev/store/validation-policies)。</span><span class="sxs-lookup"><span data-stu-id="664bc-230">For more information, see [Validation policies for apps and add-ins submitted to AppSource](/office/dev/store/validation-policies).</span></span>
 
-<span data-ttu-id="66aef-225">仅使用 [AppDomain](/office/dev/add-ins/reference/manifest/appdomains) 元素指定域（除了在 [SourceLocation](/office/dev/add-ins/reference/manifest/sourcelocation) 元素中指定的用于身份验证方案的域）。</span><span class="sxs-lookup"><span data-stu-id="66aef-225">Only use the [AppDomains](/office/dev/add-ins/reference/manifest/appdomains) element to specify domains other than the one specified in the [SourceLocation](/office/dev/add-ins/reference/manifest/sourcelocation) element for authentication scenarios.</span></span>
+<span data-ttu-id="664bc-231">仅使用 [AppDomain](/office/dev/add-ins/reference/manifest/appdomains) 元素指定域（除了在 [SourceLocation](/office/dev/add-ins/reference/manifest/sourcelocation) 元素中指定的用于身份验证方案的域）。</span><span class="sxs-lookup"><span data-stu-id="664bc-231">Only use the [AppDomains](/office/dev/add-ins/reference/manifest/appdomains) element to specify domains other than the one specified in the [SourceLocation](/office/dev/add-ins/reference/manifest/sourcelocation) element for authentication scenarios.</span></span>
 
-## <a name="specify-domains-you-want-to-open-in-the-add-in-window"></a><span data-ttu-id="66aef-226">指定要在外接程序窗口中打开的域</span><span class="sxs-lookup"><span data-stu-id="66aef-226">Specify domains you want to open in the add-in window</span></span>
+## <a name="specify-domains-you-want-to-open-in-the-add-in-window"></a><span data-ttu-id="664bc-232">指定要在外接程序窗口中打开的域</span><span class="sxs-lookup"><span data-stu-id="664bc-232">Specify domains you want to open in the add-in window</span></span>
 
-<span data-ttu-id="66aef-227">在 Office 网页版中运行时，可以将任务窗格导航到任何 URL。</span><span class="sxs-lookup"><span data-stu-id="66aef-227">When running in Office Online, your task pane can be navigated to any URL.</span></span> <span data-ttu-id="66aef-228">但在桌面平台中，如果外接程序尝试转到托管起始页（如清单文件的 [SourceLocation](/office/dev/add-ins/reference/manifest/sourcelocation) 元素中所指定的）的域之外的域中的 URL，则该 URL 将在 Office 主机应用程序的外接程序窗格外的新浏览器窗口中打开。</span><span class="sxs-lookup"><span data-stu-id="66aef-228">However, in desktop platforms, if your add-in tries to go to a URL in a domain other than the domain that hosts the start page (as specified in the [SourceLocation](/office/dev/add-ins/reference/manifest/sourcelocation) element of the manifest file), that URL opens in a new browser window outside the add-in pane of the Office host application.</span></span>
+<span data-ttu-id="664bc-233">在 Office 网页版中运行时，可以将任务窗格导航到任何 URL。</span><span class="sxs-lookup"><span data-stu-id="664bc-233">When running in Office Online, your task pane can be navigated to any URL.</span></span> <span data-ttu-id="664bc-234">但在桌面平台中，如果外接程序尝试转到托管起始页（如清单文件的 [SourceLocation](/office/dev/add-ins/reference/manifest/sourcelocation) 元素中所指定的）的域之外的域中的 URL，则该 URL 将在 Office 主机应用程序的外接程序窗格外的新浏览器窗口中打开。</span><span class="sxs-lookup"><span data-stu-id="664bc-234">However, in desktop platforms, if your add-in tries to go to a URL in a domain other than the domain that hosts the start page (as specified in the [SourceLocation](/office/dev/add-ins/reference/manifest/sourcelocation) element of the manifest file), that URL opens in a new browser window outside the add-in pane of the Office host application.</span></span>
 
-<span data-ttu-id="66aef-229">若要重写此（桌面版 Office）操作，请在清单文件的 [AppDomains](/office/dev/add-ins/reference/manifest/appdomains) 元素中指定的域列表中指定要在外接程序窗口中打开的每个域。</span><span class="sxs-lookup"><span data-stu-id="66aef-229">To override this (desktop Office) behavior, specify each domain you want to open in the add-in window in the list of domains specified in the [AppDomains](/office/dev/add-ins/reference/manifest/appdomains) element of the manifest file.</span></span> <span data-ttu-id="66aef-230">如果加载项尝试转至该列表的域中的 URL，则它将在 Office 网页版和桌面版中的任务窗口中打开。</span><span class="sxs-lookup"><span data-stu-id="66aef-230">If the add-in tries to go to a URL in a domain that is in the list, then it opens in the task pane in both desktop Office and Office Online.</span></span> <span data-ttu-id="66aef-231">如果它尝试转至列表之外的域中的 URL，则在桌面版 Office 中，该 URL 将在新的浏览器窗口中（外接程序窗格之外）打开。</span><span class="sxs-lookup"><span data-stu-id="66aef-231">If it tries to go to a URL that isn't in the list, then, in desktop Office, that URL opens in a new browser window (outside the add-in pane).</span></span>
+<span data-ttu-id="664bc-235">若要重写此（桌面版 Office）操作，请在清单文件的 [AppDomains](/office/dev/add-ins/reference/manifest/appdomains) 元素中指定的域列表中指定要在外接程序窗口中打开的每个域。</span><span class="sxs-lookup"><span data-stu-id="664bc-235">To override this (desktop Office) behavior, specify each domain you want to open in the add-in window in the list of domains specified in the [AppDomains](/office/dev/add-ins/reference/manifest/appdomains) element of the manifest file.</span></span> <span data-ttu-id="664bc-236">如果加载项尝试转至该列表的域中的 URL，则它将在 Office 网页版和桌面版中的任务窗口中打开。</span><span class="sxs-lookup"><span data-stu-id="664bc-236">If the add-in tries to go to a URL in a domain that is in the list, then it opens in the task pane in both desktop Office and Office Online.</span></span> <span data-ttu-id="664bc-237">如果它尝试转至列表之外的域中的 URL，则在桌面版 Office 中，该 URL 将在新的浏览器窗口中（外接程序窗格之外）打开。</span><span class="sxs-lookup"><span data-stu-id="664bc-237">If it tries to go to a URL that isn't in the list, then, in desktop Office, that URL opens in a new browser window (outside the add-in pane).</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="66aef-232">该行为有两个例外情况：</span><span class="sxs-lookup"><span data-stu-id="66aef-232">There are implications to this behavior:</span></span>
+> <span data-ttu-id="664bc-238">该行为有两个例外情况：</span><span class="sxs-lookup"><span data-stu-id="664bc-238">There are implications to this behavior:</span></span>
 > 
-> - <span data-ttu-id="66aef-233">它仅适用于外接程序的根窗格。</span><span class="sxs-lookup"><span data-stu-id="66aef-233">This behavior applies only to the root pane of the add-in.</span></span> <span data-ttu-id="66aef-234">如果外接程序页面中嵌入有 iframe，则可以将该 iframe 定向到任何 URL，不论它是否列在 **AppDomains** 中，即使在桌面版 Office 中也是如此。</span><span class="sxs-lookup"><span data-stu-id="66aef-234">If there is an iframe embedded in the add-in page, the iframe can be directed to any URL regardless of whether it is listed in **AppDomains**, even in desktop Office.</span></span>
-> - <span data-ttu-id="66aef-235">使用 [displayDialogAsync](/javascript/api/office/office.ui?view=common-js#displaydialogasync-startaddress--options--callback-) API 打开对话框时，传递到方法的 URL 必须与外接程序位于相同的域，但是之后对话框可以定向到任意 URL，无论其是否列入 **AppDomains** 甚至桌面 Office 中。</span><span class="sxs-lookup"><span data-stu-id="66aef-235">When a dialog is opened with the [displayDialogAsync](/javascript/api/office/office.ui?view=common-js#displaydialogasync-startaddress--options--callback-) API, the URL that is passed to the method must be in the same domain as the add-in, but the dialog can then be directed to any URL regardless of whether it is listed in **AppDomains**, even in desktop Office.</span></span> 
+> - <span data-ttu-id="664bc-239">它仅适用于外接程序的根窗格。</span><span class="sxs-lookup"><span data-stu-id="664bc-239">This behavior applies only to the root pane of the add-in.</span></span> <span data-ttu-id="664bc-240">如果外接程序页面中嵌入有 iframe，则可以将该 iframe 定向到任何 URL，不论它是否列在 **AppDomains** 中，即使在桌面版 Office 中也是如此。</span><span class="sxs-lookup"><span data-stu-id="664bc-240">If there is an iframe embedded in the add-in page, the iframe can be directed to any URL regardless of whether it is listed in **AppDomains**, even in desktop Office.</span></span>
+> - <span data-ttu-id="664bc-241">使用 [displayDialogAsync](/javascript/api/office/office.ui?view=common-js#displaydialogasync-startaddress--options--callback-) API 打开对话框时，传递到方法的 URL 必须与外接程序位于相同的域，但是之后对话框可以定向到任意 URL，无论其是否列入 **AppDomains** 甚至桌面 Office 中。</span><span class="sxs-lookup"><span data-stu-id="664bc-241">When a dialog is opened with the [displayDialogAsync](/javascript/api/office/office.ui?view=common-js#displaydialogasync-startaddress--options--callback-) API, the URL that is passed to the method must be in the same domain as the add-in, but the dialog can then be directed to any URL regardless of whether it is listed in **AppDomains**, even in desktop Office.</span></span> 
 
-<span data-ttu-id="66aef-236">以下 XML 清单示例在 **SourceLocation** 元素中指定的 `https://www.contoso.com` 域中托管其外接程序页面。</span><span class="sxs-lookup"><span data-stu-id="66aef-236">The following XML manifest example hosts its main add-in page in the `https://www.contoso.com` domain as specified in the **SourceLocation** element.</span></span> <span data-ttu-id="66aef-237">它还指定 **AppDomains** 元素列表内 [AppDomain](/office/dev/add-ins/reference/manifest/appdomain) 元素中的 `https://www.northwindtraders.com` 域。</span><span class="sxs-lookup"><span data-stu-id="66aef-237">It also specifies the `https://www.northwindtraders.com` domain in an [AppDomain](/office/dev/add-ins/reference/manifest/appdomain) element within the **AppDomains** element list.</span></span> <span data-ttu-id="66aef-238">如果外接程序转至 www.northwindtraders.com 域中的页面，则该页面将在外接程序窗格中打开，即使在 Office 桌面版中也是如此。</span><span class="sxs-lookup"><span data-stu-id="66aef-238">If the add-in goes to a page in the www.northwindtraders.com domain, that page opens in the add-in pane, even in Office desktop.</span></span>
+<span data-ttu-id="664bc-242">以下 XML 清单示例在 **SourceLocation** 元素中指定的 `https://www.contoso.com` 域中托管其外接程序页面。</span><span class="sxs-lookup"><span data-stu-id="664bc-242">The following XML manifest example hosts its main add-in page in the `https://www.contoso.com` domain as specified in the **SourceLocation** element.</span></span> <span data-ttu-id="664bc-243">它还指定 **AppDomains** 元素列表内 [AppDomain](/office/dev/add-ins/reference/manifest/appdomain) 元素中的 `https://www.northwindtraders.com` 域。</span><span class="sxs-lookup"><span data-stu-id="664bc-243">It also specifies the `https://www.northwindtraders.com` domain in an [AppDomain](/office/dev/add-ins/reference/manifest/appdomain) element within the **AppDomains** element list.</span></span> <span data-ttu-id="664bc-244">如果外接程序转至 www.northwindtraders.com 域中的页面，则该页面将在外接程序窗格中打开，即使在 Office 桌面版中也是如此。</span><span class="sxs-lookup"><span data-stu-id="664bc-244">If the add-in goes to a page in the www.northwindtraders.com domain, that page opens in the add-in pane, even in Office desktop.</span></span>
 
 ```XML
 <?xml version="1.0" encoding="UTF-8"?>
-<OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.1" xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance" xsi:type="TaskPaneApp">
+<OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="TaskPaneApp">
+  <!--IMPORTANT! Id must be unique for each add-in. If you copy this manifest ensure that you change this id to your own GUID. -->
   <Id>c6890c26-5bbb-40ed-a321-37f07909a2f0</Id>
   <Version>1.0</Version>
   <ProviderName>Contoso, Ltd</ProviderName>
   <DefaultLocale>en-US</DefaultLocale>
   <DisplayName DefaultValue="Northwind Traders Excel" />
   <Description DefaultValue="Search Northwind Traders data from Excel"/>
+  <SupportUrl DefaultValue="[Insert the URL of a page that provides support information for the app]" />
   <AppDomains>
     <AppDomain>https://www.northwindtraders.com</AppDomain>
   </AppDomains>
@@ -147,17 +148,17 @@ ms.locfileid: "36477913"
 </OfficeApp>
 ```
 
-## <a name="specify-domains-from-which-officejs-api-calls-are-made"></a><span data-ttu-id="66aef-239">指定从中执行 Office .js API 调用的域</span><span class="sxs-lookup"><span data-stu-id="66aef-239">Specify domains from which Office.js API calls are made</span></span>
+## <a name="specify-domains-from-which-officejs-api-calls-are-made"></a><span data-ttu-id="664bc-245">指定从中执行 Office .js API 调用的域</span><span class="sxs-lookup"><span data-stu-id="664bc-245">Specify domains from which Office.js API calls are made</span></span>
 
-<span data-ttu-id="66aef-240">你的加载项可以从清单文件的 [SourceLocation](/office/dev/add-ins/reference/manifest/sourcelocation) 元素中引用的域执行 Office.js API 调用。</span><span class="sxs-lookup"><span data-stu-id="66aef-240">Your add-in can make Office.js API calls from the domain referenced in the [SourceLocation](/office/dev/add-ins/reference/manifest/sourcelocation) element of the manifest file.</span></span> <span data-ttu-id="66aef-241">如果加载项中有需要访问 Office.js API 的其他 IFrame，请将该源 URL 的域添加到在清单文件的 [AppDomains](/office/dev/add-ins/reference/manifest/appdomains) 元素中指定的列表。</span><span class="sxs-lookup"><span data-stu-id="66aef-241">If you have other IFrames within your add-in that need to access Office.js APIs, add the domain of that source URL to the list specified in the [AppDomains](/office/dev/add-ins/reference/manifest/appdomains) element of the manifest file.</span></span> <span data-ttu-id="66aef-242">如果有一个未包含在 `AppDomains` 列表中且具有源的 IFrame 尝试执行 Office.js API 调用，则加载项将收到[“权限被拒绝”错误](../reference/javascript-api-for-office-error-codes.md)。</span><span class="sxs-lookup"><span data-stu-id="66aef-242">If an IFrame with a source not contained in the `AppDomains` list attempts to make an Office.js API call, then the add-in will receive a [permission denied error](../reference/javascript-api-for-office-error-codes.md).</span></span> 
+<span data-ttu-id="664bc-246">你的加载项可以从清单文件的 [SourceLocation](/office/dev/add-ins/reference/manifest/sourcelocation) 元素中引用的域执行 Office.js API 调用。</span><span class="sxs-lookup"><span data-stu-id="664bc-246">Your add-in can make Office.js API calls from the domain referenced in the [SourceLocation](/office/dev/add-ins/reference/manifest/sourcelocation) element of the manifest file.</span></span> <span data-ttu-id="664bc-247">如果加载项中有需要访问 Office.js API 的其他 IFrame，请将该源 URL 的域添加到在清单文件的 [AppDomains](/office/dev/add-ins/reference/manifest/appdomains) 元素中指定的列表。</span><span class="sxs-lookup"><span data-stu-id="664bc-247">If you have other IFrames within your add-in that need to access Office.js APIs, add the domain of that source URL to the list specified in the [AppDomains](/office/dev/add-ins/reference/manifest/appdomains) element of the manifest file.</span></span> <span data-ttu-id="664bc-248">如果有一个未包含在 `AppDomains` 列表中且具有源的 IFrame 尝试执行 Office.js API 调用，则加载项将收到[“权限被拒绝”错误](../reference/javascript-api-for-office-error-codes.md)。</span><span class="sxs-lookup"><span data-stu-id="664bc-248">If an IFrame with a source not contained in the `AppDomains` list attempts to make an Office.js API call, then the add-in will receive a [permission denied error](../reference/javascript-api-for-office-error-codes.md).</span></span> 
 
-## <a name="manifest-v11-xml-file-examples-and-schemas"></a><span data-ttu-id="66aef-243">清单 v1.1 XML 文件示例和架构</span><span class="sxs-lookup"><span data-stu-id="66aef-243">Manifest v1.1 XML file examples and schemas</span></span>
+## <a name="manifest-v11-xml-file-examples-and-schemas"></a><span data-ttu-id="664bc-249">清单 v1.1 XML 文件示例和架构</span><span class="sxs-lookup"><span data-stu-id="664bc-249">Manifest v1.1 XML file examples and schemas</span></span>
 
-<span data-ttu-id="66aef-244">下面各部分展示了内容加载项、任务窗格加载项和 Outlook 加载项的清单 v1.1 XML 文件示例。</span><span class="sxs-lookup"><span data-stu-id="66aef-244">The following sections show examples of manifest v1.1 XML files for content, task pane, and Outlook add-ins.</span></span>
+<span data-ttu-id="664bc-250">下面各部分展示了内容加载项、任务窗格加载项和 Outlook 加载项的清单 v1.1 XML 文件示例。</span><span class="sxs-lookup"><span data-stu-id="664bc-250">The following sections show examples of manifest v1.1 XML files for content, task pane, and Outlook add-ins.</span></span>
 
-# <a name="task-panetabtabid-1"></a>[<span data-ttu-id="66aef-245">任务窗格</span><span class="sxs-lookup"><span data-stu-id="66aef-245">Task pane</span></span>](#tab/tabid-1)
+# <a name="task-panetabtabid-1"></a>[<span data-ttu-id="664bc-251">任务窗格</span><span class="sxs-lookup"><span data-stu-id="664bc-251">Task pane</span></span>](#tab/tabid-1)
 
-[<span data-ttu-id="66aef-246">任务窗格应用程序清单架构</span><span class="sxs-lookup"><span data-stu-id="66aef-246">Task pane app manifest schema</span></span>](https://github.com/OfficeDev/office-js-docs-pr/tree/master/docs/overview/schemas/taskpane)
+[<span data-ttu-id="664bc-252">任务窗格应用程序清单架构</span><span class="sxs-lookup"><span data-stu-id="664bc-252">Task pane app manifest schema</span></span>](https://github.com/OfficeDev/office-js-docs-pr/tree/master/docs/overview/schemas/taskpane)
 
 ```XML
 <?xml version="1.0" encoding="utf-8"?>
@@ -167,7 +168,7 @@ ms.locfileid: "36477913"
 
   <!-- BeginBasicSettings: Add-in metadata, used for all versions of Office unless override provided -->
 
-  <!--IMPORTANT! Id must be unique for your add-in. If you clone this manifest ensure that you change this id to your own GUID -->
+  <!--IMPORTANT! Id must be unique for your add-in. If you copy this manifest ensure that you change this id to your own GUID. -->
   <Id>e504fb41-a92a-4526-b101-542f357b7acb</Id>
   <Version>1.0.0.0</Version>
   <ProviderName>Contoso</ProviderName>
@@ -178,9 +179,7 @@ ms.locfileid: "36477913"
   <!--Icon for your add-in. Used on installation screens and the add-ins dialog -->
   <IconUrl DefaultValue="https://contoso.com/assets/icon-32.png" />
   <HighResolutionIconUrl DefaultValue="https://contoso.com/assets/hi-res-icon.png" />
-
   <SupportUrl DefaultValue="[Insert the URL of a page that provides support information for the app]" />
-
   <!--BeginTaskpaneMode integration. Office 2013 and any client that doesn't understand commands will use this section.
     This section will also be used if there are no VersionOverrides -->
   <Hosts>
@@ -355,9 +354,9 @@ ms.locfileid: "36477913"
 </OfficeApp>
 ```
 
-# <a name="contenttabtabid-2"></a>[<span data-ttu-id="66aef-247">内容</span><span class="sxs-lookup"><span data-stu-id="66aef-247">Content</span></span>](#tab/tabid-2)
+# <a name="contenttabtabid-2"></a>[<span data-ttu-id="664bc-253">内容</span><span class="sxs-lookup"><span data-stu-id="664bc-253">Content</span></span>](#tab/tabid-2)
 
-[<span data-ttu-id="66aef-248">内容应用程序清单架构</span><span class="sxs-lookup"><span data-stu-id="66aef-248">Content app manifest schema</span></span>](https://github.com/OfficeDev/office-js-docs-pr/tree/master/docs/overview/schemas/content)
+[<span data-ttu-id="664bc-254">内容应用程序清单架构</span><span class="sxs-lookup"><span data-stu-id="664bc-254">Content app manifest schema</span></span>](https://github.com/OfficeDev/office-js-docs-pr/tree/master/docs/overview/schemas/content)
 
 ```XML
 <?xml version="1.0" encoding="utf-8"?>
@@ -365,6 +364,7 @@ ms.locfileid: "36477913"
   xmlns="http://schemas.microsoft.com/office/appforoffice/1.1"
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:type="ContentApp">
+  <!--IMPORTANT! Id must be unique for each add-in. If you copy this manifest ensure that you change this id to your own GUID. -->
   <Id>01eac144-e55a-45a7-b6e3-f1cc60ab0126</Id>
   <AlternateId>en-US\WA123456789</AlternateId>
   <Version>1.0.0.0</Version>
@@ -374,9 +374,7 @@ ms.locfileid: "36477913"
   <Description DefaultValue="Describe the features of this app." />
   <IconUrl DefaultValue="https://contoso.com/assets/icon-32.png" />
   <HighResolutionIconUrl DefaultValue="https://contoso.com/assets/hi-res-icon.png" />
-
   <SupportUrl DefaultValue="[Insert the URL of a page that provides support information for the app]" />
-
   <Hosts>
     <Host Name="Workbook" />
     <Host Name="Database" />
@@ -396,9 +394,9 @@ ms.locfileid: "36477913"
 </OfficeApp>
 ```
 
-# <a name="mailtabtabid-3"></a>[<span data-ttu-id="66aef-249">邮件</span><span class="sxs-lookup"><span data-stu-id="66aef-249">Mail</span></span>](#tab/tabid-3)
+# <a name="mailtabtabid-3"></a>[<span data-ttu-id="664bc-255">邮件</span><span class="sxs-lookup"><span data-stu-id="664bc-255">Mail</span></span>](#tab/tabid-3)
 
-[<span data-ttu-id="66aef-250">邮件应用程序清单架构</span><span class="sxs-lookup"><span data-stu-id="66aef-250">Mail app manifest schema</span></span>](https://github.com/OfficeDev/office-js-docs-pr/tree/master/docs/overview/schemas/mail)
+[<span data-ttu-id="664bc-256">邮件应用程序清单架构</span><span class="sxs-lookup"><span data-stu-id="664bc-256">Mail app manifest schema</span></span>](https://github.com/OfficeDev/office-js-docs-pr/tree/master/docs/overview/schemas/mail)
 
 ```XML
 <?xml version="1.0" encoding="utf-8"?>
@@ -406,7 +404,7 @@ ms.locfileid: "36477913"
   "http://schemas.microsoft.com/office/appforoffice/1.1"
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:type="MailApp">
-
+  <!--IMPORTANT! Id must be unique for each add-in. If you copy this manifest ensure that you change this id to your own GUID. -->
   <Id>971E76EF-D73E-567F-ADAE-5A76B39052CF</Id>
   <Version>1.0</Version>
   <ProviderName>Microsoft</ProviderName>
@@ -423,9 +421,7 @@ ms.locfileid: "36477913"
   <!-- the web server that hosts the icon files. -->
   <IconUrl DefaultValue="https://contoso.com/assets/icon-64.png" />
   <HighResolutionIconUrl DefaultValue="https://contoso.com/assets/hi-res-icon.png" />
-
   <SupportUrl DefaultValue="[Insert the URL of a page that provides support information for the app]" />
-
   <Hosts>
     <Host Name="Mailbox" />
   </Hosts>
@@ -491,17 +487,17 @@ ms.locfileid: "36477913"
 
 ---
 
-## <a name="validate-and-troubleshoot-issues-with-your-manifest"></a><span data-ttu-id="66aef-251">验证并排查清单问题</span><span class="sxs-lookup"><span data-stu-id="66aef-251">Validate and troubleshoot issues with your manifest</span></span>
+## <a name="validate-and-troubleshoot-issues-with-your-manifest"></a><span data-ttu-id="664bc-257">验证并排查清单问题</span><span class="sxs-lookup"><span data-stu-id="664bc-257">Validate and troubleshoot issues with your manifest</span></span>
 
-<span data-ttu-id="66aef-p111">如需排查清单问题，请参阅[验证并排查清单问题](../testing/troubleshoot-manifest.md)。其中介绍了如何针对 [XML 架构定义 (XSD)](https://github.com/OfficeDev/office-js-docs-pr/tree/master/docs/overview/schemas) 验证清单，以及如何使用运行时日志记录功能调试清单。</span><span class="sxs-lookup"><span data-stu-id="66aef-p111">For troubleshooting issues with your manifest, see [Validate and troubleshoot issues with your manifest](../testing/troubleshoot-manifest.md). There, you will find information on how to validate the manifest against the [XML Schema Definition (XSD)](https://github.com/OfficeDev/office-js-docs-pr/tree/master/docs/overview/schemas), and also how to use runtime logging to debug the manifest.</span></span>
+<span data-ttu-id="664bc-p111">如需排查清单问题，请参阅[验证并排查清单问题](../testing/troubleshoot-manifest.md)。其中介绍了如何针对 [XML 架构定义 (XSD)](https://github.com/OfficeDev/office-js-docs-pr/tree/master/docs/overview/schemas) 验证清单，以及如何使用运行时日志记录功能调试清单。</span><span class="sxs-lookup"><span data-stu-id="664bc-p111">For troubleshooting issues with your manifest, see [Validate and troubleshoot issues with your manifest](../testing/troubleshoot-manifest.md). There, you will find information on how to validate the manifest against the [XML Schema Definition (XSD)](https://github.com/OfficeDev/office-js-docs-pr/tree/master/docs/overview/schemas), and also how to use runtime logging to debug the manifest.</span></span>
 
-## <a name="see-also"></a><span data-ttu-id="66aef-254">另请参阅</span><span class="sxs-lookup"><span data-stu-id="66aef-254">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="664bc-260">另请参阅</span><span class="sxs-lookup"><span data-stu-id="664bc-260">See also</span></span>
 
-* <span data-ttu-id="66aef-255">[在清单中创建加载项命令][加载项命令]</span><span class="sxs-lookup"><span data-stu-id="66aef-255">[Create add-in commands in your manifest][add-in commands]</span></span>
-* [<span data-ttu-id="66aef-256">指定 Office 主机和 API 要求</span><span class="sxs-lookup"><span data-stu-id="66aef-256">Specify Office hosts and API requirements</span></span>](specify-office-hosts-and-api-requirements.md)
-* [<span data-ttu-id="66aef-257">Office 外接程序的本地化</span><span class="sxs-lookup"><span data-stu-id="66aef-257">Localization for Office Add-ins</span></span>](localization.md)
-* [<span data-ttu-id="66aef-258">Office 外接程序清单的架构参考</span><span class="sxs-lookup"><span data-stu-id="66aef-258">Schema reference for Office Add-ins manifests</span></span>](https://github.com/OfficeDev/office-js-docs-pr/tree/master/docs/overview/schemas)
-* [<span data-ttu-id="66aef-259">验证并排查清单问题</span><span class="sxs-lookup"><span data-stu-id="66aef-259">Validate and troubleshoot issues with your manifest</span></span>](../testing/troubleshoot-manifest.md)
+* <span data-ttu-id="664bc-261">[在清单中创建加载项命令][加载项命令]</span><span class="sxs-lookup"><span data-stu-id="664bc-261">[Create add-in commands in your manifest][add-in commands]</span></span>
+* [<span data-ttu-id="664bc-262">指定 Office 主机和 API 要求</span><span class="sxs-lookup"><span data-stu-id="664bc-262">Specify Office hosts and API requirements</span></span>](specify-office-hosts-and-api-requirements.md)
+* [<span data-ttu-id="664bc-263">Office 外接程序的本地化</span><span class="sxs-lookup"><span data-stu-id="664bc-263">Localization for Office Add-ins</span></span>](localization.md)
+* [<span data-ttu-id="664bc-264">Office 外接程序清单的架构参考</span><span class="sxs-lookup"><span data-stu-id="664bc-264">Schema reference for Office Add-ins manifests</span></span>](https://github.com/OfficeDev/office-js-docs-pr/tree/master/docs/overview/schemas)
+* [<span data-ttu-id="664bc-265">验证并排查清单问题</span><span class="sxs-lookup"><span data-stu-id="664bc-265">Validate and troubleshoot issues with your manifest</span></span>](../testing/troubleshoot-manifest.md)
 
 [加载项命令]: create-addin-commands.md
 [add-in commands]: create-addin-commands.md
