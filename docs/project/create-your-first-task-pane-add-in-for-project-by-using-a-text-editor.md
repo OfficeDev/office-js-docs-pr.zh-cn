@@ -1,18 +1,18 @@
 ---
 title: 使用文本编辑器为 Microsoft Project 创建首个任务窗格加载项
 description: ''
-ms.date: 03/19/2019
+ms.date: 09/26/2019
 localization_priority: Normal
-ms.openlocfilehash: 8c6a961881ca80bc61c75c78405d9f80f8a9420b
-ms.sourcegitcommit: 1fb99b1b4e63868a0e81a928c69a34c42bf7e209
+ms.openlocfilehash: 4ed9c03082b139ad42bc7bef263a735fde4d9af2
+ms.sourcegitcommit: 528577145b2cf0a42bc64c56145d661c4d019fb8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/30/2019
-ms.locfileid: "36695768"
+ms.lasthandoff: 10/02/2019
+ms.locfileid: "37353893"
 ---
 # <a name="create-your-first-task-pane-add-in-for-microsoft-project-by-using-a-text-editor"></a>使用文本编辑器为 Microsoft Project 创建首个任务窗格加载项
 
-您可以使用 Office 外接程序的 Yeoman 生成器, 为 Project Standard 2013、Project Professional 2013 或更高版本创建任务窗格外接程序。本文介绍如何创建一个简单的外接程序, 该外接程序使用指向文件共享上的 HTML 文件的 XML 清单。 Project OM Test 示例加载项用于测试一些 JavaScript 功能，这些功能为加载项使用对象模型。使用 Project 中的“信任中心”**** 注册包含清单文件的文件共享后，你可以从功能区上的“Project”**** 选项卡打开任务窗格加载项。 （本文中的示例代码基于 Microsoft Corporation 的 Arvind lyer 所做的测试应用程序。）
+您可以使用 Office 外接程序的 Yeoman 生成器，为 Project Standard 2013、Project Professional 2013 或更高版本创建任务窗格外接程序。本文介绍如何创建一个简单的外接程序，该外接程序使用指向文件共享上的 HTML 文件的 XML 清单。 Project OM Test 示例加载项用于测试一些 JavaScript 功能，这些功能为加载项使用对象模型。使用 Project 中的“信任中心”**** 注册包含清单文件的文件共享后，你可以从功能区上的“Project”**** 选项卡打开任务窗格加载项。 （本文中的示例代码基于 Microsoft Corporation 的 Arvind lyer 所做的测试应用程序。）
 
 Project 与其他 Microsoft Office 客户端使用相同的加载项清单架构以及许多相同的 JavaScript API。 Project 2013 SDK 下载的 `Samples\Apps` 子目录中提供了本文所述的加载项的完整代码。
 
@@ -31,8 +31,9 @@ JSOMCall.html 示例使用 office.js 文件和 project-15.js 文件中包含的 
 ```XML
 <?xml version="1.0" encoding="utf-8"?>
    <OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.1"
-              xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
               xsi:type="TaskPaneApp">
+     <!--IMPORTANT! Id must be unique for each add-in. If you copy this manifest ensure that you change this id to your own GUID. -->
      <Id>93A26520-9414-492F-994B-4983A1C7A607</Id>
      <Version>15.0</Version>
      <ProviderName>Microsoft</ProviderName>
@@ -43,6 +44,7 @@ JSOMCall.html 示例使用 office.js 文件和 project-15.js 文件中包含的 
      <Description DefaultValue="Test the task pane add-in object model for Project - English (US)">
        <Override Locale="fr-fr" Value="Test the task pane add-in object model for Project - French (France)"/>
      </Description>
+     <SupportUrl DefaultValue="[Insert the URL of a page that provides support information for the app]" />
      <Hosts>
        <Host Name="Project"/>
        <Host Name="Workbook"/>

@@ -3,12 +3,12 @@ title: 使用 XLL 用户定义的函数扩展自定义函数
 description: 启用与自定义函数具有等效功能的 Excel XLL 用户定义函数的兼容性
 ms.date: 07/31/2019
 localization_priority: Normal
-ms.openlocfilehash: 7ec853e5b4d03267e1c9d33d2df8a79d86860095
-ms.sourcegitcommit: c8914ce0f48a0c19bbfc3276a80d090bb7ce68e1
+ms.openlocfilehash: a0a98dab1ec046151d2dd0d80a4a3a4542654574
+ms.sourcegitcommit: 528577145b2cf0a42bc64c56145d661c4d019fb8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/26/2019
-ms.locfileid: "37235300"
+ms.lasthandoff: 10/02/2019
+ms.locfileid: "37353879"
 ---
 # <a name="extend-custom-functions-with-xll-user-defined-functions"></a>使用 XLL 用户定义的函数扩展自定义函数
 
@@ -62,7 +62,7 @@ ms.locfileid: "37235300"
 
 |         |XLL 用户定义的函数 |XLL 兼容的自定义函数 |Excel 加载项自定义函数 |
 |---------|---------|---------|---------|
-| 支持的平台 | Windows | Windows、macOS、Excel 网页 | Windows、macOS、Excel 网页 |
+| 支持的平台 | Windows | Windows、macOS、web 浏览器 | Windows、macOS、web 浏览器 |
 | 支持的文件格式 | .XLSX、XLSB、XLSM、XLS | .XLSX、XLSB、XLSM | .XLSX、XLSB、XLSM |
 | 公式自动完成 | 否 | 可访问 | 是 |
 | 媒体 | 可通过 xlfRTD 和 XLL 回调实现。 | 否 | 可访问 |

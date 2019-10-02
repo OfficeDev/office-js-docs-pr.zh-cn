@@ -1,14 +1,14 @@
 ---
 title: 对 Office 2013 内容和任务窗格加载项的 Office JavaScript API 支持
 description: ''
-ms.date: 03/19/2019
+ms.date: 09/26/2019
 localization_priority: Normal
-ms.openlocfilehash: aeb75d2dbdcae5636bbe81820b9387bd840120c7
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: 017542766fc6fb03cd7d4038de0cf3091d74857e
+ms.sourcegitcommit: 528577145b2cf0a42bc64c56145d661c4d019fb8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32449307"
+ms.lasthandoff: 10/02/2019
+ms.locfileid: "37353788"
 ---
 # <a name="office-javascript-api-support-for-content-and-task-pane-add-ins-in-office-2013"></a>对 Office 2013 中内容和任务窗格外接程序的 Office JavaScript API 支持
 
@@ -18,7 +18,7 @@ ms.locfileid: "32449307"
 
 1. **与其他 Office 外接程序共享的常见对象。** 这些对象包括 [Office](/javascript/api/office)、[Context](/javascript/api/office/office.context) 和 [AsyncResult](/javascript/api/office/office.asyncresult)。**Office** 对象是 Office JavaScript API 的根对象。**Context** 对象表示外接程序的运行时环境。**Office** 和 **Context** 都是适用于任何 Office 外接程序的基础对象。**AsyncResult** 对象表示异步操作的结果，比如返回到 **getSelectedDataAsync** 方法的数据，其中该方法可以读取用户在文档中选择的内容。
 
-2. **Document 对象。** 可通过 [Document](/javascript/api/office/office.document) 对象的方法、属性和事件公开大多数可用于内容和任务窗格加载项的 API。 内容或任务窗格加载项可以使用 documents 属性访问[](/javascript/api/office/office.context#document) **document**对象, 通过它, 可以访问 API 的关键成员, 以处理文档中的数据, 例如[绑定](/javascript/api/office/office.bindings)和[CustomXmlParts](/javascript/api/office/office.customxmlparts)对象, 以及[getSelectedDataAsync](/javascript/api/office/office.document#getselecteddataasync-coerciontype--options--callback-)、 [document.setselecteddataasync](/javascript/api/office/office.document#setselecteddataasync-data--options--callback-)和[document.getfileasync](/javascript/api/office/office.document#getfileasync-filetype--options--callback-)方法。 **Document** 对象还提供用于确定文档是只读模式还是编辑模式的 [mode](/javascript/api/office/office.document#mode) 属性，[url](/javascript/api/office/office.document#url) 属性可以获取当前文档的 URL，并访问 [Settings](/javascript/api/office/office.settings) 对象。 **Document**对象还支持添加[SelectionChanged](/javascript/api/office/office.documentselectionchangedeventargs)事件的事件处理程序, 以便您可以在用户更改文档中的选定内容时进行检测。
+2. **Document 对象。** 可通过 [Document](/javascript/api/office/office.document) 对象的方法、属性和事件公开大多数可用于内容和任务窗格加载项的 API。 内容或任务窗格加载项可以使用[documents 属性访问](/javascript/api/office/office.context#document) **document**对象，通过它，可以访问 API 的关键成员，以处理文档中的数据，例如[绑定](/javascript/api/office/office.bindings)和[CustomXmlParts](/javascript/api/office/office.customxmlparts)对象，以及[getSelectedDataAsync](/javascript/api/office/office.document#getselecteddataasync-coerciontype--options--callback-)、 [document.setselecteddataasync](/javascript/api/office/office.document#setselecteddataasync-data--options--callback-)和[document.getfileasync](/javascript/api/office/office.document#getfileasync-filetype--options--callback-)方法。 **Document** 对象还提供用于确定文档是只读模式还是编辑模式的 [mode](/javascript/api/office/office.document#mode) 属性，[url](/javascript/api/office/office.document#url) 属性可以获取当前文档的 URL，并访问 [Settings](/javascript/api/office/office.settings) 对象。 **Document**对象还支持添加[SelectionChanged](/javascript/api/office/office.documentselectionchangedeventargs)事件的事件处理程序，以便您可以在用户更改文档中的选定内容时进行检测。
 
    内容或任务窗格外接程序只能在加载 DOM 和运行时环境后访问 **Document** 对象，通常是在 [Office.initialize](/javascript/api/office) 事件的事件处理程序中加载。有关应用程序初始化时的事件流以及如何检查 DOM 和运行时是否成功加载的信息，请参阅[加载 DOM 和运行时环境](loading-the-dom-and-runtime-environment.md)。
 
@@ -122,7 +122,7 @@ function write(message){
 
 通常需要保存外接程序的自定义数据，例如用户的首选项或外接程序的状态，并在下一次打开外接程序时访问该数据。 可以使用通用的 Web 编程技术保存该数据，例如浏览器 cookie 或 HTML 5 Web 存储。 或者，如果你的外接程序在 Excel、PowerPoint 或 Word 中运行，则可以使用 [设置](/javascript/api/office/office.settings) 对象的方法。 使用**设置**对象创建的数据存储在电子表格、演示文档或植入和保存外接程序的文档中。 此数据仅用于创建它的外接程序。
 
-若要避免对存储文档的服务器的往返, 使用**Settings**对象创建的数据在运行时在内存中进行管理。 之前保存的设置数据在初始化外接程序时加载到内存中，并在调用 [Settings.saveAsync](/javascript/api/office/office.settings#saveasync-options--callback-) 方法时，仅将对数据的更改保存回文档。 在内部，将该数据作为名称/值对存储在序列化的 JSON 对象中。 可以使用 [Settings](/javascript/api/office/office.settings#get-name-) 对象的 [get](/javascript/api/office/office.settings#set-name--value-)、[set](/javascript/api/office/office.settings#remove-name-) 和 **remove** 方法从数据的内存副本中读取、写入和删除项目。 以下代码行显示如何创建名为 `themeColor` 的设置，并将它的值设置为“green”。
+若要避免对存储文档的服务器的往返，使用**Settings**对象创建的数据在运行时在内存中进行管理。 之前保存的设置数据在初始化外接程序时加载到内存中，并在调用 [Settings.saveAsync](/javascript/api/office/office.settings#saveasync-options--callback-) 方法时，仅将对数据的更改保存回文档。 在内部，将该数据作为名称/值对存储在序列化的 JSON 对象中。 可以使用 [Settings](/javascript/api/office/office.settings#get-name-) 对象的 [get](/javascript/api/office/office.settings#set-name--value-)、[set](/javascript/api/office/office.settings#remove-name-) 和 **remove** 方法从数据的内存副本中读取、写入和删除项目。 以下代码行显示如何创建名为 `themeColor` 的设置，并将它的值设置为“green”。
 
 
 
@@ -151,7 +151,7 @@ Office.context.document.settings.set('themeColor', 'green');
 ```XML
 <?xml version="1.0" encoding="utf-8"?>
 <OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.0"
- xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance" 
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
  xsi:type="TaskPaneApp">
 ???<!-- Other manifest elements omitted. -->
   <Permissions>ReadDocument</Permissions>
