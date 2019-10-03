@@ -31,7 +31,7 @@ PowerPoint 外接程序的 XML 清单文件提供有关外接程序的重要信�
     ```xml  
     <?xml version="1.0" encoding="utf-8" ?>
     <OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.1"
-    xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:type="TaskPaneApp">
         <Id>[Replace_With_Your_GUID]</Id>
         <Version>1.0</Version>
@@ -40,6 +40,7 @@ PowerPoint 外接程序的 XML 清单文件提供有关外接程序的重要信�
         <DisplayName DefaultValue="Get Doc add-in" />
         <Description DefaultValue="My get PowerPoint or Word document add-in." />
         <IconUrl DefaultValue="http://officeimg.vo.msecnd.net/_layouts/images/general/office_logo.jpg" />
+        <SupportUrl DefaultValue="[Insert the URL of a page that provides support information for the app]" />
         <Hosts>
         <Host Name="Document" />
         <Host Name="Presentation" />
@@ -213,7 +214,7 @@ function getSlice(state) {
 添加以下代码，将切片发送到 Web 服务。
 
 > [!NOTE]
-> 此代码将 PowerPoint 或 Word 文件发送到多个切片中的 web 服务器。 Web 服务器或服务必须将每个单独的切片追加到一个文件中, 然后将其另存为 .pptx 或 .docx 文件, 然后才能对其执行任何操作。
+> 此代码将 PowerPoint 或 Word 文件发送到多个切片中的 web 服务器。 Web 服务器或服务必须将每个单独的切片追加到一个文件中，然后将其另存为 .pptx 或 .docx 文件，然后才能对其执行任何操作。
 
 ```js
 function sendSlice(slice, state) {
