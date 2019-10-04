@@ -5,12 +5,12 @@ title: 在 Excel 中创建自定义函数
 ms.topic: overview
 scenarios: getting-started
 localization_priority: Priority
-ms.openlocfilehash: aeff31dfce62aa9983f9a4ff2d766e127314d967
-ms.sourcegitcommit: 528577145b2cf0a42bc64c56145d661c4d019fb8
+ms.openlocfilehash: 49c388f7b1464ba5688ed1d7855a16c5e1ca848f
+ms.sourcegitcommit: 3159f4ed9fd8fa631300d15501912ba6293740c3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "37353865"
+ms.lasthandoff: 10/04/2019
+ms.locfileid: "37391239"
 ---
 # <a name="create-custom-functions-in-excel"></a>在 Excel 中创建自定义函数 
 
@@ -71,7 +71,7 @@ function add(first, second){
 请注意，控制自定义函数运行时加载的 **functions.html** 文件必须链接至自定义函数的当前 CDN。 准备有当前版本的 Yo Office 生成器的项目引用正确的 CDN。 如果更新 2019 年 3 月或更早的自定义函数项目，则需要将以下代码复制到 **functions.html** 页面。
 
 ```HTML
-<script src="https://appsforoffice.microsoft.com/lib/beta/hosted/custom-functions-runtime.js" type="text/javascript"></script>
+<script src="https://appsforoffice.microsoft.com/lib/1.1/hosted/custom-functions-runtime.js" type="text/javascript"></script>
 ```
 
 ### <a name="manifest-file"></a>清单文件
