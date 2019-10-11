@@ -3,12 +3,12 @@ title: 清单文件中的 GetStarted 元素
 description: ''
 ms.date: 10/09/2018
 localization_priority: Normal
-ms.openlocfilehash: d9ebcba7881b388544eeb3e2c3028bff9bdcf9a6
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: 82fa1b9b62674adfb05c07536a7fdf2bbabf8f45
+ms.sourcegitcommit: e5a5ec4ba32bacd0ccd13291b4e7f4bfc42901a3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32452079"
+ms.lasthandoff: 10/09/2019
+ms.locfileid: "37429734"
 ---
 # <a name="getstarted-element"></a>GetStarted 元素
 
@@ -20,7 +20,7 @@ ms.locfileid: "32452079"
 |:------------------------------|:--------:|:---------------------------------------------------|
 | [标题](#title)               | 是      | 定义外接程序公开功能的位置。     |
 | [说明](#description)   | 是      | 包含 JavaScript 函数的文件的 URL。|
-| [LearnMoreUrl](#learnmoreurl) | 否       | 指向详细说明外接程序的页面的 URL。   |
+| [LearnMoreUrl](#learnmoreurl) | 是       | 指向详细说明外接程序的页面的 URL。   |
 
 ### <a name="title"></a>标题 
 

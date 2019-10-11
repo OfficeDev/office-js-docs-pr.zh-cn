@@ -3,12 +3,12 @@ title: 清单文件中的 ExtensionPoint 元件
 description: ''
 ms.date: 09/05/2019
 localization_priority: Priority
-ms.openlocfilehash: ed26c5e81a2c8229faad2c8af6b1edaff2f288e5
-ms.sourcegitcommit: d34aa0b282cc76ffff579da2a7945efd12fb7340
+ms.openlocfilehash: c9d3c9313c13a069de2ac105b6a44a7260498e8f
+ms.sourcegitcommit: 4d9f3e177b0bcd62804d5045f52b03e441af244f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/05/2019
-ms.locfileid: "36769587"
+ms.lasthandoff: 10/10/2019
+ms.locfileid: "37440134"
 ---
 # <a name="extensionpoint-element"></a>ExtensionPoint 元素
 
@@ -272,7 +272,7 @@ ms.locfileid: "36769587"
 包含 [VersionOverrides](versionoverrides.md) 元素的 `xsi:type` 属性值必须为 `VersionOverridesV1_1`。
 
 > [!NOTE]
-> 此元素类型适用于[支持要求集 1.6 和更高版本的 Outlook 客户端](../requirement-sets/outlook-api-requirement-sets.md#clients)。
+> 此元素类型适用于[支持要求集 1.6 和更高版本的 Outlook 客户端](../requirement-sets/outlook-api-requirement-sets.md#requirement-sets-supported-by-exchange-servers-and-outlook-clients)。
 
 |  元素 |  说明  |
 |:-----|:-----|

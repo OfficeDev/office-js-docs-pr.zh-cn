@@ -1,14 +1,14 @@
 ---
 title: Office 外接程序主机和平台可用性
 description: Excel、OneNote、Outlook、PowerPoint、Project 和 Word 支持的要求集。
-ms.date: 08/13/2019
+ms.date: 10/09/2019
 localization_priority: Priority
-ms.openlocfilehash: a3c580f32ad7cd384309a9b53e55ea488a470a90
-ms.sourcegitcommit: f781d7cfd980cd866d6d1d00c5b9d16c8a4b7f9b
+ms.openlocfilehash: 28d63866a03bcae99829d3a6b6c6198059a92bdc
+ms.sourcegitcommit: 4d9f3e177b0bcd62804d5045f52b03e441af244f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/20/2019
-ms.locfileid: "37053324"
+ms.lasthandoff: 10/10/2019
+ms.locfileid: "37440148"
 ---
 # <a name="office-add-in-host-and-platform-availability"></a>Office 外接程序主机和平台可用性
 
@@ -465,6 +465,9 @@ ms.locfileid: "37053324"
 </table>
 
 *&ast; - 已添加发布后更新。*
+
+> [!IMPORTANT]
+> 要求集的客户端支持可能受到 Exchange 服务器支持的限制。 有关 Exchange 服务器和 Outlook 客户端支持的要求集范围的详细信息，请参阅 [Outlook JavaScript API 要求集](../reference/requirement-sets/outlook-api-requirement-sets.md#requirement-sets-supported-by-exchange-servers-and-outlook-clients)。
 
 <br/>
 
@@ -946,10 +949,10 @@ ms.locfileid: "37053324"
 ## <a name="see-also"></a>另请参阅
 
 - [Office 加载项平台概述](office-add-ins.md)
-- [Office 版本和要求集](/office/dev/add-ins/develop/office-versions-and-requirement-sets)
-- [通用 API 要求集](/office/dev/add-ins/reference/requirement-sets/office-add-in-requirement-sets)
-- [加载项命令要求集](/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets)
-- [适用于 Office 的 JavaScript API 参考](/office/dev/add-ins/reference/javascript-api-for-office)
+- [Office 版本和要求集](../develop/office-versions-and-requirement-sets.md)
+- [通用 API 要求集](../reference/requirement-sets/office-add-in-requirement-sets.md)
+- [加载项命令要求集](../reference/requirement-sets/add-in-commands-requirement-sets.md)
+- [适用于 Office 的 JavaScript API 参考](../reference/javascript-api-for-office.md)
 - [Office 365 ProPlus 的更新历史记录](/officeupdates/update-history-office365-proplus-by-date)
 - [Office 2016 和 2019 更新历史记录（即点即用）](/officeupdates/update-history-office-2019)
 - [Office 2013 更新历史记录（即点即用）](/officeupdates/update-history-office-2013)
