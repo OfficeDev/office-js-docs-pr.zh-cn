@@ -2,15 +2,15 @@
 title: PowerPoint 加载项
 description: ''
 ms.date: 09/03/2019
-ms.topic: overview
-scenarios: getting-started
+ms.topic: conceptual
+ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: 9a5b9746acab2916288a3c63d8ff14fa3b9f46f8
-ms.sourcegitcommit: 78998a9f0ebb81c4dd2b77574148b16fe6725cfc
+ms.openlocfilehash: 86f05a70478652c546f0015e6f69e71bf3dacec0
+ms.sourcegitcommit: 7d4d721fc3d246ef8a2464bc714659cd84d6faab
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "36715597"
+ms.lasthandoff: 10/11/2019
+ms.locfileid: "37468740"
 ---
 # <a name="powerpoint-add-ins"></a>PowerPoint 加载项
 

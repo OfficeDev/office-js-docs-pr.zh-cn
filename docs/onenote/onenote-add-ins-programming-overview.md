@@ -2,15 +2,15 @@
 title: OneNote JavaScript API 编程概述
 description: ''
 ms.date: 07/05/2019
-ms.topic: overview
-scenarios: getting-started
+ms.topic: conceptual
+ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: 214a74c29d748b0354c4dc75f85c3ada442214d5
-ms.sourcegitcommit: 49af31060aa56c1e1ec1e08682914d3cbefc3f1c
+ms.openlocfilehash: 9b74a6fe9d54218a8ec114a624d085bd68ba6e2c
+ms.sourcegitcommit: 7d4d721fc3d246ef8a2464bc714659cd84d6faab
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2019
-ms.locfileid: "36672801"
+ms.lasthandoff: 10/11/2019
+ms.locfileid: "37468810"
 ---
 # <a name="onenote-javascript-api-programming-overview"></a>OneNote JavaScript API 编程概述
 

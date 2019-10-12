@@ -3,12 +3,12 @@ title: Office 加载项中的异步编程
 description: ''
 ms.date: 06/20/2019
 localization_priority: Priority
-ms.openlocfilehash: 98247c401fa5214dc3c0e39ec9e1b4c409cfdc25
-ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
+ms.openlocfilehash: a20fe435a9cdff97ed77496ad3aaaf48b1cbbc7f
+ms.sourcegitcommit: 7d4d721fc3d246ef8a2464bc714659cd84d6faab
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "35127637"
+ms.lasthandoff: 10/11/2019
+ms.locfileid: "37468747"
 ---
 # <a name="asynchronous-programming-in-office-add-ins"></a>Office 加载项中的异步编程
 
@@ -212,7 +212,7 @@ function write(message){
 
 在继续执行之前，承诺编程模式会立即返回表示其预期结果的承诺对象，而不是传递回调函数并等待函数返回。然而，与真正同步编程不同的是，在 Office 外接程序运行时环境完成请求之前，承诺结果的实现在后台实际上是延迟的。提供 _onError_ 处理程序来覆盖请求无法满足的情况。
 
-适用于 Office 的 JavaScript API 提供了一种 [Office.select](/javascript/api/office#office-select) 方法，支持承诺模式与现有绑定对象一起使用。返回到 **Office.select** 方法的承诺对象只支持可通过 [Binding](/javascript/api/office/office.binding) 对象直接访问的四种方法：[getDataAsync](/javascript/api/office/office.binding#getdataasync-options--callback-)、[setDataAsync](/javascript/api/office/office.binding#setdataasync-data--options--callback-)、[addHandlerAsync](/javascript/api/office/office.binding#addhandlerasync-eventtype--handler--options--callback-) 和 [removeHandlerAsync](/javascript/api/office/office.binding#removehandlerasync-eventtype--options--callback-)。
+适用于 Office 的 JavaScript API 提供了一种 [Office.select](/javascript/api/office#office-select-expression--callback-) 方法，支持承诺模式与现有绑定对象一起使用。返回到 **Office.select** 方法的承诺对象只支持可通过 [Binding](/javascript/api/office/office.binding) 对象直接访问的四种方法：[getDataAsync](/javascript/api/office/office.binding#getdataasync-options--callback-)、[setDataAsync](/javascript/api/office/office.binding#setdataasync-data--options--callback-)、[addHandlerAsync](/javascript/api/office/office.binding#addhandlerasync-eventtype--handler--options--callback-) 和 [removeHandlerAsync](/javascript/api/office/office.binding#removehandlerasync-eventtype--options--callback-)。
 
 与绑定一起使用的承诺模式采用以下形式：
 

@@ -2,15 +2,15 @@
 title: Project 任务窗格加载项
 description: ''
 ms.date: 09/26/2019
-ms.topic: overview
-scenarios: getting-started
+ms.topic: conceptual
+ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: 1be7541f5cb1859db5d77bdaae2353cd563e9e80
-ms.sourcegitcommit: 528577145b2cf0a42bc64c56145d661c4d019fb8
+ms.openlocfilehash: 521a9e89cf689f7ff2ab2aea5f9ebb6167262e4c
+ms.sourcegitcommit: 7d4d721fc3d246ef8a2464bc714659cd84d6faab
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "37353907"
+ms.lasthandoff: 10/11/2019
+ms.locfileid: "37468768"
 ---
 # <a name="task-pane-add-ins-for-project"></a>Project 任务窗格加载项
 
