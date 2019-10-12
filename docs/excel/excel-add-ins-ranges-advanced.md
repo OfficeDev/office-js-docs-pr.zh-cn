@@ -3,12 +3,12 @@ title: 使用 Excel JavaScript API 对区域执行操作（高级）
 description: ''
 ms.date: 09/18/2019
 localization_priority: Normal
-ms.openlocfilehash: d260ee6140d0153b426e530304e95025dc235b74
-ms.sourcegitcommit: c8914ce0f48a0c19bbfc3276a80d090bb7ce68e1
+ms.openlocfilehash: 90dff45ee01197a9a6f4d35fb9ab3379adf129b9
+ms.sourcegitcommit: 78bbbd6cb5a270164b26038675a222defc3be55e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/26/2019
-ms.locfileid: "37235328"
+ms.lasthandoff: 10/11/2019
+ms.locfileid: "37471358"
 ---
 # <a name="work-with-ranges-using-the-excel-javascript-api-advanced"></a>使用 Excel JavaScript API 对区域执行操作（高级）
 
@@ -276,7 +276,7 @@ Excel.run(function (context) {
 
 可以将区域中的行或列组合在一起，以创建[分级显示](https://support.office.com/article/Outline-group-data-in-a-worksheet-08CE98C4-0063-4D42-8AC7-8278C49E9AFF)。 可以对这些组进行折叠和扩展以隐藏和显示相应的单元格。 这样可以更轻松地快速分析顶线数据。 使用[Range](/javascript/api/excel/excel.range#group-groupoption-)可以创建这些分级显示组。
 
-大纲可以有层次结构，其中较小的组嵌套在更大的组下。 这样，可以在不同的级别查看大纲。 更改可见大纲级别可以通过[showOutlineLevels](/javascript/api/excel/excel.range#showOutlineLevels-rowLevels--columnLevels-)方法以编程方式完成。 请注意，Excel 仅支持八种级别的分级显示组。
+大纲可以有层次结构，其中较小的组嵌套在更大的组下。 这样，可以在不同的级别查看大纲。 更改可见大纲级别可以通过[showOutlineLevels](/javascript/api/excel/excel.worksheet#showoutlinelevels-rowlevels--columnlevels-)方法以编程方式完成。 请注意，Excel 仅支持八种级别的分级显示组。
 
 下面的代码示例演示如何创建一个大纲，其中包含两个级别的行和列的组。 随后的图像显示该轮廓的分组。 请注意，在代码示例中，被分组的区域不包括大纲控件的行或列（本例中为 "汇总"）。 组定义将折叠的内容，而不是控件的行或列。
 
@@ -309,7 +309,7 @@ Excel.run(function (context) {
 
 ![具有两个级别的两维轮廓的范围](../images/excel-outline.png)
 
-若要取消行或列组的分组，请使用[upgroup](/javascript/api/excel/excel.range#ungroup-groupoption-)方法。 这将从大纲中删除最外面的级别。 如果同一行或列类型的多个组在指定区域中的同一级别，则所有这些组都将被取消组合。
+若要取消行或列组的分组，请使用[Range](/javascript/api/excel/excel.range#ungroup-groupoption-)方法。 这将从大纲中删除最外面的级别。 如果同一行或列类型的多个组在指定区域中的同一级别，则所有这些组都将被取消组合。
 
 ## <a name="see-also"></a>另请参阅
 

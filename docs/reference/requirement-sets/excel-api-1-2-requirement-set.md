@@ -4,12 +4,12 @@ description: 有关 ExcelApi 1.2 要求集的详细信息
 ms.date: 07/26/2019
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: f028208873df363710864a0e2d7942e173acd2c3
-ms.sourcegitcommit: 24303ca235ebd7144a1d913511d8e4fb7c0e8c0d
+ms.openlocfilehash: 574dcb76ee7edbe6e3c36920dd5de70cf22d8b97
+ms.sourcegitcommit: 7d4d721fc3d246ef8a2464bc714659cd84d6faab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/11/2019
-ms.locfileid: "36838492"
+ms.lasthandoff: 10/11/2019
+ms.locfileid: "37468817"
 ---
 # <a name="whats-new-in-excel-javascript-api-12"></a>Excel JavaScript API 1.2 的最近更新
 
@@ -31,7 +31,7 @@ ExcelApi 1.2 增加了对表筛选和对内置 Excel 函数的访问支持。
 ||[startRow](/javascript/api/excel/excel.bindingselectionchangedeventargs#startrow)|获取选择的第一行的索引（基于零）。|
 |[Chart](/javascript/api/excel/excel.chart)|[getImage （width？： number，height？： number，fittingMode？： ImageFittingMode）](/javascript/api/excel/excel.chart#getimage-width--height--fittingmode-)|通过缩放图表以适应指定的尺寸，将图表呈现为 base64 编码的图像。|
 ||[worksheet](/javascript/api/excel/excel.chart#worksheet)|包含当前 chart 的 worksheet 对象。 只读。|
-|[Filter](/javascript/api/excel/excel.filter)|[apply （criteria： FilterCriteria）](/javascript/api/excel/excel.filter#apply-criteria-)|在给定列中应用给定的筛选条件。|
+|[筛选](/javascript/api/excel/excel.filter)|[apply （criteria： FilterCriteria）](/javascript/api/excel/excel.filter#apply-criteria-)|在给定列中应用给定的筛选条件。|
 ||[applyBottomItemsFilter(count: number)](/javascript/api/excel/excel.filter#applybottomitemsfilter-count-)|将“Bottom Item”筛选器应用于列，获取给定数量的元素。|
 ||[applyBottomPercentFilter(percent: number)](/javascript/api/excel/excel.filter#applybottompercentfilter-percent-)|将“Bottom Percent”筛选器应用于列，获取给定百分比的元素。|
 ||[applyCellColorFilter(color: string)](/javascript/api/excel/excel.filter#applycellcolorfilter-color-)|将“Cell Color”筛选器应用于列，以获取给定颜色。|
@@ -138,7 +138,7 @@ ExcelApi 1.2 增加了对表筛选和对内置 Excel 函数的访问支持。
 ||[bin2Hex （number： number \| string \| Boolean \| \| excel. \| RangeReference FunctionResult<any>，地名？： number \| string \| boolean \| excel。 range \|RangeReference \| Excel. FunctionResult<any>）](/javascript/api/excel/excel.functions#bin2hex-number--places-)|将二进制数转换为十六进制数。|
 ||[bin2Oct （number： number \| string \| Boolean \| \| excel. \| RangeReference FunctionResult<any>，地名？： number \| string \| boolean \| excel。 range \|RangeReference \| Excel. FunctionResult<any>）](/javascript/api/excel/excel.functions#bin2oct-number--places-)|将二进制数转换为八进制数。|
 ||[binom_Dist （数字： number \| \| excel. RangeReference \| FunctionResult<any>，试验： number \| \| excel. RangeReference \| excel. FunctionResult，<any>probabilityS： number \| \| excel. \| RangeReference FunctionResult<any>，cumulative：布尔型\| \| excel. RangeReference \| excel. FunctionResult<any>)](/javascript/api/excel/excel.functions#binom-dist-numbers--trials--probabilitys--cumulative-)|返回一元二项式分布的概率。|
-||[binom_Dist_Range （试验： number \| \| excel. RangeReference \| FunctionResult<any>，ProbabilityS： number \| \| excel. RangeReference \| excel. FunctionResult，<any>数字：数字\| Excel \| . RangeReference \| FunctionResult<any>，numberS2？： number \| \| excel. RangeReference \| excel. FunctionResult）<any>](/javascript/api/excel/excel.functions#binom-dist_range-trials--probabilitys--numbers--numbers2-)|返回使用二项式分布的试验结果的概率。|
+||[binom_Dist_Range （试验： number \| \| excel. RangeReference \| FunctionResult<any>，ProbabilityS： number \| \| excel. RangeReference \| excel. FunctionResult，<any>数字：数字\| Excel \| . RangeReference \| FunctionResult<any>，numberS2？： number \| \| excel. RangeReference \| excel. FunctionResult）<any>](/javascript/api/excel/excel.functions#binom-dist-range-trials--probabilitys--numbers--numbers2-)|返回使用二项式分布的试验结果的概率。|
 ||[binom_Inv （试用版： \| number \| excel. RangeReference \| FunctionResult<any>，probabilityS： number \| \| \| excel. RangeReference<any>，alpha：将 excel 数字\| RangeReference \| 。 FunctionResult<any> \|](/javascript/api/excel/excel.functions#binom-inv-trials--probabilitys--alpha-)|返回使累积二项式分布大于或等于临界值的最小值。|
 ||[bitand （数字1： \| number \| \| excel. RangeReference FunctionResult<any>，数字2： number \| \| excel. RangeReference \| excel. FunctionResult）<any>](/javascript/api/excel/excel.functions#bitand-number1--number2-)|返回两个数字的按位 "And"。|
 ||[bitlshift （number： number \| \| excel. RangeReference \| FunctionResult<any>，shiftAmount： number \| \| excel. RangeReference \| excel. FunctionResult）<any>](/javascript/api/excel/excel.functions#bitlshift-number--shiftamount-)|返回一个由 shift_amount 位左移的数字。|
@@ -149,9 +149,9 @@ ExcelApi 1.2 增加了对表筛选和对内置 Excel 函数的访问支持。
 ||[ceiling_Precise （number： number \| \| \| excel. RangeReference FunctionResult<any>，重要性？： number \| \| excel. RangeReference \| excel. FunctionResult）<any>](/javascript/api/excel/excel.functions#ceiling-precise-number--significance-)|将数字向上舍入到最接近的整数或最接近的重要性的倍数。|
 ||[char （number： number \| \| RangeReference \| excel. FunctionResult<any>）](/javascript/api/excel/excel.functions#char-number-)|返回由您的计算机的字符集中的代码编号指定的字符。|
 ||[chiSq_Dist （x： number \| \| excel. RangeReference \| FunctionResult<any>，degFreedom： number \| \| excel. RangeReference \| <any>，cumulative：，cumulative：布尔型\| Excel RangeReference \| FunctionResult<any> \|](/javascript/api/excel/excel.functions#chisq-dist-x--degfreedom--cumulative-)|返回χ2分布的左尾概率。|
-||[chiSq_Dist_RT （x： number \| \| excel. RangeReference \| FunctionResult<any>，degFreedom： number \| \| excel. RangeReference \| excel. FunctionResult）<any>](/javascript/api/excel/excel.functions#chisq-dist_rt-x--degfreedom-)|返回 χ2 分布的右尾概率。|
+||[chiSq_Dist_RT （x： number \| \| excel. RangeReference \| FunctionResult<any>，degFreedom： number \| \| excel. RangeReference \| excel. FunctionResult）<any>](/javascript/api/excel/excel.functions#chisq-dist-rt-x--degfreedom-)|返回 χ2 分布的右尾概率。|
 ||[chiSq_Inv （概率： number \| \| excel. RangeReference \| FunctionResult<any>，degFreedom： number \| \| excel. RangeReference \| excel. FunctionResult）<any>](/javascript/api/excel/excel.functions#chisq-inv-probability--degfreedom-)|返回 χ2 分布的左尾概率的反函数。|
-||[chiSq_Inv_RT （概率： number \| \| excel. RangeReference \| FunctionResult<any>，degFreedom： number \| \| excel. RangeReference \| excel. FunctionResult）<any>](/javascript/api/excel/excel.functions#chisq-inv_rt-probability--degfreedom-)|返回 χ2 分布的右尾概率的反函数。|
+||[chiSq_Inv_RT （概率： number \| \| excel. RangeReference \| FunctionResult<any>，degFreedom： number \| \| excel. RangeReference \| excel. FunctionResult）<any>](/javascript/api/excel/excel.functions#chisq-inv-rt-probability--degfreedom-)|返回 χ2 分布的右尾概率的反函数。|
 ||[选择（indexNum： number \| \| excel. RangeReference \| FunctionResult<any>.。。值： Array<Excel。 RangeReference \| \|> \|的\|范围\|号字符串布尔值。 FunctionResult<any> ）](/javascript/api/excel/excel.functions#choose-indexnum--values-)|根据索引号从值列表中选择要执行的值或操作。|
 ||[clean （text： string \| \| RangeReference \| FunctionResult<any>）](/javascript/api/excel/excel.functions#clean-text-)|删除文本中的所有非打印字符。|
 ||[代码（text： string \| \| excel. RangeReference \| FunctionResult<any>）](/javascript/api/excel/excel.functions#code-text-)|返回文本字符串中的第一个字符在计算机使用的字符集中的数字代码。|
@@ -228,9 +228,9 @@ ExcelApi 1.2 增加了对表筛选和对内置 Excel 函数的访问支持。
 ||[exp （number： number \| \| excel. RangeReference \| excel. FunctionResult<any>）](/javascript/api/excel/excel.functions#exp-number-)|返回 e 的加上给定数字的次幂。|
 ||[expon_Dist （x： number \| \| excel. RangeReference \| FunctionResult<any>，Lambda： number \| \| excel. RangeReference \| excel. FunctionResult<any>，累积：布尔型\| Excel RangeReference \| FunctionResult<any> \|](/javascript/api/excel/excel.functions#expon-dist-x--lambda--cumulative-)|返回指数分布。|
 ||[f_Dist （x： number \| \| excel. RangeReference \| FunctionResult<any>，degFreedom1： number \| \| \| excel。 RangeReference<any>，FunctionResult，degFreedom2：\| \| <any> \| \| \|对 RangeReference excel. FunctionResult，cumulative：布尔型 excel. RangeReference excel. FunctionResult<any> \|](/javascript/api/excel/excel.functions#f-dist-x--degfreedom1--degfreedom2--cumulative-)|返回两个数据集的（左尾） F 概率分布（多元化度）。|
-||[f_Dist_RT （x： number \| \| excel. RangeReference \| FunctionResult<any>，degFreedom1： number \| \| \| excel。 RangeReference<any>，FunctionResult，degFreedom2：将 excel 数字\| RangeReference \| 。 FunctionResult<any> \|](/javascript/api/excel/excel.functions#f-dist_rt-x--degfreedom1--degfreedom2-)|返回两个数据集的（右尾） F 概率分布（多元化度）。|
+||[f_Dist_RT （x： number \| \| excel. RangeReference \| FunctionResult<any>，degFreedom1： number \| \| \| excel。 RangeReference<any>，FunctionResult，degFreedom2：将 excel 数字\| RangeReference \| 。 FunctionResult<any> \|](/javascript/api/excel/excel.functions#f-dist-rt-x--degfreedom1--degfreedom2-)|返回两个数据集的（右尾） F 概率分布（多元化度）。|
 ||[f_Inv （概率： number \| \| excel. RangeReference \| FunctionResult<any>，DegFreedom1： number \| \| excel. RangeReference \| excel. FunctionResult，<any>degFreedom2： number \| \| excel. RangeReference \| FunctionResult<any>）](/javascript/api/excel/excel.functions#f-inv-probability--degfreedom1--degfreedom2-)|返回（左尾） F 概率分布的反函数：如果 p = f. （x,...），则返回 A-f （p,...） = x。|
-||[f_Inv_RT （概率： number \| \| excel. RangeReference \| FunctionResult<any>，DegFreedom1： number \| \| excel. RangeReference \| excel. FunctionResult，<any>degFreedom2： number \| \| excel. RangeReference \| FunctionResult<any>）](/javascript/api/excel/excel.functions#f-inv_rt-probability--degfreedom1--degfreedom2-)|返回（右尾） F 概率分布的反函数：如果 p = f.。RT （x,...），然后是 "INV"。RT （p,...） = x。|
+||[f_Inv_RT （概率： number \| \| excel. RangeReference \| FunctionResult<any>，DegFreedom1： number \| \| excel. RangeReference \| excel. FunctionResult，<any>degFreedom2： number \| \| excel. RangeReference \| FunctionResult<any>）](/javascript/api/excel/excel.functions#f-inv-rt-probability--degfreedom1--degfreedom2-)|返回（右尾） F 概率分布的反函数：如果 p = f.。RT （x,...），然后是 "INV"。RT （p,...） = x。|
 ||[事实（number： number \| \| excel. RangeReference \| FunctionResult<any>）](/javascript/api/excel/excel.functions#fact-number-)|返回一个数的阶乘，等于 1*2*3 *...* 多种.|
 ||[factDouble （number： number \| string \| Boolean \| excel \| . RangeReference \| FunctionResult）<any>](/javascript/api/excel/excel.functions#factdouble-number-)|返回数字的双倍阶乘。|
 ||[false （）](/javascript/api/excel/excel.functions#false--)|返回逻辑值 FALSE。|
@@ -341,8 +341,8 @@ ExcelApi 1.2 增加了对表筛选和对内置 Excel 函数的访问支持。
 ||[名义（effectRate： number \| string \| Boolean \| excel \| . RangeReference \| FunctionResult<any>，npery： number \| string \| boolean \| excel。 range \|RangeReference \| Excel. FunctionResult<any>）](/javascript/api/excel/excel.functions#nominal-effectrate--npery-)|返回年的名义利率。|
 ||[norm_Dist （x： number \| \| excel. RangeReference \| FunctionResult<any>，Mean： number \| \| excel. RangeReference \| excel. FunctionResult<any>、standardDev： number\| \| <any> \| \| \| RangeReference excel. FunctionResult，cumulative：布尔型 excel. RangeReference excel. FunctionResult<any> \|](/javascript/api/excel/excel.functions#norm-dist-x--mean--standarddev--cumulative-)|返回指定平均值和标准偏差的正态分布。|
 ||[norm_Inv （probability： number \| \| excel. RangeReference \| FunctionResult<any>，Mean： number \| \| excel. RangeReference \| excel. FunctionResult<any>、standardDev： number \| \| excel. RangeReference \| FunctionResult<any>）](/javascript/api/excel/excel.functions#norm-inv-probability--mean--standarddev-)|返回指定平均值和标准偏差的正态累积分布函数的反函数。|
-||[norm_S_Dist （z： number \| \| \| excel. RangeReference FunctionResult<any>，cumulative：布尔型\| \| excel. RangeReference \| excel. FunctionResult）<any>](/javascript/api/excel/excel.functions#norm-s_dist-z--cumulative-)|返回标准正态分布（其平均值为零，标准偏差为1）。|
-||[norm_S_Inv （probability： number \| \| excel. RangeReference \| FunctionResult<any>）](/javascript/api/excel/excel.functions#norm-s_inv-probability-)|返回标准正态累积分布（其平均值为零，标准偏差为1）的反函数。|
+||[norm_S_Dist （z： number \| \| \| excel. RangeReference FunctionResult<any>，cumulative：布尔型\| \| excel. RangeReference \| excel. FunctionResult）<any>](/javascript/api/excel/excel.functions#norm-s-dist-z--cumulative-)|返回标准正态分布（其平均值为零，标准偏差为1）。|
+||[norm_S_Inv （probability： number \| \| excel. RangeReference \| FunctionResult<any>）](/javascript/api/excel/excel.functions#norm-s-inv-probability-)|返回标准正态累积分布（其平均值为零，标准偏差为1）的反函数。|
 ||[不是（逻辑： \|布尔 Excel \| . RangeReference \| FunctionResult）<any>](/javascript/api/excel/excel.functions#not-logical-)|将 FALSE 更改为 TRUE，或将 TRUE 更改为 FALSE。|
 ||[now （）](/javascript/api/excel/excel.functions#now--)|返回日期和时间格式的当前日期和时间。|
 ||[nper （rate： number \| Excel \| . RangeReference \| FunctionResult<any>，pmt： number \| \| \| excel. FunctionResult<any>，pv： number。 \|\| Excel \| . RangeReference FunctionResult<any>，Fv？： number \| \| \| excel. FunctionResult<any>，type？： number \| excel. range。\| RangeReference \| excel. FunctionResult<any>）](/javascript/api/excel/excel.functions#nper-rate--pmt--pv--fv--type-)|基于固定利率及等额分期付款方式，返回某项投资的总期数。|
@@ -426,10 +426,10 @@ ExcelApi 1.2 增加了对表筛选和对内置 Excel 函数的访问支持。
 ||[syd （cost： number \| \| \| excel. RangeReference FunctionResult<any>，抢救： number \| \| excel. RangeReference \| excel. FunctionResult<any>，life： number \|\| RangeReference \| excel. FunctionResult<any>，per： Number \| \| excel. RangeReference \| excel. FunctionResult）<any>](/javascript/api/excel/excel.functions#syd-cost--salvage--life--per-)|返回某项资产按年限总和折旧法计算的指定期间的折旧值。|
 ||[t （value： number \| string \| boolean \| excel \| . RangeReference \| excel. FunctionResult）<any>](/javascript/api/excel/excel.functions#t-value-)|检查值是否为文本，如果是文本，则返回文本; 如果不是，则返回双引号（空文本）。|
 ||[t_Dist （x： number \| \| excel. RangeReference \| FunctionResult<any>，degFreedom： number \| \| excel. RangeReference \| <any>，cumulative：，cumulative：布尔型\| Excel RangeReference \| FunctionResult<any> \|](/javascript/api/excel/excel.functions#t-dist-x--degfreedom--cumulative-)|返回左尾学生的 t 分布。|
-||[t_Dist_2T （x： number \| \| excel. RangeReference \| FunctionResult<any>，degFreedom： number \| \| excel. RangeReference \| excel. FunctionResult）<any>](/javascript/api/excel/excel.functions#t-dist_2t-x--degfreedom-)|返回双尾学生 t 分布。|
-||[t_Dist_RT （x： number \| \| excel. RangeReference \| FunctionResult<any>，degFreedom： number \| \| excel. RangeReference \| excel. FunctionResult）<any>](/javascript/api/excel/excel.functions#t-dist_rt-x--degfreedom-)|返回右尾学生的 t 分布。|
+||[t_Dist_2T （x： number \| \| excel. RangeReference \| FunctionResult<any>，degFreedom： number \| \| excel. RangeReference \| excel. FunctionResult）<any>](/javascript/api/excel/excel.functions#t-dist-rt-x--degfreedom-)|返回双尾学生 t 分布。|
+||[t_Dist_RT （x： number \| \| excel. RangeReference \| FunctionResult<any>，degFreedom： number \| \| excel. RangeReference \| excel. FunctionResult）<any>](/javascript/api/excel/excel.functions#t-dist-rt-x--degfreedom-)|返回右尾学生的 t 分布。|
 ||[t_Inv （概率： number \| \| excel. RangeReference \| FunctionResult<any>，degFreedom： number \| \| excel. RangeReference \| excel. FunctionResult）<any>](/javascript/api/excel/excel.functions#t-inv-probability--degfreedom-)|返回学生 t 分布的左尾倒角。|
-||[t_Inv_2T （概率： number \| \| excel. RangeReference \| FunctionResult<any>，degFreedom： number \| \| excel. RangeReference \| excel. FunctionResult）<any>](/javascript/api/excel/excel.functions#t-inv_2t-probability--degfreedom-)|返回学生 t 分布的双尾逆。|
+||[t_Inv_2T （概率： number \| \| excel. RangeReference \| FunctionResult<any>，degFreedom： number \| \| excel. RangeReference \| excel. FunctionResult）<any>](/javascript/api/excel/excel.functions#t-inv-2t-probability--degfreedom-)|返回学生 t 分布的双尾逆。|
 ||[tan （number： number \| \| excel. RangeReference \| excel. FunctionResult<any>）](/javascript/api/excel/excel.functions#tan-number-)|返回一个角度的正切值。|
 ||[tanh （number： number \| \| excel. RangeReference \| FunctionResult<any>）](/javascript/api/excel/excel.functions#tanh-number-)|返回某一数字的双曲正切值。|
 ||[tbillEq （结算：数字\| string \| Boolean \| excel \| . RangeReference \| FunctionResult<any>，成熟度： number \| string \| boolean \| excel。 range \|RangeReference \| Excel.<any>FunctionResult，折扣： number \| string \| boolean \| excel \| . RangeReference \| excel. FunctionResult）<any>](/javascript/api/excel/excel.functions#tbilleq-settlement--maturity--discount-)|返回国库券的等价债券收益。|
