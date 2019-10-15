@@ -1,14 +1,14 @@
 ---
 title: 使用 Excel JavaScript API 处理事件
 description: ''
-ms.date: 09/09/2019
+ms.date: 10/11/2019
 localization_priority: Priority
-ms.openlocfilehash: 338085b297e760057987fd94d7caf96b5134ce6a
-ms.sourcegitcommit: 24303ca235ebd7144a1d913511d8e4fb7c0e8c0d
+ms.openlocfilehash: 1838ddf2016d5c0d4651991ce569fd98d6ac960e
+ms.sourcegitcommit: 78bbbd6cb5a270164b26038675a222defc3be55e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/11/2019
-ms.locfileid: "36838478"
+ms.lasthandoff: 10/11/2019
+ms.locfileid: "37471351"
 ---
 # <a name="work-with-events-using-the-excel-javascript-api"></a>使用 Excel JavaScript API 处理事件
 
@@ -31,6 +31,15 @@ ms.locfileid: "36838478"
 | `onFormatChanged` | 在工作表上的格式变化时发生。 | [**Worksheet**](/javascript/api/excel/excel.worksheet)、[**WorksheetCollection**](/javascript/api/excel/excel.worksheetcollection) |
 | `onSelectionChanged` | 当活动单元格或选定范围更改时发生。 | [**Binding**](/javascript/api/excel/excel.binding)、[**Table**](/javascript/api/excel/excel.table)、[**Worksheet**](/javascript/api/excel/excel.worksheet)、[**WorksheetCollection**](/javascript/api/excel/excel.worksheetcollection) |
 | `onSettingsChanged` | 当文档中的设置变化时发生。 | [**SettingCollection**](/javascript/api/excel/excel.settingcollection) |
+
+> [!WARNING]
+> `onSelectionChanged`目前不稳定。 可通过某种方法可靠地使用 `onSelectionChanged`。 将下面的代码添加到 HTML 主页的 `<head>` 部分：
+>
+> ```HTML
+> <script> MutationObserver=null; </script>
+> ```
+>
+> 有关此问题的完整讨论，可在 [office-js GitHub repo](https://github.com/OfficeDev/office-js/issues/533) 上找到。
 
 ### <a name="events-in-preview"></a>预览版中的事件
 
