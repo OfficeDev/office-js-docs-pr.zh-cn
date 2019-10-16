@@ -3,12 +3,12 @@ title: 指定 Office 主机和 API 要求
 description: ''
 ms.date: 09/26/2019
 localization_priority: Priority
-ms.openlocfilehash: 1d5c922787192263e5290d2a428c352ab32378b0
-ms.sourcegitcommit: 528577145b2cf0a42bc64c56145d661c4d019fb8
+ms.openlocfilehash: c3f1979eb216d20f6c409010e84c1388d2069489
+ms.sourcegitcommit: b3996b1444e520b44cf752e76eef50908386ca26
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "37353837"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "37524267"
 ---
 # <a name="specify-office-hosts-and-api-requirements"></a>指定 Office 主机和 API 要求
 
@@ -51,7 +51,7 @@ ms.locfileid: "37353837"
 如果使用运行时检查，则请引用内容传送网络 (CDN) 中的最新版本的适用于 Office 的 JavaScript API 库。若要执行此操作，请将以下 `script` 标记添加到 HTML 中。使用 CDN URL 中的 `/1/` 可以确保引用的是最新版本的 Office.js。
 
 ```HTML
-<script src="https://appsforoffice.microsoft.com/lib/1/hosted/Office.js" type="text/javascript"></script>
+<script src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js" type="text/javascript"></script>
 ```
 
 ## <a name="options-to-specify-office-hosts-or-api-requirements"></a>指定 Office 主机或 API 要求的选项

@@ -3,12 +3,12 @@ title: 更新到适用于 Office 的 JavaScript API 最新库和第 1.1 版加�
 description: 将在 Office 加载项项目中的 JavaScript 文件（Office.js 和特定于应用程序的 .js 文件）和加载项清单验证文件更新到版本 1.1。
 ms.date: 09/26/2019
 localization_priority: Normal
-ms.openlocfilehash: a685f1a2e482a99af2a7184c2ab44104fa38c6a7
-ms.sourcegitcommit: 528577145b2cf0a42bc64c56145d661c4d019fb8
+ms.openlocfilehash: 83e09cee76aaea7343e456f4fed28af31d978bba
+ms.sourcegitcommit: b3996b1444e520b44cf752e76eef50908386ca26
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "37353858"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "37524239"
 ---
 # <a name="update-to-the-latest-javascript-api-for-office-library-and-version-11-add-in-manifest-schema"></a>更新到适用于 Office 的 JavaScript API 最新库和第 1.1 版加载项清单架构
 
@@ -54,7 +54,7 @@ ms.locfileid: "37353858"
 需要执行其他步骤才能完成更新。 在加载项 HTML 页面的 **head** 标记中，注释掉或删除任何现有 office.js 脚本引用，再引用更新后的适用于 Office 的 JavaScript API 库，如下所示：
 
   ```html
-  <script src="https://appsforoffice.microsoft.com/lib/1/hosted/Office.js" type="text/javascript"></script>
+  <script src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js" type="text/javascript"></script>
   ```
 
    > [!NOTE] 
@@ -98,7 +98,7 @@ ms.locfileid: "37353858"
 2. 在加载项 HTML 页面的 **head** 标记中，注释掉或删除任何现有 office.js 脚本引用，再引用更新后的适用于 Office 的 JavaScript API 库，如下所示：
 
     ```html
-    <script src="https://appsforoffice.microsoft.com/lib/1/hosted/Office.js" type="text/javascript"></script>
+    <script src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js" type="text/javascript"></script>
     ```
 
    > [!NOTE]

@@ -1,5 +1,3 @@
-# <a name="get-the-whole-document-from-an-add-in-for-powerpoint-or-word"></a>从 PowerPoint 或 Word 相关外接程序获取整个文档
-
 您可以创建一个只需一次单击即可将 Word 2013  或 PowerPoint 2013 文档发送到远程位置的 Office 外接程序。本文说明如何构建一个简单的 PowerPoint 2013 任务窗格外接程序，以便以数据对象的形式获取所有演示文稿并将相关数据通过 HTTP 请求发送到 Web 服务器。
 
 ## <a name="prerequisites-for-creating-an-add-in-for-powerpoint-or-word"></a>创建 PowerPoint 或 Word 外接程序的先决条件
