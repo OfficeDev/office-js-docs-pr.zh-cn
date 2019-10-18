@@ -41,11 +41,11 @@ Excel 有许多内置错误消息，如果存在计算错误，系统会将向�
 
 ### <a name="cant-open-add-in-from-localhost-use-a-local-loopback-exception"></a>无法从 localhost 打开加载项：使用本地环回异常
 
-如果看到错误“我们无法从 localhost 打开此加载项”，则需要启用本地环回异常。 有关如何执行此操作的详细信息，请参阅[此 Microsoft 支持文章](https://support.microsoft.com/zh-CN/help/4490419/local-loopback-exemption-does-not-work)。
+如果看到错误“我们无法从 localhost 打开此加载项”，则需要启用本地环回异常。 有关如何执行此操作的详细信息，请参阅[此 Microsoft 支持文章](https://support.microsoft.com/en-us/help/4490419/local-loopback-exemption-does-not-work)。
 
 ### <a name="runtime-logging-reports-typeerror-network-request-failed-on-excel-on-windows"></a>Windows 版 Excel 上的运行时日志记录报告“TypeError:网络请求失败”
 
-如果在调用 localhost 服务器时在[运行时日志](custom-functions-troubleshooting.md#enable-runtime-logging)中看到错误“TypeError:网络请求失败”，必须启用本地环回异常。 若要详细了解如何执行此操作，请参阅[这篇 Microsoft 支持文章](https://support.microsoft.com/zh-CN/help/4490419/local-loopback-exemption-does-not-work)中的*选项 #2*。
+如果在调用 localhost 服务器时在[运行时日志](custom-functions-troubleshooting.md#enable-runtime-logging)中看到错误“TypeError:网络请求失败”，必须启用本地环回异常。 若要详细了解如何执行此操作，请参阅[这篇 Microsoft 支持文章](https://support.microsoft.com/en-us/help/4490419/local-loopback-exemption-does-not-work)中的*选项 #2*。
 
 ### <a name="ensure-promises-return"></a>确保返回 promise
 

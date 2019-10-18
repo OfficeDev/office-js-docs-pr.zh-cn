@@ -80,7 +80,7 @@ let _isBatchedRequestScheduled = false;
 
 此段代码还会检查是否对批处理进行了安排。 在本例中，将每个批处理安排为每 100 毫秒运行一次。 可以根据需要调整此值。 值越大，发送到远程服务的批处理越大，用户查看结果的等待时间越长。 较低的值倾向于向远程服务发送更多的批处理，但可为用户提供较快的响应时间。
 
-### <a name="add-the-pushoperation-function-to-functionsts"></a>将 `_pushOperation` 函数添加到 functions.ts
+### <a name="add-the-_pushoperation-function-to-functionsts"></a>将 `_pushOperation` 函数添加到 functions.ts
 
 ```typescript
 function _pushOperation(op: string, args: any[]) {
@@ -118,7 +118,7 @@ function _pushOperation(op: string, args: any[]) {
 
 `_makeRemoteRequest` 函数的目的是将一批运算传递给远程服务，然后将结果返回给每个自定义函数。 它首先创建批处理数组的副本。 这样，来自 Excel 的并发自定义函数调用便可以立即在新数组中开始批处理。 然后将副本转换为不包含承诺信息的较简单的数组。 将这些承诺传递给远程服务是没有意义的，因为它们不会发生作用。 `_makeRemoteRequest` 将根据远程服务返回的内容拒绝或解决每个承诺。
 
-### <a name="add-the-following-makeremoterequest-method-to-functionsts"></a>将以下 `_makeRemoteRequest` 方法添加到 functions.ts
+### <a name="add-the-following-_makeremoterequest-method-to-functionsts"></a>将以下 `_makeRemoteRequest` 方法添加到 functions.ts
 
 ```typescript
 function _makeRemoteRequest() {
@@ -150,7 +150,7 @@ function _makeRemoteRequest() {
 }
 ```
 
-### <a name="modify-makeremoterequest-for-your-own-solution"></a>根据自己的解决方案修改 `_makeRemoteRequest`
+### <a name="modify-_makeremoterequest-for-your-own-solution"></a>根据自己的解决方案修改 `_makeRemoteRequest`
 
 `_makeRemoteRequest` 函数调用 `_fetchFromRemoteService`，正如稍后将会看到的，后者只是一个表示远程服务的模拟。 这使得研究和运行本文中的代码更加容易。 但是，如果要将此代码用于实际的远程服务，则应进行以下更改：
 
@@ -161,7 +161,7 @@ function _makeRemoteRequest() {
 
 最后一步是处理远程服务中的批处理调用。 下面的代码示例展示了 `_fetchFromRemoteService` 函数。 此函数会解包每个运算，执行指定的运算，并返回结果。 出于学习目的，在本文中，`_fetchFromRemoteService` 函数适用于在 Web 加载项中运行并模拟远程服务。 你可以将此代码添加到 **functions.ts** 文件中，这样就可以研究和运行本文中的所有代码，而无需设置实际的远程服务。
 
-### <a name="add-the-following-fetchfromremoteservice-function-to-functionsts"></a>将以下 `_fetchFromRemoteService` 函数添加到 functions.ts
+### <a name="add-the-following-_fetchfromremoteservice-function-to-functionsts"></a>将以下 `_fetchFromRemoteService` 函数添加到 functions.ts
 
 ```typescript
 async function _fetchFromRemoteService(
@@ -204,7 +204,7 @@ function pause(ms: number) {
 }
 ```
 
-### <a name="modify-fetchfromremoteservice-for-your-live-remote-service"></a>根据自己的实时远程服务修改 `_fetchFromRemoteService`
+### <a name="modify-_fetchfromremoteservice-for-your-live-remote-service"></a>根据自己的实时远程服务修改 `_fetchFromRemoteService`
 
 若要修改 `_fetchFromRemoteService` 以便在实时远程服务中运行，请进行以下更改：
 
