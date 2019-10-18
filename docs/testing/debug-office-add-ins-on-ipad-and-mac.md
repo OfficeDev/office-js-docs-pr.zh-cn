@@ -10,17 +10,17 @@ ms.contentlocale: zh-CN
 ms.lasthandoff: 07/31/2019
 ms.locfileid: "35940680"
 ---
-# <a name="debug-office-add-ins-on-a-mac"></a><span data-ttu-id="cf7c4-102">在 Mac 上调试 Office 加载项</span><span class="sxs-lookup"><span data-stu-id="cf7c4-102">Debug Office Add-ins on a Mac</span></span>
+# <a name="debug-office-add-ins-on-a-mac"></a><span data-ttu-id="45de1-102">在 Mac 上调试 Office 加载项</span><span class="sxs-lookup"><span data-stu-id="45de1-102">Debug Office Add-ins on a Mac</span></span>
 
-<span data-ttu-id="cf7c4-p101">由于加载项是使用 HTML 和 JavaScript 开发的，因此它们可以跨平台工作，但不同浏览器呈现 HTML 的方式可能存在细微差别。本文介绍如何调试在 Mac 上运行的加载项。</span><span class="sxs-lookup"><span data-stu-id="cf7c4-p101">You can use Visual Studio to develop and debug add-ins on Windows, but you can't use it to debug add-ins on a Mac. Because add-ins are developed using HTML and JavaScript, they are designed to work across platforms, but there might be subtle differences in how different browsers render the HTML. This article describes how to debug add-ins running on a Mac.</span></span>
+<span data-ttu-id="45de1-p101">由于加载项是使用 HTML 和 JavaScript 开发的，因此它们可以跨平台工作，但不同浏览器呈现 HTML 的方式可能存在细微差别。本文介绍如何调试在 Mac 上运行的加载项。</span><span class="sxs-lookup"><span data-stu-id="45de1-p101">You can use Visual Studio to develop and debug add-ins on Windows, but you can't use it to debug add-ins on a Mac. Because add-ins are developed using HTML and JavaScript, they are designed to work across platforms, but there might be subtle differences in how different browsers render the HTML. This article describes how to debug add-ins running on a Mac.</span></span>
 
-## <a name="debugging-with-safari-web-inspector-on-a-mac"></a><span data-ttu-id="cf7c4-105">在 Mac 上使用 Safari Web 检查器进行调试</span><span class="sxs-lookup"><span data-stu-id="cf7c4-105">Debugging with Safari Web Inspector on a Mac</span></span>
+## <a name="debugging-with-safari-web-inspector-on-a-mac"></a><span data-ttu-id="45de1-105">在 Mac 上使用 Safari Web 检查器进行调试</span><span class="sxs-lookup"><span data-stu-id="45de1-105">Debugging with Safari Web Inspector on a Mac</span></span>
 
-<span data-ttu-id="cf7c4-106">如果有在任务窗格或内容加载项中显示 UI 的加载项，可以使用 Safari Web 检查器调试 Office 加载项。</span><span class="sxs-lookup"><span data-stu-id="cf7c4-106">If you have add-in that shows UI in a task pane or in a content add-in, you can debug an Office Add-in using Safari Web Inspector.</span></span>
+<span data-ttu-id="45de1-106">如果有在任务窗格或内容加载项中显示 UI 的加载项，可以使用 Safari Web 检查器调试 Office 加载项。</span><span class="sxs-lookup"><span data-stu-id="45de1-106">If you have add-in that shows UI in a task pane or in a content add-in, you can debug an Office Add-in using Safari Web Inspector.</span></span>
 
-<span data-ttu-id="cf7c4-107">要在 Mac 上调试 Office 加载项，必须拥有 Mac OS High Sierra 和 Mac Office 版本：16.9.1（内部版本 18012504）或更高版本。</span><span class="sxs-lookup"><span data-stu-id="cf7c4-107">To be able to debug Office Add-ins on Mac, you must have Mac OS High Sierra AND Mac Office Version: 16.9.1 (Build 18012504) or later.</span></span> <span data-ttu-id="cf7c4-108">如果没有 Office Mac 内部版本，可以通过加入 [Office 365 开发人员计划](https://aka.ms/o365devprogram)获取一个版本。</span><span class="sxs-lookup"><span data-stu-id="cf7c4-108">If you don't have an Office Mac build, you can get one by joining the [Office 365 Developer program](https://aka.ms/o365devprogram).</span></span>
+<span data-ttu-id="45de1-107">要在 Mac 上调试 Office 加载项，必须拥有 Mac OS High Sierra 和 Mac Office 版本：16.9.1（内部版本 18012504）或更高版本。</span><span class="sxs-lookup"><span data-stu-id="45de1-107">To be able to debug Office Add-ins on Mac, you must have Mac OS High Sierra AND Mac Office Version: 16.9.1 (Build 18012504) or later.</span></span> <span data-ttu-id="45de1-108">如果没有 Office Mac 内部版本，可以通过加入 [Office 365 开发人员计划](https://aka.ms/o365devprogram)获取一个版本。</span><span class="sxs-lookup"><span data-stu-id="45de1-108">If you don't have an Office Mac build, you can get one by joining the [Office 365 Developer program](https://aka.ms/o365devprogram).</span></span>
 
-<span data-ttu-id="cf7c4-109">首先，打开终端，设置相关 Office 应用程序的 `OfficeWebAddinDeveloperExtras` 属性，如下所示：</span><span class="sxs-lookup"><span data-stu-id="cf7c4-109">To start, open a terminal and set the `OfficeWebAddinDeveloperExtras` property for the relevant Office application as follows:</span></span>
+<span data-ttu-id="45de1-109">首先，打开终端，设置相关 Office 应用程序的 `OfficeWebAddinDeveloperExtras` 属性，如下所示：</span><span class="sxs-lookup"><span data-stu-id="45de1-109">To start, open a terminal and set the `OfficeWebAddinDeveloperExtras` property for the relevant Office application as follows:</span></span>
 
 - `defaults write com.microsoft.Word OfficeWebAddinDeveloperExtras -bool true`
 
@@ -30,15 +30,15 @@ ms.locfileid: "35940680"
 
 - `defaults write com.microsoft.Outlook OfficeWebAddinDeveloperExtras -bool true`
 
-<span data-ttu-id="cf7c4-110">然后，打开 Office 应用程序并[旁加载你的加载项](sideload-an-office-add-in-on-ipad-and-mac.md)。</span><span class="sxs-lookup"><span data-stu-id="cf7c4-110">Then, open the Office application and [sideload your add-in](sideload-an-office-add-in-on-ipad-and-mac.md).</span></span> <span data-ttu-id="cf7c4-111">右键单击加载项，应在上下文菜单中看到一个“**检查元素**”选项。</span><span class="sxs-lookup"><span data-stu-id="cf7c4-111">Right-click the add-in and you should see an **Inspect Element** option in the context menu.</span></span> <span data-ttu-id="cf7c4-112">选择该选项，它将弹出检查器，可以在其中设置断点并调试加载项。</span><span class="sxs-lookup"><span data-stu-id="cf7c4-112">Select that option and it will pop the Inspector, where you can set breakpoints and debug your add-in.</span></span>
+<span data-ttu-id="45de1-110">然后，打开 Office 应用程序并[旁加载你的加载项](sideload-an-office-add-in-on-ipad-and-mac.md)。</span><span class="sxs-lookup"><span data-stu-id="45de1-110">Then, open the Office application and [sideload your add-in](sideload-an-office-add-in-on-ipad-and-mac.md).</span></span> <span data-ttu-id="45de1-111">右键单击加载项，应在上下文菜单中看到一个“**检查元素**”选项。</span><span class="sxs-lookup"><span data-stu-id="45de1-111">Right-click the add-in and you should see an **Inspect Element** option in the context menu.</span></span> <span data-ttu-id="45de1-112">选择该选项，它将弹出检查器，可以在其中设置断点并调试加载项。</span><span class="sxs-lookup"><span data-stu-id="45de1-112">Select that option and it will pop the Inspector, where you can set breakpoints and debug your add-in.</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="cf7c4-113">如果你尝试使用检查器时对话框闪烁，请将 Office 更新到最新版本。</span><span class="sxs-lookup"><span data-stu-id="cf7c4-113">If you're trying to use the inspector and the dialog flickers, update Office to the latest version.</span></span> <span data-ttu-id="cf7c4-114">如果这样做未解决闪烁问题，请尝试以下解决方法：</span><span class="sxs-lookup"><span data-stu-id="cf7c4-114">If that doesn't resolve the flickering, try the following workaround:</span></span>
-> 1. <span data-ttu-id="cf7c4-115">缩小对话框大小。</span><span class="sxs-lookup"><span data-stu-id="cf7c4-115">Reduce the size of the dialog.</span></span>
-> 2. <span data-ttu-id="cf7c4-116">选择“检查元素”\*\*\*\*，这将在新窗口中打开。</span><span class="sxs-lookup"><span data-stu-id="cf7c4-116">Choose **Inspect Element**, which opens in a new window.</span></span>
-> 3. <span data-ttu-id="cf7c4-117">将对话框调整为原始大小。</span><span class="sxs-lookup"><span data-stu-id="cf7c4-117">Resize the dialog to its original size.</span></span>
-> 4. <span data-ttu-id="cf7c4-118">根据需要使用检查器。</span><span class="sxs-lookup"><span data-stu-id="cf7c4-118">Use the inspector as required.</span></span>
+> <span data-ttu-id="45de1-113">如果你尝试使用检查器时对话框闪烁，请将 Office 更新到最新版本。</span><span class="sxs-lookup"><span data-stu-id="45de1-113">If you're trying to use the inspector and the dialog flickers, update Office to the latest version.</span></span> <span data-ttu-id="45de1-114">如果这样做未解决闪烁问题，请尝试以下解决方法：</span><span class="sxs-lookup"><span data-stu-id="45de1-114">If that doesn't resolve the flickering, try the following workaround:</span></span>
+> 1. <span data-ttu-id="45de1-115">缩小对话框大小。</span><span class="sxs-lookup"><span data-stu-id="45de1-115">Reduce the size of the dialog.</span></span>
+> 2. <span data-ttu-id="45de1-116">选择“检查元素”\*\*\*\*，这将在新窗口中打开。</span><span class="sxs-lookup"><span data-stu-id="45de1-116">Choose **Inspect Element**, which opens in a new window.</span></span>
+> 3. <span data-ttu-id="45de1-117">将对话框调整为原始大小。</span><span class="sxs-lookup"><span data-stu-id="45de1-117">Resize the dialog to its original size.</span></span>
+> 4. <span data-ttu-id="45de1-118">根据需要使用检查器。</span><span class="sxs-lookup"><span data-stu-id="45de1-118">Use the inspector as required.</span></span>
 
-## <a name="clearing-the-office-applications-cache-on-a-mac"></a><span data-ttu-id="cf7c4-119">在 Mac 上清除 Office 应用程序的缓存</span><span class="sxs-lookup"><span data-stu-id="cf7c4-119">Clearing the Office application's cache on a Mac or iPad</span></span>
+## <a name="clearing-the-office-applications-cache-on-a-mac"></a><span data-ttu-id="45de1-119">在 Mac 上清除 Office 应用程序的缓存</span><span class="sxs-lookup"><span data-stu-id="45de1-119">Clearing the Office application's cache on a Mac or iPad</span></span>
 
 [!include[additional cache folders on Mac](../includes/mac-cache-folders.md)]
