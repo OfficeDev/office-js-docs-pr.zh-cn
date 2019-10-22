@@ -1,18 +1,18 @@
 ---
 title: 清单文件中的 AppDomain 元素
 description: ''
-ms.date: 05/15/2019
+ms.date: 07/03/2019
 localization_priority: Normal
-ms.openlocfilehash: b1d71648cc7646eec246f3d0a8113c843eed2e74
-ms.sourcegitcommit: b0e71ae0ae09c57b843d4de277081845c108a645
+ms.openlocfilehash: 2f65302d1ac3d85f2867cd13501bc67606cd00b5
+ms.sourcegitcommit: b3996b1444e520b44cf752e76eef50908386ca26
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "34337193"
+ms.lasthandoff: 10/21/2019
+ms.locfileid: "35575637"
 ---
 # <a name="appdomain-element"></a>AppDomain 元素
 
-指定将用于在外接程序窗口中加载页面的其他域。
+指定在外接程序窗口中加载页面的其他域。 此外，它还列出了可以从加载项内的 Iframe 中进行的 Office .js API 调用的受信任域。
 
 **加载项类型：** 内容、任务窗格和邮件
 
@@ -24,7 +24,7 @@ ms.locfileid: "34337193"
 
 > [!IMPORTANT]
 > 1. **AppDomain** 元素的值必须包括协议（如 `<AppDomain>https://myappdomain</AppDomain>`）。
-> 2. 不要** 在值上添加一个结束斜杠 "/"。
+> 2. 不要*在值上添加一个*结束斜杠 "/"。
 
 ## <a name="contained-in"></a>包含于
 

@@ -1,25 +1,22 @@
 ---
 title: 同时在 Excel 加载项中处理多个区域
 description: ''
-ms.date: 02/20/2019
+ms.date: 04/30/2019
 localization_priority: Normal
-ms.openlocfilehash: d284f3cb12153b1c05cff0b7f7a66bbf98961443
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: a327b6c379884107f5e00c0663ecfa6c71b8097f
+ms.sourcegitcommit: b3996b1444e520b44cf752e76eef50908386ca26
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32449237"
+ms.lasthandoff: 10/21/2019
+ms.locfileid: "33620043"
 ---
-# <a name="work-with-multiple-ranges-simultaneously-in-excel-add-ins-preview"></a>同时在 Excel 加载项中处理多个区域（预览）
+# <a name="work-with-multiple-ranges-simultaneously-in-excel-add-ins"></a>同时在 Excel 加载项中处理多个区域
 
 Excel JavaScript 库允许你使用加载项同时在多个区域上执行操作和设置属性。 这些区域不必是连续区域。 除了简化代码以外，这种设置属性的方法还比为每个区域单独设置相同的属性要快得多。
 
-> [!NOTE]
-> 本文中所述的 API 需要 **Office 2016 即点即用版本 1809 内部版本 10820.20000** 或更高版本。 (你可能需要加入[Office 预览体验成员计划](https://products.office.com/office-insider)才能获取相应的版本。)[!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
-
 ## <a name="rangeareas"></a>RangeAreas
 
-一组 (可能是不连续的) 区域由一个[RangeAreas](/javascript/api/excel/excel.rangeareas)对象表示。 它具有与 `Range` 类型类似的属性和方法（许多具有相同或相似的名称），但已对以下对象进行了调整：
+一组（可能是不连续的）区域由一个[RangeAreas](/javascript/api/excel/excel.rangeareas)对象表示。 它具有与 `Range` 类型类似的属性和方法（许多具有相同或相似的名称），但已对以下对象进行了调整：
 
 - 属性和 Setter 及 Getter 行为的数据类型。
 - 方法参数和方法行为的数据类型。
@@ -40,43 +37,41 @@ Excel JavaScript 库允许你使用加载项同时在多个区域上执行操作
 
 在编写用于读取任何所列属性的代码之前，请先熟悉[读取 RangeAreas 的属性](#read-properties-of-rangeareas)。 返回的内容存在细微差别。
 
-- address
-- addressLocal
-- cellCount
-- conditionalFormats
-- context
-- dataValidation
-- format
-- isEntireColumn
-- isEntireRow
-- style
-- worksheet
+- `address`
+- `addressLocal`
+- `cellCount`
+- `conditionalFormats`
+- `context`
+- `dataValidation`
+- `format`
+- `isEntireColumn`
+- `isEntireRow`
+- `style`
+- `worksheet`
 
-##### <a name="methods"></a>Methods
+##### <a name="methods"></a>方法
 
-将标记预览中的区域方法。
-
-- calculate()
-- clear()
-- convertDataTypeToText()（预览）
-- convertToLinkedDataType()（预览）
-- copyFrom()（预览）
-- getEntireColumn()
-- getEntireRow()
-- getIntersection()
-- getIntersectionOrNullObject()
-- getOffsetRange()（在 RangeAreas 对象上名为 getOffsetRangeAreas）
-- getSpecialCells()（预览）
-- getSpecialCellsOrNullObject()（预览）
-- getTables()（预览）
-- getUsedRange()（在 RangeAreas 对象上名为 getUsedRangeAreas）
-- getUsedRangeOrNullObject()（在 RangeAreas 对象上名为 getUsedRangeAreasOrNullObject）
-- load()
-- set()
-- setDirty()（预览）
-- toJSON()
-- track()
-- untrack()
+- `calculate()`
+- `clear()`
+- `convertDataTypeToText()`
+- `convertToLinkedDataType()`
+- `copyFrom()`
+- `getEntireColumn()`
+- `getEntireRow()`
+- `getIntersection()`
+- `getIntersectionOrNullObject()`
+- `getOffsetRange()`（在`getOffsetRangeAreas` `RangeAreas`对象上命名）
+- `getSpecialCells()`
+- `getSpecialCellsOrNullObject()`
+- `getTables()`
+- `getUsedRange()`（在`getUsedRangeAreas` `RangeAreas`对象上命名）
+- `getUsedRangeOrNullObject()`（在`getUsedRangeAreasOrNullObject` `RangeAreas`对象上命名）
+- `load()`
+- `set()`
+- `setDirty()`
+- `toJSON()`
+- `track()`
+- `untrack()`
 
 ### <a name="rangearea-specific-properties-and-methods"></a>特定于 RangeArea 的属性和方法
 
@@ -124,7 +119,7 @@ Excel.run(function (context) {
 
 ## <a name="get-special-cells-from-multiple-ranges"></a>从多个区域获取特殊单元格
 
-`RangeAreas` 对象上的 `getSpecialCells` 和 `getSpecialCellsOrNullObject` 方法与 `Range` 对象上的同名方法工作原理类似。 这些方法从 `RangeAreas.areas` 集合中所有区域返回包含指定特征的单元格。 请参阅 [查找区域内特殊单元格](excel-add-ins-ranges-advanced.md#find-special-cells-within-a-range-preview) 部分了解特殊单元格更多详细信息。
+`RangeAreas` 对象上的 `getSpecialCells` 和 `getSpecialCellsOrNullObject` 方法与 `Range` 对象上的同名方法工作原理类似。 这些方法从 `RangeAreas.areas` 集合中所有区域返回包含指定特征的单元格。 请参阅 [查找区域内特殊单元格](excel-add-ins-ranges-advanced.md#find-special-cells-within-a-range) 部分了解特殊单元格更多详细信息。
 
 调用 `RangeAreas` 对象上的 `getSpecialCells` 或 `getSpecialCellsOrNullObject` 方法时：
 
