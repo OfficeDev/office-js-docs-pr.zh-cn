@@ -1,60 +1,48 @@
 ---
-title: 使用 Visual Studio 打包加载项以准备发布 | Microsoft Docs
-description: 如何使用 Visual Studio 2017 部署 Web 项目并打包加载项。
-ms.date: 03/19/2019
+title: 使用 Visual Studio 打包加载项以准备发布
+description: 如何使用 Visual Studio 2019 部署 Web 项目并打包加载项。
+ms.date: 10/14/2019
 localization_priority: Priority
-ms.openlocfilehash: 9233ebed217c9e4cc5def0dace67043f29462296
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: 784741cffa0e3015caaa9c70fbb56f4b70df9462
+ms.sourcegitcommit: 499bf49b41205f8034c501d4db5fe4b02dab205e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32451085"
+ms.lasthandoff: 10/22/2019
+ms.locfileid: "37626962"
 ---
 # <a name="package-your-add-in-using-visual-studio-to-prepare-for-publishing"></a>使用 Visual Studio 打包加载项以准备发布
 
-Office 加载项包包含 XML [清单文件](../develop/add-in-manifests.md)，它可用于发布加载项。 你将不得不单独发布项目的 Web 应用程序文件。 本文介绍如何使用 Visual Studio 2017 部署 Web 项目并打包加载项。
+Office 加载项包包含 XML [清单文件](../develop/add-in-manifests.md)，它可用于发布加载项。 你将不得不单独发布项目的 Web 应用程序文件。 本文介绍如何使用 Visual Studio 2019 部署 Web 项目并打包加载项。
 
-## <a name="to-deploy-your-web-project-using-visual-studio-2017"></a>使用 Visual Studio 2017 部署 Web 项目
+## <a name="to-deploy-your-web-project-using-visual-studio-2019"></a>使用 Visual Studio 2019 部署 Web 项目
 
-完成以下步骤以使用 Visual Studio 2017 部署 Web 项目。
+完成以下步骤以使用 Visual Studio 2019 部署 Web 项目。
 
-1. 在“**解决方案资源管理器**”中，打开外接程序项目的快捷菜单，然后选择“**发布**”。
+1. 从“**生成**”选项卡中，选择“**发布 [加载项名称]**”。
 
-    将显示“**发布外接程序**”页。
-
-2. 选择“当前配置文件”**** 下拉列表中的配置文件，或选择“新建…”**** 新建配置文件。
+2. 在“**选取发布目标**”窗口中，选择其中一个选项以发布到你的首选目标。 每个发布目标都要求你提供有关入门的详细信息，例如 Azure 虚拟机或文件夹位置。 指定发布位置并填写所有必需信息后，选择“**发布**”
 
     > [!NOTE]
-    > 发布配置文件指定你要部署到的服务器、登录服务器所需的凭据、要部署的数据库和其他部署选项。
+    > 选取发布目标将会指定你要部署到的服务器、登录服务器所需的凭据、要部署的数据库和其他部署选项。
 
-    如果你选择“**新建...**”，则向导将会显示“**创建发布配置文件**”页。 可以使用此向导从托管提供程序（如 Microsoft Azure）的网站导入发布配置文件，或创建新配置文件并添加你的服务器、凭据以及下一过程中的其他设置。
+3. 有关每个发布目标选项的部署步骤的详细信息，请参阅[初探 Visual Studio 中的部署](/visualstudio/deployment/deploying-applications-services-and-components?view=vs-2019)。
 
-    有关导入发布配置文件或创建新发布配置文件的详细信息，请参阅[创建发布配置文件](https://msdn.microsoft.com/library/dd465337.aspx#creating_a_profile)。
+## <a name="to-package-and-publish-your-add-in-using-iis-ftp-or-web-deploy-using-visual-studio-2019"></a>使用 Visual Studio 2019 通过 IIS、FTP 或 Web 部署方法打包并发布加载项
 
-3. 在“**发布加载项**”页中，选择“**部署 Web 项目**”链接。
+完成以下步骤以使用 Visual Studio 2019 打包加载项。
 
-    将显示“**发布**”对话框。 有关如何使用此向导的详细信息，请参阅[操作方法：使用 Visual Studio 中的一键式发布来部署 Web 项目](https://msdn.microsoft.com/library/dd465337.aspx)。
-
-## <a name="to-package-your-add-in-using-visual-studio-2017"></a>使用 Visual Studio 2017 打包加载项
-
-完成以下步骤以使用 Visual Studio 2017 打包加载项。
-
-1. 在“**发布加载项**”页上，选择“**打包加载项**”按钮。
-
-    此时向导将显示“**打包加载项**”页面。
-
-2. 在“你的网站托管在哪里?”**** 下拉列表中，选择或输入托管加载项内容文件的网站的 URL，然后选择“完成”****。
+1. 从“**生成**”选项卡中，选择“**发布 [加载项名称]**”。
+2. 在“**选取发布目标**”窗口中，选择“**IIS、FTP 等**”，然后选择“**配置**”。 接下来，选择“**发布**”。
+3. 此时将显示一个向导，它将指导你完成该过程。 确保发布方法是你的首选方法，例如 Web 部署。
+4. 在“**目标 URL**”框中，输入托管加载项内容文件的网站的 URL，然后选择“**下一步**”。 如果计划将加载项提交到 AppSource，可以选择“**验证连接**”按钮，以发现任何可能会导致加载项遭拒的问题。 应先解决所有问题，再将加载项提交到 Microsoft Store。
+5. 确认所需的任何设置（包括“**文件发布选项**”），然后选择“**保存**”。
 
     > [!IMPORTANT]
     > [!include[HTTPS guidance](../includes/https-guidance.md)] Azure 网站自动提供 HTTPS 终结点。
 
-    此时，Visual Studio 生成发布加载项所需的文件，并打开发布输出文件夹。
-
-如果计划将加载项提交到 AppSource，可以选择“**执行验证检查**”按钮，以发现任何可能会导致加载项遭拒的问题。 应先解决所有问题，再将加载项提交到 Microsoft Store。
-
 现在，可以将 XML 清单上传到适当位置，以[发布加载项](../publish/publish.md)。XML 清单位于 `app.publish` 文件夹的 `OfficeAppManifests` 中。例如：
 
- `%UserProfile%\Documents\Visual Studio 2017\Projects\MyApp\bin\Debug\app.publish\OfficeAppManifests`
+ `%UserProfile%\Documents\Visual Studio 2019\Projects\MyApp\bin\Debug\app.publish\OfficeAppManifests`
 
 ## <a name="see-also"></a>另请参阅
 
