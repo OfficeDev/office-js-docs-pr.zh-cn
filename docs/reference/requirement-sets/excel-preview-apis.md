@@ -4,12 +4,12 @@ description: 有关即将推出的 Excel JavaScript Api 的详细信息
 ms.date: 09/24/2019
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: 95cecd1c6a0b26f945e96834fe39757490788a97
-ms.sourcegitcommit: c8914ce0f48a0c19bbfc3276a80d090bb7ce68e1
+ms.openlocfilehash: 86be9d60f37950d11b755d89bf2dd1b1190ae4ca
+ms.sourcegitcommit: 499bf49b41205f8034c501d4db5fe4b02dab205e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/26/2019
-ms.locfileid: "37235314"
+ms.lasthandoff: 10/22/2019
+ms.locfileid: "37627088"
 ---
 # <a name="excel-javascript-preview-apis"></a>Excel JavaScript 预览 API
 
@@ -22,7 +22,7 @@ ms.locfileid: "37235314"
 | 功能区域 | 说明 | 相关对象 |
 |:--- |:--- |:--- |
 | [Slicer](../../excel/excel-add-ins-pivottables.md#slicers-preview) | 在表格和数据透视表中插入和配置切片器。 | [Slicer](/javascript/api/excel/excel.slicer) |
-| [备注](../../excel/excel-add-ins-workbooks.md#comments-preview) | 添加、编辑和删除备注。 | [Comment](/javascript/api/excel/excel.comment)、[CommentCollection](/javascript/api/excel/excel.commentcollection) |
+| [备注](../../excel/excel-add-ins-comments.md) | 添加、编辑和删除备注。 | [Comment](/javascript/api/excel/excel.comment)、[CommentCollection](/javascript/api/excel/excel.commentcollection) |
 | 工作簿[保存](../../excel/excel-add-ins-workbooks.md#save-the-workbook-preview)和[关闭](../../excel/excel-add-ins-workbooks.md#close-the-workbook-preview) | 保存和关闭工作簿。  | [Workbook](/javascript/api/excel/excel.workbook) |
 | [插入工作簿](../../excel/excel-add-ins-workbooks.md#insert-a-copy-of-an-existing-workbook-into-the-current-one-preview) | 将一个工作簿插入另一个工作簿。  | [Workbook](/javascript/api/excel/excel.worksheetcollection) |
 
@@ -187,18 +187,18 @@ ms.locfileid: "37235314"
 ||[save(saveBehavior?: Excel.SaveBehavior)](/javascript/api/excel/excel.workbook#save-savebehavior-)|保存当前工作簿。|
 ||[use1904DateSystem](/javascript/api/excel/excel.workbook#use1904datesystem)|如果工作簿使用 1904 日期系统，则为 True。|
 |[Worksheet](/javascript/api/excel/excel.worksheet)|[comments](/javascript/api/excel/excel.worksheet#comments)|返回工作表上的所有 Comments 对象的集合。 只读。|
-||[onColumnSorted](/javascript/api/excel/excel.worksheet#oncolumnsorted)|在对一个或多个列进行排序时发生。 从左到右排序操作的结果会发生这种情况。|
+||[onColumnSorted](/javascript/api/excel/excel.worksheet#oncolumnsorted)|在已对一个或多个列进行排序时发生。 这是从左到右排序操作的结果。|
 ||[onFiltered](/javascript/api/excel/excel.worksheet#onfiltered)|在特定工作表上应用筛选器时发生。|
 ||[onRowHiddenChanged](/javascript/api/excel/excel.worksheet#onrowhiddenchanged)|在特定工作表上的一个或多个行的隐藏状态更改时发生。|
-||[onRowSorted](/javascript/api/excel/excel.worksheet#onrowsorted)|对一个或多个行进行排序时发生。 这是从上到下排序操作的结果。|
+||[onRowSorted](/javascript/api/excel/excel.worksheet#onrowsorted)|在已对一个或多个行进行排序时发生。 这是从上到下排序操作的结果。|
 ||[onSingleClicked](/javascript/api/excel/excel.worksheet#onsingleclicked)|在工作表中进行左键单击/点击操作时发生。 在以下情况下单击时不会触发此事件：|
 ||[slicers](/javascript/api/excel/excel.worksheet#slicers)|返回作为工作表一部分的切片器集合。 只读。|
 ||[showOutlineLevels （rowLevels：数字，columnLevels：数字）](/javascript/api/excel/excel.worksheet#showoutlinelevels-rowlevels--columnlevels-)|按行或列的大纲级别显示组。|
 |[WorksheetCollection](/javascript/api/excel/excel.worksheetcollection)|[addFromBase64(base64File: string, sheetNamesToInsert?: string[], positionType?: Excel.WorksheetPositionType, relativeTo?: Worksheet \| string)](/javascript/api/excel/excel.worksheetcollection#addfrombase64-base64file--sheetnamestoinsert--positiontype--relativeto-)|将工作簿的指定工作表插入当前工作簿。|
-||[onColumnSorted](/javascript/api/excel/excel.worksheetcollection#oncolumnsorted)|在对一个或多个列进行排序时发生。 从左到右排序操作的结果会发生这种情况。|
+||[onColumnSorted](/javascript/api/excel/excel.worksheetcollection#oncolumnsorted)|在已对一个或多个列进行排序时发生。 这是从左到右排序操作的结果。|
 ||[onFiltered](/javascript/api/excel/excel.worksheetcollection#onfiltered)|在工作簿中应用任何工作表的筛选器时发生。|
 ||[onRowHiddenChanged](/javascript/api/excel/excel.worksheetcollection#onrowhiddenchanged)|在特定工作表上的一个或多个行的隐藏状态更改时发生。|
-||[onRowSorted](/javascript/api/excel/excel.worksheetcollection#onrowsorted)|对一个或多个行进行排序时发生。 这是从上到下排序操作的结果。|
+||[onRowSorted](/javascript/api/excel/excel.worksheetcollection#onrowsorted)|在已对一个或多个行进行排序时发生。 这是从上到下排序操作的结果。|
 ||[onSingleClicked](/javascript/api/excel/excel.worksheetcollection#onsingleclicked)|在工作表集合中发生左击或螺纹操作时发生。 在以下情况下单击时不会触发此事件：|
 |[WorksheetColumnSortedEventArgs](/javascript/api/excel/excel.worksheetcolumnsortedeventargs)|[address](/javascript/api/excel/excel.worksheetcolumnsortedeventargs#address)|获取区域地址，该地址表示特定工作表上的选定区域。 仅返回作为 sort 操作结果发生更改的列。|
 ||[source](/javascript/api/excel/excel.worksheetcolumnsortedeventargs#source)|获取事件源。 有关详细信息，请参阅 Excel.EventSource。|

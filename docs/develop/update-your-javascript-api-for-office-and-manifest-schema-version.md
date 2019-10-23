@@ -1,25 +1,25 @@
 ---
 title: 更新到适用于 Office 的 JavaScript API 最新库和第 1.1 版加载项清单架构
 description: 将在 Office 加载项项目中的 JavaScript 文件（Office.js 和特定于应用程序的 .js 文件）和加载项清单验证文件更新到版本 1.1。
-ms.date: 09/26/2019
+ms.date: 10/11/2019
 localization_priority: Normal
-ms.openlocfilehash: 83e09cee76aaea7343e456f4fed28af31d978bba
-ms.sourcegitcommit: b3996b1444e520b44cf752e76eef50908386ca26
+ms.openlocfilehash: 6acd08a388b162cec4ac30fdfb256adc980d9e69
+ms.sourcegitcommit: 499bf49b41205f8034c501d4db5fe4b02dab205e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "37524239"
+ms.lasthandoff: 10/22/2019
+ms.locfileid: "37626752"
 ---
 # <a name="update-to-the-latest-javascript-api-for-office-library-and-version-11-add-in-manifest-schema"></a>更新到适用于 Office 的 JavaScript API 最新库和第 1.1 版加载项清单架构
 
 本文介绍了如何将 Office 外接程序项目中的 JavaScript 文件（Office.js 和特定于应用程序的 .js 文件）和外接程序清单验证文件更新到版本 1.1。
 
 > [!NOTE]
-> 在 Visual Studio 2017 中创建的项目已使用 1.1。 但是，偶尔会对版本 1.1 进行次要更新，可使用本文中介绍的技术应用这些更新。
+> 在 Visual Studio 2019 中创建的项目已使用版本1.1。 但是，偶尔会对版本 1.1 进行次要更新，可使用本文中介绍的技术应用这些更新。
 
 ## <a name="use-the-most-up-to-date-project-files"></a>使用最新项目文件
 
-如果你使用 Visual Studio 来开发你的加载项，以使用适用于 Office 的 JavaScript API 的最新 API 成员和[加载项清单 v1.1 功能](../develop/add-in-manifests.md)（根据 offappmanifest-1.1.xsd 进行了验证），则你需要下载 Visual Studio 2017。 要下载 Visual Studio 2017，请参阅 [Visual Studio IDE 页面](https://visualstudio.microsoft.com/vs/)。 在安装过程中，你需要选择 Office/SharePoint 开发工作负载。
+如果使用 Visual Studio 开发外接程序，若要使用适用于 Office 的 JavaScript API 的最新 API 成员和外接[程序清单的 v1.1 功能](../develop/add-in-manifests.md)（针对 offappmanifest-1.1 版进行了验证），您需要下载 Visual Studio 2019。 若要下载 Visual Studio 2019，请参阅[Visual STUDIO IDE 页面](https://visualstudio.microsoft.com/vs/)。 在安装过程中，你需要选择 Office/SharePoint 开发工作负载。
 
 如果您使用文本编辑器或 Visual Studio 以外的 IDE 开发您的 外接程序，则您需要针对在 外接程序 的清单中引用的 Office.js 和架构版本，将引用更新到 CDN。
 
@@ -42,14 +42,13 @@ ms.locfileid: "37524239"
 
 
 ### <a name="update-the-javascript-api-for-office-library-files-in-your-project-to-the-newest-release"></a>将项目中适用于 Office 的 JavaScript API 库文件更新到最新版本
-可以通过以下步骤将 Office 库文件更新到最新版本。 这些步骤使用的是 Visual Studio 2017，但与使用 Visual Studio 2015 的步骤相似。
+以下步骤将把您的 Office .js 库文件更新到最新版本。 这些步骤使用 Visual Studio 2019，但它们与 Visual Studio 的早期版本类似。
 
-1. 在 Visual Studio 2017 中，打开或新建“Office 加载项”**** 项目。
+1. 在 Visual Studio 2019 中，打开或创建新的**Office 加载项**项目。
 2. 依次选择“工具”**** > “NuGet 包管理器”**** > “管理解决方案的 Nuget 包”****。
-3. 在“NuGet 程序包管理器”**** 中，为“程序包源”**** 选择“nuget.org”****。
-4. 选择“更新”**** 选项卡。
-5. 选择 Microsoft.Office.js。
-6. 在左侧窗格中，选择“更新”****，并完成包更新过程。
+3. 选择“更新”**** 选项卡。
+4. 选择 Microsoft.Office.js。 确保程序包源来自**nuget.org**。
+5. 在左窗格中，选择 "**安装**" 并完成程序包更新过程。
 
 需要执行其他步骤才能完成更新。 在加载项 HTML 页面的 **head** 标记中，注释掉或删除任何现有 office.js 脚本引用，再引用更新后的适用于 Office 的 JavaScript API 库，如下所示：
 

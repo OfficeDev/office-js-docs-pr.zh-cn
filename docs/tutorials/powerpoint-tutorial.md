@@ -1,15 +1,15 @@
 ---
 title: PowerPoint 加载项教程
 description: 在本教程中，将生成 PowerPoint 加载项，用于插入图像、插入文本、获取幻灯片元数据，以及在幻灯片之间导航。
-ms.date: 12/31/2018
+ms.date: 10/17/2019
 ms.prod: powerpoint
 localization_priority: Normal
-ms.openlocfilehash: 0ffd3eedf0cb1d3a118edd0a22b3066cc396d320
-ms.sourcegitcommit: 1fb99b1b4e63868a0e81a928c69a34c42bf7e209
+ms.openlocfilehash: 8f1b67341c2d796ff9213682e7ee759995f915f2
+ms.sourcegitcommit: 499bf49b41205f8034c501d4db5fe4b02dab205e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/30/2019
-ms.locfileid: "36696027"
+ms.lasthandoff: 10/22/2019
+ms.locfileid: "37627109"
 ---
 # <a name="tutorial-create-a-powerpoint-task-pane-add-in"></a>教程：创建 PowerPoint 任务窗格加载项
 
@@ -29,11 +29,11 @@ ms.locfileid: "36696027"
 
 完成以下步骤以使用 Visual Studio 创建 PowerPoint 加载项项目。
 
-1. 在 Visual Studio 菜单栏中，依次选择“文件”**** > “新建”**** > “项目”****。
-    
-2. 在“Visual C#”**** 或“Visual Basic”**** 下的项目类型列表中，展开“Office/SharePoint”****，选择“加载项”****，再选择“PowerPoint Web 加载项”**** 作为项目类型。 
+1. 选择 "**新建项目**"。
 
-3. 将项目命名为“HelloWorld”****，再选择“确定”**** 按钮。
+2. 使用 "搜索" 框中输入**加载项**。 选择 " **PowerPoint Web 加载项**"，然后选择 "**下一步**"。
+
+3. 为项目命名，然后选择 "**创建**"。
 
 4. 在“创建 Office 加载项”**** 对话框窗口中，选择“将新功能添加到 PowerPoint”****，再选择“完成”**** 以创建项目。
 

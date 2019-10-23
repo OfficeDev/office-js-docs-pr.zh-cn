@@ -1,14 +1,14 @@
 ---
 title: Office 外接程序的本地化
 description: 可使用适用于 Office 的 JavaScript API 确定区域设置并根据主机应用程序的区域设置显示字符串，或者根据数据的区域设置来解读或显示数据。
-ms.date: 06/20/2019
+ms.date: 10/11/2019
 localization_priority: Normal
-ms.openlocfilehash: de0037c687e49b79acb90ff59f1babc9da1f13f5
-ms.sourcegitcommit: b3996b1444e520b44cf752e76eef50908386ca26
+ms.openlocfilehash: c2404177f2188a505522d972d5bdfdf323394eba
+ms.sourcegitcommit: 499bf49b41205f8034c501d4db5fe4b02dab205e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "35575560"
+ms.lasthandoff: 10/22/2019
+ms.locfileid: "37626766"
 ---
 # <a name="localization-for-office-add-ins"></a>Office 加载项的本地化
 
@@ -172,7 +172,7 @@ ms.locfileid: "35575560"
 本节提供示例，演示如何本地化 Office 外接程序描述、显示名称和 UI。 
 
 > [!NOTE]
-> 要下载 Visual Studio 2017，请参阅 [Visual Studio IDE 页面](https://visualstudio.microsoft.com/vs/)。 在安装过程中，你需要选择 Office/SharePoint 开发工作负载。
+> 若要下载 Visual Studio 2019，请参阅[Visual STUDIO IDE 页面](https://visualstudio.microsoft.com/vs/)。 在安装过程中，你需要选择 Office/SharePoint 开发工作负载。
 
 ### <a name="configure-office-to-use-additional-languages-for-display-or-editing"></a>配置 Office 以使用其他语言进行显示或编辑
 
@@ -184,15 +184,19 @@ ms.locfileid: "35575560"
 
 ### <a name="create-an-office-add-in-project"></a>创建 Office 加载项项目
 
-需要创建 Visual Studio 2017 Office 加载项项目。
+您需要创建 Visual Studio 2019 Office 加载项项目。
 
 > [!NOTE]
-> 如果未安装 Visual Studio 2017，请参阅 [Visual Studio IDE 页面](https://visualstudio.microsoft.com/vs/)，以获取下载说明。 在安装过程中，你需要选择 Office/SharePoint 开发工作负载。 如果之前已安装 Visual Studio 2017，请使用 [Visual Studio 安装程序](/visualstudio/install/modify-visual-studio/)，以确保安装 Office/SharePoint 开发工作负载。
+> 如果尚未安装 Visual Studio 2019，请参阅[Visual STUDIO IDE 页面](https://visualstudio.microsoft.com/vs/)获取下载说明。 在安装过程中，你需要选择 Office/SharePoint 开发工作负载。 如果您以前安装了 Visual Studio 2019，请[使用 Visual Studio 安装程序](/visualstudio/install/modify-visual-studio/)确保安装了 Office/SharePoint 开发工作负载。
 
+1. 选择 "**新建项目**"。
 
-1. 在 Visual Studio 中，依次选择“文件”**** > “新建项目”****。
-2. 在“新建项目”**** 对话框中，展开“Visual Basic”**** 或“Visual C#”****，展开“Office/SharePoint”****，再选择“加载项”****。
-3. 选择“Word 加载项”****，再为加载项命名 **WorldReadyAddIn**。选择“确定”****。
+2. 使用 "搜索" 框中输入**加载项**。 选择 " **Word Web 加载项**"，然后选择 "**下一步**"。
+
+3. 将项目命名为 " **WorldReadyAddIn** "，然后选择 "**创建**"。
+
+4. 此时，Visual Studio 创建解决方案，且它的两个项目显示在“解决方案资源管理器”**** 中。 将在 Visual Studio 中打开 "**主页 .html** " 文件。
+
 
 ### <a name="localize-the-text-used-in-your-add-in"></a>本地化加载项中使用的文本
 

@@ -1,7 +1,7 @@
-- 安装了 **Office/SharePoint 开发**工作负载的 [Visual Studio 2017](https://www.visualstudio.com/vs/)
+- 安装了**Office/SharePoint 开发**工作负载的[Visual Studio 2019](https://www.visualstudio.com/vs/)
 
     > [!NOTE]
-    > 如果之前已安装 Visual Studio 2017，请[使用 Visual Studio 安装程序](/visualstudio/install/modify-visual-studio)，以确保安装 **Office/SharePoint 开发**工作负载。 
+    > 如果您以前安装了 Visual Studio 2019，请[使用 Visual Studio 安装程序](/visualstudio/install/modify-visual-studio)确保安装了**Office/SharePoint 开发**工作负载。 
 
 - Office 2016 或更高版本
 

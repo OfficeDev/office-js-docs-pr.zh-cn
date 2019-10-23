@@ -1,14 +1,14 @@
 ---
 title: 在 PowerPoint 外接程序中使用文档主题
 description: ''
-ms.date: 12/17/2018
+ms.date: 10/14/2019
 localization_priority: Normal
-ms.openlocfilehash: f98fe4b7d99bef2ab4c684a09490ed73f0ed3bb1
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: bb37f4a9f1860d38c2218a00fbd8c8092beadd63
+ms.sourcegitcommit: 499bf49b41205f8034c501d4db5fe4b02dab205e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32451462"
+ms.lasthandoff: 10/22/2019
+ms.locfileid: "37627004"
 ---
 # <a name="use-document-themes-in-your-powerpoint-add-ins"></a>在 PowerPoint 加载项中使用文档主题
 
@@ -61,7 +61,7 @@ OfficeThemes.css 包含您可在 PowerPoint 任务窗格加载项中使用的类
 #### <a name="to-add-officethemescss-to-your-visual-studio-project"></a>将 OfficeThemes.css 添加到 Visual Studio 项目中的具体步骤
 
 > [!NOTE]
-> 此过程中的步骤仅适用于 Visual Studio 2015。 如果你使用的是 Visual Studio 2017，则会自动为你创建的任何新 PowerPoint 加载项项目创建 OfficeThemes.css 文件。
+> 此过程中的步骤仅适用于 Visual Studio 2015。 如果使用的是 Visual Studio 2019，则会自动为您创建的任何新 PowerPoint 外接程序项目创建 OfficeThemes 文件。
 
 1. 在“解决方案资源管理器”**** 中，右键单击 _**project_name**_**Web** 项目中的“内容”**** 文件夹，选择“添加”****，然后选择“样式表”****。
     
@@ -143,9 +143,17 @@ OfficeThemes.css 包含您可在 PowerPoint 任务窗格加载项中使用的类
 
 #### <a name="to-reference-officethemescss-in-your-add-in-for-powerpoint"></a>在 PowerPoint 加载项中引用 OfficeThemes.css 的具体步骤
 
-1. 在 Visual Studio 2017 中，打开或创建新的 **Office 加载项**项目。
-    
-2. 在实现加载项 UI 的 HTML 页面（如默认模板中的 Home.html）中，在 `<head>` 标记内添加以下引用 OfficeThemes.css 文件的 `<link>` 标记：
+1. 选择 "**新建项目**"。
+
+2. 使用 "搜索" 框中输入**加载项**。 选择 " **PowerPoint Web 加载项**"，然后选择 "**下一步**"。
+
+3. 为项目命名，然后选择 "**创建**"。
+
+3. 在“创建 Office 加载项”**** 对话框窗口中，选择“将新功能添加到 PowerPoint”****，再选择“完成”**** 以创建项目。
+
+4. 此时，Visual Studio 创建解决方案，且它的两个项目显示在“解决方案资源管理器”**** 中。**Home.html** 文件在 Visual Studio 中打开。
+
+5. 在实现加载项 UI 的 HTML 页面（如默认模板中的 Home.html）中，在 `<head>` 标记内添加以下引用 OfficeThemes.css 文件的 `<link>` 标记：
     
     ```HTML
     <link href="../../Content/OfficeThemes.css" rel="stylesheet" type="text/css" />

@@ -1,14 +1,14 @@
 ---
 title: 使用文本编辑器为 Microsoft Project 创建首个任务窗格加载项
 description: ''
-ms.date: 09/26/2019
+ms.date: 10/11/2019
 localization_priority: Normal
-ms.openlocfilehash: 36e2688240ad348669e7d6845f371997cd3c3ec2
-ms.sourcegitcommit: b3996b1444e520b44cf752e76eef50908386ca26
+ms.openlocfilehash: 4834567d88369fdc9b67a5a7e62a996384b131e5
+ms.sourcegitcommit: 499bf49b41205f8034c501d4db5fe4b02dab205e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "37524274"
+ms.lasthandoff: 10/22/2019
+ms.locfileid: "37626990"
 ---
 # <a name="create-your-first-task-pane-add-in-for-microsoft-project-by-using-a-text-editor"></a>使用文本编辑器为 Microsoft Project 创建首个任务窗格加载项
 
@@ -71,7 +71,7 @@ JSOMCall.html 示例使用 office.js 文件和 project-15.js 文件中包含的 
 
 1. 创建 HTML 文件，采用 JSOM_SimpleOMCalls.xml 清单中 **SourceLocation** 元素指定的名称。 
 
-   例如，在 `C:\Project\AppSource` 目录中创建 theJSOMCall.html 文件。 可以使用简单的文本编辑器创建源文件，但是使用诸如 Visual Studio Code 的工具可以使操作更为简单，这适用于特定文档类型（如 HTML 和 JavaScript），并具有其他编辑辅助功能。 如果还未执行 [Project 任务窗格加载项](../project/project-add-ins.md)所述的必应搜索示例，过程 3 将演示如何创建清单指定的 `\\ServerName\AppSource` 文件共享。
+   例如，在 `C:\Project\AppSource` 目录中创建 theJSOMCall.html 文件。 虽然您可以使用简单的文本编辑器来创建源文件，但使用 Visual Studio Code 这样的工具（例如 HTML 和 JavaScript）会更简单，并且具有其他编辑辅助功能。 如果还未执行 [Project 任务窗格加载项](../project/project-add-ins.md)所述的必应搜索示例，过程 3 将演示如何创建清单指定的 `\\ServerName\AppSource` 文件共享。
 
    JSOMCall.html 文件在 Microsoft Office 2013 应用程序中使用通用 MicrosoftAjax.js 文件实现 AJAX 功能并使用 Office.js 文件实现外接程序功能。
 
