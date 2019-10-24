@@ -1,15 +1,15 @@
 ---
 title: 生成首个 Word 任务窗格加载项
 description: 了解如何使用 Office JS API 生成简单的 Word 任务窗格加载项。
-ms.date: 09/18/2019
+ms.date: 10/17/2019
 ms.prod: word
 localization_priority: Priority
-ms.openlocfilehash: 1648e6ee50d45fa4811766a56ad55896267d66f8
-ms.sourcegitcommit: a0257feabcfe665061c14b8bdb70cf82f7aca414
+ms.openlocfilehash: 87f2e4d46748328461529fd41ea11b109fe4785e
+ms.sourcegitcommit: 499bf49b41205f8034c501d4db5fe4b02dab205e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/18/2019
-ms.locfileid: "37035306"
+ms.lasthandoff: 10/22/2019
+ms.locfileid: "37626865"
 ---
 # <a name="build-your-first-word-task-pane-add-in"></a>生成首个 Word 任务窗格加载项
 
@@ -96,11 +96,12 @@ _适用于：Windows 版 Word 2016 或更高版本、iPad 版 Word 和 Mac 版 W
 
 ### <a name="create-the-add-in-project"></a>创建加载项项目
 
-1. 在 Visual Studio 菜单栏中，依次选择“文件”**** > “新建”**** > “项目”****。
 
-2. 在“Visual C#”**** 或“Visual Basic”**** 下的项目类型列表中，展开“Office/SharePoint”****，选择“加载项”****，再选择“Word Web 加载项”**** 作为项目类型。 
+1. 在 Visual Studio 中，选择**新建项目**。
 
-3. 命名此项目，再选择“确定”****。
+2. 使用搜索框，输入**外接程序**。 选择“**Word Web 外接程序**”，然后选择“**下一步**”。
+
+3. 对项目命名，然后选择“**创建**”。
 
 4. 此时，Visual Studio 创建解决方案，且它的两个项目显示在“解决方案资源管理器”**** 中。**Home.html** 文件在 Visual Studio 中打开。
 

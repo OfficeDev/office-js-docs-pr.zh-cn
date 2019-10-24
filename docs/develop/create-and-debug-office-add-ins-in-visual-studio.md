@@ -1,18 +1,18 @@
 ---
 title: 在 Visual Studio 中创建和调试 Office 外接程序
 description: 使用 Visual Studio 在 Windows 上的 Office 桌面客户端中创建和调试 Office 加载项
-ms.date: 06/20/2019
+ms.date: 10/11/2019
 localization_priority: Priority
-ms.openlocfilehash: 9cc4d50d9b61daa4b1f55f7dd4c1e1156f8d959c
-ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
+ms.openlocfilehash: 878cd308747ac7049ca37b21a9fcb2282a4bf60d
+ms.sourcegitcommit: 499bf49b41205f8034c501d4db5fe4b02dab205e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "35128183"
+ms.lasthandoff: 10/22/2019
+ms.locfileid: "37626829"
 ---
-# <a name="create-and-debug-office-add-ins-in-visual-studio"></a>在 Visual Studio 中创建和调试 Office 外接程序
+# <a name="create-and-debug-office-add-ins-in-visual-studio"></a>在 Visual Studio 中创建和调试 Office 加载项
 
-本文介绍如何使用 Visual Studio 2017 为 Excel、Word、PowerPoint 或 Outlook 创建 Office 外接程序，并在 Windows 上的 Office 桌面客户端中调试外接程序。 如果使用的是 Visual Studio 的其他版本，操作步骤可能略有不同。
+本文介绍如何使用 Visual Studio 2019 为 Excel、Word、PowerPoint 或 Outlook 创建 Office 外接程序，并在 Windows 上的 Office 桌面客户端中调试外接程序。 如果使用的是 Visual Studio 的其他版本，操作步骤可能略有不同。
 
 > [!NOTE]
 > Visual Studio 不支持为 OneNote 或 Project 创建 Office 外接程序，但你可以使用 [Office 外接程序的 Yeoman 生成器](https://github.com/OfficeDev/generator-office)来创建这些类型的外接程序。
@@ -22,10 +22,10 @@ ms.locfileid: "35128183"
 
 ## <a name="prerequisites"></a>先决条件
 
-- 安装了 **Office/SharePoint 开发**工作负载的 [Visual Studio 2017](https://www.visualstudio.com/vs/)
+- 安装了 **Office/SharePoint 开发**工作负载的 [Visual Studio 2019](https://www.visualstudio.com/vs/)
 
     > [!TIP]
-    > 如果之前已安装 Visual Studio 2017，请[使用 Visual Studio 安装程序](/visualstudio/install/modify-visual-studio)，以确保安装 **Office/SharePoint 开发**工作负载。 如果尚未安装此工作负载，请使用 Visual Studio 安装程序进行[安装](/visualstudio/install/modify-visual-studio?view=vs-2017#modify-workloads)。
+    > 如果之前已安装 Visual Studio 2019，请[使用 Visual Studio 安装程序](/visualstudio/install/modify-visual-studio)，以确保安装 **Office/SharePoint 开发**工作负载。 如果尚未安装此工作负载，请使用 Visual Studio 安装程序进行[安装](/visualstudio/install/modify-visual-studio?view=vs-2019#modify-workloads)。
 
 - Office 2013 或更高版本
 
@@ -36,19 +36,19 @@ ms.locfileid: "35128183"
 
 首先完成以下三个步骤，然后完成后续部分中与你正在创建的外接程序类型相对应的步骤。 
 
-1. 打开 Visual Studio，在 Visual Studio 菜单栏中，依次选择“**文件**” > “**新建**” > “**项目**”。
+1. 打开 Visual Studio，在 Visual Studio 菜单栏中，依次选择“**新建项目**”。
 
-2. 在 **Visual C#** 或 **Visual Basic** 下的项目类型列表中，展开 **Office/SharePoint**，选择“**外接程序**”，然后选择要创建的外接程序项目的类型。 
+2. 使用搜索框，输入**外接程序**，然后选择要创建的外接程序项目的类型。
 
-3. 命名此项目，然后选择“**确定**”。
+3. 命名此项目，再选择“确定”****。
 
 ### <a name="word-web-add-in-or-outlook-web-add-in"></a>Word Web 外接程序或 Outlook Web 外接程序
 
-如果你已选择创建 **Word Web 外接程序**或 **Outlook Web 外接程序**，Visual Studio 将创建一个解决方案，并在“**解决方案资源管理器**”中显示这两个项目。 接下来，你可以[浏览 Visual Studio 解决方案](#explore-the-visual-studio-solution)。 
+如果你已选择创建 **Word Web 外接程序**或 **Outlook Web 外接程序**，Visual Studio 将创建一个解决方案，并在“**解决方案资源管理器**”中显示这两个项目。 接下来，你可以[浏览 Visual Studio 解决方案](#explore-the-visual-studio-solution)。
 
 ### <a name="powerpoint-web-add-in"></a>PowerPoint Web 外接程序
 
-如果你已选择创建 **PowerPoint Web 外接程序**，则会出现“**创建 Office 外接程序**”对话框。 
+如果你已选择创建 **PowerPoint Web 外接程序**，则会出现“**创建 Office 外接程序**”对话框。
 
 - 若要创建任务窗格外接程序，请选择“**向 PowerPoint 添加新功能**”，然后选择“**完成**”按钮以创建 Visual Studio 解决方案。
 
@@ -200,7 +200,7 @@ Web 应用程序项目包含可用于实现入门的默认 HTML 文件、JavaScr
 
 3. 打开主机应用程序。
 
-生成项目时，Visual Studio 不会显示“**输出**”窗口中的验证错误。 Visual Studio 报告“**错误列表**”窗口中出现的错误和警告。 通过在代码和文本编辑器中显示不同颜色的波浪下划线（称为波浪线），Visual Studio 还报告验证错误。 通过这些标志，你可以得知 Visual Studio 在你的代码中检测到的问题。 有关详细信息，请参阅[代码和文本编辑器](https://msdn.microsoft.com/library/se2f663y(v=vs.140).aspx)。 有关如何启用或禁用验证的详细信息，请参阅[选项、文本编辑器、JavaScript、IntelliSense](/visualstudio/ide/reference/options-text-editor-javascript-intellisense?view=vs-2017)。
+生成项目时，Visual Studio 不会显示“**输出**”窗口中的验证错误。 Visual Studio 报告“**错误列表**”窗口中出现的错误和警告。 通过在代码和文本编辑器中显示不同颜色的波浪下划线（称为波浪线），Visual Studio 还报告验证错误。 通过这些标志，你可以得知 Visual Studio 在你的代码中检测到的问题。 有关如何启用或禁用验证的详细信息，请参阅[选项、文本编辑器、JavaScript、IntelliSense](/visualstudio/ide/reference/options-text-editor-javascript-intellisense?view=vs-2019)。
 
 要查看项目中 XML 清单文件的验证规则，请参阅 [Office 外接程序 XML 清单](../develop/add-in-manifests.md)。
 

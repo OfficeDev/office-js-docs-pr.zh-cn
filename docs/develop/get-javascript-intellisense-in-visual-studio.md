@@ -1,18 +1,18 @@
 ---
-title: 在 Visual Studio 2017 中获取 JavaScript IntelliSense
+title: 在 Visual Studio 2019 中获取 JavaScript IntelliSense
 description: ''
-ms.date: 03/19/2019
+ms.date: 10/11/2019
 localization_priority: Priority
-ms.openlocfilehash: 78a774397069d0c6ff91cc098cad0fd9b8e5c7b9
-ms.sourcegitcommit: d34aa0b282cc76ffff579da2a7945efd12fb7340
+ms.openlocfilehash: afe2890015c853c2b70a00d94ea1b6a49296a14a
+ms.sourcegitcommit: 499bf49b41205f8034c501d4db5fe4b02dab205e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/05/2019
-ms.locfileid: "36769545"
+ms.lasthandoff: 10/22/2019
+ms.locfileid: "37626780"
 ---
-# <a name="get-javascript-intellisense-in-visual-studio-2017"></a>在 Visual Studio 2017 中获取 JavaScript IntelliSense
+# <a name="get-javascript-intellisense-in-visual-studio-2019"></a>在 Visual Studio 2019 中获取 JavaScript IntelliSense
 
-当使用 Visual Studio 2017 开发 Office 外接程序时，可以使用 JSDoc 来启用 IntelliSense，以获取 JavaScript 变量、对象、参数和返回值。本文概述了 JSDoc 以及如何使用它在 Visual Studio 中创建 IntellSense。有关详细信息，请参阅 [JavaScript IntelliSense](/visualstudio/ide/javascript-intellisense) 和 [JavaScript 中的 JSDoc 支持](https://github.com/Microsoft/TypeScript/wiki/JsDoc-support-in-JavaScript)。 
+当使用 Visual Studio 2019 开发 Office 外接程序时，可以使用 JSDoc 来启用 IntelliSense，以获取 JavaScript 变量、对象、参数和返回值。本文概述了 JSDoc 以及如何使用它在 Visual Studio 中创建 IntellSense。有关详细信息，请参阅 [JavaScript IntelliSense](/visualstudio/ide/javascript-intellisense) 和 [JavaScript 中的 JSDoc 支持](https://github.com/Microsoft/TypeScript/wiki/JsDoc-support-in-JavaScript)。 
 
 ## <a name="officejs-type-definitions"></a>Office.js 类型定义
 

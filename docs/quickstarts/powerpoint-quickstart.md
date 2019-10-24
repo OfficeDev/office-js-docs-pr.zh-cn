@@ -1,15 +1,15 @@
 ---
 title: 生成首个 PowerPoint 任务加载项
 description: 了解如何使用 Office JS API 生成简单的 PowerPoint 任务窗格加载项。
-ms.date: 09/18/2019
+ms.date: 10/17/2019
 ms.prod: powerpoint
 localization_priority: Priority
-ms.openlocfilehash: 62e11129a35a802b8f4088a93687d631c0af2ff4
-ms.sourcegitcommit: a0257feabcfe665061c14b8bdb70cf82f7aca414
+ms.openlocfilehash: f5fed49632a5e71075cd71e53a74290fdca05614
+ms.sourcegitcommit: 499bf49b41205f8034c501d4db5fe4b02dab205e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/18/2019
-ms.locfileid: "37035314"
+ms.lasthandoff: 10/22/2019
+ms.locfileid: "37626899"
 ---
 # <a name="build-your-first-powerpoint-task-pane-add-in"></a>生成首个 PowerPoint 任务加载项
 
@@ -94,11 +94,11 @@ ms.locfileid: "37035314"
 
 ### <a name="create-the-add-in-project"></a>创建加载项项目
 
-1. 在 Visual Studio 菜单栏中，依次选择“文件”**** > “新建”**** > “项目”****。
-    
-2. 在“Visual C#”**** 或“Visual Basic”**** 下的项目类型列表中，展开“Office/SharePoint”****，选择“加载项”****，再选择“PowerPoint Web 加载项”**** 作为项目类型。 
+1. 在 Visual Studio 中，选择**新建项目**。
 
-3. 命名此项目，再选择“确定”****。
+2. 使用搜索框，输入**外接程序**。 选择“**PowerPoint 外接程序**”，然后选择“**下一步**”。
+
+3. 对项目命名，然后选择“**创建**”。
 
 4. 在“创建 Office 加载项”**** 对话框窗口中，选择“将新功能添加到 PowerPoint”****，再选择“完成”**** 以创建项目。
 

@@ -1,14 +1,14 @@
 ---
 title: 创建使用单一登录的 ASP.NET Office 加载项
 description: ''
-ms.date: 04/15/2019
+ms.date: 10/11/2019
 localization_priority: Priority
-ms.openlocfilehash: bc8c2427171f06865de6c809a5d7311018fcc278
-ms.sourcegitcommit: 1fb99b1b4e63868a0e81a928c69a34c42bf7e209
+ms.openlocfilehash: 9844b8f9b9b966c0a5348f02f5797e7a07eb67b6
+ms.sourcegitcommit: 499bf49b41205f8034c501d4db5fe4b02dab205e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/30/2019
-ms.locfileid: "36695803"
+ms.lasthandoff: 10/22/2019
+ms.locfileid: "37626794"
 ---
 # <a name="create-an-aspnet-office-add-in-that-uses-single-sign-on-preview"></a>创建使用单一登录的 ASP.NET Office 加载项（预览）
 
@@ -21,7 +21,7 @@ ms.locfileid: "36695803"
 
 ## <a name="prerequisites"></a>先决条件
 
-* Visual Studio 2017 的最新可用版本。
+* Visual Studio 2019 的最新可用版本。
 
 * Office 365（Office 的订阅版本）。 来自预览体验成员频道的最新每月版本和内部版本。 你可能需要成为 Office 预览体验成员，才能获取此版本。 有关详细信息，请参阅[成为 Office 预览体验成员](https://products.office.com/office-insider?tab=tab-1)。 请注意，当内部版本进入生产半年频道时，将关闭对该内部版本的预览功能（包括 SSO）的支持。
 
@@ -125,7 +125,7 @@ ms.locfileid: "36695803"
     > * “Resource”**** 值是向注册的外接程序添加 Web API 平台时设置的“应用程序 ID URI”****。
     > * 仅在通过 AppSource 销售加载项时，才使用 **Scopes** 部分生成许可对话框。
 
-1. 在 Visual Studio 中，打开“错误列表”**** 的“警告”**** 选项卡。 如果出现 `<WebApplicationInfo>` 不是 `<VersionOverrides>` 的有效子级的警告，则该 Visual Studio 2017 Preview 版本无法识别 SSO 标记。 解决方法是对 Word、Excel 或 PowerPoint 外接程序执行以下操作。 （如果使用的是 Outlook 外接程序，请参阅下面的解决方法。）
+1. 在 Visual Studio 中，打开“错误列表”**** 的“警告”**** 选项卡。 如果出现 `<WebApplicationInfo>` 不是 `<VersionOverrides>` 的有效子级的警告，则该 Visual Studio 版本无法识别 SSO 标记。 解决方法是对 Word、Excel 或 PowerPoint 外接程序执行以下操作。 （如果使用的是 Outlook 外接程序，请参阅下面的解决方法。）
 
    - **适用于 Word、Excel 和 PowerPoint 的解决方法**
 

@@ -1,14 +1,14 @@
 ---
 title: 在 Microsoft Azure 上托管 Office 加载项 | Microsoft Docs
 description: 了解如何将加载项 Web 应用部署到 Azure 并旁加载该加载项以便在 Office 客户端应用程序中进行测试。
-ms.date: 03/19/2019
+ms.date: 10/16/2019
 localization_priority: Priority
-ms.openlocfilehash: 5db98ca65aac019a027592a442f427ee3b6126f1
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: 0cfddacf48bda9ed7b63d4018e3ae0437f15bcd9
+ms.sourcegitcommit: 499bf49b41205f8034c501d4db5fe4b02dab205e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32451092"
+ms.lasthandoff: 10/22/2019
+ms.locfileid: "37626976"
 ---
 # <a name="host-an-office-add-in-on-microsoft-azure"></a>在 Microsoft Azure 上托管 Office 加载项
 
@@ -18,10 +18,10 @@ ms.locfileid: "32451092"
 
 ## <a name="prerequisites"></a>先决条件 
 
-1. 安装 [Visual Studio 2017](https://www.visualstudio.com/downloads)，并选择添加 **Azure 开发**工作负载。
+1. 安装 [Visual Studio 2019](https://www.visualstudio.com/downloads)，并选择添加 **Azure 开发**工作负载。
 
     > [!NOTE]
-    > 如果之前已安装 Visual Studio 2017，请[使用 Visual Studio 安装程序](/visualstudio/install/modify-visual-studio)，以确保安装 **Azure 开发**工作负载。 
+    > 如果之前已安装 Visual Studio 2019，请[使用 Visual Studio 安装程序](/visualstudio/install/modify-visual-studio)，以确保安装 **Azure 开发**工作负载。 
 
 2. 安装 Office。
 
@@ -68,69 +68,37 @@ ms.locfileid: "32451092"
 
 6. 关闭 Word。
 
-## <a name="step-3-create-a-web-app-in-azure"></a>第 3 步：在 Azure 中创建 Web 应用
-
-使用 [Visual Studio 2017](../publish/host-an-office-add-in-on-microsoft-azure.md#using-visual-studio-2017) 或使用 [Azure 门户](../publish/host-an-office-add-in-on-microsoft-azure.md#using-the-azure-portal)在 Azure 中创建空的 Web 应用。
-
-### <a name="using-visual-studio-2017"></a>使用 Visual Studio 2017
-
-若要使用 Visual Studio 2017 创建 Web 应用，请完成以下步骤。
-
-1. 在 Visual Studio 的“视图”**** 菜单中，选择“服务器资源管理器”****。右键单击“Azure”**** 并选择“连接到 Microsoft Azure 订阅”****。请按说明连接到 Azure 订阅。
-
-2. 在 Visual Studio 的“服务器资源管理器”**** 中，展开“Azure”****，右键单击“应用服务”****，然后选择“创建新的应用服务”****。
-
-3. 在“创建应用服务”**** 对话框中，提供此信息：
-
-      - 为站点输入唯一的“Web 应用名称”****。Azure 验证站点名称在整个 azurewebsites.net 域中是否是唯一的。
-
-      - 选择要用于创建此站点的“订阅”****。
-
-      - 为站点选择“资源组”****。如果创建新组，还需为新组命名。
-
-      - 选择要用于创建此站点的“应用服务计划”****。如果创建新计划，还需为新计划命名。
-
-      - 选择“创建”****。
-
-    新的 Web 应用将在“服务器资源管理器”**** 中的“Azure”**** >> “应用服务”****>>“选择的资源组”下显示。
-
-4. 右键单击新的 Web 应用，然后选择“在浏览器中查看”****。随即打开浏览器，并显示包含“应用服务应用已创建”消息的网页。
-
-5. 在浏览器地址栏中，将 Web 应用 URL 更改为使用 HTTPS，并按 **Enter** 确认已启用 HTTPS 协议。 
-
-    > [!IMPORTANT]
-    > [!include[HTTPS guidance](../includes/https-guidance.md)] Azure 网站自动提供 HTTPS 终结点。
-
-### <a name="using-the-azure-portal"></a>使用 Azure 门户
+## <a name="step-3-create-a-web-app-in-azure-using-the-azure-portal"></a>第 3 步：使用 Azure 门户在 Azure 中创建 Web 应用
 
 若要使用 Azure 门户创建 Web 应用，请完成以下步骤。
 
 1. 使用 Azure 凭据登录到 [Azure 门户](https://portal.azure.com/)。
 
-2. 选择“新建”**** > “Web + 移动”**** > “Web 应用”****。
+2. 在“**Azure 服务**”下，选择“**Web 应用**”。
 
-3. 在“Web 应用创建”**** 对话框中，提供此信息：
-
-      - 为站点输入唯一的“应用名称”****。Azure 验证站点名称在整个 azureweb apps.net 域中是否是唯一的。
+3. 在“**应用服务**”页面上，选择“**添加**”。 提供以下信息：
 
       - 选择要用于创建此站点的“订阅”****。
-
+      
       - 为站点选择“资源组”****。如果创建新组，还需为新组命名。
+      
+      - 为站点输入唯一的“应用名称”****。 Azure 验证站点名称在整个 azureweb apps.net 域中是否是唯一的。
 
-      - 为站点选择“操作系统”****。
+      - 选择使用代码还是 Docker 容器进行发布。
 
-      - 选择要用于创建此站点的“应用服务计划”****。如果创建新计划，还需为新计划命名。
+      - 指定“**运行时堆栈**”。
 
-      - 选择“创建”****。
+      - 为站点选择“**操作系统**”。
 
-4. 选择“通知”****（Azure 门户顶部边缘的钟形图标），然后选择“部署成功”**** 通知，以打开 Azure 门户中的站点“概述”**** 页。
+      - 选择“**区域**”。
 
-    > [!NOTE]
-    > 网站部署完成后，通知会从“正在部署”**** 更改为“部署成功”****。
+      - 选择要用于创建此站点的“**应用服务计划**”。
 
-5. 在 Azure 门户的站点“概述”**** 页的“基本信息”**** 部分中，选择“URL”**** 下显示的 URL。随即打开浏览器，并显示包含“应用服务应用已创建”消息的网页。 
+      - 选择“**创建**”。
 
-6. 在浏览器地址栏中，将 Web 应用 URL 更改为使用 HTTPS，并按 **Enter** 确认已启用 HTTPS 协议。 
+4. 下一页将显示部署的进行状态和完成时间。 完成后，选择“**转到资源**”。  
+
+5. 在“**概述**”节中，选择在“**URL**”下显示的 URL。 随即将打开浏览器，并显示包含“应用服务应用已启动且正在运行”消息的网页。
 
     > [!IMPORTANT]
     > [!include[HTTPS guidance](../includes/https-guidance.md)] Azure 网站自动提供 HTTPS 终结点。
@@ -139,17 +107,17 @@ ms.locfileid: "32451092"
 
 1. 以管理员身份启动 Visual Studio。
 
-2. 选择“文件”**** > “新建”**** > “项目”****。
+2. 选择“**创建新项目**”。
 
-3. 在“模板”**** 下，展开“Visual C#”****（或“Visual Basic”****），展开“Office/SharePoint”****，然后选择“外接程序”****。
+3. 使用搜索框，输入“**加载程序**”。
 
-4. 选择“Word Web 外接程序”****，然后选择“确定”**** 以接受默认设置。
+4. 选择“**Word Web 外接程序**”作为项目类型，然后选择“**下一步**”以接受默认设置。
 
-Visual Studio 将创建基本的 Word 外接程序，你可以按原样发布，无需对其 Web 项目进行任何更改。
+Visual Studio 将创建基本的 Word 外接程序，你可以按原样发布，无需对其 Web 项目进行任何更改。 若要为其他 Office 主机类型（如 Excel）生成外接程序，请重复这些步骤，并选择具有所需 Office 主机的项目类型。
 
 ## <a name="step-5-publish-your-office-add-in-web-app-to-azure"></a>第 5 步：将 Office 外接程序 Web 应用发布到 Azure
 
-1. 在 Visual Studio 中打开外接程序项目后，展开“解决方案资源管理器”**** 中的解决方案节点，以便可以查看解决方案的两个项目。
+1. 在 Visual Studio 中打开外接程序项目后，展开“**解决方案资源管理器**”中的解决方案节点，然后选择“**应用服务**”。
 
 2. 右键单击 Web 项目，然后选择“发布”****。Web 项目包含 Office 外接程序 Web 应用文件，因此，这是你可以发布到 Azure 的项目。
 
@@ -161,11 +129,9 @@ Visual Studio 将创建基本的 Word 外接程序，你可以按原样发布，
 
       - 选择“发布”****。
 
-4. 在“应用服务”**** 对话框中，找到并选择在[步骤 3：在 Azure 中创建 Web 应用](../publish/host-an-office-add-in-on-microsoft-azure.md#step-3-create-a-web-app-in-azure)中创建的 Web 应用，然后选择“确定”****。 
+4. Visual Studio 会将 Office 外接程序的 Web 项目发布到 Azure Web 应用。Visual Studio 完成发布 Web 项目后，浏览器将打开并显示网页，其中显示“应用服务应用已创建”文本。这是 Web 应用当前的默认页。
 
-    Visual Studio 会将 Office 外接程序的 Web 项目发布到 Azure Web 应用。Visual Studio 完成发布 Web 项目后，浏览器将打开并显示网页，其中显示“应用服务应用已创建”文本。这是 Web 应用当前的默认页。
-
- 若要查看外接程序的网页，请更改此 URL，使其使用 HTTPS，并指定外接程序的 HTML 页的路径（例如：https://YourDomain.azurewebsites.net/Home.html)）。这可确认你的外接程序的 Web 应用现在托管于 Azure 上。复制根 URL（例如：https://YourDomain.azurewebsites.net)）；本文后续部分中编辑外接程序清单文件时将需要此 URL。
+5. 复制根 URL（例如：https://YourDomain.azurewebsites.net)；本文后续部分中编辑加载项清单文件时将需要此 URL。
 
 ## <a name="step-6-edit-and-deploy-the-add-in-xml-manifest-file"></a>第 6 步：编辑并部署加载项 XML 清单文件
 
@@ -175,13 +141,9 @@ Visual Studio 将创建基本的 Word 外接程序，你可以按原样发布，
 
 3. 在 XML 清单文件中，找到所有的“~remoteAppUr”实例，并将其全部替换为 Azure 上的外接程序 Web 应用的根 URL。这就是之前在将外接程序 Web 应用发布到 Azure 后复制的 URL（例如：https://YourDomain.azurewebsites.net)）。 
 
-4. 选择“**文件**”，然后选择“**全部保存**”。关闭加载项 XML 清单文件。
+4. 选择“**文件**”，然后选择“**全部保存**”。 然后复制外接程序 XML 清单文件（例如 WordWebAddIn.xml）。
 
-5. 返回到“解决方案资源管理器”****，右键单击清单文件夹并选择“在文件资源管理器中打开文件夹”****。
-
-6. 复制外接程序 XML 清单文件（例如 WordWebAddIn.xml）。 
-
-7. 浏览到在[步骤 1：创建共享文件夹](../publish/host-an-office-add-in-on-microsoft-azure.md#step-1-create-a-shared-folder-to-host-your-add-in-xml-manifest-file)中创建的网络文件共享，并将清单文件粘贴到此文件夹。
+5. 使用“**文件资源管理器**”程序浏览到在[第 1 步：创建共享文件夹](../publish/host-an-office-add-in-on-microsoft-azure.md#step-1-create-a-shared-folder-to-host-your-add-in-xml-manifest-file)中创建的网络文件共享，并将清单文件粘贴到此文件夹。
 
 ## <a name="step-7-insert-and-run-the-add-in-in-the-office-client-application"></a>第 7 步：在 Office 客户端应用程序中插入并运行加载项
 

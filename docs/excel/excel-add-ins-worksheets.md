@@ -1,25 +1,25 @@
 ---
 title: 使用 Excel JavaScript API 处理工作表
 description: ''
-ms.date: 09/09/2019
+ms.date: 10/16/2019
 localization_priority: Priority
-ms.openlocfilehash: 3c06e3660c2c8d6bf362b38185b96c8012dc4b90
-ms.sourcegitcommit: 24303ca235ebd7144a1d913511d8e4fb7c0e8c0d
+ms.openlocfilehash: ea8dad58bdd1ce3875751661806293e9aa1222fb
+ms.sourcegitcommit: 499bf49b41205f8034c501d4db5fe4b02dab205e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/11/2019
-ms.locfileid: "36838561"
+ms.lasthandoff: 10/22/2019
+ms.locfileid: "37626843"
 ---
 # <a name="work-with-worksheets-using-the-excel-javascript-api"></a>使用 Excel JavaScript API 处理工作表
 
-本文提供了代码示例，介绍如何使用 Excel JavaScript API 对工作表执行常见任务。 有关 **Worksheet** 和 **WorksheetCollection** 对象支持的属性和方法的完整列表，请参阅 [Worksheet 对象 (Excel JavaScript API)](/javascript/api/excel/excel.worksheet) 和 [WorksheetCollection 对象 (Excel JavaScript API)](/javascript/api/excel/excel.worksheetcollection)。
+本文提供了代码示例，介绍如何使用 Excel JavaScript API 对工作表执行常见任务。 有关 `Worksheet` 和 `WorksheetCollection` 对象支持的属性和方法的完整列表，请参阅 [Worksheet 对象 (Excel JavaScript API)](/javascript/api/excel/excel.worksheet) 和 [WorksheetCollection 对象 (Excel JavaScript API)](/javascript/api/excel/excel.worksheetcollection)。
 
 > [!NOTE]
 > 本文中的信息仅适用于常规工作表；不适用于“图表”或“宏”表。
 
 ## <a name="get-worksheets"></a>获取工作表
 
-下面的代码示例获取工作表集合，加载每个工作表的 **name** 属性，并向控制台写入消息。
+下面的代码示例获取工作表集合，加载每个工作表的 `name` 属性，并向控制台写入一条消息。
 
 ```js
 Excel.run(function (context) {
@@ -41,11 +41,11 @@ Excel.run(function (context) {
 ```
 
 > [!NOTE]
-> 工作表的 **id** 属性用于唯一标识指定工作簿中的工作表，即使工作表被重命名或移动，此属性的值也仍保持不变。如果工作表从 Mac 版 Excel 的工作簿中删除，已删除工作表的 **id** 可能会重新分配给后续创建的新工作表。
+> 工作表的 `id` 属性用于唯一标识指定工作簿中的工作表，即使工作表被重命名或移动，此属性的值也仍保持不变。如果工作表从 Mac 版 Excel 的工作簿中删除，已删除工作表的 `id` 可能会重新分配给后续创建的新工作表。
 
 ## <a name="get-the-active-worksheet"></a>获取活动工作表
 
-下面的代码示例获取活动工作表，加载其 **name** 属性，并向控制台写入一条消息。
+下面的代码示例获取活动工作表，加载其 `name` 属性，并向控制台写入一条消息。
 
 ```js
 Excel.run(function (context) {
@@ -61,7 +61,7 @@ Excel.run(function (context) {
 
 ## <a name="set-the-active-worksheet"></a>设置活动工作表
 
-下面的代码示例将活动工作表设置为名为 **Sample** 的工作表，加载其 **name** 属性，并向控制台写入一条消息。 如果没有使用该名称的工作表，**activate()** 方法将引发 **ItemNotFound** 错误。
+下面的代码示例将活动工作表设置为名为 **Sample** 的工作表，加载其 `name` 属性，并向控制台写入一条消息。 如果没有使用该名称的工作表，`activate()` 方法将引发 `ItemNotFound` 错误。
 
 ```js
 Excel.run(function (context) {
@@ -82,7 +82,7 @@ Excel.run(function (context) {
 
 ### <a name="get-the-first-worksheet"></a>获取第一个工作表
 
-下面的代码示例获取工作簿中的第一个工作表，加载其 **name** 属性，并向控制台中写入一条消息。
+下面的代码示例获取工作簿中的第一个工作表，加载其 `name` 属性，并向控制台中写入一条消息。
 
 ```js
 Excel.run(function (context) {
@@ -98,7 +98,7 @@ Excel.run(function (context) {
 
 ### <a name="get-the-last-worksheet"></a>获取最后一个工作表
 
-下面的代码示例获取工作簿中的最后一个工作表，加载其 **name** 属性，并向控制台写入一条消息。
+下面的代码示例获取工作簿中的最后一个工作表，加载其 `name` 属性，并向控制台写入一条消息。
 
 ```js
 Excel.run(function (context) {
@@ -114,7 +114,7 @@ Excel.run(function (context) {
 
 ### <a name="get-the-next-worksheet"></a>获取下一个工作表
 
-下面的代码示例获取工作簿中活动工作表后面的工作表，加载其 **name** 属性，并向控制台写入一条消息。 如果活动工作表后没有工作表，**getNext()** 方法将引发 **ItemNotFound** 错误。
+下面的代码示例获取工作簿中活动工作表后面的工作表，加载其 `name` 属性，并向控制台写入一条消息。 如果活动工作表后没有工作表，`getNext()` 方法将引发 `ItemNotFound` 错误。
 
 ```js
  Excel.run(function (context) {
@@ -131,7 +131,7 @@ Excel.run(function (context) {
 
 ### <a name="get-the-previous-worksheet"></a>获取上一个工作表
 
-下面的代码示例获取工作簿中活动工作表前面的工作表，加载其 **name** 属性，并向控制台写入一条消息。 如果活动工作表前没有工作表，**getPrevious()** 方法将引发 **ItemNotFound** 错误。
+下面的代码示例获取工作簿中活动工作表前面的工作表，加载其 `name` 属性，并向控制台写入一条消息。 如果活动工作表前没有工作表，`getPrevious()` 方法将引发 `ItemNotFound` 错误。
 
 ```js
 Excel.run(function (context) {
@@ -148,7 +148,7 @@ Excel.run(function (context) {
 
 ## <a name="add-a-worksheet"></a>添加工作表
 
-下面的代码示例向工作簿添加新工作表 **Sample**，加载它的 **name** 和 **position** 属性，并向控制台写入消息。新工作表添加在现有全部工作表的后面。
+下面的代码示例向工作簿添加新工作表 **Sample**，加载它的 `name` 和 `position` 属性，并向控制台写入消息。新工作表添加在现有全部工作表的后面。
 
 ```js
 Excel.run(function (context) {
@@ -162,6 +162,24 @@ Excel.run(function (context) {
             console.log(`Added worksheet named "${sheet.name}" in position ${sheet.position}`);
         });
 }).catch(errorHandlerFunction);
+```
+
+### <a name="copy-an-existing-worksheet"></a>复制现有工作表
+
+`Worksheet.copy` 通过复制现有工作表添加新工作表。 新工作表的名称将在末尾附加一个数字，格式与通过 Excel UI 复制工作表一致（例如 **MySheet (2)**）。 `Worksheet.copy` 可采用两个参数，且两者都是可选参数：
+
+- `positionType` - 一个 [WorksheetPositionType](/javascript/api/excel/excel.worksheetpositiontype) 枚举，指定在工作簿中添加新工作表的位置。
+- `relativeTo` - 如果 `positionType` 为 `Before` 或 `After`，则需要指定一个参考工作表，新工作表将相对于此工作表进行添加（此参数回答的问题是“在什么之前或之后？”）。
+
+下面的代码示例复制当前工作表，并将新工作表直接插入到当前工作表之后。
+
+```js
+Excel.run(function (context) {
+    var myWorkbook = context.workbook;
+    var sampleSheet = myWorkbook.worksheets.getActiveWorksheet();
+    var copiedSheet = sampleSheet.copy(Excel.WorksheetPositionType.after, sampleSheet);
+    return context.sync();
+});
 ```
 
 ## <a name="delete-a-worksheet"></a>删除工作表
@@ -230,7 +248,7 @@ Excel.run(function (context) {
 
 ### <a name="hide-a-worksheet"></a>隐藏工作表
 
-下面的代码示例将名为 **Sample** 的工作表的可见性设置为隐藏，加载其 **name** 属性，并向控制台写入一条消息。
+下面的代码示例将名为 **Sample** 的工作表的可见性设置为隐藏，加载其 `name` 属性，并向控制台写入一条消息。
 
 ```js
 Excel.run(function (context) {
@@ -247,7 +265,7 @@ Excel.run(function (context) {
 
 ### <a name="unhide-a-worksheet"></a>取消隐藏工作表
 
-下面的代码示例将名为 **Sample** 的工作表的可见性设置为可见，加载其 **name** 属性，并向控制台写入一条消息。
+下面的代码示例将名为 **Sample** 的工作表的可见性设置为可见，加载其 `name` 属性，并向控制台写入一条消息。
 
 ```js
 Excel.run(function (context) {
@@ -264,7 +282,7 @@ Excel.run(function (context) {
 
 ## <a name="get-a-single-cell-within-a-worksheet"></a>获取工作表中的单个单元格
 
-下面的代码示例从名为 **Sample** 的工作表获取位于第 2 行第 5 列的单元格，加载其 **address** 和 **values** 属性，并向控制台写入一条消息。 传递给 `getCell(row: number, column:number)` 方法的值是要检索的单元格的零索引行号和列号。
+下面的代码示例从名为 **Sample** 的工作表获取位于第 2 行第 5 列的单元格，加载其 `address` 和 `values` 属性，并向控制台写入一条消息。 传递给 `getCell(row: number, column:number)` 方法的值是要检索的单元格的零索引行号和列号。
 
 ```js
 Excel.run(function (context) {

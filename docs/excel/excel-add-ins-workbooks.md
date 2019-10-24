@@ -1,14 +1,14 @@
 ---
 title: 使用 Excel JavaScript API 处理工作簿
 description: ''
-ms.date: 09/26/2019
+ms.date: 10/21/2019
 localization_priority: Priority
-ms.openlocfilehash: 66e531a382d467326e5132e60f06c98d414dbb16
-ms.sourcegitcommit: 528577145b2cf0a42bc64c56145d661c4d019fb8
+ms.openlocfilehash: 76f1a82b22fabaab63f5dc791656720ce82250c9
+ms.sourcegitcommit: 499bf49b41205f8034c501d4db5fe4b02dab205e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "37353872"
+ms.lasthandoff: 10/22/2019
+ms.locfileid: "37626822"
 ---
 # <a name="work-with-workbooks-using-the-excel-javascript-api"></a>使用 Excel JavaScript API 处理工作簿
 
@@ -75,7 +75,7 @@ reader.readAsDataURL(myFile.files[0]);
 ### <a name="insert-a-copy-of-an-existing-workbook-into-the-current-one-preview"></a>将现有工作簿副本插入到当前工作簿中（预览版）
 
 > [!NOTE]
-> `WorksheetCollection.addFromBase64` 方法当前仅适用于公共预览版。 [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
+> `WorksheetCollection.addFromBase64` 方法当前仅在公共预览版中可用，并且仅适用于 Windows 和 Mac 上的 Office。 [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
 
 上一示例显示从现有工作簿创建的新工作簿。 此外，还可以将所有或部分现有工作簿复制到当前与加载项关联的工作簿中。 工作簿的 [WorksheetCollection](/javascript/api/excel/excel.worksheetcollection) 可通过 `addFromBase64` 方法将目标工作簿的工作表副本插入到其本身。 其他工作簿文件将作为 base64 编码字符串传递，如 `Excel.createWorkbook` 调用一样。
 
@@ -261,54 +261,6 @@ Excel.run(async (context) => {
 ```js
 context.application.suspendApiCalculationUntilNextSync();
 ```
-
-## <a name="comments-preview"></a>批注（预览版）
-
-> [!NOTE]
-> 批注 API 当前仅适用于公共预览版。 [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
-
-工作簿中的所有[批注](https://support.office.com/article/insert-comments-and-notes-in-excel-bdcc9f5d-38e2-45b4-9a92-0b2b5c7bf6f8)都由 `Workbook.comments` 属性进行跟踪。 这包括由用户创建的批注以及由加载项创建的批注。 `Workbook.comments` 属性是一个包含一系列 [Comment](/javascript/api/excel/excel.comment) 对象的 [CommentCollection](/javascript/api/excel/excel.commentcollection) 对象。
-
-若要向工作簿添加批注，请使用 `CommentCollection.add` 方法，将添加批注的单元格作为字符串或 [Range](/javascript/api/excel/excel.range) 对象传入，并将批注的文本作为字符串传入。 下面的代码示例将向单元格 **A2** 添加批注。
-
-```js
-Excel.run(function (context) {
-    var comments = context.workbook.comments;
-
-    // Note that an InvalidArgument error will be thrown if multiple cells passed to `Comment.add`.
-    comments.add("A2", "TODO: add data.");
-    return context.sync();
-});
-```
-
-每个批注都包含有关其创建情况的元数据，如作者和创建日期。 由加载项创建的批注将被视为是由当前用户创作的。 下面的示例演示如何显示 **A2** 中批注的作者电子邮件、作者姓名和创建日期。
-
-```js
-Excel.run(function (context) {
-    // Get the comment at cell A2.
-    var comment = context.workbook.comments.getItemByCell("Comments!A2");
-    comment.load(["authorEmail", "authorName", "creationDate"]);
-    return context.sync().then(function () {
-        console.log(`${comment.creationDate.toDateString()}: ${comment.authorName} (${comment.authorEmail})`);
-    });
-});
-```
-
-每个批注包含零个或多个回复。 `Comment` 对象具有 `replies` 属性，后者是一个包含 [CommentReply](/javascript/api/excel/excel.commentreply) 对象的 [CommentReplyCollection](/javascript/api/excel/excel.commentreplycollection) 对象。 若要向批注添加回复，请使用 `CommentReplyCollection.add` 方法，传入回复的文本。 回复将按照添加的顺序显示。 下面的代码示例向工作簿中的第一个批注添加回复。
-
-```js
-Excel.run(function (context) {
-    // Get the first comment added to the workbook.
-    var comment = context.workbook.comments.getItemAt(0);
-    comment.replies.add("Thanks for the reminder!");
-    return context.sync();
-});
-```
-
-若要编辑批注或批注回复，请设置其 `Comment.content` 属性或 `CommentReply.content` 属性。 若要删除批注或批注回复，请使用 `Comment.delete` 方法或 `CommentReply.delete` 方法。 删除批注也会删除与该批注相关联的所有回复。
-
-> [!TIP]
-> 还可以使用相同的方法在[工作表](/javascript/api/excel/excel.worksheet)级别管理批注。
 
 ## <a name="save-the-workbook-preview"></a>保存工作簿（预览版）
 
