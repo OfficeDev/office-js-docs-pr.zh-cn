@@ -1,43 +1,43 @@
 ---
 title: 在 Visual Studio 中将 Office 加载项项目转换为使用 TypeScript
 description: ''
-ms.date: 08/14/2019
+ms.date: 10/11/2019
 localization_priority: Priority
-ms.openlocfilehash: 29305df541a39ad76655a0f8a848138a369bbf39
-ms.sourcegitcommit: da8e6148f4bd9884ab9702db3033273a383d15f0
+ms.openlocfilehash: 0a828a3f11a1fcaf71e277bdb667f866ea4ae06a
+ms.sourcegitcommit: 499bf49b41205f8034c501d4db5fe4b02dab205e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/20/2019
-ms.locfileid: "36477766"
+ms.lasthandoff: 10/22/2019
+ms.locfileid: "37626801"
 ---
 # <a name="convert-an-office-add-in-project-in-visual-studio-to-typescript"></a>在 Visual Studio 中将 Office 加载项项目转换为使用 TypeScript
 
 可以使用 Visual Studio 中的 Office 加载项模板，创建使用 JavaScript 的加载项，再将加载项项目转换为使用 TypeScript。 本文介绍了 Excel 加载项的此转换过程。 可以按照相同的过程操作，在 Visual Studio 中将其他类型的 Office 外接程序项目从 JavaScript 转换为 TypeScript。
 
 > [!NOTE]
-> 若不想使用 Visual Studio 创建 Office 加载项 TypeScript 项目，请按照任何 [5 分钟快速入门](../index.md)的“Yeoman 生成器”部分中的说明操作，并在[适用于 Office 外接程序的 Yeoman 生成器](https://github.com/OfficeDev/generator-office)显示提示时选择 `TypeScript`。
+> 若不想使用 Visual Studio 创建 Office 加载项 TypeScript 项目，请按照任何 [5 分钟快速入门](../index.md)的“Yeoman 生成器”部分中的说明操作，并在[适用于 Office 外接程序的 Yeoman 生成器](https://github.com/officedev/generator-office)显示提示时选择 `TypeScript`。
 
 ## <a name="prerequisites"></a>先决条件
 
-- 安装了 **Office/SharePoint 开发**工作负载的 [Visual Studio 2017](https://www.visualstudio.com/vs/)
+- 安装了 **Office/SharePoint 开发**工作负载的 [Visual Studio 2019](https://www.visualstudio.com/vs/)
 
     > [!TIP]
-    > 如果之前已安装 Visual Studio 2017，请[使用 Visual Studio 安装程序](/visualstudio/install/modify-visual-studio)，以确保安装 **Office/SharePoint 开发**工作负载。 如果尚未安装此工作负载，请使用 Visual Studio 安装程序进行[安装](/visualstudio/install/modify-visual-studio?view=vs-2017#modify-workloads)。
+    > 如果之前已安装 Visual Studio 2019，请[使用 Visual Studio 安装程序](/visualstudio/install/modify-visual-studio)，以确保安装 **Office/SharePoint 开发**工作负载。 如果尚未安装此工作负载，请使用 Visual Studio 安装程序进行[安装](/visualstudio/install/modify-visual-studio?view=vs-2019#modify-workloads)。
 
-- TypeScript SDK 版本 2.3 或更高版本（适用于 Visual Studio 2017）
+- TypeScript SDK 版本 2.3 或更高版本（适用于 Visual Studio 2019）
 
     > [!TIP]
-    > 在 [Visual Studio 安装程序](/visualstudio/install/modify-visual-studio)中，选择“单个组件”**** 选项卡，然后向下滚动到“SDK、库和框架”**** 部分。 在该部分中，确保至少选择一个“TypeScript SDK”**** 组件（版本 2.3 或更高版本）。 如果一个“TypeScript SDK”**** 组件都没有选择，则选择最新可用版本的 SDK，然后选择“修改”**** 按钮以[安装该单个组件](/visualstudio/install/modify-visual-studio?view=vs-2017#modify-individual-components)。 
+    > 在 [Visual Studio 安装程序](/visualstudio/install/modify-visual-studio)中，选择“单个组件”**** 选项卡，然后向下滚动到“SDK、库和框架”**** 部分。 在该部分中，确保至少选择一个“TypeScript SDK”**** 组件（版本 2.3 或更高版本）。 如果一个“TypeScript SDK”**** 组件都没有选择，则选择最新可用版本的 SDK，然后选择“修改”**** 按钮以[安装该单个组件](/visualstudio/install/modify-visual-studio?view=vs-2019#modify-individual-components)。 
 
 - Excel 2016 或更高版本
 
-## <a name="create-the-add-in-project"></a>创建外接程序项目
+## <a name="create-the-add-in-project"></a>创建加载项项目
 
-1. 打开 Visual Studio，在 Visual Studio 菜单栏中，依次选择“文件”**** > “新建”**** > “项目”****。
+1. 在 Visual Studio 中，选择“**新建项目**”。
 
-2. 在“Visual C#”**** 或“Visual Basic”**** 下的项目类型列表中，展开“Office/SharePoint”****，选择“加载项”****，再选择“Excel Web 加载项”**** 作为项目类型。 
+2. 使用搜索框，输入“**加载项**”。 选择“**Excel Web 加载项**”，然后选择“**下一步**”。
 
-3. 命名此项目，再选择“确定”****。
+3. 对项目命名，然后选择“**创建**”。
 
 4. 在“创建 Office 加载项”**** 对话框窗口中，选择“将新功能添加到 Excel”****，再选择“完成”**** 以创建项目。
 
@@ -45,69 +45,54 @@ ms.locfileid: "36477766"
 
 ## <a name="convert-the-add-in-project-to-typescript"></a>将加载项项目转换为使用 TypeScript
 
-1. 在“解决方案资源管理器”**** 中，将 **Home.js** 文件重命名为 **Home.ts**。
+1. 查找 **Home.js** 文件，并将其重命名为 **Home.ts**。
+
+2. 从“**工具**”选项卡中，选择“**NuGet 程序包管理器**”，然后选择“**管理解决方案的 NuGet 程序包...**”。
+
+3. 在选中“**浏览**”选项卡的情况下，在搜索框中输入 **office-js.TypeScript.DefinitelyTyped**。 安装或更新此程序包（如果已安装）。 这将把 Office.js 库的 TypeScript 类型定义添加到项目中。
+
+4. 在同一搜索框中，输入 **jquery.TypeScript.DefinitelyTyped**。 安装或更新此程序包（如果已安装）。 这将把 jQuery TypeScript 定义添加到项目中。 jQuery 和 node.js 的程序包现在将显示在 Visual Studio 生成的称为 **packages.config** 的新文件中。
 
     > [!NOTE]
-    > 在 TypeScript 项目中，可以混合使用 TypeScript 和 JavaScript 文件，项目都可以进行编译。这是因为 TypeScript 是键入的 JavaScript 超集，可以编译 JavaScript。 
+    > 在 TypeScript 项目中，可以混合使用 TypeScript 和 JavaScript 文件，项目都可以进行编译。这是因为 TypeScript 是键入的 JavaScript 超集，可以编译 JavaScript。
 
-2. 当出现提示时，选择“是”****，以确认要更改文件扩展名。
+5. 打开 **Home.ts** 文件，并在文件顶部添加以下声明：
 
-3. 在 Web 应用项目根目录中，新建 **Office.d.ts** 文件。
-
-4. 在 Web 浏览器中，打开 [Office.js 的类型定义文件](https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/master/types/office-js/index.d.ts)。 将此文件的内容复制到剪贴板。
-
-5. 在 Visual Studio 中，打开 **Office.d.ts** 文件，将剪贴板中的内容粘贴到此文件，并保存文件。
-
-6. 在 Web 应用项目根目录中，新建 **jQuery.d.ts** 文件。
-
-7. 在 Web 浏览器中，打开 [jQuery 的类型定义文件](https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/master/types/jquery/misc.d.ts)。 将此文件的内容复制到剪贴板。
-
-8. 在 Visual Studio 中，打开 **jQuery.d.ts** 文件，将剪贴板中的内容粘贴到此文件，并保存文件。
-
-9. 在 Visual Studio 中，转到 Web 应用项目根目录，新建 **tsconfig.json** 文件。
-
-10. 打开 **tsconfig.json** 文件，将以下内容添加到此文件，并保存文件：
-
-    ```json
-    {
-        "compilerOptions": {
-            "skipLibCheck": true,
-            "lib": [ "es5", "dom", "es2015.promise" ],
-            "sourceMap": true
-        }
-    }
-    ```
-
-11. 打开“Home.ts”**** 文件，并在文件顶部添加以下声明：
-
-    ```typescript
+    ```TypeScript
     declare var fabric: any;
     ```
 
-12. 在 **Home.ts** 文件中，找到 `Office.initialize = function (reason) {` 行并在其后面紧接着添加一行以填充全局 `window.Promise`，如下所示：
+6. 在 **Home.ts** 中，请删除行 `if(!Office.context.requirements.isSetSupported('ExcelApi', '1.1') {` 并替换为以下内容：
 
-    ```typescript
+    ```TypeScript
+    if(!Office.context.requirements.isSetSupported('ExcelApi', 1.1) {
+    ```
+
+7. 在 **Home.ts** 文件中，找到 `Office.initialize = function (reason) {` 行并在其后面紧接着添加一行以填充全局 `window.Promise`，如下所示：
+
+    ```TypeScript
     Office.initialize = function (reason) {
         // add the following line
         (window as any).Promise = OfficeExtension.Promise;
         ...
     ```
 
-13. 在“Home.ts”**** 文件中，找到 `displaySelectedCells` 函数，将整个函数替换为以下代码，并保存该文件：
+8. 在“Home.ts”**** 文件中，找到 `displaySelectedCells` 函数，将整个函数替换为以下代码，并保存该文件：
 
-    ```typescript
-    function displaySelectedCells() {
-        Office.context.document.getSelectedDataAsync(Office.CoercionType.Text,
-            null,
-            function (result) {
-                if (result.status === Office.AsyncResultStatus.Succeeded) {
-                    showNotification('The selected text is:', '"' + result.value + '"');
-                } else {
-                    showNotification('Error', result.error.message);
-                }
-            });
-    }
-    ```
+```TypeScript
+function displaySelectedCells() {
+    Office.context.document.getSelectedDataAsync(
+        Office.CoercionType.Text,
+        null,
+        function (result) {
+            if (result.status === Office.AsyncResultStatus.Succeeded) {
+                showNotification('The selected text is:', '"' + result.value + '"');
+            } else {
+                showNotification('Error', result.error.message);
+            }
+        });
+}
+```
 
 ## <a name="run-the-converted-add-in-project"></a>运行转换后的外接程序项目
 

@@ -1,14 +1,14 @@
 ---
 title: Office.context.mailbox - 要求集 1.5
 description: ''
-ms.date: 08/30/2019
+ms.date: 10/21/2019
 localization_priority: Priority
-ms.openlocfilehash: 62834db09742f2f11eb73d571f22c7a249f36763
-ms.sourcegitcommit: 1fb99b1b4e63868a0e81a928c69a34c42bf7e209
+ms.openlocfilehash: bb63d8186d41d072aa62b180b16958d61ce9a66c
+ms.sourcegitcommit: 499bf49b41205f8034c501d4db5fe4b02dab205e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/30/2019
-ms.locfileid: "36696097"
+ms.lasthandoff: 10/22/2019
+ms.locfileid: "37627011"
 ---
 # <a name="mailbox"></a>邮箱
 
@@ -479,7 +479,11 @@ Office.context.mailbox.displayNewAppointmentForm(
             `getCallbackTokenAsync` 方法进行异步调用，从托管用户邮箱的 Exchange Server 获取非跳转令牌。回调令牌的生存期为 5 分钟。
 
 > [!NOTE]
-> 建议加载项尽可能地使用 REST API 而不是 Exchange Web 服务。 
+> 建议加载项尽可能地使用 REST API 而不是 Exchange Web 服务。
+
+在阅读模式下调用 `getCallbackTokenAsync` 方法要求最低权限级别的 **ReadItem**。
+
+在撰写模式调用 `getCallbackTokenAsync` 要求已保存该项目。 [`saveAsync`](Office.context.mailbox.item.md#saveasyncoptions-callback) 方法要求最低权限级别的 **ReadWriteItem**。
 
 **REST 令牌**
 
@@ -493,7 +497,9 @@ Office.context.mailbox.displayNewAppointmentForm(
 
 外接程序应使用 `ewsUrl` 属性来确定进行 EWS 调用时要使用的正确 URL。
 
-##### <a name="parameters"></a>参数
+可以将令牌和附件标识符或项标识符传递到第三方系统。 第三方系统使用令牌作为持有者身份验证令牌调用 Exchange Web 服务 (EWS) [GetAttachment](/exchange/client-developer/web-service-reference/getattachment-operation) 操作或 [GetItem](/exchange/client-developer/web-service-reference/getitem-operation) 操作，以返回附件或项目。 例如，可以创建远程服务来 [获取选定项目中的附件](/outlook/add-ins/get-attachments-of-an-outlook-item)。
+
+##### <a name="parameters"></a>Parameters
 
 |名称| 类型| 属性| 说明|
 |---|---|---|---|
@@ -546,13 +552,13 @@ function cb(asyncResult) {
 
 `getCallbackTokenAsync` 方法进行异步调用，从托管用户邮箱的 Exchange Server 获取非跳转令牌。回调令牌的生存期为 5 分钟。
 
-可以将令牌和附件标识符或项标识符传递到第三方系统。第三方系统使用令牌作为持有者身份验证令牌调用 Exchange Web 服务 (EWS) [GetAttachment](/exchange/client-developer/web-service-reference/getattachment-operation) 或 [GetItem](/exchange/client-developer/web-service-reference/getitem-operation)，以返回附件或项目。例如，可以创建远程服务来[获取选定项目中的附件](/outlook/add-ins/get-attachments-of-an-outlook-item)。
+可以将令牌和附件标识符或项标识符传递到第三方系统。 第三方系统使用令牌作为持有者身份验证令牌调用 Exchange Web 服务 (EWS) [GetAttachment](/exchange/client-developer/web-service-reference/getattachment-operation) 操作或 [GetItem](/exchange/client-developer/web-service-reference/getitem-operation) 操作，以返回附件或项目。 例如，可以创建远程服务来 [获取选定项目中的附件](/outlook/add-ins/get-attachments-of-an-outlook-item)。
 
-应用必须在其清单中指定拥有 **ReadItem** 权限，才能调用阅读模式中的 `getCallbackTokenAsync` 方法。
+在阅读模式下调用 `getCallbackTokenAsync` 方法要求最低权限级别的 **ReadItem**。
 
-在撰写模式中，必须调用 [`saveAsync`](Office.context.mailbox.item.md#saveasyncoptions-callback) 方法来获取传递给 `getCallbackTokenAsync` 方法的项目标识符。应用必须具有调用 `saveAsync` 方法的 **ReadWriteItem** 权限。
+在撰写模式调用 `getCallbackTokenAsync` 要求已保存该项目。 [`saveAsync`](Office.context.mailbox.item.md#saveasyncoptions-callback) 方法要求最低权限级别的 **ReadWriteItem**。
 
-##### <a name="parameters"></a>参数
+##### <a name="parameters"></a>Parameters
 
 |名称| 类型| 属性| 说明|
 |---|---|---|---|
@@ -569,11 +575,11 @@ function cb(asyncResult) {
 
 ##### <a name="requirements"></a>要求
 
-|要求| 值|
-|---|---|
-|[最低版本的邮箱要求集](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
-|[最低权限级别](/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
-|[适用的 Outlook 模式](/outlook/add-ins/#extension-points)| 撰写和阅读|
+|要求|||
+|---|---|---|
+|[最低版本的邮箱要求集](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0 | 1.3 |
+|[最低权限级别](/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem | ReadItem |
+|[适用的 Outlook 模式](/outlook/add-ins/#extension-points)| 阅读 | 撰写 |
 
 ##### <a name="example"></a>示例
 
