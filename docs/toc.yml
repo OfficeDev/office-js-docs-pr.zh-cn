@@ -489,6 +489,9 @@
         - name: 使用 Excel 加载项共同创作
           href: excel/co-authoring-in-excel-add-ins.md
           displayName: Excel
+        - name: 备注
+          href: excel/excel-add-ins-comments.md
+          displayName: Excel
         - name: 范围的条件格式
           href: excel/excel-add-ins-conditional-formatting.md
           displayName: Excel
