@@ -1,127 +1,112 @@
 ---
 title: 在 Visual Studio 中将 Office 加载项项目转换为使用 TypeScript
 description: ''
-ms.date: 08/14/2019
+ms.date: 10/11/2019
 localization_priority: Priority
-ms.openlocfilehash: 29305df541a39ad76655a0f8a848138a369bbf39
-ms.sourcegitcommit: da8e6148f4bd9884ab9702db3033273a383d15f0
+ms.openlocfilehash: 0a828a3f11a1fcaf71e277bdb667f866ea4ae06a
+ms.sourcegitcommit: 499bf49b41205f8034c501d4db5fe4b02dab205e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/20/2019
-ms.locfileid: "36477766"
+ms.lasthandoff: 10/22/2019
+ms.locfileid: "37626801"
 ---
-# <a name="convert-an-office-add-in-project-in-visual-studio-to-typescript"></a><span data-ttu-id="dac8f-102">在 Visual Studio 中将 Office 加载项项目转换为使用 TypeScript</span><span class="sxs-lookup"><span data-stu-id="dac8f-102">Convert an Office Add-in project in Visual Studio to TypeScript</span></span>
+# <a name="convert-an-office-add-in-project-in-visual-studio-to-typescript"></a><span data-ttu-id="21f3b-102">在 Visual Studio 中将 Office 加载项项目转换为使用 TypeScript</span><span class="sxs-lookup"><span data-stu-id="21f3b-102">Convert an Office Add-in project in Visual Studio to TypeScript</span></span>
 
-<span data-ttu-id="dac8f-103">可以使用 Visual Studio 中的 Office 加载项模板，创建使用 JavaScript 的加载项，再将加载项项目转换为使用 TypeScript。</span><span class="sxs-lookup"><span data-stu-id="dac8f-103">You can use the Office Add-in template in Visual Studio to create an add-in that uses JavaScript, and then convert that add-in project to TypeScript.</span></span> <span data-ttu-id="dac8f-104">本文介绍了 Excel 加载项的此转换过程。</span><span class="sxs-lookup"><span data-stu-id="dac8f-104">This article describes this conversion process for an Excel add-in.</span></span> <span data-ttu-id="dac8f-105">可以按照相同的过程操作，在 Visual Studio 中将其他类型的 Office 外接程序项目从 JavaScript 转换为 TypeScript。</span><span class="sxs-lookup"><span data-stu-id="dac8f-105">You can use the same process to convert other types of Office Add-in projects from JavaScript to TypeScript in Visual Studio.</span></span>
+<span data-ttu-id="21f3b-103">可以使用 Visual Studio 中的 Office 加载项模板，创建使用 JavaScript 的加载项，再将加载项项目转换为使用 TypeScript。</span><span class="sxs-lookup"><span data-stu-id="21f3b-103">You can use the Office Add-in template in Visual Studio to create an add-in that uses JavaScript, and then convert that add-in project to TypeScript.</span></span> <span data-ttu-id="21f3b-104">本文介绍了 Excel 加载项的此转换过程。</span><span class="sxs-lookup"><span data-stu-id="21f3b-104">This article describes this conversion process for an Excel add-in.</span></span> <span data-ttu-id="21f3b-105">可以按照相同的过程操作，在 Visual Studio 中将其他类型的 Office 外接程序项目从 JavaScript 转换为 TypeScript。</span><span class="sxs-lookup"><span data-stu-id="21f3b-105">You can use the same process to convert other types of Office Add-in projects from JavaScript to TypeScript in Visual Studio.</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="dac8f-106">若不想使用 Visual Studio 创建 Office 加载项 TypeScript 项目，请按照任何 [5 分钟快速入门](../index.md)的“Yeoman 生成器”部分中的说明操作，并在[适用于 Office 外接程序的 Yeoman 生成器](https://github.com/OfficeDev/generator-office)显示提示时选择 `TypeScript`。</span><span class="sxs-lookup"><span data-stu-id="dac8f-106">To create an Office Add-in TypeScript project without using Visual Studio, follow the instructions in the "Any editor" section of any [5-minute quick start](../index.md) and choose `TypeScript` when prompted by the [Yeoman generator for Office Add-ins](https://github.com/OfficeDev/generator-office).</span></span>
+> <span data-ttu-id="21f3b-106">若不想使用 Visual Studio 创建 Office 加载项 TypeScript 项目，请按照任何 [5 分钟快速入门](../index.md)的“Yeoman 生成器”部分中的说明操作，并在[适用于 Office 外接程序的 Yeoman 生成器](https://github.com/officedev/generator-office)显示提示时选择 `TypeScript`。</span><span class="sxs-lookup"><span data-stu-id="21f3b-106">To create an Office Add-in TypeScript project without using Visual Studio, follow the instructions in the "Yeoman generator" section of any [5-minute quick start](../index.md) and choose `TypeScript` when prompted by the [Yeoman generator for Office Add-ins](https://github.com/officedev/generator-office).</span></span>
 
-## <a name="prerequisites"></a><span data-ttu-id="dac8f-107">先决条件</span><span class="sxs-lookup"><span data-stu-id="dac8f-107">Prerequisites</span></span>
+## <a name="prerequisites"></a><span data-ttu-id="21f3b-107">先决条件</span><span class="sxs-lookup"><span data-stu-id="21f3b-107">Prerequisites</span></span>
 
-- <span data-ttu-id="dac8f-108">安装了 **Office/SharePoint 开发**工作负载的 [Visual Studio 2017](https://www.visualstudio.com/vs/)</span><span class="sxs-lookup"><span data-stu-id="dac8f-108">[Visual Studio 2017](https://www.visualstudio.com/vs/) with the **Office/SharePoint development** workload installed</span></span>
-
-    > [!TIP]
-    > <span data-ttu-id="dac8f-109">如果之前已安装 Visual Studio 2017，请[使用 Visual Studio 安装程序](/visualstudio/install/modify-visual-studio)，以确保安装 **Office/SharePoint 开发**工作负载。</span><span class="sxs-lookup"><span data-stu-id="dac8f-109">If you've previously installed Visual Studio 2017, [use the Visual Studio Installer](/visualstudio/install/modify-visual-studio) to ensure that the **Office/SharePoint development** workload is installed.</span></span> <span data-ttu-id="dac8f-110">如果尚未安装此工作负载，请使用 Visual Studio 安装程序进行[安装](/visualstudio/install/modify-visual-studio?view=vs-2017#modify-workloads)。</span><span class="sxs-lookup"><span data-stu-id="dac8f-110">If this workload is not yet installed, use the Visual Studio Installer to [install it](/visualstudio/install/modify-visual-studio?view=vs-2017#modify-workloads).</span></span>
-
-- <span data-ttu-id="dac8f-111">TypeScript SDK 版本 2.3 或更高版本（适用于 Visual Studio 2017）</span><span class="sxs-lookup"><span data-stu-id="dac8f-111">TypeScript SDK version 2.3 or later (for Visual Studio 2017)</span></span>
+- <span data-ttu-id="21f3b-108">安装了 **Office/SharePoint 开发**工作负载的 [Visual Studio 2019](https://www.visualstudio.com/vs/)</span><span class="sxs-lookup"><span data-stu-id="21f3b-108">[Visual Studio 2017](https://www.visualstudio.com/vs/) with the **Office/SharePoint development** workload installed</span></span>
 
     > [!TIP]
-    > <span data-ttu-id="dac8f-112">在 [Visual Studio 安装程序](/visualstudio/install/modify-visual-studio)中，选择“单个组件”\*\*\*\* 选项卡，然后向下滚动到“SDK、库和框架”\*\*\*\* 部分。</span><span class="sxs-lookup"><span data-stu-id="dac8f-112">In the [Visual Studio Installer](/visualstudio/install/modify-visual-studio), select the **Individual components** tab and then scroll down to the **SDKs, libraries, and frameworks** section.</span></span> <span data-ttu-id="dac8f-113">在该部分中，确保至少选择一个“TypeScript SDK”\*\*\*\* 组件（版本 2.3 或更高版本）。</span><span class="sxs-lookup"><span data-stu-id="dac8f-113">Within that section, ensure that at least one of the **TypeScript SDK** components (version 2.3 or later) is selected.</span></span> <span data-ttu-id="dac8f-114">如果一个“TypeScript SDK”\*\*\*\* 组件都没有选择，则选择最新可用版本的 SDK，然后选择“修改”\*\*\*\* 按钮以[安装该单个组件](/visualstudio/install/modify-visual-studio?view=vs-2017#modify-individual-components)。</span><span class="sxs-lookup"><span data-stu-id="dac8f-114">If none of the **TypeScript SDK** components are selected, select the latest available version of the SDK and then choose the **Modify** button to [install that individual component](/visualstudio/install/modify-visual-studio?view=vs-2017#modify-individual-components).</span></span> 
+    > <span data-ttu-id="21f3b-109">如果之前已安装 Visual Studio 2019，请[使用 Visual Studio 安装程序](/visualstudio/install/modify-visual-studio)，以确保安装 **Office/SharePoint 开发**工作负载。</span><span class="sxs-lookup"><span data-stu-id="21f3b-109">If you've previously installed Visual Studio 2017, [use the Visual Studio Installer](/visualstudio/install/modify-visual-studio) to ensure that the **Office/SharePoint development** workload is installed.</span></span> <span data-ttu-id="21f3b-110">如果尚未安装此工作负载，请使用 Visual Studio 安装程序进行[安装](/visualstudio/install/modify-visual-studio?view=vs-2019#modify-workloads)。</span><span class="sxs-lookup"><span data-stu-id="21f3b-110">If this workload is not yet installed, use the Visual Studio Installer to [install it](/visualstudio/install/modify-visual-studio?view=vs-2019#modify-workloads).</span></span>
 
-- <span data-ttu-id="dac8f-115">Excel 2016 或更高版本</span><span class="sxs-lookup"><span data-stu-id="dac8f-115">Excel 2016 or later</span></span>
+- <span data-ttu-id="21f3b-111">TypeScript SDK 版本 2.3 或更高版本（适用于 Visual Studio 2019）</span><span class="sxs-lookup"><span data-stu-id="21f3b-111">TypeScript SDK version 2.3 or later (for Visual Studio 2017)</span></span>
 
-## <a name="create-the-add-in-project"></a><span data-ttu-id="dac8f-116">创建外接程序项目</span><span class="sxs-lookup"><span data-stu-id="dac8f-116">Create the add-in project</span></span>
+    > [!TIP]
+    > <span data-ttu-id="21f3b-112">在 [Visual Studio 安装程序](/visualstudio/install/modify-visual-studio)中，选择“单个组件”\*\*\*\* 选项卡，然后向下滚动到“SDK、库和框架”\*\*\*\* 部分。</span><span class="sxs-lookup"><span data-stu-id="21f3b-112">In the [Visual Studio Installer](/visualstudio/install/modify-visual-studio), select the **Individual components** tab and then scroll down to the **SDKs, libraries, and frameworks** section.</span></span> <span data-ttu-id="21f3b-113">在该部分中，确保至少选择一个“TypeScript SDK”\*\*\*\* 组件（版本 2.3 或更高版本）。</span><span class="sxs-lookup"><span data-stu-id="21f3b-113">Within that section, ensure that at least one of the **TypeScript SDK** components (version 2.3 or later) is selected.</span></span> <span data-ttu-id="21f3b-114">如果一个“TypeScript SDK”\*\*\*\* 组件都没有选择，则选择最新可用版本的 SDK，然后选择“修改”\*\*\*\* 按钮以[安装该单个组件](/visualstudio/install/modify-visual-studio?view=vs-2019#modify-individual-components)。</span><span class="sxs-lookup"><span data-stu-id="21f3b-114">If none of the **TypeScript SDK** components are selected, select the latest available version of the SDK and then choose the **Modify** button to [install that individual component](/visualstudio/install/modify-visual-studio?view=vs-2019#modify-individual-components).</span></span> 
 
-1. <span data-ttu-id="dac8f-117">打开 Visual Studio，在 Visual Studio 菜单栏中，依次选择“文件”\*\*\*\* > “新建”\*\*\*\* > “项目”\*\*\*\*。</span><span class="sxs-lookup"><span data-stu-id="dac8f-117">Open Visual Studio and on the Visual Studio menu bar, choose  **File** > **New** > **Project**.</span></span>
+- <span data-ttu-id="21f3b-115">Excel 2016 或更高版本</span><span class="sxs-lookup"><span data-stu-id="21f3b-115">Excel 2016 or later</span></span>
 
-2. <span data-ttu-id="dac8f-118">在“Visual C#”\*\*\*\* 或“Visual Basic”\*\*\*\* 下的项目类型列表中，展开“Office/SharePoint”\*\*\*\*，选择“加载项”\*\*\*\*，再选择“Excel Web 加载项”\*\*\*\* 作为项目类型。</span><span class="sxs-lookup"><span data-stu-id="dac8f-118">In the list of project types under **Visual C#** or **Visual Basic**, expand  **Office/SharePoint**, choose **Add-ins**, and then choose **Excel Web Add-in** as the project type.</span></span> 
+## <a name="create-the-add-in-project"></a><span data-ttu-id="21f3b-116">创建加载项项目</span><span class="sxs-lookup"><span data-stu-id="21f3b-116">Create the add-in project</span></span>
 
-3. <span data-ttu-id="dac8f-119">命名此项目，再选择“确定”\*\*\*\*。</span><span class="sxs-lookup"><span data-stu-id="dac8f-119">Name the project, and then choose **OK**.</span></span>
+1. <span data-ttu-id="21f3b-117">在 Visual Studio 中，选择“**新建项目**”。</span><span class="sxs-lookup"><span data-stu-id="21f3b-117">In Visual Studio, choose **Create a new project**.</span></span>
 
-4. <span data-ttu-id="dac8f-120">在“创建 Office 加载项”\*\*\*\* 对话框窗口中，选择“将新功能添加到 Excel”\*\*\*\*，再选择“完成”\*\*\*\* 以创建项目。</span><span class="sxs-lookup"><span data-stu-id="dac8f-120">In the **Create Office Add-in** dialog window, choose **Add new functionalities to Excel**, and then choose **Finish** to create the project.</span></span>
+2. <span data-ttu-id="21f3b-118">使用搜索框，输入“**加载项**”。</span><span class="sxs-lookup"><span data-stu-id="21f3b-118">Using the search box, enter **add-in**.</span></span> <span data-ttu-id="21f3b-119">选择“**Excel Web 加载项**”，然后选择“**下一步**”。</span><span class="sxs-lookup"><span data-stu-id="21f3b-119">Choose **Excel Web Add-in**, then select **Next**.</span></span>
 
-5. <span data-ttu-id="dac8f-p104">此时，Visual Studio 创建解决方案，且它的两个项目显示在“解决方案资源管理器”\*\*\*\* 中。**Home.html** 文件在 Visual Studio 中打开。</span><span class="sxs-lookup"><span data-stu-id="dac8f-p104">Visual Studio creates a solution and its two projects appear in **Solution Explorer**. The **Home.html** file opens in Visual Studio.</span></span>
+3. <span data-ttu-id="21f3b-120">对项目命名，然后选择“**创建**”。</span><span class="sxs-lookup"><span data-stu-id="21f3b-120">Name your project and select **Create**.</span></span>
 
-## <a name="convert-the-add-in-project-to-typescript"></a><span data-ttu-id="dac8f-123">将加载项项目转换为使用 TypeScript</span><span class="sxs-lookup"><span data-stu-id="dac8f-123">Convert the add-in project to TypeScript</span></span>
+4. <span data-ttu-id="21f3b-121">在“创建 Office 加载项”\*\*\*\* 对话框窗口中，选择“将新功能添加到 Excel”\*\*\*\*，再选择“完成”\*\*\*\* 以创建项目。</span><span class="sxs-lookup"><span data-stu-id="21f3b-121">In the **Create Office Add-in** dialog window, choose **Add new functionalities to Excel**, and then choose **Finish** to create the project.</span></span>
 
-1. <span data-ttu-id="dac8f-124">在“解决方案资源管理器”\*\*\*\* 中，将 **Home.js** 文件重命名为 **Home.ts**。</span><span class="sxs-lookup"><span data-stu-id="dac8f-124">In **Solution Explorer**, rename the **Home.js** file to **Home.ts**.</span></span>
+5. <span data-ttu-id="21f3b-p105">此时，Visual Studio 创建解决方案，且它的两个项目显示在“解决方案资源管理器”\*\*\*\* 中。**Home.html** 文件在 Visual Studio 中打开。</span><span class="sxs-lookup"><span data-stu-id="21f3b-p105">Visual Studio creates a solution and its two projects appear in **Solution Explorer**. The **Home.html** file opens in Visual Studio.</span></span>
+
+## <a name="convert-the-add-in-project-to-typescript"></a><span data-ttu-id="21f3b-124">将加载项项目转换为使用 TypeScript</span><span class="sxs-lookup"><span data-stu-id="21f3b-124">Convert the add-in project to TypeScript</span></span>
+
+1. <span data-ttu-id="21f3b-125">查找 **Home.js** 文件，并将其重命名为 **Home.ts**。</span><span class="sxs-lookup"><span data-stu-id="21f3b-125">Find the **Home.js** file and rename it to **Home.ts**.</span></span>
+
+2. <span data-ttu-id="21f3b-126">从“**工具**”选项卡中，选择“**NuGet 程序包管理器**”，然后选择“**管理解决方案的 NuGet 程序包...**”。</span><span class="sxs-lookup"><span data-stu-id="21f3b-126">From the **Tools** tab, choose **NuGet Package Manager** and then select **Manage NuGet Packages for Solution...**.</span></span>
+
+3. <span data-ttu-id="21f3b-127">在选中“**浏览**”选项卡的情况下，在搜索框中输入 **office-js.TypeScript.DefinitelyTyped**。</span><span class="sxs-lookup"><span data-stu-id="21f3b-127">With the **Browse** tab selected, enter **office-js.TypeScript.DefinitelyTyped** into the search box.</span></span> <span data-ttu-id="21f3b-128">安装或更新此程序包（如果已安装）。</span><span class="sxs-lookup"><span data-stu-id="21f3b-128">Install or update this package if it is already installed.</span></span> <span data-ttu-id="21f3b-129">这将把 Office.js 库的 TypeScript 类型定义添加到项目中。</span><span class="sxs-lookup"><span data-stu-id="21f3b-129">This will add the TypeScript type definitions for the Office.js library to your project.</span></span>
+
+4. <span data-ttu-id="21f3b-130">在同一搜索框中，输入 **jquery.TypeScript.DefinitelyTyped**。</span><span class="sxs-lookup"><span data-stu-id="21f3b-130">In the same search box, enter **jquery.TypeScript.DefinitelyTyped**.</span></span> <span data-ttu-id="21f3b-131">安装或更新此程序包（如果已安装）。</span><span class="sxs-lookup"><span data-stu-id="21f3b-131">Install or update this package if it is already installed.</span></span> <span data-ttu-id="21f3b-132">这将把 jQuery TypeScript 定义添加到项目中。</span><span class="sxs-lookup"><span data-stu-id="21f3b-132">This will add the jQuery TypeScript definitions into your project.</span></span> <span data-ttu-id="21f3b-133">jQuery 和 node.js 的程序包现在将显示在 Visual Studio 生成的称为 **packages.config** 的新文件中。</span><span class="sxs-lookup"><span data-stu-id="21f3b-133">The packages for both jQuery and Office.js will now appear in a new file generated by Visual Studio, called **packages.config**.</span></span>
 
     > [!NOTE]
-    > <span data-ttu-id="dac8f-p105">在 TypeScript 项目中，可以混合使用 TypeScript 和 JavaScript 文件，项目都可以进行编译。这是因为 TypeScript 是键入的 JavaScript 超集，可以编译 JavaScript。</span><span class="sxs-lookup"><span data-stu-id="dac8f-p105">In your TypeScript project, you can have a mix of TypeScript and JavaScript files and your project will compile. This is because TypeScript is a typed superset of JavaScript that compiles JavaScript.</span></span> 
+    > <span data-ttu-id="21f3b-p108">在 TypeScript 项目中，可以混合使用 TypeScript 和 JavaScript 文件，项目都可以进行编译。这是因为 TypeScript 是键入的 JavaScript 超集，可以编译 JavaScript。</span><span class="sxs-lookup"><span data-stu-id="21f3b-p108">In your TypeScript project, you can have a mix of TypeScript and JavaScript files and your project will compile. This is because TypeScript is a typed superset of JavaScript that compiles JavaScript.</span></span>
 
-2. <span data-ttu-id="dac8f-127">当出现提示时，选择“是”\*\*\*\*，以确认要更改文件扩展名。</span><span class="sxs-lookup"><span data-stu-id="dac8f-127">Select **Yes** when prompted to confirm that you want to change file name extension.</span></span>
+5. <span data-ttu-id="21f3b-136">打开 **Home.ts** 文件，并在文件顶部添加以下声明：</span><span class="sxs-lookup"><span data-stu-id="21f3b-136">Open the **Home.ts** file and add the following declaration at the top of the file:</span></span>
 
-3. <span data-ttu-id="dac8f-128">在 Web 应用项目根目录中，新建 **Office.d.ts** 文件。</span><span class="sxs-lookup"><span data-stu-id="dac8f-128">Create a new file named **Office.d.ts** in the root of the web application project.</span></span>
-
-4. <span data-ttu-id="dac8f-p106">在 Web 浏览器中，打开 [Office.js 的类型定义文件](https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/master/types/office-js/index.d.ts)。 将此文件的内容复制到剪贴板。</span><span class="sxs-lookup"><span data-stu-id="dac8f-p106">In a web browser, open the [type definitions file for Office.js](https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/master/types/office-js/index.d.ts). Copy the contents of this file to your clipboard.</span></span>
-
-5. <span data-ttu-id="dac8f-131">在 Visual Studio 中，打开 **Office.d.ts** 文件，将剪贴板中的内容粘贴到此文件，并保存文件。</span><span class="sxs-lookup"><span data-stu-id="dac8f-131">In Visual Studio, open the **Office.d.ts** file, paste the contents of your clipboard into this file, and save the file.</span></span>
-
-6. <span data-ttu-id="dac8f-132">在 Web 应用项目根目录中，新建 **jQuery.d.ts** 文件。</span><span class="sxs-lookup"><span data-stu-id="dac8f-132">Create a new file named **jQuery.d.ts** in the root of the web application project.</span></span>
-
-7. <span data-ttu-id="dac8f-p107">在 Web 浏览器中，打开 [jQuery 的类型定义文件](https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/master/types/jquery/misc.d.ts)。 将此文件的内容复制到剪贴板。</span><span class="sxs-lookup"><span data-stu-id="dac8f-p107">In a web browser, open the [type definitions file for jQuery](https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/master/types/jquery/misc.d.ts). Copy the contents of this file to your clipboard.</span></span>
-
-8. <span data-ttu-id="dac8f-135">在 Visual Studio 中，打开 **jQuery.d.ts** 文件，将剪贴板中的内容粘贴到此文件，并保存文件。</span><span class="sxs-lookup"><span data-stu-id="dac8f-135">In Visual Studio, open the **jQuery.d.ts** file, paste the contents of your clipboard into this file, and save the file.</span></span>
-
-9. <span data-ttu-id="dac8f-136">在 Visual Studio 中，转到 Web 应用项目根目录，新建 **tsconfig.json** 文件。</span><span class="sxs-lookup"><span data-stu-id="dac8f-136">In Visual Studio, create a new file named **tsconfig.json** in the root of the web application project.</span></span>
-
-10. <span data-ttu-id="dac8f-137">打开 **tsconfig.json** 文件，将以下内容添加到此文件，并保存文件：</span><span class="sxs-lookup"><span data-stu-id="dac8f-137">Open the **tsconfig.json** file, add the following content to the file, and save the file:</span></span>
-
-    ```json
-    {
-        "compilerOptions": {
-            "skipLibCheck": true,
-            "lib": [ "es5", "dom", "es2015.promise" ],
-            "sourceMap": true
-        }
-    }
-    ```
-
-11. <span data-ttu-id="dac8f-138">打开“Home.ts”\*\*\*\* 文件，并在文件顶部添加以下声明：</span><span class="sxs-lookup"><span data-stu-id="dac8f-138">Open the **Home.ts** file and add the following declaration at the top of the file:</span></span>
-
-    ```typescript
+    ```TypeScript
     declare var fabric: any;
     ```
 
-12. <span data-ttu-id="dac8f-139">在 **Home.ts** 文件中，找到 `Office.initialize = function (reason) {` 行并在其后面紧接着添加一行以填充全局 `window.Promise`，如下所示：</span><span class="sxs-lookup"><span data-stu-id="dac8f-139">In the **Home.ts** file, find the line `Office.initialize = function (reason) {` and add a line immediately after it to polyfill the global `window.Promise`, as shown here:</span></span>
+6. <span data-ttu-id="21f3b-137">在 **Home.ts** 中，请删除行 `if(!Office.context.requirements.isSetSupported('ExcelApi', '1.1') {` 并替换为以下内容：</span><span class="sxs-lookup"><span data-stu-id="21f3b-137">In **Home.ts**, delete the line `if(!Office.context.requirements.isSetSupported('ExcelApi', '1.1') {` and replace with the following:</span></span>
 
-    ```typescript
+    ```TypeScript
+    if(!Office.context.requirements.isSetSupported('ExcelApi', 1.1) {
+    ```
+
+7. <span data-ttu-id="21f3b-138">在 **Home.ts** 文件中，找到 `Office.initialize = function (reason) {` 行并在其后面紧接着添加一行以填充全局 `window.Promise`，如下所示：</span><span class="sxs-lookup"><span data-stu-id="21f3b-138">In the **Home.ts** file, find the line `Office.initialize = function (reason) {` and add a line immediately after it to polyfill the global `window.Promise`, as shown here:</span></span>
+
+    ```TypeScript
     Office.initialize = function (reason) {
         // add the following line
         (window as any).Promise = OfficeExtension.Promise;
         ...
     ```
 
-13. <span data-ttu-id="dac8f-140">在“Home.ts”\*\*\*\* 文件中，找到 `displaySelectedCells` 函数，将整个函数替换为以下代码，并保存该文件：</span><span class="sxs-lookup"><span data-stu-id="dac8f-140">In the **Home.ts** file, find the `displaySelectedCells` function, replace the entire function with the following code, and save the file:</span></span>
+8. <span data-ttu-id="21f3b-139">在“Home.ts”\*\*\*\* 文件中，找到 `displaySelectedCells` 函数，将整个函数替换为以下代码，并保存该文件：</span><span class="sxs-lookup"><span data-stu-id="21f3b-139">In the **Home.ts** file, find the `displaySelectedCells` function, replace the entire function with the following code, and save the file:</span></span>
 
-    ```typescript
-    function displaySelectedCells() {
-        Office.context.document.getSelectedDataAsync(Office.CoercionType.Text,
-            null,
-            function (result) {
-                if (result.status === Office.AsyncResultStatus.Succeeded) {
-                    showNotification('The selected text is:', '"' + result.value + '"');
-                } else {
-                    showNotification('Error', result.error.message);
-                }
-            });
-    }
-    ```
+```TypeScript
+function displaySelectedCells() {
+    Office.context.document.getSelectedDataAsync(
+        Office.CoercionType.Text,
+        null,
+        function (result) {
+            if (result.status === Office.AsyncResultStatus.Succeeded) {
+                showNotification('The selected text is:', '"' + result.value + '"');
+            } else {
+                showNotification('Error', result.error.message);
+            }
+        });
+}
+```
 
-## <a name="run-the-converted-add-in-project"></a><span data-ttu-id="dac8f-141">运行转换后的外接程序项目</span><span class="sxs-lookup"><span data-stu-id="dac8f-141">Run the converted add-in project</span></span>
+## <a name="run-the-converted-add-in-project"></a><span data-ttu-id="21f3b-140">运行转换后的外接程序项目</span><span class="sxs-lookup"><span data-stu-id="21f3b-140">Run the converted add-in project</span></span>
 
-1. <span data-ttu-id="dac8f-p108">在 Visual Studio 中，按 **F5** 或选择“开始”\*\*\*\* 按钮以启动 Excel，功能区中显示有“显示任务窗格”\*\*\*\* 加载项按钮。加载项本地托管在 IIS 上。</span><span class="sxs-lookup"><span data-stu-id="dac8f-p108">In Visual Studio, press **F5** or choose the **Start** button to launch Excel with the **Show Taskpane** add-in button displayed in the ribbon. The add-in will be hosted locally on IIS.</span></span>
+1. <span data-ttu-id="21f3b-p109">在 Visual Studio 中，按 **F5** 或选择“开始”\*\*\*\* 按钮以启动 Excel，功能区中显示有“显示任务窗格”\*\*\*\* 加载项按钮。加载项本地托管在 IIS 上。</span><span class="sxs-lookup"><span data-stu-id="21f3b-p109">In Visual Studio, press **F5** or choose the **Start** button to launch Excel with the **Show Taskpane** add-in button displayed in the ribbon. The add-in will be hosted locally on IIS.</span></span>
 
-2. <span data-ttu-id="dac8f-144">在 Excel 中，依次选择的“**开始**”选项卡和功能区中的“**显示任务窗格**”按钮，以打开加载项任务窗格。</span><span class="sxs-lookup"><span data-stu-id="dac8f-144">In Excel, choose the **Home** tab, and then choose the **Show Taskpane** button in the ribbon to open the add-in task pane.</span></span>
+2. <span data-ttu-id="21f3b-143">在 Excel 中，依次选择的“**开始**”选项卡和功能区中的“**显示任务窗格**”按钮，以打开加载项任务窗格。</span><span class="sxs-lookup"><span data-stu-id="21f3b-143">In Excel, choose the **Home** tab, and then choose the **Show Taskpane** button in the ribbon to open the add-in task pane.</span></span>
 
-3. <span data-ttu-id="dac8f-145">在工作表中，选择九个包含数字的单元格。</span><span class="sxs-lookup"><span data-stu-id="dac8f-145">In the worksheet, select the nine cells that contain numbers.</span></span>
+3. <span data-ttu-id="21f3b-144">在工作表中，选择九个包含数字的单元格。</span><span class="sxs-lookup"><span data-stu-id="21f3b-144">In the worksheet, select the nine cells that contain numbers.</span></span>
 
-4. <span data-ttu-id="dac8f-146">按任务窗格上的“突出显示”\*\*\*\* 按钮，以突出显示选定范围内所含数字最大的单元格。</span><span class="sxs-lookup"><span data-stu-id="dac8f-146">Press the **Highlight** button on the task pane to highlight the cell in the selected range that contains the highest value.</span></span>
+4. <span data-ttu-id="21f3b-145">按任务窗格上的“突出显示”\*\*\*\* 按钮，以突出显示选定范围内所含数字最大的单元格。</span><span class="sxs-lookup"><span data-stu-id="21f3b-145">Press the **Highlight** button on the task pane to highlight the cell in the selected range that contains the highest value.</span></span>
 
-## <a name="homets-code-file"></a><span data-ttu-id="dac8f-147">Home.ts 代码文件</span><span class="sxs-lookup"><span data-stu-id="dac8f-147">Home.ts code file</span></span>
+## <a name="homets-code-file"></a><span data-ttu-id="21f3b-146">Home.ts 代码文件</span><span class="sxs-lookup"><span data-stu-id="21f3b-146">Home.ts code file</span></span>
 
-<span data-ttu-id="dac8f-p109">为方便参考，下面的代码片段展示了应用上述更改后的 **Home.ts** 文件内容。 此代码包括加载项运行至少所需的更改。</span><span class="sxs-lookup"><span data-stu-id="dac8f-p109">For your reference, the following code snippet shows the contents of the **Home.ts** file after the previously described changes have been applied. This code includes the minimum number of changes needed in order for your add-in to run.</span></span>
+<span data-ttu-id="21f3b-p110">为方便参考，下面的代码片段展示了应用上述更改后的 **Home.ts** 文件内容。 此代码包括加载项运行至少所需的更改。</span><span class="sxs-lookup"><span data-stu-id="21f3b-p110">For your reference, the following code snippet shows the contents of the **Home.ts** file after the previously described changes have been applied. This code includes the minimum number of changes needed in order for your add-in to run.</span></span>
 
 ```typescript
 declare var fabric: any;
@@ -252,7 +237,7 @@ declare var fabric: any;
 })();
 ```
 
-## <a name="see-also"></a><span data-ttu-id="dac8f-150">另请参阅</span><span class="sxs-lookup"><span data-stu-id="dac8f-150">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="21f3b-149">另请参阅</span><span class="sxs-lookup"><span data-stu-id="21f3b-149">See also</span></span>
 
-* [<span data-ttu-id="dac8f-151">StackOverflow 上有关承诺实现的讨论</span><span class="sxs-lookup"><span data-stu-id="dac8f-151">Promise implementation discussion on StackOverflow</span></span>](https://stackoverflow.com/questions/44461312/office-addins-file-in-its-typescript-version-doesnt-work)
-* [<span data-ttu-id="dac8f-152">GitHub 上的 Office 外接程序示例</span><span class="sxs-lookup"><span data-stu-id="dac8f-152">Office Add-in samples on GitHub</span></span>](https://github.com/officedev)
+* [<span data-ttu-id="21f3b-150">StackOverflow 上有关承诺实现的讨论</span><span class="sxs-lookup"><span data-stu-id="21f3b-150">Promise implementation discussion on StackOverflow</span></span>](https://stackoverflow.com/questions/44461312/office-addins-file-in-its-typescript-version-doesnt-work)
+* [<span data-ttu-id="21f3b-151">GitHub 上的 Office 外接程序示例</span><span class="sxs-lookup"><span data-stu-id="21f3b-151">Office Add-in samples on GitHub</span></span>](https://github.com/officedev)
