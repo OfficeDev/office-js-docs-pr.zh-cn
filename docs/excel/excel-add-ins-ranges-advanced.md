@@ -1,14 +1,14 @@
 ---
 title: 使用 Excel JavaScript API 对区域执行操作（高级）
 description: ''
-ms.date: 09/18/2019
+ms.date: 10/22/2019
 localization_priority: Normal
-ms.openlocfilehash: 90dff45ee01197a9a6f4d35fb9ab3379adf129b9
-ms.sourcegitcommit: 78bbbd6cb5a270164b26038675a222defc3be55e
+ms.openlocfilehash: 96f001e7c7e51a9685a52d0a07309beed2f1fe4b
+ms.sourcegitcommit: 5ba325cc88183a3f230cd89d615fd49c695addcf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/11/2019
-ms.locfileid: "37471358"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "37681933"
 ---
 # <a name="work-with-ranges-using-the-excel-javascript-api-advanced"></a>使用 Excel JavaScript API 对区域执行操作（高级）
 
@@ -270,9 +270,6 @@ Excel.run(function (context) {
 ![在区域中运行删除重复项方法之后的 Excel 中的数据](../images/excel-ranges-remove-duplicates-after.png)
 
 ## <a name="group-data-for-an-outline"></a>分级显示的组数据
-
-> [!NOTE]
-> 用于分组行和列的大纲 Api 当前仅适用于公共预览版。 [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
 
 可以将区域中的行或列组合在一起，以创建[分级显示](https://support.office.com/article/Outline-group-data-in-a-worksheet-08CE98C4-0063-4D42-8AC7-8278C49E9AFF)。 可以对这些组进行折叠和扩展以隐藏和显示相应的单元格。 这样可以更轻松地快速分析顶线数据。 使用[Range](/javascript/api/excel/excel.range#group-groupoption-)可以创建这些分级显示组。
 

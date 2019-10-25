@@ -1,19 +1,16 @@
 ---
-title: 使用 Excel JavaScript API 处理注释（预览）
+title: 使用 Excel JavaScript API 处理注释
 description: ''
-ms.date: 10/16/2019
+ms.date: 10/22/2019
 localization_priority: Normal
-ms.openlocfilehash: f289808245b64de34f03f4d105dd363c2aa84bc7
-ms.sourcegitcommit: 499bf49b41205f8034c501d4db5fe4b02dab205e
+ms.openlocfilehash: d79f99d1922def58fe2c8887d01ec5a2b173220a
+ms.sourcegitcommit: 5ba325cc88183a3f230cd89d615fd49c695addcf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/22/2019
-ms.locfileid: "37627027"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "37681912"
 ---
-# <a name="work-with-comments-using-the-excel-javascript-api-preview"></a>使用 Excel JavaScript API 处理注释（预览）
-
-> [!NOTE]
-> 批注 API 当前仅适用于公共预览版。 [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
+# <a name="work-with-comments-using-the-excel-javascript-api"></a>使用 Excel JavaScript API 处理注释
 
 本文介绍如何使用 Excel JavaScript API 在工作簿中添加、读取、修改和删除注释。 您可以从 Excel 文章的 "[插入注释和注释](https://support.office.com/article/insert-comments-and-notes-in-excel-bdcc9f5d-38e2-45b4-9a92-0b2b5c7bf6f8)" 中了解有关注释功能的详细信息。
 
@@ -28,8 +25,8 @@ ms.locfileid: "37627027"
 使用`CommentCollection.add`方法将注释添加到工作簿中。 此方法最长可使用三个参数：
 
 - `cellAddress`：添加了注释的单元格。 它可以是一个字符串或[Range](/javascript/api/excel/excel.range)对象。 区域必须是单个单元格。
-- `content`：注释的内容。 将字符串用于纯文本注释。 将[CommentRichContent](/javascript/api/excel/excel.commentrichcontent)对象用于包含[提及](#mentions)的注释。
-- `contentType`：用于指定内容类型的[ContentType](/javascript/api/excel/excel.contenttype)枚举。 默认值为 `ContentType.plain`。 
+- `content`：注释的内容。 将字符串用于纯文本注释。 将[CommentRichContent](/javascript/api/excel/excel.commentrichcontent)对象用于包含[提及](#mentions-preview)的注释。
+- `contentType`：用于指定内容类型的[ContentType](/javascript/api/excel/excel.contenttype)枚举。 默认值为 `ContentType.plain`。
 
 下面的代码示例将向单元格 **A2** 添加批注。
 
@@ -172,7 +169,10 @@ Excel.run(function (context) {
 });
 ```
 
-## <a name="mentions"></a>提及
+## <a name="mentions-preview"></a>提及（预览）
+
+> [!NOTE]
+> 注释提到的 Api 当前仅适用于公共预览版。 [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
 
 > [!IMPORTANT]
 > 目前仅支持对 web 上的 Excel 进行注释提及。

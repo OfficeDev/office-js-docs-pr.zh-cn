@@ -1,14 +1,14 @@
 ---
 title: 使用 Excel JavaScript API 处理数据透视表
 description: 使用 Excel JavaScript API 创建数据透视表并与其组件进行交互。
-ms.date: 05/01/2019
+ms.date: 10/22/2019
 localization_priority: Normal
-ms.openlocfilehash: 4a60b820d6e50dd44a193dd08df69817330c636d
-ms.sourcegitcommit: b3996b1444e520b44cf752e76eef50908386ca26
+ms.openlocfilehash: 5fc70437ce61a49ac5dcd359214b3cca79c71ac1
+ms.sourcegitcommit: 5ba325cc88183a3f230cd89d615fd49c695addcf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "33620197"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "37681954"
 ---
 # <a name="work-with-pivottables-using-the-excel-javascript-api"></a>使用 Excel JavaScript API 处理数据透视表
 
@@ -158,10 +158,7 @@ Excel.run(function (context) {
 });
 ```
 
-## <a name="slicers-preview"></a>切片器（预览）
-
-> [!NOTE]
-> 切片器 Api 当前仅适用于公共预览版。 [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
+## <a name="slicers"></a>切片器
 
 [切片](/javascript/api/excel/excel.slicer)器允许从 Excel 数据透视表或表中筛选数据。 切片器使用指定的列或透视字段中的值筛选相应的行。 这些值存储为中[](/javascript/api/excel/excel.sliceritem)的`Slicer`SlicerItem 对象。 你的外接程序可以按照用户（[通过 EXCEL UI](https://support.office.com/article/Use-slicers-to-filter-data-249f966b-a9d5-4b0f-b31a-12651785d29d)）的方式调整这些筛选器。 切片器位于绘图层中的工作表的顶部，如以下屏幕截图所示。
 

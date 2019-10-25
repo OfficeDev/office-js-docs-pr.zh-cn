@@ -1,14 +1,14 @@
 ---
 title: "\"Context\"-\"邮箱\"。项目-要求集1。1"
 description: ''
-ms.date: 08/08/2019
+ms.date: 10/23/2019
 localization_priority: Normal
-ms.openlocfilehash: 20d3aaecc5e0c62f86a46ae29010a6462446bf1d
-ms.sourcegitcommit: 1fb99b1b4e63868a0e81a928c69a34c42bf7e209
+ms.openlocfilehash: 3d0b9783ea7fd235f4f989182ced04e0bce735ff
+ms.sourcegitcommit: 5ba325cc88183a3f230cd89d615fd49c695addcf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/30/2019
-ms.locfileid: "36696440"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "37682653"
 ---
 # <a name="item"></a>item
 
@@ -26,28 +26,28 @@ ms.locfileid: "36696440"
 
 ##### <a name="members-and-methods"></a>成员和方法
 
-| Member | 类型 |
+| 成员 | 类型 |
 |--------|------|
-| [attachments](#attachments-arrayattachmentdetails) | Member |
-| [bcc](#bcc-recipients) | Member |
-| [body](#body-body) | Member |
-| [cc](#cc-arrayemailaddressdetailsrecipients) | Member |
-| [conversationId](#nullable-conversationid-string) | Member |
-| [dateTimeCreated](#datetimecreated-date) | Member |
-| [dateTimeModified](#datetimemodified-date) | Member |
-| [end](#end-datetime) | Member |
-| [from](#from-emailaddressdetails) | Member |
-| [internetMessageId](#internetmessageid-string) | Member |
-| [itemClass](#itemclass-string) | Member |
-| [itemId](#nullable-itemid-string) | Member |
-| [itemType](#itemtype-officemailboxenumsitemtype) | Member |
-| [location](#location-stringlocation) | Member |
-| [normalizedSubject](#normalizedsubject-string) | Member |
-| [optionalAttendees](#optionalattendees-arrayemailaddressdetailsrecipients) | Member |
-| [organizer](#organizer-emailaddressdetails) | Member |
+| [attachments](#attachments-arrayattachmentdetails) | 成员 |
+| [bcc](#bcc-recipients) | 成员 |
+| [body](#body-body) | 成员 |
+| [cc](#cc-arrayemailaddressdetailsrecipients) | 成员 |
+| [conversationId](#nullable-conversationid-string) | 成员 |
+| [dateTimeCreated](#datetimecreated-date) | 成员 |
+| [dateTimeModified](#datetimemodified-date) | 成员 |
+| [end](#end-datetime) | 成员 |
+| [from](#from-emailaddressdetails) | 成员 |
+| [internetMessageId](#internetmessageid-string) | 成员 |
+| [itemClass](#itemclass-string) | 成员 |
+| [itemId](#nullable-itemid-string) | 成员 |
+| [itemType](#itemtype-officemailboxenumsitemtype) | 成员 |
+| [location](#location-stringlocation) | 成员 |
+| [normalizedSubject](#normalizedsubject-string) | 成员 |
+| [optionalAttendees](#optionalattendees-arrayemailaddressdetailsrecipients) | 成员 |
+| [organizer](#organizer-emailaddressdetails) | 成员 |
 | [requiredAttendees](#requiredattendees-arrayemailaddressdetailsrecipients) | Member |
-| [sender](#sender-emailaddressdetails) | Member |
-| [start](#start-datetime) | Member |
+| [sender](#sender-emailaddressdetails) | 成员 |
+| [start](#start-datetime) | 成员 |
 | [subject](#subject-stringsubject) | 成员 |
 | [to](#to-arrayemailaddressdetailsrecipients) | 成员 |
 | [addFileAttachmentAsync](#addfileattachmentasyncuri-attachmentname-options-callback) | 方法 |
@@ -80,9 +80,9 @@ Office.initialize = function () {
 };
 ```
 
-### <a name="members"></a>成员
+### <a name="members"></a>Members
 
-#### <a name="attachments-arrayattachmentdetailsjavascriptapioutlookofficeattachmentdetailsviewoutlook-js-11"></a>附件: Array. <[AttachmentDetails](/javascript/api/outlook/office.attachmentdetails?view=outlook-js-1.1)>
+#### <a name="attachments-arrayattachmentdetailsjavascriptapioutlookofficeattachmentdetailsviewoutlook-js-11"></a>attachments: Array.<[AttachmentDetails](/javascript/api/outlook/office.attachmentdetails?view=outlook-js-1.1)>
 
 获取项目的附件数组。仅限阅读模式。
 
@@ -130,15 +130,20 @@ console.log(outputString);
 ---
 ---
 
-#### <a name="bcc-recipientsjavascriptapioutlookofficerecipientsviewoutlook-js-11"></a>密件抄送:[收件人](/javascript/api/outlook/office.recipients?view=outlook-js-1.1)
+#### <a name="bcc-recipientsjavascriptapioutlookofficerecipientsviewoutlook-js-11"></a>bcc: [Recipients](/javascript/api/outlook/office.recipients?view=outlook-js-1.1)
 
 获取对象，该对象提供用于获取或更新邮件的密件抄送 (Bcc) 行上的收件人的方法。 仅限撰写模式。
+
+默认情况下，集合限制为最多为100个成员。 但是，在 Windows 和 Mac 上，以下限制适用。
+
+- 最多获取500个成员。
+- 每个呼叫最多可设置100个成员，最多为500个成员总数。
 
 ##### <a name="type"></a>类型
 
 *   [收件人](/javascript/api/outlook/office.recipients?view=outlook-js-1.1)
 
-##### <a name="requirements"></a>要求
+##### <a name="requirements"></a>Requirements
 
 |要求| 值|
 |---|---|
@@ -163,7 +168,7 @@ function callback(asyncResult) {
 ---
 ---
 
-#### <a name="body-bodyjavascriptapioutlookofficebodyviewoutlook-js-11"></a>正文:[正文](/javascript/api/outlook/office.body?view=outlook-js-1.1)
+#### <a name="body-bodyjavascriptapioutlookofficebodyviewoutlook-js-11"></a>body: [Body](/javascript/api/outlook/office.body?view=outlook-js-1.1)
 
 获取一个提供用于处理项目正文的方法的对象。
 
@@ -171,7 +176,7 @@ function callback(asyncResult) {
 
 *   [Body](/javascript/api/outlook/office.body?view=outlook-js-1.1)
 
-##### <a name="requirements"></a>要求
+##### <a name="requirements"></a>Requirements
 
 |要求| 值|
 |---|---|
@@ -208,13 +213,13 @@ Office.context.mailbox.item.body.getAsync(
 ---
 ---
 
-#### <a name="cc-arrayemailaddressdetailsjavascriptapioutlookofficeemailaddressdetailsviewoutlook-js-11recipientsjavascriptapioutlookofficerecipientsviewoutlook-js-11"></a><[EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails?view=outlook-js-1.1)>|[收件人](/javascript/api/outlook/office.recipients?view=outlook-js-1.1)的抄送: Array
+#### <a name="cc-arrayemailaddressdetailsjavascriptapioutlookofficeemailaddressdetailsviewoutlook-js-11recipientsjavascriptapioutlookofficerecipientsviewoutlook-js-11"></a>cc: Array.<[EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails?view=outlook-js-1.1)>|[Recipients](/javascript/api/outlook/office.recipients?view=outlook-js-1.1)
 
 提供对邮件的抄送 (Cc) 收件人的访问权限。 对象的类型和访问级别取决于当前项目的模式。
 
 ##### <a name="read-mode"></a>阅读模式
 
-`cc` 属性返回包含邮件的**抄送**行上所列的每个收件人的 `EmailAddressDetails` 对象的数组。集合上限为 100 个成员。
+`cc` 属性返回包含邮件的`EmailAddressDetails`行上所列的每个收件人的 **** 对象的数组。 默认情况下，集合限制为最多为100个成员。 但是，在 Windows 和 Mac 上，您可以获得500个成员的最大值。
 
 ```js
 console.log(JSON.stringify(Office.context.mailbox.item.cc));
@@ -222,7 +227,10 @@ console.log(JSON.stringify(Office.context.mailbox.item.cc));
 
 ##### <a name="compose-mode"></a>撰写模式
 
-`cc` 属性返回一个 `Recipients` 对象，该对象提供用于获取或更新邮件的“**抄送**”行上收件人的方法。
+`cc` 属性返回一个 `Recipients` 对象，该对象提供用于获取或更新邮件的“**抄送**”行上收件人的方法。 默认情况下，集合限制为最多为100个成员。 但是，在 Windows 和 Mac 上，以下限制适用。
+
+- 最多获取500个成员。
+- 每个呼叫最多可设置100个成员，最多为500个成员总数。
 
 ```js
 Office.context.mailbox.item.cc.setAsync( ['alice@contoso.com', 'bob@contoso.com'] );
@@ -238,7 +246,7 @@ function callback(asyncResult) {
 
 *   Array.<[EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails?view=outlook-js-1.1)> | [Recipients](/javascript/api/outlook/office.recipients?view=outlook-js-1.1)
 
-##### <a name="requirements"></a>要求
+##### <a name="requirements"></a>Requirements
 
 |要求| 值|
 |---|---|
@@ -251,7 +259,7 @@ function callback(asyncResult) {
 ---
 ---
 
-#### <a name="nullable-conversationid-string"></a>(可以为 null) conversationId: String
+#### <a name="nullable-conversationid-string"></a>(nullable) conversationId: String
 
 获取包含特定消息的电子邮件会话的标识符。
 
@@ -263,7 +271,7 @@ function callback(asyncResult) {
 
 *   String
 
-##### <a name="requirements"></a>要求
+##### <a name="requirements"></a>Requirements
 
 |要求| 值|
 |---|---|
@@ -313,10 +321,10 @@ console.log("Date and time created: " + dateTimeCreated);
 
 #### <a name="datetimemodified-date"></a>dateTimeModified: Date
 
-获取项目最近一次修改的日期和时间。 仅限阅读模式。
+获取项目最近一次修改的日期和时间。仅限阅读模式。
 
 > [!NOTE]
-> IOS 或 Android 上的 Outlook 不支持此成员。
+> iOS 版 Outlook 或 Android 版 Outlook 不支持此成员。
 
 ##### <a name="type"></a>类型
 
@@ -342,7 +350,7 @@ console.log("Date and time modified: " + dateTimeModified);
 ---
 ---
 
-#### <a name="end-datetimejavascriptapioutlookofficetimeviewoutlook-js-11"></a>结束: 日期 |[时间](/javascript/api/outlook/office.time?view=outlook-js-1.1)
+#### <a name="end-datetimejavascriptapioutlookofficetimeviewoutlook-js-11"></a>end: Date|[Time](/javascript/api/outlook/office.time?view=outlook-js-1.1)
 
 获取或设置约会结束的日期和时间。
 
@@ -385,7 +393,7 @@ Office.context.mailbox.item.end.setAsync(endTime, options, function(result) {
 
 *   Date | [Time](/javascript/api/outlook/office.time?view=outlook-js-1.1)
 
-##### <a name="requirements"></a>要求
+##### <a name="requirements"></a>Requirements
 
 |要求| 值|
 |---|---|
@@ -398,7 +406,7 @@ Office.context.mailbox.item.end.setAsync(endTime, options, function(result) {
 ---
 ---
 
-#### <a name="from-emailaddressdetailsjavascriptapioutlookofficeemailaddressdetailsviewoutlook-js-11"></a>发件人: [EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails?view=outlook-js-1.1)
+#### <a name="from-emailaddressdetailsjavascriptapioutlookofficeemailaddressdetailsviewoutlook-js-11"></a>from: [EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails?view=outlook-js-1.1)
 
 获取邮件发件人的电子邮件地址。仅限阅读模式。
 
@@ -411,7 +419,7 @@ Office.context.mailbox.item.end.setAsync(endTime, options, function(result) {
 
 *   [EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails?view=outlook-js-1.1)
 
-##### <a name="requirements"></a>要求
+##### <a name="requirements"></a>Requirements
 
 |要求| 值|
 |---|---|
@@ -439,7 +447,7 @@ console.log("From " + from);
 
 *   String
 
-##### <a name="requirements"></a>要求
+##### <a name="requirements"></a>Requirements
 
 |要求| 值|
 |---|---|
@@ -475,7 +483,7 @@ var internetMessageId = Office.context.mailbox.item.internetMessageId;
 
 *   String
 
-##### <a name="requirements"></a>要求
+##### <a name="requirements"></a>Requirements
 
 |要求| 值|
 |---|---|
@@ -495,18 +503,18 @@ console.log("Item class: " + itemClass);
 ---
 ---
 
-#### <a name="nullable-itemid-string"></a>(可以为 null) itemId: String
+#### <a name="nullable-itemid-string"></a>(nullable) itemId: String
 
-获取当前项目的 Exchange Web 服务项目标识符。 仅限阅读模式。
+获取当前项目的 Exchange Web 服务项目标识符。仅限阅读模式。
 
 > [!NOTE]
-> `itemId` 属性返回的标识符与 Exchange Web 服务项目标识符相同。 `itemId` 属性与 Outlook 条目 ID 或 Outlook REST API 使用的 ID 不同。 在使用此值进行 REST API 调用之前, 应使用`Office.context.mailbox.convertToRestId`转换它, 这可从要求集1.3 中开始。 有关详细信息，请参阅[从 Outlook 加载项使用 Outlook REST API](/outlook/add-ins/use-rest-api#get-the-item-id)。
+> `itemId` 属性返回的标识符与 Exchange Web 服务项目标识符相同。 `itemId` 属性与 Outlook 条目 ID 或 Outlook REST API 使用的 ID 不同。 在使用此值进行 REST API 调用之前，应使用`Office.context.mailbox.convertToRestId`转换它，这可从要求集1.3 中开始。 有关详细信息，请参阅[从 Outlook 加载项使用 Outlook REST API](/outlook/add-ins/use-rest-api#get-the-item-id)。
 
 ##### <a name="type"></a>Type
 
 *   String
 
-##### <a name="requirements"></a>要求
+##### <a name="requirements"></a>Requirements
 
 |要求| 值|
 |---|---|
@@ -532,7 +540,7 @@ if (itemId === null || itemId == undefined) {
 ---
 ---
 
-#### <a name="itemtype-officemailboxenumsitemtypejavascriptapioutlookofficemailboxenumsitemtypeviewoutlook-js-11"></a>itemType: [MailboxEnums](/javascript/api/outlook/office.mailboxenums.itemtype?view=outlook-js-1.1)
+#### <a name="itemtype-officemailboxenumsitemtypejavascriptapioutlookofficemailboxenumsitemtypeviewoutlook-js-11"></a>itemType: [Office.MailboxEnums.ItemType](/javascript/api/outlook/office.mailboxenums.itemtype?view=outlook-js-1.1)
 
 获取实例表示的项的类型。
 
@@ -565,7 +573,7 @@ if (Office.context.mailbox.item.itemType === Office.MailboxEnums.ItemType.Messag
 ---
 ---
 
-#### <a name="location-stringlocationjavascriptapioutlookofficelocationviewoutlook-js-11"></a>位置: 字符串 |[位置](/javascript/api/outlook/office.location?view=outlook-js-1.1)
+#### <a name="location-stringlocationjavascriptapioutlookofficelocationviewoutlook-js-11"></a>location: String|[Location](/javascript/api/outlook/office.location?view=outlook-js-1.1)
 
 获取或设置约会的位置。
 
@@ -619,7 +627,7 @@ normalizedSubject 属性获取包含由电子邮件程序添加的任何标准�
 
 *   String
 
-##### <a name="requirements"></a>要求
+##### <a name="requirements"></a>Requirements
 
 |要求| 值|
 |---|---|
@@ -639,13 +647,13 @@ console.log("Normalized subject: " + normalizedSubject);
 ---
 ---
 
-#### <a name="optionalattendees-arrayemailaddressdetailsjavascriptapioutlookofficeemailaddressdetailsviewoutlook-js-11recipientsjavascriptapioutlookofficerecipientsviewoutlook-js-11"></a>optionalAttendees: <[EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails?view=outlook-js-1.1)>|[收件人](/javascript/api/outlook/office.recipients?view=outlook-js-1.1)的数组
+#### <a name="optionalattendees-arrayemailaddressdetailsjavascriptapioutlookofficeemailaddressdetailsviewoutlook-js-11recipientsjavascriptapioutlookofficerecipientsviewoutlook-js-11"></a>optionalAttendees: Array.<[EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails?view=outlook-js-1.1)>|[Recipients](/javascript/api/outlook/office.recipients?view=outlook-js-1.1)
 
 提供对事件的可选与会者的访问权限。 对象的类型和访问级别取决于当前项目的模式。
 
 ##### <a name="read-mode"></a>阅读模式
 
-`optionalAttendees` 属性返回一个数组，其中包含每个可选与会者的 `EmailAddressDetails` 对象。
+`optionalAttendees` 属性返回一个数组，其中包含每个可选与会者的 `EmailAddressDetails` 对象。 默认情况下，集合限制为最多为100个成员。 但是，在 Windows 和 Mac 上，您可以获得500个成员的最大值。
 
 ```js
 var optionalAttendees = Office.context.mailbox.item.optionalAttendees;
@@ -654,7 +662,10 @@ console.log("Optional attendees: " + JSON.stringify(optionalAttendees));
 
 ##### <a name="compose-mode"></a>撰写模式
 
-`optionalAttendees` 属性返回一个 `Recipients` 对象，该对象提供用于获取或更新可选与会者的方法。
+`optionalAttendees` 属性返回一个 `Recipients` 对象，该对象提供用于获取或更新可选与会者的方法。 默认情况下，集合限制为最多为100个成员。 但是，在 Windows 和 Mac 上，以下限制适用。
+
+- 最多获取500个成员。
+- 每个呼叫最多可设置100个成员，最多为500个成员总数。
 
 ```js
 Office.context.mailbox.item.optionalAttendees.setAsync( ['alice@contoso.com', 'bob@contoso.com'] );
@@ -670,7 +681,7 @@ function callback(asyncResult) {
 
 *   Array.<[EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails?view=outlook-js-1.1)> | [Recipients](/javascript/api/outlook/office.recipients?view=outlook-js-1.1)
 
-##### <a name="requirements"></a>要求
+##### <a name="requirements"></a>Requirements
 
 |要求| 值|
 |---|---|
@@ -683,7 +694,7 @@ function callback(asyncResult) {
 ---
 ---
 
-#### <a name="organizer-emailaddressdetailsjavascriptapioutlookofficeemailaddressdetailsviewoutlook-js-11"></a>组织者: [EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails?view=outlook-js-1.1)
+#### <a name="organizer-emailaddressdetailsjavascriptapioutlookofficeemailaddressdetailsviewoutlook-js-11"></a>organizer: [EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails?view=outlook-js-1.1)
 
 获取指定会议的会议组织者的电子邮件地址。仅限阅读模式。
 
@@ -691,7 +702,7 @@ function callback(asyncResult) {
 
 *   [EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails?view=outlook-js-1.1)
 
-##### <a name="requirements"></a>要求
+##### <a name="requirements"></a>Requirements
 
 |要求| 值|
 |---|---|
@@ -712,13 +723,13 @@ console.log("Organizer: " + organizerName + " (" + organizerAddress + ")");
 ---
 ---
 
-#### <a name="requiredattendees-arrayemailaddressdetailsjavascriptapioutlookofficeemailaddressdetailsviewoutlook-js-11recipientsjavascriptapioutlookofficerecipientsviewoutlook-js-11"></a>requiredAttendees: <[EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails?view=outlook-js-1.1)>|[收件人](/javascript/api/outlook/office.recipients?view=outlook-js-1.1)的数组
+#### <a name="requiredattendees-arrayemailaddressdetailsjavascriptapioutlookofficeemailaddressdetailsviewoutlook-js-11recipientsjavascriptapioutlookofficerecipientsviewoutlook-js-11"></a>requiredAttendees: Array.<[EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails?view=outlook-js-1.1)>|[Recipients](/javascript/api/outlook/office.recipients?view=outlook-js-1.1)
 
 提供对事件的必需与会者的访问权限。 对象的类型和访问级别取决于当前项目的模式。
 
 ##### <a name="read-mode"></a>阅读模式
 
-`requiredAttendees` 属性返回一个数组，其中包含每个必需与会者的 `EmailAddressDetails` 对象。
+`requiredAttendees` 属性返回一个数组，其中包含每个必需与会者的 `EmailAddressDetails` 对象。 默认情况下，集合限制为最多为100个成员。 但是，在 Windows 和 Mac 上，您可以获得500个成员的最大值。
 
 ```js
 var requiredAttendees = Office.context.mailbox.item.requiredAttendees;
@@ -727,7 +738,10 @@ console.log("Required attendees: " + JSON.stringify(requiredAttendees));
 
 ##### <a name="compose-mode"></a>撰写模式
 
-`requiredAttendees` 属性返回一个 `Recipients` 对象，该对象提供用于获取或更新必需与会者的方法。
+`requiredAttendees` 属性返回一个 `Recipients` 对象，该对象提供用于获取或更新必需与会者的方法。 默认情况下，集合限制为最多为100个成员。 但是，在 Windows 和 Mac 上，以下限制适用。
+
+- 最多获取500个成员。
+- 每个呼叫最多可设置100个成员，最多为500个成员总数。
 
 ```js
 Office.context.mailbox.item.requiredAttendees.setAsync( ['alice@contoso.com', 'bob@contoso.com'] );
@@ -744,7 +758,7 @@ function callback(asyncResult) {
 
 *   Array.<[EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails?view=outlook-js-1.1)> | [Recipients](/javascript/api/outlook/office.recipients?view=outlook-js-1.1)
 
-##### <a name="requirements"></a>要求
+##### <a name="requirements"></a>Requirements
 
 |要求| 值|
 |---|---|
@@ -757,7 +771,7 @@ function callback(asyncResult) {
 ---
 ---
 
-#### <a name="sender-emailaddressdetailsjavascriptapioutlookofficeemailaddressdetailsviewoutlook-js-11"></a>发件人: [EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails?view=outlook-js-1.1)
+#### <a name="sender-emailaddressdetailsjavascriptapioutlookofficeemailaddressdetailsviewoutlook-js-11"></a>sender: [EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails?view=outlook-js-1.1)
 
 获取电子邮件发件人的电子邮件地址。仅限阅读模式。
 
@@ -770,7 +784,7 @@ function callback(asyncResult) {
 
 *   [EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails?view=outlook-js-1.1)
 
-##### <a name="requirements"></a>要求
+##### <a name="requirements"></a>Requirements
 
 |要求| 值|
 |---|---|
@@ -791,7 +805,7 @@ console.log("Sender: " + senderName + " (" + senderAddress + ")");
 ---
 ---
 
-#### <a name="start-datetimejavascriptapioutlookofficetimeviewoutlook-js-11"></a>开始日期: 日期 |[时间](/javascript/api/outlook/office.time?view=outlook-js-1.1)
+#### <a name="start-datetimejavascriptapioutlookofficetimeviewoutlook-js-11"></a>start: Date|[Time](/javascript/api/outlook/office.time?view=outlook-js-1.1)
 
 获取或设置约会开始的日期和时间。
 
@@ -834,7 +848,7 @@ Office.context.mailbox.item.start.setAsync(startTime, options, function(result) 
 
 *   Date | [Time](/javascript/api/outlook/office.time?view=outlook-js-1.1)
 
-##### <a name="requirements"></a>要求
+##### <a name="requirements"></a>Requirements
 
 |要求| 值|
 |---|---|
@@ -847,7 +861,7 @@ Office.context.mailbox.item.start.setAsync(startTime, options, function(result) 
 ---
 ---
 
-#### <a name="subject-stringsubjectjavascriptapioutlookofficesubjectviewoutlook-js-11"></a>subject: String |[主题](/javascript/api/outlook/office.subject?view=outlook-js-1.1)
+#### <a name="subject-stringsubjectjavascriptapioutlookofficesubjectviewoutlook-js-11"></a>subject: String|[Subject](/javascript/api/outlook/office.subject?view=outlook-js-1.1)
 
 获取或设置显示在项目的主题字段中的说明。
 
@@ -879,7 +893,7 @@ function callback(asyncResult) {
 
 *   String | [Subject](/javascript/api/outlook/office.subject?view=outlook-js-1.1)
 
-##### <a name="requirements"></a>要求
+##### <a name="requirements"></a>Requirements
 
 |要求| 值|
 |---|---|
@@ -892,13 +906,13 @@ function callback(asyncResult) {
 ---
 ---
 
-#### <a name="to-arrayemailaddressdetailsjavascriptapioutlookofficeemailaddressdetailsviewoutlook-js-11recipientsjavascriptapioutlookofficerecipientsviewoutlook-js-11"></a>to: <[EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails?view=outlook-js-1.1)>|[收件人](/javascript/api/outlook/office.recipients?view=outlook-js-1.1)的数组
+#### <a name="to-arrayemailaddressdetailsjavascriptapioutlookofficeemailaddressdetailsviewoutlook-js-11recipientsjavascriptapioutlookofficerecipientsviewoutlook-js-11"></a>to: Array.<[EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails?view=outlook-js-1.1)>|[Recipients](/javascript/api/outlook/office.recipients?view=outlook-js-1.1)
 
 提供对邮件的“**收件人**”行上的收件人的访问权限。 对象的类型和访问级别取决于当前项目的模式。
 
 ##### <a name="read-mode"></a>阅读模式
 
-`to` 属性返回包含邮件的**收件人**行上所列的每个收件人的 `EmailAddressDetails` 对象的数组。集合上限为 100 个成员。
+`to` 属性返回包含邮件的`EmailAddressDetails`行上所列的每个收件人的 **** 对象的数组。 默认情况下，集合限制为最多为100个成员。 但是，在 Windows 和 Mac 上，您可以获得500个成员的最大值。
 
 ```js
 console.log(JSON.stringify(Office.context.mailbox.item.to));
@@ -906,7 +920,10 @@ console.log(JSON.stringify(Office.context.mailbox.item.to));
 
 ##### <a name="compose-mode"></a>撰写模式
 
-`to` 属性返回一个 `Recipients` 对象，该对象提供用于获取或更新邮件的“**收件人**”行上收件人的方法。
+`to` 属性返回一个 `Recipients` 对象，该对象提供用于获取或更新邮件的“**收件人**”行上收件人的方法。 默认情况下，集合限制为最多为100个成员。 但是，在 Windows 和 Mac 上，以下限制适用。
+
+- 最多获取500个成员。
+- 每个呼叫最多可设置100个成员，最多为500个成员总数。
 
 ```js
 Office.context.mailbox.item.to.setAsync( ['alice@contoso.com', 'bob@contoso.com'] );
@@ -922,7 +939,7 @@ function callback(asyncResult) {
 
 *   Array.<[EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails?view=outlook-js-1.1)> | [Recipients](/javascript/api/outlook/office.recipients?view=outlook-js-1.1)
 
-##### <a name="requirements"></a>要求
+##### <a name="requirements"></a>Requirements
 
 |要求| 值|
 |---|---|
@@ -944,7 +961,7 @@ function callback(asyncResult) {
 
 |名称| 类型| 属性| 说明|
 |---|---|---|---|
-|`uri`| String||提供附加到邮件或约会的文件的位置的 URI。最大长度为 2048 个字符。|
+|`uri`| 字符串||提供附加到邮件或约会的文件的位置的 URI。最大长度为 2048 个字符。|
 |`attachmentName`| 字符串||在附件上载过程中显示的附件名称。最大长度为 255 个字符。|
 |`options`| Object| &lt;可选&gt;|包含一个或多个以下属性的对象文本。|
 |`options.asyncContext`| 对象| &lt;可选&gt;|开发人员可以提供他们想要在回调方法中访问的任何对象。|
@@ -999,13 +1016,13 @@ function addAttachment() {
 
 随后可以将该标识符与 [`removeAttachmentAsync`](#removeattachmentasyncattachmentid-options-callback) 方法一同使用，以删除同一个会话中的附件。
 
-如果 Office 外接程序在 web 上的 Outlook 中运行, 则该`addItemAttachmentAsync`方法可以将项目附加到您正在编辑的项目之外的项目中;但是, 不支持这种情况, 建议不要这样做。
+如果 Office 加载项是在 Outlook 网页版中运行，`addItemAttachmentAsync` 方法可以将项附加到除正在编辑的项外的项；但既不支持也不建议这样做。
 
-##### <a name="parameters"></a>参数
+##### <a name="parameters"></a>Parameters
 
 |名称| 类型| 属性| 说明|
 |---|---|---|---|
-|`itemId`| String||要附加的项目的 Exchange 标识符。最大长度为 100 个字符。|
+|`itemId`| 字符串||要附加的项目的 Exchange 标识符。最大长度为 100 个字符。|
 |`attachmentName`| String||要附加的项目的主题。 最大长度为 255 个字符。|
 |`options`| 对象| &lt;可选&gt;|包含一个或多个以下属性的对象文本。|
 |`options.asyncContext`| 对象| &lt;可选&gt;|开发人员可以提供他们想要在回调方法中访问的任何对象。|
@@ -1017,7 +1034,7 @@ function addAttachment() {
 |------------|-------------|
 | `NumberOfAttachmentsExceeded` | 邮件或约会具有的附件过多。 |
 
-##### <a name="requirements"></a>要求
+##### <a name="requirements"></a>Requirements
 
 |要求| 值|
 |---|---|
@@ -1059,9 +1076,9 @@ function addAttachment() {
 显示答复窗体，其中包括所选邮件的发件人和所有收件人或所选约会的组织者和所有与会者。
 
 > [!NOTE]
-> IOS 或 Android 上的 Outlook 不支持此方法。
+> iOS 版 Outlook 或 Android 版 Outlook 不支持此方法。
 
-在 web 上的 Outlook 中, 答复窗体显示为3列视图中的弹出窗体和2列或1列视图中的弹出式窗体。
+在 Outlook 网页版中，答复窗体显示为包含 3 列视图的弹出式窗体，以及包含 2 列或 1 列视图的弹出式窗体。
 
 如果任意字符串参数超出其限制，`displayReplyAllForm` 将引发异常。
 
@@ -1131,9 +1148,9 @@ Office.context.mailbox.item.displayReplyAllForm(
 显示答复窗体，其中仅包括所选邮件的发件人或所选约会的组织者。
 
 > [!NOTE]
-> IOS 或 Android 上的 Outlook 不支持此方法。
+> iOS 版 Outlook 或 Android 版 Outlook 不支持此方法。
 
-在 web 上的 Outlook 中, 答复窗体显示为3列视图中的弹出窗体和2列或1列视图中的弹出式窗体。
+在 Outlook 网页版中，答复窗体显示为包含 3 列视图的弹出式窗体，以及包含 2 列或 1 列视图的弹出式窗体。
 
 如果任意字符串参数超出其限制，`displayReplyForm` 将引发异常。
 
@@ -1203,7 +1220,7 @@ Office.context.mailbox.item.displayReplyForm(
 获取在所选项目的正文中找到的实体。
 
 > [!NOTE]
-> IOS 或 Android 上的 Outlook 不支持此方法。
+> iOS 版 Outlook 或 Android 版 Outlook 不支持此方法。
 
 ##### <a name="requirements"></a>要求
 
@@ -1235,15 +1252,15 @@ var contacts = Office.context.mailbox.item.getEntities().contacts;
 获取所选项目的正文中找到的指定实体类型的所有实体的数组。
 
 > [!NOTE]
-> IOS 或 Android 上的 Outlook 不支持此方法。
+> iOS 版 Outlook 或 Android 版 Outlook 不支持此方法。
 
-##### <a name="parameters"></a>参数
+##### <a name="parameters"></a>Parameters
 
 |名称| 类型| 说明|
 |---|---|---|
 |`entityType`| [Office.MailboxEnums.EntityType](/javascript/api/outlook/office.MailboxEnums.entitytype?view=outlook-js-1.1)|EntityType 枚举值之一。|
 
-##### <a name="requirements"></a>要求
+##### <a name="requirements"></a>Requirements
 
 |要求| 值|
 |---|---|
@@ -1298,7 +1315,7 @@ Office.initialize = function () {
 返回传递清单 XML 文件中定义的命名筛选器的所选项目中的已知实体。
 
 > [!NOTE]
-> IOS 或 Android 上的 Outlook 不支持此方法。
+> iOS 版 Outlook 或 Android 版 Outlook 不支持此方法。
 
 `getFilteredEntitiesByName` 方法返回匹配在具有指定 `FilterName` 元素值的清单 XML 文件中的 [ItemHasKnownEntity](/office/dev/add-ins/reference/manifest/rule#itemhasknownentity-rule) 规则元素中定义的正则表达式的实体。
 
@@ -1308,7 +1325,7 @@ Office.initialize = function () {
 |---|---|---|
 |`name`| 字符串|定义筛选器匹配的 `ItemHasKnownEntity` 规则元素的名称。|
 
-##### <a name="requirements"></a>要求
+##### <a name="requirements"></a>Requirements
 
 |要求| 值|
 |---|---|
@@ -1334,7 +1351,7 @@ Office.initialize = function () {
 返回所选项目中匹配在清单 XML 文件中定义的正则表达式的字符串值。
 
 > [!NOTE]
-> IOS 或 Android 上的 Outlook 不支持此方法。
+> iOS 版 Outlook 或 Android 版 Outlook 不支持此方法。
 
 `getRegExMatches` 方法返回匹配在清单 XML 文件中的每个 `ItemHasRegularExpressionMatch` 或 `ItemHasKnownEntity` 规则元素中定义的正则表达式的字符串。对于 `ItemHasRegularExpressionMatch` 规则，匹配字符串必须发生在该规则指定的项目的属性中。`PropertyName` 简单类型定义支持的属性。
 
@@ -1362,7 +1379,7 @@ Office.initialize = function () {
 > [!NOTE]
 > 如果在项目的正文属性上指定 `ItemHasRegularExpressionMatch` 规则，则正则表达式应进一步筛选正文，不应尝试返回该项目的整个正文。使用正则表达式（如 `.*`）获取项目的整个正文并不总是返回预期的结果。
 
-##### <a name="requirements"></a>要求
+##### <a name="requirements"></a>Requirements
 
 |要求| 值|
 |---|---|
@@ -1374,7 +1391,7 @@ Office.initialize = function () {
 
 一个包含匹配在清单 XML 文件中定义的正则表达式的字符串数组的对象。每个数组的名称等于匹配 `ItemHasRegularExpressionMatch` 规则的 `RegExName` 属性或匹配 `ItemHasKnownEntity` 规则的 `FilterName` 属性的相应值。
 
-类型: 对象
+类型：对象
 
 ##### <a name="example"></a>示例
 
@@ -1396,7 +1413,7 @@ var veggies = allMatches.veggies;
 返回匹配在清单 XML 文件中定义的命名正则表达式的所选项目中的字符串值。
 
 > [!NOTE]
-> IOS 或 Android 上的 Outlook 不支持此方法。
+> iOS 版 Outlook 或 Android 版 Outlook 不支持此方法。
 
 `getRegExMatchesByName` 方法返回匹配在具有指定 `RegExName` 元素值的清单 XML 文件中的 `ItemHasRegularExpressionMatch` 规则元素中定义的正则表达式的字符串。
 
@@ -1408,7 +1425,7 @@ var veggies = allMatches.veggies;
 |---|---|---|
 |`name`| 字符串|定义筛选器匹配的 `ItemHasRegularExpressionMatch` 规则元素的名称。|
 
-##### <a name="requirements"></a>要求
+##### <a name="requirements"></a>Requirements
 
 |要求| 值|
 |---|---|
@@ -1420,7 +1437,7 @@ var veggies = allMatches.veggies;
 
 一个包含匹配在清单 XML 文件中定义的正则表达式的字符串的数组。
 
-类型: Array. < 字符串 >
+类型：Array.< String >
 
 ##### <a name="example"></a>示例
 
@@ -1447,7 +1464,7 @@ var veggies = Office.context.mailbox.item.getRegExMatchesByName("veggies");
 |`callback`| 函数||方法完成后，使用单个参数 `asyncResult`（一个 [`AsyncResult`](/javascript/api/office/office.asyncresult) 对象）调用在 `callback` 参数中传递的函数。<br/><br/>自定义属性作为 `asyncResult.value` 属性中的 [`CustomProperties`](/javascript/api/outlook/office.customproperties?view=outlook-js-1.1) 对象提供。 此对象可用于获取、设置以及从项目中删除自定义属性，并将自定义属性集的更改重新保存到服务器。|
 |`userContext`| 对象| &lt;可选&gt;|开发人员可以提供他们想要在回调函数中访问的任何对象。 此对象可以通过回调函数中的 `asyncResult.asyncContext` 属性进行访问。|
 
-##### <a name="requirements"></a>要求
+##### <a name="requirements"></a>Requirements
 
 |要求| 值|
 |---|---|
@@ -1491,9 +1508,9 @@ function saveCallback(asyncResult) {
 
 将附件从邮件或约会中删除。
 
-`removeAttachmentAsync` 方法删除项目中带指定标识符的附件。 最佳做法是，仅当同一个邮件应用程序在同一会话中添加了一个附件时，你才应使用该附件标识符来删除该附件。 在 web 和移动设备上的 Outlook 中, 附件标识符仅在同一个会话中有效。 当用户关闭应用程序，或者如果用户开始在内嵌窗体中撰写，并在随后弹出的内嵌窗体中继续在单独的窗口撰写时，会话即结束。
+`removeAttachmentAsync` 方法删除项目中带指定标识符的附件。 最佳做法是，仅当同一个邮件应用程序在同一会话中添加了一个附件时，你才应使用该附件标识符来删除该附件。 在 Outlook 网页版和移动设备上，附件标识符只在同一个会话中才有效。 当用户关闭应用程序，或者如果用户开始在内嵌窗体中撰写，并在随后弹出的内嵌窗体中继续在单独的窗口撰写时，会话即结束。
 
-##### <a name="parameters"></a>参数
+##### <a name="parameters"></a>Parameters
 
 |名称| 类型| 属性| 说明|
 |---|---|---|---|
