@@ -3,12 +3,12 @@ title: 使用 Excel JavaScript API 处理表格
 description: ''
 ms.date: 09/09/2019
 localization_priority: Priority
-ms.openlocfilehash: 7803690b4a20aa89908a20cf557f8076f5fea70a
-ms.sourcegitcommit: 24303ca235ebd7144a1d913511d8e4fb7c0e8c0d
+ms.openlocfilehash: d3109d28a4eb8a1a16ff1919a201284024f10c38
+ms.sourcegitcommit: 5ba325cc88183a3f230cd89d615fd49c695addcf
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/11/2019
-ms.locfileid: "36838548"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "37681975"
 ---
 # <a name="work-with-tables-using-the-excel-javascript-api"></a>使用 Excel JavaScript API 处理表格
 
@@ -285,7 +285,7 @@ Excel.run(function (context) {
 
 ![Excel 中的表数据](../images/excel-tables-sort.png)
 
-在工作表中对数据进行排序时，会触发事件通知。 要详细了解有关排序的事件以及加载项如何注册事件处理程序来响应此类事件，请参阅[处理排序事件（预览版）](excel-add-ins-worksheets.md#handle-sorting-events-preview)。
+在工作表中对数据进行排序时，会触发事件通知。 要详细了解有关排序的事件以及加载项如何注册事件处理程序来响应此类事件，请参阅[处理排序事件](excel-add-ins-worksheets.md#handle-sorting-events)。
 
 ## <a name="apply-filters-to-a-table"></a>将筛选器应用于表
 

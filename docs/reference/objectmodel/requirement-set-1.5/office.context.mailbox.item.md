@@ -1,14 +1,14 @@
 ---
 title: Office.context.mailbox.item - 要求集 1.5
 description: ''
-ms.date: 09/23/2019
+ms.date: 10/23/2019
 localization_priority: Priority
-ms.openlocfilehash: a76440c2353483d0754aa0ba2fed98f051bc1c6f
-ms.sourcegitcommit: 3c84fe6302341668c3f9f6dd64e636a97d03023c
+ms.openlocfilehash: 7d585d3fd60d51b68d86b632701e8ac512fe708c
+ms.sourcegitcommit: 5ba325cc88183a3f230cd89d615fd49c695addcf
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/26/2019
-ms.locfileid: "37167366"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "37682520"
 ---
 # <a name="item"></a>item
 
@@ -139,6 +139,11 @@ console.log(outputString);
 
 获取对象，该对象提供用于获取或更新邮件的密件抄送 (Bcc) 行上的收件人的方法。 仅限撰写模式。
 
+默认情况下，集合上限为 100 个成员。 但是，在 Windows 和 Mac 上，以下限制适用。
+
+- 最多包含 500 个成员。
+- 为每个呼叫最多设置 100 个成员，总共多达 500 个成员。
+
 ##### <a name="type"></a>类型
 
 *   [收件人](/javascript/api/outlook/office.recipients?view=outlook-js-1.5)
@@ -219,7 +224,7 @@ Office.context.mailbox.item.body.getAsync(
 
 ##### <a name="read-mode"></a>阅读模式
 
-`cc` 属性返回包含邮件的**抄送**行上所列的每个收件人的 `EmailAddressDetails` 对象的数组。集合上限为 100 个成员。
+`cc` 属性返回包含邮件的**抄送**行上所列的每个收件人的 `EmailAddressDetails` 对象的数组。 默认情况下，集合上限为 100 个成员。 但是，在 Windows 和 Mac 上，最多可包含 500 个成员。
 
 ```js
 console.log(JSON.stringify(Office.context.mailbox.item.cc));
@@ -227,7 +232,10 @@ console.log(JSON.stringify(Office.context.mailbox.item.cc));
 
 ##### <a name="compose-mode"></a>撰写模式
 
-`cc` 属性返回一个 `Recipients` 对象，该对象提供用于获取或更新邮件的“**抄送**”行上收件人的方法。
+`cc` 属性返回一个 `Recipients` 对象，该对象提供用于获取或更新邮件的“**抄送**”行上收件人的方法。 默认情况下，集合上限为 100 个成员。 但是，在 Windows 和 Mac 上，以下限制适用。
+
+- 最多包含 500 个成员。
+- 为每个呼叫最多设置 100 个成员，总共多达 500 个成员。
 
 ```js
 Office.context.mailbox.item.cc.setAsync( ['alice@contoso.com', 'bob@contoso.com'] );
@@ -684,7 +692,7 @@ Office.context.mailbox.item.notificationMessages.getAllAsync(
 
 ##### <a name="read-mode"></a>阅读模式
 
-`optionalAttendees` 属性返回一个数组，其中包含每个可选与会者的 `EmailAddressDetails` 对象。
+`optionalAttendees` 属性返回一个数组，其中包含每个可选与会者的 `EmailAddressDetails` 对象。 默认情况下，集合上限为 100 个成员。 但是，在 Windows 和 Mac 上，最多可包含 500 个成员。
 
 ```js
 var optionalAttendees = Office.context.mailbox.item.optionalAttendees;
@@ -693,7 +701,10 @@ console.log("Optional attendees: " + JSON.stringify(optionalAttendees));
 
 ##### <a name="compose-mode"></a>撰写模式
 
-`optionalAttendees` 属性返回一个 `Recipients` 对象，该对象提供用于获取或更新可选与会者的方法。
+`optionalAttendees` 属性返回一个 `Recipients` 对象，该对象提供用于获取或更新可选与会者的方法。 默认情况下，集合上限为 100 个成员。 但是，在 Windows 和 Mac 上，以下限制适用。
+
+- 最多包含 500 个成员。
+- 为每个呼叫最多设置 100 个成员，总共多达 500 个成员。
 
 ```js
 Office.context.mailbox.item.optionalAttendees.setAsync( ['alice@contoso.com', 'bob@contoso.com'] );
@@ -757,7 +768,7 @@ console.log("Organizer: " + organizerName + " (" + organizerAddress + ")");
 
 ##### <a name="read-mode"></a>阅读模式
 
-`requiredAttendees` 属性返回一个数组，其中包含每个必需与会者的 `EmailAddressDetails` 对象。
+`requiredAttendees` 属性返回一个数组，其中包含每个必需与会者的 `EmailAddressDetails` 对象。 默认情况下，集合上限为 100 个成员。 但是，在 Windows 和 Mac 上，最多可包含 500 个成员。
 
 ```js
 var requiredAttendees = Office.context.mailbox.item.requiredAttendees;
@@ -766,7 +777,10 @@ console.log("Required attendees: " + JSON.stringify(requiredAttendees));
 
 ##### <a name="compose-mode"></a>撰写模式
 
-`requiredAttendees` 属性返回一个 `Recipients` 对象，该对象提供用于获取或更新必需与会者的方法。
+`requiredAttendees` 属性返回一个 `Recipients` 对象，该对象提供用于获取或更新必需与会者的方法。 默认情况下，集合上限为 100 个成员。 但是，在 Windows 和 Mac 上，以下限制适用。
+
+- 最多包含 500 个成员。
+- 为每个呼叫最多设置 100 个成员，总共多达 500 个成员。
 
 ```js
 Office.context.mailbox.item.requiredAttendees.setAsync( ['alice@contoso.com', 'bob@contoso.com'] );
@@ -937,7 +951,7 @@ function callback(asyncResult) {
 
 ##### <a name="read-mode"></a>阅读模式
 
-`to` 属性返回包含邮件的**收件人**行上所列的每个收件人的 `EmailAddressDetails` 对象的数组。集合上限为 100 个成员。
+`to` 属性返回包含邮件的**收件人**行上所列的每个收件人的 `EmailAddressDetails` 对象的数组。 默认情况下，集合上限为 100 个成员。 但是，在 Windows 和 Mac 上，最多可包含 500 个成员。
 
 ```js
 console.log(JSON.stringify(Office.context.mailbox.item.to));
@@ -945,7 +959,10 @@ console.log(JSON.stringify(Office.context.mailbox.item.to));
 
 ##### <a name="compose-mode"></a>撰写模式
 
-`to` 属性返回一个 `Recipients` 对象，该对象提供用于获取或更新邮件的“**收件人**”行上收件人的方法。
+`to` 属性返回一个 `Recipients` 对象，该对象提供用于获取或更新邮件的“**收件人**”行上收件人的方法。 默认情况下，集合上限为 100 个成员。 但是，在 Windows 和 Mac 上，以下限制适用。
+
+- 最多包含 500 个成员。
+- 为每个呼叫最多设置 100 个成员，总共多达 500 个成员。
 
 ```js
 Office.context.mailbox.item.to.setAsync( ['alice@contoso.com', 'bob@contoso.com'] );

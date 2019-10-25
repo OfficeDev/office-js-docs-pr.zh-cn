@@ -1,14 +1,14 @@
 ---
 title: 解决 Office 加载项中的同源策略限制
 description: ''
-ms.date: 02/08/2019
+ms.date: 10/17/2019
 localization_priority: Priority
-ms.openlocfilehash: 52af2eef2881b48feb141182233bc194ae406aa0
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: 353dfc40df79f74614bb2eab026a65c54c3f16b9
+ms.sourcegitcommit: 5ba325cc88183a3f230cd89d615fd49c695addcf
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32449069"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "37681835"
 ---
 # <a name="addressing-same-origin-policy-limitations-in-office-add-ins"></a>解决 Office 加载项中的同源策略限制
 
@@ -18,11 +18,11 @@ ms.locfileid: "32449069"
 
 同一来源的策略可能在许多情况下是不必要的障碍，例如当 web 应用程序跨多个子域托管内容和 API 时。 有一些常见技术可以安全解决同一来源策略执行的问题。 本文仅提供有关部分内容的最简洁的介绍。 请使用提供的链接开始对这些技术进行研究。
 
-## <a name="use-jsonp-for-anonymous-access"></a>针对匿名访问使用 JSON/P
+## <a name="use-jsonp-for-anonymous-access"></a>针对匿名访问使用 JSONP
 
-解决同一来源策略限制的一个方法是使用 [JSON/P](https://www.w3schools.com/js/js_json_jsonp.asp) 为 web 服务提供代理。 可以通过包括指向任何域上托管的某些脚本的 `script` 标签（带有 `src` 属性）实现此过程。 可以使用编程的方法创建 `script` 标签，动态创建 `src` 属性所指向的 URL，然后通过 URI 查询参数将参数传递给 URL。 Web 服务提供程序在特定的 URL 位置创建和托管 JavaScript 代码，并根据 URI 查询参数返回不同的脚本。 这些脚本然后在插入位置执行并按照预期的方式工作。
+解决同一来源策略限制的一个方法是使用 [JSONP](https://www.w3schools.com/js/js_json_jsonp.asp) 为 web 服务提供代理。 可以通过包括指向任何域上托管的某些脚本的 `script` 标签（带有 `src` 属性）实现此过程。 可以使用编程的方法创建 `script` 标签，动态创建 `src` 属性所指向的 URL，然后通过 URI 查询参数将参数传递给 URL。 Web 服务提供程序在特定的 URL 位置创建和托管 JavaScript 代码，并根据 URI 查询参数返回不同的脚本。 这些脚本然后在插入位置执行并按照预期的方式工作。
 
-下面是使用可在任何 Office 外接程序中工作的技术的 JSON/P 示例。
+下面是使用可在任何 Office 外接程序中工作的技术的 JSONP 示例。
 
 ```js
 // Dynamically create an HTML SCRIPT element that obtains the details for the specified video.

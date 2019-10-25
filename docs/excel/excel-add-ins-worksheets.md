@@ -1,14 +1,14 @@
 ---
 title: 使用 Excel JavaScript API 处理工作表
 description: ''
-ms.date: 10/16/2019
+ms.date: 10/22/2019
 localization_priority: Priority
-ms.openlocfilehash: ea8dad58bdd1ce3875751661806293e9aa1222fb
-ms.sourcegitcommit: 499bf49b41205f8034c501d4db5fe4b02dab205e
+ms.openlocfilehash: 0f5e91d32e0fdd3111364dda2b00a9a62dba3d63
+ms.sourcegitcommit: 5ba325cc88183a3f230cd89d615fd49c695addcf
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/22/2019
-ms.locfileid: "37626843"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "37681947"
 ---
 # <a name="work-with-worksheets-using-the-excel-javascript-api"></a>使用 Excel JavaScript API 处理工作表
 
@@ -318,10 +318,7 @@ function onWorksheetChanged(eventArgs) {
 }
 ```
 
-## <a name="handle-sorting-events-preview"></a>处理排序事件（预览版）
-
-> [!NOTE]
-> 这些与排序相关的事件的 API 现在仅推出公共预览版。 [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
+## <a name="handle-sorting-events"></a>处理排序事件
 
 `onColumnSorted` 和 `onRowSorted` 事件表示工作表数据已排序。 这些事件连接到各 `Worksheet` 对象和工作簿的 `WorkbookCollection` 无论是通过编程排序还是通过 Excel 用户界面手动执行排序，它们都会触发。
 

@@ -1,14 +1,14 @@
 ---
 title: Outlook 外接程序 API 预览要求集
 description: ''
-ms.date: 08/15/2019
+ms.date: 10/18/2019
 localization_priority: Priority
-ms.openlocfilehash: aa3f46c505e8c87508699f6e84194272ee4d13bb
-ms.sourcegitcommit: 1fb99b1b4e63868a0e81a928c69a34c42bf7e209
+ms.openlocfilehash: 40bf17a6bfcc429b3de013a1b232a7c054b22768
+ms.sourcegitcommit: 5ba325cc88183a3f230cd89d615fd49c695addcf
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/30/2019
-ms.locfileid: "36696454"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "37682527"
 ---
 # <a name="outlook-add-in-api-preview-requirement-set"></a>Outlook 外接程序 API 预览要求集
 
@@ -226,15 +226,21 @@ ms.locfileid: "36696454"
 
 #### <a name="internetheadersjavascriptapioutlookofficeinternetheaders"></a>[InternetHeaders](/javascript/api/outlook/office.internetheaders)
 
-添加了一个表示邮件项目的自定义 Internet 标头的新对象。
+添加了一个表示邮件项目的自定义 Internet 标头的新对象。 仅限撰写模式。
 
 **适用于**：Windows 版 Outlook（已连接到 Office 365 订阅）、Mac 版 Outlook（已连接到 Office 365 订阅）
 
-#### <a name="officecontextmailboxiteminternetheadersofficecontextmailboxitemmdinternetheaders-internetheaders"></a>[Office.context.mailbox.item.internetHeaders](office.context.mailbox.item.md#internetheaders-internetheaders)
+#### <a name="officecontextmailboxiteminternetheadersjavascriptapioutlookofficemessagecomposeinternetheaders"></a>[Office.context.mailbox.item.internetHeaders](/javascript/api/outlook/office.messagecompose#internetheaders)
 
-添加了一个表示邮件项目的自定义 Internet 标头的新属性。
+添加了一个表示邮件项目的自定义 Internet 标头的新属性。 仅限撰写模式。
 
 **适用于**：Windows 版 Outlook（已连接到 Office 365 订阅）、Mac 版 Outlook（已连接到 Office 365 订阅）
+
+#### <a name="officecontextmailboxitemgetallinternetheadersasyncjavascriptapioutlookofficemessagereadgetallinternetheadersasync-options--callback-"></a>[Office.context.mailbox.item.getAllInternetHeadersAsync](/javascript/api/outlook/office.messageread#getallinternetheadersasync-options--callback-)
+
+添加了一种新方法，可获取邮件项目的所有 Internet 标头。 仅限阅读模式。
+
+**适用于**：Windows 版 Outlook（已连接到 Office 365 订阅）
 
 <br>
 
