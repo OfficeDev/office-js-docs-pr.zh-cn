@@ -1,14 +1,14 @@
 ---
 title: 在 Visual Studio 中将 Office 加载项项目转换为使用 TypeScript
 description: ''
-ms.date: 10/11/2019
+ms.date: 10/29/2019
 localization_priority: Priority
-ms.openlocfilehash: 0a828a3f11a1fcaf71e277bdb667f866ea4ae06a
-ms.sourcegitcommit: 499bf49b41205f8034c501d4db5fe4b02dab205e
+ms.openlocfilehash: dc9384aff605db31ded4197ad00d1a7823f2de6f
+ms.sourcegitcommit: 818036a7163b1513d047e66a20434060415df241
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/22/2019
-ms.locfileid: "37626801"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "37775289"
 ---
 # <a name="convert-an-office-add-in-project-in-visual-studio-to-typescript"></a>在 Visual Studio 中将 Office 加载项项目转换为使用 TypeScript
 
@@ -47,28 +47,31 @@ ms.locfileid: "37626801"
 
 1. 查找 **Home.js** 文件，并将其重命名为 **Home.ts**。
 
-2. 从“**工具**”选项卡中，选择“**NuGet 程序包管理器**”，然后选择“**管理解决方案的 NuGet 程序包...**”。
+2. 找到 **./Functions/FunctionFile.js** 文件，再将其重命名为 **FunctionFile.ts**。
 
-3. 在选中“**浏览**”选项卡的情况下，在搜索框中输入 **office-js.TypeScript.DefinitelyTyped**。 安装或更新此程序包（如果已安装）。 这将把 Office.js 库的 TypeScript 类型定义添加到项目中。
+3. 找到 **./Scripts/MessageBanner.js** 文件，再将其重命名为 **MessageBanner.ts**。
 
-4. 在同一搜索框中，输入 **jquery.TypeScript.DefinitelyTyped**。 安装或更新此程序包（如果已安装）。 这将把 jQuery TypeScript 定义添加到项目中。 jQuery 和 node.js 的程序包现在将显示在 Visual Studio 生成的称为 **packages.config** 的新文件中。
+4. 从“**工具**”选项卡中，选择“**NuGet 程序包管理器**”，然后选择“**管理解决方案的 NuGet 程序包...**”。
+
+5. 在选中“**浏览**”选项卡的情况下，在搜索框中输入 **office-js.TypeScript.DefinitelyTyped**。 安装或更新此程序包（如果已安装）。 这将把 Office.js 库的 TypeScript 类型定义添加到项目中。
+
+6. 在同一搜索框中，输入 **jquery.TypeScript.DefinitelyTyped**。 安装或更新此程序包（如果已安装）。 这将把 jQuery TypeScript 定义添加到项目中。 jQuery 和 node.js 的程序包现在将显示在 Visual Studio 生成的称为 **packages.config** 的新文件中。
 
     > [!NOTE]
     > 在 TypeScript 项目中，可以混合使用 TypeScript 和 JavaScript 文件，项目都可以进行编译。这是因为 TypeScript 是键入的 JavaScript 超集，可以编译 JavaScript。
 
-5. 打开 **Home.ts** 文件，并在文件顶部添加以下声明：
+7. 在 **Home.ts** 中，找到行 `if(!Office.context.requirements.isSetSupported('ExcelApi', '1.1') {` 并将其替换为以下内容：
 
     ```TypeScript
-    declare var fabric: any;
+    if(!Office.context.requirements.isSetSupported('ExcelApi', 1.1)) {
     ```
 
-6. 在 **Home.ts** 中，请删除行 `if(!Office.context.requirements.isSetSupported('ExcelApi', '1.1') {` 并替换为以下内容：
+    > [!NOTE]
+    > 目前，要使项目在转换为 TypeScript 后成功编译，你必须数值的形式指定要求集数量，如之前的代码片段中所示。 遗憾的是，这意味着你将无法使用 `isSetSupported` 来测试要求集 `1.10` 支持，因为数值 `1.10` 在运行时评估为 `1.1`。 
+    > 
+    > 造成此问题的原因是 **office-js.TypeScript.DefinitelyTyped** NuGet 包当前已过时，这意味着你的项目无权访问 Office.js 的最新 TypeScript 定义。 此问题正在解决中；问题解决后，本文将更新。
 
-    ```TypeScript
-    if(!Office.context.requirements.isSetSupported('ExcelApi', 1.1) {
-    ```
-
-7. 在 **Home.ts** 文件中，找到 `Office.initialize = function (reason) {` 行并在其后面紧接着添加一行以填充全局 `window.Promise`，如下所示：
+8. 在 **Home.ts**中，找到 `Office.initialize = function (reason) {` 行并在其后面紧接着添加一行以填充全局 `window.Promise`，如下所示：
 
     ```TypeScript
     Office.initialize = function (reason) {
@@ -77,22 +80,28 @@ ms.locfileid: "37626801"
         ...
     ```
 
-8. 在“Home.ts”**** 文件中，找到 `displaySelectedCells` 函数，将整个函数替换为以下代码，并保存该文件：
+9. 在 **Home.ts** 中，找到 `displaySelectedCells` 函数，将整个函数替换为以下代码，然后保存文件：
 
-```TypeScript
-function displaySelectedCells() {
-    Office.context.document.getSelectedDataAsync(
-        Office.CoercionType.Text,
-        null,
-        function (result) {
-            if (result.status === Office.AsyncResultStatus.Succeeded) {
-                showNotification('The selected text is:', '"' + result.value + '"');
-            } else {
-                showNotification('Error', result.error.message);
-            }
-        });
-}
-```
+    ```TypeScript
+    function displaySelectedCells() {
+        Office.context.document.getSelectedDataAsync(
+            Office.CoercionType.Text,
+            null,
+            function (result) {
+                if (result.status === Office.AsyncResultStatus.Succeeded) {
+                    showNotification('The selected text is:', '"' + result.value + '"');
+                } else {
+                    showNotification('Error', result.error.message);
+                }
+            });
+    }
+    ```
+
+10. 在 **./Scripts/MessageBanner.ts** 中，找到行 `_onResize(null);` 并将其替换为以下内容：
+
+    ```TypeScript
+    _onResize();
+    ```
 
 ## <a name="run-the-converted-add-in-project"></a>运行转换后的外接程序项目
 
@@ -109,8 +118,6 @@ function displaySelectedCells() {
 为方便参考，下面的代码片段展示了应用上述更改后的 **Home.ts** 文件内容。 此代码包括加载项运行至少所需的更改。
 
 ```typescript
-declare var fabric: any;
-
 (function () {
     "use strict";
 
@@ -120,15 +127,14 @@ declare var fabric: any;
     // The initialize function must be run each time a new page is loaded.
     Office.initialize = function (reason) {
         (window as any).Promise = OfficeExtension.Promise;
-
         $(document).ready(function () {
-            // Initialize the FabricUI notification mechanism and hide it
-            var element = document.querySelector('.ms-MessageBanner');
-            messageBanner = new fabric.MessageBanner(element);
+            // Initialize the notification mechanism and hide it
+            var element = document.querySelector('.MessageBanner');
+            messageBanner = new components.MessageBanner(element);
             messageBanner.hideBanner();
-
+            
             // If not using Excel 2016, use fallback logic.
-            if (!Office.context.requirements.isSetSupported('ExcelApi', '1.1')) {
+            if (!Office.context.requirements.isSetSupported('ExcelApi', 1.1)) {
                 $("#template-description").text("This sample will display the value of the cells that you have selected in the spreadsheet.");
                 $('#button-text').text("Display!");
                 $('#button-desc').text("Display the selection");
@@ -140,7 +146,7 @@ declare var fabric: any;
             $("#template-description").text("This sample highlights the highest value from the cells you have selected in the spreadsheet.");
             $('#button-text').text("Highlight!");
             $('#button-desc').text("Highlights the largest number.");
-
+                
             loadSampleData();
 
             // Add a click event handler for the highlight button.
@@ -206,7 +212,8 @@ declare var fabric: any;
     }
 
     function displaySelectedCells() {
-        Office.context.document.getSelectedDataAsync(Office.CoercionType.Text,
+        Office.context.document.getSelectedDataAsync(
+            Office.CoercionType.Text,
             null,
             function (result) {
                 if (result.status === Office.AsyncResultStatus.Succeeded) {
@@ -239,5 +246,5 @@ declare var fabric: any;
 
 ## <a name="see-also"></a>另请参阅
 
-* [StackOverflow 上有关承诺实现的讨论](https://stackoverflow.com/questions/44461312/office-addins-file-in-its-typescript-version-doesnt-work)
-* [GitHub 上的 Office 外接程序示例](https://github.com/officedev)
+- [StackOverflow 上有关承诺实现的讨论](https://stackoverflow.com/questions/44461312/office-addins-file-in-its-typescript-version-doesnt-work)
+- [GitHub 上的 Office 外接程序示例](https://github.com/officedev)
