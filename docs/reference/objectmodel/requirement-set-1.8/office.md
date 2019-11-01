@@ -1,14 +1,14 @@
 ---
-title: Office 命名空间 - 预览要求集
+title: Office 命名空间-要求集1。8
 description: ''
-ms.date: 10/30/2019
+ms.date: 10/31/2019
 localization_priority: Normal
-ms.openlocfilehash: eae6f99d166695f24f4a94e89ea4b876bea080ef
+ms.openlocfilehash: 91a0bef2a8280a068763c98b17644bd9268e2fb4
 ms.sourcegitcommit: e989096f3d19761bf8477c585cde20b3f8e0b90d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 10/31/2019
-ms.locfileid: "37902100"
+ms.locfileid: "37902146"
 ---
 # <a name="office"></a>Office
 
@@ -34,7 +34,7 @@ ms.locfileid: "37902100"
 
 [context](office.context.md)：提供 Office 加载项 API 的上下文命名空间中的共享接口以便在 Outlook 加载项 API 中使用。
 
-[MailboxEnums](/javascript/api/outlook/office.mailboxenums.attachmentcontentformat)：包含多个`ItemType`枚举，例如`EntityType` `AttachmentType` `RecipientType` `ResponseType`、、、、和`ItemNotificationMessageType`。
+[MailboxEnums](/javascript/api/outlook/office.mailboxenums.attachmentcontentformat?view=outlook-js-1.8)：包含多个`ItemType`枚举，例如`EntityType` `AttachmentType` `RecipientType` `ResponseType`、、、、和`ItemNotificationMessageType`。
 
 ### <a name="members"></a>Members
 
@@ -108,7 +108,6 @@ ms.locfileid: "37902100"
 |`AttachmentsChanged`| 字符串 | 已将附件添加到项目或已从项目删除附件。 | 1.8 |
 |`EnhancedLocationsChanged`| 字符串 | 所选约会的位置已更改。 | 1.8 |
 |`ItemChanged`| 字符串 | 在任务窗格固定时，将选择不同的 Outlook 项进行查看。 | 1.5 |
-|`OfficeThemeChanged`| 字符串 | 邮箱上的 Office 主题已更改。 | 预览 |
 |`RecipientsChanged`| 字符串 | 选定项目或约会位置的收件人列表已更改。 | 1.7 |
 |`RecurrenceChanged`| 字符串 | 选定系列的定期模式已更改。 | 1.7 |
 
