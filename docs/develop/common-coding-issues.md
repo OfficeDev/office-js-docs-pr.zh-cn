@@ -1,18 +1,51 @@
 ---
 title: 常见的编码问题和意外的平台行为
 description: 开发人员经常遇到的 Office JavaScript API 平台问题的列表。
-ms.date: 10/29/2019
+ms.date: 10/31/2019
 localization_priority: Normal
-ms.openlocfilehash: 8cea95e3214585ba8e0b77535916f9c564dde9df
-ms.sourcegitcommit: e989096f3d19761bf8477c585cde20b3f8e0b90d
+ms.openlocfilehash: d39c379961833cdb924628becf2c2da3f7e271b9
+ms.sourcegitcommit: 59d29d01bce7543ebebf86e5a86db00cf54ca14a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/31/2019
-ms.locfileid: "37902136"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "37924792"
 ---
 # <a name="common-coding-issues-and-unexpected-platform-behaviors"></a>常见的编码问题和意外的平台行为
 
 本文重点介绍了 Office JavaScript API 的各个方面，这些方面可能导致意外行为或需要特定编码模式来实现所需的结果。 如果遇到此列表中的问题，请使用文章底部的反馈表单告知我们。
+
+## <a name="common-apis-and-outlook-apis-are-not-promise-based"></a>通用 Api 和 Outlook Api 不基于承诺
+
+[通用 api](/javascript/api/office) （那些未绑定到特定 Office 主机的 api）和[Outlook api](/javascript/api/outlook)使用基于回调的编程模型。 与基础 Office 文档进行交互需要进行异步读取或写入调用，以指定在操作完成时要运行的回调。 有关此模式的示例，请参阅[document.getfileasync](/javascript/api/office/office.document#getfileasync-filetype--options--callback-)。
+
+这些常见 API 和 Outlook API 方法不会返回[承诺](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise)。 因此，在异步操作完成之前，不能使用[await](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Operators/await)暂停执行。 如果需要`await`行为，可以在显式创建的承诺中包装方法调用。
+
+```js
+readDocumentFileAsync(): Promise<any> {
+    return new Promise((resolve, reject) => {
+        const chunkSize = 65536;
+        const self = this;
+
+        Office.context.document.getFileAsync(Office.FileType.Compressed, { sliceSize: chunkSize }, (asyncResult) => {
+            if (asyncResult.status === Office.AsyncResultStatus.Failed) {
+                reject(asyncResult.error);
+            } else {
+                // `getAllSlices` is a Promise-wrapped implementation of File.getSliceAsync.
+                self.getAllSlices(asyncResult.value).then(result => {
+                    if (result.IsSuccess) {
+                        resolve(result.Data);
+                    } else {
+                        reject(asyncResult.error);
+                    }
+                });
+            }
+        });
+    });
+}
+```
+
+> [!NOTE]
+> 参考文档包含[getSliceAsync](/javascript/api/office/office.file#getsliceasync-sliceindex--callback-)的承诺包装实现。
 
 ## <a name="some-properties-must-be-set-with-json-structs"></a>某些属性必须使用 JSON 结构进行设置
 
@@ -39,6 +72,17 @@ range.format.font.size = 10;
 
 - 只读属性：可通过导航设置子属性。
 - 可写属性：必须使用 JSON 结构设置子属性（且不能通过导航进行设置）。
+
+## <a name="excel-range-limits"></a>Excel 区域限制
+
+如果您正在构建使用区域的 Excel 加载项，请注意以下大小限制：
+
+- Excel 网页版将请求和响应的有效负载大小限制为 5MB。 如果超过该限制，将引发 `RichAPI.Error`。
+- 对于 set 操作，范围限制为5000000个单元格。
+
+如果您希望用户输入超出这些限制，请务必检查数据并将区域拆分为多个对象。 您还需要提交多个`context.sync()`呼叫，以避免将较小的范围操作再次成批组合在一起。
+
+您的外接程序可能能够使用[RangeAreas](/javascript/api/excel/excel.rangeareas)对较大范围内的单元格进行战略更新。 有关详细信息，请参阅[在 Excel 外接程序中同时处理多个区域](../excel/excel-add-ins-multiple-ranges.md)。
 
 ## <a name="setting-read-only-properties"></a>设置只读属性
 

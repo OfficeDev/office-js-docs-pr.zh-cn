@@ -1,14 +1,14 @@
 ---
 title: 验证并排查清单问题
 description: 使用这些方法验证 Office 加载项清单。
-ms.date: 09/18/2019
+ms.date: 10/29/2019
 localization_priority: Priority
-ms.openlocfilehash: c320c05b944bba9e24a4d3c0e5ef514ac13cc3c6
-ms.sourcegitcommit: a0257feabcfe665061c14b8bdb70cf82f7aca414
+ms.openlocfilehash: c1af6308a975bf9204a519e21f828454d286aa19
+ms.sourcegitcommit: 59d29d01bce7543ebebf86e5a86db00cf54ca14a
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/18/2019
-ms.locfileid: "37035334"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "37924806"
 ---
 # <a name="validate-and-troubleshoot-issues-with-your-manifest"></a>验证并排查清单问题
 
@@ -68,6 +68,38 @@ npm run validate
 > [!IMPORTANT]
 > 运行时日志记录影响性能。 请仅在需要调试外接程序清单中的问题时启用此功能。
 
+### <a name="use-runtime-logging-from-the-command-line"></a>使用命令行中的运行时日志
+
+从命令行启用运行时日志记录是最快的使用此日志记录工具的方式。 这些使用 npx，默认情况下，它作为 npm@5.2.0+ 的一部分提供。 如果使用的是 [npm](https://www.npmjs.com/) 的早期版本，请尝试 [Windows 上的运行时日志记录](#runtime-logging-on-windows)或 [Mac](#runtime-logging-on-mac)说明，或者[安装 npx](https://www.npmjs.com/package/npx)。
+
+- 要启用运行时日志记录，请执行以下操作：
+    ```command&nbsp;line
+    npx office-addin-dev-settings runtime-log --enable
+    ```
+- 若要仅对特定文件启用运行时日志记录，请使用包含文件名的相同命令：
+
+    ```command&nbsp;line
+    npx office-addin-dev-settings runtime-log --enable [filename.txt]
+    ```
+
+- 要禁用运行时日志记录，请执行以下操作：
+
+    ```command&nbsp;line
+    npx office-addin-dev-settings runtime-log --disable
+    ```
+
+- 要显示是否启用了运行时日志记录，请执行以下操作：
+
+    ```command&nbsp;line
+    npx office-addin-dev-settings runtime-log
+    ```
+
+- 要在命令行内显示有关运行时日志记录的帮助，请执行以下操作：
+
+    ```command&nbsp;line
+    npx office-addin-dev-settings runtime-log --help
+    ```
+
 ### <a name="runtime-logging-on-windows"></a>Windows 上的运行时日志记录
 
 1. 确保运行的是 Office 2016 桌面版 **16.0.7019** 或更高版本。 
@@ -79,7 +111,7 @@ npm run validate
     > 1. 右键单击 **WEF** 密钥（文件夹），然后选择**新建** > **密钥**。
     > 2. 将新密钥命名为 **Developer**。
 
-3. 将此项的默认值设置为你想要在其中写入日志的文件的完整路径。有关示例，请参阅 [EnableRuntimeLogging.zip](https://github.com/OfficeDev/Office-Add-in-Commands-Samples/raw/master/Tools/RuntimeLogging/EnableRuntimeLogging.zip)。 
+3. 将 **RuntimeLogging** 项的默认值设置为你想要在其中写入日志的文件的完整路径。 有关示例，请参阅 [EnableRuntimeLogging.zip](https://github.com/OfficeDev/Office-Add-in-Commands-Samples/raw/master/Tools/RuntimeLogging/EnableRuntimeLogging.zip)。 
 
     > [!NOTE]
     > 向其中写入日志文件的目录必须已经存在，并且必须拥有对它的写入权限。 

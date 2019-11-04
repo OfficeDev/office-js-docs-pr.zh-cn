@@ -3,12 +3,12 @@ title: Excel JavaScript API 基本编程概念
 description: 使用 Excel JavaScript API 生成 Excel 加载项。
 ms.date: 06/20/2019
 localization_priority: Priority
-ms.openlocfilehash: cd811a61ccd74496ab31c8b9a59ecd1c6e42aa42
-ms.sourcegitcommit: 5e90a90175909e0f4f392f5c98bd1273f444fe49
+ms.openlocfilehash: bd346764c3faba0cf3be7612c8b29dd5e0d4c28b
+ms.sourcegitcommit: 59d29d01bce7543ebebf86e5a86db00cf54ca14a
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "35851579"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "37924799"
 ---
 # <a name="fundamental-programming-concepts-with-the-excel-javascript-api"></a>Excel JavaScript API 基本编程概念
 
@@ -210,8 +210,7 @@ range.values = 'Due Date';
 
 如果区域中包含大量单元格、值、数字格式和/或公式，它可能无法在该区域运行 API 操作。 API 将始终尽量尝试在区域内运行所请求的操作（即检索或写入指定的数据），但尝试对较大区域执行读取或写入操作可能会因资源利用率过高而导致 API 错误。 为避免此类错误，建议为较大区域的较小子集运行单独的读取或写入操作，而不是尝试在较大区域内运行单个读取或写入操作。
 
-> [!IMPORTANT]
-> Excel 网页版将请求和响应的有效负载大小限制为 **5MB**。 如果超过该限制，将引发 `RichAPI.Error`。
+有关系统限制的详细信息，请参阅 [Excel 区域限制](../develop/common-coding-issues.md#excel-range-limits)。
 
 ## <a name="update-all-cells-in-a-range"></a>更新区域中的所有单元格
 
@@ -253,3 +252,4 @@ Excel.run(function (context) {
 - [Excel JavaScript API 高级编程概念](excel-add-ins-advanced-concepts.md)
 - [Excel JavaScript API 性能优化](/office/dev/add-ins/excel/performance)
 - [Excel JavaScript API 参考](/office/dev/add-ins/reference/overview/excel-add-ins-reference-overview)
+- [常见的编码问题和意外的平台行为](../develop/common-coding-issues.md)。
