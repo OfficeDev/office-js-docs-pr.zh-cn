@@ -1,32 +1,84 @@
 ---
-ms.date: 06/18/2019
-description: 处理 Excel 自定义函数中的错误。
-title: 在 Excel 中处理自定义函数时出错
+ms.date: 11/04/2019
+description: '处理和返回自定义函数中类似 #NULL! 的错误'
+title: 处理和返回自定义函数中的错误（预览）
 localization_priority: Priority
-ms.openlocfilehash: 30c83ea930b16e717b48b9c02ffa0e278eb78b36
-ms.sourcegitcommit: bb44c9694f88cde32ffbb642689130db44456964
+ms.openlocfilehash: b04da2f3023e65a4a8b1d8f9a7b8f753322e8b46
+ms.sourcegitcommit: 42bcf9059327a8d71a7ab223805aea68be9ed6b5
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/17/2019
-ms.locfileid: "35771573"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "37962015"
 ---
-# <a name="error-handling-within-custom-functions"></a>自定义函数中的错误处理
+# <a name="handle-and-return-errors-from-your-custom-function-preview"></a>处理和返回自定义函数中的错误（预览）
 
-在生成定义自定义函数的加载项时，请务必加入错误处理逻辑，以便解决运行时错误。 自定义函数的错误处理与 [Excel JavaScript API 的错误处理](excel-add-ins-error-handling.md)大致相同。
+> [!NOTE]
+> 本文中所述的功能目前处于预览阶段，可能会发生更改。 暂不支持在生产环境中使用。 若要试用预览功能，需[加入 Office 预览体验计划](https://insider.office.com/zh-CN/join)。  试用预览版功能的好方法是使用 Office 365 订阅。 如果还没有 Office 365 订阅，可以通过加入 [Office 365 开发人员计划](https://developer.microsoft.com/office/dev-program)获取一个订阅。
 
-[!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
+如果自定义函数运行时出现错误，你需要返回一个错误以告知用户此情况。 如果你有特定参数要求（例如仅限正数），则需要测试参数，如果不正确，需要引发错误。 还可以使用 `try`-`catch` 块来捕获自定义函数运行时发生的任何错误。
 
-在以下代码示例中，`.catch` 将处理之前发生在代码中的任何错误。
+## <a name="detect-and-throw-an-error"></a>检测和引发错误
 
-```js
+假设你需要确保邮政编码参数的格式正确，使自定义函数能够正常工作。 下面的自定义函数使用正则表达式来检查邮政编码。 如果正确，则查找城市（在另一个函数中），并返回值。 如果不正确，则会将 `#VALUE!` 错误返回到单元格。
+
+```typescript
+/**
+* Gets a city name for the given U.S. zip code.
+* @customfunction
+* @param {string} zipCode
+* @returns The city of the zip code.
+*/
+function getCity(zipCode: string): string {
+  let isValidZip = /(^\d{5}$)|(^\d{5}-\d{4}$)/.test(zipCode);
+  if (isValidZip) return cityLookup(zipCode);
+  let error = new CustomFunctions.Error(CustomFunctions.ErrorCode.invalidValue, "Please provide a valid U.S. zip code.");
+  throw error;
+}
+```
+
+## <a name="the-customfunctionserror-object"></a>CustomFunctions.Error 对象
+
+`CustomFunctions.Error` 对象用于将错误返回单元格。 创建对象时，请使用以下 `ErrorCode` 枚举值之一指定要使用的错误。
+
+
+|ErrorCode 枚举值  |Excel 单元格值  |含义  |
+|---------------|---------|---------|
+|`invalidValue`   | `#VALUE!` | 公式中使用的一个值为错误类型。 |
+|`notAvailable`   | `#N/A`    | 函数或服务不可用。 |
+|`divisionByZero` | `#DIV/0`  | 请注意，JavaScript 允许除以零，因此你需要仔细编写一个错误处理程序来检测这种情况。 |
+|`invalidNumber`  | `#NUM!`   | 公式中使用的数字有问题 |
+|`nullReference`  | `#NULL!`  | 公式中的范围不相交。 |
+
+下面的代码示例演示了如何创建并返回无效数字 (`#NUM!`) 错误。
+
+```typescript
+let error = new CustomFunctions.Error(CustomFunctions.ErrorCode.invalidNumber);
+throw error;
+```
+
+返回 `#VALUE!` 错误时，还可以添加当用户将鼠标悬停在单元格上方时将会弹出的自定义消息。 下面的示例演示了如何返回自定义错误消息。
+
+```typescript
+// You can only return a custom error message with the #VALUE! error
+let error = new CustomFunctions.Error(CustomFunctions.ErrorCode.invalidValue, “The parameter can only contain lowercase characters.”);
+throw error;
+```
+
+## <a name="use-try-catch-blocks"></a>使用 try-catch 块
+
+通常情况下，应在自定义函数中使用 `try`-`catch` 块来捕获发生的任何潜在错误。 如果不在代码中处理异常，它们将返回到 Excel。 默认情况下，对于未处理的异常，Excel 返回 `#VALUE!`。
+
+在下面的代码示例中，自定义函数对 REST 服务执行 fetch 调用。 此调用有可能会失败，例如，如果 REST 服务返回错误或网络中断，就可能会失败。 如果发生这种情况，自定义函数将返回 `#N/A` 以指示 Web 调用失败。
+
+
+```typescript
 /**
  * Gets a comment from the hypothetical contoso.com/comments API.
  * @customfunction
  * @param {number} commentID ID of a comment.
  */
 function getComment(commentID) {
-  let url = "https://www.contoso.com/comments/" + x;
-
+  let url = "https://www.contoso.com/comments/" + commentID;
   return fetch(url)
     .then(function (data) {
       return data.json();
@@ -35,12 +87,13 @@ function getComment(commentID) {
       return json.body;
     })
     .catch(function (error) {
-      throw error;
+      throw new CustomFunctions.Error(CustomFunctions.ErrorCode.notAvailable);
     })
 }
 ```
 
 ## <a name="next-steps"></a>后续步骤
+
 了解如何[解决自定义函数中的问题](custom-functions-troubleshooting.md)。
 
 ## <a name="see-also"></a>另请参阅
