@@ -1,14 +1,14 @@
 ---
 title: "\"Context\"-\"邮箱\"。项目-要求集1。8"
 description: ''
-ms.date: 10/31/2019
+ms.date: 11/05/2019
 localization_priority: Normal
-ms.openlocfilehash: c678e6b35bfce868148f53ef6bf11b27b320eff4
-ms.sourcegitcommit: e989096f3d19761bf8477c585cde20b3f8e0b90d
+ms.openlocfilehash: 065ea3c74580555c0df1af7b495127a25493b612
+ms.sourcegitcommit: 21aa084875c9e07a300b3bbe8852b3e5dd163e1d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/31/2019
-ms.locfileid: "37902150"
+ms.lasthandoff: 11/06/2019
+ms.locfileid: "38001570"
 ---
 # <a name="item"></a>item
 
@@ -31,7 +31,7 @@ ms.locfileid: "37902150"
 | [attachments](#attachments-arrayattachmentdetails) | 成员 |
 | [bcc](#bcc-recipients) | 成员 |
 | [body](#body-body) | 成员 |
-| [种类](#categories-categories) | 成员 |
+| [categories](#categories-categories) | 成员 |
 | [cc](#cc-arrayemailaddressdetailsrecipients) | 成员 |
 | [conversationId](#nullable-conversationid-string) | 成员 |
 | [dateTimeCreated](#datetimecreated-date) | 成员 |
@@ -657,10 +657,10 @@ console.log("Item class: " + itemClass);
 
 #### <a name="nullable-itemid-string"></a>(nullable) itemId: String
 
-获取当前项目的 Exchange Web 服务项目标识符。仅限阅读模式。
+获取当前项的[Exchange Web 服务项标识符](/exchange/client-developer/exchange-web-services/ews-identifiers-in-exchange)。 仅限阅读模式。
 
 > [!NOTE]
-> `itemId` 属性返回的标识符与 Exchange Web 服务项目标识符相同。 `itemId` 属性与 Outlook 条目 ID 或 Outlook REST API 使用的 ID 不同。 使用此值进行 REST API 调用前，应使用 [Office.context.mailbox.convertToRestId](office.context.mailbox.md#converttorestiditemid-restversion--string) 对它进行转换。 有关详细信息，请参阅[从 Outlook 加载项使用 Outlook REST API](/outlook/add-ins/use-rest-api#get-the-item-id)。
+> `itemId`属性返回的标识符与[Exchange Web 服务项目标识符](/exchange/client-developer/exchange-web-services/ews-identifiers-in-exchange)相同。 `itemId` 属性与 Outlook 条目 ID 或 Outlook REST API 使用的 ID 不同。 使用此值进行 REST API 调用前，应使用 [Office.context.mailbox.convertToRestId](office.context.mailbox.md#converttorestiditemid-restversion--string) 对它进行转换。 有关详细信息，请参阅[从 Outlook 加载项使用 Outlook REST API](/outlook/add-ins/use-rest-api#get-the-item-id)。
 
 `itemId` 属性在撰写模式下不可用。如果需要项目标识符，[`saveAsync`](#saveasyncoptions-callback) 方法可用于将项目保存到存储，这将在回调函数的 [`AsyncResult.value`](/javascript/api/office/office.asyncresult) 参数中返回项目标识符。
 
@@ -1265,11 +1265,11 @@ function callback(asyncResult) {
 ##### <a name="parameters"></a>参数
 |名称|类型|属性|说明|
 |---|---|---|---|
-|`uri`|字符串||提供附加到邮件或约会的文件的位置的 URI。最大长度为 2048 个字符。|
+|`uri`|String||提供附加到邮件或约会的文件的位置的 URI。最大长度为 2048 个字符。|
 |`attachmentName`|字符串||在附件上载过程中显示的附件名称。最大长度为 255 个字符。|
-|`options`|Object|&lt;optional&gt;|包含一个或多个以下属性的对象文本。|
-|`options.asyncContext`|对象|&lt;optional&gt;|开发人员可以提供他们想要在回调方法中访问的任何对象。|
-|`options.isInline`|布尔值|&lt;可选&gt;|如果为 `true`，则表示附件将在邮件正文中内联显示，并且不应显示在附件列表中。|
+|`options`|Object|&lt;可选&gt;|包含一个或多个以下属性的对象文本。|
+|`options.asyncContext`|对象|&lt;可选&gt;|开发人员可以提供他们想要在回调方法中访问的任何对象。|
+|`options.isInline`|布尔值|&lt;optional&gt;|如果为 `true`，则表示附件将在邮件正文中内联显示，并且不应显示在附件列表中。|
 |`callback`|函数|&lt;可选&gt;|方法完成后，使用单个参数 `asyncResult`（一个 [`AsyncResult`](/javascript/api/office/office.asyncresult) 对象）调用在 `callback` 参数中传递的函数。 <br/>如果成功，附件标识符将在 `asyncResult.value` 属性中提供。<br/>如果上传附件失败，`asyncResult` 对象将包含一个提供错误说明的 `Error` 对象。|
 
 ##### <a name="errors"></a>错误
@@ -1346,7 +1346,7 @@ Office.context.mailbox.item.addFileAttachmentAsync(
 
 |名称|类型|属性|说明|
 |---|---|---|---|
-|`base64File`|字符串||要添加到电子邮件或事件的图像或文件的 base64 编码内容。|
+|`base64File`|String||要添加到电子邮件或事件的图像或文件的 base64 编码内容。|
 |`attachmentName`|字符串||在附件上载过程中显示的附件名称。最大长度为 255 个字符。|
 |`options`|对象|&lt;optional&gt;|包含一个或多个以下属性的对象文本。|
 |`options.asyncContext`|对象|&lt;optional&gt;|开发人员可以提供他们想要在回调方法中访问的任何对象。|
@@ -1452,7 +1452,7 @@ Office.context.mailbox.item.addHandlerAsync(Office.EventType.AttachmentsChanged,
 
 |名称|类型|属性|说明|
 |---|---|---|---|
-|`itemId`|字符串||要附加的项目的 Exchange 标识符。最大长度为 100 个字符。|
+|`itemId`|String||要附加的项目的 Exchange 标识符。最大长度为 100 个字符。|
 |`attachmentName`|String||要附加的项目的主题。 最大长度为 255 个字符。|
 |`options`|对象|&lt;optional&gt;|包含一个或多个以下属性的对象文本。|
 |`options.asyncContext`|对象|&lt;optional&gt;|开发人员可以提供他们想要在回调方法中访问的任何对象。|
@@ -1544,9 +1544,9 @@ function addAttachment() {
 |名称|类型|属性|说明|
 |---|---|---|---|
 |`formData`|字符串 &#124; 对象||一个包含文本和 HTML 且表示答复窗体的正文的字符串。字符串限制为 32 KB。<br/>**或**<br/>包含正文或附件数据和回调函数的对象。对象定义如下。|
-|`formData.htmlBody`|字符串|&lt;可选&gt;|一个包含文本和 HTML 且表示答复窗体的正文的字符串。字符串限制为 32 KB。
+|`formData.htmlBody`|String|&lt;可选&gt;|一个包含文本和 HTML 且表示答复窗体的正文的字符串。字符串限制为 32 KB。
 |`formData.attachments`|Array.&lt;Object&gt;|&lt;可选&gt;|JSON 对象（是文件或项目附件）的数组。|
-|`formData.attachments.type`|字符串||指示附件的类型。必须是文件附件的 `file` 或项目附件的 `item`。|
+|`formData.attachments.type`|String||指示附件的类型。必须是文件附件的 `file` 或项目附件的 `item`。|
 |`formData.attachments.name`|字符串||一个包含附件的名称的字符串，最多包含 255 个字符。|
 |`formData.attachments.url`|字符串||仅在将 `type` 设置为 `file` 时使用。文件的位置的 URI。|
 |`formData.attachments.isInline`|布尔||仅在将 `type` 设置为 `file` 时使用。如果为 `true`，则表示附件将在邮件正文中内联显示，并且不应显示在附件列表中。|
@@ -1668,9 +1668,9 @@ Office.context.mailbox.item.displayReplyAllForm(
 |名称|类型|属性|说明|
 |---|---|---|---|
 |`formData`|字符串 &#124; 对象||一个包含文本和 HTML 且表示答复窗体的正文的字符串。字符串限制为 32 KB。<br/>**或**<br/>包含正文或附件数据和回调函数的对象。对象定义如下。|
-|`formData.htmlBody`|字符串|&lt;可选&gt;|一个包含文本和 HTML 且表示答复窗体的正文的字符串。字符串限制为 32 KB。
+|`formData.htmlBody`|String|&lt;可选&gt;|一个包含文本和 HTML 且表示答复窗体的正文的字符串。字符串限制为 32 KB。
 |`formData.attachments`|Array.&lt;Object&gt;|&lt;可选&gt;|JSON 对象（是文件或项目附件）的数组。|
-|`formData.attachments.type`|字符串||指示附件的类型。必须是文件附件的 `file` 或项目附件的 `item`。|
+|`formData.attachments.type`|String||指示附件的类型。必须是文件附件的 `file` 或项目附件的 `item`。|
 |`formData.attachments.name`|字符串||一个包含附件的名称的字符串，最多包含 255 个字符。|
 |`formData.attachments.url`|字符串||仅在将 `type` 设置为 `file` 时使用。文件的位置的 URI。|
 |`formData.attachments.isInline`|布尔||仅在将 `type` 设置为 `file` 时使用。如果为 `true`，则表示附件将在邮件正文中内联显示，并且不应显示在附件列表中。|
@@ -1835,7 +1835,7 @@ Office.context.mailbox.item.getAllInternetHeadersAsync(
 
 |名称|类型|属性|说明|
 |---|---|---|---|
-|`attachmentId`|字符串||要获取的附件的标识符。|
+|`attachmentId`|String||要获取的附件的标识符。|
 |`options`|对象|&lt;optional&gt;|包含一个或多个以下属性的对象文本。|
 |`options.asyncContext`|对象|&lt;optional&gt;|开发人员可以提供他们想要在回调方法中访问的任何对象。|
 |`callback`|函数|&lt;可选&gt;|方法完成后，使用单个参数 `asyncResult`（一个 [AsyncResult](/javascript/api/office/office.asyncresult) 对象）调用在 `callback` 参数中传递的函数。|
@@ -2057,7 +2057,7 @@ Office.initialize = function () {
 |---|---|---|
 |`name`|字符串|定义筛选器匹配的 `ItemHasKnownEntity` 规则元素的名称。|
 
-##### <a name="requirements"></a>Requirements
+##### <a name="requirements"></a>要求
 
 |要求|值|
 |---|---|
@@ -2210,7 +2210,7 @@ var veggies = allMatches.veggies;
 
 如果在项目的正文属性上指定 `ItemHasRegularExpressionMatch` 规则，则正则表达式应进一步筛选正文，不应尝试返回该项目的整个正文。使用正则表达式（如 `.*`）获取项目的整个正文并不总是返回预期的结果。
 
-##### <a name="parameters"></a>Parameters
+##### <a name="parameters"></a>参数
 
 |名称|类型|说明|
 |---|---|---|
@@ -2248,13 +2248,18 @@ var veggies = Office.context.mailbox.item.getRegExMatchesByName("veggies");
 
 如果没有选定内容，但光标位于正文或主题中，此方法将会为所选数据返回 null。如果选定的是字段，而不是正文或主题，则此方法返回 `InvalidSelection` 错误。
 
-##### <a name="parameters"></a>参数
+> [!NOTE]
+> 在 web 上的 Outlook 中，如果未选择任何文本，但光标在正文中，则该方法将返回字符串 "null"。 若要检查此情况，请包含与以下内容类似的代码：
+>
+> `var selectedText = (asyncResult.value.endPosition === asyncResult.value.startPosition) ? "" : asyncResult.value.data;`
+
+##### <a name="parameters"></a>Parameters
 
 |名称|类型|属性|说明|
 |---|---|---|---|
 |`coercionType`|[Office.CoercionType](office.md#coerciontype-string)||请求数据的格式。如果为文本，则此方法返回纯文本作为字符串，删除任何显示的 HTML 标记。如果为 HTML，则此方法返回所选文本，不论是纯文本还是 HTML。|
 |`options`|Object|&lt;可选&gt;|包含一个或多个以下属性的对象文本。|
-|`options.asyncContext`|Object|&lt;可选&gt;|开发人员可以提供他们想要在回调方法中访问的任何对象。|
+|`options.asyncContext`|对象|&lt;可选&gt;|开发人员可以提供他们想要在回调方法中访问的任何对象。|
 |`callback`|function||方法完成后，使用单个参数 `callback`（一个 [`asyncResult`](/javascript/api/office/office.asyncresult) 对象）调用在 `AsyncResult` 参数中传递的函数。<br/><br/>若要从回调方法访问所选数据，请调用 `asyncResult.value.data`。 若要访问选定内容的源属性，请调用 `asyncResult.value.sourceProperty`，这将为 `body` 或 `subject`。|
 
 ##### <a name="requirements"></a>Requirements

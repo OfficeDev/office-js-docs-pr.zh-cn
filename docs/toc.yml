@@ -547,6 +547,9 @@
         - name: 自定义函数教程
           href: tutorials/excel-tutorial-create-custom-functions.md
           displayName: 'Excel, Custom Functions'
+        - name: 关于自定义函数与任务窗格共享数据的教程
+          href: tutorials/share-data-and-events-between-custom-functions-and-the-task-pane-tutorial.md
+          displayName: 'Excel, Custom Functions'
         - name: 体系结构
           href: excel/custom-functions-architecture.md
           displayName: 'Excel, Custom Functions'

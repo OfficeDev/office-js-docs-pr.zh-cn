@@ -1,14 +1,14 @@
 ---
 title: "\"Context\"-\"邮箱\"。项目-要求集1。6"
 description: ''
-ms.date: 10/23/2019
+ms.date: 11/05/2019
 localization_priority: Normal
-ms.openlocfilehash: 570cadd13a71519dd2bf13a0f9317a2fba837a91
-ms.sourcegitcommit: 5ba325cc88183a3f230cd89d615fd49c695addcf
+ms.openlocfilehash: f5789037ab5486fecf6e821dc39dc4b627e7f825
+ms.sourcegitcommit: 21aa084875c9e07a300b3bbe8852b3e5dd163e1d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "37681919"
+ms.lasthandoff: 11/06/2019
+ms.locfileid: "38001584"
 ---
 # <a name="item"></a>item
 
@@ -141,10 +141,10 @@ console.log(outputString);
 
 获取对象，该对象提供用于获取或更新邮件的密件抄送 (Bcc) 行上的收件人的方法。 仅限撰写模式。
 
-默认情况下，集合限制为最多为100个成员。 但是，在 Windows 和 Mac 上，以下限制适用。
+默认情况下，集合上限为 100 个成员。 但是，在 Windows 和 Mac 上，以下限制适用。
 
-- 最多获取500个成员。
-- 每个呼叫最多可设置100个成员，最多为500个成员总数。
+- 最多包含 500 个成员。
+- 为每个呼叫最多设置 100 个成员，总共多达 500 个成员。
 
 ##### <a name="type"></a>类型
 
@@ -226,7 +226,7 @@ Office.context.mailbox.item.body.getAsync(
 
 ##### <a name="read-mode"></a>阅读模式
 
-`cc` 属性返回包含邮件的`EmailAddressDetails`行上所列的每个收件人的 **** 对象的数组。 默认情况下，集合限制为最多为100个成员。 但是，在 Windows 和 Mac 上，您可以获得500个成员的最大值。
+`cc` 属性返回包含邮件的**抄送**行上所列的每个收件人的 `EmailAddressDetails` 对象的数组。 默认情况下，集合上限为 100 个成员。 但是，在 Windows 和 Mac 上，最多可包含 500 个成员。
 
 ```js
 console.log(JSON.stringify(Office.context.mailbox.item.cc));
@@ -234,10 +234,10 @@ console.log(JSON.stringify(Office.context.mailbox.item.cc));
 
 ##### <a name="compose-mode"></a>撰写模式
 
-`cc` 属性返回一个 `Recipients` 对象，该对象提供用于获取或更新邮件的“**抄送**”行上收件人的方法。 默认情况下，集合限制为最多为100个成员。 但是，在 Windows 和 Mac 上，以下限制适用。
+`cc` 属性返回一个 `Recipients` 对象，该对象提供用于获取或更新邮件的“**抄送**”行上收件人的方法。 默认情况下，集合上限为 100 个成员。 但是，在 Windows 和 Mac 上，以下限制适用。
 
-- 最多获取500个成员。
-- 每个呼叫最多可设置100个成员，最多为500个成员总数。
+- 最多包含 500 个成员。
+- 为每个呼叫最多设置 100 个成员，总共多达 500 个成员。
 
 ```js
 Office.context.mailbox.item.cc.setAsync( ['alice@contoso.com', 'bob@contoso.com'] );
@@ -512,10 +512,10 @@ console.log("Item class: " + itemClass);
 
 #### <a name="nullable-itemid-string"></a>(nullable) itemId: String
 
-获取当前项目的 Exchange Web 服务项目标识符。仅限阅读模式。
+获取当前项的[Exchange Web 服务项标识符](/exchange/client-developer/exchange-web-services/ews-identifiers-in-exchange)。 仅限阅读模式。
 
 > [!NOTE]
-> `itemId` 属性返回的标识符与 Exchange Web 服务项目标识符相同。 `itemId` 属性与 Outlook 条目 ID 或 Outlook REST API 使用的 ID 不同。 使用此值进行 REST API 调用前，应使用 [Office.context.mailbox.convertToRestId](office.context.mailbox.md#converttorestiditemid-restversion--string) 对它进行转换。 有关详细信息，请参阅[从 Outlook 加载项使用 Outlook REST API](/outlook/add-ins/use-rest-api#get-the-item-id)。
+> `itemId`属性返回的标识符与[Exchange Web 服务项目标识符](/exchange/client-developer/exchange-web-services/ews-identifiers-in-exchange)相同。 `itemId` 属性与 Outlook 条目 ID 或 Outlook REST API 使用的 ID 不同。 使用此值进行 REST API 调用前，应使用 [Office.context.mailbox.convertToRestId](office.context.mailbox.md#converttorestiditemid-restversion--string) 对它进行转换。 有关详细信息，请参阅[从 Outlook 加载项使用 Outlook REST API](/outlook/add-ins/use-rest-api#get-the-item-id)。
 
 `itemId` 属性在撰写模式下不可用。如果需要项目标识符，[`saveAsync`](#saveasyncoptions-callback) 方法可用于将项目保存到存储，这将在回调函数的 [`AsyncResult.value`](/javascript/api/office/office.asyncresult) 参数中返回项目标识符。
 
@@ -694,7 +694,7 @@ Office.context.mailbox.item.notificationMessages.getAllAsync(
 
 ##### <a name="read-mode"></a>阅读模式
 
-`optionalAttendees` 属性返回一个数组，其中包含每个可选与会者的 `EmailAddressDetails` 对象。 默认情况下，集合限制为最多为100个成员。 但是，在 Windows 和 Mac 上，您可以获得500个成员的最大值。
+`optionalAttendees` 属性返回一个数组，其中包含每个可选与会者的 `EmailAddressDetails` 对象。 默认情况下，集合上限为 100 个成员。 但是，在 Windows 和 Mac 上，最多可包含 500 个成员。
 
 ```js
 var optionalAttendees = Office.context.mailbox.item.optionalAttendees;
@@ -703,10 +703,10 @@ console.log("Optional attendees: " + JSON.stringify(optionalAttendees));
 
 ##### <a name="compose-mode"></a>撰写模式
 
-`optionalAttendees` 属性返回一个 `Recipients` 对象，该对象提供用于获取或更新可选与会者的方法。 默认情况下，集合限制为最多为100个成员。 但是，在 Windows 和 Mac 上，以下限制适用。
+`optionalAttendees` 属性返回一个 `Recipients` 对象，该对象提供用于获取或更新可选与会者的方法。 默认情况下，集合上限为 100 个成员。 但是，在 Windows 和 Mac 上，以下限制适用。
 
-- 最多获取500个成员。
-- 每个呼叫最多可设置100个成员，最多为500个成员总数。
+- 最多包含 500 个成员。
+- 为每个呼叫最多设置 100 个成员，总共多达 500 个成员。
 
 ```js
 Office.context.mailbox.item.optionalAttendees.setAsync( ['alice@contoso.com', 'bob@contoso.com'] );
@@ -770,7 +770,7 @@ console.log("Organizer: " + organizerName + " (" + organizerAddress + ")");
 
 ##### <a name="read-mode"></a>阅读模式
 
-`requiredAttendees` 属性返回一个数组，其中包含每个必需与会者的 `EmailAddressDetails` 对象。 默认情况下，集合限制为最多为100个成员。 但是，在 Windows 和 Mac 上，您可以获得500个成员的最大值。
+`requiredAttendees` 属性返回一个数组，其中包含每个必需与会者的 `EmailAddressDetails` 对象。 默认情况下，集合上限为 100 个成员。 但是，在 Windows 和 Mac 上，最多可包含 500 个成员。
 
 ```js
 var requiredAttendees = Office.context.mailbox.item.requiredAttendees;
@@ -779,10 +779,10 @@ console.log("Required attendees: " + JSON.stringify(requiredAttendees));
 
 ##### <a name="compose-mode"></a>撰写模式
 
-`requiredAttendees` 属性返回一个 `Recipients` 对象，该对象提供用于获取或更新必需与会者的方法。 默认情况下，集合限制为最多为100个成员。 但是，在 Windows 和 Mac 上，以下限制适用。
+`requiredAttendees` 属性返回一个 `Recipients` 对象，该对象提供用于获取或更新必需与会者的方法。 默认情况下，集合上限为 100 个成员。 但是，在 Windows 和 Mac 上，以下限制适用。
 
-- 最多获取500个成员。
-- 每个呼叫最多可设置100个成员，最多为500个成员总数。
+- 最多包含 500 个成员。
+- 为每个呼叫最多设置 100 个成员，总共多达 500 个成员。
 
 ```js
 Office.context.mailbox.item.requiredAttendees.setAsync( ['alice@contoso.com', 'bob@contoso.com'] );
@@ -953,7 +953,7 @@ function callback(asyncResult) {
 
 ##### <a name="read-mode"></a>阅读模式
 
-`to` 属性返回包含邮件的`EmailAddressDetails`行上所列的每个收件人的 **** 对象的数组。 默认情况下，集合限制为最多为100个成员。 但是，在 Windows 和 Mac 上，您可以设置为最多获取500个成员。
+`to` 属性返回包含邮件的**收件人**行上所列的每个收件人的 `EmailAddressDetails` 对象的数组。 默认情况下，集合上限为 100 个成员。 但是，在 Windows 和 Mac 上，您可以设置为最多获取500个成员。
 
 ```js
 console.log(JSON.stringify(Office.context.mailbox.item.to));
@@ -961,10 +961,10 @@ console.log(JSON.stringify(Office.context.mailbox.item.to));
 
 ##### <a name="compose-mode"></a>撰写模式
 
-`to` 属性返回一个 `Recipients` 对象，该对象提供用于获取或更新邮件的“**收件人**”行上收件人的方法。 默认情况下，集合限制为最多为100个成员。 但是，在 Windows 和 Mac 上，以下限制适用。
+`to` 属性返回一个 `Recipients` 对象，该对象提供用于获取或更新邮件的“**收件人**”行上收件人的方法。 默认情况下，集合上限为 100 个成员。 但是，在 Windows 和 Mac 上，以下限制适用。
 
-- 最多获取500个成员。
-- 每个呼叫最多可设置100个成员，最多为500个成员总数。
+- 最多包含 500 个成员。
+- 为每个呼叫最多设置 100 个成员，总共多达 500 个成员。
 
 ```js
 Office.context.mailbox.item.to.setAsync( ['alice@contoso.com', 'bob@contoso.com'] );
@@ -1002,11 +1002,11 @@ function callback(asyncResult) {
 
 |名称| 类型| 属性| 说明|
 |---|---|---|---|
-|`uri`| 字符串||提供附加到邮件或约会的文件的位置的 URI。最大长度为 2048 个字符。|
+|`uri`| String||提供附加到邮件或约会的文件的位置的 URI。最大长度为 2048 个字符。|
 |`attachmentName`| 字符串||在附件上载过程中显示的附件名称。最大长度为 255 个字符。|
-|`options`| Object| &lt;可选&gt;|包含一个或多个以下属性的对象文本。|
-| `options.asyncContext` | 对象 | &lt;可选&gt; | 开发人员可以提供他们想要在回调方法中访问的任何对象。 |
-| `options.isInline` | 布尔值 | &lt;可选&gt; | 如果为 `true`，则表示附件将在邮件正文中内联显示，并且不应显示在附件列表中。 |
+|`options`| Object| &lt;optional&gt;|包含一个或多个以下属性的对象文本。|
+| `options.asyncContext` | 对象 | &lt;optional&gt; | 开发人员可以提供他们想要在回调方法中访问的任何对象。 |
+| `options.isInline` | 布尔值 | &lt;optional&gt; | 如果为 `true`，则表示附件将在邮件正文中内联显示，并且不应显示在附件列表中。 |
 |`callback`| 函数| &lt;可选&gt;|方法完成后，使用单个参数 `asyncResult`（一个 [`AsyncResult`](/javascript/api/office/office.asyncresult) 对象）调用在 `callback` 参数中传递的函数。 <br/>如果成功，附件标识符将在 `asyncResult.value` 属性中提供。<br/>如果上传附件失败，`asyncResult` 对象将包含一个提供错误说明的 `Error` 对象。|
 
 ##### <a name="errors"></a>错误
@@ -1085,10 +1085,10 @@ Office.context.mailbox.item.addFileAttachmentAsync(
 
 |名称| 类型| 属性| 说明|
 |---|---|---|---|
-|`itemId`| 字符串||要附加的项目的 Exchange 标识符。最大长度为 100 个字符。|
+|`itemId`| String||要附加的项目的 Exchange 标识符。最大长度为 100 个字符。|
 |`attachmentName`| String||要附加的项目的主题。 最大长度为 255 个字符。|
-|`options`| 对象| &lt;可选&gt;|包含一个或多个以下属性的对象文本。|
-|`options.asyncContext`| 对象| &lt;可选&gt;|开发人员可以提供他们想要在回调方法中访问的任何对象。|
+|`options`| 对象| &lt;optional&gt;|包含一个或多个以下属性的对象文本。|
+|`options.asyncContext`| 对象| &lt;optional&gt;|开发人员可以提供他们想要在回调方法中访问的任何对象。|
 |`callback`| 函数| &lt;可选&gt;|方法完成后，使用单个参数 `asyncResult`（一个 [`AsyncResult`](/javascript/api/office/office.asyncresult) 对象）调用在 `callback` 参数中传递的函数。 <br/>如果成功，附件标识符将在 `asyncResult.value` 属性中提供。<br/>如果添加附件失败，`asyncResult` 对象将包含一个提供错误说明的 `Error` 对象。|
 
 ##### <a name="errors"></a>错误
@@ -1181,7 +1181,7 @@ function addAttachment() {
 | `formData.attachments` | Array.&lt;Object&gt; | &lt;可选&gt; | JSON 对象（是文件或项目附件）的数组。 |
 | `formData.attachments.type` | String | | 指示附件的类型。必须是文件附件的 `file` 或项目附件的 `item`。 |
 | `formData.attachments.name` | 字符串 | | 一个包含附件的名称的字符串，最多包含 255 个字符。|
-| `formData.attachments.url` | 字符串 | | 仅在将 `type` 设置为 `file` 时使用。文件的位置的 URI。 |
+| `formData.attachments.url` | String | | 仅在将 `type` 设置为 `file` 时使用。文件的位置的 URI。 |
 | `formData.attachments.isInline` | 布尔 | | 仅在将 `type` 设置为 `file` 时使用。如果为 `true`，则表示附件将在邮件正文中内联显示，并且不应显示在附件列表中。 |
 | `formData.attachments.itemId` | String | | 仅在将 `type` 设置为 `item` 时使用。附件的 EWS 项目 ID。字符串最长为 100 个字符。 |
 | `callback` | 函数 | &lt;可选&gt; | 方法完成后，使用单个参数 `asyncResult`（一个 [AsyncResult](/javascript/api/office/office.asyncresult) 对象）调用在 `callback` 参数中传递的函数。 |
@@ -1305,7 +1305,7 @@ Office.context.mailbox.item.displayReplyAllForm(
 | `formData.attachments` | Array.&lt;Object&gt; | &lt;可选&gt; | JSON 对象（是文件或项目附件）的数组。 |
 | `formData.attachments.type` | String | | 指示附件的类型。必须是文件附件的 `file` 或项目附件的 `item`。 |
 | `formData.attachments.name` | 字符串 | | 一个包含附件的名称的字符串，最多包含 255 个字符。|
-| `formData.attachments.url` | 字符串 | | 仅在将 `type` 设置为 `file` 时使用。文件的位置的 URI。 |
+| `formData.attachments.url` | String | | 仅在将 `type` 设置为 `file` 时使用。文件的位置的 URI。 |
 | `formData.attachments.isInline` | 布尔 | | 仅在将 `type` 设置为 `file` 时使用。如果为 `true`，则表示附件将在邮件正文中内联显示，并且不应显示在附件列表中。 |
 | `formData.attachments.itemId` | String | | 仅在将 `type` 设置为 `item` 时使用。附件的 EWS 项目 ID。字符串最长为 100 个字符。 |
 | `callback` | 函数 | &lt;可选&gt; | 方法完成后，使用单个参数 `asyncResult`（一个 [AsyncResult](/javascript/api/office/office.asyncresult) 对象）调用在 `callback` 参数中传递的函数。 |
@@ -1468,7 +1468,7 @@ var contacts = Office.context.mailbox.item.getEntities().contacts;
 
 | `entityType` 的值 | 返回的数组中对象的类型 | 所需权限级别 |
 | --- | --- | --- |
-| `Address` | 字符串 | **受限** |
+| `Address` | String | **受限** |
 | `Contact` | Contact | **ReadItem** |
 | `EmailAddress` | String | **ReadItem** |
 | `MeetingSuggestion` | MeetingSuggestion | **ReadItem** |
@@ -1510,7 +1510,7 @@ Office.initialize = function () {
 
 `getFilteredEntitiesByName` 方法返回匹配在具有指定 `FilterName` 元素值的清单 XML 文件中的 [ItemHasKnownEntity](/office/dev/add-ins/reference/manifest/rule#itemhasknownentity-rule) 规则元素中定义的正则表达式的实体。
 
-##### <a name="parameters"></a>参数
+##### <a name="parameters"></a>Parameters
 
 |名称| 类型| 说明|
 |---|---|---|
@@ -1645,14 +1645,19 @@ var veggies = Office.context.mailbox.item.getRegExMatchesByName("veggies");
 
 如果没有选定内容，但光标位于正文或主题中，此方法将会为所选数据返回 null。如果选定的是字段，而不是正文或主题，则此方法返回 `InvalidSelection` 错误。
 
-##### <a name="parameters"></a>参数
+> [!NOTE]
+> 在 web 上的 Outlook 中，如果未选择任何文本，但光标在正文中，则该方法将返回字符串 "null"。 若要检查此情况，请包含与以下内容类似的代码：
+>
+> `var selectedText = (asyncResult.value.endPosition === asyncResult.value.startPosition) ? "" : asyncResult.value.data;`
+
+##### <a name="parameters"></a>Parameters
 
 |名称| 类型| 属性| 说明|
 |---|---|---|---|
 |`coercionType`| [Office.CoercionType](office.md#coerciontype-string)||请求数据的格式。如果为文本，则此方法返回纯文本作为字符串，删除任何显示的 HTML 标记。如果为 HTML，则此方法返回所选文本，不论是纯文本还是 HTML。|
 |`options`| 对象| &lt;可选&gt;|包含一个或多个以下属性的对象文本。|
 |`options.asyncContext`| 对象| &lt;可选&gt;|开发人员可以提供他们想要在回调方法中访问的任何对象。|
-|`callback`| 函数||方法完成后，使用单个参数 `callback`（一个 [`asyncResult`](/javascript/api/office/office.asyncresult) 对象）调用在 `AsyncResult` 参数中传递的函数。<br/><br/>若要从回调方法访问所选数据，请调用 `asyncResult.value.data`。 若要访问选定内容的源属性，请调用 `asyncResult.value.sourceProperty`，这将为 `body` 或 `subject`。|
+|`callback`| function||方法完成后，使用单个参数 `callback`（一个 [`asyncResult`](/javascript/api/office/office.asyncresult) 对象）调用在 `AsyncResult` 参数中传递的函数。<br/><br/>若要从回调方法访问所选数据，请调用 `asyncResult.value.data`。 若要访问选定内容的源属性，请调用 `asyncResult.value.sourceProperty`，这将为 `body` 或 `subject`。|
 
 ##### <a name="requirements"></a>Requirements
 
@@ -1847,9 +1852,9 @@ function saveCallback(asyncResult) {
 
 |名称| 类型| 属性| 说明|
 |---|---|---|---|
-|`attachmentId`| 字符串||要删除的附件的标识符。|
-|`options`| 对象| &lt;可选&gt;|包含一个或多个以下属性的对象文本。|
-|`options.asyncContext`| 对象| &lt;可选&gt;|开发人员可以提供他们想要在回调方法中访问的任何对象。|
+|`attachmentId`| String||要删除的附件的标识符。|
+|`options`| 对象| &lt;optional&gt;|包含一个或多个以下属性的对象文本。|
+|`options.asyncContext`| 对象| &lt;optional&gt;|开发人员可以提供他们想要在回调方法中访问的任何对象。|
 |`callback`| 函数| &lt;可选&gt;|方法完成后，使用单个参数 `callback`（一个 [`asyncResult`](/javascript/api/office/office.asyncresult) 对象）调用在 `AsyncResult` 参数中传递的函数。 <br/>如果删除附件失败，`asyncResult.error` 属性将包含一个说明失败原因的错误代码。|
 
 ##### <a name="errors"></a>错误
@@ -1903,12 +1908,12 @@ Office.context.mailbox.item.removeAttachmentAsync(
 > - Mac 版 Outlook 不支持保存会议。 在撰写模式下，无法从会议调用 `saveAsync` 方法。 若需解决办法，请参阅[无法在 Outlook for Mac 中使用 Office JS API 将会议另存为草稿](https://support.microsoft.com/help/4505745)。
 > - 在撰写模式下的约会上调用 `saveAsync` 时，Outlook 网页版始终发送邀请或更新。
 
-##### <a name="parameters"></a>参数
+##### <a name="parameters"></a>Parameters
 
 |名称| 类型| 属性| 说明|
 |---|---|---|---|
-|`options`| 对象| &lt;可选&gt;|包含一个或多个以下属性的对象文本。|
-|`options.asyncContext`| 对象| &lt;可选&gt;|开发人员可以提供他们想要在回调方法中访问的任何对象。|
+|`options`| 对象| &lt;optional&gt;|包含一个或多个以下属性的对象文本。|
+|`options.asyncContext`| 对象| &lt;optional&gt;|开发人员可以提供他们想要在回调方法中访问的任何对象。|
 |`callback`| 函数||方法完成后，使用单个参数 `asyncResult`（一个 [`AsyncResult`](/javascript/api/office/office.asyncresult) 对象）调用在 `callback` 参数中传递的函数。<br/><br/>如果成功，该项目标识符将在 `asyncResult.value` 属性中提供。|
 
 ##### <a name="requirements"></a>要求
@@ -1953,8 +1958,8 @@ Office.context.mailbox.item.saveAsync(
 |名称| 类型| 属性| 说明|
 |---|---|---|---|
 |`data`| 字符串||要插入的数据。数据不得超过 1,000,000 个字符。如果传入的数据超过 1,000,000 个字符，则会引发 `ArgumentOutOfRange` 异常。|
-|`options`| Object| &lt;可选&gt;|包含一个或多个以下属性的对象文本。|
-|`options.asyncContext`| 对象| &lt;可选&gt;|开发人员可以提供他们想要在回调方法中访问的任何对象。|
+|`options`| Object| &lt;optional&gt;|包含一个或多个以下属性的对象文本。|
+|`options.asyncContext`| 对象| &lt;optional&gt;|开发人员可以提供他们想要在回调方法中访问的任何对象。|
 |`options.coercionType`|[Office.CoercionType](office.md#coerciontype-string)|&lt;optional&gt;|如果为 `text`，系统在 Outlook 网页版和 Outlook 桌面版客户端中应用当前样式。 如果字段是 HTML 编辑器，只会插入文本数据，即使数据为 HTML，也不例外。<br/><br/>如果 `html` 和字段支持 HTML（主题不支持），系统在 Outlook 网页版中应用当前样式，而在 Outlook 桌面版客户端中则应用默认样式。 如果该字段是文本字段，则返回 `InvalidDataFormat` 错误。<br/><br/>如果未设置 `coercionType`，则结果取决于该字段：如果该字段是 HTML，则使用 HTML；如果该字段是文本，则使用纯文本。|
 |`callback`| function||方法完成后，使用单个参数 `callback`（一个 [`asyncResult`](/javascript/api/office/office.asyncresult) 对象）调用在 `AsyncResult` 参数中传递的函数。 |
 

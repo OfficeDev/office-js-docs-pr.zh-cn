@@ -3,12 +3,12 @@ title: 适用于 Office 的 JavaScript API 的错误代码
 description: ''
 ms.date: 08/06/2019
 localization_priority: Normal
-ms.openlocfilehash: f51d7860c0e7b4de530d30326f56380b28b03736
-ms.sourcegitcommit: 654ac1a0c477413662b48cffc0faee5cb65fc25f
+ms.openlocfilehash: b5a5480b620f6ba9869a1faa40af0cd0faa3fcfc
+ms.sourcegitcommit: 21aa084875c9e07a300b3bbe8852b3e5dd163e1d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "36268562"
+ms.lasthandoff: 11/06/2019
+ms.locfileid: "38001940"
 ---
 # <a name="javascript-api-for-office-error-codes"></a>适用于 Office 的 JavaScript API 的错误代码
 
@@ -81,7 +81,7 @@ ms.locfileid: "36268562"
 |8021|超出范围|列索引值超出允许的范围。请使用一个小于列数的正值（大于等于 0）。|列索引大于表格最大列索引或小于 0。|
 |8022|超出范围|值超出允许的范围。|格式中的某些值超出支持的范围。|
 |9016|权限被拒绝|权限被拒绝|访问被拒绝。|
-|9041|网络错误|用户不再连接到网络。 请检查你的网络连接, 然后重试。|用户不再拥有网络或 internet 访问权限。|
+|9041|网络错误|用户不再连接到网络。 请检查网络连接并重试。|用户不再拥有网络或 internet 访问权限。|
 |12002|||下列一种含义：<br> - 传递给 `displayDialogAsync` 的 URL 没有对应的页面。<br> - 传递给 `displayDialogAsync` 的页面已加载，但对话框定向到找不到或无法加载的页面，或者已定向到使用无效语法的 URL。 在对话框中引发并在主机页面中触发 `DialogEventReceived` 事件。|
 |12003|||对话框定向到使用 HTTP 协议的 URL。 必须使用 HTTPS。 在对话框中引发并在主机页面中触发 `DialogEventReceived` 事件。|
 |12004|||传递给 `displayDialogAsync` 的 URL 的域不受信任。 此域必须与主机页的域相同（包括协议和端口号）。 由 `displayDialogAsync` 的调用引发。|
@@ -89,7 +89,7 @@ ms.locfileid: "36268562"
 |12006|||对话框已关闭，通常是因为用户选择了 **X** 按钮。 在对话框中引发并在主机页面中触发 `DialogEventReceived` 事件。|
 |12007|||已从此主机窗口打开了一个对话框。 主机窗口（如任务窗格）一次只能打开一个对话框。 由 `displayDialogAsync` 的调用引发。|
 |12009|||用户已选择忽略对话框。 联机版本的 Office 中可能会发生此错误，用户可能会选择不允许加载项显示对话框。 由 `displayDialogAsync` 的调用引发。|
-|13000 - 13010|||请参阅[导致 getAccessTokenAsync 生成错误的原因和处理方法](/office/dev/add-ins/develop/troubleshoot-sso-in-office-add-ins#causes-and-handling-of-errors-from-getaccesstokenasync)。|
+|13000 - 13010|||[从 tokenhelper.getaccesstoken 以便中查看错误的原因和处理](/office/dev/add-ins/develop/troubleshoot-sso-in-office-add-ins#causes-and-handling-of-errors-from-getAccessToken)。|
 
 ## <a name="binding-creation-error-conditions"></a>绑定创建错误条件
 

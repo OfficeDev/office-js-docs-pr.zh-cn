@@ -1,14 +1,14 @@
 ---
 title: "\"Context\"-\"邮箱\"。项目-要求集1。1"
 description: ''
-ms.date: 10/23/2019
+ms.date: 11/05/2019
 localization_priority: Normal
-ms.openlocfilehash: 3d0b9783ea7fd235f4f989182ced04e0bce735ff
-ms.sourcegitcommit: 5ba325cc88183a3f230cd89d615fd49c695addcf
+ms.openlocfilehash: 5cbf942ea9b1351e0f945a9ca5534a9ba090b79b
+ms.sourcegitcommit: 21aa084875c9e07a300b3bbe8852b3e5dd163e1d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "37682653"
+ms.lasthandoff: 11/06/2019
+ms.locfileid: "38001612"
 ---
 # <a name="item"></a>item
 
@@ -26,39 +26,39 @@ ms.locfileid: "37682653"
 
 ##### <a name="members-and-methods"></a>成员和方法
 
-| 成员 | 类型 |
+| Member | 类型 |
 |--------|------|
-| [attachments](#attachments-arrayattachmentdetails) | 成员 |
-| [bcc](#bcc-recipients) | 成员 |
-| [body](#body-body) | 成员 |
-| [cc](#cc-arrayemailaddressdetailsrecipients) | 成员 |
-| [conversationId](#nullable-conversationid-string) | 成员 |
-| [dateTimeCreated](#datetimecreated-date) | 成员 |
-| [dateTimeModified](#datetimemodified-date) | 成员 |
-| [end](#end-datetime) | 成员 |
-| [from](#from-emailaddressdetails) | 成员 |
-| [internetMessageId](#internetmessageid-string) | 成员 |
-| [itemClass](#itemclass-string) | 成员 |
-| [itemId](#nullable-itemid-string) | 成员 |
-| [itemType](#itemtype-officemailboxenumsitemtype) | 成员 |
-| [location](#location-stringlocation) | 成员 |
-| [normalizedSubject](#normalizedsubject-string) | 成员 |
-| [optionalAttendees](#optionalattendees-arrayemailaddressdetailsrecipients) | 成员 |
-| [organizer](#organizer-emailaddressdetails) | 成员 |
+| [attachments](#attachments-arrayattachmentdetails) | Member |
+| [bcc](#bcc-recipients) | Member |
+| [body](#body-body) | Member |
+| [cc](#cc-arrayemailaddressdetailsrecipients) | Member |
+| [conversationId](#nullable-conversationid-string) | Member |
+| [dateTimeCreated](#datetimecreated-date) | Member |
+| [dateTimeModified](#datetimemodified-date) | Member |
+| [end](#end-datetime) | Member |
+| [from](#from-emailaddressdetails) | Member |
+| [internetMessageId](#internetmessageid-string) | Member |
+| [itemClass](#itemclass-string) | Member |
+| [itemId](#nullable-itemid-string) | Member |
+| [itemType](#itemtype-officemailboxenumsitemtype) | Member |
+| [location](#location-stringlocation) | Member |
+| [normalizedSubject](#normalizedsubject-string) | Member |
+| [optionalAttendees](#optionalattendees-arrayemailaddressdetailsrecipients) | Member |
+| [organizer](#organizer-emailaddressdetails) | Member |
 | [requiredAttendees](#requiredattendees-arrayemailaddressdetailsrecipients) | Member |
-| [sender](#sender-emailaddressdetails) | 成员 |
-| [start](#start-datetime) | 成员 |
+| [sender](#sender-emailaddressdetails) | Member |
+| [start](#start-datetime) | Member |
 | [subject](#subject-stringsubject) | 成员 |
 | [to](#to-arrayemailaddressdetailsrecipients) | 成员 |
-| [addFileAttachmentAsync](#addfileattachmentasyncuri-attachmentname-options-callback) | 方法 |
-| [addItemAttachmentAsync](#additemattachmentasyncitemid-attachmentname-options-callback) | 方法 |
-| [displayReplyAllForm](#displayreplyallformformdata-callback) | 方法 |
-| [displayReplyForm](#displayreplyformformdata-callback) | 方法 |
-| [getEntities](#getentities--entities) | 方法 |
-| [getEntitiesByType](#getentitiesbytypeentitytype--nullable-arraystringcontactmeetingsuggestionphonenumbertasksuggestion) | 方法 |
-| [getFilteredEntitiesByName](#getfilteredentitiesbynamename--nullable-arraystringcontactmeetingsuggestionphonenumbertasksuggestion) | 方法 |
-| [getRegExMatches](#getregexmatches--object) | 方法 |
-| [getRegExMatchesByName](#getregexmatchesbynamename--nullable-array-string-) | 方法 |
+| [addFileAttachmentAsync](#addfileattachmentasyncuri-attachmentname-options-callback) | Method |
+| [addItemAttachmentAsync](#additemattachmentasyncitemid-attachmentname-options-callback) | Method |
+| [displayReplyAllForm](#displayreplyallformformdata-callback) | Method |
+| [displayReplyForm](#displayreplyformformdata-callback) | Method |
+| [getEntities](#getentities--entities) | Method |
+| [getEntitiesByType](#getentitiesbytypeentitytype--nullable-arraystringcontactmeetingsuggestionphonenumbertasksuggestion) | Method |
+| [getFilteredEntitiesByName](#getfilteredentitiesbynamename--nullable-arraystringcontactmeetingsuggestionphonenumbertasksuggestion) | Method |
+| [getRegExMatches](#getregexmatches--object) | Method |
+| [getRegExMatchesByName](#getregexmatchesbynamename--nullable-array-string-) | Method |
 | [loadCustomPropertiesAsync](#loadcustompropertiesasynccallback-usercontext) | 方法 |
 | [removeAttachmentAsync](#removeattachmentasyncattachmentid-options-callback) | 方法 |
 
@@ -134,10 +134,10 @@ console.log(outputString);
 
 获取对象，该对象提供用于获取或更新邮件的密件抄送 (Bcc) 行上的收件人的方法。 仅限撰写模式。
 
-默认情况下，集合限制为最多为100个成员。 但是，在 Windows 和 Mac 上，以下限制适用。
+默认情况下，集合上限为 100 个成员。 但是，在 Windows 和 Mac 上，以下限制适用。
 
-- 最多获取500个成员。
-- 每个呼叫最多可设置100个成员，最多为500个成员总数。
+- 最多包含 500 个成员。
+- 为每个呼叫最多设置 100 个成员，总共多达 500 个成员。
 
 ##### <a name="type"></a>类型
 
@@ -219,7 +219,7 @@ Office.context.mailbox.item.body.getAsync(
 
 ##### <a name="read-mode"></a>阅读模式
 
-`cc` 属性返回包含邮件的`EmailAddressDetails`行上所列的每个收件人的 **** 对象的数组。 默认情况下，集合限制为最多为100个成员。 但是，在 Windows 和 Mac 上，您可以获得500个成员的最大值。
+`cc` 属性返回包含邮件的**抄送**行上所列的每个收件人的 `EmailAddressDetails` 对象的数组。 默认情况下，集合上限为 100 个成员。 但是，在 Windows 和 Mac 上，最多可包含 500 个成员。
 
 ```js
 console.log(JSON.stringify(Office.context.mailbox.item.cc));
@@ -227,10 +227,10 @@ console.log(JSON.stringify(Office.context.mailbox.item.cc));
 
 ##### <a name="compose-mode"></a>撰写模式
 
-`cc` 属性返回一个 `Recipients` 对象，该对象提供用于获取或更新邮件的“**抄送**”行上收件人的方法。 默认情况下，集合限制为最多为100个成员。 但是，在 Windows 和 Mac 上，以下限制适用。
+`cc` 属性返回一个 `Recipients` 对象，该对象提供用于获取或更新邮件的“**抄送**”行上收件人的方法。 默认情况下，集合上限为 100 个成员。 但是，在 Windows 和 Mac 上，以下限制适用。
 
-- 最多获取500个成员。
-- 每个呼叫最多可设置100个成员，最多为500个成员总数。
+- 最多包含 500 个成员。
+- 为每个呼叫最多设置 100 个成员，总共多达 500 个成员。
 
 ```js
 Office.context.mailbox.item.cc.setAsync( ['alice@contoso.com', 'bob@contoso.com'] );
@@ -505,10 +505,10 @@ console.log("Item class: " + itemClass);
 
 #### <a name="nullable-itemid-string"></a>(nullable) itemId: String
 
-获取当前项目的 Exchange Web 服务项目标识符。仅限阅读模式。
+获取当前项的[Exchange Web 服务项标识符](/exchange/client-developer/exchange-web-services/ews-identifiers-in-exchange)。 仅限阅读模式。
 
 > [!NOTE]
-> `itemId` 属性返回的标识符与 Exchange Web 服务项目标识符相同。 `itemId` 属性与 Outlook 条目 ID 或 Outlook REST API 使用的 ID 不同。 在使用此值进行 REST API 调用之前，应使用`Office.context.mailbox.convertToRestId`转换它，这可从要求集1.3 中开始。 有关详细信息，请参阅[从 Outlook 加载项使用 Outlook REST API](/outlook/add-ins/use-rest-api#get-the-item-id)。
+> `itemId`属性返回的标识符与[Exchange Web 服务项目标识符](/exchange/client-developer/exchange-web-services/ews-identifiers-in-exchange)相同。 `itemId` 属性与 Outlook 条目 ID 或 Outlook REST API 使用的 ID 不同。 在使用此值进行 REST API 调用之前，应使用`Office.context.mailbox.convertToRestId`转换它，这可从要求集1.3 中开始。 有关详细信息，请参阅[从 Outlook 加载项使用 Outlook REST API](/outlook/add-ins/use-rest-api#get-the-item-id)。
 
 ##### <a name="type"></a>Type
 
@@ -653,7 +653,7 @@ console.log("Normalized subject: " + normalizedSubject);
 
 ##### <a name="read-mode"></a>阅读模式
 
-`optionalAttendees` 属性返回一个数组，其中包含每个可选与会者的 `EmailAddressDetails` 对象。 默认情况下，集合限制为最多为100个成员。 但是，在 Windows 和 Mac 上，您可以获得500个成员的最大值。
+`optionalAttendees` 属性返回一个数组，其中包含每个可选与会者的 `EmailAddressDetails` 对象。 默认情况下，集合上限为 100 个成员。 但是，在 Windows 和 Mac 上，最多可包含 500 个成员。
 
 ```js
 var optionalAttendees = Office.context.mailbox.item.optionalAttendees;
@@ -662,10 +662,10 @@ console.log("Optional attendees: " + JSON.stringify(optionalAttendees));
 
 ##### <a name="compose-mode"></a>撰写模式
 
-`optionalAttendees` 属性返回一个 `Recipients` 对象，该对象提供用于获取或更新可选与会者的方法。 默认情况下，集合限制为最多为100个成员。 但是，在 Windows 和 Mac 上，以下限制适用。
+`optionalAttendees` 属性返回一个 `Recipients` 对象，该对象提供用于获取或更新可选与会者的方法。 默认情况下，集合上限为 100 个成员。 但是，在 Windows 和 Mac 上，以下限制适用。
 
-- 最多获取500个成员。
-- 每个呼叫最多可设置100个成员，最多为500个成员总数。
+- 最多包含 500 个成员。
+- 为每个呼叫最多设置 100 个成员，总共多达 500 个成员。
 
 ```js
 Office.context.mailbox.item.optionalAttendees.setAsync( ['alice@contoso.com', 'bob@contoso.com'] );
@@ -729,7 +729,7 @@ console.log("Organizer: " + organizerName + " (" + organizerAddress + ")");
 
 ##### <a name="read-mode"></a>阅读模式
 
-`requiredAttendees` 属性返回一个数组，其中包含每个必需与会者的 `EmailAddressDetails` 对象。 默认情况下，集合限制为最多为100个成员。 但是，在 Windows 和 Mac 上，您可以获得500个成员的最大值。
+`requiredAttendees` 属性返回一个数组，其中包含每个必需与会者的 `EmailAddressDetails` 对象。 默认情况下，集合上限为 100 个成员。 但是，在 Windows 和 Mac 上，最多可包含 500 个成员。
 
 ```js
 var requiredAttendees = Office.context.mailbox.item.requiredAttendees;
@@ -738,10 +738,10 @@ console.log("Required attendees: " + JSON.stringify(requiredAttendees));
 
 ##### <a name="compose-mode"></a>撰写模式
 
-`requiredAttendees` 属性返回一个 `Recipients` 对象，该对象提供用于获取或更新必需与会者的方法。 默认情况下，集合限制为最多为100个成员。 但是，在 Windows 和 Mac 上，以下限制适用。
+`requiredAttendees` 属性返回一个 `Recipients` 对象，该对象提供用于获取或更新必需与会者的方法。 默认情况下，集合上限为 100 个成员。 但是，在 Windows 和 Mac 上，以下限制适用。
 
-- 最多获取500个成员。
-- 每个呼叫最多可设置100个成员，最多为500个成员总数。
+- 最多包含 500 个成员。
+- 为每个呼叫最多设置 100 个成员，总共多达 500 个成员。
 
 ```js
 Office.context.mailbox.item.requiredAttendees.setAsync( ['alice@contoso.com', 'bob@contoso.com'] );
@@ -912,7 +912,7 @@ function callback(asyncResult) {
 
 ##### <a name="read-mode"></a>阅读模式
 
-`to` 属性返回包含邮件的`EmailAddressDetails`行上所列的每个收件人的 **** 对象的数组。 默认情况下，集合限制为最多为100个成员。 但是，在 Windows 和 Mac 上，您可以获得500个成员的最大值。
+`to` 属性返回包含邮件的**收件人**行上所列的每个收件人的 `EmailAddressDetails` 对象的数组。 默认情况下，集合上限为 100 个成员。 但是，在 Windows 和 Mac 上，最多可包含 500 个成员。
 
 ```js
 console.log(JSON.stringify(Office.context.mailbox.item.to));
@@ -920,10 +920,10 @@ console.log(JSON.stringify(Office.context.mailbox.item.to));
 
 ##### <a name="compose-mode"></a>撰写模式
 
-`to` 属性返回一个 `Recipients` 对象，该对象提供用于获取或更新邮件的“**收件人**”行上收件人的方法。 默认情况下，集合限制为最多为100个成员。 但是，在 Windows 和 Mac 上，以下限制适用。
+`to` 属性返回一个 `Recipients` 对象，该对象提供用于获取或更新邮件的“**收件人**”行上收件人的方法。 默认情况下，集合上限为 100 个成员。 但是，在 Windows 和 Mac 上，以下限制适用。
 
-- 最多获取500个成员。
-- 每个呼叫最多可设置100个成员，最多为500个成员总数。
+- 最多包含 500 个成员。
+- 为每个呼叫最多设置 100 个成员，总共多达 500 个成员。
 
 ```js
 Office.context.mailbox.item.to.setAsync( ['alice@contoso.com', 'bob@contoso.com'] );
@@ -961,10 +961,10 @@ function callback(asyncResult) {
 
 |名称| 类型| 属性| 说明|
 |---|---|---|---|
-|`uri`| 字符串||提供附加到邮件或约会的文件的位置的 URI。最大长度为 2048 个字符。|
+|`uri`| String||提供附加到邮件或约会的文件的位置的 URI。最大长度为 2048 个字符。|
 |`attachmentName`| 字符串||在附件上载过程中显示的附件名称。最大长度为 255 个字符。|
-|`options`| Object| &lt;可选&gt;|包含一个或多个以下属性的对象文本。|
-|`options.asyncContext`| 对象| &lt;可选&gt;|开发人员可以提供他们想要在回调方法中访问的任何对象。|
+|`options`| Object| &lt;optional&gt;|包含一个或多个以下属性的对象文本。|
+|`options.asyncContext`| 对象| &lt;optional&gt;|开发人员可以提供他们想要在回调方法中访问的任何对象。|
 |`callback`| 函数| &lt;可选&gt;|方法完成后，使用单个参数 `asyncResult`（一个 [`AsyncResult`](/javascript/api/office/office.asyncresult) 对象）调用在 `callback` 参数中传递的函数。 <br/>如果成功，附件标识符将在 `asyncResult.value` 属性中提供。<br/>如果上传附件失败，`asyncResult` 对象将包含一个提供错误说明的 `Error` 对象。|
 
 ##### <a name="errors"></a>错误
@@ -1022,10 +1022,10 @@ function addAttachment() {
 
 |名称| 类型| 属性| 说明|
 |---|---|---|---|
-|`itemId`| 字符串||要附加的项目的 Exchange 标识符。最大长度为 100 个字符。|
+|`itemId`| String||要附加的项目的 Exchange 标识符。最大长度为 100 个字符。|
 |`attachmentName`| String||要附加的项目的主题。 最大长度为 255 个字符。|
-|`options`| 对象| &lt;可选&gt;|包含一个或多个以下属性的对象文本。|
-|`options.asyncContext`| 对象| &lt;可选&gt;|开发人员可以提供他们想要在回调方法中访问的任何对象。|
+|`options`| 对象| &lt;optional&gt;|包含一个或多个以下属性的对象文本。|
+|`options.asyncContext`| 对象| &lt;optional&gt;|开发人员可以提供他们想要在回调方法中访问的任何对象。|
 |`callback`| 函数| &lt;可选&gt;|方法完成后，使用单个参数 `asyncResult`（一个 [`AsyncResult`](/javascript/api/office/office.asyncresult) 对象）调用在 `callback` 参数中传递的函数。 <br/>如果成功，附件标识符将在 `asyncResult.value` 属性中提供。<br/>如果添加附件失败，`asyncResult` 对象将包含一个提供错误说明的 `Error` 对象。|
 
 ##### <a name="errors"></a>错误
@@ -1085,7 +1085,7 @@ function addAttachment() {
 > [!NOTE]
 > 要求集1.1 中不支持在呼叫`displayReplyAllForm`中包含附件的功能。 附件支持已添加到要求集 1.2 及以上的 `displayReplyAllForm` 中。
 
-##### <a name="parameters"></a>参数
+##### <a name="parameters"></a>Parameters
 
 |名称| 类型| 说明|
 |---|---|---|
@@ -1157,7 +1157,7 @@ Office.context.mailbox.item.displayReplyAllForm(
 > [!NOTE]
 > 要求集1.1 中不支持在呼叫`displayReplyForm`中包含附件的功能。 附件支持已添加到要求集 1.2 及以上的 `displayReplyForm` 中。
 
-##### <a name="parameters"></a>参数
+##### <a name="parameters"></a>Parameters
 
 |名称| 类型| 说明|
 |---|---|---|
@@ -1419,11 +1419,11 @@ var veggies = allMatches.veggies;
 
 如果在项目的正文属性上指定 `ItemHasRegularExpressionMatch` 规则，则正则表达式应进一步筛选正文，不应尝试返回该项目的整个正文。使用正则表达式（如 `.*`）获取项目的整个正文并不总是返回预期的结果。
 
-##### <a name="parameters"></a>参数
+##### <a name="parameters"></a>Parameters
 
 |名称| 类型| 说明|
 |---|---|---|
-|`name`| 字符串|定义筛选器匹配的 `ItemHasRegularExpressionMatch` 规则元素的名称。|
+|`name`| String|定义筛选器匹配的 `ItemHasRegularExpressionMatch` 规则元素的名称。|
 
 ##### <a name="requirements"></a>Requirements
 
