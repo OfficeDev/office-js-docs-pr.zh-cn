@@ -1,14 +1,14 @@
 ---
 title: 为 Office 加载项启用单一登录
 description: ''
-ms.date: 04/10/2019
+ms.date: 11/05/2019
 localization_priority: Priority
-ms.openlocfilehash: 27a5d8e1dba55f1479fbdc4c23706e4322181c62
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: 88bc29b3a1038bf8df74d30621015b472572f7e3
+ms.sourcegitcommit: 21aa084875c9e07a300b3bbe8852b3e5dd163e1d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32449857"
+ms.lasthandoff: 11/06/2019
+ms.locfileid: "38001444"
 ---
 # <a name="enable-single-sign-on-for-office-add-ins-preview"></a>为 Office 加载项启用单一登录（预览）
 
@@ -31,26 +31,26 @@ SSO 要求使用 Office 365（Office 的订阅版本）。 你应该使用来自
 
 如果使用的是 **Outlook** 加载项，请务必为 Office 365 租赁启用新式验证。 若要了解如何执行此操作，请参阅 [Exchange Online: How to enable your tenant for modern authentication](https://social.technet.microsoft.com/wiki/contents/articles/32711.exchange-online-how-to-enable-your-tenant-for-modern-authentication.aspx)（如何为租户启用新式体验）。
 
-*不应*依赖 SSO 作为加载项的唯一身份验证方法。 应实现备用身份验证系统，在某些错误情况下，加载项可以返回到该系统。 可以使用包含用户表和身份验证的系统，也可以利用其中某个社交登录提供者。 有关如何使用 Office 加载项执行此操作的详细信息，请参阅 [Authorize external services in your Office Add-in](/office/dev/add-ins/develop/auth-external-add-ins)（对 Office 加载项中的外部服务授权）。 对于 *Outlook*，建议使用后备系统。 有关详细信息，请参阅[应用场景：在 Outlook 加载项中对服务实现单一登录](/outlook/add-ins/implement-sso-in-outlook-add-in)。
+*不应*依赖 SSO 作为加载项的唯一身份验证方法。 应实现备用身份验证系统，在某些错误情况下，加载项可以返回到该系统。 可以使用包含用户表和身份验证的系统，也可以利用其中某个社交登录提供者。 有关如何使用 Office 加载项执行此操作的详细信息，请参阅 [Authorize external services in your Office Add-in](/office/dev/add-ins/develop/auth-external-add-ins)（对 Office 加载项中的外部服务授权）。 对于 *Outlook*，建议使用回退系统。 有关详细信息，请参阅[应用场景：在 Outlook 外接程序中对服务实现单一登录](/outlook/add-ins/implement-sso-in-outlook-add-in)。 有关使用 Azure Active Directory 作为回退系统的示例，请参阅 [Office 加载项 NodeJS SSO](https://github.com/OfficeDev/Office-Add-in-NodeJS-SSO) 和 [Office 加载项 ASP.NET SSO](https://github.com/OfficeDev/Office-Add-in-ASPNET-SSO)。
 
 ### <a name="how-sso-works-at-runtime"></a>运行时 SSO 的工作方式
 
 以下关系图显示了 SSO 流程的工作方式。
 
-![SSO 过程关系图](../images/sso-overview-diagram.png)
+![显示 SSO 流程的关系图](../images/sso-overview-diagram.png)
 
-1. 在加载项中，JavaScript 调用新的 Office.js API [getAccessTokenAsync](#sso-api-reference)。 这会指示 Office 主机应用程序获取对加载项的访问令牌。 请参阅[示例访问令牌](#example-access-token)。
+1. 在加载项中，JavaScript 调用新的 Office.js API [getAccessToken](/javascript/api/office/officeruntime.auth#getAccessToken-options--callback-)。 该操作告诉 Office 主机应用程序获取加载项的访问令牌。 请参阅[示例访问令牌](#example-access-token)。
 2. 如果用户未登录，Office 主机应用会打开弹出窗口，以供用户登录。
 3. 如果当前用户是首次使用加载项，则会看到同意提示。
 4. Office 主机应用程序从当前用户的 Azure AD v2.0 终结点请求获取**加载项令牌**。
 5. Azure AD 将加载项令牌发送给 Office 主机应用程序。
-6. Office 主机应用程序在 `getAccessTokenAsync` 调用返回的结果对象中，将“**加载项令牌**”发送给加载项。
+6. Office 主机应用程序在 `getAccessToken` 调用返回的结果对象中，将“**加载项令牌**”发送给加载项。
 7. 加载项中的 JavaScript 可以解析令牌并提取所需信息，如用户的电子邮件地址。
 8. （可选）加载项可以向其服务器端发送 HTTP 请求以获取关于用户的更多数据，如用户的偏好。 此外，访问令牌本身也可发送到服务器端以进行解析和验证。
 
 ## <a name="develop-an-sso-add-in"></a>开发 SSO 加载项
 
-此部分介绍了创建启用 SSO 的 Office 加载项所需完成的任务。 其中介绍的这些任务与语言和框架无关。 有关详细演练的示例，请参阅：
+此部分介绍了创建启用 SSO 的 Office 加载项所需完成的任务。 其中介绍的这些任务与语言和框架无关。 有关详细的演练，请参阅：
 
 * [创建使用单一登录的 Node.js Office 加载项](create-sso-office-add-ins-nodejs.md)
 * [创建使用单一登录的 ASP.NET Office 加载项](create-sso-office-add-ins-aspnet.md)
@@ -96,31 +96,34 @@ SSO 要求使用 Office 365（Office 的订阅版本）。 你应该使用来自
 
 将 JavaScript 添加到加载项，以执行以下操作：
 
-* 调用 [getAccessTokenAsync](/office/dev/add-ins/develop/sso-in-office-add-ins#sso-api-reference).
+* 调用 [getAccessToken](/javascript/api/office/officeruntime.auth#getAccessToken-options--callback-)。
 
 * 解析访问令牌或将其传递到加载项的服务器端代码。
 
-下面是调用 `getAccessTokenAsync` 的简单示例。
+下面是调用 `getAccessToken` 的简单示例。
 
 > [!NOTE]
-> 此示例只显式处理一种错误。 有关更详细的错误处理的示例，请参阅 [Home.js in Office-Add-in-ASPNET-SSO](https://github.com/OfficeDev/Office-Add-in-ASPNET-SSO/blob/master/Complete/Office-Add-in-ASPNET-SSO-WebAPI/Scripts/Home.js) 和 [program.js in Office-Add-in-NodeJS-SSO](https://github.com/OfficeDev/Office-Add-in-NodeJS-SSO/blob/master/Completed/public/program.js)。 另请参阅[排查单一登录 (SSO) 错误消息](troubleshoot-sso-in-office-add-ins.md)
- 
+> 此示例只显式处理一种错误。 有关更详细的错误处理的示例，请参阅 [Office 加载项 NodeJS SSO](https://github.com/OfficeDev/Office-Add-in-NodeJS-SSO) 和 [Office 加载项 ASP.NET SSO](https://github.com/OfficeDev/Office-Add-in-ASPNET-SSO)。
+
 
 ```js
-Office.context.auth.getAccessTokenAsync(function (result) {
-    if (result.status === "succeeded") {
-        // Use this token to call Web API
-        var ssoToken = result.value;
-        ...
-    } else {
-        if (result.error.code === 13003) {
+async function getGraphData() {
+    try {
+        let bootstrapToken = await OfficeRuntime.auth.getAccessToken({ allowSignInPrompt: true, forMSGraphAccess: true });
+
+        // The /api/values controller will make the token exchange and use the
+        // access token it gets back to make the call to MS Graph.
+        getData("/api/DoSomething", bootstrapToken);
+    }
+    catch (exception) {
+        if (exception.code === 13003) {
             // SSO is not supported for domain user accounts, only
             // work or school (Office 365) or Microsoft Account IDs.
         } else {
             // Handle error
         }
     }
-});
+}
 ```
 
 下面是一个将加载项令牌传递到服务器端的简单示例。 将请求发送回服务器端时，令牌作为 `Authorization` 标头包含在内。 此示例设想发送 JSON 数据，因此它使用 `POST` 方法，但使用 `GET` 就足以在未写入服务器时发送访问令牌。
@@ -130,7 +133,7 @@ $.ajax({
     type: "POST",
     url: "/api/DoSomething",
     headers: {
-        "Authorization": "Bearer " + ssoToken
+        "Authorization": "Bearer " + bootstrapToken
     },
     data: { /* some JSON payload */ },
     contentType: "application/json; charset=utf-8"
@@ -145,9 +148,9 @@ $.ajax({
 
 #### <a name="when-to-call-the-method"></a>何时调用方法
 
-如果因没有用户登录 Office 而无法使用加载项，则应*在加载项启动时*调用 `getAccessTokenAsync`。
+如果因没有用户登录 Office 而无法使用加载项，则应*在加载项启动时*调用 `getAccessToken`，并在 `getAccessToken` 的 `options` 参数中传递 `allowSignInPrompt: true`。
 
-如果加载项具有一些无需用户登录的功能，那么*当用户执行需要用户登录的操作时*，请调用 `getAccessTokenAsync`。 `getAccessTokenAsync` 的冗余调用不会导致性能严重下降，因为 Office 缓存并重用访问没有过期的令牌，无需每次调用 AAD v。 `getAccessTokenAsync` 都重新调用 AAD V 2.0 端点。 因此，可以将 `getAccessTokenAsync` 调用添加到所有在需要令牌时启动操作的函数和处理程序。
+如果加载项具有一些无需用户登录的功能，那么*当用户执行需要用户登录的操作时*，请调用 `getAccessToken`。 `getAccessToken` 的冗余调用不会导致性能严重下降，因为 Office 缓存并重用启动没有过期的令牌，无需每次调用 AAD v。 `getAccessToken` 都重新调用 AAD V 2.0 端点。 因此，可以将 `getAccessToken` 调用添加到所有在需要令牌时启动操作的函数和处理程序。
 
 ### <a name="add-server-side-code"></a>添加服务器端代码
 
@@ -156,16 +159,16 @@ $.ajax({
 * 创建一种或多种 Web API 方法（例如，一种在托管数据库中查找用户首选项的方法），使用有关从令牌中提取的用户的信息。 （请参阅下文“**使用 SSO 令牌作为标识**”。）可以使用一些库简化需要编写的代码，具体视语言和框架而定。
 * 获取 Microsoft Graph 数据。 服务器端代码应执行以下操作：
 
-    * 验证访问令牌（请参阅下文“**验证访问令牌**”）。
     * 通过调用 Azure AD v2.0 端点启动“代表”流，该端点包括访问令牌、关于用户的一些元数据以及加载项的凭据（其 ID 和机密）。 在此上下文中，访问令牌称为启动令牌。
-    * 缓存代表流返回的新访问令牌。
     * 使用新的令牌从 Microsoft Graph 获取数据。
+    * 或者，在启动流之前，验证访问令牌（请参阅下文**验证访问令牌**）。
+    * 或者，在代表流完成后，缓存从流返回的新访问令牌，以便在对 Microsoft Graph 的其他调用中重复使用它，直到过期为止。
 
  如需深入了解如何获得对用户的 Microsoft Graph 数据的授权访问，请参阅[向 Office 加载项中的 Microsoft Graph 授权](authorize-to-microsoft-graph.md)。
 
 #### <a name="validate-the-access-token"></a>验证访问令牌
 
-Web API 收到访问令牌后，必须在使用该令牌前对其进行验证。 该令牌是 JSON Web 令牌 (JWT)，这意味着验证方式与大多数标准 OAuth 流中的令牌验证方式类似。 有许多可用于处理 JWT 验证的库，而它们的基本内容为：
+Web API 收到访问令牌后，可以在使用该令牌前对其进行验证。 该令牌是 JSON Web 令牌 (JWT)，这意味着验证方式与大多数标准 OAuth 流中的令牌验证方式类似。 有许多可用于处理 JWT 验证的库，而它们的基本内容为：
 
 - 检查令牌的格式是否正确
 - 检查令牌是否由预期的颁发机构颁发
@@ -193,7 +196,6 @@ Web API 收到访问令牌后，必须在使用该令牌前对其进行验证。
 ### <a name="example-access-token"></a>示例访问令牌
 
 以下是访问令牌的典型解码有效负载。 有关属性的详细信息，请参阅 [Azure Active Directory v2.0 令牌参考](/azure/active-directory/develop/active-directory-v2-tokens)。
-
 
 ```js
 {
@@ -223,12 +225,12 @@ Web API 收到访问令牌后，必须在使用该令牌前对其进行验证。
 
 ## <a name="sso-api-reference"></a>SSO API 参考
 
-### <a name="getaccesstokenasync"></a>getAccessTokenAsync
+### <a name="getaccesstoken"></a>getAccessToken
 
-Office [Auth](/javascript/api/office/office.auth) 命令空间 `Office.context.auth` 提供了方法 `getAccessTokenAsync`，它使 Office 主机能够获取加载项的 Web 应用程序的访问令牌。 这也使加载项能够间接访问已登录用户的 Microsoft Graph 数据，而不需要用户第二次登录。
+OfficeRuntime [Auth](/javascript/api/office/officeruntime.auth) 命令空间 `OfficeRuntime.auth` 提供了方法 `getAccessToken`，它使 Office 主机能够获取加载项的 Web 应用程序的访问令牌。 这也使加载项能够间接访问已登录用户的 Microsoft Graph 数据，而不需要用户第二次登录。
 
 ```typescript
-getAccessTokenAsync(options?: AuthOptions, callback?: (result: AsyncResult<string>) => void): void;
+getAccessToken(options?: AuthOptions, callback?: (result: AsyncResult<string>) => void): void;
 ```
 
 该方法调用 Azure Active Directory V 2.0 端点以获取令牌来访问加载项的 Web 应用程序。 这样可以使加载项识别用户。 通过[“代表”OAuth 流](/azure/active-directory/develop/active-directory-v2-protocols-oauth-on-behalf-of)，服务器端代码可以使用此令牌访问加载项 Web 应用程序的 Microsoft Graph。
@@ -242,8 +244,8 @@ getAccessTokenAsync(options?: AuthOptions, callback?: (result: AsyncResult<strin
 
 #### <a name="parameters"></a>参数
 
-`options` - 可选。 接受 [AuthOptions](/javascript/api/office/office.authoptions) 对象（参见下文）以定义登录行为。
+`options` - 可选。 接受 [AuthOptions](/javascript/api/office/officeruntime.authoptions) 对象（参见下文）以定义登录行为。
 
 `callback` - 可选。 接受可以解析用户 ID 的令牌或使用“代表”流中的令牌来访问 Microsoft Graph 的回调方法。 如果 [AsyncResult](/javascript/api/office/office.asyncresult) `.status`为“成功”，则 `AsyncResult.value` 是原始 AAD v。 2.0 格式的访问令牌。
 
-当 Office 从 AAD v 获取加载项的访问令牌时，[AuthOptions](/javascript/api/office/office.authoptions) 接口会提供用户体验选项。 2.0 使用 `getAccessTokenAsync` 方法。
+当 Office 从 AAD v 获取加载项的访问令牌时，[AuthOptions](/javascript/api/office/officeruntime.authoptions) 接口会提供用户体验选项。 2.0 使用 `getAccessToken` 方法。
