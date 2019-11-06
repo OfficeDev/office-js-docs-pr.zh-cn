@@ -1,16 +1,16 @@
 ---
 title: Word 加载项概述
 description: ''
-ms.date: 07/05/2019
+ms.date: 11/05/2019
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: 35bb846a587eacc23c9b4b1c27a7c4edf7c68f5c
-ms.sourcegitcommit: 7d4d721fc3d246ef8a2464bc714659cd84d6faab
+ms.openlocfilehash: bb4ca1de1b99ca66b716810dedf01506fb60ebe7
+ms.sourcegitcommit: 21aa084875c9e07a300b3bbe8852b3e5dd163e1d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/11/2019
-ms.locfileid: "37468761"
+ms.lasthandoff: 11/06/2019
+ms.locfileid: "38001493"
 ---
 # <a name="word-add-ins-overview"></a>Word 加载项概述
 
@@ -41,7 +41,7 @@ Word.run(function (context) {
 
 ```
 
-若要托管 Word 加载项，可以使用任何 Web 服务器技术（如 ASP.NET、NodeJS 或 Python）。可以使用常用的客户端框架（Ember、Backbone、Angular、React），也可以坚持使用 VanillaJS 开发解决方案，并能使用 Azure 等服务[验证](../develop/use-the-oauth-authorization-framework-in-an-office-add-in.md)和托管应用。
+若要托管 Word 加载项，可以使用任何 Web 服务器技术（如 ASP.NET、NodeJS 或 Python）。可以使用常用的客户端框架（Ember、Backbone、Angular、React），也可以坚持使用 VanillaJS 开发解决方案，并能使用 Azure 等服务[验证](../develop/overview-authn-authz.md)和托管应用。
 
 通过 Word JavaScript API 可使应用程序访问 Word 文档中的对象和元数据。这些 API 可用于创建面向以下应用程序的外接程序：
 
