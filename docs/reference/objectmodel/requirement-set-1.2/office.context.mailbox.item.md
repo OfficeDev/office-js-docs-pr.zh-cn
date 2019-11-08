@@ -1,14 +1,14 @@
 ---
 title: "\"Context\"-\"邮箱\"。项目-要求集1。2"
 description: ''
-ms.date: 11/05/2019
+ms.date: 11/06/2019
 localization_priority: Normal
-ms.openlocfilehash: 97fa271f500e89c6ce69d82b95a0818f6d5bc7d4
-ms.sourcegitcommit: 21aa084875c9e07a300b3bbe8852b3e5dd163e1d
+ms.openlocfilehash: 50cc2bcf338d2fb2fee5e32e0cd408c72c138214
+ms.sourcegitcommit: 08c0b9ff319c391922fa43d3c2e9783cf6b53b1b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "38001605"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "38066268"
 ---
 # <a name="item"></a>item
 
@@ -26,41 +26,41 @@ ms.locfileid: "38001605"
 
 ##### <a name="members-and-methods"></a>成员和方法
 
-| Member | 类型 |
+| 成员 | 类型 |
 |--------|------|
-| [attachments](#attachments-arrayattachmentdetails) | Member |
-| [bcc](#bcc-recipients) | Member |
-| [body](#body-body) | Member |
-| [cc](#cc-arrayemailaddressdetailsrecipients) | Member |
-| [conversationId](#nullable-conversationid-string) | Member |
-| [dateTimeCreated](#datetimecreated-date) | Member |
-| [dateTimeModified](#datetimemodified-date) | Member |
-| [end](#end-datetime) | Member |
-| [from](#from-emailaddressdetails) | Member |
-| [internetMessageId](#internetmessageid-string) | Member |
-| [itemClass](#itemclass-string) | Member |
-| [itemId](#nullable-itemid-string) | Member |
-| [itemType](#itemtype-officemailboxenumsitemtype) | Member |
-| [location](#location-stringlocation) | Member |
-| [normalizedSubject](#normalizedsubject-string) | Member |
-| [optionalAttendees](#optionalattendees-arrayemailaddressdetailsrecipients) | Member |
-| [organizer](#organizer-emailaddressdetails) | Member |
+| [attachments](#attachments-arrayattachmentdetails) | 成员 |
+| [bcc](#bcc-recipients) | 成员 |
+| [body](#body-body) | 成员 |
+| [cc](#cc-arrayemailaddressdetailsrecipients) | 成员 |
+| [conversationId](#nullable-conversationid-string) | 成员 |
+| [dateTimeCreated](#datetimecreated-date) | 成员 |
+| [dateTimeModified](#datetimemodified-date) | 成员 |
+| [end](#end-datetime) | 成员 |
+| [from](#from-emailaddressdetails) | 成员 |
+| [internetMessageId](#internetmessageid-string) | 成员 |
+| [itemClass](#itemclass-string) | 成员 |
+| [itemId](#nullable-itemid-string) | 成员 |
+| [itemType](#itemtype-officemailboxenumsitemtype) | 成员 |
+| [location](#location-stringlocation) | 成员 |
+| [normalizedSubject](#normalizedsubject-string) | 成员 |
+| [optionalAttendees](#optionalattendees-arrayemailaddressdetailsrecipients) | 成员 |
+| [organizer](#organizer-emailaddressdetails) | 成员 |
 | [requiredAttendees](#requiredattendees-arrayemailaddressdetailsrecipients) | Member |
-| [sender](#sender-emailaddressdetails) | Member |
-| [start](#start-datetime) | Member |
+| [sender](#sender-emailaddressdetails) | 成员 |
+| [start](#start-datetime) | 成员 |
 | [subject](#subject-stringsubject) | 成员 |
 | [to](#to-arrayemailaddressdetailsrecipients) | 成员 |
-| [addFileAttachmentAsync](#addfileattachmentasyncuri-attachmentname-options-callback) | Method |
-| [addItemAttachmentAsync](#additemattachmentasyncitemid-attachmentname-options-callback) | Method |
-| [displayReplyAllForm](#displayreplyallformformdata-callback) | Method |
-| [displayReplyForm](#displayreplyformformdata-callback) | Method |
-| [getEntities](#getentities--entities) | Method |
-| [getEntitiesByType](#getentitiesbytypeentitytype--nullable-arraystringcontactmeetingsuggestionphonenumbertasksuggestion) | Method |
-| [getFilteredEntitiesByName](#getfilteredentitiesbynamename--nullable-arraystringcontactmeetingsuggestionphonenumbertasksuggestion) | Method |
-| [getRegExMatches](#getregexmatches--object) | Method |
-| [getRegExMatchesByName](#getregexmatchesbynamename--nullable-array-string-) | Method |
-| [getSelectedDataAsync](#getselecteddataasynccoerciontype-options-callback--string) | Method |
-| [loadCustomPropertiesAsync](#loadcustompropertiesasynccallback-usercontext) | Method |
+| [addFileAttachmentAsync](#addfileattachmentasyncuri-attachmentname-options-callback) | 方法 |
+| [addItemAttachmentAsync](#additemattachmentasyncitemid-attachmentname-options-callback) | 方法 |
+| [displayReplyAllForm](#displayreplyallformformdata-callback) | 方法 |
+| [displayReplyForm](#displayreplyformformdata-callback) | 方法 |
+| [getEntities](#getentities--entities) | 方法 |
+| [getEntitiesByType](#getentitiesbytypeentitytype--nullable-arraystringcontactmeetingsuggestionphonenumbertasksuggestion) | 方法 |
+| [getFilteredEntitiesByName](#getfilteredentitiesbynamename--nullable-arraystringcontactmeetingsuggestionphonenumbertasksuggestion) | 方法 |
+| [getRegExMatches](#getregexmatches--object) | 方法 |
+| [getRegExMatchesByName](#getregexmatchesbynamename--nullable-array-string-) | 方法 |
+| [getSelectedDataAsync](#getselecteddataasynccoerciontype-options-callback--string) | 方法 |
+| [loadCustomPropertiesAsync](#loadcustompropertiesasynccallback-usercontext) | 方法 |
 | [removeAttachmentAsync](#removeattachmentasyncattachmentid-options-callback) | 方法 |
 | [setSelectedDataAsync](#setselecteddataasyncdata-options-callback) | 方法 |
 
@@ -507,10 +507,10 @@ console.log("Item class: " + itemClass);
 
 #### <a name="nullable-itemid-string"></a>(nullable) itemId: String
 
-获取当前项的[Exchange Web 服务项标识符](/exchange/client-developer/exchange-web-services/ews-identifiers-in-exchange)。 仅限阅读模式。
+获取当前项目的 [Exchange Web 服务项目标识符](/exchange/client-developer/exchange-web-services/ews-identifiers-in-exchange)。仅限阅读模式。
 
 > [!NOTE]
-> `itemId`属性返回的标识符与[Exchange Web 服务项目标识符](/exchange/client-developer/exchange-web-services/ews-identifiers-in-exchange)相同。 `itemId` 属性与 Outlook 条目 ID 或 Outlook REST API 使用的 ID 不同。 在使用此值进行 REST API 调用之前，应使用`Office.context.mailbox.convertToRestId`转换它，这可从要求集1.3 中开始。 有关详细信息，请参阅[从 Outlook 加载项使用 Outlook REST API](/outlook/add-ins/use-rest-api#get-the-item-id)。
+> `itemId` 属性返回的标识符与 [Exchange Web 服务项目标识符](/exchange/client-developer/exchange-web-services/ews-identifiers-in-exchange)相同。 `itemId` 属性与 Outlook 条目 ID 或 Outlook REST API 使用的 ID 不同。 在使用此值进行 REST API 调用之前，应使用`Office.context.mailbox.convertToRestId`转换它，这可从要求集1.3 中开始。 有关详细信息，请参阅[从 Outlook 加载项使用 Outlook REST API](/outlook/add-ins/use-rest-api#get-the-item-id)。
 
 ##### <a name="type"></a>Type
 
@@ -1019,7 +1019,7 @@ function addAttachment() {
 
 如果 Office 加载项是在 Outlook 网页版中运行，`addItemAttachmentAsync` 方法可以将项附加到除正在编辑的项外的项；但既不支持也不建议这样做。
 
-##### <a name="parameters"></a>Parameters
+##### <a name="parameters"></a>参数
 
 |名称| 类型| 属性| 说明|
 |---|---|---|---|
@@ -1519,7 +1519,7 @@ var veggies = allMatches.veggies;
 
 如果在项目的正文属性上指定 `ItemHasRegularExpressionMatch` 规则，则正则表达式应进一步筛选正文，不应尝试返回该项目的整个正文。使用正则表达式（如 `.*`）获取项目的整个正文并不总是返回预期的结果。
 
-##### <a name="parameters"></a>Parameters
+##### <a name="parameters"></a>参数
 
 |名称| 类型| 说明|
 |---|---|---|
@@ -1555,14 +1555,12 @@ var veggies = Office.context.mailbox.item.getRegExMatchesByName("veggies");
 
 以异步方式返回邮件的主题或正文中选定的数据。
 
-如果没有选定内容，但光标位于正文或主题中，此方法将会为所选数据返回 null。如果选定的是字段，而不是正文或主题，则此方法返回 `InvalidSelection` 错误。
+如果没有选定内容，但光标在正文或主题中，则该方法将返回所选数据的空字符串。 如果选定的是字段，而不是正文或主题，则此方法返回 `InvalidSelection` 错误。
 
 > [!NOTE]
-> 在 web 上的 Outlook 中，如果未选择任何文本，但光标在正文中，则该方法将返回字符串 "null"。 若要检查此情况，请包含与以下内容类似的代码：
->
-> `var selectedText = (asyncResult.value.endPosition === asyncResult.value.startPosition) ? "" : asyncResult.value.data;`
+> 在 Outlook 网页版中，如果未选中任何文本，但光标位于正文中，则该方法返回字符串“null”。 若要检查此情况，请参阅本节后面的示例。
 
-##### <a name="parameters"></a>Parameters
+##### <a name="parameters"></a>参数
 
 |名称| 类型| 属性| 说明|
 |---|---|---|---|
@@ -1597,11 +1595,13 @@ function getCallback(asyncResult) {
   var text = asyncResult.value.data;
   var prop = asyncResult.value.sourceProperty;
 
-  Office.context.mailbox.item.setSelectedDataAsync('Setting ' + prop + ': ' + text, {}, setCallback);
-}
+  // Handle where Outlook on the web erroneously returns "null" instead of empty string.
+  if (Office.context.mailbox.diagnostics.hostName === 'OutlookWebApp'
+      && asyncResult.value.endPosition === asyncResult.value.startPosition) {
+    text = "";
+  }
 
-function setCallback(asyncResult) {
-  // Check for errors.
+  console.log("Selected text in " + prop + ": " + text);
 }
 ```
 
@@ -1674,8 +1674,8 @@ function saveCallback(asyncResult) {
 |名称| 类型| 属性| 说明|
 |---|---|---|---|
 |`attachmentId`| String||要删除的附件的标识符。|
-|`options`| 对象| &lt;可选&gt;|包含一个或多个以下属性的对象文本。|
-|`options.asyncContext`| 对象| &lt;可选&gt;|开发人员可以提供他们想要在回调方法中访问的任何对象。|
+|`options`| 对象| &lt;optional&gt;|包含一个或多个以下属性的对象文本。|
+|`options.asyncContext`| 对象| &lt;optional&gt;|开发人员可以提供他们想要在回调方法中访问的任何对象。|
 |`callback`| 函数| &lt;可选&gt;|方法完成后，使用单个参数 `callback`（一个 [`asyncResult`](/javascript/api/office/office.asyncresult) 对象）调用在 `AsyncResult` 参数中传递的函数。 <br/>如果删除附件失败，`asyncResult.error` 属性将包含一个说明失败原因的错误代码。|
 
 ##### <a name="errors"></a>错误

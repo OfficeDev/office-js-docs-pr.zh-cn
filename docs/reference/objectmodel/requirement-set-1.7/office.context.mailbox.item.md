@@ -1,14 +1,14 @@
 ---
 title: "\"Context\"-\"邮箱\"。项目-要求集1。7"
 description: ''
-ms.date: 11/05/2019
+ms.date: 11/06/2019
 localization_priority: Normal
-ms.openlocfilehash: 0cd498efb11f759dfb97d60565e2eb0bb95fd2f5
-ms.sourcegitcommit: 21aa084875c9e07a300b3bbe8852b3e5dd163e1d
+ms.openlocfilehash: 1c0948490c5c0b77252a8605b43f85dd529f2897
+ms.sourcegitcommit: 08c0b9ff319c391922fa43d3c2e9783cf6b53b1b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "38001563"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "38066212"
 ---
 # <a name="item"></a>item
 
@@ -66,11 +66,11 @@ ms.locfileid: "38001563"
 | [getRegExMatchesByName](#getregexmatchesbynamename--nullable-array-string-) | 方法 |
 | [getSelectedDataAsync](#getselecteddataasynccoerciontype-options-callback--string) | 方法 |
 | [Office.context.mailbox.item.getselectedentities](#getselectedentities--entities) | 方法 |
-| [Office.context.mailbox.item.getselectedregexmatches](#getselectedregexmatches--object) | Method |
-| [loadCustomPropertiesAsync](#loadcustompropertiesasynccallback-usercontext) | Method |
+| [Office.context.mailbox.item.getselectedregexmatches](#getselectedregexmatches--object) | 方法 |
+| [loadCustomPropertiesAsync](#loadcustompropertiesasynccallback-usercontext) | 方法 |
 | [removeAttachmentAsync](#removeattachmentasyncattachmentid-options-callback) | 方法 |
 | [removeHandlerAsync](#removehandlerasynceventtype-options-callback) | 方法 |
-| [saveAsync](#saveasyncoptions-callback) | Method |
+| [saveAsync](#saveasyncoptions-callback) | 方法 |
 | [setSelectedDataAsync](#setselecteddataasyncdata-options-callback) | 方法 |
 
 ### <a name="example"></a>示例
@@ -530,10 +530,10 @@ console.log("Item class: " + itemClass);
 
 #### <a name="nullable-itemid-string"></a>(nullable) itemId: String
 
-获取当前项的[Exchange Web 服务项标识符](/exchange/client-developer/exchange-web-services/ews-identifiers-in-exchange)。 仅限阅读模式。
+获取当前项目的 [Exchange Web 服务项目标识符](/exchange/client-developer/exchange-web-services/ews-identifiers-in-exchange)。仅限阅读模式。
 
 > [!NOTE]
-> `itemId`属性返回的标识符与[Exchange Web 服务项目标识符](/exchange/client-developer/exchange-web-services/ews-identifiers-in-exchange)相同。 `itemId` 属性与 Outlook 条目 ID 或 Outlook REST API 使用的 ID 不同。 使用此值进行 REST API 调用前，应使用 [Office.context.mailbox.convertToRestId](office.context.mailbox.md#converttorestiditemid-restversion--string) 对它进行转换。 有关详细信息，请参阅[从 Outlook 加载项使用 Outlook REST API](/outlook/add-ins/use-rest-api#get-the-item-id)。
+> `itemId` 属性返回的标识符与 [Exchange Web 服务项目标识符](/exchange/client-developer/exchange-web-services/ews-identifiers-in-exchange)相同。 `itemId` 属性与 Outlook 条目 ID 或 Outlook REST API 使用的 ID 不同。 使用此值进行 REST API 调用前，应使用 [Office.context.mailbox.convertToRestId](office.context.mailbox.md#converttorestiditemid-restversion--string) 对它进行转换。 有关详细信息，请参阅[从 Outlook 加载项使用 Outlook REST API](/outlook/add-ins/use-rest-api#get-the-item-id)。
 
 `itemId` 属性在撰写模式下不可用。如果需要项目标识符，[`saveAsync`](#saveasyncoptions-callback) 方法可用于将项目保存到存储，这将在回调函数的 [`AsyncResult.value`](/javascript/api/office/office.asyncresult) 参数中返回项目标识符。
 
@@ -1214,7 +1214,7 @@ Office.context.mailbox.item.addFileAttachmentAsync(
 
 目前，受支持的事件`Office.EventType.AppointmentTimeChanged`类型`Office.EventType.RecipientsChanged`是、和`Office.EventType.RecurrenceChanged`
 
-##### <a name="parameters"></a>Parameters
+##### <a name="parameters"></a>参数
 
 | 名称 | 类型 | 属性 | 说明 |
 |---|---|---|---|
@@ -1787,7 +1787,7 @@ var veggies = allMatches.veggies;
 
 如果在项目的正文属性上指定 `ItemHasRegularExpressionMatch` 规则，则正则表达式应进一步筛选正文，不应尝试返回该项目的整个正文。使用正则表达式（如 `.*`）获取项目的整个正文并不总是返回预期的结果。
 
-##### <a name="parameters"></a>Parameters
+##### <a name="parameters"></a>参数
 
 |名称|类型|说明|
 |---|---|---|
@@ -1823,14 +1823,12 @@ var veggies = Office.context.mailbox.item.getRegExMatchesByName("veggies");
 
 以异步方式返回邮件的主题或正文中选定的数据。
 
-如果没有选定内容，但光标位于正文或主题中，此方法将会为所选数据返回 null。如果选定的是字段，而不是正文或主题，则此方法返回 `InvalidSelection` 错误。
+如果没有选定内容，但光标在正文或主题中，则该方法将返回所选数据的空字符串。 如果选定的是字段，而不是正文或主题，则此方法返回 `InvalidSelection` 错误。
 
 > [!NOTE]
-> 在 web 上的 Outlook 中，如果未选择任何文本，但光标在正文中，则该方法将返回字符串 "null"。 若要检查此情况，请包含与以下内容类似的代码：
->
-> `var selectedText = (asyncResult.value.endPosition === asyncResult.value.startPosition) ? "" : asyncResult.value.data;`
+> 在 Outlook 网页版中，如果未选中任何文本，但光标位于正文中，则该方法返回字符串“null”。 若要检查此情况，请参阅本节后面的示例。
 
-##### <a name="parameters"></a>Parameters
+##### <a name="parameters"></a>参数
 
 |名称|类型|属性|说明|
 |---|---|---|---|
@@ -1865,11 +1863,13 @@ function getCallback(asyncResult) {
   var text = asyncResult.value.data;
   var prop = asyncResult.value.sourceProperty;
 
-  Office.context.mailbox.item.setSelectedDataAsync('Setting ' + prop + ': ' + text, {}, setCallback);
-}
+  // Handle where Outlook on the web erroneously returns "null" instead of empty string.
+  if (Office.context.mailbox.diagnostics.hostName === 'OutlookWebApp'
+      && asyncResult.value.endPosition === asyncResult.value.startPosition) {
+    text = "";
+  }
 
-function setCallback(asyncResult) {
-  // Check for errors.
+  console.log("Selected text in " + prop + ": " + text);
 }
 ```
 
@@ -2077,7 +2077,7 @@ Office.context.mailbox.item.removeAttachmentAsync(
 
 目前，受支持的事件`Office.EventType.AppointmentTimeChanged`类型`Office.EventType.RecipientsChanged`是、和`Office.EventType.RecurrenceChanged`
 
-##### <a name="parameters"></a>Parameters
+##### <a name="parameters"></a>参数
 
 | 名称 | 类型 | 属性 | 说明 |
 |---|---|---|---|

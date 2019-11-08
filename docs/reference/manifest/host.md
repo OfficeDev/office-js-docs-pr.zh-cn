@@ -1,20 +1,20 @@
 ---
 title: 清单文件中的 Host 元素
 description: ''
-ms.date: 07/01/2019
+ms.date: 11/05/2019
 localization_priority: Normal
-ms.openlocfilehash: e7b557034f70b03ed57598b7ffb9f43878db7392
-ms.sourcegitcommit: 90c2d8236c6b30d80ac2b13950028a208ef60973
+ms.openlocfilehash: 824cc6ae51eb9db713a0a9a768e3ec48e3271e95
+ms.sourcegitcommit: 08c0b9ff319c391922fa43d3c2e9783cf6b53b1b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "35454893"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "38066275"
 ---
 # <a name="host-element"></a>Host 元素
 
 指定应在其中激活外接程序的单个 Office 应用程序类型。
 
-> [!IMPORTANT] 
+> [!IMPORTANT]
 > **Host** 元素的语法根据该元素是否在[基本清单](#basic-manifest)中或 [VersionOverrides](#versionoverrides-node) 节点中定义而不同。 但功能相同。  
 
 ## <a name="basic-manifest"></a>基本清单
@@ -53,7 +53,7 @@ ms.locfileid: "35454893"
 
 ## <a name="versionoverrides-node"></a>VersionOverrides 节点
 
-在 [VersionOverrides](versionoverrides.md) 中定义时，主机类型由 `xsi:type` 属性决定。 
+在 [VersionOverrides](versionoverrides.md) 中定义时，主机类型由 `xsi:type` 属性决定。
 
 ### <a name="attributes"></a>属性
 
@@ -66,7 +66,7 @@ ms.locfileid: "35454893"
 |  元素 |  必需  |  说明  |
 |:-----|:-----|:-----|
 |  [DesktopFormFactor](desktopformfactor.md)    |  是   |  定义桌面外形规格的设置。 |
-|  [MobileFormFactor](mobileformfactor.md)    |  否   |  定义移动设备规格的设置。 **注意:** 仅在 iOS 上的 Outlook 中支持此元素。 |
+|  [MobileFormFactor](mobileformfactor.md)    |  否   |  定义移动设备规格的设置。 **注意：** 仅在 iOS 和 Android 上的 Outlook 中支持此元素。 |
 |  [AllFormFactors](allformfactors.md)    |  否   |  定义所有外形规格的设置。 仅用于 Excel 中的自定义函数。 |
 
 ### <a name="xsitype"></a>xsi:type
@@ -79,7 +79,7 @@ ms.locfileid: "35454893"
 - `Presentation` (PowerPoint)
 - `Workbook` (Excel)
 
-## <a name="host-example"></a>主机示例 
+## <a name="host-example"></a>主机示例
 
 ```xml
 <Hosts>
