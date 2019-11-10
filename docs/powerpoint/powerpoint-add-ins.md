@@ -1,30 +1,30 @@
 ---
 title: PowerPoint 加载项
 description: ''
-ms.date: 09/03/2019
+ms.date: 11/07/2019
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: 86f05a70478652c546f0015e6f69e71bf3dacec0
-ms.sourcegitcommit: 7d4d721fc3d246ef8a2464bc714659cd84d6faab
+ms.openlocfilehash: d2ae12765beedd37892c84a84607b00e33b8703f
+ms.sourcegitcommit: 08c0b9ff319c391922fa43d3c2e9783cf6b53b1b
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/11/2019
-ms.locfileid: "37468740"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "38066282"
 ---
 # <a name="powerpoint-add-ins"></a>PowerPoint 加载项
 
-使用 PowerPoint 加载项，可以跨平台（包括 Windows、iOS、Mac 和浏览器）生成极具吸引力的解决方案，从而有效展示用户的演示文稿。 可以创建以下两种类型的 PowerPoint 加载项：
+使用 PowerPoint 加载项，可以跨平台（包括 Windows、iPad、Mac 和浏览器）生成极具吸引力的解决方案，从而有效展示用户的演示文稿。 可以创建以下两种类型的 PowerPoint 加载项：
 
 - 使用**内容外接程序**向演示文稿添加动态 HTML5 内容。有关示例，请参阅可用于将交互关系图从 LucidChart 插入面板的 [PowerPoint 的 LucidChart 关系图](https://appsource.microsoft.com/product/office/WA104380117)外接程序。
 
-- 使用**任务窗格加载项**引入参考信息或通过服务将数据插入演示文稿。 有关示例，请参阅可用于在演示文稿中添加专业照片的 [Pixton 漫画人物](https://appsource.microsoft.com/product/office/WA104380907)加载项。 
+- 使用**任务窗格加载项**引入参考信息或通过服务将数据插入演示文稿。 有关示例，请参阅可用于在演示文稿中添加专业照片的 [Pixton 漫画人物](https://appsource.microsoft.com/product/office/WA104380907)加载项。
 
 ## <a name="powerpoint-add-in-scenarios"></a>PowerPoint 加载项方案
 
 本文中的代码示例展示了开发 PowerPoint 加载项涉及的一些基本任务。 请注意以下几点：
 
-- 这些示例使用 `app.showNotification` 函数来显示信息，该函数包含在 Visual Studio Office 加载项项目模板中。 如果你没打算使用 Visual Studio 开发加载项，则需要将 `showNotification` 函数替换为你自己的代码。 
+- 这些示例使用 `app.showNotification` 函数来显示信息，该函数包含在 Visual Studio Office 加载项项目模板中。 如果你没打算使用 Visual Studio 开发加载项，则需要将 `showNotification` 函数替换为你自己的代码。
 
 - 其中一些示例还使用在这些函数的作用域外声明的 `Globals` 对象：`var Globals = {activeViewHandler:0, firstSlideId:0};`
 
