@@ -1,15 +1,15 @@
 ---
 title: Identity API 要求集
 description: ''
-ms.date: 06/20/2019
+ms.date: 11/11/2019
 ms.prod: non-product-specific
 localization_priority: Normal
-ms.openlocfilehash: a2992569f6807499156ef13aa6663267839e1853
-ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
+ms.openlocfilehash: 96f5c305f4ecfe0fdc0ee89aed6955e090f87b02
+ms.sourcegitcommit: 88d81aa2d707105cf0eb55d9774b2e7cf468b03a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "35127077"
+ms.lasthandoff: 11/13/2019
+ms.locfileid: "38301923"
 ---
 # <a name="identity-api-requirement-sets"></a>Identity API 要求集
 
@@ -17,11 +17,13 @@ ms.locfileid: "35127077"
 
 Office 外接程序在多个 Office 版本中运行。 下表列出了 Identity API 要求集、支持该要求集的 Office 主机应用程序，以及 Office 应用程序的内部版本或版本号。
 
-|  要求集  | Windows 上的 Office 2013 或更高版本<br>（一次性购买） | Windows 版 Office<br>(连接到 Office 365 订阅) |  IPad 上的 Office<br>(连接到 Office 365 订阅)  |  Mac 上的 Office<br>(连接到 Office 365 订阅)  | 网上的 Office  | SharePoint Online | OneDrive.com |Outlook.com & Exchange Online|
+|  要求集  | Windows 上的 Office 2013 或更高版本<br>（一次性购买） | Windows 版 Office<br>（已连接到 Office 365 订阅） |  iPad 版 Office<br>（已连接到 Office 365 订阅）  |  Mac 版 Office<br>（连接到 Office 365 订阅）  | Office 网页版  | SharePoint Online | OneDrive.com |Outlook.com & Exchange Online|
 |:-----|-----|:-----|:-----|:-----|:-----|:-----|:-----|:-----|
-| IdentityAPI 1.1  | 不适用 | 预览<b>*</b> | 即将推出 | 预览<b>*</b> | 预览<b>*</b> | 预览<b>*</b>| 即将推出 | 即将推出 |
+| IdentityAPI 预览  | 不适用 | 预览<b>*</b> | 即将推出 | 预览<b>*</b> | 预览<b>* &#8224;</b> | 预览<b>* &#8224;</b>| 即将推出 | 即将推出 |
 
-> **&#42;** 在预览阶段, 标识 API 需要 Office 365 (Office 的订阅版本)。 你应该使用来自预览体验成员频道的最新每月版本和内部版本。 你可能需要成为 Office 预览体验成员，才能获取此版本。 有关详细信息，请参阅[成为 Office 预览体验成员](https://products.office.com/office-insider?tab=tab-1)。 请注意，当内部版本进入生产半年频道时，将关闭对该内部版本的预览功能（包括 SSO）的支持。
+> **&#42;** 在预览阶段，标识 API 需要 Office 365 （Office 的订阅版本）。 你应该使用来自预览体验成员频道的最新每月版本和内部版本。 你可能需要成为 Office 预览体验成员，才能获取此版本。 有关详细信息，请参阅[成为 Office 预览体验成员](https://products.office.com/office-insider?tab=tab-1)。 请注意，当内部版本进入生产半年频道时，将关闭对该内部版本的预览功能（包括 SSO）的支持。
+>
+> **&#8224;** 在这些平台上使用 SSO Api 的外接程序将仅在用户的租户管理员向外接程序授予许可时才有效。 用户不能同意，即使是对自己的 Azure AD 配置文件也不允许。
 
 若要详细了解版本、内部版本号和 Office Online Server，请参阅：
 
@@ -34,9 +36,9 @@ Office 外接程序在多个 Office 版本中运行。 下表列出了 Identity 
 
 若要了解通用 API 要求集，请参阅 [Office 通用 API 要求集](office-add-in-requirement-sets.md)。
 
-## <a name="identityapi-11"></a>IdentityAPI 1.1
+## <a name="identityapi-preview"></a>IdentityAPI 预览
 
-单一登录 IdentityAPI 1.1 是该 API 的第一版。 有关此 API 的详细信息，请参阅[在外接程序中启用 SSO](/office/dev/add-ins/develop/sso-in-office-add-ins) 的 [SSO API 参考](/office/dev/add-ins/develop/sso-in-office-add-ins#sso-api-reference)部分。
+有关此 API 的详细信息，请参阅在[tokenhelper.getaccesstoken 以便](/javascript/api/office-runtime/officeruntime.auth#getaccesstoken-options-)中使用承诺的版本或在[getAccessTokenAsync](/javascript/api/office/office.auth#getaccesstokenasync-options--callback-)中使用回调的版本。
 
 ## <a name="see-also"></a>另请参阅
 

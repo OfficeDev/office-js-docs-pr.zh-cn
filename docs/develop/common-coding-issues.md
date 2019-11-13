@@ -1,14 +1,14 @@
 ---
 title: 常见的编码问题和意外的平台行为
 description: 开发人员经常遇到的 Office JavaScript API 平台问题的列表。
-ms.date: 10/31/2019
+ms.date: 11/06/2019
 localization_priority: Normal
-ms.openlocfilehash: d39c379961833cdb924628becf2c2da3f7e271b9
-ms.sourcegitcommit: 59d29d01bce7543ebebf86e5a86db00cf54ca14a
+ms.openlocfilehash: a4d7a09c1645bea181060157d933036d1924044f
+ms.sourcegitcommit: 88d81aa2d707105cf0eb55d9774b2e7cf468b03a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "37924792"
+ms.lasthandoff: 11/13/2019
+ms.locfileid: "38301930"
 ---
 # <a name="common-coding-issues-and-unexpected-platform-behaviors"></a>常见的编码问题和意外的平台行为
 
@@ -73,16 +73,16 @@ range.format.font.size = 10;
 - 只读属性：可通过导航设置子属性。
 - 可写属性：必须使用 JSON 结构设置子属性（且不能通过导航进行设置）。
 
-## <a name="excel-range-limits"></a>Excel 区域限制
+## <a name="excel-data-transfer-limits"></a>Excel 数据传输限制
 
-如果您正在构建使用区域的 Excel 加载项，请注意以下大小限制：
+如果您正在构建 Excel 外接程序，请注意与工作簿交互时的以下大小限制：
 
 - Excel 网页版将请求和响应的有效负载大小限制为 5MB。 如果超过该限制，将引发 `RichAPI.Error`。
-- 对于 set 操作，范围限制为5000000个单元格。
+- 对于 get 操作，范围限制为5000000个单元格。
 
-如果您希望用户输入超出这些限制，请务必检查数据并将区域拆分为多个对象。 您还需要提交多个`context.sync()`呼叫，以避免将较小的范围操作再次成批组合在一起。
+如果您希望用户输入超出这些限制，请务必先检查数据，然后再调用`context.sync()`。 根据需要将操作拆分为较小的部分。 请务必为每`context.sync()`个子操作调用，以避免这些操作再次成批组合。
 
-您的外接程序可能能够使用[RangeAreas](/javascript/api/excel/excel.rangeareas)对较大范围内的单元格进行战略更新。 有关详细信息，请参阅[在 Excel 外接程序中同时处理多个区域](../excel/excel-add-ins-multiple-ranges.md)。
+这些限制通常由大型区域所超过。 您的外接程序可能能够使用[RangeAreas](/javascript/api/excel/excel.rangeareas)对较大范围内的单元格进行战略更新。 有关详细信息，请参阅[在 Excel 外接程序中同时处理多个区域](../excel/excel-add-ins-multiple-ranges.md)。
 
 ## <a name="setting-read-only-properties"></a>设置只读属性
 
