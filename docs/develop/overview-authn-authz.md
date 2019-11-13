@@ -1,14 +1,14 @@
 ---
 title: Office 加载项中的身份验证和授权概述
 description: ''
-ms.date: 11/05/2019
+ms.date: 11/11/2019
 localization_priority: Priority
-ms.openlocfilehash: 7960e47b615828bb844660565804db9ec7e4e1db
-ms.sourcegitcommit: 21aa084875c9e07a300b3bbe8852b3e5dd163e1d
+ms.openlocfilehash: 20b947607623ee6a8fa08995a5c08918a6fd5d87
+ms.sourcegitcommit: 88d81aa2d707105cf0eb55d9774b2e7cf468b03a
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "38001459"
+ms.lasthandoff: 11/13/2019
+ms.locfileid: "38301944"
 ---
 # <a name="overview-of-authentication-and-authorization-in-office-add-ins"></a>Office 加载项中的身份验证和授权概述
 
@@ -37,7 +37,7 @@ Web 应用程序和 Office 加载项默认允许匿名访问，但你可要求�
 
 ## <a name="user-authentication-with-sso"></a>在使用 SSO 的情况下进行用户身份验证
 
-要使用 SSO 来验证用户的身份，任务窗格或函数文件中的代码会调用 [getAccessToken](/javascript/api/office/officeruntime.auth#getAccessToken-options--callback-) 方法。 如果用户未登录 Office，则 Office 将打开一个对话框，并将其导航到 Azure Active Directory 登录页面。 用户登录后或者在用户已登录时，该方法会返回一个访问令牌。 此令牌是**代理**流中的启动令牌。 （详见[使用 SSO 访问 Microsoft Graph](#access-to-microsoft-graph-with-sso)。）但是，它也可用作 ID 令牌，因为它包含多个对当前用户而言唯一的声明，例如 `preferred_username`、`name`、`sub` 和 `oid`。 要查看指南了解将哪个属性用作最终用户 ID，请参阅 [Microsoft 标识平台访问令牌](https://docs.microsoft.com/azure/active-directory/develop/access-tokens#payload-claims)。 有关上述某一令牌的示例，请参阅[访问令牌示例](sso-in-office-add-ins.md#example-access-token)。
+要使用 SSO 来验证用户的身份，任务窗格或函数文件中的代码会调用 [getAccessToken](/javascript/api/office-runtime/officeruntime.auth#getaccesstoken-options-) 方法。 如果用户未登录 Office，则 Office 将打开一个对话框，并将其导航到 Azure Active Directory 登录页面。 用户登录后或者在用户已登录时，该方法会返回一个访问令牌。 此令牌是**代理**流中的启动令牌。 （详见[使用 SSO 访问 Microsoft Graph](#access-to-microsoft-graph-with-sso)。）但是，它也可用作 ID 令牌，因为它包含多个对当前用户而言唯一的声明，例如 `preferred_username`、`name`、`sub` 和 `oid`。 要查看指南了解将哪个属性用作最终用户 ID，请参阅 [Microsoft 标识平台访问令牌](https://docs.microsoft.com/azure/active-directory/develop/access-tokens#payload-claims)。 有关上述某一令牌的示例，请参阅[访问令牌示例](sso-in-office-add-ins.md#example-access-token)。
 
 代码从令牌中提取所需的声明后，它将使用该值在你保留的用户表或用户数据库中查找用户。 使用数据库来用户用户首选项或用户帐户状态等用户相关信息。 由于你在使用 SSO，因此你的用户不单独登录到你的加载项，你无需存储用户的密码。
 
@@ -50,7 +50,7 @@ Web 应用程序和 Office 加载项默认允许匿名访问，但你可要求�
 
 ## <a name="access-to-microsoft-graph-with-sso"></a>在使用 SSO 的情况下访问 Microsoft Graph
 
-要使用 SSO 来获取访问 Microsoft Graph 的权限，任务窗格或函数文件中的加载项会调用 [getAccessToken](/javascript/api/office/officeruntime.auth#getAccessToken-options--callback-) 方法。 如果用户未登录 Office，则 Office 将打开一个对话框，并将其导航到 Azure Active Directory 登录页面。 用户登录后或者在用户已登录时，该方法会返回一个访问令牌。 此令牌是**代理**流中的启动令牌。 具体而言，它有一个带 `access_as_user` 值的 `scope` 声明。 要在指南中了解令牌中的声明，请参阅 [Microsoft 标识平台访问令牌](https://docs.microsoft.com/azure/active-directory/develop/access-tokens#payload-claims)。 有关上述某一令牌的示例，请参阅[访问令牌示例](sso-in-office-add-ins.md#example-access-token)。
+要使用 SSO 来获取访问 Microsoft Graph 的权限，任务窗格或函数文件中的加载项会调用 [getAccessToken](/javascript/api/office-runtime/officeruntime.auth#getaccesstoken-options-) 方法。 如果用户未登录 Office，则 Office 将打开一个对话框，并将其导航到 Azure Active Directory 登录页面。 用户登录后或者在用户已登录时，该方法会返回一个访问令牌。 此令牌是**代理**流中的启动令牌。 具体而言，它有一个带 `access_as_user` 值的 `scope` 声明。 要在指南中了解令牌中的声明，请参阅 [Microsoft 标识平台访问令牌](https://docs.microsoft.com/azure/active-directory/develop/access-tokens#payload-claims)。 有关上述某一令牌的示例，请参阅[访问令牌示例](sso-in-office-add-ins.md#example-access-token)。
 
 在代码获取令牌后，它会在**代理**流中使用该令牌来获取第二个令牌，即到 Microsoft Graph 的访问令牌。
 

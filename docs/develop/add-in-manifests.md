@@ -3,12 +3,12 @@ title: Office 加载项 XML 清单
 description: ''
 ms.date: 09/26/2019
 localization_priority: Priority
-ms.openlocfilehash: 1249278dd542de4ca5db3065b0ee41066b642339
-ms.sourcegitcommit: 528577145b2cf0a42bc64c56145d661c4d019fb8
+ms.openlocfilehash: 9a3081c13756bee668081e1fb9d04cf5458320d4
+ms.sourcegitcommit: 88d81aa2d707105cf0eb55d9774b2e7cf468b03a
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "37353830"
+ms.lasthandoff: 11/13/2019
+ms.locfileid: "38301972"
 ---
 # <a name="office-add-ins-xml-manifest"></a>Office 加载项 XML 清单
 
@@ -315,7 +315,7 @@ _\*\* 仅通过 AppSource 分发的加载项才需要 SupportUrl。_
               </Group>
 
               <!-- Label of your tab -->
-              <!-- If validating with XSD it needs to be at the end, we might change this before release -->
+              <!-- If validating with XSD it needs to be at the end -->
               <Label resid="Contoso.Tab1.TabLabel" />
             </CustomTab>
           </ExtensionPoint>

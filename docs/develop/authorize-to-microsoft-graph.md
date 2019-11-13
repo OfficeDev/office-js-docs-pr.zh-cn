@@ -1,14 +1,14 @@
 ---
 title: 使用 SSO 对 Microsoft Graph 授权
 description: ''
-ms.date: 11/05/2019
+ms.date: 11/11/2019
 localization_priority: Priority
-ms.openlocfilehash: 03fa2b862d397ea9a28589d6d1aa9b1030a0b6c5
-ms.sourcegitcommit: 21aa084875c9e07a300b3bbe8852b3e5dd163e1d
+ms.openlocfilehash: 44abb05c49786f4b7e050feb7e8eaf8c535f8de8
+ms.sourcegitcommit: 88d81aa2d707105cf0eb55d9774b2e7cf468b03a
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "38001437"
+ms.lasthandoff: 11/13/2019
+ms.locfileid: "38301951"
 ---
 # <a name="authorize-to-microsoft-graph-with-sso-preview"></a>使用 SSO 对 Microsoft Graph 授权（预览版）
 
@@ -29,7 +29,7 @@ ms.locfileid: "38001437"
 
 ![显示 SSO 流程的关系图](../images/sso-access-to-microsoft-graph.png)
 
-1. 在加载项中，JavaScript 调用新的 Office.js API [getAccessToken](/javascript/api/office/officeruntime.auth#getaccesstoken-options--callback-)。 该操作告诉 Office 主机应用程序获取加载项的访问令牌。 （以下称为**启动访问令牌**，因为在该过程的后期它将会被替换为另一个令牌。 有关已解码启动访问令牌的示例，请参阅[示例访问令牌](sso-in-office-add-ins.md#example-access-token)。）
+1. 在加载项中，JavaScript 调用新的 Office.js API [getAccessToken](/javascript/api/office-runtime/officeruntime.auth#getaccesstoken-options-)。 该操作告诉 Office 主机应用程序获取加载项的访问令牌。 （以下称为**启动访问令牌**，因为在该过程的后期它将会被替换为另一个令牌。 有关已解码启动访问令牌的示例，请参阅[示例访问令牌](sso-in-office-add-ins.md#example-access-token)。）
 1. 如果用户未登录，Office 主机应用会打开弹出窗口，以供用户登录。
 1. 如果当前用户是首次使用加载项，则会看到同意提示。
 1. Office 主机应用程序从当前用户的 Azure AD v2.0 终结点请求获取**启动访问令牌**。

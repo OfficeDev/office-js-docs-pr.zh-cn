@@ -1,14 +1,14 @@
 ---
 title: 为 Office 加载项启用单一登录
 description: ''
-ms.date: 11/05/2019
+ms.date: 11/11/2019
 localization_priority: Priority
-ms.openlocfilehash: 88bc29b3a1038bf8df74d30621015b472572f7e3
-ms.sourcegitcommit: 21aa084875c9e07a300b3bbe8852b3e5dd163e1d
+ms.openlocfilehash: e32f9429ee05772b1a36f5e3408eb775cc03919a
+ms.sourcegitcommit: 88d81aa2d707105cf0eb55d9774b2e7cf468b03a
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "38001444"
+ms.lasthandoff: 11/13/2019
+ms.locfileid: "38301937"
 ---
 # <a name="enable-single-sign-on-for-office-add-ins-preview"></a>为 Office 加载项启用单一登录（预览）
 
@@ -39,7 +39,7 @@ SSO 要求使用 Office 365（Office 的订阅版本）。 你应该使用来自
 
 ![显示 SSO 流程的关系图](../images/sso-overview-diagram.png)
 
-1. 在加载项中，JavaScript 调用新的 Office.js API [getAccessToken](/javascript/api/office/officeruntime.auth#getAccessToken-options--callback-)。 该操作告诉 Office 主机应用程序获取加载项的访问令牌。 请参阅[示例访问令牌](#example-access-token)。
+1. 在加载项中，JavaScript 调用新的 Office.js API [getAccessToken](/javascript/api/office-runtime/officeruntime.auth#getaccesstoken-options-)。 该操作告诉 Office 主机应用程序获取加载项的访问令牌。 请参阅[示例访问令牌](#example-access-token)。
 2. 如果用户未登录，Office 主机应用会打开弹出窗口，以供用户登录。
 3. 如果当前用户是首次使用加载项，则会看到同意提示。
 4. Office 主机应用程序从当前用户的 Azure AD v2.0 终结点请求获取**加载项令牌**。
@@ -96,7 +96,7 @@ SSO 要求使用 Office 365（Office 的订阅版本）。 你应该使用来自
 
 将 JavaScript 添加到加载项，以执行以下操作：
 
-* 调用 [getAccessToken](/javascript/api/office/officeruntime.auth#getAccessToken-options--callback-)。
+* 调用 [getAccessToken](/javascript/api/office-runtime/officeruntime.auth#getaccesstoken-options-)。
 
 * 解析访问令牌或将其传递到加载项的服务器端代码。
 
@@ -227,10 +227,10 @@ Web API 收到访问令牌后，可以在使用该令牌前对其进行验证。
 
 ### <a name="getaccesstoken"></a>getAccessToken
 
-OfficeRuntime [Auth](/javascript/api/office/officeruntime.auth) 命令空间 `OfficeRuntime.auth` 提供了方法 `getAccessToken`，它使 Office 主机能够获取加载项的 Web 应用程序的访问令牌。 这也使加载项能够间接访问已登录用户的 Microsoft Graph 数据，而不需要用户第二次登录。
+OfficeRuntime [Auth](/javascript/api/office-runtime/officeruntime.auth) 命令空间 `OfficeRuntime.Auth` 提供了方法 `getAccessToken`，它使 Office 主机能够获取加载项的 Web 应用程序的访问令牌。 这也使加载项能够间接访问已登录用户的 Microsoft Graph 数据，而不需要用户第二次登录。
 
 ```typescript
-getAccessToken(options?: AuthOptions, callback?: (result: AsyncResult<string>) => void): void;
+getAccessToken(options?: AuthOptions: (result: AsyncResult<string>) => void): void;
 ```
 
 该方法调用 Azure Active Directory V 2.0 端点以获取令牌来访问加载项的 Web 应用程序。 这样可以使加载项识别用户。 通过[“代表”OAuth 流](/azure/active-directory/develop/active-directory-v2-protocols-oauth-on-behalf-of)，服务器端代码可以使用此令牌访问加载项 Web 应用程序的 Microsoft Graph。
@@ -244,8 +244,8 @@ getAccessToken(options?: AuthOptions, callback?: (result: AsyncResult<string>) =
 
 #### <a name="parameters"></a>参数
 
-`options` - 可选。 接受 [AuthOptions](/javascript/api/office/officeruntime.authoptions) 对象（参见下文）以定义登录行为。
+`options` - 可选。 接受 [AuthOptions](/javascript/api/office-runtime/officeruntime.authoptions) 对象（参见下文）以定义登录行为。
 
 `callback` - 可选。 接受可以解析用户 ID 的令牌或使用“代表”流中的令牌来访问 Microsoft Graph 的回调方法。 如果 [AsyncResult](/javascript/api/office/office.asyncresult) `.status`为“成功”，则 `AsyncResult.value` 是原始 AAD v。 2.0 格式的访问令牌。
 
-当 Office 从 AAD v 获取加载项的访问令牌时，[AuthOptions](/javascript/api/office/officeruntime.authoptions) 接口会提供用户体验选项。 2.0 使用 `getAccessToken` 方法。
+当 Office 从 AAD v 获取加载项的访问令牌时，[AuthOptions](/javascript/api/office-runtime/officeruntime.authoptions) 接口会提供用户体验选项。 2.0 使用 `getAccessToken` 方法。
