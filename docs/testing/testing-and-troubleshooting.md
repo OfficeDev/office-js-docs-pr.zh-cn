@@ -1,14 +1,14 @@
 ---
 title: 排查 Office 加载项中的用户错误
 description: ''
-ms.date: 09/09/2019
+ms.date: 11/05/2019
 localization_priority: Priority
-ms.openlocfilehash: 8c1a39e4574f7e8ea60cdf32ff3139d9b929fe5d
-ms.sourcegitcommit: 24303ca235ebd7144a1d913511d8e4fb7c0e8c0d
+ms.openlocfilehash: 321b2cfedea659ce783f63097fbb3ddabf93a38d
+ms.sourcegitcommit: 88d81aa2d707105cf0eb55d9774b2e7cf468b03a
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/11/2019
-ms.locfileid: "36838527"
+ms.lasthandoff: 11/13/2019
+ms.locfileid: "38301979"
 ---
 # <a name="troubleshoot-user-errors-with-office-add-ins"></a>排查 Office 加载项中的用户错误
 
@@ -113,10 +113,34 @@ Office.context.ui.displayDialogAsync(startAddress, {displayInFrame:true}, callba
 #### <a name="for-ios"></a>对于 iOS：
 在加载项中通过 JavaScript 调用 `window.location.reload(true)`，以强制重载。也可以重新安装 Office。
 
+## <a name="changes-to-static-files-such-as-javascript-html-and-css-do-not-take-effect"></a>对静态文件（例如 JavaScript、HTML 和 CSS）的更改未生效
+
+浏览器可能正在缓存这些文件。 若要阻止此操作，请在开发时关闭客户端缓存。 详细信息取决于你所使用的服务器类型。 在大多数情况下，它涉及将某些标头添加到 HTTP 响应。 我们建议使用以下设置：
+
+- Cache-Control：“private、no-cache、no-store”
+- Pragma：“no-cache”
+- 过期：“-1”
+
+有关在 Node.JS Express 服务器中执行此操作的示例，请参阅[此 app.js 文件](https://github.com/OfficeDev/Office-Add-in-NodeJS-SSO/blob/master/Complete/app.js)。 有关 ASP.NET 项目中的示例，请参阅[此 cshtml 文件](https://github.com/OfficeDev/Office-Add-in-ASPNET-SSO/blob/master/src/Office-Add-in-ASPNET-SSO-WebAPI/Views/Shared/_Layout.cshtml)。
+
+如果加载项托管在 Internet Information Server (IIS) 中，则还可以将以下内容添加到 web.config 中。
+
+```xml
+<system.webServer>
+  <staticContent>
+    <clientCache cacheControlMode="UseMaxAge" cacheControlMaxAge="0.00:00:00" cacheControlCustom="must-revalidate" />
+  </staticContent>
+```
+
+如果这些步骤一开始似乎不起作用，则可能需要清除浏览器的缓存。 请通过浏览器的 UI 执行此操作。 有时，当你尝试在边缘 UI 中清除边缘缓存时，无法成功清除它。 如果出现这种情况，请在 Windows 命令提示符中运行以下命令。
+
+```bash
+del /s /f /q %LOCALAPPDATA%\Packages\Microsoft.Win32WebViewHost_cw5n1h2txyewy\AC\#!123\INetCache\
+```
+
 ## <a name="see-also"></a>另请参阅
 
 - [在 Office 网页版中调试加载项](debug-add-ins-in-office-online.md) 
 - [将 Office 外接程序旁加载到 iPad 和 Mac 上](sideload-an-office-add-in-on-ipad-and-mac.md)  
 - [在 iPad 和 Mac 上调试 Office 外接程序](debug-office-add-ins-on-ipad-and-mac.md)  
 - [验证并排查清单问题](troubleshoot-manifest.md)
-    
