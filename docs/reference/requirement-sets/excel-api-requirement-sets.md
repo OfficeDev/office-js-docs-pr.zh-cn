@@ -1,15 +1,15 @@
 ---
 title: Excel JavaScript API 要求集
 description: 针对 Excel 内部版本的 Office 加载项要求集信息
-ms.date: 10/22/2019
+ms.date: 11/15/2019
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: 11fcf917b5dddb4a366465f11362c93660881597
-ms.sourcegitcommit: 5ba325cc88183a3f230cd89d615fd49c695addcf
+ms.openlocfilehash: 459f77ac474513699515e9bffe0a3e1115c525eb
+ms.sourcegitcommit: e56bd8f1260c73daf33272a30dc5af242452594f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "37681940"
+ms.lasthandoff: 11/21/2019
+ms.locfileid: "38757476"
 ---
 # <a name="excel-javascript-api-requirement-sets"></a>Excel JavaScript API 要求集
 
@@ -20,13 +20,14 @@ ms.locfileid: "37681940"
 Excel 加载项可在多个 Office 版本中运行，包括 Windows 版 Office 2016 或更高版本、Office 网页版、Mac 版 Office 和 iPad 版 Office。 下表列出了 Excel 要求集、支持各要求集的 Office 主机应用程序，以及这些应用程序的内部版本或版本号。
 
 > [!NOTE]
-> 若要在任何编号的要求集中使用 API，你应该引用 CDN 上的**生产**库：https://appsforoffice.microsoft.com/lib/1/hosted/office.js。
+> 若要在任何带编号的要求集或 `ExcelApiOnline` 中使用 API，应引用 CDN 上的“生产”**** 库：https://appsforoffice.microsoft.com/lib/1/hosted/office.js。
 >
 > 有关使用预览 API 的信息，请参阅 [Excel JavaScript 预览 API](./excel-preview-apis.md) 一文。
 
 |  要求集  |  Windows 版 Office<br>（已连接到 Office 365 订阅）  |  iPad 版 Office<br>（已连接到 Office 365 订阅）  |  Mac 版 Office<br>（已连接到 Office 365 订阅）  | Office 网页版 |
 |:-----|-----|:-----|:-----|:-----|:-----|
 | [预览](excel-preview-apis.md)  | 请使用最新的 Office 版本来试用预览 API（你可能需要加入 [Office 预览体验成员计划](https://products.office.com/office-insider)） |
+| [ExcelApiOnline](excel-api-online-requirement-set.md) | 不适用 | 不适用 | 不适用 | 最新（请参阅[要求集页面](./excel-api-online-requirement-set.md)） |
 | [ExcelApi 1.10](excel-api-1-10-requirement-set.md) | 版本 1907（内部版本 11929.20306）或更高版本 | 2.30 或更高版本 | 16.30 或更高版本 | 2019 年 10 月 |
 | [ExcelApi 1.9](excel-api-1-9-requirement-set.md)  | 版本 1903 (内部版本 11425.20204) 或更高版本 | 2.24 或更高版本 | 16.24 或更高版本 | 2019 年 5 月 |
 | [ExcelApi 1.8](excel-api-1-8-requirement-set.md)  | 版本 1808（内部版本 10730.20102）或更高版本 | 2.17 或更高版本 | 16.17 或更高版本 | 2018 年 9 月 |
