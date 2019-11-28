@@ -1,15 +1,15 @@
 ---
 title: Excel 加载项教程
 description: 在本教程中，你将学习如何构建一个 Excel 外接程序，用于创建、填充、筛选和排序表格、创建图表、冻结表格标题、保护工作表并打开对话框。
-ms.date: 09/18/2019
+ms.date: 11/26/2019
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: ef68834085486827bb0c09b86ce60bee9c9b7b3f
-ms.sourcegitcommit: a0257feabcfe665061c14b8bdb70cf82f7aca414
+ms.openlocfilehash: 1611a5d6fcded6430d9ef0d21242f6dd643ae016
+ms.sourcegitcommit: 05a883a7fd89136301ce35aabc57638e9f563288
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/18/2019
-ms.locfileid: "37035403"
+ms.lasthandoff: 11/27/2019
+ms.locfileid: "39629726"
 ---
 # <a name="tutorial-create-an-excel-task-pane-add-in"></a>教程：创建 Excel 任务窗格加载项
 
@@ -41,7 +41,7 @@ ms.locfileid: "37035403"
 
 ![Yeoman 生成器](../images/yo-office-excel.png)
 
-完成此向导后，生成器将创建项目并安装支持节点组件。
+完成此向导后，生成器会创建项目，并安装支持的 Node 组件。
 
 [!include[Yeoman generator next steps](../includes/yo-office-next-steps.md)]
 
@@ -172,13 +172,13 @@ ms.locfileid: "37035403"
 
 ### <a name="test-the-add-in"></a>测试加载项
 
-1. 完成以下步骤以启动本地 web 服务器并旁加载您的外接程序。
+1. 完成以下步骤，以启动本地 Web 服务器并旁加载你的加载项。
 
     > [!NOTE]
     > Office 加载项应使用 HTTPS，而不是 HTTP（即便是在开发时也是如此）。 如果系统在运行以下命令之一后提示你安装证书，请接受提示以安装 Yeoman 生成器提供的证书。
 
     > [!TIP]
-    > 如果你要在 Mac 上测试外接程序，请先在项目的根目录中运行以下命令，然后再继续。 运行此命令时，本地 web 服务器将启动。
+    > 如果你要在 Mac 上测试外接程序，请先在项目的根目录中运行以下命令，然后再继续。 运行此命令时，本地 Web 服务器将启动。
     >
     > ```command&nbsp;line
     > npm run dev-server
@@ -190,7 +190,7 @@ ms.locfileid: "37035403"
         npm start
         ```
 
-    - 若要在 web 上的 Excel 中测试外接程序，请在项目的根目录中运行以下命令。 运行此命令时，本地 web 服务器将启动（如果尚未运行）。
+    - 若要在 web 上的 Excel 中测试外接程序，请在项目的根目录中运行以下命令。 如果你运行此命令，本地 Web 服务器将启动（如果尚未运行的话）。
 
         ```command&nbsp;line
         npm run start:web
@@ -732,6 +732,7 @@ ms.locfileid: "37035403"
         > [!NOTE]
         > 如果该文件夹不存在，请检查以下文件夹，如果找到，则删除该文件夹的内容：
         >    - `~/Library/Containers/com.microsoft.{host}/Data/Library/Caches/`其中`{host}` ，是 Office 主机（例如， `Excel`）
+        >    - `~/Library/Containers/com.microsoft.{host}/Data/Library/Application Support/Microsoft/Office/16.0/Wef/`其中`{host}` ，是 Office 主机（例如， `Excel`）
         >    - `com.microsoft.Office365ServiceV2/Data/Caches/com.microsoft.Office365ServiceV2/`
 
 3. 如果本地 web 服务器已在运行，请关闭 "节点" 命令窗口以将其停止。
@@ -744,7 +745,7 @@ ms.locfileid: "37035403"
         npm start
         ```
 
-    - 若要在 web 上的 Excel 中测试外接程序，请在项目的根目录中运行以下命令。 运行此命令时，本地 web 服务器将启动（如果尚未运行）。
+    - 若要在 web 上的 Excel 中测试外接程序，请在项目的根目录中运行以下命令。 如果你运行此命令，本地 Web 服务器将启动（如果尚未运行的话）。
 
         ```command&nbsp;line
         npm run start:web

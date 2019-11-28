@@ -1,20 +1,20 @@
 ---
-title: "\"Context.subname\": \"邮箱. userProfile-预览要求集\""
+title: "\"Context.subname\"： \"邮箱. userProfile-预览要求集\""
 description: ''
-ms.date: 06/20/2019
+ms.date: 11/25/2019
 localization_priority: Normal
-ms.openlocfilehash: 5941c4e1276535091a3ffcf5b2fb6aa972ed8c4d
-ms.sourcegitcommit: 1fb99b1b4e63868a0e81a928c69a34c42bf7e209
+ms.openlocfilehash: 4afc64f247155576ab3f0024d1929a29a0f7dc0c
+ms.sourcegitcommit: 05a883a7fd89136301ce35aabc57638e9f563288
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/30/2019
-ms.locfileid: "36696468"
+ms.lasthandoff: 11/27/2019
+ms.locfileid: "39629256"
 ---
 # <a name="userprofile"></a>userProfile
 
 ### <a name="officeofficemdcontextofficecontextmdmailboxofficecontextmailboxmduserprofile"></a>[Office](Office.md)[.context](Office.context.md)[.mailbox](Office.context.mailbox.md).userProfile
 
-##### <a name="requirements"></a>要求
+##### <a name="requirements"></a>Requirements
 
 |要求| 值|
 |---|---|
@@ -22,21 +22,21 @@ ms.locfileid: "36696468"
 |[最低权限级别](/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
 |[适用的 Outlook 模式](/outlook/add-ins/#extension-points)| 撰写或阅读|
 
-##### <a name="members-and-methods"></a>成员和方法
+##### <a name="properties"></a>属性
 
-| 成员 | 类型 |
-|--------|------|
-| [accountType](#accounttype-string) | Member |
-| [displayName](#displayname-string) | Member |
-| [emailAddress](#emailaddress-string) | Member |
-| [timeZone](#timezone-string) | Member |
+| 属性 | 最低<br>权限级别 | 型号 | 返回类型 | 最低<br>要求集 |
+|---|---|---|---|---|
+| [accountType](#accounttype-string) | ReadItem | 撰写<br>读取 | String | 1.6 |
+| [displayName](#displayname-string) | ReadItem | 撰写<br>读取 | String | 1.0 |
+| [emailAddress](#emailaddress-string) | ReadItem | 撰写<br>读取 | String | 1.0 |
+| [timeZone](#timezone-string) | ReadItem | 撰写<br>读取 | String | 1.0 |
 
-### <a name="members"></a>Members
+## <a name="property-details"></a>属性详细信息
 
-#### <a name="accounttype-string"></a>accountType: String
+#### <a name="accounttype-string"></a>accountType： String
 
 > [!NOTE]
-> 此成员目前仅在 Outlook 2016 或更高版本 (内部版本16.9.1212 或更高版本) 中受支持。
+> 此成员目前仅在 Outlook 2016 或更高版本（内部版本16.9.1212 或更高版本）中受支持。
 
 获取与邮箱关联的用户的帐户类型。 下表中列出了可能的值。
 
@@ -70,7 +70,7 @@ console.log(Office.context.mailbox.userProfile.accountType);
 ---
 ---
 
-#### <a name="displayname-string"></a>displayName: String
+#### <a name="displayname-string"></a>displayName： String
 
 获取用户的显示名称。
 
@@ -98,7 +98,7 @@ console.log(Office.context.mailbox.userProfile.displayName);
 ---
 ---
 
-#### <a name="emailaddress-string"></a>emailAddress: String
+#### <a name="emailaddress-string"></a>emailAddress： String
 
 获取用户的 SMTP 电子邮件地址。
 
@@ -126,7 +126,7 @@ console.log(Office.context.mailbox.userProfile.emailAddress);
 ---
 ---
 
-#### <a name="timezone-string"></a>时区: 字符串
+#### <a name="timezone-string"></a>时区：字符串
 
 获取用户的默认时区。
 

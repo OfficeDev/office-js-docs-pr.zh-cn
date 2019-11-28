@@ -1,20 +1,59 @@
 ---
 title: Office. context-预览要求集
 description: ''
-ms.date: 06/25/2019
+ms.date: 11/25/2019
 localization_priority: Normal
-ms.openlocfilehash: f06509e291325c635581d902d1f4f440bd255314
-ms.sourcegitcommit: 1fb99b1b4e63868a0e81a928c69a34c42bf7e209
+ms.openlocfilehash: 5c34a7a0db5880a94ba5519059a93010a5243978
+ms.sourcegitcommit: 05a883a7fd89136301ce35aabc57638e9f563288
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/30/2019
-ms.locfileid: "36696461"
+ms.lasthandoff: 11/27/2019
+ms.locfileid: "39629186"
 ---
 # <a name="context"></a>context
 
 ### <a name="officeofficemdcontext"></a>[Office](Office.md).context
 
 Office.context 命名空间提供所有 Office 应用中的加载项所使用的共享接口。此列表仅记录 Outlook 加载项所使用的接口。有关 Office.context 命名空间的完整列表，请参阅[通用 API 中的 Office.context 引用](/javascript/api/office/office.context)。
+
+##### <a name="requirements"></a>Requirements
+
+|要求| 值|
+|---|---|
+|[最低版本的邮箱要求集](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
+|[适用的 Outlook 模式](/outlook/add-ins/#extension-points)| 撰写或阅读|
+
+##### <a name="properties"></a>属性
+
+| 属性 | 型号 | 返回类型 | 最低<br>要求集 |
+|---|---|---|---|
+| [contentLanguage](#contentlanguage-string) | 撰写<br>读取 | String | 1.0 |
+| [过程](#diagnostics-contextinformation) | 撰写<br>读取 | [ContextInformation](/javascript/api/office/office.contextinformation) | 1.0 |
+| [displayLanguage](#displaylanguage-string) | 撰写<br>读取 | String | 1.0 |
+| [host](#host-hosttype) | 撰写<br>读取 | [HostType](/javascript/api/office/office.hosttype) | 1.0 |
+| [officeTheme](#officetheme-officetheme) | 撰写<br>读取 | [OfficeTheme](/javascript/api/office/office.officetheme) | 预览 |
+| [平台](#platform-platformtype) | 撰写<br>读取 | [PlatformType](/javascript/api/office/office.platformtype) | 1.0 |
+| [满足](#requirements-requirementsetsupport) | 撰写<br>读取 | [RequirementSetSupport](/javascript/api/office/office.requirementsetsupport) | 1.0 |
+| [roamingSettings](#roamingsettings-roamingsettings) | 撰写<br>读取 | [RoamingSettings](/javascript/api/outlook/office.roamingsettings) | 1.0 |
+| [ui](#ui-ui) | 撰写<br>读取 | [UI](/javascript/api/office/office.ui) | 1.0 |
+
+### <a name="namespaces"></a>命名空间
+
+[auth](/javascript/api/office/office.auth)：提供对[单一登录（SSO）](/outlook/add-ins/authenticate-a-user-with-an-sso-token)的支持。
+
+[邮箱](office.context.mailbox.md)：提供对 Microsoft Outlook 的 outlook 外接程序对象模型的访问权限。
+
+## <a name="property-details"></a>属性详细信息
+
+#### <a name="contentlanguage-string"></a>contentLanguage： String
+
+获取用户指定的用于编辑项的区域设置（语言）。
+
+此`contentLanguage`值反映了在 Office 主机应用程序中使用**File > Options > 语言**指定的当前**编辑语言**设置。
+
+##### <a name="type"></a>类型
+
+*   String
 
 ##### <a name="requirements"></a>要求
 
@@ -23,21 +62,59 @@ Office.context 命名空间提供所有 Office 应用中的加载项所使用的
 |[最低版本的邮箱要求集](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
 |[适用的 Outlook 模式](/outlook/add-ins/#extension-points)| 撰写或阅读|
 
-##### <a name="members-and-methods"></a>成员和方法
+##### <a name="example"></a>示例
 
-| 成员 | 类型 |
-|--------|------|
-| [displayLanguage](#displaylanguage-string) | Member |
-| [officeTheme](#officetheme-object) | Member |
-| [roamingSettings](#roamingsettings-roamingsettings) | 成员 |
+```js
+function sayHelloWithContentLanguage() {
+  var myContentLanguage = Office.context.contentLanguage;
+  switch (myContentLanguage) {
+    case 'en-US':
+      write('Hello!');
+      break;
+    case 'en-NZ':
+      write('G\'day mate!');
+      break;
+  }
+}
 
-### <a name="namespaces"></a>命名空间
+// Function that writes to a div with id='message' on the page.
+function write(message){
+  document.getElementById('message').innerText += message;
+}
+```
 
-[邮箱](office.context.mailbox.md): 提供对 Microsoft Outlook 的 outlook 外接程序对象模型的访问权限。
+<br>
 
-### <a name="members"></a>Members
+---
+---
 
-#### <a name="displaylanguage-string"></a>displayLanguage: String
+#### <a name="diagnostics-contextinformationjavascriptapiofficeofficecontextinformation"></a>诊断： [ContextInformation](/javascript/api/office/office.contextinformation)
+
+获取有关加载项在其中运行的环境的信息。
+
+##### <a name="type"></a>类型
+
+*   [ContextInformation](/javascript/api/office/office.contextinformation)
+
+##### <a name="requirements"></a>Requirements
+
+|要求| 值|
+|---|---|
+|[最低版本的邮箱要求集](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
+|[适用的 Outlook 模式](/outlook/add-ins/#extension-points)| 撰写或阅读|
+
+##### <a name="example"></a>示例
+
+```js
+console.log(JSON.stringify(Office.context.diagnostics));
+```
+
+<br>
+
+---
+---
+
+#### <a name="displaylanguage-string"></a>displayLanguage： String
 
 获取用户针对 Office 主机应用程序的 UI 指定的 RFC 1766 语言标记格式的区域设置（语言）。
 
@@ -80,18 +157,44 @@ function write(message){
 ---
 ---
 
-#### <a name="officetheme-object"></a>officeTheme: Object
+#### <a name="host-hosttypejavascriptapiofficeofficehosttype"></a>主机： [HostType](/javascript/api/office/office.hosttype)
+
+获取运行外接程序的 Office 应用程序主机。
+
+##### <a name="type"></a>类型
+
+*   [HostType](/javascript/api/office/office.hosttype)
+
+##### <a name="requirements"></a>Requirements
+
+|要求| 值|
+|---|---|
+|[最低版本的邮箱要求集](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
+|[适用的 Outlook 模式](/outlook/add-ins/#extension-points)| 撰写或阅读|
+
+##### <a name="example"></a>示例
+
+```js
+console.log(JSON.stringify(Office.context.host));
+```
+
+<br>
+
+---
+---
+
+#### <a name="officetheme-officethemejavascriptapiofficeofficeofficetheme"></a>officeTheme： [officeTheme](/javascript/api/office/office.officetheme)
 
 提供了访问 Office 主题颜色的属性。
 
 > [!NOTE]
 > 此成员仅在 Windows 中的 Outlook 中受支持。
 
-使用 Office 主题颜色, 您可以将加载项的配色方案与用户选择的当前 Office 主题进行协调, 以供用户使用**office > Office 帐户 > Office 主题 UI**, 该用户在所有 Office 主机应用程序中应用。 使用 Office 主题颜色适用于邮件和任务窗格外接程序。
+使用 Office 主题颜色，您可以将加载项的配色方案与用户选择的当前 Office 主题进行协调，以供用户使用**office > Office 帐户 > Office 主题 UI**，该用户在所有 Office 主机应用程序中应用。 使用 Office 主题颜色适用于邮件和任务窗格外接程序。
 
 ##### <a name="type"></a>类型
 
-*   对象
+*   [OfficeTheme](/javascript/api/office/office.officetheme)
 
 ##### <a name="properties"></a>属性：
 
@@ -102,7 +205,7 @@ function write(message){
 |`controlBackgroundColor`| String|获取十六进制三原色形式的 Office 主题控制背景色。|
 |`controlForegroundColor`| 字符串|获取十六进制三原色形式的 Office 主题正文控制颜色。|
 
-##### <a name="requirements"></a>要求
+##### <a name="requirements"></a>Requirements
 
 |要求| 值|
 |---|---|
@@ -129,7 +232,59 @@ function applyOfficeTheme(){
 ---
 ---
 
-#### <a name="roamingsettings-roamingsettingsjavascriptapioutlookofficeroamingsettings"></a>roamingSettings: [roamingSettings](/javascript/api/outlook/office.RoamingSettings)
+#### <a name="platform-platformtypejavascriptapiofficeofficeplatformtype"></a>platform： [PlatformType](/javascript/api/office/office.platformtype)
+
+提供在其上运行外接的平台。
+
+##### <a name="type"></a>类型
+
+*   [PlatformType](/javascript/api/office/office.platformtype)
+
+##### <a name="requirements"></a>Requirements
+
+|要求| 值|
+|---|---|
+|[最低版本的邮箱要求集](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
+|[适用的 Outlook 模式](/outlook/add-ins/#extension-points)| 撰写或阅读|
+
+##### <a name="example"></a>示例
+
+```js
+console.log(JSON.stringify(Office.context.platform));
+```
+
+<br>
+
+---
+---
+
+#### <a name="requirements-requirementsetsupportjavascriptapiofficeofficerequirementsetsupport"></a>要求： [RequirementSetSupport](/javascript/api/office/office.requirementsetsupport)
+
+提供用于确定当前主机和平台上支持的要求集的方法。
+
+##### <a name="type"></a>类型
+
+*   [RequirementSetSupport](/javascript/api/office/office.requirementsetsupport)
+
+##### <a name="requirements"></a>Requirements
+
+|要求| 值|
+|---|---|
+|[最低版本的邮箱要求集](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
+|[适用的 Outlook 模式](/outlook/add-ins/#extension-points)| 撰写或阅读|
+
+##### <a name="example"></a>示例
+
+```js
+console.log(JSON.stringify(Office.context.requirements.isSetSupported("mailbox", "1.8")));
+```
+
+<br>
+
+---
+---
+
+#### <a name="roamingsettings-roamingsettingsjavascriptapioutlookofficeroamingsettings"></a>roamingSettings： [roamingSettings](/javascript/api/outlook/office.roamingsettings)
 
 获取一个对象，它表示保存到用户邮箱的邮件外接程序的自定义设置或状态。
 
@@ -139,10 +294,30 @@ function applyOfficeTheme(){
 
 *   [RoamingSettings](/javascript/api/outlook/office.RoamingSettings)
 
-##### <a name="requirements"></a>要求
+##### <a name="requirements"></a>Requirements
 
 |要求| 值|
 |---|---|
 |[最低版本的邮箱要求集](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
 |[最低权限级别](/outlook/add-ins/understanding-outlook-add-in-permissions)| 受限|
+|[适用的 Outlook 模式](/outlook/add-ins/#extension-points)| 撰写或阅读|
+
+<br>
+
+---
+---
+
+#### <a name="ui-uijavascriptapiofficeofficeui"></a>ui： [ui](/javascript/api/office/office.ui)
+
+提供可用于在 Office 外接程序中创建和操作 UI 组件（如对话框）的对象和方法。
+
+##### <a name="type"></a>类型
+
+*   [UI](/javascript/api/office/office.ui)
+
+##### <a name="requirements"></a>Requirements
+
+|要求| 值|
+|---|---|
+|[最低版本的邮箱要求集](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
 |[适用的 Outlook 模式](/outlook/add-ins/#extension-points)| 撰写或阅读|

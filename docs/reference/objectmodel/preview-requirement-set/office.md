@@ -1,14 +1,14 @@
 ---
 title: Office 命名空间 - 预览要求集
 description: ''
-ms.date: 10/30/2019
+ms.date: 11/25/2019
 localization_priority: Normal
-ms.openlocfilehash: eae6f99d166695f24f4a94e89ea4b876bea080ef
-ms.sourcegitcommit: e989096f3d19761bf8477c585cde20b3f8e0b90d
+ms.openlocfilehash: bd37b1be4d77d73cb56b0b2593ccc57dea6cab27
+ms.sourcegitcommit: 05a883a7fd89136301ce35aabc57638e9f563288
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/31/2019
-ms.locfileid: "37902100"
+ms.lasthandoff: 11/27/2019
+ms.locfileid: "39629228"
 ---
 # <a name="office"></a>Office
 
@@ -21,14 +21,14 @@ ms.locfileid: "37902100"
 |[最低版本的邮箱要求集](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
 |[适用的 Outlook 模式](/outlook/add-ins/#extension-points)| 撰写或阅读|
 
-##### <a name="members-and-methods"></a>成员和方法
+##### <a name="properties"></a>属性
 
-| 成员 | 类型 |
-|--------|------|
-| [AsyncResultStatus](#asyncresultstatus-string) | Member |
-| [CoercionType](#coerciontype-string) | Member |
-| [EventType](#eventtype-string) | Member |
-| [SourceProperty](#sourceproperty-string) | 成员 |
+| 属性 | 型号 | 返回类型 | 最低<br>要求集 |
+|---|---|---|---|
+| [AsyncResultStatus](#asyncresultstatus-string) | 撰写<br>读取 | String | 1.0 |
+| [CoercionType](#coerciontype-string) | 撰写<br>读取 | String | 1.0 |
+| [EventType](#eventtype-string) | 撰写<br>读取 | String | 1.5 |
+| [SourceProperty](#sourceproperty-string) | 撰写<br>读取 | String | 1.0 |
 
 ### <a name="namespaces"></a>命名空间
 
@@ -36,7 +36,7 @@ ms.locfileid: "37902100"
 
 [MailboxEnums](/javascript/api/outlook/office.mailboxenums.attachmentcontentformat)：包含多个`ItemType`枚举，例如`EntityType` `AttachmentType` `RecipientType` `ResponseType`、、、、和`ItemNotificationMessageType`。
 
-### <a name="members"></a>Members
+## <a name="property-details"></a>属性详细信息
 
 #### <a name="asyncresultstatus-string"></a>AsyncResultStatus： String
 
@@ -44,14 +44,14 @@ ms.locfileid: "37902100"
 
 ##### <a name="type"></a>类型
 
-*   字符串
+*   String
 
 ##### <a name="properties"></a>属性：
 
 |名称| 类型| 说明|
 |---|---|---|
-|`Succeeded`| 字符串|调用成功。|
-|`Failed`| 字符串|调用失败。|
+|`Succeeded`| String|调用成功。|
+|`Failed`| String|调用失败。|
 
 ##### <a name="requirements"></a>Requirements
 
@@ -71,14 +71,14 @@ ms.locfileid: "37902100"
 
 ##### <a name="type"></a>类型
 
-*   字符串
+*   String
 
 ##### <a name="properties"></a>属性：
 
 |名称| 类型| 说明|
 |---|---|---|
-|`Html`| 字符串|请求以 HTML 格式返回的数据。|
-|`Text`| 字符串|请求以文本格式返回的数据。|
+|`Html`| String|请求以 HTML 格式返回的数据。|
+|`Text`| String|请求以文本格式返回的数据。|
 
 ##### <a name="requirements"></a>Requirements
 
@@ -98,19 +98,19 @@ ms.locfileid: "37902100"
 
 ##### <a name="type"></a>类型
 
-*   字符串
+*   String
 
 ##### <a name="properties"></a>属性：
 
 | 名称 | 类型 | 说明 | 最低要求集 |
 |---|---|---|---|
-|`AppointmentTimeChanged`| 字符串 | 所选的约会或系列的日期或时间已更改。 | 1.7 |
-|`AttachmentsChanged`| 字符串 | 已将附件添加到项目或已从项目删除附件。 | 1.8 |
-|`EnhancedLocationsChanged`| 字符串 | 所选约会的位置已更改。 | 1.8 |
-|`ItemChanged`| 字符串 | 在任务窗格固定时，将选择不同的 Outlook 项进行查看。 | 1.5 |
-|`OfficeThemeChanged`| 字符串 | 邮箱上的 Office 主题已更改。 | 预览 |
-|`RecipientsChanged`| 字符串 | 选定项目或约会位置的收件人列表已更改。 | 1.7 |
-|`RecurrenceChanged`| 字符串 | 选定系列的定期模式已更改。 | 1.7 |
+|`AppointmentTimeChanged`| String | 所选的约会或系列的日期或时间已更改。 | 1.7 |
+|`AttachmentsChanged`| String | 已将附件添加到项目或已从项目删除附件。 | 1.8 |
+|`EnhancedLocationsChanged`| String | 所选约会的位置已更改。 | 1.8 |
+|`ItemChanged`| String | 在任务窗格固定时，将选择不同的 Outlook 项进行查看。 | 1.5 |
+|`OfficeThemeChanged`| String | 邮箱上的 Office 主题已更改。 | 预览 |
+|`RecipientsChanged`| String | 选定项目或约会位置的收件人列表已更改。 | 1.7 |
+|`RecurrenceChanged`| String | 选定系列的定期模式已更改。 | 1.7 |
 
 ##### <a name="requirements"></a>Requirements
 
@@ -130,13 +130,13 @@ ms.locfileid: "37902100"
 
 ##### <a name="type"></a>类型
 
-*   字符串
+*   String
 
 ##### <a name="properties"></a>属性：
 
 |名称| 类型| 说明|
 |---|---|---|
-|`Body`| 字符串|数据源来自邮件的正文。|
+|`Body`| String|数据源来自邮件的正文。|
 |`Subject`| String|数据源来自邮件的主题。|
 
 ##### <a name="requirements"></a>Requirements

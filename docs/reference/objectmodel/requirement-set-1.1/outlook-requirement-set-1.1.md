@@ -1,25 +1,25 @@
 ---
 title: Outlook 外接程序 API 要求集 1.1
 description: ''
-ms.date: 10/30/2019
+ms.date: 11/26/2019
 localization_priority: Normal
-ms.openlocfilehash: 312d40d499531eb6f93d3b1555bfb057cd4651d6
-ms.sourcegitcommit: e989096f3d19761bf8477c585cde20b3f8e0b90d
+ms.openlocfilehash: 1c2e8ea26cac7ff630961b176391ef1adf2249fd
+ms.sourcegitcommit: 05a883a7fd89136301ce35aabc57638e9f563288
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/31/2019
-ms.locfileid: "37901953"
+ms.lasthandoff: 11/27/2019
+ms.locfileid: "39629235"
 ---
 # <a name="outlook-add-in-api-requirement-set-11"></a>Outlook 外接程序 API 要求集 1.1
 
-适用于 Office 的 JavaScript API 的 Outlook 外接程序 API 子集包括可以在 Outlook 外接程序中使用的对象、方法、属性和事件。
+适用于 Office 的 JavaScript API 的 Outlook 外接程序 API 子集包括可以在 Outlook 外接程序中使用的对象、方法、属性和事件。 Outlook JavaScript API 1.1 （邮箱1.1）是第一个 API 版本。
 
 > [!NOTE]
-> 本文档适用于最新要求集之外的[要求集](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)。 
+> 本文档适用于最新要求集之外的[要求集](../../requirement-sets/outlook-api-requirement-sets.md)。
 
 ## <a name="whats-new-in-11"></a>1.1 中的新增功能有哪些？
 
-要求集 1.1 包括要求集 1.0 的所有功能。它添加了外接程序访问邮件和约会的正文以及修改当前项的功能。
+要求集1.1 包括在 Outlook 中支持的所有[通用 API 要求集](../../requirement-sets/office-add-in-requirement-sets.md)。 它添加了外接程序访问邮件和约会的正文以及修改当前项的功能。
 
 ### <a name="change-log"></a>更改日志
 

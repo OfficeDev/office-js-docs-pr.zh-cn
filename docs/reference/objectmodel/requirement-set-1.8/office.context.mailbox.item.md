@@ -1,14 +1,14 @@
 ---
 title: "\"Context\"-\"邮箱\"。项目-要求集1。8"
 description: ''
-ms.date: 11/06/2019
+ms.date: 11/25/2019
 localization_priority: Normal
-ms.openlocfilehash: fe55299acc6fb10c6e0e6a4536c300c84a53664e
-ms.sourcegitcommit: 08c0b9ff319c391922fa43d3c2e9783cf6b53b1b
+ms.openlocfilehash: bb100dd4408099789d26268743264b00d3b988ac
+ms.sourcegitcommit: 05a883a7fd89136301ce35aabc57638e9f563288
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "38066198"
+ms.lasthandoff: 11/27/2019
+ms.locfileid: "39629663"
 ---
 # <a name="item"></a>item
 
@@ -31,7 +31,7 @@ ms.locfileid: "38066198"
 | [attachments](#attachments-arrayattachmentdetails) | 成员 |
 | [bcc](#bcc-recipients) | 成员 |
 | [body](#body-body) | 成员 |
-| [种类](#categories-categories) | 成员 |
+| [categories](#categories-categories) | 成员 |
 | [cc](#cc-arrayemailaddressdetailsrecipients) | 成员 |
 | [conversationId](#nullable-conversationid-string) | 成员 |
 | [dateTimeCreated](#datetimecreated-date) | 成员 |
@@ -51,9 +51,9 @@ ms.locfileid: "38066198"
 | [organizer](#organizer-emailaddressdetailsorganizer) | 成员 |
 | [recurrence](#nullable-recurrence-recurrence) | 成员 |
 | [requiredAttendees](#requiredattendees-arrayemailaddressdetailsrecipients) | 成员 |
-| [sender](#sender-emailaddressdetails) | 成员 |
-| [Webcasts&seriesid](#nullable-seriesid-string) | 成员 |
-| [start](#start-datetime) | 成员 |
+| [sender](#sender-emailaddressdetails) | Member |
+| [Webcasts&seriesid](#nullable-seriesid-string) | Member |
+| [start](#start-datetime) | Member |
 | [subject](#subject-stringsubject) | 成员 |
 | [to](#to-arrayemailaddressdetailsrecipients) | 成员 |
 | [addFileAttachmentAsync](#addfileattachmentasyncuri-attachmentname-options-callback) | 方法 |
@@ -1401,7 +1401,7 @@ Office.context.mailbox.item.addFileAttachmentFromBase64Async(
 
 目前，受支持的事件`Office.EventType.AttachmentsChanged`类型`Office.EventType.AppointmentTimeChanged`是`Office.EventType.EnhancedLocationsChanged`、 `Office.EventType.RecipientsChanged`、、 `Office.EventType.RecurrenceChanged`和。
 
-##### <a name="parameters"></a>参数
+##### <a name="parameters"></a>Parameters
 
 | 名称 | 类型 | 属性 | 说明 |
 |---|---|---|---|
@@ -1448,7 +1448,7 @@ Office.context.mailbox.item.addHandlerAsync(Office.EventType.AttachmentsChanged,
 
 如果 Office 加载项是在 Outlook 网页版中运行，`addItemAttachmentAsync` 方法可以将项附加到除正在编辑的项外的项；但既不支持也不建议这样做。
 
-##### <a name="parameters"></a>参数
+##### <a name="parameters"></a>Parameters
 
 |名称|类型|属性|说明|
 |---|---|---|---|
@@ -1778,7 +1778,7 @@ Office.context.mailbox.item.displayReplyForm(
 
 以字符串形式获取邮件的所有 internet 邮件头。 仅限阅读模式。
 
-##### <a name="parameters"></a>参数
+##### <a name="parameters"></a>Parameters
 
 |名称|类型|属性|说明|
 |---|---|---|---|
@@ -1831,7 +1831,7 @@ Office.context.mailbox.item.getAllInternetHeadersAsync(
 
 该`getAttachmentContentAsync`方法从项目中获取具有指定标识符的附件。 作为一种最佳做法，您应使用标识符在与`getAttachmentsAsync` or `item.attachments`调用一起检索到会话的同一会话中检索附件。 在 Outlook 网页版和移动设备上，附件标识符只在同一个会话中才有效。 当用户关闭应用程序时，或者如果用户开始撰写内嵌窗体，随后弹出窗体以继续在单独的窗口中。
 
-##### <a name="parameters"></a>参数
+##### <a name="parameters"></a>Parameters
 
 |名称|类型|属性|说明|
 |---|---|---|---|
@@ -1898,7 +1898,7 @@ function handleAttachmentsCallback(result) {
 
 以数组的形式获取项目的附件。 仅限撰写模式。
 
-##### <a name="parameters"></a>参数
+##### <a name="parameters"></a>Parameters
 
 |名称|类型|属性|说明|
 |---|---|---|---|
@@ -2085,7 +2085,7 @@ Office.initialize = function () {
 > [!NOTE]
 > 如果你的外接程序`getItemIdAsync`对撰写模式中的项（例如，要获取`itemId`使用 EWS 或 REST API 的使用）调用，请注意，当 Outlook 处于缓存模式下时，可能需要一段时间才能将项目同步到服务器。 在同步项目之前，无法识别`itemId`该项目并使用它将返回错误。
 
-##### <a name="parameters"></a>参数
+##### <a name="parameters"></a>Parameters
 
 |名称|类型|属性|说明|
 |---|---|---|---|
@@ -2246,18 +2246,15 @@ var veggies = Office.context.mailbox.item.getRegExMatchesByName("veggies");
 
 以异步方式返回邮件的主题或正文中选定的数据。
 
-如果没有选定内容，但光标在正文或主题中，则该方法将返回所选数据的空字符串。 如果选定的是字段，而不是正文或主题，则此方法返回 `InvalidSelection` 错误。
+如果没有选定内容，但光标位于正文或主题中，此方法将会为所选数据返回空字符串。如果选定的是字段，而不是正文或主题，则此方法返回 `InvalidSelection` 错误。
 
-> [!NOTE]
-> 在 Outlook 网页版中，如果未选中任何文本，但光标位于正文中，则该方法返回字符串“null”。 若要检查此情况，请参阅本节后面的示例。
-
-##### <a name="parameters"></a>参数
+##### <a name="parameters"></a>Parameters
 
 |名称|类型|属性|说明|
 |---|---|---|---|
 |`coercionType`|[Office.CoercionType](office.md#coerciontype-string)||请求数据的格式。如果为文本，则此方法返回纯文本作为字符串，删除任何显示的 HTML 标记。如果为 HTML，则此方法返回所选文本，不论是纯文本还是 HTML。|
 |`options`|Object|&lt;可选&gt;|包含一个或多个以下属性的对象文本。|
-|`options.asyncContext`|对象|&lt;可选&gt;|开发人员可以提供他们想要在回调方法中访问的任何对象。|
+|`options.asyncContext`|Object|&lt;可选&gt;|开发人员可以提供他们想要在回调方法中访问的任何对象。|
 |`callback`|function||方法完成后，使用单个参数 `callback`（一个 [`asyncResult`](/javascript/api/office/office.asyncresult) 对象）调用在 `AsyncResult` 参数中传递的函数。<br/><br/>若要从回调方法访问所选数据，请调用 `asyncResult.value.data`。 若要访问选定内容的源属性，请调用 `asyncResult.value.sourceProperty`，这将为 `body` 或 `subject`。|
 
 ##### <a name="requirements"></a>Requirements
@@ -2285,12 +2282,6 @@ Office.initialize = function () {
 function getCallback(asyncResult) {
   var text = asyncResult.value.data;
   var prop = asyncResult.value.sourceProperty;
-
-  // Handle where Outlook on the web erroneously returns "null" instead of empty string.
-  if (Office.context.mailbox.diagnostics.hostName === 'OutlookWebApp'
-      && asyncResult.value.endPosition === asyncResult.value.startPosition) {
-    text = "";
-  }
 
   console.log("Selected text in " + prop + ": " + text);
 }
@@ -2396,7 +2387,7 @@ var veggies = selectedMatches.veggies;
 
 获取共享文件夹、日历或邮箱中的所选约会或邮件的属性。
 
-##### <a name="parameters"></a>参数
+##### <a name="parameters"></a>Parameters
 
 |名称|类型|属性|说明|
 |---|---|---|---|
@@ -2487,7 +2478,7 @@ function saveCallback(asyncResult) {
 
 `removeAttachmentAsync` 方法删除项目中带指定标识符的附件。 最佳做法是，仅当同一个邮件应用程序在同一会话中添加了一个附件时，你才应使用该附件标识符来删除该附件。 在 Outlook 网页版和移动设备上，附件标识符只在同一个会话中才有效。 当用户关闭应用程序时，或者如果用户开始撰写内嵌窗体，随后弹出窗体以继续在单独的窗口中。
 
-##### <a name="parameters"></a>参数
+##### <a name="parameters"></a>Parameters
 
 |名称|类型|属性|说明|
 |---|---|---|---|
@@ -2536,7 +2527,7 @@ Office.context.mailbox.item.removeAttachmentAsync(
 
 目前，受支持的事件`Office.EventType.AttachmentsChanged`类型`Office.EventType.AppointmentTimeChanged`是`Office.EventType.EnhancedLocationsChanged`、 `Office.EventType.RecipientsChanged`、、 `Office.EventType.RecurrenceChanged`和。
 
-##### <a name="parameters"></a>参数
+##### <a name="parameters"></a>Parameters
 
 | 名称 | 类型 | 属性 | 说明 |
 |---|---|---|---|
