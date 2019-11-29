@@ -1,14 +1,14 @@
 ---
 title: 排查 Office 加载项中的用户错误
 description: ''
-ms.date: 11/05/2019
+ms.date: 11/26/2019
 localization_priority: Priority
-ms.openlocfilehash: 321b2cfedea659ce783f63097fbb3ddabf93a38d
-ms.sourcegitcommit: 88d81aa2d707105cf0eb55d9774b2e7cf468b03a
+ms.openlocfilehash: fed23cfde1380e7c5728c78c995d3b89d44451f2
+ms.sourcegitcommit: 05a883a7fd89136301ce35aabc57638e9f563288
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "38301979"
+ms.lasthandoff: 11/27/2019
+ms.locfileid: "39629733"
 ---
 # <a name="troubleshoot-user-errors-with-office-add-ins"></a>排查 Office 加载项中的用户错误
 

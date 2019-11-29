@@ -1,14 +1,14 @@
 ---
 title: Office.context.mailbox - 要求集 1.5
 description: ''
-ms.date: 10/21/2019
+ms.date: 11/27/2019
 localization_priority: Priority
-ms.openlocfilehash: bb63d8186d41d072aa62b180b16958d61ce9a66c
-ms.sourcegitcommit: 499bf49b41205f8034c501d4db5fe4b02dab205e
+ms.openlocfilehash: eefeab2cf6fbe78451afae7e588640fe7f50dba4
+ms.sourcegitcommit: 05a883a7fd89136301ce35aabc57638e9f563288
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/22/2019
-ms.locfileid: "37627011"
+ms.lasthandoff: 11/27/2019
+ms.locfileid: "39629684"
 ---
 # <a name="mailbox"></a>邮箱
 
@@ -89,10 +89,6 @@ ms.locfileid: "37627011"
 获取此电子邮件帐户的 REST 终结点的 URL。
 
 `restUrl` 值可用于对用户邮箱进行 [REST API](/outlook/rest/) 调用。
-
-应用必须在其清单中指定拥有 **ReadItem** 权限，才能调用阅读模式中的 `restUrl` 成员。
-
-在撰写模式中，必须调用 [`saveAsync`](Office.context.mailbox.item.md#saveasyncoptions-callback) 方法，才能使用 `restUrl` 成员。应用必须具有调用 `saveAsync` 方法的 **ReadWriteItem** 权限。
 
 > [!NOTE]
 > 连接到配置了自定义 REST URL 的 Exchange 2016 或更高版本本地安装的 Outlook 客户端将返回 `restUrl` 的无效值。

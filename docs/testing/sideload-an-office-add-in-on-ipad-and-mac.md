@@ -1,14 +1,14 @@
 ---
 title: 在 iPad 和 Mac 上旁加载 Office 加载项以供测试
 description: ''
-ms.date: 07/29/2019
+ms.date: 11/26/2019
 localization_priority: Priority
-ms.openlocfilehash: 010812cf02bb96f26db64aa89d6e9fd3ce679ea9
-ms.sourcegitcommit: cb5e1726849aff591f19b07391198a96d5749243
+ms.openlocfilehash: 4187755ecb806d5034efb67e022f0fe91bbd2559
+ms.sourcegitcommit: 05a883a7fd89136301ce35aabc57638e9f563288
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "35940869"
+ms.lasthandoff: 11/27/2019
+ms.locfileid: "39629740"
 ---
 # <a name="sideload-office-add-ins-on-ipad-and-mac-for-testing"></a>在 iPad 和 Mac 上旁加载 Office 加载项以供测试
 

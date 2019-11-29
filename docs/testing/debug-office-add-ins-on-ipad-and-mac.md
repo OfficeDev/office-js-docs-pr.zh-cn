@@ -1,14 +1,14 @@
 ---
 title: 在 Mac 上调试 Office 加载项
 description: ''
-ms.date: 07/29/2019
+ms.date: 11/26/2019
 localization_priority: Priority
-ms.openlocfilehash: 10b1181cab23252137df299736341c990978aa1d
-ms.sourcegitcommit: cb5e1726849aff591f19b07391198a96d5749243
+ms.openlocfilehash: 4a14638a6db4e1b3edb9de62a8977885547ad8e3
+ms.sourcegitcommit: 05a883a7fd89136301ce35aabc57638e9f563288
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "35940680"
+ms.lasthandoff: 11/27/2019
+ms.locfileid: "39629747"
 ---
 # <a name="debug-office-add-ins-on-a-mac"></a>在 Mac 上调试 Office 加载项
 
