@@ -3,12 +3,12 @@ title: 在 Visual Studio 中创建和调试 Office 外接程序
 description: 使用 Visual Studio 在 Windows 上的 Office 桌面客户端中创建和调试 Office 加载项
 ms.date: 10/11/2019
 localization_priority: Priority
-ms.openlocfilehash: 878cd308747ac7049ca37b21a9fcb2282a4bf60d
-ms.sourcegitcommit: 499bf49b41205f8034c501d4db5fe4b02dab205e
+ms.openlocfilehash: 8274022a6a3af6e1b5d82c9d7105142d5a49e905
+ms.sourcegitcommit: 44f1a4a3e1ae3c33d7d5fabcee14b84af94e03da
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/22/2019
-ms.locfileid: "37626829"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "39670165"
 ---
 # <a name="create-and-debug-office-add-ins-in-visual-studio"></a>在 Visual Studio 中创建和调试 Office 加载项
 
@@ -30,7 +30,7 @@ ms.locfileid: "37626829"
 - Office 2013 或更高版本
 
     > [!TIP]
-    > 如果你还没有 Office，则可加入 [Office 365 开发人员计划](https://developer.microsoft.com/office/dev-program)以获取 Office 365 订阅，或者你可以[注册免费 1 个月的试用版](https://products.office.com/en-US/try?legRedir=true&WT.intid1=ODC_ENUS_FX101785584_XT104056786&CorrelationId=64c762de-7a97-4dd1-bb96-e231d7485735)。
+    > 如果你还没有 Office，则可加入 [Office 365 开发人员计划](https://developer.microsoft.com/office/dev-program)以获取 Office 365 订阅，或者你可以[注册免费 1 个月的试用版](https://products.office.com/try?legRedir=true&WT.intid1=ODC_ENUS_FX101785584_XT104056786&CorrelationId=64c762de-7a97-4dd1-bb96-e231d7485735)。
 
 ## <a name="create-the-add-in-project-in-visual-studio"></a>在 Visual Studio 中创建外接程序项目
 
