@@ -1,14 +1,14 @@
 ---
 title: "\"Context\"-\"邮箱-预览要求集\""
 description: ''
-ms.date: 11/25/2019
+ms.date: 12/02/2019
 localization_priority: Normal
-ms.openlocfilehash: 8c67f7cf9231dd1c0db0d9a8d4ae9fb48e458435
-ms.sourcegitcommit: 05a883a7fd89136301ce35aabc57638e9f563288
+ms.openlocfilehash: 864c4f2931762ff6d8a02abb8da1a03e1abcab80
+ms.sourcegitcommit: 44f1a4a3e1ae3c33d7d5fabcee14b84af94e03da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/27/2019
-ms.locfileid: "39629193"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "39670116"
 ---
 # <a name="mailbox"></a>邮箱
 
@@ -28,28 +28,28 @@ ms.locfileid: "39629193"
 
 | 属性 | 最低<br>权限级别 | 型号 | 返回类型 | 最低<br>要求集 |
 |---|---|---|---|---|
-| [ewsUrl](#ewsurl-string) | ReadItem | 撰写<br>读取 | String | 1.0 |
-| [masterCategories](#mastercategories-mastercategories) | ReadWriteMailbox | 撰写<br>读取 | [MasterCategories](/javascript/api/outlook/office.mastercategories) | 预览 |
-| [restUrl](#resturl-string) | ReadItem | 撰写<br>读取 | String | 1.5 |
+| [ewsUrl](#ewsurl-string) | ReadItem | 撰写<br>阅读 | 字符串 | 1.0 |
+| [masterCategories](#mastercategories-mastercategories) | ReadWriteMailbox | 撰写<br>阅读 | [MasterCategories](/javascript/api/outlook/office.mastercategories) | 1.8 |
+| [restUrl](#resturl-string) | ReadItem | 撰写<br>阅读 | 字符串 | 1.5 |
 
 ##### <a name="methods"></a>方法
 
 | 方法 | 最低<br>权限级别 | 型号 | 最低<br>要求集 |
 |---|---|---|---|
-| [addHandlerAsync](#addhandlerasynceventtype-handler-options-callback) | ReadItem | 撰写<br>读取 | 1.5 |
-| [convertToEwsId](#converttoewsiditemid-restversion--string) | 受限 | 撰写<br>读取 | 1.3 |
-| [convertToLocalClientTime](#converttolocalclienttimetimevalue--localclienttime) | ReadItem | 撰写<br>读取 | 1.0 |
-| [convertToRestId](#converttorestiditemid-restversion--string) | 受限 | 撰写<br>读取 | 1.3 |
-| [convertToUtcClientTime](#converttoutcclienttimeinput--date) | ReadItem | 撰写<br>读取 | 1.0 |
-| [displayAppointmentForm](#displayappointmentformitemid) | ReadItem | 撰写<br>读取 | 1.0 |
-| [displayMessageForm](#displaymessageformitemid) | ReadItem | 撰写<br>读取 | 1.0 |
-| [displayNewAppointmentForm](#displaynewappointmentformparameters) | ReadItem | 读取 | 1.0 |
-| [Office.context.mailbox.displaynewmessageform](#displaynewmessageformparameters) | ReadItem | 撰写<br>读取 | 1.6 |
-| [getCallbackTokenAsync](#getcallbacktokenasyncoptions-callback) | ReadItem | 撰写<br>读取 | 1.5 |
-| [getCallbackTokenAsync](#getcallbacktokenasynccallback-usercontext) | ReadItem | 撰写<br>读取 | 1.3<br>1.0 |
-| [getUserIdentityTokenAsync](#getuseridentitytokenasynccallback-usercontext) | ReadItem | 撰写<br>读取 | 1.0 |
-| [makeEwsRequestAsync](#makeewsrequestasyncdata-callback-usercontext) | ReadWriteMailbox | 撰写<br>读取 | 1.0 |
-| [removeHandlerAsync](#removehandlerasynceventtype-options-callback) | ReadItem | 撰写<br>读取 | 1.5 |
+| [addHandlerAsync](#addhandlerasynceventtype-handler-options-callback) | ReadItem | 撰写<br>阅读 | 1.5 |
+| [convertToEwsId](#converttoewsiditemid-restversion--string) | 受限 | 撰写<br>阅读 | 1.3 |
+| [convertToLocalClientTime](#converttolocalclienttimetimevalue--localclienttime) | ReadItem | 撰写<br>阅读 | 1.0 |
+| [convertToRestId](#converttorestiditemid-restversion--string) | 受限 | 撰写<br>阅读 | 1.3 |
+| [convertToUtcClientTime](#converttoutcclienttimeinput--date) | ReadItem | 撰写<br>阅读 | 1.0 |
+| [displayAppointmentForm](#displayappointmentformitemid) | ReadItem | 撰写<br>阅读 | 1.0 |
+| [displayMessageForm](#displaymessageformitemid) | ReadItem | 撰写<br>阅读 | 1.0 |
+| [displayNewAppointmentForm](#displaynewappointmentformparameters) | ReadItem | 阅读 | 1.0 |
+| [Office.context.mailbox.displaynewmessageform](#displaynewmessageformparameters) | ReadItem | 撰写<br>阅读 | 1.6 |
+| [getCallbackTokenAsync](#getcallbacktokenasyncoptions-callback) | ReadItem | 撰写<br>阅读 | 1.5 |
+| [getCallbackTokenAsync](#getcallbacktokenasynccallback-usercontext) | ReadItem | 撰写<br>阅读 | 1.3<br>1.0 |
+| [getUserIdentityTokenAsync](#getuseridentitytokenasynccallback-usercontext) | ReadItem | 撰写<br>阅读 | 1.0 |
+| [makeEwsRequestAsync](#makeewsrequestasyncdata-callback-usercontext) | ReadWriteMailbox | 撰写<br>阅读 | 1.0 |
+| [removeHandlerAsync](#removehandlerasynceventtype-options-callback) | ReadItem | 撰写<br>阅读 | 1.5 |
 
 ##### <a name="events"></a>活动
 
@@ -219,7 +219,7 @@ function loadNewItem(eventArgs) {
 
 |名称| 类型| 说明|
 |---|---|---|
-|`itemId`| String|Outlook REST API 的格式化的项目 ID。|
+|`itemId`| 字符串|Outlook REST API 的格式化的项目 ID。|
 |`restVersion`| [Office.MailboxEnums.RestVersion](/javascript/api/outlook/office.mailboxenums.restversion)|指示用于检索项目 ID 的 Outlook REST API 的版本。|
 
 ##### <a name="requirements"></a>Requirements
@@ -293,7 +293,7 @@ Outlook 桌面版或 Outlook 网页版邮件应用可以对日期和时间使用
 
 |名称| 类型| 说明|
 |---|---|---|
-|`itemId`| String|适用于 Exchange Web 服务 (EWS) 的项目 ID 格式化。|
+|`itemId`| 字符串|适用于 Exchange Web 服务 (EWS) 的项目 ID 格式化。|
 |`restVersion`| [Office.MailboxEnums.RestVersion](/javascript/api/outlook/office.mailboxenums.restversion)|值指示转换的 ID 所使用的 Outlook REST API 的版本。|
 
 ##### <a name="requirements"></a>Requirements
@@ -435,7 +435,7 @@ Office.context.mailbox.displayAppointmentForm(appointmentId);
 
 |名称| 类型| 说明|
 |---|---|---|
-|`itemId`| String|现有消息的 Exchange Web 服务 (EWS) 标识符。|
+|`itemId`| 字符串|现有消息的 Exchange Web 服务 (EWS) 标识符。|
 
 ##### <a name="requirements"></a>Requirements
 
@@ -540,12 +540,12 @@ Office.context.mailbox.displayNewAppointmentForm(
 | `parameters.toRecipients` | Array.&lt;String&gt; &#124; Array.&lt;[EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails)&gt; | 包含电子邮件地址的字符串数组，或包含 "收件人" `EmailAddressDetails`行中每个收件人的对象的数组。 数组限制为最多 100 个条目。 |
 | `parameters.ccRecipients` | Array.&lt;String&gt; &#124; Array.&lt;[EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails)&gt; | 包含电子邮件地址的字符串数组，或包含 "抄送" `EmailAddressDetails`行上每个收件人的对象的数组。 数组限制为最多 100 个条目。 |
 | `parameters.bccRecipients` | Array.&lt;String&gt; &#124; Array.&lt;[EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails)&gt; | 包含电子邮件地址的字符串数组，或包含 Bcc 行上`EmailAddressDetails`每个收件人的对象的数组。 数组限制为最多 100 个条目。 |
-| `parameters.subject` | String | 包含邮件主题的字符串。 字符串长度限制为最多 255 个字符。 |
-| `parameters.htmlBody` | String | 邮件的 HTML 正文。 正文内容限制为最大 32 KB。 |
+| `parameters.subject` | 字符串 | 包含邮件主题的字符串。 字符串长度限制为最多 255 个字符。 |
+| `parameters.htmlBody` | 字符串 | 邮件的 HTML 正文。 正文内容限制为最大 32 KB。 |
 | `parameters.attachments` | Array.&lt;Object&gt; | JSON 对象（是文件或项目附件）的数组。 |
 | `parameters.attachments.type` | String | 指示附件的类型。必须是文件附件的 `file` 或项目附件的 `item`。 |
-| `parameters.attachments.name` | String | 一个包含附件的名称的字符串，最多包含 255 个字符。|
-| `parameters.attachments.url` | String | 仅在将 `type` 设置为 `file` 时使用。文件的位置的 URI。 |
+| `parameters.attachments.name` | 字符串 | 一个包含附件的名称的字符串，最多包含 255 个字符。|
+| `parameters.attachments.url` | 字符串 | 仅在将 `type` 设置为 `file` 时使用。文件的位置的 URI。 |
 | `parameters.attachments.isInline` | 布尔 | 仅在将 `type` 设置为 `file` 时使用。如果为 `true`，则表示附件将在邮件正文中内联显示，并且不应显示在附件列表中。 |
 | `parameters.attachments.itemId` | 字符串 | 仅在 `type` 设置为 `item` 时使用。 要附加到新邮件的现有电子邮件的 EWS 项目 id。 字符串最长为 100 个字符。 |
 

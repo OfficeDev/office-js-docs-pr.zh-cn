@@ -1,14 +1,14 @@
 ---
 title: 清单文件中的 Group 元素
 description: ''
-ms.date: 10/09/2018
+ms.date: 12/02/2019
 localization_priority: Normal
-ms.openlocfilehash: 7cc1f4c398eeb013eb6033b207b395466f7d72ca
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: ad1a566e259188ed20032bc5a3004736474e1f01
+ms.sourcegitcommit: 44f1a4a3e1ae3c33d7d5fabcee14b84af94e03da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32450707"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "39670130"
 ---
 # <a name="group-element"></a>Group 元素
 
@@ -35,7 +35,7 @@ ms.locfileid: "32450707"
 必需。组的标签。 **resid** 属性必须设置为 **ShortStrings** 元素（位于 **Resources** 元素）中 **String** 元素的 [id](resources.md) 属性的值。
 
 ### <a name="control"></a>Control
-一个组需要至少一个控件。
+一个组需要至少一个控件。 有关受支持的控件类型的详细信息，请参阅[Control](control.md)元素。
 
 ```xml
 <Group id="msgreadCustomTab.grp1">

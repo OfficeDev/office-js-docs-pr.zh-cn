@@ -1,14 +1,14 @@
 ---
 title: "\"Context.subname\"-\"邮箱\"-预览要求集"
 description: ''
-ms.date: 11/25/2019
+ms.date: 12/02/2019
 localization_priority: Normal
-ms.openlocfilehash: a71d3869d5dbf91db7823118a8d0409699e17cd5
-ms.sourcegitcommit: 05a883a7fd89136301ce35aabc57638e9f563288
+ms.openlocfilehash: 2ebcacb1f99df047b5f5c5ebe82c012e21e45d3c
+ms.sourcegitcommit: 44f1a4a3e1ae3c33d7d5fabcee14b84af94e03da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/27/2019
-ms.locfileid: "39629221"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "39670137"
 ---
 # <a name="item"></a>item
 
@@ -28,35 +28,35 @@ ms.locfileid: "39629221"
 
 | 属性 | 最低<br>权限级别 | 型号 | 返回类型 | 最低<br>要求集 |
 |---|---|---|---|---|
-| [attachments](#attachments-arrayattachmentdetails) | ReadItem | 读取 | Array.<[AttachmentDetails](/javascript/api/outlook/office.attachmentdetails)> | 1.0 |
+| [attachments](#attachments-arrayattachmentdetails) | ReadItem | 阅读 | Array.<[AttachmentDetails](/javascript/api/outlook/office.attachmentdetails)> | 1.0 |
 | [bcc](#bcc-recipients) | ReadItem | 邮件撰写 | [收件人](/javascript/api/outlook/office.recipients) | 1.1 |
 | [body](#body-body) | ReadItem | 撰写 | [Body](/javascript/api/outlook/office.body) | 1.1 |
-| | | 读取 | | |
-| [categories](#categories-categories) | ReadItem | 撰写 | [Categories](/javascript/api/outlook/office.categories) | 预览 |
-| | | 读取 | | |
+| | | 阅读 | | |
+| [categories](#categories-categories) | ReadItem | 撰写 | [Categories](/javascript/api/outlook/office.categories) | 1.8 |
+| | | 阅读 | | |
 | [cc](#cc-arrayemailaddressdetailsrecipients) | ReadItem | 邮件撰写 | [收件人](/javascript/api/outlook/office.recipients) | 1.0 |
 | | | 邮件读取 | <[EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails)> | |
-| [conversationId](#nullable-conversationid-string) | ReadItem | 邮件撰写 | String | 1.0 |
+| [conversationId](#nullable-conversationid-string) | ReadItem | 邮件撰写 | 字符串 | 1.0 |
 | | | 邮件读取 | | |
-| [dateTimeCreated](#datetimecreated-date) | ReadItem | 读取 | 日期 | 1.0 |
-| [dateTimeModified](#datetimemodified-date) | ReadItem | 读取 | 日期 | 1.0 |
+| [dateTimeCreated](#datetimecreated-date) | ReadItem | 阅读 | 日期 | 1.0 |
+| [dateTimeModified](#datetimemodified-date) | ReadItem | 阅读 | 日期 | 1.0 |
 | [end](#end-datetime) | ReadItem | 约会组织者 | [Time](/javascript/api/outlook/office.time) | 1.0 |
 | | | 约会与会者 | 日期 | |
 | | | 邮件读取<br>（会议请求） | 日期 | |
-| [enhancedLocation](#enhancedlocation-enhancedlocation) | ReadItem | 约会组织者 | [EnhancedLocation](/javascript/api/outlook/office.enhancedlocation) | 预览 |
+| [enhancedLocation](#enhancedlocation-enhancedlocation) | ReadItem | 约会组织者 | [EnhancedLocation](/javascript/api/outlook/office.enhancedlocation) | 1.8 |
 | | | 约会与会者 | | |
 | [from](#from-emailaddressdetailsfrom) | ReadWriteItem | 邮件撰写 | [From](/javascript/api/outlook/office.from) | 1.7 |
 | | ReadItem | 邮件读取 | [EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails) | 1.0 |
-| [internetHeaders](#internetheaders-internetheaders) | ReadItem | 邮件撰写 | [InternetHeaders](/javascript/api/outlook/office.internetheaders) | 预览 |
-| [internetMessageId](#internetmessageid-string) | ReadItem | 邮件读取 | String | 1.0 |
-| [itemClass](#itemclass-string) | ReadItem | 读取 | String | 1.0 |
-| [itemId](#nullable-itemid-string) | ReadItem | 读取 | String | 1.0 |
+| [internetHeaders](#internetheaders-internetheaders) | ReadItem | 邮件撰写 | [InternetHeaders](/javascript/api/outlook/office.internetheaders) | 1.8 |
+| [internetMessageId](#internetmessageid-string) | ReadItem | 邮件读取 | 字符串 | 1.0 |
+| [itemClass](#itemclass-string) | ReadItem | 阅读 | 字符串 | 1.0 |
+| [itemId](#nullable-itemid-string) | ReadItem | 阅读 | 字符串 | 1.0 |
 | [itemType](#itemtype-mailboxenumsitemtype) | ReadItem | 撰写 | [MailboxEnums](/javascript/api/outlook/office.mailboxenums.itemtype) | 1.0 |
-| | | 读取 | | |
+| | | 阅读 | | |
 | [location](#location-stringlocation) | ReadItem | 约会组织者 | [位置](/javascript/api/outlook/office.location) | 1.0 |
-| | | 约会与会者 | String | |
-| | | 邮件读取<br>（会议请求） | String | |
-| [normalizedSubject](#normalizedsubject-string) | ReadItem | 读取 | String | 1.0 |
+| | | 约会与会者 | 字符串 | |
+| | | 邮件读取<br>（会议请求） | 字符串 | |
+| [normalizedSubject](#normalizedsubject-string) | ReadItem | 阅读 | 字符串 | 1.0 |
 | [notificationMessages](#notificationmessages-notificationmessages) | ReadItem | 邮件撰写 | [NotificationMessages](/javascript/api/outlook/office.notificationmessages) | 1.3 |
 | | ReadItem | 邮件读取 | | |
 | [optionalAttendees](#optionalattendees-arrayemailaddressdetailsrecipients) | ReadItem | 约会组织者 | [收件人](/javascript/api/outlook/office.recipients) | 1.0 |
@@ -69,13 +69,13 @@ ms.locfileid: "39629221"
 | [requiredAttendees](#requiredattendees-arrayemailaddressdetailsrecipients) | ReadItem | 约会组织者 | [收件人](/javascript/api/outlook/office.recipients) | 1.0 |
 | | | 约会与会者 | <[EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails)> | |
 | [sender](#sender-emailaddressdetails) | ReadItem | 邮件读取 | [EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails) | 1.0 |
-| [Webcasts&seriesid](#nullable-seriesid-string) | ReadItem | 撰写 | String | 1.7 |
-| | | 读取 | | |
+| [Webcasts&seriesid](#nullable-seriesid-string) | ReadItem | 撰写 | 字符串 | 1.7 |
+| | | 阅读 | | |
 | [start](#start-datetime) | ReadItem | 约会组织者 | [Time](/javascript/api/outlook/office.time) | 1.0 |
 | | | 约会与会者 | 日期 | |
 | | | 邮件读取<br>（会议请求） | 日期 | |
 | [subject](#subject-stringsubject) | ReadItem | 撰写 | [Subject](/javascript/api/outlook/office.subject) | 1.0 |
-| | | 读取 | String | |
+| | | 阅读 | 字符串 | |
 | [to](#to-arrayemailaddressdetailsrecipients) | ReadItem | 邮件撰写 | [收件人](/javascript/api/outlook/office.recipients) | 1.0 |
 | | | 邮件读取 | <[EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails)> | |
 
@@ -84,29 +84,29 @@ ms.locfileid: "39629221"
 | 方法 | 最低<br>权限级别 | 型号 | 最低<br>要求集 |
 |---|---|---|---|
 | [addFileAttachmentAsync](#addfileattachmentasyncuri-attachmentname-options-callback) | ReadWriteItem | 撰写 | 1.1 |
-| [addFileAttachmentFromBase64Async](#addfileattachmentfrombase64asyncbase64file-attachmentname-options-callback) | ReadWriteItem | 撰写 | 预览 |
-| [addHandlerAsync](#addhandlerasynceventtype-handler-options-callback) | ReadItem | 撰写<br>读取 | 1.7 |
+| [addFileAttachmentFromBase64Async](#addfileattachmentfrombase64asyncbase64file-attachmentname-options-callback) | ReadWriteItem | 撰写 | 1.8 |
+| [addHandlerAsync](#addhandlerasynceventtype-handler-options-callback) | ReadItem | 撰写<br>阅读 | 1.7 |
 | [addItemAttachmentAsync](#additemattachmentasyncitemid-attachmentname-options-callback) | ReadWriteItem | 撰写 | 1.1 |
 | [close](#close) | 受限 | 撰写 | 1.3 |
-| [displayReplyAllForm](#displayreplyallformformdata-callback) | ReadItem | 读取 | 1.0 |
-| [displayReplyForm](#displayreplyformformdata-callback) | ReadItem | 读取 | 1.0 |
+| [displayReplyAllForm](#displayreplyallformformdata-callback) | ReadItem | 阅读 | 1.0 |
+| [displayReplyForm](#displayreplyformformdata-callback) | ReadItem | 阅读 | 1.0 |
 | [getAllInternetHeadersAsync](#getallinternetheadersasyncoptions-callback) | ReadItem | 邮件读取 | 1.8 |
-| [getAttachmentContentAsync](#getattachmentcontentasyncattachmentid-options-callback--attachmentcontent) | ReadItem | 撰写<br>读取 | 预览 |
-| [getAttachmentsAsync](#getattachmentsasyncoptions-callback--arrayattachmentdetails) | ReadItem | 撰写 | 预览 |
-| [getEntities](#getentities--entities) | ReadItem | 读取 | 1.0 |
-| [getEntitiesByType](#getentitiesbytypeentitytype--nullable-arraystringcontactmeetingsuggestionphonenumbertasksuggestion) | 受限 | 读取 | 1.0 |
-| [getFilteredEntitiesByName](#getfilteredentitiesbynamename--nullable-arraystringcontactmeetingsuggestionphonenumbertasksuggestion) | ReadItem | 读取 | 1.0 |
-| [Office.context.mailbox.item.getinitializationcontextasync](#getinitializationcontextasyncoptions-callback) | ReadItem | 读取 | 预览 |
-| [getItemIdAsync](#getitemidasyncoptions-callback) | ReadItem | 撰写 | 预览 |
-| [getRegExMatches](#getregexmatches--object) | ReadItem | 读取 | 1.0 |
-| [getRegExMatchesByName](#getregexmatchesbynamename--nullable-array-string-) | ReadItem | 读取 | 1.0 |
+| [getAttachmentContentAsync](#getattachmentcontentasyncattachmentid-options-callback--attachmentcontent) | ReadItem | 撰写<br>阅读 | 1.8 |
+| [getAttachmentsAsync](#getattachmentsasyncoptions-callback--arrayattachmentdetails) | ReadItem | 撰写 | 1.8 |
+| [getEntities](#getentities--entities) | ReadItem | 阅读 | 1.0 |
+| [getEntitiesByType](#getentitiesbytypeentitytype--nullable-arraystringcontactmeetingsuggestionphonenumbertasksuggestion) | 受限 | 阅读 | 1.0 |
+| [getFilteredEntitiesByName](#getfilteredentitiesbynamename--nullable-arraystringcontactmeetingsuggestionphonenumbertasksuggestion) | ReadItem | 阅读 | 1.0 |
+| [Office.context.mailbox.item.getinitializationcontextasync](#getinitializationcontextasyncoptions-callback) | ReadItem | 阅读 | 预览 |
+| [getItemIdAsync](#getitemidasyncoptions-callback) | ReadItem | 撰写 | 1.8 |
+| [getRegExMatches](#getregexmatches--object) | ReadItem | 阅读 | 1.0 |
+| [getRegExMatchesByName](#getregexmatchesbynamename--nullable-array-string-) | ReadItem | 阅读 | 1.0 |
 | [getSelectedDataAsync](#getselecteddataasynccoerciontype-options-callback--string) | ReadItem | 撰写 | 1.2 |
-| [Office.context.mailbox.item.getselectedentities](#getselectedentities--entities) | ReadItem | 读取 | 1.6 |
-| [Office.context.mailbox.item.getselectedregexmatches](#getselectedregexmatches--object) | ReadItem | 读取 | 1.6 |
-| [getSharedPropertiesAsync](#getsharedpropertiesasyncoptions-callback) | ReadItem | 撰写<br>读取 | 预览 |
-| [loadCustomPropertiesAsync](#loadcustompropertiesasynccallback-usercontext) | ReadItem | 撰写<br>读取 | 1.0 |
+| [Office.context.mailbox.item.getselectedentities](#getselectedentities--entities) | ReadItem | 阅读 | 1.6 |
+| [Office.context.mailbox.item.getselectedregexmatches](#getselectedregexmatches--object) | ReadItem | 阅读 | 1.6 |
+| [getSharedPropertiesAsync](#getsharedpropertiesasyncoptions-callback) | ReadItem | 撰写<br>阅读 | 1.8 |
+| [loadCustomPropertiesAsync](#loadcustompropertiesasynccallback-usercontext) | ReadItem | 撰写<br>阅读 | 1.0 |
 | [removeAttachmentAsync](#removeattachmentasyncattachmentid-options-callback) | ReadWriteItem | 撰写 | 1.1 |
-| [removeHandlerAsync](#removehandlerasynceventtype-options-callback) | ReadItem | 撰写<br>读取 | 1.7 |
+| [removeHandlerAsync](#removehandlerasynceventtype-options-callback) | ReadItem | 撰写<br>阅读 | 1.7 |
 | [saveAsync](#saveasyncoptions-callback) | ReadWriteItem | 撰写 | 1.3 |
 | [setSelectedDataAsync](#setselecteddataasyncdata-options-callback) | ReadWriteItem | 撰写 | 1.2 |
 
@@ -117,8 +117,8 @@ ms.locfileid: "39629221"
 | 事件 | 说明 | 最低<br>要求集 |
 |---|---|---|
 |`AppointmentTimeChanged`| 所选的约会或系列的日期或时间已更改。 | 1.7 |
-|`AttachmentsChanged`| 已将附件添加到项目或已从项目删除附件。 | 预览 |
-|`EnhancedLocationsChanged`| 所选约会的位置已更改。 | 预览 |
+|`AttachmentsChanged`| 已将附件添加到项目或已从项目删除附件。 | 1.8 |
+|`EnhancedLocationsChanged`| 所选约会的位置已更改。 | 1.8 |
 |`RecipientsChanged`| 选定项目或约会位置的收件人列表已更改。 | 1.7 |
 |`RecurrenceChanged`| 选定系列的定期模式已更改。 | 1.7 |
 
@@ -1305,7 +1305,7 @@ function callback(asyncResult) {
 ##### <a name="parameters"></a>参数
 |名称|类型|属性|说明|
 |---|---|---|---|
-|`uri`|String||提供附加到邮件或约会的文件的位置的 URI。最大长度为 2048 个字符。|
+|`uri`|字符串||提供附加到邮件或约会的文件的位置的 URI。最大长度为 2048 个字符。|
 |`attachmentName`|字符串||在附件上载过程中显示的附件名称。最大长度为 255 个字符。|
 |`options`|Object|&lt;optional&gt;|包含一个或多个以下属性的对象文本。|
 |`options.asyncContext`|对象|&lt;optional&gt;|开发人员可以提供他们想要在回调方法中访问的任何对象。|
@@ -1386,7 +1386,7 @@ Office.context.mailbox.item.addFileAttachmentAsync(
 
 |名称|类型|属性|说明|
 |---|---|---|---|
-|`base64File`|String||要添加到电子邮件或事件的图像或文件的 base64 编码内容。|
+|`base64File`|字符串||要添加到电子邮件或事件的图像或文件的 base64 编码内容。|
 |`attachmentName`|字符串||在附件上载过程中显示的附件名称。最大长度为 255 个字符。|
 |`options`|Object|&lt;optional&gt;|包含一个或多个以下属性的对象文本。|
 |`options.asyncContext`|对象|&lt;optional&gt;|开发人员可以提供他们想要在回调方法中访问的任何对象。|
@@ -1588,7 +1588,7 @@ function addAttachment() {
 |`formData.attachments`|Array.&lt;Object&gt;|&lt;可选&gt;|JSON 对象（是文件或项目附件）的数组。|
 |`formData.attachments.type`|String||指示附件的类型。必须是文件附件的 `file` 或项目附件的 `item`。|
 |`formData.attachments.name`|字符串||一个包含附件的名称的字符串，最多包含 255 个字符。|
-|`formData.attachments.url`|String||仅在将 `type` 设置为 `file` 时使用。文件的位置的 URI。|
+|`formData.attachments.url`|字符串||仅在将 `type` 设置为 `file` 时使用。文件的位置的 URI。|
 |`formData.attachments.isInline`|布尔||仅在将 `type` 设置为 `file` 时使用。如果为 `true`，则表示附件将在邮件正文中内联显示，并且不应显示在附件列表中。|
 |`formData.attachments.itemId`|String||仅在将 `type` 设置为 `item` 时使用。附件的 EWS 项目 ID。字符串最长为 100 个字符。|
 |`callback`|函数|&lt;可选&gt;|方法完成后，使用单个参数 `asyncResult`（一个 [AsyncResult](/javascript/api/office/office.asyncresult) 对象）调用在 `callback` 参数中传递的函数。|
@@ -1712,7 +1712,7 @@ Office.context.mailbox.item.displayReplyAllForm(
 |`formData.attachments`|Array.&lt;Object&gt;|&lt;可选&gt;|JSON 对象（是文件或项目附件）的数组。|
 |`formData.attachments.type`|String||指示附件的类型。必须是文件附件的 `file` 或项目附件的 `item`。|
 |`formData.attachments.name`|字符串||一个包含附件的名称的字符串，最多包含 255 个字符。|
-|`formData.attachments.url`|String||仅在将 `type` 设置为 `file` 时使用。文件的位置的 URI。|
+|`formData.attachments.url`|字符串||仅在将 `type` 设置为 `file` 时使用。文件的位置的 URI。|
 |`formData.attachments.isInline`|布尔||仅在将 `type` 设置为 `file` 时使用。如果为 `true`，则表示附件将在邮件正文中内联显示，并且不应显示在附件列表中。|
 |`formData.attachments.itemId`|String||仅在将 `type` 设置为 `item` 时使用。附件的 EWS 项目 ID。字符串最长为 100 个字符。|
 |`callback`|函数|&lt;可选&gt;|方法完成后，使用单个参数 `asyncResult`（一个 [AsyncResult](/javascript/api/office/office.asyncresult) 对象）调用在 `callback` 参数中传递的函数。|
@@ -1875,7 +1875,7 @@ Office.context.mailbox.item.getAllInternetHeadersAsync(
 
 |名称|类型|属性|说明|
 |---|---|---|---|
-|`attachmentId`|String||要获取的附件的标识符。|
+|`attachmentId`|字符串||要获取的附件的标识符。|
 |`options`|对象|&lt;optional&gt;|包含一个或多个以下属性的对象文本。|
 |`options.asyncContext`|对象|&lt;optional&gt;|开发人员可以提供他们想要在回调方法中访问的任何对象。|
 |`callback`|函数|&lt;可选&gt;|方法完成后，使用单个参数 `asyncResult`（一个 [AsyncResult](/javascript/api/office/office.asyncresult) 对象）调用在 `callback` 参数中传递的函数。|
@@ -2304,7 +2304,7 @@ var veggies = allMatches.veggies;
 
 如果在项目的正文属性上指定 `ItemHasRegularExpressionMatch` 规则，则正则表达式应进一步筛选正文，不应尝试返回该项目的整个正文。使用正则表达式（如 `.*`）获取项目的整个正文并不总是返回预期的结果。
 
-##### <a name="parameters"></a>参数
+##### <a name="parameters"></a>Parameters
 
 |名称|类型|说明|
 |---|---|---|
@@ -2342,7 +2342,7 @@ var veggies = Office.context.mailbox.item.getRegExMatchesByName("veggies");
 
 如果没有选定内容，但光标位于正文或主题中，此方法将会为所选数据返回空字符串。如果选定的是字段，而不是正文或主题，则此方法返回 `InvalidSelection` 错误。
 
-##### <a name="parameters"></a>Parameters
+##### <a name="parameters"></a>参数
 
 |名称|类型|属性|说明|
 |---|---|---|---|
