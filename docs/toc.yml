@@ -136,6 +136,8 @@
           href: develop/develop-office-add-ins-for-the-ipad.md
         - name: 使用 Angular 开发加载项
           href: develop/add-ins-with-angular2.md
+        - name: 使用 Visual Studio Code 开发加载项
+          href: develop/develop-add-ins-vscode.md
         - name: 使用 Visual Studio 开发加载项
           items:
             - name: 在 Visual Studio 中创建和调试 Office 加载项
@@ -216,10 +218,14 @@
       items:
         - name: 概述
           href: publish/publish.md
-        - name: 在 Microsoft Azure 上托管 Office 加载项
-          href: publish/host-an-office-add-in-on-microsoft-azure.md
-        - name: 使用 Visual Studio 打包加载项
-          href: publish/package-your-add-in-using-visual-studio.md
+        - name: 发布加载项 (VS Code)
+          href: publish/publish-add-in-vs-code.md
+        - name: Visual Studio
+          items:
+            - name: 发布加载项 (Visual Studio)
+              href: publish/package-your-add-in-using-visual-studio.md
+            - name: 在 Microsoft Azure 上托管 Office 加载项
+              href: publish/host-an-office-add-in-on-microsoft-azure.md
         - name: 将加载项发布到 AppSource
           href: /office/dev/store/submit-to-the-office-store
         - name: AppSource 验证策略
