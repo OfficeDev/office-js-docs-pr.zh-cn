@@ -3,12 +3,12 @@ title: 在 Microsoft Azure 上托管 Office 加载项 | Microsoft Docs
 description: 了解如何将加载项 Web 应用部署到 Azure 并旁加载该加载项以便在 Office 客户端应用程序中进行测试。
 ms.date: 10/16/2019
 localization_priority: Priority
-ms.openlocfilehash: 0cfddacf48bda9ed7b63d4018e3ae0437f15bcd9
-ms.sourcegitcommit: 499bf49b41205f8034c501d4db5fe4b02dab205e
+ms.openlocfilehash: 106c775fa74b83d85111922f5488477772018b90
+ms.sourcegitcommit: 44f1a4a3e1ae3c33d7d5fabcee14b84af94e03da
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/22/2019
-ms.locfileid: "37626976"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "39670179"
 ---
 # <a name="host-an-office-add-in-on-microsoft-azure"></a>在 Microsoft Azure 上托管 Office 加载项
 
@@ -26,12 +26,12 @@ ms.locfileid: "37626976"
 2. 安装 Office。
 
     > [!NOTE]
-    > 如果尚未安装 Office，可以[注册 1 个月免费试用版](https://products.office.com/en-US/try?legRedir=true&WT.intid1=ODC_ENUS_FX101785584_XT104056786&CorrelationId=64c762de-7a97-4dd1-bb96-e231d7485735)。
+    > 如果尚未安装 Office，可以[注册 1 个月免费试用版](https://products.office.com/try?legRedir=true&WT.intid1=ODC_ENUS_FX101785584_XT104056786&CorrelationId=64c762de-7a97-4dd1-bb96-e231d7485735)。
 
 3. 获取 Azure 订阅。
 
     > [!NOTE]
-    > 如果还没有 Azure 订阅，可以[通过 Visual Studio 订阅获取 Azure 订阅](https://azure.microsoft.com/zh-CN/pricing/member-offers/visual-studio-subscriptions/)，也可以[注册免费试用版](https://azure.microsoft.com/pricing/free-trial)。 
+    > 如果还没有 Azure 订阅，可以[通过 Visual Studio 订阅获取 Azure 订阅](https://azure.microsoft.com/pricing/member-offers/visual-studio-subscriptions/)，也可以[注册免费试用版](https://azure.microsoft.com/pricing/free-trial)。 
 
 ## <a name="step-1-create-a-shared-folder-to-host-your-add-in-xml-manifest-file"></a>第 1 步：创建用于托管加载项 XML 清单文件的共享文件夹
 
@@ -162,4 +162,4 @@ Visual Studio 将创建基本的 Word 外接程序，你可以按原样发布，
 ## <a name="see-also"></a>另请参阅
 
 - [发布 Office 加载项](../publish/publish.md)
-- [使用 Visual Studio 打包外接程序以准备发布](../publish/package-your-add-in-using-visual-studio.md)
+- [使用 Visual Studio 发布加载项](../publish/package-your-add-in-using-visual-studio.md)

@@ -1,18 +1,21 @@
 ---
-title: 使用 Visual Studio 打包加载项以准备发布
+title: 使用 Visual Studio 发布加载项
 description: 如何使用 Visual Studio 2019 部署 Web 项目并打包加载项。
-ms.date: 10/14/2019
+ms.date: 12/02/2019
 localization_priority: Priority
-ms.openlocfilehash: 784741cffa0e3015caaa9c70fbb56f4b70df9462
-ms.sourcegitcommit: 499bf49b41205f8034c501d4db5fe4b02dab205e
+ms.openlocfilehash: 5da7fc643eb517f777325658d01889f3e51906bd
+ms.sourcegitcommit: 44f1a4a3e1ae3c33d7d5fabcee14b84af94e03da
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/22/2019
-ms.locfileid: "37626962"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "39670193"
 ---
-# <a name="package-your-add-in-using-visual-studio-to-prepare-for-publishing"></a>使用 Visual Studio 打包加载项以准备发布
+# <a name="publish-your-add-in-using-visual-studio"></a>使用 Visual Studio 发布加载项
 
 Office 加载项包包含 XML [清单文件](../develop/add-in-manifests.md)，它可用于发布加载项。 你将不得不单独发布项目的 Web 应用程序文件。 本文介绍如何使用 Visual Studio 2019 部署 Web 项目并打包加载项。
+
+> [!NOTE]
+> 要了解如何发布使用 Yeoman 生成器创建并使用 Visual Studio Code 或任何其他编辑器开发的 Office 加载项，请参阅[发布使用 Visual Studio Code 开发的加载项](publish-add-in-vs-code.md)。
 
 ## <a name="to-deploy-your-web-project-using-visual-studio-2019"></a>使用 Visual Studio 2019 部署 Web 项目
 
