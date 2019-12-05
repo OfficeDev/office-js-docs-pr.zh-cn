@@ -3,12 +3,12 @@ title: 在 Microsoft Azure 上托管 Office 加载项 | Microsoft Docs
 description: 了解如何将加载项 Web 应用部署到 Azure 并旁加载该加载项以便在 Office 客户端应用程序中进行测试。
 ms.date: 10/16/2019
 localization_priority: Priority
-ms.openlocfilehash: 106c775fa74b83d85111922f5488477772018b90
-ms.sourcegitcommit: 44f1a4a3e1ae3c33d7d5fabcee14b84af94e03da
+ms.openlocfilehash: 4135d4cab8f077f087b492260bada44712ce18a3
+ms.sourcegitcommit: 960ceaf6776ec3ed41a8f5b7bf70b3c95c43386a
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "39670179"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "39830214"
 ---
 # <a name="host-an-office-add-in-on-microsoft-azure"></a>在 Microsoft Azure 上托管 Office 加载项
 
@@ -46,7 +46,7 @@ ms.locfileid: "39670179"
 5. 在“文件共享”**** 中，选择下拉箭头，再依次选择“所有人”**** > “添加”**** > “共享”****。
 
 > [!NOTE]
-> 本演练要将本地文件共享用作受信任的目录，用来存储加载项 XML 清单文件。在实际方案中，可以改为选择[将 XML 清单文件部署到 SharePoint 目录](../publish/publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md)，或[将加载项发布到 AppSource](/office/dev/store/submit-to-the-office-store)。
+> 本演练要将本地文件共享用作受信任的目录，用来存储加载项 XML 清单文件。在实际方案中，可以改为选择[将 XML 清单文件部署到 SharePoint 目录](../publish/publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md)，或[将加载项发布到 AppSource](/office/dev/store/submit-to-appsource-via-partner-center)。
 
 ## <a name="step-2-add-the-file-share-to-the-trusted-add-ins-catalog"></a>第 2 步：将文件共享添加到受信任的加载项目录
 

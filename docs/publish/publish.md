@@ -3,12 +3,12 @@ title: 部署和发布 Office 加载项 | Microsoft Docs
 description: 部署 Office 加载项以进行测试或分发给用户的方法和选项。
 ms.date: 09/05/2019
 localization_priority: Priority
-ms.openlocfilehash: c47f8743edeed1fd366d948d781c97da1c97958a
-ms.sourcegitcommit: d34aa0b282cc76ffff579da2a7945efd12fb7340
+ms.openlocfilehash: 2948e558ddd063ff36ebbfdd2edcb8c986a1445a
+ms.sourcegitcommit: 960ceaf6776ec3ed41a8f5b7bf70b3c95c43386a
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/05/2019
-ms.locfileid: "36769552"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "39830200"
 ---
 # <a name="deploy-and-publish-your-office-add-in"></a>部署和发布 Office 加载项
 
@@ -19,7 +19,7 @@ ms.locfileid: "36769552"
 |[旁加载](../testing/test-debug-office-add-ins.md#sideload-an-office-add-in-for-testing)|在开发过程中测试在 Windows、iPad、Mac 或浏览器中运行的加载项。|
 |[集中部署](centralized-deployment.md)|在云或混合部署中，使用 Office 365 管理中心将加载项分发给组织中的用户。|
 |[SharePoint 目录](publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md)|在本地环境中，用于向组织用户分发加载项。|
-|[AppSource](/office/dev/store/submit-to-the-office-store)|用于向用户公开分发加载项。|
+|[AppSource](/office/dev/store/submit-to-appsource-via-partner-center)|用于向用户公开分发加载项。|
 |[Exchange 服务器](#outlook-add-in-deployment)|在本地或在线环境中，用于向用户分发 Outlook 加载项。|
 |[网络共享](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)|在网络上的 Windows 计算机中（要在其中托管加载项），转到要用作共享文件夹目录的文件夹的父文件夹或驱动器号。|
 
@@ -87,5 +87,5 @@ Outlook 外接程序部署需要以下内容：
 - [创建有效的 AppSource 一览](/office/dev/store/create-effective-office-store-listings)
 - [排查 Office 加载项中的用户错误](../testing/testing-and-troubleshooting.md)
 
-[AppSource]: /office/dev/store/submit-to-the-office-store
+[AppSource]: /office/dev/store/submit-to-appsource-via-partner-center
 [Office Add-in host and platform availability]: ../overview/office-add-in-availability

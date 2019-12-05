@@ -3,12 +3,12 @@ title: Office 加载项开发最佳做法
 description: ''
 ms.date: 03/19/2019
 localization_priority: Priority
-ms.openlocfilehash: b5f5595d9109df10e910459b2fc61a71d5180bbf
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: 2b07ffa898d0db6d84bb96c9db797b91930446e0
+ms.sourcegitcommit: 960ceaf6776ec3ed41a8f5b7bf70b3c95c43386a
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32448240"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "39830193"
 ---
 # <a name="best-practices-for-developing-office-add-ins"></a>Office 加载项开发最佳做法
 
@@ -125,7 +125,7 @@ ms.locfileid: "32448240"
 
 ## <a name="market-your-add-in"></a>加载项市场营销
 
-- 将加载项发布到 [AppSource](/office/dev/store/submit-to-the-office-store)，并在网站中[对它进行宣传](/office/dev/store/promote-your-office-store-solution)。创建[有效的 AppSource 一览](/office/dev/store/create-effective-office-store-listings)。
+- 将加载项发布到 [AppSource](/office/dev/store/submit-to-appsource-via-partner-center)，并在网站中[对它进行宣传](/office/dev/store/promote-your-office-store-solution)。创建[有效的 AppSource 一览](/office/dev/store/create-effective-office-store-listings)。
 
 - 使用简洁且富有描述性的加载项标题。字符数不得超过 128 个。
 

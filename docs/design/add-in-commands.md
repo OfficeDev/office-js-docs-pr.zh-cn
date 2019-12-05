@@ -3,12 +3,12 @@ title: Excel、Word 和 PowerPoint 加载项命令
 description: ''
 ms.date: 06/20/2019
 localization_priority: Priority
-ms.openlocfilehash: cbdc01a439bf34b089806faf20fffa12c916fea1
-ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
+ms.openlocfilehash: f0c829e24780dbbb69c35b6ca05d31a51d342ad0
+ms.sourcegitcommit: 960ceaf6776ec3ed41a8f5b7bf70b3c95c43386a
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "35127735"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "39830179"
 ---
 # <a name="add-in-commands-for-excel-word-and-powerpoint"></a>Excel、Word 和 PowerPoint 加载项命令
 
@@ -17,7 +17,7 @@ ms.locfileid: "35127735"
 有关此功能的概述，请观看视频 [Office 功能区中的加载项命令](https://channel9.msdn.com/events/Build/2016/P551)。
 
 > [!NOTE]
-> SharePoint 目录不支持加载项命令。可以通过[集中部署](../publish/centralized-deployment.md)或 [AppSource](/office/dev/store/submit-to-the-office-store) 部署加载项命令，也可以使用[旁加载](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)部署加载项命令以供测试。 
+> SharePoint 目录不支持加载项命令。可以通过[集中部署](../publish/centralized-deployment.md)或 [AppSource](/office/dev/store/submit-to-appsource-via-partner-center) 部署加载项命令，也可以使用[旁加载](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)部署加载项命令以供测试。 
 
 *图 1：在 Excel Desktop 中运行命令的加载项*
 
