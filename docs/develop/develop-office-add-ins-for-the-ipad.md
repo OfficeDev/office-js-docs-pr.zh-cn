@@ -3,17 +3,17 @@ title: 开发适用于 iPad 的 Office 加载项
 description: ''
 ms.date: 06/20/2019
 localization_priority: Normal
-ms.openlocfilehash: 1b6d17fd264249dbc8000fe1b1f63605e68fd904
-ms.sourcegitcommit: 6d1cb188c76c09d320025abfcc99db1b16b7e37b
+ms.openlocfilehash: 3fbe065e111519f81c39d2255b452eab9491fa9d
+ms.sourcegitcommit: 960ceaf6776ec3ed41a8f5b7bf70b3c95c43386a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "35226746"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "39830186"
 ---
 # <a name="develop-office-add-ins-for-the-ipad"></a>开发适用于 iPad 的 Office 加载项
 
 
-下表列出了要执行的任务, 以开发 Office 外接程序以在 iPad 上的 Office 中运行。
+下表列出了要执行的任务，以开发 Office 外接程序以在 iPad 上的 Office 中运行。
 
 
 |**任务**|**说明**|**资源**|
@@ -24,7 +24,7 @@ ms.locfileid: "35226746"
 |针对触摸优化外接程序。|使 UI 响应触摸输入以及鼠标和键盘。|[应用 UX 设计原则](../concepts/add-in-development-best-practices.md#apply-ux-design-principles)|
 |使外接程序免费。|Office on iPad 是一个通道，通过它您可以接触到更多用户并提升您的服务。这些新用户可能成为您的客户。|[验证策略 10.8](/office/dev/store/validation-policies#10-apps-and-add-ins-utilize-supported-capabilities)|
 |确保加载项无商业内容。|加载项不得包括应用内购买、试用优惠、追加销售付费加载项的 UI 或任何在线商店（方便用户购买或获取其他内容、应用或加载项）链接。隐私策略和使用条款页面也不得包含任何商业 UI 或 AppSource 链接。|[验证策略 3.4](/office/dev/store/validation-policies#3-apps-and-add-ins-can-sell-additional-features-or-content-through-purchases-within-the-app-or-add-in)|
-|将加载项重新提交到 AppSource。|在卖家面板中，选中“将此加载项添加到 iPad 上的 Office 加载项目录中”**** 复选框，并在“Apple ID”框中输入 Apple 开发人员 ID。请查看[应用提供商协议](https://sellerdashboard.microsoft.com/Assets/Content/Agreements/en-US/Office_Store_Seller_Agreement_20120927.htm)，以确保了解协议。|[将解决方案提交到 AppSource 和 Office 应用商店](/office/dev/store/submit-to-the-office-store)|
+|将加载项重新提交到 AppSource。|在 "合作伙伴中心" 的 "**产品设置**" 页上，选中 "**使我的产品在 iOS 和 Android 上可用（如果适用）** " 复选框，并在 "帐户设置" 中提供您的 Apple 开发人员 ID。 请查看[应用程序提供商协议](https://go.microsoft.com/fwlink/?linkid=715691)，以确保您了解这些条款。|[将解决方案提交到 AppSource 和 Office 应用商店](/office/dev/store/submit-to-appsource-via-partner-center)|
 
 对于正在其他平台上运行的 Office 应用程序，您的外接程序可以保持原样。您还可以基于您的外接程序所运行的浏览器/设备提供不同的 UI 服务。若要检测您的外接程序是否正在 iPad 上运行，您可以使用以下 API：
 - var isTouchEnabled = [Office.context.touchEnabled](/javascript/api/office/office.context#touchenabled)
@@ -38,7 +38,7 @@ ms.locfileid: "35226746"
 
 -  **使用 Visual Studio 开发外接程序。**
 
-    如果使用 Visual Studio 开发外接程序，则在 iPad 或 Mac 上旁加载外接程序前，可以在 Windows 上运行的 Office 主机应用程序中 [设置断点并调试其代码](../develop/create-and-debug-office-add-ins-in-visual-studio.md)。 由于在 iOS 或 Mac 上的 Office 中运行的外接程序支持与在 Windows 上运行的加载项相同的 Api, 因此外接程序的代码在这两个平台上的运行方式都相同。
+    如果使用 Visual Studio 开发外接程序，则在 iPad 或 Mac 上旁加载外接程序前，可以在 Windows 上运行的 Office 主机应用程序中 [设置断点并调试其代码](../develop/create-and-debug-office-add-ins-in-visual-studio.md)。 由于在 iOS 或 Mac 上的 Office 中运行的外接程序支持与在 Windows 上运行的加载项相同的 Api，因此外接程序的代码在这两个平台上的运行方式都相同。
 
 -  **在外接程序清单中或通过运行时检查指定 API 要求。**
 
@@ -50,4 +50,4 @@ ms.locfileid: "35226746"
 ## <a name="see-also"></a>另请参阅
 
 - [将 Office 外接程序旁加载到 iPad 和 Mac 上](../testing/sideload-an-office-add-in-on-ipad-and-mac.md)  
-- [在 iPad 和 Mac 上调试 Office 加载项](../testing/debug-office-add-ins-on-ipad-and-mac.md)
+- [在 iPad 和 Mac 上调试 Office 外接程序](../testing/debug-office-add-ins-on-ipad-and-mac.md)
