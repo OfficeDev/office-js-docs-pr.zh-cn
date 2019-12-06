@@ -5,12 +5,12 @@ ms.date: 07/05/2019
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: c4c60482e557f85edf044ab8e68e6b96f9e860ab
-ms.sourcegitcommit: 7d4d721fc3d246ef8a2464bc714659cd84d6faab
+ms.openlocfilehash: 7d68dd52575f3b706ffac2751d68ea4019faaa8c
+ms.sourcegitcommit: 960ceaf6776ec3ed41a8f5b7bf70b3c95c43386a
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/11/2019
-ms.locfileid: "37468782"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "39830221"
 ---
 # <a name="excel-add-ins-overview"></a>Excel 加载项概述
 
@@ -51,7 +51,7 @@ Web 应用程序可以托管在任何 Web 服务器上，并且可以使用客�
 * 如何将加载项与 Excel 集成，其中包括加载项创建的任何自定义 UI（功能区按钮、上下文菜单等）。
 * 加载项所需的权限，如对文档执行读取和写入操作。
 
-若要让最终用户能够安装和使用 Excel 加载项，必须将它的清单发布到 AppSource 或加载项目录。 
+若要让最终用户能够安装和使用 Excel 加载项，必须将它的清单发布到 AppSource 或加载项目录。 要详细了解如何发布到 AppSource，请参阅[将解决方案发布到 AppSource 和 Office 中](/office/dev/store/submit-to-appsource-via-partner-center)。
 
 ## <a name="capabilities-of-an-excel-add-in"></a>Excel 加载项的功能
 
