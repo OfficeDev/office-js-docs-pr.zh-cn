@@ -1,42 +1,46 @@
 ---
 title: Office 命名空间-要求集1。8
 description: ''
-ms.date: 10/31/2019
+ms.date: 12/16/2019
 localization_priority: Normal
-ms.openlocfilehash: 91a0bef2a8280a068763c98b17644bd9268e2fb4
-ms.sourcegitcommit: e989096f3d19761bf8477c585cde20b3f8e0b90d
+ms.openlocfilehash: b23afd7b84dcd18e120f6aea4bd4fb0952791f1c
+ms.sourcegitcommit: 8c5c5a1bd3fe8b90f6253d9850e9352ed0b283ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/31/2019
-ms.locfileid: "37902146"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "40814164"
 ---
 # <a name="office"></a>Office
 
 该 Office 命名空间提供所有 Office 应用中的加载项所使用的共享接口。此列表仅记录 Outlook 加载项所使用的接口。有关 Office 命名空间的完整列表，请参阅[公用 API](/javascript/api/office)。
 
-##### <a name="requirements"></a>Requirements
+##### <a name="requirements"></a>要求
 
 |要求| 值|
 |---|---|
-|[最低版本的邮箱要求集](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
+|[最低版本的邮箱要求集](../../requirement-sets/outlook-api-requirement-sets.md)| 1.1|
 |[适用的 Outlook 模式](/outlook/add-ins/#extension-points)| 撰写或阅读|
 
-##### <a name="members-and-methods"></a>成员和方法
+##### <a name="properties"></a>属性
 
-| 成员 | 类型 |
-|--------|------|
-| [AsyncResultStatus](#asyncresultstatus-string) | Member |
-| [CoercionType](#coerciontype-string) | Member |
-| [EventType](#eventtype-string) | Member |
-| [SourceProperty](#sourceproperty-string) | 成员 |
+| 属性 | 型号 | 返回类型 | 最低<br>要求集 |
+|---|---|---|:---:|
+| [context](office.context.md) | 撰写<br>读取 | [Context](/javascript/api/office/office.context?view=outlook-js-1.8) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+
+##### <a name="enumerations"></a>枚举
+
+| 枚举 | 型号 | 返回类型 | 最低<br>要求集 |
+|---|---|---|:---:|
+| [AsyncResultStatus](#asyncresultstatus-string) | 撰写<br>读取 | String | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [CoercionType](#coerciontype-string) | 撰写<br>读取 | String | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [EventType](#eventtype-string) | 撰写<br>读取 | String | [1.5](../requirement-set-1.5/outlook-requirement-set-1.5.md) |
+| [SourceProperty](#sourceproperty-string) | 撰写<br>读取 | String | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 
 ### <a name="namespaces"></a>命名空间
 
-[context](office.context.md)：提供 Office 加载项 API 的上下文命名空间中的共享接口以便在 Outlook 加载项 API 中使用。
+[MailboxEnums](/javascript/api/outlook/office.mailboxenums.attachmentcontentformat?view=outlook-js-1.8)：包含许多特定于 Outlook 的`ItemType`枚举，例如`EntityType` `AttachmentType` `RecipientType` `ResponseType`、、、、、和`ItemNotificationMessageType`。
 
-[MailboxEnums](/javascript/api/outlook/office.mailboxenums.attachmentcontentformat?view=outlook-js-1.8)：包含多个`ItemType`枚举，例如`EntityType` `AttachmentType` `RecipientType` `ResponseType`、、、、和`ItemNotificationMessageType`。
-
-### <a name="members"></a>Members
+## <a name="enumeration-details"></a>枚举详细信息
 
 #### <a name="asyncresultstatus-string"></a>AsyncResultStatus： String
 
@@ -44,20 +48,20 @@ ms.locfileid: "37902146"
 
 ##### <a name="type"></a>类型
 
-*   字符串
+*   String
 
 ##### <a name="properties"></a>属性：
 
 |名称| 类型| 说明|
 |---|---|---|
-|`Succeeded`| 字符串|调用成功。|
-|`Failed`| 字符串|调用失败。|
+|`Succeeded`| String|调用成功。|
+|`Failed`| String|调用失败。|
 
-##### <a name="requirements"></a>Requirements
+##### <a name="requirements"></a>要求
 
 |要求| 值|
 |---|---|
-|[最低版本的邮箱要求集](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
+|[最低版本的邮箱要求集](../../requirement-sets/outlook-api-requirement-sets.md)| 1.1|
 |[适用的 Outlook 模式](/outlook/add-ins/#extension-points)| 撰写或阅读|
 
 <br>
@@ -71,20 +75,20 @@ ms.locfileid: "37902146"
 
 ##### <a name="type"></a>类型
 
-*   字符串
+*   String
 
 ##### <a name="properties"></a>属性：
 
 |名称| 类型| 说明|
 |---|---|---|
-|`Html`| 字符串|请求以 HTML 格式返回的数据。|
-|`Text`| 字符串|请求以文本格式返回的数据。|
+|`Html`| String|请求以 HTML 格式返回的数据。|
+|`Text`| String|请求以文本格式返回的数据。|
 
-##### <a name="requirements"></a>Requirements
+##### <a name="requirements"></a>要求
 
 |要求| 值|
 |---|---|
-|[最低版本的邮箱要求集](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
+|[最低版本的邮箱要求集](../../requirement-sets/outlook-api-requirement-sets.md)| 1.1|
 |[适用的 Outlook 模式](/outlook/add-ins/#extension-points)| 撰写或阅读|
 
 <br>
@@ -98,24 +102,24 @@ ms.locfileid: "37902146"
 
 ##### <a name="type"></a>类型
 
-*   字符串
+*   String
 
 ##### <a name="properties"></a>属性：
 
 | 名称 | 类型 | 说明 | 最低要求集 |
-|---|---|---|---|
-|`AppointmentTimeChanged`| 字符串 | 所选的约会或系列的日期或时间已更改。 | 1.7 |
-|`AttachmentsChanged`| 字符串 | 已将附件添加到项目或已从项目删除附件。 | 1.8 |
-|`EnhancedLocationsChanged`| 字符串 | 所选约会的位置已更改。 | 1.8 |
-|`ItemChanged`| 字符串 | 在任务窗格固定时，将选择不同的 Outlook 项进行查看。 | 1.5 |
-|`RecipientsChanged`| 字符串 | 选定项目或约会位置的收件人列表已更改。 | 1.7 |
-|`RecurrenceChanged`| 字符串 | 选定系列的定期模式已更改。 | 1.7 |
+|---|---|---|:---:|
+|`AppointmentTimeChanged`| String | 所选的约会或系列的日期或时间已更改。 | 1.7 |
+|`AttachmentsChanged`| String | 已将附件添加到项目或已从项目删除附件。 | 1.8 |
+|`EnhancedLocationsChanged`| String | 所选约会的位置已更改。 | 1.8 |
+|`ItemChanged`| String | 在任务窗格固定时，将选择不同的 Outlook 项进行查看。 | 1.5 |
+|`RecipientsChanged`| String | 选定项目或约会位置的收件人列表已更改。 | 1.7 |
+|`RecurrenceChanged`| String | 选定系列的定期模式已更改。 | 1.7 |
 
-##### <a name="requirements"></a>Requirements
+##### <a name="requirements"></a>要求
 
 |要求| 值|
 |---|---|
-|[最低版本的邮箱要求集](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.5 |
+|[最低版本的邮箱要求集](../../requirement-sets/outlook-api-requirement-sets.md)| 1.5 |
 |[适用的 Outlook 模式](/outlook/add-ins/#extension-points)| 撰写或阅读 |
 
 <br>
@@ -129,18 +133,18 @@ ms.locfileid: "37902146"
 
 ##### <a name="type"></a>类型
 
-*   字符串
+*   String
 
 ##### <a name="properties"></a>属性：
 
 |名称| 类型| 说明|
 |---|---|---|
-|`Body`| 字符串|数据源来自邮件的正文。|
+|`Body`| String|数据源来自邮件的正文。|
 |`Subject`| String|数据源来自邮件的主题。|
 
-##### <a name="requirements"></a>Requirements
+##### <a name="requirements"></a>要求
 
 |要求| 值|
 |---|---|
-|[最低版本的邮箱要求集](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
+|[最低版本的邮箱要求集](../../requirement-sets/outlook-api-requirement-sets.md)| 1.1|
 |[适用的 Outlook 模式](/outlook/add-ins/#extension-points)| 撰写或阅读|

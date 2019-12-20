@@ -1,49 +1,78 @@
 ---
 title: Office. context-预览要求集
 description: ''
-ms.date: 11/25/2019
+ms.date: 12/16/2019
 localization_priority: Normal
-ms.openlocfilehash: 5c34a7a0db5880a94ba5519059a93010a5243978
-ms.sourcegitcommit: 05a883a7fd89136301ce35aabc57638e9f563288
+ms.openlocfilehash: b935d46b22e65fd293d6aae4b374cfeda9b34f5d
+ms.sourcegitcommit: 8c5c5a1bd3fe8b90f6253d9850e9352ed0b283ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/27/2019
-ms.locfileid: "39629186"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "40814449"
 ---
 # <a name="context"></a>context
 
-### <a name="officeofficemdcontext"></a>[Office](Office.md).context
+### <a name="officeofficemdcontext"></a>[Office](office.md).context
 
-Office.context 命名空间提供所有 Office 应用中的加载项所使用的共享接口。此列表仅记录 Outlook 加载项所使用的接口。有关 Office.context 命名空间的完整列表，请参阅[通用 API 中的 Office.context 引用](/javascript/api/office/office.context)。
+在所有 Office 应用中，上下文提供外接程序使用的共享接口。 此列表仅记录 Outlook 外接程序使用的那些接口。有关 "context" 命名空间的完整列表，请参阅[通用 API 中的 "office. context reference](/javascript/api/office/office.context?view=outlook-js-preview)"。
 
-##### <a name="requirements"></a>Requirements
+##### <a name="requirements"></a>要求
 
 |要求| 值|
 |---|---|
-|[最低版本的邮箱要求集](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
+|[最低版本的邮箱要求集](../../requirement-sets/outlook-api-requirement-sets.md)| 1.1|
 |[适用的 Outlook 模式](/outlook/add-ins/#extension-points)| 撰写或阅读|
 
 ##### <a name="properties"></a>属性
 
 | 属性 | 型号 | 返回类型 | 最低<br>要求集 |
-|---|---|---|---|
-| [contentLanguage](#contentlanguage-string) | 撰写<br>读取 | String | 1.0 |
-| [过程](#diagnostics-contextinformation) | 撰写<br>读取 | [ContextInformation](/javascript/api/office/office.contextinformation) | 1.0 |
-| [displayLanguage](#displaylanguage-string) | 撰写<br>读取 | String | 1.0 |
-| [host](#host-hosttype) | 撰写<br>读取 | [HostType](/javascript/api/office/office.hosttype) | 1.0 |
-| [officeTheme](#officetheme-officetheme) | 撰写<br>读取 | [OfficeTheme](/javascript/api/office/office.officetheme) | 预览 |
-| [平台](#platform-platformtype) | 撰写<br>读取 | [PlatformType](/javascript/api/office/office.platformtype) | 1.0 |
-| [满足](#requirements-requirementsetsupport) | 撰写<br>读取 | [RequirementSetSupport](/javascript/api/office/office.requirementsetsupport) | 1.0 |
-| [roamingSettings](#roamingsettings-roamingsettings) | 撰写<br>读取 | [RoamingSettings](/javascript/api/outlook/office.roamingsettings) | 1.0 |
-| [ui](#ui-ui) | 撰写<br>读取 | [UI](/javascript/api/office/office.ui) | 1.0 |
-
-### <a name="namespaces"></a>命名空间
-
-[auth](/javascript/api/office/office.auth)：提供对[单一登录（SSO）](/outlook/add-ins/authenticate-a-user-with-an-sso-token)的支持。
-
-[邮箱](office.context.mailbox.md)：提供对 Microsoft Outlook 的 outlook 外接程序对象模型的访问权限。
+|---|---|---|:---:|
+| [认证](#auth-auth) | 撰写<br>读取 | [Auth](/javascript/api/office/office.auth?view=outlook-js-preview) | [预览](../preview-requirement-set/outlook-requirement-set-preview.md) |
+| [contentLanguage](#contentlanguage-string) | 撰写<br>读取 | String | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [过程](#diagnostics-contextinformation) | 撰写<br>读取 | [ContextInformation](/javascript/api/office/office.contextinformation?view=outlook-js-preview) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [displayLanguage](#displaylanguage-string) | 撰写<br>读取 | String | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [host](#host-hosttype) | 撰写<br>读取 | [HostType](/javascript/api/office/office.hosttype?view=outlook-js-preview) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [mailbox](office.context.mailbox.md) | 撰写<br>读取 | [邮箱](/javascript/api/office/office.mailbox?view=outlook-js-preview) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [officeTheme](#officetheme-officetheme) | 撰写<br>读取 | [OfficeTheme](/javascript/api/office/office.officetheme?view=outlook-js-preview) | [预览](../preview-requirement-set/outlook-requirement-set-preview.md) |
+| [平台](#platform-platformtype) | 撰写<br>读取 | [PlatformType](/javascript/api/office/office.platformtype?view=outlook-js-preview) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [满足](#requirements-requirementsetsupport) | 撰写<br>读取 | [RequirementSetSupport](/javascript/api/office/office.requirementsetsupport?view=outlook-js-preview) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [roamingSettings](#roamingsettings-roamingsettings) | 撰写<br>读取 | [RoamingSettings](/javascript/api/outlook/office.roamingsettings?view=outlook-js-preview) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [ui](#ui-ui) | 撰写<br>读取 | [UI](/javascript/api/office/office.ui?view=outlook-js-preview) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 
 ## <a name="property-details"></a>属性详细信息
+
+#### <a name="auth-authjavascriptapiofficeofficeauth"></a>auth： [auth](/javascript/api/office/office.auth)
+
+通过提供一种方法来支持[单一登录（SSO）](/outlook/add-ins/authenticate-a-user-with-an-sso-token) ，使 Office 主机能够获取加载项的 web 应用程序的访问令牌。 这也使加载项能够间接访问已登录用户的 Microsoft Graph 数据，而不需要用户第二次登录。
+
+##### <a name="type"></a>类型
+
+*   [Auth](/javascript/api/office/office.auth)
+
+##### <a name="requirements"></a>要求
+
+|要求| 值|
+|---|---|
+|[最低版本的邮箱要求集](../../requirement-sets/outlook-api-requirement-sets.md)| 预览|
+|[适用的 Outlook 模式](/outlook/add-ins/#extension-points)| 撰写或阅读|
+
+##### <a name="example"></a>示例
+
+```js
+Office.context.auth.getAccessTokenAsync(function(result) {
+    if (result.status === "succeeded") {
+        var token = result.value;
+        // ...
+    } else {
+        console.log("Error obtaining token", result.error);
+    }
+});
+```
+
+<br>
+
+---
+---
 
 #### <a name="contentlanguage-string"></a>contentLanguage： String
 
@@ -59,7 +88,7 @@ Office.context 命名空间提供所有 Office 应用中的加载项所使用的
 
 |要求| 值|
 |---|---|
-|[最低版本的邮箱要求集](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
+|[最低版本的邮箱要求集](../../requirement-sets/outlook-api-requirement-sets.md)| 1.1|
 |[适用的 Outlook 模式](/outlook/add-ins/#extension-points)| 撰写或阅读|
 
 ##### <a name="example"></a>示例
@@ -96,11 +125,11 @@ function write(message){
 
 *   [ContextInformation](/javascript/api/office/office.contextinformation)
 
-##### <a name="requirements"></a>Requirements
+##### <a name="requirements"></a>要求
 
 |要求| 值|
 |---|---|
-|[最低版本的邮箱要求集](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
+|[最低版本的邮箱要求集](../../requirement-sets/outlook-api-requirement-sets.md)| 1.1|
 |[适用的 Outlook 模式](/outlook/add-ins/#extension-points)| 撰写或阅读|
 
 ##### <a name="example"></a>示例
@@ -128,7 +157,7 @@ console.log(JSON.stringify(Office.context.diagnostics));
 
 |要求| 值|
 |---|---|
-|[最低版本的邮箱要求集](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
+|[最低版本的邮箱要求集](../../requirement-sets/outlook-api-requirement-sets.md)| 1.1|
 |[适用的 Outlook 模式](/outlook/add-ins/#extension-points)| 撰写或阅读|
 
 ##### <a name="example"></a>示例
@@ -165,11 +194,11 @@ function write(message){
 
 *   [HostType](/javascript/api/office/office.hosttype)
 
-##### <a name="requirements"></a>Requirements
+##### <a name="requirements"></a>要求
 
 |要求| 值|
 |---|---|
-|[最低版本的邮箱要求集](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
+|[最低版本的邮箱要求集](../../requirement-sets/outlook-api-requirement-sets.md)| 1.1|
 |[适用的 Outlook 模式](/outlook/add-ins/#extension-points)| 撰写或阅读|
 
 ##### <a name="example"></a>示例
@@ -205,11 +234,11 @@ console.log(JSON.stringify(Office.context.host));
 |`controlBackgroundColor`| String|获取十六进制三原色形式的 Office 主题控制背景色。|
 |`controlForegroundColor`| 字符串|获取十六进制三原色形式的 Office 主题正文控制颜色。|
 
-##### <a name="requirements"></a>Requirements
+##### <a name="requirements"></a>要求
 
 |要求| 值|
 |---|---|
-|[最低版本的邮箱要求集](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 预览|
+|[最低版本的邮箱要求集](../../requirement-sets/outlook-api-requirement-sets.md)| 预览|
 |[适用的 Outlook 模式](/outlook/add-ins/#extension-points)| 撰写或阅读|
 
 ##### <a name="example"></a>示例
@@ -240,11 +269,11 @@ function applyOfficeTheme(){
 
 *   [PlatformType](/javascript/api/office/office.platformtype)
 
-##### <a name="requirements"></a>Requirements
+##### <a name="requirements"></a>要求
 
 |要求| 值|
 |---|---|
-|[最低版本的邮箱要求集](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
+|[最低版本的邮箱要求集](../../requirement-sets/outlook-api-requirement-sets.md)| 1.1|
 |[适用的 Outlook 模式](/outlook/add-ins/#extension-points)| 撰写或阅读|
 
 ##### <a name="example"></a>示例
@@ -266,17 +295,17 @@ console.log(JSON.stringify(Office.context.platform));
 
 *   [RequirementSetSupport](/javascript/api/office/office.requirementsetsupport)
 
-##### <a name="requirements"></a>Requirements
+##### <a name="requirements"></a>要求
 
 |要求| 值|
 |---|---|
-|[最低版本的邮箱要求集](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
+|[最低版本的邮箱要求集](../../requirement-sets/outlook-api-requirement-sets.md)| 1.1|
 |[适用的 Outlook 模式](/outlook/add-ins/#extension-points)| 撰写或阅读|
 
 ##### <a name="example"></a>示例
 
 ```js
-console.log(JSON.stringify(Office.context.requirements.isSetSupported("mailbox", "1.8")));
+console.log(JSON.stringify(Office.context.requirements.isSetSupported("mailbox", "1.1")));
 ```
 
 <br>
@@ -294,11 +323,11 @@ console.log(JSON.stringify(Office.context.requirements.isSetSupported("mailbox",
 
 *   [RoamingSettings](/javascript/api/outlook/office.RoamingSettings)
 
-##### <a name="requirements"></a>Requirements
+##### <a name="requirements"></a>要求
 
 |要求| 值|
 |---|---|
-|[最低版本的邮箱要求集](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
+|[最低版本的邮箱要求集](../../requirement-sets/outlook-api-requirement-sets.md)| 1.1|
 |[最低权限级别](/outlook/add-ins/understanding-outlook-add-in-permissions)| 受限|
 |[适用的 Outlook 模式](/outlook/add-ins/#extension-points)| 撰写或阅读|
 
@@ -315,9 +344,9 @@ console.log(JSON.stringify(Office.context.requirements.isSetSupported("mailbox",
 
 *   [UI](/javascript/api/office/office.ui)
 
-##### <a name="requirements"></a>Requirements
+##### <a name="requirements"></a>要求
 
 |要求| 值|
 |---|---|
-|[最低版本的邮箱要求集](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
+|[最低版本的邮箱要求集](../../requirement-sets/outlook-api-requirement-sets.md)| 1.1|
 |[适用的 Outlook 模式](/outlook/add-ins/#extension-points)| 撰写或阅读|

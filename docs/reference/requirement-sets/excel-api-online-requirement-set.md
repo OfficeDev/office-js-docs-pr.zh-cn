@@ -1,15 +1,15 @@
 ---
 title: Excel JavaScript API 仅联机要求集
 description: 有关 ExcelApiOnline 要求集的详细信息
-ms.date: 11/19/2019
+ms.date: 12/05/2019
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: e583c9832f04e17dc1c82d38d056fe2749888a77
-ms.sourcegitcommit: e56bd8f1260c73daf33272a30dc5af242452594f
+ms.openlocfilehash: ad2a3cd627552baeb449397fa917fe10e86ebbaf
+ms.sourcegitcommit: 8c5c5a1bd3fe8b90f6253d9850e9352ed0b283ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/21/2019
-ms.locfileid: "38757490"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "40814150"
 ---
 # <a name="excel-javascript-api-online-only-requirement-set"></a>Excel JavaScript API 仅联机要求集
 
@@ -40,7 +40,23 @@ if (Office.context.requirements.isSetSupported("ExcelApiOnline", "1.1")) {
 
 ## <a name="api-list"></a>API 列表
 
-目前尚无仅联机的 Api。 重新检查，因为新功能将添加到 web 上的 Excel 中并受 Office JavaScript Api 支持。
+下面的 Api 当前可用于 web 上的 Excel，作为`ExcelApiOnline 1.1`要求集的一部分。
+
+| Class | 域 | 说明 |
+|:---|:---|:---|
+|[Comment](/javascript/api/excel/excel.comment)|[提及](/javascript/api/excel/excel.comment#mentions)|获取注释中提到的实体（如人员）。|
+||[richContent](/javascript/api/excel/excel.comment#richcontent)|获取丰富的注释内容（例如，注释中的提及）。 此字符串不应显示给最终用户。 您的外接程序应仅使用此信息分析丰富的注释内容。|
+||[updateMentions （contentWithMentions： CommentRichContent）](/javascript/api/excel/excel.comment#updatementions-contentwithmentions-)|使用特殊格式的字符串和提及列表更新注释内容。|
+|[CommentMention](/javascript/api/excel/excel.commentmention)|[email](/javascript/api/excel/excel.commentmention#email)|获取或设置注释中提到的实体的电子邮件地址。|
+||[id](/javascript/api/excel/excel.commentmention#id)|获取或设置实体的 id。 这与中`CommentRichContent.richContent`的一个 id 相匹配。|
+||[name](/javascript/api/excel/excel.commentmention#name)|获取或设置注释中提到的实体的名称。|
+|[CommentReply](/javascript/api/excel/excel.commentreply)|[提及](/javascript/api/excel/excel.commentreply#mentions)|获取注释中提到的实体（如人员）。|
+||[richContent](/javascript/api/excel/excel.commentreply#richcontent)|获取丰富的注释内容（例如，注释中的提及）。 此字符串不应显示给最终用户。 您的外接程序应仅使用此信息分析丰富的注释内容。|
+||[updateMentions （contentWithMentions： CommentRichContent）](/javascript/api/excel/excel.commentreply#updatementions-contentwithmentions-)|使用特殊格式的字符串和提及列表更新注释内容。|
+|[CommentRichContent](/javascript/api/excel/excel.commentrichcontent)|[提及](/javascript/api/excel/excel.commentrichcontent#mentions)|包含注释中提到的所有实体（例如，人员）的数组。|
+||[richContent](/javascript/api/excel/excel.commentrichcontent#richcontent)||
+|[Range](/javascript/api/excel/excel.range)|[moveTo （destinationRange： Range \|字符串）](/javascript/api/excel/excel.range#moveto-destinationrange-)|将单元格的值、格式和公式从当前区域移动到目标区域，替换这些单元格中的旧信息。|
+|[RangeFormat](/javascript/api/excel/excel.rangeformat)|[adjustIndent （金额：数字）](/javascript/api/excel/excel.rangeformat#adjustindent-amount-)|调整范围格式的缩进量。 缩进值的范围为0到250，以字符为单位。|
 
 ## <a name="see-also"></a>另请参阅
 

@@ -1,14 +1,14 @@
 ---
 title: Office 加载项使用的浏览器
 description: 指定操作系统和 Office 版本如何确定 Office 加载项使用的浏览器。
-ms.date: 09/25/2019
+ms.date: 12/13/2019
 localization_priority: Priority
-ms.openlocfilehash: b5d7198e556f020bccdf7ba1e0a0fcffa3a9171b
-ms.sourcegitcommit: c8914ce0f48a0c19bbfc3276a80d090bb7ce68e1
+ms.openlocfilehash: 3709157449634dfb49805e2247e47debe60f468f
+ms.sourcegitcommit: 8c5c5a1bd3fe8b90f6253d9850e9352ed0b283ee
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/26/2019
-ms.locfileid: "37235293"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "40813982"
 ---
 # <a name="browsers-used-by-office-add-ins"></a>Office 加载项使用的浏览器
 
@@ -36,19 +36,6 @@ Office 加载项是使用 iFrames（在 Office 网页版中运行时）和使用
 
 > [!IMPORTANT]
 > Internet Explorer 11 不支持高于 ES5 的 JavaScript 版本。 如果任何加载项用户安装的是使用 Internet Explorer 11 的平台，若要使用 ECMAScript 2015 或更高版本的语法和功能，则必须将 JavaScript 转换为 ES5 或使用填充代码。 此外，Internet Explorer 11 不支持媒体、录制和位置等部分 HTML5 功能。
-
-> [!NOTE]
-> 在它们公开发布之前，你需要是 Windows 预览体验成员才能获得 Windows 版本 1903 或更高版本，并且需要是 Office 预览体验成员才能获得 Office 版本 16.0.11629 或更高版本。
->
-> 若要加入 Windows 预览体验成员：
-> 
-> 1. 转至 [Windows 预览体验成员](https://insider.windows.com)并单击链接以加入 Windows 预览体验成员。
-> 2. 系统会将你引导至包含有关如何使用 Windows 设置支持 Windows 预览内部版本说明的页面。 按照说明执行操作。 选择更新频率时，请选择时间最短的选项。
->
-> 若要加入 Office 预览体验成员：
-> 
-> 1. 转至 [Office 预览体验成员入门](https://insider.office.com/join)。
-> 2. 按照加入页面上的说明操作。 系统要求你指定频道时，请选择预览体验成员。
 
 ## <a name="troubleshooting-microsoft-edge-issues"></a>Microsoft Edge 问题疑难解答
 

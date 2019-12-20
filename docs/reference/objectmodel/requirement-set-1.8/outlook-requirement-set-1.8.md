@@ -1,14 +1,14 @@
 ---
 title: Outlook 加载项 API 要求集 1.8
 description: ''
-ms.date: 10/31/2019
+ms.date: 12/17/2019
 localization_priority: Priority
-ms.openlocfilehash: 1e1420bd355c16941c7cb4ce66ecdca56e1c8927
-ms.sourcegitcommit: e989096f3d19761bf8477c585cde20b3f8e0b90d
+ms.openlocfilehash: 1a542a0b00bd04674c4da4c45909ff03a152983c
+ms.sourcegitcommit: 8c5c5a1bd3fe8b90f6253d9850e9352ed0b283ee
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/31/2019
-ms.locfileid: "37902137"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "40814157"
 ---
 # <a name="outlook-add-in-api-requirement-set-18"></a>Outlook 加载项 API 要求集 1.8
 
@@ -34,16 +34,16 @@ ms.locfileid: "37902137"
 - 添加了 [MasterCategories](/javascript/api/outlook/office.mastercategories?view=outlook-js-1.8)：新增了一个表示邮箱上类别主列表的对象。
 - 添加了 [SharedProperties](/javascript/api/outlook/office.sharedproperties?view=outlook-js-1.8)：新增了一个表示共享文件夹、日历或邮箱中约会或邮件项目的属性的对象。
 - 添加了 [SupportsSharedFolders 清单元素](../../manifest/supportssharedfolders.md)：添加了 [DesktopFormFactor](../../manifest/desktopformfactor.md) 清单元素的子元素。 它定义了是否可在代理场景中使用加载项。
-- 添加了 [Office.context.mailbox.masterCategories](/javascript/api/outlook/office.mailbox?view=outlook-js-1.8#mastercategories)：新增了一个表示邮箱上类别主列表的属性。
-- 添加了 [Office.context.mailbox.item.categories](/javascript/api/outlook/office.item?view=outlook-js-1.8#categories)：新增了一个表示项目上类别集的属性。
-- 添加了 [Office.context.mailbox.item.addFileAttachmentFromBase64Async](office.context.mailbox.item.md#addfileattachmentfrombase64asyncbase64file-attachmentname-options-callback)：新增了一个方法，它可将 base64 编码字符串形式的文件附加到邮件或约会。
-- 添加了 [Office.context.mailbox.item.enhancedLocation](office.context.mailbox.item.md#enhancedlocation-enhancedlocation)：新增了一个表示约会位置集的属性。
-- 添加了 [Office。 context. getAllInternetHeadersAsync](/javascript/api/outlook/office.messageread?view=outlook-js-1.8#getallinternetheadersasync-options--callback-)：新增了一个为邮件项目获取所有 Internet 标头的方法。 仅限阅读模式。
-- 添加了 [Office.context.mailbox.item.getAttachmentContentAsync](office.context.mailbox.item.md#getattachmentcontentasyncattachmentid-options-callback--attachmentcontent)：新增了一个方法，用于获取特定附件的内容。
-- 添加了 [Office.context.mailbox.item.getAttachmentsAsync](office.context.mailbox.item.md#getattachmentsasyncoptions-callback--arrayattachmentdetails)：新增了一个可在撰写模式下获取邮件附件的方法。
-- 添加了 [Office。 context. getItemIdAsync](office.context.mailbox.item.md#getitemidasyncoptions-callback)：新增了一个可获取已保存的约会或邮件项目的 ID 的方法。
-- 添加了 [Office.context.mailbox.item.getSharedPropertiesAsync](office.context.mailbox.item.md#getsharedpropertiesasyncoptions-callback)：新增了一个方法，它可获取显示约会或邮件项目的 sharedProperties 的对象。
-- 添加了 [Office.context.mailbox.item.internetHeaders](/javascript/api/outlook/office.messagecompose?view=outlook-js-1.8#internetheaders)：新增了一个可显示邮件项目上的 Internet 标头的属性。 仅限撰写模式。
+- 添加了 [Office.context.mailbox.masterCategories](office.context.mailbox.md#properties)：新增了一个表示邮箱上类别主列表的属性。
+- 添加了 [Office.context.mailbox.item.categories](office.context.mailbox.item.md#properties)：新增了一个表示项目上类别集的属性。
+- 添加了 [Office.context.mailbox.item.addFileAttachmentFromBase64Async](office.context.mailbox.item.md#methods)：新增了一个方法，它可将 base64 编码字符串形式的文件附加到邮件或约会。
+- 添加了 [Office.context.mailbox.item.enhancedLocation](office.context.mailbox.item.md#properties)：新增了一个表示约会位置集的属性。
+- 添加了 [Office。 context. getAllInternetHeadersAsync](office.context.mailbox.item.md#methods)：新增了一个为邮件项目获取所有 Internet 标头的方法。 仅限阅读模式。
+- 添加了 [Office.context.mailbox.item.getAttachmentContentAsync](office.context.mailbox.item.md#methods)：新增了一个方法，用于获取特定附件的内容。
+- 添加了 [Office.context.mailbox.item.getAttachmentsAsync](office.context.mailbox.item.md#methods)：新增了一个可在撰写模式下获取邮件附件的方法。
+- 添加了 [Office。 context. getItemIdAsync](office.context.mailbox.item.md#methods)：新增了一个可获取已保存的约会或邮件项目的 ID 的方法。
+- 添加了 [Office.context.mailbox.item.getSharedPropertiesAsync](office.context.mailbox.item.md#methods)：新增了一个方法，它可获取显示约会或邮件项目的 sharedProperties 的对象。
+- 添加了 [Office.context.mailbox.item.internetHeaders](office.context.mailbox.item.md#properties)：新增了一个可显示邮件项目上的 Internet 标头的属性。 仅限撰写模式。
 - 修改了 [Event.completed](/javascript/api/office/office.addincommands.event#completed-options-)：添加了一个新的可选参数 `options`，它是具有一个有效值 `allowEvent` 的字典。 此值可用于取消执行事件。
 - 添加了 [Office.MailboxEnums.AttachmentContentFormat](/javascript/api/outlook/office.mailboxenums.attachmentcontentformat?view=outlook-js-1.8)：新增了一个指定应用于附件内容的格式设置的枚举。
 - 添加了 [Office.MailboxEnums.AttachmentStatus](/javascript/api/outlook/office.mailboxenums.attachmentstatus?view=outlook-js-1.8)：新增了一个指定是添加附件还是从邮件中删除附件的枚举。

@@ -3,12 +3,12 @@ title: 适用于 Office 的 JavaScript API 的错误代码
 description: ''
 ms.date: 08/06/2019
 localization_priority: Normal
-ms.openlocfilehash: b5a5480b620f6ba9869a1faa40af0cd0faa3fcfc
-ms.sourcegitcommit: 21aa084875c9e07a300b3bbe8852b3e5dd163e1d
+ms.openlocfilehash: 45882cedf28f47be6bf2e20f9e6f6bf3cb9e816e
+ms.sourcegitcommit: 8c5c5a1bd3fe8b90f6253d9850e9352ed0b283ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "38001940"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "40815072"
 ---
 # <a name="javascript-api-for-office-error-codes"></a>适用于 Office 的 JavaScript API 的错误代码
 
@@ -89,7 +89,7 @@ ms.locfileid: "38001940"
 |12006|||对话框已关闭，通常是因为用户选择了 **X** 按钮。 在对话框中引发并在主机页面中触发 `DialogEventReceived` 事件。|
 |12007|||已从此主机窗口打开了一个对话框。 主机窗口（如任务窗格）一次只能打开一个对话框。 由 `displayDialogAsync` 的调用引发。|
 |12009|||用户已选择忽略对话框。 联机版本的 Office 中可能会发生此错误，用户可能会选择不允许加载项显示对话框。 由 `displayDialogAsync` 的调用引发。|
-|13000 - 13010|||[从 tokenhelper.getaccesstoken 以便中查看错误的原因和处理](/office/dev/add-ins/develop/troubleshoot-sso-in-office-add-ins#causes-and-handling-of-errors-from-getAccessToken)。|
+|13000 - 13010|||[从 tokenhelper.getaccesstoken 以便中查看错误的原因和处理](../develop/troubleshoot-sso-in-office-add-ins.md#causes-and-handling-of-errors-from-getaccesstoken)。|
 
 ## <a name="binding-creation-error-conditions"></a>绑定创建错误条件
 

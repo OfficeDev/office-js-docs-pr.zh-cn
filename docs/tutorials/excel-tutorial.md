@@ -4,12 +4,12 @@ description: 在本教程中，你将学习如何构建一个 Excel 外接程序
 ms.date: 11/26/2019
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: 1611a5d6fcded6430d9ef0d21242f6dd643ae016
-ms.sourcegitcommit: 05a883a7fd89136301ce35aabc57638e9f563288
+ms.openlocfilehash: c0a3df72d600acb34008ff574ec2ab2eee070e2e
+ms.sourcegitcommit: 8c5c5a1bd3fe8b90f6253d9850e9352ed0b283ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/27/2019
-ms.locfileid: "39629726"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "40814213"
 ---
 # <a name="tutorial-create-an-excel-task-pane-add-in"></a>教程：创建 Excel 任务窗格加载项
 
@@ -190,7 +190,7 @@ ms.locfileid: "39629726"
         npm start
         ```
 
-    - 若要在 web 上的 Excel 中测试外接程序，请在项目的根目录中运行以下命令。 如果你运行此命令，本地 Web 服务器将启动（如果尚未运行的话）。
+    - 若要在 web 上的 Excel 中测试外接程序，请在项目的根目录中运行以下命令。 运行此命令时，本地 Web 服务器将启动（如果尚未运行）。
 
         ```command&nbsp;line
         npm run start:web
@@ -745,7 +745,7 @@ ms.locfileid: "39629726"
         npm start
         ```
 
-    - 若要在 web 上的 Excel 中测试外接程序，请在项目的根目录中运行以下命令。 如果你运行此命令，本地 Web 服务器将启动（如果尚未运行的话）。
+    - 若要在 web 上的 Excel 中测试外接程序，请在项目的根目录中运行以下命令。 运行此命令时，本地 Web 服务器将启动（如果尚未运行）。
 
         ```command&nbsp;line
         npm run start:web
@@ -790,7 +790,7 @@ ms.locfileid: "39629726"
             <!-- For more information on Office UI Fabric, visit https://developer.microsoft.com/fabric. -->
             <link rel="stylesheet" href="https://static2.sharepointonline.com/files/fabric/office-ui-fabric-core/9.6.1/css/fabric.min.css"/>
 
-            <script type="text/javascript" src="https://appsforoffice.microsoft.com/lib/1.1/hosted/office.js"></script>
+            <script type="text/javascript" src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js"></script>
             <script type="text/javascript" src="popup.js"></script>
 
         </head>

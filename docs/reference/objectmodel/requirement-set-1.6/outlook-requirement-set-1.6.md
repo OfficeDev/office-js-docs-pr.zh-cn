@@ -1,14 +1,14 @@
 ---
 title: Outlook 外接程序 API 要求集 1.6
 description: ''
-ms.date: 10/30/2019
+ms.date: 12/17/2019
 localization_priority: Normal
-ms.openlocfilehash: 46d1b4eeb260c2b0f3b94999a7f02a1384b71942
-ms.sourcegitcommit: e989096f3d19761bf8477c585cde20b3f8e0b90d
+ms.openlocfilehash: 22702448b82a108c401f9f81d3b8a321e14ead63
+ms.sourcegitcommit: 8c5c5a1bd3fe8b90f6253d9850e9352ed0b283ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/31/2019
-ms.locfileid: "37902079"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "40814659"
 ---
 # <a name="outlook-add-in-api-requirement-set-16"></a>Outlook 外接程序 API 要求集 1.6
 
@@ -27,10 +27,10 @@ ms.locfileid: "37902079"
 
 ### <a name="change-log"></a>更改日志
 
-- 添加了 [Office.context.mailbox.item.getSelectedEntities](office.context.mailbox.item.md#getselectedentities--entities)：添加了一个新函数，该函数可用于获取用户选择的突出显示匹配项中的实体。 突出显示的匹配项适用于上下文外接程序。
-- 添加了 [Office.context.mailbox.item.getSelectedRegExMatches](office.context.mailbox.item.md#getselectedregexmatches--object)：添加了一个新函数，该函数可用于返回突出显示匹配项中与清单 XML 文件中定义的正则表达式匹配的字符串值。 突出显示的匹配项适用于上下文外接程序。
-- 添加了 [Office.context.mailbox.displayNewMessageForm](office.context.mailbox.md#displaynewmessageformparameters)：添加了一个新函数，该函数将打开新邮件窗体。
-- 添加了 [Office.context.mailbox.userProfile.accountType](office.context.mailbox.userprofile.md#accounttype-string)：向指示用户帐户类型的用户配置文件添加了一个新成员。
+- 添加了 [Office.context.mailbox.item.getSelectedEntities](office.context.mailbox.item.md#methods)：添加了一个新函数，该函数可用于获取用户选择的突出显示匹配项中的实体。 突出显示的匹配项适用于上下文外接程序。
+- 添加了 [Office.context.mailbox.item.getSelectedRegExMatches](office.context.mailbox.item.md#methods)：添加了一个新函数，该函数可用于返回突出显示匹配项中与清单 XML 文件中定义的正则表达式匹配的字符串值。 突出显示的匹配项适用于上下文外接程序。
+- 添加了 [Office.context.mailbox.displayNewMessageForm](office.context.mailbox.md#methods)：添加了一个新函数，该函数将打开新邮件窗体。
+- 添加了 [Office.context.mailbox.userProfile.accountType](office.context.mailbox.userprofile.md#properties)：向指示用户帐户类型的用户配置文件添加了一个新成员。
 
 ## <a name="see-also"></a>另请参阅
 

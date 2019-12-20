@@ -3,12 +3,12 @@ title: Office 加载项的隐私和安全
 description: ''
 ms.date: 09/26/2019
 localization_priority: Priority
-ms.openlocfilehash: c26f1f97382b8e8b1807a3eeeaa63cb6b553cb1e
-ms.sourcegitcommit: 528577145b2cf0a42bc64c56145d661c4d019fb8
+ms.openlocfilehash: bf71bfdba331f3726445c5095bd7dba1e4c5d39e
+ms.sourcegitcommit: 8c5c5a1bd3fe8b90f6253d9850e9352ed0b283ee
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "37353851"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "40814031"
 ---
 # <a name="privacy-and-security-for-office-add-ins"></a>Office 加载项的隐私和安全
 
@@ -33,9 +33,6 @@ Office 外接程序受到外接程序运行时环境、多层权限模型和性�
 此外，还可以调控 Office 外接程序使用的内存、CPU 和网络资源，以确保维持良好的性能和可靠性。
 
 以下各节简要介绍运行时体系结构如何支持在基于 Windows 的设备上的 Office 客户端、OS X Mac 设备以及 Web 浏览器中运行加载项。
-
-> [!NOTE]
-> 要了解如何将 WIP 和 Intune 与 Office 加载项结合使用，请参阅[使用 WIP和 Intune 保护运行 Office 加载项的文档中的企业数据](/microsoft-365/enterprise/office-add-ins-wip)。
 
 ### <a name="clients-on-windows-and-os-x-devices"></a>Windows 和 OS X 设备上的客户端
 

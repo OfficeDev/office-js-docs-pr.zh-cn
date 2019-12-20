@@ -1,14 +1,14 @@
 ---
 title: Outlook 外接程序 API 要求集 1.2
 description: ''
-ms.date: 10/30/2019
+ms.date: 12/17/2019
 localization_priority: Normal
-ms.openlocfilehash: 898e768dfc1828ba44f29e9da5c4baa61de186cb
-ms.sourcegitcommit: e989096f3d19761bf8477c585cde20b3f8e0b90d
+ms.openlocfilehash: e25a54ce96104f50cbcec25e7fe9896987ac453f
+ms.sourcegitcommit: 8c5c5a1bd3fe8b90f6253d9850e9352ed0b283ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/31/2019
-ms.locfileid: "37902093"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "40814939"
 ---
 # <a name="outlook-add-in-api-requirement-set-12"></a>Outlook 外接程序 API 要求集 1.2
 
@@ -23,10 +23,10 @@ ms.locfileid: "37902093"
 
 ### <a name="change-log"></a>更改日志
 
-- 添加了 [Office.context.mailbox.item.getSelectedDataAsync](office.context.mailbox.item.md#getselecteddataasynccoerciontype-options-callback--string)：以异步方式返回邮件主题或正文中的选定数据。
-- 添加了 [Office.context.mailbox.item.setSelectedDataAsync](office.context.mailbox.item.md#setselecteddataasyncdata-options-callback)：以异步方式将数据插入到邮件的正文或主题中。
-- 修改了 [Office.context.mailbox.item.displayReplyAllForm](office.context.mailbox.item.md#displayreplyallformformdata-callback)：将 `attachments` 属性添加到 `formData` 参数。
-- 修改了 [Office.context.mailbox.item.displayReplyForm](office.context.mailbox.item.md#displayreplyformformdata-callback)：将 `attachments` 属性添加到 `formData` 参数。
+- 添加了 [Office.context.mailbox.item.getSelectedDataAsync](office.context.mailbox.item.md#methods)：以异步方式返回邮件主题或正文中的选定数据。
+- 添加了 [Office.context.mailbox.item.setSelectedDataAsync](office.context.mailbox.item.md#methods)：以异步方式将数据插入到邮件的正文或主题中。
+- 修改了 [Office.context.mailbox.item.displayReplyAllForm](office.context.mailbox.item.md#methods)：将 `attachments` 属性添加到 `formData` 参数。
+- 修改了 [Office.context.mailbox.item.displayReplyForm](office.context.mailbox.item.md#methods)：将 `attachments` 属性添加到 `formData` 参数。
 
 ## <a name="see-also"></a>另请参阅
 

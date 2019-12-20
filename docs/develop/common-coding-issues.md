@@ -1,14 +1,14 @@
 ---
 title: 常见的编码问题和意外的平台行为
 description: 开发人员经常遇到的 Office JavaScript API 平台问题的列表。
-ms.date: 11/06/2019
+ms.date: 12/05/2019
 localization_priority: Normal
-ms.openlocfilehash: a4d7a09c1645bea181060157d933036d1924044f
-ms.sourcegitcommit: 88d81aa2d707105cf0eb55d9774b2e7cf468b03a
+ms.openlocfilehash: 4271db2a9c61de419dd36fb0277574ffe0929c58
+ms.sourcegitcommit: 8c5c5a1bd3fe8b90f6253d9850e9352ed0b283ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "38301930"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "40814010"
 ---
 # <a name="common-coding-issues-and-unexpected-platform-behaviors"></a>常见的编码问题和意外的平台行为
 
@@ -86,11 +86,27 @@ range.format.font.size = 10;
 
 ## <a name="setting-read-only-properties"></a>设置只读属性
 
-Office JS 的[TypeScript 定义](/referencing-the-javascript-api-for-office-library-from-its-cdn.md)指定哪些对象属性是只读的。 如果尝试设置只读属性，写入操作将无提示地失败，且不会引发错误。 下面的示例错误地尝试设置只读属性[Chart.id](/javascript/api/excel/excel.chart#id)。
+Office JS 的[TypeScript 定义](referencing-the-javascript-api-for-office-library-from-its-cdn.md)指定哪些对象属性是只读的。 如果尝试设置只读属性，写入操作将无提示地失败，且不会引发错误。 下面的示例错误地尝试设置只读属性[Chart.id](/javascript/api/excel/excel.chart#id)。
 
 ```js
 // This will do nothing, since `id` is a read-only property.
 myChart.id = "5";
+```
+
+## <a name="removing-event-handlers"></a>删除事件处理程序
+
+必须使用在其中添加事件处理程序`RequestContext`的相同项将其删除。 如果需要加载项在运行时删除事件处理程序，则需要存储用于添加处理程序的 context 对象。
+
+```js
+Excel.run(async (context) => {
+    [...]
+
+    // To later remove an event handler, store the context somewhere accessible to the handler removal function.
+    // You may find it helpful to also store the event handler object and associate it with the context.
+    selectionChangedHandler = myWorksheet.onSelectionChanged.add(callback);
+    savedContext = currentContext;
+    return context.sync();
+}
 ```
 
 ## <a name="see-also"></a>另请参阅

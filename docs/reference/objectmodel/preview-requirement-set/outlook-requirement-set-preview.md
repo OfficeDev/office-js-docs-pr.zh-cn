@@ -1,14 +1,14 @@
 ---
 title: Outlook 外接程序 API 预览要求集
 description: ''
-ms.date: 11/05/2019
+ms.date: 12/17/2019
 localization_priority: Priority
-ms.openlocfilehash: f52edea26eba6c10b24f14feb1e86d811642798b
-ms.sourcegitcommit: 21aa084875c9e07a300b3bbe8852b3e5dd163e1d
+ms.openlocfilehash: a3cc49562add2f6fe54cf83d2f2ed64ebb61d8c7
+ms.sourcegitcommit: 8c5c5a1bd3fe8b90f6253d9850e9352ed0b283ee
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "38001619"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "40815044"
 ---
 # <a name="outlook-add-in-api-preview-requirement-set"></a>Outlook 外接程序 API 预览要求集
 
@@ -27,7 +27,7 @@ ms.locfileid: "38001619"
 
 ### <a name="integration-with-actionable-messages"></a>与可操作邮件集成
 
-#### <a name="officecontextmailboxitemgetinitializationcontextasyncofficecontextmailboxitemmdgetinitializationcontextasyncoptions-callback"></a>[Office.context.mailbox.item.getInitializationContextAsync](office.context.mailbox.item.md#getinitializationcontextasyncoptions-callback)
+#### <a name="officecontextmailboxitemgetinitializationcontextasyncofficecontextmailboxitemmdmethods"></a>[Office.context.mailbox.item.getInitializationContextAsync](office.context.mailbox.item.md#methods)
 
 新增了一个函数，当外接程序[由可操作邮件激活时](/outlook/actionable-messages/invoke-add-in-from-actionable-message)，返回传递的初始化数据。
 
