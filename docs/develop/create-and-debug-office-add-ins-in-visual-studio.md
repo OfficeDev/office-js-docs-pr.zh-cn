@@ -1,14 +1,14 @@
 ---
 title: 在 Visual Studio 中创建和调试 Office 外接程序
 description: 使用 Visual Studio 在 Windows 上的 Office 桌面客户端中创建和调试 Office 加载项
-ms.date: 10/11/2019
+ms.date: 12/16/2019
 localization_priority: Priority
-ms.openlocfilehash: 8274022a6a3af6e1b5d82c9d7105142d5a49e905
-ms.sourcegitcommit: 44f1a4a3e1ae3c33d7d5fabcee14b84af94e03da
+ms.openlocfilehash: 2a32075420355e1b70c91c676baf00bc202b18b1
+ms.sourcegitcommit: 8c5c5a1bd3fe8b90f6253d9850e9352ed0b283ee
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "39670165"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "40814122"
 ---
 # <a name="create-and-debug-office-add-ins-in-visual-studio"></a>在 Visual Studio 中创建和调试 Office 加载项
 
@@ -95,6 +95,7 @@ Web 应用程序项目包含可用于实现入门的默认 HTML 文件、JavaScr
 
 你可以使用 Visual Studio 在 Windows 上的 Office 桌面客户端中调试外接程序，如以下部分所述：
 
+- [对加载项命令和无 UI 的代码启用调试](#enable-debugging-for-add-in-commands-and-ui-less-code)
 - [查看生成和调试属性](#review-the-build-and-debug-properties)
 - [使用现有文档调试外接程序](#use-an-existing-document-to-debug-the-add-in)
 - [启动项目](#start-the-project)
@@ -103,6 +104,12 @@ Web 应用程序项目包含可用于实现入门的默认 HTML 文件、JavaScr
 
 > [!NOTE]
 > 无法使用 Visual Studio 在 Office 网页版或 Mac 版 Office 中调试加载项。 若要了解如何在这些平台上进行调试，请参阅[在 Office 网页版中调试 Office 加载项](../testing/debug-add-ins-in-office-online.md)，或[调试 iPad 版和 Mac 版 Office 加载项](../testing/debug-office-add-ins-on-ipad-and-mac.md)
+
+### <a name="enable-debugging-for-add-in-commands-and-ui-less-code"></a>对加载项命令和无 UI 的代码启用调试
+
+当 Visual Studio 调试 Windows 上的 Office 时，加载项托管在 Microsoft Internet Explorer 或 Microsoft Edge 浏览器实例中。 若要确定开发计算机上使用的浏览器，请参阅 [Office 加载项使用的浏览器](../concepts/browsers-used-by-office-web-add-ins.md)。
+
+[!include[Enable debugging on Microsoft Edge DevTools](../includes/enable-debugging-on-edge-devtools.md)]
 
 ### <a name="review-the-build-and-debug-properties"></a>查看生成和调试属性
 

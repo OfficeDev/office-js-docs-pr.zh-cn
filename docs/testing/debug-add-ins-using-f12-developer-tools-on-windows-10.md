@@ -1,30 +1,33 @@
 ---
 title: 使用 Windows 10 上的开发人员工具调试加载项
-description: ''
-ms.date: 07/01/2019
+description: 使用 Windows 10 上的 Microsoft Edge 开发人员工具调试加载项
+ms.date: 12/16/2019
 localization_priority: Priority
-ms.openlocfilehash: 2e6f3c10aa7e1e08aa6c4bb1b4a7724cc9e6531d
-ms.sourcegitcommit: c3673cc693fa7070e1b397922bd735ba3f9342f3
+ms.openlocfilehash: dd0f078b1cad0621dc99269b745a326adb69f7d6
+ms.sourcegitcommit: 8c5c5a1bd3fe8b90f6253d9850e9352ed0b283ee
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/05/2019
-ms.locfileid: "35575672"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "40814470"
 ---
 # <a name="debug-add-ins-using-developer-tools-on-windows-10"></a>使用 Windows 10 上的开发人员工具调试加载项
 
 在 IDE 之外，还有一些开发人员工具可用于帮助你在 Windows 10 上调试加载项。 当你在 IDE 之外运行加载项的同时，需要调查问题时，这些工具非常有用。
 
-所使用的工具取决于加载项是在 Microsoft Edge 还是在 Internet Explorer 中运行。 这取决于计算机上安装的 Windows 10 版本和 Office 版本。 若要确定开发计算机上使用的浏览器，请参阅 [Office 加载项使用的浏览器](../concepts/browsers-used-by-office-web-add-ins.md)。 
-
+所使用的工具取决于加载项是在 Microsoft Edge 还是在 Internet Explorer 中运行。 这取决于计算机上安装的 Windows 10 版本和 Office 版本。 若要确定开发计算机上使用的浏览器，请参阅 [Office 加载项使用的浏览器](../concepts/browsers-used-by-office-web-add-ins.md)。
 
 > [!NOTE]
 > 本文中的说明不能用于调试使用 Execute 函数的 Outlook 加载项。 若要调试使用 Execute 函数的 Outlook 加载项，我们建议你在脚本模式下附加到 Visual Studio 或附加到某些其他脚本调试器。
 
 ## <a name="when-the-add-in-is-running-in-microsoft-edge"></a>当加载项在 Microsoft Edge 中运行时
 
-当加载项在 Microsoft Edge 中运行时，可使用 [Microsoft Edge 开发人员工具](https://www.microsoft.com/p/microsoft-edge-devtools-preview/9mzbfrmz0mnj?activetab=pivot%3Aoverviewtab)。 
+[!include[Enable debugging on Microsoft Edge DevTools](../includes/enable-debugging-on-edge-devtools.md)]
 
-1. 运行加载项。 
+### <a name="debug-using-microsoft-edge-devtools"></a>使用 Microsoft Edge DevTools 进行调试
+
+当加载项在 Microsoft Edge 中运行时，可使用 [Microsoft Edge 开发人员工具](https://www.microsoft.com/p/microsoft-edge-devtools-preview/9mzbfrmz0mnj?activetab=pivot%3Aoverviewtab)。
+
+1. 运行加载项。
 
 2. 运行 Microsoft Edge 开发人员工具。
 

@@ -3,12 +3,12 @@ title: 在 Office 加载项中使用对话框 API
 description: ''
 ms.date: 08/07/2019
 localization_priority: Priority
-ms.openlocfilehash: 5cafb2396c92576bd5ac6d6d52105e0bb5ee579d
-ms.sourcegitcommit: 1dc1bb0befe06d19b587961da892434bd0512fb5
+ms.openlocfilehash: 88c7afca2f1e800391443458e0c6f6b930288c44
+ms.sourcegitcommit: 8c5c5a1bd3fe8b90f6253d9850e9352ed0b283ee
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "36302579"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "40814108"
 ---
 # <a name="use-the-dialog-api-in-your-office-add-ins"></a>在 Office 加载项中使用对话框 API
 
@@ -329,7 +329,10 @@ function processDialogEvent(arg) {
 有时，主机页需要向对话框传递信息。完成此操作的方式主要分为两种：
 
 - 向传递给 `displayDialogAsync` 的 URL 添加查询参数。
-- 将信息存储在主机窗口和对话框都可访问的位置。这两个窗口不共享通用会话存储，但*如果它们具有相同的域*（包括端口号，若有），则共享通用[本地存储](https://www.w3schools.com/html/html5_webstorage.asp)。
+- 将信息存储在主机窗口和对话框都可访问的位置。这两个窗口不共享通用会话存储，但*如果它们具有相同的域*（包括端口号，若有），则共享通用[本地存储](https://www.w3schools.com/html/html5_webstorage.asp)。\*
+
+> [!NOTE]
+> \*有一个 bug 将影响你的令牌处理策略。 如果加载项正使用 Safari 或 Microsoft 浏览器在 **Office 网页版**上运行，则对话框和任务窗格不共享同一本地存储，因此该存储无法用于在它们之间通信。
 
 ### <a name="use-local-storage"></a>使用本地存储
 

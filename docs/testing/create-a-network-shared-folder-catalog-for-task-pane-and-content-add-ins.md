@@ -1,14 +1,14 @@
 ---
 title: 旁加载 Office 加载项以供测试
 description: ''
-ms.date: 08/15/2019
+ms.date: 12/06/2019
 localization_priority: Priority
-ms.openlocfilehash: 19cd599ea743fc577a5139d3f278dd3f993ec5b1
-ms.sourcegitcommit: da8e6148f4bd9884ab9702db3033273a383d15f0
+ms.openlocfilehash: bb926b09d9381574d22e7634a578adac141e1f8f
+ms.sourcegitcommit: 8c5c5a1bd3fe8b90f6253d9850e9352ed0b283ee
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/20/2019
-ms.locfileid: "36477927"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "40814477"
 ---
 # <a name="sideload-office-add-ins-for-testing"></a>旁加载 Office 加载项以供测试
 
@@ -45,7 +45,9 @@ ms.locfileid: "36477927"
 
 6. 选择“**关闭**”按钮以关闭“**属性**”对话框窗口。
 
-## <a name="specify-the-shared-folder-as-a-trusted-catalog"></a>将共享文件夹指定为受信任的目录
+## <a name="specify-the-shared-folder-as-a-trusted-catalog"></a>将共享文件夹指定为受信任的目录 
+
+### <a name="configure-the-trust-manually"></a>手动配置信任
       
 1. 在 Excel、Word、PowerPoint 或 Project 中打开一个新的文档。
     
@@ -68,10 +70,43 @@ ms.locfileid: "36477927"
 8. 选择“**确定**”按钮以关闭“**Word 选项**”对话框窗口。
 
 9. 关闭并重新打开 Office 应用程序，以使更改生效。
+
+### <a name="configure-the-trust-with-a-registry-script"></a>使用注册表脚本配置信任
+
+1. 在文本编辑器中，创建名为 TrustNetworkShareCatalog.reg 的文件。 
+
+2. 在文件中添加以下内容：
+
+    ```
+    Windows Registry Editor Version 5.00
     
+    [HKEY_CURRENT_USER\Software\Microsoft\Office\16.0\WEF\TrustedCatalogs\{-random-GUID-here-}]
+    "Id"="{-random-GUID-here-}"
+    "Url"="\\\\-share-\\-folder-"
+    "Flags"=dword:00000001
+    ```
+3. 在众多在线 GUID 生成工具中选用一个（例如 [GUID 生成器](https://guidgenerator.com/)）来生成一个随机 GUID，并在 TrustNetworkShareCatalog.reg 文件中，将*两个位置*的“-random-GUID-here-”字符串都替换为 GUID。 （应保留右侧 `{}` 符号）。
+
+4. 将 `Url` 值替换为你之前[共享](#share-a-folder)的文件夹的完整网络路径。 （请注意，URL 中的所有 `\` 字符都必须成双出现。）如果在共享文件夹时未能记下文件夹的完整网络路径，则可从文件夹的“**属性**”对话框窗口中获取它，如以下屏幕截图所示。 
+
+    ![已突出显示“共享”选项卡和网络路径的文件夹“属性”对话框](../images/sideload-windows-properties-dialog-2.png)
+    
+5. 文件现应如下所示。 将其保存。
+
+    ```
+    Windows Registry Editor Version 5.00
+    
+    [HKEY_CURRENT_USER\Software\Microsoft\Office\16.0\WEF\TrustedCatalogs\{01234567-89ab-cedf-0123-456789abcedf}]
+    "Id"="{01234567-89ab-cedf-0123-456789abcedf}"
+    "Url"="\\\\TestServer\\OfficeAddinManifests"
+    "Flags"=dword:00000001
+    ```
+
+6. 关闭*所有* Office 应用程序。
+
+7. 如同对任何可执行文件操作一样运行 TrustNetworkShareCatalog.reg，例如双击它。
 
 ## <a name="sideload-your-add-in"></a>旁加载加载项
-
 
 1. 放入在共享文件夹目录中进行测试的所有加载项的清单 XML 文件。 请务必将 Web 应用程序本身部署到 Web 服务器。 务必在清单文件的 **SourceLocation** 元素中指定 URL。
 

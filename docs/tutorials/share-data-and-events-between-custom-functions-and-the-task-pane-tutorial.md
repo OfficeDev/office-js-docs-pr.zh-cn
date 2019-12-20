@@ -4,12 +4,12 @@ title: 教程：在 Excel 自定义函数和任务窗格之间共享数据和事
 ms.prod: excel
 description: 在 Excel 中，在自定义函数和任务窗格之间共享数据和事件
 localization_priority: Priority
-ms.openlocfilehash: 714e2645d78293b683a4824b58cb2b9b0b72ebb8
-ms.sourcegitcommit: 44f1a4a3e1ae3c33d7d5fabcee14b84af94e03da
+ms.openlocfilehash: 16affeb29bd5950198f81f85e44adaf812067829
+ms.sourcegitcommit: 8c5c5a1bd3fe8b90f6253d9850e9352ed0b283ee
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "39670200"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "40814129"
 ---
 # <a name="tutorial-share-data-and-events-between-excel-custom-functions-and-the-task-pane-preview"></a>教程：在 Excel 自定义函数和任务窗格之间共享数据和事件（预览）
 
@@ -204,5 +204,5 @@ yo office
 Excel 启动后，可使用“任务窗格”按钮来存储或获取共享数据。 在自定义函数的单元格中输入 `=CONTOSO.GETVALUE()`，以检索相同的共享数据。 或使用 `=CONTOSO.STOREVALUE(“new value”)` 将共享数据更改为新值。
 
 > [!NOTE]
-> 如本文所示配置项目，可在自定义函数和任务窗格之间共享上下文。 不支持从自定义函数调用 Office API。 如果需要与文档交互，在 [onCalculated 事件](https://docs.microsoft.com/javascript/api/excel/excel.worksheet?view=excel-js-preview#event-details)中实现对 Office API 的调用。
+> 如本文所示配置项目，可在自定义函数和任务窗格之间共享上下文。 预览版中不支持通过自定义函数调用 Office API。
 

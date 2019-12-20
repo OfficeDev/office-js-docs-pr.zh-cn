@@ -61,7 +61,13 @@
             - name: 颜色
               href: design/add-in-color.md
             - name: 图标
-              href: design/add-in-icons.md
+              items:
+                - name: 图标准则
+                  href: design/add-in-icons.md
+                - name: 全新样式
+                  href: design/add-in-icons-fresh.md
+                - name: Monoline 样式
+                  href: design/add-in-icons-monoline.md
             - name: 布局
               href: design/add-in-layout.md
             - name: 版式

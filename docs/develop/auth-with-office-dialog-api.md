@@ -1,14 +1,14 @@
 ---
 title: 使用 Office 对话框 API 进行身份验证和授权
 description: ''
-ms.date: 08/07/2019
+ms.date: 12/06/2019
 localization_priority: Priority
-ms.openlocfilehash: 3d61c82f28fd5780176b356e1ab4d394e5fbf8bd
-ms.sourcegitcommit: 1dc1bb0befe06d19b587961da892434bd0512fb5
+ms.openlocfilehash: 7c8e012c2ef74e8a8e92203817b4f5f2eb60bd01
+ms.sourcegitcommit: 8c5c5a1bd3fe8b90f6253d9850e9352ed0b283ee
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "36302935"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "40814024"
 ---
 # <a name="authenticate-and-authorize-with-the-office-dialog-api"></a>使用 Office 对话框 API 进行身份验证和授权
 
@@ -74,7 +74,10 @@ Office 对话框和任务窗格在不同的浏览器、JavaScript 运行时实�
 
 与此非常密切相关的是，库通常会同时提供用于获取令牌的交互式和“无提示”方法。 如果你既可以进行身份验证，也可以在同一浏览器实例中对资源进行数据调用，则代码会调用无提示方法来获取令牌，然后马上将该令牌添加到数据调用。 无提示方法会检查缓存是否有中未过期的令牌，并将其返回（如果有）。 否则，无提示方法将调用重定向到 STS 登录的交互式方法。 登录完成后，交互式方法将返回令牌，但同时会将其缓存在内存中。 但是，在使用 Office 对话框 API 时，对资源的数据调用（它将调用无提示方法）位于任务窗格的浏览器实例中。 库的令牌缓存在该实例中不存在。
 
-或者，加载项的对话框浏览器实例可以直接调用库的交互式方法。 该方法返回令牌时，代码必须将令牌显式存储任务窗格的浏览器可以检索到的地方，例如本地存储或服务器端数据库。 另一种选择是使用 `messageParent` 方法将令牌传递到任务窗格。 仅当交互式方法将访问令牌存储在代码可以读取的位置时，才可以使用此替代选项。 有时，库的交互式方法设计为将令牌存储到代码无法访问的对象的私有属性中。
+或者，加载项的对话框浏览器实例可以直接调用库的交互式方法。 该方法返回令牌时，代码必须将令牌显式存储在任务窗格的浏览器可检索到的位置，例如本地存储\*或服务器端数据库。 另一种选择是使用 `messageParent` 方法将令牌传递到任务窗格。 仅当交互式方法将访问令牌存储在代码可以读取的位置时，才可以使用此替代选项。 有时，库的交互式方法设计为将令牌存储到代码无法访问的对象的私有属性中。
+
+> [!NOTE]
+> \*有一个 bug 将影响你的令牌处理策略。 如果加载项正使用 Safari 或 Microsoft 浏览器在 **Office 网页版**上运行，则对话框和任务窗格不共享同一本地存储，因此该存储无法用于在它们之间通信。
 
 ### <a name="you-usually-cannot-use-the-librarys-auth-context-object"></a>通常无法使用库的“身份验证上下文”对象
 
@@ -84,16 +87,17 @@ Office 对话框和任务窗格在不同的浏览器、JavaScript 运行时实�
 
 ### <a name="how-you-can-use-libraries-with-the-office-dialog-api"></a>如何将库与 Office 对话框 API 结合使用
 
-大多数库提供了更低抽象级别的 API 作为单一“身份验证相关”对象的补充（或取代这些对象），可让代码创建不太单一的整体帮助程序对象。 例如，[MSAL.NET](https://github.com/AzureAD/microsoft-authentication-library-for-dotnet/wiki#conceptual-documentation) v. 3. x.x 有一个用于构造登录 URL 的 API，以及另一个用于构造 AuthResult 对象的 API，该对象在代码可访问的属性中包含访问令牌。 有关 Office 加载项中的 MSAL.NET 的示例，请参阅: [Office 加载项 Microsoft Graph ASP.NET](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Samples/auth/Office-Add-in-Microsoft-Graph-ASPNET) 和 [Outlook 加载项 Microsoft Graph ASP.NET](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Samples/auth/Outlook-Add-in-Microsoft-Graph-ASPNET)。
+大多数库提供了更低抽象级别的 API 作为单一“身份验证相关”对象的补充（或取代这些对象），可让代码创建不太单一的整体帮助程序对象。 例如，[MSAL.NET](https://github.com/AzureAD/microsoft-authentication-library-for-dotnet/wiki#conceptual-documentation) v. 3. x.x 有一个用于构造登录 URL 的 API，以及另一个用于构造 AuthResult 对象的 API，该对象在代码可访问的属性中包含访问令牌。 有关 Office 加载项中的 MSAL.NET 的示例，请参阅: [Office 加载项 Microsoft Graph ASP.NET](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Samples/auth/Office-Add-in-Microsoft-Graph-ASPNET) 和 [Outlook 加载项 Microsoft Graph ASP.NET](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Samples/auth/Outlook-Add-in-Microsoft-Graph-ASPNET)。 有关在加载项中使用 [msal.js](https://github.com/AzureAD/microsoft-authentication-library-for-js) 的示例，请参阅 [Office 加载项 Microsoft Graph React](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Samples/auth/Office-Add-in-Microsoft-Graph-React)。
 
 有关身份验证和授权库的详细信息，请参阅 [Microsoft Graph：推荐的库](authorize-to-microsoft-graph-without-sso.md#recommended-libraries-and-samples)和[其他外部服务：库](auth-external-add-ins.md#libraries)。
 
 ## <a name="samples"></a>示例
 
-- [Office 加载项 Microsoft Graph ASP.NET](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Samples/auth/Office-Add-in-Microsoft-Graph-ASPNET)： 一个基于 ASP.NET 的加载项（Excel、Word 或 PowerPoint）它使用 MSAL.NET 库登录并获取 Microsoft Graph 数据的访问令牌。
+- [Office 加载项 Microsoft Graph ASP.NET](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Samples/auth/Office-Add-in-Microsoft-Graph-ASPNET)：一个基于 ASP.NET 的加载项（Excel、Word 或 PowerPoint），它使用 MSAL.NET 库和授权代码流进行登录并获取 Microsoft Graph 数据的访问令牌。
 - [Outlook 加载项 Microsoft Graph ASP.NET](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Samples/auth/Outlook-Add-in-Microsoft-Graph-ASPNET)：与上面的加载项一样，但 Office 应用程序为 Outlook。
+- [Office 加载项 Microsoft Graph React](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Samples/auth/Office-Add-in-Microsoft-Graph-React)：一个基于 NodeJS 的加载项（Excel、Word 或 PowerPoint），它使用 msal.js 库和隐式流进行登录并获取 Microsoft Graph 数据的访问令牌。
+
 
 有关详细信息，请参阅：
 - [在 Office 加载项中授权外部服务](auth-external-add-ins.md)
 - [在 Office 加载项中使用对话框 API](dialog-api-in-office-add-ins.md)
-
