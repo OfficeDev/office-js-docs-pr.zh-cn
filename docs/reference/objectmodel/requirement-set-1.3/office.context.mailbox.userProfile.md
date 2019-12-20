@@ -1,112 +1,33 @@
 ---
-title: "\"Context.subname\": \"邮箱. userProfile-要求集 1.3\""
+title: "\"Context.subname\"： \"邮箱. userProfile-要求集 1.3\""
 description: ''
-ms.date: 08/08/2019
+ms.date: 12/16/2019
 localization_priority: Normal
-ms.openlocfilehash: 20393d0ac650de34054b912d9e53a9ac167fddb2
-ms.sourcegitcommit: 1fb99b1b4e63868a0e81a928c69a34c42bf7e209
+ms.openlocfilehash: 4d63dfe1b32de2ac7fe55f324f938b85a865ec02
+ms.sourcegitcommit: 8c5c5a1bd3fe8b90f6253d9850e9352ed0b283ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/30/2019
-ms.locfileid: "36696251"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "40814911"
 ---
-# <a name="userprofile"></a><span data-ttu-id="0f2ac-102">userProfile</span><span class="sxs-lookup"><span data-stu-id="0f2ac-102">userProfile</span></span>
+# <a name="userprofile"></a><span data-ttu-id="b928d-102">userProfile</span><span class="sxs-lookup"><span data-stu-id="b928d-102">userProfile</span></span>
 
-### <a name="officeofficemdcontextofficecontextmdmailboxofficecontextmailboxmduserprofile"></a><span data-ttu-id="0f2ac-103">[Office](Office.md)[.context](Office.context.md)[.mailbox](Office.context.mailbox.md).userProfile</span><span class="sxs-lookup"><span data-stu-id="0f2ac-103">[Office](Office.md)[.context](Office.context.md)[.mailbox](Office.context.mailbox.md).userProfile</span></span>
+### <a name="officeofficemdcontextofficecontextmdmailboxofficecontextmailboxmduserprofile"></a><span data-ttu-id="b928d-103">[Office](office.md)[.context](office.context.md)[.mailbox](office.context.mailbox.md).userProfile</span><span class="sxs-lookup"><span data-stu-id="b928d-103">[Office](office.md)[.context](office.context.md)[.mailbox](office.context.mailbox.md).userProfile</span></span>
 
-##### <a name="requirements"></a><span data-ttu-id="0f2ac-104">要求</span><span class="sxs-lookup"><span data-stu-id="0f2ac-104">Requirements</span></span>
+<span data-ttu-id="b928d-104">提供有关 Outlook 外接程序中的用户的信息。</span><span class="sxs-lookup"><span data-stu-id="b928d-104">Provides information about the user in an Outlook add-in.</span></span>
 
-|<span data-ttu-id="0f2ac-105">要求</span><span class="sxs-lookup"><span data-stu-id="0f2ac-105">Requirement</span></span>| <span data-ttu-id="0f2ac-106">值</span><span class="sxs-lookup"><span data-stu-id="0f2ac-106">Value</span></span>|
+##### <a name="requirements"></a><span data-ttu-id="b928d-105">要求</span><span class="sxs-lookup"><span data-stu-id="b928d-105">Requirements</span></span>
+
+|<span data-ttu-id="b928d-106">要求</span><span class="sxs-lookup"><span data-stu-id="b928d-106">Requirement</span></span>| <span data-ttu-id="b928d-107">值</span><span class="sxs-lookup"><span data-stu-id="b928d-107">Value</span></span>|
 |---|---|
-|[<span data-ttu-id="0f2ac-107">最低版本的邮箱要求集</span><span class="sxs-lookup"><span data-stu-id="0f2ac-107">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| <span data-ttu-id="0f2ac-108">1.0</span><span class="sxs-lookup"><span data-stu-id="0f2ac-108">1.0</span></span>|
-|[<span data-ttu-id="0f2ac-109">最低权限级别</span><span class="sxs-lookup"><span data-stu-id="0f2ac-109">Minimum permission level</span></span>](/outlook/add-ins/understanding-outlook-add-in-permissions)| <span data-ttu-id="0f2ac-110">ReadItem</span><span class="sxs-lookup"><span data-stu-id="0f2ac-110">ReadItem</span></span>|
-|[<span data-ttu-id="0f2ac-111">适用的 Outlook 模式</span><span class="sxs-lookup"><span data-stu-id="0f2ac-111">Applicable Outlook mode</span></span>](/outlook/add-ins/#extension-points)| <span data-ttu-id="0f2ac-112">撰写或阅读</span><span class="sxs-lookup"><span data-stu-id="0f2ac-112">Compose or Read</span></span>|
+|[<span data-ttu-id="b928d-108">最低版本的邮箱要求集</span><span class="sxs-lookup"><span data-stu-id="b928d-108">Minimum mailbox requirement set version</span></span>](../../requirement-sets/outlook-api-requirement-sets.md)| <span data-ttu-id="b928d-109">1.1</span><span class="sxs-lookup"><span data-stu-id="b928d-109">1.1</span></span>|
+|[<span data-ttu-id="b928d-110">最低权限级别</span><span class="sxs-lookup"><span data-stu-id="b928d-110">Minimum permission level</span></span>](/outlook/add-ins/understanding-outlook-add-in-permissions)| <span data-ttu-id="b928d-111">ReadItem</span><span class="sxs-lookup"><span data-stu-id="b928d-111">ReadItem</span></span>|
+|[<span data-ttu-id="b928d-112">适用的 Outlook 模式</span><span class="sxs-lookup"><span data-stu-id="b928d-112">Applicable Outlook mode</span></span>](/outlook/add-ins/#extension-points)| <span data-ttu-id="b928d-113">撰写或阅读</span><span class="sxs-lookup"><span data-stu-id="b928d-113">Compose or Read</span></span>|
 
-##### <a name="members-and-methods"></a><span data-ttu-id="0f2ac-113">成员和方法</span><span class="sxs-lookup"><span data-stu-id="0f2ac-113">Members and methods</span></span>
+## <a name="properties"></a><span data-ttu-id="b928d-114">属性</span><span class="sxs-lookup"><span data-stu-id="b928d-114">Properties</span></span>
 
-| <span data-ttu-id="0f2ac-114">成员</span><span class="sxs-lookup"><span data-stu-id="0f2ac-114">Member</span></span> | <span data-ttu-id="0f2ac-115">类型</span><span class="sxs-lookup"><span data-stu-id="0f2ac-115">Type</span></span> |
-|--------|------|
-| [<span data-ttu-id="0f2ac-116">displayName</span><span class="sxs-lookup"><span data-stu-id="0f2ac-116">displayName</span></span>](#displayname-string) | <span data-ttu-id="0f2ac-117">Member</span><span class="sxs-lookup"><span data-stu-id="0f2ac-117">Member</span></span> |
-| [<span data-ttu-id="0f2ac-118">emailAddress</span><span class="sxs-lookup"><span data-stu-id="0f2ac-118">emailAddress</span></span>](#emailaddress-string) | <span data-ttu-id="0f2ac-119">Member</span><span class="sxs-lookup"><span data-stu-id="0f2ac-119">Member</span></span> |
-| [<span data-ttu-id="0f2ac-120">timeZone</span><span class="sxs-lookup"><span data-stu-id="0f2ac-120">timeZone</span></span>](#timezone-string) | <span data-ttu-id="0f2ac-121">Member</span><span class="sxs-lookup"><span data-stu-id="0f2ac-121">Member</span></span> |
-
-### <a name="members"></a><span data-ttu-id="0f2ac-122">Members</span><span class="sxs-lookup"><span data-stu-id="0f2ac-122">Members</span></span>
-
-#### <a name="displayname-string"></a><span data-ttu-id="0f2ac-123">displayName: String</span><span class="sxs-lookup"><span data-stu-id="0f2ac-123">displayName: String</span></span>
-
-<span data-ttu-id="0f2ac-124">获取用户的显示名称。</span><span class="sxs-lookup"><span data-stu-id="0f2ac-124">Gets the user's display name.</span></span>
-
-##### <a name="type"></a><span data-ttu-id="0f2ac-125">类型</span><span class="sxs-lookup"><span data-stu-id="0f2ac-125">Type</span></span>
-
-*   <span data-ttu-id="0f2ac-126">String</span><span class="sxs-lookup"><span data-stu-id="0f2ac-126">String</span></span>
-
-##### <a name="requirements"></a><span data-ttu-id="0f2ac-127">要求</span><span class="sxs-lookup"><span data-stu-id="0f2ac-127">Requirements</span></span>
-
-|<span data-ttu-id="0f2ac-128">要求</span><span class="sxs-lookup"><span data-stu-id="0f2ac-128">Requirement</span></span>| <span data-ttu-id="0f2ac-129">值</span><span class="sxs-lookup"><span data-stu-id="0f2ac-129">Value</span></span>|
-|---|---|
-|[<span data-ttu-id="0f2ac-130">最低版本的邮箱要求集</span><span class="sxs-lookup"><span data-stu-id="0f2ac-130">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| <span data-ttu-id="0f2ac-131">1.0</span><span class="sxs-lookup"><span data-stu-id="0f2ac-131">1.0</span></span>|
-|[<span data-ttu-id="0f2ac-132">最低权限级别</span><span class="sxs-lookup"><span data-stu-id="0f2ac-132">Minimum permission level</span></span>](/outlook/add-ins/understanding-outlook-add-in-permissions)| <span data-ttu-id="0f2ac-133">ReadItem</span><span class="sxs-lookup"><span data-stu-id="0f2ac-133">ReadItem</span></span>|
-|[<span data-ttu-id="0f2ac-134">适用的 Outlook 模式</span><span class="sxs-lookup"><span data-stu-id="0f2ac-134">Applicable Outlook mode</span></span>](/outlook/add-ins/#extension-points)| <span data-ttu-id="0f2ac-135">撰写或阅读</span><span class="sxs-lookup"><span data-stu-id="0f2ac-135">Compose or Read</span></span>|
-
-##### <a name="example"></a><span data-ttu-id="0f2ac-136">示例</span><span class="sxs-lookup"><span data-stu-id="0f2ac-136">Example</span></span>
-
-```js
-// Example: Allie Bellew
-console.log(Office.context.mailbox.userProfile.displayName);
-```
-
-<br>
-
----
----
-
-#### <a name="emailaddress-string"></a><span data-ttu-id="0f2ac-137">emailAddress: String</span><span class="sxs-lookup"><span data-stu-id="0f2ac-137">emailAddress: String</span></span>
-
-<span data-ttu-id="0f2ac-138">获取用户的 SMTP 电子邮件地址。</span><span class="sxs-lookup"><span data-stu-id="0f2ac-138">Gets the user's SMTP email address.</span></span>
-
-##### <a name="type"></a><span data-ttu-id="0f2ac-139">类型</span><span class="sxs-lookup"><span data-stu-id="0f2ac-139">Type</span></span>
-
-*   <span data-ttu-id="0f2ac-140">String</span><span class="sxs-lookup"><span data-stu-id="0f2ac-140">String</span></span>
-
-##### <a name="requirements"></a><span data-ttu-id="0f2ac-141">要求</span><span class="sxs-lookup"><span data-stu-id="0f2ac-141">Requirements</span></span>
-
-|<span data-ttu-id="0f2ac-142">要求</span><span class="sxs-lookup"><span data-stu-id="0f2ac-142">Requirement</span></span>| <span data-ttu-id="0f2ac-143">值</span><span class="sxs-lookup"><span data-stu-id="0f2ac-143">Value</span></span>|
-|---|---|
-|[<span data-ttu-id="0f2ac-144">最低版本的邮箱要求集</span><span class="sxs-lookup"><span data-stu-id="0f2ac-144">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| <span data-ttu-id="0f2ac-145">1.0</span><span class="sxs-lookup"><span data-stu-id="0f2ac-145">1.0</span></span>|
-|[<span data-ttu-id="0f2ac-146">最低权限级别</span><span class="sxs-lookup"><span data-stu-id="0f2ac-146">Minimum permission level</span></span>](/outlook/add-ins/understanding-outlook-add-in-permissions)| <span data-ttu-id="0f2ac-147">ReadItem</span><span class="sxs-lookup"><span data-stu-id="0f2ac-147">ReadItem</span></span>|
-|[<span data-ttu-id="0f2ac-148">适用的 Outlook 模式</span><span class="sxs-lookup"><span data-stu-id="0f2ac-148">Applicable Outlook mode</span></span>](/outlook/add-ins/#extension-points)| <span data-ttu-id="0f2ac-149">撰写或阅读</span><span class="sxs-lookup"><span data-stu-id="0f2ac-149">Compose or Read</span></span>|
-
-##### <a name="example"></a><span data-ttu-id="0f2ac-150">示例</span><span class="sxs-lookup"><span data-stu-id="0f2ac-150">Example</span></span>
-
-```js
-// Example: allieb@contoso.com
-console.log(Office.context.mailbox.userProfile.emailAddress);
-```
-
-<br>
-
----
----
-
-#### <a name="timezone-string"></a><span data-ttu-id="0f2ac-151">时区: 字符串</span><span class="sxs-lookup"><span data-stu-id="0f2ac-151">timeZone: String</span></span>
-
-<span data-ttu-id="0f2ac-152">获取用户的默认时区。</span><span class="sxs-lookup"><span data-stu-id="0f2ac-152">Gets the user's default time zone.</span></span>
-
-##### <a name="type"></a><span data-ttu-id="0f2ac-153">类型</span><span class="sxs-lookup"><span data-stu-id="0f2ac-153">Type</span></span>
-
-*   <span data-ttu-id="0f2ac-154">String</span><span class="sxs-lookup"><span data-stu-id="0f2ac-154">String</span></span>
-
-##### <a name="requirements"></a><span data-ttu-id="0f2ac-155">要求</span><span class="sxs-lookup"><span data-stu-id="0f2ac-155">Requirements</span></span>
-
-|<span data-ttu-id="0f2ac-156">要求</span><span class="sxs-lookup"><span data-stu-id="0f2ac-156">Requirement</span></span>| <span data-ttu-id="0f2ac-157">值</span><span class="sxs-lookup"><span data-stu-id="0f2ac-157">Value</span></span>|
-|---|---|
-|[<span data-ttu-id="0f2ac-158">最低版本的邮箱要求集</span><span class="sxs-lookup"><span data-stu-id="0f2ac-158">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| <span data-ttu-id="0f2ac-159">1.0</span><span class="sxs-lookup"><span data-stu-id="0f2ac-159">1.0</span></span>|
-|[<span data-ttu-id="0f2ac-160">最低权限级别</span><span class="sxs-lookup"><span data-stu-id="0f2ac-160">Minimum permission level</span></span>](/outlook/add-ins/understanding-outlook-add-in-permissions)| <span data-ttu-id="0f2ac-161">ReadItem</span><span class="sxs-lookup"><span data-stu-id="0f2ac-161">ReadItem</span></span>|
-|[<span data-ttu-id="0f2ac-162">适用的 Outlook 模式</span><span class="sxs-lookup"><span data-stu-id="0f2ac-162">Applicable Outlook mode</span></span>](/outlook/add-ins/#extension-points)| <span data-ttu-id="0f2ac-163">撰写或阅读</span><span class="sxs-lookup"><span data-stu-id="0f2ac-163">Compose or Read</span></span>|
-
-##### <a name="example"></a><span data-ttu-id="0f2ac-164">示例</span><span class="sxs-lookup"><span data-stu-id="0f2ac-164">Example</span></span>
-
-```js
-// Example: Pacific Standard Time
-console.log(Office.context.mailbox.userProfile.timeZone);
-```
+| <span data-ttu-id="b928d-115">属性</span><span class="sxs-lookup"><span data-stu-id="b928d-115">Property</span></span> | <span data-ttu-id="b928d-116">最低</span><span class="sxs-lookup"><span data-stu-id="b928d-116">Minimum</span></span><br><span data-ttu-id="b928d-117">权限级别</span><span class="sxs-lookup"><span data-stu-id="b928d-117">permission level</span></span> | <span data-ttu-id="b928d-118">型号</span><span class="sxs-lookup"><span data-stu-id="b928d-118">Modes</span></span> | <span data-ttu-id="b928d-119">返回类型</span><span class="sxs-lookup"><span data-stu-id="b928d-119">Return type</span></span> | <span data-ttu-id="b928d-120">最低</span><span class="sxs-lookup"><span data-stu-id="b928d-120">Minimum</span></span><br><span data-ttu-id="b928d-121">要求集</span><span class="sxs-lookup"><span data-stu-id="b928d-121">requirement set</span></span> |
+|---|---|---|---|:---:|
+| [<span data-ttu-id="b928d-122">displayName</span><span class="sxs-lookup"><span data-stu-id="b928d-122">displayName</span></span>](/javascript/api/outlook/office.userprofile?view=outlook-js-1.3#displayname) | <span data-ttu-id="b928d-123">ReadItem</span><span class="sxs-lookup"><span data-stu-id="b928d-123">ReadItem</span></span> | <span data-ttu-id="b928d-124">撰写</span><span class="sxs-lookup"><span data-stu-id="b928d-124">Compose</span></span><br><span data-ttu-id="b928d-125">读取</span><span class="sxs-lookup"><span data-stu-id="b928d-125">Read</span></span> | <span data-ttu-id="b928d-126">String</span><span class="sxs-lookup"><span data-stu-id="b928d-126">String</span></span> | [<span data-ttu-id="b928d-127">1.1</span><span class="sxs-lookup"><span data-stu-id="b928d-127">1.1</span></span>](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [<span data-ttu-id="b928d-128">emailAddress</span><span class="sxs-lookup"><span data-stu-id="b928d-128">emailAddress</span></span>](/javascript/api/outlook/office.userprofile?view=outlook-js-1.3#emailaddress) | <span data-ttu-id="b928d-129">ReadItem</span><span class="sxs-lookup"><span data-stu-id="b928d-129">ReadItem</span></span> | <span data-ttu-id="b928d-130">撰写</span><span class="sxs-lookup"><span data-stu-id="b928d-130">Compose</span></span><br><span data-ttu-id="b928d-131">读取</span><span class="sxs-lookup"><span data-stu-id="b928d-131">Read</span></span> | <span data-ttu-id="b928d-132">String</span><span class="sxs-lookup"><span data-stu-id="b928d-132">String</span></span> | [<span data-ttu-id="b928d-133">1.1</span><span class="sxs-lookup"><span data-stu-id="b928d-133">1.1</span></span>](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [<span data-ttu-id="b928d-134">timeZone</span><span class="sxs-lookup"><span data-stu-id="b928d-134">timeZone</span></span>](/javascript/api/outlook/office.userprofile?view=outlook-js-1.3#timezone) | <span data-ttu-id="b928d-135">ReadItem</span><span class="sxs-lookup"><span data-stu-id="b928d-135">ReadItem</span></span> | <span data-ttu-id="b928d-136">撰写</span><span class="sxs-lookup"><span data-stu-id="b928d-136">Compose</span></span><br><span data-ttu-id="b928d-137">读取</span><span class="sxs-lookup"><span data-stu-id="b928d-137">Read</span></span> | <span data-ttu-id="b928d-138">String</span><span class="sxs-lookup"><span data-stu-id="b928d-138">String</span></span> | [<span data-ttu-id="b928d-139">1.1</span><span class="sxs-lookup"><span data-stu-id="b928d-139">1.1</span></span>](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
