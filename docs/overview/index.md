@@ -141,7 +141,7 @@ ms.locfileid: "35576791"
     </li>
 </ul>
 
-<p>不了解如何生成 Office 加载项？ <a href="../index.md">请参阅快速入门</a>，在 5 分钟内即可生成第一个加载项，并<a href="explore-with-script-lab.md">使用 Script Lab 探索 Office JavaScript API</a>！</p>
+<p>不了解如何生成 Office 加载项？ <a href="../index.md">完成快速入门</a>，在 5 分钟内即可生成第一个加载项，并<a href="explore-with-script-lab.md">使用 Script Lab 探索 Office JavaScript API</a>！</p>
 
 ---
 
