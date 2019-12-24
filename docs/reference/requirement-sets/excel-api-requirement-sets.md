@@ -1,15 +1,15 @@
 ---
 title: Excel JavaScript API 要求集
 description: 针对 Excel 内部版本的 Office 加载项要求集信息
-ms.date: 11/15/2019
+ms.date: 12/24/2019
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: 459f77ac474513699515e9bffe0a3e1115c525eb
-ms.sourcegitcommit: e56bd8f1260c73daf33272a30dc5af242452594f
+ms.openlocfilehash: ce3a51c37128627765b587d1baef35d051c52917
+ms.sourcegitcommit: 350f5c6954dec3e9384e2030cd3265aaba7ae904
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/21/2019
-ms.locfileid: "38757476"
+ms.lasthandoff: 12/23/2019
+ms.locfileid: "40851374"
 ---
 # <a name="excel-javascript-api-requirement-sets"></a>Excel JavaScript API 要求集
 

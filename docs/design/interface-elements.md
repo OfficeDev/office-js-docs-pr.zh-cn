@@ -1,14 +1,14 @@
 ---
 title: Office 加载项的 Office UI 元素
 description: ''
-ms.date: 12/04/2017
+ms.date: 12/24/2019
 localization_priority: Priority
-ms.openlocfilehash: 444aca7b75e35ef502075876a7d1324fcdca0603
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: 1f680d93c995d306717c7b5a81af073f378b0fbd
+ms.sourcegitcommit: 350f5c6954dec3e9384e2030cd3265aaba7ae904
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32446230"
+ms.lasthandoff: 12/23/2019
+ms.locfileid: "40851236"
 ---
 # <a name="office-ui-elements-for-office-add-ins"></a>Office 加载项的 Office UI 元素
 
@@ -16,7 +16,7 @@ ms.locfileid: "32446230"
 
 下图显示了可以创建的 Office UI 元素的类型。
 
-![在 Office 文档的功能区、任务窗格和对话框上显示外接程序命令的图像](../images/overview-with-app-interface-elements.png)
+![在 Office 文档的功能区、任务窗格和对话框上显示外接程序命令的图像](../images/add-in-ui-elements.png)
 
 ## <a name="add-in-commands"></a>加载项命令
 

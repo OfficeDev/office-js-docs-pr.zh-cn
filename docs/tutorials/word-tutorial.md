@@ -1,15 +1,15 @@
 ---
 title: Word 加载项教程
 description: 本教程将介绍如何生成 Word 加载项，用于插入（和替换）文本区域、段落、图像、HTML、表格和内容控件。 此外，还将介绍如何设置文本格式，以及如何插入（和替换）内容控件中的内容。
-ms.date: 09/18/2019
+ms.date: 12/24/2019
 ms.prod: word
 localization_priority: Normal
-ms.openlocfilehash: 24b0ab5cecf9cfbc493da4488a71ac34dff61b47
-ms.sourcegitcommit: a0257feabcfe665061c14b8bdb70cf82f7aca414
+ms.openlocfilehash: e6f4a0bee75a9f0de648d8354c6b23b87845c00f
+ms.sourcegitcommit: 350f5c6954dec3e9384e2030cd3265aaba7ae904
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/18/2019
-ms.locfileid: "37035348"
+ms.lasthandoff: 12/23/2019
+ms.locfileid: "40851409"
 ---
 # <a name="tutorial-create-a-word-task-pane-add-in"></a>教程：创建 Word 任务窗格加载项
 
@@ -40,7 +40,7 @@ ms.locfileid: "37035348"
 
 ![有关 Yeoman 生成器提示和回答的屏幕截图](../images/yo-office-word.png)
 
-完成此向导后，生成器将创建项目并安装支持节点组件。
+完成此向导后，生成器会创建项目，并安装支持的 Node 组件。
 
 [!include[Yeoman generator next steps](../includes/yo-office-next-steps.md)]
 
@@ -110,7 +110,7 @@ ms.locfileid: "37035348"
     }
     ```
 
-9. 在`insertParagraph()`函数中，将`TODO1`替换为以下代码。 请注意以下几点：
+9. 在`insertParagraph()`函数中，将`TODO1`替换为以下代码。 注意：
 
    - `insertParagraph` 方法的第一个参数是新段落的文本。
 
@@ -126,33 +126,33 @@ ms.locfileid: "37035348"
 
 ### <a name="test-the-add-in"></a>测试加载项
 
-1. 完成以下步骤以启动本地 web 服务器并旁加载您的外接程序。
+1. 完成以下步骤，以启动本地 Web 服务器并旁加载你的加载项。
 
     > [!NOTE]
     > Office 加载项应使用 HTTPS，而不是 HTTP（即便是在开发时也是如此）。 如果系统在运行以下命令之一后提示你安装证书，请接受提示以安装 Yeoman 生成器提供的证书。
 
     > [!TIP]
-    > 如果你要在 Mac 上测试外接程序，请先在项目的根目录中运行以下命令，然后再继续。 运行此命令时，本地 web 服务器将启动。
+    > 如果你要在 Mac 上测试外接程序，请先在项目的根目录中运行以下命令，然后再继续。 运行此命令时，本地 Web 服务器将启动。
     >
     > ```command&nbsp;line
     > npm run dev-server
     > ```
 
-    - 若要在 Word 中测试您的外接程序，请在项目的根目录中运行以下命令。 这将启动本地 web 服务器（如果尚未运行），并在加载的外接程序中打开 Word。
+    - 若要在 Word 中测试加载项，请在项目的根目录中运行以下命令。 这将启动本地的 Web 服务器（如果尚未运行的话），并使用加载的加载项打开 Word。
 
         ```command&nbsp;line
         npm start
         ```
 
-    - 若要在 web 上的 Word 中测试您的外接程序，请在项目的根目录中运行以下命令。 运行此命令时，本地 web 服务器将启动（如果尚未运行）。
+    - 若要在 web 上的 Word 中测试您的外接程序，请在项目的根目录中运行以下命令。 如果你运行此命令，本地 Web 服务器将启动（如果尚未运行的话）。
 
         ```command&nbsp;line
         npm run start:web
         ```
 
-        若要使用外接程序，请在 web 上的 Word 中打开一个新文档，然后按照旁加载 Office 加载项旁加载中的说明操作，以在[web 上的 Office 加载项](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-in-office-on-the-web)中进行添加。
+        若要使用加载项，请在 Word 网页版中打开新的文档，并按照[在 Office 网页版中旁加载 Office 加载项](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-in-office-on-the-web)中的说明操作，以旁加载你的加载项。
 
-2. 在 Word 中，依次选择“开始”**** 选项卡和功能区中的“显示任务窗格”**** 按钮，以打开加载项任务窗格。
+2. 在 Word 中，依次选择“**开始**”选项卡和功能区中的“**显示任务窗格**”按钮，以打开加载项任务窗格。
 
     ![突出显示了“显示任务窗格”按钮的 Word 应用程序屏幕截图](../images/word-quickstart-addin-2b.png)
 
@@ -372,7 +372,7 @@ ms.locfileid: "37035348"
     }
     ``` 
 
-6. 在`insertTextIntoRange()`函数中，将`TODO1`替换为以下代码。 注意：
+6. 在`insertTextIntoRange()`函数中，将`TODO1`替换为以下代码。 请注意以下几点：
 
    - 此方法用于在“即点即用”文本区域末尾插入缩写 ["(C2R)"]。 它做了一个简化假设，即存在字符串，且用户已选择它。
 
@@ -941,3 +941,9 @@ function insertTextIntoRange() {
 
 > [!div class="nextstepaction"]
 > [Word 加载项概述](../word/word-add-ins-programming-overview.md)
+
+## <a name="see-also"></a>另请参阅
+
+* [Office 加载项平台概述](../overview/office-add-ins.md)
+* [生成 Office 外接程序](../overview/office-add-ins-fundamentals.md)
+* [开发 Office 外接程序](../develop/develop-overview.md)

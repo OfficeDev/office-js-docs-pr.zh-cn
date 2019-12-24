@@ -1,18 +1,18 @@
 ---
-title: 使用脚本实验室浏览 Office JavaScript API
+title: 使用 Script Lab 探索 Office JavaScript API
 description: 使用脚本实验室浏览 Office JS API 并建立原型功能。
 ms.date: 07/05/2019
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
 localization_priority: Normal
-ms.openlocfilehash: fcd1863e71bdfa6923ccd598b49879a77e629b4c
-ms.sourcegitcommit: 7d4d721fc3d246ef8a2464bc714659cd84d6faab
+ms.openlocfilehash: fbefd205ac929579cea1120b8398a53146bca19c
+ms.sourcegitcommit: 350f5c6954dec3e9384e2030cd3265aaba7ae904
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/11/2019
-ms.locfileid: "37468789"
+ms.lasthandoff: 12/23/2019
+ms.locfileid: "40851514"
 ---
-# <a name="explore-office-javascript-api-using-script-lab"></a>使用脚本实验室浏览 Office JavaScript API
+# <a name="explore-office-javascript-api-using-script-lab"></a>使用 Script Lab 探索 Office JavaScript API
 
 [脚本实验室外接程序](https://appsource.microsoft.com/product/office/WA104380862)（从 AppSource 中免费获取）使您能够在使用 office 程序（如 Excel 或 Word）时浏览 OFFICE JavaScript API。 当您在外接程序中原型和验证所需功能时，脚本实验室是一个方便的工具，可将其添加到开发工具包中。
 
@@ -74,3 +74,4 @@ ms.locfileid: "37468789"
 - [获取脚本实验室](https://appsource.microsoft.com/product/office/WA104380862)
 - [了解有关脚本实验室的详细信息](https://github.com/OfficeDev/script-lab#script-lab-a-microsoft-garage-project)
 - [注册开发计划](https://developer.microsoft.com/office/dev-program)
+- [生成 Office 外接程序](../overview/office-add-ins-fundamentals.md)

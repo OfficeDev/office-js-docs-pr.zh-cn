@@ -4,12 +4,12 @@ description: 在本教程中，你将学习如何构建一个 Excel 外接程序
 ms.date: 11/26/2019
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: c0a3df72d600acb34008ff574ec2ab2eee070e2e
-ms.sourcegitcommit: 8c5c5a1bd3fe8b90f6253d9850e9352ed0b283ee
+ms.openlocfilehash: 48f4decc0cadddecd5669b960238ddd3381f0932
+ms.sourcegitcommit: 350f5c6954dec3e9384e2030cd3265aaba7ae904
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/19/2019
-ms.locfileid: "40814213"
+ms.lasthandoff: 12/23/2019
+ms.locfileid: "40851416"
 ---
 # <a name="tutorial-create-an-excel-task-pane-add-in"></a>教程：创建 Excel 任务窗格加载项
 
@@ -1015,3 +1015,10 @@ ms.locfileid: "40814213"
 
 > [!div class="nextstepaction"]
 > [Excel 加载项概述](../excel/excel-add-ins-overview.md)
+
+## <a name="see-also"></a>另请参阅
+
+* [Office 加载项平台概述](../overview/office-add-ins.md)
+* [生成 Office 外接程序](../overview/office-add-ins-fundamentals.md)
+* [开发 Office 外接程序](../develop/develop-overview.md)
+* [Excel JavaScript API 基本编程概念](../excel/excel-add-ins-core-concepts.md)

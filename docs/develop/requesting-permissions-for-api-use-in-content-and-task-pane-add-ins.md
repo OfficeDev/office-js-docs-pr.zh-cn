@@ -1,16 +1,16 @@
 ---
-title: 内容和任务窗格外接程序中有关 API 使用的请求权限
+title: 在外接程序中请求 API 使用的权限
 description: ''
 ms.date: 03/19/2019
 localization_priority: Normal
-ms.openlocfilehash: 56eef177c69b8cdbd62dd630b5e1b5133b0eed86
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: aae5359dce57ffdaf3db324475f6417f2bec63d8
+ms.sourcegitcommit: 350f5c6954dec3e9384e2030cd3265aaba7ae904
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32449225"
+ms.lasthandoff: 12/23/2019
+ms.locfileid: "40851269"
 ---
-# <a name="requesting-permissions-for-api-use-in-content-and-task-pane-add-ins"></a>在内容和任务窗格加载项中请求获取 API 使用权限
+# <a name="requesting-permissions-for-api-use-in-add-ins"></a>在外接程序中请求 API 使用的权限
 
 本文说明您可以在内容或任务窗格加载项清单中声明的不同权限级别，以指定加载项功能所需的 JavaScript API 访问的级别。 
 
@@ -43,4 +43,4 @@ ms.locfileid: "32449225"
 
 ## <a name="see-also"></a>另请参阅
 
-- [Office 加载项的隐私和安全性](../concepts/privacy-and-security.md)
+- [Office 加载项的隐私和安全](../concepts/privacy-and-security.md)
