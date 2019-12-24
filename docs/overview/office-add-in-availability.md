@@ -3,12 +3,12 @@ title: Office 外接程序主机和平台可用性
 description: Excel、OneNote、Outlook、PowerPoint、Project 和 Word 支持的要求集。
 ms.date: 11/15/2019
 localization_priority: Priority
-ms.openlocfilehash: ecb906e595c08b973b5146416a5317d59547ed39
-ms.sourcegitcommit: e56bd8f1260c73daf33272a30dc5af242452594f
+ms.openlocfilehash: 956ee6b8a9e990a3d6d942ee4a65a1e9275ea025
+ms.sourcegitcommit: 350f5c6954dec3e9384e2030cd3265aaba7ae904
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/21/2019
-ms.locfileid: "38757483"
+ms.lasthandoff: 12/23/2019
+ms.locfileid: "40851367"
 ---
 # <a name="office-add-in-host-and-platform-availability"></a>Office 外接程序主机和平台可用性
 
@@ -960,10 +960,11 @@ ms.locfileid: "38757483"
 - [Office 版本和要求集](../develop/office-versions-and-requirement-sets.md)
 - [通用 API 要求集](../reference/requirement-sets/office-add-in-requirement-sets.md)
 - [加载项命令要求集](../reference/requirement-sets/add-in-commands-requirement-sets.md)
-- [适用于 Office 的 JavaScript API 参考](../reference/javascript-api-for-office.md)
+- [API 参考文档](../reference/javascript-api-for-office.md)
 - [Office 365 ProPlus 的更新历史记录](/officeupdates/update-history-office365-proplus-by-date)
 - [Office 2016 和 2019 更新历史记录（即点即用）](/officeupdates/update-history-office-2019)
 - [Office 2013 更新历史记录（即点即用）](/officeupdates/update-history-office-2013)
 - [Office 2010、2013 和 2016 更新历史记录 (MSI)](/officeupdates/office-updates-msi)
 - [Outlook 2010、2013 和 2016 更新历史记录 (MSI)](/officeupdates/outlook-updates-msi)
 - [Office for Mac 更新历史记录](/officeupdates/update-history-office-for-mac)
+- [构建 Office 加载项](../overview/office-add-ins-fundamentals.md)

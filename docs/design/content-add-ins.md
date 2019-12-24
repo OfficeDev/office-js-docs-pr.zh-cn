@@ -3,12 +3,12 @@ title: 内容 Office 加载项
 description: 内容加载项是指可以直接嵌入 Excel 或 PowerPoint 文档的图面，用户可以通过它访问界面控件，运行代码以修改文档或显示数据源中的数据。
 ms.date: 03/19/2019
 localization_priority: Priority
-ms.openlocfilehash: 46268f963545c3f5b7f45b9b590dc772ba37292f
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: f3dec371d1500d85125c8762bbc5e80f0cdfb571
+ms.sourcegitcommit: 350f5c6954dec3e9384e2030cd3265aaba7ae904
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32447105"
+ms.lasthandoff: 12/23/2019
+ms.locfileid: "40851283"
 ---
 # <a name="content-office-add-ins"></a>内容 Office 加载项
 
@@ -58,5 +58,5 @@ Office 桌面版和 Office 365 中的 Excel 和 PowerPoint 的内容加载项大
 
 - [Office 加载项主机和平台可用性](/office/dev/add-ins/overview/office-add-in-availability)
 - [Office 加载项中的 Office UI Fabric](/office/dev/add-ins/design/office-ui-fabric)
-- [Office 加载项的用户体验设计模式](/office/dev/add-ins/design/ux-design-pattern-templates)
-- [在内容加载项和任务窗格加载项中请求获取 API 使用权限](/office/dev/add-ins/develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins)
+- [适用于 Office 加载项的 UX 设计模式](/office/dev/add-ins/design/ux-design-pattern-templates)
+- [在加载项中请求获取 API 使用权限](/office/dev/add-ins/develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins)

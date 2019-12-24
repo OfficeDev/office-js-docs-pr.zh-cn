@@ -1,15 +1,15 @@
 ---
 title: 生成首个 OneNote 任务窗格加载项
 description: ''
-ms.date: 09/18/2019
+ms.date: 12/24/2019
 ms.prod: onenote
 localization_priority: Priority
-ms.openlocfilehash: dd4e16edc2dc3fa4046e3e587b3d1a1aba058e30
-ms.sourcegitcommit: a0257feabcfe665061c14b8bdb70cf82f7aca414
+ms.openlocfilehash: 2e8c560aa02de690fa4e6abae25d0625379e26ad
+ms.sourcegitcommit: 350f5c6954dec3e9384e2030cd3265aaba7ae904
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/18/2019
-ms.locfileid: "37035264"
+ms.lasthandoff: 12/23/2019
+ms.locfileid: "40851563"
 ---
 # <a name="build-your-first-onenote-task-pane-add-in"></a>生成首个 OneNote 任务窗格加载项
 
@@ -124,8 +124,10 @@ try {
 
 ## <a name="see-also"></a>另请参阅
 
+* [Office 加载项平台概述](../overview/office-add-ins.md)
+* [构建 Office 加载项](../overview/office-add-ins-fundamentals.md)
+* [开发 Office 加载项](../develop/develop-overview.md)
 - [OneNote JavaScript API 编程概述](../onenote/onenote-add-ins-programming-overview.md)
 - [OneNote JavaScript API 参考](/office/dev/add-ins/reference/overview/onenote-add-ins-javascript-reference)
 - [Rubric Grader 示例](https://github.com/OfficeDev/OneNote-Add-in-Rubric-Grader)
-- [Office 加载项平台概述](../overview/office-add-ins.md)
 

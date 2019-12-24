@@ -1,15 +1,15 @@
 ---
 title: 生成首个 Word 任务窗格加载项
 description: 了解如何使用 Office JS API 生成简单的 Word 任务窗格加载项。
-ms.date: 10/17/2019
+ms.date: 12/24/2019
 ms.prod: word
 localization_priority: Priority
-ms.openlocfilehash: 87f2e4d46748328461529fd41ea11b109fe4785e
-ms.sourcegitcommit: 499bf49b41205f8034c501d4db5fe4b02dab205e
+ms.openlocfilehash: 039348503d75746bf30da253e84402e128006497
+ms.sourcegitcommit: 350f5c6954dec3e9384e2030cd3265aaba7ae904
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/22/2019
-ms.locfileid: "37626865"
+ms.lasthandoff: 12/23/2019
+ms.locfileid: "40851332"
 ---
 # <a name="build-your-first-word-task-pane-add-in"></a>生成首个 Word 任务窗格加载项
 
@@ -97,7 +97,7 @@ _适用于：Windows 版 Word 2016 或更高版本、iPad 版 Word 和 Mac 版 W
 ### <a name="create-the-add-in-project"></a>创建加载项项目
 
 
-1. 在 Visual Studio 中，选择**新建项目**。
+1. 在 Visual Studio 中，选择“**新建项目**”。
 
 2. 使用搜索框，输入**外接程序**。 选择“**Word Web 外接程序**”，然后选择“**下一步**”。
 
@@ -312,6 +312,9 @@ _适用于：Windows 版 Word 2016 或更高版本、iPad 版 Word 和 Mac 版 W
 
 ## <a name="see-also"></a>另请参阅
 
+* [Office 加载项平台概述](../overview/office-add-ins.md)
+* [构建 Office 加载项](../overview/office-add-ins-fundamentals.md)
+* [开发 Office 加载项](../develop/develop-overview.md)
 * [Word 加载项概述](../word/word-add-ins-programming-overview.md)
 * [Word 加载项代码示例](https://developer.microsoft.com/en-us/office/gallery/?filterBy=Samples,Word)
 * [Word JavaScript API 参考](/office/dev/add-ins/reference/overview/word-add-ins-reference-overview)

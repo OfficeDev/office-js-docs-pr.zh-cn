@@ -5,12 +5,12 @@ ms.date: 07/05/2019
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: 7d68dd52575f3b706ffac2751d68ea4019faaa8c
-ms.sourcegitcommit: 960ceaf6776ec3ed41a8f5b7bf70b3c95c43386a
+ms.openlocfilehash: c529dc88f310466c5aaae8c6a0ea4e7d0ea6e287
+ms.sourcegitcommit: 350f5c6954dec3e9384e2030cd3265aaba7ae904
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "39830221"
+ms.lasthandoff: 12/23/2019
+ms.locfileid: "40851388"
 ---
 # <a name="excel-add-ins-overview"></a>Excel 加载项概述
 
@@ -121,9 +121,7 @@ Excel 加载项通过使用 [Office JavaScript API](/office/dev/add-ins/referenc
 
 ## <a name="see-also"></a>另请参阅
 
-- [Excel 加载项文档](index.md)
 - [Office 加载项平台概述](../overview/office-add-ins.md)
-- [开发 Office 加载项的最佳做法](../concepts/add-in-development-best-practices.md)
-- [Office 加载项的设计准则](../design/add-in-design.md)
+- [构建 Office 加载项](../overview/office-add-ins-fundamentals.md)
 - [Excel JavaScript API 基本编程概念](excel-add-ins-core-concepts.md)
-- [Excel JavaScript API 参考](/office/dev/add-ins/reference/overview/excel-add-ins-reference-overview)
+- [Excel JavaScript API 参考](../reference/overview/excel-add-ins-reference-overview.md)

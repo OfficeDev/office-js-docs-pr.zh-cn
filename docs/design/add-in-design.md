@@ -3,14 +3,14 @@ title: 设计 Office 加载项
 description: ''
 ms.date: 06/20/2019
 localization_priority: Priority
-ms.openlocfilehash: 1b2f6a57ddea385ec676a4981e4576c155d93886
-ms.sourcegitcommit: 44f1a4a3e1ae3c33d7d5fabcee14b84af94e03da
+ms.openlocfilehash: 5d8cf0cb56a4a77eb54ea7df68350773ead352d2
+ms.sourcegitcommit: 350f5c6954dec3e9384e2030cd3265aaba7ae904
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "39670144"
+ms.lasthandoff: 12/23/2019
+ms.locfileid: "40851262"
 ---
-# <a name="design-your-office-add-ins"></a>设计 Office 加载项
+# <a name="design-office-add-ins"></a>设计 Office 加载项
 
 Office 外接程序可通过提供用户可在 Office 客户端内访问的上下文功能来扩展 Office 体验。通过外接程序，用户可以访问 Office 内的第三方功能以完成更多操作，而无需进行成本高昂的上下文切换。 
 

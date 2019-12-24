@@ -1,15 +1,15 @@
 ---
 title: 生成首个 Excel 任务窗格加载项
 description: 了解如何使用 Office JS API 生成简单的 Excel 任务窗格加载项。
-ms.date: 10/17/2019
+ms.date: 12/24/2019
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: 3ade0eb77f525ebd593a475736ab81742d915b94
-ms.sourcegitcommit: 499bf49b41205f8034c501d4db5fe4b02dab205e
+ms.openlocfilehash: 12eb48fc5f44b506bbce39d01e9bce4ca2a2b5e6
+ms.sourcegitcommit: 350f5c6954dec3e9384e2030cd3265aaba7ae904
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/22/2019
-ms.locfileid: "37626969"
+ms.lasthandoff: 12/23/2019
+ms.locfileid: "40851353"
 ---
 # <a name="build-an-excel-task-pane-add-in"></a>生成 Excel 任务窗格加载项
 
@@ -216,7 +216,9 @@ ms.locfileid: "37626969"
 
 ## <a name="see-also"></a>另请参阅
 
-* [Excel 加载项教程](../tutorials/excel-tutorial-create-table.md)
+* [Office 加载项平台概述](../overview/office-add-ins.md)
+* [构建 Office 加载项](../overview/office-add-ins-fundamentals.md)
+* [开发 Office 加载项](../develop/develop-overview.md)
 * [Excel JavaScript API 基本编程概念](../excel/excel-add-ins-core-concepts.md)
 * [Excel 加载项代码示例](https://developer.microsoft.com/office/gallery/?filterBy=Samples,Excel)
 * [Excel JavaScript API 参考](/office/dev/add-ins/reference/overview/excel-add-ins-reference-overview)

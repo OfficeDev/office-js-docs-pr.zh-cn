@@ -1,15 +1,15 @@
 ---
 title: 生成首个 Project 任务窗格加载项
 description: ''
-ms.date: 09/18/2019
+ms.date: 12/24/2019
 ms.prod: project
 localization_priority: Priority
-ms.openlocfilehash: 78712a1fec9af2c45f6e42825740364a7cd23987
-ms.sourcegitcommit: a0257feabcfe665061c14b8bdb70cf82f7aca414
+ms.openlocfilehash: 3de9df0dbca53e244fe2431bfa2884694e6ac232
+ms.sourcegitcommit: 350f5c6954dec3e9384e2030cd3265aaba7ae904
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/18/2019
-ms.locfileid: "37035285"
+ms.lasthandoff: 12/23/2019
+ms.locfileid: "40851311"
 ---
 # <a name="build-your-first-project-task-pane-add-in"></a>生成首个 Project 任务窗格加载项
 
@@ -123,3 +123,8 @@ Office.context.document.getSelectedTaskAsync(
 > [!div class="nextstepaction"]
 > [Project 加载项](../project/project-add-ins.md)
 
+## <a name="see-also"></a>另请参阅
+
+- [构建 Office 加载项](../overview/office-add-ins-fundamentals.md)
+- [Office 加载项的核心概念](../overview/core-concepts-office-add-ins.md)
+- [开发 Office 加载项](../develop/develop-overview.md)

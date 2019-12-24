@@ -3,12 +3,12 @@ title: Office 加载项 XML 清单
 description: ''
 ms.date: 09/26/2019
 localization_priority: Priority
-ms.openlocfilehash: 9a3081c13756bee668081e1fb9d04cf5458320d4
-ms.sourcegitcommit: 88d81aa2d707105cf0eb55d9774b2e7cf468b03a
+ms.openlocfilehash: 07c8a563eb04ac4b707357f1e7ff43d9a8f2e761
+ms.sourcegitcommit: 350f5c6954dec3e9384e2030cd3265aaba7ae904
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "38301972"
+ms.lasthandoff: 12/23/2019
+ms.locfileid: "40851276"
 ---
 # <a name="office-add-ins-xml-manifest"></a>Office 加载项 XML 清单
 
@@ -492,10 +492,14 @@ _\*\* 仅通过 AppSource 分发的加载项才需要 SupportUrl。_
 
 ## <a name="see-also"></a>另请参阅
 
+* [如何查找清单元素的正确顺序](manifest-element-ordering.md)
 * [在清单中创建加载项命令][加载项命令]
 * [指定 Office 主机和 API 要求](specify-office-hosts-and-api-requirements.md)
 * [Office 外接程序的本地化](localization.md)
 * [Office 外接程序清单的架构参考](https://github.com/OfficeDev/office-js-docs-pr/tree/master/docs/overview/schemas)
+* [更新 API 和清单版本](update-your-javascript-api-for-office-and-manifest-schema-version.md)
+* [标识等效的 COM 加载项](make-office-add-in-compatible-with-existing-com-add-in.md)
+* [在加载项中请求获取 API 使用权限](requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md)
 * [验证并排查清单问题](../testing/troubleshoot-manifest.md)
 
 [加载项命令]: create-addin-commands.md
