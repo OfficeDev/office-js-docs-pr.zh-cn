@@ -1,48 +1,153 @@
 - name: Office 加载项文档
   href: index.md
-- name: Office 加载项指南
+- name: 关于 Office 加载项
+  href: overview/office-add-ins.md
+  displayName: 'Excel, Word, OneNote, Project, PowerPoint, Outlook'
+- name: 入门
   items:
-    - name: 关于 Office 加载项
-      href: overview/index.md
-      displayName: 'Excel, Word, OneNote, Project, PowerPoint, Outlook'
-    - name: 概述
+    - name: 构建 Office 加载项
+      href: overview/office-add-ins-fundamentals.md
+      displayName: develop
+    - name: 快速入门
       items:
-        - name: Office 加载项平台概述
-          href: overview/office-add-ins.md
+        - name: Excel 加载项
+          href: quickstarts/excel-quickstart-jquery.md
+        - name: Excel 自定义函数
+          href: quickstarts/excel-custom-functions-quickstart.md
+        - name: OneNote 加载项
+          href: quickstarts/onenote-quickstart.md
+        - name: Outlook 加载项
+          href: /outlook/add-ins/quick-start?context=office/dev/add-ins/context
+        - name: PowerPoint 加载项
+          href: quickstarts/powerpoint-quickstart.md
+        - name: Project 加载项
+          href: quickstarts/project-quickstart.md
+        - name: Word 加载项
+          href: quickstarts/word-quickstart.md
+    - name: 使用 Script Lab 探索 Office JS API
+      href: overview/explore-with-script-lab.md
+      displayName: 'Excel, Word, PowerPoint'
+- name: 核心概念
+  items:
+    - name: 概述
+      href: overview/core-concepts-office-add-ins.md
+      displayName: 'Excel, Word, OneNote, Project, PowerPoint, Outlook'
+    - name: 开发
+      items:
+        - name: 开发 Office 加载项
+          href: develop/develop-overview.md
           displayName: 'Excel, Word, OneNote, Project, PowerPoint, Outlook'
         - name: 主机和平台可用性
           href: overview/office-add-in-availability.md
           displayName: 'Excel, Word, OneNote, Project, PowerPoint, Outlook'
-        - name: 使用脚本实验室探索 Office JS API
-          href: overview/explore-with-script-lab.md
-          displayName: 'Excel, Word, PowerPoint'
-        - name: 运行加载项的要求
-          href: concepts/requirements-for-running-office-add-ins.md
-          displayName: 'Excel, Word, OneNote, Project, PowerPoint, Outlook'
-    - name: 概念
-      items:
-        - name: 加载项开发的最佳做法
-          href: concepts/add-in-development-best-practices.md
-          displayName: 'Excel, Word, OneNote, Project, PowerPoint, Outlook'
-        - name: 加载项开发生命周期
-          href: concepts/add-in-development-lifecycle.md
-          displayName: 'Excel, Word, OneNote, Project, PowerPoint, Outlook'
-        - name: Office 加载项使用的浏览器
-          href: concepts/browsers-used-by-office-web-add-ins.md
-          displayName: 'Excel, Word, OneNote, Project, PowerPoint, Outlook'
-        - name: Office 版本和要求集
-          href: develop/office-versions-and-requirement-sets.md
-          displayName: 'Excel, Word, OneNote, Project, PowerPoint, Outlook'
-        - name: 安装最新版 Office
-          href: develop/install-latest-office-version.md
-          displayName: 'Excel, Word, OneNote, Project, PowerPoint, Outlook'
-        - name: 性能
-          href: concepts/resource-limits-and-performance-optimization.md
-          displayName: 'Excel, Word, OneNote, Project, PowerPoint, Outlook'
-        - name: 隐私和安全
-          href: concepts/privacy-and-security.md
-          displayName: 'Excel, Word, OneNote, Project, PowerPoint, Outlook'
-    - name: 用户界面
+        - name: Office JavaScript API
+          items:
+            - name: 了解适用于 Office 的 JavaScript API
+              href: develop/understanding-the-javascript-api-for-office.md
+            - name: Office 版本和要求集
+              href: develop/office-versions-and-requirement-sets.md
+            - name: 对内容和任务窗格加载项的支持
+              href: develop/support-for-task-pane-and-content-add-ins.md
+            - name: 参考 Office js
+              href: develop/referencing-the-javascript-api-for-office-library-from-its-cdn.md
+            - name: 加载 Office.js
+              href: develop/loading-the-dom-and-runtime-environment.md
+            - name: Office JavaScript API 对象模型
+              href: develop/office-javascript-api-object-model.md
+            - name: Office 加载项中的异步编程
+              href: develop/asynchronous-programming-in-office-add-ins.md
+            - name: 保持状态和设置
+              href: develop/persisting-add-in-state-and-settings.md
+            - name: 常见编码问题
+              href: develop/common-coding-issues.md
+        - name: 清单
+          href: develop/add-in-manifests.md
+        - name: 身份验证和授权
+          items:
+            - name: 身份验证和授权概述
+              href: develop/overview-authn-authz.md
+            - name: 使用 Office 对话框 API 进行身份验证和授权
+              href: develop/auth-with-office-dialog-api.md
+            - name: 授权外部服务
+              href: develop/auth-external-add-ins.md
+            - name: 在不使用 SSO 的情况下对 Microsoft Graph 授权
+              href: develop/authorize-to-microsoft-graph-without-sso.md
+            - name: 在加载项中启用 SSO
+              items:
+                - name: 启用单一登录
+                  href: develop/sso-in-office-add-ins.md
+                - name: 使用 SSO 对 Microsoft Graph 授权
+                  href: develop/authorize-to-microsoft-graph.md
+                - name: 使用 ASP.NET 创建 SSO 外接程序
+                  href: develop/create-sso-office-add-ins-aspnet.md
+                - name: 使用 Node.js 创建 SSO 加载项
+                  href: develop/create-sso-office-add-ins-nodejs.md
+                - name: 向 Azure AD v2.0 注册使用 SSO 的 Office 加载项
+                  href: develop/register-sso-add-in-aad-v2.md
+                - name: 同意管理员访问加载项
+                  href: develop/grant-admin-consent-to-an-add-in.md
+                - name: 排查单一登录 (SSO) 错误消息
+                  href: develop/troubleshoot-sso-in-office-add-ins.md
+        - name: 概念
+          items:
+            - name: 加载项开发的最佳做法
+              href: concepts/add-in-development-best-practices.md
+              displayName: 'Excel, Word, OneNote, Project, PowerPoint, Outlook'
+            - name: 运行加载项的要求
+              href: concepts/requirements-for-running-office-add-ins.md
+              displayName: 'Excel, Word, OneNote, Project, PowerPoint, Outlook'
+            - name: Office 加载项使用的浏览器
+              href: concepts/browsers-used-by-office-web-add-ins.md
+              displayName: 'Excel, Word, OneNote, Project, PowerPoint, Outlook'
+            - name: 安装最新版 Office
+              href: develop/install-latest-office-version.md
+              displayName: 'Excel, Word, OneNote, Project, PowerPoint, Outlook'
+        - name: 操作方法
+          items:
+            - name: 解决同一来源策略限制
+              href: develop/addressing-same-origin-policy-limitations.md
+            - name: 随文档自动打开任务窗格
+              href: develop/automatically-open-a-task-pane-with-a-document.md
+            - name: 创建加载项命令
+              href: develop/create-addin-commands.md
+              displayName: manifest
+            - name: 开发适用于 iPad 的加载项
+              href: develop/develop-office-add-ins-for-the-ipad.md
+            - name: 使用 Angular 开发加载项
+              href: develop/add-ins-with-angular2.md
+            - name: 使用 Visual Studio Code 开发加载项
+              href: develop/develop-add-ins-vscode.md
+            - name: 使用 Visual Studio 开发加载项
+              items:
+                - name: 在 Visual Studio 中创建和调试 Office 加载项
+                  href: develop/create-and-debug-office-add-ins-in-visual-studio.md
+                - name: 在 Visual Studio 中获取 JavaScript IntelliSense
+                  href: develop/get-javascript-intellisense-in-visual-studio.md
+                - name: 将 JavaScript 转换成 TypeScript
+                  href: develop/convert-javascript-to-typescript.md
+            - name: 查找清单元素的正确顺序
+              href: develop/manifest-element-ordering.md
+            - name: 标识等效的 COM 加载项
+              href: develop/make-office-add-in-compatible-with-existing-com-add-in.md
+              displayName: manifest
+            - name: 本地化
+              href: develop/localization.md
+            - name: 打开对话框
+              href: develop/dialog-api-in-office-add-ins.md
+            - name: 性能
+              href: concepts/resource-limits-and-performance-optimization.md
+            - name: 隐私和安全
+              href: concepts/privacy-and-security.md
+            - name: 在加载项中请求获取 API 使用权限
+              href: develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md
+              displayName: manifest
+            - name: 指定 Office 主机和 API 要求
+              href: develop/specify-office-hosts-and-api-requirements.md
+              displayName: manifest
+            - name: 更新 API 和清单版本
+              href: develop/update-your-javascript-api-for-office-and-manifest-schema-version.md
+              displayName: manifest
+    - name: UI 和 UX
       items:
         - name: 概述
           href: design/add-in-design.md
@@ -70,10 +175,10 @@
                   href: design/add-in-icons-monoline.md
             - name: 布局
               href: design/add-in-layout.md
+            - name: 动作
+              href: design/using-motion-office-addins.md
             - name: 版式
               href: design/add-in-typography.md
-            - name: 使用动作
-              href: design/using-motion-office-addins.md
         - name: 界面元素
           items:
             - name: 概述
@@ -86,7 +191,7 @@
               href: design/content-add-ins.md
             - name: 任务窗格
               href: design/task-pane-add-ins.md
-        - name: 用户体验设计模板
+        - name: UX 设计模式
           items:
             - name: 概述
               href: design/ux-design-pattern-templates.md
@@ -106,94 +211,11 @@
               href: design/using-office-ui-fabric-react.md
             - name: Office UI Fabric
               href: design/office-ui-fabric.md
-    - name: 开发
-      items:
-        - name: 解决同一来源策略限制
-          href: develop/addressing-same-origin-policy-limitations.md
-        - name: 身份验证和授权
-          items:
-            - name: 身份验证和授权概述
-              href: develop/overview-authn-authz.md
-            - name: 使用 Office 对话框 API 进行身份验证和授权
-              href: develop/auth-with-office-dialog-api.md
-            - name: 授权外部服务
-              href: develop/auth-external-add-ins.md
-            - name: 在不使用 SSO 的情况下对 Microsoft Graph 授权
-              href: develop/authorize-to-microsoft-graph-without-sso.md
-            - name: 在加载项中启用 SSO
-              items:
-                - name: 启用单一登录
-                  href: develop/sso-in-office-add-ins.md
-                - name: 使用 SSO 对 Microsoft Graph 授权
-                  href: develop/authorize-to-microsoft-graph.md
-                - name: 使用 ASP.NET 创建 SSO 外接程序
-                  href: develop/create-sso-office-add-ins-aspnet.md
-                - name: 使用 Node.js 创建 SSO 加载项
-                  href: develop/create-sso-office-add-ins-nodejs.md
-                - name: 向 Azure AD v2.0 注册使用 SSO 的 Office 加载项
-                  href: develop/register-sso-add-in-aad-v2.md
-                - name: 同意管理员访问加载项
-                  href: develop/grant-admin-consent-to-an-add-in.md
-                - name: 排查单一登录 (SSO) 错误消息
-                  href: develop/troubleshoot-sso-in-office-add-ins.md
-        - name: 随文档自动打开任务窗格
-          href: develop/automatically-open-a-task-pane-with-a-document.md
-        - name: 开发适用于 iPad 的加载项
-          href: develop/develop-office-add-ins-for-the-ipad.md
-        - name: 使用 Angular 开发加载项
-          href: develop/add-ins-with-angular2.md
-        - name: 使用 Visual Studio Code 开发加载项
-          href: develop/develop-add-ins-vscode.md
-        - name: 使用 Visual Studio 开发加载项
-          items:
-            - name: 在 Visual Studio 中创建和调试 Office 加载项
-              href: develop/create-and-debug-office-add-ins-in-visual-studio.md
-            - name: 在 Visual Studio 中获取 JavaScript IntelliSense
-              href: develop/get-javascript-intellisense-in-visual-studio.md
-            - name: 将 JavaScript 转换成 TypeScript
-              href: develop/convert-javascript-to-typescript.md
-        - name: 对话框 API
-          href: develop/dialog-api-in-office-add-ins.md
-        - name: 本地化
-          href: develop/localization.md
-        - name: 清单
-          items:
-            - name: Office 加载项 XML 清单
-              href: develop/add-in-manifests.md
-            - name: 创建加载项命令
-              href: develop/create-addin-commands.md
-            - name: 查找清单元素的正确顺序
-              href: develop/manifest-element-ordering.md
-            - name: 标识等效的 COM 加载项
-              href: develop/make-office-add-in-compatible-with-existing-com-add-in.md
-            - name: 在内容加载项和任务窗格加载项中请求获取 API 使用权限
-              href: develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md
-            - name: 指定 Office 主机
-              href: develop/specify-office-hosts-and-api-requirements.md
-            - name: 更新 API 和清单版本
-              href: develop/update-your-javascript-api-for-office-and-manifest-schema-version.md
-        - name: Office JavaScript API
-          items:
-            - name: 了解适用于 Office 的 JavaScript API
-              href: develop/understanding-the-javascript-api-for-office.md
-            - name: 对内容和任务窗格加载项的支持
-              href: develop/support-for-task-pane-and-content-add-ins.md
-            - name: 参考 Office js
-              href: develop/referencing-the-javascript-api-for-office-library-from-its-cdn.md
-            - name: 加载 Office.js
-              href: develop/loading-the-dom-and-runtime-environment.md
-            - name: Office JavaScript API 对象模型
-              href: develop/office-javascript-api-object-model.md
-            - name: Office 加载项中的异步编程
-              href: develop/asynchronous-programming-in-office-add-ins.md
-            - name: 保持状态和设置
-              href: develop/persisting-add-in-state-and-settings.md
-            - name: 常见编码问题
-              href: develop/common-coding-issues.md
     - name: 测试和调试
       items:
-        - name: 概述
+        - name: 测试和调试 Office 加载项
           href: testing/test-debug-office-add-ins.md
+          displayName: 'test, debug'
         - name: Windows
           items:
             - name: 在 Windows 上旁加载 Office 加载项
@@ -222,7 +244,7 @@
           href: testing/troubleshoot-manifest.md
     - name: 发布
       items:
-        - name: 概述
+        - name: 发布 Office 加载项
           href: publish/publish.md
         - name: 发布加载项 (VS Code)
           href: publish/publish-add-in-vs-code.md
@@ -242,9 +264,9 @@
           href: publish/publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md
     - name: 参考
       items:
-        - name: 适用于 Office 的 JavaScript API 概述
+        - name: API 参考文档
           href: reference/javascript-api-for-office.md
-          displayName: 'Excel, Word, OneNote, Project, PowerPoint, Outlook'
+          displayName: 'Excel, Word, OneNote, Project, PowerPoint, Visio, Outlook'
         - name: 通用 API 要求集
           items:
             - name: 加载项命令要求集
@@ -257,8 +279,6 @@
               href: reference/requirement-sets/image-coercion-requirement-sets.md
             - name: Office 通用 API 要求集
               href: reference/requirement-sets/office-add-in-requirement-sets.md
-        - name: 通用 API 参考
-          href: reference/common-api-reference.md
         - name: Office 加载项清单参考
           items:
             - name: AllowSnapshot
@@ -420,7 +440,7 @@
     - name: 资源
       href: resources/resources-links-help.md
       displayName: 'Excel, Word, OneNote, Project, PowerPoint, Visio, Outlook'
-- name: Excel 加载项
+- name: Excel
   items:
     - name: Excel 加载项文档
       href: excel/index.md
@@ -431,7 +451,7 @@
     - name: 生成首个 Excel 加载项
       items:
         - name: 任务窗格
-          href: quickstarts/excel-quickstart-jquery.md
+          href: quickstarts/excel-quickstart-jquery-redirect.md
           displayName: Excel
         - name: 任务窗格 (Angular)
           href: quickstarts/excel-quickstart-angular.md
@@ -557,7 +577,7 @@
           href: excel/custom-functions-overview.md
           displayName: 'Excel, Custom Functions'
         - name: Excel 自定义函数入门
-          href: quickstarts/excel-custom-functions-quickstart.md
+          href: quickstarts/excel-custom-functions-quickstart-redirect.md
           displayName: 'Excel, Custom Functions'
         - name: 自定义函数教程
           href: tutorials/excel-tutorial-create-custom-functions.md
@@ -619,7 +639,7 @@
         - name: Web 请求
           href: excel/custom-functions-web-reqs.md
           displayName: 'Excel, Custom Functions'
-- name: OneNote 加载项
+- name: OneNote
   items:
     - name: OneNote 加载项文档
       href: onenote/index.md
@@ -628,7 +648,7 @@
       href: onenote/onenote-add-ins-programming-overview.md
       displayName: OneNote
     - name: 生成首个 OneNote 加载项
-      href: quickstarts/onenote-quickstart.md
+      href: quickstarts/onenote-quickstart-redirect.md
       displayName: OneNote
     - name: OneNote JavaScript API
       items:
@@ -644,7 +664,7 @@
         - name: 使用 OneNote 页内容
           href: onenote/onenote-add-ins-page-content.md
           displayName: OneNote
-- name: Outlook 外接程序
+- name: Outlook
   items:
     - name: Outlook 加载项文档
       href: outlook/index.md
@@ -836,7 +856,7 @@
                   href: reference/objectmodel/requirement-set-1.1/Office.context.mailbox.userProfile.md
                 - name: Outlook 1.1 API 参考
                   href: reference/outlook-api-reference-1-1.md
-- name: PowerPoint 加载项
+- name: PowerPoint
   items:
     - name: PowerPoint 加载项文档
       href: powerpoint/index.md
@@ -845,7 +865,7 @@
       href: powerpoint/powerpoint-add-ins.md
       displayName: PowerPoint
     - name: 生成首个 PowerPoint 加载项
-      href: quickstarts/powerpoint-quickstart.md
+      href: quickstarts/powerpoint-quickstart-redirect.md
       displayName: PowerPoint
     - name: PowerPoint 加载项教程
       href: tutorials/powerpoint-tutorial.md
@@ -867,7 +887,7 @@
         - name: 在 PowerPoint 加载项中使用文档主题
           href: powerpoint/use-document-themes-in-your-powerpoint-add-ins.md
           displayName: PowerPoint
-- name: Project 加载项
+- name: Project
   items:
     - name: Project 加载项文档
       href: project/index.md
@@ -876,7 +896,7 @@
       href: project/project-add-ins.md
       displayName: Project
     - name: 生成首个 Project 加载项
-      href: quickstarts/project-quickstart.md
+      href: quickstarts/project-quickstart-redirect.md
       displayName: Project
     - name: 适用于 Project 的 JavaScript API
       items:
@@ -889,7 +909,7 @@
         - name: 使用文本编辑器为 Project 生成首个任务窗格加载项
           href: project/create-your-first-task-pane-add-in-for-project-by-using-a-text-editor.md
           displayName: Project
-- name: Visio 加载项
+- name: Visio
   items:
     - name: Visio 加载项文档
       href: visio/index.md
@@ -900,7 +920,7 @@
     - name: API 参考
       href: reference/visio-api-reference.md
       displayName: Visio
-- name: Word 加载项
+- name: Word
   items:
     - name: Word 加载项文档
       href: word/index.md
@@ -909,7 +929,7 @@
       href: word/word-add-ins-programming-overview.md
       displayName: Word
     - name: 生成首个 Word 加载项
-      href: quickstarts/word-quickstart.md
+      href: quickstarts/word-quickstart-redirect.md
       displayName: Word
     - name: Word 加载项教程
       href: tutorials/word-tutorial.md
