@@ -1,1 +1,1 @@
-<b>注意</b>：有关针对所有类型 Office 加载项的全套文章，请参阅本文档的 <a href="../overview/index.md">Office 加载项指南</a>部分。
+<b>注意</b>：有关适用于所有 Office 加载项类型的全套文章，请参阅本文档的<a href="../overview/core-concepts-office-add-ins.md">核心概念</a>部分。

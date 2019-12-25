@@ -1,16 +1,16 @@
 ---
-title: 部署和发布 Office 加载项 | Microsoft Docs
+title: 部署和发布 Office 加载项
 description: 部署 Office 加载项以进行测试或分发给用户的方法和选项。
 ms.date: 09/05/2019
 localization_priority: Priority
-ms.openlocfilehash: 2948e558ddd063ff36ebbfdd2edcb8c986a1445a
-ms.sourcegitcommit: 960ceaf6776ec3ed41a8f5b7bf70b3c95c43386a
+ms.openlocfilehash: a00119254f53f6dbf0e6ebc2279e0a0b70af1270
+ms.sourcegitcommit: 350f5c6954dec3e9384e2030cd3265aaba7ae904
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "39830200"
+ms.lasthandoff: 12/23/2019
+ms.locfileid: "40851542"
 ---
-# <a name="deploy-and-publish-your-office-add-in"></a>部署和发布 Office 加载项
+# <a name="deploy-and-publish-office-add-ins"></a>部署和发布 Office 加载项
 
 可以使用几种方法之一来部署 Office 外接程序，以用于对用户进行测试或分发：
 

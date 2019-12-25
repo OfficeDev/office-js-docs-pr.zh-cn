@@ -5,12 +5,12 @@ ms.date: 07/05/2019
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: 9b74a6fe9d54218a8ec114a624d085bd68ba6e2c
-ms.sourcegitcommit: 7d4d721fc3d246ef8a2464bc714659cd84d6faab
+ms.openlocfilehash: 9724de8c25a535884c4700a165e661028aee6608
+ms.sourcegitcommit: 350f5c6954dec3e9384e2030cd3265aaba7ae904
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/11/2019
-ms.locfileid: "37468810"
+ms.lasthandoff: 12/23/2019
+ms.locfileid: "40851507"
 ---
 # <a name="onenote-javascript-api-programming-overview"></a>OneNote JavaScript API 编程概述
 
@@ -125,7 +125,7 @@ OneNote 加载项仅支持以下通用 API：
 | [Office.context.document.settings.set(name, value);](/javascript/api/office/office.settings#set-name--value-) | 设置仅受内容外接程序支持 | 
 | [Office.EventType.DocumentSelectionChanged](/javascript/api/office/office.documentselectionchangedeventargs) ||
 
-一般情况下，仅使用通用 API 执行主机特定 API 不支持的操作。 若要详细了解如何使用通用 API，请参阅 Office 加载项[文档](../overview/office-add-ins.md)和[参考](../reference/javascript-api-for-office.md)。
+一般情况下，需要使用通用 API 执行主机特定 API 不支持的操作。 若要详细了解如何使用通用 API，请参阅 [Office JavaScript API 对象模型](../develop/office-javascript-api-object-model.md)。
 
 
 <a name="om-diagram"></a>
@@ -137,7 +137,7 @@ OneNote 加载项仅支持以下通用 API：
 
 ## <a name="see-also"></a>另请参阅
 
-- [OneNote 加载项文档](index.md)
+- [构建 Office 加载项](../overview/office-add-ins-fundamentals.md)
 - [生成首个 OneNote 加载项](../quickstarts/onenote-quickstart.md)
 - [OneNote JavaScript API 参考](/office/dev/add-ins/reference/overview/onenote-add-ins-javascript-reference)
 - [Rubric Grader 示例](https://github.com/OfficeDev/OneNote-Add-in-Rubric-Grader)

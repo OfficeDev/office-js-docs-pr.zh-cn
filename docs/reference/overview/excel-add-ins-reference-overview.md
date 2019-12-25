@@ -4,12 +4,12 @@ description: ''
 ms.date: 07/05/2019
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: e6064bf7e7dce6931079fc2d3eb262533da7edf3
-ms.sourcegitcommit: c3673cc693fa7070e1b397922bd735ba3f9342f3
+ms.openlocfilehash: 0c07bb7ce964708a9fef737fabebb13939e357f0
+ms.sourcegitcommit: 350f5c6954dec3e9384e2030cd3265aaba7ae904
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/05/2019
-ms.locfileid: "35575630"
+ms.lasthandoff: 12/23/2019
+ms.locfileid: "40851528"
 ---
 # <a name="excel-javascript-api-overview"></a>Excel JavaScript API 概述
 
@@ -19,7 +19,7 @@ Excel 加载项通过使用适用于 Office 的 JavaScript API 与 Excel 中的�
 
 * **通用 API**：[通用 API](/javascript/api/office) 随 Office 2013 引入，可用于访问多种类型的 Office 应用程序中常见的 UI、对话框和客户端设置等功能。
 
-文档的本部分着重介绍了 Excel JavaScript API，它可用于开发面向 Excel 网页版或 Excel 2016 或更高版本的加载项中的大部分功能。 有关通用 API 的信息，请参阅[适用于 Office 的 JavaScript API](../javascript-api-for-office.md)。 
+文档的本部分着重介绍了 Excel JavaScript API，它可用于开发面向 Excel 网页版或 Excel 2016 或更高版本的加载项中的大部分功能。 有关通用 API 的信息，请参阅 [Office JavaScript API 对象模型](../../develop/office-javascript-api-object-model.md)。 
 
 ## <a name="learn-programming-concepts"></a>了解编程概念
 

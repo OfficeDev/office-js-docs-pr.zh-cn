@@ -3,12 +3,12 @@ title: Office 加载项的隐私和安全
 description: ''
 ms.date: 09/26/2019
 localization_priority: Priority
-ms.openlocfilehash: bf71bfdba331f3726445c5095bd7dba1e4c5d39e
-ms.sourcegitcommit: 8c5c5a1bd3fe8b90f6253d9850e9352ed0b283ee
+ms.openlocfilehash: b40b10a0f2475a9013eb4186c852e07bfb60154f
+ms.sourcegitcommit: 350f5c6954dec3e9384e2030cd3265aaba7ae904
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/19/2019
-ms.locfileid: "40814031"
+ms.lasthandoff: 12/23/2019
+ms.locfileid: "40851297"
 ---
 # <a name="privacy-and-security-for-office-add-ins"></a>Office 加载项的隐私和安全
 
@@ -138,7 +138,7 @@ Outlook 外接程序通过特定的资源使用率监视提供额外安全和性
 </OfficeApp>
 ```
 
-若要详细了解任务窗格和内容加载项权限，请参阅[在内容和任务窗格加载项中请求获取 API 使用权限](/office/dev/add-ins/develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins)。
+有关任务窗格和内容加载项的权限的详细信息，请参阅[在加载项中请求获取 API 使用权限](/office/dev/add-ins/develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins)。
 
 若要详细了解 Outlook 加载项权限，请参阅以下主题：
 
@@ -259,7 +259,7 @@ Office 设置的管理和执行由组策略设置完成。 这些操作可通过
 
 ## <a name="see-also"></a>另请参阅
 
-- [在内容和任务窗格加载项中请求获取 API 使用权限](/office/dev/add-ins/develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins)
+- [在加载项中请求获取 API 使用权限](/office/dev/add-ins/develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins)
 - [Outlook 外接程序的隐私、权限和安全性](/outlook/add-ins/privacy-and-security)
 - [了解 Outlook 外接程序权限](/outlook/add-ins/understanding-outlook-add-in-permissions)
 - [Outlook 外接程序的激活和 JavaScript API 限制](/outlook/add-ins/limits-for-activation-and-javascript-api-for-outlook-add-ins)

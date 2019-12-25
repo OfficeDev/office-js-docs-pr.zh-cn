@@ -1,16 +1,16 @@
 ---
 title: Office 加载项平台概述 | Microsoft Docs
 description: 使用熟悉的 Web 技术，例如 HTML、CSS 和 JavaScript 来扩展 Word、Excel、PowerPoint、OneNote、Project 和 Outlook，并与其进行交互。
-ms.date: 07/05/2019
+ms.date: 12/24/2019
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: daedbc655c62bfb2ce0e363f795a632ec425acdb
-ms.sourcegitcommit: 7d4d721fc3d246ef8a2464bc714659cd84d6faab
+ms.openlocfilehash: bb3a2005679e82134d6dd045878349847ee6d916
+ms.sourcegitcommit: 350f5c6954dec3e9384e2030cd3265aaba7ae904
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/11/2019
-ms.locfileid: "37468796"
+ms.lasthandoff: 12/23/2019
+ms.locfileid: "40851360"
 ---
 # <a name="office-add-ins-platform-overview"></a>Office 加载项平台概述
 
@@ -118,12 +118,13 @@ Office JavaScript API 包含的对象和成员适用于生成加载项，并与 
 
 ## <a name="next-steps"></a>后续步骤
 
-若要在不到 5 分钟的时间内构建你的首个 Office 加载项，请尝试使用 [Excel](../quickstarts/excel-quickstart-jquery.md)、[Outlook](/outlook/add-ins/quick-start?context=office/dev/add-ins/context)、[Word](../quickstarts/word-quickstart.md)、[OneNote](../quickstarts/onenote-quickstart.md)、[PowerPoint](../quickstarts/powerpoint-quickstart.md) 或 [Project](../quickstarts/project-quickstart.md) 快速入门。 可以使用 Visual Studio 或任何其他编辑器立即开始构建加载项。 
-
-若要开始计划解决方案并打造有吸引力的有效用户体验，请熟悉 Office 加载项的[设计指南](../design/add-in-design.md)和[最佳做法](../concepts/add-in-development-best-practices.md)。
+有关开发 Office 加载项的更多详细介绍，请参阅[构建 Office 加载项](../overview/office-add-ins-fundamentals.md)。
 
 ## <a name="see-also"></a>另请参阅
 
-- [Office 加载项示例](https://developer.microsoft.com/office/gallery/?filterBy=Samples,Excel,Outlook,PowerPoint,Word)
-- [了解适用于 Office 的 JavaScript API](../develop/understanding-the-javascript-api-for-office.md)
-- [Office 外接程序主机和平台可用性](../overview/office-add-in-availability.md)
+- [构建 Office 加载项](../overview/office-add-ins-fundamentals.md)
+- [Office 加载项的核心概念](../overview/core-concepts-office-add-ins.md)
+- [开发 Office 加载项](../develop/develop-overview.md)
+- [设计 Office 加载项](../design/add-in-design.md)
+- [测试和调试 Office 加载项](../testing/test-debug-office-add-ins.md)
+- [发布 Office 加载项](../publish/publish.md)

@@ -5,12 +5,12 @@ ms.date: 11/05/2019
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: bb4ca1de1b99ca66b716810dedf01506fb60ebe7
-ms.sourcegitcommit: 21aa084875c9e07a300b3bbe8852b3e5dd163e1d
+ms.openlocfilehash: c8b0953655039556936c631926ed2713bdb62c57
+ms.sourcegitcommit: 350f5c6954dec3e9384e2030cd3265aaba7ae904
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "38001493"
+ms.lasthandoff: 12/23/2019
+ms.locfileid: "40851395"
 ---
 # <a name="word-add-ins-overview"></a>Word 加载项概述
 
@@ -58,7 +58,7 @@ Word.run(function (context) {
 
 第二组是 [Word JavaScript API](/javascript/api/word)。这是强类型对象模型，可用于创建面向 Mac 版和 Windows 版 Word 2016 的 Word 加载项。此对象模型使用承诺模式，并提供对特定于 Word 的对象（如[正文](/javascript/api/word/word.body)、[内容控件](/javascript/api/word/word.contentcontrol)、[内联图片](/javascript/api/word/word.inlinepicture)和[段落](/javascript/api/word/word.paragraph)）的访问权限。Word JavaScript API 包括 TypeScript 定义和 vsdoc 文件，这样，你便可以在 IDE 中获得代码提示。
 
-目前，所有 Word 客户端均支持适用于 Office 的共享 JavaScript API，大多数客户端支持 Word JavaScript API。有关受支持的客户端的详细信息，请参阅[适用于 Office 的 JavaScript API 概述](../reference/javascript-api-for-office.md)。
+目前，所有 Word 客户端均支持适用于 Office 的共享 JavaScript API，大多数客户端支持 Word JavaScript API。有关受支持的客户端的详细信息，请参阅 [Office 加载项主机和平台可用性](../overview/office-add-in-availability.md)。
 
 我们建议从 Word JavaScript API 开始，因为对象模型更易于使用。如果需要执行以下操作，请使用 Word JavaScript API：
 
@@ -84,6 +84,6 @@ Word.run(function (context) {
 
 ## <a name="see-also"></a>另请参阅
 
-* [Word 加载项文档](index.md)
+* [构建 Office 加载项](../overview/office-add-ins-fundamentals.md)
 * [Office 加载项平台概述](../overview/office-add-ins.md)
 * [Word JavaScript API 参考](/office/dev/add-ins/reference/overview/word-add-ins-reference-overview)
