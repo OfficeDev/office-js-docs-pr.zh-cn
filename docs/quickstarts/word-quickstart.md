@@ -1,15 +1,15 @@
 ---
 title: 生成首个 Word 任务窗格加载项
 description: 了解如何使用 Office JS API 生成简单的 Word 任务窗格加载项。
-ms.date: 12/24/2019
+ms.date: 12/31/2019
 ms.prod: word
 localization_priority: Priority
-ms.openlocfilehash: 039348503d75746bf30da253e84402e128006497
-ms.sourcegitcommit: 350f5c6954dec3e9384e2030cd3265aaba7ae904
+ms.openlocfilehash: 7a253f884f509cc933b02c86d4d3d6d16c0ca114
+ms.sourcegitcommit: d5ac9284d1e96dc91a9168d7641e44d88535e1a7
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/23/2019
-ms.locfileid: "40851332"
+ms.lasthandoff: 12/31/2019
+ms.locfileid: "40914921"
 ---
 # <a name="build-your-first-word-task-pane-add-in"></a>生成首个 Word 任务窗格加载项
 
@@ -87,6 +87,10 @@ _适用于：Windows 版 Word 2016 或更高版本、iPad 版 Word 和 Mac 版 W
 4. 在任务窗格底部，选择“**运行**”链接，以将文本“Hello World”以蓝色字体添加到文档中。
 
     ![加载了任务窗格加载项的 Word 应用程序的屏幕截图](../images/word-quickstart-addin-1c.png)
+
+### <a name="next-steps"></a>后续步骤
+
+恭喜！已成功创建 Word 任务窗格加载项！ 接下来，请详细了解 Word 加载项功能，并跟着 [Word 加载项教程](../tutorials/word-tutorial.md)一起操作，生成更复杂的加载项。
 
 # <a name="visual-studiotabvisualstudio"></a>[Visual Studio](#tab/visualstudio)
 
@@ -301,14 +305,11 @@ _适用于：Windows 版 Word 2016 或更高版本、iPad 版 Word 和 Mac 版 W
 
     ![加载了样本加载项的 Word 应用的屏幕截图](../images/word-quickstart-addin-1b.png)
 
+### <a name="next-steps"></a>后续步骤
+
+恭喜！已成功创建 Word 任务窗格加载项！ 接下来，了解有关[使用 Visual Studio 开发 Office 加载项](../develop/develop-add-ins-visual-studio.md)的详细信息。
+
 ---
-
-## <a name="next-steps"></a>后续步骤
-
-恭喜！已成功创建 Word 任务窗格加载项！ 接下来，请详细了解 Word 加载项功能，并跟着 Word 加载项教程一起操作，生成更复杂的加载项。
-
-> [!div class="nextstepaction"]
-> [Word 加载项教程](../tutorials/word-tutorial.md)
 
 ## <a name="see-also"></a>另请参阅
 

@@ -1,15 +1,15 @@
 ---
 title: 生成首个 Excel 任务窗格加载项
 description: 了解如何使用 Office JS API 生成简单的 Excel 任务窗格加载项。
-ms.date: 12/24/2019
+ms.date: 12/31/2019
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: 12eb48fc5f44b506bbce39d01e9bce4ca2a2b5e6
-ms.sourcegitcommit: 350f5c6954dec3e9384e2030cd3265aaba7ae904
+ms.openlocfilehash: 5b437791cea2b3f3d534b8c9053224e381f36a9e
+ms.sourcegitcommit: d5ac9284d1e96dc91a9168d7641e44d88535e1a7
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/23/2019
-ms.locfileid: "40851353"
+ms.lasthandoff: 12/31/2019
+ms.locfileid: "40914949"
 ---
 # <a name="build-an-excel-task-pane-add-in"></a>生成 Excel 任务窗格加载项
 
@@ -64,6 +64,10 @@ ms.locfileid: "40851353"
 
     ![Excel 加载项](../images/excel-quickstart-addin-3c.png)
 
+### <a name="next-steps"></a>后续步骤
+
+恭喜，你已成功创建 Excel 任务窗格加载项！ 接下来，请详细了解 Excel 加载项功能，并跟着 [Excel 加载项教程](../tutorials/excel-tutorial.md)一起操作，生成更复杂的加载项。
+
 # <a name="visual-studiotabvisualstudio"></a>[Visual Studio](#tab/visualstudio)
 
 ### <a name="prerequisites"></a>先决条件
@@ -71,7 +75,6 @@ ms.locfileid: "40851353"
 [!include[Quick Start prerequisites](../includes/quickstart-vs-prerequisites.md)]
 
 ### <a name="create-the-add-in-project"></a>创建加载项项目
-
 
 1. 在 Visual Studio 中，选择“**新建项目**”。
 
@@ -205,14 +208,11 @@ ms.locfileid: "40851353"
 
     ![Excel 加载项](../images/excel-quickstart-addin-2c.png)
 
+### <a name="next-steps"></a>后续步骤
+
+恭喜，你已成功创建 Excel 任务窗格加载项！ 接下来，了解有关[使用 Visual Studio 开发 Office 加载项](../develop/develop-add-ins-visual-studio.md)的详细信息。
+
 ---
-
-## <a name="next-steps"></a>后续步骤
-
-恭喜，你已成功创建 Excel 任务窗格加载项！ 接下来，请详细了解 Excel 加载项功能，并跟着 Excel 加载项教程一起操作，生成更复杂的加载项。
-
-> [!div class="nextstepaction"]
-> [Excel 加载项教程](../tutorials/excel-tutorial.md)
 
 ## <a name="see-also"></a>另请参阅
 

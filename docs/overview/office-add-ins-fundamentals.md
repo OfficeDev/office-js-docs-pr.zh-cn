@@ -3,12 +3,12 @@ title: 构建 Office 加载项
 description: Office 加载项开发简介。
 ms.date: 12/24/2019
 localization_priority: Priority
-ms.openlocfilehash: e8e0b3b1ff5578ce75b56534f90be39d4b63d9f5
-ms.sourcegitcommit: 350f5c6954dec3e9384e2030cd3265aaba7ae904
+ms.openlocfilehash: e0deeebb3a1c8761217a9fe33a3ef04a945b2cff
+ms.sourcegitcommit: d5ac9284d1e96dc91a9168d7641e44d88535e1a7
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/23/2019
-ms.locfileid: "40851689"
+ms.lasthandoff: 12/31/2019
+ms.locfileid: "40915019"
 ---
 # <a name="building-office-add-ins"></a>构建 Office 加载项
 
@@ -33,11 +33,11 @@ Office 加载项可扩展 Office 应用程序的 UI 和功能，并与 Office �
 - Word
 - Excel 自定义函数
 
-你可选择使用 HTML、CSS 和 JavaScript 创建该项目，也可使用 Angular 或 React 进行创建。 此外，无论选择哪种框架，都可在 JavaScript 和 Typescript 之间进行选择。 每篇 [5 分钟快速入门](../index.md)都有分步说明，介绍了如何使用 Yeoman 生成器创建 Office 加载项。
+你可选择使用 HTML、CSS 和 JavaScript 创建该项目，也可使用 Angular 或 React 进行创建。 此外，无论选择哪种框架，都可在 JavaScript 和 Typescript 之间进行选择。 有关使用 Yeoman 生成器创建加载项的详细信息，请参阅[使用 Visual Studio Code 开发 Office 加载项](../develop/develop-add-ins-vscode.md)。
 
 ### <a name="visual-studio"></a>Visual Studio
 
-Visual Studio 可用于创建适合 Excel、Word、PowerPoint 或 Outlook 的 Office 加载项。 Office 加载项项目是作为 Visual Studio 解决方案的一部分创建的，它使用 HTML、CSS 和 JavaScript。 在针对 Excel、Word、PowerPoint 和 Outlook 的 [5 分钟快速入门](../index.md)中有分步说明，其中介绍了如何使用 Visual Studio 创建 Office 加载项。 
+Visual Studio 可用于创建适用于 Excel、Outlook、Word 和 PowerPoint 的 Office 加载项。 Office 加载项项目是作为 Visual Studio 解决方案的一部分创建的，它使用 HTML、CSS 和 JavaScript。 有关使用 Visual Studio 创建加载项的详细信息，请参阅[使用 Visual Studio 开发 Office 加载项](../develop/develop-add-ins-visual-studio.md)。
 
 [!include[Yeoman vs Visual Studio comparision](../includes/yeoman-generator-recommendation.md)]
 
@@ -164,6 +164,8 @@ Office JavaScript API 包含两种不同的模型：
 - [Office 加载项平台概述](office-add-ins.md)
 - [Office 加载项的核心概念](../overview/core-concepts-office-add-ins.md)
 - [开发 Office 加载项](../develop/develop-overview.md)
+- [使用 Visual Studio Code 开发 Office 加载项](../develop/develop-add-ins-vscode.md)
+- [使用 Visual Studio 开发 Office 加载项](../develop/develop-add-ins-visual-studio.md)
 - [设计 Office 加载项](../design/add-in-design.md)
 - [测试和调试 Office 加载项](../testing/test-debug-office-add-ins.md)
 - [发布 Office 加载项](../publish/publish.md)

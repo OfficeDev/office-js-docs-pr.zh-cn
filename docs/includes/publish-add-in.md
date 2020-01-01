@@ -16,4 +16,4 @@ Office 加载项由一个 Web 应用程序和一个清单文件构成。 Web 应
 
 3. 在 VS Code 中，打开项目根目录中的加载项清单文件 (`manifest.xml`)。 将所有出现的 `https://localhost:3000` 都替换为上一步中已部署到 Web 服务器的 Web 应用程序的 URL。
 
-4. 选择要用来[部署和发布 Office 加载项](../publish/publish.md)（即你的加载项）的方法，再按照说明发布清单文件。
+4. 选择要用来[部署 Office 加载项](../publish/publish.md)的方法，再按照说明发布清单文件。

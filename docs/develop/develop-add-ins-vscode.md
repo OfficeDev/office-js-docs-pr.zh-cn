@@ -1,21 +1,21 @@
 ---
 title: 使用 Visual Studio Code 开发 Office 加载项
 description: 如何使用 Visual Studio Code 开发 Office 加载项
-ms.date: 12/02/2019
+ms.date: 12/31/2019
 localization_priority: Priority
-ms.openlocfilehash: a18d8a74ff269b32e83c836b06629850873e507b
-ms.sourcegitcommit: 44f1a4a3e1ae3c33d7d5fabcee14b84af94e03da
+ms.openlocfilehash: d6c6cafb28c12b2beb07f0b0cc30d8159e1df1b2
+ms.sourcegitcommit: d5ac9284d1e96dc91a9168d7641e44d88535e1a7
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "39670480"
+ms.lasthandoff: 12/31/2019
+ms.locfileid: "40914860"
 ---
 # <a name="develop-office-add-ins-with-visual-studio-code"></a>使用 Visual Studio Code 开发 Office 加载项
 
 本文介绍如何使用 [Visual Studio Code (VS Code)](https://code.visualstudio.com) 开发 Office 加载项。
 
 > [!NOTE]
-> 要了解如何使用 Visual Studio 创建 Office 加载项，请参阅[在 Visual Studio 中创建和调试 Office 加载项](create-and-debug-office-add-ins-in-visual-studio.md)。
+> 要了解如何使用 Visual Studio 创建 Office 加载项，请参阅[使用 Visual Studio 开发 Office 加载项](develop-add-ins-visual-studio.md)。
 
 ## <a name="prerequisites"></a>先决条件
 
@@ -48,7 +48,9 @@ Yeoman 生成器会创建一个功能受限的基本加载项。 你可通过在
 
 ## <a name="see-also"></a>另请参阅
 
-- [5 分钟快速入门](../index.md)
-- [使用 Script Lab 探索 Office JavaScript API](../overview/explore-with-script-lab.md)
+- [构建 Office 加载项](../overview/office-add-ins-fundamentals.md)
+- [Office 加载项的核心概念](../overview/core-concepts-office-add-ins.md)
+- [开发 Office 加载项](../develop/develop-overview.md)
+- [设计 Office 加载项](../design/add-in-design.md)
 - [测试和调试 Office 加载项](../testing/test-debug-office-add-ins.md)
-- [部署和发布 Office 外接程序](../publish/publish.md)
+- [发布 Office 加载项](../publish/publish.md)

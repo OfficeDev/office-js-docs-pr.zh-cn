@@ -3,12 +3,12 @@ title: 在 Visual Studio 2019 中获取 JavaScript IntelliSense
 description: ''
 ms.date: 10/11/2019
 localization_priority: Priority
-ms.openlocfilehash: afe2890015c853c2b70a00d94ea1b6a49296a14a
-ms.sourcegitcommit: 499bf49b41205f8034c501d4db5fe4b02dab205e
+ms.openlocfilehash: 26fd5b4bff2e244d84f2f8c40e3da7049189aadf
+ms.sourcegitcommit: d5ac9284d1e96dc91a9168d7641e44d88535e1a7
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/22/2019
-ms.locfileid: "37626780"
+ms.lasthandoff: 12/31/2019
+ms.locfileid: "40914886"
 ---
 # <a name="get-javascript-intellisense-in-visual-studio-2019"></a>在 Visual Studio 2019 中获取 JavaScript IntelliSense
 
@@ -84,4 +84,5 @@ function myFunc() {
 
 ## <a name="see-also"></a>另请参阅
 
-- [在 Visual Studio 中创建和调试加载项](create-and-debug-office-add-ins-in-visual-studio.md)
+- [使用 Visual Studio 开发 Office 加载项](develop-add-ins-visual-studio.md)
+- [在 Visual Studio 中调试 Office 加载项](debug-office-add-ins-in-visual-studio.md)

@@ -1,14 +1,14 @@
 ---
 title: 旁加载 Office 加载项以供测试
 description: ''
-ms.date: 12/06/2019
+ms.date: 12/31/2019
 localization_priority: Priority
-ms.openlocfilehash: bb926b09d9381574d22e7634a578adac141e1f8f
-ms.sourcegitcommit: 8c5c5a1bd3fe8b90f6253d9850e9352ed0b283ee
+ms.openlocfilehash: a30cfeb5af4bccb543e06c20843709083cea21f9
+ms.sourcegitcommit: d5ac9284d1e96dc91a9168d7641e44d88535e1a7
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/19/2019
-ms.locfileid: "40814477"
+ms.lasthandoff: 12/31/2019
+ms.locfileid: "40915026"
 ---
 # <a name="sideload-office-add-ins-for-testing"></a>旁加载 Office 加载项以供测试
 
@@ -121,6 +121,6 @@ ms.locfileid: "40814477"
 
 ## <a name="see-also"></a>另请参阅
 
-- [验证并排查清单问题](troubleshoot-manifest.md)
+- [验证 Office 加载项的清单](troubleshoot-manifest.md)
+- [清除 Office 缓存](clear-cache.md)
 - [发布 Office 外接程序](../publish/publish.md)
-    

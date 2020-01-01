@@ -3,12 +3,12 @@ title: 排查单一登录 (SSO) 错误消息
 description: ''
 ms.date: 11/05/2019
 localization_priority: Priority
-ms.openlocfilehash: 0852d70337a3d372ac495824ba2aa50469117f5c
-ms.sourcegitcommit: 21aa084875c9e07a300b3bbe8852b3e5dd163e1d
+ms.openlocfilehash: 835ae68304a6fd69648f0f182c9ff17e9cbfd56d
+ms.sourcegitcommit: d5ac9284d1e96dc91a9168d7641e44d88535e1a7
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "38001479"
+ms.lasthandoff: 12/31/2019
+ms.locfileid: "40914879"
 ---
 # <a name="troubleshoot-error-messages-for-single-sign-on-sso-preview"></a>排查单一登录 (SSO) 错误消息（预览）
 
@@ -64,7 +64,7 @@ ms.locfileid: "38001479"
 
 ### <a name="13004"></a>13004
 
-资源无效。 （应该只会在开发中看到此错误。）未正确配置加载项清单。 请更新此清单。 有关详细信息，请参阅[验证并排查清单问题](../testing/troubleshoot-manifest.md)。 最常见的问题是**资源**元素（在 **WebApplicationInfo** 元素中）具有与加载项的域不匹配的域。 虽然资源值的协议部分应该是“api”而不是“https”；域名的所有其他部分（包括端口，如果有）应与加载项域名的相应部分相同。
+资源无效。 （应该只会在开发中看到此错误。）未正确配置加载项清单。 请更新此清单。 有关详细信息，请参阅[验证 Office 加载项的清单](../testing/troubleshoot-manifest.md)。 最常见的问题是**资源**元素（在 **WebApplicationInfo** 元素中）具有与加载项的域不匹配的域。 虽然资源值的协议部分应该是“api”而不是“https”；域名的所有其他部分（包括端口，如果有）应与加载项域名的相应部分相同。
 
 ### <a name="13005"></a>13005
 

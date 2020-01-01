@@ -1,15 +1,15 @@
 ---
 title: 生成首个 PowerPoint 任务加载项
 description: 了解如何使用 Office JS API 生成简单的 PowerPoint 任务窗格加载项。
-ms.date: 12/24/2019
+ms.date: 12/31/2019
 ms.prod: powerpoint
 localization_priority: Priority
-ms.openlocfilehash: fbf8ca6c52bd5a71f3db24d9661d7cce5f6004d2
-ms.sourcegitcommit: 350f5c6954dec3e9384e2030cd3265aaba7ae904
+ms.openlocfilehash: 56168749b907cdde3b9ea235d55805e1084f020c
+ms.sourcegitcommit: d5ac9284d1e96dc91a9168d7641e44d88535e1a7
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/23/2019
-ms.locfileid: "40851346"
+ms.lasthandoff: 12/31/2019
+ms.locfileid: "40914942"
 ---
 # <a name="build-your-first-powerpoint-task-pane-add-in"></a>生成首个 PowerPoint 任务加载项
 
@@ -85,6 +85,10 @@ ms.locfileid: "40851346"
 4. 在任务窗格底部，选择“**运行**”链接，以将文字“Hello World”插入到当前幻灯片中。
 
     ![幻灯片上显示有狗图像和文本“Hello World”的 PowerPoint 屏幕截图](../images/powerpoint_quickstart_addin_3c.png)
+
+### <a name="next-steps"></a>后续步骤
+
+恭喜！已成功创建 PowerPoint 任务窗格加载项！ 接下来，请详细了解 PowerPoint 加载项功能，并跟着 [PowerPoint 加载项教程](../tutorials/powerpoint-tutorial.md)一起操作，生成更复杂的加载项。
 
 # <a name="visual-studiotabvisualstudio"></a>[Visual Studio](#tab/visualstudio)
 
@@ -245,14 +249,11 @@ ms.locfileid: "40851346"
 
     ![幻灯片上显示有狗图像和文本“Hello World”的 PowerPoint 屏幕截图](../images/powerpoint_quickstart_addin_3.png)
 
+### <a name="next-steps"></a>后续步骤
+
+恭喜！已成功创建 PowerPoint 任务窗格加载项！ 接下来，了解有关[使用 Visual Studio 开发 Office 加载项](../develop/develop-add-ins-visual-studio.md)的详细信息。
+
 ---
-
-## <a name="next-steps"></a>后续步骤
-
-恭喜！已成功创建 PowerPoint 任务窗格加载项！ 接下来，请详细了解 PowerPoint 加载项功能，并跟着 PowerPoint 加载项教程一起操作，生成更复杂的加载项。
-
-> [!div class="nextstepaction"]
-> [PowerPoint 加载项教程](../tutorials/powerpoint-tutorial.md)
 
 ## <a name="see-also"></a>另请参阅
 

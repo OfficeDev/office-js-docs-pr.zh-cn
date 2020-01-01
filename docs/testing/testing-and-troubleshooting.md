@@ -1,14 +1,14 @@
 ---
 title: 排查 Office 加载项中的用户错误
 description: ''
-ms.date: 11/26/2019
+ms.date: 12/31/2019
 localization_priority: Priority
-ms.openlocfilehash: fed23cfde1380e7c5728c78c995d3b89d44451f2
-ms.sourcegitcommit: 05a883a7fd89136301ce35aabc57638e9f563288
+ms.openlocfilehash: 76bb71cebb3c6027ac86e046e1fcfe579b7031c9
+ms.sourcegitcommit: d5ac9284d1e96dc91a9168d7641e44d88535e1a7
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/27/2019
-ms.locfileid: "39629733"
+ms.lasthandoff: 12/31/2019
+ms.locfileid: "40915012"
 ---
 # <a name="troubleshoot-user-errors-with-office-add-ins"></a>排查 Office 加载项中的用户错误
 
@@ -66,7 +66,7 @@ ms.locfileid: "39629733"
 
 ## <a name="add-in-doesnt-load-in-task-pane-or-other-issues-with-the-add-in-manifest"></a>外接程序无法在任务窗格中加载，或外接程序清单存在其他问题
 
-请参阅[验证并排查清单问题](troubleshoot-manifest.md)，针对外接程序清单问题进行调试。
+请参阅[验证 Office 加载项的清单](troubleshoot-manifest.md)和[使用运行时日志记录功能调试加载项](runtime-logging.md)，以调试加载项清单问题。
 
 
 ## <a name="add-in-dialog-box-cannot-be-displayed"></a>无法显示外接程序对话框
@@ -143,4 +143,5 @@ del /s /f /q %LOCALAPPDATA%\Packages\Microsoft.Win32WebViewHost_cw5n1h2txyewy\AC
 - [在 Office 网页版中调试加载项](debug-add-ins-in-office-online.md) 
 - [将 Office 外接程序旁加载到 iPad 和 Mac 上](sideload-an-office-add-in-on-ipad-and-mac.md)  
 - [在 iPad 和 Mac 上调试 Office 外接程序](debug-office-add-ins-on-ipad-and-mac.md)  
-- [验证并排查清单问题](troubleshoot-manifest.md)
+- [验证 Office 加载项的清单](troubleshoot-manifest.md)
+- [使用运行时日志记录功能调试加载项](runtime-logging.md)

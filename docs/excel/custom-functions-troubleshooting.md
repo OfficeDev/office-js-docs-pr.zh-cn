@@ -1,14 +1,14 @@
 ---
-ms.date: 07/15/2019
+ms.date: 12/31/2019
 description: Excel 自定义函数中的常见问题疑难解答。
 title: 自定义函数疑难解答
 localization_priority: Priority
-ms.openlocfilehash: 0ff10200da86ebecf9bbd6f724ed42d77b8ad293
-ms.sourcegitcommit: 44f1a4a3e1ae3c33d7d5fabcee14b84af94e03da
+ms.openlocfilehash: 8b26120d193ac084662ff989ac28e0456c98be3f
+ms.sourcegitcommit: d5ac9284d1e96dc91a9168d7641e44d88535e1a7
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "39670172"
+ms.lasthandoff: 12/31/2019
+ms.locfileid: "40915033"
 ---
 # <a name="troubleshoot-custom-functions"></a>自定义函数疑难解答
 
@@ -20,7 +20,7 @@ ms.locfileid: "39670172"
 
 ## <a name="enable-runtime-logging"></a>启用运行时日志记录
 
-如果在 Windows 上的 Office 中测试加载项，应[启用运行时日志记录](/office/dev/add-ins/testing/troubleshoot-manifest#use-runtime-logging-to-debug-your-add-in)。 运行时日志记录将 `console.log` 语句传递给创建的单独日志文件，以帮助发现问题。 这些语句涵盖了各种错误，其中包括加载项的 XML 清单文件、运行时条件或自定义函数安装的相关错误。  有关运行时日志记录的详细信息，请参阅[使用运行时日志记录调试加载项](/office/dev/add-ins/testing/troubleshoot-manifest#use-runtime-logging-to-debug-your-add-in)。  
+如果在 Windows 上的 Office 中测试加载项，应[启用运行时日志记录](../testing/runtime-logging.md)。 运行时日志记录将 `console.log` 语句传递给创建的单独日志文件，以帮助发现问题。 这些语句涵盖了各种错误，其中包括加载项的 XML 清单文件、运行时条件或自定义函数安装的相关错误。 有关运行时日志记录的详细信息，请参阅[使用运行时日志记录功能调试加载项](../testing/runtime-logging.md)。
 
 ### <a name="check-for-excel-error-messages"></a>检查 Excel 错误消息
 
@@ -35,7 +35,7 @@ Excel 有许多内置错误消息，如果存在计算错误，系统会将向�
 
 ## <a name="clear-the-office-cache"></a>清除 Office 缓存
 
-与自定义函数相关的信息由 Office 缓存。 有时候，开发和反复重新加载带有自定义函数的加载项时，变更可能不会显示。 可以通过清除 Office 缓存修复此问题。 有关详细信息，请参阅[验证并排查清单问题](../testing/troubleshoot-manifest.md#clear-the-office-cache)一文中的“清除 Office 缓存”部分。
+与自定义函数相关的信息由 Office 缓存。 有时候，开发和反复重新加载带有自定义函数的加载项时，变更可能不会显示。 可以通过清除 Office 缓存修复此问题。 有关详细信息，请参阅[清除 Office 缓存](../testing/clear-cache.md)。
 
 ## <a name="common-issues"></a>常见问题
 
