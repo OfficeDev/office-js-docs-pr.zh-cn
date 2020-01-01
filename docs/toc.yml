@@ -119,8 +119,11 @@
               href: develop/develop-add-ins-vscode.md
             - name: 使用 Visual Studio 开发加载项
               items:
-                - name: 在 Visual Studio 中创建和调试 Office 加载项
-                  href: develop/create-and-debug-office-add-ins-in-visual-studio.md
+                - name: 概述
+                  href: develop/develop-add-ins-visual-studio.md
+                  displayName: Visual Studio
+                - name: 在 Visual Studio 中调试 Office 加载项
+                  href: develop/debug-office-add-ins-in-visual-studio.md
                 - name: 在 Visual Studio 中获取 JavaScript IntelliSense
                   href: develop/get-javascript-intellisense-in-visual-studio.md
                 - name: 将 JavaScript 转换成 TypeScript
@@ -236,11 +239,15 @@
               href: testing/sideload-an-office-add-in-on-ipad-and-mac.md
             - name: 在 Mac 上调试
               href: testing/debug-office-add-ins-on-ipad-and-mac.md
+        - name: 清除 Office 缓存
+          href: testing/clear-cache.md
+        - name: 使用运行时日志记录功能进行调试
+          href: testing/runtime-logging.md
         - name: 排查用户错误
           href: testing/testing-and-troubleshooting.md
         - name: 可用性测试
           href: develop/usability-testing.md
-        - name: 验证加载项清单并排查问题
+        - name: 验证 Office 加载项的清单
           href: testing/troubleshoot-manifest.md
     - name: 发布
       items:
