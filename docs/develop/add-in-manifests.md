@@ -1,14 +1,14 @@
 ---
 title: Office 加载项 XML 清单
 description: ''
-ms.date: 12/31/2019
+ms.date: 01/06/2020
 localization_priority: Priority
-ms.openlocfilehash: 1d130d041819ce7e65046b9cda84fc645bed2c51
-ms.sourcegitcommit: d5ac9284d1e96dc91a9168d7641e44d88535e1a7
+ms.openlocfilehash: 90fef1186db6411290daf9b6aef14d8d81d7a13e
+ms.sourcegitcommit: abe8188684b55710261c69e206de83d3a6bd2ed3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/31/2019
-ms.locfileid: "40914991"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "40970089"
 ---
 # <a name="office-add-ins-xml-manifest"></a>Office 加载项 XML 清单
 
@@ -30,6 +30,8 @@ Office 外接程序的 XML 清单文件描述，当最终用户安装外接程�
 
 > [!NOTE]
 > 如果计划将加载项[发布](../publish/publish.md)到 AppSource 并适用于 Office 体验，请务必遵循 [AppSource 验证策略](/office/dev/store/validation-policies)。例如，加载项必须适用于支持已定义方法的所有平台，才能通过验证（有关详细信息，请参阅[第 4.12 部分](/office/dev/store/validation-policies#4-apps-and-add-ins-behave-predictably)以及 [Office 加载项主机和可用性](../overview/office-add-in-availability.md)页面）。
+
+[!include[manifest guidance](../includes/manifest-guidance.md)]
 
 ## <a name="required-elements"></a>必需元素
 

@@ -1,14 +1,14 @@
 ---
 title: 常见的编码问题和意外的平台行为
 description: 开发人员经常遇到的 Office JavaScript API 平台问题的列表。
-ms.date: 12/05/2019
+ms.date: 01/02/2020
 localization_priority: Normal
-ms.openlocfilehash: 4271db2a9c61de419dd36fb0277574ffe0929c58
-ms.sourcegitcommit: 8c5c5a1bd3fe8b90f6253d9850e9352ed0b283ee
+ms.openlocfilehash: fa33451550ab02f76a8b41ebf682e6a73d2a3a96
+ms.sourcegitcommit: abe8188684b55710261c69e206de83d3a6bd2ed3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/19/2019
-ms.locfileid: "40814010"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "40969491"
 ---
 # <a name="common-coding-issues-and-unexpected-platform-behaviors"></a>常见的编码问题和意外的平台行为
 
@@ -47,15 +47,15 @@ readDocumentFileAsync(): Promise<any> {
 > [!NOTE]
 > 参考文档包含[getSliceAsync](/javascript/api/office/office.file#getsliceasync-sliceindex--callback-)的承诺包装实现。
 
-## <a name="some-properties-must-be-set-with-json-structs"></a>某些属性必须使用 JSON 结构进行设置
+## <a name="some-properties-cannot-be-set-directly"></a>某些属性不能直接设置
 
 > [!NOTE]
 > 本部分仅适用于 Excel 和 Word 的特定于主机的 Api。
 
-某些属性必须设置为 JSON 结构，而不是设置其单个子属性。 在[页面布局](/javascript/api/excel/excel.pagelayout)中找到此示例的一个示例。 必须`zoom`使用单个[PageLayoutZoomOptions](/javascript/api/excel/excel.pagelayoutzoomoptions)对象设置属性，如下所示：
+某些属性虽然是可写的，但不能设置。 这些属性是父属性的一部分，必须将其设置为单个对象。 这是因为该父属性依赖具有特定逻辑关系的子属性。 必须使用对象文本表示法设置这些父属性，以设置整个对象，而不是设置该对象的单个子属性。 在[页面布局](/javascript/api/excel/excel.pagelayout)中找到此示例的一个示例。 必须`zoom`使用单个[PageLayoutZoomOptions](/javascript/api/excel/excel.pagelayoutzoomoptions)对象设置属性，如下所示：
 
 ```js
-// PageLayout.zoom must be set with JSON struct representing the PageLayoutZoomOptions object.
+// PageLayout.zoom.scale must be set by assigning PageLayout.zoom to a PageLayoutZoomOptions object.
 sheet.pageLayout.zoom = { scale: 200 };
 ```
 
@@ -68,10 +68,10 @@ sheet.pageLayout.zoom = { scale: 200 };
 range.format.font.size = 10;
 ```
 
-您可以通过检查其只读修饰符来标识必须将其子属性设置为 JSON 结构的属性。 所有只读属性都可以直接设置其非只读的子属性。 必须使用 JSON `PageLayout.zoom`结构设置可写属性（如必须设置）。 摘要：
+您可以通过检查属性的只读修饰符来标识无法直接设置其子属性的属性。 所有只读属性都可以直接设置其非只读的子属性。 必须使用该`PageLayout.zoom`级别的对象设置可写属性（如必须设置）。 摘要：
 
 - 只读属性：可通过导航设置子属性。
-- 可写属性：必须使用 JSON 结构设置子属性（且不能通过导航进行设置）。
+- 可写属性：子属性不能通过导航设置（必须设置为初始父对象分配的一部分）。
 
 ## <a name="excel-data-transfer-limits"></a>Excel 数据传输限制
 
