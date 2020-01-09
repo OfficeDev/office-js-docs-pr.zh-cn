@@ -631,6 +631,9 @@
         - name: 要求集
           href: excel/custom-functions-requirement-sets.md
           displayName: 'Excel, Custom Functions'
+        - name: 返回动态数组
+          href: excel/custom-functions-dynamic-arrays.md
+          displayName: 'Excel, Custom Functions'
         - name: 运行时
           href: excel/custom-functions-runtime.md
           displayName: 'Excel, Custom Functions'

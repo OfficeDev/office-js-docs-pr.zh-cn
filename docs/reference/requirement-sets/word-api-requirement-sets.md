@@ -1,15 +1,15 @@
 ---
 title: Word JavaScript API 要求集
 description: 针对 Word 内部版本的 Office 加载项要求集信息
-ms.date: 07/17/2019
+ms.date: 01/06/2020
 ms.prod: word
 localization_priority: Priority
-ms.openlocfilehash: 4af7a9c14489d148ffdc06a68ad6c26bf326abc5
-ms.sourcegitcommit: 6d9b4820a62a914c50cef13af8b80ce626034c26
+ms.openlocfilehash: c90daafe46d301b404ee902b38bb7417562adc44
+ms.sourcegitcommit: abe8188684b55710261c69e206de83d3a6bd2ed3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "35804623"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "40969529"
 ---
 # <a name="word-javascript-api-requirement-sets"></a>Word JavaScript API 要求集
 
@@ -32,7 +32,10 @@ Word 加载项可在多个 Office 版本中运行，包括 Windows 版 Office 20
 | [WordApi 1.1](word-api-1-1-requirement-set.md) | 版本 1509（内部版本 4266.1001）或更高版本| 2016 年 1 月，1.18 或更高版本 | 2016 年 1 月，15.19 或更高版本| 2016 年 9 月 |
 
 > [!NOTE]
-> 通过 MSI 安装的 Office 2016 的内部版本号为 16.0.4266.1001。 此版本只包含 WordApi 1.1 要求集。
+> 永久版本的 Office 支持要求集如下：
+>
+> - Office 2019 支持 ExcelApi 1.3 及更低版本。
+> - Office 2016 仅支持 ExcelApi 1.1 要求集。
 
 ## <a name="office-versions-and-build-numbers"></a>Office 版本和内部版本号
 
