@@ -3,12 +3,12 @@ title: 创建使用单一登录的 ASP.NET Office 加载项
 description: ''
 ms.date: 12/04/2019
 localization_priority: Priority
-ms.openlocfilehash: dac45fd713de8787bd6e51f68d139915d3f572f9
-ms.sourcegitcommit: 8c5c5a1bd3fe8b90f6253d9850e9352ed0b283ee
+ms.openlocfilehash: ed648b82804d6658f3b92c5cba8d636e6dddf34b
+ms.sourcegitcommit: 0dacbe7c80ed387099e3ec21e151f8990b181ede
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/19/2019
-ms.locfileid: "40814101"
+ms.lasthandoff: 01/13/2020
+ms.locfileid: "41111058"
 ---
 # <a name="create-an-aspnet-office-add-in-that-uses-single-sign-on-preview"></a>创建使用单一登录的 ASP.NET Office 加载项（预览）
 
@@ -28,7 +28,7 @@ ms.locfileid: "40814101"
 
 * Office 365 订阅中的 OneDrive for Business 上至少存储了一些文件和文件夹。
 
-* 一个 Microsoft Azure 租户。 此加载项需要 Azure Active Directory (AD)。 Azure AD 为应用程序提供了用于进行身份验证和授权的标识服务。 你还可在 [Microsoft Azure](https://account.windowsazure.com/SignUp) 获得试用订阅。
+* 一个 Microsoft Azure 订阅。 此加载项需要 Azure Active Directory (AD)。 Azure AD 为应用程序提供了用于进行身份验证和授权的标识服务。 你还可在 [Microsoft Azure](https://account.windowsazure.com/SignUp) 获得试用订阅。
 
 ## <a name="set-up-the-starter-project"></a>设置初学者项目
 
