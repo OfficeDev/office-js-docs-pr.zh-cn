@@ -3,12 +3,12 @@ title: 使用 XLL 用户定义的函数扩展自定义函数
 description: 启用与自定义函数具有等效功能的 Excel XLL 用户定义函数的兼容性
 ms.date: 07/31/2019
 localization_priority: Normal
-ms.openlocfilehash: a0a98dab1ec046151d2dd0d80a4a3a4542654574
-ms.sourcegitcommit: 528577145b2cf0a42bc64c56145d661c4d019fb8
+ms.openlocfilehash: d8b5349aecad1bdd6bd9f8e00b6c09bcb0071377
+ms.sourcegitcommit: 0dacbe7c80ed387099e3ec21e151f8990b181ede
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "37353879"
+ms.lasthandoff: 01/13/2020
+ms.locfileid: "41111072"
 ---
 # <a name="extend-custom-functions-with-xll-user-defined-functions"></a>使用 XLL 用户定义的函数扩展自定义函数
 
@@ -16,7 +16,7 @@ ms.locfileid: "37353879"
 
 > [!NOTE]
 > 当连接到 Office 365 订阅时，以下平台支持 COM 加载项和 XLL UDF 兼容性：
-> - 在 web 上的 Excel
+> - Excel 网页版
 > - Windows 上的 Excel （版本1904或更高版本）
 > - Excel for Mac （版本13.329 或更高版本）
 > 
@@ -50,10 +50,6 @@ ms.locfileid: "37353879"
 > [!NOTE]
 > 如果外接程序声明其自定义函数是 XLL 兼容的，则稍后更改清单可能会破坏用户的工作簿，因为它会更改文件格式。
 
-## <a name="excel-add-in-updates"></a>Excel 加载项更新
-
-为 Excel 加载项指定等效 XLL 后，Excel 将停止处理 Excel 加载项的更新。 用户必须卸载 XLL 才能获取 Excel 外接程序的最新更新。
-
 ## <a name="custom-function-behavior-for-xll-compatible-functions"></a>XLL 兼容函数的自定义函数行为
 
 如果打开的电子表格中包含的 XLL 函数也有等效的加载项，则 XLL 的函数将转换为 XLL 兼容的自定义函数。 在下一次保存时，它们将在兼容模式下写入文件，以便它们使用 XLL 和 Excel 外接程序自定义函数（当在其他平台上）。
@@ -64,9 +60,9 @@ ms.locfileid: "37353879"
 |---------|---------|---------|---------|
 | 支持的平台 | Windows | Windows、macOS、web 浏览器 | Windows、macOS、web 浏览器 |
 | 支持的文件格式 | .XLSX、XLSB、XLSM、XLS | .XLSX、XLSB、XLSM | .XLSX、XLSB、XLSM |
-| 公式自动完成 | 否 | 可访问 | 是 |
-| 媒体 | 可通过 xlfRTD 和 XLL 回调实现。 | 否 | 可访问 |
-| 函数的本地化 | 否 | 否。 名称和 ID 必须与现有 XLL 的函数相匹配。 | 是 |
+| 公式自动完成 | No | 可访问 | 是 |
+| 媒体 | 可通过 xlfRTD 和 XLL 回调实现。 | No | 可访问 |
+| 函数的本地化 | No | 否。 名称和 ID 必须与现有 XLL 的函数相匹配。 | 是 |
 | 可变函数 | 是 | 是 | 是 |
 | 多线程重新计算支持 | 是 | 是 | 是 |
 | 计算行为 | 无 UI。 在计算过程中，Excel 可能会无响应。 | 用户将看到 #BUSY！ 在返回结果之前。 | 用户将看到 #BUSY！ 在返回结果之前。 |
