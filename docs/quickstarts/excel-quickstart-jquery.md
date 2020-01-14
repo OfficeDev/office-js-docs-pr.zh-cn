@@ -1,52 +1,54 @@
 ---
 title: 生成首个 Excel 任务窗格加载项
 description: 了解如何使用 Office JS API 生成简单的 Excel 任务窗格加载项。
-ms.date: 12/31/2019
+ms.date: 01/13/2020
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: 5b437791cea2b3f3d534b8c9053224e381f36a9e
-ms.sourcegitcommit: d5ac9284d1e96dc91a9168d7641e44d88535e1a7
+ms.openlocfilehash: a51ea833ae107aac677d255de4097726822facbd
+ms.sourcegitcommit: 0dacbe7c80ed387099e3ec21e151f8990b181ede
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/31/2019
-ms.locfileid: "40914949"
+ms.lasthandoff: 01/13/2020
+ms.locfileid: "41111128"
 ---
-# <a name="build-an-excel-task-pane-add-in"></a><span data-ttu-id="a58cf-103">生成 Excel 任务窗格加载项</span><span class="sxs-lookup"><span data-stu-id="a58cf-103">Build an Excel task pane add-in</span></span>
+# <a name="build-an-excel-task-pane-add-in"></a><span data-ttu-id="4e844-103">生成 Excel 任务窗格加载项</span><span class="sxs-lookup"><span data-stu-id="4e844-103">Build an Excel task pane add-in</span></span>
 
-<span data-ttu-id="a58cf-104">本文将逐步介绍如何生成 Excel 任务窗格加载项。</span><span class="sxs-lookup"><span data-stu-id="a58cf-104">In this article, you'll walk through the process of building an Excel task pane add-in.</span></span> 
+<span data-ttu-id="4e844-104">本文将逐步介绍如何生成 Excel 任务窗格加载项。</span><span class="sxs-lookup"><span data-stu-id="4e844-104">In this article, you'll walk through the process of building an Excel task pane add-in.</span></span> 
 
-## <a name="create-the-add-in"></a><span data-ttu-id="a58cf-105">创建加载项</span><span class="sxs-lookup"><span data-stu-id="a58cf-105">Create the add-in</span></span>
+## <a name="create-the-add-in"></a><span data-ttu-id="4e844-105">创建加载项</span><span class="sxs-lookup"><span data-stu-id="4e844-105">Create the add-in</span></span>
 
 [!include[Choose your editor](../includes/quickstart-choose-editor.md)]
 
-# <a name="yeoman-generatortabyeomangenerator"></a>[<span data-ttu-id="a58cf-106">Yeoman 生成器</span><span class="sxs-lookup"><span data-stu-id="a58cf-106">Yeoman generator</span></span>](#tab/yeomangenerator)
+# <a name="yeoman-generatortabyeomangenerator"></a>[<span data-ttu-id="4e844-106">Yeoman 生成器</span><span class="sxs-lookup"><span data-stu-id="4e844-106">Yeoman generator</span></span>](#tab/yeomangenerator)
 
-### <a name="prerequisites"></a><span data-ttu-id="a58cf-107">先决条件</span><span class="sxs-lookup"><span data-stu-id="a58cf-107">Prerequisites</span></span>
+[!include[Redirect to the single sign-on (SSO) quick start](../includes/sso-quickstart-reference.md)]
+
+### <a name="prerequisites"></a><span data-ttu-id="4e844-107">先决条件</span><span class="sxs-lookup"><span data-stu-id="4e844-107">Prerequisites</span></span>
 
 [!include[Yeoman generator prerequisites](../includes/quickstart-yo-prerequisites.md)]
 
-### <a name="create-the-add-in-project"></a><span data-ttu-id="a58cf-108">创建加载项项目</span><span class="sxs-lookup"><span data-stu-id="a58cf-108">Create the add-in project</span></span>
+### <a name="create-the-add-in-project"></a><span data-ttu-id="4e844-108">创建加载项项目</span><span class="sxs-lookup"><span data-stu-id="4e844-108">Create the add-in project</span></span>
 
 [!include[Yeoman generator create project guidance](../includes/yo-office-command-guidance.md)]
 
-- <span data-ttu-id="a58cf-109">**选择项目类型:** `Office Add-in Task Pane project`</span><span class="sxs-lookup"><span data-stu-id="a58cf-109">**Choose a project type:** `Office Add-in Task Pane project`</span></span>
-- <span data-ttu-id="a58cf-110">**选择脚本类型:** `Javascript`</span><span class="sxs-lookup"><span data-stu-id="a58cf-110">**Choose a script type:** `Javascript`</span></span>
-- <span data-ttu-id="a58cf-111">**要如何命名加载项?**</span><span class="sxs-lookup"><span data-stu-id="a58cf-111">**What do you want to name your add-in?**</span></span> `My Office Add-in`
-- <span data-ttu-id="a58cf-112">**要支持哪一个 Office 客户端应用程序?**</span><span class="sxs-lookup"><span data-stu-id="a58cf-112">**Which Office client application would you like to support?**</span></span> `Excel`
+- <span data-ttu-id="4e844-109">**选择项目类型:** `Office Add-in Task Pane project`</span><span class="sxs-lookup"><span data-stu-id="4e844-109">**Choose a project type:** `Office Add-in Task Pane project`</span></span>
+- <span data-ttu-id="4e844-110">**选择脚本类型:** `Javascript`</span><span class="sxs-lookup"><span data-stu-id="4e844-110">**Choose a script type:** `Javascript`</span></span>
+- <span data-ttu-id="4e844-111">**要如何命名加载项?**</span><span class="sxs-lookup"><span data-stu-id="4e844-111">**What do you want to name your add-in?**</span></span> `My Office Add-in`
+- <span data-ttu-id="4e844-112">**要支持哪一个 Office 客户端应用程序?**</span><span class="sxs-lookup"><span data-stu-id="4e844-112">**Which Office client application would you like to support?**</span></span> `Excel`
 
 ![Yeoman 生成器](../images/yo-office-excel.png)
 
-<span data-ttu-id="a58cf-114">完成此向导后，生成器会创建项目，并安装支持的 Node 组件。</span><span class="sxs-lookup"><span data-stu-id="a58cf-114">After you complete the wizard, the generator creates the project and installs supporting Node components.</span></span>
+<span data-ttu-id="4e844-114">完成此向导后，生成器会创建项目，并安装支持的 Node 组件。</span><span class="sxs-lookup"><span data-stu-id="4e844-114">After you complete the wizard, the generator creates the project and installs supporting Node components.</span></span>
 
 [!include[Yeoman generator next steps](../includes/yo-office-next-steps.md)]
 
-### <a name="explore-the-project"></a><span data-ttu-id="a58cf-115">浏览项目</span><span class="sxs-lookup"><span data-stu-id="a58cf-115">Explore the project</span></span>
+### <a name="explore-the-project"></a><span data-ttu-id="4e844-115">浏览项目</span><span class="sxs-lookup"><span data-stu-id="4e844-115">Explore the project</span></span>
 
 [!include[Yeoman generator add-in project components](../includes/yo-task-pane-project-components-js.md)]
 
-### <a name="try-it-out"></a><span data-ttu-id="a58cf-116">试用</span><span class="sxs-lookup"><span data-stu-id="a58cf-116">Try it out</span></span>
+### <a name="try-it-out"></a><span data-ttu-id="4e844-116">试用</span><span class="sxs-lookup"><span data-stu-id="4e844-116">Try it out</span></span>
 
-1. <span data-ttu-id="a58cf-117">导航到项目的根文件夹。</span><span class="sxs-lookup"><span data-stu-id="a58cf-117">Navigate to the root folder of the project.</span></span>
+1. <span data-ttu-id="4e844-117">导航到项目的根文件夹。</span><span class="sxs-lookup"><span data-stu-id="4e844-117">Navigate to the root folder of the project.</span></span>
 
     ```command&nbsp;line
     cd "My Office Add-in"
@@ -54,45 +56,45 @@ ms.locfileid: "40914949"
 
 2. [!include[Start server section](../includes/quickstart-yo-start-server-excel.md)] 
 
-3. <span data-ttu-id="a58cf-118">在 Excel 中，依次选择的“**开始**”选项卡和功能区中的“**显示任务窗格**”按钮，以打开加载项任务窗格。</span><span class="sxs-lookup"><span data-stu-id="a58cf-118">In Excel, choose the **Home** tab, and then choose the **Show Taskpane** button in the ribbon to open the add-in task pane.</span></span>
+3. <span data-ttu-id="4e844-118">在 Excel 中，依次选择的“**开始**”选项卡和功能区中的“**显示任务窗格**”按钮，以打开加载项任务窗格。</span><span class="sxs-lookup"><span data-stu-id="4e844-118">In Excel, choose the **Home** tab, and then choose the **Show Taskpane** button in the ribbon to open the add-in task pane.</span></span>
 
     ![Excel 加载项按钮](../images/excel-quickstart-addin-3b.png)
 
-4. <span data-ttu-id="a58cf-120">选择工作表中的任何一系列单元格。</span><span class="sxs-lookup"><span data-stu-id="a58cf-120">Select any range of cells in the worksheet.</span></span>
+4. <span data-ttu-id="4e844-120">选择工作表中的任何一系列单元格。</span><span class="sxs-lookup"><span data-stu-id="4e844-120">Select any range of cells in the worksheet.</span></span>
 
-5. <span data-ttu-id="a58cf-121">在任务窗格的底部，选择“**运行**”链接，价格选定范围的颜色设为黄色。</span><span class="sxs-lookup"><span data-stu-id="a58cf-121">At the bottom of the task pane, choose the **Run** link to set the color of the selected range to yellow.</span></span>
+5. <span data-ttu-id="4e844-121">在任务窗格的底部，选择“**运行**”链接，价格选定范围的颜色设为黄色。</span><span class="sxs-lookup"><span data-stu-id="4e844-121">At the bottom of the task pane, choose the **Run** link to set the color of the selected range to yellow.</span></span>
 
     ![Excel 加载项](../images/excel-quickstart-addin-3c.png)
 
-### <a name="next-steps"></a><span data-ttu-id="a58cf-123">后续步骤</span><span class="sxs-lookup"><span data-stu-id="a58cf-123">Next steps</span></span>
+### <a name="next-steps"></a><span data-ttu-id="4e844-123">后续步骤</span><span class="sxs-lookup"><span data-stu-id="4e844-123">Next steps</span></span>
 
-<span data-ttu-id="a58cf-124">恭喜，你已成功创建 Excel 任务窗格加载项！</span><span class="sxs-lookup"><span data-stu-id="a58cf-124">Congratulations, you've successfully created an Excel task pane add-in!</span></span> <span data-ttu-id="a58cf-125">接下来，请详细了解 Excel 加载项功能，并跟着 [Excel 加载项教程](../tutorials/excel-tutorial.md)一起操作，生成更复杂的加载项。</span><span class="sxs-lookup"><span data-stu-id="a58cf-125">Next, learn more about the capabilities of an Excel add-in and build a more complex add-in by following along with the Excel add-in tutorial.</span></span>
+<span data-ttu-id="4e844-124">恭喜，你已成功创建 Excel 任务窗格加载项！</span><span class="sxs-lookup"><span data-stu-id="4e844-124">Congratulations, you've successfully created an Excel task pane add-in!</span></span> <span data-ttu-id="4e844-125">接下来，请详细了解 Excel 加载项功能，并跟着 [Excel 加载项教程](../tutorials/excel-tutorial.md)一起操作，生成更复杂的加载项。</span><span class="sxs-lookup"><span data-stu-id="4e844-125">Next, learn more about the capabilities of an Excel add-in and build a more complex add-in by following along with the [Excel add-in tutorial](../tutorials/excel-tutorial.md).</span></span>
 
-# <a name="visual-studiotabvisualstudio"></a>[<span data-ttu-id="a58cf-126">Visual Studio</span><span class="sxs-lookup"><span data-stu-id="a58cf-126">Visual Studio</span></span>](#tab/visualstudio)
+# <a name="visual-studiotabvisualstudio"></a>[<span data-ttu-id="4e844-126">Visual Studio</span><span class="sxs-lookup"><span data-stu-id="4e844-126">Visual Studio</span></span>](#tab/visualstudio)
 
-### <a name="prerequisites"></a><span data-ttu-id="a58cf-127">先决条件</span><span class="sxs-lookup"><span data-stu-id="a58cf-127">Prerequisites</span></span>
+### <a name="prerequisites"></a><span data-ttu-id="4e844-127">先决条件</span><span class="sxs-lookup"><span data-stu-id="4e844-127">Prerequisites</span></span>
 
 [!include[Quick Start prerequisites](../includes/quickstart-vs-prerequisites.md)]
 
-### <a name="create-the-add-in-project"></a><span data-ttu-id="a58cf-128">创建加载项项目</span><span class="sxs-lookup"><span data-stu-id="a58cf-128">Create the add-in project</span></span>
+### <a name="create-the-add-in-project"></a><span data-ttu-id="4e844-128">创建加载项项目</span><span class="sxs-lookup"><span data-stu-id="4e844-128">Create the add-in project</span></span>
 
-1. <span data-ttu-id="a58cf-129">在 Visual Studio 中，选择“**新建项目**”。</span><span class="sxs-lookup"><span data-stu-id="a58cf-129">In Visual Studio, choose **Create a new project**.</span></span>
+1. <span data-ttu-id="4e844-129">在 Visual Studio 中，选择“**新建项目**”。</span><span class="sxs-lookup"><span data-stu-id="4e844-129">In Visual Studio, choose **Create a new project**.</span></span>
 
-2. <span data-ttu-id="a58cf-130">使用搜索框，输入“**加载项**”。</span><span class="sxs-lookup"><span data-stu-id="a58cf-130">Using the search box, enter **add-in**.</span></span> <span data-ttu-id="a58cf-131">选择“**Excel Web 加载项**”，然后选择“**下一步**”。</span><span class="sxs-lookup"><span data-stu-id="a58cf-131">Choose **Excel Web Add-in**, then select **Next**.</span></span>
+2. <span data-ttu-id="4e844-130">使用搜索框，输入“**加载项**”。</span><span class="sxs-lookup"><span data-stu-id="4e844-130">Using the search box, enter **add-in**.</span></span> <span data-ttu-id="4e844-131">选择“**Excel Web 加载项**”，然后选择“**下一步**”。</span><span class="sxs-lookup"><span data-stu-id="4e844-131">Choose **Excel Web Add-in**, then select **Next**.</span></span>
 
-3. <span data-ttu-id="a58cf-132">对项目命名，然后选择“**创建**”。</span><span class="sxs-lookup"><span data-stu-id="a58cf-132">Name your project and select **Create**.</span></span>
+3. <span data-ttu-id="4e844-132">对项目命名，然后选择“**创建**”。</span><span class="sxs-lookup"><span data-stu-id="4e844-132">Name your project and select **Create**.</span></span>
 
-4. <span data-ttu-id="a58cf-133">在“创建 Office 加载项”\*\*\*\* 对话框窗口中，选择“将新功能添加到 Excel”\*\*\*\*，再选择“完成”\*\*\*\* 以创建项目。</span><span class="sxs-lookup"><span data-stu-id="a58cf-133">In the **Create Office Add-in** dialog window, choose **Add new functionalities to Excel**, and then choose **Finish** to create the project.</span></span>
+4. <span data-ttu-id="4e844-133">在“创建 Office 加载项”\*\*\*\* 对话框窗口中，选择“将新功能添加到 Excel”\*\*\*\*，再选择“完成”\*\*\*\* 以创建项目。</span><span class="sxs-lookup"><span data-stu-id="4e844-133">In the **Create Office Add-in** dialog window, choose **Add new functionalities to Excel**, and then choose **Finish** to create the project.</span></span>
 
-5. <span data-ttu-id="a58cf-p103">此时，Visual Studio 创建解决方案，且它的两个项目显示在“解决方案资源管理器”\*\*\*\* 中。**Home.html** 文件在 Visual Studio 中打开。</span><span class="sxs-lookup"><span data-stu-id="a58cf-p103">Visual Studio creates a solution and its two projects appear in **Solution Explorer**. The **Home.html** file opens in Visual Studio.</span></span>
+5. <span data-ttu-id="4e844-p103">此时，Visual Studio 创建解决方案，且它的两个项目显示在“解决方案资源管理器”\*\*\*\* 中。**Home.html** 文件在 Visual Studio 中打开。</span><span class="sxs-lookup"><span data-stu-id="4e844-p103">Visual Studio creates a solution and its two projects appear in **Solution Explorer**. The **Home.html** file opens in Visual Studio.</span></span>
 
-### <a name="explore-the-visual-studio-solution"></a><span data-ttu-id="a58cf-136">探索 Visual Studio 解决方案</span><span class="sxs-lookup"><span data-stu-id="a58cf-136">Explore the Visual Studio solution</span></span>
+### <a name="explore-the-visual-studio-solution"></a><span data-ttu-id="4e844-136">探索 Visual Studio 解决方案</span><span class="sxs-lookup"><span data-stu-id="4e844-136">Explore the Visual Studio solution</span></span>
 
 [!include[Description of Visual Studio projects](../includes/quickstart-vs-solution.md)]
 
-### <a name="update-the-code"></a><span data-ttu-id="a58cf-137">更新代码</span><span class="sxs-lookup"><span data-stu-id="a58cf-137">Update the code</span></span>
+### <a name="update-the-code"></a><span data-ttu-id="4e844-137">更新代码</span><span class="sxs-lookup"><span data-stu-id="4e844-137">Update the code</span></span>
 
-1. <span data-ttu-id="a58cf-p104">**Home.html** 指定在加载项的任务窗格中呈现的 HTML。 在 **Home.html** 中，将 `<body>` 元素替换为以下标记，并保存文件。</span><span class="sxs-lookup"><span data-stu-id="a58cf-p104">**Home.html** specifies the HTML that will be rendered in the add-in's task pane. In **Home.html**, replace the `<body>` element with the following markup and save the file.</span></span>
+1. <span data-ttu-id="4e844-p104">**Home.html** 指定在加载项的任务窗格中呈现的 HTML。 在 **Home.html** 中，将 `<body>` 元素替换为以下标记，并保存文件。</span><span class="sxs-lookup"><span data-stu-id="4e844-p104">**Home.html** specifies the HTML that will be rendered in the add-in's task pane. In **Home.html**, replace the `<body>` element with the following markup and save the file.</span></span>
 
     ```html
     <body class="ms-font-m ms-welcome">
@@ -112,7 +114,7 @@ ms.locfileid: "40914949"
     </body>
     ```
 
-2. <span data-ttu-id="a58cf-p105">打开 Web 应用项目根目录中的文件“Home.js”\*\*\*\*。 此文件指定加载项脚本。 将整个内容替换为以下代码，并保存文件。</span><span class="sxs-lookup"><span data-stu-id="a58cf-p105">Open the file **Home.js** in the root of the web application project. This file specifies the script for the add-in. Replace the entire contents with the following code and save the file.</span></span> 
+2. <span data-ttu-id="4e844-p105">打开 Web 应用项目根目录中的文件“Home.js”\*\*\*\*。 此文件指定加载项脚本。 将整个内容替换为以下代码，并保存文件。</span><span class="sxs-lookup"><span data-stu-id="4e844-p105">Open the file **Home.js** in the root of the web application project. This file specifies the script for the add-in. Replace the entire contents with the following code and save the file.</span></span> 
 
     ```js
     'use strict';
@@ -143,7 +145,7 @@ ms.locfileid: "40914949"
     })();
     ```
 
-3. <span data-ttu-id="a58cf-p106">打开 Web 应用项目根目录中的文件“Home.css”\*\*\*\*。 此文件指定加载项自定义样式。 将整个内容替换为以下代码，并保存文件。</span><span class="sxs-lookup"><span data-stu-id="a58cf-p106">Open the file **Home.css** in the root of the web application project. This file specifies the custom styles for the add-in. Replace the entire contents with the following code and save the file.</span></span> 
+3. <span data-ttu-id="4e844-p106">打开 Web 应用项目根目录中的文件“Home.css”\*\*\*\*。 此文件指定加载项自定义样式。 将整个内容替换为以下代码，并保存文件。</span><span class="sxs-lookup"><span data-stu-id="4e844-p106">Open the file **Home.css** in the root of the web application project. This file specifies the custom styles for the add-in. Replace the entire contents with the following code and save the file.</span></span> 
 
     ```css
     #content-header {
@@ -172,17 +174,17 @@ ms.locfileid: "40914949"
     }
     ```
 
-### <a name="update-the-manifest"></a><span data-ttu-id="a58cf-146">更新清单</span><span class="sxs-lookup"><span data-stu-id="a58cf-146">Update the manifest</span></span>
+### <a name="update-the-manifest"></a><span data-ttu-id="4e844-146">更新清单</span><span class="sxs-lookup"><span data-stu-id="4e844-146">Update the manifest</span></span>
 
-1. <span data-ttu-id="a58cf-147">打开加载项项目中的 XML 清单文件。</span><span class="sxs-lookup"><span data-stu-id="a58cf-147">Open the XML manifest file in the add-in project.</span></span> <span data-ttu-id="a58cf-148">此文件定义的是加载项设置和功能。</span><span class="sxs-lookup"><span data-stu-id="a58cf-148">This file defines the add-in's settings and capabilities.</span></span>
+1. <span data-ttu-id="4e844-147">打开加载项项目中的 XML 清单文件。</span><span class="sxs-lookup"><span data-stu-id="4e844-147">Open the XML manifest file in the add-in project.</span></span> <span data-ttu-id="4e844-148">此文件定义的是加载项设置和功能。</span><span class="sxs-lookup"><span data-stu-id="4e844-148">This file defines the add-in's settings and capabilities.</span></span>
 
-2. <span data-ttu-id="a58cf-p108">`ProviderName` 元素具有占位符值。 将其替换为你的姓名。</span><span class="sxs-lookup"><span data-stu-id="a58cf-p108">The `ProviderName` element has a placeholder value. Replace it with your name.</span></span>
+2. <span data-ttu-id="4e844-p108">`ProviderName` 元素具有占位符值。 将其替换为你的姓名。</span><span class="sxs-lookup"><span data-stu-id="4e844-p108">The `ProviderName` element has a placeholder value. Replace it with your name.</span></span>
 
-3. <span data-ttu-id="a58cf-151">`DisplayName` 元素的 `DefaultValue` 属性有占位符。</span><span class="sxs-lookup"><span data-stu-id="a58cf-151">The `DefaultValue` attribute of the `DisplayName` element has a placeholder.</span></span> <span data-ttu-id="a58cf-152">将它替换为“My Office Add-in”\*\*\*\*。</span><span class="sxs-lookup"><span data-stu-id="a58cf-152">Replace it with **My Office Add-in**.</span></span>
+3. <span data-ttu-id="4e844-151">`DisplayName` 元素的 `DefaultValue` 属性有占位符。</span><span class="sxs-lookup"><span data-stu-id="4e844-151">The `DefaultValue` attribute of the `DisplayName` element has a placeholder.</span></span> <span data-ttu-id="4e844-152">将它替换为“My Office Add-in”\*\*\*\*。</span><span class="sxs-lookup"><span data-stu-id="4e844-152">Replace it with **My Office Add-in**.</span></span>
 
-4. <span data-ttu-id="a58cf-153">`Description` 元素的 `DefaultValue` 属性有占位符。</span><span class="sxs-lookup"><span data-stu-id="a58cf-153">The `DefaultValue` attribute of the `Description` element has a placeholder.</span></span> <span data-ttu-id="a58cf-154">将它替换为“A task pane add-in for Excel”\*\*\*\*。</span><span class="sxs-lookup"><span data-stu-id="a58cf-154">Replace it with **A task pane add-in for Excel**.</span></span>
+4. <span data-ttu-id="4e844-153">`Description` 元素的 `DefaultValue` 属性有占位符。</span><span class="sxs-lookup"><span data-stu-id="4e844-153">The `DefaultValue` attribute of the `Description` element has a placeholder.</span></span> <span data-ttu-id="4e844-154">将它替换为“A task pane add-in for Excel”\*\*\*\*。</span><span class="sxs-lookup"><span data-stu-id="4e844-154">Replace it with **A task pane add-in for Excel**.</span></span>
 
-5. <span data-ttu-id="a58cf-155">保存文件。</span><span class="sxs-lookup"><span data-stu-id="a58cf-155">Save the file.</span></span>
+5. <span data-ttu-id="4e844-155">保存文件。</span><span class="sxs-lookup"><span data-stu-id="4e844-155">Save the file.</span></span>
 
     ```xml
     ...
@@ -194,31 +196,31 @@ ms.locfileid: "40914949"
     ...
     ```
 
-### <a name="try-it-out"></a><span data-ttu-id="a58cf-156">试用</span><span class="sxs-lookup"><span data-stu-id="a58cf-156">Try it out</span></span>
+### <a name="try-it-out"></a><span data-ttu-id="4e844-156">试用</span><span class="sxs-lookup"><span data-stu-id="4e844-156">Try it out</span></span>
 
-1. <span data-ttu-id="a58cf-p111">使用 Visual Studio 的同时，按 **F5** 或选择“开始”\*\*\*\* 按钮启动 Excel，以测试新建的 Excel 加载项，功能区中显示有“显示任务窗格”\*\*\*\* 加载项按钮。加载项本地托管在 IIS 上。</span><span class="sxs-lookup"><span data-stu-id="a58cf-p111">Using Visual Studio, test the newly created Excel add-in by pressing **F5** or choosing the **Start** button to launch Excel with the **Show Taskpane** add-in button displayed in the ribbon. The add-in will be hosted locally on IIS.</span></span>
+1. <span data-ttu-id="4e844-p111">使用 Visual Studio 的同时，按 **F5** 或选择“开始”\*\*\*\* 按钮启动 Excel，以测试新建的 Excel 加载项，功能区中显示有“显示任务窗格”\*\*\*\* 加载项按钮。加载项本地托管在 IIS 上。</span><span class="sxs-lookup"><span data-stu-id="4e844-p111">Using Visual Studio, test the newly created Excel add-in by pressing **F5** or choosing the **Start** button to launch Excel with the **Show Taskpane** add-in button displayed in the ribbon. The add-in will be hosted locally on IIS.</span></span>
 
-2. <span data-ttu-id="a58cf-159">在 Excel 中，依次选择的“**开始**”选项卡和功能区中的“**显示任务窗格**”按钮，以打开加载项任务窗格。</span><span class="sxs-lookup"><span data-stu-id="a58cf-159">In Excel, choose the **Home** tab, and then choose the **Show Taskpane** button in the ribbon to open the add-in task pane.</span></span>
+2. <span data-ttu-id="4e844-159">在 Excel 中，依次选择的“**开始**”选项卡和功能区中的“**显示任务窗格**”按钮，以打开加载项任务窗格。</span><span class="sxs-lookup"><span data-stu-id="4e844-159">In Excel, choose the **Home** tab, and then choose the **Show Taskpane** button in the ribbon to open the add-in task pane.</span></span>
 
     ![Excel 加载项按钮](../images/excel-quickstart-addin-2a.png)
 
-3. <span data-ttu-id="a58cf-161">选择工作表中的任何一系列单元格。</span><span class="sxs-lookup"><span data-stu-id="a58cf-161">Select any range of cells in the worksheet.</span></span>
+3. <span data-ttu-id="4e844-161">选择工作表中的任何一系列单元格。</span><span class="sxs-lookup"><span data-stu-id="4e844-161">Select any range of cells in the worksheet.</span></span>
 
-4. <span data-ttu-id="a58cf-162">在任务窗格中，选择“**设置颜色**”按钮，将选定区域的颜色设置为绿色。</span><span class="sxs-lookup"><span data-stu-id="a58cf-162">In the task pane, choose the **Set color** button to set the color of the selected range to green.</span></span>
+4. <span data-ttu-id="4e844-162">在任务窗格中，选择“**设置颜色**”按钮，将选定区域的颜色设置为绿色。</span><span class="sxs-lookup"><span data-stu-id="4e844-162">In the task pane, choose the **Set color** button to set the color of the selected range to green.</span></span>
 
     ![Excel 加载项](../images/excel-quickstart-addin-2c.png)
 
-### <a name="next-steps"></a><span data-ttu-id="a58cf-164">后续步骤</span><span class="sxs-lookup"><span data-stu-id="a58cf-164">Next steps</span></span>
+### <a name="next-steps"></a><span data-ttu-id="4e844-164">后续步骤</span><span class="sxs-lookup"><span data-stu-id="4e844-164">Next steps</span></span>
 
-<span data-ttu-id="a58cf-165">恭喜，你已成功创建 Excel 任务窗格加载项！</span><span class="sxs-lookup"><span data-stu-id="a58cf-165">Congratulations, you've successfully created an Excel task pane add-in!</span></span> <span data-ttu-id="a58cf-166">接下来，了解有关[使用 Visual Studio 开发 Office 加载项](../develop/develop-add-ins-visual-studio.md)的详细信息。</span><span class="sxs-lookup"><span data-stu-id="a58cf-166">Next, learn more about [developing Office Add-ins with Visual Studio](../develop/develop-add-ins-visual-studio.md).</span></span>
+<span data-ttu-id="4e844-165">恭喜，你已成功创建 Excel 任务窗格加载项！</span><span class="sxs-lookup"><span data-stu-id="4e844-165">Congratulations, you've successfully created an Excel task pane add-in!</span></span> <span data-ttu-id="4e844-166">接下来，了解有关[使用 Visual Studio 开发 Office 加载项](../develop/develop-add-ins-visual-studio.md)的详细信息。</span><span class="sxs-lookup"><span data-stu-id="4e844-166">Next, learn more about [developing Office Add-ins with Visual Studio](../develop/develop-add-ins-visual-studio.md).</span></span>
 
 ---
 
-## <a name="see-also"></a><span data-ttu-id="a58cf-167">另请参阅</span><span class="sxs-lookup"><span data-stu-id="a58cf-167">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="4e844-167">另请参阅</span><span class="sxs-lookup"><span data-stu-id="4e844-167">See also</span></span>
 
-* [<span data-ttu-id="a58cf-168">Office 加载项平台概述</span><span class="sxs-lookup"><span data-stu-id="a58cf-168">Office Add-ins platform overview</span></span>](../overview/office-add-ins.md)
-* [<span data-ttu-id="a58cf-169">构建 Office 加载项</span><span class="sxs-lookup"><span data-stu-id="a58cf-169">Building Office Add-ins</span></span>](../overview/office-add-ins-fundamentals.md)
-* [<span data-ttu-id="a58cf-170">开发 Office 加载项</span><span class="sxs-lookup"><span data-stu-id="a58cf-170">Develop Office Add-ins</span></span>](../develop/develop-overview.md)
-* [<span data-ttu-id="a58cf-171">Excel JavaScript API 基本编程概念</span><span class="sxs-lookup"><span data-stu-id="a58cf-171">Fundamental programming concepts with the Excel JavaScript API</span></span>](../excel/excel-add-ins-core-concepts.md)
-* [<span data-ttu-id="a58cf-172">Excel 加载项代码示例</span><span class="sxs-lookup"><span data-stu-id="a58cf-172">Excel add-in code samples</span></span>](https://developer.microsoft.com/office/gallery/?filterBy=Samples,Excel)
-* [<span data-ttu-id="a58cf-173">Excel JavaScript API 参考</span><span class="sxs-lookup"><span data-stu-id="a58cf-173">Excel JavaScript API reference</span></span>](/office/dev/add-ins/reference/overview/excel-add-ins-reference-overview)
+* [<span data-ttu-id="4e844-168">Office 加载项平台概述</span><span class="sxs-lookup"><span data-stu-id="4e844-168">Office Add-ins platform overview</span></span>](../overview/office-add-ins.md)
+* [<span data-ttu-id="4e844-169">构建 Office 加载项</span><span class="sxs-lookup"><span data-stu-id="4e844-169">Building Office Add-ins</span></span>](../overview/office-add-ins-fundamentals.md)
+* [<span data-ttu-id="4e844-170">开发 Office 加载项</span><span class="sxs-lookup"><span data-stu-id="4e844-170">Develop Office Add-ins</span></span>](../develop/develop-overview.md)
+* [<span data-ttu-id="4e844-171">Excel JavaScript API 基本编程概念</span><span class="sxs-lookup"><span data-stu-id="4e844-171">Fundamental programming concepts with the Excel JavaScript API</span></span>](../excel/excel-add-ins-core-concepts.md)
+* [<span data-ttu-id="4e844-172">Excel 加载项代码示例</span><span class="sxs-lookup"><span data-stu-id="4e844-172">Excel add-in code samples</span></span>](https://developer.microsoft.com/office/gallery/?filterBy=Samples,Excel)
+* [<span data-ttu-id="4e844-173">Excel JavaScript API 参考</span><span class="sxs-lookup"><span data-stu-id="4e844-173">Excel JavaScript API reference</span></span>](/office/dev/add-ins/reference/overview/excel-add-ins-reference-overview)
