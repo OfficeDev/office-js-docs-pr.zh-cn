@@ -1,15 +1,15 @@
 ---
 title: 生成首个 Excel 任务窗格加载项
 description: 了解如何使用 Office JS API 生成简单的 Excel 任务窗格加载项。
-ms.date: 12/31/2019
+ms.date: 01/13/2020
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: 5b437791cea2b3f3d534b8c9053224e381f36a9e
-ms.sourcegitcommit: d5ac9284d1e96dc91a9168d7641e44d88535e1a7
+ms.openlocfilehash: a51ea833ae107aac677d255de4097726822facbd
+ms.sourcegitcommit: 0dacbe7c80ed387099e3ec21e151f8990b181ede
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/31/2019
-ms.locfileid: "40914949"
+ms.lasthandoff: 01/13/2020
+ms.locfileid: "41111128"
 ---
 # <a name="build-an-excel-task-pane-add-in"></a>生成 Excel 任务窗格加载项
 
@@ -20,6 +20,8 @@ ms.locfileid: "40914949"
 [!include[Choose your editor](../includes/quickstart-choose-editor.md)]
 
 # <a name="yeoman-generatortabyeomangenerator"></a>[Yeoman 生成器](#tab/yeomangenerator)
+
+[!include[Redirect to the single sign-on (SSO) quick start](../includes/sso-quickstart-reference.md)]
 
 ### <a name="prerequisites"></a>先决条件
 

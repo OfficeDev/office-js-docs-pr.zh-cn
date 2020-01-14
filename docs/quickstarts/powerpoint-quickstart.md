@@ -1,15 +1,15 @@
 ---
 title: 生成首个 PowerPoint 任务加载项
 description: 了解如何使用 Office JS API 生成简单的 PowerPoint 任务窗格加载项。
-ms.date: 12/31/2019
+ms.date: 01/13/2020
 ms.prod: powerpoint
 localization_priority: Priority
-ms.openlocfilehash: 56168749b907cdde3b9ea235d55805e1084f020c
-ms.sourcegitcommit: d5ac9284d1e96dc91a9168d7641e44d88535e1a7
+ms.openlocfilehash: 0a9ff0fb5c20491129fe2f28513ba90c45a0e981
+ms.sourcegitcommit: 0dacbe7c80ed387099e3ec21e151f8990b181ede
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/31/2019
-ms.locfileid: "40914942"
+ms.lasthandoff: 01/13/2020
+ms.locfileid: "41110976"
 ---
 # <a name="build-your-first-powerpoint-task-pane-add-in"></a>生成首个 PowerPoint 任务加载项
 
@@ -20,6 +20,8 @@ ms.locfileid: "40914942"
 [!include[Choose your editor](../includes/quickstart-choose-editor.md)]
 
 # <a name="yeoman-generatortabyeomangenerator"></a>[Yeoman 生成器](#tab/yeomangenerator)
+
+[!include[Redirect to the single sign-on (SSO) quick start](../includes/sso-quickstart-reference.md)]
 
 ### <a name="prerequisites"></a>先决条件
 

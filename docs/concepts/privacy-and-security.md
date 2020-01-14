@@ -3,12 +3,12 @@ title: Office 加载项的隐私和安全
 description: ''
 ms.date: 09/26/2019
 localization_priority: Priority
-ms.openlocfilehash: b40b10a0f2475a9013eb4186c852e07bfb60154f
-ms.sourcegitcommit: 350f5c6954dec3e9384e2030cd3265aaba7ae904
+ms.openlocfilehash: 88f03bed084484a98d4719fb9caacf174b13acda
+ms.sourcegitcommit: 0dacbe7c80ed387099e3ec21e151f8990b181ede
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/23/2019
-ms.locfileid: "40851297"
+ms.lasthandoff: 01/13/2020
+ms.locfileid: "41110932"
 ---
 # <a name="privacy-and-security-for-office-add-ins"></a>Office 加载项的隐私和安全
 
@@ -168,7 +168,7 @@ function loadVideoDetails(videoIndex) {
 }
 ```
 
-Exchange 和 SharePoint 提供了客户端代理以实现跨域访问。通常，Intranet 上的同源策略没有 Internet 上的同源策略那样严格。有关详细信息，请参阅[同源策略第 1 部分：不准偷看](https://blogs.msdn.com/b/ieinternals/archive/2009/08/28/explaining-same-origin-policy-part-1-deny-read.aspx)和[解决 Office 加载项中的同源策略限制](../develop/addressing-same-origin-policy-limitations.md)。
+Exchange 和 SharePoint 提供了客户端代理以实现跨域访问。通常，Intranet 上的同源策略没有 Internet 上的同源策略那样严格。有关详细信息，请参阅[同源策略第 1 部分：不准偷看](/archive/blogs/ieinternals/same-origin-policy-part-1-no-peeking)和[解决 Office 加载项中的同源策略限制](../develop/addressing-same-origin-policy-limitations.md)。
 
 ### <a name="tips-to-prevent-malicious-cross-site-scripting"></a>防止恶意跨站点脚本的提示
 
@@ -265,6 +265,6 @@ Office 设置的管理和执行由组策略设置完成。 这些操作可通过
 - [Outlook 外接程序的激活和 JavaScript API 限制](/outlook/add-ins/limits-for-activation-and-javascript-api-for-outlook-add-ins)
 - [解决 Office 外接程序中的同源策略限制](/office/dev/add-ins/develop/addressing-same-origin-policy-limitations)
 - [同源策略](https://www.w3.org/Security/wiki/Same_Origin_Policy)
-- [同源策略第 1 部分：不准偷看](https://blogs.msdn.com/b/ieinternals/archive/2009/08/28/explaining-same-origin-policy-part-1-deny-read.aspx)
+- [同源策略第 1 部分：不准偷看](/archive/blogs/ieinternals/same-origin-policy-part-1-no-peeking)
 - [针对 JavaScript 的同源策略](https://developer.mozilla.org/docs/Web/Security/Same-origin_policy)
 - [IE 保护模式](https://support.microsoft.com/help/2761180/apps-for-office-don-t-start-if-you-disable-protected-mode-for-the-restricted-sites-zone-in-internet-explorer)

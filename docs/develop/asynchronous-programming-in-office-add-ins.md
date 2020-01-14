@@ -3,18 +3,18 @@ title: Office 加载项中的异步编程
 description: ''
 ms.date: 06/20/2019
 localization_priority: Priority
-ms.openlocfilehash: a20fe435a9cdff97ed77496ad3aaaf48b1cbbc7f
-ms.sourcegitcommit: 7d4d721fc3d246ef8a2464bc714659cd84d6faab
+ms.openlocfilehash: 9a653f85a368688bdf2690ab6c564352f2ee611a
+ms.sourcegitcommit: 0dacbe7c80ed387099e3ec21e151f8990b181ede
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/11/2019
-ms.locfileid: "37468747"
+ms.lasthandoff: 01/13/2020
+ms.locfileid: "41110904"
 ---
 # <a name="asynchronous-programming-in-office-add-ins"></a>Office 加载项中的异步编程
 
 为什么 Office 外接程序 API 使用异步编程？因为 JavaScript 是单线程语言，如果脚本调用长时间运行的同步进程，则会阻止所有后续脚本执行，直至该进程完成。针对 Office Web 客户端（但也包括富客户端）执行的操作在同步运行时会阻止执行，因此适用于 Office 的 JavaScript API 中的大多数方法都适于异步执行。这就确保了 Office 外接程序可以做出响应并且性能很高。使用这些异步方法时，也通常会要求您编写回调函数。
 
-API 中所有这些异步方法的名称均以“Async”结尾，如 [Document.getSelectedDataAsync](/javascript/api/office/office.document#getselecteddataasync-coerciontype--options--callback-)、[Binding.getDataAsync](/javascript/api/office/office.binding#getdataasync-options--callback-) 或 [Item.loadCustomPropertiesAsync](/javascript/api/outlook/office.item#loadcustompropertiesasync-callback--usercontext-) 方法。调用某个“Async”方法时，该方法会立即执行，并且任何后续脚本执行都可以继续。传递给“Async”方法的可选回调函数在数据或请求操作准备就绪后便会立即执行。虽然是立即执行，但在它返回之前可能会略有延迟。
+API 中所有这些异步方法的名称均以“Async”结尾，如 `Document.getSelectedDataAsync`、`Binding.getDataAsync` 或 `Item.loadCustomPropertiesAsync` 方法。调用某个“Async”方法时，该方法会立即执行，并且任何后续脚本执行都可以继续。传递给“Async”方法的可选回调函数在数据或请求操作准备就绪后便会立即执行。虽然是立即执行，但在它返回之前可能会略有延迟。
 
 下图显示了一个调用"Async"方法的执行流，该方法可读取用户在基于服务器的 Word 或 Excel 中打开的文档中选择的数据。“Async”调用开始时，JavaScript 执行线程空闲，可以执行任何额外的客户端处理（但图中没有显示）。当“Async”方法返回时，回调在线程上恢复执行，加载项可以访问数据、处理数据并显示结果。当使用 Office 富客户端主机应用程序（如，Word 2013 或 Excel 2013）时，可保持同样的异步执行模式。
 
