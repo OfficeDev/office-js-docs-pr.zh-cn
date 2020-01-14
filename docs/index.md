@@ -8,12 +8,12 @@ ms.author: o365devx
 ms.prod: non-product-specific
 ms.date: 12/24/2019
 localization_priority: Normal
-ms.openlocfilehash: 09e07d8fff865969f03f2b0547f04dddb130df6f
-ms.sourcegitcommit: 350f5c6954dec3e9384e2030cd3265aaba7ae904
+ms.openlocfilehash: 2e0e8932214f398169f8483b4ca8bf1a65ec16a5
+ms.sourcegitcommit: 0dacbe7c80ed387099e3ec21e151f8990b181ede
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/23/2019
-ms.locfileid: "40851402"
+ms.lasthandoff: 01/13/2020
+ms.locfileid: "41111009"
 ---
 # <a name="office-add-ins-documentation"></a>Office 外接程序文档
 
@@ -51,7 +51,7 @@ ms.locfileid: "40851402"
                         </div>
                     </div>
                     <div class="cardText">
-                        <h3>生成 Office 外接程序</h3>
+                        <h3>构建 Office 加载项</h3>
                         <p><a href="overview/office-add-ins-fundamentals.md">了解如何生成 Office 外接程序。</a></p>
                     </div>
                 </div>
@@ -84,6 +84,7 @@ ms.locfileid: "40851402"
                             <li><a style="font-size: 1rem;" href="quickstarts/powerpoint-quickstart.md">PowerPoint 加载项快速入门</a></li>
                             <li><a style="font-size: 1rem;" href="quickstarts/project-quickstart.md">Project 加载项快速入门</a></li>
                             <li><a style="font-size: 1rem;" href="quickstarts/word-quickstart.md">Word 加载项快速入门</a></li>
+                            <li><a style="font-size: 1rem;" href="quickstarts/sso-quickstart.md">单一登录（SSO）快速入门</a></li>
                         </ul>
                     </div>
                 </div>
