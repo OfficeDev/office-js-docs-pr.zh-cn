@@ -1,0 +1,2 @@
+> [!TIP]
+> <span data-ttu-id="95818-101">有关如何使用 Yeoman 生成器来创建使用单一登录 (SSO) 的加载项，参见“[单一登录 (SSO) 快速入门](../quickstarts/sso-quickstart.md)”中的说明。</span><span class="sxs-lookup"><span data-stu-id="95818-101">To use the Yeoman generator to create an add-in that uses single sign-on (SSO), see instructions in the [Single sign-on (SSO) quick start](../quickstarts/sso-quickstart.md).</span></span>

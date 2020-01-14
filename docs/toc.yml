@@ -24,6 +24,8 @@
           href: quickstarts/project-quickstart.md
         - name: Word 加载项
           href: quickstarts/word-quickstart.md
+        - name: 单一登录 (SSO)
+          href: quickstarts/sso-quickstart-redirect.md
     - name: 使用 Script Lab 探索 Office JS API
       href: overview/explore-with-script-lab.md
       displayName: 'Excel, Word, PowerPoint'
@@ -76,6 +78,8 @@
               items:
                 - name: 启用单一登录
                   href: develop/sso-in-office-add-ins.md
+                - name: SSO 快速入门
+                  href: quickstarts/sso-quickstart.md
                 - name: 使用 SSO 对 Microsoft Graph 授权
                   href: develop/authorize-to-microsoft-graph.md
                 - name: 使用 ASP.NET 创建 SSO 外接程序
@@ -364,6 +368,10 @@
               href: reference/manifest/requirements.md
             - name: Rule
               href: reference/manifest/rule.md
+            - name: 运行时
+              href: reference/manifest/runtime.md
+            - name: 运行时
+              href: reference/manifest/runtimes.md
             - name: Set
               href: reference/manifest/set.md
             - name: Sets
