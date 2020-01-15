@@ -1,30 +1,46 @@
 ---
 title: 清单文件中的 PhoneSettings 元素
 description: ''
-ms.date: 10/09/2018
+ms.date: 01/13/2020
 localization_priority: Normal
-ms.openlocfilehash: 68d0ef2e0ad50ee548535eeb1e2d51e633156e32
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: e3ea104af7e634b4e6e6cbeaac395af11ae4e376
+ms.sourcegitcommit: dc42e0276007f8ab006028b9cd0cc1526c1bd100
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32452009"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "41120654"
 ---
-# <a name="phonesettings-element"></a><span data-ttu-id="8f440-102">PhoneSettings 元素</span><span class="sxs-lookup"><span data-stu-id="8f440-102">PhoneSettings element</span></span>
+# <a name="phonesettings-element"></a><span data-ttu-id="dd9a0-102">PhoneSettings 元素</span><span class="sxs-lookup"><span data-stu-id="dd9a0-102">PhoneSettings element</span></span>
 
-<span data-ttu-id="8f440-103">指定在手机上使用邮件外接程序时应用的源位置和控制设置。</span><span class="sxs-lookup"><span data-stu-id="8f440-103">Specifies source location and control settings that apply when your mail add-in is used on a phone.</span></span>
+<span data-ttu-id="dd9a0-103">指定在手机上使用邮件外接程序时应用的源位置和控制设置。</span><span class="sxs-lookup"><span data-stu-id="dd9a0-103">Specifies source location and control settings that apply when your mail add-in is used on a phone.</span></span>
 
-<span data-ttu-id="8f440-104">**外接程序类型：** 邮件</span><span class="sxs-lookup"><span data-stu-id="8f440-104">**Add-in type:** Mail</span></span>
+> [!IMPORTANT]
+> <span data-ttu-id="dd9a0-104">元素`PhoneSettings`仅适用于 web 上的经典 outlook （通常连接到本地 Exchange server 的旧版本）和 Windows 上的 Outlook 2013。</span><span class="sxs-lookup"><span data-stu-id="dd9a0-104">The `PhoneSettings` element is available only in classic Outlook on the web (usually connected to older versions of on-premises Exchange server) and Outlook 2013 on Windows.</span></span> <span data-ttu-id="dd9a0-105">若要支持 Android 和 iOS 上的 Outlook，请参阅[适用于 Outlook Mobile 的外接程序](/outlook/add-ins/outlook-mobile-addins)。</span><span class="sxs-lookup"><span data-stu-id="dd9a0-105">To support Outlook on Android and iOS, see [Add-ins for Outlook Mobile](/outlook/add-ins/outlook-mobile-addins).</span></span>
 
-## <a name="syntax"></a><span data-ttu-id="8f440-105">语法</span><span class="sxs-lookup"><span data-stu-id="8f440-105">Syntax</span></span>
+<span data-ttu-id="dd9a0-106">**外接程序类型：** 邮件</span><span class="sxs-lookup"><span data-stu-id="dd9a0-106">**Add-in type:** Mail</span></span>
+
+## <a name="syntax"></a><span data-ttu-id="dd9a0-107">语法</span><span class="sxs-lookup"><span data-stu-id="dd9a0-107">Syntax</span></span>
 
 ```XML
-<PhoneSettings>
-   ...
-</PhoneSettings>
+<Form xsi:type="ItemRead">
+   <!--website.html is a placeholder for your own add-in website.-->
+   <DesktopSettings>
+      <SourceLocation DefaultValue="https://website.html" />
+      <!--RequestedHeight must be between 240px to 800px, inclusive.-->
+      <RequestedHeight>360</RequestedHeight>
+   </DesktopSettings>
+   <TabletSettings>
+      <SourceLocation DefaultValue="https://website.html" />
+      <!--RequestedHeight must be between 240px to 800px, inclusive.-->
+      <RequestedHeight>360</RequestedHeight>
+   </TabletSettings>
+   <PhoneSettings>
+      <SourceLocation DefaultValue="https://website.html" />
+   </PhoneSettings>
+</Form>
 ```
 
-## <a name="contained-in"></a><span data-ttu-id="8f440-106">包含于</span><span class="sxs-lookup"><span data-stu-id="8f440-106">Contained in</span></span>
+## <a name="contained-in"></a><span data-ttu-id="dd9a0-108">包含于</span><span class="sxs-lookup"><span data-stu-id="dd9a0-108">Contained in</span></span>
 
-[<span data-ttu-id="8f440-107">Form</span><span class="sxs-lookup"><span data-stu-id="8f440-107">Form</span></span>](form.md)
+[<span data-ttu-id="dd9a0-109">Form</span><span class="sxs-lookup"><span data-stu-id="dd9a0-109">Form</span></span>](form.md)
 
