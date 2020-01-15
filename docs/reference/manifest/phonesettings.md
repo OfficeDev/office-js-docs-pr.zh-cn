@@ -1,27 +1,43 @@
 ---
 title: 清单文件中的 PhoneSettings 元素
 description: ''
-ms.date: 10/09/2018
+ms.date: 01/13/2020
 localization_priority: Normal
-ms.openlocfilehash: 68d0ef2e0ad50ee548535eeb1e2d51e633156e32
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: e3ea104af7e634b4e6e6cbeaac395af11ae4e376
+ms.sourcegitcommit: dc42e0276007f8ab006028b9cd0cc1526c1bd100
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32452009"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "41120654"
 ---
 # <a name="phonesettings-element"></a>PhoneSettings 元素
 
 指定在手机上使用邮件外接程序时应用的源位置和控制设置。
+
+> [!IMPORTANT]
+> 元素`PhoneSettings`仅适用于 web 上的经典 outlook （通常连接到本地 Exchange server 的旧版本）和 Windows 上的 Outlook 2013。 若要支持 Android 和 iOS 上的 Outlook，请参阅[适用于 Outlook Mobile 的外接程序](/outlook/add-ins/outlook-mobile-addins)。
 
 **外接程序类型：** 邮件
 
 ## <a name="syntax"></a>语法
 
 ```XML
-<PhoneSettings>
-   ...
-</PhoneSettings>
+<Form xsi:type="ItemRead">
+   <!--website.html is a placeholder for your own add-in website.-->
+   <DesktopSettings>
+      <SourceLocation DefaultValue="https://website.html" />
+      <!--RequestedHeight must be between 240px to 800px, inclusive.-->
+      <RequestedHeight>360</RequestedHeight>
+   </DesktopSettings>
+   <TabletSettings>
+      <SourceLocation DefaultValue="https://website.html" />
+      <!--RequestedHeight must be between 240px to 800px, inclusive.-->
+      <RequestedHeight>360</RequestedHeight>
+   </TabletSettings>
+   <PhoneSettings>
+      <SourceLocation DefaultValue="https://website.html" />
+   </PhoneSettings>
+</Form>
 ```
 
 ## <a name="contained-in"></a>包含于

@@ -1,14 +1,14 @@
 ---
 title: 为 Office 加载项启用单一登录
 description: ''
-ms.date: 11/11/2019
+ms.date: 01/13/2020
 localization_priority: Priority
-ms.openlocfilehash: e32f9429ee05772b1a36f5e3408eb775cc03919a
-ms.sourcegitcommit: 88d81aa2d707105cf0eb55d9774b2e7cf468b03a
+ms.openlocfilehash: 0a42928df7e29890fcb04a417588f7a93fdeacfd
+ms.sourcegitcommit: 0dacbe7c80ed387099e3ec21e151f8990b181ede
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "38301937"
+ms.lasthandoff: 01/13/2020
+ms.locfileid: "41111135"
 ---
 # <a name="enable-single-sign-on-for-office-add-ins-preview"></a>为 Office 加载项启用单一登录（预览）
 
@@ -16,7 +16,7 @@ ms.locfileid: "38301937"
 
 ![显示加载项登录过程的图像](../images/office-host-title-bar-sign-in.png)
 
-### <a name="preview-status"></a>预览状态
+## <a name="preview-status"></a>预览状态
 
 当前只在预览中支持单一登录 API。 它可供开发人员进行实验，但不应用于生产加载项。 此外，在 [AppSource](https://appsource.microsoft.com) 中不接受使用 SSO 的加载项。
 
@@ -24,7 +24,7 @@ SSO 要求使用 Office 365（Office 的订阅版本）。 你应该使用来自
 
 并非所有 Office 应用程序都支持 SSO 预览。 可以在 Word、Excel、Outlook 和 PowerPoint 中使用此加载项。 若要详细了解目前支持单一登录 API 的平台，请参阅 [IdentityAPI 要求集](/office/dev/add-ins/reference/requirement-sets/identity-api-requirement-sets)。
 
-### <a name="requirements-and-best-practices"></a>要求和最佳做法
+## <a name="requirements-and-best-practices"></a>要求和最佳做法
 
 > [!NOTE]
 > [!INCLUDE [Information about using preview APIs](../includes/using-preview-apis.md)]
@@ -33,7 +33,7 @@ SSO 要求使用 Office 365（Office 的订阅版本）。 你应该使用来自
 
 *不应*依赖 SSO 作为加载项的唯一身份验证方法。 应实现备用身份验证系统，在某些错误情况下，加载项可以返回到该系统。 可以使用包含用户表和身份验证的系统，也可以利用其中某个社交登录提供者。 有关如何使用 Office 加载项执行此操作的详细信息，请参阅 [Authorize external services in your Office Add-in](/office/dev/add-ins/develop/auth-external-add-ins)（对 Office 加载项中的外部服务授权）。 对于 *Outlook*，建议使用回退系统。 有关详细信息，请参阅[应用场景：在 Outlook 外接程序中对服务实现单一登录](/outlook/add-ins/implement-sso-in-outlook-add-in)。 有关使用 Azure Active Directory 作为回退系统的示例，请参阅 [Office 加载项 NodeJS SSO](https://github.com/OfficeDev/Office-Add-in-NodeJS-SSO) 和 [Office 加载项 ASP.NET SSO](https://github.com/OfficeDev/Office-Add-in-ASPNET-SSO)。
 
-### <a name="how-sso-works-at-runtime"></a>运行时 SSO 的工作方式
+## <a name="how-sso-works-at-runtime"></a>运行时 SSO 的工作方式
 
 以下关系图显示了 SSO 流程的工作方式。
 
@@ -54,6 +54,9 @@ SSO 要求使用 Office 365（Office 的订阅版本）。 你应该使用来自
 
 * [创建使用单一登录的 Node.js Office 加载项](create-sso-office-add-ins-nodejs.md)
 * [创建使用单一登录的 ASP.NET Office 加载项](create-sso-office-add-ins-aspnet.md)
+
+> [!NOTE]
+> 可使用 Yeoman 生成器创建启用了 SSO 的  Node.js Office 加载项。 Yeoman 生成器简化了启用了 SSO 的加载项创建流程，能够自动执行在 Azure 内配置所需的步骤，并生成加载项使用 SSO 所需的代码。 有关详细信息，请参阅“[单一登录（SSO）快速入门](../quickstarts/sso-quickstart.md)”。
 
 ### <a name="create-the-service-application"></a>创建服务应用程序
 

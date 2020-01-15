@@ -1,14 +1,14 @@
 ---
 title: 适用于 Office 的 JavaScript API 的错误代码
 description: ''
-ms.date: 08/06/2019
+ms.date: 01/14/2020
 localization_priority: Normal
-ms.openlocfilehash: 45882cedf28f47be6bf2e20f9e6f6bf3cb9e816e
-ms.sourcegitcommit: 8c5c5a1bd3fe8b90f6253d9850e9352ed0b283ee
+ms.openlocfilehash: af8d53f81bdbefb5810ab02e3391cf3154096bef
+ms.sourcegitcommit: dc42e0276007f8ab006028b9cd0cc1526c1bd100
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/19/2019
-ms.locfileid: "40815072"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "41120612"
 ---
 # <a name="javascript-api-for-office-error-codes"></a>适用于 Office 的 JavaScript API 的错误代码
 
@@ -81,6 +81,7 @@ ms.locfileid: "40815072"
 |8021|超出范围|列索引值超出允许的范围。请使用一个小于列数的正值（大于等于 0）。|列索引大于表格最大列索引或小于 0。|
 |8022|超出范围|值超出允许的范围。|格式中的某些值超出支持的范围。|
 |9016|权限被拒绝|权限被拒绝|访问被拒绝。|
+|9022|不同存储区中的邮件错误|由于邮件保存在另一个存储区中，无法检索 EWS ID。|由于邮件可能已移动或发送邮箱可能已更改，无法检索当前邮件的 EWS ID。|
 |9041|网络错误|用户不再连接到网络。 请检查网络连接并重试。|用户不再拥有网络或 internet 访问权限。|
 |12002|||下列一种含义：<br> - 传递给 `displayDialogAsync` 的 URL 没有对应的页面。<br> - 传递给 `displayDialogAsync` 的页面已加载，但对话框定向到找不到或无法加载的页面，或者已定向到使用无效语法的 URL。 在对话框中引发并在主机页面中触发 `DialogEventReceived` 事件。|
 |12003|||对话框定向到使用 HTTP 协议的 URL。 必须使用 HTTPS。 在对话框中引发并在主机页面中触发 `DialogEventReceived` 事件。|
@@ -135,6 +136,5 @@ ms.locfileid: "40815072"
 |文本|选择无效（例如，多个对象、无效对象等。）|无法创建绑定。|
 
 ## <a name="see-also"></a>另请参阅
-   
+
 - [Office 加载项开发生命周期](/office/dev/add-ins/concepts/add-in-development-lifecycle)
-    
