@@ -3,12 +3,12 @@ title: 在 Visual Studio 中调试 Office 加载项
 description: 使用 Visual Studio 在 Windows 上的 Office 桌面客户端中调试 Office 加载项
 ms.date: 12/31/2019
 localization_priority: Priority
-ms.openlocfilehash: 15121834dc53e31c8872b8ff87ce6a1a58608a6f
-ms.sourcegitcommit: d5ac9284d1e96dc91a9168d7641e44d88535e1a7
+ms.openlocfilehash: bf8e20891709f8d9d4d4e786976730c58406b803
+ms.sourcegitcommit: dc42e0276007f8ab006028b9cd0cc1526c1bd100
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/31/2019
-ms.locfileid: "40915049"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "41120626"
 ---
 # <a name="debug-office-add-ins-in-visual-studio"></a>在 Visual Studio 中调试 Office 加载项
 
@@ -20,6 +20,8 @@ ms.locfileid: "40915049"
 ## <a name="enable-debugging-for-add-in-commands-and-ui-less-code"></a>对加载项命令和无 UI 的代码启用调试
 
 当 Visual Studio 调试 Windows 上的 Office 时，加载项托管在 Microsoft Internet Explorer 或 Microsoft Edge 浏览器实例中。 若要确定开发计算机上使用的浏览器，请参阅 [Office 加载项使用的浏览器](../concepts/browsers-used-by-office-web-add-ins.md)。
+> [!NOTE]
+> 以下过程不再需要 JS_Debug 环境变量。 有关详细信息，请参阅 Microsoft 开发人员社区支持论坛中的 [Office Web 加载项中的调试行为](https://developercommunity.visualstudio.com/content/problem/740413/office-development-inconsistent-script-debugging-b.html)。
 
 [!include[Enable debugging on Microsoft Edge DevTools](../includes/enable-debugging-on-edge-devtools.md)]
 
