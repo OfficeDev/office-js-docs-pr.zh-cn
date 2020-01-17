@@ -3,12 +3,12 @@ title: 使用 XLL 用户定义的函数扩展自定义函数
 description: 启用与自定义函数具有等效功能的 Excel XLL 用户定义函数的兼容性
 ms.date: 07/31/2019
 localization_priority: Normal
-ms.openlocfilehash: d8b5349aecad1bdd6bd9f8e00b6c09bcb0071377
-ms.sourcegitcommit: 0dacbe7c80ed387099e3ec21e151f8990b181ede
+ms.openlocfilehash: 35b6ade70e21ca36efec928d030f79c27cc38691
+ms.sourcegitcommit: 212c810f3480a750df779777c570159a7f76054a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/13/2020
-ms.locfileid: "41111072"
+ms.lasthandoff: 01/17/2020
+ms.locfileid: "41217216"
 ---
 # <a name="extend-custom-functions-with-xll-user-defined-functions"></a>使用 XLL 用户定义的函数扩展自定义函数
 
@@ -20,7 +20,7 @@ ms.locfileid: "41111072"
 > - Windows 上的 Excel （版本1904或更高版本）
 > - Excel for Mac （版本13.329 或更高版本）
 > 
-> 若要在 web 上的 Excel 中使用 COM 加载项并 XLL UDF 兼容性，请使用 Office 365 订阅或[Microsoft 帐户](https://account.microsoft.com/account)登录。 如果还没有 Office 365 订阅，可以通过加入 [Office 365 开发人员计划](https://developer.microsoft.com/office/dev-program)获取一个订阅。
+> 若要在 web 上的 Excel 中使用 COM 加载项并 XLL UDF 兼容性，请使用 Office 365 订阅或[Microsoft 帐户](https://account.microsoft.com/account)登录。 如果还没有 Office 365 订阅，则可以通过加入[office 365 开发人员计划](https://developer.microsoft.com/office/dev-program)免费的90天 renewable office 365 订阅。
 
 ## <a name="specify-equivalent-xll-in-the-manifest"></a>在清单中指定等效 XLL
 

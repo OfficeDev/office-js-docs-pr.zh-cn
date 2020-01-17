@@ -3,12 +3,12 @@ title: 创建使用单一登录的 ASP.NET Office 加载项
 description: ''
 ms.date: 12/04/2019
 localization_priority: Priority
-ms.openlocfilehash: ed648b82804d6658f3b92c5cba8d636e6dddf34b
-ms.sourcegitcommit: 0dacbe7c80ed387099e3ec21e151f8990b181ede
+ms.openlocfilehash: a5a05c8299f22bbc1a7593eebc9bde60f52b2b84
+ms.sourcegitcommit: 212c810f3480a750df779777c570159a7f76054a
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/13/2020
-ms.locfileid: "41111058"
+ms.lasthandoff: 01/17/2020
+ms.locfileid: "41217001"
 ---
 # <a name="create-an-aspnet-office-add-in-that-uses-single-sign-on-preview"></a>创建使用单一登录的 ASP.NET Office 加载项（预览）
 
@@ -24,7 +24,7 @@ ms.locfileid: "41111058"
 
 * [Office 开发人员工具](https://www.visualstudio.com/features/office-tools-vs.aspx)
 
-* Office 365（Office 的订阅版本）帐户，获取方法为加入 [Office 365 开发人员计划](https://aka.ms/devprogramsignup)，其中包含为期 1 年的免费 Office 365 订阅。 应使用最新的每月版本并从预览体验成员频道构建，但你必须是 Office 预览体验成员才能获取此版本。 有关详细信息，请参阅[成为 Office 预览体验成员](https://products.office.com/office-insider?tab=tab-1)。 请注意，当内部版本进入生产半年频道时，将关闭对该内部版本的预览功能（包括 SSO）的支持。
+[!include[additional prerequisites](../includes/sso-tutorial-prereqs.md)]
 
 * Office 365 订阅中的 OneDrive for Business 上至少存储了一些文件和文件夹。
 

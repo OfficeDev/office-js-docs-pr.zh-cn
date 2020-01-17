@@ -1,14 +1,14 @@
 ---
 title: Office 外接程序的数据可视化样式指南
 description: ''
-ms.date: 12/04/2017
+ms.date: 01/14/2019
 localization_priority: Normal
-ms.openlocfilehash: 134153f0705c810e777fd47b27a5a440e2e7bc9e
-ms.sourcegitcommit: 654ac1a0c477413662b48cffc0faee5cb65fc25f
+ms.openlocfilehash: ef82432dacb3f63e85fd305bc682325af3312aca
+ms.sourcegitcommit: 212c810f3480a750df779777c570159a7f76054a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "36268143"
+ms.lasthandoff: 01/17/2020
+ms.locfileid: "41217255"
 ---
 # <a name="data-visualization-style-guidelines-for-office-add-ins"></a>Office 加载项的数据可视化样式指南
 
@@ -24,10 +24,9 @@ ms.locfileid: "36268143"
 
 ## <a name="data-visualization-elements"></a>数据可视化元素
 
-数据可视化共享一个通用框架、常见的视觉对象和交互式元素，包括标题、标签和数据绘图，如下图所示。
+数据可视化共享常规框架和常见的可视化和交互元素，包括标题、标签和数据图形，如下图所示。
 
-![标记了标题、轴、图例和绘图区的折线图的图像](../images/data-visualization-line-chart.png)
-![标记了轴、网格线、图例和数据绘图的柱形图的图像](../images/data-visualization-column-chart.png)
+![包含标题、坐标轴、图例和标记的绘图区的折线图的图像](../images/excel-charts-visualization.png)
 
 ### <a name="chart-titles"></a>图表标题
 
@@ -37,11 +36,6 @@ ms.locfileid: "36268143"
 - 一般情况下，使用句子大写（大写第一个字词）。若要创建对比度或强化层次结构，可以全部使用大写，但应谨慎使用全部大写。
 - 纳入 [Office UI Fabric 类型校正](https://developer.microsoft.com/fabric#/styles/typography)使图表与使用 Segoe 的 Office UI 保持一致。你还可以使用不同的字样来区分图表内容和 UI。
 - 使用带有大型计数器的 sans-serif 字样。
-
-下面的示例显示图表标题中使用的 serif 和 sans-serif 字样。请留意如何通过缩放对比度和空白的有效使用来构建强大的可视化层次结构。
-
-![采用 serif 字体的数据可视化的图像](../images/data-visualization-serif.png)
-![采用 sans-serif 字体的数据可视化的图像](../images/data-visualization-sans-serif.png)
 
 ### <a name="axis-labels"></a>轴标签
 
@@ -71,7 +65,7 @@ ms.locfileid: "36268143"
 
 下图显示了带有网格线的数据可视化。
 
-![带有网格线的数据可视化的图像](../images/data-visualization-gridlines.png)
+![带有网格线的数据可视化的图像](../images/data-visualization.png)
 
 ### <a name="legends"></a>图例
 

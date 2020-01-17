@@ -1,14 +1,14 @@
 ---
 title: Office 加载项中的异步编程
 description: ''
-ms.date: 06/20/2019
+ms.date: 01/14/2020
 localization_priority: Priority
-ms.openlocfilehash: 9a653f85a368688bdf2690ab6c564352f2ee611a
-ms.sourcegitcommit: 0dacbe7c80ed387099e3ec21e151f8990b181ede
+ms.openlocfilehash: 009f8e37cc8a6eb2e808278df88f3bfdc5b0d1b1
+ms.sourcegitcommit: 212c810f3480a750df779777c570159a7f76054a
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/13/2020
-ms.locfileid: "41110904"
+ms.lasthandoff: 01/17/2020
+ms.locfileid: "41217239"
 ---
 # <a name="asynchronous-programming-in-office-add-ins"></a>Office 加载项中的异步编程
 
@@ -20,7 +20,7 @@ API 中所有这些异步方法的名称均以“Async”结尾，如 `Document.
 
 *图 1. 异步编程执行流*
 
-![异步编程线程执行流](../images/office15-app-async-prog-fig01.png)
+![异步编程线程执行流](../images/office-addins-asynchronous-programming-flow.png)
 
 在富客户端和 Web 客户端中支持此异步设计是 Office 加载项开发模型"写入一次，跨平台运行"设计目标的一部分。例如，可以使用将在 Excel 2013 和 Excel 网页版中运行的单一基本代码创建一个内容应用程序或任务窗格加载项。
 

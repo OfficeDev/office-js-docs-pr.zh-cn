@@ -5,12 +5,12 @@ ms.date: 07/05/2019
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
 localization_priority: Normal
-ms.openlocfilehash: fbefd205ac929579cea1120b8398a53146bca19c
-ms.sourcegitcommit: 350f5c6954dec3e9384e2030cd3265aaba7ae904
+ms.openlocfilehash: 3212aec08cdf4e0185ae5856ae522b1d81e28ea1
+ms.sourcegitcommit: 212c810f3480a750df779777c570159a7f76054a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/23/2019
-ms.locfileid: "40851514"
+ms.lasthandoff: 01/17/2020
+ms.locfileid: "41216971"
 ---
 # <a name="explore-office-javascript-api-using-script-lab"></a>使用 Script Lab 探索 Office JavaScript API
 
@@ -22,7 +22,7 @@ ms.locfileid: "40851514"
 
 我到目前为止听起来正常吗？ 查看此一分钟视频可查看脚本实验室的实际效果。
 
-[![显示在 Excel、Word 和 PowerPoint 中运行的脚本实验室的预览视频。](../images/screenshot-wide-youtube.png '脚本实验室预览视频')](https://aka.ms/scriptlabvideo)
+[![展示 Script Lab 在 Excel、Word 和 PowerPoint 中运行的预览视频。](../images/screenshot-wide-youtube.png 'Script Lab 预览视频')](https://aka.ms/scriptlabvideo)
 
 ## <a name="key-features"></a>关键功能
 
@@ -73,5 +73,5 @@ ms.locfileid: "40851514"
 
 - [获取脚本实验室](https://appsource.microsoft.com/product/office/WA104380862)
 - [了解有关脚本实验室的详细信息](https://github.com/OfficeDev/script-lab#script-lab-a-microsoft-garage-project)
-- [注册开发计划](https://developer.microsoft.com/office/dev-program)
-- [生成 Office 外接程序](../overview/office-add-ins-fundamentals.md)
+- [加入 Office 365 开发人员计划](https://developer.microsoft.com/office/dev-program)
+- [构建 Office 加载项](../overview/office-add-ins-fundamentals.md)
