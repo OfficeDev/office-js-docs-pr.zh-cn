@@ -1,14 +1,14 @@
 ---
 title: Office 加载项中的任务窗格
 description: 任务窗格允许用户访问界面控件，此类控件运行代码以修改文档或电子邮件，或显示数据源中的数据。
-ms.date: 06/20/2019
+ms.date: 01/14/2020
 localization_priority: Priority
-ms.openlocfilehash: 69fc1e2a228aa757613847095c91514264948c65
-ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
+ms.openlocfilehash: 1d2e77dd446c787daba18426f74d4788cdc6d99e
+ms.sourcegitcommit: 212c810f3480a750df779777c570159a7f76054a
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "35127693"
+ms.lasthandoff: 01/17/2020
+ms.locfileid: "41217288"
 ---
 # <a name="task-panes-in-office-add-ins"></a>Office 加载项中的任务窗格
  
@@ -34,7 +34,7 @@ ms.locfileid: "35127693"
 
 *图 2：Office 2016 桌面任务窗格尺寸*
 
-![显示尺寸为 1366x768 的桌面任务窗格的图像](../images/add-in-taskpane-sizes-desktop.png)
+![显示尺寸为 1366x768 的桌面任务窗格的图像](../images/office-2016-taskpane-sizes.png)
 
 - Excel - 320 x 455
 - PowerPoint - 320 x 531
@@ -45,7 +45,7 @@ ms.locfileid: "35127693"
 
 *图 3：Office 365 任务窗格大小*
 
-![显示尺寸为 1366x768 的桌面任务窗格的图像](../images/add-in-taskpane-sizes-online.png)
+![显示尺寸为 1366x768 的桌面任务窗格的图像](../images/office-365-taskpane-sizes.png)
 
 - Excel - 350 x 378
 - PowerPoint - 348x391

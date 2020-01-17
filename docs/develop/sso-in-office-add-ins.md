@@ -1,20 +1,20 @@
 ---
 title: 为 Office 加载项启用单一登录
 description: ''
-ms.date: 01/13/2020
+ms.date: 01/14/2020
 localization_priority: Priority
-ms.openlocfilehash: 0a42928df7e29890fcb04a417588f7a93fdeacfd
-ms.sourcegitcommit: 0dacbe7c80ed387099e3ec21e151f8990b181ede
+ms.openlocfilehash: e8bc5f09b3e9d401fdba992d87ec3ef4faf7fc08
+ms.sourcegitcommit: 212c810f3480a750df779777c570159a7f76054a
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/13/2020
-ms.locfileid: "41111135"
+ms.lasthandoff: 01/17/2020
+ms.locfileid: "41217085"
 ---
 # <a name="enable-single-sign-on-for-office-add-ins-preview"></a>为 Office 加载项启用单一登录（预览）
 
 用户可以使用自己的个人 Microsoft 帐户/工作或学校 (Office 365) 帐户，登录 Office（在线、移动和桌面平台）。 可以利用此功能并使用单一登录 (SSO) 授权用户访问加载项（用户无需再次登录）。
 
-![显示加载项登录过程的图像](../images/office-host-title-bar-sign-in.png)
+![显示加载项登录过程的图像](../images/sso-for-office-addins.png)
 
 ## <a name="preview-status"></a>预览状态
 

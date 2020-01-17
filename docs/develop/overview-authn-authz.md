@@ -1,14 +1,14 @@
 ---
 title: Office 加载项中的身份验证和授权概述
 description: ''
-ms.date: 11/11/2019
+ms.date: 01/07/2020
 localization_priority: Priority
-ms.openlocfilehash: 20b947607623ee6a8fa08995a5c08918a6fd5d87
-ms.sourcegitcommit: 88d81aa2d707105cf0eb55d9774b2e7cf468b03a
+ms.openlocfilehash: 5086095c711bbf6df98e457092f825690d43229e
+ms.sourcegitcommit: 212c810f3480a750df779777c570159a7f76054a
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "38301944"
+ms.lasthandoff: 01/17/2020
+ms.locfileid: "41217273"
 ---
 # <a name="overview-of-authentication-and-authorization-in-office-add-ins"></a>Office 加载项中的身份验证和授权概述
 
@@ -23,7 +23,7 @@ Web 应用程序和 Office 加载项默认允许匿名访问，但你可要求�
 
 下列流程图展示了需要如同加载项开发人员一样作出的决策。 详细信息请参见本文稍后部分。
 
-![一张图像，它显示了在 Office 加载项中实现身份验证和授权的决策流程图](../images/auth-decisions-flowchart.gif)
+![一张图像，它显示了在 Office 加载项中实现身份验证和授权的决策流程图](../images/authflowchart.png)
 
 ## <a name="user-authentication-without-sso"></a>在不使用 SSO 的情况下进行用户身份验证
 

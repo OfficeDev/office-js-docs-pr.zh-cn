@@ -1,14 +1,14 @@
 ---
 title: 使用 SSO 对 Microsoft Graph 授权
 description: ''
-ms.date: 11/11/2019
+ms.date: 01/14/2020
 localization_priority: Priority
-ms.openlocfilehash: 44abb05c49786f4b7e050feb7e8eaf8c535f8de8
-ms.sourcegitcommit: 88d81aa2d707105cf0eb55d9774b2e7cf468b03a
+ms.openlocfilehash: b4c813bb3ffd2bf9025ac4cbf51096e1d7a72d8b
+ms.sourcegitcommit: 212c810f3480a750df779777c570159a7f76054a
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "38301951"
+ms.lasthandoff: 01/17/2020
+ms.locfileid: "41217349"
 ---
 # <a name="authorize-to-microsoft-graph-with-sso-preview"></a>使用 SSO 对 Microsoft Graph 授权（预览版）
 
@@ -30,19 +30,19 @@ ms.locfileid: "38301951"
 ![显示 SSO 流程的关系图](../images/sso-access-to-microsoft-graph.png)
 
 1. 在加载项中，JavaScript 调用新的 Office.js API [getAccessToken](/javascript/api/office-runtime/officeruntime.auth#getaccesstoken-options-)。 该操作告诉 Office 主机应用程序获取加载项的访问令牌。 （以下称为**启动访问令牌**，因为在该过程的后期它将会被替换为另一个令牌。 有关已解码启动访问令牌的示例，请参阅[示例访问令牌](sso-in-office-add-ins.md#example-access-token)。）
-1. 如果用户未登录，Office 主机应用会打开弹出窗口，以供用户登录。
-1. 如果当前用户是首次使用加载项，则会看到同意提示。
-1. Office 主机应用程序从当前用户的 Azure AD v2.0 终结点请求获取**启动访问令牌**。
-1. Azure AD 将启动令牌发送给 Office 主机应用程序。
-1. Office 主机应用程序在 `getAccessToken` 调用返回的结果对象中，将“**启动访问令牌**”发送给加载项。
-1. 加载项中的 JavaScript 向 Web API（与加载项托管在同一完全限定的域中）发出 HTTP 请求，并添加**启动访问令牌**作为授权证明。  
-1. 服务器端代码验证传入的**启动访问令牌**。
-1. 服务器端代码使用“代表”流（在 [OAuth2 令牌交换](https://tools.ietf.org/html/draft-ietf-oauth-token-exchange-02) 和 [Web API Azure 方案的守护程序或服务器应用程序](/azure/active-directory/develop/active-directory-authentication-scenarios)中定义）获取 Microsoft Graph 的访问令牌来交换启动访问令牌。
-1. Azure AD 将 Microsoft Graph 访问令牌（如果加载项请求获取 *offline_access* 权限，则同时返回刷新令牌）返回给加载项。
-1. 服务器端代码缓存 Microsoft Graph 访问令牌。
-1. 服务器端代码向 Microsoft Graph 发出请求，并添加 Microsoft Graph 访问令牌。
-1. Microsoft Graph 将数据返回给加载项，从而将数据传递到加载项 UI。
-1. 当 Microsoft Graph 访问令牌过期时，服务器端代码可以使用其刷新令牌获取新的 Microsoft Graph 访问令牌。
+2. 如果用户未登录，Office 主机应用会打开弹出窗口，以供用户登录。
+3. 如果当前用户是首次使用加载项，则会看到同意提示。
+4. Office 主机应用程序从当前用户的 Azure AD v2.0 终结点请求获取**启动访问令牌**。
+5. Azure AD 将启动令牌发送给 Office 主机应用程序。
+6. Office 主机应用程序在 `getAccessToken` 调用返回的结果对象中，将“**启动访问令牌**”发送给加载项。
+7. 加载项中的 JavaScript 向 Web API（与加载项托管在同一完全限定的域中）发出 HTTP 请求，并添加**启动访问令牌**作为授权证明。
+8. 服务器端代码验证传入的**启动访问令牌**。
+9. 服务器端代码使用“代表”流（在 [OAuth2 令牌交换](https://tools.ietf.org/html/draft-ietf-oauth-token-exchange-02) 和 [Web API Azure 方案的守护程序或服务器应用程序](/azure/active-directory/develop/active-directory-authentication-scenarios)中定义）获取 Microsoft Graph 的访问令牌来交换启动访问令牌。
+10. Azure AD 将 Microsoft Graph 访问令牌（如果加载项请求获取 *offline_access* 权限，则同时返回刷新令牌）返回给加载项。
+11. 服务器端代码缓存 Microsoft Graph 访问令牌。
+12. 服务器端代码向 Microsoft Graph 发出请求，并添加 Microsoft Graph 访问令牌。
+13. Microsoft Graph 将数据返回给加载项，从而将数据传递到加载项 UI。
+14. 当 Microsoft Graph 访问令牌过期时，服务器端代码可以使用其刷新令牌获取新的 Microsoft Graph 访问令牌。
 
 ## <a name="develop-an-sso-add-in-that-accesses-microsoft-graph"></a>开发可访问 Microsoft Graph 的 SSO 加载项
 

@@ -4,12 +4,12 @@ description: 使用 Yeoman 生成器生成使用单一登录的 Node.js Office �
 ms.date: 01/13/2020
 ms.prod: non-product-specific
 localization_priority: Priority
-ms.openlocfilehash: 3c67fdb2b8582546c13624dcb8a6f139bb638df0
-ms.sourcegitcommit: 0dacbe7c80ed387099e3ec21e151f8990b181ede
+ms.openlocfilehash: 1f02f03fec0d6be32fc7a0d6b98fce30e19c28e2
+ms.sourcegitcommit: 212c810f3480a750df779777c570159a7f76054a
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/13/2020
-ms.locfileid: "41111104"
+ms.lasthandoff: 01/17/2020
+ms.locfileid: "41217363"
 ---
 # <a name="use-the-yeoman-generator-to-create-an-office-add-in-that-uses-single-sign-on-preview"></a>使用 Yeoman 生成器创建使用单一登录的 Node.js Office 加载项（预览版）。
 
@@ -22,9 +22,9 @@ Yeoman 生成器简化了 SSO 加载项的创建流程，能够自动执行在 A
 
 ## <a name="prerequisites"></a>先决条件
 
-- [Node.js](https://nodejs.org)（版本 10.15.0 或更高版本）
+* [Node.js](https://nodejs.org)（版本 10.15.0 或更高版本）
 
-- 最新版本的 [Yeoman](https://github.com/yeoman/yo) 和[适用于 Office 外接程序的 Yeoman 生成器](https://github.com/OfficeDev/generator-office)。若要全局安装这些工具，请从命令提示符处运行以下命令：
+* 最新版本的 [Yeoman](https://github.com/yeoman/yo) 和[适用于 Office 外接程序的 Yeoman 生成器](https://github.com/OfficeDev/generator-office)。若要全局安装这些工具，请从命令提示符处运行以下命令：
 
     ```command&nbsp;line
     npm install -g yo generator-office
@@ -32,12 +32,7 @@ Yeoman 生成器简化了 SSO 加载项的创建流程，能够自动执行在 A
 
     [!include[note to update Yeoman generator](../includes/note-yeoman-generator-update.md)]
 
-- 一个 Office 365（Office 的订阅版本）账户。 如果还没有 Office 365 账户，可以通过加入 [Office 365 开发人员计划](https://aka.ms/devprogramsignup)获得 90 天免费的可续订 Office 365 订阅。 
-
-- 一个 Office 365 预览体验成员内部版本。 应使用最新的每月版本并从预览体验成员频道构建，但你必须[是 Office 预览体验成员](https://products.office.com/office-insider?tab=tab-1)才能获取此版本。 
-
-    > [!NOTE]
-    > 当内部版本进入生产半年频道时，将禁用对该内部版本的预览功能（包括 SSO）的支持。
+[!include[additional prerequisites](../includes/sso-tutorial-prereqs.md)]
 
 ## <a name="create-the-add-in-project"></a>创建加载项项目
 

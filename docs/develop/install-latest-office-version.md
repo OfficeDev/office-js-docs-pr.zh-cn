@@ -1,14 +1,14 @@
 ---
 title: 安装最新版本 Office
 description: 与如何选择获取最新版 Office 相关的信息。
-ms.date: 07/17/2019
+ms.date: 01/14/2020
 localization_priority: Priority
-ms.openlocfilehash: 2308bf8f825201f1074d56bba2ddc67c32ba7f24
-ms.sourcegitcommit: cb5e1726849aff591f19b07391198a96d5749243
+ms.openlocfilehash: 8d248e17433a2b6b1b31ad576ecdd237cd8543d0
+ms.sourcegitcommit: 212c810f3480a750df779777c570159a7f76054a
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "35940624"
+ms.lasthandoff: 01/17/2020
+ms.locfileid: "41217379"
 ---
 # <a name="install-the-latest-version-of-office"></a>安装最新版本 Office
 
@@ -39,7 +39,7 @@ ms.locfileid: "35940624"
 
 在安装进程完成后，你已安装最新的 Office 应用程序。 要验证你是否拥有最新版本，请从任何 Office 应用程序转到“文件”**** > “帐户”****。 在“Office 更新”下，你将看到版本号上面的 (Office Insiders) 标签。
 
-![显示产品信息的屏幕截图（带有 Office Insiders 标签）](../images/office-insiders.png)
+![显示产品信息的屏幕截图（带有 Office Insiders 标签）](../images/office-insiders-label.png)
 
 ## <a name="minimum-office-builds-for-office-javascript-api-requirement-sets"></a>Office JavaScript API 要求集对应的最低 Office 内部版本
 

@@ -3,12 +3,12 @@ title: 创建使用单一登录的 Node.js Office 加载项
 description: 了解如何创建使用 Office 单一登录的基于 Node.js 的 Office 加载项
 ms.date: 01/13/2020
 localization_priority: Priority
-ms.openlocfilehash: 140a18628ae03d842482721394d976207cb7fa37
-ms.sourcegitcommit: 0dacbe7c80ed387099e3ec21e151f8990b181ede
+ms.openlocfilehash: a3ff47f26e0db06c1c79a4f80bd814b05e80b3a3
+ms.sourcegitcommit: 212c810f3480a750df779777c570159a7f76054a
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/13/2020
-ms.locfileid: "41111065"
+ms.lasthandoff: 01/17/2020
+ms.locfileid: "41217097"
 ---
 # <a name="create-a-nodejs-office-add-in-that-uses-single-sign-on-preview"></a>创建使用单一登录的 Node.js Office 加载项（预览）
 
@@ -27,7 +27,7 @@ ms.locfileid: "41111065"
 
 * TypeScript，版本 3.6.2 或更高版本
 
-* Office 365（Office 的订阅版本）帐户，获取方法为加入 [Office 365 开发人员计划](https://aka.ms/devprogramsignup)，其中包含为期 1 年的免费 Office 365 订阅。 应使用最新的每月版本并从预览体验成员频道构建，但你必须是 Office 预览体验成员才能获取此版本。 有关详细信息，请参阅[成为 Office 预览体验成员](https://products.office.com/office-insider?tab=tab-1)。 请注意，当内部版本进入生产半年频道时，将关闭对该内部版本的预览功能（包括 SSO）的支持。
+[!include[additional prerequisites](../includes/sso-tutorial-prereqs.md)]
 
 * 一个代码编辑器。 建议使用 Visual Studio Code。
 

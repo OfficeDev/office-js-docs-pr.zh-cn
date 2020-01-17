@@ -1,14 +1,14 @@
 ---
 title: Office 版本和要求集
 description: ''
-ms.date: 07/17/2019
+ms.date: 01/14/2020
 localization_priority: Priority
-ms.openlocfilehash: cfa72f63fc3e74809b743584b131ee5b1fb57676
-ms.sourcegitcommit: cb5e1726849aff591f19b07391198a96d5749243
+ms.openlocfilehash: 3b9bcbef47cdc27ad77b6bdce2b5c69f25fa6d62
+ms.sourcegitcommit: 212c810f3480a750df779777c570159a7f76054a
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "35940638"
+ms.lasthandoff: 01/17/2020
+ms.locfileid: "41217308"
 ---
 # <a name="office-versions-and-requirement-sets"></a>Office 版本和要求集
 
@@ -23,7 +23,7 @@ Office 跨多个平台运行且有许多版本，它们并非全都支持 Office
 
 若要确定使用的 Office 版本，请在 Office 应用程序中，依次选择“文件”**** 菜单和“帐户”****。 Office 版本显示在“产品信息”**** 部分中。 例如，下面的屏幕截图指明 Office 版本 1802（生成号 9026.1000）：
 
-![检查 Office 版本](../images/office-version-number-ui.jpg)
+![检查 Office 版本](../images/office-version.png)
 
 ## <a name="office-requirement-sets-availability"></a>Office 要求集可用性
 
