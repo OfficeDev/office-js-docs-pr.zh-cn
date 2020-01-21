@@ -4,19 +4,19 @@ title: 教程：在 Excel 自定义函数和任务窗格之间共享数据和事
 ms.prod: excel
 description: 在 Excel 中，在自定义函数和任务窗格之间共享数据和事件
 localization_priority: Priority
-ms.openlocfilehash: 16affeb29bd5950198f81f85e44adaf812067829
-ms.sourcegitcommit: 8c5c5a1bd3fe8b90f6253d9850e9352ed0b283ee
+ms.openlocfilehash: d86b5bb59dd0da51d5b5472288fa802823d658ce
+ms.sourcegitcommit: 212c810f3480a750df779777c570159a7f76054a
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/19/2019
-ms.locfileid: "40814129"
+ms.lasthandoff: 01/17/2020
+ms.locfileid: "41217356"
 ---
 # <a name="tutorial-share-data-and-events-between-excel-custom-functions-and-the-task-pane-preview"></a>教程：在 Excel 自定义函数和任务窗格之间共享数据和事件（预览）
 
 Excel 自定义函数和任务窗格共享全局数据，并可实现相互之间的函数调用。 若要配置项目以便自定义函数可与任务窗格配合使用，请按照本文中的说明进行操作。
 
 > [!NOTE]
-> 本文中所述的功能目前处于预览阶段，可能会发生更改。 暂不支持在生产环境中使用。 本文中的预览功能仅适用于 Windows 上的 Excel。 若要试用预览功能，需[加入 Office 预览体验计划](https://insider.office.com/join)。  试用预览版功能的好方法是使用 Office 365 订阅。 如果还没有 Office 365 订阅，可以通过加入 [Office 365 开发人员计划](https://developer.microsoft.com/office/dev-program)获取一个订阅。
+> 本文中所述的功能目前处于预览阶段，可能会发生更改。 暂不支持在生产环境中使用。 本文中的预览功能仅适用于 Windows 上的 Excel。 若要试用预览功能，需[加入 Office 预览体验计划](https://insider.office.com/join)。  试用预览版功能的好方法是使用 Office 365 订阅。 如果你还没有 Office 365 订阅，可以通过加入 [Office 365 开发人员计划](https://developer.microsoft.com/office/dev-program)获得 90 天免费的可续订 Office 365 订阅。
 
 ## <a name="create-the-add-in-project"></a>创建加载项项目
 
@@ -41,21 +41,23 @@ yo office
 3. 更改 `<Requirements>` 部分以使用 **CustomFunctionsRuntime** 版本 **1.2**，如以下代码所示。
     
     ```xml
-    <Requirements> 
+    <Requirements>
     <Sets DefaultMinVersion="1.1">
     <Set Name="CustomFunctionsRuntime" MinVersion="1.2"/>
     </Sets>
     </Requirements>
     ```
     
-4. 在工作簿的 `<Host>` 元素下，添加以下 `<Runtimes>` 部分。 生存期需要**较长**，以便在关闭任务窗格时自定义函数仍可正常工作。
+4. 找到 `<VersionOverrides>` 部分并添加以下 `<Runtimes>` 部分。 生存期需要**较长**，以便在关闭任务窗格时自定义函数仍可正常工作。
     
     ```xml
-    <Hosts>
-    <Host xsi:type="Workbook">
-    <Runtimes>
-    <Runtime resid="TaskPaneAndCustomFunction.Url" lifetime="long" />
-    </Runtimes>
+    <VersionOverrides xmlns="http://schemas.microsoft.com/office/taskpaneappversionoverrides" xsi:type="VersionOverridesV1_0">
+      <Hosts>
+        <Host xsi:type="Workbook">
+        <Runtimes>
+          <Runtime resid="TaskPaneAndCustomFunction.Url" lifetime="long" />
+        </Runtimes>
+        <AllFormFactors>
     ```
     
 5. 在 `<Page>` 元素中，将源位置从 **Functions.Page.Url** 更改为 **TaskPaneAndCustomFunction.Url**。
@@ -149,8 +151,14 @@ yo office
 
 ### <a name="create-task-pane-controls-to-work-with-global-data"></a>创建任务窗格控件以处理全局数据 
 
-1. 打开 file**src/taskpane/taskpane.html**。
-2. 关闭 `</main>` 元素后，添加以下 HTML。 该 HTML 创建两个用于获取或存储全局数据的文本框和按钮。
+1. 打开 **src/taskpane/taskpane.html** 文件。
+2. 在 `</head>` 元素前，添加以下脚本元素。
+
+    ```html
+    <script src="functions.js"></script>
+    ```
+
+3. 关闭 `</main>` 元素后，添加以下 HTML。 该 HTML 创建两个用于获取或存储全局数据的文本框和按钮。
 
     ```html
     <ol>
@@ -172,7 +180,7 @@ yo office
     </div>
     ```
     
-3. 在 `<body>` 元素前，添加以下脚本。 当用户想存储或获取全局数据时，此代码将处理按钮单击事件。
+4. 在 `<body>` 元素前，添加以下脚本。 当用户想存储或获取全局数据时，此代码将处理按钮单击事件。
     
     ```js
     <script>
@@ -186,8 +194,8 @@ yo office
     }</script>
     ```
     
-4. 保存文件。
-5. 生成项目
+5. 保存文件。
+6. 生成项目
     
     ```command&nbsp;line
     npm run build 

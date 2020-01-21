@@ -1,14 +1,14 @@
 ---
 title: Excel JavaScript API 高级编程概念
 description: ''
-ms.date: 07/17/2019
+ms.date: 01/14/2020
 localization_priority: Priority
-ms.openlocfilehash: 8755b479543d48fcbbbf2bfa1ea93fb40af87ecf
-ms.sourcegitcommit: 5ba325cc88183a3f230cd89d615fd49c695addcf
+ms.openlocfilehash: 76308b6ce04dfcaa09e9006373caf07744572112
+ms.sourcegitcommit: 212c810f3480a750df779777c570159a7f76054a
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "37681926"
+ms.lasthandoff: 01/17/2020
+ms.locfileid: "41217337"
 ---
 # <a name="advanced-programming-concepts-with-the-excel-javascript-api"></a>Excel JavaScript API 高级编程概念
 
@@ -27,6 +27,10 @@ Excel 加载项通过使用适用于 Office 的 JavaScript API 与 Excel 中的�
 - [Context](/javascript/api/office/office.context)：**Context** 对象表示加载项的运行时环境，并提供对 API 关键对象的访问权限。 它由工作簿配置详细信息（如 `contentLanguage` 和 `officeTheme`）组成，并提供有关加载项的运行时环境（如 `host` 和 `platform`）的信息。 此外，它还提供了 `requirements.isSetSupported()` 方法，可用于检查运行加载项的 Excel 应用程序是否支持指定的要求集。
 
 - [Document](/javascript/api/office/office.document)：**Document** 对象提供 `getFileAsync()` 方法，用于下载运行加载项的 Excel 文件。
+
+下图说明了可能使用 Excel JavaScript API 或公共 API 的情况。
+
+![Excel JS API 和公共 API 之间差异的图像](../images/excel-js-api-common-api.png)
 
 ## <a name="requirement-sets"></a>要求集
 

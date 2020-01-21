@@ -3,12 +3,12 @@ title: 在 Office 网页版中调试加载项
 description: 如何使用 Office 网页版来测试和调试加载项。
 ms.date: 06/20/2019
 localization_priority: Priority
-ms.openlocfilehash: ebc1296c0d6f13d5327f666e72907e016fbe8c6e
-ms.sourcegitcommit: c3673cc693fa7070e1b397922bd735ba3f9342f3
+ms.openlocfilehash: cf2461184f5163463f3e4fbf93f2cc7a0b70a249
+ms.sourcegitcommit: 212c810f3480a750df779777c570159a7f76054a
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/05/2019
-ms.locfileid: "35575679"
+ms.lasthandoff: 01/17/2020
+ms.locfileid: "41217328"
 ---
 # <a name="debug-add-ins-in-office-on-the-web"></a>在 Office 网页版中调试加载项
 
@@ -22,7 +22,7 @@ ms.locfileid: "35575679"
 - 获取 Office 365 开发人员帐户（如果还没有的话），或获取对 SharePoint 网站的访问权限。
 
   > [!NOTE]
-  > 若要注册免费 Office 365 开发人员订阅，请加入 [Office 365 开发人员计划](https://developer.microsoft.com/office/dev-program)。 请参阅 [Office 365 开发人员计划文档](/office/developer-program/office-365-developer-program)，逐步了解如何加入 Office 365 开发人员计划并注册和配置订阅。
+  > 若要获取 90 天免费的可续订 Office 365 开发人员订阅，请加入 [Office 365 开发人员计划](https://developer.microsoft.com/office/dev-program)。请参阅 [Office 365 开发人员计划文档](/office/developer-program/office-365-developer-program)，逐步了解如何加入 Office 365 开发人员计划并配置订阅。
 
 - 在 Office 365 (SharePoint Online) 上创建应用程序目录。应用程序目录是 SharePoint Online 中的专用网站集，用于托管 Office 加载项的文档库。如果你有自己的 SharePoint 网站，可以创建应用程序目录文档库。有关详细信息，请参阅[向 SharePoint 上的应用程序目录发布任务窗格加载项和内容加载项](../publish/publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md)。
 

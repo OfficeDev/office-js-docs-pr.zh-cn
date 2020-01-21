@@ -3,12 +3,12 @@ title: 随文档自动打开任务窗格
 description: ''
 ms.date: 06/20/2019
 localization_priority: Priority
-ms.openlocfilehash: de848238979b68192bb8646e0ee6cb8d7c3879be
-ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
+ms.openlocfilehash: 343b7650d9de5dfcda508c4ae134be6dd8696454
+ms.sourcegitcommit: 212c810f3480a750df779777c570159a7f76054a
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "35127609"
+ms.lasthandoff: 01/17/2020
+ms.locfileid: "41217013"
 ---
 # <a name="automatically-open-a-task-pane-with-a-document"></a>随文档自动打开任务窗格
 
@@ -159,8 +159,7 @@ Office.context.document.settings.saveAsync();
 </we:webextension>
 ```
 
-若要测试以前示例，请考虑加入 [Office 365 开发人员计划](/office/developer-program/office-365-developer-program)，并注册以获取一个 [Office 365 开发人员帐户](https://developer.microsoft.com/office/dev-program)（如果还没有 Office 365 订阅）。 可以实际测试驱动集中部署，并验证外接程序是否按预期工作。
-
+可使用 Office 365 订阅测试上一个示例以尝试集中式部署，并验证你的加载项是否按预期工作。 如果你还没有 Office 365 订阅，可以通过加入 [Office 365 开发人员计划](https://developer.microsoft.com/office/dev-program)获得 90 天免费的可续订 Office 365 订阅。
 
 ## <a name="see-also"></a>另请参阅
 

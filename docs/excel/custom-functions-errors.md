@@ -3,17 +3,17 @@ ms.date: 11/04/2019
 description: '处理和返回自定义函数中类似 #NULL! 的错误'
 title: 处理和返回自定义函数中的错误（预览）
 localization_priority: Priority
-ms.openlocfilehash: b51161c3f5292ffdfb516a731b102a634aaf7d83
-ms.sourcegitcommit: 44f1a4a3e1ae3c33d7d5fabcee14b84af94e03da
+ms.openlocfilehash: 5c62b7ccfbc1f0b450e6f36a0fd32f76fe099716
+ms.sourcegitcommit: 212c810f3480a750df779777c570159a7f76054a
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "39670151"
+ms.lasthandoff: 01/17/2020
+ms.locfileid: "41217069"
 ---
 # <a name="handle-and-return-errors-from-your-custom-function-preview"></a>处理和返回自定义函数中的错误（预览）
 
 > [!NOTE]
-> 本文中所述的功能目前处于预览阶段，可能会发生更改。 暂不支持在生产环境中使用。 若要试用预览功能，需[加入 Office 预览体验计划](https://insider.office.com/join)。  试用预览版功能的好方法是使用 Office 365 订阅。 如果还没有 Office 365 订阅，可以通过加入 [Office 365 开发人员计划](https://developer.microsoft.com/office/dev-program)获取一个订阅。
+> 本文中所述的功能目前处于预览阶段，可能会发生更改。 暂不支持在生产环境中使用。 若要试用预览功能，需[加入 Office 预览体验计划](https://insider.office.com/join)。  试用预览版功能的好方法是使用 Office 365 订阅。 如果你还没有 Office 365 订阅，可以通过加入 [Office 365 开发人员计划](https://developer.microsoft.com/office/dev-program)获得 90 天免费的可续订 Office 365 订阅。
 
 如果自定义函数运行时出现错误，你需要返回一个错误以告知用户此情况。 如果你有特定参数要求（例如仅限正数），则需要测试参数，如果不正确，需要引发错误。 还可以使用 `try`-`catch` 块来捕获自定义函数运行时发生的任何错误。
 

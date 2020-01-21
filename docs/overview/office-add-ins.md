@@ -1,18 +1,20 @@
 ---
 title: Office 加载项平台概述 | Microsoft Docs
 description: 使用熟悉的 Web 技术，例如 HTML、CSS 和 JavaScript 来扩展 Word、Excel、PowerPoint、OneNote、Project 和 Outlook，并与其进行交互。
-ms.date: 12/24/2019
+ms.date: 01/14/2020
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: bb3a2005679e82134d6dd045878349847ee6d916
-ms.sourcegitcommit: 350f5c6954dec3e9384e2030cd3265aaba7ae904
+ms.openlocfilehash: 3ecca3e36108b831899e9488459687cb2acc3c98
+ms.sourcegitcommit: 212c810f3480a750df779777c570159a7f76054a
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/23/2019
-ms.locfileid: "40851360"
+ms.lasthandoff: 01/17/2020
+ms.locfileid: "41216981"
 ---
 # <a name="office-add-ins-platform-overview"></a>Office 加载项平台概述
+
+![Office 加载项可扩展性图像](../images/addins-overview.png)
 
 可以使用 Office 加载项平台来生成解决方案，用于扩展 Office 应用程序，并与 Office 文档中的内容进行交互。通过 Office 加载项，可以使用熟悉的 Web 技术（如 HTML、CSS 和 JavaScript）来扩展 Word、Excel、PowerPoint、OneNote，Project 和 Outlook，并与之交互。解决方案可以跨多个平台（包括 Windows、Mac、iPad 和浏览器）在 Office 中运行。
 
@@ -25,6 +27,8 @@ ms.locfileid: "40851360"
 ## <a name="how-are-office-add-ins-different-from-com-and-vsto-add-ins"></a>Office 加载项与 COM 和 VSTO 加载项有何不同？
 
 COM 或 VSTO 加载项是旧 Office 集成解决方案，仅在 Windows 版 Office 上运行。与 COM 加载项不同，Office 加载项不涉及在用户设备或 Office 客户端中运行的代码。对于 Office 加载项，主机应用程序（例如 Excel）会读取加载项清单，并挂钩 UI 中的加载项自定义功能区按钮和菜单命令。如果需要，它加载加载项的 JavaScript 和 HTML 代码，此代码在沙盒中的浏览器上下文范围内执行。
+
+![使用 Office 加载项的理由的图像](../images/why.png)
 
 相较于使用 VBA、COM 或 VSTO 生成的加载项，Office 加载项提供以下优势：
 
@@ -39,10 +43,6 @@ COM 或 VSTO 加载项是旧 Office 集成解决方案，仅在 Windows 版 Offi
 ## <a name="components-of-an-office-add-in"></a>Office 外接程序的组件
 
 Office 外接程序包括两个基本组件：XML 清单文件和你自己的 Web 应用程序。此清单定义各种设置，包括将外接程序与 Office 客户端集成的方式。需要在 Web 服务器或 Web 托管服务上托管 Web 应用程序，例如 Microsoft Azure。
-
-*图 1：加载项清单 (XML) + 网页 （HTML、JS）= Office 加载项*
-
-![清单 + 网页 = Office 加载项](../images/about-addins-manifestwebpage.png)
 
 ### <a name="manifest"></a>清单
 
