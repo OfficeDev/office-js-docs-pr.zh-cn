@@ -1,15 +1,15 @@
 ---
 title: 生成首个 OneNote 任务窗格加载项
 description: ''
-ms.date: 12/24/2019
+ms.date: 01/16/2020
 ms.prod: onenote
 localization_priority: Priority
-ms.openlocfilehash: 2e8c560aa02de690fa4e6abae25d0625379e26ad
-ms.sourcegitcommit: 350f5c6954dec3e9384e2030cd3265aaba7ae904
+ms.openlocfilehash: 2c7cd2a7adbfc8b5c368c4933a3910d4b3d32b82
+ms.sourcegitcommit: 8bce9c94540ed484d0749f07123dc7c72a6ca126
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/23/2019
-ms.locfileid: "40851563"
+ms.lasthandoff: 01/22/2020
+ms.locfileid: "41265683"
 ---
 # <a name="build-your-first-onenote-task-pane-add-in"></a>生成首个 OneNote 任务窗格加载项
 

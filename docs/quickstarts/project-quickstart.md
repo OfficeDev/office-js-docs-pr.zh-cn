@@ -1,15 +1,15 @@
 ---
 title: 生成首个 Project 任务窗格加载项
 description: ''
-ms.date: 12/24/2019
+ms.date: 01/16/2020
 ms.prod: project
 localization_priority: Priority
-ms.openlocfilehash: 3de9df0dbca53e244fe2431bfa2884694e6ac232
-ms.sourcegitcommit: 350f5c6954dec3e9384e2030cd3265aaba7ae904
+ms.openlocfilehash: cb2b76b989b62e3bb851f4a2b3ab27302fe0b21d
+ms.sourcegitcommit: 8bce9c94540ed484d0749f07123dc7c72a6ca126
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/23/2019
-ms.locfileid: "40851311"
+ms.lasthandoff: 01/22/2020
+ms.locfileid: "41265676"
 ---
 # <a name="build-your-first-project-task-pane-add-in"></a>生成首个 Project 任务窗格加载项
 
