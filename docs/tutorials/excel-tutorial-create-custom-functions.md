@@ -1,15 +1,15 @@
 ---
 title: Excel 自定义函数教程
 description: 在本教程中，你将创建一个 Excel 外接程序，其中包含可执行计算、请求 Web 数据或流 Web 数据的自定义函数。
-ms.date: 09/18/2019
+ms.date: 01/16/2020
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: 4481d63cc167c2ce05ec70331ccd7fd472d7846b
-ms.sourcegitcommit: a0257feabcfe665061c14b8bdb70cf82f7aca414
+ms.openlocfilehash: 63379c74897a5f232804241726ac7def1809f5c1
+ms.sourcegitcommit: 8bce9c94540ed484d0749f07123dc7c72a6ca126
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/18/2019
-ms.locfileid: "37035446"
+ms.lasthandoff: 01/22/2020
+ms.locfileid: "41265534"
 ---
 # <a name="tutorial-create-custom-functions-in-excel"></a>教程：在 Excel 中创建自定义函数
 
@@ -69,7 +69,7 @@ ms.locfileid: "37035446"
 npm run start:desktop
 ```
 
-# <a name="excel-on-the-webtabexcel-online"></a>[在 web 上的 Excel](#tab/excel-online)
+# <a name="excel-on-the-webtabexcel-online"></a>[Excel 网页版](#tab/excel-online)
 
 若要在 Excel 中的浏览器上测试外接程序，请运行以下命令。 运行此命令时，本地 Web 服务器将启动。
 
@@ -155,7 +155,7 @@ npm run start:web
     ![在 Windows Excel 中插入带有 "我的外接程序" 列表中突出显示 Excel 自定义函数外接程序的功能区](../images/list-starcount.png)
 
 
-# <a name="excel-on-the-webtabexcel-online"></a>[在 web 上的 Excel](#tab/excel-online)
+# <a name="excel-on-the-webtabexcel-online"></a>[Excel 网页版](#tab/excel-online)
 
 1. 在 Excel 中，选择 "**插入**" 选项卡，然后选择 "**外接程序**"。 ![在 Excel 中的 "我的外接程序" 图标突出显示的网页中插入功能区](../images/excel-cf-online-register-add-in-1.png)
 
@@ -222,7 +222,7 @@ function clock(invocation) {
 3. 在可用加载项列表中，找到 "**开发人员外**接程序" 部分，然后选择 " **starcount** " 外接程序进行注册。
     ![在 Windows Excel 中插入带有 "我的外接程序" 列表中突出显示 Excel 自定义函数外接程序的功能区](../images/list-starcount.png)
 
-# <a name="excel-on-the-webtabexcel-online"></a>[在 web 上的 Excel](#tab/excel-online)
+# <a name="excel-on-the-webtabexcel-online"></a>[Excel 网页版](#tab/excel-online)
 
 1. 在 Excel 中，选择 "**插入**" 选项卡，然后选择 "**外接程序**"。 ![在 Excel 中的 "我的外接程序" 图标突出显示的网页中插入功能区](../images/excel-cf-online-register-add-in-1.png)
 

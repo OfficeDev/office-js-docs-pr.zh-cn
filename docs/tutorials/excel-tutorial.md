@@ -1,15 +1,15 @@
 ---
 title: Excel 加载项教程
 description: 在本教程中，你将学习如何构建一个 Excel 外接程序，用于创建、填充、筛选和排序表格、创建图表、冻结表格标题、保护工作表并打开对话框。
-ms.date: 11/26/2019
+ms.date: 01/16/2020
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: 48f4decc0cadddecd5669b960238ddd3381f0932
-ms.sourcegitcommit: 350f5c6954dec3e9384e2030cd3265aaba7ae904
+ms.openlocfilehash: 3d9350d30a89d917c30efdbaf91c0c0a5d523724
+ms.sourcegitcommit: 8bce9c94540ed484d0749f07123dc7c72a6ca126
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/23/2019
-ms.locfileid: "40851416"
+ms.lasthandoff: 01/22/2020
+ms.locfileid: "41265583"
 ---
 # <a name="tutorial-create-an-excel-task-pane-add-in"></a>教程：创建 Excel 任务窗格加载项
 
@@ -190,7 +190,7 @@ ms.locfileid: "40851416"
         npm start
         ```
 
-    - 若要在 web 上的 Excel 中测试外接程序，请在项目的根目录中运行以下命令。 运行此命令时，本地 Web 服务器将启动（如果尚未运行）。
+    - 若要在 web 上的 Excel 中测试外接程序，请在项目的根目录中运行以下命令。 如果你运行此命令，本地 Web 服务器将启动（如果尚未运行的话）。
 
         ```command&nbsp;line
         npm run start:web
@@ -745,7 +745,7 @@ ms.locfileid: "40851416"
         npm start
         ```
 
-    - 若要在 web 上的 Excel 中测试外接程序，请在项目的根目录中运行以下命令。 运行此命令时，本地 Web 服务器将启动（如果尚未运行）。
+    - 若要在 web 上的 Excel 中测试外接程序，请在项目的根目录中运行以下命令。 如果你运行此命令，本地 Web 服务器将启动（如果尚未运行的话）。
 
         ```command&nbsp;line
         npm run start:web
@@ -1019,6 +1019,6 @@ ms.locfileid: "40851416"
 ## <a name="see-also"></a>另请参阅
 
 * [Office 加载项平台概述](../overview/office-add-ins.md)
-* [生成 Office 外接程序](../overview/office-add-ins-fundamentals.md)
-* [开发 Office 外接程序](../develop/develop-overview.md)
+* [构建 Office 加载项](../overview/office-add-ins-fundamentals.md)
+* [开发 Office 加载项](../develop/develop-overview.md)
 * [Excel JavaScript API 基本编程概念](../excel/excel-add-ins-core-concepts.md)

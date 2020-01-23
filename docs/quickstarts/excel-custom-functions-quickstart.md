@@ -1,15 +1,15 @@
 ---
-ms.date: 09/18/2019
+ms.date: 01/16/2020
 description: 在 Excel 快速入门指南中开发自定义函数。
 title: 自定义功能快速入门
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: f34a8817a7c8ef2679fc8ce0a6ad17cec600531b
-ms.sourcegitcommit: a0257feabcfe665061c14b8bdb70cf82f7aca414
+ms.openlocfilehash: 7446de52832a70b30bbe39c71b37e80e006dc62f
+ms.sourcegitcommit: 8bce9c94540ed484d0749f07123dc7c72a6ca126
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/18/2019
-ms.locfileid: "37035327"
+ms.lasthandoff: 01/22/2020
+ms.locfileid: "41265562"
 ---
 # <a name="get-started-developing-excel-custom-functions"></a>开始开发 Excel 自定义函数
 
@@ -56,7 +56,7 @@ ms.locfileid: "37035327"
 
 4. 启动在 Node.js 中运行的本地 Web 服务器。 您可以在 Excel 网页或 Windows 中试用自定义函数加载项。 系统可能会提示您打开加载项的任务窗格，但这是可选的。 您仍可以运行自定义函数，而无需打开加载项的任务窗格。
 
-# <a name="excel-on-windowstabexcel-windows"></a>[Windows 上的 Excel](#tab/excel-windows)
+# <a name="excel-on-windowstabexcel-windows"></a>[Windows 版 Excel](#tab/excel-windows)
 
 若要在 Windows 中的 Excel 中测试外接程序，请运行以下命令。 运行此命令时，本地 web 服务器将启动，并且 Excel 将在加载的外接程序中打开。
 
@@ -64,7 +64,7 @@ ms.locfileid: "37035327"
 npm run start:desktop
 ```
 
-# <a name="excel-on-the-webtabexcel-online"></a>[在 web 上的 Excel](#tab/excel-online)
+# <a name="excel-on-the-webtabexcel-online"></a>[Excel 网页版](#tab/excel-online)
 
 若要在 Excel 网页上测试您的外接程序，请运行以下命令。 运行此命令时，本地 Web 服务器将启动。
 
