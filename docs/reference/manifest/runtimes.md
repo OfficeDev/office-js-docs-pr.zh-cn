@@ -1,14 +1,14 @@
 ---
 title: 清单文件中的运行时
 description: ''
-ms.date: 01/06/2020
+ms.date: 01/24/2020
 localization_priority: Normal
-ms.openlocfilehash: ec2b85a92325eb4e36c61f731369ec54d44ef169
-ms.sourcegitcommit: 0dacbe7c80ed387099e3ec21e151f8990b181ede
+ms.openlocfilehash: 6682887935ee6894b5a311ad519408067452bb23
+ms.sourcegitcommit: 72d719165cc2b64ac9d3c51fb8be277dfde7d2eb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/13/2020
-ms.locfileid: "41111175"
+ms.lasthandoff: 01/25/2020
+ms.locfileid: "41554004"
 ---
 # <a name="runtimes-element"></a>运行时元素
 
@@ -32,4 +32,4 @@ ms.locfileid: "41111175"
 
 ## <a name="see-also"></a>另请参阅
 
--[时](runtimes.md)
+- [运行时](runtime.md)

@@ -1,34 +1,46 @@
 ---
 title: 使用 Excel JavaScript API 处理数据透视表
 description: 使用 Excel JavaScript API 创建数据透视表并与其组件进行交互。
-ms.date: 10/22/2019
+ms.date: 01/22/2020
 localization_priority: Normal
-ms.openlocfilehash: 5fc70437ce61a49ac5dcd359214b3cca79c71ac1
-ms.sourcegitcommit: 5ba325cc88183a3f230cd89d615fd49c695addcf
+ms.openlocfilehash: 39dca0ca3f964133af64066641d7bb07222c7834
+ms.sourcegitcommit: 72d719165cc2b64ac9d3c51fb8be277dfde7d2eb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "37681954"
+ms.lasthandoff: 01/25/2020
+ms.locfileid: "41554026"
 ---
 # <a name="work-with-pivottables-using-the-excel-javascript-api"></a>使用 Excel JavaScript API 处理数据透视表
 
-数据透视表精简了较大的数据集。 它们允许快速操作分组数据。 Excel JavaScript API 允许你的外接程序创建数据透视表并与其组件进行交互。
+数据透视表精简了较大的数据集。 它们允许快速操作分组数据。 Excel JavaScript API 允许你的外接程序创建数据透视表并与其组件进行交互。 本文介绍了 Office JavaScript API 如何表示数据透视表，并提供了主要方案的代码示例。
 
 如果您对数据透视表的功能不熟悉，请考虑将其作为最终用户来浏览。
 有关这些工具的最佳入门知识，请参阅[创建数据透视表以分析工作表数据](https://support.office.com/article/Import-and-analyze-data-ccd3c4a6-272f-4c97-afbb-d3f27407fcde#ID0EAABAAA=PivotTables)。
 
-本文提供了常见方案的代码示例。 若要进一步了解数据透视表 API，请参阅[**数据透视表**](/javascript/api/excel/excel.pivottable)和[**PivotTableCollection**](/javascript/api/excel/excel.pivottablecollection)。
-
 > [!IMPORTANT]
 > 目前不支持使用 OLAP 创建的数据透视表。 此外，也不支持 Power Pivot。
 
-## <a name="hierarchies"></a>Hierarchies
+## <a name="object-model"></a>对象模型
 
-数据透视表基于四种层次结构类别进行组织：行、列、数据和筛选器。 在本文中，将使用从各个服务器场中描述水果销售的以下数据。
+[数据透视表](/javascript/api/excel/excel.pivottable)是 OFFICE JavaScript API 中数据透视表的中心对象。
+
+- `Workbook.pivotTables`并且`Worksheet.pivotTables`是分别在工作簿和工作表中包含[数据透视](/javascript/api/excel/excel.pivottable)表的[PivotTableCollections](/javascript/api/excel/excel.pivottablecollection) 。
+- [数据透视表](/javascript/api/excel/excel.pivottable)包含具有多个[PivotHierarchies](/javascript/api/excel/excel.pivothierarchy)的[PivotTableCollections](/javascript/api/excel/excel.pivottablecollection) 。
+- [PivotHierarchy](/javascript/api/excel/excel.pivothierarchy)包含一个仅具有一个[透视字段](/javascript/api/excel/excel.pivotfield)的[PivotFieldCollection](/javascript/api/excel/excel.pivotfieldcollection) 。 如果设计扩展以包含 OLAP 数据透视表，则可能会发生更改。
+- [透视字段](/javascript/api/excel/excel.pivotfield)包含具有多个[PivotItems](/javascript/api/excel/excel.pivotitem)的[PivotItemCollection](/javascript/api/excel/excel.pivotitemcollection) 。
+- [数据透视表](/javascript/api/excel/excel.pivottable)包含一个[PivotLayout](/javascript/api/excel/excel.pivotlayout) ，用于定义在工作表中显示[透视字段](/javascript/api/excel/excel.pivotfield)和[PivotItems](/javascript/api/excel/excel.pivotitem)的位置。
+
+让我们来看看这些关系如何应用于一些示例数据。 以下数据介绍了来自不同服务器场的水果销售。 本主题将是本文中的示例。
 
 ![来自不同服务器场的不同类型的水果销售的集合。](../images/excel-pivots-raw-data.png)
 
-此数据具有五个层次**结构：服务器场、****类型**、**分类**、**服务器场中销售的 Crates**和**Crates 销售批发**。 每个层次结构只能存在于四个类别之一中。 如果**Type**添加到列层次结构中，然后添加到行层次结构中，则它仅保留在后者中。
+此水果可使用的销售数据将用于制作数据透视表。 每个列（例如 "**类型**"） `PivotHierarchy`是。 "**类型**" 层次结构包含 "**类型**" 字段。 "**类型**" 字段包含**苹果**、 **Kiwi**、**柠檬**、**酸**橙色和**橙色**的项。
+
+### <a name="hierarchies"></a>Hierarchies
+
+数据透视表基于四种层次结构类别进行组织：[行](/javascript/api/excel/excel.rowcolumnpivothierarchy)、[列](/javascript/api/excel/excel.rowcolumnpivothierarchy)、[数据](/javascript/api/excel/excel.datapivothierarchy)和[筛选器](/javascript/api/excel/excel.filterpivothierarchy)。
+
+前面显示的服务器场数据具有五个层次**结构：服务器场、****类型**、**分类**、**服务器场中销售的 Crates**和**Crates 销售批发**。 每个层次结构只能存在于四个类别之一中。 如果**Type**添加到列层次结构，则它不能也在行、数据或筛选器层次结构中。 如果**类型**随后添加到行层次结构中，则会将其从列层次结构中删除。 无论是通过 Excel UI 还是 Excel JavaScript Api 执行层次结构分配，此行为都相同。
 
 行和列层次结构定义数据的分组方式。 例如，**服务器场**的行层次结构将把来自同一个服务器场的所有数据集组合在一起。 在行和列层次结构之间进行选择，以定义数据透视表的方向。
 
@@ -36,7 +48,7 @@ ms.locfileid: "37681954"
 
 筛选器层次结构基于该筛选类型中的值包括或排除数据透视表中的数据。 选定类型为 "**有机**" 的**分类**筛选器层次结构仅显示用于随机水果的数据。
 
-下面是数据透视表旁边的服务器场数据。 数据透视表使用**服务器场**和**类型**作为行层次结构，**在服务器场中售出的 Crates**和**Crates 销售批发**作为数据层次结构（具有 sum 的默认聚合函数）和**分类**作为筛选器层次结构（选择了**随机**选择的层次结构）。 
+下面是数据透视表旁边的服务器场数据。 数据透视表使用**服务器场**和**类型**作为行层次结构， **Crates 在服务器场**和**Crates 销售批发**作为数据层次结构（具有 sum 的默认聚合函数）和**分类**作为筛选器层次结构（带有**随机**选择的）。
 
 ![选择了具有行、数据和筛选器层次结构的数据透视表旁边的水果销售数据。](../images/excel-pivot-table-and-data.png)
 
@@ -275,10 +287,12 @@ Excel.run(function (context) {
 `ShowAsRule`对象具有三个属性：
 
 - `calculation`：要应用于数据层次结构的相对计算的类型（默认值为`none`）。
-- `baseField`：层次结构中的字段，其中包含在应用计算之前的基础数据。 [透视字段](/javascript/api/excel/excel.pivotfield)的名称通常与其父层次结构的名称相同。
+- `baseField`：在应用计算之前包含基础数据的层次结构中的[透视字段](/javascript/api/excel/excel.pivotfield)。 由于 Excel 数据透视表的层次结构与字段的一对一映射，因此将使用相同的名称来访问层次结构和字段。
 - `baseItem`：个人[PivotItem](/javascript/api/excel/excel.pivotitem)根据计算类型与基本字段的值进行比较。 并非所有计算都需要此字段。
 
-以下示例将场数据层次结构中的 " **Crates**总数" 的计算设置为列总计的百分比。 我们仍希望将粒度扩展到水果类型级别，因此我们将使用**类型**行层次结构及其基础字段。 该示例还将**服务器场**作为第一个行的层次结构，因此服务器场总数将显示每个服务器场也负责生成的百分比。
+以下示例将场数据层次结构中的 " **Crates**总数" 的计算设置为列总计的百分比。
+我们仍希望将粒度扩展到水果类型级别，因此我们将使用**类型**行层次结构及其基础字段。
+该示例还将**服务器场**作为第一个行的层次结构，因此服务器场总数将显示每个服务器场也负责生成的百分比。
 
 ![显示与每个场中的单个服务器场和各个水果类型的总和相关的水果销售百分比的数据透视表。](../images/excel-pivots-showas-percentage.png)
 
@@ -300,9 +314,9 @@ Excel.run(function (context) {
 });
 ```
 
-上面的示例将计算设置为相对于单个行层次结构的列。 当计算与单个项目相关时，请使用`baseItem`属性。
+上面的示例将计算设置为相对于单个行层次结构的字段的列。 当计算与单个项目相关时，请使用`baseItem`属性。
 
-下面的示例演示了`differenceFrom`计算。 它显示服务器场与 "服务器场" 相关的 "销售数据" 层次结构条目的差异。
+下面的示例演示了`differenceFrom`计算。 它显示场中相对于**服务器场**中的销售数据层次结构条目的不同之处。
 `baseField`是**服务器场**，因此我们看到其他服务器场之间的差异，以及每种类型的类似水果（在此示例中**类型**也是行层次结构）的细目。
 
 ![显示 "一群" 和其他 "服务器场" 之间的水果销售差异的数据透视表。 这显示了服务器场的总水果销售和水果类型销售的差异。 如果 "服务器场" 未销售特定类型的水果，则显示 "#N/A"。](../images/excel-pivots-showas-differencefrom.png)

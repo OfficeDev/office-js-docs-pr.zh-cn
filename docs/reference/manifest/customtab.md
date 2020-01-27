@@ -1,14 +1,14 @@
 ---
 title: 清单文件中的 CustomTab 元素
 description: ''
-ms.date: 04/29/2019
+ms.date: 01/24/2020
 localization_priority: Normal
-ms.openlocfilehash: 4fa7dd86736b5ab421be5653f2e256a6b84fb480
-ms.sourcegitcommit: b3996b1444e520b44cf752e76eef50908386ca26
+ms.openlocfilehash: c48e526534a3c1295e9c3f0c6fc626df94a874d3
+ms.sourcegitcommit: 72d719165cc2b64ac9d3c51fb8be277dfde7d2eb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "33517392"
+ms.lasthandoff: 01/25/2020
+ms.locfileid: "41554011"
 ---
 # <a name="customtab-element"></a>CustomTab 元素
 
@@ -17,6 +17,9 @@ ms.locfileid: "33517392"
 在自定义选项卡上，外接程序可以创建最多 10 个组。每个组限制为 6 个控件，不论它显示在哪个选项卡上。外接程序限定到一个自定义选项卡。
 
 **id** 属性在清单中必须是唯一的。
+
+> [!IMPORTANT]
+> 在 Mac 上的 Outlook 中`CustomTab` ，该元素不可用，因此您必须改用[OfficeTab](officetab.md) 。
 
 ## <a name="child-elements"></a>子元素
 
