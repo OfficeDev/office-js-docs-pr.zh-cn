@@ -1,14 +1,14 @@
 ---
 title: Office 外接程序主机和平台可用性
 description: Excel、OneNote、Outlook、PowerPoint、Project 和 Word 支持的要求集。
-ms.date: 11/15/2019
+ms.date: 01/23/2020
 localization_priority: Priority
-ms.openlocfilehash: 956ee6b8a9e990a3d6d942ee4a65a1e9275ea025
-ms.sourcegitcommit: 350f5c6954dec3e9384e2030cd3265aaba7ae904
+ms.openlocfilehash: b30fe872fd89bb02afac99a7838d43d1fbee5464
+ms.sourcegitcommit: 72d719165cc2b64ac9d3c51fb8be277dfde7d2eb
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/23/2019
-ms.locfileid: "40851367"
+ms.lasthandoff: 01/25/2020
+ms.locfileid: "41554018"
 ---
 # <a name="office-add-in-host-and-platform-availability"></a>Office 外接程序主机和平台可用性
 
@@ -279,7 +279,7 @@ ms.locfileid: "40851367"
 
 *&ast; - 已添加发布后更新。*
 
-## <a name="custom-functions"></a>自定义函数
+## <a name="custom-functions-excel-only"></a>自定义函数（仅 Excel）
 
 <table style="width:80%">
   <tr>
@@ -293,7 +293,7 @@ ms.locfileid: "40851367"
     <td>
         - 自定义函数</td>
     <td>
-        - <a href="/office/dev/add-ins/reference/requirement-sets/excel-api-requirement-sets">CustomFunctionsRuntime 1.1</a></td>
+        - <a href="/office/dev/add-ins/excel/custom-functions-requirement-sets">CustomFunctionsRuntime 1.1</a></td>
     <td>
     </td>
   </tr>
@@ -302,7 +302,7 @@ ms.locfileid: "40851367"
     <td>
         - 自定义函数</td>
     <td>
-        - <a href="/office/dev/add-ins/reference/requirement-sets/excel-api-requirement-sets">CustomFunctionsRuntime 1.1</a></td>
+        - <a href="/office/dev/add-ins/excel/custom-functions-requirement-sets">CustomFunctionsRuntime 1.1</a></td>
     <td>
     </td>
   </tr>
@@ -311,7 +311,7 @@ ms.locfileid: "40851367"
     <td>
         - 自定义函数</td>
     <td>
-        - <a href="/office/dev/add-ins/reference/requirement-sets/excel-api-requirement-sets">CustomFunctionsRuntime 1.1</a></td>
+        - <a href="/office/dev/add-ins/excel/custom-functions-requirement-sets">CustomFunctionsRuntime 1.1</a></td>
     <td>
     </td>
   </tr>
