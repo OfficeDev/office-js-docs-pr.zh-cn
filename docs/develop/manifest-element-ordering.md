@@ -3,12 +3,12 @@ title: 如何查找清单元素的正确顺序
 description: 了解如何查找在父元素中放置子元素的正确顺序。
 ms.date: 08/22/2019
 localization_priority: Normal
-ms.openlocfilehash: 6e88ee4f6eac09d4af8bc79a53f5faf890551a15
-ms.sourcegitcommit: 0dacbe7c80ed387099e3ec21e151f8990b181ede
+ms.openlocfilehash: ae09fa90345188a80c910c6bad69fbbc7ad85c5b
+ms.sourcegitcommit: 413f163729183994de61a8281685184b377ef76c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/13/2020
-ms.locfileid: "41111051"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "41571381"
 ---
 # <a name="how-to-find-the-proper-order-of-manifest-elements"></a>如何查找清单元素的正确顺序
 
@@ -160,6 +160,8 @@ Office 外接程序清单中的 XML 元素必须位于正确父元素下，*且*
             <Set>
       <Hosts>
         <Host>
+            <Runtimes>
+                <Runtime>
             <AllFormFactors>
             <ExtensionPoint>
                 <Script>
@@ -257,8 +259,6 @@ Office 外接程序清单中的 XML 元素必须位于正确父元素下，*且*
                                     <SourceLocation>
                                     <Title>
                                     <FunctionName>
-        <Runtimes>
-            <Runtime>
         <Resources>
             <Images>
                 <Image>
