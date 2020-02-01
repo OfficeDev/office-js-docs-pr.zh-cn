@@ -1,25 +1,25 @@
 ---
 title: 使用 Office 对话框 API 进行身份验证和授权
 description: ''
-ms.date: 12/06/2019
+ms.date: 01/25/2020
 localization_priority: Priority
-ms.openlocfilehash: 7c8e012c2ef74e8a8e92203817b4f5f2eb60bd01
-ms.sourcegitcommit: 8c5c5a1bd3fe8b90f6253d9850e9352ed0b283ee
+ms.openlocfilehash: 7311eb4f86c52afe01b18e8ea61133b2e8267a24
+ms.sourcegitcommit: 4c9e02dac6f8030efc7415e699370753ec9415c8
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/19/2019
-ms.locfileid: "40814024"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "41649982"
 ---
 # <a name="authenticate-and-authorize-with-the-office-dialog-api"></a>使用 Office 对话框 API 进行身份验证和授权
 
-> [!NOTE]
-> 本文假设你熟悉[在 Office 加载项中使用 话框 API](dialog-api-in-office-add-ins.md)。
+许多身份验证机构（也称为安全令牌服务 (STS)）会阻止其登录页面在 iframe 中打开。 这包括 Google、Facebook 以及由 Microsoft 身份平台（以前称为 Azure AD V 2.0）保护的服务，例如 Microsoft 帐户和 Office 365（工作或学校帐户）。 这会导致 Office 加载项出现问题，因为当此加载项在 **Office 网页版**上运行时，任务窗格是一个 iframe。 如果加载项可以打开完全独立的浏览器实例,则加载项的用户只能登录到其中一个服务。 这就是为什么 Office 提供 [Office 对话框 API](dialog-api-in-office-add-ins.md)（尤其是[displayDialogAsync](/javascript/api/office/office.ui) 方法）的原因。
 
-许多身份验证机构（也称为安全令牌服务 (STS)）会阻止其登录页面在 iframe 中打开。 这包括 Google、Facebook 以及由 Microsoft 身份平台（以前称为 Azure AD V 2.0）保护的服务，例如 Microsoft 帐户和 Office 365（工作或学校帐户）。 这会导致 Office 加载项出现问题，因为当此加载项在 **Office 网页版**上运行时，任务窗格是一个 iframe。 如果加载项可以打开完全独立的浏览器实例,则加载项的用户只能登录到其中一个服务。 这就是为什么 Office 提供[对话框 API](dialog-api-in-office-add-ins.md)（尤其是 [displayDialogAsync](/javascript/api/office/office.ui) 方法）的原因。
+> [!NOTE]
+> 本文假设你熟悉[在 Office 加载项中使用 Office 对话框 API](dialog-api-in-office-add-ins.md)。
 
 使用此 API 打开的对话框具有以下特征:
 
-- 它是[非模态](https://en.wikipedia.org/wiki/Dialog_box)对话框。
+- 它是[非模态](https://en.wikipedia.org/wiki/Dialog_box)。
 - 它是完全独立于任务窗格的浏览器实例，这意味着：
   - 它拥有自己的 JavaScript 运行时环境和窗口对象及全局变量。
   - 没有与任务窗格共享的执行环境。
@@ -27,12 +27,12 @@ ms.locfileid: "40814024"
 - 对话框中打开的第一个页面必须与任务窗格位于同一域中，包括协议、子域和端口（如果有）。
 - 该对话框可通过使用 [messageParent](/javascript/api/office/office.ui#messageparent-message-) 方法将信息发送回任务窗格，但此方法只能从与任务窗格位于同一域（包括协议、子域和端口）的页面中调用。
 
-如果该对话框不是 iframe（默认值）, 则它可以打开身份提供程序的登录页面。 如下所示，该对话框的特征对你如何使用身份验证或授权库（例如 MSAL 和护照）有一定影响。
+如果该对话框不是 iframe（默认值）, 则它可以打开身份提供程序的登录页面。 如下所示，该 Office 对话框的特征对你如何使用身份验证或授权库（例如 MSAL 和护照）有一定影响。
 
 > [!NOTE]
 > 可通过以下方式配置要在浮动 iframe 中打开的对话框：只需在对 `displayDialogAsync` 的调用中传递 `displayInIframe: true` 选项。 使用对话框 API 登录时, 请*不要*这样做。
 
-## <a name="authentication-flow-with-the-dialog"></a>使用对话框的身份验证流程
+## <a name="authentication-flow-with-the-office-dialog-box"></a>使用 Office 对话框的身份验证流程
 
 下面是一个简单的典型身份验证流程。 图示后提供了详细信息。
 
@@ -57,14 +57,14 @@ ms.locfileid: "40814024"
 
 如果用户在应用中调用访问资源服务中用户数据的函数，系统会先提示用户登录相应服务，再提示用户向应用授予访问用户资源所需的权限。然后，服务将登录窗口重定向到先前注册的 URL，并传递访问令牌。应用使用访问令牌访问用户资源。
 
-可以使用对话框 API 来管理此过程，具体方法是使用与用户登录流程类似的流程。 唯一区别在于：
+可以使用 Office 对话框 API 来管理此过程，具体方法是使用与用户登录流程类似的流程。 唯一区别在于：
 
 - 如果用户先前未向应用程序授予所需的权限，则登录后会在对话框中看到这样做的提示。
 - 对话框窗口使用 `messageParent` 发送字符串化访问令牌，或将访问令牌存储在主机窗口可以检索到的位置（并使用 `messageParent` 告知主机窗口令牌可用），从而将访问令牌发送到主机窗口。 令牌具有时间限制，但在持续期间，主机窗口可以使用它直接访问用户资源，而无需进一步提示。
 
-[示例](#samples)中列出了使用对话框 API 来实现此目的的一些身份验证示例加载项。
+[示例](#samples)中列出了使用 Office 对话框 API 来实现此目的的一些身份验证示例加载项。
 
-## <a name="using-authentication-libraries-with-the-dialog"></a>将身份验证库与对话框结合使用
+## <a name="using-authentication-libraries-with-the-dialog-box"></a>将身份验证库与对话框结合使用
 
 Office 对话框和任务窗格在不同的浏览器、JavaScript 运行时实例中运行意味着你必须使用多个身份验证/授权库，其使用方式必须与在同一窗口中进行身份验证和授权时使用它们的方式不同。 以下部分介绍了通常无法使用这些库的主要方式，以及*可以*使用这些库的方式。
 

@@ -139,8 +139,16 @@
               displayName: manifest
             - name: 本地化
               href: develop/localization.md
-            - name: 打开对话框
-              href: develop/dialog-api-in-office-add-ins.md
+            - name: 对话框
+              items:
+                - name: 在 Office 加载项中使用 Office 对话框 API
+                  href: develop/dialog-api-in-office-add-ins.md
+                - name: Office 对话框 API 最佳做法和规则
+                  href: develop/dialog-best-practices.md
+                - name: 处理 Office 对话框中的错误和事件
+                  href: develop/dialog-handle-errors-events.md
+                - name: 使用 Office 对话框播放视频
+                  href: develop/dialog-video.md
             - name: 性能
               href: concepts/resource-limits-and-performance-optimization.md
             - name: 隐私和安全
@@ -606,9 +614,6 @@
         - name: 身份验证
           href: excel/custom-functions-authentication.md
           displayName: 'Excel, Custom Functions'
-        - name: 批处理
-          href: excel/custom-functions-batching.md
-          displayName: 'Excel, Custom Functions'
         - name: 调试
           href: excel/custom-functions-debugging.md
           displayName: 'Excel, Custom Functions'
@@ -998,3 +1003,16 @@
         - name: 使用搜索选项在 Word 加载项中查找文本
           href: word/search-option-guidance.md
           displayName: Word
+- name: 模式和做法
+  items:
+    - name: 分享 VSTO 加载项代码至 Office 加载项
+      href: tutorials/migrate-vsto-to-office-add-in-shared-code-library-tutorial.md
+    - name: 批处理自定义函数远程调用
+      href: excel/custom-functions-batching.md
+      displayName: 'Excel, Custom Functions'
+    - name: 身份验证
+      href: develop/authentication-pnp.md
+    - name: 保存并共享自定义函数中的状态
+      href: excel/custom-functions-save-state-redirect.md
+    - name: 在 Office 解决方案中处理高 DPI 和 DPI 缩放
+      href: develop/dynamic-dpi.md
