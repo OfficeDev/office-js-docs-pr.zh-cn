@@ -1,14 +1,14 @@
 ---
 title: 适用于 Office 的 JavaScript API 的错误代码
 description: ''
-ms.date: 01/14/2020
+ms.date: 01/30/2020
 localization_priority: Normal
-ms.openlocfilehash: af8d53f81bdbefb5810ab02e3391cf3154096bef
-ms.sourcegitcommit: dc42e0276007f8ab006028b9cd0cc1526c1bd100
+ms.openlocfilehash: 286cf00bf60d0e86a68eef9183fcd887e5f30ddf
+ms.sourcegitcommit: 4c9e02dac6f8030efc7415e699370753ec9415c8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "41120612"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "41650017"
 ---
 # <a name="javascript-api-for-office-error-codes"></a>适用于 Office 的 JavaScript API 的错误代码
 
@@ -81,8 +81,10 @@ ms.locfileid: "41120612"
 |8021|超出范围|列索引值超出允许的范围。请使用一个小于列数的正值（大于等于 0）。|列索引大于表格最大列索引或小于 0。|
 |8022|超出范围|值超出允许的范围。|格式中的某些值超出支持的范围。|
 |9016|权限被拒绝|权限被拒绝|访问被拒绝。|
+|9021|保存错误|试图在服务器上保存项目时出现连接错误。|无法保存项目。 在联机模式下，这可能是由于服务器连接错误造成的。|
 |9022|不同存储区中的邮件错误|由于邮件保存在另一个存储区中，无法检索 EWS ID。|由于邮件可能已移动或发送邮箱可能已更改，无法检索当前邮件的 EWS ID。|
 |9041|网络错误|用户不再连接到网络。 请检查网络连接并重试。|用户不再拥有网络或 internet 访问权限。|
+|9043|不支持的附件类型|不支持该附件类型。|API 不支持附件类型。 例如， `item.getAttachmentContentAsync`如果附件是 rtf 格式的嵌入图像，或者如果是除电子邮件或日历项目（如联系人或任务项）以外的其他项目类型，则会引发此错误。|
 |12002|||下列一种含义：<br> - 传递给 `displayDialogAsync` 的 URL 没有对应的页面。<br> - 传递给 `displayDialogAsync` 的页面已加载，但对话框定向到找不到或无法加载的页面，或者已定向到使用无效语法的 URL。 在对话框中引发并在主机页面中触发 `DialogEventReceived` 事件。|
 |12003|||对话框定向到使用 HTTP 协议的 URL。 必须使用 HTTPS。 在对话框中引发并在主机页面中触发 `DialogEventReceived` 事件。|
 |12004|||传递给 `displayDialogAsync` 的 URL 的域不受信任。 此域必须与主机页的域相同（包括协议和端口号）。 由 `displayDialogAsync` 的调用引发。|
