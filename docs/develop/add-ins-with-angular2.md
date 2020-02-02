@@ -1,14 +1,14 @@
 ---
 title: 使用 Angular 开发 Office 加载项
 description: ''
-ms.date: 09/18/2019
+ms.date: 01/27/2020
 localization_priority: Priority
-ms.openlocfilehash: 6687cb5a661217e3bc6b240ce550edd082e565c7
-ms.sourcegitcommit: a0257feabcfe665061c14b8bdb70cf82f7aca414
+ms.openlocfilehash: 51e47b72e819a96d4766785243d542811386dca7
+ms.sourcegitcommit: 4c9e02dac6f8030efc7415e699370753ec9415c8
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/18/2019
-ms.locfileid: "37035215"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "41649975"
 ---
 # <a name="develop-office-add-ins-with-angular"></a>使用 Angular 开发 Office 加载项
 
@@ -90,7 +90,7 @@ export class AppRoutingModule { }
 
 ## <a name="using-the-office-dialog-api-with-angular"></a>将 Office 对话框 API 与 Angular 结合使用
 
-Office 加载项对话框 API 可使加载项打开半模态对话框中的页面，该页面可与主页面交换信息，这在任务窗格中是典型操作。
+Office 加载项对话框 API 可使加载项打开非模态对话框中的页面，该页面可与主页面交换信息，这在任务窗格中是典型操作。
 
 [displayDialogAsync](/javascript/api/office/office.ui) 方法采用指定应在对话框中打开的页面的 URL 的参数。外接程序可具有单独的 HTML 页面（与基本页不同）来传递此参数，或在 Angular 应用程序中传递路由的 URL。 
 

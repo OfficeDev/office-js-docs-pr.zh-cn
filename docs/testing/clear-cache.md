@@ -1,14 +1,14 @@
 ---
 title: 清除 Office 缓存
 description: 了解如何清除计算机上的 Office 缓存。
-ms.date: 01/21/2020
+ms.date: 01/29/2020
 localization_priority: Priority
-ms.openlocfilehash: 68e5c022671844ee44bf8ca8ac00bc5af6564bad
-ms.sourcegitcommit: 43166612e9b4bf7a73312a572663c8696353dbc6
+ms.openlocfilehash: aa30bbeb3f849b7d965a626f6c08791cda1104f9
+ms.sourcegitcommit: 4c9e02dac6f8030efc7415e699370753ec9415c8
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "41580959"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "41650052"
 ---
 # <a name="clear-the-office-cache"></a>清除 Office 缓存
 
@@ -18,23 +18,21 @@ ms.locfileid: "41580959"
 
 ## <a name="clear-the-office-cache-on-windows"></a>清除 Windows 上的 Office 缓存
 
-### <a name="excel-word-and-powerpoint"></a>Excel、Word 和 PowerPoint 
+如果要从 Excel、Word 和 PowerPoint 中删除所有旁加载的加载项，删除文件夹 `%LOCALAPPDATA%\Microsoft\Office\16.0\Wef\` 的内容。 
 
-若要清除 Windows 上用于 Excel、Word 和 PowerPoint 的 Office 缓存，请删除文件夹 `%LOCALAPPDATA%\Microsoft\Office\16.0\Wef\` 的内容。
+如果要从 Outlook 中删除旁加载加载项，使用 “[旁加载 Outlook 测试加载项](/outlook/add-ins/sideload-outlook-add-ins-for-testing)”来查找列出已安装加载项对话框“**自定义加载项**”部分中的加载项。为加载项选择省略号(`...`) ，然后选择“**删除**”以删除指定的加载项。
 
-### <a name="outlook-windows-10"></a>Outlook (Windows 10)
-
-若要在 Microsoft Edge 中运行加载项时清除 Windows 10 上的 Outlook 缓存，可使用 Microsoft Edge 开发工具。
+另外，若要在 Microsoft Edge 中运行加载项时清除 Windows 10 上的 Office 缓存，可使用 Microsoft Edge 开发工具。
 
 > [!TIP]
 > 如果只是希望旁加载的加载项反映对其 HTML 或 JavaScript 源文件的最新更改，则应该不需要使用以下步骤来清除缓存。 相反，只需将焦点放在加载项的任务窗格中（通过单击任务窗格中的任意位置），然后按 **F5** 以重新加载该加载项。 
 
 > [!NOTE]
-> 若要使用以下步骤清除 Outlook 缓存，加载项必须具有任务窗格。 如果加载项是无 UI 的加载项（例如，使用 [on-send](/outlook/add-ins/outlook-on-send-addins) 功能的加载项），则需要先为加载项添加一个任务窗格，且该任务窗格使用与 [SourceLocation](../reference/manifest/sourcelocation.md) 相同的域，然后才能使用以下步骤来清除缓存。
+> 若要使用以下步骤清除 Office 缓存，加载项必须具有任务窗格。 如果加载项是无 UI 的加载项（例如，使用 [on-send](/outlook/add-ins/outlook-on-send-addins) 功能的加载项），则需要先为加载项添加一个任务窗格，且该任务窗格使用与 [SourceLocation](../reference/manifest/sourcelocation.md) 相同的域，然后才能使用以下步骤来清除缓存。
 
 1. 安装 [Microsoft Edge 开发工具](https://www.microsoft.com/p/microsoft-edge-devtools-preview/9mzbfrmz0mnj)。
 
-2. 在 Outlook 中打开加载项。
+2. 在 Office 客户端中打开加载项。
 
 3. 运行 Microsoft Edge 开发工具。
 
