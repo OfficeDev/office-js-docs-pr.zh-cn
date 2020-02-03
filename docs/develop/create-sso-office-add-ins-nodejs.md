@@ -1,14 +1,14 @@
 ---
 title: 创建使用单一登录的 Node.js Office 加载项
 description: 了解如何创建使用 Office 单一登录的基于 Node.js 的 Office 加载项
-ms.date: 01/13/2020
+ms.date: 01/16/2020
 localization_priority: Priority
-ms.openlocfilehash: a3ff47f26e0db06c1c79a4f80bd814b05e80b3a3
-ms.sourcegitcommit: 212c810f3480a750df779777c570159a7f76054a
+ms.openlocfilehash: 618750cac33c7f6928a017b67a7f63deee35d29b
+ms.sourcegitcommit: 43166612e9b4bf7a73312a572663c8696353dbc6
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/17/2020
-ms.locfileid: "41217097"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "41580985"
 ---
 # <a name="create-a-nodejs-office-add-in-that-uses-single-sign-on-preview"></a>创建使用单一登录的 Node.js Office 加载项（预览）
 
@@ -21,7 +21,7 @@ ms.locfileid: "41217097"
 
 ## <a name="prerequisites"></a>先决条件
 
-* [节点和 npm](https://nodejs.org/)，版本 10.15.0 或更高版本。
+* [Node.js](https://nodejs.org/)（最新的 [LTS](https://nodejs.org/about/releases) 版本）
 
 * [Git Bash](https://git-scm.com/downloads)（或其他 git 客户端）
 
@@ -101,7 +101,7 @@ ms.locfileid: "41217097"
     - `d3590ed6-52b3-4102-aeff-aad2292ab01c` (Microsoft Office)
     - `ea5a67f6-b6f3-4338-b240-c655ddc3cc8e` (Microsoft Office)
     - `57fb890c-0dab-4253-a5e0-7188c88b2bb4`（Office 网页版）
-    - `bc59ab01-8403-45c6-8796-ac3ef710b3e3`（Office 网页版）
+    - `bc59ab01-8403-45c6-8796-ac3ef710b3e3`（Outlook 网页版）
 
     对于每个 ID，执行以下步骤：
 
