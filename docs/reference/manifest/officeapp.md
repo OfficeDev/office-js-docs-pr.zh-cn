@@ -1,14 +1,14 @@
 ---
 title: 清单文件中的 OfficeApp 元素
 description: ''
-ms.date: 10/09/2018
+ms.date: 02/04/2020
 localization_priority: Normal
-ms.openlocfilehash: 86f38ab77e98bb01370e40c8ada38bae171e0c2d
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: 080025e62a56421dff942792f99ee672ce1db69a
+ms.sourcegitcommit: c1dbea577ae6183523fb663d364422d2adbc8bcf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32450455"
+ms.lasthandoff: 02/05/2020
+ms.locfileid: "41773577"
 ---
 # <a name="officeapp-element"></a>OfficeApp 元素
 
@@ -61,7 +61,7 @@ Office 外接程序清单中的根元素。
 |[Permissions](permissions.md)||x||
 |[DisableEntityHighlighting](disableentityhighlighting.md)||x||
 |[Dictionary](dictionary.md)|||x|
-|[VersionOverrides](versionoverrides.md)||x||
+|[VersionOverrides](versionoverrides.md)|x|x|x|
 
 ## <a name="attributes"></a>属性
 

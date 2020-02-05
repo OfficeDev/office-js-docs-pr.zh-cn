@@ -1,14 +1,14 @@
 ---
 title: 清单文件中的 VersionOverrides 元素
 description: ''
-ms.date: 08/12/2019
+ms.date: 02/04/2020
 localization_priority: Normal
-ms.openlocfilehash: ce65cdced1b3cf885cee09732c2cda0081a53cfc
-ms.sourcegitcommit: da8e6148f4bd9884ab9702db3033273a383d15f0
+ms.openlocfilehash: 26183caeb4862038d5304607310aa061d37cf3f1
+ms.sourcegitcommit: c1dbea577ae6183523fb663d364422d2adbc8bcf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/20/2019
-ms.locfileid: "36477878"
+ms.lasthandoff: 02/05/2020
+ms.locfileid: "41773570"
 ---
 # <a name="versionoverrides-element"></a>VersionOverrides 元素
 
@@ -18,31 +18,40 @@ ms.locfileid: "36477878"
 
 |  属性  |  必需  |  说明  |
 |:-----|:-----|:-----|
-|  **xmlns**       |  是  |  若 `http://schemas.microsoft.com/office/mailappversionoverrides` 为 `xsi:type`，架构位置必须是 `VersionOverridesV1_0`；若 `http://schemas.microsoft.com/office/mailappversionoverrides/1.1` 为 `xsi:type`，架构位置必须是 `VersionOverridesV1_1`。|
+|  **xmlns**       |  是  |  VersionOverrides 架构命名空间。 根据此`<VersionOverrides>`元素的**xsi： type**值和父`<OfficeApp>`元素的**xsi： type**值，允许的值会有所不同。 请参阅下面的[命名空间值](#namespace-values)。|
 |  **xsi:type**  |  是  | 架构版本。目前的唯一有效值为 `VersionOverridesV1_0` 和 `VersionOverridesV1_1`。 |
 
+### <a name="namespace-values"></a>命名空间值
+
+下面列出了**xmlns**值所需的值，具体取决于父`<OfficeApp>`元素的**xsi： type**值。
+
+- **TaskPaneApp**仅支持 VersionOverrides 的1.0 版，而**xmlns**应为`http://schemas.microsoft.com/office/taskpaneappversionoverrides`。
+- **ContentApp**仅支持 VersionOverrides 的1.0 版，而**xmlns**应为`http://schemas.microsoft.com/office/contentappversionoverrides`。
+- **MailApp**支持 VersionOverrides 的版本1.0 和1.1，因此根据`<VersionOverrides>`此元素的**xsi： type**值， **xmlns**的值会有所不同：
+    - 当**xsi： type**为`VersionOverridesV1_0`时， **xmlns**必须`http://schemas.microsoft.com/office/mailappversionoverrides`为。
+    - 当**xsi： type**为`VersionOverridesV1_1`时， **xmlns**必须`http://schemas.microsoft.com/office/mailappversionoverrides/1.1`为。
+
 > [!NOTE]
-> 目前, 只有 Outlook 2016 或更高版本支持 VersionOverrides v1.1 架构和`VersionOverridesV1_1`类型。
+> 目前，只有 Outlook 2016 或更高版本支持 VersionOverrides v1.1 架构和`VersionOverridesV1_1`类型。
 
 ## <a name="child-elements"></a>子元素
 
 |  元素 |  必需  |  说明  |
 |:-----|:-----|:-----|
 |  **说明**    |  否   |  描述外接程序。这会替代清单中任何父级部分中的 `Description` 元素。说明文本包含在 **Rescources** 元素中的 [LongString](./resources.md) 元素的子元素中。`resid` 元素的 **** 属性被设置为包含文本的 `id` 元素的 `String` 属性的值。|
-| **EquivalentAddins** | 否 | 指定与等效的 COM 外接程序、XLL 或这两者的向后兼容性。 |
 |  **Requirements**  |  否   |  指定外接程序要求的最低要求集和 Office.js 的版本。这会替代清单中父级部分中的 `Requirements` 元素。|
 |  [Hosts](./hosts.md)                |  是  |  指定 Office 主机的集合。子级 Hosts 元素替代清单中父级部分中的 Hosts 元素。  |
 |  [Resources](./resources.md)    |  是  | 定义其他清单元素引用的资源集合（字符串、URL 和图像）。|
-|  [EquivalentAddins](./equivalentaddins.md)    |  否  | 指定与 web 外接程序等效的本机 (COM/XLL) 加载项。 如果安装了等效的本机加载项, 则不会激活 web 外接程序。|
+|  [EquivalentAddins](./equivalentaddins.md)    |  否  | 指定与 web 外接程序等效的本机（COM/XLL）加载项。 如果安装了等效的本机加载项，则不会激活 web 外接程序。|
 |  **VersionOverrides**    |  否  | 在新版架构下定义外接程序命令。有关详细信息，请参阅[实现多个版本](#implementing-multiple-versions)。 |
-|  [WebApplicationInfo](./webapplicationinfo.md)    |  否  | 指定有关使用安全令牌颁发者 (如 Azure Active Directory v2.0) 的加载项注册的详细信息。 |
+|  [WebApplicationInfo](./webapplicationinfo.md)    |  否  | 指定有关使用安全令牌颁发者（如 Azure Active Directory v2.0）的加载项注册的详细信息。 |
 
 ### <a name="versionoverrides-example"></a>VersionOverrides 示例
 
-下面是典型`<VersionOverrides>`元素的一个示例, 其中包括一些不需要但通常使用的子元素。
+下面是典型`<VersionOverrides>`元素的一个示例，其中包括一些不需要但通常使用的子元素。
 
 ```xml
-<OfficeApp>
+<OfficeApp ... xsi:type="MailApp">
 ...
   <VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides" xsi:type="VersionOverridesV1_0">
     <Description resid="residDescription" />
@@ -71,7 +80,7 @@ ms.locfileid: "36477878"
 若要实现 VersionOverrides v1.0 和 v1.1 架构，清单如以下示例所示：
 
 ```xml
-<OfficeApp>
+<OfficeApp ... xsi:type="MailApp">
 ...
   <VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides" xsi:type="VersionOverridesV1_0">
     <Description resid="residDescription" />
