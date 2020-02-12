@@ -2,13 +2,13 @@
 title: 使用 SSO 对 Microsoft Graph 授权
 description: ''
 ms.date: 01/14/2020
-localization_priority: Priority
-ms.openlocfilehash: b4c813bb3ffd2bf9025ac4cbf51096e1d7a72d8b
-ms.sourcegitcommit: 212c810f3480a750df779777c570159a7f76054a
-ms.translationtype: HT
+localization_priority: Normal
+ms.openlocfilehash: 77dec8eda1c630bef6277008bef4b129e29a8dae
+ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/17/2020
-ms.locfileid: "41217349"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "41949682"
 ---
 # <a name="authorize-to-microsoft-graph-with-sso-preview"></a>使用 SSO 对 Microsoft Graph 授权（预览版）
 

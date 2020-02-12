@@ -2,13 +2,13 @@
 title: 绑定到文档或电子表格中的区域
 description: ''
 ms.date: 06/20/2019
-localization_priority: Priority
-ms.openlocfilehash: 5de421f142320d5d1f8c2c31c5dac073142f0d1e
-ms.sourcegitcommit: c3673cc693fa7070e1b397922bd735ba3f9342f3
-ms.translationtype: HT
+localization_priority: Normal
+ms.openlocfilehash: dd78a4daa14dbcc0dec48c401973f9e5297de637
+ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/05/2019
-ms.locfileid: "35575588"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "41949652"
 ---
 # <a name="bind-to-regions-in-a-document-or-spreadsheet"></a>绑定到文档或电子表格中的区域
 
