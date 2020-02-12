@@ -2,13 +2,13 @@
 title: Office 外接程序的设计工具包
 description: ''
 ms.date: 06/27/2018
-localization_priority: Priority
-ms.openlocfilehash: d950792d285c14f94eb9d56b2faff1cf129dba4d
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
-ms.translationtype: HT
+localization_priority: Normal
+ms.openlocfilehash: 4e8bfcd45895be7a873462c19cca98b68cb3757b
+ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32446711"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "41950388"
 ---
 # <a name="design-toolkits"></a>设计工具包
 

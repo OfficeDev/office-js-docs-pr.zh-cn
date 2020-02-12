@@ -2,13 +2,13 @@
 title: Office 加载项使用的浏览器
 description: 指定操作系统和 Office 版本如何确定 Office 加载项使用的浏览器。
 ms.date: 12/13/2019
-localization_priority: Priority
-ms.openlocfilehash: 3709157449634dfb49805e2247e47debe60f468f
-ms.sourcegitcommit: 8c5c5a1bd3fe8b90f6253d9850e9352ed0b283ee
-ms.translationtype: HT
+localization_priority: Normal
+ms.openlocfilehash: 37d001d7feb170b11edc4f6a233f6fdc15cf3438
+ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/19/2019
-ms.locfileid: "40813982"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "41950360"
 ---
 # <a name="browsers-used-by-office-add-ins"></a>Office 加载项使用的浏览器
 
@@ -38,6 +38,10 @@ Office 加载项是使用 iFrames（在 Office 网页版中运行时）和使用
 > Internet Explorer 11 不支持高于 ES5 的 JavaScript 版本。 如果任何加载项用户安装的是使用 Internet Explorer 11 的平台，若要使用 ECMAScript 2015 或更高版本的语法和功能，则必须将 JavaScript 转换为 ES5 或使用填充代码。 此外，Internet Explorer 11 不支持媒体、录制和位置等部分 HTML5 功能。
 
 ## <a name="troubleshooting-microsoft-edge-issues"></a>Microsoft Edge 问题疑难解答
+
+### <a name="chromium-based-edge-is-installed-on-my-development-computer-but-my-add-in-does-not-use-it"></a>在我的开发计算机上安装了基于 Chromium 的边缘，但我的加载项不使用它
+
+[Microsoft Edge](https://support.microsoft.com/help/4501095/download-the-new-microsoft-edge-based-on-chromium)中的基本浏览器已更改为 Chromium。 在安装基于 Chromium 的边缘时，不会删除较早的 base （称为 "EdgeHTML"）。 Office 仍将使用加载项的 EdgeHTML 基础，直到在计算机上安装了支持 Chromium 的 Office 365 版本。 我们预计这些版本将在2020中发货。 它们可能会在预览体验频道中的年上半年显示。
 
 ### <a name="scroll-bar-does-not-appear-in-task-pane"></a>任务窗格中不显示滚动条
 

@@ -2,13 +2,13 @@
 title: 使用 Excel JavaScript API 处理事件
 description: ''
 ms.date: 10/22/2019
-localization_priority: Priority
-ms.openlocfilehash: 09de9bcb280630f883b7894221a17c37b0f73fb1
-ms.sourcegitcommit: 5ba325cc88183a3f230cd89d615fd49c695addcf
-ms.translationtype: HT
+localization_priority: Normal
+ms.openlocfilehash: 5c3a31af310edb63561fae1913a1f5541244092c
+ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "37681961"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "41950864"
 ---
 # <a name="work-with-events-using-the-excel-javascript-api"></a>使用 Excel JavaScript API 处理事件
 

@@ -2,13 +2,13 @@
 title: 在 Visual Studio 2019 中获取 JavaScript IntelliSense
 description: ''
 ms.date: 10/11/2019
-localization_priority: Priority
-ms.openlocfilehash: 26fd5b4bff2e244d84f2f8c40e3da7049189aadf
-ms.sourcegitcommit: d5ac9284d1e96dc91a9168d7641e44d88535e1a7
-ms.translationtype: HT
+localization_priority: Normal
+ms.openlocfilehash: a099d43cc798bb96078825930450dcad954c7418
+ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/31/2019
-ms.locfileid: "40914886"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "41950675"
 ---
 # <a name="get-javascript-intellisense-in-visual-studio-2019"></a>在 Visual Studio 2019 中获取 JavaScript IntelliSense
 

@@ -2,13 +2,13 @@
 ms.date: 07/09/2019
 description: 使用 Excel 中的自定义函数对用户进行身份验证。
 title: 自定义函数的身份验证
-localization_priority: Priority
-ms.openlocfilehash: f746947122da7ef3d54a0dd3b4f90dd059e5830f
-ms.sourcegitcommit: 654ac1a0c477413662b48cffc0faee5cb65fc25f
-ms.translationtype: HT
+localization_priority: Normal
+ms.openlocfilehash: aa966aeb8d8161339bab0161b4cc329a9b495d08
+ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "36268136"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "41950682"
 ---
 # <a name="authentication-for-custom-functions"></a>自定义函数的身份验证
 
@@ -45,7 +45,7 @@ ms.locfileid: "36268136"
 4. 然后，自定义函数会将此访问令牌存储在 `storage` 中。
 5. 加载项的任务窗格将从 `storage` 访问该令牌。
 
-![使用对话框 API 获取访问令牌并通过 OfficeRuntime.storage API 与任务窗格共享令牌的自定义函数关系图。](../images/authentication-diagram.png "身份验证关系图。")
+![自定义函数的关系图，使用对话框 API 获取访问令牌，然后通过 OfficeRuntime API 与任务窗格共享令牌。](../images/authentication-diagram.png "身份验证图。")
 
 ## <a name="storing-the-token"></a>存储令牌
 

@@ -2,13 +2,13 @@
 title: 使用 Windows 10 上的开发人员工具调试加载项
 description: 使用 Windows 10 上的 Microsoft Edge 开发人员工具调试加载项
 ms.date: 12/16/2019
-localization_priority: Priority
-ms.openlocfilehash: dd0f078b1cad0621dc99269b745a326adb69f7d6
-ms.sourcegitcommit: 8c5c5a1bd3fe8b90f6253d9850e9352ed0b283ee
-ms.translationtype: HT
+localization_priority: Normal
+ms.openlocfilehash: 16964b69f144d30c4ac5a9616ee4fdba2d536fd3
+ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/19/2019
-ms.locfileid: "40814470"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "41950521"
 ---
 # <a name="debug-add-ins-using-developer-tools-on-windows-10"></a>使用 Windows 10 上的开发人员工具调试加载项
 

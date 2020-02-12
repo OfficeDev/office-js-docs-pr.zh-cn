@@ -2,13 +2,13 @@
 title: 使用 Visual Studio 发布加载项
 description: 如何使用 Visual Studio 2019 部署 Web 项目并打包加载项。
 ms.date: 12/02/2019
-localization_priority: Priority
-ms.openlocfilehash: 5da7fc643eb517f777325658d01889f3e51906bd
-ms.sourcegitcommit: 44f1a4a3e1ae3c33d7d5fabcee14b84af94e03da
-ms.translationtype: HT
+localization_priority: Normal
+ms.openlocfilehash: 78b80e0c6a595f83f3a8cdde1db806a7612036ea
+ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "39670193"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "41950717"
 ---
 # <a name="publish-your-add-in-using-visual-studio"></a>使用 Visual Studio 发布加载项
 

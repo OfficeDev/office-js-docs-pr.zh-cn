@@ -2,13 +2,13 @@
 ms.date: 12/31/2019
 description: Excel 自定义函数中的常见问题疑难解答。
 title: 自定义函数疑难解答
-localization_priority: Priority
-ms.openlocfilehash: 8b26120d193ac084662ff989ac28e0456c98be3f
-ms.sourcegitcommit: d5ac9284d1e96dc91a9168d7641e44d88535e1a7
-ms.translationtype: HT
+localization_priority: Normal
+ms.openlocfilehash: 10e1e3ec934d16806aa137a6468bbdada3fc1db2
+ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/31/2019
-ms.locfileid: "40915033"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "41950829"
 ---
 # <a name="troubleshoot-custom-functions"></a>自定义函数疑难解答
 

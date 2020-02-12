@@ -2,13 +2,13 @@
 title: Office JavaScript API 对象模型
 description: ''
 ms.date: 03/19/2019
-localization_priority: Priority
-ms.openlocfilehash: 2d5067b8cd6942bee04602d5dc38effc47c504f3
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
-ms.translationtype: HT
+localization_priority: Normal
+ms.openlocfilehash: cc34d6ee9424c00bfc49762f779605f66bc9f36b
+ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32449755"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "41950773"
 ---
 # <a name="office-javascript-api-object-model"></a>Office JavaScript API 对象模型
 

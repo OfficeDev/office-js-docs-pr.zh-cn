@@ -2,13 +2,13 @@
 title: 使用 Excel JavaScript API 对区域执行操作（基本）
 description: ''
 ms.date: 04/30/2019
-localization_priority: Priority
-ms.openlocfilehash: c90ce16eeed731bcee025c4c61df1bd818b3dd6f
-ms.sourcegitcommit: c8914ce0f48a0c19bbfc3276a80d090bb7ce68e1
-ms.translationtype: HT
+localization_priority: Normal
+ms.openlocfilehash: af51e22535dd9d2d26c157d133b1bb16237a32d2
+ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/26/2019
-ms.locfileid: "37235335"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "41950871"
 ---
 # <a name="work-with-ranges-using-the-excel-javascript-api"></a>使用 Excel JavaScript API 处理区域
 

@@ -2,13 +2,13 @@
 title: 将任务窗格和内容加载项发布到 SharePoint 应用程序目录
 description: 为使组织内的用户可访问 Office 加载项，管理员可以将 Office 加载项清单文件上传到组织的应用程序目录中。
 ms.date: 06/20/2019
-localization_priority: Priority
-ms.openlocfilehash: 106dfd2b1610be92f1b53dc1644ff3f8c60c0543
-ms.sourcegitcommit: 9c5a836d4464e49846c9795bf44cfe23e9fc8fbe
-ms.translationtype: HT
+localization_priority: Normal
+ms.openlocfilehash: fe97cdb1af0cbf75eb6f1d99f81aef430e362c8e
+ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "35617028"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "41950710"
 ---
 # <a name="publish-task-pane-and-content-add-ins-to-a-sharepoint-app-catalog"></a>将任务窗格和内容加载项发布到 SharePoint 应用程序目录
 

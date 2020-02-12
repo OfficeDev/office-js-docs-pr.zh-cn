@@ -2,13 +2,13 @@
 title: 创建使用单一登录的 ASP.NET Office 加载项
 description: ''
 ms.date: 12/04/2019
-localization_priority: Priority
-ms.openlocfilehash: 6306616880138574ede8a127b7fd3c2a65061191
-ms.sourcegitcommit: 43166612e9b4bf7a73312a572663c8696353dbc6
-ms.translationtype: HT
+localization_priority: Normal
+ms.openlocfilehash: d9424b1aa0896f9783e2fb7db4160e97bf87cab5
+ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "41580978"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "41950570"
 ---
 # <a name="create-an-aspnet-office-add-in-that-uses-single-sign-on-preview"></a>创建使用单一登录的 ASP.NET Office 加载项（预览）
 

@@ -2,13 +2,13 @@
 title: Office 加载项的隐私和安全
 description: ''
 ms.date: 09/26/2019
-localization_priority: Priority
-ms.openlocfilehash: 88f03bed084484a98d4719fb9caacf174b13acda
-ms.sourcegitcommit: 0dacbe7c80ed387099e3ec21e151f8990b181ede
-ms.translationtype: HT
+localization_priority: Normal
+ms.openlocfilehash: c4f2ea5413ff1fa404c242bc729c59f9feedaca3
+ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/13/2020
-ms.locfileid: "41110932"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "41949704"
 ---
 # <a name="privacy-and-security-for-office-add-ins"></a>Office 加载项的隐私和安全
 
@@ -187,7 +187,7 @@ Exchange 和 SharePoint 提供了客户端代理以实现跨域访问。通常�
 
 - 如果要使用 jQuery，请使用 [.text()](https://api.jquery.com/text/) 方法，而非 [.html()](https://api.jquery.com/html/) 方法。
 
-- 使用 [toStaticHTML](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Reference) 方法可在将用户输入传递到 **innerHTML** 之前删除用户输入中的所有动态 HTML 元素和属性。
+- 使用 [toStaticHTML](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference) 方法可在将用户输入传递到 **innerHTML** 之前删除用户输入中的所有动态 HTML 元素和属性。
 
 - 使用 [encodeURIComponent](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/encodeuricomponent) 或 [encodeURI](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/encodeuri) 函数可对应为来自用户输入或包含用户输入的 URL 的文本进行编码。
 

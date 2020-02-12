@@ -3,12 +3,12 @@ title: 如何查找清单元素的正确顺序
 description: 了解如何查找在父元素中放置子元素的正确顺序。
 ms.date: 08/22/2019
 localization_priority: Normal
-ms.openlocfilehash: ae09fa90345188a80c910c6bad69fbbc7ad85c5b
-ms.sourcegitcommit: 413f163729183994de61a8281685184b377ef76c
+ms.openlocfilehash: 95cdce30beda5eeda73e9b06b65eff5048005723
+ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/28/2020
-ms.locfileid: "41571381"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "41950696"
 ---
 # <a name="how-to-find-the-proper-order-of-manifest-elements"></a>如何查找清单元素的正确顺序
 
@@ -163,102 +163,102 @@ Office 外接程序清单中的 XML 元素必须位于正确父元素下，*且*
             <Runtimes>
                 <Runtime>
             <AllFormFactors>
-            <ExtensionPoint>
-                <Script>
-                    <SourceLocation>
-                <Page>
-                    <SourceLocation>
-                <Metadata>
-                    <SourceLocation>
-                <Namespace>
+                <ExtensionPoint>
+                    <Script>
+                        <SourceLocation>
+                    <Page>
+                        <SourceLocation>
+                    <Metadata>
+                        <SourceLocation>
+                    <Namespace>
             <DesktopFormFactor>
-            <GetStarted>
-                <Title>
-                <Description>
-                <LearnMoreUrl>
-            <FunctionFile>
-            <ExtensionPoint>
-                <OfficeTab>
-                    <Group>
-                        <Label>
-                        <Icon>
-                            <Image>
-                        <Control>
-                        <Label>
-                        <Supertip>
-                            <Title>
-                            <Description>
-                        <Icon>
-                            <Image>  
-                        <Action>
-                            <TaskpaneId>
-                            <SourceLocation>
-                            <Title>
-                            <FunctionName>
-                        <Items>
-                            <Item>
+                <GetStarted>
+                    <Title>
+                    <Description>
+                    <LearnMoreUrl>
+                <FunctionFile>
+                <ExtensionPoint>
+                    <OfficeTab>
+                        <Group>
+                            <Label>
+                            <Icon>
+                                <Image>
+                            <Control>
                             <Label>
                             <Supertip>
                                 <Title>
                                 <Description>
+                            <Icon>
+                                <Image>  
                             <Action>
                                 <TaskpaneId>
                                 <SourceLocation>
                                 <Title>
                                 <FunctionName>
-                <CustomTab>
-                    <Group>
+                            <Items>
+                                <Item>
+                                <Label>
+                                <Supertip>
+                                    <Title>
+                                    <Description>
+                                <Action>
+                                    <TaskpaneId>
+                                    <SourceLocation>
+                                    <Title>
+                                    <FunctionName>
+                    <CustomTab>
+                        <Group>
+                            <Label>
+                            <Icon>
+                                <Image>
+                            <Control>
+                            <Label>
+                            <Supertip>
+                                <Title>
+                                <Description>
+                            <Icon>
+                                <Image>  
+                            <Action>
+                                <TaskpaneId>
+                                <SourceLocation>
+                                <Title>
+                                <FunctionName>
+                            <Items>
+                                <Item>
+                                    <Label>
+                                    <Supertip>
+                                        <Title>
+                                        <Description>
+                                    <Action>
+                                        <TaskpaneId>
+                                        <SourceLocation>
+                                        <Title>
+                                        <FunctionName>
                         <Label>
-                        <Icon>
-                            <Image>
+                    <OfficeMenu>
                         <Control>
-                        <Label>
-                        <Supertip>
-                            <Title>
-                            <Description>
-                        <Icon>
-                            <Image>  
-                        <Action>
-                            <TaskpaneId>
-                            <SourceLocation>
-                            <Title>
-                            <FunctionName>
-                        <Items>
-                            <Item>
-                                <Label>
-                                <Supertip>
-                                    <Title>
-                                    <Description>
-                                <Action>
-                                    <TaskpaneId>
-                                    <SourceLocation>
-                                    <Title>
-                                    <FunctionName>
-                    <Label>
-                <OfficeMenu>
-                    <Control>
-                        <Label>
-                        <Supertip>
-                            <Title>
-                            <Description>
-                        <Icon>
-                            <Image>  
-                        <Action>
-                            <TaskpaneId>
-                            <SourceLocation>
-                            <Title>
-                            <FunctionName>
-                        <Items>
-                            <Item>
-                                <Label>
-                                <Supertip>
-                                    <Title>
-                                    <Description>
-                                <Action>
-                                    <TaskpaneId>
-                                    <SourceLocation>
-                                    <Title>
-                                    <FunctionName>
+                            <Label>
+                            <Supertip>
+                                <Title>
+                                <Description>
+                            <Icon>
+                                <Image>  
+                            <Action>
+                                <TaskpaneId>
+                                <SourceLocation>
+                                <Title>
+                                <FunctionName>
+                            <Items>
+                                <Item>
+                                    <Label>
+                                    <Supertip>
+                                        <Title>
+                                        <Description>
+                                    <Action>
+                                        <TaskpaneId>
+                                        <SourceLocation>
+                                        <Title>
+                                        <FunctionName>
         <Resources>
             <Images>
                 <Image>
@@ -302,6 +302,102 @@ Office 外接程序清单中的 XML 元素必须位于正确父元素下，*且*
     <Hosts>
         <Host>
             <DesktopFormFactor>
+                <ExtensionPoint>
+                    <OfficeTab>
+                        <Group>
+                            <Label>
+                            <Control>
+                                <Label>
+                                <Supertip>
+                                    <Title>
+                                    <Description>
+                                <Icon>
+                                    <Image>
+                                <Action>
+                                    <SourceLocation>
+                                    <FunctionName>
+                    <CustomTab>
+                        <Group>
+                            <Label>
+                            <Icon>
+                                <Image>
+                            <Control>
+                                <Label>
+                                <Supertip>
+                                    <Title>
+                                    <Description>
+                                <Icon>
+                                    <Image>  
+                                <Action>
+                                    <TaskpaneId>
+                                    <SourceLocation>
+                                    <Title>
+                                    <FunctionName>
+                                <Items>
+                                    <Item>
+                                        <Label>
+                                        <Supertip>
+                                            <Title>
+                                            <Description>
+                                        <Action>
+                                            <TaskpaneId>
+                                            <SourceLocation>
+                                            <Title>
+                                            <FunctionName>
+                        <Label>
+                    <OfficeMenu>
+                        <Control>
+                            <Label>
+                            <Supertip>
+                                <Title>
+                                <Description>
+                            <Icon>
+                                <Image>
+                            <Action>
+                                <TaskpaneId>
+                                <SourceLocation>
+                                <Title>
+                                <FunctionName>
+                            <Items>
+                                <Item>
+                                    <Label>
+                                    <Supertip>
+                                        <Title>
+                                        <Description>
+                                    <Action>
+                                        <TaskpaneId>
+                                        <SourceLocation>
+                                        <Title>
+                                        <FunctionName>
+    <Resources>
+        <Images>
+            <Image>
+                <Override>
+        <Urls>
+            <Url>
+                <Override>
+        <ShortStrings>
+            <String>
+                <Override>
+        <LongStrings>
+            <String>
+                <Override>
+    <VersionOverrides>*
+```
+
+\*具有`type`值`VersionOverridesV1_1`（而不是`VersionOverridesV1_0`）的 VersionOverrides 可以嵌套在外部 VersionOverrides 的末尾。 有关中`VersionOverridesV1_1`的元素排序，请参阅[VersionOverrides 1.1 Ver 中的邮件加载项元素排序](#mail-add-in-element-ordering-within-versionoverrides-ver-11)。
+
+## <a name="mail-add-in-element-ordering-within-versionoverrides-ver-11"></a>VersionOverrides Ver 中的邮件加载项元素排序。 1.1
+
+```xml
+<VersionOverrides>
+    <Description>
+    <Requirements>
+    <Sets>
+        <Set>
+    <Hosts>
+    <Host>
+        <DesktopFormFactor>
             <ExtensionPoint>
                 <OfficeTab>
                     <Group>
@@ -352,77 +448,6 @@ Office 外接程序清单中的 XML 元素必须位于正确父元素下，*且*
                             <Title>
                             <Description>
                         <Icon>
-                            <Image>
-                        <Action>
-                            <TaskpaneId>
-                            <SourceLocation>
-                            <Title>
-                            <FunctionName>
-                        <Items>
-                            <Item>
-                                <Label>
-                                <Supertip>
-                                    <Title>
-                                    <Description>
-                                <Action>
-                                    <TaskpaneId>
-                                    <SourceLocation>
-                                    <Title>
-                                    <FunctionName>
-    <Resources>
-        <Images>
-            <Image>
-                <Override>
-        <Urls>
-            <Url>
-                <Override>
-        <ShortStrings>
-            <String>
-                <Override>
-        <LongStrings>
-            <String>
-                <Override>
-    <VersionOverrides>*
-```
-
-\*具有`type`值`VersionOverridesV1_1`（而不是`VersionOverridesV1_0`）的 VersionOverrides 可以嵌套在外部 VersionOverrides 的末尾。 有关中`VersionOverridesV1_1`的元素排序，请参阅[VersionOverrides 1.1 Ver 中的邮件加载项元素排序](#mail-add-in-element-ordering-within-versionoverrides-ver-11)。
-
-## <a name="mail-add-in-element-ordering-within-versionoverrides-ver-11"></a>VersionOverrides Ver 中的邮件加载项元素排序。 1.1
-
-```xml
-<VersionOverrides>
-    <Description>
-    <Requirements>
-    <Sets>
-        <Set>
-    <Hosts>
-    <Host>
-        <DesktopFormFactor>
-        <ExtensionPoint>
-            <OfficeTab>
-                <Group>
-                    <Label>
-                    <Control>
-                        <Label>
-                        <Supertip>
-                            <Title>
-                            <Description>
-                        <Icon>
-                            <Image>
-                        <Action>
-                            <SourceLocation>
-                            <FunctionName>
-            <CustomTab>
-                <Group>
-                    <Label>
-                    <Icon>
-                        <Image>
-                    <Control>
-                        <Label>
-                        <Supertip>
-                            <Title>
-                            <Description>
-                        <Icon>
                             <Image>  
                         <Action>
                             <TaskpaneId>
@@ -440,35 +465,10 @@ Office 外接程序清单中的 XML 元素必须位于正确父元素下，*且*
                                     <SourceLocation>
                                     <Title>
                                     <FunctionName>
+                                    <SourceLocation>
+                <SourceLocation>
                 <Label>
-            <OfficeMenu>
-                <Control>
-                    <Label>
-                    <Supertip>
-                        <Title>
-                        <Description>
-                    <Icon>
-                        <Image>  
-                    <Action>
-                        <TaskpaneId>
-                        <SourceLocation>
-                        <Title>
-                        <FunctionName>
-                    <Items>
-                        <Item>
-                            <Label>
-                            <Supertip>
-                                <Title>
-                                <Description>
-                            <Action>
-                                <TaskpaneId>
-                                <SourceLocation>
-                                <Title>
-                                <FunctionName>
-                                <SourceLocation>
-            <SourceLocation>
-            <Label>
-            <CommandSurface>
+                <CommandSurface>
     <Resources>
         <Images>
             <Image>

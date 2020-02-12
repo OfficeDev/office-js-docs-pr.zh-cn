@@ -2,13 +2,13 @@
 title: 创建将 REST 与本地 Project Server OData 服务结合使用的 Project 加载项
 description: ''
 ms.date: 09/26/2019
-localization_priority: Priority
-ms.openlocfilehash: bae6aa663fa9f59ecd3d949103dd2241be16467b
-ms.sourcegitcommit: 528577145b2cf0a42bc64c56145d661c4d019fb8
-ms.translationtype: HT
+localization_priority: Normal
+ms.openlocfilehash: 604bb566a8bd7623da5dde8eaa78bc67b59a3c27
+ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "37353914"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "41950745"
 ---
 # <a name="create-a-project-add-in-that-uses-rest-with-an-on-premises-project-server-odata-service"></a>创建将 REST 与本地 Project Server OData 服务结合使用的 Project 加载项
 

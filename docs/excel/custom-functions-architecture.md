@@ -2,13 +2,13 @@
 ms.date: 07/10/2019
 description: 了解 Excel 自定义函数的运行时。
 title: 自定义函数体系结构
-localization_priority: Priority
-ms.openlocfilehash: abe4f847069b3bb9d3813b4520bf8eb078a40c18
-ms.sourcegitcommit: bb44c9694f88cde32ffbb642689130db44456964
-ms.translationtype: HT
+localization_priority: Normal
+ms.openlocfilehash: ced62f7efb826862eee8079a66fa657ea466e4b3
+ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/17/2019
-ms.locfileid: "35771461"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "41950352"
 ---
 # <a name="custom-functions-architecture"></a>自定义函数体系结构
 

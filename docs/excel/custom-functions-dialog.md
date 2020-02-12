@@ -2,13 +2,13 @@
 ms.date: 06/18/2019
 description: 在 Excel 中使用 JavaScript 通过自定义函数创建对话框。
 title: 通过自定义函数显示对话框
-localization_priority: Priority
-ms.openlocfilehash: 67a61bde409d45b2c96118de95f0839e7a73ddfe
-ms.sourcegitcommit: 654ac1a0c477413662b48cffc0faee5cb65fc25f
-ms.translationtype: HT
+localization_priority: Normal
+ms.openlocfilehash: 8db5034cf9079ac5cd05654614087882ed1a8d52
+ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "36268150"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "41950766"
 ---
 # <a name="display-a-dialog-box-from-a-custom-function"></a>通过自定义函数显示对话框
 

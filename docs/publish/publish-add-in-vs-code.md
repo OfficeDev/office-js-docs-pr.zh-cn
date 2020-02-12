@@ -2,13 +2,13 @@
 title: 发布使用 Visual Studio Code 开发的加载项
 description: 如何发布使用 Visual Studio Code 开发的加载项
 ms.date: 12/02/2019
-localization_priority: Priority
-ms.openlocfilehash: 9378c0649e56c9fb3829363061f1dde41f31d440
-ms.sourcegitcommit: 44f1a4a3e1ae3c33d7d5fabcee14b84af94e03da
-ms.translationtype: HT
+localization_priority: Normal
+ms.openlocfilehash: 4bf3ad40c1de447d61d2ee612292d6d90c347666
+ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "39670479"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "41950647"
 ---
 # <a name="publish-an-add-in-developed-with-visual-studio-code"></a>发布使用 Visual Studio Code 开发的加载项
 

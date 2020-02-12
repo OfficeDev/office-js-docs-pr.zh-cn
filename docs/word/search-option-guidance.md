@@ -2,13 +2,13 @@
 title: 使用搜索选项在 Word 加载项中查找文本
 description: ''
 ms.date: 09/27/2019
-localization_priority: Priority
-ms.openlocfilehash: e4500d3cbfd704969bd471f87d194b0c0f5690ff
-ms.sourcegitcommit: 528577145b2cf0a42bc64c56145d661c4d019fb8
-ms.translationtype: HT
+localization_priority: Normal
+ms.openlocfilehash: 213853af31ae7ae15ad3f6386da70f22698d421d
+ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "37353886"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "41950479"
 ---
 # <a name="use-search-options-to-find-text-in-your-word-add-in"></a>使用搜索选项在 Word 加载项中查找文本
 

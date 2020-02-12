@@ -2,13 +2,13 @@
 title: Outlook 外接程序 API 预览要求集
 description: ''
 ms.date: 12/17/2019
-localization_priority: Priority
-ms.openlocfilehash: a3cc49562add2f6fe54cf83d2f2ed64ebb61d8c7
-ms.sourcegitcommit: 8c5c5a1bd3fe8b90f6253d9850e9352ed0b283ee
-ms.translationtype: HT
+localization_priority: Normal
+ms.openlocfilehash: 5dec8ae4f3a5f8320cf7503e81a9ea9cc8bb3a90
+ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/19/2019
-ms.locfileid: "40815044"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "41950997"
 ---
 # <a name="outlook-add-in-api-preview-requirement-set"></a>Outlook 外接程序 API 预览要求集
 

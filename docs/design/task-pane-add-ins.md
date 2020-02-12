@@ -2,13 +2,13 @@
 title: Office 加载项中的任务窗格
 description: 任务窗格允许用户访问界面控件，此类控件运行代码以修改文档或电子邮件，或显示数据源中的数据。
 ms.date: 01/14/2020
-localization_priority: Priority
-ms.openlocfilehash: 1d2e77dd446c787daba18426f74d4788cdc6d99e
-ms.sourcegitcommit: 212c810f3480a750df779777c570159a7f76054a
-ms.translationtype: HT
+localization_priority: Normal
+ms.openlocfilehash: 048c6a508a9d8106d129469880396a564b26aea4
+ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/17/2020
-ms.locfileid: "41217288"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "41950465"
 ---
 # <a name="task-panes-in-office-add-ins"></a>Office 加载项中的任务窗格
  

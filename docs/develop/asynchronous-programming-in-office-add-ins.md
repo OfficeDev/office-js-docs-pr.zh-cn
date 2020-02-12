@@ -2,13 +2,13 @@
 title: Office 加载项中的异步编程
 description: ''
 ms.date: 01/14/2020
-localization_priority: Priority
-ms.openlocfilehash: 009f8e37cc8a6eb2e808278df88f3bfdc5b0d1b1
-ms.sourcegitcommit: 212c810f3480a750df779777c570159a7f76054a
-ms.translationtype: HT
+localization_priority: Normal
+ms.openlocfilehash: 2d76b45d6b6198b98c40b39f212c1882f77ba8b7
+ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/17/2020
-ms.locfileid: "41217239"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "41950437"
 ---
 # <a name="asynchronous-programming-in-office-add-ins"></a>Office 加载项中的异步编程
 

@@ -2,13 +2,13 @@
 title: 验证 Office 加载项的清单
 description: 了解如何使用 XML 架构和其他工具验证 Office 加载项的清单。
 ms.date: 12/31/2019
-localization_priority: Priority
-ms.openlocfilehash: 09b5841a0180d8cb730ec8b479df1386a0749b60
-ms.sourcegitcommit: d5ac9284d1e96dc91a9168d7641e44d88535e1a7
-ms.translationtype: HT
+localization_priority: Normal
+ms.openlocfilehash: 0b0447bd9fbb513d058be3901a7b7ffb4b1ad609
+ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/31/2019
-ms.locfileid: "40914900"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "41950507"
 ---
 # <a name="validate-an-office-add-ins-manifest"></a>验证 Office 加载项的清单
 

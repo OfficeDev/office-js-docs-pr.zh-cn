@@ -2,13 +2,13 @@
 title: 使用 Office Open XML 创建更优质的 Word 加载项
 description: ''
 ms.date: 10/10/2019
-localization_priority: Priority
-ms.openlocfilehash: 1eb143e60da88ac8786b9b56f5db93a20aac4e20
-ms.sourcegitcommit: 499bf49b41205f8034c501d4db5fe4b02dab205e
-ms.translationtype: HT
+localization_priority: Normal
+ms.openlocfilehash: 33079c9432eb96cb2afa735c699c9c109315d127
+ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/22/2019
-ms.locfileid: "37627095"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "41950493"
 ---
 # <a name="create-better-add-ins-for-word-with-office-open-xml"></a>使用 Office Open XML 创建更优质的 Word 加载项
 

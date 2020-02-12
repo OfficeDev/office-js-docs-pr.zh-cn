@@ -2,13 +2,13 @@
 title: Office 加载项其他资源
 description: ''
 ms.date: 06/10/2019
-localization_priority: Priority
-ms.openlocfilehash: 6adeca6a53b56fdab7dadc75d88d076c7c961375
-ms.sourcegitcommit: 3f84b2caa73d7fe1eb0d15e32ea4dec459e2ff53
-ms.translationtype: HT
+localization_priority: Normal
+ms.openlocfilehash: 211d5d2ca45b00f8e49dcae340730975bce12593
+ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/12/2019
-ms.locfileid: "34910285"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "41950941"
 ---
 # <a name="office-add-ins-additional-resources"></a>Office 加载项其他资源
 

@@ -2,13 +2,13 @@
 title: 暂留加载项状态和设置
 description: ''
 ms.date: 03/19/2019
-localization_priority: Priority
-ms.openlocfilehash: 6092a93751825561f83cfea1671fe59e273f6142
-ms.sourcegitcommit: 9c5a836d4464e49846c9795bf44cfe23e9fc8fbe
-ms.translationtype: HT
+localization_priority: Normal
+ms.openlocfilehash: 915cf5d1d1747f16a9067bff25fbf89d35882d25
+ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "35617015"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "41950780"
 ---
 # <a name="persisting-add-in-state-and-settings"></a>暂留加载项状态和设置
 

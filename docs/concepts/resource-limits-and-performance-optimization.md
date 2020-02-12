@@ -2,13 +2,13 @@
 title: Office 加载项的资源限制和性能优化
 description: ''
 ms.date: 09/09/2019
-localization_priority: Priority
-ms.openlocfilehash: 33d97d36128a32f50e0689d8ac58644f83bf604f
-ms.sourcegitcommit: 24303ca235ebd7144a1d913511d8e4fb7c0e8c0d
-ms.translationtype: HT
+localization_priority: Normal
+ms.openlocfilehash: 9cd64943e3ec612fa2cb21adcd500c6522d451a2
+ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/11/2019
-ms.locfileid: "36838583"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "41950374"
 ---
 # <a name="resource-limits-and-performance-optimization-for-office-add-ins"></a>Office 加载项的资源限制和性能优化
 

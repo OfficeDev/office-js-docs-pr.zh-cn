@@ -2,13 +2,13 @@
 title: 适用于 Office 外接程序的 UX 设计模式
 description: ''
 ms.date: 03/19/2019
-localization_priority: Priority
-ms.openlocfilehash: 40b36fb138169bdf848e5f58569e6fc3dee8c09b
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
-ms.translationtype: HT
+localization_priority: Normal
+ms.openlocfilehash: d903f6cb2c6cad90c07b05303eac6b25a05a4af2
+ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32449006"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "41950416"
 ---
 # <a name="ux-design-patterns-for-office-add-ins"></a>适用于 Office 外接程序的 UX 设计模式
 
