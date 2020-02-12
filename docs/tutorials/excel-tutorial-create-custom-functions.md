@@ -1,15 +1,15 @@
 ---
 title: Excel 自定义函数教程
-description: 在本教程中，你将创建一个 Excel 外接程序，其中包含可执行计算、请求 Web 数据或流 Web 数据的自定义函数。
+description: 在本教程中，你将创建一个 Excel 外接程序，其中包含可执行计算、请求 Web 数据或流式传输 Web 数据的自定义函数。
 ms.date: 01/16/2020
 ms.prod: excel
-localization_priority: Normal
-ms.openlocfilehash: 63379c74897a5f232804241726ac7def1809f5c1
-ms.sourcegitcommit: 8bce9c94540ed484d0749f07123dc7c72a6ca126
-ms.translationtype: MT
+localization_priority: Priority
+ms.openlocfilehash: 9c8cfedd5f8219f2105456597d43201068b4c21e
+ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/22/2020
-ms.locfileid: "41265534"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "41950500"
 ---
 # <a name="tutorial-create-custom-functions-in-excel"></a>教程：在 Excel 中创建自定义函数
 
@@ -26,11 +26,11 @@ ms.locfileid: "41265534"
 
 [!include[Yeoman generator prerequisites](../includes/quickstart-yo-prerequisites.md)]
 
-* Windows （版本1904或更高版本，连接到 Office 365 订阅）或 web 上的 Excel
+* Windows 版 Excel（版本 1904 或更高版本，关联至 Office 365 订阅）或 Excel 网页版
 
 ## <a name="create-a-custom-functions-project"></a>创建自定义函数项目
 
- 首先，创建代码项目以构建自定义函数加载项。 [Office 外接程序的 Yeoman 生成器](https://www.npmjs.com/package/generator-office)将使用一些预生成的自定义函数来设置您的项目，您可以试用这些函数。如果已运行自定义函数 "快速启动" 并生成了一个项目，请继续使用该项目，然后跳到[此步骤](#create-a-custom-function-that-requests-data-from-the-web)。
+ 首先，创建代码项目以构建自定义函数加载项。 [Office 加载项的 Yeoman 生成器](https://www.npmjs.com/package/generator-office)将使用一些预生成的自定义函数（你可以试用这些函数）来设置你的项目。如果已运行自定义函数快速启动并生成了项目，请继续使用该项目，然后改为跳到[此步骤](#create-a-custom-function-that-requests-data-from-the-web)。
 
 1. [!include[Yeoman generator create project guidance](../includes/yo-office-command-guidance.md)]
     
@@ -59,11 +59,11 @@ ms.locfileid: "41265534"
     > [!NOTE]
     > Office 加载项应使用 HTTPS，而不是 HTTP（即便是在开发时也是如此）。 如果系统在运行 `npm run build` 后提示你安装证书，请接受提示以安装 Yeoman 生成器提供的证书。
 
-4. 启动在 Node.js 中运行的本地 Web 服务器。 您可以在 Excel 网页或 Windows 中试用自定义函数加载项。
+4. 启动在 Node.js 中运行的本地 Web 服务器。 你可以在 Excel 网页版或 Windows 版 Excel 中尝试使用自定义函数加载项。
 
-# <a name="excel-on-windows-or-mactabexcel-windows"></a>[Windows 或 Mac 上的 Excel](#tab/excel-windows)
+# <a name="excel-on-windows-or-mactabexcel-windows"></a>[Windows 版或 Mac 版 Excel](#tab/excel-windows)
 
-若要在 Excel 中的 Windows 或 Mac 上测试外接程序，请运行以下命令。 运行此命令时，本地 web 服务器将启动，并且 Excel 将在加载的外接程序中打开。
+若要在 Windows 版或 Mac 版 Excel 中测试加载项，请运行以下命令。 运行此命令时，本地 Web 服务器将启动，Excel 将打开并载入加载项。
 
 ```command&nbsp;line
 npm run start:desktop
@@ -71,17 +71,17 @@ npm run start:desktop
 
 # <a name="excel-on-the-webtabexcel-online"></a>[Excel 网页版](#tab/excel-online)
 
-若要在 Excel 中的浏览器上测试外接程序，请运行以下命令。 运行此命令时，本地 Web 服务器将启动。
+若要在浏览器中的 Excel 中测试加载项，请运行以下命令。 运行此命令时，本地 Web 服务器将启动。
 
 ```command&nbsp;line
 npm run start:web
 ```
 
-若要使用自定义函数外接程序，请在 web 上的 Excel 中打开一个新工作簿。 在此工作簿中，完成以下步骤以旁加载您的外接程序。
+若要使用自定义函数加载项，请在 Excel 网页版中打开一个新工作簿。 在此工作簿中，完成以下步骤以旁加载你的加载项。
 
-1. 在 Excel 中，选择 "**插入**" 选项卡，然后选择 "**外接程序**"。
+1. 在 Excel 中，选择“**插入**”选项卡，然后选择“**加载项**”。
 
-   ![在 Excel 中的 "我的外接程序" 图标突出显示的网页中插入功能区](../images/excel-cf-online-register-add-in-1.png)
+   ![Excel 网页版中的“插入”功能区，突出显示“我的加载项”图标](../images/excel-cf-online-register-add-in-1.png)
    
 2. 选择“管理我的加载项”****，然后选择“上载我的加载项”****。
 
@@ -91,9 +91,9 @@ npm run start:web
 
 --- 
     
-## <a name="try-out-a-prebuilt-custom-function"></a>尝试预生成的自定义函数
+## <a name="try-out-a-prebuilt-custom-function"></a>尝试使用预生成的自定义函数
 
-您创建的自定义函数项目包含一些预生成的自定义函数，这些函数是在 **/src/functions/functions.js**文件中定义的。 **./manifest.xml** 文件指定所有自定义函数均属于 `CONTOSO` 命名空间。 你将使用 CONTOSO 命名空间来访问 Excel 中的自定义函数。
+创建的自定义函数项目中包含一些预生成的自定义函数，这些函数在 **./src/functions/functions.js** 文件中定义。 **./manifest.xml** 文件指定所有自定义函数均属于 `CONTOSO` 命名空间。 你将使用 CONTOSO 命名空间来访问 Excel 中的自定义函数。
 
 接下来，通过完成以下步骤来尝试使用 `ADD` 自定义函数：
 
@@ -105,11 +105,11 @@ npm run start:web
 
 ## <a name="create-a-custom-function-that-requests-data-from-the-web"></a>创建从 Web 请求数据的自定义函数
 
-集成来自 Web 的数据是通过自定义函数来扩展 Excel 的好方法。 接下来，将创建一个名为`getStarCount`的自定义函数，该函数显示给定 Github 存储库拥有的星星数。
+集成来自 Web 的数据是通过自定义函数来扩展 Excel 的好方法。 接下来，需要创建一个名为“`getStarCount`”的自定义函数，显示给定 Github 存储库所拥有的星星数量。
 
-1. 在**starcount**项目中，找到 **/src/functions/functions.js**并在代码编辑器中打开该文件。 
+1. 在 **starcount** 项目中，找到 **./src/functions/functions.js** 文件，然后在代码编辑器中将其打开。 
 
-2. 在**函数 .js**中，添加以下代码： 
+2. 在 **function.js** 中，添加以下代码： 
 
 ```JS
 /**
@@ -137,27 +137,27 @@ npm run start:web
   }
 ```
 
-3. 运行以下命令以重建项目。
+3. 运行以下命令以重新生成项目。
 
     ```command&nbsp;line
     npm run build
     ```
 
-4. 完成以下步骤（适用于 web、Windows 或 Mac 上的 Excel），以便在 Excel 中重新注册加载项。 您必须完成这些步骤，新函数才可用。
+4. 完成以下步骤（针对 Excel 网页版或者 Windows 版或 Mac 版 Excel），以在 Excel 中重新注册加载项。 必须完成这些步骤，才能使用新函数。
 
-### <a name="excel-on-windows-or-mactabexcel-windows"></a>[Windows 或 Mac 上的 Excel](#tab/excel-windows)
+### <a name="excel-on-windows-or-mactabexcel-windows"></a>[Windows 版或 Mac 版 Excel](#tab/excel-windows)
 
 1. 关闭 Excel，然后重新打开 Excel。
 
-2. 在 Excel 中，选择 "**插入**" 选项卡，然后选择位于 **"我的外接程序**" 右侧的向下箭头。 ![在 Excel 中的 "我的外接程序" 箭头突出显示 Windows 中插入功能区](../images/select-insert.png)
+2. 在 Excel 中，选择“**插入**”选项卡，然后选择位于“**我的加载项**”右侧的向下箭头。![Windows 版 Excel 中的“插入”功能区，突出显示“我的加载项”箭头](../images/select-insert.png)
 
-3. 在可用加载项列表中，找到 "**开发人员外**接程序" 部分，然后选择 " **starcount** " 外接程序进行注册。
-    ![在 Windows Excel 中插入带有 "我的外接程序" 列表中突出显示 Excel 自定义函数外接程序的功能区](../images/list-starcount.png)
+3. 在可用加载项列表中，找到“**开发人员加载项**”部分并选择“**starcount**”加载项进行注册。
+    ![Windows 版 Excel 中的“插入”功能区，在“我的加载项”列表中突出显示“Excel 自定义函数”加载项](../images/list-starcount.png)
 
 
 # <a name="excel-on-the-webtabexcel-online"></a>[Excel 网页版](#tab/excel-online)
 
-1. 在 Excel 中，选择 "**插入**" 选项卡，然后选择 "**外接程序**"。 ![在 Excel 中的 "我的外接程序" 图标突出显示的网页中插入功能区](../images/excel-cf-online-register-add-in-1.png)
+1. 在 Excel 中，选择“**插入**”选项卡，然后选择“**加载项**”。![Excel 网页版中的“插入”功能区，突出显示“我的加载项”图标](../images/excel-cf-online-register-add-in-1.png)
 
 2. 选择“管理我的加载项”****，然后选择“上载我的加载项”****。
 
@@ -168,16 +168,16 @@ npm run start:web
 ---
 
 <ol start="5">
-<li> 尝试使用新函数。 在单元格<strong>B1</strong>中，键入文本<strong>= CONTOSO。GETSTARCOUNT （"OfficeDev"，"Excel-自定义函数"）</strong> ，然后按 enter。 您应该会看到单元格<strong>B1</strong>中的结果是为[Excel 自定义函数 Github 存储库](https://github.com/OfficeDev/Excel-Custom-Functions)提供的当前星数。</li>
+<li> 尝试使用新函数。 在单元格 <strong>B1</strong> 中，键入文本 <strong>=CONTOSO.GETSTARCOUNT("OfficeDev", "Excel-Custom-Functions")</strong>，然后按 Enter。 你会看到，单元格 <strong>B1</strong> 中的结果便是 [Excel-Custom-Functions Github 存储库](https://github.com/OfficeDev/Excel-Custom-Functions)所获得的星星的当前数目。</li>
 </ol>
 
 ## <a name="create-a-streaming-asynchronous-custom-function"></a>创建流式处理异步自定义函数
 
-`getStarCount`函数返回存储库在特定时间点的星数。 自定义函数还可以返回不断变化的数据。 这些函数称为流式处理函数。 它们必须包含一个`invocation`参数，该参数引用函数的调用位置的单元格。 此`invocation`参数用于在任何时间更新单元格的内容。  
+`getStarCount` 函数返回存储库在特定时刻所拥有的星星数量。 自定义函数也可以返回不断变化的数据。 这些函数称为流式处理函数。 它们必须包含一个 `invocation` 参数，该参数指向从中调用函数的单元格。 `invocation` 参数用于随时更新该单元格的内容。  
 
-在下面的代码示例中，您会注意到有两个函数`currentTime`和`clock`。 `currentTime`函数是不使用流式处理的静态函数。 它以字符串的形式返回日期。 `clock`函数使用`currentTime`函数在 Excel 中每秒向单元格提供新时间。 它使用`invocation.setResult`将时间传递到 Excel 单元格，并`invocation.onCanceled`处理取消该函数时发生的情况。
+在下面的代码示例中，你会注意到有两个函数：`currentTime` 和 `clock`。 `currentTime` 函数是不使用流式处理的静态函数。 它将以字符串形式返回日期。 `clock` 函数使用 `currentTime` 函数每秒向 Excel 中的单元格提供一次新时间。 它使用 `invocation.setResult` 将时间传递到 Excel 单元格，使用 `invocation.onCanceled` 处理取消该函数时发生的情况。
 
-1. 在 " **starcount** " 项目中，将以下代码添加到 **./src/functions/functions.js**并保存文件。
+1. 在 **starcount** 项目中，将以下代码添加到 **./src/functions/functions.js** 并保存该文件。
 
 ```JS
 /**
@@ -205,26 +205,26 @@ function clock(invocation) {
 }
 ```
 
-2. 运行以下命令以重建项目。
+2. 运行以下命令以重新生成项目。
 
     ```command&nbsp;line
     npm run build
     ```
 
-3. 完成以下步骤（适用于 web、Windows 或 Mac 上的 Excel），以便在 Excel 中重新注册加载项。 您必须完成这些步骤，新函数才可用。 
+3. 完成以下步骤（针对 Excel 网页版或者 Windows 版或 Mac 版 Excel），以在 Excel 中重新注册加载项。 必须完成这些步骤，才能使用新函数。 
 
-# <a name="excel-on-windows-or-mactabexcel-windows"></a>[Windows 或 Mac 上的 Excel](#tab/excel-windows)
+# <a name="excel-on-windows-or-mactabexcel-windows"></a>[Windows 版或 Mac 版 Excel](#tab/excel-windows)
 
 1. 关闭 Excel，然后重新打开 Excel。
 
-2. 在 Excel 中，选择 "**插入**" 选项卡，然后选择位于 **"我的外接程序**" 右侧的向下箭头。 ![在 Excel 中的 "我的外接程序" 箭头突出显示 Windows 中插入功能区](../images/select-insert.png)
+2. 在 Excel 中，选择“**插入**”选项卡，然后选择位于“**我的加载项**”右侧的向下箭头。![Windows 版 Excel 中的“插入”功能区，突出显示“我的加载项”箭头](../images/select-insert.png)
 
-3. 在可用加载项列表中，找到 "**开发人员外**接程序" 部分，然后选择 " **starcount** " 外接程序进行注册。
-    ![在 Windows Excel 中插入带有 "我的外接程序" 列表中突出显示 Excel 自定义函数外接程序的功能区](../images/list-starcount.png)
+3. 在可用加载项列表中，找到“**开发人员加载项**”部分并选择“**starcount**”加载项进行注册。
+    ![Windows 版 Excel 中的“插入”功能区，在“我的加载项”列表中突出显示“Excel 自定义函数”加载项](../images/list-starcount.png)
 
 # <a name="excel-on-the-webtabexcel-online"></a>[Excel 网页版](#tab/excel-online)
 
-1. 在 Excel 中，选择 "**插入**" 选项卡，然后选择 "**外接程序**"。 ![在 Excel 中的 "我的外接程序" 图标突出显示的网页中插入功能区](../images/excel-cf-online-register-add-in-1.png)
+1. 在 Excel 中，选择“**插入**”选项卡，然后选择“**加载项**”。![Excel 网页版中的“插入”功能区，突出显示“我的加载项”图标](../images/excel-cf-online-register-add-in-1.png)
 
 2. 选择“管理我的加载项”****，然后选择“上载我的加载项”****。
 
@@ -235,12 +235,12 @@ function clock(invocation) {
 --- 
 
 <ol start="4">
-<li>尝试使用新函数。 在单元格<strong>C1</strong>中，键入文本<strong>= CONTOSO。CLOCK （））</strong> ，然后按 enter。 您应看到当前日期，该日期每秒处理一次更新。 虽然此时钟只是循环中的计时器，但在对实时数据发出 web 请求的更复杂的函数上设置计时器时，可以使用相同的想法。</li>
+<li>尝试使用新函数。 在单元格 <strong>C1</strong> 中，键入文本 <strong>=CONTOSO.CLOCK())</strong>，然后按 Enter。 此时会显示当前日期，该日期每秒更新一次。 虽然此时钟只是一个循环计时器，但利用这一理念，你可以在更复杂的函数上设置计时器，以便执行对实时数据的 Web 请求。</li>
 </ol>
 
 ## <a name="next-steps"></a>后续步骤
 
-恭喜！ 您已创建新的自定义函数项目，并试用一个预建函数，创建了一个从 web 请求数据的自定义函数，并创建了一个流式处理数据的自定义函数。 您也可以尝试使用[自定义函数调试指令](../excel/custom-functions-debugging.md)来调试此函数。 若要详细了解 Excel 中的自定义函数，请继续阅读以下文章：
+恭喜！ 你已经创建新的自定义函数项目，试用了预生成的函数，创建了从 Web 请求数据的自定义函数，并创建了流式传输数据的自定义函数。 你也可以尝试使用[自定义函数调试指令](../excel/custom-functions-debugging.md)来调试此函数。 若要详细了解 Excel 中的自定义函数，请继续阅读以下文章：
 
 > [!div class="nextstepaction"]
 > [在 Excel 中创建自定义函数](../excel/custom-functions-overview.md)

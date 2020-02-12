@@ -1,15 +1,15 @@
 ---
 title: Outlook JavaScript API 要求集
 description: ''
-ms.date: 01/14/2020
+ms.date: 02/11/2020
 ms.prod: outlook
 localization_priority: Priority
-ms.openlocfilehash: bd6b20e9f0ddb5141f2f889a4e99af2c042a10ab
-ms.sourcegitcommit: 212c810f3480a750df779777c570159a7f76054a
+ms.openlocfilehash: 7ea6be0cb1879ba583eaa64a7611899bf5adb73f
+ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/17/2020
-ms.locfileid: "41217370"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "41950542"
 ---
 # <a name="outlook-javascript-api-requirement-sets"></a>Outlook JavaScript API 要求集
 
@@ -66,7 +66,7 @@ if (item.somePropertyOrFunction !== undefined) {
 
 ## <a name="requirement-sets-supported-by-exchange-servers-and-outlook-clients"></a>Exchange 服务器和 Outlook 客户端支持的要求集
 
-本节将说明 Exchange 服务器和 Outlook 客户端支持的要求集范围。
+本节将说明 Exchange 服务器和 Outlook 客户端支持的要求集范围。 有关运行 Outlook 加载项的服务器和客户端要求的详细信息，请参阅 [Outlook 加载项要求](/outlook/add-ins/add-in-requirements)。
 
 > [!IMPORTANT]
 > 如果目标 Exchange 服务器和 Outlook 客户端支持不同的要求集，则将受限于较低的要求集范围。 例如，如果外接程序在 Mac 上的 Outlook 2016（最高要求集：1.6）中针对 Exchange 2013（最高要求集：1.1）运行，则外接程序受限于要求集 1.1。

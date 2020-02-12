@@ -1,15 +1,15 @@
 ---
 title: 使用 Angular 生成 Excel 任务窗格加载项
-description: ''
+description: 了解如何使用 Office JS API 和 Angular 生成简单的 Excel 任务窗格加载项。
 ms.date: 01/16/2020
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: 6fd28f3b572b7bca27d5bf08b9799333285064bc
-ms.sourcegitcommit: 8bce9c94540ed484d0749f07123dc7c72a6ca126
+ms.openlocfilehash: 1179eba9920949c63c022b525802e0deea3c4d1d
+ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/22/2020
-ms.locfileid: "41265576"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "41950633"
 ---
 # <a name="build-an-excel-task-pane-add-in-using-angular"></a>使用 Angular 生成 Excel 任务窗格加载项
 

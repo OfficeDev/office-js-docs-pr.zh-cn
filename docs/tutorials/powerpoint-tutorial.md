@@ -3,13 +3,13 @@ title: PowerPoint 加载项教程
 description: 在本教程中，将生成 PowerPoint 加载项，用于插入图像、插入文本、获取幻灯片元数据，以及在幻灯片之间导航。
 ms.date: 12/24/2019
 ms.prod: powerpoint
-localization_priority: Normal
-ms.openlocfilehash: 524c6727e8a1b8e4bb42156a5cec9fead45fd45c
-ms.sourcegitcommit: 350f5c6954dec3e9384e2030cd3265aaba7ae904
-ms.translationtype: MT
+localization_priority: Priority
+ms.openlocfilehash: aace13a3dba55abcac258b48ceb852fed746adcc
+ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/23/2019
-ms.locfileid: "40851423"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "41950885"
 ---
 # <a name="tutorial-create-a-powerpoint-task-pane-add-in"></a>教程：创建 PowerPoint 任务窗格加载项
 
@@ -31,9 +31,9 @@ ms.locfileid: "40851423"
 
 1. 选择“**创建新项目**”。
 
-2. 使用搜索框，输入“**加载程序**”。 选择“**PowerPoint 外接程序**”，然后选择“**下一步**”。
+2. 使用搜索框，输入“**加载项**”。 选择“**PowerPoint 外接程序**”，然后选择“**下一步**”。
 
-3. 为项目`HelloWorld`命名，然后选择 "**创建**"。
+3. 将项目命名为“`HelloWorld`”，然后选择“**创建**”。
 
 4. 在“创建 Office 加载项”**** 对话框窗口中，选择“将新功能添加到 PowerPoint”****，再选择“完成”**** 以创建项目。
 
@@ -63,7 +63,7 @@ ms.locfileid: "40851423"
     </div>
     ```
 
-2. 打开 Web 应用项目根目录中的文件“Home.js”****。 此文件指定加载项脚本。 将整个内容替换为以下代码，并保存文件。
+2. 打开 Web 应用项目根目录中的文件**Home.js**。 此文件指定加载项脚本。 将整个内容替换为以下代码，并保存文件。
 
     ```js
     (function () {
@@ -481,19 +481,19 @@ ms.locfileid: "40851423"
 
 3. 使用“开始”**** 选项卡功能区中的“新建幻灯片”**** 按钮，将两张新幻灯片添加到文档中。 
 
-4. 在任务窗格中，选择“前往第一张幻灯片”**** 按钮。 此时，选择并显示文档中的第一张幻灯片。
+4. 在任务窗格中，选择 **“前往第一张幻灯片”** 按钮。 此时，选择并显示文档中的第一张幻灯片。
 
     ![突出显示“前往第一张幻灯片”按钮的 PowerPoint 加载项屏幕截图](../images/powerpoint-tutorial-go-to-first-slide.png)
 
-5. 在任务窗格中，选择“前往下一张幻灯片”**** 按钮。 此时，选择并显示文档中的下一张幻灯片。
+5. 在任务窗格中，选择 **“前往下一张幻灯片”** 按钮。 此时，选择并显示文档中的下一张幻灯片。
 
     ![突出显示“前往下一张幻灯片”按钮的 PowerPoint 加载项屏幕截图](../images/powerpoint-tutorial-go-to-next-slide.png)
 
-6. 在任务窗格中，选择“前往上一张幻灯片”**** 按钮。 此时，选择并显示文档中的上一张幻灯片。
+6. 在任务窗格中，选择 **“前往上一张幻灯片”** 按钮。 此时，选择并显示文档中的上一张幻灯片。
 
     ![突出显示“前往上一张幻灯片”按钮的 PowerPoint 加载项屏幕截图](../images/powerpoint-tutorial-go-to-previous-slide.png)
 
-7. 在任务窗格中，选择“前往最后一张幻灯片”**** 按钮。 此时，选择并显示文档中的最后一张幻灯片。
+7. 在任务窗格中，选择 **“前往最后一张幻灯片”** 按钮。 此时，选择并显示文档中的最后一张幻灯片。
 
     ![突出显示“前往最后一张幻灯片”按钮的 PowerPoint 加载项屏幕截图](../images/powerpoint-tutorial-go-to-last-slide.png)
 
@@ -511,5 +511,5 @@ ms.locfileid: "40851423"
 ## <a name="see-also"></a>另请参阅
 
 * [Office 加载项平台概述](../overview/office-add-ins.md)
-* [生成 Office 外接程序](../overview/office-add-ins-fundamentals.md)
-* [开发 Office 外接程序](../develop/develop-overview.md)
+* [构建 Office 加载项](../overview/office-add-ins-fundamentals.md)
+* [开发 Office 加载项](../develop/develop-overview.md)

@@ -1,27 +1,27 @@
 ---
 layout: LandingPage
 ms.topic: landing-page
-title: Office 外接程序文档
+title: Office 加载项文档
 description: 了解如何构建 Office 外接程序。
 author: o365devx
 ms.author: o365devx
 ms.prod: non-product-specific
 ms.date: 12/24/2019
-localization_priority: Normal
-ms.openlocfilehash: 2e0e8932214f398169f8483b4ca8bf1a65ec16a5
-ms.sourcegitcommit: 0dacbe7c80ed387099e3ec21e151f8990b181ede
-ms.translationtype: MT
+localization_priority: Priority
+ms.openlocfilehash: 4a2134fec212b75abff95d225f6238bd1f888c3b
+ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/13/2020
-ms.locfileid: "41111009"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "41950759"
 ---
-# <a name="office-add-ins-documentation"></a>Office 外接程序文档
+# <a name="office-add-ins-documentation"></a>Office 加载项文档
 
-使用 Office 加载项平台来生成解决方案，通过解决方案扩展 Office 应用程序，并与 Office 文档中的内容进行交互。 使用 Office 外接程序，可以使用熟悉的 web 技术（如 HTML、CSS 和 JavaScript）来构建可在 Windows、Mac、iPad 和 web 上的 Office 中运行的解决方案。
+使用 Office 外接程序平台来生成解决方案，通过解决方案扩展 Office 应用程序，并与 Office 文档中的内容进行交互。 借助 Office 加载项，你可以使用熟悉的 Web 技术（如 HTML、CSS 和 JavaScript）来构建可在 Windows、Mac、iPad 和 Web 上的 Office 中运行的解决方案。
 
 <h2>入门</h2>
 
-<p>不了解如何生成 Office 加载项？ 首先了解 Office 外接程序平台并构建 Office 外接程序：</p>
+<p>不了解如何生成 Office 加载项？ 首先了解 Office 加载项平台和构建 Office 加载项：</p>
 
 <ul class="panelContent cardsF cols cols3">
     <li>
@@ -35,7 +35,7 @@ ms.locfileid: "41111009"
                     </div>
                     <div class="cardText">
                         <h3>Office 加载项平台概述</h3>
-                        <p><a href="overview/office-add-ins.md">了解 Office 外接程序平台。</a></p>
+                        <p><a href="overview/office-add-ins.md">了解 Office 加载项平台。</a></p>
                     </div>
                 </div>
             </div>
@@ -52,7 +52,7 @@ ms.locfileid: "41111009"
                     </div>
                     <div class="cardText">
                         <h3>构建 Office 加载项</h3>
-                        <p><a href="overview/office-add-ins-fundamentals.md">了解如何生成 Office 外接程序。</a></p>
+                        <p><a href="overview/office-add-ins-fundamentals.md">了解如何构建 Office 加载项。</a></p>
                     </div>
                 </div>
             </div>
@@ -60,7 +60,7 @@ ms.locfileid: "41111009"
     </li>
 </ul>
 
-<p>接下来，使用快速入门、教程和脚本实验室获取构建 Office 外接程序的体验。</p>
+<p>接下来，使用快速入门、教程和脚本实验室获取构建 Office 加载项的体验。</p>
 
 <ul class="cardsK panelContent cols cols3">
     <li>
@@ -73,8 +73,8 @@ ms.locfileid: "41111009"
                         </div>
                     </div>
                     <div class="cardText">
-                        <h3>5分钟快速入门</h3>
-                        <p>在5分钟内生成你的第一个 Office 外接程序！</p>
+                        <h3>5 分钟快速入门</h3>
+                        <p>在 5 分钟内生成首个 Office 加载项！</p>
                         <br/>
                         <ul>
                             <li><a style="font-size: 1rem;" href="quickstarts/excel-quickstart-jquery.md">Excel 加载项快速入门</a></li>
@@ -84,7 +84,7 @@ ms.locfileid: "41111009"
                             <li><a style="font-size: 1rem;" href="quickstarts/powerpoint-quickstart.md">PowerPoint 加载项快速入门</a></li>
                             <li><a style="font-size: 1rem;" href="quickstarts/project-quickstart.md">Project 加载项快速入门</a></li>
                             <li><a style="font-size: 1rem;" href="quickstarts/word-quickstart.md">Word 加载项快速入门</a></li>
-                            <li><a style="font-size: 1rem;" href="quickstarts/sso-quickstart.md">单一登录（SSO）快速入门</a></li>
+                            <li><a style="font-size: 1rem;" href="quickstarts/sso-quickstart.md">单一登录 (SSO) 快速入门</a></li>
                         </ul>
                     </div>
                 </div>
@@ -102,7 +102,7 @@ ms.locfileid: "41111009"
                     </div>
                     <div class="cardText">
                         <h3>教程</h3>
-                        <p>完成教程以了解有关外接程序功能的详细信息。</p>
+                        <p>完成教程，了解有关加载项功能的详细信息。</p>
                         <br/>
                         <ul>
                             <li><a style="font-size: 1rem;" href="tutorials/excel-tutorial.md">Excel 加载项教程</a></li>
@@ -127,7 +127,7 @@ ms.locfileid: "41111009"
                     </div>
                     <div class="cardText">
                         <h3>Script Lab</h3>
-                        <p>在脚本实验室中试用适用于 Excel、Word 和 PowerPoint 的 Office JavaScript Api。</p>
+                        <p>在脚本实验室中试用适用于 Excel、Word 和 PowerPoint 的 Office JavaScript ApI。</p>
                         <br/>
                         <ul style="list-style: none!important;">
                         
@@ -154,7 +154,7 @@ ms.locfileid: "41111009"
             </div>
             <div class="cardText">
                 <h3>核心概念</h3>
-                <p>了解适用于生成任何 Office 外接程序的平台和重要概念。</p>
+                <p>了解适用于构建任何 Office 加载项的平台和重要概念。</p>
             </div>
         </a>
     </li>
@@ -254,7 +254,7 @@ ms.locfileid: "41111009"
                         </div>
                     </div>
                     <div class="cardText">
-                        <a href="overview/explore-with-script-lab.md"><h3>探索 Api<br/>使用脚本实验室</h3></a>
+                        <a href="overview/explore-with-script-lab.md"><h3>使用 Script Lab <br/>探索 API</h3></a>
                     </div>
                 </div>
             </div>
