@@ -3,13 +3,13 @@ title: OneNote JavaScript API 要求集
 description: ''
 ms.date: 07/17/2019
 ms.prod: onenote
-localization_priority: Normal
-ms.openlocfilehash: 3a1e5133b36af612156fb272651f1775e916a0fe
-ms.sourcegitcommit: 3f5d7f4794e3d3c8bc3a79fa05c54157613b9376
-ms.translationtype: MT
+localization_priority: Priority
+ms.openlocfilehash: 00bf9f23c307a6094345b753d7cccf1c10be7c32
+ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/02/2019
-ms.locfileid: "36064870"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "41950962"
 ---
 # <a name="onenote-javascript-api-requirement-sets"></a>OneNote JavaScript API 要求集
 
@@ -17,7 +17,7 @@ ms.locfileid: "36064870"
 
 下表列出了 OneNote 要求集、支持这些要求集的 Office 主机应用程序，以及这些应用程序的内部版本或发布日期。
 
-|  要求集  |  网上的 Office |
+|  要求集  |  Office 网页版 |
 |:-----|:-----|
 | [OneNoteApi 1.1](/javascript/api/onenote?view=onenote-js-1.1)  | 2016 年 9 月 |  
 
@@ -31,7 +31,7 @@ OneNote JavaScript API 1.1 是该 API 的第一版。 有关此 API 的详细信
 
 ## <a name="runtime-requirement-support-check"></a>运行时要求支持检查
 
-在运行时, 外接程序可以通过执行以下操作来检查特定主机是否支持 API 要求集。
+在运行时，加载项可以执行下列检查，确定特定主机是否支持 API 要求集。
 
 ```js
 if (Office.context.requirements.isSetSupported('OneNoteApi', '1.1')) {
@@ -44,7 +44,7 @@ else {
 
 ## <a name="manifest-based-requirement-support-check"></a>基于清单的要求支持检查
 
-使用外`Requirements`接程序清单中的元素指定你的外接程序必须使用的关键要求集或 API 成员。 如果 Office 主机或平台不支持`Requirements`元素中指定的要求集或 API 成员, 则外接程序将不会在该主机或平台中运行, 并且不会显示在我的外接程序中。
+使用加载项清单中的 `Requirements` 元素指定加载项必须使用的关键要求集或 API 成员。 如果 Office 主机或平台不支持 `Requirements` 元素中指定的要求集或 API 成员，则加载项将无法在该主机或平台上运行，并且不会显示在“我的加载项”中。
 
 下面的代码示例展示了加载所有 支持第 1.1 版 OneNoteApi 要求集的 Office 主机应用程序的外接程序。
 
