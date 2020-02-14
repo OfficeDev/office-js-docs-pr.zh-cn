@@ -2,13 +2,13 @@
 title: 排查单一登录 (SSO) 错误消息
 description: ''
 ms.date: 11/05/2019
-localization_priority: Priority
-ms.openlocfilehash: 835ae68304a6fd69648f0f182c9ff17e9cbfd56d
-ms.sourcegitcommit: d5ac9284d1e96dc91a9168d7641e44d88535e1a7
-ms.translationtype: HT
+localization_priority: Normal
+ms.openlocfilehash: 0491a49a09ec747dfb7f63237e5099579402e69a
+ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/31/2019
-ms.locfileid: "40914879"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "41950815"
 ---
 # <a name="troubleshoot-error-messages-for-single-sign-on-sso-preview"></a>排查单一登录 (SSO) 错误消息（预览）
 

@@ -2,13 +2,13 @@
 title: 创建使用单一登录的 Node.js Office 加载项
 description: 了解如何创建使用 Office 单一登录的基于 Node.js 的 Office 加载项
 ms.date: 01/16/2020
-localization_priority: Priority
-ms.openlocfilehash: 618750cac33c7f6928a017b67a7f63deee35d29b
-ms.sourcegitcommit: 43166612e9b4bf7a73312a572663c8696353dbc6
-ms.translationtype: HT
+localization_priority: Normal
+ms.openlocfilehash: ca2482d26aa29e6639950ca6bf57f91c39f3307b
+ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "41580985"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "41950591"
 ---
 # <a name="create-a-nodejs-office-add-in-that-uses-single-sign-on-preview"></a>创建使用单一登录的 Node.js Office 加载项（预览）
 

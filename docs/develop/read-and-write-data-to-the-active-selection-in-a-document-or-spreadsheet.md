@@ -2,13 +2,13 @@
 title: 对文档或电子表格中的活动选择执行数据读取和写入操作
 description: ''
 ms.date: 06/20/2019
-localization_priority: Priority
-ms.openlocfilehash: b831de475a1946d6e0f9f13463e2750efe6cca5b
-ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
-ms.translationtype: HT
+localization_priority: Normal
+ms.openlocfilehash: 004f78c4cfa5b5665212cebcdb2d71986398c62a
+ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "35128043"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "41950584"
 ---
 # <a name="read-and-write-data-to-the-active-selection-in-a-document-or-spreadsheet"></a>对文档或电子表格中的活动选择执行数据读取和写入操作
 
