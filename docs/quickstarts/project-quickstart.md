@@ -1,15 +1,15 @@
 ---
 title: 生成首个 Project 任务窗格加载项
-description: ''
+description: 了解如何使用 Office JS API 生成简单的 Project 任务窗格加载项。
 ms.date: 01/16/2020
 ms.prod: project
 localization_priority: Priority
-ms.openlocfilehash: cb2b76b989b62e3bb851f4a2b3ab27302fe0b21d
-ms.sourcegitcommit: 8bce9c94540ed484d0749f07123dc7c72a6ca126
+ms.openlocfilehash: 821cdc9f32b0fbc2b48e2a92259f340e65a03f64
+ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/22/2020
-ms.locfileid: "41265676"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "41950619"
 ---
 # <a name="build-your-first-project-task-pane-add-in"></a>生成首个 Project 任务窗格加载项
 
