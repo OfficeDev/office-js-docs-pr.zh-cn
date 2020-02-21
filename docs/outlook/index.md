@@ -5,12 +5,12 @@ title: Outlook 加载项文档
 description: 用于了解 Outlook 加载项的资源。
 ms.date: 07/05/2019
 localization_priority: Priority
-ms.openlocfilehash: 2af0c791ba90df68b80ca7e4af773e1b024e337e
-ms.sourcegitcommit: c3673cc693fa7070e1b397922bd735ba3f9342f3
+ms.openlocfilehash: b9d7c7ff05dddda3e3ae3235e90400c6913f1f49
+ms.sourcegitcommit: a3ddfdb8a95477850148c4177e20e56a8673517c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/05/2019
-ms.locfileid: "35576793"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "42165550"
 ---
 # <a name="outlook-add-ins-documentation"></a>Outlook 加载项文档
 
@@ -28,7 +28,7 @@ ms.locfileid: "35576793"
                     </div>
                     <div class="cardText">
                         <h3>概述</h3>
-                        <p><a href="/outlook/add-ins/index?context=office/dev/add-ins/context">了解 Outlook 加载项的组件和功能。</a></p>
+                        <p><a href="outlook-add-ins-overview.md">了解 Outlook 加载项的组件和功能。</a></p>
                     </div>
                 </div>
             </div>
@@ -45,24 +45,7 @@ ms.locfileid: "35576793"
                     </div>
                     <div class="cardText">
                         <h3>入门</h3>
-                        <p><a href="/outlook/add-ins/quick-start?context=office/dev/add-ins/context">在 5 分钟内生成首个 Outlook 加载项</a>。</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </li>
-    <li>
-        <div class="cardSize">
-            <div class="cardPadding">
-                <div class="card">
-                    <div class="cardImageOuter">
-                        <div class="cardImage">
-                            <img src="../images/index-landing-page/i_code-automate.svg" alt="Custom functions" />
-                        </div>
-                    </div>
-                    <div class="cardText">
-                        <h3>Outlook 加载项开发</h3>
-                        <p><a href="/outlook/add-ins/outlook-addin-design">了解 Outlook 加载项开发的关键方面。</a></p>
+                        <p><a href="../quickstarts/outlook-quickstart.md">在 5 分钟内生成首个 Outlook 加载项</a>。</p>
                     </div>
                 </div>
             </div>
@@ -79,7 +62,7 @@ ms.locfileid: "35576793"
                     </div>
                     <div class="cardText">
                         <h3>Outlook JavaScript API</h3>
-                        <p><a href="/outlook/add-ins/apis?context=office/dev/add-ins/context">了解如何使用 Outlook JavaScript API 与 Outlook 中的对象交互。</a></p>
+                        <p><a href="apis.md">了解如何使用 Outlook JavaScript API 与 Outlook 中的对象交互。</a></p>
                     </div>
                 </div>
             </div>

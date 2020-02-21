@@ -8,12 +8,12 @@ ms.author: o365devx
 ms.prod: non-product-specific
 ms.date: 12/24/2019
 localization_priority: Priority
-ms.openlocfilehash: 4a2134fec212b75abff95d225f6238bd1f888c3b
-ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
+ms.openlocfilehash: 2ebef8254d264442f3f57c6e19b015a7ef18a829
+ms.sourcegitcommit: a3ddfdb8a95477850148c4177e20e56a8673517c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "41950759"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "42165606"
 ---
 # <a name="office-add-ins-documentation"></a>Office 加载项文档
 
@@ -80,7 +80,7 @@ ms.locfileid: "41950759"
                             <li><a style="font-size: 1rem;" href="quickstarts/excel-quickstart-jquery.md">Excel 加载项快速入门</a></li>
                             <li><a style="font-size: 1rem;" href="quickstarts/excel-custom-functions-quickstart.md">Excel 自定义函数快速入门</a></li>
                             <li><a style="font-size: 1rem;" href="quickstarts/onenote-quickstart.md">OneNote 加载项快速入门</a></li>
-                            <li><a style="font-size: 1rem;" href="/outlook/add-ins/quick-start?context=office/dev/add-ins/context">Outlook 加载项快速入门</a></li>
+                            <li><a style="font-size: 1rem;" href="quickstarts/outlook-quickstart.md">Outlook 加载项快速入门</a></li>
                             <li><a style="font-size: 1rem;" href="quickstarts/powerpoint-quickstart.md">PowerPoint 加载项快速入门</a></li>
                             <li><a style="font-size: 1rem;" href="quickstarts/project-quickstart.md">Project 加载项快速入门</a></li>
                             <li><a style="font-size: 1rem;" href="quickstarts/word-quickstart.md">Word 加载项快速入门</a></li>
@@ -107,7 +107,7 @@ ms.locfileid: "41950759"
                         <ul>
                             <li><a style="font-size: 1rem;" href="tutorials/excel-tutorial.md">Excel 加载项教程</a></li>
                             <li><a style="font-size: 1rem;" href="tutorials/excel-tutorial-create-custom-functions.md">Excel 自定义函数教程</a></li>
-                            <li><a style="font-size: 1rem;" href="/outlook/add-ins/addin-tutorial?context=office/dev/add-ins/context">Outlook 加载项教程</a></li>
+                            <li><a style="font-size: 1rem;" href="tutorials/outlook-tutorial.md">Outlook 加载项教程</a></li>
                             <li><a style="font-size: 1rem;" href="tutorials/powerpoint-tutorial.md">PowerPoint 加载项教程</a></li>
                             <li><a style="font-size: 1rem;" href="tutorials/word-tutorial.md">Word 加载项教程</a></li>
                         </ul>
