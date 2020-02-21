@@ -1,16 +1,16 @@
 ---
 title: OneNote JavaScript API 编程概述
 description: ''
-ms.date: 07/05/2019
+ms.date: 02/19/2020
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: 9724de8c25a535884c4700a165e661028aee6608
-ms.sourcegitcommit: 350f5c6954dec3e9384e2030cd3265aaba7ae904
+ms.openlocfilehash: 2023daa422bd9078271f4b989f824101dc8b85f9
+ms.sourcegitcommit: a3ddfdb8a95477850148c4177e20e56a8673517c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/23/2019
-ms.locfileid: "40851507"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "42165564"
 ---
 # <a name="onenote-javascript-api-programming-overview"></a>OneNote JavaScript API 编程概述
 
@@ -125,7 +125,7 @@ OneNote 加载项仅支持以下通用 API：
 | [Office.context.document.settings.set(name, value);](/javascript/api/office/office.settings#set-name--value-) | 设置仅受内容外接程序支持 | 
 | [Office.EventType.DocumentSelectionChanged](/javascript/api/office/office.documentselectionchangedeventargs) ||
 
-一般情况下，需要使用通用 API 执行主机特定 API 不支持的操作。 若要详细了解如何使用通用 API，请参阅 [Office JavaScript API 对象模型](../develop/office-javascript-api-object-model.md)。
+一般情况下，需要使用通用 API 执行主机特定 API 不支持的操作。 要详细了解如何使用通用 API，请参阅[常见 JavaScript API 对象模型](../develop/office-javascript-api-object-model.md)。
 
 
 <a name="om-diagram"></a>

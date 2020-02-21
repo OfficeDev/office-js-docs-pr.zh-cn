@@ -3,12 +3,12 @@ title: 了解适用于 Office 的 JavaScript API
 description: ''
 ms.date: 06/21/2019
 localization_priority: Priority
-ms.openlocfilehash: 1954457b477472b8940841bb1ffe5954e49e01ec
-ms.sourcegitcommit: b3996b1444e520b44cf752e76eef50908386ca26
+ms.openlocfilehash: a82437fc82d9c9a31e75d448579f37d440784aa2
+ms.sourcegitcommit: a3ddfdb8a95477850148c4177e20e56a8673517c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "37524232"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "42163512"
 ---
 # <a name="understanding-the-javascript-api-for-office"></a>了解适用于 Office 的 JavaScript API
 
@@ -169,4 +169,4 @@ Office.initialize = function (reason) {
 
 ## <a name="office-javascript-api-object-model"></a>Office JavaScript API 对象模型
 
-初始化后，加载项可与主机进行交互（例如，Excel、Outlook）。 [Office JavaScript API 对象模型](office-javascript-api-object-model.md)页提供了有关特定使用模式的更为详细的信息。 还提供了有关[通用 API](/office/dev/add-ins/reference/javascript-api-for-office) 和主机特定 API 的详细参考文档。
+初始化后，加载项可与主机进行交互（例如，Excel、Outlook）。 要更详细地了解特定使用模式，请查看[常见 JavaScript API 对象模型](office-javascript-api-object-model.md)页面。 还提供了有关[通用 API](/office/dev/add-ins/reference/javascript-api-for-office) 和主机特定 API 的详细参考文档。

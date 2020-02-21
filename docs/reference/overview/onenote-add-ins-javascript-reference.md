@@ -1,15 +1,15 @@
 ---
 title: OneNote JavaScript API 概述
 description: ''
-ms.date: 07/05/2019
+ms.date: 02/19/2020
 ms.prod: onenote
 localization_priority: Priority
-ms.openlocfilehash: 3ad992bd59c33d9d8b724893db49a6e623fd1ee3
-ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
+ms.openlocfilehash: 27d6770ae64a6f2259e7dbbf38b756d54fe7cec2
+ms.sourcegitcommit: a3ddfdb8a95477850148c4177e20e56a8673517c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "41950976"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "42165318"
 ---
 # <a name="onenote-javascript-api-overview"></a>OneNote JavaScript API 概述
 
@@ -19,7 +19,7 @@ OneNote 加载项通过使用 Office JavaScript API 与 OneNote web 版中的对
 
 * **通用 API**：[通用 API](/javascript/api/office) 随 Office 2013 引入，可用于访问多种类型的 Office 应用程序中常见的 UI、对话框和客户端设置等功能。
 
-此文档部分重点介绍了 OneNote JavaScript AP，你可通过此 API 开发面向 OneNote web 版的加载项中的大部分功能。 有关通用 API 的信息，请参阅 [Office JavaScript API 对象模型](../../develop/office-javascript-api-object-model.md)。 
+此文档部分重点介绍了 OneNote JavaScript AP，你可通过此 API 开发面向 OneNote web 版的加载项中的大部分功能。 有关通用 API 的信息，请参阅[常见 JavaScript API 对象模型](../../develop/office-javascript-api-object-model.md)。 
 
 ## <a name="learn-programming-concepts"></a>了解编程概念
 

@@ -3,12 +3,12 @@ title: Office 加载项 XML 清单
 description: ''
 ms.date: 01/06/2020
 localization_priority: Priority
-ms.openlocfilehash: 90fef1186db6411290daf9b6aef14d8d81d7a13e
-ms.sourcegitcommit: abe8188684b55710261c69e206de83d3a6bd2ed3
+ms.openlocfilehash: abc228fda18b432ddd16d04cce95a8d5af17dd8d
+ms.sourcegitcommit: a3ddfdb8a95477850148c4177e20e56a8673517c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "40970089"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "42162830"
 ---
 # <a name="office-add-ins-xml-manifest"></a>Office 加载项 XML 清单
 
@@ -157,9 +157,9 @@ _\*\* 仅通过 AppSource 分发的加载项才需要 SupportUrl。_
 
 下面各部分展示了内容加载项、任务窗格加载项和 Outlook 加载项的清单 v1.1 XML 文件示例。
 
-# <a name="task-panetabtabid-1"></a>[任务窗格](#tab/tabid-1)
+# <a name="task-pane"></a>[任务窗格](#tab/tabid-1)
 
-[任务窗格应用程序清单架构](https://github.com/OfficeDev/office-js-docs-pr/tree/master/docs/overview/schemas/taskpane)
+[加载项清单架构](/openspecs/office_file_formats/ms-owemxml/c6a06390-34b8-4b42-82eb-b28be12494a8)
 
 ```XML
 <?xml version="1.0" encoding="utf-8"?>
@@ -355,9 +355,9 @@ _\*\* 仅通过 AppSource 分发的加载项才需要 SupportUrl。_
 </OfficeApp>
 ```
 
-# <a name="contenttabtabid-2"></a>[内容](#tab/tabid-2)
+# <a name="content"></a>[内容](#tab/tabid-2)
 
-[内容应用程序清单架构](https://github.com/OfficeDev/office-js-docs-pr/tree/master/docs/overview/schemas/content)
+[加载项清单架构](/openspecs/office_file_formats/ms-owemxml/c6a06390-34b8-4b42-82eb-b28be12494a8)
 
 ```XML
 <?xml version="1.0" encoding="utf-8"?>
@@ -395,9 +395,9 @@ _\*\* 仅通过 AppSource 分发的加载项才需要 SupportUrl。_
 </OfficeApp>
 ```
 
-# <a name="mailtabtabid-3"></a>[邮件](#tab/tabid-3)
+# <a name="mail"></a>[邮件](#tab/tabid-3)
 
-[邮件应用程序清单架构](https://github.com/OfficeDev/office-js-docs-pr/tree/master/docs/overview/schemas/mail)
+[加载项清单架构](/openspecs/office_file_formats/ms-owemxml/c6a06390-34b8-4b42-82eb-b28be12494a8)
 
 ```XML
 <?xml version="1.0" encoding="utf-8"?>
@@ -490,7 +490,7 @@ _\*\* 仅通过 AppSource 分发的加载项才需要 SupportUrl。_
 
 ## <a name="validate-an-office-add-ins-manifest"></a>验证 Office 加载项的清单
 
-有关根据 [XML 架构定义 (XSD)](https://github.com/OfficeDev/office-js-docs-pr/tree/master/docs/overview/schemas) 验证清单的信息，请参阅[验证 Office 加载项的清单](../testing/troubleshoot-manifest.md)。
+有关根据 [XML 架构定义 (XSD)](/openspecs/office_file_formats/ms-owemxml/c6a06390-34b8-4b42-82eb-b28be12494a8) 验证清单的信息，请参阅[验证 Office 加载项的清单](../testing/troubleshoot-manifest.md)。
 
 ## <a name="see-also"></a>另请参阅
 
@@ -498,7 +498,7 @@ _\*\* 仅通过 AppSource 分发的加载项才需要 SupportUrl。_
 * [在清单中创建加载项命令][加载项命令]
 * [指定 Office 主机和 API 要求](specify-office-hosts-and-api-requirements.md)
 * [Office 外接程序的本地化](localization.md)
-* [Office 外接程序清单的架构参考](https://github.com/OfficeDev/office-js-docs-pr/tree/master/docs/overview/schemas)
+* [Office 外接程序清单的架构参考](/openspecs/office_file_formats/ms-owemxml/c6a06390-34b8-4b42-82eb-b28be12494a8)
 * [更新 API 和清单版本](update-your-javascript-api-for-office-and-manifest-schema-version.md)
 * [标识等效的 COM 加载项](make-office-add-in-compatible-with-existing-com-add-in.md)
 * [在加载项中请求获取 API 使用权限](requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md)

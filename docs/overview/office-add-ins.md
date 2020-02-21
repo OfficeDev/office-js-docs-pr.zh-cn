@@ -1,22 +1,22 @@
 ---
 title: Office 加载项平台概述 | Microsoft Docs
 description: 使用熟悉的 Web 技术，例如 HTML、CSS 和 JavaScript 来扩展 Word、Excel、PowerPoint、OneNote、Project 和 Outlook，并与其进行交互。
-ms.date: 01/14/2020
+ms.date: 02/13/2020
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: 3ecca3e36108b831899e9488459687cb2acc3c98
-ms.sourcegitcommit: 212c810f3480a750df779777c570159a7f76054a
+ms.openlocfilehash: fd69f3e93b18d2d17ef7ba1b213bfb39b86b74f4
+ms.sourcegitcommit: a3ddfdb8a95477850148c4177e20e56a8673517c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/17/2020
-ms.locfileid: "41216981"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "42165571"
 ---
 # <a name="office-add-ins-platform-overview"></a>Office 加载项平台概述
 
-![Office 加载项可扩展性图像](../images/addins-overview.png)
-
 可以使用 Office 加载项平台来生成解决方案，用于扩展 Office 应用程序，并与 Office 文档中的内容进行交互。通过 Office 加载项，可以使用熟悉的 Web 技术（如 HTML、CSS 和 JavaScript）来扩展 Word、Excel、PowerPoint、OneNote，Project 和 Outlook，并与之交互。解决方案可以跨多个平台（包括 Windows、Mac、iPad 和浏览器）在 Office 中运行。
+
+![Office 加载项可扩展性图像](../images/addins-overview.png)
 
 网页在浏览器中能执行的操作，Office 加载项差不多都能执行。使用 Office 加载项平台可以执行下列操作：
 
@@ -102,7 +102,7 @@ Outlook 外接程序可扩展 Office 功能区，还可以在查看或撰写 Out
 
 Outlook 加载项可以访问邮件项目中的上下文信息（如地址或跟踪 ID），然后使用此类数据来访问服务器和 Web 服务上的其他信息，以打造极具吸引力的用户体验。在大多数情况下，Outlook 加载项无需修改即可在 Outlook 主机应用程序上运行，以在桌面、Web 以及平板电脑和移动设备上提供无缝体验。
 
-有关 Outlook 加载项的概述，请参阅 [Outlook 加载项概述](/outlook/add-ins/)。
+有关 Outlook 加载项的概述，请参阅 [Outlook 加载项概述](../outlook/outlook-add-ins-overview.md)。
 
 ### <a name="create-new-objects-in-office-documents"></a>在 Office 文档中新建对象
 

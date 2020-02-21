@@ -1,15 +1,15 @@
 ---
 title: Word JavaScript API 概述
 description: ''
-ms.date: 07/05/2019
+ms.date: 02/19/2020
 ms.prod: word
 localization_priority: Priority
-ms.openlocfilehash: 6728c7491d84f2bc044f7e5a3199ad6d90979628
-ms.sourcegitcommit: 350f5c6954dec3e9384e2030cd3265aaba7ae904
+ms.openlocfilehash: 90dd7c787086a67dd8607479bbc46c957192d5c3
+ms.sourcegitcommit: a3ddfdb8a95477850148c4177e20e56a8673517c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/23/2019
-ms.locfileid: "40851255"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "42163967"
 ---
 # <a name="word-javascript-api-overview"></a>Word JavaScript API 概述
 
@@ -19,7 +19,7 @@ Word 加载项通过使用 Office JavaScript API 与 Word 中的对象进行交�
 
 * **通用 API**：[通用 API](/javascript/api/office) 随 Office 2013 引入，可用于访问多种类型的 Office 应用程序中常见的 UI、对话框和客户端设置等功能。
 
-此文档部分重点介绍了 Word JavaScript AP，你可以通过此 API 开发面向 Word 网页版或 Word 2016 或更高版本的加载项中的大部分功能。 有关通用 API 的信息，请参阅 [Office JavaScript API 对象模型](../../develop/office-javascript-api-object-model.md)。 
+此文档部分重点介绍了 Word JavaScript AP，你可以通过此 API 开发面向 Word 网页版或 Word 2016 或更高版本的加载项中的大部分功能。 有关通用 API 的信息，请参阅[常见 JavaScript API 对象模型](../../develop/office-javascript-api-object-model.md)。 
 
 ## <a name="learn-programming-concepts"></a>了解编程概念
 
