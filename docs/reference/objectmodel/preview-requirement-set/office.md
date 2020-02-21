@@ -3,23 +3,23 @@ title: Office 命名空间 - 预览要求集
 description: ''
 ms.date: 12/16/2019
 localization_priority: Normal
-ms.openlocfilehash: ef9634058fcdc633e9ad3a0adb74c4abebf8038b
-ms.sourcegitcommit: 8c5c5a1bd3fe8b90f6253d9850e9352ed0b283ee
+ms.openlocfilehash: 2cd04cc6d333439a679803e39357e4d19c550f95
+ms.sourcegitcommit: a3ddfdb8a95477850148c4177e20e56a8673517c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/19/2019
-ms.locfileid: "40815058"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "42165508"
 ---
 # <a name="office"></a>Office
 
 该 Office 命名空间提供所有 Office 应用中的加载项所使用的共享接口。此列表仅记录 Outlook 加载项所使用的接口。有关 Office 命名空间的完整列表，请参阅[公用 API](/javascript/api/office)。
 
-##### <a name="requirements"></a>要求
+##### <a name="requirements"></a>Requirements
 
 |要求| 值|
 |---|---|
 |[最低版本的邮箱要求集](../../requirement-sets/outlook-api-requirement-sets.md)| 1.1|
-|[适用的 Outlook 模式](/outlook/add-ins/#extension-points)| 撰写或阅读|
+|[适用的 Outlook 模式](../../../outlook/outlook-add-ins-overview.md#extension-points)| 撰写或阅读|
 
 ##### <a name="properties"></a>属性
 
@@ -57,12 +57,12 @@ ms.locfileid: "40815058"
 |`Succeeded`| String|调用成功。|
 |`Failed`| String|调用失败。|
 
-##### <a name="requirements"></a>要求
+##### <a name="requirements"></a>Requirements
 
 |要求| 值|
 |---|---|
 |[最低版本的邮箱要求集](../../requirement-sets/outlook-api-requirement-sets.md)| 1.1|
-|[适用的 Outlook 模式](/outlook/add-ins/#extension-points)| 撰写或阅读|
+|[适用的 Outlook 模式](../../../outlook/outlook-add-ins-overview.md#extension-points)| 撰写或阅读|
 
 <br>
 
@@ -84,12 +84,12 @@ ms.locfileid: "40815058"
 |`Html`| String|请求以 HTML 格式返回的数据。|
 |`Text`| String|请求以文本格式返回的数据。|
 
-##### <a name="requirements"></a>要求
+##### <a name="requirements"></a>Requirements
 
 |要求| 值|
 |---|---|
 |[最低版本的邮箱要求集](../../requirement-sets/outlook-api-requirement-sets.md)| 1.1|
-|[适用的 Outlook 模式](/outlook/add-ins/#extension-points)| 撰写或阅读|
+|[适用的 Outlook 模式](../../../outlook/outlook-add-ins-overview.md#extension-points)| 撰写或阅读|
 
 <br>
 
@@ -116,12 +116,12 @@ ms.locfileid: "40815058"
 |`RecipientsChanged`| String | 选定项目或约会位置的收件人列表已更改。 | 1.7 |
 |`RecurrenceChanged`| String | 选定系列的定期模式已更改。 | 1.7 |
 
-##### <a name="requirements"></a>要求
+##### <a name="requirements"></a>Requirements
 
 |要求| 值|
 |---|---|
 |[最低版本的邮箱要求集](../../requirement-sets/outlook-api-requirement-sets.md)| 1.5 |
-|[适用的 Outlook 模式](/outlook/add-ins/#extension-points)| 撰写或阅读 |
+|[适用的 Outlook 模式](../../../outlook/outlook-add-ins-overview.md#extension-points)| 撰写或阅读|
 
 <br>
 
@@ -143,9 +143,9 @@ ms.locfileid: "40815058"
 |`Body`| String|数据源来自邮件的正文。|
 |`Subject`| String|数据源来自邮件的主题。|
 
-##### <a name="requirements"></a>要求
+##### <a name="requirements"></a>Requirements
 
 |要求| 值|
 |---|---|
 |[最低版本的邮箱要求集](../../requirement-sets/outlook-api-requirement-sets.md)| 1.1|
-|[适用的 Outlook 模式](/outlook/add-ins/#extension-points)| 撰写或阅读|
+|[适用的 Outlook 模式](../../../outlook/outlook-add-ins-overview.md#extension-points)| 撰写或阅读|

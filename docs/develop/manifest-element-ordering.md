@@ -3,18 +3,18 @@ title: 如何查找清单元素的正确顺序
 description: 了解如何查找在父元素中放置子元素的正确顺序。
 ms.date: 08/22/2019
 localization_priority: Normal
-ms.openlocfilehash: 95cdce30beda5eeda73e9b06b65eff5048005723
-ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
+ms.openlocfilehash: 5cd755c69093267ad6ea87d5b1f0676169e7a672
+ms.sourcegitcommit: a3ddfdb8a95477850148c4177e20e56a8673517c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "41950696"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "42162781"
 ---
 # <a name="how-to-find-the-proper-order-of-manifest-elements"></a>如何查找清单元素的正确顺序
 
 Office 外接程序清单中的 XML 元素必须位于正确父元素下，*且*在父元素下以特定的相对顺序存在。
 
-所需的排序在 [Schemas](https://github.com/OfficeDev/office-js-docs-pr/tree/master/docs/overview/schemas) 文件夹的 XSD 文件中指定。 XSD 文件分类存放在对应任务窗格、内容和邮件三类外接程序的子文件夹中。
+所需的排序在 [Schemas](/openspecs/office_file_formats/ms-owemxml/c6a06390-34b8-4b42-82eb-b28be12494a8) 文件夹的 XSD 文件中指定。 XSD 文件分类存放在对应任务窗格、内容和邮件三类外接程序的子文件夹中。
 
 例如，在 `<OfficeApp>` 元素中，`<Id>`、`<Version>`、`<ProviderName>` 必须按此顺序出现。 如果添加了 `<AlternateId>` 元素，则其必须位于 `<Id>` 和 `<Version>` 元素之间。 如果任何元素的顺序出错，清单将无效并且你的外接程序将无法加载。
 
@@ -24,7 +24,7 @@ Office 外接程序清单中的 XML 元素必须位于正确父元素下，*且*
 以下各节按它们必须出现的顺序显示清单元素。 取决`type`于`<OfficeApp>`元素的属性是`TaskPaneApp`、 `ContentApp`还是，也`MailApp`有不同之处。 为了防止这些部分变得过于复杂，高度复杂`<VersionOverrides>`的元素将分解为单独的部分。
 
 > [!Note]
-> 并不是所有显示的元素都是必需的。 如果某个`minOccurs`元素的值在[架构](https://github.com/OfficeDev/office-js-docs-pr/tree/master/docs/overview/schemas)中为**0** ，则该元素是可选的。
+> 并不是所有显示的元素都是必需的。 如果某个`minOccurs`元素的值在[架构](/openspecs/office_file_formats/ms-owemxml/4e112d0a-c8ab-46a6-8a6c-2a1c1d1299e3)中为**0** ，则该元素是可选的。
 
 ## <a name="basic-task-pane-add-in-element-ordering"></a>基本任务窗格加载项元素排序
 

@@ -3,12 +3,12 @@ title: 使用 SSO 对 Microsoft Graph 授权
 description: ''
 ms.date: 01/14/2020
 localization_priority: Normal
-ms.openlocfilehash: 77dec8eda1c630bef6277008bef4b129e29a8dae
-ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
+ms.openlocfilehash: 06605ab54dc0565aaa5632abd911c68e29aba33f
+ms.sourcegitcommit: a3ddfdb8a95477850148c4177e20e56a8673517c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "41949682"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "42162795"
 ---
 # <a name="authorize-to-microsoft-graph-with-sso-preview"></a>使用 SSO 对 Microsoft Graph 授权（预览版）
 
@@ -62,4 +62,4 @@ ms.locfileid: "41949682"
 
 * [创建使用单一登录的 Node.js Office 加载项](create-sso-office-add-ins-nodejs.md)
 * [创建使用单一登录的 ASP.NET Office 加载项](create-sso-office-add-ins-aspnet.md)
-* [应用场景：为 Outlook 加载项中的服务实现单一登录](/outlook/add-ins/implement-sso-in-outlook-add-in)
+* [应用场景：为 Outlook 加载项中的服务实现单一登录](../outlook/implement-sso-in-outlook-add-in.md)

@@ -3,12 +3,12 @@ title: Office 加载项开发最佳做法
 description: ''
 ms.date: 03/19/2019
 localization_priority: Normal
-ms.openlocfilehash: 6fc1a12e1f6fca44c137aec1ac17d71d76156e1a
-ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
+ms.openlocfilehash: bbf32369e45f126d22c09270459eaaa015a6c0e1
+ms.sourcegitcommit: a3ddfdb8a95477850148c4177e20e56a8673517c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "41949702"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "42162774"
 ---
 # <a name="best-practices-for-developing-office-add-ins"></a>Office 加载项开发最佳做法
 
@@ -50,7 +50,7 @@ ms.locfileid: "41949702"
 
 - 避免弹出窗口。如果必须使用它们，请引导用户启用弹出窗口。
 
-如需你在开发首次运行体验时可应用的模式，请参阅[适用于 Office 加载项的 UX 设计模式](/office/dev/add-ins/design/first-run-experience-patterns)。
+如需你在开发首次运行体验时可应用的模式，请参阅[适用于 Office 加载项的 UX 设计模式](../design/first-run-experience-patterns.md)。
 
 ## <a name="use-add-in-commands"></a>使用加载项命令
 

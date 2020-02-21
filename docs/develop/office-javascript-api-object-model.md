@@ -1,16 +1,16 @@
 ---
-title: Office JavaScript API 对象模型
+title: 常见 JavaScript API 对象模型
 description: ''
-ms.date: 03/19/2019
+ms.date: 02/18/2020
 localization_priority: Normal
-ms.openlocfilehash: cc34d6ee9424c00bfc49762f779605f66bc9f36b
-ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
+ms.openlocfilehash: 98e53140beb99d557391e332569e594250d37fca
+ms.sourcegitcommit: a3ddfdb8a95477850148c4177e20e56a8673517c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "41950773"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "42163498"
 ---
-# <a name="office-javascript-api-object-model"></a>Office JavaScript API 对象模型
+# <a name="common-javascript-api-object-model"></a>常见 JavaScript API 对象模型
 
 Office JavaScript 加载项提供对主机基础功能的访问权限。 大多数此类访问权限可以访问一些重要的对象。 [Context](#context-object) 对象提供在初始化之后对运行时环境的访问权限。 [Document](#document-object) 对象使用户能够控制 Excel、PowerPoint 或 Word 文档。 [Mailbox](#mailbox-object) 对象使 Outlook 加载项能够访问邮件和用户配置文件。 理解这些高级对象之间的关系是 JavaScript 加载项的基础。
 
@@ -168,4 +168,4 @@ var item = Office.context.mailbox.item;
 
 -  **RoamingSettings** 对象：用于将 Outlook 加载项专用自定义设置保存到安装了加载项的用户邮箱。
 
-有关在 Outlook 加载项中使用 JavaScript 的信息，请参阅 [Outlook 加载项](/outlook/add-ins/)。
+有关在 Outlook 加载项中使用 JavaScript 的信息，请参阅 [Outlook 加载项](../outlook/outlook-add-ins-overview.md)。

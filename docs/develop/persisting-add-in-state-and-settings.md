@@ -3,12 +3,12 @@ title: 暂留加载项状态和设置
 description: ''
 ms.date: 03/19/2019
 localization_priority: Normal
-ms.openlocfilehash: 915cf5d1d1747f16a9067bff25fbf89d35882d25
-ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
+ms.openlocfilehash: 69fc0b1316a1a4eb0dfe0ebea01ffdbfe88dcd8c
+ms.sourcegitcommit: a3ddfdb8a95477850148c4177e20e56a8673517c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "41950780"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "42163505"
 ---
 # <a name="persisting-add-in-state-and-settings"></a>暂留加载项状态和设置
 
@@ -334,5 +334,5 @@ function saveCallback(asyncResult) {
 ## <a name="see-also"></a>另请参阅
 
 - [了解适用于 Office 的 JavaScript API](understanding-the-javascript-api-for-office.md)
-- [Outlook 加载项](/outlook/add-ins/)
+- [Outlook 加载项](../outlook/outlook-add-ins-overview.md)
 - [Excel-Add-in-JavaScript-PersistCustomSettings](https://github.com/OfficeDev/Excel-Add-in-JavaScript-PersistCustomSettings)

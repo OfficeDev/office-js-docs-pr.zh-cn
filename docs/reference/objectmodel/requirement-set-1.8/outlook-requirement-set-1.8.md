@@ -3,12 +3,12 @@ title: Outlook 加载项 API 要求集 1.8
 description: ''
 ms.date: 12/17/2019
 localization_priority: Normal
-ms.openlocfilehash: 4fc47a5aec1296a88654de44856ecd69ab23cc3a
-ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
+ms.openlocfilehash: d836cf2618dce46538b32b95e0d3a8e8025b4154
+ms.sourcegitcommit: a3ddfdb8a95477850148c4177e20e56a8673517c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "41950983"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "42165325"
 ---
 # <a name="outlook-add-in-api-requirement-set-18"></a>Outlook 加载项 API 要求集 1.8
 
@@ -54,7 +54,7 @@ ms.locfileid: "41950983"
 
 ## <a name="see-also"></a>另请参阅
 
-- [Outlook 加载项](/outlook/add-ins/)
+- [Outlook 加载项](../../../outlook/outlook-add-ins-overview.md)
 - [Outlook 外接程序代码示例](https://developer.microsoft.com/outlook/gallery/?filterBy=Outlook,Samples,Add-ins)
-- [入门](/outlook/add-ins/quick-start)
+- [入门](../../../quickstarts/outlook-quickstart.md)
 - [要求集和支持的客户端](../../requirement-sets/outlook-api-requirement-sets.md)

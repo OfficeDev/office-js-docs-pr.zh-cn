@@ -1,14 +1,14 @@
 ---
 title: Outlook 外接程序 API 要求集 1.6
 description: ''
-ms.date: 12/17/2019
+ms.date: 02/19/2020
 localization_priority: Normal
-ms.openlocfilehash: 22702448b82a108c401f9f81d3b8a321e14ead63
-ms.sourcegitcommit: 8c5c5a1bd3fe8b90f6253d9850e9352ed0b283ee
+ms.openlocfilehash: aedfa635c5208ddb8a0972e880fafe50ddc0b3d6
+ms.sourcegitcommit: a3ddfdb8a95477850148c4177e20e56a8673517c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/19/2019
-ms.locfileid: "40814659"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "42165361"
 ---
 # <a name="outlook-add-in-api-requirement-set-16"></a>Outlook 外接程序 API 要求集 1.6
 
@@ -30,11 +30,11 @@ ms.locfileid: "40814659"
 - 添加了 [Office.context.mailbox.item.getSelectedEntities](office.context.mailbox.item.md#methods)：添加了一个新函数，该函数可用于获取用户选择的突出显示匹配项中的实体。 突出显示的匹配项适用于上下文外接程序。
 - 添加了 [Office.context.mailbox.item.getSelectedRegExMatches](office.context.mailbox.item.md#methods)：添加了一个新函数，该函数可用于返回突出显示匹配项中与清单 XML 文件中定义的正则表达式匹配的字符串值。 突出显示的匹配项适用于上下文外接程序。
 - 添加了 [Office.context.mailbox.displayNewMessageForm](office.context.mailbox.md#methods)：添加了一个新函数，该函数将打开新邮件窗体。
-- 添加了 [Office.context.mailbox.userProfile.accountType](office.context.mailbox.userprofile.md#properties)：向指示用户帐户类型的用户配置文件添加了一个新成员。
+- 添加了 [Office.context.mailbox.userProfile.accountType](/javascript/api/outlook/office.userprofile?view=outlook-js-1.6#accounttype)：向指示用户帐户类型的用户配置文件添加了一个新成员。
 
 ## <a name="see-also"></a>另请参阅
 
-- [Outlook 加载项](/outlook/add-ins/)
+- [Outlook 加载项](../../../outlook/outlook-add-ins-overview.md)
 - [Outlook 外接程序代码示例](https://developer.microsoft.com/outlook/gallery/?filterBy=Outlook,Samples,Add-ins)
-- [入门](/outlook/add-ins/quick-start)
+- [入门](../../../quickstarts/outlook-quickstart.md)
 - [要求集和支持的客户端](../../requirement-sets/outlook-api-requirement-sets.md)

@@ -3,12 +3,12 @@ title: Office 加载项的资源限制和性能优化
 description: ''
 ms.date: 09/09/2019
 localization_priority: Normal
-ms.openlocfilehash: 9cd64943e3ec612fa2cb21adcd500c6522d451a2
-ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
+ms.openlocfilehash: 332ea72e9c96ff7a9b61a4fb0249284ca44079ac
+ms.sourcegitcommit: a3ddfdb8a95477850148c4177e20e56a8673517c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "41950374"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "42162788"
 ---
 # <a name="resource-limits-and-performance-optimization-for-office-add-ins"></a>Office 加载项的资源限制和性能优化
 
@@ -107,5 +107,5 @@ Office 提供了遥测日志，以保留本地计算机上运行的 Office 解�
 ## <a name="see-also"></a>另请参阅
 
 - [Office 加载项的隐私和安全](../concepts/privacy-and-security.md)
-- [Outlook 外接程序的激活限制和 JavaScript API](/outlook/add-ins/limits-for-activation-and-javascript-api-for-outlook-add-ins)
+- [Outlook 外接程序的激活限制和 JavaScript API](../outlook/limits-for-activation-and-javascript-api-for-outlook-add-ins.md)
 - [使用 Excel JavaScript API 优化性能](../excel/performance.md)

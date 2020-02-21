@@ -3,12 +3,12 @@ title: Office 加载项的隐私和安全
 description: ''
 ms.date: 09/26/2019
 localization_priority: Normal
-ms.openlocfilehash: c4f2ea5413ff1fa404c242bc729c59f9feedaca3
-ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
+ms.openlocfilehash: 30ebae88d40795b4be36628a60539397fb1deb29
+ms.sourcegitcommit: a3ddfdb8a95477850148c4177e20e56a8673517c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "41949704"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "42162802"
 ---
 # <a name="privacy-and-security-for-office-add-ins"></a>Office 加载项的隐私和安全
 
@@ -97,7 +97,7 @@ Office 加载项是使用浏览器控件或 **iframe** 中运行的 Web 技术�
 
   - 在 Web 浏览器控件中运行可允许加载项完成在浏览器中运行的常规网页可执行的所有操作，但同时将限制加载项遵守针对域隔离和安全区域的同源策略。
 
-Outlook 外接程序通过特定的资源使用率监视提供额外安全和性能功能。有关详细信息，请参阅 [Outlook 外接程序的隐私、权限和安全性](/outlook/add-ins/privacy-and-security)。
+Outlook 外接程序通过特定的资源使用率监视提供额外安全和性能功能。有关详细信息，请参阅 [Outlook 外接程序的隐私、权限和安全性](../outlook/privacy-and-security.md)。
 
 ### <a name="developer-guidelines-to-handle-pii"></a>开发人员处理 PII 的准则
 
@@ -138,13 +138,13 @@ Outlook 外接程序通过特定的资源使用率监视提供额外安全和性
 </OfficeApp>
 ```
 
-有关任务窗格和内容加载项的权限的详细信息，请参阅[在加载项中请求获取 API 使用权限](/office/dev/add-ins/develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins)。
+有关任务窗格和内容加载项的权限的详细信息，请参阅[在加载项中请求获取 API 使用权限](../develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md)。
 
 若要详细了解 Outlook 加载项权限，请参阅以下主题：
 
-- [Outlook 加载项的隐私、权限和安全](/outlook/add-ins/privacy-and-security)
+- [Outlook 加载项的隐私、权限和安全](../outlook/privacy-and-security.md)
 
-- [了解 Outlook 外接程序权限](/outlook/add-ins/understanding-outlook-add-in-permissions)
+- [了解 Outlook 外接程序权限](../outlook/understanding-outlook-add-in-permissions.md)
 
 ### <a name="same-origin-policy"></a>同源策略
 
@@ -240,7 +240,7 @@ Exchange 和 SharePoint 提供了客户端代理以实现跨域访问。通常�
   - 制定概述遵从性隐私策略的声明。
   - 准备好在提交加载项后签订合约协议。
 
-除资源使用率规则之外，Outlook 外接程序的开发人员还应确保其外接程序遵守有关指定激活规则和使用 JavaScript API 的限制。有关详细信息，请参阅[激活限制和适用于 Outlook 外接程序的 JavaScript API](/outlook/add-ins/limits-for-activation-and-javascript-api-for-outlook-add-ins)。
+除资源使用率规则之外，Outlook 外接程序的开发人员还应确保其外接程序遵守有关指定激活规则和使用 JavaScript API 的限制。有关详细信息，请参阅[激活限制和适用于 Outlook 外接程序的 JavaScript API](../outlook/limits-for-activation-and-javascript-api-for-outlook-add-ins.md)。
 
 ## <a name="it-administrators-control"></a>IT 管理员控制
 
@@ -259,11 +259,11 @@ Office 设置的管理和执行由组策略设置完成。 这些操作可通过
 
 ## <a name="see-also"></a>另请参阅
 
-- [在加载项中请求获取 API 使用权限](/office/dev/add-ins/develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins)
-- [Outlook 外接程序的隐私、权限和安全性](/outlook/add-ins/privacy-and-security)
-- [了解 Outlook 外接程序权限](/outlook/add-ins/understanding-outlook-add-in-permissions)
-- [Outlook 外接程序的激活和 JavaScript API 限制](/outlook/add-ins/limits-for-activation-and-javascript-api-for-outlook-add-ins)
-- [解决 Office 外接程序中的同源策略限制](/office/dev/add-ins/develop/addressing-same-origin-policy-limitations)
+- [在加载项中请求获取 API 使用权限](../develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md)
+- [Outlook 外接程序的隐私、权限和安全性](../outlook/privacy-and-security.md)
+- [了解 Outlook 外接程序权限](../outlook/understanding-outlook-add-in-permissions.md)
+- [Outlook 外接程序的激活和 JavaScript API 限制](../outlook/limits-for-activation-and-javascript-api-for-outlook-add-ins.md)
+- [解决 Office 外接程序中的同源策略限制](../develop/addressing-same-origin-policy-limitations.md)
 - [同源策略](https://www.w3.org/Security/wiki/Same_Origin_Policy)
 - [同源策略第 1 部分：不准偷看](/archive/blogs/ieinternals/same-origin-policy-part-1-no-peeking)
 - [针对 JavaScript 的同源策略](https://developer.mozilla.org/docs/Web/Security/Same-origin_policy)

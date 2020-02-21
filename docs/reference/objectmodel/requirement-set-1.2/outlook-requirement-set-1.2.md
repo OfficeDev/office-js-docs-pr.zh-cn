@@ -3,12 +3,12 @@ title: Outlook 外接程序 API 要求集 1.2
 description: ''
 ms.date: 12/17/2019
 localization_priority: Normal
-ms.openlocfilehash: e25a54ce96104f50cbcec25e7fe9896987ac453f
-ms.sourcegitcommit: 8c5c5a1bd3fe8b90f6253d9850e9352ed0b283ee
+ms.openlocfilehash: d46b705c79283049b3dbdff19b8348aa1b3c7bb0
+ms.sourcegitcommit: a3ddfdb8a95477850148c4177e20e56a8673517c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/19/2019
-ms.locfileid: "40814939"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "42163848"
 ---
 # <a name="outlook-add-in-api-requirement-set-12"></a>Outlook 外接程序 API 要求集 1.2
 
@@ -30,7 +30,7 @@ ms.locfileid: "40814939"
 
 ## <a name="see-also"></a>另请参阅
 
-- [Outlook 加载项](/outlook/add-ins/)
+- [Outlook 加载项](../../../outlook/outlook-add-ins-overview.md)
 - [Outlook 外接程序代码示例](https://developer.microsoft.com/outlook/gallery/?filterBy=Outlook,Samples,Add-ins)
-- [入门](/outlook/add-ins/quick-start)
+- [入门](../../../quickstarts/outlook-quickstart.md)
 - [要求集和支持的客户端](../../requirement-sets/outlook-api-requirement-sets.md)

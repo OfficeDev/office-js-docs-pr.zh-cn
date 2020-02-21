@@ -1,0 +1,98 @@
+---
+title: Outlook 加载项的激活和 API 使用限制
+description: 请注意某些激活和 API 使用指南，并在这些限制范围内实施加载项。
+ms.date: 10/31/2019
+localization_priority: Normal
+ms.openlocfilehash: 15fba6d0be2f638bfa4ffd531da5876a4ccbc876
+ms.sourcegitcommit: a3ddfdb8a95477850148c4177e20e56a8673517c
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "42165996"
+---
+# <a name="limits-for-activation-and-javascript-api-for-outlook-add-ins"></a>Outlook 加载项的激活和 JavaScript API 限制
+
+为了向 Outlook 外接程序的用户提供令人满意的体验，您必须了解特定的激活和 API 使用准则，并执行外接程序使其不超过这些限制。这些准则的设置是为了确保单个外接程序不能请求 Exchange Server 或 Outlook 而浪费过长时间来处理其激活规则或对适用于 Office 的 JavaScript API 调用，从而影响 Outlook 和其他外接程序的整体用户体验。在外接程序清单中设计激活规则，使用自定义属性、漫游设置、收件人、Exchange Web 服务 (EWS) 服务请求和响应以及异步调用时，均须遵守这些限制。
+
+> [!NOTE]
+> 如果外接程序在 Outlook 富客户端中运行，还必须确认运行的外接程序是否在特定运行时资源使用状况限制内。
+
+## <a name="limits-on-where-add-ins-activate"></a>外接程序激活位置的限制
+
+外接程序仅在用户主邮箱中激活。外接程序不会在共享邮箱、使用代理访问打开的其他用户邮箱的文件夹、存档邮箱或公用文件夹中激活。
+
+## <a name="limits-for-activation-rules"></a>激活规则的限制
+
+为 Outlook 外接程序设计激活规则时，请遵循以下准则：
+
+- 将清单的大小限制为 256 KB。如果超出该限制，则无法为 Exchange 邮箱安装 Outlook 外接程序。
+
+- 可为外接程序最多指定 15 条激活规则。如果超出该限制，则无法安装外接程序。
+
+- 如果您对所选项目的正文使用 [ItemHasKnownEntity](../reference/manifest/rule.md#itemhasknownentity-rule) 规则，预计 Outlook 富客户端将仅对正文的前 1 MB 应用规则，而不会超过此限制应用于正文的其他部分。如果正文的前 1 MB 之后存在匹配，您的外接程序将不会激活。如果您期望这成为一种可能的方案，请重新设计激活条件。
+
+- 如果在 **ItemHasKnownEntity** 或 [ItemHasRegularExpressionMatch](../reference/manifest/rule.md#itemhasregularexpressionmatch-rule) 规则中使用正则表达式，请注意，通常适用于任何 Outlook 主机的下列限制和准则，以及表 1、2 和 3 中所述的限制和准则（因主机而异）：
+   - 外接程序的激活规则中最多可指定 5 个正则表达式。如果超出该限制，则无法安装外接程序。
+   - 指定正则表达式，以便 **getRegExMatches** 方法调用在前 50 个匹配项内返回预期结果。
+   - 可以在正则表达式中指定向前断言，但不支持向后 `(?<=text)` 和否定向后 `(?<!text)` 断言。
+
+表1列出了这些限制，并介绍了在 Outlook 富客户端与 Outlook 网页版或移动设备之间的正则表达式支持之间的差异。 这种支持不依赖于任何特定类型的设备和项目正文。
+
+**表 1.各种正则表达式支持的一般区别**
+
+|Outlook 富客户端|Outlook 网页版或移动设备版|
+|:-----|:-----|
+|使用作为 Visual Studio 标准模板库一部分提供的 C++ 正则表达式引擎。该引擎使用 ECMAScript 5 标准编译。 |使用属于 JavaScript 一部分的正则表达式评估，由浏览器提供，且支持 ECMAScript 5 超集。|
+|由于不同的 regex 引擎，预计包含基于预定义字符类的自定义字符类的正则表达式在 Outlook 富客户端中返回的结果可能比在 web 或移动设备上的 Outlook 中返回不同的结果。<br/><br/>例如，正则表达式 `[\s\S]{0,100}` 与任意数量（0 到 100）的单个空格字符或非空格字符匹配。 此正则表达式在 Outlook 富客户端中返回的结果与 web 和移动设备上的 Outlook 不同。<br/><br/>解决办法是，应将正则表达式重写为 `(\s\|\S){0,100}`。 此变通正则表达式与任意数量（0 到 100）的空格字符或非空格字符匹配。<br/><br/>您应该在每个 Outlook 主机中对每个正则表达式进行充分的测试，并在正则表达式返回不同的结果时重写该正则表达式。 |您应该在每个 Outlook 主机中对每个正则表达式进行充分的测试，并在正则表达式返回不同的结果时重写该正则表达式。|
+|默认情况下，外接程序的所有正则表达式的计算时间限制为 1 秒。超出此限制将导致最多重新计算 3 次。如果超出该重新计算限制，Outlook 富客户端将禁止对任何 Outlook 主机上的同一邮箱运行外接程序。<br/><br/>管理员可使用 **OutlookActivationAlertThreshold** 和 **OutlookActivationManagerRetryLimit** 注册表项覆盖这些计算限制。|不支持与 Outlook 富客户端中相同的资源监视或注册表设置。但将为所有 Outlook 主机上的同一邮箱禁用 Outlook 富客户端上需要很长计算时间的正则表达式的外接程序。|
+
+表 2 列出了这些限制并介绍了每一个 Outlook 应用了正则表达式的项正文部分的区别。如果对项正文应用了正则表达式，则其中某些限制取决于设备和项正文的类型。
+
+**表 2.计算的项正文的大小限制**
+
+||Outlook 富客户端|移动设备上的 Outlook|Outlook 网页版|
+|:-----|:-----|:-----|:-----|
+|外形规格|任何支持的设备|Android 智能手机、iPad 或 iPhone|Android 智能手机、iPad 和 iPhone 之外任何支持的设备|
+|纯文本项正文|对正文数据的第一个 1 MB 而不对超出该限制的其余正文应用正则表达式。|仅当正文少于 16,000 个字符时激活加载项。|仅当正文少于 500,000 个字符时激活加载项。|
+|HTML 项正文|对正文数据的第一个 512 KB 而不对超出该限制的其余正文应用正则表达式。（实际的字符数取决于范围可为每字符 1 到 4 字节的编码。）|对前 64,000 个字符（包括 HTML 标记字符）而不对超出该限制的其余正文应用正则表达式。|仅当正文少于 500,000 个字符时激活加载项。|
+
+表 3 列出了这些限制并介绍了每个 Outlook 主机在计算正则表达式后返回的匹配项的区别。这种支持不依赖于任何特定的设备类型，但是，如果对项正文应用了正则表达式，则该支持可能依赖于项正文的类型。
+
+**表 3.返回的匹配项限制**
+
+||Outlook 富客户端|Outlook 网页版或移动设备版|
+|:-----|:-----|:-----|
+|返回的匹配项的顺序|假定**getRegExMatches**返回的匹配项在 outlook 富客户端中与在 outlook 富客户端中应用的同一个正则表达式不同，而不是在 web 或移动设备上。|假定**getRegExMatches**返回的匹配项在 outlook 富客户端中的顺序与在 web 或移动设备上的 outlook 中的顺序不同。|
+|纯文本项正文|**getRegExMatches** 返回至多 1,536 (1.5 KB) 个字符的任意匹配项，最多 50 个匹配项。<br/><br/>**注意**：**getRegExMatches** 不会在返回的数组中返回按任何特定顺序的匹配项。 通常，假设 Outlook 富客户端中的匹配顺序与在同一项目上应用的同一正则表达式不同，在 web 和移动设备上的 Outlook 中。|**getRegExMatches** 返回的任何匹配项最多为 3,072 (3 KB) 个字符，最多为 50 个匹配项。|
+|HTML 项正文|**getRegExMatches** 返回的任何匹配项最多为 3,072 (3 KB) 个字符，最多为 50 个匹配项。<br/> <br/> **注意**：**getRegExMatches** 不会在返回的数组中返回按任何特定顺序的匹配项。 通常，假设 Outlook 富客户端中的匹配顺序与在同一项目上应用的同一正则表达式不同，在 web 和移动设备上的 Outlook 中。|**getRegExMatches** 返回的任何匹配项最多为 3,072 (3 KB) 个字符，最多为 50 个匹配项。|
+
+## <a name="limits-for-javascript-api"></a>JavaScript API 的限制
+
+除了前面的激活规则的准则外，每个 Outlook 主机还对 JavaScript 对象模型强制实施了特定限制，如表 4 中所述：
+
+**表 4.使用适用于 Office 的 JavaScript API 获取或设置特定数据的限制**
+
+|功能|限制|相关 API|说明|
+|:-----|:-----|:-----|:-----|
+|自定义属性|2500 个字符|[CustomProperties](/javascript/api/outlook/office.CustomProperties) 对象<br/> <br/>[item.loadCustomPropertiesAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods) 方法|约会或邮件项目的所有自定义属性的限制。如果外接程序的所有自定义属性的总大小超出此限制，则所有 Outlook 主机将返回错误。|
+|漫游设置|32 KB 字符数|[RoamingSettings](/javascript/api/outlook/office.RoamingSettings) 对象<br/><br/> [context.roamingSettings](../reference/objectmodel/preview-requirement-set/office.context.md#properties) 属性|外接程序的所有漫游设置的限制。如果您的设置超出此限制，则所有 Outlook 主机将返回错误。|
+|正在提取已知实体|2000 个字符|[item.getEntities](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods) 方法<br/> <br/>[item.getEntitiesByType](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods) 方法<br/> <br/>[item.getFilteredEntitiesByName](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods) 方法|在项目正文上提取常见实体的 Exchange Server 限制。 Exchange Server 将忽略超过该限制的实体。 请注意，无论加载项是否使用 **ItemHasKnownEntity** 规则，此限制都适用。|
+|Exchange Web 服务|1 MB 字符数|[mailbox.makeEwsRequestAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md#methods) 方法|**Mailbox.makeEwsRequestAsync** 调用的请求或响应的限制。|
+|收件人|100 位收件人|[item.requiredAttendees](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties) 属性<br/> <br/>[item.optionalAttendees](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties) 属性<br/> <br/>[item.to](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties) 属性<br/> <br/>[item.cc](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties) 属性<br/> <br/>[Recipients.addAsync](/javascript/api/outlook/office.Recipients#addasync-recipients--options--callback-) 方法<br/> <br/>[Recipient.getAsync](/javascript/api/outlook/office.Recipients#getasync-options--callback-) 方法<br/> <br/>[Recipient.setAsync](/javascript/api/outlook/office.Recipients#setasync-recipients--options--callback-) 方法|在每个属性中指定的对收件人的限制。|
+|显示名称|255 个字符|[EmailAddressDetails.displayName](/javascript/api/outlook/office.emailaddressdetails#displayname) 属性<br/><br/> [Recipients](/javascript/api/outlook/office.Recipients) 对象<br/><br/> **item.requiredAttendees** 属性<br/><br/> **item.optionalAttendees** 属性 <br/><br/>**item.to** 属性 <br/><br/>**item.cc** 属性|约会或邮件中显示名称的长度限制。|
+|设置主题|255 个字符|[Mailbox.displayNewAppointmentForm](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md#methods) 方法<br/><br/> [Subject.setAsync](/javascript/api/outlook/office.Subject#setasync-subject--options--callback-) 方法|新的约会窗体中的主题限制，或设置约会或邮件主题的限制。|
+|设置地点|255 个字符|[Location.setAsync](/javascript/api/outlook/office.Location#setasync-location--options--callback-) 方法|设置约会或会议请求地点的限制。|
+|新的约会窗体的正文|32 KB 字符数|**Mailbox.displayNewAppointmentForm** 方法|新的约会窗体中正文的限制。|
+|显示现有项目的正文|32 KB 字符数|[mailbox.displayAppointmentForm](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md#methods) 方法<br/><br/> [mailbox.displayMessageForm](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md#methods) 方法|对于 web 和移动设备上的 Outlook：限制现有约会或邮件窗体中的正文。|
+|设置正文|1 MB 字符数|[Body.prependAsync](/javascript/api/outlook/office.Body#prependasync-data--options--callback-) 方法<br/> <br/>[Body.setAsync](/javascript/api/outlook/office.Body#setasync-data--options--callback-)<br/><br/>[Body.setSelectedDataAsync](/javascript/api/outlook/office.Body#setselecteddataasync-data--options--callback-) 方法|设置约会或邮件项目正文的限制。|
+|附件数|499 web 和移动设备上的 Outlook 文件|[item.addFileAttachmentAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods) 方法|限制可附加到发送项目的文件数量。 Web 和移动设备上的 Outlook 通常通过用户界面和**addFileAttachmentAsync**限制最多附加499个文件。 Outlook 富客户端不具体限制文件附件的数量。 但是，所有 Outlook 主机都遵守用户的 Exchange Server 已配置的附件大小限制。 请查看下一行获取“附件大小”信息。|
+|附件大小|取决于 Exchange Server|**item.addFileAttachmentAsync** 方法|对项目所有附件的大小有限制，管理员可以在用户邮箱的 Exchange Server 上配置此限制。对于 Outlook 富客户端，这限制了项目的附件数量。 对于 web 和移动设备上的 Outlook，这两个限制中的较小者（附件数和所有附件的大小）限制项目的实际附件。|
+|附件的文件名|255 个字符|**item.addFileAttachmentAsync** 方法|要添加到项目的附件的文件名长度限制。|
+|附件的 URI|2048 个字符|**item.addFileAttachmentAsync** 方法|要添加为项目附件的文件名 URI 的限制。|
+|附件 ID|100 个字符|[item.addItemAttachmentAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods) 方法<br/><br/> [item.removeAttachmentAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods) 方法|要添加或从项目中删除的附件 ID 的长度限制。|
+|异步调用|3 次调用|**item.addFileAttachmentAsync** 方法<br/><br/>**item.addItemAttachmentAsync** 方法<br/><br/><br/>**item.removeAttachmentAsync** 方法<br/><br/> [Body.getTypeAsync](/javascript/api/outlook/office.Body#gettypeasync-options--callback-) 方法<br/><br/>**Body.prependAsync** 方法<br/><br/>**Body.setSelectedDataAsync** 方法<br/><br/> [CustomProperties.saveAsync](/javascript/api/outlook/office.CustomProperties#saveasync-callback--asynccontext-) 方法<br/><br/><br/> [item.LoadCustomPropertiesAysnc](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods) 方法<br/><br/><br/> [Location.getAsync](/javascript/api/outlook/office.Location#getasync-options--callback-) 方法<br/><br/>**Location.setAsync** 方法<br/><br/> [mailbox.getCallbackTokenAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md#methods) 方法<br/><br/> [mailbox.getUserIdentityTokenAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md#methods) 方法<br/><br/> [mailbox.makeEwsRequestAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md#methods) 方法<br/><br/>**Recipients.addAsync** 方法<br/><br/> [Recipients.getAsync](/javascript/api/outlook/office.Recipients#getasync-options--callback-) 方法<br/><br/>**Recipients.setAsync** 方法<br/><br/> [RoamingSettings.saveAsync](/javascript/api/outlook/office.RoamingSettings#saveasync-callback-) 方法<br/><br/> [Subject.getAsync](/javascript/api/outlook/office.Subject#getasync-options--callback-) 方法<br/><br/>**Subject.setAsync** 方法<br/><br/> [Time.getAsync](/javascript/api/outlook/office.Time#getasync-options--callback-) 方法<br/><br/> [Time.setAsync](/javascript/api/outlook/office.Time#setasync-datetime--options--callback-) 方法|对于 web 或移动设备上的 Outlook：在任意时刻对并发异步呼叫数的限制，因为浏览器只允许对服务器进行有限数量的异步调用。 |
+
+## <a name="see-also"></a>另请参阅
+
+- [部署和安装 Outlook 加载项以进行测试](testing-and-tips.md)
+- [Outlook 外接程序的隐私、权限和安全性](../develop/privacy-and-security.md)

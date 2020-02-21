@@ -3,12 +3,12 @@ title: Outlook 加载项 API 要求集 1.5
 description: ''
 ms.date: 12/17/2019
 localization_priority: Normal
-ms.openlocfilehash: 1a12156feb7a03e596e521650a757fe7198b4d76
-ms.sourcegitcommit: 8c5c5a1bd3fe8b90f6253d9850e9352ed0b283ee
+ms.openlocfilehash: 65453a0cff8db682f5f573c25a9afa4e9ff63f67
+ms.sourcegitcommit: a3ddfdb8a95477850148c4177e20e56a8673517c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/19/2019
-ms.locfileid: "40814743"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "42163736"
 ---
 # <a name="outlook-add-in-api-requirement-set-15"></a>Outlook 外接程序 API 要求集 1.5
 
@@ -21,8 +21,8 @@ ms.locfileid: "40814743"
 
 要求集 1.5 包括[要求集 1.4](../requirement-set-1.4/outlook-requirement-set-1.4.md) 的所有功能。它添加了下列功能。
 
-- 添加了对[可固定任务窗格](/outlook/add-ins/pinnable-taskpane)的支持。
-- 添加了对 [REST API](/outlook/add-ins/use-rest-api) 调用的支持。
+- 添加了对[可固定任务窗格](../../../outlook/pinnable-taskpane.md)的支持。
+- 添加了对 [REST API](../../../outlook/use-rest-api.md) 调用的支持。
 - 添加了将附件标记为内联的功能。
 - 添加了关闭任务窗格或对话框的功能。
 
@@ -40,7 +40,7 @@ ms.locfileid: "40814743"
 
 ## <a name="see-also"></a>另请参阅
 
-- [Outlook 加载项](/outlook/add-ins/)
+- [Outlook 加载项](../../../outlook/outlook-add-ins-overview.md)
 - [Outlook 外接程序代码示例](https://developer.microsoft.com/outlook/gallery/?filterBy=Outlook,Samples,Add-ins)
-- [入门](/outlook/add-ins/quick-start)
+- [入门](../../../quickstarts/outlook-quickstart.md)
 - [要求集和支持的客户端](../../requirement-sets/outlook-api-requirement-sets.md)

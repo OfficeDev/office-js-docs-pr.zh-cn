@@ -3,12 +3,12 @@ title: Office 外接程序的身份验证设计准则
 description: ''
 ms.date: 03/19/2019
 localization_priority: Normal
-ms.openlocfilehash: c8d61d42eabca0a57e1a09dda95ee8c0572d5ecb
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: fb50809139334d4fbbcae67a02b07b3d49734210
+ms.sourcegitcommit: a3ddfdb8a95477850148c4177e20e56a8673517c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32449172"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "42162844"
 ---
 # <a name="authentication-patterns"></a>身份验证模式
 
@@ -49,7 +49,7 @@ ms.locfileid: "32449172"
 ## <a name="single-sign-on-authentication-flow-preview"></a>单一登录身份验证流程（预览）
 
 > [!NOTE]
-> 目前，Word、Excel、Outlook 和 PowerPoint 在预览版中支持单一登录 API。 有关单一登录支持的详细信息，请参阅  [IdentityAPI 要求集](/office/dev/add-ins/reference/requirement-sets/identity-api-requirement-sets)。 如果使用的是 Outlook 加载项，请务必为 Office 365 租赁启用新式验证。 若要了解如何执行此操作，请参阅  [Exchange Online: How to enable your tenant for modern authentication](https://social.technet.microsoft.com/wiki/contents/articles/32711.exchange-online-how-to-enable-your-tenant-for-modern-authentication.aspx)（Exchange Online：如何为租户启用新式验证）。
+> 目前，Word、Excel、Outlook 和 PowerPoint 在预览版中支持单一登录 API。 有关单一登录支持的详细信息，请参阅  [IdentityAPI 要求集](../reference/requirement-sets/identity-api-requirement-sets.md)。 如果使用的是 Outlook 加载项，请务必为 Office 365 租赁启用新式验证。 若要了解如何执行此操作，请参阅  [Exchange Online: How to enable your tenant for modern authentication](https://social.technet.microsoft.com/wiki/contents/articles/32711.exchange-online-how-to-enable-your-tenant-for-modern-authentication.aspx)（Exchange Online：如何为租户启用新式验证）。
 
 一旦用于生产加载项的单一登录正式发布后，即可使用该正式发布版获取流畅的最终用户体验。 Office 中的用户标识（Microsoft 帐户或 Office 365 标识）用于登录到加载项。 因此，用户只登录一次。 这样便使你的客户更容易上手，体验更为顺畅。
 
@@ -62,4 +62,4 @@ ms.locfileid: "32449172"
 
 ## <a name="see-also"></a>另请参阅
 
-- 详细了解[开发 SSO 加载项（预览版）](/office/dev/add-ins/develop/sso-in-office-add-ins)
+- 详细了解[开发 SSO 加载项（预览版）](../develop/sso-in-office-add-ins.md)

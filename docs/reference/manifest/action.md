@@ -3,12 +3,12 @@ title: 清单文件中的 Action 元素
 description: ''
 ms.date: 06/20/2019
 localization_priority: Normal
-ms.openlocfilehash: db05538fdb3f655a61050e0eeafa0b5ceb0dfd18
-ms.sourcegitcommit: da8e6148f4bd9884ab9702db3033273a383d15f0
+ms.openlocfilehash: 3b0a82362988d4e64c1a376e0bd774e84e4a8fa3
+ms.sourcegitcommit: a3ddfdb8a95477850148c4177e20e56a8673517c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/20/2019
-ms.locfileid: "36477934"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "42165557"
 ---
 # <a name="action-element"></a>Action 元素
 
@@ -104,7 +104,7 @@ ms.locfileid: "36477934"
 
  **xsi: type** 是“ShowTaskpane”时的可选元素。 指定此操作任务窗格的自定义标题。
 
-下面的示例演示使用**Title**元素的操作。 请注意, 您不会直接向字符串分配**标题**。 而是为其分配一个资源 ID (resid), 该 ID 在清单的 "**资源**" 部分中定义。
+下面的示例演示使用**Title**元素的操作。 请注意，您不会直接向字符串分配**标题**。 而是为其分配一个资源 ID （resid），该 ID 在清单的 "**资源**" 部分中定义。
 
 ```xml
 <Action xsi:type="ShowTaskpane">
@@ -129,10 +129,10 @@ ms.locfileid: "36477934"
 
 ## <a name="supportspinning"></a>SupportsPinning
 
-**xsi:type** 是“ShowTaskpane”时的可选元素。 包含 [VersionOverrides](versionoverrides.md) 元素的 `xsi:type` 属性值必须为 `VersionOverridesV1_1`。 添加此元素时将值设为 `true` 可以支持任务窗格固定。 这样一来，用户可以“固定”任务窗格，即使用户选择其他对象，任务窗格也可以继续处于打开状态。 有关详细信息，请参阅[在 Outlook 中实现可固定的任务窗格](/outlook/add-ins/pinnable-taskpane)。
+**xsi:type** 是“ShowTaskpane”时的可选元素。 包含 [VersionOverrides](versionoverrides.md) 元素的 `xsi:type` 属性值必须为 `VersionOverridesV1_1`。 添加此元素时将值设为 `true` 可以支持任务窗格固定。 这样一来，用户可以“固定”任务窗格，即使用户选择其他对象，任务窗格也可以继续处于打开状态。 有关详细信息，请参阅[在 Outlook 中实现可固定的任务窗格](../../outlook/pinnable-taskpane.md)。
 
 > [!NOTE]
-> SupportsPinning 目前仅支持 Outlook 2016 或更高版本 (内部版本7628.1000 或更高版本) 和 Outlook 2016 或 Mac 上的更高版本 (内部版本16.13.503 或更高版本)。
+> SupportsPinning 目前仅支持 Outlook 2016 或更高版本（内部版本7628.1000 或更高版本）和 Outlook 2016 或 Mac 上的更高版本（内部版本16.13.503 或更高版本）。
 
 ```xml
 <Action xsi:type="ShowTaskpane">

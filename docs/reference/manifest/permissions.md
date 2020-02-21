@@ -3,12 +3,12 @@ title: 清单文件中的 Permissions 元素
 description: ''
 ms.date: 03/19/2019
 localization_priority: Normal
-ms.openlocfilehash: a70d72e454273873c6a30ffd82c3a2a5194f55e0
-ms.sourcegitcommit: 350f5c6954dec3e9384e2030cd3265aaba7ae904
+ms.openlocfilehash: 95cb45f89e2a5b92edc29bf32d0b47fcb2dbf8ce
+ms.sourcegitcommit: a3ddfdb8a95477850148c4177e20e56a8673517c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/23/2019
-ms.locfileid: "40851304"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "42165543"
 ---
 # <a name="permissions-element"></a>Permissions 元素
 
@@ -36,4 +36,4 @@ ms.locfileid: "40851304"
 
 ## <a name="remarks"></a>注解
 
-有关详细信息，请参阅在[外接程序中请求 API 的使用权限](/office/dev/add-ins/develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins)和[了解 Outlook 外接程序权限](/outlook/add-ins/understanding-outlook-add-in-permissions)。
+有关详细信息，请参阅在[外接程序中请求 API 的使用权限](../../develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md)和[了解 Outlook 外接程序权限](../../outlook/understanding-outlook-add-in-permissions.md)。

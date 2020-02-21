@@ -3,12 +3,12 @@ title: Outlook 外接程序 API 要求集 1.3
 description: ''
 ms.date: 12/17/2019
 localization_priority: Normal
-ms.openlocfilehash: ba74102d70d2f2c38e96cb833b779d3381595f0f
-ms.sourcegitcommit: 8c5c5a1bd3fe8b90f6253d9850e9352ed0b283ee
+ms.openlocfilehash: 375fc5d7cce8592b8e4a270713c1f611129cc7d0
+ms.sourcegitcommit: a3ddfdb8a95477850148c4177e20e56a8673517c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/19/2019
-ms.locfileid: "40814862"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "42165424"
 ---
 # <a name="outlook-add-in-api-requirement-set-13"></a>Outlook 外接程序 API 要求集 1.3
 
@@ -21,7 +21,7 @@ ms.locfileid: "40814862"
 
 要求集 1.3 包括[要求集 1.2](../requirement-set-1.2/outlook-requirement-set-1.2.md) 的所有功能。它添加了下列功能。
 
-- 添加了对[外接程序命令](/outlook/add-ins/add-in-commands-for-outlook)的支持。
+- 添加了对[外接程序命令](../../../outlook/add-in-commands-for-outlook.md)的支持。
 - 添加了保存或关闭正在撰写的项目的功能。
 - 增强的[Body](/javascript/api/outlook/office.body?view=outlook-js-1.3)对象，允许外接程序获取或设置整个正文。
 - 添加了在 EWS 和 REST 格式之间转换 ID 的转换方法。
@@ -44,7 +44,7 @@ ms.locfileid: "40814862"
 
 ## <a name="see-also"></a>另请参阅
 
-- [Outlook 加载项](/outlook/add-ins/)
+- [Outlook 加载项](../../../outlook/outlook-add-ins-overview.md)
 - [Outlook 外接程序代码示例](https://developer.microsoft.com/outlook/gallery/?filterBy=Outlook,Samples,Add-ins)
-- [入门](/outlook/add-ins/quick-start)
+- [入门](../../../quickstarts/outlook-quickstart.md)
 - [要求集和支持的客户端](../../requirement-sets/outlook-api-requirement-sets.md)

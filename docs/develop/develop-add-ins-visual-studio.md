@@ -3,12 +3,12 @@ title: 使用 Visual Studio 开发 Office 加载项
 description: 如何使用 Visual Studio 开发 Office 加载项
 ms.date: 12/31/2019
 localization_priority: Priority
-ms.openlocfilehash: 2acafc08dcbb8e1fde439f2be289afff3185272c
-ms.sourcegitcommit: d5ac9284d1e96dc91a9168d7641e44d88535e1a7
+ms.openlocfilehash: 9f250078a4da80dea3276c51a2183a072da44f81
+ms.sourcegitcommit: a3ddfdb8a95477850148c4177e20e56a8673517c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/31/2019
-ms.locfileid: "40915047"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "42162809"
 ---
 # <a name="develop-office-add-ins-with-visual-studio"></a>使用 Visual Studio 开发 Office 加载项
 
@@ -22,7 +22,7 @@ ms.locfileid: "40915047"
 Visual Studio 可用于创建适用于 Excel、Outlook、Word 和 PowerPoint 的 Office 加载项。 Office 加载项项目是作为 Visual Studio 解决方案的一部分创建的，它使用 HTML、CSS 和 JavaScript。 要使用 Visual Studio 创建 Office 加载项，请按照快速入门中与你要创建的加载项相对应的说明进行操作：
 
 - [Excel 快速入门](../quickstarts/excel-quickstart-jquery.md?tabs=visualstudio)
-- [Outlook 快速入门](/outlook/add-ins/quick-start?context=office/dev/add-ins/context&tabs=visualstudio)
+- [Outlook 快速入门](../quickstarts/outlook-quickstart.md?tabs=visualstudio)
 - [Word 快速入门](../quickstarts/word-quickstart.md?tabs=visualstudio)
 - [PowerPoint 快速入门](../quickstarts/powerpoint-quickstart.md?tabs=visualstudio)
 

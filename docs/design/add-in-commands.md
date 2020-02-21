@@ -3,12 +3,12 @@ title: Excel、Word 和 PowerPoint 加载项命令
 description: ''
 ms.date: 06/20/2019
 localization_priority: Normal
-ms.openlocfilehash: f57e5465e503d936b7e8a404c9acf59ef897b4ac
-ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
+ms.openlocfilehash: 92e9b23eaf23aa9c6e0a2eda048dc34e3942f4ed
+ms.sourcegitcommit: a3ddfdb8a95477850148c4177e20e56a8673517c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "41950409"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "42162837"
 ---
 # <a name="add-in-commands-for-excel-word-and-powerpoint"></a>Excel、Word 和 PowerPoint 加载项命令
 
@@ -94,4 +94,4 @@ ms.locfileid: "41950409"
 
 加载项命令的最佳入门方式是参照 GitHub 上的 [Office 加载项命令示例](https://github.com/OfficeDev/Office-Add-in-Commands-Samples/)。
 
-若要详细了解如何在清单中指定加载项命令，请参阅[在清单中创建加载项命令](../develop/create-addin-commands.md)和 [VersionOverrides](/office/dev/add-ins/reference/manifest/versionoverrides) 参考内容。
+若要详细了解如何在清单中指定加载项命令，请参阅[在清单中创建加载项命令](../develop/create-addin-commands.md)和 [VersionOverrides](../reference/manifest/versionoverrides.md) 参考内容。

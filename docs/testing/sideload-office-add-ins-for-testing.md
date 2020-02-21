@@ -1,44 +1,42 @@
 ---
 title: 在 Office 网页版中旁加载 Office 加载项进行测试
 description: 通过旁加载在 Office 网页版中测试 Office 加载项
-ms.date: 06/20/2019
+ms.date: 02/18/2020
 localization_priority: Normal
-ms.openlocfilehash: b26128a912aff5a89ad839b8240f18959891d299
-ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
+ms.openlocfilehash: 869cabec737c39d7dded04fe7c52011347e0f314
+ms.sourcegitcommit: a3ddfdb8a95477850148c4177e20e56a8673517c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "41950906"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "42163582"
 ---
 # <a name="sideload-office-add-ins-in-office-on-the-web-for-testing"></a>在 Office 网页版中旁加载 Office 加载项进行测试
 
-可以通过使用旁加载来安装 Office 加载项以供测试，而无需先将它添加到加载项目录中。 在 Office 365 或 Office 网页版中都可以进行旁加载。 该过程使用的两个平台略有不同。 
+可以通过使用旁加载来安装 Office 加载项以供测试，而无需先将它添加到加载项目录中。 在 Office 365 或 Office 网页版中都可以进行旁加载。 该过程使用的两个平台略有不同。
 
 当旁加载外接程序时，外接程序清单存储在浏览器的本地存储区中，因此如果清除浏览器的缓存，或切换到另一个浏览器，就必须再次旁加载该外接程序。
 
-
 > [!NOTE]
-> 如本文所述，Word、Excel 和 PowerPoint 支持旁加载。若要旁加载 Outlook 外接程序，请参阅[旁加载 Outlook 外接程序进行测试](/outlook/add-ins/sideload-outlook-add-ins-for-testing)。
+> 如本文所述，Word、Excel 和 PowerPoint 支持旁加载。若要旁加载 Outlook 外接程序，请参阅[旁加载 Outlook 外接程序进行测试](../outlook/sideload-outlook-add-ins-for-testing.md)。
 
 下面的视频逐步展示了如何在 Office 网页版或桌面上旁加载加载项。
-
 
 > [!VIDEO https://www.youtube.com/embed/XXsAw2UUiQo]
 
 ## <a name="sideload-an-office-add-in-in-office-on-the-web"></a>在 Office 网页版中旁加载 Office 加载项
 
 1. 打开 [Microsoft Office 网页版](https://office.live.com/)。
-    
+
 2. 在“**立即开始使用在线应用**”中，选择 **Excel**、**Word** 或 **PowerPoint**；然后打开一个新文档。
-    
+
 3. 打开功能区上的“**插入**”选项卡，然后在“**外接程序**”部分中，选择“**Office 外接程序**”。
-    
+
 4. 在“Office 加载项”**** 对话框中，依次选择“我的加载项”**** 选项卡、“管理我的加载项”**** 和“上传我的加载项”****。
-    
+
     ![“Office 加载项”对话框，右上方有“管理我的加载项”下拉列表，其中有下拉选项“上传我的加载项”](../images/office-add-ins-my-account.png)
 
-5.  **转到**加载项清单文件，再选择“上传”****。
-    
+5. **转到**加载项清单文件，再选择“上传”****。
+
     ![带浏览、上载和取消按钮的上载外接程序对话框。](../images/upload-add-in.png)
 
 6. 验证是否已安装外接程序。例如，如果它是一个外接程序命令，它应显示在功能区或上下文菜单上。如果它是一个任务窗格外接程序，则应显示窗格。
@@ -52,15 +50,13 @@ ms.locfileid: "41950906"
 
 >    ![Microsoft Edge 的“允许使用 localhost 环回”选项（该复选框已选中）。](../images/allow-localhost-loopback.png)
 
-
 ## <a name="sideload-an-office-add-in-in-office-365"></a>在 Office 365 上旁加载 Office 加载项
 
 1. 登录 Office 365 帐户。
-    
-2. 打开工具栏最左端的应用启动器，选择“Excel”****、“Word”**** 或“PowerPoint”****，再新建文档。
-    
-3. 步骤 3 - 6 与上一部分**在 Office 网页版中旁加载 Office 加载项**相同。
 
+2. 打开工具栏最左端的应用启动器，选择“Excel”****、“Word”**** 或“PowerPoint”****，再新建文档。
+
+3. 步骤 3 - 6 与上一部分**在 Office 网页版中旁加载 Office 加载项**相同。
 
 ## <a name="sideload-an-add-in-when-using-visual-studio"></a>使用 Visual Studio 时旁加载加载项
 
@@ -77,3 +73,7 @@ ms.locfileid: "41950906"
 6. 保存 XML 文件。
 7. 右键单击 Web 项目，然后选择**调试** -> **启动新实例**。 这将在不启动 Office 的情况下运行 Web 项目。
 8. 从 Office 网页版，使用之前[在 Office 网页版中加载 Office 加载项](#sideload-an-office-add-in-in-office-on-the-web)中所述的步骤旁加载加载项。
+
+## <a name="remove-a-sideloaded-add-in"></a>删除旁加载加载项
+
+您可以通过清除浏览器的缓存来删除以前的旁加载外接程序。 此外，如果您对外接程序清单进行了更改（例如，更新了图标或加载项命令的文本的文件名），您可能需要清除缓存，然后使用更新的清单重新旁加载该外接程序。 执行此操作后，Office 将按照更新清单中所述的方式呈现该加载项。

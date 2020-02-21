@@ -3,12 +3,12 @@ title: 验证 Office 加载项的清单
 description: 了解如何使用 XML 架构和其他工具验证 Office 加载项的清单。
 ms.date: 12/31/2019
 localization_priority: Normal
-ms.openlocfilehash: 0b0447bd9fbb513d058be3901a7b7ffb4b1ad609
-ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
+ms.openlocfilehash: 9cd1c353d6f73decb5e39df96cf66da5912b8f9c
+ms.sourcegitcommit: a3ddfdb8a95477850148c4177e20e56a8673517c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "41950507"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "42163911"
 ---
 # <a name="validate-an-office-add-ins-manifest"></a>验证 Office 加载项的清单
 
@@ -44,12 +44,12 @@ npm run validate
 
     > [!NOTE]
     > 如果运行此命令导致错误消息“命令语法无效。” （因为 `validate` 命令无法识别），运行以下命令验证清单（用清单文件的名称替换 `MANIFEST_FILE`）： 
-    > 
+    >
     > `npx --ignore-existing office-addin-manifest validate MANIFEST_FILE`
 
 ## <a name="validate-your-manifest-against-the-xml-schema"></a>根据 XML 架构验证清单
 
-可以根据 [XML 架构定义 (XSD)](https://github.com/OfficeDev/office-js-docs-pr/tree/master/docs/overview/schemas) 文件来验证清单文件。 这将有助于确保清单文件采用正确架构（包括所使用的元素的所有命名空间）。 如果从其他示例清单中复制了元素，请仔细检查是否还**添加了相应命名空间**。 若要执行此验证，可以使用 XML 架构验证工具。
+可以根据 [XML 架构定义 (XSD)](/openspecs/office_file_formats/ms-owemxml/c6a06390-34b8-4b42-82eb-b28be12494a8) 文件来验证清单文件。 这将有助于确保清单文件采用正确架构（包括所使用的元素的所有命名空间）。 如果从其他示例清单中复制了元素，请仔细检查是否还**添加了相应命名空间**。 若要执行此验证，可以使用 XML 架构验证工具。
 
 ### <a name="to-use-a-command-line-xml-schema-validation-tool-to-validate-your-manifest"></a>使用命令行 XML 架构验证工具验证清单的具体步骤
 

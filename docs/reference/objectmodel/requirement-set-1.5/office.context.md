@@ -3,16 +3,16 @@ title: Office。上下文要求集1。5
 description: ''
 ms.date: 12/16/2019
 localization_priority: Normal
-ms.openlocfilehash: c6e7c3f9b37942454843ed9f501f80a5f4af6e55
-ms.sourcegitcommit: 0dacbe7c80ed387099e3ec21e151f8990b181ede
+ms.openlocfilehash: 7f156f3f998aa2f86e6f969e158aa7e315ae6ad8
+ms.sourcegitcommit: a3ddfdb8a95477850148c4177e20e56a8673517c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/13/2020
-ms.locfileid: "41110953"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "42163743"
 ---
 # <a name="context"></a>context
 
-### <a name="officeofficemdcontext"></a>[Office](office.md).context
+### <a name="officecontext"></a>[Office](office.md).context
 
 在所有 Office 应用中，上下文提供外接程序使用的共享接口。 此列表仅记录 Outlook 外接程序使用的那些接口。有关 "context" 命名空间的完整列表，请参阅[通用 API 中的 "office. context reference](/javascript/api/office/office.context?view=outlook-js-1.5)"。
 
@@ -21,7 +21,7 @@ ms.locfileid: "41110953"
 |要求| 值|
 |---|---|
 |[最低版本的邮箱要求集](../../requirement-sets/outlook-api-requirement-sets.md)| 1.1|
-|[适用的 Outlook 模式](/outlook/add-ins/#extension-points)| 撰写或阅读|
+|[适用的 Outlook 模式](../../../outlook/outlook-add-ins-overview.md#extension-points)| 撰写或阅读|
 
 ##### <a name="properties"></a>属性
 
@@ -54,7 +54,7 @@ ms.locfileid: "41110953"
 |要求| 值|
 |---|---|
 |[最低版本的邮箱要求集](../../requirement-sets/outlook-api-requirement-sets.md)| 1.1|
-|[适用的 Outlook 模式](/outlook/add-ins/#extension-points)| 撰写或阅读|
+|[适用的 Outlook 模式](../../../outlook/outlook-add-ins-overview.md#extension-points)| 撰写或阅读|
 
 ##### <a name="example"></a>示例
 
@@ -82,7 +82,7 @@ function write(message){
 ---
 ---
 
-#### <a name="diagnostics-contextinformationjavascriptapiofficeofficecontextinformation"></a>诊断： [ContextInformation](/javascript/api/office/office.contextinformation)
+#### <a name="diagnostics-contextinformation"></a>诊断： [ContextInformation](/javascript/api/office/office.contextinformation)
 
 获取有关加载项在其中运行的环境的信息。
 
@@ -95,7 +95,7 @@ function write(message){
 |要求| 值|
 |---|---|
 |[最低版本的邮箱要求集](../../requirement-sets/outlook-api-requirement-sets.md)| 1.1|
-|[适用的 Outlook 模式](/outlook/add-ins/#extension-points)| 撰写或阅读|
+|[适用的 Outlook 模式](../../../outlook/outlook-add-ins-overview.md#extension-points)| 撰写或阅读|
 
 ##### <a name="example"></a>示例
 
@@ -123,7 +123,7 @@ console.log(JSON.stringify(Office.context.diagnostics));
 |要求| 值|
 |---|---|
 |[最低版本的邮箱要求集](../../requirement-sets/outlook-api-requirement-sets.md)| 1.1|
-|[适用的 Outlook 模式](/outlook/add-ins/#extension-points)| 撰写或阅读|
+|[适用的 Outlook 模式](../../../outlook/outlook-add-ins-overview.md#extension-points)| 撰写或阅读|
 
 ##### <a name="example"></a>示例
 
@@ -151,7 +151,7 @@ function write(message){
 ---
 ---
 
-#### <a name="host-hosttypejavascriptapiofficeofficehosttype"></a>主机： [HostType](/javascript/api/office/office.hosttype)
+#### <a name="host-hosttype"></a>主机： [HostType](/javascript/api/office/office.hosttype)
 
 获取运行外接程序的 Office 应用程序主机。
 
@@ -164,7 +164,7 @@ function write(message){
 |要求| 值|
 |---|---|
 |[最低版本的邮箱要求集](../../requirement-sets/outlook-api-requirement-sets.md)| 1.1|
-|[适用的 Outlook 模式](/outlook/add-ins/#extension-points)| 撰写或阅读|
+|[适用的 Outlook 模式](../../../outlook/outlook-add-ins-overview.md#extension-points)| 撰写或阅读|
 
 ##### <a name="example"></a>示例
 
@@ -177,7 +177,7 @@ console.log(JSON.stringify(Office.context.host));
 ---
 ---
 
-#### <a name="platform-platformtypejavascriptapiofficeofficeplatformtype"></a>platform： [PlatformType](/javascript/api/office/office.platformtype)
+#### <a name="platform-platformtype"></a>platform： [PlatformType](/javascript/api/office/office.platformtype)
 
 提供在其上运行外接的平台。
 
@@ -190,7 +190,7 @@ console.log(JSON.stringify(Office.context.host));
 |要求| 值|
 |---|---|
 |[最低版本的邮箱要求集](../../requirement-sets/outlook-api-requirement-sets.md)| 1.1|
-|[适用的 Outlook 模式](/outlook/add-ins/#extension-points)| 撰写或阅读|
+|[适用的 Outlook 模式](../../../outlook/outlook-add-ins-overview.md#extension-points)| 撰写或阅读|
 
 ##### <a name="example"></a>示例
 
@@ -203,7 +203,7 @@ console.log(JSON.stringify(Office.context.platform));
 ---
 ---
 
-#### <a name="requirements-requirementsetsupportjavascriptapiofficeofficerequirementsetsupport"></a>要求： [RequirementSetSupport](/javascript/api/office/office.requirementsetsupport)
+#### <a name="requirements-requirementsetsupport"></a>要求： [RequirementSetSupport](/javascript/api/office/office.requirementsetsupport)
 
 提供用于确定当前主机和平台上支持的要求集的方法。
 
@@ -216,7 +216,7 @@ console.log(JSON.stringify(Office.context.platform));
 |要求| 值|
 |---|---|
 |[最低版本的邮箱要求集](../../requirement-sets/outlook-api-requirement-sets.md)| 1.1|
-|[适用的 Outlook 模式](/outlook/add-ins/#extension-points)| 撰写或阅读|
+|[适用的 Outlook 模式](../../../outlook/outlook-add-ins-overview.md#extension-points)| 撰写或阅读|
 
 ##### <a name="example"></a>示例
 
@@ -229,7 +229,7 @@ console.log(JSON.stringify(Office.context.requirements.isSetSupported("mailbox",
 ---
 ---
 
-#### <a name="roamingsettings-roamingsettingsjavascriptapioutlookofficeroamingsettings"></a>roamingSettings： [roamingSettings](/javascript/api/outlook/office.roamingsettings)
+#### <a name="roamingsettings-roamingsettings"></a>roamingSettings： [roamingSettings](/javascript/api/outlook/office.roamingsettings)
 
 获取一个对象，它表示保存到用户邮箱的邮件外接程序的自定义设置或状态。
 
@@ -244,15 +244,15 @@ console.log(JSON.stringify(Office.context.requirements.isSetSupported("mailbox",
 |要求| 值|
 |---|---|
 |[最低版本的邮箱要求集](../../requirement-sets/outlook-api-requirement-sets.md)| 1.1|
-|[最低权限级别](/outlook/add-ins/understanding-outlook-add-in-permissions)| 受限|
-|[适用的 Outlook 模式](/outlook/add-ins/#extension-points)| 撰写或阅读|
+|[最低权限级别](../../../outlook/understanding-outlook-add-in-permissions.md)| 受限|
+|[适用的 Outlook 模式](../../../outlook/outlook-add-ins-overview.md#extension-points)| 撰写或阅读|
 
 <br>
 
 ---
 ---
 
-#### <a name="ui-uijavascriptapiofficeofficeui"></a>ui： [ui](/javascript/api/office/office.ui)
+#### <a name="ui-ui"></a>ui： [ui](/javascript/api/office/office.ui)
 
 提供可用于在 Office 外接程序中创建和操作 UI 组件（如对话框）的对象和方法。
 
@@ -265,4 +265,4 @@ console.log(JSON.stringify(Office.context.requirements.isSetSupported("mailbox",
 |要求| 值|
 |---|---|
 |[最低版本的邮箱要求集](../../requirement-sets/outlook-api-requirement-sets.md)| 1.1|
-|[适用的 Outlook 模式](/outlook/add-ins/#extension-points)| 撰写或阅读|
+|[适用的 Outlook 模式](../../../outlook/outlook-add-ins-overview.md#extension-points)| 撰写或阅读|

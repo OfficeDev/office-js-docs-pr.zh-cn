@@ -4,12 +4,12 @@ description: ''
 ms.date: 02/11/2020
 ms.prod: outlook
 localization_priority: Priority
-ms.openlocfilehash: 7ea6be0cb1879ba583eaa64a7611899bf5adb73f
-ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
+ms.openlocfilehash: ad83a9627aba29c6b2877d83f1d359ec1f7dd3a5
+ms.sourcegitcommit: a3ddfdb8a95477850148c4177e20e56a8673517c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "41950542"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "42163600"
 ---
 # <a name="outlook-javascript-api-requirement-sets"></a>Outlook JavaScript API 要求集
 
@@ -66,7 +66,7 @@ if (item.somePropertyOrFunction !== undefined) {
 
 ## <a name="requirement-sets-supported-by-exchange-servers-and-outlook-clients"></a>Exchange 服务器和 Outlook 客户端支持的要求集
 
-本节将说明 Exchange 服务器和 Outlook 客户端支持的要求集范围。 有关运行 Outlook 加载项的服务器和客户端要求的详细信息，请参阅 [Outlook 加载项要求](/outlook/add-ins/add-in-requirements)。
+本节将说明 Exchange 服务器和 Outlook 客户端支持的要求集范围。 有关运行 Outlook 加载项的服务器和客户端要求的详细信息，请参阅 [Outlook 加载项要求](../../outlook/add-in-requirements.md)。
 
 > [!IMPORTANT]
 > 如果目标 Exchange 服务器和 Outlook 客户端支持不同的要求集，则将受限于较低的要求集范围。 例如，如果外接程序在 Mac 上的 Outlook 2016（最高要求集：1.6）中针对 Exchange 2013（最高要求集：1.1）运行，则外接程序受限于要求集 1.1。
@@ -108,11 +108,11 @@ if (item.somePropertyOrFunction !== undefined) {
 >
 > **新式**
 >
-> ![新式 Outlook 工具栏的部分屏幕截图](https://docs.microsoft.com/outlook/add-ins/images/outlook-on-the-web-new-toolbar.png)
+> ![新式 Outlook 工具栏的部分屏幕截图](../../images/outlook-on-the-web-new-toolbar.png)
 >
 > **经典**
 >
-> ![经典 Outlook 工具栏的部分屏幕截图](https://docs.microsoft.com/outlook/add-ins/images/outlook-on-the-web-classic-toolbar.png)
+> ![经典 Outlook 工具栏的部分屏幕截图](../../images/outlook-on-the-web-classic-toolbar.png)
 
 ## <a name="using-preview-apis"></a>使用预览 API
 

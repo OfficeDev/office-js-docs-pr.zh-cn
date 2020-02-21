@@ -1,40 +1,38 @@
 ---
 title: 在 iPad 和 Mac 上旁加载 Office 加载项以供测试
 description: ''
-ms.date: 11/26/2019
+ms.date: 02/18/2020
 localization_priority: Normal
-ms.openlocfilehash: 4a49282aa2deb4b5ea203cd54f379e03e53ec3e8
-ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
+ms.openlocfilehash: 63e7e22bd7db3aec8808a3c7e043a48a28b14486
+ms.sourcegitcommit: a3ddfdb8a95477850148c4177e20e56a8673517c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "41950913"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "42163946"
 ---
 # <a name="sideload-office-add-ins-on-ipad-and-mac-for-testing"></a>在 iPad 和 Mac 上旁加载 Office 加载项以供测试
 
-若要查看加载项在 iOS 版 Office 中如何运行，可以使用 iTunes 将加载项的清单旁加载到 iPad，或直接将加载项的清单旁加载到 Mac 版 Office 中。此操作并不能使你在运行时对其设置断点和调试代码，但你可以查看其行为方式，并验证 UI 可用且正确呈现。 
+若要查看加载项在 iOS 版 Office 中如何运行，可以使用 iTunes 将加载项的清单旁加载到 iPad，或直接将加载项的清单旁加载到 Mac 版 Office 中。此操作并不能使你在运行时对其设置断点和调试代码，但你可以查看其行为方式，并验证 UI 可用且正确呈现。
 
 ## <a name="prerequisites-for-office-on-ios"></a>iOS 版 Office 的先决条件
 
 - 安装了 [iTunes](https://www.apple.com/itunes/download/) 的 Windows 或 Mac 计算机。
-    
+
 - 安装了 [iPad 版 Excel](https://itunes.apple.com/us/app/microsoft-excel/id586683407?mt=8) 的 iPad（运行 iOS 8.2 或更高版本）以及同步电缆。
-    
+
 - 你想要测试的外接程序的清单 .xml 文件。
-    
 
 ## <a name="prerequisites-for-office-on-mac"></a>Mac 版 Office 的先决条件
 
 - 在已安装 [Mac 版 Office](https://products.office.com/buy/compare-microsoft-office-products?tab=omac) 的情况下可运行 OS X v10.10 "Yosemite" 或更高版本的 Mac。
-    
+
 - Mac 版本 15.18 (160109) 上的 Word。
-   
+
 - Mac 版本 15.19 (160206) 上的 Excel。
 
 - Mac 版本 15.24 (160614) 上的 PowerPoint
-    
+
 - 你想要测试的外接程序的清单 .xml 文件。
-    
 
 ## <a name="sideload-an-add-in-on-excel-or-word-on-ipad"></a>在 iPad 版 Excel 或 iPad 版 Word 上旁加载加载项
 
@@ -46,48 +44,47 @@ ms.locfileid: "41950913"
 
 4. 在 iTunes 右侧，向下滚动到"文件共享"，然后在"外接程序"列下选择"Excel"或"Word"。
 
-5. 在"Excel"或"Word 文档"列底部，选择"添加文件"，然后选择您要旁加载的外接程序的清单 .xml 文件。 
-    
-6. 在你的 iPad 上打开 Excel 或 Word 应用。如果 Excel 或 Word 应用已运行，则选择“**首页**”按钮，然后关闭并重新启动该应用。
-    
-7. 打开一个文档。
-    
-8. 选择“**插入**”选项卡上的“**外接程序**”。旁加载的外接程序可在“**外接程序**”UI 中的“**开发人员**”标题下插入。
-    
-    ![在 Excel 应用程序中插入的加载项](../images/excel-insert-add-in.png)
+5. 在"Excel"或"Word 文档"列底部，选择"添加文件"，然后选择您要旁加载的外接程序的清单 .xml 文件。
 
+6. 在你的 iPad 上打开 Excel 或 Word 应用。如果 Excel 或 Word 应用已运行，则选择“**首页**”按钮，然后关闭并重新启动该应用。
+
+7. 打开一个文档。
+
+8. 选择“**插入**”选项卡上的“**外接程序**”。旁加载的外接程序可在“**外接程序**”UI 中的“**开发人员**”标题下插入。
+
+    ![在 Excel 应用程序中插入的加载项](../images/excel-insert-add-in.png)
 
 ## <a name="sideload-an-add-in-in-office-on-mac"></a>在 Mac 版 Office 中旁加载加载项
 
 > [!NOTE]
-> 若要旁加载 Mac 版 Outlook 加载项，请参阅[旁加载 Outlook 加载项进行测试](/outlook/add-ins/sideload-outlook-add-ins-for-testing)。
+> 若要旁加载 Mac 版 Outlook 加载项，请参阅[旁加载 Outlook 加载项进行测试](../outlook/sideload-outlook-add-ins-for-testing.md)。
 
 1. 打开“**终端**”并转到以下文件夹之一，你将在其中保存外接程序的清单文件。如果 `wef` 文件夹在你的计算机上不存在，请创建它。
-    
+
     - 对于 Word：`/Users/<username>/Library/Containers/com.microsoft.Word/Data/Documents/wef`    
     - 对于 Excel：`/Users/<username>/Library/Containers/com.microsoft.Excel/Data/Documents/wef`
     - 对于 PowerPoint：`/Users/<username>/Library/Containers/com.microsoft.Powerpoint/Data/Documents/wef`
-    
+
 2. 在“**查找程序**”中使用命令 `open .`（包括句点或点）打开该文件夹。将你的外接程序的清单文件复制到该文件夹中。
-    
+
     ![Mac 版 Office 中的 Wef 文件夹](../images/all-my-files.png)
 
 3. 打开 Word，然后打开一个文档。如果 Word 已运行，则重新启动它。
-    
+
 4. 在 Word 中，选择“**插入**” > “**外接程序**” > “**我的外接程序**”（下拉菜单），然后选择外接程序。
-    
+
     ![Mac 版 Office 中的“我的加载项”](../images/my-add-ins-wikipedia.png)
 
     > [!IMPORTANT]
-    > 旁加载的加载项不会显示在“我的加载项”对话框中。它们仅显示在下拉菜单中（单击“插入”**** 选项卡上“我的加载项”右侧的向下小箭头）。旁加载的加载项在此菜单中的“开发人员加载项”**** 标题下列出。 
-    
-5. 验证加载项是否在 Word 中显示。
-    
-    ![Mac 版 Office 中显示的 Office 加载项](../images/lorem-ipsum-wikipedia.png)
-    
-### <a name="clearing-the-office-applications-cache-on-a-mac"></a>在 Mac 上清除 Office 应用程序的缓存
+    > 旁加载的加载项不会显示在“我的加载项”对话框中。它们仅显示在下拉菜单中（单击“插入”**** 选项卡上“我的加载项”右侧的向下小箭头）。旁加载的加载项在此菜单中的“开发人员加载项”**** 标题下列出。
 
-[!include[additional cache folders on Mac](../includes/mac-cache-folders.md)]
+5. 验证加载项是否在 Word 中显示。
+
+    ![Mac 版 Office 中显示的 Office 加载项](../images/lorem-ipsum-wikipedia.png)
+
+## <a name="remove-a-sideloaded-add-in"></a>删除旁加载加载项
+
+您可以通过清除计算机上的 Office 缓存来删除以前的旁加载外接程序。 有关如何清除每个平台和主机的缓存的详细信息，请参阅文章[清除 Office 缓存](clear-cache.md)中的。
 
 ## <a name="see-also"></a>另请参阅
 
