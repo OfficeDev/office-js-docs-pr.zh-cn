@@ -1,15 +1,15 @@
 ---
 title: 使用 Yeoman 生成器创建使用 SSO 的 Office 加载项（预览版）
 description: 使用 Yeoman 生成器生成使用单一登录的 Node.js Office 加载项（预览版）。
-ms.date: 01/30/2020
+ms.date: 02/20/2020
 ms.prod: non-product-specific
 localization_priority: Priority
-ms.openlocfilehash: db3567a17a01af76c9db5f859a35dba46fd4858d
-ms.sourcegitcommit: a3ddfdb8a95477850148c4177e20e56a8673517c
+ms.openlocfilehash: fb543516eb371b422fdd7aa91001aa9ca21ba576
+ms.sourcegitcommit: dd6d00202f6466c27418247dad7bd136555a6036
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "42163876"
+ms.lasthandoff: 02/26/2020
+ms.locfileid: "42283912"
 ---
 # <a name="use-the-yeoman-generator-to-create-an-office-add-in-that-uses-single-sign-on-preview"></a>使用 Yeoman 生成器创建使用单一登录的 Node.js Office 加载项（预览版）。
 
@@ -22,7 +22,7 @@ Yeoman 生成器简化了 SSO 加载项的创建流程，能够自动执行在 A
 
 ## <a name="prerequisites"></a>先决条件
 
-* [Node.js](https://nodejs.org)（最新的 [LTS](https://nodejs.org/about/releases) 版本）
+* [Node.js](https://nodejs.org)（最新[LTS](https://nodejs.org/about/releases) 版本）。
 
 * 最新版本的 [Yeoman](https://github.com/yeoman/yo) 和[适用于 Office 外接程序的 Yeoman 生成器](https://github.com/OfficeDev/generator-office)。若要全局安装这些工具，请从命令提示符处运行以下命令：
 
@@ -58,21 +58,7 @@ Yeoman 生成器简化了 SSO 加载项的创建流程，能够自动执行在 A
 
 使用 Yeoman 生成器创建的加载项项目包含适用于启用了 SSO 的任务窗格加载项代码。
 
-- 项目根目录中的 **./manifest.xml** 文件定义加载项的设置和功能。
-
-- **./src/taskpane/taskpane.html** 文件包含组成任务窗格的 HTML。
-- **./src/taskpane/taskpane.css** 文件包含应用于任务窗格中的内容的 CSS。
-- **./src/taskpane/taskpane.js** 文件包含用于加快任务窗格与 Office 托管应用程序之间的交互的 Office JavaScript API 代码。
-
-- **./src/helpers/documentHelper.js** 文件使用 Office JavaScript 库将 Microsoft Graph 库中的数据添加至 Office 文档。
-- **./src/helpers/fallbackauthdialog.html** 文件是加载回退身份验证方法 JavaScript 的无界面页面。
-- **./src/helpers/fallbackauthdialog.js** 文件包含用户使用 msal.js 登录的回退身份验证方法 JavaScript。
-- **./src/helpers/fallbackauthhelper.js** 文件包含任务窗格 JavaScript，当不支持 SSO 身份验证时，在方案中调用回退身份验证方法。
-- **./src/helpers/ssoauthhelper.js** 文件包含调用 SSO API、`getAccessToken` 的 JavaScript ，接收引导令牌，针对 Microsoft Graph 访问令牌启动引导令牌交换，同时调用 Microsoft Graph 以获得数据。
-
-- 项目根目录中的 **/ENV** 文件定义了加载项项目所使用的常量。
-    > [!NOTE]
-    > 此文件中定义的部分常量用于简化 SSO 流程。 可能需要更新此文件中的数值以匹配特定的方案。 例如，加载项需要 `User.Read`之外的其他内容时，则可以更新该文件来指定不同的范围。
+[!include[project structure for an SSO-enabled add-in created with the Yeoman generator](../includes/sso-yeoman-project-structure.md)]
 
 ## <a name="configure-sso"></a>配置 SSO
 
@@ -172,10 +158,11 @@ Yeoman 生成器简化了 SSO 加载项的创建流程，能够自动执行在 A
 
 ## <a name="next-steps"></a>后续步骤
 
-祝贺你成功创建了可能使用 SSO 的任务窗格加载项，并在不支持 SSO 时，使用替代用户身份验证方法。 若要详细了解有关 Yeoman 生成器自动完成的 SSO 配置步骤，以及有助于 SSO 流程的代码，参见“[创建使用单一登录的 Node.js Office 加载项](../develop/create-sso-office-add-ins-nodejs.md)”教程。
+祝贺你成功创建了可能使用 SSO 的任务窗格加载项，并在不支持 SSO 时，使用替代用户身份验证方法。 若要了解如何自定义加载项以添加需要不同权限的新功能，请参阅 “[自定义启用了 Node.js SSO 的加载项](sso-quickstart-customize.md)”。
 
 ## <a name="see-also"></a>另请参阅
 
 - [为 Office 加载项启用单一登录](../develop/sso-in-office-add-ins.md)
+- [自定义启用了 Node.js SSO 的加载项](sso-quickstart-customize.md)
 - [创建使用单一登录的 Node.js Office 加载项](../develop/create-sso-office-add-ins-nodejs.md)
 - [排查单一登录 (SSO) 错误消息](../develop/troubleshoot-sso-in-office-add-ins.md)
