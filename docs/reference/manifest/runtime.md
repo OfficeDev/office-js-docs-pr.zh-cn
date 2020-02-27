@@ -1,26 +1,31 @@
 ---
-title: 清单文件中的运行时
+title: 清单文件中的运行时（预览）
 description: ''
-ms.date: 01/24/2020
+ms.date: 02/21/2020
 localization_priority: Normal
-ms.openlocfilehash: 8fbad8276b3e1d64a6c443cf57d498597d729282
-ms.sourcegitcommit: 72d719165cc2b64ac9d3c51fb8be277dfde7d2eb
+ms.openlocfilehash: 26702896604f9ecf4c69296e5110efe5cdf4218b
+ms.sourcegitcommit: dd6d00202f6466c27418247dad7bd136555a6036
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/25/2020
-ms.locfileid: "41553997"
+ms.lasthandoff: 02/26/2020
+ms.locfileid: "42283882"
 ---
-# <a name="runtime-element"></a>Runtime 元素
+# <a name="runtime-element-preview"></a>Runtime 元素（预览）
 
-此功能处于预览阶段。 [`<Runtimes>`](runtimes.md)元素的子元素。 此元素有助于在 Excel 自定义函数和外接程序的任务窗格之间共享全局数据和函数调用。
+[!include[Running custom functions in browser runtime note](../../includes/excel-shared-runtime-preview-note.md)]
+
+[`<Runtimes>`](runtimes.md)元素的子元素。 此元素将您的外接程序配置为使用共享的 JavaScript 运行时，以便功能区、任务窗格和自定义函数在同一运行时中运行。 有关详细信息，请参阅[Configure Excel 外接程序以使用共享的 JavaScript 运行时](../../excel/configure-your-add-in-to-use-a-shared-runtime.md)。
 
 **外接程序类型：** 任务窗格
+
+> [!IMPORTANT]
+<<<<<<< 头共享运行时当前处于预览阶段，仅在 Windows 上的 Excel 中可用。 若要尝试预览功能，你需要加入[Office 预览体验成员](https://insider.office.com/)。
 
 ## <a name="syntax"></a>语法
 
 ```XML
 <Runtimes>
-    <Runtime resid="TaskPaneAndCustomFunction.Url" lifetime="long" />
+    <Runtime resid="ContosoAddin.Url" lifetime="long" />
 </Runtimes>
 ```
 
@@ -32,8 +37,8 @@ ms.locfileid: "41553997"
 
 |  属性  |  必需  |  说明  |
 |:-----|:-----|:-----|
-|  **生存时间 = "long"**  |  是  | 如果希望 Excel 自定义函数在外接程序的任务窗格关闭时正常工作，应始终将其列为长。 |
-|  **resid**  |  是  | 如果用于 Excel 自定义函数，则`resid`应指向`TaskPaneAndCustomFunction.Url`。 |
+|  **生存时间 = "long"**  |  是  | 应始终是`long` ，如果您想要为 Excel 加载项使用共享运行时。 |
+|  **resid**  |  是  | 指定您的外接程序的 HTML 页面的 URL 位置。 `resid`必须与`Resources`元素中`id` `Url`元素的属性相匹配。 |
 
 ## <a name="see-also"></a>另请参阅
 
