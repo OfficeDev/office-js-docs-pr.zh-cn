@@ -4,12 +4,12 @@ description: ''
 ms.date: 02/19/2020
 ms.prod: onenote
 localization_priority: Priority
-ms.openlocfilehash: 27d6770ae64a6f2259e7dbbf38b756d54fe7cec2
-ms.sourcegitcommit: a3ddfdb8a95477850148c4177e20e56a8673517c
+ms.openlocfilehash: 8e97b0ac34e02ea64a1cb944be9c113bd37a9717
+ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "42165318"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "42325183"
 ---
 # <a name="onenote-javascript-api-overview"></a>OneNote JavaScript API 概述
 

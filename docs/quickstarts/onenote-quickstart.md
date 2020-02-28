@@ -4,12 +4,12 @@ description: 了解如何使用 Office JS API 生成简单的 OneNote 任务窗�
 ms.date: 01/16/2020
 ms.prod: onenote
 localization_priority: Priority
-ms.openlocfilehash: 6098e3859103b5869072edfa133fb6ad39d4da8b
-ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
+ms.openlocfilehash: cdf1dbd3f234b77bd406a66927b8fad3d5ef4859
+ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "41950636"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "42325296"
 ---
 # <a name="build-your-first-onenote-task-pane-add-in"></a>生成首个 OneNote 任务窗格加载项
 
@@ -45,7 +45,7 @@ ms.locfileid: "41950636"
 
 ## <a name="update-the-code"></a>更新代码
 
-在代码编辑器中，打开文件 **./src/taskpane/taskpane.js** 并在 **run** 函数中添加以下代码。 此代码使用 OneNote JavaScript API 设置页面标题并在页面正文添加大纲。
+在代码编辑器中，打开文件 **./src/taskpane/taskpane.js** 并在 `run` 函数中添加以下代码。 此代码使用 OneNote JavaScript API 设置页面标题并在页面正文添加大纲。
 
 ```js
 try {

@@ -1,14 +1,14 @@
 ---
 title: 构建 Office 加载项
 description: Office 加载项开发简介。
-ms.date: 02/19/2020
+ms.date: 02/27/2020
 localization_priority: Priority
-ms.openlocfilehash: 95a930f89c3ce6c2c4fc894c61bd4337851a8614
-ms.sourcegitcommit: a3ddfdb8a95477850148c4177e20e56a8673517c
+ms.openlocfilehash: 2ab0c79771d9aa60b2fd99984914554214978089
+ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "42163869"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "42325310"
 ---
 # <a name="building-office-add-ins"></a>构建 Office 加载项
 
@@ -93,42 +93,17 @@ Office 加载项的清单是一个 XML 文件，它定义了加载项的设置�
 
 Office 加载项可使用 Office JavaScript API 来与其中在运行加载项的 Office 文档中的内容进行交互。 
 
-#### <a name="accessing-the-office-javascript-library"></a>访问 Office JavaScript 库
+#### <a name="accessing-the-office-javascript-api-library"></a>访问 Office JavaScript API 库
 
-可通过 Office JS 内容交付网络 (CDN) 访问 Office JavaScript 库：`https://appsforoffice.microsoft.com/lib/1/hosted/Office.js` 要在任何加载项的网页中使用 Office JavaScript API，必须在页面的 `<head>` 标记中的 `<script>` 标记内引用 CDN。
-
-```html
-<head>
-    ...
-    <script src="https://appsforoffice.microsoft.com/lib/1/hosted/Office.js" type="text/javascript"></script>
-</head>
-```
-
-> [!NOTE]
-> 要使用预览版 API，请参考 CDN 上的 Office JavaScript 库预览版：https://appsforoffice.microsoft.com/lib/beta/hosted/office.js。
-
-要详细了解如何访问 Office JavaScript 库（包括如何获取 IntelliSense），请参阅[通过 JavaScript API for Office 的内容交付网络 (CDN) 引用该库](../develop/referencing-the-javascript-api-for-office-library-from-its-cdn.md)。
+[!include[information about accessing the Office JS API library](../includes/office-js-access-library.md)]
 
 #### <a name="api-models"></a>API 模型
 
-Office JavaScript API 包含两种不同的模型：
-
-- **主机特定的** API 提供了强类型对象，它可用于与特定 Office 应用程序的本机对象进行交互。 例如，可使用 Excel JavaScript API 来访问工作表、区域、表格和图表等。 主机特定的 API 当前可用于 [Excel](../reference/overview/excel-add-ins-reference-overview.md)、[Word](../reference/overview/word-add-ins-reference-overview.md) 和 [OneNote](../reference/overview/onenote-add-ins-javascript-reference.md)。 此 API 模型使用的是[承诺](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise)，你可用它在你发送给 Office 主机的每个请求中指定多个操作。 通过此方式批量处理操作，可大幅提升 Web 应用程序上的 Office 中的性能。 主机特定的 API 是随 Office 2016 引入的，不可用于与 Office 2013 进行交互。
-
-- **通用** API 可用于访问在多种类型的 Office 应用程序中都很常见的 UI、对话框和客户端设置等功能。 此 API 模型使用的是[回调](https://developer.mozilla.org/docs/Glossary/Callback_function)，其中你仅可在发送给 Office 主机的每个请求中指定一个操作。 通用 API 是随 Office 2013 引入的，可用于与 Office 2013 或更高版本进行交互。 要详细了解通用 API 对象模型（其中包括用于与 Outlook 和 PowerPoint 交互的 API），请参阅[常见 JavaScript API 对象模型](../develop/office-javascript-api-object-model.md)。
-
-> [!NOTE]
-> Excel 自定义函数在排列了计算执行优先级的唯一运行时中运行，因此使用的编程模型略有不同。 有关详细信息，请参阅[自定义函数体系结构](../excel/custom-functions-architecture.md)。
-
-有关 Office JavaScript API 的详细信息，请参阅[了解 JavaScript API for Office](../develop/understanding-the-javascript-api-for-office.md)。
+[!include[information about the Office JS API models](../includes/office-js-api-models.md)]
 
 #### <a name="api-requirement-sets"></a>API 要求集
 
-[要求集](../develop/office-versions-and-requirement-sets.md)是指各组已命名的 API 成员。 要求集可特定于 Office 主机，例如 `ExcelApi 1.7` 要求集（一组仅可在 Excel 中使用的 API），也可常用于多台主机，例如 `DialogApi 1.1` 要求集（一组可在支持对话框 API 的任何 Office 应用程序中使用的 API）。
-
-加载项可使用要求集来确定 Office 主机是否支持需要使用的 API 成员。 有关详细信息，请参阅[指定 Office 主机和 API 要求](../develop/specify-office-hosts-and-api-requirements.md)。
-
-要求集支持因 Office 主机、版本和平台而异。 要详细了解每个 Office 应用程序支持的平台、要求集和通用 API，请参阅 [Office 加载项主机和平台可用性](office-add-in-availability.md)。
+[!include[information about the Office JS API requirement sets](../includes/office-js-requirement-sets.md)]
 
 ## <a name="testing-and-debugging-an-office-add-in"></a>测试和调试 Office 加载项
 

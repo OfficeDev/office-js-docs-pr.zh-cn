@@ -4,12 +4,12 @@ description: 了解如何使用 Office JS API 生成简单的 Outlook 任务窗�
 ms.date: 12/28/2019
 ms.prod: outlook
 localization_priority: Priority
-ms.openlocfilehash: 9a9835caf4ca729999a0f85a7947b82115841372
-ms.sourcegitcommit: a3ddfdb8a95477850148c4177e20e56a8673517c
+ms.openlocfilehash: 6c50ed57cd9fa809081060662c13af662b475ed2
+ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "42165871"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "42325289"
 ---
 # <a name="build-your-first-outlook-add-in"></a>生成首个 Outlook 加载项
 
@@ -81,7 +81,7 @@ ms.locfileid: "42165871"
     </main>
     ```
 
-1. 在代码编辑器中，打开文件 **./src/taskpane/taskpane.js** 并在 **run** 函数中添加以下代码。 此代码使用 Office JavaScript API 获取当前邮件的引用并将其 `subject` 属性值写入任务窗格。
+1. 在代码编辑器中，打开文件 **./src/taskpane/taskpane.js** 并在 `run` 函数中添加以下代码。 此代码使用 Office JavaScript API 获取当前邮件的引用并将其 `subject` 属性值写入任务窗格。
 
     ```js
     // Get a reference to the current message
