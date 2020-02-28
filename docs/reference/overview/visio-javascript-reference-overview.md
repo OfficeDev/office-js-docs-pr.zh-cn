@@ -6,12 +6,12 @@ ms.prod: visio
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: d770356f22f0f9ffb6bd19ecbd5a3fb6460519ac
-ms.sourcegitcommit: 7d4d721fc3d246ef8a2464bc714659cd84d6faab
+ms.openlocfilehash: e40349a009638828ded4bd0651f3776bbf7290fa
+ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/11/2019
-ms.locfileid: "37468754"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "42324748"
 ---
 # <a name="visio-javascript-api-overview"></a>Visio JavaScript API 概述
 
@@ -27,7 +27,7 @@ ms.locfileid: "37468754"
 * 为绘图中的鼠标事件编写自定义处理程序。
 * 向解决方案公开图表数据，如形状文本、形状数据和超链接。
 
-本文介绍了如何通过结合使用 Visio JavaScript API 和 Visio 网页版来生成 SharePoint Online 解决方案。具体介绍了有关使用 API（如 **EmbeddedSession**、**RequestContext**、JavaScript 代理对象、**sync()**、**Visio.run()** 和 **load()** 方法）的基本概念。下面这些代码示例展示了如何应用这些概念。
+本文介绍了如何通过结合使用 Visio JavaScript API 和 Visio 网页版来生成 SharePoint Online 解决方案。具体介绍了有关使用 API（如 `EmbeddedSession`、`RequestContext`、JavaScript 代理对象、`sync()`、`Visio.run()` 和 `load()` 方法）的基本概念。下面这些代码示例展示了如何应用这些概念。
 
 ## <a name="embeddedsession"></a>EmbeddedSession
 
@@ -42,9 +42,9 @@ session.init().then(function () {
 
 ## <a name="visiorunsession-functioncontext--batch-"></a>Visio.run(session, function(context) { batch })
 
-**Visio.run()** 运行一个对 Visio 对象模型执行操作的批处理脚本。 批处理命令包括定义本地 JavaScript 代理对象、在本地和 Visio 对象之间同步状态的 **sync()** 方法以及承诺实现。 **Visio.run()** 中的批处理请求的优势在于，当实现承诺时，在执行期间分配的任何被跟踪的页面对象将会自动释放。
+`Visio.run()` 运行一个对 Visio 对象模型执行操作的批处理脚本。 批处理命令包括定义本地 JavaScript 代理对象、在本地和 Visio 对象之间同步状态的 `sync()` 方法以及承诺实现。 `Visio.run()` 中的批处理请求的优势在于，当实现承诺时，在执行期间分配的任何被跟踪的页面对象将会自动释放。
 
-运行方法获取会话和 RequestContext 对象并返回一个承诺（通常就是 **context.sync()** 的结果）。 可以在 **Visio.run()** 之外运行批处理操作。 不过，在这种情况下，需要手动跟踪和管理任何页面对象引用。
+运行方法获取会话和 RequestContext 对象并返回一个承诺（通常就是 `context.sync()` 的结果）。 可以在 `Visio.run()` 之外运行批处理操作。 不过，在这种情况下，需要手动跟踪和管理任何页面对象引用。
 
 ## <a name="requestcontext"></a>RequestContext
 
@@ -69,7 +69,7 @@ function hideToolbars() {
 
 在外接程序中声明和使用的 Visio JavaScript 对象是 Visio 文档中真实对象的代理对象。对代理对象执行的所有操作都不会在 Visio 中实现；在同步文档状态前，Visio 文档的状态不会在代理对象中实现。运行 `context.sync()` 时将同步文档状态。
 
-例如，本地 JavaScript 对象 getActivePage 声明为引用选定页面。 这可用于将属性和调用方法的设置操作排入队列。 对此类对象执行的操作不会实现，除非运行 **sync()** 方法。
+例如，本地 JavaScript 对象 getActivePage 声明为引用选定页面。 这可用于将属性和调用方法的设置操作排入队列。 对此类对象执行的操作不会实现，除非运行 `sync()` 方法。
 
 ```js
 var activePage = context.document.getActivePage();
@@ -77,28 +77,28 @@ var activePage = context.document.getActivePage();
 
 ## <a name="sync"></a>sync()
 
-**sync()** 方法通过执行在上下文中排队的指令以及检索用于你代码中的已加载 Office 对象的属性，在 JavaScript 代理对象和 Visio 中的真实对象之间同步状态。 此方法返回一个将在同步完成时实现的承诺。 
+`sync()` 方法通过执行在上下文中排队的指令以及检索用于你代码中的已加载 Office 对象的属性，在 JavaScript 代理对象和 Visio 中的真实对象之间同步状态。 此方法返回一个将在同步完成时实现的承诺。 
 
 ## <a name="load"></a>load()
 
-**load()** 方法用于填充在外接程序 JavaScript 层中创建的代理对象。尝试检索对象（如文档）时，将首先在 JavaScript 层中创建一个本地代理对象。此类对象可用于将属性和调用方法的设置操作排入队列。不过，若要读取对象属性或关系，必须先调用 **load()** 和 **sync()** 方法。load() 方法获取在调用 **sync()** 方法时需要加载的属性和关系。
+`load()` 方法用于填充在外接程序 JavaScript 层中创建的代理对象。尝试检索对象（如文档）时，将首先在 JavaScript 层中创建一个本地代理对象。此类对象可用于将属性和调用方法的设置操作排入队列。不过，若要读取对象属性或关系，必须先调用 `load()` 和 `sync()` 方法。load() 方法获取在调用 `sync()` 方法时需要加载的属性和关系。
 
-下面的示例展示了 **load()** 方法的语法。
+下面的示例展示了 `load()` 方法的语法。
 
 ```js
 object.load(string: properties); //or object.load(array: properties); //or object.load({loadOption});
 ```
 
-1. **properties** 列出了要加载的属性名称，指定为逗号分隔的字符串或名称数组。 有关详细信息，请参阅每个对象下的 **.load()** 方法。
+1. **properties** 列出了要加载的属性名称，指定为逗号分隔的字符串或名称数组。 有关详细信息，请参阅每个对象下的 `.load()` 方法。
 
 2. **loadOption** 指定的对象描述了选择、展开、置顶和跳过选项。有关详细信息，请参阅对象加载[选项](/javascript/api/office/officeextension.loadoption)。
 
 ## <a name="example-printing-all-shapes-text-in-active-page"></a>示例：打印活动页中的所有形状文本
 
 下面的示例展示了如何打印数组形状对象的形状文本值。
-**Visio.run()** 方法包含一批指令。 在此次批处理期间，将会创建一个代理对象，引用活动文档中的形状。
+`Visio.run()` 方法包含一批指令。 在此次批处理期间，将会创建一个代理对象，引用活动文档中的形状。
 
-所有这些命令将在调用 **context.sync()** 时排入队列和运行。 **sync()** 方法返回一个承诺，可用于将其与其他操作关联起来。
+所有这些命令将在调用 `context.sync()` 时排入队列和运行。 `sync()` 方法返回一个承诺，可用于将其与其他操作关联起来。
 
 ```js
 Visio.run(session, function (context) {

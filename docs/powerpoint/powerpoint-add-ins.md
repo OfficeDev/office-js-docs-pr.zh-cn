@@ -5,12 +5,12 @@ ms.date: 11/07/2019
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: 798e7c8357f2f2f021a76c0b88b0617764428c8c
-ms.sourcegitcommit: 350f5c6954dec3e9384e2030cd3265aaba7ae904
+ms.openlocfilehash: a6535808a3e59723556efa3133c44767a52a250e
+ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/23/2019
-ms.locfileid: "40851339"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "42324924"
 ---
 # <a name="powerpoint-add-ins"></a>PowerPoint 加载项
 
@@ -90,7 +90,7 @@ function registerActiveViewChanged() {
 
 ## <a name="navigate-to-a-particular-slide-in-the-presentation"></a>转到演示文稿中的特定幻灯片
 
-在以下代码示例中，`getSelectedRange` 函数将调用 [Document.getSelectedDataAsync](/javascript/api/office/office.document#getselecteddataasync-coerciontype--options--callback-) 方法已获取 `asyncResult.value` 返回的 JSON 对象，其中包括一个名为 **slides** 的数组。 **slides** 数组包含所选范围内的幻灯片（或当前幻灯片，如果未选择多张幻灯片）的 ID、标题和索引。 此外，它会将所选范围内的第一张幻灯片的 ID 保存为全局变量。
+在以下代码示例中，`getSelectedRange` 函数将调用 [Document.getSelectedDataAsync](/javascript/api/office/office.document#getselecteddataasync-coerciontype--options--callback-) 方法以获取 `asyncResult.value` 返回的 JSON 对象，其中包括一个名为 `slides` 的数组。 `slides` 数组包含所选范围内的幻灯片（或当前幻灯片，如果未选择多张幻灯片）的 ID、标题和索引。 此外，它会将所选范围内的第一张幻灯片的 ID 保存为全局变量。
 
 ```js
 function getSelectedRange() {
@@ -126,7 +126,7 @@ function goToFirstSlide() {
 
 ## <a name="navigate-between-slides-in-the-presentation"></a>在演示文稿的幻灯片之间导航
 
-在以下代码示例中，`goToSlideByIndex` 函数将调用 **Document.goToByIdAsync** 方法，以导航至演示文稿中的下一张幻灯片。
+在以下代码示例中，`goToSlideByIndex` 函数将调用 `Document.goToByIdAsync` 方法，以导航至演示文稿中的下一张幻灯片。
 
 ```js
 function goToSlideByIndex() {

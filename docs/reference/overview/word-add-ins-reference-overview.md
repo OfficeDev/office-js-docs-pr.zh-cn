@@ -4,16 +4,16 @@ description: ''
 ms.date: 02/19/2020
 ms.prod: word
 localization_priority: Priority
-ms.openlocfilehash: 90dd7c787086a67dd8607479bbc46c957192d5c3
-ms.sourcegitcommit: a3ddfdb8a95477850148c4177e20e56a8673517c
+ms.openlocfilehash: 6f560b759d08fa2da239fd7bebe92bb8f58345a7
+ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "42163967"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "42325176"
 ---
 # <a name="word-javascript-api-overview"></a>Word JavaScript API 概述
 
-Word 加载项通过使用 Office JavaScript API 与 Word 中的对象进行交互，其中包括两个 JavaScript 对象模型：
+Word 加载项通过使用 Office JavaScript API 与 Word 中的对象进行交互，JavaScript API 包括两个 JavaScript 对象模型：
 
 * **Word JavaScript API**：[Word JavaScript API](/javascript/api/word) 随 Office 2016 一起引入，提供了强类型的对象，可用于访问 Word 文档中的对象和元数据。 
 

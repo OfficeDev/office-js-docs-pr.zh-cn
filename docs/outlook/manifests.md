@@ -3,12 +3,12 @@ title: Outlook 外接程序清单
 description: 该清单介绍 Outlook 外接程序如何跨 Outlook 客户端进行集成；其中包括一个示例。
 ms.date: 10/31/2019
 localization_priority: Priority
-ms.openlocfilehash: 79751ea0f3b7baab28ada8ac44d71e5f4124b74a
-ms.sourcegitcommit: a3ddfdb8a95477850148c4177e20e56a8673517c
+ms.openlocfilehash: f4d60919db15c4f470ecccac634abee94973bb6c
+ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "42165917"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "42324938"
 ---
 # <a name="outlook-add-in-manifests"></a>Outlook 外接程序清单
 
@@ -238,10 +238,10 @@ Outlook 外接程序包括两个组件：XML 外接程序清单和网页，它�
 
 |版本|说明|
 |:-----|:-----|
-|v1.0|支持适用于 Office 的 JavaScript API 版本 1.0。对于 Outlook 外接程序，它支持阅读窗体。 |
-|v1.1|支持适用于 Office 的 JavaScript API 版本 1.1 和 **VersionOverrides**。对于 Outlook 外接程序，现已开始支持撰写窗体。|
-|**VersionOverrides** 1.0|支持适用于 Office 的 JavaScript API 的更高版本。这支持外接程序命令。|
-|**VersionOverrides** 1.1|支持适用于 Office 的 JavaScript API 的更高版本。这支持外接程序命令并添加了对较新功能的支持，如[可固定的任务窗格](pinnable-taskpane.md)和移动外接程序。|
+|v1.0|支持 Office JavaScript API 版本 1.0。对于 Outlook 外接程序，它支持阅读窗体。 |
+|v1.1|支持 Office JavaScript API 版本 1.1 和 **VersionOverrides**。对于 Outlook 外接程序，现已开始支持撰写窗体。|
+|**VersionOverrides** 1.0|支持 Office JavaScript API 的更高版本。这支持外接程序命令。|
+|**VersionOverrides** 1.1|支持 Office JavaScript API 的更高版本。这支持外接程序命令并添加了对较新功能的支持，如[可固定的任务窗格](pinnable-taskpane.md)和移动外接程序。|
 
 本文将介绍 v1.1 清单的要求。即使你的加载项清单使用 **VersionOverrides** 元素，仍需将 v1.1 清单元素包括在内，以允许加载项使用不支持 **VersionOverrides** 的旧版客户端。
 

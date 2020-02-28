@@ -5,12 +5,12 @@ ms.date: 09/26/2019
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: f6d9ed0cd88f6ea2f4ba5297b4a0934bbe84dcc1
-ms.sourcegitcommit: 350f5c6954dec3e9384e2030cd3265aaba7ae904
+ms.openlocfilehash: 03f2eec24f4ae8d52f8e46021ff5ee25b8015f94
+ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/23/2019
-ms.locfileid: "40851318"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "42324896"
 ---
 # <a name="task-pane-add-ins-for-project"></a>Project 任务窗格加载项
 
@@ -50,9 +50,9 @@ Project 加载项方案包括以下几种：
 
 ## <a name="developing-project-add-ins"></a>开发 Project 加载项
 
-用于 Project 外接程序的 JavaScript 库包括  **Office** 命名空间别名的扩展，使开发人员可以访问 Project 应用程序的属性以及项目中的任务、资源和视图。Project-15.js 文件中的 JavaScript 库扩展用于用 Visual Studio 2015 创建的 Project 外接程序中。Project 2013 SDK 下载中还提供了 Office.js、Office.debug.js、Project-15.js、Project-15.debug.js 和相关文件。
+用于 Project 加载项的 JavaScript 库包括 **Office** 命名空间别名的扩展，使开发人员可以访问 Project 应用程序的属性以及项目中的任务、资源和视图。Project-15.js 文件中的 JavaScript 库扩展用于用 Visual Studio 2015 创建的 Project 加载项中。Project 2013 SDK 下载中还提供了 Office.js、Office.debug.js、Project-15.js、Project-15.debug.js 和相关文件。
 
-若要创建加载项，可以使用简单文本编辑器创建 HTML 网页和相关的 JavaScript 文件、CSS 文件及 REST 查询。除了 HTML 页面或 Web 应用程序外，加载项还需要一个用于配置的 XML 清单文件。Project 可以使用包括指定为  **TaskPaneExtension** 的 **type** 属性的清单文件。该清单文件可供多个 Office 2013 客户端应用程序使用，您也可以创建一个 Project 2013 专用的清单文件。有关详细信息，请参阅 [Office 加载项平台概述](../overview/office-add-ins.md)中的"开发基础知识"一节。
+若要创建加载项，可以使用简单文本编辑器创建 HTML 网页和相关的 JavaScript 文件、CSS 文件及 REST 查询。除了 HTML 页面或 Web 应用程序外，加载项还需要一个用于配置的 XML 清单文件。Project 可以使用包括指定为 **TaskPaneExtension** 的 **type** 属性的清单文件。该清单文件可供多个 Office 2013 客户端应用程序使用，你也可以创建一个 Project 2013 专用的清单文件。有关详细信息，请参阅 [Office 加载项平台概述](../overview/office-add-ins.md)中的“_开发基础知识_”一节。
 
 在安装 Project 2013 SDK 下载时，`\Samples\Apps\` 子目录包括以下示例加载项：
 
@@ -68,7 +68,7 @@ Project 加载项方案包括以下几种：
 
 ### <a name="procedure-1-to-create-the-add-in-manifest-file-for-bing-search"></a>过程 1. 创建用于 Bing 搜索的加载项清单文件
 
-- 在本地目录中创建一个 XML 文件。该 XML 文件包括  **OfficeApp** 元素和子元素， [Office 外接程序 XML 清单](../develop/add-in-manifests.md)中对其进行了介绍。例如，创建一个名为 BingSearch.xml 的文件，其中包含以下 XML。
+- 在本地目录中创建一个 XML 文件。该 XML 文件包括 **OfficeApp** 元素和子元素，[Office 加载项 XML 清单](../develop/add-in-manifests.md)中对其进行了介绍。例如，创建一个名为 BingSearch.xml 的文件，其中包含以下 XML。
 
     ```XML
     <?xml version="1.0" encoding="utf-8"?>
@@ -99,16 +99,16 @@ Project 加载项方案包括以下几种：
     ```
 
 - 下面是加载项清单中的必需元素：
-  - 在  **OfficeApp** 元素中， `xsi:type="TaskPaneApp"` 属性指定该加载项属于任务窗格类型。
+  - 在 **OfficeApp** 元素中，`xsi:type="TaskPaneApp"` 属性指定该加载项属于任务窗格类型。
   - **Id** 元素是 UUID，并且必须唯一。
-  - **Version** 元素是加载项的版本。 **ProviderName** 元素是提供加载项的公司或开发人员的名称。 **DefaultLocale** 元素指定清单中字符串的默认区域设置。
-  - **DisplayName** 元素是在 Project 2013 的功能区中的“**视图**”选项卡的“**任务窗格外接程序**”下拉列表中显示的名称。该值最多可以包含 32 个字符。
-  - **Description** 元素包含用于默认区域设置的加载项说明。该值最多可以包含 2000 个字符。
+  - **Version** 元素是加载项的版本。**ProviderName** 元素是提供加载项的公司或开发人员的名称。**DefaultLocale** 元素指定清单中字符串的默认区域设置。
+  - **DisplayName** 元素是在 Project 2013 的功能区中的“**视图**”选项卡的“**任务窗格加载项**”下拉列表中显示的名称。该值最多可以包含 32 个字符。
+  - **Description** 元素包含加载项默认区域设置说明。该值最多可以包含 2000 个字符。
   - **Capabilities** 元素包含一个或多个指定主机应用程序的 **Capability** 子元素。
   - **DefaultSettings** 元素包括 **SourceLocation** 元素，后者指定 HTML 文件在文件共享中的路径或加载项使用的网页的 URL。任务窗格加载项将忽略 **RequestedHeight** 元素和 **RequestedWidth** 元素。
   - **IconUrl** 元素为可选元素。它可为文件共享中的图标或 Web 应用程序中图标的 URL。
 
-- （可选）添加具有用于其他区域设置的值的  **Override** 元素。例如，以下清单为 **DisplayName**、 **Description**、 **IconUrl** 和 **SourceLocation** 的法语值提供 **Override** 元素。
+- （可选）添加具有其他区域设置的值的 **Override** 元素。例如，以下清单为 **DisplayName**、**Description**、**IconUrl** 和 **SourceLocation** 的法语值提供 **Override** 元素。
 
     ```XML
     <?xml version="1.0" encoding="utf-8"?>
@@ -146,7 +146,7 @@ Project 加载项方案包括以下几种：
 
 在 Project 2013 中，可以将加载项安装为文件共享或专用加载项目录中的独立解决方案。还可以在 AppSource 中评论和购买加载项。
 
-在文件共享中可以有多个外接程序清单 XML 文件和子目录。可以通过使用 Project 2013 中的“**信任中心**“对话框中“**受信任的外接程序目录**”选项卡来添加或删除清单目录位置和目录。若要显示 Project 中的外接程序，清单中的 **SourceLocation** 元素必须指向现有网站或 HTML 源文件。
+在文件共享中可以有多个加载项清单 XML 文件和子目录。可以通过使用 Project 2013 中的“**信任中心**“对话框中“**受信任的加载项目录**”选项卡来添加或删除清单目录位置和目录。若要显示 Project 中的加载项，清单中的 **SourceLocation** 元素必须指向现有网站或 HTML 源文件。
 
 > [!NOTE]
 > 如果要在 Windows 计算机上开发，则必须安装 Internet Explorer 或 Microsoft Edge。 有关详细信息，请参阅 [Office 加载项使用的浏览器](../concepts/browsers-used-by-office-web-add-ins.md)。
@@ -163,24 +163,24 @@ Project 加载项方案包括以下几种：
 
 4. 在 Project 2013 中，打开“**Project 选项**”对话框，选择“**信任中心**”，然后选择“**信任中心设置**”。
 
-5. 在“**信任中心**”对话框的左窗格中，选择“**受信任的外接程序目录**”。
+5. 在“**信任中心**”对话框的左侧窗格中，选择“**受信任的加载项目录**”。
 
-6. 在“**受信任的外接程序目录**”窗格（请参阅图 1）中的“**目录 URL**”文本框中添加 `\\ServerName\AppManifests` 路径，选择“**添加目录**”，然后选择“**确定**”。
+6. 在“**受信任的加载项目录**”窗格（请参阅图 1）中的“**目录 URL**”文本框中添加 `\\ServerName\AppManifests` 路径，选择“**添加目录**”，然后选择“**确定**”。
 
     > [!NOTE]
-    > 图 1 展示了“受信任的目录地址”**** 列表中的两个文件共享和一个虚构的专用目录 URL。只有一个文件共享可以成为默认文件共享，并且只有一个目录 URL 可以成为默认目录。例如，如果将 `\\Server2\AppManifests` 设置为默认，Project 就会清除 `\\ServerName\AppManifests` 的“默认”**** 复选框。如果更改默认选择，可以选择“清除”**** 删除已安装的加载项，再重启 Project。如果在 Project 处于打开状态时，将加载项添加到默认文件共享或 SharePoint 目录，应重启 Project。
+    > 图 1 展示了“**受信任的目录地址**”列表中的两个文件共享和一个虚构的专用目录 URL。只有一个文件共享可以成为默认文件共享，并且只有一个目录 URL 可以成为默认目录。例如，如果将 `\\Server2\AppManifests` 设置为默认，Project 就会清除 `\\ServerName\AppManifests` 的“**默认**”复选框。如果更改默认选择，可以选择“**清除**”删除已安装的加载项，再重启 Project。如果在 Project 处于打开状态时，将加载项添加到默认文件共享或 SharePoint 目录，应重启 Project。
 
     *图 1：使用信任中心添加加载项清单目录*
 
     ![使用信任中心添加应用程序清单](../images/pj15-agave-overview-trust-centers.png)
 
-7. 在“**项目**”功能区，选择“**Office 外接程序**”下拉菜单，然后选择“**查看所有**”。在“**插入外接程序**”对话框中，选择“**共享文件夹**”（见图 2）。
+7. 在“Project”**** 功能区上，选择“Office 加载项”**** 下拉菜单，然后选择“查看全部”****。在“插入加载项”**** 对话框中，选择“共享文件夹”****（请参阅图 2）。
 
     *图 2：启动文件共享上的加载项*
 
     ![启动文件共享上的 Office 应用程序](../images/pj15-agave-overview-start-agave-apps.png)
 
-8. 选择必应搜索外接程序，然后选择“**插入**”。
+8. 选择 Bing 搜索加载项，然后选择“插入”****。
 
     Bing 搜索加载项显示在任务窗格中，如图 3 所示。可以手动调整任务窗格的大小，并使用 Bing 搜索加载项。
 
