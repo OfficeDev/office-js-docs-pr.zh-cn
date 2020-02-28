@@ -3,12 +3,12 @@ title: 清单文件中的 Control 元素
 description: ''
 ms.date: 10/09/2018
 localization_priority: Normal
-ms.openlocfilehash: d77b464fde9898ef216ef9e47c651fb5750e4453
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: ed76cc46c624d1b97d43e4270944b8ef4dc63723
+ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32450637"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "42323796"
 ---
 # <a name="control-element"></a>Control 元素
 
@@ -31,8 +31,8 @@ ms.locfileid: "32450637"
 ### <a name="child-elements"></a>子元素
 |  元素 |  必需  |  说明  |
 |:-----|:-----|:-----|
-|  **Label**     | 是 |  按钮文本。 **resid** 属性必须设置为 **ShortStrings** 元素（位于 **Resources** 元素）中 **String** 元素的 [id](resources.md) 属性的值。        |
-|  **ToolTip**  |否|按钮的工具提示。**resid** 属性必须设置为 **String** 元素的 **id** 属性的值。**String** 元素是 **LongStrings** 元素的子元素，而 LongStrings 元素是 [Resources](resources.md) 元素的子元素。|        
+|  **Label**     | 是 |  按钮文本。 **Resid**属性必须设置为[Resources](resources.md)元素中的**ShortStrings**元素中**String**元素的**id**属性的值。        |
+|  **ToolTip**  |否|按钮的工具提示。 必须将“resid”属性设置为 String 元素的 id 属性值。 **String** 元素是 **LongStrings** 元素的子元素，而 LongStrings 元素是 [Resources](resources.md) 元素的子元素。|     
 |  [Supertip](supertip.md)  | 是 |  按钮的 supertip。    |
 |  [图标](icon.md)      | 是 |  按钮的图像。         |
 |  [Action](action.md)    | 是 |  指定要执行的操作。  |
@@ -87,7 +87,7 @@ ms.locfileid: "32450637"
 
 - 子菜单项的列表。
 
-当与  **PrimaryCommandSurface** 一起使用时，根菜单项将显示为功能区上的按钮。选择该按钮后，子菜单将显示为下拉列表。与 **ContextMenu** 一起使用时，具有子菜单的菜单项将被插入到上下文菜单上。在这两种情况下，单个子菜单项可以执行 JavaScript 函数，也可显示任务窗格。这一次仅支持子菜单的一个级别。
+与 **PrimaryCommandSurface** 结合使用时，根菜单项显示为功能区上的一个按钮。选择此按钮时，子菜单显示为下拉列表。与 **ContextMenu** 结合使用时，将在上下文菜单上插入包含子菜单的菜单项。在这两种情况中，单个子菜单项均可以执行 JavaScript 函数或显示任务窗格。目前只支持一种子菜单级别。
 
 下面的示例演示如何定义具有两个子菜单项的菜单项。第一个子菜单项显示任务窗格，而第二个子菜单项运行 JavaScript 函数。
 
@@ -145,11 +145,11 @@ ms.locfileid: "32450637"
 
 |  元素 |  必需  |  说明  |
 |:-----|:-----|:-----|
-|  **Label**     | 是 |  按钮文本。**resid** 属性必须设置为 **ShortStrings** 元素（位于 **Resources** 元素）中 **String** 元素的 [id](resources.md) 属性的值。      |
-|  **ToolTip**  |否|按钮的工具提示。**resid** 属性必须设置为 **String** 元素的 **id** 属性的值。**String** 元素是 **LongStrings** 元素的子元素，而 LongStrings 元素是 [Resources](resources.md) 元素的子元素。|        
+|  **Label**     | 是 |  按钮文本。 **Resid**属性必须设置为[Resources](resources.md)元素中的**ShortStrings**元素中**String**元素的**id**属性的值。      |
+|  **ToolTip**  |否|按钮的工具提示。 必须将“resid”属性设置为 String 元素的 id 属性值。 **String** 元素是 **LongStrings** 元素的子元素，而 LongStrings 元素是 [Resources](resources.md) 元素的子元素。|     
 |  [Supertip](supertip.md)  | 是 |  此按钮的 supertip。    |
 |  [Icon](icon.md)      | 是 |  按钮的图像。         |
-|  **Items**     | 是 |  菜单中显示的按钮的集合。包含每个子菜单项的 **Item** 元素。每个 **Item** 元素均包含 [按钮控件](#button-control) 的子元素。|
+|  **Items**     | 是 |  菜单中显示的按钮的集合。 包含每个子菜单项的 **Item** 元素。 每个 **Item** 元素均包含 [按钮控件](#button-control)的子元素。|
 
 ### <a name="menu-control-examples"></a>菜单控件示例
 
@@ -244,7 +244,7 @@ ms.locfileid: "32450637"
 ### <a name="child-elements"></a>子元素
 |  元素 |  必需  |  说明  |
 |:-----|:-----|:-----|
-|  **Label**     | 是 |  按钮文本。**resid** 属性必须设置为 **ShortStrings** 元素（位于 **Resources** 元素）中 **String** 元素的 [id](resources.md) 属性的值。        |
+|  **Label**     | 是 |  按钮文本。 **Resid**属性必须设置为[Resources](resources.md)元素中的**ShortStrings**元素中**String**元素的**id**属性的值。        |
 |  [Icon](icon.md)      | 是 |  按钮的图像。         |
 |  [Action](action.md)    | 是 |  指定要执行的操作。  |
 

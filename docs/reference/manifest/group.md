@@ -3,12 +3,12 @@ title: 清单文件中的 Group 元素
 description: ''
 ms.date: 12/02/2019
 localization_priority: Normal
-ms.openlocfilehash: 35db4829b40078e97fbfc007e2fb552e00875f9c
-ms.sourcegitcommit: 164b11b1e9d2ae20b3d816092025b32a9070450f
+ms.openlocfilehash: 27a168ea17352482e955e7a0d1f8267c7d6b17d8
+ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "39818725"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "42324860"
 ---
 # <a name="group-element"></a>Group 元素
 
@@ -33,7 +33,7 @@ ms.locfileid: "39818725"
 
 ### <a name="label"></a>标签 
 
-必需。组的标签。 **resid** 属性必须设置为 **ShortStrings** 元素（位于 **Resources** 元素）中 **String** 元素的 [id](resources.md) 属性的值。
+必需。 组的标签。 **Resid**属性必须设置为[Resources](resources.md)元素中的**ShortStrings**元素中**String**元素的**id**属性的值。
 
 ### <a name="icon"></a>Icon
 

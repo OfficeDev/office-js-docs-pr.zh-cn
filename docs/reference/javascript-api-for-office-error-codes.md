@@ -1,18 +1,18 @@
 ---
-title: 适用于 Office 的 JavaScript API 的错误代码
+title: Office JavaScript API 错误代码
 description: ''
 ms.date: 01/30/2020
 localization_priority: Normal
-ms.openlocfilehash: 286cf00bf60d0e86a68eef9183fcd887e5f30ddf
-ms.sourcegitcommit: 4c9e02dac6f8030efc7415e699370753ec9415c8
+ms.openlocfilehash: d46254f3cd8c353bcafb9e76cf97a7244afd13e1
+ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/01/2020
-ms.locfileid: "41650017"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "42325281"
 ---
-# <a name="javascript-api-for-office-error-codes"></a>适用于 Office 的 JavaScript API 的错误代码
+# <a name="office-javascript-api-error-codes"></a>Office JavaScript API 错误代码
 
-本文记录了使用适用于 Office 的 JavaScript API (Office.js) 时可能遇到的错误消息。
+本文记录了使用 Office JavaScript API （node.js）时可能遇到的错误消息。
 
 **适用于：** Office 加载项 |SharePoint 加载项 |Excel |Outlook |PowerPoint | Project | Word
 
@@ -50,24 +50,24 @@ ms.locfileid: "41650017"
 |3004|绑定创建错误|无法使用当前所选内容和指定绑定类型创建绑定。|有几种情况下可能发生此错误。请参阅本文后面的"绑定创建错误条件"部分。|
 |3005|绑定操作无效|此绑定类型不支持操作。|开发人员在非  _table_ 绑定类型中发送"添加行"或"添加列"操作。|
 |3006|绑定创建错误|命名项不存在。|无法找到命名项。不存在此名称的内容控件或表格。|
-|3007|绑定创建错误|找到具有相同名称的多个对象。|冲突错误：存在具有相同名称的多个内容控件，将冲突导致的失败设置为  **true** 。|
+|3007|绑定创建错误|找到具有相同名称的多个对象。|冲突错误：存在具有相同名称的多个内容控件，将冲突导致的失败设置为 **true**。|
 |3008|绑定创建错误|指定的绑定类型与提供的命名项不兼容。|命名项无法绑定到类型。例如，内容控件包含文本，但开发人员尝试使用强制类型  _table_ 绑定。|
 |3009|绑定操作无效|不支持绑定类型。|用于向后兼容性。|
-|3010|不受支持的绑定操作|所选内容需为表格格式。将数据格式化为表格并再次尝试。|开发人员尝试对强制类型  **matrix** 的数据使用 **TableBinding** 对象的 **addRowsAsynch** 或 _deleteAllDataValuesAsynch_ 方法。|
+|3010|不受支持的绑定操作|所选内容需为表格格式。将数据格式化为表格并再次尝试。|开发人员尝试对强制类型_matrix_的`deleteAllDataValuesAsynch`数据使用`TableBinding`对象的`addRowsAsynch`或方法。|
 |4000|读取设置错误|指定设置名称不存在。|提供了不存在的设置名称。|
 |4001|保存设置错误|无法保存设置。|无法保存设置。|
 |4002|设置过期错误|无法保存设置，因为设置已过期。|设置已过期，开发人员指示不要覆盖设置。|
-|5000|设置过期错误|不支持此操作。|当前主机中不支持此操作。例如，从 Outlook 调用  **document.getSelectionAsync** 。|
+|5000|设置过期错误|不支持此操作。|当前主机中不支持此操作。 例如， `document.getSelectionAsync`从 Outlook 调用。|
 |5001|内部错误|发生内部错误。|引用内部错误条件（可能因为以下任何一个原因出现）：<br/><table><tr><td>另一个共享工作簿的用户正在使用的加载项几乎在同一时间创建了一个绑定，您的加载项需要重新尝试绑定。</tr></td><tr><td>出现未知错误。</tr></td><tr><td>操作失败。</tr></td><tr><td>访问被拒绝，因为用户不是已授权角色的成员。</tr></td><tr><td>访问被拒绝，因为要求安全、加密的通信。</tr></td><tr><td>数据已过时，用户需要确认启用查询以刷数据。</tr></td><tr><td>已超出网站集 CPU 配额。</tr></td><tr><td>已超出网站集的内存配额。</tr></td><tr><td>已超出会话内存配额。</tr></td><tr><td>工作簿处于无效状态，无法执行该操作。</tr></td><tr><td>会话因不活动而超时，用户需要重新加载工作簿。</tr></td><tr><td>已超出每个用户允许的会话数最大值。</tr></td><tr><td>操作被用户取消。</tr></td><tr><td>因为时间太长，无法完成该操作。</tr></td><tr><td>该请求无法完成，需要重试。</tr></td><tr><td>产品的试用期已过。</tr></td><tr><td>会话因不活动而超时。</tr></td><tr><td>用户不具有在指定范围内执行该操作的权限。</tr></td><tr><td>用户的区域设置与当前协作会话不匹配。</tr></td><tr><td>用户已断开连接，必须刷新或重新打开工作簿。</tr></td><tr><td>工作表中不存在请求的范围。</tr></td><tr><td>用户没有编辑该工作簿的权限。</tr></td><tr><td>工作簿已锁定，无法编辑。</tr></td><tr><td>会话无法自动保存工作簿。</tr></td><tr><td>会话无法刷新其在工作簿文件上的锁定。</tr></td><tr><td>无法处理请求，需要重试。</tr></td><tr><td>无法验证用户的登录信息，必须重新输入。</tr></td><tr><td>用户访问被拒绝。</tr></td><tr><td>需要更新共享工作簿。</tr></td></table>|
 |5002|权限被拒绝|当前文档模式不允许请求的操作。|解决方案开发人员提交一组操作，但文档模式不允许进行修改，如"限制编辑"。|
 |5003|事件注册错误|当前对象不支持指定事件类型。|解决方案开发人员尝试对不存在的事件注册或取消注册处理程序。|
-|5004|无效的 API 调用|当前上下文中无效的 API 调用。|对上下文发出了无效的调用，尝试使用 Excel 中的  **CustomXMLPart** 对象。|
+|5004|无效的 API 调用|当前上下文中无效的 API 调用。|对上下文发出无效的调用，例如，尝试在 Excel 中使用`CustomXMLPart`对象。|
 |5005|数据过期|操作失败，因为服务器上的数据已过期。|需要刷新服务器上的数据。|
 |5006|会话超时|文档会话超时。重新加载文档。 |会话已超时。|
 |5007|无效的 API 调用|当前上下文中不支持枚举。|当前上下文中不支持枚举。|
 |5009|权限被拒绝|访问被拒绝|加载项没有调用特定 API 的权限。|
 |5012|会话无效或超时|您的 Office 浏览器会话已过期或无效。 若要继续操作，请刷新页面。|Office 客户端和服务器之间的会话已过期，或你的计算机上的日期、时间或时区不正确。|
-|6000|无效节点|未找到指定节点。|找不到 **CustomXmlPart** 节点。|
+|6000|无效节点|未找到指定节点。|找`CustomXmlPart`不到节点。|
 |6100|自定义 XML 错误|自定义 XML 错误|无效的 API 调用。|
 |7000|ID 无效|指定 ID 不存在。|ID 无效。|
 |7001|导航无效|导航不支持对象位置。|用户可查找对象，但无法导航到对象。（例如，在 Word 中绑定页眉、页脚或注释。）|
@@ -92,7 +92,7 @@ ms.locfileid: "41650017"
 |12006|||对话框已关闭，通常是因为用户选择了 **X** 按钮。 在对话框中引发并在主机页面中触发 `DialogEventReceived` 事件。|
 |12007|||已从此主机窗口打开了一个对话框。 主机窗口（如任务窗格）一次只能打开一个对话框。 由 `displayDialogAsync` 的调用引发。|
 |12009|||用户已选择忽略对话框。 联机版本的 Office 中可能会发生此错误，用户可能会选择不允许加载项显示对话框。 由 `displayDialogAsync` 的调用引发。|
-|13000 - 13010|||[从 tokenhelper.getaccesstoken 以便中查看错误的原因和处理](../develop/troubleshoot-sso-in-office-add-ins.md#causes-and-handling-of-errors-from-getaccesstoken)。|
+|13nnn|||[从 tokenhelper.getaccesstoken 以便中查看错误的原因和处理](../develop/troubleshoot-sso-in-office-add-ins.md#causes-and-handling-of-errors-from-getaccesstoken)。|
 
 ## <a name="binding-creation-error-conditions"></a>绑定创建错误条件
 

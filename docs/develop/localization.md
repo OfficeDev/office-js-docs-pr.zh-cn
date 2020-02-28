@@ -1,22 +1,22 @@
 ---
-title: Office 外接程序的本地化
-description: 可使用适用于 Office 的 JavaScript API 确定区域设置并根据主机应用程序的区域设置显示字符串，或者根据数据的区域设置来解读或显示数据。
+title: Office 加载项的本地化
+description: 您可以使用 Office JavaScript API 根据主机应用程序的区域设置来确定区域设置并显示字符串，或者根据数据的区域设置解释或显示数据。
 ms.date: 10/11/2019
 localization_priority: Normal
-ms.openlocfilehash: c2404177f2188a505522d972d5bdfdf323394eba
-ms.sourcegitcommit: 499bf49b41205f8034c501d4db5fe4b02dab205e
+ms.openlocfilehash: af91923871b72279b749dec4ff2f9fa4460a72d5
+ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/22/2019
-ms.locfileid: "37626766"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "42323789"
 ---
 # <a name="localization-for-office-add-ins"></a>Office 加载项的本地化
 
-您可以实现适合 Office 外接程序的任何本地化方案。Office 外接程序平台的 JavaScript API 和清单架构提供了一些选择。可以使用适用于 Office 的 JavaScript API 确定区域设置并根据主机应用程序的区域设置显示字符串，或根据数据的区域设置解释或显示数据。可以使用清单指定区域设置特定的加载项文件位置和描述性信息。也可以使用 Microsoft Ajax 脚本支持全球化和本地化。
+您可以实现适合 Office 外接程序的任何本地化方案。 Office 外接程序平台的 JavaScript API 和清单架构提供了一些选择。 您可以使用 Office JavaScript API 根据主机应用程序的区域设置来确定区域设置并显示字符串，或者根据数据的区域设置解释或显示数据。 可以使用清单指定区域设置特定的加载项文件位置和描述性信息。 也可以使用 Microsoft Ajax 脚本支持全球化和本地化。
 
 ## <a name="use-the-javascript-api-to-determine-locale-specific-strings"></a>使用 JavaScript API 确定区域设置特定的字符串
 
-适用于 Office 的 JavaScript API 提供两个属性，支持显示或解释与主机应用程序和数据的区域设置一致的值：
+Office JavaScript API 提供了两个属性，这些属性支持显示或解释与主机应用程序和数据的区域设置一致的值：
 
 - [Context.displayLanguage][displayLanguage] 指定主机应用程序用户界面的区域设置（或语言）。 以下示例验证主机应用程序是否使用 en-US 或 fr-FR 区域设置，并显示特定区域设置的问候语。
 
@@ -189,9 +189,9 @@ ms.locfileid: "37626766"
 > [!NOTE]
 > 如果尚未安装 Visual Studio 2019，请参阅[Visual STUDIO IDE 页面](https://visualstudio.microsoft.com/vs/)获取下载说明。 在安装过程中，你需要选择 Office/SharePoint 开发工作负载。 如果您以前安装了 Visual Studio 2019，请[使用 Visual Studio 安装程序](/visualstudio/install/modify-visual-studio/)确保安装了 Office/SharePoint 开发工作负载。
 
-1. 选择 "**新建项目**"。
+1. 选择“**创建新项目**”。
 
-2. 使用 "搜索" 框中输入**加载项**。 选择 " **Word Web 加载项**"，然后选择 "**下一步**"。
+2. 使用搜索框，输入“**加载项**”。 选择“**Word Web 外接程序**”，然后选择“**下一步**”。
 
 3. 将项目命名为 " **WorldReadyAddIn** "，然后选择 "**创建**"。
 
@@ -208,7 +208,7 @@ ms.locfileid: "37626766"
 
 要本地化加载项显示名称和说明，请执行以下操作：
 
-1. 在“解决方案资源管理器”**** 中，展开“WorldReadyAddIn”****、“WorldReadyAddInManifest”****，再选择“WorldReadyAddIn.xml”****。
+1. 在“解决方案资源管理器”**** 中，展开“WorldReadyAddIn”****、“WorldReadyAddInManifest”****，然后选择“WorldReadyAddIn.xml”****。
 
 2. 在 WorldReadyAddInManifest.xml 中，将 [DisplayName] 和 [Description] 元素替换为以下代码块：
 
@@ -335,7 +335,7 @@ UIStrings.js 资源文件创建对象 **UIStrings**，其中包含加载项 UI �
 
 若要根据主机应用中的菜单和命令的显示语言来更改加载项的本地化，可以使用 **Office.context.displayLanguage** 属性，获取相应语言的区域设置。例如，如果主机应用语言使用西班牙语显示菜单和命令，那么 **Office.context.displayLanguage** 属性返回语言代码 es-ES。
 
-如果您要根据编辑文档内容所用的语言更改您的加载项的本地化，可以使用  **Office.context.contentLanguage** 属性获取该语言的区域设置。例如，如果主机应用程序语言使用西班牙语编辑文档内容， **Office.context.contentLanguage** 属性将返回语言代码 es-ES。
+如果要根据编辑文档内容所使用的语言来更改加载项本地化，请使用**contentLanguage**属性获取该语言的区域设置的本地化。 例如，如果主机应用程序语言使用西班牙语编辑文档内容， **Office.context.contentLanguage** 属性将返回语言代码 es-ES。
 
 确定主机应用使用的语言后，可以使用 **UIStrings**，获取与主机应用语言一致的本地化字符串组。
 
@@ -391,7 +391,7 @@ UIStrings.js 资源文件创建对象 **UIStrings**，其中包含加载项 UI �
 
     ![“Word 选项”对话框](../images/office15-app-how-to-localize-fig04.png)
 
-2. 在“**选择显示语言**”下，选择想要显示的语言，例如西班牙语，然后选择向上箭头键将西班牙语移至列表中的第一个位置。 或者，若要更改编辑时使用的语言，在“选择编辑语言”**** 下，选择编辑时想要使用的语言，例如西班牙语，然后选择“设置为默认值”****。
+2. 在“**选择显示语言**”下，选择想要显示的语言，例如西班牙语，然后选择向上箭头键将西班牙语移至列表中的第一个位置。 或者，若要更改用于编辑的语言，请在 "**选择编辑语言**" 下，选择要用于编辑的语言，例如，西班牙语，然后选择 "**设为默认值**"。
 
 3. 选择“确定”**** 确认选择，然后关闭 Word。
 

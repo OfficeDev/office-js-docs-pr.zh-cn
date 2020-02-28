@@ -1,14 +1,14 @@
 ---
 title: 排查单一登录 (SSO) 错误消息
 description: ''
-ms.date: 11/05/2019
+ms.date: 02/20/2020
 localization_priority: Normal
-ms.openlocfilehash: 0491a49a09ec747dfb7f63237e5099579402e69a
-ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
+ms.openlocfilehash: a29efa4a501ee10b185cb2bbc72cb8e8e5e8b098
+ms.sourcegitcommit: 7464eac3b54a6a6b65e27549a3ad603af6ee1011
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "41950815"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "42315870"
 ---
 # <a name="troubleshoot-error-messages-for-single-sign-on-sso-preview"></a>排查单一登录 (SSO) 错误消息（预览）
 
@@ -106,6 +106,10 @@ Office 主机无法获取对加载项 Web 服务的访问令牌。
 
 在开发中，该加载项在 Outlook 中旁加载，并且在 `getAccessToken` 调用中传递了 `forMSGraphAccess` 选项。
 
+### <a name="13013"></a>13013
+
+`getAccessToken`在短时间内调用次数过多，因此 Office 限制了最近的呼叫。 这通常是由对方法的调用的无限循环引起的。 在某些情况下，建议撤回该方法。 但是，您的代码应使用计数器或标志变量以确保不会重复回调该方法。 如果相同的 "重试" 代码路径再次运行，则代码应回退到用户身份验证的备用系统。 有关代码示例，请参阅如何在`retryGetAccessToken` [HomeES6](https://github.com/OfficeDev/Office-Add-in-ASPNET-SSO/blob/master/Complete/Office-Add-in-ASPNET-SSO-WebAPI/Scripts/HomeES6.js)或[ssoAuthES6](https://github.com/OfficeDev/Office-Add-in-NodeJS-SSO/blob/master/Complete/public/javascripts/ssoAuthES6.js)中使用变量。
+
 ### <a name="50001"></a>50001
 
 此错误（未特定于 `getAccessToken`）可能表示浏览器已缓存 office.js 文件的旧副本。 在开发时，清除浏览器的缓存。 另一种可能是 Office 的版本不够新，不足以支持 SSO。 在 Windows 上，最低版本是 16.0.12215.20006。 在 Mac 上，它是 16.32.19102902。
@@ -124,7 +128,7 @@ Office 主机无法获取对加载项 Web 服务的访问令牌。
 
 代码应对此 `claims` 属性进行测试。 根据加载项的体系结构，你可以在客户端进行测试，也可以在服务器端进行测试并将其中继到客户端。 客户端需要此信息，因为 Office 处理 SSO 加载项的身份验证。如果从服务器端进行中继，则发送到客户端的消息可以是错误（如 `500 Server Error` 或 `401 Unauthorized`），也可以是成功响应的正文部分（如 `200 OK`）。 无论属于上述哪种情况，代码对加载项 Web API 的客户端 AJAX 调用的（失败或成功）回调都应测试此响应是否有错。 
 
-无论体系结构如何，如果已从 AAD 发送 claims 值，代码应重新调用 `getAccessToken`，并在 `options` 参数中传递选项 `authChallenge: CLAIMS-STRING-HERE`。 如果 AAD 看到此字符串，它会先提示用户进行多重身份验证，再返回将在代表流中接受的新访问令牌。
+无论采用何种体系结构，如果声明值已从 AAD 发送，则代码应重新`getAccessToken`调用并在`options`参数`authChallenge: CLAIMS-STRING-HERE`中传递选项。 如果 AAD 看到此字符串，它会先提示用户进行多重身份验证，再返回将在代表流中接受的新访问令牌。
 
 ### <a name="consent-missing-errors"></a>缺少许可错误
 

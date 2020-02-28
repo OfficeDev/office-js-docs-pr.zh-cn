@@ -3,19 +3,19 @@ title: 错误处理
 description: ''
 ms.date: 03/19/2019
 localization_priority: Normal
-ms.openlocfilehash: 87401773ad4a27bf0a30bc80b229d2879dd5234f
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: e3732af26aeaa6129a4b98d6cbb8e3caf501141f
+ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32448159"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "42325106"
 ---
 # <a name="error-handling"></a>错误处理
 
 使用 Excel JavaScript API 生成加载项时，请务必加入错误处理逻辑，以便解决运行时错误。 鉴于 API 的异步特性，这样做非常关键。
 
 > [!NOTE]
-> 若要详细了解 **sync()** 方法和 Excel JavaScript API 的异步特性，请参阅 [Excel JavaScript API 的基本编程概念](excel-add-ins-core-concepts.md)。
+> 有关 Excel JavaScript API 的`sync()`方法和异步特性的详细信息，请参阅[使用 excel Javascript api 的基本编程概念](excel-add-ins-core-concepts.md)。
 
 ## <a name="best-practices"></a>最佳做法
 

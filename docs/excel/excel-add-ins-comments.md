@@ -1,14 +1,14 @@
 ---
 title: 使用 Excel JavaScript API 处理注释
-description: ''
-ms.date: 10/22/2019
+description: 有关使用 Api 添加、删除和编辑注释和注释线程的信息。
+ms.date: 02/11/2020
 localization_priority: Normal
-ms.openlocfilehash: d79f99d1922def58fe2c8887d01ec5a2b173220a
-ms.sourcegitcommit: 5ba325cc88183a3f230cd89d615fd49c695addcf
+ms.openlocfilehash: d6be0f07e0d3bb134385f0a08c20ce00da4de892
+ms.sourcegitcommit: d85efbf41a3382ca7d3ab08f2c3f0664d4b26c53
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "37681912"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "42327780"
 ---
 # <a name="work-with-comments-using-the-excel-javascript-api"></a>使用 Excel JavaScript API 处理注释
 
@@ -20,12 +20,12 @@ ms.locfileid: "37681912"
 
 工作簿中的注释由`Workbook.comments`属性跟踪。 这包括由用户创建的批注以及由加载项创建的批注。 `Workbook.comments` 属性是一个包含一系列 [Comment](/javascript/api/excel/excel.comment) 对象的 [CommentCollection](/javascript/api/excel/excel.commentcollection) 对象。 此外，还可以在[工作表](/javascript/api/excel/excel.worksheet)级别访问注释。 本文中的示例处理工作簿级别的注释，但可以轻松地将其修改为使用`Worksheet.comments`属性。
 
-## <a name="add-comments"></a>添加注释
+## <a name="add-comments"></a>添加备注
 
 使用`CommentCollection.add`方法将注释添加到工作簿中。 此方法最长可使用三个参数：
 
 - `cellAddress`：添加了注释的单元格。 它可以是一个字符串或[Range](/javascript/api/excel/excel.range)对象。 区域必须是单个单元格。
-- `content`：注释的内容。 将字符串用于纯文本注释。 将[CommentRichContent](/javascript/api/excel/excel.commentrichcontent)对象用于包含[提及](#mentions-preview)的注释。
+- `content`：注释的内容。 将字符串用于纯文本注释。 将[CommentRichContent](/javascript/api/excel/excel.commentrichcontent)对象用于包含[提及](#mentions-online-only)的注释。 
 - `contentType`：用于指定内容类型的[ContentType](/javascript/api/excel/excel.contenttype)枚举。 默认值为 `ContentType.plain`。
 
 下面的代码示例将向单元格 **A2** 添加批注。
@@ -111,7 +111,7 @@ Excel.run(function (context) {
 });
 ```
 
-## <a name="resolve-comment-threads"></a>解析注释线程
+## <a name="resolve-comment-threads-preview"></a>解析注释线索（[预览](../reference/requirement-sets/excel-preview-apis.md)） 
 
 注释线程具有可配置的布尔值， `resolved`以指示是否已解决。 值`true`表示注释线程已解析。 值`false`表示注释线程是新的，也可能是重新打开的。
 
@@ -169,7 +169,7 @@ Excel.run(function (context) {
 });
 ```
 
-## <a name="mentions-preview"></a>提及（预览）
+## <a name="mentions-online-only"></a>提及（[仅联机](../reference/requirement-sets/excel-api-online-requirement-set.md)） 
 
 > [!NOTE]
 > 注释提到的 Api 当前仅适用于公共预览版。 [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]

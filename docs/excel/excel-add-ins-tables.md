@@ -3,23 +3,23 @@ title: 使用 Excel JavaScript API 处理表格
 description: ''
 ms.date: 09/09/2019
 localization_priority: Normal
-ms.openlocfilehash: e368447d50400d81953762bcdccfb174edbbdf22
-ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
+ms.openlocfilehash: 8c83367f9727d4d63144eb7e8c590605c8230026
+ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "41950857"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "42325078"
 ---
 # <a name="work-with-tables-using-the-excel-javascript-api"></a>使用 Excel JavaScript API 处理表格
 
-本文中的代码示例展示了如何使用 Excel JavaScript API 对表格执行常见任务。 有关 **Table** 和 **TableCollection** 对象支持的属性和方法的完整列表，请参阅 [Table 对象 (Excel JavaScript API)](/javascript/api/excel/excel.table) 和 [TableCollection 对象 (Excel JavaScript API)](/javascript/api/excel/excel.tablecollection)。
+本文提供的代码示例演示如何使用 Excel JavaScript API 对表执行常见任务。有关`Table`和`TableCollection`对象支持的属性和方法的完整列表，请参阅[Table 对象（适用于 excel 的 Javascript api）](/javascript/api/excel/excel.table)和[TableCollection 对象（适用于 excel 的 javascript api）](/javascript/api/excel/excel.tablecollection)。
 
 ## <a name="create-a-table"></a>创建表
 
 下面的代码示例在名为 **Sample** 的工作表中创建一个表。 此表包含标题，并且包含四列和七行数据。 如果在其中运行代码的 Excel 主机应用程序支持[要求集](/office/dev/add-ins/reference/requirement-sets/excel-api-requirement-sets) **ExcelApi 1.2**，则为表中的当前数据设置最佳列宽和行高。
 
 > [!NOTE]
-> 若要指定表格名称，必须先创建表格，再设置它的 **name** 属性，如下面的示例所示。
+> 若要指定表的名称，必须先创建该表，然后设置其`name`属性，如下面的示例所示。
 
 ```js
 Excel.run(function (context) {
@@ -59,7 +59,7 @@ Excel.run(function (context) {
 下面的代码示例将七个新行添加到名为 **Sample** 的工作表内的 **ExpensesTable** 表中。 新行被添加到表的末尾。 如果在其中运行代码的 Excel 主机应用程序支持[要求集](/office/dev/add-ins/reference/requirement-sets/excel-api-requirement-sets) **ExcelApi 1.2**，则为表中的当前数据设置最佳列宽和行高。
 
 > [!NOTE]
-> **TableRow** 对象的 [index](/javascript/api/excel/excel.tablerow) 属性表示表格行集合内行的索引编号。 **TableRow** 对象不包含可用作标识行的唯一键的 **id** 属性。
+> TableRow `index`对象的属性[](/javascript/api/excel/excel.tablerow)指示表的 rows 集合中的行的索引号。`TableRow`对象不包含可用作标识`id`行的唯一键的属性。
 
 ```js
 Excel.run(function (context) {
@@ -340,7 +340,7 @@ Excel.run(function (context) {
 
 ## <a name="get-the-visible-range-from-a-filtered-table"></a>从筛选表中获取可见区域
 
-下面的代码示例获取一个区域，其中只包含当前在指定表中可见的单元格数据，然后将该区域的值写入控制台。 可以使用如下所示的 **getVisibleView()** 方法，在应用列筛选器时，都能获取表的可见内容。
+下面的代码示例获取一个区域，该区域仅包含指定表中当前可见的单元格的数据，然后将该范围的值写入控制台。您可以使用下面`getVisibleView()`所示的方法，在应用列筛选器时获取表的可见内容。
 
 ```js
 Excel.run(function (context) {

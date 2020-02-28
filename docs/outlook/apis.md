@@ -1,18 +1,18 @@
 ---
 title: Outlook 加载项 API
 description: 了解如何引用 Outlook 加载项 API 并声明 Outlook 加载项中的权限。
-ms.date: 10/31/2019
+ms.date: 02/27/2020
 localization_priority: Normal
-ms.openlocfilehash: 2abe365f1606789b1c6ac113b133019055767b28
-ms.sourcegitcommit: a3ddfdb8a95477850148c4177e20e56a8673517c
+ms.openlocfilehash: bd7f3b5a1b52ec3ca7a48ae7a2d467c6cd30f1e4
+ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "42166040"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "42325467"
 ---
 # <a name="outlook-add-in-apis"></a>Outlook 外接程序 API
 
-要将 API 用于您的 Outlook 外接程序，您必须指定 Office.js 库的位置、要求集、架构和权限。
+要将 API 用于您的 Outlook 外接程序，您必须指定 Office.js 库的位置、要求集、架构和权限。 你将主要使用通过[邮箱](#mailbox-object)对象公开的 Office JavaScript api。
 
 ## <a name="officejs-library"></a>Office.js 库
 
@@ -26,7 +26,7 @@ ms.locfileid: "42166040"
 添加 API 时，Office.js 的 URL 将保持不变。仅当我们打破现有的 API 行为时，才会更改 URL 中的版本。
 
 > [!IMPORTANT]
-> 开发任何 Office 主机应用程序的加载项时，从页面的 `<head>` 区域内引用适用于 Office 的 JavaScript API。 这样可确保 API 先于所有正文元素完全初始化。 Office 主机要求外接程序在激活 5 秒钟内进行初始化。 超过此阈值会导致声明的外接程序无响应，并且会向用户显示错误消息。
+> 为任何 Office 主机应用程序开发外接程序时，请从页面的`<head>`部分中引用 OFFICE JavaScript API。 这样可确保 API 先于所有正文元素完全初始化。 Office 主机要求外接程序在激活 5 秒钟内进行初始化。 超过此阈值会导致声明的外接程序无响应，并且会向用户显示错误消息。
 
 ## <a name="requirement-sets"></a>要求集
 
@@ -66,6 +66,9 @@ if (item.somePropertyOrFunction) {
 
 一般情况下，应该指定加载项所需的最小权限。 权限在清单的 `<Permissions>` 元素中声明。 有关更多信息，请参阅 [Outlook 加载项清单](manifests.md)。 有关安全问题的信息，请参阅[Office 外接程序的隐私和安全性](../concepts/privacy-and-security.md)。
 
+## <a name="mailbox-object"></a>Mailbox 对象
+
+[!include[information about Mailbox object](../includes/mailbox-object-desc.md)]
 
 ## <a name="see-also"></a>另请参阅
 

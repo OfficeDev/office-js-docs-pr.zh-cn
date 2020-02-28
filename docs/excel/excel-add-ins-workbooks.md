@@ -3,16 +3,16 @@ title: 使用 Excel JavaScript API 处理工作簿
 description: ''
 ms.date: 10/21/2019
 localization_priority: Normal
-ms.openlocfilehash: 133907082b64d8aef5b18d87b5132ca970c44647
-ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
+ms.openlocfilehash: c148dab1f11ba0a4f33eb4ef4c6dc4e189069808
+ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "41950612"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "42325066"
 ---
 # <a name="work-with-workbooks-using-the-excel-javascript-api"></a>使用 Excel JavaScript API 处理工作簿
 
-本文提供了代码示例，介绍如何使用 Excel JavaScript API 对工作簿执行常见任务。 有关 **Workbook** 对象支持的属性和方法的完整列表，请参阅 [Workbook 对象 (Excel JavaScript API)](/javascript/api/excel/excel.workbook)。 此外，本文还介绍了通过 [Application](/javascript/api/excel/excel.application) 对象执行的工作簿级别的操作。
+本文提供了代码示例，介绍如何使用 Excel JavaScript API 对工作簿执行常见任务。 有关该`Workbook`对象支持的属性和方法的完整列表，请参阅[工作簿对象（适用于 EXCEL 的 JavaScript API）](/javascript/api/excel/excel.workbook)。 此外，本文还介绍了通过 [Application](/javascript/api/excel/excel.application) 对象执行的工作簿级别的操作。
 
 Workbook 对象是加载项与 Excel 交互的入口点。 它用于维护工作表、表、数据透视表等的集合，通过这些集合可以访问并更改 Excel 数据。 加载项可以通过 [WorksheetCollection](/javascript/api/excel/excel.worksheetcollection) 对象访问单个工作表内的所有工作簿数据。 具体来说，加载项可以借助它添加工作表、在工作表间导航并向工作表分配处理程序。 [使用 Excel JavaScript API 处理工作表](excel-add-ins-worksheets.md)一文介绍了如何访问并编辑工作表。
 
@@ -136,7 +136,7 @@ Excel.run(function (context) {
 
 ## <a name="access-document-properties"></a>访问文档属性
 
-Workbook 对象可以访问 Office 文件元数据，即[文档属性](https://support.office.com/article/View-or-change-the-properties-for-an-Office-file-21D604C2-481E-4379-8E54-1DD4622C6B75)。 Workbook 对象的 `properties` 属性是一个包含这些元数据值的 [DocumentProperties](/javascript/api/excel/excel.documentproperties) 对象。 下列示例演示如何设置 author 属性。****
+Workbook 对象可以访问 Office 文件元数据，即[文档属性](https://support.office.com/article/View-or-change-the-properties-for-an-Office-file-21D604C2-481E-4379-8E54-1DD4622C6B75)。 Workbook 对象的 `properties` 属性是一个包含这些元数据值的 [DocumentProperties](/javascript/api/excel/excel.documentproperties) 对象。 下面的示例演示如何设置`author`属性。
 
 ```js
 Excel.run(function (context) {

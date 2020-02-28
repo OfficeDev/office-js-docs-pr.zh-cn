@@ -3,12 +3,12 @@ title: 在 Visual Studio 中调试 Office 加载项
 description: 使用 Visual Studio 在 Windows 上的 Office 桌面客户端中调试 Office 加载项
 ms.date: 12/31/2019
 localization_priority: Normal
-ms.openlocfilehash: 3bfbc52a8739cb5d51868794f1be701de52b292e
-ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
+ms.openlocfilehash: d55b764343b5dc7c850a35b013b134fa2ad5a069
+ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "41950598"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "42324615"
 ---
 # <a name="debug-office-add-ins-in-visual-studio"></a>在 Visual Studio 中调试 Office 加载项
 
@@ -35,7 +35,7 @@ ms.locfileid: "41950598"
 
 1. 在“**解决方案资源管理器**”中，选择外接程序项目（*而不是* Web 应用程序项目）。
 
-2. 在菜单栏中，依次选择“**视图**” >  “**属性窗口**”。
+2. 在菜单栏中，依次选择“**视图**” > “**属性窗口**”。
 
 下表介绍了外接程序项目的属性。
 
@@ -59,9 +59,9 @@ ms.locfileid: "41950598"
 
 打开 Web 应用程序项目的“**属性**”窗口以查看项目属性：
 
-1. 在“**解决方案资源管理器**”中，选择 Web 应用程序项目。
+1. 在 "**解决方案资源管理器**" 中，选择 "web 应用程序" 项目。
 
-2. 在菜单栏中，依次选择“**视图**” >  “**属性窗口**”。
+2. 在菜单栏中，依次选择“**视图**” > “**属性窗口**”。
 
 下表介绍了与 Office 外接程序项目最相关的 Web 应用程序项目的属性。
 
@@ -119,7 +119,7 @@ ms.locfileid: "41950598"
 
 3. 打开主机应用程序。
 
-生成项目时，Visual Studio 不会显示“**输出**”窗口中的验证错误。 Visual Studio 报告“**错误列表**”窗口中出现的错误和警告。 通过在代码和文本编辑器中显示不同颜色的波浪下划线（称为波浪线），Visual Studio 还报告验证错误。 通过这些标志，你可以得知 Visual Studio 在你的代码中检测到的问题。 有关如何启用或禁用验证的详细信息，请参阅[选项、文本编辑器、JavaScript、IntelliSense](/visualstudio/ide/reference/options-text-editor-javascript-intellisense?view=vs-2019)。
+当您构建项目时，Visual Studio 不会在“输出”**** 窗口中显示验证错误。 Visual Studio 报告“**错误列表**”窗口中出现的错误和警告。 通过在代码和文本编辑器中显示不同颜色的波浪下划线（称为波浪线），Visual Studio 还报告验证错误。 通过这些标志，你可以得知 Visual Studio 在你的代码中检测到的问题。 有关如何启用或禁用验证的详细信息，请参阅[选项、文本编辑器、JavaScript、IntelliSense](/visualstudio/ide/reference/options-text-editor-javascript-intellisense?view=vs-2019)。
 
 要查看项目中 XML 清单文件的验证规则，请参阅 [Office 外接程序 XML 清单](../develop/add-in-manifests.md)。
 

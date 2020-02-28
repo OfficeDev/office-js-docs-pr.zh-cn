@@ -3,12 +3,12 @@ title: Office 加载项的隐私和安全
 description: ''
 ms.date: 09/26/2019
 localization_priority: Normal
-ms.openlocfilehash: 30ebae88d40795b4be36628a60539397fb1deb29
-ms.sourcegitcommit: a3ddfdb8a95477850148c4177e20e56a8673517c
+ms.openlocfilehash: 5782cc7fcf23190cca73cc91a35a73e82d182261
+ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "42162802"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "42323838"
 ---
 # <a name="privacy-and-security-for-office-add-ins"></a>Office 加载项的隐私和安全
 
@@ -20,7 +20,7 @@ Office 外接程序受到外接程序运行时环境、多层权限模型和性�
 
 - 只允许间接访问主机应用的 UI 线程。
 
-- 不允许模式交互。例如，不允许调用 JavaScript **alert**、**confirm** 和 **prompt** 函数，因为它们是模式函数。
+- 不允许模式交互（例如，不允许调用 JavaScript `alert`、 `confirm`和`prompt`函数，因为它们是模式的。
 
 此外，为了确保 Office 加载项不会损害用户环境，运行时框架还提供以下优势：
 
@@ -54,7 +54,8 @@ Office 外接程序运行时管理进程间通信、JavaScript API 调用和事�
 
 ### <a name="web-clients"></a>Web 客户端
 
-在支持的 Web 客户端中，Office 加载项托管在使用 HTML5 **sandbox** 属性运行的 **iframe** 中。不得使用 ActiveX 组件或导航 Web 客户端的主页。Web 客户端通过集成适用于 Office 的 JavaScript API，启用 Office 加载项支持。JavaScript API 管理加载项生命周期，以及加载项与 Web 客户端之间的互操作性，与桌面客户端应用采取的方式类似。此互操作性是使用特殊的交叉框架公告消息通信基础结构进行实现。在桌面客户端上使用的相同 JavaScript 库 (Office.js) 可用于与 Web 客户端进行交互。下图展示了支持在浏览器中运行的 Office 中的加载项的基础结构，以及支持这些加载项所需的相关组件（Web 客户端、**iframe**、Office 加载项运行时和适用于 Office 的 JavaScript API）。
+在受支持的 Web 客户端中，Office 外接程序承载在使用 HTML5**沙盒**属性运行的**iframe**中。 不允许使用 ActiveX 组件或导航 Web 客户端主页。 通过集成适用于 Office 的 JavaScript API 在 Web 客户端中实现 Office 外接程序支持。 同理，对于桌面客户端应用程序，JavaScript API 管理加载项生命周期和加载项与 Web 客户端间的互操作性。 这种互操作性通过特殊的跨框架发布消息通信基础结构实现。 桌面客户端上使用的同一 JavaScript 库 (Office.js) 可用来与 Web 客户端交互。 下图显示了支持在浏览器中运行的 Office 中的外接程序的基础结构，以及支持它们所需的相关组件（web 客户端、 **iframe**、Office 外接程序运行时和适用于 Office 的 JavaScript API）。
+
 
 *图 3：支持 Office Web 客户端中 Office 加载项的基础结构*
 
@@ -89,7 +90,7 @@ Office 加载项是使用浏览器控件或 **iframe** 中运行的 Web 技术�
 
 - 在共享一个文档时，用户也会共享已插入该文档或与该文档关联的加载项。如果用户打开一个包含其之前未使用的加载项的文档，则主机应用程序会提示用户向加载项授予在文档中运行的权限。在组织环境中，如果文档来自外部源，则 Office 主机应用程序也会提示用户。
 
-- 用户可启用或禁用对 AppSource 的访问。 对于内容和任务窗格加载项，用户通过主机 Office 客户端上的“**信任中心**”管理受信任的加载项和目录的访问权限（通过“**文件**” > “**选项**” > “**信任中心**” > “**信任中心设置**” > “**受信任的加载项目录**”打开）。 对于 Outlook 加载项，用户可以通过选择“**管理加载项**”按钮管理加载项：在 Windows 版 Outlook 中依次选择“**文件**” > “**管理加载项**”。在 Mac 版 Outlook 中选择加载项栏上的“**管理加载项**”按钮。 在 Outlook 网页版中，依次选择“**设置**”菜单（齿轮图标）>“**管理加载项**”。管理员还可以[通过使用组策略](/previous-versions/office/office-2013-resource-kit/jj219429(v=office.15)#using-group-policy-to-manage-how-users-can-install-and-use-apps-for-office)来管理此访问。
+- 用户可启用或禁用对 AppSource 的访问。 对于内容和任务窗格外接程序，用户可以在主机 Office 客户端（从**文件** > **选项** > "**信任中心** > **信任中心" 设置** > **受信任的外接程序目录**中打开）管理对受信任的加载项和**目录的访问**。 对于 Outlook 外接程序，使用可以通过选择 "**管理外接程序**" 按钮来管理外接程序：在 Windows 中的 outlook 中，选择 "**文件** > **管理外接程序**"。在 Mac 上的 Outlook 中，选择外接程序栏上的 "**管理外接程序**" 按钮。 在 Outlook 网页版中，依次选择“**设置**”菜单（齿轮图标）>“**管理加载项**”。管理员还可以[通过使用组策略](/previous-versions/office/office-2013-resource-kit/jj219429(v=office.15)#using-group-policy-to-manage-how-users-can-install-and-use-apps-for-office)来管理此访问。
 
 - 加载项平台的设计在以下方面为最终用户提供了安全和性能保障：
 
@@ -117,13 +118,13 @@ Outlook 外接程序通过特定的资源使用率监视提供额外安全和性
 
 ### <a name="permissions-choices"></a>权限选择
 
-加载项平台中提供了一个权限模型，供加载项用于声明实现其功能所需的对用数据的访问级别。 每个权限级别对应适用于 Office 的 JavaScript API 的子集，加载项通过这些权限级别实现其功能。 例如，内容和任务窗格加载项的 **WriteDocument** 权限可访问 [Document.setSelectedDataAsync](/javascript/api/office/office.document) 方法，该方法允许加载项对用户文档执行写入操作，但不允许访问任何读取文档中的数据的方法。 此权限级别对于只需要对文档执行写入操作的加载项很有用，例如用户可以查询要插入到其文档的数据的加载项。
+加载项平台中提供了一个权限模型，供加载项用于声明实现其功能所需的对用数据的访问级别。 每个权限级别对应适用于 Office 的 JavaScript API 的子集，加载项通过这些权限级别实现其功能。 例如，内容和任务窗格外接程序的**WriteDocument**权限允许访问[document.setselecteddataasync](/javascript/api/office/office.document)方法，该方法允许外接程序向用户的文档中写入数据，但不允许访问从文档读取数据的任何方法。 此权限级别对于只需要对文档执行写入操作的加载项很有用，例如用户可以查询要插入到其文档的数据的加载项。
 
 最佳做法是应该基于“_最小特权_”原则请求权限。即应该请求外接程序正常运行所需的 API 的最小子集的访问权限。例如，如果外接程序只需要读取其功能的用户文档中的数据，则应仅请求“**ReadDocument**”权限。（但是，请注意如果请求权限不足，则会导致外接程序平台阻止外接程序使用部分 API 并将生成运行时错误。）
 
-你在外接程序清单中指定权限，如本节下面的示例所示。最终用户可以在首次决定安装或激活外接程序之前查看外接程序请求的权限级别。此外，请求 **ReadWriteMailbox** 权限的 Outlook 外接程序需要明确的管理员权限才能安装。
+您可以在加载项清单中指定权限（如下面的示例中所示），最终用户可以在决定在首次安装或激活外接程序之前查看该外接程序的请求权限级别。 此外，请求**ReadWriteMailbox**权限的 Outlook 外接程序需要显式管理员权限才能安装。
 
-以下示例演示任务窗格加载项如何在其清单中指定 **ReadDocument** 权限。为重点关注权限，清单中的其他元素将不显示。
+下面的示例演示任务窗格加载项如何在其清单中指定**ReadDocument**权限。 为重点关注权限，清单中的其他元素将不显示。
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -150,7 +151,7 @@ Outlook 外接程序通过特定的资源使用率监视提供额外安全和性
 
 由于 Office 外接程序是在 Web 浏览器控件中运行的网页，因此，它们必须遵守浏览器强制实施的同源策略：默认情况下，一个域中的网页无法执行它的域之外的其他域进行 [XmlHttpRequest](https://www.w3.org/TR/XMLHttpRequest/) Web 服务调用。
 
-消除此限制的一种方法是使用 JSON/P - 通过包括一个带指向承载于其他域上的某个脚本的 **src** 属性的 **script** 标记来为 Web 服务提供代理。你可以编程方式创建 **script** 标记，动态创建 **src** 属性所指向的 URL，并通过 URI 查询参数将参数传递到 URL。Web 服务提供程序创建和承载特定 URL 上的 JavaScript 代码，然后根据 URI 查询参数返回不同的脚本。随后，这些脚本将在其插入到的位置执行并按预期工作。
+解决此限制的一种方法是使用 JSON/P--通过包含包含**src**属性的**脚本**标记（指向其他域中承载的某个脚本）来提供 web 服务的代理。 你可以编程方式创建 **script** 标记，动态创建 **src** 属性所指向的 URL，并通过 URI 查询参数将参数传递到 URL。 Web 服务提供程序在特定的 URL 位置创建和托管 JavaScript 代码，并根据 URI 查询参数返回不同的脚本。 这些脚本然后在插入位置执行并按照预期的方式工作。
 
 以下是 Outlook 外接程序示例中的 JSON/P 的示例。 
 
@@ -181,9 +182,9 @@ Exchange 和 SharePoint 提供了客户端代理以实现跨域访问。通常�
      var text = x.innerText || x.textContent
     ```
 
-    有关 **innerText** 和 **textContent** 之间区别的信息，请参阅 [Node.textContent](https://developer.mozilla.org/docs/DOM/Node.textContent)。有关常见浏览器间 DOM 兼容性的详细信息，请参阅 [W3C DOM 兼容性 - HTML](https://www.quirksmode.org/dom/w3c_html.html#t07)。
+    有关**innerText**和**textContent**之间的差异的信息，请参阅[textContent](https://developer.mozilla.org/docs/DOM/Node.textContent)。 有关常见浏览器间 DOM 兼容性的详细信息，请参阅 [W3C DOM 兼容性 - HTML](https://www.quirksmode.org/dom/w3c_html.html#t07)。
 
-- 如果你必须使用 **innerHTML**，请在将用户输入传递到 **innerHTML** 之前确保用户输入不包含恶意内容。有关详细信息以及如何安全使用 **innerHTML** 的示例，请参阅 [innerHTML](https://developer.mozilla.org/docs/Web/API/Element/innerHTML) 属性。
+- 如果必须使用**innerHTML**，则在将用户的输入传递到**innerHTML**之前，请确保该用户的输入不包含恶意内容。 有关如何安全使用**innerHTML**的详细信息和示例，请参阅[innerHTML](https://developer.mozilla.org/docs/Web/API/Element/innerHTML)属性。
 
 - 如果要使用 jQuery，请使用 [.text()](https://api.jquery.com/text/) 方法，而非 [.html()](https://api.jquery.com/html/) 方法。
 
@@ -224,7 +225,7 @@ Exchange 和 SharePoint 提供了客户端代理以实现跨域访问。通常�
 
     若要确保加载项不使用 HTTP 交付内容，在测试加载项时，开发人员应确保在“**控制窗格**”中的“**Internet 选项**”中选择以下设置且其测试方案中不显示任何安全警告：
 
-    - 确保针对“**Internet**”区域的安全设置“**显示混合内容**”设置为“**提示**”。可以通过在“**Internet 选项**”中选择以下项目来完成此设置：在“**安全**”选项卡上，选择“**Internet**”区域，然后选择“**自定义级别**”，滚动查找“**显示混合内容**”并选择“**提示**”（如果未选择）。
+    - 确保针对“Internet”**** 区域的安全设置“显示混合内容”**** 设置为“提示”****。 若要执行此操作，请在 " **Internet 选项**" 中选择以下选项：在 "**安全**" 选项卡上，选择 " **internet**区域"，选择 "**自定义级别**"，滚动查找 "**显示混合内容**"，然后选择 "**提示**" （如果尚未选中）。
 
     - 确保在“Internet 选项”**** 对话框的“高级”**** 选项卡中，选中了“在安全和非安全模式之间转换时发出警告”****。
 

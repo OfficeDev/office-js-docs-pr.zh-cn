@@ -3,12 +3,12 @@ title: 在 Office 加载项中使用 Office 对话框 API
 description: 了解在 Office 加载项中创建对话框的基础知识
 ms.date: 01/29/2020
 localization_priority: Normal
-ms.openlocfilehash: 18ea221618e2a674266784517be3aa31d029c612
-ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
+ms.openlocfilehash: ed77173f57c8a16344d469585610917a08d3dcad
+ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "41950661"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "42324678"
 ---
 # <a name="use-the-office-dialog-api-in-office-add-ins"></a>在 Office 加载项中使用 Office 对话框 API
 
@@ -86,7 +86,7 @@ Office.context.ui.displayDialogAsync('https://myDomain/myDialog.html', {height: 
 对话框无法与任务窗格中的主机页进行通信，除非：
 
 - 对话框中的当前页面与主机页在同一个域中。
-- Office JavaScript 库已在页面中加载。（与使用 Office JavaScript 库的所有页面一样，页面脚本必须为 `Office.initialize` 属性分配方法，尽管方法可以是空的。有关详细信息，请参阅[初始化外接程序](understanding-the-javascript-api-for-office.md#initializing-your-add-in)。）
+- 在页面中加载 Office JavaScript API 库。（与使用 Office JavaScript API 库的任何页面一样，页面的脚本必须为`Office.initialize`属性分配方法，尽管它可以是空方法。有关详细信息，请参阅[初始化 Office 外接程序](initialize-add-in.md)。）
 
 对话框中的代码使用 [messageParent](/javascript/api/office/office.ui#messageparent-message-) 函数，向主机页发送布尔值或字符串消息。 字符串可以是单词、句子、XML blob、字符串化 JSON 或其他任何能够序列化成字符串的内容。 示例如下：
 

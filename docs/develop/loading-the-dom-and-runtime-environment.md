@@ -3,12 +3,12 @@ title: 加载 DOM 和运行时环境
 description: ''
 ms.date: 07/01/2019
 localization_priority: Normal
-ms.openlocfilehash: e4b80ca77bf514960b3f29b3389ae08422d1ebb8
-ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
+ms.openlocfilehash: 06b3e9d65d29b257d34d2f4bdad81f464056e558
+ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "41950689"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "42325120"
 ---
 # <a name="loading-the-dom-and-runtime-environment"></a>加载 DOM 和运行时环境
 
@@ -30,7 +30,7 @@ ms.locfileid: "41950689"
 
     后面的两个步骤第 4 步和第 5 步以异步方式并行发生。因此，您的加载项代码必须在继续之前确保 DOM 和加载项运行时环境已加载完。
 
-4. 浏览器控件加载 DOM 和 HTML 正文，并调用 **window.onload** 事件的事件处理程序。
+4. 浏览器控件加载 DOM 和 HTML 正文，并调用`window.onload`事件的事件处理程序。
 
 5. Office 主机应用程序加载运行时环境，这将从内容分发网络 (CDN) 服务器中为 JavaScript 库文件下载并缓存 JavaScript API，然后为 [Office](/javascript/api/office) 对象的 [initialize](/javascript/api/office#office-initialize-reason-) 事件调用加载项的事件处理程序（如果已为其分配处理程序）。 此时它还会检查是否有任何回调（或链接 `then()` 函数）已传递（或链接）到 `Office.onReady` 处理程序。 有关 `Office.initialize` 与 `Office.onReady` 之间的区别的详细信息，请参阅[初始化加载项](/office/dev/add-ins/develop/understanding-the-javascript-api-for-office#initializing-your-add-in)。
 
@@ -53,7 +53,7 @@ ms.locfileid: "41950689"
 
 4. 如果用户单击该按钮以启动 Outlook 外接程序，Outlook 将在浏览器控件中打开 HTML 页面。下面两个步骤（步骤 5 和 6）并行发生。
 
-5. 浏览器控件加载 DOM 和 HTML 正文，并调用 **onload** 事件的事件处理程序。
+5. 浏览器控件加载 DOM 和 HTML 正文，并调用`onload`事件的事件处理程序。
 
 6. Outlook 加载运行时环境，这将从内容分发网络 (CDN) 服务器中为 JavaScript 库文件下载并缓存 JavaScript API，然后为 [Office](/javascript/api/office) 加载项对象的 [initialize](/javascript/api/office#office-initialize-reason-) 事件调用事件处理程序（如果已为其分配处理程序）。 此时它还会检查是否有任何回调（或链接 `then()` 函数）已传递（或链接）到 `Office.onReady` 处理程序。 有关 `Office.initialize` 与 `Office.onReady` 之间的区别的详细信息，请参阅[初始化加载项](/office/dev/add-ins/develop/understanding-the-javascript-api-for-office#initializing-your-add-in)。
 
@@ -62,7 +62,7 @@ ms.locfileid: "41950689"
 
 ## <a name="checking-the-load-status"></a>检查加载状态
 
-检查 DOM 和运行时环境是否已完成加载的一种方法是使用 jQuery [.ready()](https://api.jquery.com/ready/) 函数：`$(document).ready()`。 例如，以下 **onReady** 事件处理程序确保在专用于初始化加载项的代码运行之前先加载 DOM。 随后，**onReady** 处理程序将继续使用 [mailbox.item](/javascript/api/outlook/office.mailbox) 属性来获取当前在 Outlook 中选择的项目，并调用加载项的主函数，即 `initDialer`。
+检查 DOM 和运行时环境是否已完成加载的一种方法是使用 jQuery [.ready()](https://api.jquery.com/ready/) 函数：`$(document).ready()`。 例如，以下`onReady`事件处理程序确保在初始化外接程序的特定代码运行之前先加载 DOM。 随后， `onReady`处理程序将继续使用[邮箱. Item](/javascript/api/outlook/office.mailbox)属性获取 Outlook 中当前选定的项，并调用外接程序的主函数。 `initDialer`
 
 ```js
 Office.onReady()
@@ -77,7 +77,7 @@ Office.onReady()
 );
 ```
 
-或者，你也可以在 **initialize** 事件处理程序中使用相同的代码，如下面的示例所示。
+或者，您可以在`initialize`事件处理程序中使用相同的代码，如下面的示例所示。
 
 ```js
 Office.initialize = function () {
@@ -91,12 +91,12 @@ Office.initialize = function () {
 }
 ```
 
-这种方法可在任何 Office 加载项的 **onReady** 或 **initialize** 处理程序中使用。
+此方法可在任何 Office 外接`onReady`程序`initialize`的或处理程序中使用。
 
 电话拨号器示例 Outlook 加载项展示了略为不同的方法，此方法仅使用 JavaScript 检查这些相同条件。 
 
 > [!IMPORTANT]
-> 即使加载项没有初始化任务要执行，也必须至少包含对 **Office.onReady** 的调用或分配最简单的 **Office.initialize** 事件处理程序函数，如下面的示例所示。
+> 即使外接程序没有要执行的初始化任务，也必须至少包含调用`Office.onReady`或分配最少`Office.initialize`事件处理程序函数，如以下示例中所示。
 >
 >```js
 >Office.onReady();
@@ -106,10 +106,11 @@ Office.initialize = function () {
 >Office.initialize = function () {};
 >```
 >
-> 如果未调用 **Office.onReady** 或分配 **Office.initialize** 事件处理程序，则加载项在启动时可能会引发错误。 而且，如果某个用户尝试通过 Office Web 客户端（例如 Excel、PowerPoint 或 Outlook）使用你的加载项，则加载项会无法运行。
+> 如果您不调用`Office.onReady`或分配`Office.initialize`事件处理程序，则加载项会在启动时引发错误。 而且，如果某个用户尝试通过 Office Web 客户端（例如 Excel、PowerPoint 或 Outlook）使用你的加载项，则加载项会无法运行。
 >
-> 如果你的加载项包括多个页，则在每次加载新页时，该页面必须调用 **Office.onReady** 或分配 **Office.initialize** 事件处理程序。
+> 如果您的外接程序包含多个页面，则每当它加载一个新页面时，该页都`Office.onReady`必须调用或`Office.initialize`分配一个事件处理程序。
 
 ## <a name="see-also"></a>另请参阅
 
-- [了解适用于 Office 的 JavaScript API](understanding-the-javascript-api-for-office.md)
+- [了解 Office JavaScript API](understanding-the-javascript-api-for-office.md)
+- [初始化 Office 外接程序](initialize-add-in.md)

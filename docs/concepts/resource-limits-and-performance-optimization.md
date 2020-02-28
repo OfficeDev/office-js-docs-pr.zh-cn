@@ -3,12 +3,12 @@ title: Office 加载项的资源限制和性能优化
 description: ''
 ms.date: 09/09/2019
 localization_priority: Normal
-ms.openlocfilehash: 332ea72e9c96ff7a9b61a4fb0249284ca44079ac
-ms.sourcegitcommit: a3ddfdb8a95477850148c4177e20e56a8673517c
+ms.openlocfilehash: 5263abdafb6655325a22754ab22f36b99ca32cbe
+ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "42162788"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "42323887"
 ---
 # <a name="resource-limits-and-performance-optimization-for-office-add-ins"></a>Office 加载项的资源限制和性能优化
 
@@ -26,7 +26,7 @@ ms.locfileid: "42162788"
 
 - **内存使用** - 默认内存使用阈值，根据设备的可用物理内存动态确定。
 
-   默认情况下，当主机丰富客户端检测到某个设备上的物理内存使用率超出可用内存的 80% 时，客户端将开始监视该外接程序的内存使用率（监视内容和任务窗格外接程序的文档级别，监视 Outlook 外接程序的邮箱级别）。在默认为 5 秒的间隔时间，客户端警告用户在文档或邮箱级别中的一组外接程序的物理内存使用率是否超出 50%。该内存使用率限制使用物理内存（而非虚拟内存）来确保使用了有限 RAM 的设备的性能表现，如平板电脑。管理员可以通过使用 **MemoryAlertThreshold** Windows 注册表项作为全局设置将动态设置替代为显式限制，或通过使用 **AlertInterval** 密钥作为全局设置来调整警报间隔。
+   默认情况下，当主机富客户端检测到设备上的物理内存使用率超过可用内存的80% 时，客户端会开始监视加载项的内存使用情况、内容和任务窗格外接程序的文档级别以及 Outlook 外接程序的邮箱级别。如果默认间隔为5秒，客户端将在文档或邮箱级别上的一组加载项的物理内存使用率超过50% 时警告用户。此内存使用率限制使用物理内存而非虚拟内存，以确保具有有限 RAM 的设备（如平板电脑）上的性能。管理员可以使用显式限制覆盖此动态设置，方法是使用**MemoryAlertThreshold** Windows 注册表项作为全局设置，红外通过使用**AlertInterval**键作为全局设置来调整警报间隔。
 
 - **故障容忍度** - 外接程序的默认限制为 4 次故障。
 
@@ -47,11 +47,11 @@ ms.locfileid: "42162788"
 
 - **正则表达式响应时间** - Outlook 计算 Outlook 外接程序清单中的所有正则表达式的默认阈值为 1,000 毫秒。超过该阈值会导致 Outlook 稍后重新尝试计算。
 
-    通过使用 Windows 注册表中的组策略或应用程序特定设置，管理员可以在 **OutlookActivationAlertThreshold** 设置中调整此 1,000 毫秒的默认阈值。
+    通过使用组策略或 Windows 注册表中特定于应用程序的设置，管理员可以在 **OutlookActivationAlertThreshold** 设置中调整此 1,000 毫秒的默认阈值。
 
-- **正则表达式重新计算** - Outlook 重新计算清单中的所有正则表达式的默认限制为三次。如果三次计算均因超过适用阈值（默认值为 1,000 毫秒或 **OutlookActivationAlertThreshold** 指定的值，如果 Windows 注册表中存在该设置）而失败，则 Outlook 将禁用该 Outlook 加载项。Exchange 管理中心会显示禁用状态，该加载项被禁止在 Outlook 富客户端、Outlook 网页版或移动设备中使用。
+- **正则表达式重新评估**-Outlook 的默认限制为三次，以重新计算清单中的所有正则表达式。如果计算通过超过适用的阈值（默认为1000毫秒）或**OutlookActivationAlertThreshold**指定的值（如果 Windows 注册表中存在该设置）而失败，则 outlook 将禁用 outlook 外接程序。Exchange 管理中心显示已禁用的状态，并且外接程序在 Outlook 富客户端中被禁用，而在 web 和移动设备上使用的是 Outlook。
 
-    通过使用 Windows 注册表中的组策略或特定于应用程序的设置，管理员可以调整该时间数，以在 **OutlookActivationManagerRetryLimit** 设置中重试该评估。
+    通过使用组策略或 Windows 注册表中特定于应用程序的设置，管理员可以在 **OutlookActivationManagerRetryLimit** 设置中调整此重试计算的次数。
 
 ### <a name="task-pane-and-content-add-ins"></a>任务窗格和内容外接程序
 
@@ -81,10 +81,10 @@ Office 提供了遥测日志，以保留本地计算机上运行的 Office 解�
 |8|外接程序清单未下载|关键|主机应用无法从 SharePoint 目录、企业目录或 AppSource 加载 Office 加载项的清单文件。|
 |9|无法分析外接程序标记|关键|主机应用程序已加载 Office 外接程序清单，但不能读取该应用程序的 HTML 标记。|
 |10|外接程序占用了太多 CPU|关键|在有限的时间内，Office 外接程序使用了超过 90% 的 CPU 资源。|
-|15|由于字符串搜索超时，外接程序已被禁用||Outlook 外接程序搜索主题行和电子邮件中的信息以确定是否应通过使用正则表达式将其显示。Outlook 禁用“**文件**”列中列出的 Outlook 外接程序，因为在尝试匹配正则表达式期间其会反复超时。|
+|15|由于字符串搜索超时，外接程序已被禁用||Outlook 外接程序搜索电子邮件的主题行和消息，以确定是否应使用正则表达式来显示它们。“文件”**** 列中列出的 Outlook 外接程序已被 Outlook 禁用，因为它在尝试匹配正则表达式时超时多次。|
 |18|外接程序已成功关闭||主机应用程序能够成功关闭 Office 外接程序。|
-|19|外接程序遇到运行时错误|关键|Office 外接程序遇到一个导致它失败的问题。有关详细信息，请使用遇到错误的计算机上的 Windows 事件查看器查看“**Microsoft Office 通知**”日志。|
-|20|外接程序未能验证许可|关键|无法验证 Office 外接程序的许可信息，且其可能已过期。有关详细信息，请使用遇到错误的计算机上的 Windows 事件查看器查看“**Microsoft Office 通知**”日志。|
+|19|外接程序遇到运行时错误|关键|Office 加载项存在导致其失败的问题。有关更多详细信息，请使用遇到错误的计算机上的 Windows 事件查看器查看**Microsoft Office 警报**日志。|
+|20|外接程序未能验证许可|关键|无法验证 Office 外接程序的许可信息，并且该信息可能已过期。有关更多详细信息，请使用遇到错误的计算机上的 Windows 事件查看器查看**Microsoft Office 警报**日志。|
 
 有关详细信息，请参阅[部署遥测仪表板](/previous-versions/office/office-2013-resource-kit/jj219431(v=office.15))和[使用遥测日志排查 Office 文件和自定义解决方案](/office/client-developer/shared/troubleshooting-office-files-and-custom-solutions-with-the-telemetry-log)。
 

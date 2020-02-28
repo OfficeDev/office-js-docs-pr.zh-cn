@@ -3,12 +3,12 @@ ms.date: 01/14/2020
 description: 使用 Excel 中的自定义函数请求、流式处理和取消流式处理工作簿的外部数据
 title: 使用自定义函数接收和处理数据
 localization_priority: Normal
-ms.openlocfilehash: c59133389311721c4d0507337a17b346af97e690
-ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
+ms.openlocfilehash: ca1353fcc8c9fcd79db273f0cb1d7bf3d7d58a70
+ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "41949705"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "42323831"
 ---
 # <a name="receive-and-handle-data-with-custom-functions"></a>使用自定义函数接收和处理数据
 
@@ -27,7 +27,7 @@ ms.locfileid: "41949705"
 
 ### <a name="fetch-example"></a>Fetch 示例
 
-在下面的代码示例中，**webRequest** 函数借助假设的 Contoso“空间站人数”API 来跟踪当前在国际空间站中的人数。 该函数返回一个 JavaScript Promise 并使用 fetch 从 API 请求信息。 生成的数据被转换成 JSON，而 `names` 属性则被转换成一个字符串，用于解析 Promise。
+在下面的代码示例中， `webRequest`函数将进入假设的 Contoso "Space of 人数" API，用于跟踪当前国际空间站上的用户数。 该函数返回一个 JavaScript Promise 并使用 fetch 从 API 请求信息。 生成的数据被转换成 JSON，而 `names` 属性则被转换成一个字符串，用于解析 Promise。
 
 在开发自己的函数时，可能需要在相应 Web 请求没有及时完成时执行某个操作，或者需要考虑[批处理多个 API 请求](./custom-functions-batching.md)。
 
@@ -60,7 +60,7 @@ function webRequest() {
 
 请注意，简单的 CORS 实施不能使用 cookie，且仅支持简单的方法（GET、HEAD、POST）。 简单的 CORS 接受字段名称为 `Accept`、`Accept-Language`、`Content-Language` 的简单标题。 你还可以在简单 CORS 中使用内容类型标题，前提是内容类型为 `application/x-www-form-urlencoded`、`text/plain` 或 `multipart/form-data`。
 
-在下面的代码示例中，**getStarCount** 函数调用 Github API 来发现指定给特定用户存储库的星号标记数量。 这是一个可返回 JavaScript Promise 的异步函数。 当从 Web 调用中获取数据时，系统将对 Promise 进行解析，以将数据返回到单元格。
+在下面的代码示例中， `getStarCount`函数将调用 Github API，以发现给定用户存储库中指定的星数。 这是一个可返回 JavaScript Promise 的异步函数。 当从 Web 调用中获取数据时，系统将对 Promise 进行解析，以将数据返回到单元格。
 
 ```TS
 /**

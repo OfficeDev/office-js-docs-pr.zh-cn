@@ -3,16 +3,16 @@ title: 清单文件中的 Methods 元素
 description: ''
 ms.date: 03/19/2019
 localization_priority: Normal
-ms.openlocfilehash: 0d295c2657ef03451c26a324410a684490a180fb
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: 52e12de0fde9fa1ede4687c3f27707d1dc3dce5f
+ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32452093"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "42325253"
 ---
 # <a name="methods-element"></a>Methods 元素
 
-指定适用于 Office 的 JavaScript API 的方法列表，Office 外接程序需要该方法列表才能激活。
+指定 Office 外接程序在激活时所需的 Office JavaScript API 方法的列表。
 
 **外接程序类型：** 内容、任务窗格
 
@@ -32,7 +32,7 @@ ms.locfileid: "32452093"
 
 [方法](method.md)
 
-## <a name="remarks"></a>注释
+## <a name="remarks"></a>注解
 
-**Methods** 和 **Method** 元素不受邮件外接程序的支持。有关要求集的详细信息，请参阅 [Office 版本和要求集](/office/dev/add-ins/develop/office-versions-and-requirement-sets)。
+邮件外接程序中不支持**方法**和**方法**元素。有关要求集的详细信息，请参阅[Office 版本和要求集](/office/dev/add-ins/develop/office-versions-and-requirement-sets)。
 

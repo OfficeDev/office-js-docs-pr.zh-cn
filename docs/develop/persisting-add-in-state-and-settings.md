@@ -1,30 +1,32 @@
 ---
 title: 暂留加载项状态和设置
 description: ''
-ms.date: 03/19/2019
+ms.date: 02/27/2020
 localization_priority: Normal
-ms.openlocfilehash: 69fc0b1316a1a4eb0dfe0ebea01ffdbfe88dcd8c
-ms.sourcegitcommit: a3ddfdb8a95477850148c4177e20e56a8673517c
+ms.openlocfilehash: 99b645d27ff094e50ae4ad52a1a7f96aac07b9ed
+ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "42163505"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "42325141"
 ---
 # <a name="persisting-add-in-state-and-settings"></a>暂留加载项状态和设置
 
+[!include[information about the common API](../includes/alert-common-api-info.md)]
+
 Office 加载项实质上是在浏览器控件的无状态环境中运行的 Web 应用。因此，加载项可能需要暂留数据，以维护各个使用加载项的会话中某些操作或功能的连续性。例如，加载项可能有需要在下一次初始化时保存和重新加载的自定义设置或其他值（如用户的首选视图或默认位置）。为此，可以执行下列操作：
 
-- 使用适用于 Office 的 JavaScript API 成员，将数据存储为：
+- 使用 Office JavaScript API 的成员，将数据存储为以下任意一种：
     -  在依赖加载项类型的位置上存储的属性包中的名称-数值对。
     -  在文档中存储的自定义 XML。
 
 - 使用基础浏览器控件提供的技术：浏览器 Cookie 或 HTML5 Web 存储（[localStorage](https://developer.mozilla.org/docs/Web/API/Window/localStorage) 或 [sessionStorage](https://developer.mozilla.org/docs/Web/API/Window/sessionStorage)）。
 
-本文重点介绍如何使用适用于 Office 的 JavaScript API 保留外接程序状态。有关使用浏览器 Cookie 和 Web 存储的示例，请参阅 [Excel-Add-in-JavaScript-PersistCustomSettings](https://github.com/OfficeDev/Excel-Add-in-JavaScript-PersistCustomSettings)。
+本文重点介绍如何使用 Office JavaScript API 来保留加载项状态。有关使用浏览器 cookie 和 web 存储的示例，请参阅[Excel 加载项-JavaScript-PersistCustomSettings](https://github.com/OfficeDev/Excel-Add-in-JavaScript-PersistCustomSettings)。
 
-## <a name="persisting-add-in-state-and-settings-with-the-javascript-api-for-office"></a>使用适用于 Office 的 JavaScript API 保留加载项状态和设置
+## <a name="persisting-add-in-state-and-settings-with-the-office-javascript-api"></a>使用 Office JavaScript API 保留加载项状态和设置
 
-适用于 Office 的 JavaScript API 为在各个会话中保存外接程序状态提供了 [Settings](/javascript/api/office/office.settings)、 [RoamingSettings](/javascript/api/outlook/office.roamingsettings) 和 [CustomProperties](/javascript/api/outlook/office.customproperties) 对象，如下表中所述。在所有情况下，保存的设置值仅与创建它们的外接程序 [Id](/office/dev/add-ins/reference/manifest/id) 相关联。
+Office JavaScript API 提供了[设置](/javascript/api/office/office.settings)、 [RoamingSettings](/javascript/api/outlook/office.roamingsettings)和[CustomProperties](/javascript/api/outlook/office.customproperties)对象，用于按下表所述在会话中保存外接程序状态。在所有情况下，保存的设置值都与创建它们的外接程序的[Id](/office/dev/add-ins/reference/manifest/id)相关联。
 
 |**对象**|**外接程序类型支持**|**存储位置**|**Office 主机支持**|
 |:-----|:-----|:-----|:-----|
@@ -38,7 +40,7 @@ Office 加载项实质上是在浏览器控件的无状态环境中运行的 Web
 > [!NOTE]
 > 下面两部分是在 Office 常见 JavaScript API 上下文中介绍的设置。 主机专用 Excel JavaScript API 还提供对自定义设置的访问权限。 Excel API 和编程模式有点不一样。 有关详细信息，请参阅 [Excel SettingCollection](/javascript/api/excel/excel.settingcollection)。
 
-在内部，通过 **Settings**、 **CustomProperties** 或 **RoamingSettings** 对象访问的属性包中的数据存储为序列化的 JavaScript 对象表示法 (JSON) 对象，包含名称/值对。 每个值的名称（键）必须为 **string**，且存储的值可为 JavaScript **string**、**number**、**date** 或 **object**，但不能为 **function**。
+在内部，使用`Settings`、 `CustomProperties`或`RoamingSettings`对象访问的属性包中的数据存储为序列化的 JavaScript 对象表示法（JSON）对象，其中包含名称/值对。 每个值的名称（键）都必须是`string`，并且存储的值可以是 JavaScript `string`、 `number`、 `date`或`object`，但不能是**函数**。
 
 本属性包结构示例包含三个已定义 **string** 值，分别为 `firstName`、 `location` 和 `defaultView`。
 
@@ -50,19 +52,19 @@ Office 加载项实质上是在浏览器控件的无状态环境中运行的 Web
 }
 ```
 
-在前一个加载项会话中保存设置属性包之后，可以在加载项的当前会话中初始化加载项时或在之后的任何时间加载该设置属性包。 在会话过程中，将会使用与所创建的种类设置（**Settings**、**CustomProperties** 或 **RoamingSettings**）对应的对象 的 **get**、**set** 和 **remove** 方法，将设置整体托管到内存中。 
+在前一个加载项会话中保存设置属性包之后，可以在加载项的当前会话中初始化加载项时或在之后的任何时间加载该设置属性包。 在会话过程中，将使用与所创建的设置类型相对`get`应`set`的对象`remove`的、和方法在完全内存中管理设置（**settings**、 **CustomProperties**或**RoamingSettings**）。
 
 
 > [!IMPORTANT]
-> 若要将在加载项的当前会话中所做的任何添加、更新或删除暂留到存储位置，必须调用与此类设置搭配使用的对应对象的 **saveAsync** 方法。 **get**、**set** 和 **remove** 方法只可在设置属性包的内存副本上运行。 如果加载项在未调用 **saveAsync** 的情况下关闭，则在该会话过程中对设置所做的任何更改都会丢失。 
+> 若要将在外接程序的当前会话过程中所做的任何添加、更新或删除操作保存到存储位置， `saveAsync`必须调用与该类型的设置一起使用的相应对象的方法。 `get`、 `set`和`remove`方法仅在设置属性包的内存中副本上运行。 如果外接程序在未呼叫`saveAsync`的情况下关闭，则在该会话期间对设置所做的任何更改都将丢失。
 
 
 ## <a name="how-to-save-add-in-state-and-settings-per-document-for-content-and-task-pane-add-ins"></a>如何按文档暂留内容和任务窗格加载项的加载项状态和设置
 
 
-要保留 Word、Excel 或 PowerPoint 的内容或任务窗格加载项的状态或自定义设置，可使用 [Settings](/javascript/api/office/office.settings) 对象及其方法。使用 **Settings** 对象的方法创建的属性包仅供创建它的内容或任务窗格加载项的实例使用，并且只能从保存它的文档使用。
+若要保留 Word、Excel 或 PowerPoint 的内容或任务窗格加载项的状态或自定义设置，请使用[settings](/javascript/api/office/office.settings)对象及其方法。使用`Settings`对象的方法创建的属性包仅可用于创建它的内容或任务窗格外接程序的实例，并且只能从保存它的文档中获取。
 
-**Settings** 对象将作为 [Document](/javascript/api/office/office.document) 对象的一部分自动加载，并且在任务窗格或内容加载项激活时可用。 **Document** 对象实例化之后，可以通过 **Document** 对象的 [settings](/javascript/api/office/office.document#settings) 属性访问 **Settings** 对象。 在会话的生存期，可以只使用 **Settings.get**、**Settings.set** 和 **Settings.remove** 方法读取、写入或删除属性包内存副本中暂留的设置和加载项状态。
+`Settings`对象将作为[Document](/javascript/api/office/office.document)对象的一部分自动加载，并在激活任务窗格或内容加载项时可用。 在实例`Document`化对象之后，可以使用`Settings` `Document`对象的[settings](/javascript/api/office/office.document#settings)属性访问对象。 在会话的生存期期间，您只需使用`Settings.get`、 `Settings.set`和`Settings.remove`方法，即可从属性包的内存中副本中读取、写入或删除保留的设置和加载项状态。
 
 由于 set 和 remove 方法仅针对设置属性包的内存副本，若要将新的或更改的设置保存回加载项关联的文档，必须调用 [Settings.saveAsync](/javascript/api/office/office.settings#saveasync-options--callback-) 方法。
 
@@ -76,12 +78,12 @@ Office 加载项实质上是在浏览器控件的无状态环境中运行的 Web
 Office.context.document.settings.set('themeColor', 'green');
 ```
 
- 如果具有指定名称的设置尚不存在，则创建此设置，如果此设置存在，则对值进行更新。使用 **Settings.saveAsync** 方法可将新的或更新的设置保留到文档中。
+ 如果不存在具有指定名称的设置，则将创建该设置，否则将会更新其值（如果该设置已存在）。使用`Settings.saveAsync`方法可将新的或更新的设置保存到文档中。
 
 
 ### <a name="getting-the-value-of-a-setting"></a>获取设置的值
 
-下面的示例演示如何使用 [Settings.get](/javascript/api/office/office.settings#get-name-) 方法获取名为“themeColor”的设置值。**get** 方法的唯一参数是设置的 _name_（区分大小写）。
+下面的示例演示如何使用[Settings](/javascript/api/office/office.settings#get-name-)方法获取名为 "themeColor" 的设置的值。`get`方法的唯一参数是设置的区分大小写的_名称_。
 
 
 ```js
@@ -93,24 +95,24 @@ function write(message){
 }
 ```
 
- **get** 方法返回之前为传入的设置 _name_ 保存的值。如果不存在该设置，那么方法返回 **null**。
+ 该`get`方法返回之前为传入的设置_名称_保存的值。如果该设置不存在，则该方法返回**null**。
 
 
 ### <a name="removing-a-setting"></a>删除设置
 
-下面的示例演示如何使用 [Settings.remove](/javascript/api/office/office.settings#remove-name-) 方法删除名为“themeColor”的设置。**remove** 方法的唯一参数是设置的 _name_（区分大小写）。
+以下示例显示如何使用[Settings](/javascript/api/office/office.settings#remove-name-)方法删除名为 "themeColor" 的设置。`remove`方法的唯一参数是设置的区分大小写的_名称_。
 
 
 ```js
 Office.context.document.settings.remove('themeColor');
 ```
 
-如果不存在该设置，则不执行任何操作。 使用 **Settings.saveAsync** 方法可保留文档中设置的删除操作。
+如果不存在该设置，则不执行任何操作。 使用`Settings.saveAsync`方法可将设置从文档中永久删除。
 
 
 ### <a name="saving-your-settings"></a>保存设置
 
-若要保存当前会话中加载项对设置属性包内存副本所做的任何添加、更改或删除操作，必须调用 [Settings.saveAsync](/javascript/api/office/office.settings#saveasync-options--callback-) 方法，将它们存储在文档中。**saveAsync** 方法的唯一参数是使用单个参数的回调函数 _callback_。 
+若要保存您的外接程序在当前会话期间对设置属性包的内存中副本所做的任何添加、更改或删除，必须调用[saveAsync](/javascript/api/office/office.settings#saveasync-options--callback-)方法将其存储在文档中。该`saveAsync`方法的唯一参数是_callback_，它是一个具有单个参数的回调函数。 
 
 
 ```js
@@ -127,7 +129,7 @@ function write(message){
 }
 ```
 
-作为 _callback_ 参数传入 **saveAsync** 方法的匿名函数在操作完成时执行。 回调的 _asyncResult_ 参数提供对包含操作状态的 **AsyncResult** 对象的访问权限。 在此示例中，函数将检查 **AsyncResult.status** 属性，以确定保存操作是否成功，然后在加载项页显示结果。
+在操作完成时，会`saveAsync`执行匿名函数作为_callback_参数传入方法。 此回调的_asyncResult_参数提供对包含操作状态`AsyncResult`的对象的访问权限。 在此示例中，函数检查`AsyncResult.status`属性以查看保存操作是成功还是失败，然后在加载项页面中显示结果。
 
 ## <a name="how-to-save-custom-xml-to-the-document"></a>如何将自定义 XML 保存到文档
 
@@ -183,156 +185,14 @@ function getReviewers() {
 }
 ```
 
+## <a name="how-to-save-settings-in-an-outlook-add-in"></a>如何在 Outlook 加载项中保存设置
 
-## <a name="how-to-save-settings-in-the-users-mailbox-for-outlook-add-ins-as-roaming-settings"></a>如何将 Outlook 加载项用户邮箱中的设置保存为漫游设置
-
-
-Outlook 加载项可以使用 [RoamingSettings](/javascript/api/outlook/office.roamingsettings) 对象保存特定于用户邮箱的加载项状态和设置数据。 仅代表用户运行该加载项的 Outlook 加载项才可访问此数据。 这些数据将存储在用户的 Exchange Server 邮箱上，并且在用户登录到其帐户并运行 Outlook 加载项时可访问这些数据。
-
-
-### <a name="loading-roaming-settings"></a>加载漫游设置
-
-
-Outlook 外接程序通常在 [Office.initialize](/javascript/api/office) 事件处理程序中加载漫游设置。以下 JavaScript 代码示例演示了如何加载现有漫游设置。
-
-
-```js
-var _mailbox;
-var _settings;
-
-// The initialize function is required for all add-ins.
-Office.initialize = function (reason) {
-    // Checks for the DOM to load using the jQuery ready function.
-    $(document).ready(function () {
-    // After the DOM is loaded, add-in-specific code can run.
-   // Initialize instance variables to access API objects.
-    _mailbox = Office.context.mailbox;
-    _settings = Office.context.roamingSettings;
-    });
-}
-
-```
-
-
-### <a name="creating-or-assigning-a-roaming-setting"></a>创建或分配漫游设置
-
-
-紧接着前面的示例，下面的  `setAppSetting` 函数演示如何使用 [RoamingSettings.set](/javascript/api/outlook/office.roamingsettings#set-name--value-) 方法通过当天的日期设置或更新名为 `cookie` 的设置。然后使用 [RoamingSettings.saveAsync](/javascript/api/outlook/office.roamingsettings#saveasync-callback-) 方法将所有漫游设置保存回 Exchange Server。
-
-
-```js
-// Set an add-in setting.
-function setAppSetting() {
-    _settings.set("cookie", Date());
-    _settings.saveAsync(saveMyAppSettingsCallback);
-}
-
-// Saves all roaming settings.
-function saveMyAppSettingsCallback(asyncResult) {
-    if (asyncResult.status == Office.AsyncResultStatus.Failed) {
-        // Handle the failure.
-    }
-}
-```
-
-**saveAsync** 方法将异步保存漫游设置，并采用可选回调函数。 此代码示例会将名为 `saveMyAppSettingsCallback` 的回调函数传递给 **saveAsync** 方法。 当异步调用返回时，`saveMyAppSettingsCallback` 函数的 _asyncResult_ 参数提供对 [AsyncResult](/javascript/api/outlook) 对象的访问权限，你可以使用该对象通过 **AsyncResult.status** 属性确定操作是否成功。
-
-
-### <a name="removing-a-roaming-setting"></a>删除漫游设置
-
-
-进一步展开前面的示例，以下  `removeAppSetting` 函数演示了如何使用 [RoamingSettings.remove](/javascript/api/outlook/office.roamingsettings#remove-name-) 方法删除 `cookie` 设置并将所有漫游设置保存回 Exchange Server。
-
-
-```js
-// Remove an application setting.
-function removeAppSetting()
-{
-    _settings.remove("cookie");
-    _settings.saveAsync(saveMyAppSettingsCallback);
-}
-```
-
-
-## <a name="how-to-save-settings-per-item-for-outlook-add-ins-as-custom-properties"></a>如何按项目将 Outlook 外接程序的设置保存为自定义属性
-
-
-自定义属性允许 Outlook 外接程序存储其使用的有关项目的信息。例如，如果 Outlook 外接程序根据邮件中的会议建议创建约会，则可以使用自定义属性存储创建了会议的事实。这确保了如果再次打开邮件，Outlook 外接程序不再可供创建约会。
-
-在您将自定义属性用于特定邮件、约会或会议请求项目之前，必须通过调用  [Item](/javascript/api/outlook/office.mailbox) 对象的 **loadCustomPropertiesAsync** 方法将属性加载到内存中。如果为当前项目设置了任何自定义属性，此时会从 Exchanger Server 加载这些属性。在您加载了属性以后，可以使用 [CustomProperties](/javascript/api/outlook/office.customproperties#set-name--value-) 对象的 [set](/javascript/api/outlook/office.roamingsettings) 和 **get** 方法添加、更新和检索内存中的属性。要保存对于项目的自定义属性所做的任何更改，必须使用 [saveAsync](/javascript/api/outlook/office.customproperties#saveasync-callback--asynccontext-) 方法在 Exchanger Server上保留对项目所做的更改。
-
-
-### <a name="custom-properties-example"></a>自定义属性示例
-
-下面的示例演示使用自定义属性的 Outlook 外接程序的一组简化的函数。可以将此示例用作使用自定义属性的 Outlook 外接程序的起点。 
-
-使用这些函数的 Outlook 加载项通过对 `_customProps` 变量调用 **get** 方法来检索任何自定义属性，如下面的示例所示。
-
-
-
-
-```js
-var property = _customProps.get("propertyName");
-```
-
-此示例包括以下函数：
-
-
-
-|**函数名称**|**说明**|
-|:-----|:-----|
-| `Office.initialize`|从 Exchange 服务器初始化外接程序并加载当前项目的自定义属性。|
-| `customPropsCallback`|获取从 Exchange 服务器返回的自定义属性并将其保存以供后续之用。|
-| `updateProperty`|设置或更新特定属性，然后将更改保存到 Exchange 服务器。|
-| `removeProperty`|删除特定的属性，然后保留删除操作到 Exchange 服务器。|
-| `saveCallback`|对 `updateProperty` 和 `removeProperty` 函数中 **saveAsync** 方法调用的回调。|
-
-
-
-```js
-var _mailbox;
-var _customProps;
-
-// The initialize function is required for all add-ins.
-Office.initialize = function (reason) {
-    // Checks for the DOM to load using the jQuery ready function.
-    $(document).ready(function () {
-    // After the DOM is loaded, add-in-specific code can run.
-    _mailbox = Office.context.mailbox;
-    _mailbox.item.loadCustomPropertiesAsync(customPropsCallback);
-    });
-}
-
-// Get the item's custom properties from the server and save for later use.
-function customPropsCallback(asyncResult) {
-    _customProps = asyncResult.value;
-}
-
-// Sets or updates the specified property, and then saves the change
-// to the server.
-function updateProperty(name, value) {
-    _customProps.set(name, value);
-    _customProps.saveAsync(saveCallback);
-}
-
-// Removes the specified property, and then persists the removal
-// to the server.
-function removeProperty(name) {
-   _customProps.remove(name);
-   _customProps.saveAsync(saveCallback);
-}
-
-// Callback for calls to saveAsync method.
-function saveCallback(asyncResult) {
-    if (asyncResult.status == Office.AsyncResultStatus.Failed) {
-        // Handle the failure.
-    }
-}
-```
+有关如何在 Outlook 外接程序中保存设置的信息，请参阅[Manage state and settings For outlook 外接程序](../outlook/manage-state-and-settings-outlook.md)。
 
 
 ## <a name="see-also"></a>另请参阅
 
-- [了解适用于 Office 的 JavaScript API](understanding-the-javascript-api-for-office.md)
+- [了解 Office JavaScript API](understanding-the-javascript-api-for-office.md)
 - [Outlook 加载项](../outlook/outlook-add-ins-overview.md)
+- [管理 Outlook 外接程序的状态和设置](../outlook/manage-state-and-settings-outlook.md)
 - [Excel-Add-in-JavaScript-PersistCustomSettings](https://github.com/OfficeDev/Excel-Add-in-JavaScript-PersistCustomSettings)

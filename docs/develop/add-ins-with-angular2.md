@@ -3,12 +3,12 @@ title: 使用 Angular 开发 Office 加载项
 description: ''
 ms.date: 01/27/2020
 localization_priority: Normal
-ms.openlocfilehash: 09092880efcf4d86f38b6559ce5e556a5e5416ce
-ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
+ms.openlocfilehash: 0e78a2e000016e28f2012902e0e8db487b80d930
+ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "41950451"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "42324636"
 ---
 # <a name="develop-office-add-ins-with-angular"></a>使用 Angular 开发 Office 加载项
 
@@ -29,7 +29,7 @@ npm install --save-dev @types/office-js
 
 ## <a name="bootstrapping-must-be-inside-officeinitialize"></a>启动代码必须位于 Office.initialize 内
 
-在任意调用 Office、Word 或 Excel JavaScript API 的页面上，代码必须首先向 `Office.initialize` 属性分配一个方法。（如果没有初始化代码，则方法主体可以仅为空的“`{}`”符号，但必须对 `Office.initialize` 属性进行定义。有关详细信息，请参阅 [初始化外接程序](understanding-the-javascript-api-for-office.md#initializing-your-add-in)。）Office 在该方法初始化 Office JavaScript 库后立即对其调用。
+在调用 Office、Word 或 Excel JavaScript Api 的任何页面上，您的代码必须首先为`Office.initialize`属性分配方法。（如果没有初始化代码，方法体可以只是空的 "`{}`" 符号，但不能将该`Office.initialize`属性保留为未定义。有关详细信息，请参阅[初始化 Office 外接程序](initialize-add-in.md)。）Office 在初始化 Office JavaScript 库后立即调用此方法。
 
 **Angular bootstrapping 代码必须在你分配到 `Office.initialize` 的方法内调用**，以确保 Office JavaScript 库首先进行了初始化。以下是演示如何执行该操作的简单示例。此代码应在项目的 main.ts 文件中。
 

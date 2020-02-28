@@ -3,18 +3,18 @@ title: 清单文件中的 MobileFormFactor 元素
 description: ''
 ms.date: 10/09/2018
 localization_priority: Normal
-ms.openlocfilehash: aead8ea0b60130109c5537dc0017f3a9e3ef986f
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: 34106011cb855b6ac7c6d0fc21c16fd13e52b281
+ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32450567"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "42324839"
 ---
 # <a name="mobileformfactor-element"></a>MobileFormFactor 元素
 
 指定对移动外形规格的外接程序的设置。它包含移动外形规格的所有外接程序信息（**资源**节点的信息除外）。
 
-每个 **MobileFormFactor** 定义均包含 **FunctionFile** 元素以及一个或多个 **ExtensionPoint** 元素。有关详细信息，请参阅 [FunctionFile 元素](functionfile.md) 和 [ExtensionPoint 元素](extensionpoint.md)。
+每个**MobileFormFactor**定义都包含**FunctionFile**元素和一个或多个**ExtensionPoint**元素。 有关详细信息，请参阅 [FunctionFile 元素](functionfile.md) 和 [ExtensionPoint 元素](extensionpoint.md)。
 
 在 VersionOverrides 架构 1.1 中定义了 **MobileFormFactor** 元素。包含  [VersionOverrides](versionoverrides.md) 元素的 `VersionOverridesV1_1` 属性值必须为 `xsi:type`。
 

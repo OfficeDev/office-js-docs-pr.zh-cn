@@ -3,12 +3,12 @@ title: 清单文件中的 HighResolutionIconUrl 元素
 description: ''
 ms.date: 12/04/2018
 localization_priority: Normal
-ms.openlocfilehash: 5264fc969bda30a9b2212996800b984533a3188c
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: 41008be6b60d260bef78808af2b8dee1fbd0864a
+ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32452086"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "42325267"
 ---
 # <a name="highresolutioniconurl-element"></a>HighResolutionIconUrl 元素
 
@@ -34,6 +34,6 @@ ms.locfileid: "32452086"
 
 ## <a name="remarks"></a>注解
 
-对于邮件外接程序，图标显示在“**文件**” > “**管理外接程序**”UI 中。对于内容或任务窗格外接程序，图标显示在“**插入**” > “**外接程序**”UI 中。
+对于邮件外接程序，该图标将显示在 "**文件** > **管理外接程序**" UI 中。 For a content or task pane add-in, the icon is displayed in the **Insert** > **Add-ins** UI.
 
 图像必须采用下列任一文件格式进行保存：GIF、JPG、PNG、EXIF、BMP 或 TIFF。 对于内容和任务窗格应用程序，推荐的图像分辨率是 64 x 64 像素。 对于邮件应用程序，图像必须是 128 x 128 像素。 有关详细信息，请参阅[在 AppSource 和 Office 中创建有效的应用一览](/office/dev/store/create-effective-office-store-listings#create-a-consistent-visual-identity)中的_为你的应用创建一致的视觉标识_部分。

@@ -3,12 +3,12 @@ title: Excel JavaScript API 高级编程概念
 description: ''
 ms.date: 01/14/2020
 localization_priority: Priority
-ms.openlocfilehash: 76308b6ce04dfcaa09e9006373caf07744572112
-ms.sourcegitcommit: 212c810f3480a750df779777c570159a7f76054a
+ms.openlocfilehash: b9249ad86ff72fb669ca7d45d10a252bb7d98ca8
+ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/17/2020
-ms.locfileid: "41217337"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "42323810"
 ---
 # <a name="advanced-programming-concepts-with-the-excel-javascript-api"></a>Excel JavaScript API 高级编程概念
 
@@ -16,7 +16,7 @@ ms.locfileid: "41217337"
 
 ## <a name="officejs-apis-for-excel"></a>适用于 Excel 的 Office.js API
 
-Excel 加载项通过使用适用于 Office 的 JavaScript API 与 Excel 中的对象进行交互，适用于 Office 的 JavaScript API包括两个 JavaScript 对象模型：
+Excel 加载项通过使用适 Office JavaScript API 与 Excel 中的对象进行交互，JavaScript API包括两个 JavaScript 对象模型：
 
 * **Excel JavaScript API**：[Excel JavaScript API](/office/dev/add-ins/reference/overview/excel-add-ins-reference-overview) 随 Office 2016 一起引入，提供了强类型的对象，可用于访问工作表、区域、表格、图表等。
 
@@ -24,9 +24,9 @@ Excel 加载项通过使用适用于 Office 的 JavaScript API 与 Excel 中的�
 
 你可能会使用 Excel JavaScript API 开发面向 Excel 2016 或更高版本的加载项中的大部分功能，同时还可以使用通用 API 中的对象。 例如：
 
-- [Context](/javascript/api/office/office.context)：**Context** 对象表示加载项的运行时环境，并提供对 API 关键对象的访问权限。 它由工作簿配置详细信息（如 `contentLanguage` 和 `officeTheme`）组成，并提供有关加载项的运行时环境（如 `host` 和 `platform`）的信息。 此外，它还提供了 `requirements.isSetSupported()` 方法，可用于检查运行加载项的 Excel 应用程序是否支持指定的要求集。
+- [Context](/javascript/api/office/office.context)：`Context` 对象表示加载项的运行时环境，并提供对 API 关键对象的访问权限。 它由工作簿配置详细信息（如 `contentLanguage` 和 `officeTheme`）组成，并提供有关加载项的运行时环境（如 `host` 和 `platform`）的信息。 此外，它还提供了 `requirements.isSetSupported()` 方法，可用于检查运行加载项的 Excel 应用程序是否支持指定的要求集。
 
-- [Document](/javascript/api/office/office.document)：**Document** 对象提供 `getFileAsync()` 方法，用于下载运行加载项的 Excel 文件。
+- [Document](/javascript/api/office/office.document)：`Document` 对象提供 `getFileAsync()` 方法，用于下载运行加载项的 Excel 文件。
 
 下图说明了可能使用 Excel JavaScript API 或公共 API 的情况。
 
@@ -51,9 +51,9 @@ else {
 
 ### <a name="defining-requirement-set-support-in-the-manifest"></a>在清单中定义要求集支持
 
-可以在加载项清单中使用[要求元素](/office/dev/add-ins/reference/manifest/requirements)指定加载项要求激活的最小要求集和/或 API 方法。 如果 Office 主机或平台不支持清单的 **Requirements** 元素中指定的要求集或 API 方法，该加载项不会在该主机或平台中运行，而且不会显示在“我的加载项”**** 中显示的加载项列表中。
+可以在加载项清单中使用[要求元素](/office/dev/add-ins/reference/manifest/requirements)指定加载项要求激活的最小要求集和/或 API 方法。 如果 Office 主机或平台不支持清单的 `Requirements` 元素中指定的要求集或 API 方法，该加载项不会在该主机或平台中运行，而且不会显示在“我的加载项”**** 中显示的加载项列表中。
 
-以下代码示例显示加载项清单中的 **Requirements** 元素，该元素指定应在支持 ExcelApi 要求集版本 1.3 或更高版本的所有 Office 主机应用程序中加载该加载项。
+以下代码示例显示加载项清单中的 `Requirements` 元素，该元素指定应在支持 ExcelApi 要求集版本 1.3 或更高版本的所有 Office 主机应用程序中加载该加载项。
 
 ```xml
 <Requirements>
@@ -153,7 +153,7 @@ myWorksheets.load({
 
 ### <a name="scalar-properties-and-navigation-properties-with-objectload"></a>使用 `object.load()` 的标量属性和导航属性
 
-调用没有指定参数的 `object.load()` 方法将加载对象的所有标量属性；不会加载对象的导航属性。 此外，无法直接加载导航属性。 相反，应使用 `load()` 方法引用所需导航属性中的各个标量属性。 例如，要加载某个区域的字体名称，必须指定 **format** 和 **font** 导航属性作为 **name** 属性的路径：
+调用没有指定参数的 `object.load()` 方法将加载对象的所有标量属性；不会加载对象的导航属性。 此外，无法直接加载导航属性。 相反，应使用 `load()` 方法引用所需导航属性中的各个标量属性。 例如，要加载某个区域的字体名称，必须指定 `format` 和 `font` 导航属性作为 `name` 属性的路径：
 
 ```js
 someRange.load("format/font/name")
@@ -192,7 +192,7 @@ void
 
 #### <a name="example"></a>示例
 
-下面的代码示例设置区域的多个格式属性，具体方法是调用 `set()` 方法，并传入 JavaScript 对象，其中包含可反映 **Range** 对象中属性结构的属性名称和类型。此示例假定区域 **B2:E2** 中有数据。
+下面的代码示例设置区域的多个格式属性，具体方法是调用 `set()` 方法，并传入 JavaScript 对象，其中包含可反映 `Range` 对象中属性结构的属性名称和类型。此示例假定区域 **B2:E2** 中有数据。
 
 ```js
 Excel.run(function (ctx) {

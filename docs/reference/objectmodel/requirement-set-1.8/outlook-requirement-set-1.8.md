@@ -3,16 +3,16 @@ title: Outlook 加载项 API 要求集 1.8
 description: ''
 ms.date: 12/17/2019
 localization_priority: Normal
-ms.openlocfilehash: d836cf2618dce46538b32b95e0d3a8e8025b4154
-ms.sourcegitcommit: a3ddfdb8a95477850148c4177e20e56a8673517c
+ms.openlocfilehash: 47ab498f1904046743dd0539c117441dcea8cb93
+ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "42165325"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "42324762"
 ---
 # <a name="outlook-add-in-api-requirement-set-18"></a>Outlook 加载项 API 要求集 1.8
 
-适用于 Office 的 JavaScript API 的 Outlook 外接程序 API 子集包括您可以在 Outlook 外接程序中使用的对象、方法、属性和事件。
+Office JavaScript API 的 Outlook 外接程序 API 子集包括可以在 Outlook 外接程序中使用的对象、方法、属性和事件。
 
 ## <a name="whats-new-in-18"></a>1.8 中有哪些新增功能？
 

@@ -3,16 +3,16 @@ title: 在 Outlook 的 Mac 版中比较 Outlook 加载项支持
 description: 了解 Mac 上的 Outlook 中的加载项支持如何与其他 Outlook 主机进行比较。
 ms.date: 11/26/2019
 localization_priority: Normal
-ms.openlocfilehash: 337938b9bb2e8f0e9b9343841a8240e46741eed9
-ms.sourcegitcommit: a3ddfdb8a95477850148c4177e20e56a8673517c
+ms.openlocfilehash: ec5e9934249ddc1a90240890d7f0201d23599446
+ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "42165937"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "42325459"
 ---
 # <a name="compare-outlook-add-in-support-in-outlook-on-mac-with-other-outlook-hosts"></a>将 Mac 上 outlook 中的 Outlook 加载项支持与其他 Outlook 主机进行比较
 
-您可以在 Mac 上的 Outlook 中像在其他主机（包括 Outlook 网页版、Windows、iOS 和 Android）上创建和运行 Outlook 外接程序，而无需自定义每个主机的 JavaScript。 除了下表中介绍的区域外，从外接程序到 适用于 Office 的 JavaScript API 的相同调用通常也以相同的方式进行。
+您可以在 Mac 上的 Outlook 中像在其他主机（包括 Outlook 网页版、Windows、iOS 和 Android）上创建和运行 Outlook 外接程序，而无需自定义每个主机的 JavaScript。 除了下表中所述的区域，从外接程序到 Office JavaScript API 的相同调用通常的工作方式相同。
 
 有关详细信息，请参阅[部署和安装 Outlook 加载项以供测试](testing-and-tips.md)。
 

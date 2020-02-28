@@ -3,16 +3,16 @@ title: 获取和设置 Outlook 加载项中的定期
 description: 本主题介绍如何使用 Office JavaScript API 获取和设置 Outlook 加载项中某个项目的不同定期属性。
 ms.date: 01/14/2020
 localization_priority: Normal
-ms.openlocfilehash: cc7160ed8fe82a02ced9c03bab181df57e66bb54
-ms.sourcegitcommit: a3ddfdb8a95477850148c4177e20e56a8673517c
+ms.openlocfilehash: 850fd49721dbb0e3835a44148d03f5687726c58c
+ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "42166039"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "42324973"
 ---
 # <a name="get-and-set-recurrence"></a>获取和设置定期
 
-有时候，你需要创建和更新某个定期约会，例如团队项目的每周状态会议或每年生日提醒。 你可以使用适用于 Office 的 JavaScript API 来管理加载项中约会系列的定期模式。
+有时候，你需要创建和更新某个定期约会，例如团队项目的每周状态会议或每年生日提醒。 您可以使用 Office JavaScript API 来管理外接程序中的约会系列的定期模式。
 
 > [!NOTE]
 > 对此功能的支持是在要求集1.7 中引入的。 请查看支持此要求集的[客户端和平台](../reference/requirement-sets/outlook-api-requirement-sets.md#requirement-sets-supported-by-exchange-servers-and-outlook-clients)。

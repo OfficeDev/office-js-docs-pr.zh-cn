@@ -3,16 +3,16 @@ title: 在 Outlook 加载项中获取或设置主题
 description: 了解如何在 Outlook 加载项中获取或设置邮件或约会的主题。
 ms.date: 04/15/2019
 localization_priority: Normal
-ms.openlocfilehash: b27f6011b1754fa68a1af87f57034e95fd0d54e0
-ms.sourcegitcommit: a3ddfdb8a95477850148c4177e20e56a8673517c
+ms.openlocfilehash: 93864aee005af61d9648c39402a843d9105bb021
+ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "42165927"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "42325438"
 ---
 # <a name="get-or-set-the-subject-when-composing-an-appointment-or-message-in-outlook"></a>在 Outlook 中撰写约会或邮件时获取或设置主题
 
-适用于 Office 的 JavaScript API 提供了异步方法（[subject.getAsync](/javascript/api/outlook/office.Subject#getasync-options--callback-) 和 [subject.setAsync](/javascript/api/outlook/office.Subject#setasync-subject--options--callback-)）以获取和设置用户正在撰写的约会或邮件的主题。这些异步方法仅对撰写外接程序可用。若要使用这些方法，请确保已将 Outlook 的外接程序清单相应地设置为在撰写窗体中激活外接程序。
+Office JavaScript API 提供了异步方法（[getAsync](/javascript/api/outlook/office.Subject#getasync-options--callback-)和[setAsync](/javascript/api/outlook/office.Subject#setasync-subject--options--callback-)），以获取和设置用户正在撰写的约会或邮件的主题。 这些异步方法仅适用于撰写外接程序。若要使用这些方法，请确保已正确设置了 Outlook 以在撰写窗体中激活加载项的加载项清单。
 
 **subject** 属性可用于约会和邮件的撰写和阅读窗体中的读取权限。在阅读窗体中，可以从父对象直接访问此属性，如：
 
@@ -28,7 +28,7 @@ item.subject.getAsync
 
 **subject** 属性仅适用于撰写窗体中（而不能用于阅读窗体中）的写入权限。
 
-与适用于 Office 的 JavaScript API 中的大多数异步方法相同，**getAsync** 和 **setAsync** 采用可选输入参数。有关指定这些可选输入参数的详细信息，请参阅 [Office 加载项中的异步编程](../develop/asynchronous-programming-in-office-add-ins.md)中的“向异步方法传递可选参数”。
+与 Office JavaScript API 中的大多数异步方法一样， **getAsync**和**setAsync**采用可选的输入参数。 有关指定这些可选输入参数的详细信息，请参阅 [Office 外接程序中的异步编程](../develop/asynchronous-programming-in-office-add-ins.md)中的“向异步方法传递可选参数”。
 
 
 ## <a name="get-the-subject"></a>获取主题

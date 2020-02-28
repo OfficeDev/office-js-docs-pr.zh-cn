@@ -3,16 +3,16 @@ title: 使用 Excel JavaScript API 处理图表
 description: ''
 ms.date: 07/17/2019
 localization_priority: Normal
-ms.openlocfilehash: b89e8dffc45eb2a740b5e26373d92cc8cf4bed3e
-ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
+ms.openlocfilehash: 2b55fee9689af03e9dbfbdb7133d2482f7ca6852
+ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "41950878"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "42323852"
 ---
 # <a name="work-with-charts-using-the-excel-javascript-api"></a>使用 Excel JavaScript API 处理图表
 
-本文提供了代码示例，介绍如何使用 Excel JavaScript API 对图表执行常见任务。 有关 **Chart** 和 **ChartCollection** 对象支持的属性和方法的完整列表，请参阅 [Chart 对象 (Excel JavaScript API)](/javascript/api/excel/excel.chart) 和 [Chart Collection 对象 (Excel JavaScript API)](/javascript/api/excel/excel.chartcollection)。
+本文提供的代码示例演示如何使用 Excel JavaScript API 对图表执行常见任务。有关`Chart`和`ChartCollection`对象支持的属性和方法的完整列表，请参阅[Chart 对象（适用于 excel 的 Javascript Api）](/javascript/api/excel/excel.chart)和[chart 集合对象（适用于 excel 的 javascript api）](/javascript/api/excel/excel.chartcollection)。
 
 ## <a name="create-a-chart"></a>创建图表
 
@@ -127,7 +127,7 @@ Excel.run(function (context) {
 
 ## <a name="set-visibility-of-gridlines-in-a-chart"></a>在图表中设置网格线的可见性
 
-以下代码示例隐藏工作表中第一个图表数值轴的主要网格线。 可以通过将 `chart.axes.valueAxis.majorGridlines.visible` 设置为 **true**，显示图表数值轴的主要网格线。
+下面的代码示例隐藏工作表中第一个图表的数值轴的主要网格线。您可以通过将设置`chart.axes.valueAxis.majorGridlines.visible`为来`true`显示图表的数值轴的主要网格线。
 
 ```js
 Excel.run(function (context) {
@@ -168,7 +168,7 @@ Excel.run(function (context) {
 
 ### <a name="update-a-trendline"></a>更新趋势线
 
-下面的代码示例将 **Sample** 工作表中首个图表的第一个系列的趋势线设置为“线性”**** 类型。
+下面的代码示例将在名为`Linear` **sample**的工作表中第一个图表的第一个系列的趋势线设置为类型。
 
 ```js
 Excel.run(function (context) {

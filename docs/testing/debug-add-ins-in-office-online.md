@@ -3,12 +3,12 @@ title: 在 Office 网页版中调试加载项
 description: 如何使用 Office 网页版来测试和调试加载项。
 ms.date: 06/20/2019
 localization_priority: Normal
-ms.openlocfilehash: d28ffc7cba6d7029799bc8d5931c873bf8390d21
-ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
+ms.openlocfilehash: 76f26a58cca2e89e50547188b99259ee250b550d
+ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "41950927"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "42325162"
 ---
 # <a name="debug-add-ins-in-office-on-the-web"></a>在 Office 网页版中调试加载项
 
@@ -46,7 +46,7 @@ ms.locfileid: "41950927"
 
 4. 使用 Office 365 中的应用程序启动器来启动 Excel 网页版或 Word 网页版，并打开新文档。
 
-5. 在“插入”选项卡上，选择“**我的外接程序**”或“**Office 外接程序**”以插入你的外接程序并在应用中对其测试。
+5. 在“插入”选项卡上选择“我的外接程序”**** 或“Office 外接程序”**** 以插入您的外接程序并在应用程序中进行测试。
 
 6. 使用常用浏览器工具调试器调试加载项。
 

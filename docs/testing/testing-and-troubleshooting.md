@@ -3,12 +3,12 @@ title: 排查 Office 加载项中的用户错误
 description: ''
 ms.date: 12/31/2019
 localization_priority: Normal
-ms.openlocfilehash: 39c36fdf70f3eef9dde97a80edf368ef00913c0e
-ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
+ms.openlocfilehash: 27755c6e378c8002565dc1ea938776c66c204c89
+ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "41950899"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "42325029"
 ---
 # <a name="troubleshoot-user-errors-with-office-add-ins"></a>排查 Office 加载项中的用户错误
 
@@ -26,7 +26,7 @@ ms.locfileid: "41950899"
 |:-----|:-----|
 |应用错误：无法访问目录|验证防火墙设置。“目录”是指 AppSource。此消息表明用户无法访问 AppSource。|
 |应用错误：无法启动此应用。若要忽略此问题，请关闭这个对话框。若要重试，请单击“重启”。|确认已安装最新的 Office 更新，或下载 [Office 2013 更新](https://support.microsoft.com/kb/2986156/)。|
-|错误：对象不 支持此属性或方法 "defineProperty"|确认 Internet Explorer 不是在兼容模式下运行。转到“工具”>“**兼容性视图设置**”。|
+|错误：对象不 支持此属性或方法 "defineProperty"|确认 Internet Explorer 未在兼容模式下运行。转到 "工具" >**兼容性视图设置**。|
 |很抱歉，我们无法加载 该应用程序，因为您的浏览器 版本不受支持。 单击此处查看 支持的浏览器版本的列表。|确保浏览器支持 HTML5 本地存储，或重置您的 Internet Explorer 设置。有关受支持的浏览器的信息，请参阅 [运行 Office 加载项的要求](../concepts/requirements-for-running-office-add-ins.md)。|
 
 ## <a name="when-installing-an-add-in-you-see-error-loading-add-in-in-the-status-bar"></a>安装加载项时，状态栏中会显示“加载加载项时出错”
@@ -43,11 +43,11 @@ ms.locfileid: "41950899"
 如果在 Windows 上运行并[使用 Internet Explorer](../concepts/browsers-used-by-office-web-add-ins.md) 的 Outlook 加载项不能正常工作，请尝试在 Internet Explorer 中启用脚本调试。 
 
 
-- 转到“工具”>“**Internet 选项**” > “**高级**”。
+- 转到 Tools > **Internet Options** > **Advanced**"。
     
-- 在“**浏览**”下，取消选中“**禁用脚本调试 (Internet Explorer)**”和“**禁用脚本调试 (其他)**”。
+- 在“浏览”**** 下，取消选中“禁用脚本调试 (Internet Explorer)”**** 和“禁用脚本调试 (其他)”****。
     
-我们建议仅在解决问题时取消选中这些设置。如果你将其保持未选中状态，你在浏览时会收到提示。解决此问题后，再次选中“**禁用脚本调试(Internet Explorer)**”和“**禁用脚本调试(其他)**”。
+我们建议您仅在解决问题时取消选中这些设置。如果您将其保持未选中状态，您在浏览时将会收到提示。解决此问题后，再次选中“禁用脚本调试 (Internet Explorer)”**** 和“禁用脚本调试 (其他)”****。
 
 
 ## <a name="add-in-doesnt-activate-in-office-2013"></a>外接程序在 Office 2013 中无法激活

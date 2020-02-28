@@ -3,12 +3,12 @@ title: 创建字典任务窗格加载项
 description: ''
 ms.date: 09/26/2019
 localization_priority: Normal
-ms.openlocfilehash: 10eb66c224a7c40346669d630d4316f300d55dcc
-ms.sourcegitcommit: 528577145b2cf0a42bc64c56145d661c4d019fb8
+ms.openlocfilehash: 4145727ef092bd56117dfd5d6c89e976a3aaa11a
+ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "37353900"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "42324720"
 ---
 # <a name="create-a-dictionary-task-pane-add-in"></a>创建字典任务窗格加载项
 
@@ -23,9 +23,10 @@ ms.locfileid: "37353900"
 
 ![显示定义的字典应用](../images/dictionary-agave-01.jpg)
 
-至于单击字典加载项 HTML UI 中的“了解详情”**** 链接后是在任务窗格中显示详细信息，还是打开单独的浏览器窗口来显示选定字词或短语的整个网页由你自己决定。图 2 展示了“定义”**** 上下文菜单命令，用于方便用户快速启动已安装的字典。图 3 至 5 展示了在哪些 Office UI 位置上可以使用字典 XML 服务在 Word 2013 中显示定义。
+您需要确定在字典外接程序的 HTML UI 中单击 "**查看更多**" 链接，以在任务窗格中显示更多信息，还是打开一个单独的浏览器窗口，以在所选单词或短语的完整网页上显示。
+图 2 显示“定义”**** 上下文菜单命令，允许用户快速启动已安装的字典。 图 3 至 5 显示了 Office 用户界面中使用字典 XML 服务提供 Word 2013 定义的位置。
 
-*图 2：上下文菜单中的“定义”命令*
+*图 2.定义上下文菜单中的命令*
 
 ![定义上下文菜单](../images/dictionary-agave-02.jpg)
 
@@ -93,7 +94,7 @@ XML Web 服务必须将对 Web 服务的查询作为符合 OfficeDefinitions XML
 </xs:schema>
 ```
 
-返回的符合 OfficeDefinitions 架构的 XML 包含一个根 **Result** 元素，该元素包含一个 **Definitions** 元素，具有零到三个 **Definition** 子元素，每个子元素包含长度不超过 400 个字符的定义。此外，必须在 **SeeMoreURL** 元素中提供字典网站上完整网页的 URL。以下示例演示返回的符合 OfficeDefinitions 架构的 XML 的结构。
+返回的符合 OfficeDefinitions 架构的 XML 包含一个根`Result`元素，其中包含一个`Definitions`从零到三`Definition`个子元素的元素，其中每个子元素都包含长度不超过400个字符的定义。 此外，还必须在`SeeMoreURL`元素中提供字典网站上的完整页面的 URL。 以下示例演示返回的符合 OfficeDefinitions 架构的 XML 的结构。
 
 ```XML
 <?xml version="1.0" encoding="utf-8"?>
@@ -257,7 +258,7 @@ public class WebService : System.Web.Services.WebService {
 </OfficeApp>
 ```
 
-以下各节介绍了创建字典外接程序的清单文件时特定的 **Dictionary** 元素及其子元素。有关清单文件中的其他元素的信息，请参阅 [Office 外接程序 XML 清单](../develop/add-in-manifests.md)。
+以下`Dictionary`各节介绍了特定于创建字典外接程序清单文件的元素及其子元素。 有关清单文件中的其他元素的信息，请参阅 [Office 外接程序 XML 清单](../develop/add-in-manifests.md)。
 
 
 ### <a name="dictionary-element"></a>Dictionary 元素
@@ -271,11 +272,11 @@ public class WebService : System.Web.Services.WebService {
 
  **子元素**
 
- `<TargetDialects>`,  `<QueryUri>`,  `<CitationText>`,  `<DictionaryName>`,  `<DictionaryHomePage>`
+ `<TargetDialects>`, `<QueryUri>`, `<CitationText>`, `<DictionaryName>`, `<DictionaryHomePage>`
 
  **备注**
 
-在创建字典外接程序时，会将 **Dictionary**任务窗格 元素及其子元素添加到任务窗格外接程序的清单中。
+创建`Dictionary`字典加载项时，会将元素及其子元素添加到任务窗格加载项的清单中。
 
 
 #### <a name="targetdialects-element"></a>TargetDialects 元素
@@ -293,7 +294,7 @@ public class WebService : System.Web.Services.WebService {
 
  **备注**
 
-**TargetDialects** 元素及其子元素指定字典包含的区域语言集。例如，如果字典同时适用于西班牙语（墨西哥）和西班牙语（秘鲁），但不适用于西班牙语（西班牙），可以在此元素中进行指定。请勿在此清单中指定多种语言（例如，西班牙语和英语）。请将各种语言发布为单独的字典。
+`TargetDialects`元素及其子元素指定字典包含的一组区域语言。 例如，如果字典同时适用于西班牙语（墨西哥）和西班牙语（秘鲁），但不适用于西班牙语（西班牙），可以在此元素中进行指定。 请勿在此清单中指定多种语言（例如，西班牙语和英语）。 请将各种语言发布为单独的字典。
 
  **示例**
 
@@ -376,7 +377,7 @@ public class WebService : System.Web.Services.WebService {
 
 此元素指定将在从 Web 服务返回的内容之下的行中显示的引文文本的开头（例如，“Results by:”或“Powered by:”）。
 
-对于此元素，可以使用 **Override** 元素指定其他区域设置的值。例如，如果用户正在运行 Office 的西班牙语 SKU，但使用的是英语字典，则允许引文行读取“Resultados por: Bing”，而不是“Results by: Bing”。有关如何指定其他区域设置的值的详细信息，请参阅 [Office 外接程序 XML 清单](../develop/add-in-manifests.md)中的“为不同区域设置提供设置”一节。
+对于此元素，您可以使用`Override`元素指定其他区域设置的值。 例如，如果用户正在运行 Office 的西班牙语 SKU，但使用的是英语字典，则允许引文行读取“Resultados por: Bing”，而不是“Results by: Bing”。 有关如何指定其他区域设置的值的详细信息，请参阅 [Office 外接程序 XML 清单](../develop/add-in-manifests.md)中的“为不同区域设置提供设置”一节。
 
  **示例**
 
@@ -417,7 +418,7 @@ public class WebService : System.Web.Services.WebService {
 
  `<Dictionary>`
 
- **注解**
+ **备注**
 
 此元素指定引文文本中的链接 URL。引文文本显示在从 Web 服务返回的内容之下的行中。
 
@@ -525,16 +526,16 @@ a:hover, a:active
 
 以下示例显示 Dictionary.js 文件中的 JavaScript 实现（该文件从外接程序的 HTML 页面调用，以提供演示字典外接程序的编程逻辑）。 该脚本重新使用以前介绍的 XML Web 服务。 脚本作为示例 Web 服务被置于同一目录中时将从该服务获取定义。 它可以通过修改文件顶部的 `xmlServiceURL` 变量来使用符合 XML Web 服务的公用 OfficeDefinitions，然后将拼音的 Bing API 键替换为正确注册的键。
 
-从此实现中调用的 JavaScript API for Office (Office.js) 的主要成员如下：
+从该实现中调用的 Office JavaScript API （node.js）的主要成员如下所示：
 
 
-- [Office](/javascript/api/office) 对象的 **initialize** 事件，该事件在初始化外接程序上下文时引发，并提供对 [Document](/javascript/api/office/office.document) 对象实例（表示外接程序与之交互的文档）的访问权限。
+- 对象的 initialize 事件，在初始化外接程序上下文时引发，并提供对表示加载项与之交互的文档的[document](/javascript/api/office/office.document)对象实例的访问。 [](/javascript/api/office) `Office`
     
-- [Document](/javascript/api/office/office.document#addhandlerasync-eventtype--handler--options--callback-) 对象的 **addHandlerAsync** 方法，在 **initialize** 函数中调用该方法，以便为文档的 [SelectionChanged](/javascript/api/office/office.documentselectionchangedeventargs) 事件添加事件处理程序，从而侦听用户选择更改。
+- 对象的[addHandlerAsync](/javascript/api/office/office.document#addhandlerasync-eventtype--handler--options--callback-)方法，该方法在`initialize`函数中调用，以添加文档的 SelectionChanged 事件的事件处理程序，以侦听用户选择更改。 [](/javascript/api/office/office.documentselectionchangedeventargs) `Document`
     
-- [Document](/javascript/api/office/office.document#getselecteddataasync-coerciontype--options--callback-) 对象的 **getSelectedDataAsync** 方法，在引发 `tryUpdatingSelectedWord()` 事件处理程序时会在 **** 函数中调用该方法，以获取用户选择的字词或短语，将其强制为纯文本，然后执行 `selectedTextCallback` 异步回调函数。
+- `Document`对象的[getSelectedDataAsync](/javascript/api/office/office.document#getselecteddataasync-coerciontype--options--callback-)方法，该方法在`SelectionChanged`引发事件处理程序`tryUpdatingSelectedWord()`以获取用户选择的单词或短语时，将其强制转换为纯文本，然后执行`selectedTextCallback`异步回调函数，在函数中调用该方法。
     
-- 当 `selectTextCallback` 异步回调函数（作为 _getSelectedDataAsync_ 方法的 **callback** 参数传递）执行时，它在回调返回时获取所选文本的值。它通过使用返回的 _AsyncResult_ 对象的 [value](/javascript/api/office/office.asyncresult) 属性从回调的 [selectedText](/javascript/api/office/office.asyncresult#status) 参数（类型为 **AsyncResult**）获取该值。
+- 当作为`selectTextCallback` `getSelectedDataAsync`方法的_callback_参数传递的异步回调函数执行时，它将在回调返回时获取所选文本的值。 `AsyncResult`它通过使用返回的对象的[value](/javascript/api/office/office.asyncresult#status)属性，从回调的_SelectedText_参数（类型为[AsyncResult](/javascript/api/office/office.asyncresult)）中获取该值。
     
 - `selectedTextCallback` 函数中剩余的代码查询定义的 XML Web 服务。它还调入 Microsoft Translator API，以提供具有所选字词拼音的 .wav 文件的 URL。
     

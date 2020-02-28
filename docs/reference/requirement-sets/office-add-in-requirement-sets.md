@@ -4,12 +4,12 @@ description: ''
 ms.date: 07/17/2019
 ms.prod: non-product-specific
 localization_priority: Normal
-ms.openlocfilehash: b37adca116c60b465e11858cb813e9a7f9247ed3
-ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
+ms.openlocfilehash: 77ebd486f35a75f693941749a958cd122916fcfd
+ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "41950549"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "42325169"
 ---
 # <a name="office-common-api-requirement-sets"></a>Office 通用 API 要求集
 
@@ -182,6 +182,14 @@ ms.locfileid: "41950549"
 
 ---
 
+### <a name="sharedruntime"></a>SharedRuntime
+
+|**Office 主机**|**要求集内的方法**|
+|:-----|:-----|
+| 请参阅[共享运行时要求集](shared-runtime-requirement-sets.md)。 | GetStartupBehavior<br>.Addin： hide<br>OnVisibilityModeChanged<br>SetStartupBehavior<br>ShowAsTaskpane<br> |
+
+---
+
 ### <a name="tablebindings"></a>TableBindings
 
 |**Office 主机**|**要求集内的方法**|
@@ -224,7 +232,7 @@ ms.locfileid: "41950549"
 
 ## <a name="methods-that-arent-part-of-a-requirement-set"></a>不作为要求集一部分的方法
 
-适用于 Office 的 JavaScript API 中的以下方法不是要求集的一部分。 如果加载项需要这些方法的任意一个，请使用加载项清单中的 **Methods** 和 **Method** 元素以声明需要这些方法，或使用 `if` 语句执行运行时检查。 有关详细信息，请参阅[指定 Office 主机和 API 要求](/office/dev/add-ins/develop/specify-office-hosts-and-api-requirements)。
+Office JavaScript API 中的以下方法不是要求集的一部分。 如果加载项需要这些方法的任意一个，请使用加载项清单中的 **Methods** 和 **Method** 元素以声明需要这些方法，或使用 `if` 语句执行运行时检查。 有关详细信息，请参阅[指定 Office 主机和 API 要求](/office/dev/add-ins/develop/specify-office-hosts-and-api-requirements)。
 
 |**方法名称**|**Office 主机支持**|
 |:-----|:-----|

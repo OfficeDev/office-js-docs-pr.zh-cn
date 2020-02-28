@@ -3,12 +3,12 @@ title: 使用 Excel 加载项共同创作
 description: ''
 ms.date: 06/20/2019
 localization_priority: Normal
-ms.openlocfilehash: 65401f30448db2edbefb42b3d64d580a79250404
-ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
+ms.openlocfilehash: 0c1386eb6662ff47fce585db99fedd32f08aae06
+ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "35128001"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "42324664"
 ---
 # <a name="coauthoring-in-excel-add-ins"></a>使用 Excel 加载项共同创作  
 
@@ -45,7 +45,7 @@ Excel 外接程序可以读取工作簿内容（通过隐藏工作表和设置�
 
 如上所述，在某些情况下，对所有共同创作者触发事件可提升用户体验。 但是，请注意在一些应用场景下，此行为可能会导致不良的用户体验。 
 
-例如，在数据验证应用场景下，通常通过显示 UI 来响应事件。 本地用户或合著者（远程）通过绑定更改工作簿内容时，会运行前面部分中所述的 [BindingDataChanged](/javascript/api/office/office.bindingdatachangedeventargs) 事件。 如果 **BindingDataChanged** 事件的事件处理程序显示 UI，用户就会看到与他们在工作簿中进行的更改无关的 UI，从而导致不良的用户体验。 在外接程序中使用事件时，请避免显示 UI。
+例如，在数据验证应用场景下，通常通过显示 UI 来响应事件。 本地用户或合著者（远程）通过绑定更改工作簿内容时，会运行前面部分中所述的 [BindingDataChanged](/javascript/api/office/office.bindingdatachangedeventargs) 事件。 如果`BindingDataChanged`事件的事件处理程序显示 ui，则用户将看到与工作簿中正在工作的更改无关的 ui，从而导致较差的用户体验。 在外接程序中使用事件时，请避免显示 UI。
 
 ## <a name="see-also"></a>另请参阅
 

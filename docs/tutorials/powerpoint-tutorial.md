@@ -4,12 +4,12 @@ description: 在本教程中，将生成 PowerPoint 加载项，用于插入图�
 ms.date: 12/24/2019
 ms.prod: powerpoint
 localization_priority: Priority
-ms.openlocfilehash: aace13a3dba55abcac258b48ceb852fed746adcc
-ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
+ms.openlocfilehash: e45fe0a4d7561329b22f4d29ec295dabb2e2ee0f
+ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "41950885"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "42324734"
 ---
 # <a name="tutorial-create-a-powerpoint-task-pane-add-in"></a>教程：创建 PowerPoint 任务窗格加载项
 
@@ -183,7 +183,7 @@ ms.locfileid: "41950885"
     $('#insert-image').click(insertImage);
     ```
 
-8. 在 **Home.js** 文件中，将 `TODO2` 替换为下列代码，以定义 **insertImage** 函数。 此函数从必应 Web 服务提取图像，再调用 `insertImageFromBase64String` 函数将相应图像插入文档。
+8. 在 **Home.js** 文件中，将 `TODO2` 替换为下列代码，以定义 `insertImage` 函数。 此函数从必应 Web 服务提取图像，再调用 `insertImageFromBase64String` 函数将相应图像插入文档。
 
     ```js
     function insertImage() {
@@ -295,7 +295,7 @@ ms.locfileid: "41950885"
     $('#insert-text').click(insertText);
     ```
 
-3. 在 **Home.js** 文件中，将 `TODO5` 替换为下列代码，以定义 **insertText** 函数。 此函数将文本插入当前幻灯片。
+3. 在 **Home.js** 文件中，将 `TODO5` 替换为下列代码，以定义 `insertText` 函数。 此函数将文本插入当前幻灯片。
 
     ```js
     function insertText() {
@@ -352,7 +352,7 @@ ms.locfileid: "41950885"
     $('#get-slide-metadata').click(getSlideMetadata);
     ```
 
-3. 在 **Home.js** 文件中，将 `TODO7` 替换为下列代码，以定义 **getSlideMetadata** 函数。 此函数检索选定一张或多张幻灯片的元数据，并将它写入加载项任务窗格内的弹出对话框窗口。
+3. 在 **Home.js** 文件中，将 `TODO7` 替换为下列代码，以定义 `getSlideMetadata` 函数。 此函数检索选定一张或多张幻灯片的元数据，并将它写入加载项任务窗格内的弹出对话框窗口。
 
     ```js
     function getSlideMetadata() {

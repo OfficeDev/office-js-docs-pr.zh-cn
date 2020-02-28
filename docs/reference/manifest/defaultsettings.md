@@ -3,12 +3,12 @@ title: 清单文件中的 DefaultSettings 元素
 description: ''
 ms.date: 10/09/2018
 localization_priority: Normal
-ms.openlocfilehash: 199acf8be888ba51fda83d159937a74685ca48e0
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: 824c575b39a99c6028ffd603390d2b41ee0ad7dd
+ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32450623"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "42324882"
 ---
 # <a name="defaultsettings-element"></a>DefaultSettings 元素
 
@@ -38,5 +38,5 @@ ms.locfileid: "32450623"
 
 ## <a name="remarks"></a>注解
 
-**DefaultSettings** 元素中的源位置和其他设置仅应用于内容和任务窗格外接程序。对于邮件外接程序，您在 [FormSettings](formsettings.md) 元素中指定源文件的默认位置和其他默认设置。
+源位置和**DefaultSettings**元素中的其他设置仅适用于内容和任务窗格外接程序。对于邮件外接程序，您可以在[FormSettings](formsettings.md)元素中指定源文件和其他默认设置的默认位置。
 

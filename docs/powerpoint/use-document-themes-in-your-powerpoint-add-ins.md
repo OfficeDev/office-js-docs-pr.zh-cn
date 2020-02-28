@@ -3,12 +3,12 @@ title: 在 PowerPoint 外接程序中使用文档主题
 description: ''
 ms.date: 10/14/2019
 localization_priority: Normal
-ms.openlocfilehash: bb37f4a9f1860d38c2218a00fbd8c8092beadd63
-ms.sourcegitcommit: 499bf49b41205f8034c501d4db5fe4b02dab205e
+ms.openlocfilehash: 83b4c2192ba3c01deedfe69a8338265fbf7eaf53
+ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/22/2019
-ms.locfileid: "37627004"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "42324917"
 ---
 # <a name="use-document-themes-in-your-powerpoint-add-ins"></a>在 PowerPoint 加载项中使用文档主题
 
@@ -26,7 +26,7 @@ ms.locfileid: "37627004"
 
 ![调色板](../images/office15-app-color-palette.png)
 
-若要在 PowerPoint 中查看或自定义一套完整的 12 种主题颜色，请在“设计”**** 选项卡的“变量”**** 组中，单击“更多”**** 下拉菜单，然后选择“颜色”**** > “自定义颜色”****，以调出“新建主题颜色”****。
+若要在 PowerPoint 中查看或自定义一组完整的12种主题颜色，请在 "**设计**" 选项卡上的 "**变体**" 组中，单击 "**更多**" 下拉框，然后选择 "**颜色** > **自定义颜色**" 以显示 "新建**主题颜色**" 对话框。
 
 ![“新建主题颜色”对话框](../images/office15-app-create-new-theme-colors.png)
 
@@ -34,17 +34,17 @@ ms.locfileid: "37627004"
 
 ### <a name="document-theme-fonts"></a>文档主题字体
 
-每个 Office 文档主题还定义两种字体：一种用于标题，另一种用于正文文本。PowerPoint 使用这些字体来构造自动文本样式。此外，文本和**艺术字**的**快速样式**库也使用这些相同的主题字体。使用字体选取器选择字体时，这两种字体就是最靠上的两个选项。
+每个 Office 文档主题还定义两种字体 -- 一种用于标题，另一种用于正文文本。 PowerPoint 使用这些字体来构造自动文本样式。 此外，文本和“艺术字”**** 的“快速样式”**** 库使用这些相同的主题字体。 使用字体选取器选择字体时，这两种字体就是最靠上的两个选项。
 
 ![字体选取器](../images/office15-app-font-picker.png)
 
-若要在 PowerPoint 中查看或自定义主题字体，请在“设计”选项卡**** 的“变量”**** 组中，单击“更多”**** 下拉菜单，然后选择“字体”**** > “自定义字体”**** 以显示“新建主题字体”**** 对话框。
+若要在 PowerPoint 中查看或自定义主题字体，请在 "**设计**" 选项卡上的 "**变体**" 组中，单击 "**更多**" 下拉框，然后选择 "**字体** > **自定义字体**" 以显示 "**新建主题字体**" 对话框。
 
 ![“新建主题字体”对话框](../images/office15-app-create-new-theme-fonts.png)
 
 ### <a name="office-ui-theme-fonts-and-colors"></a>Office UI 主题字体和颜色
 
-Office 还让你在几个预定义主题之间进行选择，指定用于所有 Office 应用程序 UI 中的一些颜色和字体。若要执行此操作，请使用“**文件**” > “**帐户**” > “**Office 主题**”下拉菜单（在任意 Office 应用程序中）。
+Office also lets you choose between several predefined themes that specify some of the colors and fonts used in the UI of all Office applications. 若要执行此操作，请使用 "**文件** > **帐户** > " "**office 主题**" 下拉（来自任何 Office 应用程序）。
 
 ![Office 主题下拉菜单](../images/office15-app-office-theme-picker.png)
 
@@ -143,11 +143,11 @@ OfficeThemes.css 包含您可在 PowerPoint 任务窗格加载项中使用的类
 
 #### <a name="to-reference-officethemescss-in-your-add-in-for-powerpoint"></a>在 PowerPoint 加载项中引用 OfficeThemes.css 的具体步骤
 
-1. 选择 "**新建项目**"。
+1. 选择“**创建新项目**”。
 
-2. 使用 "搜索" 框中输入**加载项**。 选择 " **PowerPoint Web 加载项**"，然后选择 "**下一步**"。
+2. 使用搜索框，输入“**加载项**”。 选择“**PowerPoint 外接程序**”，然后选择“**下一步**”。
 
-3. 为项目命名，然后选择 "**创建**"。
+3. 对项目命名，然后选择“**创建**”。
 
 3. 在“创建 Office 加载项”**** 对话框窗口中，选择“将新功能添加到 PowerPoint”****，再选择“完成”**** 以创建项目。
 
@@ -180,7 +180,7 @@ OfficeThemes.css 包含您可在 PowerPoint 任务窗格加载项中使用的类
 </body>
 ```
 
-在运行时，如果插入到的演示文稿使用默认“Office 主题”****，内容加载项如下所示：
+在运行时，在使用默认**Office 主题**的演示文稿中插入内容外接程序时，将呈现如下所示。
 
 ![运行 Office 主题的内容应用](../images/office15-app-content-app-office-theme.png)
 

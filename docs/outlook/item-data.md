@@ -3,12 +3,12 @@ title: 获取或设置 Outlook 加载项中的项目数据
 description: 根据加载项是在阅读窗体中激活还是在撰写窗体中激活，项目为加载项提供的属性也有所不同。
 ms.date: 12/10/2019
 localization_priority: Normal
-ms.openlocfilehash: be7d14a6c417d01c0537e3375524da5cc807d749
-ms.sourcegitcommit: a3ddfdb8a95477850148c4177e20e56a8673517c
+ms.openlocfilehash: 925dcaff524be3f4e3d76213c0ee3413a11f43d6
+ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "42165922"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "42325352"
 ---
 # <a name="get-and-set-outlook-item-data-in-read-or-compose-forms"></a>在阅读或撰写窗体中获取和设置 Outlook 项目数据
 
@@ -18,7 +18,7 @@ ms.locfileid: "42165922"
 
 ## <a name="item-properties-available-in-compose-and-read-forms"></a>撰写和阅读窗体中可用的项目属性
 
-表 1 显示了适用于 Office 的 JavaScript API 中可用于邮件加载项的每个阅读和撰写模式的项目级属性。通常，阅读窗体中可用的属性是只读的，撰写窗体中可用的属性是可读取/写入的（[itemId](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties)、[conversationId](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties) 和 [itemType](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties) 属性除外，尽管这两个属性也始终是只读的）。
+表1显示了 Office JavaScript API 中的项目级属性，在邮件加载项的每种模式（阅读和撰写）中都可用。通常，在阅读窗体中可用的那些属性是只读的，而撰写窗体中的可用属性是可读写的，但不包括[itemId](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties)、 [conversationId](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties)和[itemType](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties)属性（无论是如此）。
 
 对于撰写窗体中的其余项目级属性，由于加载项和用户可以同时读取或写入同一属性，在撰写模式下获取或设置这些属性的方法都是异步的，因此这些属性在撰写窗体中和阅读窗体中返回的对象类型可能也有所不同。 有关在撰写模式下使用异步方法获取或设置项目级属性的详细信息，请参阅[在 Outlook 的撰写窗体中获取和设置项目数据](get-and-set-item-data-in-a-compose-form.md)。
 

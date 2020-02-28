@@ -3,12 +3,12 @@ title: 清单文件中的 Resources 元素
 description: ''
 ms.date: 10/09/2018
 localization_priority: Normal
-ms.openlocfilehash: e29e7e36585be8fd728eb46128d7ead538ea8069
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: 7e1cd9fcb383fa4d5881917b3dd8d6dec3bbe4f8
+ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32452051"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "42324825"
 ---
 # <a name="resources-element"></a>Resources 元素
 
@@ -18,7 +18,7 @@ ms.locfileid: "32452051"
 
 ## <a name="child-elements"></a>子元素
 
-|  元素 |  类型  |  描述  |
+|  元素 |  类型  |  说明  |
 |:-----|:-----|:-----|
 |  [Images](#images)            |  image   |  提供指向图标图像的 HTTPS URL。 |
 |  **Urls**                |  url     |  提供 HTTPS URL 位置。一个 URL 最多可包含 2048 个字符。 |
@@ -29,7 +29,7 @@ ms.locfileid: "32452051"
 > 必须对 **Image** 和 **Url** 元素中的所有 URL 使用安全套接字层 (SSL)。
 
 ### <a name="images"></a>图像
-每个图标必须具有三个 **Images** 元素，三个强制大小的各一个元素：
+每个图标必须具有三个**Images**元素，三个强制大小的元素分别为：
 
 - 16x16
 - 32x32

@@ -3,16 +3,16 @@ title: 从 Outlook 项目中提取实体字符串
 description: 了解如何从 Outlook 加载项中的某个 Outlook 项中提取实体字符串。
 ms.date: 10/31/2019
 localization_priority: Normal
-ms.openlocfilehash: 95f88b6bcd47cbfd85de89a3de89d9a9e2fe571f
-ms.sourcegitcommit: a3ddfdb8a95477850148c4177e20e56a8673517c
+ms.openlocfilehash: 0a9a41d0b479420c0754c0e0d283982082a1452f
+ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "42165938"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "42325452"
 ---
 # <a name="extract-entity-strings-from-an-outlook-item"></a>从 Outlook 项中提取实体字符串
 
-本文介绍了如何创建“**显示实体**”Outlook 加载项，以从选定 Outlook 项的主题和正文中提取受支持的已知实体的字符串实例。此项可以是约会、电子邮件、会议请求、会议响应或会议取消。 
+本文介绍了如何创建“**显示实体**”Outlook 加载项，以从选定 Outlook 项的主题和正文中提取受支持的已知实体的字符串实例。此项可以是约会、电子邮件、会议请求、会议响应或会议取消。
 
 受支持的实体包括：
 
@@ -205,7 +205,7 @@ div#meeting_suggestions
 
 ## <a name="extracting-entities-upon-initialization"></a>初始化时提取实体
 
-[Office.initialize](/javascript/api/office#office-initialize-reason-) 事件发生时，实体外接程序调用当前项目的 [getEntities](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods) 方法。**getEntities** 方法返回全局变量 `_MyEntities`，即一组受支持实体的实例。以下为相关的 JavaScript 代码。
+[Office.initialize](/javascript/api/office#office-initialize-reason-) 事件发生时，实体外接程序调用当前项目的 [getEntities](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods) 方法。 该`getEntities`方法返回全局变量`_MyEntities`受支持实体的实例数组。 以下为相关的 JavaScript 代码。
 
 
 ```js
@@ -373,9 +373,9 @@ function myGetEmailAddresses() {
 
 
  > [!NOTE]
- > 只有邮件（而不是约会）支持 **MeetingSuggestion** 实体类型。
+ > 仅邮件而非约会支持`MeetingSuggestion`实体类型。
 
-每个提取的会议建议都存储为数组中的一个 [MeetingSuggestion](/javascript/api/outlook/office.meetingsuggestion) 对象。`myGetMeetingSuggestions` 包含有关每个会议建议的更多数据：
+每个提取的会议建议都存储为数组中的一个 [MeetingSuggestion](/javascript/api/outlook/office.meetingsuggestion) 对象。`myGetMeetingSuggestions` 获取有关每个会议建议的更多数据：
 
 
 - [MeetingSuggestion.meetingString](/javascript/api/outlook/office.meetingsuggestion#meetingstring) 属性中已识别为会议建议的字符串。

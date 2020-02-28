@@ -3,12 +3,12 @@ title: 使用 Excel JavaScript API 调用内置 Excel 工作表函数
 description: ''
 ms.date: 12/19/2019
 localization_priority: Normal
-ms.openlocfilehash: a2c98d21b36a88777e58d85c14169ffc2d67ae59
-ms.sourcegitcommit: d5ac9284d1e96dc91a9168d7641e44d88535e1a7
+ms.openlocfilehash: c5b725f09c4bd6be8d6061f08fe7fbf84ff30762
+ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/31/2019
-ms.locfileid: "40914998"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "42325148"
 ---
 # <a name="call-built-in-excel-worksheet-functions"></a>调用内置 Excel 工作表函数
 
@@ -19,7 +19,7 @@ ms.locfileid: "40914998"
 
 ## <a name="calling-a-worksheet-function"></a>创建工作表函数
 
-下面的代码片段展示了如何调用工作表函数，其中 `sampleFunction()` 是占位符，应将它替换为要调用的函数名称和函数需要使用的输入参数。 工作表函数返回的 **FunctionResult** 对象的 **value** 属性包含指定函数的结果。 如此示例所示，必须先对 `load` 对象的 **value** 属性执行 **** 操作，然后才能读取它。 在此示例中，函数结果被直接写入控制台。
+下面的代码片段展示了如何调用工作表函数，其中 `sampleFunction()` 是占位符，应将它替换为要调用的函数名称和函数需要使用的输入参数。 工作`value`表函数返回`FunctionResult`的对象的属性包含指定函数的结果。 如以下示例所示，您`load`必须`value`具有该`FunctionResult`对象的属性，然后才能阅读该对象。 在此示例中，函数结果被直接写入控制台。
 
 ```js
 var functionResult = context.workbook.functions.sampleFunction();

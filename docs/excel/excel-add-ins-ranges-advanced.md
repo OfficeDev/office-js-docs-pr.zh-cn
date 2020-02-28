@@ -1,18 +1,18 @@
 ---
 title: 使用 Excel JavaScript API 对区域执行操作（高级）
-description: ''
-ms.date: 10/22/2019
+description: 高级的 range 对象函数和方案，如特殊单元格、删除重复项以及使用日期。
+ms.date: 02/11/2020
 localization_priority: Normal
-ms.openlocfilehash: 96f001e7c7e51a9685a52d0a07309beed2f1fe4b
-ms.sourcegitcommit: 5ba325cc88183a3f230cd89d615fd49c695addcf
+ms.openlocfilehash: 0e42549c7ecb9eb8bf8ebe707906224b4059e176
+ms.sourcegitcommit: d85efbf41a3382ca7d3ab08f2c3f0664d4b26c53
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "37681933"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "42327752"
 ---
 # <a name="work-with-ranges-using-the-excel-javascript-api-advanced"></a>使用 Excel JavaScript API 对区域执行操作（高级）
 
-本文基于[使用 Excel JavaScript API 对区域执行操作（基本）](excel-add-ins-ranges.md)中包含的信息，它提供了显示如何使用 Excel JavaScript API 对区域执行更多高级任务的代码示例。 有关 **Range** 对象支持的属性和方法的完整列表，请参阅 [Range 对象 (Excel JavaScript API)](/javascript/api/excel/excel.range)。
+本文基于[使用 Excel JavaScript API 对区域执行操作（基本）](excel-add-ins-ranges.md)中包含的信息，它提供了显示如何使用 Excel JavaScript API 对区域执行更多高级任务的代码示例。 有关`Range`对象支持的属性和方法的完整列表，请参阅[Range 对象（适用于 EXCEL 的 JavaScript API）](/javascript/api/excel/excel.range)。
 
 ## <a name="work-with-dates-using-the-moment-msdate-plug-in"></a>使用 Moment-MSDate 插件处理日期
 
@@ -172,9 +172,11 @@ Excel.run(function (context) {
 })
 ```
 
-## <a name="copy-and-paste"></a>Copy and paste
+## <a name="cut-copy-and-paste"></a>剪切、复制和粘贴 
 
-[CopyFrom](/javascript/api/excel/excel.range#copyfrom-sourcerange--copytype--skipblanks--transpose-)方法复制 Excel UI 的复制和粘贴行为。 调用 `copyFrom` 的区域对象是目标。 将要复制的源作为一个范围或一个表示范围的字符串地址进行传递。
+### <a name="copy-and-paste"></a>Copy and paste 
+
+[CopyFrom](/javascript/api/excel/excel.range#copyfrom-sourcerange--copytype--skipblanks--transpose-)方法复制 Excel UI 的**复制**和**粘贴**操作。 调用 `copyFrom` 的区域对象是目标。 将要复制的源作为一个范围或一个表示范围的字符串地址进行传递。 
 
 以下代码示例将数据从“A1:E1”**** 复制到“G1”**** 开始的范围（粘贴到“G1:K1”**** 结束）。
 
@@ -232,6 +234,23 @@ Excel.run(function (context) {
 *在上一个函数已运行之后。*
 
 ![在区域中运行复制方法之后的 Excel 中的数据](../images/excel-range-copyfrom-skipblanks-after.png)
+
+### <a name="cut-and-paste-move-cells-online-only"></a>剪切并粘贴（移动）单元格（[仅限联机](../reference/requirement-sets/excel-api-online-requirement-set.md)） 
+
+该[范围的 moveTo](/javascript/api/excel/excel.range#moveto-destinationrange-)方法将单元格移动到工作簿中的新位置。 此单元格移动行为与单元格移动时的工作方式相同，[拖动区域边框](https://support.office.com/article/Move-or-copy-cells-and-cell-contents-803d65eb-6a3e-4534-8c6f-ff12d1c4139e)或执行**剪切**和**粘贴**操作时。 将区域的格式和值移到指定作为`destinationRange`参数的位置。 
+
+下面的代码示例显示了使用`Range.moveTo`方法移动的范围。 请注意，如果目标区域小于源，它将被扩展以包含源内容。 
+
+```js 
+Excel.run(function (context) { 
+    var sheet = context.workbook.worksheets.getActiveWorksheet(); 
+    sheet.getRange("F1").values = [["Moved Range"]]; 
+
+    // Move the cells "A1:E1" to "G1" (which fills the range "G1:K1"). 
+    sheet.getRange("A1:E1").moveTo("G1"); 
+    return context.sync(); 
+}); 
+``` 
 
 ## <a name="remove-duplicates"></a>删除重复项
 

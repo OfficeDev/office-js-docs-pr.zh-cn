@@ -1,16 +1,16 @@
 ---
-title: 常见的编码问题和意外的平台行为
+title: 常见问题和意外平台行为的编码指南
 description: 开发人员经常遇到的 Office JavaScript API 平台问题的列表。
-ms.date: 01/02/2020
+ms.date: 02/27/2020
 localization_priority: Normal
-ms.openlocfilehash: fa33451550ab02f76a8b41ebf682e6a73d2a3a96
-ms.sourcegitcommit: abe8188684b55710261c69e206de83d3a6bd2ed3
+ms.openlocfilehash: da6986149172238963a06b3296d9fdd7c2411d9d
+ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "40969491"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "42324608"
 ---
-# <a name="common-coding-issues-and-unexpected-platform-behaviors"></a>常见的编码问题和意外的平台行为
+# <a name="coding-guidance-for-common-issues-and-unexpected-platform-behaviors"></a>常见问题和意外平台行为的编码指南
 
 本文重点介绍了 Office JavaScript API 的各个方面，这些方面可能导致意外行为或需要特定编码模式来实现所需的结果。 如果遇到此列表中的问题，请使用文章底部的反馈表单告知我们。
 

@@ -3,12 +3,12 @@ title: Excel JavaScript API 性能优化
 description: 使用 Excel JavaScript API 优化性能
 ms.date: 06/20/2019
 localization_priority: Normal
-ms.openlocfilehash: 501e074e3ed859cd572aefab8acfcef090c4e9e3
-ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
+ms.openlocfilehash: d041356129ad5e5db8c990daaafee4e583de1dfa
+ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "41950836"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "42325050"
 ---
 # <a name="performance-optimization-using-the-excel-javascript-api"></a>使用 Excel JavaScript API 优化性能
 
@@ -52,13 +52,13 @@ worksheet.getRange("A1").set({
 
 在 Excel JavaScript API 中，需要显式加载代理对象的属性。 虽然可以使用空的 ```load()``` 调用一次性加载所有属性，但这种方法可能会产生大量的性能开销。 我们转为建议只加载必要的属性，特别是对于那些具有大量属性的对象。
 
-例如，如果你只想读取区域对象的 **address** 属性，则在调用 **load()** 方法时仅指定该属性：
+例如，如果您只想读取 range 对象的`address`属性，请在调用`load()`方法时仅指定该属性：
 
 ```js
 range.load('address');
 ```
 
-可以通过以下任意方式调用 **load()** 方法：
+您可以通过`load()`以下任一方式调用方法：
 
 _语法：_
 
@@ -72,7 +72,7 @@ object.load({ loadOption });
 
 _其中：_
 
-* `properties` 列出了要加载的属性，指定为逗号分隔的字符串或名称数组。 有关详细信息，请参阅 [Excel JavaScript API 参考](/office/dev/add-ins/reference/overview/excel-add-ins-reference-overview)中为对象定义的 **load()** 方法。
+* `properties` 列出了要加载的属性，指定为逗号分隔的字符串或名称数组。 有关详细信息，请参阅`load()`为[Excel JavaScript API 参考](/office/dev/add-ins/reference/overview/excel-add-ins-reference-overview)中的对象定义的方法。
 * `loadOption` 指定的对象描述了选择、展开、置顶和跳过选项。有关详细信息，请参阅对象加载[选项](/javascript/api/office/officeextension.loadoption)。
 
 请注意，一个对象下的某些“属性”可能与另一个对象同名。 例如，`format` 是区域对象下的一个属性，但 `format` 本身也是一个对象。 因此，如果发出 `range.load("format")` 之类的调用，这就相当于 `range.format.load()`，后者是一个空 load() 调用，它可能会导致前面所述的性能问题。 若要避免这种情况，代码应仅加载对象树中的“叶节点”。 

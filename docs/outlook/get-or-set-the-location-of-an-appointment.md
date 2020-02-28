@@ -3,16 +3,16 @@ title: 在加载项获取或设置约会位置
 description: 了解如何在 Outlook 加载项中获取或设置约会位置。
 ms.date: 10/31/2019
 localization_priority: Normal
-ms.openlocfilehash: 7e2c2b604948b7630581af03aa9f8fddc4c68da6
-ms.sourcegitcommit: a3ddfdb8a95477850148c4177e20e56a8673517c
+ms.openlocfilehash: cc412da5dd64d8e908b86a81b847f6479dbd4a34
+ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "42166038"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "42324966"
 ---
 # <a name="get-or-set-the-location-when-composing-an-appointment-in-outlook"></a>在 Outlook 中撰写约会时获取或设置位置
 
-适用于 Office 的 JavaScript API 提供了用于管理用户正在撰写的约会的位置的属性和方法。 目前，有两个属性可提供约会的位置：
+Office JavaScript API 提供了用于管理用户正在撰写的约会的位置的属性和方法。 目前，有两个属性可提供约会的位置：
 
 - [item： location](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties)：允许你获取和设置位置的基本 API。
 - [enhancedLocation](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties)：增强 API，允许你获取和设置位置，并包括指定[位置类型](/javascript/api/outlook/office.mailboxenums.locationtype)。 键入的是`LocationType.Custom`使用`item.location`设置的位置。

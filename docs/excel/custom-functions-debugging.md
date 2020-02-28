@@ -3,12 +3,12 @@ ms.date: 07/10/2019
 description: 在 Excel 中调试自定义函数。
 title: 自定义函数调试
 localization_priority: Normal
-ms.openlocfilehash: 823f261af5dd50e8b965a421998234ceddd3551c
-ms.sourcegitcommit: 42bcf9059327a8d71a7ab223805aea68be9ed6b5
+ms.openlocfilehash: dc620d8bab50c5efb3b9d9ec4f79f6532605f48b
+ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "37962022"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "42324622"
 ---
 # <a name="custom-functions-debugging"></a>自定义函数调试
 
@@ -82,11 +82,11 @@ ms.locfileid: "37962022"
 ### <a name="sideload-your-add-in"></a>旁加载加载项
 
 1. 选择功能区上的 "**插入**" 选项卡，然后在 "**外接程序**" 部分，选择 " **Office 外接程序**"。
-2. 在“Office 加载项”**** 对话框中，依次选择“我的加载项”**** 选项卡、“管理我的加载项”**** 和“上传我的加载项”****。
+2. 在 " **Office 外接程序**" 对话框中，选择 "**我的外**接程序" 选项卡，选择 "**管理我的外接**程序"，然后**上传我的外接程序**。
     
     ![“Office 加载项”对话框，右上方有“管理我的加载项”下拉列表，其中有下拉选项“上传我的加载项”](../images/office-add-ins-my-account.png)
 
-3.  **浏览**到加载项清单文件，然后选择 "**上传**"。
+3. **浏览**到加载项清单文件，然后选择 "**上传**"。
     
     ![带浏览、上载和取消按钮的上载外接程序对话框。](../images/upload-add-in.png)
 
@@ -110,12 +110,12 @@ ms.locfileid: "37962022"
 
 1. 打开 [Microsoft Office 网页版](https://office.live.com/)。
 2. 打开一个新的 Excel 工作簿。
-3. 打开功能区上的“**插入**”选项卡，然后在“**外接程序**”部分中，选择“**Office 外接程序**”。
-4. 在“Office 加载项”**** 对话框中，依次选择“我的加载项”**** 选项卡、“管理我的加载项”**** 和“上传我的加载项”****。
+3. 打开功能区上的 "**插入**" 选项卡，然后在 "**外接程序**" 部分中，选择 " **Office 外接程序**"。
+4. 在 " **Office 外接程序**" 对话框中，选择 "**我的外**接程序" 选项卡，选择 "**管理我的外接**程序"，然后**上传我的外接程序**。
     
     ![“Office 加载项”对话框，右上方有“管理我的加载项”下拉列表，其中有下拉选项“上传我的加载项”](../images/office-add-ins-my-account.png)
 
-5.  **转到**加载项清单文件，再选择“上传”****。
+5. **转到**加载项清单文件，再选择“上传”****。
     
     ![带浏览、上载和取消按钮的上载外接程序对话框。](../images/upload-add-in.png)
 

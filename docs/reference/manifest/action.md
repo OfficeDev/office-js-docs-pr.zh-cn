@@ -3,12 +3,12 @@ title: 清单文件中的 Action 元素
 description: ''
 ms.date: 06/20/2019
 localization_priority: Normal
-ms.openlocfilehash: 3b0a82362988d4e64c1a376e0bd774e84e4a8fa3
-ms.sourcegitcommit: a3ddfdb8a95477850148c4177e20e56a8673517c
+ms.openlocfilehash: b05da08f4995c7d8f7270e7fba6f416c9903b066
+ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "42165557"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "42324889"
 ---
 # <a name="action-element"></a>Action 元素
 
@@ -50,7 +50,7 @@ ms.locfileid: "42165557"
 
 ## <a name="sourcelocation"></a>SourceLocation
 
-**xsi:type** 为 ShowTaskpane 时的必需元素。指定此操作的源文件位置。 **resid** 属性必须设置为 **Urls** 元素（位于 **Resources** 元素）中 **Url** 元素的 [id](resources.md) 属性的值。
+**Xsi： type**为 "ShowTaskpane" 时必需的元素。 指定此操作的源文件位置。 **resid** 属性必须设置为 **Urls** 元素（位于 **Resources** 元素）中 **Url** 元素的 [id](resources.md) 属性的值。
 
 ```xml
 <Action xsi:type="ShowTaskpane">

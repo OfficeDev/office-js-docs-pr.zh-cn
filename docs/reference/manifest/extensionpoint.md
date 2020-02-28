@@ -3,12 +3,12 @@ title: 清单文件中的 ExtensionPoint 元件
 description: ''
 ms.date: 09/05/2019
 localization_priority: Normal
-ms.openlocfilehash: 2ad9e0ccb0393e562ca0bb6951ec9bc4eb9c3eab
-ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
+ms.openlocfilehash: 44075bd12c15b4ac9117a51d71fdcc7d6436a7ce
+ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "41950703"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "42324874"
 ---
 # <a name="extensionpoint-element"></a>ExtensionPoint 元素
 
@@ -31,7 +31,7 @@ ms.locfileid: "41950703"
 - **PrimaryCommandSurface** - Office 中的功能区。
 - **ContextMenu** - Office UI 中右键单击时出现的快捷菜单。
 
-下面的示例演示如何将  **ExtensionPoint** 元素与 **PrimaryCommandSurface** 和 **ContextMenu** 属性值配合使用，以及应彼此配合使用的子元素。
+下面的示例演示如何将 **ExtensionPoint** 元素与 **PrimaryCommandSurface** 和 **ContextMenu** 属性值配合使用，以及应彼此配合使用的子元素。
 
 > [!IMPORTANT] 
 > 对于包含 ID 属性的元素，请务必提供唯一 ID。建议将公司名称与 ID 结合使用。例如，请使用以下格式：<CustomTab id="mycompanyname.mygroupname">
@@ -73,14 +73,14 @@ ms.locfileid: "41950703"
  
 |**元素**|**说明**|
 |:-----|:-----|
-|**CustomTab**|如果想要（使用 **PrimaryCommandSurface**）向功能区添加自定义选项卡，则为必需项。如果使用 **CustomTab** 元素，则不能使用 **OfficeTab** 元素。**id** 属性是必需的。|
-|**OfficeTab**|如果想要（使用 **PrimaryCommandSurface**）扩展默认 Office 功能区选项卡，则为必需项。如果使用 **OfficeTab** 元素，则不能使用 **CustomTab** 元素。有关详细信息，请参阅 [OfficeTab](officetab.md)。|
-|**OfficeMenu**|如果正（使用 **ContextMenu**）将外接程序命令添加到默认上下文菜单中，则为必需项。**id** 属性必须设置为： <br/> 适用于 Excel 或 Word 的 - **ContextMenuText**当用户选定文本，然后右键单击所选定的文本时显示上下文菜单上的项。 <br/> 适用于 Excel 的 - **ContextMenuCell**当用户右键单击电子表格中的某个单元格时显示上下文菜单上的项。|
-|**Group**|选项卡上的一组用户界面扩展点。一个组可以有最多六个控件。 **id** 属性是必需项。它是最多使用 125 个字符的字符串。|
-|**Label**|必需。组标签。**resid** 属性必须设置为 **String** 元素的 **id** 属性的值。**String** 元素是 **ShortStrings** 元素的子元素，而 ShortStrings 元素是 **Resources** 元素的子元素。|
-|**Icon**|必需。指定将在小型设备上使用或在显示过多按钮的情况下使用的组图标。**resid** 属性必须设置为 **Image** 元素的 **id** 属性的值。**Image** 元素是 **Images** 元素的子元素，而 Images 元素是 **Resources** 元素的子元素。**size** 属性给出图像的大小（以像素为单位）。要求三种图像大小：16、32 和 80。也同样支持五种可选大小：20、24、40、48 和 64。|
-|**Tooltip**|可选。组的工具提示**resid** 属性必须设置为 **String** 元素的 **id** 属性的值。**String** 元素是 **LongStrings** 元素的子元素，而 LongStrings 元素是 **Resources** 元素的子元素。|
-|**Control**|每个组需要至少一个控件。 **Control** 元素可以是一个**按钮**，也可以是一个**菜单**。 使用**菜单**指定按钮控件的下拉列表。 目前，仅支持“按钮”和“菜单”。 请参阅[按钮控件](control.md#button-control)和[菜单控件](control.md#menu-dropdown-button-controls)各节了解详细信息。<br/>**注意**  为了使故障排除变得更简单，我们建议一次性添加 **Control** 元素和相关的 **Resources** 子元素。|
+|**CustomTab**|如果想要（使用 **PrimaryCommandSurface**）向功能区添加自定义选项卡，则为必需项。如果使用 **CustomTab** 元素，则不能使用 **OfficeTab** 元素。**id** 属性是必需的。 |
+|**OfficeTab**|如果要扩展默认的 Office 功能区选项卡（使用**PrimaryCommandSurface**），则是必需的。如果使用**OfficeTab**元素，则不能使用**CustomTab**元素。有关详细信息，请参阅[OfficeTab](officetab.md)。|
+|**OfficeMenu**|如果要（使用 **ContextMenu**）将外接程序命令添加到默认上下文菜单中，则为必需项。**id** 属性必须设置为： <br/> 适用于 Excel 或 Word 的 - **ContextMenuText**当用户选定文本，然后右键单击所选定的文本时显示上下文菜单上的项。 <br/> 适用于 Excel 的 - **ContextMenuCell**当用户右键单击电子表格中的某个单元格时显示上下文菜单上的项。|
+|**Group**|选项卡上的一组用户界面扩展点。一组可以有多达六个控件。**id** 属性是必需的。它是一个最多为 125 个字符的字符串。 |
+|**Label**|必需。组标签。**resid** 属性必须设置为 **String** 元素的 **id** 属性的值。**String** 元素是 **ShortStrings** 元素的子元素，而 ShortStrings 元素是 **Resources** 元素的子元素。 |
+|**Icon**|必需。指定将在小型设备上使用或在显示过多按钮的情况下使用的组图标。**resid** 属性必须设置为 **Image** 元素的 **id** 属性的值。**Image** 元素是 **Images** 元素的子元素，而 Images 元素是 **Resources** 元素的子元素。**size** 属性给出图像的大小（以像素为单位）。要求三种图像大小：16、32 和 80。也同样支持五种可选大小：20、24、40、48 和 64。 |
+|**Tooltip**|可选。组的工具提示**resid** 属性必须设置为 **String** 元素的 **id** 属性的值。**String** 元素是 **LongStrings** 元素的子元素，而 LongStrings 元素是 **Resources** 元素的子元素。 |
+|**Control**|每个组需要至少一个控件。 **Control**元素可以是**按钮**，也可以是**菜单**。 使用**菜单**指定按钮控件的下拉列表。 目前，仅支持“按钮”和“菜单”。 请参阅[按钮控件](control.md#button-control)和[菜单控件](control.md#menu-dropdown-button-controls)各节了解详细信息。<br/>**注意：** 为了使故障排除变得更简单，建议一次添加一个**Control**元素和相关的**Resources**子元素。|
 |**Script**|使用自定义函数定义和注册代码链接到 JavaScript 文件。 在开发者预览版中不使用此元素。 实际上，HTML 页负责加载所有 JavaScript 文件。|
 |**Page**|链接到自定义函数的 HTML 页。|
 
@@ -282,7 +282,7 @@ ms.locfileid: "41950703"
 
 #### <a name="label"></a>标签
 
-必需。组的标签。 **resid** 属性必须设置为 **ShortStrings** 元素（位于 **Resources** 元素）中 **String** 元素的 [id](resources.md) 属性的值。
+必填。组的标签。**Resid**属性必须设置为[Resources](resources.md)元素中的**ShortStrings**元素中**String**元素的**id**属性的值。
 
 #### <a name="highlight-requirements"></a>突出显示要求
 

@@ -3,16 +3,16 @@ title: 在 Outlook 加载项中添加和删除附件
 description: 您可以使用各种附件 Api 来管理附加到用户正在撰写的项目的文件或 Outlook 项目。
 ms.date: 10/31/2019
 localization_priority: Normal
-ms.openlocfilehash: 977b8fa814a251c76aabc64345762a3a9556a60b
-ms.sourcegitcommit: a3ddfdb8a95477850148c4177e20e56a8673517c
+ms.openlocfilehash: 2110c22b65d1410cf4c607b6560eae72d169275c
+ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "42166033"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "42325480"
 ---
 # <a name="manage-an-items-attachments-in-a-compose-form-in-outlook"></a>在 Outlook 的撰写窗体中管理项目的附件
 
-适用于 Office 的 JavaScript API 提供了多个 Api，可用于在用户撰写时管理项目的附件。
+Office JavaScript API 提供了多个 Api，可用于在用户撰写时管理项目的附件。
 
 ## <a name="attach-a-file-or-outlook-item"></a>附加文件或 Outlook 项
 

@@ -5,16 +5,16 @@ ms.date: 11/05/2019
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: c8b0953655039556936c631926ed2713bdb62c57
-ms.sourcegitcommit: 350f5c6954dec3e9384e2030cd3265aaba7ae904
+ms.openlocfilehash: c542f5c751615019dd06a650a02a072383ab2d45
+ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/23/2019
-ms.locfileid: "40851395"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "42324685"
 ---
 # <a name="word-add-ins-overview"></a>Word 加载项概述
 
-要创建解决方案来扩展 Word 功能？例如，涉及自动文档程序集的解决方案？或从其他数据源绑定到并访问 Word 文档中数据的解决方案？可以使用 Office 加载项平台，其中包含 Word JavaScript API 和适用于 Office 的 JavaScript API，可用于扩展在 Windows 桌面设备、Mac 或云中运行的 Word 客户端。
+要创建解决方案来扩展 Word 功能？例如，涉及自动文档程序集的解决方案？或从其他数据源绑定到并访问 Word 文档中数据的解决方案？可以使用 Office 加载项平台，其中包含 Word JavaScript API 和Office JavaScript API，可用于扩展在 Windows 桌面设备、Mac 或云中运行的 Word 客户端。
 
 Word 外接程序是 [Office 外接程序平台](../overview/office-add-ins.md)上众多开发选项中的一项。外接程序命令可用于扩展 Word 用户界面并启动运行 JavaScript 并与 Word 文档中内容交互的任务窗格。在浏览器中可以运行的任何代码均可在 Word 外接程序中运行。与 Word 文档内容进行交互的外接程序可创建作用于 Word 对象的请求并同步对象状态。 
 
@@ -58,13 +58,13 @@ Word.run(function (context) {
 
 第二组是 [Word JavaScript API](/javascript/api/word)。这是强类型对象模型，可用于创建面向 Mac 版和 Windows 版 Word 2016 的 Word 加载项。此对象模型使用承诺模式，并提供对特定于 Word 的对象（如[正文](/javascript/api/word/word.body)、[内容控件](/javascript/api/word/word.contentcontrol)、[内联图片](/javascript/api/word/word.inlinepicture)和[段落](/javascript/api/word/word.paragraph)）的访问权限。Word JavaScript API 包括 TypeScript 定义和 vsdoc 文件，这样，你便可以在 IDE 中获得代码提示。
 
-目前，所有 Word 客户端均支持适用于 Office 的共享 JavaScript API，大多数客户端支持 Word JavaScript API。有关受支持的客户端的详细信息，请参阅 [Office 加载项主机和平台可用性](../overview/office-add-in-availability.md)。
+目前，所有 Word 客户端均支持 Office 共享 JavaScript API，大多数客户端支持 Word JavaScript API。有关受支持的客户端的详细信息，请参阅 [Office 加载项主机和平台可用性](../overview/office-add-in-availability.md)。
 
 我们建议从 Word JavaScript API 开始，因为对象模型更易于使用。如果需要执行以下操作，请使用 Word JavaScript API：
 
 * 访问 Word 文档中的对象。
 
-在需要执行以下操作时，使用共享的适用于 Office 的 JavaScript API：
+在需要执行以下操作时，使用共享的 Office JavaScript API：
 
 * 面向 Word 2013。
 * 执行应用程序的初始操作。

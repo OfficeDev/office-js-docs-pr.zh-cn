@@ -3,16 +3,16 @@ title: 清单文件中的 Requirements 元素
 description: ''
 ms.date: 03/19/2019
 localization_priority: Normal
-ms.openlocfilehash: 364ab7c943895e1acecedba7970e54da331a2e6f
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: 3c4cb81ebd6a38ea311e8fcacfa6d5fcd3b26f68
+ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32450560"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "42325246"
 ---
 # <a name="requirements-element"></a>Requirements 元素
 
-指定适用于 Office 的 JavaScript API 要求（[要求集](/office/dev/add-ins/develop/office-versions-and-requirement-sets#specify-office-hosts-and-requirement-sets)和/或方法）的最小集，Office 外接程序需要该集才能激活。
+指定 Office 外接程序需要激活的最小 Office JavaScript API 要求（[要求集](/office/dev/add-ins/develop/office-versions-and-requirement-sets#specify-office-hosts-and-requirement-sets)和/或方法）集。
 
 **加载项类型：** 内容、任务窗格和邮件
 

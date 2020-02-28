@@ -3,12 +3,12 @@ title: 清单文件中的 VersionOverrides 元素
 description: ''
 ms.date: 02/04/2020
 localization_priority: Normal
-ms.openlocfilehash: 26183caeb4862038d5304607310aa061d37cf3f1
-ms.sourcegitcommit: c1dbea577ae6183523fb663d364422d2adbc8bcf
+ms.openlocfilehash: 0afa3183e34a736a878217c079b7b8d0259be5b1
+ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/05/2020
-ms.locfileid: "41773570"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "42324797"
 ---
 # <a name="versionoverrides-element"></a>VersionOverrides 元素
 

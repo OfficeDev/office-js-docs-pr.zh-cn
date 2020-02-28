@@ -1,41 +1,54 @@
 ---
-title: 从内容传送网络 (CDN) 引用适用于 Office 的 JavaScript API 库
-description: ''
-ms.date: 03/19/2019
+title: 引用 Office JavaScript API 库
+description: 了解如何在外接程序中引用 Office JavaScript API 库和类型定义。
+ms.date: 02/27/2020
 localization_priority: Normal
-ms.openlocfilehash: 49fd83af4f5467cb4c612191e9fec235606fc05f
-ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
+ms.openlocfilehash: 9f7753b24e0a5861778b09ea93fecdc26fd2ca96
+ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "41950787"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "42325155"
 ---
-# <a name="referencing-the-javascript-api-for-office-library-from-its-content-delivery-network-cdn"></a>从内容传送网络 (CDN) 引用适用于 Office 的 JavaScript API 库
+# <a name="referencing-the-office-javascript-api-library"></a>引用 Office JavaScript API 库
 
-> [!NOTE]
-> 如果想要使用 TypeScript 获取 IntelliSense，除了本文中所述的步骤之外，还需要在项目文件夹根目录的节点支持系统提示框（或 Git Bash 窗口）中运行以下命令。 必须安装 [Node.js](https://nodejs.org)（包括 npm）。
-> 
-> ```command&nbsp;line
-> npm install --save-dev @types/office-js
-> ```
-
-[适用于 Office 的 JavaScript API](/office/dev/add-ins/reference/javascript-api-for-office) 库包含 Office.js 文件和关联的主机应用专用 .js 文件（如 Excel-15.js 和 Outlook-15.js）。 
-
-
-引用 API 的最简单方法是，通过向页面的 `<head>` 标记添加以下 `<script>` 来使用我们的 CDN：  
+[Office JAVASCRIPT API](../reference/javascript-api-for-office.md)库提供你的外接程序可用于与 Office 主机进行交互的 api。 若要引用库，最简单的方法是使用内容传送网络（CDN），方法是在`<script>` HTML 页面的`<head>`部分中添加以下标记：  
 
 ```html
-<script src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js" type="text/javascript"></script>
+<head>
+    ...
+    <script src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js" type="text/javascript"></script>
+</head>
 ```
 
-在 CDN URL 中，`office.js` 前面的 `/1/` 指定 Office.js 第 1 版中的最新增量版本。由于适用于 Office 的 JavaScript API 保留向后兼容性，因此最新版本将继续支持之前在第 1 版中引入的 API 成员。如果需要升级现有项目，请参阅[更新适用于 Office 的 JavaScript API 的版本和清单架构文件](update-your-javascript-api-for-office-and-manifest-schema-version.md)。 
+这将在首次加载加载项时下载并缓存 Office JavaScript API 文件，以确保它使用的是最新的 Office js 实现并将其与指定版本关联的文件关联起来。
+
+> [!IMPORTANT]
+> 您必须从页面的`<head>`部分中引用 OFFICE JavaScript API，以确保 API 在任何 body 元素之前完全初始化。 Office 主机要求外接程序在激活后的 5 秒内进行初始化。 如果外接程序未在此阈值内激活，则会被声明为无响应，并且用户会看到错误消息。
+
+## <a name="api-versioning-and-backward-compatibility"></a>API 版本控制和向后兼容性
+
+在上面的 HTML 代码段中`/1/` ，CDN URL `office.js`中的 "在第1版" 中指定的最新增量发布是在 Office .js 的第1版中。 由于 Office JavaScript API 保持向后兼容性，最新版本将继续支持之前在版本1中引入的 API 成员。 如果需要升级现有项目，请参阅[更新 Office JAVASCRIPT API 和清单架构文件的版本](update-your-javascript-api-for-office-and-manifest-schema-version.md)。 
 
 如果计划从 AppSource 发布 Office 加载项，必须使用此 CDN 引用。本地引用仅适用于内部、开发和调试应用场景。
 
-> [!IMPORTANT]
-> 开发任何 Office 主机应用的加载项时，请从页面的 `<head>` 部分引用适用于 Office 的 JavaScript API。这样可确保 API 先于所有正文元素完全初始化。Office 主机要求，加载项必须在激活后的 5 秒内初始化。如果加载项未在此阈值内激活，则会被声明为无响应，并且用户会看到错误消息。
+> [!NOTE]
+> 若要使用预览 Api，请参考 CDN： `https://appsforoffice.microsoft.com/lib/beta/hosted/office.js`上的 OFFICE JavaScript API 库的预览版本。
+
+## <a name="enabling-intellisense-for-a-typescript-project"></a>为 TypeScript 项目启用 Intellisense
+
+除了参照前面所述的 Office JavaScript API 之外，还可以使用[jquery.typescript.definitelytyped](https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/office-js)中的类型定义为 TypeScript 加载项项目启用 Intellisense。 若要执行此操作，请在已启用节点的系统提示符（或 git bash 窗口）中，从您的项目文件夹的根处运行以下命令。 必须安装 [Node.js](https://nodejs.org)（包括 npm）。
+
+```command&nbsp;line
+npm install --save-dev @types/office-js
+```
+
+> [!NOTE]
+> 若要为预览 Api 启用 Intellisense，请在项目文件夹的根目录中运行以下命令，以使用[jquery.typescript.definitelytyped](https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/office-js-preview)中的预览类型定义： 
+>
+> `npm install --save-dev @types/office-js-preview`
 
 ## <a name="see-also"></a>另请参阅
 
-- [了解适用于 Office 的 JavaScript API](understanding-the-javascript-api-for-office.md)
-- [适用于 Office 的 JavaScript API](/office/dev/add-ins/reference/javascript-api-for-office)
+- [了解 Office JavaScript API](understanding-the-javascript-api-for-office.md)
+- [Office JavaScript API](/office/dev/add-ins/reference/javascript-api-for-office)

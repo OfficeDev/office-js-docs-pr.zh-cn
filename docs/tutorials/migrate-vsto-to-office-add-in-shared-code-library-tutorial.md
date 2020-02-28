@@ -4,12 +4,12 @@ ms.prod: non-product-specific
 description: 有关如何在 VSTO 加载项与 Office 加载项之间共享代码的教程。
 title: 教程：使用共享代码库在 VSTO 加载项与 Office 加载项之间共享代码
 localization_priority: Priority
-ms.openlocfilehash: c0d90f0f808bb5a7f96f546f0f82a90815676df7
-ms.sourcegitcommit: 4c9e02dac6f8030efc7415e699370753ec9415c8
+ms.openlocfilehash: 87f34c04ce3ac475c82fbb2673d0a4b3e95f04a2
+ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/01/2020
-ms.locfileid: "41650076"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "42324741"
 ---
 # <a name="tutorial-share-code-between-both-a-vsto-add-in-and-an-office-add-in-with-a-shared-code-library"></a>教程：使用共享代码库在 VSTO 加载项与 Office 加载项之间共享代码
 
@@ -333,7 +333,7 @@ Office.js 库要求对传出调用执行 CORS，例如 REST API 服务器的 `aj
     ```
     
     > [!NOTE]
-    > 在 **builder.WithOrigins** 方法中使用 URL 时，请保留末尾的 `/`。 例如，它应该类似于 `https://localhost:44000`。 否则，在运行时将出现 CORS 错误。
+    > 在 `builder.WithOrigins`方法中使用 URL 时，请保留末尾的 `/`。 例如，它应该类似于 `https://localhost:44000`。 否则，在运行时将出现 CORS 错误。
     
 6. 将下列字段添加到 `Startup` 类：
     

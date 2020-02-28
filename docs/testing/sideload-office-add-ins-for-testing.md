@@ -3,12 +3,12 @@ title: 在 Office 网页版中旁加载 Office 加载项进行测试
 description: 通过旁加载在 Office 网页版中测试 Office 加载项
 ms.date: 02/18/2020
 localization_priority: Normal
-ms.openlocfilehash: 869cabec737c39d7dded04fe7c52011347e0f314
-ms.sourcegitcommit: a3ddfdb8a95477850148c4177e20e56a8673517c
+ms.openlocfilehash: 43dafda913516119ba1aadaae24701865596205f
+ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "42163582"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "42325036"
 ---
 # <a name="sideload-office-add-ins-in-office-on-the-web-for-testing"></a>在 Office 网页版中旁加载 Office 加载项进行测试
 
@@ -27,11 +27,11 @@ ms.locfileid: "42163582"
 
 1. 打开 [Microsoft Office 网页版](https://office.live.com/)。
 
-2. 在“**立即开始使用在线应用**”中，选择 **Excel**、**Word** 或 **PowerPoint**；然后打开一个新文档。
+2. 在 **"立即开始使用在线应用程序**" 中，选择 " **Excel**"、" **Word**" 或 " **PowerPoint**";，然后打开一个新文档。
 
-3. 打开功能区上的“**插入**”选项卡，然后在“**外接程序**”部分中，选择“**Office 外接程序**”。
+3. 打开功能区上的 "**插入**" 选项卡，然后在 "**外接程序**" 部分中，选择 " **Office 外接程序**"。
 
-4. 在“Office 加载项”**** 对话框中，依次选择“我的加载项”**** 选项卡、“管理我的加载项”**** 和“上传我的加载项”****。
+4. 在 " **Office 外接程序**" 对话框中，选择 "**我的外**接程序" 选项卡，选择 "**管理我的外接**程序"，然后**上传我的外接程序**。
 
     ![“Office 加载项”对话框，右上方有“管理我的加载项”下拉列表，其中有下拉选项“上传我的加载项”](../images/office-add-ins-my-account.png)
 
@@ -54,7 +54,7 @@ ms.locfileid: "42163582"
 
 1. 登录 Office 365 帐户。
 
-2. 打开工具栏最左端的应用启动器，选择“Excel”****、“Word”**** 或“PowerPoint”****，再新建文档。
+2. 打开工具栏左端的应用启动器并选择 " **Excel**"、" **Word**" 或 " **PowerPoint**"，然后创建一个新文档。
 
 3. 步骤 3 - 6 与上一部分**在 Office 网页版中旁加载 Office 加载项**相同。
 
