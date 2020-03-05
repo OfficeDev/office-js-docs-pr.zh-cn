@@ -1,14 +1,14 @@
 ---
 title: 清单文件中的 Action 元素
 description: ''
-ms.date: 06/20/2019
+ms.date: 02/28/2020
 localization_priority: Normal
-ms.openlocfilehash: b05da08f4995c7d8f7270e7fba6f416c9903b066
-ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
+ms.openlocfilehash: f7bd577fea1672f592f2b1bac2823d96f0e8a134
+ms.sourcegitcommit: 6c7c98f085dd20f827e0c388e672993412944851
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "42324889"
+ms.lasthandoff: 03/04/2020
+ms.locfileid: "42413767"
 ---
 # <a name="action-element"></a>Action 元素
 
@@ -131,8 +131,11 @@ ms.locfileid: "42324889"
 
 **xsi:type** 是“ShowTaskpane”时的可选元素。 包含 [VersionOverrides](versionoverrides.md) 元素的 `xsi:type` 属性值必须为 `VersionOverridesV1_1`。 添加此元素时将值设为 `true` 可以支持任务窗格固定。 这样一来，用户可以“固定”任务窗格，即使用户选择其他对象，任务窗格也可以继续处于打开状态。 有关详细信息，请参阅[在 Outlook 中实现可固定的任务窗格](../../outlook/pinnable-taskpane.md)。
 
-> [!NOTE]
-> SupportsPinning 目前仅支持 Outlook 2016 或更高版本（内部版本7628.1000 或更高版本）和 Outlook 2016 或 Mac 上的更高版本（内部版本16.13.503 或更高版本）。
+> [!IMPORTANT]
+> 尽管在`SupportsPinning` [要求集 1.5](../objectmodel/requirement-set-1.5/outlook-requirement-set-1.5.md)中引入了元素，但目前仅支持 Office 365 订阅者使用以下方法。
+> - Windows 上的 Outlook 2016 或更高版本（内部版本7628.1000 或更高版本）
+> - Outlook 2016 或更高版本 Mac 版（内部版本16.13.503 或更高版本）
+> - 新式 Outlook 网页版
 
 ```xml
 <Action xsi:type="ShowTaskpane">

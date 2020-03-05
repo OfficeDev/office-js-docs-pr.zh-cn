@@ -1,14 +1,14 @@
 ---
 title: Office 加载项其他资源
 description: ''
-ms.date: 06/10/2019
+ms.date: 03/02/2020
 localization_priority: Normal
-ms.openlocfilehash: 211d5d2ca45b00f8e49dcae340730975bce12593
-ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
+ms.openlocfilehash: 537a3af0167b4f24da3ed487bc5a488942ffb409
+ms.sourcegitcommit: 6c7c98f085dd20f827e0c388e672993412944851
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "41950941"
+ms.lasthandoff: 03/04/2020
+ms.locfileid: "42413754"
 ---
 # <a name="office-add-ins-additional-resources"></a>Office 加载项其他资源
 
@@ -19,8 +19,8 @@ ms.locfileid: "41950941"
 |**Office JavaScript API 问题** | 使用 `office-js` 标记将 API 问题发布到 [Stack Overflow](https://stackoverflow.com/questions/tagged/office-js)，如果你的问题与 Outlook 加载项有关，则还需要包含 `outlook-web-addins` 标记。请注意，Stack Overflow 具有一些准则，例如要求提供描述性标题、完整简明的问题陈述以及用于重现问题的充足详细信息。 功能请求或过于宽泛的问题属于离题；新用户应访问 [Stack Overflow 帮助中心](https://stackoverflow.com/help/how-to-ask)，了解详细信息。|
 |**Office JavaScript API 问题**| 如果你遇到 Office JavaScript API 问题（错误），请将问题提交到 <a href="https://github.com/officedev/office-js/issues" target="_blank">OfficeDev/office-js</a> GitHub 存储库。|
 |**Office JavaScript API 功能请求**| 若要提交 Office JavaScript API 功能请求，请使用 <a href="https://officespdev.uservoice.com/" target="_blank">Office 开发人员平台 UserVoice 页面</a>。|
-|**文档问题**| 如果你遇到文档问题（错误），请将问题提交到 <a href="https://github.com/officedev/office-js-docs-pr/issues" target="_blank">OfficeDev/office-js-docs-pr</a> GitHub 存储库或 <a href="https://github.com/officedev/outlook-dev-docs/issues" target="_blank">OfficeDev/outlook-dev-docs</a> GitHub 存储库（与 Outlook 相关的文档问题）。|
-|**文档更新**| 若要自行更改文档，请选择文章上的“**编辑**”链接，并将拉取请求提交到 <a href="https://github.com/officedev/office-js-docs-pr" target="_blank">OfficeDev/office-js-docs-pr</a> GitHub 存储库或 <a href="https://github.com/officedev/outlook-dev-docs" target="_blank">OfficeDev/outlook-dev-docs</a> GitHub 存储库（用于 Outlook 文档更新）。|
+|**文档问题**| 如果您遇到包含文档的问题（bug），请将问题提交到<a href="https://github.com/officedev/office-js-docs-pr/issues" target="_blank">OfficeDev/office js-pr</a> GitHub 存储库。|
+|**文档更新**| 若要自己对文档进行更改，请在文章中选择 "**编辑**" 链接，并向<a href="https://github.com/officedev/office-js-docs-pr" target="_blank">OfficeDev/office js-pr</a> GitHub 存储库提交拉取请求。|
 |**Script Lab**| 如果要探索 Office JavaScript API 或尝试预览 API，可以在 Excel、Word 和 PowerPoint 中使用 Script Lab。 若要了解详细信息，请参阅[使用 Script Lab 探索 Office JavaScript API](../overview/explore-with-script-lab.md)。 |
 |**关于 Office 加载项的 Pluralsight 课程**| <a href="https://www.pluralsight.com/courses/build-office-addins-js-api" target="_blank">John Brown 的课程“使用 Office JavaScript API 构建 Office 加载项的基础知识”</a>教你如何从头开始开发 PowerPoint 加载项，包括有关如何与 Trello 通信以及将加载项发布到 Microsoft Office 应用商店的信息。|
 |**关于 Office 加载项的 LinkedIn 课程**| <a href="https://www.linkedin.com/learning/microsoft-office-add-ins-for-developers/microsoft-office-add-ins?u=3322">Bill Ayer 的课程“面向开发人员的 Microsoft Office 加载项”</a>提供了该平台的概述，并且介绍了 Office 加载项的许多主要概念。|
