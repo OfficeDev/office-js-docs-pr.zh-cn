@@ -600,6 +600,9 @@
         - name: 形状
           href: excel/excel-add-ins-shapes.md
           displayName: Excel
+        - name: 在共享运行时中显示或隐藏 Office 加载项
+          href: excel/show-hide-add-in.md
+          displayName: Excel
         - name: 表格
           href: excel/excel-add-ins-tables.md
           displayName: Excel
