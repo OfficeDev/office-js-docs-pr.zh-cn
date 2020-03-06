@@ -1,15 +1,15 @@
 ---
 title: Outlook JavaScript API 要求集
 description: ''
-ms.date: 02/11/2020
+ms.date: 03/04/2020
 ms.prod: outlook
 localization_priority: Priority
-ms.openlocfilehash: ad83a9627aba29c6b2877d83f1d359ec1f7dd3a5
-ms.sourcegitcommit: a3ddfdb8a95477850148c4177e20e56a8673517c
+ms.openlocfilehash: 06e97000cab0696f1597032f5a4709c607013eaf
+ms.sourcegitcommit: 6c7c98f085dd20f827e0c388e672993412944851
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "42163600"
+ms.lasthandoff: 03/04/2020
+ms.locfileid: "42413781"
 ---
 # <a name="outlook-javascript-api-requirement-sets"></a>Outlook JavaScript API 要求集
 
@@ -25,7 +25,7 @@ Outlook 外接程序通过在其清单中使用 Requirements 元素来声明所�
 </Requirements>
 ```
 
-所有 Outlook API 均属于`Mailbox`[要求集](../../develop/specify-office-hosts-and-api-requirements.md)。`Mailbox`要求集具有不同版本，我们发布的每个新 API 集均属于较高版本的要求集。并非所有 Outlook 客户端都支持最新的 API 集，但如果某个 Outlook 客户端声明支持某个要求集，它将支持该要求集中的所有 API。
+所有 Outlook API 均属于`Mailbox`[要求集](../../develop/specify-office-hosts-and-api-requirements.md)。`Mailbox`要求集具有不同版本，我们发布的每个新 API 集均属于较高版本的要求集。并非所有 Outlook 客户端都支持最新的 API 集，但如果某个 Outlook 客户端声明支持某个要求集，它通常支持该需求集中的所有 API（请查看有关特定 API 或功能的文档以了解任何异常）。
 
 在清单中设置最低要求集版本可控制外接程序会显示在哪个 Outlook 客户端中。如果客户端不支持最低要求集，则不会加载外接程序。例如，如果指定要求集版本 1.3，则意味着外接程序不会显示在任何不支持 1.3 及以上版本的 Outlook 客户端中。
 
@@ -101,7 +101,7 @@ if (item.somePropertyOrFunction !== undefined) {
 || 经典 | 本地 Exchange | [1.1](../objectmodel/requirement-set-1.1/outlook-requirement-set-1.1.md)、[1.2](../objectmodel/requirement-set-1.2/outlook-requirement-set-1.2.md)、[1.3](../objectmodel/requirement-set-1.3/outlook-requirement-set-1.3.md)、[1.4](../objectmodel/requirement-set-1.4/outlook-requirement-set-1.4.md)、[1.5](../objectmodel/requirement-set-1.5/outlook-requirement-set-1.5.md)、[1.6](../objectmodel/requirement-set-1.6/outlook-requirement-set-1.6.md) |
 
 > [!NOTE]
-> 对 Outlook 2013 中的 1.3 版本的支持已作为 [2015 年 12 月 8 日 Outlook 2013 更新 (KB3114349)](https://support.microsoft.com/kb/3114349) 的一部分添加。 对 Outlook 2013 中的 1.4 版本的支持已作为 [2016 年 9 月 13 日 Outlook 2013 更新 (KB3118280)](https://support.microsoft.com/help/3118280) 的一部分添加。 对 Outlook 2016 (MSI) 中的 1.4 版本的支持已作为 [2018 年 7 月 3 日 Office 2016 更新 (KB4022223)](https://support.microsoft.com/help/4022223) 的一部分添加。
+> 对 Outlook 2013 中的 1.3 版本的支持已作为 [2015 年 12 月 8 日 Outlook 2013 更新 (KB3114349)](https://support.microsoft.com/kb/3114349) 的一部分添加。 对 Outlook 2013 中的 1.4 版本的支持已作为 [2016 年 9 月 13 日 Outlook 2013 更新 (KB3118280)](https://support.microsoft.com/help/3118280) 的一部分添加。 对 Outlook 2016（一次性购买）中的 1.4 版本的支持已作为 [2018 年 7 月 3 日 Office 2016 更新 (KB4022223)](https://support.microsoft.com/help/4022223) 的一部分添加。
 
 > [!TIP]
 > 可通过查看邮箱工具栏，在 Web 浏览器中区分经典和新式 Outlook。
