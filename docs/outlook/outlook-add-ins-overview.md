@@ -5,11 +5,11 @@ ms.date: 10/09/2019
 ms.custom: scenarios:getting-started
 localization_priority: Priority
 ms.openlocfilehash: cb6e19788390a804b0bbacb97666a3ca8a9d5971
-ms.sourcegitcommit: a3ddfdb8a95477850148c4177e20e56a8673517c
+ms.sourcegitcommit: 6c7c98f085dd20f827e0c388e672993412944851
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "42165994"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "42554693"
 ---
 # <a name="outlook-add-ins-overview"></a>Outlook 加载项概述
 
