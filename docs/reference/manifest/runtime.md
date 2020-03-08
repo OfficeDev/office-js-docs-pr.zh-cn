@@ -3,12 +3,12 @@ title: 清单文件中的运行时（预览）
 description: ''
 ms.date: 02/21/2020
 localization_priority: Normal
-ms.openlocfilehash: 26702896604f9ecf4c69296e5110efe5cdf4218b
-ms.sourcegitcommit: dd6d00202f6466c27418247dad7bd136555a6036
+ms.openlocfilehash: dd51c5b317700f92ee74c94835e68523371789f8
+ms.sourcegitcommit: 153576b1efd0234c6252433e22db213238573534
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/26/2020
-ms.locfileid: "42283882"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "42561826"
 ---
 # <a name="runtime-element-preview"></a>Runtime 元素（预览）
 
@@ -19,7 +19,7 @@ ms.locfileid: "42283882"
 **外接程序类型：** 任务窗格
 
 > [!IMPORTANT]
-<<<<<<< 头共享运行时当前处于预览阶段，仅在 Windows 上的 Excel 中可用。 若要尝试预览功能，你需要加入[Office 预览体验成员](https://insider.office.com/)。
+> 共享运行时当前处于预览阶段，仅适用于 Windows 上的 Excel。 若要尝试预览功能，你需要加入[Office 预览体验成员](https://insider.office.com/)。
 
 ## <a name="syntax"></a>语法
 

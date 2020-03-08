@@ -1,14 +1,14 @@
 ---
 title: 适用于 Outlook Mobile 的 Outlook 外接程序
 description: 所有 Office 365 商业帐户、Outlook.com 帐户均支持 Outlook 移动外接程序，并且即将提供对 Gmail 帐户的支持。
-ms.date: 10/31/2019
+ms.date: 02/28/2020
 localization_priority: Normal
-ms.openlocfilehash: 7ede3165f40e644715dc488214e047f00dafbede
-ms.sourcegitcommit: a3ddfdb8a95477850148c4177e20e56a8673517c
+ms.openlocfilehash: 7fc4ac511fe7e101775334cad6d4b000f7dc24ae
+ms.sourcegitcommit: 153576b1efd0234c6252433e22db213238573534
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "42165988"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "42561793"
 ---
 # <a name="add-ins-for-outlook-mobile"></a>适用于 Outlook Mobile 的外接程序
 
@@ -25,6 +25,9 @@ ms.locfileid: "42165988"
 **Android 版 Outlook 中的任务窗格示例**
 
 ![Android 版 Outlook 中任务窗格的屏幕截图](../images/outlook-mobile-addin-taskpane-android.png)
+
+> [!IMPORTANT]
+> 外接程序在移动浏览器中的 Outlook 的新式版本中不起作用。 有关详细信息，请参阅[正在升级移动浏览器上的 Outlook](https://techcommunity.microsoft.com/t5/outlook-blog/outlook-on-your-mobile-browser-is-being-upgraded/ba-p/1125816)。
 
 ## <a name="whats-different-on-mobile"></a>在移动电话上会有什么不同？
 

@@ -3,12 +3,12 @@ title: 在 Office 加载项中使用 Office 对话框 API
 description: 了解在 Office 加载项中创建对话框的基础知识
 ms.date: 01/29/2020
 localization_priority: Normal
-ms.openlocfilehash: ed77173f57c8a16344d469585610917a08d3dcad
-ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
+ms.openlocfilehash: ba7027319016901598e381a87d69766eb44fce29
+ms.sourcegitcommit: 153576b1efd0234c6252433e22db213238573534
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "42324678"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "42561756"
 ---
 # <a name="use-the-office-dialog-api-in-office-add-ins"></a>在 Office 加载项中使用 Office 对话框 API
 
@@ -247,8 +247,11 @@ Office.context.ui.displayDialogAsync('https://myAddinDomain/myDialog.html?client
 
 对话框中的代码可以分析 URL，并读取参数值。
 
-> [!NOTE]
+> [!IMPORTANT]
 > Office 会自动向传递给 `displayDialogAsync` 的 URL 添加查询参数 `_host_info`。（附加在自定义查询参数（若有）后面，不会附加到对话框导航到的任何后续 URL。）Microsoft 可能会更改此值的内容，或者将来会将其全部删除，因此代码不得读取此值。相同的值会被添加到对话框的会话存储中。同样，*代码不得对此值执行读取和写入操作*。
+
+> [!NOTE]
+> 现在，"预览" 父`messageChild`页面可用于向对话发送邮件的 api，就像上面所述的`messageParent` API 从对话框发送邮件一样。 有关它的详细信息，请参阅将[数据和邮件从其主机页传递到对话框](parent-to-dialog.md)。 我们鼓励你试用它，但对于生产外接程序，我们建议使用本节中介绍的技术。
 
 ## <a name="closing-the-dialog-box"></a>关闭对话框
 
