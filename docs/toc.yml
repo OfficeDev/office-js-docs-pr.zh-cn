@@ -151,6 +151,8 @@
                   href: develop/dialog-api-in-office-add-ins.md
                 - name: Office 对话框 API 最佳做法和规则
                   href: develop/dialog-best-practices.md
+                - name: 将数据从主页发送到对话框
+                  href: develop/parent-to-dialog.md
                 - name: 处理 Office 对话框中的错误和事件
                   href: develop/dialog-handle-errors-events.md
                 - name: 使用 Office 对话框播放视频
