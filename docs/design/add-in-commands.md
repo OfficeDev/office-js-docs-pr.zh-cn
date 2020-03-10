@@ -1,14 +1,14 @@
 ---
-title: Excel、Word 和 PowerPoint 加载项命令
-description: ''
-ms.date: 06/20/2019
-localization_priority: Normal
-ms.openlocfilehash: 92e9b23eaf23aa9c6e0a2eda048dc34e3942f4ed
-ms.sourcegitcommit: a3ddfdb8a95477850148c4177e20e56a8673517c
-ms.translationtype: MT
+title: 加载项命令的基本概念
+description: 了解如何将自定义功能区按钮和菜单项添加到 Office 作为 Office Web 加载项的一部分。
+ms.date: 02/11/2020
+localization_priority: Priority
+ms.openlocfilehash: 11636838feb384cdb0761bd17a3c1c0e0f42f8ce
+ms.sourcegitcommit: 0e7ed44019d6564c79113639af831ea512fa0a13
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "42162837"
+ms.lasthandoff: 03/09/2020
+ms.locfileid: "42566150"
 ---
 # <a name="add-in-commands-for-excel-word-and-powerpoint"></a>Excel、Word 和 PowerPoint 加载项命令
 
@@ -34,20 +34,27 @@ ms.locfileid: "42162837"
 > [!NOTE]
 > 内容加载项暂不支持加载项命令。
 
-**扩展点**
+### <a name="extension-points"></a>扩展点
 
 - 功能区选项卡 - 扩展内置选项卡或新建自定义选项卡。
-- 上下文菜单 - 扩展选定上下文菜单。
+- 上下文菜单 - 扩展所选上下文菜单。
 
-**控件类型**
+### <a name="control-types"></a>控件类型
 
 - 简单按钮 - 触发特定操作。
 - 菜单 - 简单的下拉菜单，内含可触发操作的按钮。
 
-**操作**
+### <a name="actions"></a>操作
 
 - ShowTaskpane - 显示一个或多个在其中加载自定义 HTML 页的窗格。
 - ExecuteFunction - 加载一个不可见的 HTML 页，然后在其中执行一个 JavaScript 函数。若要在你的函数（例如错误、进度或其他输入）中显示 UI，你可以使用 [displayDialog](/javascript/api/office/office.ui) API。  
+
+### <a name="default-enabled-or-disabled-status-preview"></a>默认启用或禁用状态（预览版）
+
+可指定在加载项启动时是启用还是禁用该命令，并以编程方式更改设置。 
+
+> [!NOTE]
+> 此功能处于预览状态，并非在所有主机或方案中均受支持。 有关详细信息，请参阅[启用和禁用加载项命令](disable-add-in-commands.md)。
 
 ## <a name="supported-platforms"></a>支持的平台
 
@@ -59,8 +66,6 @@ ms.locfileid: "42162837"
 - Mac 版 Office（生成号 15.33 及更高版本，已连接到 Office 365 订阅）
 - Mac 版 Office 2019
 - Office 网页版
-
-即将推出更多受支持的平台。
 
 ## <a name="debugging"></a>调试
 
