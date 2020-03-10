@@ -207,7 +207,11 @@
             - name: 概述
               href: design/interface-elements.md
             - name: 加载项命令
-              href: design/add-in-commands.md
+              items:
+                - name: 加载项命令的基本概念
+                  href: design/add-in-commands.md
+                - name: 启用和禁用加载项命令
+                  href: design/disable-add-in-commands.md
             - name: 对话框
               href: design/dialog-boxes.md
             - name: 内容加载项
@@ -307,6 +311,8 @@
               href: reference/requirement-sets/image-coercion-requirement-sets.md
             - name: Office 通用 API 要求集
               href: reference/requirement-sets/office-add-in-requirement-sets.md
+            - name: 功能区 API 要求集
+              href: reference/requirement-sets/ribbon-api-requirement-sets.md
             - name: 共享运行时要求集
               href: reference/requirement-sets/shared-runtime-requirement-sets.md
         - name: Office 加载项清单参考
@@ -425,6 +431,8 @@
                   href: reference/manifest/control.md
                 - name: CustomTab
                   href: reference/manifest/customtab.md
+                - name: 已启用
+                  href: reference/manifest/enabled.md
                 - name: EquivalentAddin
                   href: reference/manifest/equivalentaddin.md
                 - name: EquivalentAddins
