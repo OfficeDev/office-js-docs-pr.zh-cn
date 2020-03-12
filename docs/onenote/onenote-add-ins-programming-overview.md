@@ -5,12 +5,12 @@ ms.date: 02/19/2020
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: 0ea7273b15ad430d2d19d91ff5d8f57fe64c675a
-ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
+ms.openlocfilehash: a4e060570f4eccc3fff9017042ff6bf278714ed6
+ms.sourcegitcommit: 4079903c3cc45b7d8c041509a44e9fc38da399b1
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "42325487"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "42596849"
 ---
 # <a name="onenote-javascript-api-programming-overview"></a>OneNote JavaScript API 编程概述
 
@@ -87,7 +87,7 @@ function getPagesInSection() {
 }
 ```
 
-可以在 [API 参考](/office/dev/add-ins/reference/overview/onenote-add-ins-javascript-reference) 中找到受支持的 OneNote 对象和操作。
+可以在 [API 参考](../reference/overview/onenote-add-ins-javascript-reference.md) 中找到受支持的 OneNote 对象和操作。
 
 #### <a name="onenote-javascript-api-requirement-sets"></a>OneNote JavaScript API 要求集
 
@@ -139,6 +139,6 @@ OneNote 加载项仅支持以下通用 API：
 
 - [构建 Office 加载项](../overview/office-add-ins-fundamentals.md)
 - [生成首个 OneNote 加载项](../quickstarts/onenote-quickstart.md)
-- [OneNote JavaScript API 参考](/office/dev/add-ins/reference/overview/onenote-add-ins-javascript-reference)
+- [OneNote JavaScript API 参考](../reference/overview/onenote-add-ins-javascript-reference.md)
 - [Rubric Grader 示例](https://github.com/OfficeDev/OneNote-Add-in-Rubric-Grader)
 - [Office 加载项平台概述](../overview/office-add-ins.md)

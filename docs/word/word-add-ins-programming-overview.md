@@ -5,12 +5,12 @@ ms.date: 11/05/2019
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: c542f5c751615019dd06a650a02a072383ab2d45
-ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
+ms.openlocfilehash: f894ee0274d39bc8b508436949e557bcc1e785b5
+ms.sourcegitcommit: 4079903c3cc45b7d8c041509a44e9fc38da399b1
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "42324685"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "42596912"
 ---
 # <a name="word-add-ins-overview"></a>Word 加载项概述
 
@@ -86,4 +86,4 @@ Word.run(function (context) {
 
 * [构建 Office 加载项](../overview/office-add-ins-fundamentals.md)
 * [Office 加载项平台概述](../overview/office-add-ins.md)
-* [Word JavaScript API 参考](/office/dev/add-ins/reference/overview/word-add-ins-reference-overview)
+* [Word JavaScript API 参考](../reference/overview/word-add-ins-reference-overview.md)

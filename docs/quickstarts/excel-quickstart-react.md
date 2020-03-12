@@ -4,12 +4,12 @@ description: 了解如何使用 Office JS API 和 React 生成简单的 Excel �
 ms.date: 01/16/2020
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: b7c4fbbb26935bedb5d1d2d09f0137cfda3e34f4
-ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
+ms.openlocfilehash: d98d3145a092b18bdfa60f29aa5dda885b9168ed
+ms.sourcegitcommit: 4079903c3cc45b7d8c041509a44e9fc38da399b1
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "41950626"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "42596842"
 ---
 # <a name="build-an-excel-task-pane-add-in-using-react"></a>使用 React 生成 Excel 任务窗格加载项
 
@@ -75,4 +75,4 @@ ms.locfileid: "41950626"
 * [Excel 加载项教程](../tutorials/excel-tutorial-create-table.md)
 * [Excel JavaScript API 基本编程概念](../excel/excel-add-ins-core-concepts.md)
 * [Excel 加载项代码示例](https://developer.microsoft.com/office/gallery/?filterBy=Samples,Excel)
-* [Excel JavaScript API 参考](/office/dev/add-ins/reference/overview/excel-add-ins-reference-overview)
+* [Excel JavaScript API 参考](../reference/overview/excel-add-ins-reference-overview.md)

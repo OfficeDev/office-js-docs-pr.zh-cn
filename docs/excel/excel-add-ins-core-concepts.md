@@ -3,16 +3,16 @@ title: Excel JavaScript API 基本编程概念
 description: 使用 Excel JavaScript API 生成 Excel 加载项。
 ms.date: 06/20/2019
 localization_priority: Priority
-ms.openlocfilehash: d06536e08482251e2728bfdfb77a6b2d3c96eb56
-ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
+ms.openlocfilehash: 2aa159bbccea79c68ec8cb02fe4548b35e2ec88f
+ms.sourcegitcommit: 4079903c3cc45b7d8c041509a44e9fc38da399b1
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "42325113"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "42596548"
 ---
 # <a name="fundamental-programming-concepts-with-the-excel-javascript-api"></a>Excel JavaScript API 基本编程概念
 
-本文介绍了如何使用 [Excel JavaScript API](/office/dev/add-ins/reference/overview/excel-add-ins-reference-overview) 生成 Excel 2016 或更高版本的加载项。 它引入了一些核心概念，这些概念是使用 API 的基础，并为执行特定任务提供指导，如读取或写入较大区域、更新区域内的所有单元格等等。
+本文介绍了如何使用 [Excel JavaScript API](../reference/overview/excel-add-ins-reference-overview.md) 生成 Excel 2016 或更高版本的加载项。 它引入了一些核心概念，这些概念是使用 API 的基础，并为执行特定任务提供指导，如读取或写入较大区域、更新区域内的所有单元格等等。
 
 ## <a name="asynchronous-nature-of-excel-apis"></a>Excel API 的异步特性
 
@@ -88,7 +88,7 @@ Excel.run(function (context) {
 
 在上一示例中，已设置 `selectedRange`，并且将在调用 `context.sync()` 时加载其 `address` 属性。
 
-由于 `sync()` 是一个返回承诺的异步操作，因此，（在 JavaScript 中）应始终`return`承诺。 这样做可确保在脚本继续运行之前完成 `sync()` 操作。 若要详细了解如何优化使用 `sync()` 时的性能，请参阅 [Excel JavaScript API 性能优化](/office/dev/add-ins/excel/performance)。
+由于 `sync()` 是一个返回承诺的异步操作，因此，（在 JavaScript 中）应始终`return`承诺。 这样做可确保在脚本继续运行之前完成 `sync()` 操作。 若要详细了解如何优化使用 `sync()` 时的性能，请参阅 [Excel JavaScript API 性能优化](../excel/performance.md)。
 
 ### <a name="load"></a>load()
 
@@ -250,6 +250,6 @@ Excel.run(function (context) {
 - [生成首个 Excel 加载项](../quickstarts/excel-quickstart-jquery.md)
 - [Excel 加载项代码示例](https://developer.microsoft.com/office/gallery/?filterBy=Samples,Excel)
 - [Excel JavaScript API 高级编程概念](excel-add-ins-advanced-concepts.md)
-- [Excel JavaScript API 性能优化](/office/dev/add-ins/excel/performance)
-- [Excel JavaScript API 参考](/office/dev/add-ins/reference/overview/excel-add-ins-reference-overview)
+- [Excel JavaScript API 性能优化](../excel/performance.md)
+- [Excel JavaScript API 参考](../reference/overview/excel-add-ins-reference-overview.md)
 - [常见的编码问题和意外的平台行为](../develop/common-coding-issues.md)。

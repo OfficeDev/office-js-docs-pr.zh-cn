@@ -3,12 +3,12 @@ title: Word JavaScript API 基本编程概念
 description: 使用 Word JavaScript API 生成适用于 Word 的加载项。
 ms.date: 07/05/2019
 localization_priority: Priority
-ms.openlocfilehash: 7849780c1aed48152355c3fdbf350d798b2de1f2
-ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
+ms.openlocfilehash: 319570a7790504bdf95c6a66c07db67ca29dec55
+ms.sourcegitcommit: 4079903c3cc45b7d8c041509a44e9fc38da399b1
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "42325015"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "42596765"
 ---
 # <a name="fundamental-programming-concepts-with-the-word-javascript-api"></a>Word JavaScript API 基本编程概念
 
@@ -28,7 +28,7 @@ ms.locfileid: "42325015"
 
 ## <a name="running-word-add-ins"></a>运行 Word 加载项
 
-若要运行加载项，请使用 `Office.initialize` 事件处理程序。 若要详细了解如何初始化加载项，请参阅[了解 API](/office/dev/add-ins/develop/understanding-the-javascript-api-for-office)。
+若要运行加载项，请使用 `Office.initialize` 事件处理程序。 若要详细了解如何初始化加载项，请参阅[了解 API](../develop/understanding-the-javascript-api-for-office.md)。
 
 面向 Word 2016 或更高版本的加载项通过向 `Word.run()` 方法传递一个函数来运行。 传递到 `run` 方法的函数必须具有上下文参数。 此[上下文对象](/javascript/api/word/word.requestcontext)不同于从 Office 对象获取的上下文对象，但它同样可以用于与 Word 运行时环境交互。 此上下文对象可提供对 Word JavaScript API 对象模型的访问。 以下示例显示如何使用 `Word.run()` 方法初始化和运行 Word 加载项。
 

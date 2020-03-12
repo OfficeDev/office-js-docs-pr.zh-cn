@@ -4,16 +4,16 @@ description: ''
 ms.date: 07/17/2019
 ms.prod: onenote
 localization_priority: Priority
-ms.openlocfilehash: 00bf9f23c307a6094345b753d7cccf1c10be7c32
-ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
+ms.openlocfilehash: d936d5f0c7c40cf79442eac76dbb9d94748a37a8
+ms.sourcegitcommit: 4079903c3cc45b7d8c041509a44e9fc38da399b1
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "41950962"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "42596947"
 ---
 # <a name="onenote-javascript-api-requirement-sets"></a>OneNote JavaScript API 要求集
 
-要求集是指各组已命名的 API 成员。Office 加载项使用清单中指定的要求集或执行运行时检查，以确定 Office 主机是否支持加载项所需的 API。有关详细信息，请参阅 [Office 版本和要求集](/office/dev/add-ins/develop/office-versions-and-requirement-sets)。
+要求集是指各组已命名的 API 成员。Office 加载项使用清单中指定的要求集或执行运行时检查，以确定 Office 主机是否支持加载项所需的 API。有关详细信息，请参阅 [Office 版本和要求集](../../develop/office-versions-and-requirement-sets.md)。
 
 下表列出了 OneNote 要求集、支持这些要求集的 Office 主机应用程序，以及这些应用程序的内部版本或发布日期。
 
@@ -27,7 +27,7 @@ ms.locfileid: "41950962"
 
 ## <a name="onenote-javascript-api-11"></a>OneNote JavaScript API 1.1
 
-OneNote JavaScript API 1.1 是该 API 的第一版。 有关此 API 的详细信息，请参阅 [OneNote JavaScript API 编程概述](/office/dev/add-ins/onenote/onenote-add-ins-programming-overview)。
+OneNote JavaScript API 1.1 是该 API 的第一版。 有关此 API 的详细信息，请参阅 [OneNote JavaScript API 编程概述](../../onenote/onenote-add-ins-programming-overview.md)。
 
 ## <a name="runtime-requirement-support-check"></a>运行时要求支持检查
 
@@ -63,6 +63,6 @@ else {
 ## <a name="see-also"></a>另请参阅
 
 - [OneNote JavaScript API 参考文档](/javascript/api/onenote)
-- [Office 版本和要求集](/office/dev/add-ins/develop/office-versions-and-requirement-sets)
-- [指定 Office 主机和 API 要求](/office/dev/add-ins/develop/specify-office-hosts-and-api-requirements)
-- [Office 外接程序 XML 清单](/office/dev/add-ins/develop/add-in-manifests)
+- [Office 版本和要求集](../../develop/office-versions-and-requirement-sets.md)
+- [指定 Office 主机和 API 要求](../../develop/specify-office-hosts-and-api-requirements.md)
+- [Office 外接程序 XML 清单](../../develop/add-in-manifests.md)

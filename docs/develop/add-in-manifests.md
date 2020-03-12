@@ -3,12 +3,12 @@ title: Office 加载项 XML 清单
 description: ''
 ms.date: 01/06/2020
 localization_priority: Priority
-ms.openlocfilehash: 2e31286026dedc0c8b67beb6ff6eabfe6d5f8f59
-ms.sourcegitcommit: 6c7c98f085dd20f827e0c388e672993412944851
+ms.openlocfilehash: e3a74f3047017b8aa7b5daac1cb50fe484c99ed1
+ms.sourcegitcommit: 4079903c3cc45b7d8c041509a44e9fc38da399b1
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/04/2020
-ms.locfileid: "42413746"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "42596702"
 ---
 # <a name="office-add-ins-xml-manifest"></a>Office 加载项 XML 清单
 
@@ -72,61 +72,61 @@ _\*\* 仅通过 AppSource 分发的加载项才需要 SupportUrl。_
 
 <!-- Links for above table -->
 
-[officeapp]: /office/dev/add-ins/reference/manifest/officeapp
-[id]: /office/dev/add-ins/reference/manifest/id
-[version]: /office/dev/add-ins/reference/manifest/version
-[providername]: /office/dev/add-ins/reference/manifest/providername
-[defaultlocale]: /office/dev/add-ins/reference/manifest/defaultlocale
-[displayname]: /office/dev/add-ins/reference/manifest/displayname
-[description]: /office/dev/add-ins/reference/manifest/description
-[iconurl]: /office/dev/add-ins/reference/manifest/iconurl
-[supporturl]: /office/dev/add-ins/reference/manifest/supporturl
-[defaultsettings (contentapp)]: /office/dev/add-ins/reference/manifest/defaultsettings
-[defaultsettings (taskpaneapp)]: /office/dev/add-ins/reference/manifest/defaultsettings
-[sourcelocation (contentapp)]: /office/dev/add-ins/reference/manifest/sourcelocation
-[sourcelocation (taskpaneapp)]: /office/dev/add-ins/reference/manifest/sourcelocation
-[desktopsettings]: https://msdn.microsoft.com/library/da9fd085-b8cc-2be0-d329-2aa1ef5d3f1c(Office.15).aspx
-[sourcelocation (mailapp)]: https://msdn.microsoft.com/library/3792d389-bebd-d19a-9d90-35b7a0bfc623%28Office.15%29.aspx
-[permissions (contentapp)]: /office/dev/add-ins/reference/manifest/permissions
-[permissions (taskpaneapp)]: /office/dev/add-ins/reference/manifest/permissions
-[permissions (mailapp)]: /office/dev/add-ins/reference/manifest/permissions
-[rule (rulecollection)]: /office/dev/add-ins/reference/manifest/rule
-[rule (mailapp)]: /office/dev/add-ins/reference/manifest/rule
-[requirements (mailapp)*]: /office/dev/add-ins/reference/manifest/requirements
-[set*]: /office/dev/add-ins/reference/manifest/set
-[sets (mailapprequirements)*]: /office/dev/add-ins/reference/manifest/sets
-[form*]: /office/dev/add-ins/reference/manifest/form
-[formsettings*]: /office/dev/add-ins/reference/manifest/formsettings
-[sets (requirements)*]: /office/dev/add-ins/reference/manifest/sets
-[hosts*]: /office/dev/add-ins/reference/manifest/hosts
+[officeapp]: ../reference/manifest/officeapp.md
+[id]: ../reference/manifest/id.md
+[version]: ../reference/manifest/version.md
+[providername]: ../reference/manifest/providername.md
+[defaultlocale]: ../reference/manifest/defaultlocale.md
+[displayname]: ../reference/manifest/displayname.md
+[description]: ../reference/manifest/description.md
+[iconurl]: ../reference/manifest/iconurl.md
+[supporturl]: ../reference/manifest/supporturl.md
+[defaultsettings (contentapp)]: ../reference/manifest/defaultsettings.md
+[defaultsettings (taskpaneapp)]: ../reference/manifest/defaultsettings.md
+[sourcelocation (contentapp)]: ../reference/manifest/sourcelocation.md
+[sourcelocation (taskpaneapp)]: ../reference/manifest/sourcelocation.md
+[desktopsettings]: /previous-versions/office/fp179684%28v=office.15%29
+[sourcelocation (mailapp)]: /previous-versions/office/fp123668%28v=office.15%29
+[permissions (contentapp)]: ../reference/manifest/permissions.md
+[permissions (taskpaneapp)]: ../reference/manifest/permissions.md
+[permissions (mailapp)]: ../reference/manifest/permissions.md
+[rule (rulecollection)]: ../reference/manifest/rule.md
+[rule (mailapp)]: ../reference/manifest/rule.md
+[requirements (mailapp)*]: ../reference/manifest/requirements.md
+[set*]: ../reference/manifest/set.md
+[sets (mailapprequirements)*]: ../reference/manifest/sets.md
+[form*]: ../reference/manifest/form.md
+[formsettings*]: ../reference/manifest/formsettings.md
+[sets (requirements)*]: ../reference/manifest/sets.md
+[hosts*]: ../reference/manifest/hosts.md
 
 ## <a name="hosting-requirements"></a>托管要求
 
 所有图像 URI（如用于[外接程序命令][]的 URI）都必须支持缓存。 托管图像的服务器不得在 HTTP 响应中返回指定 `no-cache`、`no-store` 或类似选项的 `Cache-Control` 标头。
 
-所有 URL（如 [SourceLocation](/office/dev/add-ins/reference/manifest/sourcelocation) 元素中指定的源文件位置）都应**受 SSL 保护 (HTTPS)**。 [!include[HTTPS guidance](../includes/https-guidance.md)]
+所有 URL（如 [SourceLocation](../reference/manifest/sourcelocation.md) 元素中指定的源文件位置）都应**受 SSL 保护 (HTTPS)**。 [!include[HTTPS guidance](../includes/https-guidance.md)]
 
 ## <a name="best-practices-for-submitting-to-appsource"></a>关于提交到 AppSource 的最佳做法
 
 确保外接程序 ID 有效且具有唯一 GUID。Web 上提供可用于创建唯一 GUID 的各种 GUID 生成器工具。
 
-提交到 AppSource 的加载项还必须包括 [SupportUrl](/office/dev/add-ins/reference/manifest/supporturl) 元素。 有关详细信息，请参阅[提交到 AppSource 的应用和加载项的验证策略](/office/dev/store/validation-policies)。
+提交到 AppSource 的加载项还必须包括 [SupportUrl](../reference/manifest/supporturl.md) 元素。 有关详细信息，请参阅[提交到 AppSource 的应用和加载项的验证策略](/office/dev/store/validation-policies)。
 
-仅使用 [AppDomain](/office/dev/add-ins/reference/manifest/appdomains) 元素指定域（除了在 [SourceLocation](/office/dev/add-ins/reference/manifest/sourcelocation) 元素中指定的用于身份验证方案的域）。
+仅使用 [AppDomain](../reference/manifest/appdomains.md) 元素指定域（除了在 [SourceLocation](../reference/manifest/sourcelocation.md) 元素中指定的用于身份验证方案的域）。
 
 ## <a name="specify-domains-you-want-to-open-in-the-add-in-window"></a>指定要在外接程序窗口中打开的域
 
-在 Office 网页版中运行时，可以将任务窗格导航到任何 URL。 但在桌面平台中，如果外接程序尝试转到托管起始页（如清单文件的 [SourceLocation](/office/dev/add-ins/reference/manifest/sourcelocation) 元素中所指定的）的域之外的域中的 URL，则该 URL 将在 Office 主机应用程序的外接程序窗格外的新浏览器窗口中打开。
+在 Office 网页版中运行时，可以将任务窗格导航到任何 URL。 但在桌面平台中，如果外接程序尝试转到托管起始页（如清单文件的 [SourceLocation](../reference/manifest/sourcelocation.md) 元素中所指定的）的域之外的域中的 URL，则该 URL 将在 Office 主机应用程序的外接程序窗格外的新浏览器窗口中打开。
 
-若要重写此（桌面版 Office）操作，请在清单文件的 [AppDomains](/office/dev/add-ins/reference/manifest/appdomains) 元素中指定的域列表中指定要在外接程序窗口中打开的每个域。 如果加载项尝试转至该列表的域中的 URL，则它将在 Office 网页版和桌面版中的任务窗口中打开。 如果它尝试转至列表之外的域中的 URL，则在桌面版 Office 中，该 URL 将在新的浏览器窗口中（外接程序窗格之外）打开。
+若要重写此（桌面版 Office）操作，请在清单文件的 [AppDomains](../reference/manifest/appdomains.md) 元素中指定的域列表中指定要在外接程序窗口中打开的每个域。 如果加载项尝试转至该列表的域中的 URL，则它将在 Office 网页版和桌面版中的任务窗口中打开。 如果它尝试转至列表之外的域中的 URL，则在桌面版 Office 中，该 URL 将在新的浏览器窗口中（外接程序窗格之外）打开。
 
 > [!NOTE]
 > 该行为有两个例外情况：
-> 
+>
 > - 它仅适用于外接程序的根窗格。 如果外接程序页面中嵌入有 iframe，则可以将该 iframe 定向到任何 URL，不论它是否列在 **AppDomains** 中，即使在桌面版 Office 中也是如此。
-> - 使用 [displayDialogAsync](/javascript/api/office/office.ui?view=common-js#displaydialogasync-startaddress--options--callback-) API 打开对话框时，传递到方法的 URL 必须与外接程序位于相同的域，但是之后对话框可以定向到任意 URL，无论其是否列入 **AppDomains** 甚至桌面 Office 中。 
+> - 使用 [displayDialogAsync](/javascript/api/office/office.ui?view=common-js#displaydialogasync-startaddress--options--callback-) API 打开对话框时，传递到方法的 URL 必须与外接程序位于相同的域，但是之后对话框可以定向到任意 URL，无论其是否列入 **AppDomains** 甚至桌面 Office 中。
 
-以下 XML 清单示例在 **SourceLocation** 元素中指定的 `https://www.contoso.com` 域中托管其外接程序页面。 它还指定 **AppDomains** 元素列表内 [AppDomain](/office/dev/add-ins/reference/manifest/appdomain) 元素中的 `https://www.northwindtraders.com` 域。 如果外接程序转至 www.northwindtraders.com 域中的页面，则该页面将在外接程序窗格中打开，即使在 Office 桌面版中也是如此。
+以下 XML 清单示例在 **SourceLocation** 元素中指定的 `https://www.contoso.com` 域中托管其外接程序页面。 它还指定 **AppDomains** 元素列表内 [AppDomain](../reference/manifest/appdomain.md) 元素中的 `https://www.northwindtraders.com` 域。 如果外接程序转至 www.northwindtraders.com 域中的页面，则该页面将在外接程序窗格中打开，即使在 Office 桌面版中也是如此。
 
 ```XML
 <?xml version="1.0" encoding="UTF-8"?>
@@ -151,7 +151,7 @@ _\*\* 仅通过 AppSource 分发的加载项才需要 SupportUrl。_
 
 ## <a name="specify-domains-from-which-officejs-api-calls-are-made"></a>指定从中执行 Office .js API 调用的域
 
-你的加载项可以从清单文件的 [SourceLocation](/office/dev/add-ins/reference/manifest/sourcelocation) 元素中引用的域执行 Office.js API 调用。 如果加载项中有需要访问 Office.js API 的其他 IFrame，请将该源 URL 的域添加到在清单文件的 [AppDomains](/office/dev/add-ins/reference/manifest/appdomains) 元素中指定的列表。 如果有一个未包含在 `AppDomains` 列表中且具有源的 IFrame 尝试执行 Office.js API 调用，则加载项将收到[“权限被拒绝”错误](../reference/javascript-api-for-office-error-codes.md)。 
+你的加载项可以从清单文件的 [SourceLocation](../reference/manifest/sourcelocation.md) 元素中引用的域执行 Office.js API 调用。 如果加载项中有需要访问 Office.js API 的其他 IFrame，请将该源 URL 的域添加到在清单文件的 [AppDomains](../reference/manifest/appdomains.md) 元素中指定的列表。 如果有一个未包含在 `AppDomains` 列表中且具有源的 IFrame 尝试执行 Office.js API 调用，则加载项将收到[“权限被拒绝”错误](../reference/javascript-api-for-office-error-codes.md)。
 
 ## <a name="manifest-v11-xml-file-examples-and-schemas"></a>清单 v1.1 XML 文件示例和架构
 

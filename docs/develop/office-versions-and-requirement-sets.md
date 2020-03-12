@@ -3,12 +3,12 @@ title: Office 版本和要求集
 description: ''
 ms.date: 01/14/2020
 localization_priority: Priority
-ms.openlocfilehash: 946068681070e8f482a8501639f40de4e13a7513
-ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
+ms.openlocfilehash: 95c647b3362fb98402c5d8d20c0975580ae45131
+ms.sourcegitcommit: 4079903c3cc45b7d8c041509a44e9fc38da399b1
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "42325134"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "42596737"
 ---
 # <a name="office-versions-and-requirement-sets"></a>Office 版本和要求集
 
@@ -35,30 +35,30 @@ Office 加载项可使用 API 要求集，以确定 Office 主机是否支持需
 
 加载项使用的要求集中的 API 只能是受运行加载项的 Office 主机版本支持的 API。 若要确切了解适用于特定 Office 主机版本的要求集，请参阅以下主机专用要求集文章：
 
-- [Excel JavaScript API 要求集](/office/dev/add-ins/reference/requirement-sets/excel-api-requirement-sets)（ExcelApi、[CustomFunctionsRuntime](../excel/custom-functions-architecture.md)）
-- [Word JavaScript API 要求集](/office/dev/add-ins/reference/requirement-sets/word-api-requirement-sets) (WordApi)
-- [OneNote JavaScript API 要求集](/office/dev/add-ins/reference/requirement-sets/onenote-api-requirement-sets) (OneNoteApi)
-- [PowerPoint JavaScript API 要求集](/office/dev/add-ins/reference/requirement-sets/powerpoint-api-requirement-sets) (PowerPointApi)
-- [了解 Outlook API 要求集](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets) (MailBox)
+- [Excel JavaScript API 要求集](../reference/requirement-sets/excel-api-requirement-sets.md)（ExcelApi、[CustomFunctionsRuntime](../excel/custom-functions-architecture.md)）
+- [Word JavaScript API 要求集](../reference/requirement-sets/word-api-requirement-sets.md) (WordApi)
+- [OneNote JavaScript API 要求集](../reference/requirement-sets/onenote-api-requirement-sets.md) (OneNoteApi)
+- [PowerPoint JavaScript API 要求集](../reference/requirement-sets/powerpoint-api-requirement-sets.md) (PowerPointApi)
+- [了解 Outlook API 要求集](../reference/requirement-sets/outlook-api-requirement-sets.md) (MailBox)
 
 一些要求集包含任何 Office 主机都能使用的 API。 若要了解这些要求集，请参阅以下文章：
 
-- [Office 通用要求集](/office/dev/add-ins/reference/requirement-sets/office-add-in-requirement-sets)
-- [加载项命令要求集](/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets)
-- [对话框 API 要求集](/office/dev/add-ins/reference/requirement-sets/dialog-api-requirement-sets)
-- [标识 API 要求集](/office/dev/add-ins/reference/requirement-sets/identity-api-requirement-sets)
+- [Office 通用要求集](../reference/requirement-sets/office-add-in-requirement-sets.md)
+- [加载项命令要求集](../reference/requirement-sets/add-in-commands-requirement-sets.md)
+- [对话框 API 要求集](../reference/requirement-sets/dialog-api-requirement-sets.md)
+- [标识 API 要求集](../reference/requirement-sets/identity-api-requirement-sets.md)
 
 要求集的版本号（如 `ExcelApi 1.1` 中的“1.1”）是相对于 Office 主机而言。 给定要求集的版本号（例如，`ExcelApi 1.1`）既不对应于 Office.js 的版本号，也不对应于其他 Office 主机（例如，Word、Outlook 等）的要求集。  各个 Office 主机的要求集的发布速度和时间不同。 例如，`ExcelApi 1.5` 要求集先于 `WordApi 1.3` 要求集发布。
 
-Office JavaScript API 库 (Office.js) 包含当前可用的所有要求集。 虽然有 `ExcelApi 1.3` 和 `WordApi 1.3` 等要求集，但并无 `Office.js 1.3` 要求集。 最新版 Office.js 作为一个通过内容传送网络 (CDN) 提供的 Office 终结点进行维护。 若要详细了解 Office.js CDN（包括如何处理版本控制和向后兼容性），请参阅[了解 Office JavaScript API](/office/dev/add-ins/develop/understanding-the-javascript-api-for-office)。
+Office JavaScript API 库 (Office.js) 包含当前可用的所有要求集。 虽然有 `ExcelApi 1.3` 和 `WordApi 1.3` 等要求集，但并无 `Office.js 1.3` 要求集。 最新版 Office.js 作为一个通过内容传送网络 (CDN) 提供的 Office 终结点进行维护。 若要详细了解 Office.js CDN（包括如何处理版本控制和向后兼容性），请参阅[了解 Office JavaScript API](../develop/understanding-the-javascript-api-for-office.md)。
 
 ## <a name="specify-office-hosts-and-requirement-sets"></a>指定 Office 主机和要求集
 
-可通过多种方法来指定加载项需要的 Office 主机和要求集。  有关详细信息，请参阅[指定 Office 主机和 API 要求](/office/dev/add-ins/develop/specify-office-hosts-and-api-requirements)
+可通过多种方法来指定加载项需要的 Office 主机和要求集。  有关详细信息，请参阅[指定 Office 主机和 API 要求](../develop/specify-office-hosts-and-api-requirements.md)
 
 ## <a name="see-also"></a>另请参阅
 
-- [指定 Office 主机和 API 要求](/office/dev/add-ins/develop/specify-office-hosts-and-api-requirements)
-- [安装最新版 Office](/office/dev/add-ins/develop/install-latest-office-version)
+- [指定 Office 主机和 API 要求](../develop/specify-office-hosts-and-api-requirements.md)
+- [安装最新版 Office](../develop/install-latest-office-version.md)
 - [Office 365 专业增强版的更新通道概述](/deployoffice/overview-of-update-channels-for-office-365-proplus)
 - [通过 Office 365 充分利用 Office](https://products.office.com/compare-all-microsoft-office-products?tab=2)

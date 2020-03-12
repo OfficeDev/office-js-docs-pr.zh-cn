@@ -4,12 +4,12 @@ description: 了解如何使用 Office JS API 生成简单的 OneNote 任务窗�
 ms.date: 01/16/2020
 ms.prod: onenote
 localization_priority: Priority
-ms.openlocfilehash: cdf1dbd3f234b77bd406a66927b8fad3d5ef4859
-ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
+ms.openlocfilehash: d95cdca487b8f69ac8251cf007a92b99a6069885
+ms.sourcegitcommit: 4079903c3cc45b7d8c041509a44e9fc38da399b1
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "42325296"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "42596611"
 ---
 # <a name="build-your-first-onenote-task-pane-add-in"></a>生成首个 OneNote 任务窗格加载项
 
@@ -128,6 +128,6 @@ try {
 * [构建 Office 加载项](../overview/office-add-ins-fundamentals.md)
 * [开发 Office 加载项](../develop/develop-overview.md)
 - [OneNote JavaScript API 编程概述](../onenote/onenote-add-ins-programming-overview.md)
-- [OneNote JavaScript API 参考](/office/dev/add-ins/reference/overview/onenote-add-ins-javascript-reference)
+- [OneNote JavaScript API 参考](../reference/overview/onenote-add-ins-javascript-reference.md)
 - [Rubric Grader 示例](https://github.com/OfficeDev/OneNote-Add-in-Rubric-Grader)
 

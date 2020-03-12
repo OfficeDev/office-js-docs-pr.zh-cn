@@ -1,19 +1,19 @@
 ---
 title: Word JavaScript API 要求集
 description: 针对 Word 内部版本的 Office 加载项要求集信息
-ms.date: 01/06/2020
+ms.date: 03/11/2020
 ms.prod: word
 localization_priority: Priority
-ms.openlocfilehash: c90daafe46d301b404ee902b38bb7417562adc44
-ms.sourcegitcommit: abe8188684b55710261c69e206de83d3a6bd2ed3
+ms.openlocfilehash: 41cb1189bba31c83958c1c1284f347b615a5a220
+ms.sourcegitcommit: 05b73cdec5f4db7f0b8d48a5a552ee296a0332ca
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "40969529"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "42600709"
 ---
 # <a name="word-javascript-api-requirement-sets"></a>Word JavaScript API 要求集
 
-要求集是指各组已命名的 API 成员。Office 加载项使用清单中指定的要求集或执行运行时检查，以确定 Office 主机是否支持加载项所需的 API。有关详细信息，请参阅 [Office 版本和要求集](/office/dev/add-ins/develop/office-versions-and-requirement-sets)。
+要求集是指各组已命名的 API 成员。Office 加载项使用清单中指定的要求集或执行运行时检查，以确定 Office 主机是否支持加载项所需的 API。有关详细信息，请参阅 [Office 版本和要求集](../../develop/office-versions-and-requirement-sets.md)。
 
 ## <a name="requirement-set-availability"></a>要求集可用性
 
@@ -41,13 +41,11 @@ Word 加载项可在多个 Office 版本中运行，包括 Windows 版 Office 20
 
 有关 Office 版本和内部版本号的详细信息，请参阅：
 
-- [更新频道发布的 Office 365 客户端版本号和内部版本号](https://support.office.com/article/version-and-build-numbers-of-update-channel-releases-ae942449-1fca-4484-898b-a933ea23def7)
-- [使用的是哪一版 Office？](https://support.office.com/article/What-version-of-Office-am-I-using-932788b8-a3ce-44bf-bb09-e334518b8b19)
-- [在哪里可以找到 Office 365 客户端应用程序的版本号和内部版本号](https://support.office.com/article/version-and-build-numbers-of-update-channel-releases-ae942449-1fca-4484-898b-a933ea23def7)
+[!INCLUDE [Links to get Office versions and how to find Office client version](../../includes/links-get-office-versions-builds.md)]
 
 ## <a name="see-also"></a>另请参阅
 
 - [Word JavaScript API 参考文档](/javascript/api/word)
-- [Office 版本和要求集](/office/dev/add-ins/develop/office-versions-and-requirement-sets)
-- [指定 Office 主机和 API 要求](/office/dev/add-ins/develop/specify-office-hosts-and-api-requirements)
-- [Office 外接程序 XML 清单](/office/dev/add-ins/develop/add-in-manifests)
+- [Office 版本和要求集](../../develop/office-versions-and-requirement-sets.md)
+- [指定 Office 主机和 API 要求](../../develop/specify-office-hosts-and-api-requirements.md)
+- [Office 外接程序 XML 清单](../../develop/add-in-manifests.md)

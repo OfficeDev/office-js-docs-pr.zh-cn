@@ -4,12 +4,12 @@ description: 了解如何使用 Office JS API 生成简单的 Word 任务窗格�
 ms.date: 01/16/2020
 ms.prod: word
 localization_priority: Priority
-ms.openlocfilehash: 2206f18cd752bb1723d303d3fc862c72907d0afb
-ms.sourcegitcommit: 8bce9c94540ed484d0749f07123dc7c72a6ca126
+ms.openlocfilehash: 90416db9847f5f78b38fb1c22c4a6751bf95d5e0
+ms.sourcegitcommit: 4079903c3cc45b7d8c041509a44e9fc38da399b1
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/22/2020
-ms.locfileid: "41265669"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "42596821"
 ---
 # <a name="build-your-first-word-task-pane-add-in"></a>生成首个 Word 任务窗格加载项
 
@@ -21,7 +21,7 @@ _适用于：Windows 版 Word 2016 或更高版本、iPad 版 Word 和 Mac 版 W
 
 [!include[Choose your editor](../includes/quickstart-choose-editor.md)]
 
-# <a name="yeoman-generatortabyeomangenerator"></a>[Yeoman 生成器](#tab/yeomangenerator)
+# <a name="yeoman-generator"></a>[Yeoman 生成器](#tab/yeomangenerator)
 
 [!include[Redirect to the single sign-on (SSO) quick start](../includes/sso-quickstart-reference.md)]
 
@@ -94,7 +94,7 @@ _适用于：Windows 版 Word 2016 或更高版本、iPad 版 Word 和 Mac 版 W
 
 恭喜！已成功创建 Word 任务窗格加载项！ 接下来，请详细了解 Word 加载项功能，并跟着 [Word 加载项教程](../tutorials/word-tutorial.md)一起操作，生成更复杂的加载项。
 
-# <a name="visual-studiotabvisualstudio"></a>[Visual Studio](#tab/visualstudio)
+# <a name="visual-studio"></a>[Visual Studio](#tab/visualstudio)
 
 ### <a name="prerequisites"></a>先决条件
 
@@ -320,4 +320,4 @@ _适用于：Windows 版 Word 2016 或更高版本、iPad 版 Word 和 Mac 版 W
 * [开发 Office 加载项](../develop/develop-overview.md)
 * [Word 加载项概述](../word/word-add-ins-programming-overview.md)
 * [Word 加载项代码示例](https://developer.microsoft.com/en-us/office/gallery/?filterBy=Samples,Word)
-* [Word JavaScript API 参考](/office/dev/add-ins/reference/overview/word-add-ins-reference-overview)
+* [Word JavaScript API 参考](../reference/overview/word-add-ins-reference-overview.md)
