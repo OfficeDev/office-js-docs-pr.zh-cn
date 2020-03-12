@@ -1,21 +1,21 @@
 ---
 title: Outlook 外接程序 API 预览要求集
 description: ''
-ms.date: 12/17/2019
+ms.date: 03/04/2020
 localization_priority: Normal
-ms.openlocfilehash: 87c15ac889a955412e6a8350baaed8611fdb5164
-ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
+ms.openlocfilehash: 4365dab3d8dd1ddb876536b3030926d68a89ac49
+ms.sourcegitcommit: a0262ea40cd23f221e69bcb0223110f011265d13
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "42325218"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "42605671"
 ---
 # <a name="outlook-add-in-api-preview-requirement-set"></a>Outlook 外接程序 API 预览要求集
 
 Office JavaScript API 的 Outlook 外接程序 API 子集包括可以在 Outlook 外接程序中使用的对象、方法、属性和事件。
 
 > [!IMPORTANT]
-> 本文档适用于**预览**[要求集](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)。 此要求集尚未完全实现，客户端不会准确报告对它的支持。 不应在外接程序清单中指定此要求集。
+> 本文档适用于**预览**[要求集](../../requirement-sets/outlook-api-requirement-sets.md)。 此要求集尚未完全实现，客户端不会准确报告对它的支持。 不应在外接程序清单中指定此要求集。
 
 [!INCLUDE [Information about using preview APIs](../../../includes/using-preview-apis-host.md)]
 
@@ -24,6 +24,26 @@ Office JavaScript API 的 Outlook 外接程序 API 子集包括可以在 Outlook
 ## <a name="features-in-preview"></a>预览阶段的功能
 
 以下是预览版中的功能。
+
+### <a name="append-on-send"></a>发送时追加
+
+#### <a name="officebodyappendonsendasync"></a>[AppendOnSendAsync](/javascript/api/outlook/office.body?view=outlook-js-preview#appendonsendasync-data--options--callback-)
+
+向`Body`对象添加了一个新函数，该函数在撰写模式下将数据追加到项正文的末尾。
+
+**适用于**：Windows 版 Outlook（已连接到 Office 365 订阅）
+
+#### <a name="extendedpermissions"></a>[ExtendedPermissions](../../manifest/extendedpermissions.md)
+
+向清单添加了一个新元素，其中`AppendOnSend`扩展权限必须包含在扩展权限的集合中。
+
+**适用于**：Windows 版 Outlook（已连接到 Office 365 订阅）
+
+<br>
+
+---
+
+---
 
 ### <a name="integration-with-actionable-messages"></a>与可操作邮件集成
 
@@ -59,7 +79,7 @@ Office JavaScript API 的 Outlook 外接程序 API 子集包括可以在 Outlook
 
 ### <a name="sso"></a>SSO
 
-#### <a name="officeruntimeauthgetaccesstoken"></a>[OfficeRuntime.auth.getAccessToken](/office/dev/add-ins/develop/sso-in-office-add-ins#sso-api-reference)
+#### <a name="officeruntimeauthgetaccesstoken"></a>[OfficeRuntime.auth.getAccessToken](../../../develop/sso-in-office-add-ins.md#sso-api-reference)
 
 添加了对 `getAccessToken` 的访问，使外接程序[能够访问](../../../outlook/authenticate-a-user-with-an-sso-token.md) Microsoft Graph API 的访问令牌。
 

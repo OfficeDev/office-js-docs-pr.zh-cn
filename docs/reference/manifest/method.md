@@ -3,12 +3,12 @@ title: 清单文件中的 Method 元素
 description: ''
 ms.date: 03/19/2019
 localization_priority: Normal
-ms.openlocfilehash: 2bcc24abf269f5d6c44c03e738bac480fd05d5ca
-ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
+ms.openlocfilehash: 74b7a8b3d0f8511d21eb0df150500850e8b93fe9
+ms.sourcegitcommit: 4079903c3cc45b7d8c041509a44e9fc38da399b1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "42324846"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "42596891"
 ---
 # <a name="method-element"></a>Method 元素
 
@@ -34,8 +34,7 @@ ms.locfileid: "42324846"
 
 ## <a name="remarks"></a>说明
 
-邮件`Methods`外`Method`接程序不支持和元素。有关要求集的详细信息，请参阅[Office 版本和要求集](/office/dev/add-ins/develop/office-versions-and-requirement-sets)。
+邮件`Methods`外`Method`接程序不支持和元素。有关要求集的详细信息，请参阅[Office 版本和要求集](../../develop/office-versions-and-requirement-sets.md)。
 
-> [!IMPORTANT] 
-> 因为无法指定各个方法的最低版本要求，所以为了确保在运行时提供可用的方法，当您在外接程序的脚本中调用该方法时，还应该使用 **if** 语句。 有关如何执行此操作的详细信息，请参阅[了解 Office JAVASCRIPT API](/office/dev/add-ins/develop/understanding-the-javascript-api-for-office)。
-
+> [!IMPORTANT]
+> 因为无法指定各个方法的最低版本要求，所以为了确保在运行时提供可用的方法，当您在外接程序的脚本中调用该方法时，还应该使用 **if** 语句。 有关如何执行此操作的详细信息，请参阅[了解 Office JAVASCRIPT API](../../develop/understanding-the-javascript-api-for-office.md)。

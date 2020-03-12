@@ -4,11 +4,11 @@ description: ''
 ms.date: 12/16/2019
 localization_priority: Normal
 ms.openlocfilehash: 7cc8e6acc60c28b44ec7a2b91bb5e388b2618a31
-ms.sourcegitcommit: a3ddfdb8a95477850148c4177e20e56a8673517c
+ms.sourcegitcommit: 6c7c98f085dd20f827e0c388e672993412944851
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "42165382"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "42554720"
 ---
 # <a name="office"></a>Office
 
@@ -31,10 +31,10 @@ ms.locfileid: "42165382"
 
 | 枚举 | 型号 | 返回类型 | 最低<br>要求集 |
 |---|---|---|:---:|
-| [AsyncResultStatus](#asyncresultstatus-string) | 撰写<br>读取 | String | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| [CoercionType](#coerciontype-string) | 撰写<br>读取 | String | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| [EventType](#eventtype-string) | 撰写<br>读取 | String | [1.5](../requirement-set-1.5/outlook-requirement-set-1.5.md) |
-| [SourceProperty](#sourceproperty-string) | 撰写<br>读取 | String | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [AsyncResultStatus](#asyncresultstatus-string) | 撰写<br>读取 | 字符串 | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [CoercionType](#coerciontype-string) | 撰写<br>读取 | 字符串 | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [EventType](#eventtype-string) | 撰写<br>读取 | 字符串 | [1.5](../requirement-set-1.5/outlook-requirement-set-1.5.md) |
+| [SourceProperty](#sourceproperty-string) | 撰写<br>读取 | 字符串 | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 
 ### <a name="namespaces"></a>命名空间
 
@@ -48,14 +48,14 @@ ms.locfileid: "42165382"
 
 ##### <a name="type"></a>类型
 
-*   String
+*   字符串
 
 ##### <a name="properties"></a>属性：
 
 |名称| 类型| 说明|
 |---|---|---|
-|`Succeeded`| String|调用成功。|
-|`Failed`| String|调用失败。|
+|`Succeeded`| 字符串|调用成功。|
+|`Failed`| 字符串|调用失败。|
 
 ##### <a name="requirements"></a>Requirements
 
@@ -75,14 +75,14 @@ ms.locfileid: "42165382"
 
 ##### <a name="type"></a>类型
 
-*   String
+*   字符串
 
 ##### <a name="properties"></a>属性：
 
 |名称| 类型| 说明|
 |---|---|---|
-|`Html`| String|请求以 HTML 格式返回的数据。|
-|`Text`| String|请求以文本格式返回的数据。|
+|`Html`| 字符串|请求以 HTML 格式返回的数据。|
+|`Text`| 字符串|请求以文本格式返回的数据。|
 
 ##### <a name="requirements"></a>Requirements
 
@@ -102,13 +102,13 @@ ms.locfileid: "42165382"
 
 ##### <a name="type"></a>类型
 
-*   String
+*   字符串
 
 ##### <a name="properties"></a>属性：
 
 | 名称 | 类型 | 说明 | 最低要求集 |
 |---|---|---|:---:|
-|`ItemChanged`| String | 在任务窗格固定时，将选择不同的 Outlook 项进行查看。 | 1.5 |
+|`ItemChanged`| 字符串 | 在任务窗格固定时，将选择不同的 Outlook 项进行查看。 | 1.5 |
 
 ##### <a name="requirements"></a>Requirements
 
@@ -128,13 +128,13 @@ ms.locfileid: "42165382"
 
 ##### <a name="type"></a>类型
 
-*   String
+*   字符串
 
 ##### <a name="properties"></a>属性：
 
 |名称| 类型| 说明|
 |---|---|---|
-|`Body`| String|数据源来自邮件的正文。|
+|`Body`| 字符串|数据源来自邮件的正文。|
 |`Subject`| String|数据源来自邮件的主题。|
 
 ##### <a name="requirements"></a>Requirements

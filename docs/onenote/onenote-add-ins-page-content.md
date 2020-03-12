@@ -3,12 +3,12 @@ title: 处理 OneNote 页面内容
 description: ''
 ms.date: 03/19/2019
 localization_priority: Normal
-ms.openlocfilehash: f60cdee7eb549acc0f2c84a1aa9acea7fe77274a
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: 94c12815823e2860615fc731f460f08a468756e6
+ms.sourcegitcommit: 4079903c3cc45b7d8c041509a44e9fc38da399b1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32448435"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "42596856"
 ---
 # <a name="work-with-onenote-page-content"></a>处理 OneNote 页面内容
 
@@ -61,6 +61,6 @@ OneNote 会尽力将 HTML 翻译成页面内容，同时确保用户的安全性
 ## <a name="see-also"></a>另请参阅
 
 - [OneNote JavaScript API 编程概述](onenote-add-ins-programming-overview.md)
-- [OneNote JavaScript API 参考](/office/dev/add-ins/reference/overview/onenote-add-ins-javascript-reference)
+- [OneNote JavaScript API 参考](../reference/overview/onenote-add-ins-javascript-reference.md)
 - [Rubric Grader 示例](https://github.com/OfficeDev/OneNote-Add-in-Rubric-Grader)
 - [Office 加载项平台概述](../overview/office-add-ins.md)

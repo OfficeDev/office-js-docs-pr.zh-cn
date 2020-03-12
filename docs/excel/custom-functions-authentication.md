@@ -3,12 +3,12 @@ ms.date: 07/09/2019
 description: 使用 Excel 中的自定义函数对用户进行身份验证。
 title: 自定义函数的身份验证
 localization_priority: Normal
-ms.openlocfilehash: aa966aeb8d8161339bab0161b4cc329a9b495d08
-ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
+ms.openlocfilehash: 872553986ebb74a97fd30afa0516ae6a72cf77bf
+ms.sourcegitcommit: 4079903c3cc45b7d8c041509a44e9fc38da399b1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "41950682"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "42596499"
 ---
 # <a name="authentication-for-custom-functions"></a>自定义函数的身份验证
 
@@ -33,7 +33,7 @@ ms.locfileid: "41950682"
 > [!NOTE]
 > 自定义函数运行时使用的 Dialog 对象与任务窗格使用的浏览器引擎运行时中的 Dialog 对象略有不同。 它们都称为“对话框 API”，但在自定义函数运行时中使用 `OfficeRuntime.Dialog` 对用户进行身份验证。
 
-有关如何使用 `Dialog` 对象的信息，请参阅[自定义函数对话框](/office/dev/add-ins/excel/custom-functions-dialog)。
+有关如何使用 `Dialog` 对象的信息，请参阅[自定义函数对话框](../excel/custom-functions-dialog.md)。
 
 在构想整个身份验证过程时，将加载项的任务窗格和 UI 元素以及加载项的自定义函数部分视为可以通过 `OfficeRuntime.storage` 进行相互通信的单独实体，这样做可能对你有所帮助。
 
@@ -90,7 +90,7 @@ function receiveTokenFromCustomFunction() {
 
 ## <a name="general-guidance"></a>一般指导
 
-Office 加载项基于 Web，你可以使用任何 Web 身份验证技术。 使用自定义函数实施自己的身份验证时，不必遵循特定的模式或方法。 你可能希望查阅有关各种身份验证模式的文档，请先参阅[这篇关于通过外部服务进行授权的文章](/office/dev/add-ins/develop/auth-external-add-ins)。  
+Office 加载项基于 Web，你可以使用任何 Web 身份验证技术。 使用自定义函数实施自己的身份验证时，不必遵循特定的模式或方法。 你可能希望查阅有关各种身份验证模式的文档，请先参阅[这篇关于通过外部服务进行授权的文章](../develop/auth-external-add-ins.md)。  
 
 在开发自定义函数时，避免使用以下位置存储数据：  
 

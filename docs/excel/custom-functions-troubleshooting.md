@@ -3,12 +3,12 @@ ms.date: 12/31/2019
 description: Excel 自定义函数中的常见问题疑难解答。
 title: 自定义函数疑难解答
 localization_priority: Normal
-ms.openlocfilehash: 10e1e3ec934d16806aa137a6468bbdada3fc1db2
-ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
+ms.openlocfilehash: f574bdbb385c840fb20de4ab64705b167cd51e05
+ms.sourcegitcommit: 4079903c3cc45b7d8c041509a44e9fc38da399b1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "41950829"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "42596555"
 ---
 # <a name="troubleshoot-custom-functions"></a>自定义函数疑难解答
 
@@ -76,7 +76,7 @@ function add(first, second) {
 CustomFunctions.associate("ADD", add);
 ```
 
-有关此过程的更多信息，请参阅[将函数名称与 JSON 元数据相关联](/office/dev/add-ins/excel/custom-functions-json#associating-function-names-with-json-metadata)。
+有关此过程的更多信息，请参阅[将函数名称与 JSON 元数据相关联](../excel/custom-functions-json.md#associating-function-names-with-json-metadata)。
 
 ## <a name="reporting-feedback"></a>报告反馈
 

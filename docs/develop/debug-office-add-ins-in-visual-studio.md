@@ -3,12 +3,12 @@ title: 在 Visual Studio 中调试 Office 加载项
 description: 使用 Visual Studio 在 Windows 上的 Office 桌面客户端中调试 Office 加载项
 ms.date: 12/31/2019
 localization_priority: Normal
-ms.openlocfilehash: d55b764343b5dc7c850a35b013b134fa2ad5a069
-ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
+ms.openlocfilehash: c51ae9115482919efe09033360c8b335ee1236f2
+ms.sourcegitcommit: 4079903c3cc45b7d8c041509a44e9fc38da399b1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "42324615"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "42596513"
 ---
 # <a name="debug-office-add-ins-in-visual-studio"></a>在 Visual Studio 中调试 Office 加载项
 
@@ -113,7 +113,7 @@ ms.locfileid: "42324615"
 
 接下来，Visual Studio 会执行以下操作：
 
-1. 通过将 `~remoteAppUrl` 标记替换为起始页的完全限定地址（例如，`https://localhost:44302/Home.html`）来修改 XML 清单文件的 [SourceLocation](/office/dev/add-ins/reference/manifest/sourcelocation) 元素。
+1. 通过将 `~remoteAppUrl` 标记替换为起始页的完全限定地址（例如，`https://localhost:44302/Home.html`）来修改 XML 清单文件的 [SourceLocation](../reference/manifest/sourcelocation.md) 元素。
 
 2. 在 IIS Express 中启动 Web 应用程序项目。
 

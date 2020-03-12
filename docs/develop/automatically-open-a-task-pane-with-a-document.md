@@ -3,12 +3,12 @@ title: 随文档自动打开任务窗格
 description: ''
 ms.date: 06/20/2019
 localization_priority: Normal
-ms.openlocfilehash: 8cad13a5ac573fc5709c31c7c1935e0ee9453221
-ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
+ms.openlocfilehash: c7b14259aa0bfc9f1f7a395bedc46e598eb66607
+ms.sourcegitcommit: 4079903c3cc45b7d8c041509a44e9fc38da399b1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "41949666"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "42596478"
 ---
 # <a name="automatically-open-a-task-pane-with-a-document"></a>随文档自动打开任务窗格
 
@@ -19,7 +19,7 @@ ms.locfileid: "41949666"
 
 ## <a name="how-is-the-autoopen-feature-different-from-inserting-a-task-pane"></a>AutoOpen 功能与插入任务窗格有何不同？
 
-如果用户启动不使用外接程序命令的外接程序（例如，在 Office 2013 中运行的外接程序），外接程序会插入并保留在文档中。因此，当其他用户打开文档时，系统会提示他们安装外接程序，随后会打开任务窗格。这种模型面临的挑战是，在许多情况下，用户不希望外接程序保留在文档中。例如，在 Word 文档中使用字典外接的学生可能不希望系统他们的同学或老师在打开该文档时提示他们安装该外接程序。
+当用户启动不使用外接程序命令的外接程序（例如，在 Office 2013 中运行的外接程序）时，会将它们插入到文档中，并在该文档中保留。因此，当其他用户打开文档时，系统会提示他们安装加载项，并打开任务窗格。此模型面临的挑战在于，在很多情况下，用户不希望外接程序在文档中保持。例如，在 Word 文档中使用字典外接程序的学生可能不希望其 classmates 或教师在打开文档时提示他们安装该外接程序。
 
 使用 Autoopen 功能，可以显式定义或允许用户定义特定任务窗格外接程序是否保留在特定文档中。
 
@@ -40,8 +40,8 @@ ms.locfileid: "41949666"
   - 当文档需要外接程序才能正常工作时。例如，包括由外接程序定期刷新的股票值的电子表格。外接程序应在电子表格打开时自动打开，以保持值处于最新状态。
   - 当用户很可能始终将外接程序与某个特定文档一同使用时。例如，可帮助用户通过从后台系统中获取信息来填写或更改文档中数据的外接程序。
 - 允许用户打开或关闭 Autoopen 功能。用户可以选择 UI 中包含的一个选项来停止自动打开外接程序任务窗格。  
-- 使用要求集检测来确定 Autoopen 功能是否可用，如果不可用则提供回退行为。
-- 不要使用 Autoopen 功能来人为地增加外接程序的使用率。如果外接程序在某些文档中自动打开没有任何意义，那么这个功能就会令用户生厌。
+- 使用要求集检测来确定 autoopen 功能是否可用，如果不存在，则提供回退行为。
+- 请勿使用 autoopen 功能按人为单位提高外接程序的使用情况。如果你的外接程序无法在某些文档中自动打开，此功能可能会给用户增加烦恼。
 
     > [!NOTE]
     > 如果 Microsoft 检测到滥用 AutoOpen 功能，加载项可能会从 AppSource 下架。
@@ -60,7 +60,7 @@ ms.locfileid: "41949666"
 
 ### <a name="step-1-specify-the-task-pane-to-open"></a>第 1 步：指定要打开的任务窗格
 
-若要指定要自动打开的任务窗格，请将 [TaskpaneId](/office/dev/add-ins/reference/manifest/action#taskpaneid) 值设置为 **Office.AutoShowTaskpaneWithDocument**。只能在一个任务窗格上设置此值。如果在多个任务窗格上设置此值，将识别值的第一个匹配项，而忽略其他。
+若要指定要自动打开的任务窗格，请将 [TaskpaneId](../reference/manifest/action.md#taskpaneid) 值设置为 **Office.AutoShowTaskpaneWithDocument**。只能在一个任务窗格上设置此值。如果在多个任务窗格上设置此值，将识别值的第一个匹配项，而忽略其他。
 
 在下面的示例中，TaskPaneId 值设置为 Office.AutoShowTaskpaneWithDocument。
 

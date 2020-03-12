@@ -3,12 +3,12 @@ title: 清单文件中的 SupportsSharedFolders 元素
 description: ''
 ms.date: 01/14/2020
 localization_priority: Normal
-ms.openlocfilehash: e76d17b618e2aaf15724f15ee6695a932172bba3
-ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
+ms.openlocfilehash: 81401b79f4c443305e376df7a66a07d916393d17
+ms.sourcegitcommit: 4079903c3cc45b7d8c041509a44e9fc38da399b1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "42325225"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "42596751"
 ---
 # <a name="supportssharedfolders-element"></a>SupportsSharedFolders 元素
 
@@ -17,7 +17,7 @@ ms.locfileid: "42325225"
 > [!IMPORTANT]
 > 只有 Outlook 网页和 Windows 支持**SupportsSharedFolders**元素。
 >
-> 对此元素的支持是在要求集1.8 中引入的。 请查看支持此要求集的[客户端和平台](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets#requirement-sets-supported-by-exchange-servers-and-outlook-clients)。
+> 对此元素的支持是在要求集1.8 中引入的。 请查看支持此要求集的[客户端和平台](../../reference/requirement-sets/outlook-api-requirement-sets.md#requirement-sets-supported-by-exchange-servers-and-outlook-clients)。
 
 下面是**SupportsSharedFolders**元素的一个示例。
 

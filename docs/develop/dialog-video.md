@@ -3,12 +3,12 @@ title: 使用 Office 对话框播放视频
 description: 了解如何在 Office 对话框中打开和播放视频
 ms.date: 01/29/2020
 localization_priority: Normal
-ms.openlocfilehash: 407eec467ed8ed51350f6195a3607c430524e6b4
-ms.sourcegitcommit: 4c9e02dac6f8030efc7415e699370753ec9415c8
+ms.openlocfilehash: 9c65dfb9c0cf1adbc827be25b655e380dc39e2d2
+ms.sourcegitcommit: 4079903c3cc45b7d8c041509a44e9fc38da399b1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/01/2020
-ms.locfileid: "41650070"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "42596527"
 ---
 # <a name="use-the-office-dialog-box-to-show-a-video"></a>使用 Office 对话框显示视频
 
@@ -31,6 +31,6 @@ ms.locfileid: "41650070"
 2. 在主机页中调用 `displayDialogAsync`，打开 video.dialogbox.html。
 3. 如果外接程序需要知道用户何时关闭对话框，请为 `DialogEventReceived` 事件注册处理程序，并处理 12006 事件。 有关详细信息，请参阅[Office 对话框中的错误和事件](dialog-handle-errors-events.md)。
 
-有关在对话框中播放视频的示例，请参阅[视频占位图片设计模式](/office/dev/add-ins/design/first-run-experience-patterns#video-placemat)。
+有关在对话框中播放视频的示例，请参阅[视频占位图片设计模式](../design/first-run-experience-patterns.md#video-placemat)。
 
 ![在外接程序对话框中播放视频的屏幕截图](../images/video-placemats-dialog-open.png)

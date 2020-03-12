@@ -3,12 +3,12 @@ title: 内容 Office 加载项
 description: 内容加载项是指可以直接嵌入 Excel 或 PowerPoint 文档的图面，用户可以通过它访问界面控件，运行代码以修改文档或显示数据源中的数据。
 ms.date: 03/19/2019
 localization_priority: Normal
-ms.openlocfilehash: 53b61e5ba97e54a54ccd225745cdc2ce9086ebf8
-ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
+ms.openlocfilehash: 7de031de864eadcd3d71fc66fcc9e59d00d3abb6
+ms.sourcegitcommit: 4079903c3cc45b7d8c041509a44e9fc38da399b1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "41950395"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "42596695"
 ---
 # <a name="content-office-add-ins"></a>内容 Office 加载项
 
@@ -50,13 +50,13 @@ Office 桌面版和 Office 365 中的 Excel 和 PowerPoint 的内容加载项大
 
 ## <a name="support-considerations"></a>支持注意事项
 
-- 检查 Office 加载项是否适用于[特定 Office 主机平台](/office/dev/add-ins/overview/office-add-in-availability)。 
-- 一些内容加载项可能会要求用户“信任”加载项对 Excel 或 PowerPoint 执行读取和写入操作。 可以在加载项清单中声明要拥有的[权限级别](/office/dev/add-ins/develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins)。  
+- 检查 Office 加载项是否适用于[特定 Office 主机平台](../overview/office-add-in-availability.md)。
+- 一些内容加载项可能会要求用户“信任”加载项对 Excel 或 PowerPoint 执行读取和写入操作。 可以在加载项清单中声明要拥有的[权限级别](../develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md)。  
 - Office 2013 版本及更高版本中的 Excel 和 PowerPoint 支持内容加载项。 如果在不支持 Office Web 加载项的 Office 版本中打开加载项，加载项会显示为图像。
 
 ## <a name="see-also"></a>另请参阅
 
-- [Office 加载项主机和平台可用性](/office/dev/add-ins/overview/office-add-in-availability)
-- [Office 加载项中的 Office UI Fabric](/office/dev/add-ins/design/office-ui-fabric)
-- [适用于 Office 加载项的 UX 设计模式](/office/dev/add-ins/design/ux-design-pattern-templates)
-- [在加载项中请求获取 API 使用权限](/office/dev/add-ins/develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins)
+- [Office 加载项主机和平台可用性](../overview/office-add-in-availability.md)
+- [Office 加载项中的 Office UI Fabric](../design/office-ui-fabric.md)
+- [适用于 Office 加载项的 UX 设计模式](../design/ux-design-pattern-templates.md)
+- [在加载项中请求获取 API 使用权限](../develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md)

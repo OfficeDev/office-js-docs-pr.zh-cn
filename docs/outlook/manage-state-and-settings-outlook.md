@@ -3,19 +3,19 @@ title: 管理 Outlook 外接程序的状态和设置
 description: 了解如何保留 Outlook 外接程序的外接程序状态和设置。
 ms.date: 02/27/2020
 localization_priority: Normal
-ms.openlocfilehash: 7a76da625faab98de1f6ef6d32e0274056dba9f2
-ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
+ms.openlocfilehash: 7d981107da68c329d209834059bfac494d6ccae4
+ms.sourcegitcommit: 4079903c3cc45b7d8c041509a44e9fc38da399b1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "42325345"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "42596646"
 ---
 # <a name="manage-state-and-settings-for-an-outlook-add-in"></a>管理 Outlook 外接程序的状态和设置
 
 > [!NOTE]
 > 阅读本文之前，请查看本文档的 "**核心概念**" 一节中的 "[保留加载项状态和设置](../develop/persisting-add-in-state-and-settings.md)"。
 
-对于 Outlook 外接程序，Office JavaScript API 提供[RoamingSettings](/javascript/api/outlook/office.roamingsettings)和[CustomProperties](/javascript/api/outlook/office.customproperties)对象，以在各会话之间保存外接程序状态，如下表所述。 在所有情况下，保存的设置值仅与创建它们的外接程序 [Id](/office/dev/add-ins/reference/manifest/id) 相关联。
+对于 Outlook 外接程序，Office JavaScript API 提供[RoamingSettings](/javascript/api/outlook/office.roamingsettings)和[CustomProperties](/javascript/api/outlook/office.customproperties)对象，以在各会话之间保存外接程序状态，如下表所述。 在所有情况下，保存的设置值仅与创建它们的外接程序 [Id](../reference/manifest/id.md) 相关联。
 
 |**对象**|**存储位置**|
 |:-----|:-----|:-----|
@@ -150,4 +150,4 @@ function saveCallback(asyncResult) {
 ## <a name="see-also"></a>另请参阅
 
 - [保留加载项状态和设置](../develop/persisting-add-in-state-and-settings.md)
-- [初始化 Office 外接程序](../develop/initialize-add-in.md)
+- [初始化 Office 加载项](../develop/initialize-add-in.md)

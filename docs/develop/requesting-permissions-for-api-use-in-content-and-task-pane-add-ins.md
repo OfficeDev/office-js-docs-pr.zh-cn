@@ -3,12 +3,12 @@ title: 在加载项中请求获取 API 使用权限
 description: ''
 ms.date: 03/19/2019
 localization_priority: Normal
-ms.openlocfilehash: ef78764e2ccc6d1cab3783584834317331961c2d
-ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
+ms.openlocfilehash: d146322c6977e11eedcd7e0b9ffdc9d5eeaac7c2
+ms.sourcegitcommit: 4079903c3cc45b7d8c041509a44e9fc38da399b1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "42325494"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "42596660"
 ---
 # <a name="requesting-permissions-for-api-use-in-add-ins"></a>在加载项中请求获取 API 使用权限
 
@@ -22,7 +22,7 @@ ms.locfileid: "42325494"
 
 ![任务窗格应用程序的权限级别](../images/office15-app-sdk-task-pane-app-permission.png)
 
-这些权限指定加载项运行时在用户插入然后激活（信任）加载项时允许内容或任务窗格加载项使用的 API 子集。若要声明内容或任务窗格加载项所需的权限级别，请在加载项清单的 [Permissions](/office/dev/add-ins/reference/manifest/permissions) 元素中指定任一权限文本值。以下示例要求 **WriteDocument** 权限，仅允许可以对文档进行写入（而非阅读）的方法。
+这些权限指定加载项运行时在用户插入然后激活（信任）加载项时允许内容或任务窗格加载项使用的 API 子集。若要声明内容或任务窗格加载项所需的权限级别，请在加载项清单的 [Permissions](../reference/manifest/permissions.md) 元素中指定任一权限文本值。以下示例要求 **WriteDocument** 权限，仅允许可以对文档进行写入（而非阅读）的方法。
 
 ```XML
 <Permissions>WriteDocument</Permissions>

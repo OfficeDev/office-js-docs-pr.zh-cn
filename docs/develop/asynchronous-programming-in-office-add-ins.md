@@ -3,12 +3,12 @@ title: Office 加载项中的异步编程
 description: ''
 ms.date: 02/27/2020
 localization_priority: Normal
-ms.openlocfilehash: fc39bddbe050f8253769a0013be2d48b26dcb599
-ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
+ms.openlocfilehash: 931ef17115885c8f96d41bf00143b3269a515d56
+ms.sourcegitcommit: 4079903c3cc45b7d8c041509a44e9fc38da399b1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "42324643"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "42596688"
 ---
 # <a name="asynchronous-programming-in-office-add-ins"></a>Office 加载项中的异步编程
 
@@ -102,7 +102,7 @@ function write(message){
 
 对象的`asyncContext`、 `status`和`error`属性将向传递给所有 "Async" 方法的回调函数返回相同类型的信息。 `AsyncResult`但是，返回到`AsyncResult.value`属性的内容将根据 "Async" 方法的功能而有所不同。
 
-例如，CustomXmlPart、 `addHandlerAsync` [Document](/javascript/api/office/office.document)、 [RoamingSettings](/javascript/api/outlook/office.roamingsettings)和[Settings](/javascript/api/office/office.settings)对象[](/javascript/api/office/office.customxmlpart)的方法（用于将事件处理程序函数添加到这些对象所表示的[项目中）](/javascript/api/office/office.binding)。您可以从传递`AsyncResult.value`给任何`addHandlerAsync`方法的回调函数访问该属性，但由于在添加事件处理程序时没有要访问的数据或对象，因此，如果您`value`尝试访问该属性，该属性将始终返回**undefined** 。
+例如，CustomXmlPart、 `addHandlerAsync` [Document](/javascript/api/office/office.document)、 [RoamingSettings](/javascript/api/outlook/office.roamingsettings)和[Settings](/javascript/api/office/office.settings)对象[CustomXmlPart](/javascript/api/office/office.customxmlpart)的方法（用于将事件处理程序函数添加到这些对象所表示的[项目中）](/javascript/api/office/office.binding)。您可以从传递`AsyncResult.value`给任何`addHandlerAsync`方法的回调函数访问该属性，但由于在添加事件处理程序时没有要访问的数据或对象，因此，如果您`value`尝试访问该属性，该属性将始终返回**undefined** 。
 
 另一方面，如果调用`Document.getSelectedDataAsync`方法，它会将用户在文档中选择的数据返回到回调中的`AsyncResult.value`属性。或者，如果调用[getAllAsync](/javascript/api/office/office.bindings#getallasync-options--callback-)方法，它将返回一个数组，其中的所有`Binding`对象都在文档中。如果调用[getByIdAsync](/javascript/api/office/office.bindings#getbyidasync-id--options--callback-)方法，则它将返回单个`Binding`对象。
 
@@ -393,10 +393,10 @@ function write(message){
 ```
 
 
-在这两个可选参数示例中，将_回调_参数指定为最后一个参数（后面是内联可选参数，或在_options_参数对象之后）。或者，可以在内联 JSON __ 对象内或在`options`对象中指定 callback 参数。但是，只能在一个位置中传递_callback_参数：在_options_对象中（内联或在外部创建），或作为最后一个参数，但不能同时传递这两者。
+在这两个可选参数示例中，将_回调_参数指定为最后一个参数（后面是内联可选参数，或在_options_参数对象之后）。或者，可以在内联 JSON _callback_对象内或在`options`对象中指定 callback 参数。但是，只能在一个位置中传递_callback_参数：在_options_对象中（内联或在外部创建），或作为最后一个参数，但不能同时传递这两者。
 
 
 ## <a name="see-also"></a>另请参阅
 
 - [了解 Office JavaScript API](understanding-the-javascript-api-for-office.md)
-- [Office JavaScript API](/office/dev/add-ins/reference/javascript-api-for-office)
+- [Office JavaScript API](../reference/javascript-api-for-office.md)

@@ -4,18 +4,18 @@ description: ''
 ms.date: 07/17/2019
 ms.prod: non-product-specific
 localization_priority: Normal
-ms.openlocfilehash: 8410ee6d9ff7a16d58c8efab53d6cc92112f942a
-ms.sourcegitcommit: 153576b1efd0234c6252433e22db213238573534
+ms.openlocfilehash: cd8af8762fa55bde78a6eb62cabc37606db47099
+ms.sourcegitcommit: 4079903c3cc45b7d8c041509a44e9fc38da399b1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/07/2020
-ms.locfileid: "42561805"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "42596954"
 ---
 # <a name="office-common-api-requirement-sets"></a>Office 通用 API 要求集
 
-要求集是指各组已命名的 API 成员。Office 加载项使用清单中指定的要求集或执行运行时检查，以确定 Office 主机是否支持加载项所需的 API。有关详细信息，请参阅 [Office 版本和要求集](/office/dev/add-ins/develop/office-versions-and-requirement-sets)。
+要求集是指各组已命名的 API 成员。Office 加载项使用清单中指定的要求集或执行运行时检查，以确定 Office 主机是否支持加载项所需的 API。有关详细信息，请参阅 [Office 版本和要求集](../../develop/office-versions-and-requirement-sets.md)。
 
-需要了解加载项在哪些位置受 Office 主机支持？ 请参阅 [Office 加载项主机和平台可用性](/office/dev/add-ins/overview/office-add-in-availability)。
+需要了解加载项在哪些位置受 Office 主机支持？ 请参阅 [Office 加载项主机和平台可用性](../../overview/office-add-in-availability.md)。
 
 正在寻找*主机专用* API 要求集吗？ 请参阅下列 API 要求集：
 
@@ -166,14 +166,6 @@ ms.locfileid: "42561805"
 
 ---
 
-### <a name="ribbonapi"></a>RibbonApi
-
-|**Office 主机**|**要求集内的方法**|
-|:-----|:-----|
-| 请参阅[RibbonAPI 要求集](ribbon-api-requirement-sets.md)。|GetRibbon<br>RequestUpdate|
-
----
-
 ### <a name="selection"></a>Selection
 
 |**Office 主机**|**要求集内的方法**|
@@ -240,7 +232,7 @@ ms.locfileid: "42561805"
 
 ## <a name="methods-that-arent-part-of-a-requirement-set"></a>不作为要求集一部分的方法
 
-Office JavaScript API 中的以下方法不是要求集的一部分。 如果加载项需要这些方法的任意一个，请使用加载项清单中的 **Methods** 和 **Method** 元素以声明需要这些方法，或使用 `if` 语句执行运行时检查。 有关详细信息，请参阅[指定 Office 主机和 API 要求](/office/dev/add-ins/develop/specify-office-hosts-and-api-requirements)。
+Office JavaScript API 中的以下方法不是要求集的一部分。 如果加载项需要这些方法的任意一个，请使用加载项清单中的 **Methods** 和 **Method** 元素以声明需要这些方法，或使用 `if` 语句执行运行时检查。 有关详细信息，请参阅[指定 Office 主机和 API 要求](../../develop/specify-office-hosts-and-api-requirements.md)。
 
 |**方法名称**|**Office 主机支持**|
 |:-----|:-----|
@@ -263,6 +255,6 @@ Office JavaScript API 中的以下方法不是要求集的一部分。 如果加
 
 ## <a name="see-also"></a>另请参阅
 
-- [Office 版本和要求集](/office/dev/add-ins/develop/office-versions-and-requirement-sets)
-- [指定 Office 主机和 API 要求](/office/dev/add-ins/develop/specify-office-hosts-and-api-requirements)
-- [Office 外接程序 XML 清单](/office/dev/add-ins/develop/add-in-manifests)
+- [Office 版本和要求集](../../develop/office-versions-and-requirement-sets.md)
+- [指定 Office 主机和 API 要求](../../develop/specify-office-hosts-and-api-requirements.md)
+- [Office 外接程序 XML 清单](../../develop/add-in-manifests.md)

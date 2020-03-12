@@ -3,12 +3,12 @@ title: 清单文件中的 Control 元素
 description: ''
 ms.date: 01/10/2020
 localization_priority: Normal
-ms.openlocfilehash: ccf7c3065db13a311825498292713b619f1cd745
-ms.sourcegitcommit: 153576b1efd0234c6252433e22db213238573534
+ms.openlocfilehash: 0add0d102b62411b67c081b74ecd0a138df3b625
+ms.sourcegitcommit: 4079903c3cc45b7d8c041509a44e9fc38da399b1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/07/2020
-ms.locfileid: "42562087"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "42596471"
 ---
 # <a name="control-element"></a>Control 元素
 
@@ -32,7 +32,7 @@ ms.locfileid: "42562087"
 |  元素 |  必需  |  说明  |
 |:-----|:-----|:-----|
 |  **Label**     | 是 |  按钮文本。 **Resid**属性必须设置为[Resources](resources.md)元素中的**ShortStrings**元素中**String**元素的**id**属性的值。        |
-|  **ToolTip**  |否|按钮的工具提示。 必须将“resid”属性设置为 String 元素的 id 属性值。 **String** 元素是 **LongStrings** 元素的子元素，而 LongStrings 元素是 [Resources](resources.md) 元素的子元素。|     
+|  **ToolTip**    |否|按钮的工具提示。 必须将“resid”属性设置为 String 元素的 id 属性值。 **String** 元素是 **LongStrings** 元素的子元素，而 LongStrings 元素是 [Resources](resources.md) 元素的子元素。|        
 |  [Supertip](supertip.md)  | 是 |  按钮的 supertip。    |
 |  [图标](icon.md)      | 是 |  按钮的图像。         |
 |  [Action](action.md)    | 是 |  指定要执行的操作。  |
@@ -40,7 +40,7 @@ ms.locfileid: "42562087"
 
 ### <a name="executefunction-button-example"></a>ExecuteFunction 按钮示例
 
-在下面的示例中，在加载项启动时，该按钮将被禁用。 可以通过编程方式启用它。 有关详细信息，请参阅[Enable And Disable 外接程序命令](/office/dev/add-ins/design/disable-add-in-commands)。
+在下面的示例中，在加载项启动时，该按钮将被禁用。 可以通过编程方式启用它。 有关详细信息，请参阅[启用和禁用加载项命令](../../design/disable-add-in-commands.md)。
 
 ```xml
 <Control xsi:type="Button" id="msgReadFunctionButton">
@@ -150,7 +150,7 @@ ms.locfileid: "42562087"
 |  元素 |  必需  |  说明  |
 |:-----|:-----|:-----|
 |  **Label**     | 是 |  按钮文本。 **Resid**属性必须设置为[Resources](resources.md)元素中的**ShortStrings**元素中**String**元素的**id**属性的值。      |
-|  **ToolTip**  |否|按钮的工具提示。 必须将“resid”属性设置为 String 元素的 id 属性值。 **String** 元素是 **LongStrings** 元素的子元素，而 LongStrings 元素是 [Resources](resources.md) 元素的子元素。|     
+|  **ToolTip**    |否|按钮的工具提示。 必须将“resid”属性设置为 String 元素的 id 属性值。 **String** 元素是 **LongStrings** 元素的子元素，而 LongStrings 元素是 [Resources](resources.md) 元素的子元素。|        
 |  [Supertip](supertip.md)  | 是 |  此按钮的 supertip。    |
 |  [Icon](icon.md)      | 是 |  按钮的图像。         |
 |  **Items**     | 是 |  菜单中显示的按钮的集合。 包含每个子菜单项的 **Item** 元素。 每个 **Item** 元素均包含 [按钮控件](#button-control)的子元素。|

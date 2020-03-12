@@ -3,12 +3,12 @@ title: 对 Office 2013 内容和任务窗格加载项的 Office JavaScript API �
 description: ''
 ms.date: 02/27/2020
 localization_priority: Normal
-ms.openlocfilehash: a9eb67ca78f89888860ff3ed11ae1632ff62b690
-ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
+ms.openlocfilehash: 043ce34b05b3b158dcf4162fb49cfe94a791dad1
+ms.sourcegitcommit: 4079903c3cc45b7d8c041509a44e9fc38da399b1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "42323818"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "42596653"
 ---
 # <a name="office-javascript-api-support-for-content-and-task-pane-add-ins-in-office-2013"></a>对 Office 2013 中内容和任务窗格外接程序的 Office JavaScript API 支持
 
@@ -18,7 +18,7 @@ ms.locfileid: "42323818"
 
 1. **与其他 Office 外接程序共享的常见对象。** 这些对象包括[Office](/javascript/api/office)、 [Context](/javascript/api/office/office.context)和[AsyncResult](/javascript/api/office/office.asyncresult)。 `Office`对象是 OFFICE JavaScript API 的根对象。 该`Context`对象表示加载项的运行时环境。 `Office`和`Context`都是适用于任何 Office 外接程序的基本对象。 `AsyncResult`对象表示异步操作的结果，如返回到`getSelectedDataAsync`方法的数据，该方法读取用户在文档中选定的内容。
 
-2. **Document 对象。** 可通过 [Document](/javascript/api/office/office.document) 对象的方法、属性和事件公开大多数可用于内容和任务窗格加载项的 API。 内容或任务窗格加载项可以使用[CustomXmlParts 属性访问](/javascript/api/office/office.context#document) **document**对象，通过它，可以访问用于处理文档中的数据（如[绑定](/javascript/api/office/office.bindings)和[](/javascript/api/office/office.customxmlparts)对象）的 API 的关键成员，以及[getSelectedDataAsync](/javascript/api/office/office.document#getselecteddataasync-coerciontype--options--callback-)、 [document.setselecteddataasync](/javascript/api/office/office.document#setselecteddataasync-data--options--callback-)和[document.getfileasync](/javascript/api/office/office.document#getfileasync-filetype--options--callback-)方法。 该`Document`对象还提供了[mode](/javascript/api/office/office.document#mode)属性，用于确定文档是否为只读或处于编辑模式、用于获取当前文档的 url 的[Url](/javascript/api/office/office.document#url)属性，以及对[Settings](/javascript/api/office/office.settings)对象的访问权限。 该`Document`对象还支持添加[SelectionChanged](/javascript/api/office/office.documentselectionchangedeventargs)事件的事件处理程序，以便您可以检测用户何时更改文档中的选定内容。
+2. **Document 对象。** 可通过 [Document](/javascript/api/office/office.document) 对象的方法、属性和事件公开大多数可用于内容和任务窗格加载项的 API。 内容或任务窗格加载项可以使用[CustomXmlParts 属性访问](/javascript/api/office/office.context#document) **document**对象，通过它，可以访问用于处理文档中的数据（如[绑定](/javascript/api/office/office.bindings)和[CustomXmlParts](/javascript/api/office/office.customxmlparts)对象）的 API 的关键成员，以及[getSelectedDataAsync](/javascript/api/office/office.document#getselecteddataasync-coerciontype--options--callback-)、 [document.setselecteddataasync](/javascript/api/office/office.document#setselecteddataasync-data--options--callback-)和[document.getfileasync](/javascript/api/office/office.document#getfileasync-filetype--options--callback-)方法。 该`Document`对象还提供了[mode](/javascript/api/office/office.document#mode)属性，用于确定文档是否为只读或处于编辑模式、用于获取当前文档的 url 的[Url](/javascript/api/office/office.document#url)属性，以及对[Settings](/javascript/api/office/office.settings)对象的访问权限。 该`Document`对象还支持添加[SelectionChanged](/javascript/api/office/office.documentselectionchangedeventargs)事件的事件处理程序，以便您可以检测用户何时更改文档中的选定内容。
 
    仅在加载了 DOM 和运行时环境之后， `Document`内容或任务窗格外接程序才能访问该对象，这通常是在运行的 " [Office initialize](/javascript/api/office) " 事件的事件处理程序中。 有关应用程序初始化时的事件流以及如何检查 DOM 和运行时是否成功加载的信息，请参阅[加载 DOM 和运行时环境](loading-the-dom-and-runtime-environment.md)。
 
@@ -165,6 +165,6 @@ Office.context.document.settings.set('themeColor', 'green');
 
 ## <a name="see-also"></a>另请参阅
 
-- [Office JavaScript API](/office/dev/add-ins/reference/javascript-api-for-office)
+- [Office JavaScript API](../reference/javascript-api-for-office.md)
 - [Office 外接程序清单的架构参考](../develop/add-in-manifests.md)
 - [排查 Office 加载项中的用户错误](../testing/testing-and-troubleshooting.md)

@@ -3,12 +3,12 @@ title: 适用于 Office 外接程序的 UX 设计模式
 description: ''
 ms.date: 03/19/2019
 localization_priority: Normal
-ms.openlocfilehash: d903f6cb2c6cad90c07b05303eac6b25a05a4af2
-ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
+ms.openlocfilehash: db939e12fcc3f81f70fd000a803941d4513ea534
+ms.sourcegitcommit: 4079903c3cc45b7d8c041509a44e9fc38da399b1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "41950416"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "42596709"
 ---
 # <a name="ux-design-patterns-for-office-add-ins"></a>适用于 Office 外接程序的 UX 设计模式
 
@@ -46,5 +46,5 @@ Office UI Fabric 呈现外观和行为类似于 Office 部件的组件。 利用
 
 * [设计工具包](design-toolkits.md)
 * [Office UI Fabric](https://developer.microsoft.com/fabric)
-* [开发 Office 外接程序的最佳做法](/office/dev/add-ins/concepts/add-in-development-best-practices)
-* [Fabric React 使用入门](/office/dev/add-ins/design/using-office-ui-fabric-react)
+* [开发 Office 外接程序的最佳做法](../concepts/add-in-development-best-practices.md)
+* [Fabric React 使用入门](../design/using-office-ui-fabric-react.md)

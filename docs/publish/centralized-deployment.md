@@ -3,12 +3,12 @@ title: 通过 Office 365 管理中心进行集中部署来发布 Office 加载�
 description: ''
 ms.date: 02/14/2020
 localization_priority: Normal
-ms.openlocfilehash: 92ae938669ad53b50c8635a998dcfa4525ac2bef
-ms.sourcegitcommit: a3ddfdb8a95477850148c4177e20e56a8673517c
+ms.openlocfilehash: 943216ec8f42160a8eb406999fa2c86c45a0081a
+ms.sourcegitcommit: 4079903c3cc45b7d8c041509a44e9fc38da399b1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "42165584"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "42596828"
 ---
 # <a name="publish-office-add-ins-using-centralized-deployment-via-the-office-365-admin-center"></a>通过 Office 365 管理中心进行集中部署来发布 Office 加载项
 
@@ -78,7 +78,7 @@ Office 365 管理中心当前支持以下方案：
     ![管理 Office 365 管理中心中有访问和部署方法的人士](../images/manage-users-deployment-admin-center.png)
 
     > [!NOTE]
-    > 用于加载项的[单一登录 (SSO)](/office/dev/add-ins/develop/sso-in-office-add-ins) 系统目前处于预览状态，不应用于生产加载项。部署使用 SSO 的加载项时，分配的用户和组也将与共享相同 Azure App ID 的加载项共享。 对用户分配进行的任何更改也会应用于这些加载项。相关加载项显示在此页面上。 仅对于 SSO 加载项，此页面将显示加载项所需的 Microsoft Graph 权限的列表。
+    > 用于加载项的[单一登录 (SSO)](../develop/sso-in-office-add-ins.md) 系统目前处于预览状态，不应用于生产加载项。部署使用 SSO 的加载项时，分配的用户和组也将与共享相同 Azure App ID 的加载项共享。 对用户分配进行的任何更改也会应用于这些加载项。相关加载项显示在此页面上。 仅对于 SSO 加载项，此页面将显示加载项所需的 Microsoft Graph 权限的列表。
 
 11. 完成后，选择 "**部署**"。 此过程可能最多用时 3 分钟。 然后，按“**下一步**”完成演练。 现在，可以看到此加载项与其他应用一起显示在 Office 365 中。
 

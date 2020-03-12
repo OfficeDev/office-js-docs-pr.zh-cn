@@ -3,12 +3,12 @@ title: 清单文件中的 Methods 元素
 description: ''
 ms.date: 03/19/2019
 localization_priority: Normal
-ms.openlocfilehash: 52e12de0fde9fa1ede4687c3f27707d1dc3dce5f
-ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
+ms.openlocfilehash: b2ef9725b76b21af8d41b9e571d2851464aa1fcc
+ms.sourcegitcommit: 4079903c3cc45b7d8c041509a44e9fc38da399b1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "42325253"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "42596884"
 ---
 # <a name="methods-element"></a>Methods 元素
 
@@ -34,5 +34,4 @@ ms.locfileid: "42325253"
 
 ## <a name="remarks"></a>注解
 
-邮件外接程序中不支持**方法**和**方法**元素。有关要求集的详细信息，请参阅[Office 版本和要求集](/office/dev/add-ins/develop/office-versions-and-requirement-sets)。
-
+邮件外接程序中不支持**方法**和**方法**元素。有关要求集的详细信息，请参阅[Office 版本和要求集](../../develop/office-versions-and-requirement-sets.md)。

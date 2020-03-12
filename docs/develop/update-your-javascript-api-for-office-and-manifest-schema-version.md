@@ -3,12 +3,12 @@ title: 更新到最新的 Office JavaScript API 库和版本1.1 加载项清单�
 description: 将在 Office 加载项项目中的 JavaScript 文件（Office.js 和特定于应用程序的 .js 文件）和加载项清单验证文件更新到版本 1.1。
 ms.date: 10/11/2019
 localization_priority: Normal
-ms.openlocfilehash: a8f1193d571278531eae169b12bc56e0e560e62e
-ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
+ms.openlocfilehash: ccb6dade39850a656326482c3abc824ecfb6637e
+ms.sourcegitcommit: 4079903c3cc45b7d8c041509a44e9fc38da399b1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "42324650"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "42596583"
 ---
 # <a name="update-to-the-latest-office-javascript-api-library-and-version-11-add-in-manifest-schema"></a>更新到最新的 Office JavaScript API 库和版本1.1 加载项清单架构
 
@@ -75,7 +75,7 @@ ms.locfileid: "42324650"
 ```
 
 > [!NOTE]
-> 将加载项清单架构的版本更新为1.1 之后，需要删除这些**功能**和**功能**元素，并将其替换为[Hosts](/office/dev/add-ins/reference/manifest/hosts)和[Host](/office/dev/add-ins/reference/manifest/host)元素或[要求和要求元素](specify-office-hosts-and-api-requirements.md)。
+> 将加载项清单架构的版本更新为1.1 之后，需要删除这些**功能**和**功能**元素，并将其替换为[Hosts](../reference/manifest/hosts.md)和[Host](../reference/manifest/host.md)元素或[要求和要求元素](specify-office-hosts-and-api-requirements.md)。
 
 ## <a name="updating-an-office-add-in-project-created-with-a-text-editor-or-other-ide"></a>更新使用文本编辑器或其他 IDE 创建的 Office 加载项项目
 
@@ -118,11 +118,11 @@ ms.locfileid: "42324650"
 ```
 
 > [!NOTE]
-> 将加载项清单架构的版本更新为1.1 之后，需要删除这些**功能**和**功能**元素，并将其替换为[Hosts](/office/dev/add-ins/reference/manifest/hosts)和[Host](/office/dev/add-ins/reference/manifest/host)元素或[要求和要求元素](specify-office-hosts-and-api-requirements.md)。
+> 将加载项清单架构的版本更新为1.1 之后，需要删除这些**功能**和**功能**元素，并将其替换为[Hosts](../reference/manifest/hosts.md)和[Host](../reference/manifest/host.md)元素或[要求和要求元素](specify-office-hosts-and-api-requirements.md)。
 
 ## <a name="see-also"></a>另请参阅
 
 - [指定 Office 主机和 API 要求](specify-office-hosts-and-api-requirements.md)]
 - [了解 Office JavaScript API](understanding-the-javascript-api-for-office.md)
-- [Office JavaScript API](/office/dev/add-ins/reference/javascript-api-for-office)
+- [Office JavaScript API](../reference/javascript-api-for-office.md)
 - [Office 外接程序清单的架构参考 (v1.1)](../develop/add-in-manifests.md)

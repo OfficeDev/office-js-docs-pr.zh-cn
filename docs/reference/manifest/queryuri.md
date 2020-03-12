@@ -3,12 +3,12 @@ title: 清单文件中的 QueryUri 元素
 description: ''
 ms.date: 03/19/2019
 localization_priority: Normal
-ms.openlocfilehash: 8695b87f84cf85f83b46f9abfa4cd412e9abe1ec
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: c240e43ca9e20152b4d8e3307d714da914d975e3
+ms.sourcegitcommit: 4079903c3cc45b7d8c041509a44e9fc38da399b1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32452002"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "42596450"
 ---
 # <a name="queryuri-element"></a>QueryUri 元素
 
@@ -28,5 +28,4 @@ ms.locfileid: "32452002"
 
 ## <a name="see-also"></a>另请参阅
 
-- [创建字典任务窗格外接程序](/office/dev/add-ins/word/dictionary-task-pane-add-ins)
-    
+- [创建字典任务窗格外接程序](../../word/dictionary-task-pane-add-ins.md)

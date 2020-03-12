@@ -3,12 +3,12 @@ title: 清单文件中的 AppDomain 元素
 description: ''
 ms.date: 07/03/2019
 localization_priority: Normal
-ms.openlocfilehash: 2f65302d1ac3d85f2867cd13501bc67606cd00b5
-ms.sourcegitcommit: b3996b1444e520b44cf752e76eef50908386ca26
+ms.openlocfilehash: da28b3b4dec5d669462a781db3c0628bd32c7182
+ms.sourcegitcommit: 4079903c3cc45b7d8c041509a44e9fc38da399b1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "35575637"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "42596786"
 ---
 # <a name="appdomain-element"></a>AppDomain 元素
 
@@ -32,4 +32,4 @@ ms.locfileid: "35575637"
 
 ## <a name="remarks"></a>注释
 
-**AppDomain** 元素用于指定除在 [SourceLocation](sourcelocation.md) 元素中指定的域之外的任何其他域。 有关详细信息，请参阅 [Office 加载项 XML 清单](/office/dev/add-ins/develop/add-in-manifests)。
+**AppDomain** 元素用于指定除在 [SourceLocation](sourcelocation.md) 元素中指定的域之外的任何其他域。 有关详细信息，请参阅 [Office 加载项 XML 清单](../../develop/add-in-manifests.md)。

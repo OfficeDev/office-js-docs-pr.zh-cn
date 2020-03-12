@@ -4,11 +4,11 @@ description: 使用 Excel 中的自定义函数请求、流式处理和取消流
 title: 使用自定义函数接收和处理数据
 localization_priority: Normal
 ms.openlocfilehash: ca1353fcc8c9fcd79db273f0cb1d7bf3d7d58a70
-ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
+ms.sourcegitcommit: 6c7c98f085dd20f827e0c388e672993412944851
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "42323831"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "42554851"
 ---
 # <a name="receive-and-handle-data-with-custom-functions"></a>使用自定义函数接收和处理数据
 

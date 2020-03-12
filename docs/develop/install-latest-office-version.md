@@ -3,12 +3,12 @@ title: 安装最新版本 Office
 description: 与如何选择获取最新版 Office 相关的信息。
 ms.date: 01/14/2020
 localization_priority: Normal
-ms.openlocfilehash: 1f08595ec5d4b7821bf0f2954b306108b0c449bb
-ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
+ms.openlocfilehash: ff573a13a6621e5c9bfa5c2dfd704bb64b731372
+ms.sourcegitcommit: 4079903c3cc45b7d8c041509a44e9fc38da399b1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "41950668"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "42596604"
 ---
 # <a name="install-the-latest-version-of-office"></a>安装最新版本 Office
 
@@ -45,10 +45,10 @@ ms.locfileid: "41950668"
 
 若要了解 API 要求集对应的各个平台的最低产品内部版本，请参阅以下资源：
 
-- [Excel JavaScript API 要求集](/office/dev/add-ins/reference/requirement-sets/excel-api-requirement-sets)
-- [OneNote JavaScript API 要求集](/office/dev/add-ins/reference/requirement-sets/onenote-api-requirement-sets)
-- [Outlook JavaScript API 要求集](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)
-- [PowerPoint JavaScript API 要求集](/office/dev/add-ins/reference/requirement-sets/powerpoint-api-requirement-sets)
-- [Word JavaScript API 要求集](/office/dev/add-ins/reference/requirement-sets/word-api-requirement-sets)
-- [对话框 API 要求集](/office/dev/add-ins/reference/requirement-sets/dialog-api-requirement-sets)
-- [Office 通用 API 要求集](/office/dev/add-ins/reference/requirement-sets/office-add-in-requirement-sets)
+- [Excel JavaScript API 要求集](../reference/requirement-sets/excel-api-requirement-sets.md)
+- [OneNote JavaScript API 要求集](../reference/requirement-sets/onenote-api-requirement-sets.md)
+- [Outlook JavaScript API 要求集](../reference/requirement-sets/outlook-api-requirement-sets.md)
+- [PowerPoint JavaScript API 要求集](../reference/requirement-sets/powerpoint-api-requirement-sets.md)
+- [Word JavaScript API 要求集](../reference/requirement-sets/word-api-requirement-sets.md)
+- [对话框 API 要求集](../reference/requirement-sets/dialog-api-requirement-sets.md)
+- [Office 通用 API 要求集](../reference/requirement-sets/office-add-in-requirement-sets.md)

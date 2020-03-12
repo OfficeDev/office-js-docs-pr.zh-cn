@@ -3,12 +3,12 @@ ms.date: 01/14/2020
 description: 在 Excel 中定义自定义函数的 JSON 元数据，并将您的函数 id 和 name 属性相关联。
 title: Excel 中自定义函数的元数据
 localization_priority: Normal
-ms.openlocfilehash: 2a777cb0217d48caf03983d3dbfe662dfe0b2567
-ms.sourcegitcommit: 212c810f3480a750df779777c570159a7f76054a
+ms.openlocfilehash: 79f23f83dfd4bff40880cb39edc6ebe9bf2e052e
+ms.sourcegitcommit: 4079903c3cc45b7d8c041509a44e9fc38da399b1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/17/2020
-ms.locfileid: "41217030"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "42596779"
 ---
 # <a name="custom-functions-metadata"></a>自定义函数元数据
 
@@ -145,11 +145,11 @@ ms.locfileid: "41217030"
 
 | 属性      | 数据类型 | 必需 | 说明                                                                                                                                                                      |
 | :------------ | :-------- | :------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `description` | string    | No       | 最终用户在 Excel 中看到的函数的说明。 例如，**将摄氏度值转换为华氏度**。                                                            |
-| `helpUrl`     | string    | No       | 提供有关函数的信息的 URL。 （它显示在任务窗格中。）例如，`http://contoso.com/help/convertcelsiustofahrenheit.html`。                      |
+| `description` | string    | 否       | 最终用户在 Excel 中看到的函数的说明。 例如，**将摄氏度值转换为华氏度**。                                                            |
+| `helpUrl`     | string    | 否       | 提供有关函数的信息的 URL。 （它显示在任务窗格中。）例如，`http://contoso.com/help/convertcelsiustofahrenheit.html`。                      |
 | `id`          | string    | 是      | 函数的唯一 ID。 此 ID 只能包含字母数字字符和句点，设置后不应更改。                                            |
 | `name`        | string    | 是      | 最终用户在 Excel 中看到的函数的名称。 在 Excel 中，此函数名称将以 XML 清单文件中指定的自定义函数命名空间为前缀。 |
-| `options`     | object    | No       | 使用户能够自定义 Excel 执行函数的方式和时间。 有关详细信息，请参阅[选项](#options)。                                                          |
+| `options`     | object    | 否       | 使用户能够自定义 Excel 执行函数的方式和时间。 有关详细信息，请参阅[选项](#options)。                                                          |
 | `parameters`  | array     | 是      | 定义函数的输入参数的数组。 有关详细信息，请参阅[参数](#parameters)。                                                                             |
 | `result`      | object    | 是      | 定义函数返回的信息类型的对象。 有关详细信息，请参阅[结果](#result)。                                                                 |
 
@@ -160,7 +160,7 @@ ms.locfileid: "41217030"
 | 属性          | 数据类型 | 必需                               | 说明                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
 | :---------------- | :-------- | :------------------------------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `cancelable`      | boolean   | 否<br/><br/>默认值为 `false`。  | 如果为 `true`，则每次用户执行具有取消函数效果的操作时，Excel 都会调用 `CancelableInvocation` 处理程序；例如，手动触发重新计算或编辑函数引用的单元格。 可取消函数通常仅用于返回单个结果的异步函数，并需要处理对数据请求的取消操作。 函数不能同时为流式处理和可取消。 有关详细信息，请参阅[Make a 流式处理函数](custom-functions-web-reqs.md#make-a-streaming-function)结尾附近的注释。 |
-| `requiresAddress` | boolean   | 否 <br/><br/>默认值为 `false`。 | 如果`true`为，则自定义函数可以访问调用自定义函数的单元格的地址。 若要获取调用自定义函数的单元格的地址，请在自定义函数中使用 context。 有关详细信息，请参阅[寻址单元格的上下文参数](/office/dev/add-ins/excel/custom-functions-parameter-options#addressing-cells-context-parameter)。 不能将自定义函数同时设置为流式处理和 requiresAddress。 使用此选项时，"调用" 参数必须是在 options 中传递的最后一个参数。                                              |
+| `requiresAddress` | boolean   | 否 <br/><br/>默认值为 `false`。 | 如果`true`为，则自定义函数可以访问调用自定义函数的单元格的地址。 若要获取调用自定义函数的单元格的地址，请在自定义函数中使用 context。 有关详细信息，请参阅[寻址单元格的上下文参数](../excel/custom-functions-parameter-options.md#addressing-cells-context-parameter)。 不能将自定义函数同时设置为流式处理和 requiresAddress。 使用此选项时，"调用" 参数必须是在 options 中传递的最后一个参数。                                              |
 | `stream`          | boolean   | 否<br/><br/>默认值为 `false`。  | 如果为 `true`，即使只调用一次，该函数也可能会重复输出到单元格。 此选项对于快速变化的数据源（如股票价格）非常有用。 函数不应存在 `return` 语句。 相反，结果值将作为 `StreamingInvocation.setResult` 回调方法的参数传递。 有关详细信息，请参阅[流式处理函数](custom-functions-web-reqs.md#make-a-streaming-function)。                                                                                                                                                                |
 | `volatile`        | boolean   | 否 <br/><br/>默认值为 `false`。 | <br /><br /> 如果为 `true`，则该函数会在每次 Excel 重新计算时（而不是仅当公式的从属值发生更改时）进行重新计算。 函数不能同时为流式处理和可变。 如果 `stream` 和 `volatile` 属性同时设置为 `true`，则将忽略可变选项。                                                                                                                                                                                                                                                                                             |
 
@@ -170,10 +170,10 @@ ms.locfileid: "41217030"
 
 |  属性  |  数据类型  |  必需  |  说明  |
 |:-----|:-----|:-----|:-----|
-|  `description`  |  string  |  No |  参数的说明。 这显示在 Excel 的 intelliSense 中。  |
+|  `description`  |  string  |  否 |  参数的说明。 这显示在 Excel 的 intelliSense 中。  |
 |  `dimensionality`  |  string  |  否  |  必须是**标量**（非数组值）或**矩阵**（二维数组）。  |
 |  `name`  |  string  |  是  |  参数的名称。 此名称显示在 Excel 的 intelliSense 中。  |
-|  `type`  |  string  |  No  |  参数的数据类型。 可以是 **boolean**、**number**、**string** 或 **any**，允许使用前三种类型中的任何一种。 如果未指定此属性，则数据类型默认为 **any**。 |
+|  `type`  |  string  |  否  |  参数的数据类型。 可以是 **boolean**、**number**、**string** 或 **any**，允许使用前三种类型中的任何一种。 如果未指定此属性，则数据类型默认为 **any**。 |
 |  `optional`  | boolean | 否 | 如果为 `true`，则参数是可选的。 |
 |`repeating`| boolean | 否 | 如果`true`参数，则从指定的数组填充。 请注意，根据定义，所有重复参数均被视为可选参数。  |
 
@@ -183,7 +183,7 @@ ms.locfileid: "41217030"
 
 | 属性         | 数据类型 | 必需 | 说明                                                                          |
 | :--------------- | :-------- | :------- | :----------------------------------------------------------------------------------- |
-| `dimensionality` | string    | No       | 必须是**标量**（非数组值）或**矩阵**（二维数组）。 |
+| `dimensionality` | string    | 否       | 必须是**标量**（非数组值）或**矩阵**（二维数组）。 |
 
 ## <a name="associating-function-names-with-json-metadata"></a>将函数名称与 JSON 元数据相关联
 

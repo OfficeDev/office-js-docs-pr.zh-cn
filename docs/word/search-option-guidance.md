@@ -3,12 +3,12 @@ title: 使用搜索选项在 Word 加载项中查找文本
 description: ''
 ms.date: 09/27/2019
 localization_priority: Normal
-ms.openlocfilehash: 213853af31ae7ae15ad3f6386da70f22698d421d
-ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
+ms.openlocfilehash: 9f90771ebb7e6f70f2f27081ea0409e0f29b0e2d
+ms.sourcegitcommit: 4079903c3cc45b7d8c041509a44e9fc38da399b1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "41950479"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "42596758"
 ---
 # <a name="use-search-options-to-find-text-in-your-word-add-in"></a>使用搜索选项在 Word 加载项中查找文本
 
@@ -19,7 +19,7 @@ ms.locfileid: "41950479"
 
 搜索选项为多个用于定义搜索参数处理方式的布尔值集合。
 
-| 属性     | 说明|
+| 属性       | 说明|
 |:---------------|:----|
 |ignorePunct|获取或设置一个值，该值指示是否忽略单词之间的标点符号的值。 对应于“查找和替换”对话框中的“忽略标点符号”复选框。|
 |ignoreSpace|获取或设置一个值，该值指示是否忽略单词之间的所有空格。 对应于“查找和替换”对话框中的“忽略空格”复选框。|
@@ -204,4 +204,4 @@ Word.run(function (context) {
 });
 ```
 
-更多信息请参阅 [Word JavaScript API 参考](/office/dev/add-ins/reference/overview/word-add-ins-reference-overview).
+更多信息请参阅 [Word JavaScript API 参考](../reference/overview/word-add-ins-reference-overview.md).

@@ -1,14 +1,14 @@
 ---
 title: 排查单一登录 (SSO) 错误消息
 description: ''
-ms.date: 02/20/2020
+ms.date: 03/10/2020
 localization_priority: Normal
-ms.openlocfilehash: a29efa4a501ee10b185cb2bbc72cb8e8e5e8b098
-ms.sourcegitcommit: 7464eac3b54a6a6b65e27549a3ad603af6ee1011
+ms.openlocfilehash: 7bde083277ece303597dd1c52398f8a91cacc765
+ms.sourcegitcommit: 4079903c3cc45b7d8c041509a44e9fc38da399b1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "42315870"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "42596800"
 ---
 # <a name="troubleshoot-error-messages-for-single-sign-on-sso-preview"></a>排查单一登录 (SSO) 错误消息（预览）
 
@@ -34,12 +34,12 @@ ms.locfileid: "42315870"
 
 ### <a name="13000"></a>13000
 
-加载项或 Office 版本不支持 [getAccessToken](/office/dev/add-ins/develop/sso-in-office-add-ins#sso-api-reference) API。
+加载项或 Office 版本不支持 [getAccessToken](../develop/sso-in-office-add-ins.md#sso-api-reference) API。
 
-- Office 版本不支持 SSO。 版本必须为任何月度频道中的 Office 365（Office 的订阅版本）。 
-- 加载项清单缺少适当的 [WebApplicationInfo](/office/dev/add-ins/reference/manifest/webapplicationinfo) 部分。
+- Office 版本不支持 SSO。 版本必须为任何月度频道中的 Office 365（Office 的订阅版本）。
+- 加载项清单缺少适当的 [WebApplicationInfo](../reference/manifest/webapplicationinfo.md) 部分。
 
-加载项应该通过回退到用户身份验证备用系统来响应此错误。 有关详细信息，请参阅[要求和最佳做法](/office/dev/add-ins/develop/sso-in-office-add-ins#requirements-and-best-practices)。
+加载项应该通过回退到用户身份验证备用系统来响应此错误。 有关详细信息，请参阅[要求和最佳做法](../develop/sso-in-office-add-ins.md#requirements-and-best-practices)。
 
 ### <a name="13001"></a>13001
 
@@ -60,11 +60,11 @@ ms.locfileid: "42315870"
 
 ### <a name="13003"></a>13003
 
-用户类型不受支持。 用户未使用有效的 Microsoft 帐户或 Office 365（工作或学校）帐户登录 Office。 例如，当使用本地域帐户运行 Office 时，可能会生成此错误。 代码应回退到用户身份验证备用系统。 有关详细信息，请参阅[要求和最佳做法](/office/dev/add-ins/develop/sso-in-office-add-ins##requirements-and-best-practices)。
+用户类型不受支持。 用户未使用有效的 Microsoft 帐户或 Office 365（工作或学校）帐户登录 Office。 例如，当使用本地域帐户运行 Office 时，可能会生成此错误。 代码应回退到用户身份验证备用系统。 有关详细信息，请参阅[要求和最佳做法](../develop/sso-in-office-add-ins.md#requirements-and-best-practices)。
 
 ### <a name="13004"></a>13004
 
-资源无效。 （应该只会在开发中看到此错误。）未正确配置加载项清单。 请更新此清单。 有关详细信息，请参阅[验证 Office 加载项的清单](../testing/troubleshoot-manifest.md)。 最常见的问题是**资源**元素（在 **WebApplicationInfo** 元素中）具有与加载项的域不匹配的域。 虽然资源值的协议部分应该是“api”而不是“https”；域名的所有其他部分（包括端口，如果有）应与加载项域名的相应部分相同。
+资源无效。 （应仅在开发过程中看到此错误。）尚未正确配置加载项清单。 请更新此清单。 有关详细信息，请参阅[验证 Office 加载项的清单](../testing/troubleshoot-manifest.md)。 最常见的问题是**资源**元素（在 **WebApplicationInfo** 元素中）具有与加载项的域不匹配的域。 虽然资源值的协议部分应该是“api”而不是“https”；域名的所有其他部分（包括端口，如果有）应与加载项域名的相应部分相同。
 
 ### <a name="13005"></a>13005
 
@@ -93,13 +93,13 @@ Office 主机无法获取对加载项 Web 服务的访问令牌。
 
 ### <a name="13010"></a>13010
 
-用户正在 Microsoft Edge 或 Internet Explorer 上的 Office 中运行加载项。 用户的 Office 365 域和 `login.microsoftonline.com` 域位于浏览器设置中的不同安全区域。 此错误仅出现在 **Office 网页版**中。 如果此错误返回，用户将已看到对此进行解释的错误，并链接到关于如何更改区域配置的页面。 如果加载项提供的功能无需用户登录，代码应捕获此错误，并让加载项继续正常运行。
+用户正在 Microsoft Edge 或 Internet Explorer 上的 Office 中运行加载项。 用户的 Office 365 域和`login.microsoftonline.com`域在浏览器设置中位于不同的安全区域中。 此错误仅出现在 **Office 网页版**中。 如果此错误返回，用户将已看到对此进行解释的错误，并链接到关于如何更改区域配置的页面。 如果加载项提供的功能无需用户登录，代码应捕获此错误，并让加载项继续正常运行。
 
 ### <a name="13012"></a>13012
 
 存在几种可能的原因：
 
-- 加载项在不支持 `getAccessToken` API的平台上运行。 例如，在 iPad 上它不受支持。 另请参阅[标识 API 要求集](/office/dev/add-ins/reference/requirement-sets/identity-api-requirement-sets)。
+- 加载项在不支持 `getAccessToken` API的平台上运行。 例如，在 iPad 上它不受支持。 另请参阅[标识 API 要求集](../reference/requirement-sets/identity-api-requirement-sets.md)。
 - `forMSGraphAccess` 选项在调用中传递给 `getAccessToken`，并且用户从 AppSource 获得了加载项。 在此方案中，对于所需的 Microsoft Graph 范围（权限），租户管理员未向加载项授予许可。 撤回具有 `allowConsentPrompt` 的 `getAccessToken` 将无法解决此问题，因为允许 Office 提示用户仅同意 AAD `profile` 范围。
 
 代码应回退到用户身份验证备用系统。
@@ -114,7 +114,7 @@ Office 主机无法获取对加载项 Web 服务的访问令牌。
 
 此错误（未特定于 `getAccessToken`）可能表示浏览器已缓存 office.js 文件的旧副本。 在开发时，清除浏览器的缓存。 另一种可能是 Office 的版本不够新，不足以支持 SSO。 在 Windows 上，最低版本是 16.0.12215.20006。 在 Mac 上，它是 16.32.19102902。
 
-在生产加载项中，加载项应该通过回退到用户身份验证备用系统来响应此错误。 有关详细信息，请参阅[要求和最佳做法](/office/dev/add-ins/develop/sso-in-office-add-ins##requirements-and-best-practices)。
+在生产加载项中，加载项应该通过回退到用户身份验证备用系统来响应此错误。 有关详细信息，请参阅[要求和最佳做法](../develop/sso-in-office-add-ins.md#requirements-and-best-practices)。
 
 ## <a name="errors-on-the-server-side-from-azure-active-directory"></a>Azure Active Directory 服务器端错误
 
@@ -141,7 +141,7 @@ Office 主机无法获取对加载项 Web 服务的访问令牌。
 应该只会在开发中看到此类错误。
 
 - 服务器端代码应向客户端发送 `403 Forbidden` 响应，它应该会在控制台或日志中记录此错误。
-- 请确保加载项清单 [Scopes](/office/dev/add-ins/reference/manifest/scopes) 部分指定了所需的全部权限。 此外，还请确保加载项 Web 服务注册指定了相同的权限。 同时检查是否有拼写错误。 如需了解更多信息，请参阅[向 Azure AD v2.0 终结点注册加载项](register-sso-add-in-aad-v2.md)。
+- 请确保加载项清单 [Scopes](../reference/manifest/scopes.md) 部分指定了所需的全部权限。 此外，还请确保加载项 Web 服务注册指定了相同的权限。 同时检查是否有拼写错误。 如需了解更多信息，请参阅[向 Azure AD v2.0 终结点注册加载项](register-sso-add-in-aad-v2.md)。
 
 ### <a name="invalid-audience-error-in-the-access-token-not-the-bootstrap-token"></a>访问令牌（而非启动令牌）中的无效受众错误
 

@@ -1,26 +1,26 @@
 ---
 title: 常见 JavaScript API 对象模型
 description: ''
-ms.date: 02/27/2020
+ms.date: 03/10/2020
 localization_priority: Normal
-ms.openlocfilehash: 3b1e1db21f3deb4b6a311a433dbd922c4bb6b50d
-ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
+ms.openlocfilehash: 85ecd3b7b676a11a4ff41868adbbd9a0d907f32a
+ms.sourcegitcommit: 4079903c3cc45b7d8c041509a44e9fc38da399b1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "42325127"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "42596723"
 ---
 # <a name="common-javascript-api-object-model"></a>常见 JavaScript API 对象模型
 
 [!include[information about the common API](../includes/alert-common-api-info.md)]
 
-Office JavaScript 加载项提供对主机基础功能的访问权限。 大多数此类访问权限可以访问一些重要的对象。 [Context](#context-object) 对象提供在初始化之后对运行时环境的访问权限。 [Document](#document-object) 对象使用户能够控制 Excel、PowerPoint 或 Word 文档。 [Mailbox](#mailbox-object) 对象使 Outlook 加载项能够访问邮件和用户配置文件。 理解这些高级对象之间的关系是 JavaScript 加载项的基础。
+Office JavaScript 加载项可提供对主机的基础功能的访问权限。 大多数此类访问权限可以访问一些重要的对象。 [Context](#context-object) 对象提供在初始化之后对运行时环境的访问权限。 [Document](#document-object) 对象使用户能够控制 Excel、PowerPoint 或 Word 文档。 [Mailbox](#mailbox-object) 对象使 Outlook 加载项能够访问邮件和用户配置文件。 理解这些高级对象之间的关系是 JavaScript 加载项的基础。
 
 ## <a name="context-object"></a>Context 对象
 
 **适用于：** 所有加载项类型
 
-如果加载项[已初始化](/office/dev/add-ins/develop/understanding-the-javascript-api-for-office#initializing-your-add-in)，则它具有许多可在运行时环境中交互的不同对象。 加载项的运行时上下文通过 [Context](/javascript/api/office/office.context) 对象反应在 API 中。 **Context** 是主要对象，它提供对大部分 API 最重要对象的访问权限，例如 [Document](/javascript/api/office/office.document) 和 [Mailbox](/javascript/api/outlook/Office.mailbox) 对象，二者反过来又提供对文档和邮箱内容的访问权限。
+如果加载项[已初始化](initialize-add-in.md)，则它具有许多可在运行时环境中交互的不同对象。 加载项的运行时上下文通过 [Context](/javascript/api/office/office.context) 对象反应在 API 中。 **Context** 是主要对象，它提供对大部分 API 最重要对象的访问权限，例如 [Document](/javascript/api/office/office.document) 和 [Mailbox](/javascript/api/outlook/Office.mailbox) 对象，二者反过来又提供对文档和邮箱内容的访问权限。
 
 例如，在任务窗格或内容外接程序中，可以使用 **Context** 对象的 [document](/javascript/api/office/office.context#document) 属性访问 **Document** 对象的属性和方法，以便与 Word 文档、Excel 工作表或 Project 计划的内容交互。类似地，在 Outlook 外接程序中，可以使用 **Context** 对象的 [mailbox](/javascript/api/outlook/Office.mailbox) 属性访问 **Mailbox** 对象的属性和方法，以便与邮件、会议请求或约会内容交互。
 
@@ -84,7 +84,7 @@ Office JavaScript 加载项提供对主机基础功能的访问权限。 大多�
 
 #### <a name="data-type-coercion"></a>数据类型强制转换
 
-和 Binding 对象上的数据访问方法支持使用这些方法的_coercionType_参数以及相应的[coercionType](/javascript/api/office/office.coerciontype)枚举值指定所需的数据类型。 [](/javascript/api/office/office.binding) `Document`无论绑定的实际形状如何，不同的 Office 应用程序都通过尝试将数据强制转换为请求的数据类型来支持常见数据类型。例如，如果选择 Word 表格或段落，则开发人员可以指定将其作为纯文本、HTML、Office Open XML 或 table 读取，API 实现将处理必要的转换和数据转换。
+和 Binding 对象上的数据访问方法支持使用这些方法的_coercionType_参数以及相应的[coercionType](/javascript/api/office/office.coerciontype)枚举值指定所需的数据类型。 [Binding](/javascript/api/office/office.binding) `Document`无论绑定的实际形状如何，不同的 Office 应用程序都通过尝试将数据强制转换为请求的数据类型来支持常见数据类型。例如，如果选择 Word 表格或段落，则开发人员可以指定将其作为纯文本、HTML、Office Open XML 或 table 读取，API 实现将处理必要的转换和数据转换。
 
 
 > [!TIP]

@@ -3,12 +3,12 @@ title: 清单文件中的 WebApplicationInfo 元素
 description: ''
 ms.date: 08/12/2019
 localization_priority: Normal
-ms.openlocfilehash: e10aee1bf3fb99099d282acd428fa0348229701c
-ms.sourcegitcommit: da8e6148f4bd9884ab9702db3033273a383d15f0
+ms.openlocfilehash: b6cf82776f683929845df83c642b28ad024d665a
+ms.sourcegitcommit: 4079903c3cc45b7d8c041509a44e9fc38da399b1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/20/2019
-ms.locfileid: "36477864"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "42596730"
 ---
 # <a name="webapplicationinfo-element"></a>WebApplicationInfo 元素
 
@@ -18,7 +18,7 @@ ms.locfileid: "36477864"
 - OAuth 2.0 *客户端*，可能需要访问 Microsoft Graph 的权限。
 
 > [!NOTE]
-> 目前，Word、Excel、Outlook 和 PowerPoint 在预览版中支持单一登录 API。 若要详细了解目前支持单一登录 API 的平台，请参阅 [IdentityAPI 要求集](/office/dev/add-ins/reference/requirement-sets/identity-api-requirement-sets)。 如果使用的是 Outlook 加载项，请务必为 Office 365 租赁启用新式验证。 要了解如何执行此操作，请参阅 [Exchange Online：如何为租户启用新式验证](https://social.technet.microsoft.com/wiki/contents/articles/32711.exchange-online-how-to-enable-your-tenant-for-modern-authentication.aspx)。
+> 目前，Word、Excel、Outlook 和 PowerPoint 在预览版中支持单一登录 API。 若要详细了解目前支持单一登录 API 的平台，请参阅 [IdentityAPI 要求集](../requirement-sets/identity-api-requirement-sets.md)。 如果使用的是 Outlook 加载项，请务必为 Office 365 租赁启用新式验证。 要了解如何执行此操作，请参阅 [Exchange Online：如何为租户启用新式验证](https://social.technet.microsoft.com/wiki/contents/articles/32711.exchange-online-how-to-enable-your-tenant-for-modern-authentication.aspx)。
 
 **WebApplicationInfo** 是清单中的 [VersionOverrides](versionoverrides.md) 元素的子元素。  
 
@@ -29,8 +29,8 @@ ms.locfileid: "36477864"
 |  **Id**    |  是   |  在 Azure Active Directory v2.0 终结点中注册的加载项关联服务的**应用程序 ID**。|
 |  **MsaId**    |  否   |  在 msm.live.com 中注册的用于 MSA 的外接程序 web 应用程序的客户端 ID。|
 |  **Resource**  |  是   |  指定在 Azure Active Directory v2.0 终结点中注册的加载项的**应用程序 ID URI**。|
-|  [Scopes](scopes.md)                |  是  |  指定外接程序对资源所需的权限, 如 Microsoft Graph。  |
-|  [审核](authorizations.md)  |  否   | 指定加载项的 web 应用程序需要对其进行授权的外部资源以及所需的权限。|
+|  [Scopes](scopes.md)                |  是  |  指定外接程序对资源所需的权限，如 Microsoft Graph。  |
+|  [授权](authorizations.md)  |  否   | 指定加载项的 web 应用程序需要对其进行授权的外部资源以及所需的权限。|
 
 ## <a name="webapplicationinfo-example"></a>WebApplicationInfo 示例
 

@@ -3,19 +3,19 @@ title: Outlook 外接程序 API 要求集 1.3
 description: ''
 ms.date: 12/17/2019
 localization_priority: Normal
-ms.openlocfilehash: 5a9011b7aa1815cb7c54af277c7badc7381bbf73
-ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
+ms.openlocfilehash: 066671eb707b391ab1a6dcf38c3c7299af3255ba
+ms.sourcegitcommit: 4079903c3cc45b7d8c041509a44e9fc38da399b1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "42325204"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "42597052"
 ---
 # <a name="outlook-add-in-api-requirement-set-13"></a>Outlook 外接程序 API 要求集 1.3
 
 Office JavaScript API 的 Outlook 外接程序 API 子集包括可以在 Outlook 外接程序中使用的对象、方法、属性和事件。
 
 > [!NOTE]
-> 本文档适用于最新要求集之外的[要求集](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)。
+> 本文档适用于最新要求集之外的[要求集](../../requirement-sets/outlook-api-requirement-sets.md)。
 
 ## <a name="whats-new-in-13"></a>1.3 中的新增功能有哪些？
 

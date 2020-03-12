@@ -1,19 +1,19 @@
 ---
 title: Identity API 要求集
 description: ''
-ms.date: 11/11/2019
+ms.date: 03/11/2020
 ms.prod: non-product-specific
 localization_priority: Normal
-ms.openlocfilehash: 96f5c305f4ecfe0fdc0ee89aed6955e090f87b02
-ms.sourcegitcommit: 88d81aa2d707105cf0eb55d9774b2e7cf468b03a
+ms.openlocfilehash: 6460516c32f70995d43ae64b213c93153a015bff
+ms.sourcegitcommit: 05b73cdec5f4db7f0b8d48a5a552ee296a0332ca
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "38301923"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "42600688"
 ---
 # <a name="identity-api-requirement-sets"></a>Identity API 要求集
 
-要求集是指各组已命名的 API 成员。Office 加载项使用清单中指定的要求集或执行运行时检查，以确定 Office 主机是否支持加载项所需的 API。有关详细信息，请参阅 [Office 版本和要求集](/office/dev/add-ins/develop/office-versions-and-requirement-sets)。
+要求集是指各组已命名的 API 成员。Office 加载项使用清单中指定的要求集或执行运行时检查，以确定 Office 主机是否支持加载项所需的 API。有关详细信息，请参阅 [Office 版本和要求集](../../develop/office-versions-and-requirement-sets.md)。
 
 Office 外接程序在多个 Office 版本中运行。 下表列出了 Identity API 要求集、支持该要求集的 Office 主机应用程序，以及 Office 应用程序的内部版本或版本号。
 
@@ -25,11 +25,11 @@ Office 外接程序在多个 Office 版本中运行。 下表列出了 Identity 
 >
 > **&#8224;** 在这些平台上使用 SSO Api 的外接程序将仅在用户的租户管理员向外接程序授予许可时才有效。 用户不能同意，即使是对自己的 Azure AD 配置文件也不允许。
 
+## <a name="office-versions-and-build-numbers"></a>Office 版本和内部版本号
+
 若要详细了解版本、内部版本号和 Office Online Server，请参阅：
 
-- [更新频道发布的 Office 365 客户端版本号和内部版本号](https://support.office.com/article/version-and-build-numbers-of-update-channel-releases-ae942449-1fca-4484-898b-a933ea23def7)
-- [使用的是哪一版 Office？](https://support.office.com/article/What-version-of-Office-am-I-using-932788b8-a3ce-44bf-bb09-e334518b8b19)
-- [在哪里可以找到 Office 365 客户端应用程序的版本号和内部版本号](https://support.office.com/article/version-and-build-numbers-of-update-channel-releases-ae942449-1fca-4484-898b-a933ea23def7)
+[!INCLUDE [Links to get Office versions and how to find Office client version](../../includes/links-get-office-versions-builds.md)]
 - [Office Online Server 概述](/officeonlineserver/office-online-server-overview)
 
 ## <a name="office-common-api-requirement-sets"></a>Office 通用 API 要求集
@@ -42,6 +42,6 @@ Office 外接程序在多个 Office 版本中运行。 下表列出了 Identity 
 
 ## <a name="see-also"></a>另请参阅
 
-- [Office 版本和要求集](/office/dev/add-ins/develop/office-versions-and-requirement-sets)
-- [指定 Office 主机和 API 要求](/office/dev/add-ins/develop/specify-office-hosts-and-api-requirements)
-- [Office 外接程序 XML 清单](/office/dev/add-ins/develop/add-in-manifests)
+- [Office 版本和要求集](../../develop/office-versions-and-requirement-sets.md)
+- [指定 Office 主机和 API 要求](../../develop/specify-office-hosts-and-api-requirements.md)
+- [Office 外接程序 XML 清单](../../develop/add-in-manifests.md)

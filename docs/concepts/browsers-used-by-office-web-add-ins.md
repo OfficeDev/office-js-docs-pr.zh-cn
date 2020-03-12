@@ -1,18 +1,18 @@
 ---
 title: Office 加载项使用的浏览器
 description: 指定操作系统和 Office 版本如何确定 Office 加载项使用的浏览器。
-ms.date: 12/13/2019
+ms.date: 03/09/2020
 localization_priority: Normal
-ms.openlocfilehash: 37d001d7feb170b11edc4f6a233f6fdc15cf3438
-ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
+ms.openlocfilehash: d53ea0da29c9d2cc1177d233eed9e3ee62a891f2
+ms.sourcegitcommit: 4079903c3cc45b7d8c041509a44e9fc38da399b1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "41950360"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "42596464"
 ---
 # <a name="browsers-used-by-office-add-ins"></a>Office 加载项使用的浏览器
 
-Office 加载项是使用 iFrames（在 Office 网页版中运行时）和使用 Office 桌面版和移动版客户端中的嵌入式浏览器控件显示的 Web 应用程序。 加载项还需要使用 JavaScript 引擎来运行 JavaScript。 嵌入式浏览器和引擎均由用户计算机上安装的浏览器提供。
+Office 加载项是使用 iFrames（在 Office 网页版中运行时）和使用 Office 桌面版和移动版客户端中的嵌入式浏览器控件显示的 Web 应用程序。 加载项还需要使用 JavaScript 引擎来运行 JavaScript。 嵌入的浏览器和引擎都是由安装在用户计算机上的浏览器提供的。
 
 要使用的浏览器取决于：
 
@@ -38,6 +38,10 @@ Office 加载项是使用 iFrames（在 Office 网页版中运行时）和使用
 > Internet Explorer 11 不支持高于 ES5 的 JavaScript 版本。 如果任何加载项用户安装的是使用 Internet Explorer 11 的平台，若要使用 ECMAScript 2015 或更高版本的语法和功能，则必须将 JavaScript 转换为 ES5 或使用填充代码。 此外，Internet Explorer 11 不支持媒体、录制和位置等部分 HTML5 功能。
 
 ## <a name="troubleshooting-microsoft-edge-issues"></a>Microsoft Edge 问题疑难解答
+
+### <a name="service-workers-are-not-working"></a>服务工作人员不工作
+
+Office 外接程序不支持[Microsoft Edge web](/microsoft-edge/hosting/webview)上的服务工作线程。 请参阅[Office 外接程序概述](../overview/office-add-ins.md)，了解有关边缘 web 视图控件的最新支持的功能。 我们正在努力将基于 Chromium 的新[边缘 WebView2](/microsoft-edge/hosting/webview2)带到 Office 外接程序平台，我们预期将支持服务工作人员。
 
 ### <a name="chromium-based-edge-is-installed-on-my-development-computer-but-my-add-in-does-not-use-it"></a>在我的开发计算机上安装了基于 Chromium 的边缘，但我的加载项不使用它
 

@@ -3,12 +3,12 @@ title: 使用文本编辑器为 Microsoft Project 创建首个任务窗格加载
 description: ''
 ms.date: 10/11/2019
 localization_priority: Normal
-ms.openlocfilehash: 821c2922bd51657f89a82a58f388f8c4616de45f
-ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
+ms.openlocfilehash: 9c742374dec8db92e076f05d8c65712d62c72a42
+ms.sourcegitcommit: 4079903c3cc45b7d8c041509a44e9fc38da399b1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "42324903"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "42596814"
 ---
 # <a name="create-your-first-task-pane-add-in-for-microsoft-project-by-using-a-text-editor"></a>使用文本编辑器为 Microsoft Project 创建首个任务窗格加载项
 
@@ -109,7 +109,7 @@ JSOMCall.html 示例使用 office.js 文件和 project-15.js 文件中包含的 
 
    下面的代码使用 Office.js 文件中的函数来获取应用程序上下文和文档信息。 该`text`对象是 HTML 文件中`textarea`控件的 ID。
 
-   ProjDoc 变量是使用`ProjectDocument`对象初始化的。 ** \_** 代码包括一些简单的`getContextValues`错误处理函数，以及获取应用程序上下文和项目文档上下文属性的函数。 有关 Project 的 JavaScript 对象模型的详细信息，请参阅 [适用于 Office 的 JavaScript API](/office/dev/add-ins/reference/javascript-api-for-office)。
+   ProjDoc 变量是使用`ProjectDocument`对象初始化的。 ** \_** 代码包括一些简单的`getContextValues`错误处理函数，以及获取应用程序上下文和项目文档上下文属性的函数。 有关 Project 的 JavaScript 对象模型的详细信息，请参阅 [适用于 Office 的 JavaScript API](../reference/javascript-api-for-office.md)。
 
 
     ```js
@@ -172,7 +172,7 @@ JSOMCall.html 示例使用 office.js 文件和 project-15.js 文件中包含的 
     }
     ```
 
-   有关 Office. .js 文件中的函数的信息，请参阅[Office JAVASCRIPT API](/office/dev/add-ins/reference/javascript-api-for-office)。 例如， `getDocumentUrl`函数将获取打开项目的 URL 或文件路径。
+   有关 Office. .js 文件中的函数的信息，请参阅[Office JAVASCRIPT API](../reference/javascript-api-for-office.md)。 例如， `getDocumentUrl`函数将获取打开项目的 URL 或文件路径。
 
 3. 添加调用 Office.js 和 Project-15.js 中异步函数的 JavaScript 函数来获取选定数据：
 
@@ -1096,6 +1096,6 @@ function logMethodError(methodName, errorName, errorMessage, actionMessage) {
 
 - [Project 任务窗格加载项](../project/project-add-ins.md)
 - [了解外接程序的 JavaScript API](../develop/understanding-the-javascript-api-for-office.md)
-- [Office JavaScript API 外接程序](/office/dev/add-ins/reference/javascript-api-for-office)
+- [Office JavaScript API 外接程序](../reference/javascript-api-for-office.md)
 - [Office 外接程序清单的架构参考 (v1.1)](../develop/add-in-manifests.md)
 - [Project 2013 SDK 下载](https://www.microsoft.com/download/details.aspx?id=30435%20)

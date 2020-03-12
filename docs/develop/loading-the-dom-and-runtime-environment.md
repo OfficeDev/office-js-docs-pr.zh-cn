@@ -1,14 +1,14 @@
 ---
 title: 加载 DOM 和运行时环境
 description: ''
-ms.date: 07/01/2019
+ms.date: 03/10/2020
 localization_priority: Normal
-ms.openlocfilehash: 06b3e9d65d29b257d34d2f4bdad81f464056e558
-ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
+ms.openlocfilehash: 15e2b94275d6a4d4de689ce9524b2731f044d425
+ms.sourcegitcommit: 4079903c3cc45b7d8c041509a44e9fc38da399b1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "42325120"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "42596667"
 ---
 # <a name="loading-the-dom-and-runtime-environment"></a>加载 DOM 和运行时环境
 
@@ -32,7 +32,7 @@ ms.locfileid: "42325120"
 
 4. 浏览器控件加载 DOM 和 HTML 正文，并调用`window.onload`事件的事件处理程序。
 
-5. Office 主机应用程序加载运行时环境，这将从内容分发网络 (CDN) 服务器中为 JavaScript 库文件下载并缓存 JavaScript API，然后为 [Office](/javascript/api/office) 对象的 [initialize](/javascript/api/office#office-initialize-reason-) 事件调用加载项的事件处理程序（如果已为其分配处理程序）。 此时它还会检查是否有任何回调（或链接 `then()` 函数）已传递（或链接）到 `Office.onReady` 处理程序。 有关 `Office.initialize` 与 `Office.onReady` 之间的区别的详细信息，请参阅[初始化加载项](/office/dev/add-ins/develop/understanding-the-javascript-api-for-office#initializing-your-add-in)。
+5. Office 主机应用程序加载运行时环境，这将从内容分发网络 (CDN) 服务器中为 JavaScript 库文件下载并缓存 JavaScript API，然后为 [Office](/javascript/api/office) 对象的 [initialize](/javascript/api/office#office-initialize-reason-) 事件调用加载项的事件处理程序（如果已为其分配处理程序）。 此时它还会检查是否有任何回调（或链接 `then()` 函数）已传递（或链接）到 `Office.onReady` 处理程序。 有关`Office.initialize`和`Office.onReady`的区别的详细信息，请参阅[初始化外接程序](initialize-add-in.md)。
 
 6. 当 DOM 和 HTML 正文加载完毕并且加载项完成初始化后，加载项的主函数就可以继续进行。
 
@@ -55,7 +55,7 @@ ms.locfileid: "42325120"
 
 5. 浏览器控件加载 DOM 和 HTML 正文，并调用`onload`事件的事件处理程序。
 
-6. Outlook 加载运行时环境，这将从内容分发网络 (CDN) 服务器中为 JavaScript 库文件下载并缓存 JavaScript API，然后为 [Office](/javascript/api/office) 加载项对象的 [initialize](/javascript/api/office#office-initialize-reason-) 事件调用事件处理程序（如果已为其分配处理程序）。 此时它还会检查是否有任何回调（或链接 `then()` 函数）已传递（或链接）到 `Office.onReady` 处理程序。 有关 `Office.initialize` 与 `Office.onReady` 之间的区别的详细信息，请参阅[初始化加载项](/office/dev/add-ins/develop/understanding-the-javascript-api-for-office#initializing-your-add-in)。
+6. Outlook 加载运行时环境，这将从内容分发网络 (CDN) 服务器中为 JavaScript 库文件下载并缓存 JavaScript API，然后为 [Office](/javascript/api/office) 加载项对象的 [initialize](/javascript/api/office#office-initialize-reason-) 事件调用事件处理程序（如果已为其分配处理程序）。 此时它还会检查是否有任何回调（或链接 `then()` 函数）已传递（或链接）到 `Office.onReady` 处理程序。 有关`Office.initialize`和`Office.onReady`的区别的详细信息，请参阅[初始化外接程序](initialize-add-in.md)。
 
 7. 当 DOM 和 HTML 正文加载完毕并且加载项完成初始化后，加载项的主函数就可以继续进行。
 
@@ -93,7 +93,7 @@ Office.initialize = function () {
 
 此方法可在任何 Office 外接`onReady`程序`initialize`的或处理程序中使用。
 
-电话拨号器示例 Outlook 加载项展示了略为不同的方法，此方法仅使用 JavaScript 检查这些相同条件。 
+电话拨号器示例 Outlook 加载项展示了略为不同的方法，此方法仅使用 JavaScript 检查这些相同条件。
 
 > [!IMPORTANT]
 > 即使外接程序没有要执行的初始化任务，也必须至少包含调用`Office.onReady`或分配最少`Office.initialize`事件处理程序函数，如以下示例中所示。
@@ -113,4 +113,4 @@ Office.initialize = function () {
 ## <a name="see-also"></a>另请参阅
 
 - [了解 Office JavaScript API](understanding-the-javascript-api-for-office.md)
-- [初始化 Office 外接程序](initialize-add-in.md)
+- [初始化 Office 加载项](initialize-add-in.md)

@@ -1,16 +1,16 @@
 ---
-title: Office 对话框 API 的最佳实践和规则
+title: Office 对话框 API 最佳做法和规则
 description: 提供 Office 对话框 API 的规则和最佳做法，例如单页应用程序的最佳实践（SPA）
 ms.date: 01/29/2020
 localization_priority: Normal
-ms.openlocfilehash: 7a38337ca9a263df1f8405f2883fa4481c342e6b
-ms.sourcegitcommit: 4c9e02dac6f8030efc7415e699370753ec9415c8
+ms.openlocfilehash: e684c56768cd2ca7c9b14788206c925808c90b63
+ms.sourcegitcommit: 4079903c3cc45b7d8c041509a44e9fc38da399b1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/01/2020
-ms.locfileid: "41650071"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "42596597"
 ---
-# <a name="best-practices-and-rules-for-the-office-dialog-api"></a>Office 对话框 API 的最佳实践和规则
+# <a name="best-practices-and-rules-for-the-office-dialog-api"></a>Office 对话框 API 最佳做法和规则
 
 本文提供 Office dialog API 的规则、陷阱和最佳实践，包括设计对话的 UI 和在单页面应用程序（SPA）中使用 API 的最佳实践
 
@@ -23,7 +23,7 @@ ms.locfileid: "41650071"
 
 - 对话框只能导航到 HTTPS Url，而不能导航到 HTTP。
 - 传递给[displayDialogAsync](/javascript/api/office/office.ui)方法的 URL 必须与加载项本身在完全相同的域中。 它不能是子域。 但传递给它的页面可以重定向到另一个域中的页面。
-- 主机窗口（可以是任务窗格或外接程序命令的无用户 UI 的[函数文件](/office/dev/add-ins/reference/manifest/functionfile)）一次只能打开一个对话框。
+- 主机窗口（可以是任务窗格或外接程序命令的无用户 UI 的[函数文件](../reference/manifest/functionfile.md)）一次只能打开一个对话框。
 - 在该对话框中仅可调用两个 Office Api：
   - [Office.context.ui.messageparent](/javascript/api/office/office.ui#messageparent-message-)函数。
   - `Office.context.requirements.isSetSupported`（有关详细信息，请参阅[指定 Office 主机和 API 要求](specify-office-hosts-and-api-requirements.md)。）
@@ -33,7 +33,7 @@ ms.locfileid: "41650071"
 
 ### <a name="avoid-overusing-dialog-boxes"></a>避免过度使用对话框
 
-由于不鼓励重叠的 UI 元素，因此除非您的方案需要，否则请避免从任务窗格中打开对话框。 考虑如何使用任务窗格的区域时，请注意任务窗格可以是选项卡式。 有关示例，请参阅 [Excel 加载项 JavaScript SalesTracker](https://github.com/OfficeDev/Excel-Add-in-JavaScript-SalesTracker) 示例。
+由于不赞成重叠 UI 元素，因此除非应用场景需要，否则请勿从任务窗格打开对话框。 考虑如何使用任务窗格区域时，请注意任务窗格中可以有选项卡。 有关示例，请参阅 [Excel 加载项 JavaScript SalesTracker](https://github.com/OfficeDev/Excel-Add-in-JavaScript-SalesTracker) 样本。
 
 ### <a name="designing-a-dialog-box-ui"></a>设计对话框 UI
 

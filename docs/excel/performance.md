@@ -3,12 +3,12 @@ title: Excel JavaScript API 性能优化
 description: 使用 Excel JavaScript API 优化性能
 ms.date: 06/20/2019
 localization_priority: Normal
-ms.openlocfilehash: d041356129ad5e5db8c990daaafee4e583de1dfa
-ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
+ms.openlocfilehash: 843a8fffbe916003b81ac974db12e3128efb7997
+ms.sourcegitcommit: 4079903c3cc45b7d8c041509a44e9fc38da399b1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "42325050"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "42596996"
 ---
 # <a name="performance-optimization-using-the-excel-javascript-api"></a>使用 Excel JavaScript API 优化性能
 
@@ -72,10 +72,10 @@ object.load({ loadOption });
 
 _其中：_
 
-* `properties` 列出了要加载的属性，指定为逗号分隔的字符串或名称数组。 有关详细信息，请参阅`load()`为[Excel JavaScript API 参考](/office/dev/add-ins/reference/overview/excel-add-ins-reference-overview)中的对象定义的方法。
+* `properties` 列出了要加载的属性，指定为逗号分隔的字符串或名称数组。 有关详细信息，请参阅`load()`为[Excel JavaScript API 参考](../reference/overview/excel-add-ins-reference-overview.md)中的对象定义的方法。
 * `loadOption` 指定的对象描述了选择、展开、置顶和跳过选项。有关详细信息，请参阅对象加载[选项](/javascript/api/office/officeextension.loadoption)。
 
-请注意，一个对象下的某些“属性”可能与另一个对象同名。 例如，`format` 是区域对象下的一个属性，但 `format` 本身也是一个对象。 因此，如果发出 `range.load("format")` 之类的调用，这就相当于 `range.format.load()`，后者是一个空 load() 调用，它可能会导致前面所述的性能问题。 若要避免这种情况，代码应仅加载对象树中的“叶节点”。 
+请注意，对象下的某些 "属性" 可能与另一个对象具有相同的名称。 例如，`format` 是区域对象下的一个属性，但 `format` 本身也是一个对象。 因此，如果发出 `range.load("format")` 之类的调用，这就相当于 `range.format.load()`，后者是一个空 load() 调用，它可能会导致前面所述的性能问题。 若要避免这种情况，代码应仅加载对象树中的 "叶节点"。 
 
 ## <a name="suspend-excel-processes-temporarily"></a>暂时挂起 Excel 进程
 

@@ -3,12 +3,12 @@ ms.date: 06/18/2019
 description: 在 Excel 中使用 JavaScript 通过自定义函数创建对话框。
 title: 通过自定义函数显示对话框
 localization_priority: Normal
-ms.openlocfilehash: 8db5034cf9079ac5cd05654614087882ed1a8d52
-ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
+ms.openlocfilehash: 54648e87cfdcb314c3d9d3ba3a4e0dbe3c708859
+ms.sourcegitcommit: 4079903c3cc45b7d8c041509a44e9fc38da399b1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "41950766"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "42596632"
 ---
 # <a name="display-a-dialog-box-from-a-custom-function"></a>通过自定义函数显示对话框
 
@@ -17,11 +17,11 @@ ms.locfileid: "41950766"
 [!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
 >[!NOTE]
-> `Office.Dialog` 对象是自定义函数运行时的一部分。 任务窗格不使用 `Dialog` 对象。 若要从任务窗格创建对话框，请参阅[对话框 API](/office/dev/add-ins/develop/dialog-api-in-office-add-ins)。
+> `Office.Dialog` 对象是自定义函数运行时的一部分。 任务窗格不使用 `Dialog` 对象。 若要从任务窗格创建对话框，请参阅[对话框 API](../develop/dialog-api-in-office-add-ins.md)。
 
 ## <a name="dialog-box-api-example"></a>对话框 API 示例
 
-在下面的代码示例中，函数 `getTokenViaDialog` 使用 `Dialog`API 的 `displayWebDialogOptions` 函数来显示对话框。
+在下面的代码示例中，函数`getTokenViaDialog`使用`Dialog` API 的`displayWebDialogOptions`函数显示一个对话框。
 
 ```js
 /**

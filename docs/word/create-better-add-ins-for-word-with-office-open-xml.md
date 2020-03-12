@@ -3,12 +3,12 @@ title: 使用 Office Open XML 创建更优质的 Word 加载项
 description: ''
 ms.date: 10/10/2019
 localization_priority: Normal
-ms.openlocfilehash: 0a04edf5fafd9cce69d5e2805fe8e20d157fff7c
-ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
+ms.openlocfilehash: 08e3af410d9882ed10982606fe573973365a52ef
+ms.sourcegitcommit: 4079903c3cc45b7d8c041509a44e9fc38da399b1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "42324727"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "42596975"
 ---
 # <a name="create-better-add-ins-for-word-with-office-open-xml"></a>使用 Office Open XML 创建更优质的 Word 加载项
 
@@ -848,6 +848,6 @@ SmartArt 图表具有四个关联的部件，但始终需要的只有两个。�
 
 ## <a name="see-also"></a>另请参阅
 
-- [Office JavaScript API](/office/dev/add-ins/reference/javascript-api-for-office)
+- [Office JavaScript API](../reference/javascript-api-for-office.md)
 - [标准 ECMA-376：Office Open XML 文件格式](https://www.ecma-international.org/publications/standards/Ecma-376.htm)（其中收录了 Open XML 的完整语言参考和相关文档）
 - [浏览 Office JavaScript API：数据绑定和自定义 XML 部件](https://msdn.microsoft.com/magazine/dn166930.aspx)
