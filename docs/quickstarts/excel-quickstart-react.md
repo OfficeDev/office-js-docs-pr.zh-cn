@@ -4,48 +4,48 @@ description: 了解如何使用 Office JS API 和 React 生成简单的 Excel �
 ms.date: 01/16/2020
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: b7c4fbbb26935bedb5d1d2d09f0137cfda3e34f4
-ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
+ms.openlocfilehash: d98d3145a092b18bdfa60f29aa5dda885b9168ed
+ms.sourcegitcommit: 4079903c3cc45b7d8c041509a44e9fc38da399b1
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "41950626"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "42596842"
 ---
-# <a name="build-an-excel-task-pane-add-in-using-react"></a><span data-ttu-id="30061-103">使用 React 生成 Excel 任务窗格加载项</span><span class="sxs-lookup"><span data-stu-id="30061-103">Build an Excel task pane add-in using React</span></span>
+# <a name="build-an-excel-task-pane-add-in-using-react"></a><span data-ttu-id="aa09b-103">使用 React 生成 Excel 任务窗格加载项</span><span class="sxs-lookup"><span data-stu-id="aa09b-103">Build an Excel task pane add-in using React</span></span>
 
-<span data-ttu-id="30061-104">本文将逐步介绍如何使用 React 和 Excel JavaScript API 生成 Excel 任务加载项。</span><span class="sxs-lookup"><span data-stu-id="30061-104">In this article, you'll walk through the process of building an Excel task pane add-in using React and the Excel JavaScript API.</span></span>
+<span data-ttu-id="aa09b-104">本文将逐步介绍如何使用 React 和 Excel JavaScript API 生成 Excel 任务加载项。</span><span class="sxs-lookup"><span data-stu-id="aa09b-104">In this article, you'll walk through the process of building an Excel task pane add-in using React and the Excel JavaScript API.</span></span>
 
-## <a name="prerequisites"></a><span data-ttu-id="30061-105">先决条件</span><span class="sxs-lookup"><span data-stu-id="30061-105">Prerequisites</span></span>
+## <a name="prerequisites"></a><span data-ttu-id="aa09b-105">先决条件</span><span class="sxs-lookup"><span data-stu-id="aa09b-105">Prerequisites</span></span>
 
 [!include[Yeoman generator prerequisites](../includes/quickstart-yo-prerequisites.md)]
 
-## <a name="create-the-add-in-project"></a><span data-ttu-id="30061-106">创建加载项项目</span><span class="sxs-lookup"><span data-stu-id="30061-106">Create the add-in project</span></span>
+## <a name="create-the-add-in-project"></a><span data-ttu-id="aa09b-106">创建加载项项目</span><span class="sxs-lookup"><span data-stu-id="aa09b-106">Create the add-in project</span></span>
 
 [!include[Yeoman generator create project guidance](../includes/yo-office-command-guidance.md)]
 
-- <span data-ttu-id="30061-107">**选择项目类型:** `Office Add-in Task Pane project using React framework`</span><span class="sxs-lookup"><span data-stu-id="30061-107">**Choose a project type:** `Office Add-in Task Pane project using React framework`</span></span>
-- <span data-ttu-id="30061-108">**选择脚本类型:** `TypeScript`</span><span class="sxs-lookup"><span data-stu-id="30061-108">**Choose a script type:** `TypeScript`</span></span>
-- <span data-ttu-id="30061-109">**要如何命名加载项?**</span><span class="sxs-lookup"><span data-stu-id="30061-109">**What do you want to name your add-in?**</span></span> `My Office Add-in`
-- <span data-ttu-id="30061-110">**要支持哪一个 Office 客户端应用程序?**</span><span class="sxs-lookup"><span data-stu-id="30061-110">**Which Office client application would you like to support?**</span></span> `Excel`
+- <span data-ttu-id="aa09b-107">**选择项目类型:** `Office Add-in Task Pane project using React framework`</span><span class="sxs-lookup"><span data-stu-id="aa09b-107">**Choose a project type:** `Office Add-in Task Pane project using React framework`</span></span>
+- <span data-ttu-id="aa09b-108">**选择脚本类型:** `TypeScript`</span><span class="sxs-lookup"><span data-stu-id="aa09b-108">**Choose a script type:** `TypeScript`</span></span>
+- <span data-ttu-id="aa09b-109">**要如何命名加载项?**</span><span class="sxs-lookup"><span data-stu-id="aa09b-109">**What do you want to name your add-in?**</span></span> `My Office Add-in`
+- <span data-ttu-id="aa09b-110">**要支持哪一个 Office 客户端应用程序?**</span><span class="sxs-lookup"><span data-stu-id="aa09b-110">**Which Office client application would you like to support?**</span></span> `Excel`
 
 ![Yeoman 生成器](../images/yo-office-excel-react-2.png)
 
-<span data-ttu-id="30061-112">完成此向导后，生成器会创建项目，并安装支持的 Node 组件。</span><span class="sxs-lookup"><span data-stu-id="30061-112">After you complete the wizard, the generator creates the project and installs supporting Node components.</span></span>
+<span data-ttu-id="aa09b-112">完成此向导后，生成器会创建项目，并安装支持的 Node 组件。</span><span class="sxs-lookup"><span data-stu-id="aa09b-112">After you complete the wizard, the generator creates the project and installs supporting Node components.</span></span>
 
 [!include[Yeoman generator next steps](../includes/yo-office-next-steps.md)]
 
-## <a name="explore-the-project"></a><span data-ttu-id="30061-113">浏览项目</span><span class="sxs-lookup"><span data-stu-id="30061-113">Explore the project</span></span>
+## <a name="explore-the-project"></a><span data-ttu-id="aa09b-113">浏览项目</span><span class="sxs-lookup"><span data-stu-id="aa09b-113">Explore the project</span></span>
 
-<span data-ttu-id="30061-114">使用 Yeoman 生成器创建的加载项项目包含适合于基础任务窗格加载项的示例代码。</span><span class="sxs-lookup"><span data-stu-id="30061-114">The add-in project that you've created with the Yeoman generator contains sample code for a very basic task pane add-in.</span></span> <span data-ttu-id="30061-115">如果想要浏览加载项项目的主要组件，请在代码编辑器中打开项目并检查下面列出的文件。</span><span class="sxs-lookup"><span data-stu-id="30061-115">If you'd like to explore the key components of your add-in project, open the project in your code editor and review the files listed below.</span></span> <span data-ttu-id="30061-116">准备好试用加载项时，请转至下一部分。</span><span class="sxs-lookup"><span data-stu-id="30061-116">When you're ready to try out your add-in, proceed to the next section.</span></span>
+<span data-ttu-id="aa09b-114">使用 Yeoman 生成器创建的加载项项目包含适合于基础任务窗格加载项的示例代码。</span><span class="sxs-lookup"><span data-stu-id="aa09b-114">The add-in project that you've created with the Yeoman generator contains sample code for a very basic task pane add-in.</span></span> <span data-ttu-id="aa09b-115">如果想要浏览加载项项目的主要组件，请在代码编辑器中打开项目并检查下面列出的文件。</span><span class="sxs-lookup"><span data-stu-id="aa09b-115">If you'd like to explore the key components of your add-in project, open the project in your code editor and review the files listed below.</span></span> <span data-ttu-id="aa09b-116">准备好试用加载项时，请转至下一部分。</span><span class="sxs-lookup"><span data-stu-id="aa09b-116">When you're ready to try out your add-in, proceed to the next section.</span></span>
 
-- <span data-ttu-id="30061-117">项目根目录中的 **manifest.xml** 文件定义加载项的设置和功能。</span><span class="sxs-lookup"><span data-stu-id="30061-117">The **manifest.xml** file in the root directory of the project defines the settings and capabilities of the add-in.</span></span>
-- <span data-ttu-id="30061-118">**./src/taskpane/taskpane.html** 文件定义任务窗格的 HTML 框架，而 **./src/taskpane/components** 文件夹内的文件定义任务窗格 UI 的各个部分。</span><span class="sxs-lookup"><span data-stu-id="30061-118">The **./src/taskpane/taskpane.html** file defines the HTML framework of the task pane, and the files within the **./src/taskpane/components** folder define the various parts of the task pane UI.</span></span>
-- <span data-ttu-id="30061-119">**./src/taskpane/taskpane.css** 文件包含应用于任务窗格中的内容的 CSS。</span><span class="sxs-lookup"><span data-stu-id="30061-119">The **./src/taskpane/taskpane.css** file contains the CSS that's applied to content in the task pane.</span></span>
-- <span data-ttu-id="30061-120">**./src/taskpane/components/App.tsx** 文件包含用于加快任务窗格与 Excel 之间的交互的 Office JavaScript API 代码。</span><span class="sxs-lookup"><span data-stu-id="30061-120">The **./src/taskpane/components/App.tsx** file contains the Office JavaScript API code that facilitates interaction between the task pane and Excel.</span></span>
+- <span data-ttu-id="aa09b-117">项目根目录中的 **manifest.xml** 文件定义加载项的设置和功能。</span><span class="sxs-lookup"><span data-stu-id="aa09b-117">The **manifest.xml** file in the root directory of the project defines the settings and capabilities of the add-in.</span></span>
+- <span data-ttu-id="aa09b-118">**./src/taskpane/taskpane.html** 文件定义任务窗格的 HTML 框架，而 **./src/taskpane/components** 文件夹内的文件定义任务窗格 UI 的各个部分。</span><span class="sxs-lookup"><span data-stu-id="aa09b-118">The **./src/taskpane/taskpane.html** file defines the HTML framework of the task pane, and the files within the **./src/taskpane/components** folder define the various parts of the task pane UI.</span></span>
+- <span data-ttu-id="aa09b-119">**./src/taskpane/taskpane.css** 文件包含应用于任务窗格中的内容的 CSS。</span><span class="sxs-lookup"><span data-stu-id="aa09b-119">The **./src/taskpane/taskpane.css** file contains the CSS that's applied to content in the task pane.</span></span>
+- <span data-ttu-id="aa09b-120">**./src/taskpane/components/App.tsx** 文件包含用于加快任务窗格与 Excel 之间的交互的 Office JavaScript API 代码。</span><span class="sxs-lookup"><span data-stu-id="aa09b-120">The **./src/taskpane/components/App.tsx** file contains the Office JavaScript API code that facilitates interaction between the task pane and Excel.</span></span>
 
-## <a name="try-it-out"></a><span data-ttu-id="30061-121">试用</span><span class="sxs-lookup"><span data-stu-id="30061-121">Try it out</span></span>
+## <a name="try-it-out"></a><span data-ttu-id="aa09b-121">试用</span><span class="sxs-lookup"><span data-stu-id="aa09b-121">Try it out</span></span>
 
-1. <span data-ttu-id="30061-122">导航到项目的根文件夹。</span><span class="sxs-lookup"><span data-stu-id="30061-122">Navigate to the root folder of the project.</span></span>
+1. <span data-ttu-id="aa09b-122">导航到项目的根文件夹。</span><span class="sxs-lookup"><span data-stu-id="aa09b-122">Navigate to the root folder of the project.</span></span>
 
     ```command&nbsp;line
     cd "My Office Add-in"
@@ -53,26 +53,26 @@ ms.locfileid: "41950626"
 
 2. [!include[Start server section](../includes/quickstart-yo-start-server-excel.md)] 
 
-3. <span data-ttu-id="30061-123">在 Excel 中，依次选择的“**开始**”选项卡和功能区中的“**显示任务窗格**”按钮，以打开加载项任务窗格。</span><span class="sxs-lookup"><span data-stu-id="30061-123">In Excel, choose the **Home** tab, and then choose the **Show Taskpane** button in the ribbon to open the add-in task pane.</span></span>
+3. <span data-ttu-id="aa09b-123">在 Excel 中，依次选择的“**开始**”选项卡和功能区中的“**显示任务窗格**”按钮，以打开加载项任务窗格。</span><span class="sxs-lookup"><span data-stu-id="aa09b-123">In Excel, choose the **Home** tab, and then choose the **Show Taskpane** button in the ribbon to open the add-in task pane.</span></span>
 
     ![Excel 加载项按钮](../images/excel-quickstart-addin-3b.png)
 
-4. <span data-ttu-id="30061-125">选择工作表中的任何一系列单元格。</span><span class="sxs-lookup"><span data-stu-id="30061-125">Select any range of cells in the worksheet.</span></span>
+4. <span data-ttu-id="aa09b-125">选择工作表中的任何一系列单元格。</span><span class="sxs-lookup"><span data-stu-id="aa09b-125">Select any range of cells in the worksheet.</span></span>
 
-5. <span data-ttu-id="30061-126">在任务窗格的底部，选择“**运行**”链接，价格选定范围的颜色设为黄色。</span><span class="sxs-lookup"><span data-stu-id="30061-126">At the bottom of the task pane, choose the **Run** link to set the color of the selected range to yellow.</span></span>
+5. <span data-ttu-id="aa09b-126">在任务窗格的底部，选择“**运行**”链接，价格选定范围的颜色设为黄色。</span><span class="sxs-lookup"><span data-stu-id="aa09b-126">At the bottom of the task pane, choose the **Run** link to set the color of the selected range to yellow.</span></span>
 
     ![Excel 加载项](../images/excel-quickstart-addin-3c.png)
 
-## <a name="next-steps"></a><span data-ttu-id="30061-128">后续步骤</span><span class="sxs-lookup"><span data-stu-id="30061-128">Next steps</span></span>
+## <a name="next-steps"></a><span data-ttu-id="aa09b-128">后续步骤</span><span class="sxs-lookup"><span data-stu-id="aa09b-128">Next steps</span></span>
 
-<span data-ttu-id="30061-129">祝贺，你已使用 React 成功创建了 Excel 任务窗格加载项！</span><span class="sxs-lookup"><span data-stu-id="30061-129">Congratulations, you've successfully created an Excel task pane add-in using React!</span></span> <span data-ttu-id="30061-130">接下来，请详细了解 Excel 加载项功能，并跟着 Excel 加载项教程一起操作，生成更复杂的加载项。</span><span class="sxs-lookup"><span data-stu-id="30061-130">Next, learn more about the capabilities of an Excel add-in and build a more complex add-in by following along with the Excel add-in tutorial.</span></span>
+<span data-ttu-id="aa09b-129">祝贺，你已使用 React 成功创建了 Excel 任务窗格加载项！</span><span class="sxs-lookup"><span data-stu-id="aa09b-129">Congratulations, you've successfully created an Excel task pane add-in using React!</span></span> <span data-ttu-id="aa09b-130">接下来，请详细了解 Excel 加载项功能，并跟着 Excel 加载项教程一起操作，生成更复杂的加载项。</span><span class="sxs-lookup"><span data-stu-id="aa09b-130">Next, learn more about the capabilities of an Excel add-in and build a more complex add-in by following along with the Excel add-in tutorial.</span></span>
 
 > [!div class="nextstepaction"]
-> [<span data-ttu-id="30061-131">Excel 加载项教程</span><span class="sxs-lookup"><span data-stu-id="30061-131">Excel add-in tutorial</span></span>](../tutorials/excel-tutorial.md)
+> [<span data-ttu-id="aa09b-131">Excel 加载项教程</span><span class="sxs-lookup"><span data-stu-id="aa09b-131">Excel add-in tutorial</span></span>](../tutorials/excel-tutorial.md)
 
-## <a name="see-also"></a><span data-ttu-id="30061-132">另请参阅</span><span class="sxs-lookup"><span data-stu-id="30061-132">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="aa09b-132">另请参阅</span><span class="sxs-lookup"><span data-stu-id="aa09b-132">See also</span></span>
 
-* [<span data-ttu-id="30061-133">Excel 加载项教程</span><span class="sxs-lookup"><span data-stu-id="30061-133">Excel add-in tutorial</span></span>](../tutorials/excel-tutorial-create-table.md)
-* [<span data-ttu-id="30061-134">Excel JavaScript API 基本编程概念</span><span class="sxs-lookup"><span data-stu-id="30061-134">Fundamental programming concepts with the Excel JavaScript API</span></span>](../excel/excel-add-ins-core-concepts.md)
-* [<span data-ttu-id="30061-135">Excel 加载项代码示例</span><span class="sxs-lookup"><span data-stu-id="30061-135">Excel add-in code samples</span></span>](https://developer.microsoft.com/office/gallery/?filterBy=Samples,Excel)
-* [<span data-ttu-id="30061-136">Excel JavaScript API 参考</span><span class="sxs-lookup"><span data-stu-id="30061-136">Excel JavaScript API reference</span></span>](/office/dev/add-ins/reference/overview/excel-add-ins-reference-overview)
+* [<span data-ttu-id="aa09b-133">Excel 加载项教程</span><span class="sxs-lookup"><span data-stu-id="aa09b-133">Excel add-in tutorial</span></span>](../tutorials/excel-tutorial-create-table.md)
+* [<span data-ttu-id="aa09b-134">Excel JavaScript API 基本编程概念</span><span class="sxs-lookup"><span data-stu-id="aa09b-134">Fundamental programming concepts with the Excel JavaScript API</span></span>](../excel/excel-add-ins-core-concepts.md)
+* [<span data-ttu-id="aa09b-135">Excel 加载项代码示例</span><span class="sxs-lookup"><span data-stu-id="aa09b-135">Excel add-in code samples</span></span>](https://developer.microsoft.com/office/gallery/?filterBy=Samples,Excel)
+* [<span data-ttu-id="aa09b-136">Excel JavaScript API 参考</span><span class="sxs-lookup"><span data-stu-id="aa09b-136">Excel JavaScript API reference</span></span>](../reference/overview/excel-add-ins-reference-overview.md)
