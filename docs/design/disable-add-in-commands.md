@@ -1,14 +1,14 @@
 ---
 title: 启用和禁用加载项命令
 description: 了解如何更改 Office Web 加载项中的自定义功能区按钮和菜单项的启用或禁用状态。
-ms.date: 03/02/2020
+ms.date: 03/09/2020
 localization_priority: Priority
-ms.openlocfilehash: e1edf3c8375e323b2b8eeb114050195fe3402b0f
-ms.sourcegitcommit: 0e7ed44019d6564c79113639af831ea512fa0a13
+ms.openlocfilehash: dbe895a121a5d10d687c9a599b85234ae62919f5
+ms.sourcegitcommit: 4079903c3cc45b7d8c041509a44e9fc38da399b1
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/09/2020
-ms.locfileid: "42566186"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "42596681"
 ---
 # <a name="enable-and-disable-add-in-commands-preview"></a>启用和禁用加载项命令（预览版）
 
@@ -38,17 +38,17 @@ ms.locfileid: "42566186"
 
 对于本文介绍的 API 和清单标记，加载项清单指定它们应使用共享运行时。 为此，请执行下列步骤。
 
-1. 在清单中的 [Runtimes](/office/dev/add-ins/reference/manifest/runtimes) 元素中，添加以下子元素：`<Runtime resid="Contoso.SharedRuntime.Url" lifetime="long" />`。 （如果清单中尚无 `<Runtimes>` 元素，请在 `VersionOverrides` 部分中的 `<Host>` 元素下将其创建为第一个子元素。）
-2. 在清单的 [Resources](/office/dev/add-ins/reference/manifest/resources).[Urls](/office/dev/add-ins/reference/manifest/urls) 部分中，添加以下子元素：`<bt:Url id="Contoso.SharedRuntime.Url" DefaultValue="https://{MyDomain}/{path-to-start-page}" />`，其中 `{MyDomain}` 是加载项的域，`{path-to-start-page}` 是加载项起始页的路径；例如：`<bt:Url id="Contoso.SharedRuntime.Url" DefaultValue="https://localhost:3000/index.html" />`。
+1. 在清单中的 [Runtimes](../reference/manifest/runtimes.md) 元素中，添加以下子元素：`<Runtime resid="Contoso.SharedRuntime.Url" lifetime="long" />`。 （如果清单中尚无 `<Runtimes>` 元素，请在 `VersionOverrides` 部分中的 `<Host>` 元素下将其创建为第一个子元素。）
+2. 在清单的 [Resources.Urls](../reference/manifest/resources.md) 部分中，添加以下子元素：`<bt:Url id="Contoso.SharedRuntime.Url" DefaultValue="https://{MyDomain}/{path-to-start-page}" />`，其中 `{MyDomain}` 是加载项的域，`{path-to-start-page}` 是加载项的起始页路径；例如，`<bt:Url id="Contoso.SharedRuntime.Url" DefaultValue="https://localhost:3000/index.html" />`。
 3. 根据你的加载项是包含任务窗格、函数文件还是 Excel 自定义函数，你必须执行以下三个步骤中的一个或多个步骤：
 
-    - 如果加载项包含任务窗格，请将 [Action](/office/dev/add-ins/reference/manifest/action).[SourceLocation](/office/dev/add-ins/reference/manifest/sourcelocation) 元素的 `resid` 属性设置为 `Contoso.SharedRuntime.Url`。 该元素应如下所示：`<SourceLocation resid="Contoso.SharedRuntime.Url"/>`。
-    - 如果加载项包含 Excel 自定义函数，请将 [Page](/office/dev/add-ins/reference/manifest/page).[SourceLocation](/office/dev/add-ins/reference/manifest/sourcelocation) 元素的 `resid` 属性设置为 `Contoso.SharedRuntime.Url`。 该元素应如下所示：`<SourceLocation resid="Contoso.SharedRuntime.Url"/>`。
-    - 如果加载项包含函数文件，请将 [FunctionFile](/office/dev/add-ins/reference/manifest/functionfile) 元素的 `resid` 属性设置为 `Contoso.SharedRuntime.Url`。 该元素应如下所示：`<FunctionFile resid="Contoso.SharedRuntime.Url"/>`。
+    - 如果加载项包含任务窗格，请将 [Action](../reference/manifest/action.md).[SourceLocation](../reference/manifest/sourcelocation.md) 元素的 `resid` 属性设置为 `Contoso.SharedRuntime.Url`。 该元素应如下所示：`<SourceLocation resid="Contoso.SharedRuntime.Url"/>`。
+    - 如果加载项包含 Excel 自定义函数，请将 [Page](../reference/manifest/page.md).[SourceLocation](../reference/manifest/sourcelocation.md) 元素的 `resid` 属性设置为 `Contoso.SharedRuntime.Url`。 该元素应如下所示：`<SourceLocation resid="Contoso.SharedRuntime.Url"/>`。
+    - 如果加载项包含函数文件，请将 [FunctionFile](../reference/manifest/functionfile.md) 元素的 `resid` 属性设置为 `Contoso.SharedRuntime.Url`。 该元素应如下所示：`<FunctionFile resid="Contoso.SharedRuntime.Url"/>`。
 
 ## <a name="set-the-default-state-to-disabled"></a>将默认状态设置为“已禁用”
 
-默认情况下，当 Office 应用程序启动时，将启用任何加载项命令。 如果要在 Office 应用程序启动时禁用自定义按钮或菜单项，请在清单中指定它。 只需在控件声明中的 [Action](/office/dev/add-ins/reference/manifest/action) 元素的正下方添加 [Enabled](/office/dev/add-ins/reference/manifest/enabled) 元素（值为 `false`）。 下面显示了基本结构：
+默认情况下，当 Office 应用程序启动时，将启用任何加载项命令。 如果要在 Office 应用程序启动时禁用自定义按钮或菜单项，请在清单中指定它。 只需在控件声明中的 [Action](../reference/manifest/action.md) 元素的正下方添加 [Enabled](../reference/manifest/enabled.md) 元素（值为 `false`）。 下面显示了基本结构：
 
 ```xml
 <OfficeApp ...>
@@ -142,7 +142,7 @@ Office 控制何时更新功能区的状态。 **requestUpdate()** 方法会将�
 
 一种应更改功能区状态的常见场景是用户启动的事件更改加载项上下文时。
 
-考虑这样一种场景：当且仅当激活图表时，才应启用按钮。 第一步是将清单中按钮的 [Enabled](/office/dev/add-ins/reference/manifest/enabled) 元素设置为 `false`。 请参阅上面的示例。
+考虑这样一种场景：当且仅当激活图表时，才应启用按钮。 第一步是将清单中按钮的 [Enabled](../reference/manifest/enabled.md) 元素设置为 `false`。 请参阅上面的示例。
 
 第二步是分配处理程序。 这通常在 **Office.onReady** 方法中完成，如以下示例所示，该示例将处理程序（在后续步骤中创建）分配给工作表中所有图表的 **onActivated** 和 **onDeactivated** 事件。
 
@@ -182,7 +182,7 @@ function enableChartFormat() {
 1. 每当调用 `requestUpdate` 时，代码都应记录自定义按钮和菜单项的预期状态。
 2. 单击自定义控件时，处理程序中的第一个代码应检查该按钮是否应为可单击按钮。 如果不是，则该代码应报告或记录错误，然后再次尝试将按钮设置为预期状态。
 
-以下示例显示用于禁用按钮和记录按钮状态的函数。 请注意，`chartFormatButtonEnabled` 是全局布尔变量，其初始化为与清单中按钮的 [Enabled](/office/dev/add-ins/reference/manifest/enabled) 元素相同的值。
+以下示例显示用于禁用按钮和记录按钮状态的函数。 请注意，`chartFormatButtonEnabled` 是全局布尔变量，其初始化为与清单中按钮的 [Enabled](../reference/manifest/enabled.md) 元素相同的值。
 
 ```javascript
 function disableChartFormat() {
@@ -239,10 +239,8 @@ function disableChartFormat() {
 
 ## <a name="test-for-platform-support-with-requirement-sets"></a>使用要求集测试平台支持
 
-要求集是指各组已命名的 API 成员。Office 加载项使用清单中指定的要求集或执行运行时检查，以确定 Office 主机是否支持加载项所需的 API。有关详细信息，请参阅 [Office 版本和要求集](/office/dev/add-ins/develop/office-versions-and-requirement-sets)。
+要求集是指各组已命名的 API 成员。Office 加载项使用清单中指定的要求集或执行运行时检查，以确定 Office 主机是否支持加载项所需的 API。有关详细信息，请参阅 [Office 版本和要求集](../develop/office-versions-and-requirement-sets.md)。
 
 启用/禁用 API 需要支持以下要求集：
 
-- [AddinCommands 1.1](/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets)
-- [RibbonAPI 1.1](/office/dev/add-ins/reference/requirement-sets/ribbon-api-requirement-sets)
-
+- [AddinCommands 1.1](../reference/requirement-sets/add-in-commands-requirement-sets.md)
