@@ -3,12 +3,12 @@ ms.date: 02/13/2020
 description: 了解如何在同一 JavaScript 运行时中运行自定义函数、功能区按钮和任务窗格代码，以便在加载项中协调方案。
 title: 在共享 JavaScript 运行时中运行加载项代码（预览版）
 localization_priority: Priority
-ms.openlocfilehash: d9d73a5ae2ff1da09d1a5fd7d02514cb28be0e2d
-ms.sourcegitcommit: dd6d00202f6466c27418247dad7bd136555a6036
+ms.openlocfilehash: 774990a9452d450bd5c4d968027bc64ebee858af
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/26/2020
-ms.locfileid: "42284113"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42719530"
 ---
 # <a name="overview-run-your-add-in-code-in-a-shared-javascript-runtime-preview"></a>概述：在共享 JavaScript 运行时中运行加载项代码（预览版）
 

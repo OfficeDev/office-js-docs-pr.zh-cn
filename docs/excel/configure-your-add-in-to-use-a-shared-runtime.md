@@ -4,12 +4,12 @@ title: 将 Excel 加载项配置为共享浏览器运行时（预览版）
 ms.prod: excel
 description: 将 Excel 加载项配置为共享浏览器运行时并在同一运行时中运行功能区、任务窗格和自定义函数代码。
 localization_priority: Priority
-ms.openlocfilehash: 7945bd8fdb29a9d6d44d7d29676410a54bacf83f
-ms.sourcegitcommit: dd6d00202f6466c27418247dad7bd136555a6036
+ms.openlocfilehash: 7fad97039d5a463978ca9a2d450af9bb698b49b5
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/26/2020
-ms.locfileid: "42284115"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42719327"
 ---
 # <a name="configure-your-excel-add-in-to-use-a-shared-javascript-runtime-preview"></a>将 Excel 加载项配置为使用共享 JavaScript 运行时（预览版）
 

@@ -5,12 +5,12 @@ title: Word 加载项文档
 description: 用于了解 Word 加载项的资源。
 ms.date: 07/05/2019
 localization_priority: Priority
-ms.openlocfilehash: 876baa0a0c1ff00f14095c2eb1ec3aead3aa76e0
-ms.sourcegitcommit: c3673cc693fa7070e1b397922bd735ba3f9342f3
+ms.openlocfilehash: 28cb42194e3de42634cd3b026e5924c03cd51b43
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/05/2019
-ms.locfileid: "35576779"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42719656"
 ---
 # <a name="word-add-ins-documentation"></a>Word 加载项文档
 

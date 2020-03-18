@@ -3,12 +3,12 @@ title: 使用 Visual Studio Code 开发 Office 加载项
 description: 如何使用 Visual Studio Code 开发 Office 加载项
 ms.date: 01/16/2020
 localization_priority: Priority
-ms.openlocfilehash: 25f9fa258ec1c6f9cc8344340cdf294091473168
-ms.sourcegitcommit: 8bce9c94540ed484d0749f07123dc7c72a6ca126
+ms.openlocfilehash: 0f594466fe8db0d88c104f6a641d6b5a0fc25730
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/22/2020
-ms.locfileid: "41265478"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42719047"
 ---
 # <a name="develop-office-add-ins-with-visual-studio-code"></a>使用 Visual Studio Code 开发 Office 加载项
 
