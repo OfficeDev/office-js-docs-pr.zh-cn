@@ -1,68 +1,68 @@
 ---
 title: 创建字典任务窗格加载项
-description: ''
+description: 了解如何创建字典任务窗格加载项
 ms.date: 09/26/2019
 localization_priority: Normal
-ms.openlocfilehash: 4145727ef092bd56117dfd5d6c89e976a3aaa11a
-ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
+ms.openlocfilehash: e72ef049c355e756a3bd8a843fc6075a59c3c8a6
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "42324720"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42719691"
 ---
-# <a name="create-a-dictionary-task-pane-add-in"></a><span data-ttu-id="f69e1-102">创建字典任务窗格加载项</span><span class="sxs-lookup"><span data-stu-id="f69e1-102">Create a dictionary task pane add-in</span></span>
+# <a name="create-a-dictionary-task-pane-add-in"></a><span data-ttu-id="dc1c9-103">创建字典任务窗格加载项</span><span class="sxs-lookup"><span data-stu-id="dc1c9-103">Create a dictionary task pane add-in</span></span>
 
 
-<span data-ttu-id="f69e1-103">本文中的示例展示了任务窗格加载项和随附 Web 服务，用于提供用户当前在 Word 2013 文档中选择的内容的字典定义或同义词库同义词。</span><span class="sxs-lookup"><span data-stu-id="f69e1-103">This article shows you an example of a task pane add-in with an accompanying web service that provides dictionary definitions or thesaurus synonyms for the user's current selection in a Word 2013 document.</span></span> 
+<span data-ttu-id="dc1c9-104">本文中的示例展示了任务窗格加载项和随附 Web 服务，用于提供用户当前在 Word 2013 文档中选择的内容的字典定义或同义词库同义词。</span><span class="sxs-lookup"><span data-stu-id="dc1c9-104">This article shows you an example of a task pane add-in with an accompanying web service that provides dictionary definitions or thesaurus synonyms for the user's current selection in a Word 2013 document.</span></span> 
 
-<span data-ttu-id="f69e1-104">字典 Office 外接程序基于标准任务窗格外接程序，它具有附加功能来支持在 Office 应用程序的 UI 中的其他位置查询和显示字典 XML Web 服务的定义。</span><span class="sxs-lookup"><span data-stu-id="f69e1-104">A dictionary Office Add-in is based on the standard task pane add-in with additional features to support querying and displaying definitions from a dictionary XML web service in additional places in the Office application's UI.</span></span> 
+<span data-ttu-id="dc1c9-105">字典 Office 外接程序基于标准任务窗格外接程序，它具有附加功能来支持在 Office 应用程序的 UI 中的其他位置查询和显示字典 XML Web 服务的定义。</span><span class="sxs-lookup"><span data-stu-id="dc1c9-105">A dictionary Office Add-in is based on the standard task pane add-in with additional features to support querying and displaying definitions from a dictionary XML web service in additional places in the Office application's UI.</span></span> 
 
-<span data-ttu-id="f69e1-p101">在典型的字典任务窗格加载项中，用户在文档中选择某字词或短语，加载项依据的 JavaScript 逻辑将此选定内容传递给字典提供程序的 XML Web 服务。然后，字典提供程序的网页更新为，向用户显示选定内容的定义。XML Web 服务组件最多以 OfficeDefinitions XML 架构定义的格式返回三个定义，然后会在主机 Office 应用的 UI 中的其他位置向用户显示这些定义。图 1 展示了用户选择的内容，以及 Word 2013 中运行的必应品牌字典加载项显示的内容。</span><span class="sxs-lookup"><span data-stu-id="f69e1-p101">In a typical dictionary task pane add-in, a user selects a word or phrase in their document, and the JavaScript logic behind the add-in passes this selection to the dictionary provider's XML web service. The dictionary provider's webpage then updates to show the definitions for the selection to the user. The XML web service component returns up to three definitions in the format defined by the OfficeDefinitions XML schema, which are then displayed to the user in other places in the hosting Office application's UI. Figure 1 shows the selection and display experience for a Bing-branded dictionary add-in that is running in Word 2013.</span></span>
+<span data-ttu-id="dc1c9-p101">在典型的字典任务窗格加载项中，用户在文档中选择某字词或短语，加载项依据的 JavaScript 逻辑将此选定内容传递给字典提供程序的 XML Web 服务。然后，字典提供程序的网页更新为，向用户显示选定内容的定义。XML Web 服务组件最多以 OfficeDefinitions XML 架构定义的格式返回三个定义，然后会在主机 Office 应用的 UI 中的其他位置向用户显示这些定义。图 1 展示了用户选择的内容，以及 Word 2013 中运行的必应品牌字典加载项显示的内容。</span><span class="sxs-lookup"><span data-stu-id="dc1c9-p101">In a typical dictionary task pane add-in, a user selects a word or phrase in their document, and the JavaScript logic behind the add-in passes this selection to the dictionary provider's XML web service. The dictionary provider's webpage then updates to show the definitions for the selection to the user. The XML web service component returns up to three definitions in the format defined by the OfficeDefinitions XML schema, which are then displayed to the user in other places in the hosting Office application's UI. Figure 1 shows the selection and display experience for a Bing-branded dictionary add-in that is running in Word 2013.</span></span>
 
-<span data-ttu-id="f69e1-109">*图 1：显示选定字词的定义的字典加载项*</span><span class="sxs-lookup"><span data-stu-id="f69e1-109">*Figure 1. Dictionary add-in displaying definitions for the selected word*</span></span>
+<span data-ttu-id="dc1c9-110">*图 1：显示选定字词的定义的字典加载项*</span><span class="sxs-lookup"><span data-stu-id="dc1c9-110">*Figure 1. Dictionary add-in displaying definitions for the selected word*</span></span>
 
 ![显示定义的字典应用](../images/dictionary-agave-01.jpg)
 
-<span data-ttu-id="f69e1-111">您需要确定在字典外接程序的 HTML UI 中单击 "**查看更多**" 链接，以在任务窗格中显示更多信息，还是打开一个单独的浏览器窗口，以在所选单词或短语的完整网页上显示。</span><span class="sxs-lookup"><span data-stu-id="f69e1-111">It is up to you to determine if clicking the **See More** link in the dictionary add-in's HTML UI displays more information within the task pane or opens a separate browser window to the full webpage for the selected word or phrase.</span></span>
-<span data-ttu-id="f69e1-112">图 2 显示“定义”\*\*\*\* 上下文菜单命令，允许用户快速启动已安装的字典。</span><span class="sxs-lookup"><span data-stu-id="f69e1-112">Figure 2 shows the **Define** context menu command that enables users to quickly launch installed dictionaries.</span></span> <span data-ttu-id="f69e1-113">图 3 至 5 显示了 Office 用户界面中使用字典 XML 服务提供 Word 2013 定义的位置。</span><span class="sxs-lookup"><span data-stu-id="f69e1-113">Figures 3 through 5 show the places in the Office UI where the dictionary XML services are used to provide definitions in Word 2013.</span></span>
+<span data-ttu-id="dc1c9-112">您需要确定在字典外接程序的 HTML UI 中单击 "**查看更多**" 链接，以在任务窗格中显示更多信息，还是打开一个单独的浏览器窗口，以在所选单词或短语的完整网页上显示。</span><span class="sxs-lookup"><span data-stu-id="dc1c9-112">It is up to you to determine if clicking the **See More** link in the dictionary add-in's HTML UI displays more information within the task pane or opens a separate browser window to the full webpage for the selected word or phrase.</span></span>
+<span data-ttu-id="dc1c9-113">图 2 显示“定义”\*\*\*\* 上下文菜单命令，允许用户快速启动已安装的字典。</span><span class="sxs-lookup"><span data-stu-id="dc1c9-113">Figure 2 shows the **Define** context menu command that enables users to quickly launch installed dictionaries.</span></span> <span data-ttu-id="dc1c9-114">图 3 至 5 显示了 Office 用户界面中使用字典 XML 服务提供 Word 2013 定义的位置。</span><span class="sxs-lookup"><span data-stu-id="dc1c9-114">Figures 3 through 5 show the places in the Office UI where the dictionary XML services are used to provide definitions in Word 2013.</span></span>
 
-<span data-ttu-id="f69e1-114">*图 2.定义上下文菜单中的命令*</span><span class="sxs-lookup"><span data-stu-id="f69e1-114">*Figure 2. Define command in the context menu*</span></span>
+<span data-ttu-id="dc1c9-115">*图 2.定义上下文菜单中的命令*</span><span class="sxs-lookup"><span data-stu-id="dc1c9-115">*Figure 2. Define command in the context menu*</span></span>
 
 ![定义上下文菜单](../images/dictionary-agave-02.jpg)
 
 
-<span data-ttu-id="f69e1-116">*图 3.“拼写”和“语法”窗格中的定义*</span><span class="sxs-lookup"><span data-stu-id="f69e1-116">*Figure 3. Definitions in the Spelling and Grammar panes*</span></span>
+<span data-ttu-id="dc1c9-117">*图 3.“拼写”和“语法”窗格中的定义*</span><span class="sxs-lookup"><span data-stu-id="dc1c9-117">*Figure 3. Definitions in the Spelling and Grammar panes*</span></span>
 
 ![“拼写”和“语法”窗格中的定义](../images/dictionary-agave-03.jpg)
 
 
-<span data-ttu-id="f69e1-118">*图 4.“同义词库”窗格中的定义*</span><span class="sxs-lookup"><span data-stu-id="f69e1-118">*Figure 4. Definitions in the Thesaurus pane*</span></span>
+<span data-ttu-id="dc1c9-119">*图 4.“同义词库”窗格中的定义*</span><span class="sxs-lookup"><span data-stu-id="dc1c9-119">*Figure 4. Definitions in the Thesaurus pane*</span></span>
 
 ![“同义词库”窗格中的定义](../images/dictionary-agave-04.jpg)
 
 
-<span data-ttu-id="f69e1-120">*图 5.“阅读模式”中的定义*</span><span class="sxs-lookup"><span data-stu-id="f69e1-120">*Figure 5. Definitions in Reading Mode*</span></span>
+<span data-ttu-id="dc1c9-121">*图 5.“阅读模式”中的定义*</span><span class="sxs-lookup"><span data-stu-id="dc1c9-121">*Figure 5. Definitions in Reading Mode*</span></span>
 
 ![“阅读模式”中的定义](../images/dictionary-agave-05.jpg)
 
-<span data-ttu-id="f69e1-122">若要创建可提供字典查找的任务窗格外接程序，需创建两个主要组件：</span><span class="sxs-lookup"><span data-stu-id="f69e1-122">To create a task pane add-in that provides a dictionary lookup, you create two main components:</span></span> 
+<span data-ttu-id="dc1c9-123">若要创建可提供字典查找的任务窗格外接程序，需创建两个主要组件：</span><span class="sxs-lookup"><span data-stu-id="dc1c9-123">To create a task pane add-in that provides a dictionary lookup, you create two main components:</span></span> 
 
 
-- <span data-ttu-id="f69e1-123">XML Web 服务，该服务从字典服务中查找定义，然后以字典加载项可以使用和显示的 XML 格式返回这些值。</span><span class="sxs-lookup"><span data-stu-id="f69e1-123">An XML web service that looks up definitions from a dictionary service, and then returns those values in an XML format that can be consumed and displayed by the dictionary add-in.</span></span>
+- <span data-ttu-id="dc1c9-124">XML Web 服务，该服务从字典服务中查找定义，然后以字典加载项可以使用和显示的 XML 格式返回这些值。</span><span class="sxs-lookup"><span data-stu-id="dc1c9-124">An XML web service that looks up definitions from a dictionary service, and then returns those values in an XML format that can be consumed and displayed by the dictionary add-in.</span></span>
     
-- <span data-ttu-id="f69e1-124">任务窗格加载项，它将用户的当前选择提交至字典 Web 服务，显示定义，还可以选择将这些值插入文档。</span><span class="sxs-lookup"><span data-stu-id="f69e1-124">A task pane add-in that submits the user's current selection to the dictionary web service, displays definitions, and can optionally insert those values into the document.</span></span>
+- <span data-ttu-id="dc1c9-125">任务窗格加载项，它将用户的当前选择提交至字典 Web 服务，显示定义，还可以选择将这些值插入文档。</span><span class="sxs-lookup"><span data-stu-id="dc1c9-125">A task pane add-in that submits the user's current selection to the dictionary web service, displays definitions, and can optionally insert those values into the document.</span></span>
     
-<span data-ttu-id="f69e1-125">以下各节提供了有关如何创建这些组件的示例。</span><span class="sxs-lookup"><span data-stu-id="f69e1-125">The following sections provide examples of how to create these components.</span></span>
+<span data-ttu-id="dc1c9-126">以下各节提供了有关如何创建这些组件的示例。</span><span class="sxs-lookup"><span data-stu-id="dc1c9-126">The following sections provide examples of how to create these components.</span></span>
 
-## <a name="creating-a-dictionary-xml-web-service"></a><span data-ttu-id="f69e1-126">创建字典 XML Web 服务</span><span class="sxs-lookup"><span data-stu-id="f69e1-126">Creating a dictionary XML web service</span></span>
-
-
-<span data-ttu-id="f69e1-p103">XML Web 服务必须将对 Web 服务的查询作为符合 OfficeDefinitions XML 架构的 XML 返回。以下两节介绍了 OfficeDefinitions XML 架构，并提供有关如何对返回该 XML 格式查询的 XML Web 服务编码的示例。</span><span class="sxs-lookup"><span data-stu-id="f69e1-p103">The XML web service must return queries to the web service as XML that conforms to the OfficeDefinitions XML schema. The following two sections describe the OfficeDefinitions XML schema, and provide an example of how to code an XML web service that returns queries in that XML format.</span></span>
+## <a name="creating-a-dictionary-xml-web-service"></a><span data-ttu-id="dc1c9-127">创建字典 XML Web 服务</span><span class="sxs-lookup"><span data-stu-id="dc1c9-127">Creating a dictionary XML web service</span></span>
 
 
-### <a name="officedefinitions-xml-schema"></a><span data-ttu-id="f69e1-129">OfficeDefinitions XML 架构</span><span class="sxs-lookup"><span data-stu-id="f69e1-129">OfficeDefinitions XML schema</span></span>
+<span data-ttu-id="dc1c9-p103">XML Web 服务必须将对 Web 服务的查询作为符合 OfficeDefinitions XML 架构的 XML 返回。以下两节介绍了 OfficeDefinitions XML 架构，并提供有关如何对返回该 XML 格式查询的 XML Web 服务编码的示例。</span><span class="sxs-lookup"><span data-stu-id="dc1c9-p103">The XML web service must return queries to the web service as XML that conforms to the OfficeDefinitions XML schema. The following two sections describe the OfficeDefinitions XML schema, and provide an example of how to code an XML web service that returns queries in that XML format.</span></span>
 
-<span data-ttu-id="f69e1-130">以下代码显示用于 OfficeDefinitions XML 架构的 XSD。</span><span class="sxs-lookup"><span data-stu-id="f69e1-130">The following code shows the XSD for the OfficeDefinitions XML Schema.</span></span>
+
+### <a name="officedefinitions-xml-schema"></a><span data-ttu-id="dc1c9-130">OfficeDefinitions XML 架构</span><span class="sxs-lookup"><span data-stu-id="dc1c9-130">OfficeDefinitions XML schema</span></span>
+
+<span data-ttu-id="dc1c9-131">以下代码显示用于 OfficeDefinitions XML 架构的 XSD。</span><span class="sxs-lookup"><span data-stu-id="dc1c9-131">The following code shows the XSD for the OfficeDefinitions XML Schema.</span></span>
 
 
 ```XML
@@ -94,7 +94,7 @@ ms.locfileid: "42324720"
 </xs:schema>
 ```
 
-<span data-ttu-id="f69e1-131">返回的符合 OfficeDefinitions 架构的 XML 包含一个根`Result`元素，其中包含一个`Definitions`从零到三`Definition`个子元素的元素，其中每个子元素都包含长度不超过400个字符的定义。</span><span class="sxs-lookup"><span data-stu-id="f69e1-131">Returned XML that conforms to the OfficeDefinitions schema consists of a root `Result` element that contains a `Definitions` element with from zero to three `Definition` child elements, each of which contains definitions that are no more than 400 characters in length.</span></span> <span data-ttu-id="f69e1-132">此外，还必须在`SeeMoreURL`元素中提供字典网站上的完整页面的 URL。</span><span class="sxs-lookup"><span data-stu-id="f69e1-132">Additionally, the URL to the full page on the dictionary site must be provided in the `SeeMoreURL` element.</span></span> <span data-ttu-id="f69e1-133">以下示例演示返回的符合 OfficeDefinitions 架构的 XML 的结构。</span><span class="sxs-lookup"><span data-stu-id="f69e1-133">The following example shows the structure of returned XML that conforms to the OfficeDefinitions schema.</span></span>
+<span data-ttu-id="dc1c9-132">返回的符合 OfficeDefinitions 架构的 XML 包含一个根`Result`元素，其中包含一个`Definitions`从零到三`Definition`个子元素的元素，其中每个子元素都包含长度不超过400个字符的定义。</span><span class="sxs-lookup"><span data-stu-id="dc1c9-132">Returned XML that conforms to the OfficeDefinitions schema consists of a root `Result` element that contains a `Definitions` element with from zero to three `Definition` child elements, each of which contains definitions that are no more than 400 characters in length.</span></span> <span data-ttu-id="dc1c9-133">此外，还必须在`SeeMoreURL`元素中提供字典网站上的完整页面的 URL。</span><span class="sxs-lookup"><span data-stu-id="dc1c9-133">Additionally, the URL to the full page on the dictionary site must be provided in the `SeeMoreURL` element.</span></span> <span data-ttu-id="dc1c9-134">以下示例演示返回的符合 OfficeDefinitions 架构的 XML 的结构。</span><span class="sxs-lookup"><span data-stu-id="dc1c9-134">The following example shows the structure of returned XML that conforms to the OfficeDefinitions schema.</span></span>
 
 ```XML
 <?xml version="1.0" encoding="utf-8"?>
@@ -110,9 +110,9 @@ ms.locfileid: "42324720"
 ```
 
 
-### <a name="sample-dictionary-xml-web-service"></a><span data-ttu-id="f69e1-134">示例字典 XML Web 服务</span><span class="sxs-lookup"><span data-stu-id="f69e1-134">Sample dictionary XML web service</span></span>
+### <a name="sample-dictionary-xml-web-service"></a><span data-ttu-id="dc1c9-135">示例字典 XML Web 服务</span><span class="sxs-lookup"><span data-stu-id="dc1c9-135">Sample dictionary XML web service</span></span>
 
-<span data-ttu-id="f69e1-135">以下 C# 代码提供了一个有关如何为 XML Web 服务编写代码的简单示例，该服务以 OfficeDefinitions XML 格式返回字典查询的结果。</span><span class="sxs-lookup"><span data-stu-id="f69e1-135">The following C# code provides a simple example of how to write code for an XML web service that returns the result of a dictionary query in the OfficeDefinitions XML format.</span></span>
+<span data-ttu-id="dc1c9-136">以下 C# 代码提供了一个有关如何为 XML Web 服务编写代码的简单示例，该服务以 OfficeDefinitions XML 格式返回字典查询的结果。</span><span class="sxs-lookup"><span data-stu-id="dc1c9-136">The following C# code provides a simple example of how to write code for an XML web service that returns the result of a dictionary query in the OfficeDefinitions XML format.</span></span>
 
 
 ```cs
@@ -182,22 +182,22 @@ public class WebService : System.Web.Services.WebService {
 ```
 
 
-## <a name="creating-the-components-of-a-dictionary-add-in"></a><span data-ttu-id="f69e1-136">创建字典加载项的组件</span><span class="sxs-lookup"><span data-stu-id="f69e1-136">Creating the components of a dictionary add-in</span></span>
+## <a name="creating-the-components-of-a-dictionary-add-in"></a><span data-ttu-id="dc1c9-137">创建字典加载项的组件</span><span class="sxs-lookup"><span data-stu-id="dc1c9-137">Creating the components of a dictionary add-in</span></span>
 
 
-<span data-ttu-id="f69e1-137">字典加载项包含三个主要组件文件：</span><span class="sxs-lookup"><span data-stu-id="f69e1-137">A dictionary add-in consists of three main component files:</span></span>
+<span data-ttu-id="dc1c9-138">字典加载项包含三个主要组件文件：</span><span class="sxs-lookup"><span data-stu-id="dc1c9-138">A dictionary add-in consists of three main component files:</span></span>
 
 
-- <span data-ttu-id="f69e1-138">描述加载项的 XML 清单文件。</span><span class="sxs-lookup"><span data-stu-id="f69e1-138">An XML manifest file that describes the add-in.</span></span>
+- <span data-ttu-id="dc1c9-139">描述加载项的 XML 清单文件。</span><span class="sxs-lookup"><span data-stu-id="dc1c9-139">An XML manifest file that describes the add-in.</span></span>
     
-- <span data-ttu-id="f69e1-139">提供加载项 UI 的 HTML 文件。</span><span class="sxs-lookup"><span data-stu-id="f69e1-139">An HTML file that provides the add-in's UI.</span></span>
+- <span data-ttu-id="dc1c9-140">提供加载项 UI 的 HTML 文件。</span><span class="sxs-lookup"><span data-stu-id="dc1c9-140">An HTML file that provides the add-in's UI.</span></span>
     
-- <span data-ttu-id="f69e1-140">JavaScript 文件，用于提供从文档中获取用户选择的逻辑，将选择作为查询发送给 Web 服务，然后在外接程序的 UI 中显示返回的结果。</span><span class="sxs-lookup"><span data-stu-id="f69e1-140">A JavaScript file that provides logic to get the user's selection from the document, sends the selection as a query to the web service, and then displays returned results in the add-in's UI.</span></span>
+- <span data-ttu-id="dc1c9-141">JavaScript 文件，用于提供从文档中获取用户选择的逻辑，将选择作为查询发送给 Web 服务，然后在外接程序的 UI 中显示返回的结果。</span><span class="sxs-lookup"><span data-stu-id="dc1c9-141">A JavaScript file that provides logic to get the user's selection from the document, sends the selection as a query to the web service, and then displays returned results in the add-in's UI.</span></span>
     
 
-### <a name="creating-a-dictionary-add-ins-manifest-file"></a><span data-ttu-id="f69e1-141">创建字典加载项的清单文件</span><span class="sxs-lookup"><span data-stu-id="f69e1-141">Creating a dictionary add-in's manifest file</span></span>
+### <a name="creating-a-dictionary-add-ins-manifest-file"></a><span data-ttu-id="dc1c9-142">创建字典加载项的清单文件</span><span class="sxs-lookup"><span data-stu-id="dc1c9-142">Creating a dictionary add-in's manifest file</span></span>
 
-<span data-ttu-id="f69e1-142">下面是字典加载项的示例清单文件。</span><span class="sxs-lookup"><span data-stu-id="f69e1-142">The following is an example manifest file for a dictionary add-in.</span></span>
+<span data-ttu-id="dc1c9-143">下面是字典加载项的示例清单文件。</span><span class="sxs-lookup"><span data-stu-id="dc1c9-143">The following is an example manifest file for a dictionary add-in.</span></span>
 
 
 ```XML
@@ -258,45 +258,45 @@ public class WebService : System.Web.Services.WebService {
 </OfficeApp>
 ```
 
-<span data-ttu-id="f69e1-143">以下`Dictionary`各节介绍了特定于创建字典外接程序清单文件的元素及其子元素。</span><span class="sxs-lookup"><span data-stu-id="f69e1-143">The `Dictionary` element and its child elements that are specific to creating a dictionary add-in's manifest file are described in the following sections.</span></span> <span data-ttu-id="f69e1-144">有关清单文件中的其他元素的信息，请参阅 [Office 外接程序 XML 清单](../develop/add-in-manifests.md)。</span><span class="sxs-lookup"><span data-stu-id="f69e1-144">For information about the other elements in the manifest file, see [Office Add-ins XML manifest](../develop/add-in-manifests.md).</span></span>
+<span data-ttu-id="dc1c9-144">以下`Dictionary`各节介绍了特定于创建字典外接程序清单文件的元素及其子元素。</span><span class="sxs-lookup"><span data-stu-id="dc1c9-144">The `Dictionary` element and its child elements that are specific to creating a dictionary add-in's manifest file are described in the following sections.</span></span> <span data-ttu-id="dc1c9-145">有关清单文件中的其他元素的信息，请参阅 [Office 外接程序 XML 清单](../develop/add-in-manifests.md)。</span><span class="sxs-lookup"><span data-stu-id="dc1c9-145">For information about the other elements in the manifest file, see [Office Add-ins XML manifest](../develop/add-in-manifests.md).</span></span>
 
 
-### <a name="dictionary-element"></a><span data-ttu-id="f69e1-145">Dictionary 元素</span><span class="sxs-lookup"><span data-stu-id="f69e1-145">Dictionary element</span></span>
+### <a name="dictionary-element"></a><span data-ttu-id="dc1c9-146">Dictionary 元素</span><span class="sxs-lookup"><span data-stu-id="dc1c9-146">Dictionary element</span></span>
 
 
-<span data-ttu-id="f69e1-146">指定用于字典外接程序的设置。</span><span class="sxs-lookup"><span data-stu-id="f69e1-146">Specifies settings for dictionary add-ins.</span></span>
+<span data-ttu-id="dc1c9-147">指定用于字典外接程序的设置。</span><span class="sxs-lookup"><span data-stu-id="dc1c9-147">Specifies settings for dictionary add-ins.</span></span>
 
- <span data-ttu-id="f69e1-147">**父元素**</span><span class="sxs-lookup"><span data-stu-id="f69e1-147">**Parent element**</span></span>
+ <span data-ttu-id="dc1c9-148">**父元素**</span><span class="sxs-lookup"><span data-stu-id="dc1c9-148">**Parent element**</span></span>
 
  `<OfficeApp>`
 
- <span data-ttu-id="f69e1-148">**子元素**</span><span class="sxs-lookup"><span data-stu-id="f69e1-148">**Child elements**</span></span>
+ <span data-ttu-id="dc1c9-149">**子元素**</span><span class="sxs-lookup"><span data-stu-id="dc1c9-149">**Child elements**</span></span>
 
- <span data-ttu-id="f69e1-149">`<TargetDialects>`, `<QueryUri>`, `<CitationText>`, `<DictionaryName>`, `<DictionaryHomePage>`</span><span class="sxs-lookup"><span data-stu-id="f69e1-149">`<TargetDialects>`, `<QueryUri>`, `<CitationText>`, `<DictionaryName>`, `<DictionaryHomePage>`</span></span>
+ <span data-ttu-id="dc1c9-150">`<TargetDialects>`, `<QueryUri>`, `<CitationText>`, `<DictionaryName>`, `<DictionaryHomePage>`</span><span class="sxs-lookup"><span data-stu-id="dc1c9-150">`<TargetDialects>`, `<QueryUri>`, `<CitationText>`, `<DictionaryName>`, `<DictionaryHomePage>`</span></span>
 
- <span data-ttu-id="f69e1-150">**备注**</span><span class="sxs-lookup"><span data-stu-id="f69e1-150">**Remarks**</span></span>
+ <span data-ttu-id="dc1c9-151">**备注**</span><span class="sxs-lookup"><span data-stu-id="dc1c9-151">**Remarks**</span></span>
 
-<span data-ttu-id="f69e1-151">创建`Dictionary`字典加载项时，会将元素及其子元素添加到任务窗格加载项的清单中。</span><span class="sxs-lookup"><span data-stu-id="f69e1-151">The `Dictionary` element and its child elements are added to the manifest of a task pane add-in when you create a dictionary add-in.</span></span>
-
-
-#### <a name="targetdialects-element"></a><span data-ttu-id="f69e1-152">TargetDialects 元素</span><span class="sxs-lookup"><span data-stu-id="f69e1-152">TargetDialects element</span></span>
+<span data-ttu-id="dc1c9-152">创建`Dictionary`字典加载项时，会将元素及其子元素添加到任务窗格加载项的清单中。</span><span class="sxs-lookup"><span data-stu-id="dc1c9-152">The `Dictionary` element and its child elements are added to the manifest of a task pane add-in when you create a dictionary add-in.</span></span>
 
 
-<span data-ttu-id="f69e1-p106">指定此字典支持的区域语言集。对于字典加载项，此为必需元素。</span><span class="sxs-lookup"><span data-stu-id="f69e1-p106">Specifies the regional languages that this dictionary supports. Required for dictionary add-ins.</span></span>
+#### <a name="targetdialects-element"></a><span data-ttu-id="dc1c9-153">TargetDialects 元素</span><span class="sxs-lookup"><span data-stu-id="dc1c9-153">TargetDialects element</span></span>
 
- <span data-ttu-id="f69e1-155">**父元素**</span><span class="sxs-lookup"><span data-stu-id="f69e1-155">**Parent element**</span></span>
+
+<span data-ttu-id="dc1c9-p106">指定此字典支持的区域语言集。对于字典加载项，此为必需元素。</span><span class="sxs-lookup"><span data-stu-id="dc1c9-p106">Specifies the regional languages that this dictionary supports. Required for dictionary add-ins.</span></span>
+
+ <span data-ttu-id="dc1c9-156">**父元素**</span><span class="sxs-lookup"><span data-stu-id="dc1c9-156">**Parent element**</span></span>
 
  `<Dictionary>`
 
- <span data-ttu-id="f69e1-156">**子元素**</span><span class="sxs-lookup"><span data-stu-id="f69e1-156">**Child element**</span></span>
+ <span data-ttu-id="dc1c9-157">**子元素**</span><span class="sxs-lookup"><span data-stu-id="dc1c9-157">**Child element**</span></span>
 
  `<TargetDialect>`
 
- <span data-ttu-id="f69e1-157">**备注**</span><span class="sxs-lookup"><span data-stu-id="f69e1-157">**Remarks**</span></span>
+ <span data-ttu-id="dc1c9-158">**备注**</span><span class="sxs-lookup"><span data-stu-id="dc1c9-158">**Remarks**</span></span>
 
-<span data-ttu-id="f69e1-158">`TargetDialects`元素及其子元素指定字典包含的一组区域语言。</span><span class="sxs-lookup"><span data-stu-id="f69e1-158">The `TargetDialects` element and its child elements specify the set of regional languages your dictionary contains.</span></span> <span data-ttu-id="f69e1-159">例如，如果字典同时适用于西班牙语（墨西哥）和西班牙语（秘鲁），但不适用于西班牙语（西班牙），可以在此元素中进行指定。</span><span class="sxs-lookup"><span data-stu-id="f69e1-159">For example, if your dictionary applies to both Spanish (Mexico) and Spanish (Peru), but not Spanish (Spain), you can specify that in this element.</span></span> <span data-ttu-id="f69e1-160">请勿在此清单中指定多种语言（例如，西班牙语和英语）。</span><span class="sxs-lookup"><span data-stu-id="f69e1-160">Do not specify more than one language (e.g., Spanish and English) in this manifest.</span></span> <span data-ttu-id="f69e1-161">请将各种语言发布为单独的字典。</span><span class="sxs-lookup"><span data-stu-id="f69e1-161">Publish separate languages as separate dictionaries.</span></span>
+<span data-ttu-id="dc1c9-159">`TargetDialects`元素及其子元素指定字典包含的一组区域语言。</span><span class="sxs-lookup"><span data-stu-id="dc1c9-159">The `TargetDialects` element and its child elements specify the set of regional languages your dictionary contains.</span></span> <span data-ttu-id="dc1c9-160">例如，如果字典同时适用于西班牙语（墨西哥）和西班牙语（秘鲁），但不适用于西班牙语（西班牙），可以在此元素中进行指定。</span><span class="sxs-lookup"><span data-stu-id="dc1c9-160">For example, if your dictionary applies to both Spanish (Mexico) and Spanish (Peru), but not Spanish (Spain), you can specify that in this element.</span></span> <span data-ttu-id="dc1c9-161">请勿在此清单中指定多种语言（例如，西班牙语和英语）。</span><span class="sxs-lookup"><span data-stu-id="dc1c9-161">Do not specify more than one language (e.g., Spanish and English) in this manifest.</span></span> <span data-ttu-id="dc1c9-162">请将各种语言发布为单独的字典。</span><span class="sxs-lookup"><span data-stu-id="dc1c9-162">Publish separate languages as separate dictionaries.</span></span>
 
- <span data-ttu-id="f69e1-162">**示例**</span><span class="sxs-lookup"><span data-stu-id="f69e1-162">**Example**</span></span>
+ <span data-ttu-id="dc1c9-163">**示例**</span><span class="sxs-lookup"><span data-stu-id="dc1c9-163">**Example**</span></span>
 
 ```XML
 <TargetDialects>
@@ -322,20 +322,20 @@ public class WebService : System.Web.Services.WebService {
 ```
 
 
-#### <a name="targetdialect-element"></a><span data-ttu-id="f69e1-163">TargetDialect 元素</span><span class="sxs-lookup"><span data-stu-id="f69e1-163">TargetDialect element</span></span>
+#### <a name="targetdialect-element"></a><span data-ttu-id="dc1c9-164">TargetDialect 元素</span><span class="sxs-lookup"><span data-stu-id="dc1c9-164">TargetDialect element</span></span>
 
 
-<span data-ttu-id="f69e1-p108">指定此字典支持的一种区域语言。对于字典加载项，此为必需元素。</span><span class="sxs-lookup"><span data-stu-id="f69e1-p108">Specifies a regional language that this dictionary supports. Required for dictionary add-ins.</span></span>
+<span data-ttu-id="dc1c9-p108">指定此字典支持的一种区域语言。对于字典加载项，此为必需元素。</span><span class="sxs-lookup"><span data-stu-id="dc1c9-p108">Specifies a regional language that this dictionary supports. Required for dictionary add-ins.</span></span>
 
- <span data-ttu-id="f69e1-166">**父元素**</span><span class="sxs-lookup"><span data-stu-id="f69e1-166">**Parent element**</span></span>
+ <span data-ttu-id="dc1c9-167">**父元素**</span><span class="sxs-lookup"><span data-stu-id="dc1c9-167">**Parent element**</span></span>
 
  `<TargetDialects>`
 
- <span data-ttu-id="f69e1-167">**备注**</span><span class="sxs-lookup"><span data-stu-id="f69e1-167">**Remarks**</span></span>
+ <span data-ttu-id="dc1c9-168">**备注**</span><span class="sxs-lookup"><span data-stu-id="dc1c9-168">**Remarks**</span></span>
 
-<span data-ttu-id="f69e1-168">以 RFC1766 `language` 标记格式中指定区域语言的值，如 EN-US。</span><span class="sxs-lookup"><span data-stu-id="f69e1-168">Specify the value for a regional language in the RFC1766  `language` tag format, such as EN-US.</span></span>
+<span data-ttu-id="dc1c9-169">以 RFC1766 `language` 标记格式中指定区域语言的值，如 EN-US。</span><span class="sxs-lookup"><span data-stu-id="dc1c9-169">Specify the value for a regional language in the RFC1766  `language` tag format, such as EN-US.</span></span>
 
- <span data-ttu-id="f69e1-169">**示例**</span><span class="sxs-lookup"><span data-stu-id="f69e1-169">**Example**</span></span>
+ <span data-ttu-id="dc1c9-170">**示例**</span><span class="sxs-lookup"><span data-stu-id="dc1c9-170">**Example**</span></span>
 
 
 ```XML
@@ -343,20 +343,20 @@ public class WebService : System.Web.Services.WebService {
 ```
 
 
-#### <a name="queryuri-element"></a><span data-ttu-id="f69e1-170">QueryUri 元素</span><span class="sxs-lookup"><span data-stu-id="f69e1-170">QueryUri element</span></span>
+#### <a name="queryuri-element"></a><span data-ttu-id="dc1c9-171">QueryUri 元素</span><span class="sxs-lookup"><span data-stu-id="dc1c9-171">QueryUri element</span></span>
 
 
-<span data-ttu-id="f69e1-p109">指定字典查询服务的终结点。对于字典加载项，此为必需元素。</span><span class="sxs-lookup"><span data-stu-id="f69e1-p109">Specifies the endpoint for the dictionary query service. Required for dictionary add-ins.</span></span>
+<span data-ttu-id="dc1c9-p109">指定字典查询服务的终结点。对于字典加载项，此为必需元素。</span><span class="sxs-lookup"><span data-stu-id="dc1c9-p109">Specifies the endpoint for the dictionary query service. Required for dictionary add-ins.</span></span>
 
- <span data-ttu-id="f69e1-173">**父元素**</span><span class="sxs-lookup"><span data-stu-id="f69e1-173">**Parent element**</span></span>
+ <span data-ttu-id="dc1c9-174">**父元素**</span><span class="sxs-lookup"><span data-stu-id="dc1c9-174">**Parent element**</span></span>
 
  `<Dictionary>`
 
- <span data-ttu-id="f69e1-174">**备注**</span><span class="sxs-lookup"><span data-stu-id="f69e1-174">**Remarks**</span></span>
+ <span data-ttu-id="dc1c9-175">**备注**</span><span class="sxs-lookup"><span data-stu-id="dc1c9-175">**Remarks**</span></span>
 
-<span data-ttu-id="f69e1-p110">这是字典提供程序的 XML Web 服务的 URI。被正确转义的查询将被追加到此 URI。</span><span class="sxs-lookup"><span data-stu-id="f69e1-p110">This is the URI of the XML web service for the dictionary provider. The properly escaped query will be appended to this URI.</span></span> 
+<span data-ttu-id="dc1c9-p110">这是字典提供程序的 XML Web 服务的 URI。被正确转义的查询将被追加到此 URI。</span><span class="sxs-lookup"><span data-stu-id="dc1c9-p110">This is the URI of the XML web service for the dictionary provider. The properly escaped query will be appended to this URI.</span></span> 
 
- <span data-ttu-id="f69e1-177">**示例**</span><span class="sxs-lookup"><span data-stu-id="f69e1-177">**Example**</span></span>
+ <span data-ttu-id="dc1c9-178">**示例**</span><span class="sxs-lookup"><span data-stu-id="dc1c9-178">**Example**</span></span>
 
 
 ```XML
@@ -364,22 +364,22 @@ public class WebService : System.Web.Services.WebService {
 ```
 
 
-#### <a name="citationtext-element"></a><span data-ttu-id="f69e1-178">CitationText 元素</span><span class="sxs-lookup"><span data-stu-id="f69e1-178">CitationText element</span></span>
+#### <a name="citationtext-element"></a><span data-ttu-id="dc1c9-179">CitationText 元素</span><span class="sxs-lookup"><span data-stu-id="dc1c9-179">CitationText element</span></span>
 
 
-<span data-ttu-id="f69e1-p111">指定要在引文中使用的文本。对于字典加载项，此为必需元素。</span><span class="sxs-lookup"><span data-stu-id="f69e1-p111">Specifies the text to use in citations. Required for dictionary add-ins.</span></span>
+<span data-ttu-id="dc1c9-p111">指定要在引文中使用的文本。对于字典加载项，此为必需元素。</span><span class="sxs-lookup"><span data-stu-id="dc1c9-p111">Specifies the text to use in citations. Required for dictionary add-ins.</span></span>
 
- <span data-ttu-id="f69e1-181">**父元素**</span><span class="sxs-lookup"><span data-stu-id="f69e1-181">**Parent element**</span></span>
+ <span data-ttu-id="dc1c9-182">**父元素**</span><span class="sxs-lookup"><span data-stu-id="dc1c9-182">**Parent element**</span></span>
 
  `<Dictionary>`
 
- <span data-ttu-id="f69e1-182">**备注**</span><span class="sxs-lookup"><span data-stu-id="f69e1-182">**Remarks**</span></span>
+ <span data-ttu-id="dc1c9-183">**备注**</span><span class="sxs-lookup"><span data-stu-id="dc1c9-183">**Remarks**</span></span>
 
-<span data-ttu-id="f69e1-183">此元素指定将在从 Web 服务返回的内容之下的行中显示的引文文本的开头（例如，“Results by:”或“Powered by:”）。</span><span class="sxs-lookup"><span data-stu-id="f69e1-183">This element specifies the beginning of the citation text that will be displayed on a line below the content that is returned from the web service (for example, "Results by: " or "Powered by: ").</span></span>
+<span data-ttu-id="dc1c9-184">此元素指定将在从 Web 服务返回的内容之下的行中显示的引文文本的开头（例如，“Results by:”或“Powered by:”）。</span><span class="sxs-lookup"><span data-stu-id="dc1c9-184">This element specifies the beginning of the citation text that will be displayed on a line below the content that is returned from the web service (for example, "Results by: " or "Powered by: ").</span></span>
 
-<span data-ttu-id="f69e1-184">对于此元素，您可以使用`Override`元素指定其他区域设置的值。</span><span class="sxs-lookup"><span data-stu-id="f69e1-184">For this element, you can specify values for additional locales by using the `Override` element.</span></span> <span data-ttu-id="f69e1-185">例如，如果用户正在运行 Office 的西班牙语 SKU，但使用的是英语字典，则允许引文行读取“Resultados por: Bing”，而不是“Results by: Bing”。</span><span class="sxs-lookup"><span data-stu-id="f69e1-185">For example, if a user is running the Spanish SKU of Office, but using an English dictionary, this allows the citation line to read "Resultados por: Bing" rather than "Results by: Bing".</span></span> <span data-ttu-id="f69e1-186">有关如何指定其他区域设置的值的详细信息，请参阅 [Office 外接程序 XML 清单](../develop/add-in-manifests.md)中的“为不同区域设置提供设置”一节。</span><span class="sxs-lookup"><span data-stu-id="f69e1-186">For more information about how to specify values for additional locales, see the section "Providing settings for different locales" in [Office Add-ins XML manifest](../develop/add-in-manifests.md).</span></span>
+<span data-ttu-id="dc1c9-185">对于此元素，您可以使用`Override`元素指定其他区域设置的值。</span><span class="sxs-lookup"><span data-stu-id="dc1c9-185">For this element, you can specify values for additional locales by using the `Override` element.</span></span> <span data-ttu-id="dc1c9-186">例如，如果用户正在运行 Office 的西班牙语 SKU，但使用的是英语字典，则允许引文行读取“Resultados por: Bing”，而不是“Results by: Bing”。</span><span class="sxs-lookup"><span data-stu-id="dc1c9-186">For example, if a user is running the Spanish SKU of Office, but using an English dictionary, this allows the citation line to read "Resultados por: Bing" rather than "Results by: Bing".</span></span> <span data-ttu-id="dc1c9-187">有关如何指定其他区域设置的值的详细信息，请参阅 [Office 外接程序 XML 清单](../develop/add-in-manifests.md)中的“为不同区域设置提供设置”一节。</span><span class="sxs-lookup"><span data-stu-id="dc1c9-187">For more information about how to specify values for additional locales, see the section "Providing settings for different locales" in [Office Add-ins XML manifest](../develop/add-in-manifests.md).</span></span>
 
- <span data-ttu-id="f69e1-187">**示例**</span><span class="sxs-lookup"><span data-stu-id="f69e1-187">**Example**</span></span>
+ <span data-ttu-id="dc1c9-188">**示例**</span><span class="sxs-lookup"><span data-stu-id="dc1c9-188">**Example**</span></span>
 
 
 ```XML
@@ -387,44 +387,44 @@ public class WebService : System.Web.Services.WebService {
 ```
 
 
-#### <a name="dictionaryname-element"></a><span data-ttu-id="f69e1-188">DictionaryName 元素</span><span class="sxs-lookup"><span data-stu-id="f69e1-188">DictionaryName element</span></span>
+#### <a name="dictionaryname-element"></a><span data-ttu-id="dc1c9-189">DictionaryName 元素</span><span class="sxs-lookup"><span data-stu-id="dc1c9-189">DictionaryName element</span></span>
 
 
-<span data-ttu-id="f69e1-p113">指定此字典的名称。对于字典加载项，此为必需元素。</span><span class="sxs-lookup"><span data-stu-id="f69e1-p113">Specifies the name of this dictionary. Required for dictionary add-ins.</span></span>
+<span data-ttu-id="dc1c9-p113">指定此字典的名称。对于字典加载项，此为必需元素。</span><span class="sxs-lookup"><span data-stu-id="dc1c9-p113">Specifies the name of this dictionary. Required for dictionary add-ins.</span></span>
 
- <span data-ttu-id="f69e1-191">**父元素**</span><span class="sxs-lookup"><span data-stu-id="f69e1-191">**Parent element**</span></span>
+ <span data-ttu-id="dc1c9-192">**父元素**</span><span class="sxs-lookup"><span data-stu-id="dc1c9-192">**Parent element**</span></span>
 
  `<Dictionary>`
 
- <span data-ttu-id="f69e1-192">**备注**</span><span class="sxs-lookup"><span data-stu-id="f69e1-192">**Remarks**</span></span>
+ <span data-ttu-id="dc1c9-193">**备注**</span><span class="sxs-lookup"><span data-stu-id="dc1c9-193">**Remarks**</span></span>
 
-<span data-ttu-id="f69e1-p114">此元素指定引文文本中的链接文本。引文文本显示在从 Web 服务返回的内容之下的行中。</span><span class="sxs-lookup"><span data-stu-id="f69e1-p114">This element specifies the link text in the citation text. Citation text is displayed on a line below the content that is returned from the web service.</span></span>
+<span data-ttu-id="dc1c9-p114">此元素指定引文文本中的链接文本。引文文本显示在从 Web 服务返回的内容之下的行中。</span><span class="sxs-lookup"><span data-stu-id="dc1c9-p114">This element specifies the link text in the citation text. Citation text is displayed on a line below the content that is returned from the web service.</span></span>
 
-<span data-ttu-id="f69e1-195">对于此元素，可以指定其他区域设置的值。</span><span class="sxs-lookup"><span data-stu-id="f69e1-195">For this element, you can specify values for additional locales.</span></span>
+<span data-ttu-id="dc1c9-196">对于此元素，可以指定其他区域设置的值。</span><span class="sxs-lookup"><span data-stu-id="dc1c9-196">For this element, you can specify values for additional locales.</span></span>
 
- <span data-ttu-id="f69e1-196">**示例**</span><span class="sxs-lookup"><span data-stu-id="f69e1-196">**Example**</span></span>
+ <span data-ttu-id="dc1c9-197">**示例**</span><span class="sxs-lookup"><span data-stu-id="dc1c9-197">**Example**</span></span>
 
 ```XML
 <DictionaryName DefaultValue="Bing Dictionary" />
 ```
 
 
-#### <a name="dictionaryhomepage-element"></a><span data-ttu-id="f69e1-197">DictionaryHomePage 元素</span><span class="sxs-lookup"><span data-stu-id="f69e1-197">DictionaryHomePage element</span></span>
+#### <a name="dictionaryhomepage-element"></a><span data-ttu-id="dc1c9-198">DictionaryHomePage 元素</span><span class="sxs-lookup"><span data-stu-id="dc1c9-198">DictionaryHomePage element</span></span>
 
 
-<span data-ttu-id="f69e1-p115">指定字典的主页 URL。对于字典加载项，此为必需元素。</span><span class="sxs-lookup"><span data-stu-id="f69e1-p115">Specifies the URL of the home page for the dictionary. Required for dictionary add-ins.</span></span>
+<span data-ttu-id="dc1c9-p115">指定字典的主页 URL。对于字典加载项，此为必需元素。</span><span class="sxs-lookup"><span data-stu-id="dc1c9-p115">Specifies the URL of the home page for the dictionary. Required for dictionary add-ins.</span></span>
 
- <span data-ttu-id="f69e1-200">**父元素**</span><span class="sxs-lookup"><span data-stu-id="f69e1-200">**Parent element**</span></span>
+ <span data-ttu-id="dc1c9-201">**父元素**</span><span class="sxs-lookup"><span data-stu-id="dc1c9-201">**Parent element**</span></span>
 
  `<Dictionary>`
 
- <span data-ttu-id="f69e1-201">**备注**</span><span class="sxs-lookup"><span data-stu-id="f69e1-201">**Remarks**</span></span>
+ <span data-ttu-id="dc1c9-202">**备注**</span><span class="sxs-lookup"><span data-stu-id="dc1c9-202">**Remarks**</span></span>
 
-<span data-ttu-id="f69e1-p116">此元素指定引文文本中的链接 URL。引文文本显示在从 Web 服务返回的内容之下的行中。</span><span class="sxs-lookup"><span data-stu-id="f69e1-p116">This element specifies the link URL in the citation text. Citation text is displayed on a line below the content that is returned from the web service.</span></span>
+<span data-ttu-id="dc1c9-p116">此元素指定引文文本中的链接 URL。引文文本显示在从 Web 服务返回的内容之下的行中。</span><span class="sxs-lookup"><span data-stu-id="dc1c9-p116">This element specifies the link URL in the citation text. Citation text is displayed on a line below the content that is returned from the web service.</span></span>
 
-<span data-ttu-id="f69e1-204">对于此元素，可以指定其他区域设置的值。</span><span class="sxs-lookup"><span data-stu-id="f69e1-204">For this element, you can specify values for additional locales.</span></span>
+<span data-ttu-id="dc1c9-205">对于此元素，可以指定其他区域设置的值。</span><span class="sxs-lookup"><span data-stu-id="dc1c9-205">For this element, you can specify values for additional locales.</span></span>
 
- <span data-ttu-id="f69e1-205">**示例**</span><span class="sxs-lookup"><span data-stu-id="f69e1-205">**Example**</span></span>
+ <span data-ttu-id="dc1c9-206">**示例**</span><span class="sxs-lookup"><span data-stu-id="dc1c9-206">**Example**</span></span>
 
 
 ```XML
@@ -432,9 +432,9 @@ public class WebService : System.Web.Services.WebService {
 ```
 
 
-### <a name="creating-a-dictionary-add-ins-html-user-interface"></a><span data-ttu-id="f69e1-206">创建字典外接程序的 HTML 用户界面</span><span class="sxs-lookup"><span data-stu-id="f69e1-206">Creating a dictionary add-in's HTML user interface</span></span>
+### <a name="creating-a-dictionary-add-ins-html-user-interface"></a><span data-ttu-id="dc1c9-207">创建字典外接程序的 HTML 用户界面</span><span class="sxs-lookup"><span data-stu-id="dc1c9-207">Creating a dictionary add-in's HTML user interface</span></span>
 
-<span data-ttu-id="f69e1-p117">以下两个示例演示用于演示字典外接程序的 UI 的 HTML 和 CSS 文件。若要查看 UI 在外接程序的任务窗格中如何显示，请参阅代码之后的图 6。若要查看 Dictionary.js 文件中 JavaScript 的实现如何为此 HTML UI 提供编程逻辑，请参阅本节后面紧接着的“编写 JavaScript 实现”。</span><span class="sxs-lookup"><span data-stu-id="f69e1-p117">The following two examples show the HTML and CSS files for the UI of the Demo Dictionary add-in. To view how the UI is displayed in the add-in's task pane, see Figure 6 following the code. To see how the implementation of the JavaScript in the Dictionary.js file provides programming logic for this HTML UI, see "Writing the JavaScript implementation" immediately following this section.</span></span>
+<span data-ttu-id="dc1c9-p117">以下两个示例演示用于演示字典外接程序的 UI 的 HTML 和 CSS 文件。若要查看 UI 在外接程序的任务窗格中如何显示，请参阅代码之后的图 6。若要查看 Dictionary.js 文件中 JavaScript 的实现如何为此 HTML UI 提供编程逻辑，请参阅本节后面紧接着的“编写 JavaScript 实现”。</span><span class="sxs-lookup"><span data-stu-id="dc1c9-p117">The following two examples show the HTML and CSS files for the UI of the Demo Dictionary add-in. To view how the UI is displayed in the add-in's task pane, see Figure 6 following the code. To see how the implementation of the JavaScript in the Dictionary.js file provides programming logic for this HTML UI, see "Writing the JavaScript implementation" immediately following this section.</span></span>
 
 ```HTML
 <!DOCTYPE html>
@@ -475,7 +475,7 @@ public class WebService : System.Web.Services.WebService {
 </html>
 ```
 
-<span data-ttu-id="f69e1-210">以下示例显示 Style.css 的内容。</span><span class="sxs-lookup"><span data-stu-id="f69e1-210">The following example shows the contents of Style.css.</span></span>
+<span data-ttu-id="dc1c9-211">以下示例显示 Style.css 的内容。</span><span class="sxs-lookup"><span data-stu-id="dc1c9-211">The following example shows the contents of Style.css.</span></span>
 
 ```CSS
 #mainContainer
@@ -516,30 +516,30 @@ a:hover, a:active
 }
 ```
 
-<span data-ttu-id="f69e1-211">*图 6.演示词典 UI*</span><span class="sxs-lookup"><span data-stu-id="f69e1-211">*Figure 6. Demo dictionary UI*</span></span>
+<span data-ttu-id="dc1c9-212">*图 6.演示词典 UI*</span><span class="sxs-lookup"><span data-stu-id="dc1c9-212">*Figure 6. Demo dictionary UI*</span></span>
 
 ![演示字典 UI](../images/dictionary-agave-06.jpg)
 
 
-### <a name="writing-the-javascript-implementation"></a><span data-ttu-id="f69e1-213">编写 JavaScript 实现</span><span class="sxs-lookup"><span data-stu-id="f69e1-213">Writing the JavaScript implementation</span></span>
+### <a name="writing-the-javascript-implementation"></a><span data-ttu-id="dc1c9-214">编写 JavaScript 实现</span><span class="sxs-lookup"><span data-stu-id="dc1c9-214">Writing the JavaScript implementation</span></span>
 
 
-<span data-ttu-id="f69e1-p118">以下示例显示 Dictionary.js 文件中的 JavaScript 实现（该文件从外接程序的 HTML 页面调用，以提供演示字典外接程序的编程逻辑）。 该脚本重新使用以前介绍的 XML Web 服务。 脚本作为示例 Web 服务被置于同一目录中时将从该服务获取定义。 它可以通过修改文件顶部的 `xmlServiceURL` 变量来使用符合 XML Web 服务的公用 OfficeDefinitions，然后将拼音的 Bing API 键替换为正确注册的键。</span><span class="sxs-lookup"><span data-stu-id="f69e1-p118">The following example shows the JavaScript implementation in the Dictionary.js file that is called from the add-in's HTML page to provide the programming logic for the Demo Dictionary add-in. This script reuses the XML web service described previously. When placed in the same directory as the example web service, the script will get definitions from that service. It can be used with a public OfficeDefinitions-conforming XML web service by modifying the  `xmlServiceURL` variable at the top of the file, and then replacing the Bing API key for pronunciations with a properly registered one.</span></span>
+<span data-ttu-id="dc1c9-p118">以下示例显示 Dictionary.js 文件中的 JavaScript 实现（该文件从外接程序的 HTML 页面调用，以提供演示字典外接程序的编程逻辑）。 该脚本重新使用以前介绍的 XML Web 服务。 脚本作为示例 Web 服务被置于同一目录中时将从该服务获取定义。 它可以通过修改文件顶部的 `xmlServiceURL` 变量来使用符合 XML Web 服务的公用 OfficeDefinitions，然后将拼音的 Bing API 键替换为正确注册的键。</span><span class="sxs-lookup"><span data-stu-id="dc1c9-p118">The following example shows the JavaScript implementation in the Dictionary.js file that is called from the add-in's HTML page to provide the programming logic for the Demo Dictionary add-in. This script reuses the XML web service described previously. When placed in the same directory as the example web service, the script will get definitions from that service. It can be used with a public OfficeDefinitions-conforming XML web service by modifying the  `xmlServiceURL` variable at the top of the file, and then replacing the Bing API key for pronunciations with a properly registered one.</span></span>
 
-<span data-ttu-id="f69e1-218">从该实现中调用的 Office JavaScript API （node.js）的主要成员如下所示：</span><span class="sxs-lookup"><span data-stu-id="f69e1-218">The primary members of the Office JavaScript API (Office.js) that are called from this implementation are as follows:</span></span>
+<span data-ttu-id="dc1c9-219">从该实现中调用的 Office JavaScript API （node.js）的主要成员如下所示：</span><span class="sxs-lookup"><span data-stu-id="dc1c9-219">The primary members of the Office JavaScript API (Office.js) that are called from this implementation are as follows:</span></span>
 
 
-- <span data-ttu-id="f69e1-219">对象的 initialize 事件，在初始化外接程序上下文时引发，并提供对表示加载项与之交互的文档的[document](/javascript/api/office/office.document)对象实例的访问。 [](/javascript/api/office) `Office`</span><span class="sxs-lookup"><span data-stu-id="f69e1-219">The [initialize](/javascript/api/office) event of the `Office` object, which is raised when the add-in context is initialized, and provides access to a [Document](/javascript/api/office/office.document) object instance that represents the document the add-in is interacting with.</span></span>
+- <span data-ttu-id="dc1c9-220">对象的 initialize 事件，在初始化外接程序上下文时引发，并提供对表示加载项与之交互的文档的[document](/javascript/api/office/office.document)对象实例的访问。 [initialize](/javascript/api/office) `Office`</span><span class="sxs-lookup"><span data-stu-id="dc1c9-220">The [initialize](/javascript/api/office) event of the `Office` object, which is raised when the add-in context is initialized, and provides access to a [Document](/javascript/api/office/office.document) object instance that represents the document the add-in is interacting with.</span></span>
     
-- <span data-ttu-id="f69e1-220">对象的[addHandlerAsync](/javascript/api/office/office.document#addhandlerasync-eventtype--handler--options--callback-)方法，该方法在`initialize`函数中调用，以添加文档的 SelectionChanged 事件的事件处理程序，以侦听用户选择更改。 [](/javascript/api/office/office.documentselectionchangedeventargs) `Document`</span><span class="sxs-lookup"><span data-stu-id="f69e1-220">The [addHandlerAsync](/javascript/api/office/office.document#addhandlerasync-eventtype--handler--options--callback-) method of the `Document` object, which is called in the `initialize` function to add an event handler for the [SelectionChanged](/javascript/api/office/office.documentselectionchangedeventargs) event of the document to listen for user selection changes.</span></span>
+- <span data-ttu-id="dc1c9-221">对象的[addHandlerAsync](/javascript/api/office/office.document#addhandlerasync-eventtype--handler--options--callback-)方法，该方法在`initialize`函数中调用，以添加文档的 SelectionChanged 事件的事件处理程序，以侦听用户选择更改。 [SelectionChanged](/javascript/api/office/office.documentselectionchangedeventargs) `Document`</span><span class="sxs-lookup"><span data-stu-id="dc1c9-221">The [addHandlerAsync](/javascript/api/office/office.document#addhandlerasync-eventtype--handler--options--callback-) method of the `Document` object, which is called in the `initialize` function to add an event handler for the [SelectionChanged](/javascript/api/office/office.documentselectionchangedeventargs) event of the document to listen for user selection changes.</span></span>
     
-- <span data-ttu-id="f69e1-221">`Document`对象的[getSelectedDataAsync](/javascript/api/office/office.document#getselecteddataasync-coerciontype--options--callback-)方法，该方法在`SelectionChanged`引发事件处理程序`tryUpdatingSelectedWord()`以获取用户选择的单词或短语时，将其强制转换为纯文本，然后执行`selectedTextCallback`异步回调函数，在函数中调用该方法。</span><span class="sxs-lookup"><span data-stu-id="f69e1-221">The [getSelectedDataAsync](/javascript/api/office/office.document#getselecteddataasync-coerciontype--options--callback-) method of the `Document` object, which is called in the `tryUpdatingSelectedWord()` function when the `SelectionChanged` event handler is raised to get the word or phrase the user selected, coerce it to plain text, and then execute the `selectedTextCallback` asynchronous callback function.</span></span>
+- <span data-ttu-id="dc1c9-222">`Document`对象的[getSelectedDataAsync](/javascript/api/office/office.document#getselecteddataasync-coerciontype--options--callback-)方法，该方法在`SelectionChanged`引发事件处理程序`tryUpdatingSelectedWord()`以获取用户选择的单词或短语时，将其强制转换为纯文本，然后执行`selectedTextCallback`异步回调函数，在函数中调用该方法。</span><span class="sxs-lookup"><span data-stu-id="dc1c9-222">The [getSelectedDataAsync](/javascript/api/office/office.document#getselecteddataasync-coerciontype--options--callback-) method of the `Document` object, which is called in the `tryUpdatingSelectedWord()` function when the `SelectionChanged` event handler is raised to get the word or phrase the user selected, coerce it to plain text, and then execute the `selectedTextCallback` asynchronous callback function.</span></span>
     
-- <span data-ttu-id="f69e1-222">当作为`selectTextCallback` `getSelectedDataAsync`方法的_callback_参数传递的异步回调函数执行时，它将在回调返回时获取所选文本的值。</span><span class="sxs-lookup"><span data-stu-id="f69e1-222">When the  `selectTextCallback` asynchronous callback function that is passed as the _callback_ argument of the `getSelectedDataAsync` method executes, it gets the value of the selected text when the callback returns.</span></span> <span data-ttu-id="f69e1-223">`AsyncResult`它通过使用返回的对象的[value](/javascript/api/office/office.asyncresult#status)属性，从回调的_SelectedText_参数（类型为[AsyncResult](/javascript/api/office/office.asyncresult)）中获取该值。</span><span class="sxs-lookup"><span data-stu-id="f69e1-223">It gets that value from the callback's _selectedText_ argument (which is of type [AsyncResult](/javascript/api/office/office.asyncresult)) by using the [value](/javascript/api/office/office.asyncresult#status) property of the returned `AsyncResult` object.</span></span>
+- <span data-ttu-id="dc1c9-223">当作为`selectTextCallback` `getSelectedDataAsync`方法的_callback_参数传递的异步回调函数执行时，它将在回调返回时获取所选文本的值。</span><span class="sxs-lookup"><span data-stu-id="dc1c9-223">When the  `selectTextCallback` asynchronous callback function that is passed as the _callback_ argument of the `getSelectedDataAsync` method executes, it gets the value of the selected text when the callback returns.</span></span> <span data-ttu-id="dc1c9-224">`AsyncResult`它通过使用返回的对象的[value](/javascript/api/office/office.asyncresult#status)属性，从回调的_SelectedText_参数（类型为[AsyncResult](/javascript/api/office/office.asyncresult)）中获取该值。</span><span class="sxs-lookup"><span data-stu-id="dc1c9-224">It gets that value from the callback's _selectedText_ argument (which is of type [AsyncResult](/javascript/api/office/office.asyncresult)) by using the [value](/javascript/api/office/office.asyncresult#status) property of the returned `AsyncResult` object.</span></span>
     
-- <span data-ttu-id="f69e1-p120">`selectedTextCallback` 函数中剩余的代码查询定义的 XML Web 服务。它还调入 Microsoft Translator API，以提供具有所选字词拼音的 .wav 文件的 URL。</span><span class="sxs-lookup"><span data-stu-id="f69e1-p120">The rest of the code in the  `selectedTextCallback` function queries the XML web service for definitions. It also calls into the Microsoft Translator APIs to provide the URL of a .wav file that has the selected word's pronunciation.</span></span>
+- <span data-ttu-id="dc1c9-p120">`selectedTextCallback` 函数中剩余的代码查询定义的 XML Web 服务。它还调入 Microsoft Translator API，以提供具有所选字词拼音的 .wav 文件的 URL。</span><span class="sxs-lookup"><span data-stu-id="dc1c9-p120">The rest of the code in the  `selectedTextCallback` function queries the XML web service for definitions. It also calls into the Microsoft Translator APIs to provide the URL of a .wav file that has the selected word's pronunciation.</span></span>
     
-- <span data-ttu-id="f69e1-226">Dictionary.js 中的其余代码会在外接程序的 HTML UI 中显示定义的列表和拼音链接。</span><span class="sxs-lookup"><span data-stu-id="f69e1-226">The remaining code in Dictionary.js displays the list of definitions and the pronunciation link in the add-in's HTML UI.</span></span>
+- <span data-ttu-id="dc1c9-227">Dictionary.js 中的其余代码会在外接程序的 HTML UI 中显示定义的列表和拼音链接。</span><span class="sxs-lookup"><span data-stu-id="dc1c9-227">The remaining code in Dictionary.js displays the list of definitions and the pronunciation link in the add-in's HTML UI.</span></span>
     
 
 

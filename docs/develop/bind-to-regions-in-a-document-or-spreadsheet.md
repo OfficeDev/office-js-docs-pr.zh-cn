@@ -1,55 +1,55 @@
 ---
 title: 绑定到文档或电子表格中的区域
-description: ''
+description: 了解如何使用 binding 确保一致地通过标识符访问文档或电子表格的特定区域或元素。
 ms.date: 06/20/2019
 localization_priority: Normal
-ms.openlocfilehash: c927f5ceb6be1ad038185e54706a55ab21b3f63a
-ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
+ms.openlocfilehash: 61ae64688253dede80989114f4abca2f236d48af
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "42324629"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42719068"
 ---
-# <a name="bind-to-regions-in-a-document-or-spreadsheet"></a><span data-ttu-id="70b8c-102">绑定到文档或电子表格中的区域</span><span class="sxs-lookup"><span data-stu-id="70b8c-102">Bind to regions in a document or spreadsheet</span></span>
+# <a name="bind-to-regions-in-a-document-or-spreadsheet"></a><span data-ttu-id="070bb-103">绑定到文档或电子表格中的区域</span><span class="sxs-lookup"><span data-stu-id="070bb-103">Bind to regions in a document or spreadsheet</span></span>
 
-<span data-ttu-id="70b8c-p101">基于绑定的数据访问使内容和任务窗格加载项能够通过与绑定相关联的标识符一致地访问文档或电子表格的特定区域。加载项首先需要通过调用将文档的某一部分与唯一标识符相关联的以下某个方法来建立绑定：[addFromPromptAsync]、[addFromSelectionAsync] 或 [addFromNamedItemAsync]。建立绑定后，加载项可以使用提供的标识符访问文档或电子表格的关联区域中包含的数据。创建绑定可为加载项提供以下值：</span><span class="sxs-lookup"><span data-stu-id="70b8c-p101">Binding-based data access enables content and task pane add-ins to consistently access a particular region of a document or spreadsheet through an identifier. The add-in first needs to establish the binding by calling one of the methods that associates a portion of the document with a unique identifier: [addFromPromptAsync], [addFromSelectionAsync], or [addFromNamedItemAsync]. After the binding is established, the add-in can use the provided identifier to access the data contained in the associated region of the document or spreadsheet. Creating bindings provides the following value to your add-in:</span></span>
-
-
-- <span data-ttu-id="70b8c-107">允许访问跨支持的 Office 应用程序的通用数据结构，例如：表、区域或文本（一系列连续字符）。</span><span class="sxs-lookup"><span data-stu-id="70b8c-107">Permits access to common data structures across supported Office applications, such as: tables, ranges, or text (a contiguous run of characters).</span></span>
-
-- <span data-ttu-id="70b8c-108">允许读/写操作，而不需要用户做出选择。</span><span class="sxs-lookup"><span data-stu-id="70b8c-108">Enables read/write operations without requiring the user to make a selection.</span></span>
-
-- <span data-ttu-id="70b8c-p102">在加载项和文档中的数据之间建立关系。绑定会保留在文档中，以后可以进行访问。</span><span class="sxs-lookup"><span data-stu-id="70b8c-p102">Establishes a relationship between the add-in and the data in the document. Bindings are persisted in the document, and can be accessed at a later time.</span></span>
-
-<span data-ttu-id="70b8c-p103">建立绑定还允许您订阅仅限文档或电子表格的特定区域的数据和选择更改事件。这意味着，加载项只会收到绑定区域内发生的更改的通知，而不是收到整个文档或电子表格内的常规更改的通知。</span><span class="sxs-lookup"><span data-stu-id="70b8c-p103">Establishing a binding also allows you to subscribe to data and selection change events that are scoped to that particular region of the document or spreadsheet. This means that the add-in is only notified of changes that happen within the bound region as opposed to general changes across the whole document or spreadsheet.</span></span>
-
-<span data-ttu-id="70b8c-p104">[Bindings] 对象公开 [getAllAsync] 方法，通过该方法可以访问在文档或电子表格中建立的所有绑定的集合。可使用 Bindings.[getByIdAsync] 或 [Office.select] 方法通过 ID 访问单个绑定。可使用 [Bindings] 对象的以下方法之一建立新绑定和删除现有绑定：[addFromSelectionAsync]、[addFromPromptAsync]、[addFromNamedItemAsync] 或 [releaseByIdAsync]。</span><span class="sxs-lookup"><span data-stu-id="70b8c-p104">The [Bindings] object exposes a [getAllAsync] method that gives access to the set of all bindings established on the document or spreadsheet. An individual binding can be accessed by its ID using either the Bindings.[getByIdAsync] or [Office.select] methods. You can establish new bindings as well as remove existing ones by using one of the following methods of the [Bindings] object: [addFromSelectionAsync], [addFromPromptAsync], [addFromNamedItemAsync], or [releaseByIdAsync].</span></span>
+<span data-ttu-id="070bb-p101">基于绑定的数据访问使内容和任务窗格加载项能够通过与绑定相关联的标识符一致地访问文档或电子表格的特定区域。加载项首先需要通过调用将文档的某一部分与唯一标识符相关联的以下某个方法来建立绑定：[addFromPromptAsync]、[addFromSelectionAsync] 或 [addFromNamedItemAsync]。建立绑定后，加载项可以使用提供的标识符访问文档或电子表格的关联区域中包含的数据。创建绑定可为加载项提供以下值：</span><span class="sxs-lookup"><span data-stu-id="070bb-p101">Binding-based data access enables content and task pane add-ins to consistently access a particular region of a document or spreadsheet through an identifier. The add-in first needs to establish the binding by calling one of the methods that associates a portion of the document with a unique identifier: [addFromPromptAsync], [addFromSelectionAsync], or [addFromNamedItemAsync]. After the binding is established, the add-in can use the provided identifier to access the data contained in the associated region of the document or spreadsheet. Creating bindings provides the following value to your add-in:</span></span>
 
 
-## <a name="binding-types"></a><span data-ttu-id="70b8c-116">绑定类型</span><span class="sxs-lookup"><span data-stu-id="70b8c-116">Binding types</span></span>
+- <span data-ttu-id="070bb-108">允许访问跨支持的 Office 应用程序的通用数据结构，例如：表、区域或文本（一系列连续字符）。</span><span class="sxs-lookup"><span data-stu-id="070bb-108">Permits access to common data structures across supported Office applications, such as: tables, ranges, or text (a contiguous run of characters).</span></span>
 
-<span data-ttu-id="70b8c-117">使用[addFromSelectionAsync]、 [addFromPromptAsync]或[addFromNamedItemAsync]方法创建绑定时，可以使用_BindingType_参数指定[三种不同类型的绑定][BindingType] ：</span><span class="sxs-lookup"><span data-stu-id="70b8c-117">There are [three different types of bindings][Office.BindingType] that you specify with the _bindingType_ parameter when you create a binding with the [addFromSelectionAsync], [addFromPromptAsync] or [addFromNamedItemAsync] methods:</span></span>
+- <span data-ttu-id="070bb-109">允许读/写操作，而不需要用户做出选择。</span><span class="sxs-lookup"><span data-stu-id="070bb-109">Enables read/write operations without requiring the user to make a selection.</span></span>
 
-1. <span data-ttu-id="70b8c-118">**[文本绑定][TextBinding]** - 绑定到可以文本形式表示的文档区域。</span><span class="sxs-lookup"><span data-stu-id="70b8c-118">**[Text Binding][TextBinding]** - Binds to a region of the document that can be represented as text.</span></span>
+- <span data-ttu-id="070bb-p102">在加载项和文档中的数据之间建立关系。绑定会保留在文档中，以后可以进行访问。</span><span class="sxs-lookup"><span data-stu-id="070bb-p102">Establishes a relationship between the add-in and the data in the document. Bindings are persisted in the document, and can be accessed at a later time.</span></span>
 
-    <span data-ttu-id="70b8c-p105">在 Word 中，大多数连续选区都是有效的，而在 Excel 中，只有单个单元格选区才能作为文本绑定的目标。在 Excel 中，只支持纯文本。在 Word 中，支持以下三种格式：纯文本、HTML 和 Open XML for Office。</span><span class="sxs-lookup"><span data-stu-id="70b8c-p105">In Word, most contiguous selections are valid, while in Excel only single cell selections can be the target of a text binding. In Excel, only plain text is supported. In Word, three formats are supported: plain text, HTML, and Open XML for Office.</span></span>
+<span data-ttu-id="070bb-p103">建立绑定还允许您订阅仅限文档或电子表格的特定区域的数据和选择更改事件。这意味着，加载项只会收到绑定区域内发生的更改的通知，而不是收到整个文档或电子表格内的常规更改的通知。</span><span class="sxs-lookup"><span data-stu-id="070bb-p103">Establishing a binding also allows you to subscribe to data and selection change events that are scoped to that particular region of the document or spreadsheet. This means that the add-in is only notified of changes that happen within the bound region as opposed to general changes across the whole document or spreadsheet.</span></span>
 
-2. <span data-ttu-id="70b8c-p106">**[矩阵绑定][MatrixBinding] \*\* -绑定到包含不带标题的表格数据的文档的固定区域。矩阵绑定中的数据作为二维**数组**写入或读取，在 JavaScript 中实现为数组的数组。例如，可以写入或读取两行两列的**字符串\*\*值` [['a', 'b'], ['c', 'd']]`，并且可以写入或读取包含三行的单列`[['a'], ['b'], ['c']]`。</span><span class="sxs-lookup"><span data-stu-id="70b8c-p106">**[Matrix Binding][MatrixBinding]** - Binds to a fixed region of a document that contains tabular data without headers.Data in a matrix binding is written or read as a two dimensional **Array**, which in JavaScript is implemented as an array of arrays. For example, two rows of **string** values in two columns can be written or read as ` [['a', 'b'], ['c', 'd']]`, and a single column of three rows can be written or read as `[['a'], ['b'], ['c']]`.</span></span>
+<span data-ttu-id="070bb-p104">[Bindings] 对象公开 [getAllAsync] 方法，通过该方法可以访问在文档或电子表格中建立的所有绑定的集合。可使用 Bindings.[getByIdAsync] 或 [Office.select] 方法通过 ID 访问单个绑定。可使用 [Bindings] 对象的以下方法之一建立新绑定和删除现有绑定：[addFromSelectionAsync]、[addFromPromptAsync]、[addFromNamedItemAsync] 或 [releaseByIdAsync]。</span><span class="sxs-lookup"><span data-stu-id="070bb-p104">The [Bindings] object exposes a [getAllAsync] method that gives access to the set of all bindings established on the document or spreadsheet. An individual binding can be accessed by its ID using either the Bindings.[getByIdAsync] or [Office.select] methods. You can establish new bindings as well as remove existing ones by using one of the following methods of the [Bindings] object: [addFromSelectionAsync], [addFromPromptAsync], [addFromNamedItemAsync], or [releaseByIdAsync].</span></span>
 
-    <span data-ttu-id="70b8c-p107">在 Excel 中，任何连续的单元格选区都可用于建立矩阵绑定。在 Word 中，只有表格支持矩阵绑定。</span><span class="sxs-lookup"><span data-stu-id="70b8c-p107">In Excel, any contiguous selection of cells can be used to establish a matrix binding. In Word, only tables support matrix binding.</span></span>
 
-3. <span data-ttu-id="70b8c-p108">**[表格绑定][TableBinding]** - 绑定到包含带标题的表格的文档区域。表格绑定中的数据作为 [TableData](/javascript/api/office/office.tabledata) 对象写入或读取。`TableData` 对象通过 `headers` 和 `rows` 属性公开数据。</span><span class="sxs-lookup"><span data-stu-id="70b8c-p108">**[Table Binding][TableBinding]** - Binds to a region of a document that contains a table with headers.Data in a table binding is written or read as a [TableData](/javascript/api/office/office.tabledata) object. The `TableData` object exposes the data through the `headers` and `rows` properties.</span></span>
+## <a name="binding-types"></a><span data-ttu-id="070bb-117">绑定类型</span><span class="sxs-lookup"><span data-stu-id="070bb-117">Binding types</span></span>
 
-    <span data-ttu-id="70b8c-p109">任何 Excel 或 Word 表格均可作为表格绑定的基础。建立表格绑定后，用户添加到表格中的每个新行或新列都自动包含在绑定中。</span><span class="sxs-lookup"><span data-stu-id="70b8c-p109">Any Excel or Word table can be the basis for a table binding. After you establish a table binding, each new row or column a user adds to the table is automatically included in the binding.</span></span>
+<span data-ttu-id="070bb-118">使用[addFromSelectionAsync]、 [addFromPromptAsync]或[addFromNamedItemAsync]方法创建绑定时，可以使用_BindingType_参数指定[三种不同类型的绑定][BindingType] ：</span><span class="sxs-lookup"><span data-stu-id="070bb-118">There are [three different types of bindings][Office.BindingType] that you specify with the _bindingType_ parameter when you create a binding with the [addFromSelectionAsync], [addFromPromptAsync] or [addFromNamedItemAsync] methods:</span></span>
 
-<span data-ttu-id="70b8c-p110">使用`Bindings`对象的三个 "addFrom" 方法之一创建绑定之后，可以使用相应对象的方法来处理绑定的数据和属性： [MatrixBinding]、 [TableBinding]或[textbinding 添加]。这三个对象都继承`Binding`对象的[binding.getdataasync]和[binding.setdataasync]方法，使您能够与绑定的数据进行交互。</span><span class="sxs-lookup"><span data-stu-id="70b8c-p110">After a binding is created by using one of the three "addFrom" methods of the `Bindings` object, you can work with the binding's data and properties by using the methods of the corresponding object: [MatrixBinding], [TableBinding], or [TextBinding]. All three of these objects inherit the [getDataAsync] and [setDataAsync] methods of the `Binding` object that enable you to interact with the bound data.</span></span>
+1. <span data-ttu-id="070bb-119">**[文本绑定][TextBinding]** - 绑定到可以文本形式表示的文档区域。</span><span class="sxs-lookup"><span data-stu-id="070bb-119">**[Text Binding][TextBinding]** - Binds to a region of the document that can be represented as text.</span></span>
+
+    <span data-ttu-id="070bb-p105">在 Word 中，大多数连续选区都是有效的，而在 Excel 中，只有单个单元格选区才能作为文本绑定的目标。在 Excel 中，只支持纯文本。在 Word 中，支持以下三种格式：纯文本、HTML 和 Open XML for Office。</span><span class="sxs-lookup"><span data-stu-id="070bb-p105">In Word, most contiguous selections are valid, while in Excel only single cell selections can be the target of a text binding. In Excel, only plain text is supported. In Word, three formats are supported: plain text, HTML, and Open XML for Office.</span></span>
+
+2. <span data-ttu-id="070bb-123">**[矩阵绑定][MatrixBinding] \*\* -绑定到包含不带标题的表格数据的文档的固定区域。矩阵绑定中的数据作为二维**数组\*\*写入或读取，在 JavaScript 中实现为数组的数组。</span><span class="sxs-lookup"><span data-stu-id="070bb-123">**[Matrix Binding][MatrixBinding]** - Binds to a fixed region of a document that contains tabular data without headers.Data in a matrix binding is written or read as a two dimensional **Array**, which in JavaScript is implemented as an array of arrays.</span></span> <span data-ttu-id="070bb-124">例如，两行两列 **string** 值可以写入或读取为 ` [['a', 'b'], ['c', 'd']]`，而三行单列则可以写入或读取为 `[['a'], ['b'], ['c']]`。</span><span class="sxs-lookup"><span data-stu-id="070bb-124">For example, two rows of **string** values in two columns can be written or read as ` [['a', 'b'], ['c', 'd']]`, and a single column of three rows can be written or read as `[['a'], ['b'], ['c']]`.</span></span>
+
+    <span data-ttu-id="070bb-p107">在 Excel 中，任何连续的单元格选区都可用于建立矩阵绑定。在 Word 中，只有表格支持矩阵绑定。</span><span class="sxs-lookup"><span data-stu-id="070bb-p107">In Excel, any contiguous selection of cells can be used to establish a matrix binding. In Word, only tables support matrix binding.</span></span>
+
+3. <span data-ttu-id="070bb-p108">**[表格绑定][TableBinding]** - 绑定到包含带标题的表格的文档区域。表格绑定中的数据作为 [TableData](/javascript/api/office/office.tabledata) 对象写入或读取。`TableData` 对象通过 `headers` 和 `rows` 属性公开数据。</span><span class="sxs-lookup"><span data-stu-id="070bb-p108">**[Table Binding][TableBinding]** - Binds to a region of a document that contains a table with headers.Data in a table binding is written or read as a [TableData](/javascript/api/office/office.tabledata) object. The `TableData` object exposes the data through the `headers` and `rows` properties.</span></span>
+
+    <span data-ttu-id="070bb-p109">任何 Excel 或 Word 表格均可作为表格绑定的基础。建立表格绑定后，用户添加到表格中的每个新行或新列都自动包含在绑定中。</span><span class="sxs-lookup"><span data-stu-id="070bb-p109">Any Excel or Word table can be the basis for a table binding. After you establish a table binding, each new row or column a user adds to the table is automatically included in the binding.</span></span>
+
+<span data-ttu-id="070bb-131">使用`Bindings`对象的三个 "addFrom" 方法之一创建绑定之后，可以使用相应对象的方法来处理绑定的数据和属性： [MatrixBinding]、 [TableBinding]或[textbinding 添加]。</span><span class="sxs-lookup"><span data-stu-id="070bb-131">After a binding is created by using one of the three "addFrom" methods of the `Bindings` object, you can work with the binding's data and properties by using the methods of the corresponding object: [MatrixBinding], [TableBinding], or [TextBinding].</span></span> <span data-ttu-id="070bb-132">这三个对象全部继承 [] 对象的 [getDataAsync] 和 `Binding` 方法，使你能够与绑定的数据交互。</span><span class="sxs-lookup"><span data-stu-id="070bb-132">All three of these objects inherit the [getDataAsync] and [setDataAsync] methods of the `Binding` object that enable you to interact with the bound data.</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="70b8c-p111">**应该何时使用矩阵和表格绑定？** 当使用的表格数据包含一个总计行时，如果外接程序的脚本需要访问总计行中的值，或检测用户的选区是否在总计行中，则必须使用矩阵绑定。如果为包含总计行的表格数据建立了表格绑定，那么 [TableBinding.rowCount] 属性和事件处理程序中 [BindingSelectionChangedEventArgs] 对象的 `rowCount` 和 `startRow` 属性将不会在值中反映总计行。要解决此限制，必须建立矩阵绑定以使用总计行。</span><span class="sxs-lookup"><span data-stu-id="70b8c-p111">**When should you use matrix versus table bindings?** When the tabular data you are working with contains a total row, you must use a matrix binding if your add-in's script needs to access values in the total row or detect that the user's selection is in the total row. If you establish a table binding for tabular data that contains a total row, the [TableBinding.rowCount] property and the `rowCount` and `startRow` properties of the [BindingSelectionChangedEventArgs] object in event handlers won't reflect the total row in their values. To work around this limitation, you must use establish a matrix binding to work with the total row.</span></span>
+> <span data-ttu-id="070bb-p111">**应该何时使用矩阵和表格绑定？** 当使用的表格数据包含一个总计行时，如果外接程序的脚本需要访问总计行中的值，或检测用户的选区是否在总计行中，则必须使用矩阵绑定。如果为包含总计行的表格数据建立了表格绑定，那么 [TableBinding.rowCount] 属性和事件处理程序中 [BindingSelectionChangedEventArgs] 对象的 `rowCount` 和 `startRow` 属性将不会在值中反映总计行。要解决此限制，必须建立矩阵绑定以使用总计行。</span><span class="sxs-lookup"><span data-stu-id="070bb-p111">**When should you use matrix versus table bindings?** When the tabular data you are working with contains a total row, you must use a matrix binding if your add-in's script needs to access values in the total row or detect that the user's selection is in the total row. If you establish a table binding for tabular data that contains a total row, the [TableBinding.rowCount] property and the `rowCount` and `startRow` properties of the [BindingSelectionChangedEventArgs] object in event handlers won't reflect the total row in their values. To work around this limitation, you must use establish a matrix binding to work with the total row.</span></span>
 
-## <a name="add-a-binding-to-the-users-current-selection"></a><span data-ttu-id="70b8c-136">向用户当前所选内容中添加绑定</span><span class="sxs-lookup"><span data-stu-id="70b8c-136">Add a binding to the user's current selection</span></span>
+## <a name="add-a-binding-to-the-users-current-selection"></a><span data-ttu-id="070bb-137">向用户当前所选内容中添加绑定</span><span class="sxs-lookup"><span data-stu-id="070bb-137">Add a binding to the user's current selection</span></span>
 
-<span data-ttu-id="70b8c-137">以下示例显示如何使用 [addFromSelectionAsync] 方法向文档中的当前所选内容中添加名为 `myBinding` 的文本绑定。</span><span class="sxs-lookup"><span data-stu-id="70b8c-137">The following example shows how to add a text binding called  `myBinding` to the current selection in a document by using the [addFromSelectionAsync] method.</span></span>
+<span data-ttu-id="070bb-138">以下示例显示如何使用 [addFromSelectionAsync] 方法向文档中的当前所选内容中添加名为 `myBinding` 的文本绑定。</span><span class="sxs-lookup"><span data-stu-id="070bb-138">The following example shows how to add a text binding called  `myBinding` to the current selection in a document by using the [addFromSelectionAsync] method.</span></span>
 
 
 ```js
@@ -67,15 +67,15 @@ function write(message){
 }
 ```
 
-<span data-ttu-id="70b8c-p112">在此示例中，指定的绑定类型为文本。这意味着将为所选内容创建 [TextBinding]。不同的绑定类型会公开不同的数据和操作。[Office.BindingType] 是可用的绑定类型值的枚举。</span><span class="sxs-lookup"><span data-stu-id="70b8c-p112">In this example, the specified binding type is text. This means that a [TextBinding] will be created for the selection. Different binding types expose different data and operations. [Office.BindingType] is an enumeration of available binding type values.</span></span>
+<span data-ttu-id="070bb-p112">在此示例中，指定的绑定类型为文本。这意味着将为所选内容创建 [TextBinding]。不同的绑定类型会公开不同的数据和操作。[Office.BindingType] 是可用的绑定类型值的枚举。</span><span class="sxs-lookup"><span data-stu-id="070bb-p112">In this example, the specified binding type is text. This means that a [TextBinding] will be created for the selection. Different binding types expose different data and operations. [Office.BindingType] is an enumeration of available binding type values.</span></span>
 
-<span data-ttu-id="70b8c-p113">第二个可选参数是一个对象，它指定要创建的新绑定的 ID。如果不指定 ID，则会自动生成一个。</span><span class="sxs-lookup"><span data-stu-id="70b8c-p113">The second optional parameter is an object that specifies the ID of the new binding being created. If an ID is not specified, one is generated automatically.</span></span>
+<span data-ttu-id="070bb-p113">第二个可选参数是一个对象，它指定要创建的新绑定的 ID。如果不指定 ID，则会自动生成一个。</span><span class="sxs-lookup"><span data-stu-id="070bb-p113">The second optional parameter is an object that specifies the ID of the new binding being created. If an ID is not specified, one is generated automatically.</span></span>
 
-<span data-ttu-id="70b8c-p114">作为最后一个 _callback_ 参数传入函数的匿名函数会在绑定创建完成时执行。该函数用单个参数 `asyncResult` 来调用，通过该参数可访问提供调用状态的 [AsyncResult] 对象。`AsyncResult.value` 属性包含对 [Binding] 对象的引用，该对象属于为新创建的绑定指定的类型。可以使用此 [Binding] 对象来获取和设置数据。</span><span class="sxs-lookup"><span data-stu-id="70b8c-p114">The anonymous function that is passed into the function as the final  _callback_ parameter is executed when the creation of the binding is complete. The function is called with a single parameter, `asyncResult`, which provides access to an [AsyncResult] object that provides the status of the call. The `AsyncResult.value` property contains a reference to a [Binding] object of the type that is specified for the newly created binding. You can use this [Binding] object to get and set data.</span></span>
+<span data-ttu-id="070bb-p114">作为最后一个 _callback_ 参数传入函数的匿名函数会在绑定创建完成时执行。该函数用单个参数 `asyncResult` 来调用，通过该参数可访问提供调用状态的 [AsyncResult] 对象。`AsyncResult.value` 属性包含对 [Binding] 对象的引用，该对象属于为新创建的绑定指定的类型。可以使用此 [Binding] 对象来获取和设置数据。</span><span class="sxs-lookup"><span data-stu-id="070bb-p114">The anonymous function that is passed into the function as the final  _callback_ parameter is executed when the creation of the binding is complete. The function is called with a single parameter, `asyncResult`, which provides access to an [AsyncResult] object that provides the status of the call. The `AsyncResult.value` property contains a reference to a [Binding] object of the type that is specified for the newly created binding. You can use this [Binding] object to get and set data.</span></span>
 
-## <a name="add-a-binding-from-a-prompt"></a><span data-ttu-id="70b8c-148">从提示中添加绑定</span><span class="sxs-lookup"><span data-stu-id="70b8c-148">Add a binding from a prompt</span></span>
+## <a name="add-a-binding-from-a-prompt"></a><span data-ttu-id="070bb-149">从提示中添加绑定</span><span class="sxs-lookup"><span data-stu-id="070bb-149">Add a binding from a prompt</span></span>
 
-<span data-ttu-id="70b8c-p115">以下示例显示如何使用使用 [addFromPromptAsync] 方法添加名为 `myBinding` 的文本绑定。此方法允许用户使用应用程序内置的范围选择提示来指定绑定范围。</span><span class="sxs-lookup"><span data-stu-id="70b8c-p115">The following example shows how to add a text binding called  `myBinding` by using the [addFromPromptAsync] method. This method lets the user specify the range for the binding by using the application's built-in range selection prompt.</span></span>
+<span data-ttu-id="070bb-p115">以下示例显示如何使用使用 [addFromPromptAsync] 方法添加名为 `myBinding` 的文本绑定。此方法允许用户使用应用程序内置的范围选择提示来指定绑定范围。</span><span class="sxs-lookup"><span data-stu-id="070bb-p115">The following example shows how to add a text binding called  `myBinding` by using the [addFromPromptAsync] method. This method lets the user specify the range for the binding by using the application's built-in range selection prompt.</span></span>
 
 
 ```js
@@ -95,24 +95,24 @@ function write(message){
 }
 ```
 
-<span data-ttu-id="70b8c-p116">在此示例中，指定的绑定类型为文本。这意味着，将为用户在提示中指定的所选内容创建 [TextBinding]。</span><span class="sxs-lookup"><span data-stu-id="70b8c-p116">In this example, the specified binding type is text. This means that a [TextBinding] will be created for the selection that the user specifies in the prompt.</span></span>
+<span data-ttu-id="070bb-p116">在此示例中，指定的绑定类型为文本。这意味着，将为用户在提示中指定的所选内容创建 [TextBinding]。</span><span class="sxs-lookup"><span data-stu-id="070bb-p116">In this example, the specified binding type is text. This means that a [TextBinding] will be created for the selection that the user specifies in the prompt.</span></span>
 
-<span data-ttu-id="70b8c-p117">第二个参数是一个对象，它包含创建的新绑定的 ID。如果不指定 ID，则会自动生成一个。</span><span class="sxs-lookup"><span data-stu-id="70b8c-p117">The second parameter is an object that contains the ID of the new binding being created. If an ID is not specified, one is generated automatically.</span></span>
+<span data-ttu-id="070bb-p117">第二个参数是一个对象，它包含创建的新绑定的 ID。如果不指定 ID，则会自动生成一个。</span><span class="sxs-lookup"><span data-stu-id="070bb-p117">The second parameter is an object that contains the ID of the new binding being created. If an ID is not specified, one is generated automatically.</span></span>
 
-<span data-ttu-id="70b8c-p118">作为第三个  _callback_ 参数传入函数的匿名函数会在绑定创建完成时执行。执行回调函数时， [AsyncResult] 对象包含调用的状态和新创建的绑定。</span><span class="sxs-lookup"><span data-stu-id="70b8c-p118">The anonymous function passed into the function as the third  _callback_ parameter is executed when the creation of the binding is complete. When the callback function executes, the [AsyncResult] object contains the status of the call and the newly created binding.</span></span>
+<span data-ttu-id="070bb-p118">作为第三个  _callback_ 参数传入函数的匿名函数会在绑定创建完成时执行。执行回调函数时， [AsyncResult] 对象包含调用的状态和新创建的绑定。</span><span class="sxs-lookup"><span data-stu-id="070bb-p118">The anonymous function passed into the function as the third  _callback_ parameter is executed when the creation of the binding is complete. When the callback function executes, the [AsyncResult] object contains the status of the call and the newly created binding.</span></span>
 
-<span data-ttu-id="70b8c-157">图 1 显示 Excel 中内置的范围选择提示。</span><span class="sxs-lookup"><span data-stu-id="70b8c-157">Figure 1 shows the built-in range selection prompt in Excel.</span></span>
+<span data-ttu-id="070bb-158">图 1 显示 Excel 中内置的范围选择提示。</span><span class="sxs-lookup"><span data-stu-id="070bb-158">Figure 1 shows the built-in range selection prompt in Excel.</span></span>
 
 
-<span data-ttu-id="70b8c-158">*图 1.Excel 选择数据 UI*</span><span class="sxs-lookup"><span data-stu-id="70b8c-158">*Figure 1. Excel Select Data UI*</span></span>
+<span data-ttu-id="070bb-159">*图 1.Excel 选择数据 UI*</span><span class="sxs-lookup"><span data-stu-id="070bb-159">*Figure 1. Excel Select Data UI*</span></span>
 
 ![Excel 选择数据 UI](../images/agave-api-overview-excel-selection-ui.png)
 
 
-## <a name="add-a-binding-to-a-named-item"></a><span data-ttu-id="70b8c-160">向已命名项目添加绑定</span><span class="sxs-lookup"><span data-stu-id="70b8c-160">Add a binding to a named item</span></span>
+## <a name="add-a-binding-to-a-named-item"></a><span data-ttu-id="070bb-161">向已命名项目添加绑定</span><span class="sxs-lookup"><span data-stu-id="070bb-161">Add a binding to a named item</span></span>
 
 
-<span data-ttu-id="70b8c-161">下面的示例演示如何使用[addFromNamedItemAsync]方法将绑定添加到`myRange`现有的已命名项目，作为 "matrix" 绑定，并将该绑定分配`id`为 "myMatrix"。</span><span class="sxs-lookup"><span data-stu-id="70b8c-161">The following example shows how to add a binding to the existing `myRange` named item as a "matrix" binding by using the [addFromNamedItemAsync] method, and assigns the binding's `id` as "myMatrix".</span></span>
+<span data-ttu-id="070bb-162">下面的示例演示如何使用[addFromNamedItemAsync]方法将绑定添加到`myRange`现有的已命名项目，作为 "matrix" 绑定，并将该绑定分配`id`为 "myMatrix"。</span><span class="sxs-lookup"><span data-stu-id="070bb-162">The following example shows how to add a binding to the existing `myRange` named item as a "matrix" binding by using the [addFromNamedItemAsync] method, and assigns the binding's `id` as "myMatrix".</span></span>
 
 
 ```js
@@ -133,13 +133,13 @@ function write(message){
 
 ```
 
-<span data-ttu-id="70b8c-p119">**对于 Excel**，addFromNamedItemAsync `itemName`方法的参数[]可以引用现有的命名区域、使用`A1`引用样式`("A1:A3")`指定的区域或表。默认情况下，在 Excel 中添加表会为您添加的第一个表指定名称 "Table1"，为您添加的第二个表指定 "Table2"，依此类推。若要在 Excel UI 中为表分配有意义的名称，请`Table Name`使用 "表格工具" 上的属性 **|** 功能区的 "设计" 选项卡。</span><span class="sxs-lookup"><span data-stu-id="70b8c-p119">**For Excel**, the `itemName` parameter of the [addFromNamedItemAsync] method can refer to an existing named range, a range specified with the `A1` reference style `("A1:A3")`, or a table. By default, adding a table in Excel assigns the name "Table1" for the first table you add, "Table2" for the second table you add, and so on. To assign a meaningful name for a table in the Excel UI, use the `Table Name` property on the **Table Tools | Design** tab of the ribbon.</span></span>
+<span data-ttu-id="070bb-163">**对于 Excel**，addFromNamedItemAsync `itemName`方法的参数[addFromNamedItemAsync]可以引用现有的命名区域、使用`A1`引用样式`("A1:A3")`指定的区域或表。</span><span class="sxs-lookup"><span data-stu-id="070bb-163">**For Excel**, the `itemName` parameter of the [addFromNamedItemAsync] method can refer to an existing named range, a range specified with the `A1` reference style `("A1:A3")`, or a table.</span></span> <span data-ttu-id="070bb-164">默认情况下，在 Excel 中添加表会为你添加的第一个表分配名称“Table1”，为你添加的第二个表分配名称“Table2”，以此类推。</span><span class="sxs-lookup"><span data-stu-id="070bb-164">By default, adding a table in Excel assigns the name "Table1" for the first table you add, "Table2" for the second table you add, and so on.</span></span> <span data-ttu-id="070bb-165">若要在 Excel UI 中为表分配有意义的名称，请`Table Name`使用 "表格工具" 上的属性 **|** 功能区的 "设计" 选项卡。</span><span class="sxs-lookup"><span data-stu-id="070bb-165">To assign a meaningful name for a table in the Excel UI, use the `Table Name` property on the **Table Tools | Design** tab of the ribbon.</span></span>
 
 
 > [!NOTE]
-> <span data-ttu-id="70b8c-165">在 Excel 中，当指定表作为已命名项目时，必须完全限定该名称以在表名称中包括工作表名称，格式如下：`"Sheet1!Table1"`</span><span class="sxs-lookup"><span data-stu-id="70b8c-165">In Excel, when specifying a table as a named item, you must fully qualify the name to include the worksheet name in the name of the table in this format: `"Sheet1!Table1"`</span></span>
+> <span data-ttu-id="070bb-166">在 Excel 中，当指定表作为已命名项目时，必须完全限定该名称以在表名称中包括工作表名称，格式如下：`"Sheet1!Table1"`</span><span class="sxs-lookup"><span data-stu-id="070bb-166">In Excel, when specifying a table as a named item, you must fully qualify the name to include the worksheet name in the name of the table in this format: `"Sheet1!Table1"`</span></span>
 
-<span data-ttu-id="70b8c-166">下面的示例在 Excel 中创建绑定到列 A （ `"A1:A3"`）中的前三个单元格，分配`"MyCities"`id，然后向该绑定写入三个城市名称。</span><span class="sxs-lookup"><span data-stu-id="70b8c-166">The following example creates a binding in Excel to the first three cells in column A ( `"A1:A3"`), assigns the id `"MyCities"`, and then writes three city names to that binding.</span></span>
+<span data-ttu-id="070bb-167">下面的示例在 Excel 中创建绑定到列 A （ `"A1:A3"`）中的前三个单元格，分配`"MyCities"`id，然后向该绑定写入三个城市名称。</span><span class="sxs-lookup"><span data-stu-id="070bb-167">The following example creates a binding in Excel to the first three cells in column A ( `"A1:A3"`), assigns the id `"MyCities"`, and then writes three city names to that binding.</span></span>
 
 
 ```js
@@ -166,11 +166,11 @@ function write(message){
 }
 ```
 
-<span data-ttu-id="70b8c-p120">**对于 Word**，addFromNamedItemAsync `itemName`方法的参数[]引用`Title` `Rich Text`内容控件的属性。（不能绑定到内容控件之外的`Rich Text`内容控件。）</span><span class="sxs-lookup"><span data-stu-id="70b8c-p120">**For Word**, the `itemName` parameter of the [addFromNamedItemAsync] method refers to the `Title` property of a `Rich Text` content control. (You can't bind to content controls other than the `Rich Text` content control.)</span></span>
+<span data-ttu-id="070bb-168">**对于 Word**，addFromNamedItemAsync `itemName`方法的参数[addFromNamedItemAsync]引用`Title` `Rich Text`内容控件的属性。</span><span class="sxs-lookup"><span data-stu-id="070bb-168">**For Word**, the `itemName` parameter of the [addFromNamedItemAsync] method refers to the `Title` property of a `Rich Text` content control.</span></span> <span data-ttu-id="070bb-169">（不能绑定到内容控件之外的`Rich Text`内容控件。）</span><span class="sxs-lookup"><span data-stu-id="070bb-169">(You can't bind to content controls other than the `Rich Text` content control.)</span></span>
 
-<span data-ttu-id="70b8c-p121">默认情况下，内容控件没有`Title*`分配值。若要在 Word UI 中分配有意义的名称，请在功能区的 "**开发人员**" 选项卡上的 "**控件**" 组中插入**格式文本**内容控件后，使用 "**控件**" 组中的 "**属性**" 命令显示 "**内容控件属性**" 对话框。然后，将`Title`内容控件的属性设置为要从代码中引用的名称。</span><span class="sxs-lookup"><span data-stu-id="70b8c-p121">By default, a content control has no `Title*`value assigned. To assign a meaningful name in the Word UI, after inserting a **Rich Text** content control from the **Controls** group on the **Developer** tab of the ribbon, use the **Properties** command in the **Controls** group to display the **Content Control Properties** dialog box. Then set the `Title` property of the content control to the name you want to reference from your code.</span></span>
+<span data-ttu-id="070bb-170">默认情况下，内容控件没有`Title*`分配值。</span><span class="sxs-lookup"><span data-stu-id="070bb-170">By default, a content control has no `Title*`value assigned.</span></span> <span data-ttu-id="070bb-171">若要在 Word UI 中分配有意义的名称，请从功能区的“**开发人员**”选项卡上的“**控件**”组中插入一个“**格式文本**”内容控件，并使用“**控件**”组中的“**属性**”命令显示“**内容控件属性**”对话框。</span><span class="sxs-lookup"><span data-stu-id="070bb-171">To assign a meaningful name in the Word UI, after inserting a **Rich Text** content control from the **Controls** group on the **Developer** tab of the ribbon, use the **Properties** command in the **Controls** group to display the **Content Control Properties** dialog box.</span></span> <span data-ttu-id="070bb-172">然后，将`Title`内容控件的属性设置为要从代码中引用的名称。</span><span class="sxs-lookup"><span data-stu-id="070bb-172">Then set the `Title` property of the content control to the name you want to reference from your code.</span></span>
 
-<span data-ttu-id="70b8c-172">下面的示例在 Word 中创建一个文本绑定，以指定一个名为`"FirstName"`的格式文本内容控件，分配该**id** `"firstName"`，然后显示该信息。</span><span class="sxs-lookup"><span data-stu-id="70b8c-172">The following example creates a text binding in Word to a rich text content control named `"FirstName"`, assigns the **id** `"firstName"`, and then displays that information.</span></span>
+<span data-ttu-id="070bb-173">下面的示例在 Word 中创建一个文本绑定，以指定一个名为`"FirstName"`的格式文本内容控件，分配该**id** `"firstName"`，然后显示该信息。</span><span class="sxs-lookup"><span data-stu-id="070bb-173">The following example creates a text binding in Word to a rich text content control named `"FirstName"`, assigns the **id** `"firstName"`, and then displays that information.</span></span>
 
 
 ```js
@@ -192,10 +192,10 @@ function write(message){
 }
 ```
 
-## <a name="get-all-bindings"></a><span data-ttu-id="70b8c-173">获取所有绑定</span><span class="sxs-lookup"><span data-stu-id="70b8c-173">Get all bindings</span></span>
+## <a name="get-all-bindings"></a><span data-ttu-id="070bb-174">获取所有绑定</span><span class="sxs-lookup"><span data-stu-id="070bb-174">Get all bindings</span></span>
 
 
-<span data-ttu-id="70b8c-174">以下示例显示如何使用 Bindings.[getAllAsync] 方法获取文档中的所有绑定。</span><span class="sxs-lookup"><span data-stu-id="70b8c-174">The following example shows how to get all bindings in a document by using the Bindings.[getAllAsync] method.</span></span>
+<span data-ttu-id="070bb-175">以下示例显示如何使用 Bindings.[getAllAsync] 方法获取文档中的所有绑定。</span><span class="sxs-lookup"><span data-stu-id="070bb-175">The following example shows how to get all bindings in a document by using the Bindings.[getAllAsync] method.</span></span>
 
 
 ```js
@@ -213,13 +213,13 @@ function write(message){
 }
 ```
 
-<span data-ttu-id="70b8c-p122">在操作完成时，将执行作为`callback`参数传入函数的匿名函数。使用单个参数`asyncResult`调用函数，其中包含文档中的绑定数组。对数组进行迭代，以生成包含绑定的 Id 的字符串。然后，在消息框中显示该字符串。</span><span class="sxs-lookup"><span data-stu-id="70b8c-p122">The anonymous function that is passed into the function as the `callback` parameter is executed when the operation is complete. The function is called with a single parameter, `asyncResult`, which contains an array of the bindings in the document. The array is iterated to build a string that contains the IDs of the bindings. The string is then displayed in a message box.</span></span>
+<span data-ttu-id="070bb-176">在操作完成时，将执行作为`callback`参数传入函数的匿名函数。</span><span class="sxs-lookup"><span data-stu-id="070bb-176">The anonymous function that is passed into the function as the `callback` parameter is executed when the operation is complete.</span></span> <span data-ttu-id="070bb-177">使用单个参数`asyncResult`调用函数，其中包含文档中的绑定数组。</span><span class="sxs-lookup"><span data-stu-id="070bb-177">The function is called with a single parameter, `asyncResult`, which contains an array of the bindings in the document.</span></span> <span data-ttu-id="070bb-178">通过循环访问该数组可以生成包含绑定 ID 的字符串。</span><span class="sxs-lookup"><span data-stu-id="070bb-178">The array is iterated to build a string that contains the IDs of the bindings.</span></span> <span data-ttu-id="070bb-179">然后，会在消息框中显示该字符串。</span><span class="sxs-lookup"><span data-stu-id="070bb-179">The string is then displayed in a message box.</span></span>
 
 
-## <a name="get-a-binding-by-id-using-the-getbyidasync-method-of-the-bindings-object"></a><span data-ttu-id="70b8c-179">使用 Bindings 对象的 getByIdAsync 方法按 ID 获取绑定</span><span class="sxs-lookup"><span data-stu-id="70b8c-179">Get a binding by ID using the getByIdAsync method of the Bindings object</span></span>
+## <a name="get-a-binding-by-id-using-the-getbyidasync-method-of-the-bindings-object"></a><span data-ttu-id="070bb-180">使用 Bindings 对象的 getByIdAsync 方法按 ID 获取绑定</span><span class="sxs-lookup"><span data-stu-id="070bb-180">Get a binding by ID using the getByIdAsync method of the Bindings object</span></span>
 
 
-<span data-ttu-id="70b8c-p123">以下示例显示如何使用 [getByIdAsync] 方法通过指定绑定的 ID 获取文档中的绑定。此示例假定已使用本主题前面介绍的方法之一将名为 `'myBinding'` 的绑定添加到文档。</span><span class="sxs-lookup"><span data-stu-id="70b8c-p123">The following example shows how to use the [getByIdAsync] method to get a binding in a document by specifying its ID. This example assumes that a binding named `'myBinding'` was added to the document using one of the methods described earlier in this topic.</span></span>
+<span data-ttu-id="070bb-p123">以下示例显示如何使用 [getByIdAsync] 方法通过指定绑定的 ID 获取文档中的绑定。此示例假定已使用本主题前面介绍的方法之一将名为 `'myBinding'` 的绑定添加到文档。</span><span class="sxs-lookup"><span data-stu-id="070bb-p123">The following example shows how to use the [getByIdAsync] method to get a binding in a document by specifying its ID. This example assumes that a binding named `'myBinding'` was added to the document using one of the methods described earlier in this topic.</span></span>
 
 
 ```js
@@ -238,15 +238,15 @@ function write(message){
 }
 ```
 
-<span data-ttu-id="70b8c-182">在此示例中，第`id`一个参数是要检索的绑定的 ID。</span><span class="sxs-lookup"><span data-stu-id="70b8c-182">In the example, the first `id` parameter is the ID of the binding to retrieve.</span></span>
+<span data-ttu-id="070bb-183">在此示例中，第`id`一个参数是要检索的绑定的 ID。</span><span class="sxs-lookup"><span data-stu-id="070bb-183">In the example, the first `id` parameter is the ID of the binding to retrieve.</span></span>
 
-<span data-ttu-id="70b8c-p124">在操作完成时，将执行作为第二个_回调_参数传入函数的匿名函数。使用单个参数_asyncResult_调用函数，该参数包含调用的状态和 ID 为 "myBinding" 的绑定。</span><span class="sxs-lookup"><span data-stu-id="70b8c-p124">The anonymous function that is passed into the function as the second _callback_ parameter is executed when the operation is completed. The function is called with a single parameter, _asyncResult_, which contains the status of the call and the binding with the ID "myBinding".</span></span>
-
-
-## <a name="get-a-binding-by-id-using-the-select-method-of-the-office-object"></a><span data-ttu-id="70b8c-185">使用 Office 对象的 select 方法按 ID 获取绑定</span><span class="sxs-lookup"><span data-stu-id="70b8c-185">Get a binding by ID using the select method of the Office object</span></span>
+<span data-ttu-id="070bb-184">在操作完成时，将执行作为第二个_回调_参数传入函数的匿名函数。</span><span class="sxs-lookup"><span data-stu-id="070bb-184">The anonymous function that is passed into the function as the second _callback_ parameter is executed when the operation is completed.</span></span> <span data-ttu-id="070bb-185">该函数用单个参数 _asyncResult_ 来调用，其中包含调用状态和 ID 为"myBinding"的绑定。</span><span class="sxs-lookup"><span data-stu-id="070bb-185">The function is called with a single parameter, _asyncResult_, which contains the status of the call and the binding with the ID "myBinding".</span></span>
 
 
-<span data-ttu-id="70b8c-p125">以下示例演示如何使用 [Office.select] 方法通过在选择器字符串中指定 [Binding] 对象目标 ID 来获取文档中的该目标。然后，它会调用 Binding.[getDataAsync] 方法，从指定绑定中获取数据。此示例假定已使用本主题前面介绍的方法之一将名为 `'myBinding'` 的绑定添加到文档。</span><span class="sxs-lookup"><span data-stu-id="70b8c-p125">The following example shows how to use the [Office.select] method to get a [Binding] object promise in a document by specifying its ID in a selector string. It then calls the Binding.[getDataAsync] method to get data from the specified binding. This example assumes that a binding named `'myBinding'` was added to the document using one of the methods described earlier in this topic.</span></span>
+## <a name="get-a-binding-by-id-using-the-select-method-of-the-office-object"></a><span data-ttu-id="070bb-186">使用 Office 对象的 select 方法按 ID 获取绑定</span><span class="sxs-lookup"><span data-stu-id="070bb-186">Get a binding by ID using the select method of the Office object</span></span>
+
+
+<span data-ttu-id="070bb-p125">以下示例演示如何使用 [Office.select] 方法通过在选择器字符串中指定 [Binding] 对象目标 ID 来获取文档中的该目标。然后，它会调用 Binding.[getDataAsync] 方法，从指定绑定中获取数据。此示例假定已使用本主题前面介绍的方法之一将名为 `'myBinding'` 的绑定添加到文档。</span><span class="sxs-lookup"><span data-stu-id="070bb-p125">The following example shows how to use the [Office.select] method to get a [Binding] object promise in a document by specifying its ID in a selector string. It then calls the Binding.[getDataAsync] method to get data from the specified binding. This example assumes that a binding named `'myBinding'` was added to the document using one of the methods described earlier in this topic.</span></span>
 
 
 ```js
@@ -266,12 +266,12 @@ function write(message){
 
 
 > [!NOTE]
-> <span data-ttu-id="70b8c-p126">如果`select`方法承诺成功返回一个[Binding]对象，则该对象仅公开对象的以下四个方法： [binding.getdataasync]、 [binding.setdataasync]、 [addHandlerAsync]和[removeHandlerAsync]。如果承诺无法返回 Binding 对象，则`onError`可以使用回调访问[asyncResult]. error 对象，以获取详细信息。如果`select`需要调用 binding 对象的成员，而不是由方法返回的[绑定]对象承诺所公开的四个方法，请改为使用[getByIdAsync]方法，方法是使用[Document. bindings]属性和绑定。用于检索[Binding]对象的[getByIdAsync]方法。</span><span class="sxs-lookup"><span data-stu-id="70b8c-p126">If the `select` method promise successfully returns a [Binding] object, that object exposes only the following four methods of the object: [getDataAsync], [setDataAsync], [addHandlerAsync], and [removeHandlerAsync]. If the promise cannot return a Binding object, the `onError` callback can be used to access an [asyncResult].error object to get more information.If you need to call a member of the Binding object other than the four methods exposed by the [Binding] object promise returned by the `select` method, instead use the [getByIdAsync] method by using the [Document.bindings] property and Bindings.[getByIdAsync] method to retrieve the [Binding] object.</span></span>
+> <span data-ttu-id="070bb-190">如果`select`方法承诺成功返回一个[Binding]对象，则该对象仅公开对象的以下四个方法： [binding.getdataasync]、 [binding.setdataasync]、 [addHandlerAsync]和[removeHandlerAsync]。</span><span class="sxs-lookup"><span data-stu-id="070bb-190">If the `select` method promise successfully returns a [Binding] object, that object exposes only the following four methods of the object: [getDataAsync], [setDataAsync], [addHandlerAsync], and [removeHandlerAsync].</span></span> <span data-ttu-id="070bb-191">如果承诺无法返回 Binding 对象，则`onError`可以使用回调访问[asyncResult]. error 对象，以获取详细信息。如果`select`需要调用 binding 对象的成员，而不是由方法返回的[绑定]对象承诺所公开的四个方法，请改为使用[getByIdAsync]方法，方法是使用[Document. bindings]属性和绑定。用于检索[Binding]对象的[getByIdAsync]方法。</span><span class="sxs-lookup"><span data-stu-id="070bb-191">If the promise cannot return a Binding object, the `onError` callback can be used to access an [asyncResult].error object to get more information.If you need to call a member of the Binding object other than the four methods exposed by the [Binding] object promise returned by the `select` method, instead use the [getByIdAsync] method by using the [Document.bindings] property and Bindings.[getByIdAsync] method to retrieve the [Binding] object.</span></span>
 
-## <a name="release-a-binding-by-id"></a><span data-ttu-id="70b8c-191">按 ID 释放绑定</span><span class="sxs-lookup"><span data-stu-id="70b8c-191">Release a binding by ID</span></span>
+## <a name="release-a-binding-by-id"></a><span data-ttu-id="070bb-192">按 ID 释放绑定</span><span class="sxs-lookup"><span data-stu-id="070bb-192">Release a binding by ID</span></span>
 
 
-<span data-ttu-id="70b8c-192">以下示例显示如何使用 [releaseByIdAsync] 方法通过指定绑定的 ID 释放文档中的绑定。</span><span class="sxs-lookup"><span data-stu-id="70b8c-192">The following example shows how use the [releaseByIdAsync] method to release a binding in a document by specifying its ID.</span></span>
+<span data-ttu-id="070bb-193">以下示例显示如何使用 [releaseByIdAsync] 方法通过指定绑定的 ID 释放文档中的绑定。</span><span class="sxs-lookup"><span data-stu-id="070bb-193">The following example shows how use the [releaseByIdAsync] method to release a binding in a document by specifying its ID.</span></span>
 
 ```js
 Office.context.document.bindings.releaseByIdAsync('myBinding', function (asyncResult) {
@@ -284,15 +284,15 @@ function write(message){
 }
 ```
 
-<span data-ttu-id="70b8c-193">在此示例中，第一个 `id` 参数是要释放的绑定的 ID。</span><span class="sxs-lookup"><span data-stu-id="70b8c-193">In the example, the first `id` parameter is the ID of the binding to release.</span></span>
+<span data-ttu-id="070bb-194">在此示例中，第一个 `id` 参数是要释放的绑定的 ID。</span><span class="sxs-lookup"><span data-stu-id="070bb-194">In the example, the first `id` parameter is the ID of the binding to release.</span></span>
 
-<span data-ttu-id="70b8c-p127">作为第二个参数传入函数的匿名函数是在操作完成时执行的回调。该函数用单个参数  [asyncResult] 来调用，其中包含调用的状态。</span><span class="sxs-lookup"><span data-stu-id="70b8c-p127">The anonymous function that is passed into the function as the second parameter is a callback that is executed when the operation is complete. The function is called with a single parameter,  [asyncResult], which contains the status of the call.</span></span>
-
-
-## <a name="read-data-from-a-binding"></a><span data-ttu-id="70b8c-196">从绑定中读取数据</span><span class="sxs-lookup"><span data-stu-id="70b8c-196">Read data from a binding</span></span>
+<span data-ttu-id="070bb-p127">作为第二个参数传入函数的匿名函数是在操作完成时执行的回调。该函数用单个参数  [asyncResult] 来调用，其中包含调用的状态。</span><span class="sxs-lookup"><span data-stu-id="070bb-p127">The anonymous function that is passed into the function as the second parameter is a callback that is executed when the operation is complete. The function is called with a single parameter,  [asyncResult], which contains the status of the call.</span></span>
 
 
-<span data-ttu-id="70b8c-197">以下示例显示如何使用 [getDataAsync] 方法从现有绑定中获取数据。</span><span class="sxs-lookup"><span data-stu-id="70b8c-197">The following example shows how to use the [getDataAsync] method to get data from an existing binding.</span></span>
+## <a name="read-data-from-a-binding"></a><span data-ttu-id="070bb-197">从绑定中读取数据</span><span class="sxs-lookup"><span data-stu-id="070bb-197">Read data from a binding</span></span>
+
+
+<span data-ttu-id="070bb-198">以下示例显示如何使用 [getDataAsync] 方法从现有绑定中获取数据。</span><span class="sxs-lookup"><span data-stu-id="070bb-198">The following example shows how to use the [getDataAsync] method to get data from an existing binding.</span></span>
 
 
 ```js
@@ -310,38 +310,38 @@ function write(message){
 }
 ```
 
- <span data-ttu-id="70b8c-p128">`myBinding` 是包含文档中的现有文本绑定的变量。也可以使用 [Office.select] 按照其 ID 访问绑定，并启动对 [getDataAsync] 方法的调用，如下所示：</span><span class="sxs-lookup"><span data-stu-id="70b8c-p128">`myBinding` is a variable that contains an existing text binding in the document. Alternatively, you could use the [Office.select] to access the binding by its ID, and start your call to the [getDataAsync] method, like this:</span></span> 
+ <span data-ttu-id="070bb-p128">`myBinding` 是包含文档中的现有文本绑定的变量。也可以使用 [Office.select] 按照其 ID 访问绑定，并启动对 [getDataAsync] 方法的调用，如下所示：</span><span class="sxs-lookup"><span data-stu-id="070bb-p128">`myBinding` is a variable that contains an existing text binding in the document. Alternatively, you could use the [Office.select] to access the binding by its ID, and start your call to the [getDataAsync] method, like this:</span></span> 
 
 ```js 
 Office.select("bindings#myBindingID").getDataAsync
 ```
 
 
-<span data-ttu-id="70b8c-p129">传入函数的匿名函数是在操作完成时执行的回调。[AsyncResult].value 属性包含 `myBinding` 中的数据。值的类型取决于绑定类型。此示例中的绑定是文本绑定。因此，该值将包含字符串。有关使用矩阵和表格绑定的其他示例，请参阅 [getDataAsync] 方法主题。</span><span class="sxs-lookup"><span data-stu-id="70b8c-p129">The anonymous function that is passed into the function is a callback that is executed when the operation is complete. The [AsyncResult].value property contains the data within `myBinding`. The type of the value depends on the binding type. The binding in this example is a text binding. Therefore, the value will contain a string. For additional examples of working with matrix and table bindings, see the [getDataAsync] method topic.</span></span>
+<span data-ttu-id="070bb-p129">传入函数的匿名函数是在操作完成时执行的回调。[AsyncResult].value 属性包含 `myBinding` 中的数据。值的类型取决于绑定类型。此示例中的绑定是文本绑定。因此，该值将包含字符串。有关使用矩阵和表格绑定的其他示例，请参阅 [getDataAsync] 方法主题。</span><span class="sxs-lookup"><span data-stu-id="070bb-p129">The anonymous function that is passed into the function is a callback that is executed when the operation is complete. The [AsyncResult].value property contains the data within `myBinding`. The type of the value depends on the binding type. The binding in this example is a text binding. Therefore, the value will contain a string. For additional examples of working with matrix and table bindings, see the [getDataAsync] method topic.</span></span>
 
 
-## <a name="write-data-to-a-binding"></a><span data-ttu-id="70b8c-206">向绑定中写入数据</span><span class="sxs-lookup"><span data-stu-id="70b8c-206">Write data to a binding</span></span>
+## <a name="write-data-to-a-binding"></a><span data-ttu-id="070bb-207">向绑定中写入数据</span><span class="sxs-lookup"><span data-stu-id="070bb-207">Write data to a binding</span></span>
 
-<span data-ttu-id="70b8c-207">以下示例演示如何使用 [setDataAsync] 方法在现有绑定中设置数据。</span><span class="sxs-lookup"><span data-stu-id="70b8c-207">The following example shows how to use the [setDataAsync] method to set data in an existing binding.</span></span>
+<span data-ttu-id="070bb-208">以下示例演示如何使用 [setDataAsync] 方法在现有绑定中设置数据。</span><span class="sxs-lookup"><span data-stu-id="070bb-208">The following example shows how to use the [setDataAsync] method to set data in an existing binding.</span></span>
 
 ```js
 myBinding.setDataAsync('Hello World!', function (asyncResult) { });
 ```
 
- <span data-ttu-id="70b8c-208">`myBinding` 是包含文档中的现有文本绑定的变量。</span><span class="sxs-lookup"><span data-stu-id="70b8c-208">`myBinding` is a variable that contains an existing text binding in the document.</span></span>
+ <span data-ttu-id="070bb-209">`myBinding` 是包含文档中的现有文本绑定的变量。</span><span class="sxs-lookup"><span data-stu-id="070bb-209">`myBinding` is a variable that contains an existing text binding in the document.</span></span>
 
-<span data-ttu-id="70b8c-p130">在此示例中，第一个参数是要设置的`myBinding`值。由于这是文本绑定，因此值为`string`。不同的绑定类型接受不同类型的数据。</span><span class="sxs-lookup"><span data-stu-id="70b8c-p130">In the example, the first parameter is the value to set on `myBinding`. Because this is a text binding, the value is a `string`. Different binding types accept different types of data.</span></span>
+<span data-ttu-id="070bb-210">在此示例中，第一个参数是要设置的`myBinding`值。</span><span class="sxs-lookup"><span data-stu-id="070bb-210">In the example, the first parameter is the value to set on `myBinding`.</span></span> <span data-ttu-id="070bb-211">由于这是文本绑定，因此值为 `string`。</span><span class="sxs-lookup"><span data-stu-id="070bb-211">Because this is a text binding, the value is a `string`.</span></span> <span data-ttu-id="070bb-212">不同绑定类型接受不同类型的数据。</span><span class="sxs-lookup"><span data-stu-id="070bb-212">Different binding types accept different types of data.</span></span>
 
-<span data-ttu-id="70b8c-p131">传入函数的匿名函数是在操作完成时执行的回调。使用单个参数`asyncResult`调用函数，其中包含结果的状态。</span><span class="sxs-lookup"><span data-stu-id="70b8c-p131">The anonymous function that is passed into the function is a callback that is executed when the operation is complete. The function is called with a single parameter, `asyncResult`, which contains the status of the result.</span></span>
+<span data-ttu-id="070bb-213">传入函数的匿名函数是在操作完成时执行的回调。</span><span class="sxs-lookup"><span data-stu-id="070bb-213">The anonymous function that is passed into the function is a callback that is executed when the operation is complete.</span></span> <span data-ttu-id="070bb-214">使用单个参数`asyncResult`调用函数，其中包含结果的状态。</span><span class="sxs-lookup"><span data-stu-id="070bb-214">The function is called with a single parameter, `asyncResult`, which contains the status of the result.</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="70b8c-214">自 Excel 2013 SP1 发行版及相应的 Excel 网页版内部版本起，现在可以[在绑定表中写入和更新数据时设置格式](../excel/excel-add-ins-tables.md)。</span><span class="sxs-lookup"><span data-stu-id="70b8c-214">Starting with the release of the Excel 2013 SP1 and the corresponding build of Excel on the web, you can now [set formatting when writing and updating data in bound tables](../excel/excel-add-ins-tables.md).</span></span>
+> <span data-ttu-id="070bb-215">自 Excel 2013 SP1 发行版及相应的 Excel 网页版内部版本起，现在可以[在绑定表中写入和更新数据时设置格式](../excel/excel-add-ins-tables.md)。</span><span class="sxs-lookup"><span data-stu-id="070bb-215">Starting with the release of the Excel 2013 SP1 and the corresponding build of Excel on the web, you can now [set formatting when writing and updating data in bound tables](../excel/excel-add-ins-tables.md).</span></span>
 
 
-## <a name="detect-changes-to-data-or-the-selection-in-a-binding"></a><span data-ttu-id="70b8c-215">检测绑定中数据或选择内的更改</span><span class="sxs-lookup"><span data-stu-id="70b8c-215">Detect changes to data or the selection in a binding</span></span>
+## <a name="detect-changes-to-data-or-the-selection-in-a-binding"></a><span data-ttu-id="070bb-216">检测绑定中数据或选择内的更改</span><span class="sxs-lookup"><span data-stu-id="070bb-216">Detect changes to data or the selection in a binding</span></span>
 
 
-<span data-ttu-id="70b8c-216">下面的示例展示了如何向 ID 为“MyBinding”的绑定的 [DataChanged](/javascript/api/office/office.binding) 事件附加事件处理程序。</span><span class="sxs-lookup"><span data-stu-id="70b8c-216">The following example shows how to attach an event handler to the [DataChanged](/javascript/api/office/office.binding) event of a binding with an id of "MyBinding".</span></span>
+<span data-ttu-id="070bb-217">下面的示例展示了如何向 ID 为“MyBinding”的绑定的 [DataChanged](/javascript/api/office/office.binding) 事件附加事件处理程序。</span><span class="sxs-lookup"><span data-stu-id="070bb-217">The following example shows how to attach an event handler to the [DataChanged](/javascript/api/office/office.binding) event of a binding with an id of "MyBinding".</span></span>
 
 
 ```js
@@ -358,21 +358,21 @@ function write(message){
 }
 ```
 
-<span data-ttu-id="70b8c-217">`myBinding` 是包含文档中现有文本绑定的变量。</span><span class="sxs-lookup"><span data-stu-id="70b8c-217">The `myBinding` is a variable that contains an existing text binding in the document.</span></span>
+<span data-ttu-id="070bb-218">`myBinding` 是包含文档中现有文本绑定的变量。</span><span class="sxs-lookup"><span data-stu-id="070bb-218">The `myBinding` is a variable that contains an existing text binding in the document.</span></span>
 
-<span data-ttu-id="70b8c-p132">[AddHandlerAsync]方法_的第一个事件名称_参数指定要订阅的事件的名称。" [. 事件]类型" 是可用事件类型值的枚举。`Office.EventType.BindingDataChanged`计算结果为字符串 "bindingDataChanged"。</span><span class="sxs-lookup"><span data-stu-id="70b8c-p132">The first _eventType_ parameter of the [addHandlerAsync] method specifies the name of the event to subscribe to. [Office.EventType] is an enumeration of available event type values. `Office.EventType.BindingDataChanged` evaluates to the string "bindingDataChanged".</span></span>
+<span data-ttu-id="070bb-219">[AddHandlerAsync]方法_的第一个事件名称_参数指定要订阅的事件的名称。</span><span class="sxs-lookup"><span data-stu-id="070bb-219">The first _eventType_ parameter of the [addHandlerAsync] method specifies the name of the event to subscribe to.</span></span> <span data-ttu-id="070bb-220">[Office.EventType] 是可用事件类型值的枚举。</span><span class="sxs-lookup"><span data-stu-id="070bb-220">[Office.EventType] is an enumeration of available event type values.</span></span> <span data-ttu-id="070bb-221">`Office.EventType.BindingDataChanged`计算结果为字符串 "bindingDataChanged"。</span><span class="sxs-lookup"><span data-stu-id="070bb-221">`Office.EventType.BindingDataChanged` evaluates to the string "bindingDataChanged".</span></span>
 
-<span data-ttu-id="70b8c-p133">作为`dataChanged`第二个_handler_参数传递到函数中的函数是在绑定中的数据更改时执行的事件处理程序。使用单个参数_eventArgs_调用函数，其中包含对绑定的引用。此绑定可用于检索更新后的数据。</span><span class="sxs-lookup"><span data-stu-id="70b8c-p133">The `dataChanged` function that is passed into the function as the second _handler_ parameter is an event handler that is executed when the data in the binding is changed. The function is called with a single parameter, _eventArgs_, which contains a reference to the binding. This binding can be used to retrieve the updated data.</span></span>
+<span data-ttu-id="070bb-222">作为`dataChanged`第二个_handler_参数传递到函数中的函数是在绑定中的数据更改时执行的事件处理程序。</span><span class="sxs-lookup"><span data-stu-id="070bb-222">The `dataChanged` function that is passed into the function as the second _handler_ parameter is an event handler that is executed when the data in the binding is changed.</span></span> <span data-ttu-id="070bb-223">该函数用单个参数 _eventArgs_ 来调用，其中包含对绑定的引用。</span><span class="sxs-lookup"><span data-stu-id="070bb-223">The function is called with a single parameter, _eventArgs_, which contains a reference to the binding.</span></span> <span data-ttu-id="070bb-224">此绑定可用来检索更新的数据。</span><span class="sxs-lookup"><span data-stu-id="070bb-224">This binding can be used to retrieve the updated data.</span></span>
 
-<span data-ttu-id="70b8c-p134">类似地，你可以通过向绑定的 [SelectionChanged] 事件附加事件处理程序来检测用户是否更改绑定中的选择。为此，请将 [addHandlerAsync] 方法的 `eventType` 参数指定为 `Office.EventType.BindingSelectionChanged` 或 `"bindingSelectionChanged"`。</span><span class="sxs-lookup"><span data-stu-id="70b8c-p134">Similarly, you can detect when a user changes selection in a binding by attaching an event handler to the [SelectionChanged] event of a binding. To do that, specify the `eventType` parameter of the [addHandlerAsync] method as `Office.EventType.BindingSelectionChanged` or `"bindingSelectionChanged"`.</span></span>
+<span data-ttu-id="070bb-p134">类似地，你可以通过向绑定的 [SelectionChanged] 事件附加事件处理程序来检测用户是否更改绑定中的选择。为此，请将 [addHandlerAsync] 方法的 `eventType` 参数指定为 `Office.EventType.BindingSelectionChanged` 或 `"bindingSelectionChanged"`。</span><span class="sxs-lookup"><span data-stu-id="070bb-p134">Similarly, you can detect when a user changes selection in a binding by attaching an event handler to the [SelectionChanged] event of a binding. To do that, specify the `eventType` parameter of the [addHandlerAsync] method as `Office.EventType.BindingSelectionChanged` or `"bindingSelectionChanged"`.</span></span>
 
-<span data-ttu-id="70b8c-p135">可以为给定事件添加多个事件处理程序，方法是再次调用  [addHandlerAsync] 方法，并为 `handler` 参数传入一个其他事件处理程序函数。只要每个事件处理程序函数的名称保持唯一，此方法就有用。</span><span class="sxs-lookup"><span data-stu-id="70b8c-p135">You can add multiple event handlers for a given event by calling the [addHandlerAsync] method again and passing in an additional event handler function for the `handler` parameter. This will work correctly as long as the name of each event handler function is unique.</span></span>
-
-
-### <a name="remove-an-event-handler"></a><span data-ttu-id="70b8c-228">删除事件处理程序</span><span class="sxs-lookup"><span data-stu-id="70b8c-228">Remove an event handler</span></span>
+<span data-ttu-id="070bb-p135">可以为给定事件添加多个事件处理程序，方法是再次调用  [addHandlerAsync] 方法，并为 `handler` 参数传入一个其他事件处理程序函数。只要每个事件处理程序函数的名称保持唯一，此方法就有用。</span><span class="sxs-lookup"><span data-stu-id="070bb-p135">You can add multiple event handlers for a given event by calling the [addHandlerAsync] method again and passing in an additional event handler function for the `handler` parameter. This will work correctly as long as the name of each event handler function is unique.</span></span>
 
 
-<span data-ttu-id="70b8c-p136">若要删除事件的事件处理程序，请调用 [removeHandlerAsync] 方法将事件类型作为第一个 _eventType_ 参数传入，将要删除的事件处理程序函数的名称作为第二个 _handler_ 参数传入。例如，以下函数将删除在上一节的示例中添加的 `dataChanged` 事件处理程序函数。</span><span class="sxs-lookup"><span data-stu-id="70b8c-p136">To remove an event handler for an event, call the [removeHandlerAsync] method passing in the event type as the first _eventType_ parameter, and the name of the event handler function to remove as the second _handler_ parameter. For example, the following function will remove the `dataChanged` event handler function added in the previous section's example.</span></span>
+### <a name="remove-an-event-handler"></a><span data-ttu-id="070bb-229">删除事件处理程序</span><span class="sxs-lookup"><span data-stu-id="070bb-229">Remove an event handler</span></span>
+
+
+<span data-ttu-id="070bb-p136">若要删除事件的事件处理程序，请调用 [removeHandlerAsync] 方法将事件类型作为第一个 _eventType_ 参数传入，将要删除的事件处理程序函数的名称作为第二个 _handler_ 参数传入。例如，以下函数将删除在上一节的示例中添加的 `dataChanged` 事件处理程序函数。</span><span class="sxs-lookup"><span data-stu-id="070bb-p136">To remove an event handler for an event, call the [removeHandlerAsync] method passing in the event type as the first _eventType_ parameter, and the name of the event handler function to remove as the second _handler_ parameter. For example, the following function will remove the `dataChanged` event handler function added in the previous section's example.</span></span>
 
 
 ```js
@@ -384,14 +384,14 @@ function removeEventHandlerFromBinding() {
 
 
 > [!IMPORTANT]
-> <span data-ttu-id="70b8c-231">如果调用[removeHandlerAsync]方法时省略可选的`eventType` _handler_参数，则将删除指定的所有事件处理程序。</span><span class="sxs-lookup"><span data-stu-id="70b8c-231">If the optional _handler_ parameter is omitted when the [removeHandlerAsync] method is called, all event handlers for the specified `eventType` will be removed.</span></span>
+> <span data-ttu-id="070bb-232">如果调用[removeHandlerAsync]方法时省略可选的`eventType` _handler_参数，则将删除指定的所有事件处理程序。</span><span class="sxs-lookup"><span data-stu-id="070bb-232">If the optional _handler_ parameter is omitted when the [removeHandlerAsync] method is called, all event handlers for the specified `eventType` will be removed.</span></span>
 
 
-## <a name="see-also"></a><span data-ttu-id="70b8c-232">另请参阅</span><span class="sxs-lookup"><span data-stu-id="70b8c-232">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="070bb-233">另请参阅</span><span class="sxs-lookup"><span data-stu-id="070bb-233">See also</span></span>
 
-- [<span data-ttu-id="70b8c-233">了解 Office JavaScript API</span><span class="sxs-lookup"><span data-stu-id="70b8c-233">Understanding the Office JavaScript API</span></span>](understanding-the-javascript-api-for-office.md) 
-- [<span data-ttu-id="70b8c-234">Office 外接程序中的异步编程</span><span class="sxs-lookup"><span data-stu-id="70b8c-234">Asynchronous programming in Office Add-ins</span></span>](asynchronous-programming-in-office-add-ins.md)
-- [<span data-ttu-id="70b8c-235">读取数据并将其写入文档或电子表格中的活动选择区</span><span class="sxs-lookup"><span data-stu-id="70b8c-235">Read and write data to the active selection in a document or spreadsheet</span></span>](read-and-write-data-to-the-active-selection-in-a-document-or-spreadsheet.md)
+- [<span data-ttu-id="070bb-234">了解 Office JavaScript API</span><span class="sxs-lookup"><span data-stu-id="070bb-234">Understanding the Office JavaScript API</span></span>](understanding-the-javascript-api-for-office.md) 
+- [<span data-ttu-id="070bb-235">Office 外接程序中的异步编程</span><span class="sxs-lookup"><span data-stu-id="070bb-235">Asynchronous programming in Office Add-ins</span></span>](asynchronous-programming-in-office-add-ins.md)
+- [<span data-ttu-id="070bb-236">读取数据并将其写入文档或电子表格中的活动选择区</span><span class="sxs-lookup"><span data-stu-id="070bb-236">Read and write data to the active selection in a document or spreadsheet</span></span>](read-and-write-data-to-the-active-selection-in-a-document-or-spreadsheet.md)
 
 [Binding]:               /javascript/api/office/office.binding
 [MatrixBinding]:         /javascript/api/office/office.matrixbinding

@@ -1,43 +1,43 @@
 ---
 title: 清单文件中的 CustomTab 元素
-description: ''
+description: 在功能区上，可以为它们的外接程序命令指定使用哪种选项卡和组。
 ms.date: 01/24/2020
 localization_priority: Normal
-ms.openlocfilehash: ba0419b6cf9cc4a0c1e3038dbb7f972e65868ec4
-ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
+ms.openlocfilehash: 8db29f166b5a5238a7ecf121ba5e5adca66ebe94
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "42323803"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42718424"
 ---
-# <a name="customtab-element"></a><span data-ttu-id="1cd95-102">CustomTab 元素</span><span class="sxs-lookup"><span data-stu-id="1cd95-102">CustomTab element</span></span>
+# <a name="customtab-element"></a><span data-ttu-id="27080-103">CustomTab 元素</span><span class="sxs-lookup"><span data-stu-id="27080-103">CustomTab element</span></span>
 
-<span data-ttu-id="1cd95-103">在功能区上，可以为它们的外接程序命令指定使用哪种选项卡和组。</span><span class="sxs-lookup"><span data-stu-id="1cd95-103">On the ribbon, you specify which tab and group for their add-in commands.</span></span> <span data-ttu-id="1cd95-104">这可能位于默认选项卡（“主页”\*\*\*\*、“邮件”\*\*\*\* 或“会议”\*\*\*\*）上，或位于外接程序定义的自定义选项卡上。</span><span class="sxs-lookup"><span data-stu-id="1cd95-104">This can either be on the default tab (either **Home**, **Message**, or **Meeting**), or on a custom tab defined by the add-in.</span></span>
+<span data-ttu-id="27080-104">在功能区上，可以为它们的外接程序命令指定使用哪种选项卡和组。</span><span class="sxs-lookup"><span data-stu-id="27080-104">On the ribbon, you specify which tab and group for their add-in commands.</span></span> <span data-ttu-id="27080-105">这可能位于默认选项卡（“主页”\*\*\*\*、“邮件”\*\*\*\* 或“会议”\*\*\*\*）上，或位于外接程序定义的自定义选项卡上。</span><span class="sxs-lookup"><span data-stu-id="27080-105">This can either be on the default tab (either **Home**, **Message**, or **Meeting**), or on a custom tab defined by the add-in.</span></span>
 
-<span data-ttu-id="1cd95-p102">在自定义选项卡上，外接程序可以创建最多 10 个组。每个组限制为 6 个控件，不论它显示在哪个选项卡上。外接程序限定到一个自定义选项卡。</span><span class="sxs-lookup"><span data-stu-id="1cd95-p102">On custom tabs, the add-in can create up to 10 groups. Each group is limited to 6 controls, regardless of which tab it appears on. Add-ins are limited to one custom tab.</span></span>
+<span data-ttu-id="27080-p102">在自定义选项卡上，外接程序可以创建最多 10 个组。每个组限制为 6 个控件，不论它显示在哪个选项卡上。外接程序限定到一个自定义选项卡。</span><span class="sxs-lookup"><span data-stu-id="27080-p102">On custom tabs, the add-in can create up to 10 groups. Each group is limited to 6 controls, regardless of which tab it appears on. Add-ins are limited to one custom tab.</span></span>
 
-<span data-ttu-id="1cd95-108">**Id**属性在清单中必须是唯一的。</span><span class="sxs-lookup"><span data-stu-id="1cd95-108">The **id** attribute must be unique within the manifest.</span></span>
+<span data-ttu-id="27080-109">**Id**属性在清单中必须是唯一的。</span><span class="sxs-lookup"><span data-stu-id="27080-109">The **id** attribute must be unique within the manifest.</span></span>
 
 > [!IMPORTANT]
-> <span data-ttu-id="1cd95-109">在 Mac 上的 Outlook 中`CustomTab` ，该元素不可用，因此您必须改用[OfficeTab](officetab.md) 。</span><span class="sxs-lookup"><span data-stu-id="1cd95-109">In Outlook on Mac, the `CustomTab` element is not available so you'll have to use [OfficeTab](officetab.md) instead.</span></span>
+> <span data-ttu-id="27080-110">在 Mac 上的 Outlook 中`CustomTab` ，该元素不可用，因此您必须改用[OfficeTab](officetab.md) 。</span><span class="sxs-lookup"><span data-stu-id="27080-110">In Outlook on Mac, the `CustomTab` element is not available so you'll have to use [OfficeTab](officetab.md) instead.</span></span>
 
-## <a name="child-elements"></a><span data-ttu-id="1cd95-110">子元素</span><span class="sxs-lookup"><span data-stu-id="1cd95-110">Child elements</span></span>
+## <a name="child-elements"></a><span data-ttu-id="27080-111">子元素</span><span class="sxs-lookup"><span data-stu-id="27080-111">Child elements</span></span>
 
-|  <span data-ttu-id="1cd95-111">元素</span><span class="sxs-lookup"><span data-stu-id="1cd95-111">Element</span></span> |  <span data-ttu-id="1cd95-112">必需</span><span class="sxs-lookup"><span data-stu-id="1cd95-112">Required</span></span>  |  <span data-ttu-id="1cd95-113">说明</span><span class="sxs-lookup"><span data-stu-id="1cd95-113">Description</span></span>  |
+|  <span data-ttu-id="27080-112">元素</span><span class="sxs-lookup"><span data-stu-id="27080-112">Element</span></span> |  <span data-ttu-id="27080-113">必需</span><span class="sxs-lookup"><span data-stu-id="27080-113">Required</span></span>  |  <span data-ttu-id="27080-114">说明</span><span class="sxs-lookup"><span data-stu-id="27080-114">Description</span></span>  |
 |:-----|:-----|:-----|
-|  [<span data-ttu-id="1cd95-114">Group</span><span class="sxs-lookup"><span data-stu-id="1cd95-114">Group</span></span>](group.md)      | <span data-ttu-id="1cd95-115">是</span><span class="sxs-lookup"><span data-stu-id="1cd95-115">Yes</span></span> |  <span data-ttu-id="1cd95-116">定义一组命令。</span><span class="sxs-lookup"><span data-stu-id="1cd95-116">Defines a Group of commands.</span></span>  |
-|  [<span data-ttu-id="1cd95-117">Label</span><span class="sxs-lookup"><span data-stu-id="1cd95-117">Label</span></span>](#label-tab)      | <span data-ttu-id="1cd95-118">是</span><span class="sxs-lookup"><span data-stu-id="1cd95-118">Yes</span></span> |  <span data-ttu-id="1cd95-119">CustomTab 或组的标签。</span><span class="sxs-lookup"><span data-stu-id="1cd95-119">The label for the CustomTab or a Group.</span></span>  |
+|  [<span data-ttu-id="27080-115">Group</span><span class="sxs-lookup"><span data-stu-id="27080-115">Group</span></span>](group.md)      | <span data-ttu-id="27080-116">是</span><span class="sxs-lookup"><span data-stu-id="27080-116">Yes</span></span> |  <span data-ttu-id="27080-117">定义一组命令。</span><span class="sxs-lookup"><span data-stu-id="27080-117">Defines a Group of commands.</span></span>  |
+|  [<span data-ttu-id="27080-118">Label</span><span class="sxs-lookup"><span data-stu-id="27080-118">Label</span></span>](#label-tab)      | <span data-ttu-id="27080-119">是</span><span class="sxs-lookup"><span data-stu-id="27080-119">Yes</span></span> |  <span data-ttu-id="27080-120">CustomTab 或组的标签。</span><span class="sxs-lookup"><span data-stu-id="27080-120">The label for the CustomTab or a Group.</span></span>  |
 
-### <a name="group"></a><span data-ttu-id="1cd95-120">组</span><span class="sxs-lookup"><span data-stu-id="1cd95-120">Group</span></span>
+### <a name="group"></a><span data-ttu-id="27080-121">组</span><span class="sxs-lookup"><span data-stu-id="27080-121">Group</span></span>
 
-<span data-ttu-id="1cd95-p103">必需。查看 [Group 元素](group.md)。</span><span class="sxs-lookup"><span data-stu-id="1cd95-p103">Required. See [Group element](group.md).</span></span>
+<span data-ttu-id="27080-p103">必需。查看 [Group 元素](group.md)。</span><span class="sxs-lookup"><span data-stu-id="27080-p103">Required. See [Group element](group.md).</span></span>
 
-### <a name="label-tab"></a><span data-ttu-id="1cd95-123">标签（选项卡）</span><span class="sxs-lookup"><span data-stu-id="1cd95-123">Label (Tab)</span></span>
+### <a name="label-tab"></a><span data-ttu-id="27080-124">标签（选项卡）</span><span class="sxs-lookup"><span data-stu-id="27080-124">Label (Tab)</span></span>
 
-<span data-ttu-id="1cd95-124">必填。</span><span class="sxs-lookup"><span data-stu-id="1cd95-124">Required.</span></span> <span data-ttu-id="1cd95-125">自定义选项卡的标签。**Resid**属性必须设置为[Resources](resources.md)元素中的**ShortStrings**元素中**String**元素的**id**属性的值。</span><span class="sxs-lookup"><span data-stu-id="1cd95-125">The label of the custom tab. The **resid** attribute must be set to the value of the **id** attribute of a **String** element in the **ShortStrings** element in the [Resources](resources.md) element.</span></span>
+<span data-ttu-id="27080-125">必需。</span><span class="sxs-lookup"><span data-stu-id="27080-125">Required.</span></span> <span data-ttu-id="27080-126">自定义选项卡的标签。**Resid**属性必须设置为[Resources](resources.md)元素中的**ShortStrings**元素中**String**元素的**id**属性的值。</span><span class="sxs-lookup"><span data-stu-id="27080-126">The label of the custom tab. The **resid** attribute must be set to the value of the **id** attribute of a **String** element in the **ShortStrings** element in the [Resources](resources.md) element.</span></span>
 
 
-## <a name="customtab-example"></a><span data-ttu-id="1cd95-126">CustomTab 示例</span><span class="sxs-lookup"><span data-stu-id="1cd95-126">CustomTab example</span></span>
+## <a name="customtab-example"></a><span data-ttu-id="27080-127">CustomTab 示例</span><span class="sxs-lookup"><span data-stu-id="27080-127">CustomTab example</span></span>
 
 ```xml
 <ExtensionPoint xsi:type="MessageReadCommandSurface">

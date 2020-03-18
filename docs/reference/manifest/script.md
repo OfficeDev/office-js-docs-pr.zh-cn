@@ -1,30 +1,30 @@
 ---
 title: 清单文件中的 Script 元素
-description: ''
+description: Script 元素定义自定义函数在 Excel 中使用的脚本设置。
 ms.date: 10/09/2018
 localization_priority: Normal
-ms.openlocfilehash: 8352ada0eeb6af071d5f20f750dcdeaefe31e918
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: f05fc85bd0454c340f4352bb73f299b9e7730224
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32450434"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42720412"
 ---
-# <a name="script-element"></a><span data-ttu-id="cdc05-102">Script 元素</span><span class="sxs-lookup"><span data-stu-id="cdc05-102">Script element</span></span>
+# <a name="script-element"></a><span data-ttu-id="99e07-103">Script 元素</span><span class="sxs-lookup"><span data-stu-id="99e07-103">Script element</span></span>
 
-<span data-ttu-id="cdc05-103">定义 Excel 中的自定义函数所使用的脚本设置。</span><span class="sxs-lookup"><span data-stu-id="cdc05-103">Defines script settings used by a custom function in Excel.</span></span>
+<span data-ttu-id="99e07-104">定义 Excel 中的自定义函数所使用的脚本设置。</span><span class="sxs-lookup"><span data-stu-id="99e07-104">Defines script settings used by a custom function in Excel.</span></span>
 
-## <a name="attributes"></a><span data-ttu-id="cdc05-104">属性</span><span class="sxs-lookup"><span data-stu-id="cdc05-104">Attributes</span></span>
+## <a name="attributes"></a><span data-ttu-id="99e07-105">属性</span><span class="sxs-lookup"><span data-stu-id="99e07-105">Attributes</span></span>
 
-<span data-ttu-id="cdc05-105">无</span><span class="sxs-lookup"><span data-stu-id="cdc05-105">None</span></span>
+<span data-ttu-id="99e07-106">无</span><span class="sxs-lookup"><span data-stu-id="99e07-106">None</span></span>
 
-## <a name="child-elements"></a><span data-ttu-id="cdc05-106">子元素</span><span class="sxs-lookup"><span data-stu-id="cdc05-106">Child elements</span></span>
+## <a name="child-elements"></a><span data-ttu-id="99e07-107">子元素</span><span class="sxs-lookup"><span data-stu-id="99e07-107">Child elements</span></span>
 
-|<span data-ttu-id="cdc05-107">元素</span><span class="sxs-lookup"><span data-stu-id="cdc05-107">Elements</span></span>  |  <span data-ttu-id="cdc05-108">必需</span><span class="sxs-lookup"><span data-stu-id="cdc05-108">Required</span></span>  |  <span data-ttu-id="cdc05-109">说明</span><span class="sxs-lookup"><span data-stu-id="cdc05-109">Description</span></span>  |
+|<span data-ttu-id="99e07-108">元素</span><span class="sxs-lookup"><span data-stu-id="99e07-108">Elements</span></span>  |  <span data-ttu-id="99e07-109">必需</span><span class="sxs-lookup"><span data-stu-id="99e07-109">Required</span></span>  |  <span data-ttu-id="99e07-110">说明</span><span class="sxs-lookup"><span data-stu-id="99e07-110">Description</span></span>  |
 |:-----|:-----|:-----|
-|  [<span data-ttu-id="cdc05-110">SourceLocation</span><span class="sxs-lookup"><span data-stu-id="cdc05-110">SourceLocation</span></span>](customfunctionssourcelocation.md)  |  <span data-ttu-id="cdc05-111">是</span><span class="sxs-lookup"><span data-stu-id="cdc05-111">Yes</span></span>  | <span data-ttu-id="cdc05-112">包含自定义函数所使用的 JavaScript 文件的资源 ID 的字符串。</span><span class="sxs-lookup"><span data-stu-id="cdc05-112">String with resource id of the JavaScript file used by custom functions.</span></span>|
+|  [<span data-ttu-id="99e07-111">SourceLocation</span><span class="sxs-lookup"><span data-stu-id="99e07-111">SourceLocation</span></span>](customfunctionssourcelocation.md)  |  <span data-ttu-id="99e07-112">是</span><span class="sxs-lookup"><span data-stu-id="99e07-112">Yes</span></span>  | <span data-ttu-id="99e07-113">包含自定义函数所使用的 JavaScript 文件的资源 ID 的字符串。</span><span class="sxs-lookup"><span data-stu-id="99e07-113">String with resource id of the JavaScript file used by custom functions.</span></span>|
 
-## <a name="example"></a><span data-ttu-id="cdc05-113">示例</span><span class="sxs-lookup"><span data-stu-id="cdc05-113">Example</span></span>
+## <a name="example"></a><span data-ttu-id="99e07-114">示例</span><span class="sxs-lookup"><span data-stu-id="99e07-114">Example</span></span>
 
 ```xml
 <Script>
