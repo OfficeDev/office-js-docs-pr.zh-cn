@@ -4,11 +4,11 @@ description: ''
 ms.date: 12/16/2019
 localization_priority: Normal
 ms.openlocfilehash: 9c2c661ce870e2007bd891aee040c6b3564f7b9e
-ms.sourcegitcommit: a3ddfdb8a95477850148c4177e20e56a8673517c
+ms.sourcegitcommit: a0262ea40cd23f221e69bcb0223110f011265d13
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "42165515"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42688711"
 ---
 # <a name="context"></a>context
 
@@ -227,7 +227,7 @@ console.log(JSON.stringify(Office.context.host));
 
 ##### <a name="properties"></a>属性：
 
-|名称| 类型| 说明|
+|姓名| 类型| 说明|
 |---|---|---|
 |`bodyBackgroundColor`| String|获取十六进制三原色形式的 Office 主题正文背景色。|
 |`bodyForegroundColor`| String|获取十六进制三原色形式的 Office 主题正文前景色。|

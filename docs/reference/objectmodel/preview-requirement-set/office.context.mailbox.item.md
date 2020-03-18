@@ -4,11 +4,11 @@ description: ''
 ms.date: 03/06/2020
 localization_priority: Normal
 ms.openlocfilehash: deb5006d8253c7f9fdcf0bdd1a0ee24df9342d66
-ms.sourcegitcommit: 153576b1efd0234c6252433e22db213238573534
+ms.sourcegitcommit: a0262ea40cd23f221e69bcb0223110f011265d13
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/07/2020
-ms.locfileid: "42561813"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42688719"
 ---
 # <a name="item"></a>item
 
@@ -35,7 +35,7 @@ ms.locfileid: "42561813"
 | | | [约会与会者](/javascript/api/outlook/office.appointmentread?view=outlook-js-preview#body) | [正文](/javascript/api/outlook/office.body) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 | | | [邮件撰写](/javascript/api/outlook/office.messagecompose?view=outlook-js-preview#body) | [正文](/javascript/api/outlook/office.body) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 | | | [邮件读取](/javascript/api/outlook/office.messageread?view=outlook-js-preview#body) | [正文](/javascript/api/outlook/office.body) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| 类别 | ReadItem | [约会组织者](/javascript/api/outlook/office.appointmentcompose?view=outlook-js-preview#categories) | [Categories](/javascript/api/outlook/office.categories) | [1.8](../requirement-set-1.8/outlook-requirement-set-1.8.md) |
+| categories | ReadItem | [约会组织者](/javascript/api/outlook/office.appointmentcompose?view=outlook-js-preview#categories) | [Categories](/javascript/api/outlook/office.categories) | [1.8](../requirement-set-1.8/outlook-requirement-set-1.8.md) |
 | | | [约会与会者](/javascript/api/outlook/office.appointmentread?view=outlook-js-preview#categories) | [Categories](/javascript/api/outlook/office.categories) | [1.8](../requirement-set-1.8/outlook-requirement-set-1.8.md) |
 | | | [邮件撰写](/javascript/api/outlook/office.messagecompose?view=outlook-js-preview#categories) | [Categories](/javascript/api/outlook/office.categories) | [1.8](../requirement-set-1.8/outlook-requirement-set-1.8.md) |
 | | | [邮件读取](/javascript/api/outlook/office.messageread?view=outlook-js-preview#categories) | [Categories](/javascript/api/outlook/office.categories) | [1.8](../requirement-set-1.8/outlook-requirement-set-1.8.md) |
@@ -97,7 +97,7 @@ ms.locfileid: "42561813"
 | to | ReadItem | [邮件撰写](/javascript/api/outlook/office.messagecompose?view=outlook-js-preview#to) | [收件人](/javascript/api/outlook/office.recipients) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 | | | [邮件读取](/javascript/api/outlook/office.messageread?view=outlook-js-preview#to) | <[EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails)> | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 
-## <a name="methods"></a>Methods
+## <a name="methods"></a>方法
 
 | 方法 | 最低<br>权限级别 | 详细信息（按模式） | 最低<br>要求集 |
 |---|---|---|:---:|

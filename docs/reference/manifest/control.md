@@ -4,11 +4,11 @@ description: ''
 ms.date: 01/10/2020
 localization_priority: Normal
 ms.openlocfilehash: 0add0d102b62411b67c081b74ecd0a138df3b625
-ms.sourcegitcommit: 4079903c3cc45b7d8c041509a44e9fc38da399b1
+ms.sourcegitcommit: a0262ea40cd23f221e69bcb0223110f011265d13
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/11/2020
-ms.locfileid: "42596471"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42688724"
 ---
 # <a name="control-element"></a>Control 元素
 

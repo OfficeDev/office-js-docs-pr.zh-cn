@@ -4,11 +4,11 @@ description: 使用 Excel JavaScript API 创建数据透视表并与其组件进
 ms.date: 01/22/2020
 localization_priority: Normal
 ms.openlocfilehash: ec7d7ccd7f040185e31b59693827c31d5dab8372
-ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
+ms.sourcegitcommit: a0262ea40cd23f221e69bcb0223110f011265d13
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "42325092"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42688572"
 ---
 # <a name="work-with-pivottables-using-the-excel-javascript-api"></a>使用 Excel JavaScript API 处理数据透视表
 
@@ -172,7 +172,7 @@ Excel.run(function (context) {
 
 ## <a name="slicers"></a>切片器
 
-[切片](/javascript/api/excel/excel.slicer)器允许从 Excel 数据透视表或表中筛选数据。 切片器使用指定的列或透视字段中的值筛选相应的行。 这些值存储为中[](/javascript/api/excel/excel.sliceritem)的`Slicer`SlicerItem 对象。 你的外接程序可以按照用户（[通过 EXCEL UI](https://support.office.com/article/Use-slicers-to-filter-data-249f966b-a9d5-4b0f-b31a-12651785d29d)）的方式调整这些筛选器。 切片器位于绘图层中的工作表的顶部，如以下屏幕截图所示。
+[切片](/javascript/api/excel/excel.slicer)器允许从 Excel 数据透视表或表中筛选数据。 切片器使用指定的列或透视字段中的值筛选相应的行。 这些值存储为中[SlicerItem](/javascript/api/excel/excel.sliceritem)的`Slicer`SlicerItem 对象。 你的外接程序可以按照用户（[通过 EXCEL UI](https://support.office.com/article/Use-slicers-to-filter-data-249f966b-a9d5-4b0f-b31a-12651785d29d)）的方式调整这些筛选器。 切片器位于绘图层中的工作表的顶部，如以下屏幕截图所示。
 
 ![数据透视表上的切片器筛选数据。](../images/excel-slicer.png)
 
@@ -181,7 +181,7 @@ Excel.run(function (context) {
 
 ### <a name="create-a-slicer"></a>创建切片器
 
-您可以使用`Workbook.slicers.add`方法或`Worksheet.slicers.add`方法在工作簿或工作表中创建切片器。 这样做会将切片器添加[](/javascript/api/excel/excel.slicercollection)到指定`Workbook`对象或`Worksheet`对象的 SlicerCollection。 该`SlicerCollection.add`方法具有三个参数：
+您可以使用`Workbook.slicers.add`方法或`Worksheet.slicers.add`方法在工作簿或工作表中创建切片器。 这样做会将切片器添加[SlicerCollection](/javascript/api/excel/excel.slicercollection)到指定`Workbook`对象或`Worksheet`对象的 SlicerCollection。 该`SlicerCollection.add`方法具有三个参数：
 
 - `slicerSource`：新切片器所基于的数据源。 它可以`PivotTable`是、或`Table`字符串，代表`PivotTable`或`Table`的名称或 ID。
 - `sourceField`：要作为筛选依据的数据源中的字段。 它可以`PivotField`是、或`TableColumn`字符串，代表`PivotField`或`TableColumn`的名称或 ID。

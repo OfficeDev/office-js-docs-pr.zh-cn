@@ -4,11 +4,11 @@ description: ''
 ms.date: 01/14/2020
 localization_priority: Priority
 ms.openlocfilehash: 7c88f8e8b54c6777a18ae0a0807148383d14417d
-ms.sourcegitcommit: 4079903c3cc45b7d8c041509a44e9fc38da399b1
+ms.sourcegitcommit: a0262ea40cd23f221e69bcb0223110f011265d13
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/11/2020
-ms.locfileid: "42596562"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42688573"
 ---
 # <a name="advanced-programming-concepts-with-the-excel-javascript-api"></a>Excel JavaScript API 高级编程概念
 

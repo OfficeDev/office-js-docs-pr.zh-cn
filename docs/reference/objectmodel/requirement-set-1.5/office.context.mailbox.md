@@ -4,11 +4,11 @@ description: ''
 ms.date: 03/06/2020
 localization_priority: Normal
 ms.openlocfilehash: b74a8d7c5d41978dc6e2044f1bb1d1a803654622
-ms.sourcegitcommit: 153576b1efd0234c6252433e22db213238573534
+ms.sourcegitcommit: a0262ea40cd23f221e69bcb0223110f011265d13
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/07/2020
-ms.locfileid: "42562082"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42688696"
 ---
 # <a name="mailbox"></a>邮箱
 
@@ -34,7 +34,7 @@ ms.locfileid: "42562082"
 | [restUrl](/javascript/api/outlook/office.mailbox?view=outlook-js-1.5#resturl) | ReadItem | 撰写<br>读取 | String | [1.5](../requirement-set-1.5/outlook-requirement-set-1.5.md) |
 | [userProfile](/javascript/api/outlook/office.mailbox?view=outlook-js-1.4#userprofile) | ReadItem | 撰写<br>读取 | [UserProfile](/javascript/api/outlook/office.userprofile?view=outlook-js-1.5) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 
-## <a name="methods"></a>Methods
+## <a name="methods"></a>方法
 
 | 方法 | 最低<br>权限级别 | 型号 | 最低<br>要求集 |
 |---|---|---|:---:|

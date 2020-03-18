@@ -3,12 +3,12 @@ title: 使用 Excel JavaScript API 对区域执行操作（高级）
 description: 高级的 range 对象函数和方案，如特殊单元格、删除重复项以及使用日期。
 ms.date: 02/11/2020
 localization_priority: Normal
-ms.openlocfilehash: 0e42549c7ecb9eb8bf8ebe707906224b4059e176
-ms.sourcegitcommit: d85efbf41a3382ca7d3ab08f2c3f0664d4b26c53
+ms.openlocfilehash: ed5f946c58b14f7f09b1bdc6fb0815430849f0bd
+ms.sourcegitcommit: a0262ea40cd23f221e69bcb0223110f011265d13
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/28/2020
-ms.locfileid: "42327752"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42688576"
 ---
 # <a name="work-with-ranges-using-the-excel-javascript-api-advanced"></a>使用 Excel JavaScript API 对区域执行操作（高级）
 
@@ -99,7 +99,7 @@ Excel.run(function (context) {
 如果你希望具有目标特征的单元格始终存在，则你可能想要代码在没有这些单元格的时候引发错误。 若没有匹配单元格是一个有效应用场景，代码应该会检查这种可能的情况并按正常方式处理它，而不会引发错误。 可以用此 `getSpecialCellsOrNullObject` 方法及其返回的 `isNullObject` 属性实现此行为。 此示例使用此模式。 关于此代码，请注意以下几点：
 
 - `getSpecialCellsOrNullObject` 方法将始终返回代理对象，因此在一般的 JavaScript 认知中，它从不为 `null`。 但是，如果没有找到匹配的单元格，则对象的 `isNullObject` 属性将设置为 `true`。
-- 在测试 `isNullObject` 属性*之前*，它将调用 `context.sync`。 这是所有 `*OrNullObject` 方法和属性的要求，因为你必须始终加载和同步属性才能读取它。 但是，不必*明确*加载 `isNullObject` 属性。 即使未在对象上调用 `load`，`context.sync` 也会自动加载该属性。 有关详细信息，请参阅 [\*OrNullObject](/office/dev/add-ins/excel/excel-add-ins-advanced-concepts#ornullobject-methods)。
+- 在测试 `isNullObject` 属性*之前*，它将调用 `context.sync`。 这是所有 `*OrNullObject` 方法和属性的要求，因为你必须始终加载和同步属性才能读取它。 但是，不必*明确*加载 `isNullObject` 属性。 即使未在对象上调用 `load`，`context.sync` 也会自动加载该属性。 有关详细信息，请参阅 [\*OrNullObject](../excel/excel-add-ins-advanced-concepts.md#ornullobject-methods)。
 - 你可以测试此代码，方法是先选择没有公式单元格的区域并运行它。 然后选择至少包含一个带公式的单元格的区域，并再次运行它。
 
 ```js
@@ -197,10 +197,10 @@ copyFrom(sourceRange: Range | RangeAreas | string, copyType?: Excel.RangeCopyTyp
 
 `copyType` 指定将哪些数据从源复制到目标。
 
-- `Excel.RangeCopyType.formulas` 转换源单元格中的公式，并保留这些公式范围的相对位置。 将原样复制任何非公式条目。
+- `Excel.RangeCopyType.formulas`传输源单元格中的公式，并保留这些公式区域的相对定位。 将原样复制任何非公式条目。
 - `Excel.RangeCopyType.values` 复制数据值，如果是公式，则复制公式的结果。
 - `Excel.RangeCopyType.formats` 复制范围的格式设置（包括字体、颜色和其他格式），但不会复制任何值。
-- `Excel.RangeCopyType.all`（默认选项）复制数据和格式设置，保留单元格的公式（如果找到）。
+- `Excel.RangeCopyType.all`（默认选项）复制数据和格式，并保留单元格的公式（如果找到）。
 
 `skipBlanks` 设置是否将空白单元格复制到目标。 如果为 true，`copyFrom` 将跳过源范围中的空白单元格。
 跳过的单元格不会覆盖目标范围中其对应单元格的现有数据。 默认值为 false。
@@ -229,11 +229,11 @@ Excel.run(function (context) {
 
 *在上一个函数已运行之前。*
 
-![在区域中运行复制方法之前的 Excel 中的数据](../images/excel-range-copyfrom-skipblanks-before.png)
+![Excel 中的数据，在区域的复制方法已运行之前](../images/excel-range-copyfrom-skipblanks-before.png)
 
 *在上一个函数已运行之后。*
 
-![在区域中运行复制方法之后的 Excel 中的数据](../images/excel-range-copyfrom-skipblanks-after.png)
+![Excel 中区域的复制方法已运行后的数据](../images/excel-range-copyfrom-skipblanks-after.png)
 
 ### <a name="cut-and-paste-move-cells-online-only"></a>剪切并粘贴（移动）单元格（[仅限联机](../reference/requirement-sets/excel-api-online-requirement-set.md)） 
 
@@ -282,11 +282,11 @@ Excel.run(function (context) {
 
 *在上一个函数已运行之前。*
 
-![在区域中运行删除重复项方法之前的 Excel 中的数据](../images/excel-ranges-remove-duplicates-before.png)
+![Excel 中的数据之前，已运行区域的 "删除重复方法" 方法](../images/excel-ranges-remove-duplicates-before.png)
 
 *在上一个函数已运行之后。*
 
-![在区域中运行删除重复项方法之后的 Excel 中的数据](../images/excel-ranges-remove-duplicates-after.png)
+![Excel 中已运行区域的 "删除重复项" 方法后 Excel 中的数据](../images/excel-ranges-remove-duplicates-after.png)
 
 ## <a name="group-data-for-an-outline"></a>分级显示的组数据
 

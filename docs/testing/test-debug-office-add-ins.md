@@ -4,11 +4,11 @@ description: ''
 ms.date: 06/20/2019
 localization_priority: Priority
 ms.openlocfilehash: 0fec89479ade3559ff1a9ae809d337536d5befd6
-ms.sourcegitcommit: a3ddfdb8a95477850148c4177e20e56a8673517c
+ms.sourcegitcommit: a0262ea40cd23f221e69bcb0223110f011265d13
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "42163932"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42688662"
 ---
 # <a name="test-and-debug-office-add-ins"></a>测试和调试 Office 加载项
 

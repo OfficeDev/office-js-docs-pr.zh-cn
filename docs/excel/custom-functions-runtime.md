@@ -4,11 +4,11 @@ description: 了解开发使用新 JavaScript 运行时的 Excel 自定义函数
 title: Excel 自定义函数的运行时
 localization_priority: Normal
 ms.openlocfilehash: bb73ab2f20eadbac3f5fc97e272d69fe8bb983cd
-ms.sourcegitcommit: 1fb99b1b4e63868a0e81a928c69a34c42bf7e209
+ms.sourcegitcommit: a0262ea40cd23f221e69bcb0223110f011265d13
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/30/2019
-ms.locfileid: "36695859"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42688568"
 ---
 # <a name="runtime-for-excel-custom-functions"></a>Excel 自定义函数的运行时
 
@@ -22,9 +22,9 @@ JavaScript 运行时还可提供对 `OfficeRuntime` 命名空间内的新 API �
 
 在自定义函数中，你可以使用 [Fetch](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) 等 API 或使用 [XmlHttpRequest (XHR)](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest)（一种发出与服务器交互的 HTTP 请求的标准 Web API）来请求外部数据。
 
-在自定义函数使用的 JavaScript 运行时中, XHR 通过要求使用[相同的源策略](https://developer.mozilla.org/en-US/docs/Web/Security/Same-origin_policy)和简单的[CORS](https://www.w3.org/TR/cors/)来实现其他安全措施。
+在自定义函数使用的 JavaScript 运行时中，XHR 通过要求使用[相同的源策略](https://developer.mozilla.org/en-US/docs/Web/Security/Same-origin_policy)和简单的[CORS](https://www.w3.org/TR/cors/)来实现其他安全措施。
 
-请注意，简单的 CORS 实施不能使用 cookie，且仅支持简单的方法（GET、HEAD、POST）。 简单的 CORS 接受字段名称为 `Accept`、`Accept-Language`、`Content-Language` 的简单标题。 您还可以使用简单`Content-Type` CORS 中的标头, 只要内容类型为`application/x-www-form-urlencoded`、 `text/plain`或。 `multipart/form-data`
+请注意，简单的 CORS 实施不能使用 cookie，且仅支持简单的方法（GET、HEAD、POST）。 简单的 CORS 接受字段名称为 `Accept`、`Accept-Language`、`Content-Language` 的简单标题。 您还可以使用简单`Content-Type` CORS 中的标头，只要内容类型为`application/x-www-form-urlencoded`、 `text/plain`或。 `multipart/form-data`
 
 ### <a name="xhr-example"></a>XHR 示例
 
@@ -96,11 +96,11 @@ ws.onerror = function (error) {
  - `getKeys`
 
 .[!NOTE]
-> 没有用于清除所有信息的方法 (例如`clear`)。 相反，需要使用 `removeItems` 来一次性删除多个条目。
+> 没有用于清除所有信息的方法（例如`clear`）。 相反，需要使用 `removeItems` 来一次性删除多个条目。
 
 ### <a name="officeruntimestorage-example"></a>OfficeRuntime 示例
 
-下面的代码示例调用`OfficeRuntime.storage.setItem`函数, 以将键和值设置为`storage`。
+下面的代码示例调用`OfficeRuntime.storage.setItem`函数，以将键和值设置为`storage`。
 
 ```js
 function StoreValue(key, value) {
@@ -115,7 +115,7 @@ function StoreValue(key, value) {
 
 ## <a name="additional-considerations"></a>其他注意事项
 
-为创建一个可在多个平台（Office 外接程序的关键租户之一）上运行的外接程序，请勿访问自定义函数中的文档对象模型 (DOM) 或使用 jQuery 等这类依赖于 DOM 的库。 在 Windows 的 Excel 中, 自定义函数使用 JavaScript 运行时, 自定义函数无法访问 DOM。
+为创建一个可在多个平台（Office 外接程序的关键租户之一）上运行的外接程序，请勿访问自定义函数中的文档对象模型 (DOM) 或使用 jQuery 等这类依赖于 DOM 的库。 在 Windows 的 Excel 中，自定义函数使用 JavaScript 运行时，自定义函数无法访问 DOM。
 
 ## <a name="next-steps"></a>后续步骤
 了解如何[使用自定义函数执行 web 请求](custom-functions-web-reqs.md)。

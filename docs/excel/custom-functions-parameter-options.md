@@ -1,14 +1,14 @@
 ---
 ms.date: 07/15/2019
-description: 了解如何在自定义函数中使用不同的参数, 例如 Excel 范围、可选参数、调用上下文等。
+description: 了解如何在自定义函数中使用不同的参数，例如 Excel 范围、可选参数、调用上下文等。
 title: Excel 自定义函数的选项
 localization_priority: Normal
-ms.openlocfilehash: e5b75b098d64d5998b0393d5995896f0289337fc
-ms.sourcegitcommit: bb44c9694f88cde32ffbb642689130db44456964
+ms.openlocfilehash: 1b4097e1190c5d9dc284393d1321c8e2d6c1a8a4
+ms.sourcegitcommit: a0262ea40cd23f221e69bcb0223110f011265d13
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/17/2019
-ms.locfileid: "35771418"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42688667"
 ---
 # <a name="custom-functions-parameter-options"></a>自定义函数参数选项
 
@@ -18,9 +18,9 @@ ms.locfileid: "35771418"
 
 ## <a name="optional-parameters"></a>可选参数
 
-而常规参数是必需的, 而可选参数则不是。 当用户在 Excel 中调用函数时，可选参数将显示在括号中。 在下面的示例中, add 函数可以选择添加第三个数字。 在 Excel 中, `=CONTOSO.ADD(first, second, [third])`此函数显示为。
+而常规参数是必需的，而可选参数则不是。 当用户在 Excel 中调用函数时，可选参数将显示在括号中。 在下面的示例中，add 函数可以选择添加第三个数字。 在 Excel 中， `=CONTOSO.ADD(first, second, [third])`此函数显示为。
 
-#### <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
+#### <a name="javascript"></a>[JavaScript](#tab/javascript)
 
 ```js
 /**
@@ -39,7 +39,7 @@ function add(first, second, third) {
 }
 ```
 
-#### <a name="typescripttabtypescript"></a>[TypeScript](#tab/typescript)
+#### <a name="typescript"></a>[TypeScript](#tab/typescript)
 
 ```typescript
 /**
@@ -61,11 +61,11 @@ function add(first: number, second: number, third?: number): number {
 ---
 
 > [!NOTE]
-> 如果没有为可选参数指定任何值, 则 Excel 会为其分配`null`值。 这意味着 TypeScript 中的默认初始化参数不会按预期工作。 因此, 请不要使用语法`function add(first:number, second:number, third=0):number` , 因为它不会`third`初始化为0。 而是使用上一示例中所示的 TypeScript 语法。
+> 如果没有为可选参数指定任何值，则 Excel 会为其分配`null`值。 这意味着 TypeScript 中的默认初始化参数不会按预期工作。 因此，请不要使用语法`function add(first:number, second:number, third=0):number` ，因为它不会`third`初始化为0。 而是使用上一示例中所示的 TypeScript 语法。
 
-在定义包含一个或多个可选参数的函数时, 应指定可选参数为 null 时所发生的情况。 在以下示例中，`zipCode` 和 `dayOfWeek` 都是 `getWeatherReport` 函数的可选参数。 如果`zipCode`参数为 null, 则默认值设置为`98052`。 如果`dayOfWeek`参数为 null, 则将其设置为星期三。
+在定义包含一个或多个可选参数的函数时，应指定可选参数为 null 时所发生的情况。 在以下示例中，`zipCode` 和 `dayOfWeek` 都是 `getWeatherReport` 函数的可选参数。 如果`zipCode`参数为 null，则默认值设置为`98052`。 如果`dayOfWeek`参数为 null，则将其设置为星期三。
 
-#### <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
+#### <a name="javascript"></a>[JavaScript](#tab/javascript)
 
 ```js
 /**
@@ -89,7 +89,7 @@ function getWeatherReport(zipCode, dayOfWeek) {
 }
 ```
 
-#### <a name="typescripttabtypescript"></a>[TypeScript](#tab/typescript)
+#### <a name="typescript"></a>[TypeScript](#tab/typescript)
 
 ```typescript
 /**
@@ -119,7 +119,7 @@ function getWeatherReport(zipCode?: number, dayOfWeek?: string): string {
 
 您的自定义函数可能接受作为输入参数的单元格数据的范围。 函数还可以返回数据区域。 Excel 将一个区域的单元格数据作为二维数组进行传递。
 
-例如，假设函数从 Excel 中存储的数字区域返回第二个最高值。 下面的函数接受参数 `values`，即 `Excel.CustomFunctionDimensionality.matrix` 类型。 请注意, 在此函数的 JSON 元数据中, 该`type`参数的属性设置`matrix`为。
+例如，假设函数从 Excel 中存储的数字区域返回第二个最高值。 下面的函数接受参数 `values`，即 `Excel.CustomFunctionDimensionality.matrix` 类型。 请注意，在此函数的 JSON 元数据中，该`type`参数的属性设置`matrix`为。
 
 ```js
 /**
@@ -146,9 +146,9 @@ function secondHighest(values) {
 
 ## <a name="repeating-parameters"></a>重复参数
 
-重复参数允许用户在函数中输入一系列可选的参数。 调用函数时, 将在参数的数组中提供值。 如果参数名称以数字结尾, 则每个参数将递增该数, 例如`ADD(number1, [number2], [number3],…)`。 这与用于内置 Excel 函数的约定相匹配。
+重复参数允许用户在函数中输入一系列可选的参数。 调用函数时，将在参数的数组中提供值。 如果参数名称以数字结尾，则每个参数将递增该数，例如`ADD(number1, [number2], [number3],…)`。 这与用于内置 Excel 函数的约定相匹配。
 
-下面的函数汇总了数字、单元格地址和区域的总和 (如果已输入)。
+下面的函数汇总了数字、单元格地址和区域的总和（如果已输入）。
 
 ```TS
 /**
@@ -178,7 +178,7 @@ function ADD(operands: number[][][]): number {
 
 ### <a name="repeating-single-value-parameter"></a>重复单个值参数
 
-一个重复的单值参数允许传递多个单个值。 例如, 用户可以输入 ADD (1, B2, 3)。 下面的示例演示如何声明单个值参数。
+一个重复的单值参数允许传递多个单个值。 例如，用户可以输入 ADD （1，B2，3）。 下面的示例演示如何声明单个值参数。
 
 ```JS
 /**
@@ -197,7 +197,7 @@ function addSingleValue(singleValue) {
 
 ### <a name="single-range-parameter"></a>单个范围参数
 
-从技术上讲, 单个 range 参数并不是重复参数, 但此处包含此参数, 这是因为声明与重复参数非常相似。 它向用户显示为 "添加" (A2: B3), 其中单个范围是从 Excel 中传递的。 下面的示例展示了如何声明一个 range 参数。
+从技术上讲，单个 range 参数并不是重复参数，但此处包含此参数，这是因为声明与重复参数非常相似。 它向用户显示为 "添加" （A2： B3），其中单个范围是从 Excel 中传递的。 下面的示例展示了如何声明一个 range 参数。
 
 ```JS
 /**
@@ -217,24 +217,24 @@ function addSingleRange(singleRange) {
 
 ### <a name="repeating-range-parameter"></a>重复区域参数
 
-重复区域参数允许传递多个区域或数字。 例如, 用户可以输入 ADD (5, B2, C3, 8, E5: E8)。 重复区域通常是使用类型为三维`number[][][]`矩阵的类型指定的。 有关示例, 请参阅为重复参数列出的主示例 (#repeating 参数)。
+重复区域参数允许传递多个区域或数字。 例如，用户可以输入 ADD （5，B2，C3，8，E5： E8）。 重复区域通常是使用类型为三维`number[][][]`矩阵的类型指定的。 有关示例，请参阅为重复参数列出的主示例（#repeating 参数）。
 
 
 ### <a name="declaring-repeating-parameters"></a>声明重复参数
-在 Typescript 中, 指示参数是多维的。 例如, `ADD(values: number[])`将指示一维数组, `ADD(values:number[][])`指示二维数组, 依此类推。
+在 Typescript 中，指示参数是多维的。 例如， `ADD(values: number[])`将指示一维数组， `ADD(values:number[][])`指示二维数组，依此类推。
 
-在 JavaScript 中, `@param values {number[]}`对于二维数组使用一维`@param <name> {number[][]}`数组, 对更多维度使用。
+在 JavaScript 中， `@param values {number[]}`对于二维数组使用一维`@param <name> {number[][]}`数组，对更多维度使用。
 
-对于 "手动创作的 JSON", 请确保在 JSON `"repeating": true`文件中将参数指定为, 并检查参数是否标记为`"dimensionality”: matrix`。
+对于 "手动创作的 JSON"，请确保在 JSON `"repeating": true`文件中将参数指定为，并检查参数是否标记为`"dimensionality": matrix`。
 
 >[!NOTE]
->包含重复参数的函数将自动包含一个调用参数作为最后一个参数。 有关调用参数的详细信息, 请参阅下一节。
+>包含重复参数的函数将自动包含一个调用参数作为最后一个参数。 有关调用参数的详细信息，请参阅下一节。
 
 ## <a name="invocation-parameter"></a>调用参数
 
-每个自定义函数自动传递`invocation`一个参数作为最后一个参数。 此参数可用于检索其他上下文, 如调用单元格的地址。 也可以用于向 Excel 发送信息, 例如用于[取消函数](custom-functions-web-reqs.md#make-a-streaming-function)的函数处理程序。 即使不声明参数, 您的自定义函数也有此参数。 在 Excel 中, 用户不会看到此参数。 如果要在自定义`invocation`函数中使用, 则将其声明为最后一个参数。
+每个自定义函数自动传递`invocation`一个参数作为最后一个参数。 此参数可用于检索其他上下文，如调用单元格的地址。 也可以用于向 Excel 发送信息，例如用于[取消函数](custom-functions-web-reqs.md#make-a-streaming-function)的函数处理程序。 即使不声明参数，您的自定义函数也有此参数。 在 Excel 中，用户不会看到此参数。 如果要在自定义`invocation`函数中使用，则将其声明为最后一个参数。
 
-在下面的代码示例中, `invocation`将显式声明上下文以供参考。
+在下面的代码示例中， `invocation`将显式声明上下文以供参考。
 
 ```js
 /**
@@ -249,17 +249,17 @@ function add(first, second, invocation) {
 }
 ```
 
-参数允许您获取调用单元格的上下文, 这在某些方案中非常有用, 包括[查找调用自定义函数的单元格的地址](#addressing-cells-context-parameter)。
+参数允许您获取调用单元格的上下文，这在某些方案中非常有用，包括[查找调用自定义函数的单元格的地址](#addressing-cells-context-parameter)。
 
 ### <a name="addressing-cells-context-parameter"></a>寻址单元格的上下文参数
 
-在某些情况下, 您需要获取调用自定义函数的单元格的地址。 这在以下情况下很有用:
+在某些情况下，您需要获取调用自定义函数的单元格的地址。 这在以下情况下很有用：
 
-- 格式区域: 将单元格的地址用作存储[OfficeRuntime](/office/dev/add-ins/excel/custom-functions-runtime#storing-and-accessing-data)中的信息的密钥。 然后，使用 Excel 中的 [onCalculated](/javascript/api/excel/excel.worksheet#oncalculated) 从 `OfficeRuntime.storage` 加载该键。
+- 格式区域：将单元格的地址用作存储[OfficeRuntime](../excel/custom-functions-runtime.md#storing-and-accessing-data)中的信息的密钥。 然后，使用 Excel 中的 [onCalculated](/javascript/api/excel/excel.worksheet#oncalculated) 从 `OfficeRuntime.storage` 加载该键。
 - 显示缓存值：如果脱机使用函数，将显示 `OfficeRuntime.storage` 中使用 `onCalculated` 存储的缓存值。
 - 协调：使用单元格地址发现原始单元格，以帮助你在处理时进行协调。
 
-若要在函数中请求寻址单元格的上下文, 您需要使用函数来查找单元格的地址, 如以下示例所示。 仅当`@requiresAddress`在函数的注释中对单元格地址进行了标记时, 才会公开该单元格地址的相关信息。
+若要在函数中请求寻址单元格的上下文，您需要使用函数来查找单元格的地址，如以下示例所示。 仅当`@requiresAddress`在函数的注释中对单元格地址进行了标记时，才会公开该单元格地址的相关信息。
 
 ```js
 /**
@@ -279,7 +279,7 @@ function getAddress(invocation) {
 
 ## <a name="next-steps"></a>后续步骤
 
-了解如何[在自定义函数中保存状态](custom-functions-save-state.md), 或[在自定义函数中使用可变值](custom-functions-volatile.md)。
+了解如何[在自定义函数中保存状态](custom-functions-save-state.md)，或[在自定义函数中使用可变值](custom-functions-volatile.md)。
 
 ## <a name="see-also"></a>另请参阅
 

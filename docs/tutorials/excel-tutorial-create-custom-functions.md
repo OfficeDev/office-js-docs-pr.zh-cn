@@ -5,11 +5,11 @@ ms.date: 01/16/2020
 ms.prod: excel
 localization_priority: Priority
 ms.openlocfilehash: 9c8cfedd5f8219f2105456597d43201068b4c21e
-ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
+ms.sourcegitcommit: a0262ea40cd23f221e69bcb0223110f011265d13
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "41950500"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42688659"
 ---
 # <a name="tutorial-create-custom-functions-in-excel"></a>教程：在 Excel 中创建自定义函数
 
@@ -61,7 +61,7 @@ ms.locfileid: "41950500"
 
 4. 启动在 Node.js 中运行的本地 Web 服务器。 你可以在 Excel 网页版或 Windows 版 Excel 中尝试使用自定义函数加载项。
 
-# <a name="excel-on-windows-or-mactabexcel-windows"></a>[Windows 版或 Mac 版 Excel](#tab/excel-windows)
+# <a name="excel-on-windows-or-mac"></a>[Windows 版或 Mac 版 Excel](#tab/excel-windows)
 
 若要在 Windows 版或 Mac 版 Excel 中测试加载项，请运行以下命令。 运行此命令时，本地 Web 服务器将启动，Excel 将打开并载入加载项。
 
@@ -69,7 +69,7 @@ ms.locfileid: "41950500"
 npm run start:desktop
 ```
 
-# <a name="excel-on-the-webtabexcel-online"></a>[Excel 网页版](#tab/excel-online)
+# <a name="excel-on-the-web"></a>[Excel 网页版](#tab/excel-online)
 
 若要在浏览器中的 Excel 中测试加载项，请运行以下命令。 运行此命令时，本地 Web 服务器将启动。
 
@@ -145,7 +145,7 @@ npm run start:web
 
 4. 完成以下步骤（针对 Excel 网页版或者 Windows 版或 Mac 版 Excel），以在 Excel 中重新注册加载项。 必须完成这些步骤，才能使用新函数。
 
-### <a name="excel-on-windows-or-mactabexcel-windows"></a>[Windows 版或 Mac 版 Excel](#tab/excel-windows)
+### <a name="excel-on-windows-or-mac"></a>[Windows 版或 Mac 版 Excel](#tab/excel-windows)
 
 1. 关闭 Excel，然后重新打开 Excel。
 
@@ -155,7 +155,7 @@ npm run start:web
     ![Windows 版 Excel 中的“插入”功能区，在“我的加载项”列表中突出显示“Excel 自定义函数”加载项](../images/list-starcount.png)
 
 
-# <a name="excel-on-the-webtabexcel-online"></a>[Excel 网页版](#tab/excel-online)
+# <a name="excel-on-the-web"></a>[Excel 网页版](#tab/excel-online)
 
 1. 在 Excel 中，选择“**插入**”选项卡，然后选择“**加载项**”。![Excel 网页版中的“插入”功能区，突出显示“我的加载项”图标](../images/excel-cf-online-register-add-in-1.png)
 
@@ -213,7 +213,7 @@ function clock(invocation) {
 
 3. 完成以下步骤（针对 Excel 网页版或者 Windows 版或 Mac 版 Excel），以在 Excel 中重新注册加载项。 必须完成这些步骤，才能使用新函数。 
 
-# <a name="excel-on-windows-or-mactabexcel-windows"></a>[Windows 版或 Mac 版 Excel](#tab/excel-windows)
+# <a name="excel-on-windows-or-mac"></a>[Windows 版或 Mac 版 Excel](#tab/excel-windows)
 
 1. 关闭 Excel，然后重新打开 Excel。
 
@@ -222,7 +222,7 @@ function clock(invocation) {
 3. 在可用加载项列表中，找到“**开发人员加载项**”部分并选择“**starcount**”加载项进行注册。
     ![Windows 版 Excel 中的“插入”功能区，在“我的加载项”列表中突出显示“Excel 自定义函数”加载项](../images/list-starcount.png)
 
-# <a name="excel-on-the-webtabexcel-online"></a>[Excel 网页版](#tab/excel-online)
+# <a name="excel-on-the-web"></a>[Excel 网页版](#tab/excel-online)
 
 1. 在 Excel 中，选择“**插入**”选项卡，然后选择“**加载项**”。![Excel 网页版中的“插入”功能区，突出显示“我的加载项”图标](../images/excel-cf-online-register-add-in-1.png)
 

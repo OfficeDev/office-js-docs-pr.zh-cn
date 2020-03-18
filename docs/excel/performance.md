@@ -4,11 +4,11 @@ description: 使用 Excel JavaScript API 优化性能
 ms.date: 06/20/2019
 localization_priority: Normal
 ms.openlocfilehash: 843a8fffbe916003b81ac974db12e3128efb7997
-ms.sourcegitcommit: 4079903c3cc45b7d8c041509a44e9fc38da399b1
+ms.sourcegitcommit: a0262ea40cd23f221e69bcb0223110f011265d13
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/11/2020
-ms.locfileid: "42596996"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42688571"
 ---
 # <a name="performance-optimization-using-the-excel-javascript-api"></a>使用 Excel JavaScript API 优化性能
 

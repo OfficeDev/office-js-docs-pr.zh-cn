@@ -4,11 +4,11 @@ description: ''
 ms.date: 06/26/2018
 localization_priority: Normal
 ms.openlocfilehash: 85f8e4f7e0082e00ad5064333470f589e449af45
-ms.sourcegitcommit: 4079903c3cc45b7d8c041509a44e9fc38da399b1
+ms.sourcegitcommit: a0262ea40cd23f221e69bcb0223110f011265d13
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/11/2020
-ms.locfileid: "42596534"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42688567"
 ---
 # <a name="first-run-experience-patterns"></a>首次运行体验模式
 
