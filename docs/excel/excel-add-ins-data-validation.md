@@ -1,14 +1,14 @@
 ---
 title: 向特定 Excel 范围添加数据验证
-description: ''
+description: 了解 Excel JavaScript Api 如何使您的外接程序能够向表、列、行和工作簿中的其他区域添加自动数据验证。
 ms.date: 03/19/2019
 localization_priority: Normal
-ms.openlocfilehash: e21c22468bab6df438f641e13ae95034a4b82c36
-ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
+ms.openlocfilehash: 39962c5e6f13d4ef9a2f3458686e5e24b5a4ae45
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "41950850"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42717178"
 ---
 # <a name="add-data-validation-to-excel-ranges"></a>向特定 Excel 范围添加数据验证
 

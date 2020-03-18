@@ -1,14 +1,14 @@
 ---
 title: 清单文件中的 AlternateId 元素
-description: ''
+description: 指定由 AppSource 发布的 Office 外接程序的备用 ID。
 ms.date: 10/09/2018
 localization_priority: Normal
-ms.openlocfilehash: 6f340f106b5eef85249297f771b1267940509384
-ms.sourcegitcommit: bb44c9694f88cde32ffbb642689130db44456964
+ms.openlocfilehash: ce4c1d126a08145cdca8224442a762aa6e12b5f5
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/17/2019
-ms.locfileid: "35771707"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42720706"
 ---
 # <a name="alternateid-element"></a>AlternateId 元素
 
@@ -28,5 +28,5 @@ ms.locfileid: "35771707"
 
 ## <a name="remarks"></a>注解
 
-您不会自己创建此值;将其提交到 AppSource 时, 会将其分配给你的外接程序。
+您不会自己创建此值;将其提交到 AppSource 时，会将其分配给你的外接程序。
 

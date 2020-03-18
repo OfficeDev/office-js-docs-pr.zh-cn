@@ -1,14 +1,14 @@
 ---
 title: 创建使用单一登录的 ASP.NET Office 加载项
-description: ''
+description: 有关如何使用 ASP.NET 后端创建（或转换） Office 外接程序以使用单一登录（SSO）的分步指南。
 ms.date: 12/04/2019
 localization_priority: Normal
-ms.openlocfilehash: d9424b1aa0896f9783e2fb7db4160e97bf87cab5
-ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
+ms.openlocfilehash: 6f8bb2c3de74d501867738da5a6a1c8282d3cc96
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "41950570"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42719054"
 ---
 # <a name="create-an-aspnet-office-add-in-that-uses-single-sign-on-preview"></a>创建使用单一登录的 ASP.NET Office 加载项（预览）
 
@@ -150,7 +150,7 @@ ms.locfileid: "41950570"
   > [!NOTE]
   > **资源**值是注册加载项时设置的**应用程序 ID URI**。 仅在通过 AppSource 销售加载项时，才使用**作用域**部分生成许可对话框。
 
-1. 保存并关闭此文件。
+1. 保存并关闭文件。
 
 ### <a name="setup-for-single-tenant"></a>单租户设置
 

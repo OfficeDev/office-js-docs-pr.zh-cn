@@ -3,12 +3,12 @@ ms.date: 12/18/2019
 description: 从 Office Excel 外接程序中的自定义函数返回多个结果。
 title: 从自定义函数返回多个结果
 localization_priority: Normal
-ms.openlocfilehash: dcca2047cab7b47118da6031aafe7cf8c935ed10
-ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
+ms.openlocfilehash: a2632c621071f0cbc55f545847d9e9392d884b90
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "42324671"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42719292"
 ---
 # <a name="return-multiple-results-from-your-custom-function"></a>从自定义函数返回多个结果
 

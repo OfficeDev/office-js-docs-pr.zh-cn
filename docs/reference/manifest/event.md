@@ -1,27 +1,27 @@
 ---
 title: 清单文件中的 Event 元素
-description: ''
+description: 定义外接程序中的事件处理程序。
 ms.date: 10/09/2018
 localization_priority: Normal
-ms.openlocfilehash: 51bbcd5a3d5abe60b850e88e4063e6bbc2da37bc
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: 02037a54ad4b7e91a3697b53b04fa30e8a4909a9
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32450588"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42718228"
 ---
 # <a name="event-element"></a>Event 元素
 
 定义外接程序中的事件处理程序。
 
 > [!NOTE] 
-> 目前`Event` , Outlook 在 Office 365 中的网站仅支持该元素。
+> 目前`Event` ，Outlook 在 Office 365 中的网站仅支持该元素。
 
 ## <a name="attributes"></a>属性
 
 |  属性  |  必需  |  说明  |
 |:-----|:-----|:-----|
-|  [Type](#type-attribute)  |  是  | 指定要处理的事件。 |
+|  [类型](#type-attribute)  |  是  | 指定要处理的事件。 |
 |  [FunctionExecution](#functionexecution-attribute)  |  是  | 指定事件处理程序的执行风格、异步或同步。目前仅支持同步事件处理程序。 |
 |  [FunctionName](#functionname-attribute)  |  是  | 指定事件处理程序的函数名称。 |
 

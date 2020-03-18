@@ -1,14 +1,14 @@
 ---
 title: 清单文件中的 CustomTab 元素
-description: ''
+description: 在功能区上，可以为它们的外接程序命令指定使用哪种选项卡和组。
 ms.date: 01/24/2020
 localization_priority: Normal
-ms.openlocfilehash: ba0419b6cf9cc4a0c1e3038dbb7f972e65868ec4
-ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
+ms.openlocfilehash: 8db29f166b5a5238a7ecf121ba5e5adca66ebe94
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "42323803"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42718424"
 ---
 # <a name="customtab-element"></a>CustomTab 元素
 
@@ -34,7 +34,7 @@ ms.locfileid: "42323803"
 
 ### <a name="label-tab"></a>标签（选项卡）
 
-必填。 自定义选项卡的标签。**Resid**属性必须设置为[Resources](resources.md)元素中的**ShortStrings**元素中**String**元素的**id**属性的值。
+必需。 自定义选项卡的标签。**Resid**属性必须设置为[Resources](resources.md)元素中的**ShortStrings**元素中**String**元素的**id**属性的值。
 
 
 ## <a name="customtab-example"></a>CustomTab 示例

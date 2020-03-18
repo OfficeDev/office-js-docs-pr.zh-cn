@@ -3,12 +3,12 @@ ms.date: 07/09/2019
 description: 使用 Excel 中的自定义函数对用户进行身份验证。
 title: 自定义函数的身份验证
 localization_priority: Normal
-ms.openlocfilehash: 872553986ebb74a97fd30afa0516ae6a72cf77bf
-ms.sourcegitcommit: 4079903c3cc45b7d8c041509a44e9fc38da399b1
+ms.openlocfilehash: 7cffe879a341824a3cfda7c535feb0cc64e191a8
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/11/2020
-ms.locfileid: "42596499"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42719320"
 ---
 # <a name="authentication-for-custom-functions"></a>自定义函数的身份验证
 

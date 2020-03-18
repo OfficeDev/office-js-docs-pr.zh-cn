@@ -1,18 +1,18 @@
 ---
 title: 使用 Excel JavaScript API 处理表格
-description: ''
+description: 演示如何使用 Excel JavaScript API 对表执行常见任务的代码示例。
 ms.date: 09/09/2019
 localization_priority: Normal
-ms.openlocfilehash: 4bc1b86f84b2002ad199174ffb37c3c080d51add
-ms.sourcegitcommit: 4079903c3cc45b7d8c041509a44e9fc38da399b1
+ms.openlocfilehash: b6000773a70c74d115643f3353658287b6d66235
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/11/2020
-ms.locfileid: "42596576"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42717136"
 ---
 # <a name="work-with-tables-using-the-excel-javascript-api"></a>使用 Excel JavaScript API 处理表格
 
-本文提供的代码示例演示如何使用 Excel JavaScript API 对表执行常见任务。有关`Table`和`TableCollection`对象支持的属性和方法的完整列表，请参阅[Table 对象（适用于 excel 的 Javascript api）](/javascript/api/excel/excel.table)和[TableCollection 对象（适用于 excel 的 javascript api）](/javascript/api/excel/excel.tablecollection)。
+本文中的代码示例展示了如何使用 Excel JavaScript API 对表格执行常见任务。 有关`Table`和`TableCollection`对象支持的属性和方法的完整列表，请参阅[Table 对象（适用于 excel 的 Javascript api）](/javascript/api/excel/excel.table)和[TableCollection 对象（适用于 excel 的 javascript api）](/javascript/api/excel/excel.tablecollection)。
 
 ## <a name="create-a-table"></a>创建表
 
@@ -50,16 +50,16 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
-**新建表格**
+**新建表**
 
-![Excel 中的新表](../images/excel-tables-create.png)
+![Excel 中的新表格](../images/excel-tables-create.png)
 
 ## <a name="add-rows-to-a-table"></a>向表添加行
 
 下面的代码示例将七个新行添加到名为 **Sample** 的工作表内的 **ExpensesTable** 表中。 新行被添加到表的末尾。 如果在其中运行代码的 Excel 主机应用程序支持[要求集](../reference/requirement-sets/excel-api-requirement-sets.md) **ExcelApi 1.2**，则为表中的当前数据设置最佳列宽和行高。
 
 > [!NOTE]
-> TableRow `index`对象的属性[TableRow](/javascript/api/excel/excel.tablerow)指示表的 rows 集合中的行的索引号。`TableRow`对象不包含可用作标识`id`行的唯一键的属性。
+> TableRow `index`对象的属性[TableRow](/javascript/api/excel/excel.tablerow)指示表的 rows 集合中的行的索引号。 `TableRow`对象不包含可用作标识`id`行的唯一键的属性。
 
 ```js
 Excel.run(function (context) {
@@ -340,7 +340,7 @@ Excel.run(function (context) {
 
 ## <a name="get-the-visible-range-from-a-filtered-table"></a>从筛选表中获取可见区域
 
-下面的代码示例获取一个区域，该区域仅包含指定表中当前可见的单元格的数据，然后将该范围的值写入控制台。您可以使用下面`getVisibleView()`所示的方法，在应用列筛选器时获取表的可见内容。
+下面的代码示例获取一个区域，其中只包含当前在指定表中可见的单元格数据，然后将该区域的值写入控制台。 您可以使用下面`getVisibleView()`所示的方法，在应用列筛选器时获取表的可见内容。
 
 ```js
 Excel.run(function (context) {

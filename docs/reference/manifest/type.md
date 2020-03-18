@@ -1,18 +1,18 @@
 ---
 title: 清单文件中的 Type 元素
-description: ''
-ms.date: 05/03/2019
+description: Type 元素指定等效加载项是 COM 加载项还是 XLL。
+ms.date: 03/16/2020
 localization_priority: Normal
-ms.openlocfilehash: 1c053d65c5e3c6ce597c9912ec608e0b36bc623b
-ms.sourcegitcommit: b3996b1444e520b44cf752e76eef50908386ca26
+ms.openlocfilehash: 9eeab172ed4ebf06fc93e42f56f8d33f5e7a92db
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "33628226"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42720314"
 ---
 # <a name="type-element"></a>Type 元素
 
-指定等效加载项是 COM 外接程序还是 XLL。
+指定等效的外接程序是 COM 加载项还是 XLL。
 
 **外接类型：** 任务窗格，自定义函数
 

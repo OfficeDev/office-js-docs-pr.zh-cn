@@ -1,14 +1,14 @@
 ---
 title: 清单文件中的 RequestedHeight 元素
-description: ''
+description: RequestedHeight 元素指定内容或邮件加载项的初始高度（以像素为单位）。
 ms.date: 10/09/2018
 localization_priority: Normal
-ms.openlocfilehash: e175d9012bb2f2a42fd466c35e5e28ade967d6f2
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: 853d12baf290167f3e6a635201e8b5d1d0e35a51
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32450525"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42720454"
 ---
 # <a name="requestedheight-element"></a>RequestedHeight 元素
 

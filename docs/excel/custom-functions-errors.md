@@ -1,25 +1,25 @@
 ---
-ms.date: 11/04/2019
+ms.date: 03/11/2020
 description: '处理和返回自定义函数中类似 #NULL! 的错误'
 title: 处理和返回自定义函数中的错误（预览）
 localization_priority: Normal
-ms.openlocfilehash: 19199a56d6699afd013c98c7b117b93528deb304
-ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
+ms.openlocfilehash: 10bb7ca6ff612ef38b26b88fed5ce9ce81ed7edb
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "41950822"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42717045"
 ---
 # <a name="handle-and-return-errors-from-your-custom-function-preview"></a>处理和返回自定义函数中的错误（预览）
 
 > [!NOTE]
-> 本文中所述的功能目前处于预览阶段，可能会发生更改。 暂不支持在生产环境中使用。 若要试用预览功能，需[加入 Office 预览体验计划](https://insider.office.com/join)。  试用预览版功能的好方法是使用 Office 365 订阅。 如果你还没有 Office 365 订阅，可以通过加入 [Office 365 开发人员计划](https://developer.microsoft.com/office/dev-program)获得 90 天免费的可续订 Office 365 订阅。
+> 本文中所述的功能目前处于预览阶段，可能会发生更改。 暂不支持在生产环境中使用。 你将需要加入[Office 预览体验成员](https://insider.office.com/join)计划，以试用预览版功能。  试用预览版功能的好方法是使用 Office 365 订阅。 如果你还没有 Office 365 订阅，可以通过加入 [Office 365 开发人员计划](https://developer.microsoft.com/office/dev-program)获得 90 天免费的可续订 Office 365 订阅。
 
 如果自定义函数运行时出现错误，你需要返回一个错误以告知用户此情况。 如果你有特定参数要求（例如仅限正数），则需要测试参数，如果不正确，需要引发错误。 还可以使用 `try`-`catch` 块来捕获自定义函数运行时发生的任何错误。
 
 ## <a name="detect-and-throw-an-error"></a>检测和引发错误
 
-假设你需要确保邮政编码参数的格式正确，使自定义函数能够正常工作。 下面的自定义函数使用正则表达式来检查邮政编码。 如果正确，则查找城市（在另一个函数中），并返回值。 如果不正确，则会将 `#VALUE!` 错误返回到单元格。
+我们来看一种需要确保邮政编码参数格式正确的自定义函数能够正常工作的情况。 下面的自定义函数使用正则表达式来检查邮政编码。 如果正确，则查找城市（在另一个函数中），并返回值。 如果不正确，则会将 `#VALUE!` 错误返回到单元格。
 
 ```typescript
 /**
@@ -60,7 +60,7 @@ throw error;
 
 ```typescript
 // You can only return a custom error message with the #VALUE! error
-let error = new CustomFunctions.Error(CustomFunctions.ErrorCode.invalidValue, “The parameter can only contain lowercase characters.”);
+let error = new CustomFunctions.Error(CustomFunctions.ErrorCode.invalidValue, "The parameter can only contain lowercase characters.");
 throw error;
 ```
 

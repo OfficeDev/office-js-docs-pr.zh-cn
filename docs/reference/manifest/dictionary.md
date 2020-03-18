@@ -1,16 +1,17 @@
 ---
 title: 清单文件中的 Dictionary 元素
-description: ''
+description: 定义可实现其他字典支持的任务窗格外接程序的设置。
 ms.date: 03/19/2019
 localization_priority: Normal
-ms.openlocfilehash: b482fb3f58e01b08e7c21be6a3cf6765a014c54b
-ms.sourcegitcommit: 4079903c3cc45b7d8c041509a44e9fc38da399b1
+ms.openlocfilehash: f2863887568291d0a5ad5aedf6471260e4ef4f1b
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/11/2020
-ms.locfileid: "42596772"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42718347"
 ---
 # <a name="dictionary-element"></a>Dictionary 元素
+
 定义可实现其他字典支持的任务窗格外接程序的设置。
 
 **外接程序类型：** 任务窗格

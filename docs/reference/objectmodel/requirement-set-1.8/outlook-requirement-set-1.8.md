@@ -1,14 +1,14 @@
 ---
 title: Outlook 加载项 API 要求集 1.8
-description: ''
+description: 适用于 Outlook 外接程序 API 的要求集1。8
 ms.date: 12/17/2019
 localization_priority: Normal
-ms.openlocfilehash: 47ab498f1904046743dd0539c117441dcea8cb93
-ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
+ms.openlocfilehash: ca107a13080e8b25ed76bcae4bf4afe1bec9938f
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "42324762"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42719992"
 ---
 # <a name="outlook-add-in-api-requirement-set-18"></a>Outlook 加载项 API 要求集 1.8
 

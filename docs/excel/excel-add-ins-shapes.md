@@ -1,14 +1,14 @@
 ---
 title: 使用 Excel JavaScript API 处理形状
-description: ''
+description: 了解 Excel 如何将形状定义为位于 Excel 绘图层上的任何对象。
 ms.date: 01/14/2020
 localization_priority: Normal
-ms.openlocfilehash: 54362baecc44f8761f2f69d21e465caa5f1c85b7
-ms.sourcegitcommit: 212c810f3480a750df779777c570159a7f76054a
+ms.openlocfilehash: 7522bf440389e983efc3ec696375694e5539c442
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/17/2020
-ms.locfileid: "41217225"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42717115"
 ---
 # <a name="work-with-shapes-using-the-excel-javascript-api"></a>使用 Excel JavaScript API 处理形状
 
@@ -113,7 +113,7 @@ Excel.run(function (context) {
 
 相对于其他形状的形状的深度由该`zorderPosition`属性定义。 这是使用`setZOrder`方法进行设置的，该方法采用[ShapeZOrder](/javascript/api/excel/excel.shapezorder)。 `setZOrder`调整当前形状相对于其他形状的排序。
 
-您的外接程序有几个用于更改形状的高度和宽度的选项。 设置`height`或`width`属性将更改指定的维度，而不更改其他维度。 和调整相对于当前或原始尺寸的形状各自的尺寸（基于提供的 ShapeScaleType 的值）。 [](/javascript/api/excel/excel.shapescaletype) `scaleHeight` `scaleWidth` 可选的[ShapeScaleFrom](/javascript/api/excel/excel.shapescalefrom)参数指定形状的缩放位置（左上角、中间或右下角）。 如果该`lockAspectRatio`属性为**true**，则缩放方法还会通过调整其他尺寸来保持形状的当前纵横比。
+您的外接程序有几个用于更改形状的高度和宽度的选项。 设置`height`或`width`属性将更改指定的维度，而不更改其他维度。 和调整相对于当前或原始尺寸的形状各自的尺寸（基于提供的 ShapeScaleType 的值）。 [ShapeScaleType](/javascript/api/excel/excel.shapescaletype) `scaleHeight` `scaleWidth` 可选的[ShapeScaleFrom](/javascript/api/excel/excel.shapescalefrom)参数指定形状的缩放位置（左上角、中间或右下角）。 如果该`lockAspectRatio`属性为**true**，则缩放方法还会通过调整其他尺寸来保持形状的当前纵横比。
 
 > [!NOTE]
 > 对`height`和`width`属性的直接更改仅影响该属性，而不考虑`lockAspectRatio`属性的值。
@@ -214,7 +214,7 @@ Excel.run(function (context) {
 
 ## <a name="export-shapes-as-images"></a>将形状导出为图像
 
-任何`Shape`对象都可以转换为图像。 [GetAsImage](/javascript/api/excel/excel.shape#getasimage-format-)返回 base64 编码的字符串。 图像的格式被指定为传递给[](/javascript/api/excel/excel.pictureformat) `getAsImage`的 PictureFormat 枚举。
+任何`Shape`对象都可以转换为图像。 [GetAsImage](/javascript/api/excel/excel.shape#getasimage-format-)返回 base64 编码的字符串。 图像的格式被指定为传递给[PictureFormat](/javascript/api/excel/excel.pictureformat) `getAsImage`的 PictureFormat 枚举。
 
 ```js
 Excel.run(function (context) {

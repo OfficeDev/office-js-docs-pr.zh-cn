@@ -1,14 +1,14 @@
 ---
 title: Outlook 外接程序 API 要求集 1.1
-description: ''
+description: 作为邮箱 API 1.1 的一部分引入的 Outlook 外接程序和 Office JavaScript Api 的功能和 Api。
 ms.date: 12/17/2019
 localization_priority: Normal
-ms.openlocfilehash: 159cfb223efff3893bce71687475c5e512b37ede
-ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
+ms.openlocfilehash: 369c1823f7c17d37ad9b4e57dcbd2b26a2c64281
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "42324783"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42717787"
 ---
 # <a name="outlook-add-in-api-requirement-set-11"></a>Outlook 外接程序 API 要求集 1.1
 

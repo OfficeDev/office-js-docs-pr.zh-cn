@@ -1,14 +1,14 @@
 ---
 title: 清单文件中的 DesktopSettings 元素
-description: ''
+description: 指定在台式计算机上使用邮件外接程序时应用的源位置和控制设置。
 ms.date: 01/14/2020
 localization_priority: Normal
-ms.openlocfilehash: 6dfa69d407e267a1cbcfdeaad0bdf9cdf75c1465
-ms.sourcegitcommit: dc42e0276007f8ab006028b9cd0cc1526c1bd100
+ms.openlocfilehash: d48532482fc71fec2a96133ee8e813cae798613f
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "41120640"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42718354"
 ---
 # <a name="desktopsettings-element"></a>DesktopSettings 元素
 

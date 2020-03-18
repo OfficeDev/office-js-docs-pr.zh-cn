@@ -1,14 +1,14 @@
 ---
-title: Office 加载项的辅助功能准则
-description: ''
+title: Office 加载项辅助功能指南
+description: 了解如何使你的 Office 外接程序可供所有用户访问。
 ms.date: 09/24/2018
 localization_priority: Normal
-ms.openlocfilehash: c40ca0c3c1fad238d605e5f3f67b58a0272ff83a
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: 61028c86e9ff79271b67d217e2dc93df300af006
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32448131"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42718620"
 ---
 # <a name="accessibility-guidelines"></a>辅助功能准则
 

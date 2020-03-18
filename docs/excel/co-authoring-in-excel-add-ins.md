@@ -1,14 +1,14 @@
 ---
 title: 使用 Excel 加载项共同创作
-description: ''
+description: 了解如何 coauthor 存储在 OneDrive、OneDrive for Business 或 SharePoint Online 中的 Excel 工作簿。
 ms.date: 06/20/2019
 localization_priority: Normal
-ms.openlocfilehash: 0c1386eb6662ff47fce585db99fedd32f08aae06
-ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
+ms.openlocfilehash: 3802983df28594d39e116a5af8b87a4d6b7a6590
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "42324664"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42718760"
 ---
 # <a name="coauthoring-in-excel-add-ins"></a>使用 Excel 加载项共同创作  
 

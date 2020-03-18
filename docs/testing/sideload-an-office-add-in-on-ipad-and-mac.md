@@ -1,14 +1,14 @@
 ---
 title: 在 iPad 和 Mac 上旁加载 Office 加载项以供测试
-description: ''
+description: 通过旁加载在 iPad 和 Mac 上测试 Office 外接程序
 ms.date: 02/18/2020
 localization_priority: Normal
-ms.openlocfilehash: c4af2c9ac6f209ab88f9f69efa56e58af0af50cd
-ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
+ms.openlocfilehash: 4863a55d21ab37411e76810a744f103cc364f7c1
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "42325043"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42719775"
 ---
 # <a name="sideload-office-add-ins-on-ipad-and-mac-for-testing"></a>在 iPad 和 Mac 上旁加载 Office 加载项以供测试
 
@@ -36,7 +36,7 @@ ms.locfileid: "42325043"
 
 ## <a name="sideload-an-add-in-on-excel-or-word-on-ipad"></a>在 iPad 版 Excel 或 iPad 版 Word 上旁加载加载项
 
-1. 使用同步电缆将 iPad 连接到计算机。如果你是首次将 iPad 连接到你的计算机，系统会提示你**信任此计算机？**。选择 "**信任**" 以继续。
+1. 使用同步电缆将 iPad 连接到你的计算机。 如果你是首次将 iPad 连接到你的计算机，系统会提示你**信任此计算机？**。 选择“**信任**”继续执行操作。
 
 2. 在 iTunes 中，选择菜单栏下的“iPad”**** 图标。
 
@@ -46,7 +46,7 @@ ms.locfileid: "42325043"
 
 5. 在 " **Excel** " 或 " **Word 文档**" 列底部，选择 "**添加文件**"，然后选择要旁加载的加载项的清单 .xml 文件。
 
-6. 在 iPad 上打开 Excel 或 Word 应用程序。如果 Excel 或 Word 应用程序已在运行，请选择 "**主页**" 按钮，然后关闭并重新启动该应用。
+6. 在你的 iPad 上打开 Excel 或 Word 应用。 如果 Excel 或 Word 应用程序已在运行，请选择 "**主页**" 按钮，然后关闭并重新启动该应用。
 
 7. 打开一个文档。
 
@@ -59,13 +59,13 @@ ms.locfileid: "42325043"
 > [!NOTE]
 > 若要旁加载 Mac 版 Outlook 加载项，请参阅[旁加载 Outlook 加载项进行测试](../outlook/sideload-outlook-add-ins-for-testing.md)。
 
-1. 打开 "**终端**" 并转到以下文件夹之一，您将在其中保存外接程序的清单文件。如果该`wef`文件夹在您的计算机上不存在，请创建它。
+1. 打开 "**终端**" 并转到以下文件夹之一，您将在其中保存外接程序的清单文件。 如果 `wef` 文件夹在你的计算机上不存在，请创建它。
 
     - 对于 Word：`/Users/<username>/Library/Containers/com.microsoft.Word/Data/Documents/wef`    
     - 对于 Excel：`/Users/<username>/Library/Containers/com.microsoft.Excel/Data/Documents/wef`
     - 对于 PowerPoint：`/Users/<username>/Library/Containers/com.microsoft.Powerpoint/Data/Documents/wef`
 
-2. 使用命令`open .` （包括句点或点）在**查找**器中打开文件夹。将外接程序的清单文件复制到此文件夹。
+2. 使用命令`open .` （包括句点或点）在**查找**器中打开文件夹。 将你的外接程序的清单文件复制到该文件夹中。
 
     ![Mac 版 Office 中的 Wef 文件夹](../images/all-my-files.png)
 

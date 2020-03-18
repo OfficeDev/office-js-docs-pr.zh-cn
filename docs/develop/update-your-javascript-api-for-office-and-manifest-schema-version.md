@@ -3,12 +3,12 @@ title: 更新到最新的 Office JavaScript API 库和版本1.1 加载项清单�
 description: 将在 Office 加载项项目中的 JavaScript 文件（Office.js 和特定于应用程序的 .js 文件）和加载项清单验证文件更新到版本 1.1。
 ms.date: 10/11/2019
 localization_priority: Normal
-ms.openlocfilehash: ccb6dade39850a656326482c3abc824ecfb6637e
-ms.sourcegitcommit: 4079903c3cc45b7d8c041509a44e9fc38da399b1
+ms.openlocfilehash: 74d940c1dfd885e1f48935776481bd5ab3bbda16
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/11/2020
-ms.locfileid: "42596583"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42719334"
 ---
 # <a name="update-to-the-latest-office-javascript-api-library-and-version-11-add-in-manifest-schema"></a>更新到最新的 Office JavaScript API 库和版本1.1 加载项清单架构
 

@@ -1,14 +1,14 @@
 ---
 title: Office 加载项中的对话框
-description: ''
+description: 了解 Office 外接程序中的对话框的可视化设计的最佳实践。
 ms.date: 03/19/2019
 localization_priority: Normal
-ms.openlocfilehash: 6728e9032ba00c2e2ebcaa339f72700bc4dacca5
-ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
+ms.openlocfilehash: 2f3b25fac7f12494e6b5a1e0a32e72baa345e978
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "41950381"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42717192"
 ---
 # <a name="dialog-boxes-in-office-add-ins"></a>Office 加载项中的对话框
  

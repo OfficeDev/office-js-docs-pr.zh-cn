@@ -1,14 +1,14 @@
 ---
 title: Office 外接程序的全新样式图标准则
-description: ''
+description: 获取有关在 Office 外接程序中使用全新样式图标图标的指南。
 ms.date: 12/09/2019
 localization_priority: Normal
-ms.openlocfilehash: 26dd2ee79e3f05bc2dfeda6d54545ef2af08be0d
-ms.sourcegitcommit: 8c5c5a1bd3fe8b90f6253d9850e9352ed0b283ee
+ms.openlocfilehash: f468ab0dc8908c8d9aceed7cca38333738c5744c
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/19/2019
-ms.locfileid: "40816147"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42718578"
 ---
 # <a name="fresh-style-icon-guidelines-for-office-add-ins"></a>Office 外接程序的全新样式图标准则
 

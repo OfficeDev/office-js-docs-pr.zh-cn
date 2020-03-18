@@ -1,14 +1,14 @@
 ---
 title: 运行 Office 加载项的要求
-description: ''
+description: 了解最终用户运行 Office 外接程序所需的客户端和服务器要求。
 ms.date: 07/01/2019
 localization_priority: Normal
-ms.openlocfilehash: 61108b713299f91e3f60993d17885daf022254f8
-ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
+ms.openlocfilehash: 858a951322a34543277b1d7000ca01df12cca7bb
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "41950367"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42718634"
 ---
 # <a name="requirements-for-running-office-add-ins"></a>运行 Office 加载项的要求
 

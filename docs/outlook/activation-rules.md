@@ -3,12 +3,12 @@ title: Outlook 加载项的激活规则
 description: 如果用户正在读取或撰写的邮件或约会符合加载项的激活规则，则 Outlook 将激活某些类型的加载项。
 ms.date: 12/10/2019
 localization_priority: Normal
-ms.openlocfilehash: 44bb4d7f03ca79ef402050ff730296533b2a67e6
-ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
+ms.openlocfilehash: fdc4a5f3ac00a4fb35bf3a00a359c2b55032025c
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "42324980"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42720888"
 ---
 # <a name="activation-rules-for-contextual-outlook-add-ins"></a>上下文 Outlook 加载项的激活规则
 

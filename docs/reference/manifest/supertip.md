@@ -1,14 +1,14 @@
 ---
 title: 清单文件中的 Supertip 元素
-description: ''
+description: Supertip 元素定义了一个丰富的工具提示（标题和说明）。
 ms.date: 05/07/2019
 localization_priority: Normal
-ms.openlocfilehash: ab280ec550a58f85082c36a24f5f7c3b4112a214
-ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
+ms.openlocfilehash: cf88473b72979c839e5d55f44938fda19be24084
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "42325232"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42720349"
 ---
 # <a name="supertip"></a>Supertip
 
@@ -23,7 +23,7 @@ ms.locfileid: "42325232"
 
 ### <a name="title"></a>Title
 
-必填。 SuperTip 的文本。 **Resid**属性必须设置为[Resources](resources.md)元素中的**ShortStrings**元素中**String**元素的**id**属性的值。
+必需。 SuperTip 的文本。 **Resid**属性必须设置为[Resources](resources.md)元素中的**ShortStrings**元素中**String**元素的**id**属性的值。
 
 ### <a name="description"></a>说明
 

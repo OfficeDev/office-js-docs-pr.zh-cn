@@ -1,14 +1,14 @@
 ---
 title: 创建字典任务窗格加载项
-description: ''
+description: 了解如何创建字典任务窗格加载项
 ms.date: 09/26/2019
 localization_priority: Normal
-ms.openlocfilehash: 4145727ef092bd56117dfd5d6c89e976a3aaa11a
-ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
+ms.openlocfilehash: e72ef049c355e756a3bd8a843fc6075a59c3c8a6
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "42324720"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42719691"
 ---
 # <a name="create-a-dictionary-task-pane-add-in"></a>创建字典任务窗格加载项
 
@@ -529,9 +529,9 @@ a:hover, a:active
 从该实现中调用的 Office JavaScript API （node.js）的主要成员如下所示：
 
 
-- 对象的 initialize 事件，在初始化外接程序上下文时引发，并提供对表示加载项与之交互的文档的[document](/javascript/api/office/office.document)对象实例的访问。 [](/javascript/api/office) `Office`
+- 对象的 initialize 事件，在初始化外接程序上下文时引发，并提供对表示加载项与之交互的文档的[document](/javascript/api/office/office.document)对象实例的访问。 [initialize](/javascript/api/office) `Office`
     
-- 对象的[addHandlerAsync](/javascript/api/office/office.document#addhandlerasync-eventtype--handler--options--callback-)方法，该方法在`initialize`函数中调用，以添加文档的 SelectionChanged 事件的事件处理程序，以侦听用户选择更改。 [](/javascript/api/office/office.documentselectionchangedeventargs) `Document`
+- 对象的[addHandlerAsync](/javascript/api/office/office.document#addhandlerasync-eventtype--handler--options--callback-)方法，该方法在`initialize`函数中调用，以添加文档的 SelectionChanged 事件的事件处理程序，以侦听用户选择更改。 [SelectionChanged](/javascript/api/office/office.documentselectionchangedeventargs) `Document`
     
 - `Document`对象的[getSelectedDataAsync](/javascript/api/office/office.document#getselecteddataasync-coerciontype--options--callback-)方法，该方法在`SelectionChanged`引发事件处理程序`tryUpdatingSelectedWord()`以获取用户选择的单词或短语时，将其强制转换为纯文本，然后执行`selectedTextCallback`异步回调函数，在函数中调用该方法。
     

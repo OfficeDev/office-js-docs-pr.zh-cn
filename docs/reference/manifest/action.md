@@ -1,18 +1,18 @@
 ---
 title: 清单文件中的 Action 元素
-description: ''
+description: 此元素指定当用户选择按钮或菜单控件时要执行的操作。
 ms.date: 02/28/2020
 localization_priority: Normal
-ms.openlocfilehash: f7bd577fea1672f592f2b1bac2823d96f0e8a134
-ms.sourcegitcommit: 6c7c98f085dd20f827e0c388e672993412944851
+ms.openlocfilehash: 75ad0d6a0eab81b7526acadb6079824d5a98fd5b
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "42554909"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42720965"
 ---
 # <a name="action-element"></a>Action 元素
 
-指定用户选择 [按钮](control.md#button-control)或[菜单](control.md#menu-dropdown-button-controls)控件时将执行的操作。
+指定当用户选择[按钮](control.md#button-control)或[菜单](control.md#menu-dropdown-button-controls)控件时要执行的操作。
 
 ## <a name="attributes"></a>属性
 

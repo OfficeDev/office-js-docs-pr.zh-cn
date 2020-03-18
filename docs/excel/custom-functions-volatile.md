@@ -3,12 +3,12 @@ ms.date: 01/14/2020
 description: 了解如何实现易失性和脱机流式处理自定义函数。
 title: 函数中的可变值
 localization_priority: Normal
-ms.openlocfilehash: 57a41578f400b10806fc169fed09db7d7a66ce84
-ms.sourcegitcommit: 212c810f3480a750df779777c570159a7f76054a
+ms.openlocfilehash: 617599a2687696a96240c4f162f9b02788a215f4
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/17/2020
-ms.locfileid: "41217025"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42717206"
 ---
 # <a name="volatile-values-in-functions"></a>函数中的可变值
 
@@ -16,7 +16,7 @@ ms.locfileid: "41217025"
 
 [!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
-Excel 包含多个内置可变函数，例如 `RAND` 和 `TODAY`。 可参阅[可变函数和非可变函数](/office/client-developer/excel/excel-recalculation#volatile-and-non-volatile-functions)，来获取 Excel 可变函数的完整列表。
+Excel 包含多个内置可变函数，例如 `RAND` 和 `TODAY`。 有关 Excel 可变函数的完整列表，请参阅[可变函数和非可变函数](/office/client-developer/excel/excel-recalculation#volatile-and-non-volatile-functions)。
 
 利用自定义函数，您可以创建自己的可变函数，这在处理日期、时间、随机编号和建模时可能很有用。 例如， [Monte Carlo 模拟](https://en.wikipedia.org/wiki/Monte_Carlo_method)要求生成随机输入以确定最佳解决方案。
 

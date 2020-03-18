@@ -1,14 +1,14 @@
 ---
 title: 使用 Excel JavaScript API 调用内置 Excel 工作表函数
-description: ''
+description: 了解如何调用内置 Excel 工作表函数`VLOOKUP` ，例如和`SUM`使用 excel JavaScript API。
 ms.date: 12/19/2019
 localization_priority: Normal
-ms.openlocfilehash: c5b725f09c4bd6be8d6061f08fe7fbf84ff30762
-ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
+ms.openlocfilehash: b4f7a88b48bebdc6e336aeb24105845af6624f1a
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "42325148"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42717059"
 ---
 # <a name="call-built-in-excel-worksheet-functions"></a>调用内置 Excel 工作表函数
 

@@ -3,12 +3,12 @@ title: 在 Outlook 加载项中添加和删除附件
 description: 您可以使用各种附件 Api 来管理附加到用户正在撰写的项目的文件或 Outlook 项目。
 ms.date: 10/31/2019
 localization_priority: Normal
-ms.openlocfilehash: 2110c22b65d1410cf4c607b6560eae72d169275c
-ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
+ms.openlocfilehash: bb966ff80bae37fbaa781b5a428f6e26391aa9f4
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "42325480"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42720881"
 ---
 # <a name="manage-an-items-attachments-in-a-compose-form-in-outlook"></a>在 Outlook 的撰写窗体中管理项目的附件
 

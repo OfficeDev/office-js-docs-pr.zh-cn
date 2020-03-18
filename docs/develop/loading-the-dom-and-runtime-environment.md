@@ -1,14 +1,14 @@
 ---
 title: 加载 DOM 和运行时环境
-description: ''
-ms.date: 03/10/2020
+description: 加载 DOM 和 Office 外接程序运行时环境
+ms.date: 07/01/2019
 localization_priority: Normal
-ms.openlocfilehash: 15e2b94275d6a4d4de689ce9524b2731f044d425
-ms.sourcegitcommit: 4079903c3cc45b7d8c041509a44e9fc38da399b1
+ms.openlocfilehash: 2ea5f1fdc42fe1ffde30f8145fd0c24599c7e702
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/11/2020
-ms.locfileid: "42596667"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42718914"
 ---
 # <a name="loading-the-dom-and-runtime-environment"></a>加载 DOM 和运行时环境
 

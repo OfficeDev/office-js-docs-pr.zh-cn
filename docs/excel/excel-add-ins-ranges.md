@@ -1,18 +1,18 @@
 ---
 title: 使用 Excel JavaScript API 对区域执行操作（基本）
-description: ''
+description: 演示如何使用 Excel JavaScript API 对区域执行常见任务的代码示例。
 ms.date: 04/30/2019
 localization_priority: Normal
-ms.openlocfilehash: cb77721649608cf18fc7bad99974cfe96f6be6f3
-ms.sourcegitcommit: a0262ea40cd23f221e69bcb0223110f011265d13
+ms.openlocfilehash: 027f71b7927c4c8405c5c791e6f640315e46abf1
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 03/17/2020
-ms.locfileid: "42688569"
+ms.locfileid: "42717143"
 ---
 # <a name="work-with-ranges-using-the-excel-javascript-api"></a>使用 Excel JavaScript API 处理区域
 
-本文提供的代码示例展示了如何使用 Excel JavaScript API 对区域执行常见任务。有关`Range`对象支持的属性和方法的完整列表，请参阅[Range 对象（适用于 EXCEL 的 JavaScript API）](/javascript/api/excel/excel.range)。
+本文中的代码示例展示了如何使用 Excel JavaScript API 对区域执行常见任务。 有关`Range`对象支持的属性和方法的完整列表，请参阅[Range 对象（适用于 EXCEL 的 JavaScript API）](/javascript/api/excel/excel.range)。
 
 > [!NOTE]
 > 有关如何使用区域执行更高级任务的代码示例，请参阅 [使用 Excel JavaScript API 对区域执行操作（高级）](excel-add-ins-ranges-advanced.md)。
@@ -57,7 +57,7 @@ Excel.run(function (context) {
 
 ### <a name="get-used-range"></a>获取使用的区域
 
-下面的代码示例从名为**sample**的工作表中获取所使用的`address`范围，加载其属性，并向控制台写入一条消息。使用的范围是包含分配有值或格式的工作表中的所有单元格的最小区域。如果整个工作表为空，则`getUsedRange()`该方法返回一个区域，该区域仅包含工作表中左上角的单元格。
+下面的代码示例从名为**sample**的工作表中获取所使用的`address`范围，加载其属性，并向控制台写入一条消息。 使用的区域是包含工作表中分配了值或格式的任意单元格的最小区域。 如果整个工作表为空，则`getUsedRange()`该方法返回一个区域，该区域仅包含工作表中左上角的单元格。
 
 ```js
 Excel.run(function (context) {
@@ -310,7 +310,7 @@ Excel.run(function (context) {
 
 ### <a name="get-values-from-a-range-of-cells"></a>从多个单元格获取值
 
-下面的代码示例获取区域**B2： E6**，加载其`values`属性，并将这些值写入控制台。区域`values`的属性指定单元格包含的原始值。即使某个区域中的某些单元格包含公式， `values`该区域的属性也会指定这些单元格的原始值，而不是任何公式。
+下面的代码示例获取区域**B2： E6**，加载其`values`属性，并将这些值写入控制台。 区域`values`的属性指定单元格包含的原始值。 即使某个区域中的某些单元格包含公式， `values`该区域的属性也会指定这些单元格的原始值，而不是任何公式。
 
 ```js
 Excel.run(function (context) {
@@ -368,7 +368,7 @@ Excel.run(function (context) {
 
 ### <a name="get-text-from-a-range-of-cells"></a>从多个单元格获取文本
 
-下面的代码示例获取区域**B2： E6**，加载其`text`属性，并将其写入控制台。区域`text`的属性指定区域中的单元格的显示值。即使区域中的某些单元格包含公式，该`text`区域的属性也指定这些单元格的显示值，而不是任何公式的显示值。
+下面的代码示例获取区域**B2： E6**，加载其`text`属性，并将其写入控制台。 区域`text`的属性指定区域中的单元格的显示值。 即使区域中的某些单元格包含公式，该`text`区域的属性也指定这些单元格的显示值，而不是任何公式的显示值。
 
 ```js
 Excel.run(function (context) {
@@ -426,7 +426,7 @@ Excel.run(function (context) {
 
 ### <a name="get-formulas-from-a-range-of-cells"></a>从多个单元格获取公式
 
-下面的代码示例获取区域**B2： E6**，加载其`formulas`属性，并将其写入控制台。Range `formulas`的属性指定区域中包含公式的单元格的公式，以及区域中不包含公式的单元格的原始值。
+下面的代码示例获取区域**B2： E6**，加载其`formulas`属性，并将其写入控制台。 Range `formulas`的属性指定区域中包含公式的单元格的公式，以及区域中不包含公式的单元格的原始值。
 
 ```js
 Excel.run(function (context) {

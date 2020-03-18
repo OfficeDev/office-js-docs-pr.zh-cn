@@ -1,14 +1,14 @@
 ---
 title: 清单文件中的 SupportUrl 元素
-description: ''
+description: SupportUrl 元素指定为外接程序提供支持信息的页面的 URL。
 ms.date: 10/09/2018
 localization_priority: Normal
-ms.openlocfilehash: 18b9b7c4df9def70ab42ae213066188ac04c07a7
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: e38030062c48936f925126e896cd74e660164a5d
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32450413"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42720342"
 ---
 # <a name="supporturl-element"></a>SupportUrl 元素
 

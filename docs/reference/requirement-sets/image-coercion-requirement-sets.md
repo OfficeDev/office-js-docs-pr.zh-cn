@@ -4,12 +4,12 @@ description: 支持跨 Excel、PowerPoint 和 Word 的 Office 外接程序对图
 ms.date: 08/13/2019
 ms.prod: non-product-specific
 localization_priority: Normal
-ms.openlocfilehash: 83817bfc7cf8a193138a805b0e90b4357d605801
-ms.sourcegitcommit: 4079903c3cc45b7d8c041509a44e9fc38da399b1
+ms.openlocfilehash: ccc65f3c38e8ddc4bea88d897e6abda73aa61e64
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/11/2020
-ms.locfileid: "42596968"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42717472"
 ---
 # <a name="image-coercion-requirement-sets"></a>图像强制要求集
 

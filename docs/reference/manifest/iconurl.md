@@ -1,14 +1,14 @@
 ---
 title: 清单文件中的 IconUrl 元素
-description: ''
+description: IconUrl 元素指定代表用户插入 UX 和 Office 应用商店中的 Office 外接程序的图像的 URL。
 ms.date: 06/20/2019
 localization_priority: Normal
-ms.openlocfilehash: 858f399ed36bfed60c3e091b26ac7400ff901179
-ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
+ms.openlocfilehash: a345971e32e64557005c8d01519589f4be5fb7d7
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "42325260"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42718081"
 ---
 # <a name="iconurl-element"></a>IconUrl 元素
 

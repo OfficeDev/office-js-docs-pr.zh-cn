@@ -1,14 +1,14 @@
 ---
 title: Outlook 外接程序 API 预览要求集
-description: ''
+description: 当前在 Outlook 外接程序和 Office JavaScript Api 的预览中的功能和 Api。
 ms.date: 03/04/2020
 localization_priority: Normal
-ms.openlocfilehash: 4365dab3d8dd1ddb876536b3030926d68a89ac49
-ms.sourcegitcommit: a0262ea40cd23f221e69bcb0223110f011265d13
+ms.openlocfilehash: c87ce8472becc072702f58e7d8c21665904673d2
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "42605671"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42717808"
 ---
 # <a name="outlook-add-in-api-preview-requirement-set"></a>Outlook 外接程序 API 预览要求集
 

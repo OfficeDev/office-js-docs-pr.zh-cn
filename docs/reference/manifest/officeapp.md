@@ -1,14 +1,14 @@
 ---
 title: 清单文件中的 OfficeApp 元素
-description: ''
+description: OfficeApp 元素是 Office 外接程序清单的根元素。
 ms.date: 02/04/2020
 localization_priority: Normal
-ms.openlocfilehash: 080025e62a56421dff942792f99ee672ce1db69a
-ms.sourcegitcommit: c1dbea577ae6183523fb663d364422d2adbc8bcf
+ms.openlocfilehash: 038933f2d06ee5f485dbdb7dd7abdbd95fb97c7d
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/05/2020
-ms.locfileid: "41773577"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42720594"
 ---
 # <a name="officeapp-element"></a>OfficeApp 元素
 

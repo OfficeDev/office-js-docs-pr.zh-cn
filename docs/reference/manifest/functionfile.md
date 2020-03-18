@@ -1,14 +1,14 @@
 ---
 title: 清单文件中的 FunctionFile 元素
-description: ''
+description: 为外接程序通过外接程序命令公开的操作指定源代码文件，这些外接程序命令执行 JavaScript 函数，而不显示 UI。
 ms.date: 10/09/2018
 localization_priority: Normal
-ms.openlocfilehash: eec1dc8eb2e099670469af6ef300592fc4a31e64
-ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
+ms.openlocfilehash: 376ea82f48360d502ea9be05dc5d6b02f9294add
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "42324867"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42718193"
 ---
 # <a name="functionfile-element"></a>FunctionFile 元素
 

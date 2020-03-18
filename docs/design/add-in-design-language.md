@@ -1,14 +1,14 @@
 ---
 title: Office 加载项设计语言
-description: ''
+description: 了解如何使 Office 外接程序与 Office 直观兼容。
 ms.date: 12/04/2017
 localization_priority: Normal
-ms.openlocfilehash: c4dcd4d08a52c101878b9739eeeb45c00836514e
-ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
+ms.openlocfilehash: 0a1d175401ebaabe9c17cae18d196bc6461ba57c
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "41950402"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42718592"
 ---
 # <a name="office-add-in-design-language"></a>Office 加载项设计语言
 

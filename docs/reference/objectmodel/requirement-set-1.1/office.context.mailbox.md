@@ -1,14 +1,14 @@
 ---
 title: "\"Context.subname\"-\"邮箱-要求集 1.1\""
-description: ''
+description: Outlook 外接程序 API 中的 Outlook 邮箱对象的对象模型（邮箱 API 1.1 版本）。
 ms.date: 03/06/2020
 localization_priority: Normal
-ms.openlocfilehash: d79a9b95808378a95a4e8e72080ab3237600ce24
-ms.sourcegitcommit: 153576b1efd0234c6252433e22db213238573534
+ms.openlocfilehash: be948e8ff49141d591affd195b0d0fabfab0d7ff
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/07/2020
-ms.locfileid: "42561840"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42720209"
 ---
 # <a name="mailbox"></a>邮箱
 
@@ -33,7 +33,7 @@ ms.locfileid: "42561840"
 | [项](office.context.mailbox.item.md) | 受限 | 撰写<br>读取 | [项目](/javascript/api/outlook/office.item?view=outlook-js-1.1) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 | [userProfile](/javascript/api/outlook/office.mailbox?view=outlook-js-1.1#userprofile) | ReadItem | 撰写<br>读取 | [UserProfile](/javascript/api/outlook/office.userprofile?view=outlook-js-1.1) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 
-## <a name="methods"></a>Methods
+## <a name="methods"></a>方法
 
 | 方法 | 最低<br>权限级别 | 型号 | 最低<br>要求集 |
 |---|---|---|:---:|

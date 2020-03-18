@@ -1,14 +1,14 @@
 ---
 title: 清单文件中的 Permissions 元素
-description: ''
+description: 权限元素指定 Office 外接程序的 API 访问级别。
 ms.date: 03/19/2019
 localization_priority: Normal
-ms.openlocfilehash: 95cb45f89e2a5b92edc29bf32d0b47fcb2dbf8ce
-ms.sourcegitcommit: a3ddfdb8a95477850148c4177e20e56a8673517c
+ms.openlocfilehash: 91e024a2f13ea7605941c8c17a642f325cbcd61d
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "42165543"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42717997"
 ---
 # <a name="permissions-element"></a>Permissions 元素
 

@@ -1,14 +1,14 @@
 ---
 title: Office 加载项的版式准则
-description: ''
+description: 了解要在 Office 外接程序中使用的字体和字体大小。
 ms.date: 06/27/2018
 localization_priority: Normal
-ms.openlocfilehash: 5e43d538f87da3a318ce24e14f48acd8f7e15b88
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: 048506dbe7464f4031970e8bda9c3ad3976556e5
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32446940"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42718487"
 ---
 # <a name="typography"></a>版式
 

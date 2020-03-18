@@ -1,14 +1,14 @@
 ---
 title: 绑定到文档或电子表格中的区域
-description: ''
+description: 了解如何使用 binding 确保一致地通过标识符访问文档或电子表格的特定区域或元素。
 ms.date: 06/20/2019
 localization_priority: Normal
-ms.openlocfilehash: c927f5ceb6be1ad038185e54706a55ab21b3f63a
-ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
+ms.openlocfilehash: 61ae64688253dede80989114f4abca2f236d48af
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "42324629"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42719068"
 ---
 # <a name="bind-to-regions-in-a-document-or-spreadsheet"></a>绑定到文档或电子表格中的区域
 
@@ -34,7 +34,7 @@ ms.locfileid: "42324629"
 
     在 Word 中，大多数连续选区都是有效的，而在 Excel 中，只有单个单元格选区才能作为文本绑定的目标。在 Excel 中，只支持纯文本。在 Word 中，支持以下三种格式：纯文本、HTML 和 Open XML for Office。
 
-2. **[矩阵绑定][MatrixBinding] ** -绑定到包含不带标题的表格数据的文档的固定区域。矩阵绑定中的数据作为二维**数组**写入或读取，在 JavaScript 中实现为数组的数组。例如，可以写入或读取两行两列的**字符串**值` [['a', 'b'], ['c', 'd']]`，并且可以写入或读取包含三行的单列`[['a'], ['b'], ['c']]`。
+2. **[矩阵绑定][MatrixBinding] ** -绑定到包含不带标题的表格数据的文档的固定区域。矩阵绑定中的数据作为二维**数组**写入或读取，在 JavaScript 中实现为数组的数组。 例如，两行两列 **string** 值可以写入或读取为 ` [['a', 'b'], ['c', 'd']]`，而三行单列则可以写入或读取为 `[['a'], ['b'], ['c']]`。
 
     在 Excel 中，任何连续的单元格选区都可用于建立矩阵绑定。在 Word 中，只有表格支持矩阵绑定。
 
@@ -42,7 +42,7 @@ ms.locfileid: "42324629"
 
     任何 Excel 或 Word 表格均可作为表格绑定的基础。建立表格绑定后，用户添加到表格中的每个新行或新列都自动包含在绑定中。
 
-使用`Bindings`对象的三个 "addFrom" 方法之一创建绑定之后，可以使用相应对象的方法来处理绑定的数据和属性： [MatrixBinding]、 [TableBinding]或[textbinding 添加]。这三个对象都继承`Binding`对象的[binding.getdataasync]和[binding.setdataasync]方法，使您能够与绑定的数据进行交互。
+使用`Bindings`对象的三个 "addFrom" 方法之一创建绑定之后，可以使用相应对象的方法来处理绑定的数据和属性： [MatrixBinding]、 [TableBinding]或[textbinding 添加]。 这三个对象全部继承 [] 对象的 [getDataAsync] 和 `Binding` 方法，使你能够与绑定的数据交互。
 
 > [!NOTE]
 > **应该何时使用矩阵和表格绑定？** 当使用的表格数据包含一个总计行时，如果外接程序的脚本需要访问总计行中的值，或检测用户的选区是否在总计行中，则必须使用矩阵绑定。如果为包含总计行的表格数据建立了表格绑定，那么 [TableBinding.rowCount] 属性和事件处理程序中 [BindingSelectionChangedEventArgs] 对象的 `rowCount` 和 `startRow` 属性将不会在值中反映总计行。要解决此限制，必须建立矩阵绑定以使用总计行。
@@ -133,7 +133,7 @@ function write(message){
 
 ```
 
-**对于 Excel**，addFromNamedItemAsync `itemName`方法的参数[]可以引用现有的命名区域、使用`A1`引用样式`("A1:A3")`指定的区域或表。默认情况下，在 Excel 中添加表会为您添加的第一个表指定名称 "Table1"，为您添加的第二个表指定 "Table2"，依此类推。若要在 Excel UI 中为表分配有意义的名称，请`Table Name`使用 "表格工具" 上的属性 **|** 功能区的 "设计" 选项卡。
+**对于 Excel**，addFromNamedItemAsync `itemName`方法的参数[addFromNamedItemAsync]可以引用现有的命名区域、使用`A1`引用样式`("A1:A3")`指定的区域或表。 默认情况下，在 Excel 中添加表会为你添加的第一个表分配名称“Table1”，为你添加的第二个表分配名称“Table2”，以此类推。 若要在 Excel UI 中为表分配有意义的名称，请`Table Name`使用 "表格工具" 上的属性 **|** 功能区的 "设计" 选项卡。
 
 
 > [!NOTE]
@@ -166,9 +166,9 @@ function write(message){
 }
 ```
 
-**对于 Word**，addFromNamedItemAsync `itemName`方法的参数[]引用`Title` `Rich Text`内容控件的属性。（不能绑定到内容控件之外的`Rich Text`内容控件。）
+**对于 Word**，addFromNamedItemAsync `itemName`方法的参数[addFromNamedItemAsync]引用`Title` `Rich Text`内容控件的属性。 （不能绑定到内容控件之外的`Rich Text`内容控件。）
 
-默认情况下，内容控件没有`Title*`分配值。若要在 Word UI 中分配有意义的名称，请在功能区的 "**开发人员**" 选项卡上的 "**控件**" 组中插入**格式文本**内容控件后，使用 "**控件**" 组中的 "**属性**" 命令显示 "**内容控件属性**" 对话框。然后，将`Title`内容控件的属性设置为要从代码中引用的名称。
+默认情况下，内容控件没有`Title*`分配值。 若要在 Word UI 中分配有意义的名称，请从功能区的“**开发人员**”选项卡上的“**控件**”组中插入一个“**格式文本**”内容控件，并使用“**控件**”组中的“**属性**”命令显示“**内容控件属性**”对话框。 然后，将`Title`内容控件的属性设置为要从代码中引用的名称。
 
 下面的示例在 Word 中创建一个文本绑定，以指定一个名为`"FirstName"`的格式文本内容控件，分配该**id** `"firstName"`，然后显示该信息。
 
@@ -213,7 +213,7 @@ function write(message){
 }
 ```
 
-在操作完成时，将执行作为`callback`参数传入函数的匿名函数。使用单个参数`asyncResult`调用函数，其中包含文档中的绑定数组。对数组进行迭代，以生成包含绑定的 Id 的字符串。然后，在消息框中显示该字符串。
+在操作完成时，将执行作为`callback`参数传入函数的匿名函数。 使用单个参数`asyncResult`调用函数，其中包含文档中的绑定数组。 通过循环访问该数组可以生成包含绑定 ID 的字符串。 然后，会在消息框中显示该字符串。
 
 
 ## <a name="get-a-binding-by-id-using-the-getbyidasync-method-of-the-bindings-object"></a>使用 Bindings 对象的 getByIdAsync 方法按 ID 获取绑定
@@ -240,7 +240,7 @@ function write(message){
 
 在此示例中，第`id`一个参数是要检索的绑定的 ID。
 
-在操作完成时，将执行作为第二个_回调_参数传入函数的匿名函数。使用单个参数_asyncResult_调用函数，该参数包含调用的状态和 ID 为 "myBinding" 的绑定。
+在操作完成时，将执行作为第二个_回调_参数传入函数的匿名函数。 该函数用单个参数 _asyncResult_ 来调用，其中包含调用状态和 ID 为"myBinding"的绑定。
 
 
 ## <a name="get-a-binding-by-id-using-the-select-method-of-the-office-object"></a>使用 Office 对象的 select 方法按 ID 获取绑定
@@ -266,7 +266,7 @@ function write(message){
 
 
 > [!NOTE]
-> 如果`select`方法承诺成功返回一个[Binding]对象，则该对象仅公开对象的以下四个方法： [binding.getdataasync]、 [binding.setdataasync]、 [addHandlerAsync]和[removeHandlerAsync]。如果承诺无法返回 Binding 对象，则`onError`可以使用回调访问[asyncResult]. error 对象，以获取详细信息。如果`select`需要调用 binding 对象的成员，而不是由方法返回的[绑定]对象承诺所公开的四个方法，请改为使用[getByIdAsync]方法，方法是使用[Document. bindings]属性和绑定。用于检索[Binding]对象的[getByIdAsync]方法。
+> 如果`select`方法承诺成功返回一个[Binding]对象，则该对象仅公开对象的以下四个方法： [binding.getdataasync]、 [binding.setdataasync]、 [addHandlerAsync]和[removeHandlerAsync]。 如果承诺无法返回 Binding 对象，则`onError`可以使用回调访问[asyncResult]. error 对象，以获取详细信息。如果`select`需要调用 binding 对象的成员，而不是由方法返回的[绑定]对象承诺所公开的四个方法，请改为使用[getByIdAsync]方法，方法是使用[Document. bindings]属性和绑定。用于检索[Binding]对象的[getByIdAsync]方法。
 
 ## <a name="release-a-binding-by-id"></a>按 ID 释放绑定
 
@@ -330,9 +330,9 @@ myBinding.setDataAsync('Hello World!', function (asyncResult) { });
 
  `myBinding` 是包含文档中的现有文本绑定的变量。
 
-在此示例中，第一个参数是要设置的`myBinding`值。由于这是文本绑定，因此值为`string`。不同的绑定类型接受不同类型的数据。
+在此示例中，第一个参数是要设置的`myBinding`值。 由于这是文本绑定，因此值为 `string`。 不同绑定类型接受不同类型的数据。
 
-传入函数的匿名函数是在操作完成时执行的回调。使用单个参数`asyncResult`调用函数，其中包含结果的状态。
+传入函数的匿名函数是在操作完成时执行的回调。 使用单个参数`asyncResult`调用函数，其中包含结果的状态。
 
 > [!NOTE]
 > 自 Excel 2013 SP1 发行版及相应的 Excel 网页版内部版本起，现在可以[在绑定表中写入和更新数据时设置格式](../excel/excel-add-ins-tables.md)。
@@ -360,9 +360,9 @@ function write(message){
 
 `myBinding` 是包含文档中现有文本绑定的变量。
 
-[AddHandlerAsync]方法_的第一个事件名称_参数指定要订阅的事件的名称。" [. 事件]类型" 是可用事件类型值的枚举。`Office.EventType.BindingDataChanged`计算结果为字符串 "bindingDataChanged"。
+[AddHandlerAsync]方法_的第一个事件名称_参数指定要订阅的事件的名称。 [Office.EventType] 是可用事件类型值的枚举。 `Office.EventType.BindingDataChanged`计算结果为字符串 "bindingDataChanged"。
 
-作为`dataChanged`第二个_handler_参数传递到函数中的函数是在绑定中的数据更改时执行的事件处理程序。使用单个参数_eventArgs_调用函数，其中包含对绑定的引用。此绑定可用于检索更新后的数据。
+作为`dataChanged`第二个_handler_参数传递到函数中的函数是在绑定中的数据更改时执行的事件处理程序。 该函数用单个参数 _eventArgs_ 来调用，其中包含对绑定的引用。 此绑定可用来检索更新的数据。
 
 类似地，你可以通过向绑定的 [SelectionChanged] 事件附加事件处理程序来检测用户是否更改绑定中的选择。为此，请将 [addHandlerAsync] 方法的 `eventType` 参数指定为 `Office.EventType.BindingSelectionChanged` 或 `"bindingSelectionChanged"`。
 

@@ -1,14 +1,14 @@
 ---
 title: 随文档自动打开任务窗格
-description: ''
+description: 了解如何将 Office 外接程序配置为在文档打开时自动打开。
 ms.date: 06/20/2019
 localization_priority: Normal
-ms.openlocfilehash: c7b14259aa0bfc9f1f7a395bedc46e598eb66607
-ms.sourcegitcommit: 4079903c3cc45b7d8c041509a44e9fc38da399b1
+ms.openlocfilehash: eaa05bdbac600f9e12f4c8583b8bd5b6abe0b89f
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/11/2020
-ms.locfileid: "42596478"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42719166"
 ---
 # <a name="automatically-open-a-task-pane-with-a-document"></a>随文档自动打开任务窗格
 
@@ -19,7 +19,7 @@ ms.locfileid: "42596478"
 
 ## <a name="how-is-the-autoopen-feature-different-from-inserting-a-task-pane"></a>AutoOpen 功能与插入任务窗格有何不同？
 
-当用户启动不使用外接程序命令的外接程序（例如，在 Office 2013 中运行的外接程序）时，会将它们插入到文档中，并在该文档中保留。因此，当其他用户打开文档时，系统会提示他们安装加载项，并打开任务窗格。此模型面临的挑战在于，在很多情况下，用户不希望外接程序在文档中保持。例如，在 Word 文档中使用字典外接程序的学生可能不希望其 classmates 或教师在打开文档时提示他们安装该外接程序。
+如果用户启动不使用外接程序命令的外接程序（例如，在 Office 2013 中运行的外接程序），外接程序会插入并保留在文档中。 因此，当其他用户打开文档时，系统会提示他们安装外接程序，随后会打开任务窗格。 此模型面临的挑战在于，在很多情况下，用户不希望外接程序在文档中保持。 例如，在 Word 文档中使用字典外接的学生可能不希望系统他们的同学或老师在打开该文档时提示他们安装该外接程序。
 
 使用 Autoopen 功能，可以显式定义或允许用户定义特定任务窗格外接程序是否保留在特定文档中。
 
@@ -41,7 +41,7 @@ ms.locfileid: "42596478"
   - 当用户很可能始终将外接程序与某个特定文档一同使用时。例如，可帮助用户通过从后台系统中获取信息来填写或更改文档中数据的外接程序。
 - 允许用户打开或关闭 Autoopen 功能。用户可以选择 UI 中包含的一个选项来停止自动打开外接程序任务窗格。  
 - 使用要求集检测来确定 autoopen 功能是否可用，如果不存在，则提供回退行为。
-- 请勿使用 autoopen 功能按人为单位提高外接程序的使用情况。如果你的外接程序无法在某些文档中自动打开，此功能可能会给用户增加烦恼。
+- 不要使用 Autoopen 功能来人为地增加外接程序的使用率。 如果你的外接程序无法在某些文档中自动打开，此功能可能会给用户增加烦恼。
 
     > [!NOTE]
     > 如果 Microsoft 检测到滥用 AutoOpen 功能，加载项可能会从 AppSource 下架。

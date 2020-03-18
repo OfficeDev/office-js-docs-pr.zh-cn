@@ -1,16 +1,16 @@
 ---
 title: 清单文件中的 DisplayName 元素
-description: ''
+description: 指定 Office 外接程序的名称为最长 125 个字符的字符串。
 ms.date: 10/09/2018
 localization_priority: Normal
-ms.openlocfilehash: f3c986c92bfcdfa0ea419d81d0ae0c4c8db3f61f
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: 7f7ba9dfa4ac203c5e8b0239e24db2291e03b2e6
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32450490"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42718340"
 ---
-# <a name="displayname-element"></a>DisplayName 元素
+# <a name="displayname-element"></a>SyntaxDisplayName 元素
 
 指定 Office 外接程序的名称为最长 125 个字符的字符串。
 

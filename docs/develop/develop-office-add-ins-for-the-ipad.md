@@ -1,14 +1,14 @@
 ---
 title: 开发适用于 iPad 的 Office 加载项
-description: ''
+description: 获取创建在 IPad 上运行的 Office 外接程序的概述和最佳实践。
 ms.date: 06/20/2019
 localization_priority: Normal
-ms.openlocfilehash: 410e42623438e872ee61f2befbc8eb0d0196bbbd
-ms.sourcegitcommit: d5ac9284d1e96dc91a9168d7641e44d88535e1a7
+ms.openlocfilehash: c71e935e92a4d88077c95b88334225ef08818dac
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/31/2019
-ms.locfileid: "40914872"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42719026"
 ---
 # <a name="develop-office-add-ins-for-the-ipad"></a>开发适用于 iPad 的 Office 加载项
 
@@ -50,4 +50,4 @@ ms.locfileid: "40914872"
 ## <a name="see-also"></a>另请参阅
 
 - [将 Office 外接程序旁加载到 iPad 和 Mac 上](../testing/sideload-an-office-add-in-on-ipad-and-mac.md)  
-- [在 iPad 和 Mac 上调试 Office 外接程序](../testing/debug-office-add-ins-on-ipad-and-mac.md)
+- [在 iPad 和 Mac 上调试 Office 加载项](../testing/debug-office-add-ins-on-ipad-and-mac.md)

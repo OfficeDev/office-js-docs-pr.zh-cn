@@ -1,14 +1,14 @@
 ---
 title: Office。上下文要求集1。7
-description: ''
-ms.date: 12/16/2019
+description: 适用于 Office 的对象模型。 context （要求集1.7）
+ms.date: 03/16/2020
 localization_priority: Normal
-ms.openlocfilehash: cf29ca0ce03b18f08c3d5f767df1da3f05bad29b
-ms.sourcegitcommit: a3ddfdb8a95477850148c4177e20e56a8673517c
+ms.openlocfilehash: ca40efef7bc841bbec7f84d112076b1a196895e8
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "42163645"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42717592"
 ---
 # <a name="context"></a>context
 

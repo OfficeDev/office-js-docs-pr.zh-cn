@@ -1,14 +1,14 @@
 ---
 title: 通过 Excel JavaScript API 将条件格式应用于范围
-description: ''
+description: 本文涵盖了 Excel JavaScript 外接程序上下文中的条件格式。
 ms.date: 04/15/2019
 localization_priority: Normal
-ms.openlocfilehash: b09e15ba000433eaa2cc9b87cc207300a45db2f5
-ms.sourcegitcommit: 4079903c3cc45b7d8c041509a44e9fc38da399b1
+ms.openlocfilehash: a51da3f0053e012ef91fc2b88985efc4fbffbbbf
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/11/2020
-ms.locfileid: "42596569"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42719523"
 ---
 # <a name="apply-conditional-formatting-to-excel-ranges"></a>将条件格式应用于特定 Excel 范围
 

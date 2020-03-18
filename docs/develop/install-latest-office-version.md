@@ -3,12 +3,12 @@ title: 安装最新版本 Office
 description: 与如何选择获取最新版 Office 相关的信息。
 ms.date: 01/14/2020
 localization_priority: Normal
-ms.openlocfilehash: ff573a13a6621e5c9bfa5c2dfd704bb64b731372
-ms.sourcegitcommit: 4079903c3cc45b7d8c041509a44e9fc38da399b1
+ms.openlocfilehash: ad956135bea0ffccc18fc07f455af5597d0e2341
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/11/2020
-ms.locfileid: "42596604"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42718921"
 ---
 # <a name="install-the-latest-version-of-office"></a>安装最新版本 Office
 

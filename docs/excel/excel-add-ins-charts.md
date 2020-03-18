@@ -1,18 +1,19 @@
 ---
 title: 使用 Excel JavaScript API 处理图表
-description: ''
+description: 使用 Excel JavaScript API 演示图表任务的代码示例。
 ms.date: 07/17/2019
 localization_priority: Normal
-ms.openlocfilehash: 2b55fee9689af03e9dbfbdb7133d2482f7ca6852
-ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
+ms.openlocfilehash: 5dd6c2752c0ab6470c58049aa80ff4f6ebcff76a
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "42323852"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42719579"
 ---
 # <a name="work-with-charts-using-the-excel-javascript-api"></a>使用 Excel JavaScript API 处理图表
 
-本文提供的代码示例演示如何使用 Excel JavaScript API 对图表执行常见任务。有关`Chart`和`ChartCollection`对象支持的属性和方法的完整列表，请参阅[Chart 对象（适用于 excel 的 Javascript Api）](/javascript/api/excel/excel.chart)和[chart 集合对象（适用于 excel 的 javascript api）](/javascript/api/excel/excel.chartcollection)。
+本文提供了代码示例，介绍如何使用 Excel JavaScript API 对图表执行常见任务。
+有关`Chart`和`ChartCollection`对象支持的属性和方法的完整列表，请参阅[Chart 对象（适用于 excel 的 Javascript Api）](/javascript/api/excel/excel.chart)和[chart 集合对象（适用于 excel 的 javascript api）](/javascript/api/excel/excel.chartcollection)。
 
 ## <a name="create-a-chart"></a>创建图表
 
@@ -127,7 +128,7 @@ Excel.run(function (context) {
 
 ## <a name="set-visibility-of-gridlines-in-a-chart"></a>在图表中设置网格线的可见性
 
-下面的代码示例隐藏工作表中第一个图表的数值轴的主要网格线。您可以通过将设置`chart.axes.valueAxis.majorGridlines.visible`为来`true`显示图表的数值轴的主要网格线。
+以下代码示例隐藏工作表中第一个图表数值轴的主要网格线。 您可以通过将设置`chart.axes.valueAxis.majorGridlines.visible`为来`true`显示图表的数值轴的主要网格线。
 
 ```js
 Excel.run(function (context) {
@@ -210,9 +211,9 @@ getImage(width?: number, height?: number, fittingMode?: Excel.ImageFittingMode):
 
 这些参数决定图像的大小。 图像始终按比例缩放。 宽度和高度参数在缩放图像上设置上限或下限。 `ImageFittingMode` 具有三个值和以下行为：
 
-- `Fill`：图像的最小高度或宽度是指定的高度或宽度（缩放图像时首先达到的值）。 这是未指定调整模式时的默认行为。
-- `Fit`：图像的最大高度或宽度是指定的高度或宽度（缩放图像时首先达到的值）。
-- `FitAndCenter`：图像的最大高度或宽度是指定的高度或宽度（缩放图像时首先达到的值）。 生成的图像相对于另一个维度居中。
+- `Fill`：图像的最小高度或宽度为指定的高度或宽度（在缩放图像时先到达）。 这是未指定调整模式时的默认行为。
+- `Fit`：图像的最大高度或宽度为指定的高度或宽度（在缩放图像时先到达）。
+- `FitAndCenter`：图像的最大高度或宽度为指定的高度或宽度（在缩放图像时先到达）。 生成的图像相对于另一个维度居中。
 
 ## <a name="see-also"></a>另请参阅
 

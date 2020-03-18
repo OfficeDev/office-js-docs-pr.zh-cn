@@ -1,14 +1,14 @@
 ---
 title: Office 命名空间-要求集1。7
-description: ''
+description: 此命名空间提供 Outlook Office 外接程序使用的共享接口（要求集1.7）
 ms.date: 12/16/2019
 localization_priority: Normal
-ms.openlocfilehash: 23f3fb705c03eabd8ee7fce53f4c89a48128672f
-ms.sourcegitcommit: a3ddfdb8a95477850148c4177e20e56a8673517c
+ms.openlocfilehash: 50fa22ac14aee3b7276be83813db248681435dc1
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "42165346"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42717593"
 ---
 # <a name="office"></a>Office
 
@@ -52,7 +52,7 @@ ms.locfileid: "42165346"
 
 ##### <a name="properties"></a>属性：
 
-|名称| 类型| 说明|
+|姓名| 类型| 说明|
 |---|---|---|
 |`Succeeded`| String|调用成功。|
 |`Failed`| String|调用失败。|
@@ -79,7 +79,7 @@ ms.locfileid: "42165346"
 
 ##### <a name="properties"></a>属性：
 
-|名称| 类型| 说明|
+|姓名| 类型| 说明|
 |---|---|---|
 |`Html`| String|请求以 HTML 格式返回的数据。|
 |`Text`| String|请求以文本格式返回的数据。|
@@ -106,7 +106,7 @@ ms.locfileid: "42165346"
 
 ##### <a name="properties"></a>属性：
 
-| 名称 | 类型 | 说明 | 最低要求集 |
+| 姓名 | 类型 | 说明 | 最低要求集 |
 |---|---|---|:---:|
 |`AppointmentTimeChanged`| String | 所选的约会或系列的日期或时间已更改。 | 1.7 |
 |`ItemChanged`| String | 在任务窗格固定时，将选择不同的 Outlook 项进行查看。 | 1.5 |
@@ -135,7 +135,7 @@ ms.locfileid: "42165346"
 
 ##### <a name="properties"></a>属性：
 
-|名称| 类型| 说明|
+|姓名| 类型| 说明|
 |---|---|---|
 |`Body`| String|数据源来自邮件的正文。|
 |`Subject`| String|数据源来自邮件的主题。|

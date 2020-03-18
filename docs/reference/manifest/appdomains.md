@@ -1,18 +1,18 @@
 ---
 title: 清单文件中的 AppDomains 元素
-description: ''
+description: 列出除 Office 加载项将用于加载页面的`SourceLocation`元素中指定的域之外的所有域。
 ms.date: 07/03/2019
 localization_priority: Normal
-ms.openlocfilehash: b6db3d46d004021f25edd5733566544010abb457
-ms.sourcegitcommit: c3673cc693fa7070e1b397922bd735ba3f9342f3
+ms.openlocfilehash: f60579d773e81a7e8006bafcf1c151874af42aeb
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/05/2019
-ms.locfileid: "35575329"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42720699"
 ---
 # <a name="appdomains-element"></a>AppDomains 元素
 
-列出除 Office 加载项将用于加载页面的`SourceLocation`元素中指定的域之外的所有域。 此外, 它还列出了可以从加载项内的 Iframe 中进行的 Office .js API 调用的受信任域。 对于每个其他域，指定 AppDomain 元素。
+列出除 Office 加载项将用于加载页面的`SourceLocation`元素中指定的域之外的所有域。 此外，它还列出了可以从加载项内的 Iframe 中进行的 Office .js API 调用的受信任域。 对于每个其他域，指定 AppDomain 元素。
 
  **外接程序类型：** 内容、任务窗格、邮件
 

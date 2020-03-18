@@ -3,12 +3,12 @@ title: 清除 Office 缓存
 description: 了解如何清除计算机上的 Office 缓存。
 ms.date: 01/29/2020
 localization_priority: Normal
-ms.openlocfilehash: 25e0494c979b5c38f7386331e962a1fc6b767a5d
-ms.sourcegitcommit: a3ddfdb8a95477850148c4177e20e56a8673517c
+ms.openlocfilehash: c0cf6350cb77a83791f5810c8b98034792fdfd0e
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "42163960"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42719852"
 ---
 # <a name="clear-the-office-cache"></a>清除 Office 缓存
 

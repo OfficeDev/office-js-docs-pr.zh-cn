@@ -3,12 +3,12 @@ title: 在 Outlook 的 Mac 版中比较 Outlook 加载项支持
 description: 了解 Mac 上的 Outlook 中的加载项支持如何与其他 Outlook 主机进行比较。
 ms.date: 11/26/2019
 localization_priority: Normal
-ms.openlocfilehash: ec5e9934249ddc1a90240890d7f0201d23599446
-ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
+ms.openlocfilehash: 452a162a05a44477c85a99417b3a8cefbf49e515
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "42325459"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42720825"
 ---
 # <a name="compare-outlook-add-in-support-in-outlook-on-mac-with-other-outlook-hosts"></a>将 Mac 上 outlook 中的 Outlook 加载项支持与其他 Outlook 主机进行比较
 

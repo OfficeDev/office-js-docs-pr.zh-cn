@@ -1,20 +1,20 @@
 ---
 title: "\"Context.subname\"-\"邮箱\"-预览要求集"
-description: ''
+description: Outlook 外接程序 API 中的 Outlook 项目对象的对象模型（邮箱 API preview 版本）。
 ms.date: 03/06/2020
 localization_priority: Normal
-ms.openlocfilehash: deb5006d8253c7f9fdcf0bdd1a0ee24df9342d66
-ms.sourcegitcommit: a0262ea40cd23f221e69bcb0223110f011265d13
+ms.openlocfilehash: 454903016fe3bc561172367523f48eeed0916125
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 03/17/2020
-ms.locfileid: "42688719"
+ms.locfileid: "42717815"
 ---
 # <a name="item"></a>item
 
 ### <a name="officecontextmailboxitem"></a>[Office](office.md)[.context](office.context.md)[.mailbox](office.context.mailbox.md).item
 
-`item`用于访问当前选定的邮件、会议请求或约会。您可以通过使用`itemType`属性来确定项目的类型。
+`item`用于访问当前选定的邮件、会议请求或约会。 您可以通过使用`itemType`属性来确定项目的类型。
 
 ##### <a name="requirements"></a>Requirements
 

@@ -1,15 +1,15 @@
 ---
 title: Dialog API 要求集
-description: ''
+description: 了解有关对话框 API 要求集的详细信息
 ms.date: 03/11/2020
 ms.prod: non-product-specific
 localization_priority: Normal
-ms.openlocfilehash: daa16235101a32adda8d462056a2db94a0da2d4f
-ms.sourcegitcommit: 05b73cdec5f4db7f0b8d48a5a552ee296a0332ca
+ms.openlocfilehash: aeae2f140b158f3343c9812db8e9f27ea7608a3e
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/11/2020
-ms.locfileid: "42600716"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42719906"
 ---
 # <a name="dialog-api-requirement-sets"></a>Dialog API 要求集
 

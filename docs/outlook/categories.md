@@ -3,12 +3,12 @@ title: 获取和设置类别
 description: 如何管理邮箱和项目上的类别
 ms.date: 01/14/2020
 localization_priority: Normal
-ms.openlocfilehash: 50b98191661674b50c5636733075e4a882183d82
-ms.sourcegitcommit: a3ddfdb8a95477850148c4177e20e56a8673517c
+ms.openlocfilehash: d0bb2e9f51675c263d0a3a130c64e02e7d55b764
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "42166025"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42721021"
 ---
 # <a name="get-and-set-categories"></a>获取和设置类别
 

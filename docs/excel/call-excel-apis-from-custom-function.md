@@ -3,12 +3,12 @@ title: 从自定义函数调用 Microsoft Excel Api
 description: 了解可以从自定义函数调用的 Microsoft Excel Api。
 ms.date: 02/06/2020
 localization_priority: Normal
-ms.openlocfilehash: 2f24f8fc27db65466cb586307d7f4bc8f8eefe20
-ms.sourcegitcommit: dd6d00202f6466c27418247dad7bd136555a6036
+ms.openlocfilehash: e22ed897e95a74707bd0d8bded3f8dca724731d1
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/26/2020
-ms.locfileid: "42284118"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42719341"
 ---
 # <a name="call-microsoft-excel-apis-from-a-custom-function"></a>从自定义函数调用 Microsoft Excel Api
 

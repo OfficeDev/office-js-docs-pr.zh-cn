@@ -1,14 +1,14 @@
 ---
 title: "\"Context\"-\"邮箱-预览要求集\""
-description: ''
+description: Outlook 外接程序 API 中的 Outlook 邮箱对象的对象模型（邮箱 API Preview 版本）。
 ms.date: 03/06/2020
 localization_priority: Normal
-ms.openlocfilehash: 6239d31468982c640dc1808bb29c20b81f1a4149
-ms.sourcegitcommit: 153576b1efd0234c6252433e22db213238573534
+ms.openlocfilehash: 3de58203e4ddb0f7ca8b773653bafb16eb50e322
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/07/2020
-ms.locfileid: "42561792"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42720279"
 ---
 # <a name="mailbox"></a>邮箱
 
@@ -35,7 +35,7 @@ ms.locfileid: "42561792"
 | [restUrl](/javascript/api/outlook/office.mailbox?view=outlook-js-preview#resturl) | ReadItem | 撰写<br>读取 | String | [1.5](../requirement-set-1.5/outlook-requirement-set-1.5.md) |
 | [userProfile](/javascript/api/outlook/office.mailbox?view=outlook-js-preview#userprofile) | ReadItem | 撰写<br>读取 | [UserProfile](/javascript/api/outlook/office.userprofile?view=outlook-js-preview) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 
-## <a name="methods"></a>Methods
+## <a name="methods"></a>方法
 
 | 方法 | 最低<br>权限级别 | 型号 | 最低<br>要求集 |
 |---|---|---|:---:|

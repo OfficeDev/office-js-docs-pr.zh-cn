@@ -1,14 +1,14 @@
 ---
 title: 清单文件中的 ProgId 元素
-description: ''
+description: ProgId 元素为 web 外接程序的任务窗格指定等效 COM 加载项的编程 ID。
 ms.date: 06/19/2019
 localization_priority: Normal
-ms.openlocfilehash: 11bf7b8f347487487f7872d5ed19c34b7a6cbf39
-ms.sourcegitcommit: 4bf5159a3821f4277c07d89e88808c4c3a25ff81
+ms.openlocfilehash: 401160f5a6c11a11eadd33491e9422545b6e3687
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "35059914"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42717990"
 ---
 # <a name="progid-element"></a>ProgId 元素
 

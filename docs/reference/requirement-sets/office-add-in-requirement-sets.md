@@ -1,15 +1,15 @@
 ---
 title: Office 通用 API 要求集
-description: ''
+description: 了解有关 Office 通用 API 要求集的详细信息
 ms.date: 07/17/2019
 ms.prod: non-product-specific
 localization_priority: Normal
-ms.openlocfilehash: cd8af8762fa55bde78a6eb62cabc37606db47099
-ms.sourcegitcommit: 4079903c3cc45b7d8c041509a44e9fc38da399b1
+ms.openlocfilehash: 39358b26547a464b9bb1b96f571bac7741e1c32d
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/11/2020
-ms.locfileid: "42596954"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42717465"
 ---
 # <a name="office-common-api-requirement-sets"></a>Office 通用 API 要求集
 

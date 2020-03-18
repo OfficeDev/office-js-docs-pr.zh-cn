@@ -1,14 +1,14 @@
 ---
 title: Office 外接程序的图标准则
-description: ''
+description: 概述如何为外接程序命令设计图标以及新的和 Monoline 的设计样式。
 ms.date: 12/09/2019
 localization_priority: Normal
-ms.openlocfilehash: d4afaf0e131bd28778198c0a9eb5c2126c4dda0e
-ms.sourcegitcommit: 8c5c5a1bd3fe8b90f6253d9850e9352ed0b283ee
+ms.openlocfilehash: ce474ef20493e738fca7072d5b6a3bcd28594fbb
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/19/2019
-ms.locfileid: "40814017"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42718501"
 ---
 # <a name="icons"></a>图标
 
@@ -20,7 +20,7 @@ Office 功能区界面具有标准的视觉样式。 这可以确保一致性并
 
 ## <a name="design-icons-for-add-in-commands"></a>加载项命令的设计图标
 
-[外接命令](add-in-commands.md)将按钮、文本和图标添加到 Office UI。您的外接程序命令按钮应提供有意义的图标和标签，这些图标和标签可以清楚地标识用户在使用命令时所采取的操作。以下文章提供了样式和生产准则，可帮助您设计与 Office 无缝集成的图标。
+[外接程序命令](add-in-commands.md)添加按钮、文本和 Office UI 图标。 外接程序命令按钮应提供有意义的图标和标签，以便清楚地标识用户在使用命令时执行的操作。 以下文章提供了样式和生产准则，可帮助您设计与 Office 无缝集成的图标。
 
 - 有关 Office 365 的 Monoline 样式，请参阅[适用于 Office 外接程序的 Monoline 样式图标准则](add-in-icons-monoline.md)。
 - 有关非订阅 Office 2013 + 的全新样式，请参阅[适用于 Office 外接程序的新样式图标指南](add-in-icons-fresh.md)。

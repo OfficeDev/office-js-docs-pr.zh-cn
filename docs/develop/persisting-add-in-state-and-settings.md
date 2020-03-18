@@ -1,14 +1,14 @@
 ---
 title: 暂留加载项状态和设置
-description: ''
+description: 了解如何在浏览器控件的无状态环境中保存运行的 Office 外接程序 web 应用程序中的数据。
 ms.date: 02/27/2020
 localization_priority: Normal
-ms.openlocfilehash: f3ca153367c5ba14b7095e510cea6b6791b732a8
-ms.sourcegitcommit: a0262ea40cd23f221e69bcb0223110f011265d13
+ms.openlocfilehash: 7d66a8693c18dbc7f2be59b2799db7429681a57f
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 03/17/2020
-ms.locfileid: "42688752"
+ms.locfileid: "42719390"
 ---
 # <a name="persisting-add-in-state-and-settings"></a>暂留加载项状态和设置
 
@@ -22,11 +22,11 @@ Office 加载项实质上是在浏览器控件的无状态环境中运行的 Web
 
 - 使用基础浏览器控件提供的技术：浏览器 Cookie 或 HTML5 Web 存储（[localStorage](https://developer.mozilla.org/docs/Web/API/Window/localStorage) 或 [sessionStorage](https://developer.mozilla.org/docs/Web/API/Window/sessionStorage)）。
 
-本文重点介绍如何使用 Office JavaScript API 来保留加载项状态。有关使用浏览器 cookie 和 web 存储的示例，请参阅[Excel 加载项-JavaScript-PersistCustomSettings](https://github.com/OfficeDev/Excel-Add-in-JavaScript-PersistCustomSettings)。
+本文重点介绍如何使用 Office JavaScript API 来保留加载项状态。 有关使用浏览器 Cookie 和 Web 存储的示例，请参阅 [Excel-Add-in-JavaScript-PersistCustomSettings](https://github.com/OfficeDev/Excel-Add-in-JavaScript-PersistCustomSettings)。
 
 ## <a name="persisting-add-in-state-and-settings-with-the-office-javascript-api"></a>使用 Office JavaScript API 保留加载项状态和设置
 
-Office JavaScript API 提供了[设置](/javascript/api/office/office.settings)、 [RoamingSettings](/javascript/api/outlook/office.roamingsettings)和[CustomProperties](/javascript/api/outlook/office.customproperties)对象，用于按下表所述在会话中保存外接程序状态。在所有情况下，保存的设置值都与创建它们的外接程序的[Id](../reference/manifest/id.md)相关联。
+Office JavaScript API 提供了[设置](/javascript/api/office/office.settings)、 [RoamingSettings](/javascript/api/outlook/office.roamingsettings)和[CustomProperties](/javascript/api/outlook/office.customproperties)对象，用于按下表所述在会话中保存外接程序状态。 在所有情况下，保存的设置值仅与创建它们的外接程序 [Id](../reference/manifest/id.md) 相关联。
 
 |**对象**|**外接程序类型支持**|**存储位置**|**Office 主机支持**|
 |:-----|:-----|:-----|:-----|
@@ -62,7 +62,7 @@ Office JavaScript API 提供了[设置](/javascript/api/office/office.settings)�
 ## <a name="how-to-save-add-in-state-and-settings-per-document-for-content-and-task-pane-add-ins"></a>如何按文档暂留内容和任务窗格加载项的加载项状态和设置
 
 
-若要保留 Word、Excel 或 PowerPoint 的内容或任务窗格加载项的状态或自定义设置，请使用[settings](/javascript/api/office/office.settings)对象及其方法。使用`Settings`对象的方法创建的属性包仅可用于创建它的内容或任务窗格外接程序的实例，并且只能从保存它的文档中获取。
+要保留 Word、Excel 或 PowerPoint 的内容或任务窗格加载项的状态或自定义设置，可使用 [Settings](/javascript/api/office/office.settings) 对象及其方法。 使用`Settings`对象的方法创建的属性包仅可用于创建它的内容或任务窗格外接程序的实例，并且只能从保存它的文档中获取。
 
 `Settings`对象将作为[Document](/javascript/api/office/office.document)对象的一部分自动加载，并在激活任务窗格或内容加载项时可用。 在实例`Document`化对象之后，可以使用`Settings` `Document`对象的[settings](/javascript/api/office/office.document#settings)属性访问对象。 在会话的生存期期间，您只需使用`Settings.get`、 `Settings.set`和`Settings.remove`方法，即可从属性包的内存中副本中读取、写入或删除保留的设置和加载项状态。
 
@@ -78,12 +78,12 @@ Office JavaScript API 提供了[设置](/javascript/api/office/office.settings)�
 Office.context.document.settings.set('themeColor', 'green');
 ```
 
- 如果不存在具有指定名称的设置，则将创建该设置，否则将会更新其值（如果该设置已存在）。使用`Settings.saveAsync`方法可将新的或更新的设置保存到文档中。
+ 如果具有指定名称的设置尚不存在，则创建此设置，如果此设置存在，则对值进行更新。 使用`Settings.saveAsync`方法可将新的或更新的设置保存到文档中。
 
 
 ### <a name="getting-the-value-of-a-setting"></a>获取设置的值
 
-下面的示例演示如何使用[Settings](/javascript/api/office/office.settings#get-name-)方法获取名为 "themeColor" 的设置的值。`get`方法的唯一参数是设置的区分大小写的_名称_。
+下面的示例演示如何使用 [Settings.get](/javascript/api/office/office.settings#get-name-) 方法获取名为"themeColor"的设置值。 `get`方法的唯一参数是设置的区分大小写的_名称_。
 
 
 ```js
@@ -95,12 +95,12 @@ function write(message){
 }
 ```
 
- 该`get`方法返回之前为传入的设置_名称_保存的值。如果该设置不存在，则该方法返回**null**。
+ 该`get`方法返回之前为传入的设置_名称_保存的值。 如果不存在该设置，那么方法返回 **null**。
 
 
 ### <a name="removing-a-setting"></a>删除设置
 
-以下示例显示如何使用[Settings](/javascript/api/office/office.settings#remove-name-)方法删除名为 "themeColor" 的设置。`remove`方法的唯一参数是设置的区分大小写的_名称_。
+下面的示例演示如何使用 [Settings.remove](/javascript/api/office/office.settings#remove-name-) 方法删除名为"themeColor"的设置。 `remove`方法的唯一参数是设置的区分大小写的_名称_。
 
 
 ```js
@@ -112,7 +112,7 @@ Office.context.document.settings.remove('themeColor');
 
 ### <a name="saving-your-settings"></a>保存设置
 
-若要保存您的外接程序在当前会话期间对设置属性包的内存中副本所做的任何添加、更改或删除，必须调用[saveAsync](/javascript/api/office/office.settings#saveasync-options--callback-)方法将其存储在文档中。该`saveAsync`方法的唯一参数是_callback_，它是一个具有单个参数的回调函数。 
+若要保存当前会话中加载项对设置属性包内存副本所做的任意添加、更改或删除操作，必须调用 [Settings.saveAsync](/javascript/api/office/office.settings#saveasync-options--callback-) 方法将它们存储在文档中。 该`saveAsync`方法的唯一参数是_callback_，它是一个具有单个参数的回调函数。 
 
 
 ```js

@@ -1,14 +1,14 @@
 ---
 title: 清单文件中的 ExtendedPermission 元素
-description: ''
+description: 定义外接程序访问关联的 API 或功能所需的扩展权限。
 ms.date: 03/05/2020
 localization_priority: Normal
-ms.openlocfilehash: 6c41684fc922f5845559250311edd8182788cfc5
-ms.sourcegitcommit: a0262ea40cd23f221e69bcb0223110f011265d13
+ms.openlocfilehash: 7ff17312ae487d20f4d7af0ed4405cedd8820253
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "42605798"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42720601"
 ---
 # <a name="extendedpermission-element"></a>`ExtendedPermission`网元
 
@@ -21,7 +21,7 @@ ms.locfileid: "42605798"
 
 以下是可用的值。
 
-|可用值|说明|Hosts|
+|可用值|说明|主机|
 |---|---|---|
 |`AppendOnSend`|声明外接程序使用的是[appendOnSendAsync](/javascript/api/outlook/office.body?view=outlook-js-preview#appendonsendasync-data--options--callback-) API。|Outlook|
 

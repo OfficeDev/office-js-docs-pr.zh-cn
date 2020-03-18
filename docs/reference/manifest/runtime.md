@@ -1,14 +1,14 @@
 ---
 title: 清单文件中的运行时（预览）
-description: ''
+description: Runtime 元素将您的外接程序配置为对其功能区、任务窗格和自定义函数使用共享的 JavaScript 运行时。
 ms.date: 02/21/2020
 localization_priority: Normal
-ms.openlocfilehash: dd51c5b317700f92ee74c94835e68523371789f8
-ms.sourcegitcommit: 153576b1efd0234c6252433e22db213238573534
+ms.openlocfilehash: 6237f64fec47ed22b0105bf74c8eb7e2b7c38afe
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/07/2020
-ms.locfileid: "42561826"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42717927"
 ---
 # <a name="runtime-element-preview"></a>Runtime 元素（预览）
 

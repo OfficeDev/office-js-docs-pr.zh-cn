@@ -1,14 +1,14 @@
 ---
 title: Office JavaScript API 错误代码
-description: ''
+description: 本文记录了使用 Office JavaScript API 时可能遇到的错误消息。
 ms.date: 03/10/2020
 localization_priority: Normal
-ms.openlocfilehash: 93852e7cfa7188cd30bba370ed6cfeb556af39b8
-ms.sourcegitcommit: 4079903c3cc45b7d8c041509a44e9fc38da399b1
+ms.openlocfilehash: e85242e1cf83aef3b4173abf7ce52631cb6a8f80
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/11/2020
-ms.locfileid: "42596807"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42720979"
 ---
 # <a name="office-javascript-api-error-codes"></a>Office JavaScript API 错误代码
 
@@ -40,7 +40,7 @@ ms.locfileid: "42596807"
 |2005|数据写入错误|指定的 startRow 或 startColumn 值无效。|用户提供的 startRow 或 startCol 值无效。|
 |2006|无效格式错误|指定数据对象的格式无效。|解决方案开发人员提供了无效的 HTML 或 OOXML 字符串、格式错误的 HTML 字符串或无效的 OOXML 字符串。|
 |2007|数据对象无效|指定数据对象的类型与当前所选内容不兼容。|解决方案开发人员提供的数据对象与指定的强制类型不兼容。|
-|2008|数据写入错误|待定|待定|
+|2008|数据写入错误|待定|TBD|
 |2009|数据写入错误|指定的数据对象太大。|用户尝试设置超过主机加载项指定数据限制的数据。|
 |2010|数据写入错误|如果表格包含合并单元格，则坐标参数不能用于强制类型"Table"。|用户尝试设置非统一表格（即包含合并单元格的表格）的部分数据。|
 |3000|绑定创建错误|无法绑定到当前所选内容。|用户所选内容不支持绑定。（例如，用户选择的是图像或其他不受支持的对象。）|

@@ -1,14 +1,14 @@
 ---
 title: 清单文件中的运行时（预览）
-description: ''
+description: 运行时元素指定外接程序的运行时。
 ms.date: 02/21/2020
 localization_priority: Normal
-ms.openlocfilehash: 17e53b53d55ea9547cdfc5c4f89f8f4c3a7ab75e
-ms.sourcegitcommit: dd6d00202f6466c27418247dad7bd136555a6036
+ms.openlocfilehash: 5797aa78ae3667461de48de481ff44f14c307ced
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/26/2020
-ms.locfileid: "42283870"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42720419"
 ---
 # <a name="runtimes-element-preview"></a>运行时元素（预览）
 

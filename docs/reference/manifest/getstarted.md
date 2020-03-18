@@ -1,14 +1,14 @@
 ---
 title: 清单文件中的 GetStarted 元素
-description: ''
+description: 提供在 Word、Excel、PowerPoint 和 OneNote 主机中安装此外接程序时显示的标注所使用的信息。
 ms.date: 10/09/2018
 localization_priority: Normal
-ms.openlocfilehash: 82fa1b9b62674adfb05c07536a7fdf2bbabf8f45
-ms.sourcegitcommit: e5a5ec4ba32bacd0ccd13291b4e7f4bfc42901a3
+ms.openlocfilehash: 7b4eb0e0413eff97751eac01c3dc6e5a452722aa
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/09/2019
-ms.locfileid: "37429734"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42718186"
 ---
 # <a name="getstarted-element"></a>GetStarted 元素
 

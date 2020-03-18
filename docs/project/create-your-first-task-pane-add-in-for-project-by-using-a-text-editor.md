@@ -1,14 +1,14 @@
 ---
 title: 使用文本编辑器为 Microsoft Project 创建首个任务窗格加载项
-description: ''
+description: 使用适用于 Office 加载项的 Yeoman 生成器，为 Project Standard 2013、Project Professional 2013 或更高版本创建任务窗格外接程序。
 ms.date: 10/11/2019
 localization_priority: Normal
-ms.openlocfilehash: 9c742374dec8db92e076f05d8c65712d62c72a42
-ms.sourcegitcommit: 4079903c3cc45b7d8c041509a44e9fc38da399b1
+ms.openlocfilehash: 12d5f898e642989e999034dbcf2764244b0c2379
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/11/2020
-ms.locfileid: "42596814"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42720748"
 ---
 # <a name="create-your-first-task-pane-add-in-for-microsoft-project-by-using-a-text-editor"></a>使用文本编辑器为 Microsoft Project 创建首个任务窗格加载项
 

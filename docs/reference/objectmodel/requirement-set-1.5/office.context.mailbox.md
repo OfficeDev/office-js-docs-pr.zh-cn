@@ -1,14 +1,14 @@
 ---
 title: Office.context.mailbox - 要求集 1.5
-description: ''
+description: Outlook 外接程序 API 中的 Outlook 邮箱对象的对象模型（邮箱 API 1.5 版本）。
 ms.date: 03/06/2020
 localization_priority: Normal
-ms.openlocfilehash: b74a8d7c5d41978dc6e2044f1bb1d1a803654622
-ms.sourcegitcommit: a0262ea40cd23f221e69bcb0223110f011265d13
+ms.openlocfilehash: a08a288abb9d311ba6f87a07b4cdcf7ec7dd2799
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 03/17/2020
-ms.locfileid: "42688696"
+ms.locfileid: "42720034"
 ---
 # <a name="mailbox"></a>邮箱
 

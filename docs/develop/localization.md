@@ -3,12 +3,12 @@ title: Office 加载项的本地化
 description: 您可以使用 Office JavaScript API 根据主机应用程序的区域设置来确定区域设置并显示字符串，或者根据数据的区域设置解释或显示数据。
 ms.date: 10/11/2019
 localization_priority: Normal
-ms.openlocfilehash: af91923871b72279b749dec4ff2f9fa4460a72d5
-ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
+ms.openlocfilehash: 2b7cc7e414e8d8b3da50afdb1d44b3f693834b62
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "42323789"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42718907"
 ---
 # <a name="localization-for-office-add-ins"></a>Office 加载项的本地化
 
@@ -191,7 +191,7 @@ Office JavaScript API 提供了两个属性，这些属性支持显示或解释�
 
 1. 选择“**创建新项目**”。
 
-2. 使用搜索框，输入“**加载项**”。 选择“**Word Web 外接程序**”，然后选择“**下一步**”。
+2. 使用搜索框，输入**外接程序**。 选择“**Word Web 外接程序**”，然后选择“**下一步**”。
 
 3. 将项目命名为 " **WorldReadyAddIn** "，然后选择 "**创建**"。
 
@@ -411,17 +411,17 @@ UIStrings.js 资源文件创建对象 **UIStrings**，其中包含加载项 UI �
 - [Office 加载项的设计准则](../design/add-in-design.md)
 - [Office 2013 中的语言标识符和 OptionState Id 值](/previous-versions/office/office-2013-resource-kit/cc179219(v=office.15))
 
-[DefaultLocale]:        /office/dev/add-ins/reference/manifest/defaultlocale
-[说明]:          /office/dev/add-ins/reference/manifest/description
-[DisplayName]:          /office/dev/add-ins/reference/manifest/displayname
-[IconUrl]:              /office/dev/add-ins/reference/manifest/iconurl
-[HighResolutionIconUrl]:/office/dev/add-ins/reference/manifest/highresolutioniconurl
-[Resources]:            /office/dev/add-ins/reference/manifest/resources
-[SourceLocation]:       /office/dev/add-ins/reference/manifest/sourcelocation
-[Override]:             /office/dev/add-ins/reference/manifest/override
-[DesktopSettings]:      /office/dev/add-ins/reference/manifest/desktopsettings
-[TabletSettings]:       /office/dev/add-ins/reference/manifest/tabletsettings
-[PhoneSettings]:        /office/dev/add-ins/reference/manifest/phonesettings
-[displayLanguage]:  /javascript/api/office/office.context#displaylanguage 
-[contentLanguage]:  /javascript/api/office/office.context#contentlanguage 
-[RFC 3066]: https://www.rfc-editor.org/info/rfc3066
+[DefaultLocale]:         ../reference/manifest/defaultlocale.md
+[说明]:           ../reference/manifest/description.md
+[DisplayName]:           ../reference/manifest/displayname.md
+[IconUrl]:               ../reference/manifest/iconurl.md
+[HighResolutionIconUrl]: ../reference/manifest/highresolutioniconurl.md
+[Resources]:             ../reference/manifest/resources.md
+[SourceLocation]:        ../reference/manifest/sourcelocation.md
+[Override]:              ../reference/manifest/override.md
+[DesktopSettings]:       ../reference/manifest/desktopsettings.md
+[TabletSettings]:        ../reference/manifest/tabletsettings.md
+[PhoneSettings]:         ../reference/manifest/phonesettings.md
+[displayLanguage]:       /javascript/api/office/office.context#displaylanguage
+[contentLanguage]:       /javascript/api/office/office.context#contentlanguage
+[RFC 3066]:              https://www.rfc-editor.org/info/rfc3066

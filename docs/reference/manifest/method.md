@@ -1,14 +1,14 @@
 ---
 title: 清单文件中的 Method 元素
-description: ''
+description: Method 元素指定 Office JavaScript API 中的单个方法，Office 外接程序需要这些方法才能激活。
 ms.date: 03/19/2019
 localization_priority: Normal
-ms.openlocfilehash: 74b7a8b3d0f8511d21eb0df150500850e8b93fe9
-ms.sourcegitcommit: 4079903c3cc45b7d8c041509a44e9fc38da399b1
+ms.openlocfilehash: 5da25616d25a8d7454fc847727cda38a9935b5c7
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/11/2020
-ms.locfileid: "42596891"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42720580"
 ---
 # <a name="method-element"></a>Method 元素
 
@@ -32,7 +32,7 @@ ms.locfileid: "42596891"
 |:-----|:-----|:-----|:-----|
 |名称|字符串|必需|指定由其父对象限定的所需方法的名称。 例如，若要指定`getSelectedDataAsync`方法，必须指定。 `"Document.getSelectedDataAsync"`|
 
-## <a name="remarks"></a>说明
+## <a name="remarks"></a>备注
 
 邮件`Methods`外`Method`接程序不支持和元素。有关要求集的详细信息，请参阅[Office 版本和要求集](../../develop/office-versions-and-requirement-sets.md)。
 

@@ -1,14 +1,14 @@
 ---
 title: 清单文件中的 Form 元素
-description: ''
+description: 在特定设备（台式机、平板电脑或电话）上运行时邮件外接程序将使用的窗体的 UX 设置。
 ms.date: 01/13/2020
 localization_priority: Normal
-ms.openlocfilehash: d545d471e007f0077a8310b0b847bbbf99a8f7ac
-ms.sourcegitcommit: dc42e0276007f8ab006028b9cd0cc1526c1bd100
+ms.openlocfilehash: 9b1696b2fecf6b07ee2a3c0a31611d4f2ad1f291
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "41120647"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42718207"
 ---
 # <a name="form-element"></a>Form 元素
 

@@ -1,14 +1,14 @@
 ---
 title: 使用搜索选项在 Word 加载项中查找文本
-description: ''
+description: 了解如何在 Word 外接程序中使用搜索选项
 ms.date: 09/27/2019
 localization_priority: Normal
-ms.openlocfilehash: 9f90771ebb7e6f70f2f27081ea0409e0f29b0e2d
-ms.sourcegitcommit: 4079903c3cc45b7d8c041509a44e9fc38da399b1
+ms.openlocfilehash: 54ffa3e283f0ae4f43a8d47f7d8cc3a20ea14f6d
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/11/2020
-ms.locfileid: "42596758"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42717318"
 ---
 # <a name="use-search-options-to-find-text-in-your-word-add-in"></a>使用搜索选项在 Word 加载项中查找文本
 

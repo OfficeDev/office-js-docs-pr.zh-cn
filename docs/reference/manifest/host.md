@@ -1,14 +1,14 @@
 ---
 title: 清单文件中的 Host 元素
-description: ''
+description: 指定应在其中激活外接程序的单个 Office 应用程序类型。
 ms.date: 11/05/2019
 localization_priority: Normal
-ms.openlocfilehash: 824cc6ae51eb9db713a0a9a768e3ec48e3271e95
-ms.sourcegitcommit: 08c0b9ff319c391922fa43d3c2e9783cf6b53b1b
+ms.openlocfilehash: b9f03e6d6b028ca6f4616ae81b8fd76601256793
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "38066275"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42718130"
 ---
 # <a name="host-element"></a>Host 元素
 

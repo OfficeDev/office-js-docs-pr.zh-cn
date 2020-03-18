@@ -1,14 +1,14 @@
 ---
 title: 清单文件中的 Override 元素
-description: ''
+description: Override 元素使您能够为其他区域设置指定设置的值。
 ms.date: 03/19/2019
 localization_priority: Normal
-ms.openlocfilehash: a1e11257e28d015d6fca9c9a1868e75989616e16
-ms.sourcegitcommit: 4079903c3cc45b7d8c041509a44e9fc38da399b1
+ms.openlocfilehash: 39e706dc981d405fcfcc508626578f34931efbcb
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/11/2020
-ms.locfileid: "42596877"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42718025"
 ---
 # <a name="override-element"></a>Override 元素
 

@@ -1,14 +1,14 @@
 ---
 title: 指定 Office 主机和 API 要求
-description: ''
+description: 了解如何指定你的外接程序按预期工作的 Office 主机和 API 要求。
 ms.date: 09/26/2019
 localization_priority: Normal
-ms.openlocfilehash: bf5c263da57224036aa12ec652a1cb38f73e31c0
-ms.sourcegitcommit: 4079903c3cc45b7d8c041509a44e9fc38da399b1
+ms.openlocfilehash: ab9b97f3d3232339010179097e1fd03dbeb86aa2
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/11/2020
-ms.locfileid: "42596492"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42718809"
 ---
 # <a name="specify-office-hosts-and-api-requirements"></a>指定 Office 主机和 API 要求
 
@@ -36,11 +36,11 @@ ms.locfileid: "42596492"
 
 ## <a name="before-you-begin"></a>开始之前
 
-您的外接程序必须使用最新版本的外接程序清单架构。如果您在外接程序中使用运行时检查，请确保使用最新的 Office JavaScript API （node.js）库。
+您的外接程序必须使用最新版本的外接程序清单架构。 如果您在外接程序中使用运行时检查，请确保使用最新的 Office JavaScript API （node.js）库。
 
 ### <a name="specify-the-latest-add-in-manifest-schema"></a>指定最新的外接程序清单架构
 
-外接程序的清单必须使用外接程序清单架构的版本1.1。按如下`OfficeApp`方式设置外接程序清单中的元素。
+外接程序清单必须使用外接程序清单架构版本 1.1。 按如下`OfficeApp`方式设置外接程序清单中的元素。
 
 ```XML
 <OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="TaskPaneApp">
@@ -48,7 +48,7 @@ ms.locfileid: "42596492"
 
 ### <a name="specify-the-latest-office-javascript-api-library"></a>指定最新的 Office JavaScript API 库
 
-如果您使用运行时检查，请参考内容传送网络（CDN）中的 Office JavaScript API 库的最新版本。若要执行此操作，请`script`将以下标记添加到 HTML 中。在`/1/` CDN URL 中使用可确保您引用的是最新版本的 Office .js。
+如果您使用运行时检查，请参考内容传送网络（CDN）中的 Office JavaScript API 库的最新版本。 若要执行此操作，请将以下 `script` 标记添加到 HTML 中。 使用 CDN URL 中的 `/1/` 可以确保你引用的是最新版本的 Office.js。
 
 ```HTML
 <script src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js" type="text/javascript"></script>
@@ -60,15 +60,15 @@ ms.locfileid: "42596492"
 
 ![指定 Office 主机或 API 要求时，选择最适用于加载项的选项](../images/options-for-office-hosts.png)
 
-- 如果你的外接程序在一个 Office 主机中运行， `Hosts`请在清单中设置该元素。有关详细信息，请参阅[Set The Hosts 元素](#set-the-hosts-element)。
+- 如果你的外接程序在一个 Office 主机中运行， `Hosts`请在清单中设置该元素。 有关详细信息，请参阅 [设置 Hosts 元素](#set-the-hosts-element)。
 
-- 若要设置 Office 主机必须支持的最低要求集或 API 成员以运行您的外接程序，请在`Requirements`清单中设置该元素。有关详细信息，请参阅[在清单中设置需求元素](#set-the-requirements-element-in-the-manifest)。
+- 若要设置 Office 主机必须支持的最低要求集或 API 成员以运行您的外接程序，请在`Requirements`清单中设置该元素。 有关详细信息，请参阅[在清单中设置 Requirements 元素](#set-the-requirements-element-in-the-manifest)。
 
 - 如果特定要求集或 API 成员可在 Office 主机中使用，在这种情况下如果你想要提供其他功能，请在外接程序的 JavaScript 代码中执行运行时检查。 例如，如果加载项在 Excel 2016 中运行，请使用 Excel JavaScript API 中的 API 成员提供附加功能。 有关详细信息，请参阅[在你的 JavaScript 代码中使用运行时检查](#use-runtime-checks-in-your-javascript-code)。
 
 ## <a name="set-the-hosts-element"></a>设置 Hosts 元素
 
-若要使您的外接程序在一个 Office 主机应用程序中`Hosts`运行`Host` ，请使用清单中的和元素。如果不指定`Hosts`元素，则外接程序将在所有主机中运行。
+若要使您的外接程序在一个 Office 主机应用程序中`Hosts`运行`Host` ，请使用清单中的和元素。 如果不指定`Hosts`元素，则外接程序将在所有主机中运行。
 
 例如，以下`Hosts`和`Host`声明指定外接程序将使用任何版本的 excel，其中包括在 Web、Windows 和 iPad 上的 excel。
 
@@ -78,7 +78,7 @@ ms.locfileid: "42596492"
 </Hosts>
 ```
 
-`Hosts`元素可以包含一个或多个`Host`元素。`Host`元素指定你的外接程序所需的 Office 主机。`Name`属性是必需的，并且可设置为下列值之一。
+`Hosts`元素可以包含一个或多个`Host`元素。 `Host`元素指定你的外接程序所需的 Office 主机。 `Name`属性是必需的，并且可设置为下列值之一。
 
 | 名称          | Office 主机应用程序                                                                  |
 |:--------------|:------------------------------------------------------------------------------------------|
@@ -98,7 +98,7 @@ ms.locfileid: "42596492"
 
 ## <a name="set-the-requirements-element-in-the-manifest"></a>在清单中设置 Requirements 元素
 
-`Requirements`元素指定 Office 主机运行外接程序时必须支持的最低要求集或 API 成员。`Requirements`元素可以指定要求集和外接程序中使用的各个方法。在外接程序清单架构的版本1.1 中，除`Requirements` Outlook 外接程序外接程序外接程序中，该元素是可选的。
+`Requirements`元素指定 Office 主机运行外接程序时必须支持的最低要求集或 API 成员。 `Requirements`元素可以指定要求集和外接程序中使用的各个方法。 在外接程序清单架构的版本1.1 中，除`Requirements` Outlook 外接程序外接程序外接程序中，该元素是可选的。
 
 > [!WARNING]
 > 仅使用`Requirements`元素指定你的外接程序必须使用的关键要求集或 API 成员。 如果 Office 主机或平台不支持`Requirements`元素中指定的要求集或 API 成员，则外接程序将不会在该主机或平台中运行，并且不会显示在我的**外接程序**中。相反，我们建议您让外接程序在 Office 主机的所有平台上可用，如 web、Windows 和 iPad 上的 Excel。 若要使您的外接程序在_所有_Office 主机和平台上可用，请使用运行`Requirements`时检查而不是元素。
@@ -125,13 +125,13 @@ ms.locfileid: "42596492"
 
 - `Requirements`元素包含`Sets`和`Methods`子元素。
 
-- `Sets`元素可以包含一个或多个`Set`元素。`DefaultMinVersion`指定所有子`MinVersion` `Set`元素的默认值。
+- `Sets`元素可以包含一个或多个`Set`元素。 `DefaultMinVersion`指定所有子`MinVersion` `Set`元素的默认值。
 
 - `Set`元素指定 Office 主机必须支持的要求集以运行外接程序。 `Name`属性指定要求集的名称。 `MinVersion`指定要求集的最低版本。 `MinVersion`重写的值`DefaultMinVersion`有关您的 API 成员所属的要求集和要求集版本的详细信息，请参阅[Office 外接程序要求集](../reference/requirement-sets/office-add-in-requirement-sets.md)。
 
-- `Methods`元素可以包含一个或多个`Method`元素。 不能将`Methods`元素与 Outlook 外接程序一起使用。
+- `Methods`元素可以包含一个或多个`Method`元素。不能将`Methods`元素与 Outlook 外接程序一起使用。
 
-- `Method`元素指定在运行外接程序的 Office 主机中必须支持的单个方法。 属性`Name`是必需的，并指定通过其父对象限定的方法的名称。
+- `Method`元素指定在运行外接程序的 Office 主机中必须支持的单个方法。属性`Name`是必需的，并指定通过其父对象限定的方法的名称。
 
 ## <a name="use-runtime-checks-in-your-javascript-code"></a>在你的 JavaScript 代码中使用运行时检查
 

@@ -1,14 +1,14 @@
 ---
 title: 清单文件中的 Group 元素
-description: ''
+description: 定义选项卡中的一组 UI 控件。
 ms.date: 12/02/2019
 localization_priority: Normal
-ms.openlocfilehash: 27a168ea17352482e955e7a0d1f8267c7d6b17d8
-ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
+ms.openlocfilehash: 6fe07497e98bd77aad7ad296850a0b9f9e9bf9a4
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "42324860"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42718179"
 ---
 # <a name="group-element"></a>Group 元素
 

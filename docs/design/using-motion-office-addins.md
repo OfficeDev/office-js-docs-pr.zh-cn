@@ -1,14 +1,14 @@
 ---
 title: 在 Office 加载项中使用动作
-description: ''
+description: 获取在 Office 外接程序中使用转换、动作或动画的最佳实践。
 ms.date: 07/19/2019
 localization_priority: Normal
-ms.openlocfilehash: d347cbf9d5879d121b226974f70044cf8a4febb7
-ms.sourcegitcommit: 6d9b4820a62a914c50cef13af8b80ce626034c26
+ms.openlocfilehash: effbd2c3e1e811d9f73c345c80a55a350db909d2
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "35804588"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42719264"
 ---
 # <a name="using-motion-in-office-add-ins"></a>在 Office 加载项中使用动作
 

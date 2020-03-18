@@ -3,12 +3,12 @@ title: Office 加载项中的任务窗格
 description: 任务窗格允许用户访问界面控件，此类控件运行代码以修改文档或电子邮件，或显示数据源中的数据。
 ms.date: 01/14/2020
 localization_priority: Normal
-ms.openlocfilehash: 048c6a508a9d8106d129469880396a564b26aea4
-ms.sourcegitcommit: a0262ea40cd23f221e69bcb0223110f011265d13
+ms.openlocfilehash: 862cfc94bb49a1454453c877dade79a22e073adc
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 03/17/2020
-ms.locfileid: "42688654"
+ms.locfileid: "42719159"
 ---
 # <a name="task-panes-in-office-add-ins"></a>Office 加载项中的任务窗格
  
@@ -23,7 +23,7 @@ ms.locfileid: "42688654"
 |**允许事项**|**禁止事项**|
 |:-----|:--------|
 |<ul><li>在标题中包括外接程序的名称。</li></ul>|<ul><li>请勿在标题中追加公司名称。</li></ul>|
-|<ul><li>在标题中使用简短的描述性名称。</li></ul>|<ul><li>不要在外接程序标题中追加“add-in”、“for Word”或“for Office”等字符串。</li></ul>|
+|<ul><li>在标题中使用简短的描述性名称。</li></ul>|<ul><li>不要将字符串（例如 "外接程序"、"for Word" 或 "for Office"）追加到外接程序的标题。</li></ul>|
 |<ul><li>在加载项顶部包括某些导航或命令元素，如命令栏或透视。</li></ul>||
 |<ul><li>在外接程序底部包括品牌元素，如品牌栏，除非要在 Outlook 内使用外接程序。</li></ul>||
 

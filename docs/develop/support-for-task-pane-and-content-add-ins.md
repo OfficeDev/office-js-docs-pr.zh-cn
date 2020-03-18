@@ -1,14 +1,14 @@
 ---
 title: 对 Office 2013 内容和任务窗格加载项的 Office JavaScript API 支持
-description: ''
+description: 使用 Office JavaScript API 在 Office 2013 中创建任务窗格。
 ms.date: 02/27/2020
 localization_priority: Normal
-ms.openlocfilehash: 043ce34b05b3b158dcf4162fb49cfe94a791dad1
-ms.sourcegitcommit: 4079903c3cc45b7d8c041509a44e9fc38da399b1
+ms.openlocfilehash: 185397073a9d62a868b5ebc065d94c57b778e1e7
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/11/2020
-ms.locfileid: "42596653"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42718795"
 ---
 # <a name="office-javascript-api-support-for-content-and-task-pane-add-ins-in-office-2013"></a>对 Office 2013 中内容和任务窗格外接程序的 Office JavaScript API 支持
 

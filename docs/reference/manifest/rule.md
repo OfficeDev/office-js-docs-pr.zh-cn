@@ -1,18 +1,18 @@
 ---
 title: 清单文件中的 Rule 元素
-description: ''
-ms.date: 03/19/2019
+description: Rule 元素指定应为此上下文邮件外接程序计算的激活规则。
+ms.date: 03/16/2020
 localization_priority: Normal
-ms.openlocfilehash: 78fb38d8fb18c276bfe2eed1bd5b52659cadcaa3
-ms.sourcegitcommit: a3ddfdb8a95477850148c4177e20e56a8673517c
+ms.openlocfilehash: 06d9985615617e50567dcf614268d9181989f2a1
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "42165529"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42720433"
 ---
 # <a name="rule-element"></a>Rule 元素
 
-指定应针对此上下文邮件加载项计算的激活规则。
+指定应针对此上下文邮件外接程序计算的激活规则。
 
 **加载项类型：** 邮件上下文加载项
 

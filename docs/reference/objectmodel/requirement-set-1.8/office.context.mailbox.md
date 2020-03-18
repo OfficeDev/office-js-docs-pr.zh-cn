@@ -1,14 +1,14 @@
 ---
 title: "\"Context.subname\"-\"邮箱-要求集 1.8\""
-description: ''
+description: 适用于 context.subname 的对象模型（要求集1.8）
 ms.date: 03/06/2020
 localization_priority: Normal
-ms.openlocfilehash: 579ff10ec46646d2430537f8cb785af3fd9bb669
-ms.sourcegitcommit: 153576b1efd0234c6252433e22db213238573534
+ms.openlocfilehash: 9a5874da1ad979618fcbfe17cc5b3ddd4e516f49
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/07/2020
-ms.locfileid: "42562032"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42717514"
 ---
 # <a name="mailbox"></a>邮箱
 
@@ -35,7 +35,7 @@ ms.locfileid: "42562032"
 | [restUrl](/javascript/api/outlook/office.mailbox?view=outlook-js-1.8#resturl) | ReadItem | 撰写<br>读取 | String | [1.5](../requirement-set-1.5/outlook-requirement-set-1.5.md) |
 | [userProfile](/javascript/api/outlook/office.mailbox?view=outlook-js-1.8#userprofile) | ReadItem | 撰写<br>读取 | [UserProfile](/javascript/api/outlook/office.userprofile?view=outlook-js-1.8) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 
-## <a name="methods"></a>Methods
+## <a name="methods"></a>方法
 
 | 方法 | 最低<br>权限级别 | 型号 | 最低<br>要求集 |
 |---|---|---|:---:|

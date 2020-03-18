@@ -1,14 +1,14 @@
 ---
 title: Office 命名空间-要求集1。1
-description: ''
+description: Outlook 外接程序 API 的顶级命名空间的对象模型（邮箱 API 1.1 版本）。
 ms.date: 12/16/2019
 localization_priority: Normal
-ms.openlocfilehash: 68363f101b4c818853cc118e39d05784c56ef3ad
-ms.sourcegitcommit: a3ddfdb8a95477850148c4177e20e56a8673517c
+ms.openlocfilehash: e881f0f9eac054f2b95436504da24cc7d4dec86d
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "42165473"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42720188"
 ---
 # <a name="office"></a>Office
 
@@ -51,7 +51,7 @@ ms.locfileid: "42165473"
 
 ##### <a name="properties"></a>属性：
 
-|名称| 类型| 说明|
+|姓名| 类型| 说明|
 |---|---|---|
 |`Succeeded`| String|调用成功。|
 |`Failed`| String|调用失败。|
@@ -78,7 +78,7 @@ ms.locfileid: "42165473"
 
 ##### <a name="properties"></a>属性：
 
-|名称| 类型| 说明|
+|姓名| 类型| 说明|
 |---|---|---|
 |`Html`| String|请求以 HTML 格式返回的数据。|
 |`Text`| String|请求以文本格式返回的数据。|
@@ -105,7 +105,7 @@ ms.locfileid: "42165473"
 
 ##### <a name="properties"></a>属性：
 
-|名称| 类型| 说明|
+|姓名| 类型| 说明|
 |---|---|---|
 |`Body`| String|数据源来自邮件的正文。|
 |`Subject`| String|数据源来自邮件的主题。|

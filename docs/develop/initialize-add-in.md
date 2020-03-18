@@ -1,16 +1,16 @@
 ---
-title: 初始化 Office 外接程序
+title: 初始化 Office 加载项
 description: 了解如何初始化 Office 外接程序。
 ms.date: 02/27/2020
 localization_priority: Normal
-ms.openlocfilehash: 5adce84867a96917135ca379bbd032fcc3bc824a
-ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
+ms.openlocfilehash: ca7b21c35fc82011c673cb83d077a89cc29f56eb
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "42325008"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42718935"
 ---
-# <a name="initialize-your-office-add-in"></a>初始化 Office 外接程序
+# <a name="initialize-your-office-add-in"></a>初始化 Office 加载项
 
 Office 加载项通常使用启动逻辑执行以下操作：
 
@@ -139,7 +139,7 @@ Office.initialize = function (reason) {
 > [!NOTE]
 > 即使没有启动逻辑，也应在加载项 JavaScript 加载时调用 `Office.onReady()` 或将空函数分配到 `Office.initialize`。 有些 Office 主机和平台组合只有在发生这些情况之一后才会加载任务窗格。 以下示例显示了这两种方法。
 >
->```js  
+>```js    
 >Office.onReady();
 >```
 >

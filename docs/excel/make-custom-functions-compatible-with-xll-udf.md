@@ -3,12 +3,12 @@ title: 使用 XLL 用户定义的函数扩展自定义函数
 description: 启用与自定义函数具有等效功能的 Excel XLL 用户定义函数的兼容性
 ms.date: 07/31/2019
 localization_priority: Normal
-ms.openlocfilehash: 35b6ade70e21ca36efec928d030f79c27cc38691
-ms.sourcegitcommit: 212c810f3480a750df779777c570159a7f76054a
+ms.openlocfilehash: 8c83ea8a5b97cd4f23a9e25fddabe3d178b1e482
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/17/2020
-ms.locfileid: "41217216"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42717038"
 ---
 # <a name="extend-custom-functions-with-xll-user-defined-functions"></a>使用 XLL 用户定义的函数扩展自定义函数
 
@@ -60,9 +60,9 @@ ms.locfileid: "41217216"
 |---------|---------|---------|---------|
 | 支持的平台 | Windows | Windows、macOS、web 浏览器 | Windows、macOS、web 浏览器 |
 | 支持的文件格式 | .XLSX、XLSB、XLSM、XLS | .XLSX、XLSB、XLSM | .XLSX、XLSB、XLSM |
-| 公式自动完成 | No | 可访问 | 是 |
-| 媒体 | 可通过 xlfRTD 和 XLL 回调实现。 | No | 可访问 |
-| 函数的本地化 | No | 否。 名称和 ID 必须与现有 XLL 的函数相匹配。 | 是 |
+| 公式自动完成 | 否 | 必需 | 是 |
+| 媒体 | 可通过 xlfRTD 和 XLL 回调实现。 | 否 | 必需 |
+| 函数的本地化 | 否 | 否。 名称和 ID 必须与现有 XLL 的函数相匹配。 | 是 |
 | 可变函数 | 是 | 是 | 是 |
 | 多线程重新计算支持 | 是 | 是 | 是 |
 | 计算行为 | 无 UI。 在计算过程中，Excel 可能会无响应。 | 用户将看到 #BUSY！ 在返回结果之前。 | 用户将看到 #BUSY！ 在返回结果之前。 |

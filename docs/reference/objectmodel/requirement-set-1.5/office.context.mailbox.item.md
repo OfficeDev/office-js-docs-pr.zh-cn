@@ -1,20 +1,20 @@
 ---
 title: Office.context.mailbox.item - 要求集 1.5
-description: ''
+description: Outlook 外接程序 API 中的 Outlook 项目对象的对象模型（邮箱 API 1.5 版本）。
 ms.date: 03/06/2020
 localization_priority: Normal
-ms.openlocfilehash: 440c387266058628854f7241a9b3908e16f1bd8a
-ms.sourcegitcommit: 153576b1efd0234c6252433e22db213238573534
+ms.openlocfilehash: 362ac1c4fd6dbbfd1086aa1d7bc3e8b825ca7dae
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/07/2020
-ms.locfileid: "42562008"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42720048"
 ---
 # <a name="item"></a>item
 
 ### <a name="officecontextmailboxitem"></a>[Office](office.md)[.context](office.context.md)[.mailbox](office.context.mailbox.md).item
 
-`item`用于访问当前选定的邮件、会议请求或约会。您可以通过使用`itemType`属性来确定项目的类型。
+`item`用于访问当前选定的邮件、会议请求或约会。 您可以通过使用`itemType`属性来确定项目的类型。
 
 ##### <a name="requirements"></a>Requirements
 
@@ -81,7 +81,7 @@ ms.locfileid: "42562008"
 | to | ReadItem | [邮件撰写](/javascript/api/outlook/office.messagecompose?view=outlook-js-1.5#to) | [收件人](/javascript/api/outlook/office.recipients) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 | | | [邮件读取](/javascript/api/outlook/office.messageread?view=outlook-js-1.5#to) | <[EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails)> | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 
-## <a name="methods"></a>Methods
+## <a name="methods"></a>方法
 
 | 方法 | 最低<br>权限级别 | 详细信息（按模式） | 最低<br>要求集 |
 |---|---|---|:---:|

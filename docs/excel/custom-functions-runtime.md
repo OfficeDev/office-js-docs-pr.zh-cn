@@ -3,12 +3,12 @@ ms.date: 05/08/2019
 description: 了解开发使用新 JavaScript 运行时的 Excel 自定义函数时的关键方案。
 title: Excel 自定义函数的运行时
 localization_priority: Normal
-ms.openlocfilehash: bb73ab2f20eadbac3f5fc97e272d69fe8bb983cd
-ms.sourcegitcommit: a0262ea40cd23f221e69bcb0223110f011265d13
+ms.openlocfilehash: 2cb950cd6f5f78ed76b19a1fa443720d7cfb86a2
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 03/17/2020
-ms.locfileid: "42688568"
+ms.locfileid: "42719495"
 ---
 # <a name="runtime-for-excel-custom-functions"></a>Excel 自定义函数的运行时
 

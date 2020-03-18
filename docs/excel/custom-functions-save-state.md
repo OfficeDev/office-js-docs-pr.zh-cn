@@ -3,12 +3,12 @@ ms.date: 07/10/2019
 description: 使用 `OfficeRuntime.storage` 保存自定义函数中的状态。
 title: 保存并共享自定义函数中的状态
 localization_priority: Normal
-ms.openlocfilehash: 397c785a4dedb7d2e9d1b38c8db0edb811448e1d
-ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
+ms.openlocfilehash: 8b55bfe61595b91f01c587282dc3f34887ce50fb
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "41950808"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42717199"
 ---
 # <a name="save-and-share-state-in-custom-functions"></a>保存并共享自定义函数中的状态
 

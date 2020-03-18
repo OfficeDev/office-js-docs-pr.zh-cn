@@ -3,12 +3,12 @@ ms.date: 07/10/2019
 description: 了解 Excel 自定义函数的运行时。
 title: 自定义函数体系结构
 localization_priority: Normal
-ms.openlocfilehash: ced62f7efb826862eee8079a66fa657ea466e4b3
-ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
+ms.openlocfilehash: a11ac40591e11725bb35b16bf53fa07062541c8f
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "41950352"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42718767"
 ---
 # <a name="custom-functions-architecture"></a>自定义函数体系结构
 
@@ -24,9 +24,9 @@ Office Web 加载项可以作为任务窗格或内容窗格与用户进行交互
 
 下表突出显示了自定义函数运行时与浏览器引擎运行时之间的差异：
 
-| 自定义函数运行时  | 浏览器引擎运行时    |
-|------------------------------------------------------------------ |-------------------------------------------------------------------------------------------------------------- |
-| 支持从单元格中返回值    | 支持 Office.js API 和 UI 元素   |
+| 自定义函数运行时     | 浏览器引擎运行时     |
+|------------------------------------------------------------------    |--------------------------------------------------------------------------------------------------------------    |
+| 支持从单元格中返回值     | 支持 Office.js API 和 UI 元素     |
 | 没有 `localStorage` 对象，改用 `OfficeRuntime.storage` 对象。     | 具有 `localStorage` 对象，可以选择使用 `OfficeRuntime.storage` 对象。     |
 | 不支持与 DOM 交互，或者加载依赖于 DOM 的库，如 jQuery。    | 支持与 DOM 交互，和加载依赖于 DOM 的库。 |
 

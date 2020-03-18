@@ -1,14 +1,14 @@
 ---
 title: 通过 Word 加载项获取整个文档
-description: ''
+description: 了解如何从 Word 加载项获取整个文档
 ms.date: 12/04/2017
 localization_priority: Normal
-ms.openlocfilehash: db8a9c095e7a1b4efa1e47228440741def0f5e97
-ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
+ms.openlocfilehash: ce9e25639d8b93d8908ed967ead2f9e9bb47ccfb
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "41950486"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42717332"
 ---
 # <a name="get-the-whole-document-from-an-add-in-for-powerpoint-or-word"></a>从 PowerPoint 或 Word 相关外接程序获取整个文档
 
