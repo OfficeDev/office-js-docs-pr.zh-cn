@@ -1,14 +1,14 @@
 ---
 title: 设计 Office 加载项
-description: ''
+description: 了解 Office 加载项视觉设计的最佳做法。
 ms.date: 06/20/2019
 localization_priority: Priority
-ms.openlocfilehash: 5d8cf0cb56a4a77eb54ea7df68350773ead352d2
-ms.sourcegitcommit: 350f5c6954dec3e9384e2030cd3265aaba7ae904
+ms.openlocfilehash: 5ed68b81cb4e3edfbecd56733ab213716bce6401
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/23/2019
-ms.locfileid: "40851262"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42718585"
 ---
 # <a name="design-office-add-ins"></a>设计 Office 加载项
 

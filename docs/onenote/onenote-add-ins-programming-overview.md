@@ -1,16 +1,16 @@
 ---
 title: OneNote JavaScript API 编程概述
-description: ''
+description: 了解有关适用于 OneNote 网页版加载项的 OneNote JavaScript API。
 ms.date: 02/19/2020
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: a4e060570f4eccc3fff9017042ff6bf278714ed6
-ms.sourcegitcommit: 4079903c3cc45b7d8c041509a44e9fc38da399b1
+ms.openlocfilehash: 0e551b75d55da77d383e1335c27724834bfb2df0
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/11/2020
-ms.locfileid: "42596849"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42720895"
 ---
 # <a name="onenote-javascript-api-programming-overview"></a>OneNote JavaScript API 编程概述
 

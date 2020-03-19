@@ -4,12 +4,12 @@ description: 在本教程中，你将生成一个可将 GitHub gist 插入到新
 ms.date: 12/10/2019
 ms.prod: outlook
 localization_priority: Priority
-ms.openlocfilehash: 8ea955cb26ead840171ba81e1290658474dbd6d5
-ms.sourcegitcommit: a3ddfdb8a95477850148c4177e20e56a8673517c
+ms.openlocfilehash: 49553a7194eceb4ec86fc39769ce369cff092bce
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "42165865"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42719754"
 ---
 # <a name="tutorial-build-a-message-compose-outlook-add-in"></a>教程：生成邮件撰写 Outlook 外接程序
 

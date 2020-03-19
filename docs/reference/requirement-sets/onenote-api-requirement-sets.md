@@ -1,15 +1,15 @@
 ---
 title: OneNote JavaScript API 要求集
-description: ''
+description: 了解有关 OneNote JavaScript API 要求集的详细信息
 ms.date: 07/17/2019
 ms.prod: onenote
 localization_priority: Priority
-ms.openlocfilehash: d936d5f0c7c40cf79442eac76dbb9d94748a37a8
-ms.sourcegitcommit: 4079903c3cc45b7d8c041509a44e9fc38da399b1
+ms.openlocfilehash: 7717ff20fe4a7f29621a30df7d01d122111021db
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/11/2020
-ms.locfileid: "42596947"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42717444"
 ---
 # <a name="onenote-javascript-api-requirement-sets"></a>OneNote JavaScript API 要求集
 

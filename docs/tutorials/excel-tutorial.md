@@ -4,12 +4,12 @@ description: 在本教程中，你将学习如何构建一个 Excel 外接程序
 ms.date: 01/16/2020
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: 70df5e7e78abf64bf36d33cade0b40ff8e3c18f4
-ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
+ms.openlocfilehash: 8d16369908f5885e20c145581c021ba69855e968
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "41950892"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42719789"
 ---
 # <a name="tutorial-create-an-excel-task-pane-add-in"></a>教程：创建 Excel 任务窗格加载项
 
@@ -53,9 +53,9 @@ ms.locfileid: "41950892"
 
 1. 在代码编辑器中打开项目。
 
-2. 打开 **./src/taskpane/taskpane.html** 文件。  此文件含有任务窗格的 HTML 标记。
+2. 打开 ./src/taskpane/taskpane.html**** 文件。  此文件含有任务窗格的 HTML 标记。
 
-3. 定位 `<main>` 元素并删除在开始 `<main>` 标记后和关闭 `</main>` 标记前出现的所有行。
+3. 找到 `<main>` 元素并删除在开始 `<main>` 标记后和关闭 `</main>` 标记前出现的所有行。
 
 4. 打开 `<main>` 标记后立即添加下列标记：
 
@@ -63,7 +63,7 @@ ms.locfileid: "41950892"
     <button class="ms-Button" id="create-table">Create Table</button><br/><br/>
     ```
 
-5. 打开 **./src/taskpane/taskpane.js** 文件。 此文件包含用于加快任务窗格与 Office 托管应用程序之间的交互的 Office JavaScript API 代码。
+5. 打开 ./src/taskpane/taskpane.js**** 文件。 此文件包含用于加快任务窗格与 Office 托管应用程序之间的交互的 Office JavaScript API 代码。
 
 6. 执行以下操作，删除对 `run` 按钮和 `run()` 函数的所有引用：
 
@@ -71,7 +71,7 @@ ms.locfileid: "41950892"
 
     - 查找并删除整个 `run()` 函数。
 
-7. 在 `Office.onReady` 方法调用中，定位行 `if (info.host === Office.HostType.Excel) {` 并紧接着行添加下列代码。 注意：
+7. 在 `Office.onReady` 方法调用中，找到行 `if (info.host === Office.HostType.Excel) {` 并紧接着行添加下列代码。 注意：
 
     - 此代码的第一部分用于确定用户的 Excel 版本是否支持包含本系列教程将使用的所有 API 的 Excel.js 版本。 在生产加载项中，若要隐藏或禁用调用不受支持的 API 的 UI，请使用条件块的主体。 这样一来，用户仍可以使用 Excel 版本支持的加载项部分。
 
@@ -163,7 +163,7 @@ ms.locfileid: "41950892"
     - 最后，它确保了列宽和行高足以容纳最长（或最高）的数据项。 请注意，此代码必须获取要格式化的 `Range` 对象。 `TableColumn` 和 `TableRow` 对象没有格式属性。
 
     ```js
-    expensesTable.columns.getItemAt(3).getRange().numberFormat = [['€#,##0.00']];
+    expensesTable.columns.getItemAt(3).getRange().numberFormat = [['&euro;#,##0.00']];
     expensesTable.getRange().format.autofitColumns();
     expensesTable.getRange().format.autofitRows();
     ```
@@ -214,15 +214,15 @@ ms.locfileid: "41950892"
 
 1. 打开 **./src/taskpane/taskpane.html** 文件。
 
-2. 定位 `<button>` 按钮的 `create-table` 元素，并在行后添加下列标记：
+2. 找到 `<button>` 按钮的 `create-table` 元素，并在该行后添加下列标记：
 
     ```html
     <button class="ms-Button" id="filter-table">Filter Table</button><br/><br/>
     ```
 
-3. 打开 **./src/taskpane/taskpane.js** 文件。
+3. 打开 ./src/taskpane/taskpane.js**** 文件。
 
-4. 在 `Office.onReady` 方法调用中，定位分配点击事件至 `create-table` 按钮的行，并在行后添加虾类代码：
+4. 在 `Office.onReady` 方法调用中，找到用于将单击处理程序分配到 `create-table` 按钮的行，并在该行后添加以下代码：
 
     ```js
     document.getElementById("filter-table").onclick = filterTable;
@@ -265,15 +265,15 @@ ms.locfileid: "41950892"
 
 1. 打开 **./src/taskpane/taskpane.html** 文件。
 
-2. 定位 `<button>` 按钮的 `filter-table` 元素，并在行后添加下列标记： 
+2. 找到 `<button>` 按钮的 `filter-table` 元素，并在该行后添加下列标记： 
 
     ```html
     <button class="ms-Button" id="sort-table">Sort Table</button><br/><br/>
     ```
 
-3. 打开 **./src/taskpane/taskpane.js** 文件。
+3. 打开 ./src/taskpane/taskpane.js**** 文件。
 
-4. 在 `Office.onReady` 方法调用中，定位分配点击事件至 `filter-table` 按钮的行，并在行后添加虾类代码：
+4. 在 `Office.onReady` 方法调用中，找到用于将单击处理程序分配到 `filter-table` 按钮的行，并在该行后添加以下代码：
 
     ```js
     document.getElementById("sort-table").onclick = sortTable;
@@ -341,15 +341,15 @@ ms.locfileid: "41950892"
 
 1. 打开 **./src/taskpane/taskpane.html** 文件。
 
-2. 定位 `<button>` 按钮的 `sort-table` 元素，并在行后添加下列标记： 
+2. 找到 `<button>` 按钮的 `sort-table` 元素，并在该行后添加下列标记： 
 
     ```html
     <button class="ms-Button" id="create-chart">Create Chart</button><br/><br/>
     ```
 
-3. 打开 **./src/taskpane/taskpane.js** 文件。
+3. 打开 ./src/taskpane/taskpane.js**** 文件。
 
-4. 在 `Office.onReady` 方法调用中，定位分配点击事件至 `sort-table` 按钮的行，并在行后添加虾类代码：
+4. 在 `Office.onReady` 方法调用中，找到用于将单击处理程序分配到 `sort-table` 按钮的行，并在该行后添加以下代码：
 
     ```js
     document.getElementById("create-chart").onclick = createChart;
@@ -402,7 +402,7 @@ ms.locfileid: "41950892"
    
    - `setPosition` 方法的参数指定应包含图表的工作表区域的左上角和右下角单元格。 Excel 可以调整行宽等设置，以便图表能够适应所提供的空间。
    
-   - “系列”是指表格列中的一组数据点。 因为表格中只有一个非字符串列，所以 Excel 推断此列就是要绘制成图表的唯一一列数据点。 它将其他列解释为图表标签。 因此，图表中只有一个系列，它的索引为 0。 这是要标记为“金额（欧元）”的系列。
+   - “系列”是指表格列中的一组数据点。 因为表格中只有一个非字符串列，所以 Excel 推断此列就是要绘制成图表的唯一一列数据点。 它将其他列解释为图表标签。 因此，图表中只有一个系列，它的索引为 0。 这是要标记为“金额（&euro;）”的系列。
 
     ```js
     chart.setPosition("A15", "F30");
@@ -411,7 +411,7 @@ ms.locfileid: "41950892"
     chart.legend.format.fill.setSolidColor("white");
     chart.dataLabels.format.font.size = 15;
     chart.dataLabels.format.font.color = "black";
-    chart.series.getItemAt(0).name = 'Value in €';
+    chart.series.getItemAt(0).name = 'Value in &euro;';
     ```
 
 9. 验证是否已保存了对项目所做的所有更改。
@@ -436,15 +436,15 @@ ms.locfileid: "41950892"
 
 1. 打开 **./src/taskpane/taskpane.html** 文件。
 
-2. 定位 `<button>` 按钮的 `create-chart` 元素，并在行后添加下列标记： 
+2. 找到 `<button>` 按钮的 `create-chart` 元素，并在该行后添加下列标记： 
 
     ```html
     <button class="ms-Button" id="freeze-header">Freeze Header</button><br/><br/>
     ```
 
-3. 打开 **./src/taskpane/taskpane.js** 文件。
+3. 打开 ./src/taskpane/taskpane.js**** 文件。
 
-4. 在 `Office.onReady` 方法调用中，定位分配点击事件至 `create-chart` 按钮的行，并在行后添加虾类代码：
+4. 在 `Office.onReady` 方法调用中，找到用于将单击处理程序分配到 `create-chart` 按钮的行，并在该行后添加以下代码：
 
     ```js
     document.getElementById("freeze-header").onclick = freezeHeader;
@@ -948,7 +948,7 @@ ms.locfileid: "41950892"
     }
     ```
 
-8. 将 `TODO1` 替换为下面的代码。 注意：
+8. 将 `TODO1` 替换为以下代码。注意：
 
    - `displayDialogAsync` 方法在屏幕中央打开对话框。
 
