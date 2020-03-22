@@ -1,14 +1,14 @@
 ---
 title: 使用 Excel JavaScript API 处理工作簿
-description: 演示如何使用 Excel JavaScript API 对工作簿执行常见任务的代码示例。
-ms.date: 10/21/2019
+description: 说明如何使用 Excel JavaScript API 对工作簿或应用程序级别的功能执行常见任务的代码示例。
+ms.date: 03/19/2020
 localization_priority: Normal
-ms.openlocfilehash: 0f86278cdb52edc16e5c43323d874d985564de3a
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: aa30f888bf6de1926d2a36522febf0001e1e6130
+ms.sourcegitcommit: 6c381634c77d316f34747131860db0a0bced2529
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42719621"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "42891024"
 ---
 # <a name="work-with-workbooks-using-the-excel-javascript-api"></a>使用 Excel JavaScript API 处理工作簿
 
@@ -51,7 +51,7 @@ Excel.createWorkbook();
 
 此外，`createWorkbook` 方法还可以创建现有工作簿的副本。 此方法接受 .xlsx 文件的 base64 编码字符串表示形式作为可选参数。 若字符串参数为有效的 .xlsx 文件，则生成的工作簿为该文件的副本。
 
-可以利用[文件切片](/javascript/api/office/office.document#getfileasync-filetype--options--callback-)获取加载项的当前工作簿，作为一个 base64 编码字符串。 可以使用 [FileReader](https://developer.mozilla.org/docs/Web/API/FileReader) 类将文件转换为所需的 base64 编码字符串，如以下示例所示。
+可以使用[文件切片](/javascript/api/office/office.document#getfileasync-filetype--options--callback-)以 base64 编码的字符串形式获取外接程序的当前工作簿。 可以使用 [FileReader](https://developer.mozilla.org/docs/Web/API/FileReader) 类将文件转换为所需的 base64 编码字符串，如以下示例所示。
 
 ```js
 var myFile = document.getElementById("file");
@@ -184,6 +184,41 @@ Excel.run(function (context) {
         console.log("Workbook needs review : " + needsReview.value);
     });
 }).catch(errorHandlerFunction);
+```
+
+## <a name="access-application-culture-settings-preview"></a>Access 应用程序的区域性设置（预览）
+
+工作簿具有可影响特定数据显示方式的语言和区域性设置。 当您的外接程序的用户在不同语言和区域性中共享工作簿时，这些设置可以帮助本地化数据。 您的外接程序可以使用字符串分析根据系统区域性设置本地化数字、日期和时间的格式，这样每个用户都可以看到自己的区域性格式的数据。
+
+`Application.cultureInfo`将系统区域性设置定义为[CultureInfo](/javascript/api/excel/excel.cultureinfo)对象。 这包含数字小数分隔符或日期格式等设置。
+
+某些区域性设置可以[通过 EXCEL UI 进行更改](https://support.office.com/article/Change-the-character-used-to-separate-thousands-or-decimals-c093b545-71cb-4903-b205-aebb9837bd1e)。 系统设置将保留在`CultureInfo`对象中。 任何本地更改都将保留为[应用程序](/javascript/api/excel/excel.application)级属性，例如`Application.decimalSeparator`。
+
+下面的示例将数字字符串的十进制分隔符字符从 "，" 更改为系统设置所用的字符。
+
+```js
+// This will convert a number like "14,37" to "14.37"
+// (assuming the system decimal separator is ".").
+Excel.run(function (context) {
+    var sheet = context.workbook.worksheets.getItem("Sample");
+    var decimalSource = sheet.getRange("B2");
+    decimalSource.load("values");
+    context.application.cultureInfo.numberFormat.load("numberDecimalSeparator");
+
+    return context.sync().then(function() {
+        var systemDecimalSeparator =
+            context.application.cultureInfo.numberFormat.numberDecimalSeparator;
+        var oldDecimalString = decimalSource.values[0][0];
+
+        // This assumes the input column is standardized to use "," as the decimal separator.
+        var newDecimalString = oldDecimalString.replace(",", systemDecimalSeparator);
+
+        var resultRange = sheet.getRange("C2");
+        resultRange.values = [[newDecimalString]];
+        resultRange.format.autofitColumns();
+        return context.sync();
+    });
+});
 ```
 
 ## <a name="add-custom-xml-data-to-the-workbook"></a>向工作簿添加自定义 XML 数据

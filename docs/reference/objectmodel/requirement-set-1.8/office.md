@@ -1,16 +1,16 @@
 ---
 title: Office 命名空间-要求集1。8
-description: Office 命名空间为 Outlook Office 外接程序提供共享接口（要求集1.8）
-ms.date: 12/16/2019
+description: 使用邮箱 API 要求集1.8 的 Outlook 外接程序可用的 Office 命名空间成员。
+ms.date: 03/18/2020
 localization_priority: Normal
-ms.openlocfilehash: 0bbe212b0b8e5dc1348cb5cdc03509c44a716d1a
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: 773a12d2f2b6c2d164b94d0b6b6c2dd0def90a41
+ms.sourcegitcommit: 6c381634c77d316f34747131860db0a0bced2529
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42717500"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "42891178"
 ---
-# <a name="office"></a>Office
+# <a name="office-mailbox-requirement-set-18"></a>Office （邮箱要求集1.8）
 
 该 Office 命名空间提供所有 Office 应用中的加载项所使用的共享接口。此列表仅记录 Outlook 加载项所使用的接口。有关 Office 命名空间的完整列表，请参阅[公用 API](/javascript/api/office)。
 

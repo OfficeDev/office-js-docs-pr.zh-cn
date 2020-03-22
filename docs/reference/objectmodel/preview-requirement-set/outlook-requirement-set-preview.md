@@ -1,14 +1,14 @@
 ---
 title: Outlook 外接程序 API 预览要求集
 description: 当前在 Outlook 外接程序和 Office JavaScript Api 的预览中的功能和 Api。
-ms.date: 03/04/2020
+ms.date: 03/17/2020
 localization_priority: Normal
-ms.openlocfilehash: c87ce8472becc072702f58e7d8c21665904673d2
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: 437629687972e030a7b34f035db5d2a2f8a5eba1
+ms.sourcegitcommit: 6c381634c77d316f34747131860db0a0bced2529
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42717808"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "42890870"
 ---
 # <a name="outlook-add-in-api-preview-requirement-set"></a>Outlook 外接程序 API 预览要求集
 
@@ -27,7 +27,7 @@ Office JavaScript API 的 Outlook 外接程序 API 子集包括可以在 Outlook
 
 ### <a name="append-on-send"></a>发送时追加
 
-#### <a name="officebodyappendonsendasync"></a>[AppendOnSendAsync](/javascript/api/outlook/office.body?view=outlook-js-preview#appendonsendasync-data--options--callback-)
+#### <a name="officecontextmailboxitembodyappendonsendasync"></a>[AppendOnSendAsync 的 "."](/javascript/api/outlook/office.body?view=outlook-js-preview#appendonsendasync-data--options--callback-)
 
 向`Body`对象添加了一个新函数，该函数在撰写模式下将数据追加到项正文的末尾。
 
@@ -59,6 +59,44 @@ Office JavaScript API 的 Outlook 外接程序 API 子集包括可以在 Outlook
 
 ---
 
+### <a name="mail-signature"></a>邮件签名
+
+#### <a name="officecontextmailboxitembodysetsignatureasync"></a>[SetSignatureAsync 的 "."](/javascript/api/outlook/office.body?view=outlook-js-preview#setsignatureasync-data--options--callback-)
+
+向`Body`对象添加了一个新函数，该函数在撰写模式下添加或替换项目正文中的签名。
+
+**适用于**：Windows 版 Outlook（已连接到 Office 365 订阅）
+
+#### <a name="officecontextmailboxitemdisableclientsignatureasync"></a>[DisableClientSignatureAsync 的 Office。](office.context.mailbox.item.md#methods)
+
+添加了一个新函数，用于在撰写模式下禁用发送邮箱的客户端签名。
+
+**适用于**：Windows 版 Outlook（已连接到 Office 365 订阅）
+
+#### <a name="officecontextmailboxitemgetcomposetypeasync"></a>[GetComposeTypeAsync 的 Office。](/javascript/api/outlook/office.messagecompose?view=outlook-js-preview#getcomposetypeasync-options--callback-)
+
+添加了一个新函数，用于在撰写模式下获取邮件的撰写类型。
+
+**适用于**：Windows 版 Outlook（已连接到 Office 365 订阅）
+
+#### <a name="officecontextmailboxitemisclientsignatureenabledasync"></a>[IsClientSignatureEnabledAsync 的 Office。](office.context.mailbox.item.md#methods)
+
+添加了一个新函数，用于检查在撰写模式下是否在项目上启用了客户端签名。
+
+**适用于**：Windows 版 Outlook（已连接到 Office 365 订阅）
+
+#### <a name="officemailboxenumscomposetype"></a>[MailboxEnums. ComposeType](/javascript/api/outlook/office.mailboxenums.composetype?view=outlook-js-preview)
+
+添加了一个新`ComposeType`枚举，该枚举在撰写模式中可用。
+
+**适用于**：Windows 版 Outlook（已连接到 Office 365 订阅）
+
+<br>
+
+---
+
+---
+
 ### <a name="office-theme"></a>Office 主题
 
 #### <a name="officecontextofficetheme"></a>[Office.context.officeTheme](/javascript/api/office/office.context#officetheme)
@@ -74,6 +112,8 @@ Office JavaScript API 的 Outlook 外接程序 API 子集包括可以在 Outlook
 **适用于**：Windows 版 Outlook（已连接到 Office 365 订阅）
 
 <br>
+
+---
 
 ---
 

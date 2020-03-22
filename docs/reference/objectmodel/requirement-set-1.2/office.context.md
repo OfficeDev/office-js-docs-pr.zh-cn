@@ -1,16 +1,16 @@
 ---
 title: Office。上下文要求集1。2
-description: Outlook 外接程序 API 中的 Outlook 上下文对象的对象模型（邮箱 API 1.2 版本）。
-ms.date: 12/16/2019
+description: 使用邮箱 API 要求集1.2 的 Outlook 外接程序可用的 Office 对象成员。
+ms.date: 03/18/2020
 localization_priority: Normal
-ms.openlocfilehash: 339cad3003623acac31c98858b693813928a0103
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: 15172ac9b42455a5b087f48c368d210596922589
+ms.sourcegitcommit: 6c381634c77d316f34747131860db0a0bced2529
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42720167"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "42890723"
 ---
-# <a name="context"></a>context
+# <a name="context-mailbox-requirement-set-12"></a>context （邮箱要求集1.2）
 
 ### <a name="officecontext"></a>[Office](office.md).context
 

@@ -1,14 +1,14 @@
 ---
 title: 开发适用于 iPad 的 Office 加载项
-description: 获取创建在 IPad 上运行的 Office 外接程序的概述和最佳实践。
-ms.date: 06/20/2019
+description: 获取创建在 iPad 上运行的 Office 外接程序的概述和最佳实践。
+ms.date: 03/18/2020
 localization_priority: Normal
-ms.openlocfilehash: c71e935e92a4d88077c95b88334225ef08818dac
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: ca3e7e5521b44e13a26f3d6117128592b88efdc6
+ms.sourcegitcommit: 6c381634c77d316f34747131860db0a0bced2529
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42719026"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "42890495"
 ---
 # <a name="develop-office-add-ins-for-the-ipad"></a>开发适用于 iPad 的 Office 加载项
 
@@ -22,8 +22,8 @@ ms.locfileid: "42719026"
 |应用 UI 设计最佳实践。|将外接程序 UI 与 iOS 体验无缝集成。|[针对 iOS 进行设计](https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/MobileHIG/)|
 |应用外接程序设计最佳实践。|确保外接程序提供明确值、正常运行并持续执行。|[开发 Office 外接程序的最佳做法](../concepts/add-in-development-best-practices.md)|
 |针对触摸优化外接程序。|使 UI 响应触摸输入以及鼠标和键盘。|[应用 UX 设计原则](../concepts/add-in-development-best-practices.md#apply-ux-design-principles)|
-|使外接程序免费。|Office on iPad 是一个通道，通过它您可以接触到更多用户并提升您的服务。这些新用户可能成为您的客户。|[验证策略 10.8](/office/dev/store/validation-policies#10-apps-and-add-ins-utilize-supported-capabilities)|
-|确保加载项无商业内容。|加载项不得包括应用内购买、试用优惠、追加销售付费加载项的 UI 或任何在线商店（方便用户购买或获取其他内容、应用或加载项）链接。隐私策略和使用条款页面也不得包含任何商业 UI 或 AppSource 链接。|[验证策略 3.4](/office/dev/store/validation-policies#3-apps-and-add-ins-can-sell-additional-features-or-content-through-purchases-within-the-app-or-add-in)|
+|使外接程序免费。|Office on iPad 是一个通道，通过它您可以接触到更多用户并提升您的服务。这些新用户可能成为您的客户。|[认证策略1120。2](/legal/marketplace/certification-policies#11202-acquisition-pricing-and-terms)|
+|确保加载项无商业内容。|加载项不得包括应用内购买、试用优惠、追加销售付费加载项的 UI 或任何在线商店（方便用户购买或获取其他内容、应用或加载项）链接。隐私策略和使用条款页面也不得包含任何商业 UI 或 AppSource 链接。|[认证策略1100。3](/legal/marketplace/certification-policies#11003-selling-additional-features)|
 |将加载项重新提交到 AppSource。|在 "合作伙伴中心" 的 "**产品设置**" 页上，选中 "**使我的产品在 iOS 和 Android 上可用（如果适用）** " 复选框，并在 "帐户设置" 中提供您的 Apple 开发人员 ID。 请查看[应用程序提供商协议](https://go.microsoft.com/fwlink/?linkid=715691)，以确保您了解这些条款。|[将解决方案提交到 AppSource 和 Office 应用商店](/office/dev/store/submit-to-appsource-via-partner-center)|
 
 对于正在其他平台上运行的 Office 应用程序，您的外接程序可以保持原样。您还可以基于您的外接程序所运行的浏览器/设备提供不同的 UI 服务。若要检测您的外接程序是否正在 iPad 上运行，您可以使用以下 API：

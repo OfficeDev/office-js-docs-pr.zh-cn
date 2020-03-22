@@ -1,21 +1,20 @@
 ---
 title: Office 加载项开发最佳做法
 description: 在开发以创建 Office 外接程序时应用最佳实践。
-ms.date: 03/19/2019
+ms.date: 03/18/2020
 localization_priority: Normal
-ms.openlocfilehash: 03e9a55d2a438ef87f144c646f06a7e7c999900b
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: 71a090721768b822a058091c258dd0c6c87e1425
+ms.sourcegitcommit: 6c381634c77d316f34747131860db0a0bced2529
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42717283"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "42890537"
 ---
 # <a name="best-practices-for-developing-office-add-ins"></a>Office 加载项开发最佳做法
 
 有效的外接程序提供独特且极具吸引力的功能，采用具有视觉吸引力的方式扩展 Office 应用程序。若要创建出色的外接程序，需为用户提供极具吸引力的首次使用体验、设计一流的 UI 体验和优化外接程序的性能。将本文中描述的最佳实践应用于创建有助于您的用户快速有效地完成其任务的外接程序。
 
-> [!NOTE]
-> 如果计划将加载项[发布](../publish/publish.md)到 AppSource 并适用于 Office 体验，请务必遵循 [AppSource 验证策略](/office/dev/store/validation-policies)。例如，加载项必须适用于支持已定义方法的所有平台，才能通过验证（有关详细信息，请参阅[第 4.12 部分](/office/dev/store/validation-policies#4-apps-and-add-ins-behave-predictably)以及 [Office 加载项主机和可用性](../overview/office-add-in-availability.md)页面）。 
+[!INCLUDE [publish policies note](../includes/note-publish-policies.md)]
 
 ## <a name="provide-clear-value"></a>提供明确值
 

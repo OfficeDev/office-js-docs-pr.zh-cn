@@ -1,16 +1,16 @@
 ---
 title: Office. context-预览要求集
-description: Outlook 外接程序 API 中的 Outlook 上下文对象的对象模型（邮箱 API Preview 版本）。
-ms.date: 12/16/2019
+description: 使用邮箱 API preview 要求集的 Outlook 外接程序可用的 Context 对象成员。
+ms.date: 03/18/2020
 localization_priority: Normal
-ms.openlocfilehash: 409f0a5b46eba667f79228f45081c160c3c3ce7f
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: c61769cb1ae98097ffabb8b3ef19b2f82257c2b1
+ms.sourcegitcommit: 6c381634c77d316f34747131860db0a0bced2529
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42717801"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "42890863"
 ---
-# <a name="context"></a>context
+# <a name="context-mailbox-preview-requirement-set"></a>context （邮箱预览要求集）
 
 ### <a name="officecontext"></a>[Office](office.md).context
 

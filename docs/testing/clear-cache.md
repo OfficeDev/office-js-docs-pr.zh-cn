@@ -3,12 +3,12 @@ title: 清除 Office 缓存
 description: 了解如何清除计算机上的 Office 缓存。
 ms.date: 01/29/2020
 localization_priority: Normal
-ms.openlocfilehash: c0cf6350cb77a83791f5810c8b98034792fdfd0e
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: a73a8d276f0d6301644005cf87f44f4d7606d26d
+ms.sourcegitcommit: 6c381634c77d316f34747131860db0a0bced2529
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42719852"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "42891129"
 ---
 # <a name="clear-the-office-cache"></a>清除 Office 缓存
 
@@ -18,9 +18,13 @@ ms.locfileid: "42719852"
 
 ## <a name="clear-the-office-cache-on-windows"></a>清除 Windows 上的 Office 缓存
 
-如果要从 Excel、Word 和 PowerPoint 中删除所有旁加载的加载项，删除文件夹 `%LOCALAPPDATA%\Microsoft\Office\16.0\Wef\` 的内容。
+若要从 Excel、Word 和 PowerPoint 中删除所有旁加载外接程序，请删除该文件夹的内容：
 
-如果要从 Outlook 中删除旁加载加载项，使用 “[旁加载 Outlook 测试加载项](../outlook/sideload-outlook-add-ins-for-testing.md)”来查找列出已安装加载项对话框“**自定义加载项**”部分中的加载项。为加载项选择省略号(`...`) ，然后选择“**删除**”以删除指定的加载项。
+```
+%LOCALAPPDATA%\Microsoft\Office\16.0\Wef\
+```
+
+若要从 Outlook 中删除旁加载外接程序，请使用[旁加载 Outlook 外接程序](../outlook/sideload-outlook-add-ins-for-testing.md)中概述的用于测试的步骤，在列出已安装的外接程序的对话框的 "**自定义外接程序**" 部分中查找该外接程序`...`。选择外接程序的省略号（），然后选择 "**删除**" 以删除该特定外接程序。
 
 另外，若要在 Microsoft Edge 中运行加载项时清除 Windows 10 上的 Office 缓存，可使用 Microsoft Edge 开发工具。
 

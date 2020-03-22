@@ -3,12 +3,12 @@ title: 在 Office 网页版中调试加载项
 description: 如何使用 Office 网页版来测试和调试加载项。
 ms.date: 06/20/2019
 localization_priority: Normal
-ms.openlocfilehash: c840d0a16e2a4cdf0bb9f4b213099cb74c2aa815
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: 3c69c6a7008e1496fd888357968714d7abbb05d6
+ms.sourcegitcommit: 6c381634c77d316f34747131860db0a0bced2529
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42719810"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "42891115"
 ---
 # <a name="debug-add-ins-in-office-on-the-web"></a>在 Office 网页版中调试加载项
 
@@ -63,7 +63,6 @@ ms.locfileid: "42719810"
 ## <a name="see-also"></a>另请参阅
 
 - [Office 加载项开发最佳做法](../concepts/add-in-development-best-practices.md)
-- [AppSource 验证策略](/office/dev/store/validation-policies)  
+- [AppSource 验证策略](/legal/marketplace/certification-policies)  
 - [创建有效的 AppSource 应用和加载项](/office/dev/store/create-effective-office-store-listings)  
 - [排查 Office 加载项中的用户错误](testing-and-troubleshooting.md)
-    

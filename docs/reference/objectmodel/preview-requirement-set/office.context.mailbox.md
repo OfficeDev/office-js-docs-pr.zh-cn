@@ -1,16 +1,16 @@
 ---
 title: "\"Context\"-\"邮箱-预览要求集\""
-description: Outlook 外接程序 API 中的 Outlook 邮箱对象的对象模型（邮箱 API Preview 版本）。
-ms.date: 03/06/2020
+description: Outlook 邮箱 API preview 要求集邮箱对象模型的版本。
+ms.date: 03/18/2020
 localization_priority: Normal
-ms.openlocfilehash: 3de58203e4ddb0f7ca8b773653bafb16eb50e322
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: 9655c38821f052b21b33db0099f7aba087191d52
+ms.sourcegitcommit: 6c381634c77d316f34747131860db0a0bced2529
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42720279"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "42890849"
 ---
-# <a name="mailbox"></a>邮箱
+# <a name="mailbox-preview-requirement-set"></a>邮箱（预览要求集）
 
 ### <a name="officecontextmailbox"></a>[Office](office.md)[.context](office.context.md).mailbox
 

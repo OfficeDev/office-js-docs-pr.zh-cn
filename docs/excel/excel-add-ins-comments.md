@@ -1,20 +1,20 @@
 ---
 title: 使用 Excel JavaScript API 处理注释
 description: 有关使用 Api 添加、删除和编辑注释和注释线程的信息。
-ms.date: 02/11/2020
+ms.date: 03/17/2020
 localization_priority: Normal
-ms.openlocfilehash: d6be0f07e0d3bb134385f0a08c20ce00da4de892
-ms.sourcegitcommit: d85efbf41a3382ca7d3ab08f2c3f0664d4b26c53
+ms.openlocfilehash: 275828915730d3438101315ee28bf76aa8b8bf3f
+ms.sourcegitcommit: 6c381634c77d316f34747131860db0a0bced2529
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/28/2020
-ms.locfileid: "42327780"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "42890568"
 ---
 # <a name="work-with-comments-using-the-excel-javascript-api"></a>使用 Excel JavaScript API 处理注释
 
 本文介绍如何使用 Excel JavaScript API 在工作簿中添加、读取、修改和删除注释。 您可以从 Excel 文章的 "[插入注释和注释](https://support.office.com/article/insert-comments-and-notes-in-excel-bdcc9f5d-38e2-45b4-9a92-0b2b5c7bf6f8)" 中了解有关注释功能的详细信息。
 
-在 Excel JavaScript API 中，注释既是初始注释，也是相互连接的线程讨论。 它与单个单元格相关联。 任何人查看具有足够权限的工作簿都可以答复注释。 [Comment](/javascript/api/excel/excel.comment)对象将那些答复存储为[CommentReply](/javascript/api/excel/excel.commentreply)对象。 应将注释视为线程，并且线程必须具有特殊条目作为起始点。
+在 Excel JavaScript API 中，注释包括单个初始注释和已连接的线程讨论。 它与单个单元格相关联。 任何人查看具有足够权限的工作簿都可以答复注释。 [Comment](/javascript/api/excel/excel.comment)对象将那些答复存储为[CommentReply](/javascript/api/excel/excel.commentreply)对象。 应将注释视为线程，并且线程必须具有特殊条目作为起始点。
 
 ![带有两个答复的标签为 "Comment" 的 Excel 注释，标记为 "Comment. 答复 [0]" 和 "Comment. 答复 [1]"。](../images/excel-comments.png)
 

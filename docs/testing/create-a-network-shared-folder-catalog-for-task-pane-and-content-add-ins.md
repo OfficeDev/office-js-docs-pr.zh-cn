@@ -1,14 +1,14 @@
 ---
 title: 旁加载 Office 加载项以供测试
 description: 了解如何旁加载 Office 外接程序以进行测试
-ms.date: 02/18/2020
+ms.date: 03/18/2020
 localization_priority: Normal
-ms.openlocfilehash: d8e1b0e1078ee534445baf275f386d85d68675c0
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: 0cfb1060ead27f7f034880361c51f8a1d0ec87dc
+ms.sourcegitcommit: 6c381634c77d316f34747131860db0a0bced2529
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42717402"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "42891122"
 ---
 # <a name="sideload-office-add-ins-for-testing"></a>旁加载 Office 加载项以供测试
 
@@ -77,7 +77,7 @@ ms.locfileid: "42717402"
 
 2. 在文件中添加以下内容：
 
-    ```
+    ```text
     Windows Registry Editor Version 5.00
 
     [HKEY_CURRENT_USER\Software\Microsoft\Office\16.0\WEF\TrustedCatalogs\{-random-GUID-here-}]
@@ -93,7 +93,7 @@ ms.locfileid: "42717402"
 
 5. 文件现应如下所示。 将其保存。
 
-    ```
+    ```text
     Windows Registry Editor Version 5.00
 
     [HKEY_CURRENT_USER\Software\Microsoft\Office\16.0\WEF\TrustedCatalogs\{01234567-89ab-cedf-0123-456789abcedf}]

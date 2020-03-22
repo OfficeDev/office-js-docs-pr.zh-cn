@@ -3,12 +3,12 @@ title: Office 外接程序的语音准则
 description: 了解编写用户帮助和其他 Office 外接程序字符串的最佳做法。
 ms.date: 03/19/2019
 localization_priority: Normal
-ms.openlocfilehash: 6f39c17687b176ca015bfe7d3df0173266a7798c
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: 3621a13a2ec24a9f2f761012f331e245f95df31e
+ms.sourcegitcommit: 6c381634c77d316f34747131860db0a0bced2529
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42719222"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "42890509"
 ---
 # <a name="voice-guidelines"></a>语音准则
 
@@ -28,4 +28,4 @@ ms.locfileid: "42719222"
 - [所有功能编写](/style-guide/accessibility/writing-all-abilities)准则
 - [有关 Microsoft 样式和语音的前 10 个提示](/style-guide/top-10-tips-style-voice)
 - [字词选择](/style-guide/word-choice/)指南
-- Office 外接程序[验证策略](/office/dev/store/validation-policies)
+- Office 外接程序[验证策略](/legal/marketplace/certification-policies)

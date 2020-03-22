@@ -1,16 +1,16 @@
 ---
 title: "\"Context.subname\"-\"邮箱-要求集 1.1\""
-description: Outlook 外接程序 API 中的 Outlook 邮箱对象的对象模型（邮箱 API 1.1 版本）。
-ms.date: 03/06/2020
+description: Outlook 邮箱 API 要求集的邮箱对象模型的版本为1.1。
+ms.date: 03/18/2020
 localization_priority: Normal
-ms.openlocfilehash: be948e8ff49141d591affd195b0d0fabfab0d7ff
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: 776e6c6ffeb79cb8e2db2d2d73f8a844bf6fb825
+ms.sourcegitcommit: 6c381634c77d316f34747131860db0a0bced2529
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42720209"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "42890835"
 ---
-# <a name="mailbox"></a>邮箱
+# <a name="mailbox-requirement-set-11"></a>邮箱（要求集1.1）
 
 ### <a name="officecontextmailbox"></a>[Office](office.md)[.context](office.context.md).mailbox
 

@@ -1,21 +1,20 @@
 ---
 title: 运行 Office 加载项的要求
 description: 了解最终用户运行 Office 外接程序所需的客户端和服务器要求。
-ms.date: 07/01/2019
+ms.date: 03/18/2020
 localization_priority: Normal
-ms.openlocfilehash: 858a951322a34543277b1d7000ca01df12cca7bb
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: c387d3d7ca9be1d47fa9ff4033fe492ae0e0fb3a
+ms.sourcegitcommit: 6c381634c77d316f34747131860db0a0bced2529
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42718634"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "42890502"
 ---
 # <a name="requirements-for-running-office-add-ins"></a>运行 Office 加载项的要求
 
 本文介绍了运行 Office 加载项的软件和设备要求。
 
-> [!NOTE]
-> 如果计划将加载项[发布](../publish/publish.md)到 AppSource 并适用于 Office 体验，请务必遵循 [AppSource 验证策略](/office/dev/store/validation-policies)。例如，加载项必须适用于支持已定义方法的所有平台，才能通过验证（有关详细信息，请参阅[第 4.12 部分](/office/dev/store/validation-policies#4-apps-and-add-ins-behave-predictably)以及 [Office 加载项主机和可用性](../overview/office-add-in-availability.md)页面）。
+[!INCLUDE [publish policies note](../includes/note-publish-policies.md)]
 
 若要概览 Office 加载项的当前受支持情况，请参阅 [Office 加载项主机和平台可用性](../overview/office-add-in-availability.md)。
 

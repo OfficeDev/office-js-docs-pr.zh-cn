@@ -3,12 +3,12 @@ title: Office 加载项的数据可视化样式指南
 description: 了解如何在 Office 外接程序中可视化数据的一些良好实践。
 ms.date: 01/14/2019
 localization_priority: Normal
-ms.openlocfilehash: c22943959408d1df5febd8f5aad84ee791c40504
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: 215bea269d14245e9ac55d74f12228565f60c2a3
+ms.sourcegitcommit: 6c381634c77d316f34747131860db0a0bced2529
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42717220"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "42891017"
 ---
 # <a name="data-visualization-style-guidelines-for-office-add-ins"></a>Office 加载项的数据可视化样式指南
 
@@ -41,7 +41,7 @@ ms.locfileid: "42717220"
 
 请确保轴标签颜色足够深，以便可以清楚地阅读，并且具有足够的文本和背景色对比度。请确保颜色不要过深，避免比数据墨迹更加突出。
 
-浅灰色轴标签效果最佳。如果使用的是 Fabric，请参阅[中性色调色板](https://developer.microsoft.com/fabric#/styles/colors)。
+浅灰色轴标签效果最佳。 如果使用的是 Fabric，请参阅[中性色调色板](https://developer.microsoft.com/fabric#/styles/colors)。
 
 ### <a name="data-ink"></a>数据墨迹
 
@@ -54,14 +54,14 @@ ms.locfileid: "42717220"
 有关在数据可视化中使用颜色的最佳做法，请参阅以下内容：
 
 - [为什么彩虹色不是数据可视化的最佳选择](https://www.poynter.org/2013/why-rainbow-colors-arent-always-the-best-options-for-data-visualizations/224413/)
-- [Color Brewer 2.0：制图的颜色建议](http://colorbrewer2.org/)
+- [Color Brewer 2.0：制图的颜色建议](https://colorbrewer2.org/)
 - [我想要的色调](https://tools.medialab.sciences-po.fr/iwanthue/)
 
 ### <a name="gridlines"></a>网格线
 
 要准确读取图表，通常网格线是必不可少的，但应显示为辅助可视元素，用于增强数据墨迹效果，但不会影响数据显示。确保静态网格线较细且颜色较淡，除非专门将其设计用于高对比度的情况。还可以使用交互作用创建在用户与图表交互时上下文中显示的动态、实时网格线。
 
-浅灰色网格线效果最佳。如果使用的是 Fabric，请参阅[中性色调色板](https://developer.microsoft.com/fabric#/styles/colors)。
+浅灰色网格线效果最佳。 如果使用的是 Fabric，请参阅[中性色调色板](https://developer.microsoft.com/fabric#/styles/colors)。
 
 下图显示了带有网格线的数据可视化。
 
