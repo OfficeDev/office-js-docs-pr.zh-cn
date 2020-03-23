@@ -1,25 +1,24 @@
 ---
 title: Word 加载项概述
 description: 了解 Word 加载项的基本知识
-ms.date: 11/05/2019
+ms.date: 03/18/2020
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: b27de57c821fe8278ac8a6e097aeb8e5be0cdb7b
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: f176f8ed190642cf047686f78bc2407f686bdf60
+ms.sourcegitcommit: 6c381634c77d316f34747131860db0a0bced2529
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42717325"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "42891031"
 ---
 # <a name="word-add-ins-overview"></a>Word 加载项概述
 
 要创建解决方案来扩展 Word 功能？例如，涉及自动文档程序集的解决方案？或从其他数据源绑定到并访问 Word 文档中数据的解决方案？可以使用 Office 加载项平台，其中包含 Word JavaScript API 和Office JavaScript API，可用于扩展在 Windows 桌面设备、Mac 或云中运行的 Word 客户端。
 
-Word 外接程序是 [Office 外接程序平台](../overview/office-add-ins.md)上众多开发选项中的一项。外接程序命令可用于扩展 Word 用户界面并启动运行 JavaScript 并与 Word 文档中内容交互的任务窗格。在浏览器中可以运行的任何代码均可在 Word 外接程序中运行。与 Word 文档内容进行交互的外接程序可创建作用于 Word 对象的请求并同步对象状态。 
+Word 外接程序是 [Office 外接程序平台](../overview/office-add-ins.md)上众多开发选项中的一项。外接程序命令可用于扩展 Word 用户界面并启动运行 JavaScript 并与 Word 文档中内容交互的任务窗格。在浏览器中可以运行的任何代码均可在 Word 外接程序中运行。与 Word 文档内容进行交互的外接程序可创建作用于 Word 对象的请求并同步对象状态。
 
-> [!NOTE]
-> 生成加载项时，如果计划将加载项[发布](../publish/publish.md)到 AppSource，请务必遵循 [AppSource 验证策略](/office/dev/store/validation-policies)。例如，加载项必须适用于支持已定义方法的所有平台，才能通过验证（有关详细信息，请参阅[第 4.12 部分](/office/dev/store/validation-policies#4-apps-and-add-ins-behave-predictably)以及 [Office 加载项主机和可用性](../overview/office-add-in-availability.md)页面）。
+[!INCLUDE [publish policies note](../includes/note-publish-policies.md)]
 
 下图中的示例展示了在任务窗格中运行的 Word 加载项。
 

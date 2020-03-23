@@ -4,12 +4,12 @@ description: 详细了解 Excel Javascript API
 ms.date: 02/19/2020
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: d4721c349de7b93ec34ce3c35fbcee25438564db
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: 336944f4315e9e5aea492ecbb8cd557a38edbb39
+ms.sourcegitcommit: 6c381634c77d316f34747131860db0a0bced2529
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42719916"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "42891192"
 ---
 # <a name="excel-javascript-api-overview"></a>Excel JavaScript API 概述
 
@@ -47,4 +47,3 @@ Excel 加载项通过使用 Office JavaScript API 与 Excel 中的对象进行�
 - [Excel 加载项概述](../../excel/excel-add-ins-overview.md)
 - [Excel JavaScript API 参考](/javascript/api/excel)
 - [Office 加载项主机和平台可用性](../../overview/office-add-in-availability.md)
-- [API 开放性规范](../openspec/openspec.md)

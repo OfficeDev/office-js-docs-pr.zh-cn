@@ -1,15 +1,15 @@
 ---
 title: 生成首个 PowerPoint 任务加载项
 description: 了解如何使用 Office JS API 生成简单的 PowerPoint 任务窗格加载项。
-ms.date: 01/16/2020
+ms.date: 03/19/2020
 ms.prod: powerpoint
 localization_priority: Priority
-ms.openlocfilehash: 67af5529596f6659b331379dffcea838397a5bad
-ms.sourcegitcommit: 8bce9c94540ed484d0749f07123dc7c72a6ca126
+ms.openlocfilehash: 1056dcfbeb49b4f0e2b8142de1a4e66ebb0dcca5
+ms.sourcegitcommit: 6c381634c77d316f34747131860db0a0bced2529
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/22/2020
-ms.locfileid: "41265690"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "42891402"
 ---
 # <a name="build-your-first-powerpoint-task-pane-add-in"></a>生成首个 PowerPoint 任务加载项
 
@@ -19,7 +19,7 @@ ms.locfileid: "41265690"
 
 [!include[Choose your editor](../includes/quickstart-choose-editor.md)]
 
-# <a name="yeoman-generatortabyeomangenerator"></a>[Yeoman 生成器](#tab/yeomangenerator)
+# <a name="yeoman-generator"></a>[Yeoman 生成器](#tab/yeomangenerator)
 
 [!include[Redirect to the single sign-on (SSO) quick start](../includes/sso-quickstart-reference.md)]
 
@@ -92,7 +92,7 @@ ms.locfileid: "41265690"
 
 恭喜！已成功创建 PowerPoint 任务窗格加载项！ 接下来，请详细了解 PowerPoint 加载项功能，并跟着 [PowerPoint 加载项教程](../tutorials/powerpoint-tutorial.md)一起操作，生成更复杂的加载项。
 
-# <a name="visual-studiotabvisualstudio"></a>[Visual Studio](#tab/visualstudio)
+# <a name="visual-studio"></a>[Visual Studio](#tab/visualstudio)
 
 ### <a name="prerequisites"></a>先决条件
 
@@ -250,6 +250,8 @@ ms.locfileid: "41265690"
 4. 在任务窗格中，选择“插入文本”**** 按钮，以便将文本添加到选定幻灯片。
 
     ![幻灯片上显示有狗图像和文本“Hello World”的 PowerPoint 屏幕截图](../images/powerpoint_quickstart_addin_3.png)
+
+[!include[Console tool note](../includes/console-tool-note.md)]
 
 ### <a name="next-steps"></a>后续步骤
 

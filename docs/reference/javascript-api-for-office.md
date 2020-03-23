@@ -5,12 +5,12 @@ title: Office JavaScript API 参考文档
 description: 了解 Office JavaScript API。
 ms.date: 12/24/2019
 localization_priority: Priority
-ms.openlocfilehash: 5622146d9663881eea0a97cafa5e793aa0381932
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: 99c42103d8e6d7b18d6082bfdafe1da0dad8397d
+ms.sourcegitcommit: 6c381634c77d316f34747131860db0a0bced2529
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42720741"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "42890898"
 ---
 # <a name="api-reference-documentation"></a>API 参考文档
 
@@ -131,7 +131,3 @@ ms.locfileid: "42720741"
 </ul>
 
 <b>注意</b>：对于 Project，目前没有主机特定的 JavaScript API，因此需要使用通用 API 创建 Project 加载项。此外，对于 PowerPoint，主机特定的 API 的范围非常有限，因此主要使用通用 API 创建 PowerPoint 加载项。
-
-<h2>开放 API 规范</h2>
-
-在我们设计和开发新的 API 以用于 Office 外接程序时，我们将使它们适用于[开放 API 规范](openspec/openspec.md)页的反馈。了解管道中的新增功能，并提供您对我们的设计规范的宝贵意见。

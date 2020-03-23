@@ -4,12 +4,12 @@ description: Outlook 加载项由第三方使用基于 Web 的平台集成到 Ou
 ms.date: 10/09/2019
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: cb6e19788390a804b0bbacb97666a3ca8a9d5971
-ms.sourcegitcommit: 6c7c98f085dd20f827e0c388e672993412944851
+ms.openlocfilehash: d8f536940cf83899cd5586006980d14342e297c7
+ms.sourcegitcommit: 6c381634c77d316f34747131860db0a0bced2529
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "42554693"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "42891059"
 ---
 # <a name="outlook-add-ins-overview"></a>Outlook 加载项概述
 
@@ -23,8 +23,7 @@ Outlook 加载项不同于 COM 或 VSTO 的加载项，后者为特定于 Window
 
 支持加载项的 Outlook 项目包括电子邮件、会议请求、响应和取消及约会。 每个 Outlook 加载项均定义其可用的上下文，包括项目类型以及用户是在阅读还是撰写项目。
 
-> [!NOTE]
-> 生成加载项时，如果计划将加载项[发布](../publish/publish.md)到 AppSource，请务必遵循 [AppSource 验证策略](/office/dev/store/validation-policies)。例如，加载项必须适用于支持已定义方法的所有平台，才能通过验证（有关详细信息，请参阅[第 4.12 部分](/office/dev/store/validation-policies#4-apps-and-add-ins-behave-predictably)以及 [Office 加载项主机和可用性](../overview/office-add-in-availability.md)页面）。
+[!INCLUDE [publish policies note](../includes/note-publish-policies.md)]
 
 ## <a name="extension-points"></a>扩展点
 

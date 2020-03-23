@@ -1,23 +1,22 @@
 ---
 title: OneNote JavaScript API 编程概述
 description: 了解有关适用于 OneNote 网页版加载项的 OneNote JavaScript API。
-ms.date: 02/19/2020
+ms.date: 03/18/2020
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: 0e551b75d55da77d383e1335c27724834bfb2df0
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: ae88c2bba6c23a2c3ec3358db121a2ca3630f09d
+ms.sourcegitcommit: 6c381634c77d316f34747131860db0a0bced2529
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42720895"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "42891052"
 ---
 # <a name="onenote-javascript-api-programming-overview"></a>OneNote JavaScript API 编程概述
 
 OneNote 引入了适用于 OneNote 网页版加载项的 JavaScript API。 可以创建任务窗格加载项、内容加载项，以及与 OneNote 对象交互并连接到 Web 服务或其他基于 Web 的资源的加载项命令。
 
-> [!NOTE]
-> 如果计划将加载项[发布](../publish/publish.md)到 AppSource 并适用于 Office 体验，请务必遵循 [AppSource 验证策略](/office/dev/store/validation-policies)。例如，加载项必须适用于支持已定义方法的所有平台，才能通过验证（有关详细信息，请参阅[第 4.12 部分](/office/dev/store/validation-policies#4-apps-and-add-ins-behave-predictably)以及 [Office 加载项主机和可用性](../overview/office-add-in-availability.md)页面）。
+[!INCLUDE [publish policies note](../includes/note-publish-policies.md)]
 
 ## <a name="components-of-an-office-add-in"></a>Office 加载项的组件
 

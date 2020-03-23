@@ -1,14 +1,14 @@
 ---
 title: 部署和发布 Office 加载项
 description: 部署 Office 加载项以进行测试或分发给用户的方法和选项。
-ms.date: 09/05/2019
+ms.date: 03/18/2020
 localization_priority: Priority
-ms.openlocfilehash: a00119254f53f6dbf0e6ebc2279e0a0b70af1270
-ms.sourcegitcommit: 350f5c6954dec3e9384e2030cd3265aaba7ae904
+ms.openlocfilehash: a21535a637ceb54d0e84a36b2a0610873d408e1c
+ms.sourcegitcommit: 6c381634c77d316f34747131860db0a0bced2529
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/23/2019
-ms.locfileid: "40851542"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "42890982"
 ---
 # <a name="deploy-and-publish-office-add-ins"></a>部署和发布 Office 加载项
 
@@ -23,8 +23,7 @@ ms.locfileid: "40851542"
 |[Exchange 服务器](#outlook-add-in-deployment)|在本地或在线环境中，用于向用户分发 Outlook 加载项。|
 |[网络共享](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)|在网络上的 Windows 计算机中（要在其中托管加载项），转到要用作共享文件夹目录的文件夹的父文件夹或驱动器号。|
 
-> [!NOTE]
-> 如果计划将加载项[发布](../publish/publish.md)到 AppSource 并适用于 Office 体验，请务必遵循 [AppSource 验证策略](/office/dev/store/validation-policies)。例如，加载项必须适用于支持已定义方法的所有平台，才能通过验证（有关详细信息，请参阅[第 4.12 部分](/office/dev/store/validation-policies#4-apps-and-add-ins-behave-predictably)以及 [Office 加载项主机和可用性](../overview/office-add-in-availability.md)页面）。
+[!INCLUDE [publish policies note](../includes/note-publish-policies.md)]
 
 ## <a name="deployment-options-by-office-host"></a>Office 主机提供的部署选项
 

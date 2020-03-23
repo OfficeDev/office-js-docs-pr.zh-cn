@@ -3,12 +3,12 @@ title: 加载项命令的基本概念
 description: 了解如何将自定义功能区按钮和菜单项添加到 Office 作为 Office Web 加载项的一部分。
 ms.date: 02/11/2020
 localization_priority: Priority
-ms.openlocfilehash: 11636838feb384cdb0761bd17a3c1c0e0f42f8ce
-ms.sourcegitcommit: 0e7ed44019d6564c79113639af831ea512fa0a13
+ms.openlocfilehash: 6395b087ea191b37e9398096038dacfd66ed263c
+ms.sourcegitcommit: 6c381634c77d316f34747131860db0a0bced2529
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/09/2020
-ms.locfileid: "42566150"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "42890554"
 ---
 # <a name="add-in-commands-for-excel-word-and-powerpoint"></a>Excel、Word 和 PowerPoint 加载项命令
 
@@ -85,7 +85,7 @@ ms.locfileid: "42566150"
     - 请勿添加不必要的按钮，这样会增加加载项占用的空间。
 
      > [!NOTE]
-     > 占用过多空间的加载项可能无法通过 [AppSource 验证](/office/dev/store/validation-policies)。
+     > 占用过多空间的加载项可能无法通过 [AppSource 验证](/legal/marketplace/certification-policies)。
 
 - 对于所有图标，请遵循[图标设计准则](add-in-icons.md)。
 - 提供也可以在不支持命令的主机上运行的加载项的版本。 单个加载项清单可以在命令感知（带有命令）和非命令感知（作为任务窗格）的主机中工作。
