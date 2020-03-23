@@ -289,7 +289,7 @@
         - name: 将加载项发布到 AppSource
           href: /office/dev/store/submit-to-the-office-store
         - name: AppSource 验证策略
-          href: /office/dev/store/validation-policies
+          href: /legal/marketplace/certification-policies
         - name: 通过集中部署发布加载项
           href: publish/centralized-deployment.md
         - name: 将加载项发布到 SharePoint 应用目录
@@ -477,8 +477,6 @@
                   href: reference/manifest/supportssharedfolders.md
                 - name: WebApplicationInfo
                   href: reference/manifest/webapplicationinfo.md
-        - name: API 开放性规范
-          href: reference/openspec/openspec.md
         - name: 错误代码
           href: reference/javascript-api-for-office-error-codes.md
     - name: 资源
@@ -1125,4 +1123,4 @@
     - name: 保存并共享自定义函数中的状态
       href: excel/custom-functions-save-state-redirect.md
     - name: 在 Office 解决方案中处理高 DPI 和 DPI 缩放
-      href: develop/dynamic-dpi.md
+      href: /office/client-developer/ddpi/handle-high-dpi-and-dpi-scaling-in-your-office-solution
