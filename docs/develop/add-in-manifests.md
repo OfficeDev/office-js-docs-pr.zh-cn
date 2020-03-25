@@ -1,14 +1,14 @@
 ---
 title: Office 加载项 XML 清单
 description: 获取 Office 加载项清单及其用途概述。
-ms.date: 01/06/2020
+ms.date: 03/18/2020
 localization_priority: Priority
-ms.openlocfilehash: 2e8ab3ac27756d221b24838ca4b70624f046089d
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: ad2827c45dca4652c504d57232f1aa40f72373fe
+ms.sourcegitcommit: 6c381634c77d316f34747131860db0a0bced2529
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42719215"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "42890561"
 ---
 # <a name="office-add-ins-xml-manifest"></a>Office 加载项 XML 清单
 
@@ -28,8 +28,7 @@ Office 外接程序的 XML 清单文件描述，当最终用户安装外接程�
 
 * 对于 Outlook 外接程序，定义一个或多个规则，以指定将在其中激活规则并与邮件、约会或会议请求项目交互的上下文。
 
-> [!NOTE]
-> 如果计划将加载项[发布](../publish/publish.md)到 AppSource 并适用于 Office 体验，请务必遵循 [AppSource 验证策略](/office/dev/store/validation-policies)。例如，加载项必须适用于支持已定义方法的所有平台，才能通过验证（有关详细信息，请参阅[第 4.12 部分](/office/dev/store/validation-policies#4-apps-and-add-ins-behave-predictably)以及 [Office 加载项主机和可用性](../overview/office-add-in-availability.md)页面）。
+[!INCLUDE [publish policies note](../includes/note-publish-policies.md)]
 
 [!include[manifest guidance](../includes/manifest-guidance.md)]
 
@@ -110,7 +109,7 @@ _\*\* 仅通过 AppSource 分发的加载项才需要 SupportUrl。_
 
 确保外接程序 ID 有效且具有唯一 GUID。Web 上提供可用于创建唯一 GUID 的各种 GUID 生成器工具。
 
-提交到 AppSource 的加载项还必须包括 [SupportUrl](../reference/manifest/supporturl.md) 元素。 有关详细信息，请参阅[提交到 AppSource 的应用和加载项的验证策略](/office/dev/store/validation-policies)。
+提交到 AppSource 的加载项还必须包括 [SupportUrl](../reference/manifest/supporturl.md) 元素。 有关详细信息，请参阅[提交到 AppSource 的应用和加载项的验证策略](/legal/marketplace/certification-policies)。
 
 仅使用 [AppDomain](../reference/manifest/appdomains.md) 元素指定域（除了在 [SourceLocation](../reference/manifest/sourcelocation.md) 元素中指定的用于身份验证方案的域）。
 
@@ -126,7 +125,7 @@ _\*\* 仅通过 AppSource 分发的加载项才需要 SupportUrl。_
 > - 它仅适用于外接程序的根窗格。 如果外接程序页面中嵌入有 iframe，则可以将该 iframe 定向到任何 URL，不论它是否列在 **AppDomains** 中，即使在桌面版 Office 中也是如此。
 > - 使用 [displayDialogAsync](/javascript/api/office/office.ui?view=common-js#displaydialogasync-startaddress--options--callback-) API 打开对话框时，传递到方法的 URL 必须与外接程序位于相同的域，但是之后对话框可以定向到任意 URL，无论其是否列入 **AppDomains** 甚至桌面 Office 中。
 
-以下 XML 清单示例在 **SourceLocation** 元素中指定的 `https://www.contoso.com` 域中托管其外接程序页面。 它还指定 **AppDomains** 元素列表内 [AppDomain](../reference/manifest/appdomain.md) 元素中的 `https://www.northwindtraders.com` 域。 如果外接程序转至 www.northwindtraders.com 域中的页面，则该页面将在外接程序窗格中打开，即使在 Office 桌面版中也是如此。
+以下 XML 清单示例在 **SourceLocation** 元素中指定的 `https://www.contoso.com` 域中托管其外接程序页面。 它还指定 **AppDomains** 元素列表内 [AppDomain](../reference/manifest/appdomain.md) 元素中的 `https://www.northwindtraders.com` 域。 如果加载项转到 `www.northwindtraders.com` 域中的页面，此页面会在加载项窗格中打开，即使是在 Office 桌面版中，也不例外。
 
 ```XML
 <?xml version="1.0" encoding="UTF-8"?>

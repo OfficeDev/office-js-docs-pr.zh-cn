@@ -1,19 +1,19 @@
 ---
 title: 生成首个 Excel 任务窗格加载项
 description: 了解如何使用 Office JS API 生成简单的 Excel 任务窗格加载项。
-ms.date: 01/16/2020
+ms.date: 03/19/2020
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: cdd4de9cad88c09ec33e2cb1566b0a64afdf7745
-ms.sourcegitcommit: 4079903c3cc45b7d8c041509a44e9fc38da399b1
+ms.openlocfilehash: 95491b8c346432b319c0731085c0ef763727493d
+ms.sourcegitcommit: 6c381634c77d316f34747131860db0a0bced2529
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/11/2020
-ms.locfileid: "42596618"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "42891395"
 ---
 # <a name="build-an-excel-task-pane-add-in"></a>生成 Excel 任务窗格加载项
 
-本文将逐步介绍如何生成 Excel 任务窗格加载项。 
+本文将逐步介绍如何生成 Excel 任务窗格加载项。
 
 ## <a name="create-the-add-in"></a>创建加载项
 
@@ -54,7 +54,7 @@ ms.locfileid: "42596618"
     cd "My Office Add-in"
     ```
 
-2. [!include[Start server section](../includes/quickstart-yo-start-server-excel.md)] 
+2. [!include[Start server section](../includes/quickstart-yo-start-server-excel.md)]
 
 3. 在 Excel 中，依次选择的“**开始**”选项卡和功能区中的“**显示任务窗格**”按钮，以打开加载项任务窗格。
 
@@ -114,7 +114,7 @@ ms.locfileid: "42596618"
     </body>
     ```
 
-2. 打开 Web 应用项目根目录中的文件“Home.js”****。 此文件指定加载项脚本。 将整个内容替换为以下代码，并保存文件。 
+2. 打开 Web 应用项目根目录中的文件“Home.js”****。 此文件指定加载项脚本。 将整个内容替换为以下代码，并保存文件。
 
     ```js
     'use strict';
@@ -145,7 +145,7 @@ ms.locfileid: "42596618"
     })();
     ```
 
-3. 打开 Web 应用项目根目录中的文件“Home.css”****。 此文件指定加载项自定义样式。 将整个内容替换为以下代码，并保存文件。 
+3. 打开 Web 应用项目根目录中的文件“Home.css”****。 此文件指定加载项自定义样式。 将整个内容替换为以下代码，并保存文件。
 
     ```css
     #content-header {
@@ -155,7 +155,7 @@ ms.locfileid: "42596618"
         top: 0;
         left: 0;
         width: 100%;
-        height: 80px; 
+        height: 80px;
         overflow: hidden;
     }
 
@@ -166,7 +166,7 @@ ms.locfileid: "42596618"
         left: 0;
         right: 0;
         bottom: 0;
-        overflow: auto; 
+        overflow: auto;
     }
 
     .padding {
@@ -198,7 +198,7 @@ ms.locfileid: "42596618"
 
 ### <a name="try-it-out"></a>试用
 
-1. 使用 Visual Studio 的同时，按 **F5** 或选择“开始”**** 按钮启动 Excel，以测试新建的 Excel 加载项，功能区中显示有“显示任务窗格”**** 加载项按钮。加载项本地托管在 IIS 上。
+1. 使用 Visual Studio 时，测试新建的 Excel 加载项，具体方法为按 **F5** 或选择“开始”**** 按钮来启动 Excel，功能区中显示“显示任务窗格”**** 加载项按钮。 此加载项会在 IIS 上本地托管。 如果系统要求你信任证书，请信任证书，这样此加载项才能连接到它的主机。
 
 2. 在 Excel 中，依次选择的“**开始**”选项卡和功能区中的“**显示任务窗格**”按钮，以打开加载项任务窗格。
 
@@ -209,6 +209,8 @@ ms.locfileid: "42596618"
 4. 在任务窗格中，选择“**设置颜色**”按钮，将选定区域的颜色设置为绿色。
 
     ![Excel 加载项](../images/excel-quickstart-addin-2c.png)
+
+[!include[Console tool note](../includes/console-tool-note.md)]
 
 ### <a name="next-steps"></a>后续步骤
 

@@ -1,14 +1,14 @@
 ---
 title: 部署和安装 Outlook 加载项以进行测试
 description: 创建清单文件，将加载项 UI 文件部署到 Web 服务器，在邮箱中安装加载项，然后测试加载项。
-ms.date: 11/06/2019
+ms.date: 03/18/2020
 localization_priority: Priority
-ms.openlocfilehash: 521199a87282b58c3bf10553886174e8be26cacf
-ms.sourcegitcommit: a3ddfdb8a95477850148c4177e20e56a8673517c
+ms.openlocfilehash: 76688ad3e1eca2dda832a94c3a9ae815e37678bc
+ms.sourcegitcommit: 6c381634c77d316f34747131860db0a0bced2529
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "42165885"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "42890975"
 ---
 # <a name="deploy-and-install-outlook-add-ins-for-testing"></a>部署和安装 Outlook 加载项以进行测试
 
@@ -76,11 +76,11 @@ New-App -URL:"http://<fully-qualified URL">
 
 - 若要开发供私人使用或仅供组织成员使用的外接程序，请务必测试公司使用的 Outlook 版本。请注意，某些用户可能会使用 Outlook 网页版。因此，还请务必测试公司的标准浏览器版本。
 
-- 如果开发的是将在 [AppSource](https://appsource.microsoft.com) 中列出的加载项，则必须测试 [AppSource 验证策略 4.12.1](/office/dev/store/validation-policies#4-apps-and-add-ins-behave-predictably) 中指定的必需版本。这包括：
+- 如果开发的是要在 [AppSource](https://appsource.microsoft.com) 中列出的加载项，必须测试[商业市场认证策略 1120.3](/legal/marketplace/certification-policies#11203-functionality) 中指定的必需版本。这包括：
     - 最新版 Windows 版 Outlook 和前一个版本。
     - 最新版 Mac 版 Outlook。
     - 最新 iOS 版和 Android 版 Outlook（如果加载项[支持移动设备规格](add-mobile-support.md)）。
-    - AppSource 验证策略 4.12.1 中指定的浏览器版本。
+    - 商业市场验证策略 1120.3 中指定的浏览器版本。
 
 > [!NOTE]
 > 如果由于[请求的 API 要求集](apis.md)不受客户端支持，导致外接程序不支持上述客户端之一，将从所需客户端列表中删除相应客户端。
