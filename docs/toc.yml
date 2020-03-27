@@ -56,7 +56,7 @@
               href: develop/initialize-add-in.md
             - name: 常见问题的编码指南
               href: develop/common-coding-issues.md
-            - name: 通用 API (Office 2013+)
+            - name: 通用 API
               items:
                 - name: 常见 JavaScript API 对象模型
                   href: develop/office-javascript-api-object-model.md
