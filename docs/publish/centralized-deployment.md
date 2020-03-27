@@ -1,14 +1,14 @@
 ---
 title: 通过 Office 365 管理中心进行集中部署来发布 Office 加载项
 description: 了解如何使用集中部署来部署内部加载项以及 Isv 提供的外接程序。
-ms.date: 02/14/2020
+ms.date: 03/24/2020
 localization_priority: Normal
-ms.openlocfilehash: ac17113ee1e8d38d0b891a8decb3b48ca299c8fe
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: cd271aec9ac222815d52adf6375d09b02cb93ea9
+ms.sourcegitcommit: 315a648cce38609c3e1c92bd4a339e268f8a2e1d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42720986"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "42978625"
 ---
 # <a name="publish-office-add-ins-using-centralized-deployment-via-the-office-365-admin-center"></a>通过 Office 365 管理中心进行集中部署来发布 Office 加载项
 
@@ -17,7 +17,7 @@ ms.locfileid: "42720986"
 Office 365 管理中心当前支持以下方案：
 
 - 为个人、组或组织集中部署新的和更新的加载项。
-- 部署到多个平台，包括 Windows、Mac、iOS/iPad、Android 和 web 上。
+- 部署到多个平台，包括 Windows、Mac、iOS、Android 和 web 上。
 - 到英语语言租户和全球范围租户的部署。
 - 部署云托管的加载项。
 - 部署托管在防火墙内的加载项。
