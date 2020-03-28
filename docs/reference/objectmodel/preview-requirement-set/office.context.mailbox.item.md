@@ -1,14 +1,14 @@
 ---
 title: "\"Context.subname\"-\"邮箱\"-预览要求集"
 description: Outlook 邮箱 API preview 要求集项目对象模型的版本。
-ms.date: 03/18/2020
+ms.date: 03/27/2020
 localization_priority: Normal
-ms.openlocfilehash: 959b2350f74969bd5c3c3be874f876cf5fe45561
-ms.sourcegitcommit: 6c381634c77d316f34747131860db0a0bced2529
+ms.openlocfilehash: c2b9b388c37364ca3072329d7f67266ef865e903
+ms.sourcegitcommit: 559a7e178e84947e830cc00dfa01c5c6e398ddc2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/21/2020
-ms.locfileid: "42890891"
+ms.lasthandoff: 03/27/2020
+ms.locfileid: "43030822"
 ---
 # <a name="item-mailbox-preview-requirement-set"></a>项目（邮箱预览要求集）
 
@@ -56,6 +56,8 @@ ms.locfileid: "42890891"
 | | ReadItem | [邮件读取](/javascript/api/outlook/office.messageread?view=outlook-js-preview#from) | [EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 | internetHeaders | ReadItem | [邮件撰写](/javascript/api/outlook/office.messagecompose?view=outlook-js-preview#internetheaders) | [InternetHeaders](/javascript/api/outlook/office.internetheaders) | [1.8](../requirement-set-1.8/outlook-requirement-set-1.8.md) |
 | internetMessageId | ReadItem | [邮件读取](/javascript/api/outlook/office.messageread?view=outlook-js-preview#internetmessageid) | String | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| isAllDayEvent | ReadItem | [约会组织者](/javascript/api/outlook/office.appointmentcompose?view=outlook-js-preview#isalldayevent) | [IsAllDayEvent](/javascript/api/outlook/office.isalldayevent) | [预览](outlook-requirement-set-preview.md) |
+| | | [约会与会者](/javascript/api/outlook/office.appointmentread?view=outlook-js-preview#isalldayevent) | Boolean | [预览](outlook-requirement-set-preview.md) |
 | itemClass | ReadItem | [约会与会者](/javascript/api/outlook/office.appointmentread?view=outlook-js-preview#itemclass) | String | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 | | | [邮件读取](/javascript/api/outlook/office.messageread?view=outlook-js-preview#itemclass) | String | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 | itemId | ReadItem | [约会与会者](/javascript/api/outlook/office.appointmentread?view=outlook-js-preview#itemid) | String | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
@@ -83,6 +85,8 @@ ms.locfileid: "42890891"
 | requiredAttendees | ReadItem | [约会组织者](/javascript/api/outlook/office.appointmentcompose?view=outlook-js-preview#requiredattendees) | [收件人](/javascript/api/outlook/office.recipients) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 | | | [约会与会者](/javascript/api/outlook/office.appointmentread?view=outlook-js-preview#requiredattendees) | <[EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails)> | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 | sender | ReadItem | [邮件读取](/javascript/api/outlook/office.messageread?view=outlook-js-preview#sender) | [EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| sensitivity | ReadItem | [约会组织者](/javascript/api/outlook/office.appointmentcompose?view=outlook-js-preview#sensitivity) | [Sensitivity](/javascript/api/outlook/office.sensitivity) | [预览](outlook-requirement-set-preview.md) |
+| | | [约会与会者](/javascript/api/outlook/office.appointmentread?view=outlook-js-preview#sensitivity) | [MailboxEnums。 AppointmentSensitivityType](/javascript/api/outlook/office.mailboxenums.appointmentsensitivitytype) | [预览](outlook-requirement-set-preview.md) |
 | Webcasts&seriesid | ReadItem | [约会组织者](/javascript/api/outlook/office.appointmentcompose?view=outlook-js-preview#seriesid) | String | [1.7](../requirement-set-1.7/outlook-requirement-set-1.7.md) |
 | | | [约会与会者](/javascript/api/outlook/office.appointmentread?view=outlook-js-preview#seriesid) | String | [1.7](../requirement-set-1.7/outlook-requirement-set-1.7.md) |
 | | | [邮件撰写](/javascript/api/outlook/office.messagecompose?view=outlook-js-preview#seriesid) | String | [1.7](../requirement-set-1.7/outlook-requirement-set-1.7.md) |
@@ -90,14 +94,14 @@ ms.locfileid: "42890891"
 | start | ReadItem | [约会组织者](/javascript/api/outlook/office.appointmentcompose?view=outlook-js-preview#start) | [Time](/javascript/api/outlook/office.time) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 | | | [约会与会者](/javascript/api/outlook/office.appointmentread?view=outlook-js-preview#start) | 日期 | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 | | | [邮件读取](/javascript/api/outlook/office.messageread?view=outlook-js-preview#start)<br>（会议请求） | 日期 | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| subject | ReadItem | [约会组织者](/javascript/api/outlook/office.appointmentcompose?view=outlook-js-preview#subject) | [Subject](/javascript/api/outlook/office.subject) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| subject | ReadItem | [约会组织者](/javascript/api/outlook/office.appointmentcompose?view=outlook-js-preview#subject) | [主题](/javascript/api/outlook/office.subject) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 | | | [约会与会者](/javascript/api/outlook/office.appointmentread?view=outlook-js-preview#subject) | String | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| | | [邮件撰写](/javascript/api/outlook/office.messagecompose?view=outlook-js-preview#subject) | [Subject](/javascript/api/outlook/office.subject) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| | | [邮件撰写](/javascript/api/outlook/office.messagecompose?view=outlook-js-preview#subject) | [主题](/javascript/api/outlook/office.subject) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 | | | [邮件读取](/javascript/api/outlook/office.messageread?view=outlook-js-preview#subject) | String | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 | to | ReadItem | [邮件撰写](/javascript/api/outlook/office.messagecompose?view=outlook-js-preview#to) | [收件人](/javascript/api/outlook/office.recipients) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 | | | [邮件读取](/javascript/api/outlook/office.messageread?view=outlook-js-preview#to) | <[EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails)> | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 
-## <a name="methods"></a>方法
+## <a name="methods"></a>Methods
 
 | 方法 | 最低<br>权限级别 | 详细信息（按模式） | 最低<br>要求集 |
 |---|---|---|:---:|

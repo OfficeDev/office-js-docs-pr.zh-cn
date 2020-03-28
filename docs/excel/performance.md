@@ -1,14 +1,14 @@
 ---
 title: Excel JavaScript API 性能优化
 description: 使用 Excel JavaScript API 优化性能
-ms.date: 06/20/2019
+ms.date: 03/27/2020
 localization_priority: Normal
-ms.openlocfilehash: a09b01c698a09bbb25d60518069f6e26fe5acaf1
-ms.sourcegitcommit: 6c381634c77d316f34747131860db0a0bced2529
+ms.openlocfilehash: a202776569cdfc31a1221e3de1a356f0dafa2bfb
+ms.sourcegitcommit: 559a7e178e84947e830cc00dfa01c5c6e398ddc2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/21/2020
-ms.locfileid: "42891010"
+ms.lasthandoff: 03/27/2020
+ms.locfileid: "43030829"
 ---
 # <a name="performance-optimization-using-the-excel-javascript-api"></a>使用 Excel JavaScript API 优化性能
 
@@ -75,7 +75,7 @@ _其中：_
 * `properties` 列出了要加载的属性，指定为逗号分隔的字符串或名称数组。 有关详细信息，请参阅`load()`为[Excel JavaScript API 参考](../reference/overview/excel-add-ins-reference-overview.md)中的对象定义的方法。
 * `loadOption` 指定的对象描述了选择、展开、置顶和跳过选项。有关详细信息，请参阅对象加载[选项](/javascript/api/office/officeextension.loadoption)。
 
-请注意，对象下的某些 "属性" 可能与另一个对象具有相同的名称。 例如，`format` 是区域对象下的一个属性，但 `format` 本身也是一个对象。 因此，如果发出 `range.load("format")` 之类的调用，这就相当于 `range.format.load()`，后者是一个空 load() 调用，它可能会导致前面所述的性能问题。 若要避免这种情况，代码应仅加载对象树中的 "叶节点"。 
+请注意，对象下的某些 "属性" 可能与另一个对象具有相同的名称。 例如，`format` 是区域对象下的一个属性，但 `format` 本身也是一个对象。 因此，如果发出 `range.load("format")` 之类的调用，这就相当于 `range.format.load()`，后者是一个空 load() 调用，它可能会导致前面所述的性能问题。 若要避免这种情况，代码应仅加载对象树中的 "叶节点"。
 
 ## <a name="suspend-excel-processes-temporarily"></a>暂时挂起 Excel 进程
 
@@ -129,6 +129,9 @@ Excel.run(async function(ctx) {
 ### <a name="suspend-screen-updating"></a>暂停屏幕更新
 
 Excel 大约会在代码发生更改时显示外接程序所进行的这些更改。 对于大型迭代数据集，你无需实时在屏幕上查看此进度。 在外接程序调用 `context.sync()` 或者在 `Excel.run` 结束（隐式调用 `context.sync`）之前，`Application.suspendScreenUpdatingUntilNextSync()` 将暂停对 Excel 的可视化更新。 请注意，在下次同步之前，Excel 不会显示任何活动迹象。你的外接程序应为用户提供相关指南，以便为此延迟做好准备，或者提供一个状态栏，以演示相关活动。
+
+> [!NOTE]
+> 请勿重复`suspendScreenUpdatingUntilNextSync`调用（如在循环中）。 重复调用将导致 Excel 窗口闪烁。
 
 ### <a name="enable-and-disable-events"></a>启用和禁用事件
 
@@ -191,7 +194,7 @@ Excel.run(async (context) => {
     var largeRange = context.workbook.getSelectedRange();
     largeRange.load(["rowCount", "columnCount"]);
     await context.sync();
-    
+
     for (var i = 0; i < largeRange.rowCount; i++) {
         for (var j = 0; j < largeRange.columnCount; j++) {
             var cell = largeRange.getCell(i, j);

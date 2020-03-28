@@ -1,14 +1,14 @@
 ---
 title: Outlook 外接程序 API 预览要求集
 description: 当前在 Outlook 外接程序和 Office JavaScript Api 的预览中的功能和 Api。
-ms.date: 03/26/2020
+ms.date: 03/27/2020
 localization_priority: Normal
-ms.openlocfilehash: 55de284932a53d2226258a15c86ead4f05361c30
-ms.sourcegitcommit: 315a648cce38609c3e1c92bd4a339e268f8a2e1d
+ms.openlocfilehash: 3d8eaac1b665d4bd65d5cf0383e53d6f6fb70324
+ms.sourcegitcommit: 559a7e178e84947e830cc00dfa01c5c6e398ddc2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "42978618"
+ms.lasthandoff: 03/27/2020
+ms.locfileid: "43030815"
 ---
 # <a name="outlook-add-in-api-preview-requirement-set"></a>Outlook 外接程序 API 预览要求集
 
@@ -24,6 +24,44 @@ Office JavaScript API 的 Outlook 外接程序 API 子集包括可以在 Outlook
 ## <a name="features-in-preview"></a>预览阶段的功能
 
 以下是预览版中的功能。
+
+### <a name="additional-calendar-properties"></a>其他日历属性
+
+#### <a name="isalldayevent"></a>[IsAllDayEvent](/javascript/api/outlook/office.isalldayevent?view=outlook-js-preview)
+
+在撰写模式下添加了一个代表约会全天事件属性的新对象。
+
+**适用于**：Windows 版 Outlook（已连接到 Office 365 订阅）
+
+#### <a name="sensitivity"></a>[Sensitivity](/javascript/api/outlook/office.sensitivity?view=outlook-js-preview)
+
+添加了一个新对象，该对象表示在撰写模式下约会的敏感度。
+
+**适用于**：Windows 版 Outlook（已连接到 Office 365 订阅）
+
+#### <a name="officecontextmailboxitemisalldayevent"></a>[IsAllDayEvent 的 Office。](office.context.mailbox.item.md#properties)
+
+添加了一个新属性，该属性表示约会是否为全天事件。
+
+**适用于**：Windows 版 Outlook（已连接到 Office 365 订阅）
+
+#### <a name="officecontextmailboxitemsensitivity"></a>["Context"。项目敏感度](office.context.mailbox.item.md#properties)
+
+添加了一个表示约会敏感度的新属性。
+
+**适用于**：Windows 版 Outlook（已连接到 Office 365 订阅）
+
+#### <a name="officemailboxenumsappointmentsensitivitytype"></a>[MailboxEnums. AppointmentSensitivityType](/javascript/api/outlook/office.mailboxenums.appointmentsensitivitytype?view=outlook-js-preview)
+
+添加了一个代表`AppointmentSensitivityType`约会上可用的敏感度选项的新枚举。
+
+**适用于**：Windows 版 Outlook（已连接到 Office 365 订阅）
+
+<br>
+
+---
+
+---
 
 ### <a name="append-on-send"></a>发送时追加
 
