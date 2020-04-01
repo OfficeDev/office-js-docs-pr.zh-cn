@@ -1,15 +1,15 @@
 ---
 title: Excel 加载项教程
 description: 在本教程中，你将学习如何构建一个 Excel 外接程序，用于创建、填充、筛选和排序表格、创建图表、冻结表格标题、保护工作表并打开对话框。
-ms.date: 01/16/2020
+ms.date: 03/30/2020
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: 8d16369908f5885e20c145581c021ba69855e968
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: bc14027600a108f47cdf4766a51ebf2437b6f976
+ms.sourcegitcommit: 73a3df90a51acf13416d6a049bddcd9aabc32441
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42719789"
+ms.lasthandoff: 03/31/2020
+ms.locfileid: "43069314"
 ---
 # <a name="tutorial-create-an-excel-task-pane-add-in"></a>教程：创建 Excel 任务窗格加载项
 
@@ -163,7 +163,7 @@ ms.locfileid: "42719789"
     - 最后，它确保了列宽和行高足以容纳最长（或最高）的数据项。 请注意，此代码必须获取要格式化的 `Range` 对象。 `TableColumn` 和 `TableRow` 对象没有格式属性。
 
     ```js
-    expensesTable.columns.getItemAt(3).getRange().numberFormat = [['&euro;#,##0.00']];
+    expensesTable.columns.getItemAt(3).getRange().numberFormat = [['\u20AC#,##0.00']];
     expensesTable.getRange().format.autofitColumns();
     expensesTable.getRange().format.autofitRows();
     ```

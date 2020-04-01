@@ -1,14 +1,14 @@
 ---
 title: Outlook 加载项的 Onsend 功能
 description: 提供了一种处理项目或阻止用户进行特定操作的方法，并允许加载项在发送时设置某些属性。
-ms.date: 03/24/2020
+ms.date: 03/30/2020
 localization_priority: Normal
-ms.openlocfilehash: de570e70a0562720d8ba069f98cff0693a6894bf
-ms.sourcegitcommit: 315a648cce38609c3e1c92bd4a339e268f8a2e1d
+ms.openlocfilehash: 59d633169fa74687032691bef65fb7f0b114822a
+ms.sourcegitcommit: 73a3df90a51acf13416d6a049bddcd9aabc32441
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "42978674"
+ms.lasthandoff: 03/31/2020
+ms.locfileid: "43069307"
 ---
 # <a name="on-send-feature-for-outlook-add-ins"></a>Outlook 加载项的 Onsend 功能
 
@@ -18,7 +18,7 @@ Outlook 加载项的 Onsend 功能提供了一种处理邮件或会议项目，�
 - 将特定的收件人添加到邮件中的“抄送”行中，或添加到会议中的“可选收件人”行中。
 
 > [!NOTE]
-> Exchange Online (Office 365)、Exchange 2016 本地版本（累积更新 6 或更高版本）和 Exchange 2019 本地版本（累积更新 1 或更高版本）中 Outlook 网页版支持 on-send 功能。 Windows 和 Mac 上的最新 Outlook 内部版本中也提供了此功能，与 Exchange Online (Office 365) 连接。 要求集1.8 中引入了对此功能的支持。
+> Exchange Online (Office 365)、Exchange 2016 本地版本（累积更新 6 或更高版本）和 Exchange 2019 本地版本（累积更新 1 或更高版本）中 Outlook 网页版支持 on-send 功能。 Windows 和 Mac 上的最新 Outlook 内部版本中也提供了此功能，与 Exchange Online (Office 365) 连接。 在要求集1.8 （[当前服务器和客户端支持](../reference/requirement-sets/outlook-api-requirement-sets.md#requirement-sets-supported-by-exchange-servers-and-outlook-clients)）中引入了此功能。
 
 > [!IMPORTANT]
 > [AppSource](https://appsource.microsoft.com)中不允许使用 "发送时" 功能的外接程序。
