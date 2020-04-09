@@ -3,12 +3,12 @@ title: 将任务窗格和内容加载项发布到 SharePoint 应用程序目录
 description: 为使组织内的用户可访问 Office 加载项，管理员可以将 Office 加载项清单文件上传到组织的应用程序目录中。
 ms.date: 06/20/2019
 localization_priority: Normal
-ms.openlocfilehash: e9a600cd807379e9c55f2fc98bb4f2d71552058f
-ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
+ms.openlocfilehash: 5557dd31e829fac2c2dbd421200da46a5c3b9b99
+ms.sourcegitcommit: c3bfea0818af1f01e71a1feff707fb2456a69488
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "42325303"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "43185587"
 ---
 # <a name="publish-task-pane-and-content-add-ins-to-a-sharepoint-app-catalog"></a>将任务窗格和内容加载项发布到 SharePoint 应用程序目录
 
@@ -31,30 +31,7 @@ ms.locfileid: "42325303"
 
 ### <a name="to-create-an-app-catalog-on-office-365"></a>在 Office 365 上创建应用程序目录
 
-1. 转到 Microsoft 365 管理中心。 有关如何查找管理中心的信息，请参阅[关于 Microsoft 365 管理中心](/office365/admin/admin-overview/about-the-admin-center)。
-
-2. 在 Microsoft 365 管理中心页面上，展开“**管理中心**”列表，然后选择“**SharePoint**”。
-
-    > [!NOTE]
-    > 需要使用经典 SharePoint 管理中心才能创建目录。 如果位于新的 SharePoint 管理中心，请在左侧窗格中选择“**经典 SharePoint 管理中心**”。
-
-3. 在左侧任务窗格中，选择 "**应用程序**"。
-
-4. 在“**应用程序**”页面上，选择“**应用程序目录**”。
-    > [!NOTE]
-    > 如果已创建应用程序目录并且它显示在此页面上，则你可以跳过其余步骤并转至本文下一章节，将你的加载项发布到目录。
-
-5. 在“**应用程序目录网站**”页上，选择“**确定**”以接受默认选项并创建新的应用程序目录网站。
-
-6. 在“**创建应用程序目录网站集**”页上，指定应用程序目录网站的标题。
-
-7. 指定**网站地址**。
-
-8. 指定**管理员**。
-
-9. 将**服务器资源配额**设为 0（零）。 （服务器资源配额与限制性能不佳的沙盒解决方案有关，但你不会在应用程序目录网站上安装任何沙盒解决方案。）
-
-10. 选择“**确定**”。
+若要创建 SharePoint 应用程序目录，请按照[create The App catalog site collection](/sharepoint/use-app-catalog#step-1-create-the-app-catalog-site-collection)中的说明操作。 创建应用程序目录后，请按照下一节中的步骤发布 Office 外接程序。
 
 ## <a name="publish-an-office-add-in"></a>发布 Office 加载项
 
@@ -62,17 +39,21 @@ ms.locfileid: "42325303"
 
 ### <a name="to-publish-an-office-add-in-to-a-sharepoint-app-catalog-on-office-365"></a>将 Office 加载项发布到 Office 365 上的 SharePoint 应用程序目录
 
-1. 转到 Microsoft 365 管理中心。 有关如何查找管理中心的信息，请参阅[关于 Microsoft 365 管理中心](/office365/admin/admin-overview/about-the-admin-center)。
-2. 在 Microsoft 365 管理中心页面上，展开“**管理中心**”列表，然后选择“**SharePoint**”。
-    > [!NOTE]
-    > 需要使用经典 SharePoint 管理中心才能创建目录。 如果位于新的 SharePoint 管理中心，请在左侧窗格中选择“**经典 SharePoint 管理中心**”。
-3. 在左侧任务窗格中，选择 "**应用程序**"。
-4. 在“**应用程序**”页面上，选择“**应用程序目录**”。
-5. 选择“**分发 Office 应用程序**”。
-6. 在“**Office 应用程序**”页中，选择“**新建**”。
-7. 在“**添加文档**”对话框中，选择“**选择文件**”按钮。
-8. 找到并指定要上传的“[清单文件](../develop/add-in-manifests.md)”，并选择“**打开**”。
-9. 在“**添加文档**”对话框中，选择“**确定**”。
+1. 转到[新的 SharePoint 管理中心的“活动站点”页面](https://admin.microsoft.com/sharepoint?page=siteManagement&modern=true)，然后使用在组织中具有[管理员权限](/sharepoint/sharepoint-admin-role)的帐户进行登录。
+
+>[!NOTE]
+>如果使用的是 Office 365 Germany，请[登录 Microsoft 365 管理中心](https://go.microsoft.com/fwlink/p/?linkid=848041)，然后浏览到 SharePoint 管理中心并打开“更多功能”页面。 <br>如果使用的是由世纪互联（中国）运营的 Office 365，请[登录 Microsoft 365 管理中心](https://go.microsoft.com/fwlink/p/?linkid=850627)，然后浏览到 SharePoint 管理中心并打开“更多功能”页面。
+ 
+2. 通过在 "URL" 列中选择应用程序目录网站的 URL 来打开该网站。 
+
+>[!NOTE]
+>如果你刚刚在上一节中创建了应用程序目录网站，可能需要几分钟时间才能完成网站设置。
+
+3. 选择“**分发 Office 应用程序**”。
+4. 在“**Office 应用程序**”页中，选择“**新建**”。
+5. 在“**添加文档**”对话框中，选择“**选择文件**”按钮。
+6. 找到并指定要上传的“[清单文件](../develop/add-in-manifests.md)”，并选择“**打开**”。
+7. 在“**添加文档**”对话框中，选择“**确定**”。
 
 ### <a name="to-publish-an-add-in-to-an-app-catalog-with-on-premises-sharepoint-server"></a>使用本地 SharePoint Server 将加载项发布到应用程序目录
 

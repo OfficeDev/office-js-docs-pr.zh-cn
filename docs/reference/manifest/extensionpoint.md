@@ -1,18 +1,18 @@
 ---
 title: 清单文件中的 ExtensionPoint 元件
 description: 定义 Office UI 中加载项公开功能的位置。
-ms.date: 09/05/2019
+ms.date: 04/07/2020
 localization_priority: Normal
-ms.openlocfilehash: c945875140fdbdb7ba6aaeed7bb0a7bf5d06e050
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: 7cdcb96fbd0766b6751917ec84c5bea9a86b0ce1
+ms.sourcegitcommit: c3bfea0818af1f01e71a1feff707fb2456a69488
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42720566"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "43185426"
 ---
 # <a name="extensionpoint-element"></a>ExtensionPoint 元素
 
- 定义 Office UI 中加载项公开功能的位置。 **ExtensionPoint** 元素是 [AllFormFactors](allformfactors.md)、[DesktopFormFactor](desktopformfactor.md) 或 [MobileFormFactor](mobileformfactor.md) 的子元素。 
+ 定义 Office UI 中加载项公开功能的位置。 **ExtensionPoint** 元素是 [AllFormFactors](allformfactors.md)、[DesktopFormFactor](desktopformfactor.md) 或 [MobileFormFactor](mobileformfactor.md) 的子元素。
 
 ## <a name="attributes"></a>属性
 
@@ -33,7 +33,7 @@ ms.locfileid: "42720566"
 
 下面的示例演示如何将 **ExtensionPoint** 元素与 **PrimaryCommandSurface** 和 **ContextMenu** 属性值配合使用，以及应彼此配合使用的子元素。
 
-> [!IMPORTANT] 
+> [!IMPORTANT]
 > 对于包含 ID 属性的元素，请务必提供唯一 ID。建议将公司名称与 ID 结合使用。例如，请使用以下格式：<CustomTab id="mycompanyname.mygroupname">
 
 ```XML
@@ -86,16 +86,18 @@ ms.locfileid: "42720566"
 
 ## <a name="extension-points-for-outlook"></a>仅适用于 Outlook 的扩展点
 
-- [MessageReadCommandSurface](#messagereadcommandsurface) 
-- [MessageComposeCommandSurface](#messagecomposecommandsurface) 
-- [AppointmentOrganizerCommandSurface](#appointmentorganizercommandsurface) 
+- [MessageReadCommandSurface](#messagereadcommandsurface)
+- [MessageComposeCommandSurface](#messagecomposecommandsurface)
+- [AppointmentOrganizerCommandSurface](#appointmentorganizercommandsurface)
 - [AppointmentAttendeeCommandSurface](#appointmentattendeecommandsurface)
 - [Module](#module)（仅能在 [DesktopFormFactor](desktopformfactor.md) 中使用。）
 - [MobileMessageReadCommandSurface](#mobilemessagereadcommandsurface)
+- [MobileOnlineMeetingCommandSurface](#mobileonlinemeetingcommandsurface-preview)
 - [Events](#events)
 - [DetectedEntity](#detectedentity)
 
 ### <a name="messagereadcommandsurface"></a>MessageReadCommandSurface
+
 此扩展点将按钮放置在邮件阅读窗体的命令界面。在 Outlook 桌面，它显示在功能区中。
 
 #### <a name="child-elements"></a>子元素
@@ -106,6 +108,7 @@ ms.locfileid: "42720566"
 |  [CustomTab](customtab.md) |  将命令添加到自定义功能区选项卡。  |
 
 #### <a name="officetab-example"></a>OfficeTab 示例
+
 ```xml
 <ExtensionPoint xsi:type="MessageReadCommandSurface">
   <OfficeTab id="TabDefault">
@@ -115,6 +118,7 @@ ms.locfileid: "42720566"
 ```
 
 #### <a name="customtab-example"></a>CustomTab 示例
+
 ```xml
 <ExtensionPoint xsi:type="MessageReadCommandSurface">
   <CustomTab id="TabCustom1">
@@ -124,6 +128,7 @@ ms.locfileid: "42720566"
 ```
 
 ### <a name="messagecomposecommandsurface"></a>MessageComposeCommandSurface
+
 此扩展点将按钮置于使用电子邮件撰写窗体的外接程序的功能区上。 
 
 #### <a name="child-elements"></a>子元素
@@ -134,6 +139,7 @@ ms.locfileid: "42720566"
 |  [CustomTab](customtab.md) |  将命令添加到自定义功能区选项卡。  |
 
 #### <a name="officetab-example"></a>OfficeTab 示例
+
 ```xml
 <ExtensionPoint xsi:type="MessageComposeCommandSurface">
   <OfficeTab id="TabDefault">
@@ -164,6 +170,7 @@ ms.locfileid: "42720566"
 |  [CustomTab](customtab.md) |  将命令添加到自定义功能区选项卡。  |
 
 #### <a name="officetab-example"></a>OfficeTab 示例
+
 ```xml
 <ExtensionPoint xsi:type="AppointmentOrganizerCommandSurface">
   <OfficeTab id="TabDefault">
@@ -173,6 +180,7 @@ ms.locfileid: "42720566"
 ```
 
 #### <a name="customtab-example"></a>CustomTab 示例
+
 ```xml
 <ExtensionPoint xsi:type="AppointmentOrganizerCommandSurface">
   <CustomTab id="TabCustom1">
@@ -193,6 +201,7 @@ ms.locfileid: "42720566"
 |  [CustomTab](customtab.md) |  将命令添加到自定义功能区选项卡。  |
 
 #### <a name="officetab-example"></a>OfficeTab 示例
+
 ```xml
 <ExtensionPoint xsi:type="AppointmentAttendeeCommandSurface">
   <OfficeTab id="TabDefault">
@@ -202,6 +211,7 @@ ms.locfileid: "42720566"
 ```
 
 #### <a name="customtab-example"></a>CustomTab 示例
+
 ```xml
 <ExtensionPoint xsi:type="AppointmentAttendeeCommandSurface">
   <CustomTab id="TabCustom1">
@@ -212,7 +222,7 @@ ms.locfileid: "42720566"
 
 ### <a name="module"></a>Module
 
-此扩展点将按钮置于模块扩展的功能区上。 
+此扩展点将按钮置于模块扩展的功能区上。
 
 #### <a name="child-elements"></a>子元素
 
@@ -222,6 +232,7 @@ ms.locfileid: "42720566"
 |  [CustomTab](customtab.md) |  将命令添加到自定义功能区选项卡。  |
 
 ### <a name="mobilemessagereadcommandsurface"></a>MobileMessageReadCommandSurface
+
 此扩展点将按钮置于移动外形规格中的邮件阅读视图的命令界面中。
 
 #### <a name="child-elements"></a>子元素
@@ -235,6 +246,7 @@ ms.locfileid: "42720566"
 此扩展点中包含的 **Control** 元素必须将 **xsi:type** 属性设置为 `MobileButton`。
 
 #### <a name="example"></a>示例
+
 ```xml
 <ExtensionPoint xsi:type="MobileMessageReadCommandSurface">
   <Group id="mobileGroupID">
@@ -246,12 +258,50 @@ ms.locfileid: "42720566"
 </ExtensionPoint>
 ```
 
+### <a name="mobileonlinemeetingcommandsurface-preview"></a>MobileOnlineMeetingCommandSurface （预览）
+
+> [!NOTE]
+> 仅在使用 Office 365 订阅的 Android 上的[预览](../objectmodel/preview-requirement-set/outlook-requirement-set-preview.md)中支持此扩展点。
+
+此扩展点在命令界面中为移动外观的约会放置一个适合模式的切换。 会议组织者可以创建联机会议。 与会者随后可以加入联机会议。
+
+#### <a name="child-elements"></a>子元素
+
+|  元素 |  说明  |
+|:-----|:-----|
+|  [Control](control.md) |  将按钮添加到命令界面。  |
+
+此类型的**ExtensionPoint**元素只能有一个子元素： **Control**元素。
+
+此扩展点中包含的**Control**元素必须将**xsi： type**属性设置为`MobileButton`。
+
+#### <a name="example"></a>示例
+
+```xml
+<ExtensionPoint xsi:type="MobileOnlineMeetingCommandSurface">
+  <Control xsi:type="MobileButton" id="onlineMeetingFunctionButton">
+    <Label resid="residUILessButton0Name" />
+    <Icon>
+      <bt:Image resid="UiLessIcon" size="25" scale="1" />
+      <bt:Image resid="UiLessIcon" size="25" scale="2" />
+      <bt:Image resid="UiLessIcon" size="25" scale="3" />
+      <bt:Image resid="UiLessIcon" size="32" scale="1" />
+      <bt:Image resid="UiLessIcon" size="32" scale="2" />
+      <bt:Image resid="UiLessIcon" size="32" scale="2" />
+      <bt:Image resid="UiLessIcon" size="48" scale="1" />
+      <bt:Image resid="UiLessIcon" size="48" scale="2" />
+      <bt:Image resid="UiLessIcon" size="48" scale="3" />
+    </Icon>
+    <Action xsi:type="ExecuteFunction">
+      <FunctionName>UiLessInsertMeetingLink</FunctionName>
+    </Action>
+  </Control>
+</ExtensionPoint>
+```
+
 ### <a name="events"></a>事件
 
 此扩展点添加了指定事件的事件处理程序。
-
-> [!NOTE]
-> 经典 Outlook 网页版、以及 Windows、Mac 上的[预览版](../objectmodel/preview-requirement-set/outlook-requirement-set-preview.md)以及新式 Outlook 网页版支持此元素类型。 还需要 Office 365 订阅。
 
 | 元素 | 说明  |
 |:-----|:-----|
@@ -306,5 +356,5 @@ ms.locfileid: "42720566"
     <Rule xsi:type="ItemHasKnownEntity" EntityType="MeetingSuggestion" Highlight="all" />
     <Rule xsi:type="ItemHasKnownEntity" EntityType="Address" Highlight="none" />
   </Rule>
-</ExtensionPoint> 
+</ExtensionPoint>
 ```

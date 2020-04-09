@@ -1,14 +1,14 @@
 ---
 title: Outlook 外接程序 API 预览要求集
 description: 当前在 Outlook 外接程序和 Office JavaScript Api 的预览中的功能和 Api。
-ms.date: 03/27/2020
+ms.date: 04/08/2020
 localization_priority: Normal
-ms.openlocfilehash: 3d8eaac1b665d4bd65d5cf0383e53d6f6fb70324
-ms.sourcegitcommit: 559a7e178e84947e830cc00dfa01c5c6e398ddc2
+ms.openlocfilehash: acc19c81f929596b0bd5622e696c1988cf31ee5c
+ms.sourcegitcommit: c3bfea0818af1f01e71a1feff707fb2456a69488
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "43030815"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "43185412"
 ---
 # <a name="outlook-add-in-api-preview-requirement-set"></a>Outlook 外接程序 API 预览要求集
 
@@ -69,13 +69,13 @@ Office JavaScript API 的 Outlook 外接程序 API 子集包括可以在 Outlook
 
 向`Body`对象添加了一个新函数，该函数在撰写模式下将数据追加到项正文的末尾。
 
-**适用于**：Windows 版 Outlook（已连接到 Office 365 订阅）
+**提供**时间： Windows 上的 outlook （连接到 Office 365 订阅）、outlook 网页版（新式）
 
 #### <a name="extendedpermissions"></a>[ExtendedPermissions](../../manifest/extendedpermissions.md)
 
 向清单添加了一个新元素，其中`AppendOnSend`扩展权限必须包含在扩展权限的集合中。
 
-**适用于**：Windows 版 Outlook（已连接到 Office 365 订阅）
+**提供**时间： Windows 上的 outlook （连接到 Office 365 订阅）、outlook 网页版（新式）
 
 <br>
 
@@ -103,13 +103,13 @@ Office JavaScript API 的 Outlook 外接程序 API 子集包括可以在 Outlook
 
 向`Body`对象添加了一个新函数，该函数在撰写模式下添加或替换项目正文中的签名。
 
-**提供**时间： Windows 上的 outlook （连接到 Office 365 订阅）、outlook 网页版（新式）
+**适用于**：Windows 版 Outlook（已连接到 Office 365 订阅）
 
 #### <a name="officecontextmailboxitemdisableclientsignatureasync"></a>[DisableClientSignatureAsync 的 Office。](office.context.mailbox.item.md#methods)
 
 添加了一个新函数，用于在撰写模式下禁用发送邮箱的客户端签名。
 
-**提供**时间： Windows 上的 outlook （连接到 Office 365 订阅）、outlook 网页版（新式）
+**适用于**：Windows 版 Outlook（已连接到 Office 365 订阅）
 
 #### <a name="officecontextmailboxitemgetcomposetypeasync"></a>[GetComposeTypeAsync 的 Office。](/javascript/api/outlook/office.messagecompose?view=outlook-js-preview#getcomposetypeasync-options--callback-)
 
@@ -121,13 +121,13 @@ Office JavaScript API 的 Outlook 外接程序 API 子集包括可以在 Outlook
 
 添加了一个新函数，用于检查在撰写模式下是否在项目上启用了客户端签名。
 
-**提供**时间： Windows 上的 outlook （连接到 Office 365 订阅）、outlook 网页版（新式）
+**适用于**：Windows 版 Outlook（已连接到 Office 365 订阅）
 
 #### <a name="officemailboxenumscomposetype"></a>[MailboxEnums. ComposeType](/javascript/api/outlook/office.mailboxenums.composetype?view=outlook-js-preview)
 
 添加了一个新`ComposeType`枚举，该枚举在撰写模式中可用。
 
-**提供**时间： Windows 上的 outlook （连接到 Office 365 订阅）、outlook 网页版（新式）
+**适用于**：Windows 版 Outlook（已连接到 Office 365 订阅）
 
 <br>
 
@@ -148,6 +148,20 @@ Office JavaScript API 的 Outlook 外接程序 API 子集包括可以在 Outlook
 向 `Mailbox` 中添加了 `OfficeThemeChanged` 事件。
 
 **适用于**：Windows 版 Outlook（已连接到 Office 365 订阅）
+
+<br>
+
+---
+
+---
+
+### <a name="online-meeting-provider-integration"></a>联机会议提供程序集成
+
+#### <a name="mobileonlinemeetingcommandsurface-extension-point"></a>[MobileOnlineMeetingCommandSurface 扩展点](../../manifest/extensionpoint.md#mobileonlinemeetingcommandsurface-preview)
+
+向`MobileOnlineMeetingCommandSurface`清单添加了扩展点。 它定义联机会议集成。
+
+**适用于**： Outlook on Android （连接到 Office 365 订阅）
 
 <br>
 
