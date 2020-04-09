@@ -3,12 +3,12 @@ title: 构建 Office 加载项
 description: Office 加载项开发简介。
 ms.date: 02/27/2020
 localization_priority: Priority
-ms.openlocfilehash: 2ab0c79771d9aa60b2fd99984914554214978089
-ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
+ms.openlocfilehash: 4b9e6b6e9f282ca4dc4831f2dcdda88f379e6c33
+ms.sourcegitcommit: c3bfea0818af1f01e71a1feff707fb2456a69488
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "42325310"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "43185608"
 ---
 # <a name="building-office-add-ins"></a>构建 Office 加载项
 

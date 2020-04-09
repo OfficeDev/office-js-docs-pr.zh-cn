@@ -1,15 +1,15 @@
 ---
 title: 生成首个 Word 任务窗格加载项
 description: 了解如何使用 Office JS API 生成简单的 Word 任务窗格加载项。
-ms.date: 03/19/2020
+ms.date: 04/03/2020
 ms.prod: word
 localization_priority: Priority
-ms.openlocfilehash: 495fcc84ceb7705cf04be7a371c14b776eb0e560
-ms.sourcegitcommit: 6c381634c77d316f34747131860db0a0bced2529
+ms.openlocfilehash: 3c3482747817e26ea6c85687cca54bc1133eb17a
+ms.sourcegitcommit: c3bfea0818af1f01e71a1feff707fb2456a69488
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/21/2020
-ms.locfileid: "42890934"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "43185489"
 ---
 # <a name="build-your-first-word-task-pane-add-in"></a>生成首个 Word 任务窗格加载项
 
@@ -27,6 +27,7 @@ _适用于：Windows 版 Word 2016 或更高版本、iPad 版 Word 和 Mac 版 W
 
 ### <a name="prerequisites"></a>先决条件
 
+[!include[Set up requirements](../includes/set-up-dev-environment-beforehand.md)]
 [!include[Yeoman generator prerequisites](../includes/quickstart-yo-prerequisites.md)]
 
 ### <a name="create-the-add-in-project"></a>创建加载项项目

@@ -1,15 +1,15 @@
 ---
 title: 使用 React 生成 Excel 任务窗格加载项
 description: 了解如何使用 Office JS API 和 React 生成简单的 Excel 任务窗格加载项。
-ms.date: 01/16/2020
+ms.date: 04/03/2020
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: d98d3145a092b18bdfa60f29aa5dda885b9168ed
-ms.sourcegitcommit: 4079903c3cc45b7d8c041509a44e9fc38da399b1
+ms.openlocfilehash: 5a7401fd68100dc4bea1d094a4b1510a7c031f61
+ms.sourcegitcommit: c3bfea0818af1f01e71a1feff707fb2456a69488
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/11/2020
-ms.locfileid: "42596842"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "43185566"
 ---
 # <a name="build-an-excel-task-pane-add-in-using-react"></a>使用 React 生成 Excel 任务窗格加载项
 
@@ -17,6 +17,7 @@ ms.locfileid: "42596842"
 
 ## <a name="prerequisites"></a>先决条件
 
+[!include[Set up requirements](../includes/set-up-dev-environment-beforehand.md)]
 [!include[Yeoman generator prerequisites](../includes/quickstart-yo-prerequisites.md)]
 
 ## <a name="create-the-add-in-project"></a>创建加载项项目

@@ -1,30 +1,30 @@
 ---
 title: 生成首个 Excel 任务窗格加载项
 description: 了解如何使用 Office JS API 生成简单的 Excel 任务窗格加载项。
-ms.date: 03/19/2020
+ms.date: 04/03/2020
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: 95491b8c346432b319c0731085c0ef763727493d
-ms.sourcegitcommit: 6c381634c77d316f34747131860db0a0bced2529
+ms.openlocfilehash: 01298244b11167b67a966dc6d8b66f9b3ba2a735
+ms.sourcegitcommit: c3bfea0818af1f01e71a1feff707fb2456a69488
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/21/2020
-ms.locfileid: "42891395"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "43185573"
 ---
 # <a name="build-an-excel-task-pane-add-in"></a>生成 Excel 任务窗格加载项
 
 本文将逐步介绍如何生成 Excel 任务窗格加载项。
 
-## <a name="create-the-add-in"></a>创建加载项
+## <a name="create-the-add-in"></a>创建加载项 
 
 [!include[Choose your editor](../includes/quickstart-choose-editor.md)]
-
 # <a name="yeoman-generator"></a>[Yeoman 生成器](#tab/yeomangenerator)
 
 [!include[Redirect to the single sign-on (SSO) quick start](../includes/sso-quickstart-reference.md)]
 
-### <a name="prerequisites"></a>先决条件
+## <a name="prerequisites"></a>先决条件
 
+[!include[Set up requirements](../includes/set-up-dev-environment-beforehand.md)]
 [!include[Yeoman generator prerequisites](../includes/quickstart-yo-prerequisites.md)]
 
 ### <a name="create-the-add-in-project"></a>创建加载项项目
