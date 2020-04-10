@@ -1,14 +1,14 @@
 ---
 title: 清单文件中的 Form 元素
 description: 在特定设备（台式机、平板电脑或电话）上运行时邮件外接程序将使用的窗体的 UX 设置。
-ms.date: 01/13/2020
+ms.date: 04/09/2020
 localization_priority: Normal
-ms.openlocfilehash: 9b1696b2fecf6b07ee2a3c0a31611d4f2ad1f291
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: 3e8d60c13a72a50090075d7cd16a0719498c4982
+ms.sourcegitcommit: c6e3bfd3deb77982d0b7082afd6a48678e96e1c3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42718207"
+ms.lasthandoff: 04/10/2020
+ms.locfileid: "43215066"
 ---
 # <a name="form-element"></a>Form 元素
 
@@ -23,19 +23,19 @@ ms.locfileid: "42718207"
 
 ```XML
 <Form xsi:type="ItemRead">
-   <!--website.html is a placeholder for your own add-in website.-->
+   <!--https://MyDomain.com/website.html is a placeholder for your own add-in website.-->
    <DesktopSettings>
-      <SourceLocation DefaultValue="https://website.html" />
-      <!--RequestedHeight must be between 240px to 800px, inclusive.-->
+      <!--If you opt to include RequestedHeight, it must be between 32px to 450px, inclusive.-->
       <RequestedHeight>360</RequestedHeight>
+      <SourceLocation DefaultValue="https://MyDomain.com/website.html" />
    </DesktopSettings>
    <TabletSettings>
-      <SourceLocation DefaultValue="https://website.html" />
-      <!--RequestedHeight must be between 240px to 800px, inclusive.-->
+      <!--If you opt to include RequestedHeight, it must be between 32px to 450px, inclusive.-->
       <RequestedHeight>360</RequestedHeight>
+      <SourceLocation DefaultValue="https://MyDomain.com/website.html" />
    </TabletSettings>
    <PhoneSettings>
-      <SourceLocation DefaultValue="https://website.html" />
+      <SourceLocation DefaultValue="https://MyDomain.com/website.html" />
    </PhoneSettings>
 </Form>
 ```

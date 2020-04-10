@@ -1,14 +1,14 @@
 ---
 title: 清单文件中的 PhoneSettings 元素
 description: PhoneSettings 元素指定在手机上使用邮件外接程序时应用的源位置和控制设置。
-ms.date: 01/13/2020
+ms.date: 04/09/2020
 localization_priority: Normal
-ms.openlocfilehash: 581a3ae71a58cd05aac52129a6f4395a60c20cef
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: cfdf8efc262c1a75142eb06dd71383579598a86f
+ms.sourcegitcommit: c6e3bfd3deb77982d0b7082afd6a48678e96e1c3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42720474"
+ms.lasthandoff: 04/10/2020
+ms.locfileid: "43215045"
 ---
 # <a name="phonesettings-element"></a>PhoneSettings 元素
 
@@ -23,19 +23,19 @@ ms.locfileid: "42720474"
 
 ```XML
 <Form xsi:type="ItemRead">
-   <!--website.html is a placeholder for your own add-in website.-->
+   <!--https://MyDomain.com/website.html is a placeholder for your own add-in website.-->
    <DesktopSettings>
-      <SourceLocation DefaultValue="https://website.html" />
-      <!--RequestedHeight must be between 240px to 800px, inclusive.-->
+      <!--If you opt to include RequestedHeight, it must be between 32px to 450px, inclusive.-->
       <RequestedHeight>360</RequestedHeight>
+      <SourceLocation DefaultValue="https://MyDomain.com/website.html" />
    </DesktopSettings>
    <TabletSettings>
-      <SourceLocation DefaultValue="https://website.html" />
-      <!--RequestedHeight must be between 240px to 800px, inclusive.-->
+      <!--If you opt to include RequestedHeight, it must be between 32px to 450px, inclusive.-->
       <RequestedHeight>360</RequestedHeight>
+      <SourceLocation DefaultValue="https://MyDomain.com/website.html" />
    </TabletSettings>
    <PhoneSettings>
-      <SourceLocation DefaultValue="https://website.html" />
+      <SourceLocation DefaultValue="https://MyDomain.com/website.html" />
    </PhoneSettings>
 </Form>
 ```

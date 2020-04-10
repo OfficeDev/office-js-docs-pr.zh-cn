@@ -3,12 +3,12 @@ title: 旁加载 Office 加载项以供测试
 description: 了解如何旁加载 Office 外接程序以进行测试
 ms.date: 03/18/2020
 localization_priority: Normal
-ms.openlocfilehash: 0cfb1060ead27f7f034880361c51f8a1d0ec87dc
-ms.sourcegitcommit: 6c381634c77d316f34747131860db0a0bced2529
+ms.openlocfilehash: dbadf9f7f692e1e71dd9696f531ed79bfc84f786
+ms.sourcegitcommit: c6e3bfd3deb77982d0b7082afd6a48678e96e1c3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/21/2020
-ms.locfileid: "42891122"
+ms.lasthandoff: 04/10/2020
+ms.locfileid: "43215059"
 ---
 # <a name="sideload-office-add-ins-for-testing"></a>旁加载 Office 加载项以供测试
 
@@ -67,7 +67,7 @@ ms.locfileid: "42891122"
 
     ![已选择目录的“信任中心”对话框](../images/sideload-windows-trust-center-dialog.png)
 
-8. 选择“**确定**”按钮以关闭“**Word 选项**”对话框窗口。
+8. 选择 **"确定"** 按钮以关闭 "**选项**" 对话框窗口。
 
 9. 关闭并重新打开 Office 应用程序，以使更改生效。
 
