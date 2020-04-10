@@ -29,6 +29,9 @@
     - name: 使用 Script Lab 探索 Office JS API
       href: overview/explore-with-script-lab.md
       displayName: 'Excel, Word, PowerPoint'
+    - name: 设置开发环境
+      href: overview/set-up-your-dev-environment.md
+      displayName: 'Excel, Word, OneNote, Project, PowerPoint, Outlook'
 - name: 核心概念
   items:
     - name: 概述
