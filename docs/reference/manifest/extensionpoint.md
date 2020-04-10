@@ -1,14 +1,14 @@
 ---
 title: 清单文件中的 ExtensionPoint 元件
 description: 定义 Office UI 中加载项公开功能的位置。
-ms.date: 04/07/2020
+ms.date: 04/09/2020
 localization_priority: Normal
-ms.openlocfilehash: 7cdcb96fbd0766b6751917ec84c5bea9a86b0ce1
-ms.sourcegitcommit: c3bfea0818af1f01e71a1feff707fb2456a69488
+ms.openlocfilehash: 89040ff84afd7e4c33bea8af04255ef19a8e0f50
+ms.sourcegitcommit: c6e3bfd3deb77982d0b7082afd6a48678e96e1c3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "43185426"
+ms.lasthandoff: 04/10/2020
+ms.locfileid: "43215087"
 ---
 # <a name="extensionpoint-element"></a>ExtensionPoint 元素
 
@@ -16,7 +16,7 @@ ms.locfileid: "43185426"
 
 ## <a name="attributes"></a>属性
 
-|  属性  |  必需  |  说明  |
+|  属性  |  必需  |  Description  |
 |:-----|:-----|:-----|
 |  **xsi:type**  |  是  | 定义的扩展点类型。|
 
@@ -350,6 +350,8 @@ ms.locfileid: "43185426"
 ```xml
 <ExtensionPoint xsi:type="DetectedEntity">
   <Label resid="residLabelName"/>
+  <!--If you opt to include RequestedHeight, it must be between 140px to 450px, inclusive.-->
+  <!--<RequestedHeight>360</RequestedHeight>-->
   <SourceLocation resid="residDetectedEntityURL" />
   <Rule xsi:type="RuleCollection" Mode="And">
     <Rule xsi:type="ItemIs" ItemType="Message" />
