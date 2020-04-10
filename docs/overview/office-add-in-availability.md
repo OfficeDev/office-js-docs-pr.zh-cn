@@ -1,14 +1,14 @@
 ---
 title: Office 外接程序主机和平台可用性
 description: Excel、OneNote、Outlook、PowerPoint、Project 和 Word 支持的要求集。
-ms.date: 01/23/2020
+ms.date: 04/07/2020
 localization_priority: Priority
-ms.openlocfilehash: b30fe872fd89bb02afac99a7838d43d1fbee5464
-ms.sourcegitcommit: 72d719165cc2b64ac9d3c51fb8be277dfde7d2eb
+ms.openlocfilehash: 823fd53e71c71f4a845f9a7b5c6177ad3f14745f
+ms.sourcegitcommit: c3bfea0818af1f01e71a1feff707fb2456a69488
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/25/2020
-ms.locfileid: "41554018"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "43185615"
 ---
 # <a name="office-add-in-host-and-platform-availability"></a>Office 外接程序主机和平台可用性
 
@@ -330,7 +330,9 @@ ms.locfileid: "41554018"
     <td>Office 网页版<br>（新式）</td>
     <td> - 邮件阅读<br>
       - 邮件撰写<br>
-      - <a href="/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">加载项命令</a></td>
+      -约会参与者（阅读）<br>
+      -约会参与者（撰写）<br>
+      - <a href="/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">外接程序命令</a></td>
     <td> - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.1/outlook-requirement-set-1.1">Mailbox 1.1</a><br>
       - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.2/outlook-requirement-set-1.2">Mailbox 1.2</a><br>
       - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.3/outlook-requirement-set-1.3">Mailbox 1.3</a><br>
@@ -345,7 +347,9 @@ ms.locfileid: "41554018"
     <td>Office 网页版<br>（经典）</td>
     <td> - 邮件阅读<br>
       - 邮件撰写<br>
-      - <a href="/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">加载项命令</a></td>
+      -约会参与者（阅读）<br>
+      -约会参与者（撰写）<br>
+      - <a href="/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">外接程序命令</a></td>
     <td> - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.1/outlook-requirement-set-1.1">Mailbox 1.1</a><br>
       - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.2/outlook-requirement-set-1.2">Mailbox 1.2</a><br>
       - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.3/outlook-requirement-set-1.3">Mailbox 1.3</a><br>
@@ -358,7 +362,9 @@ ms.locfileid: "41554018"
     <td>Windows 版 Office<br>（已连接到 Office 365 订阅）</td>
     <td> - 邮件阅读<br>
       - 邮件撰写<br>
-      - <a href="/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">加载项命令</a><br>
+      -约会参与者（阅读）<br>
+      -约会参与者（撰写）<br>
+      - <a href="/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">外接程序命令</a><br>
       - 模块</td>
     <td> - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.1/outlook-requirement-set-1.1">Mailbox 1.1</a><br>
       - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.2/outlook-requirement-set-1.2">Mailbox 1.2</a><br>
@@ -374,7 +380,9 @@ ms.locfileid: "41554018"
     <td>Windows 版 Office 2019<br>（一次性购买）</td>
     <td> - 邮件阅读<br>
       - 邮件撰写<br>
-      - <a href="/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">加载项命令</a><br>
+      -约会参与者（阅读）<br>
+      -约会参与者（撰写）<br>
+      - <a href="/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">外接程序命令</a><br>
       - 模块</td>
     <td> - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.1/outlook-requirement-set-1.1">Mailbox 1.1</a><br>
       - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.2/outlook-requirement-set-1.2">Mailbox 1.2</a><br>
@@ -389,7 +397,9 @@ ms.locfileid: "41554018"
     <td>Windows 版 Office 2016<br>（一次性购买）</td>
     <td> - 邮件阅读<br>
       - 邮件撰写<br>
-      - <a href="/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">加载项命令</a><br>
+      -约会参与者（阅读）<br>
+      -约会参与者（撰写）<br>
+      - <a href="/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">外接程序命令</a><br>
       - 模块</td>
     <td> - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.1/outlook-requirement-set-1.1">Mailbox 1.1</a><br>
       - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.2/outlook-requirement-set-1.2">Mailbox 1.2</a><br>
@@ -400,7 +410,9 @@ ms.locfileid: "41554018"
   <tr>
     <td>Windows 版 Office 2013<br>（一次性购买）</td>
     <td> - 邮件阅读<br>
-      - 邮件撰写</td>
+      - 邮件撰写<br>
+      -约会参与者（阅读）<br>
+      -约会参与者（撰写）<br>
     <td> - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.1/outlook-requirement-set-1.1">Mailbox 1.1</a><br>
       - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.2/outlook-requirement-set-1.2">Mailbox 1.2</a><br>
       - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.3/outlook-requirement-set-1.3">Mailbox 1.3</a>*<br>
@@ -410,7 +422,7 @@ ms.locfileid: "41554018"
   <tr>
     <td>iOS 版 Office<br>（已连接到 Office 365 订阅）</td>
     <td> - 邮件阅读<br>
-      - <a href="/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">加载项命令</a></td>
+      - <a href="/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">外接程序命令</a></td>
     <td> - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.1/outlook-requirement-set-1.1">Mailbox 1.1</a><br>
       - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.2/outlook-requirement-set-1.2">Mailbox 1.2</a><br>
       - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.3/outlook-requirement-set-1.3">Mailbox 1.3</a><br>
@@ -422,7 +434,9 @@ ms.locfileid: "41554018"
     <td>Mac 版 Office<br>（已连接到 Office 365 订阅）</td>
     <td> - 邮件阅读<br>
       - 邮件撰写<br>
-      - <a href="/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">加载项命令</a></td>
+      -约会参与者（阅读）<br>
+      -约会参与者（撰写）<br>
+      - <a href="/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">外接程序命令</a></td>
     <td> - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.1/outlook-requirement-set-1.1">Mailbox 1.1</a><br>
       - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.2/outlook-requirement-set-1.2">Mailbox 1.2</a><br>
       - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.3/outlook-requirement-set-1.3">Mailbox 1.3</a><br>
@@ -437,7 +451,9 @@ ms.locfileid: "41554018"
     <td>Mac 版 Office 2019<br>（一次性购买）</td>
     <td> - 邮件阅读<br>
       - 邮件撰写<br>
-      - <a href="/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">加载项命令</a></td>
+      -约会参与者（阅读）<br>
+      -约会参与者（撰写）<br>
+      - <a href="/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">外接程序命令</a></td>
     <td> - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.1/outlook-requirement-set-1.1">Mailbox 1.1</a><br>
       - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.2/outlook-requirement-set-1.2">Mailbox 1.2</a><br>
       - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.3/outlook-requirement-set-1.3">Mailbox 1.3</a><br>
@@ -450,7 +466,9 @@ ms.locfileid: "41554018"
     <td>Mac 版 Office 2016<br>（一次性购买）</td>
     <td> - 邮件阅读<br>
       - 邮件撰写<br>
-      - <a href="/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">加载项命令</a></td>
+      -约会参与者（阅读）<br>
+      -约会参与者（撰写）<br>
+      - <a href="/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">外接程序命令</a></td>
     <td> - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.1/outlook-requirement-set-1.1">Mailbox 1.1</a><br>
       - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.2/outlook-requirement-set-1.2">Mailbox 1.2</a><br>
       - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.3/outlook-requirement-set-1.3">Mailbox 1.3</a><br>
@@ -462,7 +480,7 @@ ms.locfileid: "41554018"
   <tr>
     <td>Android 版 Office<br>（已连接到 Office 365 订阅）</td>
     <td> - 邮件阅读<br>
-      - <a href="/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">加载项命令</a></td>
+      - <a href="/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">外接程序命令</a></td>
     <td> - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.1/outlook-requirement-set-1.1">Mailbox 1.1</a><br>
       - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.2/outlook-requirement-set-1.2">Mailbox 1.2</a><br>
       - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.3/outlook-requirement-set-1.3">Mailbox 1.3</a><br>
