@@ -1,14 +1,14 @@
 ---
 title: 错误处理
 description: 了解有关 Excel JavaScript API 错误处理逻辑，以解决运行时错误。
-ms.date: 03/19/2019
+ms.date: 04/10/2020
 localization_priority: Normal
-ms.openlocfilehash: bee5824d8854a55d5ac4041be1335ce239b31a9e
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: 85fcd580828a2db95cd8e021dec3611ca6591e1c
+ms.sourcegitcommit: 76552b3e5725d9112c772595971b922c295e6b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42717164"
+ms.lasthandoff: 04/10/2020
+ms.locfileid: "43225726"
 ---
 # <a name="error-handling"></a>错误处理
 
@@ -53,25 +53,25 @@ Excel.run(function (context) {
 
 |error.code | error.message |
 |:----------|:--------------|
-|InvalidArgument |自变量无效、缺少或格式不正确。|
-|InvalidRequest  |无法处理此请求。|
-|InvalidReference|此引用对于当前操作无效。|
-|InvalidBinding  |由于之前的更新，此对象绑定不再有效。|
-|InvalidSelection|当前选定内容对于此操作无效。|
-|Unauthenticated |所需的身份验证信息缺少或无效。|
-|AccessDenied |无法执行所请求的操作。|
-|ItemNotFound |所请求的资源不存在。|
-|ActivityLimitReached|已达到活动限制。|
-|GeneralException|处理请求时出现内部错误。|
-|NotImplemented  |所请求的功能未实现。|
-|ServiceNotAvailable|服务不可用。|
-|Conflict|由于冲突，无法处理请求。|
-|ItemAlreadyExists|所创建的资源已存在。|
-|UnsupportedOperation|不支持正在尝试的操作。|
-|RequestAborted|请求在运行时已中止。|
-|ApiNotAvailable|请求的 API 不可用。|
-|InsertDeleteConflict|尝试的插入或删除操作导致冲突。|
-|InvalidOperation|尝试的操作对于对象无效。|
+|`AccessDenied` |无法执行所请求的操作。|
+|`ActivityLimitReached`|已达到活动限制。|
+|`ApiNotAvailable`|请求的 API 不可用。|
+|`Conflict`|由于冲突，无法处理请求。|
+|`GeneralException`|处理请求时出现内部错误。|
+|`InsertDeleteConflict`|尝试的插入或删除操作导致冲突。|
+|`InvalidArgument` |自变量无效、缺少或格式不正确。|
+|`InvalidBinding`  |由于之前的更新，此对象绑定不再有效。|
+|`InvalidOperation`|尝试的操作对于对象无效。|
+|`InvalidReference`|此引用对于当前操作无效。|
+|`InvalidRequest`  |无法处理此请求。|
+|`InvalidSelection`|当前选定内容对于此操作无效。|
+|`ItemAlreadyExists`|所创建的资源已存在。|
+|`ItemNotFound` |所请求的资源不存在。|
+|`NotImplemented`  |所请求的功能未实现。|
+|`RequestAborted`|请求在运行时已中止。|
+|`ServiceNotAvailable`|服务不可用。|
+|`Unauthenticated` |所需的身份验证信息缺少或无效。|
+|`UnsupportedOperation`|不支持正在尝试的操作。|
 
 ## <a name="see-also"></a>另请参阅
 

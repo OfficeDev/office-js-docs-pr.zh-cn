@@ -1,14 +1,14 @@
 ---
 title: 在 Visual Studio 中将 Office 加载项项目转换为使用 TypeScript
 description: 了解如何将 Visual Studio 中的 Office 外接程序项目转换为使用 TypeScript。
-ms.date: 10/29/2019
+ms.date: 04/09/2020
 localization_priority: Normal
-ms.openlocfilehash: 1dbb3503a521f1a7c3e71764a50f02708b667a11
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: 4c26c6a04d2f6d3eb91701a1856e2c31c8d00ca0
+ms.sourcegitcommit: 76552b3e5725d9112c772595971b922c295e6b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42719040"
+ms.lasthandoff: 04/10/2020
+ms.locfileid: "43225650"
 ---
 # <a name="convert-an-office-add-in-project-in-visual-studio-to-typescript"></a>在 Visual Studio 中将 Office 加载项项目转换为使用 TypeScript
 
@@ -53,25 +53,12 @@ ms.locfileid: "42719040"
 
 4. 从“**工具**”选项卡中，选择“**NuGet 程序包管理器**”，然后选择“**管理解决方案的 NuGet 程序包...**”。
 
-5. 在选中“**浏览**”选项卡的情况下，在搜索框中输入 **office-js.TypeScript.DefinitelyTyped**。 安装或更新此程序包（如果已安装）。 这将把 Office.js 库的 TypeScript 类型定义添加到项目中。
-
-6. 在同一搜索框中，输入 **jquery.TypeScript.DefinitelyTyped**。 安装或更新此程序包（如果已安装）。 这将把 jQuery TypeScript 定义添加到项目中。 jQuery 和 node.js 的程序包现在将显示在 Visual Studio 生成的称为 **packages.config** 的新文件中。
+5. 选择 "**浏览**" 选项卡，输入**jquery。Jquery.typescript.definitelytyped**。 安装此包，或更新它（如果已安装）。 这将确保您的项目中包含 jQuery TypeScript 定义。 JQuery 的包显示在由 Visual Studio 生成的文件（称为 "**程序包.**"）中。
 
     > [!NOTE]
     > 在 TypeScript 项目中，可以混合使用 TypeScript 和 JavaScript 文件，项目都可以进行编译。这是因为 TypeScript 是键入的 JavaScript 超集，可以编译 JavaScript。
 
-7. 在 **Home.ts** 中，找到行 `if(!Office.context.requirements.isSetSupported('ExcelApi', '1.1') {` 并将其替换为以下内容：
-
-    ```TypeScript
-    if(!Office.context.requirements.isSetSupported('ExcelApi', 1.1)) {
-    ```
-
-    > [!NOTE]
-    > 目前，要使项目在转换为 TypeScript 后成功编译，你必须数值的形式指定要求集数量，如之前的代码片段中所示。 遗憾的是，这意味着你将无法使用 `isSetSupported` 来测试要求集 `1.10` 支持，因为数值 `1.10` 在运行时评估为 `1.1`。 
-    > 
-    > 造成此问题的原因是 **office-js.TypeScript.DefinitelyTyped** NuGet 包当前已过时，这意味着你的项目无权访问 Office.js 的最新 TypeScript 定义。 此问题正在解决中；问题解决后，本文将更新。
-
-8. 在 **Home.ts**中，找到 `Office.initialize = function (reason) {` 行并在其后面紧接着添加一行以填充全局 `window.Promise`，如下所示：
+6. 在 **Home.ts**中，找到 `Office.initialize = function (reason) {` 行并在其后面紧接着添加一行以填充全局 `window.Promise`，如下所示：
 
     ```TypeScript
     Office.initialize = function (reason) {
@@ -80,7 +67,7 @@ ms.locfileid: "42719040"
         ...
     ```
 
-9. 在 **Home.ts** 中，找到 `displaySelectedCells` 函数，将整个函数替换为以下代码，然后保存文件：
+7. 在 **Home.ts** 中，找到 `displaySelectedCells` 函数，将整个函数替换为以下代码，然后保存文件：
 
     ```TypeScript
     function displaySelectedCells() {
@@ -97,7 +84,7 @@ ms.locfileid: "42719040"
     }
     ```
 
-10. 在 **./Scripts/MessageBanner.ts** 中，找到行 `_onResize(null);` 并将其替换为以下内容：
+8. 在 **./Scripts/MessageBanner.ts** 中，找到行 `_onResize(null);` 并将其替换为以下内容：
 
     ```TypeScript
     _onResize();
@@ -132,9 +119,9 @@ ms.locfileid: "42719040"
             var element = document.querySelector('.MessageBanner');
             messageBanner = new components.MessageBanner(element);
             messageBanner.hideBanner();
-            
-            // If not using Excel 2016, use fallback logic.
-            if (!Office.context.requirements.isSetSupported('ExcelApi', 1.1)) {
+
+            // If you're using Excel 2013, use fallback logic.
+            if (!Office.context.requirements.isSetSupported('ExcelApi', '1.1')) {
                 $("#template-description").text("This sample will display the value of the cells that you have selected in the spreadsheet.");
                 $('#button-text').text("Display!");
                 $('#button-desc').text("Display the selection");
@@ -146,7 +133,7 @@ ms.locfileid: "42719040"
             $("#template-description").text("This sample highlights the highest value from the cells you have selected in the spreadsheet.");
             $('#button-text').text("Highlight!");
             $('#button-desc').text("Highlights the largest number.");
-                
+
             loadSampleData();
 
             // Add a click event handler for the highlight button.

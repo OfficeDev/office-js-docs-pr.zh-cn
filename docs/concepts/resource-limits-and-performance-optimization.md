@@ -1,14 +1,14 @@
 ---
 title: Office 加载项的资源限制和性能优化
 description: 了解 Office 加载项平台的资源限制，包括 CPU 和内存。
-ms.date: 09/09/2019
+ms.date: 04/09/2020
 localization_priority: Normal
-ms.openlocfilehash: 2265042e9c6d94476953d3fb71d89a022897371d
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: 68f0bae8514a5f5769e648d6b74ffc3bdbccc194
+ms.sourcegitcommit: 76552b3e5725d9112c772595971b922c295e6b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42718627"
+ms.lasthandoff: 04/10/2020
+ms.locfileid: "43225657"
 ---
 # <a name="resource-limits-and-performance-optimization-for-office-add-ins"></a>Office 加载项的资源限制和性能优化
 
@@ -26,7 +26,7 @@ ms.locfileid: "42718627"
 
 - **内存使用** - 默认内存使用阈值，根据设备的可用物理内存动态确定。
 
-   默认情况下，当主机富客户端检测到设备上的物理内存使用率超过可用内存的80% 时，客户端会开始监视加载项的内存使用情况、内容和任务窗格外接程序的文档级别以及 Outlook 的邮箱级别外接程序。如果默认间隔为5秒，客户端将在文档或邮箱级别上的一组加载项的物理内存使用率超过50% 时警告用户。 此内存使用率限制使用物理内存而非虚拟内存来确保具有有限 RAM 的设备（如平板电脑）保持良好性能。 管理员可以使用显式限制覆盖此动态设置，方法是使用**MemoryAlertThreshold** Windows 注册表项作为全局设置，红外通过使用**AlertInterval**键作为全局设置来调整警报间隔。
+   默认情况下，当主机富客户端检测到设备上的物理内存使用率超过可用内存的80% 时，客户端会开始监视加载项的内存使用情况、内容和任务窗格外接程序的文档级别以及 Outlook 外接程序的邮箱级别。如果默认间隔为5秒，客户端将在文档或邮箱级别上的一组加载项的物理内存使用率超过50% 时警告用户。 此内存使用率限制使用物理内存而非虚拟内存来确保具有有限 RAM 的设备（如平板电脑）保持良好性能。 管理员可以使用显式限制覆盖此动态设置，方法是使用**MemoryAlertThreshold** Windows 注册表项作为全局设置，红外通过使用**AlertInterval**键作为全局设置来调整警报间隔。
 
 - **故障容忍度** - 外接程序的默认限制为 4 次故障。
 
@@ -102,6 +102,8 @@ Office 提供了遥测日志，以保留本地计算机上运行的 Office 解�
 - 如果外接程序使用大量占用 CPU 的算法，但您可以将数据输入或输出划分成较小的集合，则可以考虑创建一个 Web 服务，将数据传递给该 Web 服务以减轻 CPU 负担，然后等待异步回调。
 
 - 针对预期的最大数据量测试加载项，并限制加载项处理的数据量不得超过此限制。
+
+- 最大限度地减少外接加载项与 Office 文档之间的数据交换。 有关详细信息，请参阅[避免在循环中使用 context. sync 方法](correlated-objects-pattern.md)。
 
 
 ## <a name="see-also"></a>另请参阅

@@ -1,14 +1,14 @@
 ---
 title: 添加对 Outlook 外接程序的移动支持
 description: 添加对 Outlook Mobile 的支持需要更新外接程序清单，并且可能会更改移动方案的代码。
-ms.date: 12/10/2019
+ms.date: 04/10/2020
 localization_priority: Normal
-ms.openlocfilehash: 31f58102129ae207da55839f7b48cc8a060645ad
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: de5f1209527c853afb2d0bf2061bd3e3cfa8d3e0
+ms.sourcegitcommit: 76552b3e5725d9112c772595971b922c295e6b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42720853"
+ms.lasthandoff: 04/10/2020
+ms.locfileid: "43225664"
 ---
 # <a name="add-support-for-add-in-commands-for-outlook-mobile"></a>添加对适用于 Outlook Mobile 的外接程序命令的支持
 
@@ -84,7 +84,7 @@ Outlook Mobile 中不支持 [Office.context.mailbox.makeEwsRequestAsync](../refe
 
 ### <a name="compose-mode-and-appointments"></a>撰写模式和约会
 
-目前，Outlook Mobile 中的外接程序仅在读取邮件时支持激活。在撰写邮件时或查看或撰写约会时，不会激活外接程序。
+目前，Outlook Mobile 中的外接程序仅在读取邮件时支持激活。 在撰写邮件时或查看或撰写约会时，不会激活外接程序。 但是，可以在约会组织者模式下激活联机会议提供程序集成的外接程序。 有关此异常的详细信息，请参阅[创建适用于联机会议提供商文章的 Outlook mobile 外](online-meeting.md)接程序。
 
 ### <a name="unsupported-apis"></a>不支持的 API
 

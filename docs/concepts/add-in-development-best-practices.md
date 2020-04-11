@@ -1,14 +1,14 @@
 ---
 title: Office 加载项开发最佳做法
 description: 在开发以创建 Office 外接程序时应用最佳实践。
-ms.date: 03/18/2020
+ms.date: 04/09/2020
 localization_priority: Normal
-ms.openlocfilehash: 71a090721768b822a058091c258dd0c6c87e1425
-ms.sourcegitcommit: 6c381634c77d316f34747131860db0a0bced2529
+ms.openlocfilehash: aa544abaaa9f730bb751d6640e9157d7292c2608
+ms.sourcegitcommit: 76552b3e5725d9112c772595971b922c295e6b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/21/2020
-ms.locfileid: "42890537"
+ms.lasthandoff: 04/10/2020
+ms.locfileid: "43225678"
 ---
 # <a name="best-practices-for-developing-office-add-ins"></a>Office 加载项开发最佳做法
 
@@ -121,6 +121,7 @@ ms.locfileid: "42890537"
 
 - 监视您的服务运行状况，并使用遥测监视用户的成功。
 
+- 最大限度地减少外接加载项与 Office 文档之间的数据交换。 有关详细信息，请参阅[避免在循环中使用 context. sync 方法](correlated-objects-pattern.md)。
 
 ## <a name="market-your-add-in"></a>加载项市场营销
 

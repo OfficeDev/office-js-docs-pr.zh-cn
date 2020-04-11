@@ -1,14 +1,14 @@
 ---
 title: Outlook 外接程序 API 预览要求集
 description: 当前在 Outlook 外接程序和 Office JavaScript Api 的预览中的功能和 Api。
-ms.date: 04/08/2020
+ms.date: 04/10/2020
 localization_priority: Normal
-ms.openlocfilehash: acc19c81f929596b0bd5622e696c1988cf31ee5c
-ms.sourcegitcommit: c3bfea0818af1f01e71a1feff707fb2456a69488
+ms.openlocfilehash: f8ef7b8c37dbd7539c30457c4922c1c16262381c
+ms.sourcegitcommit: 76552b3e5725d9112c772595971b922c295e6b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "43185412"
+ms.lasthandoff: 04/10/2020
+ms.locfileid: "43225671"
 ---
 # <a name="outlook-add-in-api-preview-requirement-set"></a>Outlook 外接程序 API 预览要求集
 
@@ -156,6 +156,8 @@ Office JavaScript API 的 Outlook 外接程序 API 子集包括可以在 Outlook
 ---
 
 ### <a name="online-meeting-provider-integration"></a>联机会议提供程序集成
+
+添加了对 Outlook 移动外接程序中的联机会议集成的支持。有关详细信息，请参阅为[联机会议提供商创建 Outlook mobile 外接程序](../../../outlook/online-meeting.md)以了解详细信息。
 
 #### <a name="mobileonlinemeetingcommandsurface-extension-point"></a>[MobileOnlineMeetingCommandSurface 扩展点](../../manifest/extensionpoint.md#mobileonlinemeetingcommandsurface-preview)
 
