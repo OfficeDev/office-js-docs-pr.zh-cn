@@ -161,7 +161,11 @@
                 - name: 使用 Office 对话框播放视频
                   href: develop/dialog-video.md
             - name: 性能
-              href: concepts/resource-limits-and-performance-optimization.md
+              items:
+                - name: 避免在循环中使用 context.sync
+                  href: concepts/correlated-objects-pattern.md
+                - name: Office 加载项的资源限制和性能优化
+                  href: concepts/resource-limits-and-performance-optimization.md
             - name: 隐私和安全
               href: concepts/privacy-and-security.md
             - name: 在加载项中请求获取 API 使用权限
@@ -956,6 +960,8 @@
               href: outlook/get-or-set-the-time-of-an-appointment.md
             - name: 获取和设置位置
               href: outlook/get-or-set-the-location-of-an-appointment.md
+            - name: 配置联机会议（预览）
+              href: outlook/online-meeting.md
         - name: 隐私和安全
           items:
             - name: 概述
