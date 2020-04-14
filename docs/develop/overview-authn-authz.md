@@ -1,14 +1,14 @@
 ---
 title: Office 加载项中的身份验证和授权概述
 description: 要求用户在 Web 应用程序和 Office 加载项中对登录进行身份验证。
-ms.date: 01/25/2020
+ms.date: 04/13/2020
 localization_priority: Priority
-ms.openlocfilehash: 79734cf0ee67c2e01db80934b2699da18a686034
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: 25dbe38497e3f375bab8ec60f541d2610753576d
+ms.sourcegitcommit: 118e8bcbcfb73c93e2053bda67fe8dd20799b170
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42719432"
+ms.lasthandoff: 04/13/2020
+ms.locfileid: "43241061"
 ---
 # <a name="overview-of-authentication-and-authorization-in-office-add-ins"></a>Office 加载项中的身份验证和授权概述
 
@@ -43,8 +43,8 @@ Web 应用程序和 Office 加载项默认允许匿名访问，但你可要求�
 
 在开始使用 SSO 实现用户身份验证之前，请确保你完全熟悉[为 Office 加载项启用单一登录](sso-in-office-add-ins.md)一文。另请注意下述示例：
 
-- [Office 加载项 NodeJS SSO](https://github.com/OfficeDev/Office-Add-in-NodeJS-SSO)，特别是文件 [ssoAuthES6.js](https://github.com/OfficeDev/Office-Add-in-NodeJS-SSO/blob/master/Complete/src/auth.ts)。 
-- [Office 加载项 ASP.NET SSO](https://github.com/OfficeDev/Office-Add-in-ASPNET-SSO)。 
+- [Office 加载项 NodeJS SSO](https://github.com/OfficeDev/Office-Add-in-NodeJS-SSO)，特别是文件 [ssoAuthES6.js](https://github.com/OfficeDev/Office-Add-in-NodeJS-SSO/blob/master/Complete/public/javascripts/ssoAuthES6.js)。
+- [Office 加载项 ASP.NET SSO](https://github.com/OfficeDev/Office-Add-in-ASPNET-SSO)。
 
 但是，这些示例不将令牌用作 ID 令牌。 它们使用此令牌通过**代理**流获得对 Microsoft Graph 的访问权限。
 
