@@ -1,14 +1,14 @@
 ---
 title: 获取和设置 internet 标头
 description: 如何：在 Outlook 外接程序中获取和设置邮件的 internet 邮件头。
-ms.date: 11/04/2019
+ms.date: 04/10/2020
 localization_priority: Normal
-ms.openlocfilehash: d7f38b7564683ce51ed0bd840480b4a8b2040bf6
-ms.sourcegitcommit: a3ddfdb8a95477850148c4177e20e56a8673517c
+ms.openlocfilehash: 488a4414580296da59eef3eb703e1c8da7e7d7c2
+ms.sourcegitcommit: 231e23d72e04e0536480d6b16df95113f1eff738
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "42165998"
+ms.lasthandoff: 04/13/2020
+ms.locfileid: "43238212"
 ---
 # <a name="get-and-set-internet-headers-on-a-message-in-an-outlook-add-in"></a>在 Outlook 外接程序中获取和设置邮件的 internet 邮件头
 
@@ -33,6 +33,8 @@ Outlook 外接程序开发中的一个常见要求是，将与外接程序关联
 - 戳在所有客户端上保留 Exchange 后保留的电子邮件的信息。
 - 阅读有关在邮件读取应用场景中的所有客户端上的电子邮件保留后保留的电子邮件的信息。
 - 访问电子邮件的整个 MIME 标头。
+
+![Internet 标头的图示。 Text： User 1 发送电子邮件。 当用户撰写电子邮件时，加载项管理自定义 internet 邮件头。 用户2接收电子邮件。 加载项从收到的电子邮件中获取 internet 标头，然后分析并使用自定义标头。 ](../images/outlook-internet-headers.png)
 
 ## <a name="set-internet-headers-while-composing-a-message"></a>在撰写邮件时设置 internet 邮件头
 

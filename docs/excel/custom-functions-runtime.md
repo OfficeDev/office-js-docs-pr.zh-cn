@@ -1,14 +1,14 @@
 ---
-ms.date: 05/08/2019
+ms.date: 04/13/2020
 description: 了解开发使用新 JavaScript 运行时的 Excel 自定义函数时的关键方案。
 title: Excel 自定义函数的运行时
 localization_priority: Normal
-ms.openlocfilehash: 2cb950cd6f5f78ed76b19a1fa443720d7cfb86a2
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: dc049aa681ae4f7664d5bd92f925e7566c0d7103
+ms.sourcegitcommit: 118e8bcbcfb73c93e2053bda67fe8dd20799b170
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42719495"
+ms.lasthandoff: 04/13/2020
+ms.locfileid: "43241040"
 ---
 # <a name="runtime-for-excel-custom-functions"></a>Excel 自定义函数的运行时
 
@@ -81,7 +81,7 @@ ws.onerror = function (error) {
 
 在自定义函数（或外接程序的任何其他部分）内，可以使用 `OfficeRuntime.storage` 对象来存储和访问数据。 `Storage` 是一种未加密的持久键值存储系统，为无法在自定义函数内使用的 [localStorage](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage) 提供了一种替代方案。 `Storage`每个域提供 10 MB 的数据。 域可由多个加载项共享。
 
-`Storage` 旨在作为共享存储解决方案，这意味着外接程序的多个部分将能访问相同数据。 例如，用户身份验证令牌可能存储在 `storage` 中，因为自定义函数和任务窗格等外接程序 UI 元素都有可能会访问该数据。 同样，如果两个外接程序共享同一个域（例如 www.contoso.com/addin1、www.contoso.com/addin2），则也可以通过 `storage` 来回共享信息。 注意，具有不同子域的外接程序将具有不同的 `storage` 实例（例如 subdomain.contoso.com/addin1、differentsubdomain.contoso.com/addin2）
+`Storage` 旨在作为共享存储解决方案，这意味着外接程序的多个部分将能访问相同数据。 例如，用户身份验证令牌可能存储在 `storage` 中，因为自定义函数和任务窗格等外接程序 UI 元素都有可能会访问该数据。 同样，如果两个加载项共享同一个域（例如， `www.contoso.com/addin1`， `www.contoso.com/addin2`），则也允许它们前后共享信息。 `storage` 请注意，具有不同子域的外接程序将具有不同的`storage`实例（例如`subdomain.contoso.com/addin1`， `differentsubdomain.contoso.com/addin2`）。
 
 由于 `storage` 可能是共享的位置，因此一定要认识到，可能会存在替代键值对的情况。
 

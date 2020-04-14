@@ -1,14 +1,14 @@
 ---
 title: 排查单一登录 (SSO) 错误消息
-description: ''
-ms.date: 03/10/2020
+description: 有关如何解决 Office 加载项中的单一登录（SSO）问题，以及如何处理特殊条件或错误的指南。
+ms.date: 04/13/2020
 localization_priority: Normal
-ms.openlocfilehash: 7bde083277ece303597dd1c52398f8a91cacc765
-ms.sourcegitcommit: a0262ea40cd23f221e69bcb0223110f011265d13
+ms.openlocfilehash: 33826558b9b145433adbe96005e60db97fc067f7
+ms.sourcegitcommit: 118e8bcbcfb73c93e2053bda67fe8dd20799b170
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42688751"
+ms.lasthandoff: 04/13/2020
+ms.locfileid: "43241075"
 ---
 # <a name="troubleshoot-error-messages-for-single-sign-on-sso-preview"></a>排查单一登录 (SSO) 错误消息（预览）
 
@@ -29,8 +29,8 @@ ms.locfileid: "42688751"
 ## <a name="causes-and-handling-of-errors-from-getaccesstoken"></a>导致 getAccessToken 生成错误的原因和处理方法
 
 有关此部分中介绍的错误处理示例，请参阅：
-- [Office-Add-in-ASPNET-SSO 中的 HomeES6.js](https://github.com/OfficeDev/Office-Add-in-ASPNET-SSO/blob/master/src/Office-Add-in-ASPNET-SSO-WebAPI/Scripts/HomeES6.js)
-- [ssoAuthES6.js in Office-Add-in-NodeJS-SSO](https://github.com/OfficeDev/Office-Add-in-NodeJS-SSO/blob/master/src/public/javascripts/ssoAuthES6.js)
+- [Office-Add-in-ASPNET-SSO 中的 HomeES6.js](https://github.com/OfficeDev/Office-Add-in-ASPNET-SSO/blob/master/Complete/Office-Add-in-ASPNET-SSO-WebAPI/Scripts/HomeES6.js)
+- [ssoAuthES6.js in Office-Add-in-NodeJS-SSO](https://github.com/OfficeDev/Office-Add-in-NodeJS-SSO/blob/master/Complete/public/javascripts/ssoAuthES6.js)
 
 ### <a name="13000"></a>13000
 

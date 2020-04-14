@@ -1,14 +1,14 @@
 ---
 title: 适用于 Outlook Mobile 的 Outlook 外接程序
 description: 所有 Office 365 商业帐户、Outlook.com 帐户均支持 Outlook 移动外接程序，并且即将提供对 Gmail 帐户的支持。
-ms.date: 02/28/2020
+ms.date: 04/13/2020
 localization_priority: Normal
-ms.openlocfilehash: 7fc4ac511fe7e101775334cad6d4b000f7dc24ae
-ms.sourcegitcommit: 153576b1efd0234c6252433e22db213238573534
+ms.openlocfilehash: 4b6341ac1b340ebc46c616ae4274bfdf1e2d0672
+ms.sourcegitcommit: 118e8bcbcfb73c93e2053bda67fe8dd20799b170
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/07/2020
-ms.locfileid: "42561793"
+ms.lasthandoff: 04/13/2020
+ms.locfileid: "43241082"
 ---
 # <a name="add-ins-for-outlook-mobile"></a>适用于 Outlook Mobile 的外接程序
 
@@ -35,7 +35,7 @@ ms.locfileid: "42561793"
     - 外接程序**必须**遵循 [UI 准则](outlook-addin-design.md)。
     - 外接程序的方案**必须**[能够在移动电话上实现](#what-makes-a-good-scenario-for-mobile-add-ins)。
 
-- 目前仅支持邮件读取。这意味着 `MobileMessageReadCommandSurface` 是在清单的移动电话部分唯一需要声明的 [ExtensionPoint](../reference/manifest/extensionpoint.md)。
+- 通常情况下，仅支持邮件阅读模式。 这意味着`MobileMessageReadCommandSurface` ，您应在清单的移动部分中声明唯一的[ExtensionPoint](../reference/manifest/extensionpoint.md#mobilemessagereadcommandsurface) 。 但是，"约会组织者" 模式受联机会议提供程序集成的外接程序支持，而这些外接程序则声明[MobileOnlineMeetingCommandSurface 扩展点](../reference/manifest/extensionpoint.md#mobileonlinemeetingcommandsurface-preview)。 有关此方案的详细信息，请参阅[创建适用于联机会议提供商文章的 Outlook mobile 外](online-meeting.md)接程序。
 
 - [makeEwsRequestAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md#methods) API 在移动电话上不受支持，因为移动应用使用 REST API 与服务器进行通信。如果应用后端需要连接到 Exchange 服务器，则可以使用回调令牌进行 REST API 调用。有关详细信息，请参阅[从 Outlook 外接程序使用 Outlook REST API](use-rest-api.md)。
 

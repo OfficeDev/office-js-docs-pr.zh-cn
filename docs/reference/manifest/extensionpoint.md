@@ -3,12 +3,12 @@ title: 清单文件中的 ExtensionPoint 元件
 description: 定义 Office UI 中加载项公开功能的位置。
 ms.date: 04/09/2020
 localization_priority: Normal
-ms.openlocfilehash: 89040ff84afd7e4c33bea8af04255ef19a8e0f50
-ms.sourcegitcommit: c6e3bfd3deb77982d0b7082afd6a48678e96e1c3
+ms.openlocfilehash: 40b5ab8c2dcae01238854f5a3bfcc599f6b01a9b
+ms.sourcegitcommit: 118e8bcbcfb73c93e2053bda67fe8dd20799b170
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/10/2020
-ms.locfileid: "43215087"
+ms.lasthandoff: 04/13/2020
+ms.locfileid: "43241033"
 ---
 # <a name="extensionpoint-element"></a>ExtensionPoint 元素
 
@@ -16,7 +16,7 @@ ms.locfileid: "43215087"
 
 ## <a name="attributes"></a>属性
 
-|  属性  |  必需  |  Description  |
+|  属性  |  必需  |  说明  |
 |:-----|:-----|:-----|
 |  **xsi:type**  |  是  | 定义的扩展点类型。|
 
@@ -263,7 +263,7 @@ ms.locfileid: "43215087"
 > [!NOTE]
 > 仅在使用 Office 365 订阅的 Android 上的[预览](../objectmodel/preview-requirement-set/outlook-requirement-set-preview.md)中支持此扩展点。
 
-此扩展点在命令界面中为移动外观的约会放置一个适合模式的切换。 会议组织者可以创建联机会议。 与会者随后可以加入联机会议。
+此扩展点在命令界面中为移动外观的约会放置一个适合模式的切换。 会议组织者可以创建联机会议。 与会者随后可以加入联机会议。 若要了解有关此方案的详细信息，请参阅为[联机会议提供商文章创建 Outlook 移动外](../../outlook/online-meeting.md)接程序一文。
 
 #### <a name="child-elements"></a>子元素
 
@@ -271,9 +271,11 @@ ms.locfileid: "43215087"
 |:-----|:-----|
 |  [Control](control.md) |  将按钮添加到命令界面。  |
 
-此类型的**ExtensionPoint**元素只能有一个子元素： **Control**元素。
+`ExtensionPoint`此类型的元素只能有一个子元素：一个`Control`元素。
 
-此扩展点中包含的**Control**元素必须将**xsi： type**属性设置为`MobileButton`。
+此`Control`扩展点中包含的元素的`xsi:type`属性必须设置为`MobileButton`。
+
+`Icon`图像应使用十六进制代码`#919191`或以[其他颜色格式](https://convertingcolors.com/hex-color-919191.html)的等效项进行灰度。
 
 #### <a name="example"></a>示例
 
@@ -293,7 +295,7 @@ ms.locfileid: "43215087"
       <bt:Image resid="UiLessIcon" size="48" scale="3" />
     </Icon>
     <Action xsi:type="ExecuteFunction">
-      <FunctionName>UiLessInsertMeetingLink</FunctionName>
+      <FunctionName>insertContosoMeeting</FunctionName>
     </Action>
   </Control>
 </ExtensionPoint>

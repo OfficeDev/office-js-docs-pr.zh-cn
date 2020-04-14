@@ -1,14 +1,14 @@
 ---
-ms.date: 07/15/2019
+ms.date: 04/13/2020
 description: 使用 JSDoc 标记动态创建自定义函数 JSON 元数据。
 title: 为自定义函数自动生成 JSON 元数据
 localization_priority: Normal
-ms.openlocfilehash: e346392a5d2f643b1484de52a9bddb3e3be52f2f
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: d62def1d107d4472d2e89623c4f10b5cd012f28c
+ms.sourcegitcommit: 118e8bcbcfb73c93e2053bda67fe8dd20799b170
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42719453"
+ms.lasthandoff: 04/13/2020
+ms.locfileid: "43241068"
 ---
 # <a name="autogenerate-json-metadata-for-custom-functions"></a>为自定义函数自动生成 JSON 元数据
 
@@ -103,7 +103,7 @@ Excel 自定义函数支持以下 JSDoc 标记：
 提供自定义函数的显示`name`。
 
 * 如果未提供名称，则 id 还会用作名称。
-* 允许使用的字符：字母 [Unicode 字母字符](https://www.unicode.org/reports/tr44/tr44-22.html#Alphabetic)、数字、句点 (.) 和下划线 (\_)。
+* 允许使用的字符：字母 [Unicode 字母字符](http://www.unicode.org/reports/tr44/tr44-22.html#Alphabetic)、数字、句点 (.) 和下划线 (\_)。
 * 必须以字母开头。
 * 最大长度为 128 个字符。
 
@@ -139,7 +139,7 @@ Excel 自定义函数支持以下 JSDoc 标记：
 
 提供的 _url_ 显示在 Excel 中。
 
-在下面的示例中，`helpurl` 是 www.contoso.com/weatherhelp。
+在下面的`helpurl`示例中，为`www.contoso.com/weatherhelp`。
 
 ```js
 /**

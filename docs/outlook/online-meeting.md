@@ -2,14 +2,14 @@
 title: 为联机会议提供商创建 Outlook mobile 外接程序（预览）
 description: 讨论如何为联机会议服务提供商设置 Outlook 移动外接程序。
 ms.topic: article
-ms.date: 04/10/2020
+ms.date: 04/13/2020
 localization_priority: Normal
-ms.openlocfilehash: 841200d8db1dc4c7a89c953737f0bc5b74edf7ea
-ms.sourcegitcommit: 76552b3e5725d9112c772595971b922c295e6b4c
+ms.openlocfilehash: 6a9d484bb74f238c0c62e689c66afaeb284eec2d
+ms.sourcegitcommit: 118e8bcbcfb73c93e2053bda67fe8dd20799b170
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/10/2020
-ms.locfileid: "43226007"
+ms.lasthandoff: 04/13/2020
+ms.locfileid: "43241089"
 ---
 # <a name="create-an-outlook-mobile-add-in-for-an-online-meeting-provider-preview"></a>为联机会议提供商创建 Outlook mobile 外接程序（预览）
 
@@ -138,7 +138,7 @@ function updateBody(event, existingBody) {
 
 作为会议组织者，在创建会议时，您应看到类似于以下三幅图像的屏幕。
 
-在 android 上创建会议屏幕的 android [ ![](../images/outlook-android-create-online-meeting-off.png)](../images/outlook-android-create-online-meeting-off-expanded.png#lightbox)加载时显示会议屏幕的屏幕截图-contoso 切换关闭[ ![](../images/outlook-android-create-online-meeting-load.png)](../images/outlook-android-create-online-meeting-load-expanded.png#lightbox) [ ![](../images/outlook-android-create-online-meeting-on.png)](../images/outlook-android-create-online-meeting-on-expanded.png#lightbox)在 android 上创建会议屏幕的屏幕截图-contoso 切换打开
+在 android 上创建会议屏幕的[ ![](../images/outlook-android-create-online-meeting-load.png)](../images/outlook-android-create-online-meeting-load-expanded.png#lightbox) [屏幕截图-contoso 切换关闭在 android 上创建会议屏幕的屏幕截图打开在 android 上创建会议屏幕的屏幕![](../images/outlook-android-create-online-meeting-off.png)](../images/outlook-android-create-online-meeting-off-expanded.png#lightbox)截图[ ![-contoso 切换](../images/outlook-android-create-online-meeting-on.png)](../images/outlook-android-create-online-meeting-on-expanded.png#lightbox)
 
 ### <a name="join-meeting-ui"></a>加入会议 UI
 
@@ -156,7 +156,6 @@ function updateBody(event, existingBody) {
   - （Time）[结尾](/javascript/api/outlook/office.appointmentcompose?view=outlook-js-preview#end)（[Time](/javascript/api/outlook/office.time?view=outlook-js-preview)）
   - " [Context.subname](/javascript/api/outlook/office.appointmentcompose?view=outlook-js-preview#location) " （"[位置](/javascript/api/outlook/office.location?view=outlook-js-preview)"）
   - [OptionalAttendees](/javascript/api/outlook/office.appointmentcompose?view=outlook-js-preview#optionalattendees) （[收件人](/javascript/api/outlook/office.recipients?view=outlook-js-preview)）的内容
-  - " [Context.subname](/javascript/api/outlook/office.appointmentcompose?view=outlook-js-preview#organizer) " （[组织者](/javascript/api/outlook/office.organizer?view=outlook-js-preview)）
   - [RequiredAttendees](/javascript/api/outlook/office.appointmentcompose?view=outlook-js-preview#requiredattendees) （[收件人](/javascript/api/outlook/office.recipients?view=outlook-js-preview)）的内容
   - "[GetAsync](/javascript/api/outlook/office.body?view=outlook-js-preview#getasync-coerciontype--options--callback-) [" （"."](/javascript/api/outlook/office.appointmentcompose?view=outlook-js-preview#body) 、"setAsync"、"Body"、" [Body.setAsync](/javascript/api/outlook/office.body?view=outlook-js-preview#setasync-data--options--callback-)"）
   - [LoadCustomPropertiesAsync](/javascript/api/outlook/office.appointmentcompose?view=outlook-js-preview#loadcustompropertiesasync-callback--usercontext-) （[CustomProperties](/javascript/api/outlook/office.customproperties?view=outlook-js-preview)）的内容

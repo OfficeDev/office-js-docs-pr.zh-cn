@@ -1,14 +1,14 @@
 ---
 title: 排查 Office 加载项中的用户错误
 description: 了解如何解决 Office 外接程序中的用户错误。
-ms.date: 12/31/2019
+ms.date: 04/13/2020
 localization_priority: Normal
-ms.openlocfilehash: 6050b05a39a49ff5bd504b68635388a8ceb3fc65
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: 81ca9eac89fb949bd2c1f7f63861d8a4f5295a79
+ms.sourcegitcommit: 118e8bcbcfb73c93e2053bda67fe8dd20799b170
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42719761"
+ms.lasthandoff: 04/13/2020
+ms.locfileid: "43241047"
 ---
 # <a name="troubleshoot-user-errors-with-office-add-ins"></a>排查 Office 加载项中的用户错误
 
@@ -121,7 +121,7 @@ Office.context.ui.displayDialogAsync(startAddress, {displayInFrame:true}, callba
 - Pragma：“no-cache”
 - 过期：“-1”
 
-有关在 Node.JS Express 服务器中执行此操作的示例，请参阅[此 app.js 文件](https://github.com/OfficeDev/Office-Add-in-NodeJS-SSO/blob/master/Complete/app.js)。 有关 ASP.NET 项目中的示例，请参阅[此 cshtml 文件](https://github.com/OfficeDev/Office-Add-in-ASPNET-SSO/blob/master/src/Office-Add-in-ASPNET-SSO-WebAPI/Views/Shared/_Layout.cshtml)。
+有关在 Node.JS Express 服务器中执行此操作的示例，请参阅[此 app.js 文件](https://github.com/OfficeDev/Office-Add-in-NodeJS-SSO/blob/master/Complete/app.js)。 有关 ASP.NET 项目中的示例，请参阅[此 cshtml 文件](https://github.com/OfficeDev/Office-Add-in-ASPNET-SSO/blob/master/Complete/Office-Add-in-ASPNET-SSO-WebAPI/Views/Shared/_Layout.cshtml)。
 
 如果加载项托管在 Internet Information Server (IIS) 中，则还可以将以下内容添加到 web.config 中。
 
