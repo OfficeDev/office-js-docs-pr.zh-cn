@@ -1,14 +1,14 @@
 ---
 title: 启用和禁用加载项命令
 description: 了解如何更改 Office Web 加载项中的自定义功能区按钮和菜单项的启用或禁用状态。
-ms.date: 03/09/2020
+ms.date: 04/11/2020
 localization_priority: Priority
-ms.openlocfilehash: dbe895a121a5d10d687c9a599b85234ae62919f5
-ms.sourcegitcommit: 4079903c3cc45b7d8c041509a44e9fc38da399b1
+ms.openlocfilehash: a0436a07ef5c7ec64ad391747da69061e1a7b0f0
+ms.sourcegitcommit: 231e23d72e04e0536480d6b16df95113f1eff738
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/11/2020
-ms.locfileid: "42596681"
+ms.lasthandoff: 04/13/2020
+ms.locfileid: "43238225"
 ---
 # <a name="enable-and-disable-add-in-commands-preview"></a>启用和禁用加载项命令（预览版）
 
@@ -36,19 +36,19 @@ ms.locfileid: "42596681"
 
 ### <a name="shared-runtime-required"></a>需要共享运行时
 
-对于本文介绍的 API 和清单标记，加载项清单指定它们应使用共享运行时。 为此，请执行下列步骤。
+本文介绍的 API 和清单标记，需要加载项清单指定它们应使用共享运行时。 为此，请执行下列步骤。
 
 1. 在清单中的 [Runtimes](../reference/manifest/runtimes.md) 元素中，添加以下子元素：`<Runtime resid="Contoso.SharedRuntime.Url" lifetime="long" />`。 （如果清单中尚无 `<Runtimes>` 元素，请在 `VersionOverrides` 部分中的 `<Host>` 元素下将其创建为第一个子元素。）
 2. 在清单的 [Resources.Urls](../reference/manifest/resources.md) 部分中，添加以下子元素：`<bt:Url id="Contoso.SharedRuntime.Url" DefaultValue="https://{MyDomain}/{path-to-start-page}" />`，其中 `{MyDomain}` 是加载项的域，`{path-to-start-page}` 是加载项的起始页路径；例如，`<bt:Url id="Contoso.SharedRuntime.Url" DefaultValue="https://localhost:3000/index.html" />`。
 3. 根据你的加载项是包含任务窗格、函数文件还是 Excel 自定义函数，你必须执行以下三个步骤中的一个或多个步骤：
 
-    - 如果加载项包含任务窗格，请将 [Action](../reference/manifest/action.md).[SourceLocation](../reference/manifest/sourcelocation.md) 元素的 `resid` 属性设置为 `Contoso.SharedRuntime.Url`。 该元素应如下所示：`<SourceLocation resid="Contoso.SharedRuntime.Url"/>`。
-    - 如果加载项包含 Excel 自定义函数，请将 [Page](../reference/manifest/page.md).[SourceLocation](../reference/manifest/sourcelocation.md) 元素的 `resid` 属性设置为 `Contoso.SharedRuntime.Url`。 该元素应如下所示：`<SourceLocation resid="Contoso.SharedRuntime.Url"/>`。
-    - 如果加载项包含函数文件，请将 [FunctionFile](../reference/manifest/functionfile.md) 元素的 `resid` 属性设置为 `Contoso.SharedRuntime.Url`。 该元素应如下所示：`<FunctionFile resid="Contoso.SharedRuntime.Url"/>`。
+    - 如果加载项包含任务窗格，请将 [Action](../reference/manifest/action.md).[SourceLocation](../reference/manifest/sourcelocation.md) 元素的 `resid` 属性设置为与步骤 1 所使用 `<Runtime>` 元素的 `resid` 相同的字符串，例如 `Contoso.SharedRuntime.Url`。 该元素应如下所示：`<SourceLocation resid="Contoso.SharedRuntime.Url"/>`。
+    - 如果加载项包含 Excel 自定义函数，请将 [Page](../reference/manifest/page.md).[SourceLocation](../reference/manifest/sourcelocation.md) 元素的 `resid` 属性设置为与步骤 1 所使用 `<Runtime>` 元素的 `resid` 相同的字符串，例如 `Contoso.SharedRuntime.Url`。 该元素应如下所示：`<SourceLocation resid="Contoso.SharedRuntime.Url"/>`。
+    - 如果加载项包含函数文件，请将 [FunctionFile](../reference/manifest/functionfile.md) 元素的 `resid` 属性设置为与步骤 1 所使用 `<Runtime>` 元素的 `resid` 相同的字符串，例如 `Contoso.SharedRuntime.Url`。 该元素应如下所示：`<FunctionFile resid="Contoso.SharedRuntime.Url"/>`。
 
 ## <a name="set-the-default-state-to-disabled"></a>将默认状态设置为“已禁用”
 
-默认情况下，当 Office 应用程序启动时，将启用任何加载项命令。 如果要在 Office 应用程序启动时禁用自定义按钮或菜单项，请在清单中指定它。 只需在控件声明中的 [Action](../reference/manifest/action.md) 元素的正下方添加 [Enabled](../reference/manifest/enabled.md) 元素（值为 `false`）。 下面显示了基本结构：
+默认情况下，当 Office 应用程序启动时，将启用任何加载项命令。 如果要在 Office 应用程序启动时禁用自定义按钮或菜单项，请在清单中指定它。 只需在控件的声明中的 [Action](../reference/manifest/action.md) 元素的*下方*（不在内部）之后立即添加 [Enabled ](../reference/manifest/enabled.md)元素（值为 `false`）即可。 下面显示了基本结构：
 
 ```xml
 <OfficeApp ...>
@@ -77,52 +77,25 @@ ms.locfileid: "42596681"
 更改加载项命令的启用状态的基本步骤如下：
 
 1. 创建 [RibbonUpdaterData](/javascript/api/office-runtime/officeruntime.ribbonupdaterdata) 对象，该对象 (1) 按清单中指定的 ID 来指定命令及其父选项卡；以及 (2) 指定命令的启用或禁用状态。
-2. 将 **RibbonUpdaterData** 对象传递到 [OfficeRuntime.Ribbon.requestUpdate()](/javascript/api/office-runtime/officeruntime.ribbon#requestupdate-input-) 方法。
+2. 将 **RibbonUpdaterData** 对象传递到 [Office.ribbon.requestUpdate()](/javascript/api/office/office.ribbon?view=common-js#requestupdate-input-) 方法。
 
 下面展示了一个非常简单的示例。 请注意，“MyButton”和“OfficeAddinTab1”是从清单中复制的。
 
 ```javascript
 function enableButton() {
-    OfficeRuntime.ui.getRibbon()
-        .then(function (ribbon) {
-            ribbon.requestUpdate({
-                tabs: [
-                    {
-                        id: "OfficeAppTab1",
-                        controls: [
-                        {
-                            id: "MyButton",
-                            enabled: true
-                        }
-                    ]}
-                ]});
-        });
+    Office.ribbon.requestUpdate({
+        tabs: [
+            {
+                id: "OfficeAppTab1", 
+                controls: [
+                {
+                    id: "MyButton", 
+                    enabled: true
+                }
+            ]}
+        ]});
 }
 ```
-
-> [!NOTE]
-> 我们暂时计划在 2020 年 4 月以两种方式简化 API：
->
-> - 这些 API 将从 `OfficeRuntime` 命名空间移至 `Office` 命名空间。
-> - 无需调用 `getRibbon()` 方法。 `Ribbon` 对象将成为 `Office` 对象的单一实例属性。
->
-> 例如，将重写前面的代码，如下所示：
->
-> ```javascript
-> function enableButton() {
->    Office.ribbon.requestUpdate({
->        tabs: [
->            {
->                id: "OfficeAppTab1", 
->                controls: [
->                {
->                    id: "MyButton", 
->                    enabled: true
->                }
->            ]}
->        ]});
-> }
-> ```
 
 我们还提供了几个接口（类型），使构建 **RibbonUpdateData** 对象变得更加容易。 下面是 TypeScript 中的等效示例，它利用了这些类型。
 
@@ -131,8 +104,7 @@ const enableButton = async () => {
     const button: Control = {id: "MyButton", enabled: true};
     const parentTab: Tab = {id: "OfficeAddinTab1", controls: [button]};
     const ribbonUpdater: RibbonUpdaterData = { tabs: [parentTab]};
-    const ribbon: Ribbon = await OfficeRuntime.ui.getRibbon();
-    await ribbon.requestUpdate(ribbonUpdater);
+    await Office.ribbon.requestUpdate(ribbonUpdater);
 }
 ```
 
@@ -163,13 +135,10 @@ Office.onReady(async () => {
 
 ```javascript
 function enableChartFormat() {
-    OfficeRuntime.ui.getRibbon()
-        .then(function (ribbon) {
-            var button = {id: "ChartFormatButton", enabled: true};
-            var parentTab = {id: "CustomChartTab", controls: [button]};
-            var ribbonUpdater = {tabs: [parentTab]};
-            await ribbon.requestUpdate(ribbonUpdater);
-        });
+    var button = {id: "ChartFormatButton", enabled: true};
+    var parentTab = {id: "CustomChartTab", controls: [button]};
+    var ribbonUpdater = {tabs: [parentTab]};
+    await Office.ribbon.requestUpdate(ribbonUpdater);
 }
 ```
 
@@ -186,15 +155,12 @@ function enableChartFormat() {
 
 ```javascript
 function disableChartFormat() {
-    OfficeRuntime.ui.getRibbon()
-        .then(function (ribbon) {
-            var button = {id: "ChartFormatButton", enabled: false};
-            var parentTab = {id: "CustomChartTab", controls: [button]};
-            var ribbonUpdater = {tabs: [parentTab]};
-            await ribbon.requestUpdate(ribbonUpdater);
+    var button = {id: "ChartFormatButton", enabled: false};
+    var parentTab = {id: "CustomChartTab", controls: [button]};
+    var ribbonUpdater = {tabs: [parentTab]};
+    await Office.ribbon.requestUpdate(ribbonUpdater);
 
-            chartFormatButtonEnabled = false;
-        });
+    chartFormatButtonEnabled = false;
 }
 ```
 
@@ -220,20 +186,19 @@ function chartFormatButtonHandler() {
 
 ```javascript
 function disableChartFormat() {
-    OfficeRuntime.ui.getRibbon()
-        .then(function (ribbon) {
-            var button = {id: "ChartFormatButton", enabled: false};
-            var parentTab = {id: "CustomChartTab", controls: [button]};
-            var ribbonUpdater = {tabs: [parentTab]};
-            await ribbon.requestUpdate(ribbonUpdater);
+    try {
+        var button = {id: "ChartFormatButton", enabled: false};
+        var parentTab = {id: "CustomChartTab", controls: [button]};
+        var ribbonUpdater = {tabs: [parentTab]};
+        await Office.ribbon.requestUpdate(ribbonUpdater);
 
-            chartFormatButtonEnabled = false;
-        })
-        .catch(function (error){
-            if (error.code == "HostRestartNeeded"){
-                reportError("Contoso Awesome Add-in has been upgraded. Please save your work, close the Office application, and restart it.");
-            }
-        });
+        chartFormatButtonEnabled = false;
+    }
+    catch(error) {
+        if (error.code == "HostRestartNeeded"){
+            reportError("Contoso Awesome Add-in has been upgraded. Please save your work, close the Office application, and restart it.");
+        }
+    }
 }
 ```
 
