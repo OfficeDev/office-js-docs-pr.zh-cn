@@ -2,14 +2,14 @@
 title: 为联机会议提供商创建 Outlook mobile 外接程序（预览）
 description: 讨论如何为联机会议服务提供商设置 Outlook 移动外接程序。
 ms.topic: article
-ms.date: 04/13/2020
+ms.date: 04/15/2020
 localization_priority: Normal
-ms.openlocfilehash: 6a9d484bb74f238c0c62e689c66afaeb284eec2d
-ms.sourcegitcommit: 118e8bcbcfb73c93e2053bda67fe8dd20799b170
+ms.openlocfilehash: ed89205962bf4662096167eb78388b475fffdf91
+ms.sourcegitcommit: 90c5830a5f2973a9ccd5c803b055e1b98d83f099
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "43241089"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "43529111"
 ---
 # <a name="create-an-outlook-mobile-add-in-for-an-online-meeting-provider-preview"></a>为联机会议提供商创建 Outlook mobile 外接程序（预览）
 
@@ -144,7 +144,7 @@ function updateBody(event, existingBody) {
 
 作为会议与会者，查看会议时，您应该会看到类似于下图的屏幕。
 
-[![Android 上的加入会议屏幕的屏幕截图](../images/outlook-android-join-online-meeting-view.png)](../images/outlook-android-join-online-meeting-view-expanded.png#lightbox)
+[![Android 上的加入会议屏幕的屏幕截图](../images/outlook-android-join-online-meeting-view-1.png)](../images/outlook-android-join-online-meeting-view-1-expanded.png#lightbox)
 
 ## <a name="available-apis"></a>可用 Api
 
