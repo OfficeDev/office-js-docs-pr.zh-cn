@@ -1,15 +1,15 @@
 ---
 title: 使用 Vue 生成 Excel 任务窗格加载项
 description: 了解如何使用 Office JS API 和 Vue 生成简单的 Excel 任务窗格加载项。
-ms.date: 01/16/2020
+ms.date: 04/14/2020
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: aff58bf3021be2efed0aef14a505dab8433d92a3
-ms.sourcegitcommit: c3bfea0818af1f01e71a1feff707fb2456a69488
+ms.openlocfilehash: ef20d56181d3b0f6c865e81de9c8500ef9906c83
+ms.sourcegitcommit: 90c5830a5f2973a9ccd5c803b055e1b98d83f099
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "43185559"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "43529118"
 ---
 # <a name="build-an-excel-task-pane-add-in-using-vue"></a>使用 Vue 生成 Excel 任务窗格加载项
 
@@ -58,12 +58,12 @@ vue create my-add-in
     出现提示时，请提供以下信息来创建加载项项目：
 
     - **选择项目类型:** `Office Add-in project containing the manifest only`
-    - **要如何命名加载项?** `my-office-add-in`
+    - **要如何命名加载项?** `My Office Add-in`
     - **要支持哪一个 Office 客户端应用程序?** `Excel`
 
     ![Yeoman 生成器](../images/yo-office-manifest-only-vue.png)
 
-完成向导后，会创建一个 `my-office-add-in` 文件夹，其中包含一个 `manifest.xml` 文件。 你将在本快速入门结束时使用该清单旁加载和测试你的加载项。
+完成向导后，会创建一个 `My Office Add-in` 文件夹，其中包含一个 `manifest.xml` 文件。 你将在本快速入门结束时使用该清单旁加载和测试你的加载项。
 
 > [!TIP]
 > 创建加载项项目后，可忽略 Yeoman 生成器提供的*后续步骤*指南。 本文中的分步说明提供了完成本教程所需的全部指南。
@@ -72,16 +72,29 @@ vue create my-add-in
 
 [!include[HTTPS guidance](../includes/https-guidance.md)]
 
-要为应用启用 HTTPS，请使用以下内容在 Vue 项目的根文件夹中创建一个 `vue.config.js` 文件：
+1. 要为应用启用 HTTPS，请使用以下内容在 Vue 项目的根文件夹中创建一个 `vue.config.js` 文件：
 
-```js
-module.exports = {
-  devServer: {
-    port: 3000,
-    https: true
-  }
-};
-```
+    ```js
+    var fs = require("fs");
+    var path = require("path");
+    var homedir = require('os').homedir()
+  
+    module.exports = {
+      devServer: {
+        port: 3000,
+        https: true,
+        key: fs.readFileSync(path.resolve(`${homedir}/.office-addin-dev-certs/localhost.key`)),
+        cert: fs.readFileSync(path.resolve(`${homedir}/.office-addin-dev-certs/localhost.crt`)),
+        ca: fs.readFileSync(path.resolve(`${homedir}/.office-addin-dev-certs/ca.crt`))
+      }
+    }
+    ```
+
+2. 在终端中，运行以下命令以安装加载项证书。
+
+   ```command&nbsp;line
+   npx office-addin-dev-certs install
+   ```
 
 ## <a name="update-the-app"></a>更新应用
 
@@ -183,9 +196,7 @@ module.exports = {
    npm run serve
    ```
 
-2. 在 Web 浏览器中，导航到 `https://localhost:3000`（请注意 `https`）。 如果浏览器指明网站证书不受信任，则需要[将计算机配置为信任此证书](https://github.com/OfficeDev/generator-office/blob/fd600bbe00747e64aa5efb9846295a3f66d428aa/src/docs/ssl.md#add-certification-file-through-ie)。
-
-3. 如果 `https://localhost:3000` 上的页面空白但没有任何证书错误，这表示它正常工作。 Office 初始化后装载 Vue 应用，因此它仅显示 Excel 环境中的内容。
+2. 在 Web 浏览器中，导航到 `https://localhost:3000`（请注意 `https`）。 如果 `https://localhost:3000` 上的页面空白但没有任何证书错误，这表示它正常工作。 Office 初始化后装载 Vue 应用，因此它仅显示 Excel 环境中的内容。
 
 ## <a name="try-it-out"></a>试用
 
