@@ -1,14 +1,14 @@
 ---
 title: 为 Office 加载项启用单一登录
 description: 了解如何使用 Microsoft、工作或学校 Office 365 帐户为 Office 加载项启用单一登录。
-ms.date: 01/14/2020
+ms.date: 04/16/2020
 localization_priority: Priority
-ms.openlocfilehash: 9665febbe122506476fcf7fbf989bf5bebd45e44
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: 3d64d9c5ba9bfbfa1318c1c69a6527b180a2bff1
+ms.sourcegitcommit: 803587b324fc8038721709d7db5664025cf03c6b
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42719369"
+ms.lasthandoff: 04/17/2020
+ms.locfileid: "43547069"
 ---
 # <a name="enable-single-sign-on-for-office-add-ins-preview"></a>为 Office 加载项启用单一登录（预览）
 
@@ -20,7 +20,7 @@ ms.locfileid: "42719369"
 
 当前只在预览中支持单一登录 API。 它可供开发人员进行实验，但不应用于生产加载项。 此外，在 [AppSource](https://appsource.microsoft.com) 中不接受使用 SSO 的加载项。
 
-SSO 要求使用 Office 365（Office 的订阅版本）。 你应该使用来自预览体验成员频道的最新每月版本和内部版本。 你可能需要成为 Office 预览体验成员，才能获取此版本。 有关详细信息，请参阅[成为 Office 预览体验成员](https://products.office.com/office-insider?tab=tab-1)。 请注意，当内部版本进入生产半年频道时，将关闭对该内部版本的预览功能（包括 SSO）的支持。
+SSO 要求使用 Office 365（Office 的订阅版本）。 你应该使用来自预览体验成员频道的最新每月版本和内部版本。 你可能需要成为 Office 预览体验成员，才能获取此版本。 有关详细信息，请参阅[成为 Office 预览体验成员](https://insider.office.com)。 请注意，当内部版本进入生产半年频道时，将关闭对该内部版本的预览功能（包括 SSO）的支持。
 
 并非所有 Office 应用程序都支持 SSO 预览。 可以在 Word、Excel、Outlook 和 PowerPoint 中使用此加载项。 若要详细了解目前支持单一登录 API 的平台，请参阅 [IdentityAPI 要求集](../reference/requirement-sets/identity-api-requirement-sets.md)。
 
