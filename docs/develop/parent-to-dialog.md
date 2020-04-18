@@ -1,14 +1,14 @@
 ---
 title: 将数据和邮件从其主机页传递到对话框
-description: 了解如何使用 messageChild 和 DialogParentMessageReceived Api 将数据传递到主机页中的对话框
-ms.date: 03/11/2020
+description: 了解如何使用 messageChild 和 DialogParentMessageReceived Api 将数据传递到主机页中的对话框。
+ms.date: 04/16/2020
 localization_priority: Normal
-ms.openlocfilehash: 03d89a2e5ffb9060edb25dd8e0c3c71c0dd274eb
-ms.sourcegitcommit: 153576b1efd0234c6252433e22db213238573534
+ms.openlocfilehash: cd332a58aa79a81aab7cf5a3d247950ce8bc655e
+ms.sourcegitcommit: 803587b324fc8038721709d7db5664025cf03c6b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/07/2020
-ms.locfileid: "42561869"
+ms.lasthandoff: 04/17/2020
+ms.locfileid: "43547055"
 ---
 # <a name="passing-data-and-messages-to-a-dialog-box-from-its-host-page-preview"></a>将数据和邮件从其主机页传递到对话框（预览）
 
@@ -17,7 +17,7 @@ ms.locfileid: "42561869"
 > [!Important]
 >
 > - 本文中介绍的 Api 处于预览阶段。 它们可供开发人员用来进行试验;但不应在生产外接中使用。 在发布此 API 之前，请使用将[信息传递到](dialog-api-in-office-add-ins.md#pass-information-to-the-dialog-box)生产外接程序的对话框中所述的技术。
-> - 本文中所述的 Api 需要 Office 365 （Office 的订阅版本）。 你应该使用来自预览体验成员频道的最新每月版本和内部版本。 你可能需要成为 Office 预览体验成员，才能获取此版本。 有关详细信息，请参阅[成为 Office 预览体验成员](https://products.office.com/office-insider?tab=tab-1)。 请注意，当内部版本毕业生到生产半年频道时，将对该内部版本禁用对预览功能的支持。
+> - 本文中所述的 Api 需要 Office 365 （Office 的订阅版本）。 你应该使用来自预览体验成员频道的最新每月版本和内部版本。 你可能需要成为 Office 预览体验成员，才能获取此版本。 有关详细信息，请参阅[成为 Office 预览体验成员](https://insider.office.com)。 请注意，当内部版本毕业生到生产半年频道时，将对该内部版本禁用对预览功能的支持。
 > - 在预览的初始阶段，Api 在 Excel、PowerPoint 和 Word 中受支持;而不是在 Outlook 中。
 >
 > [!INCLUDE [Information about using preview APIs](../includes/using-preview-apis.md)]

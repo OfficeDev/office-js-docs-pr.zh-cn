@@ -1,15 +1,15 @@
 ---
 title: Identity API 要求集
-description: ''
-ms.date: 03/11/2020
+description: Office 外接程序的标识 API 要求集信息。
+ms.date: 04/16/2020
 ms.prod: non-product-specific
 localization_priority: Normal
-ms.openlocfilehash: 6460516c32f70995d43ae64b213c93153a015bff
-ms.sourcegitcommit: 05b73cdec5f4db7f0b8d48a5a552ee296a0332ca
+ms.openlocfilehash: 4552626d692b08bab65f866ab406988f5e88945a
+ms.sourcegitcommit: 803587b324fc8038721709d7db5664025cf03c6b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/11/2020
-ms.locfileid: "42600688"
+ms.lasthandoff: 04/17/2020
+ms.locfileid: "43547239"
 ---
 # <a name="identity-api-requirement-sets"></a>Identity API 要求集
 
@@ -21,7 +21,7 @@ Office 外接程序在多个 Office 版本中运行。 下表列出了 Identity 
 |:-----|-----|:-----|:-----|:-----|:-----|:-----|:-----|:-----|
 | IdentityAPI 预览  | 不适用 | 预览<b>*</b> | 即将推出 | 预览<b>*</b> | 预览<b>* &#8224;</b> | 预览<b>* &#8224;</b>| 即将推出 | 即将推出 |
 
-> **&#42;** 在预览阶段，标识 API 需要 Office 365 （Office 的订阅版本）。 你应该使用来自预览体验成员频道的最新每月版本和内部版本。 你可能需要成为 Office 预览体验成员，才能获取此版本。 有关详细信息，请参阅[成为 Office 预览体验成员](https://products.office.com/office-insider?tab=tab-1)。 请注意，当内部版本进入生产半年频道时，将关闭对该内部版本的预览功能（包括 SSO）的支持。
+> **&#42;** 在预览阶段，标识 API 需要 Office 365 （Office 的订阅版本）。 你应该使用来自预览体验成员频道的最新每月版本和内部版本。 你可能需要成为 Office 预览体验成员，才能获取此版本。 有关详细信息，请参阅[成为 Office 预览体验成员](https://insider.office.com)。 请注意，当内部版本进入生产半年频道时，将关闭对该内部版本的预览功能（包括 SSO）的支持。
 >
 > **&#8224;** 在这些平台上使用 SSO Api 的外接程序将仅在用户的租户管理员向外接程序授予许可时才有效。 用户不能同意，即使是对自己的 Azure AD 配置文件也不允许。
 

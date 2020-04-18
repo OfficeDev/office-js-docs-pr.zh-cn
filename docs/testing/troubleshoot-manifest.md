@@ -1,14 +1,14 @@
 ---
 title: 验证 Office 加载项的清单
 description: 了解如何使用 XML 架构和其他工具验证 Office 外接程序的清单。
-ms.date: 12/31/2019
+ms.date: 04/16/2020
 localization_priority: Normal
-ms.openlocfilehash: bb24cdca34ac92fa1ca9f292bc1f52b5fbd01688
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: a6c33603f278e092d5b2b1c85879e03ee10031e3
+ms.sourcegitcommit: 803587b324fc8038721709d7db5664025cf03c6b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42719747"
+ms.lasthandoff: 04/17/2020
+ms.locfileid: "43547229"
 ---
 # <a name="validate-an-office-add-ins-manifest"></a>验证 Office 加载项的清单
 
@@ -36,16 +36,18 @@ npm run validate
 
 1. 安装 [Node.js](https://nodejs.org/download/)。
 
-2. 在项目的根目录中运行以下命令。 将 `MANIFEST_FILE` 替换为清单文件的名称。
+2. 在项目的根目录中运行以下命令。 
 
     ```command&nbsp;line
-    npx office-addin-manifest validate MANIFEST_FILE
+    npm run validate
     ```
 
     > [!NOTE]
-    > 如果运行此命令导致错误消息“命令语法无效。” （因为 `validate` 命令无法识别），运行以下命令验证清单（用清单文件的名称替换 `MANIFEST_FILE`）： 
+    > 如果此命令不可用或不起作用，请运行以下命令来强制使用 office 外接程序清单工具的最新版本（替换`MANIFEST_FILE`为清单文件的名称）：
     >
-    > `npx --ignore-existing office-addin-manifest validate MANIFEST_FILE`
+    > ```command&nbsp;line
+    > npx --ignore-existing office-addin-manifest validate MANIFEST_FILE
+    > ```
 
 ## <a name="validate-your-manifest-against-the-xml-schema"></a>根据 XML 架构验证清单
 

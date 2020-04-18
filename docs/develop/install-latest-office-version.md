@@ -1,14 +1,14 @@
 ---
 title: 安装最新版本 Office
 description: 与如何选择获取最新版 Office 相关的信息。
-ms.date: 01/14/2020
+ms.date: 04/16/2020
 localization_priority: Normal
-ms.openlocfilehash: ad956135bea0ffccc18fc07f455af5597d0e2341
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: b9428cc67160e0680bab5a36438bc1a0dbb3ac17
+ms.sourcegitcommit: 803587b324fc8038721709d7db5664025cf03c6b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42718921"
+ms.lasthandoff: 04/17/2020
+ms.locfileid: "43547062"
 ---
 # <a name="install-the-latest-version-of-office"></a>安装最新版本 Office
 
@@ -18,7 +18,7 @@ ms.locfileid: "42718921"
 
 若要选择获取最新版 Office，请执行以下操作：
 
-- 如果你是 Office 365 家庭版、个人版或大专院校版订阅者，请参阅[成为 Office 预览体验成员](https://products.office.com/office-insider)。
+- 如果你是 Office 365 家庭版、个人版或大专院校版订阅者，请参阅[成为 Office 预览体验成员](https://insider.office.com)。
 - 如果你是 Office 365 商业版客户，请参阅 [为 Office 365 商业版客户安装首次发布](https://support.office.com/article/Install-the-First-Release-build-for-Office-365-for-business-customers-4dd8ba40-73c0-4468-b778-c7b744d03ead)。
 - 如果在 Mac 上运行 Office：
   - 启动 Office 应用程序。
