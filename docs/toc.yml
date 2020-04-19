@@ -5,6 +5,9 @@
   displayName: 'Excel, Word, OneNote, Project, PowerPoint, Outlook'
 - name: 入门
   items:
+    - name: 从这里开始！ 新手指南
+      href: overview/learning-path-beginner.md
+      displayName: develop
     - name: 构建 Office 加载项
       href: overview/office-add-ins-fundamentals.md
       displayName: develop

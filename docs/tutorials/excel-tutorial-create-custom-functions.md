@@ -4,12 +4,12 @@ description: 在本教程中，你将创建一个 Excel 外接程序，其中包
 ms.date: 01/16/2020
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: 83568d7bb3ec1706fb9a2fb373be75b0774d9d94
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: d7f6f30bde7b56b1dec1abb55d01e6b65f8d3c7e
+ms.sourcegitcommit: 803587b324fc8038721709d7db5664025cf03c6b
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42717367"
+ms.lasthandoff: 04/17/2020
+ms.locfileid: "43547076"
 ---
 # <a name="tutorial-create-custom-functions-in-excel"></a>教程：在 Excel 中创建自定义函数
 
@@ -235,7 +235,7 @@ function clock(invocation) {
 --- 
 
 <ol start="4">
-<li>尝试使用新函数。 在单元格 <strong>C1</strong> 中，键入文本 <strong>=CONTOSO.CLOCK())</strong>，然后按 Enter。 此时会显示当前日期，该日期每秒更新一次。 虽然此时钟只是一个循环计时器，但利用这一理念，你可以在更复杂的函数上设置计时器，以便执行对实时数据的 Web 请求。</li>
+<li>尝试使用新函数。 在单元格 <strong>C1</strong> 中，键入文本 <strong>=CONTOSO.CLOCK()</strong>，然后按 Enter。 此时会显示当前日期，该日期每秒更新一次。 虽然此时钟只是一个循环计时器，但利用这一理念，你可以在更复杂的函数上设置计时器，以便执行对实时数据的 Web 请求。</li>
 </ol>
 
 ## <a name="next-steps"></a>后续步骤

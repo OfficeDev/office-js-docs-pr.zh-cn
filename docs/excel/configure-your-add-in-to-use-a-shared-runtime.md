@@ -1,15 +1,15 @@
 ---
-ms.date: 02/20/2020
+ms.date: 04/16/2020
 title: 将 Excel 加载项配置为共享浏览器运行时（预览版）
 ms.prod: excel
 description: 将 Excel 加载项配置为共享浏览器运行时并在同一运行时中运行功能区、任务窗格和自定义函数代码。
 localization_priority: Priority
-ms.openlocfilehash: 7fad97039d5a463978ca9a2d450af9bb698b49b5
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: f84de010787921eeb13205935b733ec36b2c3d37
+ms.sourcegitcommit: 803587b324fc8038721709d7db5664025cf03c6b
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42719327"
+ms.lasthandoff: 04/17/2020
+ms.locfileid: "43547246"
 ---
 # <a name="configure-your-excel-add-in-to-use-a-shared-javascript-runtime-preview"></a>将 Excel 加载项配置为使用共享 JavaScript 运行时（预览版）
 
@@ -117,9 +117,8 @@ yo office
 
 ## <a name="next-steps"></a>后续步骤
 
-现在，可通过查看以下文章来试用共享运行时的某些功能。
-
-- [从自定义函数中调用 Excel API](call-excel-apis-from-custom-function.md)
+- 有关在共享运行时中使用 Excel JavaScript APIs 和自定义 Excel 函数的详细信息，请参阅文章[从自定义函数中调用 Excel API](call-excel-apis-from-custom-function.md)。
+- 探索模式和做法示例“[管理功能区和任务窗格用户节目，并在文档打开时运行代码](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Samples/excel-shared-runtime-scenario)，以查看操作中共享 JavaScript 运行时的更大示例。
 
 ## <a name="see-also"></a>另请参阅
 
