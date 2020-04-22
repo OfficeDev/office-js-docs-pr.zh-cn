@@ -1,14 +1,14 @@
 ---
 title: Office 加载项中的 Office UI Fabric 
 description: 概述如何在 Office 外接程序中使用 Office UI Fabric 组件。
-ms.date: 12/04/2017
+ms.date: 04/20/2020
 localization_priority: Normal
-ms.openlocfilehash: 3e65e123d6195fc435b12c477985a10a3a2b0399
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: 5c504de14ee97ff740a80dc7608ae636ff8080ca
+ms.sourcegitcommit: 79c55e59294e220bd21a5006080f72acf3ec0a3f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42718704"
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "43581909"
 ---
 # <a name="office-ui-fabric-in-office-add-ins"></a>Office 加载项中的 Office UI Fabric 
 
@@ -66,4 +66,4 @@ Fabric 提供了多种可用于生成外界程序的 UX 组件，包括以下类
 |**框架**|**示例**|
 |:------------|:----------|
 |**React**|[在 Office 外接程序中使用 Office UI Fabric React](using-office-ui-fabric-react.md )|
-|**Angular**| 请参阅包含 Angular 1.5 指令的社区项目 [ngOfficeUIFabric](http://ngofficeuifabric.com/)，以及[考虑使用 Angular 2 组件包装 Fabric 组件](../develop/add-ins-with-angular2.md#consider-wrapping-fabric-components-with-angular-components)|
+|**Angular**| [考虑使用角2组件包装 Fabric 组件](../develop/add-ins-with-angular2.md#consider-wrapping-fabric-components-with-angular-components)|

@@ -1,14 +1,14 @@
 ---
 title: Outlook 加载项的 Onsend 功能
 description: 提供了一种处理项目或阻止用户进行特定操作的方法，并允许加载项在发送时设置某些属性。
-ms.date: 04/06/2020
+ms.date: 04/15/2020
 localization_priority: Normal
-ms.openlocfilehash: 017759628cd9b3716c3992f7c6631911491ca246
-ms.sourcegitcommit: c3bfea0818af1f01e71a1feff707fb2456a69488
+ms.openlocfilehash: d882bf988473e71de2621c144964f6116afe962c
+ms.sourcegitcommit: 79c55e59294e220bd21a5006080f72acf3ec0a3f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "43185636"
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "43581930"
 ---
 # <a name="on-send-feature-for-outlook-add-ins"></a>Outlook 加载项的 Onsend 功能
 
@@ -199,9 +199,26 @@ New-App -OrganizationApp -FileData $Data -DefaultStateForUser Enabled
 > [!NOTE]
 > 若要了解如何使用远程 PowerShell 连接到 Exchange Online，请参阅[连接到 Exchange Online PowerShell](/powershell/exchange/exchange-online/connect-to-exchange-online-powershell/connect-to-exchange-online-powershell)。
 
+#### <a name="disable-the-on-send-policy"></a>禁用 Onsend 策略
+
+默认情况下，启用发送策略。 若要禁用用户的 Onsend 策略或分配未启用该标志的 Outlook 网页版邮箱策略，请运行以下 cmdlet。 在此示例中，该邮箱策略是 *ContosoCorpOWAPolicy*。
+
+```powershell
+Get-CASMailbox joe@contoso.com | Set-CASMailbox –OWAMailboxPolicy "ContosoCorpOWAPolicy"
+```
+
+> [!NOTE]
+> 有关如何使用 **Set-OwaMailboxPolicy** cmdlet 配置现有 Outlook 网页版邮箱策略的详细信息，请参阅 [Set-OwaMailboxPolicy](/powershell/module/exchange/client-access/Set-OwaMailboxPolicy)。
+
+若要禁用所有分配了指定 Outlook 网页版邮箱策略的用户的 Onsend 策略，请运行以下 cmdlet。
+
+```powershell
+Get-OWAMailboxPolicy OWAOnSendAddinAllUserPolicy | Set-OWAMailboxPolicy –OnSendAddinsEnabled:$false
+```
+
 #### <a name="enable-the-on-send-policy"></a>启用 Onsend 策略
 
-默认情况下，Onsend 策略处于禁用状态。 管理员可以通过运行 Exchange Online PowerShell cmdlet 启用 Onsend。
+管理员可以通过运行 Exchange Online PowerShell cmdlet 启用 Onsend。
 
 要为所有用户启用 Onsend 加载项，请执行以下操作：
 
@@ -254,23 +271,6 @@ New-App -OrganizationApp -FileData $Data -DefaultStateForUser Enabled
 
 > [!NOTE]
 > 需要等待 60 分钟该策略才能生效，或重启 Internet Information Services (IIS)。 策略生效后，将为该组强制执行 Onsend 功能。
-
-#### <a name="disable-the-on-send-policy"></a>禁用 Onsend 策略
-
-若要禁用用户的 Onsend 策略或分配未启用该标志的 Outlook 网页版邮箱策略，请运行以下 cmdlet。 在此示例中，该邮箱策略是 *ContosoCorpOWAPolicy*。
-
-```powershell
-Get-CASMailbox joe@contoso.com | Set-CASMailbox –OWAMailboxPolicy "ContosoCorpOWAPolicy"
-```
-
-> [!NOTE]
-> 有关如何使用 **Set-OwaMailboxPolicy** cmdlet 配置现有 Outlook 网页版邮箱策略的详细信息，请参阅 [Set-OwaMailboxPolicy](/powershell/module/exchange/client-access/Set-OwaMailboxPolicy)。
-
-若要禁用所有分配了指定 Outlook 网页版邮箱策略的用户的 Onsend 策略，请运行以下 cmdlet。
-
-```powershell
-Get-OWAMailboxPolicy OWAOnSendAddinAllUserPolicy | Set-OWAMailboxPolicy –OnSendAddinsEnabled:$false
-```
 
 ### <a name="windows"></a>[Windows](#tab/windows)
 

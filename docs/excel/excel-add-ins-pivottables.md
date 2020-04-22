@@ -1,14 +1,14 @@
 ---
 title: 使用 Excel JavaScript API 处理数据透视表
 description: 使用 Excel JavaScript API 创建数据透视表并与其组件进行交互。
-ms.date: 01/22/2020
+ms.date: 04/20/2020
 localization_priority: Normal
-ms.openlocfilehash: 5899959b108ace2da35950655ff9313cd94243d3
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: f89e945f717982163a967971aaeff90ec0125545
+ms.sourcegitcommit: 79c55e59294e220bd21a5006080f72acf3ec0a3f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42717101"
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "43581937"
 ---
 # <a name="work-with-pivottables-using-the-excel-javascript-api"></a>使用 Excel JavaScript API 处理数据透视表
 
@@ -25,7 +25,8 @@ ms.locfileid: "42717101"
 [数据透视表](/javascript/api/excel/excel.pivottable)是 OFFICE JavaScript API 中数据透视表的中心对象。
 
 - `Workbook.pivotTables`并且`Worksheet.pivotTables`是分别在工作簿和工作表中包含[数据透视](/javascript/api/excel/excel.pivottable)表的[PivotTableCollections](/javascript/api/excel/excel.pivottablecollection) 。
-- [数据透视表](/javascript/api/excel/excel.pivottable)包含具有多个[PivotHierarchies](/javascript/api/excel/excel.pivothierarchy)的[PivotTableCollections](/javascript/api/excel/excel.pivottablecollection) 。
+- [数据透视表](/javascript/api/excel/excel.pivottable)包含具有多个[PivotHierarchies](/javascript/api/excel/excel.pivothierarchy)的[PivotHierarchyCollection](/javascript/api/excel/excel.pivothierarchycollection) 。
+- 可以将这些[PivotHierarchies](/javascript/api/excel/excel.pivothierarchy)添加到特定的层次结构集合，以定义数据透视表透视数据的方式（如[以下部分](#hierarchies)所述）。
 - [PivotHierarchy](/javascript/api/excel/excel.pivothierarchy)包含一个仅具有一个[透视字段](/javascript/api/excel/excel.pivotfield)的[PivotFieldCollection](/javascript/api/excel/excel.pivotfieldcollection) 。 如果设计扩展以包含 OLAP 数据透视表，则可能会发生更改。
 - [透视字段](/javascript/api/excel/excel.pivotfield)包含具有多个[PivotItems](/javascript/api/excel/excel.pivotitem)的[PivotItemCollection](/javascript/api/excel/excel.pivotitemcollection) 。
 - [数据透视表](/javascript/api/excel/excel.pivottable)包含一个[PivotLayout](/javascript/api/excel/excel.pivotlayout) ，用于定义在工作表中显示[透视字段](/javascript/api/excel/excel.pivotfield)和[PivotItems](/javascript/api/excel/excel.pivotitem)的位置。
@@ -166,6 +167,61 @@ Excel.run(function (context) {
     pivotTable.dataHierarchies.add(pivotTable.hierarchies.getItem("Crates Sold at Farm"));
     pivotTable.dataHierarchies.add(pivotTable.hierarchies.getItem("Crates Sold Wholesale"));
 
+    return context.sync();
+});
+```
+
+## <a name="pivottable-layouts-and-getting-pivoted-data"></a>数据透视表布局和获取透视数据
+
+[PivotLayout](/javascript/api/excel/excel.pivotlayout)定义层次结构及其数据的位置。 您可以访问布局以确定存储数据的区域。
+
+下图显示了哪些布局函数调用对应于数据透视表的区域。
+
+![显示由布局的 get range 函数返回的数据透视表的节的图表。](../images/excel-pivots-layout-breakdown.png)
+
+### <a name="get-data-from-the-pivottable"></a>从数据透视表中获取数据
+
+布局定义了数据透视表在工作表中的显示方式。 这意味着`PivotLayout`对象控制用于数据透视表元素的区域。 使用由布局提供的区域来获取由数据透视表收集和聚合的数据。 尤其是，使用`PivotLayout.getDataBodyRange`可访问数据透视表所生成的内容。
+
+下面的代码演示如何通过布局来获取数据透视表数据的最后一行（**在服务器场中售出的 Crates 总和**和在前面的示例中**销售**的**Crates**的总和）。 然后，将这些值汇总到一起，以得到最终总计，显示在单元格**E30** （数据透视表外部）中。
+
+```js
+Excel.run(function (context) {
+    var pivotTable = context.workbook.worksheets.getActiveWorksheet().pivotTables.getItem("Farm Sales");
+
+    // Get the totals for each data hierarchy from the layout.
+    var range = pivotTable.layout.getDataBodyRange();
+    var grandTotalRange = range.getLastRow();
+    grandTotalRange.load("address");
+    return context.sync().then(function () {
+        // Sum the totals from the PivotTable data hierarchies and place them in a new range, outside of the PivotTable.
+        var masterTotalRange = context.workbook.worksheets.getActiveWorksheet().getRange("E30");
+        masterTotalRange.formulas = [["=SUM(" + grandTotalRange.address + ")"]];
+    });
+});
+```
+
+### <a name="layout-types"></a>布局类型
+
+数据透视表具有三种布局样式：紧凑、大纲和表格。 我们在前面的示例中看到了压缩样式。
+
+下面的示例分别使用大纲样式和表格样式。 此代码示例演示如何在不同的布局之间循环。
+
+#### <a name="outline-layout"></a>大纲布局
+
+![使用大纲布局的数据透视表。](../images/excel-pivots-outline-layout.png)
+
+#### <a name="tabular-layout"></a>表格布局
+
+![使用表格布局的数据透视表。](../images/excel-pivots-tabular-layout.png)
+
+## <a name="delete-a-pivottable"></a>删除数据透视表
+
+使用它们的名称删除数据透视表。
+
+```js
+Excel.run(function (context) {
+    context.workbook.worksheets.getItem("Pivot").pivotTables.getItem("Farm Sales").delete();
     return context.sync();
 });
 ```
@@ -340,44 +396,6 @@ Excel.run(function (context) {
 });
 ```
 
-## <a name="pivottable-layouts"></a>数据透视表布局
-
-[PivotLayout](/javascript/api/excel/excel.pivotlayout)定义层次结构及其数据的位置。 您可以访问布局以确定存储数据的区域。
-
-下图显示了哪些布局函数调用对应于数据透视表的区域。
-
-![显示由布局的 get range 函数返回的数据透视表的节的图表。](../images/excel-pivots-layout-breakdown.png)
-
-下面的代码演示如何通过布局获取数据透视表数据的最后一行。 然后将这些值汇总到一起以进行总计。
-
-```js
-Excel.run(function (context) {
-    var pivotTable = context.workbook.worksheets.getActiveWorksheet().pivotTables.getItem("Farm Sales");
-
-    // Get the totals for each data hierarchy from the layout.
-    var range = pivotTable.layout.getDataBodyRange();
-    var grandTotalRange = range.getLastRow();
-    grandTotalRange.load("address");
-    return context.sync().then(function () {
-        // Sum the totals from the PivotTable data hierarchies and place them in a new range.
-        var masterTotalRange = context.workbook.worksheets.getActiveWorksheet().getRange("B27:C27");
-        masterTotalRange.formulas = [["All Crates", "=SUM(" + grandTotalRange.address + ")"]];
-    });
-});
-```
-
-数据透视表具有三种布局样式：紧凑、大纲和表格。 我们在前面的示例中看到了压缩样式。
-
-下面的示例分别使用大纲样式和表格样式。 此代码示例演示如何在不同的布局之间循环。
-
-### <a name="outline-layout"></a>大纲布局
-
-![使用大纲布局的数据透视表。](../images/excel-pivots-outline-layout.png)
-
-### <a name="tabular-layout"></a>表格布局
-
-![使用表格布局的数据透视表。](../images/excel-pivots-tabular-layout.png)
-
 ## <a name="change-hierarchy-names"></a>更改层次结构名称
 
 层次结构字段是可编辑的。 下面的代码演示如何更改两个数据层次结构的显示名称。
@@ -392,17 +410,6 @@ Excel.run(function (context) {
         dataHierarchies.items[0].name = "Farm Sales";
         dataHierarchies.items[1].name = "Wholesale";
     });
-});
-```
-
-## <a name="delete-a-pivottable"></a>删除数据透视表
-
-使用它们的名称删除数据透视表。
-
-```js
-Excel.run(function (context) {
-    context.workbook.worksheets.getItem("Pivot").pivotTables.getItem("Farm Sales").delete();
-    return context.sync();
 });
 ```
 
