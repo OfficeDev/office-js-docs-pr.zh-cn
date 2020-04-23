@@ -2,14 +2,14 @@
 title: 为联机会议提供商创建 Outlook mobile 外接程序（预览）
 description: 讨论如何为联机会议服务提供商设置 Outlook 移动外接程序。
 ms.topic: article
-ms.date: 04/15/2020
+ms.date: 04/21/2020
 localization_priority: Normal
-ms.openlocfilehash: ed89205962bf4662096167eb78388b475fffdf91
-ms.sourcegitcommit: 90c5830a5f2973a9ccd5c803b055e1b98d83f099
+ms.openlocfilehash: 5fd0b28a661f6d2e8f3084427920c1a31053ae5b
+ms.sourcegitcommit: 3355c6bd64ecb45cea4c0d319053397f11bc9834
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "43529111"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "43744857"
 ---
 # <a name="create-an-outlook-mobile-add-in-for-an-online-meeting-provider-preview"></a>为联机会议提供商创建 Outlook mobile 外接程序（预览）
 
@@ -24,7 +24,10 @@ ms.locfileid: "43529111"
 
 若要使用户能够使用您的外接程序创建联机会议，必须在`MobileOnlineMeetingCommandSurface`父元素`MobileFormFactor`下的清单中配置扩展点。 不支持其他外观因素。
 
-下面的示例显示包含`MobileFormFactor`元素和`MobileOnlineMeetingCommandSurface`扩展点的清单示例。
+下面的示例展示了包含`MobileFormFactor`元素和`MobileOnlineMeetingCommandSurface`扩展点的清单中的摘录。
+
+> [!TIP]
+> 若要了解有关 Outlook 外接程序清单的详细信息，请参阅[outlook 外接程序清单](manifests.md)和[添加对适用于 outlook Mobile 的外接程序命令的支持](add-mobile-support.md)。
 
 ```xml
 ...

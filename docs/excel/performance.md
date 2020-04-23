@@ -1,14 +1,14 @@
 ---
 title: Excel JavaScript API 性能优化
 description: 使用 Excel JavaScript API 优化性能
-ms.date: 03/27/2020
+ms.date: 04/22/2020
 localization_priority: Normal
-ms.openlocfilehash: a202776569cdfc31a1221e3de1a356f0dafa2bfb
-ms.sourcegitcommit: 559a7e178e84947e830cc00dfa01c5c6e398ddc2
+ms.openlocfilehash: 273ae6d98c5430bdcd9612670121a6b22a8288af
+ms.sourcegitcommit: 9da68c00ecc00a2f307757e0f5a903a8e31b7769
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "43030829"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "43785735"
 ---
 # <a name="performance-optimization-using-the-excel-javascript-api"></a>使用 Excel JavaScript API 优化性能
 
@@ -16,7 +16,7 @@ ms.locfileid: "43030829"
 
 ## <a name="minimize-the-number-of-sync-calls"></a>减少 sync() 调用次数
 
-在 Excel JavaScript API 中，```sync()``` 是唯一的异步操作，在某些情况下可能会很慢，尤其是对于 Excel 网页版。 若要优化性能，在调用之前，通过尽可能多地将更改加入队列来最大程度减少调用 ```sync()``` 的次数。
+在 Excel JavaScript API 中，`sync()` 是唯一的异步操作，在某些情况下可能会很慢，尤其是对于 Excel 网页版。 若要优化性能，在调用之前，通过尽可能多地将更改加入队列来最大程度减少调用 `sync()` 的次数。
 
 有关按照此做法操作的代码示例，请参阅[核心概念 - sync()](excel-add-ins-core-concepts.md#sync)。
 
@@ -50,7 +50,7 @@ worksheet.getRange("A1").set({
 
 ## <a name="load-necessary-properties-only"></a>仅加载必要属性
 
-在 Excel JavaScript API 中，需要显式加载代理对象的属性。 虽然可以使用空的 ```load()``` 调用一次性加载所有属性，但这种方法可能会产生大量的性能开销。 我们转为建议只加载必要的属性，特别是对于那些具有大量属性的对象。
+在 Excel JavaScript API 中，需要显式加载代理对象的属性。 虽然可以使用空的 `load()` 调用一次性加载所有属性，但这种方法可能会产生大量的性能开销。 我们转为建议只加载必要的属性，特别是对于那些具有大量属性的对象。
 
 例如，如果您只想读取 range 对象的`address`属性，请在调用`load()`方法时仅指定该属性：
 
@@ -125,6 +125,8 @@ Excel.run(async function(ctx) {
     console.log(rangeToGet.values);
 })
 ```
+
+请注意，只有公式计算才会被挂起。 仍将重新生成任何已更改的引用。 例如，重命名工作表仍会将公式中的任何引用更新到该工作表。
 
 ### <a name="suspend-screen-updating"></a>暂停屏幕更新
 

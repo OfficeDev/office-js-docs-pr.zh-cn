@@ -1,14 +1,14 @@
 ---
 title: 加载 DOM 和运行时环境
 description: 加载 DOM 和 Office 外接程序运行时环境
-ms.date: 07/01/2019
+ms.date: 04/22/2020
 localization_priority: Normal
-ms.openlocfilehash: 2ea5f1fdc42fe1ffde30f8145fd0c24599c7e702
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: 7248f5b09a54552c3f16a9bc97bd4eae9795c8cd
+ms.sourcegitcommit: 9da68c00ecc00a2f307757e0f5a903a8e31b7769
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42718914"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "43785715"
 ---
 # <a name="loading-the-dom-and-runtime-environment"></a>加载 DOM 和运行时环境
 
@@ -62,7 +62,7 @@ ms.locfileid: "42718914"
 
 ## <a name="checking-the-load-status"></a>检查加载状态
 
-检查 DOM 和运行时环境是否已完成加载的一种方法是使用 jQuery [.ready()](https://api.jquery.com/ready/) 函数：`$(document).ready()`。 例如，以下`onReady`事件处理程序确保在初始化外接程序的特定代码运行之前先加载 DOM。 随后， `onReady`处理程序将继续使用[邮箱. Item](/javascript/api/outlook/office.mailbox)属性获取 Outlook 中当前选定的项，并调用外接程序的主函数。 `initDialer`
+检查 DOM 和运行时环境是否已完成加载的一种方法是使用 jQuery [.ready()](https://api.jquery.com/ready/) 函数：`$(document).ready()`。 例如，以下`onReady`事件处理程序确保在初始化外接程序的特定代码运行之前先加载 DOM。 随后， `onReady`处理程序将继续使用[邮箱. Item](/javascript/api/outlook/office.mailbox#item)属性获取 Outlook 中当前选定的项，并调用外接程序的主函数。 `initDialer`
 
 ```js
 Office.onReady()

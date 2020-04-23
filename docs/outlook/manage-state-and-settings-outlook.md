@@ -1,14 +1,14 @@
 ---
 title: 管理 Outlook 外接程序的状态和设置
 description: 了解如何保留 Outlook 外接程序的外接程序状态和设置。
-ms.date: 02/27/2020
+ms.date: 04/22/2020
 localization_priority: Normal
-ms.openlocfilehash: 7d981107da68c329d209834059bfac494d6ccae4
-ms.sourcegitcommit: 4079903c3cc45b7d8c041509a44e9fc38da399b1
+ms.openlocfilehash: 3cb4f7d6e31fd4d37e01939f743682f60f24f959
+ms.sourcegitcommit: 9da68c00ecc00a2f307757e0f5a903a8e31b7769
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/11/2020
-ms.locfileid: "42596646"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "43785779"
 ---
 # <a name="manage-state-and-settings-for-an-outlook-add-in"></a>管理 Outlook 外接程序的状态和设置
 
@@ -65,7 +65,7 @@ function saveMyAppSettingsCallback(asyncResult) {
 }
 ```
 
-**saveAsync** 方法将异步保存漫游设置，并采用可选回调函数。 此代码示例会将名为 `saveMyAppSettingsCallback` 的回调函数传递给 **saveAsync** 方法。 当异步调用返回时，`saveMyAppSettingsCallback` 函数的 _asyncResult_ 参数提供对 [AsyncResult](/javascript/api/outlook) 对象的访问权限，你可以使用该对象通过 **AsyncResult.status** 属性确定操作是否成功。
+**saveAsync** 方法将异步保存漫游设置，并采用可选回调函数。 此代码示例会将名为 `saveMyAppSettingsCallback` 的回调函数传递给 **saveAsync** 方法。 当异步调用返回时，`saveMyAppSettingsCallback` 函数的 _asyncResult_ 参数提供对 [AsyncResult](/javascript/api/office/office.asyncresult) 对象的访问权限，你可以使用该对象通过 **AsyncResult.status** 属性确定操作是否成功。
 
 ### <a name="removing-a-roaming-setting"></a>删除漫游设置
 

@@ -1,4 +1,4 @@
-Outlook 外接程序主要使用通过[邮箱](/javascript/api/outlook/Office.mailbox)对象公开的 api。 要访问专用于 Outlook 外接程序的对象和成员（例如 [Item](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md) 对象），可以使用 [Context](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md) 对象的 **mailbox** 属性访问 **Mailbox** 对象，如下面的代码行所示。
+Outlook 外接程序主要使用通过[邮箱](/javascript/api/outlook/office.mailbox)对象公开的 api。 要访问专用于 Outlook 外接程序的对象和成员（例如 [Item](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md) 对象），可以使用 [Context](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md) 对象的 **mailbox** 属性访问 **Mailbox** 对象，如下面的代码行所示。
 
 ```js
 // Access the Item object.
