@@ -1,14 +1,14 @@
 ---
 title: 使用单一登录令牌对用户进行身份验证
 description: 了解如何使用 Outlook 外接程序提供的单一登录令牌为服务实现 SSO。
-ms.date: 11/19/2019
+ms.date: 04/28/2020
 localization_priority: Normal
-ms.openlocfilehash: 9ee3ece5929df602a35ddd9883c08e25164d8a22
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: 588979159446b2ceb0b1bce834d72e6853cef5ee
+ms.sourcegitcommit: 0fdb78cefa669b727b817614a4147a46d249a0ed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42721028"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "43930300"
 ---
 # <a name="authenticate-a-user-with-a-single-sign-on-token-in-an-outlook-add-in-preview"></a>在 Outlook 加载项中使用单一登录令牌验证用户（预览版）
 
@@ -22,7 +22,7 @@ ms.locfileid: "42721028"
 有关 Office 外接程序中的 SSO 的概述，请参阅[为 Office 外接程序启用单一登录](../develop/sso-in-office-add-ins.md)和[在 Office 外接程序中授予对 Microsoft Graph 的访问权限](../develop/authorize-to-microsoft-graph.md)。
 
 > [!NOTE]
-> 若要使用 SSO，必须从外接程序的启动 HTML 页面中的 https://appsforoffice.microsoft.com/lib/beta/hosted/office.js 加载 Office JavaScript 库的 Beta 版。
+> 若要使用 SSO，必须从外接程序的启动 HTML 页面中的 https://appsforoffice.microsoft.com/lib/beta/hosted/office.js 加载 Office JavaScript 库的 Beta 版。 但是，**不**应在生产外接程序中使用 beta api。
 
 ## <a name="enable-modern-authentication-in-your-office-365-tenancy"></a>在 Office 365 租赁中启用新式验证
 

@@ -1,14 +1,14 @@
 ---
 title: 常见问题和意外平台行为的编码指南
 description: 开发人员经常遇到的 Office JavaScript API 平台问题的列表。
-ms.date: 02/27/2020
+ms.date: 04/22/2020
 localization_priority: Normal
-ms.openlocfilehash: da6986149172238963a06b3296d9fdd7c2411d9d
-ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
+ms.openlocfilehash: dea879899dce2e957d34f2eb8e7498d4fdb868c0
+ms.sourcegitcommit: 0fdb78cefa669b727b817614a4147a46d249a0ed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "42324608"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "43930314"
 ---
 # <a name="coding-guidance-for-common-issues-and-unexpected-platform-behaviors"></a>常见问题和意外平台行为的编码指南
 
@@ -108,6 +108,10 @@ Excel.run(async (context) => {
     return context.sync();
 }
 ```
+
+## <a name="supporting-internet-explorer"></a>支持 Internet Explorer
+
+[!INCLUDE [How to support IE](../includes/es5-support.md)]
 
 ## <a name="see-also"></a>另请参阅
 

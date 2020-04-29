@@ -1,14 +1,14 @@
 ---
 title: 获取和设置 internet 标头
 description: 如何：在 Outlook 外接程序中获取和设置邮件的 internet 邮件头。
-ms.date: 04/10/2020
+ms.date: 04/28/2020
 localization_priority: Normal
-ms.openlocfilehash: 488a4414580296da59eef3eb703e1c8da7e7d7c2
-ms.sourcegitcommit: 231e23d72e04e0536480d6b16df95113f1eff738
+ms.openlocfilehash: 1b6bdbbe77998ce92ea1b1b43874a32a30aa160a
+ms.sourcegitcommit: 0fdb78cefa669b727b817614a4147a46d249a0ed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "43238212"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "43930286"
 ---
 # <a name="get-and-set-internet-headers-on-a-message-in-an-outlook-add-in"></a>在 Outlook 外接程序中获取和设置邮件的 internet 邮件头
 
@@ -28,13 +28,13 @@ Outlook 外接程序开发中的一个常见要求是，将与外接程序关联
 
 ## <a name="purpose-of-the-internet-headers-api"></a>Internet 标头 API 的用途
 
-在要求集1.8 中引入，internet 标头 Api 使开发人员能够：
+在[要求集 1.8](../reference/objectmodel/requirement-set-1.8/outlook-requirement-set-1.8.md)中引入，internet 标头 api 使开发人员能够：
 
 - 戳在所有客户端上保留 Exchange 后保留的电子邮件的信息。
 - 阅读有关在邮件读取应用场景中的所有客户端上的电子邮件保留后保留的电子邮件的信息。
 - 访问电子邮件的整个 MIME 标头。
 
-![Internet 标头的图示。 Text： User 1 发送电子邮件。 当用户撰写电子邮件时，加载项管理自定义 internet 邮件头。 用户2接收电子邮件。 加载项从收到的电子邮件中获取 internet 标头，然后分析并使用自定义标头。 ](../images/outlook-internet-headers.png)
+![Internet 标头的图示。 Text： User 1 发送电子邮件。 当用户撰写电子邮件时，加载项管理自定义 internet 邮件头。 用户2接收电子邮件。 加载项从收到的电子邮件中获取 internet 标头，然后分析并使用自定义标头。](../images/outlook-internet-headers.png)
 
 ## <a name="set-internet-headers-while-composing-a-message"></a>在撰写邮件时设置 internet 邮件头
 
@@ -132,7 +132,16 @@ Sender's preferred vegetable: broccoli
 ```
 
 > [!IMPORTANT]
-> 此示例适用于简单的情况。 若要获取更复杂的信息检索（如[RFC 2822](https://tools.ietf.org/html/rfc2822)中所述的多实例标头或折叠的值），请尝试使用相应的 MIME 分析库。
+> 此示例适用于简单的情况。 若要获取更复杂的信息检索（例如，多实例标头或折叠的值（如[RFC 2822](https://tools.ietf.org/html/rfc2822)中所述），请尝试使用相应的 MIME 分析库。
+
+## <a name="recommended-practices"></a>建议的做法
+
+目前，internet 邮件头是用户邮箱的有限资源。 当配额耗尽时，您不能在该邮箱上创建更多的 internet 标头，这可能导致依赖于此的客户端的意外行为能够正常运行。
+
+在外接程序中创建 internet 邮件头时，请应用以下准则。
+
+- 创建所需的最小标头数。
+- 名称标头，以便以后可以重复使用和更新其值。 因此，应避免以变量方式命名标头（例如，基于用户输入、时间戳等）。
 
 ## <a name="see-also"></a>另请参阅
 

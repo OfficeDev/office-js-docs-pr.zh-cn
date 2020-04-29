@@ -2,14 +2,14 @@
 title: 为联机会议提供商创建 Outlook mobile 外接程序（预览）
 description: 讨论如何为联机会议服务提供商设置 Outlook 移动外接程序。
 ms.topic: article
-ms.date: 04/21/2020
+ms.date: 04/23/2020
 localization_priority: Normal
-ms.openlocfilehash: 5fd0b28a661f6d2e8f3084427920c1a31053ae5b
-ms.sourcegitcommit: 3355c6bd64ecb45cea4c0d319053397f11bc9834
+ms.openlocfilehash: 8a54ddf96ca2b5e697198b4bc69b2ec5abee10d1
+ms.sourcegitcommit: 0fdb78cefa669b727b817614a4147a46d249a0ed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "43744857"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "43930321"
 ---
 # <a name="create-an-outlook-mobile-add-in-for-an-online-meeting-provider-preview"></a>为联机会议提供商创建 Outlook mobile 外接程序（预览）
 
@@ -48,7 +48,7 @@ ms.locfileid: "43744857"
                 <bt:Image resid="UiLessIcon" size="25" scale="3" />
                 <bt:Image resid="UiLessIcon" size="32" scale="1" />
                 <bt:Image resid="UiLessIcon" size="32" scale="2" />
-                <bt:Image resid="UiLessIcon" size="32" scale="2" />
+                <bt:Image resid="UiLessIcon" size="32" scale="3" />
                 <bt:Image resid="UiLessIcon" size="48" scale="1" />
                 <bt:Image resid="UiLessIcon" size="48" scale="2" />
                 <bt:Image resid="UiLessIcon" size="48" scale="3" />

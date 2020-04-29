@@ -1,14 +1,14 @@
 ---
 title: Office 加载项开发最佳做法
 description: 在开发以创建 Office 外接程序时应用最佳实践。
-ms.date: 04/09/2020
+ms.date: 04/22/2020
 localization_priority: Normal
-ms.openlocfilehash: aa544abaaa9f730bb751d6640e9157d7292c2608
-ms.sourcegitcommit: 76552b3e5725d9112c772595971b922c295e6b4c
+ms.openlocfilehash: 422e0ae57480481590a15f695e5942f712961cc1
+ms.sourcegitcommit: 0fdb78cefa669b727b817614a4147a46d249a0ed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/10/2020
-ms.locfileid: "43225678"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "43930274"
 ---
 # <a name="best-practices-for-developing-office-add-ins"></a>Office 加载项开发最佳做法
 
@@ -134,6 +134,10 @@ ms.locfileid: "43225678"
 - 在您的标题和说明中传达外接程序的价值主张。不要依赖于您的品牌。
 
 - 创建有助于用户查找和使用加载项的网站。
+
+## <a name="use-javascript-that-supports-internet-explorer"></a>使用支持 Internet Explorer 的 JavaScript
+
+[!INCLUDE [How to support IE](../includes/es5-support.md)]
 
 ## <a name="see-also"></a>另请参阅
 
