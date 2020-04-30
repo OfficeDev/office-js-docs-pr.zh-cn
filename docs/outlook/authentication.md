@@ -1,34 +1,36 @@
 ---
 title: Outlook 加载项中的身份验证选项
 description: Outlook 加载项 根据特定场景提供了多种不同的身份验证方法。
-ms.date: 11/05/2019
+ms.date: 04/28/2020
 localization_priority: Priority
-ms.openlocfilehash: c7fc3f72dd04b2a64f6f5ce34732885a1a917001
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: dacd4677161def3f1580d1cbc953f73a7158ac9d
+ms.sourcegitcommit: 0fdb78cefa669b727b817614a4147a46d249a0ed
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42720839"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "43930293"
 ---
 # <a name="authentication-options-in-outlook-add-ins"></a>Outlook 加载项中的身份验证选项
 
 Outlook 加载项可以访问 Internet 上任意位置的信息，无论是托管加载项的服务器、内部网络，还是云中的其他位置。 如果相应信息受保护，加载项需要能够验证用户身份。 Outlook 加载项 根据特定场景提供了多种不同的身份验证方法。
 
-## <a name="single-sign-on-access-token"></a>单一登录访问令牌
+## <a name="single-sign-on-access-token-preview"></a>单一登录访问令牌（预览）
 
 单一登录访问令牌为你的加载项提供了进行身份验证和获取访问令牌以调用 [Microsoft Graph API](/graph/overview) 的无缝方法。 由于不需要用户输入其凭据，此功能可以减少摩擦。
 
 > [!NOTE]
-> 目前，Word、Excel、Outlook 和 PowerPoint 在预览版中支持单一登录 API。 若要详细了解目前支持单一登录 API 的平台，请参阅 [IdentityAPI 要求集](../reference/requirement-sets/identity-api-requirement-sets.md)。
+> 目前，在 Word、Excel、Outlook 和 PowerPoint 的预览中支持单一登录 API，并且**不**用于生产加载项。有关当前何处支持单一登录 API 的详细信息，请参阅[IdentityAPI 要求集](../reference/requirement-sets/identity-api-requirement-sets.md)。
+>
 > 若要使用 SSO，必须从加载项的启动 HTML 页面中的 https://appsforoffice.microsoft.com/lib/beta/hosted/office.js 加载 Office JavaScript 库的 Beta 版。
+>
 > 如果使用的是 Outlook 加载项，请务必为 Office 365 租赁启用新式验证。 若要了解如何这样做，请参阅 [Exchange Online：如何为租户启用新式验证](https://social.technet.microsoft.com/wiki/contents/articles/32711.exchange-online-how-to-enable-your-tenant-for-modern-authentication.aspx)。
 
 如果加载项符合以下情况，请考虑使用 SSO 访问令牌：
 
 - 主要由 Office 365 用户使用
 - 需要访问以下服务：
-    - 作为 Microsoft Graph 的一部分公开的 Microsoft 服务
-    - 你控制的非 Microsoft 服务
+  - 作为 Microsoft Graph 的一部分公开的 Microsoft 服务
+  - 你控制的非 Microsoft 服务
 
 SSO 身份验证方法使用 [Azure Active Directory 提供的 OAuth2 代表流](/azure/active-directory/develop/active-directory-v2-protocols-oauth-on-behalf-of)。 它要求加载项在[应用程序注册门户](https://apps.dev.microsoft.com/)中进行注册并在其清单中指定任何所需的 Microsoft Graph 作用域。
 
