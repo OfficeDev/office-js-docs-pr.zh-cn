@@ -117,8 +117,8 @@ yo office
 
 ## <a name="next-steps"></a>后续步骤
 
-- 有关在共享运行时中使用 Excel JavaScript APIs 和自定义 Excel 函数的详细信息，请参阅文章[从自定义函数中调用 Excel API](call-excel-apis-from-custom-function.md)。
-- 探索模式和做法示例“[管理功能区和任务窗格用户节目，并在文档打开时运行代码](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Samples/excel-shared-runtime-scenario)，以查看操作中共享 JavaScript 运行时的更大示例。
+- 有关在共享运行时中使用 Excel JavaScript API 和自定义 Excel 函数的详细信息，请参阅文章[从自定义函数中调用 Excel API](call-excel-apis-from-custom-function.md)。
+- 探索模式和实践示例[管理功能区和任务窗格 UI，并在文档打开时运行代码](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Samples/excel-shared-runtime-scenario)，以查看活动中的共享 JavaScript 运行时的更大示例。
 
 ## <a name="see-also"></a>另请参阅
 
