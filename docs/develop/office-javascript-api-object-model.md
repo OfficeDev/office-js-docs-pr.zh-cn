@@ -1,14 +1,14 @@
 ---
 title: 常见 JavaScript API 对象模型
 description: 了解 Office JavaScript 通用 API 对象模型
-ms.date: 04/22/2020
+ms.date: 04/30/2020
 localization_priority: Normal
-ms.openlocfilehash: 4f1f3e0de81e2422c43a9777b108783bb7810c3b
-ms.sourcegitcommit: 9da68c00ecc00a2f307757e0f5a903a8e31b7769
+ms.openlocfilehash: 4bfe027b09fc806021212d00c895527bd661f3a6
+ms.sourcegitcommit: 99b41e8b90f2df6dafcc12b3883e83751de9facd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "43785702"
+ms.lasthandoff: 04/30/2020
+ms.locfileid: "43952253"
 ---
 # <a name="common-javascript-api-object-model"></a>常见 JavaScript API 对象模型
 
@@ -22,9 +22,9 @@ Office JavaScript 加载项可提供对主机的基础功能的访问权限。 �
 
 如果加载项[已初始化](initialize-add-in.md)，则它具有许多可在运行时环境中交互的不同对象。 加载项的运行时上下文通过 [Context](/javascript/api/office/office.context) 对象反应在 API 中。 **Context** 是主要对象，它提供对大部分 API 最重要对象的访问权限，例如 [Document](/javascript/api/office/office.document) 和 [Mailbox](/javascript/api/outlook/office.mailbox) 对象，二者反过来又提供对文档和邮箱内容的访问权限。
 
-例如，在任务窗格或内容外接程序中，可以使用 **Context** 对象的 [document](/javascript/api/office/office.context#document) 属性访问 **Document** 对象的属性和方法，以便与 Word 文档、Excel 工作表或 Project 计划的内容交互。类似地，在 Outlook 外接程序中，可以使用 **Context** 对象的 [mailbox](/javascript/api/outlook/office.mailbox) 属性访问 **Mailbox** 对象的属性和方法，以便与邮件、会议请求或约会内容交互。
+例如，在任务窗格或内容外接程序中，可以使用 **Context** 对象的 [document](/javascript/api/office/office.context#document) 属性访问 **Document** 对象的属性和方法，以便与 Word 文档、Excel 工作表或 Project 计划的内容交互。类似地，在 Outlook 外接程序中，可以使用 **Context** 对象的 [mailbox](/javascript/api/office/office.context#mailbox) 属性访问 **Mailbox** 对象的属性和方法，以便与邮件、会议请求或约会内容交互。
 
-**Context** 对象还提供对 [contentLanguage](/javascript/api/office/office.context#contentlanguage) 和 [displayLanguage](/javascript/api/office/office.context#displaylanguage) 属性的访问权限，这些属性允许你确定文档或项目中或由宿主应用程序使用的区域设置（语言）。 [roamingSettings](/javascript/api/office/office.context#roamingsettings) 属性使你能够访问 [RoamingSettings](/javascript/api/office/office.context#roamingsettings) 对象的成员，该对象用于存储各用户邮箱的加载项特定的设置。 最后，**Context** 对象提供一个允许你的加载项启动弹出对话框的 [ui](/javascript/api/office/office.ui) 属性。
+**Context** 对象还提供对 [contentLanguage](/javascript/api/office/office.context#contentlanguage) 和 [displayLanguage](/javascript/api/office/office.context#displaylanguage) 属性的访问权限，这些属性允许你确定文档或项目中或由宿主应用程序使用的区域设置（语言）。 [roamingSettings](/javascript/api/office/office.context#roamingsettings) 属性使你能够访问 [RoamingSettings](/javascript/api/office/office.context#roamingsettings) 对象的成员，该对象用于存储各用户邮箱的加载项特定的设置。 最后，**Context** 对象提供一个允许你的加载项启动弹出对话框的 [ui](/javascript/api/office/office.context#ui) 属性。
 
 
 ## <a name="document-object"></a>Document 对象
@@ -154,7 +154,7 @@ API 的 [CustomXmlParts](/javascript/api/office/office.customxmlparts) 和 [Cust
 
 **适用于：** Outlook 外接程序
 
-Outlook 外接程序主要使用通过 [Mailbox](/javascript/api/outlook/office.mailbox) 对象公开的 API 的子集。要访问专用于 Outlook 外接程序的对象和成员（例如 [Item](/javascript/api/outlook/office.item) 对象），可以使用 [Context](/javascript/api/outlook/office.context#mailbox) 对象的 **mailbox** 属性访问 **Mailbox** 对象，如下面的代码行所示。
+Outlook 外接程序主要使用通过 [Mailbox](/javascript/api/outlook/office.mailbox) 对象公开的 API 的子集。要访问专用于 Outlook 外接程序的对象和成员（例如 [Item](/javascript/api/outlook/office.item) 对象），可以使用 [Context](/javascript/api/office/office.context#mailbox) 对象的 **mailbox** 属性访问 **Mailbox** 对象，如下面的代码行所示。
 
 ```js
 // Access the Item object.
