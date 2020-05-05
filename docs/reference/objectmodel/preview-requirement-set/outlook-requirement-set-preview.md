@@ -1,14 +1,14 @@
 ---
 title: Outlook 外接程序 API 预览要求集
 description: 当前在 Outlook 外接程序的预览中的功能和 Api。
-ms.date: 04/10/2020
+ms.date: 05/04/2020
 localization_priority: Normal
-ms.openlocfilehash: 94104a9fcb239d991d585abcebdd07bcab6e315f
-ms.sourcegitcommit: 3355c6bd64ecb45cea4c0d319053397f11bc9834
+ms.openlocfilehash: 433abf5ea15cfe9ee7cefa579b1ad965fdeb93cf
+ms.sourcegitcommit: 800dacf0399465318489c9d949e259b5cf0f81ca
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "43744864"
+ms.lasthandoff: 05/05/2020
+ms.locfileid: "44022181"
 ---
 # <a name="outlook-add-in-api-preview-requirement-set"></a>Outlook 外接程序 API 预览要求集
 
@@ -69,13 +69,13 @@ Office JavaScript API 的 Outlook 外接程序 API 子集包括可以在 Outlook
 
 向`Body`对象添加了一个新函数，该函数在撰写模式下将数据追加到项正文的末尾。
 
-**提供**时间： Windows 上的 outlook （连接到 Office 365 订阅）、outlook 网页版（新式）
+**适用于**：Windows 版 Outlook（已连接到 Office 365 订阅）
 
 #### <a name="extendedpermissions"></a>[ExtendedPermissions](../../manifest/extendedpermissions.md)
 
 向清单添加了一个新元素，其中`AppendOnSend`扩展权限必须包含在扩展权限的集合中。
 
-**提供**时间： Windows 上的 outlook （连接到 Office 365 订阅）、outlook 网页版（新式）
+**适用于**：Windows 版 Outlook（已连接到 Office 365 订阅）
 
 <br>
 

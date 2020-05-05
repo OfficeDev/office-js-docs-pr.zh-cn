@@ -1,14 +1,14 @@
 ---
 title: 清单文件中的 ExtensionPoint 元件
 description: 定义 Office UI 中加载项公开功能的位置。
-ms.date: 04/09/2020
+ms.date: 05/04/2020
 localization_priority: Normal
-ms.openlocfilehash: 40b5ab8c2dcae01238854f5a3bfcc599f6b01a9b
-ms.sourcegitcommit: 118e8bcbcfb73c93e2053bda67fe8dd20799b170
+ms.openlocfilehash: ede99ad73beb1e4a46c9b08188ca79efb556acb0
+ms.sourcegitcommit: 800dacf0399465318489c9d949e259b5cf0f81ca
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "43241033"
+ms.lasthandoff: 05/05/2020
+ms.locfileid: "44022174"
 ---
 # <a name="extensionpoint-element"></a>ExtensionPoint 元素
 
@@ -289,7 +289,7 @@ ms.locfileid: "43241033"
       <bt:Image resid="UiLessIcon" size="25" scale="3" />
       <bt:Image resid="UiLessIcon" size="32" scale="1" />
       <bt:Image resid="UiLessIcon" size="32" scale="2" />
-      <bt:Image resid="UiLessIcon" size="32" scale="2" />
+      <bt:Image resid="UiLessIcon" size="32" scale="3" />
       <bt:Image resid="UiLessIcon" size="48" scale="1" />
       <bt:Image resid="UiLessIcon" size="48" scale="2" />
       <bt:Image resid="UiLessIcon" size="48" scale="3" />
