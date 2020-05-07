@@ -1,14 +1,14 @@
 ---
 title: 部署和发布 Office 加载项
 description: 部署 Office 加载项以进行测试或分发给用户的方法和选项。
-ms.date: 03/18/2020
+ms.date: 05/06/2020
 localization_priority: Priority
-ms.openlocfilehash: a21535a637ceb54d0e84a36b2a0610873d408e1c
-ms.sourcegitcommit: 6c381634c77d316f34747131860db0a0bced2529
+ms.openlocfilehash: b4ee2dab2fec0237ad06776861678c4c23da6ca8
+ms.sourcegitcommit: 1e3d7051ba7c8c0ccfd6607099d90469fc8141e2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/21/2020
-ms.locfileid: "42890982"
+ms.lasthandoff: 05/06/2020
+ms.locfileid: "44066086"
 ---
 # <a name="deploy-and-publish-office-add-ins"></a>部署和发布 Office 加载项
 
@@ -17,7 +17,7 @@ ms.locfileid: "42890982"
 |**方法**|**Use...**|
 |:---------|:------------|
 |[旁加载](../testing/test-debug-office-add-ins.md#sideload-an-office-add-in-for-testing)|在开发过程中测试在 Windows、iPad、Mac 或浏览器中运行的加载项。|
-|[集中部署](centralized-deployment.md)|在云或混合部署中，使用 Office 365 管理中心将加载项分发给组织中的用户。|
+|[集中部署](centralized-deployment.md)|在云部署中，使用 Office 365 管理中心将加载项分发给组织中的用户。|
 |[SharePoint 目录](publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md)|在本地环境中，用于向组织用户分发加载项。|
 |[AppSource](/office/dev/store/submit-to-appsource-via-partner-center)|用于向用户公开分发加载项。|
 |[Exchange 服务器](#outlook-add-in-deployment)|在本地或在线环境中，用于向用户分发 Outlook 加载项。|
