@@ -1,14 +1,14 @@
 ---
 title: 使用 Excel JavaScript API 处理工作簿
 description: 说明如何使用 Excel JavaScript API 对工作簿或应用程序级别的功能执行常见任务的代码示例。
-ms.date: 03/19/2020
+ms.date: 05/06/2020
 localization_priority: Normal
-ms.openlocfilehash: aa30f888bf6de1926d2a36522febf0001e1e6130
-ms.sourcegitcommit: 6c381634c77d316f34747131860db0a0bced2529
+ms.openlocfilehash: 4fec6a217a2764eaf664463943ca384b3a2d847b
+ms.sourcegitcommit: 735bf94ac3c838f580a992e7ef074dbc8be2b0ea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/21/2020
-ms.locfileid: "42891024"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "44170763"
 ---
 # <a name="work-with-workbooks-using-the-excel-javascript-api"></a>使用 Excel JavaScript API 处理工作簿
 
@@ -186,7 +186,7 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
-## <a name="access-application-culture-settings-preview"></a>Access 应用程序的区域性设置（预览）
+## <a name="access-application-culture-settings"></a>Access 应用程序的区域性设置
 
 工作簿具有可影响特定数据显示方式的语言和区域性设置。 当您的外接程序的用户在不同语言和区域性中共享工作簿时，这些设置可以帮助本地化数据。 您的外接程序可以使用字符串分析根据系统区域性设置本地化数字、日期和时间的格式，这样每个用户都可以看到自己的区域性格式的数据。
 
@@ -297,10 +297,7 @@ Excel.run(async (context) => {
 context.application.suspendApiCalculationUntilNextSync();
 ```
 
-## <a name="save-the-workbook-preview"></a>保存工作簿（预览版）
-
-> [!NOTE]
-> `Workbook.save` 方法当前仅适用于公共预览版。 [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
+## <a name="save-the-workbook"></a>保存工作簿
 
 `Workbook.save` 会将工作簿保存到永久存储区。 `save` 方法采用单个可选 `saveBehavior` 参数，该参数可为以下值之一：
 
@@ -314,10 +311,7 @@ context.application.suspendApiCalculationUntilNextSync();
 context.workbook.save(Excel.SaveBehavior.prompt);
 ```
 
-## <a name="close-the-workbook-preview"></a>关闭工作簿（预览版）
-
-> [!NOTE]
-> `Workbook.close` 方法当前仅适用于公共预览版。 [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
+## <a name="close-the-workbook"></a>关闭工作簿
 
 `Workbook.close` 会关闭工作簿，一并关闭与该工作簿关联的加载项（Excel 应用程序仍保持打开状态）。 `close` 方法采用单个可选 `closeBehavior` 参数，该参数可为以下值之一：
 

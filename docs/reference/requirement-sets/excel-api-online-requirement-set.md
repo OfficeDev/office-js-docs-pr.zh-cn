@@ -1,15 +1,15 @@
 ---
 title: Excel JavaScript API 仅联机要求集
 description: 有关 ExcelApiOnline 要求集的详细信息
-ms.date: 12/05/2019
+ms.date: 05/06/2020
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: ad2a3cd627552baeb449397fa917fe10e86ebbaf
-ms.sourcegitcommit: 8c5c5a1bd3fe8b90f6253d9850e9352ed0b283ee
+ms.openlocfilehash: f177e0107de7172c350f94c3a022cb3e0db5c6f5
+ms.sourcegitcommit: 735bf94ac3c838f580a992e7ef074dbc8be2b0ea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/19/2019
-ms.locfileid: "40814150"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "44170784"
 ---
 # <a name="excel-javascript-api-online-only-requirement-set"></a>Excel JavaScript API 仅联机要求集
 
@@ -44,19 +44,13 @@ if (Office.context.requirements.isSetSupported("ExcelApiOnline", "1.1")) {
 
 | Class | 域 | 说明 |
 |:---|:---|:---|
-|[Comment](/javascript/api/excel/excel.comment)|[提及](/javascript/api/excel/excel.comment#mentions)|获取注释中提到的实体（如人员）。|
-||[richContent](/javascript/api/excel/excel.comment#richcontent)|获取丰富的注释内容（例如，注释中的提及）。 此字符串不应显示给最终用户。 您的外接程序应仅使用此信息分析丰富的注释内容。|
-||[updateMentions （contentWithMentions： CommentRichContent）](/javascript/api/excel/excel.comment#updatementions-contentwithmentions-)|使用特殊格式的字符串和提及列表更新注释内容。|
-|[CommentMention](/javascript/api/excel/excel.commentmention)|[email](/javascript/api/excel/excel.commentmention#email)|获取或设置注释中提到的实体的电子邮件地址。|
-||[id](/javascript/api/excel/excel.commentmention#id)|获取或设置实体的 id。 这与中`CommentRichContent.richContent`的一个 id 相匹配。|
-||[name](/javascript/api/excel/excel.commentmention#name)|获取或设置注释中提到的实体的名称。|
-|[CommentReply](/javascript/api/excel/excel.commentreply)|[提及](/javascript/api/excel/excel.commentreply#mentions)|获取注释中提到的实体（如人员）。|
-||[richContent](/javascript/api/excel/excel.commentreply#richcontent)|获取丰富的注释内容（例如，注释中的提及）。 此字符串不应显示给最终用户。 您的外接程序应仅使用此信息分析丰富的注释内容。|
-||[updateMentions （contentWithMentions： CommentRichContent）](/javascript/api/excel/excel.commentreply#updatementions-contentwithmentions-)|使用特殊格式的字符串和提及列表更新注释内容。|
-|[CommentRichContent](/javascript/api/excel/excel.commentrichcontent)|[提及](/javascript/api/excel/excel.commentrichcontent#mentions)|包含注释中提到的所有实体（例如，人员）的数组。|
-||[richContent](/javascript/api/excel/excel.commentrichcontent#richcontent)||
-|[Range](/javascript/api/excel/excel.range)|[moveTo （destinationRange： Range \|字符串）](/javascript/api/excel/excel.range#moveto-destinationrange-)|将单元格的值、格式和公式从当前区域移动到目标区域，替换这些单元格中的旧信息。|
-|[RangeFormat](/javascript/api/excel/excel.rangeformat)|[adjustIndent （金额：数字）](/javascript/api/excel/excel.rangeformat#adjustindent-amount-)|调整范围格式的缩进量。 缩进值的范围为0到250，以字符为单位。|
+|[ChartAxisTitle](/javascript/api/excel/excel.chartaxistitle)|[textOrientation](/javascript/api/excel/excel.chartaxistitle#textorientation)|指定文本面向图表轴标题的角度。 该值应为-90 到90的整数或垂直方向的文本的整数180。|
+|[PivotTableScopedCollection](/javascript/api/excel/excel.pivottablescopedcollection)|[getCount()](/javascript/api/excel/excel.pivottablescopedcollection#getcount--)|获取集合中的数据透视表的数目。|
+||[getFirst()](/javascript/api/excel/excel.pivottablescopedcollection#getfirst--)|获取集合中的第一个数据透视表。 集合中的数据透视表按从上到下、从左到右的顺序排序，因此左上角的表格是集合中的第一个数据透视表。|
+||[getItem(key: string)](/javascript/api/excel/excel.pivottablescopedcollection#getitem-key-)|按名称获取 PivotTable 对象。|
+||[getItemOrNullObject(name: string)](/javascript/api/excel/excel.pivottablescopedcollection#getitemornullobject-name-)|按 PivotTable 对象的名称获取此对象。 如果没有 PivotTable 对象，将返回 NULL 对象。|
+||[items](/javascript/api/excel/excel.pivottablescopedcollection#items)|获取此集合中已加载的子项。|
+|[区域](/javascript/api/excel/excel.range)|[getPivotTables （fullyContained？：布尔值）](/javascript/api/excel/excel.range#getpivottables-fullycontained-)|获取与区域重叠的数据透视表的限定集合。|
 
 ## <a name="see-also"></a>另请参阅
 

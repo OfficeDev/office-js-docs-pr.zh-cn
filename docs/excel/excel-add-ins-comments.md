@@ -3,12 +3,12 @@ title: 使用 Excel JavaScript API 处理注释
 description: 有关使用 Api 添加、删除和编辑注释和注释线程的信息。
 ms.date: 03/17/2020
 localization_priority: Normal
-ms.openlocfilehash: 275828915730d3438101315ee28bf76aa8b8bf3f
-ms.sourcegitcommit: 6c381634c77d316f34747131860db0a0bced2529
+ms.openlocfilehash: 971e0a830c0a34aea3e79b13fcd9fb869f971d2c
+ms.sourcegitcommit: 735bf94ac3c838f580a992e7ef074dbc8be2b0ea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/21/2020
-ms.locfileid: "42890568"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "44170819"
 ---
 # <a name="work-with-comments-using-the-excel-javascript-api"></a>使用 Excel JavaScript API 处理注释
 
@@ -25,7 +25,7 @@ ms.locfileid: "42890568"
 使用`CommentCollection.add`方法将注释添加到工作簿中。 此方法最长可使用三个参数：
 
 - `cellAddress`：添加了注释的单元格。 它可以是一个字符串或[Range](/javascript/api/excel/excel.range)对象。 区域必须是单个单元格。
-- `content`：注释的内容。 将字符串用于纯文本注释。 将[CommentRichContent](/javascript/api/excel/excel.commentrichcontent)对象用于包含[提及](#mentions-online-only)的注释。 
+- `content`：注释的内容。 将字符串用于纯文本注释。 将[CommentRichContent](/javascript/api/excel/excel.commentrichcontent)对象用于包含[提及](#mentions)的注释。
 - `contentType`：用于指定内容类型的[ContentType](/javascript/api/excel/excel.contenttype)枚举。 默认值为 `ContentType.plain`。
 
 下面的代码示例将向单元格 **A2** 添加批注。
@@ -111,7 +111,7 @@ Excel.run(function (context) {
 });
 ```
 
-## <a name="resolve-comment-threads-preview"></a>解析注释线索（[预览](../reference/requirement-sets/excel-preview-apis.md)） 
+## <a name="resolve-comment-threads"></a>解析注释线程
 
 注释线程具有可配置的布尔值， `resolved`以指示是否已解决。 值`true`表示注释线程已解析。 值`false`表示注释线程是新的，也可能是重新打开的。
 
@@ -169,13 +169,7 @@ Excel.run(function (context) {
 });
 ```
 
-## <a name="mentions-online-only"></a>提及（[仅联机](../reference/requirement-sets/excel-api-online-requirement-set.md)） 
-
-> [!NOTE]
-> 注释提到的 Api 当前仅适用于公共预览版。 [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
-
-> [!IMPORTANT]
-> 目前仅支持对 web 上的 Excel 进行注释提及。
+## <a name="mentions"></a>提及
 
 [提及](https://support.office.com/article/use-mention-in-comments-to-tag-someone-for-feedback-644bf689-31a0-4977-a4fb-afe01820c1fd)用于在注释中标记同事。 这将向他们发送你的评论内容通知。 你的外接程序可以代表你创建这些提及。
 
