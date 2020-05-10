@@ -1,14 +1,14 @@
 ---
 title: 验证 Outlook 加载项标识令牌
 description: Outlook 加载项可以向你发送 Exchange 用户标识令牌，但是在你信任此请求之前，必须验证该令牌以确保它来自预期的 Exchange 服务器。
-ms.date: 11/07/2019
+ms.date: 05/08/2020
 localization_priority: Normal
-ms.openlocfilehash: b412756a980d54a20a1c8deab43cd7634c0188cb
-ms.sourcegitcommit: a3ddfdb8a95477850148c4177e20e56a8673517c
+ms.openlocfilehash: b416353b0d9875a2024ca4706152472c7e5012b0
+ms.sourcegitcommit: 7e6faf3dc144400a7b7e5a42adecbbec0bd4602d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "42165986"
+ms.lasthandoff: 05/09/2020
+ms.locfileid: "44180208"
 ---
 # <a name="validate-an-exchange-identity-token"></a>验证 Exchange 标识令牌
 
@@ -106,7 +106,10 @@ Outlook 加载项可以向你发送 Exchange 用户标识令牌，但是在你�
 
 ## <a name="use-a-library-to-validate-the-token"></a>使用库验证令牌
 
-有许多库可以执行常规 JWT 解析和验证。 Microsoft 提供了两个可用于验证 Exchange 用户标识令牌的库。
+有许多库可以执行常规 JWT 解析和验证。 Microsoft 提供可`System.IdentityModel.Tokens.Jwt`用于验证 Exchange 用户标识令牌的库。
+
+> [!IMPORTANT]
+> 我们不再建议使用 Exchange Web 服务托管 API，因为 WebServices 现在仍然可用，但它依赖于不受支持的库（如 Microsoft Microsoft.identitymodel.dll）。
 
 ### <a name="systemidentitymodeltokensjwt"></a>System.IdentityModel.Tokens.Jwt
 
@@ -189,30 +192,6 @@ public class ExchangeAppContext
 ```
 
 有关使用此库验证 Exchange 令牌并拥有 `GetSigningKeys` 实现的示例，请参阅 [Outlook-Add-In-Token-Viewer](https://github.com/OfficeDev/Outlook-Add-In-Token-Viewer)。
-
-### <a name="microsoftexchangewebservices"></a>Microsoft.Exchange.WebServices
-
-[Exchange Web 服务托管 API](https://www.nuget.org/packages/Microsoft.Exchange.WebServices/) 也可以验证 Exchange 用户标识令牌。 由于它是 Exchange 专用，因此它会实现所有必要逻辑，以解析 `appctx` 声明并验证令牌版本。
-
-```cs
-using Microsoft.Exchange.WebServices.Auth.Validation;
-
-AppIdentityToken ValidateIdentityToken(string rawToken, string expectedAudience)
-{
-    try
-    {
-        AppIdentityToken appIdToken = AuthToken.Parse(rawToken) as AppIdentityToken;
-        appIdToken.Validate(new Uri(expectedAudience));
-
-        // No exception, validation succeeded
-        return appIdToken;
-    }
-    catch (TokenValidationException ex)
-    {
-        throw new Exception(string.Format("Token validation failed: {0}", ex.Message));
-    }
-}
-```
 
 ## <a name="see-also"></a>另请参阅
 

@@ -1,25 +1,25 @@
 ---
 title: Outlook 加载项的激活和 API 使用限制
 description: 请注意某些激活和 API 使用指南，并在这些限制范围内实施加载项。
-ms.date: 10/31/2019
+ms.date: 05/08/2020
 localization_priority: Normal
-ms.openlocfilehash: a86d2a350db61d843a67945348dfb8154951b53c
-ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
+ms.openlocfilehash: b4fbdcea72585ff77457dfb6cd3039040b012031
+ms.sourcegitcommit: 7e6faf3dc144400a7b7e5a42adecbbec0bd4602d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "42324945"
+ms.lasthandoff: 05/09/2020
+ms.locfileid: "44180215"
 ---
 # <a name="limits-for-activation-and-javascript-api-for-outlook-add-ins"></a>Outlook 加载项的激活和 JavaScript API 限制
 
-为了向 Outlook 外接程序的用户提供令人满意的体验，您必须了解特定的激活和 API 使用准则，并执行外接程序使其不超过这些限制。 存在这些准则是为了使单个加载项不需要在很长的时间内花费很长的时间来处理对 Office JavaScript API 的激活规则或调用，从而影响 Outlook 和其他用户的总体用户体验外接程序。这些限制适用于在外接部件清单中设计激活规则，并使用自定义属性、漫游设置、收件人、Exchange Web 服务（EWS）请求和响应以及异步调用。
+为了向 Outlook 外接程序的用户提供令人满意的体验，您必须了解特定的激活和 API 使用准则，并执行外接程序使其不超过这些限制。 存在这些准则，以使单个外接程序在处理对 Office JavaScript API 的激活规则或调用时不需要花费很长的时间，从而影响 Outlook 和其他外接程序的总体用户体验。这些限制适用于在外接部件清单中设计激活规则，并使用自定义属性、漫游设置、收件人、Exchange Web 服务（EWS）请求和响应以及异步调用。
 
 > [!NOTE]
 > 如果外接程序在 Outlook 富客户端中运行，还必须确认运行的外接程序是否在特定运行时资源使用状况限制内。
 
 ## <a name="limits-on-where-add-ins-activate"></a>外接程序激活位置的限制
 
-外接程序仅在用户主邮箱中激活。外接程序不会在共享邮箱、使用代理访问打开的其他用户邮箱的文件夹、存档邮箱或公用文件夹中激活。
+默认情况下，加载项设计为仅在用户的主邮箱中激活。 这意味着外接程序通常不会在共享邮箱、使用代理访问、存档邮箱或公用文件夹打开的来自其他用户的邮箱中的文件夹中激活。 但是，支持代理访问的外接程序[或共享文件夹](delegate-access.md)应激活。
 
 ## <a name="limits-for-activation-rules"></a>激活规则的限制
 
