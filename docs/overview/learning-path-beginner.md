@@ -4,16 +4,19 @@ description: 通过 Office 加载项的学习资源为初学者提供指导的�
 ms.date: 04/16/2020
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: 026f90ea62960cbbf5ab4420d40a4a9165139cae
-ms.sourcegitcommit: 803587b324fc8038721709d7db5664025cf03c6b
+ms.openlocfilehash: 61a8e455c5fdb676166f05d03d3d360593c53445
+ms.sourcegitcommit: 735bf94ac3c838f580a992e7ef074dbc8be2b0ea
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2020
-ms.locfileid: "43547617"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "44170777"
 ---
 # <a name="start-here-a-guide-for-beginners-making-office-add-ins"></a>从这里开始！ 面向初学者的 Office 加载项构建指南
 
 想要开始构建自己的跨平台 Office 扩展？ 以下步骤显示了需要先阅读的内容、要安装的工具以及要完成的推荐教程。
+
+> [!NOTE]
+> 如果你已熟知如何创建适用于 Office 的 VSTO 加载项，建议直接转到[在此处切换！创建 Office Web 加载项的 VSTO 加载项创建程序指南](learning-path-transition.md)（该文章是本文中信息的超集）。
 
 ## <a name="step-0-prerequisites"></a>步骤 0：先决条件
 

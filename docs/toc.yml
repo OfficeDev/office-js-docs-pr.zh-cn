@@ -8,6 +8,9 @@
     - name: 从这里开始！ 新手指南
       href: overview/learning-path-beginner.md
       displayName: develop
+    - name: 在此处转换！ 适用于 VSTO 加载项开发人员的指南
+      href: overview/learning-path-transition.md
+      displayName: develop
     - name: 构建 Office 加载项
       href: overview/office-add-ins-fundamentals.md
       displayName: develop
@@ -405,10 +408,6 @@
               href: reference/manifest/requirements.md
             - name: Rule
               href: reference/manifest/rule.md
-            - name: 运行时
-              href: reference/manifest/runtime.md
-            - name: 运行时
-              href: reference/manifest/runtimes.md
             - name: Set
               href: reference/manifest/set.md
             - name: Sets
@@ -473,8 +472,12 @@
                   href: reference/manifest/officetab.md
                 - name: Page
                   href: reference/manifest/page.md
-                - name: Resources
+                - name: 资源
                   href: reference/manifest/resources.md
+                - name: 运行时
+                  href: reference/manifest/runtime.md
+                - name: 运行时
+                  href: reference/manifest/runtimes.md
                 - name: Scopes
                   href: reference/manifest/scopes.md
                 - name: Script
@@ -532,6 +535,9 @@
               displayName: Excel
             - name: ExcelApi 仅联机要求集
               href: reference/requirement-sets/excel-api-online-requirement-set.md
+              displayName: Excel
+            - name: ExcelApi 1.11 要求集
+              href: reference/requirement-sets/excel-api-1-11-requirement-set.md
               displayName: Excel
             - name: ExcelApi 1.10 要求集
               href: reference/requirement-sets/excel-api-1-10-requirement-set.md

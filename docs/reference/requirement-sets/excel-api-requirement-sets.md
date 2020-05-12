@@ -1,15 +1,15 @@
 ---
 title: Excel JavaScript API 要求集
 description: 针对 Excel 内部版本的 Office 加载项要求集信息。
-ms.date: 04/16/2020
+ms.date: 05/06/2020
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: 6da9e34359521157e809764907c3a6c3a62ae76c
-ms.sourcegitcommit: 803587b324fc8038721709d7db5664025cf03c6b
+ms.openlocfilehash: ee3363d324a42c3074093b252c822be635977f1d
+ms.sourcegitcommit: 735bf94ac3c838f580a992e7ef074dbc8be2b0ea
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2020
-ms.locfileid: "43547225"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "44170791"
 ---
 # <a name="excel-javascript-api-requirement-sets"></a>Excel JavaScript API 要求集
 
@@ -28,16 +28,17 @@ Excel 加载项可在多个 Office 版本中运行，包括 Windows 版 Office 2
 |:-----|-----|:-----|:-----|:-----|:-----|
 | [预览](excel-preview-apis.md)  | 请使用最新的 Office 版本来试用预览 API（你可能需要加入 [Office 预览体验成员计划](https://insider.office.com)） |
 | [ExcelApiOnline](excel-api-online-requirement-set.md) | 不适用 | 不适用 | 不适用 | 最新（请参阅[要求集页面](./excel-api-online-requirement-set.md)） |
-| [ExcelApi 1.10](excel-api-1-10-requirement-set.md) | 版本 1907（内部版本 11929.20306）或更高版本 | 2.30 或更高版本 | 16.30 或更高版本 | 2019 年 10 月 |
-| [ExcelApi 1.9](excel-api-1-9-requirement-set.md)  | 版本 1903 (内部版本 11425.20204) 或更高版本 | 2.24 或更高版本 | 16.24 或更高版本 | 2019 年 5 月 |
-| [ExcelApi 1.8](excel-api-1-8-requirement-set.md)  | 版本 1808（内部版本 10730.20102）或更高版本 | 2.17 或更高版本 | 16.17 或更高版本 | 2018 年 9 月 |
-| [ExcelApi 1.7](excel-api-1-7-requirement-set.md)  | 版本 1801（内部版本 9001.2171）或更高版本   | 2.9 或更高版本  | 16.9 或更高版本  | 2018 年 4 月 |
-| [ExcelApi 1.6](excel-api-1-6-requirement-set.md)  | 版本 1704（生成号 8201.2001）或更高版本   | 2.2 或更高版本  | 15.36 或更高版本 | 2017 年 4 月 |
-| [ExcelApi 1.5](excel-api-1-5-requirement-set.md)  | 版本 1703（内部版本 8067.2070）或更高版本   | 2.2 或更高版本  | 15.36 或更高版本 | 2017 年 3 月 |
-| [ExcelApi 1.4](excel-api-1-4-requirement-set.md)  | 版本 1701（内部版本 7870.2024）或更高版本   | 2.2 或更高版本  | 15.36 或更高版本 | 2017 年 1 月 |
-| [ExcelApi 1.3](excel-api-1-3-requirement-set.md)  | 版本 1608（内部版本 7369.2055）或更高版本   | 1.27 或更高版本 | 15.27 或更高版本 | 2016 年 9 月 |
-| [ExcelApi 1.2](excel-api-1-2-requirement-set.md)  | 版本 1601（内部版本 6741.2088）或更高版本   | 1.21 或更高版本 | 15.22 或更高版本 | 2016 年 1 月 |
-| [ExcelApi 1.1](excel-api-1-1-requirement-set.md)  | 版本 1509（内部版本 4266.1001）或更高版本   | 1.19 或更高版本 | 15.20 或更高版本 | 2016 年 1 月 |
+| [ExcelApi 1.11](excel-api-1-11-requirement-set.md) | 版本 2002（内部版本 12527.20470）或更高版本 | 16.35 或更高版本 | 16.33 或更高版本 | 2020 年 5 月 |
+| [ExcelApi 1.10](excel-api-1-10-requirement-set.md) | 版本 1907（内部版本 11929.20306）或更高版本 | 16.0 或更高版本 | 16.30 或更高版本 | 2019 年 10 月 |
+| [ExcelApi 1.9](excel-api-1-9-requirement-set.md)  | 版本 1903 (内部版本 11425.20204) 或更高版本 | 16.0 或更高版本 | 16.24 或更高版本 | 2019 年 5 月 |
+| [ExcelApi 1.8](excel-api-1-8-requirement-set.md)  | 版本 1808（内部版本 10730.20102）或更高版本 | 16.0 或更高版本 | 16.17 或更高版本 | 2018 年 9 月 |
+| [ExcelApi 1.7](excel-api-1-7-requirement-set.md)  | 版本 1801（内部版本 9001.2171）或更高版本   | 16.0 或更高版本  | 16.9 或更高版本  | 2018 年 4 月 |
+| [ExcelApi 1.6](excel-api-1-6-requirement-set.md)  | 版本 1704（生成号 8201.2001）或更高版本   | 15.0 或更高版本  | 15.36 或更高版本 | 2017 年 4 月 |
+| [ExcelApi 1.5](excel-api-1-5-requirement-set.md)  | 版本 1703（内部版本 8067.2070）或更高版本   | 15.0 或更高版本  | 15.36 或更高版本 | 2017 年 3 月 |
+| [ExcelApi 1.4](excel-api-1-4-requirement-set.md)  | 版本 1701（内部版本 7870.2024）或更高版本   | 15.0 或更高版本  | 15.36 或更高版本 | 2017 年 1 月 |
+| [ExcelApi 1.3](excel-api-1-3-requirement-set.md)  | 版本 1608（内部版本 7369.2055）或更高版本   | 15.0 或更高版本 | 15.27 或更高版本 | 2016 年 9 月 |
+| [ExcelApi 1.2](excel-api-1-2-requirement-set.md)  | 版本 1601（内部版本 6741.2088）或更高版本   | 15.0 或更高版本 | 15.22 或更高版本 | 2016 年 1 月 |
+| [ExcelApi 1.1](excel-api-1-1-requirement-set.md)  | 版本 1509（内部版本 4266.1001）或更高版本   | 15.0 或更高版本 | 15.20 或更高版本 | 2016 年 1 月 |
 
 > [!NOTE]
 > 永久版本的 Office 支持要求设置如下：
