@@ -3,12 +3,12 @@ title: 通过 Office 365 管理中心进行集中部署来发布 Office 加载�
 description: 了解如何使用集中部署来部署内部加载项以及 Isv 提供的外接程序。
 ms.date: 03/24/2020
 localization_priority: Normal
-ms.openlocfilehash: cd271aec9ac222815d52adf6375d09b02cb93ea9
-ms.sourcegitcommit: 315a648cce38609c3e1c92bd4a339e268f8a2e1d
+ms.openlocfilehash: 4c19a272e448e38bb5e895cd0bc2a53707a172ad
+ms.sourcegitcommit: 682d18c9149b1153f9c38d28e2a90384e6a261dc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "42978625"
+ms.lasthandoff: 05/13/2020
+ms.locfileid: "44217772"
 ---
 # <a name="publish-office-add-ins-using-centralized-deployment-via-the-office-365-admin-center"></a>通过 Office 365 管理中心进行集中部署来发布 Office 加载项
 
@@ -44,14 +44,14 @@ Office 365 管理中心当前支持以下方案：
 
 ## <a name="publish-an-office-add-in-via-centralized-deployment"></a>通过集中部署发布 Office 加载项
 
-在开始之前，请按照[确定加载项集中部署是否适用于你的 Office 365 组织](https://support.office.com/article/Determine-if-Centralized-Deployment-of-add-ins-works-for-your-Office-365-organization-B4527D49-4073-4B43-8274-31B7A3166F92)中所述确认组织是否满足使用集中部署的所有要求。
+在开始之前，请按照[确定加载项集中部署是否适用于你的 Office 365 组织](/microsoft-365/admin/manage/centralized-deployment-of-add-ins)中所述确认组织是否满足使用集中部署的所有要求。
 
 如果组织满足所有要求，请完成以下步骤以通过集中部署发布 Office 加载项：
 
 1. 使用工作或学校帐户登录 Office 365。
 2. 选择左上角的应用启动器图标，然后选择“**管理员**”。
 3. 在导航菜单中，按“**显示更多内容**”，然后选择“**设置**” > “**服务和加载项**”。
-4. 如果在页面顶部看到公布新的 Office 365 管理中心的消息，请选择该消息以转至“管理中心预览版”（请参阅[关于 Office 365 管理中心](https://support.office.com/article/About-the-Office-365-admin-center-758befc4-0888-4009-9f14-0d147402fd23)）。
+4. 如果在页面顶部看到公布新的 Office 365 管理中心的消息，请选择该消息以转至“管理中心预览版”（请参阅[关于 Office 365 管理中心](/microsoft-365/admin/admin-overview/about-the-admin-center)）。
 5. 在页面顶部选择“**部署加载项**”。
 6. 查看要求后，请选择“**下一步**”。
 7. 在“**集中部署**”页面上，选择以下选项之一：

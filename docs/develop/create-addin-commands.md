@@ -1,27 +1,23 @@
 ---
-title: 在清单中创建 Excel、Word 和 PowerPoint 加载项命令
-description: 在清单中使用 VersionOverrides 定义 Excel、Word 和 PowerPoint 加载项命令。 加载项命令可用于创建 UI 元素，也可用于添加按钮或列表，同时还能执行操作。
-ms.date: 09/26/2019
+title: 在您的清单中创建 Excel、PowerPoint 和 Word 的外接程序命令
+description: 在清单中使用 VersionOverrides 定义 Excel、PowerPoint 和 Word 的外接程序命令。使用外接命令创建 UI 元素、添加按钮或列表并执行操作。
+ms.date: 05/12/2020
 localization_priority: Normal
-ms.openlocfilehash: e3b85315d68368416df9d9bc09227ad06689026a
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: d318df0ab80a4cd83c6a74e77662f3e85df9f92d
+ms.sourcegitcommit: 682d18c9149b1153f9c38d28e2a90384e6a261dc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42719180"
+ms.lasthandoff: 05/13/2020
+ms.locfileid: "44217884"
 ---
-# <a name="create-add-in-commands-in-your-manifest-for-excel-word-and-powerpoint"></a>在清单中创建 Excel、Word 和 PowerPoint 加载项命令
+# <a name="create-add-in-commands-in-your-manifest-for-excel-powerpoint-and-word"></a>在您的清单中创建 Excel、PowerPoint 和 Word 的外接程序命令
 
+在清单中使用**[VersionOverrides](../reference/manifest/versionoverrides.md)** 定义 Excel、PowerPoint 和 Word 的外接程序命令。外接程序命令提供了使用执行操作的指定 UI 元素自定义默认 Office 用户界面（UI）的简便方法。您可以使用外接命令执行以下操作：
 
-在清单中使用 **[VersionOverrides](../reference/manifest/versionoverrides.md)** 定义 Excel、Word 和 PowerPoint 加载项命令。 加载项命令提供了使用执行操作的特定 UI 元素来自定义默认的 Office 用户界面 (UI) 的简单方法。 可以使用加载项命令执行以下操作：
-- 创建 UI 元素或入口点，以便能够更易于使用你的外接程序功能。  
-  
+- 创建 UI 元素或入口点，以便能够更易于使用你的外接程序功能。
 - 向功能区中添加按钮或下拉列表按钮。
-  
 - 将单个菜单项（每一个都包含可选的子菜单）添加到特定上下文（快捷方式）菜单中。
-  
 - 在选择你的外接程序命令时执行操作。可以：
-
   - 显示一个或多个任务窗格外接程序，让用户与其进行交互。在任务窗格外接程序内，可以显示使用 Office UI 结构创建自定义 UI 的 HTML。
 
      *或者*
@@ -154,7 +150,7 @@ ms.locfileid: "42719180"
     <FunctionFile resid="residDesktopFuncUrl" />
     <ExtensionPoint xsi:type="PrimaryCommandSurface">
       <!-- information about this extension point -->
-    </ExtensionPoint> 
+    </ExtensionPoint>
 
     <!-- You can define more than one ExtensionPoint element as needed -->
 </DesktopFormFactor>
@@ -168,7 +164,6 @@ ms.locfileid: "42719180"
 下面的代码展示了如何实现 **FunctionName** 使用的函数。
 
 ```js
-
 <script>
     // The initialize function must be run each time a new page is loaded.
     (function () {
@@ -192,7 +187,7 @@ ms.locfileid: "42719180"
                 }
             });
 
-        // Calling event.completed is required. event.completed lets the platform know that processing has completed. 
+        // Calling event.completed is required. event.completed lets the platform know that processing has completed.
         event.completed();
     }
 </script>
@@ -257,7 +252,6 @@ ms.locfileid: "42719180"
 |**Tooltip** <br/> |可选。组的工具提示**resid** 属性必须设置为 **String** 元素的 **id** 属性的值。**String** 元素是 **LongStrings** 元素的子元素，而 LongStrings 元素是 **Resources** 元素的子元素。 <br/> |
 |**Control** <br/> |每个组都要求至少有一个控件。**Control** 元素可以是 **Button**，也可以是 **Menu**。使用 **Menu** 可指定按钮控件的下拉列表。目前仅支持按钮和菜单。请参阅[按钮控件](../reference/manifest/control.md#button-control)和[菜单控件](../reference/manifest/control.md#menu-dropdown-button-controls)部分，了解详细信息。<br/>**注意：** 建议一次添加一个 **Control** 元素及相关 **Resources** 子元素，以便于进行故障排除。          |
 
-
 ### <a name="button-controls"></a>按钮控件
 
 当用户选择某个按钮时，将执行一个操作。它可以执行 JavaScript 函数或显示任务窗格。以下示例演示了如何定义两种按钮。第一个按钮在不显示 UI 的情况下运行 JavaScript 函数，第二个按钮显示任务窗格。在 **Control** 元素中：
@@ -312,24 +306,21 @@ ms.locfileid: "42719180"
 |**Icon** <br/> | 必需。包含按钮的 **Image** 元素。图像文件必须为 .png 格式。 <br/> **Image** <br/>  定义按钮上要显示的图像。**resid** 属性必须设置为 **Image** 元素的 **id** 属性的值。**Image** 元素是 **Images** 元素的子元素，而 Images 元素是 **Resources** 元素的子元素。**size** 属性指示图像的大小（以像素为单位）。要求三种图像大小：16、32 和 80。也同样支持五种可选大小：20、24、40、48 和 64。 <br/> |
 |**操作** <br/> | 必需。指定用户选择按钮时将执行的操作。可以为 **xsi:type** 属性指定下列任意值之一： <br/> **ExecuteFunction**，它运行位于 **FunctionFile** 引用的文件中的 JavaScript 函数。**ExecuteFunction** 不显示 UI。**FunctionName** 子元素指定要执行的函数的名称。<br/> **ShowTaskPane**，它显示任务窗格外接程序。**SourceLocation** 子元素指定要显示的任务窗格外接程序的源文件位置。**resid** 属性必须设置为 **Resources** 元素的 **Urls** 元素中 **Url** 元素的 **id** 属性的值。 <br/> |
 
-
 ### <a name="menu-controls"></a>菜单控件
+
 **Menu** 控件可与 **PrimaryCommandSurface** 或 **ContextMenu** 结合使用，并定义：
   
 - 根级别菜单项。
-
 - 子菜单项的列表。
- 
+
 与 **PrimaryCommandSurface** 结合使用时，根菜单项显示为功能区上的一个按钮。选择此按钮时，子菜单显示为下拉列表。与 **ContextMenu** 结合使用时，将在上下文菜单上插入包含子菜单的菜单项。在这两种情况中，单个子菜单项均可以执行 JavaScript 函数或显示任务窗格。目前只支持一种子菜单级别。
 
 下面的示例演示如何定义具有两个子菜单项的菜单项。第一个子菜单项显示任务窗格，而第二个子菜单项运行 JavaScript 函数。在 **Control** 元素中：
 
 - **xsi:type** 属性是必需的，并且必须设置为 **Menu**。
-  
 - **id** 属性是一个最多为 125 个字符的字符串。
 
 ```xml
-
 <Control xsi:type="Menu" id="TestMenu2">
   <Label resid="residLabel3" />
   <Tooltip resid="residToolTip" />
@@ -385,13 +376,12 @@ ms.locfileid: "42719180"
 |**SuperTip** <br/> | 必需。菜单的 SuperTip，定义如下： <br/> **标题** <br/>  必需。supertip 的文本。必须将“resid”属性设置为 String 元素的 id 属性值。String 元素是 ShortStrings 元素的子元素，而  元素是“Resources”元素的子元素。 <br/> **说明** <br/>  必需。supertip 的说明。必须将“resid”属性设置为 String 元素的 id 属性值。String 元素是 LongStrings 元素的子元素，而  元素是“Resources”元素的子元素。 <br/> |
 |**Icon** <br/> | 必需。包含菜单的 **Image** 元素。图像文件必须为 .png 格式。 <br/> **Image** <br/>  菜单的图像。**resid** 属性必须设置为 **Image** 元素的 **id** 属性的值。**Image** 元素是 **Images** 元素的子元素，而 Images 元素是 **Resources** 元素的子元素。**size** 属性指示图像的大小（以像素为单位）。要求三种图像大小（以像素为单位）：16、32 和 80。也同样支持五种可选大小（以像素为单位）：20、24、40、48 和 64。 <br/> |
 |**Items** <br/> |必需。包含每个子菜单项的 **Item** 元素。每个 **Item** 元素包含的子元素均与[按钮控件](../reference/manifest/control.md#button-control)相同。  <br/> |
-   
+
 ## <a name="step-7-add-the-resources-element"></a>步骤 7：添加 Resources 元素
 
 **Resources** 元素包含 **VersionOverrides** 元素的不同子元素所使用的资源。这些资源包括图标、字符串和 URL。清单中的元素可以通过引用资源的 **id** 来使用此资源。使用 **id** 有助于使清单保持有序状态，尤其是当多个区域设置拥有不同的资源版本时。一个 **id** 最多可包含 32 个字符。
   
 以下示例演示了如何使用 **Resources** 元素。每个资源可以具有一个或多个 **Override** 子元素以定义特定区域设置的不同资源。
-
 
 ```xml
 <Resources>
@@ -430,7 +420,8 @@ ms.locfileid: "42719180"
 |**Urls**/ **Url** <br/> |提供 HTTPS URL 位置。URL 最多可为 2048 个字符。  <br/> |
 |**ShortStrings**/ **String** <br/> |**Label** 和 **Title** 元素的文本。每个 **String** 最多可包含 125 个字符。 <br/> |
 |**LongStrings**/ **String** <br/> |**Tooltip** 和 **Description** 元素的文本。每个 **String** 最多可包含 250 个字符。<br/> |
-   > [!NOTE]
+
+> [!NOTE]
 > 必须对 **Image** 和 **Url** 元素中的所有 URL 使用安全套接字层 (SSL)。
 
 ### <a name="tab-values-for-default-office-ribbon-tabs"></a>默认 Office 功能区选项卡的 tab 值
@@ -445,4 +436,4 @@ ms.locfileid: "42719180"
 
 ## <a name="see-also"></a>另请参阅
 
--  [Excel、Word 和 PowerPoint 加载项命令](../design/add-in-commands.md)
+- [Excel、PowerPoint 和 Word 的外接程序命令](../design/add-in-commands.md)

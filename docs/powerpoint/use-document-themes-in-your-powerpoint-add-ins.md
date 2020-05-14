@@ -3,16 +3,16 @@ title: 在 PowerPoint 加载项中使用文档主题
 description: 了解如何以可视方式调整字体和颜色等主题，以应用于演示文稿、文档、工作表和电子邮件。
 ms.date: 10/14/2019
 localization_priority: Normal
-ms.openlocfilehash: 040458d504e2dbb3d9883711503a61eb955f8d89
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: e3affe277cfb4c52e83e0c27815884949afbe336
+ms.sourcegitcommit: 682d18c9149b1153f9c38d28e2a90384e6a261dc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42720776"
+ms.lasthandoff: 05/13/2020
+ms.locfileid: "44217786"
 ---
 # <a name="use-document-themes-in-your-powerpoint-add-ins"></a>在 PowerPoint 加载项中使用文档主题
 
-[Office 主题](https://support.office.com/Article/What-is-a-theme--7528ccc2-4327-4692-8bf5-9b5a3f2a5ef5)在某种程度上包括一组视觉协调的字体和颜色，可应用于演示文稿、文档、工作表和电子邮件。若要在 PowerPoint 中应用或自定义演示文稿的主题，请使用功能区上“设计”**** 选项卡中的“主题”**** 和“变量”**** 组。虽然 PowerPoint 向新空白演示文稿分配默认的“Office 主题”****，但也可以选择“设计”**** 选项卡上的其他主题、从 Office.com 下载其他主题，或创建并自定义自己的主题。
+[Office 主题](https://support.office.com/article/create-your-own-theme-in-powerpoint-83e68627-2c17-454a-9fd8-62deb81951a6)在某种程度上包括一组视觉协调的字体和颜色，可应用于演示文稿、文档、工作表和电子邮件。若要在 PowerPoint 中应用或自定义演示文稿的主题，请使用功能区上“设计”**** 选项卡中的“主题”**** 和“变量”**** 组。虽然 PowerPoint 向新空白演示文稿分配默认的“Office 主题”****，但也可以选择“设计”**** 选项卡上的其他主题、从 Office.com 下载其他主题，或创建并自定义自己的主题。
 
 使用 OfficeThemes.css，有助于以两种方式设计与 PowerPoint 相协调的加载项：
 
@@ -26,7 +26,7 @@ ms.locfileid: "42720776"
 
 ![调色板](../images/office15-app-color-palette.png)
 
-若要在 PowerPoint 中查看或自定义一组完整的12种主题颜色，请在 "**设计**" 选项卡上的 "**变体**" 组中，单击 "**更多**" 下拉框，然后选择 "**颜色** > **自定义颜色**" 以显示 "新建**主题颜色**" 对话框。
+若要在 PowerPoint 中查看或自定义一组完整的12种主题颜色，请在 "**设计**" 选项卡上的 "**变体**" 组中，单击 "**更多**" 下拉框，然后选择 "**颜色**  >  **自定义颜色**" 以显示 "新建**主题颜色**" 对话框。
 
 ![“新建主题颜色”对话框](../images/office15-app-create-new-theme-colors.png)
 
@@ -38,13 +38,13 @@ ms.locfileid: "42720776"
 
 ![字体选取器](../images/office15-app-font-picker.png)
 
-若要在 PowerPoint 中查看或自定义主题字体，请在 "**设计**" 选项卡上的 "**变体**" 组中，单击 "**更多**" 下拉框，然后选择 "**字体** > **自定义字体**" 以显示 "**新建主题字体**" 对话框。
+若要在 PowerPoint 中查看或自定义主题字体，请在 "**设计**" 选项卡上的 "**变体**" 组中，单击 "**更多**" 下拉框，然后选择 "**字体**  >  **自定义字体**" 以显示 "**新建主题字体**" 对话框。
 
 ![“新建主题字体”对话框](../images/office15-app-create-new-theme-fonts.png)
 
 ### <a name="office-ui-theme-fonts-and-colors"></a>Office UI 主题字体和颜色
 
-Office also lets you choose between several predefined themes that specify some of the colors and fonts used in the UI of all Office applications. 若要执行此操作，请使用 "**文件** > **帐户** > " "**office 主题**" 下拉（来自任何 Office 应用程序）。
+Office also lets you choose between several predefined themes that specify some of the colors and fonts used in the UI of all Office applications. 若要执行此操作，请使用 "**文件**  >  **帐户**" "  >  **office 主题**" 下拉（来自任何 Office 应用程序）。
 
 ![Office 主题下拉菜单](../images/office15-app-office-theme-picker.png)
 

@@ -3,16 +3,16 @@ title: 使用 Excel JavaScript API 对区域执行操作（高级）
 description: 高级的 range 对象函数和方案，如特殊单元格、删除重复项以及使用日期。
 ms.date: 05/06/2020
 localization_priority: Normal
-ms.openlocfilehash: eb25ae3f4bbe1231cfdf49f7535490b39c7a419e
-ms.sourcegitcommit: 735bf94ac3c838f580a992e7ef074dbc8be2b0ea
+ms.openlocfilehash: 442e31494911bd00c9def895549af3ec7fce8d76
+ms.sourcegitcommit: 682d18c9149b1153f9c38d28e2a90384e6a261dc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "44170812"
+ms.lasthandoff: 05/13/2020
+ms.locfileid: "44217842"
 ---
 # <a name="work-with-ranges-using-the-excel-javascript-api-advanced"></a>使用 Excel JavaScript API 对区域执行操作（高级）
 
-本文基于[使用 Excel JavaScript API 对区域执行操作（基本）](excel-add-ins-ranges.md)中包含的信息，它提供了显示如何使用 Excel JavaScript API 对区域执行更多高级任务的代码示例。 有关`Range`对象支持的属性和方法的完整列表，请参阅[Range 对象（适用于 EXCEL 的 JavaScript API）](/javascript/api/excel/excel.range)。
+本文基于[使用 Excel JavaScript API 对区域执行操作（基本）](excel-add-ins-ranges.md)中包含的信息，它提供了显示如何使用 Excel JavaScript API 对区域执行更多高级任务的代码示例。 有关对象支持的属性和方法的完整列表 `Range` ，请参阅[Range 对象（适用于 Excel 的 JavaScript API）](/javascript/api/excel/excel.range)。
 
 ## <a name="work-with-dates-using-the-moment-msdate-plug-in"></a>使用 Moment-MSDate 插件处理日期
 
@@ -60,7 +60,7 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
-你的加载项将必须对范围进行格式化才能以更可读的形式显示日期。 `"[$-409]m/d/yy h:mm AM/PM;@"` 的示例显示类似“12/3/18 3:57 PM”的时间。 有关日期和时间数字格式的详细信息，请参阅[查看自定义数字格式的准则](https://support.office.com/article/review-guidelines-for-customizing-a-number-format-c0a1d1fa-d3f4-4018-96b7-9c9354dd99f5)一文中的“日期和时间格式的准则”。
+你的加载项将必须对范围进行格式化才能以更可读的形式显示日期。 `"[$-409]m/d/yy h:mm AM/PM;@"` 的示例显示类似“12/3/18 3:57 PM”的时间。 有关日期和时间数字格式的详细信息，请参阅[查看自定义数字格式的准则](https://support.microsoft.com/office/c0a1d1fa-d3f4-4018-96b7-9c9354dd99f5)一文中的“日期和时间格式的准则”。
 
 ## <a name="work-with-multiple-ranges-simultaneously"></a>同时处理多个区域
 
@@ -94,7 +94,7 @@ Excel.run(function (context) {
 })
 ```
 
-如果区域中不存在具有目标特征的单元格，`getSpecialCells` 会引发 **ItemNotFound**错误。 这会将控制流转移到 `catch` 信息块（如果存在）。 如果没有`catch`块，则错误停止方法。
+如果区域中不存在具有目标特征的单元格，`getSpecialCells` 会引发 **ItemNotFound**错误。 这会将控制流转移到 `catch` 信息块（如果存在）。 如果没有 `catch` 块，则错误停止方法。
 
 如果你希望具有目标特征的单元格始终存在，则你可能想要代码在没有这些单元格的时候引发错误。 若没有匹配单元格是一个有效应用场景，代码应该会检查这种可能的情况并按正常方式处理它，而不会引发错误。 可以用此 `getSpecialCellsOrNullObject` 方法及其返回的 `isNullObject` 属性实现此行为。 此示例使用此模式。 关于此代码，请注意以下几点：
 
@@ -237,9 +237,9 @@ Excel.run(function (context) {
 
 ### <a name="cut-and-paste-move-cells"></a>剪切并粘贴（移动）单元格
 
-该[范围的 moveTo](/javascript/api/excel/excel.range#moveto-destinationrange-)方法将单元格移动到工作簿中的新位置。 此单元格移动行为与单元格移动时的工作方式相同，[拖动区域边框](https://support.office.com/article/Move-or-copy-cells-and-cell-contents-803d65eb-6a3e-4534-8c6f-ff12d1c4139e)或执行**剪切**和**粘贴**操作时。 将区域的格式和值移到指定作为`destinationRange`参数的位置。
+该[范围的 moveTo](/javascript/api/excel/excel.range#moveto-destinationrange-)方法将单元格移动到工作簿中的新位置。 此单元格移动行为与单元格移动时的工作方式相同，[拖动区域边框](https://support.office.com/article/Move-or-copy-cells-and-cell-contents-803d65eb-6a3e-4534-8c6f-ff12d1c4139e)或执行**剪切**和**粘贴**操作时。 将区域的格式和值移到指定作为参数的位置 `destinationRange` 。
 
-下面的代码示例显示了使用`Range.moveTo`方法移动的范围。 请注意，如果目标区域小于源，它将被扩展以包含源内容。
+下面的代码示例显示了使用方法移动的范围 `Range.moveTo` 。 请注意，如果目标区域小于源，它将被扩展以包含源内容。
 
 ```js
 Excel.run(function (context) {
@@ -256,9 +256,9 @@ Excel.run(function (context) {
 
 [RemoveDuplicates](/javascript/api/excel/excel.range#removeduplicates-columns--includesheader-)方法删除指定列中具有重复条目的行。 该方法将从最小值索引到范围中的最高值索引的范围中的每一行（从上到下）进行遍历。 如果指定列中的值之前显示在区域中，则会删除该行。 在区域内位于已删除行下方的行将上移。 `removeDuplicates` 不影响该区域外的单元格位置。
 
-`removeDuplicates` 使用 `number[]` 来表示已执行重复项检查的列索引。 此数组从零开始并且与区域而不是与工作表相关。 此方法还采用一个布尔参数，用于指定第一行是否为标头。 如果为 **true**，则在考虑重复项时将忽略顶行。 `removeDuplicates`方法返回一个`RemoveDuplicatesResult`对象，该对象指定删除的行数和剩余的唯一行数。
+`removeDuplicates` 使用 `number[]` 来表示已执行重复项检查的列索引。 此数组从零开始并且与区域而不是与工作表相关。 此方法还采用一个布尔参数，用于指定第一行是否为标头。 如果为 **true**，则在考虑重复项时将忽略顶行。 `removeDuplicates`方法返回一个 `RemoveDuplicatesResult` 对象，该对象指定删除的行数和剩余的唯一行数。
 
-使用区域的`removeDuplicates`方法时，请记住以下几点：
+使用区域的方法时 `removeDuplicates` ，请记住以下几点：
 
 - `removeDuplicates` 会考虑单元格值，而不是函数结果。 如果两个不同的函数具有相同的求值结果，则不会将单元格值视为重复项。
 - `removeDuplicates` 不会忽略空单元格。 空单元格的值与任何其他值具有相同的处理方式。 这意味着区域内所含的空行将包含在 `RemoveDuplicatesResult` 中。

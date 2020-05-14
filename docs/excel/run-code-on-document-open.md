@@ -1,20 +1,18 @@
 ---
-title: 在文档打开时，在 Excel 外接程序中运行代码（预览）
+title: 在文档打开时，在 Excel 外接程序中运行代码
 description: 在文档打开时，在 Excel 外接程序中运行代码。
-ms.date: 02/20/2020
+ms.date: 05/11/2020
 localization_priority: Normal
-ms.openlocfilehash: fba43fdc508245632da911acecbfa52e00847b3b
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: 0a9090315a4ddca80e25a94092c779a3f3271087
+ms.sourcegitcommit: 682d18c9149b1153f9c38d28e2a90384e6a261dc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42717031"
+ms.lasthandoff: 05/13/2020
+ms.locfileid: "44217947"
 ---
-# <a name="run-code-in-your-excel-add-in-when-the-document-opens-preview"></a>在文档打开时，在 Excel 外接程序中运行代码（预览）
+# <a name="run-code-in-your-excel-add-in-when-the-document-opens"></a>在文档打开时，在 Excel 外接程序中运行代码
 
-[!include[Running custom functions in browser runtime note](../includes/excel-shared-runtime-preview-note.md)]
-
-您可以将 Excel 加载项配置为在文档打开后立即加载和运行代码。 如果需要注册事件处理程序、预先加载任务窗格的数据、同步 UI 或在外接程序可见之前执行其他任务，这将非常有用。
+您可以将 Excel 加载项配置为在文档打开后立即加载和运行代码。 如果需要注册事件处理程序、任务窗格的预加载数据、同步 UI 或在外接程序可见之前执行其他任务，这将非常有用。
 
 [!include[Excel shared runtime note](../includes/note-requires-shared-runtime.md)]
 
@@ -27,7 +25,7 @@ Office.addin.setStartupBehavior(Office.StartupBehavior.load);
 ```
 
 > [!NOTE]
-> 方法`setStartupBehavior`是异步的。
+> `setStartupBehavior`方法是异步的。
 
 ## <a name="configure-your-add-in-for-no-load-behavior-on-document-open"></a>为打开的文档配置无加载行为的外接程序
 
@@ -47,7 +45,7 @@ let behavior = await Office.addin.getStartupBehavior();
 
 ## <a name="how-to-run-code-when-the-document-opens"></a>如何在文档打开时运行代码
 
-将外接程序配置为在打开文档时加载时，它将立即运行。 将`Office.initialize`调用事件处理程序。 将启动代码放在`Office.initialize`事件处理程序中。
+将外接程序配置为在打开文档时加载时，它将立即运行。 `Office.initialize`将调用事件处理程序。 将启动代码放在 `Office.initialize` 事件处理程序中。
 
 下面的代码演示如何为活动工作表中的更改事件注册事件处理程序。 如果将加载项配置为在打开文档时加载，此代码将在文档打开时注册事件处理程序。 您可以在打开任务窗格之前处理更改事件。
 

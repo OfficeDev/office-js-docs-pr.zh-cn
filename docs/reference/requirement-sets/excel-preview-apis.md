@@ -1,15 +1,15 @@
 ---
 title: Excel JavaScript 预览 API
 description: 有关即将推出的 Excel JavaScript Api 的详细信息
-ms.date: 05/06/2020
+ms.date: 05/11/2020
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: 64c102e2d530d23789597d29edb97796d3f584fd
-ms.sourcegitcommit: 735bf94ac3c838f580a992e7ef074dbc8be2b0ea
+ms.openlocfilehash: a867a0c80158e9c1effa40ba5a0aa83608ba57de
+ms.sourcegitcommit: 682d18c9149b1153f9c38d28e2a90384e6a261dc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "44170826"
+ms.lasthandoff: 05/13/2020
+ms.locfileid: "44218003"
 ---
 # <a name="excel-javascript-preview-apis"></a>Excel JavaScript 预览 API
 
@@ -24,7 +24,7 @@ ms.locfileid: "44170826"
 | 日期和时间[区域性设置](../../excel/excel-add-ins-workbooks.md#access-application-culture-settings) | 提供有关日期和时间格式设置的其他区域性设置的访问权限。 | [CultureInfo](/javascript/api/excel/excel.cultureinfo)、 [NumberFormatInfo](/javascript/api/excel/excel.numberformatinfo) [应用程序](/javascript/api/excel/excel.application) |
 | [插入工作簿](../../excel/excel-add-ins-workbooks.md#insert-a-copy-of-an-existing-workbook-into-the-current-one-preview) | 将一个工作簿插入另一个工作簿。  | [Workbook](/javascript/api/excel/excel.worksheetcollection) |
 | 透视筛选器 | 对数据透视表的字段应用数值驱动的筛选器。 | [透视字段](/javascript/api/excel/excel.pivotfield#applyfilter-filter-)、 [PivotFilters](/javascript/api/excel/excel.pivotFilters) |
-|区域 spilling | 允许外接程序查找与[动态数组](https://support.microsoft.com/office/dynamic-array-formulas-and-spilled-array-behavior-205c6b06-03ba-4151-89a1-87a7eb36e531)结果关联的范围。 | [区域](/javascript/api/excel/excel.range) |
+|区域 spilling | 允许外接程序查找与[动态数组](https://support.microsoft.com/office/205c6b06-03ba-4151-89a1-87a7eb36e531)结果关联的范围。 | [Range](/javascript/api/excel/excel.range) |
 
 ## <a name="api-list"></a>API 列表
 
@@ -33,7 +33,7 @@ ms.locfileid: "44170826"
 | Class | 域 | 说明 |
 |:---|:---|:---|
 |[ChartSeries](/javascript/api/excel/excel.chartseries)|[getDimensionValues （维： ChartSeriesDimension）](/javascript/api/excel/excel.chartseries#getdimensionvalues-dimension-)|从图表系列的单个维中获取值。 这些值可以是类别值，也可以是数据值，具体取决于指定的维度和为图表系列映射数据的方式。|
-|[注释](/javascript/api/excel/excel.comment)|[contentType](/javascript/api/excel/excel.comment#contenttype)|获取注释的内容类型。|
+|[Comment](/javascript/api/excel/excel.comment)|[contentType](/javascript/api/excel/excel.comment#contenttype)|获取注释的内容类型。|
 |[CommentReply](/javascript/api/excel/excel.commentreply)|[contentType](/javascript/api/excel/excel.commentreply#contenttype)|答复的内容类型。|
 |[CultureInfo](/javascript/api/excel/excel.cultureinfo)|[datetimeFormat](/javascript/api/excel/excel.cultureinfo#datetimeformat)|定义适当的区域性格式，以显示日期和时间。 这取决于当前的系统区域性设置。|
 |[格式](/javascript/api/excel/excel.datetimeformatinfo)|[dateSeparator](/javascript/api/excel/excel.datetimeformatinfo#dateseparator)|获取用作日期分隔符的字符串。 这取决于当前的系统设置。|
@@ -44,9 +44,9 @@ ms.locfileid: "44170826"
 |[PivotDateFilter](/javascript/api/excel/excel.pivotdatefilter)|[运算符](/javascript/api/excel/excel.pivotdatefilter#comparator)|比较运算符是其他值要与其进行比较的静态值。 比较的类型由条件定义。|
 ||[表达式](/javascript/api/excel/excel.pivotdatefilter#condition)|指定筛选器的条件，该条件定义了必要的筛选条件。|
 ||[异](/javascript/api/excel/excel.pivotdatefilter#exclusive)|如果为 true，则筛选*排除*满足条件的项目。 默认值为 false （筛选以包含满足条件的项目）。|
-||[lowerBound](/javascript/api/excel/excel.pivotdatefilter#lowerbound)|`Between`筛选条件范围的下限。|
-||[upperBound](/javascript/api/excel/excel.pivotdatefilter#upperbound)|`Between`筛选条件范围的上限。|
-||[wholeDays](/javascript/api/excel/excel.pivotdatefilter#wholedays)|对于`Equals`、 `Before`、 `After`和`Between`筛选条件，指示是否应将比较作为全天进行。|
+||[lowerBound](/javascript/api/excel/excel.pivotdatefilter#lowerbound)|筛选条件范围的下限 `Between` 。|
+||[upperBound](/javascript/api/excel/excel.pivotdatefilter#upperbound)|筛选条件范围的上限 `Between` 。|
+||[wholeDays](/javascript/api/excel/excel.pivotdatefilter#wholedays)|对于 `Equals` 、 `Before` 、 `After` 和 `Between` 筛选条件，指示是否应将比较作为全天进行。|
 |[PivotField](/javascript/api/excel/excel.pivotfield)|[applyFilter （filter： PivotFilters）](/javascript/api/excel/excel.pivotfield#applyfilter-filter-)|设置字段的当前 PivotFilters 的一个或多个，并将它们应用于字段。|
 ||[clearAllFilters （）](/javascript/api/excel/excel.pivotfield#clearallfilters--)|从字段的所有筛选器中清除所有条件。 这将删除对字段的任何活动筛选。|
 ||[clearFilter （filterType： PivotFilterType）](/javascript/api/excel/excel.pivotfield#clearfilter-filtertype-)|清除给定类型的字段筛选器中的所有现有条件（如果当前应用了一个条件）。|
@@ -60,7 +60,7 @@ ms.locfileid: "44170826"
 ||[表达式](/javascript/api/excel/excel.pivotlabelfilter#condition)|指定筛选器的条件，该条件定义了必要的筛选条件。|
 ||[异](/javascript/api/excel/excel.pivotlabelfilter#exclusive)|如果为 true，则筛选*排除*满足条件的项目。 默认值为 false （筛选以包含满足条件的项目）。|
 ||[lowerBound](/javascript/api/excel/excel.pivotlabelfilter#lowerbound)|筛选条件之间的范围的下限。|
-||[substring](/javascript/api/excel/excel.pivotlabelfilter#substring)|用于`BeginsWith`、 `EndsWith`和`Contains`筛选条件的子字符串。|
+||[substring](/javascript/api/excel/excel.pivotlabelfilter#substring)|用于 `BeginsWith` 、 `EndsWith` 和筛选条件的子字符串 `Contains` 。|
 ||[upperBound](/javascript/api/excel/excel.pivotlabelfilter#upperbound)|筛选条件之间的范围的上限。|
 |[PivotLayout](/javascript/api/excel/excel.pivotlayout)|[getCell(dataHierarchy: DataPivotHierarchy \| string, rowItems: Array<PivotItem \| string>, columnItems: Array<PivotItem \| string>)](/javascript/api/excel/excel.pivotlayout#getcell-datahierarchy--rowitems--columnitems-)|根据数据层次结构以及各自层次结构的行和列项，获取数据透视表中的唯一单元格。 返回的单元格是给定行和列的交集，其中包含来自给定层次结构的数据。 此方法与在特定单元格上调用 getPivotItems 和 getDataHierarchy 相反。|
 ||[pivotStyle](/javascript/api/excel/excel.pivotlayout#pivotstyle)|应用于数据透视表的样式。|
@@ -70,10 +70,10 @@ ms.locfileid: "44170826"
 |[PivotValueFilter](/javascript/api/excel/excel.pivotvaluefilter)|[运算符](/javascript/api/excel/excel.pivotvaluefilter#comparator)|比较运算符是其他值要与其进行比较的静态值。 比较的类型由条件定义。|
 ||[表达式](/javascript/api/excel/excel.pivotvaluefilter#condition)|指定筛选器的条件，该条件定义了必要的筛选条件。|
 ||[异](/javascript/api/excel/excel.pivotvaluefilter#exclusive)|如果为 true，则筛选*排除*满足条件的项目。 默认值为 false （筛选以包含满足条件的项目）。|
-||[lowerBound](/javascript/api/excel/excel.pivotvaluefilter#lowerbound)|`Between`筛选条件范围的下限。|
+||[lowerBound](/javascript/api/excel/excel.pivotvaluefilter#lowerbound)|筛选条件范围的下限 `Between` 。|
 ||[selectionType](/javascript/api/excel/excel.pivotvaluefilter#selectiontype)|指定筛选器是用于顶部/底部 N 项、顶部/底部 N 百分比还是顶部/底部 N 求和。|
 ||[极限](/javascript/api/excel/excel.pivotvaluefilter#threshold)|要针对顶部/底部筛选条件筛选的项、百分比或 sum 的 "N" 阈值数。|
-||[upperBound](/javascript/api/excel/excel.pivotvaluefilter#upperbound)|`Between`筛选条件范围的上限。|
+||[upperBound](/javascript/api/excel/excel.pivotvaluefilter#upperbound)|筛选条件范围的上限 `Between` 。|
 ||[value](/javascript/api/excel/excel.pivotvaluefilter#value)|筛选所依据的字段中所选的 "值" 的名称。|
 |[Range](/javascript/api/excel/excel.range)|[getSpillParent()](/javascript/api/excel/excel.range#getspillparent--)|获取 Range 对象，它包含要将某个单元格溢出到的定位单元格。 如果应用于具有多个单元格的区域，则会失败。|
 ||[getSpillParentOrNullObject()](/javascript/api/excel/excel.range#getspillparentornullobject--)|获取 Range 对象，它包含要将某个单元格溢出到的定位单元格。|

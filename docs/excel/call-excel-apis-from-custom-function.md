@@ -1,18 +1,16 @@
 ---
 title: 从自定义函数调用 Microsoft Excel Api
 description: 了解可以从自定义函数调用的 Microsoft Excel Api。
-ms.date: 02/06/2020
+ms.date: 05/11/2020
 localization_priority: Normal
-ms.openlocfilehash: e22ed897e95a74707bd0d8bded3f8dca724731d1
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: a24cdfba2d79b6e2ad165765d22cd77743047d34
+ms.sourcegitcommit: 682d18c9149b1153f9c38d28e2a90384e6a261dc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42719341"
+ms.lasthandoff: 05/13/2020
+ms.locfileid: "44217877"
 ---
 # <a name="call-microsoft-excel-apis-from-a-custom-function"></a>从自定义函数调用 Microsoft Excel Api
-
-[!include[Running custom functions in a shared runtime note](../includes/excel-shared-runtime-preview-note.md)]
 
 从自定义函数中调用 node.js Excel Api，以获取范围数据并获取更多用于计算的上下文。
 
@@ -25,7 +23,7 @@ ms.locfileid: "42719341"
 
 ## <a name="code-sample"></a>代码示例
 
-若要调入到 node.js Api，首先需要一个上下文。 使用`Excel.RequestContext`对象获取上下文。 然后，使用上下文调用工作簿中所需的 Api。
+若要调入到 node.js Api，首先需要一个上下文。 使用 `Excel.RequestContext` 对象获取上下文。 然后，使用上下文调用工作簿中所需的 Api。
 
 下面的代码示例演示如何从工作簿中获取值的范围。
 

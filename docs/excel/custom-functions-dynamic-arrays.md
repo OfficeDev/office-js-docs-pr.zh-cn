@@ -3,22 +3,22 @@ ms.date: 12/18/2019
 description: 从 Office Excel 外接程序中的自定义函数返回多个结果。
 title: 从自定义函数返回多个结果
 localization_priority: Normal
-ms.openlocfilehash: a2632c621071f0cbc55f545847d9e9392d884b90
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: 753755b481ab3db0de711c80ef082aedc82177ae
+ms.sourcegitcommit: 682d18c9149b1153f9c38d28e2a90384e6a261dc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42719292"
+ms.lasthandoff: 05/13/2020
+ms.locfileid: "44217835"
 ---
 # <a name="return-multiple-results-from-your-custom-function"></a>从自定义函数返回多个结果
 
-您可以从自定义函数返回多个结果，这些结果将返回到相邻的单元格。 此行为称为 "spilling"。 当您的自定义函数返回结果数组时，它被称为动态数组公式。 有关 Excel 中动态数组公式的详细信息，请参阅[动态数组和溢出的数组行为](https://support.office.com/article/dynamic-arrays-and-spilled-array-behavior-205c6b06-03ba-4151-89a1-87a7eb36e531)。
+您可以从自定义函数返回多个结果，这些结果将返回到相邻的单元格。 此行为称为 "spilling"。 当您的自定义函数返回结果数组时，它被称为动态数组公式。 有关 Excel 中动态数组公式的详细信息，请参阅[动态数组和溢出的数组行为](https://support.microsoft.com/office/205c6b06-03ba-4151-89a1-87a7eb36e531)。
 
-下图显示了`SORT`函数如何扩散到相邻的单元格中。 您的自定义函数还可以返回如下所示的多个结果。
+下图显示了函数如何 `SORT` 扩散到相邻的单元格中。 您的自定义函数还可以返回如下所示的多个结果。
 
 ![将多个结果显示为多个单元格的 "排序" 函数的屏幕截图。](../images/dynamic-array-spill.png)
 
-若要创建一个动态数组公式的自定义函数，它必须返回一个二维值数组。 如果结果溢出到已有值的相邻单元格，则公式将显示`#SPILL!`错误。
+若要创建一个动态数组公式的自定义函数，它必须返回一个二维值数组。 如果结果溢出到已有值的相邻单元格，则公式将显示 `#SPILL!` 错误。
 
 下面的示例演示如何返回泼溅的动态数组。
 
@@ -65,5 +65,5 @@ function spillRectangle() {
 
 ## <a name="see-also"></a>另请参阅
 
-- [动态数组和溢出的数组行为](https://support.office.com/article/dynamic-arrays-and-spilled-array-behavior-205c6b06-03ba-4151-89a1-87a7eb36e531)
+- [动态数组和溢出的数组行为](https://support.microsoft.com/office/205c6b06-03ba-4151-89a1-87a7eb36e531)
 - [Excel 自定义函数的选项](custom-functions-parameter-options.md)
