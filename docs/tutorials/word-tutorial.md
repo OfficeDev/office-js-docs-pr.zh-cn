@@ -4,12 +4,12 @@ description: 本教程将介绍如何生成 Word 加载项，用于插入（和�
 ms.date: 01/16/2020
 ms.prod: word
 localization_priority: Priority
-ms.openlocfilehash: c04816037ec822719437affff95c1afa779f9d02
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: e3d6f2c590ae34189ce9127d55b3f4332a63e1aa
+ms.sourcegitcommit: 682d18c9149b1153f9c38d28e2a90384e6a261dc
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42717374"
+ms.lasthandoff: 05/13/2020
+ms.locfileid: "44217765"
 ---
 # <a name="tutorial-create-a-word-task-pane-add-in"></a>教程：创建 Word 任务窗格加载项
 
@@ -316,7 +316,7 @@ ms.locfileid: "42717374"
 
 3. 请确保文档中至少有三个段落。 可以选择“插入段落”**** 按钮三次。 仔细检查文档末尾是否没有空白段落。若有，请删除它。**
 
-4. 在 Word 中，创建[自定义样式](https://support.office.com/article/Customize-or-create-new-styles-d38d6e47-f6fc-48eb-a607-1eb120dec563)“MyCustomStyle”。 其中可以包含所需的任何格式。
+4. 在 Word 中，创建[自定义样式](https://support.office.com/article/customize-or-create-new-styles-d38d6e47-f6fc-48eb-a607-1eb120dec563)“MyCustomStyle”。 其中可以包含所需的任何格式。
 
 5. 选择 **“应用样式”** 按钮。 第一个段落将采用嵌入样式 **“明显参考”**。
 

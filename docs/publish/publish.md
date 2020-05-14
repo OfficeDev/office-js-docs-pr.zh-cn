@@ -3,12 +3,12 @@ title: 部署和发布 Office 加载项
 description: 部署 Office 加载项以进行测试或分发给用户的方法和选项。
 ms.date: 05/06/2020
 localization_priority: Priority
-ms.openlocfilehash: b4ee2dab2fec0237ad06776861678c4c23da6ca8
-ms.sourcegitcommit: 1e3d7051ba7c8c0ccfd6607099d90469fc8141e2
+ms.openlocfilehash: e7bcd3a1de0c81d0626cf0f59569acb0a8a1d09e
+ms.sourcegitcommit: 682d18c9149b1153f9c38d28e2a90384e6a261dc
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/06/2020
-ms.locfileid: "44066086"
+ms.lasthandoff: 05/13/2020
+ms.locfileid: "44217996"
 ---
 # <a name="deploy-and-publish-office-add-ins"></a>部署和发布 Office 加载项
 
@@ -50,9 +50,9 @@ ms.locfileid: "44066086"
 
 以下各节提供了有关向组织中的用户分发 Office 加载项的最常用部署方法的其他信息。
 
-有关最终用户如何获取、插入和运行加载项的信息，请参阅[开始使用 Office 加载项](https://support.office.com/en-ie/article/Start-using-your-Office-Add-in-82e665c4-6700-4b56-a3f3-ef5441996862?ui=en-US&rs=en-IE&ad=IE)。
+有关最终用户如何获取、插入和运行加载项的信息，请参阅[开始使用 Office 加载项](https://support.office.com/article/start-using-your-office-add-in-82e665c4-6700-4b56-a3f3-ef5441996862)。
 
-### <a name="centralized-deployment-via-the-office-365-admin-center"></a>通过 Office 365 管理中心进行集中部署 
+### <a name="centralized-deployment-via-the-office-365-admin-center"></a>通过 Office 365 管理中心进行集中部署
 
 通过 Office 365 管理中心，管理员可以为组织中的用户和组轻松部署 Office 加载项。在管理员通过管理中心部署加载项后，用户可以立即在 Office 应用中使用加载项，而无需进行任何客户端配置。通过集中部署，可以部署内部加载项和 ISV 提供的加载项。
 

@@ -4,12 +4,12 @@ description: 了解有关 Outlook JavaScript API 要求集的详细信息
 ms.date: 05/06/2020
 ms.prod: outlook
 localization_priority: Priority
-ms.openlocfilehash: 80b7ed4ece8f56a767cda47df4566b5a2fdf6d7a
-ms.sourcegitcommit: 7382e1edc2705e04604d15c44b049e21709fd6ad
+ms.openlocfilehash: 290bcf815fbd0a0812dd5f675ecb6f3c109e2a5e
+ms.sourcegitcommit: 682d18c9149b1153f9c38d28e2a90384e6a261dc
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/07/2020
-ms.locfileid: "44154232"
+ms.lasthandoff: 05/13/2020
+ms.locfileid: "44217744"
 ---
 # <a name="outlook-javascript-api-requirement-sets"></a>Outlook JavaScript API 要求集
 
@@ -102,7 +102,7 @@ if (item.somePropertyOrFunction !== undefined) {
 || 连接到的经典 Outlook UI<br>本地 Exchange | [1.1](../objectmodel/requirement-set-1.1/outlook-requirement-set-1.1.md)、[1.2](../objectmodel/requirement-set-1.2/outlook-requirement-set-1.2.md)、[1.3](../objectmodel/requirement-set-1.3/outlook-requirement-set-1.3.md)、[1.4](../objectmodel/requirement-set-1.4/outlook-requirement-set-1.4.md)、[1.5](../objectmodel/requirement-set-1.5/outlook-requirement-set-1.5.md)、[1.6](../objectmodel/requirement-set-1.6/outlook-requirement-set-1.6.md) |
 
 > [!NOTE]
-> <sup>1</sup>自版本 1910（生成号 12130.20272）起，包含 Microsoft 365 订阅或零售一次性购买的 Outlook on Windows 开始支持 1.8。 如需了解你的版本的更多详情，请参阅 [Office 2019](/officeupdates/update-history-office-2019) 或 [Microsoft 365](/officeupdates/update-history-office365-proplus-by-date) 的更新历史记录页，以及如何[查找 Office 客户端版本和更新通道](https://support.office.com/article/What-version-of-Office-am-I-using-932788b8-a3ce-44bf-bb09-e334518b8b19)。
+> <sup>1</sup>自版本 1910（生成号 12130.20272）起，包含 Microsoft 365 订阅或零售一次性购买的 Outlook on Windows 开始支持 1.8。 如需了解你的版本的更多详情，请参阅 [Office 2019](/officeupdates/update-history-office-2019) 或 [Microsoft 365](/officeupdates/update-history-office365-proplus-by-date) 的更新历史记录页，以及如何[查找 Office 客户端版本和更新通道](https://support.office.com/article/about-office-what-version-of-office-am-i-using-932788b8-a3ce-44bf-bb09-e334518b8b19)。
 >
 > <sup>2</sup>[2015 年 12 月 8 日 Outlook 2013 更新 (KB3114349)](https://support.microsoft.com/kb/3114349) 开始在 Outlook 2013 中支持 1.3 版本。 对 Outlook 2013 中的 1.4 版本的支持已作为 [2016 年 9 月 13 日 Outlook 2013 更新 (KB3118280)](https://support.microsoft.com/help/3118280) 的一部分添加。 对 Outlook 2016（一次性购买）中的 1.4 版本的支持已作为 [2018 年 7 月 3 日 Office 2016 更新 (KB4022223)](https://support.microsoft.com/help/4022223) 的一部分添加。
 >
