@@ -1,16 +1,16 @@
 ---
 title: 启用和禁用加载项命令
 description: 了解如何更改 Office Web 加载项中的自定义功能区按钮和菜单项的启用或禁用状态。
-ms.date: 04/11/2020
+ms.date: 05/11/2020
 localization_priority: Priority
-ms.openlocfilehash: b223949c5665f0e523a6003ccb4e3f29cc3f017c
-ms.sourcegitcommit: 79c55e59294e220bd21a5006080f72acf3ec0a3f
+ms.openlocfilehash: fa4830c0112486bbad7a13edf78e0c8c4277e143
+ms.sourcegitcommit: 682d18c9149b1153f9c38d28e2a90384e6a261dc
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "43581923"
+ms.lasthandoff: 05/13/2020
+ms.locfileid: "44217891"
 ---
-# <a name="enable-and-disable-add-in-commands-preview"></a>启用和禁用加载项命令（预览版）
+# <a name="enable-and-disable-add-in-commands"></a>启用和禁用加载项命令
 
 如果加载项中的某些功能应仅适用于某些上下文，则能够以编程方式启用或禁用自定义加载项命令。 例如，仅当光标位于表格中时，才启用用于更改表格标题的函数。
 
@@ -20,13 +20,6 @@ ms.locfileid: "43581923"
 > 本文假定你熟悉以下文档。 如果你最近未使用加载项命令（自定义菜单项和功能区按钮），请查看该文档。
 >
 > [加载项命令的基本概念](add-in-commands.md)
-
-## <a name="preview-status"></a>预览状态
-
-本文介绍的 API 处于预览状态，目前仅在 Excel 中可用。
-
-> [!NOTE]
-> [!INCLUDE [Information about using preview APIs](../includes/using-preview-apis.md)]
 
 ## <a name="rules-and-gotchas"></a>规则和陷阱
 
