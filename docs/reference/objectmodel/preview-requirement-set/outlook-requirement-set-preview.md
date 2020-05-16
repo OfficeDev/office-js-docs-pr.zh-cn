@@ -1,14 +1,14 @@
 ---
 title: Outlook 外接程序 API 预览要求集
 description: 当前在 Outlook 外接程序的预览中的功能和 Api。
-ms.date: 05/04/2020
+ms.date: 05/15/2020
 localization_priority: Normal
-ms.openlocfilehash: 433abf5ea15cfe9ee7cefa579b1ad965fdeb93cf
-ms.sourcegitcommit: 800dacf0399465318489c9d949e259b5cf0f81ca
+ms.openlocfilehash: c2b4d31fdb545afdc695c5aef84856aeaebdbf28
+ms.sourcegitcommit: b634bfe9a946fbd95754e87f070a904ed57586ff
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "44022181"
+ms.lasthandoff: 05/15/2020
+ms.locfileid: "44253626"
 ---
 # <a name="outlook-add-in-api-preview-requirement-set"></a>Outlook 外接程序 API 预览要求集
 
@@ -18,6 +18,11 @@ Office JavaScript API 的 Outlook 外接程序 API 子集包括可以在 Outlook
 > 本文档适用于**预览**[要求集](../../requirement-sets/outlook-api-requirement-sets.md)。 此要求集尚未完全实现，客户端不会准确报告对它的支持。 不应在外接程序清单中指定此要求集。
 
 [!INCLUDE [Information about using preview APIs](../../../includes/using-preview-apis-host.md)]
+
+> [!TIP]
+> 您可以通过[在 Microsoft 365 租户上配置目标版本](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide#set-up-the-release-option-in-the-admin-center)来预览 Web 上 Outlook 中的功能。 此页面上的 "配置预览访问权限" 对适用的功能进行了说明。
+>
+> 对于其他功能，你可以通过填写和提交[此表单](https://aka.ms/OWAPreview)，使用 Microsoft 365 帐户请求对网站上的 Outlook 的预览位的访问权限。 这些功能上注明了 "请求访问"。
 
 预览要求集包括[要求集 1.8](../requirement-set-1.8/outlook-requirement-set-1.8.md) 的所有功能。
 
@@ -53,7 +58,7 @@ Office JavaScript API 的 Outlook 外接程序 API 子集包括可以在 Outlook
 
 #### <a name="officemailboxenumsappointmentsensitivitytype"></a>[MailboxEnums. AppointmentSensitivityType](/javascript/api/outlook/office.mailboxenums.appointmentsensitivitytype?view=outlook-js-preview)
 
-添加了一个代表`AppointmentSensitivityType`约会上可用的敏感度选项的新枚举。
+添加了一个 `AppointmentSensitivityType` 代表约会上可用的敏感度选项的新枚举。
 
 **适用于**：Windows 版 Outlook（已连接到 Office 365 订阅）
 
@@ -67,15 +72,15 @@ Office JavaScript API 的 Outlook 外接程序 API 子集包括可以在 Outlook
 
 #### <a name="officecontextmailboxitembodyappendonsendasync"></a>[AppendOnSendAsync 的 "."](/javascript/api/outlook/office.body?view=outlook-js-preview#appendonsendasync-data--options--callback-)
 
-向`Body`对象添加了一个新函数，该函数在撰写模式下将数据追加到项正文的末尾。
+向对象添加了一个新函数 `Body` ，该函数在撰写模式下将数据追加到项正文的末尾。
 
-**适用于**：Windows 版 Outlook（已连接到 Office 365 订阅）
+**适用于**： Windows 上的 outlook （连接到 Office 365 订阅），outlook 网页版（新式，[配置预览访问](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide#set-up-the-release-option-in-the-admin-center)）
 
 #### <a name="extendedpermissions"></a>[ExtendedPermissions](../../manifest/extendedpermissions.md)
 
-向清单添加了一个新元素，其中`AppendOnSend`扩展权限必须包含在扩展权限的集合中。
+向清单添加了一个新元素，其中 `AppendOnSend` 扩展权限必须包含在扩展权限的集合中。
 
-**适用于**：Windows 版 Outlook（已连接到 Office 365 订阅）
+**适用于**： Windows 上的 outlook （连接到 Office 365 订阅），outlook 网页版（新式，[配置预览访问](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide#set-up-the-release-option-in-the-admin-center)）
 
 <br>
 
@@ -101,33 +106,33 @@ Office JavaScript API 的 Outlook 外接程序 API 子集包括可以在 Outlook
 
 #### <a name="officecontextmailboxitembodysetsignatureasync"></a>[SetSignatureAsync 的 "."](/javascript/api/outlook/office.body?view=outlook-js-preview#setsignatureasync-data--options--callback-)
 
-向`Body`对象添加了一个新函数，该函数在撰写模式下添加或替换项目正文中的签名。
+向对象添加了一个新函数 `Body` ，该函数在撰写模式下添加或替换项目正文中的签名。
 
-**适用于**：Windows 版 Outlook（已连接到 Office 365 订阅）
+**适用于**： Windows 上的 outlook （连接到 Office 365 订阅），outlook 网页版（新式，[配置预览访问](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide#set-up-the-release-option-in-the-admin-center)）
 
 #### <a name="officecontextmailboxitemdisableclientsignatureasync"></a>[DisableClientSignatureAsync 的 Office。](office.context.mailbox.item.md#methods)
 
 添加了一个新函数，用于在撰写模式下禁用发送邮箱的客户端签名。
 
-**适用于**：Windows 版 Outlook（已连接到 Office 365 订阅）
+**适用于**： Windows 上的 outlook （连接到 Office 365 订阅），outlook 网页版（新式，[配置预览访问](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide#set-up-the-release-option-in-the-admin-center)）
 
 #### <a name="officecontextmailboxitemgetcomposetypeasync"></a>[GetComposeTypeAsync 的 Office。](/javascript/api/outlook/office.messagecompose?view=outlook-js-preview#getcomposetypeasync-options--callback-)
 
 添加了一个新函数，用于在撰写模式下获取邮件的撰写类型。
 
-**适用于**：Windows 版 Outlook（已连接到 Office 365 订阅）
+**适用于**： Windows 上的 outlook （连接到 Office 365 订阅），outlook 网页版（新式，[配置预览访问](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide#set-up-the-release-option-in-the-admin-center)）
 
 #### <a name="officecontextmailboxitemisclientsignatureenabledasync"></a>[IsClientSignatureEnabledAsync 的 Office。](office.context.mailbox.item.md#methods)
 
 添加了一个新函数，用于检查在撰写模式下是否在项目上启用了客户端签名。
 
-**适用于**：Windows 版 Outlook（已连接到 Office 365 订阅）
+**适用于**： Windows 上的 outlook （连接到 Office 365 订阅），outlook 网页版（新式，[配置预览访问](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide#set-up-the-release-option-in-the-admin-center)）
 
 #### <a name="officemailboxenumscomposetype"></a>[MailboxEnums. ComposeType](/javascript/api/outlook/office.mailboxenums.composetype?view=outlook-js-preview)
 
-添加了一个新`ComposeType`枚举，该枚举在撰写模式中可用。
+添加了一个新枚举，该枚举 `ComposeType` 在撰写模式中可用。
 
-**适用于**：Windows 版 Outlook（已连接到 Office 365 订阅）
+**适用于**： Windows 上的 outlook （连接到 Office 365 订阅），outlook 网页版（新式，[配置预览访问](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide#set-up-the-release-option-in-the-admin-center)）
 
 <br>
 
@@ -161,7 +166,7 @@ Office JavaScript API 的 Outlook 外接程序 API 子集包括可以在 Outlook
 
 #### <a name="mobileonlinemeetingcommandsurface-extension-point"></a>[MobileOnlineMeetingCommandSurface 扩展点](../../manifest/extensionpoint.md#mobileonlinemeetingcommandsurface-preview)
 
-向`MobileOnlineMeetingCommandSurface`清单添加了扩展点。 它定义联机会议集成。
+`MobileOnlineMeetingCommandSurface`向清单添加了扩展点。 它定义联机会议集成。
 
 **适用于**： Outlook on Android （连接到 Office 365 订阅）
 

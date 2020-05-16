@@ -1,25 +1,25 @@
 ---
 title: 清单文件中的 Rule 元素
 description: Rule 元素指定应为此上下文邮件外接程序计算的激活规则。
-ms.date: 03/16/2020
+ms.date: 05/14/2020
 localization_priority: Normal
-ms.openlocfilehash: 06d9985615617e50567dcf614268d9181989f2a1
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: c1f2be3371333bfd87e0693d02a9a5984c18317b
+ms.sourcegitcommit: b634bfe9a946fbd95754e87f070a904ed57586ff
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42720433"
+ms.lasthandoff: 05/15/2020
+ms.locfileid: "44253619"
 ---
 # <a name="rule-element"></a>Rule 元素
 
 指定应针对此上下文邮件外接程序计算的激活规则。
 
-**加载项类型：** 邮件上下文加载项
+**外接类型：** 邮件（上下文）
 
 ## <a name="contained-in"></a>包含于
 
 - [OfficeApp](officeapp.md)
-- [ExtensionPoint](extensionpoint.md)
+- [ExtensionPoint](extensionpoint.md) （[**CustomPane** （已弃用）](https://developer.microsoft.com/outlook/blogs/make-your-add-ins-available-in-the-office-ribbon/)， [**DetectedEntity**](extensionpoint.md#detectedentity)）
 
 ## <a name="attributes"></a>属性
 
