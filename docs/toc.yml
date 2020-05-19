@@ -264,6 +264,8 @@
               href: testing/attach-debugger-from-task-pane.md
             - name: 使用开发者工具调试
               href: testing/debug-add-ins-using-f12-developer-tools-on-windows-10.md
+            - name: 使用 Internet Explorer 11 进行测试
+              href: testing/ie-11-testing.md
         - name: Web 浏览器
           items:
             - name: 在 Office 网页版中旁加载加载项
@@ -464,6 +466,10 @@
                   href: reference/manifest/hosts.md
                 - name: Icon
                   href: reference/manifest/icon.md
+                - name: LaunchEvent
+                  href: reference/manifest/launchevent.md
+                - name: LaunchEvents
+                  href: reference/manifest/launchevents.md
                 - name: MobileFormFactor
                   href: reference/manifest/mobileformfactor.md
                 - name: OfficeMenu
@@ -649,17 +655,11 @@
         - name: 自定义函数教程
           href: tutorials/excel-tutorial-create-custom-functions.md
           displayName: 'Excel, Custom Functions'
-        - name: 体系结构
-          href: excel/custom-functions-architecture.md
+        - name: 共享自定义函数数据及任务窗格教程
+          href: tutorials/share-data-and-events-between-custom-functions-and-the-task-pane-tutorial.md
           displayName: 'Excel, Custom Functions'
-        - name: 身份验证
-          href: excel/custom-functions-authentication.md
-          displayName: 'Excel, Custom Functions'
-        - name: 调试
-          href: excel/custom-functions-debugging.md
-          displayName: 'Excel, Custom Functions'
-        - name: 对话框
-          href: excel/custom-functions-dialog.md
+        - name: 从自定义函数中调用 Excel API
+          href: excel/call-excel-apis-from-custom-function.md
           displayName: 'Excel, Custom Functions'
         - name: 错误处理
           href: excel/custom-functions-errors.md
@@ -688,25 +688,22 @@
         - name: 返回动态数组
           href: excel/custom-functions-dynamic-arrays.md
           displayName: 'Excel, Custom Functions'
-        - name: 运行时
-          href: excel/custom-functions-runtime.md
+        - name: 共享运行时
+          href: excel/custom-functions-shared-overview.md
           displayName: 'Excel, Custom Functions'
-        - name: 保存和共享状态
-          href: excel/custom-functions-save-state.md
-          displayName: 'Excel, Custom Functions'
-        - name: 疑难解答
+        - name: 故障排除
           href: excel/custom-functions-troubleshooting.md
           displayName: 'Excel, Custom Functions'
-        - name: 使用共享运行时
+        - name: 无 UI 的自定义函数
           items:
-            - name: 使用共享运行时概述
-              href: excel/custom-functions-shared-overview.md
+            - name: 无 UI 函数的身份验证
+              href: excel/custom-functions-authentication.md
               displayName: 'Excel, Custom Functions'
-            - name: 共享自定义函数数据及任务窗格教程
-              href: tutorials/share-data-and-events-between-custom-functions-and-the-task-pane-tutorial.md
+            - name: 调试无 UI 函数
+              href: excel/custom-functions-debugging.md
               displayName: 'Excel, Custom Functions'
-            - name: 从自定义函数中调用 Excel API
-              href: excel/call-excel-apis-from-custom-function.md
+            - name: 运行时
+              href: excel/custom-functions-runtime.md
               displayName: 'Excel, Custom Functions'
         - name: 可变函数
           href: excel/custom-functions-volatile.md
@@ -913,6 +910,8 @@
           href: outlook/pinnable-taskpane.md
         - name: 委托访问
           href: outlook/delegate-access.md
+        - name: 配置基于事件的激活（预览）
+          href: outlook/autolaunch.md
         - name: 清单
           items:
             - name: Outlook 外接程序清单
@@ -1138,7 +1137,5 @@
       displayName: 'Excel, Custom Functions'
     - name: 身份验证
       href: develop/authentication-pnp.md
-    - name: 保存并共享自定义函数中的状态
-      href: excel/custom-functions-save-state-redirect.md
     - name: 在 Office 解决方案中处理高 DPI 和 DPI 缩放
       href: /office/client-developer/ddpi/handle-high-dpi-and-dpi-scaling-in-your-office-solution
