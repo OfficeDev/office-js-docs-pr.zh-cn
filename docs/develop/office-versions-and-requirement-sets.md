@@ -3,12 +3,12 @@ title: Office 版本和要求集
 description: 使用 JavaScript API 支持的 Office.js 平台
 ms.date: 01/14/2020
 localization_priority: Priority
-ms.openlocfilehash: aa3beb7177c2d6019dd85cdab5a0f4b7277506a4
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: 37456e32dc6111e2b4aa40f0c2240b17916c3778
+ms.sourcegitcommit: 54e2892c0c26b9ad1e4dba8aba48fea39f853b6c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42718893"
+ms.lasthandoff: 05/18/2020
+ms.locfileid: "44276027"
 ---
 # <a name="office-versions-and-requirement-sets"></a>Office 版本和要求集
 
@@ -35,7 +35,7 @@ Office 加载项可使用 API 要求集，以确定 Office 主机是否支持需
 
 加载项使用的要求集中的 API 只能是受运行加载项的 Office 主机版本支持的 API。 若要确切了解适用于特定 Office 主机版本的要求集，请参阅以下主机专用要求集文章：
 
-- [Excel JavaScript API 要求集](../reference/requirement-sets/excel-api-requirement-sets.md)（ExcelApi、[CustomFunctionsRuntime](../excel/custom-functions-architecture.md)）
+- [Excel JavaScript API 要求集](../reference/requirement-sets/excel-api-requirement-sets.md) (ExcelApi)
 - [Word JavaScript API 要求集](../reference/requirement-sets/word-api-requirement-sets.md) (WordApi)
 - [OneNote JavaScript API 要求集](../reference/requirement-sets/onenote-api-requirement-sets.md) (OneNoteApi)
 - [PowerPoint JavaScript API 要求集](../reference/requirement-sets/powerpoint-api-requirement-sets.md) (PowerPointApi)
