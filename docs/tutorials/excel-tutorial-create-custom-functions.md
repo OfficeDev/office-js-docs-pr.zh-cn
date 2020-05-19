@@ -4,12 +4,12 @@ description: 在本教程中，你将创建一个 Excel 外接程序，其中包
 ms.date: 01/16/2020
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: d7f6f30bde7b56b1dec1abb55d01e6b65f8d3c7e
-ms.sourcegitcommit: 803587b324fc8038721709d7db5664025cf03c6b
-ms.translationtype: HT
+ms.openlocfilehash: 6ce3bbb4f36819599451f6f87db6c6a6f882f5a1
+ms.sourcegitcommit: 54e2892c0c26b9ad1e4dba8aba48fea39f853b6c
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2020
-ms.locfileid: "43547076"
+ms.lasthandoff: 05/18/2020
+ms.locfileid: "44275606"
 ---
 # <a name="tutorial-create-custom-functions-in-excel"></a>教程：在 Excel 中创建自定义函数
 
@@ -240,7 +240,7 @@ function clock(invocation) {
 
 ## <a name="next-steps"></a>后续步骤
 
-恭喜！ 你已经创建新的自定义函数项目，试用了预生成的函数，创建了从 Web 请求数据的自定义函数，并创建了流式传输数据的自定义函数。 你也可以尝试使用[自定义函数调试指令](../excel/custom-functions-debugging.md)来调试此函数。 若要详细了解 Excel 中的自定义函数，请继续阅读以下文章：
+恭喜！ 你已经创建新的自定义函数项目，试用了预生成的函数，创建了从 Web 请求数据的自定义函数，并创建了流式传输数据的自定义函数。 接下来，可以修改项目以使用共享运行时，使您的函数更易于与任务窗格交互。 按照以下文章中的步骤操作：
 
 > [!div class="nextstepaction"]
-> [在 Excel 中创建自定义函数](../excel/custom-functions-overview.md)
+> [配置加载项以使用共享运行时](../excel/configure-your-add-in-to-use-a-shared-runtime.md)

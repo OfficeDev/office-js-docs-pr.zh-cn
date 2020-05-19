@@ -1,18 +1,18 @@
 ---
-ms.date: 02/13/2020
+ms.date: 05/17/2020
 description: 了解如何在同一 JavaScript 运行时中运行自定义函数、功能区按钮和任务窗格代码，以便在加载项中协调方案。
-title: 在共享 JavaScript 运行时中运行加载项代码（预览版）
+title: 在共享 JavaScript 运行时中运行外接程序代码
 localization_priority: Priority
-ms.openlocfilehash: 774990a9452d450bd5c4d968027bc64ebee858af
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
-ms.translationtype: HT
+ms.openlocfilehash: afb07c5223e26ba1e1adbf40c7a4b2e4f7c06349
+ms.sourcegitcommit: 54e2892c0c26b9ad1e4dba8aba48fea39f853b6c
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42719530"
+ms.lasthandoff: 05/18/2020
+ms.locfileid: "44275929"
 ---
-# <a name="overview-run-your-add-in-code-in-a-shared-javascript-runtime-preview"></a>概述：在共享 JavaScript 运行时中运行加载项代码（预览版）
+# <a name="overview-run-your-add-in-code-in-a-shared-javascript-runtimes"></a>概述：在共享 JavaScript 运行时中运行外接程序代码
 
-[!include[Running custom functions in shared JavaScript runtime note](../includes/excel-shared-runtime-preview-note.md)]
+[!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
 运行 Windows 版 Excel 或 Mac 版 Excel 时，加载项将在单独的 JavaScript 运行时环境中运行功能区按钮、自定义函数和任务窗格的代码。 这会产生一些局限性，例如无法轻松共享全局数据，也不能通过自定义函数访问所有 CORS 功能。
 
@@ -28,31 +28,15 @@ ms.locfileid: "42719530"
 
 当使用任务窗格在共享运行时中运行自定义函数时，它将在不同平台上的浏览器实例中运行，如 [Office 加载项使用的浏览器](../concepts/browsers-used-by-office-web-add-ins.md)中所述。此外，Excel 加载项在功能区上显示的任何按钮都将在同一共享运行时中运行。 下图显示了自定义函数、功能区 UI 和任务窗格代码如何在同一 JavaScript 运行时中运行。
 
-![使用 Excel 中的功能区按钮和任务窗格在共享运行时中运行的自定义函数](../images/custom-functions-in-browser-runtime.png)
+![在包含 Excel 中的功能区按钮和任务窗格的共享运行时中运行的自定义函数](../images/custom-functions-in-browser-runtime.png)
 
-## <a name="differences-when-running-custom-functions-in-a-shared-runtime"></a>在共享运行时中运行自定义函数时的差异
+## <a name="set-up-a-shared-runtime"></a>设置共享运行时
 
-将 Excel 加载项项目配置为在共享运行时中运行自定义函数时，与使用自定义函数运行时有一些不同。
-
-### <a name="storage"></a>存储
-
-无需再在任务窗格、自定义函数或功能区 UI 之间使用**存储** API 来共享数据。 可将全局变量置于 **window** 对象中，或使用自己的首选状态管理方法。
-
-### <a name="authentication"></a>身份验证
-
-如果在身份验证过程中收到令牌，无需使用**存储** API 在任务窗格、自定义函数和功能区 UI 之间共享它们。 你可以使用自己的首选存储技术和存储位置来共享它们，例如 `localStorage`。
-
-### <a name="dialog-api"></a>对话框 API
-
-无需再使用 **OfficeRuntime.Dialog** API 来显示来自自定义函数的对话框。 可以将同一[对话框 API](../develop/dialog-api-in-office-add-ins.md) 用于自定义函数、功能区按钮和任务窗格。
+请参阅[配置共享运行时文章](./configure-your-add-in-to-use-a-shared-runtime.md)，了解如何将自定义函数设置为使用共享运行时。
 
 ### <a name="debugging"></a>调试
 
-使用共享运行时时，目前不能使用 Visual Studio Code 在 Windows 版 Excel 中调试自定义函数。 你需要使用开发人员工具。 有关详细信息，请参阅[使用 Windows 10 上的开发人员工具调试加载项](../testing/debug-add-ins-using-f12-developer-tools-on-windows-10.md)。
-
-## <a name="get-started"></a>开始使用
-
-若要将 Excel 加载项项目配置为在共享运行时中运行自定义函数，请参阅[将 Excel 加载项配置为使用共享 JavaScript 运行时（预览版）](configure-your-add-in-to-use-a-shared-runtime.md)。
+使用共享运行时时，目前不能使用 Visual Studio Code 在 Windows 版 Excel 中调试自定义函数。 而是需要使用开发人员工具。 有关详细信息，请参阅[使用 Windows 10 上的开发人员工具调试加载项](../testing/debug-add-ins-using-f12-developer-tools-on-windows-10.md)。
 
 ## <a name="give-us-feedback"></a>向我们提供反馈
 
@@ -60,6 +44,5 @@ ms.locfileid: "42719530"
 
 ## <a name="see-also"></a>另请参阅
 
-共享运行时的相关文章列表
-- [教程：在 Excel 自定义函数和任务窗格之间共享数据和事件（预览）](../tutorials/share-data-and-events-between-custom-functions-and-the-task-pane-tutorial.md)
-- [从自定义函数中调用 Excel API（预览版）](call-excel-apis-from-custom-function.md)
+- [教程：在 Excel 自定义函数和任务窗格之间共享数据和事件](../tutorials/share-data-and-events-between-custom-functions-and-the-task-pane-tutorial.md)
+- [从自定义函数调用 Excel Api](call-excel-apis-from-custom-function.md)
