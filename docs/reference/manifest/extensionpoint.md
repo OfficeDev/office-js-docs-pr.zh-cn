@@ -1,14 +1,14 @@
 ---
 title: 清单文件中的 ExtensionPoint 元件
 description: 定义 Office UI 中加载项公开功能的位置。
-ms.date: 05/04/2020
+ms.date: 05/18/2020
 localization_priority: Normal
-ms.openlocfilehash: ede99ad73beb1e4a46c9b08188ca79efb556acb0
-ms.sourcegitcommit: 800dacf0399465318489c9d949e259b5cf0f81ca
+ms.openlocfilehash: 41d4ede1ef4198430d888891e3eedda4e050456f
+ms.sourcegitcommit: f62d9630de69c5c070e3d4048205f5cc654db7e4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "44022174"
+ms.lasthandoff: 05/18/2020
+ms.locfileid: "44278418"
 ---
 # <a name="extensionpoint-element"></a>ExtensionPoint 元素
 
@@ -93,6 +93,7 @@ ms.locfileid: "44022174"
 - [Module](#module)（仅能在 [DesktopFormFactor](desktopformfactor.md) 中使用。）
 - [MobileMessageReadCommandSurface](#mobilemessagereadcommandsurface)
 - [MobileOnlineMeetingCommandSurface](#mobileonlinemeetingcommandsurface-preview)
+- [LaunchEvent](#launchevent-preview)
 - [Events](#events)
 - [DetectedEntity](#detectedentity)
 
@@ -271,11 +272,11 @@ ms.locfileid: "44022174"
 |:-----|:-----|
 |  [Control](control.md) |  将按钮添加到命令界面。  |
 
-`ExtensionPoint`此类型的元素只能有一个子元素：一个`Control`元素。
+`ExtensionPoint`此类型的元素只能有一个子元素：一个 `Control` 元素。
 
-此`Control`扩展点中包含的元素的`xsi:type`属性必须设置为`MobileButton`。
+`Control`此扩展点中包含的元素的属性必须 `xsi:type` 设置为 `MobileButton` 。
 
-`Icon`图像应使用十六进制代码`#919191`或以[其他颜色格式](https://convertingcolors.com/hex-color-919191.html)的等效项进行灰度。
+`Icon`图像应使用十六进制代码 `#919191` 或以[其他颜色格式](https://convertingcolors.com/hex-color-919191.html)的等效项进行灰度。
 
 #### <a name="example"></a>示例
 
@@ -301,9 +302,36 @@ ms.locfileid: "44022174"
 </ExtensionPoint>
 ```
 
+### <a name="launchevent-preview"></a>LaunchEvent （预览）
+
+> [!NOTE]
+> 仅在使用 Office 365 订阅的 Outlook 网页的[预览](../objectmodel/preview-requirement-set/outlook-requirement-set-preview.md)中支持此扩展点。
+
+此扩展点使外接程序能够根据桌面外形规格中受支持的事件进行激活。 目前，唯一受支持的事件是 `OnNewMessageCompose` 和 `OnNewAppointmentOrganizer` 。 若要了解有关此方案的详细信息，请参阅[Configure The Outlook 外接程序以获取基于事件的激活一](../../outlook/autolaunch.md)文。
+
+#### <a name="child-elements"></a>子元素
+
+|  元素 |  说明  |
+|:-----|:-----|
+| [LaunchEvents](launchevents.md) |  基于事件的激活的[LaunchEvent](launchevent.md)列表。  |
+| [SourceLocation](sourcelocation.md) |  源 JavaScript 文件的位置。  |
+
+#### <a name="example"></a>示例
+
+```xml
+<ExtensionPoint xsi:type="LaunchEvent">
+  <LaunchEvents>
+    <LaunchEvent Type="OnNewMessageCompose" FunctionName="onMessageComposeHandler"/>
+    <LaunchEvent Type="OnNewAppointmentOrganizer" FunctionName="onAppointmentComposeHandler"/>
+  </LaunchEvents>
+  <!-- Identifies the runtime to be used (also referenced by the Runtime element). -->
+  <SourceLocation resid="WebViewRuntime.Url"/>
+</ExtensionPoint>
+```
+
 ### <a name="events"></a>事件
 
-此扩展点添加了指定事件的事件处理程序。
+此扩展点添加了指定事件的事件处理程序。 有关使用此扩展点的详细信息，请参阅[On a send feature For Outlook 外接程序](../../outlook/outlook-on-send-addins.md)。
 
 | 元素 | 说明  |
 |:-----|:-----|

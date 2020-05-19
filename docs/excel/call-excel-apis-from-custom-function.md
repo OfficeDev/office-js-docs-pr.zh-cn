@@ -3,12 +3,12 @@ title: 从自定义函数调用 Microsoft Excel Api
 description: 了解可以从自定义函数调用的 Microsoft Excel Api。
 ms.date: 05/11/2020
 localization_priority: Normal
-ms.openlocfilehash: a24cdfba2d79b6e2ad165765d22cd77743047d34
-ms.sourcegitcommit: 682d18c9149b1153f9c38d28e2a90384e6a261dc
+ms.openlocfilehash: 0cdae939b70211367bee6317b9d5234d5b153c95
+ms.sourcegitcommit: 54e2892c0c26b9ad1e4dba8aba48fea39f853b6c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "44217877"
+ms.lasthandoff: 05/18/2020
+ms.locfileid: "44276020"
 ---
 # <a name="call-microsoft-excel-apis-from-a-custom-function"></a>从自定义函数调用 Microsoft Excel Api
 
@@ -18,8 +18,6 @@ ms.locfileid: "44217877"
 
 - 自定义函数需要在计算之前从 Excel 中获取信息。 此信息可能包括文档属性、范围格式、自定义 XML 部件、工作簿名称或其他特定于 Excel 的信息。
 - 自定义函数将在计算后设置单元格的返回值的数字格式。
-
-[!include[Excel shared runtime note](../includes/note-requires-shared-runtime.md)]
 
 ## <a name="code-sample"></a>代码示例
 

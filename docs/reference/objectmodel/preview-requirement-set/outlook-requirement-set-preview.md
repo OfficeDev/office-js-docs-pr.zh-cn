@@ -1,14 +1,14 @@
 ---
 title: Outlook 外接程序 API 预览要求集
 description: 当前在 Outlook 外接程序的预览中的功能和 Api。
-ms.date: 05/15/2020
+ms.date: 05/18/2020
 localization_priority: Normal
-ms.openlocfilehash: c2b4d31fdb545afdc695c5aef84856aeaebdbf28
-ms.sourcegitcommit: b634bfe9a946fbd95754e87f070a904ed57586ff
+ms.openlocfilehash: 893c90dc7344adba86a8a92b86063ed2419eae34
+ms.sourcegitcommit: f62d9630de69c5c070e3d4048205f5cc654db7e4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/15/2020
-ms.locfileid: "44253626"
+ms.lasthandoff: 05/18/2020
+ms.locfileid: "44278341"
 ---
 # <a name="outlook-add-in-api-preview-requirement-set"></a>Outlook 外接程序 API 预览要求集
 
@@ -22,7 +22,7 @@ Office JavaScript API 的 Outlook 外接程序 API 子集包括可以在 Outlook
 > [!TIP]
 > 您可以通过[在 Microsoft 365 租户上配置目标版本](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide#set-up-the-release-option-in-the-admin-center)来预览 Web 上 Outlook 中的功能。 此页面上的 "配置预览访问权限" 对适用的功能进行了说明。
 >
-> 对于其他功能，你可以通过填写和提交[此表单](https://aka.ms/OWAPreview)，使用 Microsoft 365 帐户请求对网站上的 Outlook 的预览位的访问权限。 这些功能上注明了 "请求访问"。
+> 对于其他功能，你可以通过填写和提交[此表单](https://aka.ms/OWAPreview)，使用 Microsoft 365 帐户请求对网站上的 Outlook 的预览位的访问权限。 这些功能上记录了 "请求预览访问"。
 
 预览要求集包括[要求集 1.8](../requirement-set-1.8/outlook-requirement-set-1.8.md) 的所有功能。
 
@@ -81,6 +81,34 @@ Office JavaScript API 的 Outlook 外接程序 API 子集包括可以在 Outlook
 向清单添加了一个新元素，其中 `AppendOnSend` 扩展权限必须包含在扩展权限的集合中。
 
 **适用于**： Windows 上的 outlook （连接到 Office 365 订阅），outlook 网页版（新式，[配置预览访问](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide#set-up-the-release-option-in-the-admin-center)）
+
+<br>
+
+---
+
+---
+
+### <a name="event-based-activation"></a>基于事件的激活
+
+添加了对 Outlook 外接程序中基于事件的激活功能的支持。若要了解详细信息，请参阅[配置 Outlook 外接程序以进行基于事件的激活](../../../outlook/autolaunch.md)。
+
+#### <a name="launchevent-extension-point"></a>[LaunchEvent 扩展点](../../manifest/extensionpoint.md#launchevent-preview)
+
+`LaunchEvent`向清单添加了扩展点支持。 它配置基于事件的激活功能。
+
+**适用于**： Outlook 网页版（新式，[请求预览访问](https://aka.ms/OWAPreview)）
+
+#### <a name="launchevents-manifest-element"></a>[LaunchEvents 清单元素](../../manifest/launchevents.md)
+
+`LaunchEvents`向清单添加了元素。 它支持配置基于事件的激活功能。
+
+**适用于**： Outlook 网页版（新式，[请求预览访问](https://aka.ms/OWAPreview)）
+
+#### <a name="runtimes-manifest-element"></a>[运行时清单元素](../../manifest/runtimes.md)
+
+向清单元素添加了 Outlook 支持 `Runtimes` 。 它引用了基于事件的激活功能所需的 HTML 和 JavaScript 文件。
+
+**适用于**： Outlook 网页版（新式，[请求预览访问](https://aka.ms/OWAPreview)）
 
 <br>
 

@@ -1,20 +1,22 @@
 ---
-ms.date: 07/10/2019
-description: 在 Excel 中调试自定义函数。
-title: 自定义函数调试
+ms.date: 05/17/2020
+description: 了解如何调试不使用任务窗格的 Excel 自定义函数。
+title: UI-较少的自定义函数调试
 localization_priority: Normal
-ms.openlocfilehash: 4abd5f3da58c35485004b17f92b334b133cabd27
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: 6de7dda2e22195096f75cd2bd475ee0e49f4461d
+ms.sourcegitcommit: f62d9630de69c5c070e3d4048205f5cc654db7e4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42719306"
+ms.lasthandoff: 05/18/2020
+ms.locfileid: "44278383"
 ---
-# <a name="custom-functions-debugging"></a>自定义函数调试
+# <a name="ui-less-custom-functions-debugging"></a>UI-较少的自定义函数调试
 
-自定义函数的调试可以通过多种方式来完成，具体取决于您使用的平台。
+不使用任务窗格或其他用户界面元素（无 UI 自定义函数）的自定义函数的调试可以通过多种方式来完成，具体取决于您使用的平台。
 
 [!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
+
+[!include[Shared runtime note](../includes/shared-runtime-note.md)]
 
 在 Windows 上：
 - [Excel Desktop 和 Visual Studio Code （VS Code）调试器](#use-the-vs-code-debugger-for-excel-desktop)
@@ -35,7 +37,7 @@ ms.locfileid: "42719306"
 
 ## <a name="use-the-vs-code-debugger-for-excel-desktop"></a>对 Excel 桌面使用 VS 代码调试器
 
-您可以使用 VS 代码在桌面上调试 Office Excel 中的自定义函数。
+您可以使用 VS 代码在桌面的 Office Excel 中调试无 UI 的自定义函数。
 
 > [!NOTE]
 > 对 Mac 的桌面调试不可用，但可通过[使用浏览器工具和命令行来调试 web 上的 Excel 来](#use-the-command-line-tools-to-debug)实现。
@@ -62,7 +64,7 @@ ms.locfileid: "42719306"
 
 ## <a name="use-the-vs-code-debugger-for-excel-in-microsoft-edge"></a>在 Microsoft Edge 中将 VS 代码调试程序与 Excel 一起使用
 
-您可以使用 VS 代码在 Microsoft Edge 浏览器上调试 Excel 中的自定义函数。 若要将 VS 代码与 Microsoft Edge 结合使用，必须[为 Microsoft edge](https://marketplace.visualstudio.com/items?itemName=msjsdiag.debugger-for-edge)扩展安装调试器。
+您可以使用 VS 代码在 Microsoft Edge 浏览器的 Excel 中调试不带 UI 的自定义函数。 若要将 VS 代码与 Microsoft Edge 结合使用，必须[为 Microsoft edge](https://marketplace.visualstudio.com/items?itemName=msjsdiag.debugger-for-edge)扩展安装调试器。
 
 ### <a name="run-your-add-in-from-vs-code"></a>从 VS 代码运行外接程序
 
@@ -98,7 +100,7 @@ ms.locfileid: "42719306"
 
 ## <a name="use-the-browser-developer-tools-to-debug-custom-functions-in-excel-on-the-web"></a>使用浏览器开发人员工具在 Excel 网页版中调试自定义函数
 
-您可以使用浏览器开发人员工具在 Excel 网页版中调试自定义函数。 以下步骤适用于 Windows 和 macOS。
+您可以使用浏览器开发人员工具在 Excel 网页版中调试无 UI 的自定义函数。 以下步骤适用于 Windows 和 macOS。
 
 ### <a name="run-your-add-in-from-visual-studio-code"></a>从 Visual Studio Code 运行外接程序
 
@@ -134,7 +136,7 @@ ms.locfileid: "42719306"
 
 如果未使用 VS 代码，则可以使用命令行（如 bash 或 PowerShell）运行外接程序。 您需要使用浏览器开发人员工具在 Excel 网页版中调试代码。 无法使用命令行调试桌面版本的 Excel。
 
-1. 在命令行中运行`npm run watch` ，以便在发生代码更改时监视和重建。
+1. 在命令行中运行 `npm run watch` ，以便在发生代码更改时监视和重建。
 2. 打开第二个命令行窗口（运行监视时将阻止第一个命令行窗口。）
 
 3. 如果要在 Excel 的桌面版本中启动外接程序，请运行以下命令
@@ -167,11 +169,10 @@ ms.locfileid: "42719306"
 - `npm run stop`：停止 Excel 和调试。
 
 ## <a name="next-steps"></a>后续步骤
-了解[自定义函数中的身份验证方法](custom-functions-authentication.md)。 或者，查看[自定义函数的独特体系结构](custom-functions-architecture.md)。
+了解有关无[UI 的自定义函数的身份验证实践](custom-functions-authentication.md)。
 
 ## <a name="see-also"></a>另请参阅
 
 * [自定义函数疑难解答](custom-functions-troubleshooting.md)
 * [在 Excel 中处理自定义函数时出错](custom-functions-errors.md)
-* [让自定义函数与 XLL 用户定义的函数兼容](make-custom-functions-compatible-with-xll-udf.md)
 * [在 Excel 中创建自定义函数](custom-functions-overview.md)

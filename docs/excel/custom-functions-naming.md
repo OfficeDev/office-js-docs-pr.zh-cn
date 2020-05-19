@@ -1,61 +1,61 @@
 ---
-ms.date: 12/28/2019
+ms.date: 05/17/2020
 description: 了解 Excel 自定义函数名称的要求并避免常见命名缺陷。
 title: Excel 中自定义函数的命名准则
 localization_priority: Normal
-ms.openlocfilehash: 81ce0e1a1d510fd9558a3e57273903382326ad55
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: 82b847ba5d944efed16aa2567eee2c3d257a6a75
+ms.sourcegitcommit: 54e2892c0c26b9ad1e4dba8aba48fea39f853b6c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42719474"
+ms.lasthandoff: 05/18/2020
+ms.locfileid: "44275985"
 ---
 # <a name="naming-guidelines"></a>命名准则
 
-在 JSON 元数据文件中`id` ，自`name`定义函数由和属性标识。
+`id` `name` 在 JSON 元数据文件中，自定义函数由和属性标识。
 
-- 函数`id`用于唯一标识 JavaScript 代码中的自定义函数。
-- 函数`name`用作在 Excel 中向用户显示的显示名称。
+- 函数 `id` 用于唯一标识 JavaScript 代码中的自定义函数。
+- 函数 `name` 用作在 Excel 中向用户显示的显示名称。
 
 [!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
-函数`name`可以与函数`id`不同，例如出于本地化目的。 通常情况下，如果没有`name`明显的原因，函数应`id`保持与的相同。
+函数 `name` 可以与函数不同，例如 `id` 出于本地化目的。 通常情况下， `name` `id` 如果没有理由让函数与相同，则函数应保持不变。
 
-函数的`name`并`id`共享一些常见要求：
+函数的 `name` 并 `id` 共享一些常见要求：
 
-- 函数`id`可能只使用字符 A 到 Z、从零到九、下划线和句点。
+- 函数 `id` 可能只使用字符 A 到 Z、从零到九、下划线和句点。
 
-- 函数`name`可能使用任何 Unicode 字母字符、下划线和句点。
+- 函数 `name` 可能使用任何 Unicode 字母字符、下划线和句点。
 
-- 这两`name`个`id`函数都必须以字母开头，并且最小限制为三个字符。
+- 这两个函数都 `name` `id` 必须以字母开头，并且最小限制为三个字符。
 
-Excel 使用大写字母作为内置函数名称（例如`SUM`）。 因此，请考虑将大写字母用作自定义函数`name`和`id`最佳实践。
+Excel 使用大写字母作为内置函数名称（例如 `SUM` ）。 将大写字母用作自定义函数 `name` 和 `id` 最佳实践。
 
-函数的`name`名称不应与以下相同：
+函数 `name` 不应如下所示：
 
 - A1 到 XFD1048576 之间的任何单元格，或从 R1C1 到 R1048576C16384 之间的任何单元格。
 
-- 任何 Excel 4.0 宏函数（例如`RUN`， `ECHO`）。  有关这些函数的完整列表，请参阅[此 Excel 宏函数参考文档](https://d13ot9o61jdzpp.cloudfront.net/files/Excel%204.0%20Macro%20Functions%20Reference.pdf)。
+- 任何 Excel 4.0 宏函数（例如 `RUN` ， `ECHO` ）。  有关这些函数的完整列表，请参阅[此 Excel 宏函数参考文档](https://d13ot9o61jdzpp.cloudfront.net/files/Excel%204.0%20Macro%20Functions%20Reference.pdf)。
 
 ## <a name="naming-conflicts"></a>命名冲突
 
-如果您的`name`函数与已存在的外`name`接程序中的函数相同，则 **#REF！** 错误将出现在工作簿中。
+如果您的函数与 `name` 已存在的外接程序中的函数相同 `name` ，则 **#REF！** 错误将出现在工作簿中。
 
-若要修复命名冲突，请更改`name`外接程序中的，然后再次尝试该函数。 此外，还可以使用冲突的名称卸载加载项。 或者，如果要在不同的环境中测试外接程序，请尝试使用不同的命名空间来区分您的函数`NAMESPACE_NAMEOFFUNCTION`（如）。
+若要修复命名冲突，请更改 `name` 外接程序中的，然后再次尝试该函数。 此外，还可以使用冲突的名称卸载加载项。 或者，如果要在不同的环境中测试外接程序，请尝试使用不同的命名空间来区分您的函数（如 `NAMESPACE_NAMEOFFUNCTION` ）。
 
 ## <a name="best-practices"></a>最佳做法
 
 - 请考虑向函数中添加多个参数，而不是使用相同或相似的名称创建多个函数。
-- 函数名称应指示函数的操作，例如（ `=GETZIPCODE`而不是） `ZIPCODE`。
-- 避免函数名称中不明确的缩写。 清晰度比简洁性更重要。 选择一个名称（ `=INCREASETIME`而不`=INC`是）。
-- 对执行类似操作的函数始终使用相同的动作。 `=DELETEZIPCODE`例如，使用`=DELETEADDRESS`和，而不是`=DELETEZIPCODE`和`=REMOVEADDRESS`。
-- 在命名流式处理函数时，请考虑在函数的说明中添加对该效果的注释或`STREAM`添加到函数名称的末尾。
+- 避免函数名称中不明确的缩写。 清晰度比简洁性更重要。 选择一个名称（ `=INCREASETIME` 而不是） `=INC` 。
+- 函数名称应指示函数的操作，如 = GETZIPCODE 而不是邮政编码。
+- 对执行类似操作的函数始终使用相同的动作。 例如，使用 `=DELETEZIPCODE` 和 `=DELETEADDRESS` ，而不是 `=DELETEZIPCODE` 和 `=REMOVEADDRESS` 。
+- 在命名流式处理函数时，请考虑在函数的说明中添加对该效果的注释或添加 `STREAM` 到函数名称的末尾。
 
 [!include[manifest guidance](../includes/manifest-guidance.md)]
 
 ## <a name="localizing-function-names"></a>对函数名称进行本地化
 
-您可以使用单独的 JSON 文件本地化不同语言的函数名称，并在外接程序清单文件中重写值。 作为一种最佳做法，应避免在另`id`一`name`种语言中为函数提供内置 Excel 函数，因为这可能会与本地化函数发生冲突。
+您可以使用单独的 JSON 文件本地化不同语言的函数名称，并在外接程序清单文件中重写值。 避免为您的函数 `id` 提供 `name` 另一种语言的内置 Excel 函数，因为这可能会与本地化函数发生冲突。
 
 有关本地化的完整信息，请参阅[本地化自定义函数](custom-functions-localize.md)
 
@@ -66,4 +66,3 @@ Excel 使用大写字母作为内置函数名称（例如`SUM`）。 因此，�
 
 * [自定义函数元数据](custom-functions-json.md)
 * [Excel 自定义函数教程](../tutorials/excel-tutorial-create-custom-functions.md)
-* [Excel 自定义函数的运行时](custom-functions-runtime.md)

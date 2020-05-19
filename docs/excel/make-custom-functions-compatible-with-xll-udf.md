@@ -1,18 +1,18 @@
 ---
 title: 使用 XLL 用户定义的函数扩展自定义函数
 description: 启用与自定义函数具有等效功能的 Excel XLL 用户定义函数的兼容性
-ms.date: 07/31/2019
+ms.date: 04/29/2020
 localization_priority: Normal
-ms.openlocfilehash: 8c83ea8a5b97cd4f23a9e25fddabe3d178b1e482
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: 82f4dba3bd82743efd84a2fe88c893042c061461
+ms.sourcegitcommit: 54e2892c0c26b9ad1e4dba8aba48fea39f853b6c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42717038"
+ms.lasthandoff: 05/18/2020
+ms.locfileid: "44275768"
 ---
 # <a name="extend-custom-functions-with-xll-user-defined-functions"></a>使用 XLL 用户定义的函数扩展自定义函数
 
-如果您有现有的 Excel Xll，则可以在 Excel 外接程序中构建等效的自定义函数，以将解决方案功能扩展到其他平台（如 online 或 macOS）。 但是，Excel 外接程序没有在 Xll 中提供的所有功能。 根据您的解决方案使用的功能，XLL 可以提供比 excel 在 Windows 上运行的 Excel 外接程序自定义函数更好的体验。
+如果您有现有的 Excel Xll，则可以在 Excel 外接程序中构建等效的自定义函数，以将解决方案功能扩展到其他平台（如联机或 Mac）。 但是，Excel 外接程序没有在 Xll 中提供的所有功能。 根据您的解决方案使用的功能，XLL 可以提供比 excel 在 Windows 上运行的 Excel 外接程序自定义函数更好的体验。
 
 > [!NOTE]
 > 当连接到 Office 365 订阅时，以下平台支持 COM 加载项和 XLL UDF 兼容性：
@@ -24,11 +24,11 @@ ms.locfileid: "42717038"
 
 ## <a name="specify-equivalent-xll-in-the-manifest"></a>在清单中指定等效 XLL
 
-若要启用与现有 XLL 的兼容性，请在您的 Excel 外接程序清单中标识等效 XLL。 在 Windows 上运行时，Excel 将使用 XLL 的函数而不是 Excel 加载项自定义函数。
+若要启用与现有 XLL 的兼容性，请在您的 Excel 外接程序清单中标识等效 XLL。 然后，在 Windows 上运行时，excel 将使用 XLL 的函数而不是 Excel 加载项自定义函数。
 
-若要设置自定义函数的等效 XLL，请指定`FileName` XLL 的。 当用户使用 XLL 中的函数打开工作簿时，Excel 会将函数转换为兼容函数。 在 Windows 上的 Excel 中打开时，工作簿将使用 XLL，并且在联机或在 macOS 中打开时，它将使用 Excel 外接程序中的自定义函数。
+若要设置自定义函数的等效 XLL，请指定 `FileName` XLL 的。 当用户使用 XLL 中的函数打开工作簿时，Excel 会将函数转换为兼容函数。 在 Windows 上的 Excel 中打开时，工作簿将使用 XLL，并且在联机或在 Mac 上打开时，它将使用 Excel 加载项中的自定义函数。
 
-下面的示例演示如何将 COM 外接程序和 XLL 都指定为等效项。 通常，出于完整性的考虑，这两个示例都会在上下文中显示这两个示例。 它们`ProgId` `FileName`分别由各自标识。 `EquivalentAddins`元素必须紧跟在结束`VersionOverrides`标记之前。 有关 COM 加载项兼容性的详细信息，请参阅[使您的 Excel 外接程序与现有的 com 外](../develop/make-office-add-in-compatible-with-existing-com-add-in.md)接程序兼容。
+下面的示例演示如何将 COM 外接程序和 XLL 都指定为等效项。 通常会同时指定这两个。 为了实现完整性，本示例同时显示了上下文中的内容。 它们分别由各自标识 `ProgId` `FileName` 。 `EquivalentAddins`元素必须紧跟在结束 `VersionOverrides` 标记之前。 有关 COM 加载项兼容性的详细信息，请参阅[使您的 Excel 外接程序与现有的 com 外](../develop/make-office-add-in-compatible-with-existing-com-add-in.md)接程序兼容。
 
 ```xml
 <VersionOverrides>
@@ -52,7 +52,7 @@ ms.locfileid: "42717038"
 
 ## <a name="custom-function-behavior-for-xll-compatible-functions"></a>XLL 兼容函数的自定义函数行为
 
-如果打开的电子表格中包含的 XLL 函数也有等效的加载项，则 XLL 的函数将转换为 XLL 兼容的自定义函数。 在下一次保存时，它们将在兼容模式下写入文件，以便它们使用 XLL 和 Excel 外接程序自定义函数（当在其他平台上）。
+打开电子表格且存在等效的加载项时，外接程序的 XLL 函数将转换为 XLL 兼容的自定义函数。 在下一次保存时，XLL 函数将在兼容模式下写入文件中，以便它们使用 XLL 和 Excel 外接程序自定义函数（当在其他平台上）。
 
 下表比较了 XLL 用户定义函数、XLL 兼容的自定义函数和 Excel 加载项自定义函数之间的功能。
 
@@ -60,9 +60,9 @@ ms.locfileid: "42717038"
 |---------|---------|---------|---------|
 | 支持的平台 | Windows | Windows、macOS、web 浏览器 | Windows、macOS、web 浏览器 |
 | 支持的文件格式 | .XLSX、XLSB、XLSM、XLS | .XLSX、XLSB、XLSM | .XLSX、XLSB、XLSM |
-| 公式自动完成 | 否 | 必需 | 是 |
-| 媒体 | 可通过 xlfRTD 和 XLL 回调实现。 | 否 | 必需 |
-| 函数的本地化 | 否 | 否。 名称和 ID 必须与现有 XLL 的函数相匹配。 | 是 |
+| 公式自动完成 | 否 | 可访问 | 是 |
+| 媒体 | 可通过 xlfRTD 和 XLL 回调实现。 | 否 | 可访问 |
+| 函数的本地化 | 否 | 不正确。 名称和 ID 必须与现有 XLL 的函数相匹配。 | 是 |
 | 可变函数 | 是 | 是 | 是 |
 | 多线程重新计算支持 | 是 | 是 | 是 |
 | 计算行为 | 无 UI。 在计算过程中，Excel 可能会无响应。 | 用户将看到 #BUSY！ 在返回结果之前。 | 用户将看到 #BUSY！ 在返回结果之前。 |

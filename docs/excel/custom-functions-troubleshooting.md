@@ -1,14 +1,14 @@
 ---
-ms.date: 12/31/2019
+ms.date: 04/29/2020
 description: 解决 Excel 自定义函数的常见问题。
 title: 自定义函数疑难解答
 localization_priority: Normal
-ms.openlocfilehash: bc8a450b1436b487f2c2a77e191182c540f55923
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: 33404426cf8c017b7c43f988dbc8aa3a4ddea892
+ms.sourcegitcommit: 54e2892c0c26b9ad1e4dba8aba48fea39f853b6c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42719607"
+ms.lasthandoff: 05/18/2020
+ms.locfileid: "44275817"
 ---
 # <a name="troubleshoot-custom-functions"></a>自定义函数疑难解答
 
@@ -53,7 +53,7 @@ Excel 有许多内置错误消息，如果存在计算错误，系统会将向�
 
 ### <a name="error-the-dev-server-is-already-running-on-port-3000"></a>错误：开发服务器已在端口 3000 上运行
 
-有时候，运行 `npm start` 时，你可能会看到开发服务器已在端口 3000（或加载项使用的任何端口）上运行的错误。 可以通过运行 `npm stop` 或关闭 Node.js 窗口停止开发服务器运行。 但在某些情况下，开发服务器可能需要几分钟才能实际停止运行。
+有时候，运行 `npm start` 时，你可能会看到开发服务器已在端口 3000（或加载项使用的任何端口）上运行的错误。 可以通过运行 `npm stop` 或关闭 Node.js 窗口停止开发服务器运行。 在某些情况下，开发服务器可能需要几分钟的时间才能停止运行。
 
 ### <a name="my-functions-wont-load-associate-functions"></a>我的函数无法加载：关联函数
 
@@ -91,11 +91,9 @@ CustomFunctions.associate("ADD", add);
 可以随时通过任何文档页底部的“内容反馈”功能提交所遇到的问题，也可以[直接向自定义功能存储库提交新问题](https://github.com/OfficeDev/Excel-Custom-Functions/issues)。
 
 ## <a name="next-steps"></a>后续步骤
-了解如何[调试自定义函数](custom-functions-debugging.md)。
+了解如何[让自定义函数与 XLL 用户定义的函数兼容](make-custom-functions-compatible-with-xll-udf.md)。
 
 ## <a name="see-also"></a>另请参阅
 
 * [自定义函数元数据自动生成](custom-functions-json-autogeneration.md)
-* [Excel 自定义函数的运行时](custom-functions-runtime.md)
-* [让自定义函数与 XLL 用户定义的函数兼容](make-custom-functions-compatible-with-xll-udf.md)
 * [在 Excel 中创建自定义函数](custom-functions-overview.md)

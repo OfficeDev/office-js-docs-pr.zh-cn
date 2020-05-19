@@ -1,14 +1,14 @@
 ---
 title: 清单文件中的 SourceLocation 元素
 description: SourceLocation 元素指定 Office 外接程序的源文件位置。
-ms.date: 03/16/2020
+ms.date: 05/12/2020
 localization_priority: Normal
-ms.openlocfilehash: fcca051b0d85c98cb011d5b886981c543ef8e3b0
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: 642780c3231523ea579ca548b3f3f984b2856666
+ms.sourcegitcommit: f62d9630de69c5c070e3d4048205f5cc654db7e4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42717899"
+ms.lasthandoff: 05/18/2020
+ms.locfileid: "44278397"
 ---
 # <a name="sourcelocation-element"></a>SourceLocation 元素
 
@@ -26,7 +26,7 @@ ms.locfileid: "42717899"
 
 - [DefaultSettings](defaultsettings.md)（内容和任务窗格外接程序）
 - [FormSettings](formsettings.md)（邮件外接程序）
-- [ExtensionPoint](extensionpoint.md)（上下文邮件外接程序）
+- [ExtensionPoint](extensionpoint.md) （上下文和 LaunchEvent （预览）邮件外接程序）
 
 ## <a name="can-contain"></a>可以包含
 

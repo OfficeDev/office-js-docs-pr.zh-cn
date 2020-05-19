@@ -1,14 +1,14 @@
 ---
-ms.date: 04/13/2020
+ms.date: 05/06/2020
 description: 使用 JSDoc 标记动态创建自定义函数 JSON 元数据。
 title: 为自定义函数自动生成 JSON 元数据
 localization_priority: Normal
-ms.openlocfilehash: d62def1d107d4472d2e89623c4f10b5cd012f28c
-ms.sourcegitcommit: 118e8bcbcfb73c93e2053bda67fe8dd20799b170
+ms.openlocfilehash: bad11e6ce8e58dc7970bc920e2619ab4732ebc34
+ms.sourcegitcommit: 54e2892c0c26b9ad1e4dba8aba48fea39f853b6c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "43241068"
+ms.lasthandoff: 05/18/2020
+ms.locfileid: "44275978"
 ---
 # <a name="autogenerate-json-metadata-for-custom-functions"></a>为自定义函数自动生成 JSON 元数据
 
@@ -52,9 +52,9 @@ Excel 自定义函数支持以下 JSDoc 标记：
 ### <a name="cancelable"></a>@cancelable
 <a id="cancelable"/>
 
-表示自定义函数希望在取消函数时执行操作。
+指示在取消函数时，自定义函数执行操作。
 
-最后一个函数参数的类型必须是 `CustomFunctions.CancelableInvocation`。 该函数可以将函数分配给 `oncanceled` 属性来表示在取消函数时要执行的操作。
+最后一个函数参数的类型必须是 `CustomFunctions.CancelableInvocation`。 函数可以向属性分配函数 `oncanceled` ，以在取消函数时表示结果。
 
 如果最后一个函数参数的类型为 `CustomFunctions.CancelableInvocation`，则即使标记不存在，也会被视为 `@cancelable`。
 
@@ -66,11 +66,9 @@ Excel 自定义函数支持以下 JSDoc 标记：
 
 语法：@customfunction _id_ _name_
 
-指定此标记以将 JavaScript/TypeScript 函数视为 Excel 自定义函数。
+此标记指示 JavaScript/TypeScript 函数是 Excel 自定义函数。 需要创建自定义函数的元数据。
 
-需要此标记才能创建自定义函数的元数据。
-
-下面的示例显示了声明自定义函数的最简单方法。
+下面显示了此标记的一个示例。
 
 ```js
 /**
@@ -82,7 +80,7 @@ Excel 自定义函数支持以下 JSDoc 标记：
 
 #### <a name="id"></a>id
 
-`id` 是自定义函数的固定标识符。
+`id`标识自定义函数。
 
 * 如果未提供 `id`，请将 JavaScript/TypeScript 函数名称转换为大写并删除禁用字符。
 * `id` 对于所有自定义函数必须是唯一的。
@@ -119,9 +117,9 @@ Excel 自定义函数支持以下 JSDoc 标记：
 
 ### <a name="description"></a>说明
 
-说明不需要任何特定标记。 通过在 JSDoc 注释中添加一个短语来描述函数的功能，为自定义函数添加说明。 默认情况下，JSDoc 注释部分中未标记的任何文本都是该函数的说明。 当 Excel 中的用户进入该函数时，将向其显示相关说明。 在以下示例中，短语“对两个数字求和的函数”是 id 属性为 `ADD` 的自定义函数的相关说明。
+在 Excel 中，用户在进入函数并指定函数所执行的操作时，会向用户显示相关说明。 说明不需要任何特定标记。 通过在 JSDoc 注释中添加一个短语来描述函数的功能，为自定义函数添加说明。 默认情况下，JSDoc 注释部分中未标记的任何文本都是该函数的说明。
 
-在下面的示例中，ADD 是函数的 `id` 和 `name`，并且提供了说明。
+在以下示例中，短语“对两个数字求和的函数”是 id 属性为 `ADD` 的自定义函数的相关说明。
 
 ```js
 /**
@@ -139,7 +137,7 @@ Excel 自定义函数支持以下 JSDoc 标记：
 
 提供的 _url_ 显示在 Excel 中。
 
-在下面的`helpurl`示例中，为`www.contoso.com/weatherhelp`。
+在下面的示例中， `helpurl` 为 `www.contoso.com/weatherhelp` 。
 
 ```js
 /**
@@ -158,9 +156,9 @@ Excel 自定义函数支持以下 JSDoc 标记：
 
 JavaScript 语法：@param {type} name _description_
 
-* `{type}` 应在大括号内指定类型信息。 有关可能使用的类型的详细信息，请参阅[类型](#types)部分。 可选：如果未指定，则使用类型 `any`。
-* `name` 指定 @param 标记适用于哪个参数。 必需。
-* `description` 为函数参数提供显示在 Excel 中的说明。 可选。
+* `{type}`指定大括号中的类型信息。 有关可能使用的类型的详细信息，请参阅[类型](#types)部分。 如果未指定任何类型，则 `any` 将使用默认类型。
+* `name`指定应用 @param 标记的参数。 它是必需的。
+* `description` 为函数参数提供显示在 Excel 中的说明。 它是可选的。
 
 若要将自定义函数参数表示为可选，请执行以下操作：
 * 为参数名称加上方括号。 例如：`@param {string} [text] Optional text`。
@@ -168,7 +166,7 @@ JavaScript 语法：@param {type} name _description_
 > [!NOTE]
 > 可选参数的默认值为 `null`。
 
-下面的示例显示了 ADD 函数，该函数将两个或三个数字相加，第三个数字作为可选参数。
+下面的示例演示添加两个或三个数字的 ADD 函数，第三个数字作为可选参数。
 
 ```js
 /**
@@ -185,8 +183,8 @@ JavaScript 语法：@param {type} name _description_
 
 TypeScript 语法：@param name _description_
 
-* `name` 指定 @param 标记适用于哪个参数。 必需。
-* `description` 为函数参数提供显示在 Excel 中的说明。 可选。
+* `name`指定应用 @param 标记的参数。 它是必需的。
+* `description` 为函数参数提供显示在 Excel 中的说明。 它是可选的。
 
 有关可能使用的函数参数类型的详细信息，请参阅[类型](#types)部分。
 
@@ -220,7 +218,7 @@ function add(first: number, second: number): number {
 
 表示应提供计算函数所在的单元格的地址。
 
-最后一个函数参数的类型必须是 `CustomFunctions.Invocation` 或派生类型。 调用函数时，`address` 属性将包含地址。 有关使用 `@requiresAddress` 标记的函数示例，请参阅[寻址单元格的上下文参数](custom-functions-parameter-options.md#addressing-cells-context-parameter)。
+最后一个函数参数的类型必须是 `CustomFunctions.Invocation` 或派生类型。 调用函数时，`address` 属性将包含地址。
 
 ---
 ### <a name="returns"></a>@returns
@@ -253,10 +251,10 @@ function add(first: number, second: number): number {
 
 用于表示自定义函数是一个流式处理函数。 
 
-最后一个参数的类型应为 `CustomFunctions.StreamingInvocation<ResultType>`。
-该函数应返回 `void`。
+最后一个参数的类型为 `CustomFunctions.StreamingInvocation<ResultType>` 。
+函数将返回 `void` 。
 
-流式处理函数不直接返回值，而是应该使用最后一个参数调用 `setResult(result: ResultType)`。
+流式处理函数不直接返回值，而是 `setResult(result: ResultType)` 使用最后一个参数调用。
 
 由流式处理函数引发的异常将被忽略。 `setResult()` 可能称为“错误”，以指示错误结果。 有关流式处理函数的示例和更多信息，请参阅[生成流式处理函数](./custom-functions-web-reqs.md#make-a-streaming-function)。
 
@@ -305,7 +303,7 @@ function roll6sided(): number {
 
 ### <a name="promise"></a>Promise
 
-函数可以返回 Promise，将在解析 promise 后提供值。 如果 promise 被拒绝，则会出现错误。
+函数可以返回一个承诺，该承诺可在解决承诺时提供值。 如果承诺被拒绝，则会引发错误。
 
 ### <a name="other-types"></a>其他类型
 

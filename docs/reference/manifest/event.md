@@ -1,27 +1,27 @@
 ---
 title: 清单文件中的 Event 元素
 description: 定义外接程序中的事件处理程序。
-ms.date: 10/09/2018
+ms.date: 05/15/2020
 localization_priority: Normal
-ms.openlocfilehash: 02037a54ad4b7e91a3697b53b04fa30e8a4909a9
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: 80f21d1819e3d7e335389070ccac0db583026045
+ms.sourcegitcommit: 54e2892c0c26b9ad1e4dba8aba48fea39f853b6c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42718228"
+ms.lasthandoff: 05/18/2020
+ms.locfileid: "44275705"
 ---
 # <a name="event-element"></a>Event 元素
 
 定义外接程序中的事件处理程序。
 
-> [!NOTE] 
-> 目前`Event` ，Outlook 在 Office 365 中的网站仅支持该元素。
+> [!NOTE]
+> 有关支持和使用的信息，请参阅[Outlook 外接程序的 "发送时功能"](../../outlook/outlook-on-send-addins.md)。
 
 ## <a name="attributes"></a>属性
 
 |  属性  |  必需  |  说明  |
 |:-----|:-----|:-----|
-|  [类型](#type-attribute)  |  是  | 指定要处理的事件。 |
+|  [Type](#type-attribute)  |  是  | 指定要处理的事件。 |
 |  [FunctionExecution](#functionexecution-attribute)  |  是  | 指定事件处理程序的执行风格、异步或同步。目前仅支持同步事件处理程序。 |
 |  [FunctionName](#functionname-attribute)  |  是  | 指定事件处理程序的函数名称。 |
 
@@ -42,5 +42,5 @@ ms.locfileid: "42718228"
 必需。指定事件处理程序的函数名称。该值必须与外接程序的[函数文件](functionfile.md)中的函数名称相匹配。
 
 ```xml
-<Event Type="ItemSend" FunctionExecution="synchronous" FunctionName="itemSendHandler" /> 
+<Event Type="ItemSend" FunctionExecution="synchronous" FunctionName="itemSendHandler" />
 ```

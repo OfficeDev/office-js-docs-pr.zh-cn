@@ -1,20 +1,29 @@
 ---
 title: 清单文件中的运行时
-description: Runtime 元素将您的外接程序配置为对其功能区、任务窗格和自定义函数使用共享的 JavaScript 运行时。
-ms.date: 05/11/2020
+description: Runtime 元素将您的外接程序配置为对其各个组件使用共享的 JavaScript 运行时，例如，功能区、任务窗格、自定义函数。
+ms.date: 05/18/2020
 localization_priority: Normal
-ms.openlocfilehash: c5c7356f9985ca7b5972068629b0587f8916348e
-ms.sourcegitcommit: 682d18c9149b1153f9c38d28e2a90384e6a261dc
+ms.openlocfilehash: c2c404bcaad6e24af58f5c0ed8835343abb97e5f
+ms.sourcegitcommit: f62d9630de69c5c070e3d4048205f5cc654db7e4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "44217758"
+ms.lasthandoff: 05/18/2020
+ms.locfileid: "44278411"
 ---
-# <a name="runtime-element"></a>Runtime 元素
+# <a name="runtime-element-preview"></a>Runtime 元素（预览）
 
-元素的子元素 [`<Runtimes>`](runtimes.md) 。 此元素将您的外接程序配置为使用共享的 JavaScript 运行时，以便功能区、任务窗格和自定义函数在同一运行时中运行。 有关详细信息，请参阅[Configure Excel 外接程序以使用共享的 JavaScript 运行时](../../excel/configure-your-add-in-to-use-a-shared-runtime.md)。
+将您的外接程序配置为使用共享的 JavaScript 运行时，以便在同一运行时中运行各种组件。 元素的子 [`<Runtimes>`](runtimes.md) 元素。
 
-**外接程序类型：** 任务窗格
+在 Excel 中，此元素使功能区、任务窗格和自定义函数能够使用相同的运行时。 有关详细信息，请参阅[Configure Excel 外接程序以使用共享的 JavaScript 运行时](../../excel/configure-your-add-in-to-use-a-shared-runtime.md)。
+
+在 Outlook 中，此元素启用基于事件的加载项激活。 有关详细信息，请参阅[Configure Outlook 外接程序以进行基于事件的激活](../../outlook/autolaunch.md)。
+
+**外接类型：** 任务窗格、邮件
+
+> [!IMPORTANT]
+> **Excel**：共享运行时当前处于预览阶段，仅在 Windows 中的 Excel 中可用。 若要尝试预览功能，你需要加入[Office 预览体验成员](https://insider.office.com/)。
+>
+> **Outlook**：基于事件的激活当前[处于预览阶段](../../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md)，仅适用于 web 上的 outlook。 有关详细信息，请参阅[如何预览基于事件的激活功能](../../outlook/autolaunch.md#how-to-preview-the-event-based-activation-feature)。
 
 ## <a name="syntax"></a>语法
 
@@ -32,8 +41,8 @@ ms.locfileid: "44217758"
 
 |  属性  |  必需  |  说明  |
 |:-----|:-----|:-----|
-|  **生存时间 = "long"**  |  是  | 应始终是 `long` ，如果您想要为 Excel 加载项使用共享运行时。 |
 |  **resid**  |  是  | 指定您的外接程序的 HTML 页面的 URL 位置。 `resid`必须与 `id` `Url` 元素中元素的属性相匹配 `Resources` 。 |
+|  **lifetime**  |  否  | 的默认值 `lifetime` 是 `short` ，不需要指定。 Outlook 外接程序仅使用 `short` 值。 如果要在 Excel 外接程序中使用共享运行时，请将值显式设置为 `long` 。 |
 
 ## <a name="see-also"></a>另请参阅
 

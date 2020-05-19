@@ -1,14 +1,14 @@
 ---
 title: 排查 Office 加载项中的用户错误
 description: 了解如何解决 Office 外接程序中的用户错误。
-ms.date: 04/13/2020
+ms.date: 05/15/2020
 localization_priority: Normal
-ms.openlocfilehash: 81ca9eac89fb949bd2c1f7f63861d8a4f5295a79
-ms.sourcegitcommit: 118e8bcbcfb73c93e2053bda67fe8dd20799b170
+ms.openlocfilehash: 1ef805f4a35431d3bd7611054963ff6adfa53de0
+ms.sourcegitcommit: 54e2892c0c26b9ad1e4dba8aba48fea39f853b6c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "43241047"
+ms.lasthandoff: 05/18/2020
+ms.locfileid: "44275719"
 ---
 # <a name="troubleshoot-user-errors-with-office-add-ins"></a>排查 Office 加载项中的用户错误
 
@@ -43,7 +43,7 @@ ms.locfileid: "43241047"
 如果在 Windows 上运行并[使用 Internet Explorer](../concepts/browsers-used-by-office-web-add-ins.md) 的 Outlook 加载项不能正常工作，请尝试在 Internet Explorer 中启用脚本调试。 
 
 
-- 转到 Tools > **Internet Options** > **Advanced**"。
+- 转到 Tools > **Internet Options**  >  **Advanced**"。
     
 - 在“浏览”**** 下，取消选中“禁用脚本调试 (Internet Explorer)”**** 和“禁用脚本调试 (其他)”****。
     
@@ -96,7 +96,7 @@ ms.locfileid: "43241047"
 在弹出模式中使用对话框 API 时，会出现此问题。若要避免出现此问题，请使用 [displayInFrame](/javascript/api/office/office.ui) 标记。这要求页面支持在 iframe 中进行显示。以下示例演示如何使用此标记。
 
 ```js
-Office.context.ui.displayDialogAsync(startAddress, {displayInFrame:true}, callback);
+Office.context.ui.displayDialogAsync(startAddress, {displayInIFrame:true}, callback);
 ```
 
 ## <a name="changes-to-add-in-commands-including-ribbon-buttons-and-menu-items-do-not-take-effect"></a>对加载项命令（包括功能区按钮和菜单项）的更改未生效

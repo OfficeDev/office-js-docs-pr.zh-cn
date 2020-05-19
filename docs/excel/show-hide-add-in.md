@@ -1,24 +1,24 @@
 ---
 title: 在共享运行时中显示或隐藏 Office 加载项
-description: 了解如何在连续运行时以编程方式隐藏或显示外接程序的 UI
-ms.date: 05/11/2020
+description: 了解如何在连续运行时以编程方式隐藏或显示外接程序的用户界面
+ms.date: 05/17/2020
 localization_priority: Normal
-ms.openlocfilehash: 05d254bd4dd5ddb11fd124d75e62ce1a4d8125d2
-ms.sourcegitcommit: 682d18c9149b1153f9c38d28e2a90384e6a261dc
+ms.openlocfilehash: e49c47c86a986c85ad12e09666b7ac2fb5411322
+ms.sourcegitcommit: 54e2892c0c26b9ad1e4dba8aba48fea39f853b6c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "44217905"
+ms.lasthandoff: 05/18/2020
+ms.locfileid: "44275712"
 ---
 # <a name="show-or-hide-an-office-add-in-in-a-shared-runtime"></a>在共享运行时中显示或隐藏 Office 加载项
 
 Office 外接程序可以包含以下任何部分：
 
 - 任务窗格
-- 不带 UI 的函数文件
+- 无 UI 的函数文件（不使用任务窗格或其他用户界面元素的自定义函数）
 - Excel 自定义函数
 
-默认情况下，每个部件都在自己的独立 JavaScript 运行时中运行，其中包含其自己的全局对象和全局变量。 
+默认情况下，每个部件都在自己的独立 JavaScript 运行时中运行，其中包含其自己的全局对象和全局变量。
 
 具有两个或更多个部件的外接程序可以共享一个通用的 JavaScript 运行时。 此共享运行时功能启用在外接程序运行时隐藏和重新打开任务窗格的新 Api。
 
