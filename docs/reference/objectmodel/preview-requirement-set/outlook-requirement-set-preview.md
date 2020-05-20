@@ -1,14 +1,14 @@
 ---
 title: Outlook 外接程序 API 预览要求集
 description: 当前在 Outlook 外接程序的预览中的功能和 Api。
-ms.date: 05/18/2020
+ms.date: 05/19/2020
 localization_priority: Normal
-ms.openlocfilehash: 893c90dc7344adba86a8a92b86063ed2419eae34
-ms.sourcegitcommit: f62d9630de69c5c070e3d4048205f5cc654db7e4
+ms.openlocfilehash: 3183c81a9af99f480c2dbecc787695501380cea7
+ms.sourcegitcommit: 8499a4247d1cb1e96e99c17cb520f4a8a41667e3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/18/2020
-ms.locfileid: "44278341"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "44292292"
 ---
 # <a name="outlook-add-in-api-preview-requirement-set"></a>Outlook 外接程序 API 预览要求集
 
@@ -188,23 +188,7 @@ Office JavaScript API 的 Outlook 外接程序 API 子集包括可以在 Outlook
 
 ---
 
-### <a name="online-meeting-provider-integration"></a>联机会议提供程序集成
-
-添加了对 Outlook 移动外接程序中的联机会议集成的支持。有关详细信息，请参阅为[联机会议提供商创建 Outlook mobile 外接程序](../../../outlook/online-meeting.md)以了解详细信息。
-
-#### <a name="mobileonlinemeetingcommandsurface-extension-point"></a>[MobileOnlineMeetingCommandSurface 扩展点](../../manifest/extensionpoint.md#mobileonlinemeetingcommandsurface-preview)
-
-`MobileOnlineMeetingCommandSurface`向清单添加了扩展点。 它定义联机会议集成。
-
-**适用于**： Outlook on Android （连接到 Office 365 订阅）
-
-<br>
-
----
-
----
-
-### <a name="sso"></a>SSO
+### <a name="single-sign-on-sso"></a>单一登录 (SSO)
 
 #### <a name="officeruntimeauthgetaccesstoken"></a>[OfficeRuntime.auth.getAccessToken](../../../develop/sso-in-office-add-ins.md#sso-api-reference)
 

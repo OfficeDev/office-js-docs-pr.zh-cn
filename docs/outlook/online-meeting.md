@@ -1,30 +1,30 @@
 ---
-title: 为联机会议提供商创建 Outlook mobile 外接程序（预览）
+title: 为联机会议提供商创建 Outlook mobile 外接程序
 description: 讨论如何为联机会议服务提供商设置 Outlook 移动外接程序。
 ms.topic: article
-ms.date: 04/23/2020
+ms.date: 05/19/2020
 localization_priority: Normal
-ms.openlocfilehash: 8a54ddf96ca2b5e697198b4bc69b2ec5abee10d1
-ms.sourcegitcommit: 0fdb78cefa669b727b817614a4147a46d249a0ed
+ms.openlocfilehash: 1d42ec82e12e9f34f0211ca9926f5ae8b92c7804
+ms.sourcegitcommit: 8499a4247d1cb1e96e99c17cb520f4a8a41667e3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "43930321"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "44292285"
 ---
-# <a name="create-an-outlook-mobile-add-in-for-an-online-meeting-provider-preview"></a>为联机会议提供商创建 Outlook mobile 外接程序（预览）
+# <a name="create-an-outlook-mobile-add-in-for-an-online-meeting-provider"></a>为联机会议提供商创建 Outlook mobile 外接程序
 
 设置联机会议是 Outlook 用户的核心体验，可轻松[创建使用 outlook mobile 的团队会议](/microsoftteams/teams-add-in-for-outlook)。 但是，在 Outlook 中使用非 Microsoft 服务创建联机会议可能很麻烦。 通过实施此功能，服务提供商可以为其 Outlook 外接程序用户简化联机会议创建体验。
 
-> [!NOTE]
-> 只有 Office 365 订阅的 Android 中的[预览](../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md)才支持此功能。
+> [!IMPORTANT]
+> 此功能仅在 Office 365 订阅的 Android 上受支持。
 
 在本文中，您将了解如何设置 Outlook 移动外接程序，以使用户能够使用您的联机会议服务来组织和加入会议。 在整篇文章中，我们将使用虚构的联机会议服务提供商 "Contoso"。
 
 ## <a name="configure-the-manifest"></a>配置清单
 
-若要使用户能够使用您的外接程序创建联机会议，必须在`MobileOnlineMeetingCommandSurface`父元素`MobileFormFactor`下的清单中配置扩展点。 不支持其他外观因素。
+若要使用户能够使用您的外接程序创建联机会议，必须在 `MobileOnlineMeetingCommandSurface` 父元素下的清单中配置扩展点 `MobileFormFactor` 。 不支持其他外观因素。
 
-下面的示例展示了包含`MobileFormFactor`元素和`MobileOnlineMeetingCommandSurface`扩展点的清单中的摘录。
+下面的示例展示了包含 `MobileFormFactor` 元素和扩展点的清单中的摘录 `MobileOnlineMeetingCommandSurface` 。
 
 > [!TIP]
 > 若要了解有关 Outlook 外接程序清单的详细信息，请参阅[outlook 外接程序清单](manifests.md)和[添加对适用于 outlook Mobile 的外接程序命令的支持](add-mobile-support.md)。
@@ -87,7 +87,7 @@ const newBody = '<br>' +
     '<br><br>';
 ```
 
-下面的示例演示如何定义清单中`insertContosoMeeting`引用的无 UI 的函数，以使用联机会议详细信息更新会议正文。
+下面的示例演示如何定义清单中引用的无 UI 的函数， `insertContosoMeeting` 以使用联机会议详细信息更新会议正文。
 
 ```js
 var mailboxItem;
@@ -114,7 +114,7 @@ function insertContosoMeeting(event) {
 }
 ```
 
-下面的示例演示在上一示例中使用`updateBody`的支持函数的实现，该示例将联机会议详细信息追加到会议的当前正文。
+下面的示例演示 `updateBody` 在上一示例中使用的支持函数的实现，该示例将联机会议详细信息追加到会议的当前正文。
 
 ```js
 function updateBody(event, existingBody) {
@@ -141,7 +141,7 @@ function updateBody(event, existingBody) {
 
 作为会议组织者，在创建会议时，您应看到类似于以下三幅图像的屏幕。
 
-在 android 上创建会议屏幕的[ ![](../images/outlook-android-create-online-meeting-load.png)](../images/outlook-android-create-online-meeting-load-expanded.png#lightbox) [屏幕截图-contoso 切换关闭在 android 上创建会议屏幕的屏幕截图打开在 android 上创建会议屏幕的屏幕![](../images/outlook-android-create-online-meeting-off.png)](../images/outlook-android-create-online-meeting-off-expanded.png#lightbox)截图[ ![-contoso 切换](../images/outlook-android-create-online-meeting-on.png)](../images/outlook-android-create-online-meeting-on-expanded.png#lightbox)
+在 android 上创建会议屏幕的[ ![ 屏幕截图-contoso 切换关闭](../images/outlook-android-create-online-meeting-off.png)](../images/outlook-android-create-online-meeting-off-expanded.png#lightbox)在 android 上创建会议屏幕[ ![ 的屏幕截图](../images/outlook-android-create-online-meeting-load.png)](../images/outlook-android-create-online-meeting-load-expanded.png#lightbox)打开在 android 上创建会议屏幕的屏幕截图[ ![ -contoso 切换](../images/outlook-android-create-online-meeting-on.png)](../images/outlook-android-create-online-meeting-on-expanded.png#lightbox)
 
 ### <a name="join-meeting-ui"></a>加入会议 UI
 
@@ -171,10 +171,9 @@ function updateBody(event, existingBody) {
 应用了多个限制。
 
 - 仅适用于联机会议服务提供商。
-- 当前在预览中，因此不应在生产外接程序中使用此功能。
 - 目前，Android 是唯一受支持的客户端。 即将推出对 iOS 的支持。
 - 只有管理员安装的加载项才会显示在会议撰写屏幕上，替换默认团队或 Skype 选项。 无法激活用户安装的外接程序。
-- 外接端图标应使用十六进制代码`#919191`或以[其他颜色格式](https://convertingcolors.com/hex-color-919191.html)的等效项进行灰度。
+- 外接端图标应使用十六进制代码 `#919191` 或以[其他颜色格式](https://convertingcolors.com/hex-color-919191.html)的等效项进行灰度。
 - 在约会组织者（撰写）模式下仅支持一个无 UI 的命令。
 
 ## <a name="see-also"></a>另请参阅

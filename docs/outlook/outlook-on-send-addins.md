@@ -1,14 +1,14 @@
 ---
 title: Outlook 加载项的 Onsend 功能
 description: 提供了一种处理项目或阻止用户进行特定操作的方法，并允许加载项在发送时设置某些属性。
-ms.date: 04/15/2020
+ms.date: 05/19/2020
 localization_priority: Normal
-ms.openlocfilehash: d882bf988473e71de2621c144964f6116afe962c
-ms.sourcegitcommit: 79c55e59294e220bd21a5006080f72acf3ec0a3f
+ms.openlocfilehash: 7ee9e42c5be2fc25f4f310ae5c14cebe1c5b64af
+ms.sourcegitcommit: 66c73c64ad1b5708ffccdd80817f557292c706b8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "43581930"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "44321864"
 ---
 # <a name="on-send-feature-for-outlook-add-ins"></a>Outlook 加载项的 Onsend 功能
 
@@ -17,15 +17,26 @@ Outlook 加载项的 Onsend 功能提供了一种处理邮件或会议项目，�
 - 防止用户发送敏感信息或将主题行留空。  
 - 将特定的收件人添加到邮件中的“抄送”行中，或添加到会议中的“可选收件人”行中。
 
-> [!NOTE]
-> Exchange Online (Office 365)、Exchange 2016 本地版本（累积更新 6 或更高版本）和 Exchange 2019 本地版本（累积更新 1 或更高版本）中 Outlook 网页版支持 on-send 功能。 Windows 和 Mac 上的最新 Outlook 内部版本中也提供了此功能，与 Exchange Online (Office 365) 连接。 此功能在要求集1.8 中引入（有关详细信息，请参阅[当前服务器和客户端支持](../reference/requirement-sets/outlook-api-requirement-sets.md#requirement-sets-supported-by-exchange-servers-and-outlook-clients)）。
-
-> [!IMPORTANT]
-> [AppSource](https://appsource.microsoft.com)中不允许使用 "发送时" 功能的外接程序。
-
 on-send 功能是由事件类型 `ItemSend` 触发的，无 UI。
 
 有关 Onsend 功能的限制信息，请参阅本文稍后部分中介绍的[限制](#limitations)。
+
+## <a name="supported-clients-and-platforms"></a>支持的客户端和平台
+
+下表显示了用于 "发送" 功能的受支持的客户端/服务器组合。 不支持排除的组合。
+
+| Client | Exchange Online | Exchange 2016 本地<br>（累积更新6或更高版本） | Exchange 2019 本地<br>（累积更新1或更高版本） |
+|---|:---:|:---:|:---:|
+|Windows：<br>版本1910（内部版本12130.20272）或更高版本|是|是|是|
+|Mac<br>生成16.30 或更高版本|是|否|否|
+|Web 浏览器：<br>新式 Outlook UI|是|不适用|不适用|
+|Web 浏览器：<br>经典 Outlook UI|不适用|是|是|
+
+> [!NOTE]
+> 按发送功能在要求集1.8 中发布（有关详细信息[，请参阅当前服务器和客户端支持](../reference/requirement-sets/outlook-api-requirement-sets.md#requirement-sets-supported-by-exchange-servers-and-outlook-clients)）。
+
+> [!IMPORTANT]
+> [AppSource](https://appsource.microsoft.com)中不允许使用 "发送时" 功能的外接程序。
 
 ## <a name="how-does-the-on-send-feature-work"></a>Onsend 功能的工作原理
 
@@ -338,10 +349,10 @@ Get-OWAMailboxPolicy OWAOnSendAddinAllUserPolicy | Set-OWAMailboxPolicy –OnSen
 
 #### <a name="web-browser-classic-outlook"></a>Web 浏览器（经典 Outlook）
 
-|应用场景|邮箱 1 Onsend 功能|邮箱 2 Onsend 功能|Outlook Web 会话（经典）|结果|是否支持？|
+|方案|邮箱 1 Onsend 功能|邮箱 2 Onsend 功能|Outlook Web 会话（经典）|结果|是否支持？|
 |:------------|:------------|:--------------------------|:---------|:-------------|:-------------|
-|1|已启用|已启用|新会话|邮箱 1 无法从邮箱 2 发送邮件或会议项目。|目前尚不支持。可以使用方案 3 作为一种解决办法。|
-|双面|Disabled|已启用|新会话|邮箱 1 无法从邮箱 2 发送邮件或会议项目。|目前尚不支持。可以使用方案 3 作为一种解决办法。|
+|1 |已启用|已启用|新会话|邮箱 1 无法从邮箱 2 发送邮件或会议项目。|目前尚不支持。可以使用方案 3 作为一种解决办法。|
+|2 |已禁用|已启用|新会话|邮箱 1 无法从邮箱 2 发送邮件或会议项目。|目前尚不支持。可以使用方案 3 作为一种解决办法。|
 |第三章|已启用|已启用|同一个会话|分配给邮箱 1 的 Onsend 加载项运行 Onsend。|支持。|
 |4 |已启用|已禁用|新会话|未运行 Onsend 加载项；邮件或会议项目已发送。|支持。|
 
@@ -355,8 +366,8 @@ Get-OWAMailboxPolicy OWAOnSendAddinAllUserPolicy | Set-OWAMailboxPolicy –OnSen
 
 |方案|邮箱 1 Onsend 策略|是否启用了 Onsend 加载项？|邮箱 1 操作|结果|是否支持？|
 |:------------|:-------------------------|:-------------------|:---------|:----------|:-------------|
-|1|已启用|是|邮箱 1 撰写发送到组 1 的新邮件或会议。|发送期间，Onsend 加载项运行。|是|
-|双面|已启用|是|邮箱 1 在 Outlook 网页版组 1 的组窗口中撰写发送到组 1 的新邮件或会议。|Onsend 加载项不会在发送期间运行。|目前尚不支持。 可以使用方案 1 作为一种解决办法。|
+|1 |已启用|是|邮箱 1 撰写发送到组 1 的新邮件或会议。|发送期间，Onsend 加载项运行。|是|
+|2 |已启用|是|邮箱 1 在 Outlook 网页版组 1 的组窗口中撰写发送到组 1 的新邮件或会议。|Onsend 加载项不会在发送期间运行。|目前尚不支持。 可以使用方案 1 作为一种解决办法。|
 
 ### <a name="user-mailbox-with-on-send-add-in-featurepolicy-enabled-add-ins-that-support-on-send-are-installed-and-enabled-and-offline-mode-is-enabled"></a>用户邮箱启用了 Onsend 加载项功能/策略，并且安装并启用了支持 Onsend 的加载项，启用了脱机模式
 
@@ -408,7 +419,7 @@ Onsend 加载项将根据用户、加载项后端和 Exchange 的联机状态运
 ```
 
 > [!IMPORTANT]
-> 如果使用 Visual Studio 2019 开发你的发送外接程序，则可能会收到类似于以下的验证警告： "这是一个无效的 xsi： type 'http://schemas.microsoft.com/office/mailappversionoverrides/1.1:Events"。 "若要解决此问题，您需要在[有关此警告的博客](https://theofficecontext.com/2018/11/29/visual-studio-2017-this-is-an-invalid-xsitype-mailappversionoverrides-1-1event/)中提供了 MailAppVersionOverridesV1_1 的较新版本的 .Xsd 作为 GitHub gist 提供。
+> 如果使用 Visual Studio 2019 开发你的发送外接程序，则可能会收到类似于以下的验证警告： "这是一个无效的 xsi： type ' http://schemas.microsoft.com/office/mailappversionoverrides/1.1:Events "。 "若要解决此问题，您需要在[有关此警告的博客](https://theofficecontext.com/2018/11/29/visual-studio-2017-this-is-an-invalid-xsitype-mailappversionoverrides-1-1event/)中提供了 MailAppVersionOverridesV1_1 的较新版本的 .Xsd 作为 GitHub gist 提供。
 
 对于 `Contoso Subject and CC Checker.xml` 清单文件，以下示例中显示了邮件发送事件中要调用的函数文件和函数名称。
 
