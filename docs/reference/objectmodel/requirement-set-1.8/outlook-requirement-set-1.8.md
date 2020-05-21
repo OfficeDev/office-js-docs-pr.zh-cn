@@ -1,14 +1,14 @@
 ---
 title: Outlook 加载项 API 要求集 1.8
 description: 适用于 Outlook 外接程序 API 的要求集1。8
-ms.date: 12/17/2019
+ms.date: 05/20/2020
 localization_priority: Normal
-ms.openlocfilehash: ca107a13080e8b25ed76bcae4bf4afe1bec9938f
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: 1e6a903a9e627f3344eee9283e051ac84b5abf10
+ms.sourcegitcommit: b6fd04b55cb1f39b316bcb0b3f3e1e33800b1d36
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42719992"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "44326874"
 ---
 # <a name="outlook-add-in-api-requirement-set-18"></a>Outlook 加载项 API 要求集 1.8
 
@@ -20,11 +20,12 @@ Office JavaScript API 的 Outlook 外接程序 API 子集包括可以在 Outlook
 
 - 添加了用于附件、类别、代理访问、增强位置、Internet 标头和发送时阻止功能的新 API。
 - 向 Event.completed 添加了可选的 `options` 参数。
-- 添加了对 AttachmentsChanged 和 EnhancedLocationsChanged 事件的支持。
+- 添加了对 `AttachmentsChanged` 和 `EnhancedLocationsChanged` 事件的支持。
 
 ### <a name="change-log"></a>更改日志
 
 - 添加了 [AttachmentContent](/javascript/api/outlook/office.attachmentcontent?view=outlook-js-1.8)：新增了一个表示附件内容的对象。
+- 添加了[AttachmentDetailsCompose](/javascript/api/outlook/office.attachmentdetailscompose?view=outlook-js-1.8)：添加了一个新对象，该对象代表撰写模式下的附件的详细信息。
 - 添加了 [Categories](/javascript/api/outlook/office.categories?view=outlook-js-1.8)：新增了一个表示项目类别的对象。
 - 添加了 [CategoryDetails](/javascript/api/outlook/office.categorydetails?view=outlook-js-1.8)：新增了一个表示类别详细信息（其名称以及对应的颜色）的对象。
 - 添加了 [EnhancedLocation](/javascript/api/outlook/office.enhancedlocation?view=outlook-js-1.8)：新增了一个表示约会位置集的对象。
