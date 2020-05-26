@@ -906,12 +906,12 @@
           href: outlook/online-meeting.md
         - name: Onsend 加载项
           href: outlook/outlook-on-send-addins.md
+        - name: 基于事件的激活（预览）
+          href: outlook/autolaunch.md
         - name: 可固定任务窗格
           href: outlook/pinnable-taskpane.md
         - name: 委托访问
           href: outlook/delegate-access.md
-        - name: 配置基于事件的激活（预览）
-          href: outlook/autolaunch.md
         - name: 清单
           items:
             - name: Outlook 外接程序清单

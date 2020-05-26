@@ -1,23 +1,26 @@
 ---
 title: 加载项命令的基本概念
-description: 了解如何将自定义功能区按钮和菜单项添加到 Office 作为 Office Web 加载项的一部分。
-ms.date: 02/11/2020
+description: 了解如何将自定义功能区按钮和菜单项添加到 Office 作为 Office 加载项的一部分。
+ms.date: 05/12/2020
 localization_priority: Priority
-ms.openlocfilehash: 6395b087ea191b37e9398096038dacfd66ed263c
-ms.sourcegitcommit: 6c381634c77d316f34747131860db0a0bced2529
+ms.openlocfilehash: dbd25761dcf852905a766489cf4689856115cc39
+ms.sourcegitcommit: 682d18c9149b1153f9c38d28e2a90384e6a261dc
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/21/2020
-ms.locfileid: "42890554"
+ms.lasthandoff: 05/13/2020
+ms.locfileid: "44217898"
 ---
-# <a name="add-in-commands-for-excel-word-and-powerpoint"></a>Excel、Word 和 PowerPoint 加载项命令
+# <a name="add-in-commands-for-excel-powerpoint-and-word"></a>Excel、PowerPoint 和 Word 的加载项命令
 
 外接程序命令是 UI 元素，可扩展 Office UI，并在外接程序中启动操作。使用外接程序命令，可以在功能区上添加按钮，也可以向上下文菜单添加项。当用户选择外接程序命令时，将启动操作，如运行 JavaScript 代码或在任务窗格中显示外接程序页面。外接程序命令可帮助用户查找和使用外接程序，从而提高外接程序的采用率和重用率以及客户保留率。
 
 有关此功能的概述，请观看视频 [Office 功能区中的加载项命令](https://channel9.msdn.com/events/Build/2016/P551)。
 
 > [!NOTE]
-> SharePoint 目录不支持加载项命令。可以通过[集中部署](../publish/centralized-deployment.md)或 [AppSource](/office/dev/store/submit-to-appsource-via-partner-center) 部署加载项命令，也可以使用[旁加载](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)部署加载项命令以供测试。 
+> SharePoint 目录不支持加载项命令。可以通过[集中部署](../publish/centralized-deployment.md)或 [AppSource](/office/dev/store/submit-to-appsource-via-partner-center) 部署加载项命令，也可以使用[旁加载](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)部署加载项命令以供测试。
+
+> [!IMPORTANT]
+> Outlook 中也支持加载项命令。 有关详细信息，请参阅[适用于 Outlook 的加载项命令](../outlook/add-in-commands-for-outlook.md)。
 
 *图 1：在 Excel Desktop 中运行命令的加载项*
 
@@ -51,7 +54,7 @@ ms.locfileid: "42890554"
 
 ### <a name="default-enabled-or-disabled-status-preview"></a>默认启用或禁用状态（预览版）
 
-可指定在加载项启动时是启用还是禁用该命令，并以编程方式更改设置。 
+可指定在加载项启动时是启用还是禁用该命令，并以编程方式更改设置。
 
 > [!NOTE]
 > 此功能处于预览状态，并非在所有主机或方案中均受支持。 有关详细信息，请参阅[启用和禁用加载项命令](disable-add-in-commands.md)。
@@ -60,12 +63,14 @@ ms.locfileid: "42890554"
 
 目前，以下平台支持加载项命令。
 
-- Windows 版 Outlook 2016（内部版本 16.0.4678.1000+）
 - Windows 版 Office（生成号 16.0.6769 及更高版本，已连接到 Office 365 订阅）
 - Windows 版 Office 2019
 - Mac 版 Office（生成号 15.33 及更高版本，已连接到 Office 365 订阅）
 - Mac 版 Office 2019
 - Office 网页版
+
+> [!NOTE]
+> 有关 Outlook 支持的信息，请参阅[适用于 Outlook 的加载项命令](../outlook/add-in-commands-for-outlook.md)。
 
 ## <a name="debugging"></a>调试
 
