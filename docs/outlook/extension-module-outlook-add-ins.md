@@ -1,14 +1,14 @@
 ---
 title: 模块扩展 Outlook 加载项
 description: 可以创建在 Outlook 中运行的应用程序，以便用户无需退出 Outlook 即可轻松地访问业务信息和工作效率工具。
-ms.date: 06/04/2019
+ms.date: 05/27/2020
 localization_priority: Normal
-ms.openlocfilehash: a7c4031061dd5cd4605220c6839481b3a88e53d9
-ms.sourcegitcommit: a3ddfdb8a95477850148c4177e20e56a8673517c
+ms.openlocfilehash: 5c5c57b28f63665ac0cac1dfc443651a0d830f5f
+ms.sourcegitcommit: 77617f6ad06e07f5ff8078b26301748f73e2ee01
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "42166018"
+ms.lasthandoff: 05/29/2020
+ms.locfileid: "44413201"
 ---
 # <a name="module-extension-outlook-add-ins"></a>模块扩展 Outlook 加载项
 
@@ -150,5 +150,5 @@ ms.locfileid: "42166018"
 ## <a name="see-also"></a>另请参阅
 
 - [Outlook 加载项清单](manifests.md)
-- [在清单中定义外接程序命令](../develop/define-add-in-commands.md)
+- [适用于 Outlook 的外接程序命令](add-in-commands-for-outlook.md)
 - [Outlook 模块扩展计酬时间示例](https://github.com/OfficeDev/Outlook-Add-in-JavaScript-ModuleExtension)

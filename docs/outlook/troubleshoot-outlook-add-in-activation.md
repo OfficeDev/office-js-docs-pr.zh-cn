@@ -1,14 +1,14 @@
 ---
 title: Outlook 上下文加载项激活故障排查
 description: 如果加载项未按预期激活，应考虑以下几个方面的可能原因。
-ms.date: 10/31/2019
+ms.date: 05/27/2020
 localization_priority: Normal
-ms.openlocfilehash: cfc5595257b6f8413aa3c1452fb5752e83ece631
-ms.sourcegitcommit: a3ddfdb8a95477850148c4177e20e56a8673517c
+ms.openlocfilehash: 555ae2a45bf49d74d1fd439258fd87035644e86a
+ms.sourcegitcommit: 77617f6ad06e07f5ff8078b26301748f73e2ee01
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "42165882"
+ms.lasthandoff: 05/29/2020
+ms.locfileid: "44413180"
 ---
 # <a name="troubleshoot-outlook-add-in-activation"></a>Outlook 加载项激活故障排查
 
@@ -81,10 +81,17 @@ Outlook 上下文加载项激活基于加载项清单中的激活规则。在当
 此方案仅适用于 Windows 版 Outlook。正常情况下，为邮箱安装 Outlook 加载项时，Exchange Server 会将加载项清单从你指示的位置复制到该 Exchange Server 上的邮箱。每次启动 Outlook 时，它都会将为该邮箱安装的所有清单读取到以下位置的临时缓存中：
 
 ```text
-%LocalAppData%\Microsoft\Office\15.0\WEF
+%LocalAppData%\Microsoft\Office\16.0\WEF
 ```
 
-例如，对于用户 John，缓存可能位于 C:\Users\john\AppData\Local\Microsoft\Office\15.0\WEF。
+例如，对于用户 John，缓存可能位于 C:\Users\john\AppData\Local\Microsoft\Office\16.0\WEF。
+
+> [!IMPORTANT]
+> 对于 Windows 上的 Outlook 2013，请使用15.0 而不是16.0，以便位置为：
+>
+> ```text
+> %LocalAppData%\Microsoft\Office\15.0\WEF
+> ```
 
 如果无法对任何项目激活加载项，则清单可能未正确安装在 Exchange Server 上，或者 Outlook 未在启动时正确读取清单。使用 Exchange 管理中心确保已为您的邮箱安装和启用加载项，并在必要时重新启动 Exchange Server。
 
@@ -103,7 +110,7 @@ Outlook 上下文加载项激活基于加载项清单中的激活规则。在当
 1. 如果 Outlook 无法激活加载项，则检查 Outlook 是否具有加载项清单的正确缓存副本。请查看以下路径：
 
     ```text
-    %LocalAppData%\Microsoft\Office\15.0\WEF
+    %LocalAppData%\Microsoft\Office\16.0\WEF
     ```
 
     可以在下列子文件夹中找到清单：
@@ -116,7 +123,7 @@ Outlook 上下文加载项激活基于加载项清单中的激活规则。在当
     > 下面的示例展示了为用户 John 的邮箱安装的清单路径：
     >
     > ```text
-    > C:\Users\john\appdata\Local\Microsoft\Office\15.0\WEF\{8D8445A4-80E4-4D6B-B7AC-D4E6AF594E73}\GoRshCWa7vW8+jhKmyiDhA==\Manifests\b3d7d9d5-6f57-437d-9830-94e2aaccef16_1.2
+    > C:\Users\john\appdata\Local\Microsoft\Office\16.0\WEF\{8D8445A4-80E4-4D6B-B7AC-D4E6AF594E73}\GoRshCWa7vW8+jhKmyiDhA==\Manifests\b3d7d9d5-6f57-437d-9830-94e2aaccef16_1.2
     > ```
 
     验证要测试的加载项的清单是否在已缓存清单中。
@@ -140,7 +147,7 @@ Outlook 上下文加载项激活基于加载项清单中的激活规则。在当
 1. 如果看不到成功事件，请关闭 Outlook，再删除以下路径中的所有清单：
 
     ```text
-    %LocalAppData%\Microsoft\Office\15.0\WEF\<insert your guid>\<insert base 64 hash>\Manifests\
+    %LocalAppData%\Microsoft\Office\16.0\WEF\<insert your guid>\<insert base 64 hash>\Manifests\
     ```
 
     启动 Outlook，并测试 Outlook 现在是否已激活加载项。
@@ -252,5 +259,5 @@ Outlook 富客户端使用的正则表达式引擎与 Outlook 网页版和移动
 - [部署和安装 Outlook 加载项以进行测试](testing-and-tips.md)
 - [Outlook 加载项的激活规则](activation-rules.md)
 - [使用正则表达式激活规则显示 Outlook 加载项](use-regular-expressions-to-show-an-outlook-add-in.md)
-- [Outlook 加载项的激活和 JavaScript API 限制](limits-for-activation-and-javascript-api-for-outlook-add-ins.md)
+- [Outlook 外接程序的激活和 JavaScript API 限制](limits-for-activation-and-javascript-api-for-outlook-add-ins.md)
 - [验证并排查清单问题](../testing/troubleshoot-manifest.md)

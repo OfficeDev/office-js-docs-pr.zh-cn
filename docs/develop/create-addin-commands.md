@@ -1,14 +1,14 @@
 ---
 title: 在您的清单中创建 Excel、PowerPoint 和 Word 的外接程序命令
 description: 在清单中使用 VersionOverrides 定义 Excel、PowerPoint 和 Word 的外接程序命令。使用外接命令创建 UI 元素、添加按钮或列表并执行操作。
-ms.date: 05/12/2020
+ms.date: 05/27/2020
 localization_priority: Normal
-ms.openlocfilehash: d318df0ab80a4cd83c6a74e77662f3e85df9f92d
-ms.sourcegitcommit: 682d18c9149b1153f9c38d28e2a90384e6a261dc
+ms.openlocfilehash: 02d61d90f500712b2970c4dfb5b439b3367f59d7
+ms.sourcegitcommit: 77617f6ad06e07f5ff8078b26301748f73e2ee01
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "44217884"
+ms.lasthandoff: 05/29/2020
+ms.locfileid: "44413173"
 ---
 # <a name="create-add-in-commands-in-your-manifest-for-excel-powerpoint-and-word"></a>在您的清单中创建 Excel、PowerPoint 和 Word 的外接程序命令
 
@@ -25,6 +25,9 @@ ms.locfileid: "44217884"
   - 运行 JavaScript 代码，该代码通常在不显示任何 UI 的情况下运行。
 
 本文介绍如何编辑您的清单来定义外接程序命令。下图显示了用来定义外接程序命令的元素的层次结构。本文将具体介绍这些元素。
+
+> [!NOTE]
+> Outlook 中也支持加载项命令。 有关详细信息，请参阅[适用于 Outlook 的外接程序命令](../outlook/add-in-commands-for-outlook.md)
 
 下图是对清单中的加载项命令元素的概述。 ![清单中的加载项命令元素概述](../images/version-overrides.png)
 
@@ -241,7 +244,7 @@ ms.locfileid: "44217884"
 </ExtensionPoint>
 ```
 
-|**元素**|**说明**|
+|**元素**|**描述**|
 |:-----|:-----|
 |**CustomTab** <br/> |如果想要（使用 **PrimaryCommandSurface**）向功能区添加自定义选项卡，则为必需项。如果使用 **CustomTab** 元素，则不能使用 **OfficeTab** 元素。**id** 属性是必需的。 <br/> |
 |**OfficeTab** <br/> |如果想要（使用 **PrimaryCommandSurface**）扩展默认 Office 功能区选项卡，则为必需项。如果使用 **OfficeTab** 元素，则不能使用 **CustomTab** 元素。 <br/> 对于与 **id** 属性一起使用的多个 tab 值，请参阅[默认 Office 功能区选项卡的 Tab 值](../reference/manifest/officetab.md)。  <br/> |
@@ -436,4 +439,4 @@ ms.locfileid: "44217884"
 
 ## <a name="see-also"></a>另请参阅
 
-- [Excel、PowerPoint 和 Word 的外接程序命令](../design/add-in-commands.md)
+- [Excel、PowerPoint 和 Word 的加载项命令](../design/add-in-commands.md)

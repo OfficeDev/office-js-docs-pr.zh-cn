@@ -2,14 +2,14 @@
 title: 配置 Outlook 外接程序以进行基于事件的激活（预览）
 description: 了解如何配置 Outlook 外接程序以进行基于事件的激活。
 ms.topic: article
-ms.date: 05/18/2020
+ms.date: 05/22/2020
 localization_priority: Normal
-ms.openlocfilehash: f059f6a96adeac38c632525ddc689a2b79892024
-ms.sourcegitcommit: f62d9630de69c5c070e3d4048205f5cc654db7e4
+ms.openlocfilehash: 73cdd4949b870d9bc5a5ad2006ce2081575558df
+ms.sourcegitcommit: 77617f6ad06e07f5ff8078b26301748f73e2ee01
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/18/2020
-ms.locfileid: "44278524"
+ms.lasthandoff: 05/29/2020
+ms.locfileid: "44413194"
 ---
 # <a name="configure-your-outlook-add-in-for-event-based-activation-preview"></a>配置 Outlook 外接程序以进行基于事件的激活（预览）
 
@@ -107,8 +107,7 @@ ms.locfileid: "44278524"
             </OfficeTab>
           </ExtensionPoint>
 
-          <!-- Configure AppointmentOrganizerCommandSurface extension point to support
-          add-in activation on composing a new appointment. -->
+          <!-- Can configure other command surface extension points for add-in command support. -->
 
           <!-- Enable launching the add-in on the included events. -->
           <ExtensionPoint xsi:type="LaunchEvent">

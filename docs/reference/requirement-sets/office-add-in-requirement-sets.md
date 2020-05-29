@@ -4,12 +4,12 @@ description: 了解有关 Office 通用 API 要求集的详细信息
 ms.date: 07/17/2019
 ms.prod: non-product-specific
 localization_priority: Normal
-ms.openlocfilehash: 39358b26547a464b9bb1b96f571bac7741e1c32d
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: 5905e655f5af437cd516bd58163c8a49d0c8aab2
+ms.sourcegitcommit: 77617f6ad06e07f5ff8078b26301748f73e2ee01
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42717465"
+ms.lasthandoff: 05/29/2020
+ms.locfileid: "44413236"
 ---
 # <a name="office-common-api-requirement-sets"></a>Office 通用 API 要求集
 
@@ -162,7 +162,7 @@ ms.locfileid: "42717465"
 
 |**Office 主机**|**要求集内的方法**|
 |:-----|:-----|
-| Mac 版 Excel<br>Windows 版 PowerPoint<br>PowerPoint 网页版<br>iPad 版 PowerPoint<br>Mac 版 PowerPoint<br>Windows 版 Word 2013 及更高版本<br>Mac 版 Word 2016 及更高版本<br>Word 网页版<br>iPad 版 Word|支持使用 Document.getFileAsync 方法时输出 PDF 格式 (Office.FileType.Pdf)<br>。|
+| Windows 版 Excel<br>Excel 网页版<br>Mac 版 Excel<br>Windows 版 PowerPoint<br>PowerPoint 网页版<br>iPad 版 PowerPoint<br>Mac 版 PowerPoint<br>Windows 版 Word 2013 及更高版本<br>Mac 版 Word 2016 及更高版本<br>Word 网页版<br>iPad 版 Word|支持使用 Document.getFileAsync 方法时输出 PDF 格式 (Office.FileType.Pdf)<br>。|
 
 ---
 
