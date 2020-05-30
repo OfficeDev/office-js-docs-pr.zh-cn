@@ -1,14 +1,14 @@
 ---
 title: Outlook 外接程序 API 预览要求集
 description: 当前在 Outlook 外接程序的预览中的功能和 Api。
-ms.date: 05/19/2020
+ms.date: 05/29/2020
 localization_priority: Normal
-ms.openlocfilehash: 3183c81a9af99f480c2dbecc787695501380cea7
-ms.sourcegitcommit: 8499a4247d1cb1e96e99c17cb520f4a8a41667e3
+ms.openlocfilehash: 5a53b1b5f477a420c9aaafbf8d778e1e58a7fe88
+ms.sourcegitcommit: 3a72d13c82b3d627691f4712d0d24b9e71bae9dc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "44292292"
+ms.lasthandoff: 05/29/2020
+ms.locfileid: "44415875"
 ---
 # <a name="outlook-add-in-api-preview-requirement-set"></a>Outlook 外接程序 API 预览要求集
 
@@ -69,6 +69,8 @@ Office JavaScript API 的 Outlook 外接程序 API 子集包括可以在 Outlook
 ---
 
 ### <a name="append-on-send"></a>发送时追加
+
+若要了解如何使用 "发送时追加" 功能，请参阅在[Outlook 加载项中实施 "在发送时实现附加](../../../outlook/append-on-send.md)"。
 
 #### <a name="officecontextmailboxitembodyappendonsendasync"></a>[AppendOnSendAsync 的 "."](/javascript/api/outlook/office.body?view=outlook-js-preview#appendonsendasync-data--options--callback-)
 
