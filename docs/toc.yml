@@ -906,6 +906,8 @@
           href: outlook/online-meeting.md
         - name: Onsend 加载项
           href: outlook/outlook-on-send-addins.md
+        - name: 附加发送（预览）
+          href: outlook/outlook-on-send-addins.md
         - name: 基于事件的激活（预览）
           href: outlook/autolaunch.md
         - name: 可固定任务窗格
