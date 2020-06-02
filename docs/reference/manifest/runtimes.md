@@ -1,18 +1,18 @@
 ---
 title: 清单文件中的运行时
 description: 运行时元素指定外接程序的运行时。
-ms.date: 05/18/2020
+ms.date: 05/29/2020
 localization_priority: Normal
-ms.openlocfilehash: 22156a171ca2f423024efb1b3d2a6fdae07dfef6
-ms.sourcegitcommit: f62d9630de69c5c070e3d4048205f5cc654db7e4
+ms.openlocfilehash: a8598a8f926e6d6905c147f5c554f1d40a692ad9
+ms.sourcegitcommit: 09a8683ff29cf06d0d1d822be83cf0798f1ccdf9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/18/2020
-ms.locfileid: "44278362"
+ms.lasthandoff: 06/01/2020
+ms.locfileid: "44471322"
 ---
 # <a name="runtimes-element"></a>运行时元素
 
-指定外接程序的运行时。 元素的子 [`<Host>`](host.md) 元素。
+指定外接程序的运行时。 元素的子 [`<Host>`](host.md) 元素。 如果该 `Runtimes` 元素存在于您的清单中，则您的外接程序将默认使用 Internet Explorer 11 浏览器。
 
 在 Excel 中，此元素使功能区、任务窗格和自定义函数能够使用相同的运行时。 有关详细信息，请参阅[Configure Excel 外接程序以使用共享的 JavaScript 运行时](../../excel/configure-your-add-in-to-use-a-shared-runtime.md)。
 
@@ -21,7 +21,7 @@ ms.locfileid: "44278362"
 **外接类型：** 任务窗格、邮件
 
 > [!IMPORTANT]
-> **Excel**：共享运行时当前处于预览阶段，仅在 Windows 中的 Excel 中可用。 若要尝试预览功能，你需要加入[Office 预览体验成员](https://insider.office.com/)。
+> **Excel**：共享运行时目前仅适用于 Windows 中的 Excel。
 >
 > **Outlook**：基于事件的激活功能当前[处于预览阶段](../../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md)，仅适用于 web 上的 Outlook。 有关详细信息，请参阅[如何预览基于事件的激活功能](../../outlook/autolaunch.md#how-to-preview-the-event-based-activation-feature)。
 
@@ -39,7 +39,7 @@ ms.locfileid: "44278362"
 
 ## <a name="child-elements"></a>子元素
 
-|  元素 |  必需  |  说明  |
+|  元素 |  必需  |  Description  |
 |:-----|:-----|:-----|
 | [运行时](runtime.md) | 是 |  外接程序的运行时。 |
 

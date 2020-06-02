@@ -1,14 +1,14 @@
 ---
 title: 清单文件中的运行时
 description: Runtime 元素将您的外接程序配置为对其各个组件使用共享的 JavaScript 运行时，例如，功能区、任务窗格、自定义函数。
-ms.date: 05/18/2020
+ms.date: 05/29/2020
 localization_priority: Normal
-ms.openlocfilehash: c2c404bcaad6e24af58f5c0ed8835343abb97e5f
-ms.sourcegitcommit: f62d9630de69c5c070e3d4048205f5cc654db7e4
+ms.openlocfilehash: a463b72f22b41f74e2fe98acca467762bb00cf39
+ms.sourcegitcommit: 09a8683ff29cf06d0d1d822be83cf0798f1ccdf9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/18/2020
-ms.locfileid: "44278411"
+ms.lasthandoff: 06/01/2020
+ms.locfileid: "44471336"
 ---
 # <a name="runtime-element-preview"></a>Runtime 元素（预览）
 
@@ -21,7 +21,7 @@ ms.locfileid: "44278411"
 **外接类型：** 任务窗格、邮件
 
 > [!IMPORTANT]
-> **Excel**：共享运行时当前处于预览阶段，仅在 Windows 中的 Excel 中可用。 若要尝试预览功能，你需要加入[Office 预览体验成员](https://insider.office.com/)。
+> **Excel**：共享运行时目前仅适用于 Windows 中的 Excel。
 >
 > **Outlook**：基于事件的激活当前[处于预览阶段](../../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md)，仅适用于 web 上的 outlook。 有关详细信息，请参阅[如何预览基于事件的激活功能](../../outlook/autolaunch.md#how-to-preview-the-event-based-activation-feature)。
 
@@ -39,7 +39,7 @@ ms.locfileid: "44278411"
 
 ## <a name="attributes"></a>属性
 
-|  属性  |  必需  |  说明  |
+|  属性  |  必需  |  Description  |
 |:-----|:-----|:-----|
 |  **resid**  |  是  | 指定您的外接程序的 HTML 页面的 URL 位置。 `resid`必须与 `id` `Url` 元素中元素的属性相匹配 `Resources` 。 |
 |  **lifetime**  |  否  | 的默认值 `lifetime` 是 `short` ，不需要指定。 Outlook 外接程序仅使用 `short` 值。 如果要在 Excel 外接程序中使用共享运行时，请将值显式设置为 `long` 。 |

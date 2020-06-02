@@ -3,12 +3,12 @@ title: Outlook 外接程序 API 预览要求集
 description: 当前在 Outlook 外接程序的预览中的功能和 Api。
 ms.date: 05/29/2020
 localization_priority: Normal
-ms.openlocfilehash: 5a53b1b5f477a420c9aaafbf8d778e1e58a7fe88
-ms.sourcegitcommit: 3a72d13c82b3d627691f4712d0d24b9e71bae9dc
+ms.openlocfilehash: 600aad32c394d35e62f4024808b185e8a9abe5e8
+ms.sourcegitcommit: 09a8683ff29cf06d0d1d822be83cf0798f1ccdf9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2020
-ms.locfileid: "44415875"
+ms.lasthandoff: 06/01/2020
+ms.locfileid: "44471343"
 ---
 # <a name="outlook-add-in-api-preview-requirement-set"></a>Outlook 外接程序 API 预览要求集
 
@@ -111,6 +111,20 @@ Office JavaScript API 的 Outlook 外接程序 API 子集包括可以在 Outlook
 向清单元素添加了 Outlook 支持 `Runtimes` 。 它引用了基于事件的激活功能所需的 HTML 和 JavaScript 文件。
 
 **适用于**： Outlook 网页版（新式，[请求预览访问](https://aka.ms/OWAPreview)）
+
+<br>
+
+---
+
+---
+
+### <a name="get-all-custom-properties"></a>获取所有自定义属性
+
+#### <a name="custompropertiesgetall"></a>[CustomProperties。 getAll](/javascript/api/outlook/office.customproperties?view=outlook-js-preview#getall--)
+
+向 `CustomProperties` 获取所有自定义属性的对象添加了新函数。
+
+**适用于**： Windows 上的 outlook （连接到 Office 365 订阅）、web 上的 outlook （新式）、Mac 上的 outlook （已连接到 Office 365 订阅）、Outlook on Android、在 iOS 上的 outlook
 
 <br>
 

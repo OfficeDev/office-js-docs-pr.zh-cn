@@ -1,14 +1,14 @@
 ---
 title: Office 加载项使用的浏览器
 description: 指定操作系统和 Office 版本如何确定 Office 加载项使用的浏览器。
-ms.date: 04/21/2020
+ms.date: 05/29/2020
 localization_priority: Normal
-ms.openlocfilehash: 9ef4b6d4c09140fc6d6bb04eca51d845b79b6dc7
-ms.sourcegitcommit: 3355c6bd64ecb45cea4c0d319053397f11bc9834
+ms.openlocfilehash: 0f553b0fe6a94577af438a2cb29dafc644f02960
+ms.sourcegitcommit: 09a8683ff29cf06d0d1d822be83cf0798f1ccdf9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "43744850"
+ms.lasthandoff: 06/01/2020
+ms.locfileid: "44471329"
 ---
 # <a name="browsers-used-by-office-add-ins"></a>Office 加载项使用的浏览器
 
@@ -34,10 +34,13 @@ Office 加载项是使用 iFrames（在 Office 网页版中运行时）和使用
 
 <sup>1</sup>有关更多详细信息，请参阅 "[更新历史记录" 页面](/officeupdates/update-history-office365-proplus-by-date)以及如何[查找 Office 客户端版本和更新频道](https://support.office.com/article/What-version-of-Office-am-I-using-932788b8-a3ce-44bf-bb09-e334518b8b19)。
 
-<sup>2</sup>当使用 Microsoft Edge 时，Windows 10 讲述人（有时称为 "屏幕阅读器"）将读取在任务`<title>`窗格中打开的页面中的标记。 如果使用的是 Internet Explorer 11，则Narrator 将会读取任务窗格的标题栏，它来自加载项清单中的 `<DisplayName>` 值。
+<sup>2</sup>当使用 Microsoft Edge 时，Windows 10 讲述人（有时称为 "屏幕阅读器"）将读取 `<title>` 在任务窗格中打开的页面中的标记。 如果使用的是 Internet Explorer 11，则Narrator 将会读取任务窗格的标题栏，它来自加载项清单中的 `<DisplayName>` 值。
 
 > [!IMPORTANT]
 > Internet Explorer 11 不支持高于 ES5 的 JavaScript 版本。 如果任何加载项用户安装的是使用 Internet Explorer 11 的平台，若要使用 ECMAScript 2015 或更高版本的语法和功能，则必须将 JavaScript 转换为 ES5 或使用填充代码。 此外，Internet Explorer 11 不支持媒体、录制和位置等部分 HTML5 功能。
+
+>[!NOTE]
+> 如果你的外接程序在 `Runtimes` 你的清单中包括元素，则默认情况下它将使用 Internet Explorer 11。 有关详细信息，请参阅[运行时](../reference/manifest/runtimes.md)。
 
 ## <a name="troubleshooting-microsoft-edge-issues"></a>Microsoft Edge 问题疑难解答
 
@@ -63,7 +66,7 @@ Office 外接程序不支持[Microsoft Edge web](/microsoft-edge/hosting/webview
 
 ### <a name="get-errors-trying-to-download-a-pdf-file"></a>在尝试下载 PDF 文件时遇到错误
 
-当 Edge 为浏览器时，不支持直接在外接程序中将 blob 作为 PDF 文件下载。 解决方法是创建一个简单的 web 应用程序，将 blob 下载为 PDF 文件。 在外接程序中，调用`Office.context.ui.openBrowserWindow(url)`该方法并传递 web 应用程序的 URL。 这将在 Office 外部的浏览器窗口中打开 web 应用程序。
+当 Edge 为浏览器时，不支持直接在外接程序中将 blob 作为 PDF 文件下载。 解决方法是创建一个简单的 web 应用程序，将 blob 下载为 PDF 文件。 在外接程序中，调用该 `Office.context.ui.openBrowserWindow(url)` 方法并传递 web 应用程序的 URL。 这将在 Office 外部的浏览器窗口中打开 web 应用程序。
 
 ## <a name="see-also"></a>另请参阅
 
