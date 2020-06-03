@@ -326,6 +326,8 @@
               href: reference/requirement-sets/image-coercion-requirement-sets.md
             - name: Office 通用 API 要求集
               href: reference/requirement-sets/office-add-in-requirement-sets.md
+            - name: 功能区 API 要求集
+              href: reference/requirement-sets/ribbon-api-requirement-sets.md
             - name: 共享运行时要求集
               href: reference/requirement-sets/shared-runtime-requirement-sets.md
         - name: Office 加载项清单参考
