@@ -1,14 +1,14 @@
 ---
 title: 在文档打开时，在 Excel 外接程序中运行代码
 description: 在文档打开时，在 Excel 外接程序中运行代码。
-ms.date: 05/11/2020
+ms.date: 05/15/2020
 localization_priority: Normal
-ms.openlocfilehash: 0a9090315a4ddca80e25a94092c779a3f3271087
-ms.sourcegitcommit: 682d18c9149b1153f9c38d28e2a90384e6a261dc
+ms.openlocfilehash: f544140a08a81c69aeb2fbdbe53afc098a738ad1
+ms.sourcegitcommit: 9229102c16a1864e3a8724aaf9b0dc68b1428094
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "44217947"
+ms.lasthandoff: 06/03/2020
+ms.locfileid: "44275761"
 ---
 # <a name="run-code-in-your-excel-add-in-when-the-document-opens"></a>在文档打开时，在 Excel 外接程序中运行代码
 

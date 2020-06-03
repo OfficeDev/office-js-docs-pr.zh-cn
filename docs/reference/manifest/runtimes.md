@@ -1,18 +1,21 @@
 ---
 title: 清单文件中的运行时
 description: 运行时元素指定外接程序的运行时。
-ms.date: 05/29/2020
+ms.date: 06/01/2020
 localization_priority: Normal
-ms.openlocfilehash: a8598a8f926e6d6905c147f5c554f1d40a692ad9
-ms.sourcegitcommit: 09a8683ff29cf06d0d1d822be83cf0798f1ccdf9
+ms.openlocfilehash: 95549d88df24a7d7c54cf27c92c15693491bdf29
+ms.sourcegitcommit: 9229102c16a1864e3a8724aaf9b0dc68b1428094
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/01/2020
-ms.locfileid: "44471322"
+ms.lasthandoff: 06/03/2020
+ms.locfileid: "44520337"
 ---
 # <a name="runtimes-element"></a>运行时元素
 
-指定外接程序的运行时。 元素的子 [`<Host>`](host.md) 元素。 如果该 `Runtimes` 元素存在于您的清单中，则您的外接程序将默认使用 Internet Explorer 11 浏览器。
+指定外接程序的运行时。 元素的子 [`<Host>`](host.md) 元素。
+
+> [!NOTE]
+> 在 Windows 上的 Office 中运行时，外接程序使用 Internet Explorer 11 浏览器。
 
 在 Excel 中，此元素使功能区、任务窗格和自定义函数能够使用相同的运行时。 有关详细信息，请参阅[Configure Excel 外接程序以使用共享的 JavaScript 运行时](../../excel/configure-your-add-in-to-use-a-shared-runtime.md)。
 

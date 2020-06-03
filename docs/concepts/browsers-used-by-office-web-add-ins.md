@@ -1,14 +1,14 @@
 ---
 title: Office 加载项使用的浏览器
 description: 指定操作系统和 Office 版本如何确定 Office 加载项使用的浏览器。
-ms.date: 05/29/2020
+ms.date: 06/01/2020
 localization_priority: Normal
-ms.openlocfilehash: 0f553b0fe6a94577af438a2cb29dafc644f02960
-ms.sourcegitcommit: 09a8683ff29cf06d0d1d822be83cf0798f1ccdf9
+ms.openlocfilehash: 0d94e66c9854a349758a2ed737524eb5d54fea29
+ms.sourcegitcommit: 9229102c16a1864e3a8724aaf9b0dc68b1428094
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/01/2020
-ms.locfileid: "44471329"
+ms.lasthandoff: 06/03/2020
+ms.locfileid: "44520372"
 ---
 # <a name="browsers-used-by-office-add-ins"></a>Office 加载项使用的浏览器
 
@@ -30,17 +30,16 @@ Office 加载项是使用 iFrames（在 Office 网页版中运行时）和使用
 |Windows/非订阅版 Office 2013 或更高版本|Internet Explorer 11|
 |Windows 10 版本 < 1903 / Office 365|Internet Explorer 11|
 |Windows 10 版本 >= 1903/Office 365 ver < 16.0.11629<sup>1</sup>|Internet Explorer 11|
-|Windows 10 版本 >= 1903/Office 365 ver >= 16.0.11629<sup>1</sup>|Microsoft Edge<sup>2</sup>|
+|Windows 10 版本 >= 1903/Office 365 ver >= 16.0.11629<sup>1</sup>|Microsoft Edge<sup>2、3</sup>|
 
 <sup>1</sup>有关更多详细信息，请参阅 "[更新历史记录" 页面](/officeupdates/update-history-office365-proplus-by-date)以及如何[查找 Office 客户端版本和更新频道](https://support.office.com/article/What-version-of-Office-am-I-using-932788b8-a3ce-44bf-bb09-e334518b8b19)。
 
 <sup>2</sup>当使用 Microsoft Edge 时，Windows 10 讲述人（有时称为 "屏幕阅读器"）将读取 `<title>` 在任务窗格中打开的页面中的标记。 如果使用的是 Internet Explorer 11，则Narrator 将会读取任务窗格的标题栏，它来自加载项清单中的 `<DisplayName>` 值。
 
+<sup>3</sup>如果加载项包括 `Runtimes` 清单中的元素，则使用 Internet Explorer 11，而无需考虑 Windows 或 Office 365 版本。 有关详细信息，请参阅[运行时](../reference/manifest/runtimes.md)。
+
 > [!IMPORTANT]
 > Internet Explorer 11 不支持高于 ES5 的 JavaScript 版本。 如果任何加载项用户安装的是使用 Internet Explorer 11 的平台，若要使用 ECMAScript 2015 或更高版本的语法和功能，则必须将 JavaScript 转换为 ES5 或使用填充代码。 此外，Internet Explorer 11 不支持媒体、录制和位置等部分 HTML5 功能。
-
->[!NOTE]
-> 如果你的外接程序在 `Runtimes` 你的清单中包括元素，则默认情况下它将使用 Internet Explorer 11。 有关详细信息，请参阅[运行时](../reference/manifest/runtimes.md)。
 
 ## <a name="troubleshooting-microsoft-edge-issues"></a>Microsoft Edge 问题疑难解答
 

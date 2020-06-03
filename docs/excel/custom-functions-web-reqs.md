@@ -1,14 +1,14 @@
 ---
-ms.date: 01/14/2020
+ms.date: 04/29/2020
 description: 使用 Excel 中的自定义函数请求、流式处理和取消流式处理工作簿的外部数据
 title: 使用自定义函数接收和处理数据
 localization_priority: Normal
-ms.openlocfilehash: 418c8124f8ed99b5ef1321c66f31ee0483da667b
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: 1ae1baa912c914c3a508f1bbf6bd5d9fa6044f7b
+ms.sourcegitcommit: 9229102c16a1864e3a8724aaf9b0dc68b1428094
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42719593"
+ms.lasthandoff: 06/03/2020
+ms.locfileid: "44275741"
 ---
 # <a name="receive-and-handle-data-with-custom-functions"></a>使用自定义函数接收和处理数据
 
@@ -27,7 +27,7 @@ ms.locfileid: "42719593"
 
 ### <a name="fetch-example"></a>Fetch 示例
 
-在下面的代码示例中， `webRequest`函数将进入假设的 Contoso "Space of 人数" API，用于跟踪当前国际空间站上的用户数。 该函数返回一个 JavaScript Promise 并使用 fetch 从 API 请求信息。 生成的数据被转换成 JSON，而 `names` 属性则被转换成一个字符串，用于解析 Promise。
+在下面的代码示例中， `webRequest` 函数将进入假设的 Contoso "Space Of 人数" API，用于跟踪当前国际空间站上的用户数。 该函数返回一个 JavaScript Promise 并使用 fetch 从 API 请求信息。 生成的数据被转换成 JSON，而 `names` 属性则被转换成一个字符串，用于解析 Promise。
 
 在开发自己的函数时，可能需要在相应 Web 请求没有及时完成时执行某个操作，或者需要考虑[批处理多个 API 请求](./custom-functions-batching.md)。
 
@@ -56,11 +56,7 @@ function webRequest() {
 
 ### <a name="xhr-example"></a>XHR 示例
 
-在自定义函数运行时内，XHR 通过要求[相同来源策略](https://developer.mozilla.org/en-US/docs/Web/Security/Same-origin_policy)和简单 [CORS](https://www.w3.org/TR/cors/) 来实施附加安全措施。
-
-请注意，简单的 CORS 实施不能使用 cookie，且仅支持简单的方法（GET、HEAD、POST）。 简单的 CORS 接受字段名称为 `Accept`、`Accept-Language`、`Content-Language` 的简单标题。 你还可以在简单 CORS 中使用内容类型标题，前提是内容类型为 `application/x-www-form-urlencoded`、`text/plain` 或 `multipart/form-data`。
-
-在下面的代码示例中， `getStarCount`函数将调用 Github API，以发现给定用户存储库中指定的星数。 这是一个可返回 JavaScript Promise 的异步函数。 当从 Web 调用中获取数据时，系统将对 Promise 进行解析，以将数据返回到单元格。
+在下面的代码示例中， `getStarCount` 函数将调用 GITHUB API，以发现给定用户存储库中指定的星数。 这是一个可返回 JavaScript Promise 的异步函数。 当从 Web 调用中获取数据时，系统将对 Promise 进行解析，以将数据返回到单元格。
 
 ```TS
 /**
@@ -103,7 +99,10 @@ async function getStarCount(userName: string, repoName: string) {
 
 流式处理自定义函数使用户能够在不需要用户显式刷新数据的情况下，向重复更新的单元格输出数据。 这对于检查联机服务中的实时数据非常有用，如[自定义函数教程](../tutorials/excel-tutorial-create-custom-functions.md)中的函数。
 
-若要声明流式处理函数，请使用标记 `@streaming` 或使用 `CustomFunctions.StreamingInvocation` 调用参数，以指示你的函数是流式处理函数。 若要提醒用户你的函数可能会根据新的信息重新进行评估，请考虑在函数的名称或描述中使用流或其他措辞来说明此情况。
+若要声明流式处理函数，您可以使用以下任一方法：
+
+- `@streaming`标记。
+- `CustomFunctions.StreamingInvocation`调用参数。
 
 以下代码示例是一个自定义函数，它每秒向结果添加一个数字。 关于此代码，请注意以下几点：
 
@@ -112,7 +111,7 @@ async function getStarCount(userName: string, repoName: string) {
 - `onCanceled` 回调定义取消函数时执行的函数。
 - 流式处理不一定与发出 Web 请求有关：在本例中，该函数不会发出 Web 请求，但仍以设置的时间间隔获取数据，因此需要使用流式处理 `invocation` 参数。
 
-```js
+```JS
 /**
  * Increments a value once a second.
  * @customfunction INC increment
@@ -132,7 +131,9 @@ function increment(incrementBy, invocation) {
 }
 ```
 
-除了了解 `onCanceled` 回调外，你还应该知道 Excel 会在以下情况下取消函数的执行：
+## <a name="canceling-a-function"></a>取消函数
+
+Excel 会在以下情况下取消函数的执行：
 
 - 用户编辑或删除引用函数的单元格。
 - 函数的参数（输入）之一发生变化。 在这种情况下，取消之后还会触发新的函数调用。
@@ -140,18 +141,17 @@ function increment(incrementBy, invocation) {
 
 你还可以考虑设置默认流式处理值，以在发出请求但你处于脱机状态时处理案例。
 
-> [!NOTE]
-> 请注意，还有一类函数被称为可取消函数，它们与流式处理函数_无_关。 以前版本的自定义函数需要在手写的 JSON 中声明 `"cancelable": true` 和 `"streaming": true`。 引入自动生成的元数据之后，仅返回一个值的异步自定义函数可取消。 可取消函数允许在请求中间终止 Web 请求，它使用 [`CancelableInvocation`](/javascript/api/custom-functions-runtime/customfunctions.cancelableinvocation) 来决定取消时需要采取的操作。 使用标记 `@cancelable` 声明可取消函数。
+请注意，还有一类函数被称为可取消函数，它们与流式处理函数_无_关。 仅可取消可返回一个值的异步自定义函数。 可取消函数允许在请求中间终止 Web 请求，它使用 [`CancelableInvocation`](/javascript/api/custom-functions-runtime/customfunctions.cancelableinvocation) 来决定取消时需要采取的操作。 使用标记 `@cancelable` 声明可取消函数。
 
 ### <a name="using-an-invocation-parameter"></a>使用调用参数
 
-默认情况下，`invocation` 参数是任何自定义函数的最后一个参数。 `invocation` 参数提供与单元格相关的上下文（例如地址和内容），并且还使你能够使用 `setResult` 和 `onCanceled` 方法。 这些方法可定义在函数流式传输 (`setResult`) 或被取消 (`onCanceled`) 时它所执行的操作。
+默认情况下，`invocation` 参数是任何自定义函数的最后一个参数。 `invocation`参数提供有关单元格（如其地址和内容）的上下文，并允许您使用 `setResult` 和 `onCanceled` 方法。 这些方法可定义在函数流式传输 (`setResult`) 或被取消 (`onCanceled`) 时它所执行的操作。
 
-如果使用 TypeScript，则调用处理程序需要为 `CustomFunctions.StreamingInvocation` 或 `CustomFunctions.CancelableInvocation` 类型。
+如果使用的是 TypeScript，则调用处理程序必须为类型 [`CustomFunctions.StreamingInvocation`](/javascript/api/custom-functions-runtime/customfunctions.streaminginvocation) 或 [`CancelableInvocation`](/javascript/api/custom-functions-runtime/customfunctions.cancelableinvocation) 。
 
-## <a name="receive-data-via-websockets"></a>通过 WebSocket 接收数据
+## <a name="receiving-data-via-websockets"></a>通过 WebSocket 接收数据
 
-在自定义函数内，可使用 WebSocket 来通过与服务器的持久连接交换数据。 通过使用 WebSocket，自定义函数可以打开与服务器的连接，然后在发生某些事件时自动从服务器接收消息，而无需显式地轮询服务器来获取数据。
+在自定义函数内，可使用 WebSocket 来通过与服务器的持久连接交换数据。 使用 Websocket 时，您的自定义函数可以打开与服务器的连接，然后在发生特定事件时自动从服务器接收邮件，而无需显式轮询服务器以获取数据。
 
 ### <a name="websockets-example"></a>WebSocket 示例
 
@@ -179,6 +179,5 @@ ws.onerror(error){
 - [函数中的可变值](custom-functions-volatile.md)
 - [创建自定义函数的 JSON 元数据](custom-functions-json-autogeneration.md)
 - [自定义函数元数据](custom-functions-json.md)
-- [Excel 自定义函数的运行时](custom-functions-runtime.md)
 - [在 Excel 中创建自定义函数](custom-functions-overview.md)
 - [Excel 自定义函数教程](../tutorials/excel-tutorial-create-custom-functions.md)
