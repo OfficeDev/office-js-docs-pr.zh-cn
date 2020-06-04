@@ -1,23 +1,30 @@
 ---
-title: 旁加载 Office 加载项以供测试
-description: 了解如何旁加载 Office 外接程序以进行测试
-ms.date: 03/18/2020
+title: 用于从网络共享中进行测试的旁加载 Office 外接程序
+description: 了解如何从网络共享中旁加载 Office 外接程序以进行测试
+ms.date: 06/02/2020
 localization_priority: Normal
-ms.openlocfilehash: dbadf9f7f692e1e71dd9696f531ed79bfc84f786
-ms.sourcegitcommit: c6e3bfd3deb77982d0b7082afd6a48678e96e1c3
+ms.openlocfilehash: 3b8752f1be07cbb8e15fb2a3fddb33415a930c8f
+ms.sourcegitcommit: bec0158860925832825a45a21f73cd5dd1e20b37
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/10/2020
-ms.locfileid: "43215059"
+ms.lasthandoff: 06/03/2020
+ms.locfileid: "44543036"
 ---
-# <a name="sideload-office-add-ins-for-testing"></a>旁加载 Office 加载项以供测试
+# <a name="sideload-office-add-ins-for-testing-from-a-network-share"></a>用于从网络共享中进行测试的旁加载 Office 外接程序
 
-你可以安装 Office 外接程序以在 Windows 上运行的 Office 客户端中进行测试（通过使用共享文件夹，以将清单发布到网络文件共享）。
+您可以通过将清单发布到网络文件共享（如下所示）在 Windows 上的 Office 客户端中测试 Office 加载项。 当您在本地主机上完成开发和测试并希望从非本地服务器或云帐户测试加载项时，应使用此部署选项。
+
+> [!IMPORTANT]
+> 生产外接程序不支持由网络共享进行部署。此方法具有以下限制：
+> 
+> - 仅可在 Windows 计算机上安装加载项。
+> - 如果外接程序的新版本更改了功能区，则每个用户都必须重新安装加载项。
+
 
 > [!NOTE]
 > 如果你的外接程序项目是使用[外接程序的 Yeoman 生成器](https://github.com/OfficeDev/generator-office)的足够使用的版本，运行 `npm start` 时将自动在 Office 桌面客户端中旁加载外接程序。
 
-本文仅适用于在 Windows 上测试 Word、Excel、PowerPoint 和 Project 加载项。 如果要在其他平台上进行测试或要测试 Outlook 加载项，请参阅以下主题之一以旁加载你的加载项：
+本文仅适用于测试 Word、Excel、PowerPoint 和 Project 加载项，并且仅适用于 Windows。 如果要在其他平台上进行测试或要测试 Outlook 加载项，请参阅以下主题之一以旁加载你的加载项：
 
 - [在 Office 网页版中旁加载 Office 加载项进行测试](sideload-office-add-ins-for-testing.md)
 - [在 iPad 和 Mac 上旁加载 Office 外接程序进行测试](sideload-an-office-add-in-on-ipad-and-mac.md)
