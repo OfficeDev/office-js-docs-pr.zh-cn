@@ -1,15 +1,15 @@
 ---
 title: Office 通用 API 要求集
 description: 了解有关 Office 通用 API 要求集的详细信息
-ms.date: 07/17/2019
+ms.date: 06/03/2020
 ms.prod: non-product-specific
 localization_priority: Normal
-ms.openlocfilehash: 5905e655f5af437cd516bd58163c8a49d0c8aab2
-ms.sourcegitcommit: 77617f6ad06e07f5ff8078b26301748f73e2ee01
+ms.openlocfilehash: cedf2a54d0582739b5c9ed13a3c859d0eaf90acf
+ms.sourcegitcommit: c00db2625d6c222ac09b5845095c21e5cbad81d9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2020
-ms.locfileid: "44413236"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "44561894"
 ---
 # <a name="office-common-api-requirement-sets"></a>Office 通用 API 要求集
 
@@ -17,13 +17,14 @@ ms.locfileid: "44413236"
 
 需要了解加载项在哪些位置受 Office 主机支持？ 请参阅 [Office 加载项主机和平台可用性](../../overview/office-add-in-availability.md)。
 
-正在寻找*主机专用* API 要求集吗？ 请参阅下列 API 要求集：
-
-- [Excel JavaScript API 要求集](excel-api-requirement-sets.md) (ExcelApi)
-- [Word JavaScript API 要求集](word-api-requirement-sets.md) (WordApi)
-- [OneNote JavaScript API 要求集](onenote-api-requirement-sets.md) (OneNoteApi)
-- [PowerPoint JavaScript API 要求集](powerpoint-api-requirement-sets.md) (PowerPointApi)
-- [了解 Outlook API 要求集](outlook-api-requirement-sets.md) (MailBox)
+> [!TIP]
+> 正在寻找*主机专用* API 要求集吗？ 请参阅下列 API 要求集：
+>
+> - [Excel JavaScript API 要求集](excel-api-requirement-sets.md) (ExcelApi)
+> - [Word JavaScript API 要求集](word-api-requirement-sets.md) (WordApi)
+> - [OneNote JavaScript API 要求集](onenote-api-requirement-sets.md) (OneNoteApi)
+> - [PowerPoint JavaScript API 要求集](powerpoint-api-requirement-sets.md) (PowerPointApi)
+> - [了解 Outlook API 要求集](outlook-api-requirement-sets.md) (MailBox)
 
 > [!IMPORTANT]
 > 我们不建议在 SharePoint 中创建和使用 Access Web 应用和数据库。 作为一种替代方法，我们建议你使用 [Microsoft PowerApps](https://powerapps.microsoft.com/) 生成适用于 Web 和移动设备的无代码业务解决方案。

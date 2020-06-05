@@ -1,20 +1,22 @@
 ---
 title: 在 Outlook 的 Mac 版中比较 Outlook 加载项支持
 description: 了解 Mac 上的 Outlook 中的加载项支持如何与其他 Outlook 主机进行比较。
-ms.date: 05/18/2020
+ms.date: 06/04/2020
 localization_priority: Normal
-ms.openlocfilehash: fd03141fbcaecb88db358101a00681c8a85af382
-ms.sourcegitcommit: 71a44405e42b4798a8354f7f96d84548ae7a00f0
+ms.openlocfilehash: 553d9bada0fb66a5319c998ff1c262f8815e2f7d
+ms.sourcegitcommit: c00db2625d6c222ac09b5845095c21e5cbad81d9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/18/2020
-ms.locfileid: "44280350"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "44561868"
 ---
 # <a name="compare-outlook-add-in-support-in-outlook-on-mac-with-other-outlook-hosts"></a>将 Mac 上 outlook 中的 Outlook 加载项支持与其他 Outlook 主机进行比较
 
 您可以在 Mac 上的 Outlook 中像在其他主机（包括 Outlook 网页版、Windows、iOS 和 Android）上创建和运行 Outlook 外接程序，而无需自定义每个主机的 JavaScript。 除了下表中所述的区域，从外接程序到 Office JavaScript API 的相同调用通常的工作方式相同。
 
-有关详细信息，请参阅[部署和安装 Outlook 加载项以供测试](testing-and-tips.md)。
+有关详细信息，请参阅[部署和安装 Outlook 外接程序以进行测试](testing-and-tips.md)。
+
+有关 Mac 上新的 UI 支持的信息，请参阅[新建 Outlook On mac](#new-outlook-on-mac-preview)。
 
 | 区域 | Outlook 网页版、Windows 版和移动设备 | Mac 版 Outlook |
 |:-----|:-----|:-----|
@@ -27,3 +29,26 @@ ms.locfileid: "44280350"
 | 表示 `dateTimeCreated` 和 `dateTimeModified` 属性中的时区的字符串 |示例：`Thu Mar 13 2014 14:09:11 GMT+0800 (China Standard Time)` | 示例：`Thu Mar 13 2014 14:09:11 GMT+0800 (CST)` |
 | `dateTimeCreated` 和 `dateTimeModified` 的时间准确度 | 如果加载项使用以下代码，准确度精确到毫秒：<br/>`JSON.stringify(Office.context.mailbox.item, null, 4);`| 准确度精确到秒。 |
 
+## <a name="new-outlook-on-mac-preview"></a>新建 Mac 版 Outlook （预览）
+
+Outlook 外接程序现在在新的 Mac UI （最高为要求集1.6）中受支持。 但是，尚**不**支持以下要求集和功能。
+
+1. API 要求集1.7 和1。8
+1. 可固定任务窗格， `ItemChanged` 事件
+1. 上下文加载项
+1. 发送时
+1. 共享文件夹支持
+1. `saveAsync`撰写会议时
+1. 单一登录 (SSO)
+
+我们鼓励您预览新的 Outlook on Mac，可从版本16.38.506。 若要了解有关如何试用的详细信息，请参阅[适用于内部版本快速生成的 Outlook For Mac 发行说明](https://support.microsoft.com/office/d6347358-5613-433e-a49e-a9a0e8e0462a)。
+
+您可以确定您所处的 UI 版本，如下所示。
+
+**当前 UI**
+
+&nbsp;&nbsp;&nbsp;&nbsp;![Mac 上的当前 UI](../images/outlook-on-mac-classic.png)
+
+**新 UI （预览）**
+
+&nbsp;&nbsp;&nbsp;&nbsp;![在 Mac 上预览中的新 UI](../images/outlook-on-mac-new.png)
