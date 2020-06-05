@@ -4,12 +4,12 @@ description: 了解有关 Office 通用 API 要求集的详细信息
 ms.date: 06/03/2020
 ms.prod: non-product-specific
 localization_priority: Normal
-ms.openlocfilehash: cedf2a54d0582739b5c9ed13a3c859d0eaf90acf
-ms.sourcegitcommit: c00db2625d6c222ac09b5845095c21e5cbad81d9
+ms.openlocfilehash: 22379e1196b6112fe51c2e71793912d066c69864
+ms.sourcegitcommit: 6754aa2835e57c3a95b0c513095ba4b29744f9eb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "44561894"
+ms.lasthandoff: 06/05/2020
+ms.locfileid: "44567832"
 ---
 # <a name="office-common-api-requirement-sets"></a>Office 通用 API 要求集
 
@@ -164,6 +164,14 @@ ms.locfileid: "44561894"
 |**Office 主机**|**要求集内的方法**|
 |:-----|:-----|
 | Windows 版 Excel<br>Excel 网页版<br>Mac 版 Excel<br>Windows 版 PowerPoint<br>PowerPoint 网页版<br>iPad 版 PowerPoint<br>Mac 版 PowerPoint<br>Windows 版 Word 2013 及更高版本<br>Mac 版 Word 2016 及更高版本<br>Word 网页版<br>iPad 版 Word|支持使用 Document.getFileAsync 方法时输出 PDF 格式 (Office.FileType.Pdf)<br>。|
+
+---
+
+### <a name="ribbonapi"></a>RibbonApi
+
+|**Office 主机**|**要求集内的方法**|
+|:-----|:-----|
+| 请参阅[功能区 API 要求集](ribbon-api-requirement-sets.md)。 | RequestUpdate |
 
 ---
 
