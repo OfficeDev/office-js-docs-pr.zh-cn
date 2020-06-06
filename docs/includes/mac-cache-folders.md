@@ -7,10 +7,11 @@
     
     !["个性" 菜单上的 "清除 web 缓存" 选项的屏幕截图。](../images/mac-clear-cache-menu.png)
 
-您还可以通过删除该`~/Library/Containers/com.Microsoft.OsfWebHost/Data/`文件夹的内容来手动清除缓存。
+您还可以通过删除该文件夹的内容来手动清除缓存 `~/Library/Containers/com.Microsoft.OsfWebHost/Data/` 。
 
 > [!NOTE]
-> 如果该文件夹不存在，请检查以下文件夹，如果找到，则删除该文件夹的内容：
->    - `~/Library/Containers/com.microsoft.{host}/Data/Library/Caches/`其中`{host}` ，是 Office 主机（例如， `Excel`）
->    - `~/Library/Containers/com.microsoft.{host}/Data/Library/Application Support/Microsoft/Office/16.0/Wef/`其中`{host}` ，是 Office 主机（例如， `Excel`）
+> 如果文件夹不存在，查看下列文件夹，如果找到，删除文件夹的内容：
+>    - `~/Library/Containers/com.microsoft.{host}/Data/Library/Caches/`此位置`{host}`是 Office 主机（如 `Excel` ）
+>    - `~/Library/Containers/com.microsoft.{host}/Data/Library/Application Support/Microsoft/Office/16.0/Wef/`此位置`{host}`是 Office 主机（如 `Excel` ）
 >    - `com.microsoft.Office365ServiceV2/Data/Caches/com.microsoft.Office365ServiceV2/`
+>    - `com.microsoft.Office365ServiceV2/Data/Library/Caches/com.microsoft.Office365ServiceV2/`
