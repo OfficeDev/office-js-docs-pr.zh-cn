@@ -1063,7 +1063,7 @@
           displayName: Project
 - name: Visio
   items:
-    - name: Visio 加载项文档
+    - name: Visio 文档
       href: visio/index.md
       displayName: Visio
     - name: 概述
