@@ -1,15 +1,15 @@
 ---
 title: Excel 加载项教程
 description: 在本教程中，你将学习如何构建一个 Excel 外接程序，用于创建、填充、筛选和排序表格、创建图表、冻结表格标题、保护工作表并打开对话框。
-ms.date: 03/30/2020
+ms.date: 06/05/2020
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: bc14027600a108f47cdf4766a51ebf2437b6f976
-ms.sourcegitcommit: 73a3df90a51acf13416d6a049bddcd9aabc32441
+ms.openlocfilehash: 42ce837bd03d3b8fd9be35e812b8e87e66a5e35d
+ms.sourcegitcommit: 0300165295fcbd4226aa048be2fad660892d35ea
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/31/2020
-ms.locfileid: "43069314"
+ms.lasthandoff: 06/06/2020
+ms.locfileid: "44591149"
 ---
 # <a name="tutorial-create-an-excel-task-pane-add-in"></a>教程：创建 Excel 任务窗格加载项
 
@@ -734,6 +734,7 @@ ms.locfileid: "43069314"
         >    - `~/Library/Containers/com.microsoft.{host}/Data/Library/Caches/`此位置`{host}`是 Office 主机（如 `Excel` ）
         >    - `~/Library/Containers/com.microsoft.{host}/Data/Library/Application Support/Microsoft/Office/16.0/Wef/`此位置`{host}`是 Office 主机（如 `Excel` ）
         >    - `com.microsoft.Office365ServiceV2/Data/Caches/com.microsoft.Office365ServiceV2/`
+        >    - `com.microsoft.Office365ServiceV2/Data/Library/Caches/com.microsoft.Office365ServiceV2/`
 
 3. 如果本地 web 服务器已在运行，通过关闭节点命令窗口以停止。
 
