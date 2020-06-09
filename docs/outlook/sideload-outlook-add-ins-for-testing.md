@@ -3,12 +3,12 @@ title: 旁加载 Outlook 外接程序进行测试
 description: 利用旁加载来安装 Outlook 外接程序以供测试，无需先将其置于外接程序目录中。
 ms.date: 06/24/2019
 localization_priority: Normal
-ms.openlocfilehash: b177e6adbc4ac702b7bd9dcec38f2fe2d2f29cf1
-ms.sourcegitcommit: a3ddfdb8a95477850148c4177e20e56a8673517c
+ms.openlocfilehash: 3543eeb58f441819edb2c129e6e14206e26de524
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "42165887"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44605323"
 ---
 # <a name="sideload-outlook-add-ins-for-testing"></a>旁加载 Outlook 外接程序进行测试
 
@@ -91,4 +91,4 @@ ms.locfileid: "42165887"
 
 ## <a name="remove-a-sideloaded-add-in"></a>删除旁加载加载项
 
-若要从 Outlook 中删除旁加载加载项，请使用本文前面所述的步骤，在列出已安装加载项的对话框的 "**自定义外接程序**" 部分中查找加载项。选择外接程序的省略号`...`（），然后选择 "**删除**" 以删除该特定外接程序。
+若要从 Outlook 中删除旁加载加载项，请使用本文前面所述的步骤，在列出已安装加载项的对话框的 "**自定义外接程序**" 部分中查找加载项。选择外接程序的省略号（ `...` ），然后选择 "**删除**" 以删除该特定外接程序。

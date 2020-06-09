@@ -3,12 +3,12 @@ title: 清单文件中的 WebApplicationInfo 元素
 description: Office 外接程序清单（XML）文件的 VersionOverrides 元素的参考文档。
 ms.date: 08/12/2019
 localization_priority: Normal
-ms.openlocfilehash: 6acd0d5688bdd93d4054d0589afe5517afb1296f
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: 1bbb3cc9b3db792b2d24ab2fd4003be6093fa837
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42720293"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44604477"
 ---
 # <a name="webapplicationinfo-element"></a>WebApplicationInfo 元素
 
@@ -24,7 +24,7 @@ ms.locfileid: "42720293"
 
 ## <a name="child-elements"></a>子元素
 
-|  元素 |  必需  |  说明  |
+|  元素 |  必需  |  Description  |
 |:-----|:-----|:-----|
 |  **Id**    |  是   |  在 Azure Active Directory v2.0 终结点中注册的加载项关联服务的**应用程序 ID**。|
 |  **MsaId**    |  否   |  在 msm.live.com 中注册的用于 MSA 的外接程序 web 应用程序的客户端 ID。|

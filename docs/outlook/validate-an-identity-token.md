@@ -3,12 +3,12 @@ title: 验证 Outlook 加载项标识令牌
 description: Outlook 加载项可以向你发送 Exchange 用户标识令牌，但是在你信任此请求之前，必须验证该令牌以确保它来自预期的 Exchange 服务器。
 ms.date: 05/08/2020
 localization_priority: Normal
-ms.openlocfilehash: b416353b0d9875a2024ca4706152472c7e5012b0
-ms.sourcegitcommit: 7e6faf3dc144400a7b7e5a42adecbbec0bd4602d
+ms.openlocfilehash: 89be659085dbf35b4ad6644eba3b5bf3acd24a9d
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/09/2020
-ms.locfileid: "44180208"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44604578"
 ---
 # <a name="validate-an-exchange-identity-token"></a>验证 Exchange 标识令牌
 
@@ -35,19 +35,19 @@ Outlook 加载项可以向你发送 Exchange 用户标识令牌，但是在你�
 若要验证令牌内容，还应检查以下项目。
 
 - 检查标头并验证：
-    - `typ`"声明" 设置`JWT`为。
-    - `alg`"声明" 设置`RS256`为。
+    - `typ`"声明" 设置为 `JWT` 。
+    - `alg`"声明" 设置为 `RS256` 。
     - `x5t`声明存在。
 
 - 检查有效负载并验证：
-    - `amurl`中的`appctx`声明已设置为授权令牌签名密钥清单文件的位置。 例如，Office 365 的`amurl`预期值为https://outlook.office365.com:443/autodiscover/metadata/json/1。 有关详细信息，请参阅下一节[验证域](#verify-the-domain)。
-    - 当前时间介于`nbf`和`exp`声明中指定的时间之间。 `nbf` 声明指定了令牌被视为有效的最早时间，而 `exp` 声明指定了令牌的失效时间。 建议将服务器之间的时钟设置差异考虑在内。
+    - `amurl`中的声明 `appctx` 已设置为授权令牌签名密钥清单文件的位置。 例如， `amurl` Office 365 的预期值为 https://outlook.office365.com:443/autodiscover/metadata/json/1 。 有关详细信息，请参阅下一节[验证域](#verify-the-domain)。
+    - 当前时间介于和声明中指定的时间 `nbf` 之间 `exp` 。 `nbf` 声明指定了令牌被视为有效的最早时间，而 `exp` 声明指定了令牌的失效时间。 建议将服务器之间的时钟设置差异考虑在内。
     - `aud`声明是你的外接程序的预期 URL。
-    - `version`声明内的`appctx`声明已设置为`ExIdTok.V1`。
+    - `version`声明内的声明 `appctx` 已设置为 `ExIdTok.V1` 。
 
 ### <a name="verify-the-domain"></a>验证域
 
-在实现本节前面所述的验证逻辑时，您还应要求`amurl`声明的域与用户的自动发现域相匹配。 若要执行此操作，您需要使用或实现自动发现。 若要了解详细信息，可以从[Exchange 自动发现](/exchange/client-developer/exchange-web-services/autodiscover-for-exchange)开始。
+在实现本节前面所述的验证逻辑时，您还应要求声明的域 `amurl` 与用户的自动发现域相匹配。 若要执行此操作，您需要使用或实现自动发现。 若要了解详细信息，可以从[Exchange 自动发现](/exchange/client-developer/exchange-web-services/autodiscover-for-exchange)开始。
 
 ## <a name="validate-the-identity-token-signature"></a>验证标识令牌签名
 
@@ -106,7 +106,7 @@ Outlook 加载项可以向你发送 Exchange 用户标识令牌，但是在你�
 
 ## <a name="use-a-library-to-validate-the-token"></a>使用库验证令牌
 
-有许多库可以执行常规 JWT 解析和验证。 Microsoft 提供可`System.IdentityModel.Tokens.Jwt`用于验证 Exchange 用户标识令牌的库。
+有许多库可以执行常规 JWT 解析和验证。 Microsoft 提供 `System.IdentityModel.Tokens.Jwt` 可用于验证 Exchange 用户标识令牌的库。
 
 > [!IMPORTANT]
 > 我们不再建议使用 Exchange Web 服务托管 API，因为 WebServices 现在仍然可用，但它依赖于不受支持的库（如 Microsoft Microsoft.identitymodel.dll）。

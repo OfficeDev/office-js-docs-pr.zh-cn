@@ -3,12 +3,12 @@ title: 在 Outlook 外接程序中实现可固定的任务窗格
 description: 用于加载项命令的任务窗格用户体验形状会在打开的邮件或会议请求的右侧打开一个垂直任务窗格，以便用户可以在加载项 UI 中进行更详细的交互。
 ms.date: 02/28/2020
 localization_priority: Normal
-ms.openlocfilehash: 892cee7b5ff89e210c68308f03710ee92b6f0f72
-ms.sourcegitcommit: 6c381634c77d316f34747131860db0a0bced2529
+ms.openlocfilehash: ea9dc255bfb3b689a05d880007282da011edef3e
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/21/2020
-ms.locfileid: "42890989"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44605316"
 ---
 # <a name="implement-a-pinnable-task-pane-in-outlook"></a>在 Outlook 中实现可固定的任务窗格
 

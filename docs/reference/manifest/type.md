@@ -3,12 +3,12 @@ title: 清单文件中的 Type 元素
 description: Type 元素指定等效加载项是 COM 加载项还是 XLL。
 ms.date: 03/16/2020
 localization_priority: Normal
-ms.openlocfilehash: 9eeab172ed4ebf06fc93e42f56f8d33f5e7a92db
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: b59f903af39facd7543e7384189817d5365cf8c9
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42720314"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44604557"
 ---
 # <a name="type-element"></a>Type 元素
 
@@ -28,7 +28,7 @@ ms.locfileid: "42720314"
 
 ## <a name="add-in-type-values"></a>外接类型值
 
-必须为`Type`元素指定下列值之一。
+必须为元素指定下列值之一 `Type` 。
 
 - COM：指定等效的加载项是 COM 加载项。
 - XLL：指定等效的外接程序是 Excel XLL。

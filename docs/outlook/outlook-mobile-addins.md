@@ -3,12 +3,12 @@ title: 适用于 Outlook Mobile 的 Outlook 外接程序
 description: 所有 Office 365 商业帐户、Outlook.com 帐户均支持 Outlook 移动外接程序，并且即将提供对 Gmail 帐户的支持。
 ms.date: 05/27/2020
 localization_priority: Normal
-ms.openlocfilehash: 6cc91bd021640988b2f216dda258b185748b2e40
-ms.sourcegitcommit: 77617f6ad06e07f5ff8078b26301748f73e2ee01
+ms.openlocfilehash: 9a7345840d5a26b27f824470efd58d846d0aab11
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2020
-ms.locfileid: "44413208"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44606439"
 ---
 # <a name="add-ins-for-outlook-mobile"></a>适用于 Outlook Mobile 的外接程序
 
