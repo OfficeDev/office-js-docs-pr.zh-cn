@@ -3,12 +3,12 @@ title: 清单文件中的 CustomTab 元素
 description: 在功能区上，可以为它们的外接程序命令指定使用哪种选项卡和组。
 ms.date: 01/24/2020
 localization_priority: Normal
-ms.openlocfilehash: 8db29f166b5a5238a7ecf121ba5e5adca66ebe94
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: a81b64a17eeeb463d55024e189b09048b2eb96ac
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42718424"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44612302"
 ---
 # <a name="customtab-element"></a>CustomTab 元素
 
@@ -19,7 +19,7 @@ ms.locfileid: "42718424"
 **Id**属性在清单中必须是唯一的。
 
 > [!IMPORTANT]
-> 在 Mac 上的 Outlook 中`CustomTab` ，该元素不可用，因此您必须改用[OfficeTab](officetab.md) 。
+> 在 Mac 上的 Outlook 中，该元素不可用， `CustomTab` 因此您必须改用[OfficeTab](officetab.md) 。
 
 ## <a name="child-elements"></a>子元素
 
@@ -34,7 +34,7 @@ ms.locfileid: "42718424"
 
 ### <a name="label-tab"></a>标签（选项卡）
 
-必需。 自定义选项卡的标签。**Resid**属性必须设置为[Resources](resources.md)元素中的**ShortStrings**元素中**String**元素的**id**属性的值。
+必填。 自定义选项卡的标签。**Resid**属性必须设置为[Resources](resources.md)元素中的**ShortStrings**元素中**String**元素的**id**属性的值。
 
 
 ## <a name="customtab-example"></a>CustomTab 示例

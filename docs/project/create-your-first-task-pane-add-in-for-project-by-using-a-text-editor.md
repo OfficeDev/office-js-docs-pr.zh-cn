@@ -3,12 +3,12 @@ title: 使用文本编辑器为 Microsoft Project 创建首个任务窗格加载
 description: 使用适用于 Office 加载项的 Yeoman 生成器，为 Project Standard 2013、Project Professional 2013 或更高版本创建任务窗格外接程序。
 ms.date: 10/11/2019
 localization_priority: Normal
-ms.openlocfilehash: 12d5f898e642989e999034dbcf2764244b0c2379
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: 9bf47066f15f0650b8da0ede496537973604142b
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42720748"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44611888"
 ---
 # <a name="create-your-first-task-pane-add-in-for-microsoft-project-by-using-a-text-editor"></a>使用文本编辑器为 Microsoft Project 创建首个任务窗格加载项
 
@@ -26,7 +26,7 @@ JSOMCall.html 示例使用 office.js 文件和 project-15.js 文件中包含的 
 
 ## <a name="procedure-1-to-create-the-add-in-manifest-file"></a>过程 1. 创建加载项清单文件
 
-在本地目录中创建一个 XML 文件。 XML 文件包含`OfficeApp`元素和子元素，这些元素在[Office 外接程序 XML 清单](../develop/add-in-manifests.md)中进行了介绍。 例如，创建一个名为 JSOM_SimpleOMCalls .xml 的文件，其中包含以下 XML （更改`Id`元素的 GUID 值）。
+在本地目录中创建一个 XML 文件。 XML 文件包含 `OfficeApp` 元素和子元素，这些元素在[Office 外接程序 XML 清单](../develop/add-in-manifests.md)中进行了介绍。 例如，创建一个名为 JSOM_SimpleOMCalls .xml 的文件，其中包含以下 XML （更改元素的 GUID 值 `Id` ）。
 
 ```XML
 <?xml version="1.0" encoding="utf-8"?>
@@ -63,13 +63,13 @@ JSOMCall.html 示例使用 office.js 文件和 project-15.js 文件中包含的 
    </OfficeApp>
 ```
 
-对于 Project， `OfficeApp`元素必须包含`xsi:type="TaskPaneApp"`属性值。 `Id`元素是一个 GUID。 `SourceLocation`该值必须为外接程序 HTML 源文件或在任务窗格中运行的 web 应用程序的文件共享路径或 SharePoint URL。 有关清单文件中其他元素的解释，请参阅 [Task pane add-ins for Project](../project/project-add-ins.md)。
+对于 Project， `OfficeApp` 元素必须包含 `xsi:type="TaskPaneApp"` 属性值。 `Id`元素是一个 GUID。 `SourceLocation`该值必须为外接程序 HTML 源文件或在任务窗格中运行的 web 应用程序的文件共享路径或 SHAREPOINT URL。 有关清单文件中其他元素的解释，请参阅 [Task pane add-ins for Project](../project/project-add-ins.md)。
 
 过程 2 演示如何创建 JSOM_SimpleOMCalls.XML 清单为 Project 测试加载项指定的 HTML 文件。HTML 文件中指定的按钮调用相关 JavaScript 函数。可以在 HTML 文件内添加 JavaScript 函数，或将它们放在一个单独的 .js 文件中。
 
 ## <a name="procedure-2-to-create-the-source-files-for-the-project-om-test-add-in"></a>过程 2. 创建 Project OM Test 加载项的源文件
 
-1. 创建一个 HTML 文件，该文件的名称由 JSOM_SimpleOMCalls .xml `SourceLocation`清单中的元素指定。 
+1. 创建一个 HTML 文件，该文件的名称由 `SourceLocation` JSOM_SimpleOMCalls .xml 清单中的元素指定。 
 
    例如，在 `C:\Project\AppSource` 目录中创建 theJSOMCall.html 文件。 虽然您可以使用简单的文本编辑器来创建源文件，但使用 Visual Studio Code 这样的工具（例如 HTML 和 JavaScript）会更简单，并且具有其他编辑辅助功能。 如果还未执行 [Project 任务窗格加载项](../project/project-add-ins.md)所述的必应搜索示例，过程 3 将演示如何创建清单指定的 `\\ServerName\AppSource` 文件共享。
 
@@ -107,9 +107,9 @@ JSOMCall.html 示例使用 office.js 文件和 project-15.js 文件中包含的 
 
 2. 在 JSOMCall.html 文件所在的相同目录中，创建 JavaScript 文件 JSOM_Sample.js。 
 
-   下面的代码使用 Office.js 文件中的函数来获取应用程序上下文和文档信息。 该`text`对象是 HTML 文件中`textarea`控件的 ID。
+   下面的代码使用 Office.js 文件中的函数来获取应用程序上下文和文档信息。 该 `text` 对象是 `textarea` HTML 文件中控件的 ID。
 
-   ProjDoc 变量是使用`ProjectDocument`对象初始化的。 ** \_** 代码包括一些简单的`getContextValues`错误处理函数，以及获取应用程序上下文和项目文档上下文属性的函数。 有关 Project 的 JavaScript 对象模型的详细信息，请参阅 [适用于 Office 的 JavaScript API](../reference/javascript-api-for-office.md)。
+   ** \_ ProjDoc**变量是使用对象初始化的 `ProjectDocument` 。 代码包括一些简单的错误处理函数，以及 `getContextValues` 获取应用程序上下文和项目文档上下文属性的函数。 有关 Project 的 JavaScript 对象模型的详细信息，请参阅 [适用于 Office 的 JavaScript API](../reference/javascript-api-for-office.md)。
 
 
     ```js
@@ -172,27 +172,27 @@ JSOMCall.html 示例使用 office.js 文件和 project-15.js 文件中包含的 
     }
     ```
 
-   有关 Office. .js 文件中的函数的信息，请参阅[Office JAVASCRIPT API](../reference/javascript-api-for-office.md)。 例如， `getDocumentUrl`函数将获取打开项目的 URL 或文件路径。
+   有关 Office. .js 文件中的函数的信息，请参阅[Office JAVASCRIPT API](../reference/javascript-api-for-office.md)。 例如，函数将 `getDocumentUrl` 获取打开项目的 URL 或文件路径。
 
 3. 添加调用 Office.js 和 Project-15.js 中异步函数的 JavaScript 函数来获取选定数据：
 
-   - 例如， `getSelectedDataAsync`是在 node.js 中的一个常规函数，用于获取选定数据的无格式文本。 有关详细信息，请参阅 [AsyncResult 对象](/javascript/api/office/office.asyncresult)。
+   - 例如， `getSelectedDataAsync` 是在 node.js 中的一个常规函数，用于获取选定数据的无格式文本。 有关详细信息，请参阅 [AsyncResult 对象](/javascript/api/office/office.asyncresult)。
 
-   - Project-15.js `getSelectedTaskAsync`中的函数获取所选任务的 GUID。 同样，该`getSelectedResourceAsync`函数也会获取所选资源的 GUID。 如果在未选定任务或资源时调用这些函数，函数将显示未定义错误。
+   - `getSelectedTaskAsync`Project-15.js 中的函数获取所选任务的 GUID。 同样，该 `getSelectedResourceAsync` 函数也会获取所选资源的 GUID。 如果在未选定任务或资源时调用这些函数，函数将显示未定义错误。
 
-   - 函数`getTaskAsync`将获取任务名称和已分配资源的名称。 如果任务位于同步的 SharePoint 任务列表中， `getTaskAsync`则获取 sharepoint 列表中的任务 ID; 否则为 false。否则，SharePoint 任务 ID 为0。
+   - `getTaskAsync`函数将获取任务名称和已分配资源的名称。 如果任务位于同步的 SharePoint 任务列表中，则 `getTaskAsync` 获取 sharepoint 列表中的任务 id; 否则，sharepoint 任务 id 为0。
 
      > [!NOTE]
-     > 出于演示目的，此示例代码包括一个错误。 如果`taskGuid`未定义，则`getTaskAsync`函数错误。 如果你获取了一个有效的任务 GUID，然后选择了其他任务`getTaskAsync` ，该函数将获取`getSelectedTaskAsync`函数对其进行操作的最近任务的数据。
+     > 出于演示目的，此示例代码包括一个错误。 如果未 `taskGuid` 定义，则 `getTaskAsync` 函数错误。 如果你获取了一个有效的任务 GUID，然后选择了其他任务，该函数将获取函数对其进行操作的 `getTaskAsync` 最近任务的数据 `getSelectedTaskAsync` 。
   
-   - `getTaskFields`、 `getResourceFields`和`getProjectFields`是调用`getTaskFieldAsync`、 `getResourceFieldAsync`或`getProjectFieldAsync`多次的本地函数，用于获取任务或资源的指定字段。 在 project-15.js 文件中， `ProjectTaskFields`枚举和`ProjectResourceFields`枚举显示受支持的字段。
+   - `getTaskFields`、 `getResourceFields` 和 `getProjectFields` 是调用、或多次的本地函数， `getTaskFieldAsync` `getResourceFieldAsync` `getProjectFieldAsync` 用于获取任务或资源的指定字段。 在 project-15.js 文件中， `ProjectTaskFields` 枚举和 `ProjectResourceFields` 枚举显示受支持的字段。
 
-   - `getSelectedViewAsync`函数获取视图的类型（在 project-15.js 中的`ProjectViewTypes`枚举中定义）和视图的名称。
+   - `getSelectedViewAsync`函数获取视图的类型（在 `ProjectViewTypes` project-15.js 中的枚举中定义）和视图的名称。
 
-   - 如果项目与 SharePoint 任务列表同步，则该`getWSSUrlAsync`函数将获取 "任务" 列表的 URL 和名称。 如果项目未与 SharePoint 任务列表同步，则`getWSSUrlAsync`函数错误。
+   - 如果项目与 SharePoint 任务列表同步，则该函数将 `getWSSUrlAsync` 获取 "任务" 列表的 URL 和名称。 如果项目未与 SharePoint 任务列表同步，则 `getWSSUrlAsync` 函数错误。
 
      > [!NOTE]
-     > 若要获取任务列表的 SharePoint URL 和名称， `getProjectFieldAsync`建议您将函数与`WSSUrl` [ProjectProjectFields](/javascript/api/office/office.projectprojectfields)枚举中的和`WSSList`常量结合使用。
+     > 若要获取任务列表的 SharePoint URL 和名称，建议您将 `getProjectFieldAsync` 函数与 `WSSUrl` `WSSList` [ProjectProjectFields](/javascript/api/office/office.projectprojectfields)枚举中的和常量结合使用。
 
    以下代码的每个函数中都包含由 `function (asyncResult)` 指定的匿名函数，该函数是获取异步结果的回叫。你可以使用命名函数，而不是匿名函数，前者有助于实现复杂外接程序的可维护性。
 
@@ -549,9 +549,9 @@ JSOMCall.html 示例使用 office.js 文件和 project-15.js 文件中包含的 
     }
     ```
 
-4. 添加 JavaScript 事件处理程序回调和函数，以注册任务选择、资源选择和视图选择更改事件处理程序，并注销事件处理程序。 `manageEventHandlerAsync`函数根据_操作_参数添加或删除指定的事件处理程序。 操作可以是`addHandlerAsync`或`removeHandlerAsync`。
+4. 添加 JavaScript 事件处理程序回调和函数，以注册任务选择、资源选择和视图选择更改事件处理程序，并注销事件处理程序。 `manageEventHandlerAsync`函数根据_操作_参数添加或删除指定的事件处理程序。 操作可以是 `addHandlerAsync` 或 `removeHandlerAsync` 。
 
-   `manageTaskEventHandler`、 `manageResourceEventHandler`和`manageViewEventHandler`函数可以添加或删除由_docMethod_参数指定的事件处理程序。
+   `manageTaskEventHandler`、 `manageResourceEventHandler` 和 `manageViewEventHandler` 函数可以添加或删除由_docMethod_参数指定的事件处理程序。
 
     ```js
     // Task selection changed event handler.
@@ -625,7 +625,7 @@ JSOMCall.html 示例使用 office.js 文件和 project-15.js 文件中包含的 
     }
     ```
 
-5. 对于 HTML 文档正文，添加调用 JavaScript 函数的按钮进行测试。 例如，在常见 JSOM `div` API 的元素中，添加一个调用 general `getSelectedDataAsync`函数的输入按钮。
+5. 对于 HTML 文档正文，添加调用 JavaScript 函数的按钮进行测试。 例如，在 `div` 常见 JSOM API 的元素中，添加一个调用 general 函数的输入按钮 `getSelectedDataAsync` 。
 
     ```HTML
     <body>
@@ -640,7 +640,7 @@ JSOMCall.html 示例使用 office.js 文件和 project-15.js 文件中包含的 
         <!--  more code . . .  -->
     ```
 
-6. 为特定`div`于项目的任务函数和`TaskSelectionChanged`事件添加包含按钮的节。
+6. 为 `div` 特定于项目的任务函数和事件添加包含按钮的节 `TaskSelectionChanged` 。
 
     ```HTML
     <div id="ProjectSpecificTask">
@@ -656,7 +656,7 @@ JSOMCall.html 示例使用 office.js 文件和 project-15.js 文件中包含的 
     </div>
     ```
 
-7. 添加`div`包含资源方法和事件、查看方法和事件、项目属性和上下文属性的按钮的节
+7. 添加 `div` 包含资源方法和事件、查看方法和事件、项目属性和上下文属性的按钮的节
 
     ```HTML
     <div id="ResourceMethods">
@@ -688,7 +688,7 @@ JSOMCall.html 示例使用 office.js 文件和 project-15.js 文件中包含的 
     </div>
     ```
 
-8. 若要设置按钮元素的格式，请`style`添加 CSS 元素。 例如，将以下项添加为`head`元素的子级。
+8. 若要设置按钮元素的格式，请添加 CSS `style` 元素。 例如，将以下项添加为元素的子级 `head` 。
 
     ```HTML
     <style type="text/css">
@@ -723,7 +723,7 @@ JSOMCall.html 示例使用 office.js 文件和 project-15.js 文件中包含的 
 
 4. 在“信任中心”**** 对话框的左侧窗格中，选择“受信任的加载项目录”****。
 
-5. 如果您已经为 Bing 搜索`\\ServerName\AppManifests`加载项添加了路径，请跳过此步骤。 否则，在 "**受信任的加载项目录**" 窗格中`\\ServerName\AppManifests` ，在 "**目录 Url** " 文本框中添加路径，选择 "**添加目录**"，启用网络共享作为默认源（请参阅图1），然后选择 **"确定"**。
+5. 如果您已经 `\\ServerName\AppManifests` 为 Bing 搜索加载项添加了路径，请跳过此步骤。 否则，在 "**受信任的加载项目录**" 窗格中，在 `\\ServerName\AppManifests` "**目录 Url** " 文本框中添加路径，选择 "**添加目录**"，启用网络共享作为默认源（请参阅图1），然后选择 **"确定"**。
 
    *图 1.为外接程序清单添加网络文件共享*
 
@@ -741,17 +741,17 @@ JSOMCall.html 示例使用 office.js 文件和 project-15.js 文件中包含的 
 
    ![使用 Project OM Test 应用](../images/pj15-create-simple-agave-project-om-test.png)
 
-8. 选择第一项任务的“工期”**** 列中的单元格，然后选择“Project OM Test”加载项中的“getSelectedDataAsync”按钮********。 `getSelectedDataAsync`函数将设置要显示`2 days`的文本框值。 
+8. 选择第一项任务的“工期”**** 列中的单元格，然后选择“Project OM Test”加载项中的“getSelectedDataAsync”按钮********。 `getSelectedDataAsync`函数将设置要显示的文本框值 `2 days` 。 
 
-9. 选择所有三项任务的三个“工期”**** 单元格。 `getSelectedDataAsync`函数返回在不同行中选定的单元格的以分号分隔的文本值， `2 days;4 days;0 days`例如。
+9. 选择所有三项任务的三个“工期”**** 单元格。 `getSelectedDataAsync`函数返回在不同行中选定的单元格的以分号分隔的文本值，例如 `2 days;4 days;0 days` 。
 
-   `getSelectedDataAsync`函数返回在行中选定的单元格的逗号分隔的文本值。 有关图 3 中的示例，选中任务 T2 的整行。 选择`getSelectedDataAsync`时，文本框将显示以下内容：`,Auto Scheduled,T2,4 days,Thu 6/14/12,Tue 6/19/12,1,,<NA>`
+   `getSelectedDataAsync`函数返回在行中选定的单元格的逗号分隔的文本值。 有关图 3 中的示例，选中任务 T2 的整行。 选择时 `getSelectedDataAsync` ，文本框将显示以下内容：`,Auto Scheduled,T2,4 days,Thu 6/14/12,Tue 6/19/12,1,,<NA>`
 
    “指标”**** 列和“资源名称”**** 列均为空，因此文本数组显示这些列为空值。 `<NA>` 值代表“**添加新列**”单元格。
 
-10. 选择任务 T2 行中的任何单元格，或任务 T2 的整行，然后选择“getSelectedTaskAsync”****。 文本框显示任务 GUID 值，例如，`{25D3E03B-9A7D-E111-92FC-00155D3BA208}`。 Project 将该值存储在`taskGuid` **项目 OM 测试**外接程序的全局变量中。
+10. 选择任务 T2 行中的任何单元格，或任务 T2 的整行，然后选择“getSelectedTaskAsync”****。 文本框显示任务 GUID 值，例如，`{25D3E03B-9A7D-E111-92FC-00155D3BA208}`。 Project 将该值存储在 `taskGuid` **项目 OM 测试**外接程序的全局变量中。
 
-11. 选择`getTaskAsync`""。 如果`taskGuid`变量包含任务 T2 的 GUID，则文本框将显示任务信息。 **ResourceNames** 值为空。
+11. 选择 "" `getTaskAsync` 。 如果 `taskGuid` 变量包含任务 T2 的 GUID，则文本框将显示任务信息。 **ResourceNames** 值为空。
 
     创建两个本地资源 R1 andR2，并将其分配给每个50% 的任务 T2，然后再次选择 " **getTaskAsync** "。 文本框中的结果包含资源信息。 如果任务位于同步的 SharePoint 任务列表中，那么结果还会包含 SharePoint 任务 ID。
 
@@ -760,7 +760,7 @@ JSOMCall.html 示例使用 office.js 文件和 project-15.js 文件中包含的 
     - WSS ID：`0`
     - ResourceNames: `R1[50%],R2[50%]`
 
-12. 选择 "**获取任务域**" 按钮。 `getTaskFields`函数对任务名称`getTaskfieldAsync` 、索引、开始日期、工期、优先级和任务备注多次调用函数。
+12. 选择 "**获取任务域**" 按钮。 `getTaskFields`函数对 `getTaskfieldAsync` 任务名称、索引、开始日期、工期、优先级和任务备注多次调用函数。
 
     - 名称：`T2`
     - ID：`2`
@@ -777,14 +777,14 @@ JSOMCall.html 示例使用 office.js 文件和 project-15.js 文件中包含的 
     > [!NOTE]
     > 如果 Project Professional 安装在 Windows Server 计算机上，则为了能够将项目保存回 SharePoint，您可使用“服务器管理器”**** 添加“桌面体验”**** 功能。
 
-    如果项目是本地项目，或者如果您使用 Project Professional 打开由 Project Server 管理的项目，则该方法将`getWSSUrlAsync`显示未定义的错误。
+    如果项目是本地项目，或者如果您使用 Project Professional 打开由 Project Server 管理的项目，则该 `getWSSUrlAsync` 方法将显示未定义的错误。
 
     - SharePoint URL：`http://ServerName`
     - 列表名称：`Test task list`
 
-14. 选择 " **TaskSelectionChanged 事件**" 部分中的 "**添加**" 按钮， `manageTaskEventHandler`它调用函数以注册任务选择更改事件， `In onComplete function for addHandlerAsync Status: succeeded`并在文本框中返回。 选择一个不同的任务；文本框显示 `In task selection changed event handler`，它是任务选择更改事件的回调函数的输出。 选择“删除”**** 按钮取消注册事件处理程序。
+14. 选择 " **TaskSelectionChanged 事件**" 部分中的 "**添加**" 按钮，它调用 `manageTaskEventHandler` 函数以注册任务选择更改事件，并 `In onComplete function for addHandlerAsync Status: succeeded` 在文本框中返回。 选择一个不同的任务；文本框显示 `In task selection changed event handler`，它是任务选择更改事件的回调函数的输出。 选择“删除”**** 按钮取消注册事件处理程序。
 
-15. 要使用资源方法，可先选择一个视图，如“资源工作表”，****“资源使用状况”**** 或“资源窗体”****，然后在该视图中选择一个资源。 选择**getSelectedResourceAsync**以初始化**resourceGuid**变量，然后选择 "**获取资源域**" 以对`getResourceFieldAsync`资源属性多次调用。 还可以添加或删除资源选择更改事件处理程序。
+15. 要使用资源方法，可先选择一个视图，如“资源工作表”，****“资源使用状况”**** 或“资源窗体”****，然后在该视图中选择一个资源。 选择**getSelectedResourceAsync**以初始化**resourceGuid**变量，然后选择 "**获取资源域**" 以对 `getResourceFieldAsync` 资源属性多次调用。 还可以添加或删除资源选择更改事件处理程序。
 
     - 资源名称：`R1`
     - 成本：`$800.00`
@@ -793,12 +793,12 @@ JSOMCall.html 示例使用 office.js 文件和 project-15.js 文件中包含的 
     - 实际工时：`0h`
     - 单位：`100%`
 
-16. 选择 " **getSelectedViewAsync** " 以显示活动视图的类型和名称。 还可以添加或删除视图选择更改事件处理程序。 例如，如果 "**资源窗体**" 是活动视图， `getSelectedViewAsync`则该函数会在文本框中显示以下内容：
+16. 选择 " **getSelectedViewAsync** " 以显示活动视图的类型和名称。 还可以添加或删除视图选择更改事件处理程序。 例如，如果 "**资源窗体**" 是活动视图，则该 `getSelectedViewAsync` 函数会在文本框中显示以下内容：
 
     - 视图类型：`6`
     - 名称：`Resource Form`
 
-17. 选择 "**获取项目域**" `getProjectFieldAsync` ，为活动项目的不同属性多次调用函数。 如果项目是从 Project Web App 打开的，则`getProjectFieldAsync`该函数可以获取 Project web app 实例的 URL。
+17. 选择 "**获取项目域**"，为 `getProjectFieldAsync` 活动项目的不同属性多次调用函数。 如果项目是从 Project Web App 打开的，则该 `getProjectFieldAsync` 函数可以获取 Project Web app 实例的 URL。
 
     - 项目 GUID：`9845922E-DAB4-E111-8AF3-00155D3BA208`
     - 开始日期：`Tue 6/12/12`
@@ -808,7 +808,7 @@ JSOMCall.html 示例使用 office.js 文件和 project-15.js 文件中包含的 
     - 符号位置：`0`
     - Project Web App URL：`http://servername/pwa`
   
-18. 选择 "**获取上下文值**" 按钮获取文档的属性和运行外接程序的应用程序，方法是获取 " **document** " 对象和该`Office.context.application`对象的属性。 例如，如果 Project1.mpp 文件在本地计算机桌面上，则文档 URL 为 `C:\Users\UserAlias\Desktop\Project1.mpp`。 如果 .mpp 文件在 SharePoint 库中，则值为文档的 URL。 如果使用 Project Professional 2013 从 Project Web App 打开一个名为 Project1 的项目，则文档 URL 为 `<>\Project1`。
+18. 选择 "**获取上下文值**" 按钮获取文档的属性和运行外接程序的应用程序，方法是获取 " **document** " 对象和该对象的属性 `Office.context.application` 。 例如，如果 Project1.mpp 文件在本地计算机桌面上，则文档 URL 为 `C:\Users\UserAlias\Desktop\Project1.mpp`。 如果 .mpp 文件在 SharePoint 库中，则值为文档的 URL。 如果使用 Project Professional 2013 从 Project Web App 打开一个名为 Project1 的项目，则文档 URL 为 `<>\Project1`。
 
     - 文档 URL：`<>\Project1`
     - 文档模式：`readWrite`
@@ -903,9 +903,9 @@ Project 2013 SDK 下载包含 JSOMCall.html 文件、JSOM_Sample.js 文件和相
 
 ## <a name="robust-programming"></a>可靠编程
 
-**PROJECT OM Test**外接程序是一个示例，演示如何在 Project-15.js 和 Office .js 文件中使用 Project 2013 的一些 JavaScript 函数。 此示例仅供测试用，不包括可靠的错误检查。 例如，如果您不选择资源并运行`getSelectedResourceAsync`函数，则不会初始化该`resourceGuid`变量，并且调用将`getResourceFieldAsync`返回一个错误。 对于生产加载项，应检查特定错误并忽略结果，隐藏未应用的功能，或通知用户选择视图并在使用函数前先进行有效选择。
+**PROJECT OM Test**外接程序是一个示例，演示如何在 Project-15.js 和 Office .js 文件中使用 Project 2013 的一些 JavaScript 函数。 此示例仅供测试用，不包括可靠的错误检查。 例如，如果您不选择资源并运行 `getSelectedResourceAsync` 函数，则 `resourceGuid` 不会初始化该变量，并且调用将 `getResourceFieldAsync` 返回一个错误。 对于生产加载项，应检查特定错误并忽略结果，隐藏未应用的功能，或通知用户选择视图并在使用函数前先进行有效选择。
 
-对于一个简单的示例，以下代码中的错误输出包括第`actionMessage`一个变量，该变量指定为避免`getSelectedResourceAsync`函数中的错误要采取的操作。
+对于一个简单的示例，以下代码中的错误输出包括第 `actionMessage` 一个变量，该变量指定为避免函数中的错误要采取的操作 `getSelectedResourceAsync` 。
 
 ```js
 function logError(errorText) {
@@ -936,7 +936,7 @@ function getSelectedResourceAsync() {
 
 Project 2013 SDK 下载中的 **HelloProject_OData** 示例包含使用 JQuery 库来显示弹出错误消息的 SurfaceErrors.js 文件。 图 4 显示“toast”通知中的错误消息。
 
-Surfaceerrors.js 文件中的以下代码包括创建`throwError` `Toast`对象的 th 函数。
+Surfaceerrors.js 文件中的以下代码包括 `throwError` 创建对象的 th 函数 `Toast` 。
 
 ```js
 /*
@@ -1046,7 +1046,7 @@ var Toast = {
 }
 ```
 
-若要使用`throwError`函数，请在 jsomcall.html 文件中包括 JQuery 库和 surfaceerrors.js 脚本，然后`throwError`在其他 JavaScript 函数（如） `logMethodError`中添加调用。
+若要使用 `throwError` 函数，请在 jsomcall.html 文件中包括 JQuery 库和 surfaceerrors.js 脚本，然后 `throwError` 在其他 JavaScript 函数（如）中添加调用 `logMethodError` 。
 
 > [!NOTE]
 > 部署加载项之前，请将 office.js 引用和 jQuery 引用更改为内容发布网络 (CDN) 引用。CDN 引用可提供最新的版本和更好的性能。

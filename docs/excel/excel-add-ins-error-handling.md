@@ -3,12 +3,12 @@ title: 错误处理
 description: 了解有关 Excel JavaScript API 错误处理逻辑，以解决运行时错误。
 ms.date: 05/13/2020
 localization_priority: Normal
-ms.openlocfilehash: aaadcf41f03258bdf85d9796cc611a1c05478549
-ms.sourcegitcommit: 110a7f247ce83c7434ea32098497d2864e28e096
+ms.openlocfilehash: ff6336e4d76e84ddc708d65eda70f5f2e172fde7
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/14/2020
-ms.locfileid: "44227403"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44609606"
 ---
 # <a name="error-handling"></a>错误处理
 

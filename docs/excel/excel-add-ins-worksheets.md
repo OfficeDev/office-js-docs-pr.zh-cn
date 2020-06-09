@@ -3,12 +3,12 @@ title: 使用 Excel JavaScript API 处理工作表
 description: 演示如何使用 Excel JavaScript API 对工作表执行常见任务的代码示例。
 ms.date: 03/24/2020
 localization_priority: Normal
-ms.openlocfilehash: 24c99c8a454adbb30e23406784af34f815267d2a
-ms.sourcegitcommit: 315a648cce38609c3e1c92bd4a339e268f8a2e1d
+ms.openlocfilehash: ff8b1c29b17dfa801feab7fcf8b1f478596eda46
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "42978681"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44610380"
 ---
 # <a name="work-with-worksheets-using-the-excel-javascript-api"></a>使用 Excel JavaScript API 处理工作表
 

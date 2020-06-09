@@ -3,12 +3,12 @@ title: 使用 Excel JavaScript API 处理事件
 description: Excel JavaScript 对象的事件列表。 其中包括有关使用事件处理程序和关联模式的信息。
 ms.date: 05/06/2020
 localization_priority: Normal
-ms.openlocfilehash: 075544c529ba7200aa181d42dd5fc8c3fbd661bc
-ms.sourcegitcommit: 735bf94ac3c838f580a992e7ef074dbc8be2b0ea
+ms.openlocfilehash: fbf92d34a0fb1d8b18b9ebb379cd24d34775c243
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "44170805"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44609599"
 ---
 # <a name="work-with-events-using-the-excel-javascript-api"></a>使用 Excel JavaScript API 处理事件
 
@@ -111,7 +111,7 @@ function handleChange(event)
 
 ## <a name="remove-an-event-handler"></a>删除事件处理程序
 
-下面的代码示例为 **Sample** 工作表中的 `onSelectionChanged` 事件注册事件处理程序，并将 `handleSelectionChange` 函数定义为在事件发生时运行。 它还定义了随后可以调用的 `remove()` 函数，以删除相应事件处理程序。 请注意， `RequestContext`需要使用来创建事件处理程序才能将其删除。 
+下面的代码示例为 **Sample** 工作表中的 `onSelectionChanged` 事件注册事件处理程序，并将 `handleSelectionChange` 函数定义为在事件发生时运行。 它还定义了随后可以调用的 `remove()` 函数，以删除相应事件处理程序。 请注意， `RequestContext` 需要使用来创建事件处理程序才能将其删除。 
 
 ```js
 var eventResult;

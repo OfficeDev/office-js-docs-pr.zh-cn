@@ -3,12 +3,12 @@ title: 清单文件中的 CitationText 元素
 description: 指定该词典的引文样本文字。
 ms.date: 03/19/2019
 localization_priority: Normal
-ms.openlocfilehash: d63ba369e7732d8e81e3f735f4b8033143a5be9e
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: f29640f04d940d8ba7fc7f933f6f7884f1667e9e
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42720664"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44612324"
 ---
 # <a name="citationtext-element"></a>CitationText 元素
 

@@ -3,12 +3,12 @@ title: 清单文件中的 Requirements 元素
 description: "\"要求\" 元素指定要激活的 Office 外接程序所需的最低要求集和方法。"
 ms.date: 03/19/2019
 localization_priority: Normal
-ms.openlocfilehash: a3f41a763ec820a6c766e6a32b26e55ad34996f7
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: 586f05ec68257462cb64a96abf2a34eb31861a5c
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42720447"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44611713"
 ---
 # <a name="requirements-element"></a>Requirements 元素
 

@@ -3,12 +3,12 @@ title: 清单文件中的 Scopes 元素
 description: Scope 元素包含加载项连接到外部资源所需的权限。
 ms.date: 08/12/2019
 localization_priority: Normal
-ms.openlocfilehash: 69a394b4cbe324b49c03425e6b2df92f44cbd21f
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: be68033e86de736703d9d1593ad361918d5a147d
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42717920"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44612239"
 ---
 # <a name="scopes-element"></a>Scopes 元素
 
@@ -18,7 +18,7 @@ ms.locfileid: "42717920"
 
 ## <a name="child-elements"></a>子元素
 
-|  元素 |  必需  |  说明  |
+|  元素 |  必需  |  Description  |
 |:-----|:-----|:-----|
 |  **Scope**                |  是     |   权限的名称;例如，Files. All 或 profile。 |
 

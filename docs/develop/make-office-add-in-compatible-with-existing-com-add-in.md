@@ -3,12 +3,12 @@ title: 让 Office 加载项与现有 COM 加载项兼容
 description: 启用 Office 加载项和等效 COM 加载项之间的兼容性
 ms.date: 07/31/2019
 localization_priority: Normal
-ms.openlocfilehash: cfe39dcecafc23bd0813251f7c883aa7a8810273
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: ff47b75e8e560bc891c84dc839b7eceffb2400be
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42718900"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44609420"
 ---
 # <a name="make-your-office-add-in-compatible-with-an-existing-com-add-in"></a>让 Office 加载项与现有 COM 加载项兼容
 
@@ -26,7 +26,7 @@ ms.locfileid: "42718900"
 
 若要在 Office 外接程序和 COM 加载项之间启用兼容性，请在 Office 外接程序的[清单](add-in-manifests.md)中标识等效的 COM 加载项。 然后，Windows 上的 Office 将使用 COM 加载项，而不是 Office 加载项（如果已安装）。
 
-以下示例显示了将 COM 加载项指定为等效加载项的清单部分。 `ProgId`元素的值标识 COM 加载项，并且`EquivalentAddins`元素必须紧跟在结束`VersionOverrides`标记之前。
+以下示例显示了将 COM 加载项指定为等效加载项的清单部分。 元素的值 `ProgId` 标识 COM 加载项，并且 `EquivalentAddins` 元素必须紧跟在结束 `VersionOverrides` 标记之前。
 
 ```xml
 <VersionOverrides>

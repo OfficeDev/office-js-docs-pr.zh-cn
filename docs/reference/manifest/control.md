@@ -3,12 +3,12 @@ title: 清单文件中的 Control 元素
 description: 定义执行操作或启动任务窗格的 JavaScript 函数。
 ms.date: 01/10/2020
 localization_priority: Normal
-ms.openlocfilehash: 0d13fc4fd30f32b4998d385058cff941d3f72353
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: 55faa52e5020691967e65b33c2d975535405b2a4
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42720671"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44612317"
 ---
 # <a name="control-element"></a>Control 元素
 
@@ -16,7 +16,7 @@ ms.locfileid: "42720671"
 
 ## <a name="attributes"></a>属性
 
-|  属性  |  必需  |  说明  |
+|  属性  |  必需  |  Description  |
 |:-----|:-----|:-----|
 |**xsi:type**|是|正在定义的控件类型。可以是 `Button`、`Menu` 或 `MobileButton`。 |
 |**id**|否|控件元素的 ID。最多可包含 125 个字符。|

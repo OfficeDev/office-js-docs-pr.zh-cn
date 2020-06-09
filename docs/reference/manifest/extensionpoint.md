@@ -3,12 +3,12 @@ title: 清单文件中的 ExtensionPoint 元件
 description: 定义 Office UI 中加载项公开功能的位置。
 ms.date: 05/18/2020
 localization_priority: Normal
-ms.openlocfilehash: 41d4ede1ef4198430d888891e3eedda4e050456f
-ms.sourcegitcommit: f62d9630de69c5c070e3d4048205f5cc654db7e4
+ms.openlocfilehash: 56a7365f986060a225cc0d20c89a310deb4a52b3
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/18/2020
-ms.locfileid: "44278418"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44611867"
 ---
 # <a name="extensionpoint-element"></a>ExtensionPoint 元素
 
@@ -16,7 +16,7 @@ ms.locfileid: "44278418"
 
 ## <a name="attributes"></a>属性
 
-|  属性  |  必需  |  说明  |
+|  属性  |  必需  |  Description  |
 |:-----|:-----|:-----|
 |  **xsi:type**  |  是  | 定义的扩展点类型。|
 

@@ -3,12 +3,12 @@ title: 清单文件中的 GetStarted 元素
 description: 提供在 Word、Excel、PowerPoint 和 OneNote 主机中安装此外接程序时显示的标注所使用的信息。
 ms.date: 10/09/2018
 localization_priority: Normal
-ms.openlocfilehash: 7b4eb0e0413eff97751eac01c3dc6e5a452722aa
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: c1fbdd5d4f4365f9f8190805519fc7a70c8c87ca
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42718186"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44611832"
 ---
 # <a name="getstarted-element"></a>GetStarted 元素
 
@@ -16,13 +16,13 @@ ms.locfileid: "42718186"
 
 ## <a name="child-elements"></a>子元素
 
-| 元素                       | 必需 | 说明                                        |
+| 元素                       | 必需 | Description                                        |
 |:------------------------------|:--------:|:---------------------------------------------------|
 | [标题](#title)               | 是      | 定义外接程序公开功能的位置。     |
 | [说明](#description)   | 是      | 包含 JavaScript 函数的文件的 URL。|
 | [LearnMoreUrl](#learnmoreurl) | 是       | 指向详细说明外接程序的页面的 URL。   |
 
-### <a name="title"></a>标题 
+### <a name="title"></a>Title 
 
 必需。 用于标注顶部的标题。 **resid** 属性引用 **Resources** 分区的 [ShortStrings](resources.md) 元素中的有效 ID。
 

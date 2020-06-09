@@ -3,12 +3,12 @@ ms.date: 01/14/2020
 description: 了解如何实现易失性和脱机流式处理自定义函数。
 title: 函数中的可变值
 localization_priority: Normal
-ms.openlocfilehash: 7545d9928eaeb3779a8f7e04c87d0d5f33a7a131
-ms.sourcegitcommit: 54e2892c0c26b9ad1e4dba8aba48fea39f853b6c
+ms.openlocfilehash: a318c87cc5b5f45bf3b1f5fe1341b7008f5a3d2f
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/18/2020
-ms.locfileid: "44275775"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44609788"
 ---
 # <a name="volatile-values-in-functions"></a>函数中的可变值
 

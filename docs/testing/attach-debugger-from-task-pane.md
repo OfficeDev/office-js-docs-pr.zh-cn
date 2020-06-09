@@ -3,12 +3,12 @@ title: 从任务窗格附加调试器
 description: 了解如何从任务窗格附加调试器
 ms.date: 09/09/2019
 localization_priority: Normal
-ms.openlocfilehash: 6fcb79714377267a9345b2810a10a758fbca231a
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: 903ecfc577804ab052109d8a8f25c5a6eb799488
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42719866"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44611258"
 ---
 # <a name="attach-a-debugger-from-the-task-pane"></a>从任务窗格附加调试器
 

@@ -3,12 +3,12 @@ title: 在 iPad 和 Mac 上旁加载 Office 加载项以供测试
 description: 通过旁加载在 iPad 和 Mac 上测试 Office 外接程序
 ms.date: 02/18/2020
 localization_priority: Normal
-ms.openlocfilehash: 4863a55d21ab37411e76810a744f103cc364f7c1
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: 092207898547969a361b10d72fad106311563907
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42719775"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44611138"
 ---
 # <a name="sideload-office-add-ins-on-ipad-and-mac-for-testing"></a>在 iPad 和 Mac 上旁加载 Office 加载项以供测试
 
@@ -65,13 +65,13 @@ ms.locfileid: "42719775"
     - 对于 Excel：`/Users/<username>/Library/Containers/com.microsoft.Excel/Data/Documents/wef`
     - 对于 PowerPoint：`/Users/<username>/Library/Containers/com.microsoft.Powerpoint/Data/Documents/wef`
 
-2. 使用命令`open .` （包括句点或点）在**查找**器中打开文件夹。 将你的外接程序的清单文件复制到该文件夹中。
+2. 使用命令**Finder** `open .` （包括句点或点）在查找器中打开文件夹。 将你的外接程序的清单文件复制到该文件夹中。
 
     ![Mac 版 Office 中的 Wef 文件夹](../images/all-my-files.png)
 
 3. 打开 Word，然后打开一个文档。如果 Word 已运行，则重新启动它。
 
-4. 在 Word 中，选择 "**插入** > **外接程序** > **" "我的外接**程序" （下拉菜单），然后选择您的外接程序。
+4. 在 Word 中，选择 "**插入**  >  **外接程序**  >  **" "我的外接**程序" （下拉菜单），然后选择您的外接程序。
 
     ![Mac 版 Office 中的“我的加载项”](../images/my-add-ins-wikipedia.png)
 

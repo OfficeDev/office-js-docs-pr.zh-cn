@@ -3,12 +3,12 @@ title: 清单文件中的 MobileFormFactor 元素
 description: MobileFormFactor 元素指定外接程序的移动外观设置。
 ms.date: 10/09/2018
 localization_priority: Normal
-ms.openlocfilehash: 954fff5d1e701ce53a6ad82fa276c048ca6d6f3a
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: 64a7681ca23becf42af1ba435aae4d509e6ad1ba
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42720587"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44612225"
 ---
 # <a name="mobileformfactor-element"></a>MobileFormFactor 元素
 
@@ -20,7 +20,7 @@ ms.locfileid: "42720587"
 
 ## <a name="child-elements"></a>子元素
 
-| 元素                               | 必需 | 说明  |
+| 元素                               | 必需 | Description  |
 |:--------------------------------------|:--------:|:-------------|
 | [ExtensionPoint](extensionpoint.md) | 是      | 定义外接程序公开功能的位置。 |
 | [FunctionFile](functionfile.md)     | 是      | 包含 JavaScript 函数的文件的 URL。|

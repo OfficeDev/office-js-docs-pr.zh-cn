@@ -3,12 +3,12 @@ title: 对 Office 2013 内容和任务窗格加载项的 Office JavaScript API �
 description: 使用 Office JavaScript API 在 Office 2013 中创建任务窗格。
 ms.date: 02/27/2020
 localization_priority: Normal
-ms.openlocfilehash: 185397073a9d62a868b5ebc065d94c57b778e1e7
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: 334db88bbec07755678e3ba35e0d4998951ff5ab
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42718795"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44609704"
 ---
 # <a name="office-javascript-api-support-for-content-and-task-pane-add-ins-in-office-2013"></a>对 Office 2013 中内容和任务窗格外接程序的 Office JavaScript API 支持
 
@@ -16,11 +16,11 @@ ms.locfileid: "42718795"
 
 您可以使用 [Office JavaScript API](../reference/javascript-api-for-office.md) 创建 Office 2013 主机应用程序的任务窗格或内容外接程序。已对内容和任务窗格外接程序支持的对象和方法进行如下分类：
 
-1. **与其他 Office 外接程序共享的常见对象。** 这些对象包括[Office](/javascript/api/office)、 [Context](/javascript/api/office/office.context)和[AsyncResult](/javascript/api/office/office.asyncresult)。 `Office`对象是 OFFICE JavaScript API 的根对象。 该`Context`对象表示加载项的运行时环境。 `Office`和`Context`都是适用于任何 Office 外接程序的基本对象。 `AsyncResult`对象表示异步操作的结果，如返回到`getSelectedDataAsync`方法的数据，该方法读取用户在文档中选定的内容。
+1. **与其他 Office 外接程序共享的常见对象。** 这些对象包括[Office](/javascript/api/office)、 [Context](/javascript/api/office/office.context)和[AsyncResult](/javascript/api/office/office.asyncresult)。 `Office`对象是 Office JAVASCRIPT API 的根对象。 该 `Context` 对象表示加载项的运行时环境。 `Office`和 `Context` 都是适用于任何 Office 外接程序的基本对象。 `AsyncResult`对象表示异步操作的结果，如返回到方法的数据 `getSelectedDataAsync` ，该方法读取用户在文档中选定的内容。
 
-2. **Document 对象。** 可通过 [Document](/javascript/api/office/office.document) 对象的方法、属性和事件公开大多数可用于内容和任务窗格加载项的 API。 内容或任务窗格加载项可以使用[CustomXmlParts 属性访问](/javascript/api/office/office.context#document) **document**对象，通过它，可以访问用于处理文档中的数据（如[绑定](/javascript/api/office/office.bindings)和[CustomXmlParts](/javascript/api/office/office.customxmlparts)对象）的 API 的关键成员，以及[getSelectedDataAsync](/javascript/api/office/office.document#getselecteddataasync-coerciontype--options--callback-)、 [document.setselecteddataasync](/javascript/api/office/office.document#setselecteddataasync-data--options--callback-)和[document.getfileasync](/javascript/api/office/office.document#getfileasync-filetype--options--callback-)方法。 该`Document`对象还提供了[mode](/javascript/api/office/office.document#mode)属性，用于确定文档是否为只读或处于编辑模式、用于获取当前文档的 url 的[Url](/javascript/api/office/office.document#url)属性，以及对[Settings](/javascript/api/office/office.settings)对象的访问权限。 该`Document`对象还支持添加[SelectionChanged](/javascript/api/office/office.documentselectionchangedeventargs)事件的事件处理程序，以便您可以检测用户何时更改文档中的选定内容。
+2. **Document 对象。** 可通过 [Document](/javascript/api/office/office.document) 对象的方法、属性和事件公开大多数可用于内容和任务窗格加载项的 API。 内容或任务窗格加载项可以使用[CustomXmlParts 属性访问](/javascript/api/office/office.context#document) **document**对象，通过它，可以访问用于处理文档中的数据（如[绑定](/javascript/api/office/office.bindings)和[CustomXmlParts](/javascript/api/office/office.customxmlparts)对象）的 API 的关键成员，以及[getSelectedDataAsync](/javascript/api/office/office.document#getselecteddataasync-coerciontype--options--callback-)、 [document.setselecteddataasync](/javascript/api/office/office.document#setselecteddataasync-data--options--callback-)和[document.getfileasync](/javascript/api/office/office.document#getfileasync-filetype--options--callback-)方法。 该 `Document` 对象还提供了[mode](/javascript/api/office/office.document#mode)属性，用于确定文档是否为只读或处于编辑模式、用于获取当前文档的 url 的[url](/javascript/api/office/office.document#url)属性，以及对[Settings](/javascript/api/office/office.settings)对象的访问权限。 该 `Document` 对象还支持添加[SelectionChanged](/javascript/api/office/office.documentselectionchangedeventargs)事件的事件处理程序，以便您可以检测用户何时更改文档中的选定内容。
 
-   仅在加载了 DOM 和运行时环境之后， `Document`内容或任务窗格外接程序才能访问该对象，这通常是在运行的 " [Office initialize](/javascript/api/office) " 事件的事件处理程序中。 有关应用程序初始化时的事件流以及如何检查 DOM 和运行时是否成功加载的信息，请参阅[加载 DOM 和运行时环境](loading-the-dom-and-runtime-environment.md)。
+   `Document`仅在加载了 DOM 和运行时环境之后，内容或任务窗格外接程序才能访问该对象，这通常是在运行的 " [Office initialize](/javascript/api/office) " 事件的事件处理程序中。 有关应用程序初始化时的事件流以及如何检查 DOM 和运行时是否成功加载的信息，请参阅[加载 DOM 和运行时环境](loading-the-dom-and-runtime-environment.md)。
 
 3. **使用特定的功能的对象。** 若要使用 API 的特定功能，请使用下面的对象和方法：
 
@@ -41,7 +41,7 @@ ms.locfileid: "42718795"
 
 ## <a name="reading-and-writing-to-an-active-selection"></a>在活动的选择内容中读取和写入
 
-您可以在文档、电子表格或演示文稿的用户当前选定内容中读取和写入。 根据加载项的主机应用程序，您可以在 [Document](/javascript/api/office/office.document#getselecteddataasync-coerciontype--options--callback-) 对象的 [getSelectedDataAsync](/javascript/api/office/office.document#setselecteddataasync-data--options--callback-) 和 [setSelectedDataAsync](/javascript/api/office/office.document) 方法中指定要作为参数来读取或写入的数据结构类型。 例如，您可以指定任何用于 Word 的数据类型（文本、HTML、表格数据或 Office Open XML）、用于 Excel 的文本和表格数据，以及用于 PowerPoint 和 Project 的文本。 您还可以创建事件处理程序来检测对用户选择内容的更改。 下面的示例使用`getSelectedDataAsync`方法以文本形式获取选定内容中的数据。
+您可以在文档、电子表格或演示文稿的用户当前选定内容中读取和写入。 根据加载项的主机应用程序，您可以在 [Document](/javascript/api/office/office.document#getselecteddataasync-coerciontype--options--callback-) 对象的 [getSelectedDataAsync](/javascript/api/office/office.document#setselecteddataasync-data--options--callback-) 和 [setSelectedDataAsync](/javascript/api/office/office.document) 方法中指定要作为参数来读取或写入的数据结构类型。 例如，您可以指定任何用于 Word 的数据类型（文本、HTML、表格数据或 Office Open XML）、用于 Excel 的文本和表格数据，以及用于 PowerPoint 和 Project 的文本。 您还可以创建事件处理程序来检测对用户选择内容的更改。 下面的示例使用方法以文本形式获取选定内容中的数据 `getSelectedDataAsync` 。
 
 
 ```js
@@ -67,11 +67,11 @@ function write(message){
 
 ## <a name="binding-to-a-region-in-a-document-or-spreadsheet"></a>绑定到文档或电子表格中的区域
 
-您可以使用`getSelectedDataAsync`和`setSelectedDataAsync`方法在文档、电子表格或演示文稿中读取或写入用户的*当前*选择。 但是，如果您想在不要求用户选定内容的情况下，在运行您外接程序的各个会话中访问文档中的同一区域，您应首先绑定到该区域。 您还可以订阅该绑定区域的数据和选定内容更改事件。
+您可以使用 `getSelectedDataAsync` 和 `setSelectedDataAsync` 方法在文档、电子表格或演示文稿中读取或写入用户的*当前*选择。 但是，如果您想在不要求用户选定内容的情况下，在运行您外接程序的各个会话中访问文档中的同一区域，您应首先绑定到该区域。 您还可以订阅该绑定区域的数据和选定内容更改事件。
 
 可以使用 [Bindings](/javascript/api/office/office.bindings#addfromnameditemasync-itemname--bindingtype--options--callback-) 对象的 [addFromNamedItemAsync](/javascript/api/office/office.bindings#addfrompromptasync-bindingtype--options--callback-)、[addFromPromptAsync](/javascript/api/office/office.bindings#addfromselectionasync-bindingtype--options--callback-) 或 [addFromSelectionAsync](/javascript/api/office/office.bindings) 方法添加绑定。这些方法可以返回一个标识符，您可以用它访问绑定中的数据或者订阅数据更改或选择更改事件。
 
-下面的示例演示如何使用`Bindings.addFromSelectionAsync`方法将绑定添加到文档中的当前选定文本。
+下面的示例演示如何使用方法将绑定添加到文档中的当前选定文本 `Bindings.addFromSelectionAsync` 。
 
 
 
@@ -99,7 +99,7 @@ function write(message){
 
 如果任务窗格外接程序在 PowerPoint 或 Word 中运行，您可以使用 [Document.getFileAsync](/javascript/api/office/office.document#getfileasync-filetype--options--callback-)、[File.getSliceAsync](/javascript/api/office/office.file#getsliceasync-sliceindex--callback-) 和 [File.closeAsync](/javascript/api/office/office.file#closeasync-callback-) 方法获取整个演示文稿或文档。
 
-当您调用`Document.getFileAsync`时，将在[File](/javascript/api/office/office.file)对象中获取文档的副本。 `File`对象提供对以[切片](/javascript/api/office/office.slice)对象表示的 "块" 中的文档的访问。 调用`getFileAsync`时，可以指定文件类型（文本或压缩的 OPEN Office XML 格式）以及切片的大小（最高为4mb）。 若要访问`File`对象的内容，您可以在切片`File.getSliceAsync`的[data](/javascript/api/office/office.slice#data)属性中调用返回原始数据。 如果您指定了压缩格式，则获取作为字节数组的文件数据。 如果您在将文件传输给 Web 服务，则可以在提交前将压缩的原始数据转换为 base64 编码的字符串。 最后，当您完成文件的切片的获取后，请使用`File.closeAsync`方法关闭该文档。
+当您调用时 `Document.getFileAsync` ，将在[File](/javascript/api/office/office.file)对象中获取文档的副本。 `File`对象提供对以[切片](/javascript/api/office/office.slice)对象表示的 "块" 中的文档的访问。 调用时 `getFileAsync` ，可以指定文件类型（文本或压缩的 Open OFFICE XML 格式）以及切片的大小（最高为4mb）。 若要访问对象的内容 `File` ，您可以在 `File.getSliceAsync` [切片的 data](/javascript/api/office/office.slice#data)属性中调用返回原始数据。 如果您指定了压缩格式，则获取作为字节数组的文件数据。 如果您在将文件传输给 Web 服务，则可以在提交前将压缩的原始数据转换为 base64 编码的字符串。 最后，当您完成文件的切片的获取后，请使用 `File.closeAsync` 方法关闭该文档。
 
 有关详细信息，请参阅如何[从 PowerPoint 或 Word 外接程序中获取整个文档](../word/get-the-whole-document-from-an-add-in-for-word.md)。
 
@@ -112,7 +112,7 @@ function write(message){
 
 您还可以使用 [CustomXmlParts.getByIdAsync](/javascript/api/office/office.customxmlparts#getbyidasync-id--options--callback-) 方法通过其 GUID 访问自定义 XML 部件。在获取自定义 XML 部件后，使用 [CustomXmlPart.getXmlAsync](/javascript/api/office/office.customxmlpart#getxmlasync-options--callback-) 方法获取 XML 数据。
 
-若要向文档中添加新的自定义 XML 部件， `Document.customXmlParts`请使用属性获取文档中的自定义 xml 部件，然后调用[CustomXmlParts](/javascript/api/office/office.customxmlparts#addasync-xml--options--callback-)方法。
+若要向文档中添加新的自定义 XML 部件，请使用 `Document.customXmlParts` 属性获取文档中的自定义 xml 部件，然后调用[CustomXmlParts](/javascript/api/office/office.customxmlparts#addasync-xml--options--callback-)方法。
 
 有关如何使用含有任务窗格外接程序的自定义 XML 部件的详细信息，请参阅[使用 Office Open XML 创建更好的 Word 外接程序](../word/create-better-add-ins-for-word-with-office-open-xml.md)。
 
@@ -120,9 +120,9 @@ function write(message){
 ## <a name="persisting-add-in-settings"></a>保留加载项设置
 
 
-通常需要保存外接程序的自定义数据，例如用户的首选项或外接程序的状态，并在下一次打开外接程序时访问该数据。 可以使用通用的 Web 编程技术保存该数据，例如浏览器 cookie 或 HTML 5 Web 存储。 或者，如果你的外接程序在 Excel、PowerPoint 或 Word 中运行，则可以使用 [设置](/javascript/api/office/office.settings) 对象的方法。 使用该`Settings`对象创建的数据存储在电子表格、演示文稿或文档中，该外接程序插入并与之一起保存。 此数据仅用于创建它的外接程序。
+通常需要保存外接程序的自定义数据，例如用户的首选项或外接程序的状态，并在下一次打开外接程序时访问该数据。 可以使用通用的 Web 编程技术保存该数据，例如浏览器 cookie 或 HTML 5 Web 存储。 或者，如果你的外接程序在 Excel、PowerPoint 或 Word 中运行，则可以使用 [设置](/javascript/api/office/office.settings) 对象的方法。 使用该对象创建的数据 `Settings` 存储在电子表格、演示文稿或文档中，该外接程序插入并与之一起保存。 此数据仅用于创建它的外接程序。
 
-若要避免向存储文档的服务器往返，在运行时使用该`Settings`对象创建的数据在内存中进行管理。 之前保存的设置数据在初始化外接程序时加载到内存中，并在调用 [Settings.saveAsync](/javascript/api/office/office.settings#saveasync-options--callback-) 方法时，仅将对数据的更改保存回文档。 在内部，将该数据作为名称/值对存储在序列化的 JSON 对象中。 可以使用 [Settings](/javascript/api/office/office.settings#get-name-) 对象的 [get](/javascript/api/office/office.settings#set-name--value-)、[set](/javascript/api/office/office.settings#remove-name-) 和 **remove** 方法从数据的内存副本中读取、写入和删除项目。 以下代码行显示如何创建名为 `themeColor` 的设置，并将它的值设置为“green”。
+若要避免向存储文档的服务器往返，在运行时使用该对象创建的数据 `Settings` 在内存中进行管理。 之前保存的设置数据在初始化外接程序时加载到内存中，并在调用 [Settings.saveAsync](/javascript/api/office/office.settings#saveasync-options--callback-) 方法时，仅将对数据的更改保存回文档。 在内部，将该数据作为名称/值对存储在序列化的 JSON 对象中。 可以使用 [Settings](/javascript/api/office/office.settings#get-name-) 对象的 [get](/javascript/api/office/office.settings#set-name--value-)、[set](/javascript/api/office/office.settings#remove-name-) 和 **remove** 方法从数据的内存副本中读取、写入和删除项目。 以下代码行显示如何创建名为 `themeColor` 的设置，并将它的值设置为“green”。
 
 
 
@@ -131,21 +131,21 @@ function write(message){
 Office.context.document.settings.set('themeColor', 'green');
 ```
 
-由于使用`set`和`remove`方法创建或删除的设置数据针对的是内存中的数据副本，因此您必须调用`saveAsync`以将对设置数据所做的更改保存到加载项所使用的文档中。
+由于使用和方法创建或删除的设置数据 `set` `remove` 针对的是内存中的数据副本，因此您必须调用以将对 `saveAsync` 设置数据所做的更改保存到加载项所使用的文档中。
 
-有关使用`Settings`对象的方法处理自定义数据的详细信息，请参阅[保留外接程序状态和设置](persisting-add-in-state-and-settings.md)。
+有关使用对象的方法处理自定义数据的详细信息 `Settings` ，请参阅[保留外接程序状态和设置](persisting-add-in-state-and-settings.md)。
 
 
 ## <a name="reading-properties-of-a-project-document"></a>读取项目文档的属性
 
-如果您的任务窗格外接程序在 Project 中运行，则它可以从活动项目的某些项目字段、资源和任务字段中读取数据。 若要执行此操作，请使用[ProjectDocument](/javascript/api/office/office.document)对象的方法和事件，该对象将`Document`扩展对象以提供其他特定于项目的功能。
+如果您的任务窗格外接程序在 Project 中运行，则它可以从活动项目的某些项目字段、资源和任务字段中读取数据。 若要执行此操作，请使用[ProjectDocument](/javascript/api/office/office.document)对象的方法和事件，该对象将扩展 `Document` 对象以提供其他特定于项目的功能。
 
 有关读取 Project 数据的示例，请参阅[使用文本编辑器创建您第一个用于 Project 2013 的任务窗格外接程序](../project/create-your-first-task-pane-add-in-for-project-by-using-a-text-editor.md)。
 
 
 ## <a name="permissions-model-and-governance"></a>权限模型和管治
 
-您的外接程序使用`Permissions`其清单中的元素，以请求从 OFFICE JavaScript API 访问所需功能级别的权限。 例如，如果您的外接程序需要对文档的读/写访问权限，则其清单`ReadWriteDocument`必须在其`Permissions`元素中指定为文本值。 因为权限的存在是为了保护用户的隐私和安全，因此最佳做法应当是，请求功能所需的最低级别的权限。 以下示例显示如何在任务窗格清单中请求 **ReadDocument** 权限。
+您的外接程序使用 `Permissions` 其清单中的元素，以请求从 Office JAVASCRIPT API 访问所需功能级别的权限。 例如，如果您的外接程序需要对文档的读/写访问权限，则其清单必须 `ReadWriteDocument` 在其元素中指定为文本值 `Permissions` 。 因为权限的存在是为了保护用户的隐私和安全，因此最佳做法应当是，请求功能所需的最低级别的权限。 以下示例显示如何在任务窗格清单中请求 **ReadDocument** 权限。
 
 
 ```XML

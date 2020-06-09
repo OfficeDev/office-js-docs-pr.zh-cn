@@ -4,12 +4,12 @@ description: 指定支持 SharedRuntime Api 的平台和 Office 主机。
 ms.date: 03/11/2020
 ms.prod: non-product-specific
 localization_priority: Normal
-ms.openlocfilehash: 9750dd2e20a9f2426c7faf3864a2fccac5c11a80
-ms.sourcegitcommit: 05b73cdec5f4db7f0b8d48a5a552ee296a0332ca
+ms.openlocfilehash: ebf83216759419c092361aab1a83b234bcf22f97
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/11/2020
-ms.locfileid: "42600674"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44611314"
 ---
 # <a name="shared-runtime-requirement-sets"></a>共享运行时要求集
 

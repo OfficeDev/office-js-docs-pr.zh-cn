@@ -3,12 +3,12 @@ title: 清单文件中的 Id 元素
 description: Id 元素将 Office 外接程序的唯一 ID 指定为 GUID。
 ms.date: 10/09/2018
 localization_priority: Normal
-ms.openlocfilehash: 137daee6346f3320697cfc52963d8e98d147e5d8
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: 3df4277b19878a5fe358d1458ec69a694e5d87d0
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42720559"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44611783"
 ---
 # <a name="id-element"></a>Id 元素
 

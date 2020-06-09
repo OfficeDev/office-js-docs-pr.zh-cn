@@ -3,12 +3,12 @@ title: 模块扩展 Outlook 加载项
 description: 可以创建在 Outlook 中运行的应用程序，以便用户无需退出 Outlook 即可轻松地访问业务信息和工作效率工具。
 ms.date: 05/27/2020
 localization_priority: Normal
-ms.openlocfilehash: 5c5c57b28f63665ac0cac1dfc443651a0d830f5f
-ms.sourcegitcommit: 77617f6ad06e07f5ff8078b26301748f73e2ee01
+ms.openlocfilehash: ba25a10e0f6e8c8b3b14df7e98ff200e00717136
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2020
-ms.locfileid: "44413201"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44611643"
 ---
 # <a name="module-extension-outlook-add-ins"></a>模块扩展 Outlook 加载项
 

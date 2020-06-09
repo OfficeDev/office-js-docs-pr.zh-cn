@@ -4,12 +4,12 @@ description: 有关 ExcelApi 1.10 要求集的详细信息
 ms.date: 10/22/2019
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: a04e9c7b32dfece1c8a1455c7662dc71228a46f4
-ms.sourcegitcommit: 5ba325cc88183a3f230cd89d615fd49c695addcf
+ms.openlocfilehash: 50d38f610606b4d172d3f79f6a968ad7b1e8e344
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "37682548"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44612099"
 ---
 # <a name="whats-new-in-excel-javascript-api-110"></a>Excel JavaScript API 1.10 中的新增功能
 
@@ -36,7 +36,7 @@ ExcelApi 1.10 引入了主要功能，如注释、大纲和切片器。 它还�
 ||[creationDate](/javascript/api/excel/excel.comment#creationdate)|获取批注的创建时间。 如果批注是从备注转换而来的，则返回 null，因为批注没有创建日期。|
 ||[id](/javascript/api/excel/excel.comment#id)|表示批注标识符。 只读。|
 ||[replies](/javascript/api/excel/excel.comment#replies)|表示与批注关联的回复对象的集合。 只读。|
-|[CommentCollection](/javascript/api/excel/excel.commentcollection)|[add （cellAddress： Range \| string，Content： CommentRichContent \| string，contenttype？： Excel. contenttype）](/javascript/api/excel/excel.commentcollection#add-celladdress--content--contenttype-)|使用给定单元格上的给定内容创建新批注。 如果`InvalidArgument`提供的范围大于一个单元格，则会引发错误。|
+|[CommentCollection](/javascript/api/excel/excel.commentcollection)|[add （cellAddress： Range \| string，content： CommentRichContent \| String，contenttype？： Excel. contenttype）](/javascript/api/excel/excel.commentcollection#add-celladdress--content--contenttype-)|使用给定单元格上的给定内容创建新批注。 `InvalidArgument`如果提供的范围大于一个单元格，则会引发错误。|
 ||[getCount()](/javascript/api/excel/excel.commentcollection#getcount--)|获取集合中的批注数量。|
 ||[getItem(commentId: string)](/javascript/api/excel/excel.commentcollection#getitem-commentid-)|根据其 ID 从集合中获取批注。 只读。|
 ||[getItemAt(index: number)](/javascript/api/excel/excel.commentcollection#getitemat-index-)|根据其位置从集合中获取批注。|
@@ -51,7 +51,7 @@ ExcelApi 1.10 引入了主要功能，如注释、大纲和切片器。 它还�
 ||[authorName](/javascript/api/excel/excel.commentreply#authorname)|获取批注回复作者的姓名。|
 ||[creationDate](/javascript/api/excel/excel.commentreply#creationdate)|获取批注回复的创建时间。|
 ||[id](/javascript/api/excel/excel.commentreply#id)|表示批注回复标识符。 只读。|
-|[CommentReplyCollection](/javascript/api/excel/excel.commentreplycollection)|[add （content： CommentRichContent \| String，contenttype？： Excel. contenttype）](/javascript/api/excel/excel.commentreplycollection#add-content--contenttype-)|为批注创建批注回复。|
+|[CommentReplyCollection](/javascript/api/excel/excel.commentreplycollection)|[add （content： CommentRichContent \| string，contenttype？： Excel. contenttype）](/javascript/api/excel/excel.commentreplycollection#add-content--contenttype-)|为批注创建批注回复。|
 ||[getCount()](/javascript/api/excel/excel.commentreplycollection#getcount--)|获取集合中的批注回复数量。|
 ||[getItem(commentReplyId: string)](/javascript/api/excel/excel.commentreplycollection#getitem-commentreplyid-)|返回由其 ID 标识的批注回复。 只读。|
 ||[getItemAt(index: number)](/javascript/api/excel/excel.commentreplycollection#getitemat-index-)|根据其在集合中的位置获取批注回复。|
@@ -142,7 +142,7 @@ ExcelApi 1.10 引入了主要功能，如注释、大纲和切片器。 它还�
 ||[getItemOrNullObject(name: string)](/javascript/api/excel/excel.timelinestylecollection#getitemornullobject-name-)|按名称获取 TimelineStyle。 如果没有 TimelineStyle，将返回 null 对象。|
 ||[items](/javascript/api/excel/excel.timelinestylecollection#items)|获取此集合中已加载的子项。|
 ||[setDefault(newDefaultStyle: TimelineStyle \| string)](/javascript/api/excel/excel.timelinestylecollection#setdefault-newdefaultstyle-)|设置在父对象范围内使用的默认 TimelineStyle。|
-|[Workbook](/javascript/api/excel/excel.workbook)|[getActiveSlicer()](/javascript/api/excel/excel.workbook#getactiveslicer--)|获取工作簿中当前处于活动状态的切片器。 如果没有活动切片器，则会`ItemNotFound`引发异常。|
+|[Workbook](/javascript/api/excel/excel.workbook)|[getActiveSlicer()](/javascript/api/excel/excel.workbook#getactiveslicer--)|获取工作簿中当前处于活动状态的切片器。 如果没有活动切片器，则 `ItemNotFound` 会引发异常。|
 ||[getActiveSlicerOrNullObject()](/javascript/api/excel/excel.workbook#getactiveslicerornullobject--)|获取工作簿中当前处于活动状态的切片器。 如果没有处于活动状态的切片器，则返回 null 对象。|
 ||[comments](/javascript/api/excel/excel.workbook#comments)|表示与工作簿关联的批注集合。 只读。|
 ||[pivotTableStyles](/javascript/api/excel/excel.workbook#pivottablestyles)|表示一组与工作簿相关联的 PivotTableStyles。 只读。|

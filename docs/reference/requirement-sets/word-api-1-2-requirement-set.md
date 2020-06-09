@@ -4,12 +4,12 @@ description: 有关 WordApi 1.2 要求集的详细信息
 ms.date: 07/25/2019
 ms.prod: word
 localization_priority: Normal
-ms.openlocfilehash: f6fce3994daa77cb556ebcea6cad7d38a48c2da5
-ms.sourcegitcommit: 3f5d7f4794e3d3c8bc3a79fa05c54157613b9376
+ms.openlocfilehash: 6fd2672462037d445c854bbc0c533c4dc5404b86
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/02/2019
-ms.locfileid: "36064884"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44611300"
 ---
 # <a name="whats-new-in-word-javascript-api-12"></a>Word JavaScript API 1.2 的最近更新
 
@@ -17,23 +17,23 @@ WordApi 1.2 增加了对内嵌图片的支持。
 
 ## <a name="api-list"></a>API 列表
 
-下表列出了 Word JavaScript API 要求集1.2 中的 Api。 若要查看 Word JavaScript API 要求集1.2 或更早版本支持的所有 Api 的 API 参考文档, 请参阅[要求集1.2 或更早版本中的 Word api](/javascript/api/word?view=word-js-1.2)。
+下表列出了 Word JavaScript API 要求集1.2 中的 Api。 若要查看 Word JavaScript API 要求集1.2 或更早版本支持的所有 Api 的 API 参考文档，请参阅[要求集1.2 或更早版本中的 Word api](/javascript/api/word?view=word-js-1.2)。
 
 | Class | 域 | 说明 |
 |:---|:---|:---|
-|[Body](/javascript/api/word/word.body)|[insertInlinePictureFromBase64 (base64EncodedImage: string, insertLocation: InsertLocation)](/javascript/api/word/word.body#insertinlinepicturefrombase64-base64encodedimage--insertlocation-)|将图片插入到正文中的指定位置。 insertLocation 值可以为“Start”或“End”。|
-|[ContentControl](/javascript/api/word/word.contentcontrol)|[insertInlinePictureFromBase64 (base64EncodedImage: string, insertLocation: InsertLocation)](/javascript/api/word/word.contentcontrol#insertinlinepicturefrombase64-base64encodedimage--insertlocation-)|将嵌入式图片插入到内容控件中的指定位置。 insertLocation 值可以为“Replace”、“Start”或“End”。|
+|[Body](/javascript/api/word/word.body)|[insertInlinePictureFromBase64 （base64EncodedImage： string，insertLocation： InsertLocation）](/javascript/api/word/word.body#insertinlinepicturefrombase64-base64encodedimage--insertlocation-)|将图片插入到正文中的指定位置。 insertLocation 值可以为“Start”或“End”。|
+|[ContentControl](/javascript/api/word/word.contentcontrol)|[insertInlinePictureFromBase64 （base64EncodedImage： string，insertLocation： InsertLocation）](/javascript/api/word/word.contentcontrol#insertinlinepicturefrombase64-base64encodedimage--insertlocation-)|将嵌入式图片插入到内容控件中的指定位置。 insertLocation 值可以为“Replace”、“Start”或“End”。|
 |[InlinePicture](/javascript/api/word/word.inlinepicture)|[delete()](/javascript/api/word/word.inlinepicture#delete--)|从文档中删除嵌入式图片。|
-||[insertBreak (breakType: BreakType, insertLocation: Word. InsertLocation)](/javascript/api/word/word.inlinepicture#insertbreak-breaktype--insertlocation-)|在主文档的指定位置插入分隔符。 insertLocation 值可以为“Before”或“After”。|
-||[insertFileFromBase64 (base64File: string, insertLocation: InsertLocation)](/javascript/api/word/word.inlinepicture#insertfilefrombase64-base64file--insertlocation-)|在指定位置插入 document。 insertLocation 值可以为“Before”或“After”。|
-||[insertHtml (html: string, insertLocation: InsertLocation)](/javascript/api/word/word.inlinepicture#inserthtml-html--insertlocation-)|在指定位置插入 HTML。 insertLocation 值可以为“Before”或“After”。|
-||[insertInlinePictureFromBase64 (base64EncodedImage: string, insertLocation: InsertLocation)](/javascript/api/word/word.inlinepicture#insertinlinepicturefrombase64-base64encodedimage--insertlocation-)|在指定位置插入 inlinePicture。 InsertLocation 值可以是 "Replace"、"Before" 或 "After"。|
-||[insertOoxml (ooxml: string, insertLocation: InsertLocation)](/javascript/api/word/word.inlinepicture#insertooxml-ooxml--insertlocation-)|在指定位置插入 OOXML。  insertLocation 值可以为“Before”或“After”。|
-||[insertParagraph (paragraphText: string, insertLocation: InsertLocation)](/javascript/api/word/word.inlinepicture#insertparagraph-paragraphtext--insertlocation-)|在指定位置插入段落。 insertLocation 值可以为“Before”或“After”。|
-||[insertText (text: string, insertLocation: InsertLocation)](/javascript/api/word/word.inlinepicture#inserttext-text--insertlocation-)|在指定位置插入文本。 insertLocation 的可取值为“Before”或“After”。|
+||[insertBreak （breakType： BreakType，insertLocation： Word. InsertLocation）](/javascript/api/word/word.inlinepicture#insertbreak-breaktype--insertlocation-)|在主文档的指定位置插入分隔符。 insertLocation 值可以为“Before”或“After”。|
+||[insertFileFromBase64 （base64File： string，insertLocation： InsertLocation）](/javascript/api/word/word.inlinepicture#insertfilefrombase64-base64file--insertlocation-)|在指定位置插入 document。 insertLocation 值可以为“Before”或“After”。|
+||[insertHtml （html： string，insertLocation： InsertLocation）](/javascript/api/word/word.inlinepicture#inserthtml-html--insertlocation-)|在指定位置插入 HTML。 insertLocation 值可以为“Before”或“After”。|
+||[insertInlinePictureFromBase64 （base64EncodedImage： string，insertLocation： InsertLocation）](/javascript/api/word/word.inlinepicture#insertinlinepicturefrombase64-base64encodedimage--insertlocation-)|在指定位置插入 inlinePicture。 InsertLocation 值可以是 "Replace"、"Before" 或 "After"。|
+||[insertOoxml （ooxml： string，insertLocation： InsertLocation）](/javascript/api/word/word.inlinepicture#insertooxml-ooxml--insertlocation-)|在指定位置插入 OOXML。  insertLocation 值可以为“Before”或“After”。|
+||[insertParagraph （paragraphText： string，insertLocation： InsertLocation）](/javascript/api/word/word.inlinepicture#insertparagraph-paragraphtext--insertlocation-)|在指定位置插入段落。 insertLocation 值可以为“Before”或“After”。|
+||[insertText （text： string，insertLocation： InsertLocation）](/javascript/api/word/word.inlinepicture#inserttext-text--insertlocation-)|在指定位置插入文本。 insertLocation 的可取值为“Before”或“After”。|
 ||[paragraph](/javascript/api/word/word.inlinepicture#paragraph)|获取包含嵌入式图像的父段落。 只读。|
-||[select (selectionMode？: SelectionMode)](/javascript/api/word/word.inlinepicture#select-selectionmode-)|选择 inlinePicture。 这会导致 Word 滚动到选定内容。|
-|[Range](/javascript/api/word/word.range)|[insertInlinePictureFromBase64 (base64EncodedImage: string, insertLocation: InsertLocation)](/javascript/api/word/word.range#insertinlinepicturefrombase64-base64encodedimage--insertlocation-)|在指定位置插入图片。 InsertLocation 值可以是 "Replace"、"Start"、"End"、"Before" 或 "After"。|
+||[select （selectionMode？： SelectionMode）](/javascript/api/word/word.inlinepicture#select-selectionmode-)|选择 inlinePicture。 这会导致 Word 滚动到选定内容。|
+|[Range](/javascript/api/word/word.range)|[insertInlinePictureFromBase64 （base64EncodedImage： string，insertLocation： InsertLocation）](/javascript/api/word/word.range#insertinlinepicturefrombase64-base64encodedimage--insertlocation-)|在指定位置插入图片。 InsertLocation 值可以是 "Replace"、"Start"、"End"、"Before" 或 "After"。|
 ||[inlinePictures](/javascript/api/word/word.range#inlinepictures)|获取 range 中的一组 inlinePicture 对象。 只读。|
 
 ## <a name="see-also"></a>另请参阅

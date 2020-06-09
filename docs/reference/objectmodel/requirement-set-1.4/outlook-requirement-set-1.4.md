@@ -3,12 +3,12 @@ title: Outlook 加载项 API 要求集 1.4
 description: 作为邮箱 API 1.4 的一部分引入的 Outlook 外接程序和 Office JavaScript Api 的功能和 Api。
 ms.date: 10/30/2019
 localization_priority: Normal
-ms.openlocfilehash: 5cad049096f18dee925d3ac2ad8802e0047a0ef7
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: 6154acc357dd0e0e663d658c8de2d54b641e080a
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42720041"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44609816"
 ---
 # <a name="outlook-add-in-api-requirement-set-14"></a>Outlook 外接程序 API 要求集 1.4
 

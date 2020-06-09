@@ -3,12 +3,12 @@ title: 清单文件中的 DisableEntityHighlighting 元素
 description: 指定是否应为邮件外接程序关闭实体突出显示。
 ms.date: 10/09/2018
 localization_priority: Normal
-ms.openlocfilehash: f64b0f8b0d3a57acfdf584bc67e9bdca1895ffb1
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: a2364bb0ec1d369be7a2f07f1a115bab92dacc48
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42718326"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44611573"
 ---
 # <a name="disableentityhighlighting-element"></a>DisableEntityHighlighting 元素
 

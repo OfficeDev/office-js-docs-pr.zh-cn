@@ -3,12 +3,12 @@ title: 清单文件中的 LaunchEvents （预览）
 description: LaunchEvents 元素将你的外接程序配置为根据受支持的事件进行激活。
 ms.date: 05/18/2020
 localization_priority: Normal
-ms.openlocfilehash: 2e1ad56d405fca0f85fad500a113fba7d0448caf
-ms.sourcegitcommit: f62d9630de69c5c070e3d4048205f5cc654db7e4
+ms.openlocfilehash: 92416f8c646326410a8cd9ee7831e17a5c5f1ffc
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/18/2020
-ms.locfileid: "44278527"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44611769"
 ---
 # <a name="launchevents-element-preview"></a>LaunchEvents 元素（预览）
 
@@ -38,7 +38,7 @@ ms.locfileid: "44278527"
 
 ## <a name="child-elements"></a>子元素
 
-|  元素 |  必需  |  说明  |
+|  元素 |  必需  |  Description  |
 |:-----|:-----|:-----|
 | [LaunchEvent](launchevent.md) | 是 |  将支持的事件映射到其在外接程序激活的 JavaScript 文件中的功能。 |
 

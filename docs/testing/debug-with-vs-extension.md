@@ -3,12 +3,12 @@ title: 适用于 Visual Studio Code 的 Microsoft Office 外接程序调试器�
 description: 使用 Visual Studio Code extension Microsoft Office 加载项调试器调试 Office 外接程序。
 ms.date: 05/14/2020
 localization_priority: Normal
-ms.openlocfilehash: 57a59029ee9bb9791829d9d3583ce8b85e417b16
-ms.sourcegitcommit: 71a44405e42b4798a8354f7f96d84548ae7a00f0
+ms.openlocfilehash: 1bd3814eba6da2339e7865d720b8a4c792b9310e
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/18/2020
-ms.locfileid: "44280358"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44611209"
 ---
 # <a name="microsoft-office-add-in-debugger-extension-for-visual-studio-code"></a>适用于 Visual Studio Code 的 Microsoft Office 外接程序调试器扩展
 
@@ -22,7 +22,7 @@ ms.locfileid: "44280358"
 
 - [Visual Studio Code](https://code.visualstudio.com/) （必须以管理员身份运行）
 - [Node.js （版本 10 +）](https://nodejs.org/)
-- Windows 10
+- Windows 10
 - [Microsoft Edge](https://www.microsoft.com/edge)
 
 这些说明假定您有使用命令行的经验，了解基本 JavaScript，并已在使用 Yo Office 生成器之前创建了 Office 外接程序项目。 如果你之前未执行此操作，请考虑访问我们的一个教程，如此[Excel Office 外接教程教程](../tutorials/excel-tutorial.md)。

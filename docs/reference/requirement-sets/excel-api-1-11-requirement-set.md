@@ -4,12 +4,12 @@ description: 有关 ExcelApi 1.11 要求集的详细信息
 ms.date: 05/06/2020
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: 13ec5e944a2b7ea05b1054939c2c4c6438f26009
-ms.sourcegitcommit: 77617f6ad06e07f5ff8078b26301748f73e2ee01
+ms.openlocfilehash: ab9fde262640aa243aaf2b88767225505e08b3b7
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2020
-ms.locfileid: "44413229"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44612092"
 ---
 # <a name="whats-new-in-excel-javascript-api-111"></a>Excel JavaScript API 1.11 中的新增功能
 

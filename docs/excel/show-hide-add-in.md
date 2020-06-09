@@ -3,12 +3,12 @@ title: 在共享运行时中显示或隐藏 Office 加载项
 description: 了解如何在连续运行时以编程方式隐藏或显示外接程序的用户界面
 ms.date: 05/17/2020
 localization_priority: Normal
-ms.openlocfilehash: e49c47c86a986c85ad12e09666b7ac2fb5411322
-ms.sourcegitcommit: 54e2892c0c26b9ad1e4dba8aba48fea39f853b6c
+ms.openlocfilehash: 9b6c3384fda32854e26cc4852d5bd27d77fae544
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/18/2020
-ms.locfileid: "44275712"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44610331"
 ---
 # <a name="show-or-hide-an-office-add-in-in-a-shared-runtime"></a>在共享运行时中显示或隐藏 Office 加载项
 

@@ -4,12 +4,12 @@ description: 有关即将推出的 Excel JavaScript Api 的详细信息
 ms.date: 05/11/2020
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: a867a0c80158e9c1effa40ba5a0aa83608ba57de
-ms.sourcegitcommit: 682d18c9149b1153f9c38d28e2a90384e6a261dc
+ms.openlocfilehash: e3652e60f6ecea9c8269d0ed6b348848c026fe5c
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "44218003"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44611370"
 ---
 # <a name="excel-javascript-preview-apis"></a>Excel JavaScript 预览 API
 

@@ -3,12 +3,12 @@ title: 清单文件中的 DesktopFormFactor 元素
 description: 指定对桌面外形规格的外接程序的设置。
 ms.date: 10/31/2019
 localization_priority: Normal
-ms.openlocfilehash: bfea6900e6b07d8dc7ad5b5256703d873242d88c
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: 46de234f2d97a9e6c7645c17a0f0a61d0c3e1a80
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42718361"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44612281"
 ---
 # <a name="desktopformfactor-element"></a>DesktopFormFactor 元素
 
@@ -18,7 +18,7 @@ ms.locfileid: "42718361"
 
 ## <a name="child-elements"></a>子元素
 
-| 元素                               | 必需 | 说明  |
+| 元素                               | 必需 | Description  |
 |:--------------------------------------|:--------:|:-------------|
 | [ExtensionPoint](extensionpoint.md)   | 是      | 定义外接程序公开功能的位置。 |
 | [FunctionFile](functionfile.md)       | 是      | 包含 JavaScript 函数的文件的 URL。|

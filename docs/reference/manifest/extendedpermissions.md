@@ -3,12 +3,12 @@ title: 清单文件中的 ExtendedPermissions 元素
 description: 定义加载项访问关联的 Api 或功能所需的扩展权限的集合。
 ms.date: 03/05/2020
 localization_priority: Normal
-ms.openlocfilehash: 86d898052af6ba0e6f6bc8b341fff9f0f8408967
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: cf59d13d794f8f303da6cc0ca39066584bc3f56c
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42718221"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44611531"
 ---
 # <a name="extendedpermissions-element"></a>ExtendedPermissions 元素
 
@@ -19,13 +19,13 @@ ms.locfileid: "42718221"
 
 ## <a name="child-elements"></a>子元素
 
-|  元素 |  必需  |  说明  |
+|  元素 |  必需  |  Description  |
 |:-----|:-----:|:-----|
 |  [ExtendedPermission](extendedpermission.md)    |  否   | 定义外接程序访问关联的 API 或功能所需的扩展权限。 |
 
 ## <a name="extendedpermissions-example"></a>`ExtendedPermissions`示例
 
-以下是`ExtendedPermissions`元素的示例。
+以下是元素的示例 `ExtendedPermissions` 。
 
 ```XML
 ...

@@ -4,12 +4,12 @@ description: 有关 ExcelApi 1.7 要求集的详细信息
 ms.date: 07/26/2019
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: 5a39b961e8cce97be3bb74e4032914f60c366ffb
-ms.sourcegitcommit: 4079903c3cc45b7d8c041509a44e9fc38da399b1
+ms.openlocfilehash: 2e7c2fb053aa16479091a2085b38b760fa86db4a
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/11/2020
-ms.locfileid: "42596989"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44611405"
 ---
 # <a name="whats-new-in-excel-javascript-api-17"></a>Excel JavaScript API 1.7 的最近更新
 
@@ -72,7 +72,7 @@ Excel 事件 API 提供了多个事件处理程序，以便加载项能够在发
 |[Chart](/javascript/api/excel/excel.chart)|[chartType](/javascript/api/excel/excel.chart#charttype)|表示图表的类型。 有关详细信息，请参阅 ChartType。|
 ||[id](/javascript/api/excel/excel.chart#id)|图表的唯一 ID。 只读。|
 ||[showAllFieldButtons](/javascript/api/excel/excel.chart#showallfieldbuttons)|表示是否在数据透视图上显示所有字段按钮。|
-|[ChartAreaFormat](/javascript/api/excel/excel.chartareaformat)|[边框](/javascript/api/excel/excel.chartareaformat#border)|代表图表区域的边框格式，包括颜色、linestyle 和粗细。 只读。|
+|[ChartAreaFormat](/javascript/api/excel/excel.chartareaformat)|[边缘](/javascript/api/excel/excel.chartareaformat#border)|代表图表区域的边框格式，包括颜色、linestyle 和粗细。 只读。|
 |[ChartAxes](/javascript/api/excel/excel.chartaxes)|[getItem （type： ChartAxisType，group？： ChartAxisGroup）](/javascript/api/excel/excel.chartaxes#getitem-type--group-)|返回通过类型和组标识的特定轴。|
 |[ChartAxis](/javascript/api/excel/excel.chartaxis)|[baseTimeUnit](/javascript/api/excel/excel.chartaxis#basetimeunit)|返回或设置指定分类轴的基本单位。|
 ||[categoryType](/javascript/api/excel/excel.chartaxis#categorytype)|返回或设置分类轴类型。|
@@ -146,7 +146,7 @@ Excel 事件 API 提供了多个事件处理程序，以便加载项能够在发
 ||[markerSize](/javascript/api/excel/excel.chartpoint#markersize)|表示数据点的标记大小。|
 ||[markerStyle](/javascript/api/excel/excel.chartpoint#markerstyle)|表示图表数据点的标记样式。 有关详细信息，请参阅 ChartMarkerStyle。|
 ||[dataLabel](/javascript/api/excel/excel.chartpoint#datalabel)|返回图表点的数据标签。 只读。|
-|[ChartPointFormat](/javascript/api/excel/excel.chartpointformat)|[边框](/javascript/api/excel/excel.chartpointformat#border)|表示图表数据点的边框格式，包括颜色、样式和权重信息。 只读。|
+|[ChartPointFormat](/javascript/api/excel/excel.chartpointformat)|[边缘](/javascript/api/excel/excel.chartpointformat#border)|表示图表数据点的边框格式，包括颜色、样式和权重信息。 只读。|
 |[ChartSeries](/javascript/api/excel/excel.chartseries)|[chartType](/javascript/api/excel/excel.chartseries#charttype)|表示系列的图表类型。 有关详细信息，请参阅 ChartType。|
 ||[delete()](/javascript/api/excel/excel.chartseries#delete--)|删除 chart series 对象。|
 ||[doughnutHoleSize](/javascript/api/excel/excel.chartseries#doughnutholesize)|表示图表系列的圆环孔大小。  仅对圆环图和分离型圆环图有效。|
@@ -176,7 +176,7 @@ Excel 事件 API 提供了多个事件处理程序，以便加载项能够在发
 ||[textOrientation](/javascript/api/excel/excel.charttitle#textorientation)|表示图表标题的文本方向。 此值应是 -90 到 90 或 180（垂直文本）之间的整数。|
 ||[top](/javascript/api/excel/excel.charttitle#top)|表示图表标题上边缘到图表区域顶部的距离，以磅为单位。 如果图表标题不可见，则为 Null。|
 ||[verticalAlignment](/javascript/api/excel/excel.charttitle#verticalalignment)|表示图表标题垂直对齐。 有关详细信息，请参阅 ChartTextVerticalAlignment。|
-|[ChartTitleFormat](/javascript/api/excel/excel.charttitleformat)|[边框](/javascript/api/excel/excel.charttitleformat#border)|代表图表标题的边框格式，包括颜色、linestyle 和粗细。 只读。|
+|[ChartTitleFormat](/javascript/api/excel/excel.charttitleformat)|[边缘](/javascript/api/excel/excel.charttitleformat#border)|代表图表标题的边框格式，包括颜色、linestyle 和粗细。 只读。|
 |[ChartTrendline](/javascript/api/excel/excel.charttrendline)|[backwardPeriod](/javascript/api/excel/excel.charttrendline#backwardperiod)|表示趋势线向后延伸的周期数。|
 ||[delete()](/javascript/api/excel/excel.charttrendline#delete--)|删除 Trendline 对象。|
 ||[forwardPeriod](/javascript/api/excel/excel.charttrendline#forwardperiod)|表示趋势线向前延伸的周期数。|
@@ -210,7 +210,7 @@ Excel 事件 API 提供了多个事件处理程序，以便加载项能够在发
 ||[comments](/javascript/api/excel/excel.documentproperties#comments)|获取或设置工作簿的注释。|
 ||[company](/javascript/api/excel/excel.documentproperties#company)|获取或设置工作簿的公司。|
 ||[关键字](/javascript/api/excel/excel.documentproperties#keywords)|获取或设置工作簿的关键字。|
-||[manager](/javascript/api/excel/excel.documentproperties#manager)|获取或设置工作簿的管理者。|
+||[管理器](/javascript/api/excel/excel.documentproperties#manager)|获取或设置工作簿的管理者。|
 ||[creationDate](/javascript/api/excel/excel.documentproperties#creationdate)|获取工作簿的创建日期。 只读。|
 ||[自](/javascript/api/excel/excel.documentproperties#custom)|获取工作簿的自定义属性的集合。 只读。|
 ||[lastAuthor](/javascript/api/excel/excel.documentproperties#lastauthor)|获取工作簿的最终作者。 只读。|
@@ -221,7 +221,7 @@ Excel 事件 API 提供了多个事件处理程序，以便加载项能够在发
 ||[arrayValues](/javascript/api/excel/excel.nameditem#arrayvalues)|返回包含已命名项目的值和类型的对象。 只读。|
 |[NamedItemArrayValues](/javascript/api/excel/excel.nameditemarrayvalues)|[types](/javascript/api/excel/excel.nameditemarrayvalues#types)|表示已命名项目数组中每个项目的类型|
 ||[values](/javascript/api/excel/excel.nameditemarrayvalues#values)|表示已命名项目数组中每个项目的值。|
-|[区域](/javascript/api/excel/excel.range)|[getAbsoluteResizedRange （numRows：数字，numColumns：数字）](/javascript/api/excel/excel.range#getabsoluteresizedrange-numrows--numcolumns-)|获取一个 Range 对象，该对象的左上单元格与当前 Range 对象相同，但具有指定的行数和列数。|
+|[Range](/javascript/api/excel/excel.range)|[getAbsoluteResizedRange （numRows：数字，numColumns：数字）](/javascript/api/excel/excel.range#getabsoluteresizedrange-numrows--numcolumns-)|获取一个 Range 对象，该对象的左上单元格与当前 Range 对象相同，但具有指定的行数和列数。|
 ||[getImage （）](/javascript/api/excel/excel.range#getimage--)|将区域呈现为 base64 编码的 png 图像。|
 ||[getSurroundingRegion()](/javascript/api/excel/excel.range#getsurroundingregion--)|返回一个 Range 对象，该对象表示此区域左上单元格的周围区域。 周围区域是由相对于该区域的空白行和空白列的任何组合所限定的区域。|
 ||[hyperlink](/javascript/api/excel/excel.range#hyperlink)|表示当前区域的超链接。|
@@ -320,7 +320,7 @@ Excel 事件 API 提供了多个事件处理程序，以便加载项能够在发
 |[WorksheetDeletedEventArgs](/javascript/api/excel/excel.worksheetdeletedeventargs)|[source](/javascript/api/excel/excel.worksheetdeletedeventargs#source)|获取事件源。 有关详细信息，请参阅 Excel.EventSource。|
 ||[type](/javascript/api/excel/excel.worksheetdeletedeventargs#type)|获取事件的类型。 有关详细信息，请参阅 Excel.EventType。|
 ||[worksheetId](/javascript/api/excel/excel.worksheetdeletedeventargs#worksheetid)|获取已从工作簿删除的工作表的 ID。|
-|[WorksheetFreezePanes](/javascript/api/excel/excel.worksheetfreezepanes)|[freezeAt （frozenRange： Range \|字符串）](/javascript/api/excel/excel.worksheetfreezepanes#freezeat-frozenrange-)|设置活动工作表视图中的冻结单元格。|
+|[WorksheetFreezePanes](/javascript/api/excel/excel.worksheetfreezepanes)|[freezeAt （frozenRange： Range \| 字符串）](/javascript/api/excel/excel.worksheetfreezepanes#freezeat-frozenrange-)|设置活动工作表视图中的冻结单元格。|
 ||[freezeColumns （count？：数字）](/javascript/api/excel/excel.worksheetfreezepanes#freezecolumns-count-)|就地冻结工作表的第一列。|
 ||[freezeRows （count？：数字）](/javascript/api/excel/excel.worksheetfreezepanes#freezerows-count-)|就地冻结工作表的顶行。|
 ||[getLocation()](/javascript/api/excel/excel.worksheetfreezepanes#getlocation--)|获取用于描述活动工作表视图中的冻结单元格的区域。|

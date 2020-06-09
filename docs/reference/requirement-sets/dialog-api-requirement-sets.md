@@ -4,12 +4,12 @@ description: 了解有关对话框 API 要求集的详细信息
 ms.date: 03/11/2020
 ms.prod: non-product-specific
 localization_priority: Normal
-ms.openlocfilehash: aeae2f140b158f3343c9812db8e9f27ea7608a3e
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: 7987a1617125f218ba883e834cb892fa9d5e2d9b
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42719906"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44612113"
 ---
 # <a name="dialog-api-requirement-sets"></a>Dialog API 要求集
 

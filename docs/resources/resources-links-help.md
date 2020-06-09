@@ -3,12 +3,12 @@ title: Office 加载项其他资源
 description: 有关 Office 外接程序主题的有用资源
 ms.date: 03/02/2020
 localization_priority: Normal
-ms.openlocfilehash: d838535e68eaa378840732d62fd2678c3149113d
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: 5bb5db78bf98d740b66977736644122612ba97da
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42719873"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44611265"
 ---
 # <a name="office-add-ins-additional-resources"></a>Office 加载项其他资源
 

@@ -3,12 +3,12 @@ title: Outlook 外接程序 API 要求集 1.2
 description: 作为邮箱 API 1.2 的一部分引入的 Outlook 外接程序和 Office JavaScript Api 的功能和 Api。
 ms.date: 12/17/2019
 localization_priority: Normal
-ms.openlocfilehash: e1605bb2a0d8cc7de0562833cf9cafc9fd932ad4
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: 493a360a675a98ee6a364c67e83a60dc00bf35df
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42717780"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44610480"
 ---
 # <a name="outlook-add-in-api-requirement-set-12"></a>Outlook 外接程序 API 要求集 1.2
 

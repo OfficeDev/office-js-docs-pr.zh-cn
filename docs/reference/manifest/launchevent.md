@@ -3,12 +3,12 @@ title: 清单文件中的 LaunchEvent （预览）
 description: LaunchEvent 元素将你的外接程序配置为根据受支持的事件进行激活。
 ms.date: 05/15/2020
 localization_priority: Normal
-ms.openlocfilehash: a4f5208ec7f735d926c3a878cae34973c3992cf9
-ms.sourcegitcommit: f62d9630de69c5c070e3d4048205f5cc654db7e4
+ms.openlocfilehash: 4874b9f4c14e3a999f41ec3fa20a15393b031ea6
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/18/2020
-ms.locfileid: "44278528"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44611776"
 ---
 # <a name="launchevent-element-preview"></a>LaunchEvent 元素（预览）
 
@@ -40,7 +40,7 @@ ms.locfileid: "44278528"
 
 |  属性  |  必需  |  说明  |
 |:-----|:-----|:-----|
-|  **Type**  |  是  | 指定受支持的事件类型。 可用的类型有 `OnNewMessageCompose` 和 `OnNewAppointmentOrganizer` 。 |
+|  **类型**  |  是  | 指定受支持的事件类型。 可用的类型有 `OnNewMessageCompose` 和 `OnNewAppointmentOrganizer` 。 |
 |  **FunctionName**  |  是  | 指定用于处理属性中指定的事件的 JavaScript 函数的名称 `Type` 。 |
 
 ## <a name="see-also"></a>另请参阅

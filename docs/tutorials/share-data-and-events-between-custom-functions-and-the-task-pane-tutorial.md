@@ -4,12 +4,12 @@ description: 在 Excel 中，在自定义函数和任务窗格之间共享数据
 ms.date: 05/17/2020
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: 6d96b10d6cd6e9bb7909b9d6d64b9a65fcac5b3a
-ms.sourcegitcommit: 54e2892c0c26b9ad1e4dba8aba48fea39f853b6c
+ms.openlocfilehash: a3eb6d874b0a5a38a5fa8d05d094ed1439a7c433
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/18/2020
-ms.locfileid: "44275599"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44611041"
 ---
 # <a name="tutorial-share-data-and-events-between-excel-custom-functions-and-the-task-pane"></a>教程：在 Excel 自定义函数和任务窗格之间共享数据和事件
 
@@ -138,7 +138,7 @@ yo office
    }
    ```
 
-5. 保存此文件。
+5. 保存文件。
 
 ### <a name="create-task-pane-controls-to-work-with-global-data"></a>创建任务窗格控件以处理全局数据
 

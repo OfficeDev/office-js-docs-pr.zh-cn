@@ -3,12 +3,12 @@ title: 排查单一登录 (SSO) 错误消息
 description: 有关如何解决 Office 加载项中的单一登录（SSO）问题，以及如何处理特殊条件或错误的指南。
 ms.date: 04/13/2020
 localization_priority: Normal
-ms.openlocfilehash: 33826558b9b145433adbe96005e60db97fc067f7
-ms.sourcegitcommit: 118e8bcbcfb73c93e2053bda67fe8dd20799b170
+ms.openlocfilehash: da42b3b3d9b5cf1fede999a18bbe36c5532bd866
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "43241075"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44609697"
 ---
 # <a name="troubleshoot-error-messages-for-single-sign-on-sso-preview"></a>排查单一登录 (SSO) 错误消息（预览）
 
@@ -93,7 +93,7 @@ Office 主机无法获取对加载项 Web 服务的访问令牌。
 
 ### <a name="13010"></a>13010
 
-用户正在 Microsoft Edge 或 Internet Explorer 上的 Office 中运行加载项。 用户的 Office 365 域和`login.microsoftonline.com`域在浏览器设置中位于不同的安全区域中。 此错误仅出现在 **Office 网页版**中。 如果此错误返回，用户将已看到对此进行解释的错误，并链接到关于如何更改区域配置的页面。 如果加载项提供的功能无需用户登录，代码应捕获此错误，并让加载项继续正常运行。
+用户正在 Microsoft Edge 或 Internet Explorer 上的 Office 中运行加载项。 用户的 Office 365 域和 `login.microsoftonline.com` 域在浏览器设置中位于不同的安全区域中。 此错误仅出现在 **Office 网页版**中。 如果此错误返回，用户将已看到对此进行解释的错误，并链接到关于如何更改区域配置的页面。 如果加载项提供的功能无需用户登录，代码应捕获此错误，并让加载项继续正常运行。
 
 ### <a name="13012"></a>13012
 
@@ -108,7 +108,7 @@ Office 主机无法获取对加载项 Web 服务的访问令牌。
 
 ### <a name="13013"></a>13013
 
-`getAccessToken`在短时间内调用次数过多，因此 Office 限制了最近的呼叫。 这通常是由对方法的调用的无限循环引起的。 在某些情况下，建议撤回该方法。 但是，您的代码应使用计数器或标志变量以确保不会重复回调该方法。 如果相同的 "重试" 代码路径再次运行，则代码应回退到用户身份验证的备用系统。 有关代码示例，请参阅如何在`retryGetAccessToken` [HomeES6](https://github.com/OfficeDev/Office-Add-in-ASPNET-SSO/blob/master/Complete/Office-Add-in-ASPNET-SSO-WebAPI/Scripts/HomeES6.js)或[ssoAuthES6](https://github.com/OfficeDev/Office-Add-in-NodeJS-SSO/blob/master/Complete/public/javascripts/ssoAuthES6.js)中使用变量。
+`getAccessToken`在短时间内调用次数过多，因此 Office 限制了最近的呼叫。 这通常是由对方法的调用的无限循环引起的。 在某些情况下，建议撤回该方法。 但是，您的代码应使用计数器或标志变量以确保不会重复回调该方法。 如果相同的 "重试" 代码路径再次运行，则代码应回退到用户身份验证的备用系统。 有关代码示例，请参阅如何 `retryGetAccessToken` 在[HomeES6](https://github.com/OfficeDev/Office-Add-in-ASPNET-SSO/blob/master/Complete/Office-Add-in-ASPNET-SSO-WebAPI/Scripts/HomeES6.js)或[ssoAuthES6](https://github.com/OfficeDev/Office-Add-in-NodeJS-SSO/blob/master/Complete/public/javascripts/ssoAuthES6.js)中使用变量。
 
 ### <a name="50001"></a>50001
 
@@ -128,7 +128,7 @@ Office 主机无法获取对加载项 Web 服务的访问令牌。
 
 代码应对此 `claims` 属性进行测试。 根据加载项的体系结构，你可以在客户端进行测试，也可以在服务器端进行测试并将其中继到客户端。 客户端需要此信息，因为 Office 处理 SSO 加载项的身份验证。如果从服务器端进行中继，则发送到客户端的消息可以是错误（如 `500 Server Error` 或 `401 Unauthorized`），也可以是成功响应的正文部分（如 `200 OK`）。 无论属于上述哪种情况，代码对加载项 Web API 的客户端 AJAX 调用的（失败或成功）回调都应测试此响应是否有错。 
 
-无论采用何种体系结构，如果声明值已从 AAD 发送，则代码应重新`getAccessToken`调用并在`options`参数`authChallenge: CLAIMS-STRING-HERE`中传递选项。 如果 AAD 看到此字符串，它会先提示用户进行多重身份验证，再返回将在代表流中接受的新访问令牌。
+无论采用何种体系结构，如果声明值已从 AAD 发送，则代码应重新调用 `getAccessToken` 并 `authChallenge: CLAIMS-STRING-HERE` 在参数中传递选项 `options` 。 如果 AAD 看到此字符串，它会先提示用户进行多重身份验证，再返回将在代表流中接受的新访问令牌。
 
 ### <a name="consent-missing-errors"></a>缺少许可错误
 

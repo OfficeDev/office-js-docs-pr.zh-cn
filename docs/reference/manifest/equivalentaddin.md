@@ -3,12 +3,12 @@ title: 清单文件中的 EquivalentAddin 元素
 description: 为等效的 COM 外接程序或 XLL 指定向后兼容性。
 ms.date: 06/19/2019
 localization_priority: Normal
-ms.openlocfilehash: 425b926901b7325665eeede04263f74e4b854d50
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: e14fe91bf7a5fe321019acf205ddb1753fedd569
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42718284"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44611559"
 ---
 # <a name="equivalentaddin-element"></a>EquivalentAddin 元素
 
@@ -34,12 +34,12 @@ ms.locfileid: "42718284"
 
 ## <a name="can-contain"></a>可以包含
 
-[ProgId](progid.md)
-[文件名](filename.md)
+[ProgId](progid.md) 
+[FileName](filename.md)
 
 ## <a name="remarks"></a>备注
 
-若要将 COM 加载项指定为等效的`ProgId`加载项，请同时提供和`Type`元素。 若要将 XLL 指定为等效的外接程序，请同时`FileName`提供`Type`和元素。
+若要将 COM 加载项指定为等效的加载项，请同时提供 `ProgId` 和 `Type` 元素。 若要将 XLL 指定为等效的外接程序，请同时提供 `FileName` 和 `Type` 元素。
 
 ## <a name="see-also"></a>另请参阅
 

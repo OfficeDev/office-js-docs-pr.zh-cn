@@ -3,12 +3,12 @@ title: 设置开发环境
 description: 设置开发人员环境以生成 Office 外接程序
 ms.date: 04/03/2020
 localization_priority: Normal
-ms.openlocfilehash: 03cf525408123df9e8356555f2ab7732ed2ca263
-ms.sourcegitcommit: c3bfea0818af1f01e71a1feff707fb2456a69488
+ms.openlocfilehash: 6c3f533b56cafc8300837cc835b26361490afedb
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "43185601"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44611952"
 ---
 # <a name="set-up-your-development-environment"></a>设置开发环境
 

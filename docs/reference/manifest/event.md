@@ -3,12 +3,12 @@ title: 清单文件中的 Event 元素
 description: 定义外接程序中的事件处理程序。
 ms.date: 05/15/2020
 localization_priority: Normal
-ms.openlocfilehash: 80f21d1819e3d7e335389070ccac0db583026045
-ms.sourcegitcommit: 54e2892c0c26b9ad1e4dba8aba48fea39f853b6c
+ms.openlocfilehash: 3d8e94c10bed214dd976b3048e11328f10f99325
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/18/2020
-ms.locfileid: "44275705"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44611545"
 ---
 # <a name="event-element"></a>Event 元素
 
@@ -21,7 +21,7 @@ ms.locfileid: "44275705"
 
 |  属性  |  必需  |  说明  |
 |:-----|:-----|:-----|
-|  [Type](#type-attribute)  |  是  | 指定要处理的事件。 |
+|  [类型](#type-attribute)  |  是  | 指定要处理的事件。 |
 |  [FunctionExecution](#functionexecution-attribute)  |  是  | 指定事件处理程序的执行风格、异步或同步。目前仅支持同步事件处理程序。 |
 |  [FunctionName](#functionname-attribute)  |  是  | 指定事件处理程序的函数名称。 |
 

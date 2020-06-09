@@ -3,12 +3,12 @@ ms.date: 04/29/2020
 description: 使用 Excel 中的自定义函数请求、流式处理和取消流式处理工作簿的外部数据
 title: 使用自定义函数接收和处理数据
 localization_priority: Normal
-ms.openlocfilehash: 1ae1baa912c914c3a508f1bbf6bd5d9fa6044f7b
-ms.sourcegitcommit: 9229102c16a1864e3a8724aaf9b0dc68b1428094
+ms.openlocfilehash: c53ad94c798f787447ab353201a245cd4f20d463
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/03/2020
-ms.locfileid: "44275741"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44610459"
 ---
 # <a name="receive-and-handle-data-with-custom-functions"></a>使用自定义函数接收和处理数据
 

@@ -3,12 +3,12 @@ title: 清单文件中的 OfficeMenu 元素
 description: OfficeMenu 元素定义要添加到 Office 上下文菜单中的控件的集合。
 ms.date: 10/09/2018
 localization_priority: Normal
-ms.openlocfilehash: 89503533f7310898a420eb805d5fd66f096ad5f2
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: f5aac4e3454e1aa18021c10bfb2f06df90805980
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42718046"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44611517"
 ---
 # <a name="officemenu-element"></a>OfficeMenu 元素
 
@@ -22,7 +22,7 @@ ms.locfileid: "42718046"
 
 ## <a name="child-elements"></a>子元素
 
-|  元素 |  必需  |  说明  |
+|  元素 |  必需  |  Description  |
 |:-----|:-----|:-----|
 |  [Control](#control)    | 是 |  一个或多个 Control 对象的集合。  |
 

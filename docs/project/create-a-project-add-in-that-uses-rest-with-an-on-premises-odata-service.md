@@ -3,12 +3,12 @@ title: 创建将 REST 与本地 Project Server OData 服务结合使用的 Proje
 description: 了解如何构建 Project Professional 2013 的任务窗格外接程序，以将活动项目中的成本和工作数据与当前 Project Web App 实例中的所有项目平均进行比较。
 ms.date: 09/26/2019
 localization_priority: Normal
-ms.openlocfilehash: 6e53796f586e5ffa375f10cd877fc950b47203b4
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: ca5c33815b4f47ba8aa88625725b3b235853c7fb
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42720993"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44611895"
 ---
 # <a name="create-a-project-add-in-that-uses-rest-with-an-on-premises-project-server-odata-service"></a>创建将 REST 与本地 Project Server OData 服务结合使用的 Project 加载项
 
@@ -158,13 +158,13 @@ Visual Studio Office 开发人员工具包含 Project 2013 任务窗格外接程
 
 - 副标题指示常规功能或操作类型，例如“ODATA REST QUERY”****。
 
-- "**获取 ProjectData 端点**" 按钮调用`setOdataUrl`函数以获取**ProjectData**服务的终结点，并将其显示在文本框中。 如果 Project 未连接 Project Web App，则外接程序会调用一个错误处理程序来显示一个弹出错误消息。
+- "**获取 ProjectData 端点**" 按钮调用 `setOdataUrl` 函数以获取**ProjectData**服务的终结点，并将其显示在文本框中。 如果 Project 未连接 Project Web App，则外接程序会调用一个错误处理程序来显示一个弹出错误消息。
 
-- 在加载项获得有效 OData 终结点之前，“比较所有项目”**** 按钮将一直处于禁用状态。 当您选择该按钮时，它会`retrieveOData`调用函数，后者使用 REST 查询从**ProjectData**服务获取项目成本和工作数据。
+- 在加载项获得有效 OData 终结点之前，“比较所有项目”**** 按钮将一直处于禁用状态。 当您选择该按钮时，它会调用 `retrieveOData` 函数，后者使用 REST 查询从**ProjectData**服务获取项目成本和工作数据。
 
 - 表格显示项目成本、实际成本、工作和完成百分比的平均值。该表格还将当前活动项目值与平均值进行对比。如果当前值大于所有项目的平均值，则该值将显示为红色。如果当前值小于平均值，则该值显示为绿色。如果未提供当前值，则表格将显示一个蓝色“NA”****。
 
-    `retrieveOData`函数调用`parseODataResult`函数，该函数将计算并显示表的值。
+    `retrieveOData`函数调用 `parseODataResult` 函数，该函数将计算并显示表的值。
 
     > [!NOTE]
     > 在此示例中，活动项目的成本和工作数据派生自发布的值。 如果更改 Project 中的值，则在项目发布之前， **ProjectData**服务不会发生更改。
@@ -218,7 +218,7 @@ Visual Studio Office 开发人员工具包含 Project 2013 任务窗格外接程
 
 3. 在**body**元素中，从模板中删除现有代码，然后添加用户界面的代码。 如果某个元素要用数据来填充或由 jQuery 语句控制，则该元素必须包含唯一的 **id** 属性。 在以下代码中，jQuery 函数使用的**button**、 **span>** 和**td** （表格单元格定义）元素的**id**属性以粗体显示。
 
-   以下 HTML 添加图形图像，这可以是公司徽标。 您可以使用您选择的徽标，也可以从 Project 2013 SDK 下载中复制 NewLogo 文件，然后使用 "**解决方案资源管理器**" 将该文件添加到该`HelloProjectODataWeb\Images`文件夹中。
+   以下 HTML 添加图形图像，这可以是公司徽标。 您可以使用您选择的徽标，也可以从 Project 2013 SDK 下载中复制 NewLogo 文件，然后使用 "**解决方案资源管理器**" 将该文件添加到该 `HelloProjectODataWeb\Images` 文件夹中。
 
     ```HTML
     <body>
@@ -276,15 +276,15 @@ Visual Studio Office 开发人员工具包含 Project 2013 任务窗格外接程
 
 ## <a name="creating-the-javascript-code-for-the-add-in"></a>为外接程序创建 JavaScript 代码
 
-Project 任务窗格加载项的模板包含旨在演示关于典型 Office 2013 加载项文档中的数据的基本获取和设置操作的默认初始化代码。 由于 Project 2013 不支持向活动项目写入的操作，并且**HelloProjectOData**外接程序不使用该`getSelectedDataAsync`方法，因此您可以删除`Office.initialize`该函数中的脚本，并在默认 HelloProjectOData 文件中`setData`删除该`getData`函数和函数。
+Project 任务窗格加载项的模板包含旨在演示关于典型 Office 2013 加载项文档中的数据的基本获取和设置操作的默认初始化代码。 由于 Project 2013 不支持向活动项目写入的操作，并且**HelloProjectOData**外接程序不使用该 `getSelectedDataAsync` 方法，因此您可以删除该函数中的脚本 `Office.initialize` ，并 `setData` `getData` 在默认 HelloProjectOData 文件中删除该函数和函数。
 
-JavaScript 中包括用于 REST 查询的全局常数和用于多个函数的全局变量。 "**获取 ProjectData 端点**" 按钮调用`setOdataUrl`函数，该函数将初始化全局变量，并确定 Project 是否与 project Web App 连接。
+JavaScript 中包括用于 REST 查询的全局常数和用于多个函数的全局变量。 "**获取 ProjectData 端点**" 按钮调用 `setOdataUrl` 函数，该函数将初始化全局变量，并确定 Project 是否与 project Web App 连接。
 
-HelloProjectOData 文件的其余部分包含两个函数：当用户选择`retrieveOData` "**比较所有项目**" 时调用函数;`parseODataResult`函数计算平均值，然后用为颜色和单位格式化的值填充比较表。
+HelloProjectOData 文件的其余部分包含两个函数： `retrieveOData` 当用户选择 "**比较所有项目**" 时调用该函数; `parseODataResult` 函数计算平均值，然后用为颜色和单位格式化的值填充比较表。
 
 ### <a name="procedure-5-to-create-the-javascript-code"></a>过程 5. 创建 JavaScript 代码
 
-1. 删除默认 HelloProjectOData 文件中的所有代码，然后添加全局变量和`**`"函数。 变量名称全部大写表示它们是常量；稍后它们将与 **_pwa** 变量一起用于在此示例中创建 REST 查询。
+1. 删除默认 HelloProjectOData 文件中的所有代码，然后添加全局变量和 `**` "函数。 变量名称全部大写表示它们是常量；稍后它们将与 **_pwa** 变量一起用于在此示例中创建 REST 查询。
 
     ```js
     var PROJDATA = "/_api/ProjectData";
@@ -306,10 +306,10 @@ HelloProjectOData 文件的其余部分包含两个函数：当用户选择`retr
     }
     ```
 
-2. 添加`setOdataUrl`和相关函数。 `setOdataUrl`函数调用`getProjectGuid`并`getDocumentUrl`初始化全局变量。 在[getProjectFieldAsync 方法](/javascript/api/office/office.document)中，_回调_参数的匿名函数启用 "**比较所有项目**" 按钮，方法是使用`removeAttr` JQuery 库中的方法，然后显示**ProjectData**服务的 URL。 如果 Project 未连接 Project Web App，则函数会提示错误，该错误会显示一个弹出错误消息。 Surfaceerrors.js 文件包括`throwError`方法。
+2. 添加 `setOdataUrl` 和相关函数。 `setOdataUrl`函数调用 `getProjectGuid` 并 `getDocumentUrl` 初始化全局变量。 在[getProjectFieldAsync 方法](/javascript/api/office/office.document)中，_回调_参数的匿名函数启用 "**比较所有项目**" 按钮，方法是使用 `removeAttr` jQuery 库中的方法，然后显示**ProjectData**服务的 URL。 如果 Project 未连接 Project Web App，则函数会提示错误，该错误会显示一个弹出错误消息。 Surfaceerrors.js 文件包括 `throwError` 方法。
 
    > [!NOTE]
-   > 如果在 Project Server 计算机上运行 Visual Studio，要使用 **F5** 调试，可取消注释初始化 **_pwa** 全局变量的行后的代码。 若要在 Project Server `ajax`计算机上调试时启用使用 jQuery 方法，必须设置 PWA URL `localhost`的值。如果在远程计算机上运行 Visual Studio，则不`localhost`需要此 URL。 Before you deploy the add-in, comment out that code.
+   > 如果在 Project Server 计算机上运行 Visual Studio，要使用 **F5** 调试，可取消注释初始化 **_pwa** 全局变量的行后的代码。 若要 `ajax` 在 Project Server 计算机上调试时启用使用 jQuery 方法，必须设置 `localhost` PWA URL 的值。如果在远程计算机上运行 Visual Studio，则 `localhost` 不需要此 URL。 Before you deploy the add-in, comment out that code.
 
     ```js
     function setOdataUrl() {
@@ -367,12 +367,12 @@ HelloProjectOData 文件的其余部分包含两个函数：当用户选择`retr
     }
     ```
 
-3. 添加`retrieveOData`函数，该函数串联 REST 查询的值，然后调用 jQuery 中`ajax`的函数，从**ProjectData**服务中获取请求的数据。 **支持 cors 变量支持**跨源资源共享（cors） `ajax`函数。 如果**支持 cors**语句缺失或设置为**false**，则该函数将返回`ajax` "**无传输**错误"。
+3. 添加 `retrieveOData` 函数，该函数串联 REST 查询的值，然后调用 `ajax` jQuery 中的函数，从**ProjectData**服务中获取请求的数据。 **支持 cors 变量支持**跨源资源共享（cors） `ajax` 函数。 如果**支持 cors**语句缺失或设置为**false**，则该函数将 `ajax` 返回 "**无传输**错误"。
 
    > [!NOTE]
    > 下面的代码适用于 Project Server 2013 本地安装。对于 Project 网页版，可以使用 OAuth 执行基于令牌的身份验证。有关详细信息，请参阅[解决 Office 加载项中的同源策略限制](../develop/addressing-same-origin-policy-limitations.md)。
 
-   在`ajax`调用中，可以使用_标头_参数或_beforeSend_参数。 _Complete_参数是匿名函数，因此它与中`retrieveOData`的变量位于相同的范围中。 _Complete_参数的函数在`odataText`控件中显示结果，并调用`parseODataResult`方法来分析和显示 JSON 响应。 _Error_参数指定命名`getProjectDataErrorHandler`的函数，该函数将错误消息写入`odataText`控件，并使用`throwError`方法显示弹出消息。
+   在 `ajax` 调用中，可以使用_标头_参数或_beforeSend_参数。 _Complete_参数是匿名函数，因此它与中的变量位于相同的范围中 `retrieveOData` 。 _Complete_参数的函数在控件中显示结果 `odataText` ，并调用 `parseODataResult` 方法来分析和显示 JSON 响应。 _Error_参数指定命名的 `getProjectDataErrorHandler` 函数，该函数将错误消息写入 `odataText` 控件，并使用 `throwError` 方法显示弹出消息。
 
     ```js
     // Functions to get and parse the Project Server reporting data./
@@ -428,9 +428,9 @@ HelloProjectOData 文件的其余部分包含两个函数：当用户选择`retr
     }
     ```
 
-4. 添加`parseODataResult`方法，该方法将反序列化并处理来自 OData 服务的 JSON 响应。 `parseODataResult`方法将成本和工作数据的平均值计算为一个或两个小数位数的精度，使用正确的颜色设置值的格式，并添加单位（ **$**、**小时**或**%**），然后显示指定表格单元格中的值。
+4. 添加 `parseODataResult` 方法，该方法将反序列化并处理来自 OData 服务的 JSON 响应。 `parseODataResult`方法将成本和工作数据的平均值计算为一个或两个小数位数的精度，使用正确的颜色设置值的格式，并添加单位（ **$** 、**小时**或 **%** ），然后显示指定表格单元格中的值。
 
-   如果活动项目的 GUID 与`ProjectId`值相匹配，则将`myProjectIndex`变量设置为项目索引。 如果`myProjectIndex`指示在 project Server 上发布活动项目，则该`parseODataResult`方法将设置并显示该项目的成本和工作数据。 如果活动项目尚未发布，则活动项目的值会显示为一个蓝色 **NA**。
+   如果活动项目的 GUID 与值相匹配 `ProjectId` ，则 `myProjectIndex` 将变量设置为项目索引。 如果 `myProjectIndex` 指示在 Project Server 上发布活动项目，则该 `parseODataResult` 方法将设置并显示该项目的成本和工作数据。 如果活动项目尚未发布，则活动项目的值会显示为一个蓝色 **NA**。
 
     ```js
     // Calculate the average values of actual cost, cost, work, and percent complete
@@ -579,7 +579,7 @@ HelloProjectOData 文件的其余部分包含两个函数：当用户选择`retr
 
     ![查看 REST 查询结果](../images/pj15-hello-project-data-rest-results.png)
 
-6. 查看文本框中的输出。 它应显示来自对**ajax**和**parseODataResult**的调用的文档路径、REST 查询、状态信息和 JSON 结果。 输出有助于理解、创建和调试方法（如）中的`parseODataResult`代码`projCost += Number(res.d.results[i].ProjectCost);`。
+6. 查看文本框中的输出。 它应显示来自对**ajax**和**parseODataResult**的调用的文档路径、REST 查询、状态信息和 JSON 结果。 输出有助于理解、创建和调试方法（如）中的代码 `parseODataResult` `projCost += Number(res.d.results[i].ProjectCost);` 。
 
     下面是一个输出示例，为清晰起见，该输出在 Project Web App 实例的三个项目中将换行符和空格添加到文本中：
 
@@ -652,7 +652,7 @@ HelloProjectOData 文件的其余部分包含两个函数：当用户选择`retr
 - 如果修改加载项并发布它，您应当对已发布的加载项再次运行类似的测试。有关其他注意事项，请参阅 [后续步骤](#next-steps)。
 
 > [!NOTE]
-> 在 **ProjectData** 服务的一次查询中可返回的数据量有限制；数据量因实体而异。 例如， `Projects`实体集的默认限制为每个查询100个项目，但该`Risks`实体集的默认限制为200。 对于生产安装， **HelloProjectOData** 示例中的代码应进行修改以支持多于 100 个项目的查询。 有关详细信息，请参阅 [后续步骤](#next-steps)和 [查询 Project Server 2013 报告数据的 OData 源](/previous-versions/office/project-odata/jj163048(v=office.15))。
+> 在 **ProjectData** 服务的一次查询中可返回的数据量有限制；数据量因实体而异。 例如， `Projects` 实体集的默认限制为每个查询100个项目，但该 `Risks` 实体集的默认限制为200。 对于生产安装， **HelloProjectOData** 示例中的代码应进行修改以支持多于 100 个项目的查询。 有关详细信息，请参阅 [后续步骤](#next-steps)和 [查询 Project Server 2013 报告数据的 OData 源](/previous-versions/office/project-odata/jj163048(v=office.15))。
 
 ## <a name="example-code-for-the-helloprojectodata-add-in"></a>HelloProjectOData 加载项的示例代码
 
@@ -1093,7 +1093,7 @@ Table styles
 
 ## <a name="next-steps"></a>后续步骤
 
-如果**HelloProjectOData**是要在 AppSource 中销售或在 SharePoint 应用程序目录中分发的生产外接程序，则设计方式不同。 例如，在文本框中将没有调试输出，并且可能没有用于获取 **ProjectData** 终结点的按钮。 此外，还需要重写`retireveOData`函数以处理包含100个以上项目的 Project Web App 实例。
+如果**HelloProjectOData**是要在 AppSource 中销售或在 SharePoint 应用程序目录中分发的生产外接程序，则设计方式不同。 例如，在文本框中将没有调试输出，并且可能没有用于获取 **ProjectData** 终结点的按钮。 此外，还需要重写 `retireveOData` 函数以处理包含100个以上项目的 Project Web App 实例。
 
 加载项应当包含其他错误检查以及相关逻辑以便了解并说明或演示边界情况。例如，如果某个 Project Web App 实例具有 1000 个项目（项目的平均持续时间为 5 天，平均成本为 2400 美元），且该活动项目是唯一一个持续时间大于 20 天的项目，则成本和工作对比可能会不均衡。这可以采用频率图显示。您可以添加选项以显示持续时间、对比类似长度的项目或对比相同或不同部门的项目。或者，为用户添加一种方法以供用户从要显示的字段列表中选择。
 
@@ -1107,7 +1107,7 @@ Table styles
     <script src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js"></script>
     ```
 
-- 重写`retrieveOData`函数以启用超过100个项目的查询。 例如，你可以使用 `~/ProjectData/Projects()/$count` 查询获取项目数，并在项目数据的 REST 查询中使用 _$skip_ 运算符和 _$top_ 运算符。 循环运行多个查询，然后计算每个查询数据的平均值。 每个项目数据查询的格式为： 
+- 重写 `retrieveOData` 函数以启用超过100个项目的查询。 例如，你可以使用 `~/ProjectData/Projects()/$count` 查询获取项目数，并在项目数据的 REST 查询中使用 _$skip_ 运算符和 _$top_ 运算符。 循环运行多个查询，然后计算每个查询数据的平均值。 每个项目数据查询的格式为： 
 
   `~/ProjectData/Projects()?skip= [numSkipped]&amp;$top=100&amp;$filter=[filter]&amp;$select=[field1,field2, ???????]`
 

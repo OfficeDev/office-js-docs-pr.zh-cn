@@ -3,12 +3,12 @@ title: 在 PowerPoint 加载项中使用文档主题
 description: 了解如何以可视方式调整字体和颜色等主题，以应用于演示文稿、文档、工作表和电子邮件。
 ms.date: 10/14/2019
 localization_priority: Normal
-ms.openlocfilehash: e3affe277cfb4c52e83e0c27815884949afbe336
-ms.sourcegitcommit: 682d18c9149b1153f9c38d28e2a90384e6a261dc
+ms.openlocfilehash: a07b56cda012c34d2f92cb8a0da9e6594b30188b
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "44217786"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44611924"
 ---
 # <a name="use-document-themes-in-your-powerpoint-add-ins"></a>在 PowerPoint 加载项中使用文档主题
 

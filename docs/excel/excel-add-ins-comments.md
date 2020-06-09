@@ -3,12 +3,12 @@ title: 使用 Excel JavaScript API 处理注释
 description: 有关使用 Api 添加、删除和编辑注释和注释线程的信息。
 ms.date: 03/17/2020
 localization_priority: Normal
-ms.openlocfilehash: 971e0a830c0a34aea3e79b13fcd9fb869f971d2c
-ms.sourcegitcommit: 735bf94ac3c838f580a992e7ef074dbc8be2b0ea
+ms.openlocfilehash: a0ea156c8599b98800d03d2238451c7935d6466f
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "44170819"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44609774"
 ---
 # <a name="work-with-comments-using-the-excel-javascript-api"></a>使用 Excel JavaScript API 处理注释
 
@@ -18,11 +18,11 @@ ms.locfileid: "44170819"
 
 ![带有两个答复的标签为 "Comment" 的 Excel 注释，标记为 "Comment. 答复 [0]" 和 "Comment. 答复 [1]"。](../images/excel-comments.png)
 
-工作簿中的注释由`Workbook.comments`属性跟踪。 这包括由用户创建的批注以及由加载项创建的批注。 `Workbook.comments` 属性是一个包含一系列 [Comment](/javascript/api/excel/excel.comment) 对象的 [CommentCollection](/javascript/api/excel/excel.commentcollection) 对象。 此外，还可以在[工作表](/javascript/api/excel/excel.worksheet)级别访问注释。 本文中的示例处理工作簿级别的注释，但可以轻松地将其修改为使用`Worksheet.comments`属性。
+工作簿中的注释由属性跟踪 `Workbook.comments` 。 这包括由用户创建的批注以及由加载项创建的批注。 `Workbook.comments` 属性是一个包含一系列 [Comment](/javascript/api/excel/excel.comment) 对象的 [CommentCollection](/javascript/api/excel/excel.commentcollection) 对象。 此外，还可以在[工作表](/javascript/api/excel/excel.worksheet)级别访问注释。 本文中的示例处理工作簿级别的注释，但可以轻松地将其修改为使用 `Worksheet.comments` 属性。
 
 ## <a name="add-comments"></a>添加备注
 
-使用`CommentCollection.add`方法将注释添加到工作簿中。 此方法最长可使用三个参数：
+使用 `CommentCollection.add` 方法将注释添加到工作簿中。 此方法最长可使用三个参数：
 
 - `cellAddress`：添加了注释的单元格。 它可以是一个字符串或[Range](/javascript/api/excel/excel.range)对象。 区域必须是单个单元格。
 - `content`：注释的内容。 将字符串用于纯文本注释。 将[CommentRichContent](/javascript/api/excel/excel.commentrichcontent)对象用于包含[提及](#mentions)的注释。
@@ -74,7 +74,7 @@ Excel.run(function (context) {
 
 ### <a name="edit-comment-replies"></a>编辑批注答复
 
-若要编辑批注答复，请设置`CommentReply.content`其属性。
+若要编辑批注答复，请设置其 `CommentReply.content` 属性。
 
 ```js
 Excel.run(function (context) {
@@ -88,7 +88,7 @@ Excel.run(function (context) {
 
 ## <a name="delete-comments"></a>删除注释
 
-若要删除注释，请`Comment.delete`使用方法。 删除注释的同时也会删除与该注释相关的答复。
+若要删除注释，请使用 `Comment.delete` 方法。 删除注释的同时也会删除与该注释相关的答复。
 
 ```js
 Excel.run(function (context) {
@@ -100,7 +100,7 @@ Excel.run(function (context) {
 
 ### <a name="delete-comment-replies"></a>删除批注答复
 
-若要删除批注答复，请使用`CommentReply.delete`方法。
+若要删除批注答复，请使用 `CommentReply.delete` 方法。
 
 ```js
 Excel.run(function (context) {
@@ -113,7 +113,7 @@ Excel.run(function (context) {
 
 ## <a name="resolve-comment-threads"></a>解析注释线程
 
-注释线程具有可配置的布尔值， `resolved`以指示是否已解决。 值`true`表示注释线程已解析。 值`false`表示注释线程是新的，也可能是重新打开的。
+注释线程具有可配置的布尔值， `resolved` 以指示是否已解决。 值 `true` 表示注释线程已解析。 值 `false` 表示注释线程是新的，也可能是重新打开的。
 
 ```js
 Excel.run(function (context) {
@@ -123,7 +123,7 @@ Excel.run(function (context) {
 });
 ```
 
-批注答复有一个 readonly `resolved`属性。 它的值始终等于线程的其余部分的值。
+批注答复有一个 readonly `resolved` 属性。 它的值始终等于线程的其余部分的值。
 
 ## <a name="comment-metadata"></a>注释元数据
 
@@ -173,7 +173,7 @@ Excel.run(function (context) {
 
 [提及](https://support.office.com/article/use-mention-in-comments-to-tag-someone-for-feedback-644bf689-31a0-4977-a4fb-afe01820c1fd)用于在注释中标记同事。 这将向他们发送你的评论内容通知。 你的外接程序可以代表你创建这些提及。
 
-包含提及的注释需要使用[CommentRichContent](/javascript/api/excel/excel.commentrichcontent)对象创建。 使用`CommentCollection.add`包含一个`CommentRichContent`或多个提及的调用， `ContentType.mention`并将`contentType`其指定为参数。 此外`content` ，还需要设置字符串格式，以在文本中插入所提及的内容。 提及的格式为： `<at id="{replyIndex}">{mentionName}</at>`。
+包含提及的注释需要使用[CommentRichContent](/javascript/api/excel/excel.commentrichcontent)对象创建。 `CommentCollection.add`使用 `CommentRichContent` 包含一个或多个提及的调用，并将其指定 `ContentType.mention` 为 `contentType` 参数。 `content`此外，还需要设置字符串格式，以在文本中插入所提及的内容。 提及的格式为： `<at id="{replyIndex}">{mentionName}</at>` 。
 
 > 便笺目前，只有提及的确切名称可用作提及链接的文本。 稍后将添加对名称的缩写版本的支持。
 

@@ -3,12 +3,12 @@ title: Outlook 上下文加载项激活故障排查
 description: 如果加载项未按预期激活，应考虑以下几个方面的可能原因。
 ms.date: 05/27/2020
 localization_priority: Normal
-ms.openlocfilehash: 555ae2a45bf49d74d1fd439258fd87035644e86a
-ms.sourcegitcommit: 77617f6ad06e07f5ff8078b26301748f73e2ee01
+ms.openlocfilehash: cb8640dc2381a79bc5c0ed90da3a2f03938a0d05
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2020
-ms.locfileid: "44413180"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44611629"
 ---
 # <a name="troubleshoot-outlook-add-in-activation"></a>Outlook 加载项激活故障排查
 

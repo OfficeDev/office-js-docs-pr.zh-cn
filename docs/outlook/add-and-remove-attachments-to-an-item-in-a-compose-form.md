@@ -3,12 +3,12 @@ title: 在 Outlook 加载项中添加和删除附件
 description: 您可以使用各种附件 Api 来管理附加到用户正在撰写的项目的文件或 Outlook 项目。
 ms.date: 10/31/2019
 localization_priority: Normal
-ms.openlocfilehash: bb966ff80bae37fbaa781b5a428f6e26391aa9f4
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: d162ae4c0fa8059376a3c55463080e38679d9a01
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42720881"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44611671"
 ---
 # <a name="manage-an-items-attachments-in-a-compose-form-in-outlook"></a>在 Outlook 的撰写窗体中管理项目的附件
 
@@ -41,7 +41,7 @@ Office.context.mailbox.item.addFileAttachmentAsync('https://contoso.com/rtm/icon
 
 ### <a name="attach-a-file"></a>附加文件
 
-您可以使用`addFileAttachmentAsync`方法并指定文件的 URI，在撰写窗体中将文件附加到邮件或约会。 您还可以使用方法`addFileAttachmentFromBase64Async` ，但将 base64 字符串指定为输入。 如果文件受保护，您可以包括相应的标识或身份验证令牌作为 URI 查询字符串参数。 Exchange 将向 URI 发出调用以获取附件，保护文件的 Web 服务将需要使用令牌作为进行身份验证的一种方式。
+您可以使用 `addFileAttachmentAsync` 方法并指定文件的 URI，在撰写窗体中将文件附加到邮件或约会。 您还可以使用 `addFileAttachmentFromBase64Async` 方法，但将 base64 字符串指定为输入。 如果文件受保护，您可以包括相应的标识或身份验证令牌作为 URI 查询字符串参数。 Exchange 将向 URI 发出调用以获取附件，保护文件的 Web 服务将需要使用令牌作为进行身份验证的一种方式。
 
 下面的 JavaScript 示例是从 Web 服务器将文件、picture.png 附加到正在撰写的邮件或约会的撰写加载项。回调方法将 `asyncResult` 作为参数，检查结果状态，并在方法成功的情况下获取附件 ID。
 
@@ -84,7 +84,7 @@ function write(message){
 
 可以通过指定项的 Exchange Web Services (EWS) ID 并使用 `addItemAttachmentAsync` 方法，将 Outlook 项（例如，电子邮件、日历或联系人项）附加到撰写窗体中的邮件或约会。可以使用 [mailbox.makeEwsRequestAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md#methods) 方法并访问 EWS 操作 [FindItem](/exchange/client-developer/web-service-reference/finditem-operation)，获取用户邮箱中电子邮件、日历、联系人或任务项的 EWS ID。[item.itemId](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties) 属性还提供阅读窗体中某个现有项的 EWS ID。
 
-下面的 JavaScript 函数`addItemAttachment`，扩展了上面的第一个示例，并将项添加为要撰写的电子邮件或约会的附件。 此函数将要附加的项目的 EWS ID 作为实参。 如果附加成功，它将获取附件 ID 以进行进一步处理，包括在同一会话中删除该附件。
+下面的 JavaScript 函数， `addItemAttachment` 扩展了上面的第一个示例，并将项添加为要撰写的电子邮件或约会的附件。 此函数将要附加的项目的 EWS ID 作为实参。 如果附加成功，它将获取附件 ID 以进行进一步处理，包括在同一会话中删除该附件。
 
 ```js
 // Adds the specified item as an attachment to the composed item.
@@ -122,7 +122,7 @@ function addItemAttachment(itemId) {
 
 若要获取附件的内容，可以使用[getAttachmentContentAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods)方法。 [AttachmentContentFormat](/javascript/api/outlook/office.mailboxenums.attachmentcontentformat)枚举中列出了受支持的格式。
 
-应通过使用`AsyncResult` output parameter 对象提供用于检查状态和任何错误的回调方法。 您还可以使用 optional `asyncContext`参数将任何其他参数传递给回调方法。
+应通过使用 output parameter 对象提供用于检查状态和任何错误的回调方法 `AsyncResult` 。 您还可以使用 optional 参数将任何其他参数传递给回调方法 `asyncContext` 。
 
 下面的 JavaScript 示例获取附件，并允许您为每个受支持的附件格式设置不同的处理。
 
@@ -162,9 +162,9 @@ function handleAttachmentsCallback(result) {
 
 ## <a name="remove-an-attachment"></a>删除附件
 
-您可以指定相应的附件 ID，并使用 [removeAttachmentAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods) 方法在撰写窗体中从邮件或约会项目删除文件或项目附件。 您只应删除在同一会话中添加了同一外接程序的附件。 与`addFileAttachmentAsync`和`addItemAttachmentAsync`方法类似， `removeAttachmentAsync`是一种异步方法。 应通过使用`AsyncResult` output parameter 对象提供用于检查状态和任何错误的回调方法。 您还可以使用 optional `asyncContext`参数将任何其他参数传递给回调方法。
+您可以指定相应的附件 ID，并使用 [removeAttachmentAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods) 方法在撰写窗体中从邮件或约会项目删除文件或项目附件。 您只应删除在同一会话中添加了同一外接程序的附件。 与 `addFileAttachmentAsync` 和方法类似 `addItemAttachmentAsync` ， `removeAttachmentAsync` 是一种异步方法。 应通过使用 output parameter 对象提供用于检查状态和任何错误的回调方法 `AsyncResult` 。 您还可以使用 optional 参数将任何其他参数传递给回调方法 `asyncContext` 。
 
-下面的 JavaScript 函数`removeAttachment`可继续扩展上面的示例，并从正在撰写的电子邮件或约会中删除指定的附件。 此函数将要删除的附件的 ID 作为实参。 `addFileAttachmentAsync`可以在成功`addFileAttachmentFromBase64Async`、或`addItemAttachmentAsync`方法调用后获取附件的 ID，并将其存储为后续`removeAttachmentAsync`方法调用。
+下面的 JavaScript 函数 `removeAttachment` 可继续扩展上面的示例，并从正在撰写的电子邮件或约会中删除指定的附件。 此函数将要删除的附件的 ID 作为实参。 可以在成功、或方法调用后获取附件的 ID， `addFileAttachmentAsync` `addFileAttachmentFromBase64Async` `addItemAttachmentAsync` 并将其存储为后续 `removeAttachmentAsync` 方法调用。
 
 ```js
 // Removes the specified attachment from the composed item.

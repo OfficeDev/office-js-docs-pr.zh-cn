@@ -4,12 +4,12 @@ description: Office 外接加载项命令要求集概述
 ms.date: 03/11/2020
 ms.prod: non-product-specific
 localization_priority: Normal
-ms.openlocfilehash: ca75f7de01b5e3a31f0b5b75461b459567b53cf3
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: 5a979b5ca57cf1ddc8ebf021b72ca5fb8755a167
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42717493"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44612120"
 ---
 # <a name="add-in-commands-requirement-sets"></a>加载项命令要求集
 

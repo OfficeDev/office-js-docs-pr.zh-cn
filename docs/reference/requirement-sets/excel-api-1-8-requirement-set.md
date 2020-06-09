@@ -4,12 +4,12 @@ description: 有关 ExcelApi 1.8 要求集的详细信息
 ms.date: 07/26/2019
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: 4a512b10dd23b2165d72226d9df27d5f9454c24e
-ms.sourcegitcommit: 4079903c3cc45b7d8c041509a44e9fc38da399b1
+ms.openlocfilehash: e5d40df0ec9e6b5fb307f834c239c7fa895af42e
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/11/2020
-ms.locfileid: "42597003"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44611398"
 ---
 # <a name="whats-new-in-excel-javascript-api-18"></a>Excel JavaScript API 1.8 中的新增功能
 
@@ -68,7 +68,7 @@ Excel JavaScript API 要求集 1.8 的功能包括适用于数据透视表、数
 ||[textOrientation](/javascript/api/excel/excel.chartaxis#textorientation)|表示轴刻度线标签的文本方向。 此值应是 -90 到 90 或 180（垂直文本）之间的整数。|
 |[ChartAxisFormat](/javascript/api/excel/excel.chartaxisformat)|[fill](/javascript/api/excel/excel.chartaxisformat#fill)|表示图表填充格式。 只读。|
 |[ChartAxisTitle](/javascript/api/excel/excel.chartaxistitle)|[setFormula （formula： string）](/javascript/api/excel/excel.chartaxistitle#setformula-formula-)|该字符串值表示采用 A1 表示法的图表轴标题的公式。|
-|[ChartAxisTitleFormat](/javascript/api/excel/excel.chartaxistitleformat)|[边框](/javascript/api/excel/excel.chartaxistitleformat#border)|表示边框格式，包括颜色、线条样式和粗细。|
+|[ChartAxisTitleFormat](/javascript/api/excel/excel.chartaxistitleformat)|[边缘](/javascript/api/excel/excel.chartaxistitleformat#border)|表示边框格式，包括颜色、线条样式和粗细。|
 ||[fill](/javascript/api/excel/excel.chartaxistitleformat#fill)|表示图表填充格式。|
 |[ChartBorder](/javascript/api/excel/excel.chartborder)|[clear()](/javascript/api/excel/excel.chartborder#clear--)|清除图表元素的边框格式。|
 |[ChartCollection](/javascript/api/excel/excel.chartcollection)|[onActivated](/javascript/api/excel/excel.chartcollection#onactivated)|在激活图表时发生。|
@@ -87,7 +87,7 @@ Excel JavaScript API 要求集 1.8 的功能包括适用于数据透视表、数
 ||[textOrientation](/javascript/api/excel/excel.chartdatalabel#textorientation)|表示图表数据标签的文本方向。 此值应是 -90 到 90 或 180（垂直文本）之间的整数。|
 ||[top](/javascript/api/excel/excel.chartdatalabel#top)|表示图表数据标签上边缘到图表区域顶部的距离，以磅为单位。 如果图表数据标签不可见，则为 Null。|
 ||[verticalAlignment](/javascript/api/excel/excel.chartdatalabel#verticalalignment)|表示图表数据标签垂直对齐。 有关详细信息，请参阅 ChartTextVerticalAlignment。|
-|[ChartDataLabelFormat](/javascript/api/excel/excel.chartdatalabelformat)|[边框](/javascript/api/excel/excel.chartdatalabelformat#border)|表示边框格式，包括颜色、线条样式和粗细。 只读。|
+|[ChartDataLabelFormat](/javascript/api/excel/excel.chartdatalabelformat)|[边缘](/javascript/api/excel/excel.chartdatalabelformat#border)|表示边框格式，包括颜色、线条样式和粗细。 只读。|
 |[ChartDataLabels](/javascript/api/excel/excel.chartdatalabels)|[自动图文集](/javascript/api/excel/excel.chartdatalabels#autotext)|表示数据标签是否根据上下文自动生成相应的文本。|
 ||[horizontalAlignment](/javascript/api/excel/excel.chartdatalabels#horizontalalignment)|表示图表数据标签水平对齐。 有关详细信息，请参阅 ChartTextHorizontalAlignment。|
 ||[numberFormat](/javascript/api/excel/excel.chartdatalabels#numberformat)|表示数据标签的格式代码。|
@@ -105,7 +105,7 @@ Excel JavaScript API 要求集 1.8 的功能包括适用于数据透视表、数
 ||[left](/javascript/api/excel/excel.chartlegendentry#left)|表示图表 legendEntry 的左侧。|
 ||[top](/javascript/api/excel/excel.chartlegendentry#top)|表示图表 legendEntry 的顶部。|
 ||[width](/javascript/api/excel/excel.chartlegendentry#width)|表示图表图例上的 legendEntry 的宽度。|
-|[ChartLegendFormat](/javascript/api/excel/excel.chartlegendformat)|[边框](/javascript/api/excel/excel.chartlegendformat#border)|表示边框格式，包括颜色、线条样式和粗细。 只读。|
+|[ChartLegendFormat](/javascript/api/excel/excel.chartlegendformat)|[边缘](/javascript/api/excel/excel.chartlegendformat#border)|表示边框格式，包括颜色、线条样式和粗细。 只读。|
 |[ChartPlotArea](/javascript/api/excel/excel.chartplotarea)|[height](/javascript/api/excel/excel.chartplotarea#height)|表示 plotArea 的高度值。|
 ||[insideHeight](/javascript/api/excel/excel.chartplotarea#insideheight)|表示 plotArea 的 insideHeight 值。|
 ||[insideLeft](/javascript/api/excel/excel.chartplotarea#insideleft)|表示 plotArea 的 insideLeft 值。|
@@ -116,7 +116,7 @@ Excel JavaScript API 要求集 1.8 的功能包括适用于数据透视表、数
 ||[format](/javascript/api/excel/excel.chartplotarea#format)|表示图表 plotArea 的格式。|
 ||[top](/javascript/api/excel/excel.chartplotarea#top)|表示 plotArea 的 top 值。|
 ||[width](/javascript/api/excel/excel.chartplotarea#width)|表示 plotArea 的宽度值。|
-|[ChartPlotAreaFormat](/javascript/api/excel/excel.chartplotareaformat)|[边框](/javascript/api/excel/excel.chartplotareaformat#border)|表示图表 plotArea 的边框属性。|
+|[ChartPlotAreaFormat](/javascript/api/excel/excel.chartplotareaformat)|[边缘](/javascript/api/excel/excel.chartplotareaformat#border)|表示图表 plotArea 的边框属性。|
 ||[fill](/javascript/api/excel/excel.chartplotareaformat#fill)|表示对象的填充格式，包括背景格式信息。|
 |[ChartSeries](/javascript/api/excel/excel.chartseries)|[axisGroup](/javascript/api/excel/excel.chartseries#axisgroup)|返回或设置指定系列的组。 读/写|
 ||[分离](/javascript/api/excel/excel.chartseries#explosion)|返回或设置饼图或圆环图切片的分解程度值。 如果未分解（切片尖端位于饼图中心），则返回 0（零）。 读/写。|
@@ -144,7 +144,7 @@ Excel JavaScript API 要求集 1.8 的功能包括适用于数据透视表、数
 ||[textOrientation](/javascript/api/excel/excel.charttrendlinelabel#textorientation)|表示图表趋势线标签的文本方向。 此值应是 -90 到 90 或 180（垂直文本）之间的整数。|
 ||[top](/javascript/api/excel/excel.charttrendlinelabel#top)|表示图表趋势线标签上边缘到图表区域顶部的距离，以磅为单位。 如果图表趋势线标签不可见，则为 Null。|
 ||[verticalAlignment](/javascript/api/excel/excel.charttrendlinelabel#verticalalignment)|表示图表趋势线标签垂直对齐。 有关详细信息，请参阅 ChartTextVerticalAlignment。|
-|[ChartTrendlineLabelFormat](/javascript/api/excel/excel.charttrendlinelabelformat)|[边框](/javascript/api/excel/excel.charttrendlinelabelformat#border)|表示边框格式，包括颜色、线条样式和粗细。|
+|[ChartTrendlineLabelFormat](/javascript/api/excel/excel.charttrendlinelabelformat)|[边缘](/javascript/api/excel/excel.charttrendlinelabelformat#border)|表示边框格式，包括颜色、线条样式和粗细。|
 ||[fill](/javascript/api/excel/excel.charttrendlinelabelformat#fill)|表示当前图表趋势线标签的填充格式。|
 ||[font](/javascript/api/excel/excel.charttrendlinelabelformat#font)|表示图表趋势线标签的字体属性（字体名称、字体大小、颜色等）。|
 |[CustomDataValidation](/javascript/api/excel/excel.customdatavalidation)|[formula](/javascript/api/excel/excel.customdatavalidation#formula)|自定义数据验证公式。 这将创建特殊的输入规则，如阻止重复项或限制单元格范围中的总计。|
@@ -169,17 +169,17 @@ Excel JavaScript API 要求集 1.8 的功能包括适用于数据透视表、数
 ||[type](/javascript/api/excel/excel.datavalidation#type)|数据有效性类型，有关详细信息，请参阅 Excel.DataValidationType。|
 ||[有效](/javascript/api/excel/excel.datavalidation#valid)|表示所有单元格值根据数据有效性规则是否全部有效。|
 ||[标尺](/javascript/api/excel/excel.datavalidation#rule)|包含不同类型的数据验证条件的数据有效性规则。|
-|[DataValidationErrorAlert](/javascript/api/excel/excel.datavalidationerroralert)|[邮件](/javascript/api/excel/excel.datavalidationerroralert#message)|表示错误警报消息。|
+|[DataValidationErrorAlert](/javascript/api/excel/excel.datavalidationerroralert)|[message](/javascript/api/excel/excel.datavalidationerroralert#message)|表示错误警报消息。|
 ||[showAlert](/javascript/api/excel/excel.datavalidationerroralert#showalert)|确定在用户输入无效数据时是否显示错误警报对话框。 默认值为 true。|
 ||[style](/javascript/api/excel/excel.datavalidationerroralert#style)|表示数据有效性警报类型，有关详细信息，请参阅 Excel.DataValidationAlertStyle。|
 ||[title](/javascript/api/excel/excel.datavalidationerroralert#title)|表示错误警报对话框标题。|
-|[DataValidationPrompt](/javascript/api/excel/excel.datavalidationprompt)|[邮件](/javascript/api/excel/excel.datavalidationprompt#message)|表示提示消息。|
+|[DataValidationPrompt](/javascript/api/excel/excel.datavalidationprompt)|[message](/javascript/api/excel/excel.datavalidationprompt#message)|表示提示消息。|
 ||[showPrompt](/javascript/api/excel/excel.datavalidationprompt#showprompt)|确定在用户选择具有数据有效性的单元格时是否显示提示。|
 ||[title](/javascript/api/excel/excel.datavalidationprompt#title)|表示提示标题。|
 |[DataValidationRule](/javascript/api/excel/excel.datavalidationrule)|[自](/javascript/api/excel/excel.datavalidationrule#custom)|自定义数据有效性条件。|
 ||[date](/javascript/api/excel/excel.datavalidationrule#date)|日期数据有效性条件。|
 ||[数位](/javascript/api/excel/excel.datavalidationrule#decimal)|小数数据有效性条件。|
-||[list](/javascript/api/excel/excel.datavalidationrule#list)|列表数据有效性条件。|
+||[列表](/javascript/api/excel/excel.datavalidationrule#list)|列表数据有效性条件。|
 ||[textLength](/javascript/api/excel/excel.datavalidationrule#textlength)|TextLength 数据有效性条件。|
 ||[time](/javascript/api/excel/excel.datavalidationrule#time)|时间数据有效性条件。|
 ||[wholeNumber](/javascript/api/excel/excel.datavalidationrule#wholenumber)|WholeNumber 数据有效性条件。|
@@ -241,8 +241,8 @@ Excel JavaScript API 要求集 1.8 的功能包括适用于数据透视表、数
 ||[层次结构](/javascript/api/excel/excel.pivottable#hierarchies)|数据透视表的透视层级结构。|
 ||[布局](/javascript/api/excel/excel.pivottable#layout)|PivotLayout，用于说明数据透视表的布局和可视化结构。|
 ||[rowHierarchies](/javascript/api/excel/excel.pivottable#rowhierarchies)|数据透视表的行透视层级结构。|
-|[PivotTableCollection](/javascript/api/excel/excel.pivottablecollection)|[add （name： string，source： Range \| string \| Table，destination： Range \| string）](/javascript/api/excel/excel.pivottablecollection#add-name--source--destination-)|基于指定的数据源添加数据透视表，并将其插入到目标区域的左上单元格。|
-|[区域](/javascript/api/excel/excel.range)|[dataValidation](/javascript/api/excel/excel.range#datavalidation)|返回数据有效性对象。|
+|[PivotTableCollection](/javascript/api/excel/excel.pivottablecollection)|[add （name： string，source： Range \| string \| Table，Destination： Range \| string）](/javascript/api/excel/excel.pivottablecollection#add-name--source--destination-)|基于指定的数据源添加数据透视表，并将其插入到目标区域的左上单元格。|
+|[Range](/javascript/api/excel/excel.range)|[dataValidation](/javascript/api/excel/excel.range#datavalidation)|返回数据有效性对象。|
 |[RowColumnPivotHierarchy](/javascript/api/excel/excel.rowcolumnpivothierarchy)|[name](/javascript/api/excel/excel.rowcolumnpivothierarchy#name)|RowColumnPivotHierarchy 的名称。|
 ||[position](/javascript/api/excel/excel.rowcolumnpivothierarchy#position)|RowColumnPivotHierarchy 的位置。|
 ||[fields](/javascript/api/excel/excel.rowcolumnpivothierarchy#fields)|返回与 RowColumnPivotHierarchy 相关联的 PivotFields。|

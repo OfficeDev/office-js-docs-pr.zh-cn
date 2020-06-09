@@ -3,12 +3,12 @@ title: Excel JavaScript API 性能优化
 description: 使用 Excel JavaScript API 优化性能
 ms.date: 04/22/2020
 localization_priority: Normal
-ms.openlocfilehash: 273ae6d98c5430bdcd9612670121a6b22a8288af
-ms.sourcegitcommit: 9da68c00ecc00a2f307757e0f5a903a8e31b7769
+ms.openlocfilehash: 1108c3a9cbb5efa23d52f2c7d8a6601e4b4bd493
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "43785735"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44610352"
 ---
 # <a name="performance-optimization-using-the-excel-javascript-api"></a>使用 Excel JavaScript API 优化性能
 
@@ -52,13 +52,13 @@ worksheet.getRange("A1").set({
 
 在 Excel JavaScript API 中，需要显式加载代理对象的属性。 虽然可以使用空的 `load()` 调用一次性加载所有属性，但这种方法可能会产生大量的性能开销。 我们转为建议只加载必要的属性，特别是对于那些具有大量属性的对象。
 
-例如，如果您只想读取 range 对象的`address`属性，请在调用`load()`方法时仅指定该属性：
+例如，如果您只想读取 `address` range 对象的属性，请在调用方法时仅指定该属性 `load()` ：
 
 ```js
 range.load('address');
 ```
 
-您可以通过`load()`以下任一方式调用方法：
+您可以 `load()` 通过以下任一方式调用方法：
 
 _语法：_
 
@@ -72,7 +72,7 @@ object.load({ loadOption });
 
 _其中：_
 
-* `properties` 列出了要加载的属性，指定为逗号分隔的字符串或名称数组。 有关详细信息，请参阅`load()`为[Excel JavaScript API 参考](../reference/overview/excel-add-ins-reference-overview.md)中的对象定义的方法。
+* `properties` 列出了要加载的属性，指定为逗号分隔的字符串或名称数组。 有关详细信息，请参阅 `load()` 为[EXCEL JavaScript API 参考](../reference/overview/excel-add-ins-reference-overview.md)中的对象定义的方法。
 * `loadOption` 指定的对象描述了选择、展开、置顶和跳过选项。有关详细信息，请参阅对象加载[选项](/javascript/api/office/officeextension.loadoption)。
 
 请注意，对象下的某些 "属性" 可能与另一个对象具有相同的名称。 例如，`format` 是区域对象下的一个属性，但 `format` 本身也是一个对象。 因此，如果发出 `range.load("format")` 之类的调用，这就相当于 `range.format.load()`，后者是一个空 load() 调用，它可能会导致前面所述的性能问题。 若要避免这种情况，代码应仅加载对象树中的 "叶节点"。
@@ -133,7 +133,7 @@ Excel.run(async function(ctx) {
 Excel 大约会在代码发生更改时显示外接程序所进行的这些更改。 对于大型迭代数据集，你无需实时在屏幕上查看此进度。 在外接程序调用 `context.sync()` 或者在 `Excel.run` 结束（隐式调用 `context.sync`）之前，`Application.suspendScreenUpdatingUntilNextSync()` 将暂停对 Excel 的可视化更新。 请注意，在下次同步之前，Excel 不会显示任何活动迹象。你的外接程序应为用户提供相关指南，以便为此延迟做好准备，或者提供一个状态栏，以演示相关活动。
 
 > [!NOTE]
-> 请勿重复`suspendScreenUpdatingUntilNextSync`调用（如在循环中）。 重复调用将导致 Excel 窗口闪烁。
+> 请勿 `suspendScreenUpdatingUntilNextSync` 重复调用（如在循环中）。 重复调用将导致 Excel 窗口闪烁。
 
 ### <a name="enable-and-disable-events"></a>启用和禁用事件
 

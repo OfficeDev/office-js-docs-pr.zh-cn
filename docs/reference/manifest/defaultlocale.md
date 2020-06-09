@@ -3,12 +3,12 @@ title: 清单文件中的 DefaultLocale 元素
 description: 指定外接程序中的字符串使用的区域设置的默认区域性名称。
 ms.date: 10/09/2018
 localization_priority: Normal
-ms.openlocfilehash: 814e6837af7a1b86796ce9d3f8512805e2b5666c
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: 72b07cb04f9ce2e7678c80c3ca2730300448a98a
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42720678"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44612295"
 ---
 # <a name="defaultlocale-element"></a>DefaultLocale 元素
 

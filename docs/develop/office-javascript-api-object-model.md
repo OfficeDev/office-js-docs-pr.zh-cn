@@ -3,12 +3,12 @@ title: 常见 JavaScript API 对象模型
 description: 了解 Office JavaScript 通用 API 对象模型
 ms.date: 04/30/2020
 localization_priority: Normal
-ms.openlocfilehash: 4bfe027b09fc806021212d00c895527bd661f3a6
-ms.sourcegitcommit: 99b41e8b90f2df6dafcc12b3883e83751de9facd
+ms.openlocfilehash: 44c5258ad164c19df53ebe2fcbb00f420018a710
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/30/2020
-ms.locfileid: "43952253"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44609732"
 ---
 # <a name="common-javascript-api-object-model"></a>常见 JavaScript API 对象模型
 
@@ -31,23 +31,23 @@ Office JavaScript 加载项可提供对主机的基础功能的访问权限。 �
 
 **适用于：** 内容和任务窗格加载项类型
 
-为了与 Excel、PowerPoint 和 Word 中的文档数据交互，API 提供 [Document](/javascript/api/office/office.document) 对象。 您可以使用`Document`对象成员从以下几个方面访问数据：
+为了与 Excel、PowerPoint 和 Word 中的文档数据交互，API 提供 [Document](/javascript/api/office/office.document) 对象。 您可以使用 `Document` 对象成员从以下几个方面访问数据：
 
 - 读取和写入文本形式、连续单元格（矩阵）或表格中的活动选区。
 
 - 表格数据（矩阵或表格）。
 
-- 绑定（使用`Bindings`对象的 "add" 方法创建）。
+- 绑定（使用对象的 "add" 方法创建 `Bindings` ）。
 
 - 自定义 XML 部件（仅适用于 Word）。
 
 - 文档上按加载项保留的设置或加载项状态。
 
-您还可以使用`Document`对象与项目文档中的数据进行交互。 特定于 Project 的 API 功能记录在成员 [ProjectDocument](/javascript/api/office/office.document) 抽象类中。 有关为 Project 创建任务窗格加载项的详细信息，请参阅[适用于 Project 的任务窗格加载项](../project/project-add-ins.md)。
+您还可以使用 `Document` 对象与项目文档中的数据进行交互。 特定于 Project 的 API 功能记录在成员 [ProjectDocument](/javascript/api/office/office.document) 抽象类中。 有关为 Project 创建任务窗格加载项的详细信息，请参阅[适用于 Project 的任务窗格加载项](../project/project-add-ins.md)。
 
-所有这些形式的数据访问都是从抽象`Document`对象的实例开始的。
+所有这些形式的数据访问都是从抽象对象的实例开始的 `Document` 。
 
-使用`Context`对象的[document](/javascript/api/office/office.context#document)属性初始化任务`Document`窗格或内容加载项时，可以访问对象的实例。 该`Document`对象定义在 Word 和 Excel 文档中共享的常见数据访问函数，还提供对 word `CustomXmlParts`文档的对象的访问权限。
+`Document`使用对象的[document](/javascript/api/office/office.context#document)属性初始化任务窗格或内容加载项时，可以访问对象的实例 `Context` 。 该 `Document` 对象定义在 word 和 Excel 文档中共享的常见数据访问函数，还提供对 word 文档的对象的访问权限 `CustomXmlParts` 。
 
 `Document`对象支持四种方式以供开发人员访问文档内容：
 
@@ -80,15 +80,15 @@ Office JavaScript 加载项可提供对主机的基础功能的访问权限。 �
 |:-----|:-----|:-----|
 |文本|提供选定范围或绑定中数据的字符串表示形式。|在 Excel 2013、Project 2013 和 PowerPoint 2013 中，仅支持纯文本。在 Word 2013 中，支持三种文本格式：纯文本、HTML 和 Office Open XML (OOXML)。如果选中的是 Excel 单元格中的文本，基于选定范围的方法会对单元格的全部内容执行读取和写入操作，即使仅选中了单元格中的部分文本，也不例外。如果选中的是 Word 和 PowerPoint 中的文本，基于选定范围的方法只会对选中的一系列字符执行读取和写入操作。Project 2013 和 PowerPoint 2013 仅支持基于选定范围的数据访问。|
 |矩阵|将选定范围或绑定中的数据作为二维 **Array** 提供，这在 JavaScript 中实现为一组数组。例如，两行两列 **string** 值为 ` [['a', 'b'], ['c', 'd']]`，而三行一列则为 `[['a'], ['b'], ['c']]`。|仅 Excel 2013 和 Word 2013 支持矩阵数据访问。|
-|Table|将选区或绑定中的数据作为 [TableData](/javascript/api/office/office.tabledata) 对象提供。 `TableData`对象通过`headers`和`rows`属性公开数据。|表格数据访问仅在 Excel 2013 和 Word 2013 中受支持。|
+|Table|将选区或绑定中的数据作为 [TableData](/javascript/api/office/office.tabledata) 对象提供。 `TableData`对象通过 `headers` 和属性公开数据 `rows` 。|表格数据访问仅在 Excel 2013 和 Word 2013 中受支持。|
 
 #### <a name="data-type-coercion"></a>数据类型强制转换
 
-和 Binding 对象上的数据访问方法支持使用这些方法的_coercionType_参数以及相应的[coercionType](/javascript/api/office/office.coerciontype)枚举值指定所需的数据类型。 [Binding](/javascript/api/office/office.binding) `Document` 不管绑定的实际形状如何，不同的 Office 应用程序都通过尝试将数据强制转换为请求的数据类型来支持通用的数据类型。 例如，如果选中了某个 Word 表格或段落，开发人员可以指定以纯文本、HTML、Office Open XML 或表格的形式读取它，而 API 实现则负责处理必要的转换和数据转换。
+和 Binding 对象上的数据访问方法 `Document` 支持使用这些方法的_coercionType_参数以及相应的[coercionType](/javascript/api/office/office.coerciontype)枚举值指定所需的数据类型。 [Binding](/javascript/api/office/office.binding) 不管绑定的实际形状如何，不同的 Office 应用程序都通过尝试将数据强制转换为请求的数据类型来支持通用的数据类型。 例如，如果选中了某个 Word 表格或段落，开发人员可以指定以纯文本、HTML、Office Open XML 或表格的形式读取它，而 API 实现则负责处理必要的转换和数据转换。
 
 
 > [!TIP]
-> **何时应使用矩阵与表格 coercionType 数据访问？** 如果需要在添加行和列时动态增大表格数据，并且必须使用表格标题，则应使用 table 数据类型（通过将`Document` `Binding` _coercionType_参数指定为`"table"`或的对象数据访问方法`Office.CoercionType.Table`）。 表格数据和矩阵数据中都支持在数据结构内添加行和列，但仅支持对表格数据追加行和列。 如果您不打算添加行和列，并且您的数据不需要标头功能，则应使用矩阵数据类型（通过将 data access 方法的_coercionType_参数指定为`"matrix"`或`Office.CoercionType.Matrix`），这提供了与数据交互的更简单的模型。
+> **何时应使用矩阵与表格 coercionType 数据访问？** 如果需要在添加行和列时动态增大表格数据，并且必须使用表格标题，则应使用 table 数据类型（通过将_coercionType_参数指定为或的 `Document` `Binding` 对象数据访问方法 `"table"` `Office.CoercionType.Table` ）。 表格数据和矩阵数据中都支持在数据结构内添加行和列，但仅支持对表格数据追加行和列。 如果您不打算添加行和列，并且您的数据不需要标头功能，则应使用矩阵数据类型（通过将 data access 方法的_coercionType_参数指定为 `"matrix"` 或 `Office.CoercionType.Matrix` ），这提供了与数据交互的更简单的模型。
 
 如果无法将数据强制转换为指定的类型，那么回调中的 [AsyncResult.status](/javascript/api/office/office.asyncresult#status) 属性返回 `"failed"`，并且你可以使用 [AsyncResult.error](/javascript/api/office/office.asyncresult#error) 属性访问 [Error](/javascript/api/office/office.error) 对象，其中包括方法调用失败原因的信息。
 
@@ -96,7 +96,7 @@ Office JavaScript 加载项可提供对主机的基础功能的访问权限。 �
 ## <a name="working-with-selections-using-the-document-object"></a>使用 Document 对象处理选择内容
 
 
-该`Document`对象公开的方法允许您以 "获取和设置" 方式读取和写入用户当前所选内容。 若要执行此操作`Document` ，对象将`getSelectedDataAsync`提供`setSelectedDataAsync`和方法。
+该 `Document` 对象公开的方法允许您以 "获取和设置" 方式读取和写入用户当前所选内容。 若要执行此操作， `Document` 对象将提供 `getSelectedDataAsync` 和 `setSelectedDataAsync` 方法。
 
 有关演示如何使用选区执行任务的代码示例，请参阅[在文档或电子表格的活动选区中读取和写入数据](read-and-write-data-to-the-active-selection-in-a-document-or-spreadsheet.md)。
 
@@ -115,9 +115,9 @@ Office JavaScript 加载项可提供对主机的基础功能的访问权限。 �
 
 建立绑定还允许您订阅仅限文档或电子表格的特定区域的数据和选择更改事件。这意味着，加载项只会收到绑定区域内发生的更改的通知，而不是收到整个文档或电子表格内的常规更改的通知。
 
-[Bindings](/javascript/api/office/office.bindings) 对象公开 [getAllAsync](/javascript/api/office/office.bindings#getallasync-options--callback-) 方法，通过该方法可以访问在文档或电子表格中建立的所有绑定的集合。 可使用 [Bindings.getBindingByIdAsync](/javascript/api/office/office.bindings#getbyidasync-id--options--callback-) 或 [Office.select](/javascript/api/office) 方法按 ID 访问单个绑定。 您可以`Bindings`使用以下对象的方法之一来建立新绑定，并删除现有绑定： [addFromSelectionAsync](/javascript/api/office/office.bindings#addfromselectionasync-bindingtype--options--callback-)、 [addFromPromptAsync](/javascript/api/office/office.bindings#addfrompromptasync-bindingtype--options--callback-)、 [addFromNamedItemAsync](/javascript/api/office/office.bindings#addfromnameditemasync-itemname--bindingtype--options--callback-)或[releaseByIdAsync](/javascript/api/office/office.bindings#releasebyidasync-id--options--callback-)。
+[Bindings](/javascript/api/office/office.bindings) 对象公开 [getAllAsync](/javascript/api/office/office.bindings#getallasync-options--callback-) 方法，通过该方法可以访问在文档或电子表格中建立的所有绑定的集合。 可使用 [Bindings.getBindingByIdAsync](/javascript/api/office/office.bindings#getbyidasync-id--options--callback-) 或 [Office.select](/javascript/api/office) 方法按 ID 访问单个绑定。 您可以使用以下对象的方法之一来建立新绑定，并删除现有绑定 `Bindings` ： [addFromSelectionAsync](/javascript/api/office/office.bindings#addfromselectionasync-bindingtype--options--callback-)、 [AddFromPromptAsync](/javascript/api/office/office.bindings#addfrompromptasync-bindingtype--options--callback-)、 [addFromNamedItemAsync](/javascript/api/office/office.bindings#addfromnameditemasync-itemname--bindingtype--options--callback-)或[releaseByIdAsync](/javascript/api/office/office.bindings#releasebyidasync-id--options--callback-)。
 
-在使用或`addFromNamedItemAsync`方法创建绑定时`addFromSelectionAsync`， `addFromPromptAsync`可以使用_bindingType_参数指定三种不同类型的绑定：
+在使用或方法创建绑定时，可以使用_bindingType_参数指定三种不同类型的绑定 `addFromSelectionAsync` `addFromPromptAsync` `addFromNamedItemAsync` ：
 
 
 
@@ -129,7 +129,7 @@ Office JavaScript 加载项可提供对主机的基础功能的访问权限。 �
 
 <br/>
 
-使用`Bindings`该对象的三个 "添加" 方法之一创建绑定之后，可以使用相应对象的方法来处理绑定的数据和属性： [MatrixBinding](/javascript/api/office/office.matrixbinding)、 [TableBinding](/javascript/api/office/office.tablebinding)或[textbinding 添加](/javascript/api/office/office.textbinding)。 所有这三个对象都继承`Binding`对象的[binding.getdataasync](/javascript/api/office/office.binding#getdataasync-options--callback-)和[binding.setdataasync](/javascript/api/office/office.binding#setdataasync-data--options--callback-)方法，您可以使用这些方法与绑定的数据进行交互。
+使用该对象的三个 "添加" 方法之一创建绑定之后 `Bindings` ，可以使用相应对象的方法来处理绑定的数据和属性： [MatrixBinding](/javascript/api/office/office.matrixbinding)、 [TableBinding](/javascript/api/office/office.tablebinding)或[textbinding 添加](/javascript/api/office/office.textbinding)。 所有这三个对象都继承对象的[binding.getdataasync](/javascript/api/office/office.binding#getdataasync-options--callback-)和[binding.setdataasync](/javascript/api/office/office.binding#setdataasync-data--options--callback-)方法 `Binding` ，您可以使用这些方法与绑定的数据进行交互。
 
 有关演示如何使用绑定执行任务的代码示例，请参阅[绑定到文档或电子表格中的区域](bind-to-regions-in-a-document-or-spreadsheet.md)。
 
@@ -139,7 +139,7 @@ Office JavaScript 加载项可提供对主机的基础功能的访问权限。 �
 
  **适用于：** Word 的任务窗格加载项
 
-API 的 [CustomXmlParts](/javascript/api/office/office.customxmlparts) 和 [CustomXmlPart](/javascript/api/office/office.customxmlpart) 对象提供访问 Word 文档中自定义 XML 部件的权限，从而启用文档内容的 XML 驱动操作。 有关使用`CustomXmlParts`和`CustomXmlPart`对象的演示，请参阅[Word 加载项-与工作的自定义 XML 部分](https://github.com/OfficeDev/Word-Add-in-Work-with-custom-XML-parts)的代码示例。
+API 的 [CustomXmlParts](/javascript/api/office/office.customxmlparts) 和 [CustomXmlPart](/javascript/api/office/office.customxmlpart) 对象提供访问 Word 文档中自定义 XML 部件的权限，从而启用文档内容的 XML 驱动操作。 有关使用和对象的演示 `CustomXmlParts` `CustomXmlPart` ，请参阅[Word 加载项-与工作的自定义 XML 部分](https://github.com/OfficeDev/Word-Add-in-Work-with-custom-XML-parts)的代码示例。
 
 
 ## <a name="working-with-the-entire-document-using-the-getfileasync-method"></a>使用 getFileAsync 方法处理整个文档

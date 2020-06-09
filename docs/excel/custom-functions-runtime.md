@@ -3,12 +3,12 @@ ms.date: 05/17/2020
 description: 了解不使用任务窗格及其特定 JavaScript 运行时的 Excel 自定义函数。
 title: 不带 UI 的 Excel 自定义函数的运行时
 localization_priority: Normal
-ms.openlocfilehash: 31044d4569d230e252c05a39785fc7d47b802e37
-ms.sourcegitcommit: f62d9630de69c5c070e3d4048205f5cc654db7e4
+ms.openlocfilehash: 5cb9aa480d6923d31434d58a9683e9a9f5d48458
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/18/2020
-ms.locfileid: "44278355"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44609641"
 ---
 # <a name="runtime-for-ui-less-excel-custom-functions"></a>不带 UI 的 Excel 自定义函数的运行时
 

@@ -3,12 +3,12 @@ title: 使用 Office Open XML 创建更优质的 Word 加载项
 description: 有关如何使用 Office Open XML 改进 Word 外接程序的概述
 ms.date: 10/10/2019
 localization_priority: Normal
-ms.openlocfilehash: 710265eab022b4da3035699c353d01f567354013
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: 2faaedec831a9ae18f218ff160fee26a8d36910e
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42717388"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44609585"
 ---
 # <a name="create-better-add-ins-for-word-with-office-open-xml"></a>使用 Office Open XML 创建更优质的 Word 加载项
 
@@ -107,7 +107,7 @@ Microsoft Office 提供了大量 SmartArt 图表布局（可以使用 Office Ope
 
 
 > [!NOTE]
-> Office Open XML 文档实际上是表示文档内容的文件压缩包。 将文件保存为 Word XML 文档格式后，可以将 entireOffice Open XML 包平展为一个 XML 文件，这也是您在检索 Office Open `getSelectedDataAsync` xml 标记时获取的功能。
+> Office Open XML 文档实际上是表示文档内容的文件压缩包。 将文件保存为 Word XML 文档格式后，可以将 entireOffice Open XML 包平展为一个 XML 文件，这也是您在 `getSelectedDataAsync` 检索 Office OPEN xml 标记时获取的功能。
 
 如果从 Word 中将文件保存为 XML 格式，请注意“另存为”对话框的“另存为类型”列表下有两个适用于 .xml 格式文件的选项。 请确保选择“Word XML 文档”**** 而非“Word 2003”选项。
 下载名为 [Word-Add-in-Get-Set-EditOpen-XML](https://github.com/OfficeDev/Word-Add-in-Get-Set-EditOpen-XML) 的代码示例，该示例可以用作检索和测试标记的工具。
@@ -122,7 +122,7 @@ Microsoft Office 提供了大量 SmartArt 图表布局（可以使用 Office Ope
 
 即使是简单的 Word 文档包，除了实际内容的部件之外，还包括文档属性、样式、主题（格式设置）、Web 设置、字体等的部件。
 
-例如，假设您只想要插入直接格式的文本段落，如前面图 1 中所示。 在使用`getSelectedDataAsync`为格式化的文本获取 OFFICE Open XML 时，您会看到大量的标记。 这些标记包括表示整个文档的数据包元素，其中包含多个部件（通常称为文档部件，在 Office Open XML 中称为数据包部件），如图 13 中所示。 每个部件表示数据包中的一个单独文件。
+例如，假设您只想要插入直接格式的文本段落，如前面图 1 中所示。 在使用为格式化的文本获取 Office Open XML 时 `getSelectedDataAsync` ，您会看到大量的标记。 这些标记包括表示整个文档的数据包元素，其中包含多个部件（通常称为文档部件，在 Office Open XML 中称为数据包部件），如图 13 中所示。 每个部件表示数据包中的一个单独文件。
 
 > [!TIP]
 > 您可以在记事本等文本编辑器中编辑 Office Open XML 标记。 如果在 Visual Studio 中打开它，则可以使用 "**编辑 >高级 > 格式" 文档**（Ctrl + K、Ctrl + D）设置包格式，以便更轻松地进行编辑。 然后可以折叠或展开文档部件或各部分，如图 12 中所示，以便更轻松地查看和编辑 Office Open XML 包的内容。 每个文档部件都以 **pkg:part** 标记开头。
@@ -557,7 +557,7 @@ function addAndBindControl() {
 
   如果你的外接程序有可能出现这样一种情况，在执行代码时，文档中已存在命名控件，那么请先执行此步骤。例如，如果外接程序已插入并使用已设计为与该外接程序一起使用的模板进行保存，其中事先放置了该控件，那么你需要执行此操作。如果你需要绑定到该外接程序之前放置的控件，那么你也需要执行此操作。
 
-- 对`addFromNamedItemAsync`方法的第一次调用中的回调检查结果的状态，以查看是否由于文档中不存在指定项目（即本示例中名为 "MyContentControlTitle" 的内容控件）而导致绑定失败。 如果是这样，代码将在活动的选择点（使用`setSelectedDataAsync`）中添加控件，然后将其绑定到该控件。
+- 对方法的第一次调用中的回调 `addFromNamedItemAsync` 检查结果的状态，以查看是否由于文档中不存在指定项目（即本示例中名为 "MyContentControlTitle" 的内容控件）而导致绑定失败。 如果是这样，代码将在活动的选择点（使用）中添加控件 `setSelectedDataAsync` ，然后将其绑定到该控件。
 
 
 > [!NOTE]
@@ -591,7 +591,7 @@ function populateBinding(filename) {
 }
 ```
 
-与`setSelectedDataAsync`一样，您可以指定要插入的内容和强制类型。 写入到绑定的其他唯一要求是通过 ID 标识绑定。 请注意此代码 (bindings#myBinding) 中使用的绑定 ID 如何与之前函数创建绑定时建立的绑定 ID (myBinding) 相对应。
+与一样 `setSelectedDataAsync` ，您可以指定要插入的内容和强制类型。 写入到绑定的其他唯一要求是通过 ID 标识绑定。 请注意此代码 (bindings#myBinding) 中使用的绑定 ID 如何与之前函数创建绑定时建立的绑定 ID (myBinding) 相对应。
 
 
 > [!NOTE]

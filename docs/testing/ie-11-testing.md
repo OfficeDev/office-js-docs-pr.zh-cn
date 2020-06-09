@@ -3,12 +3,12 @@ ms.date: 05/16/2020
 description: 使用 Internet Explorer 11 测试 Office 外接程序。
 title: Internet Explorer 11 测试
 localization_priority: Normal
-ms.openlocfilehash: 697c87d90df9aa70a7b20da5cd4c91d4445fb850
-ms.sourcegitcommit: 54e2892c0c26b9ad1e4dba8aba48fea39f853b6c
+ms.openlocfilehash: 4ea2b4da153e2908f928086cd4997502c194e578
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/18/2020
-ms.locfileid: "44275944"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44611202"
 ---
 # <a name="test-your-office-add-in-using-internet-explorer-11"></a>使用 Internet Explorer 11 测试 Office 外接程序
 
@@ -47,7 +47,7 @@ office-add-dev-settings webview manifest.xml ie
 
 - 限于
 - 距
-- 设置
+-  默认值
 
 ## <a name="see-also"></a>另请参阅
 * [测试和调试 Office 加载项](test-debug-office-add-ins.md)

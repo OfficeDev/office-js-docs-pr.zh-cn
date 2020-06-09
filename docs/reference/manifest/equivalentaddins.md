@@ -3,12 +3,12 @@ title: 清单文件中的 EquivalentAddins 元素
 description: 指定与等效的 COM 外接程序、XLL 或这两者的向后兼容性。
 ms.date: 05/03/2019
 localization_priority: Normal
-ms.openlocfilehash: cbc7fd5ec60fb9d43b17586d755a2ea5f85e251b
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: df854bd6bf7b7be0328235726e3adfc9fc44c5b4
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42718291"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44611552"
 ---
 # <a name="equivalentaddins-element"></a>EquivalentAddins 元素
 

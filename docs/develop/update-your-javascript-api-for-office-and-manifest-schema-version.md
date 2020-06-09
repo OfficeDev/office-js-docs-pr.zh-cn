@@ -3,12 +3,12 @@ title: 更新到最新的 Office JavaScript API 库和版本1.1 加载项清单�
 description: 将在 Office 加载项项目中的 JavaScript 文件（Office.js 和特定于应用程序的 .js 文件）和加载项清单验证文件更新到版本 1.1。
 ms.date: 10/11/2019
 localization_priority: Normal
-ms.openlocfilehash: 74d940c1dfd885e1f48935776481bd5ab3bbda16
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: 1c088c27319817c466e1ed9b928806c88e0f89c8
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42719334"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44609662"
 ---
 # <a name="update-to-the-latest-office-javascript-api-library-and-version-11-add-in-manifest-schema"></a>更新到最新的 Office JavaScript API 库和版本1.1 加载项清单架构
 
@@ -44,7 +44,7 @@ ms.locfileid: "42719334"
 以下步骤将把您的 Office .js 库文件更新到最新版本。 这些步骤使用 Visual Studio 2019，但它们与 Visual Studio 的早期版本类似。
 
 1. 在 Visual Studio 2019 中，打开或创建新的**Office 加载项**项目。
-2. 选择**工具** > **nuget 包管理器** > **管理用于解决方案的 NuGet 包**。
+2. 选择**工具**  >  **nuget 包管理器**  >  **管理用于解决方案的 NuGet 包**。
 3. 选择“更新”**** 选项卡。
 4. 选择 Microsoft.Office.js。 确保程序包源来自**nuget.org**。
 5. 在左窗格中，选择 "**安装**" 并完成程序包更新过程。
@@ -83,7 +83,7 @@ ms.locfileid: "42719334"
 
 更新过程对_每个项目_分别执行，这意味着对于想要在其中使用 Office.js v1.1 的每个加载项项目以及加载项清单架构，你需要重复更新过程。
 
-您不需要 Office JavaScript API 文件（Office 和应用程序特定的 .js 文件）的本地副本来开发外接程序（在运行时引用 CDN for the .js 下载所需的文件），但如果您需要库文件的本地副本，则可以使用[NuGet 命令行实用程序](https://docs.nuget.org/consume/installing-nuget)和`Install-Package Microsoft.Office.js`命令下载这些文件。
+您不需要 Office JavaScript API 文件（Office 和应用程序特定的 .js 文件）的本地副本来开发外接程序（在运行时引用 CDN for the .js 下载所需的文件），但如果您需要库文件的本地副本，则可以使用[NuGet 命令行实用程序](https://docs.nuget.org/consume/installing-nuget)和 `Install-Package Microsoft.Office.js` 命令下载这些文件。
 
 > [!NOTE]
 > 若要获取有关 v1.1 加载项清单的 XSD（XML 架构定义）副本，请参阅 [Office 加载项清单的架构参考 (v1.1)](../develop/add-in-manifests.md) 中列出的内容。
