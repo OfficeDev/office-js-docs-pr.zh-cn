@@ -3,12 +3,12 @@ title: Office 加载项辅助功能指南
 description: 了解如何使你的 Office 外接程序可供所有用户访问。
 ms.date: 09/24/2018
 localization_priority: Normal
-ms.openlocfilehash: 61028c86e9ff79271b67d217e2dc93df300af006
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: 889563af8ab5f7bbcd4037eedb42933369a92cf2
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42718620"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44607990"
 ---
 # <a name="accessibility-guidelines"></a>辅助功能准则
 

@@ -3,12 +3,12 @@ title: Office 外接程序的导航模式
 description: 了解使用命令栏、选项卡栏和后退按钮的最佳实践，以设计 Office 外接程序的导航。
 ms.date: 06/26/2018
 localization_priority: Normal
-ms.openlocfilehash: 6fb025a897cfc820117a0b6153acc92c2aeb837e
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: 812b56edc0653812c3519735a7300e5f3d7b38a6
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42718753"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44608507"
 ---
 # <a name="navigation-patterns"></a>导航模式
 

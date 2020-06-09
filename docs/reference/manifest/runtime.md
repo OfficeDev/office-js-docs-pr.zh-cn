@@ -3,12 +3,12 @@ title: 清单文件中的运行时
 description: Runtime 元素将您的外接程序配置为对其各个组件使用共享的 JavaScript 运行时，例如，功能区、任务窗格、自定义函数。
 ms.date: 05/29/2020
 localization_priority: Normal
-ms.openlocfilehash: a463b72f22b41f74e2fe98acca467762bb00cf39
-ms.sourcegitcommit: 09a8683ff29cf06d0d1d822be83cf0798f1ccdf9
+ms.openlocfilehash: e81bd7222585bfa7d5f0f34fe5d9b32e4d45a71e
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/01/2020
-ms.locfileid: "44471336"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44608102"
 ---
 # <a name="runtime-element-preview"></a>Runtime 元素（预览）
 

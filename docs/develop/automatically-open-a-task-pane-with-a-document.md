@@ -3,12 +3,12 @@ title: 随文档自动打开任务窗格
 description: 了解如何将 Office 外接程序配置为在文档打开时自动打开。
 ms.date: 06/20/2019
 localization_priority: Normal
-ms.openlocfilehash: eaa05bdbac600f9e12f4c8583b8bd5b6abe0b89f
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: 896a64bd013858d8079ea4cda4449bfbe91e1569
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42719166"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44608395"
 ---
 # <a name="automatically-open-a-task-pane-with-a-document"></a>随文档自动打开任务窗格
 

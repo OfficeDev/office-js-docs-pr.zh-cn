@@ -3,12 +3,12 @@ title: 清单文件中的 SupportUrl 元素
 description: SupportUrl 元素指定为外接程序提供支持信息的页面的 URL。
 ms.date: 10/09/2018
 localization_priority: Normal
-ms.openlocfilehash: e38030062c48936f925126e896cd74e660164a5d
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: f75ee811699823a501ac594e66daaaf3f93c2782
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42720342"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44608703"
 ---
 # <a name="supporturl-element"></a>SupportUrl 元素
 
@@ -39,7 +39,7 @@ ms.locfileid: "42720342"
 
 ## <a name="can-contain"></a>可以包含
 
-|  元素 | 必需 | 说明  |
+|  元素 | 必需 | Description  |
 |:-----|:-----|:-----|
 |  [Override](override.md)   | 否 | 指定其他区域设置 URL 的设置 |
 

@@ -4,12 +4,12 @@ ms.prod: non-product-specific
 description: 身份验证资源和示例。
 title: 身份验证资源和示例
 localization_priority: Normal
-ms.openlocfilehash: 2113198f2785f1dbb7e6565380caea55296a1e90
-ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
+ms.openlocfilehash: 9f67880aa143a53675078aec0b53c8a2a7ff4888
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "41949638"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44608416"
 ---
 # <a name="authentication-resources-and-samples"></a>身份验证资源和示例
 

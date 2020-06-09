@@ -3,12 +3,12 @@ title: 清单文件中的 Set 元素
 description: Set 元素指定 office 外接程序需要的 Office JavaScript API 要求集才能激活。
 ms.date: 03/19/2019
 localization_priority: Normal
-ms.openlocfilehash: e9a70da0dc38c3aee077eb5e7f47cdf8e6dc2d32
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: f4755cc6742beb37ed8b8efcf4c3968394f15ed6
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42717913"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44608738"
 ---
 # <a name="set-element"></a>Set 元素
 

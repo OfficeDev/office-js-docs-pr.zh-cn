@@ -3,12 +3,12 @@ title: 在 Outlook 加载项中启用代理访问方案
 description: 简要介绍了代理访问权限，并讨论了如何配置加载项支持。
 ms.date: 01/14/2020
 localization_priority: Normal
-ms.openlocfilehash: 0941e4f0b5e1082b8a762acfa013d4e58be03469
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: 68b9e09afbe2bcd5cfc302d6714b1c22fd945047
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42721014"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44608948"
 ---
 # <a name="enable-delegate-access-scenarios-in-an-outlook-add-in"></a>在 Outlook 加载项中启用代理访问方案
 
@@ -23,9 +23,9 @@ ms.locfileid: "42721014"
 
 下表介绍了 Office JavaScript API 支持的代理权限。
 
-|权限|值|说明|
+|Permission|值|Description|
 |---|---:|---|
-|读取|1（000001）|可以读取项目。|
+|Read|1（000001）|可以读取项目。|
 |写入|2（000010）|可以创建项目。|
 |DeleteOwn|4（000100）|只能删除其创建的项目。|
 |DeleteAll|8（001000）|可以删除任何项目。|
@@ -35,7 +35,7 @@ ms.locfileid: "42721014"
 > [!NOTE]
 > 目前，API 支持获取现有的代理权限，但不支持设置委派权限。
 
-使用位掩码来实现[DelegatePermissions](/javascript/api/outlook/office.mailboxenums.delegatepermissions)对象，以指示代理的权限。 位掩码中的每个位置都代表一个特定权限，如果将`1`其设置为，则代理具有相应的权限。 例如，如果右边的第二位是`1`，则代理具有 "**写入**" 权限。 您可以在本文后面的 "将[操作作为代理执行操作](#perform-an-operation-as-delegate)" 一节中查看有关如何检查特定权限的示例。
+使用位掩码来实现[DelegatePermissions](/javascript/api/outlook/office.mailboxenums.delegatepermissions)对象，以指示代理的权限。 位掩码中的每个位置都代表一个特定权限，如果将其设置为，则 `1` 代理具有相应的权限。 例如，如果右边的第二位是 `1` ，则代理具有 "**写入**" 权限。 您可以在本文后面的 "将[操作作为代理执行操作](#perform-an-operation-as-delegate)" 一节中查看有关如何检查特定权限的示例。
 
 ## <a name="sync-across-mailbox-clients"></a>在邮箱客户端之间同步
 
@@ -45,9 +45,9 @@ ms.locfileid: "42721014"
 
 ## <a name="configure-the-manifest"></a>配置清单
 
-若要在外接程序中启用代理访问方案，必须在父元素`DesktopFormFactor`下的`true`清单中将[SupportsSharedFolders](../reference/manifest/supportssharedfolders.md)元素设置为。 目前，其他外观因素不受支持。
+若要在外接程序中启用代理访问方案，必须在[SupportsSharedFolders](../reference/manifest/supportssharedfolders.md) `true` 父元素下的清单中将 SupportsSharedFolders 元素设置为 `DesktopFormFactor` 。 目前，其他外观因素不受支持。
 
-下面的示例演示`SupportsSharedFolders` `true`在清单的部分中设置的元素。
+下面的示例演示 `SupportsSharedFolders` `true` 在清单的部分中设置的元素。
 
 ```XML
 ...

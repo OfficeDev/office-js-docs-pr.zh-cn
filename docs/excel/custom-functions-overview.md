@@ -5,12 +5,12 @@ title: 在 Excel 中创建自定义函数
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: dabb196bc4b55bd4852f9c857767dcabd3063045
-ms.sourcegitcommit: 54e2892c0c26b9ad1e4dba8aba48fea39f853b6c
+ms.openlocfilehash: 4f8416b9058def9dcb4998fb2f31684b59276ac4
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/18/2020
-ms.locfileid: "44276006"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44609280"
 ---
 # <a name="create-custom-functions-in-excel"></a>在 Excel 中创建自定义函数
 

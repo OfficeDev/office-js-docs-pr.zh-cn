@@ -3,12 +3,12 @@ title: 创建字典任务窗格加载项
 description: 了解如何创建字典任务窗格加载项
 ms.date: 09/26/2019
 localization_priority: Normal
-ms.openlocfilehash: e72ef049c355e756a3bd8a843fc6075a59c3c8a6
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: 07e2222520999729e3677296869b2367265687f8
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42719691"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44608647"
 ---
 # <a name="create-a-dictionary-task-pane-add-in"></a>创建字典任务窗格加载项
 
@@ -94,7 +94,7 @@ XML Web 服务必须将对 Web 服务的查询作为符合 OfficeDefinitions XML
 </xs:schema>
 ```
 
-返回的符合 OfficeDefinitions 架构的 XML 包含一个根`Result`元素，其中包含一个`Definitions`从零到三`Definition`个子元素的元素，其中每个子元素都包含长度不超过400个字符的定义。 此外，还必须在`SeeMoreURL`元素中提供字典网站上的完整页面的 URL。 以下示例演示返回的符合 OfficeDefinitions 架构的 XML 的结构。
+返回的符合 OfficeDefinitions 架构的 XML 包含一个根 `Result` 元素，其中包含一个 `Definitions` 从零到三 `Definition` 个子元素的元素，其中每个子元素都包含长度不超过400个字符的定义。 此外，还必须在元素中提供字典网站上的完整页面的 URL `SeeMoreURL` 。 以下示例演示返回的符合 OfficeDefinitions 架构的 XML 的结构。
 
 ```XML
 <?xml version="1.0" encoding="utf-8"?>
@@ -258,7 +258,7 @@ public class WebService : System.Web.Services.WebService {
 </OfficeApp>
 ```
 
-以下`Dictionary`各节介绍了特定于创建字典外接程序清单文件的元素及其子元素。 有关清单文件中的其他元素的信息，请参阅 [Office 外接程序 XML 清单](../develop/add-in-manifests.md)。
+`Dictionary`以下各节介绍了特定于创建字典外接程序清单文件的元素及其子元素。 有关清单文件中的其他元素的信息，请参阅 [Office 外接程序 XML 清单](../develop/add-in-manifests.md)。
 
 
 ### <a name="dictionary-element"></a>Dictionary 元素
@@ -276,7 +276,7 @@ public class WebService : System.Web.Services.WebService {
 
  **备注**
 
-创建`Dictionary`字典加载项时，会将元素及其子元素添加到任务窗格加载项的清单中。
+`Dictionary`创建字典加载项时，会将元素及其子元素添加到任务窗格加载项的清单中。
 
 
 #### <a name="targetdialects-element"></a>TargetDialects 元素
@@ -377,7 +377,7 @@ public class WebService : System.Web.Services.WebService {
 
 此元素指定将在从 Web 服务返回的内容之下的行中显示的引文文本的开头（例如，“Results by:”或“Powered by:”）。
 
-对于此元素，您可以使用`Override`元素指定其他区域设置的值。 例如，如果用户正在运行 Office 的西班牙语 SKU，但使用的是英语字典，则允许引文行读取“Resultados por: Bing”，而不是“Results by: Bing”。 有关如何指定其他区域设置的值的详细信息，请参阅 [Office 外接程序 XML 清单](../develop/add-in-manifests.md)中的“为不同区域设置提供设置”一节。
+对于此元素，您可以使用元素指定其他区域设置的值 `Override` 。 例如，如果用户正在运行 Office 的西班牙语 SKU，但使用的是英语字典，则允许引文行读取“Resultados por: Bing”，而不是“Results by: Bing”。 有关如何指定其他区域设置的值的详细信息，请参阅 [Office 外接程序 XML 清单](../develop/add-in-manifests.md)中的“为不同区域设置提供设置”一节。
 
  **示例**
 
@@ -529,13 +529,13 @@ a:hover, a:active
 从该实现中调用的 Office JavaScript API （node.js）的主要成员如下所示：
 
 
-- 对象的 initialize 事件，在初始化外接程序上下文时引发，并提供对表示加载项与之交互的文档的[document](/javascript/api/office/office.document)对象实例的访问。 [initialize](/javascript/api/office) `Office`
+- 对象的[initialize](/javascript/api/office)事件 `Office` ，在初始化外接程序上下文时引发，并提供对表示加载项与之交互的文档的[document](/javascript/api/office/office.document)对象实例的访问。
     
-- 对象的[addHandlerAsync](/javascript/api/office/office.document#addhandlerasync-eventtype--handler--options--callback-)方法，该方法在`initialize`函数中调用，以添加文档的 SelectionChanged 事件的事件处理程序，以侦听用户选择更改。 [SelectionChanged](/javascript/api/office/office.documentselectionchangedeventargs) `Document`
+- 对象的[addHandlerAsync](/javascript/api/office/office.document#addhandlerasync-eventtype--handler--options--callback-)方法，该方法 `Document` 在函数中调用， `initialize` 以添加文档的[SelectionChanged](/javascript/api/office/office.documentselectionchangedeventargs)事件的事件处理程序，以侦听用户选择更改。
     
-- `Document`对象的[getSelectedDataAsync](/javascript/api/office/office.document#getselecteddataasync-coerciontype--options--callback-)方法，该方法在`SelectionChanged`引发事件处理程序`tryUpdatingSelectedWord()`以获取用户选择的单词或短语时，将其强制转换为纯文本，然后执行`selectedTextCallback`异步回调函数，在函数中调用该方法。
+- 对象的[getSelectedDataAsync](/javascript/api/office/office.document#getselecteddataasync-coerciontype--options--callback-)方法 `Document` ，该方法在 `tryUpdatingSelectedWord()` `SelectionChanged` 引发事件处理程序以获取用户选择的单词或短语时，将其强制转换为纯文本，然后执行 `selectedTextCallback` 异步回调函数，在函数中调用该方法。
     
-- 当作为`selectTextCallback` `getSelectedDataAsync`方法的_callback_参数传递的异步回调函数执行时，它将在回调返回时获取所选文本的值。 `AsyncResult`它通过使用返回的对象的[value](/javascript/api/office/office.asyncresult#status)属性，从回调的_SelectedText_参数（类型为[AsyncResult](/javascript/api/office/office.asyncresult)）中获取该值。
+- 当 `selectTextCallback` 作为方法的_callback_参数传递的异步回调函数 `getSelectedDataAsync` 执行时，它将在回调返回时获取所选文本的值。 它通过使用返回的对象的[value](/javascript/api/office/office.asyncresult#status)属性，从回调的_selectedText_参数（类型为[AsyncResult](/javascript/api/office/office.asyncresult)）中获取该值 `AsyncResult` 。
     
 - `selectedTextCallback` 函数中剩余的代码查询定义的 XML Web 服务。它还调入 Microsoft Translator API，以提供具有所选字词拼音的 .wav 文件的 URL。
     

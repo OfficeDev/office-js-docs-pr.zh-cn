@@ -3,12 +3,12 @@ ms.date: 05/06/2020
 description: '处理和返回自定义函数中类似 #NULL! 的错误'
 title: 处理和返回自定义函数中的错误（预览）
 localization_priority: Normal
-ms.openlocfilehash: 5598db045920a5fb419ed91435c3e81275dfb3a4
-ms.sourcegitcommit: 54e2892c0c26b9ad1e4dba8aba48fea39f853b6c
+ms.openlocfilehash: 6ded6a03151777c30fe5037b373272c04fc64620
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/18/2020
-ms.locfileid: "44275901"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44609315"
 ---
 # <a name="handle-and-return-errors-from-your-custom-function-preview"></a>处理和返回自定义函数中的错误（预览）
 

@@ -3,12 +3,12 @@ title: 清单文件中的 Resources 元素
 description: Resources 元素包含用于 VersionOverrides 节点的图标、字符串和 URL。
 ms.date: 10/09/2018
 localization_priority: Normal
-ms.openlocfilehash: 9efd1f370ff842c9df2d911c64217f489284e767
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: 717e3cecd32fbf2bdb806f7484cc954a86b82e3d
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42717962"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44608745"
 ---
 # <a name="resources-element"></a>Resources 元素
 
@@ -18,7 +18,7 @@ ms.locfileid: "42717962"
 
 ## <a name="child-elements"></a>子元素
 
-|  元素 |  类型  |  说明  |
+|  元素 |  类型  |  Description  |
 |:-----|:-----|:-----|
 |  [Images](#images)            |  image   |  提供指向图标图像的 HTTPS URL。 |
 |  **Urls**                |  url     |  提供 HTTPS URL 位置。一个 URL 最多可包含 2048 个字符。 |

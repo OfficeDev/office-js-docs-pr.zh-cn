@@ -3,12 +3,12 @@ title: Office 加载项的资源限制和性能优化
 description: 了解 Office 加载项平台的资源限制，包括 CPU 和内存。
 ms.date: 04/09/2020
 localization_priority: Normal
-ms.openlocfilehash: 68f0bae8514a5f5769e648d6b74ffc3bdbccc194
-ms.sourcegitcommit: 76552b3e5725d9112c772595971b922c295e6b4c
+ms.openlocfilehash: be4727ba12fa8f9b3ee8133026d9de94a612a9fc
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/10/2020
-ms.locfileid: "43225657"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44608004"
 ---
 # <a name="resource-limits-and-performance-optimization-for-office-add-ins"></a>Office 加载项的资源限制和性能优化
 
@@ -80,7 +80,7 @@ Office 提供了遥测日志，以保留本地计算机上运行的 Office 解�
 |7 |外接程序清单已成功下载||主机应用程序已成功加载和读取 Office 外接程序的清单。|
 |8 |外接程序清单未下载|关键|主机应用无法从 SharePoint 目录、企业目录或 AppSource 加载 Office 加载项的清单文件。|
 |9 |无法分析外接程序标记|关键|主机应用程序已加载 Office 外接程序清单，但不能读取该应用程序的 HTML 标记。|
-|10 |外接程序占用了太多 CPU|关键|在有限的时间内，Office 外接程序使用了超过 90% 的 CPU 资源。|
+|10  |外接程序占用了太多 CPU|关键|在有限的时间内，Office 外接程序使用了超过 90% 的 CPU 资源。|
 |15 |由于字符串搜索超时，外接程序已被禁用||Outlook 外接程序搜索电子邮件的主题行和消息，以确定是否应使用正则表达式来显示它们。“文件”**** 列中列出的 Outlook 外接程序已被 Outlook 禁用，因为它在尝试匹配正则表达式时超时多次。|
 |18 |外接程序已成功关闭||主机应用程序能够成功关闭 Office 外接程序。|
 |合|外接程序遇到运行时错误|严重|Office 外接程序遇到一个导致它失败的问题。 有关详细信息，请使用遇到错误的计算机上的 Windows 事件查看器查看“Microsoft Office 通知”**** 日志。|

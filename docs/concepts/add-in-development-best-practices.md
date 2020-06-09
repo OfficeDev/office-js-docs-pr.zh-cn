@@ -3,12 +3,12 @@ title: Office 加载项开发最佳做法
 description: 在开发以创建 Office 外接程序时应用最佳实践。
 ms.date: 04/22/2020
 localization_priority: Normal
-ms.openlocfilehash: 422e0ae57480481590a15f695e5942f712961cc1
-ms.sourcegitcommit: 0fdb78cefa669b727b817614a4147a46d249a0ed
+ms.openlocfilehash: d94d0ff4f3ff5bed4ab9eaaae134db40f21b972c
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "43930274"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44608054"
 ---
 # <a name="best-practices-for-developing-office-add-ins"></a>Office 加载项开发最佳做法
 

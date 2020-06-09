@@ -3,12 +3,12 @@ title: 在 Office 加载项中使用 Office UI Fabric React
 description: 了解如何在 Office 加载项中使用 Office UI Fabric React。
 ms.date: 01/16/2020
 localization_priority: Normal
-ms.openlocfilehash: 4e698b58b171acc87b87d71d81d97c98c1558344
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: d0c46b30f361fcc9d2d7c08170b70c66f513bdae
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42719124"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44608469"
 ---
 # <a name="use-office-ui-fabric-react-in-office-add-ins"></a>在 Office 加载项中使用 Office UI Fabric React
 

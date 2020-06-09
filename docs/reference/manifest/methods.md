@@ -3,12 +3,12 @@ title: 清单文件中的 Methods 元素
 description: 方法元素指定 Office 外接程序在激活时所需的 Office JavaScript API 方法的列表。
 ms.date: 03/19/2019
 localization_priority: Normal
-ms.openlocfilehash: d96eed07b6853cb51c24214b6017f14d6de6b83b
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: b270122240314b792ee492336417a4d133bdcc84
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42718059"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44609018"
 ---
 # <a name="methods-element"></a>Methods 元素
 

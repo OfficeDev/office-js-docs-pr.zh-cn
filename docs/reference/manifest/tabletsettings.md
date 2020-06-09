@@ -3,19 +3,19 @@ title: 清单文件中的 TabletSettings 元素
 description: TabletSettings 元素指定在平板电脑上使用邮件外接程序时应用的控制设置。
 ms.date: 04/09/2020
 localization_priority: Normal
-ms.openlocfilehash: 71b7aed6b2906a8695ac1c13e93ba60da1aa56ec
-ms.sourcegitcommit: c6e3bfd3deb77982d0b7082afd6a48678e96e1c3
+ms.openlocfilehash: b5a74db4f9fb43df10a08ab43b59507f6e0d7952
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/10/2020
-ms.locfileid: "43215080"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44608696"
 ---
 # <a name="tabletsettings-element"></a>TabletSettings 元素
 
 指定在平板电脑上使用邮件外接程序时应用的控制设置。
 
 > [!IMPORTANT]
-> 元素`TabletSettings`仅适用于 web 上的经典 outlook （通常连接到本地 Exchange server 的旧版本）和 Windows 上的 Outlook 2013。 若要支持 Android 和 iOS 上的 Outlook，请参阅[适用于 Outlook Mobile 的外接程序](../../outlook/outlook-mobile-addins.md)。
+> `TabletSettings`元素仅适用于 web 上的经典 outlook （通常连接到本地 Exchange server 的旧版本）和 Windows 上的 Outlook 2013。 若要支持 Android 和 iOS 上的 Outlook，请参阅[适用于 Outlook Mobile 的外接程序](../../outlook/outlook-mobile-addins.md)。
 
 **外接程序类型：** 邮件
 

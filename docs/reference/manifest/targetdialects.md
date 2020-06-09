@@ -3,12 +3,12 @@ title: 清单文件中的 TargetDialects 元素
 description: TargetDialects 元素定义此字典支持的区域语言。
 ms.date: 03/19/2019
 localization_priority: Normal
-ms.openlocfilehash: 77544b8dfe917d3bca8ab8fcc7bd4e055b94fe54
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: 6b9bd160d7639c40f10abd4a56f6b4b3f2bb332a
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42720321"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44608689"
 ---
 # <a name="targetdialects-element"></a>TargetDialects 元素
 

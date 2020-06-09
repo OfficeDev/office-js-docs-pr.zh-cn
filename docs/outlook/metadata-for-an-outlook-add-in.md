@@ -3,12 +3,12 @@ title: 获取和设置 Outlook 加载项中的元数据
 description: 可以使用以下漫游设置或自定义属性，管理 Outlook 加载项中的自定义数据。
 ms.date: 10/31/2019
 localization_priority: Normal
-ms.openlocfilehash: 3bf19f56b11b524ea2ee722e2997465bbd36d55c
-ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
+ms.openlocfilehash: 526be452d4d75a902f859f4cde20b02f5fc7f300
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "42324931"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44609039"
 ---
 # <a name="get-and-set-add-in-metadata-for-an-outlook-add-in"></a>获取和设置 Outlook 加载项的元数据
 
@@ -69,7 +69,7 @@ Office.initialize = function () {
 
 紧接着前面的示例，下面的 JavaScript 函数 `setAddInSetting` 演示了如何使用 [RoamingSettings.set](/javascript/api/outlook/office.RoamingSettings) 方法通过当天的日期设置名为 `cookie` 的设置，并使用 [RoamingSettings.saveAsync](/javascript/api/outlook/office.RoamingSettings#saveasync-callback-) 方法将所有漫游设置重新保存到服务器，以使数据持续存在。
 
-如果`set`设置尚不存在，则该方法将创建设置，并将设置分配给指定的值。 `saveAsync`方法以异步方式保存漫游设置。 此代码示例`saveMyAddInSettingsCallback`将回调方法传递到`saveAsync`异步调用完成`saveMyAddInSettingsCallback`时，使用一个参数_asyncResult_调用。 此参数是一个 [AsyncResult](/javascript/api/office/office.asyncresult) 对象，其中包含异步调用的结果和所有详细信息。 可以使用可选的 _userContext_ 参数从异步调用向回调函数传递任何状态信息。
+`set`如果设置尚不存在，则该方法将创建设置，并将设置分配给指定的值。 `saveAsync`方法以异步方式保存漫游设置。 此代码示例将回调方法传递 `saveMyAddInSettingsCallback` 到 `saveAsync` 异步调用完成时， `saveMyAddInSettingsCallback` 使用一个参数_asyncResult_调用。 此参数是一个 [AsyncResult](/javascript/api/office/office.asyncresult) 对象，其中包含异步调用的结果和所有详细信息。 可以使用可选的 _userContext_ 参数从异步调用向回调函数传递任何状态信息。
 
 ```js
 // Set a roaming setting.
@@ -114,7 +114,7 @@ function removeAddInSetting()
 
 与漫游设置类似，对自定义属性的更改将存储在当前 Outlook 会话的属性的内存副本中。为确保这些自定义属性在下次会话中可用，请使用 [CustomProperties.saveAsync](/javascript/api/outlook/office.CustomProperties#saveasync-callback--asynccontext-)。
 
-这些特定于外接程序的特定于项目的自定义属性只能通过使用该`CustomProperties`对象来访问。 这些属性不同于 Outlook 对象模型中基于 MAPI 的自定义[UserProperties](/office/vba/api/Outlook.UserProperties) ，以及 Exchange Web 服务（EWS）中的扩展属性。 不能通过使用`CustomProperties` Outlook 对象模型、EWS 或 REST 来直接访问。 若要了解如何使用`CustomProperties` EWS 或 rest 进行访问，请参阅[使用 Ews 或 rest 获取自定义属性](#get-custom-properties-using-ews-or-rest)一节。
+这些特定于外接程序的特定于项目的自定义属性只能通过使用该对象来访问 `CustomProperties` 。 这些属性不同于 Outlook 对象模型中基于 MAPI 的自定义[UserProperties](/office/vba/api/Outlook.UserProperties) ，以及 Exchange Web 服务（EWS）中的扩展属性。 不能 `CustomProperties` 通过使用 Outlook 对象模型、EWS 或 REST 来直接访问。 若要了解如何 `CustomProperties` 使用 ews 或 rest 进行访问，请参阅[使用 EWS 或 rest 获取自定义属性](#get-custom-properties-using-ews-or-rest)一节。
 
 ### <a name="using-custom-properties"></a>使用自定义属性
 
@@ -197,11 +197,11 @@ function saveCallback() {
 
 #### <a name="how-custom-properties-are-stored-on-an-item"></a>如何存储项的自定义属性
 
-通过加载项设置的自定义属性并不等同于常规的基于 MAPI 的属性。 外接`CustomProperties`程序 api 将所有外接程序序列化为一个 JSON 有效负载，然后将它们保存在一个基于 MAPI 的扩展属性（其名称`cecp-<app-guid>`为`<app-guid>` （外接程序的 ID），属性集 GUID）中`{00020329-0000-0000-C000-000000000046}`。 （有关此对象的详细信息，请参阅 [MS-OXCEXT 2.2.5 邮件应用程序自定义属性](https://msdn.microsoft.com/library/hh968549(v=exchg.80).aspx)。）随后可使用 EWS 或 REST 获取此基于 MAPI 的属性。
+通过加载项设置的自定义属性并不等同于常规的基于 MAPI 的属性。 外接程序 Api 将所有外接程序序列化为一个 `CustomProperties` JSON 有效负载，然后将它们保存在一个基于 MAPI 的扩展属性（其名称为 `cecp-<app-guid>` （外接 `<app-guid>` 程序的 ID），属性集 GUID）中 `{00020329-0000-0000-C000-000000000046}` 。 （有关此对象的详细信息，请参阅 [MS-OXCEXT 2.2.5 邮件应用程序自定义属性](https://msdn.microsoft.com/library/hh968549(v=exchg.80).aspx)。）随后可使用 EWS 或 REST 获取此基于 MAPI 的属性。
 
 #### <a name="get-custom-properties-using-ews"></a>使用 EWS 获取自定义属性
 
-您的邮件外接程序可以使用`CustomProperties` EWS [GetItem](/exchange/client-developer/web-service-reference/getitem-operation)操作获取基于 MAPI 的扩展属性。 在`GetItem`服务器端通过使用回调令牌或使用[makeEwsRequestAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md#methods)方法在客户端访问。 在`GetItem`请求中，使用上`CustomProperties`一节中提供的详细信息在[项目上存储自定义属性](#how-custom-properties-are-stored-on-an-item)，在其属性集中指定基于 MAPI 的属性。
+您的邮件外接程序可以 `CustomProperties` 使用 EWS [GetItem](/exchange/client-developer/web-service-reference/getitem-operation)操作获取基于 MAPI 的扩展属性。 `GetItem`在服务器端通过使用回调令牌或使用[makeEwsRequestAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md#methods)方法在客户端访问。 在 `GetItem` 请求中， `CustomProperties` 使用上一节中提供的详细信息在[项目上存储自定义属性](#how-custom-properties-are-stored-on-an-item)，在其属性集中指定基于 MAPI 的属性。
 
 以下示例显示如何获取某个项目及其自定义属性。
 

@@ -3,12 +3,12 @@ title: 初始化 Office 加载项
 description: 了解如何初始化 Office 外接程序。
 ms.date: 02/27/2020
 localization_priority: Normal
-ms.openlocfilehash: ca7b21c35fc82011c673cb83d077a89cc29f56eb
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: 8310c5efb803391f7f0d4b01fda70dc0df537b21
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42718935"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44608137"
 ---
 # <a name="initialize-your-office-add-in"></a>初始化 Office 加载项
 
@@ -26,11 +26,11 @@ Office 加载项通常使用启动逻辑执行以下操作：
 
 但是，在加载库之前，Office 外接程序无法成功调用任何 Office JavaScript Api。 本文介绍了您的代码可确保库已加载的两种方法：
 
-- 使用`Office.onReady()`初始化。
-- 使用`Office.initialize`初始化。
+- 使用初始化 `Office.onReady()` 。
+- 使用初始化 `Office.initialize` 。
 
 > [!TIP]
-> 建议使用 `Office.onReady()` 取代 `Office.initialize`。 尽管`Office.initialize`仍受支持， `Office.onReady()`但提供了更大的灵活性。 只能将一个处理程序分配给`Office.initialize` ，而只是通过 Office 基础结构调用一次。 您可以在`Office.onReady()`代码中的不同位置调用，并使用不同的回调。
+> 建议使用 `Office.onReady()` 取代 `Office.initialize`。 尽管 `Office.initialize` 仍受支持，但 `Office.onReady()` 提供了更大的灵活性。 只能将一个处理程序分配给 `Office.initialize` ，而只是通过 Office 基础结构调用一次。 您可以 `Office.onReady()` 在代码中的不同位置调用，并使用不同的回调。
 > 
 > 有关这两种方法之间的差别信息，请参阅 [Office.initialize 和 Office.onReady() 之间的主要差别](#major-differences-between-officeinitialize-and-officeonready)。
 
@@ -90,7 +90,7 @@ Office.onReady(function() {
 
 但是，此做法存在例外情况。 例如，假设想要在浏览器中打开加载项（而不是在 Office 主机中旁加载它）以使用浏览器工具调试 UI。 由于 Office.js 将不会在浏览器中加载，所以，`onReady` 将不会运行，且如果在 Office `$(document).ready` 内调用它，则 `onReady` 将不会运行。 
 
-如果您希望在加载加载项时，任务窗格中显示进度指示器，另一个例外。 在这种情况下，代码应调用 jQuery `ready`并使用其回调来呈现进度指示器。 然后，Office `onReady` 的回调可将进度指示器替换为最终 UI。 
+如果您希望在加载加载项时，任务窗格中显示进度指示器，另一个例外。 在这种情况下，代码应调用 jQuery `ready` 并使用其回调来呈现进度指示器。 然后，Office `onReady` 的回调可将进度指示器替换为最终 UI。 
 
 ## <a name="initialize-with-officeinitialize"></a>使用 Office.initialize 进行初始化
 
@@ -104,7 +104,7 @@ Office.initialize = function () {
 };
 ```
 
-如果使用的是包含其自己的初始化处理程序或测试的其他 JavaScript 框架，则这些框架*通常*应`Office.initialize`放置在事件中（在本示例中， **onReady （）** 部分中所述的例外情况也适用）。 例如，会对 [JQuery 的](https://jquery.com) `$(document).ready()` 函数进行以下引用：
+如果使用的是包含其自己的初始化处理程序或测试的其他 JavaScript 框架，则这些框架*通常*应放置在 `Office.initialize` 事件中（在本示例中， **onReady （）** 部分中所述的例外情况也适用）。 例如，会对 [JQuery 的](https://jquery.com) `$(document).ready()` 函数进行以下引用：
 
 ```js
 Office.initialize = function () {

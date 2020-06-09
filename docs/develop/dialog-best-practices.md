@@ -3,12 +3,12 @@ title: Office 对话框 API 最佳做法和规则
 description: 提供 Office 对话框 API 的规则和最佳做法，例如单页应用程序的最佳实践（SPA）
 ms.date: 01/29/2020
 localization_priority: Normal
-ms.openlocfilehash: e684c56768cd2ca7c9b14788206c925808c90b63
-ms.sourcegitcommit: 4079903c3cc45b7d8c041509a44e9fc38da399b1
+ms.openlocfilehash: 88c833d91cc16684b5e434d6aff9e77f23bbbdb4
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/11/2020
-ms.locfileid: "42596597"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44608269"
 ---
 # <a name="best-practices-and-rules-for-the-office-dialog-api"></a>Office 对话框 API 最佳做法和规则
 
@@ -41,15 +41,15 @@ ms.locfileid: "42596597"
 
 ### <a name="handling-pop-up-blockers-with-office-on-the-web"></a>使用 Office 网页版处理弹出窗口阻止程序
 
-在使用 web 上的 Office 时尝试显示对话框可能会导致浏览器的弹出窗口阻止器阻止对话框。 网站上的 Office 具有一项功能，可使您的外接程序的对话框成为浏览器的弹出窗口阻止程序的例外。 当代码调用`displayDialogAsync`方法时，网站上的 Office 将打开一个类似于以下的提示。
+在使用 web 上的 Office 时尝试显示对话框可能会导致浏览器的弹出窗口阻止器阻止对话框。 网站上的 Office 具有一项功能，可使您的外接程序的对话框成为浏览器的弹出窗口阻止程序的例外。 当代码调用方法时 `displayDialogAsync` ，网站上的 Office 将打开一个类似于以下的提示。
 
 ![外接程序可以生成的提示，以避免在浏览器中弹出窗口阻止程序。](../images/dialog-prompt-before-open.png)
 
-如果用户选择 "**允许**"，则会打开 "Office" 对话框。 如果用户选择 "**忽略**"，则会关闭提示，并且 Office 对话框不会打开。 相反，该`displayDialogAsync`方法将返回错误12009。 您的代码应捕获此错误，并提供不需要对话框的备用体验，或向用户显示一条消息，提示外接程序要求其允许对话框。 （有关12009的详细信息，请参阅[displayDialogAsync 中的错误](dialog-handle-errors-events.md#errors-from-displaydialogasync)。）
+如果用户选择 "**允许**"，则会打开 "Office" 对话框。 如果用户选择 "**忽略**"，则会关闭提示，并且 Office 对话框不会打开。 相反，该 `displayDialogAsync` 方法将返回错误12009。 您的代码应捕获此错误，并提供不需要对话框的备用体验，或向用户显示一条消息，提示外接程序要求其允许对话框。 （有关12009的详细信息，请参阅[displayDialogAsync 中的错误](dialog-handle-errors-events.md#errors-from-displaydialogasync)。）
 
-如果出于任何原因需要关闭此功能，则代码必须选择退出。它向传递给该`displayDialogAsync`方法的[DialogOptions](/javascript/api/office/office.dialogoptions)对象发出此请求。 具体来说，该对象应`promptBeforeOpen: false`包含。 当此选项设置为 false 时，web 上的 Office 将不会提示用户允许加载项打开对话框，并且 Office 对话框不会打开。
+如果出于任何原因需要关闭此功能，则代码必须选择退出。它向传递给该方法的[DialogOptions](/javascript/api/office/office.dialogoptions)对象发出此请求 `displayDialogAsync` 。 具体来说，该对象应包含 `promptBeforeOpen: false` 。 当此选项设置为 false 时，web 上的 Office 将不会提示用户允许加载项打开对话框，并且 Office 对话框不会打开。
 
-### <a name="do-not-use-the-_host_info-value"></a>不使用\_主机\_信息值
+### <a name="do-not-use-the-_host_info-value"></a>不使用 \_ 主机 \_ 信息值
 
 Office 会自动向传递给 `_host_info` 的 URL 添加查询参数 `displayDialogAsync`。 将其追加到自定义查询参数（如果有）后面。 它不会追加到对话框导航到的任何后续 Url 中。 Microsoft 可能会更改此值的内容或将其全部删除，因此您的代码不应读取它。 相同的值会被添加到对话框的会话存储中。 同样，*代码不得对此值执行读取和写入操作*。
 
@@ -62,13 +62,13 @@ Office 会自动向传递给 `_host_info` 的 URL 添加查询参数 `displayDia
 
 #### <a name="problems-with-spas-and-the-office-dialog-api"></a>Spa 和 Office 对话框 API 存在的问题
 
-Office 对话框位于具有其自己的 JavaScript 引擎实例的新窗口中，因此它拥有完整的执行上下文。 如果传递路由，基本页面及其所有初始化和引导代码将在此新上下文中再次运行，并且所有变量在对话框中都设置为其初始值。 因此，此技术会在 box 窗口中下载并启动应用程序的第二个实例，这部分将导致 SPA 的目的不是一个。 此外，更改对话框窗口中的变量的代码不会更改相同变量的任务窗格版本。 同样，对话框窗口具有自己的会话存储，该存储无法从任务窗格中的代码访问。 对话框和主页面在上面称为与您`displayDialogAsync`的服务器的两个不同的客户端。 （有关主机页的提示，请参阅[从主机页打开对话框](dialog-api-in-office-add-ins.md#open-a-dialog-box-from-a-host-page)。）
+Office 对话框位于具有其自己的 JavaScript 引擎实例的新窗口中，因此它拥有完整的执行上下文。 如果传递路由，基本页面及其所有初始化和引导代码将在此新上下文中再次运行，并且所有变量在对话框中都设置为其初始值。 因此，此技术会在 box 窗口中下载并启动应用程序的第二个实例，这部分将导致 SPA 的目的不是一个。 此外，更改对话框窗口中的变量的代码不会更改相同变量的任务窗格版本。 同样，对话框窗口具有自己的会话存储，该存储无法从任务窗格中的代码访问。 对话框和主页面在上面 `displayDialogAsync` 称为与您的服务器的两个不同的客户端。 （有关主机页的提示，请参阅[从主机页打开对话框](dialog-api-in-office-add-ins.md#open-a-dialog-box-from-a-host-page)。）
 
-因此，如果您将路由传递给`displayDialogAsync`方法，则不会真正有 SPA;您有*两个相同 SPA 的实例*。 此外，任务窗格实例中的很多代码永远不会在该实例中使用，并且对话框实例中的大部分代码也不会在该实例中使用。 这相当于相同捆绑包中拥有两个 SPA。
+因此，如果您将路由传递给 `displayDialogAsync` 方法，则不会真正有 spa; 您有*两个相同 spa 的实例*。 此外，任务窗格实例中的很多代码永远不会在该实例中使用，并且对话框实例中的大部分代码也不会在该实例中使用。 这相当于相同捆绑包中拥有两个 SPA。
 
 #### <a name="microsoft-recommendations"></a>Microsoft 建议
 
-建议您执行以下操作之一，而不是`displayDialogAsync`将客户端路由传递给方法：
+`displayDialogAsync`建议您执行以下操作之一，而不是将客户端路由传递给方法：
 
-* 如果要在对话框中运行的代码足够复杂，请显式创建两个不同的 Spa;也就是说，在同一域的不同文件夹中有两个 Spa。 一个 SPA 在对话框中运行，而另一个 SPA 在对话框的主机页`displayDialogAsync`中调用。 
+* 如果要在对话框中运行的代码足够复杂，请显式创建两个不同的 Spa;也就是说，在同一域的不同文件夹中有两个 Spa。 一个 SPA 在对话框中运行，而另一个 SPA 在对话框的主机页中 `displayDialogAsync` 调用。 
 * 在大多数情况下，只有简单逻辑在对话框中是必需的。 在这种情况下，您的项目将通过在您的 SPA 的域中托管单个 HTML 页面（包括嵌入或引用的 JavaScript）而大大简化。 将页面的 URL 传递给 `displayDialogAsync` 方法。 这意味着您可以从单页应用程序的原义想法中 deviating;如果使用的是 Office 对话框 API，则实际上不具有 SPA 的单个实例。

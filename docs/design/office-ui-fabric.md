@@ -3,12 +3,12 @@ title: Office 加载项中的 Office UI Fabric 
 description: 概述如何在 Office 外接程序中使用 Office UI Fabric 组件。
 ms.date: 04/20/2020
 localization_priority: Normal
-ms.openlocfilehash: 5c504de14ee97ff740a80dc7608ae636ff8080ca
-ms.sourcegitcommit: 79c55e59294e220bd21a5006080f72acf3ec0a3f
+ms.openlocfilehash: 7b74c734fb2559e4bf4408e40eb5366f9b79b755
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "43581909"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44608500"
 ---
 # <a name="office-ui-fabric-in-office-add-ins"></a>Office 加载项中的 Office UI Fabric 
 

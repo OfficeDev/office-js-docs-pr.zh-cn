@@ -3,12 +3,12 @@ title: 使用 Office 对话框播放视频
 description: 了解如何在 Office 对话框中打开和播放视频
 ms.date: 01/29/2020
 localization_priority: Normal
-ms.openlocfilehash: 9c65dfb9c0cf1adbc827be25b655e380dc39e2d2
-ms.sourcegitcommit: 4079903c3cc45b7d8c041509a44e9fc38da399b1
+ms.openlocfilehash: e150206b60fdff852621971fd4417ff9bdfe7eb3
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/11/2020
-ms.locfileid: "42596527"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44608165"
 ---
 # <a name="use-the-office-dialog-box-to-show-a-video"></a>使用 Office 对话框显示视频
 
@@ -19,7 +19,7 @@ ms.locfileid: "42596527"
 
 若要使用 Office 对话框 API 在对话框中播放视频，请按照以下步骤操作：
 
-1. 创建包含 iframe 但不包含其他任何内容的页面。 页面必须与主机页位于同一域中。 有关主机页面的提示，请参阅[从主机页面打开对话框](dialog-api-in-office-add-ins.md#open-a-dialog-box-from-a-host-page)。 在 iframe `src`的属性中，指向联机视频的 URL。 视频 URL 必须使用 HTTPS 协议。 在本文中，我们将调用此页面 "video.dialogbox.html"。 下面的示例展示了标记：
+1. 创建包含 iframe 但不包含其他任何内容的页面。 页面必须与主机页位于同一域中。 有关主机页面的提示，请参阅[从主机页面打开对话框](dialog-api-in-office-add-ins.md#open-a-dialog-box-from-a-host-page)。 在 `src` iframe 的属性中，指向联机视频的 URL。 视频 URL 必须使用 HTTPS 协议。 在本文中，我们将调用此页面 "video.dialogbox.html"。 下面的示例展示了标记：
 
     ```HTML
     <iframe class="ms-firstrun-video__player"  width="640" height="360"

@@ -3,12 +3,12 @@ title: 清单文件中的 AppDomain 元素
 description: 指定在外接程序窗口中加载页面的其他域。
 ms.date: 07/03/2019
 localization_priority: Normal
-ms.openlocfilehash: 6990f759df806f24b1d617c036bc1a452e6da38f
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: ddacae6d8aa45ccccd3a8acbb42de48b152fb9d2
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42718452"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44608773"
 ---
 # <a name="appdomain-element"></a>AppDomain 元素
 

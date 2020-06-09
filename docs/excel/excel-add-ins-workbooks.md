@@ -3,16 +3,16 @@ title: 使用 Excel JavaScript API 处理工作簿
 description: 说明如何使用 Excel JavaScript API 对工作簿或应用程序级别的功能执行常见任务的代码示例。
 ms.date: 05/06/2020
 localization_priority: Normal
-ms.openlocfilehash: 4fec6a217a2764eaf664463943ca384b3a2d847b
-ms.sourcegitcommit: 735bf94ac3c838f580a992e7ef074dbc8be2b0ea
+ms.openlocfilehash: 16c091c3f01ffba144cf28c4f6e2bf4889872194
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "44170763"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44609197"
 ---
 # <a name="work-with-workbooks-using-the-excel-javascript-api"></a>使用 Excel JavaScript API 处理工作簿
 
-本文提供了代码示例，介绍如何使用 Excel JavaScript API 对工作簿执行常见任务。 有关该`Workbook`对象支持的属性和方法的完整列表，请参阅[工作簿对象（适用于 EXCEL 的 JavaScript API）](/javascript/api/excel/excel.workbook)。 此外，本文还介绍了通过 [Application](/javascript/api/excel/excel.application) 对象执行的工作簿级别的操作。
+本文提供了代码示例，介绍如何使用 Excel JavaScript API 对工作簿执行常见任务。 有关该对象支持的属性和方法的完整列表 `Workbook` ，请参阅[工作簿对象（适用于 Excel 的 JavaScript API）](/javascript/api/excel/excel.workbook)。 此外，本文还介绍了通过 [Application](/javascript/api/excel/excel.application) 对象执行的工作簿级别的操作。
 
 Workbook 对象是加载项与 Excel 交互的入口点。 它用于维护工作表、表、数据透视表等的集合，通过这些集合可以访问并更改 Excel 数据。 加载项可以通过 [WorksheetCollection](/javascript/api/excel/excel.worksheetcollection) 对象访问单个工作表内的所有工作簿数据。 具体来说，加载项可以借助它添加工作表、在工作表间导航并向工作表分配处理程序。 [使用 Excel JavaScript API 处理工作表](excel-add-ins-worksheets.md)一文介绍了如何访问并编辑工作表。
 
@@ -136,7 +136,7 @@ Excel.run(function (context) {
 
 ## <a name="access-document-properties"></a>访问文档属性
 
-Workbook 对象可以访问 Office 文件元数据，即[文档属性](https://support.office.com/article/View-or-change-the-properties-for-an-Office-file-21D604C2-481E-4379-8E54-1DD4622C6B75)。 Workbook 对象的 `properties` 属性是一个包含这些元数据值的 [DocumentProperties](/javascript/api/excel/excel.documentproperties) 对象。 下面的示例演示如何设置`author`属性。
+Workbook 对象可以访问 Office 文件元数据，即[文档属性](https://support.office.com/article/View-or-change-the-properties-for-an-Office-file-21D604C2-481E-4379-8E54-1DD4622C6B75)。 Workbook 对象的 `properties` 属性是一个包含这些元数据值的 [DocumentProperties](/javascript/api/excel/excel.documentproperties) 对象。 下面的示例演示如何设置 `author` 属性。
 
 ```js
 Excel.run(function (context) {
@@ -192,7 +192,7 @@ Excel.run(function (context) {
 
 `Application.cultureInfo`将系统区域性设置定义为[CultureInfo](/javascript/api/excel/excel.cultureinfo)对象。 这包含数字小数分隔符或日期格式等设置。
 
-某些区域性设置可以[通过 EXCEL UI 进行更改](https://support.office.com/article/Change-the-character-used-to-separate-thousands-or-decimals-c093b545-71cb-4903-b205-aebb9837bd1e)。 系统设置将保留在`CultureInfo`对象中。 任何本地更改都将保留为[应用程序](/javascript/api/excel/excel.application)级属性，例如`Application.decimalSeparator`。
+某些区域性设置可以[通过 EXCEL UI 进行更改](https://support.office.com/article/Change-the-character-used-to-separate-thousands-or-decimals-c093b545-71cb-4903-b205-aebb9837bd1e)。 系统设置将保留在对象中 `CultureInfo` 。 任何本地更改都将保留为[应用程序](/javascript/api/excel/excel.application)级属性，例如 `Application.decimalSeparator` 。
 
 下面的示例将数字字符串的十进制分隔符字符从 "，" 更改为系统设置所用的字符。
 

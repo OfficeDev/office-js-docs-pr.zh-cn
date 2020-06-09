@@ -3,12 +3,12 @@ title: 清单文件中的 Action 元素
 description: 此元素指定当用户选择按钮或菜单控件时要执行的操作。
 ms.date: 02/28/2020
 localization_priority: Normal
-ms.openlocfilehash: 75ad0d6a0eab81b7526acadb6079824d5a98fd5b
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: c542cec38b400100014c51c978c8fcd71a546f2a
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42720965"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44608801"
 ---
 # <a name="action-element"></a>Action 元素
 
@@ -16,7 +16,7 @@ ms.locfileid: "42720965"
 
 ## <a name="attributes"></a>属性
 
-|  属性  |  必需  |  说明  |
+|  属性  |  必需  |  Description  |
 |:-----|:-----|:-----|
 |  [xsi:type](#xsitype)  |  是  | 要执行的操作类型|
 
@@ -132,7 +132,7 @@ ms.locfileid: "42720965"
 **xsi:type** 是“ShowTaskpane”时的可选元素。 包含 [VersionOverrides](versionoverrides.md) 元素的 `xsi:type` 属性值必须为 `VersionOverridesV1_1`。 添加此元素时将值设为 `true` 可以支持任务窗格固定。 这样一来，用户可以“固定”任务窗格，即使用户选择其他对象，任务窗格也可以继续处于打开状态。 有关详细信息，请参阅[在 Outlook 中实现可固定的任务窗格](../../outlook/pinnable-taskpane.md)。
 
 > [!IMPORTANT]
-> 尽管在`SupportsPinning` [要求集 1.5](../objectmodel/requirement-set-1.5/outlook-requirement-set-1.5.md)中引入了元素，但目前仅支持 Office 365 订阅者使用以下方法。
+> 尽管在 `SupportsPinning` [要求集 1.5](../objectmodel/requirement-set-1.5/outlook-requirement-set-1.5.md)中引入了元素，但目前仅支持 Office 365 订阅者使用以下方法。
 > - Windows 上的 Outlook 2016 或更高版本（内部版本7628.1000 或更高版本）
 > - Outlook 2016 或更高版本 Mac 版（内部版本16.13.503 或更高版本）
 > - 新式 Outlook 网页版

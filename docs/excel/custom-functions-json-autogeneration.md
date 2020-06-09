@@ -3,12 +3,12 @@ ms.date: 05/06/2020
 description: 使用 JSDoc 标记动态创建自定义函数 JSON 元数据。
 title: 为自定义函数自动生成 JSON 元数据
 localization_priority: Normal
-ms.openlocfilehash: 97cd9a06a53019c4065c4be29e46908da766ea71
-ms.sourcegitcommit: 0300165295fcbd4226aa048be2fad660892d35ea
+ms.openlocfilehash: f09fbbfcd028d773b9e9e25eb5eb43eb1d5a93cd
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "44591128"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44609308"
 ---
 # <a name="autogenerate-json-metadata-for-custom-functions"></a>为自定义函数自动生成 JSON 元数据
 

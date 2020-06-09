@@ -3,12 +3,12 @@ title: 添加对 Outlook 外接程序的移动支持
 description: 添加对 Outlook Mobile 的支持需要更新外接程序清单，并且可能会更改移动方案的代码。
 ms.date: 04/10/2020
 localization_priority: Normal
-ms.openlocfilehash: de5f1209527c853afb2d0bf2061bd3e3cfa8d3e0
-ms.sourcegitcommit: 76552b3e5725d9112c772595971b922c295e6b4c
+ms.openlocfilehash: a4fb02fee8bb429d0193903ba03fcee17b7ede48
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/10/2020
-ms.locfileid: "43225664"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44607615"
 ---
 # <a name="add-support-for-add-in-commands-for-outlook-mobile"></a>添加对适用于 Outlook Mobile 的外接程序命令的支持
 
@@ -20,7 +20,7 @@ ms.locfileid: "43225664"
 
 此元素包含在移动客户端中加载外接程序所需的所有信息。这使你可以为移动体验定义完全不同的 UI 元素和 JavaScript 文件。
 
-下面的示例显示`MobileFormFactor`元素中的单个任务窗格按钮。
+下面的示例显示元素中的单个任务窗格按钮 `MobileFormFactor` 。
 
 ```xml
 <VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides/1.1" xsi:type="VersionOverridesV1_1">

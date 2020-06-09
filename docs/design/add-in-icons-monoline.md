@@ -3,12 +3,12 @@ title: 适用于 Office 外接程序的 Monoline 样式图标准则
 description: 获取有关在 Office 外接程序中使用 Monoline 样式图标图标的指南。
 ms.date: 12/09/2019
 localization_priority: Normal
-ms.openlocfilehash: 8d1ac2dff76b852cd69b38bd2c138d1ba43f203c
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: 36142e79853a0fad47963255eb9517acd0810920
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42718599"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44607692"
 ---
 # <a name="monoline-style-icon-guidelines-for-office-add-ins"></a>适用于 Office 外接程序的 Monoline 样式图标准则
 
@@ -172,7 +172,7 @@ Monoline 图标集中的大多数图标都需要进行背景填充。 但是，�
 
 #### <a name="when-to-use-color"></a>何时使用颜色
 
-应使用 Color 来传达图标的含义，而不是 embellishment 的含义。 它应将**操作突出显示**给用户。 将一个修饰符添加到具有颜色的 base 元素中时，基本元素通常会转换为深灰色和背景填充，以便修饰符可以是颜色的元素，如下面的示例将 "X" 修饰符添加到最左边的图片库中。以下设置的图标。
+应使用 Color 来传达图标的含义，而不是 embellishment 的含义。 它应将**操作突出显示**给用户。 将一个修饰符添加到具有颜色的 base 元素中时，基本元素通常会转换为深灰色和背景填充，以便修饰符可以是颜色的元素，如下面的示例将 "X" 修饰符添加到以下集合中最左边的图标中的图片基。
 
 ![使用颜色的五个图标](../images/monolineicon29.png)
 

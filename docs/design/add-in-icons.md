@@ -3,12 +3,12 @@ title: Office 外接程序的图标准则
 description: 概述如何为外接程序命令设计图标以及新的和 Monoline 的设计样式。
 ms.date: 12/09/2019
 localization_priority: Normal
-ms.openlocfilehash: ce474ef20493e738fca7072d5b6a3bcd28594fbb
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: b6a960b038b7e02f75101f589469db328465d6bc
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42718501"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44607671"
 ---
 # <a name="icons"></a>图标
 

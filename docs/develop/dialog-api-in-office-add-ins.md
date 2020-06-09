@@ -3,19 +3,19 @@ title: 在 Office 加载项中使用 Office 对话框 API
 description: 了解在 Office 加载项中创建对话框的基础知识
 ms.date: 01/29/2020
 localization_priority: Normal
-ms.openlocfilehash: ba7027319016901598e381a87d69766eb44fce29
-ms.sourcegitcommit: 153576b1efd0234c6252433e22db213238573534
+ms.openlocfilehash: 96ed3169e7909e700bde894a4caf03348d039b74
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/07/2020
-ms.locfileid: "42561756"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44608276"
 ---
 # <a name="use-the-office-dialog-api-in-office-add-ins"></a>在 Office 加载项中使用 Office 对话框 API
 
 可以在 Office 加载项中使用 [Office 对话框 API](/javascript/api/office/office.ui) 打开对话框。 本文提供了有关如何在 Office 加载项中使用对话框 API 的指南。
 
 > [!NOTE]
-> 若要了解对话框 API 目前的受支持情况，请参阅[对话框 API 要求集](/office/dev/add-ins/reference/requirement-sets/dialog-api-requirement-sets)。目前，Word、Excel、PowerPoint 和 Outlook 支持对话框 API。
+> 若要了解对话框 API 目前的受支持情况，请参阅[对话框 API 要求集](../reference/requirement-sets/dialog-api-requirement-sets.md)。目前，Word、Excel、PowerPoint 和 Outlook 支持对话框 API。
 
 对话框 API 的主要应用场景是为 Google、Facebook 或 Microsoft Graph 等资源启用身份验证。 有关详细信息，请在熟悉本文*之后*，参阅[使用 Office 对话框 API 进行身份验证](auth-with-office-dialog-api.md)。
 
@@ -48,7 +48,7 @@ Office.context.ui.displayDialogAsync('https://myAddinDomain/myDialog.html');
 
 > [!NOTE]
 > - URL 使用 HTTP**S** 协议。 对话框中加载的所有页面都必须要遵循此要求，而不仅仅是加载的第一个页面。
-> - 对话框域与宿主页的域相同，宿主页可以是任务窗格中的页面，也可以是加载项命令的[函数文件](/office/dev/add-ins/reference/manifest/functionfile)。 这要求：传递到 `displayDialogAsync` 方法的页面、控制器方法或其他资源必须与主机页位于相同的域。
+> - 对话框域与宿主页的域相同，宿主页可以是任务窗格中的页面，也可以是加载项命令的[函数文件](../reference/manifest/functionfile.md)。 这要求：传递到 `displayDialogAsync` 方法的页面、控制器方法或其他资源必须与主机页位于相同的域。
 
 > [!IMPORTANT]
 > 对话框中打开的主机页面和资源必须具有相同的完整域。 如果尝试传递 `displayDialogAsync` 加载项域的子域，则不会起作用。 完整域（包括任何子域）必须匹配。
@@ -86,7 +86,7 @@ Office.context.ui.displayDialogAsync('https://myDomain/myDialog.html', {height: 
 对话框无法与任务窗格中的主机页进行通信，除非：
 
 - 对话框中的当前页面与主机页在同一个域中。
-- 在页面中加载 Office JavaScript API 库。（与使用 Office JavaScript API 库的任何页面一样，页面的脚本必须为`Office.initialize`属性分配方法，尽管它可以是空方法。有关详细信息，请参阅[初始化 Office 外接程序](initialize-add-in.md)。）
+- 在页面中加载 Office JavaScript API 库。（与使用 Office JavaScript API 库的任何页面一样，页面的脚本必须为属性分配方法 `Office.initialize` ，尽管它可以是空方法。有关详细信息，请参阅[初始化 Office 外接程序](initialize-add-in.md)。）
 
 对话框中的代码使用 [messageParent](/javascript/api/office/office.ui#messageparent-message-) 函数，向主机页发送布尔值或字符串消息。 字符串可以是单词、句子、XML blob、字符串化 JSON 或其他任何能够序列化成字符串的内容。 示例如下：
 
@@ -251,7 +251,7 @@ Office.context.ui.displayDialogAsync('https://myAddinDomain/myDialog.html?client
 > Office 会自动向传递给 `displayDialogAsync` 的 URL 添加查询参数 `_host_info`。（附加在自定义查询参数（若有）后面，不会附加到对话框导航到的任何后续 URL。）Microsoft 可能会更改此值的内容，或者将来会将其全部删除，因此代码不得读取此值。相同的值会被添加到对话框的会话存储中。同样，*代码不得对此值执行读取和写入操作*。
 
 > [!NOTE]
-> 现在，"预览" 父`messageChild`页面可用于向对话发送邮件的 api，就像上面所述的`messageParent` API 从对话框发送邮件一样。 有关它的详细信息，请参阅将[数据和邮件从其主机页传递到对话框](parent-to-dialog.md)。 我们鼓励你试用它，但对于生产外接程序，我们建议使用本节中介绍的技术。
+> 现在， `messageChild` "预览" 父页面可用于向对话发送邮件的 api，就像 `messageParent` 上面所述的 API 从对话框发送邮件一样。 有关它的详细信息，请参阅将[数据和邮件从其主机页传递到对话框](parent-to-dialog.md)。 我们鼓励你试用它，但对于生产外接程序，我们建议使用本节中介绍的技术。
 
 ## <a name="closing-the-dialog-box"></a>关闭对话框
 

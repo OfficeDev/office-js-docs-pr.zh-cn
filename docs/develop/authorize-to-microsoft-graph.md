@@ -3,12 +3,12 @@ title: 使用 SSO 对 Microsoft Graph 授权
 description: 了解 Office 外接程序的用户如何使用单一登录（SSO）从 Microsoft Graph 获取数据。
 ms.date: 01/14/2020
 localization_priority: Normal
-ms.openlocfilehash: 58b27e4549b4d31889e0e03ff8591fb3bdd7a7c0
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: c04026324c71bcfbef978106aecf607d46d55fc3
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42719082"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44608402"
 ---
 # <a name="authorize-to-microsoft-graph-with-sso-preview"></a>使用 SSO 对 Microsoft Graph 授权（预览版）
 

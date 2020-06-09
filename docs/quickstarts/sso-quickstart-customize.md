@@ -1,17 +1,17 @@
 ---
-title: 自定义支持您的 node.js SSO 的外接程序
+title: 自定义启用了 Node.js SSO 的加载项
 description: 了解如何自定义使用 Yeoman 生成器创建的启用 SSO 的外接程序。
 ms.date: 02/20/2020
 ms.prod: non-product-specific
 localization_priority: Normal
-ms.openlocfilehash: c02e0f74a8ea3f3f8f831b65aa403ce49655953b
-ms.sourcegitcommit: dd6d00202f6466c27418247dad7bd136555a6036
+ms.openlocfilehash: d71206d6b03b8a92e50b316cc75c401866be5334
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/26/2020
-ms.locfileid: "42284117"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44608824"
 ---
-# <a name="customize-your-nodejs-sso-enabled-add-in"></a>自定义支持您的 node.js SSO 的外接程序
+# <a name="customize-your-nodejs-sso-enabled-add-in"></a>自定义启用了 Node.js SSO 的加载项
 
 > [!IMPORTANT]
 > 本文基于启用了 SSO 的加载项，这是通过完成[单一登录（SSO）快速入门](sso-quickstart.md)创建的。 阅读本文之前，请先完成快速入门。
@@ -24,7 +24,7 @@ ms.locfileid: "42284117"
 
 * Office 365 订阅中的 OneDrive for Business 上至少存储了一些文件和文件夹。
 
-* [Node.js](https://nodejs.org) （最新的[LTS](https://nodejs.org/about/releases)版本）。
+* [Node.js](https://nodejs.org)（最新[LTS](https://nodejs.org/about/releases) 版本）。
 
 [!include[additional prerequisites](../includes/sso-tutorial-prereqs.md)]
 
@@ -97,15 +97,15 @@ ms.locfileid: "42284117"
 
 1. 在 **./。ENV**文件：
 
-    a. 将`GRAPH_URL_SEGMENT=/me`替换为以下内容：`GRAPH_URL_SEGMENT=/me/drive/root/children`
+    a. 将替换 `GRAPH_URL_SEGMENT=/me` 为以下内容：`GRAPH_URL_SEGMENT=/me/drive/root/children`
 
-    b. 将`QUERY_PARAM_SEGMENT=`替换为以下内容：`QUERY_PARAM_SEGMENT=?$select=name&$top=10`
+    b. 将替换 `QUERY_PARAM_SEGMENT=` 为以下内容：`QUERY_PARAM_SEGMENT=?$select=name&$top=10`
 
-    c. 将`SCOPE=User.Read`替换为以下内容：`SCOPE=Files.Read.All`
+    c. 将替换 `SCOPE=User.Read` 为以下内容：`SCOPE=Files.Read.All`
 
-2. 在 **/manifest.xml**中，找到文件末尾`<Scope>User.Read</Scope>`附近的行，并将其替换为行`<Scope>Files.Read.All</Scope>`。
+2. 在 **/manifest.xml**中，找到 `<Scope>User.Read</Scope>` 文件末尾附近的行，并将其替换为行 `<Scope>Files.Read.All</Scope>` 。
 
-3. 在 **/src/helpers/fallbackauthdialog.js** （或在 TypeScript 项目中为 **/src/helpers/fallbackauthdialog.ts** ）中，找到字符串`https://graph.microsoft.com/User.Read`并将其替换为字符串`https://graph.microsoft.com/Files.Read.All`， `requestObj`如下所示定义：
+3. 在 **/src/helpers/fallbackauthdialog.js** （或在 TypeScript 项目中为 **/src/helpers/fallbackauthdialog.ts** ）中，找到字符串 `https://graph.microsoft.com/User.Read` 并将其替换为字符串 `https://graph.microsoft.com/Files.Read.All` ，如下所示 `requestObj` 定义：
 
     ```javascript
     var requestObj = {
@@ -119,7 +119,7 @@ ms.locfileid: "42284117"
     };
     ```
 
-4. 在 **./src/taskpane/taskpane.html**中，查找元素`<section class="ms-firstrun-instructionstep__header">`并更新该元素中的文本，以描述外接程序的新功能。
+4. 在 **./src/taskpane/taskpane.html**中，查找元素 `<section class="ms-firstrun-instructionstep__header">` 并更新该元素中的文本，以描述外接程序的新功能。
 
     ```html
     <section class="ms-firstrun-instructionstep__header">
@@ -129,7 +129,7 @@ ms.locfileid: "42284117"
     </section>
     ```
 
-5. 在 **./src/taskpane/taskpane.html**中，查找并将字符串`Get My User Profile Information`的这两个实例都`Read my OneDrive for Business`替换为字符串。
+5. 在 **./src/taskpane/taskpane.html**中，查找并将字符串的这两个实例都替换 `Get My User Profile Information` 为字符串 `Read my OneDrive for Business` 。
 
     ```html
     <li class="ms-ListItem">
@@ -146,7 +146,7 @@ ms.locfileid: "42284117"
     </p>
     ```
 
-6. 在 **./src/taskpane/taskpane.html**中，查找并将字符串`Your user profile information will be displayed in the document.`替换为字符串`The names of the top 10 files and folders in your OneDrive for Business will be displayed in the document or message.`。
+6. 在 **./src/taskpane/taskpane.html**中，查找并将字符串替换 `Your user profile information will be displayed in the document.` 为字符串 `The names of the top 10 files and folders in your OneDrive for Business will be displayed in the document or message.` 。
 
     ```html
     <li class="ms-ListItem">
@@ -170,7 +170,7 @@ ms.locfileid: "42284117"
 
 如果外接程序是使用 JavaScript 创建的 Excel 外接程序，请在 **/src/helpers/documentHelper.js**中进行以下更改：
 
-1. 查找`writeDataToOfficeDocument`函数并将其替换为以下函数：
+1. 查找 `writeDataToOfficeDocument` 函数并将其替换为以下函数：
 
     ```javascript
     export function writeDataToOfficeDocument(result) {
@@ -185,7 +185,7 @@ ms.locfileid: "42284117"
     }
     ```
 
-2. 查找`filterUserProfileInfo`函数并将其替换为以下函数：
+2. 查找 `filterUserProfileInfo` 函数并将其替换为以下函数：
 
     ```javascript
     function filterOneDriveInfo(result) {
@@ -198,7 +198,7 @@ ms.locfileid: "42284117"
     }
     ```
 
-3. 查找`writeDataToExcel`函数并将其替换为以下函数：
+3. 查找 `writeDataToExcel` 函数并将其替换为以下函数：
 
     ```javascript
     function writeDataToExcel(result) {
@@ -225,17 +225,17 @@ ms.locfileid: "42284117"
     }
     ```
 
-4. 删除`writeDataToOutlook`函数。
+4. 删除 `writeDataToOutlook` 函数。
 
-5. 删除`writeDataToPowerPoint`函数。
+5. 删除 `writeDataToPowerPoint` 函数。
 
-6. 删除`writeDataToWord`函数。
+6. 删除 `writeDataToWord` 函数。
 
 在进行这些更改后，请跳至本文的 "[试用](#try-it-out)本主题" 一节，以试用更新后的外接程序。
 
 ### <a name="changes-required-for-an-excel-add-in-typescript"></a>Excel 外接程序（TypeScript）所需的更改
 
-如果外接程序是使用 TypeScript 创建的 Excel 外接程序，请打开 **/src/taskpane/taskpane.ts**，找到该`writeDataToOfficeDocument`函数，并将其替换为以下函数：
+如果外接程序是使用 TypeScript 创建的 Excel 外接程序，请打开 **/src/taskpane/taskpane.ts**，找到该 `writeDataToOfficeDocument` 函数，并将其替换为以下函数：
 
 ```typescript
 export function writeDataToOfficeDocument(result: Object): Promise<any> {
@@ -273,7 +273,7 @@ export function writeDataToOfficeDocument(result: Object): Promise<any> {
 
 如果你的外接程序是使用 JavaScript 创建的 Outlook 外接程序，请在 **/src/helpers/documentHelper.js**中进行以下更改：
 
-1. 查找`writeDataToOfficeDocument`函数并将其替换为以下函数：
+1. 查找 `writeDataToOfficeDocument` 函数并将其替换为以下函数：
 
     ```javascript
     export function writeDataToOfficeDocument(result) {
@@ -288,7 +288,7 @@ export function writeDataToOfficeDocument(result: Object): Promise<any> {
     }
     ```
 
-2. 查找`filterUserProfileInfo`函数并将其替换为以下函数：
+2. 查找 `filterUserProfileInfo` 函数并将其替换为以下函数：
 
     ```javascript
     function filterOneDriveInfo(result) {
@@ -301,7 +301,7 @@ export function writeDataToOfficeDocument(result: Object): Promise<any> {
     }
     ```
 
-3. 查找`writeDataToOutlook`函数并将其替换为以下函数：
+3. 查找 `writeDataToOutlook` 函数并将其替换为以下函数：
 
     ```javascript
     function writeDataToOutlook(result) {
@@ -323,17 +323,17 @@ export function writeDataToOfficeDocument(result: Object): Promise<any> {
     }
     ```
 
-4. 删除`writeDataToExcel`函数。
+4. 删除 `writeDataToExcel` 函数。
 
-5. 删除`writeDataToPowerPoint`函数。
+5. 删除 `writeDataToPowerPoint` 函数。
 
-6. 删除`writeDataToWord`函数。
+6. 删除 `writeDataToWord` 函数。
 
 在进行这些更改后，请跳至本文的 "[试用](#try-it-out)本主题" 一节，以试用更新后的外接程序。
 
 ### <a name="changes-required-for-an-outlook-add-in-typescript"></a>Outlook 外接程序（TypeScript）所需的更改
 
-如果您的外接程序是使用 TypeScript 创建的 Outlook 外接程序，请打开 **/src/taskpane/taskpane.ts**，找到该`writeDataToOfficeDocument`函数，并将其替换为以下函数：
+如果您的外接程序是使用 TypeScript 创建的 Outlook 外接程序，请打开 **/src/taskpane/taskpane.ts**，找到该 `writeDataToOfficeDocument` 函数，并将其替换为以下函数：
 
 ```typescript
 export function writeDataToOfficeDocument(result: Object): void {
@@ -366,7 +366,7 @@ export function writeDataToOfficeDocument(result: Object): void {
 
 如果你的外接程序是使用 JavaScript 创建的 PowerPoint 加载项，请在 **/src/helpers/documentHelper.js**中进行以下更改：
 
-1. 查找`writeDataToOfficeDocument`函数并将其替换为以下函数：
+1. 查找 `writeDataToOfficeDocument` 函数并将其替换为以下函数：
 
     ```javascript
     export function writeDataToOfficeDocument(result) {
@@ -381,7 +381,7 @@ export function writeDataToOfficeDocument(result: Object): void {
     }
     ```
 
-2. 查找`filterUserProfileInfo`函数并将其替换为以下函数：
+2. 查找 `filterUserProfileInfo` 函数并将其替换为以下函数：
 
     ```javascript
     function filterOneDriveInfo(result) {
@@ -394,7 +394,7 @@ export function writeDataToOfficeDocument(result: Object): void {
     }
     ```
 
-3. 查找`writeDataToPowerPoint`函数并将其替换为以下函数：
+3. 查找 `writeDataToPowerPoint` 函数并将其替换为以下函数：
 
     ```javascript
     function writeDataToPowerPoint(result) {
@@ -422,17 +422,17 @@ export function writeDataToOfficeDocument(result: Object): void {
     }
     ```
 
-4. 删除`writeDataToExcel`函数。
+4. 删除 `writeDataToExcel` 函数。
 
-5. 删除`writeDataToOutlook`函数。
+5. 删除 `writeDataToOutlook` 函数。
 
-6. 删除`writeDataToWord`函数。
+6. 删除 `writeDataToWord` 函数。
 
 在进行这些更改后，请跳至本文的 "[试用](#try-it-out)本主题" 一节，以试用更新后的外接程序。
 
 ### <a name="changes-required-for-a-powerpoint-add-in-typescript"></a>PowerPoint 加载项（TypeScript）所需的更改
 
-如果您的外接程序是使用 TypeScript 创建的 PowerPoint 加载项，请打开 **/src/taskpane/taskpane.ts**，找到该`writeDataToOfficeDocument`函数，并将其替换为以下函数：
+如果您的外接程序是使用 TypeScript 创建的 PowerPoint 加载项，请打开 **/src/taskpane/taskpane.ts**，找到该 `writeDataToOfficeDocument` 函数，并将其替换为以下函数：
 
 ```typescript
 export function writeDataToOfficeDocument(result: Object): void {
@@ -469,7 +469,7 @@ export function writeDataToOfficeDocument(result: Object): void {
 
 如果你的外接程序是使用 JavaScript 创建的 Word 外接程序，请在 **/src/helpers/documentHelper.js**中进行以下更改：
 
-1. 查找`writeDataToOfficeDocument`函数并将其替换为以下函数：
+1. 查找 `writeDataToOfficeDocument` 函数并将其替换为以下函数：
 
     ```javascript
     export function writeDataToOfficeDocument(result) {
@@ -484,7 +484,7 @@ export function writeDataToOfficeDocument(result: Object): void {
     }
     ```
 
-2. 查找`filterUserProfileInfo`函数并将其替换为以下函数：
+2. 查找 `filterUserProfileInfo` 函数并将其替换为以下函数：
 
     ```javascript
     function filterOneDriveInfo(result) {
@@ -497,7 +497,7 @@ export function writeDataToOfficeDocument(result: Object): void {
     }
     ```
 
-3. 查找`writeDataToWord`函数并将其替换为以下函数：
+3. 查找 `writeDataToWord` 函数并将其替换为以下函数：
 
     ```javascript
     function writeDataToWord(result) {
@@ -523,17 +523,17 @@ export function writeDataToOfficeDocument(result: Object): void {
     }
     ```
 
-4. 删除`writeDataToExcel`函数。
+4. 删除 `writeDataToExcel` 函数。
 
-5. 删除`writeDataToOutlook`函数。
+5. 删除 `writeDataToOutlook` 函数。
 
-6. 删除`writeDataToPowerPoint`函数。
+6. 删除 `writeDataToPowerPoint` 函数。
 
 在进行这些更改后，请跳至本文的 "[试用](#try-it-out)本主题" 一节，以试用更新后的外接程序。
 
 ### <a name="changes-required-for-a-word-add-in-typescript"></a>Word 加载项（TypeScript）所需的更改
 
-如果你的外接程序是使用 TypeScript 创建的 Word 外接程序，请打开 **/src/taskpane/taskpane.ts**，找到该`writeDataToOfficeDocument`函数，并将其替换为以下函数：
+如果你的外接程序是使用 TypeScript 创建的 Word 外接程序，请打开 **/src/taskpane/taskpane.ts**，找到该 `writeDataToOfficeDocument` 函数，并将其替换为以下函数：
 
 ```typescript
 export function writeDataToOfficeDocument(result: Object): Promise<any> {

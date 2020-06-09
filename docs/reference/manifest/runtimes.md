@@ -3,12 +3,12 @@ title: 清单文件中的运行时
 description: 运行时元素指定外接程序的运行时。
 ms.date: 06/01/2020
 localization_priority: Normal
-ms.openlocfilehash: 95549d88df24a7d7c54cf27c92c15693491bdf29
-ms.sourcegitcommit: 9229102c16a1864e3a8724aaf9b0dc68b1428094
+ms.openlocfilehash: ef00bea317ae479d912b3a02f269ef97045b015d
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/03/2020
-ms.locfileid: "44520337"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44608095"
 ---
 # <a name="runtimes-element"></a>运行时元素
 

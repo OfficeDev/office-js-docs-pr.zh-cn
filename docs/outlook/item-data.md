@@ -3,12 +3,12 @@ title: 获取或设置 Outlook 加载项中的项目数据
 description: 根据加载项是在阅读窗体中激活还是在撰写窗体中激活，项目为加载项提供的属性也有所不同。
 ms.date: 12/10/2019
 localization_priority: Normal
-ms.openlocfilehash: 925dcaff524be3f4e3d76213c0ee3413a11f43d6
-ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
+ms.openlocfilehash: 6ef0b868ba83a6003c401e15b7d6dd9ee0f4f94b
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "42325352"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44609074"
 ---
 # <a name="get-and-set-outlook-item-data-in-read-or-compose-forms"></a>在阅读或撰写窗体中获取和设置 Outlook 项目数据
 

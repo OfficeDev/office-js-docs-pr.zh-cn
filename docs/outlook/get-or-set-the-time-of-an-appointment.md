@@ -3,12 +3,12 @@ title: 获取或设置 Outlook 加载项中的约会时间
 description: 了解如何在 Outlook 加载项中获取或设置约会开始和结束时间。
 ms.date: 10/31/2019
 localization_priority: Normal
-ms.openlocfilehash: d07d461b852e523626946a79a5c9c5e21c95fcdc
-ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
+ms.openlocfilehash: 5e02523852584d4b5f1ede9bcd191b9ee16d4c24
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "42324959"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44609131"
 ---
 # <a name="get-or-set-the-time-when-composing-an-appointment-in-outlook"></a>在 Outlook 中撰写约会时获取或设置时间
 

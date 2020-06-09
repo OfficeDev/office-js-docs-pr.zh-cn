@@ -3,12 +3,12 @@ ms.date: 05/17/2020
 description: 了解 Excel 自定义函数名称的要求并避免常见命名缺陷。
 title: Excel 中自定义函数的命名准则
 localization_priority: Normal
-ms.openlocfilehash: 82b847ba5d944efed16aa2567eee2c3d257a6a75
-ms.sourcegitcommit: 54e2892c0c26b9ad1e4dba8aba48fea39f853b6c
+ms.openlocfilehash: ac0d824f49d359e574a0dc5caae8ef2f903dd4a1
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/18/2020
-ms.locfileid: "44275985"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44609287"
 ---
 # <a name="naming-guidelines"></a>命名准则
 

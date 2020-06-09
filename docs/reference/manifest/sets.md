@@ -3,12 +3,12 @@ title: 清单文件中的 Sets 元素
 description: Set 元素指定 Office 外接程序在激活时所需的最小 Office JavaScript API 集。
 ms.date: 03/19/2019
 localization_priority: Normal
-ms.openlocfilehash: c9e699b4609004c49d954da2367a6c8f82d13670
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: 8c1c97bfc2934ecf3cc20b472b29a03805603729
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42720391"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44608731"
 ---
 # <a name="sets-element"></a>Sets 元素
 

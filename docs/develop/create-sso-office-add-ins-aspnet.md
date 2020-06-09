@@ -3,12 +3,12 @@ title: 创建使用单一登录的 ASP.NET Office 加载项
 description: 有关如何使用 ASP.NET 后端创建（或转换） Office 外接程序以使用单一登录（SSO）的分步指南。
 ms.date: 12/04/2019
 localization_priority: Normal
-ms.openlocfilehash: 6f8bb2c3de74d501867738da5a6a1c8282d3cc96
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: d37b35de724c2b5fac265f16df8fd2d13e2b7785
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42719054"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44608360"
 ---
 # <a name="create-an-aspnet-office-add-in-that-uses-single-sign-on-preview"></a>创建使用单一登录的 ASP.NET Office 加载项（预览）
 

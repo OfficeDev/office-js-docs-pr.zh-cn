@@ -3,12 +3,12 @@ title: 获取和设置 internet 标头
 description: 如何：在 Outlook 外接程序中获取和设置邮件的 internet 邮件头。
 ms.date: 04/28/2020
 localization_priority: Normal
-ms.openlocfilehash: 1b6bdbbe77998ce92ea1b1b43874a32a30aa160a
-ms.sourcegitcommit: 0fdb78cefa669b727b817614a4147a46d249a0ed
+ms.openlocfilehash: a05ba86eebd8dc01c8368b61e39d1de1d90f9efa
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "43930286"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44609081"
 ---
 # <a name="get-and-set-internet-headers-on-a-message-in-an-outlook-add-in"></a>在 Outlook 外接程序中获取和设置邮件的 internet 邮件头
 
@@ -21,7 +21,7 @@ Outlook 外接程序开发中的一个常见要求是，将与外接程序关联
 
 在项目离开 Exchange 服务器后，这两种类型的属性都不会保留，因此电子邮件收件人无法获取项目上设置的任何属性。 因此，开发人员无法访问这些设置或其他 MIME 属性以实现更好的阅读方案。
 
-虽然有一种方法可以将 internet 标头设置为 EWS 请求，但在某些情况下，不能进行 EWS 请求。 例如，在 Outlook 桌面的撰写模式下，项目 id 在缓存模式下 `saveAsync` 不会同步。
+虽然有一种方法可以将 internet 标头设置为 EWS 请求，但在某些情况下，不能进行 EWS 请求。 例如，在 Outlook 桌面的撰写模式下，项目 id 在  `saveAsync`   缓存模式下不会同步。
 
 > [!TIP]
 > 请参阅[获取和设置 Outlook 外接程序的外接程序元数据](metadata-for-an-outlook-add-in.md)，以了解有关使用这些选项的详细信息。

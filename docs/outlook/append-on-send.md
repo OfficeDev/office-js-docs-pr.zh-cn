@@ -4,12 +4,12 @@ description: 了解如何在 Outlook 外接程序中实现 "发送时发送" 功
 ms.topic: article
 ms.date: 05/26/2020
 localization_priority: Normal
-ms.openlocfilehash: ecbc1e043b6af2a0e0a6cd89de8cf4bfcec03943
-ms.sourcegitcommit: 3a72d13c82b3d627691f4712d0d24b9e71bae9dc
+ms.openlocfilehash: f7f345ad726529c7ba3f8fa3ceedb46246310547
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2020
-ms.locfileid: "44415891"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44607594"
 ---
 # <a name="implement-append-on-send-in-your-outlook-add-in-preview"></a>在 Outlook 外接程序中实施 "在发送时追加" （预览）
 

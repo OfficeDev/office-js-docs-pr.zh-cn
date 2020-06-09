@@ -14,13 +14,13 @@
 
 - **./src/taskpane/taskpane.css** 文件包含应用于任务窗格中的内容的 CSS。
 
-- 在 JavaScript 项目中， **/src/taskpane/taskpane.js**文件包含用于初始化加载项的代码。 在 TypeScript 项目中， **/src/taskpane/taskpane.ts**文件包含用于初始化外接程序的代码，以及使用 Office JavaScript 库将数据从 Microsoft Graph 添加到 Office 文档的代码。
+- 在 JavaScript 项目中， **/src/taskpane/taskpane.js**文件包含用于初始化加载项的代码。 在 TypeScript 项目中， **/src/taskpane/taskpane.ts**文件包含用于初始化外接程序的代码，以及使用 OFFICE JavaScript API 库将数据从 Microsoft Graph 添加到 Office 文档的代码。
 
 ### <a name="authentication"></a>身份验证
 
 以下文件可帮助 SSO 进程并将数据写入 Office 文档。
 
-- 在 JavaScript 项目中， **/src/helpers/documentHelper.js**文件包含使用 Office JavaScript 库将数据从 Microsoft Graph 添加到 Office 文档的代码。 在 TypeScript 项目中没有此类文件;使用 Office JavaScript 库将数据从 Microsoft Graph 添加到 Office 文档的代码在 **/src/taskpane/taskpane.ts**中存在。
+- 在 JavaScript 项目中， **/src/helpers/documentHelper.js**文件包含使用 OFFICE JavaScript API 库将数据从 Microsoft Graph 添加到 Office 文档的代码。 在 TypeScript 项目中没有此类文件;使用 Office JavaScript API 库将数据从 Microsoft Graph 添加到 Office 文档的代码在 **/src/taskpane/taskpane.ts**中存在。
 
 - **./Src/helpers/fallbackauthdialog.html**文件是为回退身份验证策略加载 JavaScript 的无 UI 页面。
 

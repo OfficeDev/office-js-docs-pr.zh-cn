@@ -3,12 +3,12 @@ title: 获取和设置类别
 description: 如何管理邮箱和项目上的类别
 ms.date: 01/14/2020
 localization_priority: Normal
-ms.openlocfilehash: d0bb2e9f51675c263d0a3a130c64e02e7d55b764
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: d4589571de47218741308c01caec0166d72919d8
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42721021"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44608976"
 ---
 # <a name="get-and-set-categories"></a>获取和设置类别
 
@@ -22,7 +22,7 @@ ms.locfileid: "42721021"
 只有邮箱上的主列表中的类别可供您应用到邮件或约会。 您可以使用 API 添加、获取和删除主类别。
 
 > [!IMPORTANT]
-> 若要将外接程序管理类别主机列表，您必须将清单中`Permissions`的节点设置为`ReadWriteMailbox`。
+> 若要将外接程序管理类别主机列表，您必须将 `Permissions` 清单中的节点设置为 `ReadWriteMailbox` 。
 
 ### <a name="add-master-categories"></a>添加母版类别
 
@@ -90,7 +90,7 @@ Office.context.mailbox.masterCategories.removeAsync(masterCategoriesToRemove, fu
 
 ### <a name="add-categories-to-an-item"></a>将类别添加到项目
 
-下面的示例展示了如何应用名为 "Urgent！" 的类别。 通过调用[addAsync](/javascript/api/outlook/office.categories#addasync-categories--options--callback-)的当前项`item.categories`。
+下面的示例展示了如何应用名为 "Urgent！" 的类别。 通过调用[addAsync](/javascript/api/outlook/office.categories#addasync-categories--options--callback-)的当前项 `item.categories` 。
 
 ```js
 var categoriesToAdd = ["Urgent!"];
@@ -106,7 +106,7 @@ Office.context.mailbox.item.categories.addAsync(categoriesToAdd, function (async
 
 ### <a name="get-an-items-categories"></a>获取项目的类别
 
-下面的示例演示如何通过在上`item.categories`调用[getAsync](/javascript/api/outlook/office.categories#getasync-options--callback-)来获取应用于当前项的类别。
+下面的示例演示如何通过在上调用[getAsync](/javascript/api/outlook/office.categories#getasync-options--callback-)来获取应用于当前项的类别 `item.categories` 。
 
 ```js
 Office.context.mailbox.item.categories.getAsync(function (asyncResult) {
@@ -124,7 +124,7 @@ Office.context.mailbox.item.categories.getAsync(function (asyncResult) {
 
 ### <a name="remove-categories-from-an-item"></a>从项目中删除类别
 
-下面的示例展示了如何删除名为 "Urgent！" 的类别。 通过调用[removeAsync](/javascript/api/outlook/office.categories#removeasync-categories--options--callback-)的当前项目`item.categories`。
+下面的示例展示了如何删除名为 "Urgent！" 的类别。 通过调用[removeAsync](/javascript/api/outlook/office.categories#removeasync-categories--options--callback-)的当前项目 `item.categories` 。
 
 ```js
 var categoriesToRemove = ["Urgent!"];

@@ -3,12 +3,12 @@ title: 清单文件中的 Rule 元素
 description: Rule 元素指定应为此上下文邮件外接程序计算的激活规则。
 ms.date: 05/14/2020
 localization_priority: Normal
-ms.openlocfilehash: c1f2be3371333bfd87e0693d02a9a5984c18317b
-ms.sourcegitcommit: b634bfe9a946fbd95754e87f070a904ed57586ff
+ms.openlocfilehash: c4094cdf9e9006bbc49d180cb79845527461a543
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/15/2020
-ms.locfileid: "44253619"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44608109"
 ---
 # <a name="rule-element"></a>Rule 元素
 
@@ -41,7 +41,7 @@ ms.locfileid: "44253619"
 
 ### <a name="attributes"></a>属性
 
-| 属性 | 必需 | 说明 |
+| 属性 | 必需 | Description |
 |:-----|:-----|:-----|
 | **ItemType** | 是 | 指定要匹配的项目类型。可以是 `Message` 或 `Appointment`。`Message` 项目类型包括电子邮件、会议请求、会议响应和会议取消。 |
 | **FormType** | 否（在 [ExtensionPoint](extensionpoint.md) 内），是（在 [OfficeApp](officeapp.md) 内） | 指定应用应出现在项目的读取还是编辑表单中。可以是以下值之一：`Read`、`Edit`、`ReadOrEdit`。如果在 `ExtensionPoint` 中的 `Rule` 上指定，则该值必须为 `Read`。 |
@@ -70,7 +70,7 @@ ms.locfileid: "44253619"
 
 ### <a name="attributes"></a>属性
 
-| 属性 | 必需 | 说明 |
+| 属性 | 必需 | Description |
 |:-----|:-----|:-----|
 | **EntityType** | 是 | 指定若想规则计算结果为 true 而必须存在的实体类型。可以是以下值之一：`MeetingSuggestion`、`TaskSuggestion`、`Address`、`Url`、`PhoneNumber`、`EmailAddress` 或 `Contact`。 |
 | **RegExFilter** | 否 | 指定一个针对此实体运行以进行激活的正则表达式。 |
@@ -90,7 +90,7 @@ ms.locfileid: "44253619"
 
 ### <a name="attributes"></a>属性
 
-| 属性 | 必需 | 说明 |
+| 属性 | 必需 | Description |
 |:-----|:-----|:-----|
 | **RegExName** | 是 | 指定正则表达式的名称，以便你能够在外接程序的代码中引用该表达式。 |
 | **RegExValue** | 是 | 指定将对其求值的正则表达式以确定是否应显示邮件外接程序。 |
@@ -111,7 +111,7 @@ ms.locfileid: "44253619"
 
 ### <a name="attributes"></a>属性
 
-| 属性 | 必需 | 说明 |
+| 属性 | 必需 | Description |
 |:-----|:-----|:-----|
 | **Mode** | 是 | 指定在计算此规则集时要使用的逻辑运算符。可以是以下类型之一：`And` 或 `Or`。 |
 

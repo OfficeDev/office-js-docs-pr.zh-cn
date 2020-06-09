@@ -3,12 +3,12 @@ title: Office 外接程序的布局准则
 description: 获取有关如何在 Office 外接程序中布局任务窗格或对话框的指南。
 ms.date: 06/27/2018
 localization_priority: Normal
-ms.openlocfilehash: 38c98aeed1ddd1af5fcda95aa6d44ff1f1f2e53b
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: c88d2e9d978a22688eb10b57607750286209e5d5
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42718507"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44607664"
 ---
 # <a name="layout"></a>布局
 嵌入到 Office 中的每个 HTML 容器都将有一个布局。这些布局是外接程序的主屏幕。你将在其中创建使客户能够启动操作、修改设置、查看、滚动或导航内容的体验。设计在屏幕中具有一致布局的外接程序，以确保体验的连续性。如果你有客户熟悉使用的现有网站，请考虑重新使用现有网页中的布局。对它们进行调整以协调适应 Office HTML 容器。

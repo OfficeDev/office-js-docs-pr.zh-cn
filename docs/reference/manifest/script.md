@@ -3,12 +3,12 @@ title: 清单文件中的 Script 元素
 description: Script 元素定义自定义函数在 Excel 中使用的脚本设置。
 ms.date: 10/09/2018
 localization_priority: Normal
-ms.openlocfilehash: f05fc85bd0454c340f4352bb73f299b9e7730224
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: 791f49f15673a029b982e40946f8cc90f02ba887
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42720412"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44608088"
 ---
 # <a name="script-element"></a>Script 元素
 
@@ -20,7 +20,7 @@ ms.locfileid: "42720412"
 
 ## <a name="child-elements"></a>子元素
 
-|元素  |  必需  |  说明  |
+|元素  |  必需  |  Description  |
 |:-----|:-----|:-----|
 |  [SourceLocation](customfunctionssourcelocation.md)  |  是  | 包含自定义函数所使用的 JavaScript 文件的资源 ID 的字符串。|
 
