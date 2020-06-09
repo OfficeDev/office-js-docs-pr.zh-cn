@@ -4,12 +4,12 @@ description: Project JavaScript API 概述
 ms.date: 07/05/2019
 ms.prod: project
 localization_priority: Priority
-ms.openlocfilehash: 7c00293a9cdbfae7a06b9f4fb43b0df96a8b6eea
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: 1dda7cd2f34e3d3c006b99be4d9456d655a43451
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42719894"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44612141"
 ---
 # <a name="javascript-api-for-project"></a>适用于 Project 的 JavaScript API
 

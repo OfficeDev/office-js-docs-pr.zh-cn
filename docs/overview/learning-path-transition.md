@@ -4,12 +4,12 @@ description: 资深 VSTO 加载项开发人员了解 Office Web 加载项的建�
 ms.date: 05/10/2020
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: 6ed812bae73282999716c448ef683dcc6aeae778
-ms.sourcegitcommit: 735bf94ac3c838f580a992e7ef074dbc8be2b0ea
+ms.openlocfilehash: 499a8fdf12c2f46c5cf5fc5c37f8bb68af540e57
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "44170834"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44604571"
 ---
 # <a name="transition-here-a-guide-for-vsto-add-in-creators-making-office-web-add-ins"></a>在此处转换！ 创建 Office Web 加载项的 VSTO 加载项创建程序指南 
 

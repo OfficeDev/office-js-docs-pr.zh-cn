@@ -4,12 +4,12 @@ description: 本教程将介绍如何生成 Word 加载项，用于插入（和�
 ms.date: 01/16/2020
 ms.prod: word
 localization_priority: Priority
-ms.openlocfilehash: e3d6f2c590ae34189ce9127d55b3f4332a63e1aa
-ms.sourcegitcommit: 682d18c9149b1153f9c38d28e2a90384e6a261dc
+ms.openlocfilehash: a45cbcc9980a2f07218257f6fef0bd7c781f9992
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "44217765"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44610831"
 ---
 # <a name="tutorial-create-a-word-task-pane-add-in"></a>教程：创建 Word 任务窗格加载项
 

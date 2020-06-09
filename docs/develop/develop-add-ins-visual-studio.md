@@ -3,12 +3,12 @@ title: 使用 Visual Studio 开发 Office 加载项
 description: 如何使用 Visual Studio 开发 Office 加载项
 ms.date: 12/31/2019
 localization_priority: Priority
-ms.openlocfilehash: a0ad1e347f0b1013deb6a431d4a9fdcf1133d4d5
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: 198a277d56d499b2b2cfef84667ceefccec81a72
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42719033"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44608325"
 ---
 # <a name="develop-office-add-ins-with-visual-studio"></a>使用 Visual Studio 开发 Office 加载项
 

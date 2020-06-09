@@ -4,12 +4,12 @@ description: 了解如何使用 Office JS API 和 Vue 生成简单的 Excel 任�
 ms.date: 04/14/2020
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: ef20d56181d3b0f6c865e81de9c8500ef9906c83
-ms.sourcegitcommit: 90c5830a5f2973a9ccd5c803b055e1b98d83f099
+ms.openlocfilehash: 49c38a8b9055692f40fed9dc110528694e3fbf55
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "43529118"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44608920"
 ---
 # <a name="build-an-excel-task-pane-add-in-using-vue"></a>使用 Vue 生成 Excel 任务窗格加载项
 

@@ -4,12 +4,12 @@ description: 了解如何使用 Office JS API 生成简单的 Project 任务窗�
 ms.date: 04/03/2020
 ms.prod: project
 localization_priority: Priority
-ms.openlocfilehash: f712dbfc10027ff6af0eaf618c667cd542bbf284
-ms.sourcegitcommit: c3bfea0818af1f01e71a1feff707fb2456a69488
+ms.openlocfilehash: db30662c93c4de4d47f3986358fb2219b84f5470
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "43185434"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44608838"
 ---
 # <a name="build-your-first-project-task-pane-add-in"></a>生成首个 Project 任务窗格加载项
 

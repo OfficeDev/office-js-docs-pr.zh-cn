@@ -4,12 +4,12 @@ description: 通过 Office 加载项的学习资源为初学者提供指导的�
 ms.date: 04/16/2020
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: 61a8e455c5fdb676166f05d03d3d360593c53445
-ms.sourcegitcommit: 735bf94ac3c838f580a992e7ef074dbc8be2b0ea
+ms.openlocfilehash: b62c7a5d2117c52f4bd3f91c1a2e1b735554028e
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "44170777"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44604496"
 ---
 # <a name="start-here-a-guide-for-beginners-making-office-add-ins"></a>从这里开始！ 面向初学者的 Office 加载项构建指南
 

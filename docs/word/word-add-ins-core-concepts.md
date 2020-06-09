@@ -3,12 +3,12 @@ title: Word JavaScript API 基本编程概念
 description: 使用 Word JavaScript API 生成适用于 Word 的加载项。
 ms.date: 07/05/2019
 localization_priority: Priority
-ms.openlocfilehash: bbd9fa23ffd5e25555f2d0d5e0022ebc2e81a534
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: 697f3068a039caa8ae60ed449bacb05f3999a1ee
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42719642"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44608563"
 ---
 # <a name="fundamental-programming-concepts-with-the-word-javascript-api"></a>Word JavaScript API 基本编程概念
 

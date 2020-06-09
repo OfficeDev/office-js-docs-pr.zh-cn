@@ -4,12 +4,12 @@ description: 详细了解 OneNote JavaScript API
 ms.date: 02/19/2020
 ms.prod: onenote
 localization_priority: Priority
-ms.openlocfilehash: 70c3bca323084630f1926b501900bca26cf54304
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: 78569926fe656405e9159e5935606e53ade50ba7
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42719917"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44612155"
 ---
 # <a name="onenote-javascript-api-overview"></a>OneNote JavaScript API 概述
 

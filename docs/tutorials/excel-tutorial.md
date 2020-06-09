@@ -4,12 +4,12 @@ description: 在本教程中，你将学习如何构建一个 Excel 外接程序
 ms.date: 06/05/2020
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: 42ce837bd03d3b8fd9be35e812b8e87e66a5e35d
-ms.sourcegitcommit: 0300165295fcbd4226aa048be2fad660892d35ea
+ms.openlocfilehash: 8cae8a91ffe70e98a504b191566e9d6ac3c29b37
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "44591149"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44611071"
 ---
 # <a name="tutorial-create-an-excel-task-pane-add-in"></a>教程：创建 Excel 任务窗格加载项
 

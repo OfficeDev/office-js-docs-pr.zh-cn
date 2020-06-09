@@ -5,12 +5,12 @@ title: Office 加载项的核心概念
 description: 更多了解 Office 加载项平台。
 ms.date: 12/24/2019
 localization_priority: Priority
-ms.openlocfilehash: 9ee2f8704ae1c2e625a95c4822cd75eb76f56704
-ms.sourcegitcommit: c3bfea0818af1f01e71a1feff707fb2456a69488
+ms.openlocfilehash: f115dcf6944ef906af9dff2da7fdade884bbabc0
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "43185629"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44604529"
 ---
 # <a name="core-concepts"></a>核心概念
 

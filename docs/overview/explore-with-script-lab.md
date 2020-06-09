@@ -5,12 +5,12 @@ ms.date: 04/16/2020
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: 6fb886f1c86267ed7081d1892d1314798ab4cedc
-ms.sourcegitcommit: 803587b324fc8038721709d7db5664025cf03c6b
+ms.openlocfilehash: 88c57e163e8fc59e31fec80f5faa0bfbfd96402b
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2020
-ms.locfileid: "43547253"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44604550"
 ---
 # <a name="explore-office-javascript-api-using-script-lab"></a>使用 Script Lab 探索 Office JavaScript API
 

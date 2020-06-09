@@ -4,12 +4,12 @@ description: 了解如何使用 Office JS API 生成简单的 PowerPoint 任务�
 ms.date: 04/03/2020
 ms.prod: powerpoint
 localization_priority: Priority
-ms.openlocfilehash: a8e6f3cc6627f158851f23995b90dd29d810d876
-ms.sourcegitcommit: c3bfea0818af1f01e71a1feff707fb2456a69488
+ms.openlocfilehash: 31bfc87559550d865367f6430b980620e813bed8
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "43185454"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44608899"
 ---
 # <a name="build-your-first-powerpoint-task-pane-add-in"></a>生成首个 PowerPoint 任务加载项
 

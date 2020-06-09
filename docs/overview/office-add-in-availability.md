@@ -3,12 +3,12 @@ title: Office 外接程序主机和平台可用性
 description: Excel、OneNote、Outlook、PowerPoint、Project 和 Word 支持的要求集。
 ms.date: 05/11/2020
 localization_priority: Priority
-ms.openlocfilehash: 36c6bc6b6348ac988049f9a50127f6dd2f94bf37
-ms.sourcegitcommit: 682d18c9149b1153f9c38d28e2a90384e6a261dc
+ms.openlocfilehash: 8c3c187d8f9b70f40a35e3773a2267dc76decbd0
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "44217821"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44611980"
 ---
 # <a name="office-add-in-host-and-platform-availability"></a>Office 外接程序主机和平台可用性
 

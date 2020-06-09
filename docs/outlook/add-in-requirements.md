@@ -3,12 +3,12 @@ title: Outlook 加载项要求
 description: 必须满足服务器和客户端的多个要求，才能正常加载和运行 Outlook 加载项。
 ms.date: 10/09/2019
 localization_priority: Priority
-ms.openlocfilehash: be93ef69e60530947c18b5b5be294c6d12ed06f1
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: 90c917f7dfa324f98f0a5d88ba59d6467e234ab3
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42720874"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44611657"
 ---
 # <a name="outlook-add-in-requirements"></a>Outlook 加载项要求
 

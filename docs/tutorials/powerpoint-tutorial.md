@@ -4,12 +4,12 @@ description: 在本教程中，将生成 PowerPoint 加载项，用于插入图�
 ms.date: 12/24/2019
 ms.prod: powerpoint
 localization_priority: Priority
-ms.openlocfilehash: a72310c0ab58e544050ec7574841b38560df2fbf
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: b9c31e589369bdcc844e3c587d12e6a26406357b
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42717395"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44611048"
 ---
 # <a name="tutorial-create-a-powerpoint-task-pane-add-in"></a>教程：创建 PowerPoint 任务窗格加载项
 

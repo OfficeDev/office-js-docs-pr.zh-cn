@@ -8,12 +8,12 @@ ms.author: o365devx
 ms.prod: non-product-specific
 ms.date: 12/24/2019
 localization_priority: Priority
-ms.openlocfilehash: 3cd783fd45ecabefac1512735b6befd4af2308ef
-ms.sourcegitcommit: 803587b324fc8038721709d7db5664025cf03c6b
+ms.openlocfilehash: 35455560d265e10a19e0d18944d4a28cf4df0793
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2020
-ms.locfileid: "43547083"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44611690"
 ---
 # <a name="office-add-ins-documentation"></a>Office 加载项文档
 

@@ -5,12 +5,12 @@ ms.date: 07/05/2019
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: 6cf50b332fe212921a73f9b24154b53831401354
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: 9c6f86bd5e50d97e395517d8a4887fac3554f867
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42717087"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44609760"
 ---
 # <a name="excel-add-ins-overview"></a>Excel 加载项概述
 

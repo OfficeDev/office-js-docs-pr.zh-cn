@@ -4,12 +4,12 @@ description: 针对 Word 内部版本的 Office 加载项要求集信息。
 ms.date: 04/16/2020
 ms.prod: word
 localization_priority: Priority
-ms.openlocfilehash: 69addff587b026ab717a438e204b1258b06266b6
-ms.sourcegitcommit: 803587b324fc8038721709d7db5664025cf03c6b
+ms.openlocfilehash: bffd78455cd6d87a1323c4133ce16f9723e37a4c
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2020
-ms.locfileid: "43547218"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44611281"
 ---
 # <a name="word-javascript-api-requirement-sets"></a>Word JavaScript API 要求集
 

@@ -4,12 +4,12 @@ description: 详细了解 Excel Javascript API
 ms.date: 02/19/2020
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: 336944f4315e9e5aea492ecbb8cd557a38edbb39
-ms.sourcegitcommit: 6c381634c77d316f34747131860db0a0bced2529
+ms.openlocfilehash: 7ce3e0f01d53bba7a962878d4434d04258571b52
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/21/2020
-ms.locfileid: "42891192"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44612162"
 ---
 # <a name="excel-javascript-api-overview"></a>Excel JavaScript API 概述
 
