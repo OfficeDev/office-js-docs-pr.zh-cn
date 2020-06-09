@@ -5,12 +5,12 @@ title: OneNote 加载项文档
 description: 用于了解 OneNote 加载项的资源。
 ms.date: 07/05/2019
 localization_priority: Priority
-ms.openlocfilehash: 67b09f29072416c50143df17bd78a5c9bbb7f4f6
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: 9660e8b8df903edd05e5333704808c5435e7f23d
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42718494"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44612085"
 ---
 # <a name="onenote-add-ins-documentation"></a>OneNote 加载项文档
 

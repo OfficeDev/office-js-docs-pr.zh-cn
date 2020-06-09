@@ -1,2 +1,2 @@
 >[!NOTE]
-> <span data-ttu-id="52e92-101">如果不熟悉 Node.js 或 npm，请首先[设置开发环境](../overview/set-up-your-dev-environment.md)。</span><span class="sxs-lookup"><span data-stu-id="52e92-101">If you aren't familiar with Node.js or npm, you should start by [setting up your development environment](../overview/set-up-your-dev-environment.md).</span></span>
+> <span data-ttu-id="3431d-101">如果不熟悉 Node.js 或 npm，请首先[设置开发环境](../overview/set-up-your-dev-environment.md)。</span><span class="sxs-lookup"><span data-stu-id="3431d-101">If you aren't familiar with Node.js or npm, you should start by [setting up your development environment](../overview/set-up-your-dev-environment.md).</span></span>
