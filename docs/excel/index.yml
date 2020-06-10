@@ -1,0 +1,67 @@
+### YamlMime:Landing
+title: Excel 加载项文档
+summary: 借助 Excel 加载项，你可以使用熟悉的 Web 技术（如 HTML、CSS 和 JavaScript）来构建一个可跨多个平台（包括在 Windows、Mac、iPad 和 Web 浏览器上）在 Excel 中运行的解决方案。 了解如何构建、测试、调试和发布 Excel 加载项。
+metadata:
+  title: Excel 加载项文档
+  description: 用于了解 Excel 加载项的资源。
+  ms.prod: excel
+  ms.topic: landing-page
+  ms.date: 06/09/2020
+  localization_priority: Priority
+  ms.openlocfilehash: c2bbe9e007111beed49d33eaaeff3dd6c7a38aae
+  ms.sourcegitcommit: 19312a54f47a17988ffa86359218a504713f9f09
+  ms.translationtype: MT
+  ms.contentlocale: zh-CN
+  ms.lasthandoff: 06/10/2020
+  ms.locfileid: "44679432"
+landingContent:
+- title: 关于 Excel 外接程序
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Excel 外接程序是什么？
+      url: excel-add-ins-overview.md
+  - linkListType: quickstart
+    links:
+    - text: 生成首个 Excel 加载项
+      url: ../quickstarts/excel-quickstart-jquery.md
+    - text: 使用脚本实验室探索 Api
+      url: ../overview/explore-with-script-lab.md
+  - linkListType: how-to-guide
+    links:
+    - text: 使用 Excel JavaScript API 与对象和工作簿内容交互
+      url: ../reference/overview/excel-add-ins-reference-overview.md
+    - text: 向 Excel 中添加自定义函数
+      url: custom-functions-overview.md
+    - text: 测试和调试 Excel 加载项
+      url: ../testing/test-debug-office-add-ins.md
+    - text: 部署并发布 Excel 加载项
+      url: ../publish/publish.md
+- title: 主要 Office 外接程序概念
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Office 加载项平台概述
+      url: ../overview/office-add-ins.md
+  - linkListType: concept
+    links:
+    - text: 构建 Office 加载项
+      url: ../overview/office-add-ins-fundamentals.md
+    - text: Office 加载项的核心概念
+      url: ../overview/core-concepts-office-add-ins.md
+    - text: 设计 Office 加载项
+      url: ../design/add-in-design.md
+    - text: 开发 Office 加载项
+      url: ../develop/develop-overview.md
+- title: 资源
+  linkLists:
+  - linkListType: reference
+    links:
+    - text: 提问
+      url: https://stackoverflow.com/questions/tagged/office-js
+    - text: 请求功能
+      url: https://officespdev.uservoice.com/
+    - text: 报告问题
+      url: https://github.com/officedev/office-js/issues
+    - text: Office 加载项其他资源
+      url: ../resources/resources-links-help.md

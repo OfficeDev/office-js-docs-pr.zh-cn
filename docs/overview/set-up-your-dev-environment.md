@@ -3,12 +3,12 @@ title: 设置开发环境
 description: 设置开发人员环境以生成 Office 外接程序
 ms.date: 04/03/2020
 localization_priority: Normal
-ms.openlocfilehash: 6c3f533b56cafc8300837cc835b26361490afedb
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: f44f8e48aec402f0ffa6327732613a902ea0cfe6
+ms.sourcegitcommit: 19312a54f47a17988ffa86359218a504713f9f09
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44611952"
+ms.lasthandoff: 06/10/2020
+ms.locfileid: "44679351"
 ---
 # <a name="set-up-your-development-environment"></a>设置开发环境
 
@@ -63,7 +63,7 @@ npm -v
 
 ### <a name="create-an-office-add-in"></a>创建 Office 加载项
 
-可完成 [5 分钟快速入门](../index.md)，快速创建适合 Excel、OneNote、Outlook、PowerPoint、Project 或 Word 的基本加载项。 如果你之前已完成快速入门，并且想要创建更复杂一些的加载项，请尝试本[教程](../index.md)。
+可完成 [5 分钟快速入门](/office/dev/add-ins/)，快速创建适合 Excel、OneNote、Outlook、PowerPoint、Project 或 Word 的基本加载项。 如果你之前已完成快速入门，并且想要创建更复杂一些的加载项，请尝试本[教程](/office/dev/add-ins/)。
 
 ### <a name="explore-the-apis-with-script-lab"></a>使用 Script Lab 了解 API
 

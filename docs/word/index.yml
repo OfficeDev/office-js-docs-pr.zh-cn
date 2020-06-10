@@ -1,0 +1,65 @@
+### YamlMime:Landing
+title: Word 加载项文档
+summary: 使用 Word 加载项，可以使用熟悉的 web 技术（如 HTML、CSS 和 JavaScript）在 Word 中构建可跨多个平台运行的解决方案，包括在 web、Windows、Mac 和 iPad 上。 了解如何构建、测试、调试和发布 Word 加载项。
+metadata:
+  title: Word 加载项文档
+  description: 用于了解 Word 加载项的资源。
+  ms.prod: word
+  ms.topic: landing-page
+  ms.date: 06/09/2020
+  localization_priority: Priority
+  ms.openlocfilehash: 4857b07420609cd91f414a635f076ce863dd87c0
+  ms.sourcegitcommit: 19312a54f47a17988ffa86359218a504713f9f09
+  ms.translationtype: MT
+  ms.contentlocale: zh-CN
+  ms.lasthandoff: 06/10/2020
+  ms.locfileid: "44679433"
+landingContent:
+- title: 关于 Word 外接程序
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Word 外接程序是什么？
+      url: word-add-ins-programming-overview.md
+  - linkListType: quickstart
+    links:
+    - text: 生成首个 Word 加载项
+      url: ../quickstarts/word-quickstart.md
+    - text: 使用脚本实验室探索 Api
+      url: ../overview/explore-with-script-lab.md
+  - linkListType: how-to-guide
+    links:
+    - text: 使用 Word JavaScript API 与文档内容和元数据进行交互
+      url: ../reference/overview/word-add-ins-reference-overview.md
+    - text: 测试和调试 Word 加载项
+      url: ../testing/test-debug-office-add-ins.md
+    - text: 部署和发布 Word 加载项
+      url: ../publish/publish.md
+- title: 主要 Office 外接程序概念
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Office 加载项平台概述
+      url: ../overview/office-add-ins.md
+  - linkListType: concept
+    links:
+    - text: 构建 Office 加载项
+      url: ../overview/office-add-ins-fundamentals.md
+    - text: Office 加载项的核心概念
+      url: ../overview/core-concepts-office-add-ins.md
+    - text: 设计 Office 加载项
+      url: ../design/add-in-design.md
+    - text: 开发 Office 加载项
+      url: ../develop/develop-overview.md
+- title: 资源
+  linkLists:
+  - linkListType: reference
+    links:
+    - text: 提问
+      url: https://stackoverflow.com/questions/tagged/office-js
+    - text: 请求功能
+      url: https://officespdev.uservoice.com/
+    - text: 报告问题
+      url: https://github.com/officedev/office-js/issues
+    - text: Office 加载项其他资源
+      url: ../resources/resources-links-help.md
