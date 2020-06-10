@@ -3,12 +3,12 @@ title: 构建 Office 加载项
 description: Office 加载项开发简介。
 ms.date: 02/27/2020
 localization_priority: Priority
-ms.openlocfilehash: 85f743756d552234e4ff18fd250b18904a9f63c4
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 9ef552698bb0e9d71076b38d0ea3af49eee408d7
+ms.sourcegitcommit: 19312a54f47a17988ffa86359218a504713f9f09
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44611968"
+ms.lasthandoff: 06/10/2020
+ms.locfileid: "44679393"
 ---
 # <a name="building-office-add-ins"></a>构建 Office 加载项
 
@@ -119,7 +119,7 @@ Office 加载项可使用 Office JavaScript API 来与其中在运行加载项�
 
 ### <a name="create-an-office-add-in"></a>创建 Office 加载项
 
-可完成 [5 分钟快速入门](../index.md)，快速创建适合 Excel、OneNote、Outlook、PowerPoint、Project 或 Word 的基本加载项。 如果你之前已完成快速入门，并且想要创建更复杂一些的加载项，请尝试本[教程](../index.md)。
+可完成 [5 分钟快速入门](/office/dev/add-ins/)，快速创建适合 Excel、OneNote、Outlook、PowerPoint、Project 或 Word 的基本加载项。 如果你之前已完成快速入门，并且想要创建更复杂一些的加载项，请尝试本[教程](/office/dev/add-ins/)。
 
 ### <a name="explore-the-apis-with-script-lab"></a>使用 Script Lab 了解 API
 
@@ -130,7 +130,7 @@ Office 加载项可使用 Office JavaScript API 来与其中在运行加载项�
 查看此文档，详细了解如何开发、测试和发布 Office 加载项。
 
 > [!TIP]
-> 对于你构建的任何加载项，都可查看本文档的[核心概念](core-concepts-office-add-ins.md)部分中的信息，还可查看与你要构建的加载项类型（例如 [Excel](../excel/index.md)）相对应的主机特定部分中的信息。
+> 对于你构建的任何加载项，都可查看本文档的[核心概念](core-concepts-office-add-ins.md)部分中的信息，还可查看与你要构建的加载项类型（例如 [Excel](../excel/index.yml)）相对应的主机特定部分中的信息。
 >
 > ![显示目录的图像](../images/top-level-toc.png)
 

@@ -4,12 +4,12 @@ description: 详细了解 OneNote JavaScript API
 ms.date: 02/19/2020
 ms.prod: onenote
 localization_priority: Priority
-ms.openlocfilehash: 78569926fe656405e9159e5935606e53ade50ba7
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: c73d784cb2ca724b02b22b68bbf0b75c8e3640bf
+ms.sourcegitcommit: 19312a54f47a17988ffa86359218a504713f9f09
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44612155"
+ms.lasthandoff: 06/10/2020
+ms.locfileid: "44679281"
 ---
 # <a name="onenote-javascript-api-overview"></a>OneNote JavaScript API 概述
 
@@ -37,7 +37,7 @@ OneNote 加载项通过使用 Office JavaScript API 与 OneNote web 版中的对
 
 ## <a name="see-also"></a>另请参阅
 
-- [OneNote 加载项文档](../../onenote/index.md)
+- [OneNote 加载项文档](../../onenote/index.yml)
 - [OneNote 加载项概述](../../onenote/onenote-add-ins-programming-overview.md)
 - [OneNote JavaScript API 参考](/javascript/api/onenote)
 - [Office 加载项主机和平台可用性](../../overview/office-add-in-availability.md)
