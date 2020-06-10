@@ -1,0 +1,63 @@
+### YamlMime:Landing
+title: Project 加载项文档
+summary: 借助 Project 加载项，你可以使用熟悉的 Web 技术（如 HTML、CSS 和 JavaScript）来构建可在 Windows 版 Project 中运行的解决方案。 了解如何构建、测试、调试和发布 Project 加载项。
+metadata:
+  title: Project 加载项文档
+  description: 用于了解 Project 加载项的资源。
+  ms.prod: project
+  ms.topic: landing-page
+  ms.date: 06/08/2020
+  localization_priority: Priority
+  ms.openlocfilehash: 77a49026234bf1c2e8487a7b56af0940ead6813f
+  ms.sourcegitcommit: 19312a54f47a17988ffa86359218a504713f9f09
+  ms.translationtype: MT
+  ms.contentlocale: zh-CN
+  ms.lasthandoff: 06/10/2020
+  ms.locfileid: "44679422"
+landingContent:
+- title: 关于项目外接程序
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: 什么是 Project 外接程序？
+      url: project-add-ins.md
+    - text: 适用于 Project 的 JavaScript API
+      url: ../reference/overview/project-add-ins-reference-overview.md
+  - linkListType: quickstart
+    links:
+    - text: 生成首个 Project 加载项
+      url: ../quickstarts/project-quickstart.md
+  - linkListType: how-to-guide
+    links:
+    - text: 测试和调试项目外接程序
+      url: ../testing/test-debug-office-add-ins.md
+    - text: 部署和发布项目外接程序
+      url: ../publish/publish.md
+- title: 主要 Office 外接程序概念
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Office 加载项平台概述
+      url: ../overview/office-add-ins.md
+  - linkListType: get-started
+    links:
+    - text: 构建 Office 加载项
+      url: ../overview/office-add-ins-fundamentals.md
+    - text: Office 加载项的核心概念
+      url: ../overview/core-concepts-office-add-ins.md
+    - text: 设计 Office 加载项
+      url: ../design/add-in-design.md
+    - text: 开发 Office 加载项
+      url: ../develop/develop-overview.md
+- title: 资源
+  linkLists:
+  - linkListType: reference
+    links:
+    - text: 提问
+      url: https://stackoverflow.com/questions/tagged/office-js
+    - text: 请求功能
+      url: https://officespdev.uservoice.com/
+    - text: 报告问题
+      url: https://github.com/officedev/office-js/issues
+    - text: Office 加载项其他资源
+      url: ../resources/resources-links-help.md

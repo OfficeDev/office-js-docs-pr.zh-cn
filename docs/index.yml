@@ -1,0 +1,90 @@
+### YamlMime:Landing
+title: Office 加载项文档
+summary: 使用 Office 外接程序平台来生成解决方案，通过解决方案扩展 Office 应用程序，并与 Office 文档中的内容进行交互。 使用 Office 外接程序，您可以使用熟悉的 web 技术（如 HTML、CSS 和 JavaScript）来构建可在 web、Windows、Mac 和 iPad 上运行的 Office 解决方案。
+metadata:
+  title: Office 加载项文档
+  description: 了解如何构建 Office 外接程序。
+  ms.prod: non-product-specific
+  ms.topic: landing-page
+  author: o365devx
+  ms.author: o365devx
+  ms.date: 06/09/2020
+  ms.openlocfilehash: 72bad801f05ae7315476abebaea0f8391d57ea42
+  ms.sourcegitcommit: 19312a54f47a17988ffa86359218a504713f9f09
+  ms.translationtype: MT
+  ms.contentlocale: zh-CN
+  ms.lasthandoff: 06/10/2020
+  ms.locfileid: "44679426"
+landingContent:
+- title: 关于 Office 加载项
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: 核心概念
+      url: overview/office-add-ins.md
+  - linkListType: overview
+    links:
+    - text: Excel 加载项文档
+      url: excel/index.yml
+    - text: OneNote 加载项文档
+      url: onenote/index.yml
+    - text: Outlook 加载项文档
+      url: outlook/index.yml
+    - text: PowerPoint 加载项文档
+      url: powerpoint/index.yml
+    - text: Project 加载项文档
+      url: project/index.yml
+    - text: Word 加载项文档
+      url: word/index.yml
+- title: 入门
+  linkLists:
+  - linkListType: get-started
+    links:
+    - text: Office 加载项入门
+      url: overview/learning-path-beginner.md
+    - text: 使用 Script Lab 探索 Office JavaScript API
+      url: overview/explore-with-script-lab.md
+  - linkListType: quickstart
+    links:
+    - text: Excel 加载项快速入门
+      url: quickstarts/excel-quickstart-jquery.md
+    - text: Excel 自定义函数快速入门
+      url: quickstarts/excel-custom-functions-quickstart.md
+    - text: OneNote 加载项快速入门
+      url: quickstarts/onenote-quickstart.md
+    - text: Outlook 加载项快速入门
+      url: quickstarts/outlook-quickstart.md
+    - text: PowerPoint 加载项快速入门
+      url: quickstarts/powerpoint-quickstart.md
+    - text: Project 加载项快速入门
+      url: quickstarts/project-quickstart.md
+    - text: Word 加载项快速入门
+      url: quickstarts/word-quickstart.md
+    - text: 单一登录 (SSO) 快速入门
+      url: quickstarts/sso-quickstart.md
+- title: 教程
+  linkLists:
+  - linkListType: tutorial
+    links:
+    - text: Excel 加载项教程
+      url: tutorials/excel-tutorial.md
+    - text: Excel 自定义函数教程
+      url: tutorials/excel-tutorial-create-custom-functions.md
+    - text: Outlook 加载项教程
+      url: tutorials/outlook-tutorial.md
+    - text: PowerPoint 加载项教程
+      url: tutorials/powerpoint-tutorial.md
+    - text: Word 加载项教程
+      url: tutorials/word-tutorial.md
+- title: 资源
+  linkLists:
+  - linkListType: reference
+    links:
+    - text: 提问
+      url: https://stackoverflow.com/questions/tagged/office-js
+    - text: 报告问题
+      url: https://github.com/officedev/office-js/issues
+    - text: 请求功能
+      url: https://officespdev.uservoice.com/
+    - text: COM 或 VSTO 外接程序文档
+      url: /office/client-developer/office-client-development
