@@ -1,15 +1,15 @@
 ---
 title: Dialog API 要求集
-description: 了解有关对话框 API 要求集的详细信息
-ms.date: 03/11/2020
+description: 了解有关对话框 API 要求集的详细信息。
+ms.date: 06/10/2020
 ms.prod: non-product-specific
 localization_priority: Normal
-ms.openlocfilehash: 7987a1617125f218ba883e834cb892fa9d5e2d9b
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: aa591a1b37c94a4db621d19786857303bb6ac473
+ms.sourcegitcommit: 449a728118db88dea22a44f83728d21604d6ee8c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44612113"
+ms.lasthandoff: 06/12/2020
+ms.locfileid: "44719061"
 ---
 # <a name="dialog-api-requirement-sets"></a>Dialog API 要求集
 
@@ -40,6 +40,7 @@ Dialog API 1.1 是首版 API。 有关 API 的详细信息，请参阅[对话框
 
 ## <a name="see-also"></a>另请参阅
 
+- [在 Office 加载项中使用 Office 对话框 API](../../develop/dialog-api-in-office-add-ins.md)
 - [Office 版本和要求集](../../develop/office-versions-and-requirement-sets.md)
 - [指定 Office 主机和 API 要求](../../develop/specify-office-hosts-and-api-requirements.md)
 - [Office 外接程序 XML 清单](../../develop/add-in-manifests.md)

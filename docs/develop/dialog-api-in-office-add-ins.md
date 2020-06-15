@@ -1,14 +1,14 @@
 ---
 title: 在 Office 加载项中使用 Office 对话框 API
-description: 了解在 Office 加载项中创建对话框的基础知识
-ms.date: 01/29/2020
+description: 了解在 Office 外接程序中创建对话框的基础知识。
+ms.date: 06/10/2020
 localization_priority: Normal
-ms.openlocfilehash: 96ed3169e7909e700bde894a4caf03348d039b74
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 749fd6041c2ef60a4d766e865e25d53e97298d01
+ms.sourcegitcommit: 449a728118db88dea22a44f83728d21604d6ee8c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44608276"
+ms.lasthandoff: 06/12/2020
+ms.locfileid: "44719068"
 ---
 # <a name="use-the-office-dialog-api-in-office-add-ins"></a>在 Office 加载项中使用 Office 对话框 API
 
@@ -96,9 +96,10 @@ if (loginSuccess) {
 }
 ```
 
-> [!NOTE]
-> - `messageParent` 函数是*唯一*可以在对话框中调用的两个 Office API 之一。另一个是 `Office.context.requirements.isSetSupported`。有关详细信息，请参阅[指定 Office 主机和 API 要求](specify-office-hosts-and-api-requirements.md)。
+> [!IMPORTANT]
 > - `messageParent` 函数只能在与主机页位于同一域（包括协议和端口）的页面上调用。
+> - `messageParent`函数*只*是可在对话框中调用的两个 Office JS api 之一。 
+> - 可以在对话框中调用的其他 JS API 为 `Office.context.requirements.isSetSupported` 。 有关详细信息，请参阅[指定 Office 主机和 API 要求](specify-office-hosts-and-api-requirements.md)。 但是，在该对话框中，在 Outlook 2016 1-time purchase （即 MSI 版本）中不支持此 API。
 
 在下一个示例中，`googleProfile` 是用户 Google 配置文件的字符串化版本。
 
