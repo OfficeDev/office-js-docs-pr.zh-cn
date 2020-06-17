@@ -1,0 +1,63 @@
+### YamlMime:Landing
+title: OneNote 加载项文档
+summary: 借助 OneNote 加载项，你可以使用熟悉的 Web 技术（如 HTML、CSS 和 JavaScript）来构建可在 OneNote 网页版中运行的解决方案。 了解如何构建、测试、调试和发布 OneNote 加载项。
+metadata:
+  title: OneNote 加载项文档
+  description: 用于了解 OneNote 加载项的资源。
+  ms.prod: onenote
+  ms.topic: landing-page
+  ms.date: 06/08/2020
+  localization_priority: Priority
+  ms.openlocfilehash: e7860e0e6b1378cce3db46434b1da5931754eec6
+  ms.sourcegitcommit: 19312a54f47a17988ffa86359218a504713f9f09
+  ms.translationtype: MT
+  ms.contentlocale: zh-CN
+  ms.lasthandoff: 06/10/2020
+  ms.locfileid: "44679425"
+landingContent:
+- title: 关于 OneNote 外接程序
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: 什么是 OneNote 外接程序？
+      url: onenote-add-ins-programming-overview.md
+  - linkListType: quickstart
+    links:
+    - text: 生成首个 OneNote 加载项
+      url: ../quickstarts/onenote-quickstart.md
+  - linkListType: how-to-guide
+    links:
+    - text: 使用 OneNote JavaScript API 与对象和笔记本内容进行交互
+      url: ../reference/overview/onenote-add-ins-javascript-reference.md
+    - text: 测试和调试 OneNote 加载项
+      url: ../testing/test-debug-office-add-ins.md
+    - text: 部署和发布 OneNote 加载项
+      url: ../publish/publish.md
+- title: 主要 Office 外接程序概念
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Office 加载项平台概述
+      url: ../overview/office-add-ins.md
+  - linkListType: concept
+    links:
+    - text: 构建 Office 加载项
+      url: ../overview/office-add-ins-fundamentals.md
+    - text: Office 加载项的核心概念
+      url: ../overview/core-concepts-office-add-ins.md
+    - text: 设计 Office 加载项
+      url: ../design/add-in-design.md
+    - text: 开发 Office 加载项
+      url: ../develop/develop-overview.md
+- title: 资源
+  linkLists:
+  - linkListType: reference
+    links:
+    - text: 提问
+      url: https://stackoverflow.com/questions/tagged/office-js
+    - text: 请求功能
+      url: https://officespdev.uservoice.com/
+    - text: 报告问题
+      url: https://github.com/officedev/office-js/issues
+    - text: Office 加载项其他资源
+      url: ../resources/resources-links-help.md

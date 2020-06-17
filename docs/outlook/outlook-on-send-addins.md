@@ -3,52 +3,52 @@ title: Outlook 加载项的 Onsend 功能
 description: 提供了一种处理项目或阻止用户进行特定操作的方法，并允许加载项在发送时设置某些属性。
 ms.date: 05/27/2020
 localization_priority: Normal
-ms.openlocfilehash: 7dc35d71f78ec282ecedda9eba0ab4fc52811fee
-ms.sourcegitcommit: 77617f6ad06e07f5ff8078b26301748f73e2ee01
+ms.openlocfilehash: 148c5751e82184dbc5cb112bac097b862cc1d1f4
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2020
-ms.locfileid: "44413187"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44605337"
 ---
-# <a name="on-send-feature-for-outlook-add-ins"></a><span data-ttu-id="ee8c4-103">Outlook 加载项的 Onsend 功能</span><span class="sxs-lookup"><span data-stu-id="ee8c4-103">On-send feature for Outlook add-ins</span></span>
+# <a name="on-send-feature-for-outlook-add-ins"></a><span data-ttu-id="853a4-103">Outlook 加载项的 Onsend 功能</span><span class="sxs-lookup"><span data-stu-id="853a4-103">On-send feature for Outlook add-ins</span></span>
 
-<span data-ttu-id="ee8c4-p101">Outlook 加载项的 Onsend 功能提供了一种处理邮件或会议项目，或阻止用户进行特定操作的方法，并允许加载项在发送时设置某些属性。例如，可以使用 Onsend 功能执行以下操作：</span><span class="sxs-lookup"><span data-stu-id="ee8c4-p101">The on-send feature for Outlook add-ins provides a way to handle a message or meeting item, or block users from certain actions, and allows an add-in to set certain properties on send. For example, you can use the on-send feature to:</span></span>
+<span data-ttu-id="853a4-p101">Outlook 加载项的 Onsend 功能提供了一种处理邮件或会议项目，或阻止用户进行特定操作的方法，并允许加载项在发送时设置某些属性。例如，可以使用 Onsend 功能执行以下操作：</span><span class="sxs-lookup"><span data-stu-id="853a4-p101">The on-send feature for Outlook add-ins provides a way to handle a message or meeting item, or block users from certain actions, and allows an add-in to set certain properties on send. For example, you can use the on-send feature to:</span></span>
 
-- <span data-ttu-id="ee8c4-106">防止用户发送敏感信息或将主题行留空。</span><span class="sxs-lookup"><span data-stu-id="ee8c4-106">Prevent a user from sending sensitive information or leaving the subject line blank.</span></span>  
-- <span data-ttu-id="ee8c4-107">将特定的收件人添加到邮件中的“抄送”行中，或添加到会议中的“可选收件人”行中。</span><span class="sxs-lookup"><span data-stu-id="ee8c4-107">Add a specific recipient to the CC line in messages, or to the optional recipients line in meetings.</span></span>
+- <span data-ttu-id="853a4-106">防止用户发送敏感信息或将主题行留空。</span><span class="sxs-lookup"><span data-stu-id="853a4-106">Prevent a user from sending sensitive information or leaving the subject line blank.</span></span>  
+- <span data-ttu-id="853a4-107">将特定的收件人添加到邮件中的“抄送”行中，或添加到会议中的“可选收件人”行中。</span><span class="sxs-lookup"><span data-stu-id="853a4-107">Add a specific recipient to the CC line in messages, or to the optional recipients line in meetings.</span></span>
 
-<span data-ttu-id="ee8c4-108">on-send 功能是由事件类型 `ItemSend` 触发的，无 UI。</span><span class="sxs-lookup"><span data-stu-id="ee8c4-108">The on-send feature is triggered by the `ItemSend` event type and is UI-less.</span></span>
+<span data-ttu-id="853a4-108">on-send 功能是由事件类型 `ItemSend` 触发的，无 UI。</span><span class="sxs-lookup"><span data-stu-id="853a4-108">The on-send feature is triggered by the `ItemSend` event type and is UI-less.</span></span>
 
-<span data-ttu-id="ee8c4-109">有关 Onsend 功能的限制信息，请参阅本文稍后部分中介绍的[限制](#limitations)。</span><span class="sxs-lookup"><span data-stu-id="ee8c4-109">For information about limitations related to the on-send feature, see [Limitations](#limitations) later in this article.</span></span>
+<span data-ttu-id="853a4-109">有关 Onsend 功能的限制信息，请参阅本文稍后部分中介绍的[限制](#limitations)。</span><span class="sxs-lookup"><span data-stu-id="853a4-109">For information about limitations related to the on-send feature, see [Limitations](#limitations) later in this article.</span></span>
 
-## <a name="supported-clients-and-platforms"></a><span data-ttu-id="ee8c4-110">支持的客户端和平台</span><span class="sxs-lookup"><span data-stu-id="ee8c4-110">Supported clients and platforms</span></span>
+## <a name="supported-clients-and-platforms"></a><span data-ttu-id="853a4-110">支持的客户端和平台</span><span class="sxs-lookup"><span data-stu-id="853a4-110">Supported clients and platforms</span></span>
 
-<span data-ttu-id="ee8c4-111">下表显示了用于 "发送" 功能的受支持的客户端/服务器组合。</span><span class="sxs-lookup"><span data-stu-id="ee8c4-111">The following table shows supported client-server combinations for the on-send feature.</span></span> <span data-ttu-id="ee8c4-112">不支持排除的组合。</span><span class="sxs-lookup"><span data-stu-id="ee8c4-112">Excluded combinations are not supported.</span></span>
+<span data-ttu-id="853a4-111">下表显示了用于 "发送" 功能的受支持的客户端/服务器组合。</span><span class="sxs-lookup"><span data-stu-id="853a4-111">The following table shows supported client-server combinations for the on-send feature.</span></span> <span data-ttu-id="853a4-112">不支持排除的组合。</span><span class="sxs-lookup"><span data-stu-id="853a4-112">Excluded combinations are not supported.</span></span>
 
-| <span data-ttu-id="ee8c4-113">Client</span><span class="sxs-lookup"><span data-stu-id="ee8c4-113">Client</span></span> | <span data-ttu-id="ee8c4-114">Exchange Online</span><span class="sxs-lookup"><span data-stu-id="ee8c4-114">Exchange Online</span></span> | <span data-ttu-id="ee8c4-115">Exchange 2016 本地</span><span class="sxs-lookup"><span data-stu-id="ee8c4-115">Exchange 2016 on-premises</span></span><br><span data-ttu-id="ee8c4-116">（累积更新6或更高版本）</span><span class="sxs-lookup"><span data-stu-id="ee8c4-116">(Cumulative Update 6 or later)</span></span> | <span data-ttu-id="ee8c4-117">Exchange 2019 本地</span><span class="sxs-lookup"><span data-stu-id="ee8c4-117">Exchange 2019 on-premises</span></span><br><span data-ttu-id="ee8c4-118">（累积更新1或更高版本）</span><span class="sxs-lookup"><span data-stu-id="ee8c4-118">(Cumulative Update 1 or later)</span></span> |
+| <span data-ttu-id="853a4-113">Client</span><span class="sxs-lookup"><span data-stu-id="853a4-113">Client</span></span> | <span data-ttu-id="853a4-114">Exchange Online</span><span class="sxs-lookup"><span data-stu-id="853a4-114">Exchange Online</span></span> | <span data-ttu-id="853a4-115">Exchange 2016 本地</span><span class="sxs-lookup"><span data-stu-id="853a4-115">Exchange 2016 on-premises</span></span><br><span data-ttu-id="853a4-116">（累积更新6或更高版本）</span><span class="sxs-lookup"><span data-stu-id="853a4-116">(Cumulative Update 6 or later)</span></span> | <span data-ttu-id="853a4-117">Exchange 2019 本地</span><span class="sxs-lookup"><span data-stu-id="853a4-117">Exchange 2019 on-premises</span></span><br><span data-ttu-id="853a4-118">（累积更新1或更高版本）</span><span class="sxs-lookup"><span data-stu-id="853a4-118">(Cumulative Update 1 or later)</span></span> |
 |---|:---:|:---:|:---:|
-|<span data-ttu-id="ee8c4-119">Windows：</span><span class="sxs-lookup"><span data-stu-id="ee8c4-119">Windows:</span></span><br><span data-ttu-id="ee8c4-120">版本1910（内部版本12130.20272）或更高版本</span><span class="sxs-lookup"><span data-stu-id="ee8c4-120">version 1910 (build 12130.20272) or later</span></span>|<span data-ttu-id="ee8c4-121">是</span><span class="sxs-lookup"><span data-stu-id="ee8c4-121">Yes</span></span>|<span data-ttu-id="ee8c4-122">是</span><span class="sxs-lookup"><span data-stu-id="ee8c4-122">Yes</span></span>|<span data-ttu-id="ee8c4-123">是</span><span class="sxs-lookup"><span data-stu-id="ee8c4-123">Yes</span></span>|
-|<span data-ttu-id="ee8c4-124">Mac</span><span class="sxs-lookup"><span data-stu-id="ee8c4-124">Mac:</span></span><br><span data-ttu-id="ee8c4-125">生成16.30 或更高版本</span><span class="sxs-lookup"><span data-stu-id="ee8c4-125">build 16.30 or later</span></span>|<span data-ttu-id="ee8c4-126">是</span><span class="sxs-lookup"><span data-stu-id="ee8c4-126">Yes</span></span>|<span data-ttu-id="ee8c4-127">否</span><span class="sxs-lookup"><span data-stu-id="ee8c4-127">No</span></span>|<span data-ttu-id="ee8c4-128">否</span><span class="sxs-lookup"><span data-stu-id="ee8c4-128">No</span></span>|
-|<span data-ttu-id="ee8c4-129">Web 浏览器：</span><span class="sxs-lookup"><span data-stu-id="ee8c4-129">Web browser:</span></span><br><span data-ttu-id="ee8c4-130">新式 Outlook UI</span><span class="sxs-lookup"><span data-stu-id="ee8c4-130">modern Outlook UI</span></span>|<span data-ttu-id="ee8c4-131">是</span><span class="sxs-lookup"><span data-stu-id="ee8c4-131">Yes</span></span>|<span data-ttu-id="ee8c4-132">不适用</span><span class="sxs-lookup"><span data-stu-id="ee8c4-132">Not applicable</span></span>|<span data-ttu-id="ee8c4-133">不适用</span><span class="sxs-lookup"><span data-stu-id="ee8c4-133">Not applicable</span></span>|
-|<span data-ttu-id="ee8c4-134">Web 浏览器：</span><span class="sxs-lookup"><span data-stu-id="ee8c4-134">Web browser:</span></span><br><span data-ttu-id="ee8c4-135">经典 Outlook UI</span><span class="sxs-lookup"><span data-stu-id="ee8c4-135">classic Outlook UI</span></span>|<span data-ttu-id="ee8c4-136">不适用</span><span class="sxs-lookup"><span data-stu-id="ee8c4-136">Not applicable</span></span>|<span data-ttu-id="ee8c4-137">是</span><span class="sxs-lookup"><span data-stu-id="ee8c4-137">Yes</span></span>|<span data-ttu-id="ee8c4-138">是</span><span class="sxs-lookup"><span data-stu-id="ee8c4-138">Yes</span></span>|
+|<span data-ttu-id="853a4-119">Windows：</span><span class="sxs-lookup"><span data-stu-id="853a4-119">Windows:</span></span><br><span data-ttu-id="853a4-120">版本1910（内部版本12130.20272）或更高版本</span><span class="sxs-lookup"><span data-stu-id="853a4-120">version 1910 (build 12130.20272) or later</span></span>|<span data-ttu-id="853a4-121">是</span><span class="sxs-lookup"><span data-stu-id="853a4-121">Yes</span></span>|<span data-ttu-id="853a4-122">是</span><span class="sxs-lookup"><span data-stu-id="853a4-122">Yes</span></span>|<span data-ttu-id="853a4-123">是</span><span class="sxs-lookup"><span data-stu-id="853a4-123">Yes</span></span>|
+|<span data-ttu-id="853a4-124">Mac</span><span class="sxs-lookup"><span data-stu-id="853a4-124">Mac:</span></span><br><span data-ttu-id="853a4-125">生成16.30 或更高版本</span><span class="sxs-lookup"><span data-stu-id="853a4-125">build 16.30 or later</span></span>|<span data-ttu-id="853a4-126">是</span><span class="sxs-lookup"><span data-stu-id="853a4-126">Yes</span></span>|<span data-ttu-id="853a4-127">否</span><span class="sxs-lookup"><span data-stu-id="853a4-127">No</span></span>|<span data-ttu-id="853a4-128">否</span><span class="sxs-lookup"><span data-stu-id="853a4-128">No</span></span>|
+|<span data-ttu-id="853a4-129">Web 浏览器：</span><span class="sxs-lookup"><span data-stu-id="853a4-129">Web browser:</span></span><br><span data-ttu-id="853a4-130">新式 Outlook UI</span><span class="sxs-lookup"><span data-stu-id="853a4-130">modern Outlook UI</span></span>|<span data-ttu-id="853a4-131">是</span><span class="sxs-lookup"><span data-stu-id="853a4-131">Yes</span></span>|<span data-ttu-id="853a4-132">不适用</span><span class="sxs-lookup"><span data-stu-id="853a4-132">Not applicable</span></span>|<span data-ttu-id="853a4-133">不适用</span><span class="sxs-lookup"><span data-stu-id="853a4-133">Not applicable</span></span>|
+|<span data-ttu-id="853a4-134">Web 浏览器：</span><span class="sxs-lookup"><span data-stu-id="853a4-134">Web browser:</span></span><br><span data-ttu-id="853a4-135">经典 Outlook UI</span><span class="sxs-lookup"><span data-stu-id="853a4-135">classic Outlook UI</span></span>|<span data-ttu-id="853a4-136">不适用</span><span class="sxs-lookup"><span data-stu-id="853a4-136">Not applicable</span></span>|<span data-ttu-id="853a4-137">是</span><span class="sxs-lookup"><span data-stu-id="853a4-137">Yes</span></span>|<span data-ttu-id="853a4-138">是</span><span class="sxs-lookup"><span data-stu-id="853a4-138">Yes</span></span>|
 
 > [!NOTE]
-> <span data-ttu-id="ee8c4-139">按发送功能在要求集1.8 中发布（有关详细信息[，请参阅当前服务器和客户端支持](../reference/requirement-sets/outlook-api-requirement-sets.md#requirement-sets-supported-by-exchange-servers-and-outlook-clients)）。</span><span class="sxs-lookup"><span data-stu-id="ee8c4-139">The on-send feature was released in requirement set 1.8 (see [current server and client support](../reference/requirement-sets/outlook-api-requirement-sets.md#requirement-sets-supported-by-exchange-servers-and-outlook-clients) for details).</span></span>
+> <span data-ttu-id="853a4-139">按发送功能在要求集1.8 中发布（有关详细信息[，请参阅当前服务器和客户端支持](../reference/requirement-sets/outlook-api-requirement-sets.md#requirement-sets-supported-by-exchange-servers-and-outlook-clients)）。</span><span class="sxs-lookup"><span data-stu-id="853a4-139">The on-send feature was released in requirement set 1.8 (see [current server and client support](../reference/requirement-sets/outlook-api-requirement-sets.md#requirement-sets-supported-by-exchange-servers-and-outlook-clients) for details).</span></span>
 
 > [!IMPORTANT]
-> <span data-ttu-id="ee8c4-140">[AppSource](https://appsource.microsoft.com)中不允许使用 "发送时" 功能的外接程序。</span><span class="sxs-lookup"><span data-stu-id="ee8c4-140">Add-ins that use the on-send feature aren't allowed in [AppSource](https://appsource.microsoft.com).</span></span>
+> <span data-ttu-id="853a4-140">[AppSource](https://appsource.microsoft.com)中不允许使用 "发送时" 功能的外接程序。</span><span class="sxs-lookup"><span data-stu-id="853a4-140">Add-ins that use the on-send feature aren't allowed in [AppSource](https://appsource.microsoft.com).</span></span>
 
-## <a name="how-does-the-on-send-feature-work"></a><span data-ttu-id="ee8c4-141">Onsend 功能的工作原理</span><span class="sxs-lookup"><span data-stu-id="ee8c4-141">How does the on-send feature work?</span></span>
+## <a name="how-does-the-on-send-feature-work"></a><span data-ttu-id="853a4-141">Onsend 功能的工作原理</span><span class="sxs-lookup"><span data-stu-id="853a4-141">How does the on-send feature work?</span></span>
 
-<span data-ttu-id="ee8c4-142">可使用 Onsend 功能生成集成了 `ItemSend` 同步事件的 Outlook 加载项。</span><span class="sxs-lookup"><span data-stu-id="ee8c4-142">You can use the on-send feature to build an Outlook add-in that integrates the `ItemSend` synchronous event.</span></span> <span data-ttu-id="ee8c4-143">此事件检测到用户正在按“**发送**”按钮（或现有会议的“**发送更新**”按钮），并且如果验证失败，则可用于阻止该项目发送。</span><span class="sxs-lookup"><span data-stu-id="ee8c4-143">This event detects that the user is pressing the **Send** button (or the **Send Update** button for existing meetings) and can be used to block the item from sending if the validation fails.</span></span> <span data-ttu-id="ee8c4-144">例如，当用户触发邮件发送事件时，使用 Onsend 功能的 Outlook 加载项可以执行以下操作：</span><span class="sxs-lookup"><span data-stu-id="ee8c4-144">For example, when a user triggers a message send event, an Outlook add-in that uses the on-send feature can:</span></span>
+<span data-ttu-id="853a4-142">可使用 Onsend 功能生成集成了 `ItemSend` 同步事件的 Outlook 加载项。</span><span class="sxs-lookup"><span data-stu-id="853a4-142">You can use the on-send feature to build an Outlook add-in that integrates the `ItemSend` synchronous event.</span></span> <span data-ttu-id="853a4-143">此事件检测到用户正在按“**发送**”按钮（或现有会议的“**发送更新**”按钮），并且如果验证失败，则可用于阻止该项目发送。</span><span class="sxs-lookup"><span data-stu-id="853a4-143">This event detects that the user is pressing the **Send** button (or the **Send Update** button for existing meetings) and can be used to block the item from sending if the validation fails.</span></span> <span data-ttu-id="853a4-144">例如，当用户触发邮件发送事件时，使用 Onsend 功能的 Outlook 加载项可以执行以下操作：</span><span class="sxs-lookup"><span data-stu-id="853a4-144">For example, when a user triggers a message send event, an Outlook add-in that uses the on-send feature can:</span></span>
 
-- <span data-ttu-id="ee8c4-145">读取和验证电子邮件内容</span><span class="sxs-lookup"><span data-stu-id="ee8c4-145">Read and validate the email message contents</span></span>
-- <span data-ttu-id="ee8c4-146">验证邮件是否包含主题行</span><span class="sxs-lookup"><span data-stu-id="ee8c4-146">Verify that the message includes a subject line</span></span>
-- <span data-ttu-id="ee8c4-147">设置预先确定的收件人</span><span class="sxs-lookup"><span data-stu-id="ee8c4-147">Set a predetermined recipient</span></span>
+- <span data-ttu-id="853a4-145">读取和验证电子邮件内容</span><span class="sxs-lookup"><span data-stu-id="853a4-145">Read and validate the email message contents</span></span>
+- <span data-ttu-id="853a4-146">验证邮件是否包含主题行</span><span class="sxs-lookup"><span data-stu-id="853a4-146">Verify that the message includes a subject line</span></span>
+- <span data-ttu-id="853a4-147">设置预先确定的收件人</span><span class="sxs-lookup"><span data-stu-id="853a4-147">Set a predetermined recipient</span></span>
 
-<span data-ttu-id="ee8c4-148">当触发 send 事件时，将在 Outlook 中对客户端进行验证，并且外接程序在超时之前最长可达5分钟。如果验证失败，将阻止发送项目，并在信息栏中显示一条错误消息，提示用户执行操作。</span><span class="sxs-lookup"><span data-stu-id="ee8c4-148">Validation is done on the client side in Outlook when the send event is triggered, and the add-in has up to 5 minutes before it times out. If validation fails, the sending of the item is blocked, and an error message is displayed in an information bar that prompts the user to take action.</span></span>
+<span data-ttu-id="853a4-148">当触发 send 事件时，将在 Outlook 中对客户端进行验证，并且外接程序在超时之前最长可达5分钟。如果验证失败，将阻止发送项目，并在信息栏中显示一条错误消息，提示用户执行操作。</span><span class="sxs-lookup"><span data-stu-id="853a4-148">Validation is done on the client side in Outlook when the send event is triggered, and the add-in has up to 5 minutes before it times out. If validation fails, the sending of the item is blocked, and an error message is displayed in an information bar that prompts the user to take action.</span></span>
 
-<span data-ttu-id="ee8c4-149">以下屏幕截图显示了通知发件人添加主题的信息栏。</span><span class="sxs-lookup"><span data-stu-id="ee8c4-149">The following screenshot shows an information bar that notifies the sender to add a subject.</span></span>
+<span data-ttu-id="853a4-149">以下屏幕截图显示了通知发件人添加主题的信息栏。</span><span class="sxs-lookup"><span data-stu-id="853a4-149">The following screenshot shows an information bar that notifies the sender to add a subject.</span></span>
 
 <br/>
 
@@ -58,146 +58,56 @@ ms.locfileid: "44413187"
 
 <br/>
 
-<span data-ttu-id="ee8c4-151">以下屏幕截图显示了一个信息栏，通知发件人已找到禁止使用的词语。</span><span class="sxs-lookup"><span data-stu-id="ee8c4-151">The following screenshot shows an information bar that notifies the sender that blocked words were found.</span></span>
+<span data-ttu-id="853a4-151">以下屏幕截图显示了一个信息栏，通知发件人已找到禁止使用的词语。</span><span class="sxs-lookup"><span data-stu-id="853a4-151">The following screenshot shows an information bar that notifies the sender that blocked words were found.</span></span>
 
 <br/>
 
 ![屏幕截图显示一条错误消息，告诉用户已找到禁止使用的词语](../images/block-on-send-body.png)
 
-## <a name="limitations"></a><span data-ttu-id="ee8c4-153">限制</span><span class="sxs-lookup"><span data-stu-id="ee8c4-153">Limitations</span></span>
+## <a name="limitations"></a><span data-ttu-id="853a4-153">限制</span><span class="sxs-lookup"><span data-stu-id="853a4-153">Limitations</span></span>
 
-<span data-ttu-id="ee8c4-154">Onsend 功能目前具有以下限制。</span><span class="sxs-lookup"><span data-stu-id="ee8c4-154">The on-send feature currently has the following limitations.</span></span>
+<span data-ttu-id="853a4-154">Onsend 功能目前具有以下限制。</span><span class="sxs-lookup"><span data-stu-id="853a4-154">The on-send feature currently has the following limitations.</span></span>
 
-- <span data-ttu-id="ee8c4-155">**AppSource** &ndash; 无法在 [AppSource](https://appsource.microsoft.com) 中发布使用 Onsend 功能的 Outlook 加载项，因为它们将无法通过 AppSource 验证。</span><span class="sxs-lookup"><span data-stu-id="ee8c4-155">**AppSource** &ndash; You can't publish Outlook add-ins that use the on-send feature to [AppSource](https://appsource.microsoft.com) as they will fail AppSource validation.</span></span> <span data-ttu-id="ee8c4-156">使用 Onsend 功能的加载项应由管理员部署。</span><span class="sxs-lookup"><span data-stu-id="ee8c4-156">Add-ins that use the on-send feature should be deployed by administrators.</span></span>
-- <span data-ttu-id="ee8c4-157">**清单**&ndash; - 每个加载项仅支持一个 `ItemSend` 事件。</span><span class="sxs-lookup"><span data-stu-id="ee8c4-157">**Manifest** &ndash; Only one `ItemSend` event is supported per add-in.</span></span> <span data-ttu-id="ee8c4-158">如果清单中有两个或多个 `ItemSend` 事件，则该清单将无法通过验证。</span><span class="sxs-lookup"><span data-stu-id="ee8c4-158">If you have two or more `ItemSend` events in a manifest, the manifest will fail validation.</span></span>
-- <span data-ttu-id="ee8c4-p106">**性能** &ndash; 多次往返到托管加载项的 Web 服务器可能会影响加载项的性能。创建需要多个基于邮件或会议操作的加载项时，请考虑性能影响。</span><span class="sxs-lookup"><span data-stu-id="ee8c4-p106">**Performance** &ndash; Multiple roundtrips to the web server that hosts the add-in can affect the performance of the add-in. Consider the effects on performance when you create add-ins that require multiple message- or meeting-based operations.</span></span>
-- <span data-ttu-id="ee8c4-161">**稍后发送**（仅适用于 Mac）&ndash; 如果有 Onsend 加载项，**稍后发送**功能将不可用。</span><span class="sxs-lookup"><span data-stu-id="ee8c4-161">**Send Later** (Mac only) &ndash; If there are on-send add-ins, the **Send Later** feature will be unavailable.</span></span>
+- <span data-ttu-id="853a4-155">**AppSource** &ndash; 无法在 [AppSource](https://appsource.microsoft.com) 中发布使用 Onsend 功能的 Outlook 加载项，因为它们将无法通过 AppSource 验证。</span><span class="sxs-lookup"><span data-stu-id="853a4-155">**AppSource** &ndash; You can't publish Outlook add-ins that use the on-send feature to [AppSource](https://appsource.microsoft.com) as they will fail AppSource validation.</span></span> <span data-ttu-id="853a4-156">使用 Onsend 功能的加载项应由管理员部署。</span><span class="sxs-lookup"><span data-stu-id="853a4-156">Add-ins that use the on-send feature should be deployed by administrators.</span></span>
+- <span data-ttu-id="853a4-157">**清单**&ndash; - 每个加载项仅支持一个 `ItemSend` 事件。</span><span class="sxs-lookup"><span data-stu-id="853a4-157">**Manifest** &ndash; Only one `ItemSend` event is supported per add-in.</span></span> <span data-ttu-id="853a4-158">如果清单中有两个或多个 `ItemSend` 事件，则该清单将无法通过验证。</span><span class="sxs-lookup"><span data-stu-id="853a4-158">If you have two or more `ItemSend` events in a manifest, the manifest will fail validation.</span></span>
+- <span data-ttu-id="853a4-p106">**性能** &ndash; 多次往返到托管加载项的 Web 服务器可能会影响加载项的性能。创建需要多个基于邮件或会议操作的加载项时，请考虑性能影响。</span><span class="sxs-lookup"><span data-stu-id="853a4-p106">**Performance** &ndash; Multiple roundtrips to the web server that hosts the add-in can affect the performance of the add-in. Consider the effects on performance when you create add-ins that require multiple message- or meeting-based operations.</span></span>
+- <span data-ttu-id="853a4-161">**稍后发送**（仅适用于 Mac）&ndash; 如果有 Onsend 加载项，**稍后发送**功能将不可用。</span><span class="sxs-lookup"><span data-stu-id="853a4-161">**Send Later** (Mac only) &ndash; If there are on-send add-ins, the **Send Later** feature will be unavailable.</span></span>
 
-### <a name="mailbox-typemode-limitations"></a><span data-ttu-id="ee8c4-162">邮箱类型/模式限制</span><span class="sxs-lookup"><span data-stu-id="ee8c4-162">Mailbox type/mode limitations</span></span>
+### <a name="mailbox-typemode-limitations"></a><span data-ttu-id="853a4-162">邮箱类型/模式限制</span><span class="sxs-lookup"><span data-stu-id="853a4-162">Mailbox type/mode limitations</span></span>
 
-<span data-ttu-id="ee8c4-163">只有 Outlook 网页版、Windows 版和 Mac 版中的用户邮箱支持 Onsend 功能。</span><span class="sxs-lookup"><span data-stu-id="ee8c4-163">On-send functionality is only supported for user mailboxes in Outlook on the web, Windows, and Mac.</span></span> <span data-ttu-id="ee8c4-164">当前不可对以下邮箱类型和模式使用此功能。</span><span class="sxs-lookup"><span data-stu-id="ee8c4-164">The functionality is not currently supported for the following mailbox types and modes.</span></span>
+<span data-ttu-id="853a4-163">只有 Outlook 网页版、Windows 版和 Mac 版中的用户邮箱支持 Onsend 功能。</span><span class="sxs-lookup"><span data-stu-id="853a4-163">On-send functionality is only supported for user mailboxes in Outlook on the web, Windows, and Mac.</span></span> <span data-ttu-id="853a4-164">当前不可对以下邮箱类型和模式使用此功能。</span><span class="sxs-lookup"><span data-stu-id="853a4-164">The functionality is not currently supported for the following mailbox types and modes.</span></span>
 
-- <span data-ttu-id="ee8c4-165">共享邮箱\*</span><span class="sxs-lookup"><span data-stu-id="ee8c4-165">Shared mailboxes\*</span></span>
-- <span data-ttu-id="ee8c4-166">组邮箱</span><span class="sxs-lookup"><span data-stu-id="ee8c4-166">Group mailboxes</span></span>
-- <span data-ttu-id="ee8c4-167">脱机模式</span><span class="sxs-lookup"><span data-stu-id="ee8c4-167">Offline mode</span></span>
+- <span data-ttu-id="853a4-165">共享邮箱\*</span><span class="sxs-lookup"><span data-stu-id="853a4-165">Shared mailboxes\*</span></span>
+- <span data-ttu-id="853a4-166">组邮箱</span><span class="sxs-lookup"><span data-stu-id="853a4-166">Group mailboxes</span></span>
+- <span data-ttu-id="853a4-167">脱机模式</span><span class="sxs-lookup"><span data-stu-id="853a4-167">Offline mode</span></span>
 
-<span data-ttu-id="ee8c4-168">如果对这些邮箱场景启用了 Onsend 功能，则 Outlook 将不允许进行发送。</span><span class="sxs-lookup"><span data-stu-id="ee8c4-168">Outlook won't allow sending if the on-send feature is enabled for these mailbox scenarios.</span></span> <span data-ttu-id="ee8c4-169">但是，如果用户答复组邮箱中的电子邮件，则 Onsend 加载项将不运行且系统将发送邮件。</span><span class="sxs-lookup"><span data-stu-id="ee8c4-169">However, if a user responds to an email in a group mailbox, the on-send add-in won't run and the message will be sent.</span></span>
+<span data-ttu-id="853a4-168">如果对这些邮箱场景启用了 Onsend 功能，则 Outlook 将不允许进行发送。</span><span class="sxs-lookup"><span data-stu-id="853a4-168">Outlook won't allow sending if the on-send feature is enabled for these mailbox scenarios.</span></span> <span data-ttu-id="853a4-169">但是，如果用户答复组邮箱中的电子邮件，则 Onsend 加载项将不运行且系统将发送邮件。</span><span class="sxs-lookup"><span data-stu-id="853a4-169">However, if a user responds to an email in a group mailbox, the on-send add-in won't run and the message will be sent.</span></span>
 
 > [!IMPORTANT]
-> <span data-ttu-id="ee8c4-170">\*如果外接程序还[实现对代理访问方案的支持](delegate-access.md)，则发送时功能应适用于共享邮箱或文件夹。</span><span class="sxs-lookup"><span data-stu-id="ee8c4-170">\* On-send functionality should work on shared mailboxes or folders if the add-in also [implements support for delegate access scenarios](delegate-access.md).</span></span>
+> <span data-ttu-id="853a4-170">\*如果外接程序还[实现对代理访问方案的支持](delegate-access.md)，则发送时功能应适用于共享邮箱或文件夹。</span><span class="sxs-lookup"><span data-stu-id="853a4-170">\* On-send functionality should work on shared mailboxes or folders if the add-in also [implements support for delegate access scenarios](delegate-access.md).</span></span>
 
-## <a name="multiple-on-send-add-ins"></a><span data-ttu-id="ee8c4-171">多个 Onsend 加载项</span><span class="sxs-lookup"><span data-stu-id="ee8c4-171">Multiple on-send add-ins</span></span>
+## <a name="multiple-on-send-add-ins"></a><span data-ttu-id="853a4-171">多个 Onsend 加载项</span><span class="sxs-lookup"><span data-stu-id="853a4-171">Multiple on-send add-ins</span></span>
 
-<span data-ttu-id="ee8c4-172">如果安装了多个 Onsend 加载项，则加载项将按照从 API `getAppManifestCall` 或 `getExtensibilityContext` 接收到的顺序运行。</span><span class="sxs-lookup"><span data-stu-id="ee8c4-172">If multiple on-send add-ins are installed, the add-ins will run in the order in which they are received from APIs `getAppManifestCall` or `getExtensibilityContext`.</span></span> <span data-ttu-id="ee8c4-173">如果第一个外接程序允许发送，则第二个外接程序可以更改阻止第一个外接程序进行发送的某些设置。</span><span class="sxs-lookup"><span data-stu-id="ee8c4-173">If the first add-in allows sending, the second add-in can change something that would make the first one block sending.</span></span> <span data-ttu-id="ee8c4-174">但是，如果所有已安装的外接程序均允许发送，则第一个外接程序将不会重新运行。</span><span class="sxs-lookup"><span data-stu-id="ee8c4-174">However, the first add-in won't run again if all installed add-ins have allowed sending.</span></span>
+<span data-ttu-id="853a4-172">如果安装了多个 Onsend 加载项，则加载项将按照从 API `getAppManifestCall` 或 `getExtensibilityContext` 接收到的顺序运行。</span><span class="sxs-lookup"><span data-stu-id="853a4-172">If multiple on-send add-ins are installed, the add-ins will run in the order in which they are received from APIs `getAppManifestCall` or `getExtensibilityContext`.</span></span> <span data-ttu-id="853a4-173">如果第一个外接程序允许发送，则第二个外接程序可以更改阻止第一个外接程序进行发送的某些设置。</span><span class="sxs-lookup"><span data-stu-id="853a4-173">If the first add-in allows sending, the second add-in can change something that would make the first one block sending.</span></span> <span data-ttu-id="853a4-174">但是，如果所有已安装的外接程序均允许发送，则第一个外接程序将不会重新运行。</span><span class="sxs-lookup"><span data-stu-id="853a4-174">However, the first add-in won't run again if all installed add-ins have allowed sending.</span></span>
 
-<span data-ttu-id="ee8c4-175">例如，Add-in1 和 Add-in2 均使用 Onsend 功能。</span><span class="sxs-lookup"><span data-stu-id="ee8c4-175">For example, Add-in1 and Add-in2 both use the on-send feature.</span></span> <span data-ttu-id="ee8c4-176">首先安装的是 Add-in1，接着安装的是 Add-in2。</span><span class="sxs-lookup"><span data-stu-id="ee8c4-176">Add-in1 is installed first, and Add-in2 is installed second.</span></span> <span data-ttu-id="ee8c4-177">Add-in1 验证邮件中出现的 Fabrikam 一词作为外接程序允许发送的条件。</span><span class="sxs-lookup"><span data-stu-id="ee8c4-177">Add-in1 verifies that the word Fabrikam appears in the message as a condition for the add-in to allow send.</span></span>  <span data-ttu-id="ee8c4-178">但是，Add-in2 可以删除出现的所有 Fabrikam 词语。</span><span class="sxs-lookup"><span data-stu-id="ee8c4-178">However, Add-in2 removes any occurrences of the word Fabrikam.</span></span> <span data-ttu-id="ee8c4-179">邮件将与已删除 Fabrikam 的所有实例一同发送（归因于 Add-in1 和 Add-in2 的安装顺序）。</span><span class="sxs-lookup"><span data-stu-id="ee8c4-179">The message will send with all instances of Fabrikam removed (due to the order of installation of Add-in1 and Add-in2).</span></span>
+<span data-ttu-id="853a4-175">例如，Add-in1 和 Add-in2 均使用 Onsend 功能。</span><span class="sxs-lookup"><span data-stu-id="853a4-175">For example, Add-in1 and Add-in2 both use the on-send feature.</span></span> <span data-ttu-id="853a4-176">首先安装的是 Add-in1，接着安装的是 Add-in2。</span><span class="sxs-lookup"><span data-stu-id="853a4-176">Add-in1 is installed first, and Add-in2 is installed second.</span></span> <span data-ttu-id="853a4-177">Add-in1 验证邮件中出现的 Fabrikam 一词作为外接程序允许发送的条件。</span><span class="sxs-lookup"><span data-stu-id="853a4-177">Add-in1 verifies that the word Fabrikam appears in the message as a condition for the add-in to allow send.</span></span>  <span data-ttu-id="853a4-178">但是，Add-in2 可以删除出现的所有 Fabrikam 词语。</span><span class="sxs-lookup"><span data-stu-id="853a4-178">However, Add-in2 removes any occurrences of the word Fabrikam.</span></span> <span data-ttu-id="853a4-179">邮件将与已删除 Fabrikam 的所有实例一同发送（归因于 Add-in1 和 Add-in2 的安装顺序）。</span><span class="sxs-lookup"><span data-stu-id="853a4-179">The message will send with all instances of Fabrikam removed (due to the order of installation of Add-in1 and Add-in2).</span></span>
 
-## <a name="deploy-outlook-add-ins-that-use-on-send"></a><span data-ttu-id="ee8c4-180">部署使用 Onsend 的 Outlook 加载项</span><span class="sxs-lookup"><span data-stu-id="ee8c4-180">Deploy Outlook add-ins that use on-send</span></span>
+## <a name="deploy-outlook-add-ins-that-use-on-send"></a><span data-ttu-id="853a4-180">部署使用 Onsend 的 Outlook 加载项</span><span class="sxs-lookup"><span data-stu-id="853a4-180">Deploy Outlook add-ins that use on-send</span></span>
 
-<span data-ttu-id="ee8c4-181">建议管理员部署使用 Onsend 功能的 Outlook 加载项。</span><span class="sxs-lookup"><span data-stu-id="ee8c4-181">We recommend that administrators deploy Outlook add-ins that use the on-send feature.</span></span> <span data-ttu-id="ee8c4-182">管理员必须确保 Onsend 加载项满足以下条件：</span><span class="sxs-lookup"><span data-stu-id="ee8c4-182">Administrators have to ensure that the on-send add-in:</span></span>
+<span data-ttu-id="853a4-181">建议管理员部署使用 Onsend 功能的 Outlook 加载项。</span><span class="sxs-lookup"><span data-stu-id="853a4-181">We recommend that administrators deploy Outlook add-ins that use the on-send feature.</span></span> <span data-ttu-id="853a4-182">管理员必须确保 Onsend 加载项满足以下条件：</span><span class="sxs-lookup"><span data-stu-id="853a4-182">Administrators have to ensure that the on-send add-in:</span></span>
 
-- <span data-ttu-id="ee8c4-183">任何时候打开撰写项目时均可用（针对电子邮件：新建、回复或转发）。</span><span class="sxs-lookup"><span data-stu-id="ee8c4-183">Is always present any time a compose item is opened (for email: new, reply, or forward).</span></span>
-- <span data-ttu-id="ee8c4-184">用户无法关闭或禁用。</span><span class="sxs-lookup"><span data-stu-id="ee8c4-184">Can't be closed or disabled by the user.</span></span>
+- <span data-ttu-id="853a4-183">任何时候打开撰写项目时均可用（针对电子邮件：新建、回复或转发）。</span><span class="sxs-lookup"><span data-stu-id="853a4-183">Is always present any time a compose item is opened (for email: new, reply, or forward).</span></span>
+- <span data-ttu-id="853a4-184">用户无法关闭或禁用。</span><span class="sxs-lookup"><span data-stu-id="853a4-184">Can't be closed or disabled by the user.</span></span>
 
-## <a name="install-outlook-add-ins-that-use-on-send"></a><span data-ttu-id="ee8c4-185">安装使用 Onsend 的 Outlook 加载项</span><span class="sxs-lookup"><span data-stu-id="ee8c4-185">Install Outlook add-ins that use on-send</span></span>
+## <a name="install-outlook-add-ins-that-use-on-send"></a><span data-ttu-id="853a4-185">安装使用 Onsend 的 Outlook 加载项</span><span class="sxs-lookup"><span data-stu-id="853a4-185">Install Outlook add-ins that use on-send</span></span>
 
-<span data-ttu-id="ee8c4-186">Outlook 中的 Onsend 功能要求针对发送事件类型配置加载项。</span><span class="sxs-lookup"><span data-stu-id="ee8c4-186">The on-send feature in Outlook requires that add-ins are configured for the send event types.</span></span> <span data-ttu-id="ee8c4-187">选择要配置的平台。</span><span class="sxs-lookup"><span data-stu-id="ee8c4-187">Select the platform you'd like to configure.</span></span>
+<span data-ttu-id="853a4-186">Outlook 中的 Onsend 功能要求针对发送事件类型配置加载项。</span><span class="sxs-lookup"><span data-stu-id="853a4-186">The on-send feature in Outlook requires that add-ins are configured for the send event types.</span></span> <span data-ttu-id="853a4-187">选择要配置的平台。</span><span class="sxs-lookup"><span data-stu-id="853a4-187">Select the platform you'd like to configure.</span></span>
 
-### <a name="web-browser---classic-outlook"></a>[<span data-ttu-id="ee8c4-188">Web 浏览器 - 经典 Outlook</span><span class="sxs-lookup"><span data-stu-id="ee8c4-188">Web browser - classic Outlook</span></span>](#tab/classic)
+### <a name="web-browser---classic-outlook"></a>[<span data-ttu-id="853a4-188">Web 浏览器 - 经典 Outlook</span><span class="sxs-lookup"><span data-stu-id="853a4-188">Web browser - classic Outlook</span></span>](#tab/classic)
 
-<span data-ttu-id="ee8c4-189">对于分配了将 *OnSendAddinsEnabled* 标志设置为 **true** 的 Outlook 网页版邮箱策略的用户，系统会为其运行使用 Onsend 功能的 Outlook 网页版（经典）的加载项。</span><span class="sxs-lookup"><span data-stu-id="ee8c4-189">Add-ins for Outlook on the web (classic) that use the on-send feature will run for users who are assigned an Outlook on the web mailbox policy that has the *OnSendAddinsEnabled* flag set to **true**.</span></span>
+<span data-ttu-id="853a4-189">对于分配了将 *OnSendAddinsEnabled* 标志设置为 **true** 的 Outlook 网页版邮箱策略的用户，系统会为其运行使用 Onsend 功能的 Outlook 网页版（经典）的加载项。</span><span class="sxs-lookup"><span data-stu-id="853a4-189">Add-ins for Outlook on the web (classic) that use the on-send feature will run for users who are assigned an Outlook on the web mailbox policy that has the *OnSendAddinsEnabled* flag set to **true**.</span></span>
 
-<span data-ttu-id="ee8c4-190">若要安装新的外接程序，请运行以下 Exchange Online PowerShell cmdlet。</span><span class="sxs-lookup"><span data-stu-id="ee8c4-190">To install a new add-in, run the following Exchange Online PowerShell cmdlets.</span></span>
-
-```powershell
-$Data=Get-Content -Path '.\Contoso Message Body Checker.xml' -Encoding Byte –ReadCount 0
-```
-
-```powershell
-New-App -OrganizationApp -FileData $Data -DefaultStateForUser Enabled
-```
-
-> [!NOTE]
-> <span data-ttu-id="ee8c4-191">若要了解如何使用远程 PowerShell 连接到 Exchange Online，请参阅[连接到 Exchange Online PowerShell](/powershell/exchange/exchange-online/connect-to-exchange-online-powershell/connect-to-exchange-online-powershell)。</span><span class="sxs-lookup"><span data-stu-id="ee8c4-191">To learn how to use remote PowerShell to connect to Exchange Online, see [Connect to Exchange Online PowerShell](/powershell/exchange/exchange-online/connect-to-exchange-online-powershell/connect-to-exchange-online-powershell).</span></span>
-
-#### <a name="enable-the-on-send-feature"></a><span data-ttu-id="ee8c4-192">启用 Onsend 功能</span><span class="sxs-lookup"><span data-stu-id="ee8c4-192">Enable the on-send feature</span></span>
-
-<span data-ttu-id="ee8c4-193">默认情况下，Onsend 功能处于禁用状态。</span><span class="sxs-lookup"><span data-stu-id="ee8c4-193">By default, on-send functionality is disabled.</span></span> <span data-ttu-id="ee8c4-194">管理员可以通过运行 Exchange Online PowerShell cmdlet 启用 Onsend。</span><span class="sxs-lookup"><span data-stu-id="ee8c4-194">Administrators can enable on-send by running Exchange Online PowerShell cmdlets.</span></span>
-
-<span data-ttu-id="ee8c4-195">要为所有用户启用 Onsend 加载项，请执行以下操作：</span><span class="sxs-lookup"><span data-stu-id="ee8c4-195">To enable on-send add-ins for all users:</span></span>
-
-1. <span data-ttu-id="ee8c4-196">创建新的 Outlook 网页版邮箱策略。</span><span class="sxs-lookup"><span data-stu-id="ee8c4-196">Create a new Outlook on the web mailbox policy.</span></span>
-
-   ```powershell
-    New-OWAMailboxPolicy OWAOnSendAddinAllUserPolicy
-   ```
-
-    > [!NOTE]
-    > <span data-ttu-id="ee8c4-197">管理员可以使用现有策略，但只有某些邮箱类型才支持 Onsend 功能。</span><span class="sxs-lookup"><span data-stu-id="ee8c4-197">Administrators can use an existing policy, but on-send functionality is only supported on certain mailbox types.</span></span> <span data-ttu-id="ee8c4-198">系统将默认阻止 Outlook 网页版中不受支持的邮箱进行发送。</span><span class="sxs-lookup"><span data-stu-id="ee8c4-198">Unsupported mailboxes will be blocked from sending by default in Outlook on the web.</span></span>
-
-2. <span data-ttu-id="ee8c4-199">启用 Onsend 功能。</span><span class="sxs-lookup"><span data-stu-id="ee8c4-199">Enable the on-send feature.</span></span>
-
-   ```powershell
-    Get-OWAMailboxPolicy OWAOnSendAddinAllUserPolicy | Set-OWAMailboxPolicy –OnSendAddinsEnabled:$true
-   ```
-
-3. <span data-ttu-id="ee8c4-200">将策略分配给用户。</span><span class="sxs-lookup"><span data-stu-id="ee8c4-200">Assign the policy to users.</span></span>
-
-   ```powershell
-    Get-User -Filter {RecipientTypeDetails -eq 'UserMailbox'}|Set-CASMailbox -OwaMailboxPolicy OWAOnSendAddinAllUserPolicy
-   ```
-
-#### <a name="enable-the-on-send-feature-for-a-group-of-users"></a><span data-ttu-id="ee8c4-201">为一组用户启用 Onsend 功能</span><span class="sxs-lookup"><span data-stu-id="ee8c4-201">Enable the on-send feature for a group of users</span></span>
-
-<span data-ttu-id="ee8c4-202">为特定用户组启用 Onsend 功能的步骤如下。</span><span class="sxs-lookup"><span data-stu-id="ee8c4-202">To enable the on-send feature for a specific group of users the steps are as follows.</span></span>  <span data-ttu-id="ee8c4-203">在此示例中，管理员仅希望在财务用户（其中财务用户属于财务部门）的环境中启用 Outlook 网页版 Onsend 加载项功能。</span><span class="sxs-lookup"><span data-stu-id="ee8c4-203">In this example, an administrator only wants to enable an Outlook on the web on-send add-in feature in an environment for Finance users (where the Finance users are in the Finance Department).</span></span>
-
-1. <span data-ttu-id="ee8c4-204">为该组创建新的 Outlook 网页版邮箱策略。</span><span class="sxs-lookup"><span data-stu-id="ee8c4-204">Create a new Outlook on the web mailbox policy for the group.</span></span>
-
-   ```powershell
-    New-OWAMailboxPolicy FinanceOWAPolicy
-   ```
-
-   > [!NOTE]
-   > <span data-ttu-id="ee8c4-205">管理员可以使用现有策略，但只有某些邮箱类型才支持 Onsend 功能（有关详细信息，请参阅本文前面介绍的[邮箱类型限制](#multiple-on-send-add-ins)）。</span><span class="sxs-lookup"><span data-stu-id="ee8c4-205">Administrators can use an existing policy, but on-send functionality is only supported on certain mailbox types (see [Mailbox type limitations](#multiple-on-send-add-ins) earlier in this article for more information).</span></span> <span data-ttu-id="ee8c4-206">系统将默认阻止 Outlook 网页版中不受支持的邮箱进行发送。</span><span class="sxs-lookup"><span data-stu-id="ee8c4-206">Unsupported mailboxes will be blocked from sending by default in Outlook on the web.</span></span>
-
-2. <span data-ttu-id="ee8c4-207">启用 Onsend 功能。</span><span class="sxs-lookup"><span data-stu-id="ee8c4-207">Enable the on-send feature.</span></span>
-
-   ```powershell
-    Get-OWAMailboxPolicy FinanceOWAPolicy | Set-OWAMailboxPolicy –OnSendAddinsEnabled:$true
-   ```
-
-3. <span data-ttu-id="ee8c4-208">将策略分配给用户。</span><span class="sxs-lookup"><span data-stu-id="ee8c4-208">Assign the policy to users.</span></span>
-
-   ```powershell
-    $targetUsers = Get-Group 'Finance'|select -ExpandProperty members
-    $targetUsers | Get-User -Filter {RecipientTypeDetails -eq 'UserMailbox'}|Set-CASMailbox -OwaMailboxPolicy FinanceOWAPolicy
-   ```
-
-> [!NOTE]
-> <span data-ttu-id="ee8c4-209">需要等待 60 分钟该策略才能生效，或重启 Internet Information Services (IIS)。</span><span class="sxs-lookup"><span data-stu-id="ee8c4-209">Wait up to 60 minutes for the policy to take effect, or restart Internet Information Services (IIS).</span></span> <span data-ttu-id="ee8c4-210">策略生效后，将为该组启用 Onsend 功能。</span><span class="sxs-lookup"><span data-stu-id="ee8c4-210">When the policy takes effect, the on-send feature will be enabled for the group.</span></span>
-
-#### <a name="disable-the-on-send-feature"></a><span data-ttu-id="ee8c4-211">禁用 Onsend 功能</span><span class="sxs-lookup"><span data-stu-id="ee8c4-211">Disable the on-send feature</span></span>
-
-<span data-ttu-id="ee8c4-212">若要禁用用户的 Onsend 功能或分配未启用该标志的 Outlook 网页版邮箱策略，请运行以下 cmdlet。</span><span class="sxs-lookup"><span data-stu-id="ee8c4-212">To disable the on-send feature for a user or assign an Outlook on the web mailbox policy that does not have the flag enabled, run the following cmdlets.</span></span> <span data-ttu-id="ee8c4-213">在此示例中，该邮箱策略是 *ContosoCorpOWAPolicy*。</span><span class="sxs-lookup"><span data-stu-id="ee8c4-213">In this example, the mailbox policy is *ContosoCorpOWAPolicy*.</span></span>
-
-```powershell
-Get-CASMailbox joe@contoso.com | Set-CASMailbox –OWAMailboxPolicy "ContosoCorpOWAPolicy"
-```
-
-> [!NOTE]
-> <span data-ttu-id="ee8c4-214">有关如何使用 **Set-OwaMailboxPolicy** cmdlet 配置现有 Outlook 网页版邮箱策略的详细信息，请参阅 [Set-OwaMailboxPolicy](/powershell/module/exchange/client-access/Set-OwaMailboxPolicy)。</span><span class="sxs-lookup"><span data-stu-id="ee8c4-214">For more information about how to use the **Set-OwaMailboxPolicy** cmdlet to configure existing Outlook on the web mailbox policies, see [Set-OwaMailboxPolicy](/powershell/module/exchange/client-access/Set-OwaMailboxPolicy).</span></span>
-
-<span data-ttu-id="ee8c4-215">若要禁用所有分配了指定 Outlook 网页版邮箱策略的用户的 Onsend 功能，请运行以下 cmdlet。</span><span class="sxs-lookup"><span data-stu-id="ee8c4-215">To disable the on-send feature for all users that have a specific Outlook on the web mailbox policy assigned, run the following cmdlets.</span></span>
-
-```powershell
-Get-OWAMailboxPolicy OWAOnSendAddinAllUserPolicy | Set-OWAMailboxPolicy –OnSendAddinsEnabled:$false
-```
-
-### <a name="web-browser---modern-outlook"></a>[<span data-ttu-id="ee8c4-216">Web 浏览器 - 新式 Outlook</span><span class="sxs-lookup"><span data-stu-id="ee8c4-216">Web browser - modern Outlook</span></span>](#tab/modern)
-
-<span data-ttu-id="ee8c4-217">对于安装了使用 Onsend 功能的 Outlook 网页版（新式）加载项的任何用户，系统会为其运行该加载项。</span><span class="sxs-lookup"><span data-stu-id="ee8c4-217">Add-ins for Outlook on the web (modern) that use the on-send feature should run for any users who have them installed.</span></span> <span data-ttu-id="ee8c4-218">但是，如果用户需要运行该加载项来满足合规性标准，则邮箱策略必须将 *OnSendAddinsEnabled* 标志设置为 **true**。</span><span class="sxs-lookup"><span data-stu-id="ee8c4-218">However, if users are required to run the add-in to meet compliance standards, then the mailbox policy must have the *OnSendAddinsEnabled* flag set to **true**.</span></span>
-
-<span data-ttu-id="ee8c4-219">若要安装新的外接程序，请运行以下 Exchange Online PowerShell cmdlet。</span><span class="sxs-lookup"><span data-stu-id="ee8c4-219">To install a new add-in, run the following Exchange Online PowerShell cmdlets.</span></span>
+<span data-ttu-id="853a4-190">若要安装新的外接程序，请运行以下 Exchange Online PowerShell cmdlet。</span><span class="sxs-lookup"><span data-stu-id="853a4-190">To install a new add-in, run the following Exchange Online PowerShell cmdlets.</span></span>
 
 ```powershell
 $Data=Get-Content -Path '.\Contoso Message Body Checker.xml' -Encoding Byte –ReadCount 0
@@ -208,72 +118,55 @@ New-App -OrganizationApp -FileData $Data -DefaultStateForUser Enabled
 ```
 
 > [!NOTE]
-> <span data-ttu-id="ee8c4-220">若要了解如何使用远程 PowerShell 连接到 Exchange Online，请参阅[连接到 Exchange Online PowerShell](/powershell/exchange/exchange-online/connect-to-exchange-online-powershell/connect-to-exchange-online-powershell)。</span><span class="sxs-lookup"><span data-stu-id="ee8c4-220">To learn how to use remote PowerShell to connect to Exchange Online, see [Connect to Exchange Online PowerShell](/powershell/exchange/exchange-online/connect-to-exchange-online-powershell/connect-to-exchange-online-powershell).</span></span>
+> <span data-ttu-id="853a4-191">若要了解如何使用远程 PowerShell 连接到 Exchange Online，请参阅[连接到 Exchange Online PowerShell](/powershell/exchange/exchange-online/connect-to-exchange-online-powershell/connect-to-exchange-online-powershell)。</span><span class="sxs-lookup"><span data-stu-id="853a4-191">To learn how to use remote PowerShell to connect to Exchange Online, see [Connect to Exchange Online PowerShell](/powershell/exchange/exchange-online/connect-to-exchange-online-powershell/connect-to-exchange-online-powershell).</span></span>
 
-#### <a name="disable-the-on-send-policy"></a><span data-ttu-id="ee8c4-221">禁用 Onsend 策略</span><span class="sxs-lookup"><span data-stu-id="ee8c4-221">Disable the on-send policy</span></span>
+#### <a name="enable-the-on-send-feature"></a><span data-ttu-id="853a4-192">启用 Onsend 功能</span><span class="sxs-lookup"><span data-stu-id="853a4-192">Enable the on-send feature</span></span>
 
-<span data-ttu-id="ee8c4-222">默认情况下，启用发送策略。</span><span class="sxs-lookup"><span data-stu-id="ee8c4-222">By default, on-send policy is enabled.</span></span> <span data-ttu-id="ee8c4-223">若要禁用用户的 Onsend 策略或分配未启用该标志的 Outlook 网页版邮箱策略，请运行以下 cmdlet。</span><span class="sxs-lookup"><span data-stu-id="ee8c4-223">To disable the on-send policy for a user or assign an Outlook on the web mailbox policy that does not have the flag enabled, run the following cmdlets.</span></span> <span data-ttu-id="ee8c4-224">在此示例中，该邮箱策略是 *ContosoCorpOWAPolicy*。</span><span class="sxs-lookup"><span data-stu-id="ee8c4-224">In this example, the mailbox policy is *ContosoCorpOWAPolicy*.</span></span>
+<span data-ttu-id="853a4-193">默认情况下，Onsend 功能处于禁用状态。</span><span class="sxs-lookup"><span data-stu-id="853a4-193">By default, on-send functionality is disabled.</span></span> <span data-ttu-id="853a4-194">管理员可以通过运行 Exchange Online PowerShell cmdlet 启用 Onsend。</span><span class="sxs-lookup"><span data-stu-id="853a4-194">Administrators can enable on-send by running Exchange Online PowerShell cmdlets.</span></span>
 
-```powershell
-Get-CASMailbox joe@contoso.com | Set-CASMailbox –OWAMailboxPolicy "ContosoCorpOWAPolicy"
-```
+<span data-ttu-id="853a4-195">要为所有用户启用 Onsend 加载项，请执行以下操作：</span><span class="sxs-lookup"><span data-stu-id="853a4-195">To enable on-send add-ins for all users:</span></span>
 
-> [!NOTE]
-> <span data-ttu-id="ee8c4-225">有关如何使用 **Set-OwaMailboxPolicy** cmdlet 配置现有 Outlook 网页版邮箱策略的详细信息，请参阅 [Set-OwaMailboxPolicy](/powershell/module/exchange/client-access/Set-OwaMailboxPolicy)。</span><span class="sxs-lookup"><span data-stu-id="ee8c4-225">For more information about how to use the **Set-OwaMailboxPolicy** cmdlet to configure existing Outlook on the web mailbox policies, see [Set-OwaMailboxPolicy](/powershell/module/exchange/client-access/Set-OwaMailboxPolicy).</span></span>
-
-<span data-ttu-id="ee8c4-226">若要禁用所有分配了指定 Outlook 网页版邮箱策略的用户的 Onsend 策略，请运行以下 cmdlet。</span><span class="sxs-lookup"><span data-stu-id="ee8c4-226">To disable the on-send policy for all users that have a specific Outlook on the web mailbox policy assigned, run the following cmdlets.</span></span>
-
-```powershell
-Get-OWAMailboxPolicy OWAOnSendAddinAllUserPolicy | Set-OWAMailboxPolicy –OnSendAddinsEnabled:$false
-```
-
-#### <a name="enable-the-on-send-policy"></a><span data-ttu-id="ee8c4-227">启用 Onsend 策略</span><span class="sxs-lookup"><span data-stu-id="ee8c4-227">Enable the on-send policy</span></span>
-
-<span data-ttu-id="ee8c4-228">管理员可以通过运行 Exchange Online PowerShell cmdlet 启用 Onsend。</span><span class="sxs-lookup"><span data-stu-id="ee8c4-228">Administrators can enable on-send by running Exchange Online PowerShell cmdlets.</span></span>
-
-<span data-ttu-id="ee8c4-229">要为所有用户启用 Onsend 加载项，请执行以下操作：</span><span class="sxs-lookup"><span data-stu-id="ee8c4-229">To enable on-send add-ins for all users:</span></span>
-
-1. <span data-ttu-id="ee8c4-230">创建新的 Outlook 网页版邮箱策略。</span><span class="sxs-lookup"><span data-stu-id="ee8c4-230">Create a new Outlook on the web mailbox policy.</span></span>
+1. <span data-ttu-id="853a4-196">创建新的 Outlook 网页版邮箱策略。</span><span class="sxs-lookup"><span data-stu-id="853a4-196">Create a new Outlook on the web mailbox policy.</span></span>
 
    ```powershell
     New-OWAMailboxPolicy OWAOnSendAddinAllUserPolicy
    ```
 
     > [!NOTE]
-    > <span data-ttu-id="ee8c4-231">管理员可以使用现有策略，但只有某些邮箱类型才支持 Onsend 功能。</span><span class="sxs-lookup"><span data-stu-id="ee8c4-231">Administrators can use an existing policy, but on-send functionality is only supported on certain mailbox types.</span></span> <span data-ttu-id="ee8c4-232">系统将默认阻止 Outlook 网页版中不受支持的邮箱进行发送。</span><span class="sxs-lookup"><span data-stu-id="ee8c4-232">Unsupported mailboxes will be blocked from sending by default in Outlook on the web.</span></span>
+    > <span data-ttu-id="853a4-197">管理员可以使用现有策略，但只有某些邮箱类型才支持 Onsend 功能。</span><span class="sxs-lookup"><span data-stu-id="853a4-197">Administrators can use an existing policy, but on-send functionality is only supported on certain mailbox types.</span></span> <span data-ttu-id="853a4-198">系统将默认阻止 Outlook 网页版中不受支持的邮箱进行发送。</span><span class="sxs-lookup"><span data-stu-id="853a4-198">Unsupported mailboxes will be blocked from sending by default in Outlook on the web.</span></span>
 
-2. <span data-ttu-id="ee8c4-233">启用 Onsend 功能。</span><span class="sxs-lookup"><span data-stu-id="ee8c4-233">Enable the on-send feature.</span></span>
+2. <span data-ttu-id="853a4-199">启用 Onsend 功能。</span><span class="sxs-lookup"><span data-stu-id="853a4-199">Enable the on-send feature.</span></span>
 
    ```powershell
     Get-OWAMailboxPolicy OWAOnSendAddinAllUserPolicy | Set-OWAMailboxPolicy –OnSendAddinsEnabled:$true
    ```
 
-3. <span data-ttu-id="ee8c4-234">将策略分配给用户。</span><span class="sxs-lookup"><span data-stu-id="ee8c4-234">Assign the policy to users.</span></span>
+3. <span data-ttu-id="853a4-200">将策略分配给用户。</span><span class="sxs-lookup"><span data-stu-id="853a4-200">Assign the policy to users.</span></span>
 
    ```powershell
     Get-User -Filter {RecipientTypeDetails -eq 'UserMailbox'}|Set-CASMailbox -OwaMailboxPolicy OWAOnSendAddinAllUserPolicy
    ```
 
-#### <a name="enable-the-on-send-policy-for-a-group-of-users"></a><span data-ttu-id="ee8c4-235">为一组用户启用 Onsend 策略</span><span class="sxs-lookup"><span data-stu-id="ee8c4-235">Enable the on-send policy for a group of users</span></span>
+#### <a name="enable-the-on-send-feature-for-a-group-of-users"></a><span data-ttu-id="853a4-201">为一组用户启用 Onsend 功能</span><span class="sxs-lookup"><span data-stu-id="853a4-201">Enable the on-send feature for a group of users</span></span>
 
-<span data-ttu-id="ee8c4-236">为特定用户组启用 Onsend 策略的步骤如下。</span><span class="sxs-lookup"><span data-stu-id="ee8c4-236">To enable the on-send policy for a specific group of users the steps are as follows.</span></span>  <span data-ttu-id="ee8c4-237">在此示例中，管理员仅希望在财务用户（其中财务用户属于财务部门）的环境中启用 Outlook 网页版 Onsend 加载项策略。</span><span class="sxs-lookup"><span data-stu-id="ee8c4-237">In this example, an administrator only wants to enable an Outlook on the web on-send add-in policy in an environment for Finance users (where the Finance users are in the Finance Department).</span></span>
+<span data-ttu-id="853a4-202">为特定用户组启用 Onsend 功能的步骤如下。</span><span class="sxs-lookup"><span data-stu-id="853a4-202">To enable the on-send feature for a specific group of users the steps are as follows.</span></span>  <span data-ttu-id="853a4-203">在此示例中，管理员仅希望在财务用户（其中财务用户属于财务部门）的环境中启用 Outlook 网页版 Onsend 加载项功能。</span><span class="sxs-lookup"><span data-stu-id="853a4-203">In this example, an administrator only wants to enable an Outlook on the web on-send add-in feature in an environment for Finance users (where the Finance users are in the Finance Department).</span></span>
 
-1. <span data-ttu-id="ee8c4-238">为该组创建新的 Outlook 网页版邮箱策略。</span><span class="sxs-lookup"><span data-stu-id="ee8c4-238">Create a new Outlook on the web mailbox policy for the group.</span></span>
+1. <span data-ttu-id="853a4-204">为该组创建新的 Outlook 网页版邮箱策略。</span><span class="sxs-lookup"><span data-stu-id="853a4-204">Create a new Outlook on the web mailbox policy for the group.</span></span>
 
    ```powershell
     New-OWAMailboxPolicy FinanceOWAPolicy
    ```
 
    > [!NOTE]
-   > <span data-ttu-id="ee8c4-239">管理员可以使用现有策略，但只有某些邮箱类型才支持 Onsend 功能（有关详细信息，请参阅本文前面介绍的[邮箱类型限制](#multiple-on-send-add-ins)）。</span><span class="sxs-lookup"><span data-stu-id="ee8c4-239">Administrators can use an existing policy, but on-send functionality is only supported on certain mailbox types (see [Mailbox type limitations](#multiple-on-send-add-ins) earlier in this article for more information).</span></span> <span data-ttu-id="ee8c4-240">系统将默认阻止 Outlook 网页版中不受支持的邮箱进行发送。</span><span class="sxs-lookup"><span data-stu-id="ee8c4-240">Unsupported mailboxes will be blocked from sending by default in Outlook on the web.</span></span>
+   > <span data-ttu-id="853a4-205">管理员可以使用现有策略，但只有某些邮箱类型才支持 Onsend 功能（有关详细信息，请参阅本文前面介绍的[邮箱类型限制](#multiple-on-send-add-ins)）。</span><span class="sxs-lookup"><span data-stu-id="853a4-205">Administrators can use an existing policy, but on-send functionality is only supported on certain mailbox types (see [Mailbox type limitations](#multiple-on-send-add-ins) earlier in this article for more information).</span></span> <span data-ttu-id="853a4-206">系统将默认阻止 Outlook 网页版中不受支持的邮箱进行发送。</span><span class="sxs-lookup"><span data-stu-id="853a4-206">Unsupported mailboxes will be blocked from sending by default in Outlook on the web.</span></span>
 
-2. <span data-ttu-id="ee8c4-241">启用 Onsend 策略。</span><span class="sxs-lookup"><span data-stu-id="ee8c4-241">Enable the on-send policy.</span></span>
+2. <span data-ttu-id="853a4-207">启用 Onsend 功能。</span><span class="sxs-lookup"><span data-stu-id="853a4-207">Enable the on-send feature.</span></span>
 
    ```powershell
     Get-OWAMailboxPolicy FinanceOWAPolicy | Set-OWAMailboxPolicy –OnSendAddinsEnabled:$true
    ```
 
-3. <span data-ttu-id="ee8c4-242">将策略分配给用户。</span><span class="sxs-lookup"><span data-stu-id="ee8c4-242">Assign the policy to users.</span></span>
+3. <span data-ttu-id="853a4-208">将策略分配给用户。</span><span class="sxs-lookup"><span data-stu-id="853a4-208">Assign the policy to users.</span></span>
 
    ```powershell
     $targetUsers = Get-Group 'Finance'|select -ExpandProperty members
@@ -281,127 +174,234 @@ Get-OWAMailboxPolicy OWAOnSendAddinAllUserPolicy | Set-OWAMailboxPolicy –OnSen
    ```
 
 > [!NOTE]
-> <span data-ttu-id="ee8c4-243">需要等待 60 分钟该策略才能生效，或重启 Internet Information Services (IIS)。</span><span class="sxs-lookup"><span data-stu-id="ee8c4-243">Wait up to 60 minutes for the policy to take effect, or restart Internet Information Services (IIS).</span></span> <span data-ttu-id="ee8c4-244">策略生效后，将为该组强制执行 Onsend 功能。</span><span class="sxs-lookup"><span data-stu-id="ee8c4-244">When the policy takes effect, the on-send feature will be enforced for the group.</span></span>
+> <span data-ttu-id="853a4-209">需要等待 60 分钟该策略才能生效，或重启 Internet Information Services (IIS)。</span><span class="sxs-lookup"><span data-stu-id="853a4-209">Wait up to 60 minutes for the policy to take effect, or restart Internet Information Services (IIS).</span></span> <span data-ttu-id="853a4-210">策略生效后，将为该组启用 Onsend 功能。</span><span class="sxs-lookup"><span data-stu-id="853a4-210">When the policy takes effect, the on-send feature will be enabled for the group.</span></span>
 
-### <a name="windows"></a>[<span data-ttu-id="ee8c4-245">Windows</span><span class="sxs-lookup"><span data-stu-id="ee8c4-245">Windows</span></span>](#tab/windows)
+#### <a name="disable-the-on-send-feature"></a><span data-ttu-id="853a4-211">禁用 Onsend 功能</span><span class="sxs-lookup"><span data-stu-id="853a4-211">Disable the on-send feature</span></span>
 
-<span data-ttu-id="ee8c4-246">对于安装了使用 Onsend 功能的 Windows 版 Outlook 加载项的任何用户，系统会为其运行该加载项。</span><span class="sxs-lookup"><span data-stu-id="ee8c4-246">Add-ins for Outlook on Windows that use the on-send feature should run for any users who have them installed.</span></span> <span data-ttu-id="ee8c4-247">但是，如果用户需要运行该加载项来满足合规性标准，则必须在每台适用的计算机上将组策略“**无法加载 Web 扩展时禁用发送**”设置为“**已启用**”。</span><span class="sxs-lookup"><span data-stu-id="ee8c4-247">However, if users are required to run the add-in to meet compliance standards, then the group policy **Disable send when web extensions can't load** must be set to **Enabled** on each applicable machine.</span></span>
+<span data-ttu-id="853a4-212">若要禁用用户的 Onsend 功能或分配未启用该标志的 Outlook 网页版邮箱策略，请运行以下 cmdlet。</span><span class="sxs-lookup"><span data-stu-id="853a4-212">To disable the on-send feature for a user or assign an Outlook on the web mailbox policy that does not have the flag enabled, run the following cmdlets.</span></span> <span data-ttu-id="853a4-213">在此示例中，该邮箱策略是 *ContosoCorpOWAPolicy*。</span><span class="sxs-lookup"><span data-stu-id="853a4-213">In this example, the mailbox policy is *ContosoCorpOWAPolicy*.</span></span>
 
-<span data-ttu-id="ee8c4-248">若要设置邮箱策略，管理员可以下载[管理模板工具](https://www.microsoft.com/download/details.aspx?id=49030)，然后通过运行本地组策略编辑器 **(gpedit.msc)** 访问最新的管理模板。</span><span class="sxs-lookup"><span data-stu-id="ee8c4-248">To set mailbox policies, administrators can download the [Administrative Templates tool](https://www.microsoft.com/download/details.aspx?id=49030) then access the latest administrative templates by running the Local Group Policy editor, **gpedit.msc**.</span></span>
+```powershell
+Get-CASMailbox joe@contoso.com | Set-CASMailbox –OWAMailboxPolicy "ContosoCorpOWAPolicy"
+```
 
-#### <a name="what-the-policy-does"></a><span data-ttu-id="ee8c4-249">策略的用途</span><span class="sxs-lookup"><span data-stu-id="ee8c4-249">What the policy does</span></span>
+> [!NOTE]
+> <span data-ttu-id="853a4-214">有关如何使用 **Set-OwaMailboxPolicy** cmdlet 配置现有 Outlook 网页版邮箱策略的详细信息，请参阅 [Set-OwaMailboxPolicy](/powershell/module/exchange/client-access/Set-OwaMailboxPolicy)。</span><span class="sxs-lookup"><span data-stu-id="853a4-214">For more information about how to use the **Set-OwaMailboxPolicy** cmdlet to configure existing Outlook on the web mailbox policies, see [Set-OwaMailboxPolicy](/powershell/module/exchange/client-access/Set-OwaMailboxPolicy).</span></span>
 
-<span data-ttu-id="ee8c4-250">出于合规性原因，管理员可能需要在用户具有可供运行的最新 Onsend 加载项前，确保其无法发送邮件或会议项目。</span><span class="sxs-lookup"><span data-stu-id="ee8c4-250">For compliance reasons, administrators may need to ensure that users cannot send message or meeting items until the latest on-send add-in is available to run.</span></span> <span data-ttu-id="ee8c4-251">管理员必须启用组策略“**无法加载 Web 扩展时禁用发送**”，以便所有加载项都从 Exchange 进行更新，并可用于在发送时验证每封邮件或每个会议项目是否符合预期的规则和规定。</span><span class="sxs-lookup"><span data-stu-id="ee8c4-251">Administrators must enable the group policy **Disable send when web extensions can't load** so that all add-ins are updated from Exchange and available to verify each message or meeting item meets expected rules and regulations on send.</span></span>
+<span data-ttu-id="853a4-215">若要禁用所有分配了指定 Outlook 网页版邮箱策略的用户的 Onsend 功能，请运行以下 cmdlet。</span><span class="sxs-lookup"><span data-stu-id="853a4-215">To disable the on-send feature for all users that have a specific Outlook on the web mailbox policy assigned, run the following cmdlets.</span></span>
 
-|<span data-ttu-id="ee8c4-252">策略状态</span><span class="sxs-lookup"><span data-stu-id="ee8c4-252">Policy status</span></span>|<span data-ttu-id="ee8c4-253">结果</span><span class="sxs-lookup"><span data-stu-id="ee8c4-253">Result</span></span>|
+```powershell
+Get-OWAMailboxPolicy OWAOnSendAddinAllUserPolicy | Set-OWAMailboxPolicy –OnSendAddinsEnabled:$false
+```
+
+### <a name="web-browser---modern-outlook"></a>[<span data-ttu-id="853a4-216">Web 浏览器 - 新式 Outlook</span><span class="sxs-lookup"><span data-stu-id="853a4-216">Web browser - modern Outlook</span></span>](#tab/modern)
+
+<span data-ttu-id="853a4-217">对于安装了使用 Onsend 功能的 Outlook 网页版（新式）加载项的任何用户，系统会为其运行该加载项。</span><span class="sxs-lookup"><span data-stu-id="853a4-217">Add-ins for Outlook on the web (modern) that use the on-send feature should run for any users who have them installed.</span></span> <span data-ttu-id="853a4-218">但是，如果用户需要运行该加载项来满足合规性标准，则邮箱策略必须将 *OnSendAddinsEnabled* 标志设置为 **true**。</span><span class="sxs-lookup"><span data-stu-id="853a4-218">However, if users are required to run the add-in to meet compliance standards, then the mailbox policy must have the *OnSendAddinsEnabled* flag set to **true**.</span></span>
+
+<span data-ttu-id="853a4-219">若要安装新的外接程序，请运行以下 Exchange Online PowerShell cmdlet。</span><span class="sxs-lookup"><span data-stu-id="853a4-219">To install a new add-in, run the following Exchange Online PowerShell cmdlets.</span></span>
+
+```powershell
+$Data=Get-Content -Path '.\Contoso Message Body Checker.xml' -Encoding Byte –ReadCount 0
+```
+
+```powershell
+New-App -OrganizationApp -FileData $Data -DefaultStateForUser Enabled
+```
+
+> [!NOTE]
+> <span data-ttu-id="853a4-220">若要了解如何使用远程 PowerShell 连接到 Exchange Online，请参阅[连接到 Exchange Online PowerShell](/powershell/exchange/exchange-online/connect-to-exchange-online-powershell/connect-to-exchange-online-powershell)。</span><span class="sxs-lookup"><span data-stu-id="853a4-220">To learn how to use remote PowerShell to connect to Exchange Online, see [Connect to Exchange Online PowerShell](/powershell/exchange/exchange-online/connect-to-exchange-online-powershell/connect-to-exchange-online-powershell).</span></span>
+
+#### <a name="disable-the-on-send-policy"></a><span data-ttu-id="853a4-221">禁用 Onsend 策略</span><span class="sxs-lookup"><span data-stu-id="853a4-221">Disable the on-send policy</span></span>
+
+<span data-ttu-id="853a4-222">默认情况下，启用发送策略。</span><span class="sxs-lookup"><span data-stu-id="853a4-222">By default, on-send policy is enabled.</span></span> <span data-ttu-id="853a4-223">若要禁用用户的 Onsend 策略或分配未启用该标志的 Outlook 网页版邮箱策略，请运行以下 cmdlet。</span><span class="sxs-lookup"><span data-stu-id="853a4-223">To disable the on-send policy for a user or assign an Outlook on the web mailbox policy that does not have the flag enabled, run the following cmdlets.</span></span> <span data-ttu-id="853a4-224">在此示例中，该邮箱策略是 *ContosoCorpOWAPolicy*。</span><span class="sxs-lookup"><span data-stu-id="853a4-224">In this example, the mailbox policy is *ContosoCorpOWAPolicy*.</span></span>
+
+```powershell
+Get-CASMailbox joe@contoso.com | Set-CASMailbox –OWAMailboxPolicy "ContosoCorpOWAPolicy"
+```
+
+> [!NOTE]
+> <span data-ttu-id="853a4-225">有关如何使用 **Set-OwaMailboxPolicy** cmdlet 配置现有 Outlook 网页版邮箱策略的详细信息，请参阅 [Set-OwaMailboxPolicy](/powershell/module/exchange/client-access/Set-OwaMailboxPolicy)。</span><span class="sxs-lookup"><span data-stu-id="853a4-225">For more information about how to use the **Set-OwaMailboxPolicy** cmdlet to configure existing Outlook on the web mailbox policies, see [Set-OwaMailboxPolicy](/powershell/module/exchange/client-access/Set-OwaMailboxPolicy).</span></span>
+
+<span data-ttu-id="853a4-226">若要禁用所有分配了指定 Outlook 网页版邮箱策略的用户的 Onsend 策略，请运行以下 cmdlet。</span><span class="sxs-lookup"><span data-stu-id="853a4-226">To disable the on-send policy for all users that have a specific Outlook on the web mailbox policy assigned, run the following cmdlets.</span></span>
+
+```powershell
+Get-OWAMailboxPolicy OWAOnSendAddinAllUserPolicy | Set-OWAMailboxPolicy –OnSendAddinsEnabled:$false
+```
+
+#### <a name="enable-the-on-send-policy"></a><span data-ttu-id="853a4-227">启用 Onsend 策略</span><span class="sxs-lookup"><span data-stu-id="853a4-227">Enable the on-send policy</span></span>
+
+<span data-ttu-id="853a4-228">管理员可以通过运行 Exchange Online PowerShell cmdlet 启用 Onsend。</span><span class="sxs-lookup"><span data-stu-id="853a4-228">Administrators can enable on-send by running Exchange Online PowerShell cmdlets.</span></span>
+
+<span data-ttu-id="853a4-229">要为所有用户启用 Onsend 加载项，请执行以下操作：</span><span class="sxs-lookup"><span data-stu-id="853a4-229">To enable on-send add-ins for all users:</span></span>
+
+1. <span data-ttu-id="853a4-230">创建新的 Outlook 网页版邮箱策略。</span><span class="sxs-lookup"><span data-stu-id="853a4-230">Create a new Outlook on the web mailbox policy.</span></span>
+
+   ```powershell
+    New-OWAMailboxPolicy OWAOnSendAddinAllUserPolicy
+   ```
+
+    > [!NOTE]
+    > <span data-ttu-id="853a4-231">管理员可以使用现有策略，但只有某些邮箱类型才支持 Onsend 功能。</span><span class="sxs-lookup"><span data-stu-id="853a4-231">Administrators can use an existing policy, but on-send functionality is only supported on certain mailbox types.</span></span> <span data-ttu-id="853a4-232">系统将默认阻止 Outlook 网页版中不受支持的邮箱进行发送。</span><span class="sxs-lookup"><span data-stu-id="853a4-232">Unsupported mailboxes will be blocked from sending by default in Outlook on the web.</span></span>
+
+2. <span data-ttu-id="853a4-233">启用 Onsend 功能。</span><span class="sxs-lookup"><span data-stu-id="853a4-233">Enable the on-send feature.</span></span>
+
+   ```powershell
+    Get-OWAMailboxPolicy OWAOnSendAddinAllUserPolicy | Set-OWAMailboxPolicy –OnSendAddinsEnabled:$true
+   ```
+
+3. <span data-ttu-id="853a4-234">将策略分配给用户。</span><span class="sxs-lookup"><span data-stu-id="853a4-234">Assign the policy to users.</span></span>
+
+   ```powershell
+    Get-User -Filter {RecipientTypeDetails -eq 'UserMailbox'}|Set-CASMailbox -OwaMailboxPolicy OWAOnSendAddinAllUserPolicy
+   ```
+
+#### <a name="enable-the-on-send-policy-for-a-group-of-users"></a><span data-ttu-id="853a4-235">为一组用户启用 Onsend 策略</span><span class="sxs-lookup"><span data-stu-id="853a4-235">Enable the on-send policy for a group of users</span></span>
+
+<span data-ttu-id="853a4-236">为特定用户组启用 Onsend 策略的步骤如下。</span><span class="sxs-lookup"><span data-stu-id="853a4-236">To enable the on-send policy for a specific group of users the steps are as follows.</span></span>  <span data-ttu-id="853a4-237">在此示例中，管理员仅希望在财务用户（其中财务用户属于财务部门）的环境中启用 Outlook 网页版 Onsend 加载项策略。</span><span class="sxs-lookup"><span data-stu-id="853a4-237">In this example, an administrator only wants to enable an Outlook on the web on-send add-in policy in an environment for Finance users (where the Finance users are in the Finance Department).</span></span>
+
+1. <span data-ttu-id="853a4-238">为该组创建新的 Outlook 网页版邮箱策略。</span><span class="sxs-lookup"><span data-stu-id="853a4-238">Create a new Outlook on the web mailbox policy for the group.</span></span>
+
+   ```powershell
+    New-OWAMailboxPolicy FinanceOWAPolicy
+   ```
+
+   > [!NOTE]
+   > <span data-ttu-id="853a4-239">管理员可以使用现有策略，但只有某些邮箱类型才支持 Onsend 功能（有关详细信息，请参阅本文前面介绍的[邮箱类型限制](#multiple-on-send-add-ins)）。</span><span class="sxs-lookup"><span data-stu-id="853a4-239">Administrators can use an existing policy, but on-send functionality is only supported on certain mailbox types (see [Mailbox type limitations](#multiple-on-send-add-ins) earlier in this article for more information).</span></span> <span data-ttu-id="853a4-240">系统将默认阻止 Outlook 网页版中不受支持的邮箱进行发送。</span><span class="sxs-lookup"><span data-stu-id="853a4-240">Unsupported mailboxes will be blocked from sending by default in Outlook on the web.</span></span>
+
+2. <span data-ttu-id="853a4-241">启用 Onsend 策略。</span><span class="sxs-lookup"><span data-stu-id="853a4-241">Enable the on-send policy.</span></span>
+
+   ```powershell
+    Get-OWAMailboxPolicy FinanceOWAPolicy | Set-OWAMailboxPolicy –OnSendAddinsEnabled:$true
+   ```
+
+3. <span data-ttu-id="853a4-242">将策略分配给用户。</span><span class="sxs-lookup"><span data-stu-id="853a4-242">Assign the policy to users.</span></span>
+
+   ```powershell
+    $targetUsers = Get-Group 'Finance'|select -ExpandProperty members
+    $targetUsers | Get-User -Filter {RecipientTypeDetails -eq 'UserMailbox'}|Set-CASMailbox -OwaMailboxPolicy FinanceOWAPolicy
+   ```
+
+> [!NOTE]
+> <span data-ttu-id="853a4-243">需要等待 60 分钟该策略才能生效，或重启 Internet Information Services (IIS)。</span><span class="sxs-lookup"><span data-stu-id="853a4-243">Wait up to 60 minutes for the policy to take effect, or restart Internet Information Services (IIS).</span></span> <span data-ttu-id="853a4-244">策略生效后，将为该组强制执行 Onsend 功能。</span><span class="sxs-lookup"><span data-stu-id="853a4-244">When the policy takes effect, the on-send feature will be enforced for the group.</span></span>
+
+### <a name="windows"></a>[<span data-ttu-id="853a4-245">Windows</span><span class="sxs-lookup"><span data-stu-id="853a4-245">Windows</span></span>](#tab/windows)
+
+<span data-ttu-id="853a4-246">对于安装了使用 Onsend 功能的 Windows 版 Outlook 加载项的任何用户，系统会为其运行该加载项。</span><span class="sxs-lookup"><span data-stu-id="853a4-246">Add-ins for Outlook on Windows that use the on-send feature should run for any users who have them installed.</span></span> <span data-ttu-id="853a4-247">但是，如果用户需要运行该加载项来满足合规性标准，则必须在每台适用的计算机上将组策略“**无法加载 Web 扩展时禁用发送**”设置为“**已启用**”。</span><span class="sxs-lookup"><span data-stu-id="853a4-247">However, if users are required to run the add-in to meet compliance standards, then the group policy **Disable send when web extensions can't load** must be set to **Enabled** on each applicable machine.</span></span>
+
+<span data-ttu-id="853a4-248">若要设置邮箱策略，管理员可以下载[管理模板工具](https://www.microsoft.com/download/details.aspx?id=49030)，然后通过运行本地组策略编辑器 **(gpedit.msc)** 访问最新的管理模板。</span><span class="sxs-lookup"><span data-stu-id="853a4-248">To set mailbox policies, administrators can download the [Administrative Templates tool](https://www.microsoft.com/download/details.aspx?id=49030) then access the latest administrative templates by running the Local Group Policy editor, **gpedit.msc**.</span></span>
+
+#### <a name="what-the-policy-does"></a><span data-ttu-id="853a4-249">策略的用途</span><span class="sxs-lookup"><span data-stu-id="853a4-249">What the policy does</span></span>
+
+<span data-ttu-id="853a4-250">出于合规性原因，管理员可能需要在用户具有可供运行的最新 Onsend 加载项前，确保其无法发送邮件或会议项目。</span><span class="sxs-lookup"><span data-stu-id="853a4-250">For compliance reasons, administrators may need to ensure that users cannot send message or meeting items until the latest on-send add-in is available to run.</span></span> <span data-ttu-id="853a4-251">管理员必须启用组策略“**无法加载 Web 扩展时禁用发送**”，以便所有加载项都从 Exchange 进行更新，并可用于在发送时验证每封邮件或每个会议项目是否符合预期的规则和规定。</span><span class="sxs-lookup"><span data-stu-id="853a4-251">Administrators must enable the group policy **Disable send when web extensions can't load** so that all add-ins are updated from Exchange and available to verify each message or meeting item meets expected rules and regulations on send.</span></span>
+
+|<span data-ttu-id="853a4-252">策略状态</span><span class="sxs-lookup"><span data-stu-id="853a4-252">Policy status</span></span>|<span data-ttu-id="853a4-253">结果</span><span class="sxs-lookup"><span data-stu-id="853a4-253">Result</span></span>|
 |---|---|
-|<span data-ttu-id="ee8c4-254">已禁用</span><span class="sxs-lookup"><span data-stu-id="ee8c4-254">Disabled</span></span>|<span data-ttu-id="ee8c4-255">允许发送。</span><span class="sxs-lookup"><span data-stu-id="ee8c4-255">Send allowed.</span></span> <span data-ttu-id="ee8c4-256">即使尚未从 Exchange 中更新加载项，也可以在不运行 Onsend 加载项的情况下发送邮件或会议项目。</span><span class="sxs-lookup"><span data-stu-id="ee8c4-256">Message or meeting item can be sent without running the on-send add-in, even if the add-in has not been updated from Exchange yet.</span></span>|
-|<span data-ttu-id="ee8c4-257">已启用</span><span class="sxs-lookup"><span data-stu-id="ee8c4-257">Enabled</span></span>|<span data-ttu-id="ee8c4-258">仅当加载项已从 Exchange 更新时才允许发送；否则，将阻止发送。</span><span class="sxs-lookup"><span data-stu-id="ee8c4-258">Send allowed only when the add-in has been updated from Exchange; otherwise, send is blocked.</span></span>|
+|<span data-ttu-id="853a4-254">已禁用</span><span class="sxs-lookup"><span data-stu-id="853a4-254">Disabled</span></span>|<span data-ttu-id="853a4-255">允许发送。</span><span class="sxs-lookup"><span data-stu-id="853a4-255">Send allowed.</span></span> <span data-ttu-id="853a4-256">即使尚未从 Exchange 中更新加载项，也可以在不运行 Onsend 加载项的情况下发送邮件或会议项目。</span><span class="sxs-lookup"><span data-stu-id="853a4-256">Message or meeting item can be sent without running the on-send add-in, even if the add-in has not been updated from Exchange yet.</span></span>|
+|<span data-ttu-id="853a4-257">已启用</span><span class="sxs-lookup"><span data-stu-id="853a4-257">Enabled</span></span>|<span data-ttu-id="853a4-258">仅当加载项已从 Exchange 更新时才允许发送；否则，将阻止发送。</span><span class="sxs-lookup"><span data-stu-id="853a4-258">Send allowed only when the add-in has been updated from Exchange; otherwise, send is blocked.</span></span>|
 
-#### <a name="manage-the-on-send-policy"></a><span data-ttu-id="ee8c4-259">管理 Onsend 策略</span><span class="sxs-lookup"><span data-stu-id="ee8c4-259">Manage the on-send policy</span></span>
+#### <a name="manage-the-on-send-policy"></a><span data-ttu-id="853a4-259">管理 Onsend 策略</span><span class="sxs-lookup"><span data-stu-id="853a4-259">Manage the on-send policy</span></span>
 
-<span data-ttu-id="ee8c4-260">默认情况下，Onsend 策略处于禁用状态。</span><span class="sxs-lookup"><span data-stu-id="ee8c4-260">By default, the on-send policy is disabled.</span></span> <span data-ttu-id="ee8c4-261">管理员可以通过确保用户的组策略设置“**无法加载 Web 扩展时禁用发送**”设置为“**已启用**”来启用 Onsend 策略。</span><span class="sxs-lookup"><span data-stu-id="ee8c4-261">Administrators can enable the on-send policy by ensuring the user's group policy setting **Disable send when web extensions can't load** is set to **Enabled**.</span></span> <span data-ttu-id="ee8c4-262">若为用户禁用策略，管理员应将其设置为“**已禁用**”。</span><span class="sxs-lookup"><span data-stu-id="ee8c4-262">To disable the policy for a user, the administrator should set it to **Disabled**.</span></span> <span data-ttu-id="ee8c4-263">若要管理此策略设置，可执行下列操作。</span><span class="sxs-lookup"><span data-stu-id="ee8c4-263">To manage this policy setting, you can do the following.</span></span>
+<span data-ttu-id="853a4-260">默认情况下，Onsend 策略处于禁用状态。</span><span class="sxs-lookup"><span data-stu-id="853a4-260">By default, the on-send policy is disabled.</span></span> <span data-ttu-id="853a4-261">管理员可以通过确保用户的组策略设置“**无法加载 Web 扩展时禁用发送**”设置为“**已启用**”来启用 Onsend 策略。</span><span class="sxs-lookup"><span data-stu-id="853a4-261">Administrators can enable the on-send policy by ensuring the user's group policy setting **Disable send when web extensions can't load** is set to **Enabled**.</span></span> <span data-ttu-id="853a4-262">若为用户禁用策略，管理员应将其设置为“**已禁用**”。</span><span class="sxs-lookup"><span data-stu-id="853a4-262">To disable the policy for a user, the administrator should set it to **Disabled**.</span></span> <span data-ttu-id="853a4-263">若要管理此策略设置，可执行下列操作。</span><span class="sxs-lookup"><span data-stu-id="853a4-263">To manage this policy setting, you can do the following.</span></span>
 
-1. <span data-ttu-id="ee8c4-264">下载最新的[管理模板工具](https://www.microsoft.com/download/details.aspx?id=49030)。</span><span class="sxs-lookup"><span data-stu-id="ee8c4-264">Download the latest [Administrative Templates tool](https://www.microsoft.com/download/details.aspx?id=49030).</span></span>
-1. <span data-ttu-id="ee8c4-265">打开本地组策略编辑器 (**gpedit.msc**)。</span><span class="sxs-lookup"><span data-stu-id="ee8c4-265">Open the Local Group Policy editor (**gpedit.msc**).</span></span>
-1. <span data-ttu-id="ee8c4-266">导航到 **“用户配置”>“管理模板”>“Microsoft Outlook 2016”>“安全性”>“信任中心”**。</span><span class="sxs-lookup"><span data-stu-id="ee8c4-266">Navigate to **User Configuration > Administrative Templates  > Microsoft Outlook 2016 > Security > Trust Center**.</span></span>
-1. <span data-ttu-id="ee8c4-267">选择“**无法加载 Web 扩展时禁用发送**”设置。</span><span class="sxs-lookup"><span data-stu-id="ee8c4-267">Select the **Disable send when web extensions can't load** setting.</span></span>
-1. <span data-ttu-id="ee8c4-268">打开链接以编辑策略设置。</span><span class="sxs-lookup"><span data-stu-id="ee8c4-268">Open the link to edit policy setting.</span></span>
-1. <span data-ttu-id="ee8c4-269">在“**无法加载 Web 扩展时禁用发送**”对话框窗口中，根据需要选择“**已启用**”或“**已禁用**”，然后选择“**确定**”或“**应用**”以使更新生效。</span><span class="sxs-lookup"><span data-stu-id="ee8c4-269">In the **Disable send when web extensions can't load** dialog window, select **Enabled** or **Disabled** as appropriate then select **OK** or **Apply** to put the update into effect.</span></span>
+1. <span data-ttu-id="853a4-264">下载最新的[管理模板工具](https://www.microsoft.com/download/details.aspx?id=49030)。</span><span class="sxs-lookup"><span data-stu-id="853a4-264">Download the latest [Administrative Templates tool](https://www.microsoft.com/download/details.aspx?id=49030).</span></span>
+1. <span data-ttu-id="853a4-265">打开本地组策略编辑器 (**gpedit.msc**)。</span><span class="sxs-lookup"><span data-stu-id="853a4-265">Open the Local Group Policy editor (**gpedit.msc**).</span></span>
+1. <span data-ttu-id="853a4-266">导航到 **“用户配置”>“管理模板”>“Microsoft Outlook 2016”>“安全性”>“信任中心”**。</span><span class="sxs-lookup"><span data-stu-id="853a4-266">Navigate to **User Configuration > Administrative Templates  > Microsoft Outlook 2016 > Security > Trust Center**.</span></span>
+1. <span data-ttu-id="853a4-267">选择“**无法加载 Web 扩展时禁用发送**”设置。</span><span class="sxs-lookup"><span data-stu-id="853a4-267">Select the **Disable send when web extensions can't load** setting.</span></span>
+1. <span data-ttu-id="853a4-268">打开链接以编辑策略设置。</span><span class="sxs-lookup"><span data-stu-id="853a4-268">Open the link to edit policy setting.</span></span>
+1. <span data-ttu-id="853a4-269">在“**无法加载 Web 扩展时禁用发送**”对话框窗口中，根据需要选择“**已启用**”或“**已禁用**”，然后选择“**确定**”或“**应用**”以使更新生效。</span><span class="sxs-lookup"><span data-stu-id="853a4-269">In the **Disable send when web extensions can't load** dialog window, select **Enabled** or **Disabled** as appropriate then select **OK** or **Apply** to put the update into effect.</span></span>
 
-### <a name="mac"></a>[<span data-ttu-id="ee8c4-270">Mac</span><span class="sxs-lookup"><span data-stu-id="ee8c4-270">Mac</span></span>](#tab/unix)
+### <a name="mac"></a>[<span data-ttu-id="853a4-270">Mac</span><span class="sxs-lookup"><span data-stu-id="853a4-270">Mac</span></span>](#tab/unix)
 
-<span data-ttu-id="ee8c4-271">对于安装了使用 Onsend 功能的 Mac 版 Outlook 加载项的任何用户，系统会为其运行该加载项。</span><span class="sxs-lookup"><span data-stu-id="ee8c4-271">Add-ins for Outlook on Mac that use the on-send feature should run for any users who have them installed.</span></span> <span data-ttu-id="ee8c4-272">但是，如果用户需要运行该加载项来满足合规性标准，则必须在每个用户的计算机上应用以下邮箱设置。</span><span class="sxs-lookup"><span data-stu-id="ee8c4-272">However, if users are required to run the add-in to meet compliance standards, then the following mailbox setting must be applied on each user's machine.</span></span> <span data-ttu-id="ee8c4-273">此设置或键与 CFPreferences 兼容，这意味着可以使用适用于 Mac 的企业管理软件（例如，Jamf Pro）来对其进行设置。</span><span class="sxs-lookup"><span data-stu-id="ee8c4-273">This setting or key is CFPreference-compatible, which means that it can be set by using enterprise management software for Mac, such as Jamf Pro.</span></span>
+<span data-ttu-id="853a4-271">对于安装了使用 Onsend 功能的 Mac 版 Outlook 加载项的任何用户，系统会为其运行该加载项。</span><span class="sxs-lookup"><span data-stu-id="853a4-271">Add-ins for Outlook on Mac that use the on-send feature should run for any users who have them installed.</span></span> <span data-ttu-id="853a4-272">但是，如果用户需要运行该加载项来满足合规性标准，则必须在每个用户的计算机上应用以下邮箱设置。</span><span class="sxs-lookup"><span data-stu-id="853a4-272">However, if users are required to run the add-in to meet compliance standards, then the following mailbox setting must be applied on each user's machine.</span></span> <span data-ttu-id="853a4-273">此设置或键与 CFPreferences 兼容，这意味着可以使用适用于 Mac 的企业管理软件（例如，Jamf Pro）来对其进行设置。</span><span class="sxs-lookup"><span data-stu-id="853a4-273">This setting or key is CFPreference-compatible, which means that it can be set by using enterprise management software for Mac, such as Jamf Pro.</span></span>
 
 |||
 |:---|:---|
-|<span data-ttu-id="ee8c4-274">**域**</span><span class="sxs-lookup"><span data-stu-id="ee8c4-274">**Domain**</span></span>|<span data-ttu-id="ee8c4-275">com.microsoft.outlook</span><span class="sxs-lookup"><span data-stu-id="ee8c4-275">com.microsoft.outlook</span></span>|
-|<span data-ttu-id="ee8c4-276">**键**</span><span class="sxs-lookup"><span data-stu-id="ee8c4-276">**Key**</span></span>|<span data-ttu-id="ee8c4-277">OnSendAddinsWaitForLoad</span><span class="sxs-lookup"><span data-stu-id="ee8c4-277">OnSendAddinsWaitForLoad</span></span>|
-|<span data-ttu-id="ee8c4-278">**DataType**</span><span class="sxs-lookup"><span data-stu-id="ee8c4-278">**DataType**</span></span>|<span data-ttu-id="ee8c4-279">Boolean</span><span class="sxs-lookup"><span data-stu-id="ee8c4-279">Boolean</span></span>|
-|<span data-ttu-id="ee8c4-280">**可能的值**</span><span class="sxs-lookup"><span data-stu-id="ee8c4-280">**Possible values**</span></span>|<span data-ttu-id="ee8c4-281">false（默认值）</span><span class="sxs-lookup"><span data-stu-id="ee8c4-281">false (default)</span></span><br><span data-ttu-id="ee8c4-282">true</span><span class="sxs-lookup"><span data-stu-id="ee8c4-282">true</span></span>|
-|<span data-ttu-id="ee8c4-283">**可用性**</span><span class="sxs-lookup"><span data-stu-id="ee8c4-283">**Availability**</span></span>|<span data-ttu-id="ee8c4-284">16.27</span><span class="sxs-lookup"><span data-stu-id="ee8c4-284">16.27</span></span>|
-|<span data-ttu-id="ee8c4-285">**备注**</span><span class="sxs-lookup"><span data-stu-id="ee8c4-285">**Comments**</span></span>|<span data-ttu-id="ee8c4-286">此键将创建 onSendMailbox 策略。</span><span class="sxs-lookup"><span data-stu-id="ee8c4-286">This key creates an onSendMailbox policy.</span></span>|
+|<span data-ttu-id="853a4-274">**域**</span><span class="sxs-lookup"><span data-stu-id="853a4-274">**Domain**</span></span>|<span data-ttu-id="853a4-275">com.microsoft.outlook</span><span class="sxs-lookup"><span data-stu-id="853a4-275">com.microsoft.outlook</span></span>|
+|<span data-ttu-id="853a4-276">**键**</span><span class="sxs-lookup"><span data-stu-id="853a4-276">**Key**</span></span>|<span data-ttu-id="853a4-277">OnSendAddinsWaitForLoad</span><span class="sxs-lookup"><span data-stu-id="853a4-277">OnSendAddinsWaitForLoad</span></span>|
+|<span data-ttu-id="853a4-278">**DataType**</span><span class="sxs-lookup"><span data-stu-id="853a4-278">**DataType**</span></span>|<span data-ttu-id="853a4-279">Boolean</span><span class="sxs-lookup"><span data-stu-id="853a4-279">Boolean</span></span>|
+|<span data-ttu-id="853a4-280">**可能的值**</span><span class="sxs-lookup"><span data-stu-id="853a4-280">**Possible values**</span></span>|<span data-ttu-id="853a4-281">false（默认值）</span><span class="sxs-lookup"><span data-stu-id="853a4-281">false (default)</span></span><br><span data-ttu-id="853a4-282">true</span><span class="sxs-lookup"><span data-stu-id="853a4-282">true</span></span>|
+|<span data-ttu-id="853a4-283">**可用性**</span><span class="sxs-lookup"><span data-stu-id="853a4-283">**Availability**</span></span>|<span data-ttu-id="853a4-284">16.27</span><span class="sxs-lookup"><span data-stu-id="853a4-284">16.27</span></span>|
+|<span data-ttu-id="853a4-285">**备注**</span><span class="sxs-lookup"><span data-stu-id="853a4-285">**Comments**</span></span>|<span data-ttu-id="853a4-286">此键将创建 onSendMailbox 策略。</span><span class="sxs-lookup"><span data-stu-id="853a4-286">This key creates an onSendMailbox policy.</span></span>|
 
-#### <a name="what-the-setting-does"></a><span data-ttu-id="ee8c4-287">设置的用途</span><span class="sxs-lookup"><span data-stu-id="ee8c4-287">What the setting does</span></span>
+#### <a name="what-the-setting-does"></a><span data-ttu-id="853a4-287">设置的用途</span><span class="sxs-lookup"><span data-stu-id="853a4-287">What the setting does</span></span>
 
-<span data-ttu-id="ee8c4-288">出于合规性原因，管理员可能需要在用户具有可供运行的最新 Onsend 加载项前，确保其无法发送邮件或会议项目。</span><span class="sxs-lookup"><span data-stu-id="ee8c4-288">For compliance reasons, administrators may need to ensure that users cannot send message or meeting items until the latest on-send add-ins are available to run.</span></span> <span data-ttu-id="ee8c4-289">管理员必须启用键 **OnSendAddinsWaitForLoad**，以便所有加载项都从 Exchange 进行更新，并可用于在发送时验证每封邮件或每个会议项目是否符合预期的规则和规定。</span><span class="sxs-lookup"><span data-stu-id="ee8c4-289">Admins must enable the key **OnSendAddinsWaitForLoad** so that all add-ins are updated from Exchange and available to verify each message or meeting item meets expected rules and regulations on send.</span></span>
+<span data-ttu-id="853a4-288">出于合规性原因，管理员可能需要在用户具有可供运行的最新 Onsend 加载项前，确保其无法发送邮件或会议项目。</span><span class="sxs-lookup"><span data-stu-id="853a4-288">For compliance reasons, administrators may need to ensure that users cannot send message or meeting items until the latest on-send add-ins are available to run.</span></span> <span data-ttu-id="853a4-289">管理员必须启用键 **OnSendAddinsWaitForLoad**，以便所有加载项都从 Exchange 进行更新，并可用于在发送时验证每封邮件或每个会议项目是否符合预期的规则和规定。</span><span class="sxs-lookup"><span data-stu-id="853a4-289">Admins must enable the key **OnSendAddinsWaitForLoad** so that all add-ins are updated from Exchange and available to verify each message or meeting item meets expected rules and regulations on send.</span></span>
 
-|<span data-ttu-id="ee8c4-290">键的状态</span><span class="sxs-lookup"><span data-stu-id="ee8c4-290">Key's state</span></span>|<span data-ttu-id="ee8c4-291">结果</span><span class="sxs-lookup"><span data-stu-id="ee8c4-291">Result</span></span>|
+|<span data-ttu-id="853a4-290">键的状态</span><span class="sxs-lookup"><span data-stu-id="853a4-290">Key's state</span></span>|<span data-ttu-id="853a4-291">结果</span><span class="sxs-lookup"><span data-stu-id="853a4-291">Result</span></span>|
 |---|---|
-|<span data-ttu-id="ee8c4-292">false</span><span class="sxs-lookup"><span data-stu-id="ee8c4-292">false</span></span>|<span data-ttu-id="ee8c4-293">允许发送。</span><span class="sxs-lookup"><span data-stu-id="ee8c4-293">Send allowed.</span></span> <span data-ttu-id="ee8c4-294">即使尚未从 Exchange 中更新加载项，也可以在不运行 Onsend 加载项的情况下发送邮件或会议项目。</span><span class="sxs-lookup"><span data-stu-id="ee8c4-294">Message or meeting item can be sent without running the on-send add-in, even if the add-in has not been updated from Exchange yet.</span></span>|
-|<span data-ttu-id="ee8c4-295">true</span><span class="sxs-lookup"><span data-stu-id="ee8c4-295">true</span></span>|<span data-ttu-id="ee8c4-296">仅当加载项已从 Exchange 更新时才允许发送；否则，将阻止发送，并且禁用“**发送**”按钮。</span><span class="sxs-lookup"><span data-stu-id="ee8c4-296">Send allowed only when add-ins have been updated from Exchange; otherwise, send is blocked and the **Send** button is disabled.</span></span>|
+|<span data-ttu-id="853a4-292">false</span><span class="sxs-lookup"><span data-stu-id="853a4-292">false</span></span>|<span data-ttu-id="853a4-293">允许发送。</span><span class="sxs-lookup"><span data-stu-id="853a4-293">Send allowed.</span></span> <span data-ttu-id="853a4-294">即使尚未从 Exchange 中更新加载项，也可以在不运行 Onsend 加载项的情况下发送邮件或会议项目。</span><span class="sxs-lookup"><span data-stu-id="853a4-294">Message or meeting item can be sent without running the on-send add-in, even if the add-in has not been updated from Exchange yet.</span></span>|
+|<span data-ttu-id="853a4-295">true</span><span class="sxs-lookup"><span data-stu-id="853a4-295">true</span></span>|<span data-ttu-id="853a4-296">仅当加载项已从 Exchange 更新时才允许发送；否则，将阻止发送，并且禁用“**发送**”按钮。</span><span class="sxs-lookup"><span data-stu-id="853a4-296">Send allowed only when add-ins have been updated from Exchange; otherwise, send is blocked and the **Send** button is disabled.</span></span>|
 
 ---
 
-## <a name="on-send-feature-scenarios"></a><span data-ttu-id="ee8c4-297">Onsend 功能的应用场景</span><span class="sxs-lookup"><span data-stu-id="ee8c4-297">On-send feature scenarios</span></span>
+## <a name="on-send-feature-scenarios"></a><span data-ttu-id="853a4-297">Onsend 功能的应用场景</span><span class="sxs-lookup"><span data-stu-id="853a4-297">On-send feature scenarios</span></span>
 
-<span data-ttu-id="ee8c4-298">以下是支持和不支持使用 Onsend 功能的加载项的应用场景。</span><span class="sxs-lookup"><span data-stu-id="ee8c4-298">The following are the supported and unsupported scenarios for add-ins that use the on-send feature.</span></span>
+<span data-ttu-id="853a4-298">以下是支持和不支持使用 Onsend 功能的加载项的应用场景。</span><span class="sxs-lookup"><span data-stu-id="853a4-298">The following are the supported and unsupported scenarios for add-ins that use the on-send feature.</span></span>
 
-### <a name="user-mailbox-has-the-on-send-add-in-feature-enabled-but-no-add-ins-are-installed"></a><span data-ttu-id="ee8c4-299">用户邮箱启用了 Onsend 加载项功能，但未安装任何加载项</span><span class="sxs-lookup"><span data-stu-id="ee8c4-299">User mailbox has the on-send add-in feature enabled but no add-ins are installed</span></span>
+### <a name="user-mailbox-has-the-on-send-add-in-feature-enabled-but-no-add-ins-are-installed"></a><span data-ttu-id="853a4-299">用户邮箱启用了 Onsend 加载项功能，但未安装任何加载项</span><span class="sxs-lookup"><span data-stu-id="853a4-299">User mailbox has the on-send add-in feature enabled but no add-ins are installed</span></span>
 
-<span data-ttu-id="ee8c4-300">在这种场景中，用户将能够在不执行任何加载项的情况下发送邮件或会议项目。</span><span class="sxs-lookup"><span data-stu-id="ee8c4-300">In this scenario the user will be able to send message and meeting items without any add-ins executing.</span></span>
+<span data-ttu-id="853a4-300">在这种场景中，用户将能够在不执行任何加载项的情况下发送邮件或会议项目。</span><span class="sxs-lookup"><span data-stu-id="853a4-300">In this scenario the user will be able to send message and meeting items without any add-ins executing.</span></span>
 
-### <a name="user-mailbox-has-the-on-send-add-in-feature-enabled-and-add-ins-that-supports-on-send-are-installed-and-enabled"></a><span data-ttu-id="ee8c4-301">用户邮箱启用了 Onsend 加载项功能，并且安装并启用了支持 Onsend 的加载项</span><span class="sxs-lookup"><span data-stu-id="ee8c4-301">User mailbox has the on-send add-in feature enabled and add-ins that supports on-send are installed and enabled</span></span>
+### <a name="user-mailbox-has-the-on-send-add-in-feature-enabled-and-add-ins-that-supports-on-send-are-installed-and-enabled"></a><span data-ttu-id="853a4-301">用户邮箱启用了 Onsend 加载项功能，并且安装并启用了支持 Onsend 的加载项</span><span class="sxs-lookup"><span data-stu-id="853a4-301">User mailbox has the on-send add-in feature enabled and add-ins that supports on-send are installed and enabled</span></span>
 
-<span data-ttu-id="ee8c4-302">外接程序在发送事件期间运行，然后允许或阻止用户发送。</span><span class="sxs-lookup"><span data-stu-id="ee8c4-302">Add-ins will run during the send event, which will then either allow or block the user from sending.</span></span>
+<span data-ttu-id="853a4-302">外接程序在发送事件期间运行，然后允许或阻止用户发送。</span><span class="sxs-lookup"><span data-stu-id="853a4-302">Add-ins will run during the send event, which will then either allow or block the user from sending.</span></span>
 
-### <a name="mailbox-delegation-where-mailbox-1-has-full-access-permissions-to-mailbox-2"></a><span data-ttu-id="ee8c4-303">邮箱委派，其中邮箱 1 具有对邮箱 2 的完全访问权限</span><span class="sxs-lookup"><span data-stu-id="ee8c4-303">Mailbox delegation, where mailbox 1 has full access permissions to mailbox 2</span></span>
+### <a name="mailbox-delegation-where-mailbox-1-has-full-access-permissions-to-mailbox-2"></a><span data-ttu-id="853a4-303">邮箱委派，其中邮箱 1 具有对邮箱 2 的完全访问权限</span><span class="sxs-lookup"><span data-stu-id="853a4-303">Mailbox delegation, where mailbox 1 has full access permissions to mailbox 2</span></span>
 
-#### <a name="web-browser-classic-outlook"></a><span data-ttu-id="ee8c4-304">Web 浏览器（经典 Outlook）</span><span class="sxs-lookup"><span data-stu-id="ee8c4-304">Web browser (classic Outlook)</span></span>
+#### <a name="web-browser-classic-outlook"></a><span data-ttu-id="853a4-304">Web 浏览器（经典 Outlook）</span><span class="sxs-lookup"><span data-stu-id="853a4-304">Web browser (classic Outlook)</span></span>
 
-|<span data-ttu-id="ee8c4-305">方案</span><span class="sxs-lookup"><span data-stu-id="ee8c4-305">Scenario</span></span>|<span data-ttu-id="ee8c4-306">邮箱 1 Onsend 功能</span><span class="sxs-lookup"><span data-stu-id="ee8c4-306">Mailbox 1 on-send feature</span></span>|<span data-ttu-id="ee8c4-307">邮箱 2 Onsend 功能</span><span class="sxs-lookup"><span data-stu-id="ee8c4-307">Mailbox 2 on-send feature</span></span>|<span data-ttu-id="ee8c4-308">Outlook Web 会话（经典）</span><span class="sxs-lookup"><span data-stu-id="ee8c4-308">Outlook web session (classic)</span></span>|<span data-ttu-id="ee8c4-309">结果</span><span class="sxs-lookup"><span data-stu-id="ee8c4-309">Result</span></span>|<span data-ttu-id="ee8c4-310">是否支持？</span><span class="sxs-lookup"><span data-stu-id="ee8c4-310">Supported?</span></span>|
+|<span data-ttu-id="853a4-305">方案</span><span class="sxs-lookup"><span data-stu-id="853a4-305">Scenario</span></span>|<span data-ttu-id="853a4-306">邮箱 1 Onsend 功能</span><span class="sxs-lookup"><span data-stu-id="853a4-306">Mailbox 1 on-send feature</span></span>|<span data-ttu-id="853a4-307">邮箱 2 Onsend 功能</span><span class="sxs-lookup"><span data-stu-id="853a4-307">Mailbox 2 on-send feature</span></span>|<span data-ttu-id="853a4-308">Outlook Web 会话（经典）</span><span class="sxs-lookup"><span data-stu-id="853a4-308">Outlook web session (classic)</span></span>|<span data-ttu-id="853a4-309">结果</span><span class="sxs-lookup"><span data-stu-id="853a4-309">Result</span></span>|<span data-ttu-id="853a4-310">是否支持？</span><span class="sxs-lookup"><span data-stu-id="853a4-310">Supported?</span></span>|
 |:------------|:------------|:--------------------------|:---------|:-------------|:-------------|
-|<span data-ttu-id="ee8c4-311">1 </span><span class="sxs-lookup"><span data-stu-id="ee8c4-311">1</span></span>|<span data-ttu-id="ee8c4-312">已启用</span><span class="sxs-lookup"><span data-stu-id="ee8c4-312">Enabled</span></span>|<span data-ttu-id="ee8c4-313">已启用</span><span class="sxs-lookup"><span data-stu-id="ee8c4-313">Enabled</span></span>|<span data-ttu-id="ee8c4-314">新会话</span><span class="sxs-lookup"><span data-stu-id="ee8c4-314">New session</span></span>|<span data-ttu-id="ee8c4-315">邮箱 1 无法从邮箱 2 发送邮件或会议项目。</span><span class="sxs-lookup"><span data-stu-id="ee8c4-315">Mailbox 1 cannot send a message or meeting item from mailbox 2.</span></span>|<span data-ttu-id="ee8c4-p132">目前尚不支持。可以使用方案 3 作为一种解决办法。</span><span class="sxs-lookup"><span data-stu-id="ee8c4-p132">Not currently supported. As a workaround, use scenario 3.</span></span>|
-|<span data-ttu-id="ee8c4-318">双面</span><span class="sxs-lookup"><span data-stu-id="ee8c4-318">2</span></span>|<span data-ttu-id="ee8c4-319">已禁用</span><span class="sxs-lookup"><span data-stu-id="ee8c4-319">Disabled</span></span>|<span data-ttu-id="ee8c4-320">已启用</span><span class="sxs-lookup"><span data-stu-id="ee8c4-320">Enabled</span></span>|<span data-ttu-id="ee8c4-321">新会话</span><span class="sxs-lookup"><span data-stu-id="ee8c4-321">New session</span></span>|<span data-ttu-id="ee8c4-322">邮箱 1 无法从邮箱 2 发送邮件或会议项目。</span><span class="sxs-lookup"><span data-stu-id="ee8c4-322">Mailbox 1 cannot send a message or meeting item from mailbox 2.</span></span>|<span data-ttu-id="ee8c4-p133">目前尚不支持。可以使用方案 3 作为一种解决办法。</span><span class="sxs-lookup"><span data-stu-id="ee8c4-p133">Not currently supported. As a workaround, use scenario 3.</span></span>|
-|<span data-ttu-id="ee8c4-325">第三章</span><span class="sxs-lookup"><span data-stu-id="ee8c4-325">3</span></span>|<span data-ttu-id="ee8c4-326">已启用</span><span class="sxs-lookup"><span data-stu-id="ee8c4-326">Enabled</span></span>|<span data-ttu-id="ee8c4-327">已启用</span><span class="sxs-lookup"><span data-stu-id="ee8c4-327">Enabled</span></span>|<span data-ttu-id="ee8c4-328">同一个会话</span><span class="sxs-lookup"><span data-stu-id="ee8c4-328">Same session</span></span>|<span data-ttu-id="ee8c4-329">分配给邮箱 1 的 Onsend 加载项运行 Onsend。</span><span class="sxs-lookup"><span data-stu-id="ee8c4-329">On-send add-ins assigned to mailbox 1 run on-send.</span></span>|<span data-ttu-id="ee8c4-330">支持。</span><span class="sxs-lookup"><span data-stu-id="ee8c4-330">Supported.</span></span>|
-|<span data-ttu-id="ee8c4-331">4 </span><span class="sxs-lookup"><span data-stu-id="ee8c4-331">4</span></span>|<span data-ttu-id="ee8c4-332">已启用</span><span class="sxs-lookup"><span data-stu-id="ee8c4-332">Enabled</span></span>|<span data-ttu-id="ee8c4-333">已禁用</span><span class="sxs-lookup"><span data-stu-id="ee8c4-333">Disabled</span></span>|<span data-ttu-id="ee8c4-334">新会话</span><span class="sxs-lookup"><span data-stu-id="ee8c4-334">New session</span></span>|<span data-ttu-id="ee8c4-335">未运行 Onsend 加载项；邮件或会议项目已发送。</span><span class="sxs-lookup"><span data-stu-id="ee8c4-335">No on-send add-ins run; message or meeting item is sent.</span></span>|<span data-ttu-id="ee8c4-336">支持。</span><span class="sxs-lookup"><span data-stu-id="ee8c4-336">Supported.</span></span>|
+|<span data-ttu-id="853a4-311">1 </span><span class="sxs-lookup"><span data-stu-id="853a4-311">1</span></span>|<span data-ttu-id="853a4-312">启用</span><span class="sxs-lookup"><span data-stu-id="853a4-312">Enabled</span></span>|<span data-ttu-id="853a4-313">启用</span><span class="sxs-lookup"><span data-stu-id="853a4-313">Enabled</span></span>|<span data-ttu-id="853a4-314">新会话</span><span class="sxs-lookup"><span data-stu-id="853a4-314">New session</span></span>|<span data-ttu-id="853a4-315">邮箱 1 无法从邮箱 2 发送邮件或会议项目。</span><span class="sxs-lookup"><span data-stu-id="853a4-315">Mailbox 1 cannot send a message or meeting item from mailbox 2.</span></span>|<span data-ttu-id="853a4-p132">目前尚不支持。可以使用方案 3 作为一种解决办法。</span><span class="sxs-lookup"><span data-stu-id="853a4-p132">Not currently supported. As a workaround, use scenario 3.</span></span>|
+|<span data-ttu-id="853a4-318">双面</span><span class="sxs-lookup"><span data-stu-id="853a4-318">2</span></span>|<span data-ttu-id="853a4-319">已禁用</span><span class="sxs-lookup"><span data-stu-id="853a4-319">Disabled</span></span>|<span data-ttu-id="853a4-320">启用</span><span class="sxs-lookup"><span data-stu-id="853a4-320">Enabled</span></span>|<span data-ttu-id="853a4-321">新会话</span><span class="sxs-lookup"><span data-stu-id="853a4-321">New session</span></span>|<span data-ttu-id="853a4-322">邮箱 1 无法从邮箱 2 发送邮件或会议项目。</span><span class="sxs-lookup"><span data-stu-id="853a4-322">Mailbox 1 cannot send a message or meeting item from mailbox 2.</span></span>|<span data-ttu-id="853a4-p133">目前尚不支持。可以使用方案 3 作为一种解决办法。</span><span class="sxs-lookup"><span data-stu-id="853a4-p133">Not currently supported. As a workaround, use scenario 3.</span></span>|
+|<span data-ttu-id="853a4-325">第三章</span><span class="sxs-lookup"><span data-stu-id="853a4-325">3</span></span>|<span data-ttu-id="853a4-326">已启用</span><span class="sxs-lookup"><span data-stu-id="853a4-326">Enabled</span></span>|<span data-ttu-id="853a4-327">已启用</span><span class="sxs-lookup"><span data-stu-id="853a4-327">Enabled</span></span>|<span data-ttu-id="853a4-328">同一个会话</span><span class="sxs-lookup"><span data-stu-id="853a4-328">Same session</span></span>|<span data-ttu-id="853a4-329">分配给邮箱 1 的 Onsend 加载项运行 Onsend。</span><span class="sxs-lookup"><span data-stu-id="853a4-329">On-send add-ins assigned to mailbox 1 run on-send.</span></span>|<span data-ttu-id="853a4-330">支持。</span><span class="sxs-lookup"><span data-stu-id="853a4-330">Supported.</span></span>|
+|<span data-ttu-id="853a4-331">4 </span><span class="sxs-lookup"><span data-stu-id="853a4-331">4</span></span>|<span data-ttu-id="853a4-332">启用</span><span class="sxs-lookup"><span data-stu-id="853a4-332">Enabled</span></span>|<span data-ttu-id="853a4-333">已禁用</span><span class="sxs-lookup"><span data-stu-id="853a4-333">Disabled</span></span>|<span data-ttu-id="853a4-334">新会话</span><span class="sxs-lookup"><span data-stu-id="853a4-334">New session</span></span>|<span data-ttu-id="853a4-335">未运行 Onsend 加载项；邮件或会议项目已发送。</span><span class="sxs-lookup"><span data-stu-id="853a4-335">No on-send add-ins run; message or meeting item is sent.</span></span>|<span data-ttu-id="853a4-336">支持。</span><span class="sxs-lookup"><span data-stu-id="853a4-336">Supported.</span></span>|
 
-#### <a name="web-browser-modern-outlook-windows-mac"></a><span data-ttu-id="ee8c4-337">Web 浏览器（新式 Outlook）、Windows、Mac</span><span class="sxs-lookup"><span data-stu-id="ee8c4-337">Web browser (modern Outlook), Windows, Mac</span></span>
+#### <a name="web-browser-modern-outlook-windows-mac"></a><span data-ttu-id="853a4-337">Web 浏览器（新式 Outlook）、Windows、Mac</span><span class="sxs-lookup"><span data-stu-id="853a4-337">Web browser (modern Outlook), Windows, Mac</span></span>
 
-<span data-ttu-id="ee8c4-338">若要强制执行 Onsend，管理员应确保对两个邮箱都启用了该策略。</span><span class="sxs-lookup"><span data-stu-id="ee8c4-338">To enforce on-send, administrators should ensure the policy has been enabled on both mailboxes.</span></span> <span data-ttu-id="ee8c4-339">若要了解如何在加载项中支持委派访问，请参阅[在 Outlook 加载项中启用委派访问方案](delegate-access.md)。</span><span class="sxs-lookup"><span data-stu-id="ee8c4-339">To learn how to support delegate access in an add-in, see [Enable delegate access scenarios in an Outlook add-in](delegate-access.md).</span></span>
+<span data-ttu-id="853a4-338">若要强制执行 Onsend，管理员应确保对两个邮箱都启用了该策略。</span><span class="sxs-lookup"><span data-stu-id="853a4-338">To enforce on-send, administrators should ensure the policy has been enabled on both mailboxes.</span></span> <span data-ttu-id="853a4-339">若要了解如何在加载项中支持委派访问，请参阅[在 Outlook 加载项中启用委派访问方案](delegate-access.md)。</span><span class="sxs-lookup"><span data-stu-id="853a4-339">To learn how to support delegate access in an add-in, see [Enable delegate access scenarios in an Outlook add-in](delegate-access.md).</span></span>
 
-### <a name="group-1-is-a-modern-group-mailbox-and-user-mailbox-1-is-a-member-of-group-1"></a><span data-ttu-id="ee8c4-340">组 1 是新式组邮箱，用户邮箱 1 是组 1 的成员</span><span class="sxs-lookup"><span data-stu-id="ee8c4-340">Group 1 is a modern group mailbox and user mailbox 1 is a member of Group 1</span></span>
+### <a name="group-1-is-a-modern-group-mailbox-and-user-mailbox-1-is-a-member-of-group-1"></a><span data-ttu-id="853a4-340">组 1 是新式组邮箱，用户邮箱 1 是组 1 的成员</span><span class="sxs-lookup"><span data-stu-id="853a4-340">Group 1 is a modern group mailbox and user mailbox 1 is a member of Group 1</span></span>
 
 <br/>
 
-|<span data-ttu-id="ee8c4-341">方案</span><span class="sxs-lookup"><span data-stu-id="ee8c4-341">Scenario</span></span>|<span data-ttu-id="ee8c4-342">邮箱 1 Onsend 策略</span><span class="sxs-lookup"><span data-stu-id="ee8c4-342">Mailbox 1 on-send policy</span></span>|<span data-ttu-id="ee8c4-343">是否启用了 Onsend 加载项？</span><span class="sxs-lookup"><span data-stu-id="ee8c4-343">On-send add-ins enabled?</span></span>|<span data-ttu-id="ee8c4-344">邮箱 1 操作</span><span class="sxs-lookup"><span data-stu-id="ee8c4-344">Mailbox 1 action</span></span>|<span data-ttu-id="ee8c4-345">结果</span><span class="sxs-lookup"><span data-stu-id="ee8c4-345">Result</span></span>|<span data-ttu-id="ee8c4-346">是否支持？</span><span class="sxs-lookup"><span data-stu-id="ee8c4-346">Supported?</span></span>|
+|<span data-ttu-id="853a4-341">方案</span><span class="sxs-lookup"><span data-stu-id="853a4-341">Scenario</span></span>|<span data-ttu-id="853a4-342">邮箱 1 Onsend 策略</span><span class="sxs-lookup"><span data-stu-id="853a4-342">Mailbox 1 on-send policy</span></span>|<span data-ttu-id="853a4-343">是否启用了 Onsend 加载项？</span><span class="sxs-lookup"><span data-stu-id="853a4-343">On-send add-ins enabled?</span></span>|<span data-ttu-id="853a4-344">邮箱 1 操作</span><span class="sxs-lookup"><span data-stu-id="853a4-344">Mailbox 1 action</span></span>|<span data-ttu-id="853a4-345">结果</span><span class="sxs-lookup"><span data-stu-id="853a4-345">Result</span></span>|<span data-ttu-id="853a4-346">是否支持？</span><span class="sxs-lookup"><span data-stu-id="853a4-346">Supported?</span></span>|
 |:------------|:-------------------------|:-------------------|:---------|:----------|:-------------|
-|<span data-ttu-id="ee8c4-347">1 </span><span class="sxs-lookup"><span data-stu-id="ee8c4-347">1</span></span>|<span data-ttu-id="ee8c4-348">已启用</span><span class="sxs-lookup"><span data-stu-id="ee8c4-348">Enabled</span></span>|<span data-ttu-id="ee8c4-349">是</span><span class="sxs-lookup"><span data-stu-id="ee8c4-349">Yes</span></span>|<span data-ttu-id="ee8c4-350">邮箱 1 撰写发送到组 1 的新邮件或会议。</span><span class="sxs-lookup"><span data-stu-id="ee8c4-350">Mailbox 1 composes new message or meeting to Group 1.</span></span>|<span data-ttu-id="ee8c4-351">发送期间，Onsend 加载项运行。</span><span class="sxs-lookup"><span data-stu-id="ee8c4-351">On-send add-ins run during send.</span></span>|<span data-ttu-id="ee8c4-352">是</span><span class="sxs-lookup"><span data-stu-id="ee8c4-352">Yes</span></span>|
-|<span data-ttu-id="ee8c4-353">双面</span><span class="sxs-lookup"><span data-stu-id="ee8c4-353">2</span></span>|<span data-ttu-id="ee8c4-354">已启用</span><span class="sxs-lookup"><span data-stu-id="ee8c4-354">Enabled</span></span>|<span data-ttu-id="ee8c4-355">是</span><span class="sxs-lookup"><span data-stu-id="ee8c4-355">Yes</span></span>|<span data-ttu-id="ee8c4-356">邮箱 1 在 Outlook 网页版组 1 的组窗口中撰写发送到组 1 的新邮件或会议。</span><span class="sxs-lookup"><span data-stu-id="ee8c4-356">Mailbox 1 composes a new message or meeting to Group 1 within Group 1's group window in Outlook on the web.</span></span>|<span data-ttu-id="ee8c4-357">Onsend 加载项不会在发送期间运行。</span><span class="sxs-lookup"><span data-stu-id="ee8c4-357">On-send add-ins do not run during send.</span></span>|<span data-ttu-id="ee8c4-358">目前尚不支持。</span><span class="sxs-lookup"><span data-stu-id="ee8c4-358">Not currently supported.</span></span> <span data-ttu-id="ee8c4-359">可以使用方案 1 作为一种解决办法。</span><span class="sxs-lookup"><span data-stu-id="ee8c4-359">As a workaround, use scenario 1.</span></span>|
+|<span data-ttu-id="853a4-347">1 </span><span class="sxs-lookup"><span data-stu-id="853a4-347">1</span></span>|<span data-ttu-id="853a4-348">已启用</span><span class="sxs-lookup"><span data-stu-id="853a4-348">Enabled</span></span>|<span data-ttu-id="853a4-349">是</span><span class="sxs-lookup"><span data-stu-id="853a4-349">Yes</span></span>|<span data-ttu-id="853a4-350">邮箱 1 撰写发送到组 1 的新邮件或会议。</span><span class="sxs-lookup"><span data-stu-id="853a4-350">Mailbox 1 composes new message or meeting to Group 1.</span></span>|<span data-ttu-id="853a4-351">发送期间，Onsend 加载项运行。</span><span class="sxs-lookup"><span data-stu-id="853a4-351">On-send add-ins run during send.</span></span>|<span data-ttu-id="853a4-352">是</span><span class="sxs-lookup"><span data-stu-id="853a4-352">Yes</span></span>|
+|<span data-ttu-id="853a4-353">双面</span><span class="sxs-lookup"><span data-stu-id="853a4-353">2</span></span>|<span data-ttu-id="853a4-354">已启用</span><span class="sxs-lookup"><span data-stu-id="853a4-354">Enabled</span></span>|<span data-ttu-id="853a4-355">是</span><span class="sxs-lookup"><span data-stu-id="853a4-355">Yes</span></span>|<span data-ttu-id="853a4-356">邮箱 1 在 Outlook 网页版组 1 的组窗口中撰写发送到组 1 的新邮件或会议。</span><span class="sxs-lookup"><span data-stu-id="853a4-356">Mailbox 1 composes a new message or meeting to Group 1 within Group 1's group window in Outlook on the web.</span></span>|<span data-ttu-id="853a4-357">Onsend 加载项不会在发送期间运行。</span><span class="sxs-lookup"><span data-stu-id="853a4-357">On-send add-ins do not run during send.</span></span>|<span data-ttu-id="853a4-358">目前尚不支持。</span><span class="sxs-lookup"><span data-stu-id="853a4-358">Not currently supported.</span></span> <span data-ttu-id="853a4-359">可以使用方案 1 作为一种解决办法。</span><span class="sxs-lookup"><span data-stu-id="853a4-359">As a workaround, use scenario 1.</span></span>|
 
-### <a name="user-mailbox-with-on-send-add-in-featurepolicy-enabled-add-ins-that-support-on-send-are-installed-and-enabled-and-offline-mode-is-enabled"></a><span data-ttu-id="ee8c4-360">用户邮箱启用了 Onsend 加载项功能/策略，并且安装并启用了支持 Onsend 的加载项，启用了脱机模式</span><span class="sxs-lookup"><span data-stu-id="ee8c4-360">User mailbox with on-send add-in feature/policy enabled, add-ins that support on-send are installed and enabled and offline mode is enabled</span></span>
+### <a name="user-mailbox-with-on-send-add-in-featurepolicy-enabled-add-ins-that-support-on-send-are-installed-and-enabled-and-offline-mode-is-enabled"></a><span data-ttu-id="853a4-360">用户邮箱启用了 Onsend 加载项功能/策略，并且安装并启用了支持 Onsend 的加载项，启用了脱机模式</span><span class="sxs-lookup"><span data-stu-id="853a4-360">User mailbox with on-send add-in feature/policy enabled, add-ins that support on-send are installed and enabled and offline mode is enabled</span></span>
 
-<span data-ttu-id="ee8c4-361">Onsend 加载项将根据用户、加载项后端和 Exchange 的联机状态运行。</span><span class="sxs-lookup"><span data-stu-id="ee8c4-361">On-send add-ins will run according to the online state of the user, the add-in backend, and Exchange.</span></span>
+<span data-ttu-id="853a4-361">Onsend 加载项将根据用户、加载项后端和 Exchange 的联机状态运行。</span><span class="sxs-lookup"><span data-stu-id="853a4-361">On-send add-ins will run according to the online state of the user, the add-in backend, and Exchange.</span></span>
 
-#### <a name="users-state"></a><span data-ttu-id="ee8c4-362">用户的状态</span><span class="sxs-lookup"><span data-stu-id="ee8c4-362">User's state</span></span>
+#### <a name="users-state"></a><span data-ttu-id="853a4-362">用户的状态</span><span class="sxs-lookup"><span data-stu-id="853a4-362">User's state</span></span>
 
-<span data-ttu-id="ee8c4-363">如果用户处于联机状态，则 Onsend 加载项将在发送期间运行。</span><span class="sxs-lookup"><span data-stu-id="ee8c4-363">The on-send add-ins will run during send if the user is online.</span></span> <span data-ttu-id="ee8c4-364">如果用户处于脱机状态，Onsend 加载项不会在发送期间运行，也不会发送邮件或会议项目。</span><span class="sxs-lookup"><span data-stu-id="ee8c4-364">If the user is offline, the on-send add-ins will not run during send and the message or meeting item will not be sent.</span></span>
+<span data-ttu-id="853a4-363">如果用户处于联机状态，则 Onsend 加载项将在发送期间运行。</span><span class="sxs-lookup"><span data-stu-id="853a4-363">The on-send add-ins will run during send if the user is online.</span></span> <span data-ttu-id="853a4-364">如果用户处于脱机状态，Onsend 加载项不会在发送期间运行，也不会发送邮件或会议项目。</span><span class="sxs-lookup"><span data-stu-id="853a4-364">If the user is offline, the on-send add-ins will not run during send and the message or meeting item will not be sent.</span></span>
 
-#### <a name="add-in-backends-state"></a><span data-ttu-id="ee8c4-365">加载项后端的状态</span><span class="sxs-lookup"><span data-stu-id="ee8c4-365">Add-in backend's state</span></span>
+#### <a name="add-in-backends-state"></a><span data-ttu-id="853a4-365">加载项后端的状态</span><span class="sxs-lookup"><span data-stu-id="853a4-365">Add-in backend's state</span></span>
 
-<span data-ttu-id="ee8c4-366">如果 Onsend 加载项的后端处于联机状态且可访问，则将运行该加载项。</span><span class="sxs-lookup"><span data-stu-id="ee8c4-366">An on-send add-in will run if its backend is online and reachable.</span></span> <span data-ttu-id="ee8c4-367">如果后端处于脱机状态，则将禁用发送。</span><span class="sxs-lookup"><span data-stu-id="ee8c4-367">If the backend is offline, send is disabled.</span></span>
+<span data-ttu-id="853a4-366">如果 Onsend 加载项的后端处于联机状态且可访问，则将运行该加载项。</span><span class="sxs-lookup"><span data-stu-id="853a4-366">An on-send add-in will run if its backend is online and reachable.</span></span> <span data-ttu-id="853a4-367">如果后端处于脱机状态，则将禁用发送。</span><span class="sxs-lookup"><span data-stu-id="853a4-367">If the backend is offline, send is disabled.</span></span>
 
-#### <a name="exchanges-state"></a><span data-ttu-id="ee8c4-368">Exchange 的状态</span><span class="sxs-lookup"><span data-stu-id="ee8c4-368">Exchange's state</span></span>
+#### <a name="exchanges-state"></a><span data-ttu-id="853a4-368">Exchange 的状态</span><span class="sxs-lookup"><span data-stu-id="853a4-368">Exchange's state</span></span>
 
-<span data-ttu-id="ee8c4-369">如果 Exchange 服务器处于联机状态且可访问，则 Onsend 加载项将在发送期间运行。</span><span class="sxs-lookup"><span data-stu-id="ee8c4-369">The on-send add-ins will run during send if the Exchange server is online and reachable.</span></span> <span data-ttu-id="ee8c4-370">如果 Onsend 加载项无法访问 Exchange 并且已启用适用的策略或 cmdlet，则将禁用发送。</span><span class="sxs-lookup"><span data-stu-id="ee8c4-370">If the on-send add-in cannot reach Exchange and the applicable policy or cmdlet is turned on, send is disabled.</span></span>
+<span data-ttu-id="853a4-369">如果 Exchange 服务器处于联机状态且可访问，则 Onsend 加载项将在发送期间运行。</span><span class="sxs-lookup"><span data-stu-id="853a4-369">The on-send add-ins will run during send if the Exchange server is online and reachable.</span></span> <span data-ttu-id="853a4-370">如果 Onsend 加载项无法访问 Exchange 并且已启用适用的策略或 cmdlet，则将禁用发送。</span><span class="sxs-lookup"><span data-stu-id="853a4-370">If the on-send add-in cannot reach Exchange and the applicable policy or cmdlet is turned on, send is disabled.</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="ee8c4-371">在处于任何脱机状态的 Mac 上，“**发送**”按钮（或现有会议的“**发送更新**”按钮）将被禁用，并显示当用户脱机时其组织不允许发送的通知。</span><span class="sxs-lookup"><span data-stu-id="ee8c4-371">On Mac in any offline state, the **Send** button (or the **Send Update** button for existing meetings) is disabled and a notification displayed that their organization doesn't allow send when the user is offline.</span></span>
+> <span data-ttu-id="853a4-371">在处于任何脱机状态的 Mac 上，“**发送**”按钮（或现有会议的“**发送更新**”按钮）将被禁用，并显示当用户脱机时其组织不允许发送的通知。</span><span class="sxs-lookup"><span data-stu-id="853a4-371">On Mac in any offline state, the **Send** button (or the **Send Update** button for existing meetings) is disabled and a notification displayed that their organization doesn't allow send when the user is offline.</span></span>
 
 
-## <a name="code-examples"></a><span data-ttu-id="ee8c4-372">代码示例</span><span class="sxs-lookup"><span data-stu-id="ee8c4-372">Code examples</span></span>
+## <a name="code-examples"></a><span data-ttu-id="853a4-372">代码示例</span><span class="sxs-lookup"><span data-stu-id="853a4-372">Code examples</span></span>
 
-<span data-ttu-id="ee8c4-373">以下代码示例说明如何创建一个简单的 Onsend 加载项。</span><span class="sxs-lookup"><span data-stu-id="ee8c4-373">The following code examples show you how to create a simple on-send add-in.</span></span> <span data-ttu-id="ee8c4-374">若要下载这些示例所基于的代码示例，请参阅 [Outlook-Add-in-On-Send](https://github.com/OfficeDev/Outlook-Add-in-On-Send)。</span><span class="sxs-lookup"><span data-stu-id="ee8c4-374">To download the code sample that these examples are based on, see [Outlook-Add-in-On-Send](https://github.com/OfficeDev/Outlook-Add-in-On-Send).</span></span>
+<span data-ttu-id="853a4-373">以下代码示例说明如何创建一个简单的 Onsend 加载项。</span><span class="sxs-lookup"><span data-stu-id="853a4-373">The following code examples show you how to create a simple on-send add-in.</span></span> <span data-ttu-id="853a4-374">若要下载这些示例所基于的代码示例，请参阅 [Outlook-Add-in-On-Send](https://github.com/OfficeDev/Outlook-Add-in-On-Send)。</span><span class="sxs-lookup"><span data-stu-id="853a4-374">To download the code sample that these examples are based on, see [Outlook-Add-in-On-Send](https://github.com/OfficeDev/Outlook-Add-in-On-Send).</span></span>
 
-### <a name="manifest-version-override-and-event"></a><span data-ttu-id="ee8c4-375">清单、版本重写和事件</span><span class="sxs-lookup"><span data-stu-id="ee8c4-375">Manifest, version override, and event</span></span>
+### <a name="manifest-version-override-and-event"></a><span data-ttu-id="853a4-375">清单、版本重写和事件</span><span class="sxs-lookup"><span data-stu-id="853a4-375">Manifest, version override, and event</span></span>
 
-<span data-ttu-id="ee8c4-376">[Outlook-Add-in-On-Send](https://github.com/OfficeDev/Outlook-Add-in-On-Send) 代码示例包括两个清单：</span><span class="sxs-lookup"><span data-stu-id="ee8c4-376">The [Outlook-Add-in-On-Send](https://github.com/OfficeDev/Outlook-Add-in-On-Send) code sample includes two manifests:</span></span>
+<span data-ttu-id="853a4-376">[Outlook-Add-in-On-Send](https://github.com/OfficeDev/Outlook-Add-in-On-Send) 代码示例包括两个清单：</span><span class="sxs-lookup"><span data-stu-id="853a4-376">The [Outlook-Add-in-On-Send](https://github.com/OfficeDev/Outlook-Add-in-On-Send) code sample includes two manifests:</span></span>
 
-- <span data-ttu-id="ee8c4-377">`Contoso Message Body Checker.xml` &ndash; 展示了如何在发送时检查邮件正文是否包含限制字词或敏感信息。</span><span class="sxs-lookup"><span data-stu-id="ee8c4-377">`Contoso Message Body Checker.xml` &ndash; Shows how to check the body of a message for restricted words or sensitive information on send.</span></span>  
+- <span data-ttu-id="853a4-377">`Contoso Message Body Checker.xml` &ndash; 展示了如何在发送时检查邮件正文是否包含限制字词或敏感信息。</span><span class="sxs-lookup"><span data-stu-id="853a4-377">`Contoso Message Body Checker.xml` &ndash; Shows how to check the body of a message for restricted words or sensitive information on send.</span></span>  
 
-- <span data-ttu-id="ee8c4-378">`Contoso Subject and CC Checker.xml` &ndash; 展示了如何将收件人添加到抄送行，并在发送时验证邮件是否包含主题行。</span><span class="sxs-lookup"><span data-stu-id="ee8c4-378">`Contoso Subject and CC Checker.xml` &ndash; Shows how to add a recipient to the CC line and verify that the message includes a subject line on send.</span></span>  
+- <span data-ttu-id="853a4-378">`Contoso Subject and CC Checker.xml` &ndash; 展示了如何将收件人添加到抄送行，并在发送时验证邮件是否包含主题行。</span><span class="sxs-lookup"><span data-stu-id="853a4-378">`Contoso Subject and CC Checker.xml` &ndash; Shows how to add a recipient to the CC line and verify that the message includes a subject line on send.</span></span>  
 
-<span data-ttu-id="ee8c4-379">在 `Contoso Message Body Checker.xml` 清单文件中，将包含在 `ItemSend` 事件中应调用的函数文件和函数名称。</span><span class="sxs-lookup"><span data-stu-id="ee8c4-379">In the `Contoso Message Body Checker.xml` manifest file, you include the function file and function name that should be called on the `ItemSend` event.</span></span> <span data-ttu-id="ee8c4-380">该操作将同步运行。</span><span class="sxs-lookup"><span data-stu-id="ee8c4-380">The operation runs synchronously.</span></span>
+<span data-ttu-id="853a4-379">在 `Contoso Message Body Checker.xml` 清单文件中，将包含在 `ItemSend` 事件中应调用的函数文件和函数名称。</span><span class="sxs-lookup"><span data-stu-id="853a4-379">In the `Contoso Message Body Checker.xml` manifest file, you include the function file and function name that should be called on the `ItemSend` event.</span></span> <span data-ttu-id="853a4-380">该操作将同步运行。</span><span class="sxs-lookup"><span data-stu-id="853a4-380">The operation runs synchronously.</span></span>
 
 ```xml
 <Hosts>
@@ -419,9 +419,9 @@ Get-OWAMailboxPolicy OWAOnSendAddinAllUserPolicy | Set-OWAMailboxPolicy –OnSen
 ```
 
 > [!IMPORTANT]
-> <span data-ttu-id="ee8c4-381">如果使用 Visual Studio 2019 开发你的发送外接程序，则可能会收到类似于以下的验证警告： "这是一个无效的 xsi： type ' http://schemas.microsoft.com/office/mailappversionoverrides/1.1:Events "。 "若要解决此问题，您需要在[有关此警告的博客](https://theofficecontext.com/2018/11/29/visual-studio-2017-this-is-an-invalid-xsitype-mailappversionoverrides-1-1event/)中提供了 MailAppVersionOverridesV1_1 的较新版本的 .Xsd 作为 GitHub gist 提供。</span><span class="sxs-lookup"><span data-stu-id="ee8c4-381">If you are using Visual Studio 2019 to develop your on-send add-in, you may get a validation warning like the following: "This is an invalid xsi:type 'http://schemas.microsoft.com/office/mailappversionoverrides/1.1:Events'." To work around this, you'll need a newer version of the MailAppVersionOverridesV1_1.xsd which has been provided as a GitHub gist in a [blog about this warning](https://theofficecontext.com/2018/11/29/visual-studio-2017-this-is-an-invalid-xsitype-mailappversionoverrides-1-1event/).</span></span>
+> <span data-ttu-id="853a4-381">如果使用 Visual Studio 2019 开发你的发送外接程序，则可能会收到类似于以下的验证警告： "这是一个无效的 xsi： type ' http://schemas.microsoft.com/office/mailappversionoverrides/1.1:Events "。 "若要解决此问题，您需要在[有关此警告的博客](https://theofficecontext.com/2018/11/29/visual-studio-2017-this-is-an-invalid-xsitype-mailappversionoverrides-1-1event/)中提供了 MailAppVersionOverridesV1_1 的较新版本的 .Xsd 作为 GitHub gist 提供。</span><span class="sxs-lookup"><span data-stu-id="853a4-381">If you are using Visual Studio 2019 to develop your on-send add-in, you may get a validation warning like the following: "This is an invalid xsi:type 'http://schemas.microsoft.com/office/mailappversionoverrides/1.1:Events'." To work around this, you'll need a newer version of the MailAppVersionOverridesV1_1.xsd which has been provided as a GitHub gist in a [blog about this warning](https://theofficecontext.com/2018/11/29/visual-studio-2017-this-is-an-invalid-xsitype-mailappversionoverrides-1-1event/).</span></span>
 
-<span data-ttu-id="ee8c4-382">对于 `Contoso Subject and CC Checker.xml` 清单文件，以下示例中显示了邮件发送事件中要调用的函数文件和函数名称。</span><span class="sxs-lookup"><span data-stu-id="ee8c4-382">For the `Contoso Subject and CC Checker.xml` manifest file, the following example shows the function file and function name to call on message send event.</span></span>
+<span data-ttu-id="853a4-382">对于 `Contoso Subject and CC Checker.xml` 清单文件，以下示例中显示了邮件发送事件中要调用的函数文件和函数名称。</span><span class="sxs-lookup"><span data-stu-id="853a4-382">For the `Contoso Subject and CC Checker.xml` manifest file, the following example shows the function file and function name to call on message send event.</span></span>
 
 ```xml
 <Hosts>
@@ -440,7 +440,7 @@ Get-OWAMailboxPolicy OWAOnSendAddinAllUserPolicy | Set-OWAMailboxPolicy –OnSen
 
 <br/>
 
-<span data-ttu-id="ee8c4-383">Onsend API 需要 `VersionOverrides v1_1`。</span><span class="sxs-lookup"><span data-stu-id="ee8c4-383">The on-send API requires `VersionOverrides v1_1`.</span></span> <span data-ttu-id="ee8c4-384">以下显示如何在清单中添加 `VersionOverrides` 节点。</span><span class="sxs-lookup"><span data-stu-id="ee8c4-384">The following shows you how to add the `VersionOverrides` node in your manifest.</span></span>
+<span data-ttu-id="853a4-383">Onsend API 需要 `VersionOverrides v1_1`。</span><span class="sxs-lookup"><span data-stu-id="853a4-383">The on-send API requires `VersionOverrides v1_1`.</span></span> <span data-ttu-id="853a4-384">以下显示如何在清单中添加 `VersionOverrides` 节点。</span><span class="sxs-lookup"><span data-stu-id="853a4-384">The following shows you how to add the `VersionOverrides` node in your manifest.</span></span>
 
 ```xml
  <VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides" xsi:type="VersionOverridesV1_0">
@@ -452,14 +452,14 @@ Get-OWAMailboxPolicy OWAOnSendAddinAllUserPolicy | Set-OWAMailboxPolicy –OnSen
 ```
 
 > [!NOTE]
-> <span data-ttu-id="ee8c4-385">有关详细信息，请参阅：</span><span class="sxs-lookup"><span data-stu-id="ee8c4-385">For more information, see the following:</span></span>
-> - [<span data-ttu-id="ee8c4-386">Outlook 外接程序清单</span><span class="sxs-lookup"><span data-stu-id="ee8c4-386">Outlook add-in manifests</span></span>](manifests.md)
-> - [<span data-ttu-id="ee8c4-387">Office 加载项 XML 清单</span><span class="sxs-lookup"><span data-stu-id="ee8c4-387">Office Add-ins XML manifest</span></span>](../overview/add-in-manifests.md)
+> <span data-ttu-id="853a4-385">有关详细信息，请参阅：</span><span class="sxs-lookup"><span data-stu-id="853a4-385">For more information, see the following:</span></span>
+> - [<span data-ttu-id="853a4-386">Outlook 外接程序清单</span><span class="sxs-lookup"><span data-stu-id="853a4-386">Outlook add-in manifests</span></span>](manifests.md)
+> - [<span data-ttu-id="853a4-387">Office 加载项 XML 清单</span><span class="sxs-lookup"><span data-stu-id="853a4-387">Office Add-ins XML manifest</span></span>](../overview/add-in-manifests.md)
 
 
-### <a name="event-and-item-objects-and-bodygetasync-and-bodysetasync-methods"></a><span data-ttu-id="ee8c4-388">`Event` 和 `item` 对象以及 `body.getAsync` 和 `body.setAsync` 方法</span><span class="sxs-lookup"><span data-stu-id="ee8c4-388">`Event` and `item` objects, and `body.getAsync` and `body.setAsync` methods</span></span>
+### <a name="event-and-item-objects-and-bodygetasync-and-bodysetasync-methods"></a><span data-ttu-id="853a4-388">`Event` 和 `item` 对象以及 `body.getAsync` 和 `body.setAsync` 方法</span><span class="sxs-lookup"><span data-stu-id="853a4-388">`Event` and `item` objects, and `body.getAsync` and `body.setAsync` methods</span></span>
 
-<span data-ttu-id="ee8c4-389">若要访问当前选择的邮件或会议项目（在本示例中为新撰写的邮件），请使用 `Office.context.mailbox.item` 命名空间。</span><span class="sxs-lookup"><span data-stu-id="ee8c4-389">To access the currently selected message or meeting item (in this example, the newly composed message), use the `Office.context.mailbox.item` namespace.</span></span> <span data-ttu-id="ee8c4-390">`ItemSend` 事件由 Onsend 功能自动传递到清单中指定的函数&mdash;在本示例中为 `validateBody` 函数。</span><span class="sxs-lookup"><span data-stu-id="ee8c4-390">The `ItemSend` event is automatically passed by the on-send feature to the function specified in the manifest&mdash;in this example, the `validateBody` function.</span></span>
+<span data-ttu-id="853a4-389">若要访问当前选择的邮件或会议项目（在本示例中为新撰写的邮件），请使用 `Office.context.mailbox.item` 命名空间。</span><span class="sxs-lookup"><span data-stu-id="853a4-389">To access the currently selected message or meeting item (in this example, the newly composed message), use the `Office.context.mailbox.item` namespace.</span></span> <span data-ttu-id="853a4-390">`ItemSend` 事件由 Onsend 功能自动传递到清单中指定的函数&mdash;在本示例中为 `validateBody` 函数。</span><span class="sxs-lookup"><span data-stu-id="853a4-390">The `ItemSend` event is automatically passed by the on-send feature to the function specified in the manifest&mdash;in this example, the `validateBody` function.</span></span>
 
 ```js
 var mailboxItem;
@@ -475,15 +475,15 @@ function validateBody(event) {
 }
 ```
 
-<span data-ttu-id="ee8c4-391">`validateBody` 函数以指定格式 (HTML) 获取当前正文，并在回调方法中传递代码想要访问的 `ItemSend` 事件对象。</span><span class="sxs-lookup"><span data-stu-id="ee8c4-391">The `validateBody` function gets the current body in the specified format (HTML) and passes the `ItemSend` event object that the code wants to access in the callback method.</span></span> <span data-ttu-id="ee8c4-392">除 `getAsync` 方法之外，`Body` 对象还提供了 `setAsync` 方法，可用于将正文替换为指定的文本。</span><span class="sxs-lookup"><span data-stu-id="ee8c4-392">In addition to the `getAsync` method, the `Body` object also provides a `setAsync` method that you can use to replace the body with the specified text.</span></span>
+<span data-ttu-id="853a4-391">`validateBody` 函数以指定格式 (HTML) 获取当前正文，并在回调方法中传递代码想要访问的 `ItemSend` 事件对象。</span><span class="sxs-lookup"><span data-stu-id="853a4-391">The `validateBody` function gets the current body in the specified format (HTML) and passes the `ItemSend` event object that the code wants to access in the callback method.</span></span> <span data-ttu-id="853a4-392">除 `getAsync` 方法之外，`Body` 对象还提供了 `setAsync` 方法，可用于将正文替换为指定的文本。</span><span class="sxs-lookup"><span data-stu-id="853a4-392">In addition to the `getAsync` method, the `Body` object also provides a `setAsync` method that you can use to replace the body with the specified text.</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="ee8c4-393">有关详细信息，请参阅 [Event 对象](/javascript/api/office/office.addincommands.event)和 [Body.getAsync](/javascript/api/outlook/office.Body#getasync-coerciontype--options--callback-)。</span><span class="sxs-lookup"><span data-stu-id="ee8c4-393">For more information, see [Event Object](/javascript/api/office/office.addincommands.event) and [Body.getAsync](/javascript/api/outlook/office.Body#getasync-coerciontype--options--callback-).</span></span>
+> <span data-ttu-id="853a4-393">有关详细信息，请参阅 [Event 对象](/javascript/api/office/office.addincommands.event)和 [Body.getAsync](/javascript/api/outlook/office.Body#getasync-coerciontype--options--callback-)。</span><span class="sxs-lookup"><span data-stu-id="853a4-393">For more information, see [Event Object](/javascript/api/office/office.addincommands.event) and [Body.getAsync](/javascript/api/outlook/office.Body#getasync-coerciontype--options--callback-).</span></span>
   
 
-### <a name="notificationmessages-object-and-eventcompleted-method"></a><span data-ttu-id="ee8c4-394">`NotificationMessages` 对象和 `event.completed` 方法</span><span class="sxs-lookup"><span data-stu-id="ee8c4-394">`NotificationMessages` object and `event.completed` method</span></span>
+### <a name="notificationmessages-object-and-eventcompleted-method"></a><span data-ttu-id="853a4-394">`NotificationMessages` 对象和 `event.completed` 方法</span><span class="sxs-lookup"><span data-stu-id="853a4-394">`NotificationMessages` object and `event.completed` method</span></span>
 
-<span data-ttu-id="ee8c4-395">`checkBodyOnlyOnSendCallBack` 函数使用正则表达式来确定邮件正文是否包含禁止使用的词语。</span><span class="sxs-lookup"><span data-stu-id="ee8c4-395">The `checkBodyOnlyOnSendCallBack` function uses a regular expression to determine whether the message body contains blocked words.</span></span> <span data-ttu-id="ee8c4-396">如果该函数发现受限词语数组的匹配项，则将阻止发送电子邮件，并通过信息栏通知发件人。</span><span class="sxs-lookup"><span data-stu-id="ee8c4-396">If it finds a match against an array of restricted words, it then blocks the email from being sent and notifies the sender via the information bar.</span></span> <span data-ttu-id="ee8c4-397">为了做到这一点，它使用 `Item` 对象的 `notificationMessages` 属性来返回 `NotificationMessages` 对象。</span><span class="sxs-lookup"><span data-stu-id="ee8c4-397">To do this, it uses the `notificationMessages` property of the `Item` object to return a `NotificationMessages` object.</span></span> <span data-ttu-id="ee8c4-398">然后，通过调用 `addAsync` 方法向该项目添加通知，如以下示例所示。</span><span class="sxs-lookup"><span data-stu-id="ee8c4-398">It then adds a notification to the item by calling the `addAsync` method, as shown in the following example.</span></span>
+<span data-ttu-id="853a4-395">`checkBodyOnlyOnSendCallBack` 函数使用正则表达式来确定邮件正文是否包含禁止使用的词语。</span><span class="sxs-lookup"><span data-stu-id="853a4-395">The `checkBodyOnlyOnSendCallBack` function uses a regular expression to determine whether the message body contains blocked words.</span></span> <span data-ttu-id="853a4-396">如果该函数发现受限词语数组的匹配项，则将阻止发送电子邮件，并通过信息栏通知发件人。</span><span class="sxs-lookup"><span data-stu-id="853a4-396">If it finds a match against an array of restricted words, it then blocks the email from being sent and notifies the sender via the information bar.</span></span> <span data-ttu-id="853a4-397">为了做到这一点，它使用 `Item` 对象的 `notificationMessages` 属性来返回 `NotificationMessages` 对象。</span><span class="sxs-lookup"><span data-stu-id="853a4-397">To do this, it uses the `notificationMessages` property of the `Item` object to return a `NotificationMessages` object.</span></span> <span data-ttu-id="853a4-398">然后，通过调用 `addAsync` 方法向该项目添加通知，如以下示例所示。</span><span class="sxs-lookup"><span data-stu-id="853a4-398">It then adds a notification to the item by calling the `addAsync` method, as shown in the following example.</span></span>
 
 ```js
 // Determine whether the body contains a specific set of blocked words. If it contains the blocked words, block email from being sent. Otherwise allow sending.
@@ -508,25 +508,25 @@ function checkBodyOnlyOnSendCallBack(asyncResult) {
 }
 ```
 
-<span data-ttu-id="ee8c4-399">以下是 `addAsync` 方法的参数：</span><span class="sxs-lookup"><span data-stu-id="ee8c4-399">The following are the parameters for the `addAsync` method:</span></span>
+<span data-ttu-id="853a4-399">以下是 `addAsync` 方法的参数：</span><span class="sxs-lookup"><span data-stu-id="853a4-399">The following are the parameters for the `addAsync` method:</span></span>
 
-- <span data-ttu-id="ee8c4-400">`NoSend` &ndash; 一个字符串，即开发人员指定用于引用通知邮件的密钥。</span><span class="sxs-lookup"><span data-stu-id="ee8c4-400">`NoSend` &ndash; A string that is a developer-specified key to reference a notification message.</span></span> <span data-ttu-id="ee8c4-401">可用于在以后修改此邮件。</span><span class="sxs-lookup"><span data-stu-id="ee8c4-401">You can use it to modify this message later.</span></span> <span data-ttu-id="ee8c4-402">密钥长度不能超过32个字符。</span><span class="sxs-lookup"><span data-stu-id="ee8c4-402">The key can't be longer than 32 characters.</span></span>
-- <span data-ttu-id="ee8c4-403">`type` &ndash; JSON 对象参数的一个属性。</span><span class="sxs-lookup"><span data-stu-id="ee8c4-403">`type` &ndash; One of the properties of the  JSON object parameter.</span></span> <span data-ttu-id="ee8c4-404">表示邮件的类型；类型对应于 [Office.MailboxEnums.ItemNotificationMessageType](/javascript/api/outlook/office.mailboxenums.itemnotificationmessagetype) 枚举的值。</span><span class="sxs-lookup"><span data-stu-id="ee8c4-404">Represents the type of a message; the types correspond to the values of the [Office.MailboxEnums.ItemNotificationMessageType](/javascript/api/outlook/office.mailboxenums.itemnotificationmessagetype) enumeration.</span></span> <span data-ttu-id="ee8c4-405">可能的值是进度指示器、信息消息或错误消息。</span><span class="sxs-lookup"><span data-stu-id="ee8c4-405">Possible values are progress indicator, information message, or error message.</span></span> <span data-ttu-id="ee8c4-406">在此示例中，`type` 是错误消息。</span><span class="sxs-lookup"><span data-stu-id="ee8c4-406">In this example, `type` is an error message.</span></span>  
-- <span data-ttu-id="ee8c4-407">`message` &ndash; JSON 对象参数的一个属性。</span><span class="sxs-lookup"><span data-stu-id="ee8c4-407">`message` &ndash; One of the properties of the JSON object parameter.</span></span> <span data-ttu-id="ee8c4-408">在此示例中，`message` 是通知邮件的文本。</span><span class="sxs-lookup"><span data-stu-id="ee8c4-408">In this example, `message` is the text of the notification message.</span></span>
+- <span data-ttu-id="853a4-400">`NoSend` &ndash; 一个字符串，即开发人员指定用于引用通知邮件的密钥。</span><span class="sxs-lookup"><span data-stu-id="853a4-400">`NoSend` &ndash; A string that is a developer-specified key to reference a notification message.</span></span> <span data-ttu-id="853a4-401">可用于在以后修改此邮件。</span><span class="sxs-lookup"><span data-stu-id="853a4-401">You can use it to modify this message later.</span></span> <span data-ttu-id="853a4-402">密钥长度不能超过32个字符。</span><span class="sxs-lookup"><span data-stu-id="853a4-402">The key can't be longer than 32 characters.</span></span>
+- <span data-ttu-id="853a4-403">`type` &ndash; JSON 对象参数的一个属性。</span><span class="sxs-lookup"><span data-stu-id="853a4-403">`type` &ndash; One of the properties of the  JSON object parameter.</span></span> <span data-ttu-id="853a4-404">表示邮件的类型；类型对应于 [Office.MailboxEnums.ItemNotificationMessageType](/javascript/api/outlook/office.mailboxenums.itemnotificationmessagetype) 枚举的值。</span><span class="sxs-lookup"><span data-stu-id="853a4-404">Represents the type of a message; the types correspond to the values of the [Office.MailboxEnums.ItemNotificationMessageType](/javascript/api/outlook/office.mailboxenums.itemnotificationmessagetype) enumeration.</span></span> <span data-ttu-id="853a4-405">可能的值是进度指示器、信息消息或错误消息。</span><span class="sxs-lookup"><span data-stu-id="853a4-405">Possible values are progress indicator, information message, or error message.</span></span> <span data-ttu-id="853a4-406">在此示例中，`type` 是错误消息。</span><span class="sxs-lookup"><span data-stu-id="853a4-406">In this example, `type` is an error message.</span></span>  
+- <span data-ttu-id="853a4-407">`message` &ndash; JSON 对象参数的一个属性。</span><span class="sxs-lookup"><span data-stu-id="853a4-407">`message` &ndash; One of the properties of the JSON object parameter.</span></span> <span data-ttu-id="853a4-408">在此示例中，`message` 是通知邮件的文本。</span><span class="sxs-lookup"><span data-stu-id="853a4-408">In this example, `message` is the text of the notification message.</span></span>
 
-<span data-ttu-id="ee8c4-409">为表明加载项对由发送操作触发的 `ItemSend` 事件的处理已完成，请调用 `event.completed({allowEvent:Boolean})` 方法。</span><span class="sxs-lookup"><span data-stu-id="ee8c4-409">To signal that the add-in has finished processing the `ItemSend` event triggered by the send operation, call the `event.completed({allowEvent:Boolean})` method.</span></span> <span data-ttu-id="ee8c4-410">`allowEvent` 属性是一个布尔值。</span><span class="sxs-lookup"><span data-stu-id="ee8c4-410">The `allowEvent` property is a Boolean.</span></span> <span data-ttu-id="ee8c4-411">如果设置为 `true`，则允许发送。</span><span class="sxs-lookup"><span data-stu-id="ee8c4-411">If set to `true`, send is allowed.</span></span> <span data-ttu-id="ee8c4-412">如果设置为 `false`，则将阻止发送电子邮件。</span><span class="sxs-lookup"><span data-stu-id="ee8c4-412">If set to `false`, the email message is blocked from sending.</span></span>
+<span data-ttu-id="853a4-409">为表明加载项对由发送操作触发的 `ItemSend` 事件的处理已完成，请调用 `event.completed({allowEvent:Boolean})` 方法。</span><span class="sxs-lookup"><span data-stu-id="853a4-409">To signal that the add-in has finished processing the `ItemSend` event triggered by the send operation, call the `event.completed({allowEvent:Boolean})` method.</span></span> <span data-ttu-id="853a4-410">`allowEvent` 属性是一个布尔值。</span><span class="sxs-lookup"><span data-stu-id="853a4-410">The `allowEvent` property is a Boolean.</span></span> <span data-ttu-id="853a4-411">如果设置为 `true`，则允许发送。</span><span class="sxs-lookup"><span data-stu-id="853a4-411">If set to `true`, send is allowed.</span></span> <span data-ttu-id="853a4-412">如果设置为 `false`，则将阻止发送电子邮件。</span><span class="sxs-lookup"><span data-stu-id="853a4-412">If set to `false`, the email message is blocked from sending.</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="ee8c4-413">有关详细信息，请参阅 [notificationMessages](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties) 和 [completed](/javascript/api/office/office.addincommands.event)。</span><span class="sxs-lookup"><span data-stu-id="ee8c4-413">For more information, see [notificationMessages](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties) and [completed](/javascript/api/office/office.addincommands.event).</span></span>
+> <span data-ttu-id="853a4-413">有关详细信息，请参阅 [notificationMessages](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties) 和 [completed](/javascript/api/office/office.addincommands.event)。</span><span class="sxs-lookup"><span data-stu-id="853a4-413">For more information, see [notificationMessages](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties) and [completed](/javascript/api/office/office.addincommands.event).</span></span>
 
-### <a name="replaceasync-removeasync-and-getallasync-methods"></a><span data-ttu-id="ee8c4-414">`replaceAsync`、`removeAsync` 和 `getAllAsync` 方法</span><span class="sxs-lookup"><span data-stu-id="ee8c4-414">`replaceAsync`, `removeAsync`, and `getAllAsync` methods</span></span>
+### <a name="replaceasync-removeasync-and-getallasync-methods"></a><span data-ttu-id="853a4-414">`replaceAsync`、`removeAsync` 和 `getAllAsync` 方法</span><span class="sxs-lookup"><span data-stu-id="853a4-414">`replaceAsync`, `removeAsync`, and `getAllAsync` methods</span></span>
 
-<span data-ttu-id="ee8c4-415">除了 `addAsync` 方法之外，`NotificationMessages` 对象还包括 `replaceAsync`、`removeAsync` 和 `getAllAsync` 方法。</span><span class="sxs-lookup"><span data-stu-id="ee8c4-415">In addition to the `addAsync` method, the `NotificationMessages` object also includes `replaceAsync`, `removeAsync`, and `getAllAsync` methods.</span></span>  <span data-ttu-id="ee8c4-416">此代码示例中不使用这些方法。</span><span class="sxs-lookup"><span data-stu-id="ee8c4-416">These methods are not used in this code sample.</span></span>  <span data-ttu-id="ee8c4-417">有关详细信息，请参阅 [NotificationMessages](/javascript/api/outlook/office.NotificationMessages)。</span><span class="sxs-lookup"><span data-stu-id="ee8c4-417">For more information, see [NotificationMessages](/javascript/api/outlook/office.NotificationMessages).</span></span>
+<span data-ttu-id="853a4-415">除了 `addAsync` 方法之外，`NotificationMessages` 对象还包括 `replaceAsync`、`removeAsync` 和 `getAllAsync` 方法。</span><span class="sxs-lookup"><span data-stu-id="853a4-415">In addition to the `addAsync` method, the `NotificationMessages` object also includes `replaceAsync`, `removeAsync`, and `getAllAsync` methods.</span></span>  <span data-ttu-id="853a4-416">此代码示例中不使用这些方法。</span><span class="sxs-lookup"><span data-stu-id="853a4-416">These methods are not used in this code sample.</span></span>  <span data-ttu-id="853a4-417">有关详细信息，请参阅 [NotificationMessages](/javascript/api/outlook/office.NotificationMessages)。</span><span class="sxs-lookup"><span data-stu-id="853a4-417">For more information, see [NotificationMessages](/javascript/api/outlook/office.NotificationMessages).</span></span>
 
 
-### <a name="subject-and-cc-checker-code"></a><span data-ttu-id="ee8c4-418">主题和抄送检查器代码</span><span class="sxs-lookup"><span data-stu-id="ee8c4-418">Subject and CC checker code</span></span>
+### <a name="subject-and-cc-checker-code"></a><span data-ttu-id="853a4-418">主题和抄送检查器代码</span><span class="sxs-lookup"><span data-stu-id="853a4-418">Subject and CC checker code</span></span>
 
-<span data-ttu-id="ee8c4-419">以下代码示例介绍如何将收件人添加到抄送行，并验证邮件在发送时是否包含主题。</span><span class="sxs-lookup"><span data-stu-id="ee8c4-419">The following code example shows you how to add a recipient to the CC line and verify that the message includes a subject on send.</span></span> <span data-ttu-id="ee8c4-420">此示例使用 Onsend 功能允许或禁止发送电子邮件。</span><span class="sxs-lookup"><span data-stu-id="ee8c4-420">This example uses the on-send feature to allow or disallow an email from sending.</span></span>  
+<span data-ttu-id="853a4-419">以下代码示例介绍如何将收件人添加到抄送行，并验证邮件在发送时是否包含主题。</span><span class="sxs-lookup"><span data-stu-id="853a4-419">The following code example shows you how to add a recipient to the CC line and verify that the message includes a subject on send.</span></span> <span data-ttu-id="853a4-420">此示例使用 Onsend 功能允许或禁止发送电子邮件。</span><span class="sxs-lookup"><span data-stu-id="853a4-420">This example uses the on-send feature to allow or disallow an email from sending.</span></span>  
 
 ```js
 // Invoke by Contoso Subject and CC Checker add-in before send is allowed.
@@ -596,9 +596,9 @@ function subjectOnSendChange(subject, event) {
 }
 ```
 
-<span data-ttu-id="ee8c4-p151">若要详细了解如何将收件人添加到抄送行、验证电子邮件在发送时是否包主题行，以及查看可以使用的 API，请参阅 [Outlook-Add-in-On-Send 示例](https://github.com/OfficeDev/Outlook-Add-in-On-Send)。已充分注释代码。</span><span class="sxs-lookup"><span data-stu-id="ee8c4-p151">To learn more about how to add a recipient to the CC line and verify that the email message includes a subject line on send, and to see the APIs you can use, see the [Outlook-Add-in-On-Send sample](https://github.com/OfficeDev/Outlook-Add-in-On-Send). The code is well commented.</span></span>
+<span data-ttu-id="853a4-p151">若要详细了解如何将收件人添加到抄送行、验证电子邮件在发送时是否包主题行，以及查看可以使用的 API，请参阅 [Outlook-Add-in-On-Send 示例](https://github.com/OfficeDev/Outlook-Add-in-On-Send)。已充分注释代码。</span><span class="sxs-lookup"><span data-stu-id="853a4-p151">To learn more about how to add a recipient to the CC line and verify that the email message includes a subject line on send, and to see the APIs you can use, see the [Outlook-Add-in-On-Send sample](https://github.com/OfficeDev/Outlook-Add-in-On-Send). The code is well commented.</span></span>
 
-## <a name="see-also"></a><span data-ttu-id="ee8c4-423">另请参阅</span><span class="sxs-lookup"><span data-stu-id="ee8c4-423">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="853a4-423">另请参阅</span><span class="sxs-lookup"><span data-stu-id="853a4-423">See also</span></span>
 
-- [<span data-ttu-id="ee8c4-424">Outlook 加载项体系结构和功能概述</span><span class="sxs-lookup"><span data-stu-id="ee8c4-424">Overview of Outlook add-ins architecture and features</span></span>](outlook-add-ins-overview.md)
-- [<span data-ttu-id="ee8c4-425">加载项命令演示 Outlook 加载项</span><span class="sxs-lookup"><span data-stu-id="ee8c4-425">Add-in Command Demo Outlook add-in</span></span>](https://github.com/OfficeDev/outlook-add-in-command-demo)
+- [<span data-ttu-id="853a4-424">Outlook 加载项体系结构和功能概述</span><span class="sxs-lookup"><span data-stu-id="853a4-424">Overview of Outlook add-ins architecture and features</span></span>](outlook-add-ins-overview.md)
+- [<span data-ttu-id="853a4-425">加载项命令演示 Outlook 加载项</span><span class="sxs-lookup"><span data-stu-id="853a4-425">Add-in Command Demo Outlook add-in</span></span>](https://github.com/OfficeDev/outlook-add-in-command-demo)
