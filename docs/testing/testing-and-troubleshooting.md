@@ -1,18 +1,18 @@
 ---
 title: 排查 Office 加载项中的用户错误
 description: 了解如何解决 Office 外接程序中的用户错误。
-ms.date: 05/15/2020
+ms.date: 06/17/2020
 localization_priority: Normal
-ms.openlocfilehash: 859cf5019d40d05dbb3ad211d4d2934b309f3ccd
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 1dbc8cc18e0c9b12ccff605b655dd7c8629fb9cf
+ms.sourcegitcommit: b939312ffdeb6e0a0dfe085db7efe0ff143ef873
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44612071"
+ms.lasthandoff: 06/19/2020
+ms.locfileid: "44810847"
 ---
 # <a name="troubleshoot-user-errors-with-office-add-ins"></a>排查 Office 加载项中的用户错误
 
-有时，您的用户在使用您开发的 Office 外接程序时可能会遇到问题。例如，外接程序无法加载或无法访问。使用本文中的信息有助于解决您的用户在使用 Office 外接程序时遇到的常见问题。 
+At times your users might encounter issues with Office Add-ins that you develop. For example, an add-in fails to load or is inaccessible. Use the information in this article to help resolve common issues that your users encounter with your Office Add-in. 
 
 还可以使用 [Fiddler](https://www.telerik.com/fiddler) 发现和调试加载项问题。
 
@@ -24,10 +24,10 @@ ms.locfileid: "44612071"
 
 |**错误消息**|**解决方案**|
 |:-----|:-----|
-|应用错误：无法访问目录|验证防火墙设置。“目录”是指 AppSource。此消息表明用户无法访问 AppSource。|
-|应用错误：无法启动此应用。若要忽略此问题，请关闭这个对话框。若要重试，请单击“重启”。|确认已安装最新的 Office 更新，或下载 [Office 2013 更新](https://support.microsoft.com/kb/2986156/)。|
+|应用错误：无法访问目录|Verify firewall settings."Catalog" refers to AppSource. This message indicates that the user cannot access AppSource.|
+|APP ERROR: This app could not be started. Close this dialog to ignore the problem or click "Restart" to try again.|确认已安装最新的 Office 更新，或下载 [Office 2013 更新](https://support.microsoft.com/kb/2986156/)。|
 |错误：对象不 支持此属性或方法 "defineProperty"|确认 Internet Explorer 不是在兼容模式下运行。 转到“工具”>“兼容性视图设置”****。|
-|很抱歉，我们无法加载 该应用程序，因为您的浏览器 版本不受支持。 单击此处查看 支持的浏览器版本的列表。|确保浏览器支持 HTML5 本地存储，或重置您的 Internet Explorer 设置。有关受支持的浏览器的信息，请参阅 [运行 Office 加载项的要求](../concepts/requirements-for-running-office-add-ins.md)。|
+|Sorry, we couldn't load the app because your browser version is not supported. Click here for a list of supported browser versions.|Make sure that the browser supports HTML5 local storage, or reset your Internet Explorer settings. For information about supported browsers, see [Requirements for running Office Add-ins](../concepts/requirements-for-running-office-add-ins.md).|
 
 ## <a name="when-installing-an-add-in-you-see-error-loading-add-in-in-the-status-bar"></a>安装加载项时，状态栏中会显示“加载加载项时出错”
 
@@ -47,7 +47,7 @@ ms.locfileid: "44612071"
     
 - 在“浏览”**** 下，取消选中“禁用脚本调试 (Internet Explorer)”**** 和“禁用脚本调试 (其他)”****。
     
-我们建议您仅在解决问题时取消选中这些设置。如果您将其保持未选中状态，您在浏览时将会收到提示。解决此问题后，再次选中“禁用脚本调试 (Internet Explorer)”**** 和“禁用脚本调试 (其他)”****。
+We recommend that you uncheck these settings only to troubleshoot the issue. If you leave them unchecked, you will get prompts when you browse. After the issue is resolved, check **Disable script debugging (Internet Explorer)** and **Disable script debugging (Other)** again.
 
 
 ## <a name="add-in-doesnt-activate-in-office-2013"></a>外接程序在 Office 2013 中无法激活
@@ -71,9 +71,9 @@ ms.locfileid: "44612071"
 
 ## <a name="add-in-dialog-box-cannot-be-displayed"></a>无法显示外接程序对话框
 
-使用 Office 外接程序时，将要求用户允许显示对话框。用户选择“**允许**”，将出现以下错误消息：
+When using an Office Add-in, the user is asked to allow a dialog box to be displayed. The user chooses **Allow**, and the following error message occurs:
 
-“浏览器中的安全设置阻止创建对话框。请尝试使用其他浏览器，或者配置浏览器，使地址栏中显示的 [URL] 和域处于同一安全区域。”
+"The security settings in your browser prevent us from creating a dialog box. Try a different browser, or configure your browser so that [URL] and the domain shown in your address bar are in the same security zone."
 
 ![对话框错误消息的屏幕截图](http://i.imgur.com/3mqmlgE.png)
 
@@ -81,7 +81,7 @@ ms.locfileid: "44612071"
 |:--------------------|:---------------------|
 |Internet Explorer、Microsoft Edge|Office 网页版|
 
-若要解决此问题，最终用户或管理员可以向 Internet Explorer 中的受信任站点列表添加外接程序的域。无论使用的是 Internet Explorer 还是 Microsoft Edge 浏览器，请使用相同过程。
+To resolve the issue, end users or administrators can add the domain of the add-in to the list of trusted sites in Internet Explorer. Use the same procedure whether you're using the Internet Explorer or Microsoft Edge browser.
 
 > [!IMPORTANT]
 > 请勿将不信任的加载项的 URL 添加到受信任网站列表中。
@@ -91,9 +91,9 @@ ms.locfileid: "44612071"
 1. 在“**控制面板**”中，转到“**Internet 选项**” > “**安全性**”。
 2. 选择“**受信任站点**”区域，并选择“**网站**”。
 3. 输入错误消息中显示的 URL，然后选择“**添加**”。
-4. 再次尝试使用外接程序。如果问题仍然存在，请验证其他安全区域的设置，并确保外接程序域与 Office 应用程序地址栏中显示的 URL 处于同一区域。
+4. Try to use the add-in again. If the problem persists, verify the settings for the other security zones and ensure that the add-in domain is in the same zone as the URL that is displayed in the address bar of the Office application.
 
-在弹出模式中使用对话框 API 时，会出现此问题。若要避免出现此问题，请使用 [displayInFrame](/javascript/api/office/office.ui) 标记。这要求页面支持在 iframe 中进行显示。以下示例演示如何使用此标记。
+This issue occurs when the Dialog API is used in pop-up mode. To prevent this issue from occurring, use the [displayInFrame](/javascript/api/office/office.ui) flag. This requires that your page support display within an iframe. The following example shows how to use the flag.
 
 ```js
 Office.context.ui.displayDialogAsync(startAddress, {displayInIFrame:true}, callback);
@@ -111,7 +111,7 @@ Office.context.ui.displayDialogAsync(startAddress, {displayInIFrame:true}, callb
 [!include[additional cache folders on Mac](../includes/mac-cache-folders.md)]
 
 #### <a name="for-ios"></a>对于 iOS：
-在加载项中通过 JavaScript 调用 `window.location.reload(true)`，以强制重载。也可以重新安装 Office。
+Call `window.location.reload(true)` from JavaScript in the add-in to force a reload. Alternatively, you can reinstall Office.
 
 ## <a name="changes-to-static-files-such-as-javascript-html-and-css-do-not-take-effect"></a>对静态文件（例如 JavaScript、HTML 和 CSS）的更改未生效
 
@@ -143,5 +143,6 @@ del /s /f /q %LOCALAPPDATA%\Packages\Microsoft.Win32WebViewHost_cw5n1h2txyewy\AC
 - [在 Office 网页版中调试加载项](debug-add-ins-in-office-online.md) 
 - [将 Office 外接程序旁加载到 iPad 和 Mac 上](sideload-an-office-add-in-on-ipad-and-mac.md)  
 - [在 iPad 和 Mac 上调试 Office 外接程序](debug-office-add-ins-on-ipad-and-mac.md)  
+- [适用于 Visual Studio Code 的 Microsoft Office 外接程序调试器扩展](./debug-with-vs-extension.md)
 - [验证 Office 加载项的清单](troubleshoot-manifest.md)
 - [使用运行时日志记录功能调试加载项](runtime-logging.md)

@@ -1,14 +1,14 @@
 ---
 title: "\"Context\"-\"邮箱-预览要求集\""
 description: Outlook 邮箱 API preview 要求集邮箱对象模型的版本。
-ms.date: 03/18/2020
+ms.date: 06/17/2020
 localization_priority: Normal
-ms.openlocfilehash: 97b82ca69ffc8144191b3d84d0a96a5a3f101f7f
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 2aafc817555a59dcdadac2cc34bb69e487439639
+ms.sourcegitcommit: 9eed5201a3ef556f77ba3b6790f007358188d57d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44608682"
+ms.lasthandoff: 06/17/2020
+ms.locfileid: "44778667"
 ---
 # <a name="mailbox-preview-requirement-set"></a>邮箱（预览要求集）
 
@@ -28,31 +28,35 @@ ms.locfileid: "44608682"
 
 | 属性 | 最低<br>权限级别 | 型号 | 返回类型 | 最低<br>要求集 |
 |---|---|---|---|:---:|
-| [过程](/javascript/api/outlook/office.mailbox?view=outlook-js-preview#diagnostics) | ReadItem | 撰写<br>Read | [Diagnostics](/javascript/api/outlook/office.diagnostics?view=outlook-js-preview) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| [ewsUrl](/javascript/api/outlook/office.mailbox?view=outlook-js-preview#ewsurl) | ReadItem | 撰写<br>Read | String | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| [项](office.context.mailbox.item.md) | 受限 | 撰写<br>Read | [项](/javascript/api/outlook/office.item?view=outlook-js-preview) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| [masterCategories](/javascript/api/outlook/office.mailbox?view=outlook-js-preview#mastercategories) | ReadWriteMailbox | 撰写<br>Read | [MasterCategories](/javascript/api/outlook/office.mastercategories?view=outlook-js-preview) | [1.8](../requirement-set-1.8/outlook-requirement-set-1.8.md) |
-| [restUrl](/javascript/api/outlook/office.mailbox?view=outlook-js-preview#resturl) | ReadItem | 撰写<br>Read | String | [1.5](../requirement-set-1.5/outlook-requirement-set-1.5.md) |
-| [userProfile](/javascript/api/outlook/office.mailbox?view=outlook-js-preview#userprofile) | ReadItem | 撰写<br>Read | [UserProfile](/javascript/api/outlook/office.userprofile?view=outlook-js-preview) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [过程](/javascript/api/outlook/office.mailbox?view=outlook-js-preview#diagnostics) | ReadItem | 撰写<br>阅读 | [Diagnostics](/javascript/api/outlook/office.diagnostics?view=outlook-js-preview) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [ewsUrl](/javascript/api/outlook/office.mailbox?view=outlook-js-preview#ewsurl) | ReadItem | 撰写<br>阅读 | String | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [项](office.context.mailbox.item.md) | 受限 | 撰写<br>阅读 | [项](/javascript/api/outlook/office.item?view=outlook-js-preview) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [masterCategories](/javascript/api/outlook/office.mailbox?view=outlook-js-preview#mastercategories) | ReadWriteMailbox | 撰写<br>阅读 | [MasterCategories](/javascript/api/outlook/office.mastercategories?view=outlook-js-preview) | [1.8](../requirement-set-1.8/outlook-requirement-set-1.8.md) |
+| [restUrl](/javascript/api/outlook/office.mailbox?view=outlook-js-preview#resturl) | ReadItem | 撰写<br>阅读 | String | [1.5](../requirement-set-1.5/outlook-requirement-set-1.5.md) |
+| [userProfile](/javascript/api/outlook/office.mailbox?view=outlook-js-preview#userprofile) | ReadItem | 撰写<br>阅读 | [UserProfile](/javascript/api/outlook/office.userprofile?view=outlook-js-preview) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 
 ## <a name="methods"></a>Methods
 
 | 方法 | 最低<br>权限级别 | 型号 | 最低<br>要求集 |
 |---|---|---|:---:|
-| [addHandlerAsync(eventType, handler, [options], [callback])](/javascript/api/outlook/office.mailbox?view=outlook-js-preview#addhandlerasync-eventtype--handler--options--callback-) | ReadItem | 撰写<br>Read | [1.5](../requirement-set-1.5/outlook-requirement-set-1.5.md) |
-| [Office.context.mailbox.converttoewsid （itemId，Office.mailboxenums.restversion）](/javascript/api/outlook/office.mailbox?view=outlook-js-preview#converttoewsid-itemid--restversion-) | 受限 | 撰写<br>Read | [1.3](../requirement-set-1.3/outlook-requirement-set-1.3.md) |
-| [convertToLocalClientTime （timeValue）](/javascript/api/outlook/office.mailbox?view=outlook-js-preview#converttolocalclienttime-timevalue-) | ReadItem | 撰写<br>Read | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| [Office.context.mailbox.converttorestid （itemId，Office.mailboxenums.restversion）](/javascript/api/outlook/office.mailbox?view=outlook-js-preview#converttorestid-itemid--restversion-) | 受限 | 撰写<br>Read | [1.3](../requirement-set-1.3/outlook-requirement-set-1.3.md) |
-| [convertToUtcClientTime （输入）](/javascript/api/outlook/office.mailbox?view=outlook-js-preview#converttoutcclienttime-input-) | ReadItem | 撰写<br>Read | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| [displayAppointmentForm(itemId)](/javascript/api/outlook/office.mailbox?view=outlook-js-preview#displayappointmentform-itemid-) | ReadItem | 撰写<br>Read | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| [displayMessageForm(itemId)](/javascript/api/outlook/office.mailbox?view=outlook-js-preview#displaymessageform-itemid-) | ReadItem | 撰写<br>Read | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| [displayNewAppointmentForm(parameters)](/javascript/api/outlook/office.mailbox?view=outlook-js-preview#displaynewappointmentform-parameters-) | ReadItem | Read | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| [Office.context.mailbox.displaynewmessageform （参数）](/javascript/api/outlook/office.mailbox?view=outlook-js-preview#displaynewmessageform-parameters-) | ReadItem | 撰写<br>Read | [1.6](../requirement-set-1.6/outlook-requirement-set-1.6.md) |
-| [getCallbackTokenAsync([options], callback)](/javascript/api/outlook/office.mailbox?view=outlook-js-preview#getcallbacktokenasync-options--callback-) | ReadItem | 撰写<br>Read | [1.5](../requirement-set-1.5/outlook-requirement-set-1.5.md) |
-| [getCallbackTokenAsync(callback, [userContext])](/javascript/api/outlook/office.mailbox?view=outlook-js-preview#getcallbacktokenasync-callback--usercontext-) | ReadItem | 撰写<br>Read | [1.3](../requirement-set-1.3/outlook-requirement-set-1.3.md)<br>[1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| [getUserIdentityTokenAsync(callback, [userContext])](/javascript/api/outlook/office.mailbox?view=outlook-js-preview#getuseridentitytokenasync-callback--usercontext-) | ReadItem | 撰写<br>Read | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| [makeEwsRequestAsync(data, callback, [userContext])](/javascript/api/outlook/office.mailbox?view=outlook-js-preview#makeewsrequestasync-data--callback--usercontext-) | ReadWriteMailbox | 撰写<br>Read | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| [removeHandlerAsync(eventType, [options], [callback])](/javascript/api/outlook/office.mailbox?view=outlook-js-preview#removehandlerasync-eventtype--options--callback-) | ReadItem | 撰写<br>Read | [1.5](../requirement-set-1.5/outlook-requirement-set-1.5.md) |
+| [addHandlerAsync(eventType, handler, [options], [callback])](/javascript/api/outlook/office.mailbox?view=outlook-js-preview#addhandlerasync-eventtype--handler--options--callback-) | ReadItem | 撰写<br>阅读 | [1.5](../requirement-set-1.5/outlook-requirement-set-1.5.md) |
+| [Office.context.mailbox.converttoewsid （itemId，Office.mailboxenums.restversion）](/javascript/api/outlook/office.mailbox?view=outlook-js-preview#converttoewsid-itemid--restversion-) | 受限 | 撰写<br>阅读 | [1.3](../requirement-set-1.3/outlook-requirement-set-1.3.md) |
+| [convertToLocalClientTime （timeValue）](/javascript/api/outlook/office.mailbox?view=outlook-js-preview#converttolocalclienttime-timevalue-) | ReadItem | 撰写<br>阅读 | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [Office.context.mailbox.converttorestid （itemId，Office.mailboxenums.restversion）](/javascript/api/outlook/office.mailbox?view=outlook-js-preview#converttorestid-itemid--restversion-) | 受限 | 撰写<br>阅读 | [1.3](../requirement-set-1.3/outlook-requirement-set-1.3.md) |
+| [convertToUtcClientTime （输入）](/javascript/api/outlook/office.mailbox?view=outlook-js-preview#converttoutcclienttime-input-) | ReadItem | 撰写<br>阅读 | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [displayAppointmentForm(itemId)](/javascript/api/outlook/office.mailbox?view=outlook-js-preview#displayappointmentform-itemid-) | ReadItem | 撰写<br>阅读 | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [displayAppointmentFormAsync （itemId，[options]，[callback]）](/javascript/api/outlook/office.mailbox?view=outlook-js-preview#displayappointmentform-itemid--options--callback-) | ReadItem | 撰写<br>阅读 | [预览](outlook-requirement-set-preview.md) |
+| [displayMessageForm(itemId)](/javascript/api/outlook/office.mailbox?view=outlook-js-preview#displaymessageform-itemid-) | ReadItem | 撰写<br>阅读 | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [displayMessageFormAsync （itemId，[options]，[callback]）](/javascript/api/outlook/office.mailbox?view=outlook-js-preview#displaymessageform-itemid--options--callback-) | ReadItem | 撰写<br>阅读 | [预览](outlook-requirement-set-preview.md) |
+| [displayNewAppointmentForm(parameters)](/javascript/api/outlook/office.mailbox?view=outlook-js-preview#displaynewappointmentform-parameters-) | ReadItem | 阅读 | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [displayNewAppointmentFormAsync （parameters、[options]、[callback]）](/javascript/api/outlook/office.mailbox?view=outlook-js-preview#displaynewappointmentform-parameters--options--callback-) | ReadItem | 阅读 | [预览](outlook-requirement-set-preview.md) |
+| [Office.context.mailbox.displaynewmessageform （参数）](/javascript/api/outlook/office.mailbox?view=outlook-js-preview#displaynewmessageform-parameters-) | ReadItem | 撰写<br>阅读 | [1.6](../requirement-set-1.6/outlook-requirement-set-1.6.md) |
+| [displayNewMessageFormAsync （parameters、[options]、[callback]）](/javascript/api/outlook/office.mailbox?view=outlook-js-preview#displaynewmessageform-parameters--options--callback-) | ReadItem | 撰写<br>阅读 | [预览](outlook-requirement-set-preview.md) |
+| [getCallbackTokenAsync([options], callback)](/javascript/api/outlook/office.mailbox?view=outlook-js-preview#getcallbacktokenasync-options--callback-) | ReadItem | 撰写<br>阅读 | [1.5](../requirement-set-1.5/outlook-requirement-set-1.5.md) |
+| [getCallbackTokenAsync(callback, [userContext])](/javascript/api/outlook/office.mailbox?view=outlook-js-preview#getcallbacktokenasync-callback--usercontext-) | ReadItem | 撰写<br>阅读 | [1.3](../requirement-set-1.3/outlook-requirement-set-1.3.md)<br>[1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [getUserIdentityTokenAsync(callback, [userContext])](/javascript/api/outlook/office.mailbox?view=outlook-js-preview#getuseridentitytokenasync-callback--usercontext-) | ReadItem | 撰写<br>阅读 | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [makeEwsRequestAsync(data, callback, [userContext])](/javascript/api/outlook/office.mailbox?view=outlook-js-preview#makeewsrequestasync-data--callback--usercontext-) | ReadWriteMailbox | 撰写<br>阅读 | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [removeHandlerAsync(eventType, [options], [callback])](/javascript/api/outlook/office.mailbox?view=outlook-js-preview#removehandlerasync-eventtype--options--callback-) | ReadItem | 撰写<br>阅读 | [1.5](../requirement-set-1.5/outlook-requirement-set-1.5.md) |
 
 ## <a name="events"></a>活动
 

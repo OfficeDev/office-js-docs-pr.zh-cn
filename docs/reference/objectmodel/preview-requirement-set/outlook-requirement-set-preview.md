@@ -1,14 +1,14 @@
 ---
 title: Outlook 外接程序 API 预览要求集
 description: 当前在 Outlook 外接程序的预览中的功能和 Api。
-ms.date: 05/29/2020
+ms.date: 06/17/2020
 localization_priority: Normal
-ms.openlocfilehash: a8026448f32d29de36684eb6a6d9fa0826de5f5b
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: d165d6ff82edf66034bb90ea40d522a23f919191
+ms.sourcegitcommit: 9eed5201a3ef556f77ba3b6790f007358188d57d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44608076"
+ms.lasthandoff: 06/17/2020
+ms.locfileid: "44778660"
 ---
 # <a name="outlook-add-in-api-preview-requirement-set"></a>Outlook 外接程序 API 预览要求集
 
@@ -83,6 +83,50 @@ Office JavaScript API 的 Outlook 外接程序 API 子集包括可以在 Outlook
 向清单添加了一个新元素，其中 `AppendOnSend` 扩展权限必须包含在扩展权限的集合中。
 
 **适用于**： Windows 上的 outlook （连接到 Office 365 订阅），outlook 网页版（新式，[配置预览访问](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide#set-up-the-release-option-in-the-admin-center)）
+
+<br>
+
+---
+
+---
+
+### <a name="async-versions-of-display-apis"></a>Api 的异步版本 `display`
+
+#### <a name="officecontextmailboxdisplayappointmentformasync"></a>[DisplayAppointmentFormAsync 的](/javascript/api/outlook/office.mailbox?view=outlook-js-preview#displayappointmentformasync-itemid--options--callback-)
+
+向显示现有约会的对象添加了新函数 `Mailbox` 。 这是方法的异步版本 `displayAppointmentForm` 。
+
+**适用于**：Windows 版 Outlook（已连接到 Office 365 订阅）
+
+#### <a name="officecontextmailboxdisplaymessageformasync"></a>[DisplayMessageFormAsync 的](/javascript/api/outlook/office.mailbox?view=outlook-js-preview#displaymessageformasync-itemid--options--callback-)
+
+向显示现有邮件的对象添加了新函数 `Mailbox` 。 这是方法的异步版本 `displayMessageForm` 。
+
+**适用于**：Windows 版 Outlook（已连接到 Office 365 订阅）
+
+#### <a name="officecontextmailboxdisplaynewappointmentformasync"></a>[DisplayNewAppointmentFormAsync 的](/javascript/api/outlook/office.mailbox?view=outlook-js-preview#displaynewappointmentformasync-parameters--options--callback-)
+
+向 `Mailbox` 显示新约会窗体的对象添加了一个新函数。 这是方法的异步版本 `displayNewAppointmentForm` 。
+
+**适用于**：Windows 版 Outlook（已连接到 Office 365 订阅）
+
+#### <a name="officecontextmailboxdisplaynewmessageformasync"></a>[DisplayNewMessageFormAsync 的](/javascript/api/outlook/office.mailbox?view=outlook-js-preview#displaynewmessageformasync-parameters--options--callback-)
+
+向 `Mailbox` 显示新邮件窗体的对象添加了一个新函数。 这是方法的异步版本 `displayNewMessageForm` 。
+
+**适用于**：Windows 版 Outlook（已连接到 Office 365 订阅）
+
+#### <a name="officecontextmailboxitemdisplayreplyallformasync"></a>[DisplayReplyAllFormAsync 的 Office。](office.context.mailbox.item.md#methods)
+
+向 `Item` 在阅读模式下显示 "全部答复" 窗体的对象添加了一个新函数。 这是方法的异步版本 `displayReplyAllForm` 。
+
+**适用于**：Windows 版 Outlook（已连接到 Office 365 订阅）
+
+#### <a name="officecontextmailboxitemdisplayreplyformasync"></a>[DisplayReplyFormAsync 的 Office。](office.context.mailbox.item.md#methods)
+
+向 `Item` 在阅读模式下显示 "答复" 窗体的对象添加了一个新函数。 这是方法的异步版本 `displayReplyForm` 。
+
+**适用于**：Windows 版 Outlook（已连接到 Office 365 订阅）
 
 <br>
 
