@@ -283,6 +283,8 @@
           displayName: 'uninstall, sideload'
         - name: 使用运行时日志记录功能进行调试
           href: testing/runtime-logging.md
+        - name: "适用于 Visual\_Studio\_Code 的调试器扩展"
+          href: testing/debug-with-vs-extension.md
         - name: 排查用户错误
           href: testing/testing-and-troubleshooting.md
         - name: 可用性测试
