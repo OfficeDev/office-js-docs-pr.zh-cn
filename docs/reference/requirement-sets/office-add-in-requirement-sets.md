@@ -1,19 +1,19 @@
 ---
 title: Office 通用 API 要求集
 description: 了解有关 Office 通用 API 要求集的详细信息
-ms.date: 06/03/2020
+ms.date: 06/23/2020
 ms.prod: non-product-specific
 localization_priority: Normal
-ms.openlocfilehash: dfb0f1c7daa281851063eb325cd14dccab8060fa
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: b4ed3f203cf5c50ab5a49c0278755d35d6826536
+ms.sourcegitcommit: a4873c3525c7d30ef551545d27eb2c0a16b4eb50
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44611349"
+ms.lasthandoff: 06/25/2020
+ms.locfileid: "44888143"
 ---
 # <a name="office-common-api-requirement-sets"></a>Office 通用 API 要求集
 
-要求集是指各组已命名的 API 成员。Office 加载项使用清单中指定的要求集或执行运行时检查，以确定 Office 主机是否支持加载项所需的 API。有关详细信息，请参阅 [Office 版本和要求集](../../develop/office-versions-and-requirement-sets.md)。
+Requirement sets are named groups of API members. Office Add-ins use requirement sets specified in the manifest or use a runtime check to determine whether an Office host supports APIs that an add-in needs. For more information, see [Office versions and requirement sets](../../develop/office-versions-and-requirement-sets.md).
 
 需要了解加载项在哪些位置受 Office 主机支持？ 请参阅 [Office 加载项主机和平台可用性](../../overview/office-add-in-availability.md)。
 
@@ -59,7 +59,7 @@ ms.locfileid: "44611349"
 
 |**Office 主机**|**要求集内的方法**|
 |:-----|:-----|
-| Windows 版 Excel<br>Excel 网页版<br>Mac 版 Excel<br>Windows 版 PowerPoint<br>PowerPoint 网页版<br>iPad 版 PowerPoint<br>Mac 版 PowerPoint<br>Windows 版 Word 2013 及更高版本<br>Mac 版 Word 2016 及更高版本<br>Word 网页版<br>iPad 版 Word|支持使用 Document.getFileAsync 方法时输出作为字节数组 (Office.FileType.Compressed) 的 Office Open XML (OOXML) 格式<br>。|
+| Excel 2016 及更高版本的 Windows<br>Excel 网页版<br>Excel 2016 及更高版本 Mac<br>Windows 版 PowerPoint<br>PowerPoint 网页版<br>iPad 版 PowerPoint<br>Mac 版 PowerPoint<br>Windows 版 Word 2013 及更高版本<br>Mac 版 Word 2016 及更高版本<br>Word 网页版<br>iPad 版 Word|支持使用 Document.getFileAsync 方法时输出作为字节数组 (Office.FileType.Compressed) 的 Office Open XML (OOXML) 格式<br>。|
 
 ---
 
