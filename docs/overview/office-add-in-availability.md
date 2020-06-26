@@ -1,18 +1,18 @@
 ---
 title: Office 外接程序主机和平台可用性
 description: Excel、OneNote、Outlook、PowerPoint、Project 和 Word 支持的要求集。
-ms.date: 05/11/2020
+ms.date: 06/23/2020
 localization_priority: Priority
-ms.openlocfilehash: 8c3c187d8f9b70f40a35e3773a2267dc76decbd0
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 979c873b1c5f2d1d7847414f037d5c75737aa33d
+ms.sourcegitcommit: a4873c3525c7d30ef551545d27eb2c0a16b4eb50
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44611980"
+ms.lasthandoff: 06/25/2020
+ms.locfileid: "44888157"
 ---
 # <a name="office-add-in-host-and-platform-availability"></a>Office 外接程序主机和平台可用性
 
-若要按预期运行，Office 加载项可能会依赖特定的 Office 主机、要求集、API 成员或 API 版本。下表列出了每个 Office 应用目前支持的可用平台、扩展点、API 要求集和通用 API。
+To work as expected, your Office Add-in might depend on a specific Office host, a requirement set, an API member, or a version of the API. The following tables contain the available platforms, extension points, API requirement sets, and Common APIs that are currently supported for each Office application.
 
 > [!NOTE]
 > 通过 MSI 安装的初始 Office 2016 版本只包含 ExcelApi 1.1、WordApi 1.1 和通用 API 要求集。 有关各种 Office 版本更新历史记录的更多信息，请查看[另请参阅](#see-also)部分。
@@ -154,7 +154,6 @@ ms.locfileid: "44611980"
           - <a href="/office/dev/add-ins/reference/requirement-sets/image-coercion-requirement-sets#imagecoercion-11">ImageCoercion 1.1</a></td>
     <td>
         - BindingEvents<br>
-        - CompressedFile<br>
         - DocumentEvents<br>
         - File<br>
         - MatrixBindings<br>
@@ -311,7 +310,7 @@ ms.locfileid: "44611980"
     </td>
   </tr>
   <tr>
-    <td>Office for Mac<br>（连接到 Office 365）</td>
+    <td>Mac 版 Office<br>（连接到 Office 365）</td>
     <td>
         - 自定义函数</td>
     <td>
