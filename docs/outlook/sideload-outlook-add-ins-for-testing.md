@@ -1,23 +1,22 @@
 ---
 title: 旁加载 Outlook 外接程序进行测试
 description: 利用旁加载来安装 Outlook 外接程序以供测试，无需先将其置于外接程序目录中。
-ms.date: 06/24/2019
+ms.date: 06/29/2020
 localization_priority: Normal
-ms.openlocfilehash: 3543eeb58f441819edb2c129e6e14206e26de524
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: b99b72dbf4691d6a27ac9405c88f2cc642baaadd
+ms.sourcegitcommit: 065bf4f8e0d26194cee9689f7126702b391340cc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44605323"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "45006477"
 ---
 # <a name="sideload-outlook-add-ins-for-testing"></a>旁加载 Outlook 外接程序进行测试
 
 可以使用旁加载安装 Outlook 外接程序进行测试，而无需首先将其置于外接程序目录中。
 
+## <a name="sideload-an-add-in-in-outlook-on-the-web"></a>在 Outlook 网页版中旁加载外接程序
 
-## <a name="sideload-an-add-in-in-outlook-in-office-365"></a>在 Office 365 的 Outlook 中旁加载外接程序
-
-在 Office 365 的 Outlook 中旁加载外接程序的过程取决于使用的是全新 Outlook 网页版还是经典 Outlook 网页版。
+在 web 上的 Outlook 中旁加载外接程序的过程取决于您使用的是新版本还是经典版本。
 
 - 如果邮箱工具栏类似于下图，请参阅[在全新 Outlook 网页版中旁加载外接程序](#sideload-an-add-in-in-the-new-outlook-on-the-web)。
 
@@ -34,7 +33,7 @@ ms.locfileid: "44605323"
 
 1. 转到 [Office 365 中的 Outlook](https://outlook.office.com)。
 
-1. 在 Outlook 网页版中，创建新邮件。   
+1. 在 Outlook 网页版中，创建新邮件。
 
 1. 从新邮件的底部选择 **...**，然后从出现的菜单中选择“**获取外接程序**”。
 
@@ -48,7 +47,7 @@ ms.locfileid: "44605323"
 
     ![指向“从文件添加”选项的“管理外接程序”屏幕截图](../images/outlook-sideload-desktop-add-from-file.png)
 
-1. 找到自定义外接程序的清单文件并进行安装。在安装过程中接受所有提示。
+1. Locate the manifest file for your custom add-in and install it. Accept all prompts during the installation.
 
 ### <a name="sideload-an-add-in-in-classic-outlook-on-the-web"></a>在经典 Outlook 网页版中旁加载外接程序
 
@@ -66,11 +65,13 @@ ms.locfileid: "44605323"
 
     ![指向“从文件添加”选项的“管理外接程序”屏幕截图](../images/outlook-sideload-desktop-add-from-file.png)
 
-1. 找到您的自定义外接程序清单文件并进行安装。在安装过程中接受所有提示。
+1. Locate the manifest file for your custom add-in and install it. Accept all prompts during the installation.
 
 ## <a name="sideload-an-add-in-in-outlook-on-the-desktop"></a>在 Outlook 桌面版中旁加载外接程序
 
-1. 打开 Windows 版 Outlook 2013 或更高版本，或 Mac 版 Outlook 2016 或更高版本。
+### <a name="outlook-2016-or-later"></a>Outlook 2016 或更高版本
+
+1. 在 Windows 或 Mac 上打开 Outlook 2016 或更高版本。
 
 1. 选择功能区上的“**获取外接程序**”按钮。
 
@@ -87,7 +88,15 @@ ms.locfileid: "44605323"
 
     ![“应用商店”屏幕截图（指向“从文件添加”选项）](../images/outlook-sideload-desktop-add-from-file.png)
 
-1. 找到您的自定义外接程序清单文件并进行安装。在安装过程中接受所有提示。
+1. Locate the manifest file for your custom add-in and install it. Accept all prompts during the installation.
+
+#### <a name="outlook-2013"></a>Outlook 2013
+
+1. 在 Windows 上打开 Outlook 2013。
+
+1. 选择 "**文件**" 菜单，然后选择 "**信息**" 选项卡上的 "**管理外接程序**" 按钮。 Outlook 将打开浏览器。
+
+1. 按照您的 Outlook 网页版上的[旁加载中的加载](#sideload-an-add-in-in-outlook-on-the-web)项中的步骤，在 web 上的 outlook 的 "web" 部分中执行。
 
 ## <a name="remove-a-sideloaded-add-in"></a>删除旁加载加载项
 

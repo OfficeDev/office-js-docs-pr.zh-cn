@@ -3,12 +3,12 @@ ms.date: 05/16/2020
 description: 使用 Internet Explorer 11 测试 Office 外接程序。
 title: Internet Explorer 11 测试
 localization_priority: Normal
-ms.openlocfilehash: 4ea2b4da153e2908f928086cd4997502c194e578
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 1d6852d08308088a020e86ce7f5ab9cfdb9ab978
+ms.sourcegitcommit: 065bf4f8e0d26194cee9689f7126702b391340cc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44611202"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "45006435"
 ---
 # <a name="test-your-office-add-in-using-internet-explorer-11"></a>使用 Internet Explorer 11 测试 Office 外接程序
 
@@ -31,7 +31,7 @@ ms.locfileid: "44611202"
 2. 在新项目的根文件夹中，在命令行中运行以下命令：
 
 ```command&nbsp;line
-office-add-dev-settings webview manifest.xml ie
+npx office-addin-dev-settings webview manifest.xml ie
 ```
 您应该会在命令行中看到一条注释，web 视图类型现在设置为 IE。
 
@@ -41,7 +41,7 @@ office-add-dev-settings webview manifest.xml ie
 
 如果您有一个不同的清单路径，请在命令中指定此路径，如下所示：
 
-`office-add-dev-settings webview [path to your manifest] ie`
+`npx office-addin-dev-settings webview [path to your manifest] ie`
 
 该 `office-addin-dev-settings webview` 命令还可以采用若干个运行时作为参数：
 

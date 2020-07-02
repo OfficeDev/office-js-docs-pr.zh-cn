@@ -1,25 +1,25 @@
 ---
 title: 错误处理
 description: 了解有关 Excel JavaScript API 错误处理逻辑，以解决运行时错误。
-ms.date: 05/13/2020
+ms.date: 06/25/2020
 localization_priority: Normal
-ms.openlocfilehash: ff6336e4d76e84ddc708d65eda70f5f2e172fde7
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 8d410ae7eea315e14383b5aa08373ede3768cace
+ms.sourcegitcommit: 065bf4f8e0d26194cee9689f7126702b391340cc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44609606"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "45006442"
 ---
 # <a name="error-handling"></a>错误处理
 
-使用 Excel JavaScript API 生成加载项时，请务必加入错误处理逻辑，以便解决运行时错误。 鉴于 API 的异步特性，这样做非常关键。
+When you build an add-in using the Excel JavaScript API, be sure to include error handling logic to account for runtime errors. Doing so is critical, due to the asynchronous nature of the API.
 
 > [!NOTE]
 > 有关 `sync()` Excel JAVASCRIPT api 的方法和异步特性的详细信息，请参阅[使用 EXCEL javascript Api 的基本编程概念](excel-add-ins-core-concepts.md)。
 
 ## <a name="best-practices"></a>最佳做法
 
-通过本文档中的代码示例，你会注意到每次调用 `Excel.run` 时，都会带上 `catch` 语句，以便捕获 `Excel.run` 内出现的任何错误。 建议在使用 Excel JavaScript API 生成加载项时使用相同模式。
+Throughout the code samples in this documentation, you'll notice that every call to `Excel.run` is accompanied by a `catch` statement to catch any errors that occur within the `Excel.run`. We recommend that you use the same pattern when you build an add-in using the Excel JavaScript APIs.
 
 ```js
 Excel.run(function (context) {
@@ -38,7 +38,7 @@ Excel.run(function (context) {
 
 当 Excel JavaScript API 请求无法成功运行时，API 将返回错误对象，其中包含以下属性：
 
-- **代码**：错误消息的 `code` 属性包含一个字符串，它属于 `OfficeExtension.ErrorCodes` 或 `Excel.ErrorCodes` 列表的一部分。 例如，错误代码“InvalidReference”指示引用对于指定操作无效。 错误代码尚未本地化。
+- **code**:  The `code` property of an error message contains a string that is part of the `OfficeExtension.ErrorCodes` or `Excel.ErrorCodes` list. For example, the error code "InvalidReference" indicates that the reference is not valid for the specified operation. Error codes are not localized.
 
 - **消息**：错误消息的 `message` 属性包含本地化字符串中的错误摘要。 错误消息并非针对最终用户的使用情况；应使用错误代码和相应的业务逻辑来确定外接程序显示给最终用户的错误消息。
 
@@ -72,6 +72,7 @@ Excel.run(function (context) {
 |`ServiceNotAvailable`|服务不可用。|
 |`Unauthenticated` |所需的身份验证信息缺少或无效。|
 |`UnsupportedOperation`|不支持正在尝试的操作。|
+|`UnsupportedSheet`|此工作表类型不支持此操作，因为它是宏或图表工作表。|
 
 ## <a name="see-also"></a>另请参阅
 

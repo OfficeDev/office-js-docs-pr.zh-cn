@@ -2,14 +2,14 @@
 title: 为联机会议提供商创建 Outlook mobile 外接程序
 description: 讨论如何为联机会议服务提供商设置 Outlook 移动外接程序。
 ms.topic: article
-ms.date: 05/19/2020
+ms.date: 06/25/2020
 localization_priority: Normal
-ms.openlocfilehash: d35aa1ecd2b03b51314b5e88ae08c7fcb8382817
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 052ab4e71f8bc90e655a6ba780eacc18d43069e1
+ms.sourcegitcommit: 065bf4f8e0d26194cee9689f7126702b391340cc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44609032"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "45006422"
 ---
 # <a name="create-an-outlook-mobile-add-in-for-an-online-meeting-provider"></a>为联机会议提供商创建 Outlook mobile 外接程序
 
@@ -20,38 +20,75 @@ ms.locfileid: "44609032"
 
 在本文中，您将了解如何设置 Outlook 移动外接程序，以使用户能够使用您的联机会议服务来组织和加入会议。 在整篇文章中，我们将使用虚构的联机会议服务提供商 "Contoso"。
 
+## <a name="set-up-your-environment"></a>设置环境
+
+完成[Outlook 快速入门](../quickstarts/outlook-quickstart.md?tabs=yeomangenerator)，它将使用 Office 外接程序的 Yeoman 生成器创建外接程序项目。
+
 ## <a name="configure-the-manifest"></a>配置清单
 
 若要使用户能够使用您的外接程序创建联机会议，必须在 `MobileOnlineMeetingCommandSurface` 父元素下的清单中配置扩展点 `MobileFormFactor` 。 不支持其他外观因素。
 
-下面的示例展示了包含 `MobileFormFactor` 元素和扩展点的清单中的摘录 `MobileOnlineMeetingCommandSurface` 。
+1. 在代码编辑器中，打开 "快速启动" 项目。
 
-> [!TIP]
-> 若要了解有关 Outlook 外接程序清单的详细信息，请参阅[outlook 外接程序清单](manifests.md)和[添加对适用于 outlook Mobile 的外接程序命令的支持](add-mobile-support.md)。
+1. 打开位于项目根目录中的**manifest.xml**文件。
+
+1. 选择整个 `<VersionOverrides>` 节点（包括 "打开" 和 "关闭" 标记），并将其替换为以下 XML。
 
 ```xml
-...
 <VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides" xsi:type="VersionOverridesV1_0">
   <VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides/1.1" xsi:type="VersionOverridesV1_1">
-    ...
+    <Description resid="residDescription"></Description>
+    <Requirements>
+      <bt:Sets>
+        <bt:Set Name="Mailbox" MinVersion="1.3"/>
+      </bt:Sets>
+    </Requirements>
     <Hosts>
       <Host xsi:type="MailHost">
+        <DesktopFormFactor>
+          <FunctionFile resid="residFunctionFile"/>
+          <ExtensionPoint xsi:type="AppointmentOrganizerCommandSurface">
+            <OfficeTab id="TabDefault">
+              <Group id="apptComposeGroup">
+                <Label resid="residDescription"/>
+                <Control xsi:type="Button" id="insertMeetingButton">
+                  <Label resid="residLabel"/>
+                  <Supertip>
+                    <Title resid="residLabel"/>
+                    <Description resid="residTooltip"/>
+                  </Supertip>
+                  <Icon>
+                    <bt:Image size="16" resid="icon-16"/>
+                    <bt:Image size="32" resid="icon-32"/>
+                    <bt:Image size="64" resid="icon-64"/>
+                    <bt:Image size="80" resid="icon-80"/>
+                  </Icon>
+                  <Action xsi:type="ExecuteFunction">
+                    <FunctionName>insertContosoMeeting</FunctionName>
+                  </Action>
+                </Control>
+              </Group>
+            </OfficeTab>
+          </ExtensionPoint>
+        </DesktopFormFactor>
+
         <MobileFormFactor>
-          <FunctionFile resid="residMobileFuncUrl" />
+          <FunctionFile resid="residFunctionFile"/>
           <ExtensionPoint xsi:type="MobileOnlineMeetingCommandSurface">
-            <!-- Configure selected extension point. -->
-            <Control xsi:type="MobileButton" id="onlineMeetingFunctionButton">
-              <Label resid="residUILessButton0Name" />
+            <Control xsi:type="MobileButton" id="insertMeetingButton">
+              <Label resid="residLabel"/>
               <Icon>
-                <bt:Image resid="UiLessIcon" size="25" scale="1" />
-                <bt:Image resid="UiLessIcon" size="25" scale="2" />
-                <bt:Image resid="UiLessIcon" size="25" scale="3" />
-                <bt:Image resid="UiLessIcon" size="32" scale="1" />
-                <bt:Image resid="UiLessIcon" size="32" scale="2" />
-                <bt:Image resid="UiLessIcon" size="32" scale="3" />
-                <bt:Image resid="UiLessIcon" size="48" scale="1" />
-                <bt:Image resid="UiLessIcon" size="48" scale="2" />
-                <bt:Image resid="UiLessIcon" size="48" scale="3" />
+                <bt:Image size="25" scale="1" resid="icon-16"/>
+                <bt:Image size="25" scale="2" resid="icon-16"/>
+                <bt:Image size="25" scale="3" resid="icon-16"/>
+
+                <bt:Image size="32" scale="1" resid="icon-32"/>
+                <bt:Image size="32" scale="2" resid="icon-32"/>
+                <bt:Image size="32" scale="3" resid="icon-32"/>
+
+                <bt:Image size="48" scale="1" resid="icon-48"/>
+                <bt:Image size="48" scale="2" resid="icon-48"/>
+                <bt:Image size="48" scale="3" resid="icon-48"/>
               </Icon>
               <Action xsi:type="ExecuteFunction">
                 <FunctionName>insertContosoMeeting</FunctionName>
@@ -61,81 +98,116 @@ ms.locfileid: "44609032"
         </MobileFormFactor>
       </Host>
     </Hosts>
-    ...
+    <Resources>
+      <bt:Images>
+        <bt:Image id="icon-16" DefaultValue="https://contoso.com/assets/icon-16.png"/>
+        <bt:Image id="icon-32" DefaultValue="https://contoso.com/assets/icon-32.png"/>
+        <bt:Image id="icon-48" DefaultValue="https://contoso.com/assets/icon-48.png"/>
+        <bt:Image id="icon-64" DefaultValue="https://contoso.com/assets/icon-64.png"/>
+        <bt:Image id="icon-80" DefaultValue="https://contoso.com/assets/icon-80.png"/>
+      </bt:Images>
+      <bt:Urls>
+        <bt:Url id="residFunctionFile" DefaultValue="https://contoso.com/commands.html"/>
+      </bt:Urls>
+      <bt:ShortStrings>
+        <bt:String id="residDescription" DefaultValue="Contoso meeting"/>
+        <bt:String id="residLabel" DefaultValue="Add a contoso meeting"/>
+      </bt:ShortStrings>
+      <bt:LongStrings>
+        <bt:String id="residTooltip" DefaultValue="Add a contoso meeting to this appointment."/>
+      </bt:LongStrings>
+    </Resources>
   </VersionOverrides>
 </VersionOverrides>
-...
 ```
+
+> [!TIP]
+> 若要了解有关 Outlook 外接程序清单的详细信息，请参阅[outlook 外接程序清单](manifests.md)和[添加对适用于 outlook Mobile 的外接程序命令的支持](add-mobile-support.md)。
 
 ## <a name="implement-adding-online-meeting-details"></a>实施添加联机会议详细信息
 
 在本节中，了解外接程序脚本如何更新用户的会议以包含联机会议详细信息。
 
-下面的示例展示了如何构建联机会议详细信息。 不显示：如何从服务中获取会议组织者的 ID 和其他详细信息。
+1. 在同一 "快速启动" 项目中，在代码编辑器中打开 **/src/commands/commands.js** 。
 
-```js
-const newBody = '<br>' +
-    '<a href="https://contoso.com/meeting?id=123456789" target="_blank">Join Contoso meeting</a>' +
-    '<br><br>' +
-    'Phone Dial-in: +1(123)456-7890' +
-    '<br><br>' +
-    'Meeting ID: 123 456 789' +
-    '<br><br>' +
-    'Want to test your video connection?' +
-    '<br><br>' +
-    '<a href="https://contoso.com/testmeeting" target="_blank">Join test meeting</a>' +
-    '<br><br>';
-```
+1. 将**commands.js**文件的整个内容替换为以下 JavaScript。
 
-下面的示例演示如何定义清单中引用的无 UI 的函数， `insertContosoMeeting` 以使用联机会议详细信息更新会议正文。
+    ```js
+    // 1. How to construct online meeting details.
+    // Not shown: How to get the meeting organizer's ID and other details from your service.
+    const newBody = '<br>' +
+        '<a href="https://contoso.com/meeting?id=123456789" target="_blank">Join Contoso meeting</a>' +
+        '<br><br>' +
+        'Phone Dial-in: +1(123)456-7890' +
+        '<br><br>' +
+        'Meeting ID: 123 456 789' +
+        '<br><br>' +
+        'Want to test your video connection?' +
+        '<br><br>' +
+        '<a href="https://contoso.com/testmeeting" target="_blank">Join test meeting</a>' +
+        '<br><br>';
 
-```js
-var mailboxItem;
+    var mailboxItem;
 
-// Office is ready.
-Office.onReady(function () {
-        mailboxItem = Office.context.mailbox.item;
+    // Office is ready.
+    Office.onReady(function () {
+            mailboxItem = Office.context.mailbox.item;
+        }
+    );
+
+    // 2. How to define a UI-less function named `insertContosoMeeting` (referenced in the manifest)
+    //    to update the meeting body with the online meeting details.
+    function insertContosoMeeting(event) {
+        // Get HTML body from the client.
+        mailboxItem.body.getAsync("html",
+            { asyncContext: event },
+            function (getBodyResult) {
+                if (getBodyResult.status === Office.AsyncResultStatus.Succeeded) {
+                    updateBody(getBodyResult.asyncContext, getBodyResult.value);
+                } else {
+                    console.error("Failed to get HTML body.");
+                    getBodyResult.asyncContext.completed({ allowEvent: false });
+                }
+            }
+        );
     }
-);
 
-function insertContosoMeeting(event) {
-    // Get HTML body from the client.
-    mailboxItem.body.getAsync("html",
-        { asyncContext: event },
-        function (getBodyResult) {
-            if (getBodyResult.status === Office.AsyncResultStatus.Succeeded) {
-                updateBody(getBodyResult.asyncContext, getBodyResult.value);
-            } else {
-                console.error("Failed to get HTML body.");
-                getBodyResult.asyncContext.completed({ allowEvent: false });
+    // 3. How to implement a supporting function `updateBody`
+    //    that appends the online meeting details to the current body of the meeting.
+    function updateBody(event, existingBody) {
+        // Append new body to the existing body.
+        mailboxItem.body.setAsync(existingBody + newBody,
+            { asyncContext: event, coercionType: "html" },
+            function (setBodyResult) {
+                if (setBodyResult.status === Office.AsyncResultStatus.Succeeded) {
+                    setBodyResult.asyncContext.completed({ allowEvent: true });
+                } else {
+                    console.error("Failed to set HTML body.");
+                    setBodyResult.asyncContext.completed({ allowEvent: false });
+                }
             }
-        }
-    );
-}
-```
+        );
+    }
 
-下面的示例演示 `updateBody` 在上一示例中使用的支持函数的实现，该示例将联机会议详细信息追加到会议的当前正文。
+    function getGlobal() {
+      return typeof self !== "undefined"
+        ? self
+        : typeof window !== "undefined"
+        ? window
+        : typeof global !== "undefined"
+        ? global
+        : undefined;
+    }
 
-```js
-function updateBody(event, existingBody) {
-    // Append new body to the existing body.
-    mailboxItem.body.setAsync(existingBody + newBody,
-        { asyncContext: event, coercionType: "html" },
-        function (setBodyResult) {
-            if (setBodyResult.status === Office.AsyncResultStatus.Succeeded) {
-                setBodyResult.asyncContext.completed({ allowEvent: true });
-            } else {
-                console.error("Failed to set HTML body.");
-                setBodyResult.asyncContext.completed({ allowEvent: false });
-            }
-        }
-    );
-}
-```
+    const g = getGlobal();
+
+    // The add-in command functions need to be available in global scope.
+    g.insertContosoMeeting = insertContosoMeeting;
+    ```
 
 ## <a name="testing-and-validation"></a>测试和验证
 
-按照通常的指导来[测试和验证您的外接程序](testing-and-tips.md)。 在 Outlook 网页版、Windows 版或 Mac 版中进行[旁加载](sideload-outlook-add-ins-for-testing.md)后，在你的 android 移动设备上重新启动 outlook （现在，android 是唯一受支持的客户端）。 然后，在新的会议屏幕上，验证 Microsoft 团队或 Skype 切换是否已替换为你自己的。
+按照通常的指导来[测试和验证您的外接程序](testing-and-tips.md)。 在 Outlook 网页版、Windows 版或 Mac 版中进行[旁加载](sideload-outlook-add-ins-for-testing.md)后，在你的 Android 移动设备上重新启动 outlook。 （现在，Android 是唯一受支持的客户端。）然后，在新的会议屏幕上，验证 Microsoft 团队或 Skype 切换是否已替换为你自己的。
 
 ### <a name="create-meeting-ui"></a>创建会议用户界面
 
@@ -148,6 +220,21 @@ function updateBody(event, existingBody) {
 作为会议与会者，查看会议时，您应该会看到类似于下图的屏幕。
 
 [![Android 上的加入会议屏幕的屏幕截图](../images/outlook-android-join-online-meeting-view-1.png)](../images/outlook-android-join-online-meeting-view-1-expanded.png#lightbox)
+
+> [!IMPORTANT]
+> 如果看不到**Join**链接，则可能是你的服务的联机会议模板未在我们的服务器上注册。 有关详细信息，请参阅[注册联机会议模板](#register-your-online-meeting-template)部分。
+
+## <a name="register-your-online-meeting-template"></a>注册您的联机会议模板
+
+如果您想要为服务注册联机会议模板，则可以使用详细信息创建 GitHub 问题。 之后，我们将与您联系以协调注册日程表。
+
+1. 请转到本文结尾处的 "**反馈**" 部分。
+1. 按 "**此页面**" 链接。
+1. 将新问题的**标题**设置为 "为我的服务注册联机会议模板"，并将其替换 `my-service` 为您的服务名称。
+1. 在问题正文中，将字符串 "[输入反馈此处]" 替换为您在 `newBody` 本文前面的 "[实现添加联机会议详细信息" 部分中的 "实现添加联机会议详细信息](#implement-adding-online-meeting-details)" 部分中设置的字符串。
+1. 单击 "**提交新问题**"。
+
+![包含 Contoso 示例内容的新 GitHub 问题屏幕的屏幕截图](../images/outlook-request-to-register-online-meeting-template.png)
 
 ## <a name="available-apis"></a>可用 Api
 

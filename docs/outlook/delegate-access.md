@@ -1,14 +1,14 @@
 ---
 title: 在 Outlook 加载项中启用代理访问方案
 description: 简要介绍了代理访问权限，并讨论了如何配置加载项支持。
-ms.date: 01/14/2020
+ms.date: 06/30/2020
 localization_priority: Normal
-ms.openlocfilehash: 68b9e09afbe2bcd5cfc302d6714b1c22fd945047
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: a5b4581783ca65bfe858dcf6638287418a3dcfe2
+ms.sourcegitcommit: 065bf4f8e0d26194cee9689f7126702b391340cc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44608948"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "45006414"
 ---
 # <a name="enable-delegate-access-scenarios-in-an-outlook-add-in"></a>在 Outlook 加载项中启用代理访问方案
 
@@ -23,9 +23,9 @@ ms.locfileid: "44608948"
 
 下表介绍了 Office JavaScript API 支持的代理权限。
 
-|Permission|值|Description|
+|Permission|值|说明|
 |---|---:|---|
-|Read|1（000001）|可以读取项目。|
+|阅读|1（000001）|可以读取项目。|
 |写入|2（000010）|可以创建项目。|
 |DeleteOwn|4（000100）|只能删除其创建的项目。|
 |DeleteAll|8（001000）|可以删除任何项目。|
@@ -41,11 +41,16 @@ ms.locfileid: "44608948"
 
 代理对所有者邮箱的更新通常会在邮箱之间立即同步。
 
-但是，如果外接程序使用 REST 或 EWS 操作对项设置扩展属性，则此类更改可能需要几个小时才能同步。我们建议您改为使用[CustomProperties](/javascript/api/outlook/office.customproperties)对象和相关 api 以避免此类延迟。 若要了解详细信息，请参阅 "在 Outlook 外接程序中获取和设置元数据" 一文中的 "[自定义属性" 部分](metadata-for-an-outlook-add-in.md#custom-data-per-item-in-a-mailbox-custom-properties)。
+但是，如果使用 REST 或 Exchange Web 服务（EWS）操作来设置项目的扩展属性，则这些更改可能需要几个小时才能同步。我们建议您改为使用[CustomProperties](/javascript/api/outlook/office.customproperties)对象和相关 api 以避免此类延迟。 若要了解详细信息，请参阅 "在 Outlook 外接程序中获取和设置元数据" 一文中的 "[自定义属性" 部分](metadata-for-an-outlook-add-in.md#custom-data-per-item-in-a-mailbox-custom-properties)。
+
+> [!IMPORTANT]
+> 在委托方案中，不能将 EWS 与 office.js API 当前提供的令牌结合使用。
 
 ## <a name="configure-the-manifest"></a>配置清单
 
 若要在外接程序中启用代理访问方案，必须在[SupportsSharedFolders](../reference/manifest/supportssharedfolders.md) `true` 父元素下的清单中将 SupportsSharedFolders 元素设置为 `DesktopFormFactor` 。 目前，其他外观因素不受支持。
+
+若要支持来自代理的 REST 调用，请将清单中的 "[权限](../reference/manifest/permissions.md)" 节点设置为 `ReadWriteMailbox` 。
 
 下面的示例演示 `SupportsSharedFolders` `true` 在清单的部分中设置的元素。
 
@@ -77,6 +82,9 @@ ms.locfileid: "44608948"
 ## <a name="perform-an-operation-as-delegate"></a>将操作作为代理执行
 
 可以通过调用[getSharedPropertiesAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods)方法，在撰写或阅读模式下获取项目的共享属性。 这将返回一个[SharedProperties](/javascript/api/outlook/office.sharedproperties)对象，该对象当前提供代理的权限、所有者的电子邮件地址、REST API 的基 URL 和目标邮箱。
+
+> [!IMPORTANT]
+> 在委托方案中，外接程序可以使用 REST 而不是 EWS，并且必须将外接程序的权限设置为，以 `ReadWriteMailbox` 启用对所有者邮箱的 rest 访问。
 
 下面的示例展示了如何获取邮件或约会的共享属性、检查代理是否具有**写入**权限，以及如何发出 REST 调用。
 
@@ -128,6 +136,9 @@ function performOperation() {
   );
 }
 ```
+
+> [!TIP]
+> 作为代理，您可以使用 REST[获取附加到 outlook 项目或组文章的 outlook 邮件的内容](/graph/outlook-get-mime-message#get-mime-content-of-an-outlook-message-attached-to-an-outlook-item-or-group-post)。
 
 ## <a name="see-also"></a>另请参阅
 
