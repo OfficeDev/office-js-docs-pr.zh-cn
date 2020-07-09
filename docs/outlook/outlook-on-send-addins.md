@@ -1,18 +1,18 @@
 ---
 title: Outlook 加载项的 Onsend 功能
 description: 提供了一种处理项目或阻止用户进行特定操作的方法，并允许加载项在发送时设置某些属性。
-ms.date: 05/27/2020
+ms.date: 07/06/2020
 localization_priority: Normal
-ms.openlocfilehash: 148c5751e82184dbc5cb112bac097b862cc1d1f4
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: b30c3b155a118c8142256e31b3cb34cd842cf543
+ms.sourcegitcommit: 4f2f1c0a8ee777a43bb28efa226684261f4c4b9f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44605337"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "45081401"
 ---
 # <a name="on-send-feature-for-outlook-add-ins"></a>Outlook 加载项的 Onsend 功能
 
-Outlook 加载项的 Onsend 功能提供了一种处理邮件或会议项目，或阻止用户进行特定操作的方法，并允许加载项在发送时设置某些属性。例如，可以使用 Onsend 功能执行以下操作：
+The on-send feature for Outlook add-ins provides a way to handle a message or meeting item, or block users from certain actions, and allows an add-in to set certain properties on send. For example, you can use the on-send feature to:
 
 - 防止用户发送敏感信息或将主题行留空。  
 - 将特定的收件人添加到邮件中的“抄送”行中，或添加到会议中的“可选收件人”行中。
@@ -25,7 +25,7 @@ on-send 功能是由事件类型 `ItemSend` 触发的，无 UI。
 
 下表显示了用于 "发送" 功能的受支持的客户端/服务器组合。 不支持排除的组合。
 
-| Client | Exchange Online | Exchange 2016 本地<br>（累积更新6或更高版本） | Exchange 2019 本地<br>（累积更新1或更高版本） |
+| 客户端 | Exchange Online | Exchange 2016 本地<br>（累积更新6或更高版本） | Exchange 2019 本地<br>（累积更新1或更高版本） |
 |---|:---:|:---:|:---:|
 |Windows：<br>版本1910（内部版本12130.20272）或更高版本|是|是|是|
 |Mac<br>生成16.30 或更高版本|是|否|否|
@@ -70,7 +70,7 @@ Onsend 功能目前具有以下限制。
 
 - **AppSource** &ndash; 无法在 [AppSource](https://appsource.microsoft.com) 中发布使用 Onsend 功能的 Outlook 加载项，因为它们将无法通过 AppSource 验证。 使用 Onsend 功能的加载项应由管理员部署。
 - **清单**&ndash; - 每个加载项仅支持一个 `ItemSend` 事件。 如果清单中有两个或多个 `ItemSend` 事件，则该清单将无法通过验证。
-- **性能** &ndash; 多次往返到托管加载项的 Web 服务器可能会影响加载项的性能。创建需要多个基于邮件或会议操作的加载项时，请考虑性能影响。
+- **Performance** &ndash; Multiple roundtrips to the web server that hosts the add-in can affect the performance of the add-in. Consider the effects on performance when you create add-ins that require multiple message- or meeting-based operations.
 - **稍后发送**（仅适用于 Mac）&ndash; 如果有 Onsend 加载项，**稍后发送**功能将不可用。
 
 ### <a name="mailbox-typemode-limitations"></a>邮箱类型/模式限制
@@ -351,9 +351,9 @@ Get-OWAMailboxPolicy OWAOnSendAddinAllUserPolicy | Set-OWAMailboxPolicy –OnSen
 
 |方案|邮箱 1 Onsend 功能|邮箱 2 Onsend 功能|Outlook Web 会话（经典）|结果|是否支持？|
 |:------------|:------------|:--------------------------|:---------|:-------------|:-------------|
-|1 |启用|启用|新会话|邮箱 1 无法从邮箱 2 发送邮件或会议项目。|目前尚不支持。可以使用方案 3 作为一种解决办法。|
-|双面|已禁用|启用|新会话|邮箱 1 无法从邮箱 2 发送邮件或会议项目。|目前尚不支持。可以使用方案 3 作为一种解决办法。|
-|第三章|已启用|已启用|同一个会话|分配给邮箱 1 的 Onsend 加载项运行 Onsend。|支持。|
+|1 |启用|启用|新会话|邮箱 1 无法从邮箱 2 发送邮件或会议项目。|Not currently supported. As a workaround, use scenario 3.|
+|2 |已禁用|启用|新会话|邮箱 1 无法从邮箱 2 发送邮件或会议项目。|Not currently supported. As a workaround, use scenario 3.|
+|3 |已启用|已启用|同一个会话|分配给邮箱 1 的 Onsend 加载项运行 Onsend。|支持。|
 |4 |启用|已禁用|新会话|未运行 Onsend 加载项；邮件或会议项目已发送。|支持。|
 
 #### <a name="web-browser-modern-outlook-windows-mac"></a>Web 浏览器（新式 Outlook）、Windows、Mac
@@ -367,7 +367,7 @@ Get-OWAMailboxPolicy OWAOnSendAddinAllUserPolicy | Set-OWAMailboxPolicy –OnSen
 |方案|邮箱 1 Onsend 策略|是否启用了 Onsend 加载项？|邮箱 1 操作|结果|是否支持？|
 |:------------|:-------------------------|:-------------------|:---------|:----------|:-------------|
 |1 |已启用|是|邮箱 1 撰写发送到组 1 的新邮件或会议。|发送期间，Onsend 加载项运行。|是|
-|双面|已启用|是|邮箱 1 在 Outlook 网页版组 1 的组窗口中撰写发送到组 1 的新邮件或会议。|Onsend 加载项不会在发送期间运行。|目前尚不支持。 可以使用方案 1 作为一种解决办法。|
+|2 |已启用|是|邮箱 1 在 Outlook 网页版组 1 的组窗口中撰写发送到组 1 的新邮件或会议。|Onsend 加载项不会在发送期间运行。|目前尚不支持。 可以使用方案 1 作为一种解决办法。|
 
 ### <a name="user-mailbox-with-on-send-add-in-featurepolicy-enabled-add-ins-that-support-on-send-are-installed-and-enabled-and-offline-mode-is-enabled"></a>用户邮箱启用了 Onsend 加载项功能/策略，并且安装并启用了支持 Onsend 的加载项，启用了脱机模式
 
@@ -392,6 +392,9 @@ Onsend 加载项将根据用户、加载项后端和 Exchange 的联机状态运
 ## <a name="code-examples"></a>代码示例
 
 以下代码示例说明如何创建一个简单的 Onsend 加载项。 若要下载这些示例所基于的代码示例，请参阅 [Outlook-Add-in-On-Send](https://github.com/OfficeDev/Outlook-Add-in-On-Send)。
+
+> [!TIP]
+> 如果将对话框与发送时事件结合使用，请确保在完成该事件之前关闭对话框。
 
 ### <a name="manifest-version-override-and-event"></a>清单、版本重写和事件
 
@@ -596,7 +599,7 @@ function subjectOnSendChange(subject, event) {
 }
 ```
 
-若要详细了解如何将收件人添加到抄送行、验证电子邮件在发送时是否包主题行，以及查看可以使用的 API，请参阅 [Outlook-Add-in-On-Send 示例](https://github.com/OfficeDev/Outlook-Add-in-On-Send)。已充分注释代码。
+To learn more about how to add a recipient to the CC line and verify that the email message includes a subject line on send, and to see the APIs you can use, see the [Outlook-Add-in-On-Send sample](https://github.com/OfficeDev/Outlook-Add-in-On-Send). The code is well commented.
 
 ## <a name="see-also"></a>另请参阅
 
