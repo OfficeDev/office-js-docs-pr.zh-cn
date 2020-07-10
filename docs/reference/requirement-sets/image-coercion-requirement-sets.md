@@ -4,53 +4,53 @@ description: 支持跨 Excel、PowerPoint 和 Word 的 Office 外接程序对图
 ms.date: 08/13/2019
 ms.prod: non-product-specific
 localization_priority: Normal
-ms.openlocfilehash: f2baf8115d6a43c6b713e9acfeb5928f8549c583
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 59f6891182f47bed1b7e3b6aa69a30e941bce7cb
+ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44611356"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "45094350"
 ---
-# <a name="image-coercion-requirement-sets"></a><span data-ttu-id="2c66a-103">图像强制要求集</span><span class="sxs-lookup"><span data-stu-id="2c66a-103">Image Coercion requirement sets</span></span>
+# <a name="image-coercion-requirement-sets"></a><span data-ttu-id="7f010-103">图像强制要求集</span><span class="sxs-lookup"><span data-stu-id="7f010-103">Image Coercion requirement sets</span></span>
 
-<span data-ttu-id="2c66a-p101">要求集是指各组已命名的 API 成员。Office 加载项使用清单中指定的要求集或执行运行时检查，以确定 Office 主机是否支持加载项所需的 API。有关详细信息，请参阅 [Office 版本和要求集](../../develop/office-versions-and-requirement-sets.md)。</span><span class="sxs-lookup"><span data-stu-id="2c66a-p101">Requirement sets are named groups of API members. Office Add-ins use requirement sets specified in the manifest or use a runtime check to determine whether an Office host supports APIs that an add-in needs. For more information, see [Office versions and requirement sets](../../develop/office-versions-and-requirement-sets.md).</span></span>
+<span data-ttu-id="7f010-104">Requirement sets are named groups of API members.</span><span class="sxs-lookup"><span data-stu-id="7f010-104">Requirement sets are named groups of API members.</span></span> <span data-ttu-id="7f010-105">Office Add-ins use requirement sets specified in the manifest or use a runtime check to determine whether an Office host supports APIs that an add-in needs.</span><span class="sxs-lookup"><span data-stu-id="7f010-105">Office Add-ins use requirement sets specified in the manifest or use a runtime check to determine whether an Office host supports APIs that an add-in needs.</span></span> <span data-ttu-id="7f010-106">For more information, see [Office versions and requirement sets](../../develop/office-versions-and-requirement-sets.md).</span><span class="sxs-lookup"><span data-stu-id="7f010-106">For more information, see [Office versions and requirement sets](../../develop/office-versions-and-requirement-sets.md).</span></span>
 
-## <a name="imagecoercion-11"></a><span data-ttu-id="2c66a-107">ImageCoercion 1.1</span><span class="sxs-lookup"><span data-stu-id="2c66a-107">ImageCoercion 1.1</span></span>
+## <a name="imagecoercion-11"></a><span data-ttu-id="7f010-107">ImageCoercion 1.1</span><span class="sxs-lookup"><span data-stu-id="7f010-107">ImageCoercion 1.1</span></span>
 
-<span data-ttu-id="2c66a-108">`Office.CoercionType.Image`在使用方法写入数据时，ImageCoercion 1.1 支持转换为 image （） [`Document.setSelectedDataAsync`](/javascript/api/office/office.document#setselecteddataasync-data--options--callback-) 。</span><span class="sxs-lookup"><span data-stu-id="2c66a-108">ImageCoercion 1.1 enables conversion to an image (`Office.CoercionType.Image`) when writing data using the [`Document.setSelectedDataAsync`](/javascript/api/office/office.document#setselecteddataasync-data--options--callback-) method.</span></span> <span data-ttu-id="2c66a-109">支持以下主机：</span><span class="sxs-lookup"><span data-stu-id="2c66a-109">The following hosts are supported:</span></span>
+<span data-ttu-id="7f010-108">使用 ImageCoercion 1.1，可以 `Office.CoercionType.Image` 在使用方法写入数据时转换为) 的图像 ([`Document.setSelectedDataAsync`](/javascript/api/office/office.document#setselecteddataasync-data--options--callback-) 。</span><span class="sxs-lookup"><span data-stu-id="7f010-108">ImageCoercion 1.1 enables conversion to an image (`Office.CoercionType.Image`) when writing data using the [`Document.setSelectedDataAsync`](/javascript/api/office/office.document#setselecteddataasync-data--options--callback-) method.</span></span> <span data-ttu-id="7f010-109">支持以下主机：</span><span class="sxs-lookup"><span data-stu-id="7f010-109">The following hosts are supported:</span></span>
 
-- <span data-ttu-id="2c66a-110">Excel 2013 及更高版本的 Windows</span><span class="sxs-lookup"><span data-stu-id="2c66a-110">Excel 2013 and later on Windows</span></span>
-- <span data-ttu-id="2c66a-111">Excel 2016 及更高版本 Mac</span><span class="sxs-lookup"><span data-stu-id="2c66a-111">Excel 2016 and later on Mac</span></span>
-- <span data-ttu-id="2c66a-112">iPad 版 Excel</span><span class="sxs-lookup"><span data-stu-id="2c66a-112">Excel on iPad</span></span>
-- <span data-ttu-id="2c66a-113">OneNote 网页版</span><span class="sxs-lookup"><span data-stu-id="2c66a-113">OneNote on the web</span></span>
-- <span data-ttu-id="2c66a-114">PowerPoint 2013 及更高版本 Windows</span><span class="sxs-lookup"><span data-stu-id="2c66a-114">PowerPoint 2013 and later on Windows</span></span>
-- <span data-ttu-id="2c66a-115">PowerPoint 2016 及更高版本 Mac</span><span class="sxs-lookup"><span data-stu-id="2c66a-115">PowerPoint 2016 and later on Mac</span></span>
-- <span data-ttu-id="2c66a-116">PowerPoint 网页版</span><span class="sxs-lookup"><span data-stu-id="2c66a-116">PowerPoint on the web</span></span>
-- <span data-ttu-id="2c66a-117">iPad 版 PowerPoint</span><span class="sxs-lookup"><span data-stu-id="2c66a-117">PowerPoint on iPad</span></span>
-- <span data-ttu-id="2c66a-118">Windows 版 Word 2013 及更高版本</span><span class="sxs-lookup"><span data-stu-id="2c66a-118">Word 2013 and later on Windows</span></span>
-- <span data-ttu-id="2c66a-119">Mac 版 Word 2016 及更高版本</span><span class="sxs-lookup"><span data-stu-id="2c66a-119">Word 2016 and later on Mac</span></span>
-- <span data-ttu-id="2c66a-120">Word 网页版</span><span class="sxs-lookup"><span data-stu-id="2c66a-120">Word on the web</span></span>
-- <span data-ttu-id="2c66a-121">iPad 版 Word</span><span class="sxs-lookup"><span data-stu-id="2c66a-121">Word on iPad</span></span>
+- <span data-ttu-id="7f010-110">Excel 2013 及更高版本的 Windows</span><span class="sxs-lookup"><span data-stu-id="7f010-110">Excel 2013 and later on Windows</span></span>
+- <span data-ttu-id="7f010-111">Excel 2016 及更高版本 Mac</span><span class="sxs-lookup"><span data-stu-id="7f010-111">Excel 2016 and later on Mac</span></span>
+- <span data-ttu-id="7f010-112">iPad 版 Excel</span><span class="sxs-lookup"><span data-stu-id="7f010-112">Excel on iPad</span></span>
+- <span data-ttu-id="7f010-113">OneNote 网页版</span><span class="sxs-lookup"><span data-stu-id="7f010-113">OneNote on the web</span></span>
+- <span data-ttu-id="7f010-114">PowerPoint 2013 及更高版本 Windows</span><span class="sxs-lookup"><span data-stu-id="7f010-114">PowerPoint 2013 and later on Windows</span></span>
+- <span data-ttu-id="7f010-115">PowerPoint 2016 及更高版本 Mac</span><span class="sxs-lookup"><span data-stu-id="7f010-115">PowerPoint 2016 and later on Mac</span></span>
+- <span data-ttu-id="7f010-116">PowerPoint 网页版</span><span class="sxs-lookup"><span data-stu-id="7f010-116">PowerPoint on the web</span></span>
+- <span data-ttu-id="7f010-117">iPad 版 PowerPoint</span><span class="sxs-lookup"><span data-stu-id="7f010-117">PowerPoint on iPad</span></span>
+- <span data-ttu-id="7f010-118">Windows 版 Word 2013 及更高版本</span><span class="sxs-lookup"><span data-stu-id="7f010-118">Word 2013 and later on Windows</span></span>
+- <span data-ttu-id="7f010-119">Mac 版 Word 2016 及更高版本</span><span class="sxs-lookup"><span data-stu-id="7f010-119">Word 2016 and later on Mac</span></span>
+- <span data-ttu-id="7f010-120">Word 网页版</span><span class="sxs-lookup"><span data-stu-id="7f010-120">Word on the web</span></span>
+- <span data-ttu-id="7f010-121">iPad 版 Word</span><span class="sxs-lookup"><span data-stu-id="7f010-121">Word on iPad</span></span>
 
-## <a name="imagecoercion-12"></a><span data-ttu-id="2c66a-122">ImageCoercion 1.2</span><span class="sxs-lookup"><span data-stu-id="2c66a-122">ImageCoercion 1.2</span></span>
+## <a name="imagecoercion-12"></a><span data-ttu-id="7f010-122">ImageCoercion 1.2</span><span class="sxs-lookup"><span data-stu-id="7f010-122">ImageCoercion 1.2</span></span>
 
-<span data-ttu-id="2c66a-123">ImageCoercion 1.2 支持 `Office.CoercionType.XmlSvg` 在使用方法写入数据时转换为 SVG 格式（） [`Document.setSelectedDataAsync`](/javascript/api/office/office.document#setselecteddataasync-data--options--callback-) 。</span><span class="sxs-lookup"><span data-stu-id="2c66a-123">ImageCoercion 1.2 enables conversion to SVG format (`Office.CoercionType.XmlSvg`) when writing data using the [`Document.setSelectedDataAsync`](/javascript/api/office/office.document#setselecteddataasync-data--options--callback-) method.</span></span> <span data-ttu-id="2c66a-124">支持以下主机：</span><span class="sxs-lookup"><span data-stu-id="2c66a-124">The following hosts are supported:</span></span>
+<span data-ttu-id="7f010-123">ImageCoercion 1.2 支持在 `Office.CoercionType.XmlSvg` 使用方法写入数据时 () 转换为 SVG 格式 [`Document.setSelectedDataAsync`](/javascript/api/office/office.document#setselecteddataasync-data--options--callback-) 。</span><span class="sxs-lookup"><span data-stu-id="7f010-123">ImageCoercion 1.2 enables conversion to SVG format (`Office.CoercionType.XmlSvg`) when writing data using the [`Document.setSelectedDataAsync`](/javascript/api/office/office.document#setselecteddataasync-data--options--callback-) method.</span></span> <span data-ttu-id="7f010-124">支持以下主机：</span><span class="sxs-lookup"><span data-stu-id="7f010-124">The following hosts are supported:</span></span>
 
-- <span data-ttu-id="2c66a-125">Windows 上的 Excel （连接到 Office 365 订阅）</span><span class="sxs-lookup"><span data-stu-id="2c66a-125">Excel on Windows (connected to an Office 365 subscription)</span></span>
-- <span data-ttu-id="2c66a-126">Mac 上的 Excel （连接到 Office 365 订阅）</span><span class="sxs-lookup"><span data-stu-id="2c66a-126">Excel on Mac (connected to an Office 365 subscription)</span></span>
-- <span data-ttu-id="2c66a-127">Windows 上的 PowerPoint （连接到 Office 365 订阅）</span><span class="sxs-lookup"><span data-stu-id="2c66a-127">PowerPoint on Windows (connected to an Office 365 subscription)</span></span>
-- <span data-ttu-id="2c66a-128">PowerPoint on Mac （连接到 Office 365 订阅）</span><span class="sxs-lookup"><span data-stu-id="2c66a-128">PowerPoint on Mac (connected to an Office 365 subscription)</span></span>
-- <span data-ttu-id="2c66a-129">PowerPoint 网页版</span><span class="sxs-lookup"><span data-stu-id="2c66a-129">PowerPoint on the web</span></span>
-- <span data-ttu-id="2c66a-130">Windows 上的 Word （连接到 Office 365 订阅）</span><span class="sxs-lookup"><span data-stu-id="2c66a-130">Word on Windows (connected to an Office 365 subscription)</span></span>
-- <span data-ttu-id="2c66a-131">Mac 上的 Word （连接到 Office 365 订阅）</span><span class="sxs-lookup"><span data-stu-id="2c66a-131">Word on Mac (connected to an Office 365 subscription)</span></span>
-- <span data-ttu-id="2c66a-132">Word 网页版</span><span class="sxs-lookup"><span data-stu-id="2c66a-132">Word on the web</span></span>
+- <span data-ttu-id="7f010-125">连接到 Microsoft 365 订阅的 Windows (上的 Excel) </span><span class="sxs-lookup"><span data-stu-id="7f010-125">Excel on Windows (connected to a Microsoft 365 subscription)</span></span>
+- <span data-ttu-id="7f010-126">连接到 Microsoft 365 订阅的 Mac 上的 Excel () </span><span class="sxs-lookup"><span data-stu-id="7f010-126">Excel on Mac (connected to a Microsoft 365 subscription)</span></span>
+- <span data-ttu-id="7f010-127">连接到 Microsoft 365 订阅的 Windows (上的 PowerPoint) </span><span class="sxs-lookup"><span data-stu-id="7f010-127">PowerPoint on Windows (connected to a Microsoft 365 subscription)</span></span>
+- <span data-ttu-id="7f010-128">连接到 Microsoft 365 订阅的 Mac 版上的 PowerPoint () </span><span class="sxs-lookup"><span data-stu-id="7f010-128">PowerPoint on Mac (connected to a Microsoft 365 subscription)</span></span>
+- <span data-ttu-id="7f010-129">PowerPoint 网页版</span><span class="sxs-lookup"><span data-stu-id="7f010-129">PowerPoint on the web</span></span>
+- <span data-ttu-id="7f010-130">连接到 Microsoft 365 订阅的 Windows (上的 Word) </span><span class="sxs-lookup"><span data-stu-id="7f010-130">Word on Windows (connected to a Microsoft 365 subscription)</span></span>
+- <span data-ttu-id="7f010-131">连接到 Microsoft 365 订阅的 Mac 上的 Word () </span><span class="sxs-lookup"><span data-stu-id="7f010-131">Word on Mac (connected to a Microsoft 365 subscription)</span></span>
+- <span data-ttu-id="7f010-132">Word 网页版</span><span class="sxs-lookup"><span data-stu-id="7f010-132">Word on the web</span></span>
 
-## <a name="office-common-api-requirement-sets"></a><span data-ttu-id="2c66a-133">Office 通用 API 要求集</span><span class="sxs-lookup"><span data-stu-id="2c66a-133">Office Common API requirement sets</span></span>
+## <a name="office-common-api-requirement-sets"></a><span data-ttu-id="7f010-133">Office 通用 API 要求集</span><span class="sxs-lookup"><span data-stu-id="7f010-133">Office Common API requirement sets</span></span>
 
-<span data-ttu-id="2c66a-134">若要了解通用 API 要求集，请参阅 [Office 通用 API 要求集](office-add-in-requirement-sets.md)。</span><span class="sxs-lookup"><span data-stu-id="2c66a-134">For information about Common API requirement sets, see [Office Common API requirement sets](office-add-in-requirement-sets.md).</span></span>
+<span data-ttu-id="7f010-134">若要了解通用 API 要求集，请参阅 [Office 通用 API 要求集](office-add-in-requirement-sets.md)。</span><span class="sxs-lookup"><span data-stu-id="7f010-134">For information about Common API requirement sets, see [Office Common API requirement sets](office-add-in-requirement-sets.md).</span></span>
 
-## <a name="see-also"></a><span data-ttu-id="2c66a-135">另请参阅</span><span class="sxs-lookup"><span data-stu-id="2c66a-135">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="7f010-135">另请参阅</span><span class="sxs-lookup"><span data-stu-id="7f010-135">See also</span></span>
 
-- [<span data-ttu-id="2c66a-136">Office 版本和要求集</span><span class="sxs-lookup"><span data-stu-id="2c66a-136">Office versions and requirement sets</span></span>](../../develop/office-versions-and-requirement-sets.md)
-- [<span data-ttu-id="2c66a-137">指定 Office 主机和 API 要求</span><span class="sxs-lookup"><span data-stu-id="2c66a-137">Specify Office hosts and API requirements</span></span>](../../develop/specify-office-hosts-and-api-requirements.md)
-- [<span data-ttu-id="2c66a-138">Office 外接程序 XML 清单</span><span class="sxs-lookup"><span data-stu-id="2c66a-138">Office Add-ins XML manifest</span></span>](../../develop/add-in-manifests.md)
+- [<span data-ttu-id="7f010-136">Office 版本和要求集</span><span class="sxs-lookup"><span data-stu-id="7f010-136">Office versions and requirement sets</span></span>](../../develop/office-versions-and-requirement-sets.md)
+- [<span data-ttu-id="7f010-137">指定 Office 主机和 API 要求</span><span class="sxs-lookup"><span data-stu-id="7f010-137">Specify Office hosts and API requirements</span></span>](../../develop/specify-office-hosts-and-api-requirements.md)
+- [<span data-ttu-id="7f010-138">Office 外接程序 XML 清单</span><span class="sxs-lookup"><span data-stu-id="7f010-138">Office Add-ins XML manifest</span></span>](../../develop/add-in-manifests.md)
