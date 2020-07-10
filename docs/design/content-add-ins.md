@@ -1,14 +1,14 @@
 ---
 title: 内容 Office 加载项
 description: 内容加载项是指可以直接嵌入 Excel 或 PowerPoint 文档的图面，用户可以通过它访问界面控件，运行代码以修改文档或显示数据源中的数据。
-ms.date: 03/19/2019
+ms.date: 07/07/2020
 localization_priority: Normal
-ms.openlocfilehash: 6494da1a5de8f217483e2df385305c3c6583a511
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: f228ae8e7cca0426b0b43e31e38454029e4c7614
+ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44607636"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "45093845"
 ---
 # <a name="content-office-add-ins"></a>内容 Office 加载项
 
@@ -25,11 +25,11 @@ ms.locfileid: "44607636"
 
 ## <a name="variants"></a>变量
 
-Office 桌面版和 Office 365 中的 Excel 和 PowerPoint 的内容加载项大小由用户指定。
+Excel 和 PowerPoint 在 Office desktop 中的内容外接程序大小，Microsoft 365 是用户指定的。
 
 ## <a name="personality-menu"></a>“个性”菜单
 
-“个性”菜单可能会妨碍靠近外接程序右上角的导航和命令元素。以下是 Windows 和 Mac 上的“个性”菜单的当前尺寸。
+Personality menus can obstruct navigational and commanding elements located near the top right of the add-in. The following are the current dimensions of the personality menu on Windows and Mac.
 
 对于 Windows，个性菜单尺寸为 12x32 像素，如下所示。
 
@@ -52,7 +52,7 @@ Office 桌面版和 Office 365 中的 Excel 和 PowerPoint 的内容加载项大
 
 - 检查 Office 加载项是否适用于[特定 Office 主机平台](../overview/office-add-in-availability.md)。
 - 一些内容加载项可能会要求用户“信任”加载项对 Excel 或 PowerPoint 执行读取和写入操作。 可以在加载项清单中声明要拥有的[权限级别](../develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md)。  
-- Office 2013 版本及更高版本中的 Excel 和 PowerPoint 支持内容加载项。 如果在不支持 Office Web 加载项的 Office 版本中打开加载项，加载项会显示为图像。
+- Content add-ins are supported in Excel and PowerPoint in Office 2013 version and later. If you open an add-in in a version of Office that doesn't support Office web add-ins, the add-in will be displayed as an image.
 
 ## <a name="see-also"></a>另请参阅
 

@@ -1,23 +1,23 @@
 ---
 title: 将数据和邮件从其主机页传递到对话框
 description: 了解如何使用 messageChild 和 DialogParentMessageReceived Api 将数据传递到主机页中的对话框。
-ms.date: 04/16/2020
+ms.date: 07/07/2020
 localization_priority: Normal
-ms.openlocfilehash: 3bef98294b15c2787b707cee4861cc9932f98166
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 05220fa4cecad4fe412a5590605f774f92ef8f61
+ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44609406"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "45093572"
 ---
-# <a name="passing-data-and-messages-to-a-dialog-box-from-its-host-page-preview"></a>将数据和邮件从其主机页传递到对话框（预览）
+# <a name="passing-data-and-messages-to-a-dialog-box-from-its-host-page-preview"></a>将数据和邮件从其主机页传递到对话框 (预览) 
 
 您的外接程序可以使用[dialog](/javascript/api/office/office.dialog)对象的[messageChild](/javascript/api/office/office.dialog#messagechild-message-)方法，将邮件从[主机页面](dialog-api-in-office-add-ins.md#open-a-dialog-box-from-a-host-page)发送到对话框。
 
 > [!Important]
 >
 > - 本文中介绍的 Api 处于预览阶段。 它们可供开发人员用来进行试验;但不应在生产外接中使用。 在发布此 API 之前，请使用将[信息传递到](dialog-api-in-office-add-ins.md#pass-information-to-the-dialog-box)生产外接程序的对话框中所述的技术。
-> - 本文中所述的 Api 需要 Office 365 （Office 的订阅版本）。 你应该使用来自预览体验成员频道的最新每月版本和内部版本。 你可能需要成为 Office 预览体验成员，才能获取此版本。 有关详细信息，请参阅[成为 Office 预览体验成员](https://insider.office.com)。 请注意，当内部版本毕业生到生产半年频道时，将对该内部版本禁用对预览功能的支持。
+> - 本文中所述的 Api 需要 Microsoft 365 订阅。 你应该使用来自预览体验成员频道的最新每月版本和内部版本。 你可能需要成为 Office 预览体验成员，才能获取此版本。 有关详细信息，请参阅[成为 Office 预览体验成员](https://insider.office.com)。 请注意，当内部版本毕业生到生产半年频道时，将对该内部版本禁用对预览功能的支持。
 > - 在预览的初始阶段，Api 在 Excel、PowerPoint 和 Word 中受支持;而不是在 Outlook 中。
 >
 > [!INCLUDE [Information about using preview APIs](../includes/using-preview-apis.md)]
@@ -60,7 +60,7 @@ function sheetPropertiesChanged() {
 
 ## <a name="handle-dialogparentmessagereceived-in-the-dialog-box"></a>在对话框中处理 DialogParentMessageReceived
 
-在对话框的 JavaScript 中， `DialogParentMessageReceived` 使用[addHandlerAsync](/javascript/api/office/office.ui#addhandlerasync-eventtype--handler--options--callback-)方法为事件注册处理程序。 这通常是在[onReady 或 office initialize 方法](initialize-add-in.md)中完成的。 示例如下：
+在对话框的 JavaScript 中， `DialogParentMessageReceived` 使用[addHandlerAsync](/javascript/api/office/office.ui#addhandlerasync-eventtype--handler--options--callback-)方法为事件注册处理程序。 这通常是在[onReady 或 Office.initialize 方法](initialize-add-in.md)中完成的。 示例如下：
 
 ```javascript
 Office.onReady()

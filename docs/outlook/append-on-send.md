@@ -1,32 +1,32 @@
 ---
-title: 在 Outlook 外接程序中实施 "在发送时追加" （预览）
+title: '在 Outlook 外接程序中执行 "在发送时追加" (预览) '
 description: 了解如何在 Outlook 外接程序中实现 "发送时发送" 功能。
 ms.topic: article
 ms.date: 05/26/2020
 localization_priority: Normal
-ms.openlocfilehash: f7f345ad726529c7ba3f8fa3ceedb46246310547
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: b9c834778d68e50806da908732cd0c8663ec6680
+ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44607594"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "45093985"
 ---
-# <a name="implement-append-on-send-in-your-outlook-add-in-preview"></a>在 Outlook 外接程序中实施 "在发送时追加" （预览）
+# <a name="implement-append-on-send-in-your-outlook-add-in-preview"></a>在 Outlook 外接程序中执行 "在发送时追加" (预览) 
 
 本演练结束时，您将拥有一个可在发送邮件时插入免责声明的 Outlook 外接程序。
 
 > [!IMPORTANT]
-> 此功能目前仅支持在 Outlook 网页版和使用 Office 365 订阅的 Windows 中进行[预览](../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md)。 有关更多详细信息，请参阅[如何预览本文中的追加发送功能](#how-to-preview-the-append-on-send-feature)。
+> 此功能目前仅支持在 Outlook 网页版和使用 Microsoft 365 订阅的 Windows 中进行[预览](../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md)。 有关更多详细信息，请参阅[如何预览本文中的追加发送功能](#how-to-preview-the-append-on-send-feature)。
 >
 > 由于预览功能可能会发生更改，恕不另行通知，它们不应在生产外接程序中使用。
 
 ## <a name="how-to-preview-the-append-on-send-feature"></a>如何预览追加发送功能
 
-我们邀请你试用 "发送时追加" 功能！ 让我们知道你的方案以及我们如何通过 GitHub 向我们提供反馈（请参阅本页结尾处的**反馈**部分）来改进你的情况。
+我们邀请你试用 "发送时追加" 功能！ 请通过 GitHub 向我们提供反馈，告知我们你的方案以及我们如何改进， (请参阅本页结尾处的**反馈**部分) 。
 
 若要预览此功能：
 
-- 参考 CDN 上的**beta**库（ https://appsforoffice.microsoft.com/lib/beta/hosted/office.js) 。 在 CDN 和[jquery.typescript.definitelytyped](https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/master/types/office-js-preview/index.d.ts)中找到 TypeScript 编译和智能感知的[类型定义文件](https://appsforoffice.microsoft.com/lib/beta/hosted/office.d.ts)。 您可以使用安装这些类型 `npm install --save-dev @types/office-js-preview` 。
+- 参考 CDN (上的**beta**库 https://appsforoffice.microsoft.com/lib/beta/hosted/office.js) 。 在 CDN 和[jquery.typescript.definitelytyped](https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/master/types/office-js-preview/index.d.ts)中找到 TypeScript 编译和智能感知的[类型定义文件](https://appsforoffice.microsoft.com/lib/beta/hosted/office.d.ts)。 您可以使用安装这些类型 `npm install --save-dev @types/office-js-preview` 。
 - 对于 Windows，你可能需要加入[Office 预览体验成员计划](https://insider.office.com)，以访问更多最近的 office 版本。
 - 对于 web 上的 Outlook，[在 Microsoft 365 租户上配置目标版本](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide#set-up-the-release-option-in-the-admin-center)。
 
@@ -42,9 +42,9 @@ ms.locfileid: "44607594"
 
 1. 在代码编辑器中，打开 "快速启动" 项目。
 
-1. 打开位于项目根目录的**清单 .xml**文件。
+1. 打开位于项目根目录中的**manifest.xml**文件。
 
-1. 选择整个 `<VersionOverrides>` 节点（包括 "打开" 和 "关闭" 标记），并将其替换为以下 XML。
+1. 选择整个 `<VersionOverrides>` 节点 (包括 "打开" 和 "关闭" 标记) 并将其替换为以下 XML。
 
     ```XML
     <VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides" xsi:type="VersionOverridesV1_0">

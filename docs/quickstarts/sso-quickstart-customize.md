@@ -1,20 +1,20 @@
 ---
 title: 自定义启用了 Node.js SSO 的加载项
 description: 了解如何自定义使用 Yeoman 生成器创建的启用 SSO 的外接程序。
-ms.date: 02/20/2020
+ms.date: 07/07/2020
 ms.prod: non-product-specific
 localization_priority: Normal
-ms.openlocfilehash: d71206d6b03b8a92e50b316cc75c401866be5334
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: c1d292ed8ead40201dd035d6ae8e6997174ea477
+ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44608824"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "45094482"
 ---
 # <a name="customize-your-nodejs-sso-enabled-add-in"></a>自定义启用了 Node.js SSO 的加载项
 
 > [!IMPORTANT]
-> 本文基于启用了 SSO 的加载项，这是通过完成[单一登录（SSO）快速入门](sso-quickstart.md)创建的。 阅读本文之前，请先完成快速入门。
+> 本文基于启用了 SSO 的加载项，这是通过完成[单一登录 (sso) 快速入门](sso-quickstart.md)创建的。 阅读本文之前，请先完成快速入门。
 
 [Sso 快速入门](sso-quickstart.md)创建启用了 sso 的加载项，以获取已登录用户的配置文件信息，并将其写入文档或邮件。 在本文中，您将逐步完成使用 SSO 快速入门中的 Yeoman 生成器来更新创建的外接程序的过程，以添加需要不同权限的新功能。
 
@@ -22,7 +22,7 @@ ms.locfileid: "44608824"
 
 * 按照[SSO 快速入门](sso-quickstart.md)中的说明创建的 Office 外接程序。
 
-* Office 365 订阅中的 OneDrive for Business 上至少存储了一些文件和文件夹。
+* 在 Microsoft 365 订阅中至少存储在 OneDrive for Business 上的一些文件和文件夹。
 
 * [Node.js](https://nodejs.org)（最新[LTS](https://nodejs.org/about/releases) 版本）。
 
@@ -37,7 +37,7 @@ ms.locfileid: "44608824"
 
 [!include[project structure for an SSO-enabled add-in created with the Yeoman generator](../includes/sso-yeoman-project-structure.md)]
 
-## <a name="add-new-functionality"></a>添加新功能 
+## <a name="add-new-functionality"></a>添加新功能
 
 使用 SSO 快速入门创建的外接程序使用 Microsoft Graph 获取已登录用户的配置文件信息，并将该信息写入文档或邮件。 让我们更改加载项的功能，以便从已登录用户的 OneDrive for Business 中获取前10个文件和文件夹的名称，并将该信息写入文档或邮件。 启用此新功能需要更新 Azure 中的应用程序权限，并更新加载项项目中的代码。
 
@@ -45,9 +45,9 @@ ms.locfileid: "44608824"
 
 在外接程序可以成功读取用户的 OneDrive for Business 的内容之前，必须使用适当的权限更新 Azure 中的应用程序注册信息。 完成以下步骤以向应用授予**文件. read. All**权限，并撤销**用户。读取**权限，不再需要该权限。
 
-1. 导航到[Azure 门户](https://ms.portal.azure.com/#home)，并**使用你的 Office 365 管理员凭据登录**。 
+1. 导航到[Azure 门户](https://ms.portal.azure.com/#home)，并**使用 Microsoft 365 管理员凭据登录**。
 
-2. 导航到 "**应用程序注册**" 页。 
+2. 导航到 "**应用程序注册**" 页。
     > [!TIP]
     > 为此，可以在 Azure 主页上选择 "**应用注册**" 磁贴，或使用主页上的 "搜索" 框查找并选择 "**应用注册**"。
 
@@ -103,9 +103,9 @@ ms.locfileid: "44608824"
 
     c. 将替换 `SCOPE=User.Read` 为以下内容：`SCOPE=Files.Read.All`
 
-2. 在 **/manifest.xml**中，找到 `<Scope>User.Read</Scope>` 文件末尾附近的行，并将其替换为行 `<Scope>Files.Read.All</Scope>` 。
+2. 在 " **./manifest.xml**" 中，找到 `<Scope>User.Read</Scope>` 文件末尾附近的行，并将其替换为行 `<Scope>Files.Read.All</Scope>` 。
 
-3. 在 **/src/helpers/fallbackauthdialog.js** （或在 TypeScript 项目中为 **/src/helpers/fallbackauthdialog.ts** ）中，找到字符串 `https://graph.microsoft.com/User.Read` 并将其替换为字符串 `https://graph.microsoft.com/Files.Read.All` ，如下所示 `requestObj` 定义：
+3. 在 **/src/helpers/fallbackauthdialog.js** (或 **/src/helpers/fallbackauthdialog.ts**对于 TypeScript 项目) ，找到字符串 `https://graph.microsoft.com/User.Read` 并将其替换为字符串 `https://graph.microsoft.com/Files.Read.All` ，如下所示 `requestObj` 定义：
 
     ```javascript
     var requestObj = {
@@ -119,7 +119,7 @@ ms.locfileid: "44608824"
     };
     ```
 
-4. 在 **./src/taskpane/taskpane.html**中，查找元素 `<section class="ms-firstrun-instructionstep__header">` 并更新该元素中的文本，以描述外接程序的新功能。
+4. 在 **/src/taskpane/taskpane.html**中，查找元素 `<section class="ms-firstrun-instructionstep__header">` 并更新该元素中的文本，以描述外接程序的新功能。
 
     ```html
     <section class="ms-firstrun-instructionstep__header">
@@ -129,7 +129,7 @@ ms.locfileid: "44608824"
     </section>
     ```
 
-5. 在 **./src/taskpane/taskpane.html**中，查找并将字符串的这两个实例都替换 `Get My User Profile Information` 为字符串 `Read my OneDrive for Business` 。
+5. 在 **/src/taskpane/taskpane.html**中，查找并将字符串的这两个匹配项替换 `Get My User Profile Information` 为字符串 `Read my OneDrive for Business` 。
 
     ```html
     <li class="ms-ListItem">
@@ -146,7 +146,7 @@ ms.locfileid: "44608824"
     </p>
     ```
 
-6. 在 **./src/taskpane/taskpane.html**中，查找并将字符串替换 `Your user profile information will be displayed in the document.` 为字符串 `The names of the top 10 files and folders in your OneDrive for Business will be displayed in the document or message.` 。
+6. 在 **/src/taskpane/taskpane.html**中，查找并将字符串替换 `Your user profile information will be displayed in the document.` 为字符串 `The names of the top 10 files and folders in your OneDrive for Business will be displayed in the document or message.` 。
 
     ```html
     <li class="ms-ListItem">
@@ -157,16 +157,16 @@ ms.locfileid: "44608824"
 
 7. 通过遵循与您的外接程序类型对应的部分中的指导，更新分析来自 Microsoft Graph 的响应并将其写入文档或邮件的代码：
 
-    - [Excel 加载项所需的更改（JavaScript）](#changes-required-for-an-excel-add-in-javascript)
-    - [Excel 外接程序（TypeScript）所需的更改](#changes-required-for-an-excel-add-in-typescript)
-    - [Outlook 外接程序（JavaScript）所需的更改](#changes-required-for-an-outlook-add-in-javascript)
-    - [Outlook 外接程序（TypeScript）所需的更改](#changes-required-for-an-outlook-add-in-typescript)
-    - [PowerPoint 加载项所需的更改（JavaScript）](#changes-required-for-a-powerpoint-add-in-javascript)
-    - [PowerPoint 加载项（TypeScript）所需的更改](#changes-required-for-a-powerpoint-add-in-typescript)
-    - [Word 加载项所需的更改（JavaScript）](#changes-required-for-a-word-add-in-javascript)
-    - [Word 加载项（TypeScript）所需的更改](#changes-required-for-a-word-add-in-typescript)
+    - [ (JavaScript) 的 Excel 外接程序所需的更改](#changes-required-for-an-excel-add-in-javascript)
+    - [ (TypeScript) 的 Excel 外接程序所需的更改](#changes-required-for-an-excel-add-in-typescript)
+    - [ (JavaScript) 的 Outlook 外接程序所需的更改](#changes-required-for-an-outlook-add-in-javascript)
+    - [ (TypeScript) 的 Outlook 外接程序所需的更改](#changes-required-for-an-outlook-add-in-typescript)
+    - [ (JavaScript) 的 PowerPoint 加载项所需的更改](#changes-required-for-a-powerpoint-add-in-javascript)
+    - [ (TypeScript) 的 PowerPoint 加载项所需的更改](#changes-required-for-a-powerpoint-add-in-typescript)
+    - [ (JavaScript) 的 Word 外接程序所需的更改](#changes-required-for-a-word-add-in-javascript)
+    - [Word 外接程序 (TypeScript) 所需的更改](#changes-required-for-a-word-add-in-typescript)
 
-### <a name="changes-required-for-an-excel-add-in-javascript"></a>Excel 加载项所需的更改（JavaScript）
+### <a name="changes-required-for-an-excel-add-in-javascript"></a> (JavaScript) 的 Excel 外接程序所需的更改
 
 如果外接程序是使用 JavaScript 创建的 Excel 外接程序，请在 **/src/helpers/documentHelper.js**中进行以下更改：
 
@@ -233,7 +233,7 @@ ms.locfileid: "44608824"
 
 在进行这些更改后，请跳至本文的 "[试用](#try-it-out)本主题" 一节，以试用更新后的外接程序。
 
-### <a name="changes-required-for-an-excel-add-in-typescript"></a>Excel 外接程序（TypeScript）所需的更改
+### <a name="changes-required-for-an-excel-add-in-typescript"></a> (TypeScript) 的 Excel 外接程序所需的更改
 
 如果外接程序是使用 TypeScript 创建的 Excel 外接程序，请打开 **/src/taskpane/taskpane.ts**，找到该 `writeDataToOfficeDocument` 函数，并将其替换为以下函数：
 
@@ -269,7 +269,7 @@ export function writeDataToOfficeDocument(result: Object): Promise<any> {
 
 在进行这些更改后，请跳至本文的 "[试用](#try-it-out)本主题" 一节，以试用更新后的外接程序。
 
-### <a name="changes-required-for-an-outlook-add-in-javascript"></a>Outlook 外接程序（JavaScript）所需的更改
+### <a name="changes-required-for-an-outlook-add-in-javascript"></a> (JavaScript) 的 Outlook 外接程序所需的更改
 
 如果你的外接程序是使用 JavaScript 创建的 Outlook 外接程序，请在 **/src/helpers/documentHelper.js**中进行以下更改：
 
@@ -331,7 +331,7 @@ export function writeDataToOfficeDocument(result: Object): Promise<any> {
 
 在进行这些更改后，请跳至本文的 "[试用](#try-it-out)本主题" 一节，以试用更新后的外接程序。
 
-### <a name="changes-required-for-an-outlook-add-in-typescript"></a>Outlook 外接程序（TypeScript）所需的更改
+### <a name="changes-required-for-an-outlook-add-in-typescript"></a> (TypeScript) 的 Outlook 外接程序所需的更改
 
 如果您的外接程序是使用 TypeScript 创建的 Outlook 外接程序，请打开 **/src/taskpane/taskpane.ts**，找到该 `writeDataToOfficeDocument` 函数，并将其替换为以下函数：
 
@@ -362,7 +362,7 @@ export function writeDataToOfficeDocument(result: Object): void {
 
 在进行这些更改后，请跳至本文的 "[试用](#try-it-out)本主题" 一节，以试用更新后的外接程序。
 
-### <a name="changes-required-for-a-powerpoint-add-in-javascript"></a>PowerPoint 加载项所需的更改（JavaScript）
+### <a name="changes-required-for-a-powerpoint-add-in-javascript"></a> (JavaScript) 的 PowerPoint 加载项所需的更改
 
 如果你的外接程序是使用 JavaScript 创建的 PowerPoint 加载项，请在 **/src/helpers/documentHelper.js**中进行以下更改：
 
@@ -430,7 +430,7 @@ export function writeDataToOfficeDocument(result: Object): void {
 
 在进行这些更改后，请跳至本文的 "[试用](#try-it-out)本主题" 一节，以试用更新后的外接程序。
 
-### <a name="changes-required-for-a-powerpoint-add-in-typescript"></a>PowerPoint 加载项（TypeScript）所需的更改
+### <a name="changes-required-for-a-powerpoint-add-in-typescript"></a> (TypeScript) 的 PowerPoint 加载项所需的更改
 
 如果您的外接程序是使用 TypeScript 创建的 PowerPoint 加载项，请打开 **/src/taskpane/taskpane.ts**，找到该 `writeDataToOfficeDocument` 函数，并将其替换为以下函数：
 
@@ -465,7 +465,7 @@ export function writeDataToOfficeDocument(result: Object): void {
 
 在进行这些更改后，请跳至本文的 "[试用](#try-it-out)本主题" 一节，以试用更新后的外接程序。
 
-### <a name="changes-required-for-a-word-add-in-javascript"></a>Word 加载项所需的更改（JavaScript）
+### <a name="changes-required-for-a-word-add-in-javascript"></a> (JavaScript) 的 Word 外接程序所需的更改
 
 如果你的外接程序是使用 JavaScript 创建的 Word 外接程序，请在 **/src/helpers/documentHelper.js**中进行以下更改：
 
@@ -531,7 +531,7 @@ export function writeDataToOfficeDocument(result: Object): void {
 
 在进行这些更改后，请跳至本文的 "[试用](#try-it-out)本主题" 一节，以试用更新后的外接程序。
 
-### <a name="changes-required-for-a-word-add-in-typescript"></a>Word 加载项（TypeScript）所需的更改
+### <a name="changes-required-for-a-word-add-in-typescript"></a>Word 外接程序 (TypeScript) 所需的更改
 
 如果你的外接程序是使用 TypeScript 创建的 Word 外接程序，请打开 **/src/taskpane/taskpane.ts**，找到该 `writeDataToOfficeDocument` 函数，并将其替换为以下函数：
 
@@ -582,7 +582,7 @@ export function writeDataToOfficeDocument(result: Object): Promise<any> {
     npm start
     ```
 
-2. 在运行上一个命令（即 Excel、Word 或 PowerPoint）时打开的 Office 客户端应用程序中，确保您已使用与您在为应用程序[配置 SSO](sso-quickstart.md#configure-sso)时连接到 Azure 时使用的 office 365 管理员帐户相同的 office 365 组织的成员进行登录。 执行此操作，将为成功进行 SSO 建立了相应的条件。 
+2. 在运行以前的命令时打开的 Office 客户端应用程序 (例如，Excel、Word 或 PowerPoint) ，请确保您已登录到与您在为应用程序[配置 SSO](sso-quickstart.md#configure-sso)时连接到 Azure 时使用的 microsoft 365 管理员帐户相同的 microsoft 365 组织的成员的用户。 执行此操作，将为成功进行 SSO 建立了相应的条件。 
 
 3. 在 Office 客户端应用程序中，依次选择的“**开始**”选项卡和功能区中的“**显示任务窗格**”按钮，以打开加载项任务窗格。 下图显示 Excel 中的该按钮。
 
@@ -590,7 +590,7 @@ export function writeDataToOfficeDocument(result: Object): Promise<any> {
 
 4. 在任务窗格底部，选择 "**读取我的 OneDrive For business** " 按钮以启动 SSO 过程。 
 
-5. 如果对话框窗口显示代表加载项请求权限，则表示 你的方案不支持 SSO，并且加载项已退回至替代的用户身份验证方法。 租户管理员未向用户授予访问 Microsoft Graph 的许可，或未使用有效的 Microsoft 帐户或 Office 365 （“工作或学校”）帐户登录 Office 时，可能会出现这种情况。 选择对话框窗口中的“**接受**”按钮以继续。
+5. 如果对话框窗口显示代表加载项请求权限，则表示 你的方案不支持 SSO，并且加载项已退回至替代的用户身份验证方法。 如果租户管理员未向外接程序授予访问 Microsoft Graph 的许可，或者用户未使用有效的 Microsoft 帐户或 Microsoft 365 教育版或工作帐户登录 Office，则可能会发生这种情况。 选择对话框窗口中的“**接受**”按钮以继续。
 
     ![权限请求对话框](../images/sso-permissions-request.png)
 
@@ -614,7 +614,7 @@ export function writeDataToOfficeDocument(result: Object): Promise<any> {
     npm start
     ```
 
-2. 按照[旁加载 Outlook 加载项以供测试](/outlook/add-ins/sideload-outlook-add-ins-for-testing)中的说明操作，旁加载 Outlook 加载项。 确保您登录到 Outlook 时使用的是与 Azure 在为应用程序[配置 SSO](sso-quickstart.md#configure-sso)时使用的 office 365 管理员帐户相同的 office 365 组织的成员的用户。 执行此操作，将为成功进行 SSO 建立了相应的条件。 
+2. 按照[旁加载 Outlook 加载项以供测试](/outlook/add-ins/sideload-outlook-add-ins-for-testing)中的说明操作，旁加载 Outlook 加载项。 确保您登录到 Outlook 时使用的是与 Azure 在为应用程序[配置 SSO](sso-quickstart.md#configure-sso)时使用的 microsoft 365 管理员帐户相同的 microsoft 365 组织的成员。 执行此操作，将为成功进行 SSO 建立了相应的条件。 
 
 3. 在 Outlook 中，撰写一封新邮件。
 
@@ -624,7 +624,7 @@ export function writeDataToOfficeDocument(result: Object): Promise<any> {
 
 5. 在任务窗格底部，选择 "**读取我的 OneDrive For business** " 按钮以启动 SSO 过程。 
 
-6. 如果对话框窗口显示代表加载项请求权限，则表示 你的方案不支持 SSO，并且加载项已退回至替代的用户身份验证方法。 租户管理员未向用户授予访问 Microsoft Graph 的许可，或未使用有效的 Microsoft 帐户或 Office 365 （“工作或学校”）帐户登录 Office 时，可能会出现这种情况。 选择对话框窗口中的“**接受**”按钮以继续。
+6. 如果对话框窗口显示代表加载项请求权限，则表示 你的方案不支持 SSO，并且加载项已退回至替代的用户身份验证方法。 如果租户管理员未向外接程序授予访问 Microsoft Graph 的许可，或者用户未使用有效的 Microsoft 帐户或 Microsoft 365 教育版或工作帐户登录 Office，则可能会发生这种情况。 选择对话框窗口中的“**接受**”按钮以继续。
 
     ![权限请求对话框](../images/sso-permissions-request.png)
 

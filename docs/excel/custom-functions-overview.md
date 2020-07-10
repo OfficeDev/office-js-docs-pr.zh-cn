@@ -5,12 +5,12 @@ title: 在 Excel 中创建自定义函数
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: 4f8416b9058def9dcb4998fb2f31684b59276ac4
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 42ace6208abbd95d0f538345a1f5b5cc15ba1823
+ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44609280"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "45093460"
 ---
 # <a name="create-custom-functions-in-excel"></a>在 Excel 中创建自定义函数
 
@@ -70,7 +70,7 @@ function add(first, second){
 
 ### <a name="manifest-file"></a>清单文件
 
-用于定义自定义函数（在 Yo Office 生成器创建的项目中的 **/manifest.xml** ）的外接程序的 XML 清单文件执行以下操作：
+用于定义自定义函数的加载项的 XML 清单文件，该项目是在 Yo Office 生成器创建的项目中 (**。/manifest.xml。**) 执行以下操作：
 
 - 定义自定义函数的命名空间。 命名空间将自己添加到自定义函数中，以帮助客户将您的函数标识为外接程序的一部分。
 - 使用 `<ExtensionPoint>` 和 `<Resources>` 元素对于自定义函数清单而言是唯一的。 这些元素包含有关 JavaScript、JSON 和 HTML 文件的位置的信息。
@@ -84,7 +84,7 @@ function add(first, second){
 
 ## <a name="coauthoring"></a>共同创作
 
-Web 上的 Excel 和连接到 Office 365 订阅的 Windows 允许您在 Excel 中 coauthor。 如果您的工作簿使用自定义函数，则将提示您的合著同事加载自定义函数的外接程序。 一旦您加载了加载项，自定义函数将通过共同创作来共享结果。
+Web 上的 Excel 和连接到 Microsoft 365 订阅的 Windows 允许您在 Excel 中 coauthor。 如果您的工作簿使用自定义函数，则将提示您的合著同事加载自定义函数的外接程序。 一旦您加载了加载项，自定义函数将通过共同创作来共享结果。
 
 若要详细了解共同创作，请参阅[关于 Excel 中的共同创作](/office/vba/excel/concepts/about-coauthoring-in-excel)。
 

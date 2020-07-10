@@ -1,23 +1,23 @@
 ---
 title: 在 Office 网页版中旁加载 Office 加载项进行测试
 description: 通过旁加载在 Office 网页版中测试 Office 加载项
-ms.date: 02/18/2020
+ms.date: 07/07/2020
 localization_priority: Normal
-ms.openlocfilehash: 5e6352f63959dce54b3a67c79c522446913e0c38
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 60b7e4f1d598e4f5ec09307d58294f54123112ad
+ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44611131"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "45094118"
 ---
 # <a name="sideload-office-add-ins-in-office-on-the-web-for-testing"></a>在 Office 网页版中旁加载 Office 加载项进行测试
 
-可以通过使用旁加载来安装 Office 加载项以供测试，而无需先将它添加到加载项目录中。 在 Office 365 或 Office 网页版中都可以进行旁加载。 该过程使用的两个平台略有不同。
+可以通过使用旁加载来安装 Office 加载项以供测试，而无需先将它添加到加载项目录中。 可以在 Microsoft 365 或 web 上的 Office 中完成旁加载。 该过程使用的两个平台略有不同。
 
 当旁加载外接程序时，外接程序清单存储在浏览器的本地存储区中，因此如果清除浏览器的缓存，或切换到另一个浏览器，就必须再次旁加载该外接程序。
 
 > [!NOTE]
-> 如本文所述，Word、Excel 和 PowerPoint 支持旁加载。若要旁加载 Outlook 外接程序，请参阅[旁加载 Outlook 外接程序进行测试](../outlook/sideload-outlook-add-ins-for-testing.md)。
+> Sideloading as described in this article is supported on Word, Excel, and PowerPoint. To sideload an Outlook add-in, see [Sideload Outlook add-ins for testing](../outlook/sideload-outlook-add-ins-for-testing.md).
 
 下面的视频逐步展示了如何在 Office 网页版或桌面上旁加载加载项。
 
@@ -39,7 +39,7 @@ ms.locfileid: "44611131"
 
     ![带浏览、上载和取消按钮的上载外接程序对话框。](../images/upload-add-in.png)
 
-6. 验证是否已安装外接程序。例如，如果它是一个外接程序命令，它应显示在功能区或上下文菜单上。如果它是一个任务窗格外接程序，则应显示窗格。
+6. Verify that your add-in is installed. For example, if it is an add-in command, it should appear on either the ribbon or the context menu. If it is a task pane add-in, the pane should appear.
 
 > [!NOTE]
 >若要使用 Microsoft Edge 测试 Office 加载项，需要执行两个配置步骤： 
@@ -52,7 +52,7 @@ ms.locfileid: "44611131"
 
 ## <a name="sideload-an-office-add-in-in-office-365"></a>在 Office 365 上旁加载 Office 加载项
 
-1. 登录 Office 365 帐户。
+1. 登录到 Microsoft 365 帐户。
 
 2. 打开工具栏左端的应用启动器并选择 " **Excel**"、" **Word**" 或 " **PowerPoint**"，然后创建一个新文档。
 
@@ -76,4 +76,4 @@ ms.locfileid: "44611131"
 
 ## <a name="remove-a-sideloaded-add-in"></a>删除旁加载加载项
 
-您可以通过清除浏览器的缓存来删除以前的旁加载外接程序。 此外，如果您对外接程序清单进行了更改（例如，更新了图标或加载项命令的文本的文件名），您可能需要清除缓存，然后使用更新的清单重新旁加载该外接程序。 执行此操作后，Office 将按照更新清单中所述的方式呈现该加载项。
+您可以通过清除浏览器的缓存来删除以前的旁加载外接程序。 此外，如果您对外接程序的清单进行了更改 (例如，更新) 的加载项命令的图标或文本的文件名，则可能需要清除缓存，然后使用更新的清单重新旁加载加载项。 执行此操作后，Office 将按照更新清单中所述的方式呈现该加载项。

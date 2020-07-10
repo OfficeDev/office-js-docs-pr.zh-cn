@@ -1,14 +1,14 @@
 ---
 title: Office 加载项使用的浏览器
 description: 指定操作系统和 Office 版本如何确定 Office 加载项使用的浏览器。
-ms.date: 06/01/2020
+ms.date: 07/07/2020
 localization_priority: Normal
-ms.openlocfilehash: 2dc66439ff4ab7f9bee148168df4d9d9b30a11a1
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 0cdb601da7625eb3cafdcd883192861938529e0d
+ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44608039"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "45093439"
 ---
 # <a name="browsers-used-by-office-add-ins"></a>Office 加载项使用的浏览器
 
@@ -17,7 +17,7 @@ Office 加载项是使用 iFrames（在 Office 网页版中运行时）和使用
 要使用的浏览器取决于：
 
 - 计算机的操作系统。
-- 加载项是在 Office 网页版、Office 365 还是非订阅版 Office 2013 或更高版本中运行。
+- 加载项是在 web 上的 Office、Microsoft 365 或非订阅 Office 2013 或更高版本上运行。
 
 下表显示在不同平台和操作系统中使用的浏览器。
 
@@ -34,9 +34,9 @@ Office 加载项是使用 iFrames（在 Office 网页版中运行时）和使用
 
 <sup>1</sup>有关更多详细信息，请参阅 "[更新历史记录" 页面](/officeupdates/update-history-office365-proplus-by-date)以及如何[查找 Office 客户端版本和更新频道](https://support.office.com/article/What-version-of-Office-am-I-using-932788b8-a3ce-44bf-bb09-e334518b8b19)。
 
-<sup>2</sup>当使用 Microsoft Edge 时，Windows 10 讲述人（有时称为 "屏幕阅读器"）将读取 `<title>` 在任务窗格中打开的页面中的标记。 如果使用的是 Internet Explorer 11，则Narrator 将会读取任务窗格的标题栏，它来自加载项清单中的 `<DisplayName>` 值。
+<sup>2</sup>当使用 Microsoft Edge 时，Windows 10 讲述人 (有时称为 "屏幕阅读器" ) 读取 `<title>` 在任务窗格中打开的页面中的标记。 如果使用的是 Internet Explorer 11，则Narrator 将会读取任务窗格的标题栏，它来自加载项清单中的 `<DisplayName>` 值。
 
-<sup>3</sup>如果加载项包括 `Runtimes` 清单中的元素，则使用 Internet Explorer 11，而无需考虑 Windows 或 Office 365 版本。 有关详细信息，请参阅[运行时](../reference/manifest/runtimes.md)。
+<sup>3</sup>如果加载项包括 `Runtimes` 清单中的元素，则使用 Internet Explorer 11，而不考虑 Windows 或 Microsoft 365 版本。 有关详细信息，请参阅[运行时](../reference/manifest/runtimes.md)。
 
 > [!IMPORTANT]
 > Internet Explorer 11 不支持高于 ES5 的 JavaScript 版本。 如果任何加载项用户安装的是使用 Internet Explorer 11 的平台，若要使用 ECMAScript 2015 或更高版本的语法和功能，则必须将 JavaScript 转换为 ES5 或使用填充代码。 此外，Internet Explorer 11 不支持媒体、录制和位置等部分 HTML5 功能。
@@ -49,7 +49,7 @@ Office 外接程序不支持[Microsoft Edge web](/microsoft-edge/hosting/webview
 
 ### <a name="chromium-based-edge-is-installed-on-my-development-computer-but-my-add-in-does-not-use-it"></a>在我的开发计算机上安装了基于 Chromium 的边缘，但我的加载项不使用它
 
-[Microsoft Edge](https://support.microsoft.com/help/4501095/download-the-new-microsoft-edge-based-on-chromium)中的基本浏览器已更改为 Chromium。 在安装基于 Chromium 的边缘时，不会删除较早的 base （称为 "EdgeHTML"）。 Office 仍将使用加载项的 EdgeHTML 基础，直到在计算机上安装了支持 Chromium 的 Office 365 版本。 我们预计这些版本将在2020中发货。 它们可能会在预览体验频道中的年上半年显示。
+[Microsoft Edge](https://support.microsoft.com/help/4501095/download-the-new-microsoft-edge-based-on-chromium)中的基本浏览器已更改为 Chromium。 在安装基于 Chromium 的边缘时，不会删除较早的 base （称为 "EdgeHTML"）。 Office 仍将使用加载项的 EdgeHTML 基础，直到在计算机上安装了支持 Chromium 的 Microsoft 365 版本。 我们预计这些版本将在2020中发货。 它们可能会在预览体验频道中的年上半年显示。
 
 ### <a name="scroll-bar-does-not-appear-in-task-pane"></a>任务窗格中不显示滚动条
 

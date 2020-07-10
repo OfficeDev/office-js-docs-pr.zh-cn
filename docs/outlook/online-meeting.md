@@ -4,19 +4,19 @@ description: 讨论如何为联机会议服务提供商设置 Outlook 移动外�
 ms.topic: article
 ms.date: 06/25/2020
 localization_priority: Normal
-ms.openlocfilehash: 052ab4e71f8bc90e655a6ba780eacc18d43069e1
-ms.sourcegitcommit: 065bf4f8e0d26194cee9689f7126702b391340cc
+ms.openlocfilehash: 9f0b50602ab4941b16c15abe97c3f099a54f5b42
+ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "45006422"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "45093999"
 ---
 # <a name="create-an-outlook-mobile-add-in-for-an-online-meeting-provider"></a>为联机会议提供商创建 Outlook mobile 外接程序
 
 设置联机会议是 Outlook 用户的核心体验，可轻松[创建使用 outlook mobile 的团队会议](/microsoftteams/teams-add-in-for-outlook)。 但是，在 Outlook 中使用非 Microsoft 服务创建联机会议可能很麻烦。 通过实施此功能，服务提供商可以为其 Outlook 外接程序用户简化联机会议创建体验。
 
 > [!IMPORTANT]
-> 此功能仅在 Office 365 订阅的 Android 上受支持。
+> 仅适用于使用 Microsoft 365 订阅的 Android 支持此功能。
 
 在本文中，您将了解如何设置 Outlook 移动外接程序，以使用户能够使用您的联机会议服务来组织和加入会议。 在整篇文章中，我们将使用虚构的联机会议服务提供商 "Contoso"。
 
@@ -32,7 +32,7 @@ ms.locfileid: "45006422"
 
 1. 打开位于项目根目录中的**manifest.xml**文件。
 
-1. 选择整个 `<VersionOverrides>` 节点（包括 "打开" 和 "关闭" 标记），并将其替换为以下 XML。
+1. 选择整个 `<VersionOverrides>` 节点 (包括 "打开" 和 "关闭" 标记) 并将其替换为以下 XML。
 
 ```xml
 <VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides" xsi:type="VersionOverridesV1_0">
@@ -207,7 +207,7 @@ ms.locfileid: "45006422"
 
 ## <a name="testing-and-validation"></a>测试和验证
 
-按照通常的指导来[测试和验证您的外接程序](testing-and-tips.md)。 在 Outlook 网页版、Windows 版或 Mac 版中进行[旁加载](sideload-outlook-add-ins-for-testing.md)后，在你的 Android 移动设备上重新启动 outlook。 （现在，Android 是唯一受支持的客户端。）然后，在新的会议屏幕上，验证 Microsoft 团队或 Skype 切换是否已替换为你自己的。
+按照通常的指导来[测试和验证您的外接程序](testing-and-tips.md)。 在 Outlook 网页版、Windows 版或 Mac 版中进行[旁加载](sideload-outlook-add-ins-for-testing.md)后，在你的 Android 移动设备上重新启动 outlook。  (Android 是目前唯一受支持的客户端。 ) 然后，在新的会议屏幕上，验证 Microsoft 团队或 Skype 切换是否已替换为您自己的。
 
 ### <a name="create-meeting-ui"></a>创建会议用户界面
 
@@ -241,15 +241,15 @@ ms.locfileid: "45006422"
 以下 Api 可用于此功能。
 
 - 约会组织者 Api
-  - " [Context.subname](/javascript/api/outlook/office.appointmentcompose?view=outlook-js-preview#subject) " （[subject](/javascript/api/outlook/office.subject?view=outlook-js-preview)）
-  - "Context.subname" （Time）。[开始](/javascript/api/outlook/office.appointmentcompose?view=outlook-js-preview#start)（[Time](/javascript/api/outlook/office.time?view=outlook-js-preview)）
-  - （Time）[结尾](/javascript/api/outlook/office.appointmentcompose?view=outlook-js-preview#end)（[Time](/javascript/api/outlook/office.time?view=outlook-js-preview)）
-  - " [Context.subname](/javascript/api/outlook/office.appointmentcompose?view=outlook-js-preview#location) " （"[位置](/javascript/api/outlook/office.location?view=outlook-js-preview)"）
-  - [OptionalAttendees](/javascript/api/outlook/office.appointmentcompose?view=outlook-js-preview#optionalattendees) （[收件人](/javascript/api/outlook/office.recipients?view=outlook-js-preview)）的内容
-  - [RequiredAttendees](/javascript/api/outlook/office.appointmentcompose?view=outlook-js-preview#requiredattendees) （[收件人](/javascript/api/outlook/office.recipients?view=outlook-js-preview)）的内容
-  - "[GetAsync](/javascript/api/outlook/office.body?view=outlook-js-preview#getasync-coerciontype--options--callback-) [" （"."](/javascript/api/outlook/office.appointmentcompose?view=outlook-js-preview#body) 、"setAsync"、"Body"、" [Body.setAsync](/javascript/api/outlook/office.body?view=outlook-js-preview#setasync-data--options--callback-)"）
-  - [LoadCustomPropertiesAsync](/javascript/api/outlook/office.appointmentcompose?view=outlook-js-preview#loadcustompropertiesasync-callback--usercontext-) （[CustomProperties](/javascript/api/outlook/office.customproperties?view=outlook-js-preview)）的内容
-  - [RoamingSettings](../reference/objectmodel/preview-requirement-set/office.context.md?view=outlook-js-preview#roamingsettings-roamingsettings) （[roamingSettings](/javascript/api/outlook/office.roamingsettings?view=outlook-js-preview)）
+  - [使用者](/javascript/api/outlook/office.appointmentcompose?view=outlook-js-preview#subject) ([主题](/javascript/api/outlook/office.subject?view=outlook-js-preview)) 的主题
+  -  (时间) [的开始](/javascript/api/outlook/office.appointmentcompose?view=outlook-js-preview#start)[时间](/javascript/api/outlook/office.time?view=outlook-js-preview)
+  -  (时间) [的结束](/javascript/api/outlook/office.appointmentcompose?view=outlook-js-preview#end)[时间](/javascript/api/outlook/office.time?view=outlook-js-preview)
+  -  ([位置](/javascript/api/outlook/office.location?view=outlook-js-preview)) [的位置。](/javascript/api/outlook/office.appointmentcompose?view=outlook-js-preview#location)
+  - [OptionalAttendees](/javascript/api/outlook/office.appointmentcompose?view=outlook-js-preview#optionalattendees) ([收件人](/javascript/api/outlook/office.recipients?view=outlook-js-preview)) 中的
+  - [RequiredAttendees](/javascript/api/outlook/office.appointmentcompose?view=outlook-js-preview#requiredattendees) ([收件人](/javascript/api/outlook/office.recipients?view=outlook-js-preview)) 中的
+  -  ([setAsync](/javascript/api/outlook/office.body?view=outlook-js-preview#setasync-data--options--callback-)) 的 " [context.subname](/javascript/api/outlook/office.appointmentcompose?view=outlook-js-preview#body) [" 的 "](/javascript/api/outlook/office.body?view=outlook-js-preview#getasync-coerciontype--options--callback-)正文"。
+  - [LoadCustomPropertiesAsync](/javascript/api/outlook/office.appointmentcompose?view=outlook-js-preview#loadcustompropertiesasync-callback--usercontext-) ([CustomProperties](/javascript/api/outlook/office.customproperties?view=outlook-js-preview)) 的
+  - [RoamingSettings](../reference/objectmodel/preview-requirement-set/office.context.md?view=outlook-js-preview#roamingsettings-roamingsettings) ([roamingSettings](/javascript/api/outlook/office.roamingsettings?view=outlook-js-preview)) 
 - 处理身份验证流
   - [Dialog API](../develop/dialog-api-in-office-add-ins.md)
 
@@ -261,7 +261,7 @@ ms.locfileid: "45006422"
 - 目前，Android 是唯一受支持的客户端。 即将推出对 iOS 的支持。
 - 只有管理员安装的加载项才会显示在会议撰写屏幕上，替换默认团队或 Skype 选项。 无法激活用户安装的外接程序。
 - 外接端图标应使用十六进制代码 `#919191` 或以[其他颜色格式](https://convertingcolors.com/hex-color-919191.html)的等效项进行灰度。
-- 在约会组织者（撰写）模式下仅支持一个无 UI 的命令。
+- 约会组织者 (撰写) 模式中仅支持一个无 UI 的命令。
 
 ## <a name="see-also"></a>另请参阅
 

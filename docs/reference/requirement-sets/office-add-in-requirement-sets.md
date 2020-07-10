@@ -1,21 +1,19 @@
 ---
 title: Office 通用 API 要求集
-description: 了解有关 Office 通用 API 要求集的详细信息
-ms.date: 06/23/2020
+description: 了解有关 Office 通用 API 要求集的详细信息。
+ms.date: 07/07/2020
 ms.prod: non-product-specific
 localization_priority: Normal
-ms.openlocfilehash: b4ed3f203cf5c50ab5a49c0278755d35d6826536
-ms.sourcegitcommit: a4873c3525c7d30ef551545d27eb2c0a16b4eb50
+ms.openlocfilehash: b0f2fa05a5db94614257b51f6b2867705a0a5520
+ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2020
-ms.locfileid: "44888143"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "45094351"
 ---
 # <a name="office-common-api-requirement-sets"></a>Office 通用 API 要求集
 
 Requirement sets are named groups of API members. Office Add-ins use requirement sets specified in the manifest or use a runtime check to determine whether an Office host supports APIs that an add-in needs. For more information, see [Office versions and requirement sets](../../develop/office-versions-and-requirement-sets.md).
-
-需要了解加载项在哪些位置受 Office 主机支持？ 请参阅 [Office 加载项主机和平台可用性](../../overview/office-add-in-availability.md)。
 
 > [!TIP]
 > 正在寻找*主机专用* API 要求集吗？ 请参阅下列 API 要求集：
@@ -32,6 +30,9 @@ Requirement sets are named groups of API members. Office Add-ins use requirement
 ## <a name="common-api-requirement-sets"></a>通用 API 要求集
 
 以下部分列出了通用 API 要求集、每个集内的方法，以及支持相应要求集的 Office 主机应用程序。 除非另行指定，否则这些 API 要求集都是第 1.1 版。
+
+> [!TIP]
+> 需要有关 Office 主机和版本支持加载项和要求集的信息？ 请参阅 [Office 加载项主机和平台可用性](../../overview/office-add-in-availability.md)。
 
 ### <a name="activeview"></a>ActiveView
 

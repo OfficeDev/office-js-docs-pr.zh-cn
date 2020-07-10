@@ -1,18 +1,18 @@
 ---
 title: Office 加载项中的任务窗格
 description: 任务窗格允许用户访问界面控件，此类控件运行代码以修改文档或电子邮件，或显示数据源中的数据。
-ms.date: 01/14/2020
+ms.date: 07/07/2020
 localization_priority: Normal
-ms.openlocfilehash: 429042db7e30f5fefe48c9648e6ad5410f6594c4
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 39a96f4d5aa63d55f4dcb30d9aeb9e680357aa09
+ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44608493"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "45093754"
 ---
 # <a name="task-panes-in-office-add-ins"></a>Office 加载项中的任务窗格
  
-任务窗格是接口图面，通常出现在 Word、PowerPoint、Excel 和 Outlook 中窗口的右侧。使用任务窗格，用户可以访问接口控件，以运行代码来修改文档或电子邮件，或显示数据源中的数据。如果不需要将功能直接嵌入文档，请使用任务窗格。
+Task panes are interface surfaces that typically appear on the right side of the window within Word, PowerPoint, Excel, and Outlook. Task panes give users access to interface controls that run code to modify documents or emails, or display data from a data source. Use task panes when you don't need to embed functionality directly into the document.
 
 *图 1：典型任务窗格布局*
 
@@ -30,7 +30,7 @@ ms.locfileid: "44608493"
 
 ## <a name="variants"></a>变量
 
-下图显示分辨率为 1366x768 时 Office 功能区的各种任务窗格大小。对于 Excel，需要额外的垂直空间来容纳编辑栏。  
+The following images show the various task pane sizes with the Office app ribbon at a 1366x768 resolution. For Excel, additional vertical space is required to accommodate the formula bar.  
 
 *图 2：Office 2016 桌面任务窗格尺寸*
 
@@ -43,7 +43,7 @@ ms.locfileid: "44608493"
 
 <br/>
 
-*图 3：Office 365 任务窗格大小*
+*图3。Office 任务窗格大小*
 
 ![显示尺寸为 1366x768 的桌面任务窗格的图像](../images/office-365-taskpane-sizes.png)
 
@@ -54,7 +54,7 @@ ms.locfileid: "44608493"
 
 ## <a name="personality-menu"></a>“个性”菜单
 
-“个性”菜单可能会妨碍靠近外接程序右上角的导航和命令元素。以下是 Windows 和 Mac 上的“个性”菜单的当前尺寸。
+Personality menus can obstruct navigational and commanding elements located near the top right of the add-in. The following are the current dimensions of the personality menu on Windows and Mac.
 
 对于 Windows，个性菜单尺寸为 12x32 像素，如下所示。
 

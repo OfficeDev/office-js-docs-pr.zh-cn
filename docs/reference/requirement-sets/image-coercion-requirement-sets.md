@@ -4,20 +4,20 @@ description: 支持跨 Excel、PowerPoint 和 Word 的 Office 外接程序对图
 ms.date: 08/13/2019
 ms.prod: non-product-specific
 localization_priority: Normal
-ms.openlocfilehash: f2baf8115d6a43c6b713e9acfeb5928f8549c583
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 59f6891182f47bed1b7e3b6aa69a30e941bce7cb
+ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44611356"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "45094350"
 ---
 # <a name="image-coercion-requirement-sets"></a>图像强制要求集
 
-要求集是指各组已命名的 API 成员。Office 加载项使用清单中指定的要求集或执行运行时检查，以确定 Office 主机是否支持加载项所需的 API。有关详细信息，请参阅 [Office 版本和要求集](../../develop/office-versions-and-requirement-sets.md)。
+Requirement sets are named groups of API members. Office Add-ins use requirement sets specified in the manifest or use a runtime check to determine whether an Office host supports APIs that an add-in needs. For more information, see [Office versions and requirement sets](../../develop/office-versions-and-requirement-sets.md).
 
 ## <a name="imagecoercion-11"></a>ImageCoercion 1.1
 
-`Office.CoercionType.Image`在使用方法写入数据时，ImageCoercion 1.1 支持转换为 image （） [`Document.setSelectedDataAsync`](/javascript/api/office/office.document#setselecteddataasync-data--options--callback-) 。 支持以下主机：
+使用 ImageCoercion 1.1，可以 `Office.CoercionType.Image` 在使用方法写入数据时转换为) 的图像 ([`Document.setSelectedDataAsync`](/javascript/api/office/office.document#setselecteddataasync-data--options--callback-) 。 支持以下主机：
 
 - Excel 2013 及更高版本的 Windows
 - Excel 2016 及更高版本 Mac
@@ -34,15 +34,15 @@ ms.locfileid: "44611356"
 
 ## <a name="imagecoercion-12"></a>ImageCoercion 1.2
 
-ImageCoercion 1.2 支持 `Office.CoercionType.XmlSvg` 在使用方法写入数据时转换为 SVG 格式（） [`Document.setSelectedDataAsync`](/javascript/api/office/office.document#setselecteddataasync-data--options--callback-) 。 支持以下主机：
+ImageCoercion 1.2 支持在 `Office.CoercionType.XmlSvg` 使用方法写入数据时 () 转换为 SVG 格式 [`Document.setSelectedDataAsync`](/javascript/api/office/office.document#setselecteddataasync-data--options--callback-) 。 支持以下主机：
 
-- Windows 上的 Excel （连接到 Office 365 订阅）
-- Mac 上的 Excel （连接到 Office 365 订阅）
-- Windows 上的 PowerPoint （连接到 Office 365 订阅）
-- PowerPoint on Mac （连接到 Office 365 订阅）
+- 连接到 Microsoft 365 订阅的 Windows (上的 Excel) 
+- 连接到 Microsoft 365 订阅的 Mac 上的 Excel () 
+- 连接到 Microsoft 365 订阅的 Windows (上的 PowerPoint) 
+- 连接到 Microsoft 365 订阅的 Mac 版上的 PowerPoint () 
 - PowerPoint 网页版
-- Windows 上的 Word （连接到 Office 365 订阅）
-- Mac 上的 Word （连接到 Office 365 订阅）
+- 连接到 Microsoft 365 订阅的 Windows (上的 Word) 
+- 连接到 Microsoft 365 订阅的 Mac 上的 Word () 
 - Word 网页版
 
 ## <a name="office-common-api-requirement-sets"></a>Office 通用 API 要求集

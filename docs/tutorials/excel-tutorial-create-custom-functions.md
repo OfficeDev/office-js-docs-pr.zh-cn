@@ -4,12 +4,12 @@ description: 在本教程中，你将创建一个 Excel 外接程序，其中包
 ms.date: 01/16/2020
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: 4e2ad0276690d0b427a6788adc89ba09a274e203
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 7f8dcfa792b1bbce36055b865d6cc67fcb55d68a
+ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44611083"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "45094265"
 ---
 # <a name="tutorial-create-custom-functions-in-excel"></a>教程：在 Excel 中创建自定义函数
 
@@ -26,7 +26,7 @@ ms.locfileid: "44611083"
 
 [!include[Yeoman generator prerequisites](../includes/quickstart-yo-prerequisites.md)]
 
-* Windows 版 Excel（版本 1904 或更高版本，关联至 Office 365 订阅）或 Excel 网页版
+* Windows 上的 Excel (版本1904或更高版本，连接到 Microsoft 365 订阅) 或 web
 
 ## <a name="create-a-custom-functions-project"></a>创建自定义函数项目
 

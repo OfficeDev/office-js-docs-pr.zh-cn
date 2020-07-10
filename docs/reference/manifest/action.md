@@ -1,14 +1,14 @@
 ---
 title: 清单文件中的 Action 元素
 description: 此元素指定当用户选择按钮或菜单控件时要执行的操作。
-ms.date: 02/28/2020
+ms.date: 07/07/2020
 localization_priority: Normal
-ms.openlocfilehash: c542cec38b400100014c51c978c8fcd71a546f2a
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 92c783a15d104aba0adb722ab887391b4511ebed
+ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44608801"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "45094447"
 ---
 # <a name="action-element"></a>Action 元素
 
@@ -16,7 +16,7 @@ ms.locfileid: "44608801"
 
 ## <a name="attributes"></a>属性
 
-|  属性  |  必需  |  Description  |
+|  属性  |  必需  |  说明  |
 |:-----|:-----|:-----|
 |  [xsi:type](#xsitype)  |  是  | 要执行的操作类型|
 
@@ -33,14 +33,14 @@ ms.locfileid: "44608801"
 
 ## <a name="xsitype"></a>xsi:type
 
-此属性指定当用户选择按钮时所执行的操作类型。可取值如下：
+This attribute specifies the kind of action performed when the user selects the button. It can be one of the following:
 
 - `ExecuteFunction`
 - `ShowTaskpane`
 
 ## <a name="functionname"></a>FunctionName
 
-**xsi:type** 为“ExecuteFunction”时的必需元素。指定要执行的函数的名称。函数包含在 [FunctionFile](functionfile.md) 元素指定的文件中。
+Required element when **xsi:type** is "ExecuteFunction". Specifies the name of the function to execute. The function is contained in the file specified in the [FunctionFile](functionfile.md) element.
 
 ```xml
 <Action xsi:type="ExecuteFunction">
@@ -79,7 +79,7 @@ ms.locfileid: "44608801"
 </Action>
 ```  
 
-下面的示例展示了两个使用不同 **TaskpaneId** 的操作。若要查看上下文中的这些示例，请参阅[简单的外接程序命令示例](https://github.com/OfficeDev/Office-Add-in-Commands-Samples/blob/master/Simple/Manifest/SimpleAddin.xml)。
+The following examples show two actions that use a different **TaskpaneId**. To see these examples in context, see [Simple Add-in Commands Sample](https://github.com/OfficeDev/Office-Add-in-Commands-Samples/blob/master/Simple/Manifest/SimpleAddin.xml).
 
 ```xml
 <Action xsi:type="ShowTaskpane">
@@ -104,7 +104,7 @@ ms.locfileid: "44608801"
 
  **xsi: type** 是“ShowTaskpane”时的可选元素。 指定此操作任务窗格的自定义标题。
 
-下面的示例演示使用**Title**元素的操作。 请注意，您不会直接向字符串分配**标题**。 而是为其分配一个资源 ID （resid），该 ID 在清单的 "**资源**" 部分中定义。
+下面的示例演示使用**Title**元素的操作。 请注意，您不会直接向字符串分配**标题**。 而是为其分配一个资源 ID (resid) ，该 ID 在清单的 "**资源**" 部分中定义。
 
 ```xml
 <Action xsi:type="ShowTaskpane">
@@ -132,9 +132,9 @@ ms.locfileid: "44608801"
 **xsi:type** 是“ShowTaskpane”时的可选元素。 包含 [VersionOverrides](versionoverrides.md) 元素的 `xsi:type` 属性值必须为 `VersionOverridesV1_1`。 添加此元素时将值设为 `true` 可以支持任务窗格固定。 这样一来，用户可以“固定”任务窗格，即使用户选择其他对象，任务窗格也可以继续处于打开状态。 有关详细信息，请参阅[在 Outlook 中实现可固定的任务窗格](../../outlook/pinnable-taskpane.md)。
 
 > [!IMPORTANT]
-> 尽管在 `SupportsPinning` [要求集 1.5](../objectmodel/requirement-set-1.5/outlook-requirement-set-1.5.md)中引入了元素，但目前仅支持 Office 365 订阅者使用以下方法。
-> - Windows 上的 Outlook 2016 或更高版本（内部版本7628.1000 或更高版本）
-> - Outlook 2016 或更高版本 Mac 版（内部版本16.13.503 或更高版本）
+> 尽管 `SupportsPinning` 在[要求集 1.5](../objectmodel/requirement-set-1.5/outlook-requirement-set-1.5.md)中引入了此元素，但目前仅使用以下程序支持 Microsoft 365 订阅者。
+> - Outlook 2016 或更高版本位于 Windows (内部版本7628.1000 或更高版本) 
+> - Outlook 2016 或更高版本 Mac (build 16.13.503 or 更高版本) 
 > - 新式 Outlook 网页版
 
 ```xml

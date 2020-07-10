@@ -3,12 +3,12 @@ title: 创建使用单一登录的 Node.js Office 加载项
 description: 了解如何创建使用 Office 单一登录的基于 Node.js 的 Office 加载项
 ms.date: 06/18/2020
 localization_priority: Normal
-ms.openlocfilehash: 34356f1870c612990194358dbd2a0b97ab9495da
-ms.sourcegitcommit: b939312ffdeb6e0a0dfe085db7efe0ff143ef873
+ms.openlocfilehash: 580e7ecaa44529f2e6415fbec638370028e2a1af
+ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/19/2020
-ms.locfileid: "44810833"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "45093686"
 ---
 # <a name="create-a-nodejs-office-add-in-that-uses-single-sign-on-preview"></a>创建使用单一登录的 Node.js Office 加载项（预览）
 
@@ -31,7 +31,7 @@ Users can sign in to Office, and your Office Web Add-in can take advantage of th
 
 * 一个代码编辑器。 建议使用 Visual Studio Code。
 
-* Office 365 订阅中的 OneDrive for Business 上至少存储了一些文件和文件夹。
+* 在 Microsoft 365 订阅中至少存储在 OneDrive for Business 上的一些文件和文件夹。
 
 * 一个 Microsoft Azure 订阅。 此加载项需要 Azure Active Directory (AD)。 Azure AD 为应用程序提供了用于进行身份验证和授权的标识服务。 你还可在 [Microsoft Azure](https://account.windowsazure.com/SignUp) 获得试用订阅。
 
@@ -55,7 +55,7 @@ Users can sign in to Office, and your Office Web Add-in can take advantage of th
 
 1. 导航到“Azure 门户 - 应用注册”[](https://go.microsoft.com/fwlink/?linkid=2083908)页面以注册你的应用。
 
-1. 使用***管理员***凭据登录 Office 365 租户。 例如，MyName@contoso.onmicrosoft.com。
+1. 使用***管理员***凭据登录到 Microsoft 365 租赁。 例如，MyName@contoso.onmicrosoft.com。
 
 1. 选择“新注册”****。 在“注册应用”**** 页上，按如下方式设置值。
 
@@ -75,9 +75,9 @@ Users can sign in to Office, and your Office Web Add-in can take advantage of th
 
 1. 选择“管理”**** 下的“证书和密码”****。 选择“新客户端密码”**** 按钮。 输入“描述”**** 的值，然后选择“到期”**** 的适当选项，并选择“添加”****。 在继续操作前，*立即复制客户端机密码值并使用应用程序 ID 保存它*，因为在后面的过程中，将需要用到它。
 
-1. 在“管理”**** 下选择“公开 API”****。 选择 "**设置**" 链接。 这将生成应用程序 ID URI，格式为 "api://$App ID GUID $"，其中 $App ID GUID $ 是**应用程序（客户端） ID**。
+1. 在“管理”**** 下选择“公开 API”****。 选择 "**设置**" 链接。 这将生成应用程序 ID URI，格式为 "api://$App ID GUID $"，其中 $App ID GUID $ 是**应用程序 (客户端) ID**。
 
-1. 在生成的 ID 中，insert `localhost:44355/` （注意，追加到末尾的正斜杠 "/"）与双正斜杠和 GUID 之间。 完成后，整个 ID 应具有窗体 `api://localhost:44355/$App ID GUID$` ; 例如 `api://localhost:44355/c6c1f32b-5e55-4997-881a-753cc1d563b7` 。
+1. 在生成的 ID 中，插入 `localhost:44355/` (注意追加到双正斜杠和 GUID 之间的结束) 的正斜杠 "/"。 完成后，整个 ID 应具有窗体 `api://localhost:44355/$App ID GUID$` ; 例如 `api://localhost:44355/c6c1f32b-5e55-4997-881a-753cc1d563b7` 。
 
 1. 选择“**添加一个作用域**”按钮。 在打开的面板中，输入 `access_as_user` 作为**作用域**名称。
 
@@ -210,7 +210,7 @@ Users can sign in to Office, and your Office Web Add-in can take advantage of th
 
 1. 将 `TODO 3` 替换为以下代码。 关于此代码，请注意以下几点： 
 
-    - 如果已将 Office 365 租户配置为要求多重身份验证，则 `exchangeResponse` 将包括一个 `claims` 属性，其中包含有关其他所需因素的信息。 在这种情况下，应该再次调用 `OfficeRuntime.auth.getAccessToken`，并将 `authChallenge` 选项设置为 claims 属性的值。 这就指示 AAD 提示用户进行所有必需形式的身份验证。
+    - 如果已将 Microsoft 365 租户配置为需要多因素身份验证，则 `exchangeResponse` 将包含包含 `claims` 其他所需因素的信息的属性。 在这种情况下，应该再次调用 `OfficeRuntime.auth.getAccessToken`，并将 `authChallenge` 选项设置为 claims 属性的值。 这就指示 AAD 提示用户进行所有必需形式的身份验证。
 
     ```javascript
     if (exchangeResponse.claims) {
@@ -292,8 +292,8 @@ Users can sign in to Office, and your Office Web Add-in can take advantage of th
         showMessage("You can use many of the add-ins functions even though you have not granted consent. If you want to grant consent, press the Get OneDrive File Names button again."); 
         break;
     case 13006:
-        // Only seen in Office on the Web.
-        showMessage("Office on the Web is experiencing a problem. Please sign out of Office, close the browser, and then start again."); 
+        // Only seen in Office on the web.
+        showMessage("Office on the web is experiencing a problem. Please sign out of Office, close the browser, and then start again."); 
         break;
     case 13008:
         // The OfficeRuntime.auth.getAccessToken method has already been called and 
@@ -481,7 +481,7 @@ Users can sign in to Office, and your Office Web Add-in can take advantage of th
 
 1. 将 `TODO 14` 替换为以下代码，它将完成 `else` 块。 关于此代码，请注意以下几点：
 
-    - 常量 `tenant` 设置为“通用”，因为你在 Azure AD 中注册加载项时已将其配置为多租户；特别是当你将“**支持的帐户类型**”设置为“**任何组织目录中的帐户和个人 Microsoft 帐户（例如，Skype、Xbox、Outlook.com）**”时。 如果改为选择仅支持在其中注册加载项的同一 Office 365 租户中的帐户，则此代码 `tenant` 将设置为租户的 GUID。 
+    - 常量 `tenant` 设置为“通用”，因为你在 Azure AD 中注册加载项时已将其配置为多租户；特别是当你将“**支持的帐户类型**”设置为“**任何组织目录中的帐户和个人 Microsoft 帐户（例如，Skype、Xbox、Outlook.com）**”时。 如果你已选择仅支持在注册外接程序的同一 Microsoft 365 租赁中的帐户，则此代码将 `tenant` 设置为租户的 GUID。 
     - 如果 POST 请求没有错误，那么 Azure AD 的响应将转换为 JSON 并发送到客户端。 此 JSON 对象具有 `access_token` 属性，Azure AD 已为其分配 Microsoft Graph 访问令牌。
 
     ```javascript
@@ -571,7 +571,7 @@ Users can sign in to Office, and your Office Web Add-in can take advantage of th
 
 1. 在 Office 应用程序的“**主页**”功能区上，选择“**SSO Node.js**”组中的“**显示加载项**”按钮以打开任务窗格加载项。
 
-1. 单击“**获取 OneDrive 文件名**”按钮。 如果你使用工作或学校 (Office 365) 帐户或 Microsoft 帐户登录 Office，并且 SSO 工作正常，则 OneDrive for Business 中的前 10 个文件和文件夹名称将插入文档中。 （第一次登录可能需要长达 15 秒钟。）如果你未登录，或者处于不支持 SSO 的情形中，或者 SSO 出于任何原因无法正常工作，则系统将提示你登录。 登录后，将显示文件和文件夹名称。
+1. 单击“**获取 OneDrive 文件名**”按钮。 如果你使用 Microsoft 365 教育版或工作帐户或 Microsoft 帐户登录 Office，且 SSO 按预期运行，则 OneDrive for Business 中的前10个文件和文件夹名称将插入到文档中。 （第一次登录可能需要长达 15 秒钟。）如果你未登录，或者处于不支持 SSO 的情形中，或者 SSO 出于任何原因无法正常工作，则系统将提示你登录。 登录后，将显示文件和文件夹名称。
 
 > [!NOTE]
 > 如果先前使用其他 ID 登录过 Office，并且当时打开的一些 Office 应用现在仍处于打开状态，Office 可能无法可靠地更改 ID，即使看似已更改过，也不例外。 在这种情况下，可能无法调用 Microsoft Graph，或者可能返回以前 ID 的数据。 为了防止发生这种情况，请务必先*关闭其他所有 Office 应用程序*，然后再按“**获取 OneDrive 文件名**”。

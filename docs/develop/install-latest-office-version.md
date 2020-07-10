@@ -1,14 +1,14 @@
 ---
 title: 安装最新版本 Office
 description: 与如何选择获取最新版 Office 相关的信息。
-ms.date: 04/16/2020
+ms.date: 07/07/2020
 localization_priority: Normal
-ms.openlocfilehash: bd76a0a36f12f2aa6add1d63c20a466b2036f805
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: df10d64d69b64283321bbad79aca7f7f6d482dd1
+ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44608130"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "45093614"
 ---
 # <a name="install-the-latest-version-of-office"></a>安装最新版本 Office
 
@@ -18,8 +18,8 @@ ms.locfileid: "44608130"
 
 若要选择获取最新版 Office，请执行以下操作：
 
-- 如果你是 Office 365 家庭版、个人版或大专院校版订阅者，请参阅[成为 Office 预览体验成员](https://insider.office.com)。
-- 如果你是 Office 365 商业版客户，请参阅 [为 Office 365 商业版客户安装首次发布](https://support.office.com/article/Install-the-First-Release-build-for-Office-365-for-business-customers-4dd8ba40-73c0-4468-b778-c7b744d03ead)。
+- 如果你是 Microsoft 365 家庭版、个人版或大学订阅者，请参阅[成为 Office 预览体验成员](https://insider.office.com)。
+- 如果你是 Microsoft 365 的商业客户相关应用程序，请参阅[为商业客户的 microsoft 365 应用程序安装首次发布](https://support.office.com/article/Install-the-First-Release-build-for-Office-365-for-business-customers-4dd8ba40-73c0-4468-b778-c7b744d03ead)版本。
 - 如果在 Mac 上运行 Office：
   - 启动 Office 应用程序。
   - 选择“帮助”菜单上的“检查更新”****。
@@ -30,7 +30,7 @@ ms.locfileid: "44608130"
 若要获取最新版 Office，请执行以下操作：
 
 1. 下载 [Office 部署工具](https://www.microsoft.com/download/details.aspx?id=49117)。
-2. 运行该工具。这会提取以下两个文件：Setup.exe 和 configuration.xml。
+2. Run the tool. This extracts the following two files: Setup.exe and configuration.xml.
 3. 将 configuration.xml 文件替换为[首次发布配置文件](https://raw.githubusercontent.com/OfficeDev/Office-Add-in-Commands-Samples/master/Tools/FirstReleaseConfig/configuration.xml)。
 4. 以管理员身份运行下面的命令：`setup.exe /configure configuration.xml`
 

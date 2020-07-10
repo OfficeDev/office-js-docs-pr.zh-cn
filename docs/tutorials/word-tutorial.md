@@ -1,15 +1,15 @@
 ---
 title: Word 加载项教程
 description: 本教程将介绍如何生成 Word 加载项，用于插入（和替换）文本区域、段落、图像、HTML、表格和内容控件。 此外，还将介绍如何设置文本格式，以及如何插入（和替换）内容控件中的内容。
-ms.date: 01/16/2020
+ms.date: 07/07/2020
 ms.prod: word
 localization_priority: Priority
-ms.openlocfilehash: a45cbcc9980a2f07218257f6fef0bd7c781f9992
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 9ee851c9d479c15a0abce5228d89648d1268861b
+ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44610831"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "45093509"
 ---
 # <a name="tutorial-create-a-word-task-pane-add-in"></a>教程：创建 Word 任务窗格加载项
 
@@ -87,11 +87,11 @@ ms.locfileid: "44610831"
 
 8. 将以下函数添加到文件结尾。 注意：
 
-   - Word.js 业务逻辑会添加到传递给 `Word.run` 的函数中。 此逻辑不会立即执行， 而是添加到挂起命令队列中。
+   - Your Word.js business logic will be added to the function that is passed to `Word.run`. This logic does not execute immediately. Instead, it is added to a queue of pending commands.
 
    - `context.sync` 方法将所有已排入队列的命令都发送到 Word 以供执行。
 
-   - `Word.run` 后跟 `catch` 块。 这是应始终遵循的最佳做法。 
+   - The `Word.run` is followed by a `catch` block. This is a best practice that you should always follow. 
 
     ```js
     function insertParagraph() {
@@ -114,11 +114,11 @@ ms.locfileid: "44610831"
 
    - `insertParagraph` 方法的第一个参数是新段落的文本。
 
-   - 第二个参数是应在正文中的什么位置插入段落。 如果父对象为正文，其他段落插入选项包括“End”和“Replace”。
+   - The second parameter is the location within the body where the paragraph will be inserted. Other options for insert paragraph, when the parent object is the body, are "End" and "Replace".
 
     ```js
     var docBody = context.document.body;
-    docBody.insertParagraph("Office has several versions, including Office 2016, Office 365 Click-to-Run, and Office on the web.",
+    docBody.insertParagraph("Office has several versions, including Office 2016, Microsoft 365 subscription, and Office on the web.",
                             "Start");
     ```
 
@@ -318,11 +318,11 @@ ms.locfileid: "44610831"
 
 4. 在 Word 中，创建[自定义样式](https://support.office.com/article/customize-or-create-new-styles-d38d6e47-f6fc-48eb-a607-1eb120dec563)“MyCustomStyle”。 其中可以包含所需的任何格式。
 
-5. 选择 **“应用样式”** 按钮。 第一个段落将采用嵌入样式 **“明显参考”**。
+5. Choose the **Apply Style** button. The first paragraph will be styled with the built-in style **Intense Reference**.
 
-6. 选择 **“应用自定义样式”** 按钮。 最后一个段落将采用自定义样式。 （如果好像什么都没有发生，很可能是因为最后一个段落是空白段落。 如果是这样，请向其中添加某文本。）
+6. Choose the **Apply Custom Style** button. The last paragraph will be styled with your custom style. (If nothing seems to happen, the last paragraph might be blank. If so, add some text to it.)
 
-7. 选择 **“更改字体”** 按钮。 第二个段落的字体更改为 18 磅的粗体 Courier New。
+7. Choose the **Change Font** button. The font of the second paragraph changes to 18 pt., bold, Courier New.
 
     ![Word 教程 - 应用样式和字体](../images/word-tutorial-apply-styles-and-font-2.png)
 
@@ -374,15 +374,15 @@ ms.locfileid: "44610831"
 
 6. 在 `insertTextIntoRange()` 函数中，将 `TODO1` 替换为以下代码。 注意：
 
-   - 此方法用于在“即点即用”文本区域末尾插入缩写 ["(C2R)"]。 它做了一个简化假设，即存在字符串，且用户已选择它。
+   - The method is intended to insert the abbreviation ["(C2R)"] into the end of the Range whose text is "Click-to-Run". It makes a simplifying assumption that the string is present and the user has selected it.
 
    - `Range.insertText` 方法的第一个参数是要插入到 `Range` 对象的字符串。
 
-   - 第二个参数指定了应在区域中的什么位置插入其他文本。 除了“End”外，其他可用选项包括“Start”、“Before”、“After”和“Replace”。 
+   - The second parameter specifies where in the range the additional text should be inserted. Besides "End", the other possible options are "Start", "Before", "After", and "Replace". 
 
-   - “End”和“After”的区别在于，“End”在现有区域末尾插入新文本，而“After”则是新建包含字符串的区域，并在现有区域后面插入新区域。 同样，“Start”是在现有区域的开头位置插入文本，而“Before”插入的是新区域。 “Replace”将现有区域文本替换为第一个参数中的字符串。
+   - The difference between "End" and "After" is that "End" inserts the new text inside the end of the existing range, but "After" creates a new range with the string and inserts the new range after the existing range. Similarly, "Start" inserts text inside the beginning of the existing range and "Before" inserts a new range. "Replace" replaces the text of the existing range with the string in the first parameter.
 
-   - 在本教程之前阶段步骤中，正文对象的 insert* 方法没有“Before”和“After”选项。 这是因为不能将内容置于文档正文外。
+   - You saw in an earlier stage of the tutorial that the insert* methods of the body object do not have the "Before" and "After" options. This is because you can't put content outside of the document's body.
 
     ```js
     var doc = context.document;
@@ -421,11 +421,11 @@ ms.locfileid: "44610831"
         //        been queued.
     ```
 
-2. 由于不能在同一取消分支代码路径中有两个 `return` 语句，因此请删除 `Word.run` 末尾的最后一行代码 `return context.sync();`。本教程稍后将添加最后一个新 `context.sync` 语句。
+2. You can't have two `return` statements in the same unbranching code path, so delete the final line `return context.sync();` at the end of the `Word.run`. You'll add a new final `context.sync` later in this tutorial.
 
 3. 剪切并粘贴 `doc.body.insertParagraph` 代码行，以替代 `TODO4`。
 
-4. 将 `TODO5` 替换为下面的代码。请注意以下几点：
+4. Replace `TODO5` with the following code. Note:
 
    - 将 `sync` 方法传递到 `then` 函数可确保它不会在 `insertParagraph` 逻辑已排入队列前运行。
 
@@ -503,11 +503,11 @@ function insertTextIntoRange() {
 
 6. 在 `insertTextBeforeRange()` 函数中，将 `TODO1` 替换为以下代码。 注意：
 
-   - 此方法用于在文本为“Office 365”的区域前添加文本为“Office 2019”的区域。 它做了一个简化假设，即存在字符串，且用户已选择它。
+   - The method is intended to add a range whose text is "Office 2019, " before the range with text "Office 365". It makes a simplifying assumption that the string is present and the user has selected it.
 
    - `Range.insertText` 方法的第一个参数是要添加的字符串。
 
-   - 第二个参数指定了应在区域中的什么位置插入其他文本。 若要详细了解位置选项，请参阅前面介绍的 `insertTextIntoRange` 函数。
+   - The second parameter specifies where in the range the additional text should be inserted. For more details about the location options, see the previous discussion of the `insertTextIntoRange` function.
 
     ```js
     var doc = context.document;
@@ -529,7 +529,7 @@ function insertTextIntoRange() {
         //        been queued.
     ```
 
-8. 将 `TODO3` 替换为下面的代码。 这一新段落将说明，新文本***不***属于原始选定区域。 原始区域中的文本仍与用户选择它时一样。
+8. Replace `TODO3` with the following code. This new paragraph will demonstrate the fact that the new text is ***not*** part of the original selected range. The original range still has only the text it had when it was selected.
 
     ```js
     doc.body.insertParagraph("Current text of original range: " + originalRange.text, "End");
@@ -598,15 +598,15 @@ function insertTextIntoRange() {
 
 4. 在文档中，选择短语“即点即用”。 请注意不要包含选定区域前的空格和其后的逗号。**
 
-5. 选择 **“插入缩写”** 按钮。 观察“(C2R)”是否已添加。 此外，还请观察，文档底部是否添加了包含整个扩展文本的新段落，因为新字符串已添加到现有区域中。
+5. Choose the **Insert Abbreviation** button. Note that " (C2R)" is added. Note also that at the bottom of the document a new paragraph is added with the entire expanded text because the new string was added to the existing range.
 
 6. 在文档中，选择短语“Office 365”。 请注意不要包含选定区域前后的空格。**
 
-7. 选择 **“添加版本信息”** 按钮。 观察是否已在“Office 2016”和“Office 365”之间插入“Office 2019”。 此外，还请观察，文档底部是否添加了仅包含最初选定文本的新段落，因为新字符串已变成新区域，而不是添加到原始区域中。
+7. Choose the **Add Version Info** button. Note that "Office 2019, " is inserted between "Office 2016" and "Office 365". Note also that at the bottom of the document a new paragraph is added but it contains only the originally selected text because the new string became a new range rather than being added to the original range.
 
 8. 在文档中，选择“几个”一词。 *请注意，不要在选定区域的前后添加空格。*
 
-9. 选择 **“更改数量术语”** 按钮。 观察选定文本是否替换为“多个”。
+9. Choose the **Change Quantity Term** button. Note that "many" replaces the selected text.
 
     ![Word 教程 - 添加和替换文本](../images/word-tutorial-text-replace-2.png)
 
@@ -716,7 +716,7 @@ function insertTextIntoRange() {
 
    - 第一行代码在文档末尾添加空白段落。 
 
-   - 第二行代码在段落末尾插入 HTML 字符串；具体而言是两个段落，一个设置使用 Verdana 字体格式，另一个采用 Word 文档的默认样式。 （如前面的 `insertImage` 方法一样，`context.document.body` 对象还包含 `insert*` 方法。）
+   - The second line inserts a string of HTML at the end of the paragraph; specifically two paragraphs, one formatted with Verdana font, the other with the default styling of the Word document. (As you saw in the `insertImage` method earlier, the `context.document.body` object also has the `insert*` methods.)
 
     ```js
     var blankParagraph = context.document.body.paragraphs.getLast().insertParagraph("", "After");
@@ -813,7 +813,7 @@ function insertTextIntoRange() {
 > [!NOTE]
 > 虽然可通过 UI 添加到 Word 文档的内容控件有好几种，但目前 Word.js 仅支持格式文本内容控件。
 >
-> 开始执行本教程的这一步之前，建议通过 Word UI 创建和控制格式文本内容控件，以便熟悉此类控件及其属性。 有关详细信息，请参阅[在 Word 中创建用户填写或打印的表单](https://support.office.com/article/create-forms-that-users-complete-or-print-in-word-040c5cc1-e309-445b-94ac-542f732c8c8b)。
+> Before you start this step of the tutorial, we recommend that you create and manipulate Rich Text content controls through the Word UI, so you can be familiar with the controls and their properties. For details, see [Create forms that users complete or print in Word](https://support.office.com/article/create-forms-that-users-complete-or-print-in-word-040c5cc1-e309-445b-94ac-542f732c8c8b).
 
 ### <a name="create-a-content-control"></a>创建内容控件
 
@@ -853,13 +853,13 @@ function insertTextIntoRange() {
 
 6. 在 `createContentControl()` 函数中，将 `TODO1` 替换为以下代码。 注意：
 
-   - 此代码用于在内容控件中包装短语“Office 365”。 它做了一个简化假设，即存在字符串，且用户已选择它。
+   - This code is intended to wrap the phrase "Office 365" in a content control. It makes a simplifying assumption that the string is present and the user has selected it.
 
    - `ContentControl.title` 属性指定内容控件的可见标题。
 
    - `ContentControl.tag` 属性指定标记，可用于通过 `ContentControlCollection.getByTag` 方法获取对内容控件的引用，将用于稍后出现的函数。
 
-   - `ContentControl.appearance` 属性指定控件的外观。 使用值“Tags”表示，控件包装在开始标记和结束标记中，且开始标记包含内容控件标题。 其他可取值包括“BoundingBox”和“None”。
+   - The `ContentControl.appearance` property specifies the visual look of the control. Using the value "Tags" means that the control will be wrapped in opening and closing tags, and the opening tag will have the content control's title. Other possible values are "BoundingBox" and "None".
 
    - `ContentControl.color` 属性指定标记颜色或边界框的边框。
 

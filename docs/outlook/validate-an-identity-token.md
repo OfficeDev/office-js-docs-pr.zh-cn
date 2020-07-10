@@ -1,14 +1,14 @@
 ---
 title: 验证 Outlook 加载项标识令牌
 description: Outlook 加载项可以向你发送 Exchange 用户标识令牌，但是在你信任此请求之前，必须验证该令牌以确保它来自预期的 Exchange 服务器。
-ms.date: 05/08/2020
+ms.date: 07/07/2020
 localization_priority: Normal
-ms.openlocfilehash: 89be659085dbf35b4ad6644eba3b5bf3acd24a9d
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 6ad5f99093530528ec83cfc7a6e3a2571e0df491
+ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44604578"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "45094104"
 ---
 # <a name="validate-an-exchange-identity-token"></a>验证 Exchange 标识令牌
 
@@ -40,7 +40,7 @@ Outlook 加载项可以向你发送 Exchange 用户标识令牌，但是在你�
     - `x5t`声明存在。
 
 - 检查有效负载并验证：
-    - `amurl`中的声明 `appctx` 已设置为授权令牌签名密钥清单文件的位置。 例如， `amurl` Office 365 的预期值为 https://outlook.office365.com:443/autodiscover/metadata/json/1 。 有关详细信息，请参阅下一节[验证域](#verify-the-domain)。
+    - `amurl`中的声明 `appctx` 已设置为授权令牌签名密钥清单文件的位置。 例如， `amurl` Microsoft 365 的预期值为 https://outlook.office365.com:443/autodiscover/metadata/json/1 。 有关详细信息，请参阅下一节[验证域](#verify-the-domain)。
     - 当前时间介于和声明中指定的时间 `nbf` 之间 `exp` 。 `nbf` 声明指定了令牌被视为有效的最早时间，而 `exp` 声明指定了令牌的失效时间。 建议将服务器之间的时钟设置差异考虑在内。
     - `aud`声明是你的外接程序的预期 URL。
     - `version`声明内的声明 `appctx` 已设置为 `ExIdTok.V1` 。
@@ -109,7 +109,7 @@ Outlook 加载项可以向你发送 Exchange 用户标识令牌，但是在你�
 有许多库可以执行常规 JWT 解析和验证。 Microsoft 提供 `System.IdentityModel.Tokens.Jwt` 可用于验证 Exchange 用户标识令牌的库。
 
 > [!IMPORTANT]
-> 我们不再建议使用 Exchange Web 服务托管 API，因为 WebServices 现在仍然可用，但它依赖于不受支持的库（如 Microsoft Microsoft.identitymodel.dll）。
+> 我们不再建议使用 Exchange Web 服务托管 API，因为 Microsoft.Exchange.WebServices.Auth.dll 现在仍然可用，但它依赖于不受支持的库（如 Microsoft.IdentityModel.Extensions.dll）。
 
 ### <a name="systemidentitymodeltokensjwt"></a>System.IdentityModel.Tokens.Jwt
 

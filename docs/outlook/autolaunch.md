@@ -1,37 +1,37 @@
 ---
-title: 配置 Outlook 外接程序以进行基于事件的激活（预览）
+title: '配置 Outlook 外接程序以进行基于事件的激活 (预览) '
 description: 了解如何配置 Outlook 外接程序以进行基于事件的激活。
 ms.topic: article
 ms.date: 05/22/2020
 localization_priority: Normal
-ms.openlocfilehash: 43c1f50f7758efed6472b4d54841c6ed662a20bc
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 7b14dfb425223dbf486173e7df103d1a2cd09641
+ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44611650"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "45093425"
 ---
-# <a name="configure-your-outlook-add-in-for-event-based-activation-preview"></a>配置 Outlook 外接程序以进行基于事件的激活（预览）
+# <a name="configure-your-outlook-add-in-for-event-based-activation-preview"></a>配置 Outlook 外接程序以进行基于事件的激活 (预览) 
 
 如果没有基于事件的激活功能，用户必须显式启动外接程序以完成其任务。 此功能使加载项能够根据特定事件（尤其是适用于每个项目的操作）运行任务。 您还可以与任务窗格和无 UI 功能集成。 目前，支持的事件如下所示。
 
-- `OnNewMessageCompose`：撰写新邮件（包括 "答复"、"全部答复" 和 "转发"）
+- `OnNewMessageCompose`：撰写新邮件时 (包括答复、全部答复和转发) 
 - `OnNewAppointmentOrganizer`：创建新约会时
 
 本演练结束时，您将拥有一个在创建新邮件时运行的外接程序。
 
 > [!IMPORTANT]
-> 只有使用 Office 365 订阅的 Outlook 网页版中的[预览](../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md)才支持此功能。 有关更多详细信息，请参阅[如何预览本文中基于事件的激活功能](#how-to-preview-the-event-based-activation-feature)。
+> 只有使用 Microsoft 365 订阅的 Outlook 网页版中的[预览](../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md)才支持此功能。 有关更多详细信息，请参阅[如何预览本文中基于事件的激活功能](#how-to-preview-the-event-based-activation-feature)。
 >
 > 由于预览功能可能会发生更改，恕不另行通知，它们不应在生产外接程序中使用。
 
 ## <a name="how-to-preview-the-event-based-activation-feature"></a>如何预览基于事件的激活功能
 
-我们邀请你试用基于事件的激活功能！ 让我们知道你的方案以及我们如何通过 GitHub 向我们提供反馈（请参阅本页结尾处的**反馈**部分）来改进你的情况。
+我们邀请你试用基于事件的激活功能！ 请通过 GitHub 向我们提供反馈，告知我们你的方案以及我们如何改进， (请参阅本页结尾处的**反馈**部分) 。
 
 若要预览此功能：
 
-- 参考 CDN 上的**beta**库（ https://appsforoffice.microsoft.com/lib/beta/hosted/office.js) 。 在 CDN 和[jquery.typescript.definitelytyped](https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/master/types/office-js-preview/index.d.ts)中找到 TypeScript 编译和智能感知的[类型定义文件](https://appsforoffice.microsoft.com/lib/beta/hosted/office.d.ts)。 您可以使用安装这些类型 `npm install --save-dev @types/office-js-preview` 。
+- 参考 CDN (上的**beta**库 https://appsforoffice.microsoft.com/lib/beta/hosted/office.js) 。 在 CDN 和[jquery.typescript.definitelytyped](https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/master/types/office-js-preview/index.d.ts)中找到 TypeScript 编译和智能感知的[类型定义文件](https://appsforoffice.microsoft.com/lib/beta/hosted/office.d.ts)。 您可以使用安装这些类型 `npm install --save-dev @types/office-js-preview` 。
 - 通过完成并提交[此请求表单](https://aka.ms/OWAPreview)，请求使用 Microsoft 365 帐户对在 web 上的 Outlook 的预览位进行访问。 我们将在你的租户准备就绪时通知你。
 
 ## <a name="set-up-your-environment"></a>设置环境
@@ -44,9 +44,9 @@ ms.locfileid: "44611650"
 
 1. 在代码编辑器中，打开 "快速启动" 项目。
 
-1. 打开位于项目根目录的**清单 .xml**文件。
+1. 打开位于项目根目录中的**manifest.xml**文件。
 
-1. 选择整个 `<VersionOverrides>` 节点（包括 "打开" 和 "关闭" 标记），并将其替换为以下 XML。
+1. 选择整个 `<VersionOverrides>` 节点 (包括 "打开" 和 "关闭" 标记) 并将其替换为以下 XML。
 
 ```XML
 <VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides" xsi:type="VersionOverridesV1_0">
@@ -205,7 +205,7 @@ Windows 上的 outlook 使用 JavaScript 文件，而 web 上的 Outlook 使用�
 
 用户可以从加载项开始运行的当前邮件项目中进行切换或导航。 启动的外接程序将在后台完成其操作。
 
-基于事件的外接程序不允许更改或更改 UI 的某些 node.js Api。以下是阻止的 Api。
+基于事件的外接程序不允许更改或更改 UI 的一些 Office.js Api。以下是阻止的 Api。
 
 - 在 `Office.context.mailbox` ：
   - `displayAppointmentForm`

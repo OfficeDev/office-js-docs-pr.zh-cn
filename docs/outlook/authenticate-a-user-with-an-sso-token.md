@@ -3,12 +3,12 @@ title: 使用单一登录令牌对用户进行身份验证
 description: 了解如何使用 Outlook 外接程序提供的单一登录令牌为服务实现 SSO。
 ms.date: 04/28/2020
 localization_priority: Normal
-ms.openlocfilehash: 306867c3b71bb139c5c8ab4859618dcea282fd69
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: d53e75faa2d0471b43957cfa71ff6f6a50a0da4f
+ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44606502"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "45093978"
 ---
 # <a name="authenticate-a-user-with-a-single-sign-on-token-in-an-outlook-add-in-preview"></a>在 Outlook 加载项中使用单一登录令牌验证用户（预览版）
 
@@ -24,9 +24,9 @@ ms.locfileid: "44606502"
 > [!NOTE]
 > 若要使用 SSO，必须从外接程序的启动 HTML 页面中的 https://appsforoffice.microsoft.com/lib/beta/hosted/office.js 加载 Office JavaScript 库的 Beta 版。 但是，**不**应在生产外接程序中使用 beta api。
 
-## <a name="enable-modern-authentication-in-your-office-365-tenancy"></a>在 Office 365 租赁中启用新式验证
+## <a name="enable-modern-authentication-in-your-microsoft-365-tenancy"></a>在 Microsoft 365 租赁中启用新式验证
 
-必须为 Office 365 租赁启用新式验证，才能将 SSO 与 Outlook 外接程序结合使用。 若要了解如何执行此操作，请参阅 [Exchange Online: How to enable your tenant for modern authentication](https://social.technet.microsoft.com/wiki/contents/articles/32711.exchange-online-how-to-enable-your-tenant-for-modern-authentication.aspx)（如何为租户启用新式体验）。
+若要将 SSO 与 Outlook 外接程序一起使用，必须为 Microsoft 365 租赁启用新式验证。 若要了解如何执行此操作，请参阅 [Exchange Online: How to enable your tenant for modern authentication](https://social.technet.microsoft.com/wiki/contents/articles/32711.exchange-online-how-to-enable-your-tenant-for-modern-authentication.aspx)（如何为租户启用新式体验）。
 
 ## <a name="register-your-add-in"></a>注册外接程序
 

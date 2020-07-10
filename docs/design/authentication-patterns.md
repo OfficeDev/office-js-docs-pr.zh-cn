@@ -3,12 +3,12 @@ title: Office 外接程序的身份验证设计准则
 description: 了解如何在 Office 外接程序中直观地设计登录页或注册页。
 ms.date: 03/19/2019
 localization_priority: Normal
-ms.openlocfilehash: 5378404054d88e7d7bc4680630c0c0c3de63929d
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 67d072b629f16ea9c5c467b8f59bc4b9211dc225
+ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44607650"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "45093852"
 ---
 # <a name="authentication-patterns"></a>身份验证模式
 
@@ -49,9 +49,9 @@ ms.locfileid: "44607650"
 ## <a name="single-sign-on-authentication-flow-preview"></a>单一登录身份验证流程（预览）
 
 > [!NOTE]
-> 目前，Word、Excel、Outlook 和 PowerPoint 在预览版中支持单一登录 API。 有关单一登录支持的详细信息，请参阅  [IdentityAPI 要求集](../reference/requirement-sets/identity-api-requirement-sets.md)。 如果使用的是 Outlook 加载项，请务必为 Office 365 租赁启用新式验证。 若要了解如何执行此操作，请参阅  [Exchange Online: How to enable your tenant for modern authentication](https://social.technet.microsoft.com/wiki/contents/articles/32711.exchange-online-how-to-enable-your-tenant-for-modern-authentication.aspx)（Exchange Online：如何为租户启用新式验证）。
+> 目前，Word、Excel、Outlook 和 PowerPoint 在预览版中支持单一登录 API。 有关单一登录支持的详细信息，请参阅  [IdentityAPI 要求集](../reference/requirement-sets/identity-api-requirement-sets.md)。 如果您使用的是 Outlook 加载项，请务必为 Microsoft 365 租赁启用新式验证。 若要了解如何执行此操作，请参阅  [Exchange Online: How to enable your tenant for modern authentication](https://social.technet.microsoft.com/wiki/contents/articles/32711.exchange-online-how-to-enable-your-tenant-for-modern-authentication.aspx)（Exchange Online：如何为租户启用新式验证）。
 
-一旦用于生产加载项的单一登录正式发布后，即可使用该正式发布版获取流畅的最终用户体验。 Office 中的用户标识（Microsoft 帐户或 Office 365 标识）用于登录到加载项。 因此，用户只登录一次。 这样便使你的客户更容易上手，体验更为顺畅。
+一旦用于生产加载项的单一登录正式发布后，即可使用该正式发布版获取流畅的最终用户体验。 Office 中的用户标识 (Microsoft 帐户或 Microsoft 365 标识) 用于登录外接程序。 因此，用户只登录一次。 这样便使你的客户更容易上手，体验更为顺畅。
 
 1. 安装加载项时，用户将会看到一个与以下窗口类似的同意窗口：![安装加载项时，Office 应用程序中的同意窗口的屏幕截图](../images/add-in-auth-SSO-consent-dialog.png)
 > [!NOTE]

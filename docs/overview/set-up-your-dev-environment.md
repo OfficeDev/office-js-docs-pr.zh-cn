@@ -1,14 +1,14 @@
 ---
 title: 设置开发环境
 description: 设置开发人员环境以生成 Office 外接程序
-ms.date: 04/03/2020
+ms.date: 07/07/2020
 localization_priority: Normal
-ms.openlocfilehash: f44f8e48aec402f0ffa6327732613a902ea0cfe6
-ms.sourcegitcommit: 19312a54f47a17988ffa86359218a504713f9f09
+ms.openlocfilehash: af59fb644d1001deb74615d6ced294ad77cbf4e6
+ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/10/2020
-ms.locfileid: "44679351"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "45094006"
 ---
 # <a name="set-up-your-development-environment"></a>设置开发环境
 
@@ -16,16 +16,16 @@ ms.locfileid: "44679351"
 
 - Node.js
 - npm
-- Office 365 （Office 的订阅版本）帐户
+- 包含 Office 订阅版本的 Microsoft 365 帐户
 - 您选择的代码编辑器
 
 本指南假定您知道如何使用命令行工具。 
 
-## <a name="install-nodejs"></a>安装 node.js
+## <a name="install-nodejs"></a>安装 Node.js
 
 Node.js 是开发新式 Office 外接程序所需的 JavaScript 运行时。
 
-通过[从网站下载最新的推荐版本](https://nodejs.org)来安装 node.js。 按照操作系统的安装说明进行操作。
+通过[从网站下载最新的推荐版本](https://nodejs.org)来安装 Node.js。 按照操作系统的安装说明进行操作。
 
 ## <a name="install-npm"></a>安装 npm
 
@@ -43,11 +43,11 @@ npm 是一个开放源代码软件注册表，可从中下载用于开发 Office
 npm -v
 ```
 
-您可能希望使用节点版本管理器，以允许在多个版本的 node.js 和 npm 之间进行切换，但这并不是绝对必要的。 有关如何执行此操作的详细信息，[请参阅 npm 的说明](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm)。
+您可能希望使用节点版本管理器，以允许在多个版本的 Node.js 和 npm 之间进行切换，但这并不是绝对必要的。 有关如何执行此操作的详细信息，[请参阅 npm 的说明](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm)。
 
 ## <a name="get-office-365"></a>获取 Office 365
 
-如果还没有 Office 365 账户，可以通过加入 [Office 365 开发人员计划](https://developer.microsoft.com/office/dev-program)获得 90 天免费的可续订 Office 365 订阅。
+如果你还没有 Microsoft 365 帐户，则可以通过加入[microsoft 365 开发人员计划](https://developer.microsoft.com/office/dev-program)获取免费的90天 renewable microsoft 365 订阅。
 
 ## <a name="install-a-code-editor"></a>安装代码编辑器
 

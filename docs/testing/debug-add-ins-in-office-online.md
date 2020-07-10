@@ -1,17 +1,16 @@
 ---
 title: 在 Office 网页版中调试加载项
 description: 如何使用 Office 网页版来测试和调试加载项。
-ms.date: 06/20/2019
+ms.date: 07/07/2020
 localization_priority: Normal
-ms.openlocfilehash: 4f2aa498e5d9f49fcdf306ac2c4c80ea6fbd496c
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: f7ef3fa3d6389629e28b428b9bdbe3b128896b1f
+ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44611237"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "45094489"
 ---
 # <a name="debug-add-ins-in-office-on-the-web"></a>在 Office 网页版中调试加载项
-
 
 您可以在并非运行 Windows 或 Office 2013 或 Office 2016 桌面客户端的计算机上构建和调试外接程序，例如，如果您正在使用 Mac 进行开发。本文介绍如何使用 Office Online 测试和调试您的外接程序。 本文介绍了如何使用 Office 网页版来测试和调试加载项。 
 
@@ -19,12 +18,12 @@ ms.locfileid: "44611237"
 
 首先，请执行以下操作：
 
-- 获取 Office 365 开发人员帐户（如果还没有的话），或获取对 SharePoint 网站的访问权限。
+- 获取 Microsoft 365 开发人员帐户（如果还没有）或有权访问 SharePoint 网站。
 
   > [!NOTE]
-  > 若要获取 90 天免费的可续订 Office 365 开发人员订阅，请加入 [Office 365 开发人员计划](https://developer.microsoft.com/office/dev-program)。请参阅 [Office 365 开发人员计划文档](/office/developer-program/office-365-developer-program)，逐步了解如何加入 Office 365 开发人员计划并配置订阅。
+  > To get a free, 90-day renewable Microsoft 365 developer subscription, join our [Microsoft 365 developer program](https://developer.microsoft.com/office/dev-program). See the [Microsoft 365 developer program documentation](/office/developer-program/office-365-developer-program) for step-by-step instructions about how to join the Microsoft 365 developer program and configure your subscription.
 
-- 在 Office 365 (SharePoint Online) 上创建应用程序目录。应用程序目录是 SharePoint Online 中的专用网站集，用于托管 Office 加载项的文档库。如果你有自己的 SharePoint 网站，可以创建应用程序目录文档库。有关详细信息，请参阅[向 SharePoint 上的应用程序目录发布任务窗格加载项和内容加载项](../publish/publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md)。
+- Set up an app catalog on SharePoint Online. An app catalog is a dedicated site collection in SharePoint Online that hosts document libraries for Office Add-ins. If you have your own SharePoint site, you can set up an app catalog document library. For more information, see [Publish task pane and content add-ins to an app catalog on SharePoint](../publish/publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md).
 
 
 ## <a name="debug-your-add-in-from-excel-or-word-on-the-web"></a>在 Excel 网页版或 Word 网页版中调试加载项
@@ -36,7 +35,7 @@ ms.locfileid: "44611237"
     > [!NOTE]
     > 建议使用 [Yeoman 生成器](https://github.com/OfficeDev/generator-office)创建和托管加载项。
 
-2. 在[加载项清单文件](../develop/add-in-manifests.md)中，将 **SourceLocation** 元素值更新为包括绝对 URI，而不是相对 URI。例如：
+2. In your [add-in manifest file](../develop/add-in-manifests.md), update the **SourceLocation** element value to include an absolute, rather than a relative, URI. For example:
 
     ```xml
     <SourceLocation DefaultValue="https://localhost:44300/App/Home/Home.html" />
@@ -44,7 +43,7 @@ ms.locfileid: "44611237"
 
 3. 将清单上传到 SharePoint 上应用程序目录中的 Office 加载项文档库。
 
-4. 使用 Office 365 中的应用程序启动器来启动 Excel 网页版或 Word 网页版，并打开新文档。
+4. 从 Microsoft 365 中的应用启动器启动 Excel 或 Word，然后打开一个新文档。
 
 5. 在“插入”选项卡上选择“我的外接程序”**** 或“Office 外接程序”**** 以插入您的外接程序并在应用程序中进行测试。
 

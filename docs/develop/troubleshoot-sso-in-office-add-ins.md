@@ -1,14 +1,14 @@
 ---
 title: 排查单一登录 (SSO) 错误消息
-description: 有关如何解决 Office 加载项中的单一登录（SSO）问题，以及如何处理特殊条件或错误的指南。
-ms.date: 04/13/2020
+description: 有关如何解决单一登录 (SSO) 在 Office 外接程序中的问题，以及如何处理特殊条件或错误的指南。
+ms.date: 07/07/2020
 localization_priority: Normal
-ms.openlocfilehash: da42b3b3d9b5cf1fede999a18bbe36c5532bd866
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 49e967aa0d500df64828c66d9dee8574eb948cec
+ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44609697"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "45093558"
 ---
 # <a name="troubleshoot-error-messages-for-single-sign-on-sso-preview"></a>排查单一登录 (SSO) 错误消息（预览）
 
@@ -17,11 +17,11 @@ ms.locfileid: "44609697"
 > [!NOTE]
 > 目前，Word、Excel、Outlook 和 PowerPoint 在预览版中支持单一登录 API。 若要详细了解目前支持单一登录 API 的平台，请参阅 [IdentityAPI 要求集](../reference/requirement-sets/identity-api-requirement-sets.md)。
 > [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
-> 如果使用的是 Outlook 加载项，请务必为 Office 365 租赁启用新式验证。 若要了解如何执行此操作，请参阅 [Exchange Online：如何为租户启用新式验证](https://social.technet.microsoft.com/wiki/contents/articles/32711.exchange-online-how-to-enable-your-tenant-for-modern-authentication.aspx)。
+> 如果您使用的是 Outlook 加载项，请务必为 Microsoft 365 租赁启用新式验证。 若要了解如何执行此操作，请参阅 [Exchange Online：如何为租户启用新式验证](https://social.technet.microsoft.com/wiki/contents/articles/32711.exchange-online-how-to-enable-your-tenant-for-modern-authentication.aspx)。
 
 ## <a name="debugging-tools"></a>调试工具
 
-开发时，强烈建议使用具有以下功能的工具：能够截获并显示加载项 Web 服务发出的 HTTP 请求和发送给它的响应。最热门的两个工具是：
+We strongly recommend that you use a tool that can intercept and display the HTTP Requests from, and Responses to, your add-in's web service when you are developing. Two of the most popular are:
 
 - [Fiddler](https://www.telerik.com/fiddler)：免费使用（[文档](https://docs.telerik.com/fiddler/configure-fiddler/tasks/configurefiddler)）
 - [Charles](https://www.charlesproxy.com)：免费使用 30 天。 （[文档](https://www.charlesproxy.com/documentation/)）
@@ -36,7 +36,7 @@ ms.locfileid: "44609697"
 
 加载项或 Office 版本不支持 [getAccessToken](../develop/sso-in-office-add-ins.md#sso-api-reference) API。
 
-- Office 版本不支持 SSO。 版本必须为任何月度频道中的 Office 365（Office 的订阅版本）。
+- Office 版本不支持 SSO。 在任何月度频道中，所需的版本是 Microsoft 365 订阅。
 - 加载项清单缺少适当的 [WebApplicationInfo](../reference/manifest/webapplicationinfo.md) 部分。
 
 加载项应该通过回退到用户身份验证备用系统来响应此错误。 有关详细信息，请参阅[要求和最佳做法](../develop/sso-in-office-add-ins.md#requirements-and-best-practices)。
@@ -60,11 +60,11 @@ ms.locfileid: "44609697"
 
 ### <a name="13003"></a>13003
 
-用户类型不受支持。 用户未使用有效的 Microsoft 帐户或 Office 365（工作或学校）帐户登录 Office。 例如，当使用本地域帐户运行 Office 时，可能会生成此错误。 代码应回退到用户身份验证备用系统。 有关详细信息，请参阅[要求和最佳做法](../develop/sso-in-office-add-ins.md#requirements-and-best-practices)。
+用户类型不受支持。 用户未使用有效的 Microsoft 帐户或 Microsoft 365 教育版或工作帐户登录 Office。 例如，当使用本地域帐户运行 Office 时，可能会生成此错误。 代码应回退到用户身份验证备用系统。 有关详细信息，请参阅[要求和最佳做法](../develop/sso-in-office-add-ins.md#requirements-and-best-practices)。
 
 ### <a name="13004"></a>13004
 
-资源无效。 （应仅在开发过程中看到此错误。）尚未正确配置加载项清单。 请更新此清单。 有关详细信息，请参阅[验证 Office 加载项的清单](../testing/troubleshoot-manifest.md)。 最常见的问题是**资源**元素（在 **WebApplicationInfo** 元素中）具有与加载项的域不匹配的域。 虽然资源值的协议部分应该是“api”而不是“https”；域名的所有其他部分（包括端口，如果有）应与加载项域名的相应部分相同。
+资源无效。  (仅应在开发过程中看到此错误。 ) 尚未正确配置加载项清单。 请更新此清单。 有关详细信息，请参阅[验证 Office 加载项的清单](../testing/troubleshoot-manifest.md)。 最常见的问题是**资源**元素（在 **WebApplicationInfo** 元素中）具有与加载项的域不匹配的域。 虽然资源值的协议部分应该是“api”而不是“https”；域名的所有其他部分（包括端口，如果有）应与加载项域名的相应部分相同。
 
 ### <a name="13005"></a>13005
 
@@ -82,8 +82,8 @@ Office 主机无法获取对加载项 Web 服务的访问令牌。
 
 - 如果在开发过程中发生此错误，请确保加载项注册和加载项清单指定 `profile` 权限（和 `openid` 权限 - 如果你使用的是 MSAL.NET）。 如需了解更多信息，请参阅[向 Azure AD v2.0 终结点注册加载项](register-sso-add-in-aad-v2.md)。
 - 在生产中，有几种情况可能导致此错误。 其中一些是：
-    - 用户拥有一个 Microsoft 帐户 (MSA) 标识。
-    - 使用 MSA 时，某些导致某个其他工作或学校帐户 13xxx 错误的情况将导致 13007。
+    - 用户 (MSA) 标识提供 Microsoft 帐户。
+    - 在使用 MSA 时，某些会导致 Microsoft 365 教育版或工作帐户出现其他13xxx 错误的情况将导致13007。
 
   对于所有这些情况，代码应回退到用户身份验证备用系统。
 
@@ -93,7 +93,7 @@ Office 主机无法获取对加载项 Web 服务的访问令牌。
 
 ### <a name="13010"></a>13010
 
-用户正在 Microsoft Edge 或 Internet Explorer 上的 Office 中运行加载项。 用户的 Office 365 域和 `login.microsoftonline.com` 域在浏览器设置中位于不同的安全区域中。 此错误仅出现在 **Office 网页版**中。 如果此错误返回，用户将已看到对此进行解释的错误，并链接到关于如何更改区域配置的页面。 如果加载项提供的功能无需用户登录，代码应捕获此错误，并让加载项继续正常运行。
+用户正在 Microsoft Edge 或 Internet Explorer 上的 Office 中运行加载项。 用户的 Microsoft 365 域和 `login.microsoftonline.com` 域在浏览器设置中位于不同的安全区域中。 此错误仅出现在 **Office 网页版**中。 如果此错误返回，用户将已看到对此进行解释的错误，并链接到关于如何更改区域配置的页面。 如果加载项提供的功能无需用户登录，代码应捕获此错误，并让加载项继续正常运行。
 
 ### <a name="13012"></a>13012
 
@@ -108,7 +108,7 @@ Office 主机无法获取对加载项 Web 服务的访问令牌。
 
 ### <a name="13013"></a>13013
 
-`getAccessToken`在短时间内调用次数过多，因此 Office 限制了最近的呼叫。 这通常是由对方法的调用的无限循环引起的。 在某些情况下，建议撤回该方法。 但是，您的代码应使用计数器或标志变量以确保不会重复回调该方法。 如果相同的 "重试" 代码路径再次运行，则代码应回退到用户身份验证的备用系统。 有关代码示例，请参阅如何 `retryGetAccessToken` 在[HomeES6](https://github.com/OfficeDev/Office-Add-in-ASPNET-SSO/blob/master/Complete/Office-Add-in-ASPNET-SSO-WebAPI/Scripts/HomeES6.js)或[ssoAuthES6](https://github.com/OfficeDev/Office-Add-in-NodeJS-SSO/blob/master/Complete/public/javascripts/ssoAuthES6.js)中使用变量。
+`getAccessToken`在短时间内调用次数过多，因此 Office 限制了最近的呼叫。 这通常是由对方法的调用的无限循环引起的。 在某些情况下，建议撤回该方法。 但是，您的代码应使用计数器或标志变量以确保不会重复回调该方法。 如果相同的 "重试" 代码路径再次运行，则代码应回退到用户身份验证的备用系统。 有关代码示例，请参阅如何 `retryGetAccessToken` 在[HomeES6.js](https://github.com/OfficeDev/Office-Add-in-ASPNET-SSO/blob/master/Complete/Office-Add-in-ASPNET-SSO-WebAPI/Scripts/HomeES6.js)或[ssoAuthES6.js](https://github.com/OfficeDev/Office-Add-in-NodeJS-SSO/blob/master/Complete/public/javascripts/ssoAuthES6.js)中使用变量。
 
 ### <a name="50001"></a>50001
 
@@ -124,7 +124,7 @@ Office 主机无法获取对加载项 Web 服务的访问令牌。
 
 ### <a name="conditional-access--multifactor-authentication-errors"></a>条件访问/多重身份验证错误
 
-在特定 AAD 和 Office 365 标识配置中，一些可通过 Microsoft Graph 访问的资源可以要求进行多重身份验证 (MFA)，即使用户的 Office 365 租赁并不要求此验证。 通过代表流收到对 MFA 保护资源的令牌请求时，AAD 会向加载项 Web 服务返回包含 `claims` 属性的 JSON 消息。 claims 属性指明需要进一步执行哪几重身份验证。
+在 AAD 和 Microsoft 365 中的某些标识配置中，Microsoft Graph 可访问的某些资源可能需要多重身份验证 (MFA) ，即使用户的 Microsoft 365 租赁不是这样的。 通过代表流收到对 MFA 保护资源的令牌请求时，AAD 会向加载项 Web 服务返回包含 `claims` 属性的 JSON 消息。 claims 属性指明需要进一步执行哪几重身份验证。
 
 代码应对此 `claims` 属性进行测试。 根据加载项的体系结构，你可以在客户端进行测试，也可以在服务器端进行测试并将其中继到客户端。 客户端需要此信息，因为 Office 处理 SSO 加载项的身份验证。如果从服务器端进行中继，则发送到客户端的消息可以是错误（如 `500 Server Error` 或 `401 Unauthorized`），也可以是成功响应的正文部分（如 `200 OK`）。 无论属于上述哪种情况，代码对加载项 Web API 的客户端 AJAX 调用的（失败或成功）回调都应测试此响应是否有错。 
 
