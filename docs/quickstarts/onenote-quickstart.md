@@ -1,15 +1,15 @@
 ---
 title: 生成首个 OneNote 任务窗格加载项
 description: 了解如何使用 Office JS API 生成简单的 OneNote 任务窗格加载项。
-ms.date: 01/16/2020
+ms.date: 07/07/2020
 ms.prod: onenote
 localization_priority: Priority
-ms.openlocfilehash: 6c09ca26047adeaacf93d77238cf831fbd2601ea
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 6f057d650451d12e834d8f875f40d9d6d71ee4d7
+ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44608913"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "45094153"
 ---
 # <a name="build-your-first-onenote-task-pane-add-in"></a>生成首个 OneNote 任务窗格加载项
 
@@ -102,7 +102,7 @@ try {
 
     - 如果使用使用者帐户登录，请依次选择“我的加载项”**** 选项卡和“上传我的加载项”****。
 
-    - 如果使用工作或学校帐户登录，请依次选择“我的组织”**** 选项卡和“上传我的加载项”****。 
+    - 如果使用工作或教育帐户登录，请依次选择“**我的组织**”选项卡和“**上传我的加载项**”。 
 
     下图展示了使用者笔记本的“**我的加载项**”选项卡。
 

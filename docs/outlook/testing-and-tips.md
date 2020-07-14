@@ -1,14 +1,14 @@
 ---
 title: 部署和安装 Outlook 加载项以进行测试
 description: 创建清单文件，将加载项 UI 文件部署到 Web 服务器，在邮箱中安装加载项，然后测试加载项。
-ms.date: 05/13/2020
+ms.date: 05/20/2020
 localization_priority: Priority
-ms.openlocfilehash: 9b539f2f70a6615cdcf87f0d8d01dd5f0e6c2241
-ms.sourcegitcommit: 9c73a6117d933f0fbe307256aa62e6c84db4e9e3
+ms.openlocfilehash: 97841f7c8112b42cee2927f238b31fe985b2e101
+ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "44222192"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "45093859"
 ---
 # <a name="deploy-and-install-outlook-add-ins-for-testing"></a>部署和安装 Outlook 加载项以进行测试
 
@@ -24,11 +24,11 @@ ms.locfileid: "44222192"
 
 ## <a name="create-a-manifest-file-for-the-add-in"></a>创建加载项清单文件
 
-每个外接程序都通过一个 XML 清单进行描述，该文档为服务器提供有关外接程序的信息，为用户提供外接程序的描述性信息，并标识外接程序 UI HTML 文件的位置。您可以在本地文件夹或服务器上存储该清单，只要所测试的邮箱的 Exchange 服务器能够访问这个位置即可。我们假定您在本地文件夹中存储清单。有关如何创建清单文件的信息，请参阅 [Outlook 外接程序清单](manifests.md)。
+Each add-in is described by an XML manifest, a document that gives the server information about the add-in, provides descriptive information about the add-in for the user, and identifies the location of the add-in UI HTML file. You can store the manifest in a local folder or server, as long as the location is accessible by the Exchange server of the mailbox that you are testing with. We'll assume that you store your manifest in a local folder. For information about how to create a manifest file, see [Outlook add-in manifests](manifests.md).
 
 ## <a name="deploy-an-add-in-to-a-web-server"></a>将加载项部署到 Web 服务器
 
-可以使用 HTML 和 JavaScript 创建外接程序。生成的源文件存储在 Web 服务器上，可供托管外接程序的 Exchange 服务器进行访问。在最初部署外接程序的源文件后，可以将 Web 服务器上存储的 HTML 文件或 JavaScript 文件替换为 HTML 文件的新版本，从而更新外接程序 UI 和行为。
+You can use HTML and JavaScript to create the add-in. The resulting source files are stored on a web server that can be accessed by the Exchange server that hosts the add-in. After initially deploying the source files for the add-in, you can update the add-in UI and behavior by replacing the HTML files or JavaScript files stored on the web server with a new version of the HTML file.
 
 ## <a name="install-the-add-in"></a>安装加载项
 
@@ -36,9 +36,9 @@ ms.locfileid: "44222192"
 
 ### <a name="sideload-the-add-in"></a>旁加载加载项
 
-如果邮箱位于 Exchange Online、Exchange 2013 或更高版本上，可以安装外接程序。至少必须拥有 Exchange Server 的**我的自定义应用程序**角色，才能旁加载外接程序。若要测试外接程序，或通过指定外接程序清单的 URL 或文件名来常规安装外接程序，应让 Exchange 管理员提供必要权限。
+You can install an add-in if your mailbox is on Exchange Online, Exchange 2013 or a later release. Sideloading add-ins requires at minimum the **My Custom Apps** role for your Exchange Server. In order to test your add-in, or install add-ins in general by specifying a URL or file name for the add-in manifest, you should request your Exchange administrator to provide the necessary permissions.
 
-Exchange 管理员可以运行下列 PowerShell cmdlet，向一个用户分配必要权限。在下面的示例中，`wendyri` 是用户的电子邮件别名。
+The Exchange administrator can run the following PowerShell cmdlet to assign a single user the necessary permissions. In this example, `wendyri` is the user's email alias.
 
 ```powershell
 New-ManagementRoleAssignment -Role "My Custom Apps" -User "wendyri"
@@ -52,7 +52,7 @@ $users = Get-Mailbox *$users | ForEach-Object { New-ManagementRoleAssignment -Ro
 
 有关我的自定义应用角色的详细信息，请参阅[我的自定义应用角色](/exchange/my-custom-apps-role-exchange-2013-help)。
 
-使用 Office 365 或 Visual Studio 开发外接程序会向你分配组织管理员角色，这便允许你按 EAC 中的文件或 URL 或者按 Powershell cmdlet 安装外接程序。
+在使用 Microsoft 365 或 Visual Studio 开发加载项时，会向你分配组织管理员角色，这便允许你按 EAC 中的文件或 URL 或者按 Powershell cmdlet 安装加载项。
 
 ### <a name="install-an-add-in-by-using-remote-powershell"></a>使用远程 PowerShell 安装加载项
 
@@ -74,9 +74,9 @@ New-App -URL:"http://<fully-qualified URL">
 
 若要决定测试什么版本的 Outlook 客户端，请综合考虑自己的开发需求。
 
-- 若要开发供私人使用或仅供组织成员使用的外接程序，请务必测试公司使用的 Outlook 版本。请注意，某些用户可能会使用 Outlook 网页版。因此，还请务必测试公司的标准浏览器版本。
+- If you are developing an add-in for private use, or only for members of your organization, then it is important to test the versions of Outlook that your company uses. Keep in mind that some users may use Outlook on the web, so testing your company's standard browser versions is also important.
 
-- 如果开发的是要在 [AppSource](https://appsource.microsoft.com) 中列出的加载项，必须测试[商业市场认证策略 1120.3](/legal/marketplace/certification-policies#11203-functionality) 中指定的必需版本。这包括：
+- If you are developing an add-in to list in [AppSource](https://appsource.microsoft.com), you must test the required versions as specified in the [Commercial marketplace certification policies 1120.3](/legal/marketplace/certification-policies#11203-functionality). This includes:
   - 最新版 Windows 版 Outlook 和前一个版本。
   - 最新版 Mac 版 Outlook。
   - 最新 iOS 版和 Android 版 Outlook（如果加载项[支持移动设备规格](add-mobile-support.md)）。
@@ -84,6 +84,19 @@ New-App -URL:"http://<fully-qualified URL">
 
 > [!NOTE]
 > 如果由于[请求的 API 要求集](apis.md)不受客户端支持，导致外接程序不支持上述客户端之一，将从所需客户端列表中删除相应客户端。
+
+## <a name="outlook-on-the-web-and-exchange-server-versions"></a>Outlook 网页版和 Exchange 服务器版本
+
+在访问 Outlook 网页版时，消费者和 Microsoft 365 帐户用户将看到新式 UI 版本，而不会再看到已弃用的经典版本。 但是，本地 Exchange 服务器将继续支持经典 Outlook 网页版。 因此，在验证过程中，你的提交可能会收到一条警告，指出加载项与经典 Outlook 网页版不兼容。 在这种情况下，需考虑在本地 Exchange 环境中测试加载项。 此警告不会阻止你向 AppSource 提交加载项，但如果消费者是在本地 Exchange 环境中使用 Outlook 网页版，则可能无法获得最佳的体验。
+
+为缓解此问题，我们建议你在连接到你自己的专用本地 Exchange 环境的 Outlook 网页版中对加载项进行测试。 有关详细信息，请参阅有关如何[建立 Exchange 2016 或 Exchange 2019 测试环境](/Exchange/plan-and-deploy/plan-and-deploy?view=exchserver-2019#establish-an-exchange-2016-or-exchange-2019-test-environment)的指南以及有关如何管理[Exchange 服务器中的 Outlook 网页版](/exchange/clients/outlook-on-the-web/outlook-on-the-web?view=exchserver-2019)的指南。
+
+或者，你也可以选择付费并使用托管和管理本地 Exchange 服务器的服务。 可用的选项有：
+
+- [Rackspace](https://www.rackspace.com/email-hosting/exchange-server)
+- [Hostway](https://hostway.com/products-services-2/hosted-microsoft-exchange/)
+
+此外，如果不想面向连接到本地 Exchange 的用户提供自己的加载项，可将加载项清单中的[要求集](../reference/requirement-sets/outlook-api-requirement-sets.md#exchange-server-support)设置为 1.6 或更高版本。 在经典 Outlook 网页版上，不会对此类加载项进行测试或验证。
 
 ## <a name="see-also"></a>另请参阅
 

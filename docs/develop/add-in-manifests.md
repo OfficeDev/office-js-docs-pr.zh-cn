@@ -3,12 +3,12 @@ title: Office 加载项 XML 清单
 description: 获取 Office 加载项清单及其用途概述。
 ms.date: 03/18/2020
 localization_priority: Priority
-ms.openlocfilehash: 0df47ac67a924ab9fd2b3064e0a1ff1b4aa63360
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 4d2fa054cc268b68eb1c05ba82f9cd7745bc8685
+ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44608992"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "45093747"
 ---
 # <a name="office-add-ins-xml-manifest"></a>Office 加载项 XML 清单
 
@@ -18,7 +18,7 @@ Office 外接程序的 XML 清单文件描述，当最终用户安装外接程�
 
 * 通过提供 ID、版本、说明、显示名称和默认区域设置进行自我描述。
 
-* 指定用于为外接程序塑造品牌的图像，以及用于 Office 功能区中[外接程序命令][]的图标。
+* 指定用于为加载项塑造品牌的图像，以及用于 Office 应用功能区中[加载项命令][]的图标。
 
 * 指定外接程序如何与 Office 集成，包括任何自定义 UI，如外接程序创建的功能区按钮。
 
@@ -107,7 +107,7 @@ _\*\* 仅通过 AppSource 分发的加载项才需要 SupportUrl。_
 
 ## <a name="best-practices-for-submitting-to-appsource"></a>关于提交到 AppSource 的最佳做法
 
-确保外接程序 ID 有效且具有唯一 GUID。Web 上提供可用于创建唯一 GUID 的各种 GUID 生成器工具。
+Make sure that the add-in ID is a valid and unique GUID. Various GUID generator tools are available on the web that you can use to create a unique GUID.
 
 提交到 AppSource 的加载项还必须包括 [SupportUrl](../reference/manifest/supporturl.md) 元素。 有关详细信息，请参阅[提交到 AppSource 的应用和加载项的验证策略](/legal/marketplace/certification-policies)。
 
@@ -205,7 +205,7 @@ _\*\* 仅通过 AppSource 分发的加载项才需要 SupportUrl。_
             Think of the FunctionFile as the "code behind" ExecuteFunction-->
           <FunctionFile resid="Contoso.FunctionFile.Url" />
 
-          <!--PrimaryCommandSurface==Main Office Ribbon-->
+          <!--PrimaryCommandSurface==Main Office app ribbon-->
           <ExtensionPoint xsi:type="PrimaryCommandSurface">
             <!--Use OfficeTab to extend an existing Tab. Use CustomTab to create a new tab -->
             <!-- Documentation includes all the IDs currently tested to work -->

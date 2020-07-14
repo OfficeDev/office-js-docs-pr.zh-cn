@@ -1,15 +1,15 @@
 ---
 title: 教程：生成邮件撰写 Outlook 外接程序
 description: 在本教程中，你将生成一个可将 GitHub gist 插入到新邮件正文中的 Outlook 外接程序。
-ms.date: 12/10/2019
+ms.date: 07/07/2020
 ms.prod: outlook
 localization_priority: Priority
-ms.openlocfilehash: 66ce5aa01cc8ef82d8a4bd0030c9e94a9433daad
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 22b06d0c455cfcf0a4331976a4e23e0eeb123415
+ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44611055"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "45093502"
 ---
 # <a name="tutorial-build-a-message-compose-outlook-add-in"></a>教程：生成邮件撰写 Outlook 外接程序
 
@@ -37,7 +37,7 @@ ms.locfileid: "44611055"
     > [!NOTE]
     > 即便先前已安装了 Yeoman 生成器，我们还是建议你通过 npm 将包更新为最新版本。
 
-- Windows 版 Outlook 2016 或更高版本（连接到 Office 365 帐户）或 Outlook 网页版
+- Windows 版 Outlook 2016 或更高版本（关联至 Microsoft 365 帐户）或 Outlook 网页版
 
 - 一个 [GitHub](https://www.github.com) 帐户
 

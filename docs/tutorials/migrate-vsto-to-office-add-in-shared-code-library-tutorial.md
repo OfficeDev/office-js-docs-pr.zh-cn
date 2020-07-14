@@ -1,15 +1,15 @@
 ---
-ms.date: 01/21/2020
+ms.date: 07/07/2020
 ms.prod: non-product-specific
 description: 有关如何在 VSTO 加载项与 Office 加载项之间共享代码的教程。
 title: 教程：使用共享代码库在 VSTO 加载项与 Office 加载项之间共享代码
 localization_priority: Priority
-ms.openlocfilehash: f4306e4a23483b58d1503c1ee257194b430b31ef
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 42903b607bd9bb6f6d81454106b8de03cc47f1e4
+ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44611062"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "45094258"
 ---
 # <a name="tutorial-share-code-between-both-a-vsto-add-in-and-an-office-add-in-with-a-shared-code-library"></a>教程：使用共享代码库在 VSTO 加载项与 Office 加载项之间共享代码
 
@@ -50,7 +50,7 @@ Office 加载项使用 HTML、JavaScript 和其他 Web 技术来构建所有平�
 
 还需要：
 
-- Office 365 帐户。 你可以参加 [Office 365 开发人员计划](https://aka.ms/devprogramsignup)，获取为期 1 年的免费 Office 365 订阅服务。
+- Microsoft 365 帐户。 你可以加入 [Microsoft 365 开发人员计划](https://aka.ms/devprogramsignup)，获取为期 1 年的免费 Office 365 订阅服务。
 - Microsoft Azure 租户。 可以从 [Microsoft Azure](https://account.windowsazure.com/SignUp) 获得试用订阅。
 
 ## <a name="the-cell-analyzer-vsto-add-in"></a>单元格分析器 VSTO 加载项

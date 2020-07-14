@@ -1,21 +1,21 @@
 ---
 title: Outlook 加载项概述
 description: Outlook 加载项由第三方使用基于 Web 的平台集成到 Outlook 中。
-ms.date: 10/09/2019
+ms.date: 07/07/2020
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: 82778f7118166f7ed566fc175599efd7049b9d3a
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 1275f7cae6211d6f6c006b7230b316ffd288a4ec
+ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44609025"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "45093901"
 ---
 # <a name="outlook-add-ins-overview"></a>Outlook 加载项概述
 
 Outlook 加载项由第三方使用基于 Web 的平台集成到 Outlook 中。 Outlook 加载项有三个主要方面：
 
-- 相同的加载项和业务逻辑可跨桌面（Windows 版 Outlook 和 Outlook for Mac）、Web（Office 365 和 Outlook.com）和移动平台使用。
+- 相同的加载项和业务逻辑可跨桌面（Windows 版和 Mac 版 Outlook）、Web（Microsoft 365 和 Outlook.com）和移动平台使用。
 - Outlook 外接程序包括一个清单，其中介绍了如何将外接程序集成到 Outlook（例如，按钮或任务窗格）中，以及构成外接程序 UI 和业务逻辑的 JavaScript/HTML 代码。
 - 最终用户或管理员可以从 [AppSource](https://appsource.microsoft.com) 获取 Outlook 加载项，也可以进行[旁加载](sideload-outlook-add-ins-for-testing.md)。
 
@@ -27,29 +27,28 @@ Outlook 加载项不同于 COM 或 VSTO 的加载项，后者为特定于 Window
 
 ## <a name="extension-points"></a>扩展点
 
-扩展点是加载项与 Outlook 集成的方式。以下是执行此操作的方法：
+Extension points are the ways that add-ins integrate with Outlook. The following are the ways this can be done:
 
-- 加载项可以声明出现在所有邮件和约会的命令界面中的按钮。有关详细信息，请参阅 [用于 Outlook 的加载项命令](add-in-commands-for-outlook.md)。
+- Add-ins can declare buttons that appear in command surfaces across messages and appointments. For more information, see [Add-in commands for Outlook](add-in-commands-for-outlook.md).
 
     **功能区上具有命令按钮的加载项**
 
     ![加载项命令无 UI 形状](../images/uiless-command-shape.png)
 
-- 加载项可以在邮件和约会中中断与正则表达式匹配项或检测实体的链接。 有关详细信息，请参阅 [上下文 Outlook 加载项](contextual-outlook-add-ins.md)。
+- Add-ins can link off regular expression matches or detected entities in messages and appointments. For more information, see [Contextual Outlook add-ins](contextual-outlook-add-ins.md).
 
     **用于突出显示的实体（地址）的上下文相关加载项**
 
     ![在卡片中显示上下文相关应用程序](../images/outlook-detected-entity-card.png)
-
 
 > [!NOTE]
 > [已弃用自定义窗格](https://developer.microsoft.com/outlook/blogs/make-your-add-ins-available-in-the-office-ribbon/)，因此，请确保使用的是受支持的扩展点。
 
 ## <a name="mailbox-items-available-to-add-ins"></a>外接程序可用的邮箱项目
 
-在撰写或阅读时，Outlook 外接程序对邮件或约会可用，但对其他项目类型不可用。如果撰写或阅读窗体中的当前邮件项目为以下项之一，则 Outlook 不会激活邮件外接程序：
+Outlook add-ins are available on messages or appointments while composing or reading, but not other item types. Outlook does not activate add-ins if the current message item, in a compose or read form, is one of the following:
 
-- 使用信息权限管理 (IRM) 进行保护，或使用其他保护方式进行加密。数字签名邮件便是其中一个例子，因为数字签名依赖于这些机制之一。
+- Protected by Information Rights Management (IRM) or encrypted in other ways for protection. A digitally signed message is an example since digital signing relies on one of these mechanisms.
 
 - 具有邮件类别 IPM.Report.* 的送达报告或通知，包括送达和未送达报告 (NDR)，以及已读、未读和延迟通知。
 
@@ -67,7 +66,7 @@ Outlook 加载项不同于 COM 或 VSTO 的加载项，后者为特定于 Window
 
 ## <a name="supported-hosts"></a>支持的主机
 
-Windows 版 Outlook 2013 或更高版本、Mac 版 Outlook 2016 或更高版本、Outlook 网页版（本地 Exchange 2013 和更高版本）、iOS 版 Outlook、Android 版 Outlook 及 Outlook 网页版（Office 365 和 Outlook.com）支持 Outlook 加载项。 并非所有[客户端](../reference/requirement-sets/outlook-api-requirement-sets.md#requirement-sets-supported-by-exchange-servers-and-outlook-clients)都同时支持全部最新功能。 有关这些功能的信息，请参阅文章和 API 参考，了解它们可能在哪些主机中受支持或不受支持。
+Windows 版 Outlook 2013 或更高版本、Mac 版 Outlook 2016 或更高版本、适用于本地 Exchange 2013 和更高版本的 Outlook 网页版、iOS 版 Outlook、Android 版 Outlook 及 Outlook 网页版和 Outlook.com 支持 Outlook 加载项。 并非所有[客户端](../reference/requirement-sets/outlook-api-requirement-sets.md#requirement-sets-supported-by-exchange-servers-and-outlook-clients)都同时支持全部最新功能。 有关这些功能的信息，请参阅文章和 API 参考，了解它们可能在哪些主机中受支持或不受支持。
 
 
 ## <a name="get-started-building-outlook-add-ins"></a>开始构建 Outlook 外接程序

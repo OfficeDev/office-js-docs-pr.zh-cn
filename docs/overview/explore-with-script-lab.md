@@ -1,24 +1,24 @@
 ---
 title: 使用 Script Lab 探索 Office JavaScript API
 description: 使用 Script Lab 探索 Office JS API 和原型功能。
-ms.date: 04/16/2020
+ms.date: 06/10/2020
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: 88c57e163e8fc59e31fec80f5faa0bfbfd96402b
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: ab2d086551dbfa5063615f505d8cb8aa5a210b7a
+ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44604550"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "45094132"
 ---
 # <a name="explore-office-javascript-api-using-script-lab"></a>使用 Script Lab 探索 Office JavaScript API
 
-可从 AppSource 免费获取 [Script Lab 加载项](https://appsource.microsoft.com/product/office/WA104380862)，使用 Excel 或 Word 等 Office 程序时可通过它探索 Office JavaScript API。 Script Lab 是一项方便的工具，可将其作为原型添加到开发工具包，并在加载项中验证你想使用的功能。
+借助 [Script Lab](https://appsource.microsoft.com/product/office/WA104380862) 和[适用于 Outlook 的 Script Lab](https://appsource.microsoft.com/product/office/wa200001603) 加载项（可从 AppSource 免费获取），你可以在使用 Excel 或 Outlook 等 Office 程序时探索 Office JavaScript API。 Script Lab 是一项方便的工具，可将其作为原型添加到开发工具包，并在你自己的加载项中验证你想使用的功能。
 
 ## <a name="what-is-script-lab"></a>什么是 Script Lab？
 
-任何人都可以使用 Script Lab 工具，了解如何在 Excel、Word 或 PowerPoint 中编写使用 Office JavaScript API 的 Office 加载项。 它提供 IntelliSense，让你可以看到可用的内容；并且它是基于 Monaco 框架构建的（Visual Studio Code 也使用该框架）。 通过 Script Lab，可访问示例库以快速试用各项功能，也由示例开始编写自己的代码。 甚至可以通过 Script Lab 试用预览 API。
+Script Lab 是一款面向具有以下需求的用户的工具：希望了解如何在 Excel、Outlook、Word 和 PowerPoint 中开发使用 Office JavaScript API 的 Office 加载项。 它提供 IntelliSense，让你可以看到可用的内容；并且它是基于 Monaco 框架构建的（Visual Studio Code 也使用该框架）。 通过 Script Lab，可访问示例库以快速试用各项功能，也由示例开始编写自己的代码。 甚至可以通过 Script Lab 试用预览 API。
 
 听起来还不错吧？ 观看以下片长一分钟的视频，在操作中了解 Script Lab。
 
@@ -61,9 +61,19 @@ Script Lab 提供许多功能，可帮助你探索 Office JavaScript API 和原�
 - Mac 上的 Office 2016 或更高版本
 - Office 网页版
 
+适用于 Outlook 的 Script Lab 在以下客户端上可用。
+
+- Windows 版 Outlook 2013 或更高版本
+- Mac 版 Outlook 2016 或更高版本
+- 使用 Chrome、Microsoft Edge 或 Safari 浏览器时的 Outlook 网页版
+
+有关适用于 Outlook 的 Script Lab 的更多详细信息，请参阅相关[博客文章](https://developer.microsoft.com/outlook/blogs/script-lab-now-supports-outlook/)。
+
 ## <a name="next-steps"></a>后续步骤
 
 若要在 Excel、Word 或 PowerPoint 中使用 Script Lab，请从 AppSource 安装 [Script Lab 加载项](https://appsource.microsoft.com/product/office/WA104380862)。 
+
+若要使用适用于 Outlook 的 Script Lab，请从 AppSource 安装 [适用于 Outlook 的 Script Lab 加载项](https://appsource.microsoft.com/product/office/wa200001603)。
 
 欢迎将新代码段发布到 [office-js-snippets](https://github.com/OfficeDev/office-js-snippets#office-js-snippets) GitHub 存储库，以扩充 Script Lab 中的示例库。
 
@@ -71,7 +81,8 @@ Script Lab 提供许多功能，可帮助你探索 Office JavaScript API 和原�
 
 ## <a name="see-also"></a>另请参阅
 
-- [获取 Script Lab](https://appsource.microsoft.com/product/office/WA104380862)
+- [获取适用于 Excel、Word 或 Powerpoint 的 Script Lab](https://appsource.microsoft.com/product/office/WA104380862)
+- [获取适用于 Outlook 的 Script Lab](https://appsource.microsoft.com/product/office/wa200001603)
 - [详细了解 Script Lab](https://github.com/OfficeDev/script-lab#script-lab-a-microsoft-garage-project)
-- [加入 Office 365 开发人员计划](https://developer.microsoft.com/office/dev-program)
+- [加入 Microsoft 365 开发人员计划](https://developer.microsoft.com/office/dev-program)
 - [构建 Office 加载项](../overview/office-add-ins-fundamentals.md)

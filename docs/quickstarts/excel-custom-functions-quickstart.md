@@ -4,12 +4,12 @@ description: 在 Excel 中开发自定义函数快速入门指南。
 title: 自定义函数快速入门
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: 7695a8c4cb3229d2fc215e2f7111414d4227ea8f
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 126349f316cc923349f3f42e719c0017bbd7d7c0
+ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44611594"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "45094146"
 ---
 # <a name="get-started-developing-excel-custom-functions"></a>开始开发 Excel 自定义函数
 
@@ -20,8 +20,8 @@ ms.locfileid: "44611594"
 [!include[Set up requirements](../includes/set-up-dev-environment-beforehand.md)]
 [!include[Yeoman generator prerequisites](../includes/quickstart-yo-prerequisites.md)]
 
-* Windows 版 Excel（版本 1904 或更高版本，关联至 Office 365 订阅）或 Excel 网页版
-* Mac 版 Office（关联到 Office 365 订阅）支持 Excel 自定义函数，并且本教程即将推出相关更新。
+* Windows 版 Excel（版本 1904 或更高版本，关联至 Microsoft 365 订阅）或 Excel 网页版
+* Mac 版 Office（关联至 Microsoft 365 订阅）支持 Excel 自定义函数，并且本教程即将推出相关更新。
 
 >[!NOTE]
 >Office 2019（一次性购买）不支持 Excel 自定义函数。

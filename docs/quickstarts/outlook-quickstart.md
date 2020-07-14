@@ -4,12 +4,12 @@ description: 了解如何使用 Office JS API 生成简单的 Outlook 任务窗�
 ms.date: 06/23/2020
 ms.prod: outlook
 localization_priority: Priority
-ms.openlocfilehash: 07f4eeae8cfd4a1962c15640555b2283a8d9fa3b
-ms.sourcegitcommit: a4873c3525c7d30ef551545d27eb2c0a16b4eb50
+ms.openlocfilehash: 6eb510986ebb9cd8a4362f8c11f744e694bef5f7
+ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2020
-ms.locfileid: "44888150"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "45094160"
 ---
 # <a name="build-your-first-outlook-add-in"></a>生成首个 Outlook 加载项
 
@@ -134,7 +134,7 @@ ms.locfileid: "44888150"
 - Office 365
 
     > [!NOTE]
-    > 如果没有 Office 365 订阅，可以通过注册 [Office 365 开发人员计划](https://developer.microsoft.com/office/dev-program)获取一个免费订阅。
+    > 如果没有 Microsoft 365 订阅，可以通过注册 [Microsoft 365 开发人员计划](https://developer.microsoft.com/office/dev-program)获取一个免费订阅。
 
 ### <a name="create-the-add-in-project"></a>创建加载项项目
 
@@ -267,7 +267,7 @@ ms.locfileid: "44888150"
 1. 在“连接到 Exchange 电子邮件帐户”**** 对话框中，输入你的 [Microsoft 帐户](https://account.microsoft.com/account)的电子邮件地址和密码，然后选择“连接”****。 如果 Outlook.com 登录页是在浏览器中打开，请使用先前输入的相同凭据登录电子邮件帐户。
 
     > [!NOTE]
-    > 如果“连接到 Exchange 电子邮件帐户”**** 对话框重复提示你登录，可能是因为基本身份验证已对 Office 365 租户上的帐户禁用。 若要测试此加载项，请改用 [Microsoft 帐户](https://account.microsoft.com/account)登录。
+    > 如果“**连接到 Exchange 电子邮件帐户**”对话框重复提示你登录，则可能已对你 Microsoft 365 租户上的帐户禁用基本身份验证。 若要测试此加载项，请改用 [Microsoft 帐户](https://account.microsoft.com/account)登录。
 
 1. 在 Outlook 网页版中，选择或打开邮件。
 

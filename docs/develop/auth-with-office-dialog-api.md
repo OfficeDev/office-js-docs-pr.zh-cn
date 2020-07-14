@@ -1,18 +1,18 @@
 ---
 title: 使用 Office 对话框 API 进行身份验证和授权
 description: 了解如何使用 Office 对话框 API 使用户能够登录到 Google、Facebook、Microsoft 365 以及受 Microsoft 标识平台保护的其他服务。
-ms.date: 01/25/2020
+ms.date: 07/07/2020
 localization_priority: Priority
-ms.openlocfilehash: e7dd0778e840c2cbfd415534d04f5b014f58fafc
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: b119d27c0b4ca7bc91004ce8c1df7ac8f4830122
+ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44608423"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "45093733"
 ---
 # <a name="authenticate-and-authorize-with-the-office-dialog-api"></a>使用 Office 对话框 API 进行身份验证和授权
 
-许多身份验证机构（也称为安全令牌服务 (STS)）会阻止其登录页面在 iframe 中打开。 这包括 Google、Facebook 以及由 Microsoft 身份平台（以前称为 Azure AD V 2.0）保护的服务，例如 Microsoft 帐户和 Office 365（工作或学校帐户）。 这会导致 Office 加载项出现问题，因为当此加载项在 **Office 网页版**上运行时，任务窗格是一个 iframe。 如果加载项可以打开完全独立的浏览器实例,则加载项的用户只能登录到其中一个服务。 这就是为什么 Office 提供 [Office 对话框 API](dialog-api-in-office-add-ins.md)（尤其是[displayDialogAsync](/javascript/api/office/office.ui) 方法）的原因。
+许多身份验证机构（也称为安全令牌服务 (STS)）会阻止其登录页面在 iframe 中打开。 这包括 Google、Facebook 以及由 Microsoft 标识平台（以前称为 Azure AD V 2.0）保护的服务，例如 Microsoft 帐户、Microsoft 365 教育或工作帐户以及其他常用帐户。 这会导致 Office 加载项出现问题，因为当此加载项在 **Office 网页版**上运行时，任务窗格是一个 iframe。 如果加载项可以打开完全独立的浏览器实例,则加载项的用户只能登录到其中一个服务。 这就是为什么 Office 提供 [Office 对话框 API](dialog-api-in-office-add-ins.md)（尤其是[displayDialogAsync](/javascript/api/office/office.ui) 方法）的原因。
 
 > [!NOTE]
 > 本文假设你熟悉[在 Office 加载项中使用 Office 对话框 API](dialog-api-in-office-add-ins.md)。
@@ -46,16 +46,16 @@ ms.locfileid: "44608423"
 
 #### <a name="support-multiple-identity-providers"></a>支持多个标识提供程序
 
-如果外接程序允许用户选择提供程序（如 Microsoft 帐户、Google 或 Facebook），你需要使用本地第一个页面（见前一部分），为用户提供用于选择提供程序的 UI。用户的选择会触发登录 URL 的构建并重定向到该 URL。
+If your add-in gives the user a choice of providers, such as Microsoft Account, Google, or Facebook, you need a local first page (see preceding section) that provides a UI for the user to select a provider. Selection triggers the construction of the sign-in URL and redirection to it.
 
 #### <a name="authorization-of-the-add-in-to-an-external-resource"></a>在外接程序中授权外部资源
 
-在现代网络中，用户和 Web 应用程序是安全主体。 应用程序拥有自己的身份以及对联机资源（如 Office 365、Google Plus、Facebook 或 LinkedIn）的权限。 在部署前，需要先向资源提供程序注册应用程序。 注册内容包括：
+在现代网络中，用户和 Web 应用程序是安全主体。 应用程序拥有自己的身份以及对联机资源（如 Microsoft 365、Google Plus、Facebook 或 LinkedIn）的权限。 在部署前，需要先向资源提供程序注册应用程序。 注册内容包括：
 
 - 应用程序访所需的权限的列表。
 - 当应用访问服务时，资源服务应向其返回访问令牌的 URL。  
 
-如果用户在应用中调用访问资源服务中用户数据的函数，系统会先提示用户登录相应服务，再提示用户向应用授予访问用户资源所需的权限。然后，服务将登录窗口重定向到先前注册的 URL，并传递访问令牌。应用使用访问令牌访问用户资源。
+When a user invokes a function in the application that accesses the user's data in the resource service, they are prompted to sign in to the service and then prompted to grant the application the permissions it needs to the user's resources. The service then redirects the sign-in window to the previously registered URL and passes the access token. The application uses the access token to access the user's resources.
 
 可以使用 Office 对话框 API 来管理此过程，具体方法是使用与用户登录流程类似的流程。 唯一区别在于：
 

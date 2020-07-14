@@ -4,12 +4,12 @@ description: 使用 Yeoman 生成器生成使用单一登录的 Node.js Office �
 ms.date: 02/20/2020
 ms.prod: non-product-specific
 localization_priority: Priority
-ms.openlocfilehash: 3e107d9143836798208e5cf55db28877c9c97e6d
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 4ebe48054b06ae5022d57d3846b0f97b7c205164
+ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44608850"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "45094461"
 ---
 # <a name="use-the-yeoman-generator-to-create-an-office-add-in-that-uses-single-sign-on-preview"></a>使用 Yeoman 生成器创建使用单一登录的 Node.js Office 加载项（预览版）。
 
@@ -79,7 +79,7 @@ Yeoman 生成器简化了 SSO 加载项的创建流程，能够自动执行在 A
     > [!WARNING]
     > 如果租户已配置为需要双因素验证，则此命令将失败。 在此情况中，需要按照“[创建使用单一登录的 Node.js Office 加载项](../develop/create-sso-office-add-ins-nodejs.md)”教程所述，手动完成 Azure 应用程序注册和 SSO 配置步骤。
 
-3. Web 浏览器窗口将打开，并提示登录 Azure。 使用现有的 Office 365 管理员凭据登录到 Azure。 这些凭据将用于在 Azure 中注册新的应用程序并配置 SSO 所需的设置。
+3. Web 浏览器窗口将打开，并提示登录 Azure。 使用现有的 Microsoft 365 管理员凭据登录到 Azure。 这些凭据将用于在 Azure 中注册新的应用程序并配置 SSO 所需的设置。
 
     > [!NOTE]
     > 在此步骤中，如果使用非管理员凭据登录 Azure，`configure-sso` 脚本将无法向组织中的用户提供该加载项的管理员许可。 因此，该加载项的用户无法使用 SSO，系统将提示用户登录。
@@ -103,7 +103,7 @@ Yeoman 生成器简化了 SSO 加载项的创建流程，能够自动执行在 A
     npm start
     ```
 
-2. 在运行上一个命令（即 Excel、 Word 或 PowerPoin）时打开的 Office 客户端应用程序中，确保登录的用户与在[上一节](#configure-sso)第 3 步中配置 SSO 时用于连接至 Azure 所使用的 Office 365 管理员账户是同一 Office 365 组织的成员。 执行此操作，将为成功进行 SSO 建立了相应的条件。 
+2. 在运行上一个命令时打开的 Office 客户端应用程序（如 Excel、Word 或 PowerPoint）中，确保登录的用户与在[上一节](#configure-sso)第 3 步中配置 SSO 时用于连接至 Azure 的 Microsoft 365 管理员帐户是同一 Microsoft 365 组织的成员。 执行此操作，将为成功进行 SSO 建立了相应的条件。 
 
 3. 在 Office 客户端应用程序中，依次选择的“**开始**”选项卡和功能区中的“**显示任务窗格**”按钮，以打开加载项任务窗格。 下图显示 Excel 中的该按钮。
 
@@ -111,7 +111,7 @@ Yeoman 生成器简化了 SSO 加载项的创建流程，能够自动执行在 A
 
 4. 在任务窗格底部，选择 “**获取我的用户配置文件信息**”按钮以开始 SSO 流程。 
 
-5. 如果对话框窗口显示代表加载项请求权限，则表示 你的方案不支持 SSO，并且加载项已退回至替代的用户身份验证方法。 租户管理员未向用户授予访问 Microsoft Graph 的许可，或未使用有效的 Microsoft 帐户或 Office 365 （“工作或学校”）帐户登录 Office 时，可能会出现这种情况。 选择对话框窗口中的“**接受**”按钮以继续。
+5. 如果对话框窗口显示代表加载项请求权限，则表示 你的方案不支持 SSO，并且加载项已退回至替代的用户身份验证方法。 当租户管理员未授予使用加载项访问 Microsoft Graph 的许可，或用户未使用有效的 Microsoft 帐户或 Microsoft 365 教育或工作帐户登录 Office 时，可能会出现这种情况。 选择对话框窗口中的“**接受**”按钮以继续。
 
     ![权限请求对话框](../images/sso-permissions-request.png)
 
@@ -135,7 +135,7 @@ Yeoman 生成器简化了 SSO 加载项的创建流程，能够自动执行在 A
     npm start
     ```
 
-2. 按照[旁加载 Outlook 加载项以供测试](../outlook/sideload-outlook-add-ins-for-testing.md)中的说明操作，旁加载 Outlook 加载项。 确保登录的用户与在[上一节](#configure-sso)第 3 步中配置 SSO 时用于连接至 Azure 所使用的 Office 365 管理员帐户是同一个 Office 365 组织的成员。 执行此操作，将为成功进行 SSO 建立了相应的条件。 
+2. 按照[旁加载 Outlook 加载项以供测试](../outlook/sideload-outlook-add-ins-for-testing.md)中的说明操作，旁加载加载项。 确保用于登录 Outlook 的用户与在[上一节](#configure-sso)第 3 步中配置 SSO 时用于连接至 Azure 的 Microsoft 365 管理员帐户是同一 Microsoft 365 组织的成员。 执行此操作，将为成功进行 SSO 建立了相应的条件。 
 
 3. 在 Outlook 中，撰写一封新邮件。
 
@@ -145,7 +145,7 @@ Yeoman 生成器简化了 SSO 加载项的创建流程，能够自动执行在 A
 
 5. 在任务窗格底部，选择“获取我的用户配置文件信息”**** 按钮以开始 SSO 流程。 
 
-6. 如果对话框窗口显示代表加载项请求权限，则表示 你的方案不支持 SSO，并且加载项已退回至替代的用户身份验证方法。 租户管理员未向用户授予访问 Microsoft Graph 的许可，或未使用有效的 Microsoft 帐户或 Office 365 （“工作或学校”）帐户登录 Office 时，可能会出现这种情况。 选择对话框窗口中的“**接受**”按钮以继续。
+6. 如果对话框窗口显示代表加载项请求权限，则表示 你的方案不支持 SSO，并且加载项已退回至替代的用户身份验证方法。 当租户管理员未授予使用加载项访问 Microsoft Graph 的许可，或用户未使用有效的 Microsoft 帐户或 Microsoft 365 教育或工作帐户登录 Office 时，可能会出现这种情况。 选择对话框窗口中的“**接受**”按钮以继续。
 
     ![权限请求对话框](../images/sso-permissions-request.png)
 

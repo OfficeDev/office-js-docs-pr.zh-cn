@@ -3,12 +3,12 @@ title: Outlook 加载项中的身份验证选项
 description: Outlook 加载项 根据特定场景提供了多种不同的身份验证方法。
 ms.date: 04/28/2020
 localization_priority: Priority
-ms.openlocfilehash: 0a8c61a3e722cf1bcbfd1d9706c2dc41a7271345
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 7864b2cfe76154fc8f939f0838095d23ad727054
+ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44606488"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "45094013"
 ---
 # <a name="authentication-options-in-outlook-add-ins"></a>Outlook 加载项中的身份验证选项
 
@@ -23,11 +23,11 @@ Outlook 加载项可以访问 Internet 上任意位置的信息，无论是托�
 >
 > 若要使用 SSO，必须从加载项的启动 HTML 页面中的 https://appsforoffice.microsoft.com/lib/beta/hosted/office.js 加载 Office JavaScript 库的 Beta 版。
 >
-> 如果使用的是 Outlook 加载项，请务必为 Office 365 租赁启用新式验证。 若要了解如何这样做，请参阅 [Exchange Online：如何为租户启用新式验证](https://social.technet.microsoft.com/wiki/contents/articles/32711.exchange-online-how-to-enable-your-tenant-for-modern-authentication.aspx)。
+> 如果使用的是 Outlook 加载项，请务必为 Microsoft 365 租赁启用新式验证。 若要了解如何执行此操作，请参阅 [Exchange Online: How to enable your tenant for modern authentication](https://social.technet.microsoft.com/wiki/contents/articles/32711.exchange-online-how-to-enable-your-tenant-for-modern-authentication.aspx)（如何为租户启用新式体验）。
 
 如果加载项符合以下情况，请考虑使用 SSO 访问令牌：
 
-- 主要由 Office 365 用户使用
+- 主要由 Microsoft 365 用户使用
 - 需要访问以下服务：
   - 作为 Microsoft Graph 的一部分公开的 Microsoft 服务
   - 你控制的非 Microsoft 服务

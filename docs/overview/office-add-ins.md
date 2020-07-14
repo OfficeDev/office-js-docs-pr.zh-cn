@@ -5,44 +5,44 @@ ms.date: 02/13/2020
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: cf5ef2eb6ad0fd8052484bed198bf7bb9597a059
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 6b162a166bda0c988f5fbbaade3b0bef4b650984
+ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44611959"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "45094069"
 ---
 # <a name="office-add-ins-platform-overview"></a>Office 加载项平台概述
 
-可以使用 Office 加载项平台来生成解决方案，用于扩展 Office 应用程序，并与 Office 文档中的内容进行交互。通过 Office 加载项，可以使用熟悉的 Web 技术（如 HTML、CSS 和 JavaScript）来扩展 Word、Excel、PowerPoint、OneNote，Project 和 Outlook，并与之交互。解决方案可以跨多个平台（包括 Windows、Mac、iPad 和浏览器）在 Office 中运行。
+You can use the Office Add-ins platform to build solutions that extend Office applications and interact with content in Office documents. With Office Add-ins, you can use familiar web technologies such as HTML, CSS, and JavaScript to extend and interact with Word, Excel, PowerPoint, OneNote, Project, and Outlook. Your solution can run in Office across multiple platforms, including Windows, Mac, iPad, and in a browser.
 
 ![Office 加载项可扩展性图像](../images/addins-overview.png)
 
-网页在浏览器中能执行的操作，Office 加载项差不多都能执行。使用 Office 加载项平台可以执行下列操作：
+Office Add-ins can do almost anything a webpage can do inside a browser. Use the Office Add-ins platform to:
 
--  **将新功能添加到 Office 客户端** - 将外部数据引入 Office、自动处理 Office 文档、在 Office 客户端中公开第三方功能等。例如，使用 Microsoft Graph API，可以连接到提升工作效率的数据。
+-  **Add new functionality to Office clients** - Bring external data into Office, automate Office documents, expose third-party functionality in Office clients, and more. For example, use Microsoft Graph API to connect to data that drives productivity.
 
 -  **新建可嵌入到 Office 文档的丰富、交互式对象** - 用户可添加到其自己的 Excel 电子表格和 PowerPoint 演示文稿的嵌入式地图、图表和交互式可视化效果。
 
 ## <a name="how-are-office-add-ins-different-from-com-and-vsto-add-ins"></a>Office 加载项与 COM 和 VSTO 加载项有何不同？
 
-COM 或 VSTO 加载项是旧 Office 集成解决方案，仅在 Windows 版 Office 上运行。与 COM 加载项不同，Office 加载项不涉及在用户设备或 Office 客户端中运行的代码。对于 Office 加载项，主机应用程序（例如 Excel）会读取加载项清单，并挂钩 UI 中的加载项自定义功能区按钮和菜单命令。如果需要，它加载加载项的 JavaScript 和 HTML 代码，此代码在沙盒中的浏览器上下文范围内执行。
+COM or VSTO add-ins are earlier Office integration solutions that run only on Office on Windows. Unlike COM add-ins, Office Add-ins don't involve code that runs on the user's device or in the Office client. For an Office Add-in, the host application, for example Excel, reads the add-in manifest and hooks up the add-in’s custom ribbon buttons and menu commands in the UI. When needed, it loads the add-in's JavaScript and HTML code, which executes in the context of a browser in a sandbox.
 
 ![使用 Office 加载项的理由的图像](../images/why.png)
 
 相较于使用 VBA、COM 或 VSTO 生成的加载项，Office 加载项提供以下优势：
 
-- 跨平台支持。Office 加载项在 Office 网页版、Windows 版 Office、Mac 版 Office 和 iPad 版 Office中运行。
+- Cross-platform support. Office Add-ins run in Office on the web, Windows, Mac, and iPad.
 
-- 集中部署和分发：管理员可以在整个组织内集中部署 Office 加载项。
+- Centralized deployment and distribution. Admins can deploy Office Add-ins centrally across an organization.
 
-- 可通过 AppSource 轻松使用：可以将解决方案提交到 AppSource，供广大受众使用。
+- Easy access via AppSource. You can make your solution available to a broad audience by submitting it to AppSource.
 
-- 以标准 Web 技术为依据：可以使用所需的任何库来生成 Office 加载项。
+- Based on standard web technology. You can use any library you like to build Office Add-ins.
 
 ## <a name="components-of-an-office-add-in"></a>Office 外接程序的组件
 
-Office 外接程序包括两个基本组件：XML 清单文件和你自己的 Web 应用程序。此清单定义各种设置，包括将外接程序与 Office 客户端集成的方式。需要在 Web 服务器或 Web 托管服务上托管 Web 应用程序，例如 Microsoft Azure。
+An Office Add-in includes two basic components: an XML manifest file, and your own web application. The manifest defines various settings, including how your add-in integrates with Office clients. Your web application needs to be hosted on a web server, or web hosting service, such as Microsoft Azure.
 
 ### <a name="manifest"></a>清单
 
@@ -56,7 +56,7 @@ Office 外接程序包括两个基本组件：XML 清单文件和你自己的 We
 
 ### <a name="web-app"></a>Web 应用
 
-最基本的 Office 加载项包括在 Office 应用中显示的静态 HTML 页面，但此页面并不与 Office 文档或其他任何 Internet 资源交互。不过，若要创建与 Office 文档交互的体验，或创建允许用户通过 Office 主机应用与在线资源交互的体验，可以使用托管提供程序支持的任何客户端和服务器端技术（如 ASP.NET、PHP 或 Node.js）。若要与 Office 客户端和文档交互，可以使用 Office.js JavaScript API。
+The most basic Office Add-in consists of a static HTML page that is displayed inside an Office application, but that doesn't interact with either the Office document or any other Internet resource. However, to create an experience that interacts with Office documents or allows the user to interact with online resources from an Office host application, you can use any technologies, both client and server side, that your hosting provider supports (such as ASP.NET, PHP, or Node.js). To interact with Office clients and documents, you use the Office.js JavaScript APIs.
 
 *图 2：Hello World Office 加载项的组件*
 
@@ -82,7 +82,7 @@ Office 外接程序可以在 Office 主机应用程序中执行下列操作：
 
 #### <a name="custom-buttons-and-menu-commands"></a>自定义按钮和菜单命令  
 
-可以向 Office 网页版和 Windows 版 Office 中的功能区添加自定义功能区按钮和菜单项。这样一来，用户可以直接从 Office 应用程序访问加载项。命令按钮可以启动不同的操作，如显示包含自定义 HTML 的任务窗格或执行 JavaScript 函数。  
+You can add custom ribbon buttons and menu items to the ribbon in Office on the web and Windows. This makes it easy for users to access your add-in directly from their Office application. Command buttons can launch different actions such as showing a task pane with custom HTML or executing a JavaScript function.  
 
 *图 3. 功能区中的加载项命令*
 
@@ -90,7 +90,7 @@ Office 外接程序可以在 Office 主机应用程序中执行下列操作：
 
 #### <a name="task-panes"></a>任务窗格  
 
-除了通过加载项命令以外，用户还可以使用任务窗格与解决方案进行交互。不支持加载项命令的客户端（Office 2013 和 iPad 版 Office）以任务窗格的形式运行加载项。用户通过“插入”**** 选项卡上的“我的加载项”**** 按钮，启动任务窗格加载项。
+You can use task panes in addition to add-in commands to enable users to interact with your solution. Clients that do not support add-in commands (Office 2013 and Office on iPad) run your add-in as a task pane. Users launch task pane add-ins via the **My Add-ins** button on the **Insert** tab.
 
 *图 4：任务窗格*
 
@@ -98,15 +98,15 @@ Office 外接程序可以在 Office 主机应用程序中执行下列操作：
 
 ### <a name="extend-outlook-functionality"></a>扩展 Outlook 功能
 
-Outlook 外接程序可扩展 Office 功能区，还可以在查看或撰写 Outlook 项目时在其旁边的上下文中显示。当用户查看接收的项目或回复或创建新项目时，它们可以与电子邮件、会议请求、会议响应、会议取消或约会一起使用。 
+Outlook add-ins can extend the Office app ribbon and also display contextually next to an Outlook item when you're viewing or composing it. They can work with an email message, meeting request, meeting response, meeting cancellation, or appointment when a user is viewing a received item or replying or creating a new item. 
 
-Outlook 加载项可以访问邮件项目中的上下文信息（如地址或跟踪 ID），然后使用此类数据来访问服务器和 Web 服务上的其他信息，以打造极具吸引力的用户体验。在大多数情况下，Outlook 加载项无需修改即可在 Outlook 主机应用程序上运行，以在桌面、Web 以及平板电脑和移动设备上提供无缝体验。
+Outlook add-ins can access contextual information from the item, such as an address or tracking ID, and then use that data to access additional information on the server and from web services to create compelling user experiences. In most cases, an Outlook add-in runs without modification in the Outlook host application to provide a seamless experience on the desktop, web, and tablet and mobile devices.
 
 有关 Outlook 加载项的概述，请参阅 [Outlook 加载项概述](../outlook/outlook-add-ins-overview.md)。
 
 ### <a name="create-new-objects-in-office-documents"></a>在 Office 文档中新建对象
 
-可以在 Excel 和 PowerPoint 文档中嵌入基于 Web 的对象（称为“内容加载项”）。通过内容加载项，可以集成基于 Web 的丰富数据可视化、媒体（如 YouTube 视频播放器或图片库）和其他外部内容。
+You can embed web-based objects called content add-ins within Excel and PowerPoint documents. With content add-ins, you can integrate rich, web-based data visualizations, media (such as a YouTube video player or a picture gallery), and other external content.
 
 *图 5：内容加载项*
 
@@ -114,7 +114,7 @@ Outlook 加载项可以访问邮件项目中的上下文信息（如地址或跟
 
 ## <a name="office-javascript-apis"></a>Office JavaScript API
 
-Office JavaScript API 包含的对象和成员适用于生成加载项，并与 Office 内容和 Web 服务交互。Excel、Outlook、Word、PowerPoint、OneNote 和 Project 共用一个常见对象模型。对于 Excel 和 Word，还有更多主机专用对象模型。这些 API 提供对已知对象（如段落和工作簿）的访问权限，以便于能够更轻松地为特定主机创建加载项。  
+The Office JavaScript APIs contain objects and members for building add-ins and interacting with Office content and web services. There is a common object model that is shared by Excel, Outlook, Word, PowerPoint, OneNote and Project. There are also more extensive host-specific object models for Excel and Word. These APIs provide access to well-known objects such as paragraphs and workbooks, which makes it easier to create an add-in for a specific host.  
 
 ## <a name="next-steps"></a>后续步骤
 

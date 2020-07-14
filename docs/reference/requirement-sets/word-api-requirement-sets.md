@@ -4,16 +4,16 @@ description: 针对 Word 内部版本的 Office 加载项要求集信息。
 ms.date: 04/16/2020
 ms.prod: word
 localization_priority: Priority
-ms.openlocfilehash: bffd78455cd6d87a1323c4133ce16f9723e37a4c
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: d9845d6670d19ab1910410bb26ab5806c84c6b84
+ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44611281"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "45094288"
 ---
 # <a name="word-javascript-api-requirement-sets"></a>Word JavaScript API 要求集
 
-要求集是指各组已命名的 API 成员。Office 加载项使用清单中指定的要求集或执行运行时检查，以确定 Office 主机是否支持加载项所需的 API。有关详细信息，请参阅 [Office 版本和要求集](../../develop/office-versions-and-requirement-sets.md)。
+Requirement sets are named groups of API members. Office Add-ins use requirement sets specified in the manifest or use a runtime check to determine whether an Office host supports APIs that an add-in needs. For more information, see [Office versions and requirement sets](../../develop/office-versions-and-requirement-sets.md).
 
 ## <a name="requirement-set-availability"></a>要求集可用性
 
@@ -24,7 +24,7 @@ Word 加载项可在多个 Office 版本中运行，包括 Windows 版 Office 20
 >
 > 有关使用预览 API 的信息，请参阅 [Excel JavaScript 预览 API](word-preview-apis.md) 一文。
 
-|  要求集  |   Windows 版 Office\*<br>（连接到 Office 365 订阅）  |  iPad 版 Office<br>（已连接到 Office 365 订阅）  |  Mac 版 Office<br>（已连接到 Office 365 订阅）  | Office 网页版  |
+|  要求集  |   Windows 版 Office\*<br>（关联至 Microsoft 365 订阅）  |  iPad 版 Office<br>（关联至 Microsoft 365 订阅）  |  Mac 版 Office<br>（关联至 Microsoft 365 订阅）  | Office 网页版  |
 |:-----|-----|:-----|:-----|:-----|
 | [预览](word-preview-apis.md) | 请使用最新的 Office 版本来试用预览 API（你可能需要加入 [Office 预览体验成员计划](https://insider.office.com)） |
 | [WordApi 1.3](word-api-1-3-requirement-set.md) | 版本 1612（内部版本 7668.1000）或更高版本| 2017 年 3 月，2.22 或更高版本 | 2017 年 3 月，15.32 或更高版本| 2017 年 3 月 |
