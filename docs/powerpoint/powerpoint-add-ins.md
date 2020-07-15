@@ -1,24 +1,24 @@
 ---
 title: PowerPoint 加载项
-description: 了解如何使用 PowerPoint 加载项，可以跨平台（包括 Windows、iPad、Mac 和浏览器）生成极具吸引力的解决方案，从而有效展示演示文稿。
-ms.date: 11/07/2019
+description: 了解如何使用 PowerPoint 加载项跨平台（包括 Windows、iPad、Mac 和浏览器）生成极具吸引力的解决方案，从而有效展示演示文稿。
+ms.date: 06/29/2020
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: f5ec2375729574a48fcf61e766312a3c65c970ba
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 314b441f3d4b6d2188ed630fe2b254aec42a86bc
+ms.sourcegitcommit: 065bf4f8e0d26194cee9689f7126702b391340cc
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44611931"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "45006449"
 ---
 # <a name="powerpoint-add-ins"></a>PowerPoint 加载项
 
 使用 PowerPoint 加载项，可以跨平台（包括 Windows、iPad、Mac 和浏览器）生成极具吸引力的解决方案，从而有效展示用户的演示文稿。 可以创建以下两种类型的 PowerPoint 加载项：
 
-- 使用**内容外接程序**向演示文稿添加动态 HTML5 内容。有关示例，请参阅可用于将交互关系图从 LucidChart 插入面板的 [PowerPoint 的 LucidChart 关系图](https://appsource.microsoft.com/product/office/WA104380117)外接程序。
+- Use **content add-ins** to add dynamic HTML5 content to your presentations. For example, see the [LucidChart Diagrams for PowerPoint](https://appsource.microsoft.com/product/office/wa104380117) add-in, which you can use to inject an interactive diagram from LucidChart into your deck.
 
-- 使用**任务窗格加载项**引入参考信息或通过服务将数据插入演示文稿。 有关示例，请参阅可用于在演示文稿中添加专业照片的 [Pixton 漫画人物](https://appsource.microsoft.com/product/office/WA104380907)加载项。
+- 使用**任务窗格加载项**引入参考信息或通过服务将数据插入演示文稿。 有关示例，请参阅可用于在演示文稿中添加专业照片的 [Pexels - 免费素材图片](https://appsource.microsoft.com/product/office/wa104379997)加载项。
 
 ## <a name="powerpoint-add-in-scenarios"></a>PowerPoint 加载项方案
 
