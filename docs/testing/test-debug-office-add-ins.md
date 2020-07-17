@@ -1,14 +1,14 @@
 ---
 title: 测试和调试 Office 加载项
 description: 了解如何测试和调试 Office 加载项
-ms.date: 06/20/2019
+ms.date: 06/17/2020
 localization_priority: Priority
-ms.openlocfilehash: 5eed657382f90a6248a464b90835e01eabfbfc85
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 526204fe94d4c97ce7e1e0bc9ac2a212f69611d3
+ms.sourcegitcommit: 472b81642e9eb5fb2a55cd98a7b0826d37eb7f73
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44611124"
+ms.lasthandoff: 07/17/2020
+ms.locfileid: "45159246"
 ---
 # <a name="test-and-debug-office-add-ins"></a>测试和调试 Office 加载项
 
@@ -37,6 +37,8 @@ Office 加载项的调试过程也因平台而异。 下面的文章分别介绍
 - [在 Office 网页版中调试加载项](debug-add-ins-in-office-online.md)
 
 - [在 iPad 和 Mac 上调试 Office 加载项](debug-office-add-ins-on-ipad-and-mac.md)
+
+- [适用于 Visual Studio Code 的 Microsoft Office 加载项调试器扩展](debug-with-vs-extension.md)
 
 ## <a name="validate-an-office-add-in-manifest"></a>验证 Office 加载项清单
 

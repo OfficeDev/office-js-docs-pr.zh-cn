@@ -1,14 +1,14 @@
 ---
 title: Excel JavaScript API 基本编程概念
 description: 使用 Excel JavaScript API 生成 Excel 加载项。
-ms.date: 06/20/2019
+ms.date: 07/13/2020
 localization_priority: Priority
-ms.openlocfilehash: c9e72f7408af6b25b2db49939d02b5c96bd21ce7
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 01e5fa1037719e89eed70f00e63431bbd445c213
+ms.sourcegitcommit: 472b81642e9eb5fb2a55cd98a7b0826d37eb7f73
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44609718"
+ms.lasthandoff: 07/17/2020
+ms.locfileid: "45159414"
 ---
 # <a name="fundamental-programming-concepts-with-the-excel-javascript-api"></a>Excel JavaScript API 基本编程概念
 
@@ -211,35 +211,6 @@ range.values = 'Due Date';
 如果区域中包含大量单元格、值、数字格式和/或公式，它可能无法在该区域运行 API 操作。 API 将始终尽量尝试在区域内运行所请求的操作（即检索或写入指定的数据），但尝试对较大区域执行读取或写入操作可能会因资源利用率过高而导致 API 错误。 为避免此类错误，建议为较大区域的较小子集运行单独的读取或写入操作，而不是尝试在较大区域内运行单个读取或写入操作。
 
 有关系统限制的详细信息，请参阅 [Excel 数据传输限制](../develop/common-coding-issues.md#excel-data-transfer-limits)。
-
-## <a name="update-all-cells-in-a-range"></a>更新区域中的所有单元格
-
-要对一个区域内的所有单元格应用相同更新（例如，用相同的值填充所有单元格、设置相同的数字格式，或者用相同的公式填充所有单元格），可以将 `range` 对象的相应属性设置为所需的（单个）值。
-
-下面的示例获取一个包含 20 个单元格的区域，然后设置数字格式，并使用值 **3/11/2015** 填充区域内的所有单元格。
-
-```js
-Excel.run(function (context) {
-    var sheetName = 'Sheet1';
-    var rangeAddress = 'A1:A20';
-    var worksheet = context.workbook.worksheets.getItem(sheetName);
-
-    var range = worksheet.getRange(rangeAddress);
-    range.numberFormat = 'm/d/yyyy';
-    range.values = '3/11/2015';
-    range.load('text');
-
-    return context.sync()
-      .then(function () {
-        console.log(range.text);
-    });
-}).catch(function (error) {
-    console.log('Error: ' + error);
-    if (error instanceof OfficeExtension.Error) {
-      console.log('Debug info: ' + JSON.stringify(error.debugInfo));
-    }
-});
-```
 
 ## <a name="handle-errors"></a>处理错误
 

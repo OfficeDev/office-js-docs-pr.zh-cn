@@ -3,12 +3,12 @@ title: 为 Office 加载项启用单一登录
 description: 了解如何使用常用的 Microsoft 个人、工作或教育帐户来为 Office 加载项启用单一登录。
 ms.date: 07/07/2020
 localization_priority: Priority
-ms.openlocfilehash: 71f602de9096a485a4eeb16a89785cc1a2535c13
-ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
+ms.openlocfilehash: 6e8c93388f758514e8b6366bef7062f41fc79174
+ms.sourcegitcommit: 472b81642e9eb5fb2a55cd98a7b0826d37eb7f73
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "45093600"
+ms.lasthandoff: 07/17/2020
+ms.locfileid: "45159575"
 ---
 # <a name="enable-single-sign-on-for-office-add-ins-preview"></a>为 Office 加载项启用单一登录（预览）
 
@@ -121,7 +121,7 @@ async function getGraphData() {
     catch (exception) {
         if (exception.code === 13003) {
             // SSO is not supported for domain user accounts, only
-            // work or school (Microsoft 365) or Microsoft Account IDs.
+            // Microsoft 365 Education or work account, or a Microsoft account.
         } else {
             // Handle error
         }
