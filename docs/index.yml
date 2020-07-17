@@ -8,13 +8,13 @@ metadata:
   ms.topic: landing-page
   author: o365devx
   ms.author: o365devx
-  ms.date: 06/09/2020
-  ms.openlocfilehash: 72bad801f05ae7315476abebaea0f8391d57ea42
-  ms.sourcegitcommit: 19312a54f47a17988ffa86359218a504713f9f09
+  ms.date: 07/13/2020
+  ms.openlocfilehash: f19fb430adbf23ae2784cf65889553deae711110
+  ms.sourcegitcommit: 472b81642e9eb5fb2a55cd98a7b0826d37eb7f73
   ms.translationtype: MT
   ms.contentlocale: zh-CN
-  ms.lasthandoff: 06/10/2020
-  ms.locfileid: "44679426"
+  ms.lasthandoff: 07/17/2020
+  ms.locfileid: "45159253"
 landingContent:
 - title: 关于 Office 加载项
   linkLists:
@@ -88,3 +88,9 @@ landingContent:
       url: https://officespdev.uservoice.com/
     - text: COM 或 VSTO 外接程序文档
       url: /office/client-developer/office-client-development
+    - text: Office 外接程序 PnP 示例存储库
+      url: https://github.com/OfficeDev/PnP-OfficeAddins
+    - text: Office 外接程序博客
+      url: https://developer.microsoft.com/office/gallery/?filterBy=Add-ins,Blog%20Posts
+    - text: 其他资源
+      url: https://docs.microsoft.com/office/dev/add-ins/resources/resources-links-help
