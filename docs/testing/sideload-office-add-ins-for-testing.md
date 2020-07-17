@@ -17,7 +17,7 @@ ms.locfileid: "45094118"
 当旁加载外接程序时，外接程序清单存储在浏览器的本地存储区中，因此如果清除浏览器的缓存，或切换到另一个浏览器，就必须再次旁加载该外接程序。
 
 > [!NOTE]
-> Sideloading as described in this article is supported on Word, Excel, and PowerPoint. To sideload an Outlook add-in, see [Sideload Outlook add-ins for testing](../outlook/sideload-outlook-add-ins-for-testing.md).
+> 如本文所述，Word、Excel 和 PowerPoint 支持旁加载。若要旁加载 Outlook 外接程序，请参阅[旁加载 Outlook 外接程序进行测试](../outlook/sideload-outlook-add-ins-for-testing.md)。
 
 下面的视频逐步展示了如何在 Office 网页版或桌面上旁加载加载项。
 
@@ -39,7 +39,7 @@ ms.locfileid: "45094118"
 
     ![带浏览、上载和取消按钮的上载外接程序对话框。](../images/upload-add-in.png)
 
-6. Verify that your add-in is installed. For example, if it is an add-in command, it should appear on either the ribbon or the context menu. If it is a task pane add-in, the pane should appear.
+6. 验证是否已安装外接程序。例如，如果它是一个外接程序命令，它应显示在功能区或上下文菜单上。如果它是一个任务窗格外接程序，则应显示窗格。
 
 > [!NOTE]
 >若要使用 Microsoft Edge 测试 Office 加载项，需要执行两个配置步骤： 

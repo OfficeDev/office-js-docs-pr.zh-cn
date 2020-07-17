@@ -47,7 +47,7 @@ ms.locfileid: "45093880"
 
     ![指向“从文件添加”选项的“管理外接程序”屏幕截图](../images/outlook-sideload-desktop-add-from-file.png)
 
-1. Locate the manifest file for your custom add-in and install it. Accept all prompts during the installation.
+1. 找到自定义外接程序的清单文件并进行安装。在安装过程中接受所有提示。
 
 ### <a name="sideload-an-add-in-in-classic-outlook-on-the-web"></a>在经典 Outlook 网页版中旁加载外接程序
 
@@ -65,7 +65,7 @@ ms.locfileid: "45093880"
 
     ![指向“从文件添加”选项的“管理外接程序”屏幕截图](../images/outlook-sideload-desktop-add-from-file.png)
 
-1. Locate the manifest file for your custom add-in and install it. Accept all prompts during the installation.
+1. 找到您的自定义外接程序清单文件并进行安装。在安装过程中接受所有提示。
 
 ## <a name="sideload-an-add-in-in-outlook-on-the-desktop"></a>在 Outlook 桌面版中旁加载外接程序
 
@@ -88,7 +88,7 @@ ms.locfileid: "45093880"
 
     ![“应用商店”屏幕截图（指向“从文件添加”选项）](../images/outlook-sideload-desktop-add-from-file.png)
 
-1. Locate the manifest file for your custom add-in and install it. Accept all prompts during the installation.
+1. 找到您的自定义外接程序清单文件并进行安装。在安装过程中接受所有提示。
 
 ### <a name="outlook-2013"></a>Outlook 2013
 

@@ -24,11 +24,11 @@ ms.locfileid: "45093859"
 
 ## <a name="create-a-manifest-file-for-the-add-in"></a>创建加载项清单文件
 
-Each add-in is described by an XML manifest, a document that gives the server information about the add-in, provides descriptive information about the add-in for the user, and identifies the location of the add-in UI HTML file. You can store the manifest in a local folder or server, as long as the location is accessible by the Exchange server of the mailbox that you are testing with. We'll assume that you store your manifest in a local folder. For information about how to create a manifest file, see [Outlook add-in manifests](manifests.md).
+每个外接程序都通过一个 XML 清单进行描述，该文档为服务器提供有关外接程序的信息，为用户提供外接程序的描述性信息，并标识外接程序 UI HTML 文件的位置。您可以在本地文件夹或服务器上存储该清单，只要所测试的邮箱的 Exchange 服务器能够访问这个位置即可。我们假定您在本地文件夹中存储清单。有关如何创建清单文件的信息，请参阅 [Outlook 外接程序清单](manifests.md)。
 
 ## <a name="deploy-an-add-in-to-a-web-server"></a>将加载项部署到 Web 服务器
 
-You can use HTML and JavaScript to create the add-in. The resulting source files are stored on a web server that can be accessed by the Exchange server that hosts the add-in. After initially deploying the source files for the add-in, you can update the add-in UI and behavior by replacing the HTML files or JavaScript files stored on the web server with a new version of the HTML file.
+可以使用 HTML 和 JavaScript 创建外接程序。生成的源文件存储在 Web 服务器上，可供托管外接程序的 Exchange 服务器进行访问。在最初部署外接程序的源文件后，可以将 Web 服务器上存储的 HTML 文件或 JavaScript 文件替换为 HTML 文件的新版本，从而更新外接程序 UI 和行为。
 
 ## <a name="install-the-add-in"></a>安装加载项
 
@@ -36,9 +36,9 @@ You can use HTML and JavaScript to create the add-in. The resulting source files
 
 ### <a name="sideload-the-add-in"></a>旁加载加载项
 
-You can install an add-in if your mailbox is on Exchange Online, Exchange 2013 or a later release. Sideloading add-ins requires at minimum the **My Custom Apps** role for your Exchange Server. In order to test your add-in, or install add-ins in general by specifying a URL or file name for the add-in manifest, you should request your Exchange administrator to provide the necessary permissions.
+如果邮箱位于 Exchange Online、Exchange 2013 或更高版本上，可以安装外接程序。至少必须拥有 Exchange Server 的**我的自定义应用程序**角色，才能旁加载外接程序。若要测试外接程序，或通过指定外接程序清单的 URL 或文件名来常规安装外接程序，应让 Exchange 管理员提供必要权限。
 
-The Exchange administrator can run the following PowerShell cmdlet to assign a single user the necessary permissions. In this example, `wendyri` is the user's email alias.
+Exchange 管理员可以运行下列 PowerShell cmdlet，向一个用户分配必要权限。在下面的示例中，`wendyri` 是用户的电子邮件别名。
 
 ```powershell
 New-ManagementRoleAssignment -Role "My Custom Apps" -User "wendyri"
@@ -74,9 +74,9 @@ New-App -URL:"http://<fully-qualified URL">
 
 若要决定测试什么版本的 Outlook 客户端，请综合考虑自己的开发需求。
 
-- If you are developing an add-in for private use, or only for members of your organization, then it is important to test the versions of Outlook that your company uses. Keep in mind that some users may use Outlook on the web, so testing your company's standard browser versions is also important.
+- 若要开发供私人使用或仅供组织成员使用的外接程序，请务必测试公司使用的 Outlook 版本。请注意，某些用户可能会使用 Outlook 网页版。因此，还请务必测试公司的标准浏览器版本。
 
-- If you are developing an add-in to list in [AppSource](https://appsource.microsoft.com), you must test the required versions as specified in the [Commercial marketplace certification policies 1120.3](/legal/marketplace/certification-policies#11203-functionality). This includes:
+- 如果开发的是要在 [AppSource](https://appsource.microsoft.com) 中列出的加载项，必须测试[商业市场认证策略 1120.3](/legal/marketplace/certification-policies#11203-functionality) 中指定的必需版本。这包括：
   - 最新版 Windows 版 Outlook 和前一个版本。
   - 最新版 Mac 版 Outlook。
   - 最新 iOS 版和 Android 版 Outlook（如果加载项[支持移动设备规格](add-mobile-support.md)）。

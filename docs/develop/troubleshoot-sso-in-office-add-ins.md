@@ -21,7 +21,7 @@ ms.locfileid: "45093558"
 
 ## <a name="debugging-tools"></a>调试工具
 
-We strongly recommend that you use a tool that can intercept and display the HTTP Requests from, and Responses to, your add-in's web service when you are developing. Two of the most popular are:
+开发时，强烈建议使用具有以下功能的工具：能够截获并显示加载项 Web 服务发出的 HTTP 请求和发送给它的响应。最热门的两个工具是：
 
 - [Fiddler](https://www.telerik.com/fiddler)：免费使用（[文档](https://docs.telerik.com/fiddler/configure-fiddler/tasks/configurefiddler)）
 - [Charles](https://www.charlesproxy.com)：免费使用 30 天。 （[文档](https://www.charlesproxy.com/documentation/)）

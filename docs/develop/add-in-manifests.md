@@ -107,7 +107,7 @@ _\*\* 仅通过 AppSource 分发的加载项才需要 SupportUrl。_
 
 ## <a name="best-practices-for-submitting-to-appsource"></a>关于提交到 AppSource 的最佳做法
 
-Make sure that the add-in ID is a valid and unique GUID. Various GUID generator tools are available on the web that you can use to create a unique GUID.
+确保外接程序 ID 有效且具有唯一 GUID。Web 上提供可用于创建唯一 GUID 的各种 GUID 生成器工具。
 
 提交到 AppSource 的加载项还必须包括 [SupportUrl](../reference/manifest/supporturl.md) 元素。 有关详细信息，请参阅[提交到 AppSource 的应用和加载项的验证策略](/legal/marketplace/certification-policies)。
 

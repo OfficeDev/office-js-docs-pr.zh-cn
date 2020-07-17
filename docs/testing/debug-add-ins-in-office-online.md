@@ -21,9 +21,9 @@ ms.locfileid: "45094489"
 - 获取 Microsoft 365 开发人员帐户（如果还没有）或有权访问 SharePoint 网站。
 
   > [!NOTE]
-  > To get a free, 90-day renewable Microsoft 365 developer subscription, join our [Microsoft 365 developer program](https://developer.microsoft.com/office/dev-program). See the [Microsoft 365 developer program documentation](/office/developer-program/office-365-developer-program) for step-by-step instructions about how to join the Microsoft 365 developer program and configure your subscription.
+  > 若要获取免费的90天 renewable Microsoft 365 开发人员订阅，请加入我们的[microsoft 365 开发人员计划](https://developer.microsoft.com/office/dev-program)。有关如何加入 Microsoft 365 开发人员计划和配置订阅的分步说明，请参阅[Microsoft 365 开发人员计划文档](/office/developer-program/office-365-developer-program)。
 
-- Set up an app catalog on SharePoint Online. An app catalog is a dedicated site collection in SharePoint Online that hosts document libraries for Office Add-ins. If you have your own SharePoint site, you can set up an app catalog document library. For more information, see [Publish task pane and content add-ins to an app catalog on SharePoint](../publish/publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md).
+- 在 SharePoint Online 上设置应用程序目录。应用程序目录是 SharePoint Online 中的专用网站集，它托管 Office 外接程序的文档库。如果你有自己的 SharePoint 网站，则可以设置应用程序目录文档库。有关详细信息，请参阅[将任务窗格和内容外接程序发布到 SharePoint 上的应用程序目录](../publish/publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md)。
 
 
 ## <a name="debug-your-add-in-from-excel-or-word-on-the-web"></a>在 Excel 网页版或 Word 网页版中调试加载项
@@ -35,7 +35,7 @@ ms.locfileid: "45094489"
     > [!NOTE]
     > 建议使用 [Yeoman 生成器](https://github.com/OfficeDev/generator-office)创建和托管加载项。
 
-2. In your [add-in manifest file](../develop/add-in-manifests.md), update the **SourceLocation** element value to include an absolute, rather than a relative, URI. For example:
+2. 在[加载项清单文件](../develop/add-in-manifests.md)中，将 **SourceLocation** 元素值更新为包括绝对 URI，而不是相对 URI。例如：
 
     ```xml
     <SourceLocation DefaultValue="https://localhost:44300/App/Home/Home.html" />

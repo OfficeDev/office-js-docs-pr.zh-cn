@@ -43,7 +43,7 @@ ms.locfileid: "45093481"
 
 - 对于 Windows x86 和 x64 台式机与平板电脑（如 Surface Pro）：
     - 在 Windows 7 或更高版本上运行的 32 位或 64 位版本 Office 2013。
-    - Excel 2013, Outlook 2013, PowerPoint 2013, Project Professional 2013, Project 2013 SP1, Word 2013, or a later version of the Office client, if you are testing or running an Office Add-in specifically for one of these Office desktop clients. Office desktop clients can be installed on premises or via Click-to-Run on the client computer.
+    - Excel 2013、Outlook 2013、PowerPoint 2013、Project Professional 2013、Project 2013 SP1、Word 2013 或更高版本的 Office 客户端，（如果您正在专门为这些 Office 桌面客户端测试或运行 Office 外接程序）。Office 桌面客户端可以在本地安装或通过即点即用安装在客户端计算机上。
 
   如果您拥有有效的 Microsoft 365 订阅，并且您没有对 Office 客户端的访问权限，则可以[下载并安装最新版本的 office](https://support.office.com/article/download-and-install-or-reinstall-office-365-or-office-2019-on-a-pc-or-mac-4414eaaf-0478-48be-9c42-23adc4716658)。
 

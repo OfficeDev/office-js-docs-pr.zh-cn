@@ -33,14 +33,14 @@ ms.locfileid: "45094447"
 
 ## <a name="xsitype"></a>xsi:type
 
-This attribute specifies the kind of action performed when the user selects the button. It can be one of the following:
+此属性指定当用户选择按钮时所执行的操作类型。可取值如下：
 
 - `ExecuteFunction`
 - `ShowTaskpane`
 
 ## <a name="functionname"></a>FunctionName
 
-Required element when **xsi:type** is "ExecuteFunction". Specifies the name of the function to execute. The function is contained in the file specified in the [FunctionFile](functionfile.md) element.
+**xsi:type** 为“ExecuteFunction”时的必需元素。指定要执行的函数的名称。函数包含在 [FunctionFile](functionfile.md) 元素指定的文件中。
 
 ```xml
 <Action xsi:type="ExecuteFunction">
@@ -79,7 +79,7 @@ Required element when **xsi:type** is "ExecuteFunction". Specifies the name of t
 </Action>
 ```  
 
-The following examples show two actions that use a different **TaskpaneId**. To see these examples in context, see [Simple Add-in Commands Sample](https://github.com/OfficeDev/Office-Add-in-Commands-Samples/blob/master/Simple/Manifest/SimpleAddin.xml).
+下面的示例展示了两个使用不同 **TaskpaneId** 的操作。若要查看上下文中的这些示例，请参阅[简单的外接程序命令示例](https://github.com/OfficeDev/Office-Add-in-Commands-Samples/blob/master/Simple/Manifest/SimpleAddin.xml)。
 
 ```xml
 <Action xsi:type="ShowTaskpane">

@@ -16,7 +16,7 @@ ms.locfileid: "45006449"
 
 使用 PowerPoint 加载项，可以跨平台（包括 Windows、iPad、Mac 和浏览器）生成极具吸引力的解决方案，从而有效展示用户的演示文稿。 可以创建以下两种类型的 PowerPoint 加载项：
 
-- Use **content add-ins** to add dynamic HTML5 content to your presentations. For example, see the [LucidChart Diagrams for PowerPoint](https://appsource.microsoft.com/product/office/wa104380117) add-in, which you can use to inject an interactive diagram from LucidChart into your deck.
+- 使用**内容外接程序**向演示文稿添加动态 HTML5 内容。有关示例，请参阅可用于将交互关系图从 LucidChart 插入面板的 [PowerPoint 的 LucidChart 关系图](https://appsource.microsoft.com/product/office/wa104380117)外接程序。
 
 - 使用**任务窗格加载项**引入参考信息或通过服务将数据插入演示文稿。 有关示例，请参阅可用于在演示文稿中添加专业照片的 [Pexels - 免费素材图片](https://appsource.microsoft.com/product/office/wa104379997)加载项。
 

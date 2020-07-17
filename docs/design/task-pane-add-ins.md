@@ -12,7 +12,7 @@ ms.locfileid: "45093754"
 ---
 # <a name="task-panes-in-office-add-ins"></a>Office 加载项中的任务窗格
  
-Task panes are interface surfaces that typically appear on the right side of the window within Word, PowerPoint, Excel, and Outlook. Task panes give users access to interface controls that run code to modify documents or emails, or display data from a data source. Use task panes when you don't need to embed functionality directly into the document.
+任务窗格是接口图面，通常出现在 Word、PowerPoint、Excel 和 Outlook 中窗口的右侧。使用任务窗格，用户可以访问接口控件，以运行代码来修改文档或电子邮件，或显示数据源中的数据。如果不需要将功能直接嵌入文档，请使用任务窗格。
 
 *图 1：典型任务窗格布局*
 
@@ -30,7 +30,7 @@ Task panes are interface surfaces that typically appear on the right side of the
 
 ## <a name="variants"></a>变量
 
-The following images show the various task pane sizes with the Office app ribbon at a 1366x768 resolution. For Excel, additional vertical space is required to accommodate the formula bar.  
+以下图像显示了使用 Office 应用功能区的1366x768 分辨率的各种任务窗格大小。对于 Excel，需要额外的垂直空间来容纳编辑栏。  
 
 *图 2：Office 2016 桌面任务窗格尺寸*
 
@@ -54,7 +54,7 @@ The following images show the various task pane sizes with the Office app ribbon
 
 ## <a name="personality-menu"></a>“个性”菜单
 
-Personality menus can obstruct navigational and commanding elements located near the top right of the add-in. The following are the current dimensions of the personality menu on Windows and Mac.
+“个性”菜单可能会妨碍靠近外接程序右上角的导航和命令元素。以下是 Windows 和 Mac 上的“个性”菜单的当前尺寸。
 
 对于 Windows，个性菜单尺寸为 12x32 像素，如下所示。
 

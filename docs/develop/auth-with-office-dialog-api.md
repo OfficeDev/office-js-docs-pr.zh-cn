@@ -46,7 +46,7 @@ ms.locfileid: "45093733"
 
 #### <a name="support-multiple-identity-providers"></a>支持多个标识提供程序
 
-If your add-in gives the user a choice of providers, such as Microsoft Account, Google, or Facebook, you need a local first page (see preceding section) that provides a UI for the user to select a provider. Selection triggers the construction of the sign-in URL and redirection to it.
+如果外接程序允许用户选择提供程序（如 Microsoft 帐户、Google 或 Facebook），你需要使用本地第一个页面（见前一部分），为用户提供用于选择提供程序的 UI。用户的选择会触发登录 URL 的构建并重定向到该 URL。
 
 #### <a name="authorization-of-the-add-in-to-an-external-resource"></a>在外接程序中授权外部资源
 
@@ -55,7 +55,7 @@ If your add-in gives the user a choice of providers, such as Microsoft Account, 
 - 应用程序访所需的权限的列表。
 - 当应用访问服务时，资源服务应向其返回访问令牌的 URL。  
 
-When a user invokes a function in the application that accesses the user's data in the resource service, they are prompted to sign in to the service and then prompted to grant the application the permissions it needs to the user's resources. The service then redirects the sign-in window to the previously registered URL and passes the access token. The application uses the access token to access the user's resources.
+如果用户在应用中调用访问资源服务中用户数据的函数，系统会先提示用户登录相应服务，再提示用户向应用授予访问用户资源所需的权限。然后，服务将登录窗口重定向到先前注册的 URL，并传递访问令牌。应用使用访问令牌访问用户资源。
 
 可以使用 Office 对话框 API 来管理此过程，具体方法是使用与用户登录流程类似的流程。 唯一区别在于：
 

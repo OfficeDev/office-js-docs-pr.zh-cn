@@ -30,7 +30,7 @@ ms.locfileid: "45093614"
 若要获取最新版 Office，请执行以下操作：
 
 1. 下载 [Office 部署工具](https://www.microsoft.com/download/details.aspx?id=49117)。
-2. Run the tool. This extracts the following two files: Setup.exe and configuration.xml.
+2. 运行该工具。这会提取以下两个文件：Setup.exe 和 configuration.xml。
 3. 将 configuration.xml 文件替换为[首次发布配置文件](https://raw.githubusercontent.com/OfficeDev/Office-Add-in-Commands-Samples/master/Tools/FirstReleaseConfig/configuration.xml)。
 4. 以管理员身份运行下面的命令：`setup.exe /configure configuration.xml`
 

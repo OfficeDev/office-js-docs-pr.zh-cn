@@ -12,7 +12,7 @@ ms.locfileid: "45094125"
 ---
 # <a name="debug-office-add-ins-on-a-mac"></a>在 Mac 上调试 Office 加载项
 
-Because add-ins are developed using HTML and JavaScript, they are designed to work across platforms, but there might be subtle differences in how different browsers render the HTML. This article describes how to debug add-ins running on a Mac.
+由于加载项是使用 HTML 和 JavaScript 开发的，因此它们可以跨平台工作，但不同浏览器呈现 HTML 的方式可能存在细微差别。本文介绍如何调试在 Mac 上运行的加载项。
 
 ## <a name="debugging-with-safari-web-inspector-on-a-mac"></a>在 Mac 上使用 Safari Web 检查器进行调试
 

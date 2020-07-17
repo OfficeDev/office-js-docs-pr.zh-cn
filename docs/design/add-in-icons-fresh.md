@@ -28,7 +28,7 @@ Office 2013 + (非订阅) 版本的 Office 使用 Microsoft 的插图的全新�
 |使用 Office 图标语言来表示行为或概念。|请勿在 Office 应用程序功能区或上下文菜单中重新调整加载项命令的 Office UI Fabric 标志符号。 Fabric 图标风格不同，不能匹配。|
 |将画笔等公用 Office 视觉隐喻重用于格式或用于查找的放大镜。|不要对不同的命令重复使用视觉隐喻。 对不同的行为和概念使用同一图标可能会引起混淆。 |
 |重绘图标，使其更大或更小。 请花时间重绘切割区、角和圆边，以最大化线条的清晰度。 |切勿通过缩小或扩大尺寸来调整图标大小。 这可能会导致视觉对象质量不佳和操作不清晰。 对于较大尺寸的复杂图标，如果不是通过重绘来使其变小，则可能会降低清晰度。 |
-|Use a white fill for accessibility. Most objects in your icons will require a white background to be legible across Office UI themes and in high-contrast modes.  |避免依赖徽标或品牌传达外接程序命令应起到的作用。 品牌标志在较小的图标尺寸上和应用很多修饰符后并非总具有识别性。 品牌标记通常与 Office 应用程序功能区图标样式发生冲突，并且可以在饱和环境中争夺用户的注意力。 |
+|为辅助功能使用白色填充。图标中的大部分对象都需使用白色背景，以使其在 Office UI 主题中以及高对比度模式下清晰可辨。  |避免依赖徽标或品牌传达外接程序命令应起到的作用。 品牌标志在较小的图标尺寸上和应用很多修饰符后并非总具有识别性。 品牌标记通常与 Office 应用程序功能区图标样式发生冲突，并且可以在饱和环境中争夺用户的注意力。 |
 |使用具有透明背景的 PNG 格式。 ||
 |避免在图标中使用可本地化的内容，包括印刷字符、段落标记指示和问号。 ||
 
@@ -78,9 +78,9 @@ The following table lists the locations for certain icon sizes.
 
 ## <a name="icon-anatomy-and-layout"></a>图标分析和布局
 
-Office icons are typically comprised of a base element with action and conceptual modifiers overlayed. Action modifiers represent concepts such as add, open, new, or close. Conceptual modifiers represent status, alteration, or a description of the icon.
+Office 图标通常是由具有操作和概念修饰符的基本元素构成的。 操作修饰符表示诸如添加、打开、新建或关闭等的概念。概念修饰符表示图标的状态、更改或说明。
 
-To create commands that align with the Office UI, follow layout guidelines for the base element and modifiers. This ensures that your commands look professional and that your customers will trust your add-in. If you make exceptions to these guidelines, do so intentionally.
+若要创建与 Office UI 相符的命令，请遵循基本元素和修饰符的布局准则。这将确保命令看起来具有专业性，且客户将信任你的外接程序。如果出现未按这些准则进行操作的情况，则这些操作应该是有意为之。
 
 以下图像显示 Office 图标中的基本元素和修饰符的布局。
 
@@ -89,7 +89,7 @@ To create commands that align with the Office UI, follow layout guidelines for t
 - 将基本元素置于像素框架的中间位置，并在其周围填充空白。
 - 将操作修饰符置于左上方。
 - 将概念修饰符置于右下方。
-- Limit the number of elements in your icons. At 32px, limit the number of modifiers to a maximum of two. At 16px, limit the number of modifiers to one.
+- 限制图标中的元素数。在 32 像素中，将修饰符数限制为最多两个。在 16 像素中，将修饰符数限制为一个。
 
 ### <a name="base-element-padding"></a>基准元素填充
 
@@ -97,7 +97,7 @@ To create commands that align with the Office UI, follow layout guidelines for t
 
 ### <a name="modifiers"></a>修饰符
 
-All modifiers should have a 1px transparent cutout between each element, including the background. Elements should not directly overlap. Create whitespace between rules and edges. Modifiers can vary slightly in size, but use these dimensions as a starting point.
+所有修饰符在每个元素间都应具有 1 像素的透明切割区，包括背景。元素不应直接重叠。在规则和边缘之间创建空白空间。修饰符在大小上可能略有不同，但会将这些尺寸作为起点使用。
 
 |**图标大小**|**在基本元素周围填充**|**修饰符大小**|
 |:---|:---|:---|
@@ -115,11 +115,11 @@ All modifiers should have a 1px transparent cutout between each element, includi
 > [!NOTE]
 > 这些颜色指南适用于[外接程序命令](add-in-commands.md)中使用的功能区图标。 这些图标不使用 Microsoft UI Fabric 呈现，调色板与 [Microsoft UI Fabric | 颜色 | 共享](https://fluentfabric.azurewebsites.net/#/color/shared)中描述的调色板不同。
 
-Office icons have a limited color palette. Use the colors listed in the following table to guarantee seamless integration with the Office UI. Apply the following guidelines to the use of color:
+Office 图标具有一个有限的调色板。使用下表中列出的颜色确保与 Office UI 无缝集成。对颜色使用应用以下准则：
 
-- Use color to communicate meaning rather than for embellishment. It should highlight or emphasize an action, status, or an element that explicitly differentiates the mark. 
-- If possible, use only one additional color beyond gray. Limit additional colors to two at the most.
-- Colors should have a consistent appearance in all icon sizes. Office icons have slightly different color palettes for different icon sizes. 16px and smaller icons are slightly darker and more vibrant than 32px and larger icons. Without these subtle adjustments, colors appear to vary across sizes.
+- 使用颜色传达图标含义，而非只是用作修饰。图标颜色应突出显示或强调操作、状态或明确区分标记的元素。 
+- 如有可能，除灰色外仅使用其他一种颜色。将附加颜色限制为最多两种。
+- 所有图标大小中的颜色应具有一致的外观。Office 图标针对不同的图标大小具有略微不同的调色板。16 像素和更小的图标稍暗，而与 32 像素和更大的图标相比更亮。除了这些细微的调整以外，颜色的差别体现在大小上。
 
 |**颜色名称**|**RGB**|**十六进制**|**颜色**|**类别**|
 |:---|:---|:---|:---|:---|
@@ -146,7 +146,7 @@ Office icons have a limited color palette. Use the colors listed in the followin
 
 ## <a name="icons-in-high-contrast-modes"></a>高对比度模式下的图标
 
-Office icons are designed to render well in high contrast modes. Foreground elements are well differentiated from backgrounds to maximize legibility and enable recoloring. In high contrast modes, Office will recolor any pixel of your icon with a red, green, or blue value less than 190 to full black. All other pixels will be white. In other words, each RGB channel is assessed where 0-189 values are black and 190-255 values are white. Other high-contrast themes recolor using the same 190 value threshold but with different rules. For example, the high-contrast white theme will recolor all pixels greater than 190 opaque but all other pixels as transparent. Apply the following guidelines to maximize legibility in high-contrast settings:
+Office 图标设计为在高对比度模式中完美呈现。前景元素与最大化易读性和启用重新着色的背景明显不同。在高对比度模式下，Office 会使用小于 190 的红色、绿色或蓝色值直到全黑，为任何像素的图标重新着色。其他所有像素都将是白色的。换言之，每个评估的 RGB 通道中的 0-189 值表示为黑色，而 190-255 值表示为白色。其他高对比度主题则使用相同的 190 阈值但不同的规则进行重新着色。例如，高对比度白色主题会将所有大于 190 的像素重新着色为不透明，而将所有其他像素重新着色为透明。应用下面的规则以最大化高对比度设置中的可读性。
 
 - 旨在以 190 阈值区分前景和背景元素。
 - 遵循 Office 图标视觉样式。

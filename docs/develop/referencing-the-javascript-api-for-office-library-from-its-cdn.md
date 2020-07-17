@@ -30,7 +30,7 @@ ms.locfileid: "44888129"
 
 在上面的 HTML 代码段中，CDN URL 中的 " `/1/` 在 `office.js` Office.js 的第1版中指定最新的增量释放。 由于 Office JavaScript API 保持向后兼容性，最新版本将继续支持之前在版本1中引入的 API 成员。 如果需要升级现有项目，请参阅[更新 Office JAVASCRIPT API 和清单架构文件的版本](update-your-javascript-api-for-office-and-manifest-schema-version.md)。 
 
-If you plan to publish your Office Add-in from AppSource, you must use this CDN reference. Local references are only appropriate for internal, development, and debugging scenarios.
+如果计划从 AppSource 发布 Office 加载项，必须使用此 CDN 引用。本地引用仅适用于内部、开发和调试应用场景。
 
 > [!NOTE]
 > 要使用预览版 API，请参考 CDN 上的 Office JavaScript API 库预览版：`https://appsforoffice.microsoft.com/lib/beta/hosted/office.js`。

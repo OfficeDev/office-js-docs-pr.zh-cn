@@ -153,7 +153,7 @@ ms.locfileid: "45094160"
 |**项目**|**说明**|
 |:-----|:-----|
 |加载项项目|仅包含 XML 清单文件，内含描述加载项的所有设置。 这些设置有助于 Office 主机确定应在何时激活加载项，以及应在哪里显示加载项。 Visual Studio 生成了此文件的内容，以便于用户能够立即运行项目并使用外接程序。 可以通过修改 XML 文件随时更改这些设置。|
-|Web 应用项目|Contains the content pages of your add-in, including all the files and file references that you need to develop Office-aware HTML and JavaScript pages. While you develop your add-in, Visual Studio hosts the web application on your local IIS server. When you're ready to publish the add-in, you'll need to deploy this web application project to a web server.|
+|Web 应用项目|包含加载项的内容页，包括开发 Office 感知 HTML 和 JavaScript 页面所需的全部文件和文件引用。开发加载项时，Visual Studio 在本地 IIS 服务器上托管 Web 应用。准备好发布加载项后，需要将此 Web 应用项目部署到 Web 服务器。|
 
 ### <a name="update-the-code"></a>更新代码
 
@@ -240,9 +240,9 @@ ms.locfileid: "45094160"
 
 ### <a name="update-the-manifest"></a>更新清单
 
-1. Open the XML manifest file in the Add-in project. This file defines the add-in's settings and capabilities.
+1. 打开加载项项目中的 XML 清单文件。 此文件定义的是加载项设置和功能。
 
-1. The `ProviderName` element has a placeholder value. Replace it with your name.
+1. `ProviderName` 元素具有占位符值。 将其替换为你的姓名。
 
 1. `DisplayName` 元素的 `DefaultValue` 属性具有占位符。 将其替换为 `My Office Add-in`。
 

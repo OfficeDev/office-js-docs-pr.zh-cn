@@ -29,7 +29,7 @@ ms.locfileid: "45093705"
 
 |**产品**|**平台**|
 |:-----------|:------------|
-|<ul><li>Word</li><li>Excel</li><li>PowerPoint</li></ul>|所有产品的支持平台：<ul><li>Office on Windows Desktop. Build 16.0.8121.1000+</li><li>Office on Mac. Build 15.34.17051500+</li><li>Office 网页版</li></ul>|
+|<ul><li>Word</li><li>Excel</li><li>PowerPoint</li></ul>|所有产品的支持平台：<ul><li>Windows 桌面版 Office（内部版本 16.0.8121.1000+）</li><li>Mac 版 Office（生成号 15.34.17051500 及更高版本）</li><li>Office 网页版</li></ul>|
 
 
 ## <a name="best-practices"></a>最佳做法
@@ -37,16 +37,16 @@ ms.locfileid: "45093705"
 在使用 Autoopen 功能时应用下面的最佳做法：
 
 - 当 Autoopen 功能可帮助外接程序用户工作更高效时使用此功能，如：
-  - When the document needs the add-in in order to function properly. For example, a spreadsheet that includes stock values that are periodically refreshed by an add-in. The add-in should open automatically when the spreadsheet is opened to keep the values up to date.
-  - When the user will most likely always use the add-in with a particular document. For example, an add-in that helps users fill in or change data in a document by pulling information from a backend system.
-- Allow users to turn on or turn off the autoopen feature. Include an option in your UI for users to choose to no longer automatically open the add-in task pane.  
+  - 当文档需要外接程序才能正常工作时。例如，包括由外接程序定期刷新的股票值的电子表格。外接程序应在电子表格打开时自动打开，以保持值处于最新状态。
+  - 当用户很可能始终将外接程序与某个特定文档一同使用时。例如，可帮助用户通过从后台系统中获取信息来填写或更改文档中数据的外接程序。
+- 允许用户打开或关闭 Autoopen 功能。用户可以选择 UI 中包含的一个选项来停止自动打开外接程序任务窗格。  
 - 使用要求集检测来确定 autoopen 功能是否可用，如果不存在，则提供回退行为。
 - 不要使用 Autoopen 功能来人为地增加外接程序的使用率。 如果你的外接程序无法在某些文档中自动打开，此功能可能会给用户增加烦恼。
 
     > [!NOTE]
     > 如果 Microsoft 检测到滥用 AutoOpen 功能，加载项可能会从 AppSource 下架。
 
-- Don't use this feature to pin multiple task panes. You can only set one pane of your add-in to open automatically with a document.  
+- 请勿使用此功能来固定多个任务窗格。只能设置一个外接程序窗格随文档自动打开。  
 
 ## <a name="implementation"></a>实现
 
@@ -56,11 +56,11 @@ ms.locfileid: "45093705"
 - 标记要自动打开任务窗格的文档。
 
 > [!IMPORTANT]
-> The pane that you designate to open automatically will only open if the add-in is already installed on the user's device. If the user does not have the add-in installed when they open a document, the autoopen feature will not work and the setting will be ignored. If you also require the add-in to be distributed with the document you need to set the visibility property to 1; this can only be done using OpenXML, an example is provided later in this article.
+> 只有在用户设备上已安装加载项时，才能打开指定为自动打开的窗格。如果在打开文档时用户未安装加载项，那么 AutoOpen 功能将不起作用，而且设置也会被忽略。如果还要求加载项与文档一起分发，需要将“visibility”属性设置为 1；只能使用 OpenXML 完成此操作，本文稍后将提供示例。
 
 ### <a name="step-1-specify-the-task-pane-to-open"></a>第 1 步：指定要打开的任务窗格
 
-To specify the task pane to open automatically, set the [TaskpaneId](../reference/manifest/action.md#taskpaneid) value to **Office.AutoShowTaskpaneWithDocument**. You can only set this value on one task pane. If you set this value on multiple task panes, the first occurrence of the value will be recognized and the others will be ignored.
+若要指定要自动打开的任务窗格，请将 [TaskpaneId](../reference/manifest/action.md#taskpaneid) 值设置为 **Office.AutoShowTaskpaneWithDocument**。只能在一个任务窗格上设置此值。如果在多个任务窗格上设置此值，将识别值的第一个匹配项，而忽略其他。
 
 在下面的示例中，TaskPaneId 值设置为 Office.AutoShowTaskpaneWithDocument。
 
@@ -73,7 +73,7 @@ To specify the task pane to open automatically, set the [TaskpaneId](../referenc
 
 ### <a name="step-2-tag-the-document-to-automatically-open-the-task-pane"></a>第 2 步：将文档标记为自动打开任务窗格
 
-You can tag the document to trigger the autoopen feature in one of two ways. Pick the alternative that works best for your scenario.  
+可以通过下面的两种方法之一，将文档标记为触发自动打开功能。 选择最适合自己应用场景的备选方法。  
 
 
 #### <a name="tag-the-document-on-the-client-side"></a>在客户端上标记文档
@@ -89,7 +89,7 @@ Office.context.document.settings.saveAsync();
 
 #### <a name="use-open-xml-to-tag-the-document"></a>使用 Open XML 标记文档
 
-You can use Open XML to create or modify a document and add the appropriate Open Office XML markup to trigger the autoopen feature. For a sample that shows you how to do this, see [Office-OOXML-EmbedAddin](https://github.com/OfficeDev/Office-OOXML-EmbedAddin).
+可以使用 Open XML 来创建或修改文档，并添加适当的 Open Office XML 标记来触发 Autoopen 功能。有关演示如何执行此操作的示例，请参阅 [Office-OOXML-EmbedAddin](https://github.com/OfficeDev/Office-OOXML-EmbedAddin)。
 
 向文档添加两个 Open XML 部件：
 
@@ -122,7 +122,7 @@ You can use Open XML to create or modify a document and add the appropriate Open
 |Registry（系统注册表）|外接程序清单中外接程序的 GUID。|“developer”|加载项清单中的版本。|
 
 > [!NOTE]
-> To find the asset ID and version of an add-in in AppSource, go to the AppSource landing page for the add-in. The asset ID appears in the address bar in the browser. The version is listed in the **Details** section of the page.
+> 若要查找 AppSource 中加载项的资产 ID 和版本，请转到加载项的 AppSource 登陆页面。资产 ID 显示在浏览器的地址栏中。版本在页面的“详细信息”**** 部分中列出。
 
 若要详细了解 webextension 标记，请参阅 [[MS-OWEXML] 2.2.5. WebExtensionReference](https://msdn.microsoft.com/library/hh695383(v=office.12).aspx)。
 
@@ -136,14 +136,14 @@ You can use Open XML to create or modify a document and add the appropriate Open
 
 请注意，在本例中，`visibility` 属性设置为“0”。 这意味着在添加 webextension 部件和 `taskpane` 部件之后，第一次打开文档时，用户还必须从功能区上的“外接程序”**** 按钮安装该外接程序。 此后，外接程序任务窗格将在打开该文件时自动打开。 此外，在将 `visibility` 设置为“0”时，可以使用 Office.js 让用户打开或关闭 AutoOpen 功能。 具体来说，脚本会将 **Office.AutoShowTaskpaneWithDocument** 文档设置为 `true` 或 `false`。 （有关详细信息，请参阅[在客户端上标记文档](#tag-the-document-on-the-client-side)。）
 
-If `visibility` is set to "1", the task pane opens automatically the first time the document is opened. The user is prompted to trust the add-in, and when trust is granted, the add-in opens. Thereafter, the add-in task pane opens automatically when the file is opened. However, when `visibility` is set to "1", you can't use Office.js to enable users to turn on or turn off the autoopen feature.
+如果 `visibility` 设置为“1”，任务窗格将在文件第一次打开时自动打开。系统会提示用户信任该外接程序，授予信任后，将打开外接程序。此后，外接程序任务窗格将在打开该文件时自动打开。但是，当 `visibility` 设置为“1”时，则不能使用 Office.js 让用户打开或关闭 Autoopen 功能。
 
 当外接程序和模板或文档内容紧密集成以致用户不会选择退出 Autoopen 功能时，将 `visibility` 设置为“1”是一个不错的选择。
 
 > [!NOTE]
-> If you want to distribute your add-in with the document, so that users are prompted to install it, you must set the visibility property to 1. You can only do this via Open XML.
+> 若要将加载项与文档一起分发，以便提示用户进行安装，必须将“visibility”属性设置为 1。只能通过 Open XML 执行此操作。
 
-An easy way to write the XML is to first run your add-in and [tag the document on the client side](#tag-the-document-on-the-client-side) to write the value, and then save the document and inspect the XML that is generated. Office will detect and provide the appropriate attribute values. You can also use the [Open XML SDK 2.5 Productivity Tool](https://www.microsoft.com/download/details.aspx?id=30425) tool to generate C# code to programmatically add the markup based on the XML you generate.
+编写 XML 的一个简单方法是首先运行外接程序并[标记客户端上的文档](#tag-the-document-on-the-client-side)以写入值，然后保存该文档并检查生成的 XML。Office 将检测并提供适当的属性值。还可以使用 [Open XML SDK 2.5 Productivity Tool](https://www.microsoft.com/download/details.aspx?id=30425) 工具生成 C# 代码以编程方式添加基于生成的 XML 的标记。
 
 ## <a name="test-and-verify-opening-task-panes"></a>对打开任务窗格进行测试和验证
 

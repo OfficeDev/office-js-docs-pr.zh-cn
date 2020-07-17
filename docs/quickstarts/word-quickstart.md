@@ -110,7 +110,7 @@ _适用于：Windows 版 Word 2016 或更高版本、iPad 版 Word 和 Mac 版 W
 
 3. 对项目命名，然后选择“**创建**”。
 
-4. Visual Studio creates a solution and its two projects appear in **Solution Explorer**. The **Home.html** file opens in Visual Studio.
+4. 此时，Visual Studio 创建解决方案，且它的两个项目显示在“解决方案资源管理器”**** 中。**Home.html** 文件在 Visual Studio 中打开。
 
 ### <a name="explore-the-visual-studio-solution"></a>探索 Visual Studio 解决方案
 
@@ -118,7 +118,7 @@ _适用于：Windows 版 Word 2016 或更高版本、iPad 版 Word 和 Mac 版 W
 
 ### <a name="update-the-code"></a>更新代码
 
-1. **Home.html** specifies the HTML that will be rendered in the add-in's task pane. In **Home.html**, replace the `<body>` element with the following markup and save the file.
+1. **Home.html** 指定在加载项的任务窗格中呈现的 HTML。 在 **Home.html** 中，将 `<body>` 元素替换为以下标记，并保存文件。
 
     ```html
     <body>
@@ -144,7 +144,7 @@ _适用于：Windows 版 Word 2016 或更高版本、iPad 版 Word 和 Mac 版 W
     </body>
     ```
 
-2. Open the file **Home.js** in the root of the web application project. This file specifies the script for the add-in. Replace the entire contents with the following code and save the file.
+2. 打开 Web 应用项目根目录中的文件“Home.js”****。 此文件指定加载项脚本。 将整个内容替换为以下代码，并保存文件。
 
     ```js
     'use strict';
@@ -245,7 +245,7 @@ _适用于：Windows 版 Word 2016 或更高版本、iPad 版 Word 和 Mac 版 W
     })();
     ```
 
-3. Open the file **Home.css** in the root of the web application project. This file specifies the custom styles for the add-in. Replace the entire contents with the following code and save the file.
+3. 打开 Web 应用项目根目录中的文件“Home.css”****。 此文件指定加载项自定义样式。 将整个内容替换为以下代码，并保存文件。
 
     ```css
     #content-header {
@@ -278,7 +278,7 @@ _适用于：Windows 版 Word 2016 或更高版本、iPad 版 Word 和 Mac 版 W
 
 1. 打开加载项项目中的 XML 清单文件。 此文件定义的是加载项设置和功能。
 
-2. The `ProviderName` element has a placeholder value. Replace it with your name.
+2. `ProviderName` 元素具有占位符值。 将其替换为你的姓名。
 
 3. `DisplayName` 元素的 `DefaultValue` 属性有占位符。 将它替换为“My Office Add-in”****。
 
@@ -298,7 +298,7 @@ _适用于：Windows 版 Word 2016 或更高版本、iPad 版 Word 和 Mac 版 W
 
 ### <a name="try-it-out"></a>试用
 
-1. Using Visual Studio, test the newly created Word add-in by pressing **F5** or choosing the **Start** button to launch Word with the **Show Taskpane** add-in button displayed in the ribbon. The add-in will be hosted locally on IIS.
+1. 使用 Visual Studio 的同时，按 **F5** 或选择“开始”**** 按钮启动 Word，以测试新建的 Word 加载项，功能区中显示有“显示任务窗格”**** 加载项按钮。加载项本地托管在 IIS 上。
 
 2. 在 Word 中，依次选择“开始”**** 选项卡和功能区中的“显示任务窗格”**** 按钮，以打开加载项任务窗格。 （如果使用的是 Office 的一次性购买版本，而不是 Microsoft 365 版本，那么自定义按钮不受支持。 相反，任务窗格将立即打开。）
 

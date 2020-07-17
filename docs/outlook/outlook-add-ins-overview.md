@@ -27,15 +27,15 @@ Outlook 加载项不同于 COM 或 VSTO 的加载项，后者为特定于 Window
 
 ## <a name="extension-points"></a>扩展点
 
-Extension points are the ways that add-ins integrate with Outlook. The following are the ways this can be done:
+扩展点是加载项与 Outlook 集成的方式。以下是执行此操作的方法：
 
-- Add-ins can declare buttons that appear in command surfaces across messages and appointments. For more information, see [Add-in commands for Outlook](add-in-commands-for-outlook.md).
+- 加载项可以声明出现在所有邮件和约会的命令界面中的按钮。有关详细信息，请参阅 [用于 Outlook 的加载项命令](add-in-commands-for-outlook.md)。
 
     **功能区上具有命令按钮的加载项**
 
     ![加载项命令无 UI 形状](../images/uiless-command-shape.png)
 
-- Add-ins can link off regular expression matches or detected entities in messages and appointments. For more information, see [Contextual Outlook add-ins](contextual-outlook-add-ins.md).
+- 加载项可以在邮件和约会中中断与正则表达式匹配项或检测实体的链接。 有关详细信息，请参阅 [上下文 Outlook 加载项](contextual-outlook-add-ins.md)。
 
     **用于突出显示的实体（地址）的上下文相关加载项**
 
@@ -46,9 +46,9 @@ Extension points are the ways that add-ins integrate with Outlook. The following
 
 ## <a name="mailbox-items-available-to-add-ins"></a>外接程序可用的邮箱项目
 
-Outlook add-ins are available on messages or appointments while composing or reading, but not other item types. Outlook does not activate add-ins if the current message item, in a compose or read form, is one of the following:
+在撰写或阅读时，Outlook 外接程序对邮件或约会可用，但对其他项目类型不可用。如果撰写或阅读窗体中的当前邮件项目为以下项之一，则 Outlook 不会激活邮件外接程序：
 
-- Protected by Information Rights Management (IRM) or encrypted in other ways for protection. A digitally signed message is an example since digital signing relies on one of these mechanisms.
+- 使用信息权限管理 (IRM) 进行保护，或使用其他保护方式进行加密。数字签名邮件便是其中一个例子，因为数字签名依赖于这些机制之一。
 
 - 具有邮件类别 IPM.Report.* 的送达报告或通知，包括送达和未送达报告 (NDR)，以及已读、未读和延迟通知。
 

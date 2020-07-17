@@ -26,11 +26,11 @@ ms.locfileid: "45093992"
    - 适用于 Exchange 2013 的 Outlook 网页版
    - Outlook.com
 
-- The client must be connected to an Exchange server or Microsoft 365 using a direct connection. When configuring the client, the user must choose an **Exchange**, **Office 365**, or **Outlook.com** account type. If the client is configured to connect with POP3 or IMAP, add-ins will not load.
+- 必须使用直接连接将客户端连接到 Exchange 服务器或 Microsoft 365。在配置客户端时，用户必须选择 **Exchange**、**Office 365** 或 **Outlook.com** 帐户类型。如果将客户端配置为使用 POP3 或 IMAP 连接，将不会加载加载项。
 
 ## <a name="mail-server-requirements"></a>邮件服务器要求
 
-If the user is connected to Microsoft 365 or Outlook.com, mail server requirements are all taken care of already. However, for users connected to on-premises installations of Exchange Server, the following requirements apply.
+如果用户已连接到 Microsoft 365 或 Outlook.com，则已经满足了所有邮件服务器要求。但是，对于连接到 Exchange Server 本地安装的用户，适用以下要求。
 
 - 服务器必须是 Exchange 2013 或更高版本。
 - 必须启用 Exchange Web 服务 (EWS)，并向 Internet 公开此服务。 许多加载项要求，必须启用 EWS 才能正常运行。
@@ -39,7 +39,7 @@ If the user is connected to Microsoft 365 or Outlook.com, mail server requiremen
 
 ## <a name="add-in-server-requirements"></a>加载项服务器要求
 
-Add-in files (HTML, JavaScript, etc.) can be hosted on any web server platform desired. The only requirement is that the server must be configured to use HTTPS, and the SSL certificate must be trusted by the client.
+可在任意需要的 Web 服务器平台上托管外接程序文件（HTML、JavaScript 等）。唯一的要求是，必须将服务器配置为使用 HTTPS，并且 SSL 证书必须受客户端信任。
 
 ## <a name="see-also"></a>另请参阅
 
