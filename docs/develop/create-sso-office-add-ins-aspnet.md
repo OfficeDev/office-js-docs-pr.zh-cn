@@ -1,14 +1,14 @@
 ---
 title: 创建使用单一登录的 ASP.NET Office 加载项
-description: 有关如何使用 ASP.NET 后端创建 (或转换) Office 加载项的分步指南，请使用单一登录 (SSO) 。
+description: 有关如何使用 ASP.NET 后端创建（或转换） Office 外接程序以使用单一登录（SSO）的分步指南。
 ms.date: 12/04/2019
 localization_priority: Normal
-ms.openlocfilehash: 71c5b6a90aa17ab08c1fe172be2181c9ec8650ef
-ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
+ms.openlocfilehash: 9d2917c334a2e90736daa1b3e4ad7ef85be6b978
+ms.sourcegitcommit: 472b81642e9eb5fb2a55cd98a7b0826d37eb7f73
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "45093719"
+ms.lasthandoff: 07/17/2020
+ms.locfileid: "45159610"
 ---
 # <a name="create-an-aspnet-office-add-in-that-uses-single-sign-on-preview"></a>创建使用单一登录的 ASP.NET Office 加载项（预览）
 
@@ -428,7 +428,7 @@ ms.locfileid: "45093719"
 1. 将 `TODO 1` 替换为以下代码。 关于此代码，请注意以下几点：
 
     * 此代码指示 OWIN 确保在来自 Office 主机的启动令牌中指定的受众必须与 web.config 中指定的值相匹配。
-    * Microsoft 帐户具有与任何组织租户 GUID 均不相同的颁发者 GUID，因此为了支持这两种类型的帐户，我们不会验证颁发者。
+    * Microsoft 帐户具有与任何组织租户 GUID 不同的颁发者 GUID，因此，为了支持这两种帐户，我们不会验证颁发者。
     * 将 `SaveSigninToken` 设置为 `true` 将导致 OWIN 保存来自 Office 主机的原始启动令牌。 加载项需要该令牌来获取具有代理流的 Microsoft Graph 访问令牌。
     * OWIN 中间件不验证作用域。 启动令牌作用域应包括 `access_as_user`，在控制器中加以验证。
 
@@ -608,4 +608,4 @@ ms.locfileid: "45093719"
 
 1. 按 F5。
 1. 在 Office 应用程序的“**主页**”功能区上，选择“**SSO ASP.NET**”组中的“**显示加载项**”以打开任务窗格加载项。
-1. 单击“**获取 OneDrive 文件名**”按钮。 如果你使用 Microsoft 365 教育版或工作帐户或 Microsoft 帐户登录 Office，且 SSO 按预期运行，则 OneDrive for Business 中的前10个文件和文件夹名称将显示在任务窗格中。 如果你未登录，或者处于不支持 SSO 的情形中，或者 SSO 出于任何原因无法正常工作，则系统将提示你登录。 登录后，将显示文件和文件夹名称。
+1. 单击“**获取 OneDrive 文件名**”按钮。 如果你使用 Microsoft 365 教育版或工作帐户或 Microsoft 帐户登录 Office，且 SSO 按预期工作，则 OneDrive for Business 中的前10个文件和文件夹名称将显示在任务窗格中。 如果你未登录，或者处于不支持 SSO 的情形中，或者 SSO 出于任何原因无法正常工作，则系统将提示你登录。 登录后，将显示文件和文件夹名称。

@@ -1,14 +1,14 @@
 ---
 title: Outlook 外接程序 API 预览要求集
 description: 当前在 Outlook 外接程序的预览中的功能和 Api。
-ms.date: 06/17/2020
+ms.date: 07/10/2020
 localization_priority: Normal
-ms.openlocfilehash: d91d1e16382a9ada71210657d6111f548c85ccfd
-ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
+ms.openlocfilehash: 457195b7511d4dabca101242400d44154a57a781
+ms.sourcegitcommit: 472b81642e9eb5fb2a55cd98a7b0826d37eb7f73
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "45094419"
+ms.lasthandoff: 07/17/2020
+ms.locfileid: "45159218"
 ---
 # <a name="outlook-add-in-api-preview-requirement-set"></a>Outlook 外接程序 API 预览要求集
 
@@ -36,31 +36,31 @@ Office JavaScript API 的 Outlook 外接程序 API 子集包括可以在 Outlook
 
 在撰写模式下添加了一个代表约会全天事件属性的新对象。
 
-**适用于**： Windows (上的 Outlook 连接到 Microsoft 365 订阅) 
+**适用于**： Windows 上的 Outlook （连接到 Microsoft 365 订阅）
 
 #### <a name="sensitivity"></a>[Sensitivity](/javascript/api/outlook/office.sensitivity?view=outlook-js-preview)
 
 添加了一个新对象，该对象表示在撰写模式下约会的敏感度。
 
-**适用于**： Windows (上的 Outlook 连接到 Microsoft 365 订阅) 
+**适用于**： Windows 上的 Outlook （连接到 Microsoft 365 订阅）
 
 #### <a name="officecontextmailboxitemisalldayevent"></a>[IsAllDayEvent 的 Office。](office.context.mailbox.item.md#properties)
 
 添加了一个新属性，该属性表示约会是否为全天事件。
 
-**适用于**： Windows (上的 Outlook 连接到 Microsoft 365 订阅) 
+**适用于**： Windows 上的 Outlook （连接到 Microsoft 365 订阅）
 
 #### <a name="officecontextmailboxitemsensitivity"></a>["Context"。项目敏感度](office.context.mailbox.item.md#properties)
 
 添加了一个表示约会敏感度的新属性。
 
-**适用于**： Windows (上的 Outlook 连接到 Microsoft 365 订阅) 
+**适用于**： Windows 上的 Outlook （连接到 Microsoft 365 订阅）
 
 #### <a name="officemailboxenumsappointmentsensitivitytype"></a>[MailboxEnums. AppointmentSensitivityType](/javascript/api/outlook/office.mailboxenums.appointmentsensitivitytype?view=outlook-js-preview)
 
 添加了一个 `AppointmentSensitivityType` 代表约会上可用的敏感度选项的新枚举。
 
-**适用于**： Windows (上的 Outlook 连接到 Microsoft 365 订阅) 
+**适用于**： Windows 上的 Outlook （连接到 Microsoft 365 订阅）
 
 <br>
 
@@ -76,13 +76,13 @@ Office JavaScript API 的 Outlook 外接程序 API 子集包括可以在 Outlook
 
 向对象添加了一个新函数 `Body` ，该函数在撰写模式下将数据追加到项正文的末尾。
 
-**适用于**： Windows (上的 outlook 连接到 Microsoft 365 订阅) ，outlook 网页版 (新式中，[配置预览访问](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide#set-up-the-release-option-in-the-admin-center)) 
+**适用于**： Windows 上的 outlook （连接到 Microsoft 365 订阅），outlook 网页版（新式，[配置预览访问](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide#set-up-the-release-option-in-the-admin-center)）
 
 #### <a name="extendedpermissions"></a>[ExtendedPermissions](../../manifest/extendedpermissions.md)
 
 向清单添加了一个新元素，其中 `AppendOnSend` 扩展权限必须包含在扩展权限的集合中。
 
-**适用于**： Windows (上的 outlook 连接到 Microsoft 365 订阅) ，outlook 网页版 (新式中，[配置预览访问](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide#set-up-the-release-option-in-the-admin-center)) 
+**适用于**： Windows 上的 outlook （连接到 Microsoft 365 订阅），outlook 网页版（新式，[配置预览访问](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide#set-up-the-release-option-in-the-admin-center)）
 
 <br>
 
@@ -96,37 +96,37 @@ Office JavaScript API 的 Outlook 外接程序 API 子集包括可以在 Outlook
 
 向显示现有约会的对象添加了新函数 `Mailbox` 。 这是方法的异步版本 `displayAppointmentForm` 。
 
-**适用于**： Windows (上的 Outlook 连接到 Microsoft 365 订阅) 
+**适用于**： Windows 上的 Outlook （连接到 Microsoft 365 订阅）
 
 #### <a name="officecontextmailboxdisplaymessageformasync"></a>[DisplayMessageFormAsync 的](/javascript/api/outlook/office.mailbox?view=outlook-js-preview#displaymessageformasync-itemid--options--callback-)
 
 向显示现有邮件的对象添加了新函数 `Mailbox` 。 这是方法的异步版本 `displayMessageForm` 。
 
-**适用于**： Windows (上的 Outlook 连接到 Microsoft 365 订阅) 
+**适用于**： Windows 上的 Outlook （连接到 Microsoft 365 订阅）
 
 #### <a name="officecontextmailboxdisplaynewappointmentformasync"></a>[DisplayNewAppointmentFormAsync 的](/javascript/api/outlook/office.mailbox?view=outlook-js-preview#displaynewappointmentformasync-parameters--options--callback-)
 
 向 `Mailbox` 显示新约会窗体的对象添加了一个新函数。 这是方法的异步版本 `displayNewAppointmentForm` 。
 
-**适用于**： Windows (上的 Outlook 连接到 Microsoft 365 订阅) 
+**适用于**： Windows 上的 Outlook （连接到 Microsoft 365 订阅）
 
 #### <a name="officecontextmailboxdisplaynewmessageformasync"></a>[DisplayNewMessageFormAsync 的](/javascript/api/outlook/office.mailbox?view=outlook-js-preview#displaynewmessageformasync-parameters--options--callback-)
 
 向 `Mailbox` 显示新邮件窗体的对象添加了一个新函数。 这是方法的异步版本 `displayNewMessageForm` 。
 
-**适用于**： Windows (上的 Outlook 连接到 Microsoft 365 订阅) 
+**适用于**： Windows 上的 Outlook （连接到 Microsoft 365 订阅）
 
 #### <a name="officecontextmailboxitemdisplayreplyallformasync"></a>[DisplayReplyAllFormAsync 的 Office。](office.context.mailbox.item.md#methods)
 
 向 `Item` 在阅读模式下显示 "全部答复" 窗体的对象添加了一个新函数。 这是方法的异步版本 `displayReplyAllForm` 。
 
-**适用于**： Windows (上的 Outlook 连接到 Microsoft 365 订阅) 
+**适用于**： Windows 上的 Outlook （连接到 Microsoft 365 订阅）
 
 #### <a name="officecontextmailboxitemdisplayreplyformasync"></a>[DisplayReplyFormAsync 的 Office。](office.context.mailbox.item.md#methods)
 
 向 `Item` 在阅读模式下显示 "答复" 窗体的对象添加了一个新函数。 这是方法的异步版本 `displayReplyForm` 。
 
-**适用于**： Windows (上的 Outlook 连接到 Microsoft 365 订阅) 
+**适用于**： Windows 上的 Outlook （连接到 Microsoft 365 订阅）
 
 <br>
 
@@ -142,19 +142,19 @@ Office JavaScript API 的 Outlook 外接程序 API 子集包括可以在 Outlook
 
 `LaunchEvent`向清单添加了扩展点支持。 它配置基于事件的激活功能。
 
-**中的可用**： Outlook 网页版 (新式的[请求预览访问](https://aka.ms/OWAPreview)) 
+**适用于**： Outlook 网页版（新式，[请求预览访问](https://aka.ms/OWAPreview)）
 
 #### <a name="launchevents-manifest-element"></a>[LaunchEvents 清单元素](../../manifest/launchevents.md)
 
 `LaunchEvents`向清单添加了元素。 它支持配置基于事件的激活功能。
 
-**中的可用**： Outlook 网页版 (新式的[请求预览访问](https://aka.ms/OWAPreview)) 
+**适用于**： Outlook 网页版（新式，[请求预览访问](https://aka.ms/OWAPreview)）
 
 #### <a name="runtimes-manifest-element"></a>[运行时清单元素](../../manifest/runtimes.md)
 
 向清单元素添加了 Outlook 支持 `Runtimes` 。 它引用了基于事件的激活功能所需的 HTML 和 JavaScript 文件。
 
-**中的可用**： Outlook 网页版 (新式的[请求预览访问](https://aka.ms/OWAPreview)) 
+**适用于**： Outlook 网页版（新式，[请求预览访问](https://aka.ms/OWAPreview)）
 
 <br>
 
@@ -168,7 +168,7 @@ Office JavaScript API 的 Outlook 外接程序 API 子集包括可以在 Outlook
 
 向 `CustomProperties` 获取所有自定义属性的对象添加了新函数。
 
-**适用于**： Windows (上的 outlook 连接到 Microsoft 365 订阅) ，outlook (网页版) ，Mac 上的 outlook (已连接到 microsoft 365 订阅) ，Outlook 在 Android 上，Outlook 在 iOS 上
+**提供**时间： Windows 上的 outlook （连接到 Microsoft 365 订阅）、web 上的 outlook （新式）、Mac 上的 outlook （已连接到 Microsoft 365 订阅）、Outlook on Android、在 iOS 上的 outlook
 
 <br>
 
@@ -182,7 +182,7 @@ Office JavaScript API 的 Outlook 外接程序 API 子集包括可以在 Outlook
 
 新增了一个函数，当外接程序[由可操作邮件激活时](/outlook/actionable-messages/invoke-add-in-from-actionable-message)，返回传递的初始化数据。
 
-**适用于**： Windows (上的 outlook 连接到 Microsoft 365 订阅) ，outlook 网页版 (经典) 
+**适用于**： Windows 上的 outlook （连接到 Microsoft 365 订阅），outlook 网页版（经典）
 
 <br>
 
@@ -196,31 +196,31 @@ Office JavaScript API 的 Outlook 外接程序 API 子集包括可以在 Outlook
 
 向对象添加了一个新函数 `Body` ，该函数在撰写模式下添加或替换项目正文中的签名。
 
-**适用于**： Windows (上的 outlook 连接到 Microsoft 365 订阅) ，outlook 网页版 (新式中，[配置预览访问](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide#set-up-the-release-option-in-the-admin-center)) 
+**适用于**： Windows 上的 outlook （连接到 Microsoft 365 订阅），outlook 网页版（新式，[配置预览访问](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide#set-up-the-release-option-in-the-admin-center)）
 
 #### <a name="officecontextmailboxitemdisableclientsignatureasync"></a>[DisableClientSignatureAsync 的 Office。](office.context.mailbox.item.md#methods)
 
 添加了一个新函数，用于在撰写模式下禁用发送邮箱的客户端签名。
 
-**适用于**： Windows (上的 outlook 连接到 Microsoft 365 订阅) ，outlook 网页版 (新式中，[配置预览访问](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide#set-up-the-release-option-in-the-admin-center)) 
+**适用于**： Windows 上的 outlook （连接到 Microsoft 365 订阅），outlook 网页版（新式，[配置预览访问](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide#set-up-the-release-option-in-the-admin-center)）
 
 #### <a name="officecontextmailboxitemgetcomposetypeasync"></a>[GetComposeTypeAsync 的 Office。](/javascript/api/outlook/office.messagecompose?view=outlook-js-preview#getcomposetypeasync-options--callback-)
 
 添加了一个新函数，用于在撰写模式下获取邮件的撰写类型。
 
-**适用于**： Windows (上的 outlook 连接到 Microsoft 365 订阅) ，outlook 网页版 (新式中，[配置预览访问](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide#set-up-the-release-option-in-the-admin-center)) 
+**适用于**： Windows 上的 outlook （连接到 Microsoft 365 订阅），outlook 网页版（新式，[配置预览访问](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide#set-up-the-release-option-in-the-admin-center)）
 
 #### <a name="officecontextmailboxitemisclientsignatureenabledasync"></a>[IsClientSignatureEnabledAsync 的 Office。](office.context.mailbox.item.md#methods)
 
 添加了一个新函数，用于检查在撰写模式下是否在项目上启用了客户端签名。
 
-**适用于**： Windows (上的 outlook 连接到 Microsoft 365 订阅) ，outlook 网页版 (新式中，[配置预览访问](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide#set-up-the-release-option-in-the-admin-center)) 
+**适用于**： Windows 上的 outlook （连接到 Microsoft 365 订阅），outlook 网页版（新式，[配置预览访问](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide#set-up-the-release-option-in-the-admin-center)）
 
 #### <a name="officemailboxenumscomposetype"></a>[MailboxEnums. ComposeType](/javascript/api/outlook/office.mailboxenums.composetype?view=outlook-js-preview)
 
 添加了一个新枚举，该枚举 `ComposeType` 在撰写模式中可用。
 
-**适用于**： Windows (上的 outlook 连接到 Microsoft 365 订阅) ，outlook 网页版 (新式中，[配置预览访问](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide#set-up-the-release-option-in-the-admin-center)) 
+**适用于**： Windows 上的 outlook （连接到 Microsoft 365 订阅），outlook 网页版（新式，[配置预览访问](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide#set-up-the-release-option-in-the-admin-center)）
 
 <br>
 
@@ -234,13 +234,13 @@ Office JavaScript API 的 Outlook 外接程序 API 子集包括可以在 Outlook
 
 增加了获取 Office 主题的功能。
 
-**适用于**： Windows (上的 Outlook 连接到 Microsoft 365 订阅) 
+**适用于**： Windows 上的 Outlook （连接到 Microsoft 365 订阅）
 
 #### <a name="officeeventtypeofficethemechanged"></a>[Office.EventType.OfficeThemeChanged](/javascript/api/office/office.eventtype)
 
 向 `Mailbox` 中添加了 `OfficeThemeChanged` 事件。
 
-**适用于**： Windows (上的 Outlook 连接到 Microsoft 365 订阅) 
+**适用于**： Windows 上的 Outlook （连接到 Microsoft 365 订阅）
 
 <br>
 
@@ -254,7 +254,7 @@ Office JavaScript API 的 Outlook 外接程序 API 子集包括可以在 Outlook
 
 添加了对 `getAccessToken` 的访问，使外接程序[能够访问](../../../outlook/authenticate-a-user-with-an-sso-token.md) Microsoft Graph API 的访问令牌。
 
-**适用于**： Outlook on Windows (连接到 microsoft 365 订阅) ，Mac 上的 outlook (连接到 microsoft 365 订阅) ，outlook 网页版 (新式) ，outlook 网页版 (经典) 
+**提供**时间： Windows 上的 outlook （连接到 microsoft 365 订阅）、365 Mac 上的 outlook （新式）（新式）、outlook 网页版（经典）
 
 ## <a name="see-also"></a>另请参阅
 

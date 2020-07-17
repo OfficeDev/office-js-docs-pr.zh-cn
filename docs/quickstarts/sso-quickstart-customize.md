@@ -4,17 +4,17 @@ description: 了解如何自定义使用 Yeoman 生成器创建的启用 SSO 的
 ms.date: 07/07/2020
 ms.prod: non-product-specific
 localization_priority: Normal
-ms.openlocfilehash: c1d292ed8ead40201dd035d6ae8e6997174ea477
-ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
+ms.openlocfilehash: 8d4ab4653bcd8fccdcbecbe2e7e8e29a49a3184f
+ms.sourcegitcommit: 472b81642e9eb5fb2a55cd98a7b0826d37eb7f73
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "45094482"
+ms.lasthandoff: 07/17/2020
+ms.locfileid: "45159449"
 ---
 # <a name="customize-your-nodejs-sso-enabled-add-in"></a>自定义启用了 Node.js SSO 的加载项
 
 > [!IMPORTANT]
-> 本文基于启用了 SSO 的加载项，这是通过完成[单一登录 (sso) 快速入门](sso-quickstart.md)创建的。 阅读本文之前，请先完成快速入门。
+> 本文基于启用了 SSO 的加载项，这是通过完成[单一登录（SSO）快速入门](sso-quickstart.md)创建的。 阅读本文之前，请先完成快速入门。
 
 [Sso 快速入门](sso-quickstart.md)创建启用了 sso 的加载项，以获取已登录用户的配置文件信息，并将其写入文档或邮件。 在本文中，您将逐步完成使用 SSO 快速入门中的 Yeoman 生成器来更新创建的外接程序的过程，以添加需要不同权限的新功能。
 
@@ -105,7 +105,7 @@ ms.locfileid: "45094482"
 
 2. 在 " **./manifest.xml**" 中，找到 `<Scope>User.Read</Scope>` 文件末尾附近的行，并将其替换为行 `<Scope>Files.Read.All</Scope>` 。
 
-3. 在 **/src/helpers/fallbackauthdialog.js** (或 **/src/helpers/fallbackauthdialog.ts**对于 TypeScript 项目) ，找到字符串 `https://graph.microsoft.com/User.Read` 并将其替换为字符串 `https://graph.microsoft.com/Files.Read.All` ，如下所示 `requestObj` 定义：
+3. 在 **/src/helpers/fallbackauthdialog.js** （或在 **/Src/helpers/fallbackauthdialog.ts**中为 TypeScript 项目），找到字符串 `https://graph.microsoft.com/User.Read` 并将其替换为字符串 `https://graph.microsoft.com/Files.Read.All` ，例如 `requestObj` 定义如下：
 
     ```javascript
     var requestObj = {
@@ -157,16 +157,16 @@ ms.locfileid: "45094482"
 
 7. 通过遵循与您的外接程序类型对应的部分中的指导，更新分析来自 Microsoft Graph 的响应并将其写入文档或邮件的代码：
 
-    - [ (JavaScript) 的 Excel 外接程序所需的更改](#changes-required-for-an-excel-add-in-javascript)
-    - [ (TypeScript) 的 Excel 外接程序所需的更改](#changes-required-for-an-excel-add-in-typescript)
-    - [ (JavaScript) 的 Outlook 外接程序所需的更改](#changes-required-for-an-outlook-add-in-javascript)
-    - [ (TypeScript) 的 Outlook 外接程序所需的更改](#changes-required-for-an-outlook-add-in-typescript)
-    - [ (JavaScript) 的 PowerPoint 加载项所需的更改](#changes-required-for-a-powerpoint-add-in-javascript)
-    - [ (TypeScript) 的 PowerPoint 加载项所需的更改](#changes-required-for-a-powerpoint-add-in-typescript)
-    - [ (JavaScript) 的 Word 外接程序所需的更改](#changes-required-for-a-word-add-in-javascript)
-    - [Word 外接程序 (TypeScript) 所需的更改](#changes-required-for-a-word-add-in-typescript)
+    - [Excel 加载项所需的更改（JavaScript）](#changes-required-for-an-excel-add-in-javascript)
+    - [Excel 外接程序（TypeScript）所需的更改](#changes-required-for-an-excel-add-in-typescript)
+    - [Outlook 外接程序（JavaScript）所需的更改](#changes-required-for-an-outlook-add-in-javascript)
+    - [Outlook 外接程序（TypeScript）所需的更改](#changes-required-for-an-outlook-add-in-typescript)
+    - [PowerPoint 加载项所需的更改（JavaScript）](#changes-required-for-a-powerpoint-add-in-javascript)
+    - [PowerPoint 加载项（TypeScript）所需的更改](#changes-required-for-a-powerpoint-add-in-typescript)
+    - [Word 加载项所需的更改（JavaScript）](#changes-required-for-a-word-add-in-javascript)
+    - [Word 加载项（TypeScript）所需的更改](#changes-required-for-a-word-add-in-typescript)
 
-### <a name="changes-required-for-an-excel-add-in-javascript"></a> (JavaScript) 的 Excel 外接程序所需的更改
+### <a name="changes-required-for-an-excel-add-in-javascript"></a>Excel 加载项所需的更改（JavaScript）
 
 如果外接程序是使用 JavaScript 创建的 Excel 外接程序，请在 **/src/helpers/documentHelper.js**中进行以下更改：
 
@@ -233,7 +233,7 @@ ms.locfileid: "45094482"
 
 在进行这些更改后，请跳至本文的 "[试用](#try-it-out)本主题" 一节，以试用更新后的外接程序。
 
-### <a name="changes-required-for-an-excel-add-in-typescript"></a> (TypeScript) 的 Excel 外接程序所需的更改
+### <a name="changes-required-for-an-excel-add-in-typescript"></a>Excel 外接程序（TypeScript）所需的更改
 
 如果外接程序是使用 TypeScript 创建的 Excel 外接程序，请打开 **/src/taskpane/taskpane.ts**，找到该 `writeDataToOfficeDocument` 函数，并将其替换为以下函数：
 
@@ -269,7 +269,7 @@ export function writeDataToOfficeDocument(result: Object): Promise<any> {
 
 在进行这些更改后，请跳至本文的 "[试用](#try-it-out)本主题" 一节，以试用更新后的外接程序。
 
-### <a name="changes-required-for-an-outlook-add-in-javascript"></a> (JavaScript) 的 Outlook 外接程序所需的更改
+### <a name="changes-required-for-an-outlook-add-in-javascript"></a>Outlook 外接程序（JavaScript）所需的更改
 
 如果你的外接程序是使用 JavaScript 创建的 Outlook 外接程序，请在 **/src/helpers/documentHelper.js**中进行以下更改：
 
@@ -331,7 +331,7 @@ export function writeDataToOfficeDocument(result: Object): Promise<any> {
 
 在进行这些更改后，请跳至本文的 "[试用](#try-it-out)本主题" 一节，以试用更新后的外接程序。
 
-### <a name="changes-required-for-an-outlook-add-in-typescript"></a> (TypeScript) 的 Outlook 外接程序所需的更改
+### <a name="changes-required-for-an-outlook-add-in-typescript"></a>Outlook 外接程序（TypeScript）所需的更改
 
 如果您的外接程序是使用 TypeScript 创建的 Outlook 外接程序，请打开 **/src/taskpane/taskpane.ts**，找到该 `writeDataToOfficeDocument` 函数，并将其替换为以下函数：
 
@@ -362,7 +362,7 @@ export function writeDataToOfficeDocument(result: Object): void {
 
 在进行这些更改后，请跳至本文的 "[试用](#try-it-out)本主题" 一节，以试用更新后的外接程序。
 
-### <a name="changes-required-for-a-powerpoint-add-in-javascript"></a> (JavaScript) 的 PowerPoint 加载项所需的更改
+### <a name="changes-required-for-a-powerpoint-add-in-javascript"></a>PowerPoint 加载项所需的更改（JavaScript）
 
 如果你的外接程序是使用 JavaScript 创建的 PowerPoint 加载项，请在 **/src/helpers/documentHelper.js**中进行以下更改：
 
@@ -430,7 +430,7 @@ export function writeDataToOfficeDocument(result: Object): void {
 
 在进行这些更改后，请跳至本文的 "[试用](#try-it-out)本主题" 一节，以试用更新后的外接程序。
 
-### <a name="changes-required-for-a-powerpoint-add-in-typescript"></a> (TypeScript) 的 PowerPoint 加载项所需的更改
+### <a name="changes-required-for-a-powerpoint-add-in-typescript"></a>PowerPoint 加载项（TypeScript）所需的更改
 
 如果您的外接程序是使用 TypeScript 创建的 PowerPoint 加载项，请打开 **/src/taskpane/taskpane.ts**，找到该 `writeDataToOfficeDocument` 函数，并将其替换为以下函数：
 
@@ -465,7 +465,7 @@ export function writeDataToOfficeDocument(result: Object): void {
 
 在进行这些更改后，请跳至本文的 "[试用](#try-it-out)本主题" 一节，以试用更新后的外接程序。
 
-### <a name="changes-required-for-a-word-add-in-javascript"></a> (JavaScript) 的 Word 外接程序所需的更改
+### <a name="changes-required-for-a-word-add-in-javascript"></a>Word 加载项所需的更改（JavaScript）
 
 如果你的外接程序是使用 JavaScript 创建的 Word 外接程序，请在 **/src/helpers/documentHelper.js**中进行以下更改：
 
@@ -531,7 +531,7 @@ export function writeDataToOfficeDocument(result: Object): void {
 
 在进行这些更改后，请跳至本文的 "[试用](#try-it-out)本主题" 一节，以试用更新后的外接程序。
 
-### <a name="changes-required-for-a-word-add-in-typescript"></a>Word 外接程序 (TypeScript) 所需的更改
+### <a name="changes-required-for-a-word-add-in-typescript"></a>Word 加载项（TypeScript）所需的更改
 
 如果你的外接程序是使用 TypeScript 创建的 Word 外接程序，请打开 **/src/taskpane/taskpane.ts**，找到该 `writeDataToOfficeDocument` 函数，并将其替换为以下函数：
 
@@ -582,7 +582,7 @@ export function writeDataToOfficeDocument(result: Object): Promise<any> {
     npm start
     ```
 
-2. 在运行以前的命令时打开的 Office 客户端应用程序 (例如，Excel、Word 或 PowerPoint) ，请确保您已登录到与您在为应用程序[配置 SSO](sso-quickstart.md#configure-sso)时连接到 Azure 时使用的 microsoft 365 管理员帐户相同的 microsoft 365 组织的成员的用户。 执行此操作，将为成功进行 SSO 建立了相应的条件。 
+2. 在运行上一个命令（即 Excel、Word 或 PowerPoint）时打开的 Office 客户端应用程序中，确保您已使用与您在为应用程序[配置 SSO](sso-quickstart.md#configure-sso)时用于连接 Azure 的 microsoft 365 管理员帐户相同的 microsoft 365 组织成员的用户登录。 执行此操作，将为成功进行 SSO 建立了相应的条件。 
 
 3. 在 Office 客户端应用程序中，依次选择的“**开始**”选项卡和功能区中的“**显示任务窗格**”按钮，以打开加载项任务窗格。 下图显示 Excel 中的该按钮。
 
@@ -614,7 +614,7 @@ export function writeDataToOfficeDocument(result: Object): Promise<any> {
     npm start
     ```
 
-2. 按照[旁加载 Outlook 加载项以供测试](/outlook/add-ins/sideload-outlook-add-ins-for-testing)中的说明操作，旁加载 Outlook 加载项。 确保您登录到 Outlook 时使用的是与 Azure 在为应用程序[配置 SSO](sso-quickstart.md#configure-sso)时使用的 microsoft 365 管理员帐户相同的 microsoft 365 组织的成员。 执行此操作，将为成功进行 SSO 建立了相应的条件。 
+2. 按照[旁加载 Outlook 加载项以供测试](/outlook/add-ins/sideload-outlook-add-ins-for-testing)中的说明操作，旁加载加载项。 确保您登录到 Outlook 时使用的是与 Azure 在为应用程序[配置 SSO](sso-quickstart.md#configure-sso)时使用的 microsoft 365 管理员帐户相同的 microsoft 365 组织的成员。 执行此操作，将为成功进行 SSO 建立了相应的条件。 
 
 3. 在 Outlook 中，撰写一封新邮件。
 

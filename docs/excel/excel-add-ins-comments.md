@@ -3,12 +3,12 @@ title: 使用 Excel JavaScript API 处理注释
 description: 有关使用 Api 添加、删除和编辑注释和注释线程的信息。
 ms.date: 03/17/2020
 localization_priority: Normal
-ms.openlocfilehash: a0ea156c8599b98800d03d2238451c7935d6466f
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 59751086b645ed56cb2a00bc70678967cae085c5
+ms.sourcegitcommit: 472b81642e9eb5fb2a55cd98a7b0826d37eb7f73
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44609774"
+ms.lasthandoff: 07/17/2020
+ms.locfileid: "45159428"
 ---
 # <a name="work-with-comments-using-the-excel-javascript-api"></a>使用 Excel JavaScript API 处理注释
 
@@ -175,7 +175,8 @@ Excel.run(function (context) {
 
 包含提及的注释需要使用[CommentRichContent](/javascript/api/excel/excel.commentrichcontent)对象创建。 `CommentCollection.add`使用 `CommentRichContent` 包含一个或多个提及的调用，并将其指定 `ContentType.mention` 为 `contentType` 参数。 `content`此外，还需要设置字符串格式，以在文本中插入所提及的内容。 提及的格式为： `<at id="{replyIndex}">{mentionName}</at>` 。
 
-> 便笺目前，只有提及的确切名称可用作提及链接的文本。 稍后将添加对名称的缩写版本的支持。
+> [!NOTE]
+> 目前，只有提及的确切名称可用作提及链接的文本。 稍后将添加对名称的缩写版本的支持。
 
 下面的示例展示了一个注释，其中包含一个注明。
 

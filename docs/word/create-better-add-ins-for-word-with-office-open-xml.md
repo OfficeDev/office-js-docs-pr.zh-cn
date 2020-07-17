@@ -1,20 +1,20 @@
 ---
 title: 使用 Office Open XML 创建更优质的 Word 加载项
-description: 有关如何使用 Office Open XML 改进 Word 外接程序的概述
-ms.date: 10/10/2019
+description: 概述如何使用 Office Open XML 改进 Word 外接程序。
+ms.date: 07/10/2020
 localization_priority: Normal
-ms.openlocfilehash: 2faaedec831a9ae18f218ff160fee26a8d36910e
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 8aeb0d122c85a1bf38755d1db364222359d06e58
+ms.sourcegitcommit: 472b81642e9eb5fb2a55cd98a7b0826d37eb7f73
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44609585"
+ms.lasthandoff: 07/17/2020
+ms.locfileid: "45159302"
 ---
 # <a name="create-better-add-ins-for-word-with-office-open-xml"></a>使用 Office Open XML 创建更优质的 Word 加载项
 
 **提供者：** Stephanie Krieger，Microsoft Corporation | Juan Balmori Labra，Microsoft Corporation
 
-如果您正在构建 Office 外接程序以在 Word 中运行，您可能已经知道 Office JavaScript API （node.js）提供了几种读取和写入文档内容的格式。 这些称为强制类型，包括纯文本、表格、HTML 以及 Office Open XML。
+如果您正在构建 Office 外接程序以在 Word 中运行，您可能已经知道 Office JavaScript API （Office.js）提供了几种读取和写入文档内容的格式。 这些称为强制类型，包括纯文本、表格、HTML 以及 Office Open XML。
 
 因此，当您需要向文档添加多种格式的内容（如图像、格式化表格、图表，甚至仅为格式化文本）时，会进行什么选择？你可以使用 HTML 来插入一些多种格式内容的类型，例如图片。HTML 强制转换可能有一些缺点，例如对内容可用的格式设置和定位选项的限制，具体取决于你的方案。由于 Office Open XML 是用于编写 Word 文档（例如 .docx 和 .dotx）的语言，因此您可以使用用户可以应用的几乎任何类型的格式设置插入用户可以添加到 Word 文档中的几乎任何类型的内容。确定需要完成的 Office Open XML 标记比你想象的容易。
 
@@ -73,7 +73,7 @@ ms.locfileid: "44609585"
 *图 7：形状*
 
 
-![Word 中的 Microsoft Office 绘图形状。](../images/office15-app-create-wd-app-using-ooxml-fig07.png)
+![Word 中的绘图形状。](../images/office15-app-create-wd-app-using-ooxml-fig07.png)
 
 可以插入带/不带文本和格式效果的内置或自定义绘图形状。
 
@@ -96,7 +96,7 @@ ms.locfileid: "44609585"
 
 ![Word 中的动态 SmartArt 图表。](../images/office15-app-create-wd-app-using-ooxml-fig10.png)
 
-Microsoft Office 提供了大量 SmartArt 图表布局（可以使用 Office Open XML 创建自己的 SmartArt 图表布局）。
+Office 提供了各种各样的 SmartArt 图表布局（可以使用 Office Open XML 创建自己的布局）。
 
 *图 11：图表*
 
@@ -317,7 +317,7 @@ function writeContent() {
 
 - 打开的 **w:document** 标记包括若干个命名空间 (**xmlns**) 列表。其中许多命名空间指的是特定类型的内容，您仅在它们与内容相关时才需要它们。
 
-    请注意，文档部分的标记前缀引用回命名空间。 在此示例中，在整个 document 的标记中使用的唯一前缀是**w：**，因此我们需要在打开的**w:document**标记中保留的唯一命名空间为**xmlns： w**。
+    请注意，文档部分的标记前缀引用回命名空间。 在此示例中，在整个 document.xml 部分的标记中使用的唯一前缀是**w：**，因此我们需要在开始**w:document**标记中保留的唯一命名空间为**xmlns： w**。
 
 
 > [!TIP]
@@ -563,7 +563,7 @@ function addAndBindControl() {
 > [!NOTE]
 > 如前所述，以及如前面的代码中所示，内容控件的名称用于确定创建绑定的位置。但是，在 Office Open XML 标记中，代码使用内容控件的名称和 ID 属性添加绑定到文档。
 
-代码执行之后，如果检查外接程序在其中创建了绑定的文档标记，则会看到每个绑定有两个部件。 在添加了绑定的内容控件的标记中（在 document 中），您将看到属性**w15： webExtensionLinked/**。
+代码执行之后，如果检查外接程序在其中创建了绑定的文档标记，则会看到每个绑定有两个部件。 在添加了绑定的内容控件的标记中（在 document.xml 中），您将看到属性**w15： webExtensionLinked/**。
 
 在名为 webExtensions1.xml 的文档部件中，你将看到已创建的绑定列表。每个绑定都使用绑定 ID 和适用控件的 ID 属性进行标识，如下所示，**appref** 属性为内容控件 ID：** **we:binding id="myBinding" type="text" appref="1382295294"/**。
 
@@ -742,7 +742,7 @@ function populateBinding(filename) {
 
 
 > [!NOTE]
-> 查看标记时，请注意 a:blip 标记中使用的其他命名空间。 您将在 xlmns 中看到的 drawingML **：** 命名空间（主命名空间）动态放置在使用 drawingML 引用的开头，而不是位于 document part 的顶部。 然而，关系命名空间 (r) 必须保留在其所显示的 document.xml 开头位置。 检查其他命名空间要求的图片标记。 请注意，无需记住哪种内容类型需要哪个命名空间，您通过查看整个 document.xml 中的标记前缀就能很容易地分辨出来。
+> 查看标记时，请注意 a:blip 标记中使用的其他命名空间。 您将在 document.xml 中看到， **xlmns：** 命名空间（主 drawingML 命名空间）动态放置在使用 drawingML 引用的开头，而不是位于 document.xml 部件的顶部。 然而，关系命名空间 (r) 必须保留在其所显示的 document.xml 开头位置。 检查其他命名空间要求的图片标记。 请注意，无需记住哪种内容类型需要哪个命名空间，您通过查看整个 document.xml 中的标记前缀就能很容易地分辨出来。
 
 
 ### <a name="understanding-additional-image-parts-and-formatting"></a>了解其他图像部分和格式

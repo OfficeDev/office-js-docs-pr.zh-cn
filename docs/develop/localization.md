@@ -1,14 +1,14 @@
 ---
 title: Office 加载项的本地化
 description: 您可以使用 Office JavaScript API 根据主机应用程序的区域设置来确定区域设置并显示字符串，或者根据数据的区域设置解释或显示数据。
-ms.date: 10/11/2019
+ms.date: 07/10/2020
 localization_priority: Normal
-ms.openlocfilehash: 72f6e7ad9c2095bffddb85be60c410963357f74c
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 79994406e8477786dd93a1aa56f5cda0a1235d01
+ms.sourcegitcommit: 472b81642e9eb5fb2a55cd98a7b0826d37eb7f73
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44608116"
+ms.lasthandoff: 07/17/2020
+ms.locfileid: "45159582"
 ---
 # <a name="localization-for-office-add-ins"></a>Office 加载项的本地化
 
@@ -176,7 +176,7 @@ Office JavaScript API 提供了两个属性，这些属性支持显示或解释�
 
 ### <a name="configure-office-to-use-additional-languages-for-display-or-editing"></a>配置 Office 以使用其他语言进行显示或编辑
 
-若要运行所提供的示例代码，请在计算机上配置 Microsoft Office 以使用其他语言，这样您就可以通过切换用于显示菜单和命令的语言或者切换用于编辑和校对的语言（或同时切换两者）来测试您的加载项。
+若要运行提供的示例代码，请在您的计算机上配置 Office 以使用其他语言，以便您可以通过切换用于在菜单和命令中显示的语言、进行编辑和校对，或同时进行这两种操作来测试外接程序。
 
 可以使用 Office 语言包安装其他语言。 有关语言包以及如何获取语言包的详细信息，请参阅[适用于 Office 的 Language Accessory Pack](https://office.microsoft.com/language-packs/)。
 
@@ -195,7 +195,7 @@ Office JavaScript API 提供了两个属性，这些属性支持显示或解释�
 
 3. 将项目命名为 " **WorldReadyAddIn** "，然后选择 "**创建**"。
 
-4. 此时，Visual Studio 创建解决方案，且它的两个项目显示在“解决方案资源管理器”**** 中。 将在 Visual Studio 中打开 "**主页 .html** " 文件。
+4. 此时，Visual Studio 创建解决方案，且它的两个项目显示在“解决方案资源管理器”**** 中。 **Home.html**文件将在 Visual Studio 中打开。
 
 
 ### <a name="localize-the-text-used-in-your-add-in"></a>本地化加载项中使用的文本

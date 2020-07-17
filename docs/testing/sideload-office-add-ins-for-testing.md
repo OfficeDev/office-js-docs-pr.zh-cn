@@ -1,14 +1,14 @@
 ---
 title: 在 Office 网页版中旁加载 Office 加载项进行测试
-description: 通过旁加载在 Office 网页版中测试 Office 加载项
-ms.date: 07/07/2020
+description: 通过旁加载在 Office 上测试 Office 外接程序（网址为）。
+ms.date: 07/10/2020
 localization_priority: Normal
-ms.openlocfilehash: 60b7e4f1d598e4f5ec09307d58294f54123112ad
-ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
+ms.openlocfilehash: 2f9a0d058fc972316da964dd5af03b5733dc7b60
+ms.sourcegitcommit: 472b81642e9eb5fb2a55cd98a7b0826d37eb7f73
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "45094118"
+ms.lasthandoff: 07/17/2020
+ms.locfileid: "45159288"
 ---
 # <a name="sideload-office-add-ins-in-office-on-the-web-for-testing"></a>在 Office 网页版中旁加载 Office 加载项进行测试
 
@@ -25,7 +25,7 @@ ms.locfileid: "45094118"
 
 ## <a name="sideload-an-office-add-in-in-office-on-the-web"></a>在 Office 网页版中旁加载 Office 加载项
 
-1. 打开 [Microsoft Office 网页版](https://office.live.com/)。
+1. [在 web 上打开 Office](https://office.live.com/)。
 
 2. 在 **"立即开始使用在线应用程序**" 中，选择 " **Excel**"、" **Word**" 或 " **PowerPoint**";，然后打开一个新文档。
 
@@ -76,4 +76,4 @@ ms.locfileid: "45094118"
 
 ## <a name="remove-a-sideloaded-add-in"></a>删除旁加载加载项
 
-您可以通过清除浏览器的缓存来删除以前的旁加载外接程序。 此外，如果您对外接程序的清单进行了更改 (例如，更新) 的加载项命令的图标或文本的文件名，则可能需要清除缓存，然后使用更新的清单重新旁加载加载项。 执行此操作后，Office 将按照更新清单中所述的方式呈现该加载项。
+您可以通过清除浏览器的缓存来删除以前的旁加载外接程序。 此外，如果您对外接程序清单进行了更改（例如，更新了图标或加载项命令的文本的文件名），您可能需要清除缓存，然后使用更新的清单重新旁加载该外接程序。 执行此操作后，Office 将按照更新清单中所述的方式呈现该加载项。

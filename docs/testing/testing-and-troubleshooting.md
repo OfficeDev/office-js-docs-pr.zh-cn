@@ -3,12 +3,12 @@ title: 排查 Office 加载项中的用户错误
 description: 了解如何解决 Office 外接程序中的用户错误。
 ms.date: 06/17/2020
 localization_priority: Normal
-ms.openlocfilehash: 1dbc8cc18e0c9b12ccff605b655dd7c8629fb9cf
-ms.sourcegitcommit: b939312ffdeb6e0a0dfe085db7efe0ff143ef873
+ms.openlocfilehash: 51f5ec406a09b18ece24b74dc22718e7fd422e38
+ms.sourcegitcommit: 472b81642e9eb5fb2a55cd98a7b0826d37eb7f73
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/19/2020
-ms.locfileid: "44810847"
+ms.lasthandoff: 07/17/2020
+ms.locfileid: "45159183"
 ---
 # <a name="troubleshoot-user-errors-with-office-add-ins"></a>排查 Office 加载项中的用户错误
 
@@ -140,9 +140,9 @@ del /s /f /q %LOCALAPPDATA%\Packages\Microsoft.Win32WebViewHost_cw5n1h2txyewy\AC
 
 ## <a name="see-also"></a>另请参阅
 
-- [在 Office 网页版中调试加载项](debug-add-ins-in-office-online.md) 
+- [在 Office 网页版中调试加载项](debug-add-ins-in-office-online.md)
 - [将 Office 外接程序旁加载到 iPad 和 Mac 上](sideload-an-office-add-in-on-ipad-and-mac.md)  
 - [在 iPad 和 Mac 上调试 Office 外接程序](debug-office-add-ins-on-ipad-and-mac.md)  
-- [适用于 Visual Studio Code 的 Microsoft Office 外接程序调试器扩展](./debug-with-vs-extension.md)
+- [适用于 Visual Studio Code 的 Microsoft Office 外接程序调试器扩展](debug-with-vs-extension.md)
 - [验证 Office 加载项的清单](troubleshoot-manifest.md)
 - [使用运行时日志记录功能调试加载项](runtime-logging.md)

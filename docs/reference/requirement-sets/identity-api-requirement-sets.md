@@ -1,15 +1,15 @@
 ---
 title: Identity API 要求集
 description: Office 外接程序的标识 API 要求集信息。
-ms.date: 04/16/2020
+ms.date: 07/10/2020
 ms.prod: non-product-specific
 localization_priority: Normal
-ms.openlocfilehash: 5bface00e0ffe89e7a403b251129867b334f7f69
-ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
+ms.openlocfilehash: d8ef8b9eaf6e5f4f59f9bb7fd05ed0c91d741c45
+ms.sourcegitcommit: 472b81642e9eb5fb2a55cd98a7b0826d37eb7f73
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "45094377"
+ms.lasthandoff: 07/17/2020
+ms.locfileid: "45159295"
 ---
 # <a name="identity-api-requirement-sets"></a>Identity API 要求集
 
@@ -17,7 +17,7 @@ ms.locfileid: "45094377"
 
 Office 外接程序在多个 Office 版本中运行。 下表列出了 Identity API 要求集、支持该要求集的 Office 主机应用程序，以及 Office 应用程序的内部版本或版本号。
 
-|  要求集  | Windows 上的 Office 2013 或更高版本<br>（一次性购买） | Windows 版 Office<br> (连接到 Microsoft 365 订阅)  |  iPad 版 Office<br> (连接到 Microsoft 365 订阅)   |  Mac 版 Office<br> (连接到 Microsoft 365 订阅)   | Office 网页版  | SharePoint Online | OneDrive.com |Outlook.com & Exchange Online|
+|  要求集  | Windows 上的 Office 2013 或更高版本<br>（一次性购买） | Windows 版 Office<br>（连接到 Microsoft 365 订阅） |  iPad 版 Office<br>（连接到 Microsoft 365 订阅）  |  Mac 版 Office<br>（连接到 Microsoft 365 订阅）  | Office 网页版  | SharePoint Online | OneDrive.com |Outlook.com & Exchange Online|
 |:-----|-----|:-----|:-----|:-----|:-----|:-----|:-----|:-----|
 | IdentityAPI 预览  | 不适用 | 预览<b>*</b> | 即将推出 | 预览<b>*</b> | 预览<b>* &#8224;</b> | 预览<b>* &#8224;</b>| 即将推出 | 即将推出 |
 

@@ -3,12 +3,12 @@ title: 清单文件中的运行时
 description: 运行时元素指定外接程序的运行时。
 ms.date: 06/01/2020
 localization_priority: Normal
-ms.openlocfilehash: ef00bea317ae479d912b3a02f269ef97045b015d
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 082491befc6b9dbdc474b0e40f9defd90a4ef75f
+ms.sourcegitcommit: 472b81642e9eb5fb2a55cd98a7b0826d37eb7f73
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44608095"
+ms.lasthandoff: 07/17/2020
+ms.locfileid: "45159358"
 ---
 # <a name="runtimes-element"></a>运行时元素
 
@@ -24,8 +24,6 @@ ms.locfileid: "44608095"
 **外接类型：** 任务窗格、邮件
 
 > [!IMPORTANT]
-> **Excel**：共享运行时目前仅适用于 Windows 中的 Excel。
->
 > **Outlook**：基于事件的激活功能当前[处于预览阶段](../../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md)，仅适用于 web 上的 Outlook。 有关详细信息，请参阅[如何预览基于事件的激活功能](../../outlook/autolaunch.md#how-to-preview-the-event-based-activation-feature)。
 
 ## <a name="syntax"></a>语法
@@ -42,7 +40,7 @@ ms.locfileid: "44608095"
 
 ## <a name="child-elements"></a>子元素
 
-|  元素 |  必需  |  Description  |
+|  元素 |  必需  |  说明  |
 |:-----|:-----|:-----|
 | [运行时](runtime.md) | 是 |  外接程序的运行时。 |
 

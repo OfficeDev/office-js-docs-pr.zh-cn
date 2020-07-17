@@ -3,12 +3,12 @@ title: 创建使用单一登录的 Node.js Office 加载项
 description: 了解如何创建使用 Office 单一登录的基于 Node.js 的 Office 加载项
 ms.date: 06/18/2020
 localization_priority: Normal
-ms.openlocfilehash: 580e7ecaa44529f2e6415fbec638370028e2a1af
-ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
+ms.openlocfilehash: f2f28d0725de52c9a0647d9d1848662fb1ab7b4f
+ms.sourcegitcommit: 472b81642e9eb5fb2a55cd98a7b0826d37eb7f73
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "45093686"
+ms.lasthandoff: 07/17/2020
+ms.locfileid: "45159589"
 ---
 # <a name="create-a-nodejs-office-add-in-that-uses-single-sign-on-preview"></a>创建使用单一登录的 Node.js Office 加载项（预览）
 
@@ -75,9 +75,9 @@ ms.locfileid: "45093686"
 
 1. 选择“管理”**** 下的“证书和密码”****。 选择“新客户端密码”**** 按钮。 输入“描述”**** 的值，然后选择“到期”**** 的适当选项，并选择“添加”****。 在继续操作前，*立即复制客户端机密码值并使用应用程序 ID 保存它*，因为在后面的过程中，将需要用到它。
 
-1. 在“管理”**** 下选择“公开 API”****。 选择 "**设置**" 链接。 这将生成应用程序 ID URI，格式为 "api://$App ID GUID $"，其中 $App ID GUID $ 是**应用程序 (客户端) ID**。
+1. 在“管理”**** 下选择“公开 API”****。 选择 "**设置**" 链接。 这将生成应用程序 ID URI，格式为 "api://$App ID GUID $"，其中 $App ID GUID $ 是**应用程序（客户端） ID**。
 
-1. 在生成的 ID 中，插入 `localhost:44355/` (注意追加到双正斜杠和 GUID 之间的结束) 的正斜杠 "/"。 完成后，整个 ID 应具有窗体 `api://localhost:44355/$App ID GUID$` ; 例如 `api://localhost:44355/c6c1f32b-5e55-4997-881a-753cc1d563b7` 。
+1. 在生成的 ID 中，insert `localhost:44355/` （注意，追加到末尾的正斜杠 "/"）与双正斜杠和 GUID 之间。 完成后，整个 ID 应具有窗体 `api://localhost:44355/$App ID GUID$` ; 例如 `api://localhost:44355/c6c1f32b-5e55-4997-881a-753cc1d563b7` 。
 
 1. 选择“**添加一个作用域**”按钮。 在打开的面板中，输入 `access_as_user` 作为**作用域**名称。
 
@@ -571,7 +571,7 @@ ms.locfileid: "45093686"
 
 1. 在 Office 应用程序的“**主页**”功能区上，选择“**SSO Node.js**”组中的“**显示加载项**”按钮以打开任务窗格加载项。
 
-1. 单击“**获取 OneDrive 文件名**”按钮。 如果你使用 Microsoft 365 教育版或工作帐户或 Microsoft 帐户登录 Office，且 SSO 按预期运行，则 OneDrive for Business 中的前10个文件和文件夹名称将插入到文档中。 （第一次登录可能需要长达 15 秒钟。）如果你未登录，或者处于不支持 SSO 的情形中，或者 SSO 出于任何原因无法正常工作，则系统将提示你登录。 登录后，将显示文件和文件夹名称。
+1. 单击“**获取 OneDrive 文件名**”按钮。 如果你使用 Microsoft 365 教育版或工作帐户或 Microsoft 帐户登录 Office，且 SSO 按预期工作，则 OneDrive for Business 中的前10个文件和文件夹名称将插入到文档中。 （第一次登录可能需要长达 15 秒钟。）如果你未登录，或者处于不支持 SSO 的情形中，或者 SSO 出于任何原因无法正常工作，则系统将提示你登录。 登录后，将显示文件和文件夹名称。
 
 > [!NOTE]
 > 如果先前使用其他 ID 登录过 Office，并且当时打开的一些 Office 应用现在仍处于打开状态，Office 可能无法可靠地更改 ID，即使看似已更改过，也不例外。 在这种情况下，可能无法调用 Microsoft Graph，或者可能返回以前 ID 的数据。 为了防止发生这种情况，请务必先*关闭其他所有 Office 应用程序*，然后再按“**获取 OneDrive 文件名**”。

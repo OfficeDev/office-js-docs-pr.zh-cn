@@ -1,14 +1,14 @@
 ---
-ms.date: 05/17/2020
+ms.date: 07/10/2020
 description: 了解如何调试不使用任务窗格的 Excel 自定义函数。
 title: UI-较少的自定义函数调试
 localization_priority: Normal
-ms.openlocfilehash: c984c5a46f8418006fa64f167b0f5882b0cb8a17
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 9a493600b6e94d86138cd7949dad0498ec9df05b
+ms.sourcegitcommit: 472b81642e9eb5fb2a55cd98a7b0826d37eb7f73
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44609324"
+ms.lasthandoff: 07/17/2020
+ms.locfileid: "45159512"
 ---
 # <a name="ui-less-custom-functions-debugging"></a>UI-较少的自定义函数调试
 
@@ -31,7 +31,7 @@ ms.locfileid: "44609324"
 > [!NOTE]
 > 为简单起见，本文介绍了如何在使用 Visual Studio Code 编辑、运行任务以及某些情况下使用调试视图的上下文中进行调试。 如果使用的是其他编辑器或命令行工具，请参阅本文末尾的[命令行说明](#commands-for-building-and-running-your-add-in)。
 
-## <a name="requirements"></a>Requirements
+## <a name="requirements"></a>要求
 
 开始调试之前，应使用[Office 外接程序的 Yeoman 生成器](https://github.com/OfficeDev/generator-office)创建自定义函数项目。 有关如何创建自定义函数项目的指南，请参阅[自定义函数教程](../tutorials/excel-tutorial-create-custom-functions.md)。
 
@@ -56,7 +56,7 @@ ms.locfileid: "44609324"
 
 ### <a name="start-debugging"></a>开始调试
 
-1. 在 VS 代码中，打开源代码脚本文件（**函数 .js**或**函数**）。
+1. 在 VS 代码中，打开源代码脚本文件（**functions.js**或**函数 ts**）。
 2. 在自定义函数源代码中[设置断点](https://code.visualstudio.com/Docs/editor/debugging#_breakpoints)。
 3. 在 Excel 工作簿中，输入使用自定义函数的公式。
 
@@ -94,7 +94,7 @@ ms.locfileid: "44609324"
 
 
 ### <a name="set-breakpoints"></a>设置断点
-1. 在 VS 代码中，打开源代码脚本文件（**函数 .js**或**函数**）。
+1. 在 VS 代码中，打开源代码脚本文件（**functions.js**或**函数 ts**）。
 2. 在自定义函数源代码中[设置断点](https://code.visualstudio.com/Docs/editor/debugging#_breakpoints)。
 3. 在 Excel 工作簿中，输入使用自定义函数的公式。
 
@@ -110,7 +110,7 @@ ms.locfileid: "44609324"
 
 ### <a name="sideload-your-add-in"></a>旁加载加载项
 
-1. 打开 [Microsoft Office 网页版](https://office.live.com/)。
+1. [在 web 上打开 Office](https://office.live.com/)。
 2. 打开一个新的 Excel 工作簿。
 3. 打开功能区上的 "**插入**" 选项卡，然后在 "**外接程序**" 部分中，选择 " **Office 外接程序**"。
 4. 在 " **Office 外接程序**" 对话框中，选择 "**我的外**接程序" 选项卡，选择 "**管理我的外接**程序"，然后**上传我的外接程序**。
@@ -127,7 +127,7 @@ ms.locfileid: "44609324"
 ### <a name="start-debugging"></a>开始调试
 
 1. 在浏览器中打开开发人员工具。 对于 Chrome 和大多数浏览器 F12 将打开开发人员工具。
-2. 在开发人员工具中，使用**Cmd + p**或**Ctrl + p**打开源代码脚本文件（**函数 .js**或**函数**）。
+2. 在开发人员工具中，使用**Cmd + p**或**Ctrl + p** （**functions.js**或**函数 ts**）打开源代码脚本文件。
 3. 在自定义函数源代码中[设置断点](https://code.visualstudio.com/Docs/editor/debugging#_breakpoints)。 
 
 如果您需要更改代码，您可以在 VS 代码中进行编辑并保存所做的更改。 刷新浏览器以查看加载的更改。
@@ -150,7 +150,7 @@ ms.locfileid: "44609324"
     对于 web 上的 Excel，您还需要旁加载您的外接程序。 按照[旁加载您的外接程序](#sideload-your-add-in)中的步骤，旁加载你的外接程序。 然后继续转到下一节以开始调试。
     
 4. 在浏览器中打开开发人员工具。 对于 Chrome 和大多数浏览器 F12 将打开开发人员工具。
-5. 在开发人员工具中，打开源代码脚本文件（**函数 .js**或**函数**）。 您的自定义函数代码可能位于文件末尾附近。
+5. 在开发人员工具中，打开源代码脚本文件（**functions.js**或**函数 ts**）。 您的自定义函数代码可能位于文件末尾附近。
 6. 在自定义函数源代码中，通过选择一行代码来应用断点。
 
 如果您需要更改代码，您可以在 Visual Studio 中进行编辑并保存所做的更改。 刷新浏览器以查看加载的更改。

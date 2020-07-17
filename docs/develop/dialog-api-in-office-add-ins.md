@@ -3,12 +3,12 @@ title: 在 Office 加载项中使用 Office 对话框 API
 description: 了解在 Office 外接程序中创建对话框的基础知识。
 ms.date: 06/10/2020
 localization_priority: Normal
-ms.openlocfilehash: 749fd6041c2ef60a4d766e865e25d53e97298d01
-ms.sourcegitcommit: 449a728118db88dea22a44f83728d21604d6ee8c
+ms.openlocfilehash: 5cdd457b99636dd244eed1fa88c1b76cab23ee8c
+ms.sourcegitcommit: 472b81642e9eb5fb2a55cd98a7b0826d37eb7f73
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/12/2020
-ms.locfileid: "44719068"
+ms.lasthandoff: 07/17/2020
+ms.locfileid: "45159561"
 ---
 # <a name="use-the-office-dialog-api-in-office-add-ins"></a>在 Office 加载项中使用 Office 对话框 API
 
@@ -79,7 +79,7 @@ Office.context.ui.displayDialogAsync('https://myDomain/myDialog.html', {height: 
 默认值为 `false`，与完全省略此属性时相同。 如果加载项没有在 Office 网页版中运行，`displayInIframe` 将被忽略。
 
 > [!NOTE]
-> 如果对话框始终重定向到无法在 iframe 中打开的页面，**不**得使用 `displayInIframe: true`。 例如，许多热门 Web 服务的登录页（如 Google 和 Microsoft 帐户）都无法在 iframe 中打开。
+> 如果对话框始终重定向到无法在 iframe 中打开的页面，**不**得使用 `displayInIframe: true`。 例如，不能在 iframe 中打开许多常用 web 服务（如 Google 和 Microsoft 帐户）的 "登录" 页面。
 
 ## <a name="send-information-from-the-dialog-box-to-the-host-page"></a>将信息从对话框发送到主机页
 
@@ -137,7 +137,7 @@ function processMessage(arg) {
 ```
 
 > [!NOTE]
-> - Office 将 `arg` 对象传递给处理程序。 它的 `message` 属性是对话框中的 `messageParent` 调用发送的布尔值或字符串。 在此示例中，它是 Microsoft 帐户或 Google 等服务的用户配置文件的字符串化表示。因此，使用 `JSON.parse` 将其反序列化回对象。
+> - Office 将 `arg` 对象传递给处理程序。 它的 `message` 属性是对话框中的 `messageParent` 调用发送的布尔值或字符串。 在此示例中，它是用户配置文件从 Microsoft 帐户或 Google 等服务的字符串化表示形式，因此它将被反序列化为使用的对象 `JSON.parse` 。
 > - 未显示 `showUserName` 实现。它可能在任务窗格上显示定制的欢迎消息。
 
 在用户完成与对话框的交互后，消息处理程序应关闭对话框，如下面的示例所示。
@@ -170,7 +170,7 @@ function processMessage(arg) {
 
 ### <a name="conditional-messaging"></a>条件消息
 
-由于可以从对话框发送多个 `messageParent` 调用，但在主机页中只有一个 `DialogMessageReceived` 事件处理程序，因此处理程序必须使用条件逻辑来区分不同的消息。比方说，如果对话框提示用户登录标识提供程序（如 Microsoft 帐户或 Google），则会以消息形式发送用户配置文件。如果身份验证失败，对话框会将错误消息发送到主机页，如下面的示例所示：
+由于可以从对话框发送多个 `messageParent` 调用，但在主机页中只有一个 `DialogMessageReceived` 事件处理程序，因此处理程序必须使用条件逻辑来区分不同的消息。 例如，如果对话框提示用户登录到标识提供程序（如 Microsoft 帐户或 Google），则它会将用户的配置文件作为邮件发送。 如果身份验证失败，对话框会将错误消息发送到主机页，如下面的示例所示：
 
 ```js
 if (loginSuccess) {

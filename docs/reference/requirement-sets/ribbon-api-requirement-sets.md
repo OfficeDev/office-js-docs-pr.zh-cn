@@ -1,27 +1,27 @@
 ---
 title: 功能区 API 要求集
 description: 指定哪些 Office 平台和生成支持动态功能区 Api。
-ms.date: 07/07/2020
+ms.date: 07/10/2020
 ms.prod: non-product-specific
 localization_priority: Normal
-ms.openlocfilehash: 6a0e6af3a74b0b0402710fd66bac6c915aa4c18a
-ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
+ms.openlocfilehash: 1d8f17d56b779fb1590daa82e3c391423c3bfc9a
+ms.sourcegitcommit: 472b81642e9eb5fb2a55cd98a7b0826d37eb7f73
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "45094279"
+ms.lasthandoff: 07/17/2020
+ms.locfileid: "45159190"
 ---
 # <a name="ribbon-api-requirement-sets"></a>功能区 API 要求集
 
 要求集是指各组已命名的 API 成员。Office 加载项使用清单中指定的要求集或执行运行时检查，以确定 Office 主机是否支持加载项所需的 API。有关详细信息，请参阅 [Office 版本和要求集](/office/dev/add-ins/develop/office-versions-and-requirement-sets)。
 
-功能区 API 集支持编程控制何时自定义外接程序命令 (即启用和禁用自定义功能区按钮和菜单项) 。
+功能区 API 集支持在启用和禁用自定义外接程序命令（即自定义功能区按钮和菜单项）时进行编程控制。
 
 Office 外接程序在多个 Office 版本中运行。 下表列出了功能区 API 要求集、支持该要求集的 Office 主机应用程序，以及 Office 应用程序的内部版本号或版本号。
 
-|  要求集  | Windows 版 Office 2013<br>（一次性购买） | Windows 上的 Office 2016 或更高版本<br>（一次性购买）   | Windows 版 Office\*<br> (连接到 Microsoft 365 订阅)  |  iPad 版 Office<br> (连接到 Microsoft 365 订阅)   |  Mac 版 Office\*<br> (连接到 Microsoft 365 订阅)   | Office 网页版\*  |  Office Online Server  |
+|  要求集  | Windows 版 Office 2013<br>（一次性购买） | Windows 上的 Office 2016 或更高版本<br>（一次性购买）   | Windows 版 Office\*<br>（连接到 Microsoft 365 订阅） |  iPad 版 Office<br>（连接到 Microsoft 365 订阅）  |  Mac 版 Office\*<br>（连接到 Microsoft 365 订阅）  | Office 网页版\*  |  Office Online Server  |
 |:-----|-----|:-----|:-----|:-----|:-----|:-----|:-----|
-| RibbonApi 1。1  | 不适用 | 不适用 | 版本 2002 (内部版本 12527.20264) 或更高版本 | 16.38 或更高版本 | 不适用 | 2020 年 2 月 | 不适用|
+| RibbonApi 1。1  | 不适用 | 不适用 | 版本2002（内部版本12527.20264）或更高版本 | 16.38 或更高版本 | 不适用 | 2020 年 2 月 | 不适用|
 
 > **&#42;** 在预览阶段，仅在 Excel 中支持功能区 API，并且它需要 Microsoft 365 订阅。 你应该使用来自预览体验成员频道的最新每月版本和内部版本。 你可能需要成为 Office 预览体验成员，才能获取此版本。 有关详细信息，请参阅[成为 Office 预览体验成员](https://products.office.com/office-insider?tab=tab-1)。 请注意，当内部版本毕业生到生产半年频道时，将为该生成关闭对预览功能（包括功能区 API）的支持。
 

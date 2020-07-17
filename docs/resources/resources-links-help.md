@@ -1,14 +1,14 @@
 ---
 title: Office 加载项其他资源
 description: 有关 Office 外接程序主题的有用资源
-ms.date: 03/02/2020
+ms.date: 07/14/2020
 localization_priority: Normal
-ms.openlocfilehash: 5bb5db78bf98d740b66977736644122612ba97da
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 25cfcf5ba56322f8bf5afb9273f94dcdf8db43c3
+ms.sourcegitcommit: 472b81642e9eb5fb2a55cd98a7b0826d37eb7f73
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44611265"
+ms.lasthandoff: 07/17/2020
+ms.locfileid: "45159071"
 ---
 # <a name="office-add-ins-additional-resources"></a>Office 加载项其他资源
 
@@ -21,7 +21,7 @@ ms.locfileid: "44611265"
 |**Office JavaScript API 功能请求**| 若要提交 Office JavaScript API 功能请求，请使用 <a href="https://officespdev.uservoice.com/" target="_blank">Office 开发人员平台 UserVoice 页面</a>。|
 |**文档问题**| 如果您遇到包含文档的问题（bug），请将问题提交到<a href="https://github.com/officedev/office-js-docs-pr/issues" target="_blank">OfficeDev/office js-pr</a> GitHub 存储库。|
 |**文档更新**| 若要自己对文档进行更改，请在文章中选择 "**编辑**" 链接，并向<a href="https://github.com/officedev/office-js-docs-pr" target="_blank">OfficeDev/office js-pr</a> GitHub 存储库提交拉取请求。|
-|**Script Lab**| 如果要探索 Office JavaScript API 或尝试预览 API，可以在 Excel、Word 和 PowerPoint 中使用 Script Lab。 若要了解详细信息，请参阅[使用 Script Lab 探索 Office JavaScript API](../overview/explore-with-script-lab.md)。 |
-|**关于 Office 加载项的 Pluralsight 课程**| <a href="https://www.pluralsight.com/courses/build-office-addins-js-api" target="_blank">John Brown 的课程“使用 Office JavaScript API 构建 Office 加载项的基础知识”</a>教你如何从头开始开发 PowerPoint 加载项，包括有关如何与 Trello 通信以及将加载项发布到 Microsoft Office 应用商店的信息。|
+|**Script Lab**| 如果您想要浏览 Office JavaScript Api 或尝试预览 Api，可以在 Excel、Outlook、PowerPoint 和 Word 中使用脚本实验室。 若要了解详细信息，请参阅[使用 Script Lab 探索 Office JavaScript API](../overview/explore-with-script-lab.md)。 |
+|**关于 Office 加载项的 Pluralsight 课程**| <a href="https://www.pluralsight.com/courses/build-office-addins-js-api" target="_blank">John 棕色的 "使用 Office JavaScript Api 生成 Office 外接程序的基础知识"</a>了解如何从头开发 PowerPoint 外接程序，包括有关如何与 Trello 通信以及将外接程序发布到 Office 应用商店的信息。|
 |**关于 Office 加载项的 LinkedIn 课程**| <a href="https://www.linkedin.com/learning/microsoft-office-add-ins-for-developers/microsoft-office-add-ins?u=3322">Bill Ayer 的课程“面向开发人员的 Microsoft Office 加载项”</a>提供了该平台的概述，并且介绍了 Office 加载项的许多主要概念。|
 |***《使用 Office.js 构建 Office 加载项》* 书籍**| <a href="https://leanpub.com/buildingofficeaddins">Michael Zlatkovsky 的著作 *《使用 Office.js 构建 Office 加载项》*</a>介绍了适用于 Excel、Word 和 OneNote 的 2016 API 共享的原则和设计模式。 Michael 是 Microsoft Office 扩展团队的成员和 Microsoft MVP，但本书是在 Microsoft 未提供任何意见的情况下独立编写的。 Microsoft 或 Michael 均未从本书获得任何利润，因为收益已捐给救灾和人道主义慈善事业。|

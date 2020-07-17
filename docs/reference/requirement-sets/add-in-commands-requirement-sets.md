@@ -1,15 +1,15 @@
 ---
 title: 加载项命令要求集
-description: Office 外接加载项命令要求集概述
-ms.date: 03/11/2020
+description: Office 加载项命令要求集概述。
+ms.date: 07/10/2020
 ms.prod: non-product-specific
 localization_priority: Normal
-ms.openlocfilehash: d1904d092988a445be3e481123eecbad39097764
-ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
+ms.openlocfilehash: 14952f97e3f03b83c15d0a4d51183fac3ec80af3
+ms.sourcegitcommit: 472b81642e9eb5fb2a55cd98a7b0826d37eb7f73
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "45094412"
+ms.lasthandoff: 07/17/2020
+ms.locfileid: "45159085"
 ---
 # <a name="add-in-commands-requirement-sets"></a>加载项命令要求集
 
@@ -19,7 +19,7 @@ ms.locfileid: "45094412"
 
 外接程序命令的初始版本没有相应的要求集（即，没有 AddinCommands 1.0 要求集）。下表列出了支持初始版本的 Office 主机应用程序，以及这些应用程序的内部版本或版本号。  
 
-| 发布   |  Windows 版 Office 2013<br>（一次性购买） | Windows 版 Office 2016<br>（一次性购买） | Windows 版 Office 2019<br>（一次性购买） | Windows 版 Office<br> (连接到 Microsoft 365 订阅)    |  iPad 版 Office<br> (连接到 Microsoft 365 订阅)   |  Mac 版 Office<br> (连接到 Microsoft 365 订阅)   | Office 网页版  |
+| 发布   |  Windows 版 Office 2013<br>（一次性购买） | Windows 版 Office 2016<br>（一次性购买） | Windows 版 Office 2019<br>（一次性购买） | Windows 版 Office<br>（连接到 Microsoft 365 订阅）   |  iPad 版 Office<br>（连接到 Microsoft 365 订阅）  |  Mac 版 Office<br>（连接到 Microsoft 365 订阅）  | Office 网页版  |
 |:-----|:-----|:-----|:-----|:-----|:-----|:-----|:-----|
 | 加载项命令（初始版本，无要求集） | 不适用 | *仅 Outlook 支持* 16.0.4678.1000 | 版本 1809（内部版本 10827.20150）或更高版本 |版本 1603（内部版本 6769.0000）或更高版本 | 不适用 | 15.33 或更高版本| 2016 年 1 月 |
 
@@ -27,7 +27,7 @@ ms.locfileid: "45094412"
 
 下表列出了外接程序命令 1.1 要求集、支持该要求集的 Office 主机应用程序，以及 Office 应用程序的内部版本或版本号。
 
-|  要求集  |  Windows 版 Office 2013<br>（一次性购买） | Windows 版 Office 2016<br>（一次性购买） | Windows 版 Office 2019<br>（一次性购买） | Windows 版 Office<br> (连接到 Microsoft 365 订阅)    |  iPad 版 Office<br> (连接到 Microsoft 365 订阅)   |  Mac 版 Office<br> (连接到 Microsoft 365 订阅)   | Office 网页版  |  
+|  要求集  |  Windows 版 Office 2013<br>（一次性购买） | Windows 版 Office 2016<br>（一次性购买） | Windows 版 Office 2019<br>（一次性购买） | Windows 版 Office<br>（连接到 Microsoft 365 订阅）   |  iPad 版 Office<br>（连接到 Microsoft 365 订阅）  |  Mac 版 Office<br>（连接到 Microsoft 365 订阅）  | Office 网页版  |  
 |:-----|:-----|:-----|:-----|:-----|:-----|:-----|:-----|
 | AddinCommands 1.1  | 不适用 | *仅 Outlook 支持* 16.0.4678.1000  | 版本 1809（内部版本 10827.20150）或更高版本 | 版本 1705（内部版本 8121.1000）或更高版本 | 不适用 | 15.34 或更高版本\*| 2017 年 5 月 |
 
