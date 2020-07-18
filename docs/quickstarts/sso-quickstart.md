@@ -4,12 +4,12 @@ description: 使用 Yeoman 生成器生成使用单一登录的 Node.js Office �
 ms.date: 02/20/2020
 ms.prod: non-product-specific
 localization_priority: Priority
-ms.openlocfilehash: 4ebe48054b06ae5022d57d3846b0f97b7c205164
-ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
+ms.openlocfilehash: 7b6c6121a7a0f943a8c86276bad31f06de555b79
+ms.sourcegitcommit: 472b81642e9eb5fb2a55cd98a7b0826d37eb7f73
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "45094461"
+ms.lasthandoff: 07/17/2020
+ms.locfileid: "45159374"
 ---
 # <a name="use-the-yeoman-generator-to-create-an-office-add-in-that-uses-single-sign-on-preview"></a>使用 Yeoman 生成器创建使用单一登录的 Node.js Office 加载项（预览版）。
 
@@ -111,7 +111,7 @@ Yeoman 生成器简化了 SSO 加载项的创建流程，能够自动执行在 A
 
 4. 在任务窗格底部，选择 “**获取我的用户配置文件信息**”按钮以开始 SSO 流程。 
 
-5. 如果对话框窗口显示代表加载项请求权限，则表示 你的方案不支持 SSO，并且加载项已退回至替代的用户身份验证方法。 当租户管理员未授予使用加载项访问 Microsoft Graph 的许可，或用户未使用有效的 Microsoft 帐户或 Microsoft 365 教育或工作帐户登录 Office 时，可能会出现这种情况。 选择对话框窗口中的“**接受**”按钮以继续。
+5. 如果对话框窗口显示代表加载项请求权限，则表示 你的方案不支持 SSO，并且加载项已退回至替代的用户身份验证方法。 当租户管理员未授予使用加载项访问 Microsoft Graph 的许可，或者用户未使用有效的 Microsoft 帐户或 Microsoft 365 教育版或工作帐户登录 Office 时，则可能会出现这种情况。 选择对话框窗口中的“**接受**”按钮以继续。
 
     ![权限请求对话框](../images/sso-permissions-request.png)
 
@@ -145,7 +145,7 @@ Yeoman 生成器简化了 SSO 加载项的创建流程，能够自动执行在 A
 
 5. 在任务窗格底部，选择“获取我的用户配置文件信息”**** 按钮以开始 SSO 流程。 
 
-6. 如果对话框窗口显示代表加载项请求权限，则表示 你的方案不支持 SSO，并且加载项已退回至替代的用户身份验证方法。 当租户管理员未授予使用加载项访问 Microsoft Graph 的许可，或用户未使用有效的 Microsoft 帐户或 Microsoft 365 教育或工作帐户登录 Office 时，可能会出现这种情况。 选择对话框窗口中的“**接受**”按钮以继续。
+6. 如果对话框窗口显示代表加载项请求权限，则表示 你的方案不支持 SSO，并且加载项已退回至替代的用户身份验证方法。 当租户管理员未授予使用加载项访问 Microsoft Graph 的许可，或者用户未使用有效的 Microsoft 帐户或 Microsoft 365 教育版或工作帐户登录 Office 时，则可能会出现这种情况。 选择对话框窗口中的“**接受**”按钮以继续。
 
     ![权限请求对话框](../images/sso-permissions-request.png)
 

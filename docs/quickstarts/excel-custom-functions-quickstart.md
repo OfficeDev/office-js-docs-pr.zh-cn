@@ -1,26 +1,26 @@
 ---
-ms.date: 01/16/2020
+ms.date: 07/10/2020
 description: 在 Excel 中开发自定义函数快速入门指南。
 title: 自定义函数快速入门
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: 126349f316cc923349f3f42e719c0017bbd7d7c0
-ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
+ms.openlocfilehash: adf420618ff744a409c6fc61af9b854f786055c0
+ms.sourcegitcommit: 472b81642e9eb5fb2a55cd98a7b0826d37eb7f73
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "45094146"
+ms.lasthandoff: 07/17/2020
+ms.locfileid: "45159442"
 ---
 # <a name="get-started-developing-excel-custom-functions"></a>开始开发 Excel 自定义函数
 
 借助自定义函数，开发人员现在可以在 Excel 中添加新函数，方法是在 JavaScript 或 Typescript 中将这些函数定义为加载项的一部分。 Excel 用户可以访问自定义函数，就像他们访问 Excel 中的任何本机函数一样，比如 `SUM()`。
 
-## <a name="prerequisites"></a>先决条件
+## <a name="prerequisites"></a>必备条件
 
 [!include[Set up requirements](../includes/set-up-dev-environment-beforehand.md)]
 [!include[Yeoman generator prerequisites](../includes/quickstart-yo-prerequisites.md)]
 
-* Windows 版 Excel（版本 1904 或更高版本，关联至 Microsoft 365 订阅）或 Excel 网页版
+* Windows 版 Excel （版本 1904 或更高版本，关联至 Microsoft 365 订阅）或 Excel 网页版
 * Mac 版 Office（关联至 Microsoft 365 订阅）支持 Excel 自定义函数，并且本教程即将推出相关更新。
 
 >[!NOTE]
