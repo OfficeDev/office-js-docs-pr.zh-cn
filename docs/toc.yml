@@ -502,6 +502,8 @@
                   href: reference/manifest/webapplicationinfo.md
         - name: 错误代码
           href: reference/javascript-api-for-office-error-codes.md
+        - name: 不支持的窗口对象
+          href: reference/window-objects-unsupported-in-add-ins.md
     - name: 资源
       href: resources/resources-links-help.md
       displayName: 'Excel, Word, OneNote, Project, PowerPoint, Visio, Outlook'
