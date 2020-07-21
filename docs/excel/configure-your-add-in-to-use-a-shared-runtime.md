@@ -1,21 +1,21 @@
 ---
 ms.date: 05/17/2020
-title: 配置您的 Excel 外接程序以共享浏览器运行时
+title: 将 Excel 加载项配置为共享浏览器运行时
 ms.prod: excel
 description: 将 Excel 加载项配置为共享浏览器运行时并在同一运行时中运行功能区、任务窗格和自定义函数代码。
 localization_priority: Priority
-ms.openlocfilehash: 8c16642f5a945e6156fcfd93c8b4cc088b616102
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 129541da57f6b9f0d587eff8873efa4e471e49fc
+ms.sourcegitcommit: 472b81642e9eb5fb2a55cd98a7b0826d37eb7f73
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44609343"
+ms.lasthandoff: 07/17/2020
+ms.locfileid: "45159533"
 ---
-# <a name="configure-your-excel-add-in-to-use-a-shared-javascript-runtime"></a>将您的 Excel 加载项配置为使用共享的 JavaScript 运行时
+# <a name="configure-your-excel-add-in-to-use-a-shared-javascript-runtime"></a>将 Excel 加载项配置为使用共享 JavaScript 运行时
 
 [!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
-运行 Windows 版 Excel 或 Mac 版 Excel 时，加载项将在单独的 JavaScript 运行时环境中运行功能区按钮、自定义函数和任务窗格的代码。 这将产生一些限制，如无法轻松共享全局数据，也不能访问自定义函数中的所有 CORS 功能。
+运行 Windows 版 Excel 或 Mac 版 Excel 时，加载项将在单独的 JavaScript 运行时环境中运行功能区按钮、自定义函数和任务窗格的代码。 这会产生一些局限性，例如无法轻松共享全局数据，也不能从自定义函数访问所有 CORS 功能。
 
 但是，你可以将 Excel 加载项配置为在共享 JavaScript 运行时中共享代码。 这可在加载项中实现更好的协调，并且可从加载项的所有部分访问 DOM 和 CORS。 它还允许在文档打开时运行代码，或在关闭任务窗格后继续运行代码。 若要将加载项配置为使用共享运行时，请按照本文中的说明进行操作。
 
@@ -89,7 +89,7 @@ yo office
    <bt:Urls>
    <bt:Url id="Functions.Script.Url" DefaultValue="https://localhost:3000/dist/functions.js"/>
    ...
-   <bt:Url id="ContosoAddin.Url" DefaultValue="https://localhost:3000/taskpane.html"/>
+   <bt:Url id="ContosoAddin.Url" DefaultValue="https://localhost:3000/dist/taskpane.html"/>
    ...
    ```
 
@@ -103,7 +103,7 @@ yo office
 
 添加 `Runtime` 元素时，还需要指定值为 `long` 或 `short` 的生存期。 将此值设置为 `long` 以利用相关功能，例如在文档打开时启动加载项，在关闭任务窗格后继续运行代码，或从自定义函数中使用 CORS 和 DOM。
 
->!便笺默认生存期值为 `short` ，但我们建议 `long` 在 Excel 外接程序中使用。如果在此示例中将运行时设置为，则在 `short` 按下某个功能区按钮时，Excel 外接程序将启动，但可能会在功能区处理程序完成运行后关闭。 同样，打开任务窗格时，加载项将启动，但在任务窗格关闭时可能会关闭。
+>![请注意] 默认生存期值为`short`，但我们建议在 Excel 加载项中使用`long`。如果在此例中将运行时设置为`short`，则当按下某个功能区按钮时，Excel 加载项将启动，但在功能区处理程序运行完毕后，它可能会关闭。 同样，打开任务窗格时，加载项将启动，但在任务窗格关闭时可能会关闭。
 
 ```xml
 <Runtimes>
@@ -113,7 +113,7 @@ yo office
 
 ## <a name="multiple-task-panes"></a>多个任务窗格
 
-如果计划使用共享运行时，请勿设计外接程序以使用多个任务窗格。 共享运行时仅支持使用一个任务窗格。 请注意，不含 `<TaskpaneID>` 的任何任务窗格都被视为不同的任务窗格。
+如果计划使用共享运行时，请勿将你的加载项设计为使用多个任务窗格。 共享运行时仅支持使用一个任务窗格。 请注意，不含 `<TaskpaneID>` 的任何任务窗格都被视为不同的任务窗格。
 
 ## <a name="next-steps"></a>后续步骤
 
@@ -122,4 +122,4 @@ yo office
 
 ## <a name="see-also"></a>另请参阅
 
-- [概述：在共享 JavaScript 运行时中运行外接程序代码](custom-functions-shared-overview.md)
+- [概述：在共享 JavaScript 运行时中运行加载项代码](custom-functions-shared-overview.md)

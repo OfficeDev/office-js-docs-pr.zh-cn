@@ -1,15 +1,15 @@
 ---
 title: Excel 自定义函数教程
 description: 在本教程中，你将创建一个 Excel 外接程序，其中包含可执行计算、请求 Web 数据或流式传输 Web 数据的自定义函数。
-ms.date: 01/16/2020
+ms.date: 07/10/2020
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: 7f8dcfa792b1bbce36055b865d6cc67fcb55d68a
-ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
+ms.openlocfilehash: 9ca4177024276a676fed76746da4ecf81121fc3b
+ms.sourcegitcommit: 472b81642e9eb5fb2a55cd98a7b0826d37eb7f73
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "45094265"
+ms.lasthandoff: 07/17/2020
+ms.locfileid: "45159141"
 ---
 # <a name="tutorial-create-custom-functions-in-excel"></a>教程：在 Excel 中创建自定义函数
 
@@ -22,11 +22,11 @@ ms.locfileid: "45094265"
 > * 创建从 Web 获取数据的自定义函数。
 > * 创建从 Web 传送实时数据的自定义函数。
 
-## <a name="prerequisites"></a>先决条件
+## <a name="prerequisites"></a>必备条件
 
 [!include[Yeoman generator prerequisites](../includes/quickstart-yo-prerequisites.md)]
 
-* Windows 上的 Excel (版本1904或更高版本，连接到 Microsoft 365 订阅) 或 web
+* Windows 版 Excel （版本 1904 或更高版本，关联至 Microsoft 365 订阅）或 Excel 网页版
 
 ## <a name="create-a-custom-functions-project"></a>创建自定义函数项目
 
@@ -240,7 +240,7 @@ function clock(invocation) {
 
 ## <a name="next-steps"></a>后续步骤
 
-恭喜！ 你已经创建新的自定义函数项目，试用了预生成的函数，创建了从 Web 请求数据的自定义函数，并创建了流式传输数据的自定义函数。 接下来，可以修改项目以使用共享运行时，使您的函数更易于与任务窗格交互。 按照以下文章中的步骤操作：
+恭喜！ 你已经创建新的自定义函数项目，试用了预生成的函数，创建了从 Web 请求数据的自定义函数，并创建了流式传输数据的自定义函数。 接下来，你可以将项目修改为使用共享运行时，使函数更容易与任务窗格交互。 按照以下文章中的步骤操作：
 
 > [!div class="nextstepaction"]
 > [配置加载项以使用共享运行时](../excel/configure-your-add-in-to-use-a-shared-runtime.md)
