@@ -3,16 +3,16 @@ title: 使用 Office 对话框 API 进行身份验证和授权
 description: 了解如何使用 Office 对话框 API 使用户能够登录到 Google、Facebook、Microsoft 365 以及受 Microsoft 标识平台保护的其他服务。
 ms.date: 07/07/2020
 localization_priority: Priority
-ms.openlocfilehash: b119d27c0b4ca7bc91004ce8c1df7ac8f4830122
-ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
+ms.openlocfilehash: d98576ba0f0a0bfec9ed78cbf7438b1f31a7ee26
+ms.sourcegitcommit: 472b81642e9eb5fb2a55cd98a7b0826d37eb7f73
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "45093733"
+ms.lasthandoff: 07/17/2020
+ms.locfileid: "45159603"
 ---
 # <a name="authenticate-and-authorize-with-the-office-dialog-api"></a>使用 Office 对话框 API 进行身份验证和授权
 
-许多身份验证机构（也称为安全令牌服务 (STS)）会阻止其登录页面在 iframe 中打开。 这包括 Google、Facebook 以及由 Microsoft 标识平台（以前称为 Azure AD V 2.0）保护的服务，例如 Microsoft 帐户、Microsoft 365 教育或工作帐户以及其他常用帐户。 这会导致 Office 加载项出现问题，因为当此加载项在 **Office 网页版**上运行时，任务窗格是一个 iframe。 如果加载项可以打开完全独立的浏览器实例,则加载项的用户只能登录到其中一个服务。 这就是为什么 Office 提供 [Office 对话框 API](dialog-api-in-office-add-ins.md)（尤其是[displayDialogAsync](/javascript/api/office/office.ui) 方法）的原因。
+许多身份验证机构（也称为安全令牌服务 (STS)）会阻止其登录页面在 iframe 中打开。 这包括 Google、Facebook 以及由 Microsoft 标识平台（以前称为 Azure AD V 2.0）保护的服务，例如 Microsoft 帐户、Microsoft 365 教育版或工作帐户以及其他常用帐户。 这会导致 Office 加载项出现问题，因为当此加载项在 **Office 网页版**上运行时，任务窗格是一个 iframe。 如果加载项可以打开完全独立的浏览器实例,则加载项的用户只能登录到其中一个服务。 这就是为什么 Office 提供 [Office 对话框 API](dialog-api-in-office-add-ins.md)（尤其是[displayDialogAsync](/javascript/api/office/office.ui) 方法）的原因。
 
 > [!NOTE]
 > 本文假设你熟悉[在 Office 加载项中使用 Office 对话框 API](dialog-api-in-office-add-ins.md)。
