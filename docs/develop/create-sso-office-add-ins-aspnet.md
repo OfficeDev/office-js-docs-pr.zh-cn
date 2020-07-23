@@ -3,20 +3,20 @@ title: 创建使用单一登录的 ASP.NET Office 加载项
 description: 有关如何使用 ASP.NET 后端创建（或转换） Office 外接程序以使用单一登录（SSO）的分步指南。
 ms.date: 12/04/2019
 localization_priority: Normal
-ms.openlocfilehash: 9d2917c334a2e90736daa1b3e4ad7ef85be6b978
-ms.sourcegitcommit: 472b81642e9eb5fb2a55cd98a7b0826d37eb7f73
+ms.openlocfilehash: 6c231dad045623348923a12199a627acfe240aac
+ms.sourcegitcommit: 01bc1b5d7fa16292d4ab0b40f0abe0e09f97385f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/17/2020
-ms.locfileid: "45159610"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "45228358"
 ---
 # <a name="create-an-aspnet-office-add-in-that-uses-single-sign-on-preview"></a>创建使用单一登录的 ASP.NET Office 加载项（预览）
 
 如果用户已登录 Office，加载项可以使用相同的凭据，这样用户无需重新登录，即可访问多个应用程序。 有关概述，请参阅[在 Office 加载项中启用 SSO](sso-in-office-add-ins.md)。
-本文将逐步介绍如何在使用 Node.js 和 Express 生成的加载项中启用单一登录 (SSO) 。
+本文将引导您完成在使用 ASP.NET 构建的外接程序中启用单一登录（SSO）的过程。
 
 > [!NOTE]
-> 有关基于 ASP.NET 的加载项的类似文章，请参阅[创建使用单一登录的 Node.js Office 加载项](create-sso-office-add-ins-nodejs.md)。
+> 有关与此类似的 Node.js 加载项文章，请参阅[创建使用单一登录的 Node.js Office 加载项](create-sso-office-add-ins-nodejs.md)。
 
 ## <a name="prerequisites"></a>先决条件
 
@@ -54,7 +54,7 @@ ms.locfileid: "45159610"
     * 在“**重定向 URI**”部分，确保在下拉列表中选择“**Web**”，然后将 URI 设置为 ` https://localhost:44355/AzureADAuth/Authorize`。
     * 选择“**注册**”。
 
-1. 在 **Office-Add-in-NodeJS-SSO** 页面上，复制并保存“**应用程序（客户端）ID**”和“**目录（租户）ID**”的值。 你将在后面的过程中使用它们。
+1. 在 Office 外接程序的**ASPNET-SSO**页面上，复制并保存**应用程序（客户端） id**和**目录（租户） id**的值。 你将在后面的过程中使用它们。
 
     > [!NOTE]
     > 当其他应用程序（例如 PowerPoint、Word、Excel 等 Office 主机应用程序）寻求对应用程序的授权访问权限时，此 ID 是“受众”值。 当它反过来寻求 Microsoft Graph 的授权访问权限时，它同时也是应用程序的“客户端 ID”。
@@ -300,7 +300,7 @@ ms.locfileid: "45159610"
         break;
     ```
 
-1. 将 `TODO 3` 替换为下面的代码。 对于所有其他错误，加载项会分支到回退授权系统。 有关这些错误的详细信息，请参阅[对 Office 加载项中的 SSO 进行故障排除](troubleshoot-sso-in-office-add-ins.md)。在此加载项中，回退系统将打开一个对话框，它要求用户登录（即使用户已登录），并使用 msal.js 和隐式流来获取 Microsoft Graph 访问令牌。
+1. 将 `TODO 3` 替换为下面的代码。 对于所有其他错误，加载项会分支到回退授权系统。 有关这些错误的详细信息，请参阅[Office 外接程序中的 SSO 疑难解答](troubleshoot-sso-in-office-add-ins.md)。在此加载项中，回退系统将打开一个对话框，该对话框要求用户登录，即使用户已在中。
 
     ```javascript
     default:

@@ -1,14 +1,14 @@
 ---
 title: Office 加载项的本地化
 description: 您可以使用 Office JavaScript API 根据主机应用程序的区域设置来确定区域设置并显示字符串，或者根据数据的区域设置解释或显示数据。
-ms.date: 07/10/2020
+ms.date: 07/21/2020
 localization_priority: Normal
-ms.openlocfilehash: 79994406e8477786dd93a1aa56f5cda0a1235d01
-ms.sourcegitcommit: 472b81642e9eb5fb2a55cd98a7b0826d37eb7f73
+ms.openlocfilehash: a879f61f2257c54a4870e03740b7409a20d4772b
+ms.sourcegitcommit: 01bc1b5d7fa16292d4ab0b40f0abe0e09f97385f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/17/2020
-ms.locfileid: "45159582"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "45228344"
 ---
 # <a name="localization-for-office-add-ins"></a>Office 加载项的本地化
 
@@ -178,7 +178,7 @@ Office JavaScript API 提供了两个属性，这些属性支持显示或解释�
 
 若要运行提供的示例代码，请在您的计算机上配置 Office 以使用其他语言，以便您可以通过切换用于在菜单和命令中显示的语言、进行编辑和校对，或同时进行这两种操作来测试外接程序。
 
-可以使用 Office 语言包安装其他语言。 有关语言包以及如何获取语言包的详细信息，请参阅[适用于 Office 的 Language Accessory Pack](https://office.microsoft.com/language-packs/)。
+可以使用 Office 语言包安装其他语言。 有关语言包以及如何获取语言包的详细信息，请参阅[适用于 Office 的 Language Accessory Pack](https://support.microsoft.com/office/82ee1236-0f9a-45ee-9c72-05b026ee809f)。
 
 安装 Language Accessory Pack 后，可以将 Office 配置使用安装的语言，以便在 UI 中显示，或编辑文档内容，或者两者兼具。 在本文的示例中，所安装的 Office 应用了西班牙语语言包。
 
