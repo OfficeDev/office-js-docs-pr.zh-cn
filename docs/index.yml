@@ -9,12 +9,12 @@ metadata:
   author: o365devx
   ms.author: o365devx
   ms.date: 07/13/2020
-  ms.openlocfilehash: f19fb430adbf23ae2784cf65889553deae711110
-  ms.sourcegitcommit: 472b81642e9eb5fb2a55cd98a7b0826d37eb7f73
+  ms.openlocfilehash: 5a22c2faf5402416439f5bb6100297232127ffa4
+  ms.sourcegitcommit: 01bc1b5d7fa16292d4ab0b40f0abe0e09f97385f
   ms.translationtype: MT
   ms.contentlocale: zh-CN
-  ms.lasthandoff: 07/17/2020
-  ms.locfileid: "45159253"
+  ms.lasthandoff: 07/22/2020
+  ms.locfileid: "45228351"
 landingContent:
 - title: 关于 Office 加载项
   linkLists:
@@ -93,4 +93,4 @@ landingContent:
     - text: Office 外接程序博客
       url: https://developer.microsoft.com/office/gallery/?filterBy=Add-ins,Blog%20Posts
     - text: 其他资源
-      url: https://docs.microsoft.com/office/dev/add-ins/resources/resources-links-help
+      url: resources/resources-links-help.md
