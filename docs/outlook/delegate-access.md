@@ -1,21 +1,21 @@
 ---
 title: 在 Outlook 加载项中启用代理访问方案
 description: 简要介绍了代理访问权限，并讨论了如何配置加载项支持。
-ms.date: 06/30/2020
+ms.date: 07/28/2020
 localization_priority: Normal
-ms.openlocfilehash: a5b4581783ca65bfe858dcf6638287418a3dcfe2
-ms.sourcegitcommit: 065bf4f8e0d26194cee9689f7126702b391340cc
+ms.openlocfilehash: 9cf4d15e81e4018d819f8f47a0729a25944c0fb5
+ms.sourcegitcommit: 7d5407d3900d2ad1feae79a4bc038afe50568be0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "45006414"
+ms.lasthandoff: 07/30/2020
+ms.locfileid: "46530448"
 ---
 # <a name="enable-delegate-access-scenarios-in-an-outlook-add-in"></a>在 Outlook 加载项中启用代理访问方案
 
 邮箱所有者可以使用代理访问功能，以[允许其他人管理其邮件和日历](https://support.office.com/article/allow-someone-else-to-manage-your-mail-and-calendar-41c40c04-3bd1-4d22-963a-28eafec25926)。 本文指定 Office JavaScript API 支持的代理权限，并介绍如何在 Outlook 外接程序中启用代理访问方案。
 
 > [!IMPORTANT]
-> 代理访问当前在 Mac、Android 和 iOS 的 Outlook 中不可用。 将来可提供此功能。
+> 代理访问当前在 Mac、Android 和 iOS 的 Outlook 中不可用。 此外，此功能当前不适用于 web 上的 Outlook 中的[组共享邮箱](/microsoft-365/admin/create-groups/compare-groups?view=o365-worldwide#shared-mailboxes)。 将来可提供此功能。
 >
 > 对此功能的支持是在要求集1.8 中引入的。 请查看支持此要求集的[客户端和平台](../reference/requirement-sets/outlook-api-requirement-sets.md#requirement-sets-supported-by-exchange-servers-and-outlook-clients)。
 
@@ -23,7 +23,7 @@ ms.locfileid: "45006414"
 
 下表介绍了 Office JavaScript API 支持的代理权限。
 
-|Permission|值|说明|
+|权限|值|说明|
 |---|---:|---|
 |阅读|1（000001）|可以读取项目。|
 |写入|2（000010）|可以创建项目。|

@@ -1,16 +1,16 @@
 ---
-title: 适用于 Visual Studio Code 的 Microsoft Office 外接程序调试器扩展
+title: 适用于 Visual Studio Code 的 Microsoft Office 加载项调试器扩展
 description: 使用 Visual Studio Code extension Microsoft Office 加载项调试器调试 Office 外接程序。
 ms.date: 05/14/2020
 localization_priority: Normal
-ms.openlocfilehash: 1bd3814eba6da2339e7865d720b8a4c792b9310e
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 2439af12f30cef1b9d291578cbababe3ed601644
+ms.sourcegitcommit: 7d5407d3900d2ad1feae79a4bc038afe50568be0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44611209"
+ms.lasthandoff: 07/30/2020
+ms.locfileid: "46530469"
 ---
-# <a name="microsoft-office-add-in-debugger-extension-for-visual-studio-code"></a>适用于 Visual Studio Code 的 Microsoft Office 外接程序调试器扩展
+# <a name="microsoft-office-add-in-debugger-extension-for-visual-studio-code"></a>适用于 Visual Studio Code 的 Microsoft Office 加载项调试器扩展
 
 通过 Visual Studio Code 的 Microsoft Office 外接程序调试器扩展，你可以针对边缘运行时调试 Office 外接程序。
 
@@ -22,7 +22,7 @@ ms.locfileid: "44611209"
 
 - [Visual Studio Code](https://code.visualstudio.com/) （必须以管理员身份运行）
 - [Node.js （版本 10 +）](https://nodejs.org/)
-- Windows 10
+- Windows 10
 - [Microsoft Edge](https://www.microsoft.com/edge)
 
 这些说明假定您有使用命令行的经验，了解基本 JavaScript，并已在使用 Yo Office 生成器之前创建了 Office 外接程序项目。 如果你之前未执行此操作，请考虑访问我们的一个教程，如此[Excel Office 外接教程教程](../tutorials/excel-tutorial.md)。
@@ -31,7 +31,8 @@ ms.locfileid: "44611209"
 
 1. 如果需要创建外接程序项目，请[使用 Yo Office 生成器创建一个](https://docs.microsoft.com/office/dev/add-ins/quickstarts/excel-quickstart-jquery?tabs=yeomangenerator)外接程序项目。 按照命令行中的提示设置项目。 您可以根据需要选择任意语言或项目类型。
 
-> !便笺如果已有一个项目，请跳过步骤1并转到步骤2。
+> [!NOTE]
+> 如果已有一个项目，请跳过步骤1并转到步骤2。
 
 2. 以管理员身份打开命令提示符。
    ![Windows 10 中的命令提示符选项，包括 "以管理员身份运行"](../images/run-as-administrator-vs-code.jpg)
@@ -51,7 +52,7 @@ code .
 
 5. 在 VS 代码中，选择**CTRL + SHIFT + X**打开扩展栏。 搜索 "Microsoft Office 外接程序调试器" 扩展并安装它。
 
-6. 在项目的 ". vscode" 文件夹中，打开 "**启动. json** " 文件。 将以下代码添加到 `configurations` 部分：
+6. 在项目的 ". vscode" 文件夹中，打开 " **launch.js"** 文件。 将以下代码添加到 `configurations` 部分：
 
 ```JSON
 {

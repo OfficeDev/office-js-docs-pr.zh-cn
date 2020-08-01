@@ -1,14 +1,14 @@
 ---
 title: 使用 Excel 加载项共同创作
 description: 了解如何 coauthor 存储在 OneDrive、OneDrive for Business 或 SharePoint Online 中的 Excel 工作簿。
-ms.date: 06/20/2019
+ms.date: 07/23/2020
 localization_priority: Normal
-ms.openlocfilehash: 4414bf64f05c29328c63d0857a6e498495712ff1
-ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
+ms.openlocfilehash: 34ef6fbc32c686e49b9720c5249d5046d26a2952
+ms.sourcegitcommit: 7d5407d3900d2ad1feae79a4bc038afe50568be0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "45093474"
+ms.lasthandoff: 07/30/2020
+ms.locfileid: "46530441"
 ---
 # <a name="coauthoring-in-excel-add-ins"></a>使用 Excel 加载项共同创作  
 
@@ -24,6 +24,7 @@ ms.locfileid: "45093474"
 ```js
 range.values = [['Contoso']];
 ```
+
 跨所有共同创作者同步“Contoso”后，同一个工作簿的所有用户或其中运行的所有加载项都能看到新范围值。
 
 共同创作功能仅同步共享工作簿中的内容。 不会同步从工作簿复制到 Excel 加载项中 JavaScript 变量的值。 例如，如果加载项将单元格值（如“Contoso”）存储在 JavaScript 变量中，然后共同创作者将此单元格值更改为“Example”，那么在同步后所有共同创作者都能在单元格中看到“Example”。 不过，JavaScript 变量值仍设置为“Contoso”。 此外，如果多个共同创作者使用同一个加载项，每个共同创作者都会拥有自己的变量副本，此副本是不会同步的。 如果你使用的变量使用工作簿内容，那么，在使用此变量前，请务必查看工作簿中的更新值。
@@ -43,9 +44,18 @@ Excel 外接程序可以读取工作簿内容（通过隐藏工作表和设置�
 
 ## <a name="caveats-to-using-events-with-coauthoring"></a>使用事件进行共同创作的注意事项
 
-如上所述，在某些情况下，对所有共同创作者触发事件可提升用户体验。 但是，请注意在一些应用场景下，此行为可能会导致不良的用户体验。 
+如上所述，在某些情况下，对所有共同创作者触发事件可提升用户体验。 但是，请注意在一些应用场景下，此行为可能会导致不良的用户体验。
 
 例如，在数据验证应用场景下，通常通过显示 UI 来响应事件。 本地用户或合著者（远程）通过绑定更改工作簿内容时，会运行前面部分中所述的 [BindingDataChanged](/javascript/api/office/office.bindingdatachangedeventargs) 事件。 如果事件的事件处理程序 `BindingDataChanged` 显示 ui，则用户将看到与工作簿中正在工作的更改无关的 ui，从而导致较差的用户体验。 在外接程序中使用事件时，请避免显示 UI。
+
+## <a name="avoiding-table-row-coauthoring-conflicts"></a>避免表行共同创作冲突
+
+调用 API 的已知问题 [`TableRowCollection.add`](/javascript/api/excel/excel.tablerowcollection#add-index--values-) 可能会导致合著冲突。 如果您预计外接程序将在其他用户编辑外接程序的工作簿时运行（具体而言，如果他们正在编辑表或表下的任何区域），我们建议您不要使用该 API。 以下指南应帮助您避免使用该方法的问题 `TableRowCollection.add` （并避免触发显示用户刷新的黄色栏）：
+
+1. 改用 [`Range.values`](/javascript/api/excel/excel.range#values) 而不是 [`TableRowCollection.add`](/javascript/api/excel/excel.tablerowcollection#add-index--values-) 。 将值设置为 `Range` 直接在表下方自动展开表。 否则，通过 api 添加表行会 `Table` 导致 coauth 用户的合并冲突。
+1. 不应对表下方的单元格应用任何[数据验证规则](https://support.microsoft.com/office/apply-data-validation-to-cells-29fecbcc-d1b9-42c1-9d76-eff3ce5f7249)，除非对整列应用数据验证。
+1. 如果表下有数据，则外接程序需要在设置范围值之前处理这些数据。 使用 [`Range.insert`](/javascript/api/excel/excel.range##insert-shift-) 插入一个空行将移动数据，并为展开的表留出空间。 否则，将有风险覆盖表格下方的单元格。
+1. 不能使用将空行添加到表 `Range.values` 中。 仅当表格正下方的单元格中的数据出现时，表格才会自动展开。 使用临时数据或隐藏列作为添加空表行的一种解决方法。
 
 ## <a name="see-also"></a>另请参阅
 

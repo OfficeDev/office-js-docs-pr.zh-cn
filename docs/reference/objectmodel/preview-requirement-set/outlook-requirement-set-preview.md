@@ -1,14 +1,14 @@
 ---
 title: Outlook 外接程序 API 预览要求集
 description: 当前在 Outlook 外接程序的预览中的功能和 Api。
-ms.date: 07/10/2020
+ms.date: 07/22/2020
 localization_priority: Normal
-ms.openlocfilehash: 457195b7511d4dabca101242400d44154a57a781
-ms.sourcegitcommit: 472b81642e9eb5fb2a55cd98a7b0826d37eb7f73
+ms.openlocfilehash: 9a2ca9a71498c954d9864f2b967b5fb240f8c506
+ms.sourcegitcommit: 7d5407d3900d2ad1feae79a4bc038afe50568be0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/17/2020
-ms.locfileid: "45159218"
+ms.lasthandoff: 07/30/2020
+ms.locfileid: "46530476"
 ---
 # <a name="outlook-add-in-api-preview-requirement-set"></a>Outlook 外接程序 API 预览要求集
 
@@ -221,6 +221,40 @@ Office JavaScript API 的 Outlook 外接程序 API 子集包括可以在 Outlook
 添加了一个新枚举，该枚举 `ComposeType` 在撰写模式中可用。
 
 **适用于**： Windows 上的 outlook （连接到 Microsoft 365 订阅），outlook 网页版（新式，[配置预览访问](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide#set-up-the-release-option-in-the-admin-center)）
+
+<br>
+
+---
+
+---
+
+### <a name="notification-messages-with-actions"></a>包含操作的通知邮件
+
+通过此功能，您的外接程序可以在默认**取消**操作之外包含具有自定义操作的通知消息。
+
+#### <a name="officenotificationmessagedetailsactions"></a>[NotificationMessageDetails](/javascript/api/outlook/office.notificationmessagedetails#actions)
+
+添加了一个新属性，您可以 `InsightMessage` 使用自定义操作添加通知。
+
+**提供**时间： Windows 上的 outlook （连接到 Microsoft 365 订阅）、outlook 网页版（新式）
+
+#### <a name="officenotificationmessageaction"></a>[NotificationMessageAction](/javascript/api/outlook/office.notificationmessageaction)
+
+添加了一个新对象，可在其中为通知定义自定义操作 `InsightMessage` 。
+
+**提供**时间： Windows 上的 outlook （连接到 Microsoft 365 订阅）、outlook 网页版（新式）
+
+#### <a name="officemailboxenumsactiontype"></a>[MailboxEnums](/javascript/api/outlook/office.mailboxenums.actiontype)
+
+添加了新枚举 `ActionType` 。
+
+**提供**时间： Windows 上的 outlook （连接到 Microsoft 365 订阅）、outlook 网页版（新式）
+
+#### <a name="officemailboxenumsitemnotificationmessagetypeinsightmessage"></a>[ItemNotificationMessageType InsightMessage](/javascript/api/outlook/office.mailboxenums.itemnotificationmessagetype)
+
+向枚举添加了新类型 `InsightMessage` `ItemNotificationMessageType` 。
+
+**提供**时间： Windows 上的 outlook （连接到 Microsoft 365 订阅）、outlook 网页版（新式）
 
 <br>
 

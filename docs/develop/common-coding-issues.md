@@ -1,14 +1,14 @@
 ---
 title: 常见问题和意外平台行为的编码指南
 description: 开发人员经常遇到的 Office JavaScript API 平台问题的列表。
-ms.date: 05/21/2020
+ms.date: 07/23/2020
 localization_priority: Normal
-ms.openlocfilehash: d67a069cd2b752be3fca8ce094eaacfd0db08c18
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 8f604acaee308c3bd04e181719b091eb948d63ee
+ms.sourcegitcommit: 7d5407d3900d2ad1feae79a4bc038afe50568be0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44608381"
+ms.lasthandoff: 07/30/2020
+ms.locfileid: "46530455"
 ---
 # <a name="coding-guidance-for-common-issues-and-unexpected-platform-behaviors"></a>常见问题和意外平台行为的编码指南
 
@@ -142,6 +142,10 @@ Excel 相关外接程序用于一次运行单个工作簿。 当运行加载项�
 
 > [!NOTE]
 > 这仅适用于在 Windows 或 Mac 上打开的多个 Excel 工作簿。
+
+### <a name="coauthoring"></a>共同创作
+
+请参阅[Excel 外接程序中](../excel/co-authoring-in-excel-add-ins.md)用于共同创作环境中事件的模式的合著。 本文还讨论了使用某些 Api （例如）时的潜在合并冲突 [`TableRowCollection.add`](/javascript/api/excel/excel.tablerowcollection#add-index--values-) 。
 
 ## <a name="see-also"></a>另请参阅
 

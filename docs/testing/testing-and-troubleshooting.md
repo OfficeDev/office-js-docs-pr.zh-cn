@@ -3,12 +3,12 @@ title: 排查 Office 加载项中的用户错误
 description: 了解如何解决 Office 外接程序中的用户错误。
 ms.date: 06/17/2020
 localization_priority: Normal
-ms.openlocfilehash: 51f5ec406a09b18ece24b74dc22718e7fd422e38
-ms.sourcegitcommit: 472b81642e9eb5fb2a55cd98a7b0826d37eb7f73
+ms.openlocfilehash: c0d08b512f61ecfd0ec149194897d31ff32741e0
+ms.sourcegitcommit: 7d5407d3900d2ad1feae79a4bc038afe50568be0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/17/2020
-ms.locfileid: "45159183"
+ms.lasthandoff: 07/30/2020
+ms.locfileid: "46530483"
 ---
 # <a name="troubleshoot-user-errors-with-office-add-ins"></a>排查 Office 加载项中的用户错误
 
@@ -104,7 +104,8 @@ Office.context.ui.displayDialogAsync(startAddress, {displayInIFrame:true}, callb
 如果在清单中进行的更改（如功能区按钮图标的文件名或菜单项的文本）似乎没有生效，请尝试清除计算机上的 Office 缓存。 
 
 #### <a name="for-windows"></a>对于 Windows：
-删除文件夹 `%LOCALAPPDATA%\Microsoft\Office\16.0\Wef\` 的内容。
+
+删除该文件夹的内容 `%LOCALAPPDATA%\Microsoft\Office\16.0\Wef\` ，并删除该文件夹的内容 `%userprofile%\AppData\Local\Packages\Microsoft.Win32WebViewHost_cw5n1h2txyewy\AC\#!123\INetCache\` （如果存在）。
 
 #### <a name="for-mac"></a>对于 Mac：
 
@@ -142,7 +143,7 @@ del /s /f /q %LOCALAPPDATA%\Packages\Microsoft.Win32WebViewHost_cw5n1h2txyewy\AC
 
 - [在 Office 网页版中调试加载项](debug-add-ins-in-office-online.md)
 - [将 Office 外接程序旁加载到 iPad 和 Mac 上](sideload-an-office-add-in-on-ipad-and-mac.md)  
-- [在 iPad 和 Mac 上调试 Office 外接程序](debug-office-add-ins-on-ipad-and-mac.md)  
-- [适用于 Visual Studio Code 的 Microsoft Office 外接程序调试器扩展](debug-with-vs-extension.md)
+- [在 iPad 和 Mac 上调试 Office 加载项](debug-office-add-ins-on-ipad-and-mac.md)  
+- [适用于 Visual Studio Code 的 Microsoft Office 加载项调试器扩展](debug-with-vs-extension.md)
 - [验证 Office 加载项的清单](troubleshoot-manifest.md)
 - [使用运行时日志记录功能调试加载项](runtime-logging.md)
