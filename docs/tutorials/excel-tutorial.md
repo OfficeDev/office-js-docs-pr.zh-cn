@@ -4,12 +4,12 @@ description: 在本教程中，你将学习如何构建一个 Excel 外接程序
 ms.date: 06/05/2020
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: 8cae8a91ffe70e98a504b191566e9d6ac3c29b37
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 2e637bad83432f8adf94826b906dc68a57e02fa6
+ms.sourcegitcommit: 7d5407d3900d2ad1feae79a4bc038afe50568be0
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44611071"
+ms.lasthandoff: 07/30/2020
+ms.locfileid: "46530504"
 ---
 # <a name="tutorial-create-an-excel-task-pane-add-in"></a>教程：创建 Excel 任务窗格加载项
 
@@ -24,7 +24,7 @@ ms.locfileid: "44611071"
 > * 打开对话框
 
 > [!TIP]
-> 如果已完成了“[创建 Excel 任务窗格加载项](../quickstarts/excel-quickstart-jquery.md)”快速入门，并希望使用此项目作为该教程的起点，直接转至“[创建表](#create-a-table)”以开始此教程。
+> 如果已使用 Yeoman 生成器完成了“[创建 Excel 任务窗格加载项](../quickstarts/excel-quickstart-jquery.md)”快速入门，并希望使用此项目作为该教程的起点，直接转至“[创建表](#create-a-table)”以开始此教程。
 
 ## <a name="prerequisites"></a>先决条件
 
@@ -120,7 +120,7 @@ ms.locfileid: "44611071"
 
     - 此代码通过使用工作表的表格集合的 `add` 方法来创建表格，即使是空的，也始终存在。 这是创建 Excel.js 对象的标准方式。 没有类构造函数 API，切勿使用 `new` 运算符创建 Excel 对象。 相反，请添加到父集合对象。
 
-    - `add` 方法的第一个参数仅是表格最上面一行的范围，而不是表格最终使用的整个范围。 这是因为当加载项填充数据行时（在下一步中），它将新行添加到表中，而不是将值写入现有行的单元格。 这是更为常见的模式，因为在创建表时表的行数通常是未知的。
+    - `add` 方法的第一个参数仅是表格最上面一行的范围，而不是表格最终使用的整个范围。 这是因为当加载项填充数据行时（在下一步中），它将新行添加到表中，而不是将值写入现有行的单元格。 这是常见的模式，因为在创建表时表的行数通常是未知的。
 
     - 表名称必须在整个工作簿中都是唯一的，而不仅仅是在工作表一级。
 
@@ -302,7 +302,7 @@ ms.locfileid: "44611071"
 
    - 此代码创建一组 `SortField` 对象，其中只有一个成员，因为加载项只对“商家”列进行了排序。
 
-   - `SortField` 对象的 `key` 属性是要排序的列的从零开始编制索引。
+   - `SortField` 对象的 `key` 属性是用于排序的列的从零开始编制索引。 表中的行按照所引用列中的值进行排序。
 
    - `Table` 的 `sort` 成员是 `TableSort` 对象，并不是方法。 `SortField` 传递到 `TableSort` 对象的 `apply` 方法。
 
@@ -473,7 +473,7 @@ ms.locfileid: "44611071"
 
    - `Worksheet.freezePanes` 集合是工作表中的一组窗格，在工作表滚动时就地固定或冻结。
 
-   - `freezeRows` 方法需要使用要就地固定的行数（自顶部算起）作为参数。传递 `1` 可以就地固定第一行。
+   - `freezeRows` 方法需要使用要就地固定的行数（自顶部算起）作为参数。 传递 `1` 以就地固定第一行。
 
     ```js
     var currentWorksheet = context.workbook.worksheets.getActiveWorksheet();
@@ -500,13 +500,13 @@ ms.locfileid: "44611071"
 
 ## <a name="protect-a-worksheet"></a>保护工作表
 
-本教程的这一步是，向功能区添加另一个按钮。如果用户选择此按钮，便会执行所定义的函数，从而启用和禁用工作表保护。
+在此教程的此步骤中，将向功能区添加一个按钮，以打开和关闭工作表保护。
 
 ### <a name="configure-the-manifest-to-add-a-second-ribbon-button"></a>将清单配置为添加第二个功能区按钮
 
 1. 打开清单文件 **./manifest.xml**。
 
-2. 查找 `<Control>` 元素。 此元素定义了“主页”**** 功能区上一直用于启动加载项的“显示任务窗格”**** 按钮。 将向“主页”**** 功能区上的相同组添加第二个按钮。 在结束 Control 标记 (`</Control>`) 和结束 Group 标记 (`</Group>`) 之间，添加下列标记。
+2. 查找 `<Control>` 元素。 此元素定义了“主页”**** 功能区上一直用于启动加载项的“显示任务窗格”**** 按钮。 将向“主页”**** 功能区上的相同组添加第二个按钮。 在结束 `</Control>` 标记和结束 `</Group>` 标记之间，添加以下标记。
 
     ```xml
     <Control xsi:type="Button" id="<!--TODO1: Unique (in manifest) name for button -->">
@@ -532,13 +532,13 @@ ms.locfileid: "44611071"
     <Control xsi:type="Button" id="ToggleProtection">
     ```
 
-4. 接下来的三个 `TODO` 设置“resid”（这是资源 ID 的简称）。 资源是字符串，这三个字符串将在后续步骤中创建。 现在，需要向资源提供 ID。 虽然按钮标签应名为“切换保护”，但此字符串的 *ID* 应为“ProtectionButtonLabel”。因此 `Label` 元素的样式如下：
+4. 接下来的三个 `TODO` 设置资源 ID，或 `resid`。 资源是字符串，这三个字符串将在后续步骤中创建。 现在，需要向资源提供 ID。 虽然按钮标签应名为“切换保护”，但此字符串的 *ID* 应为“ProtectionButtonLabel”。因此 `Label` 元素的样式如下：
 
     ```xml
     <Label resid="ProtectionButtonLabel" />
     ```
 
-5. `SuperTip` 元素定义了按钮的工具提示。 由于工具提示标题应与按钮标签相同，因此使用完全相同的资源 ID，即“ProtectionButtonLabel”。 工具提示说明为“单击即可启用和禁用工作表保护”。 不过，`ID` 应为“ProtectionButtonToolTip”。 完成后，`SuperTip` 元素如下所示： 
+5. `SuperTip` 元素定义了按钮的工具提示。 由于工具提示标题应与按钮标签相同，因此使用完全相同的资源 ID，即“ProtectionButtonLabel”。 工具提示说明为“单击即可启用和禁用工作表保护”。 不过，`resid` 应为“ProtectionButtonToolTip”。 完成后，`SuperTip` 元素如下所示： 
 
     ```xml
     <Supertip>            
@@ -550,7 +550,7 @@ ms.locfileid: "44611071"
    > [!NOTE] 
    > 在生产加载项中，不建议对两个不同的按钮使用相同的图标；但为了简单起见，本教程将采用这样的做法。 因此，新 `Icon` 中的 `Control` 标记直接就是现有 `Icon` 中 `Control` 元素的副本。 
 
-6. 虽然清单中现有原始 `Control` 元素内的 `Action` 元素的类型设置为 `ShowTaskpane`，但新按钮不会要打开任务窗格，而是要运行在后续步骤中创建的自定义函数。 因此，将 `TODO5` 替换为 `ExecuteFunction`，即触发自定义函数的按钮的操作类型。 `Action` 元素的开始标记如下所示：
+6. 虽然原始 `Control` 元素内的 `Action` 元素的类型设置为 `ShowTaskpane`，但新按钮不会要打开任务窗格，而是要运行在后续步骤中创建的自定义函数。 因此，将 `TODO5` 替换为 `ExecuteFunction`，即触发自定义函数的按钮的操作类型。 `Action` 元素的开始标记如下所示：
  
     ```xml
     <Action xsi:type="ExecuteFunction">
@@ -645,7 +645,7 @@ ms.locfileid: "44611071"
 
 ### <a name="add-code-to-fetch-document-properties-into-the-task-panes-script-objects"></a>添加代码以将文档属性提取到任务窗格的脚本对象
 
-在此教程中创建的各函数内，通过对命令进行排队来*写入* Office 文档。 每个函数结束时都会调用 `context.sync()` 方法，从而将排入队列的命令发送到文档，以供执行。 不过，在上一步中添加的代码调用的是 `sheet.protection.protected` 属性，这与之前编写的函数明显不同，因为 `sheet` 对象只是任务窗格脚本中的代理对象。 它并不了解文档的实际保护状态，因此它的 `protection.protected` 属性无法有实值。 必须先从文档提取保护状态，再用它设置 `sheet.protection.protected` 值。 只有这样，才能调用 `sheet.protection.protected`，而不导致异常抛出。 此提取过程分为三步：
+在此教程中创建的各函数内，通过对命令进行排队来*写入* Office 文档。 每个函数结束时都会调用 `context.sync()` 方法，从而将排入队列的命令发送到文档，以供执行。 但是在上一步中添加的代码调用的是 `sheet.protection.protected property` ， 这与之前编写的函数明显不同，因为 `sheet` 对象只是任务窗格脚本中的代理对象。 代理对象并不了解文档的实际保护状态，因此它的 `protection.protected` 属性无法有实值。 为避免出现异常错误，必须首先从文档中获取保护状态并使用它来设置值 `sheet.protection.protected`。 此提取过程分为三步：
 
    1. 将命令排入队列，以加载（即提取）代码需要读取的属性。
 
@@ -723,7 +723,7 @@ ms.locfileid: "44611071"
 
 1. 关闭包括 Excel 在内的所有 Office 应用。 
 
-2. 通过删除缓存文件夹内容，删除 Office 缓存。 若要完全清除主机中的旧版加载项，必须这样做。 
+2. 通过删除缓存文件夹的内容（所有文件和子文件夹）来删除 Office 缓存。 若要完全清除主机中的旧版加载项，必须这样做。
 
     - 对于 Windows：`%LOCALAPPDATA%\Microsoft\Office\16.0\Wef\`。
 
@@ -774,7 +774,7 @@ ms.locfileid: "44611071"
 
 3. 将下面的标记添加到 **popup.html** 中。 注意：
 
-   - 此页面包含可供用户输入用户名的 `<input>`，并包含将用户名发送到任务窗格中用户名显示页面的按钮。
+   - 此页面包含可供用户输入用户名的 `<input>` 字段，并包含将此名称发送到将在其中显示的任务窗格的按钮。
 
    - 此标记加载在后续步骤中创建的 **popup.js** 脚本。
 
@@ -972,7 +972,7 @@ ms.locfileid: "44611071"
 
    - 回调在对话框成功打开后和用户在对话框中执行任何操作前立即执行。
 
-   - `result.value` 对象用作父页面执行上下文和对话框页面执行上下文的中间对象。
+   - `result.value` 对象用作父页面执行上下文和对话框页面执行上下文的中介。
 
    - `processMessage` 函数将在后续步骤中创建。 此处理程序将处理通过 `messageParent` 函数调用从对话框页面发送的任何值。
 

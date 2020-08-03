@@ -1,15 +1,15 @@
 ---
 title: 生成首个 Outlook 加载项
 description: 了解如何使用 Office JS API 生成简单的 Outlook 任务窗格加载项。
-ms.date: 06/23/2020
+ms.date: 07/27/2020
 ms.prod: outlook
 localization_priority: Priority
-ms.openlocfilehash: 6eb510986ebb9cd8a4362f8c11f744e694bef5f7
-ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
+ms.openlocfilehash: ba1b3ace97c6fcf380f013b3b394eabe8b9db8b8
+ms.sourcegitcommit: 7d5407d3900d2ad1feae79a4bc038afe50568be0
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "45094160"
+ms.lasthandoff: 07/30/2020
+ms.locfileid: "46530497"
 ---
 # <a name="build-your-first-outlook-add-in"></a>生成首个 Outlook 加载项
 
@@ -111,6 +111,9 @@ ms.locfileid: "45094160"
 1. 选择“**主页**”选项卡（或“**邮件**”选项卡，如果在新窗口中打开了邮件），然后选择功能区的“**显示任务窗格**”按钮以打开加载项任务窗格。
 
     ![Outlook 中邮件窗口的屏幕截图，突出显示了加载项按钮](../images/quick-start-button-1.png)
+
+    > [!NOTE]
+    > 如果在任务窗格中收到错误“我们无法从本地主机打开此加载项”，请按照[疑难解答文章中](/office/troubleshoot/office-suite-issues/cannot-open-add-in-from-localhost)中所述步骤进行操作。
 
 1. 滚动至任务窗格的底部并选择“**运行**”链接，将邮件主题写入任务窗格。
 
