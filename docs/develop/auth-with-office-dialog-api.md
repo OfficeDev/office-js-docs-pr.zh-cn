@@ -12,7 +12,7 @@ ms.locfileid: "45159603"
 ---
 # <a name="authenticate-and-authorize-with-the-office-dialog-api"></a>使用 Office 对话框 API 进行身份验证和授权
 
-许多身份验证机构（也称为安全令牌服务 (STS)）会阻止其登录页面在 iframe 中打开。 这包括 Google、Facebook 以及由 Microsoft 标识平台（以前称为 Azure AD V 2.0）保护的服务，例如 Microsoft 帐户、Microsoft 365 教育版或工作帐户以及其他常用帐户。 这会导致 Office 加载项出现问题，因为当此加载项在 **Office 网页版**上运行时，任务窗格是一个 iframe。 如果加载项可以打开完全独立的浏览器实例,则加载项的用户只能登录到其中一个服务。 这就是为什么 Office 提供 [Office 对话框 API](dialog-api-in-office-add-ins.md)（尤其是[displayDialogAsync](/javascript/api/office/office.ui) 方法）的原因。
+许多身份验证机构（也称为安全令牌服务 (STS)）会阻止其登录页面在 Iframe 中打开。 这包括 Google、Facebook 以及由 Microsoft 标识平台（以前称为 Azure AD V 2.0）保护的服务，例如 Microsoft 帐户、Microsoft 365 教育或工作帐户以及其他常用帐户。 这会导致 Office 加载项出现问题，因为当此加载项在 **Office 网页版**上运行时，任务窗格是一个 Iframe。 如果加载项可以打开完全独立的浏览器实例,则加载项的用户只能登录到其中一个服务。 这就是为什么 Office 提供 [Office 对话框 API](dialog-api-in-office-add-ins.md)（尤其是[displayDialogAsync](/javascript/api/office/office.ui) 方法）的原因。
 
 > [!NOTE]
 > 本文假设你熟悉[在 Office 加载项中使用 Office 对话框 API](dialog-api-in-office-add-ins.md)。
@@ -46,9 +46,9 @@ ms.locfileid: "45159603"
 
 #### <a name="support-multiple-identity-providers"></a>支持多个标识提供程序
 
-如果外接程序允许用户选择提供程序（如 Microsoft 帐户、Google 或 Facebook），你需要使用本地第一个页面（见前一部分），为用户提供用于选择提供程序的 UI。用户的选择会触发登录 URL 的构建并重定向到该 URL。
+如果加载项允许用户选择提供程序（如 Microsoft 帐户、Google 或 Facebook），你需要使用本地第一个页面（见前一部分），为用户提供用于选择提供程序的 UI。用户的选择会触发登录 URL 的构建并重定向到该 URL。
 
-#### <a name="authorization-of-the-add-in-to-an-external-resource"></a>在外接程序中授权外部资源
+#### <a name="authorization-of-the-add-in-to-an-external-resource"></a>加载项中对外部资源的授权
 
 在现代网络中，用户和 Web 应用程序是安全主体。 应用程序拥有自己的身份以及对联机资源（如 Microsoft 365、Google Plus、Facebook 或 LinkedIn）的权限。 在部署前，需要先向资源提供程序注册应用程序。 注册内容包括：
 
