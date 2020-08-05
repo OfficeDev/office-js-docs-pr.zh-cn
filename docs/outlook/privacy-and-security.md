@@ -1,14 +1,14 @@
 ---
 title: Outlook 加载项的隐私、权限和安全性
 description: 了解如何管理 Outlook 加载项中的隐私、权限和安全性。
-ms.date: 10/31/2019
+ms.date: 08/03/2020
 localization_priority: Priority
-ms.openlocfilehash: d233eb3ac6980af24e6ba9d951834532ea79dc06
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 9807cbb2346d6fc067f3894c9f5d265f83dccdc3
+ms.sourcegitcommit: a3b743598025466bad19177e0ba9ca94ea66d490
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44605330"
+ms.lasthandoff: 08/04/2020
+ms.locfileid: "46547533"
 ---
 # <a name="privacy-permissions-and-security-for-outlook-add-ins"></a>Outlook 外接程序的隐私、权限和安全性
 
@@ -70,6 +70,9 @@ ms.locfileid: "44605330"
 
 - 受 Outlook 信息权限管理 (IRM) 保护的最终用户邮件不与 Outlook 外接程序交互。
     
+  > [!IMPORTANT]
+  > 现在，Windows 版 Outlook 从内部版本 13120.1000 开始可以在受 IRM 保护的项目上激活加载项。 有关处于预览阶段的此功能的详细信息，请参阅[在受信息权限管理 (IRM) 保护的项目上激活加载项](../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md#add-in-activation-on-items-protected-by-information-rights-management-irm)。
+
 - 从 AppSource 安装加载项之前，最终用户能够查看加载项可以对其数据进行的访问和采取的操作，且必须明确确认后才能继续操作。 未经用户或管理员手动验证，Outlook 外接程序不会自动推送到客户端计算机。
     
 - 授予“受限”权限可允许 Outlook 外接程序仅具有对当前项目的有限访问权限。授予“读取项目”权限可允许 Outlook 外接程序仅访问当前项目上的个人识别信息，例如发件人和收件人姓名以及电子邮件地址。
