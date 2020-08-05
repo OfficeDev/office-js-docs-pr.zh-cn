@@ -1,14 +1,14 @@
 ---
 title: Outlook 上下文加载项激活故障排查
 description: 如果加载项未按预期激活，应考虑以下几个方面的可能原因。
-ms.date: 05/27/2020
+ms.date: 08/03/2020
 localization_priority: Normal
-ms.openlocfilehash: cb8640dc2381a79bc5c0ed90da3a2f03938a0d05
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: e9eba8abd1207c0c521fc87e310325529c9f24ac
+ms.sourcegitcommit: a3b743598025466bad19177e0ba9ca94ea66d490
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44611629"
+ms.lasthandoff: 08/04/2020
+ms.locfileid: "46547540"
 ---
 # <a name="troubleshoot-outlook-add-in-activation"></a>Outlook 加载项激活故障排查
 
@@ -74,7 +74,7 @@ Outlook 上下文加载项激活基于加载项清单中的激活规则。在当
 
 即使某邮件项不是以上类型之一，如果该项不是使用至少为 Exchange 2013 的某个版本的 Exchange Server 传递，则不会在该项上确定已知实体和属性（如发件人的 SMTP 地址）。依赖这些实体或属性的任何激活规则将不会得到满足，并且加载项将不会激活。
 
-如果您的加载项为撰写加载项并且应该在用户撰写邮件或会议请求时激活，请确保该项目未受 IRM 保护。
+如果您的加载项为撰写加载项并且应该在用户撰写邮件或会议请求时激活，请确保该项目未受 IRM 保护。 但是，从 Outlook 内部版本13120.1000 在 Windows 上开始，外接程序现在可以在受 IRM 保护的项目上激活。  有关预览中此支持的详细信息，请参阅[ (IRM) 的受信息权限管理保护的项上的外接程序激活](../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md#add-in-activation-on-items-protected-by-information-rights-management-irm)。
 
 ## <a name="is-the-add-in-manifest-installed-properly-and-does-outlook-have-a-cached-copy"></a>加载项清单是否安装正确，Outlook 是否有已缓存副本？
 
