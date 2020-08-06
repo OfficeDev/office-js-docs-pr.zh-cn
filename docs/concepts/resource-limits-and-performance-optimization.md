@@ -1,14 +1,14 @@
 ---
 title: Office 加载项的资源限制和性能优化
 description: 了解 Office 加载项平台的资源限制，包括 CPU 和内存。
-ms.date: 04/09/2020
+ms.date: 07/13/2020
 localization_priority: Normal
-ms.openlocfilehash: be4727ba12fa8f9b3ee8133026d9de94a612a9fc
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: a689f52e7f92b31cc8d6e912f73e19137233ae12
+ms.sourcegitcommit: 0b95e458f76cdfbd99dbcdbe16a0508af2cd9cd7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44608004"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "46563809"
 ---
 # <a name="resource-limits-and-performance-optimization-for-office-add-ins"></a>Office 加载项的资源限制和性能优化
 
@@ -49,7 +49,7 @@ ms.locfileid: "44608004"
 
     通过使用组策略或 Windows 注册表中特定于应用程序的设置，管理员可以在 **OutlookActivationAlertThreshold** 设置中调整此 1,000 毫秒的默认阈值。
 
-- **正则表达式重新计算** - Outlook 重新计算清单中的所有正则表达式的默认限制为三次。 如果计算通过超过适用的阈值（默认为1000毫秒）或**OutlookActivationAlertThreshold**指定的值（如果 Windows 注册表中存在该设置）而失败，则 outlook 将禁用 outlook 外接程序。 Exchange 管理中心显示已禁用的状态，并且外接程序在 Outlook 富客户端中被禁用，而在 web 和移动设备上使用的是 Outlook。
+- **正则表达式重新计算** - Outlook 重新计算清单中的所有正则表达式的默认限制为三次。 如果评估因超出适用阈值而失败 (三次（默认值为1000毫秒或由**OutlookActivationAlertThreshold**指定的值），如果 Windows 注册表) 中存在该设置，则 outlook 将禁用 outlook 外接程序。 Exchange 管理中心显示已禁用的状态，并且外接程序在 Outlook 富客户端中被禁用，而在 web 和移动设备上使用的是 Outlook。
 
     通过使用组策略或 Windows 注册表中特定于应用程序的设置，管理员可以在 **OutlookActivationManagerRetryLimit** 设置中调整此重试计算的次数。
 
@@ -80,10 +80,10 @@ Office 提供了遥测日志，以保留本地计算机上运行的 Office 解�
 |7 |外接程序清单已成功下载||主机应用程序已成功加载和读取 Office 外接程序的清单。|
 |8 |外接程序清单未下载|关键|主机应用无法从 SharePoint 目录、企业目录或 AppSource 加载 Office 加载项的清单文件。|
 |9 |无法分析外接程序标记|关键|主机应用程序已加载 Office 外接程序清单，但不能读取该应用程序的 HTML 标记。|
-|10  |外接程序占用了太多 CPU|关键|在有限的时间内，Office 外接程序使用了超过 90% 的 CPU 资源。|
+|10 |外接程序占用了太多 CPU|关键|在有限的时间内，Office 外接程序使用了超过 90% 的 CPU 资源。|
 |15 |由于字符串搜索超时，外接程序已被禁用||Outlook 外接程序搜索电子邮件的主题行和消息，以确定是否应使用正则表达式来显示它们。“文件”**** 列中列出的 Outlook 外接程序已被 Outlook 禁用，因为它在尝试匹配正则表达式时超时多次。|
 |18 |外接程序已成功关闭||主机应用程序能够成功关闭 Office 外接程序。|
-|合|外接程序遇到运行时错误|严重|Office 外接程序遇到一个导致它失败的问题。 有关详细信息，请使用遇到错误的计算机上的 Windows 事件查看器查看“Microsoft Office 通知”**** 日志。|
+|合|外接程序遇到运行时错误|关键|Office 外接程序遇到一个导致它失败的问题。 有关详细信息，请使用遇到错误的计算机上的 Windows 事件查看器查看“Microsoft Office 通知”**** 日志。|
 |20|外接程序未能验证许可|关键|无法验证 Office 外接程序的许可信息，且其可能已过期。 有关详细信息，请使用遇到错误的计算机上的 Windows 事件查看器查看“Microsoft Office 通知”**** 日志。|
 
 有关详细信息，请参阅[部署遥测仪表板](/previous-versions/office/office-2013-resource-kit/jj219431(v=office.15))和[使用遥测日志排查 Office 文件和自定义解决方案](/office/client-developer/shared/troubleshooting-office-files-and-custom-solutions-with-the-telemetry-log)。
@@ -93,11 +93,9 @@ Office 提供了遥测日志，以保留本地计算机上运行的 Office 解�
 
 尽管 CPU 和内存使用率的资源限制、故障容忍度以及 UI 无响应仅适用于在富客户端上运行的 Office 外接程序，但如果您希望外接程序在所有支持性客户端和设备上的性能都令人满意，优化这些资源和电池的使用情况仍然是头等大事。如果您的外接程序要执行长时间运行的操作或处理大型数据集，则优化尤为重要。以下列表提供了一些技术建议，可将大量占用 CPU 或处理大量数据的操作分解成较小的块，以便外接程序能够避免过量的资源消耗且主机应用程序可以保持响应能力：
 
-- 在外接程序需要从无限制的数据集中读取大量数据的情况下，您可以在从表格中读取数据时应用分页，或者减小每次短暂读取操作中的数据大小，而不是试图在一次操作中完成全部读取。 
+- 在外接程序需要从无限制的数据集中读取大量数据的情况下，您可以在从表格中读取数据时应用分页，或者减小每次短暂读取操作中的数据大小，而不是试图在一次操作中完成全部读取。 您可以通过全局对象的[setTimeout](https://developer.mozilla.org/docs/Web/API/WindowOrWorkerGlobalScope/setTimeout)方法执行此操作，以限制输入和输出的持续时间。 它还会处理定义区块中的数据，来代替随机无限数据。 另一种方法是使用[async](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/async_function)处理承诺。 
 
-   For a JavaScript and jQuery code sample that shows breaking up a potentially long-running and CPU-intensive series of inputting and outputting operations on unbounded data, see [How can I give control back (briefly) to the browser during intensive JavaScript processing?](https://stackoverflow.com/questions/210821/how-can-i-give-control-back-briefly-to-the-browser-during-intensive-javascript). This example uses the [setTimeout](https://developer.mozilla.org/docs/Web/API/WindowOrWorkerGlobalScope/setTimeout) method of the global object to limit the duration of input and output. It also handles the data in defined chunks instead of randomly unbounded data.
-
-- 如果外接程序使用大量占用 CPU 的算法来处理大量数据，则您可以使用 Web Worker 在后台执行长时间运行的任务，同时在前台运行单独的脚本，例如在用户界面中显示进度。Web Worker 不会阻止用户活动并允许 HTML 页面保持响应能力。有关 Web Worker 的示例，请参阅 [Web Worker 的基本信息](https://www.html5rocks.com/en/tutorials/workers/basics/)。有关 Web Worker API 的详细信息，请参阅 [Web Worker](https://developer.mozilla.org/docs/Web/API/Web_Workers_API)。
+- 如果外接程序使用大量占用 CPU 的算法来处理大量数据，则您可以使用 Web Worker 在后台执行长时间运行的任务，同时在前台运行单独的脚本，例如在用户界面中显示进度。Web Worker 不会阻止用户活动并允许 HTML 页面保持响应能力。有关 Web Worker 的示例，请参阅 [Web Worker 的基本信息](https://www.html5rocks.com/tutorials/workers/basics/)。有关 Web Worker API 的详细信息，请参阅 [Web Worker](https://developer.mozilla.org/docs/Web/API/Web_Workers_API)。
 
 - 如果外接程序使用大量占用 CPU 的算法，但您可以将数据输入或输出划分成较小的集合，则可以考虑创建一个 Web 服务，将数据传递给该 Web 服务以减轻 CPU 负担，然后等待异步回调。
 
