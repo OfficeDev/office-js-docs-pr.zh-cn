@@ -1,21 +1,22 @@
 ---
 title: 创建使用单一登录的 ASP.NET Office 加载项
-description: 有关如何使用 ASP.NET 后端创建（或转换） Office 外接程序以使用单一登录（SSO）的分步指南。
-ms.date: 12/04/2019
+description: 有关如何使用 ASP.NET 后端创建 (或转换) Office 加载项的分步指南，请使用单一登录 (SSO) 。
+ms.date: 07/30/2020
 localization_priority: Normal
-ms.openlocfilehash: 6c231dad045623348923a12199a627acfe240aac
-ms.sourcegitcommit: 01bc1b5d7fa16292d4ab0b40f0abe0e09f97385f
+ms.openlocfilehash: 8627c2a3d54d1c45672f3af1336e3c2b891ac055
+ms.sourcegitcommit: 8fdd7369bfd97a273e222a0404e337ba2b8807b0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "45228358"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "46573180"
 ---
-# <a name="create-an-aspnet-office-add-in-that-uses-single-sign-on-preview"></a>创建使用单一登录的 ASP.NET Office 加载项（预览）
+# <a name="create-an-aspnet-office-add-in-that-uses-single-sign-on"></a>创建使用单一登录的 ASP.NET Office 加载项
 
 如果用户已登录 Office，加载项可以使用相同的凭据，这样用户无需重新登录，即可访问多个应用程序。 有关概述，请参阅[在 Office 加载项中启用 SSO](sso-in-office-add-ins.md)。
-本文将引导您完成在使用 ASP.NET 构建的外接程序中启用单一登录（SSO）的过程。
+本文将引导您完成在使用 ASP.NET 构建的外接程序中启用单一登录 (SSO) 的过程。
 
 > [!NOTE]
+
 > 有关与此类似的 Node.js 加载项文章，请参阅[创建使用单一登录的 Node.js Office 加载项](create-sso-office-add-ins-nodejs.md)。
 
 ## <a name="prerequisites"></a>先决条件
@@ -54,7 +55,7 @@ ms.locfileid: "45228358"
     * 在“**重定向 URI**”部分，确保在下拉列表中选择“**Web**”，然后将 URI 设置为 ` https://localhost:44355/AzureADAuth/Authorize`。
     * 选择“**注册**”。
 
-1. 在 Office 外接程序的**ASPNET-SSO**页面上，复制并保存**应用程序（客户端） id**和**目录（租户） id**的值。 你将在后面的过程中使用它们。
+1. 在 Office 外接程序的**ASPNET-SSO**页面上，复制并保存**应用程序 (客户端) id**和**目录 (租户) ID**的值。 你将在后面的过程中使用它们。
 
     > [!NOTE]
     > 当其他应用程序（例如 PowerPoint、Word、Excel 等 Office 主机应用程序）寻求对应用程序的授权访问权限时，此 ID 是“受众”值。 当它反过来寻求 Microsoft Graph 的授权访问权限时，它同时也是应用程序的“客户端 ID”。
@@ -88,6 +89,7 @@ ms.locfileid: "45228358"
     - `d3590ed6-52b3-4102-aeff-aad2292ab01c` (Microsoft Office)
     - `ea5a67f6-b6f3-4338-b240-c655ddc3cc8e` (Microsoft Office)
     - `57fb890c-0dab-4253-a5e0-7188c88b2bb4`（Office 网页版）
+    - `08e18876-6177-487e-b8b5-cf950c1e598c`（Office 网页版）
     - `bc59ab01-8403-45c6-8796-ac3ef710b3e3`（Outlook 网页版）
 
     对于每个 ID，执行以下步骤：
@@ -150,7 +152,7 @@ ms.locfileid: "45228358"
   > [!NOTE]
   > **资源**值是注册加载项时设置的**应用程序 ID URI**。 仅在通过 AppSource 销售加载项时，才使用**作用域**部分生成许可对话框。
 
-1. 保存并关闭文件。
+1. 保存并关闭此文件。
 
 ### <a name="setup-for-single-tenant"></a>单租户设置
 
@@ -192,7 +194,7 @@ ms.locfileid: "45228358"
         try {
 
             // TODO 1: Get the bootstrap token and send it to the server to exchange
-            //         for an access token to Microsoft Graphn and then get the data
+            //         for an access token to Microsoft Graph and then get the data
             //         from Microsoft Graph.
 
         }
@@ -211,7 +213,7 @@ ms.locfileid: "45228358"
 
     * `getAccessToken` 告知 Office 从 Azure AD 获取启动令牌并返回给加载项。
     * `allowSignInPrompt` 在用户尚未登录 Office 的情况下告知 Office 提示用户进行登录。
-    * `forMSGraphAccess` 告知 Office 该加载项打算使用启动令牌来换取 Microsoft Graph 的访问令牌（而不是仅将启动令牌用作用户 ID 令牌）。 通过设置此选项，如果用户的租户管理员尚未向加载项授予许可，则 Office 有机会取消获取启动令牌的过程（并返回错误代码 13012）。 加载项的客户端代码可以通过分支到回退授权系统来响应 13012。 如果未使用 `forMSGraphAccess`，并且管理员尚未授予许可，则将返回启动令牌，但尝试将其与代理流交换将会导致错误。 因此，通过 `forMSGraphAccess` 选项可以快速将加载项分支到回退系统。
+    * `forMSGraphAccess` 告知 Office 该加载项打算使用启动令牌来换取 Microsoft Graph 的访问令牌（而不是仅将启动令牌用作用户 ID 令牌）。 通过设置此选项，如果用户的租户管理员尚未向加载项授予许可，则 Office 有机会取消获取启动令牌的过程（并返回错误代码 13012）。 加载项的客户端代码可以通过分支到回退授权系统来响应 13012。 如果 `forMSGraphAccess` 未使用，并且管理员未授予许可，则将返回引导令牌，但尝试通过代表流来交换它将导致错误。 因此，通过 `forMSGraphAccess` 选项可以快速将加载项分支到回退系统。
     * 你将在稍后的步骤中创建 `getData` 函数。
     * `/api/values` 参数是服务器端控制器的 URL，它将进行令牌交换并使用它返回的访问令牌来对 Microsoft Graph 执行调用。
 

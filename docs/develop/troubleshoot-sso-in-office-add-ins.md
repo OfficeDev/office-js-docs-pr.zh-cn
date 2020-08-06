@@ -1,23 +1,22 @@
 ---
 title: 排查单一登录 (SSO) 错误消息
-description: 有关如何解决 Office 加载项中的单一登录（SSO）问题，以及如何处理特殊条件或错误的指南。
-ms.date: 07/07/2020
+description: 有关如何解决单一登录 (SSO) 在 Office 外接程序中的问题，以及如何处理特殊条件或错误的指南。
+ms.date: 07/30/2020
 localization_priority: Normal
-ms.openlocfilehash: 0f4069ee2167a180bb4ba1fbd8db57d5d355e24b
-ms.sourcegitcommit: 472b81642e9eb5fb2a55cd98a7b0826d37eb7f73
+ms.openlocfilehash: 4809ccf964467567503cdbaa0cf99e90b81fd19b
+ms.sourcegitcommit: 8fdd7369bfd97a273e222a0404e337ba2b8807b0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/17/2020
-ms.locfileid: "45159568"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "46573208"
 ---
-# <a name="troubleshoot-error-messages-for-single-sign-on-sso-preview"></a>排查单一登录 (SSO) 错误消息（预览）
+# <a name="troubleshoot-error-messages-for-single-sign-on-sso"></a>排查单一登录 (SSO) 错误消息
 
 本文提供了一些指南，介绍了如何排查 Office 加载项中出现的单一登录 (SSO) 问题，以及如何让已启用 SSO 的加载项可靠地处理特殊条件或错误。
 
 > [!NOTE]
-> 目前，Word、Excel、Outlook 和 PowerPoint 在预览版中支持单一登录 API。 若要详细了解目前支持单一登录 API 的平台，请参阅 [IdentityAPI 要求集](../reference/requirement-sets/identity-api-requirement-sets.md)。
-> [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
-> 如果使用的是 Outlook 加载项，请务必为 Microsoft 365 租赁启用新式验证。 若要了解如何执行此操作，请参阅 [Exchange Online: How to enable your tenant for modern authentication](https://social.technet.microsoft.com/wiki/contents/articles/32711.exchange-online-how-to-enable-your-tenant-for-modern-authentication.aspx)（如何为租户启用新式体验）。
+> 目前，Word、Excel、Outlook 和 PowerPoint 支持单一登录 API。 若要详细了解目前支持单一登录 API 的平台，请参阅 [IdentityAPI 要求集](../reference/requirement-sets/identity-api-requirement-sets.md)。
+> 如果使用的是 Outlook 加载项，请务必为 Office 365 租赁启用新式验证。 若要了解如何执行此操作，请参阅 [Exchange Online：如何为租户启用新式验证](https://social.technet.microsoft.com/wiki/contents/articles/32711.exchange-online-how-to-enable-your-tenant-for-modern-authentication.aspx)。
 
 ## <a name="debugging-tools"></a>调试工具
 
@@ -64,7 +63,7 @@ ms.locfileid: "45159568"
 
 ### <a name="13004"></a>13004
 
-资源无效。 （应仅在开发过程中看到此错误。）尚未正确配置加载项清单。 请更新此清单。 有关详细信息，请参阅[验证 Office 加载项的清单](../testing/troubleshoot-manifest.md)。 最常见的问题是**资源**元素（在 **WebApplicationInfo** 元素中）具有与加载项的域不匹配的域。 虽然资源值的协议部分应该是“api”而不是“https”；域名的所有其他部分（包括端口，如果有）应与加载项域名的相应部分相同。
+资源无效。  (仅应在开发过程中看到此错误。 ) 尚未正确配置加载项清单。 请更新此清单。 有关详细信息，请参阅[验证 Office 加载项的清单](../testing/troubleshoot-manifest.md)。 最常见的问题是**资源**元素（在 **WebApplicationInfo** 元素中）具有与加载项的域不匹配的域。 虽然资源值的协议部分应该是“api”而不是“https”；域名的所有其他部分（包括端口，如果有）应与加载项域名的相应部分相同。
 
 ### <a name="13005"></a>13005
 
@@ -124,7 +123,7 @@ Office 主机无法获取对加载项 Web 服务的访问令牌。
 
 ### <a name="conditional-access--multifactor-authentication-errors"></a>条件访问/多重身份验证错误
 
-在 AAD 和 Microsoft 365 中的某些标识配置中，Microsoft Graph 可访问的某些资源可能需要多重身份验证（MFA），即使用户的 Microsoft 365 租赁不是这样。 通过代表流收到对 MFA 保护资源的令牌请求时，AAD 会向加载项 Web 服务返回包含 `claims` 属性的 JSON 消息。 claims 属性指明需要进一步执行哪几重身份验证。
+在 AAD 和 Microsoft 365 中的某些标识配置中，Microsoft Graph 可访问的某些资源可能需要多重身份验证 (MFA) ，即使用户的 Microsoft 365 租赁不是这样的。 通过代表流收到对 MFA 保护资源的令牌请求时，AAD 会向加载项 Web 服务返回包含 `claims` 属性的 JSON 消息。 claims 属性指明需要进一步执行哪几重身份验证。
 
 代码应对此 `claims` 属性进行测试。 根据加载项的体系结构，你可以在客户端进行测试，也可以在服务器端进行测试并将其中继到客户端。 客户端需要此信息，因为 Office 处理 SSO 加载项的身份验证。如果从服务器端进行中继，则发送到客户端的消息可以是错误（如 `500 Server Error` 或 `401 Unauthorized`），也可以是成功响应的正文部分（如 `200 OK`）。 无论属于上述哪种情况，代码对加载项 Web API 的客户端 AJAX 调用的（失败或成功）回调都应测试此响应是否有错。 
 

@@ -1,16 +1,16 @@
 ---
 title: 使用单一登录令牌对用户进行身份验证
 description: 了解如何使用 Outlook 外接程序提供的单一登录令牌为服务实现 SSO。
-ms.date: 04/28/2020
+ms.date: 07/30/2020
 localization_priority: Normal
-ms.openlocfilehash: 6d144e9ae4dcaf03705deb75f58c2f67a9c03106
-ms.sourcegitcommit: 7d5407d3900d2ad1feae79a4bc038afe50568be0
+ms.openlocfilehash: 79768147fc91a137a363a071beff46cec60ee819
+ms.sourcegitcommit: 8fdd7369bfd97a273e222a0404e337ba2b8807b0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2020
-ms.locfileid: "46530462"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "46573138"
 ---
-# <a name="authenticate-a-user-with-a-single-sign-on-token-in-an-outlook-add-in-preview"></a>在 Outlook 加载项中使用单一登录令牌验证用户（预览版）
+# <a name="authenticate-a-user-with-a-single-sign-on-token-in-an-outlook-add-in"></a>在 Outlook 加载项中使用单一登录令牌对用户进行身份验证
 
 使用单一登录 (SSO)，加载项可以无缝方式验证用户（并根据需要获取访问令牌来调用 [Microsoft Graph API](/graph/overview)）。
 
@@ -20,7 +20,6 @@ ms.locfileid: "46530462"
 - 使用令牌中的标识信息，以创建用户标识并验证自己的后端服务
 
 有关 Office 外接程序中的 SSO 的概述，请参阅[为 Office 外接程序启用单一登录](../develop/sso-in-office-add-ins.md)和[在 Office 外接程序中授予对 Microsoft Graph 的访问权限](../develop/authorize-to-microsoft-graph.md)。
-
 
 ## <a name="enable-modern-authentication-in-your-microsoft-365-tenancy"></a>在 Microsoft 365 租赁中启用新式验证
 
@@ -32,7 +31,7 @@ ms.locfileid: "46530462"
 
 ### <a name="provide-consent-when-sideloading-an-add-in"></a>旁加载加载项时授予许可
 
-如果从 AppSource 中获取了使用 SSO 的外接程序，它必须具有备份身份验证方法，以便在包含 Microsoft Graph 作用域的情况下提供许可。 在开发外接程序时，必须提前提供许可。 有关详细信息，请参阅[向加载项授予管理员许可](../develop/grant-admin-consent-to-an-add-in.md)
+在开发外接程序时，必须提前提供许可。 有关详细信息，请参阅向[外接程序授予管理员同意](../develop/grant-admin-consent-to-an-add-in.md)。
 
 ## <a name="update-the-add-in-manifest"></a>更新加载项清单
 

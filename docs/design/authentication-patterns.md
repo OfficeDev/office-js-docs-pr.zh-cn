@@ -1,14 +1,14 @@
 ---
 title: Office 外接程序的身份验证设计准则
+ms.date: 07/30/2020
 description: 了解如何在 Office 外接程序中直观地设计登录页或注册页。
-ms.date: 03/19/2019
 localization_priority: Normal
-ms.openlocfilehash: 36465fbf156820cfc8980758cec0ed19c545588d
-ms.sourcegitcommit: 472b81642e9eb5fb2a55cd98a7b0826d37eb7f73
+ms.openlocfilehash: ed80f6b785c582ee3fa0e3f22e6a75b778bcdf3d
+ms.sourcegitcommit: 8fdd7369bfd97a273e222a0404e337ba2b8807b0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/17/2020
-ms.locfileid: "45159617"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "46573166"
 ---
 # <a name="authentication-patterns"></a>身份验证模式
 
@@ -27,8 +27,6 @@ ms.locfileid: "45159617"
 
 ## <a name="authentication-flow"></a>身份验证流
 
-在单一登录处于预览期间，生产加载项应允许用户可以选择直接使用服务或 Microsoft 等标识提供者进行登录。
-
 1. 首先运行 Placemat - 将登录按钮设置为加载项初次运行体验中的明确号召性用语。
 ![Office 应用程序中的加载项任务窗格屏幕截图](../images/add-in-fre-value-placemat.png)
 
@@ -46,12 +44,13 @@ ms.locfileid: "45159617"
 > [!NOTE] 
 > 使用 Microsoft 的标识服务时，你将有机会使用可定制的浅色和深色主题的品牌登录按钮。了解详细信息。
 
-## <a name="single-sign-on-authentication-flow-preview"></a>单一登录身份验证流程（预览）
+## <a name="single-sign-on-authentication-flow"></a>单一登录身份验证流
 
 > [!NOTE]
-> 目前，Word、Excel、Outlook 和 PowerPoint 在预览版中支持单一登录 API。 有关单一登录支持的详细信息，请参阅  [IdentityAPI 要求集](../reference/requirement-sets/identity-api-requirement-sets.md)。 如果使用的是 Outlook 加载项，请务必为 Microsoft 365 租赁启用新式验证。 若要了解如何执行此操作，请参阅  [Exchange Online: How to enable your tenant for modern authentication](https://social.technet.microsoft.com/wiki/contents/articles/32711.exchange-online-how-to-enable-your-tenant-for-modern-authentication.aspx)（Exchange Online：如何为租户启用新式验证）。
+> 目前，Word、Excel、Outlook 和 PowerPoint 支持单一登录 API。 有关单一登录支持的详细信息，请参阅  [IdentityAPI 要求集](../reference/requirement-sets/identity-api-requirement-sets.md)。 如果使用的是 Outlook 加载项，请务必为 Office 365 租赁启用新式验证。 若要了解如何执行此操作，请参阅  [Exchange Online: How to enable your tenant for modern authentication](https://social.technet.microsoft.com/wiki/contents/articles/32711.exchange-online-how-to-enable-your-tenant-for-modern-authentication.aspx)（Exchange Online：如何为租户启用新式验证）。
 
-一旦用于生产加载项的单一登录正式发布后，即可使用该正式发布版获取流畅的最终用户体验。 用户在 Office 中的标识（Microsoft 帐户或 Microsoft 365 标识）用于登录到你的外接程序。 因此，用户只登录一次。 这样便使你的客户更容易上手，体验更为顺畅。
+使用单一登录以获得更流畅的最终用户体验。 Office 中的用户标识 (Microsoft 帐户或 Microsoft 365 标识) 用于登录您的外接程序。 因此，用户只登录一次。 这样便使你的客户更容易上手，体验更为顺畅。
+
 
 1. 安装加载项时，用户将会看到一个与以下窗口类似的同意窗口：![安装加载项时，Office 应用程序中的同意窗口的屏幕截图](../images/add-in-auth-SSO-consent-dialog.png)
 > [!NOTE]
@@ -62,4 +61,4 @@ ms.locfileid: "45159617"
 
 ## <a name="see-also"></a>另请参阅
 
-- 详细了解[开发 SSO 加载项（预览版）](../develop/sso-in-office-add-ins.md)
+- 了解有关[开发 SSO 加载项的](../develop/sso-in-office-add-ins.md)详细信息

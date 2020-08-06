@@ -1,14 +1,14 @@
 ---
 title: 应用场景 - 为服务实施单一登录
 description: 了解如何使用 Outlook 加载项提供的单一登录令牌和 Exchange 标识令牌为服务实现 SSO。
-ms.date: 04/15/2019
+ms.date: 07/30/2020
 localization_priority: Normal
-ms.openlocfilehash: f1f8d4e844223e698d3db4ee0a16cf29b2355e1b
-ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
+ms.openlocfilehash: 7fef3dd2b583bd1aef4623e66e54d287eeb61db5
+ms.sourcegitcommit: 8fdd7369bfd97a273e222a0404e337ba2b8807b0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "45093971"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "46573124"
 ---
 # <a name="scenario-implement-single-sign-on-to-your-service-in-an-outlook-add-in"></a>应用场景：为 Outlook 加载项中的服务实现单一登录
 
@@ -16,9 +16,8 @@ ms.locfileid: "45093971"
 
 
 > [!NOTE]
-> 目前，Word、Excel、Outlook 和 PowerPoint 在预览版中支持单一登录 API。 若要详细了解目前支持单一登录 API 的平台，请参阅 [IdentityAPI 要求集](../reference/requirement-sets/identity-api-requirement-sets.md)。
-> 若要使用 SSO，必须从加载项的启动 HTML 页面中的 https://appsforoffice.microsoft.com/lib/beta/hosted/office.js 加载 Office JavaScript 库的 Beta 版。
-> 如果您使用的是 Outlook 加载项，请务必为 Microsoft 365 租赁启用新式验证。 若要了解如何执行此操作，请参阅[Exchange Online：如何为租户启用新式体验](https://social.technet.microsoft.com/wiki/contents/articles/32711.exchange-online-how-to-enable-your-tenant-for-modern-authentication.aspx)。
+> 目前，Word、Excel、Outlook 和 PowerPoint 支持单一登录 API。 若要详细了解目前支持单一登录 API 的平台，请参阅 [IdentityAPI 要求集](../reference/requirement-sets/identity-api-requirement-sets.md)。
+> 如果使用的是 Outlook 加载项，请务必为 Office 365 租赁启用新式验证。 若要了解如何这样做，请参阅 [Exchange Online：如何为租户启用新式验证](https://social.technet.microsoft.com/wiki/contents/articles/32711.exchange-online-how-to-enable-your-tenant-for-modern-authentication.aspx)。
 
 
 ## <a name="why-use-the-sso-access-token"></a>为什么使用 SSO 访问令牌？

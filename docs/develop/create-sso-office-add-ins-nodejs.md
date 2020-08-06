@@ -1,16 +1,16 @@
 ---
 title: 创建使用单一登录的 Node.js Office 加载项
 description: 了解如何创建使用 Office 单一登录的基于 Node.js 的 Office 加载项
-ms.date: 06/18/2020
+ms.date: 07/30/2020
 localization_priority: Normal
-ms.openlocfilehash: f2f28d0725de52c9a0647d9d1848662fb1ab7b4f
-ms.sourcegitcommit: 472b81642e9eb5fb2a55cd98a7b0826d37eb7f73
+ms.openlocfilehash: fcd77f9cdf9ac817679b020fff887c975450e05d
+ms.sourcegitcommit: 8fdd7369bfd97a273e222a0404e337ba2b8807b0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/17/2020
-ms.locfileid: "45159589"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "46573156"
 ---
-# <a name="create-a-nodejs-office-add-in-that-uses-single-sign-on-preview"></a>创建使用单一登录的 Node.js Office 加载项（预览）
+# <a name="create-a-nodejs-office-add-in-that-uses-single-sign-on"></a>创建使用单一登录的 Node.js Office 加载项
 
 用户可以登录 Office，Office Web 加载项能够利用此登录进程，授权用户访问加载项和 Microsoft Graph，而无需要求用户再登录一次。有关概述，请参阅[在 Office 加载项中启用 SSO](sso-in-office-add-ins.md)。
 
@@ -75,9 +75,9 @@ ms.locfileid: "45159589"
 
 1. 选择“管理”**** 下的“证书和密码”****。 选择“新客户端密码”**** 按钮。 输入“描述”**** 的值，然后选择“到期”**** 的适当选项，并选择“添加”****。 在继续操作前，*立即复制客户端机密码值并使用应用程序 ID 保存它*，因为在后面的过程中，将需要用到它。
 
-1. 在“管理”**** 下选择“公开 API”****。 选择 "**设置**" 链接。 这将生成应用程序 ID URI，格式为 "api://$App ID GUID $"，其中 $App ID GUID $ 是**应用程序（客户端） ID**。
+1. 在“管理”**** 下选择“公开 API”****。 选择 "**设置**" 链接。 这将生成应用程序 ID URI，格式为 "api://$App ID GUID $"，其中 $App ID GUID $ 是**应用程序 (客户端) ID**。
 
-1. 在生成的 ID 中，insert `localhost:44355/` （注意，追加到末尾的正斜杠 "/"）与双正斜杠和 GUID 之间。 完成后，整个 ID 应具有窗体 `api://localhost:44355/$App ID GUID$` ; 例如 `api://localhost:44355/c6c1f32b-5e55-4997-881a-753cc1d563b7` 。
+1. 在生成的 ID 中，插入 `localhost:44355/` (注意追加到双正斜杠和 GUID 之间的结束) 的正斜杠 "/"。 完成后，整个 ID 应具有窗体 `api://localhost:44355/$App ID GUID$` ; 例如 `api://localhost:44355/c6c1f32b-5e55-4997-881a-753cc1d563b7` 。
 
 1. 选择“**添加一个作用域**”按钮。 在打开的面板中，输入 `access_as_user` 作为**作用域**名称。
 
@@ -102,6 +102,7 @@ ms.locfileid: "45159589"
     - `d3590ed6-52b3-4102-aeff-aad2292ab01c` (Microsoft Office)
     - `ea5a67f6-b6f3-4338-b240-c655ddc3cc8e` (Microsoft Office)
     - `57fb890c-0dab-4253-a5e0-7188c88b2bb4`（Office 网页版）
+    - `08e18876-6177-487e-b8b5-cf950c1e598c`（Office 网页版）
     - `bc59ab01-8403-45c6-8796-ac3ef710b3e3`（Outlook 网页版）
 
     对于每个 ID，执行以下步骤：
@@ -192,7 +193,7 @@ ms.locfileid: "45159589"
     }
     ```
 
-1. 将 `TODO 1` 替换为以下代码。 关于此代码，请注意以下几点：
+1. 将 `TODO 1` 替换为下面的代码。 关于此代码，请注意以下几点：
 
     - `OfficeRuntime.auth.getAccessToken` 指示 Office 从 Azure AD 获取引导令牌。 引导令牌类似于 ID令 牌，但是它具有值为 `access-as-user` 的 `scp`（作用域）属性。 Web 应用程序可将此类令牌与 Microsoft Graph 的访问令牌进行交换。
     - 将 `allowSignInPrompt` 选项设置为 true 意味着如果当前没有任何用户登录到 Office，则 Office 将打开弹出窗口登录提示。
