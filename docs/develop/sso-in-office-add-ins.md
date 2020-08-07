@@ -1,33 +1,23 @@
 ---
 title: 为 Office 加载项启用单一登录
 description: 了解如何使用常用的 Microsoft 个人、工作或教育帐户来为 Office 加载项启用单一登录。
-ms.date: 07/07/2020
+ms.date: 07/30/2020
 localization_priority: Priority
-ms.openlocfilehash: 6e8c93388f758514e8b6366bef7062f41fc79174
-ms.sourcegitcommit: 472b81642e9eb5fb2a55cd98a7b0826d37eb7f73
+ms.openlocfilehash: fa10d67d007fbcb8713fc607ca32e1c646e7f3e5
+ms.sourcegitcommit: 8fdd7369bfd97a273e222a0404e337ba2b8807b0
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/17/2020
-ms.locfileid: "45159575"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "46573222"
 ---
-# <a name="enable-single-sign-on-for-office-add-ins-preview"></a>为 Office 加载项启用单一登录（预览）
+# <a name="enable-single-sign-on-for-office-add-ins"></a>为 Office 加载项启用单一登录
+
 
 用户可以使用自己的个人 Microsoft 帐户或 Microsoft 365 教育或工作帐户，登录 Office（在线、移动和桌面平台）。 可以利用此功能并使用单一登录 (SSO) 授权用户访问加载项（用户无需再次登录）。
 
 ![显示加载项登录过程的图像](../images/sso-for-office-addins.png)
 
-## <a name="preview-status"></a>预览状态
-
-当前只在预览中支持单一登录 API。 它可供开发人员进行实验，但不应用于生产加载项。 此外，在 [AppSource](https://appsource.microsoft.com) 中不接受使用 SSO 的加载项。
-
-SSO 需要 Microsoft 365 订阅。 你应该使用来自预览体验成员频道的最新每月版本和内部版本。 你可能需要成为 Office 预览体验成员，才能获取此版本。 有关详细信息，请参阅[成为 Office 预览体验成员](https://insider.office.com)。 请注意，当内部版本进入生产半年频道时，将关闭对该内部版本的预览功能（包括 SSO）的支持。
-
-并非所有 Office 应用程序都支持 SSO 预览。 可以在 Word、Excel、Outlook 和 PowerPoint 中使用此加载项。 若要详细了解目前支持单一登录 API 的平台，请参阅 [IdentityAPI 要求集](../reference/requirement-sets/identity-api-requirement-sets.md)。
-
 ## <a name="requirements-and-best-practices"></a>要求和最佳做法
-
-> [!NOTE]
-> [!INCLUDE [Information about using preview APIs](../includes/using-preview-apis.md)]
 
 如果使用的是 **Outlook** 加载项，请务必为 Microsoft 365 租赁启用新式验证。 若要了解如何执行此操作，请参阅 [Exchange Online: How to enable your tenant for modern authentication](https://social.technet.microsoft.com/wiki/contents/articles/32711.exchange-online-how-to-enable-your-tenant-for-modern-authentication.aspx)（如何为租户启用新式体验）。
 
@@ -112,9 +102,9 @@ SSO 需要 Microsoft 365 订阅。 你应该使用来自预览体验成员频道
 ```js
 async function getGraphData() {
     try {
-        let bootstrapToken = await OfficeRuntime.auth.getAccessToken({ allowSignInPrompt: true, forMSGraphAccess: true });
+        let bootstrapToken = await OfficeRuntime.auth.getAccessToken();
 
-        // The /api/values controller will make the token exchange and use the
+        // The /api/DoSomething controller will make the token exchange and use the
         // access token it gets back to make the call to MS Graph.
         getData("/api/DoSomething", bootstrapToken);
     }
@@ -151,7 +141,7 @@ $.ajax({
 
 #### <a name="when-to-call-the-method"></a>何时调用方法
 
-如果因没有用户登录 Office 而无法使用加载项，则应*在加载项启动时*调用 `getAccessToken`，并在 `getAccessToken` 的 `options` 参数中传递 `allowSignInPrompt: true`。
+如果因当前没有用户登录 Office 而无法使用加载项，则应*在加载项启动时*调用 `getAccessToken`，并在 `getAccessToken` 的 `options` 参数中传递 `allowSignInPrompt: true`。 例如：`OfficeRuntime.auth.getAccessToken( { allowSignInPrompt: true });`
 
 如果加载项具有一些无需用户登录的功能，那么*当用户执行需要用户登录的操作时*，请调用 `getAccessToken`。 `getAccessToken` 的冗余调用不会导致性能严重下降，因为 Office 缓存并重用启动没有过期的令牌，无需每次调用 AAD v。 `getAccessToken` 都重新调用 AAD V 2.0 端点。 因此，可以将 `getAccessToken` 调用添加到所有在需要令牌时启动操作的函数和处理程序。
 

@@ -1,17 +1,17 @@
 ---
-title: 使用 Yeoman 生成器创建使用 SSO 的 Office 加载项（预览版）
-description: 使用 Yeoman 生成器生成使用单一登录的 Node.js Office 加载项（预览版）。
-ms.date: 02/20/2020
+title: 使用 Yeoman 生成器创建使用 SSO 的 Office 加载项
+description: 使用 Yeoman 生成器生成使用单一登录的 Node.js Office 加载项。
+ms.date: 07/30/2020
 ms.prod: non-product-specific
 localization_priority: Priority
-ms.openlocfilehash: 7b6c6121a7a0f943a8c86276bad31f06de555b79
-ms.sourcegitcommit: 472b81642e9eb5fb2a55cd98a7b0826d37eb7f73
+ms.openlocfilehash: abc3c0ca7fb5068bf2964e4809970fb2ea86d5bf
+ms.sourcegitcommit: 8fdd7369bfd97a273e222a0404e337ba2b8807b0
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/17/2020
-ms.locfileid: "45159374"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "46573229"
 ---
-# <a name="use-the-yeoman-generator-to-create-an-office-add-in-that-uses-single-sign-on-preview"></a>使用 Yeoman 生成器创建使用单一登录的 Node.js Office 加载项（预览版）。
+# <a name="use-the-yeoman-generator-to-create-an-office-add-in-that-uses-single-sign-on"></a>使用 Yeoman 生成器创建使用单一登录的 Node.js Office 加载项
 
 本文将介绍如何使用 Yeoman 生成器创建适用于 Excel、Outlook、Word 或 PowerPoint，尽可能使用单一登录 (SSO) 的 Office 加载项，并在不支持 SSO 时使用替代的用户身份验证方法。
 
@@ -31,8 +31,6 @@ Yeoman 生成器简化了 SSO 加载项的创建流程，能够自动执行在 A
     ```
 
     [!include[note to update Yeoman generator](../includes/note-yeoman-generator-update.md)]
-
-[!include[additional prerequisites](../includes/sso-tutorial-prereqs.md)]
 
 * 如果你使用的是 Mac，并且计算机上未安装 Azure CLI，则必须安装 [Homebrew](https://brew.sh/)。 在此快速入门过程中运行的 SSO 配置脚本将使用 Homebrew 来安装 Azure CLI，然后将使用 Azure CLI 在 Azure 中配置 SSO。
 

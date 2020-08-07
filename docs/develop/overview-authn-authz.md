@@ -1,14 +1,14 @@
 ---
 title: Office 加载项中的身份验证和授权概述
 description: 要求用户在 Web 应用程序和 Office 加载项中对登录进行身份验证。
-ms.date: 07/07/2020
+ms.date: 07/30/2020
 localization_priority: Priority
-ms.openlocfilehash: b30e75fd37ec642f1f5a168b658e3770c15e166d
-ms.sourcegitcommit: 472b81642e9eb5fb2a55cd98a7b0826d37eb7f73
+ms.openlocfilehash: ba3d0aa11f8fa6537f444c063809c89c79ea7b2b
+ms.sourcegitcommit: 8fdd7369bfd97a273e222a0404e337ba2b8807b0
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/17/2020
-ms.locfileid: "45159554"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "46573145"
 ---
 # <a name="overview-of-authentication-and-authorization-in-office-add-ins"></a>Office 加载项中的身份验证和授权概述
 
@@ -18,7 +18,7 @@ Web 应用程序和 Office 加载项默认允许匿名访问，但你可要求�
 
 有两种方式可用来完成这些身份验证。
 
-- **Office 单一登录 (SSO)**：此系统*当前为预览版*，它让用户能在登录到 Office 的同时登录到加载项。 此外，此加载项还可使用用户的 Office 凭据向加载项授予对 Microsoft Graph 的权限。 （不可通过此系统访问非 Microsoft 源。）
+- **Office 单一登录 (SSO)**：一种可让用户登录到 Office 从而还可用于登录到加载项的系统。 此外，此加载项还可使用用户的 Office 凭据向加载项授予对 Microsoft Graph 的权限。 （不可通过此系统访问非 Microsoft 源。）
 - **通过 Azure Active Directory 进行 Web 身份验证和授权**：这是老生常谈，没有特别之处。 它只是在出现 Office SSO 系统之前 Office 加载项（及其他 Web 应用）对用户进行身份验证和授权应用的方式，现在仍在 Office SSO 不可用的场景中使用。
 
 下列流程图展示了需要如同加载项开发人员一样作出的决策。 详细信息请参见本文稍后部分。
