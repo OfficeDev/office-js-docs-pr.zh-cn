@@ -3,12 +3,12 @@ title: 使用 XLL 用户定义的函数扩展自定义函数
 description: 启用与自定义函数具有等效功能的 Excel XLL 用户定义函数的兼容性
 ms.date: 04/29/2020
 localization_priority: Normal
-ms.openlocfilehash: 23fd1e78d3a570a0f13b85559ae34b887d92e2ea
-ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
+ms.openlocfilehash: 036421700c0415e5f0599b5917cdebb298c2c4fa
+ms.sourcegitcommit: cc6886b47c84ac37a3c957ff85dd0ed526ca5e43
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "45093432"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "46641233"
 ---
 # <a name="extend-custom-functions-with-xll-user-defined-functions"></a>使用 XLL 用户定义的函数扩展自定义函数
 
@@ -19,7 +19,7 @@ ms.locfileid: "45093432"
 > - Excel 网页版
 > - Windows 上的 Excel (版本1904或更高版本) 
 > - Excel for Mac (版本13.329 或更高版本) 
-> 
+>
 > 若要在 web 上的 Excel 中使用 COM 加载项并 XLL UDF 兼容性，请使用 Microsoft 365 订阅或[microsoft 帐户](https://account.microsoft.com/account)登录。 如果你还没有 Microsoft 365 订阅，则可以加入[microsoft 365 开发人员计划](https://developer.microsoft.com/office/dev-program)，以免费的90天 renewable microsoft 365 订阅。
 
 ## <a name="specify-equivalent-xll-in-the-manifest"></a>在清单中指定等效 XLL
@@ -58,15 +58,15 @@ ms.locfileid: "45093432"
 
 |         |XLL 用户定义的函数 |XLL 兼容的自定义函数 |Excel 加载项自定义函数 |
 |---------|---------|---------|---------|
-| 支持的平台 | Windows | Windows、macOS、web 浏览器 | Windows、macOS、web 浏览器 |
-| 支持的文件格式 | .XLSX、XLSB、XLSM、XLS | .XLSX、XLSB、XLSM | .XLSX、XLSB、XLSM |
-| 公式自动完成 | 否 | 可访问 | 是 |
-| 媒体 | 可通过 xlfRTD 和 XLL 回调实现。 | 否 | 可访问 |
-| 函数的本地化 | 否 | 不是。 名称和 ID 必须与现有 XLL 的函数相匹配。 | 是 |
-| 可变函数 | 是 | 是 | 是 |
-| 多线程重新计算支持 | 是 | 是 | 是 |
-| 计算行为 | 无 UI。 在计算过程中，Excel 可能会无响应。 | 用户将看到 #BUSY！ 在返回结果之前。 | 用户将看到 #BUSY！ 在返回结果之前。 |
-| 要求集 | 不适用 | Customfunctions.js 1.1 及更高版本 | Customfunctions.js 1.1 及更高版本 |
+| **支持的平台** | Windows | Windows、macOS、web 浏览器 | Windows、macOS、web 浏览器 |
+| **支持的文件格式** | .XLSX、XLSB、XLSM、XLS | .XLSX、XLSB、XLSM | .XLSX、XLSB、XLSM |
+| **公式自动完成** | 否 | 是 | 是 |
+| **媒体** | 可通过 xlfRTD 和 XLL 回调实现。 | 否 | 是 |
+| **函数的本地化** | 否 | 不是。 名称和 ID 必须与现有 XLL 的函数相匹配。 | 是 |
+| **可变函数** | 是 | 是 | 是 |
+| **多线程重新计算支持** | 是 | 是 | 是 |
+| **计算行为** | 无 UI。 在计算过程中，Excel 可能会无响应。 | 用户将看到 #BUSY！ 在返回结果之前。 | 用户将看到 #BUSY！ 在返回结果之前。 |
+| **要求集** | 不适用 | Customfunctions.js 1.1 及更高版本 | Customfunctions.js 1.1 及更高版本 |
 
 ## <a name="see-also"></a>另请参阅
 

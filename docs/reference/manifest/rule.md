@@ -3,23 +3,23 @@ title: 清单文件中的 Rule 元素
 description: Rule 元素指定应为此上下文邮件外接程序计算的激活规则。
 ms.date: 05/14/2020
 localization_priority: Normal
-ms.openlocfilehash: c4094cdf9e9006bbc49d180cb79845527461a543
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 79b97f2e442e9d8ce59d17467161b5b9b7a7252d
+ms.sourcegitcommit: cc6886b47c84ac37a3c957ff85dd0ed526ca5e43
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44608109"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "46641429"
 ---
 # <a name="rule-element"></a>Rule 元素
 
 指定应针对此上下文邮件外接程序计算的激活规则。
 
-**外接类型：** 邮件（上下文）
+**外接类型：** 邮件 (上下文) 
 
 ## <a name="contained-in"></a>包含于
 
 - [OfficeApp](officeapp.md)
-- [ExtensionPoint](extensionpoint.md) （[**CustomPane** （已弃用）](https://developer.microsoft.com/outlook/blogs/make-your-add-ins-available-in-the-office-ribbon/)， [**DetectedEntity**](extensionpoint.md#detectedentity)）
+- [ExtensionPoint](extensionpoint.md) ([ **CustomPane** (弃用) ](https://developer.microsoft.com/outlook/blogs/make-your-add-ins-available-in-the-office-ribbon/)， [**DetectedEntity**](extensionpoint.md#detectedentity)) 
 
 ## <a name="attributes"></a>属性
 
@@ -41,7 +41,7 @@ ms.locfileid: "44608109"
 
 ### <a name="attributes"></a>属性
 
-| 属性 | 必需 | Description |
+| 属性 | 必需 | 说明 |
 |:-----|:-----|:-----|
 | **ItemType** | 是 | 指定要匹配的项目类型。可以是 `Message` 或 `Appointment`。`Message` 项目类型包括电子邮件、会议请求、会议响应和会议取消。 |
 | **FormType** | 否（在 [ExtensionPoint](extensionpoint.md) 内），是（在 [OfficeApp](officeapp.md) 内） | 指定应用应出现在项目的读取还是编辑表单中。可以是以下值之一：`Read`、`Edit`、`ReadOrEdit`。如果在 `ExtensionPoint` 中的 `Rule` 上指定，则该值必须为 `Read`。 |
@@ -70,7 +70,7 @@ ms.locfileid: "44608109"
 
 ### <a name="attributes"></a>属性
 
-| 属性 | 必需 | Description |
+| 属性 | 必需 | 说明 |
 |:-----|:-----|:-----|
 | **EntityType** | 是 | 指定若想规则计算结果为 true 而必须存在的实体类型。可以是以下值之一：`MeetingSuggestion`、`TaskSuggestion`、`Address`、`Url`、`PhoneNumber`、`EmailAddress` 或 `Contact`。 |
 | **RegExFilter** | 否 | 指定一个针对此实体运行以进行激活的正则表达式。 |
@@ -90,7 +90,7 @@ ms.locfileid: "44608109"
 
 ### <a name="attributes"></a>属性
 
-| 属性 | 必需 | Description |
+| 属性 | 必需 | 说明 |
 |:-----|:-----|:-----|
 | **RegExName** | 是 | 指定正则表达式的名称，以便你能够在外接程序的代码中引用该表达式。 |
 | **RegExValue** | 是 | 指定将对其求值的正则表达式以确定是否应显示邮件外接程序。 |
@@ -111,7 +111,7 @@ ms.locfileid: "44608109"
 
 ### <a name="attributes"></a>属性
 
-| 属性 | 必需 | Description |
+| 属性 | 必需 | 说明 |
 |:-----|:-----|:-----|
 | **Mode** | 是 | 指定在计算此规则集时要使用的逻辑运算符。可以是以下类型之一：`And` 或 `Or`。 |
 
@@ -128,5 +128,5 @@ ms.locfileid: "44608109"
 ## <a name="see-also"></a>另请参阅
 
 - [Outlook 加载项的激活规则](../../outlook/activation-rules.md)
-- [将 Outlook 项中的字符串作为已知实体进行匹配](../../outlook/match-strings-in-an-item-as-well-known-entities.md)    
+- [将 Outlook 项中的字符串作为已知实体进行匹配](../../outlook/match-strings-in-an-item-as-well-known-entities.md)
 - [使用正则表达式激活规则显示 Outlook 外接程序](../../outlook/use-regular-expressions-to-show-an-outlook-add-in.md)

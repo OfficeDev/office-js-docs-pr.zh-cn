@@ -1,17 +1,17 @@
 ---
-title: '在 Outlook 外接程序中执行 "在发送时追加" (预览) '
+title: '在 Outlook 加载项中实现向外接程序发送 (预览) '
 description: 了解如何在 Outlook 外接程序中实现 "发送时发送" 功能。
 ms.topic: article
-ms.date: 05/26/2020
+ms.date: 08/07/2020
 localization_priority: Normal
-ms.openlocfilehash: b9c834778d68e50806da908732cd0c8663ec6680
-ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
+ms.openlocfilehash: 2b97d65a0f1056257b9cf79eb23fabca10be3a78
+ms.sourcegitcommit: cc6886b47c84ac37a3c957ff85dd0ed526ca5e43
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "45093985"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "46641499"
 ---
-# <a name="implement-append-on-send-in-your-outlook-add-in-preview"></a>在 Outlook 外接程序中执行 "在发送时追加" (预览) 
+# <a name="implement-append-on-send-in-your-outlook-add-in-preview"></a>在 Outlook 加载项中实现向外接程序发送 (预览) 
 
 本演练结束时，您将拥有一个可在发送邮件时插入免责声明的 Outlook 外接程序。
 
@@ -137,6 +137,9 @@ ms.locfileid: "45093985"
 ## <a name="implement-append-on-send-handling"></a>实现附加发送前处理
 
 接下来，实现在 send 事件上追加。
+
+> [!IMPORTANT]
+> 如果您的外接程序还实现了[使用 `ItemSend` 中的发送事件处理](outlook-on-send-addins.md)，则在 `AppendOnSendAsync` 发送时处理程序中调用将返回错误，因为这种情况不受支持。
 
 在这种情况下，您将实现在用户发送时向项目追加免责声明。
 

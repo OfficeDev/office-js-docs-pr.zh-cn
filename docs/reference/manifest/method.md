@@ -3,12 +3,12 @@ title: 清单文件中的 Method 元素
 description: Method 元素指定 Office JavaScript API 中的单个方法，Office 外接程序需要这些方法才能激活。
 ms.date: 03/19/2019
 localization_priority: Normal
-ms.openlocfilehash: c3531475a920fd24ce8390170b5f4728d4dcd0e0
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 0e3e74a73a3422a7789e82d6f0e7a516bd795ca8
+ms.sourcegitcommit: cc6886b47c84ac37a3c957ff85dd0ed526ca5e43
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44611755"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "46641323"
 ---
 # <a name="method-element"></a>Method 元素
 
@@ -28,11 +28,11 @@ ms.locfileid: "44611755"
 
 ## <a name="attributes"></a>属性
 
-|**属性**|**类型**|**必需**|**说明**|
+|属性|类型|必需|说明|
 |:-----|:-----|:-----|:-----|
-|名称|字符串|必需|指定由其父对象限定的所需方法的名称。 例如，若要指定 `getSelectedDataAsync` 方法，必须指定 `"Document.getSelectedDataAsync"` 。|
+|Name|字符串|必需|指定由其父对象限定的所需方法的名称。 例如，若要指定 `getSelectedDataAsync` 方法，必须指定 `"Document.getSelectedDataAsync"` 。|
 
-## <a name="remarks"></a>备注
+## <a name="remarks"></a>说明
 
 `Methods` `Method` 邮件外接程序不支持和元素。有关要求集的详细信息，请参阅[Office 版本和要求集](../../develop/office-versions-and-requirement-sets.md)。
 

@@ -3,12 +3,12 @@ title: 清单文件中的 Resources 元素
 description: Resources 元素包含用于 VersionOverrides 节点的图标、字符串和 URL。
 ms.date: 10/09/2018
 localization_priority: Normal
-ms.openlocfilehash: 717e3cecd32fbf2bdb806f7484cc954a86b82e3d
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 0a528b05904ef65c3643aaebb9149eb2091e2287
+ms.sourcegitcommit: cc6886b47c84ac37a3c957ff85dd0ed526ca5e43
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44608745"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "46641268"
 ---
 # <a name="resources-element"></a>Resources 元素
 
@@ -18,11 +18,11 @@ ms.locfileid: "44608745"
 
 ## <a name="child-elements"></a>子元素
 
-|  元素 |  类型  |  Description  |
+|  元素 |  类型  |  说明  |
 |:-----|:-----|:-----|
 |  [Images](#images)            |  image   |  提供指向图标图像的 HTTPS URL。 |
 |  **Urls**                |  url     |  提供 HTTPS URL 位置。一个 URL 最多可包含 2048 个字符。 |
-|  **ShortStrings** |  字符串  |  **Label** 和 **Title** 元素的文本。每个 **String** 最多可包含 125 个字符。|
+|  **ShortStrings** |  string  |  **Label** 和 **Title** 元素的文本。每个 **String** 最多可包含 125 个字符。|
 |  **LongStrings**  |  string  | **Description** 属性的文本。每个 **String** 最多可包含 250 个字符。|
 
 > [!NOTE]
@@ -43,10 +43,10 @@ ms.locfileid: "44608745"
 - 48x48
 - 64x64
 
-> [!IMPORTANT] 
-> Outlook 需要缓存图像资源的能力，以提高性能。 为此，托管图像资源的服务器不能向响应头添加任何 CACHE-CONTROL 指令。 这将导致 Outlook 自动替代泛型或默认图像。    
+> [!IMPORTANT]
+> Outlook 需要缓存图像资源的能力，以提高性能。 为此，托管图像资源的服务器不能向响应头添加任何 CACHE-CONTROL 指令。 这将导致 Outlook 自动替代泛型或默认图像。
 
-## <a name="resources-examples"></a>资源示例 
+## <a name="resources-examples"></a>资源示例
 
 ```XML
 <Resources>

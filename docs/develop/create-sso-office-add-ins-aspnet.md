@@ -3,12 +3,12 @@ title: 创建使用单一登录的 ASP.NET Office 加载项
 description: 有关如何使用 ASP.NET 后端创建 (或转换) Office 加载项的分步指南，请使用单一登录 (SSO) 。
 ms.date: 07/30/2020
 localization_priority: Normal
-ms.openlocfilehash: 8627c2a3d54d1c45672f3af1336e3c2b891ac055
-ms.sourcegitcommit: 8fdd7369bfd97a273e222a0404e337ba2b8807b0
+ms.openlocfilehash: 5556f8486529129e5f73649722ed919899e5d87e
+ms.sourcegitcommit: cc6886b47c84ac37a3c957ff85dd0ed526ca5e43
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "46573180"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "46641289"
 ---
 # <a name="create-an-aspnet-office-add-in-that-uses-single-sign-on"></a>创建使用单一登录的 ASP.NET Office 加载项
 
@@ -16,7 +16,6 @@ ms.locfileid: "46573180"
 本文将引导您完成在使用 ASP.NET 构建的外接程序中启用单一登录 (SSO) 的过程。
 
 > [!NOTE]
-
 > 有关与此类似的 Node.js 加载项文章，请参阅[创建使用单一登录的 Node.js Office 加载项](create-sso-office-add-ins-nodejs.md)。
 
 ## <a name="prerequisites"></a>先决条件

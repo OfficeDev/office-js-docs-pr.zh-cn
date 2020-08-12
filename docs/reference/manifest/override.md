@@ -3,12 +3,12 @@ title: 清单文件中的 Override 元素
 description: Override 元素使您能够为其他区域设置指定设置的值。
 ms.date: 03/19/2019
 localization_priority: Normal
-ms.openlocfilehash: aa5d023169389670d15e36f8bee4445529d84711
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 139a4089a36d8a8adfa71d4a0947b02f5b163b52
+ms.sourcegitcommit: cc6886b47c84ac37a3c957ff85dd0ed526ca5e43
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44611503"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "46641450"
 ---
 # <a name="override-element"></a>Override 元素
 
@@ -24,7 +24,7 @@ ms.locfileid: "44611503"
 
 ## <a name="contained-in"></a>包含于
 
-|**Element**|
+|元素|
 |:-----|
 |[CitationText](citationtext.md)|
 |[说明](description.md)|
@@ -39,9 +39,9 @@ ms.locfileid: "44611503"
 
 ## <a name="attributes"></a>属性
 
-|**属性**|**类型**|**必需**|**描述**|
+|属性|类型|必需|说明|
 |:-----|:-----|:-----|:-----|
-|区域设置|string|必需|为此替代项指定区域设置的区域性名称，采用 BCP 47 语言标记格式，例如 `"en-US"`。|
+|区域设置|字符串|必需|为此替代项指定区域设置的区域性名称，采用 BCP 47 语言标记格式，例如 `"en-US"`。|
 |值|字符串|必需|指定表示为指定区域设置的设置的值。|
 
 ## <a name="see-also"></a>另请参阅

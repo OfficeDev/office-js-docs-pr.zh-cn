@@ -3,12 +3,12 @@ title: 清单文件中的 OfficeMenu 元素
 description: OfficeMenu 元素定义要添加到 Office 上下文菜单中的控件的集合。
 ms.date: 10/09/2018
 localization_priority: Normal
-ms.openlocfilehash: f5aac4e3454e1aa18021c10bfb2f06df90805980
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: d181e0c6f489997a149b9713bdc257f4a2baeb16
+ms.sourcegitcommit: cc6886b47c84ac37a3c957ff85dd0ed526ca5e43
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44611517"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "46641439"
 ---
 # <a name="officemenu-element"></a>OfficeMenu 元素
 
@@ -22,7 +22,7 @@ ms.locfileid: "44611517"
 
 ## <a name="child-elements"></a>子元素
 
-|  元素 |  必需  |  Description  |
+|  元素 |  必需  |  说明  |
 |:-----|:-----|:-----|
 |  [Control](#control)    | 是 |  一个或多个 Control 对象的集合。  |
 
@@ -31,7 +31,7 @@ ms.locfileid: "44611517"
 指定要在其中添加此 Office 外接程序的 Office 客户端应用程序的内置菜单。
 
 - `ContextMenuText` -  当用户选定文本，然后打开（右键单击）选定文本上的上下文菜单时显示上下文菜单上的项。适用于 Word、Excel、PowerPoint 和 OneNote。
-- `ContextMenuCell` -  当用户打开（右键单击）电子表格中的某个单元格上的上下文菜单时显示上下文菜单上的项。适用于 Excel。 
+- `ContextMenuCell` -  当用户打开（右键单击）电子表格中的某个单元格上的上下文菜单时显示上下文菜单上的项。适用于 Excel。
 
 ## <a name="control"></a>Control
 
@@ -46,12 +46,12 @@ ms.locfileid: "44611517"
       <Supertip>
           <Title resid="residLabel" />
           <Description resid="residToolTip" />
-      </Supertip>   
+      </Supertip>
       <Icon>
         <bt:Image size="16" resid="icon1_16x16" />
         <bt:Image size="32" resid="icon1_32x32" />
         <bt:Image size="80" resid="icon1_80x80" />
-      </Icon>    
+      </Icon>
       <Items>
         <Item id="myMenuItemID">
           <Label resid="residLabel3"/>
@@ -63,12 +63,12 @@ ms.locfileid: "44611517"
             <bt:Image size="16" resid="icon1_16x16" />
             <bt:Image size="32" resid="icon1_32x32" />
             <bt:Image size="80" resid="icon1_80x80" />
-          </Icon>    
+          </Icon>
           <Action xsi:type="ShowTaskpane">
-            <SourceLocation resid="residTaskpaneUrl2" />    
-          </Action>    
+            <SourceLocation resid="residTaskpaneUrl2" />
+          </Action>
         </Item>
       </Items>
-    </Control>   
+    </Control>
 </OfficeMenu>
 ```

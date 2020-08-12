@@ -3,12 +3,12 @@ title: 清单文件中的 MobileFormFactor 元素
 description: MobileFormFactor 元素指定外接程序的移动外观设置。
 ms.date: 10/09/2018
 localization_priority: Normal
-ms.openlocfilehash: 64a7681ca23becf42af1ba435aae4d509e6ad1ba
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 5e52e66a2b97a32a19d42a4938dbeaed8f367478
+ms.sourcegitcommit: cc6886b47c84ac37a3c957ff85dd0ed526ca5e43
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44612225"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "46641471"
 ---
 # <a name="mobileformfactor-element"></a>MobileFormFactor 元素
 
@@ -20,8 +20,8 @@ ms.locfileid: "44612225"
 
 ## <a name="child-elements"></a>子元素
 
-| 元素                               | 必需 | Description  |
-|:--------------------------------------|:--------:|:-------------|
+| 元素                             | 必需 | 说明  |
+|:------------------------------------|:--------:|:-------------|
 | [ExtensionPoint](extensionpoint.md) | 是      | 定义外接程序公开功能的位置。 |
 | [FunctionFile](functionfile.md)     | 是      | 包含 JavaScript 函数的文件的 URL。|
 
@@ -36,7 +36,7 @@ ms.locfileid: "44612225"
       <FunctionFile resid="residUILessFunctionFileUrl" />
       <ExtensionPoint xsi:type="MobileMessageReadCommandSurface">
         <!-- information on this extension point -->
-      </ExtensionPoint> 
+      </ExtensionPoint>
       <!-- possibly more ExtensionPoint elements -->
     </MobileFormFactor>
   </Host>

@@ -3,12 +3,12 @@ title: 清单文件中的 SourceLocation 元素
 description: SourceLocation 元素指定 Office 外接程序的源文件位置。
 ms.date: 05/12/2020
 localization_priority: Normal
-ms.openlocfilehash: 9af2337263314bec5ce04eb0d22626ab368c19ef
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 447adb7df7d0c59305fe5046357959fcd7824735
+ms.sourcegitcommit: cc6886b47c84ac37a3c957ff85dd0ed526ca5e43
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44608724"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "46641401"
 ---
 # <a name="sourcelocation-element"></a>SourceLocation 元素
 
@@ -26,7 +26,7 @@ ms.locfileid: "44608724"
 
 - [DefaultSettings](defaultsettings.md)（内容和任务窗格外接程序）
 - [FormSettings](formsettings.md)（邮件外接程序）
-- [ExtensionPoint](extensionpoint.md) （上下文和 LaunchEvent （预览）邮件外接程序）
+- [ExtensionPoint](extensionpoint.md) (上下文和 LaunchEvent (预览) 邮件外接程序) 
 
 ## <a name="can-contain"></a>可以包含
 
@@ -34,6 +34,6 @@ ms.locfileid: "44608724"
 
 ## <a name="attributes"></a>属性
 
-|**属性**|**类型**|**必需**|**描述**|
+|属性|类型|必需|说明|
 |:-----|:-----|:-----|:-----|
 |DefaultValue|URL|必需|指定该设置的默认值，表示为 [DefaultLocale](defaultlocale.md) 元素中指定的区域设置。|

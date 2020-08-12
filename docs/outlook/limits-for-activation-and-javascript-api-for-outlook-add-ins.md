@@ -3,16 +3,16 @@ title: Outlook 加载项的激活和 API 使用限制
 description: 请注意某些激活和 API 使用指南，并在这些限制范围内实施加载项。
 ms.date: 05/08/2020
 localization_priority: Normal
-ms.openlocfilehash: 90260e4edd2059e98bc8618c6dcb6308424f43c9
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 7659b5292187f10b3176460c162405c7af249977
+ms.sourcegitcommit: cc6886b47c84ac37a3c957ff85dd0ed526ca5e43
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44609067"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "46641394"
 ---
 # <a name="limits-for-activation-and-javascript-api-for-outlook-add-ins"></a>Outlook 加载项的激活和 JavaScript API 限制
 
-为了向 Outlook 外接程序的用户提供令人满意的体验，您必须了解特定的激活和 API 使用准则，并执行外接程序使其不超过这些限制。 存在这些准则，以使单个外接程序在处理对 Office JavaScript API 的激活规则或调用时不需要花费很长的时间，从而影响 Outlook 和其他外接程序的总体用户体验。这些限制适用于在外接部件清单中设计激活规则，并使用自定义属性、漫游设置、收件人、Exchange Web 服务（EWS）请求和响应以及异步调用。
+为了向 Outlook 外接程序的用户提供令人满意的体验，您必须了解特定的激活和 API 使用准则，并执行外接程序使其不超过这些限制。 存在这些准则，以使单个外接程序在处理对 Office JavaScript API 的激活规则或调用时不需要花费很长的时间，从而影响 Outlook 和其他外接程序的总体用户体验。这些限制适用于在外接部件清单中设计激活规则，使用自定义属性、漫游设置、收件人、Exchange Web 服务 (EWS) 请求和响应以及异步调用。
 
 > [!NOTE]
 > 如果外接程序在 Outlook 富客户端中运行，还必须确认运行的外接程序是否在特定运行时资源使用状况限制内。
@@ -52,9 +52,9 @@ ms.locfileid: "44609067"
 
 ||Outlook 富客户端|移动设备上的 Outlook|Outlook 网页版|
 |:-----|:-----|:-----|:-----|
-|外形规格|任何支持的设备|Android 智能手机、iPad 或 iPhone|Android 智能手机、iPad 和 iPhone 之外任何支持的设备|
-|纯文本项正文|对正文数据的第一个 1 MB 而不对超出该限制的其余正文应用正则表达式。|仅当正文少于 16,000 个字符时激活加载项。|仅当正文少于 500,000 个字符时激活加载项。|
-|HTML 项正文|对正文数据的第一个 512 KB 而不对超出该限制的其余正文应用正则表达式。（实际的字符数取决于范围可为每字符 1 到 4 字节的编码。）|对前 64,000 个字符（包括 HTML 标记字符）而不对超出该限制的其余正文应用正则表达式。|仅当正文少于 500,000 个字符时激活加载项。|
+|**外形规格**|任何支持的设备|Android 智能手机、iPad 或 iPhone|Android 智能手机、iPad 和 iPhone 之外任何支持的设备|
+|**纯文本项正文**|对正文数据的第一个 1 MB 而不对超出该限制的其余正文应用正则表达式。|仅当正文少于 16,000 个字符时激活加载项。|仅当正文少于 500,000 个字符时激活加载项。|
+|**HTML 项正文**|对正文数据的第一个 512 KB 而不对超出该限制的其余正文应用正则表达式。（实际的字符数取决于范围可为每字符 1 到 4 字节的编码。）|对前 64,000 个字符（包括 HTML 标记字符）而不对超出该限制的其余正文应用正则表达式。|仅当正文少于 500,000 个字符时激活加载项。|
 
 表 3 列出了这些限制并介绍了每个 Outlook 主机在计算正则表达式后返回的匹配项的区别。这种支持不依赖于任何特定的设备类型，但是，如果对项正文应用了正则表达式，则该支持可能依赖于项正文的类型。
 
@@ -62,9 +62,9 @@ ms.locfileid: "44609067"
 
 ||Outlook 富客户端|Outlook 网页版或移动设备版|
 |:-----|:-----|:-----|
-|返回的匹配项的顺序|假设在 `getRegExMatches` outlook 富客户端中对同一项目应用的同一个正则表达式的匹配项返回的匹配项与在 web 或移动设备上的 outlook 中有所不同。|假定在 `getRegExMatches` outlook 富客户端中返回的顺序与 web 或移动设备上的 outlook 中的匹配顺序不同。|
-|纯文本项正文|`getRegExMatches`返回最多为1536（1.5 KB）个字符的任何匹配项，最多为50个匹配项。<br/><br/>**注意**：不 `getRegExMatches` 会在返回的数组中返回任何特定顺序的匹配项。 通常，假设 Outlook 富客户端中的匹配顺序与在同一项目上应用的同一正则表达式不同，在 web 和移动设备上的 Outlook 中。|`getRegExMatches`返回的任何匹配项最多为3072（3 KB）个字符，最多为50个匹配项。|
-|HTML 项正文|`getRegExMatches`返回的任何匹配项最多为3072（3 KB）个字符，最多为50个匹配项。<br/> <br/> **注意**：不 `getRegExMatches` 会在返回的数组中返回任何特定顺序的匹配项。 通常，假设 Outlook 富客户端中的匹配顺序与在同一项目上应用的同一正则表达式不同，在 web 和移动设备上的 Outlook 中。|`getRegExMatches`返回的任何匹配项最多为3072（3 KB）个字符，最多为50个匹配项。|
+|**返回的匹配项的顺序**|假设在 `getRegExMatches` outlook 富客户端中对同一项目应用的同一个正则表达式的匹配项返回的匹配项与在 web 或移动设备上的 outlook 中有所不同。|假定在 `getRegExMatches` outlook 富客户端中返回的顺序与 web 或移动设备上的 outlook 中的匹配顺序不同。|
+|**纯文本项正文**|`getRegExMatches`返回的任何匹配项最多为 1536 (1.5 KB) 个字符，最多为50个匹配项。<br/><br/>**注意**：不 `getRegExMatches` 会在返回的数组中返回任何特定顺序的匹配项。 通常，假设 Outlook 富客户端中的匹配顺序与在同一项目上应用的同一正则表达式不同，在 web 和移动设备上的 Outlook 中。|`getRegExMatches`返回的任何匹配项最多为 3072 (3 KB) 个字符，最多为50个匹配项。|
+|**HTML 项正文**|`getRegExMatches`返回的任何匹配项最多为 3072 (3 KB) 个字符，最多为50个匹配项。<br/> <br/> **注意**：不 `getRegExMatches` 会在返回的数组中返回任何特定顺序的匹配项。 通常，假设 Outlook 富客户端中的匹配顺序与在同一项目上应用的同一正则表达式不同，在 web 和移动设备上的 Outlook 中。|`getRegExMatches`返回的任何匹配项最多为 3072 (3 KB) 个字符，最多为50个匹配项。|
 
 ## <a name="limits-for-javascript-api"></a>JavaScript API 的限制
 

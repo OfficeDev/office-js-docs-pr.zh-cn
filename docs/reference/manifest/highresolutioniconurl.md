@@ -3,12 +3,12 @@ title: 清单文件中的 HighResolutionIconUrl 元素
 description: 指定用于表示插入 UX 中的 Office 外接程序和高 DPI 屏幕上的 Office 应用商店的图像的 URL。
 ms.date: 12/04/2018
 localization_priority: Normal
-ms.openlocfilehash: 1ebe69a7576c82ec121094ed84c0d49acde1098a
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 77675e768895a568bdfee97fc4d5006e1e890937
+ms.sourcegitcommit: cc6886b47c84ac37a3c957ff85dd0ed526ca5e43
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44611818"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "46641352"
 ---
 # <a name="highresolutioniconurl-element"></a>HighResolutionIconUrl 元素
 
@@ -28,7 +28,7 @@ ms.locfileid: "44611818"
 
 ## <a name="attributes"></a>属性
 
-|**属性**|**类型**|**必需**|**描述**|
+|属性|类型|必需|说明|
 |:-----|:-----|:-----|:-----|
 |DefaultValue|字符串 (URL)|必需|指定该设置的默认值，表示为 [DefaultLocale](defaultlocale.md) 元素中指定的区域设置。|
 

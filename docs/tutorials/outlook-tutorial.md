@@ -4,12 +4,12 @@ description: 在本教程中，你将生成一个可将 GitHub gist 插入到新
 ms.date: 07/07/2020
 ms.prod: outlook
 localization_priority: Priority
-ms.openlocfilehash: 22b06d0c455cfcf0a4331976a4e23e0eeb123415
-ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
+ms.openlocfilehash: e14cb90c79b873cfc3ebd948563941f1f9738855
+ms.sourcegitcommit: cc6886b47c84ac37a3c957ff85dd0ed526ca5e43
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "45093502"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "46641506"
 ---
 # <a name="tutorial-build-a-message-compose-outlook-add-in"></a>教程：生成邮件撰写 Outlook 外接程序
 
@@ -162,7 +162,7 @@ ms.locfileid: "45093502"
 1. 在项目的根目录中运行以下命令。 运行此命令时，本地 Web 服务器将启动（如果尚未运行）。
 
     ```command&nbsp;line
-    npm run dev-server
+    npm start
     ```
 
 1. 请按照[旁加载 Outlook 外接程序以供测试](../outlook/sideload-outlook-add-ins-for-testing.md)中的说明，旁加载位于项目根目录中的 **manifest.xml** 文件。

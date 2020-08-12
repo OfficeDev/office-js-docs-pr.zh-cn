@@ -3,12 +3,12 @@ title: 清单文件中的 ExtensionPoint 元件
 description: 定义 Office UI 中加载项公开功能的位置。
 ms.date: 05/18/2020
 localization_priority: Normal
-ms.openlocfilehash: 44824e0c74b35105833f1f05cdda87bc873a4427
-ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
+ms.openlocfilehash: 7b602f81927da34a948b1762d7b91608963d2e25
+ms.sourcegitcommit: cc6886b47c84ac37a3c957ff85dd0ed526ca5e43
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "45094454"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "46641387"
 ---
 # <a name="extensionpoint-element"></a>ExtensionPoint 元素
 
@@ -71,7 +71,7 @@ ms.locfileid: "45094454"
 
 #### <a name="child-elements"></a>子元素
  
-|**元素**|**说明**|
+|元素|说明|
 |:-----|:-----|
 |**CustomTab**|如果想要（使用 **PrimaryCommandSurface**）向功能区添加自定义选项卡，则为必需项。如果使用 **CustomTab** 元素，则不能使用 **OfficeTab** 元素。**id** 属性是必需的。 |
 |**OfficeTab**|如果要使用**PrimaryCommandSurface**) 扩展默认的 Office 应用功能区选项卡 (，则为必需。 如果使用 **OfficeTab** 元素，则不能使用 **CustomTab** 元素。 有关详细信息，请参阅 [OfficeTab](officetab.md)。|

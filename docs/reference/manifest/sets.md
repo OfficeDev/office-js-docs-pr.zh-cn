@@ -3,12 +3,12 @@ title: 清单文件中的 Sets 元素
 description: Set 元素指定 Office 外接程序在激活时所需的最小 Office JavaScript API 集。
 ms.date: 03/19/2019
 localization_priority: Normal
-ms.openlocfilehash: 8c1c97bfc2934ecf3cc20b472b29a03805603729
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: bd8f8311bb06a8e9e98fc408aece6395ab5643b1
+ms.sourcegitcommit: cc6886b47c84ac37a3c957ff85dd0ed526ca5e43
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44608731"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "46641422"
 ---
 # <a name="sets-element"></a>Sets 元素
 
@@ -34,7 +34,7 @@ ms.locfileid: "44608731"
 
 ## <a name="attributes"></a>属性
 
-|**属性**|**类型**|**必需**|**描述**|
+|属性|类型|必需|说明|
 |:-----|:-----|:-----|:-----|
 |DefaultMinVersion|字符串|可选|指定所有子[集](set.md)元素的默认**MinVersion**属性值。 默认值为“1.1”。|
 

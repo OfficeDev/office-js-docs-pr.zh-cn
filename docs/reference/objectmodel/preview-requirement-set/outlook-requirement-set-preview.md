@@ -1,14 +1,14 @@
 ---
 title: Outlook 外接程序 API 预览要求集
 description: 当前在 Outlook 外接程序的预览中的功能和 Api。
-ms.date: 08/03/2020
+ms.date: 08/07/2020
 localization_priority: Normal
-ms.openlocfilehash: 5ffa7021fd260f41599a771a1b11aef3cafd832e
-ms.sourcegitcommit: a3b743598025466bad19177e0ba9ca94ea66d490
+ms.openlocfilehash: 99f2a47c366508be17b34dbf3e373ac078843056
+ms.sourcegitcommit: cc6886b47c84ac37a3c957ff85dd0ed526ca5e43
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/04/2020
-ms.locfileid: "46547526"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "46641275"
 ---
 # <a name="outlook-add-in-api-preview-requirement-set"></a>Outlook 外接程序 API 预览要求集
 
@@ -285,6 +285,26 @@ Office JavaScript API 的 Outlook 外接程序 API 子集包括可以在 Outlook
 #### <a name="officeeventtypeofficethemechanged"></a>[Office.EventType.OfficeThemeChanged](/javascript/api/office/office.eventtype)
 
 向 `Mailbox` 中添加了 `OfficeThemeChanged` 事件。
+
+**适用于**： Windows (上的 Outlook 连接到 Microsoft 365 订阅) 
+
+<br>
+
+---
+
+---
+
+### <a name="session-data"></a>会话数据
+
+#### <a name="officesessiondata"></a>[SessionData](/javascript/api/outlook/office.sessiondata)
+
+添加了一个代表项目的会话数据的新对象。
+
+**适用于**： Windows (上的 Outlook 连接到 Microsoft 365 订阅) 
+
+#### <a name="officecontextmailboxitemsessiondata"></a>[SessionData 的 Office。](office.context.mailbox.item.md#properties)
+
+添加了一个新属性以在撰写模式下管理项目的会话数据。
 
 **适用于**： Windows (上的 Outlook 连接到 Microsoft 365 订阅) 
 

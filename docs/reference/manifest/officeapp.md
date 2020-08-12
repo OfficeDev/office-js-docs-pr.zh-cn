@@ -3,12 +3,12 @@ title: 清单文件中的 OfficeApp 元素
 description: OfficeApp 元素是 Office 外接程序清单的根元素。
 ms.date: 02/04/2020
 localization_priority: Normal
-ms.openlocfilehash: b6f3102a97794a19366b06734789e01fc4bc4f9d
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 770c764db6d8d7d1d2e870e48437de7c8f887101
+ms.sourcegitcommit: cc6886b47c84ac37a3c957ff85dd0ed526ca5e43
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44611524"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "46641457"
 ---
 # <a name="officeapp-element"></a>OfficeApp 元素
 
@@ -33,7 +33,7 @@ Office 外接程序清单中的根元素。
 
 ## <a name="must-contain"></a>必须包含
 
-|**元素**|**Content**|**Mail**|**TaskPane**|
+|元素|内容|邮件|任务窗格|
 |:-----|:-----|:-----|:-----|
 |[Id](id.md)|x|x|x|
 |[版本](version.md)|x|x|x|
@@ -48,7 +48,7 @@ Office 外接程序清单中的根元素。
 
 ## <a name="can-contain"></a>可以包含
 
-|**Element**|**Content**|**Mail**|**TaskPane**|
+|元素|内容|邮件|任务窗格|
 |:-----|:-----|:-----|:-----|
 |[AlternateId](alternateid.md)|x|x|x|
 |[IconUrl](iconurl.md)|x|x|x|
@@ -65,7 +65,7 @@ Office 外接程序清单中的根元素。
 
 ## <a name="attributes"></a>属性
 
-|||
+|属性|说明|
 |:-----|:-----|
 |xmlns|定义的 Office 外接程序清单命名空间和架构版本。应始终将此属性设置为 `"http://schemas.microsoft.com/office/appforoffice/1.1"`|
 |xmlns:xsi|定义 XMLSchema 实例。应始终将此属性设置为 `"http://www.w3.org/2001/XMLSchema-instance"`|
