@@ -1,23 +1,23 @@
 ---
-title: 教程：在 Excel 自定义函数和任务窗格之间共享数据和事件
-description: 在 Excel 中，在自定义函数和任务窗格之间共享数据和事件
+title: 教程：Microsoft Excel自定义函数和任务窗格之间共享数据和事件
+description: 学习如何在Microsoft Excel中的自定义函数和任务窗格之间共享数据和事件。
 ms.date: 05/17/2020
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: a3eb6d874b0a5a38a5fa8d05d094ed1439a7c433
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
-ms.translationtype: MT
+ms.openlocfilehash: a48d43270787648d8e5a53c885eab4b69cd8842e
+ms.sourcegitcommit: cc6886b47c84ac37a3c957ff85dd0ed526ca5e43
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44611041"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "46641149"
 ---
-# <a name="tutorial-share-data-and-events-between-excel-custom-functions-and-the-task-pane"></a>教程：在 Excel 自定义函数和任务窗格之间共享数据和事件
+# <a name="tutorial-share-data-and-events-between-excel-custom-functions-and-the-task-pane"></a>教程：Microsoft Excel自定义函数和任务窗格之间共享数据和事件
 
-你可配置 Excel 加载项以使用共享运行时。 这样，就可以共享全局数据，或在任务窗格和自定义函数之间发送事件。
+你可配置 Excel 加载项以使用共享运行时。 这样就可以共享全局数据，或者发送任务窗格和自定义功能之间的事件。
 
-对于大多数自定义函数方案，建议使用共享运行时，除非有特定的原因需要使用非任务窗格（无 UI）自定义函数。
+对于大多数自定义函数方案，建议使用共享运行时，除非有特定的理由使用非任务窗格（UI-less）自定义函数。
 
-本教程假定您熟悉使用 Yo Office 生成器创建外接项目。 如果还没有，请考虑填写[Excel 自定义函数教程](./excel-tutorial-create-custom-functions.md)。
+本教程假设你已经熟悉使用Yo Office生成器来创建插件项目。 如果尚未完成[Excel 自定义函数教程](./excel-tutorial-create-custom-functions.md)，请考虑完成它。
 
 ## <a name="create-the-add-in-project"></a>创建加载项项目
 
@@ -212,4 +212,4 @@ yo office
 Excel 启动后，可使用“任务窗格”按钮来存储或获取共享数据。 在自定义函数的单元格中输入 `=CONTOSO.GETVALUE()`，以检索相同的共享数据。 或使用 `=CONTOSO.STOREVALUE("new value")` 将共享数据更改为新值。
 
 > [!NOTE]
-> 如本文所示配置项目，可在自定义函数和任务窗格之间共享上下文。 可以从自定义函数中调用一些 Office Api。 有关更多详细信息，[请参阅通过自定义函数调用 Microsoft Excel api](../excel/call-excel-apis-from-custom-function.md) 。
+> 如本文所示配置项目，可在自定义函数和任务窗格之间共享上下文。 通过自定义函数可以调用一些Office API。 更多细节请参见[从自定义函数调用Microsoft Excel APIs](../excel/call-excel-apis-from-custom-function.md)。
