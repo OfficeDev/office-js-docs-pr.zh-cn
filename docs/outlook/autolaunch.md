@@ -2,14 +2,14 @@
 title: '配置 Outlook 外接程序以进行基于事件的激活 (预览) '
 description: 了解如何配置 Outlook 外接程序以进行基于事件的激活。
 ms.topic: article
-ms.date: 05/22/2020
+ms.date: 08/11/2020
 localization_priority: Normal
-ms.openlocfilehash: 7b14dfb425223dbf486173e7df103d1a2cd09641
-ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
+ms.openlocfilehash: f5df8c1efe5e1e5c4c83b1536e90d8f38729dcc3
+ms.sourcegitcommit: 65c15a9040279901ea7ff7f522d86c8fddb98e14
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "45093425"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "46672720"
 ---
 # <a name="configure-your-outlook-add-in-for-event-based-activation-preview"></a>配置 Outlook 外接程序以进行基于事件的激活 (预览) 
 
@@ -21,30 +21,30 @@ ms.locfileid: "45093425"
 本演练结束时，您将拥有一个在创建新邮件时运行的外接程序。
 
 > [!IMPORTANT]
-> 只有使用 Microsoft 365 订阅的 Outlook 网页版中的[预览](../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md)才支持此功能。 有关更多详细信息，请参阅[如何预览本文中基于事件的激活功能](#how-to-preview-the-event-based-activation-feature)。
+> 只有使用 Microsoft 365 订阅的 Outlook 网页版中的 [预览](../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md) 才支持此功能。 有关更多详细信息，请参阅 [如何预览本文中基于事件的激活功能](#how-to-preview-the-event-based-activation-feature) 。
 >
 > 由于预览功能可能会发生更改，恕不另行通知，它们不应在生产外接程序中使用。
 
 ## <a name="how-to-preview-the-event-based-activation-feature"></a>如何预览基于事件的激活功能
 
-我们邀请你试用基于事件的激活功能！ 请通过 GitHub 向我们提供反馈，告知我们你的方案以及我们如何改进， (请参阅本页结尾处的**反馈**部分) 。
+我们邀请你试用基于事件的激活功能！ 请通过 GitHub 向我们提供反馈，告知我们你的方案以及我们如何改进， (请参阅本页结尾处的 **反馈** 部分) 。
 
 若要预览此功能：
 
-- 参考 CDN (上的**beta**库 https://appsforoffice.microsoft.com/lib/beta/hosted/office.js) 。 在 CDN 和[jquery.typescript.definitelytyped](https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/master/types/office-js-preview/index.d.ts)中找到 TypeScript 编译和智能感知的[类型定义文件](https://appsforoffice.microsoft.com/lib/beta/hosted/office.d.ts)。 您可以使用安装这些类型 `npm install --save-dev @types/office-js-preview` 。
-- 通过完成并提交[此请求表单](https://aka.ms/OWAPreview)，请求使用 Microsoft 365 帐户对在 web 上的 Outlook 的预览位进行访问。 我们将在你的租户准备就绪时通知你。
+- 参考 CDN (上的 **beta** 库 https://appsforoffice.microsoft.com/lib/beta/hosted/office.js) 。 在 CDN 和[jquery.typescript.definitelytyped](https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/master/types/office-js-preview/index.d.ts)中找到 TypeScript 编译和智能感知的[类型定义文件](https://appsforoffice.microsoft.com/lib/beta/hosted/office.d.ts)。 您可以使用安装这些类型 `npm install --save-dev @types/office-js-preview` 。
+- 通过完成并提交 [此请求表单](https://aka.ms/OWAPreview)，请求使用 Microsoft 365 帐户对在 web 上的 Outlook 的预览位进行访问。 我们将在你的租户准备就绪时通知你。
 
 ## <a name="set-up-your-environment"></a>设置环境
 
-完成[Outlook 快速入门](../quickstarts/outlook-quickstart.md?tabs=yeomangenerator)，它将使用 Office 外接程序的 Yeoman 生成器创建外接程序项目。
+完成 [Outlook 快速入门](../quickstarts/outlook-quickstart.md?tabs=yeomangenerator) ，它将使用 Office 外接程序的 Yeoman 生成器创建外接程序项目。
 
 ## <a name="configure-the-manifest"></a>配置清单
 
-若要启用您的外接程序的基于事件的激活，必须在清单中配置[运行时](../reference/manifest/runtimes.md)元素和[LaunchEvent](../reference/manifest/extensionpoint.md#launchevent-preview)扩展点。 目前， `DesktopFormFactor` 是唯一受支持的板型。
+若要启用您的外接程序的基于事件的激活，必须在清单中配置 [运行时](../reference/manifest/runtimes.md) 元素和 [LaunchEvent](../reference/manifest/extensionpoint.md#launchevent-preview) 扩展点。 目前， `DesktopFormFactor` 是唯一受支持的板型。
 
 1. 在代码编辑器中，打开 "快速启动" 项目。
 
-1. 打开位于项目根目录中的**manifest.xml**文件。
+1. 打开位于项目根目录中的 **manifest.xml** 文件。
 
 1. 选择整个 `<VersionOverrides>` 节点 (包括 "打开" 和 "关闭" 标记) 并将其替换为以下 XML。
 
@@ -150,7 +150,7 @@ ms.locfileid: "45093425"
 Windows 上的 outlook 使用 JavaScript 文件，而 web 上的 Outlook 使用引用相同 JavaScript 文件的 HTML 文件。 由于 Outlook 平台最终决定是使用基于 Outlook 客户端的 HTML 还是 JavaScript，因此您必须在清单中提供对这些文件的引用。 因此，若要配置事件处理，请在元素中提供 HTML 的位置 `Runtime` ，然后在其子 `Override` 元素中提供由 html 内联或引用的 JavaScript 文件的位置。
 
 > [!TIP]
-> 若要了解有关 Outlook 外接程序的清单的详细信息，请参阅[outlook 外接程序清单](manifests.md)。
+> 若要了解有关 Outlook 外接程序的清单的详细信息，请参阅 [outlook 外接程序清单](manifests.md)。
 
 ## <a name="implement-event-handling"></a>实现事件处理
 
@@ -188,7 +188,7 @@ Windows 上的 outlook 使用 JavaScript 文件，而 web 上的 Outlook 使用�
 1. 在项目的根目录中运行以下命令。 运行此命令时，本地 Web 服务器将启动（如果尚未运行）。
 
     ```command&nbsp;line
-    npm run dev-server
+    npm start
     ```
 
 1. 按照[旁加载 Outlook 加载项以供测试](sideload-outlook-add-ins-for-testing.md)中的说明操作，旁加载加载项。

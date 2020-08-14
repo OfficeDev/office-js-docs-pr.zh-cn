@@ -1,15 +1,15 @@
 ---
 title: 教程：生成邮件撰写 Outlook 外接程序
 description: 在本教程中，你将生成一个可将 GitHub gist 插入到新邮件正文中的 Outlook 外接程序。
-ms.date: 07/07/2020
+ms.date: 08/11/2020
 ms.prod: outlook
 localization_priority: Priority
-ms.openlocfilehash: e14cb90c79b873cfc3ebd948563941f1f9738855
-ms.sourcegitcommit: cc6886b47c84ac37a3c957ff85dd0ed526ca5e43
+ms.openlocfilehash: 3742e492c5d59b706508d2f9d9c2f3bdfc147bb8
+ms.sourcegitcommit: 65c15a9040279901ea7ff7f522d86c8fddb98e14
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/12/2020
-ms.locfileid: "46641506"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "46672734"
 ---
 # <a name="tutorial-build-a-message-compose-outlook-add-in"></a>教程：生成邮件撰写 Outlook 外接程序
 
@@ -599,7 +599,7 @@ ul {
 5. 运行以下命令以启动 Web 服务器。
 
     ```command&nbsp;line
-    npm run dev-server
+    npm start
     ```
 
 ### <a name="fetch-data-from-github"></a>从 GitHub 提取数据
@@ -900,7 +900,7 @@ function buildBodyContent(gist, callback) {
 
 ### <a name="test-the-button"></a>测试按钮
 
-请保存所有更改并从命令提示符运行 `npm run dev-server`（如果服务器尚未处于运行状态）。 然后完成以下步骤以测试“**插入默认 gist**”按钮。
+请保存所有更改并从命令提示符运行 `npm start`（如果服务器尚未处于运行状态）。 然后完成以下步骤以测试“**插入默认 gist**”按钮。
 
 1. 打开 Outlook 并撰写一封新邮件。
 
@@ -1261,7 +1261,7 @@ ul {
 
 ### <a name="test-the-button"></a>测试按钮
 
-请保存所有更改并从命令提示符运行 `npm run dev-server`（如果服务器尚未处于运行状态）。 然后完成以下步骤以测试“**插入 gist**”按钮。
+请保存所有更改并从命令提示符运行 `npm start`（如果服务器尚未处于运行状态）。 然后完成以下步骤以测试“**插入 gist**”按钮。
 
 1. 打开 Outlook 并撰写一封新邮件。
 

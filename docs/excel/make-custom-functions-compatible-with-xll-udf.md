@@ -1,14 +1,14 @@
 ---
 title: 使用 XLL 用户定义的函数扩展自定义函数
 description: 启用与自定义函数具有等效功能的 Excel XLL 用户定义函数的兼容性
-ms.date: 04/29/2020
+ms.date: 08/13/2020
 localization_priority: Normal
-ms.openlocfilehash: 036421700c0415e5f0599b5917cdebb298c2c4fa
-ms.sourcegitcommit: cc6886b47c84ac37a3c957ff85dd0ed526ca5e43
+ms.openlocfilehash: 3a4793053950fccca74de4b9ebf8998a7d635d67
+ms.sourcegitcommit: 65c15a9040279901ea7ff7f522d86c8fddb98e14
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/12/2020
-ms.locfileid: "46641233"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "46672685"
 ---
 # <a name="extend-custom-functions-with-xll-user-defined-functions"></a>使用 XLL 用户定义的函数扩展自定义函数
 
@@ -20,7 +20,7 @@ ms.locfileid: "46641233"
 > - Windows 上的 Excel (版本1904或更高版本) 
 > - Excel for Mac (版本13.329 或更高版本) 
 >
-> 若要在 web 上的 Excel 中使用 COM 加载项并 XLL UDF 兼容性，请使用 Microsoft 365 订阅或[microsoft 帐户](https://account.microsoft.com/account)登录。 如果你还没有 Microsoft 365 订阅，则可以加入[microsoft 365 开发人员计划](https://developer.microsoft.com/office/dev-program)，以免费的90天 renewable microsoft 365 订阅。
+> 若要在 web 上的 Excel 中使用 COM 加载项并 XLL UDF 兼容性，请使用 Microsoft 365 订阅或 [microsoft 帐户](https://account.microsoft.com/account)登录。 如果你还没有 Microsoft 365 订阅，则可以加入 [microsoft 365 开发人员计划](https://developer.microsoft.com/office/dev-program)，以免费的90天 renewable microsoft 365 订阅。
 
 ## <a name="specify-equivalent-xll-in-the-manifest"></a>在清单中指定等效 XLL
 
@@ -28,7 +28,7 @@ ms.locfileid: "46641233"
 
 若要设置自定义函数的等效 XLL，请指定 `FileName` XLL 的。 当用户使用 XLL 中的函数打开工作簿时，Excel 会将函数转换为兼容函数。 在 Windows 上的 Excel 中打开时，工作簿将使用 XLL，并且在联机或在 Mac 上打开时，它将使用 Excel 加载项中的自定义函数。
 
-下面的示例演示如何将 COM 外接程序和 XLL 都指定为等效项。 通常会同时指定这两个。 为了实现完整性，本示例同时显示了上下文中的内容。 它们分别由各自标识 `ProgId` `FileName` 。 `EquivalentAddins`元素必须紧跟在结束 `VersionOverrides` 标记之前。 有关 COM 加载项兼容性的详细信息，请参阅[使您的 Excel 外接程序与现有的 com 外](../develop/make-office-add-in-compatible-with-existing-com-add-in.md)接程序兼容。
+下面的示例演示如何将 COM 外接程序和 XLL 都指定为等效项。 通常会同时指定这两个。 为了实现完整性，本示例同时显示了上下文中的内容。 它们分别由各自标识 `ProgId` `FileName` 。 `EquivalentAddins`元素必须紧跟在结束 `VersionOverrides` 标记之前。 有关 COM 加载项兼容性的详细信息，请参阅 [使您的 Excel 外接程序与现有的 com 外](../develop/make-office-add-in-compatible-with-existing-com-add-in.md)接程序兼容。
 
 ```xml
 <VersionOverrides>
@@ -43,7 +43,7 @@ ms.locfileid: "46641233"
       <FileName>contosofunctions.xll</FileName>
       <Type>XLL</Type>
     </EquivalentAddin>
-  <EquivalentAddins>
+  </EquivalentAddins>
 </VersionOverrides>
 ```
 

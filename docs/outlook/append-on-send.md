@@ -2,47 +2,47 @@
 title: '在 Outlook 加载项中实现向外接程序发送 (预览) '
 description: 了解如何在 Outlook 外接程序中实现 "发送时发送" 功能。
 ms.topic: article
-ms.date: 08/07/2020
+ms.date: 08/11/2020
 localization_priority: Normal
-ms.openlocfilehash: 2b97d65a0f1056257b9cf79eb23fabca10be3a78
-ms.sourcegitcommit: cc6886b47c84ac37a3c957ff85dd0ed526ca5e43
+ms.openlocfilehash: fbc2f11006d6f02d44365294476aee8aa3e262c7
+ms.sourcegitcommit: 65c15a9040279901ea7ff7f522d86c8fddb98e14
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/12/2020
-ms.locfileid: "46641499"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "46672727"
 ---
 # <a name="implement-append-on-send-in-your-outlook-add-in-preview"></a>在 Outlook 加载项中实现向外接程序发送 (预览) 
 
 本演练结束时，您将拥有一个可在发送邮件时插入免责声明的 Outlook 外接程序。
 
 > [!IMPORTANT]
-> 此功能目前仅支持在 Outlook 网页版和使用 Microsoft 365 订阅的 Windows 中进行[预览](../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md)。 有关更多详细信息，请参阅[如何预览本文中的追加发送功能](#how-to-preview-the-append-on-send-feature)。
+> 此功能目前仅支持在 Outlook 网页版和使用 Microsoft 365 订阅的 Windows 中进行 [预览](../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md) 。 有关更多详细信息，请参阅 [如何预览本文中的追加发送功能](#how-to-preview-the-append-on-send-feature) 。
 >
 > 由于预览功能可能会发生更改，恕不另行通知，它们不应在生产外接程序中使用。
 
 ## <a name="how-to-preview-the-append-on-send-feature"></a>如何预览追加发送功能
 
-我们邀请你试用 "发送时追加" 功能！ 请通过 GitHub 向我们提供反馈，告知我们你的方案以及我们如何改进， (请参阅本页结尾处的**反馈**部分) 。
+我们邀请你试用 "发送时追加" 功能！ 请通过 GitHub 向我们提供反馈，告知我们你的方案以及我们如何改进， (请参阅本页结尾处的 **反馈** 部分) 。
 
 若要预览此功能：
 
-- 参考 CDN (上的**beta**库 https://appsforoffice.microsoft.com/lib/beta/hosted/office.js) 。 在 CDN 和[jquery.typescript.definitelytyped](https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/master/types/office-js-preview/index.d.ts)中找到 TypeScript 编译和智能感知的[类型定义文件](https://appsforoffice.microsoft.com/lib/beta/hosted/office.d.ts)。 您可以使用安装这些类型 `npm install --save-dev @types/office-js-preview` 。
-- 对于 Windows，你可能需要加入[Office 预览体验成员计划](https://insider.office.com)，以访问更多最近的 office 版本。
-- 对于 web 上的 Outlook，[在 Microsoft 365 租户上配置目标版本](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide#set-up-the-release-option-in-the-admin-center)。
+- 参考 CDN (上的 **beta** 库 https://appsforoffice.microsoft.com/lib/beta/hosted/office.js) 。 在 CDN 和[jquery.typescript.definitelytyped](https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/master/types/office-js-preview/index.d.ts)中找到 TypeScript 编译和智能感知的[类型定义文件](https://appsforoffice.microsoft.com/lib/beta/hosted/office.d.ts)。 您可以使用安装这些类型 `npm install --save-dev @types/office-js-preview` 。
+- 对于 Windows，你可能需要加入 [Office 预览体验成员计划](https://insider.office.com) ，以访问更多最近的 office 版本。
+- 对于 web 上的 Outlook， [在 Microsoft 365 租户上配置目标版本](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide#set-up-the-release-option-in-the-admin-center)。
 
 ## <a name="set-up-your-environment"></a>设置环境
 
-完成[Outlook 快速入门](../quickstarts/outlook-quickstart.md?tabs=yeomangenerator)，它将使用 Office 外接程序的 Yeoman 生成器创建外接程序项目。
+完成 [Outlook 快速入门](../quickstarts/outlook-quickstart.md?tabs=yeomangenerator) ，它将使用 Office 外接程序的 Yeoman 生成器创建外接程序项目。
 
 ## <a name="configure-the-manifest"></a>配置清单
 
-若要在您的外接程序中启用 "追加发送" 功能，必须 `AppendOnSend` 在[ExtendedPermissions](../reference/manifest/extendedpermissions.md)集合中包含该权限。
+若要在您的外接程序中启用 "追加发送" 功能，必须 `AppendOnSend` 在 [ExtendedPermissions](../reference/manifest/extendedpermissions.md)集合中包含该权限。
 
-对于此方案， `action` 您将运行函数，而不是在选择 "**执行操作**" 按钮时运行函数 `appendOnSend` 。
+对于此方案， `action` 您将运行函数，而不是在选择 " **执行操作** " 按钮时运行函数 `appendOnSend` 。
 
 1. 在代码编辑器中，打开 "快速启动" 项目。
 
-1. 打开位于项目根目录中的**manifest.xml**文件。
+1. 打开位于项目根目录中的 **manifest.xml** 文件。
 
 1. 选择整个 `<VersionOverrides>` 节点 (包括 "打开" 和 "关闭" 标记) 并将其替换为以下 XML。
 
@@ -132,7 +132,7 @@ ms.locfileid: "46641499"
     ```
 
 > [!TIP]
-> 若要了解有关 Outlook 外接程序的清单的详细信息，请参阅[outlook 外接程序清单](manifests.md)。
+> 若要了解有关 Outlook 外接程序的清单的详细信息，请参阅 [outlook 外接程序清单](manifests.md)。
 
 ## <a name="implement-append-on-send-handling"></a>实现附加发送前处理
 
@@ -182,16 +182,16 @@ ms.locfileid: "46641499"
 1. 在项目的根目录中运行以下命令。 运行此命令时，本地 web 服务器将启动（如果它尚未运行）。
 
     ```command&nbsp;line
-    npm run dev-server
+    npm start
     ```
 
-1. 按照[旁加载 Outlook 外接程序](sideload-outlook-add-ins-for-testing.md)中的说明进行操作，以进行测试。
+1. 按照 [旁加载 Outlook 外接程序](sideload-outlook-add-ins-for-testing.md)中的说明进行操作，以进行测试。
 
 1. 创建新邮件，并将自己添加到 " **to** " 行。
 
-1. 从 "功能区" 或 "溢出" 菜单中，选择 "**执行操作**"。
+1. 从 "功能区" 或 "溢出" 菜单中，选择 " **执行操作**"。
 
-1. 发送邮件，然后从 **"收件箱" 或 "** **已发送邮件**" 文件夹中打开它以查看追加的免责声明。
+1. 发送邮件，然后从 **"收件箱" 或 "** **已发送邮件** " 文件夹中打开它以查看追加的免责声明。
 
     ![在 Outlook 网页版上追加的包含免责声明的示例邮件的屏幕截图。](../images/outlook-web-append-disclaimer.png)
 
