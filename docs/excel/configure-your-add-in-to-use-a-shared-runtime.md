@@ -1,15 +1,15 @@
 ---
-ms.date: 05/17/2020
+ms.date: 08/13/2020
 title: 将 Excel 加载项配置为共享浏览器运行时
 ms.prod: excel
 description: 将 Excel 加载项配置为共享浏览器运行时并在同一运行时中运行功能区、任务窗格和自定义函数代码。
 localization_priority: Priority
-ms.openlocfilehash: 129541da57f6b9f0d587eff8873efa4e471e49fc
-ms.sourcegitcommit: 472b81642e9eb5fb2a55cd98a7b0826d37eb7f73
+ms.openlocfilehash: 573fa5f5c3fdee0fb6a4bc3844f98bb7b5f2046d
+ms.sourcegitcommit: 3efa932b70035dde922929d207896e1a6007f620
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/17/2020
-ms.locfileid: "45159533"
+ms.lasthandoff: 08/15/2020
+ms.locfileid: "46757364"
 ---
 # <a name="configure-your-excel-add-in-to-use-a-shared-javascript-runtime"></a>将 Excel 加载项配置为使用共享 JavaScript 运行时
 
@@ -103,13 +103,17 @@ yo office
 
 添加 `Runtime` 元素时，还需要指定值为 `long` 或 `short` 的生存期。 将此值设置为 `long` 以利用相关功能，例如在文档打开时启动加载项，在关闭任务窗格后继续运行代码，或从自定义函数中使用 CORS 和 DOM。
 
->![请注意] 默认生存期值为`short`，但我们建议在 Excel 加载项中使用`long`。如果在此例中将运行时设置为`short`，则当按下某个功能区按钮时，Excel 加载项将启动，但在功能区处理程序运行完毕后，它可能会关闭。 同样，打开任务窗格时，加载项将启动，但在任务窗格关闭时可能会关闭。
+>[!NOTE]
+> 默认生存期值为`short`，但我们建议在 Excel 加载项中使用`long`。如果在此例中将运行时设置为`short`，则当按下某个功能区按钮时，Excel 加载项将启动，但在功能区处理程序运行完毕后，它可能会关闭。 同样，打开任务窗格时，加载项将启动，但在任务窗格关闭时可能会关闭。
 
 ```xml
 <Runtimes>
   <Runtime resid="ContosoAddin.Url" lifetime="long" />
 </Runtimes>
 ```
+
+>[!NOTE]
+> 如果加载启动项包括清单中的 `Runtimes` 元素（共享运行时所需），它将使用 Internet Explorer 11，而不考虑 Windows 或 Microsoft 365 版本。 有关详细信息，请参阅[运行时](../reference/manifest/runtimes.md)。
 
 ## <a name="multiple-task-panes"></a>多个任务窗格
 

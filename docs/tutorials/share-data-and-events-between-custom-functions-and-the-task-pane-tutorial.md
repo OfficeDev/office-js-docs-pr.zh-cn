@@ -1,15 +1,15 @@
 ---
 title: 教程：Microsoft Excel自定义函数和任务窗格之间共享数据和事件
 description: 学习如何在Microsoft Excel中的自定义函数和任务窗格之间共享数据和事件。
-ms.date: 05/17/2020
+ms.date: 08/13/2020
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: a48d43270787648d8e5a53c885eab4b69cd8842e
-ms.sourcegitcommit: cc6886b47c84ac37a3c957ff85dd0ed526ca5e43
+ms.openlocfilehash: e4dfb8afc57dc9590d47d927d1f540431d9c8838
+ms.sourcegitcommit: 3efa932b70035dde922929d207896e1a6007f620
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/12/2020
-ms.locfileid: "46641149"
+ms.lasthandoff: 08/15/2020
+ms.locfileid: "46757378"
 ---
 # <a name="tutorial-share-data-and-events-between-excel-custom-functions-and-the-task-pane"></a>教程：Microsoft Excel自定义函数和任务窗格之间共享数据和事件
 
@@ -50,6 +50,9 @@ yo office
          </Runtimes>
        <AllFormFactors>
    ```
+
+> [!NOTE]
+> 如果加载启动项包括清单中的 `Runtimes` 元素，则无论 Windows 或 Microsoft 365 版本如何，都将使用 Internet Explorer 11。 有关详细信息，请参阅[运行时](../reference/manifest/runtimes.md)。
 
 4. 在 `<Page>` 元素中，将源位置从 **Functions.Page.Url** 更改为 **ContosoAddin.Url**。
 
