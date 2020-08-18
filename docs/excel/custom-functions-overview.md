@@ -1,16 +1,16 @@
 ---
-ms.date: 05/17/2020
-description: 为 Office 加载项创建 Excel 自定义函数
+ms.date: 08/13/2020
+description: 为 Office 加载项创建 Excel 自定义函数。
 title: 在 Excel 中创建自定义函数
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: 42ace6208abbd95d0f538345a1f5b5cc15ba1823
-ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
-ms.translationtype: MT
+ms.openlocfilehash: 2ea2d70b0a404c15ed9b349020b76356c70cd6de
+ms.sourcegitcommit: 3efa932b70035dde922929d207896e1a6007f620
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "45093460"
+ms.lasthandoff: 08/15/2020
+ms.locfileid: "46757371"
 ---
 # <a name="create-custom-functions-in-excel"></a>在 Excel 中创建自定义函数
 
@@ -40,19 +40,19 @@ function sphereVolume(radius) {
 
 ## <a name="how-a-custom-function-is-defined-in-code"></a>如何在代码中定义自定义函数
 
-如果使用[Yo Office 生成器](https://github.com/OfficeDev/generator-office)创建 Excel 自定义函数加载项项目，它将创建用于控制函数和任务窗格的文件。 我们将专注于对自定义函数至关重要的文件：
+如果使用 [Yo Office 生成器](https://github.com/OfficeDev/generator-office)创建 Excel 自定义函数加载项项目，则它可创建控制你的函数和任务窗格的文件。 我们将专注于对自定义函数至关重要的文件：
 
 | 文件 | 文件格式 | 说明 |
 |------|-------------|-------------|
 | **./src/functions/functions.js**<br/>或<br/>**./src/functions/functions.ts** | JavaScript<br/>或<br/>TypeScript | 包含定义自定义函数的代码。 |
 | **./src/functions/functions.html** | HTML | 提供对定义自定义函数的 JavaScript 文件的&lt;脚本&gt;引用。 |
-| **./manifest.xml** | XML | 指定自定义函数使用的多个文件的位置，例如自定义函数 JavaScript、JSON 和 HTML 文件。 此外，它还列出了任务窗格文件、命令文件的位置，并指定了自定义函数应使用的运行时。 |
+| **./manifest.xml** | XML | 指定自定义函数使用的多个文件的位置，例如自定义函数 JavaScript、JSON 和 HTML 文件。 它还列出了任务窗格文件、命令文件的位置，并指定自定义函数应使用的运行时。 |
 
 ### <a name="script-file"></a>脚本文件
 
 脚本文件 (**./src/functions/functions.js** or **./src/functions/functions.ts**) 包含定义自定义函数的代码以及定义函数的注释。
 
-以下代码定义 `add` 自定义函数。 代码注释用于生成描述 Excel 自定义函数的 JSON 元数据。 首先声明所需的 `@customfunction` 注释，指示这是一个自定义函数。 接下来，先声明两个参数， `first` 然后再 `second` 键入它们的 `description` 属性。 最后提供了 `returns` 描述。 要详细了解自定义函数需要哪些注释，请参阅[为自定义函数创建 JSON 元数据](custom-functions-json-autogeneration.md)。
+以下代码定义 `add` 自定义函数。 代码注释用于生成描述 Excel 自定义函数的 JSON 元数据。 首先声明所需的 `@customfunction` 注释，指示这是一个自定义函数。 接下来，声明两个参数 `first` 和 `second`，然后是它们的 `description` 属性。 最后提供了 `returns` 描述。 要详细了解自定义函数需要哪些注释，请参阅[为自定义函数创建 JSON 元数据](custom-functions-json-autogeneration.md)。
 
 ```js
 /**
@@ -70,21 +70,21 @@ function add(first, second){
 
 ### <a name="manifest-file"></a>清单文件
 
-用于定义自定义函数的加载项的 XML 清单文件，该项目是在 Yo Office 生成器创建的项目中 (**。/manifest.xml。**) 执行以下操作：
+用于定义自定义函数的加载项的 XML 清单文件（Yo Office 生成器创建的项目中的 **./manifest.xml**）会执行以下操作：
 
-- 定义自定义函数的命名空间。 命名空间将自己添加到自定义函数中，以帮助客户将您的函数标识为外接程序的一部分。
-- 使用 `<ExtensionPoint>` 和 `<Resources>` 元素对于自定义函数清单而言是唯一的。 这些元素包含有关 JavaScript、JSON 和 HTML 文件的位置的信息。
-- 指定要用于自定义函数的运行时。 我们建议始终使用共享运行时，除非您有其他运行时的特定需求，因为共享运行时允许在函数和任务窗格之间共享数据。
+- 定义自定义函数的命名空间。 命名空间追加在你的自定义函数之前，可帮助客户将你的函数标识为加载项的一部分。
+- 使用自定义函数清单特有的 `<ExtensionPoint>` 和 `<Resources>` 元素。 这些元素包含有关 JavaScript、JSON 和 HTML 文件的位置的信息。
+- 指定要用于自定义函数的运行时。 除非你对另一运行时有特殊需求，否则建议始终使用共享运行时，因为共享运行时允许在函数和任务窗格之间共享数据。 请注意，使用共享运行时意味着加载项将使用 Internet Explorer 11，而不是 Microsoft Edge。
 
-如果使用 Yo Office 生成器创建文件，建议将清单调整为使用共享运行时，因为这不是这些文件的默认值。 若要更改清单，请按照[配置 Excel 外接程序中的说明使用共享的 JavaScript 运行时](./configure-your-add-in-to-use-a-shared-runtime.md)。
+如果你使用 Yo Office 生成器来创建文件，则建议将你的清单调整为使用共享运行时，因为这不是这些文件的默认设置。 若要更改清单，请按照[将 Excel 加载项配置为使用共享 JavaScript 运行时](./configure-your-add-in-to-use-a-shared-runtime.md)中的说明进行操作。
 
-若要查看示例加载项中的完整工作清单，请参阅[此 Github 存储库](https://github.com/OfficeDev/PnP-OfficeAddins/blob/master/Samples/excel-shared-runtime-global-state/manifest.xml)。
+若要从示例加载项查看完整的工作清单，请参阅[此 Github 存储库](https://github.com/OfficeDev/PnP-OfficeAddins/blob/master/Samples/excel-shared-runtime-global-state/manifest.xml)。
 
 [!include[manifest guidance](../includes/manifest-guidance.md)]
 
 ## <a name="coauthoring"></a>共同创作
 
-Web 上的 Excel 和连接到 Microsoft 365 订阅的 Windows 允许您在 Excel 中 coauthor。 如果您的工作簿使用自定义函数，则将提示您的合著同事加载自定义函数的外接程序。 一旦您加载了加载项，自定义函数将通过共同创作来共享结果。
+利用连接到 Microsoft 365 订阅的 Excel web 版和 Windows 版 Excel，你可以在 Excel 中共同创作。 如果你的工作簿使用自定义函数，系统会提示你的共同创作同事加载自定义函数的加载项。 当你们均加载此加载项后，自定义函数将通过共同创作共享结果。
 
 若要详细了解共同创作，请参阅[关于 Excel 中的共同创作](/office/vba/excel/concepts/about-coauthoring-in-excel)。
 
