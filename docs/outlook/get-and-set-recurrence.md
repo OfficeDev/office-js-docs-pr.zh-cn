@@ -1,14 +1,14 @@
 ---
 title: 获取和设置 Outlook 加载项中的定期
 description: 本主题介绍如何使用 Office JavaScript API 获取和设置 Outlook 加载项中某个项目的不同定期属性。
-ms.date: 01/14/2020
+ms.date: 08/18/2020
 localization_priority: Normal
-ms.openlocfilehash: 6a50ba5eab39145d8e50a5a888a6ed0900200bc4
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 0b179725677f071fe2ae7baf1c719add5ccd8aa7
+ms.sourcegitcommit: e9f23a2857b90a7c17e3152292b548a13a90aa33
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44606453"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "46803742"
 ---
 # <a name="get-and-set-recurrence"></a>获取和设置定期
 
@@ -25,11 +25,11 @@ ms.locfileid: "44606453"
 
 |定期类型|有效的定期属性|用法|
 |---|---|---|
-|`daily`|- [`interval`][interval link]|每 *interval* 天进行一次约会。 示例：每 **_2_** 天进行一次约会。|
+|`daily`|-&nbsp;[`interval`][interval link]|每 *interval* 天进行一次约会。 示例：每 **_2_** 天进行一次约会。|
 |`weekday`|无。|每个工作日进行一次约会。|
-|`monthly`|- [`interval`][interval link]<br/>- [`dayOfMonth`][dayOfMonth link]<br/>- [`dayOfWeek`][dayOfWeek link]<br/>- [`weekNumber`][weekNumber link]|- 每 *interval* 个月在 *dayOfMonth* 号进行一次约会。 示例：每 **_4_** 个月在 **_5_** 号进行一次约会。<br/><br/>- 每 *interval* 个月在第 *weekNumber* 周的周 *dayOfWeek* 进行一次约会。 示例：每 **_2_** 个月在第**_三_** 周的周**_四_** 进行一次约会。|
-|`weekly`|- [`interval`][interval link]<br/>- [`days`][days link]|每 *interval* 个星期在第 *days* 天进行一次约会。 示例：每 **_2_** 个星期在周**_二_和_四_** 进行一次约会。|
-|`yearly`|- [`interval`][interval link]<br/>- [`dayOfMonth`][dayOfMonth link]<br/>- [`dayOfWeek`][dayOfWeek link]<br/>- [`weekNumber`][weekNumber link]<br/>- [`month`][month link]|- 每 *interval* 年在 *month* 月的 *dayOfMonth* 号进行一次约会。 示例：每 **_4_** 年在 **_9_** 月 **_7_** 号进行一次约会。<br/><br/>- 每 *interval* 年在 *month* 月第 *weekNumber* 周的周 *dayOfWeek* 进行一次约会。 示例：每 **_2_** 年在 **_9_** 月第**_一_** 周的周**_四_** 进行一次约会。|
+|`monthly`|-&nbsp;[`interval`][interval link]<br/>-&nbsp;[`dayOfMonth`][dayOfMonth link]<br/>-&nbsp;[`dayOfWeek`][dayOfWeek link]<br/>-&nbsp;[`weekNumber`][weekNumber link]|- 每 *interval* 个月在 *dayOfMonth* 号进行一次约会。 示例：每 **_4_** 个月在 **_5_** 号进行一次约会。<br/><br/>- 每 *interval* 个月在第 *weekNumber* 周的周 *dayOfWeek* 进行一次约会。 示例：每 **_2_** 个月在第**_三_** 周的周**_四_** 进行一次约会。|
+|`weekly`|-&nbsp;[`interval`][interval link]<br/>-&nbsp;[`days`][days link]|每 *interval* 个星期在第 *days* 天进行一次约会。 示例：每 **_2_** 个星期在周**_二_和_四_** 进行一次约会。|
+|`yearly`|-&nbsp;[`interval`][interval link]<br/>-&nbsp;[`dayOfMonth`][dayOfMonth link]<br/>-&nbsp;[`dayOfWeek`][dayOfWeek link]<br/>-&nbsp;[`weekNumber`][weekNumber link]<br/>-&nbsp;[`month`][month link]|- 每 *interval* 年在 *month* 月的 *dayOfMonth* 号进行一次约会。 示例：每 **_4_** 年在 **_9_** 月 **_7_** 号进行一次约会。<br/><br/>- 每 *interval* 年在 *month* 月第 *weekNumber* 周的周 *dayOfWeek* 进行一次约会。 示例：每 **_2_** 年在 **_9_** 月第**_一_** 周的周**_四_** 进行一次约会。|
 
 > [!NOTE]
 > 你还可以使用 [`firstDayOfWeek`][firstDayOfWeek link] 属性及 `weekly` 定期类型。 指定的某一天将从定期对话框中显示的天数列表开始算起。
@@ -73,6 +73,27 @@ Office.context.mailbox.item.recurrence.setAsync(pattern, callback);
 function callback(asyncResult)
 {
     console.log(JSON.stringify(asyncResult));
+}
+```
+
+## <a name="change-recurrence-as-the-organizer"></a>将重复周期更改为组织者
+
+在下面的示例中，在撰写模式下，约会组织者获取约会系列的定期对象（给定系列或该系列的实例），然后设置新的定期持续时间。
+
+```js
+Office.context.mailbox.item.recurrence.getAsync(callback);
+
+function callback(asyncResult) {
+  var recurrencePattern = asyncResult.value;
+  recurrencePattern.seriesTime.setDuration(60);
+  Office.context.mailbox.item.recurrence.setAsync(recurrencePattern, (asyncResult) => {
+    if (asyncResult.status !== Office.AsyncResultStatus.Succeeded) {
+      console.log("failed");
+      return;
+    }
+
+    console.log("success");
+  });
 }
 ```
 

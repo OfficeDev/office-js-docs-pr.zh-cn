@@ -2,21 +2,24 @@
 title: '配置 Outlook 外接程序以进行基于事件的激活 (预览) '
 description: 了解如何配置 Outlook 外接程序以进行基于事件的激活。
 ms.topic: article
-ms.date: 08/11/2020
+ms.date: 08/18/2020
 localization_priority: Normal
-ms.openlocfilehash: f5df8c1efe5e1e5c4c83b1536e90d8f38729dcc3
-ms.sourcegitcommit: 65c15a9040279901ea7ff7f522d86c8fddb98e14
+ms.openlocfilehash: 736573fb5ab5b50841348f55d89ae15e4d174a22
+ms.sourcegitcommit: e9f23a2857b90a7c17e3152292b548a13a90aa33
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "46672720"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "46803749"
 ---
 # <a name="configure-your-outlook-add-in-for-event-based-activation-preview"></a>配置 Outlook 外接程序以进行基于事件的激活 (预览) 
 
-如果没有基于事件的激活功能，用户必须显式启动外接程序以完成其任务。 此功能使加载项能够根据特定事件（尤其是适用于每个项目的操作）运行任务。 您还可以与任务窗格和无 UI 功能集成。 目前，支持的事件如下所示。
+如果没有基于事件的激活功能，用户必须显式启动外接程序以完成其任务。 此功能使加载项能够根据特定事件（尤其是适用于每个项目的操作）运行任务。 您还可以与任务窗格和无 UI 功能集成。 目前，支持以下事件。
 
 - `OnNewMessageCompose`：撰写新邮件时 (包括答复、全部答复和转发) 
 - `OnNewAppointmentOrganizer`：创建新约会时
+
+  > [!IMPORTANT]
+  > 此 **功能不会激活编辑** 项目（例如，草稿或现有约会）。
 
 本演练结束时，您将拥有一个在创建新邮件时运行的外接程序。
 
