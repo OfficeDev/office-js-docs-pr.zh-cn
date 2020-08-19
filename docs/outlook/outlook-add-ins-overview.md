@@ -1,15 +1,15 @@
 ---
 title: Outlook 加载项概述
 description: Outlook 加载项由第三方使用基于 Web 的平台集成到 Outlook 中。
-ms.date: 08/03/2020
+ms.date: 08/18/2020
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: a86232d8208084ce5c5b0dd5009e8c1a9f0b5837
-ms.sourcegitcommit: a3b743598025466bad19177e0ba9ca94ea66d490
+ms.openlocfilehash: 83644823f4ca906f52cae430fa3a7f350dbf076c
+ms.sourcegitcommit: e9f23a2857b90a7c17e3152292b548a13a90aa33
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/04/2020
-ms.locfileid: "46547547"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "46803777"
 ---
 # <a name="outlook-add-ins-overview"></a>Outlook 加载项概述
 
@@ -51,7 +51,9 @@ Outlook 加载项不同于 COM 或 VSTO 的加载项，后者为特定于 Window
 - 使用信息权限管理 (IRM) 进行保护，或使用其他保护方式进行加密。数字签名邮件便是其中一个例子，因为数字签名依赖于这些机制之一。
 
   > [!IMPORTANT]
-  > 现在，Windows 版 Outlook 从内部版本 13120.1000 开始可以在受 IRM 保护的项目上激活加载项。 有关处于预览阶段的此功能的详细信息，请参阅[在受信息权限管理 (IRM) 保护的项目上激活加载项](../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md#add-in-activation-on-items-protected-by-information-rights-management-irm)。
+  > - 加载项在与 Microsoft 365 订阅相关联的 Outlook 电子签名邮件上激活。 在Windows上，这个支持是通过8711.1000版本中引入的。
+  >
+  > - 现在，Windows 版 Outlook 从内部版本 13120.1000 开始可以在受 IRM 保护的项目上激活加载项。 有关处于预览阶段的此功能的详细信息，请参阅[在受信息权限管理 (IRM) 保护的项目上激活加载项](../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md#add-in-activation-on-items-protected-by-information-rights-management-irm)。
 
 - 具有邮件类别 IPM.Report.* 的送达报告或通知，包括送达和未送达报告 (NDR)，以及已读、未读和延迟通知。
 
