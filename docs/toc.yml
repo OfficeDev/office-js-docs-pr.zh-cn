@@ -763,13 +763,11 @@
           href: outlook/apis.md
           displayName: Outlook
         - name: API 要求集
-          href: reference/requirement-sets/outlook-api-requirement-sets.md
           displayName: Outlook
-        - name: API 参考
-          href: reference/outlook-api-reference-1-8.md
-          displayName: Outlook
-        - name: API 对象模型
           items:
+            - name: 概述
+              href: reference/requirement-sets/outlook-api-requirement-sets.md
+              displayName: Outlook
             - name: 预览要求集
               items:
                 - name: 概述
@@ -896,6 +894,9 @@
                   href: reference/objectmodel/requirement-set-1.1/Office.context.mailbox.item.md
                 - name: Outlook 1.1 API 参考
                   href: reference/outlook-api-reference-1-1.md
+        - name: API 参考 - 最新版本
+          href: reference/outlook-api-reference-1-8.md
+          displayName: Outlook
     - name: 概念
       items:
         - name: Outlook 外接程序设计准则
@@ -912,9 +913,9 @@
           href: outlook/online-meeting.md
         - name: Onsend 加载项
           href: outlook/outlook-on-send-addins.md
-        - name: 附加发送（预览）
+        - name: 发送时附加
           href: outlook/append-on-send.md
-        - name: 基于事件的激活（预览）
+        - name: 基于事件的激活
           href: outlook/autolaunch.md
         - name: 可固定任务窗格
           href: outlook/pinnable-taskpane.md
