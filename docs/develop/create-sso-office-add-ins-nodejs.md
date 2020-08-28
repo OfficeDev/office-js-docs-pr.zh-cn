@@ -3,12 +3,12 @@ title: 创建使用单一登录的 Node.js Office 加载项
 description: 了解如何创建使用 Office 单一登录的基于 Node.js 的 Office 加载项
 ms.date: 07/30/2020
 localization_priority: Normal
-ms.openlocfilehash: 136d7c982d4eef4988e775f8235678c673169d5a
-ms.sourcegitcommit: 65c15a9040279901ea7ff7f522d86c8fddb98e14
+ms.openlocfilehash: 2ca1cf37bade124498c99b0b25171871522c2bc7
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "46672692"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47292874"
 ---
 # <a name="create-a-nodejs-office-add-in-that-uses-single-sign-on"></a>创建使用单一登录的 Node.js Office 加载项
 
@@ -67,7 +67,7 @@ ms.locfileid: "46672692"
 1. 在 **Office-Add-in-NodeJS-SSO** 页面上，复制并保存“**应用程序（客户端）ID**”和“**目录（租户）ID**”的值。 你将在后面的过程中使用它们。
 
     > [!NOTE]
-    > 当其他应用程序（例如 PowerPoint、Word、Excel 等 Office 主机应用程序）寻求对应用程序的授权访问权限时，此 ID 是“受众”值。 当它反过来寻求 Microsoft Graph 的授权访问权限时，它同时也是应用程序的“客户端 ID”。
+    > 当其他应用程序（如 Office 客户端应用程序 (例如 PowerPoint、Word、Excel) ）寻求对应用程序的授权访问时，此 ID 是 "受众" 值。 当它反过来寻求 Microsoft Graph 的授权访问权限时，它同时也是应用程序的“客户端 ID”。
 
 1. 选择“**管理**”下的“**身份验证**”。 在 " **隐式授予** " 部分，启用 " **访问令牌** " 和 " **ID 令牌**" 的复选框。 该示例具有一个回退授权系统，当 SSO 不可用时，将调用此系统。 该系统使用隐式流。
 
@@ -83,7 +83,7 @@ ms.locfileid: "46672692"
 
 1. 将“谁能同意?”**** 设置为“管理员和用户”****。
 
-1. 使用适合 `access_as_user` 作用域的值填写用于配置管理员和用户同意提示的字段，使 Office 主机应用能够借助与当前用户具有相同权限使用加载项 Web API。 建议：
+1. 填写用于配置管理员和用户同意提示的字段，其中包含适用于该范围的值， `access_as_user` 使 Office 客户端应用程序能够使用与当前用户相同的权限来使用您的外接程序的 Web api。 建议：
 
     - **管理员同意显示名称**： Office 可以充当用户。
     - **管理员许可描述**：使 Office 能够借助与当前用户相同的权限调用加载项的 Web API。
@@ -113,7 +113,7 @@ ms.locfileid: "46672692"
 
 1. 选择“管理”**** 下的“API 权限”****，然后选择“添加权限”****。 在打开的面板上，选择 **Microsoft Graph**，然后选择“委派权限”****。
 
-1. 使用“选择权限”**** 搜索框来搜索加载项需要的权限。 选择以下选项。 外接程序本身真正需要的只是第一项权限，但 Office 主机必须有 `profile` 权限，才能获取访问外接程序 Web 应用程序的令牌。
+1. 使用“选择权限”**** 搜索框来搜索加载项需要的权限。 选择以下选项。 外接程序本身实际上只需要第一项;但是， `profile` Office 应用程序需要该权限才能获取加载项 web 应用程序的令牌。
 
     * Files.Read.All
     * profile

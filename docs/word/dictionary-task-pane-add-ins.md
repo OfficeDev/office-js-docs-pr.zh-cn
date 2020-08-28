@@ -3,12 +3,12 @@ title: 创建字典任务窗格加载项
 description: 了解如何创建字典任务窗格加载项
 ms.date: 09/26/2019
 localization_priority: Normal
-ms.openlocfilehash: 07e2222520999729e3677296869b2367265687f8
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: b3859b9557b5b74d9c4e487937df69c99b1ba7d1
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44608647"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47294204"
 ---
 # <a name="create-a-dictionary-task-pane-add-in"></a>创建字典任务窗格加载项
 
@@ -23,7 +23,7 @@ ms.locfileid: "44608647"
 
 ![显示定义的字典应用](../images/dictionary-agave-01.jpg)
 
-您需要确定在字典外接程序的 HTML UI 中单击 "**查看更多**" 链接，以在任务窗格中显示更多信息，还是打开一个单独的浏览器窗口，以在所选单词或短语的完整网页上显示。
+您需要确定在字典外接程序的 HTML UI 中单击 " **查看更多** " 链接，以在任务窗格中显示更多信息，还是打开一个单独的浏览器窗口，以在所选单词或短语的完整网页上显示。
 图 2 显示“定义”**** 上下文菜单命令，允许用户快速启动已安装的字典。 图 3 至 5 显示了 Office 用户界面中使用字典 XML 服务提供 Word 2013 定义的位置。
 
 *图 2.定义上下文菜单中的命令*
@@ -214,7 +214,7 @@ public class WebService : System.Web.Services.WebService {
   <!--IconUrl is the URI for the icon that will appear in the user's list of applications.-->
   <IconUrl DefaultValue="http://officeimg.vo.msecnd.net/_layouts/images/general/office_logo.jpg" />
   <SupportUrl DefaultValue="[Insert the URL of a page that provides support information for the app]" />
-  <!--Capabilities specifies the kind of host application your dictionary add-in will support. You shouldn't have to modify this area.-->
+  <!--Capabilities specifies the kind of Office application your dictionary add-in will support. You shouldn't have to modify this area.-->
   <Capabilities>
     <Capability Name="Workbook"/>
     <Capability Name="Document"/>
@@ -526,16 +526,16 @@ a:hover, a:active
 
 以下示例显示 Dictionary.js 文件中的 JavaScript 实现（该文件从外接程序的 HTML 页面调用，以提供演示字典外接程序的编程逻辑）。 该脚本重新使用以前介绍的 XML Web 服务。 脚本作为示例 Web 服务被置于同一目录中时将从该服务获取定义。 它可以通过修改文件顶部的 `xmlServiceURL` 变量来使用符合 XML Web 服务的公用 OfficeDefinitions，然后将拼音的 Bing API 键替换为正确注册的键。
 
-从该实现中调用的 Office JavaScript API （node.js）的主要成员如下所示：
+Office JavaScript API 的主要成员 ( # A0) ，从该实现中调用，如下所示：
 
 
-- 对象的[initialize](/javascript/api/office)事件 `Office` ，在初始化外接程序上下文时引发，并提供对表示加载项与之交互的文档的[document](/javascript/api/office/office.document)对象实例的访问。
+- 对象的 [initialize](/javascript/api/office) 事件 `Office` ，在初始化外接程序上下文时引发，并提供对表示加载项与之交互的文档的 [document](/javascript/api/office/office.document) 对象实例的访问。
     
-- 对象的[addHandlerAsync](/javascript/api/office/office.document#addhandlerasync-eventtype--handler--options--callback-)方法，该方法 `Document` 在函数中调用， `initialize` 以添加文档的[SelectionChanged](/javascript/api/office/office.documentselectionchangedeventargs)事件的事件处理程序，以侦听用户选择更改。
+- 对象的 [addHandlerAsync](/javascript/api/office/office.document#addhandlerasync-eventtype--handler--options--callback-) 方法，该方法 `Document` 在函数中调用， `initialize` 以添加文档的 [SelectionChanged](/javascript/api/office/office.documentselectionchangedeventargs) 事件的事件处理程序，以侦听用户选择更改。
     
-- 对象的[getSelectedDataAsync](/javascript/api/office/office.document#getselecteddataasync-coerciontype--options--callback-)方法 `Document` ，该方法在 `tryUpdatingSelectedWord()` `SelectionChanged` 引发事件处理程序以获取用户选择的单词或短语时，将其强制转换为纯文本，然后执行 `selectedTextCallback` 异步回调函数，在函数中调用该方法。
+- 对象的 [getSelectedDataAsync](/javascript/api/office/office.document#getselecteddataasync-coerciontype--options--callback-) 方法 `Document` ，该方法在 `tryUpdatingSelectedWord()` `SelectionChanged` 引发事件处理程序以获取用户选择的单词或短语时，将其强制转换为纯文本，然后执行 `selectedTextCallback` 异步回调函数，在函数中调用该方法。
     
-- 当 `selectTextCallback` 作为方法的_callback_参数传递的异步回调函数 `getSelectedDataAsync` 执行时，它将在回调返回时获取所选文本的值。 它通过使用返回的对象的[value](/javascript/api/office/office.asyncresult#status)属性，从回调的_selectedText_参数（类型为[AsyncResult](/javascript/api/office/office.asyncresult)）中获取该值 `AsyncResult` 。
+- 当  `selectTextCallback` 作为方法的 _callback_ 参数传递的异步回调函数 `getSelectedDataAsync` 执行时，它将在回调返回时获取所选文本的值。 它从回调的 _selectedText_ 参数中获取该值，该参数的类型为 [AsyncResult](/javascript/api/office/office.asyncresult)) 通过使用返回的对象的 [value](/javascript/api/office/office.asyncresult#status) 属性 (`AsyncResult` 。
     
 - `selectedTextCallback` 函数中剩余的代码查询定义的 XML Web 服务。它还调入 Microsoft Translator API，以提供具有所选字词拼音的 .wav 文件的 URL。
     

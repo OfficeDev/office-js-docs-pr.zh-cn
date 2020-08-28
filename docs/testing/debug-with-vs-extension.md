@@ -3,12 +3,12 @@ title: 适用于 Visual Studio Code 的 Microsoft Office 加载项调试器扩�
 description: 使用 Visual Studio Code extension Microsoft Office 加载项调试器调试 Office 外接程序。
 ms.date: 05/14/2020
 localization_priority: Normal
-ms.openlocfilehash: 2439af12f30cef1b9d291578cbababe3ed601644
-ms.sourcegitcommit: 7d5407d3900d2ad1feae79a4bc038afe50568be0
+ms.openlocfilehash: 1343014fa875509fd6f0c615c3504cc9ae50dc0d
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2020
-ms.locfileid: "46530469"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47293441"
 ---
 # <a name="microsoft-office-add-in-debugger-extension-for-visual-studio-code"></a>适用于 Visual Studio Code 的 Microsoft Office 加载项调试器扩展
 
@@ -20,16 +20,16 @@ ms.locfileid: "46530469"
 
 ## <a name="prerequisites"></a>先决条件
 
-- [Visual Studio Code](https://code.visualstudio.com/) （必须以管理员身份运行）
-- [Node.js （版本 10 +）](https://nodejs.org/)
+- 必须以管理员身份运行[Visual Studio Code](https://code.visualstudio.com/) () 
+- [Node.js (版本 10 +) ](https://nodejs.org/)
 - Windows 10
 - [Microsoft Edge](https://www.microsoft.com/edge)
 
-这些说明假定您有使用命令行的经验，了解基本 JavaScript，并已在使用 Yo Office 生成器之前创建了 Office 外接程序项目。 如果你之前未执行此操作，请考虑访问我们的一个教程，如此[Excel Office 外接教程教程](../tutorials/excel-tutorial.md)。
+这些说明假定您有使用命令行的经验，了解基本 JavaScript，并已在使用 Yo Office 生成器之前创建了 Office 外接程序项目。 如果你之前未执行此操作，请考虑访问我们的一个教程，如此 [Excel Office 外接教程教程](../tutorials/excel-tutorial.md)。
 
 ## <a name="install-and-use-the-debugger"></a>安装和使用调试器
 
-1. 如果需要创建外接程序项目，请[使用 Yo Office 生成器创建一个](https://docs.microsoft.com/office/dev/add-ins/quickstarts/excel-quickstart-jquery?tabs=yeomangenerator)外接程序项目。 按照命令行中的提示设置项目。 您可以根据需要选择任意语言或项目类型。
+1. 如果需要创建外接程序项目，请 [使用 Yo Office 生成器创建一个](https://docs.microsoft.com/office/dev/add-ins/quickstarts/excel-quickstart-jquery?tabs=yeomangenerator)外接程序项目。 按照命令行中的提示设置项目。 您可以根据需要选择任意语言或项目类型。
 
 > [!NOTE]
 > 如果已有一个项目，请跳过步骤1并转到步骤2。
@@ -48,9 +48,9 @@ code .
 在 Visual Studio Code 打开后，手动导航到项目文件夹。
 
 > [!TIP]
-> 若要以管理员身份打开 Visual Studio Code，请选择 "以**管理员身份运行**" 选项，在 Windows 中搜索 Visual studio code 之后打开它。
+> 若要以管理员身份打开 Visual Studio Code，请选择 "以 **管理员身份运行** " 选项，在 Windows 中搜索 Visual studio code 之后打开它。
 
-5. 在 VS 代码中，选择**CTRL + SHIFT + X**打开扩展栏。 搜索 "Microsoft Office 外接程序调试器" 扩展并安装它。
+5. 在 VS 代码中，选择 **CTRL + SHIFT + X** 打开扩展栏。 搜索 "Microsoft Office 外接程序调试器" 扩展并安装它。
 
 6. 在项目的 ". vscode" 文件夹中，打开 " **launch.js"** 文件。 将以下代码添加到 `configurations` 部分：
 
@@ -67,13 +67,13 @@ code .
 }
 ```
 
-7. 在刚刚复制的 JSON 部分中，找到 "url" 部分。 在此 URL 中，需要将大写的主机文本替换为 Office 加载项的主机应用程序。 例如，如果您的 Office 外接程序适用于 excel，则 URL 值将为 " https://localhost:3000/taskpane.html?_host_Info= <strong>Excel</strong>$Win 32 $ 16.01 $ en-us $ \$ \$ \$ 0"。
+7. 在刚刚复制的 JSON 部分中，找到 "url" 部分。 在此 URL 中，需要将大写的主机文本替换为托管 Office 外接程序的应用程序。 例如，如果您的 Office 外接程序适用于 excel，则 URL 值将为 " https://localhost:3000/taskpane.html?_host_Info= <strong>Excel</strong>$Win 32 $ 16.01 $ en-us $ \$ \$ \$ 0"。
 
 8. 打开命令提示符，并确保您在项目的根文件夹中。 运行命令 `npm start` 以启动开发服务器。 当加载项在 Office 客户端中加载时，打开任务窗格。
 
-9. 返回到 Visual Studio Code，然后选择 "**查看 > 调试**" 或 enter **CTRL + SHIFT + D**切换到 "调试" 视图。
+9. 返回到 Visual Studio Code，然后选择 " **查看 > 调试** " 或 enter **CTRL + SHIFT + D** 切换到 "调试" 视图。
 
-10. 从 "调试" 选项中，选择 "**附加到 Office 外接程序**"。从菜单中选择 " **F5** " 或选择 "**调试-> 启动调试**" 以开始调试。
+10. 从 "调试" 选项中，选择 " **附加到 Office 外接程序**"。从菜单中选择 " **F5** " 或选择 " **调试-> 启动调试** " 以开始调试。
 
 11. 在项目的任务窗格文件中设置断点。 您可以通过悬停在代码行旁边并选择显示的红色圆圈，在 VS 代码中设置断点。
 

@@ -1,32 +1,32 @@
 ---
 title: Office 对话框 API 最佳做法和规则
-description: 提供 Office 对话框 API 的规则和最佳做法，例如单页应用程序的最佳实践（SPA）
+description: 提供 Office 对话框 API 的规则和最佳做法，如单页面应用程序 (SPA) 的最佳实践
 ms.date: 01/29/2020
 localization_priority: Normal
-ms.openlocfilehash: 88c833d91cc16684b5e434d6aff9e77f23bbbdb4
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 5e0854137b27d8b8ae33fff8943421cc0c488abe
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44608269"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47292755"
 ---
 # <a name="best-practices-and-rules-for-the-office-dialog-api"></a>Office 对话框 API 最佳做法和规则
 
-本文提供 Office dialog API 的规则、陷阱和最佳实践，包括设计对话的 UI 和在单页面应用程序（SPA）中使用 API 的最佳实践
+本文提供了 Office 对话框 API 的规则、陷阱和最佳实践，包括设计对话的 UI 和在单页面应用程序中使用 API (SPA) 的最佳做法
 
 > [!NOTE]
-> 本文 presupposes 您熟悉使用 Office 对话框 API 的基础知识，如在[Office 外接程序中使用 office 对话框 api](dialog-api-in-office-add-ins.md)中所述。
+> 本文 presupposes 您熟悉使用 Office 对话框 API 的基础知识，如在 [Office 外接程序中使用 office 对话框 api](dialog-api-in-office-add-ins.md)中所述。
 > 
-> 另请参阅[处理 Office 对话框中的错误和事件](dialog-handle-errors-events.md)。
+> 另请参阅 [处理 Office 对话框中的错误和事件](dialog-handle-errors-events.md)。
 
 ## <a name="rules-and-gotchas"></a>规则和陷阱
 
 - 对话框只能导航到 HTTPS Url，而不能导航到 HTTP。
-- 传递给[displayDialogAsync](/javascript/api/office/office.ui)方法的 URL 必须与加载项本身在完全相同的域中。 它不能是子域。 但传递给它的页面可以重定向到另一个域中的页面。
-- 主机窗口（可以是任务窗格或外接程序命令的无用户 UI 的[函数文件](../reference/manifest/functionfile.md)）一次只能打开一个对话框。
+- 传递给 [displayDialogAsync](/javascript/api/office/office.ui) 方法的 URL 必须与加载项本身在完全相同的域中。 它不能是子域。 但传递给它的页面可以重定向到另一个域中的页面。
+- 主机窗口（可以是任务窗格或外接程序命令的无用户 UI 的 [函数文件](../reference/manifest/functionfile.md) ）一次只能打开一个对话框。
 - 在该对话框中仅可调用两个 Office Api：
   - [Office.context.ui.messageparent](/javascript/api/office/office.ui#messageparent-message-)函数。
-  - `Office.context.requirements.isSetSupported`（有关详细信息，请参阅[指定 Office 主机和 API 要求](specify-office-hosts-and-api-requirements.md)。）
+  - `Office.context.requirements.isSetSupported` (有关详细信息，请参阅 [指定 Office 应用程序和 API 要求](specify-office-hosts-and-api-requirements.md)。 ) 
 - [Office.context.ui.messageparent](/javascript/api/office/office.ui#messageparent-message-)函数只能从与加载项本身完全相同的域中的页面进行调用。
 
 ## <a name="best-practices"></a>最佳做法
@@ -37,7 +37,7 @@ ms.locfileid: "44608269"
 
 ### <a name="designing-a-dialog-box-ui"></a>设计对话框 UI
 
-有关对话框设计中的最佳做法，请参阅[Office 外接程序中的对话框](../design/dialog-boxes.md)。
+有关对话框设计中的最佳做法，请参阅 [Office 外接程序中的对话框](../design/dialog-boxes.md)。
 
 ### <a name="handling-pop-up-blockers-with-office-on-the-web"></a>使用 Office 网页版处理弹出窗口阻止程序
 
@@ -45,9 +45,9 @@ ms.locfileid: "44608269"
 
 ![外接程序可以生成的提示，以避免在浏览器中弹出窗口阻止程序。](../images/dialog-prompt-before-open.png)
 
-如果用户选择 "**允许**"，则会打开 "Office" 对话框。 如果用户选择 "**忽略**"，则会关闭提示，并且 Office 对话框不会打开。 相反，该 `displayDialogAsync` 方法将返回错误12009。 您的代码应捕获此错误，并提供不需要对话框的备用体验，或向用户显示一条消息，提示外接程序要求其允许对话框。 （有关12009的详细信息，请参阅[displayDialogAsync 中的错误](dialog-handle-errors-events.md#errors-from-displaydialogasync)。）
+如果用户选择 " **允许**"，则会打开 "Office" 对话框。 如果用户选择 " **忽略**"，则会关闭提示，并且 Office 对话框不会打开。 相反，该 `displayDialogAsync` 方法将返回错误12009。 您的代码应捕获此错误，并提供不需要对话框的备用体验，或向用户显示一条消息，提示外接程序要求其允许对话框。  (有关12009的详细信息，请参阅 [displayDialogAsync 中的错误](dialog-handle-errors-events.md#errors-from-displaydialogasync)。 ) 
 
-如果出于任何原因需要关闭此功能，则代码必须选择退出。它向传递给该方法的[DialogOptions](/javascript/api/office/office.dialogoptions)对象发出此请求 `displayDialogAsync` 。 具体来说，该对象应包含 `promptBeforeOpen: false` 。 当此选项设置为 false 时，web 上的 Office 将不会提示用户允许加载项打开对话框，并且 Office 对话框不会打开。
+如果出于任何原因需要关闭此功能，则代码必须选择退出。它向传递给该方法的 [DialogOptions](/javascript/api/office/office.dialogoptions) 对象发出此请求 `displayDialogAsync` 。 具体来说，该对象应包含 `promptBeforeOpen: false` 。 当此选项设置为 false 时，web 上的 Office 将不会提示用户允许加载项打开对话框，并且 Office 对话框不会打开。
 
 ### <a name="do-not-use-the-_host_info-value"></a>不使用 \_ 主机 \_ 信息值
 
@@ -55,16 +55,16 @@ Office 会自动向传递给 `_host_info` 的 URL 添加查询参数 `displayDia
 
 ### <a name="best-practices-for-using-the-office-dialog-api-in-an-spa"></a>在 SPA 中使用 Office 对话框 API 的最佳实践
 
-如果外接程序使用客户端路由，作为单页应用程序（Spa）通常会选择将路由的 URL 传递到[displayDialogAsync](/javascript/api/office/office.ui)方法，而不是将其 url 传递到单独的 HTML 页面的 url。 *出于以下给出的原因，我们建议您不要这样做。*
+如果外接程序使用客户端路由，作为单页面应用程序 (Spa) 通常情况下，您可以选择将路由的 URL 传递到 [displayDialogAsync](/javascript/api/office/office.ui) 方法，而不是单独的 HTML 页面的 url。 *出于以下给出的原因，我们建议您不要这样做。*
 
 > [!NOTE]
-> 本文与*服务器端*路由不相关，例如在基于 Express 的 web 应用程序中。
+> 本文与 *服务器端* 路由不相关，例如在基于 Express 的 web 应用程序中。
 
 #### <a name="problems-with-spas-and-the-office-dialog-api"></a>Spa 和 Office 对话框 API 存在的问题
 
-Office 对话框位于具有其自己的 JavaScript 引擎实例的新窗口中，因此它拥有完整的执行上下文。 如果传递路由，基本页面及其所有初始化和引导代码将在此新上下文中再次运行，并且所有变量在对话框中都设置为其初始值。 因此，此技术会在 box 窗口中下载并启动应用程序的第二个实例，这部分将导致 SPA 的目的不是一个。 此外，更改对话框窗口中的变量的代码不会更改相同变量的任务窗格版本。 同样，对话框窗口具有自己的会话存储，该存储无法从任务窗格中的代码访问。 对话框和主页面在上面 `displayDialogAsync` 称为与您的服务器的两个不同的客户端。 （有关主机页的提示，请参阅[从主机页打开对话框](dialog-api-in-office-add-ins.md#open-a-dialog-box-from-a-host-page)。）
+Office 对话框位于具有其自己的 JavaScript 引擎实例的新窗口中，因此它拥有完整的执行上下文。 如果传递路由，基本页面及其所有初始化和引导代码将在此新上下文中再次运行，并且所有变量在对话框中都设置为其初始值。 因此，此技术会在 box 窗口中下载并启动应用程序的第二个实例，这部分将导致 SPA 的目的不是一个。 此外，更改对话框窗口中的变量的代码不会更改相同变量的任务窗格版本。 同样，对话框窗口具有自己的会话存储，该存储无法从任务窗格中的代码访问。 对话框和主页面在上面 `displayDialogAsync` 称为与您的服务器的两个不同的客户端。  (有关主机页面的提示的提示，请参阅 [从主机页面打开对话框](dialog-api-in-office-add-ins.md#open-a-dialog-box-from-a-host-page)。 ) 
 
-因此，如果您将路由传递给 `displayDialogAsync` 方法，则不会真正有 spa; 您有*两个相同 spa 的实例*。 此外，任务窗格实例中的很多代码永远不会在该实例中使用，并且对话框实例中的大部分代码也不会在该实例中使用。 这相当于相同捆绑包中拥有两个 SPA。
+因此，如果您将路由传递给 `displayDialogAsync` 方法，则不会真正有 spa; 您有 *两个相同 spa 的实例*。 此外，任务窗格实例中的很多代码永远不会在该实例中使用，并且对话框实例中的大部分代码也不会在该实例中使用。 这相当于相同捆绑包中拥有两个 SPA。
 
 #### <a name="microsoft-recommendations"></a>Microsoft 建议
 

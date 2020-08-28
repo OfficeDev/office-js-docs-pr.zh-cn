@@ -1,33 +1,40 @@
 ---
 title: 启用和禁用加载项命令
 description: 了解如何更改 Office Web 加载项中的自定义功能区按钮和菜单项的启用或禁用状态。
-ms.date: 05/11/2020
-localization_priority: Priority
-ms.openlocfilehash: fa4830c0112486bbad7a13edf78e0c8c4277e143
-ms.sourcegitcommit: 682d18c9149b1153f9c38d28e2a90384e6a261dc
-ms.translationtype: HT
+ms.date: 08/26/2020
+localization_priority: Normal
+ms.openlocfilehash: 54bfa06a3acfbea561d20a1b327f093429d725fc
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "44217891"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47292972"
 ---
 # <a name="enable-and-disable-add-in-commands"></a>启用和禁用加载项命令
 
 如果加载项中的某些功能应仅适用于某些上下文，则能够以编程方式启用或禁用自定义加载项命令。 例如，仅当光标位于表格中时，才启用用于更改表格标题的函数。
 
-你还可以指定 Office 主机应用程序打开时是启用还是禁用命令。
+您还可以指定在打开 Office 客户端应用程序时是否启用或禁用命令。
 
 > [!NOTE]
 > 本文假定你熟悉以下文档。 如果你最近未使用加载项命令（自定义菜单项和功能区按钮），请查看该文档。
 >
-> [加载项命令的基本概念](add-in-commands.md)
+> - [加载项命令的基本概念](add-in-commands.md)
 
-## <a name="rules-and-gotchas"></a>规则和陷阱
+## <a name="office-application-and-platform-support-only"></a>仅 Office 应用程序和平台支持
 
-### <a name="single-line-ribbon-in-office-on-the-web"></a>Office 网页版中的单行功能区
+本文中介绍的 Api 仅在 Excel 中可用，并且仅在适用于 Windows 和 Mac 上的 office 上才可用。
 
-在 Office 网页版中，本文介绍的 API 和清单标记仅影响单行功能区。 它们不会对多行功能区产生任何影响。 它们会影响 Office 桌面版的这两个功能区。 有关这两个功能区的详细信息，请参阅[使用简化功能区](https://support.office.com/article/Use-the-Simplified-Ribbon-44bef9c3-295d-4092-b7f0-f471fa629a98)。
+### <a name="test-for-platform-support-with-requirement-sets"></a>使用要求集测试平台支持
 
-### <a name="shared-runtime-required"></a>需要共享运行时
+要求集是指各组已命名的 API 成员。 Office 外接程序使用清单中指定的要求集或使用运行时检查来确定 Office 应用程序和平台组合是否支持加载项所需的 Api。 有关详细信息，请参阅 [Office 版本和要求集](../develop/office-versions-and-requirement-sets.md)。
+
+启用/禁用 Api 属于 [RibbonApi 1.1](../reference/requirement-sets/ribbon-api-requirement-sets.md) 要求集。
+
+> [!NOTE]
+> **RibbonApi 1.1**要求集在清单中尚不受支持，因此不能在清单的部分中指定它 `<Requirements>` 。 若要测试支持，您的代码应调用 `Office.context.requirements.isSetSupported('RibbonApi', '1.1')` 。 如果 *且仅当*该调用返回时 `true` ，您的代码可以调用 Enable/disable api。 如果 `isSetSupported` 返回调用 `false` ，则所有自定义加载项命令都将全部启用。 您必须设计生产外接程序和任何应用程序内的说明，以考虑在不支持 **RibbonApi 1.1** 要求集时如何工作。 有关使用的详细信息和示例 `isSetSupported` ，请参阅 [指定 Office 应用程序和 API 要求](../develop/specify-office-hosts-and-api-requirements.md)，尤其是 [在 JavaScript 代码中使用运行时检查](../develop/specify-office-hosts-and-api-requirements.md#use-runtime-checks-in-your-javascript-code)。  (该文章的 [清单中](../develop/specify-office-hosts-and-api-requirements.md#set-the-requirements-element-in-the-manifest) 的 "要求" 元素不应用于功能区1.1。 ) 
+
+## <a name="shared-runtime-required"></a>需要共享运行时
 
 本文介绍的 API 和清单标记，需要加载项清单指定它们应使用共享运行时。 为此，请执行下列步骤。
 
@@ -124,7 +131,7 @@ Office.onReady(async () => {
 });
 ```
 
-第三步是定义 `enableChartFormat` 处理程序。 以下是一个简单示例，请参阅下面的**最佳做法：测试控件状态错误**，以获取更改控件状态的更可靠方法。
+第三步是定义 `enableChartFormat` 处理程序。 以下是一个简单示例，请参阅下面的[最佳做法：测试控件状态错误](#best-practice-test-for-control-status-errors)，以获取更改控件状态的更可靠方法。
 
 ```javascript
 function enableChartFormat() {
@@ -197,8 +204,9 @@ function disableChartFormat() {
 
 ## <a name="test-for-platform-support-with-requirement-sets"></a>使用要求集测试平台支持
 
-要求集是指各组已命名的 API 成员。Office 加载项使用清单中指定的要求集或执行运行时检查，以确定 Office 主机是否支持加载项所需的 API。有关详细信息，请参阅 [Office 版本和要求集](../develop/office-versions-and-requirement-sets.md)。
+要求集是指各组已命名的 API 成员。 Office 外接程序使用清单中指定的要求集或使用运行时检查来确定 Office 应用程序是否支持加载项所需的 Api。 有关详细信息，请参阅 [Office 版本和要求集](../develop/office-versions-and-requirement-sets.md)。
 
 启用/禁用 API 需要支持以下要求集：
 
-- [AddinCommands 1.1](../reference/requirement-sets/add-in-commands-requirement-sets.md)
+- [RibbonApi 1。1](../reference/requirement-sets/ribbon-api-requirement-sets.md)
+

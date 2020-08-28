@@ -3,23 +3,23 @@ title: 管理 Outlook 外接程序的状态和设置
 description: 了解如何保留 Outlook 外接程序的外接程序状态和设置。
 ms.date: 04/22/2020
 localization_priority: Normal
-ms.openlocfilehash: 796c7b38f8c85a5680c9b7de43297c754a0ebc1b
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: b11468cdcd776a2d93bb4a435e5c878ca9ab42a3
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44609060"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47293840"
 ---
 # <a name="manage-state-and-settings-for-an-outlook-add-in"></a>管理 Outlook 外接程序的状态和设置
 
 > [!NOTE]
 > 阅读本文之前，请查看本文档的 "**核心概念**" 一节中的 "[保留加载项状态和设置](../develop/persisting-add-in-state-and-settings.md)"。
 
-对于 Outlook 外接程序，Office JavaScript API 提供[RoamingSettings](/javascript/api/outlook/office.roamingsettings)和[CustomProperties](/javascript/api/outlook/office.customproperties)对象，以在各会话之间保存外接程序状态，如下表所述。 在所有情况下，保存的设置值仅与创建它们的外接程序 [Id](../reference/manifest/id.md) 相关联。
+对于 Outlook 外接程序，Office JavaScript API 提供 [RoamingSettings](/javascript/api/outlook/office.roamingsettings) 和 [CustomProperties](/javascript/api/outlook/office.customproperties) 对象，以在各会话之间保存外接程序状态，如下表所述。 在所有情况下，保存的设置值仅与创建它们的外接程序 [Id](../reference/manifest/id.md) 相关联。
 
 |**对象**|**存储位置**|
 |:-----|:-----|:-----|
-|[RoamingSettings](/javascript/api/outlook/office.roamingsettings)|安装了加载项的用户 Exchange 服务器邮箱。 由于这些设置存储在用户的服务器邮箱中，因此当加载项运行在任何访问该用户邮箱的受支持客户端主机应用程序或浏览器的上下文中时，这些设置可随用户“漫游”且可供加载项使用。<br/><br/> Outlook 外接程序漫游设置仅供创建它们的外接程序使用，并且只能从安装了外接程序的邮箱使用。|
+|[RoamingSettings](/javascript/api/outlook/office.roamingsettings)|安装了加载项的用户 Exchange 服务器邮箱。 由于这些设置存储在用户的服务器邮箱中，因此它们可以与用户 "漫游"，并在加载项运行在任何访问该用户的邮箱的受支持客户端的上下文中时使用。<br/><br/> Outlook 加载项漫游设置只可供创建它们的加载项使用，且只能从安装了加载项的邮箱访问。|
 |[CustomProperties](/javascript/api/outlook/office.customproperties)|加载项使用的邮件、约会或会议请求项目。 Outlook 外接程序项目自定义属性仅供创建它们的外接程序使用，并且只能从保存它们的项目使用。|
 
 ## <a name="how-to-save-settings-in-the-users-mailbox-for-outlook-add-ins-as-roaming-settings"></a>如何将 Outlook 加载项用户邮箱中的设置保存为漫游设置

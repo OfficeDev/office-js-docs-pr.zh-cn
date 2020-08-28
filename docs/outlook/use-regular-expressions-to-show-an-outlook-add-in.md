@@ -3,12 +3,12 @@ title: 使用正则表达式激活规则显示加载项
 description: 了解如何为 Outlook 上下文加载项使用正则表达式激活规则。
 ms.date: 07/28/2020
 localization_priority: Normal
-ms.openlocfilehash: 3943f42363bd9a34978d1f42d701dcf906aa0446
-ms.sourcegitcommit: a3b743598025466bad19177e0ba9ca94ea66d490
+ms.openlocfilehash: 4a5507b410ed729f76c3efa0119e87c6a6dbc71a
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/04/2020
-ms.locfileid: "46547519"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47292473"
 ---
 # <a name="use-regular-expression-activation-rules-to-show-an-outlook-add-in"></a>使用正则表达式激活规则显示 Outlook 外接程序
 
@@ -53,7 +53,7 @@ Outlook 基于客户端计算机上浏览器所使用的 JavaScript 解释器的
 
 - Outlook 富客户端与 Outlook 网页版或 Outlook Mobile 之间的项目的 HTML 正文略有不同。 请仔细定义正则表达式。
 
-- 根据主机应用程序、设备类型或将对其应用正则表达式的属性，在设计正则表达式作为激活规则时，你需要了解针对每个主机的其他最佳实践和限制。有关详细信息，请参阅 [Outlook 外接程序的激活和 JavaScript API 的限制](limits-for-activation-and-javascript-api-for-outlook-add-ins.md)。
+- 根据要应用正则表达式的 Outlook 客户端、设备类型或属性，在将正则表达式设计为激活规则时，应注意的每个客户端都有其他最佳做法和限制。有关详细信息，请参阅适用于 [激活的限制和适用于 Outlook 外接程序的 JAVASCRIPT API](limits-for-activation-and-javascript-api-for-outlook-add-ins.md) 。
 
 ### <a name="examples"></a>示例
 

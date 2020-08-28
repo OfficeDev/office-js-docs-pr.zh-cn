@@ -3,12 +3,12 @@ title: 开发适用于 iPad 的 Office 加载项
 description: 获取创建在 iPad 上运行的 Office 外接程序的概述和最佳实践。
 ms.date: 03/18/2020
 localization_priority: Normal
-ms.openlocfilehash: 2630b3e685c0bd0dc8d9ad9c6ce48b0f42f060c6
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 6738cc559cc07f747e075c17419b70558dec3c66
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44608290"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47292783"
 ---
 # <a name="develop-office-add-ins-for-the-ipad"></a>开发适用于 iPad 的 Office 加载项
 
@@ -24,7 +24,7 @@ ms.locfileid: "44608290"
 |针对触摸优化外接程序。|使 UI 响应触摸输入以及鼠标和键盘。|[应用 UX 设计原则](../concepts/add-in-development-best-practices.md#apply-ux-design-principles)|
 |使外接程序免费。|Office on iPad 是一个通道，通过它您可以接触到更多用户并提升您的服务。这些新用户可能成为您的客户。|[认证策略1120。2](/legal/marketplace/certification-policies#11202-acquisition-pricing-and-terms)|
 |确保加载项无商业内容。|加载项不得包括应用内购买、试用优惠、追加销售付费加载项的 UI 或任何在线商店（方便用户购买或获取其他内容、应用或加载项）链接。隐私策略和使用条款页面也不得包含任何商业 UI 或 AppSource 链接。|[认证策略1100。3](/legal/marketplace/certification-policies#11003-selling-additional-features)|
-|将加载项重新提交到 AppSource。|在 "合作伙伴中心" 的 "**产品设置**" 页上，选中 "**使我的产品在 iOS 和 Android 上可用（如果适用）** " 复选框，并在 "帐户设置" 中提供您的 Apple 开发人员 ID。 请查看[应用程序提供商协议](https://go.microsoft.com/fwlink/?linkid=715691)，以确保您了解这些条款。|[将解决方案提交到 AppSource 和 Office 应用商店](/office/dev/store/submit-to-appsource-via-partner-center)|
+|将加载项重新提交到 AppSource。|在 "合作伙伴中心" 中的 " **产品安装程序** " 页上，选中 "在 **iOS 和 Android 上提供我的产品 (如果适用) ** " 复选框，并在 "帐户设置" 中提供您的 Apple 开发人员 ID。 请查看 [应用程序提供商协议](https://go.microsoft.com/fwlink/?linkid=715691) ，以确保您了解这些条款。|[将解决方案提交到 AppSource 和 Office 应用商店](/office/dev/store/submit-to-appsource-via-partner-center)|
 
 对于正在其他平台上运行的 Office 应用程序，您的外接程序可以保持原样。您还可以基于您的外接程序所运行的浏览器/设备提供不同的 UI 服务。若要检测您的外接程序是否正在 iPad 上运行，您可以使用以下 API：
 - var isTouchEnabled = [Office.context.touchEnabled](/javascript/api/office/office.context#touchenabled)
@@ -38,11 +38,11 @@ ms.locfileid: "44608290"
 
 -  **使用 Visual Studio 开发外接程序。**
 
-    如果使用 Visual Studio 开发外接程序，则在 iPad 或 Mac 上旁加载外接程序前，可以在 Windows 上运行的 Office 主机应用程序中 [设置断点并调试其代码](../develop/debug-office-add-ins-in-visual-studio.md)。 由于在 iOS 或 Mac 上的 Office 中运行的外接程序支持与在 Windows 上运行的加载项相同的 Api，因此外接程序的代码在这两个平台上的运行方式都相同。
+    如果使用 Visual Studio 开发外接程序，则可以在将外接程序放在 iPad 或 Mac 上之前，在 Windows 上运行的 Office 客户端应用程序中 [设置断点并调试其代码](../develop/debug-office-add-ins-in-visual-studio.md) 。 由于在 iOS 或 Mac 上的 Office 中运行的外接程序支持与在 Windows 上运行的加载项相同的 Api，因此外接程序的代码在这两个平台上的运行方式都相同。
 
 -  **在外接程序清单中或通过运行时检查指定 API 要求。**
 
-    在外接程序清单中指定 API 要求时，Office 将确定主机应用程序是否支持这些 API 成员。如果 API 成员在主机中可用，则外接程序在该主机应用程序中可用。或者，在外接程序中使用某方法前，可以执行运行时检查以确定该方法是否在主机中可用。运行时检查确保外接程序始终在主机中可用，并在方法可用时提供其他功能。有关详细信息，请参阅 [指定 Office 主机和 API 要求](specify-office-hosts-and-api-requirements.md)。
+    当您在加载项清单中指定 API 要求时，Office 将确定 Office 客户端应用程序是否支持这些 API 成员。 如果 API 成员在应用程序中可用，则外接程序将可用。 或者，您可以执行运行时检查，以确定方法在外接程序中使用之前是否在应用程序中可用。 运行时检查可确保您的外接程序在应用程序中始终可用，并在方法可用时提供其他功能。 有关详细信息，请参阅 [指定 Office 应用程序和 API 要求](specify-office-hosts-and-api-requirements.md)。
 
 有关常规的加载项开发最佳做法，请参阅 [Office 加载项开发最佳做法](../concepts/add-in-development-best-practices.md)。
 

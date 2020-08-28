@@ -1,18 +1,18 @@
 ---
 title: 使用 Excel JavaScript API 对区域执行操作（高级）
 description: 高级的 range 对象函数和方案，如特殊单元格、删除重复项以及使用日期。
-ms.date: 05/06/2020
+ms.date: 08/26/2020
 localization_priority: Normal
-ms.openlocfilehash: 0a185551bf0ddd6b5d4d5a90e4faac7ce78e2cc9
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 47f154c2bffac2e730aba21204261bc1bd536af2
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44609746"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47294155"
 ---
 # <a name="work-with-ranges-using-the-excel-javascript-api-advanced"></a>使用 Excel JavaScript API 对区域执行操作（高级）
 
-本文基于[使用 Excel JavaScript API 对区域执行操作（基本）](excel-add-ins-ranges.md)中包含的信息，它提供了显示如何使用 Excel JavaScript API 对区域执行更多高级任务的代码示例。 有关对象支持的属性和方法的完整列表 `Range` ，请参阅[Range 对象（适用于 Excel 的 JavaScript API）](/javascript/api/excel/excel.range)。
+本文基于[使用 Excel JavaScript API 对区域执行操作（基本）](excel-add-ins-ranges.md)中包含的信息，它提供了显示如何使用 Excel JavaScript API 对区域执行更多高级任务的代码示例。 有关该对象支持的属性和方法的完整列表 `Range` ，请参阅 [Range 对象 (适用于 Excel 的 JavaScript API) ](/javascript/api/excel/excel.range)。
 
 ## <a name="work-with-dates-using-the-moment-msdate-plug-in"></a>使用 Moment-MSDate 插件处理日期
 
@@ -99,7 +99,7 @@ Excel.run(function (context) {
 如果你希望具有目标特征的单元格始终存在，则你可能想要代码在没有这些单元格的时候引发错误。 若没有匹配单元格是一个有效应用场景，代码应该会检查这种可能的情况并按正常方式处理它，而不会引发错误。 可以用此 `getSpecialCellsOrNullObject` 方法及其返回的 `isNullObject` 属性实现此行为。 此示例使用此模式。 关于此代码，请注意以下几点：
 
 - `getSpecialCellsOrNullObject` 方法将始终返回代理对象，因此在一般的 JavaScript 认知中，它从不为 `null`。 但是，如果没有找到匹配的单元格，则对象的 `isNullObject` 属性将设置为 `true`。
-- 在测试 `isNullObject` 属性*之前*，它将调用 `context.sync`。 这是所有 `*OrNullObject` 方法和属性的要求，因为你必须始终加载和同步属性才能读取它。 但是，不必*明确*加载 `isNullObject` 属性。 即使未在对象上调用 `load`，`context.sync` 也会自动加载该属性。 有关详细信息，请参阅 [\*OrNullObject](../excel/excel-add-ins-advanced-concepts.md#ornullobject-methods)。
+- 在测试 `isNullObject` 属性*之前*，它将调用 `context.sync`。 这是所有 `*OrNullObject` 方法和属性的要求，因为你必须始终加载和同步属性才能读取它。 但是，不必*明确*加载 `isNullObject` 属性。 即使未在对象上调用 `load`，`context.sync` 也会自动加载该属性。 有关详细信息，请参阅[ \* OrNullObject 方法和属性](../develop/application-specific-api-model.md#ornullobject-methods-and-properties)。
 - 你可以测试此代码，方法是先选择没有公式单元格的区域并运行它。 然后选择至少包含一个带公式的单元格的区域，并再次运行它。
 
 ```js
@@ -197,10 +197,10 @@ copyFrom(sourceRange: Range | RangeAreas | string, copyType?: Excel.RangeCopyTyp
 
 `copyType` 指定将哪些数据从源复制到目标。
 
-- `Excel.RangeCopyType.formulas`传输源单元格中的公式，并保留这些公式区域的相对定位。 将原样复制任何非公式条目。
+- `Excel.RangeCopyType.formulas` 传输源单元格中的公式，并保留这些公式区域的相对定位。 将原样复制任何非公式条目。
 - `Excel.RangeCopyType.values` 复制数据值，如果是公式，则复制公式的结果。
 - `Excel.RangeCopyType.formats` 复制范围的格式设置（包括字体、颜色和其他格式），但不会复制任何值。
-- `Excel.RangeCopyType.all`（默认选项）复制数据和格式，并保留单元格的公式（如果找到）。
+- `Excel.RangeCopyType.all` (默认选项) 复制数据和格式，并保留单元格的公式（如果找到）。
 
 `skipBlanks` 设置是否将空白单元格复制到目标。 如果为 true，`copyFrom` 将跳过源范围中的空白单元格。
 跳过的单元格不会覆盖目标范围中其对应单元格的现有数据。 默认值为 false。
@@ -235,9 +235,9 @@ Excel.run(function (context) {
 
 ![Excel 中区域的复制方法已运行后的数据](../images/excel-range-copyfrom-skipblanks-after.png)
 
-### <a name="cut-and-paste-move-cells"></a>剪切并粘贴（移动）单元格
+### <a name="cut-and-paste-move-cells"></a>剪切并粘贴 (移动) 单元格
 
-该[范围的 moveTo](/javascript/api/excel/excel.range#moveto-destinationrange-)方法将单元格移动到工作簿中的新位置。 此单元格移动行为与单元格移动时的工作方式相同，[拖动区域边框](https://support.office.com/article/Move-or-copy-cells-and-cell-contents-803d65eb-6a3e-4534-8c6f-ff12d1c4139e)或执行**剪切**和**粘贴**操作时。 将区域的格式和值移到指定作为参数的位置 `destinationRange` 。
+该 [范围的 moveTo](/javascript/api/excel/excel.range#moveto-destinationrange-) 方法将单元格移动到工作簿中的新位置。 此单元格移动行为与单元格移动时的工作方式相同， [拖动区域边框](https://support.office.com/article/Move-or-copy-cells-and-cell-contents-803d65eb-6a3e-4534-8c6f-ff12d1c4139e) 或执行 **剪切** 和 **粘贴** 操作时。 将区域的格式和值移到指定作为参数的位置 `destinationRange` 。
 
 下面的代码示例显示了使用方法移动的范围 `Range.moveTo` 。 请注意，如果目标区域小于源，它将被扩展以包含源内容。
 
@@ -254,7 +254,7 @@ Excel.run(function (context) {
 
 ## <a name="remove-duplicates"></a>删除重复项
 
-[RemoveDuplicates](/javascript/api/excel/excel.range#removeduplicates-columns--includesheader-)方法删除指定列中具有重复条目的行。 该方法将从最小值索引到范围中的最高值索引的范围中的每一行（从上到下）进行遍历。 如果指定列中的值之前显示在区域中，则会删除该行。 在区域内位于已删除行下方的行将上移。 `removeDuplicates` 不影响该区域外的单元格位置。
+[RemoveDuplicates](/javascript/api/excel/excel.range#removeduplicates-columns--includesheader-)方法删除指定列中具有重复条目的行。 该方法将从最小值索引到范围 (从上到下) 的最高值索引的范围中的每一行进行遍历。 如果指定列中的值之前显示在区域中，则会删除该行。 在区域内位于已删除行下方的行将上移。 `removeDuplicates` 不影响该区域外的单元格位置。
 
 `removeDuplicates` 使用 `number[]` 来表示已执行重复项检查的列索引。 此数组从零开始并且与区域而不是与工作表相关。 此方法还采用一个布尔参数，用于指定第一行是否为标头。 如果为 **true**，则在考虑重复项时将忽略顶行。 `removeDuplicates`方法返回一个 `RemoveDuplicatesResult` 对象，该对象指定删除的行数和剩余的唯一行数。
 
@@ -290,11 +290,11 @@ Excel.run(function (context) {
 
 ## <a name="group-data-for-an-outline"></a>分级显示的组数据
 
-可以将区域中的行或列组合在一起，以创建[分级显示](https://support.office.com/article/Outline-group-data-in-a-worksheet-08CE98C4-0063-4D42-8AC7-8278C49E9AFF)。 可以对这些组进行折叠和扩展以隐藏和显示相应的单元格。 这样可以更轻松地快速分析顶线数据。 使用[Range](/javascript/api/excel/excel.range#group-groupoption-)可以创建这些分级显示组。
+可以将区域中的行或列组合在一起，以创建 [分级显示](https://support.office.com/article/Outline-group-data-in-a-worksheet-08CE98C4-0063-4D42-8AC7-8278C49E9AFF)。 可以对这些组进行折叠和扩展以隐藏和显示相应的单元格。 这样可以更轻松地快速分析顶线数据。 使用 [Range](/javascript/api/excel/excel.range#group-groupoption-) 可以创建这些分级显示组。
 
-大纲可以有层次结构，其中较小的组嵌套在更大的组下。 这样，可以在不同的级别查看大纲。 更改可见大纲级别可以通过[showOutlineLevels](/javascript/api/excel/excel.worksheet#showoutlinelevels-rowlevels--columnlevels-)方法以编程方式完成。 请注意，Excel 仅支持八种级别的分级显示组。
+大纲可以有层次结构，其中较小的组嵌套在更大的组下。 这样，可以在不同的级别查看大纲。 更改可见大纲级别可以通过 [showOutlineLevels](/javascript/api/excel/excel.worksheet#showoutlinelevels-rowlevels--columnlevels-) 方法以编程方式完成。 请注意，Excel 仅支持八种级别的分级显示组。
 
-下面的代码示例演示如何创建一个大纲，其中包含两个级别的行和列的组。 随后的图像显示该轮廓的分组。 请注意，在代码示例中，被分组的区域不包括大纲控件的行或列（本例中为 "汇总"）。 组定义将折叠的内容，而不是控件的行或列。
+下面的代码示例演示如何创建一个大纲，其中包含两个级别的行和列的组。 随后的图像显示该轮廓的分组。 请注意，在代码示例中，要分组的区域不包括大纲控件的行或列 (本示例的 "总计") 。 组定义将折叠的内容，而不是控件的行或列。
 
 ```js
 Excel.run(function (context) {
@@ -325,7 +325,38 @@ Excel.run(function (context) {
 
 ![具有两个级别的两维轮廓的范围](../images/excel-outline.png)
 
-若要取消行或列组的分组，请使用[Range](/javascript/api/excel/excel.range#ungroup-groupoption-)方法。 这将从大纲中删除最外面的级别。 如果同一行或列类型的多个组在指定区域中的同一级别，则所有这些组都将被取消组合。
+若要取消行或列组的分组，请使用 [Range](/javascript/api/excel/excel.range#ungroup-groupoption-) 方法。 这将从大纲中删除最外面的级别。 如果同一行或列类型的多个组在指定区域中的同一级别，则所有这些组都将被取消组合。
+
+## <a name="handle-dynamic-arrays-and-spilling-preview"></a>处理动态数组和 spilling (预览) 
+
+> [!NOTE]
+> 动态数组和 range spilling Api 当前处于预览阶段。 [!INCLUDE [Information about using preview Excel APIs](../includes/using-excel-preview-apis.md)]
+
+有些 Excel 公式返回 [动态数组](https://support.microsoft.com/office/dynamic-array-formulas-and-spilled-array-behavior-205c6b06-03ba-4151-89a1-87a7eb36e531)。 这些值填充公式的原始单元格外部的多个单元格的值。 此值溢出称为 "溢出"。 您的外接程序可以使用 getSpillingToRange 方法查找用于溢出的范围[。](/javascript/api/excel/excel.range#getspillingtorange--) 此外，还有一个 [* OrNullObject 版本](..//develop/application-specific-api-model.md#ornullobject-methods-and-properties) `Range.getSpillingToRangeOrNullObject` 。
+
+下面的示例演示将区域的内容复制到单元格中的基本公式，这些单元格会扩散到相邻的单元格中。 然后，外接程序会记录包含溢出的范围。
+
+```js
+Excel.run(function (context) {
+    var sheet = context.workbook.worksheets.getItem("Sample");
+
+    // Set G4 to a formula that returns a dynamic array.
+    var targetCell = sheet.getRange("G4");
+    targetCell.formulas = [["=A4:D4"]];
+
+    // Get the address of the cells that the dynamic array spilled into.
+    var spillRange = targetCell.getSpillingToRange();
+    spillRange.load("address");
+
+    // Sync and log the spilled-to range.
+    return context.sync().then(function () {
+        // This will log the range as "G4:J4".
+        console.log(`Copying the table headers spilled into ${spillRange.address}.`);
+    });
+}).catch(errorHandlerFunction);
+```
+
+您还可以使用 getSpillParent 方法，在给定单元格 [内](/javascript/api/excel/excel.range#getspillparent--) 查找负责 spilling 的单元格。 请注意， `getSpillParent` 仅当 range 对象为单个单元格时才起作用。 `getSpillParent`对包含多个单元格的区域进行调用将导致 (引发错误，或返回) 的 null 范围 `Range.getSpillParentOrNullObject` 。
 
 ## <a name="see-also"></a>另请参阅
 

@@ -1,14 +1,14 @@
 ---
 title: 在 Office 加载项中使用 Office 对话框 API
-description: 了解在 Office 外接程序中创建对话框的基础知识。
-ms.date: 06/10/2020
+description: 了解在 Office 加载项中创建对话框的基础知识
+ms.date: 08/20/2020
 localization_priority: Normal
-ms.openlocfilehash: 5cdd457b99636dd244eed1fa88c1b76cab23ee8c
-ms.sourcegitcommit: 472b81642e9eb5fb2a55cd98a7b0826d37eb7f73
+ms.openlocfilehash: 9d333c12d629232ece39bc30948318fbcafa3aa0
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/17/2020
-ms.locfileid: "45159561"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47292789"
 ---
 # <a name="use-the-office-dialog-api-in-office-add-ins"></a>在 Office 加载项中使用 Office 对话框 API
 
@@ -32,7 +32,7 @@ ms.locfileid: "45159561"
 
 ![外接程序命令](../images/auth-o-dialog-open.png)
 
-请注意，对话框总是在屏幕的中心打开。 用户可以移动并重设对话框的大小。 对话框是*非模态*窗口。也就是说，用户可以继续同时与主机 Office 应用程序中的文档以及任务窗格中的页面（若有）进行交互。
+请注意，对话框总是在屏幕的中心打开。 用户可以移动并重设对话框的大小。 窗口为 *是非*--用户可以继续与 Office 应用程序中的文档和任务窗格中的页面进行交互（如果有的话）。
 
 ## <a name="open-a-dialog-box-from-a-host-page"></a>从主机页面打开对话框
 
@@ -86,7 +86,7 @@ Office.context.ui.displayDialogAsync('https://myDomain/myDialog.html', {height: 
 对话框无法与任务窗格中的主机页进行通信，除非：
 
 - 对话框中的当前页面与主机页在同一个域中。
-- 在页面中加载 Office JavaScript API 库。（与使用 Office JavaScript API 库的任何页面一样，页面的脚本必须为属性分配方法 `Office.initialize` ，尽管它可以是空方法。有关详细信息，请参阅[初始化 Office 外接程序](initialize-add-in.md)。）
+- 在页面中加载 Office JavaScript API 库。 (与使用 Office JavaScript API 库的任何页面一样，页面的脚本必须为属性分配方法 `Office.initialize` ，尽管它可以是空方法。有关详细信息，请参阅 [初始化 Office 外接程序](initialize-add-in.md)。 ) 
 
 对话框中的代码使用 [messageParent](/javascript/api/office/office.ui#messageparent-message-) 函数，向主机页发送布尔值或字符串消息。 字符串可以是单词、句子、XML blob、字符串化 JSON 或其他任何能够序列化成字符串的内容。 示例如下：
 
@@ -99,7 +99,8 @@ if (loginSuccess) {
 > [!IMPORTANT]
 > - `messageParent` 函数只能在与主机页位于同一域（包括协议和端口）的页面上调用。
 > - `messageParent`函数*只*是可在对话框中调用的两个 Office JS api 之一。 
-> - 可以在对话框中调用的其他 JS API 为 `Office.context.requirements.isSetSupported` 。 有关详细信息，请参阅[指定 Office 主机和 API 要求](specify-office-hosts-and-api-requirements.md)。 但是，在该对话框中，在 Outlook 2016 1-time purchase （即 MSI 版本）中不支持此 API。
+> - 可以在对话框中调用的其他 JS API 为 `Office.context.requirements.isSetSupported` 。 有关它的信息，请参阅 [指定 Office 应用程序和 API 要求](specify-office-hosts-and-api-requirements.md)。 但是，在该对话框中，Outlook 2016 1-time purchase (中不支持此 API，即 MSI 版本) 。
+
 
 在下一个示例中，`googleProfile` 是用户 Google 配置文件的字符串化版本。
 
@@ -212,47 +213,96 @@ function processMessage(arg) {
 
 ## <a name="pass-information-to-the-dialog-box"></a>向对话框传递信息
 
-有时，主机页需要向对话框传递信息。完成此操作的方式主要分为两种：
-
-- 向传递给 `displayDialogAsync` 的 URL 添加查询参数。
-- 将信息存储在主机窗口和对话框都可访问的位置。 这两个窗口不共享通用会话存储，但*如果它们具有相同的域*（包括端口号，若有），则共享通用[本地存储](https://www.w3schools.com/html/html5_webstorage.asp)。\*
+您的外接程序可以使用[messageChild](/javascript/api/office/office.dialog#messagechild-message-)将邮件从[主机页面](dialog-api-in-office-add-ins.md#open-a-dialog-box-from-a-host-page)发送到对话框。
 
 > [!NOTE]
-> \*有一个 bug 将影响你的令牌处理策略。 如果加载项正使用 Safari 或 Microsoft 浏览器在 **Office 网页版**上运行，则对话框和任务窗格不共享同一本地存储，因此该存储无法用于在它们之间通信。
+> 仅 Excel、PowerPoint 和 Word 支持这些对话框 Api。 对 Outlook 的支持正在开发中。
 
-### <a name="use-local-storage"></a>使用本地存储
+### <a name="use-messagechild-from-the-host-page"></a>`messageChild()`从主机页使用
 
-为了使用本地存储，代码会先在主机页中调用 `window.localStorage` 对象的 `setItem` 方法，然后再调用 `displayDialogAsync`，如以下示例所示：
+调用 Office 对话框 API 打开对话框时，将返回 [dialog](/javascript/api/office/office.dialog) 对象。 应将其分配给具有大于 [displayDialogAsync](/javascript/api/office/office.ui#displaydialogasync-startaddress--callback-) 方法的作用域的变量，因为该对象将被其他方法引用。 示例如下：
 
-```js
-localStorage.setItem("clientID", "15963ac5-314f-4d9b-b5a1-ccb2f1aea248");
+```javascript
+var dialog;
+Office.context.ui.displayDialogAsync('https://myDomain/myDialog.html',
+    function (asyncResult) {
+        dialog = asyncResult.value;
+        dialog.addEventHandler(Office.EventType.DialogMessageReceived, processMessage);
+    }
+);
+
+function processMessage(arg) {
+    dialog.close();
+
+  // message processing code goes here;
+
+}
 ```
 
-对话框框中的代码会在需要时读取项，如以下示例所示：
+此 `Dialog` 对象具有一个 [messageChild](/javascript/api/office/office.dialog#messagechild-message-) 方法，该方法将任何字符串（包括字符串化数据）发送到对话框。 这 `DialogParentMessageReceived` 将在对话框中引发事件。 您的代码应处理此事件，如下一节中所示。
 
-```js
-var clientID = localStorage.getItem("clientID");
-// You can also use property syntax:
-// var clientID = localStorage.clientID;
+假设对话框的 UI 与当前活动的工作表相关，并且该工作表相对于其他工作表的位置。 在下面的示例中， `sheetPropertiesChanged` 将 Excel 工作表属性发送到对话框。 在这种情况下，当前工作表名为 "我的工作表"，并且它是工作簿中的第二个工作表。 数据封装在对象和字符串化中，以便可以将其传递给 `messageChild` 。
+
+```javascript
+function sheetPropertiesChanged() {
+    var messageToDialog = JSON.stringify({
+                               name: "My Sheet",
+                               position: 2
+                           });
+
+    dialog.messageChild(messageToDialog);
+}
 ```
 
-### <a name="use-query-parameters"></a>使用查询参数
+### <a name="handle-dialogparentmessagereceived-in-the-dialog-box"></a>在对话框中处理 DialogParentMessageReceived
 
-下面的示例展示了如何使用查询参数传递数据：
+在对话框的 JavaScript 中， `DialogParentMessageReceived` 使用 [addHandlerAsync](/javascript/api/office/office.ui#addhandlerasync-eventtype--handler--options--callback-) 方法为事件注册处理程序。 通常在 [onReady 或 Office.initialize 方法](initialize-add-in.md)中执行此操作，如下所示。  (更强健的示例如下所示。 ) 
 
-```js
-Office.context.ui.displayDialogAsync('https://myAddinDomain/myDialog.html?clientID=15963ac5-314f-4d9b-b5a1-ccb2f1aea248');
+```javascript
+Office.onReady()
+    .then(function() {
+        Office.context.ui.addHandlerAsync(
+            Office.EventType.DialogParentMessageReceived,
+            onMessageFromParent);
+    });
 ```
 
-有关使用此技术的示例，请参阅[Insert Excel charts using Microsoft Graph in a PowerPoint add-in](https://github.com/OfficeDev/PowerPoint-Add-in-Microsoft-Graph-ASPNET-InsertChart)（在 PowerPoint 加载项中使用 Microsoft Graph 插入 Excel 图表）。
+然后，定义该 `onMessageFromParent` 处理程序。 下面的代码将继续上一节中的示例。 请注意，Office 会将参数传递给处理程序，并确保 `message` argument 对象的属性包含主机页中的字符串。 在此示例中，邮件被 reconverted 到对象，jQuery 用于将对话框的顶部标题设置为与新工作表名称相匹配。
 
-对话框中的代码可以分析 URL，并读取参数值。
+```javascript
+function onMessageFromParent(event) {
+    var messageFromParent = JSON.parse(event.message);
+    $('h1').text(messageFromParent.name);
+}
+```
+
+最佳做法是验证是否正确注册了处理程序。 为此，可以将回调传递给 `addHandlerAsync` 方法。 注册处理程序的尝试完成时，将运行此过程。 如果未成功注册处理程序，请使用该处理程序记录或显示错误。 示例如下。 请注意，这 `reportError` 是未在此处定义的函数，它会记录或显示错误。
+
+```javascript
+Office.onReady()
+    .then(function() {
+        Office.context.ui.addHandlerAsync(
+            Office.EventType.DialogParentMessageReceived,
+            onMessageFromParent,
+            onRegisterMessageComplete);
+    });
+
+function onRegisterMessageComplete(asyncResult) {
+    if (asyncResult.status !== Office.AsyncResultStatus.Succeeded) {
+        reportError(asyncResult.error.message);
+    }
+}
+```
+
+### <a name="conditional-messaging-from-parent-page-to-dialog-box"></a>"将父页的条件消息传递到" 对话框
+
+由于可以 `messageChild` 从主机页进行多次调用，但在该事件的对话框中只有一个处理程序 `DialogParentMessageReceived` ，因此处理程序必须使用条件逻辑来区分不同的消息。 您可以按照与 [条件消息](#conditional-messaging)中所述的方式将消息发送到主机页时，精确地与构造条件消息传递的方式完全并行。
+
+> [!NOTE]
+> 在某些情况下， `messageChild` 可能不支持作为 [DialogApi 1.2 要求集](../reference/requirement-sets/dialog-api-requirement-sets.md)的一部分的 API。 以 [其他方式将邮件从其主机页传递到对话框，以其他方式](parent-to-dialog.md)对 "父对话" 对话消息进行描述。
 
 > [!IMPORTANT]
-> Office 会自动向传递给 `displayDialogAsync` 的 URL 添加查询参数 `_host_info`。（附加在自定义查询参数（若有）后面，不会附加到对话框导航到的任何后续 URL。）Microsoft 可能会更改此值的内容，或者将来会将其全部删除，因此代码不得读取此值。相同的值会被添加到对话框的会话存储中。同样，*代码不得对此值执行读取和写入操作*。
-
-> [!NOTE]
-> 现在， `messageChild` "预览" 父页面可用于向对话发送邮件的 api，就像 `messageParent` 上面所述的 API 从对话框发送邮件一样。 有关它的详细信息，请参阅将[数据和邮件从其主机页传递到对话框](parent-to-dialog.md)。 我们鼓励你试用它，但对于生产外接程序，我们建议使用本节中介绍的技术。
+> 不能在外接程序清单的部分中指定 [DialogApi 1.2 要求集](../reference/requirement-sets/dialog-api-requirement-sets.md) `<Requirements>` 。 您必须在运行时使用 [isSetSupported](specify-office-hosts-and-api-requirements.md#use-runtime-checks-in-your-javascript-code) 方法检查是否支持 DialogApi 1.2。 对清单要求的支持正在开发中。
 
 ## <a name="closing-the-dialog-box"></a>关闭对话框
 

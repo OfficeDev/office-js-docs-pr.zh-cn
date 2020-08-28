@@ -1,14 +1,14 @@
 ---
 title: 使用单一登录令牌对用户进行身份验证
 description: 了解如何使用 Outlook 外接程序提供的单一登录令牌为服务实现 SSO。
-ms.date: 07/30/2020
+ms.date: 08/20/2020
 localization_priority: Normal
-ms.openlocfilehash: 79768147fc91a137a363a071beff46cec60ee819
-ms.sourcegitcommit: 8fdd7369bfd97a273e222a0404e337ba2b8807b0
+ms.openlocfilehash: e0925979d26f6b3145658d71b1edaf30431e0c7e
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "46573138"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47293980"
 ---
 # <a name="authenticate-a-user-with-a-single-sign-on-token-in-an-outlook-add-in"></a>在 Outlook 加载项中使用单一登录令牌对用户进行身份验证
 
@@ -31,7 +31,7 @@ ms.locfileid: "46573138"
 
 ### <a name="provide-consent-when-sideloading-an-add-in"></a>旁加载加载项时授予许可
 
-在开发外接程序时，必须提前提供许可。 有关详细信息，请参阅向[外接程序授予管理员同意](../develop/grant-admin-consent-to-an-add-in.md)。
+在开发外接程序时，必须提前提供许可。 有关详细信息，请参阅向 [外接程序授予管理员同意](../develop/grant-admin-consent-to-an-add-in.md)。
 
 ## <a name="update-the-add-in-manifest"></a>更新加载项清单
 
@@ -50,6 +50,6 @@ ms.locfileid: "46573138"
 
 ## <a name="see-also"></a>另请参阅
 
-- 有关使用 SSO 令牌访问 Microsoft Graph API 的 Outlook 外接程序示例，请参阅 [AttachmentsDemo 示例外接程序](https://github.com/OfficeDev/outlook-add-in-attachments-demo)。
+- 有关使用 SSO 令牌访问 Microsoft Graph API 的 Outlook 外接程序示例，请参阅 [Outlook 外接程序 SSO](https://github.com/OfficeDev/Outlook-Add-in-SSO)。
 - [SSO API 参考](../develop/sso-in-office-add-ins.md#sso-api-reference)
 - [IdentityAPI 要求集](../reference/requirement-sets/identity-api-requirement-sets.md)

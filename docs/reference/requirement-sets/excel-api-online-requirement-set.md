@@ -4,24 +4,24 @@ description: 有关 ExcelApiOnline 要求集的详细信息
 ms.date: 05/06/2020
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: e4a78cd0052be1869434cba154d470070b15a5aa
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: f4a39406328605e11d8108ddee454c339bf3919f
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44611384"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47294239"
 ---
 # <a name="excel-javascript-api-online-only-requirement-set"></a>Excel JavaScript API 仅联机要求集
 
-`ExcelApiOnline`要求集是一个特殊要求集，其中包含仅适用于 web 上的 Excel 的功能。 此要求集中的 Api 被认为是针对 web 主机上的 Excel 的生产 Api （不受未记录的行为或结构更改）。 `ExcelApiOnline`被视为针对其他平台（Windows、Mac、iOS）的 "预览" Api，这些平台可能不支持这些平台。
+`ExcelApiOnline`要求集是一个特殊要求集，其中包含仅适用于 web 上的 Excel 的功能。 此要求集中的 Api 被视为生产 Api (不受未记录的行为或结构更改) 针对 web 应用程序上的 Excel。 `ExcelApiOnline` 被认为是其他平台 (Windows、Mac、iOS) 的 "预览" Api，这些平台可能不支持这些平台。
 
-当在 `ExcelApiOnline` 所有平台上支持要求集中的 api 时，它们将添加到下一个发布的要求集（ `ExcelApi 1.[NEXT]` ）。 一旦新要求是公共的，将从这些 Api 中删除 `ExcelApiOnline` 。 可将此视为将 API 从预览迁移到发布的类似升级过程。
-
-> [!IMPORTANT]
-> `ExcelApiOnline`是最新编号的要求集的超集。
+当 `ExcelApiOnline` 所有平台都支持要求集中的 api 时，它们将添加到下一个发布的要求集 (`ExcelApi 1.[NEXT]`) 。 一旦新要求是公共的，将从这些 Api 中删除 `ExcelApiOnline` 。 可将此视为将 API 从预览迁移到发布的类似升级过程。
 
 > [!IMPORTANT]
-> `ExcelApiOnline 1.1`是仅联机 Api 的唯一版本。 这是因为 web 上的 Excel 将始终有一个版本可供最新版本的用户使用。
+> `ExcelApiOnline` 是最新编号的要求集的超集。
+
+> [!IMPORTANT]
+> `ExcelApiOnline 1.1` 是仅联机 Api 的唯一版本。 这是因为 web 上的 Excel 将始终有一个版本可供最新版本的用户使用。
 
 ## <a name="recommended-usage"></a>建议使用
 
@@ -36,7 +36,7 @@ if (Office.context.requirements.isSetSupported("ExcelApiOnline", "1.1")) {
 一旦 API 位于跨平台要求集，就应删除或编辑该 `isSetSupported` 检查。 这将在其他平台上启用外接程序的功能。 进行此更改时，请务必在这些平台上测试功能。
 
 > [!IMPORTANT]
-> 清单不能指定 `ExcelApiOnline 1.1` 为激活要求。 不是在[Set 元素](../manifest/set.md)中使用的有效值。
+> 清单不能指定 `ExcelApiOnline 1.1` 为激活要求。 不是在 [Set 元素](../manifest/set.md)中使用的有效值。
 
 ## <a name="api-list"></a>API 列表
 
@@ -50,7 +50,7 @@ if (Office.context.requirements.isSetSupported("ExcelApiOnline", "1.1")) {
 ||[getItem(key: string)](/javascript/api/excel/excel.pivottablescopedcollection#getitem-key-)|按名称获取 PivotTable 对象。|
 ||[getItemOrNullObject(name: string)](/javascript/api/excel/excel.pivottablescopedcollection#getitemornullobject-name-)|按 PivotTable 对象的名称获取此对象。 如果没有 PivotTable 对象，将返回 NULL 对象。|
 ||[items](/javascript/api/excel/excel.pivottablescopedcollection#items)|获取此集合中已加载的子项。|
-|[Range](/javascript/api/excel/excel.range)|[getPivotTables （fullyContained？：布尔值）](/javascript/api/excel/excel.range#getpivottables-fullycontained-)|获取与区域重叠的数据透视表的限定集合。|
+|[区域](/javascript/api/excel/excel.range)|[getPivotTables (fullyContained？： boolean) ](/javascript/api/excel/excel.range#getpivottables-fullycontained-)|获取与区域重叠的数据透视表的限定集合。|
 
 ## <a name="see-also"></a>另请参阅
 

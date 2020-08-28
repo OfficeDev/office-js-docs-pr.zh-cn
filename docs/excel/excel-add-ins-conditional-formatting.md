@@ -1,18 +1,18 @@
 ---
 title: 通过 Excel JavaScript API 将条件格式应用于范围
 description: 本文涵盖了 Excel JavaScript 外接程序上下文中的条件格式。
-ms.date: 04/15/2019
+ms.date: 07/28/2020
 localization_priority: Normal
-ms.openlocfilehash: 8b3b833f2c2e4d8d9b43a6d9cde7d619fc488e3d
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 9f0bed7fb7421984c98ad1bc396c130afda4fb50
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44609627"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47292651"
 ---
 # <a name="apply-conditional-formatting-to-excel-ranges"></a>将条件格式应用于特定 Excel 范围
 
-Excel JavaScript 库提供了用于将条件格式应用于工作表中的特定数据范围的 API。 借助此功能，可以轻松直观地解析大型数据集。 该格式还会基于相应范围内的更改进行动态更新。 
+Excel JavaScript 库提供了用于将条件格式应用于工作表中的特定数据范围的 API。 借助此功能，可以轻松直观地解析大型数据集。 该格式还会基于相应范围内的更改进行动态更新。
 
 > [!NOTE]
 > 本文介绍了 Excel JavaScript 外接程序上下文中的条件格式。下面的文章提供了有关在 Excel 中实现完整条件格式功能的详细信息。
@@ -21,7 +21,7 @@ Excel JavaScript 库提供了用于将条件格式应用于工作表中的特定
 
 ## <a name="programmatic-control-of-conditional-formatting"></a>条件格式的编程控制
 
-`Range.conditionalFormats` 属性是一个应用于相应范围的 [ConditionalFormat](/javascript/api/excel/excel.conditionalformat) 对象的集合。  `ConditionalFormat` 对象包含多个属性，这些属性基于 [ConditionalFormatType](/javascript/api/excel/excel.conditionalformattype) 定义要应用的格式。 
+`Range.conditionalFormats` 属性是一个应用于相应范围的 [ConditionalFormat](/javascript/api/excel/excel.conditionalformat) 对象的集合。  `ConditionalFormat` 对象包含多个属性，这些属性基于 [ConditionalFormatType](/javascript/api/excel/excel.conditionalformattype) 定义要应用的格式。
 
 -    `cellValue`
 -    `colorScale`
@@ -33,9 +33,9 @@ Excel JavaScript 库提供了用于将条件格式应用于工作表中的特定
 -    `topBottom`
 
 > [!NOTE]
-> 每个格式属性都有相应的 `*OrNullObject` 变体。 在 [*OrNullObject 方法](../excel/excel-add-ins-advanced-concepts.md#ornullobject-methods)部分中了解有关该模式的更多信息。
+> 每个格式属性都有相应的 `*OrNullObject` 变体。 有关此模式的详细信息，请参阅[ \* OrNullObject 方法](../develop/application-specific-api-model.md#ornullobject-methods-and-properties)一节。
 
-仅可为 ConditionalFormat 对象设置一种格式类型。 该格式类型由 `type` 属性确定，该属性是 [ConditionalFormatType](/javascript/api/excel/excel.conditionalformattype) 枚举值。 `type` 是在向某一范围添加条件格式时设置的。 
+仅可为 ConditionalFormat 对象设置一种格式类型。 该格式类型由 `type` 属性确定，该属性是 [ConditionalFormatType](/javascript/api/excel/excel.conditionalformattype) 枚举值。 `type` 是在向某一范围添加条件格式时设置的。
 
 ## <a name="creating-conditional-formatting-rules"></a>创建条件格式规则
 
@@ -110,7 +110,7 @@ await context.sync();
 自定义条件格式根据任意复杂度的公式将用户定义的格式应用于单元格。 [ConditionalFormatRule](/javascript/api/excel/excel.conditionalformatrule) 对象允许使用不同表示法定义公式：
 
 -    `formula` - 标准表示法。
--    `formulaLocal`-根据用户的语言进行本地化。
+-    `formulaLocal` -根据用户的语言进行本地化。
 -    `formulaR1C1` - R1C1 样式表示法。
 
 在下面的示例中，将数值大于其左侧单元格数值的单元格的字体颜色设置成了绿色。

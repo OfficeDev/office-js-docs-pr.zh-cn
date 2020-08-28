@@ -3,12 +3,12 @@ title: 使用 Excel JavaScript API 处理工作表
 description: 演示如何使用 Excel JavaScript API 对工作表执行常见任务的代码示例。
 ms.date: 03/24/2020
 localization_priority: Normal
-ms.openlocfilehash: ff8b1c29b17dfa801feab7fcf8b1f478596eda46
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: b73d99b7c78649f1d99729ba7e644816db0f2ade
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44610380"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47294120"
 ---
 # <a name="work-with-worksheets-using-the-excel-javascript-api"></a>使用 Excel JavaScript API 处理工作表
 
@@ -367,7 +367,7 @@ Excel.run(function (context) {
 
 ## <a name="find-all-cells-with-matching-text"></a>查找所有包含匹配文本的单元格
 
-`Worksheet` 对象具有 `find` 方法在工作表内搜索指定字符串。 返回 `RangeAreas` 对象，也就是可以进行一次性全部编辑的 `Range` 对象集。 以下代码示例查找值等于字符串 **完成** 的所有单元格，并标记为绿色。 请注意，若指定的字符串不存在于工作表中，`findAll` 将引发 `ItemNotFound` 错误。 若您预计到指定的字符串可能不存在工作表中，则可使用 [findAllOrNullObject](excel-add-ins-advanced-concepts.md#ornullobject-methods) 方法，以便您的代码可正常处理该情况。
+`Worksheet` 对象具有 `find` 方法在工作表内搜索指定字符串。 返回 `RangeAreas` 对象，也就是可以进行一次性全部编辑的 `Range` 对象集。 以下代码示例查找值等于字符串 **完成** 的所有单元格，并标记为绿色。 请注意，若指定的字符串不存在于工作表中，`findAll` 将引发 `ItemNotFound` 错误。 若您预计到指定的字符串可能不存在工作表中，则可使用 [findAllOrNullObject](../develop/application-specific-api-model.md#ornullobject-methods-and-properties) 方法，以便您的代码可正常处理该情况。
 
 ```js
 Excel.run(function (context) {

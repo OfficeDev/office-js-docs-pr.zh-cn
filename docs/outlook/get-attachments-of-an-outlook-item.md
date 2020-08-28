@@ -1,14 +1,14 @@
 ---
 title: 获取 Outlook 加载项中的附件
 description: 加载项可使用附件 API 将与附件相关的信息发送至远程服务。
-ms.date: 01/13/2020
+ms.date: 08/20/2020
 localization_priority: Normal
-ms.openlocfilehash: bcb8226ab0755351b9e3a365e40623d258887d3f
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 57191820e27bc78431d0a7c97ffd6b8f23e75f4b
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44612078"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47293910"
 ---
 # <a name="get-attachments-of-an-outlook-item-from-the-server"></a>从服务器获取 Outlook 项的附件
 
@@ -412,4 +412,4 @@ private string ProcessXmlResponse(XElement responseEnvelope)
 - [创建适用于阅读窗体的 Outlook 加载项](read-scenario.md)
 - [在 Exchange 中浏览 EWS 托管 API、EWS 和 Web 服务](/exchange/client-developer/exchange-web-services/explore-the-ews-managed-api-ews-and-web-services-in-exchange)
 - [EWS 托管 API 客户端应用程序入门](/exchange/client-developer/exchange-web-services/get-started-with-ews-managed-api-client-applications)
-- [AttachmentsDemo 示例 Outlook 加载项](https://github.com/OfficeDev/outlook-add-in-attachments-demo)
+- [Outlook 加载项 SSO](https://github.com/OfficeDev/Outlook-Add-in-SSO)

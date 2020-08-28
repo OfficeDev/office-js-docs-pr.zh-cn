@@ -3,12 +3,12 @@ title: 了解 Outlook 加载项权限
 description: Outlook 加载项在清单中指定所需的权限级别，其中包括受限、ReadItem、ReadWriteItem 或 ReadWriteMailbox。
 ms.date: 02/19/2020
 localization_priority: Normal
-ms.openlocfilehash: d566c0f330ff4473fc9c71a7dff26048093707db
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 7b0b481edc77170bb395d86f77688bc976f8e6e4
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44611622"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47292515"
 ---
 # <a name="understanding-outlook-add-in-permissions"></a>了解 Outlook 加载项权限
 
@@ -30,7 +30,7 @@ Outlook 外接程序在清单中指定所需的权限级别。可用级别为**R
 
 ### <a name="cant-do"></a>不能执行的操作
 
-- 在联系人、电子邮件地址、会议建议或任务建议实体上使用[ItemHasKnownEntity](../reference/manifest/rule.md#itemhasknownentity-rule)规则。
+- 在联系人、电子邮件地址、会议建议或任务建议实体上使用 [ItemHasKnownEntity](../reference/manifest/rule.md#itemhasknownentity-rule) 规则。
 
 - 使用 [ItemHasAttachment](../reference/manifest/rule.md#itemhasattachment-rule) 或 [ItemHasRegularExpressionMatch](../reference/manifest/rule.md#itemhasregularexpressionmatch-rule) 规则。
 
@@ -176,5 +176,5 @@ Outlook 外接程序在清单中指定所需的权限级别。可用级别为**R
 
 ## <a name="see-also"></a>另请参阅
 
-- [Outlook 加载项的隐私、权限和安全性](../develop/privacy-and-security.md)
+- [Outlook 加载项的隐私、权限和安全性](../concepts/privacy-and-security.md)
 - [将 Outlook 项中的字符串作为已知实体进行匹配](match-strings-in-an-item-as-well-known-entities.md)

@@ -1,18 +1,18 @@
 ---
 title: 使用 Excel JavaScript API 对区域执行操作（基本）
 description: 演示如何使用 Excel JavaScript API 对区域执行常见任务的代码示例。
-ms.date: 04/30/2019
+ms.date: 07/28/2020
 localization_priority: Normal
-ms.openlocfilehash: 8cba0908d2179c397dc3530e9bcb4063c09fce19
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 4eb04a58fdf58425f7bb13a6dc457da28625dba5
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44609592"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47294162"
 ---
 # <a name="work-with-ranges-using-the-excel-javascript-api"></a>使用 Excel JavaScript API 处理区域
 
-本文中的代码示例展示了如何使用 Excel JavaScript API 对区域执行常见任务。 有关对象支持的属性和方法的完整列表 `Range` ，请参阅[Range 对象（适用于 Excel 的 JavaScript API）](/javascript/api/excel/excel.range)。
+本文中的代码示例展示了如何使用 Excel JavaScript API 对区域执行常见任务。 有关该对象支持的属性和方法的完整列表 `Range` ，请参阅 [Range 对象 (适用于 Excel 的 JavaScript API) ](/javascript/api/excel/excel.range)。
 
 > [!NOTE]
 > 有关如何使用区域执行更高级任务的代码示例，请参阅 [使用 Excel JavaScript API 对区域执行操作（高级）](excel-add-ins-ranges-advanced.md)。
@@ -40,7 +40,7 @@ Excel.run(function (context) {
 
 ### <a name="get-range-by-name"></a>按名称获取区域
 
-下面的代码示例 `MyRange` 从名为**sample**的工作表中获取名为 sample 的区域，加载其 `address` 属性，并向控制台写入一条消息。
+下面的代码示例 `MyRange` 从名为 **sample**的工作表中获取名为 sample 的区域，加载其 `address` 属性，并向控制台写入一条消息。
 
 ```js
 Excel.run(function (context) {
@@ -57,7 +57,7 @@ Excel.run(function (context) {
 
 ### <a name="get-used-range"></a>获取使用的区域
 
-下面的代码示例从名为**sample**的工作表中获取所使用的范围，加载其 `address` 属性，并向控制台写入一条消息。 使用的区域是包含工作表中分配了值或格式的任意单元格的最小区域。 如果整个工作表为空，则该 `getUsedRange()` 方法返回一个区域，该区域仅包含工作表中左上角的单元格。
+下面的代码示例从名为 **sample**的工作表中获取所使用的范围，加载其 `address` 属性，并向控制台写入一条消息。 使用的区域是包含工作表中分配了值或格式的任意单元格的最小区域。 如果整个工作表为空，则该 `getUsedRange()` 方法返回一个区域，该区域仅包含工作表中左上角的单元格。
 
 ```js
 Excel.run(function (context) {
@@ -74,7 +74,7 @@ Excel.run(function (context) {
 
 ### <a name="get-entire-range"></a>获取整个区域
 
-下面的代码示例从名为**sample**的工作表中获取整个工作表区域，加载其 `address` 属性，并向控制台写入一条消息。
+下面的代码示例从名为 **sample**的工作表中获取整个工作表区域，加载其 `address` 属性，并向控制台写入一条消息。
 
 ```js
 Excel.run(function (context) {
@@ -99,16 +99,16 @@ Excel.run(function (context) {
     var range = sheet.getRange("B4:E4");
 
     range.insert(Excel.InsertShiftDirection.down);
-    
+
     return context.sync();
 }).catch(errorHandlerFunction);
 ```
 
-**插入区域之前的数据**
+### <a name="data-before-range-is-inserted"></a>插入区域之前的数据
 
 ![Excel 中插入区域之前的数据](../images/excel-ranges-start.png)
 
-**插入区域之后的数据**
+### <a name="data-after-range-is-inserted"></a>插入区域之后的数据
 
 ![Excel 中插入区域之后的数据](../images/excel-ranges-after-insert.png)
 
@@ -127,11 +127,11 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
-**清除区域之前的数据**
+### <a name="data-before-range-is-cleared"></a>清除区域之前的数据
 
 ![Excel 中清除区域之前的数据](../images/excel-ranges-start.png)
 
-**清除区域之后的数据**
+### <a name="data-after-range-is-cleared"></a>清除区域之后的数据
 
 ![Excel 中清除区域之后的数据](../images/excel-ranges-after-clear.png)
 
@@ -150,11 +150,11 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
-**删除区域之前的数据**
+### <a name="data-before-range-is-deleted"></a>删除区域之前的数据
 
 ![Excel 中删除区域之前的数据](../images/excel-ranges-start.png)
 
-**删除区域之后的数据**
+### <a name="data-after-range-is-deleted"></a>删除区域之后的数据
 
 ![Excel 中删除区域之后的数据](../images/excel-ranges-after-delete.png)
 
@@ -173,13 +173,13 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
-**选定的区域 B2:E6**
+### <a name="selected-range-b2e6"></a>选定的区域 B2:E6
 
 ![Excel 中选定的区域](../images/excel-ranges-set-selection.png)
 
 ## <a name="get-the-selected-range"></a>获取所选区域
 
-下面的代码示例获取所选区域，加载其 `address` 属性，并向控制台写入一条消息。 
+下面的代码示例获取所选区域，加载其 `address` 属性，并向控制台写入一条消息。
 
 ```js
 Excel.run(function (context) {
@@ -213,11 +213,11 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
-**更新单元格值之前的数据**
+#### <a name="data-before-cell-value-is-updated"></a>更新单元格值之前的数据
 
 ![Excel 中更新单元格值之前的数据](../images/excel-ranges-set-start.png)
 
-**更新单元格值之后的数据**
+#### <a name="data-after-cell-value-is-updated"></a>更新单元格值之后的数据
 
 ![Excel 中更新单元格值之后的数据](../images/excel-ranges-set-cell-value.png)
 
@@ -232,7 +232,7 @@ Excel.run(function (context) {
     var data = [
         ["Potato Chips", 10, 1.80],
     ];
-    
+
     var range = sheet.getRange("B5:D5");
     range.values = data;
     range.format.autofitColumns();
@@ -241,11 +241,11 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
-**更新多个单元格值之前的数据**
+#### <a name="data-before-cell-values-are-updated"></a>更新多个单元格值之前的数据
 
 ![Excel 中更新多个单元格值之前的数据](../images/excel-ranges-set-start.png)
 
-**更新多个单元格值之后的数据**
+#### <a name="data-after-cell-values-are-updated"></a>更新多个单元格值之后的数据
 
 ![Excel 中更新多个单元格值之后的数据](../images/excel-ranges-set-cell-values.png)
 
@@ -265,11 +265,11 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
-**设置单元格公式之前的数据**
+#### <a name="data-before-cell-formula-is-set"></a>设置单元格公式之前的数据
 
 ![Excel 中设置单元格公式之前的数据](../images/excel-ranges-start-set-formula.png)
 
-**设置单元格公式之后的数据**
+#### <a name="data-after-cell-formula-is-set"></a>设置单元格公式之后的数据
 
 ![Excel 中设置单元格公式之后的数据](../images/excel-ranges-set-formula.png)
 
@@ -287,7 +287,7 @@ Excel.run(function (context) {
         ["=C5 * D5"],
         ["=SUM(E3:E5)"]
     ];
-    
+
     var range = sheet.getRange("E3:E6");
     range.formulas = data;
     range.format.autofitColumns();
@@ -296,11 +296,11 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
-**设置多个单元格公式之前的数据**
+#### <a name="data-before-cell-formulas-are-set"></a>设置多个单元格公式之前的数据
 
 ![Excel 中设置多个单元格公式之前的数据](../images/excel-ranges-start-set-formula.png)
 
-**设置多个单元格公式之后的数据**
+#### <a name="data-after-cell-formulas-are-set"></a>设置多个单元格公式之后的数据
 
 ![Excel 中设置多个单元格公式之后的数据](../images/excel-ranges-set-formulas.png)
 
@@ -310,7 +310,7 @@ Excel.run(function (context) {
 
 ### <a name="get-values-from-a-range-of-cells"></a>从多个单元格获取值
 
-下面的代码示例获取区域**B2： E6**，加载其 `values` 属性，并将这些值写入控制台。 `values`区域的属性指定单元格包含的原始值。 即使某个区域中的某些单元格包含公式，该 `values` 区域的属性也会指定这些单元格的原始值，而不是任何公式。
+下面的代码示例获取区域 **B2： E6**，加载其 `values` 属性，并将这些值写入控制台。 `values`区域的属性指定单元格包含的原始值。 即使某个区域中的某些单元格包含公式，该 `values` 区域的属性也会指定这些单元格的原始值，而不是任何公式。
 
 ```js
 Excel.run(function (context) {
@@ -325,11 +325,11 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
-**区域中的数据（E 列中的值为公式的结果）**
+#### <a name="data-in-range-values-in-column-e-are-a-result-of-formulas"></a>区域中的数据（E 列中的值为公式的结果）
 
 ![Excel 中设置多个单元格公式之后的数据](../images/excel-ranges-set-formulas.png)
 
-**range.values（通过上面的代码示例记录到控制台）**
+#### <a name="rangevalues-as-logged-to-the-console-by-the-code-sample-above"></a>range.values（通过上面的代码示例记录到控制台）
 
 ```json
 [
@@ -368,7 +368,7 @@ Excel.run(function (context) {
 
 ### <a name="get-text-from-a-range-of-cells"></a>从多个单元格获取文本
 
-下面的代码示例获取区域**B2： E6**，加载其 `text` 属性，并将其写入控制台。 `text`区域的属性指定区域中的单元格的显示值。 即使区域中的某些单元格包含公式，该 `text` 区域的属性也指定这些单元格的显示值，而不是任何公式的显示值。
+下面的代码示例获取区域 **B2： E6**，加载其 `text` 属性，并将其写入控制台。 `text`区域的属性指定区域中的单元格的显示值。 即使区域中的某些单元格包含公式，该 `text` 区域的属性也指定这些单元格的显示值，而不是任何公式的显示值。
 
 ```js
 Excel.run(function (context) {
@@ -383,11 +383,11 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
-**区域中的数据（E 列中的值为公式的结果）**
+#### <a name="data-in-range-values-in-column-e-are-a-result-of-formulas"></a>区域中的数据（E 列中的值为公式的结果）
 
 ![Excel 中设置多个单元格公式之后的数据](../images/excel-ranges-set-formulas.png)
 
-**range.text（通过上面的代码示例记录到控制台）**
+#### <a name="rangetext-as-logged-to-the-console-by-the-code-sample-above"></a>range.text（通过上面的代码示例记录到控制台）
 
 ```json
 [
@@ -426,7 +426,7 @@ Excel.run(function (context) {
 
 ### <a name="get-formulas-from-a-range-of-cells"></a>从多个单元格获取公式
 
-下面的代码示例获取区域**B2： E6**，加载其 `formulas` 属性，并将其写入控制台。 `formulas`Range 的属性指定区域中包含公式的单元格的公式，以及区域中不包含公式的单元格的原始值。
+下面的代码示例获取区域 **B2： E6**，加载其 `formulas` 属性，并将其写入控制台。 `formulas`Range 的属性指定区域中包含公式的单元格的公式，以及区域中不包含公式的单元格的原始值。
 
 ```js
 Excel.run(function (context) {
@@ -441,11 +441,11 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
-**区域中的数据（E 列中的值为公式的结果）**
+#### <a name="data-in-range-values-in-column-e-are-a-result-of-formulas"></a>区域中的数据（E 列中的值为公式的结果）
 
 ![Excel 中设置多个单元格公式之后的数据](../images/excel-ranges-set-formulas.png)
 
-**range.formulas（通过上面的代码示例记录到控制台）**
+#### <a name="rangeformulas-as-logged-to-the-console-by-the-code-sample-above"></a>range.formulas（通过上面的代码示例记录到控制台）
 
 ```json
 [
@@ -502,11 +502,11 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
-**区域中设置字体颜色和填充颜色之前的数据**
+#### <a name="data-in-range-before-font-color-and-fill-color-are-set"></a>区域中设置字体颜色和填充颜色之前的数据
 
 ![Excel 中设置格式之前的数据](../images/excel-ranges-format-before.png)
 
-**区域中设置字体颜色和填充颜色之后的数据**
+#### <a name="data-in-range-after-font-color-and-fill-color-are-set"></a>区域中设置字体颜色和填充颜色之后的数据
 
 ![Excel 中设置格式之后的数据](../images/excel-ranges-format-font-and-fill.png)
 
@@ -531,13 +531,39 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
-**区域中设置数字格式之前的数据**
+#### <a name="data-in-range-before-number-format-is-set"></a>区域中设置数字格式之前的数据
 
-![Excel 中设置格式之前的数据](../images/excel-ranges-format-font-and-fill.png)
+![Excel 中设置数字格式之前的数据](../images/excel-ranges-format-font-and-fill.png)
 
-**区域中设置数字格式之后的数据**
+#### <a name="data-in-range-after-number-format-is-set"></a>区域中设置数字格式之后的数据
 
-![设置格式后的 Excel 数据](../images/excel-ranges-format-numbers.png)
+![设置数字格式后 Excel 中的数据](../images/excel-ranges-format-numbers.png)
+
+## <a name="read-or-write-to-an-unbounded-range"></a>读取或写入无限区域
+
+### <a name="read-an-unbounded-range"></a>读取无限区域
+
+无限区域地址是指定整个列或整个行的区域地址。 例如：
+
+- 由整个列组成的区域地址：<ul><li>`C:C`</li><li>`A:F`</li></ul>
+- 由整行组成的区域地址：<ul><li>`2:2`</li><li>`1:4`</li></ul>
+
+API 发出请求以检索无限区域时（例如，`getRange('C:C')`），该响应将包含单元格级别属性（如 `null`、`values`、`text` 和 `numberFormat`）的 `formula` 值。 其他区域属性（如 `address` 和 `cellCount`）将包含无限区域的有效值。
+
+### <a name="write-to-an-unbounded-range"></a>写入一个无限区域
+
+您无法在无限区域上设置单元格级别的属性，如 `values` 、 `numberFormat` 和， `formula` 因为输入请求过大。 例如，下面的代码段无效，因为它尝试为无限区域指定 `values`。 如果您尝试为无限区域设置单元格级别的属性，API 将返回错误。
+
+```js
+var range = context.workbook.worksheets.getActiveWorksheet().getRange('A:B');
+range.values = 'Due Date';
+```
+
+## <a name="read-or-write-to-a-large-range"></a>读取或写入较大区域
+
+如果区域中包含大量单元格、值、数字格式和/或公式，它可能无法在该区域运行 API 操作。 API 将始终尽量尝试在区域内运行所请求的操作（即检索或写入指定的数据），但尝试对较大区域执行读取或写入操作可能会因资源利用率过高而导致 API 错误。 为避免此类错误，建议为较大区域的较小子集运行单独的读取或写入操作，而不是尝试在较大区域内运行单个读取或写入操作。
+
+有关系统限制的详细信息，请参阅 [适用于 Office 外接程序的资源限制和性能优化](../concepts/resource-limits-and-performance-optimization.md#excel-add-ins)的 "Excel 外接程序" 部分。
 
 ### <a name="conditional-formatting-of-ranges"></a>范围的条件格式
 
@@ -545,7 +571,7 @@ Excel.run(function (context) {
 
 ## <a name="find-a-cell-using-string-matching"></a>使用字符串匹配查找单元格
 
-`Range` 对象具有 `find` 方法在区域内搜索指定字符串。 返回有匹配文本的第一个单元格区域。 以下代码示例查找值等于字符串 **食品** 的第一个单元格，并将其地址记录到控制台。 请注意，若指定的字符串不存在于区域中，`find` 将引发 `ItemNotFound` 错误。 若您预计到指定的字符串可能不存在区域中，则可使用 [findOrNullObject](excel-add-ins-advanced-concepts.md#ornullobject-methods) 方法，以便您的代码可正常处理该情况。
+`Range` 对象具有 `find` 方法在区域内搜索指定字符串。 返回有匹配文本的第一个单元格区域。 以下代码示例查找值等于字符串 **食品** 的第一个单元格，并将其地址记录到控制台。 请注意，若指定的字符串不存在于区域中，`find` 将引发 `ItemNotFound` 错误。 若您预计到指定的字符串可能不存在区域中，则可使用 [findOrNullObject](../develop/application-specific-api-model.md#ornullobject-methods-and-properties) 方法，以便您的代码可正常处理该情况。
 
 ```js
 Excel.run(function (context) {

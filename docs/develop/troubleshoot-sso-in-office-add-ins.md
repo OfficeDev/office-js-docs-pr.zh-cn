@@ -3,12 +3,12 @@ title: 排查单一登录 (SSO) 错误消息
 description: 有关如何解决单一登录 (SSO) 在 Office 外接程序中的问题，以及如何处理特殊条件或错误的指南。
 ms.date: 07/30/2020
 localization_priority: Normal
-ms.openlocfilehash: 4809ccf964467567503cdbaa0cf99e90b81fd19b
-ms.sourcegitcommit: 8fdd7369bfd97a273e222a0404e337ba2b8807b0
+ms.openlocfilehash: b8578f103c0b4e31523a3c4f99f4eac6ec544b2b
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "46573208"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47293133"
 ---
 # <a name="troubleshoot-error-messages-for-single-sign-on-sso"></a>排查单一登录 (SSO) 错误消息
 
@@ -77,7 +77,7 @@ ms.locfileid: "46573208"
 
 ### <a name="13007"></a>13007
 
-Office 主机无法获取对加载项 Web 服务的访问令牌。
+Office 应用程序无法获取对外接程序的 web 服务的访问令牌。
 
 - 如果在开发过程中发生此错误，请确保加载项注册和加载项清单指定 `profile` 权限（和 `openid` 权限 - 如果你使用的是 MSAL.NET）。 如需了解更多信息，请参阅[向 Azure AD v2.0 终结点注册加载项](register-sso-add-in-aad-v2.md)。
 - 在生产中，有几种情况可能导致此错误。 其中一些是：
@@ -107,7 +107,7 @@ Office 主机无法获取对加载项 Web 服务的访问令牌。
 
 ### <a name="13013"></a>13013
 
-`getAccessToken`在短时间内调用次数过多，因此 Office 限制了最近的呼叫。 这通常是由对方法的调用的无限循环引起的。 在某些情况下，建议撤回该方法。 但是，您的代码应使用计数器或标志变量以确保不会重复回调该方法。 如果相同的 "重试" 代码路径再次运行，则代码应回退到用户身份验证的备用系统。 有关代码示例，请参阅如何 `retryGetAccessToken` 在[HomeES6.js](https://github.com/OfficeDev/Office-Add-in-ASPNET-SSO/blob/master/Complete/Office-Add-in-ASPNET-SSO-WebAPI/Scripts/HomeES6.js)或[ssoAuthES6.js](https://github.com/OfficeDev/Office-Add-in-NodeJS-SSO/blob/master/Complete/public/javascripts/ssoAuthES6.js)中使用变量。
+`getAccessToken`在短时间内调用次数过多，因此 Office 限制了最近的呼叫。 这通常是由对方法的调用的无限循环引起的。 在某些情况下，建议撤回该方法。 但是，您的代码应使用计数器或标志变量以确保不会重复回调该方法。 如果相同的 "重试" 代码路径再次运行，则代码应回退到用户身份验证的备用系统。 有关代码示例，请参阅如何 `retryGetAccessToken` 在 [HomeES6.js](https://github.com/OfficeDev/Office-Add-in-ASPNET-SSO/blob/master/Complete/Office-Add-in-ASPNET-SSO-WebAPI/Scripts/HomeES6.js) 或 [ssoAuthES6.js](https://github.com/OfficeDev/Office-Add-in-NodeJS-SSO/blob/master/Complete/public/javascripts/ssoAuthES6.js)中使用变量。
 
 ### <a name="50001"></a>50001
 

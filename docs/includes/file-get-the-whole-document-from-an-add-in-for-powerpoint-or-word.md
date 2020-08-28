@@ -6,7 +6,7 @@
 
 - 在共享网络文件夹或 Web 服务器上，您需要以下文件：
 
-    - HTML 文件 (GetDoc_App.html)，其中包含用户界面、指向 JavaScript 文件（包括 office.js 和主机特定的 .js 文件）的链接和级联样式表 (CSS) 文件。
+    - HTML 文件 ( # B0 l) ，其中包含用户界面以及指向 JavaScript 文件的链接 (包括 office.js 和特定于应用程序的 .js 文件) 和级联样式表 (CSS) 文件。
 
     - 要包含外接程序编程逻辑的 JavaScript 文件 (GetDoc_App.js)。
 
@@ -148,12 +148,12 @@ function updateStatus(message) {
 }
 ```
 
-当您在 UI 中选择 "**提交**" 按钮时，加载项将调用 `sendFile` 函数，其中包含对[document.getfileasync](/javascript/api/office/office.document#getfileasync-filetype--options--callback-)方法的调用。 该 `getFileAsync` 方法使用异步模式，与适用于 Office 的 JAVASCRIPT API 中的其他方法类似。 It has one required parameter, _fileType_, and two optional parameters,  _options_ and _callback_. 
+当您在 UI 中选择 " **提交** " 按钮时，加载项将调用 `sendFile` 函数，其中包含对 [document.getfileasync](/javascript/api/office/office.document#getfileasync-filetype--options--callback-) 方法的调用。 该 `getFileAsync` 方法使用异步模式，与适用于 Office 的 JAVASCRIPT API 中的其他方法类似。 It has one required parameter, _fileType_, and two optional parameters,  _options_ and _callback_. 
 
 
-文件_类型_参数需要文件[类型](/javascript/api/office/office.filetype)枚举中的三个常量之一： `Office.FileType.Compressed` （"压缩"）、"pdf" （"Pdf"）或 " **office**文件 **" （** "text"）。 PowerPoint 仅支持将 **Compressed** 作为实参；Word 支持这三者。 当您为文件_类型_参数传递**压缩**文件时，该 `getFileAsync` 方法通过在本地计算机上创建文件的临时副本，以 PowerPoint 2013 演示文稿文件（*.pptx）或 Word 2013 文档文件（*.docx）返回文档。
+文件_类型_参数需要一个文件[类型](/javascript/api/office/office.filetype)枚举中的三个常量之一： `Office.FileType.Compressed` ( "压缩的" ) 、 **Office.FileType.PDF** ( "pdf" **Office.FileType.Text** ) 或 ( "text" ) 。 PowerPoint 仅支持将 **Compressed** 作为实参；Word 支持这三者。 当您为文件_类型_参数传递**压缩**文件时，该 `getFileAsync` 方法通过在本地计算机上创建文件的临时副本，将文档作为 PowerPoint 2013 演示文稿文件返回 (*.pptx) 或 Word 2013 文档文件 (*.docx) 。
 
-`getFileAsync`方法以[file](/javascript/api/office/office.file)对象的形式返回对文件的引用。 该 `File` 对象公开四个成员： [size](/javascript/api/office/office.file#size)属性、 [file.slicecount](/javascript/api/office/office.file#slicecount)属性、 [getSliceAsync](/javascript/api/office/office.file#getsliceasync-sliceindex--callback-)方法和[closeAsync](/javascript/api/office/office.file#closeasync-callback-)方法。 该 `size` 属性返回文件中的字节数。 `sliceCount`返回文件中的[切片](/javascript/api/office/office.slice)对象数（本文后面将对此进行讨论）。
+`getFileAsync`方法以[file](/javascript/api/office/office.file)对象的形式返回对文件的引用。 该 `File` 对象公开四个成员： [size](/javascript/api/office/office.file#size) 属性、 [file.slicecount](/javascript/api/office/office.file#slicecount) 属性、 [getSliceAsync](/javascript/api/office/office.file#getsliceasync-sliceindex--callback-) 方法和 [closeAsync](/javascript/api/office/office.file#closeasync-callback-) 方法。 该 `size` 属性返回文件中的字节数。 `sliceCount`返回 (本文后面) 文件中讨论的[切片](/javascript/api/office/office.slice)对象数。
 
 使用下面的代码，可以使用方法将 PowerPoint 或 Word 文档作为 `File` 对象获取 `Document.getFileAsync` ，然后调用本地定义 `getSlice` 的函数。 请注意，在 `File` 匿名对象的调用中，对象、计数器变量和文件中的扇区总数将一起传递 `getSlice` 。
 
@@ -185,9 +185,9 @@ function sendFile() {
 ```
 
 局部函数 `getSlice` 调用 `File.getSliceAsync` 方法，以从对象中检索切片 `File` 。 该 `getSliceAsync` 方法返回 `Slice` 切片集合中的对象。 它具有两个必需参数： _sliceIndex_ 和 _callback_。 _sliceIndex_ 参数将整数作为切块集合中的索引器。 与适用于 Office 的 JavaScript API 中的其他函数一样，该 `getSliceAsync` 方法还采用回调函数作为参数，以处理方法调用中的结果。
-离子 `getSlice` 电话调用**getSliceAsync**方法，以从**File**对象中检索切片。 **getSliceAsync** 方法返回切片集合中的 **Slice** 对象。 它具有两个必需参数： _sliceIndex_ 和 _callback_。 _sliceIndex_ 参数将整数作为切块集合中的索引器。 与 Office JavaScript API 中的其他函数一样， **getSliceAsync**方法还采用回调函数作为参数，以处理方法调用中的结果。
+离子 `getSlice` 电话调用 **getSliceAsync** 方法，以从 **File** 对象中检索切片。 **getSliceAsync** 方法返回切片集合中的 **Slice** 对象。 它具有两个必需参数： _sliceIndex_ 和 _callback_。 _sliceIndex_ 参数将整数作为切块集合中的索引器。 与 Office JavaScript API 中的其他函数一样， **getSliceAsync** 方法还采用回调函数作为参数，以处理方法调用中的结果。
 
-该 `Slice` 对象使您可以访问文件中包含的数据。 除非在方法的_options_参数中另 `getFileAsync` 有指定，否则 `Slice` 对象的大小为 4 MB。 该 `Slice` 对象公开三个属性：[大小](/javascript/api/office/office.slice#size)、[数据](/javascript/api/office/office.slice#data)和[索引](/javascript/api/office/office.slice#index)。 `size`属性获取切片的大小（以字节为单位）。 `index`属性获取一个整数，该整数表示切片在切片集合中的位置。
+该 `Slice` 对象使您可以访问文件中包含的数据。 除非在方法的 _options_ 参数中另 `getFileAsync` 有指定，否则 `Slice` 对象的大小为 4 MB。 该 `Slice` 对象公开三个属性： [大小](/javascript/api/office/office.slice#size)、 [数据](/javascript/api/office/office.slice#data)和 [索引](/javascript/api/office/office.slice#index)。 `size`属性获取切片的大小（以字节为单位）。 `index`属性获取一个整数，该整数表示切片在切片集合中的位置。
 
 ```js
 // Get a slice from the file and then call sendSlice.
@@ -204,7 +204,7 @@ function getSlice(state) {
 }
 ```
 
-`Slice.data`属性以字节数组的形式返回文件的原始数据。 如果数据采用文本格式（即 XML 或纯文本），则切片包含原始文本。 如果**为的**文件_类型_参数传递，则切片将 `Document.getFileAsync` 文件的二进制数据包含为字节数组。 对于 PowerPoint 或 Word 文件，切片包含字节数组。
+`Slice.data`属性以字节数组的形式返回文件的原始数据。 如果数据采用文本格式（即 XML 或纯文本），则切片包含原始文本。 如果 **为的** 文件 _类型_ 参数传递，则切片将 `Document.getFileAsync` 文件的二进制数据包含为字节数组。 对于 PowerPoint 或 Word 文件，切片包含字节数组。
 
 您必须实施自己的函数（或使用可用库），将字节数组数据转换为 Base64 编码的字符串。有关使用 JavaScript 进行 Base64 编码的信息，请参阅 [Base64 编码和解码](https://developer.mozilla.org/docs/Web/JavaScript/Base64_encoding_and_decoding)。
 

@@ -3,12 +3,12 @@ title: Outlook 加载项 API 要求集 1.4
 description: 作为邮箱 API 1.4 的一部分引入的 Outlook 外接程序和 Office JavaScript Api 的功能和 Api。
 ms.date: 10/30/2019
 localization_priority: Normal
-ms.openlocfilehash: 6154acc357dd0e0e663d658c8de2d54b641e080a
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: b4460315412e1a82473a1c33319fb960b73a5a61
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44609816"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47293756"
 ---
 # <a name="outlook-add-in-api-requirement-set-14"></a>Outlook 外接程序 API 要求集 1.4
 
@@ -23,7 +23,7 @@ Office JavaScript API 的 Outlook 外接程序 API 子集包括可以在 Outlook
 
 ### <a name="change-log"></a>更改日志
 
-- 添加了 [Office.context.ui.displayDialogAsync](/javascript/api/office/office.ui#displaydialogasync-startaddress--options--callback-)：在 Office 主机中显示一个对话框。
+- 添加了 [displayDialogAsync](/javascript/api/office/office.ui#displaydialogasync-startaddress--options--callback-)：在 Office 应用程序中显示对话框。
 - 添加了 [Office.context.ui.messageParent](/javascript/api/office/office.ui#messageparent-message-)：将对话框中的消息传送到其父页/开始页。
 - 添加了 [Dialog](/javascript/api/office/office.dialog) 对象：调用 [`displayDialogAsync`](/javascript/api/office/office.ui#displaydialogasync-startaddress--options--callback-) 方法时返回的对象。
 

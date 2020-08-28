@@ -3,12 +3,12 @@ title: 向特定 Excel 范围添加数据验证
 description: 了解 Excel JavaScript Api 如何使您的外接程序能够向表、列、行和工作簿中的其他区域添加自动数据验证。
 ms.date: 03/19/2019
 localization_priority: Normal
-ms.openlocfilehash: 54ac86def46a130b8b95876a3c42ef8704f9549c
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 422876e35d90a6f61da81f112ff61a732c1d0546
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44609613"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47292556"
 ---
 # <a name="add-data-validation-to-excel-ranges"></a>向特定 Excel 范围添加数据验证
 
@@ -163,7 +163,7 @@ Excel.run(function (context) {
 你可以创建一个在用户试图在单元格中输入无效数据时显示的自定义错误警报。 下面展示了一个非常简单的示例。 关于此代码，请注意以下几点：
 
 - `style` 属性决定用户是会收到信息警报、警告还是“停止”警报。 实际上，只有 `Stop` 会阻止用户添加无效数据。 `Warning` 和 `Information` 弹出窗口都具有允许用户输入无效数据的选项。
-- `showAlert` 属性默认为 `true`。 这意味着除非创建自定义警报，在其中将 `showAlert` 设置为 `false` 或者设置自定义消息、标题和样式，否则 Excel 主机将会弹出（类型 `Stop` 的）一般性警报。 以下代码设置了自定义消息和标题。
+- `showAlert` 属性默认为 `true`。 这意味着 Excel 将弹出一个常规警报 (类型 `Stop`) ，除非您创建设置 `showAlert` 为 `false` 或设置自定义邮件、标题和样式的自定义通知。 以下代码设置了自定义消息和标题。
 
 ```js
 Excel.run(function (context) {

@@ -3,12 +3,12 @@ title: 内容 Office 加载项
 description: 内容加载项是指可以直接嵌入 Excel 或 PowerPoint 文档的图面，用户可以通过它访问界面控件，运行代码以修改文档或显示数据源中的数据。
 ms.date: 07/07/2020
 localization_priority: Normal
-ms.openlocfilehash: f228ae8e7cca0426b0b43e31e38454029e4c7614
-ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
+ms.openlocfilehash: 6dca7e295bbc2efe0469fa4c69c14238d977c3ed
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "45093845"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47292986"
 ---
 # <a name="content-office-add-ins"></a>内容 Office 加载项
 
@@ -50,13 +50,13 @@ Excel 和 PowerPoint 在 Office desktop 中的内容外接程序大小，Microso
 
 ## <a name="support-considerations"></a>支持注意事项
 
-- 检查 Office 加载项是否适用于[特定 Office 主机平台](../overview/office-add-in-availability.md)。
+- 检查 Office 加载项是否适用 [于特定的 office 应用程序或平台](../overview/office-add-in-availability.md)。
 - 一些内容加载项可能会要求用户“信任”加载项对 Excel 或 PowerPoint 执行读取和写入操作。 可以在加载项清单中声明要拥有的[权限级别](../develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md)。  
 - Office 2013 版本及更高版本中的 Excel 和 PowerPoint 支持内容加载项。 如果在不支持 Office Web 加载项的 Office 版本中打开加载项，加载项会显示为图像。
 
 ## <a name="see-also"></a>另请参阅
 
-- [Office 加载项主机和平台可用性](../overview/office-add-in-availability.md)
+- [Office 外接程序的 office 客户端应用程序和平台可用性](../overview/office-add-in-availability.md)
 - [Office 加载项中的 Office UI Fabric](../design/office-ui-fabric.md)
 - [适用于 Office 加载项的 UX 设计模式](../design/ux-design-pattern-templates.md)
 - [在加载项中请求获取 API 使用权限](../develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md)

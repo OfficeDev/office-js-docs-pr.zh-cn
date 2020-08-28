@@ -3,12 +3,12 @@ title: 在 Visual Studio 中调试 Office 加载项
 description: 使用 Visual Studio 在 Windows 上的 Office 桌面客户端中调试 Office 加载项
 ms.date: 12/31/2019
 localization_priority: Normal
-ms.openlocfilehash: 018bfa24424514598d323c29d165e3e8ec066a8e
-ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
+ms.openlocfilehash: 8086eaeeb3556edcef40bdf9fea980bd4ae640cc
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "45093656"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47292839"
 ---
 # <a name="debug-office-add-ins-in-visual-studio"></a>在 Visual Studio 中调试 Office 加载项
 
@@ -27,7 +27,7 @@ ms.locfileid: "45093656"
 
 ## <a name="review-the-build-and-debug-properties"></a>查看生成和调试属性
 
-在开始调试之前，请检查每个项目的属性以确认 Visual Studio 将打开所需的主机应用程序，并已正确设置其他生成和调试属性。
+在开始调试之前，请查看每个项目的属性以确认 Visual Studio 将打开所需的 Office 应用程序，并正确设置了其他的生成和调试属性。
 
 ### <a name="add-in-project-properties"></a>外接程序项目属性
 
@@ -59,7 +59,7 @@ ms.locfileid: "45093656"
 
 打开 Web 应用程序项目的“**属性**”窗口以查看项目属性：
 
-1. 在 "**解决方案资源管理器**" 中，选择 "web 应用程序" 项目。
+1. 在 " **解决方案资源管理器**" 中，选择 "web 应用程序" 项目。
 
 2. 在菜单栏中，依次选择“**视图**” > “**属性窗口**”。
 
@@ -100,16 +100,16 @@ ms.locfileid: "45093656"
 
 当 Visual Studio 生成项目时，它执行以下任务：
 
-1. 创建 XML 清单文件的副本并将其添加到 `_ProjectName_\bin\Debug\OfficeAppManifests` 目录。 启动 Visual Studio 并调试外接程序时，主机应用程序将使用此副本。
+1. 创建 XML 清单文件的副本并将其添加到 `_ProjectName_\bin\Debug\OfficeAppManifests` 目录。 启动 Visual Studio 并调试外接程序时，承载外接程序的 Office 应用程序将使用此副本。
 
-2. 在计算机上创建一组允许外接程序在主机应用程序中显示的注册表项。
+2. 在您的计算机上创建一组注册表项，使外接程序能够显示在 Office 应用程序中。
 
 3. 生成 Web 应用程序项目，然后将其部署到本地 IIS Web 服务器 (https://localhost))。
 
 4. 如果这是你已部署到本地 IIS Web 服务器的第一个加载项项目，系统可能会提示你将自签名证书安装到当前用户的受信任的根证书存储中。 若要使 IIS Express 正确显示加载项内容，这是必需的操作。
 
 > [!NOTE]
-> 在 Windows 10 上运行时，最新版本的 Office 可能会使用较新的 Web 控件来显示加载项内容。 如果是这种情况，Visual Studio 可能会提示你添加本地网络环回豁免。 在 Office 主机应用程序中，需要这样做才能使 Web 控件访问部署到本地 IIS Web 服务器的网站。 还可以在 Visual Studio 中的“工具” > “选项” > “Office 工具(Web)” > “Web 加载项调试”下随时更改此设置****************。
+> 在 Windows 10 上运行时，最新版本的 Office 可能会使用较新的 Web 控件来显示加载项内容。 如果是这种情况，Visual Studio 可能会提示你添加本地网络环回豁免。 对于 Office 客户端应用程序中的 web 控件，要能够访问部署到本地 IIS web 服务器的网站，这是必需的。 还可以在 Visual Studio 中的“工具” > “选项” > “Office 工具(Web)” > “Web 加载项调试”下随时更改此设置****************。
 
 接下来，Visual Studio 会执行以下操作：
 
@@ -117,7 +117,7 @@ ms.locfileid: "45093656"
 
 2. 在 IIS Express 中启动 Web 应用程序项目。
 
-3. 打开主机应用程序。
+3. 打开 Office 应用程序。
 
 当您构建项目时，Visual Studio 不会在“输出”**** 窗口中显示验证错误。 Visual Studio 报告“**错误列表**”窗口中出现的错误和警告。 通过在代码和文本编辑器中显示不同颜色的波浪下划线（称为波浪线），Visual Studio 还报告验证错误。 通过这些标志，你可以得知 Visual Studio 在你的代码中检测到的问题。 有关如何启用或禁用验证的详细信息，请参阅[选项、文本编辑器、JavaScript、IntelliSense](/visualstudio/ide/reference/options-text-editor-javascript-intellisense?view=vs-2019)。
 
@@ -125,7 +125,7 @@ ms.locfileid: "45093656"
 
 ## <a name="debug-the-code-for-an-excel-powerpoint-or-word-add-in"></a>调试 Excel、PowerPoint 或 Word 外接程序的代码
 
-如果在[启动项目](#start-the-project)后，在主机应用程序（Excel、PowerPoint 或 Word）中显示的文档中看不到外接程序，请在主机应用程序中手动启动外接程序。 例如，通过选择“**主页**”选项卡功能区中的“**显示任务窗格**”按钮来启动任务窗格外接程序。在 Excel、PowerPoint 或 Word 中显示外接程序后，你可以通过执行以下操作来调试代码：
+如果加载项在 Office 应用程序中显示的文档中不可见 (Excel、PowerPoint 或 Word) 在 [启动项目](#start-the-project)后，请在 office 应用程序中手动启动加载项。 例如，通过选择“**主页**”选项卡功能区中的“**显示任务窗格**”按钮来启动任务窗格外接程序。在 Excel、PowerPoint 或 Word 中显示外接程序后，你可以通过执行以下操作来调试代码：
 
 1. 在 Excel、PowerPoint 或 Word 中，选择“**插入**”选项卡，然后选择“**我的外接程序**”右侧的向下箭头。
 
@@ -139,11 +139,11 @@ ms.locfileid: "45093656"
 
 5. 在 Visual Studio 中命中断点时，根据需要逐步执行代码。
 
-你可以更改代码并在外接程序中查看这些更改的效果，而无需关闭主机应用程序并重新启动该项目。 保存对代码的更改后，只需在主机应用程序中重新加载外接程序。 例如，通过选择任务窗格的右上角来激活[个性菜单](../design/task-pane-add-ins.md#personality-menu)，然后选择“**重新加载**”，便可重新加载任务窗格外接程序。
+您可以更改代码并在外接程序中查看这些更改的效果，而无需关闭 Office 应用程序并重新启动项目。 在保存对代码所做的更改后，只需在 Office 应用程序中重新加载加载项即可。 例如，通过选择任务窗格的右上角来激活[个性菜单](../design/task-pane-add-ins.md#personality-menu)，然后选择“**重新加载**”，便可重新加载任务窗格外接程序。
 
 ## <a name="debug-the-code-for-an-outlook-add-in"></a>调试 Outlook 外接程序的代码
 
-在你已[启动项目](#start-the-project)，且 Visual Studio 启动 Outlook 来托管外接程序后，打开电子邮件或约会项目。 
+在你已[启动项目](#start-the-project)，且 Visual Studio 启动 Outlook 来托管外接程序后，打开电子邮件或约会项目。
 
 只要满足激活条件，Outlook 便会为项目激活外接程序。外接程序栏显示在"检查器"窗口或阅读窗格的顶部，Outlook 外接程序显示为外接程序栏中的一个按钮。如果您的外接程序有外接程序命令，那么在默认选项卡或指定的自定义选项卡中将有一个按钮显示在功能区中，而该外接程序将不会显示在外接程序栏中。
 

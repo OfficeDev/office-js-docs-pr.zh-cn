@@ -3,12 +3,12 @@ title: 使用 SSO 对 Microsoft Graph 授权
 description: 了解 Office 外接程序的用户可以如何使用单一登录 (SSO) 从 Microsoft Graph 获取数据。
 ms.date: 07/30/2020
 localization_priority: Normal
-ms.openlocfilehash: 81e8a87c21682a76c73e5e7389e85cd4f20c6a1d
-ms.sourcegitcommit: 8fdd7369bfd97a273e222a0404e337ba2b8807b0
+ms.openlocfilehash: 68440a347e11d909f0ebd4d4d29892711646da5e
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "46573173"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47292902"
 ---
 # <a name="authorize-to-microsoft-graph-with-sso"></a>使用 SSO 对 Microsoft Graph 授权
 
@@ -31,15 +31,15 @@ ms.locfileid: "46573173"
 
 ![显示 SSO 流程的关系图](../images/sso-access-to-microsoft-graph.png)
 
-1. 在加载项中，JavaScript 调用新的 Office.js API [getAccessToken](/javascript/api/office-runtime/officeruntime.auth#getaccesstoken-options-)。 该操作告诉 Office 主机应用程序获取加载项的访问令牌。 （以下称为**启动访问令牌**，因为在该过程的后期它将会被替换为另一个令牌。 有关已解码启动访问令牌的示例，请参阅[示例访问令牌](sso-in-office-add-ins.md#example-access-token)。）
-2. 如果用户未登录，Office 主机应用会打开弹出窗口，以供用户登录。
+1. 在加载项中，JavaScript 调用新的 Office.js API [getAccessToken](/javascript/api/office-runtime/officeruntime.auth#getaccesstoken-options-)。 这将告知 Office 客户端应用程序获取外接程序的访问令牌。 （以下称为**启动访问令牌**，因为在该过程的后期它将会被替换为另一个令牌。 有关已解码启动访问令牌的示例，请参阅[示例访问令牌](sso-in-office-add-ins.md#example-access-token)。）
+2. 如果用户未登录，Office 客户端应用程序将打开一个弹出窗口，供用户登录。
 3. 如果当前用户是首次使用加载项，则会看到同意提示。
-4. Office 主机应用程序从当前用户的 Azure AD v2.0 终结点请求获取**启动访问令牌**。
-5. Azure AD 将启动令牌发送给 Office 主机应用程序。
-6. Office 主机应用程序在 `getAccessToken` 调用返回的结果对象中，将“**启动访问令牌**”发送给加载项。
+4. Office 客户端应用程序从当前用户的 Azure AD v2.0 终结点请求 **启动访问令牌** 。
+5. Azure AD 将引导令牌发送到 Office 客户端应用程序。
+6. Office 客户端应用程序将 **引导访问令牌** 作为调用返回的 result 对象的一部分发送到外接程序 `getAccessToken` 。
 7. 加载项中的 JavaScript 向 Web API（与加载项托管在同一完全限定的域中）发出 HTTP 请求，并添加**启动访问令牌**作为授权证明。
 8. 服务器端代码验证传入的**启动访问令牌**。
-9. 服务器端代码使用 "代表" 流 (在[OAuth2 令牌交换](https://tools.ietf.org/html/draft-ietf-oauth-token-exchange-02)和[守护程序或服务器应用程序上定义到 web API Azure 方案](/azure/active-directory/develop/active-directory-authentication-scenarios)) ，以获取 Exchange 中的 Microsoft Graph 访问令牌，以获取对启动访问令牌的 Exchange。
+9. 服务器端代码使用 "代表" 流 (在 [OAuth2 令牌交换](https://tools.ietf.org/html/draft-ietf-oauth-token-exchange-02) 和 [守护程序或服务器应用程序上定义到 web API Azure 方案](/azure/active-directory/develop/active-directory-authentication-scenarios)) ，以获取 Exchange 中的 Microsoft Graph 访问令牌，以获取对启动访问令牌的 Exchange。
 10. Azure AD 将 Microsoft Graph 访问令牌（如果加载项请求获取 *offline_access* 权限，则同时返回刷新令牌）返回给加载项。
 11. 服务器端代码缓存 Microsoft Graph 访问令牌。
 12. 服务器端代码向 Microsoft Graph 发出请求，并添加 Microsoft Graph 访问令牌。
@@ -68,13 +68,13 @@ ms.locfileid: "46573173"
 
 ## <a name="distributing-sso-enabled-add-ins-in-microsoft-appsource"></a>在 Microsoft AppSource 中分发启用了 SSO 的外接程序
 
-当 Microsoft 365 管理员从[AppSource](https://appsource.microsoft.com)获取加载项时，管理员可以通过[集中部署](../publish/centralized-deployment.md)来重新发布它，并向外接程序授予管理员同意，以访问 Microsoft Graph 作用域。 但是，最终用户也可以直接从 AppSource 获取外接程序，在这种情况下，用户必须向外接程序授予许可。 这可能会带来潜在的性能问题，我们为其提供了解决方案。
+当 Microsoft 365 管理员从 [AppSource](https://appsource.microsoft.com)获取加载项时，管理员可以通过 [集中部署](../publish/centralized-deployment.md) 来重新发布它，并向外接程序授予管理员同意，以访问 Microsoft Graph 作用域。 但是，最终用户也可以直接从 AppSource 获取外接程序，在这种情况下，用户必须向外接程序授予许可。 这可能会带来潜在的性能问题，我们为其提供了解决方案。
 
 如果您 `allowConsentPrompt` 的代码在的调用中传递选项 `getAccessToken` （例如 `OfficeRuntime.auth.getAccessToken( { allowConsentPrompt: true } );` ），则 Office 可以在 Azure AD 向 office 报告同意尚未授予外接程序的情况下提示用户同意。 但是，出于安全考虑，Office 只会提示用户同意 Azure AD `profile` 作用域。 *Office 不会提示同意任何 Microsoft Graph 作用域*，甚至不是偶数 `User.Read` 。 这意味着，如果用户向提示授予许可，Office 将返回一个引导令牌。 但是，尝试将访问令牌的引导令牌交换到 Microsoft Graph 的尝试将会失败，并出现错误 AADSTS65001，这意味着尚未授予对 Microsoft Graph 作用域) 的许可 (。
 
-您的代码可以，并应通过回退到备用的身份验证系统来处理此错误，这将提示用户同意 Microsoft Graph 作用域。  (有关代码示例的详细说明，请参阅[创建使用单一登录的 Node.js Office 加载项](create-sso-office-add-ins-nodejs.md)，并[创建使用单一登录的 ASP.NET office 加载](create-sso-office-add-ins-aspnet.md)项以及它们所链接到的示例。 ) 但整个过程需要多个到 Azure AD 的往返行程。 您可以通过 `forMSGraphAccess` 在调用中包括选项来避免这种性能下降 `getAccessToken` ，例如， `OfficeRuntime.auth.getAccessToken( { forMSGraphAccess: true } )` 。  这会向 Office 发出通知，指示你的外接程序需要 Microsoft Graph 作用域。 Office 将要求 Azure AD 验证是否已向外接程序授予 Microsoft Graph 作用域的同意。 如果已有，则将返回引导令牌。 如果没有，则调用 `getAccessToken` 将返回错误13012。 您的代码可以立即回退到备用的身份验证系统来处理此错误，而无需进行 doomed 尝试与 Azure AD 交换令牌。
+您的代码可以，并应通过回退到备用的身份验证系统来处理此错误，这将提示用户同意 Microsoft Graph 作用域。  (有关代码示例的详细说明，请参阅 [创建使用单一登录的 Node.js Office 加载项](create-sso-office-add-ins-nodejs.md) ，并 [创建使用单一登录的 ASP.NET office 加载](create-sso-office-add-ins-aspnet.md) 项以及它们所链接到的示例。 ) 但整个过程需要多个到 Azure AD 的往返行程。 您可以通过 `forMSGraphAccess` 在调用中包括选项来避免这种性能下降 `getAccessToken` ，例如， `OfficeRuntime.auth.getAccessToken( { forMSGraphAccess: true } )` 。  这会向 Office 发出通知，指示你的外接程序需要 Microsoft Graph 作用域。 Office 将要求 Azure AD 验证是否已向外接程序授予 Microsoft Graph 作用域的同意。 如果已有，则将返回引导令牌。 如果没有，则调用 `getAccessToken` 将返回错误13012。 您的代码可以立即回退到备用的身份验证系统来处理此错误，而无需进行 doomed 尝试与 Azure AD 交换令牌。
 
 最佳做法是，始终传递 `forMSGraphAccess` 给 `getAccessToken` 您的外接程序将在 AppSource 中分发，并需要 Microsoft Graph 作用域。
 
 > [!TIP]
-> 如果开发使用 SSO 的 Outlook 外接程序并旁加载它进行测试，则即使已*always* `forMSGraphAccess` `getAccessToken` 授予管理员同意，Office 也始终会返回错误13012。 因此，在 `forMSGraphAccess` 开发 Outlook 外接程序**时**，应注释掉该选项。 在部署生产时，请务必取消对该选项的注释。 仅当您在 Outlook 中进行旁加载时，才会发生虚假13012。
+> 如果开发使用 SSO 的 Outlook 外接程序并旁加载它进行测试，则即使已*always* `forMSGraphAccess` `getAccessToken` 授予管理员同意，Office 也始终会返回错误13012。 因此，在 `forMSGraphAccess` 开发 Outlook 外接程序 **时** ，应注释掉该选项。 在部署生产时，请务必取消对该选项的注释。 仅当您在 Outlook 中进行旁加载时，才会发生虚假13012。

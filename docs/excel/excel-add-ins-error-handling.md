@@ -3,19 +3,19 @@ title: 错误处理
 description: 了解有关 Excel JavaScript API 错误处理逻辑，以解决运行时错误。
 ms.date: 06/25/2020
 localization_priority: Normal
-ms.openlocfilehash: 8d410ae7eea315e14383b5aa08373ede3768cace
-ms.sourcegitcommit: 065bf4f8e0d26194cee9689f7126702b391340cc
+ms.openlocfilehash: 89df7723d48298862034751ab06bca766fedb30f
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "45006442"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47292550"
 ---
 # <a name="error-handling"></a>错误处理
 
 使用 Excel JavaScript API 生成加载项时，请务必加入错误处理逻辑，以便解决运行时错误。 鉴于 API 的异步特性，这样做非常关键。
 
 > [!NOTE]
-> 有关 `sync()` Excel JAVASCRIPT api 的方法和异步特性的详细信息，请参阅[使用 EXCEL javascript Api 的基本编程概念](excel-add-ins-core-concepts.md)。
+> 有关 `sync()` Excel JAVASCRIPT api 的方法和异步特性的详细信息，请参阅 [使用 EXCEL javascript Api 的基本编程概念](excel-add-ins-core-concepts.md)。
 
 ## <a name="best-practices"></a>最佳做法
 
@@ -45,7 +45,7 @@ Excel.run(function (context) {
 - **debugInfo**：出现此信息时，错误消息的 `debugInfo` 属性将提供其他信息，帮助理解错误根本原因。
 
 > [!NOTE]
-> 如果使用 `console.log()` 将错误消息打印到控制台，那么这些消息只会在服务器上可见。 最终用户将不会在外接程序任务窗格中或主机应用程序的任何位置看到这些错误消息。
+> 如果使用 `console.log()` 将错误消息打印到控制台，那么这些消息只会在服务器上可见。 最终用户将不会在加载项任务窗格中或 Office 应用程序中的任何位置看到这些错误消息。
 
 ## <a name="error-messages"></a>错误消息
 

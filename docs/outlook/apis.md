@@ -3,16 +3,16 @@ title: Outlook 加载项 API
 description: 了解如何引用 Outlook 加载项 API 并声明 Outlook 加载项中的权限。
 ms.date: 02/27/2020
 localization_priority: Normal
-ms.openlocfilehash: d09713da401c0298a6ebd756d6dfb3fd8dce5f0b
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: d7458eebf16a3d9373e59aa0455234437f25289b
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44607602"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47293994"
 ---
 # <a name="outlook-add-in-apis"></a>Outlook 外接程序 API
 
-要将 API 用于您的 Outlook 外接程序，您必须指定 Office.js 库的位置、要求集、架构和权限。 你将主要使用通过[邮箱](#mailbox-object)对象公开的 Office JavaScript api。
+要将 API 用于您的 Outlook 外接程序，您必须指定 Office.js 库的位置、要求集、架构和权限。 你将主要使用通过 [邮箱](#mailbox-object) 对象公开的 Office JavaScript api。
 
 ## <a name="officejs-library"></a>Office.js 库
 
@@ -26,7 +26,7 @@ ms.locfileid: "44607602"
 添加 API 时，Office.js 的 URL 将保持不变。仅当我们打破现有的 API 行为时，才会更改 URL 中的版本。
 
 > [!IMPORTANT]
-> 为任何 Office 主机应用程序开发外接程序时，请从页面的部分中引用 Office JavaScript API `<head>` 。 这样可确保 API 先于所有正文元素完全初始化。 Office 主机要求外接程序在激活 5 秒钟内进行初始化。 超过此阈值会导致声明的外接程序无响应，并且会向用户显示错误消息。
+> 为任何 Office 客户端应用程序开发外接程序时，请从页面的部分中引用 Office JavaScript API `<head>` 。 这样可确保 API 先于所有正文元素完全初始化。 Office 应用程序要求外接程序在激活5秒内初始化。 超过此阈值会导致声明的外接程序无响应，并且会向用户显示错误消息。
 
 ## <a name="requirement-sets"></a>要求集
 
@@ -64,7 +64,7 @@ if (item.somePropertyOrFunction) {
 | **读/写** | 除了**读取项**所允许的权限，它还允许：<ul><li>Outlook 加载项 API 的完全访问权限，但不包括 `makeEwsRequestAsync`</li><li>设置项属性</li></ul> |
 | **读/写邮箱** | 除了**读/写**所允许的权限，它还允许：<ul><li>创建、读取、写入项和文件夹</li><li>发送项目</li><li>调用 [makeEwsRequestAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md#methods)</li></ul> |
 
-一般情况下，应该指定加载项所需的最小权限。 权限在清单的 `<Permissions>` 元素中声明。 有关更多信息，请参阅 [Outlook 加载项清单](manifests.md)。 有关安全问题的信息，请参阅[Office 外接程序的隐私和安全性](../concepts/privacy-and-security.md)。
+一般情况下，应该指定加载项所需的最小权限。 权限在清单的 `<Permissions>` 元素中声明。 有关更多信息，请参阅 [Outlook 加载项清单](manifests.md)。 有关安全问题的信息，请参阅 [Office 外接程序的隐私和安全性](../concepts/privacy-and-security.md)。
 
 ## <a name="mailbox-object"></a>Mailbox 对象
 

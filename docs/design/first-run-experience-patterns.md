@@ -3,12 +3,12 @@ title: Office 外接程序的首次运行体验模式
 description: 了解在 Office 外接程序中设计首次运行体验的最佳实践。
 ms.date: 06/26/2018
 localization_priority: Normal
-ms.openlocfilehash: f89656b9c1d1741f38a7122ba11440d2dfca46bf
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: c0528e869dd8ee7fe779785fb1a9b6d347deab75
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44608521"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47292951"
 ---
 # <a name="first-run-experience-patterns"></a>首次运行体验模式
 
@@ -40,17 +40,17 @@ ms.locfileid: "44608521"
 
 旋转式传送让用户能够在开始使用外接程序之前浏览一系列功能或信息页面。
 
-*图 1：允许用户跳过旋转式传送流的开始页面。*
-![首次运行 - 旋转式传送 - 桌面任务窗格规范](../images/add-in-FRE-step-1.png)
+*图1：允许用户提前或跳过轮播流的起始页。* 
+ ![第一次运行-轮播第1步-桌面任务窗格规范](../images/add-in-FRE-step-1.png)
 
 
 
-*图 2：最小化向用户显示的旋转式传送屏幕的数量，仅提供其所需的信息，以有效传递信息*
-![首次运行 - 旋转式传送 - 桌面任务窗格规范](../images/add-in-FRE-step-2.png)
+*图2：最大限度地减少向用户显示的轮播屏幕的数量，仅显示有效传达邮件所需的屏幕数量。* 
+ ![第一次运行-轮播第2步-桌面任务窗格规范](../images/add-in-FRE-step-2.png)
 
 
-*图 3：提供明确的行动号召，以退出首次运行体验。*
-![首次运行 - 旋转式传送 - 桌面任务窗格规范](../images/add-in-FRE-step-3.png)
+*图3：提供对操作的明确调用，以退出首次运行体验。* 
+ ![第一次运行-轮播步骤 3-桌面任务窗格规范](../images/add-in-FRE-step-3.png)
 
 
 
@@ -60,8 +60,8 @@ ms.locfileid: "44608521"
 
 
 
-![首次运行 - 值占位图片 - 桌面任务窗格规范](../images/add-in-FRE-value.png)
-*具有徽标、明确价值主张、功能汇总和行动号召的值占位图片。*
+![第一次运行值占位图片-桌面任务窗格的规范 ](../images/add-in-FRE-value.png)
+ *A 值占位图片加徽标、清除价值主张、功能摘要和行动要求。*
 
 
 ### <a name="video-placemat"></a>视频占位图片
@@ -69,9 +69,10 @@ ms.locfileid: "44608521"
 视频占位图片可以在用户开始使用外接程序之前向其显示视频。
 
 
-*图 1：首次运行占位图片 - 该屏幕包含视频中的一个静止图像以及一个播放按钮和明确的行动号召按钮。*![视频占位图片 - 桌面任务窗格规范](../images/add-in-FRE-video.png)
+*图1：首次运行占位图片-屏幕包含视频中的静止图像和 "播放" 按钮，并清除 "动作到行动" 按钮。* 
+ ![视频占位图片-桌面任务窗格的规范](../images/add-in-FRE-video.png)
 
 
 
-*图 2：视频播放器 - 在对话窗口内向用户展示视频。*
-![视频占位图片 - 桌面任务窗格规范](../images/add-in-FRE-video-dialog.png)
+*图2：视频播放器-在对话框窗口中向用户显示视频。* 
+ ![视频占位图片-桌面任务窗格的规范](../images/add-in-FRE-video-dialog.png)

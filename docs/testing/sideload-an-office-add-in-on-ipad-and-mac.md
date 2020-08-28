@@ -3,12 +3,12 @@ title: 在 iPad 和 Mac 上旁加载 Office 加载项以供测试
 description: 通过旁加载在 iPad 和 Mac 上测试 Office 外接程序
 ms.date: 02/18/2020
 localization_priority: Normal
-ms.openlocfilehash: 092207898547969a361b10d72fad106311563907
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 1a1cb804a72aa182480d06009cf30b41a37276d2
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44611138"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47292200"
 ---
 # <a name="sideload-office-add-ins-on-ipad-and-mac-for-testing"></a>在 iPad 和 Mac 上旁加载 Office 加载项以供测试
 
@@ -36,7 +36,7 @@ ms.locfileid: "44611138"
 
 ## <a name="sideload-an-add-in-on-excel-or-word-on-ipad"></a>在 iPad 版 Excel 或 iPad 版 Word 上旁加载加载项
 
-1. 使用同步电缆将 iPad 连接到你的计算机。 如果你是首次将 iPad 连接到你的计算机，系统会提示你**信任此计算机？**。 选择“**信任**”继续执行操作。
+1. 使用同步电缆将 iPad 连接到你的计算机。 如果你是首次将 iPad 连接到你的计算机，系统会提示你 **信任此计算机？**。 选择“**信任**”继续执行操作。
 
 2. 在 iTunes 中，选择菜单栏下的“iPad”**** 图标。
 
@@ -44,9 +44,9 @@ ms.locfileid: "44611138"
 
 4. 在 iTunes 右侧，向下滚动到“文件共享”****，然后在“外接程序”**** 列下选择“Excel”**** 或“Word”****。
 
-5. 在 " **Excel** " 或 " **Word 文档**" 列底部，选择 "**添加文件**"，然后选择要旁加载的加载项的清单 .xml 文件。
+5. 在 " **Excel** " 或 " **Word 文档** " 列底部，选择 " **添加文件**"，然后选择要旁加载的加载项的清单 .xml 文件。
 
-6. 在你的 iPad 上打开 Excel 或 Word 应用。 如果 Excel 或 Word 应用程序已在运行，请选择 "**主页**" 按钮，然后关闭并重新启动该应用。
+6. 在你的 iPad 上打开 Excel 或 Word 应用。 如果 Excel 或 Word 应用程序已在运行，请选择 " **主页** " 按钮，然后关闭并重新启动该应用。
 
 7. 打开一个文档。
 
@@ -59,19 +59,19 @@ ms.locfileid: "44611138"
 > [!NOTE]
 > 若要旁加载 Mac 版 Outlook 加载项，请参阅[旁加载 Outlook 加载项进行测试](../outlook/sideload-outlook-add-ins-for-testing.md)。
 
-1. 打开 "**终端**" 并转到以下文件夹之一，您将在其中保存外接程序的清单文件。 如果 `wef` 文件夹在你的计算机上不存在，请创建它。
+1. 打开 " **终端** " 并转到以下文件夹之一，您将在其中保存外接程序的清单文件。 如果 `wef` 文件夹在你的计算机上不存在，请创建它。
 
     - 对于 Word：`/Users/<username>/Library/Containers/com.microsoft.Word/Data/Documents/wef`    
     - 对于 Excel：`/Users/<username>/Library/Containers/com.microsoft.Excel/Data/Documents/wef`
     - 对于 PowerPoint：`/Users/<username>/Library/Containers/com.microsoft.Powerpoint/Data/Documents/wef`
 
-2. 使用命令**Finder** `open .` （包括句点或点）在查找器中打开文件夹。 将你的外接程序的清单文件复制到该文件夹中。
+2. 使用命令**Finder** `open .` (包含句点或点) 的命令在查找器中打开文件夹。 将你的外接程序的清单文件复制到该文件夹中。
 
     ![Mac 版 Office 中的 Wef 文件夹](../images/all-my-files.png)
 
 3. 打开 Word，然后打开一个文档。如果 Word 已运行，则重新启动它。
 
-4. 在 Word 中，选择 "**插入**  >  **外接程序**  >  **" "我的外接**程序" （下拉菜单），然后选择您的外接程序。
+4. 在 Word 中，选择 "在外接程序中**插入**  >  **外**接程序  >  **"** (下拉菜单) ，然后选择您的外接程序。
 
     ![Mac 版 Office 中的“我的加载项”](../images/my-add-ins-wikipedia.png)
 
@@ -84,7 +84,7 @@ ms.locfileid: "44611138"
 
 ## <a name="remove-a-sideloaded-add-in"></a>删除旁加载加载项
 
-您可以通过清除计算机上的 Office 缓存来删除以前的旁加载外接程序。 有关如何清除每个平台和主机的缓存的详细信息，请参阅文章[清除 Office 缓存](clear-cache.md)中的。
+您可以通过清除计算机上的 Office 缓存来删除以前的旁加载外接程序。 有关如何清除每个平台和应用程序的缓存的详细信息，请参阅 [清除 Office 缓存](clear-cache.md)中的一文。
 
 ## <a name="see-also"></a>另请参阅
 

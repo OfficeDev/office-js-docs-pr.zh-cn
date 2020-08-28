@@ -3,12 +3,12 @@ title: Outlook 加载项的激活规则
 description: 如果用户正在读取或撰写的邮件或约会符合加载项的激活规则，则 Outlook 将激活某些类型的加载项。
 ms.date: 12/10/2019
 localization_priority: Normal
-ms.openlocfilehash: 5fdf8499b802291539f855cce6e0a810573c8798
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 7a3ed48f77146a25725d46b3e06296cb0eb5616a
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44611678"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47294050"
 ---
 # <a name="activation-rules-for-contextual-outlook-add-ins"></a>上下文 Outlook 加载项的激活规则
 
@@ -33,7 +33,7 @@ ms.locfileid: "44611678"
  > 
  > 例如，以下规则定义了 [ItemIs](../reference/manifest/rule.md#itemis-rule) 规则：`<Rule xsi:type="ItemIs" ItemType="Message" />`
  > 
- > 该 `FormType` 属性适用于清单 v1.1 中的激活规则，但未在 v1.0 中定义 `VersionOverrides` 。 因此，当在节点中使用[ItemIs](../reference/manifest/rule.md#itemis-rule)时，不能使用它 `VersionOverrides` 。
+ > 该 `FormType` 属性适用于清单 v1.1 中的激活规则，但未在 v1.0 中定义 `VersionOverrides` 。 因此，当在节点中使用 [ItemIs](../reference/manifest/rule.md#itemis-rule) 时，不能使用它 `VersionOverrides` 。
 
 下表列出了可用的规则类型。你可以在表后面以及[创建适用于阅读窗体的 Outlook 外接程序](read-scenario.md)中指定的文章中查找更多信息。
 
@@ -60,7 +60,7 @@ ms.locfileid: "44611678"
 |**约会**|在 Outlook 日历中指定一个项目。这包括已获取响应并且具有组织者和参与者的会议项目，或者没有组织者或参与者且仅为日历上的一个项目的约会。这与 Outlook 中的 IPM.Appointment 邮件类别相对应。|
 |**邮件**|指定通常在"收件箱"中收到的以下项目之一： <ul><li><p>电子邮件。这与 Outlook 中的 IPM.Note 邮件类别相对应。</p></li><li><p>会议请求、响应或取消。对应于 Outlook 中的以下邮件类别：</p><p>IPM.Schedule.Meeting.Request</p><p>IPM.Schedule.Meeting.Neg</p><p>IPM.Schedule.Meeting.Pos</p><p>IPM.Schedule.Meeting.Tent</p><p>IPM.Schedule.Meeting.Canceled</p></li></ul>|
 
-该 `FormType` 属性用于指定应在其中激活加载项的模式（阅读或撰写）。
+该 `FormType` 属性用于指定应在其中激活加载项)  (阅读或撰写的模式。
 
 
  > [!NOTE]
@@ -68,7 +68,7 @@ ms.locfileid: "44611678"
 
 激活外接程序后，可以使用 [mailbox.item](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md) 属性获取 Outlook 中的当前所选项，以及使用 [item.itemType](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties) 属性获取当前项的类型。
 
-您可以选择使用 `ItemClass` 属性来指定项目的邮件类，并 `IncludeSubClasses` 指定当项目是指定类的子类时，该规则是否应为**true**的属性。
+您可以选择使用 `ItemClass` 属性来指定项目的邮件类，并 `IncludeSubClasses` 指定当项目是指定类的子类时，该规则是否应为 **true** 的属性。
 
 若要详细了解邮件类，请参阅[项类型和邮件类](/office/vba/outlook/Concepts/Forms/item-types-and-message-classes)。
 
@@ -144,7 +144,7 @@ ms.locfileid: "44611678"
 <Rule xsi:type="ItemHasRegularExpressionMatch" RegExName="fruits" RegExValue="apple|banana|coconut" pPropertyName="BodyAsPlaintext" IgnoreCase="true" />
 ```
 
-有关使用规则的详细信息 `ItemHasRegularExpressionMatch` ，请参阅[使用正则表达式激活规则显示 Outlook 外接程序](use-regular-expressions-to-show-an-outlook-add-in.md)。
+有关使用规则的详细信息 `ItemHasRegularExpressionMatch` ，请参阅 [使用正则表达式激活规则显示 Outlook 外接程序](use-regular-expressions-to-show-an-outlook-add-in.md)。
 
 
 ## <a name="rulecollection-rule"></a>RuleCollection 规则
@@ -182,7 +182,7 @@ ms.locfileid: "44611678"
 ## <a name="limits-for-rules-and-regular-expressions"></a>规则和正则表达式的限制
 
 
-为了提供使用 Outlook 外接程序的满意体验，您应该遵守激活和 API 使用准则。下表显示了正则表达式和规则的常规限制，但不同主机存在特定规则。有关详细信息，请参阅 [Outlook 外接程序的激活和 JavaScript API 的限制](limits-for-activation-and-javascript-api-for-outlook-add-ins.md)和 [排查 Outlook 外接程序激活问题](troubleshoot-outlook-add-in-activation.md)。
+若要在 Outlook 外接程序中提供满意的体验，应遵循激活和 API 使用指南。下表显示了正则表达式和规则的常规限制，但对于不同的应用程序有特定的规则。有关详细信息，请参阅 [适用于激活的限制和适用于 outlook 外接程序的 JAVASCRIPT API](limits-for-activation-and-javascript-api-for-outlook-add-ins.md) 和 [疑难解答 outlook 外接程序激活](troubleshoot-outlook-add-in-activation.md)。
 
 <br/>
 
@@ -191,7 +191,7 @@ ms.locfileid: "44611678"
 |清单大小|不大于 256 KB。|
 |规则|不超过 15 条规则。|
 |ItemHasKnownEntity|Outlook 富客户端将对正文的前 1 MB 内容应用规则，对正文其余部分则不应用。|
-|正则表达式|对于所有 Outlook 主机的 ItemHasKnownEntity 或 ItemHasRegularExpressionMatch 规则：<br><ul><li>在 Outlook 加载项的激活规则中指定不超过 5 个正则表达式。如果超过该限制，则无法安装加载项。</li><li>指定由 <b>getRegExMatches</b> 方法调用在前 50 个匹配项内返回其预期结果的正则表达式。 </li><li>在正则表达式中指定向前断言，但不支持向后 `(?<=text)` 和否定向后 `(?<!text)` 断言。</li><li>指定其匹配不超过下表中的限制的正则表达式。<br/><br/><table><tr><th>正则表达式匹配项的长度限制</th><th>Outlook 富客户端</th><th>iOS 版和 Android 版 Outlook</th></tr><tr><td>项目正文采用纯文本</td><td>1.5 KB</td><td>3 KB</td></tr><tr><td>项目正文采用 HTML</td><td>3 KB</td><td>3KB</td></tr></table>|
+|正则表达式|对于所有 Outlook 应用程序的 ItemHasKnownEntity 或 ItemHasRegularExpressionMatch 规则：<br><ul><li>在 Outlook 加载项的激活规则中指定不超过 5 个正则表达式。如果超过该限制，则无法安装加载项。</li><li>指定由 <b>getRegExMatches</b> 方法调用在前 50 个匹配项内返回其预期结果的正则表达式。 </li><li>在正则表达式中指定向前断言，但不支持向后 `(?<=text)` 和否定向后 `(?<!text)` 断言。</li><li>指定其匹配不超过下表中的限制的正则表达式。<br/><br/><table><tr><th>正则表达式匹配项的长度限制</th><th>Outlook 富客户端</th><th>iOS 版和 Android 版 Outlook</th></tr><tr><td>项目正文采用纯文本</td><td>1.5 KB</td><td>3 KB</td></tr><tr><td>项目正文采用 HTML</td><td>3 KB</td><td>3KB</td></tr></table>|
 
 ## <a name="see-also"></a>另请参阅
 

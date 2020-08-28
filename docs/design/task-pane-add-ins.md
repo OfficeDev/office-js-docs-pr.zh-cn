@@ -3,12 +3,12 @@ title: Office 加载项中的任务窗格
 description: 任务窗格允许用户访问界面控件，此类控件运行代码以修改文档或电子邮件，或显示数据源中的数据。
 ms.date: 07/07/2020
 localization_priority: Normal
-ms.openlocfilehash: 39a96f4d5aa63d55f4dcb30d9aeb9e680357aa09
-ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
+ms.openlocfilehash: 6d1641c2262b1d1c7b0e4570c357d36d265c80de
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "45093754"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47292958"
 ---
 # <a name="task-panes-in-office-add-ins"></a>Office 加载项中的任务窗格
  
@@ -45,7 +45,7 @@ ms.locfileid: "45093754"
 
 *图3。Office 任务窗格大小*
 
-![显示尺寸为 1366x768 的桌面任务窗格的图像](../images/office-365-taskpane-sizes.png)
+![显示1366x768 的任务窗格大小的图像](../images/office-365-taskpane-sizes.png)
 
 - Excel - 350 x 378
 - PowerPoint - 348x391

@@ -2,14 +2,14 @@
 title: '配置 Outlook 外接程序以进行基于事件的激活 (预览) '
 description: 了解如何配置 Outlook 外接程序以进行基于事件的激活。
 ms.topic: article
-ms.date: 08/18/2020
+ms.date: 08/24/2020
 localization_priority: Normal
-ms.openlocfilehash: 736573fb5ab5b50841348f55d89ae15e4d174a22
-ms.sourcegitcommit: e9f23a2857b90a7c17e3152292b548a13a90aa33
+ms.openlocfilehash: 0131cafa8315315d63b6319ecad4fd41b1168073
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/19/2020
-ms.locfileid: "46803749"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47293924"
 ---
 # <a name="configure-your-outlook-add-in-for-event-based-activation-preview"></a>配置 Outlook 外接程序以进行基于事件的激活 (预览) 
 
@@ -193,6 +193,9 @@ Windows 上的 outlook 使用 JavaScript 文件，而 web 上的 Outlook 使用�
     ```command&nbsp;line
     npm start
     ```
+
+    > [!IMPORTANT]
+    > 如果看到 "旁加载不受支持" 错误，则可以忽略它并继续。
 
 1. 按照[旁加载 Outlook 加载项以供测试](sideload-outlook-add-ins-for-testing.md)中的说明操作，旁加载加载项。
 

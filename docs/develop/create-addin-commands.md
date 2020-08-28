@@ -1,18 +1,18 @@
 ---
-title: 在您的清单中创建 Excel、PowerPoint 和 Word 的外接程序命令
+title: 在清单中创建 Excel、PowerPoint 和 Word 加载项命令
 description: 在清单中使用 VersionOverrides 定义 Excel、PowerPoint 和 Word 的外接程序命令。使用外接命令创建 UI 元素、添加按钮或列表并执行操作。
 ms.date: 05/27/2020
 localization_priority: Normal
-ms.openlocfilehash: 3bcd3c6e07cdb9899601403e68e80e8d609d2e6e
-ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
+ms.openlocfilehash: 1b86aa6c7b7303740ee03f20e28e63fd921dbbf5
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "45093712"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47292895"
 ---
-# <a name="create-add-in-commands-in-your-manifest-for-excel-powerpoint-and-word"></a>在您的清单中创建 Excel、PowerPoint 和 Word 的外接程序命令
+# <a name="create-add-in-commands-in-your-manifest-for-excel-powerpoint-and-word"></a>在清单中创建 Excel、PowerPoint 和 Word 加载项命令
 
-在清单中使用**[VersionOverrides](../reference/manifest/versionoverrides.md)** 定义 Excel、PowerPoint 和 Word 的外接程序命令。外接程序命令提供了使用执行操作的指定 UI 元素) 自定义默认 Office 用户界面 (UI 的简单方法。您可以使用外接命令执行以下操作：
+在清单中使用 **[VersionOverrides](../reference/manifest/versionoverrides.md)** 定义 Excel、PowerPoint 和 Word 的外接程序命令。外接程序命令提供了使用执行操作的指定 UI 元素) 自定义默认 Office 用户界面 (UI 的简单方法。您可以使用外接命令执行以下操作：
 
 - 创建 UI 元素或入口点，以便能够更易于使用你的外接程序功能。
 - 向功能区中添加按钮或下拉列表按钮。
@@ -27,7 +27,7 @@ ms.locfileid: "45093712"
 本文介绍如何编辑您的清单来定义外接程序命令。下图显示了用来定义外接程序命令的元素的层次结构。本文将具体介绍这些元素。
 
 > [!NOTE]
-> Outlook 中也支持加载项命令。 有关详细信息，请参阅[适用于 Outlook 的外接程序命令](../outlook/add-in-commands-for-outlook.md)
+> Outlook 中也支持加载项命令。 有关详细信息，请参阅 [适用于 Outlook 的外接程序命令](../outlook/add-in-commands-for-outlook.md)
 
 下图是对清单中的加载项命令元素的概述。 ![清单中的加载项命令元素概述](../images/version-overrides.png)
 
@@ -84,8 +84,8 @@ ms.locfileid: "45093712"
 |**元素**|**说明**|
 |:-----|:-----|
 |**说明** <br/> |可选。描述外接程序。此子级 **Description** 元素替代清单中父级部分中的旧 **Description** 元素。此 **Description** 元素的 **resid** 属性将设置为 **String** 元素的 **id**。**String** 元素包含 **Description** 的文本。 <br/> |
-|**Requirements** <br/> |可选。指定外接程序要求的最低要求集和 Office.js 的版本。此子级 **Requirements** 元素替代清单中父级部分中的 **Requirements** 元素。有关详细信息，请参阅[指定 Office 主机和 API 要求](../develop/specify-office-hosts-and-api-requirements.md)。  <br/> |
-|**Hosts** <br/> |必需。指定 Office 主机的集合。子级 **Hosts** 元素替代清单中父级部分中的 **Hosts** 元素。必须包含已设置为“Workbook”或“Document”的 **xsi:type** 属性 <br/> |
+|**Requirements** <br/> |可选。 指定外接程序要求的最低要求集和 Office.js 的版本。 此子级 **Requirements** 元素替代清单中父级部分中的 **Requirements** 元素。 有关详细信息，请参阅 [指定 Office 应用程序和 API 要求](../develop/specify-office-hosts-and-api-requirements.md)。  <br/> |
+|**Hosts** <br/> |必需。 指定 Office 应用程序的集合。 子级 **Hosts** 元素替代清单中父级部分中的 **Hosts** 元素。 必须包含已设置为“Workbook”或“Document”的 **xsi:type** 属性 <br/> |
 |**Resources** <br/> |定义其他清单元素引用的资源集合（字符串、URL 和图像）。例如，**Description** 元素的值引用了 **Resources** 中的子元素。**Resources** 元素将在本文后续部分中的[步骤 7：添加 Resources 元素](#step-7-add-the-resources-element)中进行介绍。 <br/> |
 
 下面的示例演示如何使用 **VersionOverrides** 元素及其子元素。
@@ -116,7 +116,7 @@ ms.locfileid: "45093712"
 
 ## <a name="step-4-add-hosts-host-and-desktopformfactor-elements"></a>步骤 4：添加 Hosts、Host 和 DesktopFormFactor 元素
 
-**Hosts** 元素包含一个或多个 **Host** 元素。一个 **Host** 元素指定一个特定的 Office 主机。**Host** 元素包含子元素，这些子元素用于指定在对应的 Office 主机安装外接程序后要显示的外接程序命令。若要在两个或更多个不同的 Office 主机中显示相同的外接程序命令，必须在每个 **Host** 中使用相同的子元素。
+“Hosts”**** 元素包含一个或多个“Host”**** 元素。 **Host**元素指定特定的 Office 应用程序。 **Host**元素包含子元素，这些子元素指定在将外接程序安装在该 Office 应用程序中后要显示的外接程序命令。 若要在两个或更多不同的 Office 应用程序中显示相同的外接程序命令，必须复制每个 **主机**中的子元素。
 
 **DesktopFormFactor** 元素指定在 Office 网页版（浏览器版）和 Windows 版 Office 中运行的加载项的设置。
 
@@ -244,10 +244,10 @@ ms.locfileid: "45093712"
 </ExtensionPoint>
 ```
 
-|**元素**|**描述**|
+|**元素**|**说明**|
 |:-----|:-----|
 |**CustomTab** <br/> |如果想要（使用 **PrimaryCommandSurface**）向功能区添加自定义选项卡，则为必需项。如果使用 **CustomTab** 元素，则不能使用 **OfficeTab** 元素。**id** 属性是必需的。 <br/> |
-|**OfficeTab** <br/> |如果要使用**PrimaryCommandSurface**) 扩展默认的 Office 应用功能区选项卡 (，则为必需。 如果使用 **OfficeTab** 元素，则不能使用 **CustomTab** 元素。 <br/> 有关**id**属性使用的更多 tab 值，请参阅[默认 Office 应用功能区选项卡的 tab 值](../reference/manifest/officetab.md)。  <br/> |
+|**OfficeTab** <br/> |如果要使用 **PrimaryCommandSurface**) 扩展默认的 Office 应用功能区选项卡 (，则为必需。 如果使用 **OfficeTab** 元素，则不能使用 **CustomTab** 元素。 <br/> 有关 **id** 属性使用的更多 tab 值，请参阅 [默认 Office 应用功能区选项卡的 tab 值](../reference/manifest/officetab.md)。  <br/> |
 |**OfficeMenu** <br/> | 如果要（使用 **ContextMenu**）将外接程序命令添加到默认上下文菜单中，则为必需项。**id** 属性必须设置为： <br/> 当用户选定文本，然后右键单击所选文本时，适用于 Excel 或 Word 的 **ContextMenuText**显示上下文菜单上的项。<br/> 适用于 Excel 的 **ContextMenuCell**。当用户右键单击电子表格中的某个单元格时显示上下文菜单上的项。 <br/> |
 |**Group** <br/> |选项卡上的一组用户界面扩展点。一组可以有多达六个控件。**id** 属性是必需的。它是一个最多为 125 个字符的字符串。 <br/> |
 |**Label** <br/> |必需。组标签。**resid** 属性必须设置为 **String** 元素的 **id** 属性的值。**String** 元素是 **ShortStrings** 元素的子元素，而 ShortStrings 元素是 **Resources** 元素的子元素。 <br/> |
@@ -431,7 +431,7 @@ ms.locfileid: "45093712"
 
 在 Excel 和 Word 中，可以使用默认 Office UI 选项卡，在功能区上添加加载项命令。下表列出了可用于 **OfficeTab** 元素的 **id** 属性的值。这些 Tab 值区分大小写。
 
-|**Office 主机应用**|**Tab 值**|
+|**Office 客户端应用程序**|**Tab 值**|
 |:-----|:-----|
 |Excel  <br/> |**TabHome**         **TabInsert**         **TabPageLayoutExcel**         **TabFormulas**         **TabData**         **TabReview**         **TabView**         **TabDeveloper**         **TabAddIns**         **TabPrintPreview**         **TabBackgroundRemoval** <br/> |
 |Word  <br/> |**TabHome**         **TabInsert**         **TabWordDesign**         **TabPageLayoutWord**         **TabReferences**         **TabMailings**         **TabReviewWord**         **TabView**         **TabDeveloper**         **TabAddIns**         **TabBlogPost**         **TabBlogInsert**         **TabPrintPreview**         **TabOutlining**         **TabConflicts**         **TabBackgroundRemoval**         **TabBroadcastPresentation** <br/> |

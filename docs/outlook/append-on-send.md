@@ -2,14 +2,14 @@
 title: '在 Outlook 加载项中实现向外接程序发送 (预览) '
 description: 了解如何在 Outlook 外接程序中实现 "发送时发送" 功能。
 ms.topic: article
-ms.date: 08/11/2020
+ms.date: 08/24/2020
 localization_priority: Normal
-ms.openlocfilehash: fbc2f11006d6f02d44365294476aee8aa3e262c7
-ms.sourcegitcommit: 65c15a9040279901ea7ff7f522d86c8fddb98e14
+ms.openlocfilehash: 951f42b82a956d43796144ed94f086d9fb078ca4
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "46672727"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47293987"
 ---
 # <a name="implement-append-on-send-in-your-outlook-add-in-preview"></a>在 Outlook 加载项中实现向外接程序发送 (预览) 
 
@@ -184,6 +184,9 @@ ms.locfileid: "46672727"
     ```command&nbsp;line
     npm start
     ```
+
+    > [!IMPORTANT]
+    > 如果看到 "旁加载不受支持" 错误，则可以忽略它并继续。
 
 1. 按照 [旁加载 Outlook 外接程序](sideload-outlook-add-ins-for-testing.md)中的说明进行操作，以进行测试。
 

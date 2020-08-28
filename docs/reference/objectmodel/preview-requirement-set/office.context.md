@@ -3,18 +3,18 @@ title: Office. context-预览要求集
 description: 使用邮箱 API preview 要求集的 Outlook 外接程序可用的 Context 对象成员。
 ms.date: 03/18/2020
 localization_priority: Normal
-ms.openlocfilehash: 0e0ea973032bb5cd854856920e192522f90a26a1
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 5987f81b0b4790b74bde092fc3de44df4fa3ed16
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44612022"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47293812"
 ---
-# <a name="context-mailbox-preview-requirement-set"></a>context （邮箱预览要求集）
+# <a name="context-mailbox-preview-requirement-set"></a> (邮箱预览要求集的上下文) 
 
 ### <a name="officecontext"></a>[Office](office.md).context
 
-在所有 Office 应用中，上下文提供外接程序使用的共享接口。 此列表仅记录 Outlook 外接程序使用的那些接口。有关 "context" 命名空间的完整列表，请参阅[通用 API 中的 "office. context reference](/javascript/api/office/office.context?view=outlook-js-preview)"。
+在所有 Office 应用中，上下文提供外接程序使用的共享接口。 此列表仅记录 Outlook 外接程序使用的那些接口。有关 "context" 命名空间的完整列表，请参阅 [通用 API 中的 "office. context reference](/javascript/api/office/office.context?view=outlook-js-preview)"。
 
 ##### <a name="requirements"></a>Requirements
 
@@ -25,25 +25,25 @@ ms.locfileid: "44612022"
 
 ##### <a name="properties"></a>属性
 
-| 属性 | 型号 | 返回类型 | 最低<br>要求集 |
+| 属性 | 型号 | 返回类型 | 最小值<br>要求集 |
 |---|---|---|:---:|
-| [认证](#auth-auth) | 撰写<br>Read | [Auth](/javascript/api/office/office.auth?view=outlook-js-preview) | [预览](../preview-requirement-set/outlook-requirement-set-preview.md) |
-| [contentLanguage](#contentlanguage-string) | 撰写<br>Read | String | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| [过程](#diagnostics-contextinformation) | 撰写<br>Read | [ContextInformation](/javascript/api/office/office.contextinformation?view=outlook-js-preview) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| [displayLanguage](#displaylanguage-string) | 撰写<br>Read | String | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| [host](#host-hosttype) | 撰写<br>Read | [HostType](/javascript/api/office/office.hosttype?view=outlook-js-preview) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| [mailbox](office.context.mailbox.md) | 撰写<br>Read | [邮箱](/javascript/api/outlook/office.mailbox?view=outlook-js-preview) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| [officeTheme](#officetheme-officetheme) | 撰写<br>Read | [OfficeTheme](/javascript/api/office/office.officetheme?view=outlook-js-preview) | [预览](../preview-requirement-set/outlook-requirement-set-preview.md) |
-| [平台](#platform-platformtype) | 撰写<br>Read | [PlatformType](/javascript/api/office/office.platformtype?view=outlook-js-preview) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| [满足](#requirements-requirementsetsupport) | 撰写<br>Read | [RequirementSetSupport](/javascript/api/office/office.requirementsetsupport?view=outlook-js-preview) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| [roamingSettings](#roamingsettings-roamingsettings) | 撰写<br>Read | [RoamingSettings](/javascript/api/outlook/office.roamingsettings?view=outlook-js-preview) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| [ui](#ui-ui) | 撰写<br>Read | [UI](/javascript/api/office/office.ui?view=outlook-js-preview) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [认证](#auth-auth) | 撰写<br>阅读 | [Auth](/javascript/api/office/office.auth?view=outlook-js-preview) | [预览](../preview-requirement-set/outlook-requirement-set-preview.md) |
+| [contentLanguage](#contentlanguage-string) | 撰写<br>阅读 | String | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [过程](#diagnostics-contextinformation) | 撰写<br>阅读 | [ContextInformation](/javascript/api/office/office.contextinformation?view=outlook-js-preview) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [displayLanguage](#displaylanguage-string) | 撰写<br>阅读 | String | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [host](#host-hosttype) | 撰写<br>阅读 | [HostType](/javascript/api/office/office.hosttype?view=outlook-js-preview) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [mailbox](office.context.mailbox.md) | 撰写<br>阅读 | [邮箱](/javascript/api/outlook/office.mailbox?view=outlook-js-preview) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [officeTheme](#officetheme-officetheme) | 撰写<br>阅读 | [OfficeTheme](/javascript/api/office/office.officetheme?view=outlook-js-preview) | [预览](../preview-requirement-set/outlook-requirement-set-preview.md) |
+| [平台](#platform-platformtype) | 撰写<br>阅读 | [PlatformType](/javascript/api/office/office.platformtype?view=outlook-js-preview) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [满足](#requirements-requirementsetsupport) | 撰写<br>阅读 | [RequirementSetSupport](/javascript/api/office/office.requirementsetsupport?view=outlook-js-preview) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [roamingSettings](#roamingsettings-roamingsettings) | 撰写<br>阅读 | [RoamingSettings](/javascript/api/outlook/office.roamingsettings?view=outlook-js-preview) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [ui](#ui-ui) | 撰写<br>阅读 | [UI](/javascript/api/office/office.ui?view=outlook-js-preview) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 
 ## <a name="property-details"></a>属性详细信息
 
 #### <a name="auth-auth"></a>auth： [auth](/javascript/api/office/office.auth)
 
-通过提供一种方法来支持[单一登录（SSO）](../../../outlook/authenticate-a-user-with-an-sso-token.md) ，使 Office 主机能够获取加载项的 web 应用程序的访问令牌。 这也使加载项能够间接访问已登录用户的 Microsoft Graph 数据，而不需要用户第二次登录。
+通过提供允许 Office 应用程序获取对加载项 web 应用程序的访问令牌的方法，支持 [单一登录 (SSO) ](../../../outlook/authenticate-a-user-with-an-sso-token.md) 。 这也使加载项能够间接访问已登录用户的 Microsoft Graph 数据，而不需要用户第二次登录。
 
 ##### <a name="type"></a>类型
 
@@ -76,9 +76,9 @@ Office.context.auth.getAccessTokenAsync(function(result) {
 
 #### <a name="contentlanguage-string"></a>contentLanguage： String
 
-获取用户指定的用于编辑项的区域设置（语言）。
+获取用户指定的用于编辑项目的区域设置 (语言) 。
 
-此 `contentLanguage` 值反映了在 Office 主机应用程序中使用**File > Options > 语言**指定的当前**编辑语言**设置。
+此 `contentLanguage` 值反映了使用 Office 客户端应用程序中的 "**文件 > 选项" > 语言**指定的当前**编辑语言**设置。
 
 ##### <a name="type"></a>类型
 
@@ -145,9 +145,9 @@ console.log(JSON.stringify(Office.context.diagnostics));
 
 #### <a name="displaylanguage-string"></a>displayLanguage： String
 
-获取用户针对 Office 主机应用程序的 UI 指定的 RFC 1766 语言标记格式的区域设置（语言）。
+获取用户为 Office 客户端应用程序的 UI 指定的 RFC 1766 语言标记格式中 (语言) 的区域设置。
 
-`displayLanguage` 值反映在 Office 主机应用程序中通过“**文件 > 选项 > 语言**”指定的当前“**显示语言**”设置。
+此 `displayLanguage` 值反映了使用 Office 客户端应用程序中的**File > Options > 语言**指定的当前**显示语言**设置。
 
 ##### <a name="type"></a>类型
 
@@ -188,7 +188,7 @@ function write(message){
 
 #### <a name="host-hosttype"></a>主机： [HostType](/javascript/api/office/office.hosttype)
 
-获取运行外接程序的 Office 应用程序主机。
+获取承载外接程序的 Office 应用程序。
 
 ##### <a name="type"></a>类型
 
@@ -219,7 +219,7 @@ console.log(JSON.stringify(Office.context.host));
 > [!NOTE]
 > 此成员仅在 Windows 中的 Outlook 中受支持。
 
-使用 Office 主题颜色，您可以将加载项的配色方案与用户选择的当前 Office 主题进行协调，以供用户使用**office > Office 帐户 > Office 主题 UI**，该用户在所有 Office 主机应用程序中应用。 使用 Office 主题颜色适用于邮件和任务窗格外接程序。
+使用 Office 主题颜色，您可以将加载项的配色方案与用户选择的当前 Office 主题进行协调，以供用户使用 **office > Office 帐户 > Office 主题 UI**，该用户在所有 Office 客户端应用程序中应用。 使用 Office 主题颜色适用于邮件和任务窗格外接程序。
 
 ##### <a name="type"></a>类型
 
@@ -231,7 +231,7 @@ console.log(JSON.stringify(Office.context.host));
 |---|---|---|
 |`bodyBackgroundColor`| String|获取十六进制三原色形式的 Office 主题正文背景色。|
 |`bodyForegroundColor`| String|获取十六进制三原色形式的 Office 主题正文前景色。|
-|`controlBackgroundColor`| String|获取十六进制三原色形式的 Office 主题控制背景色。|
+|`controlBackgroundColor`| 字符串|获取十六进制三原色形式的 Office 主题控制背景色。|
 |`controlForegroundColor`| 字符串|获取十六进制三原色形式的 Office 主题正文控制颜色。|
 
 ##### <a name="requirements"></a>Requirements
@@ -289,7 +289,7 @@ console.log(JSON.stringify(Office.context.platform));
 
 #### <a name="requirements-requirementsetsupport"></a>要求： [RequirementSetSupport](/javascript/api/office/office.requirementsetsupport)
 
-提供用于确定当前主机和平台上支持的要求集的方法。
+提供用于确定当前应用程序和平台支持哪些要求集的方法。
 
 ##### <a name="type"></a>类型
 
@@ -317,7 +317,7 @@ console.log(JSON.stringify(Office.context.requirements.isSetSupported("mailbox",
 
 获取一个对象，它表示保存到用户邮箱的邮件外接程序的自定义设置或状态。
 
-`RoamingSettings` 对象允许您存储和访问用户邮箱中存储的邮件外接程序的数据，以便从用于访问该邮箱的任何主机客户端应用程序中运行该外接程序时，该外接程序可以使用该数据。
+该 `RoamingSettings` 对象使您可以存储和访问存储在用户邮箱中的邮件外接程序的数据，以便该外接程序从用于访问该邮箱的任何 Outlook 客户端运行时都可使用该加载项。
 
 ##### <a name="type"></a>类型
 

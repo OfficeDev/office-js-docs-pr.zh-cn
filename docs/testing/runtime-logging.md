@@ -3,12 +3,12 @@ title: 使用运行时日志记录功能调试加载项
 description: 了解如何使用运行时日志记录功能调试加载项。
 ms.date: 12/31/2019
 localization_priority: Normal
-ms.openlocfilehash: e97f989ff4791da678fbecbf8bceed3670749e01
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: e7ac3c3895830ae2fc5e26bd578d34a8d6203e7b
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44611145"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47292326"
 ---
 # <a name="debug-your-add-in-with-runtime-logging"></a>使用运行时日志记录功能调试加载项
 
@@ -84,7 +84,7 @@ ms.locfileid: "44611145"
 
     `<bundle id>` 确定了主机要对哪些运行时日志记录。 `<file_name>` 是要将日志写入的文本文件的名称。
 
-    将 `<bundle id>` 设置为下述值之一，从而为相应主机启用运行时日志记录：
+    设置 `<bundle id>` 为以下值之一，以便为相应的应用程序启用运行时日志记录：
 
     - `com.microsoft.Word`
     - `com.microsoft.Excel`

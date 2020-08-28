@@ -3,12 +3,12 @@ title: Office 加载项开发最佳做法
 description: 在开发以创建 Office 外接程序时应用最佳实践。
 ms.date: 04/22/2020
 localization_priority: Normal
-ms.openlocfilehash: d94d0ff4f3ff5bed4ab9eaaae134db40f21b972c
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 72bcf8c7bd994c499c1e85154a383c3a91464a79
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44608054"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47293063"
 ---
 # <a name="best-practices-for-developing-office-add-ins"></a>Office 加载项开发最佳做法
 
@@ -21,7 +21,7 @@ ms.locfileid: "44608054"
 - 创建可帮助用户快速、高效地完成任务的外接程序。专注于对 Office 应用程序有用的方案。例如：
  - 使核心创作任务更快、更简单，且中断更少。
  - 在 Office 内启用新方案。
- - 在 Office 主机内嵌入补充服务。
+ - 在 Office 应用程序中嵌入补充服务。
  - 改善 Office 体验来提高工作效率。
 - 通过[创建极具吸引力的首次运行体验](#create-an-engaging-first-run-experience)，确保用户能够快速明确加载项的价值。
 - 创建[有效的 AppSource 一览](/office/dev/store/create-effective-office-store-listings)。在标题和说明中明确介绍加载项的优势。请勿依赖品牌来传达加载项的用途。
@@ -77,7 +77,7 @@ ms.locfileid: "44608054"
 
 ### <a name="optimize-for-touch"></a>触摸优化
 
-- 使用 [Context.touchEnabled](/javascript/api/office/office.context) 属性检测运行加载项的主机应用是否已启用触控。
+- 使用 [context.touchenabled](/javascript/api/office/office.context#touchenabled) 属性可检测您的外接程序在其上运行的 Office 应用程序是否已启用。
 
   > [!NOTE]
   > Outlook 不支持此属性。
@@ -121,7 +121,7 @@ ms.locfileid: "44608054"
 
 - 监视您的服务运行状况，并使用遥测监视用户的成功。
 
-- 最大限度地减少外接加载项与 Office 文档之间的数据交换。 有关详细信息，请参阅[避免在循环中使用 context. sync 方法](correlated-objects-pattern.md)。
+- 最大限度地减少外接加载项与 Office 文档之间的数据交换。 有关详细信息，请参阅 [避免在循环中使用 context. sync 方法](correlated-objects-pattern.md)。
 
 ## <a name="market-your-add-in"></a>加载项市场营销
 

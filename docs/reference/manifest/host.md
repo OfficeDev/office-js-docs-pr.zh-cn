@@ -3,12 +3,12 @@ title: 清单文件中的 Host 元素
 description: 指定应在其中激活外接程序的单个 Office 应用程序类型。
 ms.date: 11/05/2019
 localization_priority: Normal
-ms.openlocfilehash: 5db9df97c4ba558d54756b983a26cb7b71e049d5
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 5b6c6e6b5471b4117c28cf92e11eb0a99b512a97
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44611811"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47292284"
 ---
 # <a name="host-element"></a>Host 元素
 
@@ -25,7 +25,7 @@ ms.locfileid: "44611811"
 
 | 属性     | 类型   | 必需 | 说明                                      |
 |:--------------|:-------|:---------|:-------------------------------------------------|
-| [Name](#name) | string | 必需 | Office 主机应用程序的类型名称。 |
+| [Name](#name) | string | 必需 | Office 客户端应用程序类型的名称。 |
 
 ### <a name="name"></a>名称
 
@@ -57,13 +57,13 @@ ms.locfileid: "44611811"
 
 ### <a name="attributes"></a>属性
 
-|  属性  |  必需  |  Description  |
+|  属性  |  必需  |  说明  |
 |:-----|:-----|:-----|
-|  [xsi:type](#xsitype)  |  是  | 描述这些设置适用的 Office 主机。|
+|  [xsi:type](#xsitype)  |  是  | 介绍应用这些设置的 Office 应用程序。|
 
 ### <a name="child-elements"></a>子元素
 
-|  元素 |  必需  |  Description  |
+|  元素 |  必需  |  说明  |
 |:-----|:-----|:-----|
 |  [DesktopFormFactor](desktopformfactor.md)    |  是   |  定义桌面外形规格的设置。 |
 |  [MobileFormFactor](mobileformfactor.md)    |  否   |  定义移动设备规格的设置。 **注意：** 仅在 iOS 和 Android 上的 Outlook 中支持此元素。 |
@@ -71,7 +71,7 @@ ms.locfileid: "44611811"
 
 ### <a name="xsitype"></a>xsi:type
 
-控制所包含的设置适用的 Office 主机类别（Word、Excel、PowerPoint、Outlook 和 OneNote）。 值必须为以下值之一：
+控制包含的设置应用 (Word、Excel、PowerPoint、Outlook、OneNote) 的 Office 应用程序。 值必须为以下值之一：
 
 - `Document` (Word)
 - `MailHost` (Outlook)

@@ -3,16 +3,16 @@ title: Outlook 上下文加载项激活故障排查
 description: 如果加载项未按预期激活，应考虑以下几个方面的可能原因。
 ms.date: 08/18/2020
 localization_priority: Normal
-ms.openlocfilehash: 6eb0ec305a99375fc6d6202cbbc7776f52be1435
-ms.sourcegitcommit: e9f23a2857b90a7c17e3152292b548a13a90aa33
+ms.openlocfilehash: 3e4fd270dbd2c8e6b258e2c473a822c791dee7a6
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/19/2020
-ms.locfileid: "46803756"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47292529"
 ---
 # <a name="troubleshoot-outlook-add-in-activation"></a>Outlook 加载项激活故障排查
 
-Outlook 上下文加载项激活基于加载项清单中的激活规则。在当前选定项的条件满足加载项的激活规则时，主机应用程序激活，并在 Outlook UI 中显示加载项按钮（用于撰写加载项的加载项选择窗格，用于阅读加载项的加载项条）。但是，如果加载项未按预期激活，应考虑以下几个方面的原因。
+Outlook 上下文加载项激活基于加载项清单中的激活规则。当当前所选项的条件满足外接程序的激活规则时，应用程序激活并显示 Outlook UI (加载项 "选择窗格中的" 加载项 "按钮，用于撰写加载项、) 的阅读加载项的外接程序栏。但是，如果你的外接程序未按预期激活，则应查看以下方面的可能原因。
 
 ## <a name="is-user-mailbox-on-a-version-of-exchange-server-that-is-at-least-exchange-2013"></a>用户邮箱是否位于不低于 Exchange 2013 版本的 Exchange Server 上？
 
@@ -76,7 +76,7 @@ Outlook 上下文加载项激活基于加载项清单中的激活规则。在当
 
 如果您的加载项为撰写加载项并且应该在用户撰写邮件或会议请求时激活，请确保该项目未受 IRM 保护。 但是，有几个例外。
 
-1. 外接程序在 Outlook 中与 Microsoft 365 订阅关联的数字签名邮件中激活。 在 Windows 中，此支持是通过生成8711.1000 引入的。
+1. 加载项在与 Microsoft 365 订阅相关联的 Outlook 电子签名邮件上激活。 在Windows上，这个支持是通过8711.1000版本中引入的。
 1. 现在，Windows 版 Outlook 从内部版本 13120.1000 开始可以在受 IRM 保护的项目上激活加载项。  有关预览中此支持的详细信息，请参阅 [ (IRM) 的受信息权限管理保护的项上的外接程序激活 ](../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md#add-in-activation-on-items-protected-by-information-rights-management-irm)。
 
 ## <a name="is-the-add-in-manifest-installed-properly-and-does-outlook-have-a-cached-copy"></a>加载项清单是否安装正确，Outlook 是否有已缓存副本？
@@ -183,7 +183,7 @@ Outlook 上下文加载项激活基于加载项清单中的激活规则。在当
 
 Outlook 富客户端使用的正则表达式引擎与 Outlook 网页版和移动设备版使用的正则表达式引擎不同。Outlook 富客户端使用作为 Visual Studio 标准模板库的一部分提供的 C++ 正则表达式引擎。此引擎符合 ECMAScript 5 标准。Outlook 网页版和移动设备版使用属于 JavaScript 一部分的正则表达式评估，由浏览器提供，且支持 ECMAScript 5 超集。
 
-在大多数情况下，这些主机应用程序在激活规则中为相同的正则表达式找到相同的匹配项，但也有例外。例如，如果正则表达式包含基于预定义字符类的自定义字符类，则 Outlook 富客户端可能会返回与 Outlook 网页版和移动设备版不同的结果。作为示例，在其中包含速记字符类 `[\d\w]` 的字符类将返回不同的结果。在这种情况下，为避免不同主机上出现不同结果，请改用 `(\d|\w)`。
+虽然在大多数情况下，这些 Outlook 客户端在激活规则中查找相同正则表达式的相同匹配项，但也存在例外情况。 例如，如果 regex 包含基于预定义字符类的自定义字符类，则 Outlook 富客户端可能会返回不同于 web 和移动设备上的 Outlook 的结果。 举例来说，其中包含速记字符类 `[\d\w]` 的字符类将返回不同的结果。 在这种情况下，为了避免在不同的应用程序中使用不同的结果，请 `(\d|\w)` 改用。
 
 全面测试正则表达式。如果返回不同的结果，请重写正则表达式以兼容两个引擎。要验证 Outlook 富客户端上的评估结果，请编写一个小型 C++ 程序，该程序可将正则表达式应用于你尝试匹配的文本示例。在 Visual Studio 上运行时，C++ 测试程序将使用标准模板库，在运行相同正则表达式时模拟 Outlook 富客户端的行为。要验证 Outlook 网页版或移动设备版上的评估结果，请使用你喜爱的 JavaScript 正则表达式测试程序。
 
@@ -235,15 +235,15 @@ Outlook 富客户端使用的正则表达式引擎与 Outlook 网页版和移动
 
 验证属性值后，即可使用正则表达式评估工具来测试正则表达式是否在该值中找到匹配项。
 
-## <a name="does-the-host-application-apply-all-the-regular-expressions-to-the-portion-of-the-item-body-as-you-expect"></a>主机应用程序是否按预期将所有正则表达式应用到项目正文部分？
+## <a name="does-outlook-apply-all-the-regular-expressions-to-the-portion-of-the-item-body-as-you-expect"></a>Outlook 是否按预期将所有正则表达式应用于项目正文的部分？
 
-本部分适用于所有使用正则表达式的激活规则，尤其是应用于项目主体的激活规则，这些规则可能较大，需要较长的时间才能对匹配进行评估。你应该知道，即使激活规则依赖的项目属性具有你所期望的值，主机应用程序也可能无法针对项目属性的整体值评估所有正则表达式。为了提供合理的性能并通过阅读加载项来控制资源过度使用状况，Outlook、Outlook 网页版和移动设备版在运行时遵守激活规则中处理正则表达式的以下限制：
+本节适用于使用正则表达式的所有激活规则，尤其是应用于项目正文的那些规则，这些规则可能较大，需要较长时间才能对匹配项进行评估。 您应注意，即使激活规则所依赖的项属性具有所需的值，Outlook 也可能无法评估项目属性的整个值上的所有正则表达式。 为了提供合理的性能并控制读取外接程序占用的资源过多，Outlook 遵循在运行时处理激活规则中的正则表达式的以下限制：
 
-- 评估的项目正文的大小 — 主机应用程序在其中评估正则表达式的项目正文部分存在限制。这些限制取决于主机应用程序、组成要素和项目正文的格式。请参阅[激活限制和适用于 Outlook 加载项的 JavaScript API](limits-for-activation-and-javascript-api-for-outlook-add-ins.md) 中表 2 中的详细信息。
+- 项目正文的大小已评估-对 Outlook 计算正则表达式的项目正文的部分有限制。 这些限制取决于 Outlook 客户端、外形因素和项目正文的格式。 请参阅[激活限制和适用于 Outlook 外接程序的 JavaScript API](limits-for-activation-and-javascript-api-for-outlook-add-ins.md) 中表 2 中的详细信息。
 
 - 正则表达式匹配的数量 - Outlook 富客户端、Outlook 网页版和移动设备版分别返回最多 50 个正则表达式匹配项。这些匹配项是唯一的，重复的匹配不计入此限制。请勿假定返回的匹配项有任何顺序，也不要假定 Outlook 富客户端中的顺序与 Outlook 网页版和移动设备版中的顺序相同。如果希望激活规则中存在与正则表达式匹配的许多匹配项，并且丢失匹配项，则可能会超出此限制。
 
-- 正则表达式匹配项的长度 — 主机应用程序将返回的正则表达式匹配项的长度存在限制。主机应用程序不包括超出限制的任何匹配项，并且不显示任何警告消息。你可以使用其他正则表达式评估工具或独立的 C++ 测试程序运行你的正则表达式，以验证你是否具有超出此类限制的匹配项。表 3 总结了这些限制。有关详细信息，请参阅[激活限制和适用于 Outlook 加载项的 JavaScript API](limits-for-activation-and-javascript-api-for-outlook-add-ins.md) 中的表 3。
+- 正则表达式匹配的长度— Outlook 应用程序将返回的正则表达式匹配的长度限制。 Outlook 不会包含超出限制的任何匹配项，也不会显示任何警告消息。 你可以使用其他正则表达式评估工具或独立的 C++ 测试程序运行你的正则表达式，以验证你是否具有超出此类限制的匹配项。 表 3 总结了这些限制。 有关详细信息，请参阅[激活限制和适用于 Outlook 外接程序的 JavaScript API](limits-for-activation-and-javascript-api-for-outlook-add-ins.md) 中的表 3。
 
     **表 3.正则表达式匹配的长度限制**
 

@@ -4,30 +4,30 @@ description: Office 加载项命令要求集概述。
 ms.date: 07/10/2020
 ms.prod: non-product-specific
 localization_priority: Normal
-ms.openlocfilehash: 14952f97e3f03b83c15d0a4d51183fac3ec80af3
-ms.sourcegitcommit: 472b81642e9eb5fb2a55cd98a7b0826d37eb7f73
+ms.openlocfilehash: 25c8a08983d617e4592dd5602d06eb1d780165d0
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/17/2020
-ms.locfileid: "45159085"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47293588"
 ---
 # <a name="add-in-commands-requirement-sets"></a>加载项命令要求集
 
-要求集是指各组已命名的 API 成员。Office 加载项使用清单中指定的要求集或执行运行时检查，以确定 Office 主机是否支持加载项所需的 API。有关详细信息，请参阅 [Office 版本和要求集](../../develop/office-versions-and-requirement-sets.md)。
+要求集是指各组已命名的 API 成员。 Office 外接程序使用清单中指定的要求集或使用运行时检查来确定 Office 应用程序是否支持加载项所需的 Api。 有关详细信息，请参阅 [Office 版本和要求集](../../develop/office-versions-and-requirement-sets.md)。
 
 外接程序命令是 UI 元素，可扩展 Office UI，并在外接程序中启动操作。可以使用加载项命令在功能区上添加按钮，也可以向上下文菜单添加项。有关详细信息，请参阅 [Excel、Word 和 PowerPoint 的加载项命令](../../design/add-in-commands.md)和 [Outlook 的加载项命令](../../outlook/add-in-commands-for-outlook.md)。
 
-外接程序命令的初始版本没有相应的要求集（即，没有 AddinCommands 1.0 要求集）。下表列出了支持初始版本的 Office 主机应用程序，以及这些应用程序的内部版本或版本号。  
+外接程序命令的初始发布没有相应的要求集 (也就是说，没有 Addincommand 1.0 要求集) 。 下表列出了支持初始发布版本的 Office 客户端应用程序，以及这些应用程序的内部版本或编号。  
 
-| 发布   |  Windows 版 Office 2013<br>（一次性购买） | Windows 版 Office 2016<br>（一次性购买） | Windows 版 Office 2019<br>（一次性购买） | Windows 版 Office<br>（连接到 Microsoft 365 订阅）   |  iPad 版 Office<br>（连接到 Microsoft 365 订阅）  |  Mac 版 Office<br>（连接到 Microsoft 365 订阅）  | Office 网页版  |
+| 发布   |  Windows 版 Office 2013<br>（一次性购买） | Windows 版 Office 2016<br>（一次性购买） | Windows 版 Office 2019<br>（一次性购买） | Windows 版 Office<br>（关联至 Microsoft 365 订阅）   |  iPad 版 Office<br>（关联至 Microsoft 365 订阅）  |  Mac 版 Office<br>（关联至 Microsoft 365 订阅）  | Office 网页版  |
 |:-----|:-----|:-----|:-----|:-----|:-----|:-----|:-----|
 | 加载项命令（初始版本，无要求集） | 不适用 | *仅 Outlook 支持* 16.0.4678.1000 | 版本 1809（内部版本 10827.20150）或更高版本 |版本 1603（内部版本 6769.0000）或更高版本 | 不适用 | 15.33 或更高版本| 2016 年 1 月 |
 
 外接程序命令 1.1 要求集介绍了[随文档自动打开任务窗格](../../develop/automatically-open-a-task-pane-with-a-document.md)的功能。
 
-下表列出了外接程序命令 1.1 要求集、支持该要求集的 Office 主机应用程序，以及 Office 应用程序的内部版本或版本号。
+下表列出了加载项命令1.1 要求集、支持该要求集的 Office 客户端应用程序，以及 Office 应用程序的内部版本号或版本号。
 
-|  要求集  |  Windows 版 Office 2013<br>（一次性购买） | Windows 版 Office 2016<br>（一次性购买） | Windows 版 Office 2019<br>（一次性购买） | Windows 版 Office<br>（连接到 Microsoft 365 订阅）   |  iPad 版 Office<br>（连接到 Microsoft 365 订阅）  |  Mac 版 Office<br>（连接到 Microsoft 365 订阅）  | Office 网页版  |  
+|  要求集  |  Windows 版 Office 2013<br>（一次性购买） | Windows 版 Office 2016<br>（一次性购买） | Windows 版 Office 2019<br>（一次性购买） | Windows 版 Office<br>（关联至 Microsoft 365 订阅）   |  iPad 版 Office<br>（关联至 Microsoft 365 订阅）  |  Mac 版 Office<br>（关联至 Microsoft 365 订阅）  | Office 网页版  |  
 |:-----|:-----|:-----|:-----|:-----|:-----|:-----|:-----|
 | AddinCommands 1.1  | 不适用 | *仅 Outlook 支持* 16.0.4678.1000  | 版本 1809（内部版本 10827.20150）或更高版本 | 版本 1705（内部版本 8121.1000）或更高版本 | 不适用 | 15.34 或更高版本\*| 2017 年 5 月 |
 
@@ -47,5 +47,5 @@ ms.locfileid: "45159085"
 ## <a name="see-also"></a>另请参阅
 
 - [Office 版本和要求集](../../develop/office-versions-and-requirement-sets.md)
-- [指定 Office 主机和 API 要求](../../develop/specify-office-hosts-and-api-requirements.md)
+- [指定 Office 应用程序和 API 要求](../../develop/specify-office-hosts-and-api-requirements.md)
 - [Office 外接程序 XML 清单](../../develop/add-in-manifests.md)

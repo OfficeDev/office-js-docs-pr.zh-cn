@@ -3,16 +3,16 @@ title: 适用于 Office 外接程序的 Monoline 样式图标准则
 description: 获取有关在 Office 外接程序中使用 Monoline 样式图标图标的指南。
 ms.date: 12/09/2019
 localization_priority: Normal
-ms.openlocfilehash: 36142e79853a0fad47963255eb9517acd0810920
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: f5e2125494fde21f22f82bee8252e79a3396c773
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44607692"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47293042"
 ---
 # <a name="monoline-style-icon-guidelines-for-office-add-ins"></a>适用于 Office 外接程序的 Monoline 样式图标准则
 
-Monoline style 插图在 Office 365 中使用。 如果您希望图标与非订阅 Office 2013 + 的新样式相匹配，请参阅[Office 外接程序的新样式图标指南](add-in-icons-fresh.md)。
+Monoline style 插图在 Office 365 中使用。 如果您希望图标与非订阅 Office 2013 + 的新样式相匹配，请参阅 [Office 外接程序的新样式图标指南](add-in-icons-fresh.md)。
 
 ## <a name="office-monoline-visual-style"></a>Office Monoline 视觉样式
 
@@ -56,7 +56,7 @@ Monoline 是一个简洁的最小样式。 所有内容都使用单色，这意�
 
 ### <a name="sizes"></a>大小
 
-我们建议您在所有这些尺寸中生成每个图标以支持高 DPI 设备。 绝对*必需*的大小是16px、20px 和32，因为它们是100% 的大小。
+我们建议您在所有这些尺寸中生成每个图标以支持高 DPI 设备。 绝对 *必需* 的大小是16px、20px 和32，因为它们是100% 的大小。
 
 **16px、20px、24、32、40px、48px、64px、80px、96px**
 
@@ -70,7 +70,7 @@ Monoline 是一个简洁的最小样式。 所有内容都使用单色，这意�
 
 - **基本**：图标表示的主要概念。 这通常是图标的唯一需要的视觉对象，但有时主要概念可以通过辅助元素（修饰符）进行增强。
 
-- **修饰符**覆盖基准的任何元素;即，通常表示操作或状态的修饰符。 它通过充当添加、改变或描述符来修改 base 元素。
+- **修饰符** 覆盖基准的任何元素;即，通常表示操作或状态的修饰符。 它通过充当添加、改变或描述符来修改 base 元素。
 
 ![带有基本区域和修饰区域的网格。](../images/monolineicon3.png)
 
@@ -96,7 +96,7 @@ Monoline 是一个简洁的最小样式。 所有内容都使用单色，这意�
 
 |**16px**|**20px**|**24px**|**32px**|**40px**|**48px**|**64px**|**80px**|**96px**|
 |:---|:---|:---|:---|:---|:---|:---|:---|:---|
-|![16 px 图标](../images/monolineicon7.png)|![20 px 图标](../images/monolineicon8.png)|![24 px 图标](../images/monolineicon9.png)|![32 px 图标](../images/monolineicon10.png)|![40 px 图标](../images/monolineicon11.png)|![48 px 图标](../images/monolineicon12.png)|![64 px 图标](../images/monolineicon13.png)|![80 px 图标](../images/monolineicon14.png)|![96 px 图标](../images/monolineicon15.png)|
+|![16 px 图标，含0像素像素填充](../images/monolineicon7.png)|![20 px 图标，含1像素像素填充](../images/monolineicon8.png)|![24 px 图标，带1像素像素的填充](../images/monolineicon9.png)|![32 px 图标，带2个像素的填充](../images/monolineicon10.png)|![40 px 图标，带2个像素的填充](../images/monolineicon11.png)|![48 px 图标（带3个像素填充）](../images/monolineicon12.png)|![使用4像素填充的 64 px 图标](../images/monolineicon13.png)|![80 px 图标（带5个像素填充）](../images/monolineicon14.png)|![使用6像素填充的 96 px 图标](../images/monolineicon15.png)|
 
 #### <a name="line-weights"></a>线条粗细
 
@@ -109,7 +109,7 @@ Monoline 是一种由直线和分级显示的形状所占据的样式。 根据�
 
 #### <a name="cutouts"></a>块
 
-当 icon 元素放置在另一个元素的顶部时，会使用一个切除（底部元素）在两个元素之间提供空间，这主要是出于可读性目的。 在 base 元素的顶部放置修饰符时，通常会发生这种情况，但在某些情况下，这两个元素都不是修饰符。 这两个元素之间的这两种切口有时称为 "间隙"。
+如果将 icon 元素放置在另一个元素的顶部，将使用底部元素) 的切除 (来提供这两个元素之间的空间，这主要是出于可读性目的。 在 base 元素的顶部放置修饰符时，通常会发生这种情况，但在某些情况下，这两个元素都不是修饰符。 这两个元素之间的这两种切口有时称为 "间隙"。
 
 间隙大小的宽度应与用于该大小的线条粗细的宽度相同。 如果创建16px 图标，则间隙宽度为1px，如果是48px 图标，则间隙应为2px。 下面的示例显示32图标，在修饰符和基础基之间存在间隔为1px。
 
@@ -123,7 +123,7 @@ Monoline 图标集中的大多数图标都需要进行背景填充。 但是，�
 
 ![五个图标具有白色填充](../images/monolineicon26.png)
 
-以下图标没有填充。 （包括齿轮图标，以显示未填充中心孔。）![不带填充的五个图标](../images/monolineicon27.png)
+以下图标没有填充。  (包括齿轮图标以显示未填充中心孔。 ) ![ 五个不带填充的图标](../images/monolineicon27.png)
 
 ##### <a name="best-practices-for-fills"></a>填充的最佳实践
 
@@ -172,11 +172,11 @@ Monoline 图标集中的大多数图标都需要进行背景填充。 但是，�
 
 #### <a name="when-to-use-color"></a>何时使用颜色
 
-应使用 Color 来传达图标的含义，而不是 embellishment 的含义。 它应将**操作突出显示**给用户。 将一个修饰符添加到具有颜色的 base 元素中时，基本元素通常会转换为深灰色和背景填充，以便修饰符可以是颜色的元素，如下面的示例将 "X" 修饰符添加到以下集合中最左边的图标中的图片基。
+应使用 Color 来传达图标的含义，而不是 embellishment 的含义。 它应将 **操作突出显示** 给用户。 将一个修饰符添加到具有颜色的 base 元素中时，基本元素通常会转换为深灰色和背景填充，以便修饰符可以是颜色的元素，如下面的示例将 "X" 修饰符添加到以下集合中最左边的图标中的图片基。
 
 ![使用颜色的五个图标](../images/monolineicon29.png)
 
-您应将图标限制为另**一种**颜色，而不是上面提到的轮廓和填充。 但是，如果对其比喻至关重要，则可以使用更多的颜色，而不是灰色之外的其他两种颜色限制。 在极少数情况下，如果需要更多颜色，也会出现异常。 以下是仅使用一种颜色的较简单的图标示例。
+您应将图标限制为另 **一种** 颜色，而不是上面提到的轮廓和填充。 但是，如果对其比喻至关重要，则可以使用更多的颜色，而不是灰色之外的其他两种颜色限制。 在极少数情况下，如果需要更多颜色，也会出现异常。 以下是仅使用一种颜色的较简单的图标示例。
 
   ![一种颜色为五个图标的图像](../images/monolineicon30.png)
 
@@ -185,13 +185,13 @@ Monoline 图标集中的大多数图标都需要进行背景填充。 但是，�
   ![带有多种颜色的五个图标的图像](../images/monolineicon31.png)
 
 
-对内部 "content" 使用**中灰色**，例如电子表格图标中的网格线。 当内容需要显示控件的行为时，将使用其他内部颜色。
+对内部 "content" 使用 **中灰色** ，例如电子表格图标中的网格线。 当内容需要显示控件的行为时，将使用其他内部颜色。
 
 ![包含中等灰色内部元素的五个图标](../images/monolineicon32.png)
 
 #### <a name="text-lines"></a>文本行
 
-当文本行位于 "容器" （例如，文档中的文本）中时，使用 "中灰色"。 不在容器中的文本行应为**深灰色**。
+当文本行位于 "容器" 中时 (例如，文档中的文本) 上，使用 "中灰色"。 不在容器中的文本行应为 **深灰色**。
 
 ### <a name="text"></a>文本
 

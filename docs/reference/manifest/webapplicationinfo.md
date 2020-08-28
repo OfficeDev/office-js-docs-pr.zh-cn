@@ -1,20 +1,20 @@
 ---
 title: 清单文件中的 WebApplicationInfo 元素
-description: Office 外接程序清单的 VersionOverrides 元素的参考文档 (XML) 文件。
+description: Office 外接程序清单的 WebApplicationInfo 元素的参考文档 (XML) 文件。
 ms.date: 07/30/2020
 localization_priority: Normal
-ms.openlocfilehash: b64739f388720abb872fe2407f7e7d3031b5ec70
-ms.sourcegitcommit: 8fdd7369bfd97a273e222a0404e337ba2b8807b0
+ms.openlocfilehash: 8644529d82204cb9fbc07c6fe9f8a35b60a512c8
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "46573117"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47293805"
 ---
 # <a name="webapplicationinfo-element"></a>WebApplicationInfo 元素
 
 支持 Office 外接程序中的单一登录 (SSO)。此元素包含外接程序中的信息，如下所示：
 
-- OAuth 2.0 *资源*，Office 主机应用程序可能需要访问该资源的权限。
+- Office 客户端应用程序可能需要其权限的 OAuth 2.0 *资源* 。
 - OAuth 2.0 *客户端*，可能需要访问 Microsoft Graph 的权限。
 
 > [!NOTE]

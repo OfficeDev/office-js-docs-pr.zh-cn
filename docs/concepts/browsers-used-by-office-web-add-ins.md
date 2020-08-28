@@ -3,16 +3,16 @@ title: Office 加载项使用的浏览器
 description: 指定操作系统和 Office 版本如何确定 Office 加载项使用的浏览器。
 ms.date: 08/13/2020
 localization_priority: Normal
-ms.openlocfilehash: 53e3061f1729ac792e91a10e31bc9d0d908ab07b
-ms.sourcegitcommit: 3efa932b70035dde922929d207896e1a6007f620
+ms.openlocfilehash: 4c4462434480a82e69ebaf5a2599ceda1e4693a7
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/15/2020
-ms.locfileid: "46757357"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47293056"
 ---
 # <a name="browsers-used-by-office-add-ins"></a>Office 加载项使用的浏览器
 
-Office 加载项是使用 iFrames（在 Office 网页版中运行时）和使用 Office 桌面版和移动版客户端中的嵌入式浏览器控件显示的 Web 应用程序。 加载项还需要使用 JavaScript 引擎来运行 JavaScript。 嵌入的浏览器和引擎都是由安装在用户计算机上的浏览器提供的。
+Office 外接程序是在 web 上运行 Office 时使用 Iframe 显示的 web 应用程序，在 Office 中使用嵌入的浏览器控件用于桌面和移动客户端。 加载项还需要使用 JavaScript 引擎来运行 JavaScript。 嵌入的浏览器和引擎都是由安装在用户计算机上的浏览器提供的。
 
 要使用的浏览器取决于：
 
@@ -39,7 +39,7 @@ Office 加载项是使用 iFrames（在 Office 网页版中运行时）和使用
 
 <sup>2</sup> 当使用 Microsoft Edge 时，Windows 10 讲述人 (有时称为 "屏幕阅读器" ) 读取 `<title>` 在任务窗格中打开的页面中的标记。 如果使用的是 Internet Explorer 11，则Narrator 将会读取任务窗格的标题栏，它来自加载项清单中的 `<DisplayName>` 值。
 
-<sup>3</sup> 如果加载项包括 `Runtimes` 清单中的元素，则使用 Internet Explorer 11，而不考虑 Windows 或 Microsoft 365 版本。 有关详细信息，请参阅 [运行时](../reference/manifest/runtimes.md)。
+<sup>3</sup> 如果加载项包括 `Runtimes` 清单中的元素，则使用 Internet Explorer 11，而不考虑 Windows 或 Microsoft 365 版本。 有关详细信息，请参阅[运行时](../reference/manifest/runtimes.md)。
 
 <sup>4</sup> 用于此版本组合的浏览器取决于 Microsoft 365 订阅的更新通道。 如果用户在 [Beta 通道](https://insider.office.com/join/windows) 上 (以前的 "快速) " 快速频道 "，则 Office 将使用 Microsoft Edge 与 WebView2 (基于 Chromium 的) 。 对于任何其他频道，Office 将 Microsoft Edge 与原始 Web 视图一起使用 (EdgeHTML) 。 对其他频道中的 WebView2 的支持预计在早期2021。
 > [!IMPORTANT]

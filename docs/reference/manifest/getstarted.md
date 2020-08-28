@@ -1,28 +1,28 @@
 ---
 title: 清单文件中的 GetStarted 元素
-description: 提供在 Word、Excel、PowerPoint 和 OneNote 主机中安装此外接程序时显示的标注所使用的信息。
+description: 提供在 Word、Excel、PowerPoint 和 OneNote 中安装外接程序时显示的标注所使用的信息。
 ms.date: 10/09/2018
 localization_priority: Normal
-ms.openlocfilehash: c1fbdd5d4f4365f9f8190805519fc7a70c8c87ca
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 01b10b8316c87b046cf816d6f86551bf1a349267
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44611832"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47292291"
 ---
 # <a name="getstarted-element"></a>GetStarted 元素
 
-提供在 Word、Excel、PowerPoint 和 OneNote 主机中安装此外接程序时显示的标注所使用的信息。**GetStarted** 元素是 [DesktopFormFactor](desktopformfactor.md) 的子元素。
+提供在 Word、Excel、PowerPoint 和 OneNote 中安装外接程序时显示的标注所使用的信息。 **GetStarted**元素是[DesktopFormFactor](desktopformfactor.md)的子元素。
 
 ## <a name="child-elements"></a>子元素
 
-| 元素                       | 必需 | Description                                        |
+| 元素                       | 必需 | 说明                                        |
 |:------------------------------|:--------:|:---------------------------------------------------|
 | [标题](#title)               | 是      | 定义外接程序公开功能的位置。     |
 | [说明](#description)   | 是      | 包含 JavaScript 函数的文件的 URL。|
 | [LearnMoreUrl](#learnmoreurl) | 是       | 指向详细说明外接程序的页面的 URL。   |
 
-### <a name="title"></a>Title 
+### <a name="title"></a>标题 
 
 必需。 用于标注顶部的标题。 **resid** 属性引用 **Resources** 分区的 [ShortStrings](resources.md) 元素中的有效 ID。
 

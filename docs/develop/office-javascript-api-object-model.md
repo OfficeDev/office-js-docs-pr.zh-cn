@@ -3,18 +3,18 @@ title: 常见 JavaScript API 对象模型
 description: 了解 Office JavaScript 通用 API 对象模型
 ms.date: 04/30/2020
 localization_priority: Normal
-ms.openlocfilehash: 44c5258ad164c19df53ebe2fcbb00f420018a710
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 37d2bca0aa4aadfc6ab7ef00d76d74e9acde4711
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44609732"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47293252"
 ---
 # <a name="common-javascript-api-object-model"></a>常见 JavaScript API 对象模型
 
 [!include[information about the common API](../includes/alert-common-api-info.md)]
 
-Office JavaScript 加载项可提供对主机的基础功能的访问权限。 大多数此类访问权限可以访问一些重要的对象。 [Context](#context-object) 对象提供在初始化之后对运行时环境的访问权限。 [Document](#document-object) 对象使用户能够控制 Excel、PowerPoint 或 Word 文档。 [Mailbox](#mailbox-object) 对象使 Outlook 加载项能够访问邮件和用户配置文件。 理解这些高级对象之间的关系是 JavaScript 加载项的基础。
+Office JavaScript Api 可提供对 Office 客户端应用程序的基础功能的访问权限。 大多数此类访问权限可以访问一些重要的对象。 [Context](#context-object) 对象提供在初始化之后对运行时环境的访问权限。 [Document](#document-object) 对象使用户能够控制 Excel、PowerPoint 或 Word 文档。 [邮箱](#mailbox-object)对象为 Outlook 外接程序提供对邮件、约会和用户配置文件的访问权限。 了解这些高级别对象之间的关系是 Office 外接程序的基础。
 
 ## <a name="context-object"></a>Context 对象
 
@@ -24,7 +24,7 @@ Office JavaScript 加载项可提供对主机的基础功能的访问权限。 �
 
 例如，在任务窗格或内容外接程序中，可以使用 **Context** 对象的 [document](/javascript/api/office/office.context#document) 属性访问 **Document** 对象的属性和方法，以便与 Word 文档、Excel 工作表或 Project 计划的内容交互。类似地，在 Outlook 外接程序中，可以使用 **Context** 对象的 [mailbox](/javascript/api/office/office.context#mailbox) 属性访问 **Mailbox** 对象的属性和方法，以便与邮件、会议请求或约会内容交互。
 
-**Context** 对象还提供对 [contentLanguage](/javascript/api/office/office.context#contentlanguage) 和 [displayLanguage](/javascript/api/office/office.context#displaylanguage) 属性的访问权限，这些属性允许你确定文档或项目中或由宿主应用程序使用的区域设置（语言）。 [roamingSettings](/javascript/api/office/office.context#roamingsettings) 属性使你能够访问 [RoamingSettings](/javascript/api/office/office.context#roamingsettings) 对象的成员，该对象用于存储各用户邮箱的加载项特定的设置。 最后，**Context** 对象提供一个允许你的加载项启动弹出对话框的 [ui](/javascript/api/office/office.context#ui) 属性。
+**Context**对象还提供对[contentLanguage](/javascript/api/office/office.context#contentlanguage)和[displayLanguage](/javascript/api/office/office.context#displaylanguage)属性的访问，使您可以确定文档或项目或 Office 应用程序中使用的区域设置 (语言) 。 [roamingSettings](/javascript/api/office/office.context#roamingsettings) 属性使你能够访问 [RoamingSettings](/javascript/api/office/office.context#roamingsettings) 对象的成员，该对象用于存储各用户邮箱的加载项特定的设置。 最后，**Context** 对象提供一个允许你的加载项启动弹出对话框的 [ui](/javascript/api/office/office.context#ui) 属性。
 
 
 ## <a name="document-object"></a>Document 对象
@@ -37,7 +37,7 @@ Office JavaScript 加载项可提供对主机的基础功能的访问权限。 �
 
 - 表格数据（矩阵或表格）。
 
-- 绑定（使用对象的 "add" 方法创建 `Bindings` ）。
+-  (使用对象) 的 "add" 方法创建的绑定 `Bindings` 。
 
 - 自定义 XML 部件（仅适用于 Word）。
 
@@ -88,7 +88,7 @@ Office JavaScript 加载项可提供对主机的基础功能的访问权限。 �
 
 
 > [!TIP]
-> **何时应使用矩阵与表格 coercionType 数据访问？** 如果需要在添加行和列时动态增大表格数据，并且必须使用表格标题，则应使用 table 数据类型（通过将_coercionType_参数指定为或的 `Document` `Binding` 对象数据访问方法 `"table"` `Office.CoercionType.Table` ）。 表格数据和矩阵数据中都支持在数据结构内添加行和列，但仅支持对表格数据追加行和列。 如果您不打算添加行和列，并且您的数据不需要标头功能，则应使用矩阵数据类型（通过将 data access 方法的_coercionType_参数指定为 `"matrix"` 或 `Office.CoercionType.Matrix` ），这提供了与数据交互的更简单的模型。
+> **何时应使用矩阵与表格 coercionType 数据访问？** 如果需要在添加行和列时动态增大表格数据，并且必须使用表格标题，则应通过将 _coercionType_ 参数指定为或 `Document` 对象数据访问方法，将参数指定 `Binding` 为 `"table"` 或) 来使用表数据类型 (`Office.CoercionType.Table` 。 表格数据和矩阵数据中都支持在数据结构内添加行和列，但仅支持对表格数据追加行和列。 如果不打算添加行和列，并且您的数据不需要标头功能，则应通过将数据访问方法的  _coercionType_ 参数指定为或) 来使用矩阵数据类型 (`"matrix"` `Office.CoercionType.Matrix` ，这提供了与数据交互的更简单的模型。
 
 如果无法将数据强制转换为指定的类型，那么回调中的 [AsyncResult.status](/javascript/api/office/office.asyncresult#status) 属性返回 `"failed"`，并且你可以使用 [AsyncResult.error](/javascript/api/office/office.asyncresult#error) 属性访问 [Error](/javascript/api/office/office.error) 对象，其中包括方法调用失败原因的信息。
 
@@ -115,9 +115,9 @@ Office JavaScript 加载项可提供对主机的基础功能的访问权限。 �
 
 建立绑定还允许您订阅仅限文档或电子表格的特定区域的数据和选择更改事件。这意味着，加载项只会收到绑定区域内发生的更改的通知，而不是收到整个文档或电子表格内的常规更改的通知。
 
-[Bindings](/javascript/api/office/office.bindings) 对象公开 [getAllAsync](/javascript/api/office/office.bindings#getallasync-options--callback-) 方法，通过该方法可以访问在文档或电子表格中建立的所有绑定的集合。 可使用 [Bindings.getBindingByIdAsync](/javascript/api/office/office.bindings#getbyidasync-id--options--callback-) 或 [Office.select](/javascript/api/office) 方法按 ID 访问单个绑定。 您可以使用以下对象的方法之一来建立新绑定，并删除现有绑定 `Bindings` ： [addFromSelectionAsync](/javascript/api/office/office.bindings#addfromselectionasync-bindingtype--options--callback-)、 [AddFromPromptAsync](/javascript/api/office/office.bindings#addfrompromptasync-bindingtype--options--callback-)、 [addFromNamedItemAsync](/javascript/api/office/office.bindings#addfromnameditemasync-itemname--bindingtype--options--callback-)或[releaseByIdAsync](/javascript/api/office/office.bindings#releasebyidasync-id--options--callback-)。
+[Bindings](/javascript/api/office/office.bindings) 对象公开 [getAllAsync](/javascript/api/office/office.bindings#getallasync-options--callback-) 方法，通过该方法可以访问在文档或电子表格中建立的所有绑定的集合。 可使用 [Bindings.getBindingByIdAsync](/javascript/api/office/office.bindings#getbyidasync-id--options--callback-) 或 [Office.select](/javascript/api/office) 方法按 ID 访问单个绑定。 您可以使用以下对象的方法之一来建立新绑定，并删除现有绑定 `Bindings` ： [addFromSelectionAsync](/javascript/api/office/office.bindings#addfromselectionasync-bindingtype--options--callback-)、 [AddFromPromptAsync](/javascript/api/office/office.bindings#addfrompromptasync-bindingtype--options--callback-)、 [addFromNamedItemAsync](/javascript/api/office/office.bindings#addfromnameditemasync-itemname--bindingtype--options--callback-)或 [releaseByIdAsync](/javascript/api/office/office.bindings#releasebyidasync-id--options--callback-)。
 
-在使用或方法创建绑定时，可以使用_bindingType_参数指定三种不同类型的绑定 `addFromSelectionAsync` `addFromPromptAsync` `addFromNamedItemAsync` ：
+在使用或方法创建绑定时，可以使用  _bindingType_ 参数指定三种不同类型的绑定 `addFromSelectionAsync` `addFromPromptAsync` `addFromNamedItemAsync` ：
 
 
 
@@ -129,7 +129,7 @@ Office JavaScript 加载项可提供对主机的基础功能的访问权限。 �
 
 <br/>
 
-使用该对象的三个 "添加" 方法之一创建绑定之后 `Bindings` ，可以使用相应对象的方法来处理绑定的数据和属性： [MatrixBinding](/javascript/api/office/office.matrixbinding)、 [TableBinding](/javascript/api/office/office.tablebinding)或[textbinding 添加](/javascript/api/office/office.textbinding)。 所有这三个对象都继承对象的[binding.getdataasync](/javascript/api/office/office.binding#getdataasync-options--callback-)和[binding.setdataasync](/javascript/api/office/office.binding#setdataasync-data--options--callback-)方法 `Binding` ，您可以使用这些方法与绑定的数据进行交互。
+使用该对象的三个 "添加" 方法之一创建绑定之后 `Bindings` ，可以使用相应对象的方法来处理绑定的数据和属性： [MatrixBinding](/javascript/api/office/office.matrixbinding)、 [TableBinding](/javascript/api/office/office.tablebinding)或 [textbinding 添加](/javascript/api/office/office.textbinding)。 所有这三个对象都继承对象的 [binding.getdataasync](/javascript/api/office/office.binding#getdataasync-options--callback-) 和 [binding.setdataasync](/javascript/api/office/office.binding#setdataasync-data--options--callback-) 方法 `Binding` ，您可以使用这些方法与绑定的数据进行交互。
 
 有关演示如何使用绑定执行任务的代码示例，请参阅[绑定到文档或电子表格中的区域](bind-to-regions-in-a-document-or-spreadsheet.md)。
 
@@ -139,7 +139,7 @@ Office JavaScript 加载项可提供对主机的基础功能的访问权限。 �
 
  **适用于：** Word 的任务窗格加载项
 
-API 的 [CustomXmlParts](/javascript/api/office/office.customxmlparts) 和 [CustomXmlPart](/javascript/api/office/office.customxmlpart) 对象提供访问 Word 文档中自定义 XML 部件的权限，从而启用文档内容的 XML 驱动操作。 有关使用和对象的演示 `CustomXmlParts` `CustomXmlPart` ，请参阅[Word 加载项-与工作的自定义 XML 部分](https://github.com/OfficeDev/Word-Add-in-Work-with-custom-XML-parts)的代码示例。
+API 的 [CustomXmlParts](/javascript/api/office/office.customxmlparts) 和 [CustomXmlPart](/javascript/api/office/office.customxmlpart) 对象提供访问 Word 文档中自定义 XML 部件的权限，从而启用文档内容的 XML 驱动操作。 有关使用和对象的演示 `CustomXmlParts` `CustomXmlPart` ，请参阅 [Word 加载项-与工作的自定义 XML 部分](https://github.com/OfficeDev/Word-Add-in-Work-with-custom-XML-parts) 的代码示例。
 
 
 ## <a name="working-with-the-entire-document-using-the-getfileasync-method"></a>使用 getFileAsync 方法处理整个文档
@@ -164,11 +164,10 @@ var item = Office.context.mailbox.item;
 
 另外，Outlook 外接程序可以使用以下对象：
 
-- `Office`对象：用于初始化。
+- `Office` 对象：用于初始化。
 
-- `Context`对象：用于访问内容和显示语言属性。
+- `Context` 对象：用于访问内容和显示语言属性。
 
-- `RoamingSettings`对象：用于将特定于 Outlook 外接程序的自定义设置保存到安装外接程序的用户邮箱中。
+- `RoamingSettings` 对象：用于将特定于 Outlook 外接程序的自定义设置保存到安装外接程序的用户邮箱中。
 
 有关在 Outlook 加载项中使用 JavaScript 的信息，请参阅 [Outlook 加载项](../outlook/outlook-add-ins-overview.md)。
-
