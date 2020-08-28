@@ -8,12 +8,12 @@ metadata:
   ms.topic: landing-page
   ms.date: 06/09/2020
   localization_priority: Priority
-  ms.openlocfilehash: c2bbe9e007111beed49d33eaaeff3dd6c7a38aae
-  ms.sourcegitcommit: 19312a54f47a17988ffa86359218a504713f9f09
-  ms.translationtype: Auto
+  ms.openlocfilehash: 58ae686b475fb2a4cd67709ea2c3c7f654d77a1f
+  ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
+  ms.translationtype: MT
   ms.contentlocale: zh-CN
-  ms.lasthandoff: 06/10/2020
-  ms.locfileid: "44679432"
+  ms.lasthandoff: 08/28/2020
+  ms.locfileid: "47294106"
 landingContent:
 - title: 关于 Excel 外接程序
   linkLists:
@@ -33,9 +33,9 @@ landingContent:
       url: ../reference/overview/excel-add-ins-reference-overview.md
     - text: 向 Excel 中添加自定义函数
       url: custom-functions-overview.md
-    - text: 测试和调试 Excel 加载项
+    - text: 测试和调试 Excel 外接程序
       url: ../testing/test-debug-office-add-ins.md
-    - text: 部署并发布 Excel 加载项
+    - text: 部署并发布 Excel 外接程序
       url: ../publish/publish.md
 - title: 主要 Office 外接程序概念
   linkLists:

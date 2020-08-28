@@ -1,103 +1,53 @@
 ---
-title: 将数据和邮件从其主机页传递到对话框
-description: 了解如何使用 messageChild 和 DialogParentMessageReceived Api 将数据传递到主机页中的对话框。
-ms.date: 07/07/2020
+title: 将邮件从其主页面传递到对话框的替代方法
+description: 了解在 messageChild 方法不受支持时要使用的解决方法。
+ms.date: 08/20/2020
 localization_priority: Normal
-ms.openlocfilehash: 05220fa4cecad4fe412a5590605f774f92ef8f61
-ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
+ms.openlocfilehash: b516896d28979f439f3065f9ff036ff21c2c0997
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "45093572"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47293175"
 ---
-# <a name="passing-data-and-messages-to-a-dialog-box-from-its-host-page-preview"></a><span data-ttu-id="3477d-103">将数据和邮件从其主机页传递到对话框 (预览) </span><span class="sxs-lookup"><span data-stu-id="3477d-103">Passing data and messages to a dialog box from its host page (preview)</span></span>
+# <a name="alternative-ways-of-passing-messages-to-a-dialog-box-from-its-host-page"></a><span data-ttu-id="e9481-103">将邮件从其主页面传递到对话框的替代方法</span><span class="sxs-lookup"><span data-stu-id="e9481-103">Alternative ways of passing messages to a dialog box from its host page</span></span>
 
-<span data-ttu-id="3477d-104">您的外接程序可以使用[dialog](/javascript/api/office/office.dialog)对象的[messageChild](/javascript/api/office/office.dialog#messagechild-message-)方法，将邮件从[主机页面](dialog-api-in-office-add-ins.md#open-a-dialog-box-from-a-host-page)发送到对话框。</span><span class="sxs-lookup"><span data-stu-id="3477d-104">Your add-in can send messages from the [host page](dialog-api-in-office-add-ins.md#open-a-dialog-box-from-a-host-page) to a dialog box using the [messageChild](/javascript/api/office/office.dialog#messagechild-message-) method of the [Dialog](/javascript/api/office/office.dialog) object.</span></span>
+<span data-ttu-id="e9481-104">将来自父页面的数据和邮件传递到子对话框的建议方法是 `messageChild` 使用方法，如在 [office 外接程序中使用 OFFICE 对话框 API](dialog-api-in-office-add-ins.md#pass-information-to-the-dialog-box)中所述。如果外接程序在不支持 [DialogApi 1.2 要求集](../reference/requirement-sets/dialog-api-requirement-sets.md)的平台或主机上运行，则可以通过两种其他方式将信息传递到该对话框：</span><span class="sxs-lookup"><span data-stu-id="e9481-104">The recommended way to pass data and messages from a parent page to a child dialog box is with the `messageChild` method as described in [Use the Office dialog API in your Office Add-ins](dialog-api-in-office-add-ins.md#pass-information-to-the-dialog-box). If your add-in is running on a platform or host that does not support the [DialogApi 1.2 requirement set](../reference/requirement-sets/dialog-api-requirement-sets.md), there are two other ways that you can pass information to the dialog box:</span></span>
 
-> [!Important]
->
-> - <span data-ttu-id="3477d-105">本文中介绍的 Api 处于预览阶段。</span><span class="sxs-lookup"><span data-stu-id="3477d-105">The APIs described in this article are in preview.</span></span> <span data-ttu-id="3477d-106">它们可供开发人员用来进行试验;但不应在生产外接中使用。</span><span class="sxs-lookup"><span data-stu-id="3477d-106">They are available to developers for experimentation; but should not be used in a production add-in.</span></span> <span data-ttu-id="3477d-107">在发布此 API 之前，请使用将[信息传递到](dialog-api-in-office-add-ins.md#pass-information-to-the-dialog-box)生产外接程序的对话框中所述的技术。</span><span class="sxs-lookup"><span data-stu-id="3477d-107">Until this API is released, use the techniques described in [Pass information to the dialog box](dialog-api-in-office-add-ins.md#pass-information-to-the-dialog-box) for production add-ins.</span></span>
-> - <span data-ttu-id="3477d-108">本文中所述的 Api 需要 Microsoft 365 订阅。</span><span class="sxs-lookup"><span data-stu-id="3477d-108">The APIs described in this article require a Microsoft 365 subscription.</span></span> <span data-ttu-id="3477d-109">你应该使用来自预览体验成员频道的最新每月版本和内部版本。</span><span class="sxs-lookup"><span data-stu-id="3477d-109">You should use the latest monthly version and build from the Insiders channel.</span></span> <span data-ttu-id="3477d-110">你可能需要成为 Office 预览体验成员，才能获取此版本。</span><span class="sxs-lookup"><span data-stu-id="3477d-110">You need to be an Office Insider to get this version.</span></span> <span data-ttu-id="3477d-111">有关详细信息，请参阅[成为 Office 预览体验成员](https://insider.office.com)。</span><span class="sxs-lookup"><span data-stu-id="3477d-111">For more information, see [Be an Office Insider](https://insider.office.com).</span></span> <span data-ttu-id="3477d-112">请注意，当内部版本毕业生到生产半年频道时，将对该内部版本禁用对预览功能的支持。</span><span class="sxs-lookup"><span data-stu-id="3477d-112">Please note that when a build graduates to the production semi-annual channel, support for preview features is turned off for that build.</span></span>
-> - <span data-ttu-id="3477d-113">在预览的初始阶段，Api 在 Excel、PowerPoint 和 Word 中受支持;而不是在 Outlook 中。</span><span class="sxs-lookup"><span data-stu-id="3477d-113">In the initial stage of the preview, the APIs are supported in Excel, PowerPoint, and Word; but not in Outlook.</span></span>
->
-> [!INCLUDE [Information about using preview APIs](../includes/using-preview-apis.md)]
+- <span data-ttu-id="e9481-105">向传递给 `displayDialogAsync` 的 URL 添加查询参数。</span><span class="sxs-lookup"><span data-stu-id="e9481-105">Add query parameters to the URL that is passed to `displayDialogAsync`.</span></span>
+- <span data-ttu-id="e9481-106">将信息存储在主机窗口和对话框都可访问的位置。</span><span class="sxs-lookup"><span data-stu-id="e9481-106">Store the information somewhere that is accessible to both the host window and dialog box.</span></span> <span data-ttu-id="e9481-107">这两个窗口不共享通用会话存储，但*如果它们具有相同的域*（包括端口号，若有），则共享通用[本地存储](https://www.w3schools.com/html/html5_webstorage.asp)。\*</span><span class="sxs-lookup"><span data-stu-id="e9481-107">The two windows do not share a common session storage, but *if they have the same domain* (including port number, if any), they share a common [Local Storage](https://www.w3schools.com/html/html5_webstorage.asp).\*</span></span>
 
-## <a name="use-messagechild-from-the-host-page"></a><span data-ttu-id="3477d-114">`messageChild()`从主机页使用</span><span class="sxs-lookup"><span data-stu-id="3477d-114">Use `messageChild()` from the host page</span></span>
 
-<span data-ttu-id="3477d-115">调用 Office 对话框 API 打开对话框时，将返回[dialog](/javascript/api/office/office.dialog)对象。</span><span class="sxs-lookup"><span data-stu-id="3477d-115">When you call the Office dialog API to open a dialog box, a [Dialog](/javascript/api/office/office.dialog) object is returned.</span></span> <span data-ttu-id="3477d-116">应将其分配给变量，该变量的作用域通常大于[displayDialogAsync](/javascript/api/office/office.ui#displaydialogasync-startaddress--callback-)方法，因为该对象将被其他方法引用。</span><span class="sxs-lookup"><span data-stu-id="3477d-116">It should be assigned to a variable, which typically has greater scope than the [displayDialogAsync](/javascript/api/office/office.ui#displaydialogasync-startaddress--callback-) method because the object will be referenced by other methods.</span></span> <span data-ttu-id="3477d-117">示例如下：</span><span class="sxs-lookup"><span data-stu-id="3477d-117">The following is an example:</span></span>
+> [!NOTE]
+> <span data-ttu-id="e9481-108">\*有一个 bug 将影响你的令牌处理策略。</span><span class="sxs-lookup"><span data-stu-id="e9481-108">\* There is a bug that will effect your strategy for token handling.</span></span> <span data-ttu-id="e9481-109">如果加载项正使用 Safari 或 Microsoft 浏览器在 **Office 网页版**上运行，则对话框和任务窗格不共享同一本地存储，因此该存储无法用于在它们之间通信。</span><span class="sxs-lookup"><span data-stu-id="e9481-109">If the add-in is running in **Office on the web** in either the Safari or Edge browser, the dialog box and task pane do not share the same Local Storage, so it cannot be used to communicate between them.</span></span>
 
-```javascript
-var dialog;
-Office.context.ui.displayDialogAsync('https://myDomain/myDialog.html',
-    function (asyncResult) {
-        dialog = asyncResult.value;
-        dialog.addEventHandler(Office.EventType.DialogMessageReceived, processMessage);
-    }
-);
+## <a name="use-local-storage"></a><span data-ttu-id="e9481-110">使用本地存储</span><span class="sxs-lookup"><span data-stu-id="e9481-110">Use local storage</span></span>
 
-function processMessage(arg) {
-    dialog.close();
+<span data-ttu-id="e9481-111">若要使用本地存储，请 `setItem` `window.localStorage` 先在主机页中调用对象的方法，然后再 `displayDialogAsync` 调用，如以下示例所示：</span><span class="sxs-lookup"><span data-stu-id="e9481-111">To use local storage, call the `setItem` method of the `window.localStorage` object in the host page before the `displayDialogAsync` call, as in the following example:</span></span>
 
-  // message processing code goes here;
-
-}
+```js
+localStorage.setItem("clientID", "15963ac5-314f-4d9b-b5a1-ccb2f1aea248");
 ```
 
-<span data-ttu-id="3477d-118">此 `Dialog` 对象具有向对话框发送任何字符串或字符串化数据的[messageChild](/javascript/api/office/office.dialog#messagechild-message-)方法。</span><span class="sxs-lookup"><span data-stu-id="3477d-118">This `Dialog` object has a [messageChild](/javascript/api/office/office.dialog#messagechild-message-) method that sends any string, or stringified data, to the dialog box.</span></span> <span data-ttu-id="3477d-119">这 `DialogParentMessageReceived` 将在对话框中引发事件。</span><span class="sxs-lookup"><span data-stu-id="3477d-119">This raises a `DialogParentMessageReceived` event in the dialog box.</span></span> <span data-ttu-id="3477d-120">您的代码应处理此事件，如下一节中所示。</span><span class="sxs-lookup"><span data-stu-id="3477d-120">Your code should handle this event, as shown in the next section.</span></span>
+<span data-ttu-id="e9481-112">对话框框中的代码会在需要时读取项，如以下示例所示：</span><span class="sxs-lookup"><span data-stu-id="e9481-112">Code in the dialog box reads the item when it's needed, as in the following example:</span></span>
 
-<span data-ttu-id="3477d-121">假设对话框的 UI 应与当前活动的工作表关联，并且该工作表相对于其他工作表的位置。</span><span class="sxs-lookup"><span data-stu-id="3477d-121">Consider a scenario in which the UI of the dialog should correlate with the currently active worksheet and that worksheet's position relative to the other worksheets.</span></span> <span data-ttu-id="3477d-122">在下面的示例中， `sheetPropertiesChanged` 将 Excel 工作表属性发送到对话框。</span><span class="sxs-lookup"><span data-stu-id="3477d-122">In the following example, `sheetPropertiesChanged` sends Excel worksheet properties to the dialog box.</span></span> <span data-ttu-id="3477d-123">在这种情况下，当前工作表名为 "我的工作表"，而它是工作簿中的第二个工作表。</span><span class="sxs-lookup"><span data-stu-id="3477d-123">In this case the current worksheet is named "My Sheet" and it is the 2nd sheet in the workbook.</span></span> <span data-ttu-id="3477d-124">数据封装在字符串化对象中，以便可以将其传递给 `messageChild` 。</span><span class="sxs-lookup"><span data-stu-id="3477d-124">The data is encapsulated in an object which is stringified so that it can be passed to `messageChild`.</span></span>
-
-```javascript
-function sheetPropertiesChanged() {
-    var messageToDialog = JSON.stringify({
-                               name: "My Sheet",
-                               position: 2
-                           });
-
-    dialog.messageChild(messageToDialog);
-}
+```js
+var clientID = localStorage.getItem("clientID");
+// You can also use property syntax:
+// var clientID = localStorage.clientID;
 ```
 
-## <a name="handle-dialogparentmessagereceived-in-the-dialog-box"></a><span data-ttu-id="3477d-125">在对话框中处理 DialogParentMessageReceived</span><span class="sxs-lookup"><span data-stu-id="3477d-125">Handle DialogParentMessageReceived in the dialog box</span></span>
+## <a name="use-query-parameters"></a><span data-ttu-id="e9481-113">使用查询参数</span><span class="sxs-lookup"><span data-stu-id="e9481-113">Use query parameters</span></span>
 
-<span data-ttu-id="3477d-126">在对话框的 JavaScript 中， `DialogParentMessageReceived` 使用[addHandlerAsync](/javascript/api/office/office.ui#addhandlerasync-eventtype--handler--options--callback-)方法为事件注册处理程序。</span><span class="sxs-lookup"><span data-stu-id="3477d-126">In the dialog box's JavaScript, register a handler for the `DialogParentMessageReceived` event with the [UI.addHandlerAsync](/javascript/api/office/office.ui#addhandlerasync-eventtype--handler--options--callback-) method.</span></span> <span data-ttu-id="3477d-127">这通常是在[onReady 或 Office.initialize 方法](initialize-add-in.md)中完成的。</span><span class="sxs-lookup"><span data-stu-id="3477d-127">This is typically done in the [Office.onReady or Office.initialize methods](initialize-add-in.md).</span></span> <span data-ttu-id="3477d-128">示例如下：</span><span class="sxs-lookup"><span data-stu-id="3477d-128">The following is an example:</span></span>
+<span data-ttu-id="e9481-114">下面的示例展示了如何使用查询参数传递数据：</span><span class="sxs-lookup"><span data-stu-id="e9481-114">The following example shows how to pass data with a query parameter:</span></span>
 
-```javascript
-Office.onReady()
-    .then(function() {
-        Office.context.ui.addHandlerAsync(
-            Office.EventType.DialogParentMessageReceived,
-            onMessageFromParent);
-    });
+```js
+Office.context.ui.displayDialogAsync('https://myAddinDomain/myDialog.html?clientID=15963ac5-314f-4d9b-b5a1-ccb2f1aea248');
 ```
 
-<span data-ttu-id="3477d-129">然后，定义该 `onMessageFromParent` 处理程序。</span><span class="sxs-lookup"><span data-stu-id="3477d-129">Then, define the `onMessageFromParent` handler.</span></span> <span data-ttu-id="3477d-130">下面的代码将继续上一节中的示例。</span><span class="sxs-lookup"><span data-stu-id="3477d-130">The following code continues the example from the preceding section.</span></span> <span data-ttu-id="3477d-131">请注意，Office 会将参数传递给处理程序，并确保 `message` argument 对象的属性包含主机页中的字符串。</span><span class="sxs-lookup"><span data-stu-id="3477d-131">Note that Office passes an argument to the handler and that the `message` property of argument object contains the string from the host page.</span></span> <span data-ttu-id="3477d-132">在此示例中，邮件被 reconverted 到对象，jQuery 用于将对话框的顶部标题设置为与新工作表名称相匹配。</span><span class="sxs-lookup"><span data-stu-id="3477d-132">In this example, the message is reconverted to an object and jQuery is used to set the top heading of the dialog to match the new worksheet name.</span></span>
+<span data-ttu-id="e9481-115">有关使用此技术的示例，请参阅[Insert Excel charts using Microsoft Graph in a PowerPoint add-in](https://github.com/OfficeDev/PowerPoint-Add-in-Microsoft-Graph-ASPNET-InsertChart)（在 PowerPoint 加载项中使用 Microsoft Graph 插入 Excel 图表）。</span><span class="sxs-lookup"><span data-stu-id="e9481-115">For a sample that uses this technique, see [Insert Excel charts using Microsoft Graph in a PowerPoint add-in](https://github.com/OfficeDev/PowerPoint-Add-in-Microsoft-Graph-ASPNET-InsertChart).</span></span>
 
-```javascript
-function onMessageFromParent(event) {
-    var messageFromParent = JSON.parse(event.message);
-    $('h1').text(messageFromParent.name);
-}
-```
+<span data-ttu-id="e9481-116">对话框中的代码可以分析 URL，并读取参数值。</span><span class="sxs-lookup"><span data-stu-id="e9481-116">Code in your dialog box can parse the URL and read the parameter value.</span></span>
 
-<span data-ttu-id="3477d-133">最佳做法是验证是否正确注册了处理程序。</span><span class="sxs-lookup"><span data-stu-id="3477d-133">It is a best practice to verify that your handler is properly registered.</span></span> <span data-ttu-id="3477d-134">为此，可以将回调传递给在 `addHandlerAsync` 注册处理程序的尝试完成时运行的方法。</span><span class="sxs-lookup"><span data-stu-id="3477d-134">You can do this by passing a callback to the `addHandlerAsync` method that runs when the attempt to register the handler completes.</span></span> <span data-ttu-id="3477d-135">如果未成功注册处理程序，请使用该处理程序记录或显示错误。</span><span class="sxs-lookup"><span data-stu-id="3477d-135">Use the handler to log or show an error if the handler was not successfully registered.</span></span> <span data-ttu-id="3477d-136">示例如下。</span><span class="sxs-lookup"><span data-stu-id="3477d-136">The following is an example.</span></span> <span data-ttu-id="3477d-137">请注意，这 `reportError` 是未在此处定义的函数，它会记录或显示错误。</span><span class="sxs-lookup"><span data-stu-id="3477d-137">Note that `reportError` is a function, not defined here, that logs or displays the error.</span></span>
-
-```javascript
-Office.onReady()
-    .then(function() {
-        Office.context.ui.addHandlerAsync(
-            Office.EventType.DialogParentMessageReceived,
-            onMessageFromParent,
-            onRegisterMessageComplete);
-    });
-
-function onRegisterMessageComplete(asyncResult) {
-    if (asyncResult.status !== Office.AsyncResultStatus.Succeeded) {
-        reportError(asyncResult.error.message);
-    }
-}
-```
-
-## <a name="conditional-messaging"></a><span data-ttu-id="3477d-138">条件消息</span><span class="sxs-lookup"><span data-stu-id="3477d-138">Conditional messaging</span></span>
-
-<span data-ttu-id="3477d-139">由于可以 `messageChild` 从主机页进行多次调用，但在该事件的对话框中只有一个处理程序 `DialogParentMessageReceived` ，因此处理程序必须使用条件逻辑来区分不同的消息。</span><span class="sxs-lookup"><span data-stu-id="3477d-139">Because you can make multiple `messageChild` calls from the host page, but you have only one handler in the dialog box for the `DialogParentMessageReceived` event, the handler must use conditional logic to distinguish different messages.</span></span> <span data-ttu-id="3477d-140">您可以按照与[条件消息](dialog-api-in-office-add-ins.md#conditional-messaging)中所述的方式将消息发送到主机页时，精确地与构造条件消息传递的方式完全并行。</span><span class="sxs-lookup"><span data-stu-id="3477d-140">You can do this in a way that is precisely parallel to how you would structure conditional messaging when the dialog box is sending a message to the host page as described in [Conditional messaging](dialog-api-in-office-add-ins.md#conditional-messaging).</span></span>
+> [!IMPORTANT]
+> <span data-ttu-id="e9481-p103">Office 会自动向传递给 `displayDialogAsync` 的 URL 添加查询参数 `_host_info`。（附加在自定义查询参数（若有）后面，不会附加到对话框导航到的任何后续 URL。）Microsoft 可能会更改此值的内容，或者将来会将其全部删除，因此代码不得读取此值。相同的值会被添加到对话框的会话存储中。同样，*代码不得对此值执行读取和写入操作*。</span><span class="sxs-lookup"><span data-stu-id="e9481-p103">Office automatically adds a query parameter called `_host_info` to the URL that is passed to `displayDialogAsync`. (It is appended after your custom query parameters, if any. It is not appended to any subsequent URLs that the dialog box navigates to.) Microsoft may change the content of this value, or remove it entirely, in the future, so your code should not read it. The same value is added to the dialog box's session storage. Again, *your code should neither read nor write to this value*.</span></span>

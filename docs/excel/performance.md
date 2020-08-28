@@ -1,91 +1,31 @@
 ---
 title: Excel JavaScript API 性能优化
-description: 使用 Excel JavaScript API 优化性能
-ms.date: 07/14/2020
+description: 使用 JavaScript API 优化 Excel 加载项性能。
+ms.date: 07/29/2020
 localization_priority: Normal
-ms.openlocfilehash: 193cbe8c8cd1a432c6567401ed645990cb93e5e9
-ms.sourcegitcommit: 472b81642e9eb5fb2a55cd98a7b0826d37eb7f73
+ms.openlocfilehash: fdaccdca4779aaca64420794e382330994488606
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/17/2020
-ms.locfileid: "45159092"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47294099"
 ---
-# <a name="performance-optimization-using-the-excel-javascript-api"></a><span data-ttu-id="00a1c-103">使用 Excel JavaScript API 优化性能</span><span class="sxs-lookup"><span data-stu-id="00a1c-103">Performance optimization using the Excel JavaScript API</span></span>
+# <a name="performance-optimization-using-the-excel-javascript-api"></a><span data-ttu-id="d95e7-103">使用 Excel JavaScript API 优化性能</span><span class="sxs-lookup"><span data-stu-id="d95e7-103">Performance optimization using the Excel JavaScript API</span></span>
 
-<span data-ttu-id="00a1c-104">有多种方法可以使用 Excel JavaScript API 执行常见任务。</span><span class="sxs-lookup"><span data-stu-id="00a1c-104">There are multiple ways that you can perform common tasks with the Excel JavaScript API.</span></span> <span data-ttu-id="00a1c-105">你将发现不同方法之间的显著性能差异。</span><span class="sxs-lookup"><span data-stu-id="00a1c-105">You'll find significant performance differences between various approaches.</span></span> <span data-ttu-id="00a1c-106">本文提供指导和代码示例，展示如何使用 Excel JavaScript API 来高效执行常见任务。</span><span class="sxs-lookup"><span data-stu-id="00a1c-106">This article provides guidance and code samples to show you how to perform common tasks efficiently using Excel JavaScript API.</span></span>
+<span data-ttu-id="d95e7-104">有多种方法可以使用 Excel JavaScript API 执行常见任务。</span><span class="sxs-lookup"><span data-stu-id="d95e7-104">There are multiple ways that you can perform common tasks with the Excel JavaScript API.</span></span> <span data-ttu-id="d95e7-105">你将发现不同方法之间的显著性能差异。</span><span class="sxs-lookup"><span data-stu-id="d95e7-105">You'll find significant performance differences between various approaches.</span></span> <span data-ttu-id="d95e7-106">本文提供指导和代码示例，展示如何使用 Excel JavaScript API 来高效执行常见任务。</span><span class="sxs-lookup"><span data-stu-id="d95e7-106">This article provides guidance and code samples to show you how to perform common tasks efficiently using Excel JavaScript API.</span></span>
 
-## <a name="minimize-the-number-of-sync-calls"></a><span data-ttu-id="00a1c-107">减少 sync() 调用次数</span><span class="sxs-lookup"><span data-stu-id="00a1c-107">Minimize the number of sync() calls</span></span>
+> [!IMPORTANT]
+> <span data-ttu-id="d95e7-107">可以通过推荐使用和呼叫解决许多性能问题 `load` `sync` 。</span><span class="sxs-lookup"><span data-stu-id="d95e7-107">Many performance issues can be addressed through recommended usage of `load` and `sync` calls.</span></span> <span data-ttu-id="d95e7-108">请参阅 [Office 外接程序的资源限制和性能优化](../concepts/resource-limits-and-performance-optimization.md#performance-improvements-with-the-application-specific-apis) 一节中的 "特定于应用程序的 Api 的性能改进" 一节，以高效的方式使用应用程序特定的 api 的建议。</span><span class="sxs-lookup"><span data-stu-id="d95e7-108">See the "Performance improvements with the application-specific APIs" section of [Resource limits and performance optimization for Office Add-ins](../concepts/resource-limits-and-performance-optimization.md#performance-improvements-with-the-application-specific-apis) for advice on working with the application-specific APIs in an efficient way.</span></span>
 
-<span data-ttu-id="00a1c-108">在 Excel JavaScript API 中，`sync()` 是唯一的异步操作，在某些情况下可能会很慢，尤其是对于 Excel 网页版。</span><span class="sxs-lookup"><span data-stu-id="00a1c-108">In the Excel JavaScript API, `sync()` is the only asynchronous operation, and it can be slow under some circumstances, especially for Excel on the web.</span></span> <span data-ttu-id="00a1c-109">若要优化性能，在调用之前，通过尽可能多地将更改加入队列来最大程度减少调用 `sync()` 的次数。</span><span class="sxs-lookup"><span data-stu-id="00a1c-109">To optimize performance, minimize the number of calls to `sync()` by queueing up as many changes as possible before calling it.</span></span>
+## <a name="suspend-excel-processes-temporarily"></a><span data-ttu-id="d95e7-109">暂时挂起 Excel 进程</span><span class="sxs-lookup"><span data-stu-id="d95e7-109">Suspend Excel processes temporarily</span></span>
 
-<span data-ttu-id="00a1c-110">有关按照此做法操作的代码示例，请参阅[核心概念 - sync()](excel-add-ins-core-concepts.md#sync)。</span><span class="sxs-lookup"><span data-stu-id="00a1c-110">See [Core Concepts - sync()](excel-add-ins-core-concepts.md#sync) for code samples that follow this practice.</span></span>
+<span data-ttu-id="d95e7-110">Excel 中的多个后台任务将反应来自用户和外接程序的输入。</span><span class="sxs-lookup"><span data-stu-id="d95e7-110">Excel has a number of background tasks reacting to input from both users and your add-in.</span></span> <span data-ttu-id="d95e7-111">可以控制其中的部分 Excel 进程以提高性能。</span><span class="sxs-lookup"><span data-stu-id="d95e7-111">Some of these Excel processes can be controlled to yield a performance benefit.</span></span> <span data-ttu-id="d95e7-112">这在外接程序处理大型数据集时尤其有用。</span><span class="sxs-lookup"><span data-stu-id="d95e7-112">This is especially helpful when your add-in deals with large data sets.</span></span>
 
-## <a name="minimize-the-number-of-proxy-objects-created"></a><span data-ttu-id="00a1c-111">最大程度减少创建的代理对象数目</span><span class="sxs-lookup"><span data-stu-id="00a1c-111">Minimize the number of proxy objects created</span></span>
+### <a name="suspend-calculation-temporarily"></a><span data-ttu-id="d95e7-113">暂停计算</span><span class="sxs-lookup"><span data-stu-id="d95e7-113">Suspend calculation temporarily</span></span>
 
-<span data-ttu-id="00a1c-112">避免重复创建同一个代理对象。</span><span class="sxs-lookup"><span data-stu-id="00a1c-112">Avoid repeatedly creating the same proxy object.</span></span> <span data-ttu-id="00a1c-113">如果多个操作需要同一个代理对象，则改为创建一次并将其分配给一个变量，然后在代码中使用该变量。</span><span class="sxs-lookup"><span data-stu-id="00a1c-113">Instead, if you need the same proxy object for more than one operation, create it once and assign it to a variable, then use that variable in your code.</span></span>
+<span data-ttu-id="d95e7-114">如果你试图在大量单元格上执行操作（例如，设置一个大范围对象的值），而且不介意在操作完成时暂停 Excel 中的计算，建议暂停计算，直到调用下一个 `context.sync()`。</span><span class="sxs-lookup"><span data-stu-id="d95e7-114">If you are trying to perform an operation on a large number of cells (for example, setting the value of a huge range object) and you don't mind suspending the calculation in Excel temporarily while your operation finishes, we recommend that you suspend calculation until the next `context.sync()` is called.</span></span>
 
-```js
-// BAD: repeated calls to .getRange() to create the same proxy object
-worksheet.getRange("A1").format.fill.color = "red";
-worksheet.getRange("A1").numberFormat = "0.00%";
-worksheet.getRange("A1").values = [[1]];
-
-// GOOD: create the range proxy object once and assign to a variable
-var range = worksheet.getRange("A1")
-range.format.fill.color = "red";
-range.numberFormat = "0.00%";
-range.values = [[1]];
-
-// ALSO GOOD: use a "set" method to immediately set all the properties without even needing to create a variable!
-worksheet.getRange("A1").set({
-    numberFormat: [["0.00%"]],
-    values: [[1]],
-    format: {
-        fill: {
-            color: "red"
-        }
-    }
-});
-```
-
-## <a name="load-necessary-properties-only"></a><span data-ttu-id="00a1c-114">仅加载必要属性</span><span class="sxs-lookup"><span data-stu-id="00a1c-114">Load necessary properties only</span></span>
-
-<span data-ttu-id="00a1c-115">在 Excel JavaScript API 中，需要显式加载代理对象的属性。</span><span class="sxs-lookup"><span data-stu-id="00a1c-115">In the Excel JavaScript API, you need to explicitly load the properties of a proxy object.</span></span> <span data-ttu-id="00a1c-116">虽然可以使用空的 `load()` 调用一次性加载所有属性，但这种方法可能会产生大量的性能开销。</span><span class="sxs-lookup"><span data-stu-id="00a1c-116">Although you're able to load all the properties at once with an empty `load()` call, that approach can have significant performance overhead.</span></span> <span data-ttu-id="00a1c-117">我们转为建议只加载必要的属性，特别是对于那些具有大量属性的对象。</span><span class="sxs-lookup"><span data-stu-id="00a1c-117">Instead, we suggest that you only load the necessary properties, especially for those objects which have a large number of properties.</span></span>
-
-<span data-ttu-id="00a1c-118">例如，如果您只想读取 `address` range 对象的属性，请在调用方法时仅指定该属性 `load()` ：</span><span class="sxs-lookup"><span data-stu-id="00a1c-118">For example, if you only intend to read the `address` property of a range object, specify only that property when you call the `load()` method:</span></span>
-
-```js
-range.load('address');
-```
-
-<span data-ttu-id="00a1c-119">您可以 `load()` 通过以下任一方式调用方法：</span><span class="sxs-lookup"><span data-stu-id="00a1c-119">You can call `load()` method in any of the following ways:</span></span>
-
-<span data-ttu-id="00a1c-120">_语法：_</span><span class="sxs-lookup"><span data-stu-id="00a1c-120">_Syntax:_</span></span>
-
-```js
-object.load(string: properties);
-// or
-object.load(array: properties);
-// or
-object.load({ loadOption });
-```
-
-<span data-ttu-id="00a1c-121">_其中：_</span><span class="sxs-lookup"><span data-stu-id="00a1c-121">_Where:_</span></span>
-
-* <span data-ttu-id="00a1c-122">`properties` 列出了要加载的属性，指定为逗号分隔的字符串或名称数组。</span><span class="sxs-lookup"><span data-stu-id="00a1c-122">`properties` is the list of properties to load, specified as comma-delimited strings or as an array of names.</span></span> <span data-ttu-id="00a1c-123">有关详细信息，请参阅 `load()` 为[EXCEL JavaScript API 参考](../reference/overview/excel-add-ins-reference-overview.md)中的对象定义的方法。</span><span class="sxs-lookup"><span data-stu-id="00a1c-123">For more information, see the `load()` methods defined for objects in [Excel JavaScript API reference](../reference/overview/excel-add-ins-reference-overview.md).</span></span>
-* <span data-ttu-id="00a1c-p106">`loadOption` 指定的对象描述了选择、展开、置顶和跳过选项。有关详细信息，请参阅对象加载[选项](/javascript/api/office/officeextension.loadoption)。</span><span class="sxs-lookup"><span data-stu-id="00a1c-p106">`loadOption` specifies an object that describes the selection, expansion, top, and skip options. See object load [options](/javascript/api/office/officeextension.loadoption) for details.</span></span>
-
-<span data-ttu-id="00a1c-126">请注意，对象下的某些 "属性" 可能与另一个对象具有相同的名称。</span><span class="sxs-lookup"><span data-stu-id="00a1c-126">Please be aware that some of the "properties" under an object may have the same name as another object.</span></span> <span data-ttu-id="00a1c-127">例如，`format` 是区域对象下的一个属性，但 `format` 本身也是一个对象。</span><span class="sxs-lookup"><span data-stu-id="00a1c-127">For example, `format` is a property under range object, but `format` itself is an object as well.</span></span> <span data-ttu-id="00a1c-128">因此，如果发出 `range.load("format")` 之类的调用，这就相当于 `range.format.load()`，后者是一个空 load() 调用，它可能会导致前面所述的性能问题。</span><span class="sxs-lookup"><span data-stu-id="00a1c-128">So, if you make a call such as `range.load("format")`, this is equivalent to `range.format.load()`, which is an empty load() call that can cause performance problems as outlined previously.</span></span> <span data-ttu-id="00a1c-129">若要避免这种情况，代码应仅加载对象树中的 "叶节点"。</span><span class="sxs-lookup"><span data-stu-id="00a1c-129">To avoid this, your code should only load the "leaf nodes" in an object tree.</span></span>
-
-## <a name="suspend-excel-processes-temporarily"></a><span data-ttu-id="00a1c-130">暂时挂起 Excel 进程</span><span class="sxs-lookup"><span data-stu-id="00a1c-130">Suspend Excel processes temporarily</span></span>
-
-<span data-ttu-id="00a1c-131">Excel 中的多个后台任务将反应来自用户和外接程序的输入。</span><span class="sxs-lookup"><span data-stu-id="00a1c-131">Excel has a number of background tasks reacting to input from both users and your add-in.</span></span> <span data-ttu-id="00a1c-132">可以控制其中的部分 Excel 进程以提高性能。</span><span class="sxs-lookup"><span data-stu-id="00a1c-132">Some of these Excel processes can be controlled to yield a performance benefit.</span></span> <span data-ttu-id="00a1c-133">这在外接程序处理大型数据集时尤其有用。</span><span class="sxs-lookup"><span data-stu-id="00a1c-133">This is especially helpful when your add-in deals with large data sets.</span></span>
-
-### <a name="suspend-calculation-temporarily"></a><span data-ttu-id="00a1c-134">暂停计算</span><span class="sxs-lookup"><span data-stu-id="00a1c-134">Suspend calculation temporarily</span></span>
-
-<span data-ttu-id="00a1c-135">如果你试图在大量单元格上执行操作（例如，设置一个大范围对象的值），而且不介意在操作完成时暂停 Excel 中的计算，建议暂停计算，直到调用下一个 `context.sync()`。</span><span class="sxs-lookup"><span data-stu-id="00a1c-135">If you are trying to perform an operation on a large number of cells (for example, setting the value of a huge range object) and you don't mind suspending the calculation in Excel temporarily while your operation finishes, we recommend that you suspend calculation until the next `context.sync()` is called.</span></span>
-
-<span data-ttu-id="00a1c-136">有关如何使用 `suspendApiCalculationUntilNextSync()` API 以便捷的方式暂停和重新激活计算的信息，请参阅[应用程序对象](/javascript/api/excel/excel.application)参考文档。</span><span class="sxs-lookup"><span data-stu-id="00a1c-136">See the [Application Object](/javascript/api/excel/excel.application) reference documentation for information about how to use the `suspendApiCalculationUntilNextSync()` API to suspend and reactivate calculations in a very convenient way.</span></span> <span data-ttu-id="00a1c-137">下面的代码演示了如何暂停计算：</span><span class="sxs-lookup"><span data-stu-id="00a1c-137">The following code demonstrates how to suspend calculation temporarily:</span></span>
+<span data-ttu-id="d95e7-115">有关如何使用 `suspendApiCalculationUntilNextSync()` API 以便捷的方式暂停和重新激活计算的信息，请参阅[应用程序对象](/javascript/api/excel/excel.application)参考文档。</span><span class="sxs-lookup"><span data-stu-id="d95e7-115">See the [Application Object](/javascript/api/excel/excel.application) reference documentation for information about how to use the `suspendApiCalculationUntilNextSync()` API to suspend and reactivate calculations in a very convenient way.</span></span> <span data-ttu-id="d95e7-116">下面的代码演示了如何暂停计算：</span><span class="sxs-lookup"><span data-stu-id="d95e7-116">The following code demonstrates how to suspend calculation temporarily:</span></span>
 
 ```js
 Excel.run(async function(ctx) {
@@ -126,29 +66,29 @@ Excel.run(async function(ctx) {
 })
 ```
 
-<span data-ttu-id="00a1c-138">请注意，只有公式计算才会被挂起。</span><span class="sxs-lookup"><span data-stu-id="00a1c-138">Please note that only formula calculations are suspended.</span></span> <span data-ttu-id="00a1c-139">仍将重新生成任何已更改的引用。</span><span class="sxs-lookup"><span data-stu-id="00a1c-139">Any altered references are still rebuilt.</span></span> <span data-ttu-id="00a1c-140">例如，重命名工作表仍会将公式中的任何引用更新到该工作表。</span><span class="sxs-lookup"><span data-stu-id="00a1c-140">For example, renaming a worksheet still updates any references in formulas to that worksheet.</span></span>
+<span data-ttu-id="d95e7-117">请注意，只有公式计算才会被挂起。</span><span class="sxs-lookup"><span data-stu-id="d95e7-117">Please note that only formula calculations are suspended.</span></span> <span data-ttu-id="d95e7-118">仍将重新生成任何已更改的引用。</span><span class="sxs-lookup"><span data-stu-id="d95e7-118">Any altered references are still rebuilt.</span></span> <span data-ttu-id="d95e7-119">例如，重命名工作表仍会将公式中的任何引用更新到该工作表。</span><span class="sxs-lookup"><span data-stu-id="d95e7-119">For example, renaming a worksheet still updates any references in formulas to that worksheet.</span></span>
 
-### <a name="suspend-screen-updating"></a><span data-ttu-id="00a1c-141">暂停屏幕更新</span><span class="sxs-lookup"><span data-stu-id="00a1c-141">Suspend screen updating</span></span>
+### <a name="suspend-screen-updating"></a><span data-ttu-id="d95e7-120">暂停屏幕更新</span><span class="sxs-lookup"><span data-stu-id="d95e7-120">Suspend screen updating</span></span>
 
-<span data-ttu-id="00a1c-142">Excel 大约会在代码发生更改时显示外接程序所进行的这些更改。</span><span class="sxs-lookup"><span data-stu-id="00a1c-142">Excel displays changes your add-in makes approximately as they happen in the code.</span></span> <span data-ttu-id="00a1c-143">对于大型迭代数据集，你无需实时在屏幕上查看此进度。</span><span class="sxs-lookup"><span data-stu-id="00a1c-143">For large, iterative data sets, you may not need to see this progress on the screen in real-time.</span></span> <span data-ttu-id="00a1c-144">在外接程序调用 `context.sync()` 或者在 `Excel.run` 结束（隐式调用 `context.sync`）之前，`Application.suspendScreenUpdatingUntilNextSync()` 将暂停对 Excel 的可视化更新。</span><span class="sxs-lookup"><span data-stu-id="00a1c-144">`Application.suspendScreenUpdatingUntilNextSync()` pauses visual updates to Excel until the add-in calls `context.sync()`, or until `Excel.run` ends (implicitly calling `context.sync`).</span></span> <span data-ttu-id="00a1c-145">请注意，在下次同步之前，Excel 不会显示任何活动迹象。你的外接程序应为用户提供相关指南，以便为此延迟做好准备，或者提供一个状态栏，以演示相关活动。</span><span class="sxs-lookup"><span data-stu-id="00a1c-145">Be aware, Excel will not show any signs of activity until the next sync. Your add-in should either give users guidance to prepare them for this delay or provide a status bar to demonstrate activity.</span></span>
+<span data-ttu-id="d95e7-121">Excel 大约会在代码发生更改时显示外接程序所进行的这些更改。</span><span class="sxs-lookup"><span data-stu-id="d95e7-121">Excel displays changes your add-in makes approximately as they happen in the code.</span></span> <span data-ttu-id="d95e7-122">对于大型迭代数据集，你无需实时在屏幕上查看此进度。</span><span class="sxs-lookup"><span data-stu-id="d95e7-122">For large, iterative data sets, you may not need to see this progress on the screen in real-time.</span></span> <span data-ttu-id="d95e7-123">在外接程序调用 `context.sync()` 或者在 `Excel.run` 结束（隐式调用 `context.sync`）之前，`Application.suspendScreenUpdatingUntilNextSync()` 将暂停对 Excel 的可视化更新。</span><span class="sxs-lookup"><span data-stu-id="d95e7-123">`Application.suspendScreenUpdatingUntilNextSync()` pauses visual updates to Excel until the add-in calls `context.sync()`, or until `Excel.run` ends (implicitly calling `context.sync`).</span></span> <span data-ttu-id="d95e7-124">请注意，在下次同步之前，Excel 不会显示任何活动迹象。你的外接程序应为用户提供相关指南，以便为此延迟做好准备，或者提供一个状态栏，以演示相关活动。</span><span class="sxs-lookup"><span data-stu-id="d95e7-124">Be aware, Excel will not show any signs of activity until the next sync. Your add-in should either give users guidance to prepare them for this delay or provide a status bar to demonstrate activity.</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="00a1c-146">请勿 `suspendScreenUpdatingUntilNextSync` 重复调用（如在循环中）。</span><span class="sxs-lookup"><span data-stu-id="00a1c-146">Don't call `suspendScreenUpdatingUntilNextSync` repeatedly (such as in a loop).</span></span> <span data-ttu-id="00a1c-147">重复调用将导致 Excel 窗口闪烁。</span><span class="sxs-lookup"><span data-stu-id="00a1c-147">Repeated calls will cause the Excel window to flicker.</span></span>
+> <span data-ttu-id="d95e7-125">请勿 `suspendScreenUpdatingUntilNextSync` 反复调用 (如在循环) 中。</span><span class="sxs-lookup"><span data-stu-id="d95e7-125">Don't call `suspendScreenUpdatingUntilNextSync` repeatedly (such as in a loop).</span></span> <span data-ttu-id="d95e7-126">重复调用将导致 Excel 窗口闪烁。</span><span class="sxs-lookup"><span data-stu-id="d95e7-126">Repeated calls will cause the Excel window to flicker.</span></span>
 
-### <a name="enable-and-disable-events"></a><span data-ttu-id="00a1c-148">启用和禁用事件</span><span class="sxs-lookup"><span data-stu-id="00a1c-148">Enable and disable events</span></span>
+### <a name="enable-and-disable-events"></a><span data-ttu-id="d95e7-127">启用和禁用事件</span><span class="sxs-lookup"><span data-stu-id="d95e7-127">Enable and disable events</span></span>
 
-<span data-ttu-id="00a1c-149">可以通过禁用事件来改进加载项性能。</span><span class="sxs-lookup"><span data-stu-id="00a1c-149">Performance of an add-in may be improved by disabling events.</span></span> <span data-ttu-id="00a1c-150">[使用事件](excel-add-ins-events.md#enable-and-disable-events)文章中的代码示例展示了如何启用和禁用事件。</span><span class="sxs-lookup"><span data-stu-id="00a1c-150">A code sample showing how to enable and disable events is in the [Work with Events](excel-add-ins-events.md#enable-and-disable-events) article.</span></span>
+<span data-ttu-id="d95e7-128">可以通过禁用事件来改进加载项性能。</span><span class="sxs-lookup"><span data-stu-id="d95e7-128">Performance of an add-in may be improved by disabling events.</span></span> <span data-ttu-id="d95e7-129">[使用事件](excel-add-ins-events.md#enable-and-disable-events)文章中的代码示例展示了如何启用和禁用事件。</span><span class="sxs-lookup"><span data-stu-id="d95e7-129">A code sample showing how to enable and disable events is in the [Work with Events](excel-add-ins-events.md#enable-and-disable-events) article.</span></span>
 
-## <a name="importing-data-into-tables"></a><span data-ttu-id="00a1c-151">将数据导入表</span><span class="sxs-lookup"><span data-stu-id="00a1c-151">Importing data into tables</span></span>
+## <a name="importing-data-into-tables"></a><span data-ttu-id="d95e7-130">将数据导入表</span><span class="sxs-lookup"><span data-stu-id="d95e7-130">Importing data into tables</span></span>
 
-<span data-ttu-id="00a1c-152">当试图将大量数据直接导入到 [Table](/javascript/api/excel/excel.table) 对象中时（例如，通过使用 `TableRowCollection.add()`），可能会遇到性能缓慢的问题。</span><span class="sxs-lookup"><span data-stu-id="00a1c-152">When trying to import a huge amount of data directly into a [Table](/javascript/api/excel/excel.table) object directly (for example, by using `TableRowCollection.add()`), you might experience slow performance.</span></span> <span data-ttu-id="00a1c-153">如果尝试添加一个新表，应首先通过设置 `range.values` 来填充数据，然后调用 `worksheet.tables.add()` 在该区域内创建一个表。</span><span class="sxs-lookup"><span data-stu-id="00a1c-153">If you are trying to add a new table, you should fill in the data first by setting `range.values`, and then call `worksheet.tables.add()` to create a table over the range.</span></span> <span data-ttu-id="00a1c-154">如果尝试将数据写入现有表，请通过 `table.getDataBodyRange()` 将数据写入一个 range 对象，表将自动展开。</span><span class="sxs-lookup"><span data-stu-id="00a1c-154">If you are trying to write data into an existing table, write the data into a range object via `table.getDataBodyRange()`, and the table will expand automatically.</span></span> 
+<span data-ttu-id="d95e7-131">当试图将大量数据直接导入到 [Table](/javascript/api/excel/excel.table) 对象中时（例如，通过使用 `TableRowCollection.add()`），可能会遇到性能缓慢的问题。</span><span class="sxs-lookup"><span data-stu-id="d95e7-131">When trying to import a huge amount of data directly into a [Table](/javascript/api/excel/excel.table) object directly (for example, by using `TableRowCollection.add()`), you might experience slow performance.</span></span> <span data-ttu-id="d95e7-132">如果尝试添加一个新表，应首先通过设置 `range.values` 来填充数据，然后调用 `worksheet.tables.add()` 在该区域内创建一个表。</span><span class="sxs-lookup"><span data-stu-id="d95e7-132">If you are trying to add a new table, you should fill in the data first by setting `range.values`, and then call `worksheet.tables.add()` to create a table over the range.</span></span> <span data-ttu-id="d95e7-133">如果尝试将数据写入现有表，请通过 `table.getDataBodyRange()` 将数据写入一个 range 对象，表将自动展开。</span><span class="sxs-lookup"><span data-stu-id="d95e7-133">If you are trying to write data into an existing table, write the data into a range object via `table.getDataBodyRange()`, and the table will expand automatically.</span></span>
 
-<span data-ttu-id="00a1c-155">下面是此方法的一个示例：</span><span class="sxs-lookup"><span data-stu-id="00a1c-155">Here is an example of this approach:</span></span>
+<span data-ttu-id="d95e7-134">下面是此方法的一个示例：</span><span class="sxs-lookup"><span data-stu-id="d95e7-134">Here is an example of this approach:</span></span>
 
 ```js
 Excel.run(async (ctx) => {
     var sheet = ctx.workbook.worksheets.getItem("Sheet1");
-    // Write the data into the range first 
+    // Write the data into the range first.
     var range = sheet.getRange("A1:B3");
     range.values = [["Key", "Value"], ["A", 1], ["B", 2]];
 
@@ -167,42 +107,10 @@ Excel.run(async (ctx) => {
 ```
 
 > [!NOTE]
-> <span data-ttu-id="00a1c-156">可以使用 [Table.convertToRange()](/javascript/api/excel/excel.table#converttorange--) 方法将 Table 对象转换为 Range 对象，此做法非常方便。</span><span class="sxs-lookup"><span data-stu-id="00a1c-156">You can conveniently convert a Table object to a Range object by using the [Table.convertToRange()](/javascript/api/excel/excel.table#converttorange--) method.</span></span>
+> <span data-ttu-id="d95e7-135">可以使用 [Table.convertToRange()](/javascript/api/excel/excel.table#converttorange--) 方法将 Table 对象转换为 Range 对象，此做法非常方便。</span><span class="sxs-lookup"><span data-stu-id="d95e7-135">You can conveniently convert a Table object to a Range object by using the [Table.convertToRange()](/javascript/api/excel/excel.table#converttorange--) method.</span></span>
 
-## <a name="untrack-unneeded-ranges"></a><span data-ttu-id="00a1c-157">取消跟踪不需要的区域</span><span class="sxs-lookup"><span data-stu-id="00a1c-157">Untrack unneeded ranges</span></span>
+## <a name="see-also"></a><span data-ttu-id="d95e7-136">另请参阅</span><span class="sxs-lookup"><span data-stu-id="d95e7-136">See also</span></span>
 
-<span data-ttu-id="00a1c-158">JavaScript 层为加载项创建代理对象，以便与 Excel 工作簿和基础区域交互。</span><span class="sxs-lookup"><span data-stu-id="00a1c-158">The JavaScript layer creates proxy objects for your add-in to interact with the Excel workbook and underlying ranges.</span></span> <span data-ttu-id="00a1c-159">这些对象将一直保存在内存中，直到调用 `context.sync()`。</span><span class="sxs-lookup"><span data-stu-id="00a1c-159">These objects persist in memory until `context.sync()` is called.</span></span> <span data-ttu-id="00a1c-160">大型批处理操作可能会生成许多代理对象，加载项只需用到这些对象一次，并且可以在批处理执行之前从内存中释放。</span><span class="sxs-lookup"><span data-stu-id="00a1c-160">Large batch operations may generate a lot of proxy objects that are only needed once by the add-in and can be released from memory before the batch executes.</span></span>
-
-<span data-ttu-id="00a1c-161">[Range.untrack()](/javascript/api/excel/excel.range#untrack--) 方法从内存中释放 Excel Range 对象。</span><span class="sxs-lookup"><span data-stu-id="00a1c-161">The [Range.untrack()](/javascript/api/excel/excel.range#untrack--) method releases an Excel Range object from memory.</span></span> <span data-ttu-id="00a1c-162">在加载项处理完区域后调用此方法，应会在使用大量 Range 对象时产生明显的性能优势。</span><span class="sxs-lookup"><span data-stu-id="00a1c-162">Calling this method after your add-in is done with the range should yield a noticeable performance benefit when using large numbers of Range objects.</span></span>
-
-> [!NOTE]
-> <span data-ttu-id="00a1c-163">`Range.untrack()` 是 [ClientRequestContext.trackedObjects.remove(thisRange)](/javascript/api/office/officeextension.trackedobjects#remove-object-) 的快捷方式。</span><span class="sxs-lookup"><span data-stu-id="00a1c-163">`Range.untrack()` is a shortcut for [ClientRequestContext.trackedObjects.remove(thisRange)](/javascript/api/office/officeextension.trackedobjects#remove-object-).</span></span> <span data-ttu-id="00a1c-164">任何代理对象都可以通过从上下文中的跟踪对象列表中删除它来取消跟踪。</span><span class="sxs-lookup"><span data-stu-id="00a1c-164">Any proxy object can be untracked by removing it from the tracked objects list in the context.</span></span> <span data-ttu-id="00a1c-165">通常情况下，Range 对象是数量充足的用来证明取消跟踪合理性的惟一 Excel 对象。</span><span class="sxs-lookup"><span data-stu-id="00a1c-165">Typically, Range objects are the only Excel objects used in sufficient quantity to justify untracking.</span></span>
-
-<span data-ttu-id="00a1c-166">下面的代码示例用数据填充选定区域，每次填充一个单元格。</span><span class="sxs-lookup"><span data-stu-id="00a1c-166">The following code sample fills a selected range with data, one cell at a time.</span></span> <span data-ttu-id="00a1c-167">将值添加到单元格后，表示该单元格的区域将被取消跟踪。</span><span class="sxs-lookup"><span data-stu-id="00a1c-167">After the value is added to the cell, the range representing that cell is untracked.</span></span> <span data-ttu-id="00a1c-168">在选定的 10,000 到 20,000 个单元格区域运行此代码，首先使用 `cell.untrack()` 行，然后取消使用。</span><span class="sxs-lookup"><span data-stu-id="00a1c-168">Run this code with a selected range of 10,000 to 20,000 cells, first with the `cell.untrack()` line, and then without it.</span></span> <span data-ttu-id="00a1c-169">应会注意到，使用 `cell.untrack()` 行的代码比不使用的代码运行速度要快。</span><span class="sxs-lookup"><span data-stu-id="00a1c-169">You should notice the code runs faster with the `cell.untrack()` line than without it.</span></span> <span data-ttu-id="00a1c-170">此外，可能还会注意到之后的响应时间更快，因为清理步骤花费的时间更少。</span><span class="sxs-lookup"><span data-stu-id="00a1c-170">You may also notice a quicker response time afterwards, since the cleanup step takes less time.</span></span>
-
-```js
-Excel.run(async (context) => {
-    var largeRange = context.workbook.getSelectedRange();
-    largeRange.load(["rowCount", "columnCount"]);
-    await context.sync();
-
-    for (var i = 0; i < largeRange.rowCount; i++) {
-        for (var j = 0; j < largeRange.columnCount; j++) {
-            var cell = largeRange.getCell(i, j);
-            cell.values = [[i *j]];
-
-            // call untrack() to release the range from memory
-            cell.untrack();
-        }
-    }
-
-    await context.sync();
-});
-```
-
-## <a name="see-also"></a><span data-ttu-id="00a1c-171">另请参阅</span><span class="sxs-lookup"><span data-stu-id="00a1c-171">See also</span></span>
-
-- [<span data-ttu-id="00a1c-172">Excel JavaScript API 基本编程概念</span><span class="sxs-lookup"><span data-stu-id="00a1c-172">Fundamental programming concepts with the Excel JavaScript API</span></span>](excel-add-ins-core-concepts.md)
-- [<span data-ttu-id="00a1c-173">Excel JavaScript API 高级编程概念</span><span class="sxs-lookup"><span data-stu-id="00a1c-173">Advanced programming concepts with the Excel JavaScript API</span></span>](excel-add-ins-advanced-concepts.md)
-- [<span data-ttu-id="00a1c-174">Office 外接程序的资源限制和性能优化</span><span class="sxs-lookup"><span data-stu-id="00a1c-174">Resource limits and performance optimization for Office Add-ins</span></span>](../concepts/resource-limits-and-performance-optimization.md)
-- [<span data-ttu-id="00a1c-175">工作表函数对象（适用于 Excel 的 JavaScript API）</span><span class="sxs-lookup"><span data-stu-id="00a1c-175">Worksheet Functions Object (JavaScript API for Excel)</span></span>](/javascript/api/excel/excel.functions)
+* [<span data-ttu-id="d95e7-137">Excel JavaScript API 基本编程概念</span><span class="sxs-lookup"><span data-stu-id="d95e7-137">Fundamental programming concepts with the Excel JavaScript API</span></span>](excel-add-ins-core-concepts.md)
+* [<span data-ttu-id="d95e7-138">Office 外接程序的资源限制和性能优化</span><span class="sxs-lookup"><span data-stu-id="d95e7-138">Resource limits and performance optimization for Office Add-ins</span></span>](../concepts/resource-limits-and-performance-optimization.md)
+* [<span data-ttu-id="d95e7-139">工作表函数对象（适用于 Excel 的 JavaScript API）</span><span class="sxs-lookup"><span data-stu-id="d95e7-139">Worksheet Functions Object (JavaScript API for Excel)</span></span>](/javascript/api/excel/excel.functions)
