@@ -1,182 +1,202 @@
 ---
 title: Excel JavaScript API 基本编程概念
 description: 使用 Excel JavaScript API 生成 Excel 加载项。
-ms.date: 07/13/2020
+ms.date: 07/28/2020
 localization_priority: Priority
-ms.openlocfilehash: 01e5fa1037719e89eed70f00e63431bbd445c213
-ms.sourcegitcommit: 472b81642e9eb5fb2a55cd98a7b0826d37eb7f73
+ms.openlocfilehash: dde7dc66e0746fc4d9cf91ed3df824fab05c109d
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/17/2020
-ms.locfileid: "45159414"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47292588"
 ---
-# <a name="fundamental-programming-concepts-with-the-excel-javascript-api"></a><span data-ttu-id="ec14d-103">Excel JavaScript API 基本编程概念</span><span class="sxs-lookup"><span data-stu-id="ec14d-103">Fundamental programming concepts with the Excel JavaScript API</span></span>
+# <a name="fundamental-programming-concepts-with-the-excel-javascript-api"></a><span data-ttu-id="60a8c-103">Excel JavaScript API 基本编程概念</span><span class="sxs-lookup"><span data-stu-id="60a8c-103">Fundamental programming concepts with the Excel JavaScript API</span></span>
 
-<span data-ttu-id="ec14d-104">本文介绍了如何使用 [Excel JavaScript API](../reference/overview/excel-add-ins-reference-overview.md) 生成 Excel 2016 或更高版本的加载项。</span><span class="sxs-lookup"><span data-stu-id="ec14d-104">This article describes how to use the [Excel JavaScript API](../reference/overview/excel-add-ins-reference-overview.md) to build add-ins for Excel 2016 or later.</span></span> <span data-ttu-id="ec14d-105">它引入了一些核心概念，这些概念是使用 API 的基础，并为执行特定任务提供指导，如读取或写入较大区域、更新区域内的所有单元格等等。</span><span class="sxs-lookup"><span data-stu-id="ec14d-105">It introduces core concepts that are fundamental to using the API and provides guidance for performing specific tasks such as reading or writing to a large range, updating all cells in range, and more.</span></span>
+<span data-ttu-id="60a8c-104">本文介绍了如何使用 [Excel JavaScript API](../reference/overview/excel-add-ins-reference-overview.md) 生成 Excel 2016 或更高版本的加载项。</span><span class="sxs-lookup"><span data-stu-id="60a8c-104">This article describes how to use the [Excel JavaScript API](../reference/overview/excel-add-ins-reference-overview.md) to build add-ins for Excel 2016 or later.</span></span> <span data-ttu-id="60a8c-105">它引入了一些核心概念，这些概念是使用 API 的基础，并为执行特定任务提供指导，如读取或写入较大区域、更新区域内的所有单元格等等。</span><span class="sxs-lookup"><span data-stu-id="60a8c-105">It introduces core concepts that are fundamental to using the API and provides guidance for performing specific tasks such as reading or writing to a large range, updating all cells in range, and more.</span></span>
 
-## <a name="asynchronous-nature-of-excel-apis"></a><span data-ttu-id="ec14d-106">Excel API 的异步特性</span><span class="sxs-lookup"><span data-stu-id="ec14d-106">Asynchronous nature of Excel APIs</span></span>
+> [!IMPORTANT]
+> <span data-ttu-id="60a8c-106">请参阅[使用特定于应用程序的 API 模型](../develop/application-specific-api-model.md)，以了解 Excel API 的异步性质以及它们如何与工作簿协同工作。</span><span class="sxs-lookup"><span data-stu-id="60a8c-106">See [Using the application-specific API model](../develop/application-specific-api-model.md) to learn about the asynchronous nature of the Excel APIs and how they work with the workbook.</span></span>  
 
-<span data-ttu-id="ec14d-p102">基于 Web 的 Excel 加载项在浏览器容器内运行，此容器内嵌在基于桌面的平台版 Office 应用程序（如 Windows 版 Office）中，并在 Office 网页版中的 HTML iFrame 内运行。出于性能考虑，启用 Office.js API 以跨所有受支持的平台与 Excel 主机进行同步交互是不可行的。因此，Office.js 中的 `sync()` API 调用返回 [promise](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise)，它在 Excel 应用程序完成请求的读取或写入操作时进行解析。此外，还可以将多个操作排入队列（如设置属性或调用方法），并通过一次调用 `sync()` 将它们作为一批命令运行，而不是为每个操作单独发送请求。以下几个部分介绍了如何使用 `Excel.run()` 和 `sync()` API 来实现此目的。</span><span class="sxs-lookup"><span data-stu-id="ec14d-p102">The web-based Excel add-ins run inside a browser container that is embedded within the Office application on desktop-based platforms such as Office on Windows and runs inside an HTML iFrame in Office on the web. Enabling the Office.js API to interact synchronously with the Excel host across all supported platforms is not feasible due to performance considerations. Therefore, the `sync()` API call in Office.js returns a [promise](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise) that is resolved when the Excel application completes the requested read or write actions. Also, you can queue up multiple actions, such as setting properties or invoking methods, and run them as a batch of commands with a single call to `sync()`, rather than sending a separate request for each action. The following sections describe how to accomplish this using the `Excel.run()` and `sync()` APIs.</span></span>
+## <a name="officejs-apis-for-excel"></a><span data-ttu-id="60a8c-107">适用于 Excel 的 Office.js API</span><span class="sxs-lookup"><span data-stu-id="60a8c-107">Office.js APIs for Excel</span></span>
 
-## <a name="excelrun"></a><span data-ttu-id="ec14d-112">Excel.run</span><span class="sxs-lookup"><span data-stu-id="ec14d-112">Excel.run</span></span>
+<span data-ttu-id="60a8c-108">Excel 加载项通过使用适 Office JavaScript API 与 Excel 中的对象进行交互，JavaScript API包括两个 JavaScript 对象模型：</span><span class="sxs-lookup"><span data-stu-id="60a8c-108">An Excel add-in interacts with objects in Excel by using the Office JavaScript API, which includes two JavaScript object models:</span></span>
 
-<span data-ttu-id="ec14d-p103">`Excel.run` 执行一个函数，可以在其中指定要对 Excel 对象模型执行的操作。 `Excel.run` 自动创建可用于与 Excel 对象进行交互的请求上下文。 完成 `Excel.run` 时，将实现承诺，并自动释放在运行时分配的任何对象。</span><span class="sxs-lookup"><span data-stu-id="ec14d-p103">`Excel.run` executes a function where you specify the actions to perform against the Excel object model. `Excel.run` automatically creates a request context that you can use to interact with Excel objects. When `Excel.run` completes, a promise is resolved, and any objects that were allocated at runtime are automatically released.</span></span>
+* <span data-ttu-id="60a8c-109">**Excel JavaScript API**：[Excel JavaScript API](../reference/overview/excel-add-ins-reference-overview.md) 随 Office 2016 一起引入，提供了强类型的对象，可用于访问工作表、区域、表格、图表等。</span><span class="sxs-lookup"><span data-stu-id="60a8c-109">**Excel JavaScript API**: Introduced with Office 2016, the [Excel JavaScript API](../reference/overview/excel-add-ins-reference-overview.md) provides strongly-typed objects that you can use to access worksheets, ranges, tables, charts, and more.</span></span>
 
-<span data-ttu-id="ec14d-p104">以下示例演示如何使用 `Excel.run`。catch 语句捕获并记录 `Excel.run` 中发生的错误。</span><span class="sxs-lookup"><span data-stu-id="ec14d-p104">The following example shows how to use `Excel.run`. The catch statement catches and logs errors that occur within the `Excel.run`.</span></span>
+* <span data-ttu-id="60a8c-110">**通用 API**：[通用 API](/javascript/api/office) 随 Office 2013 引入，可用于访问多种类型的 Office 应用程序中常见的 UI、对话框和客户端设置等功能。</span><span class="sxs-lookup"><span data-stu-id="60a8c-110">**Common APIs**: Introduced with Office 2013, the [Common API](/javascript/api/office) can be used to access features such as UI, dialogs, and client settings that are common across multiple types of Office applications.</span></span>
+
+<span data-ttu-id="60a8c-111">你可能会使用 Excel JavaScript API 开发面向 Excel 2016 或更高版本的加载项中的大部分功能，同时还可以使用通用 API 中的对象。</span><span class="sxs-lookup"><span data-stu-id="60a8c-111">While you'll likely use the Excel JavaScript API to develop the majority of functionality in add-ins that target Excel 2016 or later, you'll also use objects in the Common API.</span></span> <span data-ttu-id="60a8c-112">例如：</span><span class="sxs-lookup"><span data-stu-id="60a8c-112">For example:</span></span>
+
+* <span data-ttu-id="60a8c-p103">[Context](/javascript/api/office/office.context)：`Context` 对象表示加载项的运行时环境，并提供对 API 关键对象的访问权限。 它由工作簿配置详细信息（如 `contentLanguage` 和 `officeTheme`）组成，并提供有关加载项的运行时环境（如 `host` 和 `platform`）的信息。 此外，它还提供了 `requirements.isSetSupported()` 方法，可用于检查运行加载项的 Excel 应用程序是否支持指定的要求集。</span><span class="sxs-lookup"><span data-stu-id="60a8c-p103">[Context](/javascript/api/office/office.context): The `Context` object represents the runtime environment of the add-in and provides access to key objects of the API. It consists of workbook configuration details such as `contentLanguage` and `officeTheme` and also provides information about the add-in's runtime environment such as `host` and `platform`. Additionally, it provides the `requirements.isSetSupported()` method, which you can use to check whether the specified requirement set is supported by the Excel application where the add-in is running.</span></span>
+* <span data-ttu-id="60a8c-116">[Document](/javascript/api/office/office.document)：`Document` 对象提供 `getFileAsync()` 方法，用于下载运行加载项的 Excel 文件。</span><span class="sxs-lookup"><span data-stu-id="60a8c-116">[Document](/javascript/api/office/office.document): The `Document` object provides the `getFileAsync()` method, which you can use to download the Excel file where the add-in is running.</span></span>
+
+<span data-ttu-id="60a8c-117">下图说明了可能使用 Excel JavaScript API 或公共 API 的情况。</span><span class="sxs-lookup"><span data-stu-id="60a8c-117">The following image illustrates when you might use the Excel JavaScript API or the Common APIs.</span></span>
+
+![Excel JS API 和公共 API 之间差异的图像](../images/excel-js-api-common-api.png)
+
+## <a name="object-model"></a><span data-ttu-id="60a8c-119">对象模型</span><span class="sxs-lookup"><span data-stu-id="60a8c-119">Object model</span></span>
+
+<span data-ttu-id="60a8c-120">若要了解 Excel API，则必须了解工作簿的各个组件之间如何相互关联。</span><span class="sxs-lookup"><span data-stu-id="60a8c-120">To understand the Excel APIs, you must understand how the components of a workbook are related to one another.</span></span>
+
+* <span data-ttu-id="60a8c-121">一个 **Workbook** 包含一个或多个 **Worksheet**。</span><span class="sxs-lookup"><span data-stu-id="60a8c-121">A **Workbook** contains one or more **Worksheets**.</span></span>
+* <span data-ttu-id="60a8c-122">**Worksheet** 可通过 **Range** 对象访问单元格。</span><span class="sxs-lookup"><span data-stu-id="60a8c-122">A **Worksheet** gives access to cells through **Range** objects.</span></span>
+* <span data-ttu-id="60a8c-123">**Range** 代表一组连续的单元格。</span><span class="sxs-lookup"><span data-stu-id="60a8c-123">A **Range** represents a group of contiguous cells.</span></span>
+* <span data-ttu-id="60a8c-124">**Range** 用于创建和放置 **Table**、**Chart** 和 **Shape** 以及其他数据可视化或组织对象。</span><span class="sxs-lookup"><span data-stu-id="60a8c-124">**Ranges** are used to create and place **Tables**, **Charts**, **Shapes**, and other data visualization or organization objects.</span></span>
+* <span data-ttu-id="60a8c-125">**Worksheet** 包含单个工作表中存在的那些数据对象的集合。</span><span class="sxs-lookup"><span data-stu-id="60a8c-125">A **Worksheet** contains collections of those data objects that are present in the individual sheet.</span></span>
+* <span data-ttu-id="60a8c-126">**Workbook** 包含整个 **Workbook** 的某些数据对象（例如，**Table**）的集合。</span><span class="sxs-lookup"><span data-stu-id="60a8c-126">**Workbooks** contain collections of some of those data objects (such as **Tables**) for the entire **Workbook**.</span></span>
+
+### <a name="ranges"></a><span data-ttu-id="60a8c-127">Range</span><span class="sxs-lookup"><span data-stu-id="60a8c-127">Ranges</span></span>
+
+<span data-ttu-id="60a8c-128">Range 是工作簿中的一组连续单元格。</span><span class="sxs-lookup"><span data-stu-id="60a8c-128">A range is a group of contiguous cells in the workbook.</span></span> <span data-ttu-id="60a8c-129">加载项通常使用 A1 样式表示法（例如，对于 **B** 列和第 **3** 行中单个单元格，即 **B3** 或从 **C** 列至 **F** 列和第 **2** 行至第 **4** 行的单元格，即 **C2:F4**）来定义范围。</span><span class="sxs-lookup"><span data-stu-id="60a8c-129">Add-ins typically use A1-style notation (e.g. **B3** for the single cell in column **B** and row **3** or **C2:F4** for the cells from columns **C** through **F** and rows **2** through **4**) to define ranges.</span></span>
+
+<span data-ttu-id="60a8c-130">Range 具有三个核心属性：`values`、`formulas` 和 `format`。</span><span class="sxs-lookup"><span data-stu-id="60a8c-130">Ranges have three core properties: `values`, `formulas`, and `format`.</span></span> <span data-ttu-id="60a8c-131">这些属性获取或设置单元格值、要计算的公式以及单元格的视觉对象格式设置。</span><span class="sxs-lookup"><span data-stu-id="60a8c-131">These properties get or set the cell values, formulas to be evaluated, and the visual formatting of the cells.</span></span>
+
+#### <a name="range-sample"></a><span data-ttu-id="60a8c-132">Range 示例</span><span class="sxs-lookup"><span data-stu-id="60a8c-132">Range sample</span></span>
+
+<span data-ttu-id="60a8c-133">以下示例显示了如何创建销售记录。</span><span class="sxs-lookup"><span data-stu-id="60a8c-133">The following sample shows how to create sales records.</span></span> <span data-ttu-id="60a8c-134">此函数使用 `Range` 对象来设置值、公式和格式。</span><span class="sxs-lookup"><span data-stu-id="60a8c-134">This function uses `Range` objects to set the values, formulas, and formats.</span></span>
 
 ```js
 Excel.run(function (context) {
-    // You can use the Excel JavaScript API here in the batch function
-    // to execute actions on the Excel object model.
-    console.log('Your code goes here.');
-}).catch(function (error) {
-    console.log('error: ' + error);
-    if (error instanceof OfficeExtension.Error) {
-        console.log('Debug info: ' + JSON.stringify(error.debugInfo));
-    }
+    var sheet = context.workbook.worksheets.getActiveWorksheet();
+
+    // Create the headers and format them to stand out.
+    var headers = [
+      ["Product", "Quantity", "Unit Price", "Totals"]
+    ];
+    var headerRange = sheet.getRange("B2:E2");
+    headerRange.values = headers;
+    headerRange.format.fill.color = "#4472C4";
+    headerRange.format.font.color = "white";
+
+    // Create the product data rows.
+    var productData = [
+      ["Almonds", 6, 7.5],
+      ["Coffee", 20, 34.5],
+      ["Chocolate", 10, 9.56],
+    ];
+    var dataRange = sheet.getRange("B3:D5");
+    dataRange.values = productData;
+
+    // Create the formulas to total the amounts sold.
+    var totalFormulas = [
+      ["=C3 * D3"],
+      ["=C4 * D4"],
+      ["=C5 * D5"],
+      ["=SUM(E3:E5)"]
+    ];
+    var totalRange = sheet.getRange("E3:E6");
+    totalRange.formulas = totalFormulas;
+    totalRange.format.font.bold = true;
+
+    // Display the totals as US dollar amounts.
+    totalRange.numberFormat = [["$0.00"]];
+
+    return context.sync();
 });
 ```
 
-### <a name="run-options"></a><span data-ttu-id="ec14d-118">运行选项</span><span class="sxs-lookup"><span data-stu-id="ec14d-118">Run options</span></span>
+<span data-ttu-id="60a8c-135">此示例将在当前工作表中创建以下数据：</span><span class="sxs-lookup"><span data-stu-id="60a8c-135">This sample creates the following data in the current worksheet:</span></span>
 
-<span data-ttu-id="ec14d-119">`Excel.run` 包含需要使用 [RunOptions](/javascript/api/excel/excel.runoptions) 对象的重载。</span><span class="sxs-lookup"><span data-stu-id="ec14d-119">`Excel.run` has an overload that takes in a [RunOptions](/javascript/api/excel/excel.runoptions) object.</span></span> <span data-ttu-id="ec14d-120">这包含一组影响函数运行时平台行为的属性。</span><span class="sxs-lookup"><span data-stu-id="ec14d-120">This contains a set of properties that affect platform behavior when the function runs.</span></span> <span data-ttu-id="ec14d-121">目前，支持以下属性：</span><span class="sxs-lookup"><span data-stu-id="ec14d-121">The following property is currently supported:</span></span>
+![显示值行、公式列和格式化标题的销售记录。](../images/excel-overview-range-sample.png)
 
-- <span data-ttu-id="ec14d-122">`delayForCellEdit`：确定 Excel 是否将批处理请求延迟到用户退出单元格编辑模式时执行。</span><span class="sxs-lookup"><span data-stu-id="ec14d-122">`delayForCellEdit`: Determines whether Excel delays the batch request until the user exits cell edit mode.</span></span> <span data-ttu-id="ec14d-123">若为 **true**，批处理请求延迟到用户退出单元格编辑模式时执行。</span><span class="sxs-lookup"><span data-stu-id="ec14d-123">When **true**, the batch request is delayed and runs when the user exits cell edit mode.</span></span> <span data-ttu-id="ec14d-124">若为 **false**，批处理请求会在用户处于单元格编辑模式时（导致无法访问用户的错误出现）自动失败。</span><span class="sxs-lookup"><span data-stu-id="ec14d-124">When **false**, the batch request automatically fails if the user is in cell edit mode (causing an error to reach the user).</span></span> <span data-ttu-id="ec14d-125">未指定 `delayForCellEdit` 属性的默认行为等同于此属性为 **false**。</span><span class="sxs-lookup"><span data-stu-id="ec14d-125">The default behavior with no `delayForCellEdit` property specified is equivalent to when it is **false**.</span></span>
+### <a name="charts-tables-and-other-data-objects"></a><span data-ttu-id="60a8c-137">Chart、Table 和其他数据对象</span><span class="sxs-lookup"><span data-stu-id="60a8c-137">Charts, tables, and other data objects</span></span>
+
+<span data-ttu-id="60a8c-138">Excel JavaScript API 可以在 Excel 中创建和设置数据结构和可视化效果。</span><span class="sxs-lookup"><span data-stu-id="60a8c-138">The Excel JavaScript APIs can create and manipulate the data structures and visualizations within Excel.</span></span> <span data-ttu-id="60a8c-139">Table 和 Chart 是最常用的两个对象，但是 API 支持数据透视表、形状和图像等。</span><span class="sxs-lookup"><span data-stu-id="60a8c-139">Tables and charts are two of the more commonly used objects, but the APIs support PivotTables, shapes, images, and more.</span></span>
+
+#### <a name="creating-a-table"></a><span data-ttu-id="60a8c-140">创建表</span><span class="sxs-lookup"><span data-stu-id="60a8c-140">Creating a table</span></span>
+
+<span data-ttu-id="60a8c-141">通过使用数据填充范围创建表。</span><span class="sxs-lookup"><span data-stu-id="60a8c-141">Create tables by using data-filled ranges.</span></span> <span data-ttu-id="60a8c-142">会将格式设置和表控件（如筛选器）自动应用到该范围。</span><span class="sxs-lookup"><span data-stu-id="60a8c-142">Formatting and table controls (such as filters) are automatically applied to the range.</span></span>
+
+<span data-ttu-id="60a8c-143">以下示例使用上一个示例中的范围创建了一个表。</span><span class="sxs-lookup"><span data-stu-id="60a8c-143">The following sample creates a table using the ranges from the previous sample.</span></span>
+
+```js
+Excel.run(function (context) {
+    var sheet = context.workbook.worksheets.getActiveWorksheet();
+    sheet.tables.add("B2:E5", true);
+    return context.sync();
+});
+```
+
+<span data-ttu-id="60a8c-144">在包含之前数据的工作表上使用此示例代码将创建下表：</span><span class="sxs-lookup"><span data-stu-id="60a8c-144">Using this sample code on the worksheet with the previous data creates the following table:</span></span>
+
+![使用之前的销售记录制成的表。](../images/excel-overview-table-sample.png)
+
+#### <a name="creating-a-chart"></a><span data-ttu-id="60a8c-146">创建图表</span><span class="sxs-lookup"><span data-stu-id="60a8c-146">Creating a chart</span></span>
+
+<span data-ttu-id="60a8c-147">创建图表以直观显示某个范围内的数据。</span><span class="sxs-lookup"><span data-stu-id="60a8c-147">Create charts to visualize the data in a range.</span></span> <span data-ttu-id="60a8c-148">该 API 支持数十种图表类型，每种都可以根据需要进行自定义。</span><span class="sxs-lookup"><span data-stu-id="60a8c-148">The APIs support dozens of chart varieties, each of which can be customized to suit your needs.</span></span>
+
+<span data-ttu-id="60a8c-149">下面的示例为三个项目创建一个简单的柱形图，并将其置于工作表顶部下方 100 像素处。</span><span class="sxs-lookup"><span data-stu-id="60a8c-149">The following sample creates a simple column chart for three items and places it 100 pixels below the top of the worksheet.</span></span>
+
+```js
+Excel.run(function (context) {
+    var sheet = context.workbook.worksheets.getActiveWorksheet();
+    var chart = sheet.charts.add(Excel.ChartType.columnStacked, sheet.getRange("B3:C5"));
+    chart.top = 100;
+    return context.sync();
+});
+```
+
+<span data-ttu-id="60a8c-150">在工作表上使用上一个表运行此示例将创建以下图表：</span><span class="sxs-lookup"><span data-stu-id="60a8c-150">Running this sample on the worksheet with the previous table creates the following chart:</span></span>
+
+![一个柱形图，显示上一个销售记录中三个项目的数量。](../images/excel-overview-chart-sample.png)
+
+## <a name="run-options"></a><span data-ttu-id="60a8c-152">运行选项</span><span class="sxs-lookup"><span data-stu-id="60a8c-152">Run options</span></span>
+
+<span data-ttu-id="60a8c-153">`Excel.run` 包含需要使用 [RunOptions](/javascript/api/excel/excel.runoptions) 对象的重载。</span><span class="sxs-lookup"><span data-stu-id="60a8c-153">`Excel.run` has an overload that takes in a [RunOptions](/javascript/api/excel/excel.runoptions) object.</span></span> <span data-ttu-id="60a8c-154">这包含一组影响函数运行时平台行为的属性。</span><span class="sxs-lookup"><span data-stu-id="60a8c-154">This contains a set of properties that affect platform behavior when the function runs.</span></span> <span data-ttu-id="60a8c-155">目前，支持以下属性：</span><span class="sxs-lookup"><span data-stu-id="60a8c-155">The following property is currently supported:</span></span>
+
+* <span data-ttu-id="60a8c-156">`delayForCellEdit`：确定 Excel 是否将批处理请求延迟到用户退出单元格编辑模式时执行。</span><span class="sxs-lookup"><span data-stu-id="60a8c-156">`delayForCellEdit`: Determines whether Excel delays the batch request until the user exits cell edit mode.</span></span> <span data-ttu-id="60a8c-157">若为 **true**，批处理请求延迟到用户退出单元格编辑模式时执行。</span><span class="sxs-lookup"><span data-stu-id="60a8c-157">When **true**, the batch request is delayed and runs when the user exits cell edit mode.</span></span> <span data-ttu-id="60a8c-158">若为 **false**，批处理请求会在用户处于单元格编辑模式时（导致无法访问用户的错误出现）自动失败。</span><span class="sxs-lookup"><span data-stu-id="60a8c-158">When **false**, the batch request automatically fails if the user is in cell edit mode (causing an error to reach the user).</span></span> <span data-ttu-id="60a8c-159">未指定 `delayForCellEdit` 属性的默认行为等同于此属性为 **false**。</span><span class="sxs-lookup"><span data-stu-id="60a8c-159">The default behavior with no `delayForCellEdit` property specified is equivalent to when it is **false**.</span></span>
 
 ```js
 Excel.run({ delayForCellEdit: true }, function (context) { ... })
 ```
 
-## <a name="request-context"></a><span data-ttu-id="ec14d-126">请求上下文</span><span class="sxs-lookup"><span data-stu-id="ec14d-126">Request context</span></span>
+## <a name="null-or-blank-property-values"></a><span data-ttu-id="60a8c-160">null 或空属性值</span><span class="sxs-lookup"><span data-stu-id="60a8c-160">null or blank property values</span></span>
 
-<span data-ttu-id="ec14d-p107">Excel 和加载项在两个不同的进程中运行。由于它们使用不同的运行时环境，因此 Excel 加载项需要使用 `RequestContext` 对象，将加载项连接到 Excel 中的对象，如工作表、区域、图表和表格。</span><span class="sxs-lookup"><span data-stu-id="ec14d-p107">Excel and your add-in run in two different processes. Since they use different runtime environments, Excel add-ins require a `RequestContext` object in order to connect your add-in to objects in Excel such as worksheets, ranges, charts, and tables.</span></span>
+<span data-ttu-id="60a8c-161">`null` 和空字符串在 Excel JavaScript API 中具有特殊含义。</span><span class="sxs-lookup"><span data-stu-id="60a8c-161">`null` and empty strings have special implications in the Excel JavaScript APIs.</span></span> <span data-ttu-id="60a8c-162">它们用于表示空单元格、无格式或默认值。</span><span class="sxs-lookup"><span data-stu-id="60a8c-162">They're used to represent empty cells, no formatting, or default values.</span></span> <span data-ttu-id="60a8c-163">本节详细介绍了在获取和设置属性时如何使用 `null` 和空字符串。</span><span class="sxs-lookup"><span data-stu-id="60a8c-163">This section details the use of `null` and empty string when getting and setting properties.</span></span>
 
-## <a name="proxy-objects"></a><span data-ttu-id="ec14d-129">代理对象</span><span class="sxs-lookup"><span data-stu-id="ec14d-129">Proxy objects</span></span>
+### <a name="null-input-in-2-d-array"></a><span data-ttu-id="60a8c-164">二维数组中的 null 输入</span><span class="sxs-lookup"><span data-stu-id="60a8c-164">null input in 2-D Array</span></span>
 
-<span data-ttu-id="ec14d-p108">在加载项中声明和使用的 Excel JavaScript 对象为代理对象。 调用的任何方法或在代理对象上设置或加载的属性都只是添加到挂起命令的队列中。 如果在请求上下文（例如 `sync()`）时调用 `context.sync()` 方法，已加入队列的命令将被发送到 Excel 并运行。 从根本上来说，Excel JavaScript API 是以批处理为中心的。 可以在请求上下文中将任意数量的更改加入队列，然后调用 `sync()` 方法来运行此批已加入队列的命令。</span><span class="sxs-lookup"><span data-stu-id="ec14d-p108">The Excel JavaScript objects that you declare and use in an add-in are proxy objects. Any methods that you invoke or properties that you set or load on proxy objects are simply added to a queue of pending commands. When you call the `sync()` method on the request context (for example, `context.sync()`), the queued commands are dispatched to Excel and run. The Excel JavaScript API is fundamentally batch-centric. You can queue up as many changes as you wish on the request context, and then call the `sync()` method to run the batch of queued commands.</span></span>
+<span data-ttu-id="60a8c-p113">在 Excel 中，一个区域由一个二维数组表示，其中第一个维度是行，第二个维度是列。 若要仅为某个区域内的特定单元格设置值、数字格式或公式，请指定二维数组中这些单元格的值、数字格式或公式，并为二维数组中的所有其他单元格指定 `null`。</span><span class="sxs-lookup"><span data-stu-id="60a8c-p113">In Excel, a range is represented by a 2-D array, where the first dimension is rows and the second dimension is columns. To set values, number format, or formula for only specific cells within a range, specify the values, number format, or formula for those cells in the 2-D array, and specify `null` for all other cells in the 2-D array.</span></span>
 
-<span data-ttu-id="ec14d-p109">例如，下面的代码段声明本地 JavaScript 对象 `selectedRange` 以引用 Excel 文档中选定的区域，然后在该对象上设置某些属性。 `selectedRange` 对象是一个代理对象，因此在该对象上所设置的属性以及调用的方法将不会反映在 Excel 文档中，直到加载项调用 `context.sync()`。</span><span class="sxs-lookup"><span data-stu-id="ec14d-p109">For example, the following code snippet declares the local JavaScript object `selectedRange` to reference a selected range in the Excel document, and then sets some properties on that object. The `selectedRange` object is a proxy object, so the properties that are set and method that is invoked on that object will not be reflected in the Excel document until your add-in calls `context.sync()`.</span></span>
-
-```js
-var selectedRange = context.workbook.getSelectedRange();
-selectedRange.format.fill.color = "#4472C4";
-selectedRange.format.font.color = "white";
-selectedRange.format.autofitColumns();
-```
-
-### <a name="sync"></a><span data-ttu-id="ec14d-137">sync()</span><span class="sxs-lookup"><span data-stu-id="ec14d-137">sync()</span></span>
-
-<span data-ttu-id="ec14d-p110">在请求上下文中调用 `sync()` 方法将在 Excel 文档中同步代理对象与对象之间的状态。 `sync()` 方法运行在请求上下文中加入队列的所有命令，并检索应该在代理对象上加载的任何属性的值。 `sync()` 方法以异步方式执行并返回 [promise](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise)（在 `sync()` 方法完成后解析）。</span><span class="sxs-lookup"><span data-stu-id="ec14d-p110">Calling the `sync()` method on the request context synchronizes the state between proxy objects and objects in the Excel document. The `sync()` method runs any commands that are queued on the request context and retrieves values for any properties that should be loaded on the proxy objects. The `sync()` method executes asynchronously and returns a [promise](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise), which is resolved when the `sync()` method completes.</span></span>
-
-<span data-ttu-id="ec14d-141">下面的示例演示了一个批处理函数，它定义本地 JavaScript 代理对象 (`selectedRange`)，加载该对象的属性，然后使用 JavaScript Promises 模式调用 `context.sync()` 以同步 Excel 文档中代理对象与对象之间的状态。</span><span class="sxs-lookup"><span data-stu-id="ec14d-141">The following example shows a batch function that defines a local JavaScript proxy object (`selectedRange`), loads a property of that object, and then uses the JavaScript Promises pattern to call `context.sync()` to synchronize the state between proxy objects and objects in the Excel document.</span></span>
-
-```js
-Excel.run(function (context) {
-    var selectedRange = context.workbook.getSelectedRange();
-    selectedRange.load('address');
-    return context.sync()
-      .then(function () {
-        console.log('The selected range is: ' + selectedRange.address);
-    });
-}).catch(function (error) {
-    console.log('error: ' + error);
-    if (error instanceof OfficeExtension.Error) {
-        console.log('Debug info: ' + JSON.stringify(error.debugInfo));
-    }
-});
-```
-
-<span data-ttu-id="ec14d-142">在上一示例中，已设置 `selectedRange`，并且将在调用 `context.sync()` 时加载其 `address` 属性。</span><span class="sxs-lookup"><span data-stu-id="ec14d-142">In the previous example, `selectedRange` is set and its `address` property is loaded when `context.sync()` is called.</span></span>
-
-<span data-ttu-id="ec14d-143">由于 `sync()` 是一个返回承诺的异步操作，因此，（在 JavaScript 中）应始终`return`承诺。</span><span class="sxs-lookup"><span data-stu-id="ec14d-143">Because `sync()` is an asynchronous operation that returns a promise, you should always `return` the promise (in JavaScript).</span></span> <span data-ttu-id="ec14d-144">这样做可确保在脚本继续运行之前完成 `sync()` 操作。</span><span class="sxs-lookup"><span data-stu-id="ec14d-144">Doing so ensures that the `sync()` operation completes before the script continues to run.</span></span> <span data-ttu-id="ec14d-145">若要详细了解如何优化使用 `sync()` 时的性能，请参阅 [Excel JavaScript API 性能优化](../excel/performance.md)。</span><span class="sxs-lookup"><span data-stu-id="ec14d-145">For more information about optimizing performance with `sync()`, see [Excel JavaScript API performance optimization](../excel/performance.md).</span></span>
-
-### <a name="load"></a><span data-ttu-id="ec14d-146">load()</span><span class="sxs-lookup"><span data-stu-id="ec14d-146">load()</span></span>
-
-<span data-ttu-id="ec14d-p112">在可以读取代理对象的属性之前，必须显式加载这些属性，以便使用 Excel 文档中的数据填充代理对象，然后调用 `context.sync()`。 例如，如果创建代理对象来引用选定的区域，然后希望读取所选区域的 `address` 属性，需要首先加载 `address` 属性，然后才可以读取它。 若要请求获取加载的代理对象的属性，请对对象调用 `load()` 方法，并指定要加载的属性。</span><span class="sxs-lookup"><span data-stu-id="ec14d-p112">Before you can read the properties of a proxy object, you must explicitly load the properties to populate the proxy object with data from the Excel document, and then call `context.sync()`. For example, if you create a proxy object to reference a selected range, and then want to read the selected range's `address` property, you need to load the `address` property before you can read it. To request properties of a proxy object be loaded, call the `load()` method on the object and specify the properties to load.</span></span>
-
-> [!NOTE]
-> <span data-ttu-id="ec14d-p113">如果只要对代理对象调用方法或设置属性，无需调用 `load()` 方法。 只在要读取代理对象属性时，才需要调用 `load()` 方法。</span><span class="sxs-lookup"><span data-stu-id="ec14d-p113">If you are only calling methods or setting properties on a proxy object, you do not need to call the `load()` method. The `load()` method is only required when you want to read properties on a proxy object.</span></span>
-
-<span data-ttu-id="ec14d-p114">类似于对代理对象设置属性或调用方法的请求，加载代理对象属性的请求会被添加到请求上下文的挂起命令队列中，将在下一次调用 `sync()` 方法时运行。必要时，可以将请求上下文中尽可能多的 `load()` 调用排入队列。</span><span class="sxs-lookup"><span data-stu-id="ec14d-p114">Just like requests to set properties or invoke methods on proxy objects, requests to load properties on proxy objects get added to the queue of pending commands on the request context, which will run the next time you call the `sync()` method. You can queue up as many `load()` calls on the request context as necessary.</span></span>
-
-<span data-ttu-id="ec14d-154">下面的示例仅加载区域的特定属性。</span><span class="sxs-lookup"><span data-stu-id="ec14d-154">In the following example, only specific properties of the range are loaded.</span></span>
-
-```js
-Excel.run(function (context) {
-    var sheetName = 'Sheet1';
-    var rangeAddress = 'A1:B2';
-    var myRange = context.workbook.worksheets.getItem(sheetName).getRange(rangeAddress);
-
-    myRange.load(['address', 'format/*', 'format/fill', 'entireRow' ]);
-
-    return context.sync()
-      .then(function () {
-        console.log (myRange.address);              // ok
-        console.log (myRange.format.wrapText);      // ok
-        console.log (myRange.format.fill.color);    // ok
-        //console.log (myRange.format.font.color);  // not ok as it was not loaded
-        });
-    }).then(function () {
-        console.log('done');
-}).catch(function (error) {
-    console.log('Error: ' + error);
-    if (error instanceof OfficeExtension.Error) {
-        console.log('Debug info: ' + JSON.stringify(error.debugInfo));
-    }
-});
-```
-
-<span data-ttu-id="ec14d-155">在上一示例中，由于在调用 `myRange.load()` 时未指定 `format/font`，因此无法读取 `format.font.color` 属性。</span><span class="sxs-lookup"><span data-stu-id="ec14d-155">In the previous example, because `format/font` is not specified in the call to `myRange.load()`, the `format.font.color` property cannot be read.</span></span>
-
-<span data-ttu-id="ec14d-156">为了优化性能，应在对对象使用 `load()` 方法时，显式指定要加载的属性，如 [Excel JavaScript API 性能优化](performance.md)中所述。</span><span class="sxs-lookup"><span data-stu-id="ec14d-156">To optimize performance, you should explicitly specify the properties to load when using the `load()` method on an object, as covered in [Excel JavaScript API performance optimizations](performance.md).</span></span> <span data-ttu-id="ec14d-157">若要详细了解 `load()` 方法，请参阅 [Excel JavaScript API 高级编程概念](excel-add-ins-advanced-concepts.md)。</span><span class="sxs-lookup"><span data-stu-id="ec14d-157">For more information about the `load()` method, see [Advanced programming concepts with the Excel JavaScript API](excel-add-ins-advanced-concepts.md).</span></span>
-
-## <a name="null-or-blank-property-values"></a><span data-ttu-id="ec14d-158">null 或空属性值</span><span class="sxs-lookup"><span data-stu-id="ec14d-158">null or blank property values</span></span>
-
-### <a name="null-input-in-2-d-array"></a><span data-ttu-id="ec14d-159">二维数组中的 null 输入</span><span class="sxs-lookup"><span data-stu-id="ec14d-159">null input in 2-D Array</span></span>
-
-<span data-ttu-id="ec14d-p116">在 Excel 中，一个区域由一个二维数组表示，其中第一个维度是行，第二个维度是列。 若要仅为某个区域内的特定单元格设置值、数字格式或公式，请指定二维数组中这些单元格的值、数字格式或公式，并为二维数组中的所有其他单元格指定 `null`。</span><span class="sxs-lookup"><span data-stu-id="ec14d-p116">In Excel, a range is represented by a 2-D array, where the first dimension is rows and the second dimension is columns. To set values, number format, or formula for only specific cells within a range, specify the values, number format, or formula for those cells in the 2-D array, and specify `null` for all other cells in the 2-D array.</span></span>
-
-<span data-ttu-id="ec14d-p117">例如，要更新一个区域内某一个单元格的数字格式，并保留该区域内所有其他单元格的现有数字格式，可指定要更新的单元格的新数字格式，并为所有其他单元格指定 `null`。 下面的代码段为该区域内的第四个单元格设置了一个新的数字格式，并保留该区域内前三个单元格的数字格式不变。</span><span class="sxs-lookup"><span data-stu-id="ec14d-p117">For example, to update the number format for only one cell within a range, and retain the existing number format for all other cells in the range, specify the new number format for the cell to update, and specify `null` for all other cells. The following code snippet sets a new number format for the fourth cell in the range, and leaves the number format unchanged for the first three cells in the range.</span></span>
+<span data-ttu-id="60a8c-p114">例如，要更新一个区域内某一个单元格的数字格式，并保留该区域内所有其他单元格的现有数字格式，可指定要更新的单元格的新数字格式，并为所有其他单元格指定 `null`。 下面的代码段为该区域内的第四个单元格设置了一个新的数字格式，并保留该区域内前三个单元格的数字格式不变。</span><span class="sxs-lookup"><span data-stu-id="60a8c-p114">For example, to update the number format for only one cell within a range, and retain the existing number format for all other cells in the range, specify the new number format for the cell to update, and specify `null` for all other cells. The following code snippet sets a new number format for the fourth cell in the range, and leaves the number format unchanged for the first three cells in the range.</span></span>
 
 ```js
 range.values = [['Eurasia', '29.96', '0.25', '15-Feb' ]];
 range.numberFormat = [[null, null, null, 'm/d/yyyy;@']];
 ```
 
-### <a name="null-input-for-a-property"></a><span data-ttu-id="ec14d-164">属性的 null 输入</span><span class="sxs-lookup"><span data-stu-id="ec14d-164">null input for a property</span></span>
+### <a name="null-input-for-a-property"></a><span data-ttu-id="60a8c-169">属性的 null 输入</span><span class="sxs-lookup"><span data-stu-id="60a8c-169">null input for a property</span></span>
 
-<span data-ttu-id="ec14d-p118">`null` 不是单个属性的有效输入。例如，下面的代码片段无效，因为区域的 `values` 属性不能设置为 `null`。</span><span class="sxs-lookup"><span data-stu-id="ec14d-p118">`null` is not a valid input for single property. For example, the following code snippet is not valid, as the `values` property of the range cannot be set to `null`.</span></span>
+<span data-ttu-id="60a8c-p115">`null` 不是单个属性的有效输入。例如，下面的代码片段无效，因为区域的 `values` 属性不能设置为 `null`。</span><span class="sxs-lookup"><span data-stu-id="60a8c-p115">`null` is not a valid input for single property. For example, the following code snippet is not valid, as the `values` property of the range cannot be set to `null`.</span></span>
 
 ```js
 range.values = null;
 ```
 
-<span data-ttu-id="ec14d-167">同样，下面的代码片段也无效，因为 `null` 不是 `color` 属性的有效值。</span><span class="sxs-lookup"><span data-stu-id="ec14d-167">Likewise, the following code snippet is not valid, as `null` is not a valid value for the `color` property.</span></span>
+<span data-ttu-id="60a8c-172">同样，下面的代码片段也无效，因为 `null` 不是 `color` 属性的有效值。</span><span class="sxs-lookup"><span data-stu-id="60a8c-172">Likewise, the following code snippet is not valid, as `null` is not a valid value for the `color` property.</span></span>
 
 ```js
 range.format.fill.color =  null;
 ```
 
-### <a name="null-property-values-in-the-response"></a><span data-ttu-id="ec14d-168">响应中的 null 属性值</span><span class="sxs-lookup"><span data-stu-id="ec14d-168">null property values in the response</span></span>
+### <a name="null-property-values-in-the-response"></a><span data-ttu-id="60a8c-173">响应中的 null 属性值</span><span class="sxs-lookup"><span data-stu-id="60a8c-173">null property values in the response</span></span>
 
-<span data-ttu-id="ec14d-p119">如果指定区域内存在不同的值，诸如 `size` 和 `color` 等格式化属性将在响应中包含 `null` 值。 例如，如果你检索某个区域并加载其 `format.font.color` 属性：</span><span class="sxs-lookup"><span data-stu-id="ec14d-p119">Formatting properties such as `size` and `color` will contain `null` values in the response when different values exist in the specified range. For example, if you retrieve a range and load its `format.font.color` property:</span></span>
+<span data-ttu-id="60a8c-p116">如果指定区域内存在不同的值，诸如 `size` 和 `color` 等格式化属性将在响应中包含 `null` 值。 例如，如果你检索某个区域并加载其 `format.font.color` 属性：</span><span class="sxs-lookup"><span data-stu-id="60a8c-p116">Formatting properties such as `size` and `color` will contain `null` values in the response when different values exist in the specified range. For example, if you retrieve a range and load its `format.font.color` property:</span></span>
 
-- <span data-ttu-id="ec14d-171">如果区域中的所有单元格都具有相同的字体颜色，则 `range.format.font.color` 会指定该颜色。</span><span class="sxs-lookup"><span data-stu-id="ec14d-171">If all cells in the range have the same font color, `range.format.font.color` specifies that color.</span></span>
-- <span data-ttu-id="ec14d-172">如果该区域内存在多种字体颜色，则 `range.format.font.color` 为 `null`。</span><span class="sxs-lookup"><span data-stu-id="ec14d-172">If multiple font colors are present within the range, `range.format.font.color` is `null`.</span></span>
+* <span data-ttu-id="60a8c-176">如果区域中的所有单元格都具有相同的字体颜色，则 `range.format.font.color` 会指定该颜色。</span><span class="sxs-lookup"><span data-stu-id="60a8c-176">If all cells in the range have the same font color, `range.format.font.color` specifies that color.</span></span>
+* <span data-ttu-id="60a8c-177">如果该区域内存在多种字体颜色，则 `range.format.font.color` 为 `null`。</span><span class="sxs-lookup"><span data-stu-id="60a8c-177">If multiple font colors are present within the range, `range.format.font.color` is `null`.</span></span>
 
-### <a name="blank-input-for-a-property"></a><span data-ttu-id="ec14d-173">属性的空白输入</span><span class="sxs-lookup"><span data-stu-id="ec14d-173">Blank input for a property</span></span>
+### <a name="blank-input-for-a-property"></a><span data-ttu-id="60a8c-178">属性的空白输入</span><span class="sxs-lookup"><span data-stu-id="60a8c-178">Blank input for a property</span></span>
 
-<span data-ttu-id="ec14d-p120">如果为属性指定空白值（即两个引号之间没有空格 `''`），它会被解释为属性清除或重置指令。例如：</span><span class="sxs-lookup"><span data-stu-id="ec14d-p120">When you specify a blank value for a property (i.e., two quotation marks with no space in-between `''`), it will be interpreted as an instruction to clear or reset the property. For example:</span></span>
+<span data-ttu-id="60a8c-p117">如果为属性指定空白值（即两个引号之间没有空格 `''`），它会被解释为属性清除或重置指令。例如：</span><span class="sxs-lookup"><span data-stu-id="60a8c-p117">When you specify a blank value for a property (i.e., two quotation marks with no space in-between `''`), it will be interpreted as an instruction to clear or reset the property. For example:</span></span>
 
-- <span data-ttu-id="ec14d-176">如果为区域的 `values` 属性指定空白值，此区域的内容会被清除。</span><span class="sxs-lookup"><span data-stu-id="ec14d-176">If you specify a blank value for the `values` property of a range, the content of the range is cleared.</span></span>
+* <span data-ttu-id="60a8c-181">如果为区域的 `values` 属性指定空白值，此区域的内容会被清除。</span><span class="sxs-lookup"><span data-stu-id="60a8c-181">If you specify a blank value for the `values` property of a range, the content of the range is cleared.</span></span>
+* <span data-ttu-id="60a8c-182">如果为 `numberFormat` 属性指定一个空值，则数字格式会重置为 `General`。</span><span class="sxs-lookup"><span data-stu-id="60a8c-182">If you specify a blank value for the `numberFormat` property, the number format is reset to `General`.</span></span>
+* <span data-ttu-id="60a8c-183">如果为 `formula` 属性和 `formulaLocale` 属性指定一个空值，则公式值将被清除。</span><span class="sxs-lookup"><span data-stu-id="60a8c-183">If you specify a blank value for the `formula` property and `formulaLocale` property, the formula values are cleared.</span></span>
 
-- <span data-ttu-id="ec14d-177">如果为 `numberFormat` 属性指定一个空值，则数字格式会重置为 `General`。</span><span class="sxs-lookup"><span data-stu-id="ec14d-177">If you specify a blank value for the `numberFormat` property, the number format is reset to `General`.</span></span>
+### <a name="blank-property-values-in-the-response"></a><span data-ttu-id="60a8c-184">响应中的空属性值</span><span class="sxs-lookup"><span data-stu-id="60a8c-184">Blank property values in the response</span></span>
 
-- <span data-ttu-id="ec14d-178">如果为 `formula` 属性和 `formulaLocale` 属性指定一个空值，则公式值将被清除。</span><span class="sxs-lookup"><span data-stu-id="ec14d-178">If you specify a blank value for the `formula` property and `formulaLocale` property, the formula values are cleared.</span></span>
-
-### <a name="blank-property-values-in-the-response"></a><span data-ttu-id="ec14d-179">响应中的空属性值</span><span class="sxs-lookup"><span data-stu-id="ec14d-179">Blank property values in the response</span></span>
-
-<span data-ttu-id="ec14d-p121">对于读取操作，响应中的空属性值（即两个引号之间没有空格 `''`）指示该单元格不包含任何数据或值。 在下面第一个示例中，区域中的第一个和最后一个单元格不包含任何数据。 在第二个示例中，区域中的前两个单元格不包含公式。</span><span class="sxs-lookup"><span data-stu-id="ec14d-p121">For read operations, a blank property value in the response (i.e., two quotation marks with no space in-between `''`) indicates that cell contains no data or value. In the first example below, the first and last cell in the range contain no data. In the second example, the first two cells in the range do not contain a formula.</span></span>
+<span data-ttu-id="60a8c-p118">对于读取操作，响应中的空属性值（即两个引号之间没有空格 `''`）指示该单元格不包含任何数据或值。 在下面第一个示例中，区域中的第一个和最后一个单元格不包含任何数据。 在第二个示例中，区域中的前两个单元格不包含公式。</span><span class="sxs-lookup"><span data-stu-id="60a8c-p118">For read operations, a blank property value in the response (i.e., two quotation marks with no space in-between `''`) indicates that cell contains no data or value. In the first example below, the first and last cell in the range contain no data. In the second example, the first two cells in the range do not contain a formula.</span></span>
 
 ```js
 range.values = [['', 'some', 'data', 'in', 'other', 'cells', '']];
@@ -186,41 +206,52 @@ range.values = [['', 'some', 'data', 'in', 'other', 'cells', '']];
 range.formula = [['', '', '=Rand()']];
 ```
 
-## <a name="read-or-write-to-an-unbounded-range"></a><span data-ttu-id="ec14d-183">读取或写入无限区域</span><span class="sxs-lookup"><span data-stu-id="ec14d-183">Read or write to an unbounded range</span></span>
+## <a name="requirement-sets"></a><span data-ttu-id="60a8c-188">要求集</span><span class="sxs-lookup"><span data-stu-id="60a8c-188">Requirement sets</span></span>
 
-### <a name="read-an-unbounded-range"></a><span data-ttu-id="ec14d-184">读取无限区域</span><span class="sxs-lookup"><span data-stu-id="ec14d-184">Read an unbounded range</span></span>
+<span data-ttu-id="60a8c-189">要求集是指各组已命名的 API 成员。</span><span class="sxs-lookup"><span data-stu-id="60a8c-189">Requirement sets are named groups of API members.</span></span> <span data-ttu-id="60a8c-190">Office 加载项可以执行运行时检查或使用清单中指定的要求集确定 Office 应用程序是否支持加载项所需的 API。</span><span class="sxs-lookup"><span data-stu-id="60a8c-190">An Office Add-in can perform a runtime check or use requirement sets specified in the manifest to determine whether an Office application supports the APIs that the add-in needs.</span></span> <span data-ttu-id="60a8c-191">要确定每个受支持平台上可用的具体要求集，请参阅 [Excel JavaScript API 要求集](../reference/requirement-sets/excel-api-requirement-sets.md)。</span><span class="sxs-lookup"><span data-stu-id="60a8c-191">To identify the specific requirement sets that are available on each supported platform, see [Excel JavaScript API requirement sets](../reference/requirement-sets/excel-api-requirement-sets.md).</span></span>
 
-<span data-ttu-id="ec14d-p122">无限区域地址是指定整个列（一列或多列）或整个行（一行或多行）的区域地址。例如：</span><span class="sxs-lookup"><span data-stu-id="ec14d-p122">An unbounded range address is a range address that specifies either entire column(s) or entire row(s). For example:</span></span>
+### <a name="checking-for-requirement-set-support-at-runtime"></a><span data-ttu-id="60a8c-192">在运行时检查要求集支持</span><span class="sxs-lookup"><span data-stu-id="60a8c-192">Checking for requirement set support at runtime</span></span>
 
-- <span data-ttu-id="ec14d-187">包含整个列（一列或多列）的区域地址：</span><span class="sxs-lookup"><span data-stu-id="ec14d-187">Range addresses comprised of entire column(s):</span></span><ul><li>`C:C`</li><li>`A:F`</li></ul>
-- <span data-ttu-id="ec14d-188">包含整个行的区域地址：</span><span class="sxs-lookup"><span data-stu-id="ec14d-188">Range addresses comprised of entire row(s):</span></span><ul><li>`2:2`</li><li>`1:4`</li></ul>
-
-<span data-ttu-id="ec14d-p123">API 发出请求以检索无限区域时（例如，`getRange('C:C')`），该响应将包含单元格级别属性（如 `null`、`values`、`text` 和 `numberFormat`）的 `formula` 值。 其他区域属性（如 `address` 和 `cellCount`）将包含无限区域的有效值。</span><span class="sxs-lookup"><span data-stu-id="ec14d-p123">When the API makes a request to retrieve an unbounded range (for example, `getRange('C:C')`), the response will contain `null` values for cell-level properties such as `values`, `text`, `numberFormat`, and `formula`. Other properties of the range, such as `address` and `cellCount`, will contain valid values for the unbounded range.</span></span>
-
-### <a name="write-to-an-unbounded-range"></a><span data-ttu-id="ec14d-191">写入一个无限区域</span><span class="sxs-lookup"><span data-stu-id="ec14d-191">Write to an unbounded range</span></span>
-
-<span data-ttu-id="ec14d-p124">由于输入请求过大，因此不能在无限区域中设置单元格级别的属性，如 `values`、`numberFormat` 和 `formula`。 例如，下面的代码段无效，因为它尝试为无限区域指定 `values`。 如果尝试为无限区域设置单元格级别的属性，API 将返回一个错误。</span><span class="sxs-lookup"><span data-stu-id="ec14d-p124">You cannot set cell-level properties such as `values`, `numberFormat`, and `formula` on unbounded range because the input request is too large. For example, the following code snippet is not valid because it attempts to specify `values` for an unbounded range. The API will return an error if you attempt to set cell-level properties for an unbounded range.</span></span>
+<span data-ttu-id="60a8c-193">以下代码示例显示如何确定运行加载项的 Office 应用程序是否支持指定的 API 要求集。</span><span class="sxs-lookup"><span data-stu-id="60a8c-193">The following code sample shows how to determine whether the Office application where the add-in is running supports the specified API requirement set.</span></span>
 
 ```js
-var range = context.workbook.worksheets.getActiveWorksheet().getRange('A:B');
-range.values = 'Due Date';
+if (Office.context.requirements.isSetSupported('ExcelApi', '1.3')) {
+  /// perform actions
+}
+else {
+  /// provide alternate flow/logic
+}
 ```
 
-## <a name="read-or-write-to-a-large-range"></a><span data-ttu-id="ec14d-195">读取或写入较大区域</span><span class="sxs-lookup"><span data-stu-id="ec14d-195">Read or write to a large range</span></span>
+### <a name="defining-requirement-set-support-in-the-manifest"></a><span data-ttu-id="60a8c-194">在清单中定义要求集支持</span><span class="sxs-lookup"><span data-stu-id="60a8c-194">Defining requirement set support in the manifest</span></span>
 
-<span data-ttu-id="ec14d-p125">如果区域中包含大量单元格、值、数字格式和/或公式，它可能无法在该区域运行 API 操作。 API 将始终尽量尝试在区域内运行所请求的操作（即检索或写入指定的数据），但尝试对较大区域执行读取或写入操作可能会因资源利用率过高而导致 API 错误。 为避免此类错误，建议为较大区域的较小子集运行单独的读取或写入操作，而不是尝试在较大区域内运行单个读取或写入操作。</span><span class="sxs-lookup"><span data-stu-id="ec14d-p125">If a range contains a large number of cells, values, number formats, and/or formulas, it may not be possible to run API operations on that range. The API will always make a best attempt to run the requested operation on a range (i.e., to retrieve or write the specified data), but attempting to perform read or write operations for a large range may result in an API error due to excessive resource utilization. To avoid such errors, we recommend that you run separate read or write operations for smaller subsets of a large range, instead of attempting to run a single read or write operation on a large range.</span></span>
+<span data-ttu-id="60a8c-195">可以在加载项清单中使用[要求元素](../reference/manifest/requirements.md)指定加载项要求激活的最小要求集和/或 API 方法。</span><span class="sxs-lookup"><span data-stu-id="60a8c-195">You can use the [Requirements element](../reference/manifest/requirements.md) in the add-in manifest to specify the minimal requirement sets and/or API methods that your add-in requires to activate.</span></span> <span data-ttu-id="60a8c-196">如果 Office 应用程序或平台不支持清单的 `Requirements` 元素中指定的要求集或 API 方法，该加载项不会在该应用程序或平台中运行，而且不会显示在“**我的加载项**”中显示的加载项列表中。</span><span class="sxs-lookup"><span data-stu-id="60a8c-196">If the Office application or platform doesn't support the requirement sets or API methods that are specified in the `Requirements` element of the manifest, the add-in won't run in that application or platform, and it won't display in the list of add-ins that are shown in **My Add-ins**.</span></span>
 
-<span data-ttu-id="ec14d-199">有关系统限制的详细信息，请参阅 [Excel 数据传输限制](../develop/common-coding-issues.md#excel-data-transfer-limits)。</span><span class="sxs-lookup"><span data-stu-id="ec14d-199">For details on the system limitations, see [Excel data transfer limits](../develop/common-coding-issues.md#excel-data-transfer-limits).</span></span>
+<span data-ttu-id="60a8c-197">以下代码示例显示加载项清单中的 `Requirements` 元素，该元素指定应在支持 ExcelApi 要求集版本 1.3 或更高版本的所有 Office 客户端应用程序中加载该加载项。</span><span class="sxs-lookup"><span data-stu-id="60a8c-197">The following code sample shows the `Requirements` element in an add-in manifest which specifies that the add-in should load in all Office client applications that support ExcelApi requirement set version 1.3 or greater.</span></span>
 
-## <a name="handle-errors"></a><span data-ttu-id="ec14d-200">处理错误</span><span class="sxs-lookup"><span data-stu-id="ec14d-200">Handle errors</span></span>
+```xml
+<Requirements>
+   <Sets DefaultMinVersion="1.3">
+      <Set Name="ExcelApi" MinVersion="1.3"/>
+   </Sets>
+</Requirements>
+```
 
-<span data-ttu-id="ec14d-201">当 API 错误出现时，API 返回包含代码和消息的 `error` 对象。</span><span class="sxs-lookup"><span data-stu-id="ec14d-201">When an API error occurs, the API returns an `error` object that contains a code and a message.</span></span> <span data-ttu-id="ec14d-202">若要详细了解错误处理（包括 API 错误列表），请参阅[错误处理](excel-add-ins-error-handling.md)。</span><span class="sxs-lookup"><span data-stu-id="ec14d-202">For detailed information about error handling, including a list of API errors, see [Error handling](excel-add-ins-error-handling.md).</span></span>
+> [!NOTE]
+> <span data-ttu-id="60a8c-198">为了让加载项适用于 Office 应用程序的所有平台（如 Excel 网页版、Windows 版 Excel 和 iPad 版 Excel），建议在运行时检查是否有要求支持，而不是在清单中定义要求集支持。</span><span class="sxs-lookup"><span data-stu-id="60a8c-198">To make your add-in available on all platforms of an Office application, such as Excel on the web, Windows, and iPad, we recommend that you check for requirement support at runtime instead of defining requirement set support in the manifest.</span></span>
 
-## <a name="see-also"></a><span data-ttu-id="ec14d-203">另请参阅</span><span class="sxs-lookup"><span data-stu-id="ec14d-203">See also</span></span>
+### <a name="requirement-sets-for-the-officejs-common-api"></a><span data-ttu-id="60a8c-199">Office.js 通用 API 的要求集</span><span class="sxs-lookup"><span data-stu-id="60a8c-199">Requirement sets for the Office.js Common API</span></span>
 
-- [<span data-ttu-id="ec14d-204">生成首个 Excel 加载项</span><span class="sxs-lookup"><span data-stu-id="ec14d-204">Build your first Excel add-in</span></span>](../quickstarts/excel-quickstart-jquery.md)
-- [<span data-ttu-id="ec14d-205">Excel 加载项代码示例</span><span class="sxs-lookup"><span data-stu-id="ec14d-205">Excel add-ins code samples</span></span>](https://developer.microsoft.com/office/gallery/?filterBy=Samples,Excel)
-- [<span data-ttu-id="ec14d-206">Excel JavaScript API 高级编程概念</span><span class="sxs-lookup"><span data-stu-id="ec14d-206">Advanced programming concepts with the Excel JavaScript API</span></span>](excel-add-ins-advanced-concepts.md)
-- [<span data-ttu-id="ec14d-207">Excel JavaScript API 性能优化</span><span class="sxs-lookup"><span data-stu-id="ec14d-207">Excel JavaScript API performance optimization</span></span>](../excel/performance.md)
-- [<span data-ttu-id="ec14d-208">Excel JavaScript API 参考</span><span class="sxs-lookup"><span data-stu-id="ec14d-208">Excel JavaScript API reference</span></span>](../reference/overview/excel-add-ins-reference-overview.md)
-- <span data-ttu-id="ec14d-209">[常见的编码问题和意外的平台行为](../develop/common-coding-issues.md)。</span><span class="sxs-lookup"><span data-stu-id="ec14d-209">[Common coding issues and unexpected platform behaviors](../develop/common-coding-issues.md).</span></span>
+<span data-ttu-id="60a8c-200">若要了解通用 API 要求集，请参阅 [Office 通用 API 要求集](../reference/requirement-sets/office-add-in-requirement-sets.md)。</span><span class="sxs-lookup"><span data-stu-id="60a8c-200">For information about Common API requirement sets, see [Office Common API requirement sets](../reference/requirement-sets/office-add-in-requirement-sets.md).</span></span>
+
+## <a name="handle-errors"></a><span data-ttu-id="60a8c-201">处理错误</span><span class="sxs-lookup"><span data-stu-id="60a8c-201">Handle errors</span></span>
+
+<span data-ttu-id="60a8c-202">当 API 错误出现时，API 返回包含代码和消息的 `error` 对象。</span><span class="sxs-lookup"><span data-stu-id="60a8c-202">When an API error occurs, the API returns an `error` object that contains a code and a message.</span></span> <span data-ttu-id="60a8c-203">若要详细了解错误处理（包括 API 错误列表），请参阅[错误处理](excel-add-ins-error-handling.md)。</span><span class="sxs-lookup"><span data-stu-id="60a8c-203">For detailed information about error handling, including a list of API errors, see [Error handling](excel-add-ins-error-handling.md).</span></span>
+
+## <a name="see-also"></a><span data-ttu-id="60a8c-204">另请参阅</span><span class="sxs-lookup"><span data-stu-id="60a8c-204">See also</span></span>
+
+* [<span data-ttu-id="60a8c-205">生成首个 Excel 加载项</span><span class="sxs-lookup"><span data-stu-id="60a8c-205">Build your first Excel add-in</span></span>](../quickstarts/excel-quickstart-jquery.md)
+* [<span data-ttu-id="60a8c-206">Excel 加载项代码示例</span><span class="sxs-lookup"><span data-stu-id="60a8c-206">Excel add-ins code samples</span></span>](https://developer.microsoft.com/office/gallery/?filterBy=Samples,Excel)
+* [<span data-ttu-id="60a8c-207">Excel JavaScript API 性能优化</span><span class="sxs-lookup"><span data-stu-id="60a8c-207">Excel JavaScript API performance optimization</span></span>](../excel/performance.md)
+* [<span data-ttu-id="60a8c-208">Excel JavaScript API 参考</span><span class="sxs-lookup"><span data-stu-id="60a8c-208">Excel JavaScript API reference</span></span>](../reference/overview/excel-add-ins-reference-overview.md)
+* [<span data-ttu-id="60a8c-209">常见的编码问题和意外的平台行为</span><span class="sxs-lookup"><span data-stu-id="60a8c-209">Common coding issues and unexpected platform behaviors</span></span>](../develop/common-coding-issues.md)
