@@ -1,136 +1,158 @@
 ---
 title: Excel JavaScript API 基本编程概念
 description: 使用 Excel JavaScript API 生成 Excel 加载项。
-ms.date: 07/13/2020
+ms.date: 07/28/2020
 localization_priority: Priority
-ms.openlocfilehash: 01e5fa1037719e89eed70f00e63431bbd445c213
-ms.sourcegitcommit: 472b81642e9eb5fb2a55cd98a7b0826d37eb7f73
+ms.openlocfilehash: dde7dc66e0746fc4d9cf91ed3df824fab05c109d
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/17/2020
-ms.locfileid: "45159414"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47292588"
 ---
 # <a name="fundamental-programming-concepts-with-the-excel-javascript-api"></a>Excel JavaScript API 基本编程概念
 
 本文介绍了如何使用 [Excel JavaScript API](../reference/overview/excel-add-ins-reference-overview.md) 生成 Excel 2016 或更高版本的加载项。 它引入了一些核心概念，这些概念是使用 API 的基础，并为执行特定任务提供指导，如读取或写入较大区域、更新区域内的所有单元格等等。
 
-## <a name="asynchronous-nature-of-excel-apis"></a>Excel API 的异步特性
+> [!IMPORTANT]
+> 请参阅[使用特定于应用程序的 API 模型](../develop/application-specific-api-model.md)，以了解 Excel API 的异步性质以及它们如何与工作簿协同工作。  
 
-基于 Web 的 Excel 加载项在浏览器容器内运行，此容器内嵌在基于桌面的平台版 Office 应用程序（如 Windows 版 Office）中，并在 Office 网页版中的 HTML iFrame 内运行。出于性能考虑，启用 Office.js API 以跨所有受支持的平台与 Excel 主机进行同步交互是不可行的。因此，Office.js 中的 `sync()` API 调用返回 [promise](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise)，它在 Excel 应用程序完成请求的读取或写入操作时进行解析。此外，还可以将多个操作排入队列（如设置属性或调用方法），并通过一次调用 `sync()` 将它们作为一批命令运行，而不是为每个操作单独发送请求。以下几个部分介绍了如何使用 `Excel.run()` 和 `sync()` API 来实现此目的。
+## <a name="officejs-apis-for-excel"></a>适用于 Excel 的 Office.js API
 
-## <a name="excelrun"></a>Excel.run
+Excel 加载项通过使用适 Office JavaScript API 与 Excel 中的对象进行交互，JavaScript API包括两个 JavaScript 对象模型：
 
-`Excel.run` 执行一个函数，可以在其中指定要对 Excel 对象模型执行的操作。 `Excel.run` 自动创建可用于与 Excel 对象进行交互的请求上下文。 完成 `Excel.run` 时，将实现承诺，并自动释放在运行时分配的任何对象。
+* **Excel JavaScript API**：[Excel JavaScript API](../reference/overview/excel-add-ins-reference-overview.md) 随 Office 2016 一起引入，提供了强类型的对象，可用于访问工作表、区域、表格、图表等。
 
-以下示例演示如何使用 `Excel.run`。catch 语句捕获并记录 `Excel.run` 中发生的错误。
+* **通用 API**：[通用 API](/javascript/api/office) 随 Office 2013 引入，可用于访问多种类型的 Office 应用程序中常见的 UI、对话框和客户端设置等功能。
+
+你可能会使用 Excel JavaScript API 开发面向 Excel 2016 或更高版本的加载项中的大部分功能，同时还可以使用通用 API 中的对象。 例如：
+
+* [Context](/javascript/api/office/office.context)：`Context` 对象表示加载项的运行时环境，并提供对 API 关键对象的访问权限。 它由工作簿配置详细信息（如 `contentLanguage` 和 `officeTheme`）组成，并提供有关加载项的运行时环境（如 `host` 和 `platform`）的信息。 此外，它还提供了 `requirements.isSetSupported()` 方法，可用于检查运行加载项的 Excel 应用程序是否支持指定的要求集。
+* [Document](/javascript/api/office/office.document)：`Document` 对象提供 `getFileAsync()` 方法，用于下载运行加载项的 Excel 文件。
+
+下图说明了可能使用 Excel JavaScript API 或公共 API 的情况。
+
+![Excel JS API 和公共 API 之间差异的图像](../images/excel-js-api-common-api.png)
+
+## <a name="object-model"></a>对象模型
+
+若要了解 Excel API，则必须了解工作簿的各个组件之间如何相互关联。
+
+* 一个 **Workbook** 包含一个或多个 **Worksheet**。
+* **Worksheet** 可通过 **Range** 对象访问单元格。
+* **Range** 代表一组连续的单元格。
+* **Range** 用于创建和放置 **Table**、**Chart** 和 **Shape** 以及其他数据可视化或组织对象。
+* **Worksheet** 包含单个工作表中存在的那些数据对象的集合。
+* **Workbook** 包含整个 **Workbook** 的某些数据对象（例如，**Table**）的集合。
+
+### <a name="ranges"></a>Range
+
+Range 是工作簿中的一组连续单元格。 加载项通常使用 A1 样式表示法（例如，对于 **B** 列和第 **3** 行中单个单元格，即 **B3** 或从 **C** 列至 **F** 列和第 **2** 行至第 **4** 行的单元格，即 **C2:F4**）来定义范围。
+
+Range 具有三个核心属性：`values`、`formulas` 和 `format`。 这些属性获取或设置单元格值、要计算的公式以及单元格的视觉对象格式设置。
+
+#### <a name="range-sample"></a>Range 示例
+
+以下示例显示了如何创建销售记录。 此函数使用 `Range` 对象来设置值、公式和格式。
 
 ```js
 Excel.run(function (context) {
-    // You can use the Excel JavaScript API here in the batch function
-    // to execute actions on the Excel object model.
-    console.log('Your code goes here.');
-}).catch(function (error) {
-    console.log('error: ' + error);
-    if (error instanceof OfficeExtension.Error) {
-        console.log('Debug info: ' + JSON.stringify(error.debugInfo));
-    }
+    var sheet = context.workbook.worksheets.getActiveWorksheet();
+
+    // Create the headers and format them to stand out.
+    var headers = [
+      ["Product", "Quantity", "Unit Price", "Totals"]
+    ];
+    var headerRange = sheet.getRange("B2:E2");
+    headerRange.values = headers;
+    headerRange.format.fill.color = "#4472C4";
+    headerRange.format.font.color = "white";
+
+    // Create the product data rows.
+    var productData = [
+      ["Almonds", 6, 7.5],
+      ["Coffee", 20, 34.5],
+      ["Chocolate", 10, 9.56],
+    ];
+    var dataRange = sheet.getRange("B3:D5");
+    dataRange.values = productData;
+
+    // Create the formulas to total the amounts sold.
+    var totalFormulas = [
+      ["=C3 * D3"],
+      ["=C4 * D4"],
+      ["=C5 * D5"],
+      ["=SUM(E3:E5)"]
+    ];
+    var totalRange = sheet.getRange("E3:E6");
+    totalRange.formulas = totalFormulas;
+    totalRange.format.font.bold = true;
+
+    // Display the totals as US dollar amounts.
+    totalRange.numberFormat = [["$0.00"]];
+
+    return context.sync();
 });
 ```
 
-### <a name="run-options"></a>运行选项
+此示例将在当前工作表中创建以下数据：
+
+![显示值行、公式列和格式化标题的销售记录。](../images/excel-overview-range-sample.png)
+
+### <a name="charts-tables-and-other-data-objects"></a>Chart、Table 和其他数据对象
+
+Excel JavaScript API 可以在 Excel 中创建和设置数据结构和可视化效果。 Table 和 Chart 是最常用的两个对象，但是 API 支持数据透视表、形状和图像等。
+
+#### <a name="creating-a-table"></a>创建表
+
+通过使用数据填充范围创建表。 会将格式设置和表控件（如筛选器）自动应用到该范围。
+
+以下示例使用上一个示例中的范围创建了一个表。
+
+```js
+Excel.run(function (context) {
+    var sheet = context.workbook.worksheets.getActiveWorksheet();
+    sheet.tables.add("B2:E5", true);
+    return context.sync();
+});
+```
+
+在包含之前数据的工作表上使用此示例代码将创建下表：
+
+![使用之前的销售记录制成的表。](../images/excel-overview-table-sample.png)
+
+#### <a name="creating-a-chart"></a>创建图表
+
+创建图表以直观显示某个范围内的数据。 该 API 支持数十种图表类型，每种都可以根据需要进行自定义。
+
+下面的示例为三个项目创建一个简单的柱形图，并将其置于工作表顶部下方 100 像素处。
+
+```js
+Excel.run(function (context) {
+    var sheet = context.workbook.worksheets.getActiveWorksheet();
+    var chart = sheet.charts.add(Excel.ChartType.columnStacked, sheet.getRange("B3:C5"));
+    chart.top = 100;
+    return context.sync();
+});
+```
+
+在工作表上使用上一个表运行此示例将创建以下图表：
+
+![一个柱形图，显示上一个销售记录中三个项目的数量。](../images/excel-overview-chart-sample.png)
+
+## <a name="run-options"></a>运行选项
 
 `Excel.run` 包含需要使用 [RunOptions](/javascript/api/excel/excel.runoptions) 对象的重载。 这包含一组影响函数运行时平台行为的属性。 目前，支持以下属性：
 
-- `delayForCellEdit`：确定 Excel 是否将批处理请求延迟到用户退出单元格编辑模式时执行。 若为 **true**，批处理请求延迟到用户退出单元格编辑模式时执行。 若为 **false**，批处理请求会在用户处于单元格编辑模式时（导致无法访问用户的错误出现）自动失败。 未指定 `delayForCellEdit` 属性的默认行为等同于此属性为 **false**。
+* `delayForCellEdit`：确定 Excel 是否将批处理请求延迟到用户退出单元格编辑模式时执行。 若为 **true**，批处理请求延迟到用户退出单元格编辑模式时执行。 若为 **false**，批处理请求会在用户处于单元格编辑模式时（导致无法访问用户的错误出现）自动失败。 未指定 `delayForCellEdit` 属性的默认行为等同于此属性为 **false**。
 
 ```js
 Excel.run({ delayForCellEdit: true }, function (context) { ... })
 ```
 
-## <a name="request-context"></a>请求上下文
-
-Excel 和加载项在两个不同的进程中运行。由于它们使用不同的运行时环境，因此 Excel 加载项需要使用 `RequestContext` 对象，将加载项连接到 Excel 中的对象，如工作表、区域、图表和表格。
-
-## <a name="proxy-objects"></a>代理对象
-
-在加载项中声明和使用的 Excel JavaScript 对象为代理对象。 调用的任何方法或在代理对象上设置或加载的属性都只是添加到挂起命令的队列中。 如果在请求上下文（例如 `sync()`）时调用 `context.sync()` 方法，已加入队列的命令将被发送到 Excel 并运行。 从根本上来说，Excel JavaScript API 是以批处理为中心的。 可以在请求上下文中将任意数量的更改加入队列，然后调用 `sync()` 方法来运行此批已加入队列的命令。
-
-例如，下面的代码段声明本地 JavaScript 对象 `selectedRange` 以引用 Excel 文档中选定的区域，然后在该对象上设置某些属性。 `selectedRange` 对象是一个代理对象，因此在该对象上所设置的属性以及调用的方法将不会反映在 Excel 文档中，直到加载项调用 `context.sync()`。
-
-```js
-var selectedRange = context.workbook.getSelectedRange();
-selectedRange.format.fill.color = "#4472C4";
-selectedRange.format.font.color = "white";
-selectedRange.format.autofitColumns();
-```
-
-### <a name="sync"></a>sync()
-
-在请求上下文中调用 `sync()` 方法将在 Excel 文档中同步代理对象与对象之间的状态。 `sync()` 方法运行在请求上下文中加入队列的所有命令，并检索应该在代理对象上加载的任何属性的值。 `sync()` 方法以异步方式执行并返回 [promise](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise)（在 `sync()` 方法完成后解析）。
-
-下面的示例演示了一个批处理函数，它定义本地 JavaScript 代理对象 (`selectedRange`)，加载该对象的属性，然后使用 JavaScript Promises 模式调用 `context.sync()` 以同步 Excel 文档中代理对象与对象之间的状态。
-
-```js
-Excel.run(function (context) {
-    var selectedRange = context.workbook.getSelectedRange();
-    selectedRange.load('address');
-    return context.sync()
-      .then(function () {
-        console.log('The selected range is: ' + selectedRange.address);
-    });
-}).catch(function (error) {
-    console.log('error: ' + error);
-    if (error instanceof OfficeExtension.Error) {
-        console.log('Debug info: ' + JSON.stringify(error.debugInfo));
-    }
-});
-```
-
-在上一示例中，已设置 `selectedRange`，并且将在调用 `context.sync()` 时加载其 `address` 属性。
-
-由于 `sync()` 是一个返回承诺的异步操作，因此，（在 JavaScript 中）应始终`return`承诺。 这样做可确保在脚本继续运行之前完成 `sync()` 操作。 若要详细了解如何优化使用 `sync()` 时的性能，请参阅 [Excel JavaScript API 性能优化](../excel/performance.md)。
-
-### <a name="load"></a>load()
-
-在可以读取代理对象的属性之前，必须显式加载这些属性，以便使用 Excel 文档中的数据填充代理对象，然后调用 `context.sync()`。 例如，如果创建代理对象来引用选定的区域，然后希望读取所选区域的 `address` 属性，需要首先加载 `address` 属性，然后才可以读取它。 若要请求获取加载的代理对象的属性，请对对象调用 `load()` 方法，并指定要加载的属性。
-
-> [!NOTE]
-> 如果只要对代理对象调用方法或设置属性，无需调用 `load()` 方法。 只在要读取代理对象属性时，才需要调用 `load()` 方法。
-
-类似于对代理对象设置属性或调用方法的请求，加载代理对象属性的请求会被添加到请求上下文的挂起命令队列中，将在下一次调用 `sync()` 方法时运行。必要时，可以将请求上下文中尽可能多的 `load()` 调用排入队列。
-
-下面的示例仅加载区域的特定属性。
-
-```js
-Excel.run(function (context) {
-    var sheetName = 'Sheet1';
-    var rangeAddress = 'A1:B2';
-    var myRange = context.workbook.worksheets.getItem(sheetName).getRange(rangeAddress);
-
-    myRange.load(['address', 'format/*', 'format/fill', 'entireRow' ]);
-
-    return context.sync()
-      .then(function () {
-        console.log (myRange.address);              // ok
-        console.log (myRange.format.wrapText);      // ok
-        console.log (myRange.format.fill.color);    // ok
-        //console.log (myRange.format.font.color);  // not ok as it was not loaded
-        });
-    }).then(function () {
-        console.log('done');
-}).catch(function (error) {
-    console.log('Error: ' + error);
-    if (error instanceof OfficeExtension.Error) {
-        console.log('Debug info: ' + JSON.stringify(error.debugInfo));
-    }
-});
-```
-
-在上一示例中，由于在调用 `myRange.load()` 时未指定 `format/font`，因此无法读取 `format.font.color` 属性。
-
-为了优化性能，应在对对象使用 `load()` 方法时，显式指定要加载的属性，如 [Excel JavaScript API 性能优化](performance.md)中所述。 若要详细了解 `load()` 方法，请参阅 [Excel JavaScript API 高级编程概念](excel-add-ins-advanced-concepts.md)。
-
 ## <a name="null-or-blank-property-values"></a>null 或空属性值
+
+`null` 和空字符串在 Excel JavaScript API 中具有特殊含义。 它们用于表示空单元格、无格式或默认值。 本节详细介绍了在获取和设置属性时如何使用 `null` 和空字符串。
 
 ### <a name="null-input-in-2-d-array"></a>二维数组中的 null 输入
 
@@ -161,18 +183,16 @@ range.format.fill.color =  null;
 
 如果指定区域内存在不同的值，诸如 `size` 和 `color` 等格式化属性将在响应中包含 `null` 值。 例如，如果你检索某个区域并加载其 `format.font.color` 属性：
 
-- 如果区域中的所有单元格都具有相同的字体颜色，则 `range.format.font.color` 会指定该颜色。
-- 如果该区域内存在多种字体颜色，则 `range.format.font.color` 为 `null`。
+* 如果区域中的所有单元格都具有相同的字体颜色，则 `range.format.font.color` 会指定该颜色。
+* 如果该区域内存在多种字体颜色，则 `range.format.font.color` 为 `null`。
 
 ### <a name="blank-input-for-a-property"></a>属性的空白输入
 
 如果为属性指定空白值（即两个引号之间没有空格 `''`），它会被解释为属性清除或重置指令。例如：
 
-- 如果为区域的 `values` 属性指定空白值，此区域的内容会被清除。
-
-- 如果为 `numberFormat` 属性指定一个空值，则数字格式会重置为 `General`。
-
-- 如果为 `formula` 属性和 `formulaLocale` 属性指定一个空值，则公式值将被清除。
+* 如果为区域的 `values` 属性指定空白值，此区域的内容会被清除。
+* 如果为 `numberFormat` 属性指定一个空值，则数字格式会重置为 `General`。
+* 如果为 `formula` 属性和 `formulaLocale` 属性指定一个空值，则公式值将被清除。
 
 ### <a name="blank-property-values-in-the-response"></a>响应中的空属性值
 
@@ -186,31 +206,43 @@ range.values = [['', 'some', 'data', 'in', 'other', 'cells', '']];
 range.formula = [['', '', '=Rand()']];
 ```
 
-## <a name="read-or-write-to-an-unbounded-range"></a>读取或写入无限区域
+## <a name="requirement-sets"></a>要求集
 
-### <a name="read-an-unbounded-range"></a>读取无限区域
+要求集是指各组已命名的 API 成员。 Office 加载项可以执行运行时检查或使用清单中指定的要求集确定 Office 应用程序是否支持加载项所需的 API。 要确定每个受支持平台上可用的具体要求集，请参阅 [Excel JavaScript API 要求集](../reference/requirement-sets/excel-api-requirement-sets.md)。
 
-无限区域地址是指定整个列（一列或多列）或整个行（一行或多行）的区域地址。例如：
+### <a name="checking-for-requirement-set-support-at-runtime"></a>在运行时检查要求集支持
 
-- 包含整个列（一列或多列）的区域地址：<ul><li>`C:C`</li><li>`A:F`</li></ul>
-- 包含整个行的区域地址：<ul><li>`2:2`</li><li>`1:4`</li></ul>
-
-API 发出请求以检索无限区域时（例如，`getRange('C:C')`），该响应将包含单元格级别属性（如 `null`、`values`、`text` 和 `numberFormat`）的 `formula` 值。 其他区域属性（如 `address` 和 `cellCount`）将包含无限区域的有效值。
-
-### <a name="write-to-an-unbounded-range"></a>写入一个无限区域
-
-由于输入请求过大，因此不能在无限区域中设置单元格级别的属性，如 `values`、`numberFormat` 和 `formula`。 例如，下面的代码段无效，因为它尝试为无限区域指定 `values`。 如果尝试为无限区域设置单元格级别的属性，API 将返回一个错误。
+以下代码示例显示如何确定运行加载项的 Office 应用程序是否支持指定的 API 要求集。
 
 ```js
-var range = context.workbook.worksheets.getActiveWorksheet().getRange('A:B');
-range.values = 'Due Date';
+if (Office.context.requirements.isSetSupported('ExcelApi', '1.3')) {
+  /// perform actions
+}
+else {
+  /// provide alternate flow/logic
+}
 ```
 
-## <a name="read-or-write-to-a-large-range"></a>读取或写入较大区域
+### <a name="defining-requirement-set-support-in-the-manifest"></a>在清单中定义要求集支持
 
-如果区域中包含大量单元格、值、数字格式和/或公式，它可能无法在该区域运行 API 操作。 API 将始终尽量尝试在区域内运行所请求的操作（即检索或写入指定的数据），但尝试对较大区域执行读取或写入操作可能会因资源利用率过高而导致 API 错误。 为避免此类错误，建议为较大区域的较小子集运行单独的读取或写入操作，而不是尝试在较大区域内运行单个读取或写入操作。
+可以在加载项清单中使用[要求元素](../reference/manifest/requirements.md)指定加载项要求激活的最小要求集和/或 API 方法。 如果 Office 应用程序或平台不支持清单的 `Requirements` 元素中指定的要求集或 API 方法，该加载项不会在该应用程序或平台中运行，而且不会显示在“**我的加载项**”中显示的加载项列表中。
 
-有关系统限制的详细信息，请参阅 [Excel 数据传输限制](../develop/common-coding-issues.md#excel-data-transfer-limits)。
+以下代码示例显示加载项清单中的 `Requirements` 元素，该元素指定应在支持 ExcelApi 要求集版本 1.3 或更高版本的所有 Office 客户端应用程序中加载该加载项。
+
+```xml
+<Requirements>
+   <Sets DefaultMinVersion="1.3">
+      <Set Name="ExcelApi" MinVersion="1.3"/>
+   </Sets>
+</Requirements>
+```
+
+> [!NOTE]
+> 为了让加载项适用于 Office 应用程序的所有平台（如 Excel 网页版、Windows 版 Excel 和 iPad 版 Excel），建议在运行时检查是否有要求支持，而不是在清单中定义要求集支持。
+
+### <a name="requirement-sets-for-the-officejs-common-api"></a>Office.js 通用 API 的要求集
+
+若要了解通用 API 要求集，请参阅 [Office 通用 API 要求集](../reference/requirement-sets/office-add-in-requirement-sets.md)。
 
 ## <a name="handle-errors"></a>处理错误
 
@@ -218,9 +250,8 @@ range.values = 'Due Date';
 
 ## <a name="see-also"></a>另请参阅
 
-- [生成首个 Excel 加载项](../quickstarts/excel-quickstart-jquery.md)
-- [Excel 加载项代码示例](https://developer.microsoft.com/office/gallery/?filterBy=Samples,Excel)
-- [Excel JavaScript API 高级编程概念](excel-add-ins-advanced-concepts.md)
-- [Excel JavaScript API 性能优化](../excel/performance.md)
-- [Excel JavaScript API 参考](../reference/overview/excel-add-ins-reference-overview.md)
-- [常见的编码问题和意外的平台行为](../develop/common-coding-issues.md)。
+* [生成首个 Excel 加载项](../quickstarts/excel-quickstart-jquery.md)
+* [Excel 加载项代码示例](https://developer.microsoft.com/office/gallery/?filterBy=Samples,Excel)
+* [Excel JavaScript API 性能优化](../excel/performance.md)
+* [Excel JavaScript API 参考](../reference/overview/excel-add-ins-reference-overview.md)
+* [常见的编码问题和意外的平台行为](../develop/common-coding-issues.md)

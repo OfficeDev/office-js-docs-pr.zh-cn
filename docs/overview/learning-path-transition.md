@@ -1,17 +1,17 @@
 ---
-title: '在此处转换！ 创建 Office Web 加载项的 VSTO 加载项创建程序指南 '
-description: 资深 VSTO 加载项开发人员了解 Office Web 加载项的建议路径。
+title: VSTO 加载项开发人员指南
+description: 资深 VSTO 加载项开发人员了解 Office Web 加载项资源的建议路径。
 ms.date: 05/10/2020
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: 499a8fdf12c2f46c5cf5fc5c37f8bb68af540e57
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 959fb23ef86f37f46425d9b7ede7f7f60f6baf3a
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44604571"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47292438"
 ---
-# <a name="transition-here-a-guide-for-vsto-add-in-creators-making-office-web-add-ins"></a>在此处转换！ 创建 Office Web 加载项的 VSTO 加载项创建程序指南 
+# <a name="vsto-add-in-developers-guide"></a>VSTO 加载项开发人员指南
 
 因此，你为在 Windows 上运行的 Office 应用创建了一些 VSTO 加载项，现在正在探索扩展将在 Windows、Mac 上所运行 Office 和 Office 套件联机版的新方式：Office Web 加载项。
 
@@ -21,7 +21,7 @@ ms.locfileid: "44604571"
 - Office Web 加载项的部署方式不同于 VSTO 加载项。
 - Office Web 加载项是在 Office 应用程序中嵌入的简化浏览器窗口中运行的 Web 应用程序，因此需要对 Web 应用程序以及如何在Web服务器或云帐户上托管有基本的了解。 
 
-因此，本文的大部分篇幅将所有初学者的学习路径复制到 Office 扩展：[从此处开始！面向初学者的 Office 加载项构建指南](learning-path-beginner.md)。我们添加了一些其他学习资源，帮助 VSTO 加载项开发人员利用他们的经验，并帮助他们重新使用现有代码。
+出于以上原因，本文的大部分内容都向完整的 Office 扩展初学者介绍了我们的学习路径：[入门指南](learning-path-beginner.md)。 我们添加了一些其他学习资源，以帮助 VSTO 加载项开发人员利用他们的经验，并帮助他们重用现有代码。
 
 ## <a name="step-0-prerequisites"></a>步骤 0：先决条件
 

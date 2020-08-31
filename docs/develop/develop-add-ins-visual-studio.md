@@ -3,12 +3,12 @@ title: 使用 Visual Studio 开发 Office 加载项
 description: 如何使用 Visual Studio 开发 Office 加载项
 ms.date: 12/31/2019
 localization_priority: Priority
-ms.openlocfilehash: cf8ed9d47840115f22641d0c4b6c6426e3a01a11
-ms.sourcegitcommit: 19312a54f47a17988ffa86359218a504713f9f09
+ms.openlocfilehash: ae627b09b9160abc01deec6d52abeb922f02c833
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/10/2020
-ms.locfileid: "44679249"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47292825"
 ---
 # <a name="develop-office-add-ins-with-visual-studio"></a>使用 Visual Studio 开发 Office 加载项
 
@@ -26,7 +26,7 @@ Visual Studio 可用于创建适用于 Excel、Outlook、Word 和 PowerPoint 的
 - [Word 快速入门](../quickstarts/word-quickstart.md?tabs=visualstudio)
 - [PowerPoint 快速入门](../quickstarts/powerpoint-quickstart.md?tabs=visualstudio)
 
-Visual Studio 不支持创建适用于 OneNote 或 Project 的 Office 加载项。 要为这些主机中的任何主机创建 Office 加载项，你需要使用适用于 Office 加载项的 Yeoman 生成器，如 [OneNote 快速入门](../quickstarts/onenote-quickstart.md)或 [Project 快速入门](../quickstarts/project-quickstart.md)中所述。
+Visual Studio 不支持创建适用于 OneNote 或 Project 的 Office 加载项。 要为其中任何应用程序创建 Office 加载项，你需要使用适用于 Office 加载项的 Yeoman 生成器，如 [OneNote 快速入门](../quickstarts/onenote-quickstart.md)或 [Project 快速入门](../quickstarts/project-quickstart.md)中所述。
 
 ## <a name="develop-the-add-in-using-visual-studio"></a>使用 Visual Studio 开发加载项
 
@@ -35,7 +35,7 @@ Visual Studio 会创建一个功能受限的基本加载项。 你可通过在 V
 > [!TIP]
 > 由于 Office 加载项是一种 Web 应用程序，因此你至少需要具备基本的 Web 开发技能才能自定义加载项。 如果你不熟悉 JavaScript，建议查看 [Mozilla JavaScript 教程](https://developer.mozilla.org/docs/Web/JavaScript/Guide/Introduction)。
 
-要自定义加载项，你需要了解本文档的“[核心概念 > 开发](develop-overview.md)”区域中描述的概念，以及与要构建的加载项相对应的文档主机特定区域中描述的概念（例如，[Excel](../excel/index.yml)）。 
+要自定义加载项，你需要了解本文档的“[核心概念 > 开发](develop-overview.md)”区域中描述的概念，以及与要构建的加载项相对应的文档应用程序特定区域中描述的概念（例如，[Excel](../excel/index.yml)）。 
 
 ## <a name="test-and-debug-the-add-in"></a>测试和调试加载项
 

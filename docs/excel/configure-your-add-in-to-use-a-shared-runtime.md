@@ -1,15 +1,15 @@
 ---
-ms.date: 08/13/2020
+ms.date: 08/25/2020
 title: 将 Excel 加载项配置为共享浏览器运行时
 ms.prod: excel
 description: 将 Excel 加载项配置为共享浏览器运行时并在同一运行时中运行功能区、任务窗格和自定义函数代码。
 localization_priority: Priority
-ms.openlocfilehash: 573fa5f5c3fdee0fb6a4bc3844f98bb7b5f2046d
-ms.sourcegitcommit: 3efa932b70035dde922929d207896e1a6007f620
+ms.openlocfilehash: 08e4155b7f79101f8a61b323c623b5cb6b86decf
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/15/2020
-ms.locfileid: "46757364"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47292634"
 ---
 # <a name="configure-your-excel-add-in-to-use-a-shared-javascript-runtime"></a>将 Excel 加载项配置为使用共享 JavaScript 运行时
 
@@ -93,7 +93,24 @@ yo office
    ...
    ```
 
-8. 保存更改并重新生成项目。
+8. 确保 taskpane.html 有一个参考 dist/functions.js file 文件的 `<script>` 标记。 示例如下。
+
+   ```html
+   <script type="text/javascript" src="/dist/functions.js" ></script>
+   ```
+
+   > [!NOTE]
+   > 如果加载项使用 Webpack 和 HtmlWebpackPlugin 插入脚本标记，与 Yeoman 生成器创建的加载项一样（请参阅上面的[创建加载项项目](#create-the-add-in-project)），则必须确保 functions.js 模块包含在 `chunks` 数组中，如下例所示。
+   >
+   > ```javascript
+   > new HtmlWebpackPlugin({
+   >     filename: "taskpane.html",
+   >     template: "./src/taskpane/taskpane.html",
+   >     chunks: ["polyfill", "taskpane", “functions”]
+   > }),
+   >```
+
+9. 保存更改并重新生成项目。
 
    ```command line
    npm run build

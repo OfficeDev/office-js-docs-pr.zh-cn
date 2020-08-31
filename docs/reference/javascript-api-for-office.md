@@ -5,23 +5,23 @@ title: Office JavaScript API 参考文档
 description: 了解 Office JavaScript API。
 ms.date: 12/24/2019
 localization_priority: Priority
-ms.openlocfilehash: 78e222c7cdc618d707678dc73dd4a0e5dab123de
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 46f5ae8a073fe45a6f6ac7f873f9adeb37fbab15
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44608815"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47294281"
 ---
 # <a name="api-reference-documentation"></a>API 参考文档
 
-加载项可使用 Office JavaScript API 与 Office 主机应用程序中的对象进行交互。 
+加载项可使用 Office JavaScript API 与 Office 客户端应用程序中的对象进行交互。 
 
 <ul>
-    <li><b>主机特定的</b> API 提供了强类型对象，这种对象可用于与特定 Office 应用程序的本机对象进行交互。</li>
+    <li><b>应用程序特定的</b> API 提供了强类型对象，它可用于与特定 Office 应用程序的本机对象进行交互。</li>
     <li><b>通用</b> API 可用于访问在多种类型的 Office 应用程序中都很常见的 UI、对话框和客户端设置等功能。</li>
 </ul>
 
-应尽可能使用主机特定的 API，并仅在主机特定的 API 不支持的情况中使用通用 API。 有关这两种 API 模型的更多详细信息，请参阅<a href="../overview/office-add-ins-fundamentals.md#api-models">构建 Office 加载项</a>。
+应尽可能使用应用程序特定的 API，并仅在应用程序特定的 API 不支持的情况中使用通用 API。 有关这两种 API 模型的更多详细信息，请参阅<a href="../overview/office-add-ins-fundamentals.md#api-models">构建 Office 加载项</a>。
 
 <h2>API 参考</h2>
 
@@ -130,4 +130,4 @@ ms.locfileid: "44608815"
     </li>
 </ul>
 
-<b>注意</b>：对于 Project，目前没有主机特定的 JavaScript API，因此需要使用通用 API 创建 Project 加载项。此外，对于 PowerPoint，主机特定的 API 的范围非常有限，因此主要使用通用 API 创建 PowerPoint 加载项。
+<b>注意</b>：对于 Project，目前没有应用程序特定的 JavaScript API，因此需要使用通用 API 创建 Project 加载项。此外，对于 PowerPoint，应用程序特定的 API 的范围非常有限，因此主要使用通用 API 创建 PowerPoint 加载项。

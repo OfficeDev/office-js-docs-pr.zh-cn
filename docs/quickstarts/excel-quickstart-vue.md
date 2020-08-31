@@ -1,15 +1,15 @@
 ---
 title: 使用 Vue 生成 Excel 任务窗格加载项
 description: 了解如何使用 Office JS API 和 Vue 生成简单的 Excel 任务窗格加载项。
-ms.date: 04/14/2020
+ms.date: 08/26/2020
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: 49c38a8b9055692f40fed9dc110528694e3fbf55
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 1fa522b71d0f180013f4f6fd7491134297aed2af
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44608920"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47294323"
 ---
 # <a name="build-an-excel-task-pane-add-in-using-vue"></a>使用 Vue 生成 Excel 任务窗格加载项
 
@@ -130,7 +130,7 @@ vue create my-add-in
              <h1>Welcome</h1>
            </div>
          </div>
-         <div id="content-main">
+         <div class="content-main">
            <div class="padding">
              <p>
                Choose the button below to set the color of the selected range to
