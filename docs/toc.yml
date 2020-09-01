@@ -5,13 +5,10 @@
   displayName: 'Excel, Word, OneNote, Project, PowerPoint, Outlook'
 - name: 入门
   items:
-    - name: 从这里开始！ 新手指南
+    - name: 初学者指南
       href: overview/learning-path-beginner.md
       displayName: develop
-    - name: 在此处转换！ 适用于 VSTO 加载项开发人员的指南
-      href: overview/learning-path-transition.md
-      displayName: develop
-    - name: 构建 Office 加载项
+    - name: 开发流程概述
       href: overview/office-add-ins-fundamentals.md
       displayName: develop
     - name: 快速入门
@@ -38,47 +35,73 @@
     - name: 设置开发环境
       href: overview/set-up-your-dev-environment.md
       displayName: 'Excel, Word, OneNote, Project, PowerPoint, Outlook'
-- name: 核心概念
+- name: 开发流程
   items:
     - name: 概述
       href: overview/core-concepts-office-add-ins.md
       displayName: 'Excel, Word, OneNote, Project, PowerPoint, Outlook'
+    - name: 计划
+      items:
+        - name: 加载项开发的最佳做法
+          href: concepts/add-in-development-best-practices.md
+          displayName: 'Excel, Word, OneNote, Project, PowerPoint, Outlook'
+        - name: Office 版本和要求集
+          href: develop/office-versions-and-requirement-sets.md
+        - name: Office 应用程序和平台的可用性
+          href: overview/office-add-in-availability.md
+          displayName: 'Excel, Word, OneNote, Project, PowerPoint, Outlook'
+        - name: 运行加载项的要求
+          href: concepts/requirements-for-running-office-add-ins.md
+          displayName: 'Excel, Word, OneNote, Project, PowerPoint, Outlook'
+        - name: 安装最新版 Office
+          href: develop/install-latest-office-version.md
+          displayName: 'Excel, Word, OneNote, Project, PowerPoint, Outlook'
     - name: 开发
       items:
         - name: 开发 Office 加载项
           href: develop/develop-overview.md
           displayName: 'Excel, Word, OneNote, Project, PowerPoint, Outlook'
-        - name: 主机和平台可用性
-          href: overview/office-add-in-availability.md
-          displayName: 'Excel, Word, OneNote, Project, PowerPoint, Outlook'
-        - name: Office JavaScript API
+        - name: 了解 Office JavaScript API
+          href: develop/understanding-the-javascript-api-for-office.md
+        - name: 使用应用程序专用 API 模型
+          href: develop/application-specific-api-model.md
+        - name: 使用通用 API 模型
           items:
-            - name: 了解 Office JavaScript API
-              href: develop/understanding-the-javascript-api-for-office.md
-            - name: Office 版本和要求集
-              href: develop/office-versions-and-requirement-sets.md
+            - name: 常见 JavaScript API 对象模型
+              href: develop/office-javascript-api-object-model.md
+            - name: Office 加载项中的异步编程
+              href: develop/asynchronous-programming-in-office-add-ins.md
+            - name: 对内容和任务窗格加载项的支持
+              href: develop/support-for-task-pane-and-content-add-ins.md
+            - name: 保持状态和设置
+              href: develop/persisting-add-in-state-and-settings.md
+        - name: 设置和运行加载项
+          items:
             - name: 参考 Office js
               href: develop/referencing-the-javascript-api-for-office-library-from-its-cdn.md
+            - name: 指定 Office 应用程序和 API 要求
+              href: develop/specify-office-hosts-and-api-requirements.md
             - name: Office 加载项的加载顺序
               href: develop/loading-the-dom-and-runtime-environment.md
             - name: 初始化加载项
               href: develop/initialize-add-in.md
-            - name: 常见问题的编码指南
-              href: develop/common-coding-issues.md
-            - name: 通用 API
-              items:
-                - name: 常见 JavaScript API 对象模型
-                  href: develop/office-javascript-api-object-model.md
-                - name: Office 加载项中的异步编程
-                  href: develop/asynchronous-programming-in-office-add-ins.md
-                - name: 对内容和任务窗格加载项的支持
-                  href: develop/support-for-task-pane-and-content-add-ins.md
-                - name: 保持状态和设置
-                  href: develop/persisting-add-in-state-and-settings.md
+              displayName: manifest
+            - name: 随文档自动打开任务窗格
+              href: develop/automatically-open-a-task-pane-with-a-document.md
+              displayName: manifest
         - name: 清单
-          href: develop/add-in-manifests.md
-        - name: 身份验证和授权
           items:
+            - name: 概述
+              href: develop/add-in-manifests.md
+            - name: 查找清单元素的正确顺序
+              href: develop/manifest-element-ordering.md
+            - name: 更新 API 和清单版本
+              href: develop/update-your-javascript-api-for-office-and-manifest-schema-version.md
+              displayName: manifest
+        - name: 隐私、安全性和身份验证
+          items:
+            - name: 加载项隐私和安全性概述
+              href: concepts/privacy-and-security.md
             - name: 身份验证和授权概述
               href: develop/overview-authn-authz.md
             - name: 使用 Office 对话框 API 进行身份验证和授权
@@ -107,29 +130,94 @@
                   href: develop/grant-admin-consent-to-an-add-in.md
                 - name: 排查单一登录 (SSO) 错误消息
                   href: develop/troubleshoot-sso-in-office-add-ins.md
-        - name: 概念
+            - name: 在加载项中请求获取 API 使用权限
+              href: develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md
+        - name: UI 和 UX
           items:
-            - name: 加载项开发的最佳做法
-              href: concepts/add-in-development-best-practices.md
-              displayName: 'Excel, Word, OneNote, Project, PowerPoint, Outlook'
-            - name: 运行加载项的要求
-              href: concepts/requirements-for-running-office-add-ins.md
-              displayName: 'Excel, Word, OneNote, Project, PowerPoint, Outlook'
-            - name: Office 加载项使用的浏览器
-              href: concepts/browsers-used-by-office-web-add-ins.md
-              displayName: 'Excel, Word, OneNote, Project, PowerPoint, Outlook'
-            - name: 安装最新版 Office
-              href: develop/install-latest-office-version.md
-              displayName: 'Excel, Word, OneNote, Project, PowerPoint, Outlook'
-        - name: 操作方法
+            - name: 概述
+              href: design/add-in-design.md
+            - name: 准则
+              items:
+                - name: 辅助功能
+                  href: design/accessibility-guidelines.md
+                - name: 数据可视化
+                  href: design/data-visualization-guidelines.md
+                - name: 语音
+                  href: design/voice-guidelines.md
+            - name: 设计语言
+              items:
+                - name: 概述
+                  href: design/add-in-design-language.md
+                - name: 颜色
+                  href: design/add-in-color.md
+                - name: 图标
+                  items:
+                    - name: 图标准则
+                      href: design/add-in-icons.md
+                    - name: 全新样式
+                      href: design/add-in-icons-fresh.md
+                    - name: Monoline 样式
+                      href: design/add-in-icons-monoline.md
+                - name: 布局
+                  href: design/add-in-layout.md
+                - name: 动作
+                  href: design/using-motion-office-addins.md
+                - name: 版式
+                  href: design/add-in-typography.md
+            - name: 界面元素
+              items:
+                - name: 概述
+                  href: design/interface-elements.md
+                - name: 加载项命令
+                  items:
+                    - name: 加载项命令的基本概念
+                      href: design/add-in-commands.md
+                    - name: 创建加载项命令
+                      href: develop/create-addin-commands.md
+                    - name: 启用和禁用加载项命令
+                      href: design/disable-add-in-commands.md
+                - name: 内容加载项
+                  href: design/content-add-ins.md
+                - name: 对话框
+                  items:
+                    - name: 概述
+                      href: design/dialog-boxes.md
+                    - name: 在 Office 加载项中使用 Office 对话框 API
+                      href: develop/dialog-api-in-office-add-ins.md
+                    - name: Office 对话框 API 最佳做法和规则
+                      href: develop/dialog-best-practices.md
+                    - name: 将数据从主页发送到对话框
+                      href: develop/parent-to-dialog.md
+                    - name: 处理 Office 对话框中的错误和事件
+                      href: develop/dialog-handle-errors-events.md
+                    - name: 使用 Office 对话框播放视频
+                      href: develop/dialog-video.md
+                - name: 任务窗格
+                  href: design/task-pane-add-ins.md
+            - name: 本地化
+              href: develop/localization.md
+            - name: UX 设计模式
+              items:
+                - name: 概述
+                  href: design/ux-design-pattern-templates.md
+                - name: 身份验证
+                  href: design/authentication-patterns.md
+                - name: 品牌打造
+                  href: design/branding-patterns.md
+                - name: 初次运行体验
+                  href: design/first-run-experience-patterns.md
+                - name: 导航
+                  href: design/navigation-patterns.md
+            - name: 资源
+              items:
+                - name: 设计工具包
+                  href: design/design-toolkits.md
+                - name: Fabric React 使用入门
+                  href: design/using-office-ui-fabric-react.md
+                - name: Office UI Fabric
+                  href: design/office-ui-fabric.md
+        - name: 框架和 IDE
           items:
-            - name: 解决同一来源策略限制
-              href: develop/addressing-same-origin-policy-limitations.md
-            - name: 随文档自动打开任务窗格
-              href: develop/automatically-open-a-task-pane-with-a-document.md
-            - name: 创建加载项命令
-              href: develop/create-addin-commands.md
-              displayName: manifest
             - name: 开发适用于 iPad 的加载项
               href: develop/develop-office-add-ins-for-the-ipad.md
             - name: 使用 Angular 开发加载项
@@ -147,110 +235,6 @@
                   href: develop/get-javascript-intellisense-in-visual-studio.md
                 - name: 将 JavaScript 转换成 TypeScript
                   href: develop/convert-javascript-to-typescript.md
-            - name: 查找清单元素的正确顺序
-              href: develop/manifest-element-ordering.md
-            - name: 标识等效的 COM 加载项
-              href: develop/make-office-add-in-compatible-with-existing-com-add-in.md
-              displayName: manifest
-            - name: 本地化
-              href: develop/localization.md
-            - name: 对话框
-              items:
-                - name: 在 Office 加载项中使用 Office 对话框 API
-                  href: develop/dialog-api-in-office-add-ins.md
-                - name: Office 对话框 API 最佳做法和规则
-                  href: develop/dialog-best-practices.md
-                - name: 将数据从主页发送到对话框
-                  href: develop/parent-to-dialog.md
-                - name: 处理 Office 对话框中的错误和事件
-                  href: develop/dialog-handle-errors-events.md
-                - name: 使用 Office 对话框播放视频
-                  href: develop/dialog-video.md
-            - name: 性能
-              items:
-                - name: 避免在循环中使用 context.sync
-                  href: concepts/correlated-objects-pattern.md
-                - name: Office 加载项的资源限制和性能优化
-                  href: concepts/resource-limits-and-performance-optimization.md
-            - name: 隐私和安全
-              href: concepts/privacy-and-security.md
-            - name: 在加载项中请求获取 API 使用权限
-              href: develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md
-              displayName: manifest
-            - name: 指定 Office 主机和 API 要求
-              href: develop/specify-office-hosts-and-api-requirements.md
-              displayName: manifest
-            - name: 更新 API 和清单版本
-              href: develop/update-your-javascript-api-for-office-and-manifest-schema-version.md
-              displayName: manifest
-    - name: UI 和 UX
-      items:
-        - name: 概述
-          href: design/add-in-design.md
-        - name: 准则
-          items:
-            - name: 辅助功能
-              href: design/accessibility-guidelines.md
-            - name: 数据可视化
-              href: design/data-visualization-guidelines.md
-            - name: 语音
-              href: design/voice-guidelines.md
-        - name: 设计语言
-          items:
-            - name: 概述
-              href: design/add-in-design-language.md
-            - name: 颜色
-              href: design/add-in-color.md
-            - name: 图标
-              items:
-                - name: 图标准则
-                  href: design/add-in-icons.md
-                - name: 全新样式
-                  href: design/add-in-icons-fresh.md
-                - name: Monoline 样式
-                  href: design/add-in-icons-monoline.md
-            - name: 布局
-              href: design/add-in-layout.md
-            - name: 动作
-              href: design/using-motion-office-addins.md
-            - name: 版式
-              href: design/add-in-typography.md
-        - name: 界面元素
-          items:
-            - name: 概述
-              href: design/interface-elements.md
-            - name: 加载项命令
-              items:
-                - name: 加载项命令的基本概念
-                  href: design/add-in-commands.md
-                - name: 启用和禁用加载项命令
-                  href: design/disable-add-in-commands.md
-            - name: 对话框
-              href: design/dialog-boxes.md
-            - name: 内容加载项
-              href: design/content-add-ins.md
-            - name: 任务窗格
-              href: design/task-pane-add-ins.md
-        - name: UX 设计模式
-          items:
-            - name: 概述
-              href: design/ux-design-pattern-templates.md
-            - name: 身份验证
-              href: design/authentication-patterns.md
-            - name: 品牌打造
-              href: design/branding-patterns.md
-            - name: 初次运行体验
-              href: design/first-run-experience-patterns.md
-            - name: 导航
-              href: design/navigation-patterns.md
-        - name: 资源
-          items:
-            - name: 设计工具包
-              href: design/design-toolkits.md
-            - name: Fabric React 使用入门
-              href: design/using-office-ui-fabric-react.md
-            - name: Office UI Fabric
-              href: design/office-ui-fabric.md
     - name: 测试和调试
       items:
         - name: 测试和调试 Office 加载项
@@ -281,10 +265,18 @@
         - name: 清除 Office 缓存
           href: testing/clear-cache.md
           displayName: 'uninstall, sideload'
+        - name: 常见问题的编码指南
+          href: develop/common-coding-issues.md
         - name: 使用运行时日志记录功能进行调试
           href: testing/runtime-logging.md
         - name: "适用于 Visual\_Studio\_Code 的调试器扩展"
           href: testing/debug-with-vs-extension.md
+        - name: 性能
+          items:
+            - name: 避免在循环中使用 context.sync
+              href: concepts/correlated-objects-pattern.md
+            - name: Office 加载项的资源限制和性能优化
+              href: concepts/resource-limits-and-performance-optimization.md
         - name: 排查用户错误
           href: testing/testing-and-troubleshooting.md
         - name: 可用性测试
@@ -500,6 +492,11 @@
                   href: reference/manifest/supportssharedfolders.md
                 - name: WebApplicationInfo
                   href: reference/manifest/webapplicationinfo.md
+        - name: 解决同一来源策略限制
+          href: develop/addressing-same-origin-policy-limitations.md
+        - name: Office 加载项使用的浏览器
+          href: concepts/browsers-used-by-office-web-add-ins.md
+          displayName: 'Excel, Word, OneNote, Project, PowerPoint, Outlook'
         - name: 错误代码
           href: reference/javascript-api-for-office-error-codes.md
         - name: 不支持的窗口对象
@@ -586,9 +583,6 @@
           displayName: Excel
         - name: 基本编程概念
           href: excel/excel-add-ins-core-concepts.md
-          displayName: Excel
-        - name: 高级编程概念
-          href: excel/excel-add-ins-advanced-concepts.md
           displayName: Excel
         - name: 调用内置函数
           href: excel/excel-add-ins-worksheet-functions.md
@@ -1139,8 +1133,6 @@
           displayName: Word
 - name: 模式和做法
   items:
-    - name: 分享 VSTO 加载项代码至 Office 加载项
-      href: tutorials/migrate-vsto-to-office-add-in-shared-code-library-tutorial.md
     - name: 批处理自定义函数远程调用
       href: excel/custom-functions-batching.md
       displayName: 'Excel, Custom Functions'
@@ -1148,3 +1140,12 @@
       href: develop/authentication-pnp.md
     - name: 在 Office 解决方案中处理高 DPI 和 DPI 缩放
       href: /office/client-developer/ddpi/handle-high-dpi-and-dpi-scaling-in-your-office-solution
+- name: VSTO 和 COM 转换资源
+  items:
+    - name: VSTO 加载项开发人员指南
+      href: overview/learning-path-transition.md
+    - name: 分享 VSTO 加载项代码至 Office 加载项
+      href: tutorials/migrate-vsto-to-office-add-in-shared-code-library-tutorial.md
+    - name: 标识等效的 COM 加载项
+      href: develop/make-office-add-in-compatible-with-existing-com-add-in.md
+      displayName: manifest
