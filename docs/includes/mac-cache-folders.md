@@ -1,17 +1,17 @@
-由于性能方面的原因，外接程序通常缓存在 Office for Mac 中。 通常情况下，将通过重载外接程序清除缓存。 如果同一个文档中存在多个外接程序，则在重新加载时自动清除缓存的过程可能不可靠。
+出于性能方面的考虑，加载项通常在 Office for Mac 中缓存。 通常情况下，将通过重新加载加载项清除缓存。 如果同一文档中存在多个加载项，则重载后自动清除缓存的过程可能不可靠。
 
-您可以使用任何任务窗格外接程序的 "个性" 菜单清除缓存。
-- 选择 "个性" 菜单。 然后选择 "**清除 Web 缓存**"。
+可以通过使用任何任务窗格加载项的个性菜单来清除缓存。
+- 选择个性菜单。 然后选择“**清除 Web 缓存**”。
     > [!NOTE]
-    > 您必须运行 macOS 版本10.13.6 或更高版本，才能看到 "个性" 菜单。
+    > 必须运行 macOS 版本 10.13.6 或更高版本才能看到个性菜单。
     
-    !["个性" 菜单上的 "清除 web 缓存" 选项的屏幕截图。](../images/mac-clear-cache-menu.png)
+    ![个性菜单上的“清除 Web 缓存”选项的屏幕截图。](../images/mac-clear-cache-menu.png)
 
-您还可以通过删除该文件夹的内容来手动清除缓存 `~/Library/Containers/com.Microsoft.OsfWebHost/Data/` 。
+也可以通过删除 `~/Library/Containers/com.Microsoft.OsfWebHost/Data/` 文件夹中的内容来手动清除缓存。
 
 > [!NOTE]
-> 如果文件夹不存在，查看下列文件夹，如果找到，删除文件夹的内容：
->    - `~/Library/Containers/com.microsoft.{host}/Data/Library/Caches/`此位置`{host}`是 Office 主机（如 `Excel` ）
->    - `~/Library/Containers/com.microsoft.{host}/Data/Library/Application Support/Microsoft/Office/16.0/Wef/`此位置`{host}`是 Office 主机（如 `Excel` ）
+> 如果文件夹不存在，请检查是否存在以下文件夹，如果找到，请删除文件夹的内容：
+>    - `~/Library/Containers/com.microsoft.{host}/Data/Library/Caches/`，其中，`{host}` 是 Office 应用程序（例如 `Excel`）
+>    - `~/Library/Containers/com.microsoft.{host}/Data/Library/Application Support/Microsoft/Office/16.0/Wef/`，其中，`{host}` 是 Office 应用程序（例如 `Excel`）
 >    - `com.microsoft.Office365ServiceV2/Data/Caches/com.microsoft.Office365ServiceV2/`
 >    - `com.microsoft.Office365ServiceV2/Data/Library/Caches/com.microsoft.Office365ServiceV2/`
