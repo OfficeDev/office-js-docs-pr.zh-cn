@@ -1,15 +1,15 @@
 ---
 title: 生成首个 Outlook 加载项
 description: 了解如何使用 Office JS API 生成简单的 Outlook 任务窗格加载项。
-ms.date: 08/11/2020
+ms.date: 08/24/2020
 ms.prod: outlook
 localization_priority: Priority
-ms.openlocfilehash: 6ed50b52e0f4d5667e835c875851ed14c68bfe49
-ms.sourcegitcommit: 65c15a9040279901ea7ff7f522d86c8fddb98e14
+ms.openlocfilehash: 6ce09b3b2f60cd4c77e966f6b920aa63caab299c
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "46672713"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47294330"
 ---
 # <a name="build-your-first-outlook-add-in"></a>生成首个 Outlook 加载项
 
@@ -104,6 +104,9 @@ ms.locfileid: "46672713"
     npm start
     ```
 
+    > [!IMPORTANT]
+    > 如果出现“不支持旁加载”错误，可将其忽略并继续。
+
 1. 按照[旁加载 Outlook 加载项以供测试](../outlook/sideload-outlook-add-ins-for-testing.md)中的说明操作，旁加载加载项。
 
 1. 在 Outlook 中，选择或打开邮件。
@@ -155,7 +158,7 @@ ms.locfileid: "46672713"
 
 |**项目**|**说明**|
 |:-----|:-----|
-|加载项项目|仅包含 XML 清单文件，内含描述加载项的所有设置。 这些设置有助于 Office 主机确定应在何时激活加载项，以及应在哪里显示加载项。 Visual Studio 生成了此文件的内容，以便于用户能够立即运行项目并使用外接程序。 可以通过修改 XML 文件随时更改这些设置。|
+|加载项项目|仅包含 XML 清单文件，内含描述加载项的所有设置。 这些设置有助于 Office 应用程序确定应在何时激活加载项，以及应在哪里显示加载项。 Visual Studio 生成了此文件的内容，以便于用户能够立即运行项目并使用外接程序。 可以通过修改 XML 文件随时更改这些设置。|
 |Web 应用项目|包含加载项的内容页，包括开发 Office 感知 HTML 和 JavaScript 页面所需的全部文件和文件引用。开发加载项时，Visual Studio 在本地 IIS 服务器上托管 Web 应用。准备好发布加载项后，需要将此 Web 应用项目部署到 Web 服务器。|
 
 ### <a name="update-the-code"></a>更新代码

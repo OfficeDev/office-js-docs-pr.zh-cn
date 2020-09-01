@@ -4,12 +4,12 @@ description: PowerPoint JavaScript API 概述
 ms.date: 07/05/2019
 ms.prod: powerpoint
 localization_priority: Priority
-ms.openlocfilehash: d04a30013cabc11a3f20ba7becf833b8d582a11b
-ms.sourcegitcommit: 19312a54f47a17988ffa86359218a504713f9f09
+ms.openlocfilehash: 5951bddc1d5812ba52674c984b0199aeab83949b
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/10/2020
-ms.locfileid: "44679323"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47293637"
 ---
 # <a name="javascript-api-for-powerpoint"></a>适用于 PowerPoint 的 JavaScript API
 
@@ -38,5 +38,5 @@ PowerPoint 加载项通过使用 Office JavaScript API 与 PowerPoint 中的对�
 - [PowerPoint 加载项文档](../../powerpoint/index.yml)
 - [PowerPoint 加载项概述](../../powerpoint/powerpoint-add-ins.md)
 - [PowerPoint JavaScript API 参考](/javascript/api/powerpoint)
-- [Office 加载项主机和平台可用性](../../overview/office-add-in-availability.md)
+- [Office 客户端应用程序和平台的 Office 加载项可用性](../../overview/office-add-in-availability.md)
 - [API 参考文档](../javascript-api-for-office.md)

@@ -3,12 +3,12 @@ title: Office 加载项 XML 清单
 description: 获取 Office 加载项清单及其用途概述。
 ms.date: 03/18/2020
 localization_priority: Priority
-ms.openlocfilehash: 4d2fa054cc268b68eb1c05ba82f9cd7745bc8685
-ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
+ms.openlocfilehash: 495638ee70630c5330e800419076463273bd2491
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "45093747"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47293352"
 ---
 # <a name="office-add-ins-xml-manifest"></a>Office 加载项 XML 清单
 
@@ -115,7 +115,7 @@ _\*\* 仅通过 AppSource 分发的加载项才需要 SupportUrl。_
 
 ## <a name="specify-domains-you-want-to-open-in-the-add-in-window"></a>指定要在外接程序窗口中打开的域
 
-在 Office 网页版中运行时，可以将任务窗格导航到任何 URL。 但在桌面平台中，如果外接程序尝试转到托管起始页（如清单文件的 [SourceLocation](../reference/manifest/sourcelocation.md) 元素中所指定的）的域之外的域中的 URL，则该 URL 将在 Office 主机应用程序的外接程序窗格外的新浏览器窗口中打开。
+在 Office 网页版中运行时，可以将任务窗格导航到任何 URL。 但在桌面平台中，如果加载项尝试转到托管起始页（如清单文件的 [SourceLocation](../reference/manifest/sourcelocation.md) 元素中所指定的）的域之外的域中的 URL，则该 URL 将在 Office 应用程序的加载项窗格外的新浏览器窗口中打开。
 
 若要重写此（桌面版 Office）操作，请在清单文件的 [AppDomains](../reference/manifest/appdomains.md) 元素中指定的域列表中指定要在外接程序窗口中打开的每个域。 如果加载项尝试转至该列表的域中的 URL，则它将在 Office 网页版和桌面版中的任务窗口中打开。 如果它尝试转至列表之外的域中的 URL，则在桌面版 Office 中，该 URL 将在新的浏览器窗口中（外接程序窗格之外）打开。
 
@@ -497,7 +497,7 @@ _\*\* 仅通过 AppSource 分发的加载项才需要 SupportUrl。_
 
 * [如何查找清单元素的正确顺序](manifest-element-ordering.md)
 * [在清单中创建加载项命令][加载项命令]
-* [指定 Office 主机和 API 要求](specify-office-hosts-and-api-requirements.md)
+* [指定 Office 应用程序和 API 要求](specify-office-hosts-and-api-requirements.md)
 * [Office 外接程序的本地化](localization.md)
 * [Office 外接程序清单的架构参考](/openspecs/office_file_formats/ms-owemxml/c6a06390-34b8-4b42-82eb-b28be12494a8)
 * [更新 API 和清单版本](update-your-javascript-api-for-office-and-manifest-schema-version.md)

@@ -3,12 +3,12 @@ title: 加载项命令的基本概念
 description: 了解如何将自定义功能区按钮和菜单项添加到 Office 作为 Office 加载项的一部分。
 ms.date: 07/10/2020
 localization_priority: Priority
-ms.openlocfilehash: 2c4731b773a20c666ed78eba7e10f59bf9404bfe
-ms.sourcegitcommit: 472b81642e9eb5fb2a55cd98a7b0826d37eb7f73
+ms.openlocfilehash: 13db2191d9691a699c5976b812e1ca6d8f3bf1ae
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/17/2020
-ms.locfileid: "45159624"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47293350"
 ---
 # <a name="add-in-commands-for-excel-powerpoint-and-word"></a>Excel、PowerPoint 和 Word 的加载项命令
 
@@ -57,7 +57,7 @@ ms.locfileid: "45159624"
 可指定在加载项启动时是启用还是禁用该命令，并以编程方式更改设置。
 
 > [!NOTE]
-> 此功能处于预览状态，并非在所有主机或方案中均受支持。 有关详细信息，请参阅[启用和禁用加载项命令](disable-add-in-commands.md)。
+> 此功能处于预览状态，并非在所有 Office 应用程序或方案中均受支持。 有关详细信息，请参阅[启用和禁用加载项命令](disable-add-in-commands.md)。
 
 ## <a name="supported-platforms"></a>支持的平台
 
@@ -93,7 +93,7 @@ ms.locfileid: "45159624"
      > 占用过多空间的加载项可能无法通过 [AppSource 验证](/legal/marketplace/certification-policies)。
 
 - 对于所有图标，请遵循[图标设计准则](add-in-icons.md)。
-- 提供也可以在不支持命令的主机上运行的加载项的版本。 单个加载项清单可以在命令感知（带有命令）和非命令感知（作为任务窗格）的主机中工作。
+- 提供也可以在不支持命令的 Office 应用程序上运行的加载项版本。 单个加载项清单可以在命令感知型（带有命令）和非命令感知（作为任务窗格）型应用程序中工作。
 
    *图 3. Office 2013 中的任务窗格加载项，以及 Office 2016 中使用加载项命令的相同加载项*
 

@@ -4,12 +4,12 @@ description: 在本教程中，你将学习如何构建一个 Excel 外接程序
 ms.date: 06/05/2020
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: 2e637bad83432f8adf94826b906dc68a57e02fa6
-ms.sourcegitcommit: 7d5407d3900d2ad1feae79a4bc038afe50568be0
+ms.openlocfilehash: d75655c1bb69209cf4cdb5925d04b6c3f84bb39f
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2020
-ms.locfileid: "46530504"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47293420"
 ---
 # <a name="tutorial-create-an-excel-task-pane-add-in"></a>教程：创建 Excel 任务窗格加载项
 
@@ -63,7 +63,7 @@ ms.locfileid: "46530504"
     <button class="ms-Button" id="create-table">Create Table</button><br/><br/>
     ```
 
-5. 打开 ./src/taskpane/taskpane.js**** 文件。 此文件包含用于加快任务窗格与 Office 托管应用程序之间的交互的 Office JavaScript API 代码。
+5. 打开 **./src/taskpane/taskpane.js** 文件。 此文件包含用于加快任务窗格与 Office 客户端应用程序之间的交互的 Office JavaScript API 代码。
 
 6. 执行以下操作，删除对 `run` 按钮和 `run()` 函数的所有引用：
 
@@ -602,7 +602,7 @@ ms.locfileid: "46530504"
 
 1. 打开文件 **.\commands\commands.js**。
 
-2. 紧接着 `action` 函数添加下列函数。 注意，我们向函数和函数调用 `args.completed` 的最后一行指定了 `args` 参数。 **ExecuteFunction** 类型的所有加载项命令都必须满足这项要求。 它会指示 Office 主机应用，函数已完成，且 UI 可以再次变成响应式。
+2. 紧接着 `action` 函数添加下列函数。 注意，我们向函数和函数调用 `args.completed` 的最后一行指定了 `args` 参数。 **ExecuteFunction** 类型的所有加载项命令都必须满足这项要求。 它会指示 Office 客户端应用程序，函数已完成，且 UI 可以再次变得可响应。
 
     ```js
     function toggleProtection(args) {
@@ -721,18 +721,18 @@ ms.locfileid: "46530504"
 
 ### <a name="test-the-add-in"></a>测试加载项
 
-1. 关闭包括 Excel 在内的所有 Office 应用。 
+1. 关闭包括 Excel 在内的所有 Office 应用。
 
-2. 通过删除缓存文件夹的内容（所有文件和子文件夹）来删除 Office 缓存。 若要完全清除主机中的旧版加载项，必须这样做。
+2. 通过删除缓存文件夹的内容（所有文件和子文件夹）来删除 Office 缓存。 若要完全清除应用程序中的旧版加载项，则必须这样做。
 
     - 对于 Windows：`%LOCALAPPDATA%\Microsoft\Office\16.0\Wef\`。
 
-    - 对于 Mac：`~/Library/Containers/com.Microsoft.OsfWebHost/Data/`。 
+    - 对于 Mac：`~/Library/Containers/com.Microsoft.OsfWebHost/Data/`。
     
         > [!NOTE]
         > 如果文件夹不存在，查看下列文件夹，如果找到，删除文件夹的内容：
-        >    - `~/Library/Containers/com.microsoft.{host}/Data/Library/Caches/`此位置`{host}`是 Office 主机（如 `Excel` ）
-        >    - `~/Library/Containers/com.microsoft.{host}/Data/Library/Application Support/Microsoft/Office/16.0/Wef/`此位置`{host}`是 Office 主机（如 `Excel` ）
+        >    - `~/Library/Containers/com.microsoft.{host}/Data/Library/Caches/`，其中，`{host}` 是 Office 应用程序（例如 `Excel`）
+        >    - `~/Library/Containers/com.microsoft.{host}/Data/Library/Application Support/Microsoft/Office/16.0/Wef/`，其中，`{host}` 是 Office 应用程序（例如 `Excel`）
         >    - `com.microsoft.Office365ServiceV2/Data/Caches/com.microsoft.Office365ServiceV2/`
         >    - `com.microsoft.Office365ServiceV2/Data/Library/Caches/com.microsoft.Office365ServiceV2/`
 
@@ -764,7 +764,7 @@ ms.locfileid: "46530504"
 
 ## <a name="open-a-dialog"></a>打开对话框
 
-本教程的最后一步是，在加载项中打开对话框，将消息从对话框进程传递到任务窗格进程，再关闭对话框。 Office 加载项对话框是*非模式*窗口。也就是说，用户可以继续与主机 Office 应用中的文档，以及与任务窗格中的主机页进行交互。
+本教程的最后一步是，在加载项中打开对话框，将消息从对话框进程传递到任务窗格进程，再关闭对话框。Office 加载项对话框是*非模式*窗口。也就是说，用户可以继续与 Office 应用程序中的文档，以及任务窗格中的主机页进行交互。
 
 ### <a name="create-the-dialog-page"></a>创建对话框页面
 
@@ -941,7 +941,7 @@ ms.locfileid: "46530504"
     var dialog = null;
     ```
 
-7. 添加下列函数至文件结尾（`dialog` 声明后）。 关于此代码，请务必注意它*不*包含的内容，即不含 `Excel.run` 调用。 这是因为对话框打开 API 跨所有 Office 主机共享，所以它属于 Office JavaScript 公用 API，而不属于 Excel 专用 API。
+7. 添加下列函数至文件结尾（`dialog` 声明后）。 关于此代码，请务必注意它*不*包含的内容，即不含 `Excel.run` 调用。 这是因为用于打开对话框的 API 跨所有 Office 应用程序共享，所以它属于 Office JavaScript 通用 API，而非 Excel 专用 API。
 
     ```js
     function openDialog() {

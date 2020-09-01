@@ -4,12 +4,12 @@ description: Project JavaScript API 概述
 ms.date: 07/05/2019
 ms.prod: project
 localization_priority: Priority
-ms.openlocfilehash: 1e937e3c8a89340858cf715cfa4723062c780805
-ms.sourcegitcommit: 19312a54f47a17988ffa86359218a504713f9f09
+ms.openlocfilehash: 15dbe8cde9510f052f929a99f4073f5fa8bf8a12
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/10/2020
-ms.locfileid: "44679302"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47293616"
 ---
 # <a name="javascript-api-for-project"></a>适用于 Project 的 JavaScript API
 
@@ -24,4 +24,4 @@ Project 支持使用 JavaScript API 制作的加载项，但目前没有专为�
 - [Project 加载项文档](../../project/index.yml)
 - [Project 加载项概述](../../project/project-add-ins.md)
 - [API 参考文档](../javascript-api-for-office.md)
-- [Office 加载项主机和平台可用性](../../overview/office-add-in-availability.md)
+- [Office 客户端应用程序和平台的 Office 加载项可用性](../../overview/office-add-in-availability.md)

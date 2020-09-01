@@ -4,12 +4,12 @@ description: 了解如何使用 Office JS API 生成简单的 PowerPoint 任务�
 ms.date: 04/03/2020
 ms.prod: powerpoint
 localization_priority: Priority
-ms.openlocfilehash: 31bfc87559550d865367f6430b980620e813bed8
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 9bab9c0c05ace89a1d5dc89b62108f34b49cf679
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44608899"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47294337"
 ---
 # <a name="build-your-first-powerpoint-task-pane-add-in"></a>生成首个 PowerPoint 任务加载项
 
@@ -242,7 +242,7 @@ ms.locfileid: "44608899"
 
 2. 在 PowerPoint 中，插入新的空白幻灯片，再依次选择“主页”**** 选项卡和功能区中的“显示任务窗格”**** 按钮，以打开加载项任务窗格。
 
-    ![突出显示了“显示任务窗格”按钮的 PowerPoint 屏幕截图](../images/powerpoint_quickstart_addin_1.png)
+    ![突出显示了“显示任务窗格”功能区按钮的 PowerPoint 屏幕截图](../images/powerpoint_quickstart_addin_1.png)
 
 3. 在任务窗格中，选择“插入图像”**** 按钮，以便将图像添加到选定幻灯片。
 

@@ -4,12 +4,12 @@ description: 了解如何使用 Office JS API 生成简单的 Excel 任务窗格
 ms.date: 04/03/2020
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: 321fd85705df7673b48d548e88f5c3acae06655d
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 4043fa56d844ca1160c61dd94d229172682c3af2
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44608928"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47292337"
 ---
 # <a name="build-an-excel-task-pane-add-in"></a>生成 Excel 任务窗格加载项
 
@@ -64,7 +64,7 @@ ms.locfileid: "44608928"
 
 5. 在任务窗格的底部，选择“**运行**”链接，价格选定范围的颜色设为黄色。
 
-    ![Excel 加载项](../images/excel-quickstart-addin-3c.png)
+    ![带“运行”按钮的 Excel 加载项](../images/excel-quickstart-addin-3c.png)
 
 ### <a name="next-steps"></a>后续步骤
 
@@ -198,11 +198,11 @@ ms.locfileid: "44608928"
 
 ### <a name="try-it-out"></a>试用
 
-1. 使用 Visual Studio 时，测试新建的 Excel 加载项，具体方法为按 **F5** 或选择“开始”**** 按钮来启动 Excel，功能区中显示“显示任务窗格”**** 加载项按钮。 此加载项会在 IIS 上本地托管。 如果系统要求你信任证书，请信任证书，这样此加载项才能连接到它的主机。
+1. 使用 Visual Studio 时，测试新建的 Excel 加载项，具体方法为按 **F5** 或选择“开始”**** 按钮来启动 Excel，功能区中显示“显示任务窗格”**** 加载项按钮。 加载项本地托管在 IIS 上。 如果系统要求你信任证书，请信任证书，这样此加载项才能连接到它的 Office 应用程序。
 
 2. 在 Excel 中，依次选择的“**开始**”选项卡和功能区中的“**显示任务窗格**”按钮，以打开加载项任务窗格。
 
-    ![Excel 加载项按钮](../images/excel-quickstart-addin-2a.png)
+    ![Excel 加载项“显示任务窗格”按钮](../images/excel-quickstart-addin-2a.png)
 
 3. 选择工作表中的任何一系列单元格。
 

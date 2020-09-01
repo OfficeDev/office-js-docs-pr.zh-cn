@@ -4,12 +4,12 @@ description: 本教程将介绍如何生成 Word 加载项，用于插入（和�
 ms.date: 07/07/2020
 ms.prod: word
 localization_priority: Priority
-ms.openlocfilehash: 9ee851c9d479c15a0abce5228d89648d1268861b
-ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
+ms.openlocfilehash: 03960f5de7e99ba4ffa52be5cd4f7fc896942b76
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "45093509"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47294218"
 ---
 # <a name="tutorial-create-a-word-task-pane-add-in"></a>教程：创建 Word 任务窗格加载项
 
@@ -62,7 +62,7 @@ ms.locfileid: "45093509"
     <button class="ms-Button" id="insert-paragraph">Insert Paragraph</button><br/><br/>
     ```
 
-5. 打开 ./src/taskpane/taskpane.js**** 文件。 此文件包含用于加快任务窗格与 Office 托管应用程序之间的交互的 Office JavaScript API 代码。
+5. 打开 **./src/taskpane/taskpane.js** 文件。 此文件包含用于加快任务窗格与 Office 客户端应用程序之间的交互的 Office JavaScript API 代码。
 
 6. 执行以下操作，删除对 `run` 按钮和 `run()` 函数的所有引用：
 

@@ -3,12 +3,12 @@ title: Outlook 加载项要求
 description: 必须满足服务器和客户端的多个要求，才能正常加载和运行 Outlook 加载项。
 ms.date: 07/07/2020
 localization_priority: Priority
-ms.openlocfilehash: 700e0efd2ab2655de61d37d42038fa2c15a99cb4
-ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
+ms.openlocfilehash: 353c03fc0cdfe83c5f775df09dfb7c6b23cca191
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "45093992"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47294001"
 ---
 # <a name="outlook-add-in-requirements"></a>Outlook 加载项要求
 
@@ -16,7 +16,7 @@ ms.locfileid: "45093992"
 
 ## <a name="client-requirements"></a>客户端要求
 
-- 客户端必须是一个受 Outlook 加载项支持的主机。下列客户端支持加载项：
+- 客户端必须是一个受支持的 Outlook 加载项应用程序。下列客户端支持加载项：
 
    - Windows 版 Outlook 2013 或更高版本
    - Mac 版 Outlook 2016 或更高版本
@@ -44,5 +44,5 @@ ms.locfileid: "45093992"
 ## <a name="see-also"></a>另请参阅
 
 - [Office 加载项的运行要求](../concepts/requirements-for-running-office-add-ins.md)
-- [Office 加载项主机和平台可用性（Outlook 部分）](../overview/office-add-in-availability.md#outlook)
+- [Office 客户端应用程序和 Office 加载项的平台可用性（Outlook 部分）](../overview/office-add-in-availability.md#outlook)
 - [Outlook JavaScript API 要求集支持](../reference/requirement-sets/outlook-api-requirement-sets.md#requirement-sets-supported-by-exchange-servers-and-outlook-clients)

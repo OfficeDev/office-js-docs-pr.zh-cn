@@ -4,12 +4,12 @@ description: 了解如何使用 Office JS API 生成简单的 OneNote 任务窗�
 ms.date: 07/07/2020
 ms.prod: onenote
 localization_priority: Priority
-ms.openlocfilehash: 6f057d650451d12e834d8f875f40d9d6d71ee4d7
-ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
+ms.openlocfilehash: 1eaead7f44ee3615d5779a864399ce7a00b5915d
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "45094153"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47292319"
 ---
 # <a name="build-your-first-onenote-task-pane-add-in"></a>生成首个 OneNote 任务窗格加载项
 
@@ -42,7 +42,7 @@ ms.locfileid: "45094153"
 - 项目根目录中的 **./manifest.xml** 文件定义加载项的设置和功能。
 - **./src/taskpane/taskpane.html** 文件包含组成任务窗格的 HTML。
 - **./src/taskpane/taskpane.css** 文件包含应用于任务窗格中的内容的 CSS。
-- **./src/taskpane/taskpane.js** 文件包含用于加快任务窗格与 Office 托管应用程序之间的交互的 Office JavaScript API 代码。
+- **./src/taskpane/taskpane.js** 文件包含用于加快任务窗格与 Office 客户端应用程序之间的交互的 Office JavaScript API 代码。
 
 ## <a name="update-the-code"></a>更新代码
 

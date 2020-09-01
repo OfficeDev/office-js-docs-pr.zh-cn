@@ -3,5 +3,5 @@
 - 项目根目录中的 **./manifest.xml** 文件定义加载项的设置和功能。
 - **./src/taskpane/taskpane.html** 文件包含组成任务窗格的 HTML。
 - **./src/taskpane/taskpane.css** 文件包含应用于任务窗格中的内容的 CSS。
-- **./src/taskpane/taskpane.js** 文件包含用于加快任务窗格与 Office 托管应用程序之间的交互的 Office JavaScript API 代码。
+- **./src/taskpane/taskpane.js** 文件包含用于加快任务窗格与 Office 客户端应用程序之间的交互的 Office JavaScript API 代码。
 

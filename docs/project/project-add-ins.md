@@ -5,12 +5,12 @@ ms.date: 09/26/2019
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: 635fd01dd9aa5ea398b2679e925b5c58dd757782
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 1e471c53e39af8764840716d59a4d26719d3ac0a
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44611916"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47292403"
 ---
 # <a name="task-pane-add-ins-for-project"></a>Project 任务窗格加载项
 
@@ -104,7 +104,7 @@ Project 加载项方案包括以下几种：
   - **Version** 元素是加载项的版本。**ProviderName** 元素是提供加载项的公司或开发人员的名称。**DefaultLocale** 元素指定清单中字符串的默认区域设置。
   - **DisplayName** 元素是在 Project 2013 的功能区中的“**视图**”选项卡的“**任务窗格加载项**”下拉列表中显示的名称。该值最多可以包含 32 个字符。
   - **Description** 元素包含加载项默认区域设置说明。该值最多可以包含 2000 个字符。
-  - **Capabilities** 元素包含一个或多个指定主机应用程序的 **Capability** 子元素。
+  - **Capabilities** 元素包含一个或多个指定 Office 应用程序的 **Capability** 子元素。
   - **DefaultSettings** 元素包括 **SourceLocation** 元素，后者指定 HTML 文件在文件共享中的路径或加载项使用的网页的 URL。任务窗格加载项将忽略 **RequestedHeight** 元素和 **RequestedWidth** 元素。
   - **IconUrl** 元素为可选元素。它可为文件共享中的图标或 Web 应用程序中图标的 URL。
 

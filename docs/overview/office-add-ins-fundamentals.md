@@ -1,14 +1,14 @@
 ---
 title: 构建 Office 加载项
-description: Office 加载项开发简介。
+description: Office 加载项构建简介。
 ms.date: 02/27/2020
 localization_priority: Priority
-ms.openlocfilehash: 9ef552698bb0e9d71076b38d0ea3af49eee408d7
-ms.sourcegitcommit: 19312a54f47a17988ffa86359218a504713f9f09
+ms.openlocfilehash: 5520a147ed1dfe234d78b4e83081e355bc3e1872
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/10/2020
-ms.locfileid: "44679393"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47292449"
 ---
 # <a name="building-office-add-ins"></a>构建 Office 加载项
 
@@ -130,7 +130,7 @@ Office 加载项可使用 Office JavaScript API 来与其中在运行加载项�
 查看此文档，详细了解如何开发、测试和发布 Office 加载项。
 
 > [!TIP]
-> 对于你构建的任何加载项，都可查看本文档的[核心概念](core-concepts-office-add-ins.md)部分中的信息，还可查看与你要构建的加载项类型（例如 [Excel](../excel/index.yml)）相对应的主机特定部分中的信息。
+> 对于你构建的任何加载项，都可查看本文档的[核心概念](core-concepts-office-add-ins.md)部分中的信息，还可查看与你要构建的加载项类型（例如 [Excel](../excel/index.yml)）相对应的应用程序特定部分中的信息。
 >
 > ![显示目录的图像](../images/top-level-toc.png)
 

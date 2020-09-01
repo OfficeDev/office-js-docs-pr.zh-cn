@@ -4,12 +4,12 @@ description: 了解如何使用 Office JS API 生成简单的 Project 任务窗�
 ms.date: 04/03/2020
 ms.prod: project
 localization_priority: Priority
-ms.openlocfilehash: db30662c93c4de4d47f3986358fb2219b84f5470
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 8bb92b7a6c2d4610a962c2b2a84d38fb545ddd34
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44608838"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47294309"
 ---
 # <a name="build-your-first-project-task-pane-add-in"></a>生成首个 Project 任务窗格加载项
 
@@ -44,7 +44,7 @@ ms.locfileid: "44608838"
 - 项目根目录中的 **./manifest.xml** 文件定义加载项的设置和功能。
 - **./src/taskpane/taskpane.html** 文件包含组成任务窗格的 HTML。
 - **./src/taskpane/taskpane.css** 文件包含应用于任务窗格中的内容的 CSS。
-- **./src/taskpane/taskpane.js** 文件包含用于加快任务窗格与 Office 托管应用程序之间的交互的 Office JavaScript API 代码。
+- **./src/taskpane/taskpane.js** 文件包含用于加快任务窗格与 Office 客户端应用程序之间的交互的 Office JavaScript API 代码。
 
 ## <a name="update-the-code"></a>更新代码
 

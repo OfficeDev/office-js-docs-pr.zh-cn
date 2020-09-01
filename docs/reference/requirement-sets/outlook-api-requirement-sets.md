@@ -4,12 +4,12 @@ description: 了解有关 Outlook JavaScript API 要求集的详细信息。
 ms.date: 07/10/2020
 ms.prod: outlook
 localization_priority: Priority
-ms.openlocfilehash: 231b59818c1273b426a17656e67c9bb1153fb65c
-ms.sourcegitcommit: 472b81642e9eb5fb2a55cd98a7b0826d37eb7f73
+ms.openlocfilehash: 64d906fdfbc50926ac864b1106e7cd1cb6017c77
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/17/2020
-ms.locfileid: "45159281"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47293497"
 ---
 # <a name="outlook-javascript-api-requirement-sets"></a>Outlook JavaScript API 要求集
 
@@ -38,7 +38,7 @@ Outlook 外接程序通过在其清单中使用 Requirements 元素来声明所�
 
 设置要求集不会限制外接程序可使用的可用 API。 例如，如果加载项指定要求集“Mailbox 1.1”，但它在支持版本“Mailbox 1.3”的 Outlook 客户端中运行，则该加载项从要求集“Mailbox 1.3”使用 API。
 
-要使用较新的 API，开发人员可执行以下操作来检查特定主机是否支持相应的要求集。
+要使用较新的 API，开发人员可执行以下操作来检查特定应用程序是否支持相应的要求集。
 
 ```js
 if (Office.context.requirements.isSetSupported('Mailbox', '1.3')) {

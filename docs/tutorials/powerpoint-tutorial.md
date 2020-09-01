@@ -4,12 +4,12 @@ description: 在本教程中，将生成 PowerPoint 加载项，用于插入图�
 ms.date: 12/24/2019
 ms.prod: powerpoint
 localization_priority: Priority
-ms.openlocfilehash: b9c31e589369bdcc844e3c587d12e6a26406357b
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 4693b8a5a2f4bd7c63f76532585113db5b0805bb
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44611048"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47293378"
 ---
 # <a name="tutorial-create-a-powerpoint-task-pane-add-in"></a>教程：创建 PowerPoint 任务窗格加载项
 
@@ -268,7 +268,7 @@ ms.locfileid: "44611048"
 
 3. 请注意，任务窗格现在包含页眉部分和标题，并且不再包含页脚部分。
 
-    ![突出显示“插入图像”按钮的 PowerPoint 加载项屏幕截图](../images/powerpoint-tutorial-new-task-pane-ui.png)
+    ![带“插入图像”按钮的 PowerPoint 加载项屏幕截图](../images/powerpoint-tutorial-new-task-pane-ui.png)
 
 4. 在 Visual Studio 中，按 **Shift + F5** 或选择“停止”**** 按钮，以停止加载项。 PowerPoint 在加载项停止时自动关闭。
 
@@ -320,7 +320,7 @@ ms.locfileid: "44611048"
 
 3. 在任务窗格中，选择“插入图像”**** 按钮，将一天中的必应照片添加到当前幻灯片，再为包含标题文本框的幻灯片选择一种设计。
 
-    ![突出显示“插入图像”按钮的 PowerPoint 加载项屏幕截图](../images/powerpoint-tutorial-insert-image-slide-design.png)
+    ![突出显示当前幻灯片的 PowerPoint 以及突出显示“插入图像”按钮的加载项屏幕截图](../images/powerpoint-tutorial-insert-image-slide-design.png)
 
 4. 将光标置于标题幻灯片上的文本框中，再选择任务窗格中的“插入文本”**** 按钮，向幻灯片添加文本。
 

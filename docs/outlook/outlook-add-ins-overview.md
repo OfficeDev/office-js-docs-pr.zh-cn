@@ -4,12 +4,12 @@ description: Outlook 加载项由第三方使用基于 Web 的平台集成到 Ou
 ms.date: 08/18/2020
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: 83644823f4ca906f52cae430fa3a7f350dbf076c
-ms.sourcegitcommit: e9f23a2857b90a7c17e3152292b548a13a90aa33
+ms.openlocfilehash: 006b19af1f7c9186e9247a3b45a3c8ac109c446a
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/19/2020
-ms.locfileid: "46803777"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47294316"
 ---
 # <a name="outlook-add-ins-overview"></a>Outlook 加载项概述
 
@@ -69,9 +69,9 @@ Outlook 加载项不同于 COM 或 VSTO 的加载项，后者为特定于 Window
 
 通常，Outlook 可以为"已发送邮件"文件夹中的项目在阅读窗体中激活加载项，基于已知实体字符串匹配激活的加载项除外。 欲了解其背后原因的详细信息，请参阅[将 Outlook 项中的字符串作为已知实体进行匹配](match-strings-in-an-item-as-well-known-entities.md)。
 
-## <a name="supported-hosts"></a>支持的主机
+## <a name="supported-clients"></a>支持的客户端
 
-Windows 版 Outlook 2013 或更高版本、Mac 版 Outlook 2016 或更高版本、适用于本地 Exchange 2013 和更高版本的 Outlook 网页版、iOS 版 Outlook、Android 版 Outlook 及 Outlook 网页版和 Outlook.com 支持 Outlook 加载项。 并非所有[客户端](../reference/requirement-sets/outlook-api-requirement-sets.md#requirement-sets-supported-by-exchange-servers-and-outlook-clients)都同时支持全部最新功能。 有关这些功能的信息，请参阅文章和 API 参考，了解它们可能在哪些主机中受支持或不受支持。
+Windows 版 Outlook 2013 或更高版本、Mac 版 Outlook 2016 或更高版本、适用于本地 Exchange 2013 和更高版本的 Outlook 网页版、iOS 版 Outlook、Android 版 Outlook 及 Outlook 网页版和 Outlook.com 支持 Outlook 加载项。 并非所有[客户端](../reference/requirement-sets/outlook-api-requirement-sets.md#requirement-sets-supported-by-exchange-servers-and-outlook-clients)都同时支持全部最新功能。 请参阅有关这些功能的文章和 API 参考，了解它们可能在哪些应用程序中受支持或不受支持。
 
 
 ## <a name="get-started-building-outlook-add-ins"></a>开始构建 Outlook 外接程序

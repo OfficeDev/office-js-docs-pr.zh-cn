@@ -4,20 +4,20 @@ description: 针对 Word 内部版本的 Office 加载项要求集信息。
 ms.date: 07/10/2020
 ms.prod: word
 localization_priority: Priority
-ms.openlocfilehash: 2b4de20f1f8f7e77295b49a36745d23ee044aa08
-ms.sourcegitcommit: 472b81642e9eb5fb2a55cd98a7b0826d37eb7f73
+ms.openlocfilehash: 23db807df0c47aaab4c579d17e4fbd28bb809fed
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/17/2020
-ms.locfileid: "45159078"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47293434"
 ---
 # <a name="word-javascript-api-requirement-sets"></a>Word JavaScript API 要求集
 
-要求集是指各组已命名的 API 成员。Office 加载项使用清单中指定的要求集或执行运行时检查，以确定 Office 主机是否支持加载项所需的 API。有关详细信息，请参阅 [Office 版本和要求集](../../develop/office-versions-and-requirement-sets.md)。
+要求集是指已命名的 API 成员组。Office 加载项使用清单中指定的要求集或执行运行时检查，以确定 Office 应用程序是否支持加载项所需的 API。有关详细信息，请参阅 [Office 版本和要求集](../../develop/office-versions-and-requirement-sets.md)。
 
 ## <a name="requirement-set-availability"></a>要求集可用性
 
-Word 加载项可在多个 Office 版本中运行，包括 Windows 版 Office 2016 或更高版本、Office 网页版、iPad 版 Office 和 Mac 版 Office。 下表列出了 Word 要求集、支持该要求集的 Office 主机应用程序，以及这些应用程序的内部版本或版本号。
+Word 加载项可在多个 Office 版本中运行，包括 Windows 版 Office 2016 或更高版本、Office 网页版、iPad 版 Office 和 Mac 版 Office。 下表列出了 Word 要求集、支持该要求集的 Office 客户端应用程序，以及这些应用程序的内部版本或版本号。
 
 > [!NOTE]
 > 若要在任何编号的要求集中使用 API，你应该引用 CDN 上的**生产**库：https://appsforoffice.microsoft.com/lib/1/hosted/office.js。
@@ -47,5 +47,5 @@ Word 加载项可在多个 Office 版本中运行，包括 Windows 版 Office 20
 
 - [Word JavaScript API 参考文档](/javascript/api/word)
 - [Office 版本和要求集](../../develop/office-versions-and-requirement-sets.md)
-- [指定 Office 主机和 API 要求](../../develop/specify-office-hosts-and-api-requirements.md)
-- [Office 外接程序 XML 清单](../../develop/add-in-manifests.md)
+- [指定 Office 应用程序和 API 要求](../../develop/specify-office-hosts-and-api-requirements.md)
+- [Office 加载项 XML 清单](../../develop/add-in-manifests.md)

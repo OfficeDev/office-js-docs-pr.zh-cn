@@ -3,12 +3,12 @@ title: 部署和发布 Office 加载项
 description: 部署 Office 加载项以进行测试或分发给用户的方法和选项。
 ms.date: 06/02/2020
 localization_priority: Priority
-ms.openlocfilehash: 797abbde43e6172ba26f3dd4b128fb06f1e70bec
-ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
+ms.openlocfilehash: 7792b2196b686f36b81869ce81a3e3b87659f1c2
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "45094181"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47292391"
 ---
 # <a name="deploy-and-publish-office-add-ins"></a>部署和发布 Office 加载项
 
@@ -25,9 +25,9 @@ ms.locfileid: "45094181"
 
 [!INCLUDE [publish policies note](../includes/note-publish-policies.md)]
 
-## <a name="deployment-options-by-office-host-and-add-in-type"></a>Office 主机的部署选项以及加载项类型
+## <a name="deployment-options-by-office-application-and-add-in-type"></a>按 Office 应用程序和加载项类型划分的部署选项
 
-可用的部署选项具体取决于你定位的 Office 主机以及所创建的加载项的类型。
+可用的部署选项具体取决于你面向的 Office 应用程序以及所创建的加载项的类型。
 
 ### <a name="deployment-options-for-word-excel-and-powerpoint-add-ins"></a>Word、Excel 和 PowerPoint 加载项的部署选项
 
@@ -87,4 +87,3 @@ Outlook 外接程序部署需要以下内容：
 - [排查 Office 加载项中的用户错误](../testing/testing-and-troubleshooting.md)
 
 [AppSource]: /office/dev/store/submit-to-appsource-via-partner-center
-[Office Add-in host and platform availability]: ../overview/office-add-in-availability
