@@ -1,36 +1,38 @@
 ---
 title: Word JavaScript API 基本编程概念
 description: 使用 Word JavaScript API 生成适用于 Word 的加载项。
-ms.date: 07/05/2019
+ms.date: 07/28/2020
 localization_priority: Priority
-ms.openlocfilehash: 697f3068a039caa8ae60ed449bacb05f3999a1ee
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 1e7a90d4be378ed9b2c1f30ebebd4a0beec45a11
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44608563"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47293091"
 ---
-# <a name="fundamental-programming-concepts-with-the-word-javascript-api"></a><span data-ttu-id="47638-103">Word JavaScript API 基本编程概念</span><span class="sxs-lookup"><span data-stu-id="47638-103">Fundamental programming concepts with the Word JavaScript API</span></span>
+# <a name="fundamental-programming-concepts-with-the-word-javascript-api"></a><span data-ttu-id="9857e-103">Word JavaScript API 基本编程概念</span><span class="sxs-lookup"><span data-stu-id="9857e-103">Fundamental programming concepts with the Word JavaScript API</span></span>
 
-<span data-ttu-id="47638-104">本文介绍使用 [Word JavaScript API](../reference/overview/word-add-ins-reference-overview.md) 生成适用于 Word 2016 或更高版本的加载项的基本概念。</span><span class="sxs-lookup"><span data-stu-id="47638-104">This article describes concepts that are fundamental to using the [Word JavaScript API](../reference/overview/word-add-ins-reference-overview.md) to build add-ins for Word 2016 or later.</span></span>
+<span data-ttu-id="9857e-104">本文介绍使用 [Word JavaScript API](../reference/overview/word-add-ins-reference-overview.md) 生成适用于 Word 2016 或更高版本的加载项的基本概念。</span><span class="sxs-lookup"><span data-stu-id="9857e-104">This article describes concepts that are fundamental to using the [Word JavaScript API](../reference/overview/word-add-ins-reference-overview.md) to build add-ins for Word 2016 or later.</span></span>
 
-## <a name="referencing-officejs"></a><span data-ttu-id="47638-105">引用 Office.js</span><span class="sxs-lookup"><span data-stu-id="47638-105">Referencing Office.js</span></span>
+## <a name="referencing-officejs"></a><span data-ttu-id="9857e-105">引用 Office.js</span><span class="sxs-lookup"><span data-stu-id="9857e-105">Referencing Office.js</span></span>
 
-<span data-ttu-id="47638-106">可以从以下位置引用 Office.js：</span><span class="sxs-lookup"><span data-stu-id="47638-106">You can reference Office.js from the following locations:</span></span>
+<span data-ttu-id="9857e-106">可以从以下位置引用 Office.js：</span><span class="sxs-lookup"><span data-stu-id="9857e-106">You can reference Office.js from the following locations:</span></span>
 
-- <span data-ttu-id="47638-107">`https://appsforoffice.microsoft.com/lib/1/hosted/office.js` - 将此资源用于生产外接程序。</span><span class="sxs-lookup"><span data-stu-id="47638-107">`https://appsforoffice.microsoft.com/lib/1/hosted/office.js` - use this resource for production add-ins.</span></span>
+- <span data-ttu-id="9857e-107">`https://appsforoffice.microsoft.com/lib/1/hosted/office.js` - 将此资源用于生产外接程序。</span><span class="sxs-lookup"><span data-stu-id="9857e-107">`https://appsforoffice.microsoft.com/lib/1/hosted/office.js` - use this resource for production add-ins.</span></span>
 
-- <span data-ttu-id="47638-108">`https://appsforoffice.microsoft.com/lib/beta/hosted/office.js` - 通过此资源试用预览版功能。</span><span class="sxs-lookup"><span data-stu-id="47638-108">`https://appsforoffice.microsoft.com/lib/beta/hosted/office.js` - use this resource to try out preview features.</span></span>
+- <span data-ttu-id="9857e-108">`https://appsforoffice.microsoft.com/lib/beta/hosted/office.js` - 通过此资源试用预览版功能。</span><span class="sxs-lookup"><span data-stu-id="9857e-108">`https://appsforoffice.microsoft.com/lib/beta/hosted/office.js` - use this resource to try out preview features.</span></span>
 
-## <a name="word-javascript-api-requirement-sets"></a><span data-ttu-id="47638-109">Word JavaScript API 要求集</span><span class="sxs-lookup"><span data-stu-id="47638-109">Word JavaScript API requirement sets</span></span>
+## <a name="word-javascript-api-requirement-sets"></a><span data-ttu-id="9857e-109">Word JavaScript API 要求集</span><span class="sxs-lookup"><span data-stu-id="9857e-109">Word JavaScript API requirement sets</span></span>
 
-<span data-ttu-id="47638-110">要求集是指各组已命名的 API 成员。</span><span class="sxs-lookup"><span data-stu-id="47638-110">Requirement sets are named groups of API members.</span></span> <span data-ttu-id="47638-111">Office 外接程序使用清单中指定的要求集或执行运行时检查，以确定 Office 主机是否支持外接程序所需的 API。</span><span class="sxs-lookup"><span data-stu-id="47638-111">Office Add-ins use requirement sets specified in the manifest or use a runtime check to determine whether an Office host supports APIs that an add-in needs.</span></span> <span data-ttu-id="47638-112">有关 Word JavaScript API 要求集的详细信息，请参阅 [Word JavaScript API 要求集](../reference/requirement-sets/word-api-requirement-sets.md)。</span><span class="sxs-lookup"><span data-stu-id="47638-112">For detailed information about Word JavaScript API requirement sets, see [Word JavaScript API requirement sets](../reference/requirement-sets/word-api-requirement-sets.md).</span></span>
+<span data-ttu-id="9857e-110">要求集是指各组已命名的 API 成员。</span><span class="sxs-lookup"><span data-stu-id="9857e-110">Requirement sets are named groups of API members.</span></span> <span data-ttu-id="9857e-111">Office 加载项使用清单中指定的要求集或执行运行时检查，以确定 Office 应用程序是否支持加载项所需的 API。</span><span class="sxs-lookup"><span data-stu-id="9857e-111">Office Add-ins use requirement sets specified in the manifest or use a runtime check to determine whether an Office application supports APIs that an add-in needs.</span></span> <span data-ttu-id="9857e-112">有关 Word JavaScript API 要求集的详细信息，请参阅 [Word JavaScript API 要求集](../reference/requirement-sets/word-api-requirement-sets.md)。</span><span class="sxs-lookup"><span data-stu-id="9857e-112">For detailed information about Word JavaScript API requirement sets, see [Word JavaScript API requirement sets](../reference/requirement-sets/word-api-requirement-sets.md).</span></span>
 
-## <a name="running-word-add-ins"></a><span data-ttu-id="47638-113">运行 Word 加载项</span><span class="sxs-lookup"><span data-stu-id="47638-113">Running Word add-ins</span></span>
+## <a name="running-word-add-ins"></a><span data-ttu-id="9857e-113">运行 Word 加载项</span><span class="sxs-lookup"><span data-stu-id="9857e-113">Running Word add-ins</span></span>
 
-<span data-ttu-id="47638-114">若要运行加载项，请使用 `Office.initialize` 事件处理程序。</span><span class="sxs-lookup"><span data-stu-id="47638-114">To run your add-in, use an `Office.initialize` event handler.</span></span> <span data-ttu-id="47638-115">若要详细了解如何初始化加载项，请参阅[了解 API](../develop/understanding-the-javascript-api-for-office.md)。</span><span class="sxs-lookup"><span data-stu-id="47638-115">For more information about add-in initialization, see [Understanding the API](../develop/understanding-the-javascript-api-for-office.md).</span></span>
+<span data-ttu-id="9857e-114">若要运行加载项，请使用 `Office.initialize` 事件处理程序。</span><span class="sxs-lookup"><span data-stu-id="9857e-114">To run your add-in, use an `Office.initialize` event handler.</span></span> <span data-ttu-id="9857e-115">若要详细了解如何初始化加载项，请参阅[了解 API](../develop/understanding-the-javascript-api-for-office.md)。</span><span class="sxs-lookup"><span data-stu-id="9857e-115">For more information about add-in initialization, see [Understanding the API](../develop/understanding-the-javascript-api-for-office.md).</span></span>
 
-<span data-ttu-id="47638-116">面向 Word 2016 或更高版本的加载项通过向 `Word.run()` 方法传递一个函数来运行。</span><span class="sxs-lookup"><span data-stu-id="47638-116">Add-ins that target Word 2016 or later run by passing a function into the `Word.run()` method.</span></span> <span data-ttu-id="47638-117">传递到 `run` 方法的函数必须具有上下文参数。</span><span class="sxs-lookup"><span data-stu-id="47638-117">The function passed into the `run` method must have a context argument.</span></span> <span data-ttu-id="47638-118">此[上下文对象](/javascript/api/word/word.requestcontext)不同于从 Office 对象获取的上下文对象，但它同样可以用于与 Word 运行时环境交互。</span><span class="sxs-lookup"><span data-stu-id="47638-118">This [context object](/javascript/api/word/word.requestcontext) is different than the context object you get from the Office object, but it is also used to interact with the Word runtime environment.</span></span> <span data-ttu-id="47638-119">此上下文对象可提供对 Word JavaScript API 对象模型的访问。</span><span class="sxs-lookup"><span data-stu-id="47638-119">The context object provides access to the Word JavaScript API object model.</span></span> <span data-ttu-id="47638-120">以下示例显示如何使用 `Word.run()` 方法初始化和运行 Word 加载项。</span><span class="sxs-lookup"><span data-stu-id="47638-120">The following example shows how to initialize and run a Word add-in by using the `Word.run()` method.</span></span>
+<span data-ttu-id="9857e-116">面向 Word 2016 或更高版本的加载项可以使用特定于 Word 的 API。</span><span class="sxs-lookup"><span data-stu-id="9857e-116">Add-ins that target Word 2016 or later can use the Word-specific APIs.</span></span> <span data-ttu-id="9857e-117">它们将 Word 交互逻辑作为函数传递到 `Word.run()` 方法中。</span><span class="sxs-lookup"><span data-stu-id="9857e-117">They pass the Word-interaction logic as a function into the `Word.run()` method.</span></span> <span data-ttu-id="9857e-118">请参阅[使用特定于应用程序的 API 模型](../develop/application-specific-api-model.md)，了解如何与此编程模型中的 Word 文档进行交互。</span><span class="sxs-lookup"><span data-stu-id="9857e-118">See [Using the application-specific API model](../develop/application-specific-api-model.md) to learn about how to interact with the Word document in this programming model.</span></span>
+
+<span data-ttu-id="9857e-119">以下示例显示如何使用 `Word.run()` 方法初始化和运行 Word 加载项。</span><span class="sxs-lookup"><span data-stu-id="9857e-119">The following example shows how to initialize and run a Word add-in by using the `Word.run()` method.</span></span>
 
 ```js
 (function () {
@@ -62,64 +64,9 @@ ms.locfileid: "44608563"
 })();
 ```
 
-### <a name="asynchronous-nature-of-word-apis"></a><span data-ttu-id="47638-121">Word API 的异步特性</span><span class="sxs-lookup"><span data-stu-id="47638-121">Asynchronous nature of Word APIs</span></span>
+## <a name="see-also"></a><span data-ttu-id="9857e-120">另请参阅</span><span class="sxs-lookup"><span data-stu-id="9857e-120">See also</span></span>
 
-<span data-ttu-id="47638-122">Word JavaScript API 是由 Office.js 加载的。</span><span class="sxs-lookup"><span data-stu-id="47638-122">The Word JavaScript API is loaded by Office.js.</span></span> <span data-ttu-id="47638-123">Word JavaScript API 改变了你与文档和段落等对象交互的方式。</span><span class="sxs-lookup"><span data-stu-id="47638-123">The Word JavaScript API changes the way that you can interact with objects like documents and paragraphs.</span></span> <span data-ttu-id="47638-124">Word JavaScript API 不提供用于检索和更新每个对象的单个异步 API，而是提供与在 Word 中运行的实时对象对应的“代理”JavaScript 对象。</span><span class="sxs-lookup"><span data-stu-id="47638-124">Rather than providing individual asynchronous APIs for retrieving and updating each of these objects, the Word JavaScript API provides "proxy" JavaScript objects that correspond to the live objects running in Word.</span></span> <span data-ttu-id="47638-125">通过同步读取和写入这些代理对象的属性，并调用对这些对象执行操作的同步方法，可与这些对象进行交互。</span><span class="sxs-lookup"><span data-stu-id="47638-125">You can interact with these proxy objects by synchronously reading and writing their properties and calling synchronous methods to perform operations on them.</span></span> <span data-ttu-id="47638-126">与代理对象的这些交互不会立即在运行的脚本中实现。</span><span class="sxs-lookup"><span data-stu-id="47638-126">These interactions with proxy objects aren't immediately realized in the running script.</span></span> <span data-ttu-id="47638-127">`context.sync` 方法通过执行排队的指令以及检索用于脚本的已加载 Word 对象的属性，在运行的 JavaScript 和 Office 中的真实对象之间同步状态。</span><span class="sxs-lookup"><span data-stu-id="47638-127">The `context.sync` method synchronizes the state between your running JavaScript and the real objects in Office by executing queued instructions and retrieving properties of loaded Word objects for use in your script.</span></span>
-
-### <a name="synchronizing-word-documents-with-word-javascript-api-proxy-objects"></a><span data-ttu-id="47638-128">将 Word 文档与 Word JavaScript API 代理对象进行同步</span><span class="sxs-lookup"><span data-stu-id="47638-128">Synchronizing Word documents with Word JavaScript API proxy objects</span></span>
-
-<span data-ttu-id="47638-p105">Word JavaScript API 对象模型与 Word 中的对象松散耦合。Word JavaScript API 对象是 Word 文档中对象的代理。在文档状态完成同步前，对代理对象执行的操作不会在 Word 中实现。反过来说，在文档状态完成同步前，Word 文档的状态也不会在代理对象中实现。若要同步文档状态，请运行 `context.sync()` 方法。下面的示例创建了代理正文对象以及用于在代理正文对象上加载文本属性的已排入队列命令，并使用 `context.sync()` 方法将 Word 文档正文与正文代理对象同步。</span><span class="sxs-lookup"><span data-stu-id="47638-p105">The Word JavaScript API object model is loosely coupled with the objects in Word. Word JavaScript API objects are proxies for objects in a Word document. Actions taken on proxy objects are not realized in Word until the document state has been synchronized. Conversely, the state of the Word document is not realized in the proxy objects until the document state has been synchronized. To synchronize the document state, you run the `context.sync()` method. The following example creates a proxy body object and a queued command to load the text property on the proxy body object, and uses the `context.sync()` method to synchronize the body of the Word document with the body proxy object.</span></span>
-
-```js
-// Run a batch operation against the Word object model.
-Word.run(function (context) {
-
-    // Create a proxy object for the document body.
-    // The body object hasn't been set with any property values.
-    var body = context.document.body;
-
-    // Queue a command to load the text property for the proxy document body object.
-    body.load("text");
-
-    // Synchronize the document state by executing the queued commands,
-    // and return a promise to indicate task completion.
-    return context.sync().then(function () {
-        console.log("Body contents: " + body.text);
-    });
-})
-```
-
-### <a name="executing-a-batch-of-commands"></a><span data-ttu-id="47638-135">执行一批命令</span><span class="sxs-lookup"><span data-stu-id="47638-135">Executing a batch of commands</span></span>
-
-<span data-ttu-id="47638-136">Word 代理对象具有访问和更新对象模型的方法。</span><span class="sxs-lookup"><span data-stu-id="47638-136">The Word proxy objects have methods for accessing and updating the object model.</span></span> <span data-ttu-id="47638-137">这些方法按其在批处理中的排队顺序依次运行。</span><span class="sxs-lookup"><span data-stu-id="47638-137">These methods are run sequentially in the order in which they were queued in the batch.</span></span> <span data-ttu-id="47638-138">调用 `context.sync()` 时，批处理中已排队的所有命令都会运行。</span><span class="sxs-lookup"><span data-stu-id="47638-138">All of the commands that are queued in the batch are run when `context.sync()` is called.</span></span>
-
-<span data-ttu-id="47638-139">以下示例将说明命令队列的工作原理。</span><span class="sxs-lookup"><span data-stu-id="47638-139">The following example shows how the command queue works.</span></span> <span data-ttu-id="47638-140">调用 `context.sync()` 时，用于加载正文文本的命令会在 Word 中运行。</span><span class="sxs-lookup"><span data-stu-id="47638-140">When `context.sync()` is called, the command to load the body text is run in Word.</span></span> <span data-ttu-id="47638-141">然后，用于在正文中插入文本的命令会在 Word 中执行。</span><span class="sxs-lookup"><span data-stu-id="47638-141">Then, the command to insert text into the body in Word occurs.</span></span> <span data-ttu-id="47638-142">结果将返回到 body 代理对象。</span><span class="sxs-lookup"><span data-stu-id="47638-142">The results are then returned to the body proxy object.</span></span> <span data-ttu-id="47638-143">Word JavaScript API 中 `body.text` 属性的值为在将文本插入 Word 文档<u>之前</u> Word 文档正文的值。</span><span class="sxs-lookup"><span data-stu-id="47638-143">The value of the `body.text` property in the Word JavaScript API is the value of the Word document body <u>before</u> the text was inserted into Word document.</span></span>
-
-```js
-// Run a batch operation against the Word JavaScript API.
-Word.run(function (context) {
-
-    // Create a proxy object for the document body.
-    var body = context.document.body;
-
-    // Queue a command to load the text property of the proxy body object.
-    body.load("text");
-
-    // Queue a command to insert text into the end of the Word document body.
-    body.insertText('This is text inserted after loading the body.text property',
-                    Word.InsertLocation.end);
-
-    // Synchronize the document state by executing the queued commands,
-    // and return a promise to indicate task completion.
-    return context.sync().then(function () {
-        console.log("Body contents: " + body.text);
-    });
-})
-```
-
-## <a name="see-also"></a><span data-ttu-id="47638-144">另请参阅</span><span class="sxs-lookup"><span data-stu-id="47638-144">See also</span></span>
-
-- [<span data-ttu-id="47638-145">Word JavaScript API 概述</span><span class="sxs-lookup"><span data-stu-id="47638-145">Word JavaScript API overview</span></span>](../reference/overview/word-add-ins-reference-overview.md)
-- [<span data-ttu-id="47638-146">生成首个 Word 加载项</span><span class="sxs-lookup"><span data-stu-id="47638-146">Build your first Word add-in</span></span>](../quickstarts/word-quickstart.md)
-- [<span data-ttu-id="47638-147">Word 加载项教程</span><span class="sxs-lookup"><span data-stu-id="47638-147">Word add-in tutorial</span></span>](../tutorials/word-tutorial.md)
-- [<span data-ttu-id="47638-148">Word JavaScript API 参考</span><span class="sxs-lookup"><span data-stu-id="47638-148">Word JavaScript API reference</span></span>](/javascript/api/word)
+- [<span data-ttu-id="9857e-121">Word JavaScript API 概述</span><span class="sxs-lookup"><span data-stu-id="9857e-121">Word JavaScript API overview</span></span>](../reference/overview/word-add-ins-reference-overview.md)
+- [<span data-ttu-id="9857e-122">生成首个 Word 加载项</span><span class="sxs-lookup"><span data-stu-id="9857e-122">Build your first Word add-in</span></span>](../quickstarts/word-quickstart.md)
+- [<span data-ttu-id="9857e-123">Word 加载项教程</span><span class="sxs-lookup"><span data-stu-id="9857e-123">Word add-in tutorial</span></span>](../tutorials/word-tutorial.md)
+- [<span data-ttu-id="9857e-124">Word JavaScript API 参考</span><span class="sxs-lookup"><span data-stu-id="9857e-124">Word JavaScript API reference</span></span>](/javascript/api/word)
