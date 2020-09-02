@@ -1,18 +1,21 @@
 ---
 title: 在 Visual Studio 中将 Office 加载项项目转换为使用 TypeScript
 description: 了解如何将 Visual Studio 中的 Office 外接程序项目转换为使用 TypeScript。
-ms.date: 04/09/2020
+ms.date: 09/01/2020
 localization_priority: Normal
-ms.openlocfilehash: 64e0b27b584ca0ddbfb366a89e4363703c92704d
-ms.sourcegitcommit: 19312a54f47a17988ffa86359218a504713f9f09
+ms.openlocfilehash: 716222998666b014ab014298a4165678cf747165
+ms.sourcegitcommit: 4adfc368a366f00c3f3d7ed387f34aaecb47f17c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/10/2020
-ms.locfileid: "44679250"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "47326294"
 ---
 # <a name="convert-an-office-add-in-project-in-visual-studio-to-typescript"></a>在 Visual Studio 中将 Office 加载项项目转换为使用 TypeScript
 
 可以使用 Visual Studio 中的 Office 加载项模板，创建使用 JavaScript 的加载项，再将加载项项目转换为使用 TypeScript。 本文介绍了 Excel 加载项的此转换过程。 可以按照相同的过程操作，在 Visual Studio 中将其他类型的 Office 外接程序项目从 JavaScript 转换为 TypeScript。
+
+> [!IMPORTANT]
+> 本文介绍了必要的 *最少* 步骤，以确保在按 F5 时，代码将转换到 JavaScript，然后再旁加载自动加入 Office。 但是，代码并不是非常 "TypeScripty"。 例如，使用 `var` 关键字而不是 `let` 使用指定的类型声明变量来声明变量。 若要充分利用 TypeScript 的强类型，请考虑对代码进行进一步更改。 
 
 > [!NOTE]
 > 若不想使用 Visual Studio 创建 Office 加载项 TypeScript 项目，请按照任何 [5 分钟快速入门](/office/dev/add-ins/)的“Yeoman 生成器”部分中的说明操作，并在[适用于 Office 外接程序的 Yeoman 生成器](https://github.com/OfficeDev/generator-office)显示提示时选择 `TypeScript`。
@@ -53,7 +56,7 @@ ms.locfileid: "44679250"
 
 4. 从“**工具**”选项卡中，选择“**NuGet 程序包管理器**”，然后选择“**管理解决方案的 NuGet 程序包...**”。
 
-5. 选择 "**浏览**" 选项卡，输入**jquery。Jquery.typescript.definitelytyped**。 安装此包，或更新它（如果已安装）。 这将确保您的项目中包含 jQuery TypeScript 定义。 JQuery 的包显示在由 Visual Studio 生成的文件（称为 "**程序包.**"）中。
+5. 选择 " **浏览** " 选项卡，输入 **jquery。Jquery.typescript.definitelytyped**。 安装此包，或更新它（如果已安装）。 这将确保您的项目中包含 jQuery TypeScript 定义。 JQuery 的包显示在由 Visual Studio 生成的文件中，称为 " **packages.config**"。
 
     > [!NOTE]
     > 在 TypeScript 项目中，可以混合使用 TypeScript 和 JavaScript 文件，项目都可以进行编译。这是因为 TypeScript 是键入的 JavaScript 超集，可以编译 JavaScript。

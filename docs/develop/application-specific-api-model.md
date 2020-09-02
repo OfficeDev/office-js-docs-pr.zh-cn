@@ -3,12 +3,12 @@ title: 使用特定于应用程序的 API 模型
 description: 了解 Excel、OneNote 和 Word 外接程序的基于承诺的 API 模型。
 ms.date: 07/29/2020
 localization_priority: Normal
-ms.openlocfilehash: 0a5068312b8b17f7ceeafcffd5dcea4203314ebf
-ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
+ms.openlocfilehash: cabd1ea0076b672a1dbda3079a767b0e8a1a62b7
+ms.sourcegitcommit: 4adfc368a366f00c3f3d7ed387f34aaecb47f17c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "47294030"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "47326280"
 ---
 # <a name="using-the-application-specific-api-model"></a>使用特定于应用程序的 API 模型
 
@@ -225,18 +225,20 @@ Excel.run(function (ctx) {
 
 ## <a name="42ornullobject-methods-and-properties"></a>&#42;OrNullObject 方法和属性
 
-当所需的对象不存在时，某些访问器方法和属性将引发异常。 例如，如果尝试通过指定不在工作簿中的工作表名称来获取 Excel 工作表，则该 `getItem()` 方法将引发 `ItemNotFound` 异常。
+当所需的对象不存在时，某些访问器方法和属性将引发异常。 例如，如果尝试通过指定不在工作簿中的工作表名称来获取 Excel 工作表，则该 `getItem()` 方法将引发 `ItemNotFound` 异常。 特定于应用程序的库为代码提供了一种测试文档实体是否存在的方法，而不需要异常处理代码。 这是通过使用 `*OrNullObject` 方法和属性的变体来实现的。 `isNullObject` `true` 如果指定的项不存在，而不是引发异常，则这些变体返回其属性设置为的对象。
 
-任何 `*OrNullObject` 变量都允许您检查对象，而不会引发异常。 这些方法和属性将返回 null 对象 (不是 JavaScript `null`) ，而不是在指定的项目不存在时引发异常。 例如，可以对 `getItemOrNullObject()` 集合（如 **工作表** ）调用方法，以从集合中检索项。 `getItemOrNullObject()` 方法返回指定的项（如果存在）；否则，它将返回 null 对象。 返回的 null 对象包含布尔属性 `isNullObject`，可以对其进行评估以确定该对象是否存在。
+例如，可以对 `getItemOrNullObject()` 集合（如 **工作表** ）调用方法，以从集合中检索项。 `getItemOrNullObject()`如果指定的项存在，则该方法将返回它; 否则，将返回其 `isNullObject` 属性设置为的对象 `true` 。 然后，您的代码可以对此属性进行评估，以确定该对象是否存在。
 
-下面的代码示例尝试使用方法检索名为 "Data" 的 Excel 工作表 `getItemOrNullObject()` 。 如果该方法返回 null 对象，则在工作表上执行操作之前创建一个新工作表。
+> [!NOTE]
+> `*OrNullObject`变体从不返回 JavaScript 值 `null` 。 它们返回普通的 Office 代理对象。 如果该对象所代表的实体不存在，则 `isNullObject` 将该对象的属性设置为 `true` 。 请勿为 null 或 falsity 测试返回的对象。 它永远不会是、 `null` `false` 或 `undefined` 。
+
+下面的代码示例尝试使用方法检索名为 "Data" 的 Excel 工作表 `getItemOrNullObject()` 。 如果具有该名称的工作表不存在，则创建一个新工作表。 请注意，该代码不会加载该 `isNullObject` 属性。 Office 将在调用时自动加载此属性 `context.sync` ，因此无需使用类似的内容显式加载它 `datasheet.load('isNullObject')` 。
 
 ```js
 var dataSheet = context.workbook.worksheets.getItemOrNullObject("Data");
 
 return context.sync()
     .then(function () {
-        // If `dataSheet` is a null object, create the worksheet.
         if (dataSheet.isNullObject) {
             dataSheet = context.workbook.worksheets.add("Data");
         }
@@ -249,5 +251,5 @@ return context.sync()
 ## <a name="see-also"></a>另请参阅
 
 * [常见 JavaScript API 对象模型](office-javascript-api-object-model.md)
-* [常见的编码问题和意外的平台行为](/common-coding-issues.md)。
+* [常见的编码问题和意外的平台行为](common-coding-issues.md)。
 * [Office 外接程序的资源限制和性能优化](../concepts/resource-limits-and-performance-optimization.md)
