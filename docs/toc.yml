@@ -144,26 +144,40 @@
                   href: design/data-visualization-guidelines.md
                 - name: 语音
                   href: design/voice-guidelines.md
-            - name: 设计语言
+            - name: UX 设计语言和模式
               items:
-                - name: 概述
-                  href: design/add-in-design-language.md
-                - name: 颜色
-                  href: design/add-in-color.md
-                - name: 图标
+                - name: 设计语言
                   items:
-                    - name: 图标准则
-                      href: design/add-in-icons.md
-                    - name: 全新样式
-                      href: design/add-in-icons-fresh.md
-                    - name: Monoline 样式
-                      href: design/add-in-icons-monoline.md
-                - name: 布局
-                  href: design/add-in-layout.md
-                - name: 动作
-                  href: design/using-motion-office-addins.md
-                - name: 版式
-                  href: design/add-in-typography.md
+                    - name: 概述
+                      href: design/add-in-design-language.md
+                    - name: 颜色
+                      href: design/add-in-color.md
+                    - name: 图标
+                      items:
+                        - name: 图标准则
+                          href: design/add-in-icons.md
+                        - name: 全新样式
+                          href: design/add-in-icons-fresh.md
+                        - name: Monoline 样式
+                          href: design/add-in-icons-monoline.md
+                    - name: 布局
+                      href: design/add-in-layout.md
+                    - name: 动作
+                      href: design/using-motion-office-addins.md
+                    - name: 版式
+                      href: design/add-in-typography.md
+                - name: 常见方案的 UX 设计模式
+                  items:
+                    - name: 概述
+                      href: design/ux-design-pattern-templates.md
+                    - name: 身份验证
+                      href: design/authentication-patterns.md
+                    - name: 品牌打造
+                      href: design/branding-patterns.md
+                    - name: 初次运行体验
+                      href: design/first-run-experience-patterns.md
+                    - name: 导航
+                      href: design/navigation-patterns.md
             - name: 界面元素
               items:
                 - name: 概述
@@ -196,18 +210,6 @@
                   href: design/task-pane-add-ins.md
             - name: 本地化
               href: develop/localization.md
-            - name: UX 设计模式
-              items:
-                - name: 概述
-                  href: design/ux-design-pattern-templates.md
-                - name: 身份验证
-                  href: design/authentication-patterns.md
-                - name: 品牌打造
-                  href: design/branding-patterns.md
-                - name: 初次运行体验
-                  href: design/first-run-experience-patterns.md
-                - name: 导航
-                  href: design/navigation-patterns.md
             - name: 资源
               items:
                 - name: 设计工具包
@@ -233,7 +235,7 @@
                   href: develop/debug-office-add-ins-in-visual-studio.md
                 - name: 在 Visual Studio 中获取 JavaScript IntelliSense
                   href: develop/get-javascript-intellisense-in-visual-studio.md
-                - name: 将 JavaScript 转换成 TypeScript
+                - name: 将 JavaScript 项目转换成 TypeScript
                   href: develop/convert-javascript-to-typescript.md
     - name: 测试和调试
       items:
