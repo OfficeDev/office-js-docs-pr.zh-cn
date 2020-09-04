@@ -8,12 +8,12 @@ metadata:
   ms.topic: landing-page
   ms.date: 06/08/2020
   localization_priority: Priority
-  ms.openlocfilehash: e7860e0e6b1378cce3db46434b1da5931754eec6
-  ms.sourcegitcommit: 19312a54f47a17988ffa86359218a504713f9f09
-  ms.translationtype: Auto
+  ms.openlocfilehash: f997d6c83c063b16fefca41b84f0688acca09939
+  ms.sourcegitcommit: 604361e55dee45c7a5d34c2fa6937693c154fc24
+  ms.translationtype: MT
   ms.contentlocale: zh-CN
-  ms.lasthandoff: 06/10/2020
-  ms.locfileid: "44679425"
+  ms.lasthandoff: 09/03/2020
+  ms.locfileid: "47363546"
 landingContent:
 - title: 关于 OneNote 外接程序
   linkLists:
@@ -41,8 +41,6 @@ landingContent:
       url: ../overview/office-add-ins.md
   - linkListType: concept
     links:
-    - text: 构建 Office 加载项
-      url: ../overview/office-add-ins-fundamentals.md
     - text: Office 加载项的核心概念
       url: ../overview/core-concepts-office-add-ins.md
     - text: 设计 Office 加载项

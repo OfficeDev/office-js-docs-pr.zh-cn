@@ -8,12 +8,12 @@ metadata:
   ms.topic: landing-page
   ms.date: 06/09/2020
   localization_priority: Priority
-  ms.openlocfilehash: 4857b07420609cd91f414a635f076ce863dd87c0
-  ms.sourcegitcommit: 19312a54f47a17988ffa86359218a504713f9f09
-  ms.translationtype: Auto
+  ms.openlocfilehash: b9b464711f87211f4f10014c145acb2d66f327ef
+  ms.sourcegitcommit: 604361e55dee45c7a5d34c2fa6937693c154fc24
+  ms.translationtype: MT
   ms.contentlocale: zh-CN
-  ms.lasthandoff: 06/10/2020
-  ms.locfileid: "44679433"
+  ms.lasthandoff: 09/03/2020
+  ms.locfileid: "47363742"
 landingContent:
 - title: 关于 Word 外接程序
   linkLists:
@@ -43,8 +43,6 @@ landingContent:
       url: ../overview/office-add-ins.md
   - linkListType: concept
     links:
-    - text: 构建 Office 加载项
-      url: ../overview/office-add-ins-fundamentals.md
     - text: Office 加载项的核心概念
       url: ../overview/core-concepts-office-add-ins.md
     - text: 设计 Office 加载项
