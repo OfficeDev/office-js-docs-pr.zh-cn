@@ -8,12 +8,12 @@ metadata:
   ms.topic: landing-page
   ms.date: 06/08/2020
   localization_priority: Priority
-  ms.openlocfilehash: 785265171dfe7d7c214ad8b731ba0a1aefdeb282
-  ms.sourcegitcommit: 19312a54f47a17988ffa86359218a504713f9f09
-  ms.translationtype: Auto
+  ms.openlocfilehash: aecd45f9ad6e6761167b3d1c3b0fe2c5a0b2aa0b
+  ms.sourcegitcommit: 604361e55dee45c7a5d34c2fa6937693c154fc24
+  ms.translationtype: MT
   ms.contentlocale: zh-CN
-  ms.lasthandoff: 06/10/2020
-  ms.locfileid: "44679424"
+  ms.lasthandoff: 09/03/2020
+  ms.locfileid: "47363861"
 landingContent:
 - title: 关于 Outlook 外接程序
   linkLists:
@@ -43,8 +43,6 @@ landingContent:
       url: ../overview/office-add-ins.md
   - linkListType: concept
     links:
-    - text: 构建 Office 加载项
-      url: ../overview/office-add-ins-fundamentals.md
     - text: Office 加载项的核心概念
       url: ../overview/core-concepts-office-add-ins.md
     - text: 设计 Office 加载项

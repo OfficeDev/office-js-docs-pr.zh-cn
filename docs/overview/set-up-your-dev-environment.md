@@ -3,16 +3,16 @@ title: 设置开发环境
 description: 设置开发人员环境以生成 Office 外接程序
 ms.date: 07/07/2020
 localization_priority: Normal
-ms.openlocfilehash: 1948cd83a252ea713c9b9a41941ceaef09d4a524
-ms.sourcegitcommit: 472b81642e9eb5fb2a55cd98a7b0826d37eb7f73
+ms.openlocfilehash: 5e7d91d81ef3d124e9582e74151626b9fd65991a
+ms.sourcegitcommit: 604361e55dee45c7a5d34c2fa6937693c154fc24
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/17/2020
-ms.locfileid: "45159407"
+ms.lasthandoff: 09/03/2020
+ms.locfileid: "47363693"
 ---
 # <a name="set-up-your-development-environment"></a>设置开发环境
 
-本指南可帮助您设置工具，以便您可以按照快速入门或教程创建 Office 加载项。 你将需要安装以下列表中的工具。 如果已安装了这些安装，则可以开始快速启动，例如此 Excel 会对[快速启动做出反应](../quickstarts/excel-quickstart-react.md)。
+本指南可帮助您设置工具，以便您可以按照快速入门或教程创建 Office 加载项。 你将需要安装以下列表中的工具。 如果已安装了这些安装，则可以开始快速启动，例如此 Excel 会对 [快速启动做出反应](../quickstarts/excel-quickstart-react.md)。
 
 - Node.js
 - npm
@@ -25,7 +25,7 @@ ms.locfileid: "45159407"
 
 Node.js 是开发新式 Office 外接程序所需的 JavaScript 运行时。
 
-通过[从网站下载最新的推荐版本](https://nodejs.org)来安装 Node.js。 按照操作系统的安装说明进行操作。
+通过 [从网站下载最新的推荐版本](https://nodejs.org)来安装 Node.js。 按照操作系统的安装说明进行操作。
 
 ## <a name="install-npm"></a>安装 npm
 
@@ -43,11 +43,11 @@ npm 是一个开放源代码软件注册表，可从中下载用于开发 Office
 npm -v
 ```
 
-您可能希望使用节点版本管理器，以允许在多个版本的 Node.js 和 npm 之间进行切换，但这并不是绝对必要的。 有关如何执行此操作的详细信息，[请参阅 npm 的说明](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm)。
+您可能希望使用节点版本管理器，以允许在多个版本的 Node.js 和 npm 之间进行切换，但这并不是绝对必要的。 有关如何执行此操作的详细信息， [请参阅 npm 的说明](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm)。
 
 ## <a name="get-office-365"></a>获取 Office 365
 
-如果你还没有 Microsoft 365 帐户，则可以通过加入[microsoft 365 开发人员计划](https://developer.microsoft.com/office/dev-program)获取免费的90天 renewable microsoft 365 订阅。
+如果还没有 Microsoft 365 帐户，可以通过加入 [Microsoft 365 开发人员计划](https://developer.microsoft.com/office/dev-program)获得为期 90 天的免费可续订 Microsoft 365 订阅。
 
 ## <a name="install-a-code-editor"></a>安装代码编辑器
 
@@ -71,7 +71,7 @@ npm -v
 
 ## <a name="see-also"></a>另请参阅
 
-- [构建 Office 加载项](../overview/office-add-ins-fundamentals.md)
+- [开发 Office 外接程序](../develop/develop-overview.md)
 - [Office 加载项的核心概念](../overview/core-concepts-office-add-ins.md)
 - [开发 Office 加载项](../develop/develop-overview.md)
 - [设计 Office 加载项](../design/add-in-design.md)

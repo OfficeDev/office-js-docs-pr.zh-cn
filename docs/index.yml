@@ -1,6 +1,6 @@
 ### YamlMime:Landing
 title: Office 加载项文档
-summary: 使用 Office 外接程序平台来生成解决方案，通过解决方案扩展 Office 应用程序，并与 Office 文档中的内容进行交互。 使用 Office 外接程序，您可以使用熟悉的 web 技术（如 HTML、CSS 和 JavaScript）来构建可在 web、Windows、Mac 和 iPad 上运行的 Office 解决方案。
+summary: 使用 Office 外接程序平台构建可扩展 Office 应用程序并与 Office 文档中的内容和 Outlook 邮件和日历项目中的内容进行交互的解决方案。 使用 Office 外接程序，您可以使用熟悉的 web 技术（如 HTML、CSS 和 JavaScript）来构建可在 web、Windows、Mac、Android 和 iOS 上运行的 Office 解决方案。
 metadata:
   title: Office 加载项文档
   description: 了解如何构建 Office 外接程序。
@@ -9,12 +9,12 @@ metadata:
   author: o365devx
   ms.author: o365devx
   ms.date: 07/31/2020
-  ms.openlocfilehash: 7477d00b20edfc64c29f2bff39aa90da6376320c
-  ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
+  ms.openlocfilehash: 993ef1e5671e42b1b6d5e6316d61d51a794be62e
+  ms.sourcegitcommit: 604361e55dee45c7a5d34c2fa6937693c154fc24
   ms.translationtype: MT
   ms.contentlocale: zh-CN
-  ms.lasthandoff: 08/28/2020
-  ms.locfileid: "47294113"
+  ms.lasthandoff: 09/03/2020
+  ms.locfileid: "47363714"
 landingContent:
 - title: 关于 Office 加载项
   linkLists:

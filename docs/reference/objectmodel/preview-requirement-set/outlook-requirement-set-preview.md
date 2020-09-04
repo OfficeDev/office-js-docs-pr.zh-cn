@@ -1,14 +1,14 @@
 ---
 title: Outlook 外接程序 API 预览要求集
 description: 当前在 Outlook 外接程序的预览中的功能和 Api。
-ms.date: 09/01/2020
+ms.date: 09/02/2020
 localization_priority: Normal
-ms.openlocfilehash: 0e4dae76846c2174d8eb1115dcb1098f8374b1ba
-ms.sourcegitcommit: 4adfc368a366f00c3f3d7ed387f34aaecb47f17c
+ms.openlocfilehash: 0223a8b62f60b45092866ee5f2362723912c189f
+ms.sourcegitcommit: 604361e55dee45c7a5d34c2fa6937693c154fc24
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "47326301"
+ms.lasthandoff: 09/03/2020
+ms.locfileid: "47363728"
 ---
 # <a name="outlook-add-in-api-preview-requirement-set"></a>Outlook 外接程序 API 预览要求集
 
@@ -34,7 +34,7 @@ Office JavaScript API 的 Outlook 外接程序 API 子集包括可以在 Outlook
 
 现在，外接程序可以在受 IRM 保护的项上激活。 若要启用此功能，租户管理员需要 `OBJMODEL` 通过在 Office 中设置 " **允许编程访问** " 自定义策略选项来启用使用权限。 有关详细信息，请参阅 [使用权限和说明](/azure/information-protection/configure-usage-rights#usage-rights-and-descriptions) 。
 
-**适用于**： Windows 中的 Outlook，从内部版本 13120.1000 (连接到 Microsoft 365 订阅) 
+**适用于**： Windows 中的 Outlook，从内部版本 13229.10000 (连接到 Microsoft 365 订阅) 
 
 <br>
 

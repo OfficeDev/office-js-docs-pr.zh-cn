@@ -1,14 +1,14 @@
 ---
 title: Outlook 上下文加载项激活故障排查
 description: 如果加载项未按预期激活，应考虑以下几个方面的可能原因。
-ms.date: 08/18/2020
+ms.date: 09/02/2020
 localization_priority: Normal
-ms.openlocfilehash: 3e4fd270dbd2c8e6b258e2c473a822c791dee7a6
-ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
+ms.openlocfilehash: 1420c1383730d6a334c181bc34b014da355d26db
+ms.sourcegitcommit: 604361e55dee45c7a5d34c2fa6937693c154fc24
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "47292529"
+ms.lasthandoff: 09/03/2020
+ms.locfileid: "47363966"
 ---
 # <a name="troubleshoot-outlook-add-in-activation"></a>Outlook 加载项激活故障排查
 
@@ -77,7 +77,7 @@ Outlook 上下文加载项激活基于加载项清单中的激活规则。当当
 如果您的加载项为撰写加载项并且应该在用户撰写邮件或会议请求时激活，请确保该项目未受 IRM 保护。 但是，有几个例外。
 
 1. 加载项在与 Microsoft 365 订阅相关联的 Outlook 电子签名邮件上激活。 在Windows上，这个支持是通过8711.1000版本中引入的。
-1. 现在，Windows 版 Outlook 从内部版本 13120.1000 开始可以在受 IRM 保护的项目上激活加载项。  有关预览中此支持的详细信息，请参阅 [ (IRM) 的受信息权限管理保护的项上的外接程序激活 ](../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md#add-in-activation-on-items-protected-by-information-rights-management-irm)。
+1. 从 Windows 上的 Outlook build 13229.10000 开始，外接程序现在可以在受 IRM 保护的项目上激活。  有关预览中此支持的详细信息，请参阅 [ (IRM) 的受信息权限管理保护的项上的外接程序激活 ](../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md#add-in-activation-on-items-protected-by-information-rights-management-irm)。
 
 ## <a name="is-the-add-in-manifest-installed-properly-and-does-outlook-have-a-cached-copy"></a>加载项清单是否安装正确，Outlook 是否有已缓存副本？
 
