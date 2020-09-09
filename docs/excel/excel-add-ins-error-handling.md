@@ -3,19 +3,19 @@ title: 错误处理
 description: 了解有关 Excel JavaScript API 错误处理逻辑，以解决运行时错误。
 ms.date: 06/25/2020
 localization_priority: Normal
-ms.openlocfilehash: 89df7723d48298862034751ab06bca766fedb30f
-ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
+ms.openlocfilehash: 189c92a4e960c8f9f1668f67f10472fdcdf84868
+ms.sourcegitcommit: c6308cf245ac1bc66a876eaa0a7bb4a2492991ac
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "47292550"
+ms.lasthandoff: 09/08/2020
+ms.locfileid: "47408451"
 ---
 # <a name="error-handling"></a>错误处理
 
 使用 Excel JavaScript API 生成加载项时，请务必加入错误处理逻辑，以便解决运行时错误。 鉴于 API 的异步特性，这样做非常关键。
 
 > [!NOTE]
-> 有关 `sync()` Excel JAVASCRIPT api 的方法和异步特性的详细信息，请参阅 [使用 EXCEL javascript Api 的基本编程概念](excel-add-ins-core-concepts.md)。
+> 有关 `sync()` Excel JAVASCRIPT API 的方法和异步特性的详细信息，请参阅 [Office 外接程序中的 Excel JavaScript 对象模型](excel-add-ins-core-concepts.md)。
 
 ## <a name="best-practices"></a>最佳做法
 
@@ -76,5 +76,5 @@ Excel.run(function (context) {
 
 ## <a name="see-also"></a>另请参阅
 
-- [Excel JavaScript API 基本编程概念](excel-add-ins-core-concepts.md)
+- [Office 外接程序中的 Excel JavaScript 对象模型](excel-add-ins-core-concepts.md)
 - [OfficeExtension.Error 对象（Excel JavaScript API）](/javascript/api/office/officeextension.error?view=excel-js-preview)

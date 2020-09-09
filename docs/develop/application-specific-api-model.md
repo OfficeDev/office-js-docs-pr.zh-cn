@@ -1,16 +1,16 @@
 ---
-title: 使用特定于应用程序的 API 模型
+title: 使用应用程序专用 API 模型
 description: 了解 Excel、OneNote 和 Word 外接程序的基于承诺的 API 模型。
-ms.date: 07/29/2020
+ms.date: 09/08/2020
 localization_priority: Normal
-ms.openlocfilehash: cabd1ea0076b672a1dbda3079a767b0e8a1a62b7
-ms.sourcegitcommit: 4adfc368a366f00c3f3d7ed387f34aaecb47f17c
+ms.openlocfilehash: fb25201174dcd97b40ccf6be69b238951103db07
+ms.sourcegitcommit: c6308cf245ac1bc66a876eaa0a7bb4a2492991ac
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "47326280"
+ms.lasthandoff: 09/08/2020
+ms.locfileid: "47408598"
 ---
-# <a name="using-the-application-specific-api-model"></a>使用特定于应用程序的 API 模型
+# <a name="using-the-application-specific-api-model"></a>使用应用程序专用 API 模型
 
 本文介绍如何使用 API 模型在 Excel、Word 和 OneNote 中构建外接程序。 它介绍了使用基于承诺的 Api 的基础的核心概念。
 
@@ -223,6 +223,31 @@ Excel.run(function (ctx) {
 });
 ```
 
+### <a name="some-properties-cannot-be-set-directly"></a>某些属性不能直接设置
+
+某些属性虽然是可写的，但不能设置。 这些属性是父属性的一部分，必须将其设置为单个对象。 这是因为该父属性依赖具有特定逻辑关系的子属性。 必须使用对象文本表示法设置这些父属性，以设置整个对象，而不是设置该对象的单个子属性。 在 [页面布局](/javascript/api/excel/excel.pagelayout)中找到此示例的一个示例。 `zoom`必须使用单个[PageLayoutZoomOptions](/javascript/api/excel/excel.pagelayoutzoomoptions)对象设置属性，如下所示：
+
+```js
+// PageLayout.zoom.scale must be set by assigning PageLayout.zoom to a PageLayoutZoomOptions object.
+sheet.pageLayout.zoom = { scale: 200 };
+```
+
+在上面的示例中，您 ***将无法*** 直接分配 `zoom` 值： `sheet.pageLayout.zoom.scale = 200;` 。 由于未加载，该语句 `zoom` 会引发错误。 即使 `zoom` 要加载，该扩展集也不会生效。 发生所有上下文操作 `zoom` ，刷新加载项中的代理对象并覆盖本地设置的值。
+
+此行为不同于 [导航属性](application-specific-api-model.md#scalar-and-navigation-properties) ，如 [Range. 格式](/javascript/api/excel/excel.range#format)。 `format`可以使用对象导航设置属性，如下所示：
+
+```js
+// This will set the font size on the range during the next `content.sync()`.
+range.format.font.size = 10;
+```
+
+您可以通过检查属性的只读修饰符来标识无法直接设置其子属性的属性。 所有只读属性都可以直接设置其非只读的子属性。 `PageLayout.zoom`必须使用该级别的对象设置可写属性（如必须设置）。 摘要：
+
+- 只读属性：可通过导航设置子属性。
+- 可写属性：不能通过导航 (设置子属性，而必须将初始父对象分配) 的一部分。
+
+
+
 ## <a name="42ornullobject-methods-and-properties"></a>&#42;OrNullObject 方法和属性
 
 当所需的对象不存在时，某些访问器方法和属性将引发异常。 例如，如果尝试通过指定不在工作簿中的工作表名称来获取 Excel 工作表，则该 `getItem()` 方法将引发 `ItemNotFound` 异常。 特定于应用程序的库为代码提供了一种测试文档实体是否存在的方法，而不需要异常处理代码。 这是通过使用 `*OrNullObject` 方法和属性的变体来实现的。 `isNullObject` `true` 如果指定的项不存在，而不是引发异常，则这些变体返回其属性设置为的对象。
@@ -251,5 +276,4 @@ return context.sync()
 ## <a name="see-also"></a>另请参阅
 
 * [常见 JavaScript API 对象模型](office-javascript-api-object-model.md)
-* [常见的编码问题和意外的平台行为](common-coding-issues.md)。
 * [Office 外接程序的资源限制和性能优化](../concepts/resource-limits-and-performance-optimization.md)

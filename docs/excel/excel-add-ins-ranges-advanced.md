@@ -3,12 +3,12 @@ title: 使用 Excel JavaScript API 对区域执行操作（高级）
 description: 高级的 range 对象函数和方案，如特殊单元格、删除重复项以及使用日期。
 ms.date: 08/26/2020
 localization_priority: Normal
-ms.openlocfilehash: 47f154c2bffac2e730aba21204261bc1bd536af2
-ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
+ms.openlocfilehash: b3854d15a85db20e1c544ebfa6e8a63712e958d9
+ms.sourcegitcommit: c6308cf245ac1bc66a876eaa0a7bb4a2492991ac
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "47294155"
+ms.lasthandoff: 09/08/2020
+ms.locfileid: "47408444"
 ---
 # <a name="work-with-ranges-using-the-excel-javascript-api-advanced"></a>使用 Excel JavaScript API 对区域执行操作（高级）
 
@@ -361,5 +361,5 @@ Excel.run(function (context) {
 ## <a name="see-also"></a>另请参阅
 
 - [使用 Excel JavaScript API 对区域执行操作](excel-add-ins-ranges.md)
-- [Excel JavaScript API 基本编程概念](excel-add-ins-core-concepts.md)
+- [Office 外接程序中的 Excel JavaScript 对象模型](excel-add-ins-core-concepts.md)
 - [ 同时在 Excel 加载项中处理多个区域 ](excel-add-ins-multiple-ranges.md)

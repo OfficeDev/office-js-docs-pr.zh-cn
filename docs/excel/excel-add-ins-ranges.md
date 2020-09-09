@@ -3,12 +3,12 @@ title: 使用 Excel JavaScript API 对区域执行操作（基本）
 description: 演示如何使用 Excel JavaScript API 对区域执行常见任务的代码示例。
 ms.date: 07/28/2020
 localization_priority: Normal
-ms.openlocfilehash: 4eb04a58fdf58425f7bb13a6dc457da28625dba5
-ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
+ms.openlocfilehash: 2cb5640fa9c647c0e6d1f8083986455f2b5a59a3
+ms.sourcegitcommit: c6308cf245ac1bc66a876eaa0a7bb4a2492991ac
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "47294162"
+ms.lasthandoff: 09/08/2020
+ms.locfileid: "47408479"
 ---
 # <a name="work-with-ranges-using-the-excel-javascript-api"></a>使用 Excel JavaScript API 处理区域
 
@@ -597,4 +597,4 @@ Excel.run(function (context) {
 ## <a name="see-also"></a>另请参阅
 
 - [使用 Excel JavaScript API 对区域执行操作（高级）](excel-add-ins-ranges-advanced.md)
-- [Excel JavaScript API 基本编程概念](excel-add-ins-core-concepts.md)
+- [Office 外接程序中的 Excel JavaScript 对象模型](excel-add-ins-core-concepts.md)

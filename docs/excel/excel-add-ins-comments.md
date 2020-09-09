@@ -3,30 +3,30 @@ title: 使用 Excel JavaScript API 处理注释
 description: 有关使用 Api 添加、删除和编辑注释和注释线程的信息。
 ms.date: 03/17/2020
 localization_priority: Normal
-ms.openlocfilehash: 59751086b645ed56cb2a00bc70678967cae085c5
-ms.sourcegitcommit: 472b81642e9eb5fb2a55cd98a7b0826d37eb7f73
+ms.openlocfilehash: f0be13cc666ed4b6b5b3cfac59f299c872139f4c
+ms.sourcegitcommit: c6308cf245ac1bc66a876eaa0a7bb4a2492991ac
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/17/2020
-ms.locfileid: "45159428"
+ms.lasthandoff: 09/08/2020
+ms.locfileid: "47408570"
 ---
 # <a name="work-with-comments-using-the-excel-javascript-api"></a>使用 Excel JavaScript API 处理注释
 
-本文介绍如何使用 Excel JavaScript API 在工作簿中添加、读取、修改和删除注释。 您可以从 Excel 文章的 "[插入注释和注释](https://support.office.com/article/insert-comments-and-notes-in-excel-bdcc9f5d-38e2-45b4-9a92-0b2b5c7bf6f8)" 中了解有关注释功能的详细信息。
+本文介绍如何使用 Excel JavaScript API 在工作簿中添加、读取、修改和删除注释。 您可以从 Excel 文章的 " [插入注释和注释](https://support.office.com/article/insert-comments-and-notes-in-excel-bdcc9f5d-38e2-45b4-9a92-0b2b5c7bf6f8) " 中了解有关注释功能的详细信息。
 
 在 Excel JavaScript API 中，注释包括单个初始注释和已连接的线程讨论。 它与单个单元格相关联。 任何人查看具有足够权限的工作簿都可以答复注释。 [Comment](/javascript/api/excel/excel.comment)对象将那些答复存储为[CommentReply](/javascript/api/excel/excel.commentreply)对象。 应将注释视为线程，并且线程必须具有特殊条目作为起始点。
 
 ![带有两个答复的标签为 "Comment" 的 Excel 注释，标记为 "Comment. 答复 [0]" 和 "Comment. 答复 [1]"。](../images/excel-comments.png)
 
-工作簿中的注释由属性跟踪 `Workbook.comments` 。 这包括由用户创建的批注以及由加载项创建的批注。 `Workbook.comments` 属性是一个包含一系列 [Comment](/javascript/api/excel/excel.comment) 对象的 [CommentCollection](/javascript/api/excel/excel.commentcollection) 对象。 此外，还可以在[工作表](/javascript/api/excel/excel.worksheet)级别访问注释。 本文中的示例处理工作簿级别的注释，但可以轻松地将其修改为使用 `Worksheet.comments` 属性。
+工作簿中的注释由属性跟踪 `Workbook.comments` 。 这包括由用户创建的批注以及由加载项创建的批注。 `Workbook.comments` 属性是一个包含一系列 [Comment](/javascript/api/excel/excel.comment) 对象的 [CommentCollection](/javascript/api/excel/excel.commentcollection) 对象。 此外，还可以在 [工作表](/javascript/api/excel/excel.worksheet) 级别访问注释。 本文中的示例处理工作簿级别的注释，但可以轻松地将其修改为使用 `Worksheet.comments` 属性。
 
 ## <a name="add-comments"></a>添加备注
 
 使用 `CommentCollection.add` 方法将注释添加到工作簿中。 此方法最长可使用三个参数：
 
-- `cellAddress`：添加了注释的单元格。 它可以是一个字符串或[Range](/javascript/api/excel/excel.range)对象。 区域必须是单个单元格。
-- `content`：注释的内容。 将字符串用于纯文本注释。 将[CommentRichContent](/javascript/api/excel/excel.commentrichcontent)对象用于包含[提及](#mentions)的注释。
-- `contentType`：用于指定内容类型的[ContentType](/javascript/api/excel/excel.contenttype)枚举。 默认值为 `ContentType.plain`。
+- `cellAddress`：添加了注释的单元格。 它可以是一个字符串或 [Range](/javascript/api/excel/excel.range) 对象。 区域必须是单个单元格。
+- `content`：注释的内容。 将字符串用于纯文本注释。 将 [CommentRichContent](/javascript/api/excel/excel.commentrichcontent) 对象用于包含 [提及](#mentions)的注释。
+- `contentType`：用于指定内容类型的 [ContentType](/javascript/api/excel/excel.contenttype) 枚举。 默认值为 `ContentType.plain`。
 
 下面的代码示例将向单元格 **A2** 添加批注。
 
@@ -148,7 +148,7 @@ Excel.run(function (context) {
 
 批注答复存储与初始注释相同类型的元数据。
 
-下面的示例展示了如何在**A2**中显示作者的电子邮件、作者的姓名以及最新注释答复的创建日期。
+下面的示例展示了如何在 **A2**中显示作者的电子邮件、作者的姓名以及最新注释答复的创建日期。
 
 ```js
 Excel.run(function (context) {
@@ -171,9 +171,9 @@ Excel.run(function (context) {
 
 ## <a name="mentions"></a>提及
 
-[提及](https://support.office.com/article/use-mention-in-comments-to-tag-someone-for-feedback-644bf689-31a0-4977-a4fb-afe01820c1fd)用于在注释中标记同事。 这将向他们发送你的评论内容通知。 你的外接程序可以代表你创建这些提及。
+[提及](https://support.office.com/article/use-mention-in-comments-to-tag-someone-for-feedback-644bf689-31a0-4977-a4fb-afe01820c1fd) 用于在注释中标记同事。 这将向他们发送你的评论内容通知。 你的外接程序可以代表你创建这些提及。
 
-包含提及的注释需要使用[CommentRichContent](/javascript/api/excel/excel.commentrichcontent)对象创建。 `CommentCollection.add`使用 `CommentRichContent` 包含一个或多个提及的调用，并将其指定 `ContentType.mention` 为 `contentType` 参数。 `content`此外，还需要设置字符串格式，以在文本中插入所提及的内容。 提及的格式为： `<at id="{replyIndex}">{mentionName}</at>` 。
+包含提及的注释需要使用 [CommentRichContent](/javascript/api/excel/excel.commentrichcontent) 对象创建。 `CommentCollection.add`使用 `CommentRichContent` 包含一个或多个提及的调用，并将其指定 `ContentType.mention` 为 `contentType` 参数。 `content`此外，还需要设置字符串格式，以在文本中插入所提及的内容。 提及的格式为： `<at id="{replyIndex}">{mentionName}</at>` 。
 
 > [!NOTE]
 > 目前，只有提及的确切名称可用作提及链接的文本。 稍后将添加对名称的缩写版本的支持。
@@ -204,6 +204,6 @@ Excel.run(function (context) {
 
 ## <a name="see-also"></a>另请参阅
 
-- [Excel JavaScript API 基本编程概念](excel-add-ins-core-concepts.md)
+- [Office 外接程序中的 Excel JavaScript 对象模型](excel-add-ins-core-concepts.md)
 - [使用 Excel JavaScript API 处理工作簿](excel-add-ins-workbooks.md)
 - [在 Excel 中插入批注和备注](https://support.office.com/article/insert-comments-and-notes-in-excel-bdcc9f5d-38e2-45b4-9a92-0b2b5c7bf6f8)

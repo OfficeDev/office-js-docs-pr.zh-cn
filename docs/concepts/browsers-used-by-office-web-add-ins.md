@@ -3,12 +3,12 @@ title: Office 加载项使用的浏览器
 description: 指定操作系统和 Office 版本如何确定 Office 加载项使用的浏览器。
 ms.date: 08/13/2020
 localization_priority: Normal
-ms.openlocfilehash: 4c4462434480a82e69ebaf5a2599ceda1e4693a7
-ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
+ms.openlocfilehash: 544388014bfef0dd647a79d655a173d09f5a4ff7
+ms.sourcegitcommit: c6308cf245ac1bc66a876eaa0a7bb4a2492991ac
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "47293056"
+ms.lasthandoff: 09/08/2020
+ms.locfileid: "47408437"
 ---
 # <a name="browsers-used-by-office-add-ins"></a>Office 加载项使用的浏览器
 
@@ -42,10 +42,16 @@ Office 外接程序是在 web 上运行 Office 时使用 Iframe 显示的 web �
 <sup>3</sup> 如果加载项包括 `Runtimes` 清单中的元素，则使用 Internet Explorer 11，而不考虑 Windows 或 Microsoft 365 版本。 有关详细信息，请参阅[运行时](../reference/manifest/runtimes.md)。
 
 <sup>4</sup> 用于此版本组合的浏览器取决于 Microsoft 365 订阅的更新通道。 如果用户在 [Beta 通道](https://insider.office.com/join/windows) 上 (以前的 "快速) " 快速频道 "，则 Office 将使用 Microsoft Edge 与 WebView2 (基于 Chromium 的) 。 对于任何其他频道，Office 将 Microsoft Edge 与原始 Web 视图一起使用 (EdgeHTML) 。 对其他频道中的 WebView2 的支持预计在早期2021。
-> [!IMPORTANT]
-> Internet Explorer 11 不支持高于 ES5 的 JavaScript 版本。 如果任何加载项用户安装的是使用 Internet Explorer 11 的平台，若要使用 ECMAScript 2015 或更高版本的语法和功能，则必须将 JavaScript 转换为 ES5 或使用填充代码。 此外，Internet Explorer 11 不支持媒体、录制和位置等部分 HTML5 功能。
 
-## <a name="troubleshooting-microsoft-edge-issues"></a>Microsoft Edge 问题疑难解答
+> [!IMPORTANT]
+> Internet Explorer 11 不支持高于 ES5 的 JavaScript 版本。 如果你的外接程序的任何用户具有使用 Internet Explorer 11 的平台，然后使用 ECMAScript 2015 或更高版本的语法和功能，则有两种选择：
+>
+> - 在 ECMAScript 2015 (也称为 ES6) 或更高版本 JavaScript，或在 TypeScript 中编写代码，然后使用编译器（如 [babel](https://babeljs.io/) 或 [tsc](https://www.typescriptlang.org/index.html)）将代码编译为 ES5 JavaScript。
+> - 在 ECMAScript 2015 或更高版本的 JavaScript 中编写，但还要加载一个 [polyfill](https://wikipedia.org/wiki/Polyfill_(programming)) 库，如 [core-JS](https://github.com/zloirock/core-js) ，使 IE 能够运行您的代码。
+>
+> 此外，Internet Explorer 11 不支持媒体、录制和位置等部分 HTML5 功能。
+
+## <a name="troubleshooting-microsoft-edge-issues"></a>Microsoft Edge 问题故障排除
 
 ### <a name="service-workers-are-not-working"></a>服务工作人员不工作
 

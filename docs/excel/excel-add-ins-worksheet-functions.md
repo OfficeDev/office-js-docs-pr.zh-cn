@@ -3,12 +3,12 @@ title: 使用 Excel JavaScript API 调用内置 Excel 工作表函数
 description: 了解如何调用内置 Excel 工作表函数 `VLOOKUP` ，例如和 `SUM` 使用 EXCEL JavaScript API。
 ms.date: 12/19/2019
 localization_priority: Normal
-ms.openlocfilehash: d75dc56210425d3708b03fb0132aff5ff534da7a
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 3dd7ae24e27b3a3147265a0bcf539ae23af03fc3
+ms.sourcegitcommit: c6308cf245ac1bc66a876eaa0a7bb4a2492991ac
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44609188"
+ms.lasthandoff: 09/08/2020
+ms.locfileid: "47408682"
 ---
 # <a name="call-built-in-excel-worksheet-functions"></a>调用内置 Excel 工作表函数
 
@@ -445,6 +445,6 @@ Excel.run(function (context) {
 
 ## <a name="see-also"></a>另请参阅
 
-- [Excel JavaScript API 基本编程概念](excel-add-ins-core-concepts.md)
-- [函数类（适用于 Excel 的 JavaScript API）](/javascript/api/excel/excel.functions)
-- [工作簿函数对象（适用于 Excel 的 JavaScript API）](/javascript/api/excel/excel.workbook#functions)
+- [Office 外接程序中的 Excel JavaScript 对象模型](excel-add-ins-core-concepts.md)
+- [函数类 (适用于 Excel 的 JavaScript API) ](/javascript/api/excel/excel.functions)
+- [工作簿函数对象 (适用于 Excel 的 JavaScript API) ](/javascript/api/excel/excel.workbook#functions)

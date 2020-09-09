@@ -1,14 +1,14 @@
 ---
 title: Office 加载项中的异步编程
 description: 了解 Office JavaScript 库如何在 Office 外接程序中使用异步编程。
-ms.date: 02/27/2020
+ms.date: 09/08/2020
 localization_priority: Normal
-ms.openlocfilehash: affe493cdf1633b3a8749b694da479a732271195
-ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
+ms.openlocfilehash: 96805ee0f78caedd718642a97828db26f0de7900
+ms.sourcegitcommit: c6308cf245ac1bc66a876eaa0a7bb4a2492991ac
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "47292939"
+ms.lasthandoff: 09/08/2020
+ms.locfileid: "47408577"
 ---
 # <a name="asynchronous-programming-in-office-add-ins"></a>Office 加载项中的异步编程
 
@@ -121,11 +121,13 @@ Office JavaScript API 支持两种类型的异步编程模式：
     
 使用回调函数的异步编程通常需要您将回调返回的结果嵌套在两个或更多回调中。如果您需要这么做，则可以使用来自 API 的所有"Async"方法的嵌套回调。
 
-使用嵌套回调是大多数 JavaScript 开发人员都熟知的编程模式，但使用了深层嵌套回调的代码难以阅读和理解。 作为嵌套回调的替代方法，Office JavaScript API 还支持实施承诺模式。 但是，在当前版本的 Office JavaScript API 中，承诺模式仅适用于 [Excel 电子表格和 Word 文档中的绑定](bind-to-regions-in-a-document-or-spreadsheet.md)代码。
+使用嵌套回调是大多数 JavaScript 开发人员都熟知的编程模式，但使用了深层嵌套回调的代码难以阅读和理解。 作为嵌套回调的替代方法，Office JavaScript API 还支持实施承诺模式。 
 
-<a name="AsyncProgramming_NestedCallbacks" />
+> [!NOTE]
+> 在当前版本的 Office JavaScript API 中，承诺模式的 *内置* 支持仅适用于 [Excel 电子表格和 Word 文档中的绑定](bind-to-regions-in-a-document-or-spreadsheet.md)代码。 但是，您可以将具有回调的其他函数封装在自己的自定义承诺返回函数中。 有关详细信息，请参阅 [在承诺返回函数中包装通用 api](#wrap-common-apis-in-promise-returning-functions)。
+
+
 ### <a name="asynchronous-programming-using-nested-callback-functions"></a>使用嵌套回调函数的异步编程
-
 
 通常，完成一项任务需要执行两个或更多个异步操作。为实现此目的，可在一个调用中嵌套另一个"Async"调用。
 
@@ -240,7 +242,7 @@ function write(message){
 }
 ```
 
-将 _BindingObjectAsyncMethod_ 占位符替换为对承诺对象支持的四个对象方法中的任何一个 `Binding` ： `getDataAsync` 、 `setDataAsync` 、 `addHandlerAsync` 或 `removeHandlerAsync` 。 对这些方法的调用不支持其他的承诺。 你必须使用[嵌套回调函数模式](#AsyncProgramming_NestedCallbacks)来调用它们。
+将 _BindingObjectAsyncMethod_ 占位符替换为对承诺对象支持的四个对象方法中的任何一个 `Binding` ： `getDataAsync` 、 `setDataAsync` 、 `addHandlerAsync` 或 `removeHandlerAsync` 。 对这些方法的调用不支持其他的承诺。 你必须使用[嵌套回调函数模式](#asynchronous-programming-using-nested-callback-functions)来调用它们。
 
 在 `Binding` 满足对象承诺后，可以在连锁方法调用中重用它，就像它是绑定 (外接运行时将不会异步重试满足承诺) 。 如果 `Binding` 无法满足对象承诺，加载项运行时将在下次调用其异步方法之一时再次尝试访问 binding 对象。
 
@@ -395,6 +397,57 @@ function write(message){
 
 在这两个可选参数示例中， _回调_ 参数被指定为 (后面的最后一个参数，或后面的 _options_ 参数对象) 。 还可以在内嵌 JSON 对象或 __ 对象内指定 `options` 参数。 但是，只能在一个位置传递 _callback_ 参数：在 _option_ 对象内（内嵌或在外部创建），或作为最后一个参数，但不能同时在两个位置。
 
+## <a name="wrap-common-apis-in-promise-returning-functions"></a>在承诺返回函数中包装通用 Api
+
+通用 API (和 Outlook API) 方法不返回 [承诺](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise)。 因此，在异步操作完成之前，不能使用 [await](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Operators/await) 暂停执行。 如果需要 `await` 行为，可以在显式创建的承诺中包装方法调用。 
+
+基本模式是创建一个异步方法，该方法可立即返回一个承诺对象，并在 inner 方法完成时 *解析* 该承诺对象，或在方法失败时 *拒绝* 该对象。 下面是一个简单的示例
+
+```javascript
+function getDocumentFilePath() {
+    return new OfficeExtension.Promise(function (resolve, reject) {
+        try {
+            Office.context.document.getFilePropertiesAsync(function (asyncResult) {
+                resolve(asyncResult.value.url);
+            });
+        }
+        catch (error) {
+            reject(WordMarkdownConversion.errorHandler(error));
+        }
+    })
+}
+```
+
+当需要等待此方法时，可以使用 `await` 关键字或传递给函数的函数调用它 `then` 。
+
+> [!NOTE]
+> 当您需要 `run` 在某个特定于应用程序的对象模型的方法调用中调用一个通用 api 时，此技术尤其有用。 有关以这种方式使用的函数的示例，请参阅 [ 示例 Word 加载项-MDConversion 中](https://github.com/OfficeDev/Word-Add-in-MarkdownConversion/blob/master/Word-Add-in-JavaScript-MDConversionWeb/Home.js)的文件Home.js。
+
+以下是使用 TypeScript 的示例。
+
+```typescript
+readDocumentFileAsync(): Promise<any> {
+    return new Promise((resolve, reject) => {
+        const chunkSize = 65536;
+        const self = this;
+
+        Office.context.document.getFileAsync(Office.FileType.Compressed, { sliceSize: chunkSize }, (asyncResult) => {
+            if (asyncResult.status === Office.AsyncResultStatus.Failed) {
+                reject(asyncResult.error);
+            } else {
+                // `getAllSlices` is a Promise-wrapped implementation of File.getSliceAsync.
+                self.getAllSlices(asyncResult.value).then(result => {
+                    if (result.IsSuccess) {
+                        resolve(result.Data);
+                    } else {
+                        reject(asyncResult.error);
+                    }
+                });
+            }
+        });
+    });
+}
+```
 
 ## <a name="see-also"></a>另请参阅
 

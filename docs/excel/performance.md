@@ -3,12 +3,12 @@ title: Excel JavaScript API 性能优化
 description: 使用 JavaScript API 优化 Excel 加载项性能。
 ms.date: 07/29/2020
 localization_priority: Normal
-ms.openlocfilehash: fdaccdca4779aaca64420794e382330994488606
-ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
+ms.openlocfilehash: 42ab5f28717f0f7dcd06461840de692a5daf60ce
+ms.sourcegitcommit: c6308cf245ac1bc66a876eaa0a7bb4a2492991ac
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "47294099"
+ms.lasthandoff: 09/08/2020
+ms.locfileid: "47408612"
 ---
 # <a name="performance-optimization-using-the-excel-javascript-api"></a>使用 Excel JavaScript API 优化性能
 
@@ -111,6 +111,6 @@ Excel.run(async (ctx) => {
 
 ## <a name="see-also"></a>另请参阅
 
-* [Excel JavaScript API 基本编程概念](excel-add-ins-core-concepts.md)
+* [Office 外接程序中的 Excel JavaScript 对象模型](excel-add-ins-core-concepts.md)
 * [Office 外接程序的资源限制和性能优化](../concepts/resource-limits-and-performance-optimization.md)
 * [工作表函数对象（适用于 Excel 的 JavaScript API）](/javascript/api/excel/excel.functions)

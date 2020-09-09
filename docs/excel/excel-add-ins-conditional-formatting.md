@@ -3,12 +3,12 @@ title: 通过 Excel JavaScript API 将条件格式应用于范围
 description: 本文涵盖了 Excel JavaScript 外接程序上下文中的条件格式。
 ms.date: 07/28/2020
 localization_priority: Normal
-ms.openlocfilehash: 9f0bed7fb7421984c98ad1bc396c130afda4fb50
-ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
+ms.openlocfilehash: 04a1b18c47d76d44201ea222eac305bb8d438b58
+ms.sourcegitcommit: c6308cf245ac1bc66a876eaa0a7bb4a2492991ac
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "47292651"
+ms.lasthandoff: 09/08/2020
+ms.locfileid: "47408591"
 ---
 # <a name="apply-conditional-formatting-to-excel-ranges"></a>将条件格式应用于特定 Excel 范围
 
@@ -336,7 +336,7 @@ await context.sync();
 
 ## <a name="see-also"></a>另请参阅
 
-- [Excel JavaScript API 基本编程概念](../excel/excel-add-ins-core-concepts.md)
+- [Office 外接程序中的 Excel JavaScript 对象模型](../excel/excel-add-ins-core-concepts.md)
 - [使用 Excel JavaScript API 处理特定范围](../excel/excel-add-ins-ranges.md)
 - [ConditionalFormat 对象（适用于 Excel 的 JavaScript API）](/javascript/api/excel/excel.conditionalformat)
 - [添加、更改或清除条件格式](https://support.office.com/article/add-change-or-clear-conditional-formats-8a1cc355-b113-41b7-a483-58460332a1af)

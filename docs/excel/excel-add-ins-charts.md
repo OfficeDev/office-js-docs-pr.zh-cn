@@ -3,17 +3,17 @@ title: 使用 Excel JavaScript API 处理图表
 description: 使用 Excel JavaScript API 演示图表任务的代码示例。
 ms.date: 07/17/2019
 localization_priority: Normal
-ms.openlocfilehash: 9763657fc245a509d21267511d8d1c706e1d389e
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 3cd5008e4a71001607911ffd89da26d8b31d9377
+ms.sourcegitcommit: c6308cf245ac1bc66a876eaa0a7bb4a2492991ac
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44609634"
+ms.lasthandoff: 09/08/2020
+ms.locfileid: "47408584"
 ---
 # <a name="work-with-charts-using-the-excel-javascript-api"></a>使用 Excel JavaScript API 处理图表
 
 本文提供了代码示例，介绍如何使用 Excel JavaScript API 对图表执行常见任务。
-有关和对象支持的属性和方法的完整 `Chart` 列表 `ChartCollection` ，请参阅[Chart 对象（适用于 EXCEL 的 javascript Api）](/javascript/api/excel/excel.chart)和[chart 集合对象（适用于 excel 的 javascript api）](/javascript/api/excel/excel.chartcollection)。
+有关和对象支持的属性和方法的完整 `Chart` 列表 `ChartCollection` ，请参阅 [Chart Object (适用于 EXCEL 的 javascript Api) ](/javascript/api/excel/excel.chart) 和 [chart Collection 对象 (适用于 excel) 的 javascript api ](/javascript/api/excel/excel.chartcollection)。
 
 ## <a name="create-a-chart"></a>创建图表
 
@@ -169,7 +169,7 @@ Excel.run(function (context) {
 
 ### <a name="update-a-trendline"></a>更新趋势线
 
-下面的代码示例将 `Linear` 在名为**sample**的工作表中第一个图表的第一个系列的趋势线设置为类型。
+下面的代码示例将 `Linear` 在名为 **sample**的工作表中第一个图表的第一个系列的趋势线设置为类型。
 
 ```js
 Excel.run(function (context) {
@@ -211,10 +211,10 @@ getImage(width?: number, height?: number, fittingMode?: Excel.ImageFittingMode):
 
 这些参数决定图像的大小。 图像始终按比例缩放。 宽度和高度参数在缩放图像上设置上限或下限。 `ImageFittingMode` 具有三个值和以下行为：
 
-- `Fill`：图像的最小高度或宽度为指定的高度或宽度（在缩放图像时先到达）。 这是未指定调整模式时的默认行为。
-- `Fit`：图像的最大高度或宽度为指定的高度或宽度（在缩放图像时先到达）。
-- `FitAndCenter`：图像的最大高度或宽度为指定的高度或宽度（在缩放图像时先到达）。 生成的图像相对于另一个维度居中。
+- `Fill`：图像的最小高度或宽度为指定的高度或宽度 (在) 缩放图像时先达到的高度或宽度。 这是未指定调整模式时的默认行为。
+- `Fit`：图像的最大高度或宽度为指定的高度或宽度 (在) 缩放图像时先达到的高度或宽度。
+- `FitAndCenter`：图像的最大高度或宽度为指定的高度或宽度 (在) 缩放图像时先达到的高度或宽度。 生成的图像相对于另一个维度居中。
 
 ## <a name="see-also"></a>另请参阅
 
-- [Excel JavaScript API 基本编程概念](excel-add-ins-core-concepts.md)
+- [Office 外接程序中的 Excel JavaScript 对象模型](excel-add-ins-core-concepts.md)
