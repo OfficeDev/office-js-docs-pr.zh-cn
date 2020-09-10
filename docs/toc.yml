@@ -8,9 +8,6 @@
     - name: 初学者指南
       href: overview/learning-path-beginner.md
       displayName: develop
-    - name: 开发流程概述
-      href: overview/office-add-ins-fundamentals.md
-      displayName: develop
     - name: 快速入门
       items:
         - name: Excel 加载项
@@ -35,9 +32,9 @@
     - name: 设置开发环境
       href: overview/set-up-your-dev-environment.md
       displayName: 'Excel, Word, OneNote, Project, PowerPoint, Outlook'
-- name: 开发流程
+- name: 开发生命周期
   items:
-    - name: 概述
+    - name: 生命周期概述
       href: overview/core-concepts-office-add-ins.md
       displayName: 'Excel, Word, OneNote, Project, PowerPoint, Outlook'
     - name: 计划
@@ -58,7 +55,7 @@
           displayName: 'Excel, Word, OneNote, Project, PowerPoint, Outlook'
     - name: 开发
       items:
-        - name: 开发 Office 加载项
+        - name: 概述
           href: develop/develop-overview.md
           displayName: 'Excel, Word, OneNote, Project, PowerPoint, Outlook'
         - name: 了解 Office JavaScript API
@@ -220,8 +217,6 @@
                   href: design/office-ui-fabric.md
         - name: 框架和 IDE
           items:
-            - name: 开发适用于 iPad 的加载项
-              href: develop/develop-office-add-ins-for-the-ipad.md
             - name: 使用 Angular 开发加载项
               href: develop/add-ins-with-angular2.md
             - name: 使用 Visual Studio Code 开发加载项
@@ -237,6 +232,8 @@
                   href: develop/get-javascript-intellisense-in-visual-studio.md
                 - name: 将 JavaScript 项目转换成 TypeScript
                   href: develop/convert-javascript-to-typescript.md
+        - name: 在iPad 中加载项的特殊要求
+          href: develop/develop-office-add-ins-for-the-ipad.md
     - name: 测试和调试
       items:
         - name: 测试和调试 Office 加载项
@@ -1148,6 +1145,6 @@
       href: overview/learning-path-transition.md
     - name: 分享 VSTO 加载项代码至 Office 加载项
       href: tutorials/migrate-vsto-to-office-add-in-shared-code-library-tutorial.md
-    - name: 标识等效的 COM 加载项
+    - name: 确认 Office 加载项与已有的COM 加载项兼容
       href: develop/make-office-add-in-compatible-with-existing-com-add-in.md
       displayName: manifest
