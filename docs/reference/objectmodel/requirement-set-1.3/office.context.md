@@ -3,60 +3,60 @@ title: Office。上下文要求集1。3
 description: 使用邮箱 API 要求集1.3 的 Outlook 外接程序可用的 Office 对象成员。
 ms.date: 03/18/2020
 localization_priority: Normal
-ms.openlocfilehash: abfd445e65660daacb3b0058466332c4a08c3889
-ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
+ms.openlocfilehash: 73f5d4883180499922852f32ec4b84ca732c1388
+ms.sourcegitcommit: 83f9a2fdff81ca421cd23feea103b9b60895cab4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "47293742"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "47431057"
 ---
-# <a name="context-mailbox-requirement-set-13"></a><span data-ttu-id="28523-103"> (邮箱要求集1.3 的上下文) </span><span class="sxs-lookup"><span data-stu-id="28523-103">context (Mailbox requirement set 1.3)</span></span>
+# <a name="context-mailbox-requirement-set-13"></a><span data-ttu-id="86fd5-103"> (邮箱要求集1.3 的上下文) </span><span class="sxs-lookup"><span data-stu-id="86fd5-103">context (Mailbox requirement set 1.3)</span></span>
 
-### <a name="officecontext"></a><span data-ttu-id="28523-104">[Office](office.md).context</span><span class="sxs-lookup"><span data-stu-id="28523-104">[Office](office.md).context</span></span>
+### <a name="officecontext"></a><span data-ttu-id="86fd5-104">[Office](office.md).context</span><span class="sxs-lookup"><span data-stu-id="86fd5-104">[Office](office.md).context</span></span>
 
-<span data-ttu-id="28523-105">在所有 Office 应用中，上下文提供外接程序使用的共享接口。</span><span class="sxs-lookup"><span data-stu-id="28523-105">Office.context provides shared interfaces that are used by add-ins in all of the Office apps.</span></span> <span data-ttu-id="28523-106">此列表仅记录 Outlook 外接程序使用的那些接口。有关 "context" 命名空间的完整列表，请参阅 [通用 API 中的 "office. context reference](/javascript/api/office/office.context?view=outlook-js-1.3)"。</span><span class="sxs-lookup"><span data-stu-id="28523-106">This listing documents only those interfaces that are used by Outlook add-ins. For a full listing of the Office.context namespace, see the [Office.context reference in the Common API](/javascript/api/office/office.context?view=outlook-js-1.3).</span></span>
+<span data-ttu-id="86fd5-105">在所有 Office 应用中，上下文提供外接程序使用的共享接口。</span><span class="sxs-lookup"><span data-stu-id="86fd5-105">Office.context provides shared interfaces that are used by add-ins in all of the Office apps.</span></span> <span data-ttu-id="86fd5-106">此列表仅记录 Outlook 外接程序使用的那些接口。有关 "context" 命名空间的完整列表，请参阅 [通用 API 中的 "office. context reference](/javascript/api/office/office.context?view=outlook-js-1.3&preserve-view=true)"。</span><span class="sxs-lookup"><span data-stu-id="86fd5-106">This listing documents only those interfaces that are used by Outlook add-ins. For a full listing of the Office.context namespace, see the [Office.context reference in the Common API](/javascript/api/office/office.context?view=outlook-js-1.3&preserve-view=true).</span></span>
 
-##### <a name="requirements"></a><span data-ttu-id="28523-107">Requirements</span><span class="sxs-lookup"><span data-stu-id="28523-107">Requirements</span></span>
+##### <a name="requirements"></a><span data-ttu-id="86fd5-107">Requirements</span><span class="sxs-lookup"><span data-stu-id="86fd5-107">Requirements</span></span>
 
-|<span data-ttu-id="28523-108">要求</span><span class="sxs-lookup"><span data-stu-id="28523-108">Requirement</span></span>| <span data-ttu-id="28523-109">值</span><span class="sxs-lookup"><span data-stu-id="28523-109">Value</span></span>|
+|<span data-ttu-id="86fd5-108">要求</span><span class="sxs-lookup"><span data-stu-id="86fd5-108">Requirement</span></span>| <span data-ttu-id="86fd5-109">值</span><span class="sxs-lookup"><span data-stu-id="86fd5-109">Value</span></span>|
 |---|---|
-|[<span data-ttu-id="28523-110">最低版本的邮箱要求集</span><span class="sxs-lookup"><span data-stu-id="28523-110">Minimum mailbox requirement set version</span></span>](../../requirement-sets/outlook-api-requirement-sets.md)| <span data-ttu-id="28523-111">1.1</span><span class="sxs-lookup"><span data-stu-id="28523-111">1.1</span></span>|
-|[<span data-ttu-id="28523-112">适用的 Outlook 模式</span><span class="sxs-lookup"><span data-stu-id="28523-112">Applicable Outlook mode</span></span>](../../../outlook/outlook-add-ins-overview.md#extension-points)| <span data-ttu-id="28523-113">撰写或阅读</span><span class="sxs-lookup"><span data-stu-id="28523-113">Compose or Read</span></span>|
+|[<span data-ttu-id="86fd5-110">最低版本的邮箱要求集</span><span class="sxs-lookup"><span data-stu-id="86fd5-110">Minimum mailbox requirement set version</span></span>](../../requirement-sets/outlook-api-requirement-sets.md)| <span data-ttu-id="86fd5-111">1.1</span><span class="sxs-lookup"><span data-stu-id="86fd5-111">1.1</span></span>|
+|[<span data-ttu-id="86fd5-112">适用的 Outlook 模式</span><span class="sxs-lookup"><span data-stu-id="86fd5-112">Applicable Outlook mode</span></span>](../../../outlook/outlook-add-ins-overview.md#extension-points)| <span data-ttu-id="86fd5-113">撰写或阅读</span><span class="sxs-lookup"><span data-stu-id="86fd5-113">Compose or Read</span></span>|
 
-##### <a name="properties"></a><span data-ttu-id="28523-114">属性</span><span class="sxs-lookup"><span data-stu-id="28523-114">Properties</span></span>
+##### <a name="properties"></a><span data-ttu-id="86fd5-114">属性</span><span class="sxs-lookup"><span data-stu-id="86fd5-114">Properties</span></span>
 
-| <span data-ttu-id="28523-115">属性</span><span class="sxs-lookup"><span data-stu-id="28523-115">Property</span></span> | <span data-ttu-id="28523-116">型号</span><span class="sxs-lookup"><span data-stu-id="28523-116">Modes</span></span> | <span data-ttu-id="28523-117">返回类型</span><span class="sxs-lookup"><span data-stu-id="28523-117">Return type</span></span> | <span data-ttu-id="28523-118">最小值</span><span class="sxs-lookup"><span data-stu-id="28523-118">Minimum</span></span><br><span data-ttu-id="28523-119">要求集</span><span class="sxs-lookup"><span data-stu-id="28523-119">requirement set</span></span> |
+| <span data-ttu-id="86fd5-115">属性</span><span class="sxs-lookup"><span data-stu-id="86fd5-115">Property</span></span> | <span data-ttu-id="86fd5-116">型号</span><span class="sxs-lookup"><span data-stu-id="86fd5-116">Modes</span></span> | <span data-ttu-id="86fd5-117">返回类型</span><span class="sxs-lookup"><span data-stu-id="86fd5-117">Return type</span></span> | <span data-ttu-id="86fd5-118">最小值</span><span class="sxs-lookup"><span data-stu-id="86fd5-118">Minimum</span></span><br><span data-ttu-id="86fd5-119">要求集</span><span class="sxs-lookup"><span data-stu-id="86fd5-119">requirement set</span></span> |
 |---|---|---|:---:|
-| [<span data-ttu-id="28523-120">contentLanguage</span><span class="sxs-lookup"><span data-stu-id="28523-120">contentLanguage</span></span>](#contentlanguage-string) | <span data-ttu-id="28523-121">撰写</span><span class="sxs-lookup"><span data-stu-id="28523-121">Compose</span></span><br><span data-ttu-id="28523-122">阅读</span><span class="sxs-lookup"><span data-stu-id="28523-122">Read</span></span> | <span data-ttu-id="28523-123">String</span><span class="sxs-lookup"><span data-stu-id="28523-123">String</span></span> | [<span data-ttu-id="28523-124">1.1</span><span class="sxs-lookup"><span data-stu-id="28523-124">1.1</span></span>](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| [<span data-ttu-id="28523-125">过程</span><span class="sxs-lookup"><span data-stu-id="28523-125">diagnostics</span></span>](#diagnostics-contextinformation) | <span data-ttu-id="28523-126">撰写</span><span class="sxs-lookup"><span data-stu-id="28523-126">Compose</span></span><br><span data-ttu-id="28523-127">阅读</span><span class="sxs-lookup"><span data-stu-id="28523-127">Read</span></span> | [<span data-ttu-id="28523-128">ContextInformation</span><span class="sxs-lookup"><span data-stu-id="28523-128">ContextInformation</span></span>](/javascript/api/office/office.contextinformation?view=outlook-js-1.3) | [<span data-ttu-id="28523-129">1.1</span><span class="sxs-lookup"><span data-stu-id="28523-129">1.1</span></span>](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| [<span data-ttu-id="28523-130">displayLanguage</span><span class="sxs-lookup"><span data-stu-id="28523-130">displayLanguage</span></span>](#displaylanguage-string) | <span data-ttu-id="28523-131">撰写</span><span class="sxs-lookup"><span data-stu-id="28523-131">Compose</span></span><br><span data-ttu-id="28523-132">阅读</span><span class="sxs-lookup"><span data-stu-id="28523-132">Read</span></span> | <span data-ttu-id="28523-133">String</span><span class="sxs-lookup"><span data-stu-id="28523-133">String</span></span> | [<span data-ttu-id="28523-134">1.1</span><span class="sxs-lookup"><span data-stu-id="28523-134">1.1</span></span>](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| [<span data-ttu-id="28523-135">host</span><span class="sxs-lookup"><span data-stu-id="28523-135">host</span></span>](#host-hosttype) | <span data-ttu-id="28523-136">撰写</span><span class="sxs-lookup"><span data-stu-id="28523-136">Compose</span></span><br><span data-ttu-id="28523-137">阅读</span><span class="sxs-lookup"><span data-stu-id="28523-137">Read</span></span> | [<span data-ttu-id="28523-138">HostType</span><span class="sxs-lookup"><span data-stu-id="28523-138">HostType</span></span>](/javascript/api/office/office.hosttype?view=outlook-js-1.3) | [<span data-ttu-id="28523-139">1.1</span><span class="sxs-lookup"><span data-stu-id="28523-139">1.1</span></span>](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| [<span data-ttu-id="28523-140">mailbox</span><span class="sxs-lookup"><span data-stu-id="28523-140">mailbox</span></span>](office.context.mailbox.md) | <span data-ttu-id="28523-141">撰写</span><span class="sxs-lookup"><span data-stu-id="28523-141">Compose</span></span><br><span data-ttu-id="28523-142">阅读</span><span class="sxs-lookup"><span data-stu-id="28523-142">Read</span></span> | [<span data-ttu-id="28523-143">邮箱</span><span class="sxs-lookup"><span data-stu-id="28523-143">Mailbox</span></span>](/javascript/api/outlook/office.mailbox?view=outlook-js-1.3) | [<span data-ttu-id="28523-144">1.1</span><span class="sxs-lookup"><span data-stu-id="28523-144">1.1</span></span>](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| [<span data-ttu-id="28523-145">平台</span><span class="sxs-lookup"><span data-stu-id="28523-145">platform</span></span>](#platform-platformtype) | <span data-ttu-id="28523-146">撰写</span><span class="sxs-lookup"><span data-stu-id="28523-146">Compose</span></span><br><span data-ttu-id="28523-147">阅读</span><span class="sxs-lookup"><span data-stu-id="28523-147">Read</span></span> | [<span data-ttu-id="28523-148">PlatformType</span><span class="sxs-lookup"><span data-stu-id="28523-148">PlatformType</span></span>](/javascript/api/office/office.platformtype?view=outlook-js-1.3) | [<span data-ttu-id="28523-149">1.1</span><span class="sxs-lookup"><span data-stu-id="28523-149">1.1</span></span>](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| [<span data-ttu-id="28523-150">满足</span><span class="sxs-lookup"><span data-stu-id="28523-150">requirements</span></span>](#requirements-requirementsetsupport) | <span data-ttu-id="28523-151">撰写</span><span class="sxs-lookup"><span data-stu-id="28523-151">Compose</span></span><br><span data-ttu-id="28523-152">阅读</span><span class="sxs-lookup"><span data-stu-id="28523-152">Read</span></span> | [<span data-ttu-id="28523-153">RequirementSetSupport</span><span class="sxs-lookup"><span data-stu-id="28523-153">RequirementSetSupport</span></span>](/javascript/api/office/office.requirementsetsupport?view=outlook-js-1.3) | [<span data-ttu-id="28523-154">1.1</span><span class="sxs-lookup"><span data-stu-id="28523-154">1.1</span></span>](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| [<span data-ttu-id="28523-155">roamingSettings</span><span class="sxs-lookup"><span data-stu-id="28523-155">roamingSettings</span></span>](#roamingsettings-roamingsettings) | <span data-ttu-id="28523-156">撰写</span><span class="sxs-lookup"><span data-stu-id="28523-156">Compose</span></span><br><span data-ttu-id="28523-157">阅读</span><span class="sxs-lookup"><span data-stu-id="28523-157">Read</span></span> | [<span data-ttu-id="28523-158">RoamingSettings</span><span class="sxs-lookup"><span data-stu-id="28523-158">RoamingSettings</span></span>](/javascript/api/outlook/office.roamingsettings?view=outlook-js-1.3) | [<span data-ttu-id="28523-159">1.1</span><span class="sxs-lookup"><span data-stu-id="28523-159">1.1</span></span>](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| [<span data-ttu-id="28523-160">ui</span><span class="sxs-lookup"><span data-stu-id="28523-160">ui</span></span>](#ui-ui) | <span data-ttu-id="28523-161">撰写</span><span class="sxs-lookup"><span data-stu-id="28523-161">Compose</span></span><br><span data-ttu-id="28523-162">阅读</span><span class="sxs-lookup"><span data-stu-id="28523-162">Read</span></span> | [<span data-ttu-id="28523-163">UI</span><span class="sxs-lookup"><span data-stu-id="28523-163">UI</span></span>](/javascript/api/office/office.ui?view=outlook-js-1.3) | [<span data-ttu-id="28523-164">1.1</span><span class="sxs-lookup"><span data-stu-id="28523-164">1.1</span></span>](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [<span data-ttu-id="86fd5-120">contentLanguage</span><span class="sxs-lookup"><span data-stu-id="86fd5-120">contentLanguage</span></span>](#contentlanguage-string) | <span data-ttu-id="86fd5-121">撰写</span><span class="sxs-lookup"><span data-stu-id="86fd5-121">Compose</span></span><br><span data-ttu-id="86fd5-122">阅读</span><span class="sxs-lookup"><span data-stu-id="86fd5-122">Read</span></span> | <span data-ttu-id="86fd5-123">String</span><span class="sxs-lookup"><span data-stu-id="86fd5-123">String</span></span> | [<span data-ttu-id="86fd5-124">1.1</span><span class="sxs-lookup"><span data-stu-id="86fd5-124">1.1</span></span>](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [<span data-ttu-id="86fd5-125">过程</span><span class="sxs-lookup"><span data-stu-id="86fd5-125">diagnostics</span></span>](#diagnostics-contextinformation) | <span data-ttu-id="86fd5-126">撰写</span><span class="sxs-lookup"><span data-stu-id="86fd5-126">Compose</span></span><br><span data-ttu-id="86fd5-127">阅读</span><span class="sxs-lookup"><span data-stu-id="86fd5-127">Read</span></span> | [<span data-ttu-id="86fd5-128">ContextInformation</span><span class="sxs-lookup"><span data-stu-id="86fd5-128">ContextInformation</span></span>](/javascript/api/office/office.contextinformation?view=outlook-js-1.3&preserve-view=true) | [<span data-ttu-id="86fd5-129">1.1</span><span class="sxs-lookup"><span data-stu-id="86fd5-129">1.1</span></span>](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [<span data-ttu-id="86fd5-130">displayLanguage</span><span class="sxs-lookup"><span data-stu-id="86fd5-130">displayLanguage</span></span>](#displaylanguage-string) | <span data-ttu-id="86fd5-131">撰写</span><span class="sxs-lookup"><span data-stu-id="86fd5-131">Compose</span></span><br><span data-ttu-id="86fd5-132">阅读</span><span class="sxs-lookup"><span data-stu-id="86fd5-132">Read</span></span> | <span data-ttu-id="86fd5-133">String</span><span class="sxs-lookup"><span data-stu-id="86fd5-133">String</span></span> | [<span data-ttu-id="86fd5-134">1.1</span><span class="sxs-lookup"><span data-stu-id="86fd5-134">1.1</span></span>](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [<span data-ttu-id="86fd5-135">host</span><span class="sxs-lookup"><span data-stu-id="86fd5-135">host</span></span>](#host-hosttype) | <span data-ttu-id="86fd5-136">撰写</span><span class="sxs-lookup"><span data-stu-id="86fd5-136">Compose</span></span><br><span data-ttu-id="86fd5-137">阅读</span><span class="sxs-lookup"><span data-stu-id="86fd5-137">Read</span></span> | [<span data-ttu-id="86fd5-138">HostType</span><span class="sxs-lookup"><span data-stu-id="86fd5-138">HostType</span></span>](/javascript/api/office/office.hosttype?view=outlook-js-1.3&preserve-view=true) | [<span data-ttu-id="86fd5-139">1.1</span><span class="sxs-lookup"><span data-stu-id="86fd5-139">1.1</span></span>](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [<span data-ttu-id="86fd5-140">mailbox</span><span class="sxs-lookup"><span data-stu-id="86fd5-140">mailbox</span></span>](office.context.mailbox.md) | <span data-ttu-id="86fd5-141">撰写</span><span class="sxs-lookup"><span data-stu-id="86fd5-141">Compose</span></span><br><span data-ttu-id="86fd5-142">阅读</span><span class="sxs-lookup"><span data-stu-id="86fd5-142">Read</span></span> | [<span data-ttu-id="86fd5-143">邮箱</span><span class="sxs-lookup"><span data-stu-id="86fd5-143">Mailbox</span></span>](/javascript/api/outlook/office.mailbox?view=outlook-js-1.3&preserve-view=true) | [<span data-ttu-id="86fd5-144">1.1</span><span class="sxs-lookup"><span data-stu-id="86fd5-144">1.1</span></span>](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [<span data-ttu-id="86fd5-145">平台</span><span class="sxs-lookup"><span data-stu-id="86fd5-145">platform</span></span>](#platform-platformtype) | <span data-ttu-id="86fd5-146">撰写</span><span class="sxs-lookup"><span data-stu-id="86fd5-146">Compose</span></span><br><span data-ttu-id="86fd5-147">阅读</span><span class="sxs-lookup"><span data-stu-id="86fd5-147">Read</span></span> | [<span data-ttu-id="86fd5-148">PlatformType</span><span class="sxs-lookup"><span data-stu-id="86fd5-148">PlatformType</span></span>](/javascript/api/office/office.platformtype?view=outlook-js-1.3&preserve-view=true) | [<span data-ttu-id="86fd5-149">1.1</span><span class="sxs-lookup"><span data-stu-id="86fd5-149">1.1</span></span>](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [<span data-ttu-id="86fd5-150">满足</span><span class="sxs-lookup"><span data-stu-id="86fd5-150">requirements</span></span>](#requirements-requirementsetsupport) | <span data-ttu-id="86fd5-151">撰写</span><span class="sxs-lookup"><span data-stu-id="86fd5-151">Compose</span></span><br><span data-ttu-id="86fd5-152">阅读</span><span class="sxs-lookup"><span data-stu-id="86fd5-152">Read</span></span> | [<span data-ttu-id="86fd5-153">RequirementSetSupport</span><span class="sxs-lookup"><span data-stu-id="86fd5-153">RequirementSetSupport</span></span>](/javascript/api/office/office.requirementsetsupport?view=outlook-js-1.3&preserve-view=true) | [<span data-ttu-id="86fd5-154">1.1</span><span class="sxs-lookup"><span data-stu-id="86fd5-154">1.1</span></span>](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [<span data-ttu-id="86fd5-155">roamingSettings</span><span class="sxs-lookup"><span data-stu-id="86fd5-155">roamingSettings</span></span>](#roamingsettings-roamingsettings) | <span data-ttu-id="86fd5-156">撰写</span><span class="sxs-lookup"><span data-stu-id="86fd5-156">Compose</span></span><br><span data-ttu-id="86fd5-157">阅读</span><span class="sxs-lookup"><span data-stu-id="86fd5-157">Read</span></span> | [<span data-ttu-id="86fd5-158">RoamingSettings</span><span class="sxs-lookup"><span data-stu-id="86fd5-158">RoamingSettings</span></span>](/javascript/api/outlook/office.roamingsettings?view=outlook-js-1.3&preserve-view=true) | [<span data-ttu-id="86fd5-159">1.1</span><span class="sxs-lookup"><span data-stu-id="86fd5-159">1.1</span></span>](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [<span data-ttu-id="86fd5-160">ui</span><span class="sxs-lookup"><span data-stu-id="86fd5-160">ui</span></span>](#ui-ui) | <span data-ttu-id="86fd5-161">撰写</span><span class="sxs-lookup"><span data-stu-id="86fd5-161">Compose</span></span><br><span data-ttu-id="86fd5-162">阅读</span><span class="sxs-lookup"><span data-stu-id="86fd5-162">Read</span></span> | [<span data-ttu-id="86fd5-163">UI</span><span class="sxs-lookup"><span data-stu-id="86fd5-163">UI</span></span>](/javascript/api/office/office.ui?view=outlook-js-1.3&preserve-view=true) | [<span data-ttu-id="86fd5-164">1.1</span><span class="sxs-lookup"><span data-stu-id="86fd5-164">1.1</span></span>](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 
-## <a name="property-details"></a><span data-ttu-id="28523-165">属性详细信息</span><span class="sxs-lookup"><span data-stu-id="28523-165">Property details</span></span>
+## <a name="property-details"></a><span data-ttu-id="86fd5-165">属性详细信息</span><span class="sxs-lookup"><span data-stu-id="86fd5-165">Property details</span></span>
 
-#### <a name="contentlanguage-string"></a><span data-ttu-id="28523-166">contentLanguage： String</span><span class="sxs-lookup"><span data-stu-id="28523-166">contentLanguage: String</span></span>
+#### <a name="contentlanguage-string"></a><span data-ttu-id="86fd5-166">contentLanguage： String</span><span class="sxs-lookup"><span data-stu-id="86fd5-166">contentLanguage: String</span></span>
 
-<span data-ttu-id="28523-167">获取用户指定的用于编辑项目的区域设置 (语言) 。</span><span class="sxs-lookup"><span data-stu-id="28523-167">Gets the locale (language) specified by the user for editing the item.</span></span>
+<span data-ttu-id="86fd5-167">获取用户指定的用于编辑项目的区域设置 (语言) 。</span><span class="sxs-lookup"><span data-stu-id="86fd5-167">Gets the locale (language) specified by the user for editing the item.</span></span>
 
-<span data-ttu-id="28523-168">此 `contentLanguage` 值反映了使用 Office 客户端应用程序中的 "**文件 > 选项" > 语言**指定的当前**编辑语言**设置。</span><span class="sxs-lookup"><span data-stu-id="28523-168">The `contentLanguage` value reflects the current **Editing Language** setting specified with **File > Options > Language** in the Office client application.</span></span>
+<span data-ttu-id="86fd5-168">此 `contentLanguage` 值反映了使用 Office 客户端应用程序中的 "**文件 > 选项" > 语言**指定的当前**编辑语言**设置。</span><span class="sxs-lookup"><span data-stu-id="86fd5-168">The `contentLanguage` value reflects the current **Editing Language** setting specified with **File > Options > Language** in the Office client application.</span></span>
 
-##### <a name="type"></a><span data-ttu-id="28523-169">类型</span><span class="sxs-lookup"><span data-stu-id="28523-169">Type</span></span>
+##### <a name="type"></a><span data-ttu-id="86fd5-169">类型</span><span class="sxs-lookup"><span data-stu-id="86fd5-169">Type</span></span>
 
-*   <span data-ttu-id="28523-170">String</span><span class="sxs-lookup"><span data-stu-id="28523-170">String</span></span>
+*   <span data-ttu-id="86fd5-170">String</span><span class="sxs-lookup"><span data-stu-id="86fd5-170">String</span></span>
 
-##### <a name="requirements"></a><span data-ttu-id="28523-171">要求</span><span class="sxs-lookup"><span data-stu-id="28523-171">Requirements</span></span>
+##### <a name="requirements"></a><span data-ttu-id="86fd5-171">要求</span><span class="sxs-lookup"><span data-stu-id="86fd5-171">Requirements</span></span>
 
-|<span data-ttu-id="28523-172">要求</span><span class="sxs-lookup"><span data-stu-id="28523-172">Requirement</span></span>| <span data-ttu-id="28523-173">值</span><span class="sxs-lookup"><span data-stu-id="28523-173">Value</span></span>|
+|<span data-ttu-id="86fd5-172">要求</span><span class="sxs-lookup"><span data-stu-id="86fd5-172">Requirement</span></span>| <span data-ttu-id="86fd5-173">值</span><span class="sxs-lookup"><span data-stu-id="86fd5-173">Value</span></span>|
 |---|---|
-|[<span data-ttu-id="28523-174">最低版本的邮箱要求集</span><span class="sxs-lookup"><span data-stu-id="28523-174">Minimum mailbox requirement set version</span></span>](../../requirement-sets/outlook-api-requirement-sets.md)| <span data-ttu-id="28523-175">1.1</span><span class="sxs-lookup"><span data-stu-id="28523-175">1.1</span></span>|
-|[<span data-ttu-id="28523-176">适用的 Outlook 模式</span><span class="sxs-lookup"><span data-stu-id="28523-176">Applicable Outlook mode</span></span>](../../../outlook/outlook-add-ins-overview.md#extension-points)| <span data-ttu-id="28523-177">撰写或阅读</span><span class="sxs-lookup"><span data-stu-id="28523-177">Compose or Read</span></span>|
+|[<span data-ttu-id="86fd5-174">最低版本的邮箱要求集</span><span class="sxs-lookup"><span data-stu-id="86fd5-174">Minimum mailbox requirement set version</span></span>](../../requirement-sets/outlook-api-requirement-sets.md)| <span data-ttu-id="86fd5-175">1.1</span><span class="sxs-lookup"><span data-stu-id="86fd5-175">1.1</span></span>|
+|[<span data-ttu-id="86fd5-176">适用的 Outlook 模式</span><span class="sxs-lookup"><span data-stu-id="86fd5-176">Applicable Outlook mode</span></span>](../../../outlook/outlook-add-ins-overview.md#extension-points)| <span data-ttu-id="86fd5-177">撰写或阅读</span><span class="sxs-lookup"><span data-stu-id="86fd5-177">Compose or Read</span></span>|
 
-##### <a name="example"></a><span data-ttu-id="28523-178">示例</span><span class="sxs-lookup"><span data-stu-id="28523-178">Example</span></span>
+##### <a name="example"></a><span data-ttu-id="86fd5-178">示例</span><span class="sxs-lookup"><span data-stu-id="86fd5-178">Example</span></span>
 
 ```js
 function sayHelloWithContentLanguage() {
@@ -82,22 +82,22 @@ function write(message){
 ---
 ---
 
-#### <a name="diagnostics-contextinformation"></a><span data-ttu-id="28523-179">诊断： [ContextInformation](/javascript/api/office/office.contextinformation)</span><span class="sxs-lookup"><span data-stu-id="28523-179">diagnostics: [ContextInformation](/javascript/api/office/office.contextinformation)</span></span>
+#### <a name="diagnostics-contextinformation"></a><span data-ttu-id="86fd5-179">诊断： [ContextInformation](/javascript/api/office/office.contextinformation)</span><span class="sxs-lookup"><span data-stu-id="86fd5-179">diagnostics: [ContextInformation](/javascript/api/office/office.contextinformation)</span></span>
 
-<span data-ttu-id="28523-180">获取有关加载项在其中运行的环境的信息。</span><span class="sxs-lookup"><span data-stu-id="28523-180">Gets information about the environment in which the add-in is running.</span></span>
+<span data-ttu-id="86fd5-180">获取有关加载项在其中运行的环境的信息。</span><span class="sxs-lookup"><span data-stu-id="86fd5-180">Gets information about the environment in which the add-in is running.</span></span>
 
-##### <a name="type"></a><span data-ttu-id="28523-181">类型</span><span class="sxs-lookup"><span data-stu-id="28523-181">Type</span></span>
+##### <a name="type"></a><span data-ttu-id="86fd5-181">类型</span><span class="sxs-lookup"><span data-stu-id="86fd5-181">Type</span></span>
 
-*   [<span data-ttu-id="28523-182">ContextInformation</span><span class="sxs-lookup"><span data-stu-id="28523-182">ContextInformation</span></span>](/javascript/api/office/office.contextinformation)
+*   [<span data-ttu-id="86fd5-182">ContextInformation</span><span class="sxs-lookup"><span data-stu-id="86fd5-182">ContextInformation</span></span>](/javascript/api/office/office.contextinformation)
 
-##### <a name="requirements"></a><span data-ttu-id="28523-183">Requirements</span><span class="sxs-lookup"><span data-stu-id="28523-183">Requirements</span></span>
+##### <a name="requirements"></a><span data-ttu-id="86fd5-183">Requirements</span><span class="sxs-lookup"><span data-stu-id="86fd5-183">Requirements</span></span>
 
-|<span data-ttu-id="28523-184">要求</span><span class="sxs-lookup"><span data-stu-id="28523-184">Requirement</span></span>| <span data-ttu-id="28523-185">值</span><span class="sxs-lookup"><span data-stu-id="28523-185">Value</span></span>|
+|<span data-ttu-id="86fd5-184">要求</span><span class="sxs-lookup"><span data-stu-id="86fd5-184">Requirement</span></span>| <span data-ttu-id="86fd5-185">值</span><span class="sxs-lookup"><span data-stu-id="86fd5-185">Value</span></span>|
 |---|---|
-|[<span data-ttu-id="28523-186">最低版本的邮箱要求集</span><span class="sxs-lookup"><span data-stu-id="28523-186">Minimum mailbox requirement set version</span></span>](../../requirement-sets/outlook-api-requirement-sets.md)| <span data-ttu-id="28523-187">1.1</span><span class="sxs-lookup"><span data-stu-id="28523-187">1.1</span></span>|
-|[<span data-ttu-id="28523-188">适用的 Outlook 模式</span><span class="sxs-lookup"><span data-stu-id="28523-188">Applicable Outlook mode</span></span>](../../../outlook/outlook-add-ins-overview.md#extension-points)| <span data-ttu-id="28523-189">撰写或阅读</span><span class="sxs-lookup"><span data-stu-id="28523-189">Compose or Read</span></span>|
+|[<span data-ttu-id="86fd5-186">最低版本的邮箱要求集</span><span class="sxs-lookup"><span data-stu-id="86fd5-186">Minimum mailbox requirement set version</span></span>](../../requirement-sets/outlook-api-requirement-sets.md)| <span data-ttu-id="86fd5-187">1.1</span><span class="sxs-lookup"><span data-stu-id="86fd5-187">1.1</span></span>|
+|[<span data-ttu-id="86fd5-188">适用的 Outlook 模式</span><span class="sxs-lookup"><span data-stu-id="86fd5-188">Applicable Outlook mode</span></span>](../../../outlook/outlook-add-ins-overview.md#extension-points)| <span data-ttu-id="86fd5-189">撰写或阅读</span><span class="sxs-lookup"><span data-stu-id="86fd5-189">Compose or Read</span></span>|
 
-##### <a name="example"></a><span data-ttu-id="28523-190">示例</span><span class="sxs-lookup"><span data-stu-id="28523-190">Example</span></span>
+##### <a name="example"></a><span data-ttu-id="86fd5-190">示例</span><span class="sxs-lookup"><span data-stu-id="86fd5-190">Example</span></span>
 
 ```js
 console.log(JSON.stringify(Office.context.diagnostics));
@@ -108,24 +108,24 @@ console.log(JSON.stringify(Office.context.diagnostics));
 ---
 ---
 
-#### <a name="displaylanguage-string"></a><span data-ttu-id="28523-191">displayLanguage： String</span><span class="sxs-lookup"><span data-stu-id="28523-191">displayLanguage: String</span></span>
+#### <a name="displaylanguage-string"></a><span data-ttu-id="86fd5-191">displayLanguage： String</span><span class="sxs-lookup"><span data-stu-id="86fd5-191">displayLanguage: String</span></span>
 
-<span data-ttu-id="28523-192">获取用户为 Office 客户端应用程序的 UI 指定的 RFC 1766 语言标记格式中 (语言) 的区域设置。</span><span class="sxs-lookup"><span data-stu-id="28523-192">Gets the locale (language) in RFC 1766 Language tag format specified by the user for the UI of the Office client application.</span></span>
+<span data-ttu-id="86fd5-192">获取用户为 Office 客户端应用程序的 UI 指定的 RFC 1766 语言标记格式中 (语言) 的区域设置。</span><span class="sxs-lookup"><span data-stu-id="86fd5-192">Gets the locale (language) in RFC 1766 Language tag format specified by the user for the UI of the Office client application.</span></span>
 
-<span data-ttu-id="28523-193">此 `displayLanguage` 值反映了使用 Office 客户端应用程序中的**File > Options > 语言**指定的当前**显示语言**设置。</span><span class="sxs-lookup"><span data-stu-id="28523-193">The `displayLanguage` value reflects the current **Display Language** setting specified with **File > Options > Language** in the Office client application.</span></span>
+<span data-ttu-id="86fd5-193">此 `displayLanguage` 值反映了使用 Office 客户端应用程序中的**File > Options > 语言**指定的当前**显示语言**设置。</span><span class="sxs-lookup"><span data-stu-id="86fd5-193">The `displayLanguage` value reflects the current **Display Language** setting specified with **File > Options > Language** in the Office client application.</span></span>
 
-##### <a name="type"></a><span data-ttu-id="28523-194">类型</span><span class="sxs-lookup"><span data-stu-id="28523-194">Type</span></span>
+##### <a name="type"></a><span data-ttu-id="86fd5-194">类型</span><span class="sxs-lookup"><span data-stu-id="86fd5-194">Type</span></span>
 
-*   <span data-ttu-id="28523-195">String</span><span class="sxs-lookup"><span data-stu-id="28523-195">String</span></span>
+*   <span data-ttu-id="86fd5-195">String</span><span class="sxs-lookup"><span data-stu-id="86fd5-195">String</span></span>
 
-##### <a name="requirements"></a><span data-ttu-id="28523-196">要求</span><span class="sxs-lookup"><span data-stu-id="28523-196">Requirements</span></span>
+##### <a name="requirements"></a><span data-ttu-id="86fd5-196">要求</span><span class="sxs-lookup"><span data-stu-id="86fd5-196">Requirements</span></span>
 
-|<span data-ttu-id="28523-197">要求</span><span class="sxs-lookup"><span data-stu-id="28523-197">Requirement</span></span>| <span data-ttu-id="28523-198">值</span><span class="sxs-lookup"><span data-stu-id="28523-198">Value</span></span>|
+|<span data-ttu-id="86fd5-197">要求</span><span class="sxs-lookup"><span data-stu-id="86fd5-197">Requirement</span></span>| <span data-ttu-id="86fd5-198">值</span><span class="sxs-lookup"><span data-stu-id="86fd5-198">Value</span></span>|
 |---|---|
-|[<span data-ttu-id="28523-199">最低版本的邮箱要求集</span><span class="sxs-lookup"><span data-stu-id="28523-199">Minimum mailbox requirement set version</span></span>](../../requirement-sets/outlook-api-requirement-sets.md)| <span data-ttu-id="28523-200">1.1</span><span class="sxs-lookup"><span data-stu-id="28523-200">1.1</span></span>|
-|[<span data-ttu-id="28523-201">适用的 Outlook 模式</span><span class="sxs-lookup"><span data-stu-id="28523-201">Applicable Outlook mode</span></span>](../../../outlook/outlook-add-ins-overview.md#extension-points)| <span data-ttu-id="28523-202">撰写或阅读</span><span class="sxs-lookup"><span data-stu-id="28523-202">Compose or Read</span></span>|
+|[<span data-ttu-id="86fd5-199">最低版本的邮箱要求集</span><span class="sxs-lookup"><span data-stu-id="86fd5-199">Minimum mailbox requirement set version</span></span>](../../requirement-sets/outlook-api-requirement-sets.md)| <span data-ttu-id="86fd5-200">1.1</span><span class="sxs-lookup"><span data-stu-id="86fd5-200">1.1</span></span>|
+|[<span data-ttu-id="86fd5-201">适用的 Outlook 模式</span><span class="sxs-lookup"><span data-stu-id="86fd5-201">Applicable Outlook mode</span></span>](../../../outlook/outlook-add-ins-overview.md#extension-points)| <span data-ttu-id="86fd5-202">撰写或阅读</span><span class="sxs-lookup"><span data-stu-id="86fd5-202">Compose or Read</span></span>|
 
-##### <a name="example"></a><span data-ttu-id="28523-203">示例</span><span class="sxs-lookup"><span data-stu-id="28523-203">Example</span></span>
+##### <a name="example"></a><span data-ttu-id="86fd5-203">示例</span><span class="sxs-lookup"><span data-stu-id="86fd5-203">Example</span></span>
 
 ```js
 function sayHelloWithDisplayLanguage() {
@@ -151,22 +151,22 @@ function write(message){
 ---
 ---
 
-#### <a name="host-hosttype"></a><span data-ttu-id="28523-204">主机： [HostType](/javascript/api/office/office.hosttype)</span><span class="sxs-lookup"><span data-stu-id="28523-204">host: [HostType](/javascript/api/office/office.hosttype)</span></span>
+#### <a name="host-hosttype"></a><span data-ttu-id="86fd5-204">主机： [HostType](/javascript/api/office/office.hosttype)</span><span class="sxs-lookup"><span data-stu-id="86fd5-204">host: [HostType](/javascript/api/office/office.hosttype)</span></span>
 
-<span data-ttu-id="28523-205">获取承载外接程序的 Office 应用程序。</span><span class="sxs-lookup"><span data-stu-id="28523-205">Gets the Office application that is hosting the add-in.</span></span>
+<span data-ttu-id="86fd5-205">获取承载外接程序的 Office 应用程序。</span><span class="sxs-lookup"><span data-stu-id="86fd5-205">Gets the Office application that is hosting the add-in.</span></span>
 
-##### <a name="type"></a><span data-ttu-id="28523-206">类型</span><span class="sxs-lookup"><span data-stu-id="28523-206">Type</span></span>
+##### <a name="type"></a><span data-ttu-id="86fd5-206">类型</span><span class="sxs-lookup"><span data-stu-id="86fd5-206">Type</span></span>
 
-*   [<span data-ttu-id="28523-207">HostType</span><span class="sxs-lookup"><span data-stu-id="28523-207">HostType</span></span>](/javascript/api/office/office.hosttype)
+*   [<span data-ttu-id="86fd5-207">HostType</span><span class="sxs-lookup"><span data-stu-id="86fd5-207">HostType</span></span>](/javascript/api/office/office.hosttype)
 
-##### <a name="requirements"></a><span data-ttu-id="28523-208">Requirements</span><span class="sxs-lookup"><span data-stu-id="28523-208">Requirements</span></span>
+##### <a name="requirements"></a><span data-ttu-id="86fd5-208">Requirements</span><span class="sxs-lookup"><span data-stu-id="86fd5-208">Requirements</span></span>
 
-|<span data-ttu-id="28523-209">要求</span><span class="sxs-lookup"><span data-stu-id="28523-209">Requirement</span></span>| <span data-ttu-id="28523-210">值</span><span class="sxs-lookup"><span data-stu-id="28523-210">Value</span></span>|
+|<span data-ttu-id="86fd5-209">要求</span><span class="sxs-lookup"><span data-stu-id="86fd5-209">Requirement</span></span>| <span data-ttu-id="86fd5-210">值</span><span class="sxs-lookup"><span data-stu-id="86fd5-210">Value</span></span>|
 |---|---|
-|[<span data-ttu-id="28523-211">最低版本的邮箱要求集</span><span class="sxs-lookup"><span data-stu-id="28523-211">Minimum mailbox requirement set version</span></span>](../../requirement-sets/outlook-api-requirement-sets.md)| <span data-ttu-id="28523-212">1.1</span><span class="sxs-lookup"><span data-stu-id="28523-212">1.1</span></span>|
-|[<span data-ttu-id="28523-213">适用的 Outlook 模式</span><span class="sxs-lookup"><span data-stu-id="28523-213">Applicable Outlook mode</span></span>](../../../outlook/outlook-add-ins-overview.md#extension-points)| <span data-ttu-id="28523-214">撰写或阅读</span><span class="sxs-lookup"><span data-stu-id="28523-214">Compose or Read</span></span>|
+|[<span data-ttu-id="86fd5-211">最低版本的邮箱要求集</span><span class="sxs-lookup"><span data-stu-id="86fd5-211">Minimum mailbox requirement set version</span></span>](../../requirement-sets/outlook-api-requirement-sets.md)| <span data-ttu-id="86fd5-212">1.1</span><span class="sxs-lookup"><span data-stu-id="86fd5-212">1.1</span></span>|
+|[<span data-ttu-id="86fd5-213">适用的 Outlook 模式</span><span class="sxs-lookup"><span data-stu-id="86fd5-213">Applicable Outlook mode</span></span>](../../../outlook/outlook-add-ins-overview.md#extension-points)| <span data-ttu-id="86fd5-214">撰写或阅读</span><span class="sxs-lookup"><span data-stu-id="86fd5-214">Compose or Read</span></span>|
 
-##### <a name="example"></a><span data-ttu-id="28523-215">示例</span><span class="sxs-lookup"><span data-stu-id="28523-215">Example</span></span>
+##### <a name="example"></a><span data-ttu-id="86fd5-215">示例</span><span class="sxs-lookup"><span data-stu-id="86fd5-215">Example</span></span>
 
 ```js
 console.log(JSON.stringify(Office.context.host));
@@ -177,22 +177,22 @@ console.log(JSON.stringify(Office.context.host));
 ---
 ---
 
-#### <a name="platform-platformtype"></a><span data-ttu-id="28523-216">platform： [PlatformType](/javascript/api/office/office.platformtype)</span><span class="sxs-lookup"><span data-stu-id="28523-216">platform: [PlatformType](/javascript/api/office/office.platformtype)</span></span>
+#### <a name="platform-platformtype"></a><span data-ttu-id="86fd5-216">platform： [PlatformType](/javascript/api/office/office.platformtype)</span><span class="sxs-lookup"><span data-stu-id="86fd5-216">platform: [PlatformType](/javascript/api/office/office.platformtype)</span></span>
 
-<span data-ttu-id="28523-217">提供在其上运行外接的平台。</span><span class="sxs-lookup"><span data-stu-id="28523-217">Provides the platform on which the add-in is running.</span></span>
+<span data-ttu-id="86fd5-217">提供在其上运行外接的平台。</span><span class="sxs-lookup"><span data-stu-id="86fd5-217">Provides the platform on which the add-in is running.</span></span>
 
-##### <a name="type"></a><span data-ttu-id="28523-218">类型</span><span class="sxs-lookup"><span data-stu-id="28523-218">Type</span></span>
+##### <a name="type"></a><span data-ttu-id="86fd5-218">类型</span><span class="sxs-lookup"><span data-stu-id="86fd5-218">Type</span></span>
 
-*   [<span data-ttu-id="28523-219">PlatformType</span><span class="sxs-lookup"><span data-stu-id="28523-219">PlatformType</span></span>](/javascript/api/office/office.platformtype)
+*   [<span data-ttu-id="86fd5-219">PlatformType</span><span class="sxs-lookup"><span data-stu-id="86fd5-219">PlatformType</span></span>](/javascript/api/office/office.platformtype)
 
-##### <a name="requirements"></a><span data-ttu-id="28523-220">Requirements</span><span class="sxs-lookup"><span data-stu-id="28523-220">Requirements</span></span>
+##### <a name="requirements"></a><span data-ttu-id="86fd5-220">Requirements</span><span class="sxs-lookup"><span data-stu-id="86fd5-220">Requirements</span></span>
 
-|<span data-ttu-id="28523-221">要求</span><span class="sxs-lookup"><span data-stu-id="28523-221">Requirement</span></span>| <span data-ttu-id="28523-222">值</span><span class="sxs-lookup"><span data-stu-id="28523-222">Value</span></span>|
+|<span data-ttu-id="86fd5-221">要求</span><span class="sxs-lookup"><span data-stu-id="86fd5-221">Requirement</span></span>| <span data-ttu-id="86fd5-222">值</span><span class="sxs-lookup"><span data-stu-id="86fd5-222">Value</span></span>|
 |---|---|
-|[<span data-ttu-id="28523-223">最低版本的邮箱要求集</span><span class="sxs-lookup"><span data-stu-id="28523-223">Minimum mailbox requirement set version</span></span>](../../requirement-sets/outlook-api-requirement-sets.md)| <span data-ttu-id="28523-224">1.1</span><span class="sxs-lookup"><span data-stu-id="28523-224">1.1</span></span>|
-|[<span data-ttu-id="28523-225">适用的 Outlook 模式</span><span class="sxs-lookup"><span data-stu-id="28523-225">Applicable Outlook mode</span></span>](../../../outlook/outlook-add-ins-overview.md#extension-points)| <span data-ttu-id="28523-226">撰写或阅读</span><span class="sxs-lookup"><span data-stu-id="28523-226">Compose or Read</span></span>|
+|[<span data-ttu-id="86fd5-223">最低版本的邮箱要求集</span><span class="sxs-lookup"><span data-stu-id="86fd5-223">Minimum mailbox requirement set version</span></span>](../../requirement-sets/outlook-api-requirement-sets.md)| <span data-ttu-id="86fd5-224">1.1</span><span class="sxs-lookup"><span data-stu-id="86fd5-224">1.1</span></span>|
+|[<span data-ttu-id="86fd5-225">适用的 Outlook 模式</span><span class="sxs-lookup"><span data-stu-id="86fd5-225">Applicable Outlook mode</span></span>](../../../outlook/outlook-add-ins-overview.md#extension-points)| <span data-ttu-id="86fd5-226">撰写或阅读</span><span class="sxs-lookup"><span data-stu-id="86fd5-226">Compose or Read</span></span>|
 
-##### <a name="example"></a><span data-ttu-id="28523-227">示例</span><span class="sxs-lookup"><span data-stu-id="28523-227">Example</span></span>
+##### <a name="example"></a><span data-ttu-id="86fd5-227">示例</span><span class="sxs-lookup"><span data-stu-id="86fd5-227">Example</span></span>
 
 ```js
 console.log(JSON.stringify(Office.context.platform));
@@ -203,22 +203,22 @@ console.log(JSON.stringify(Office.context.platform));
 ---
 ---
 
-#### <a name="requirements-requirementsetsupport"></a><span data-ttu-id="28523-228">要求： [RequirementSetSupport](/javascript/api/office/office.requirementsetsupport)</span><span class="sxs-lookup"><span data-stu-id="28523-228">requirements: [RequirementSetSupport](/javascript/api/office/office.requirementsetsupport)</span></span>
+#### <a name="requirements-requirementsetsupport"></a><span data-ttu-id="86fd5-228">要求： [RequirementSetSupport](/javascript/api/office/office.requirementsetsupport)</span><span class="sxs-lookup"><span data-stu-id="86fd5-228">requirements: [RequirementSetSupport](/javascript/api/office/office.requirementsetsupport)</span></span>
 
-<span data-ttu-id="28523-229">提供用于确定当前应用程序和平台支持哪些要求集的方法。</span><span class="sxs-lookup"><span data-stu-id="28523-229">Provides a method for determining what requirement sets are supported on the current application and platform.</span></span>
+<span data-ttu-id="86fd5-229">提供用于确定当前应用程序和平台支持哪些要求集的方法。</span><span class="sxs-lookup"><span data-stu-id="86fd5-229">Provides a method for determining what requirement sets are supported on the current application and platform.</span></span>
 
-##### <a name="type"></a><span data-ttu-id="28523-230">类型</span><span class="sxs-lookup"><span data-stu-id="28523-230">Type</span></span>
+##### <a name="type"></a><span data-ttu-id="86fd5-230">类型</span><span class="sxs-lookup"><span data-stu-id="86fd5-230">Type</span></span>
 
-*   [<span data-ttu-id="28523-231">RequirementSetSupport</span><span class="sxs-lookup"><span data-stu-id="28523-231">RequirementSetSupport</span></span>](/javascript/api/office/office.requirementsetsupport)
+*   [<span data-ttu-id="86fd5-231">RequirementSetSupport</span><span class="sxs-lookup"><span data-stu-id="86fd5-231">RequirementSetSupport</span></span>](/javascript/api/office/office.requirementsetsupport)
 
-##### <a name="requirements"></a><span data-ttu-id="28523-232">Requirements</span><span class="sxs-lookup"><span data-stu-id="28523-232">Requirements</span></span>
+##### <a name="requirements"></a><span data-ttu-id="86fd5-232">Requirements</span><span class="sxs-lookup"><span data-stu-id="86fd5-232">Requirements</span></span>
 
-|<span data-ttu-id="28523-233">要求</span><span class="sxs-lookup"><span data-stu-id="28523-233">Requirement</span></span>| <span data-ttu-id="28523-234">值</span><span class="sxs-lookup"><span data-stu-id="28523-234">Value</span></span>|
+|<span data-ttu-id="86fd5-233">要求</span><span class="sxs-lookup"><span data-stu-id="86fd5-233">Requirement</span></span>| <span data-ttu-id="86fd5-234">值</span><span class="sxs-lookup"><span data-stu-id="86fd5-234">Value</span></span>|
 |---|---|
-|[<span data-ttu-id="28523-235">最低版本的邮箱要求集</span><span class="sxs-lookup"><span data-stu-id="28523-235">Minimum mailbox requirement set version</span></span>](../../requirement-sets/outlook-api-requirement-sets.md)| <span data-ttu-id="28523-236">1.1</span><span class="sxs-lookup"><span data-stu-id="28523-236">1.1</span></span>|
-|[<span data-ttu-id="28523-237">适用的 Outlook 模式</span><span class="sxs-lookup"><span data-stu-id="28523-237">Applicable Outlook mode</span></span>](../../../outlook/outlook-add-ins-overview.md#extension-points)| <span data-ttu-id="28523-238">撰写或阅读</span><span class="sxs-lookup"><span data-stu-id="28523-238">Compose or Read</span></span>|
+|[<span data-ttu-id="86fd5-235">最低版本的邮箱要求集</span><span class="sxs-lookup"><span data-stu-id="86fd5-235">Minimum mailbox requirement set version</span></span>](../../requirement-sets/outlook-api-requirement-sets.md)| <span data-ttu-id="86fd5-236">1.1</span><span class="sxs-lookup"><span data-stu-id="86fd5-236">1.1</span></span>|
+|[<span data-ttu-id="86fd5-237">适用的 Outlook 模式</span><span class="sxs-lookup"><span data-stu-id="86fd5-237">Applicable Outlook mode</span></span>](../../../outlook/outlook-add-ins-overview.md#extension-points)| <span data-ttu-id="86fd5-238">撰写或阅读</span><span class="sxs-lookup"><span data-stu-id="86fd5-238">Compose or Read</span></span>|
 
-##### <a name="example"></a><span data-ttu-id="28523-239">示例</span><span class="sxs-lookup"><span data-stu-id="28523-239">Example</span></span>
+##### <a name="example"></a><span data-ttu-id="86fd5-239">示例</span><span class="sxs-lookup"><span data-stu-id="86fd5-239">Example</span></span>
 
 ```js
 console.log(JSON.stringify(Office.context.requirements.isSetSupported("mailbox", "1.1")));
@@ -229,40 +229,40 @@ console.log(JSON.stringify(Office.context.requirements.isSetSupported("mailbox",
 ---
 ---
 
-#### <a name="roamingsettings-roamingsettings"></a><span data-ttu-id="28523-240">roamingSettings： [roamingSettings](/javascript/api/outlook/office.roamingsettings)</span><span class="sxs-lookup"><span data-stu-id="28523-240">roamingSettings: [RoamingSettings](/javascript/api/outlook/office.roamingsettings)</span></span>
+#### <a name="roamingsettings-roamingsettings"></a><span data-ttu-id="86fd5-240">roamingSettings： [roamingSettings](/javascript/api/outlook/office.roamingsettings)</span><span class="sxs-lookup"><span data-stu-id="86fd5-240">roamingSettings: [RoamingSettings](/javascript/api/outlook/office.roamingsettings)</span></span>
 
-<span data-ttu-id="28523-241">获取一个对象，它表示保存到用户邮箱的邮件外接程序的自定义设置或状态。</span><span class="sxs-lookup"><span data-stu-id="28523-241">Gets an object that represents the custom settings or state of a mail add-in saved to a user's mailbox.</span></span>
+<span data-ttu-id="86fd5-241">获取一个对象，它表示保存到用户邮箱的邮件外接程序的自定义设置或状态。</span><span class="sxs-lookup"><span data-stu-id="86fd5-241">Gets an object that represents the custom settings or state of a mail add-in saved to a user's mailbox.</span></span>
 
-<span data-ttu-id="28523-242">该 `RoamingSettings` 对象使您可以存储和访问存储在用户邮箱中的邮件外接程序的数据，以便该外接程序从用于访问该邮箱的任何 Outlook 客户端运行时都可使用该加载项。</span><span class="sxs-lookup"><span data-stu-id="28523-242">The `RoamingSettings` object lets you store and access data for a mail add-in that is stored in a user's mailbox, so that is available to that add-in when it is running from any Outlook client used to access that mailbox.</span></span>
+<span data-ttu-id="86fd5-242">该 `RoamingSettings` 对象使您可以存储和访问存储在用户邮箱中的邮件外接程序的数据，以便该外接程序从用于访问该邮箱的任何 Outlook 客户端运行时都可使用该加载项。</span><span class="sxs-lookup"><span data-stu-id="86fd5-242">The `RoamingSettings` object lets you store and access data for a mail add-in that is stored in a user's mailbox, so that is available to that add-in when it is running from any Outlook client used to access that mailbox.</span></span>
 
-##### <a name="type"></a><span data-ttu-id="28523-243">类型</span><span class="sxs-lookup"><span data-stu-id="28523-243">Type</span></span>
+##### <a name="type"></a><span data-ttu-id="86fd5-243">类型</span><span class="sxs-lookup"><span data-stu-id="86fd5-243">Type</span></span>
 
-*   [<span data-ttu-id="28523-244">RoamingSettings</span><span class="sxs-lookup"><span data-stu-id="28523-244">RoamingSettings</span></span>](/javascript/api/outlook/office.RoamingSettings)
+*   [<span data-ttu-id="86fd5-244">RoamingSettings</span><span class="sxs-lookup"><span data-stu-id="86fd5-244">RoamingSettings</span></span>](/javascript/api/outlook/office.RoamingSettings)
 
-##### <a name="requirements"></a><span data-ttu-id="28523-245">Requirements</span><span class="sxs-lookup"><span data-stu-id="28523-245">Requirements</span></span>
+##### <a name="requirements"></a><span data-ttu-id="86fd5-245">Requirements</span><span class="sxs-lookup"><span data-stu-id="86fd5-245">Requirements</span></span>
 
-|<span data-ttu-id="28523-246">要求</span><span class="sxs-lookup"><span data-stu-id="28523-246">Requirement</span></span>| <span data-ttu-id="28523-247">值</span><span class="sxs-lookup"><span data-stu-id="28523-247">Value</span></span>|
+|<span data-ttu-id="86fd5-246">要求</span><span class="sxs-lookup"><span data-stu-id="86fd5-246">Requirement</span></span>| <span data-ttu-id="86fd5-247">值</span><span class="sxs-lookup"><span data-stu-id="86fd5-247">Value</span></span>|
 |---|---|
-|[<span data-ttu-id="28523-248">最低版本的邮箱要求集</span><span class="sxs-lookup"><span data-stu-id="28523-248">Minimum mailbox requirement set version</span></span>](../../requirement-sets/outlook-api-requirement-sets.md)| <span data-ttu-id="28523-249">1.1</span><span class="sxs-lookup"><span data-stu-id="28523-249">1.1</span></span>|
-|[<span data-ttu-id="28523-250">最低权限级别</span><span class="sxs-lookup"><span data-stu-id="28523-250">Minimum permission level</span></span>](../../../outlook/understanding-outlook-add-in-permissions.md)| <span data-ttu-id="28523-251">受限</span><span class="sxs-lookup"><span data-stu-id="28523-251">Restricted</span></span>|
-|[<span data-ttu-id="28523-252">适用的 Outlook 模式</span><span class="sxs-lookup"><span data-stu-id="28523-252">Applicable Outlook mode</span></span>](../../../outlook/outlook-add-ins-overview.md#extension-points)| <span data-ttu-id="28523-253">撰写或阅读</span><span class="sxs-lookup"><span data-stu-id="28523-253">Compose or Read</span></span>|
+|[<span data-ttu-id="86fd5-248">最低版本的邮箱要求集</span><span class="sxs-lookup"><span data-stu-id="86fd5-248">Minimum mailbox requirement set version</span></span>](../../requirement-sets/outlook-api-requirement-sets.md)| <span data-ttu-id="86fd5-249">1.1</span><span class="sxs-lookup"><span data-stu-id="86fd5-249">1.1</span></span>|
+|[<span data-ttu-id="86fd5-250">最低权限级别</span><span class="sxs-lookup"><span data-stu-id="86fd5-250">Minimum permission level</span></span>](../../../outlook/understanding-outlook-add-in-permissions.md)| <span data-ttu-id="86fd5-251">受限</span><span class="sxs-lookup"><span data-stu-id="86fd5-251">Restricted</span></span>|
+|[<span data-ttu-id="86fd5-252">适用的 Outlook 模式</span><span class="sxs-lookup"><span data-stu-id="86fd5-252">Applicable Outlook mode</span></span>](../../../outlook/outlook-add-ins-overview.md#extension-points)| <span data-ttu-id="86fd5-253">撰写或阅读</span><span class="sxs-lookup"><span data-stu-id="86fd5-253">Compose or Read</span></span>|
 
 <br>
 
 ---
 ---
 
-#### <a name="ui-ui"></a><span data-ttu-id="28523-254">ui： [ui](/javascript/api/office/office.ui)</span><span class="sxs-lookup"><span data-stu-id="28523-254">ui: [UI](/javascript/api/office/office.ui)</span></span>
+#### <a name="ui-ui"></a><span data-ttu-id="86fd5-254">ui： [ui](/javascript/api/office/office.ui)</span><span class="sxs-lookup"><span data-stu-id="86fd5-254">ui: [UI](/javascript/api/office/office.ui)</span></span>
 
-<span data-ttu-id="28523-255">提供可用于在 Office 外接程序中创建和操作 UI 组件（如对话框）的对象和方法。</span><span class="sxs-lookup"><span data-stu-id="28523-255">Provides objects and methods that you can use to create and manipulate UI components, such as dialog boxes, in your Office Add-ins.</span></span>
+<span data-ttu-id="86fd5-255">提供可用于在 Office 外接程序中创建和操作 UI 组件（如对话框）的对象和方法。</span><span class="sxs-lookup"><span data-stu-id="86fd5-255">Provides objects and methods that you can use to create and manipulate UI components, such as dialog boxes, in your Office Add-ins.</span></span>
 
-##### <a name="type"></a><span data-ttu-id="28523-256">类型</span><span class="sxs-lookup"><span data-stu-id="28523-256">Type</span></span>
+##### <a name="type"></a><span data-ttu-id="86fd5-256">类型</span><span class="sxs-lookup"><span data-stu-id="86fd5-256">Type</span></span>
 
-*   [<span data-ttu-id="28523-257">UI</span><span class="sxs-lookup"><span data-stu-id="28523-257">UI</span></span>](/javascript/api/office/office.ui)
+*   [<span data-ttu-id="86fd5-257">UI</span><span class="sxs-lookup"><span data-stu-id="86fd5-257">UI</span></span>](/javascript/api/office/office.ui)
 
-##### <a name="requirements"></a><span data-ttu-id="28523-258">Requirements</span><span class="sxs-lookup"><span data-stu-id="28523-258">Requirements</span></span>
+##### <a name="requirements"></a><span data-ttu-id="86fd5-258">Requirements</span><span class="sxs-lookup"><span data-stu-id="86fd5-258">Requirements</span></span>
 
-|<span data-ttu-id="28523-259">要求</span><span class="sxs-lookup"><span data-stu-id="28523-259">Requirement</span></span>| <span data-ttu-id="28523-260">值</span><span class="sxs-lookup"><span data-stu-id="28523-260">Value</span></span>|
+|<span data-ttu-id="86fd5-259">要求</span><span class="sxs-lookup"><span data-stu-id="86fd5-259">Requirement</span></span>| <span data-ttu-id="86fd5-260">值</span><span class="sxs-lookup"><span data-stu-id="86fd5-260">Value</span></span>|
 |---|---|
-|[<span data-ttu-id="28523-261">最低版本的邮箱要求集</span><span class="sxs-lookup"><span data-stu-id="28523-261">Minimum mailbox requirement set version</span></span>](../../requirement-sets/outlook-api-requirement-sets.md)| <span data-ttu-id="28523-262">1.1</span><span class="sxs-lookup"><span data-stu-id="28523-262">1.1</span></span>|
-|[<span data-ttu-id="28523-263">适用的 Outlook 模式</span><span class="sxs-lookup"><span data-stu-id="28523-263">Applicable Outlook mode</span></span>](../../../outlook/outlook-add-ins-overview.md#extension-points)| <span data-ttu-id="28523-264">撰写或阅读</span><span class="sxs-lookup"><span data-stu-id="28523-264">Compose or Read</span></span>|
+|[<span data-ttu-id="86fd5-261">最低版本的邮箱要求集</span><span class="sxs-lookup"><span data-stu-id="86fd5-261">Minimum mailbox requirement set version</span></span>](../../requirement-sets/outlook-api-requirement-sets.md)| <span data-ttu-id="86fd5-262">1.1</span><span class="sxs-lookup"><span data-stu-id="86fd5-262">1.1</span></span>|
+|[<span data-ttu-id="86fd5-263">适用的 Outlook 模式</span><span class="sxs-lookup"><span data-stu-id="86fd5-263">Applicable Outlook mode</span></span>](../../../outlook/outlook-add-ins-overview.md#extension-points)| <span data-ttu-id="86fd5-264">撰写或阅读</span><span class="sxs-lookup"><span data-stu-id="86fd5-264">Compose or Read</span></span>|

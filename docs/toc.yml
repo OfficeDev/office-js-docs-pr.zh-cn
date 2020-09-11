@@ -264,8 +264,6 @@
         - name: 清除 Office 缓存
           href: testing/clear-cache.md
           displayName: 'uninstall, sideload'
-        - name: 常见问题的编码指南
-          href: develop/common-coding-issues.md
         - name: 使用运行时日志记录功能进行调试
           href: testing/runtime-logging.md
         - name: "适用于 Visual\_Studio\_Code 的调试器扩展"
@@ -278,6 +276,8 @@
               href: concepts/resource-limits-and-performance-optimization.md
         - name: 排查用户错误
           href: testing/testing-and-troubleshooting.md
+        - name: 排查开发错误
+          href: testing/troubleshoot-development-errors.md
         - name: 可用性测试
           href: develop/usability-testing.md
         - name: 验证 Office 加载项的清单
@@ -580,8 +580,11 @@
         - name: API 参考
           href: reference/excel-api-reference.md
           displayName: Excel
-        - name: 基本编程概念
+        - name: Excel 对象模型
           href: excel/excel-add-ins-core-concepts.md
+          displayName: Excel
+        - name: Excel 加载项中的空白和 null 值
+          href: excel/excel-add-ins-blank-null-values.md
           displayName: Excel
         - name: 调用内置函数
           href: excel/excel-add-ins-worksheet-functions.md
@@ -603,6 +606,9 @@
           displayName: Excel
         - name: 数据有效性
           href: excel/excel-add-ins-data-validation.md
+          displayName: Excel
+        - name: 编辑单元格时延迟执行
+          href: excel/excel-add-ins-delay-in-cell-edit.md
           displayName: Excel
         - name: 错误处理
           href: excel/excel-add-ins-error-handling.md
@@ -642,6 +648,9 @@
           displayName: Excel
         - name: 工作表
           href: excel/excel-add-ins-worksheets.md
+          displayName: Excel
+        - name: Excel 加载项疑难解答
+          href: excel/excel-add-ins-troubleshooting.md
           displayName: Excel
     - name: 自定义函数
       items:
@@ -1109,7 +1118,7 @@
         - name: API 参考
           href: reference/word-api-reference.md
           displayName: Word
-        - name: 基本编程概念
+        - name: Word 对象模型
           href: word/word-add-ins-core-concepts.md
           displayName: Word
         - name: 绑定到文档中的区域
