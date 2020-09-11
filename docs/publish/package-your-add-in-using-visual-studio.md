@@ -3,12 +3,12 @@ title: 使用 Visual Studio 发布加载项
 description: 如何使用 Visual Studio 2019 部署 Web 项目并打包加载项。
 ms.date: 12/02/2019
 localization_priority: Normal
-ms.openlocfilehash: 49b8b53b665b887e4f8dba20e085c3350e7711f8
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 5c6b21c3712f396d382ab64fb1f756e84745962b
+ms.sourcegitcommit: 83f9a2fdff81ca421cd23feea103b9b60895cab4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44612050"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "47431183"
 ---
 # <a name="publish-your-add-in-using-visual-studio"></a>使用 Visual Studio 发布加载项
 
@@ -28,7 +28,7 @@ Office 加载项包包含 XML [清单文件](../develop/add-in-manifests.md)，�
     > [!NOTE]
     > 选取发布目标将会指定你要部署到的服务器、登录服务器所需的凭据、要部署的数据库和其他部署选项。
 
-3. 有关每个发布目标选项的部署步骤的详细信息，请参阅[初探 Visual Studio 中的部署](/visualstudio/deployment/deploying-applications-services-and-components?view=vs-2019)。
+3. 有关每个发布目标选项的部署步骤的详细信息，请参阅[初探 Visual Studio 中的部署](/visualstudio/deployment/deploying-applications-services-and-components?view=vs-2019&preserve-view=true)。
 
 ## <a name="to-package-and-publish-your-add-in-using-iis-ftp-or-web-deploy-using-visual-studio-2019"></a>使用 Visual Studio 2019 通过 IIS、FTP 或 Web 部署方法打包并发布加载项
 

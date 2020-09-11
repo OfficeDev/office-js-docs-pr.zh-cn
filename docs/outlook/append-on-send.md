@@ -2,14 +2,14 @@
 title: '在 Outlook 加载项中实现向外接程序发送 (预览) '
 description: 了解如何在 Outlook 外接程序中实现 "发送时发送" 功能。
 ms.topic: article
-ms.date: 08/24/2020
+ms.date: 09/09/2020
 localization_priority: Normal
-ms.openlocfilehash: 951f42b82a956d43796144ed94f086d9fb078ca4
-ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
+ms.openlocfilehash: 2199f837351c1030e6f6d0d23db7bf81e498d433
+ms.sourcegitcommit: 83f9a2fdff81ca421cd23feea103b9b60895cab4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "47293987"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "47430931"
 ---
 # <a name="implement-append-on-send-in-your-outlook-add-in-preview"></a>在 Outlook 加载项中实现向外接程序发送 (预览) 
 
@@ -28,7 +28,7 @@ ms.locfileid: "47293987"
 
 - 参考 CDN (上的 **beta** 库 https://appsforoffice.microsoft.com/lib/beta/hosted/office.js) 。 在 CDN 和[jquery.typescript.definitelytyped](https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/master/types/office-js-preview/index.d.ts)中找到 TypeScript 编译和智能感知的[类型定义文件](https://appsforoffice.microsoft.com/lib/beta/hosted/office.d.ts)。 您可以使用安装这些类型 `npm install --save-dev @types/office-js-preview` 。
 - 对于 Windows，你可能需要加入 [Office 预览体验成员计划](https://insider.office.com) ，以访问更多最近的 office 版本。
-- 对于 web 上的 Outlook， [在 Microsoft 365 租户上配置目标版本](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide#set-up-the-release-option-in-the-admin-center)。
+- 对于 web 上的 Outlook， [在 Microsoft 365 租户上配置目标版本](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide&preserve-view=true#set-up-the-release-option-in-the-admin-center)。
 
 ## <a name="set-up-your-environment"></a>设置环境
 
@@ -182,11 +182,8 @@ ms.locfileid: "47293987"
 1. 在项目的根目录中运行以下命令。 运行此命令时，本地 web 服务器将启动（如果它尚未运行）。
 
     ```command&nbsp;line
-    npm start
+    npm run dev-server
     ```
-
-    > [!IMPORTANT]
-    > 如果看到 "旁加载不受支持" 错误，则可以忽略它并继续。
 
 1. 按照 [旁加载 Outlook 外接程序](sideload-outlook-add-ins-for-testing.md)中的说明进行操作，以进行测试。
 

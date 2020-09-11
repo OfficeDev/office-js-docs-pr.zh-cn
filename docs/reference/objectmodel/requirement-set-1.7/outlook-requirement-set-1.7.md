@@ -1,14 +1,14 @@
 ---
 title: Outlook 外接程序 API 要求集 1.7
-description: Outlook 加载项 API 概述（要求集1.7）
+description: 'Outlook 加载项 API 概述 (要求集 1.7) '
 ms.date: 12/17/2019
 localization_priority: Normal
-ms.openlocfilehash: 5af422db674eb882bef97181fbc58ae7ebd644d6
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: f8dc9fe097b56d3e940a5d7d945c5ccc50e07077
+ms.sourcegitcommit: 83f9a2fdff81ca421cd23feea103b9b60895cab4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44612190"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "47431386"
 ---
 # <a name="outlook-add-in-api-requirement-set-17"></a>Outlook 外接程序 API 要求集 1.7
 
@@ -27,22 +27,22 @@ Office JavaScript API 的 Outlook 外接程序 API 子集包括可以在 Outlook
 
 ### <a name="change-log"></a>更改日志
 
-- 添加了 [From](/javascript/api/outlook/office.from?view=outlook-js-1.7)：添加了一个新对象，该对象可提供用于获取收件人值的方法。
-- 添加了 [Organizer](/javascript/api/outlook/office.organizer?view=outlook-js-1.7)：添加了一个新对象，该对象可提供用于获取组织者值的方法。
-- 添加了 [Recurrence](/javascript/api/outlook/office.recurrence?view=outlook-js-1.7)：添加了一个新对象，该对象可提供用于获取和设置约会的定期模式以及仅获取会议请求型消息的定期模式的方法。
-- 添加了 [RecurrenceTimeZone](/javascript/api/outlook/office.recurrencetimezone?view=outlook-js-1.7)：添加了一个新对象，该对象代表定期模式的时区配置。
-- 添加了 [SeriesTime](/javascript/api/outlook/office.seriestime?view=outlook-js-1.7)：添加了一个新对象，该对象可提供用于获取和设置定期系列约会的日期和时间以及获取定期系列会议请求的日期和时间的方法。
+- 添加了 [From](/javascript/api/outlook/office.from?view=outlook-js-1.7&preserve-view=true)：添加了一个新对象，该对象可提供用于获取收件人值的方法。
+- 添加了 [Organizer](/javascript/api/outlook/office.organizer?view=outlook-js-1.7&preserve-view=true)：添加了一个新对象，该对象可提供用于获取组织者值的方法。
+- 添加了 [Recurrence](/javascript/api/outlook/office.recurrence?view=outlook-js-1.7&preserve-view=true)：添加了一个新对象，该对象可提供用于获取和设置约会的定期模式以及仅获取会议请求型消息的定期模式的方法。
+- 添加了 [RecurrenceTimeZone](/javascript/api/outlook/office.recurrencetimezone?view=outlook-js-1.7&preserve-view=true)：添加了一个新对象，该对象代表定期模式的时区配置。
+- 添加了 [SeriesTime](/javascript/api/outlook/office.seriestime?view=outlook-js-1.7&preserve-view=true)：添加了一个新对象，该对象可提供用于获取和设置定期系列约会的日期和时间以及获取定期系列会议请求的日期和时间的方法。
 - 添加了 [Office.context.mailbox.item.addHandlerAsync](office.context.mailbox.item.md#methods)：添加了一种新方法，该方法可添加相应支持事件的事件处理程序。
 - 修改了 [Office.context.mailbox.item.from](office.context.mailbox.item.md#properties)：添加在撰写模式下获取收件人值的功能。
 - 修改了 [Office.context.mailbox.item.organizer](office.context.mailbox.item.md#properties)：添加在撰写模式下获取组织者值的功能。
 - 添加了 [Office.context.mailbox.item.recurrence](office.context.mailbox.item.md#properties)：添加了一个新属性，该属性用于获取或设置可提供约会项目定期模式的管理方法的对象。 该属性还可用于获取会议请求项目的定期模式。
 - 添加了 [Office.context.mailbox.item.removeHandlerAsync](office.context.mailbox.item.md#methods)：添加了一种新方法，该方法可删除受支持的事件类型的事件处理程序。
 - 添加了 [Office.context.mailbox.item.seriesId](office.context.mailbox.item.md#properties)，添加了一个新属性，该属性可获取事件所属系列的 ID。
-- 添加了 [Office.MailboxEnums.Days](/javascript/api/outlook/office.mailboxenums.days?view=outlook-js-1.7)：添加了一个新枚举，该枚举指定星期几或日期类型。
-- 添加了 [Office.MailboxEnums.Month](/javascript/api/outlook/office.mailboxenums.month?view=outlook-js-1.7)：添加了一个新枚举，该枚举指定月份。
-- 添加了 [Office.MailboxEnums.RecurrenceTimeZone](/javascript/api/outlook/office.mailboxenums.recurrencetimezone?view=outlook-js-1.7)：添加了一个新枚举，该枚举指定对重复周期应用的时区。
-- 添加了 [Office.MailboxEnums.RecurrenceType](/javascript/api/outlook/office.mailboxenums.recurrencetype?view=outlook-js-1.7)：添加了一个新枚举，该枚举指定重复周期的类型。
-- 添加了 [Office.MailboxEnums.WeekNumber](/javascript/api/outlook/office.mailboxenums.weeknumber?view=outlook-js-1.7)：添加了一个新枚举，该枚举指定是当月的第几周。
+- 添加了 [Office.MailboxEnums.Days](/javascript/api/outlook/office.mailboxenums.days?view=outlook-js-1.7&preserve-view=true)：添加了一个新枚举，该枚举指定星期几或日期类型。
+- 添加了 [Office.MailboxEnums.Month](/javascript/api/outlook/office.mailboxenums.month?view=outlook-js-1.7&preserve-view=true)：添加了一个新枚举，该枚举指定月份。
+- 添加了 [Office.MailboxEnums.RecurrenceTimeZone](/javascript/api/outlook/office.mailboxenums.recurrencetimezone?view=outlook-js-1.7&preserve-view=true)：添加了一个新枚举，该枚举指定对重复周期应用的时区。
+- 添加了 [Office.MailboxEnums.RecurrenceType](/javascript/api/outlook/office.mailboxenums.recurrencetype?view=outlook-js-1.7&preserve-view=true)：添加了一个新枚举，该枚举指定重复周期的类型。
+- 添加了 [Office.MailboxEnums.WeekNumber](/javascript/api/outlook/office.mailboxenums.weeknumber?view=outlook-js-1.7&preserve-view=true)：添加了一个新枚举，该枚举指定是当月的第几周。
 - 修改了 [Office.EventType](/javascript/api/office/office.eventtype)：添加对 `RecurrenceChanged`、`RecipientsChanged` 和 `AppointmentTimeChanged` 事件的支持。
 
 ## <a name="see-also"></a>另请参阅

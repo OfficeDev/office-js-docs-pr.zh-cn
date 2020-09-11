@@ -4,12 +4,12 @@ description: 有关 ExcelApi 1.9 要求集的详细信息
 ms.date: 07/26/2019
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: 6e5de61328ef3e02bc4fcd39848c0f0ecdfff533
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 77e8ed886344f3761d7dfbb982a54a878a554980
+ms.sourcegitcommit: 83f9a2fdff81ca421cd23feea103b9b60895cab4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44611391"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "47430854"
 ---
 # <a name="whats-new-in-excel-javascript-api-19"></a>Excel JavaScript API 1.9 中的新增功能
 
@@ -29,7 +29,7 @@ ms.locfileid: "44611391"
 
 ## <a name="api-list"></a>API 列表
 
-下表列出了 Excel JavaScript API 要求集1.9 中的 Api。 若要查看 Excel JavaScript API 要求集1.9 或更早版本支持的所有 Api 的 API 参考文档，请参阅[要求集1.9 或更早版本中的 Excel api](/javascript/api/excel?view=excel-js-1.9)。
+下表列出了 Excel JavaScript API 要求集1.9 中的 Api。 若要查看 Excel JavaScript API 要求集1.9 或更早版本支持的所有 Api 的 API 参考文档，请参阅 [要求集1.9 或更早版本中的 Excel api](/javascript/api/excel?view=excel-js-1.9&preserve-view=true)。
 
 | Class | 域 | 说明 |
 |:---|:---|:---|
@@ -484,5 +484,5 @@ ms.locfileid: "44611391"
 
 ## <a name="see-also"></a>另请参阅
 
-- [Excel JavaScript API 参考文档](/javascript/api/excel?view=excel-js-1.9)
+- [Excel JavaScript API 参考文档](/javascript/api/excel?view=excel-js-1.9&preserve-view=true)
 - [Excel JavaScript API 要求集](./excel-api-requirement-sets.md)

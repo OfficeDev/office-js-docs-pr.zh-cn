@@ -4,12 +4,12 @@ description: 有关 WordApi 1.1 要求集的详细信息
 ms.date: 07/25/2019
 ms.prod: word
 localization_priority: Normal
-ms.openlocfilehash: 9f7efdd0ce8f67a05d8197ec3005b2d6e9049409
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: ad1ec8b226bc958ed1be6e233a070108612661ad
+ms.sourcegitcommit: 83f9a2fdff81ca421cd23feea103b9b60895cab4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44611307"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "47431505"
 ---
 # <a name="whats-new-in-word-javascript-api-11"></a>Word JavaScript API 1.1 中的新增功能
 
@@ -17,43 +17,43 @@ WordApi 1.1 是 Word JavaScript API 的第一个要求集。 它是 Word 2016 �
 
 ## <a name="api-list"></a>API 列表
 
-下表列出了 Word JavaScript API 要求集1.1 中的 Api。 若要查看 Word JavaScript API 要求集1.1 支持的所有 Api 的 API 参考文档，请参阅[要求集1.1 中的 Word api](/javascript/api/word?view=word-js-1.1)。
+下表列出了 Word JavaScript API 要求集1.1 中的 Api。 若要查看 Word JavaScript API 要求集1.1 支持的所有 Api 的 API 参考文档，请参阅 [要求集1.1 中的 Word api](/javascript/api/word?view=word-js-1.1&preserve-view=true)。
 
 | Class | 域 | 说明 |
 |:---|:---|:---|
-|[Body](/javascript/api/word/word.body)|[clear()](/javascript/api/word/word.body#clear--)|清除 body 对象的内容。用户可以对已清除的内容执行撤消操作。|
-||[getHtml()](/javascript/api/word/word.body#gethtml--)|获取 body 对象的 HTML 表示形式。 在网页或 HTML 查看器中呈现时，格式设置将与文档的格式相匹配，但不完全相同。 对于不同平台（Windows、Mac 等）上的同一文档，此方法不会返回完全相同的 HTML。 如果您需要完全保真度或跨平台的一致性，请使用 `Body.getOoxml()` 并将返回的 XML 转换为 HTML。|
+|[正文](/javascript/api/word/word.body)|[clear()](/javascript/api/word/word.body#clear--)|清除 body 对象的内容。用户可以对已清除的内容执行撤消操作。|
+||[getHtml()](/javascript/api/word/word.body#gethtml--)|获取 body 对象的 HTML 表示形式。 在网页或 HTML 查看器中呈现时，格式设置将与文档的格式相匹配，但不完全相同。 此方法不会与 (Windows、Mac 等 ) 的不同平台上的同一文档返回完全相同的 HTML。 如果您需要完全保真度或跨平台的一致性，请使用 `Body.getOoxml()` 并将返回的 XML 转换为 HTML。|
 ||[getOoxml()](/javascript/api/word/word.body#getooxml--)|获取 body 对象的 OOXML (Office Open XML) 表示形式。|
-||[insertBreak （breakType： BreakType，insertLocation： Word. InsertLocation）](/javascript/api/word/word.body#insertbreak-breaktype--insertlocation-)|在主文档的指定位置插入分隔符。 insertLocation 值可以为“Start”或“End”。|
+||[insertBreak (breakType： BreakType，insertLocation： Word. InsertLocation) ](/javascript/api/word/word.body#insertbreak-breaktype--insertlocation-)|在主文档的指定位置插入分隔符。 insertLocation 值可以为“Start”或“End”。|
 ||[insertContentControl()](/javascript/api/word/word.body#insertcontentcontrol--)|使用富文本内容控件封装 body 对象。|
-||[insertFileFromBase64 （base64File： string，insertLocation： InsertLocation）](/javascript/api/word/word.body#insertfilefrombase64-base64file--insertlocation-)|将文档插入到正文中的指定位置。 insertLocation 值可以为“Replace”、“Start”或“End”。|
-||[insertHtml （html： string，insertLocation： InsertLocation）](/javascript/api/word/word.body#inserthtml-html--insertlocation-)|在指定位置插入 HTML。 insertLocation 值可以为“Replace”、“Start”或“End”。|
-||[insertOoxml （ooxml： string，insertLocation： InsertLocation）](/javascript/api/word/word.body#insertooxml-ooxml--insertlocation-)|在指定位置插入 OOXML。  insertLocation 值可以为“Replace”、“Start”或“End”。|
-||[insertParagraph （paragraphText： string，insertLocation： InsertLocation）](/javascript/api/word/word.body#insertparagraph-paragraphtext--insertlocation-)|在指定位置插入段落。 insertLocation 值可以为“Start”或“End”。|
-||[insertText （text： string，insertLocation： InsertLocation）](/javascript/api/word/word.body#inserttext-text--insertlocation-)|将文本插入到正文中的指定位置。 insertLocation 值可以为“Replace”、“Start”或“End”。|
+||[insertFileFromBase64 (base64File： string，insertLocation： InsertLocation) ](/javascript/api/word/word.body#insertfilefrombase64-base64file--insertlocation-)|将文档插入到正文中的指定位置。 insertLocation 值可以为“Replace”、“Start”或“End”。|
+||[insertHtml (html： string，insertLocation： InsertLocation) ](/javascript/api/word/word.body#inserthtml-html--insertlocation-)|在指定位置插入 HTML。 insertLocation 值可以为“Replace”、“Start”或“End”。|
+||[insertOoxml (ooxml： string，insertLocation： InsertLocation) ](/javascript/api/word/word.body#insertooxml-ooxml--insertlocation-)|在指定位置插入 OOXML。  insertLocation 值可以为“Replace”、“Start”或“End”。|
+||[insertParagraph (paragraphText： string，insertLocation： InsertLocation) ](/javascript/api/word/word.body#insertparagraph-paragraphtext--insertlocation-)|在指定位置插入段落。 insertLocation 值可以为“Start”或“End”。|
+||[insertText (text： string，insertLocation： InsertLocation) ](/javascript/api/word/word.body#inserttext-text--insertlocation-)|将文本插入到正文中的指定位置。 insertLocation 值可以为“Replace”、“Start”或“End”。|
 ||[contentControls](/javascript/api/word/word.body#contentcontrols)|获取正文中的格式文本内容控件对象的集合。 只读。|
 ||[font](/javascript/api/word/word.body#font)|获取正文的文本格式。 使用此属性可获取和设置字体名称、大小、颜色和其他属性。 只读。|
 ||[inlinePictures](/javascript/api/word/word.body#inlinepictures)|获取正文中 InlinePicture 对象的集合。 集合不包括浮动图像。 只读。|
 ||[paragraphs](/javascript/api/word/word.body#paragraphs)|获取正文中段落对象的集合。 只读。|
 ||[parentContentControl](/javascript/api/word/word.body#parentcontentcontrol)|获取包含正文的内容控件。 如果没有父内容控件，将引发此异常。 只读。|
 ||[text](/javascript/api/word/word.body#text)|获取正文的文本。 使用 insertText 方法插入文本。 只读。|
-||[search （searchText： string，searchOptions？： SearchOptions）](/javascript/api/word/word.body#search-searchtext--searchoptions-)|在 body 对象的作用域上使用指定的 SearchOptions 执行搜索。 搜索结果是 range 对象的集合。|
-||[select （selectionMode？： SelectionMode）](/javascript/api/word/word.body#select-selectionmode-)|选择正文并在 Word UI 中进行浏览。|
+||[search (searchText： string，searchOptions？： Word SearchOptions) ](/javascript/api/word/word.body#search-searchtext--searchoptions-)|在 body 对象的作用域上使用指定的 SearchOptions 执行搜索。 搜索结果是 range 对象的集合。|
+||[选择 (selectionMode？： SelectionMode) ](/javascript/api/word/word.body#select-selectionmode-)|选择正文并在 Word UI 中进行浏览。|
 ||[style](/javascript/api/word/word.body#style)|获取或设置 body 的样式名称。请对自定义样式和本地化样式名称使用此属性。若要使用可以在区域设置之间移植的嵌入样式，请参阅“styleBuiltIn”属性。|
 |[ContentControl](/javascript/api/word/word.contentcontrol)|[自然](/javascript/api/word/word.contentcontrol#appearance)|获取或设置内容控件的外观。 该值可以是 "BoundingBox"、"Tags" 或 "Hidden"。|
 ||[cannotDelete](/javascript/api/word/word.contentcontrol#cannotdelete)|获取或设置指示用户是否可以删除内容控件的值。 与 removeWhenEdited 互相排斥。|
 ||[cannotEdit](/javascript/api/word/word.contentcontrol#cannotedit)|获取或设置指示用户是否可以编辑内容控件的内容的值。|
 ||[clear()](/javascript/api/word/word.contentcontrol#clear--)|清除内容控件的内容。 用户可以对已清除的内容执行撤消操作。|
 ||[color](/javascript/api/word/word.contentcontrol#color)|获取或设置内容控件的颜色。 颜色以 "#RRGGBB" 格式或使用颜色名称指定。|
-||[delete （keepContent： boolean）](/javascript/api/word/word.contentcontrol#delete-keepcontent-)|删除内容控件及其内容。如果将 keepContent 设置为 true，则不删除内容。|
-||[getHtml()](/javascript/api/word/word.contentcontrol#gethtml--)|获取内容控件对象的 HTML 表示形式。 在网页或 HTML 查看器中呈现时，格式设置将与文档的格式相匹配，但不完全相同。 对于不同平台（Windows、Mac 等）上的同一文档，此方法不会返回完全相同的 HTML。 如果您需要完全保真度或跨平台的一致性，请使用 `ContentControl.getOoxml()` 并将返回的 XML 转换为 HTML。|
+||[删除 (keepContent： boolean) ](/javascript/api/word/word.contentcontrol#delete-keepcontent-)|删除内容控件及其内容。如果将 keepContent 设置为 true，则不删除内容。|
+||[getHtml()](/javascript/api/word/word.contentcontrol#gethtml--)|获取内容控件对象的 HTML 表示形式。 在网页或 HTML 查看器中呈现时，格式设置将与文档的格式相匹配，但不完全相同。 此方法不会与 (Windows、Mac 等 ) 的不同平台上的同一文档返回完全相同的 HTML。 如果您需要完全保真度或跨平台的一致性，请使用 `ContentControl.getOoxml()` 并将返回的 XML 转换为 HTML。|
 ||[getOoxml()](/javascript/api/word/word.contentcontrol#getooxml--)|获取内容控件对象的 Office Open XML (OOXML) 表示形式。|
-||[insertBreak （breakType： BreakType，insertLocation： Word. InsertLocation）](/javascript/api/word/word.contentcontrol#insertbreak-breaktype--insertlocation-)|在主文档的指定位置插入分隔符。 InsertLocation 值可以是 "Start"、"End"、"Before" 或 "After"。 此方法不能与 "RichTextTable"、"RichTextTableRow" 和 "RichTextTableCell" 内容控件一起使用。|
-||[insertFileFromBase64 （base64File： string，insertLocation： InsertLocation）](/javascript/api/word/word.contentcontrol#insertfilefrombase64-base64file--insertlocation-)|将文档插入到内容控件中的指定位置。 insertLocation 值可以为“Replace”、“Start”或“End”。|
-||[insertHtml （html： string，insertLocation： InsertLocation）](/javascript/api/word/word.contentcontrol#inserthtml-html--insertlocation-)|将 HTML 插入到内容控件中的指定位置。 insertLocation 值可以为“Replace”、“Start”或“End”。|
-||[insertOoxml （ooxml： string，insertLocation： InsertLocation）](/javascript/api/word/word.contentcontrol#insertooxml-ooxml--insertlocation-)|将 OOXML 插入到内容控件中的指定位置。  insertLocation 值可以为“Replace”、“Start”或“End”。|
-||[insertParagraph （paragraphText： string，insertLocation： InsertLocation）](/javascript/api/word/word.contentcontrol#insertparagraph-paragraphtext--insertlocation-)|在指定位置插入段落。 InsertLocation 值可以是 "Start"、"End"、"Before" 或 "After"。|
-||[insertText （text： string，insertLocation： InsertLocation）](/javascript/api/word/word.contentcontrol#inserttext-text--insertlocation-)|将文本插入到内容控件中的指定位置。 insertLocation 值可以为“Replace”、“Start”或“End”。|
+||[insertBreak (breakType： BreakType，insertLocation： Word. InsertLocation) ](/javascript/api/word/word.contentcontrol#insertbreak-breaktype--insertlocation-)|在主文档的指定位置插入分隔符。 InsertLocation 值可以是 "Start"、"End"、"Before" 或 "After"。 此方法不能与 "RichTextTable"、"RichTextTableRow" 和 "RichTextTableCell" 内容控件一起使用。|
+||[insertFileFromBase64 (base64File： string，insertLocation： InsertLocation) ](/javascript/api/word/word.contentcontrol#insertfilefrombase64-base64file--insertlocation-)|将文档插入到内容控件中的指定位置。 insertLocation 值可以为“Replace”、“Start”或“End”。|
+||[insertHtml (html： string，insertLocation： InsertLocation) ](/javascript/api/word/word.contentcontrol#inserthtml-html--insertlocation-)|将 HTML 插入到内容控件中的指定位置。 insertLocation 值可以为“Replace”、“Start”或“End”。|
+||[insertOoxml (ooxml： string，insertLocation： InsertLocation) ](/javascript/api/word/word.contentcontrol#insertooxml-ooxml--insertlocation-)|将 OOXML 插入到内容控件中的指定位置。  insertLocation 值可以为“Replace”、“Start”或“End”。|
+||[insertParagraph (paragraphText： string，insertLocation： InsertLocation) ](/javascript/api/word/word.contentcontrol#insertparagraph-paragraphtext--insertlocation-)|在指定位置插入段落。 InsertLocation 值可以是 "Start"、"End"、"Before" 或 "After"。|
+||[insertText (text： string，insertLocation： InsertLocation) ](/javascript/api/word/word.contentcontrol#inserttext-text--insertlocation-)|将文本插入到内容控件中的指定位置。 insertLocation 值可以为“Replace”、“Start”或“End”。|
 ||[placeholderText](/javascript/api/word/word.contentcontrol#placeholdertext)|获取或设置内容控件的占位符文本。 内容控件为空时，将显示灰色的文本。|
 ||[contentControls](/javascript/api/word/word.contentcontrol#contentcontrols)|获取内容控件中的内容控件对象的集合。 只读。|
 ||[font](/javascript/api/word/word.contentcontrol#font)|获取内容控件的文本格式。 使用此对象获取和设置字体名称、大小、颜色和其他属性。 只读。|
@@ -64,8 +64,8 @@ WordApi 1.1 是 Word JavaScript API 的第一个要求集。 它是 Word 2016 �
 ||[text](/javascript/api/word/word.contentcontrol#text)|获取内容控件的文本。 只读。|
 ||[type](/javascript/api/word/word.contentcontrol#type)|获取内容控件的类型。 当前仅支持富文本内容控件。 只读。|
 ||[removeWhenEdited](/javascript/api/word/word.contentcontrol#removewhenedited)|获取或设置指示内容控件在编辑后是否可以删除的值。 与 cannotDelete 互相排斥。|
-||[search （searchText： string，searchOptions？： SearchOptions）](/javascript/api/word/word.contentcontrol#search-searchtext--searchoptions-)|在内容控件对象的范围内使用指定的 SearchOptions 执行搜索。 搜索结果是 range 对象的集合。|
-||[select （selectionMode？： SelectionMode）](/javascript/api/word/word.contentcontrol#select-selectionmode-)|选择内容控件。 这会导致 Word 滚动到选定内容。|
+||[search (searchText： string，searchOptions？： Word SearchOptions) ](/javascript/api/word/word.contentcontrol#search-searchtext--searchoptions-)|在内容控件对象的范围内使用指定的 SearchOptions 执行搜索。 搜索结果是 range 对象的集合。|
+||[选择 (selectionMode？： SelectionMode) ](/javascript/api/word/word.contentcontrol#select-selectionmode-)|选择内容控件。 这会导致 Word 滚动到选定内容。|
 ||[style](/javascript/api/word/word.contentcontrol#style)|获取或设置内容控件的样式名称。 请对自定义样式和本地化样式名称使用此属性。 若要使用可以在区域设置之间移植的嵌入样式，请参阅“styleBuiltIn”属性。|
 ||[tag](/javascript/api/word/word.contentcontrol#tag)|获取或设置用于标识内容控件的标记。|
 ||[title](/javascript/api/word/word.contentcontrol#title)|获取或设置内容控件的标题。|
@@ -74,7 +74,7 @@ WordApi 1.1 是 Word JavaScript API 的第一个要求集。 它是 Word 2016 �
 ||[getByTitle(title: string)](/javascript/api/word/word.contentcontrolcollection#getbytitle-title-)|获取具有指定标题的内容控件。|
 ||[getItem(index: number)](/javascript/api/word/word.contentcontrolcollection#getitem-index-)|按其在集合中的索引获取内容控件。|
 ||[items](/javascript/api/word/word.contentcontrolcollection#items)|获取此集合中已加载的子项。|
-|[Document](/javascript/api/word/word.document)|[getSelection （）](/javascript/api/word/word.document#getselection--)|获取文档的当前选定内容。 不支持多重选择。|
+|[Document](/javascript/api/word/word.document)|[getSelection ( # B1 ](/javascript/api/word/word.document#getselection--)|获取文档的当前选定内容。 不支持多重选择。|
 ||[body](/javascript/api/word/word.document#body)|获取文档的正文对象。 正文是不包括标头、页脚、脚注、文本框等的文本。 只读。|
 ||[contentControls](/javascript/api/word/word.document#contentcontrols)|获取文档中的内容控件对象的集合。 这包括文档正文、标头、页脚、文本框等中的内容控件。 只读。|
 ||[保存](/javascript/api/word/word.document#saved)|指示是否已保存在文档中所做的更改。如果值为 true，表示文档自上次保存以来并未更改。只读。|
@@ -93,7 +93,7 @@ WordApi 1.1 是 Word JavaScript API 的第一个要求集。 它是 Word 2016 �
 ||[underline](/javascript/api/word/word.font#underline)|获取或设置表示字体的下划线类型的值。 如果字体不带下划线，则为 "无"。|
 |[InlinePicture](/javascript/api/word/word.inlinepicture)|[altTextDescription](/javascript/api/word/word.inlinepicture#alttextdescription)|获取或设置一个字符串，表示与嵌入式图像相关联的可选文字。|
 ||[altTextTitle](/javascript/api/word/word.inlinepicture#alttexttitle)|获取或设置包含嵌入式图像的标题的字符串。|
-||[getBase64ImageSrc()](/javascript/api/word/word.inlinepicture#getbase64imagesrc--)|获取嵌入式图像的 base64 编码的字符串表示。|
+||[getBase64ImageSrc ( # B1 ](/javascript/api/word/word.inlinepicture#getbase64imagesrc--)|获取嵌入式图像的 base64 编码的字符串表示。|
 ||[height](/javascript/api/word/word.inlinepicture#height)|获取或设置描述嵌入式图像的高度的数字。|
 ||[hyperlink](/javascript/api/word/word.inlinepicture#hyperlink)|获取或设置图像上的超链接。 使用 "#" 将地址部分与可选位置部分分开。|
 ||[insertContentControl()](/javascript/api/word/word.inlinepicture#insertcontentcontrol--)|使用富文本内容控件封装嵌入式图像。|
@@ -105,16 +105,16 @@ WordApi 1.1 是 Word JavaScript API 的第一个要求集。 它是 Word 2016 �
 ||[clear()](/javascript/api/word/word.paragraph#clear--)|清除 paragraph 对象的内容。用户可以对已清除的内容执行撤消操作。|
 ||[delete()](/javascript/api/word/word.paragraph#delete--)|从文档中删除段落及其内容。|
 ||[firstLineIndent](/javascript/api/word/word.paragraph#firstlineindent)|获取或设置首行缩进或悬挂缩进的大小（以磅值表示）。用正数设置首行缩进的尺寸，用负数设置悬挂缩进的尺寸。|
-||[getHtml()](/javascript/api/word/word.paragraph#gethtml--)|获取段落对象的 HTML 表示形式。 在网页或 HTML 查看器中呈现时，格式设置将与文档的格式相匹配，但不完全相同。 对于不同平台（Windows、Mac 等）上的同一文档，此方法不会返回完全相同的 HTML。 如果您需要完全保真度或跨平台的一致性，请使用 `Paragraph.getOoxml()` 并将返回的 XML 转换为 HTML。|
+||[getHtml()](/javascript/api/word/word.paragraph#gethtml--)|获取段落对象的 HTML 表示形式。 在网页或 HTML 查看器中呈现时，格式设置将与文档的格式相匹配，但不完全相同。 此方法不会与 (Windows、Mac 等 ) 的不同平台上的同一文档返回完全相同的 HTML。 如果您需要完全保真度或跨平台的一致性，请使用 `Paragraph.getOoxml()` 并将返回的 XML 转换为 HTML。|
 ||[getOoxml()](/javascript/api/word/word.paragraph#getooxml--)|获取 paragraph 对象的 Office Open XML (OOXML) 表示形式。|
-||[insertBreak （breakType： BreakType，insertLocation： Word. InsertLocation）](/javascript/api/word/word.paragraph#insertbreak-breaktype--insertlocation-)|在主文档的指定位置插入分隔符。 insertLocation 值可以为“Before”或“After”。|
+||[insertBreak (breakType： BreakType，insertLocation： Word. InsertLocation) ](/javascript/api/word/word.paragraph#insertbreak-breaktype--insertlocation-)|在主文档的指定位置插入分隔符。 insertLocation 值可以为“Before”或“After”。|
 ||[insertContentControl()](/javascript/api/word/word.paragraph#insertcontentcontrol--)|使用富文本内容控件封装 paragraph 对象。|
-||[insertFileFromBase64 （base64File： string，insertLocation： InsertLocation）](/javascript/api/word/word.paragraph#insertfilefrombase64-base64file--insertlocation-)|将文档插入到指定位置的段落中。 insertLocation 值可以为“Replace”、“Start”或“End”。|
-||[insertHtml （html： string，insertLocation： InsertLocation）](/javascript/api/word/word.paragraph#inserthtml-html--insertlocation-)|将 HTML 插入到段落中的指定位置。 insertLocation 值可以为“Replace”、“Start”或“End”。|
-||[insertInlinePictureFromBase64 （base64EncodedImage： string，insertLocation： InsertLocation）](/javascript/api/word/word.paragraph#insertinlinepicturefrombase64-base64encodedimage--insertlocation-)|将图片插入到段落中的指定位置。 insertLocation 值可以为“Replace”、“Start”或“End”。|
-||[insertOoxml （ooxml： string，insertLocation： InsertLocation）](/javascript/api/word/word.paragraph#insertooxml-ooxml--insertlocation-)|将 OOXML 插入到段落中的指定位置。 insertLocation 值可以为“Replace”、“Start”或“End”。|
-||[insertParagraph （paragraphText： string，insertLocation： InsertLocation）](/javascript/api/word/word.paragraph#insertparagraph-paragraphtext--insertlocation-)|在指定位置插入段落。 insertLocation 值可以为“Before”或“After”。|
-||[insertText （text： string，insertLocation： InsertLocation）](/javascript/api/word/word.paragraph#inserttext-text--insertlocation-)|将文本插入到段落中的指定位置。 insertLocation 值可以为“Replace”、“Start”或“End”。|
+||[insertFileFromBase64 (base64File： string，insertLocation： InsertLocation) ](/javascript/api/word/word.paragraph#insertfilefrombase64-base64file--insertlocation-)|将文档插入到指定位置的段落中。 insertLocation 值可以为“Replace”、“Start”或“End”。|
+||[insertHtml (html： string，insertLocation： InsertLocation) ](/javascript/api/word/word.paragraph#inserthtml-html--insertlocation-)|将 HTML 插入到段落中的指定位置。 insertLocation 值可以为“Replace”、“Start”或“End”。|
+||[insertInlinePictureFromBase64 (base64EncodedImage： string，insertLocation： InsertLocation) ](/javascript/api/word/word.paragraph#insertinlinepicturefrombase64-base64encodedimage--insertlocation-)|将图片插入到段落中的指定位置。 insertLocation 值可以为“Replace”、“Start”或“End”。|
+||[insertOoxml (ooxml： string，insertLocation： InsertLocation) ](/javascript/api/word/word.paragraph#insertooxml-ooxml--insertlocation-)|将 OOXML 插入到段落中的指定位置。 insertLocation 值可以为“Replace”、“Start”或“End”。|
+||[insertParagraph (paragraphText： string，insertLocation： InsertLocation) ](/javascript/api/word/word.paragraph#insertparagraph-paragraphtext--insertlocation-)|在指定位置插入段落。 insertLocation 值可以为“Before”或“After”。|
+||[insertText (text： string，insertLocation： InsertLocation) ](/javascript/api/word/word.paragraph#inserttext-text--insertlocation-)|将文本插入到段落中的指定位置。 insertLocation 值可以为“Replace”、“Start”或“End”。|
 ||[leftIndent](/javascript/api/word/word.paragraph#leftindent)|获取或设置段落的向左缩进值（以磅值表示）。|
 ||[lineSpacing](/javascript/api/word/word.paragraph#linespacing)|获取或设置指定段落的行间距（以磅值表示）。 在 Word UI 中，该值应除以 12。|
 ||[lineUnitAfter](/javascript/api/word/word.paragraph#lineunitafter)|获取或设置段落后面的网格线中的间距量。|
@@ -126,30 +126,30 @@ WordApi 1.1 是 Word JavaScript API 的第一个要求集。 它是 Word 2016 �
 ||[parentContentControl](/javascript/api/word/word.paragraph#parentcontentcontrol)|获取包含段落的内容控件。 如果没有父内容控件，将引发此异常。 只读。|
 ||[text](/javascript/api/word/word.paragraph#text)|获取段落的文本。 只读。|
 ||[rightIndent](/javascript/api/word/word.paragraph#rightindent)|获取或设置段落的向右缩进值（以磅值表示）。|
-||[search （searchText： string，searchOptions？： Word SearchOptions}）](/javascript/api/word/word.paragraph#search-searchtext--searchoptions-)|在段落对象的作用域上使用指定的 SearchOptions 执行搜索。 搜索结果是 range 对象的集合。|
-||[select （selectionMode？： SelectionMode）](/javascript/api/word/word.paragraph#select-selectionmode-)|选择并在 Word UI 中导航到段落。|
+||[search (searchText： string，searchOptions？： Word SearchOptions} ) ](/javascript/api/word/word.paragraph#search-searchtext--searchoptions-)|在段落对象的作用域上使用指定的 SearchOptions 执行搜索。 搜索结果是 range 对象的集合。|
+||[选择 (selectionMode？： SelectionMode) ](/javascript/api/word/word.paragraph#select-selectionmode-)|选择并在 Word UI 中导航到段落。|
 ||[spaceAfter](/javascript/api/word/word.paragraph#spaceafter)|获取或设置段落后面的间距（以磅值表示）。|
 ||[spaceBefore](/javascript/api/word/word.paragraph#spacebefore)|获取或设置段落前面的间距（以磅值表示）。|
 ||[style](/javascript/api/word/word.paragraph#style)|获取或设置段落的样式名称。 请对自定义样式和本地化样式名称使用此属性。 若要使用可以在区域设置之间移植的嵌入样式，请参阅“styleBuiltIn”属性。|
 |[ParagraphCollection](/javascript/api/word/word.paragraphcollection)|[items](/javascript/api/word/word.paragraphcollection#items)|获取此集合中已加载的子项。|
-|[Range](/javascript/api/word/word.range)|[clear()](/javascript/api/word/word.range#clear--)|清除 range 对象的内容。用户可以对已清除的内容执行撤消操作。|
+|[区域](/javascript/api/word/word.range)|[clear()](/javascript/api/word/word.range#clear--)|清除 range 对象的内容。用户可以对已清除的内容执行撤消操作。|
 ||[delete()](/javascript/api/word/word.range#delete--)|从文档中删除区域及其内容。|
-||[getHtml()](/javascript/api/word/word.range#gethtml--)|获取 range 对象的 HTML 表示形式。 在网页或 HTML 查看器中呈现时，格式设置将与文档的格式相匹配，但不完全相同。 对于不同平台（Windows、Mac 等）上的同一文档，此方法不会返回完全相同的 HTML。 如果您需要完全保真度或跨平台的一致性，请使用 `Range.getOoxml()` 并将返回的 XML 转换为 HTML。|
+||[getHtml()](/javascript/api/word/word.range#gethtml--)|获取 range 对象的 HTML 表示形式。 在网页或 HTML 查看器中呈现时，格式设置将与文档的格式相匹配，但不完全相同。 此方法不会与 (Windows、Mac 等 ) 的不同平台上的同一文档返回完全相同的 HTML。 如果您需要完全保真度或跨平台的一致性，请使用 `Range.getOoxml()` 并将返回的 XML 转换为 HTML。|
 ||[getOoxml()](/javascript/api/word/word.range#getooxml--)|获取 range 对象的 OOXML 表示形式。|
-||[insertBreak （breakType： BreakType，insertLocation： Word. InsertLocation）](/javascript/api/word/word.range#insertbreak-breaktype--insertlocation-)|在主文档的指定位置插入分隔符。 insertLocation 值可以为“Before”或“After”。|
+||[insertBreak (breakType： BreakType，insertLocation： Word. InsertLocation) ](/javascript/api/word/word.range#insertbreak-breaktype--insertlocation-)|在主文档的指定位置插入分隔符。 insertLocation 值可以为“Before”或“After”。|
 ||[insertContentControl()](/javascript/api/word/word.range#insertcontentcontrol--)|使用富文本内容控件封装 range 对象。|
-||[insertFileFromBase64 （base64File： string，insertLocation： InsertLocation）](/javascript/api/word/word.range#insertfilefrombase64-base64file--insertlocation-)|在指定位置插入 document。 InsertLocation 值可以是 "Replace"、"Start"、"End"、"Before" 或 "After"。|
-||[insertHtml （html： string，insertLocation： InsertLocation）](/javascript/api/word/word.range#inserthtml-html--insertlocation-)|在指定位置插入 HTML。 InsertLocation 值可以是 "Replace"、"Start"、"End"、"Before" 或 "After"。|
-||[insertOoxml （ooxml： string，insertLocation： InsertLocation）](/javascript/api/word/word.range#insertooxml-ooxml--insertlocation-)|在指定位置插入 OOXML。  InsertLocation 值可以是 "Replace"、"Start"、"End"、"Before" 或 "After"。|
-||[insertParagraph （paragraphText： string，insertLocation： InsertLocation）](/javascript/api/word/word.range#insertparagraph-paragraphtext--insertlocation-)|在指定位置插入段落。 insertLocation 值可以为“Before”或“After”。|
-||[insertText （text： string，insertLocation： InsertLocation）](/javascript/api/word/word.range#inserttext-text--insertlocation-)|在指定位置插入文本。 InsertLocation 值可以是 "Replace"、"Start"、"End"、"Before" 或 "After"。|
+||[insertFileFromBase64 (base64File： string，insertLocation： InsertLocation) ](/javascript/api/word/word.range#insertfilefrombase64-base64file--insertlocation-)|在指定位置插入 document。 InsertLocation 值可以是 "Replace"、"Start"、"End"、"Before" 或 "After"。|
+||[insertHtml (html： string，insertLocation： InsertLocation) ](/javascript/api/word/word.range#inserthtml-html--insertlocation-)|在指定位置插入 HTML。 InsertLocation 值可以是 "Replace"、"Start"、"End"、"Before" 或 "After"。|
+||[insertOoxml (ooxml： string，insertLocation： InsertLocation) ](/javascript/api/word/word.range#insertooxml-ooxml--insertlocation-)|在指定位置插入 OOXML。  InsertLocation 值可以是 "Replace"、"Start"、"End"、"Before" 或 "After"。|
+||[insertParagraph (paragraphText： string，insertLocation： InsertLocation) ](/javascript/api/word/word.range#insertparagraph-paragraphtext--insertlocation-)|在指定位置插入段落。 insertLocation 值可以为“Before”或“After”。|
+||[insertText (text： string，insertLocation： InsertLocation) ](/javascript/api/word/word.range#inserttext-text--insertlocation-)|在指定位置插入文本。 InsertLocation 值可以是 "Replace"、"Start"、"End"、"Before" 或 "After"。|
 ||[contentControls](/javascript/api/word/word.range#contentcontrols)|获取范围中的内容控件对象的集合。 只读。|
 ||[font](/javascript/api/word/word.range#font)|获取区域的文本格式。 使用此对象获取和设置字体名称、大小、颜色和其他属性。 只读。|
 ||[paragraphs](/javascript/api/word/word.range#paragraphs)|获取范围中的段落对象的集合。 只读。|
 ||[parentContentControl](/javascript/api/word/word.range#parentcontentcontrol)|获取包含该范围的内容控件。 如果没有父内容控件，将引发此异常。 只读。|
 ||[text](/javascript/api/word/word.range#text)|获取区域的文本。 只读。|
-||[search （searchText： string，searchOptions？： SearchOptions）](/javascript/api/word/word.range#search-searchtext--searchoptions-)|在 range 对象的作用域上使用指定的 SearchOptions 执行搜索。 搜索结果是 range 对象的集合。|
-||[select （selectionMode？： SelectionMode）](/javascript/api/word/word.range#select-selectionmode-)|选择并在 Word UI 中导航到区域。|
+||[search (searchText： string，searchOptions？： Word SearchOptions) ](/javascript/api/word/word.range#search-searchtext--searchoptions-)|在 range 对象的作用域上使用指定的 SearchOptions 执行搜索。 搜索结果是 range 对象的集合。|
+||[选择 (selectionMode？： SelectionMode) ](/javascript/api/word/word.range#select-selectionmode-)|选择并在 Word UI 中导航到区域。|
 ||[style](/javascript/api/word/word.range#style)|获取或设置区域的样式名称。 请对自定义样式和本地化样式名称使用此属性。 若要使用可以在区域设置之间移植的嵌入样式，请参阅“styleBuiltIn”属性。|
 |[RangeCollection](/javascript/api/word/word.rangecollection)|[items](/javascript/api/word/word.rangecollection#items)|获取此集合中已加载的子项。|
 |[SearchOptions](/javascript/api/word/word.searchoptions)|[ignorePunct](/javascript/api/word/word.searchoptions#ignorepunct)|获取或设置指示是否忽略单词之间的所有标点符号的值。对应于“查找和替换”对话框中的“忽略标点符号”复选框。|
@@ -160,8 +160,8 @@ WordApi 1.1 是 Word JavaScript API 的第一个要求集。 它是 Word 2016 �
 ||[matchWholeWord](/javascript/api/word/word.searchoptions#matchwholeword)|获取或设置指示是否只查找整个单词，而不查找长单词的一部分的值。对应于“查找和替换”对话框中的“全字匹配”复选框。|
 ||[matchWildCards](/javascript/api/word/word.searchoptions#matchwildcards)||
 ||[matchWildcards](/javascript/api/word/word.searchoptions#matchwildcards)|获取或设置指示搜索是否使用特殊搜索操作符执行的值。对应于“查找和替换”对话框中的“使用通配符”复选框。|
-|[Section](/javascript/api/word/word.section)|[getFooter （type： HeaderFooterType）](/javascript/api/word/word.section#getfooter-type-)|获取节的页脚之一。|
-||[getHeader （type： HeaderFooterType）](/javascript/api/word/word.section#getheader-type-)|获取节的标头之一。|
+|[Section](/javascript/api/word/word.section)|[getFooter (类型： HeaderFooterType) ](/javascript/api/word/word.section#getfooter-type-)|获取节的页脚之一。|
+||[getHeader (类型： HeaderFooterType) ](/javascript/api/word/word.section#getheader-type-)|获取节的标头之一。|
 ||[body](/javascript/api/word/word.section#body)|获取节的 body 对象。 这不包括页眉/页脚和其他节元数据。 只读。|
 |[SectionCollection](/javascript/api/word/word.sectioncollection)|[items](/javascript/api/word/word.sectioncollection#items)|获取此集合中已加载的子项。|
 

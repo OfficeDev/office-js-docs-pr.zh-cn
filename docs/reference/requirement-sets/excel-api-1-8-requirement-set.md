@@ -4,12 +4,12 @@ description: 有关 ExcelApi 1.8 要求集的详细信息
 ms.date: 07/26/2019
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: e5d40df0ec9e6b5fb307f834c239c7fa895af42e
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: ad8c67fddffeec7937b66d43fb58a8608d662be1
+ms.sourcegitcommit: 83f9a2fdff81ca421cd23feea103b9b60895cab4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44611398"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "47430833"
 ---
 # <a name="whats-new-in-excel-javascript-api-18"></a>Excel JavaScript API 1.8 中的新增功能
 
@@ -33,13 +33,13 @@ Excel JavaScript API 要求集 1.8 的功能包括适用于数据透视表、数
 
 ## <a name="api-list"></a>API 列表
 
-下表列出了 Excel JavaScript API 要求集1.8 中的 Api。 若要查看 Excel JavaScript API 要求集1.8 或更早版本支持的所有 Api 的 API 参考文档，请参阅[要求集1.8 或更早版本中的 Excel api](/javascript/api/excel?view=excel-js-1.8)。
+下表列出了 Excel JavaScript API 要求集1.8 中的 Api。 若要查看 Excel JavaScript API 要求集1.8 或更早版本支持的所有 Api 的 API 参考文档，请参阅 [要求集1.8 或更早版本中的 Excel api](/javascript/api/excel?view=excel-js-1.8&preserve-view=true)。
 
 | Class | 域 | 说明 |
 |:---|:---|:---|
-|[BasicDataValidation](/javascript/api/excel/excel.basicdatavalidation)|[formula1](/javascript/api/excel/excel.basicdatavalidation#formula1)|当 operator 属性设置为二元运算符（如 GreaterThan （左边的操作数是用户试图在单元格中输入的值）时，指定右边的操作数。 使用和 NotBetween 之间的三元运算符指定下界操作数。|
+|[BasicDataValidation](/javascript/api/excel/excel.basicdatavalidation)|[formula1](/javascript/api/excel/excel.basicdatavalidation#formula1)|当 operator 属性设置为二元运算符（如 (GreaterThan）时，指定右边的操作数。左操作数是用户尝试在单元格) 中输入的值。 使用和 NotBetween 之间的三元运算符指定下界操作数。|
 ||[formula2](/javascript/api/excel/excel.basicdatavalidation#formula2)|使用和 NotBetween 之间的三元运算符指定上界操作数。 不与二元运算符（如 GreaterThan）一起使用。|
-||[接线员](/javascript/api/excel/excel.basicdatavalidation#operator)|用于验证数据有效性的运算符。|
+||[operator](/javascript/api/excel/excel.basicdatavalidation#operator)|用于验证数据有效性的运算符。|
 |[Chart](/javascript/api/excel/excel.chart)|[categoryLabelLevel](/javascript/api/excel/excel.chart#categorylabellevel)|返回或设置一个 ChartCategoryLabelLevel 枚举常量，该常量引用|
 ||[displayBlanksAs](/javascript/api/excel/excel.chart#displayblanksas)|返回或设置图表上的空白单元格的绘制方式。 读/写。|
 ||[plotBy](/javascript/api/excel/excel.chart#plotby)|返回或设置图表上的列或行用作数据系列的方式。 读/写。|
@@ -64,10 +64,10 @@ Excel JavaScript API 要求集 1.8 的功能包括适用于数据透视表、数
 ||[一定](/javascript/api/excel/excel.chartaxis#offset)|表示不同标签级别之间的距离以及一级标签和轴线之间的距离。 此值应该是 0 到 1000 之间的整数。|
 ||[position](/javascript/api/excel/excel.chartaxis#position)|表示两轴交叉的特定轴位置。 有关详细信息，请参阅 ChartAxisPosition。|
 ||[positionAt](/javascript/api/excel/excel.chartaxis#positionat)|表示两轴交叉的特定轴位置。 应使用 SetPositionAt(double) 方法设置此属性。|
-||[setPositionAt （value：数字）](/javascript/api/excel/excel.chartaxis#setpositionat-value-)|设置两轴交叉的特定轴位置。|
+||[setPositionAt (值： number) ](/javascript/api/excel/excel.chartaxis#setpositionat-value-)|设置两轴交叉的特定轴位置。|
 ||[textOrientation](/javascript/api/excel/excel.chartaxis#textorientation)|表示轴刻度线标签的文本方向。 此值应是 -90 到 90 或 180（垂直文本）之间的整数。|
 |[ChartAxisFormat](/javascript/api/excel/excel.chartaxisformat)|[fill](/javascript/api/excel/excel.chartaxisformat#fill)|表示图表填充格式。 只读。|
-|[ChartAxisTitle](/javascript/api/excel/excel.chartaxistitle)|[setFormula （formula： string）](/javascript/api/excel/excel.chartaxistitle#setformula-formula-)|该字符串值表示采用 A1 表示法的图表轴标题的公式。|
+|[ChartAxisTitle](/javascript/api/excel/excel.chartaxistitle)|[setFormula (公式： string) ](/javascript/api/excel/excel.chartaxistitle#setformula-formula-)|该字符串值表示采用 A1 表示法的图表轴标题的公式。|
 |[ChartAxisTitleFormat](/javascript/api/excel/excel.chartaxistitleformat)|[边缘](/javascript/api/excel/excel.chartaxistitleformat#border)|表示边框格式，包括颜色、线条样式和粗细。|
 ||[fill](/javascript/api/excel/excel.chartaxistitleformat#fill)|表示图表填充格式。|
 |[ChartBorder](/javascript/api/excel/excel.chartborder)|[clear()](/javascript/api/excel/excel.chartborder#clear--)|清除图表元素的边框格式。|
@@ -153,15 +153,15 @@ Excel JavaScript API 要求集 1.8 的功能包括适用于数据透视表、数
 ||[position](/javascript/api/excel/excel.datapivothierarchy#position)|DataPivotHierarchy 的位置。|
 ||[field](/javascript/api/excel/excel.datapivothierarchy#field)|返回与 DataPivotHierarchy 相关联的 PivotFields。|
 ||[id](/javascript/api/excel/excel.datapivothierarchy#id)|DataPivotHierarchy ID。|
-||[setToDefault()](/javascript/api/excel/excel.datapivothierarchy#settodefault--)|将 DataPivotHierarchy 重置回其默认值。|
+||[setToDefault ( # B1 ](/javascript/api/excel/excel.datapivothierarchy#settodefault--)|将 DataPivotHierarchy 重置回其默认值。|
 ||[showAs](/javascript/api/excel/excel.datapivothierarchy#showas)|确定数据是否应显示为特定计算汇总。|
 ||[summarizeBy](/javascript/api/excel/excel.datapivothierarchy#summarizeby)|确定是否显示 DataPivotHierarchy 的所有项。|
-|[DataPivotHierarchyCollection](/javascript/api/excel/excel.datapivothierarchycollection)|[add （pivotHierarchy： PivotHierarchy）](/javascript/api/excel/excel.datapivothierarchycollection#add-pivothierarchy-)|将 PivotHierarchy 添加到当前轴。|
+|[DataPivotHierarchyCollection](/javascript/api/excel/excel.datapivothierarchycollection)|[add (pivotHierarchy： PivotHierarchy) ](/javascript/api/excel/excel.datapivothierarchycollection#add-pivothierarchy-)|将 PivotHierarchy 添加到当前轴。|
 ||[getCount()](/javascript/api/excel/excel.datapivothierarchycollection#getcount--)|获取集合中的透视层级结构的数量。|
 ||[getItem(name: string)](/javascript/api/excel/excel.datapivothierarchycollection#getitem-name-)|按名称或 ID 获取 DataPivotHierarchy。|
 ||[getItemOrNullObject(name: string)](/javascript/api/excel/excel.datapivothierarchycollection#getitemornullobject-name-)|按名称获取 DataPivotHierarchy。 如果 DataPivotHierarchy 不存在，则返回 Null 对象。|
 ||[items](/javascript/api/excel/excel.datapivothierarchycollection#items)|获取此集合中已加载的子项。|
-||[remove （DataPivotHierarchy： DataPivotHierarchy）](/javascript/api/excel/excel.datapivothierarchycollection#remove-datapivothierarchy-)|从当前轴删除 PivotHierarchy。|
+||[删除 (DataPivotHierarchy： DataPivotHierarchy) ](/javascript/api/excel/excel.datapivothierarchycollection#remove-datapivothierarchy-)|从当前轴删除 PivotHierarchy。|
 |[DataValidation](/javascript/api/excel/excel.datavalidation)|[clear()](/javascript/api/excel/excel.datavalidation#clear--)|清除当前区域中的数据有效性。|
 ||[errorAlert](/javascript/api/excel/excel.datavalidation#erroralert)|用户输入无效数据时，出现错误警报。|
 ||[ignoreBlanks](/javascript/api/excel/excel.datavalidation#ignoreblanks)|忽略空白：不会对空白单元格执行数据严重，默认为 true。|
@@ -183,28 +183,28 @@ Excel JavaScript API 要求集 1.8 的功能包括适用于数据透视表、数
 ||[textLength](/javascript/api/excel/excel.datavalidationrule#textlength)|TextLength 数据有效性条件。|
 ||[time](/javascript/api/excel/excel.datavalidationrule#time)|时间数据有效性条件。|
 ||[wholeNumber](/javascript/api/excel/excel.datavalidationrule#wholenumber)|WholeNumber 数据有效性条件。|
-|[DateTimeDataValidation](/javascript/api/excel/excel.datetimedatavalidation)|[formula1](/javascript/api/excel/excel.datetimedatavalidation#formula1)|当 operator 属性设置为二元运算符（如 GreaterThan （左边的操作数是用户试图在单元格中输入的值）时，指定右边的操作数。 使用和 NotBetween 之间的三元运算符指定下界操作数。|
+|[DateTimeDataValidation](/javascript/api/excel/excel.datetimedatavalidation)|[formula1](/javascript/api/excel/excel.datetimedatavalidation#formula1)|当 operator 属性设置为二元运算符（如 (GreaterThan）时，指定右边的操作数。左操作数是用户尝试在单元格) 中输入的值。 使用和 NotBetween 之间的三元运算符指定下界操作数。|
 ||[formula2](/javascript/api/excel/excel.datetimedatavalidation#formula2)|使用和 NotBetween 之间的三元运算符指定上界操作数。 不与二元运算符（如 GreaterThan）一起使用。|
-||[接线员](/javascript/api/excel/excel.datetimedatavalidation#operator)|用于验证数据有效性的运算符。|
+||[operator](/javascript/api/excel/excel.datetimedatavalidation#operator)|用于验证数据有效性的运算符。|
 |[FilterPivotHierarchy](/javascript/api/excel/excel.filterpivothierarchy)|[enableMultipleFilterItems](/javascript/api/excel/excel.filterpivothierarchy#enablemultiplefilteritems)|确定是否允许多个筛选项。|
 ||[name](/javascript/api/excel/excel.filterpivothierarchy#name)|FilterPivotHierarchy 的名称。|
 ||[position](/javascript/api/excel/excel.filterpivothierarchy#position)|FilterPivotHierarchy 的位置。|
 ||[fields](/javascript/api/excel/excel.filterpivothierarchy#fields)|返回与 FilterPivotHierarchy 相关联的 PivotFields。|
 ||[id](/javascript/api/excel/excel.filterpivothierarchy#id)|FilterPivotHierarchy 的 ID。|
-||[setToDefault()](/javascript/api/excel/excel.filterpivothierarchy#settodefault--)|将 FilterPivotHierarchy 重置回其默认值。|
-|[FilterPivotHierarchyCollection](/javascript/api/excel/excel.filterpivothierarchycollection)|[add （pivotHierarchy： PivotHierarchy）](/javascript/api/excel/excel.filterpivothierarchycollection#add-pivothierarchy-)|将 PivotHierarchy 添加到当前轴。 行和列上的其他位置是否存在层次结构。|
+||[setToDefault ( # B1 ](/javascript/api/excel/excel.filterpivothierarchy#settodefault--)|将 FilterPivotHierarchy 重置回其默认值。|
+|[FilterPivotHierarchyCollection](/javascript/api/excel/excel.filterpivothierarchycollection)|[add (pivotHierarchy： PivotHierarchy) ](/javascript/api/excel/excel.filterpivothierarchycollection#add-pivothierarchy-)|将 PivotHierarchy 添加到当前轴。 行和列上的其他位置是否存在层次结构。|
 ||[getCount()](/javascript/api/excel/excel.filterpivothierarchycollection#getcount--)|获取集合中的透视层级结构的数量。|
 ||[getItem(name: string)](/javascript/api/excel/excel.filterpivothierarchycollection#getitem-name-)|按名称或 ID 获取 FilterPivotHierarchy。|
 ||[getItemOrNullObject(name: string)](/javascript/api/excel/excel.filterpivothierarchycollection#getitemornullobject-name-)|按名称获取 FilterPivotHierarchy。 如果 FilterPivotHierarchy 不存在，则返回 Null 对象。|
 ||[items](/javascript/api/excel/excel.filterpivothierarchycollection#items)|获取此集合中已加载的子项。|
-||[remove （filterPivotHierarchy： FilterPivotHierarchy）](/javascript/api/excel/excel.filterpivothierarchycollection#remove-filterpivothierarchy-)|从当前轴删除 PivotHierarchy。|
+||[删除 (filterPivotHierarchy： FilterPivotHierarchy) ](/javascript/api/excel/excel.filterpivothierarchycollection#remove-filterpivothierarchy-)|从当前轴删除 PivotHierarchy。|
 |[ListDataValidation](/javascript/api/excel/excel.listdatavalidation)|[inCellDropDown](/javascript/api/excel/excel.listdatavalidation#incelldropdown)|是否显示单元格下拉菜单中的列表，默认为 true。|
 ||[source](/javascript/api/excel/excel.listdatavalidation#source)|数据有效性列表源|
 |[PivotField](/javascript/api/excel/excel.pivotfield)|[name](/javascript/api/excel/excel.pivotfield#name)|PivotField 的名称。|
 ||[id](/javascript/api/excel/excel.pivotfield#id)|PivotField 的 ID。|
 ||[项目](/javascript/api/excel/excel.pivotfield#items)|返回包含透视字段的 PivotItems。|
 ||[showAllItems](/javascript/api/excel/excel.pivotfield#showallitems)|确定是否显示 PivotField 的所有项。|
-||[sortByLabels （sortBy： SortBy）](/javascript/api/excel/excel.pivotfield#sortbylabels-sortby-)|PivotField 排序。 如果指定 DataPivotHierarchy，则会基于它进行排序，如果未指定，则会基于 PivotField 本身进行排序。|
+||[sortByLabels (sortBy： SortBy) ](/javascript/api/excel/excel.pivotfield#sortbylabels-sortby-)|PivotField 排序。 如果指定 DataPivotHierarchy，则会基于它进行排序，如果未指定，则会基于 PivotField 本身进行排序。|
 ||[subtotals](/javascript/api/excel/excel.pivotfield#subtotals)|PivotField 小计。|
 |[PivotFieldCollection](/javascript/api/excel/excel.pivotfieldcollection)|[getCount()](/javascript/api/excel/excel.pivotfieldcollection#getcount--)|获取集合中的数据透视字段数。|
 ||[getItem(name: string)](/javascript/api/excel/excel.pivotfieldcollection#getitem-name-)|按其名称或 id 获取透视字段。|
@@ -225,11 +225,11 @@ Excel JavaScript API 要求集 1.8 的功能包括适用于数据透视表、数
 ||[getItem(name: string)](/javascript/api/excel/excel.pivotitemcollection#getitem-name-)|按其名称或 id 获取 PivotItem。|
 ||[getItemOrNullObject(name: string)](/javascript/api/excel/excel.pivotitemcollection#getitemornullobject-name-)|按名称获取 PivotItem。 如果 PivotItem 不存在，则将返回一个 null 对象。|
 ||[items](/javascript/api/excel/excel.pivotitemcollection#items)|获取此集合中已加载的子项。|
-|[PivotLayout](/javascript/api/excel/excel.pivotlayout)|[getColumnLabelRange()](/javascript/api/excel/excel.pivotlayout#getcolumnlabelrange--)|返回数据透视表列标签所在位置的区域。|
-||[getDataBodyRange()](/javascript/api/excel/excel.pivotlayout#getdatabodyrange--)|返回数据透视表数据值所在位置的区域。|
-||[getFilterAxisRange()](/javascript/api/excel/excel.pivotlayout#getfilteraxisrange--)|返回数据透视表筛选区的区域。|
+|[PivotLayout](/javascript/api/excel/excel.pivotlayout)|[getColumnLabelRange ( # B1 ](/javascript/api/excel/excel.pivotlayout#getcolumnlabelrange--)|返回数据透视表列标签所在位置的区域。|
+||[getDataBodyRange ( # B1 ](/javascript/api/excel/excel.pivotlayout#getdatabodyrange--)|返回数据透视表数据值所在位置的区域。|
+||[getFilterAxisRange ( # B1 ](/javascript/api/excel/excel.pivotlayout#getfilteraxisrange--)|返回数据透视表筛选区的区域。|
 ||[getRange()](/javascript/api/excel/excel.pivotlayout#getrange--)|返回存在数据透视表的区域，不包括筛选区。|
-||[getRowLabelRange()](/javascript/api/excel/excel.pivotlayout#getrowlabelrange--)|返回数据透视表行标签所在位置的区域。|
+||[getRowLabelRange ( # B1 ](/javascript/api/excel/excel.pivotlayout#getrowlabelrange--)|返回数据透视表行标签所在位置的区域。|
 ||[layoutType](/javascript/api/excel/excel.pivotlayout#layouttype)|此属性指示数据透视表上的所有字段的 PivotLayoutType。 如果字段状态不同，则为 null。|
 ||[showColumnGrandTotals](/javascript/api/excel/excel.pivotlayout#showcolumngrandtotals)|指定数据透视表报表是否显示列总计。|
 ||[showRowGrandTotals](/javascript/api/excel/excel.pivotlayout#showrowgrandtotals)|指定数据透视表报表是否显示行总计。|
@@ -241,24 +241,24 @@ Excel JavaScript API 要求集 1.8 的功能包括适用于数据透视表、数
 ||[层次结构](/javascript/api/excel/excel.pivottable#hierarchies)|数据透视表的透视层级结构。|
 ||[布局](/javascript/api/excel/excel.pivottable#layout)|PivotLayout，用于说明数据透视表的布局和可视化结构。|
 ||[rowHierarchies](/javascript/api/excel/excel.pivottable#rowhierarchies)|数据透视表的行透视层级结构。|
-|[PivotTableCollection](/javascript/api/excel/excel.pivottablecollection)|[add （name： string，source： Range \| string \| Table，Destination： Range \| string）](/javascript/api/excel/excel.pivottablecollection#add-name--source--destination-)|基于指定的数据源添加数据透视表，并将其插入到目标区域的左上单元格。|
-|[Range](/javascript/api/excel/excel.range)|[dataValidation](/javascript/api/excel/excel.range#datavalidation)|返回数据有效性对象。|
+|[PivotTableCollection](/javascript/api/excel/excel.pivottablecollection)|[添加 (名称： string，source： Range \| string \| Table，Destination： Range \| string) ](/javascript/api/excel/excel.pivottablecollection#add-name--source--destination-)|基于指定的数据源添加数据透视表，并将其插入到目标区域的左上单元格。|
+|[区域](/javascript/api/excel/excel.range)|[dataValidation](/javascript/api/excel/excel.range#datavalidation)|返回数据有效性对象。|
 |[RowColumnPivotHierarchy](/javascript/api/excel/excel.rowcolumnpivothierarchy)|[name](/javascript/api/excel/excel.rowcolumnpivothierarchy#name)|RowColumnPivotHierarchy 的名称。|
 ||[position](/javascript/api/excel/excel.rowcolumnpivothierarchy#position)|RowColumnPivotHierarchy 的位置。|
 ||[fields](/javascript/api/excel/excel.rowcolumnpivothierarchy#fields)|返回与 RowColumnPivotHierarchy 相关联的 PivotFields。|
 ||[id](/javascript/api/excel/excel.rowcolumnpivothierarchy#id)|RowColumnPivotHierarchy 的 ID。|
-||[setToDefault()](/javascript/api/excel/excel.rowcolumnpivothierarchy#settodefault--)|将 RowColumnPivotHierarchy 重置回其默认值。|
-|[RowColumnPivotHierarchyCollection](/javascript/api/excel/excel.rowcolumnpivothierarchycollection)|[add （pivotHierarchy： PivotHierarchy）](/javascript/api/excel/excel.rowcolumnpivothierarchycollection#add-pivothierarchy-)|将 PivotHierarchy 添加到当前轴。 行和列上的其他位置是否存在层次结构。|
+||[setToDefault ( # B1 ](/javascript/api/excel/excel.rowcolumnpivothierarchy#settodefault--)|将 RowColumnPivotHierarchy 重置回其默认值。|
+|[RowColumnPivotHierarchyCollection](/javascript/api/excel/excel.rowcolumnpivothierarchycollection)|[add (pivotHierarchy： PivotHierarchy) ](/javascript/api/excel/excel.rowcolumnpivothierarchycollection#add-pivothierarchy-)|将 PivotHierarchy 添加到当前轴。 行和列上的其他位置是否存在层次结构。|
 ||[getCount()](/javascript/api/excel/excel.rowcolumnpivothierarchycollection#getcount--)|获取集合中的透视层级结构的数量。|
 ||[getItem(name: string)](/javascript/api/excel/excel.rowcolumnpivothierarchycollection#getitem-name-)|按名称或 ID 获取 RowColumnPivotHierarchy。|
 ||[getItemOrNullObject(name: string)](/javascript/api/excel/excel.rowcolumnpivothierarchycollection#getitemornullobject-name-)|按名称获取 RowColumnPivotHierarchy。 如果 RowColumnPivotHierarchy 不存在，则返回 Null 对象。|
 ||[items](/javascript/api/excel/excel.rowcolumnpivothierarchycollection#items)|获取此集合中已加载的子项。|
-||[remove （rowColumnPivotHierarchy： RowColumnPivotHierarchy）](/javascript/api/excel/excel.rowcolumnpivothierarchycollection#remove-rowcolumnpivothierarchy-)|从当前轴删除 PivotHierarchy。|
+||[删除 (rowColumnPivotHierarchy： RowColumnPivotHierarchy) ](/javascript/api/excel/excel.rowcolumnpivothierarchycollection#remove-rowcolumnpivothierarchy-)|从当前轴删除 PivotHierarchy。|
 |[运行时](/javascript/api/excel/excel.runtime)|[enableEvents](/javascript/api/excel/excel.runtime#enableevents)|切换当前任务窗格或内容加载项中的 JavaScript 事件。|
 |[ShowAsRule](/javascript/api/excel/excel.showasrule)|[baseField](/javascript/api/excel/excel.showasrule#basefield)|基于 ShowAs 计算的基础 PivotField，如适用，基于 ShowAsCalculation 类型，否则为 null。|
 ||[baseItem](/javascript/api/excel/excel.showasrule#baseitem)|基于 ShowAs 计算的基础 Item，如适用，基于 ShowAsCalculation 类型，否则为 null。|
 ||[结果](/javascript/api/excel/excel.showasrule#calculation)|数据 PivotField 使用的 ShowAs 计算。 有关详细信息，请参阅 ShowAsCalculation。|
-|[Style](/javascript/api/excel/excel.style)|[autoIndent](/javascript/api/excel/excel.style#autoindent)|指示将单元格中的文本对齐方式设为相等分布时文本是否会自动缩进。|
+|[样式](/javascript/api/excel/excel.style)|[autoIndent](/javascript/api/excel/excel.style#autoindent)|指示将单元格中的文本对齐方式设为相等分布时文本是否会自动缩进。|
 ||[textOrientation](/javascript/api/excel/excel.style#textorientation)|此样式中的文本方向。|
 |[Subtotals](/javascript/api/excel/excel.subtotals)|[automatic](/javascript/api/excel/excel.subtotals#automatic)|如果将“Automatic”设为 true，则在设置 Subtotals 时，所有其他值均会被忽略。|
 ||[平均](/javascript/api/excel/excel.subtotals#average)||
@@ -287,5 +287,5 @@ Excel JavaScript API 要求集 1.8 的功能包括适用于数据透视表、数
 
 ## <a name="see-also"></a>另请参阅
 
-- [Excel JavaScript API 参考文档](/javascript/api/excel?view=excel-js-1.8)
+- [Excel JavaScript API 参考文档](/javascript/api/excel?view=excel-js-1.8&preserve-view=true)
 - [Excel JavaScript API 要求集](./excel-api-requirement-sets.md)

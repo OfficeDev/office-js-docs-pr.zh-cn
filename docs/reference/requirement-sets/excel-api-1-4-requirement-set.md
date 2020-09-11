@@ -4,12 +4,12 @@ description: 有关 ExcelApi 1.4 要求集的详细信息
 ms.date: 07/28/2020
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: 3e2ad776383caf66c12e1402afe49962381dab61
-ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
+ms.openlocfilehash: a0a7be48e8a17ebcd650185519b7330ddb6041e0
+ms.sourcegitcommit: 83f9a2fdff81ca421cd23feea103b9b60895cab4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "47294267"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "47430749"
 ---
 # <a name="whats-new-in-excel-javascript-api-14"></a>Excel JavaScript API 1.4 的最近更新
 
@@ -48,7 +48,7 @@ worksheet.getItemOrNullObject("itemName")
 
 ## <a name="api-list"></a>API 列表
 
-下表列出了 Excel JavaScript API 要求集1.4 中的 Api。 若要查看 Excel JavaScript API 要求集1.4 或更早版本支持的所有 Api 的 API 参考文档，请参阅 [要求集1.4 或更早版本中的 Excel api](/javascript/api/excel?view=excel-js-1.4)。
+下表列出了 Excel JavaScript API 要求集1.4 中的 Api。 若要查看 Excel JavaScript API 要求集1.4 或更早版本支持的所有 Api 的 API 参考文档，请参阅 [要求集1.4 或更早版本中的 Excel api](/javascript/api/excel?view=excel-js-1.4&preserve-view=true)。
 
 | Class | 域 | 说明 |
 |:---|:---|:---|
@@ -96,5 +96,5 @@ worksheet.getItemOrNullObject("itemName")
 
 ## <a name="see-also"></a>另请参阅
 
-- [Excel JavaScript API 参考文档](/javascript/api/excel?view=excel-js-1.4)
+- [Excel JavaScript API 参考文档](/javascript/api/excel?view=excel-js-1.4&preserve-view=true)
 - [Excel JavaScript API 要求集](./excel-api-requirement-sets.md)

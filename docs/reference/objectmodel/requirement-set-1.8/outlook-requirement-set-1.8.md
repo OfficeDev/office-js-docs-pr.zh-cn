@@ -3,12 +3,12 @@ title: Outlook 加载项 API 要求集 1.8
 description: 适用于 Outlook 外接程序 API 的要求集1。8
 ms.date: 05/20/2020
 localization_priority: Normal
-ms.openlocfilehash: b0ccf50d93c94787d9e8349324c7cc3705d9223d
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 6da1de2529f48fa15d93846d4afcca0718b81165
+ms.sourcegitcommit: 83f9a2fdff81ca421cd23feea103b9b60895cab4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44612169"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "47431533"
 ---
 # <a name="outlook-add-in-api-requirement-set-18"></a>Outlook 加载项 API 要求集 1.8
 
@@ -24,16 +24,16 @@ Office JavaScript API 的 Outlook 外接程序 API 子集包括可以在 Outlook
 
 ### <a name="change-log"></a>更改日志
 
-- 添加了 [AttachmentContent](/javascript/api/outlook/office.attachmentcontent?view=outlook-js-1.8)：新增了一个表示附件内容的对象。
-- 添加了[AttachmentDetailsCompose](/javascript/api/outlook/office.attachmentdetailscompose?view=outlook-js-1.8)：添加了一个新对象，该对象代表撰写模式下的附件的详细信息。
-- 添加了 [Categories](/javascript/api/outlook/office.categories?view=outlook-js-1.8)：新增了一个表示项目类别的对象。
-- 添加了 [CategoryDetails](/javascript/api/outlook/office.categorydetails?view=outlook-js-1.8)：新增了一个表示类别详细信息（其名称以及对应的颜色）的对象。
-- 添加了 [EnhancedLocation](/javascript/api/outlook/office.enhancedlocation?view=outlook-js-1.8)：新增了一个表示约会位置集的对象。
-- 添加了 [InternetHeaders](/javascript/api/outlook/office.internetheaders?view=outlook-js-1.8)：新增了一个表示邮件项目的 Internet 标头的对象。 仅限撰写模式。
-- 添加了 [LocationDetails](/javascript/api/outlook/office.locationdetails?view=outlook-js-1.8)：新增了一个表示位置的对象。 只读。
-- 添加了 [LocationIdentifier](/javascript/api/outlook/office.locationidentifier?view=outlook-js-1.8)：新增了一个表示位置 ID 的对象。
-- 添加了 [MasterCategories](/javascript/api/outlook/office.mastercategories?view=outlook-js-1.8)：新增了一个表示邮箱上类别主列表的对象。
-- 添加了 [SharedProperties](/javascript/api/outlook/office.sharedproperties?view=outlook-js-1.8)：新增了一个表示共享文件夹、日历或邮箱中约会或邮件项目的属性的对象。
+- 添加了 [AttachmentContent](/javascript/api/outlook/office.attachmentcontent?view=outlook-js-1.8&preserve-view=true)：新增了一个表示附件内容的对象。
+- 添加了 [AttachmentDetailsCompose](/javascript/api/outlook/office.attachmentdetailscompose?view=outlook-js-1.8&preserve-view=true)：添加了一个新对象，该对象代表撰写模式下的附件的详细信息。
+- 添加了 [Categories](/javascript/api/outlook/office.categories?view=outlook-js-1.8&preserve-view=true)：新增了一个表示项目类别的对象。
+- 添加了 [CategoryDetails](/javascript/api/outlook/office.categorydetails?view=outlook-js-1.8&preserve-view=true)：新增了一个表示类别详细信息（其名称以及对应的颜色）的对象。
+- 添加了 [EnhancedLocation](/javascript/api/outlook/office.enhancedlocation?view=outlook-js-1.8&preserve-view=true)：新增了一个表示约会位置集的对象。
+- 添加了 [InternetHeaders](/javascript/api/outlook/office.internetheaders?view=outlook-js-1.8&preserve-view=true)：新增了一个表示邮件项目的 Internet 标头的对象。 仅限撰写模式。
+- 添加了 [LocationDetails](/javascript/api/outlook/office.locationdetails?view=outlook-js-1.8&preserve-view=true)：新增了一个表示位置的对象。 只读。
+- 添加了 [LocationIdentifier](/javascript/api/outlook/office.locationidentifier?view=outlook-js-1.8&preserve-view=true)：新增了一个表示位置 ID 的对象。
+- 添加了 [MasterCategories](/javascript/api/outlook/office.mastercategories?view=outlook-js-1.8&preserve-view=true)：新增了一个表示邮箱上类别主列表的对象。
+- 添加了 [SharedProperties](/javascript/api/outlook/office.sharedproperties?view=outlook-js-1.8&preserve-view=true)：新增了一个表示共享文件夹、日历或邮箱中约会或邮件项目的属性的对象。
 - 添加了 [SupportsSharedFolders 清单元素](../../manifest/supportssharedfolders.md)：添加了 [DesktopFormFactor](../../manifest/desktopformfactor.md) 清单元素的子元素。 它定义了是否可在代理场景中使用加载项。
 - 添加了 [Office.context.mailbox.masterCategories](office.context.mailbox.md#properties)：新增了一个表示邮箱上类别主列表的属性。
 - 添加了 [Office.context.mailbox.item.categories](office.context.mailbox.item.md#properties)：新增了一个表示项目上类别集的属性。
@@ -46,11 +46,11 @@ Office JavaScript API 的 Outlook 外接程序 API 子集包括可以在 Outlook
 - 添加了 [Office.context.mailbox.item.getSharedPropertiesAsync](office.context.mailbox.item.md#methods)：新增了一个方法，它可获取显示约会或邮件项目的 sharedProperties 的对象。
 - 添加了 [Office.context.mailbox.item.internetHeaders](office.context.mailbox.item.md#properties)：新增了一个可显示邮件项目上的 Internet 标头的属性。 仅限撰写模式。
 - 修改了 [Event.completed](/javascript/api/office/office.addincommands.event#completed-options-)：添加了一个新的可选参数 `options`，它是具有一个有效值 `allowEvent` 的字典。 此值可用于取消执行事件。
-- 添加了 [Office.MailboxEnums.AttachmentContentFormat](/javascript/api/outlook/office.mailboxenums.attachmentcontentformat?view=outlook-js-1.8)：新增了一个指定应用于附件内容的格式设置的枚举。
-- 添加了 [Office.MailboxEnums.AttachmentStatus](/javascript/api/outlook/office.mailboxenums.attachmentstatus?view=outlook-js-1.8)：新增了一个指定是添加附件还是从邮件中删除附件的枚举。
-- 添加了 [Office.MailboxEnums.CategoryColor](/javascript/api/outlook/office.mailboxenums.categorycolor?view=outlook-js-1.8)：新增了一个指定可用于与类别关联的颜色的枚举。
-- 添加了 [Office.MailboxEnums.DelegatePermissions](/javascript/api/outlook/office.mailboxenums.delegatepermissions?view=outlook-js-1.8)：新增了一个指定代理权限的位标记枚举。
-- 添加了 [Office.MailboxEnums.LocationType](/javascript/api/outlook/office.mailboxenums.locationtype?view=outlook-js-1.8)：新增了一个指定约会位置的类型的枚举。
+- 添加了 [Office.MailboxEnums.AttachmentContentFormat](/javascript/api/outlook/office.mailboxenums.attachmentcontentformat?view=outlook-js-1.8&preserve-view=true)：新增了一个指定应用于附件内容的格式设置的枚举。
+- 添加了 [Office.MailboxEnums.AttachmentStatus](/javascript/api/outlook/office.mailboxenums.attachmentstatus?view=outlook-js-1.8&preserve-view=true)：新增了一个指定是添加附件还是从邮件中删除附件的枚举。
+- 添加了 [Office.MailboxEnums.CategoryColor](/javascript/api/outlook/office.mailboxenums.categorycolor?view=outlook-js-1.8&preserve-view=true)：新增了一个指定可用于与类别关联的颜色的枚举。
+- 添加了 [Office.MailboxEnums.DelegatePermissions](/javascript/api/outlook/office.mailboxenums.delegatepermissions?view=outlook-js-1.8&preserve-view=true)：新增了一个指定代理权限的位标记枚举。
+- 添加了 [Office.MailboxEnums.LocationType](/javascript/api/outlook/office.mailboxenums.locationtype?view=outlook-js-1.8&preserve-view=true)：新增了一个指定约会位置的类型的枚举。
 - 修改了 [Office.EventType](/javascript/api/office/office.eventtype)：添加对 `AttachmentsChanged` 和 `EnhancedLocationsChanged` 事件的支持。
 
 ## <a name="see-also"></a>另请参阅

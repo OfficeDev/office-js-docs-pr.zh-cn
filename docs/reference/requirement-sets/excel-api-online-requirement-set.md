@@ -4,12 +4,12 @@ description: 有关 ExcelApiOnline 要求集的详细信息
 ms.date: 05/06/2020
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: f4a39406328605e11d8108ddee454c339bf3919f
-ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
+ms.openlocfilehash: aa497ff97533ff3a414905547a949fa8430c3efe
+ms.sourcegitcommit: 83f9a2fdff81ca421cd23feea103b9b60895cab4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "47294239"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "47430812"
 ---
 # <a name="excel-javascript-api-online-only-requirement-set"></a>Excel JavaScript API 仅联机要求集
 
@@ -54,6 +54,6 @@ if (Office.context.requirements.isSetSupported("ExcelApiOnline", "1.1")) {
 
 ## <a name="see-also"></a>另请参阅
 
-- [Excel JavaScript API 参考文档](/javascript/api/excel?view=excel-js-online)
+- [Excel JavaScript API 参考文档](/javascript/api/excel?view=excel-js-online&preserve-view=true)
 - [Excel JavaScript 预览 API](./excel-preview-apis.md)
 - [Excel JavaScript API 要求集](./excel-api-requirement-sets.md)

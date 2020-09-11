@@ -4,12 +4,12 @@ description: 有关 ExcelApi 1.10 要求集的详细信息
 ms.date: 10/22/2019
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: 50d38f610606b4d172d3f79f6a968ad7b1e8e344
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 890d198f238e29d39744d87d754381543ebcaf6a
+ms.sourcegitcommit: 83f9a2fdff81ca421cd23feea103b9b60895cab4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44612099"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "47431232"
 ---
 # <a name="whats-new-in-excel-javascript-api-110"></a>Excel JavaScript API 1.10 中的新增功能
 
@@ -18,13 +18,13 @@ ExcelApi 1.10 引入了主要功能，如注释、大纲和切片器。 它还�
 | 功能区域 | 说明 | 相关对象 |
 |:--- |:--- |:--- |
 | [备注](../../excel/excel-add-ins-comments.md) | 添加、编辑和删除备注。 | [Comment](/javascript/api/excel/excel.comment)、[CommentCollection](/javascript/api/excel/excel.commentcollection) |
-| [分级](../../excel/excel-add-ins-ranges-advanced.md#group-data-for-an-outline) | 将行和列分组为窗体可折叠大纲。 | [区域](/javascript/api/excel/excel.range)、[工作表](/javascript/api/excel/excel.worksheet) |
+| [分级](../../excel/excel-add-ins-ranges-advanced.md#group-data-for-an-outline) | 将行和列分组为窗体可折叠大纲。 | [区域](/javascript/api/excel/excel.range)、 [工作表](/javascript/api/excel/excel.worksheet) |
 | [Slicers](../../excel/excel-add-ins-pivottables.md#slicers) | 在表格和数据透视表中插入和配置切片器。 | [Slicer](/javascript/api/excel/excel.slicer) |
-| [更多工作表事件](../../excel/excel-add-ins-events.md) | 侦听工作表中的 "单击" 和 "排序" 事件。 | [工作表（事件）](/javascript/api/excel/excel.worksheet#events) |
+| [更多工作表事件](../../excel/excel-add-ins-events.md) | 侦听工作表中的 "单击" 和 "排序" 事件。 | [工作表 (事件) ](/javascript/api/excel/excel.worksheet#events) |
 
 ## <a name="api-list"></a>API 列表
 
-下表列出了 Excel JavaScript API 要求集1.10 中的 Api。 若要查看 Excel JavaScript API 要求集1.10 或更早版本支持的所有 Api 的 API 参考文档，请参阅[要求集1.10 或更早版本中的 Excel api](/javascript/api/excel?view=excel-js-1.10)。
+下表列出了 Excel JavaScript API 要求集1.10 中的 Api。 若要查看 Excel JavaScript API 要求集1.10 或更早版本支持的所有 Api 的 API 参考文档，请参阅 [要求集1.10 或更早版本中的 Excel api](/javascript/api/excel?view=excel-js-1.10&preserve-view=true)。
 
 | Class | 域 | 说明 |
 |:---|:---|:---|
@@ -36,7 +36,7 @@ ExcelApi 1.10 引入了主要功能，如注释、大纲和切片器。 它还�
 ||[creationDate](/javascript/api/excel/excel.comment#creationdate)|获取批注的创建时间。 如果批注是从备注转换而来的，则返回 null，因为批注没有创建日期。|
 ||[id](/javascript/api/excel/excel.comment#id)|表示批注标识符。 只读。|
 ||[replies](/javascript/api/excel/excel.comment#replies)|表示与批注关联的回复对象的集合。 只读。|
-|[CommentCollection](/javascript/api/excel/excel.commentcollection)|[add （cellAddress： Range \| string，content： CommentRichContent \| String，contenttype？： Excel. contenttype）](/javascript/api/excel/excel.commentcollection#add-celladdress--content--contenttype-)|使用给定单元格上的给定内容创建新批注。 `InvalidArgument`如果提供的范围大于一个单元格，则会引发错误。|
+|[CommentCollection](/javascript/api/excel/excel.commentcollection)|[添加 (cellAddress： Range \| string，content： CommentRichContent \| String，contentType？： Excel contenttype) ](/javascript/api/excel/excel.commentcollection#add-celladdress--content--contenttype-)|使用给定单元格上的给定内容创建新批注。 `InvalidArgument`如果提供的范围大于一个单元格，则会引发错误。|
 ||[getCount()](/javascript/api/excel/excel.commentcollection#getcount--)|获取集合中的批注数量。|
 ||[getItem(commentId: string)](/javascript/api/excel/excel.commentcollection#getitem-commentid-)|根据其 ID 从集合中获取批注。 只读。|
 ||[getItemAt(index: number)](/javascript/api/excel/excel.commentcollection#getitemat-index-)|根据其位置从集合中获取批注。|
@@ -51,7 +51,7 @@ ExcelApi 1.10 引入了主要功能，如注释、大纲和切片器。 它还�
 ||[authorName](/javascript/api/excel/excel.commentreply#authorname)|获取批注回复作者的姓名。|
 ||[creationDate](/javascript/api/excel/excel.commentreply#creationdate)|获取批注回复的创建时间。|
 ||[id](/javascript/api/excel/excel.commentreply#id)|表示批注回复标识符。 只读。|
-|[CommentReplyCollection](/javascript/api/excel/excel.commentreplycollection)|[add （content： CommentRichContent \| string，contenttype？： Excel. contenttype）](/javascript/api/excel/excel.commentreplycollection#add-content--contenttype-)|为批注创建批注回复。|
+|[CommentReplyCollection](/javascript/api/excel/excel.commentreplycollection)|[添加 (内容： CommentRichContent \| 字符串和 contenttype？： Excel contenttype) ](/javascript/api/excel/excel.commentreplycollection#add-content--contenttype-)|为批注创建批注回复。|
 ||[getCount()](/javascript/api/excel/excel.commentreplycollection#getcount--)|获取集合中的批注回复数量。|
 ||[getItem(commentReplyId: string)](/javascript/api/excel/excel.commentreplycollection#getitem-commentreplyid-)|返回由其 ID 标识的批注回复。 只读。|
 ||[getItemAt(index: number)](/javascript/api/excel/excel.commentreplycollection#getitemat-index-)|根据其在集合中的位置获取批注回复。|
@@ -68,14 +68,14 @@ ExcelApi 1.10 引入了主要功能，如注释、大纲和切片器。 它还�
 ||[getItemOrNullObject(name: string)](/javascript/api/excel/excel.pivottablestylecollection#getitemornullobject-name-)|按名称获取 PivotTableStyle。 如果没有 PivotTableStyle，将返回 null 对象。|
 ||[items](/javascript/api/excel/excel.pivottablestylecollection#items)|获取此集合中已加载的子项。|
 ||[setDefault(newDefaultStyle: PivotTableStyle \| string)](/javascript/api/excel/excel.pivottablestylecollection#setdefault-newdefaultstyle-)|设置在父对象范围内使用的默认 PivotTableStyle。|
-|[Range](/javascript/api/excel/excel.range)|[group （groupOption： GroupOption）](/javascript/api/excel/excel.range#group-groupoption-)|对列和行进行分组以进行分级显示。|
-||[hideGroupDetails （groupOption： GroupOption）](/javascript/api/excel/excel.range#hidegroupdetails-groupoption-)|隐藏行或列组的详细信息。|
+|[Range](/javascript/api/excel/excel.range)|[group (groupOption： GroupOption) ](/javascript/api/excel/excel.range#group-groupoption-)|对列和行进行分组以进行分级显示。|
+||[hideGroupDetails (groupOption： GroupOption) ](/javascript/api/excel/excel.range#hidegroupdetails-groupoption-)|隐藏行或列组的详细信息。|
 ||[height](/javascript/api/excel/excel.range#height)|返回从区域的上边缘到区域的下边缘的 100％ 缩放的距离（以磅为单位）。 只读。|
 ||[left](/javascript/api/excel/excel.range#left)|返回从工作表的左边缘到区域的左边缘的 100％ 缩放的距离（以磅为单位）。 只读。|
 ||[top](/javascript/api/excel/excel.range#top)|返回从工作表的上边缘到区域的上边缘的 100％ 缩放的距离（以磅为单位）。 只读。|
 ||[width](/javascript/api/excel/excel.range#width)|返回从区域的左边缘到区域的右边缘的 100％ 缩放的距离（以磅为单位）。 只读。|
-||[showGroupDetails （groupOption： GroupOption）](/javascript/api/excel/excel.range#showgroupdetails-groupoption-)|显示行或列组的详细信息。|
-||[取消分组（groupOption： GroupOption）](/javascript/api/excel/excel.range#ungroup-groupoption-)|取消边框的列和行的组合。|
+||[showGroupDetails (groupOption： GroupOption) ](/javascript/api/excel/excel.range#showgroupdetails-groupoption-)|显示行或列组的详细信息。|
+||[取消组合 (groupOption： GroupOption) ](/javascript/api/excel/excel.range#ungroup-groupoption-)|取消边框的列和行的组合。|
 |[Shape](/javascript/api/excel/excel.shape)|[copyTo(destinationSheet?: Worksheet \| string)](/javascript/api/excel/excel.shape#copyto-destinationsheet-)|复制并粘贴 Shape 对象。|
 ||[placement](/javascript/api/excel/excel.shape#placement)|表示对象如何附加到其下方的单元格。|
 |[Slicer](/javascript/api/excel/excel.slicer)|[caption](/javascript/api/excel/excel.slicer#caption)|表示切片器的标题。|
@@ -155,7 +155,7 @@ ExcelApi 1.10 引入了主要功能，如注释、大纲和切片器。 它还�
 ||[onRowSorted](/javascript/api/excel/excel.worksheet#onrowsorted)|在已对一个或多个行进行排序时发生。 这是从上到下排序操作的结果。|
 ||[onSingleClicked](/javascript/api/excel/excel.worksheet#onsingleclicked)|当工作表中发生左击或攻丝操作时发生。 在以下情况下单击时不会触发此事件：|
 ||[slicers](/javascript/api/excel/excel.worksheet#slicers)|返回作为工作表一部分的切片器的集合。 只读。|
-||[showOutlineLevels （rowLevels：数字，columnLevels：数字）](/javascript/api/excel/excel.worksheet#showoutlinelevels-rowlevels--columnlevels-)|按行或列的大纲级别显示组。|
+||[showOutlineLevels (rowLevels： number，columnLevels： number) ](/javascript/api/excel/excel.worksheet#showoutlinelevels-rowlevels--columnlevels-)|按行或列的大纲级别显示组。|
 |[WorksheetCollection](/javascript/api/excel/excel.worksheetcollection)|[onColumnSorted](/javascript/api/excel/excel.worksheetcollection#oncolumnsorted)|在已对一个或多个列进行排序时发生。 这是从左到右排序操作的结果。|
 ||[onRowSorted](/javascript/api/excel/excel.worksheetcollection#onrowsorted)|在已对一个或多个行进行排序时发生。 这是从上到下排序操作的结果。|
 ||[onSingleClicked](/javascript/api/excel/excel.worksheetcollection#onsingleclicked)|在工作表集合中发生左击或螺纹操作时发生。 在以下情况下单击时不会触发此事件：|
@@ -168,12 +168,12 @@ ExcelApi 1.10 引入了主要功能，如注释、大纲和切片器。 它还�
 ||[type](/javascript/api/excel/excel.worksheetrowsortedeventargs#type)|获取事件的类型。 有关详细信息，请参阅 Excel.EventType。|
 ||[worksheetId](/javascript/api/excel/excel.worksheetrowsortedeventargs#worksheetid)|获取发生排序的工作表的 id。|
 |[WorksheetSingleClickedEventArgs](/javascript/api/excel/excel.worksheetsingleclickedeventargs)|[address](/javascript/api/excel/excel.worksheetsingleclickedeventargs#address)|获取特定工作表中表示被左键单击/点击的单元格的地址。|
-||[OffsetX](/javascript/api/excel/excel.worksheetsingleclickedeventargs#offsetx)|从左击/点击的点到左侧（或从右到左语言的右侧）的网格线边缘的距离，以磅为单位的左击的单元格的网格线边缘。|
+||[OffsetX](/javascript/api/excel/excel.worksheetsingleclickedeventargs#offsetx)|从左击/攻丝点向 (左单击或向右的距离（以磅为单位）) 左击的或点击的单元格的网格线边缘。|
 ||[OffsetY](/javascript/api/excel/excel.worksheetsingleclickedeventargs#offsety)|从左键单击/点击的点到左键单击/点击的单元格的顶部网格线边缘的距离（以磅为单位）。|
 ||[type](/javascript/api/excel/excel.worksheetsingleclickedeventargs#type)|获取事件的类型。|
 ||[worksheetId](/javascript/api/excel/excel.worksheetsingleclickedeventargs#worksheetid)|获取已在其中左键单击/点击单元格的工作表的 ID。|
 
 ## <a name="see-also"></a>另请参阅
 
-- [Excel JavaScript API 参考文档](/javascript/api/excel?view=excel-js-1.10)
+- [Excel JavaScript API 参考文档](/javascript/api/excel?view=excel-js-1.10&preserve-view=true)
 - [Excel JavaScript API 要求集](./excel-api-requirement-sets.md)

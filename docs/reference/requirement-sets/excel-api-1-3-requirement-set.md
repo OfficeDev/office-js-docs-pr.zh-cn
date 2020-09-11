@@ -4,12 +4,12 @@ description: 有关 ExcelApi 1.3 要求集的详细信息
 ms.date: 07/26/2019
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: 482d04a951acc48d34838a758834adfba273bd19
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 71bad9fae630a11688458e4cb76ded2fa523a563
+ms.sourcegitcommit: 83f9a2fdff81ca421cd23feea103b9b60895cab4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44611433"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "47430868"
 ---
 # <a name="whats-new-in-excel-javascript-api-13"></a>Excel JavaScript API 1.3 的最近更新
 
@@ -17,21 +17,21 @@ ExcelApi 1.3 增加了对数据绑定和基本数据透视表访问的支持。
 
 ## <a name="api-list"></a>API 列表
 
-下表列出了 Excel JavaScript API 要求集1.3 中的 Api。 若要查看 Excel JavaScript API 要求集1.3 或更早版本支持的所有 Api 的 API 参考文档，请参阅[要求集1.3 或更早版本中的 Excel api](/javascript/api/excel?view=excel-js-1.3)。
+下表列出了 Excel JavaScript API 要求集1.3 中的 Api。 若要查看 Excel JavaScript API 要求集1.3 或更早版本支持的所有 Api 的 API 参考文档，请参阅 [要求集1.3 或更早版本中的 Excel api](/javascript/api/excel?view=excel-js-1.3&preserve-view=true)。
 
 | Class | 域 | 说明 |
 |:---|:---|:---|
 |[Binding](/javascript/api/excel/excel.binding)|[delete()](/javascript/api/excel/excel.binding#delete--)|删除 binding 对象。|
-|[BindingCollection](/javascript/api/excel/excel.bindingcollection)|[add （range： Range \| string，bindingType： bindingType，id： string）](/javascript/api/excel/excel.bindingcollection#add-range--bindingtype--id-)|将新的 binding 对象添加到特定区域。|
-||[addFromNamedItem （name： string，bindingType： BindingType，id： string）](/javascript/api/excel/excel.bindingcollection#addfromnameditem-name--bindingtype--id-)|根据工作簿中的命名项添加新的 binding 对象。|
-||[addFromSelection （bindingType： BindingType，id： string）](/javascript/api/excel/excel.bindingcollection#addfromselection-bindingtype--id-)|根据当前选择的内容添加新的 binding 对象。|
+|[BindingCollection](/javascript/api/excel/excel.bindingcollection)|[add (range： Range \| string，bindingType： bindingType，id： string) ](/javascript/api/excel/excel.bindingcollection#add-range--bindingtype--id-)|将新的 binding 对象添加到特定区域。|
+||[addFromNamedItem (name： string，bindingType： BindingType，id： string) ](/javascript/api/excel/excel.bindingcollection#addfromnameditem-name--bindingtype--id-)|根据工作簿中的命名项添加新的 binding 对象。|
+||[addFromSelection (bindingType： BindingType，id： string) ](/javascript/api/excel/excel.bindingcollection#addfromselection-bindingtype--id-)|根据当前选择的内容添加新的 binding 对象。|
 |[PivotTable](/javascript/api/excel/excel.pivottable)|[name](/javascript/api/excel/excel.pivottable#name)|PivotTable 对象的名称。|
 ||[worksheet](/javascript/api/excel/excel.pivottable#worksheet)|包含当前 PivotTable 对象的工作表。|
 ||[refresh()](/javascript/api/excel/excel.pivottable#refresh--)|刷新 PivotTable 对象。|
 |[PivotTableCollection](/javascript/api/excel/excel.pivottablecollection)|[getItem(name: string)](/javascript/api/excel/excel.pivottablecollection#getitem-name-)|按名称获取 PivotTable 对象。|
 ||[items](/javascript/api/excel/excel.pivottablecollection#items)|获取此集合中已加载的子项。|
-||[refreshAll （）](/javascript/api/excel/excel.pivottablecollection#refreshall--)|刷新集合中的所有数据透视表。|
-|[Range](/javascript/api/excel/excel.range)|[getVisibleView （）](/javascript/api/excel/excel.range#getvisibleview--)|表示当前 range 对象的可见行。|
+||[refreshAll ( # B1 ](/javascript/api/excel/excel.pivottablecollection#refreshall--)|刷新集合中的所有数据透视表。|
+|[区域](/javascript/api/excel/excel.range)|[getVisibleView ( # B1 ](/javascript/api/excel/excel.range#getvisibleview--)|表示当前 range 对象的可见行。|
 |[RangeView](/javascript/api/excel/excel.rangeview)|[formulas](/javascript/api/excel/excel.rangeview#formulas)|表示采用 A1 表示法的公式。|
 ||[formulasLocal](/javascript/api/excel/excel.rangeview#formulaslocal)|表示采用 A1 样式表示法的公式，使用用户的语言和数字格式区域设置。例如，英语中的公式 "=SUM(A1, 1.5)" 在德语中将变为 "=SUMME(A1; 1,5)"。|
 ||[formulasR1C1](/javascript/api/excel/excel.rangeview#formulasr1c1)|表示采用 R1C1 样式表示法的公式。|
@@ -57,5 +57,5 @@ ExcelApi 1.3 增加了对数据绑定和基本数据透视表访问的支持。
 
 ## <a name="see-also"></a>另请参阅
 
-- [Excel JavaScript API 参考文档](/javascript/api/excel?view=excel-js-1.3)
+- [Excel JavaScript API 参考文档](/javascript/api/excel?view=excel-js-1.3&preserve-view=true)
 - [Excel JavaScript API 要求集](./excel-api-requirement-sets.md)

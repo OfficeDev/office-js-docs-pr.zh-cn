@@ -1,15 +1,15 @@
 ---
 title: 自定义启用了 Node.js SSO 的加载项
 description: 了解如何自定义使用 Yeoman 生成器创建的启用 SSO 的外接程序。
-ms.date: 07/07/2020
+ms.date: 09/09/2020
 ms.prod: non-product-specific
 localization_priority: Normal
-ms.openlocfilehash: 41644ce28040f96ff2e4a22cac33ef2d45f1dc81
-ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
+ms.openlocfilehash: 45c069cbcc861fa5881b7e69cdd789071d398926
+ms.sourcegitcommit: 83f9a2fdff81ca421cd23feea103b9b60895cab4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "47294302"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "47430994"
 ---
 # <a name="customize-your-nodejs-sso-enabled-add-in"></a>自定义启用了 Node.js SSO 的加载项
 
@@ -608,10 +608,10 @@ export function writeDataToOfficeDocument(result: Object): Promise<any> {
 1. 在项目的根文件夹中，运行以下命令以生成项目并启动本地 web 服务器。
 
     > [!NOTE]
-    > Office 加载项应使用 HTTPS，而不是 HTTP（即便是在开发时也是如此）。 如果系统在运行以下命令后提示你安装证书，请接受提示以安装 Yeoman 生成器提供的证书。
+    > Office 加载项应使用 HTTPS，而不是 HTTP（即便是在开发时也是如此）。 如果系统在运行以下命令后提示你安装证书，请接受提示以安装 Yeoman 生成器提供的证书。 您可能还需要以管理员身份运行命令提示符或终端以进行所做的更改。
 
     ```command&nbsp;line
-    npm start
+    npm run dev-server
     ```
 
 2. 按照[旁加载 Outlook 加载项以供测试](/outlook/add-ins/sideload-outlook-add-ins-for-testing)中的说明操作，旁加载加载项。 确保您登录到 Outlook 时使用的是与 Azure 在为应用程序 [配置 SSO](sso-quickstart.md#configure-sso) 时使用的 microsoft 365 管理员帐户相同的 microsoft 365 组织的成员。 执行此操作，将为成功进行 SSO 建立了相应的条件。 

@@ -3,12 +3,12 @@ title: 处理 Outlook 加载项中的日期值
 description: Office JavaScript API 将 JavaScript Date 对象用于大多数日期和时间的存储和检索。
 ms.date: 10/31/2019
 localization_priority: Normal
-ms.openlocfilehash: 48cbc407e21e377ed64dc873574d938b136bfd22
-ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
+ms.openlocfilehash: fb27e7393da9f5192daa5f7b14099f3fb0aeded0
+ms.sourcegitcommit: 83f9a2fdff81ca421cd23feea103b9b60895cab4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "47292564"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "47431043"
 ---
 # <a name="tips-for-handling-date-values-in-outlook-add-ins"></a>处理 Outlook 加载项中的日期值的提示
 
@@ -59,7 +59,7 @@ document.write ("The current UTC time is " +
 
 **API 成员**|**时区表示形式**|**Outlook 富客户端中的示例**|**Web 或移动设备上的 Outlook 中的示例**
 --------------|----------------------------|-------------------------------------|-------------------
-[Office.context.mailbox.userProfile.timeZone](/javascript/api/outlook/office.userprofile?view=outlook-js-preview#timezone)|在 Outlook 富客户端中，此属性返回客户端计算机时区。 在 web 和移动设备上的 Outlook 中，此属性返回 EAC 时区。 |EST|PST
+[Office.context.mailbox.userProfile.timeZone](/javascript/api/outlook/office.userprofile?view=outlook-js-preview&preserve-view=true#timezone)|在 Outlook 富客户端中，此属性返回客户端计算机时区。 在 web 和移动设备上的 Outlook 中，此属性返回 EAC 时区。 |EST|PST
 [Office.context.mailbox.item.dateTimeCreated](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties) 和 [Office.context.mailbox.item.dateTimeModified](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties)|这些属性中的每一个都返回一个 JavaScript `Date` 对象。 此 `Date` 值是 UTC 正确的，如以下示例中所示- `myUTCDate` outlook 富客户端中的值相同，outlook 网页版和移动设备上具有相同的值。<br/><br/>`var myDate = Office.mailbox.item.dateTimeCreated;`<br/>`var myUTCDate = myDate.getUTCDate;`<br/><br/>但是，调用将  `myDate.getDate` 返回客户端计算机时区中的 date 值，这与用于在 outlook 富客户端界面中显示日期时间值的时区一致，但可能不同于 web 和移动设备上的用户界面中使用的 EAC 时区。|如果此项的创建时间是 9am UTC：<br/><br/>`Office.mailbox.item.`<br/>`dateTimeCreated.getHours` 返回 4am EST。<br/><br/>如果此项的修改时间是 11am UTC：<br/><br/>`Office.mailbox.item.`<br/>`dateTimeModified.getHours` 返回 6am EST。|如果此项的创建时间是 9am UTC：<br/><br/>`Office.mailbox.item.`</br>`dateTimeCreated.getHours` 返回 4am EST。<br/><br/>如果此项的修改时间是 11am UTC：<br/><br/>`Office.mailbox.item.`</br>`dateTimeModified.getHours` 返回 6am EST。<br/><br/>请注意，如果您想要在用户界面中显示创建或修改时间，要首先将时间转换为 PST 以与用户界面的其余部分保持一致。
 [Office.context.mailbox.displayNewAppointmentForm](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md#methods)|每个  _Start_ 和 _End_ 参数都需要一个 JavaScript `Date` 对象。 参数应采用 UTC 格式，无论 Outlook 富客户端的用户界面中使用的时区或 web 或移动设备上的 Outlook 中使用的是何种时区。|如果约会窗体的开始和结束时间分别是 9am UTC 和 11am UTC，则应确保 `start` 和 `end` 参数都是 UTC 格式，这意味着：<br/><br/><ul><li>`start.getUTCHours` 返回 9am UTC</li><li>`end.getUTCHours` 返回 11am UTC</li></ul>|如果约会窗体的开始和结束时间分别是 9am UTC 和 11am UTC，则应确保 `start` 和 `end` 参数都是 UTC 格式，这意味着：<br/><br/><ul><li>`start.getUTCHours` 返回 9am UTC</li><li>`end.getUTCHours` 返回 11am UTC</li></ul>
 

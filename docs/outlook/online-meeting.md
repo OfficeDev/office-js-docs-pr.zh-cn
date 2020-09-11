@@ -4,16 +4,16 @@ description: 讨论如何为联机会议服务提供商设置 Outlook 移动外�
 ms.topic: article
 ms.date: 06/25/2020
 localization_priority: Normal
-ms.openlocfilehash: 9f0b50602ab4941b16c15abe97c3f099a54f5b42
-ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
+ms.openlocfilehash: d3dd1f035c69b668c05f80b36ef48108b8a9cecc
+ms.sourcegitcommit: 83f9a2fdff81ca421cd23feea103b9b60895cab4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "45093999"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "47431071"
 ---
 # <a name="create-an-outlook-mobile-add-in-for-an-online-meeting-provider"></a>为联机会议提供商创建 Outlook mobile 外接程序
 
-设置联机会议是 Outlook 用户的核心体验，可轻松[创建使用 outlook mobile 的团队会议](/microsoftteams/teams-add-in-for-outlook)。 但是，在 Outlook 中使用非 Microsoft 服务创建联机会议可能很麻烦。 通过实施此功能，服务提供商可以为其 Outlook 外接程序用户简化联机会议创建体验。
+设置联机会议是 Outlook 用户的核心体验，可轻松 [创建使用 outlook mobile 的团队会议](/microsoftteams/teams-add-in-for-outlook) 。 但是，在 Outlook 中使用非 Microsoft 服务创建联机会议可能很麻烦。 通过实施此功能，服务提供商可以为其 Outlook 外接程序用户简化联机会议创建体验。
 
 > [!IMPORTANT]
 > 仅适用于使用 Microsoft 365 订阅的 Android 支持此功能。
@@ -22,7 +22,7 @@ ms.locfileid: "45093999"
 
 ## <a name="set-up-your-environment"></a>设置环境
 
-完成[Outlook 快速入门](../quickstarts/outlook-quickstart.md?tabs=yeomangenerator)，它将使用 Office 外接程序的 Yeoman 生成器创建外接程序项目。
+完成 [Outlook 快速入门](../quickstarts/outlook-quickstart.md?tabs=yeomangenerator) ，它将使用 Office 外接程序的 Yeoman 生成器创建外接程序项目。
 
 ## <a name="configure-the-manifest"></a>配置清单
 
@@ -30,7 +30,7 @@ ms.locfileid: "45093999"
 
 1. 在代码编辑器中，打开 "快速启动" 项目。
 
-1. 打开位于项目根目录中的**manifest.xml**文件。
+1. 打开位于项目根目录中的 **manifest.xml** 文件。
 
 1. 选择整个 `<VersionOverrides>` 节点 (包括 "打开" 和 "关闭" 标记) 并将其替换为以下 XML。
 
@@ -122,7 +122,7 @@ ms.locfileid: "45093999"
 ```
 
 > [!TIP]
-> 若要了解有关 Outlook 外接程序清单的详细信息，请参阅[outlook 外接程序清单](manifests.md)和[添加对适用于 outlook Mobile 的外接程序命令的支持](add-mobile-support.md)。
+> 若要了解有关 Outlook 外接程序清单的详细信息，请参阅 [outlook 外接程序清单](manifests.md) 和 [添加对适用于 outlook Mobile 的外接程序命令的支持](add-mobile-support.md)。
 
 ## <a name="implement-adding-online-meeting-details"></a>实施添加联机会议详细信息
 
@@ -130,7 +130,7 @@ ms.locfileid: "45093999"
 
 1. 在同一 "快速启动" 项目中，在代码编辑器中打开 **/src/commands/commands.js** 。
 
-1. 将**commands.js**文件的整个内容替换为以下 JavaScript。
+1. 将 **commands.js** 文件的整个内容替换为以下 JavaScript。
 
     ```js
     // 1. How to construct online meeting details.
@@ -207,7 +207,7 @@ ms.locfileid: "45093999"
 
 ## <a name="testing-and-validation"></a>测试和验证
 
-按照通常的指导来[测试和验证您的外接程序](testing-and-tips.md)。 在 Outlook 网页版、Windows 版或 Mac 版中进行[旁加载](sideload-outlook-add-ins-for-testing.md)后，在你的 Android 移动设备上重新启动 outlook。  (Android 是目前唯一受支持的客户端。 ) 然后，在新的会议屏幕上，验证 Microsoft 团队或 Skype 切换是否已替换为您自己的。
+按照通常的指导来 [测试和验证您的外接程序](testing-and-tips.md)。 在 Outlook 网页版、Windows 版或 Mac 版中进行 [旁加载](sideload-outlook-add-ins-for-testing.md) 后，在你的 Android 移动设备上重新启动 outlook。  (Android 是目前唯一受支持的客户端。 ) 然后，在新的会议屏幕上，验证 Microsoft 团队或 Skype 切换是否已替换为您自己的。
 
 ### <a name="create-meeting-ui"></a>创建会议用户界面
 
@@ -222,17 +222,17 @@ ms.locfileid: "45093999"
 [![Android 上的加入会议屏幕的屏幕截图](../images/outlook-android-join-online-meeting-view-1.png)](../images/outlook-android-join-online-meeting-view-1-expanded.png#lightbox)
 
 > [!IMPORTANT]
-> 如果看不到**Join**链接，则可能是你的服务的联机会议模板未在我们的服务器上注册。 有关详细信息，请参阅[注册联机会议模板](#register-your-online-meeting-template)部分。
+> 如果看不到 **Join** 链接，则可能是你的服务的联机会议模板未在我们的服务器上注册。 有关详细信息，请参阅 [注册联机会议模板](#register-your-online-meeting-template) 部分。
 
 ## <a name="register-your-online-meeting-template"></a>注册您的联机会议模板
 
 如果您想要为服务注册联机会议模板，则可以使用详细信息创建 GitHub 问题。 之后，我们将与您联系以协调注册日程表。
 
-1. 请转到本文结尾处的 "**反馈**" 部分。
-1. 按 "**此页面**" 链接。
-1. 将新问题的**标题**设置为 "为我的服务注册联机会议模板"，并将其替换 `my-service` 为您的服务名称。
-1. 在问题正文中，将字符串 "[输入反馈此处]" 替换为您在 `newBody` 本文前面的 "[实现添加联机会议详细信息" 部分中的 "实现添加联机会议详细信息](#implement-adding-online-meeting-details)" 部分中设置的字符串。
-1. 单击 "**提交新问题**"。
+1. 请转到本文结尾处的 " **反馈** " 部分。
+1. 按 " **此页面** " 链接。
+1. 将新问题的 **标题** 设置为 "为我的服务注册联机会议模板"，并将其替换 `my-service` 为您的服务名称。
+1. 在问题正文中，将字符串 "[输入反馈此处]" 替换为您在 `newBody` 本文前面的 " [实现添加联机会议详细信息" 部分中的 "实现添加联机会议详细信息](#implement-adding-online-meeting-details) " 部分中设置的字符串。
+1. 单击 " **提交新问题**"。
 
 ![包含 Contoso 示例内容的新 GitHub 问题屏幕的屏幕截图](../images/outlook-request-to-register-online-meeting-template.png)
 
@@ -241,15 +241,15 @@ ms.locfileid: "45093999"
 以下 Api 可用于此功能。
 
 - 约会组织者 Api
-  - [使用者](/javascript/api/outlook/office.appointmentcompose?view=outlook-js-preview#subject) ([主题](/javascript/api/outlook/office.subject?view=outlook-js-preview)) 的主题
-  -  (时间) [的开始](/javascript/api/outlook/office.appointmentcompose?view=outlook-js-preview#start)[时间](/javascript/api/outlook/office.time?view=outlook-js-preview)
-  -  (时间) [的结束](/javascript/api/outlook/office.appointmentcompose?view=outlook-js-preview#end)[时间](/javascript/api/outlook/office.time?view=outlook-js-preview)
-  -  ([位置](/javascript/api/outlook/office.location?view=outlook-js-preview)) [的位置。](/javascript/api/outlook/office.appointmentcompose?view=outlook-js-preview#location)
-  - [OptionalAttendees](/javascript/api/outlook/office.appointmentcompose?view=outlook-js-preview#optionalattendees) ([收件人](/javascript/api/outlook/office.recipients?view=outlook-js-preview)) 中的
-  - [RequiredAttendees](/javascript/api/outlook/office.appointmentcompose?view=outlook-js-preview#requiredattendees) ([收件人](/javascript/api/outlook/office.recipients?view=outlook-js-preview)) 中的
-  -  ([setAsync](/javascript/api/outlook/office.body?view=outlook-js-preview#setasync-data--options--callback-)) 的 " [context.subname](/javascript/api/outlook/office.appointmentcompose?view=outlook-js-preview#body) [" 的 "](/javascript/api/outlook/office.body?view=outlook-js-preview#getasync-coerciontype--options--callback-)正文"。
-  - [LoadCustomPropertiesAsync](/javascript/api/outlook/office.appointmentcompose?view=outlook-js-preview#loadcustompropertiesasync-callback--usercontext-) ([CustomProperties](/javascript/api/outlook/office.customproperties?view=outlook-js-preview)) 的
-  - [RoamingSettings](../reference/objectmodel/preview-requirement-set/office.context.md?view=outlook-js-preview#roamingsettings-roamingsettings) ([roamingSettings](/javascript/api/outlook/office.roamingsettings?view=outlook-js-preview)) 
+  - [使用者](/javascript/api/outlook/office.appointmentcompose?view=outlook-js-preview&preserve-view=true#subject) ([主题](/javascript/api/outlook/office.subject?view=outlook-js-preview&preserve-view=true)) 的主题
+  -  (时间) [的开始](/javascript/api/outlook/office.appointmentcompose?view=outlook-js-preview&preserve-view=true#start)[时间](/javascript/api/outlook/office.time?view=outlook-js-preview&preserve-view=true)
+  -  (时间) [的结束](/javascript/api/outlook/office.appointmentcompose?view=outlook-js-preview&preserve-view=true#end)[时间](/javascript/api/outlook/office.time?view=outlook-js-preview&preserve-view=true)
+  -  ([位置](/javascript/api/outlook/office.location?view=outlook-js-preview&preserve-view=true)) [的位置。](/javascript/api/outlook/office.appointmentcompose?view=outlook-js-preview&preserve-view=true#location)
+  - [OptionalAttendees](/javascript/api/outlook/office.appointmentcompose?view=outlook-js-preview&preserve-view=true#optionalattendees) ([收件人](/javascript/api/outlook/office.recipients?view=outlook-js-preview&preserve-view=true)) 中的
+  - [RequiredAttendees](/javascript/api/outlook/office.appointmentcompose?view=outlook-js-preview&preserve-view=true#requiredattendees) ([收件人](/javascript/api/outlook/office.recipients?view=outlook-js-preview&preserve-view=true)) 中的
+  -  ([setAsync](/javascript/api/outlook/office.body?view=outlook-js-preview&preserve-view=true#setasync-data--options--callback-)) 的 " [context.subname](/javascript/api/outlook/office.appointmentcompose?view=outlook-js-preview&preserve-view=true#body) [" 的 "](/javascript/api/outlook/office.body?view=outlook-js-preview&preserve-view=true#getasync-coerciontype--options--callback-)正文"。
+  - [LoadCustomPropertiesAsync](/javascript/api/outlook/office.appointmentcompose?view=outlook-js-preview&preserve-view=true#loadcustompropertiesasync-callback--usercontext-) ([CustomProperties](/javascript/api/outlook/office.customproperties?view=outlook-js-preview&preserve-view=true)) 的
+  - [RoamingSettings](../reference/objectmodel/preview-requirement-set/office.context.md?view=outlook-js-preview&preserve-view=true#roamingsettings-roamingsettings) ([roamingSettings](/javascript/api/outlook/office.roamingsettings?view=outlook-js-preview&preserve-view=true)) 
 - 处理身份验证流
   - [Dialog API](../develop/dialog-api-in-office-add-ins.md)
 
@@ -260,7 +260,7 @@ ms.locfileid: "45093999"
 - 仅适用于联机会议服务提供商。
 - 目前，Android 是唯一受支持的客户端。 即将推出对 iOS 的支持。
 - 只有管理员安装的加载项才会显示在会议撰写屏幕上，替换默认团队或 Skype 选项。 无法激活用户安装的外接程序。
-- 外接端图标应使用十六进制代码 `#919191` 或以[其他颜色格式](https://convertingcolors.com/hex-color-919191.html)的等效项进行灰度。
+- 外接端图标应使用十六进制代码 `#919191` 或以 [其他颜色格式](https://convertingcolors.com/hex-color-919191.html)的等效项进行灰度。
 - 约会组织者 (撰写) 模式中仅支持一个无 UI 的命令。
 
 ## <a name="see-also"></a>另请参阅

@@ -3,12 +3,12 @@ title: 在 Visual Studio 中将 Office 加载项项目转换为使用 TypeScript
 description: 了解如何将 Visual Studio 中的 Office 外接程序项目转换为使用 TypeScript。
 ms.date: 09/01/2020
 localization_priority: Normal
-ms.openlocfilehash: 716222998666b014ab014298a4165678cf747165
-ms.sourcegitcommit: 4adfc368a366f00c3f3d7ed387f34aaecb47f17c
+ms.openlocfilehash: e05861e3fef79f87afc820eb62b2a52aaa953f31
+ms.sourcegitcommit: 83f9a2fdff81ca421cd23feea103b9b60895cab4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "47326294"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "47430483"
 ---
 # <a name="convert-an-office-add-in-project-in-visual-studio-to-typescript"></a>在 Visual Studio 中将 Office 加载项项目转换为使用 TypeScript
 
@@ -25,12 +25,12 @@ ms.locfileid: "47326294"
 - 安装了 **Office/SharePoint 开发**工作负载的 [Visual Studio 2019](https://www.visualstudio.com/vs/)
 
     > [!TIP]
-    > 如果之前已安装 Visual Studio 2019，请[使用 Visual Studio 安装程序](/visualstudio/install/modify-visual-studio)，以确保安装 **Office/SharePoint 开发**工作负载。 如果尚未安装此工作负载，请使用 Visual Studio 安装程序进行[安装](/visualstudio/install/modify-visual-studio?view=vs-2019#modify-workloads)。
+    > 如果之前已安装 Visual Studio 2019，请[使用 Visual Studio 安装程序](/visualstudio/install/modify-visual-studio)，以确保安装 **Office/SharePoint 开发**工作负载。 如果尚未安装此工作负载，请使用 Visual Studio 安装程序进行[安装](/visualstudio/install/modify-visual-studio?view=vs-2019&preserve-view=true#modify-workloads)。
 
 - TypeScript SDK 版本 2.3 或更高版本（适用于 Visual Studio 2019）
 
     > [!TIP]
-    > 在 [Visual Studio 安装程序](/visualstudio/install/modify-visual-studio)中，选择“单个组件”**** 选项卡，然后向下滚动到“SDK、库和框架”**** 部分。 在该部分中，确保至少选择一个“TypeScript SDK”**** 组件（版本 2.3 或更高版本）。 如果一个“TypeScript SDK”**** 组件都没有选择，则选择最新可用版本的 SDK，然后选择“修改”**** 按钮以[安装该单个组件](/visualstudio/install/modify-visual-studio?view=vs-2019#modify-individual-components)。 
+    > 在 [Visual Studio 安装程序](/visualstudio/install/modify-visual-studio)中，选择“单个组件”**** 选项卡，然后向下滚动到“SDK、库和框架”**** 部分。 在该部分中，确保至少选择一个“TypeScript SDK”**** 组件（版本 2.3 或更高版本）。 如果一个“TypeScript SDK”**** 组件都没有选择，则选择最新可用版本的 SDK，然后选择“修改”**** 按钮以[安装该单个组件](/visualstudio/install/modify-visual-studio?view=vs-2019&preserve-view=true#modify-individual-components)。 
 
 - Excel 2016 或更高版本
 

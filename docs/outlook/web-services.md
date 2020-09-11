@@ -3,12 +3,12 @@ title: 从 Outlook 加载项使用 Exchange Web 服务 (EWS)
 description: 提供的示例显示 Outlook 加载项如何通过 Exchange Web 服务请求信息。
 ms.date: 04/28/2020
 localization_priority: Normal
-ms.openlocfilehash: a8299b3e96db48c296fe0e61b36668a788fb8799
-ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
+ms.openlocfilehash: f9cf2a41ce5da325ae17812e89d9d8ecd315e573
+ms.sourcegitcommit: 83f9a2fdff81ca421cd23feea103b9b60895cab4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "47292480"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "47430987"
 ---
 # <a name="call-web-services-from-an-outlook-add-in"></a>从 Outlook 加载项调用 Web 服务
 
@@ -197,7 +197,7 @@ Outlook 外接程序可以通过方法访问 EWS 中可用的部分操作 `makeE
 使用此方法时 `makeEwsRequestAsync` ，将使用当前用户的电子邮件帐户凭据对请求进行身份验证。 该 `makeEwsRequestAsync` 方法为您管理凭据，因此您无需向您的请求提供身份验证凭据。
 
 > [!NOTE]
-> 服务器管理员必须使用 [set-webservicesvirtualdirectory](/powershell/module/exchange/client-access-servers/New-WebServicesVirtualDirectory?view=exchange-ps) 或 [Set-webservicesvirtualdirectory](/powershell/module/exchange/client-access-servers/Set-WebServicesVirtualDirectory?view=exchange-ps) Cmdlet 在客户端访问服务器 EWS 目录上将 _OAuthAuthentication_ 参数设置为 **true** ，才能使该 `makeEwsRequestAsync` 方法能够发出 EWS 请求。
+> 服务器管理员必须使用 [set-webservicesvirtualdirectory](/powershell/module/exchange/client-access-servers/New-WebServicesVirtualDirectory?view=exchange-ps&preserve-view=true) 或 [Set-webservicesvirtualdirectory](/powershell/module/exchange/client-access-servers/Set-WebServicesVirtualDirectory?view=exchange-ps&preserve-view=true) Cmdlet 在客户端访问服务器 EWS 目录上将 _OAuthAuthentication_ 参数设置为 **true** ，才能使该 `makeEwsRequestAsync` 方法能够发出 EWS 请求。
 
 您的外接程序必须 `ReadWriteMailbox` 在其外接程序清单中指定要使用方法的权限 `makeEwsRequestAsync` 。 有关使用权限的信息 `ReadWriteMailbox` ，请参阅[了解 Outlook 加载项权限](understanding-outlook-add-in-permissions.md)中的[ReadWriteMailbox 权限](understanding-outlook-add-in-permissions.md#readwritemailbox-permission)一节。
 

@@ -3,12 +3,12 @@ title: 启用和禁用加载项命令
 description: 了解如何更改 Office Web 加载项中的自定义功能区按钮和菜单项的启用或禁用状态。
 ms.date: 08/26/2020
 localization_priority: Normal
-ms.openlocfilehash: 54bfa06a3acfbea561d20a1b327f093429d725fc
-ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
+ms.openlocfilehash: fac62b20dc67db591ba2de73f96526b8a3dfdf9e
+ms.sourcegitcommit: 83f9a2fdff81ca421cd23feea103b9b60895cab4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "47292972"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "47430413"
 ---
 # <a name="enable-and-disable-add-in-commands"></a>启用和禁用加载项命令
 
@@ -23,7 +23,7 @@ ms.locfileid: "47292972"
 
 ## <a name="office-application-and-platform-support-only"></a>仅 Office 应用程序和平台支持
 
-本文中介绍的 Api 仅在 Excel 中可用，并且仅在适用于 Windows 和 Mac 上的 office 上才可用。
+本文中介绍的 Api 仅在 Excel 中可用，并且仅在 Windows 和 Mac 上的 Office 中可用。
 
 ### <a name="test-for-platform-support-with-requirement-sets"></a>使用要求集测试平台支持
 
@@ -77,7 +77,7 @@ ms.locfileid: "47292972"
 更改加载项命令的启用状态的基本步骤如下：
 
 1. 创建 [RibbonUpdaterData](/javascript/api/office/office.ribbonupdaterdata) 对象，该对象 (1) 按清单中指定的 ID 来指定命令及其父选项卡；以及 (2) 指定命令的启用或禁用状态。
-2. 将 **RibbonUpdaterData** 对象传递到 [Office.ribbon.requestUpdate()](/javascript/api/office/office.ribbon?view=common-js#requestupdate-input-) 方法。
+2. 将 **RibbonUpdaterData** 对象传递到 [Office.ribbon.requestUpdate()](/javascript/api/office/office.ribbon?view=common-js&preserve-view=true#requestupdate-input-) 方法。
 
 下面展示了一个非常简单的示例。 请注意，“MyButton”和“OfficeAddinTab1”是从清单中复制的。
 
@@ -204,7 +204,7 @@ function disableChartFormat() {
 
 ## <a name="test-for-platform-support-with-requirement-sets"></a>使用要求集测试平台支持
 
-要求集是指各组已命名的 API 成员。 Office 外接程序使用清单中指定的要求集或使用运行时检查来确定 Office 应用程序是否支持加载项所需的 Api。 有关详细信息，请参阅 [Office 版本和要求集](../develop/office-versions-and-requirement-sets.md)。
+要求集是指已命名的 API 成员组。Office 加载项使用清单中指定的要求集或执行运行时检查，以确定 Office 应用程序是否支持加载项所需的 API。有关详细信息，请参阅 [Office 版本和要求集](../develop/office-versions-and-requirement-sets.md)。
 
 启用/禁用 API 需要支持以下要求集：
 

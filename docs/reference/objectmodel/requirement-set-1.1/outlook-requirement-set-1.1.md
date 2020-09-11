@@ -3,37 +3,37 @@ title: Outlook 外接程序 API 要求集 1.1
 description: 作为邮箱 API 1.1 的一部分引入的 Outlook 外接程序和 Office JavaScript Api 的功能和 Api。
 ms.date: 12/17/2019
 localization_priority: Normal
-ms.openlocfilehash: a6d2d352b2882bf0e5de994c8924bbb99ebb9dfb
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: f93b6d582043641903b362121c6e5eaf89c2ad1c
+ms.sourcegitcommit: 83f9a2fdff81ca421cd23feea103b9b60895cab4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44610815"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "47431372"
 ---
 # <a name="outlook-add-in-api-requirement-set-11"></a>Outlook 外接程序 API 要求集 1.1
 
-Office JavaScript API 的 Outlook 外接程序 API 子集包括可以在 Outlook 外接程序中使用的对象、方法、属性和事件。 Outlook JavaScript API 1.1 （邮箱1.1）是第一个 API 版本。
+Office JavaScript API 的 Outlook 外接程序 API 子集包括可以在 Outlook 外接程序中使用的对象、方法、属性和事件。 Outlook JavaScript API 1.1 (邮箱 1.1) 是 API 的第一个版本。
 
 > [!NOTE]
 > 本文档适用于最新要求集之外的[要求集](../../requirement-sets/outlook-api-requirement-sets.md)。
 
 ## <a name="whats-new-in-11"></a>1.1 中的新增功能有哪些？
 
-要求集1.1 包括在 Outlook 中支持的所有[通用 API 要求集](../../requirement-sets/office-add-in-requirement-sets.md)。 它添加了外接程序访问邮件和约会的正文以及修改当前项的功能。
+要求集1.1 包括在 Outlook 中支持的所有 [通用 API 要求集](../../requirement-sets/office-add-in-requirement-sets.md) 。 它添加了外接程序访问邮件和约会的正文以及修改当前项的功能。
 
 ### <a name="change-log"></a>更改日志
 
-- 添加了 [Body](/javascript/api/outlook/office.body?view=outlook-js-1.1) 对象：提供用于在 Outlook 外接程序中添加和更新项目内容的方法。
-- 添加了 [Location](/javascript/api/outlook/office.location?view=outlook-js-1.1) 对象：提供用于获取和设置 Outlook 外接程序中的会议地点的方法。
-- 添加了 [Recipients](/javascript/api/outlook/office.recipients?view=outlook-js-1.1) 对象：提供用于获取和设置 Outlook 外接程序中的约会或邮件的收件人的方法。
-- 添加了 [Subject](/javascript/api/outlook/office.subject?view=outlook-js-1.1) 对象：提供用于获取和设置 Outlook 外接程序中的约会或邮件的主题的方法。
-- 添加了 [Time](/javascript/api/outlook/office.time?view=outlook-js-1.1) 对象：提供用于获取和设置 Outlook 外接程序中的会议开始或结束时间的方法。
+- 添加了 [Body](/javascript/api/outlook/office.body?view=outlook-js-1.1&preserve-view=true) 对象：提供用于在 Outlook 外接程序中添加和更新项目内容的方法。
+- 添加了 [Location](/javascript/api/outlook/office.location?view=outlook-js-1.1&preserve-view=true) 对象：提供用于获取和设置 Outlook 外接程序中的会议地点的方法。
+- 添加了 [Recipients](/javascript/api/outlook/office.recipients?view=outlook-js-1.1&preserve-view=true) 对象：提供用于获取和设置 Outlook 外接程序中的约会或邮件的收件人的方法。
+- 添加了 [Subject](/javascript/api/outlook/office.subject?view=outlook-js-1.1&preserve-view=true) 对象：提供用于获取和设置 Outlook 外接程序中的约会或邮件的主题的方法。
+- 添加了 [Time](/javascript/api/outlook/office.time?view=outlook-js-1.1&preserve-view=true) 对象：提供用于获取和设置 Outlook 外接程序中的会议开始或结束时间的方法。
 - 添加了 [Office.context.mailbox.item.addFileAttachmentAsync](office.context.mailbox.item.md#methods)：将文件作为附件添加到邮件或约会。
 - 添加了 [Office.context.mailbox.item.addItemAttachmentAsync](office.context.mailbox.item.md#methods)：将 Exchange 项目（如邮件）作为附件添加到邮件或约会。
 - 添加了 [Office.context.mailbox.item.removeAttachmentAsync](office.context.mailbox.item.md#methods)：将附件从邮件或约会中删除。
 - 添加了 [Office.context.mailbox.item.body](office.context.mailbox.item.md#properties)：获取一个提供用于处理项目正文的方法的对象。
-- 添加了邮件的["密件抄送"](office.context.mailbox.item.md#properties)行。
-- 添加了 [Office.MailboxEnums.RecipientType](/javascript/api/outlook/office.mailboxenums.recipienttype?view=outlook-js-1.1)：指定约会收件人的类型。
+- 添加了邮件的 ["密件抄送"](office.context.mailbox.item.md#properties) 行。
+- 添加了 [Office.MailboxEnums.RecipientType](/javascript/api/outlook/office.mailboxenums.recipienttype?view=outlook-js-1.1&preserve-view=true)：指定约会收件人的类型。
 
 ## <a name="see-also"></a>另请参阅
 

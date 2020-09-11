@@ -3,12 +3,12 @@ title: 清单文件中的 VersionOverrides 元素
 description: Office 外接程序清单的 VersionOverrides 元素的参考文档 (XML) 文件。
 ms.date: 03/05/2020
 localization_priority: Normal
-ms.openlocfilehash: 588f0074941b41a617dd912d78ed2ef2c59f0886
-ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
+ms.openlocfilehash: 979a75c3ea8b4d600a2c43fc4edfcb0d4e96930e
+ms.sourcegitcommit: 83f9a2fdff81ca421cd23feea103b9b60895cab4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "47293833"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "47431540"
 ---
 # <a name="versionoverrides-element"></a>VersionOverrides 元素
 
@@ -16,7 +16,7 @@ ms.locfileid: "47293833"
 
 ## <a name="attributes"></a>属性
 
-|  属性  |  必需  |  说明  |
+|  属性  |  必需  |  Description  |
 |:-----|:-----|:-----|
 |  **xmlns**       |  是  |  VersionOverrides 架构命名空间。 根据此 `<VersionOverrides>` 元素的 **xsi： type** 值和父元素的 **xsi： type** 值，允许的值会有所不同 `<OfficeApp>` 。 请参阅下面的 [命名空间值](#namespace-values) 。|
 |  **xsi:type**  |  是  | 架构版本。目前的唯一有效值为 `VersionOverridesV1_0` 和 `VersionOverridesV1_1`。 |
@@ -36,7 +36,7 @@ ms.locfileid: "47293833"
 
 ## <a name="child-elements"></a>子元素
 
-|  元素 |  必需  |  说明  |
+|  元素 |  必需  |  Description  |
 |:-----|:-----|:-----|
 |  **说明**    |  否   |  描述外接程序。这会替代清单中任何父级部分中的 `Description` 元素。说明文本包含在 **Rescources** 元素中的 [LongString](resources.md) 元素的子元素中。`resid` 元素的 **** 属性被设置为包含文本的 `id` 元素的 `String` 属性的值。|
 |  **Requirements**  |  否   |  指定外接程序要求的最低要求集和 Office.js 的版本。这会替代清单中父级部分中的 `Requirements` 元素。|
@@ -45,7 +45,7 @@ ms.locfileid: "47293833"
 |  [EquivalentAddins](equivalentaddins.md)    |  否  | 指定与 web 外接程序等效的本机 (COM/XLL) 外接程序。 如果安装了等效的本机加载项，则不会激活 web 外接程序。|
 |  **VersionOverrides**    |  否  | 在新版架构下定义外接程序命令。有关详细信息，请参阅[实现多个版本](#implementing-multiple-versions)。 |
 |  [WebApplicationInfo](webapplicationinfo.md)    |  否  | 指定有关使用安全令牌颁发者（如 Azure Active Directory v2.0）的加载项注册的详细信息。 |
-|  [ExtendedPermissions](extendedpermissions.md) |  否  |  指定扩展权限的集合。<br><br>**重要说明**：由于 [appendOnSendAsync](/javascript/api/outlook/office.body?view=outlook-js-preview#appendonsendasync-data--options--callback-) API 当前处于预览阶段，因此使用元素的外接程序 `ExtendedPermissions` 不能发布到 AppSource，也不能通过集中部署进行部署。 |
+|  [ExtendedPermissions](extendedpermissions.md) |  否  |  指定扩展权限的集合。<br><br>**重要说明**：由于 [appendOnSendAsync](/javascript/api/outlook/office.body?view=outlook-js-preview&preserve-view=true#appendonsendasync-data--options--callback-) API 当前处于预览阶段，因此使用元素的外接程序 `ExtendedPermissions` 不能发布到 AppSource，也不能通过集中部署进行部署。 |
 
 ### <a name="versionoverrides-example"></a>VersionOverrides 示例
 

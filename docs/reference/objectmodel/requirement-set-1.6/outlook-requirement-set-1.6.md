@@ -3,12 +3,12 @@ title: Outlook 外接程序 API 要求集 1.6
 description: 作为邮箱 API 1.6 的一部分引入的 Outlook 外接程序和 Office JavaScript Api 的功能和 Api。
 ms.date: 02/19/2020
 localization_priority: Normal
-ms.openlocfilehash: 024b5ab992b146a1958653c38941434da00e1a03
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: adcfcb49a76fd3f0df2c2c3acfc6e1861a02f3b1
+ms.sourcegitcommit: 83f9a2fdff81ca421cd23feea103b9b60895cab4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44611447"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "47431449"
 ---
 # <a name="outlook-add-in-api-requirement-set-16"></a>Outlook 外接程序 API 要求集 1.6
 
@@ -30,7 +30,7 @@ Office JavaScript API 的 Outlook 外接程序 API 子集包括可以在 Outlook
 - 添加了 [Office.context.mailbox.item.getSelectedEntities](office.context.mailbox.item.md#methods)：添加了一个新函数，该函数可用于获取用户选择的突出显示匹配项中的实体。 突出显示的匹配项适用于上下文外接程序。
 - 添加了 [Office.context.mailbox.item.getSelectedRegExMatches](office.context.mailbox.item.md#methods)：添加了一个新函数，该函数可用于返回突出显示匹配项中与清单 XML 文件中定义的正则表达式匹配的字符串值。 突出显示的匹配项适用于上下文外接程序。
 - 添加了 [Office.context.mailbox.displayNewMessageForm](office.context.mailbox.md#methods)：添加了一个新函数，该函数将打开新邮件窗体。
-- 添加了 [Office.context.mailbox.userProfile.accountType](/javascript/api/outlook/office.userprofile?view=outlook-js-1.6#accounttype)：向指示用户帐户类型的用户配置文件添加了一个新成员。
+- 添加了 [Office.context.mailbox.userProfile.accountType](/javascript/api/outlook/office.userprofile?view=outlook-js-1.6&preserve-view=true#accounttype)：向指示用户帐户类型的用户配置文件添加了一个新成员。
 
 ## <a name="see-also"></a>另请参阅
 

@@ -3,12 +3,12 @@ title: 错误处理
 description: 了解有关 Excel JavaScript API 错误处理逻辑，以解决运行时错误。
 ms.date: 06/25/2020
 localization_priority: Normal
-ms.openlocfilehash: 189c92a4e960c8f9f1668f67f10472fdcdf84868
-ms.sourcegitcommit: c6308cf245ac1bc66a876eaa0a7bb4a2492991ac
+ms.openlocfilehash: cb06ab890fc10afd327bde0eb708ff97fabbcdca
+ms.sourcegitcommit: 83f9a2fdff81ca421cd23feea103b9b60895cab4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "47408451"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "47430553"
 ---
 # <a name="error-handling"></a>错误处理
 
@@ -77,4 +77,4 @@ Excel.run(function (context) {
 ## <a name="see-also"></a>另请参阅
 
 - [Office 外接程序中的 Excel JavaScript 对象模型](excel-add-ins-core-concepts.md)
-- [OfficeExtension.Error 对象（Excel JavaScript API）](/javascript/api/office/officeextension.error?view=excel-js-preview)
+- [OfficeExtension.Error 对象（Excel JavaScript API）](/javascript/api/office/officeextension.error?view=excel-js-preview&preserve-view=true)

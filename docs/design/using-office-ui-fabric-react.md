@@ -1,14 +1,14 @@
 ---
 title: 在 Office 加载项中使用 Office UI Fabric React
 description: 了解如何在 Office 加载项中使用 Office UI Fabric React。
-ms.date: 01/16/2020
+ms.date: 09/09/2020
 localization_priority: Normal
-ms.openlocfilehash: d0c46b30f361fcc9d2d7c08170b70c66f513bdae
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 1d1e89d51c4e5efa0ead1b1716e0f1014a63e85f
+ms.sourcegitcommit: 83f9a2fdff81ca421cd23feea103b9b60895cab4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44608469"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "47430581"
 ---
 # <a name="use-office-ui-fabric-react-in-office-add-ins"></a>在 Office 加载项中使用 Office UI Fabric React
 
@@ -53,7 +53,7 @@ Office UI Fabric 是用于生成 Office 和 Office 365 用户体验的 JavaScrip
 2. 完成以下步骤，以启动本地 Web 服务器并旁加载你的加载项。
 
     > [!NOTE]
-    > Office 加载项应使用 HTTPS，而不是 HTTP（即便是在开发时也是如此）。 如果系统在运行以下命令之一后提示你安装证书，请接受提示以安装 Yeoman 生成器提供的证书。
+    > Office 加载项应使用 HTTPS，而不是 HTTP（即便是在开发时也是如此）。 如果系统在运行以下命令之一后提示你安装证书，请接受提示以安装 Yeoman 生成器提供的证书。 您可能还需要以管理员身份运行命令提示符或终端以进行所做的更改。
 
     > [!TIP]
     > 如果在 Mac 上测试加载项，请先运行以下命令，然后再继续。 运行此命令时，本地 Web 服务器将启动。
