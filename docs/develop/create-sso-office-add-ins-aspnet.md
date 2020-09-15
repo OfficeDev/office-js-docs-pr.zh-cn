@@ -3,12 +3,12 @@ title: 创建使用单一登录的 ASP.NET Office 加载项
 description: 有关如何使用 ASP.NET 后端创建 (或转换) Office 加载项的分步指南，请使用单一登录 (SSO) 。
 ms.date: 07/30/2020
 localization_priority: Normal
-ms.openlocfilehash: 591761c9831109cb6900cb418e83d3240ddad29d
-ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
+ms.openlocfilehash: a72cef54083499cbf1f772dd7258a1cac1fd42c6
+ms.sourcegitcommit: 6e6de48f746416ec68b2cf4c298253986486fbfd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "47292867"
+ms.lasthandoff: 09/14/2020
+ms.locfileid: "47651949"
 ---
 # <a name="create-an-aspnet-office-add-in-that-uses-single-sign-on"></a>创建使用单一登录的 ASP.NET Office 加载项
 
@@ -57,7 +57,7 @@ ms.locfileid: "47292867"
 1. 在 Office 外接程序的 **ASPNET-SSO** 页面上，复制并保存 **应用程序 (客户端) id** 和 **目录 (租户) ID**的值。 你将在后面的过程中使用它们。
 
     > [!NOTE]
-    > 当其他应用程序（如 Office 客户端应用程序 (例如 PowerPoint、Word、Excel) ）寻求对应用程序的授权访问时，此 ID 是 "受众" 值。 当它反过来寻求 Microsoft Graph 的授权访问权限时，它同时也是应用程序的“客户端 ID”。
+    > 此 **应用程序 (客户端) ID** 是 "受众" 值，当其他应用程序（如 Office 客户端应用程序 (例如，PowerPoint、Word、Excel) ）寻求对应用程序的授权访问时。 当它反过来寻求 Microsoft Graph 的授权访问权限时，它同时也是应用程序的“客户端 ID”。
 
 1. 在“**管理**”下，选择“**证书和密码**”。 选择“**新客户端密码**”按钮。 输入“**描述**”的值，然后选择适当的“**到期**”选项，并选择“**添加**”。 在继续操作前，*立即复制客户端密码值并使用应用程序 ID 保存它*，因为在后面的过程中，将需要用到它。
 

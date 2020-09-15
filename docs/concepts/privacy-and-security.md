@@ -1,20 +1,20 @@
 ---
 title: Office 加载项的隐私和安全
 description: 了解 Office 外接程序平台的隐私和安全方面。
-ms.date: 09/26/2019
+ms.date: 09/14/2020
 localization_priority: Normal
-ms.openlocfilehash: 6707e94b53eaf714699ab666200e2c2e089b128a
-ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
+ms.openlocfilehash: 4e17463ee7293c74d905238904baef1344a6e6b3
+ms.sourcegitcommit: 7f25a4a15c91e173c11c2cea03bfb605d4d5a98d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "47293014"
+ms.lasthandoff: 09/14/2020
+ms.locfileid: "47652578"
 ---
 # <a name="privacy-and-security-for-office-add-ins"></a>Office 加载项的隐私和安全
 
 ## <a name="understanding-the-add-in-runtime"></a>了解加载项运行时
 
-Office 外接程序受到外接程序运行时环境、多层权限模型和性能调控器的保护。这一框架通过以下方式保护用户体验： 
+Office 外接程序受到外接程序运行时环境、多层权限模型和性能调控器的保护。 此框架通过以下方式保护用户体验。
 
 - 管理对 Office 客户端应用程序的 UI 框架的访问。
 
@@ -22,7 +22,7 @@ Office 外接程序受到外接程序运行时环境、多层权限模型和性�
 
 - 不允许模式交互（例如，不允许调用 JavaScript `alert` 、 `confirm` 和 `prompt` 函数，因为它们是模式的。
 
-此外，为了确保 Office 加载项不会损害用户环境，运行时框架还提供以下优势：
+此外，运行时框架还提供以下好处，以确保 Office 加载项不会损坏用户的环境。
 
 - 隔离运行加载项的进程。
 
@@ -44,7 +44,7 @@ Office 外接程序受到外接程序运行时环境、多层权限模型和性�
 
 ![富客户端基础结构](../images/dk2-agave-overview-02.png)
 
-如下图所示，在 OS X Mac 台式机上，加载项网页托管在沙盒 WebKit 运行时主机进程内部，这有助于提供类似级别的安全和性能保护。 
+如下图所示，在 OS X Mac 台式机上，加载项网页托管在沙盒 WebKit 运行时主机进程内部，这有助于提供类似级别的安全和性能保护。
 
 *图 2：OS X Mac 客户端中的 Office 加载项运行时环境*
 
@@ -63,8 +63,7 @@ Office 外接程序运行时管理进程间通信、JavaScript API 调用和事�
 
 ## <a name="add-in-integrity-in-appsource"></a>AppSource 中的加载项完整性
 
-若要向受众提供 Office 加载项，可以在 AppSource 中发布它们。AppSource 强制执行以下措施来维护加载项完整性：
-
+若要向受众提供 Office 加载项，可以在 AppSource 中发布它们。 AppSource 强制实施以下措施来维护外接程序的完整性。
 
 - 要求 Office 加载项的主机服务器始终使用安全套接字层 (SSL) 进行通信。
 
@@ -74,6 +73,14 @@ Office 外接程序运行时管理进程间通信、JavaScript API 调用和事�
 
 - 支持针对可用加载项的用户审阅系统以推广自我管理的社区。
 
+## <a name="optional-connected-experiences"></a>可选连接体验
+
+最终用户和 IT 管理员可以关闭 Office 桌面和移动客户端 [中的可选连接体验](/deployoffice/privacy/optional-connected-experiences) 。 对于 Office 外接程序，禁用 **可选连接体验** 设置的影响是用户无法再通过这些客户端访问外接程序或 Office 应用商店。 但是，某些被认为是必要的或业务关键型的 Microsoft 加载项，并且由组织的 IT 管理员通过 [集中部署](../publish/centralized-deployment.md) 部署的外接程序仍将可用。 此外，外接程序和存储在 Outlook 网页版中仍然可用，而不考虑设置的状态。
+
+有关特定于 Outlook 的行为的详细信息，请参阅 [outlook 外接程序的隐私、权限和安全性](../outlook/privacy-and-security.md#optional-connected-experiences)。
+
+请注意，如果 IT 管理员禁用了 [Office 中的连接体验](/deployoffice/privacy/manage-privacy-controls#policy-setting-for-most-connected-experiences)，则它对外接程序具有相同的效果，即仅关闭可选的连接体验。
+
 ## <a name="addressing-end-users-privacy-concerns"></a>解决最终用户的隐私问题
 
 此部分从客户（最终用户）的角度出发介绍了 Office 外接程序平台提供的保护，并介绍了有关如何达到用户的预期以及如何安全处理用户个人身份信息 (PII) 的指南。
@@ -82,7 +89,7 @@ Office 外接程序运行时管理进程间通信、JavaScript API 调用和事�
 
 Office 加载项是使用浏览器控件或 **iframe** 中运行的 Web 技术而生成。因此，使用加载项与转到 Internet 或 Intranet 上的网站类似。加载项可以位于组织外部（如果从 AppSource 获取加载项的话），也可以位于组织内部（如果从 Exchange Server 加载项目录、SharePoint 应用目录或组织网络上的文件共享获取加载项的话）。加载项对网络的访问权限受限，大部分加载项都可以对活动文档或邮件项执行读取或写入操作。在用户或管理员安装或启动加载项前，加载项平台就施加了特定约束。不过，与任何扩展性模型一样，用户在启动未知加载项之前应非常谨慎。
 
-加载项平台解决了最终用户的隐私问题，具体方式如下：
+加载项平台通过以下方式解决了最终用户的隐私问题。
 
 - 与托管内容、Outlook 或任务窗格外接程序的 Web 服务器通信的数据以及外接程序与其使用的任何 Web 服务之间的通信必须使用安全套接字层 (SSL) 协议加密。
 
@@ -92,7 +99,7 @@ Office 加载项是使用浏览器控件或 **iframe** 中运行的 Web 技术�
 
 - 用户可启用或禁用对 AppSource 的访问。 对于内容和任务窗格外接程序，用户可以管理从主机 Office 客户端上的**信任中心**访问受信任的加载项和目录 (从**文件**  >  **选项**"  >  **信任中心**  >  **信任中心" 设置**  >  **受信任的外接程序目录**) 。 对于 Outlook 外接程序，使用可以通过选择 "**管理外接程序**" 按钮来管理外接程序：在 Windows 中的 outlook 中，选择 "**文件**  >  **管理外接程序**"。在 Mac 上的 Outlook 中，选择外接程序栏上的 "**管理外接程序**" 按钮。 在 Outlook 网页版中，依次选择“**设置**”菜单（齿轮图标）>“**管理加载项**”。管理员还可以[通过使用组策略](/previous-versions/office/office-2013-resource-kit/jj219429(v=office.15)#using-group-policy-to-manage-how-users-can-install-and-use-apps-for-office)来管理此访问。
 
-- 加载项平台的设计在以下方面为最终用户提供了安全和性能保障：
+- 外接程序平台的设计通过以下方式为最终用户提供安全性和性能。
 
   - Office 外接程序在与 Office 客户端应用程序分开的外接程序运行时环境中托管的 web 浏览器控件中运行。 此设计提供来自客户端应用程序的安全和性能隔离。
 
@@ -102,7 +109,7 @@ Outlook 外接程序通过特定的资源使用率监视提供额外安全和性
 
 ### <a name="developer-guidelines-to-handle-pii"></a>开发人员处理 PII 的准则
 
-下面列出了一些特定于 Office 加载项开发人员的 PII 保护准则：
+下表列出了作为 Office 外接程序开发人员的一些特定 PII 保护准则。
 
 - [Settings](/javascript/api/office/office.settings) 对象旨在保存内容加载项或任务窗格加载项的会话之间的加载项设置和状态数据，但不会在 **Settings** 对象中存储密码和其他敏感 PII。最终用户无法查看 **Settings** 对象中的数据，但该数据存储为文档的易于访问的文件格式的一部分。你应该限制加载项对 PII 的使用，并将加载项所需的任何 PII 存储在将加载项作为用户保护的资源托管的服务器上。
 
@@ -141,15 +148,15 @@ Outlook 外接程序通过特定的资源使用率监视提供额外安全和性
 
 有关任务窗格和内容加载项的权限的详细信息，请参阅[在加载项中请求获取 API 使用权限](../develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md)。
 
-若要详细了解 Outlook 加载项权限，请参阅以下主题：
+有关 Outlook 外接程序的权限的详细信息，请参阅下列主题。
 
-- [Outlook 加载项的隐私、权限和安全](../outlook/privacy-and-security.md)
+- [Outlook 外接程序的隐私、权限和安全性](../outlook/privacy-and-security.md)
 
 - [了解 Outlook 外接程序权限](../outlook/understanding-outlook-add-in-permissions.md)
 
 ### <a name="same-origin-policy"></a>同源策略
 
-由于 Office 外接程序是在 Web 浏览器控件中运行的网页，因此，它们必须遵守浏览器强制实施的同源策略：默认情况下，一个域中的网页无法执行它的域之外的其他域进行 [XmlHttpRequest](https://www.w3.org/TR/XMLHttpRequest/) Web 服务调用。
+由于 Office 外接程序是在 web 浏览器控件中运行的网页，因此它们必须遵循浏览器强制实施的相同源策略。 默认情况下，一个域中的网页不能向承载它的另一个域发出 [XmlHttpRequest](https://www.w3.org/TR/XMLHttpRequest/) web 服务调用。
 
 解决此限制的一种方法是使用 JSON/P--通过包含包含**src**属性的**脚本**标记（指向其他域中承载的某个脚本）来提供 web 服务的代理。 你可以编程方式创建 **script** 标记，动态创建 **src** 属性所指向的 URL，并通过 URI 查询参数将参数传递到 URL。 Web 服务提供程序在特定的 URL 位置创建和托管 JavaScript 代码，并根据 URI 查询参数返回不同的脚本。 这些脚本然后在插入位置执行并按照预期的方式工作。
 
@@ -173,10 +180,10 @@ Exchange 和 SharePoint 提供了客户端代理以实现跨域访问。通常�
 
 ### <a name="tips-to-prevent-malicious-cross-site-scripting"></a>防止恶意跨站点脚本的提示
 
-恶意用户可能会通过文档或加载项中的字段输入恶意脚本，以此来攻击加载项源。 开发人员应处理用户输入以避免在其域中执行恶意用户的 JavaScript。 以下是从文档或邮件中或者通过加载项中的字段处理用户输入可遵循的一些良好做法：
+恶意用户可能会通过文档或加载项中的字段输入恶意脚本，以此来攻击加载项源。 开发人员应处理用户输入以避免在其域中执行恶意用户的 JavaScript。 以下是处理文档或邮件中的用户输入或通过外接程序中的字段执行的一些有用的做法。
 
 
-- 根据需要使用 [innerText](https://developer.mozilla.org/docs/Web/API/Element/innerHTML) 和 [textContent](https://developer.mozilla.org/docs/DOM/Node.textContent) 属性，而非 DOM 属性 [innerHTML](https://developer.mozilla.org/docs/Web/API/Node/innerText)。执行以下操作获取 Internet Explorer 和 Firefox 跨浏览器支持：
+- 根据需要使用 [innerText](https://developer.mozilla.org/docs/Web/API/Element/innerHTML) 和 [textContent](https://developer.mozilla.org/docs/Web/API/Node/innerText) 属性，而非 DOM 属性 [innerHTML](https://developer.mozilla.org/docs/DOM/Node.textContent)。 对于 Internet Explorer 和 Firefox 跨浏览器支持，请执行以下操作。
 
     ```js
      var text = x.innerText || x.textContent
@@ -204,7 +211,7 @@ Exchange 和 SharePoint 提供了客户端代理以实现跨域访问。通常�
 
 第三，为了确保没有任何潜在的攻击者可以隐藏或掩盖确认，您应将其显示在加载项上下文以外（即，不在 HTML 对话框中）。
 
-下面是如何获取确认的一些示例：
+以下是有关如何获得确认的一些示例。
 
 - 向用户发送包含确认链接的电子邮件。
 
@@ -216,14 +223,13 @@ Exchange 和 SharePoint 提供了客户端代理以实现跨域访问。通常�
 
 ### <a name="other-security-practices"></a>其他安全实践
 
-开发人员还应记下以下安全实践：
-
+开发人员还应注意以下安全实践。
 
 - 开发人员不得在 Office 加载项中使用 ActiveX 控件，因为 ActiveX 控件不支持加载项平台的跨平台特性。
 
 - 内容和任务窗格加载项使用浏览器默认使用的相同 SSL 设置，并允许大部分内容仅通过 SSL 传送。Outlook 加载项要求所有内容都通过 SSL 传送。开发人员必须在加载项清单的 **SourceLocation** 元素中指定使用 HTTPS 的 URL，以标识加载项的 HTML 文件位置。
 
-    若要确保加载项不使用 HTTP 交付内容，在测试加载项时，开发人员应确保在“**控制窗格**”中的“**Internet 选项**”中选择以下设置且其测试方案中不显示任何安全警告：
+    若要确保外接程序无法使用 HTTP 传递内容，在测试外接程序时，开发人员应确保在 **"控制面板**" 中的 " **Internet 选项**" 中选择了以下设置，并且测试方案中不会显示任何安全警告。
 
     - 确保针对“Internet”**** 区域的安全设置“显示混合内容”**** 设置为“提示”****。 若要执行此操作，请在 " **Internet 选项**" 中选择以下选项：在 " **安全** " 选项卡上，选择 " **internet** 区域"，选择 " **自定义级别**"，滚动查找 " **显示混合内容**"，然后选择 " **提示** " （如果尚未选中）。
 
@@ -235,7 +241,7 @@ Exchange 和 SharePoint 提供了客户端代理以实现跨域访问。通常�
 
 - 开发人员不应嵌入用于直接在加载项的 HTML 页面中访问第三方 API 或服务（例如 Bing、Google 或 Facebook）的密钥。相反，他们应该创建自定义 Web 服务或安全 Web 存储的其他某些窗体中创建自定义 Web 服务，他们可以调用这些服务，将键值传递到加载项。
 
-- 开发人员应在将加载项提交到 AppSource 时执行以下操作：
+- 开发人员在将外接程序提交到 AppSource 时应执行以下操作。
 
   - 在支持 SSL 的 Web 服务器上托管要提交的加载项。
   - 制定概述遵从性隐私策略的声明。
@@ -269,3 +275,4 @@ Office 设置的管理和执行由组策略设置完成。 这些操作可通过
 - [同源策略第 1 部分：不准偷看](/archive/blogs/ieinternals/same-origin-policy-part-1-no-peeking)
 - [针对 JavaScript 的同源策略](https://developer.mozilla.org/docs/Web/Security/Same-origin_policy)
 - [IE 保护模式](https://support.microsoft.com/help/2761180/apps-for-office-don-t-start-if-you-disable-protected-mode-for-the-restricted-sites-zone-in-internet-explorer)
+- [适用于 Microsoft 365 应用的隐私控制](/deployoffice/privacy/overview-privacy-controls)

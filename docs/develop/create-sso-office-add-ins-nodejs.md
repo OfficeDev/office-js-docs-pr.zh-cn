@@ -3,12 +3,12 @@ title: 创建使用单一登录的 Node.js Office 加载项
 description: 了解如何创建使用 Office 单一登录的基于 Node.js 的 Office 加载项
 ms.date: 07/30/2020
 localization_priority: Normal
-ms.openlocfilehash: 2ca1cf37bade124498c99b0b25171871522c2bc7
-ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
+ms.openlocfilehash: a587f6a1ad596f4006734e0d850e009c3fc145b0
+ms.sourcegitcommit: 6e6de48f746416ec68b2cf4c298253986486fbfd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "47292874"
+ms.lasthandoff: 09/14/2020
+ms.locfileid: "47651935"
 ---
 # <a name="create-a-nodejs-office-add-in-that-uses-single-sign-on"></a>创建使用单一登录的 Node.js Office 加载项
 
@@ -67,7 +67,7 @@ ms.locfileid: "47292874"
 1. 在 **Office-Add-in-NodeJS-SSO** 页面上，复制并保存“**应用程序（客户端）ID**”和“**目录（租户）ID**”的值。 你将在后面的过程中使用它们。
 
     > [!NOTE]
-    > 当其他应用程序（如 Office 客户端应用程序 (例如 PowerPoint、Word、Excel) ）寻求对应用程序的授权访问时，此 ID 是 "受众" 值。 当它反过来寻求 Microsoft Graph 的授权访问权限时，它同时也是应用程序的“客户端 ID”。
+    > 此 **应用程序 (客户端) ID** 是 "受众" 值，当其他应用程序（如 Office 客户端应用程序 (例如，PowerPoint、Word、Excel) ）寻求对应用程序的授权访问时。 当它反过来寻求 Microsoft Graph 的授权访问权限时，它同时也是应用程序的“客户端 ID”。
 
 1. 选择“**管理**”下的“**身份验证**”。 在 " **隐式授予** " 部分，启用 " **访问令牌** " 和 " **ID 令牌**" 的复选框。 该示例具有一个回退授权系统，当 SSO 不可用时，将调用此系统。 该系统使用隐式流。
 
