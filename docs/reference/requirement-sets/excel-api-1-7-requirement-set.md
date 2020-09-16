@@ -1,15 +1,15 @@
 ---
 title: Excel JavaScript API 要求集1。7
-description: 有关 ExcelApi 1.7 要求集的详细信息
+description: 有关 ExcelApi 1.7 要求集的详细信息。
 ms.date: 07/26/2019
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: 6fc4164f233c0b1603f4b5231ed860442920c538
-ms.sourcegitcommit: 83f9a2fdff81ca421cd23feea103b9b60895cab4
+ms.openlocfilehash: ad0b1a205191ae5fd2b68b933cdf3bb757ecbd2b
+ms.sourcegitcommit: ed2a98b6fb5b432fa99c6cefa5ce52965dc25759
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/11/2020
-ms.locfileid: "47430861"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "47819649"
 ---
 # <a name="whats-new-in-excel-javascript-api-17"></a>Excel JavaScript API 1.7 的最近更新
 
@@ -337,4 +337,4 @@ Excel 事件 API 提供了多个事件处理程序，以便加载项能够在发
 ## <a name="see-also"></a>另请参阅
 
 - [Excel JavaScript API 参考文档](/javascript/api/excel?view=excel-js-1.7&preserve-view=true)
-- [Excel JavaScript API 要求集](./excel-api-requirement-sets.md)
+- [Excel JavaScript API 要求集](excel-api-requirement-sets.md)

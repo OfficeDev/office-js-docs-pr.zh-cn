@@ -1,15 +1,15 @@
 ---
 title: Excel JavaScript API 要求集1。8
-description: 有关 ExcelApi 1.8 要求集的详细信息
+description: 有关 ExcelApi 1.8 要求集的详细信息。
 ms.date: 07/26/2019
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: ad8c67fddffeec7937b66d43fb58a8608d662be1
-ms.sourcegitcommit: 83f9a2fdff81ca421cd23feea103b9b60895cab4
+ms.openlocfilehash: cc86860afd101c621ce17dae3b4a2b64ba9a5961
+ms.sourcegitcommit: ed2a98b6fb5b432fa99c6cefa5ce52965dc25759
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/11/2020
-ms.locfileid: "47430833"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "47819663"
 ---
 # <a name="whats-new-in-excel-javascript-api-18"></a>Excel JavaScript API 1.8 中的新增功能
 
@@ -169,11 +169,11 @@ Excel JavaScript API 要求集 1.8 的功能包括适用于数据透视表、数
 ||[type](/javascript/api/excel/excel.datavalidation#type)|数据有效性类型，有关详细信息，请参阅 Excel.DataValidationType。|
 ||[有效](/javascript/api/excel/excel.datavalidation#valid)|表示所有单元格值根据数据有效性规则是否全部有效。|
 ||[标尺](/javascript/api/excel/excel.datavalidation#rule)|包含不同类型的数据验证条件的数据有效性规则。|
-|[DataValidationErrorAlert](/javascript/api/excel/excel.datavalidationerroralert)|[message](/javascript/api/excel/excel.datavalidationerroralert#message)|表示错误警报消息。|
+|[DataValidationErrorAlert](/javascript/api/excel/excel.datavalidationerroralert)|[邮件](/javascript/api/excel/excel.datavalidationerroralert#message)|表示错误警报消息。|
 ||[showAlert](/javascript/api/excel/excel.datavalidationerroralert#showalert)|确定在用户输入无效数据时是否显示错误警报对话框。 默认值为 true。|
 ||[style](/javascript/api/excel/excel.datavalidationerroralert#style)|表示数据有效性警报类型，有关详细信息，请参阅 Excel.DataValidationAlertStyle。|
 ||[title](/javascript/api/excel/excel.datavalidationerroralert#title)|表示错误警报对话框标题。|
-|[DataValidationPrompt](/javascript/api/excel/excel.datavalidationprompt)|[message](/javascript/api/excel/excel.datavalidationprompt#message)|表示提示消息。|
+|[DataValidationPrompt](/javascript/api/excel/excel.datavalidationprompt)|[邮件](/javascript/api/excel/excel.datavalidationprompt#message)|表示提示消息。|
 ||[showPrompt](/javascript/api/excel/excel.datavalidationprompt#showprompt)|确定在用户选择具有数据有效性的单元格时是否显示提示。|
 ||[title](/javascript/api/excel/excel.datavalidationprompt#title)|表示提示标题。|
 |[DataValidationRule](/javascript/api/excel/excel.datavalidationrule)|[自](/javascript/api/excel/excel.datavalidationrule#custom)|自定义数据有效性条件。|
@@ -288,4 +288,4 @@ Excel JavaScript API 要求集 1.8 的功能包括适用于数据透视表、数
 ## <a name="see-also"></a>另请参阅
 
 - [Excel JavaScript API 参考文档](/javascript/api/excel?view=excel-js-1.8&preserve-view=true)
-- [Excel JavaScript API 要求集](./excel-api-requirement-sets.md)
+- [Excel JavaScript API 要求集](excel-api-requirement-sets.md)

@@ -1,15 +1,15 @@
 ---
 title: Excel JavaScript API 要求集1。2
-description: 有关 ExcelApi 1.2 要求集的详细信息
+description: 有关 ExcelApi 1.2 要求集的详细信息。
 ms.date: 07/26/2019
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: e55c9dbee09228130b86c76535bb5bf8ef6666c1
-ms.sourcegitcommit: 83f9a2fdff81ca421cd23feea103b9b60895cab4
+ms.openlocfilehash: b0d49bf02ba459e037c31d76145a2f7dc8c8c821
+ms.sourcegitcommit: ed2a98b6fb5b432fa99c6cefa5ce52965dc25759
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/11/2020
-ms.locfileid: "47430910"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "47819677"
 ---
 # <a name="whats-new-in-excel-javascript-api-12"></a>Excel JavaScript API 1.2 的最近更新
 
@@ -581,4 +581,4 @@ ExcelApi 1.2 增加了对表筛选和对内置 Excel 函数的访问支持。
 ## <a name="see-also"></a>另请参阅
 
 - [Excel JavaScript API 参考文档](/javascript/api/excel?view=excel-js-1.2&preserve-view=true)
-- [Excel JavaScript API 要求集](./excel-api-requirement-sets.md)
+- [Excel JavaScript API 要求集](excel-api-requirement-sets.md)
