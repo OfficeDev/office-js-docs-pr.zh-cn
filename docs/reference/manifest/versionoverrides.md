@@ -3,20 +3,20 @@ title: 清单文件中的 VersionOverrides 元素
 description: Office 外接程序清单的 VersionOverrides 元素的参考文档 (XML) 文件。
 ms.date: 03/05/2020
 localization_priority: Normal
-ms.openlocfilehash: 979a75c3ea8b4d600a2c43fc4edfcb0d4e96930e
-ms.sourcegitcommit: 83f9a2fdff81ca421cd23feea103b9b60895cab4
+ms.openlocfilehash: a744772c01c57c41a9dc20ee0accea5f070c3ff3
+ms.sourcegitcommit: ed2a98b6fb5b432fa99c6cefa5ce52965dc25759
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/11/2020
-ms.locfileid: "47431540"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "47819824"
 ---
 # <a name="versionoverrides-element"></a>VersionOverrides 元素
 
-根元素包含由外接程序实现的外接程序命令的信息。**VersionOverrides** 是清单中 [OfficeApp](./officeapp.md) 元素的子元素。此元素在清单架构 v1.1 及更高版本中受支持，但是在 VersionOverrides v1.0 或 v1.1 架构中进行定义。
+根元素包含由外接程序实现的外接程序命令的信息。**VersionOverrides** 是清单中 [OfficeApp](officeapp.md) 元素的子元素。此元素在清单架构 v1.1 及更高版本中受支持，但是在 VersionOverrides v1.0 或 v1.1 架构中进行定义。
 
 ## <a name="attributes"></a>属性
 
-|  属性  |  必需  |  Description  |
+|  属性  |  必需  |  说明  |
 |:-----|:-----|:-----|
 |  **xmlns**       |  是  |  VersionOverrides 架构命名空间。 根据此 `<VersionOverrides>` 元素的 **xsi： type** 值和父元素的 **xsi： type** 值，允许的值会有所不同 `<OfficeApp>` 。 请参阅下面的 [命名空间值](#namespace-values) 。|
 |  **xsi:type**  |  是  | 架构版本。目前的唯一有效值为 `VersionOverridesV1_0` 和 `VersionOverridesV1_1`。 |
@@ -36,7 +36,7 @@ ms.locfileid: "47431540"
 
 ## <a name="child-elements"></a>子元素
 
-|  元素 |  必需  |  Description  |
+|  元素 |  必需  |  说明  |
 |:-----|:-----|:-----|
 |  **说明**    |  否   |  描述外接程序。这会替代清单中任何父级部分中的 `Description` 元素。说明文本包含在 **Rescources** 元素中的 [LongString](resources.md) 元素的子元素中。`resid` 元素的 **** 属性被设置为包含文本的 `id` 元素的 `String` 属性的值。|
 |  **Requirements**  |  否   |  指定外接程序要求的最低要求集和 Office.js 的版本。这会替代清单中父级部分中的 `Requirements` 元素。|

@@ -4,12 +4,12 @@ description: 学习如何在Microsoft Excel中的自定义函数和任务窗格�
 ms.date: 08/13/2020
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: e4dfb8afc57dc9590d47d927d1f540431d9c8838
-ms.sourcegitcommit: 3efa932b70035dde922929d207896e1a6007f620
+ms.openlocfilehash: 02cd2269965019efb4b9ac9851103924e6c5cc2c
+ms.sourcegitcommit: ed2a98b6fb5b432fa99c6cefa5ce52965dc25759
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/15/2020
-ms.locfileid: "46757378"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "47819628"
 ---
 # <a name="tutorial-share-data-and-events-between-excel-custom-functions-and-the-task-pane"></a>教程：Microsoft Excel自定义函数和任务窗格之间共享数据和事件
 
@@ -17,7 +17,7 @@ ms.locfileid: "46757378"
 
 对于大多数自定义函数方案，建议使用共享运行时，除非有特定的理由使用非任务窗格（UI-less）自定义函数。
 
-本教程假设你已经熟悉使用Yo Office生成器来创建插件项目。 如果尚未完成[Excel 自定义函数教程](./excel-tutorial-create-custom-functions.md)，请考虑完成它。
+本教程假设你已经熟悉使用Yo Office生成器来创建插件项目。 如果尚未完成[Excel 自定义函数教程](excel-tutorial-create-custom-functions.md)，请考虑完成它。
 
 ## <a name="create-the-add-in-project"></a>创建加载项项目
 

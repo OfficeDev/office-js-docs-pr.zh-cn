@@ -3,12 +3,12 @@ title: 使用 Excel JavaScript API 对区域执行操作（高级）
 description: 高级的 range 对象函数和方案，如特殊单元格、删除重复项以及使用日期。
 ms.date: 08/26/2020
 localization_priority: Normal
-ms.openlocfilehash: b3854d15a85db20e1c544ebfa6e8a63712e958d9
-ms.sourcegitcommit: c6308cf245ac1bc66a876eaa0a7bb4a2492991ac
+ms.openlocfilehash: 485fb34c11774045308c6ed9053d01097cdc3f5b
+ms.sourcegitcommit: ed2a98b6fb5b432fa99c6cefa5ce52965dc25759
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "47408444"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "47819572"
 ---
 # <a name="work-with-ranges-using-the-excel-javascript-api-advanced"></a>使用 Excel JavaScript API 对区域执行操作（高级）
 
@@ -327,10 +327,7 @@ Excel.run(function (context) {
 
 若要取消行或列组的分组，请使用 [Range](/javascript/api/excel/excel.range#ungroup-groupoption-) 方法。 这将从大纲中删除最外面的级别。 如果同一行或列类型的多个组在指定区域中的同一级别，则所有这些组都将被取消组合。
 
-## <a name="handle-dynamic-arrays-and-spilling-preview"></a>处理动态数组和 spilling (预览) 
-
-> [!NOTE]
-> 动态数组和 range spilling Api 当前处于预览阶段。 [!INCLUDE [Information about using preview Excel APIs](../includes/using-excel-preview-apis.md)]
+## <a name="handle-dynamic-arrays-and-spilling"></a>处理动态数组和 spilling
 
 有些 Excel 公式返回 [动态数组](https://support.microsoft.com/office/dynamic-array-formulas-and-spilled-array-behavior-205c6b06-03ba-4151-89a1-87a7eb36e531)。 这些值填充公式的原始单元格外部的多个单元格的值。 此值溢出称为 "溢出"。 您的外接程序可以使用 getSpillingToRange 方法查找用于溢出的范围[。](/javascript/api/excel/excel.range#getspillingtorange--) 此外，还有一个 [* OrNullObject 版本](..//develop/application-specific-api-model.md#ornullobject-methods-and-properties) `Range.getSpillingToRangeOrNullObject` 。
 

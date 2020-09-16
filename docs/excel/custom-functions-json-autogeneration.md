@@ -3,12 +3,12 @@ ms.date: 05/06/2020
 description: 使用 JSDoc 标记动态创建自定义函数 JSON 元数据。
 title: 为自定义函数自动生成 JSON 元数据
 localization_priority: Normal
-ms.openlocfilehash: f09fbbfcd028d773b9e9e25eb5eb43eb1d5a93cd
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 8138e738188e50d2a1369c359fbca3e1574db32f
+ms.sourcegitcommit: ed2a98b6fb5b432fa99c6cefa5ce52965dc25759
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44609308"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "47819516"
 ---
 # <a name="autogenerate-json-metadata-for-custom-functions"></a>为自定义函数自动生成 JSON 元数据
 
@@ -156,8 +156,8 @@ Excel 自定义函数支持以下 JSDoc 标记：
 
 JavaScript 语法：@param {type} name _description_
 
-* `{type}`指定大括号中的类型信息。 有关可能使用的类型的详细信息，请参阅[类型](#types)部分。 如果未指定任何类型，则 `any` 将使用默认类型。
-* `name`指定应用 @param 标记的参数。 它是必需的。
+* `{type}` 指定大括号中的类型信息。 有关可能使用的类型的详细信息，请参阅[类型](#types)部分。 如果未指定任何类型，则 `any` 将使用默认类型。
+* `name` 指定应用 @param 标记的参数。 它是必需的。
 * `description` 为函数参数提供显示在 Excel 中的说明。 它是可选的。
 
 若要将自定义函数参数表示为可选，请执行以下操作：
@@ -183,7 +183,7 @@ JavaScript 语法：@param {type} name _description_
 
 TypeScript 语法：@param name _description_
 
-* `name`指定应用 @param 标记的参数。 它是必需的。
+* `name` 指定应用 @param 标记的参数。 它是必需的。
 * `description` 为函数参数提供显示在 Excel 中的说明。 它是可选的。
 
 有关可能使用的函数参数类型的详细信息，请参阅[类型](#types)部分。
@@ -256,7 +256,7 @@ function add(first: number, second: number): number {
 
 流式处理函数不直接返回值，而是 `setResult(result: ResultType)` 使用最后一个参数调用。
 
-由流式处理函数引发的异常将被忽略。 `setResult()` 可能称为“错误”，以指示错误结果。 有关流式处理函数的示例和更多信息，请参阅[生成流式处理函数](./custom-functions-web-reqs.md#make-a-streaming-function)。
+由流式处理函数引发的异常将被忽略。 `setResult()` 可能称为“错误”，以指示错误结果。 有关流式处理函数的示例和更多信息，请参阅[生成流式处理函数](custom-functions-web-reqs.md#make-a-streaming-function)。
 
 流式处理函数不能标记为 [@volatile](#volatile)。
 

@@ -1,15 +1,15 @@
 ---
 title: Excel JavaScript API 仅联机要求集
-description: 有关 ExcelApiOnline 要求集的详细信息
-ms.date: 05/06/2020
+description: 有关 ExcelApiOnline 要求集的详细信息。
+ms.date: 09/15/2020
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: aa497ff97533ff3a414905547a949fa8430c3efe
-ms.sourcegitcommit: 83f9a2fdff81ca421cd23feea103b9b60895cab4
+ms.openlocfilehash: 29f5826ba2adbf18b79033b83254b046210015fe
+ms.sourcegitcommit: ed2a98b6fb5b432fa99c6cefa5ce52965dc25759
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/11/2020
-ms.locfileid: "47430812"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "47819803"
 ---
 # <a name="excel-javascript-api-online-only-requirement-set"></a>Excel JavaScript API 仅联机要求集
 
@@ -40,20 +40,10 @@ if (Office.context.requirements.isSetSupported("ExcelApiOnline", "1.1")) {
 
 ## <a name="api-list"></a>API 列表
 
-下面的 Api 当前可用于 web 上的 Excel，作为 `ExcelApiOnline 1.1` 要求集的一部分。
-
-| Class | 域 | 说明 |
-|:---|:---|:---|
-|[ChartAxisTitle](/javascript/api/excel/excel.chartaxistitle)|[textOrientation](/javascript/api/excel/excel.chartaxistitle#textorientation)|指定文本面向图表轴标题的角度。 该值应为-90 到90的整数或垂直方向的文本的整数180。|
-|[PivotTableScopedCollection](/javascript/api/excel/excel.pivottablescopedcollection)|[getCount()](/javascript/api/excel/excel.pivottablescopedcollection#getcount--)|获取集合中的数据透视表的数目。|
-||[getFirst()](/javascript/api/excel/excel.pivottablescopedcollection#getfirst--)|获取集合中的第一个数据透视表。 集合中的数据透视表按从上到下、从左到右的顺序排序，因此左上角的表格是集合中的第一个数据透视表。|
-||[getItem(key: string)](/javascript/api/excel/excel.pivottablescopedcollection#getitem-key-)|按名称获取 PivotTable 对象。|
-||[getItemOrNullObject(name: string)](/javascript/api/excel/excel.pivottablescopedcollection#getitemornullobject-name-)|按 PivotTable 对象的名称获取此对象。 如果没有 PivotTable 对象，将返回 NULL 对象。|
-||[items](/javascript/api/excel/excel.pivottablescopedcollection#items)|获取此集合中已加载的子项。|
-|[区域](/javascript/api/excel/excel.range)|[getPivotTables (fullyContained？： boolean) ](/javascript/api/excel/excel.range#getpivottables-fullycontained-)|获取与区域重叠的数据透视表的限定集合。|
+要求集中当前没有任何 Api `ExcelApiOnline` 。 之前属于此集合的所有 Api 都已进行了分级要求集的分级，并可在所有平台上使用。
 
 ## <a name="see-also"></a>另请参阅
 
 - [Excel JavaScript API 参考文档](/javascript/api/excel?view=excel-js-online&preserve-view=true)
-- [Excel JavaScript 预览 API](./excel-preview-apis.md)
-- [Excel JavaScript API 要求集](./excel-api-requirement-sets.md)
+- [Excel JavaScript 预览 API](excel-preview-apis.md)
+- [Excel JavaScript API 要求集](excel-api-requirement-sets.md)

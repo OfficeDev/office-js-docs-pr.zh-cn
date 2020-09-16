@@ -1,15 +1,15 @@
 ---
 title: Excel JavaScript API 要求集1。3
-description: 有关 ExcelApi 1.3 要求集的详细信息
+description: 有关 ExcelApi 1.3 要求集的详细信息。
 ms.date: 07/26/2019
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: 71bad9fae630a11688458e4cb76ded2fa523a563
-ms.sourcegitcommit: 83f9a2fdff81ca421cd23feea103b9b60895cab4
+ms.openlocfilehash: ee72e8bde7b768b2edb3dcff5217325e2336e3ab
+ms.sourcegitcommit: ed2a98b6fb5b432fa99c6cefa5ce52965dc25759
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/11/2020
-ms.locfileid: "47430868"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "47819817"
 ---
 # <a name="whats-new-in-excel-javascript-api-13"></a>Excel JavaScript API 1.3 的最近更新
 
@@ -58,4 +58,4 @@ ExcelApi 1.3 增加了对数据绑定和基本数据透视表访问的支持。
 ## <a name="see-also"></a>另请参阅
 
 - [Excel JavaScript API 参考文档](/javascript/api/excel?view=excel-js-1.3&preserve-view=true)
-- [Excel JavaScript API 要求集](./excel-api-requirement-sets.md)
+- [Excel JavaScript API 要求集](excel-api-requirement-sets.md)

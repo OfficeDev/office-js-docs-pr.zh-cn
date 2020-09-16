@@ -1,19 +1,19 @@
 ---
-ms.date: 05/06/2020
-description: '处理和返回自定义函数中类似 #NULL! 的错误'
-title: 处理和返回自定义函数中的错误（预览）
+ms.date: 09/15/2020
+description: '处理和返回自定义函数中类似 #NULL! 自定义函数中。'
+title: 处理并返回自定义函数中的错误
 localization_priority: Normal
-ms.openlocfilehash: 5b1efcdc22a4efc59304bbe76f8d3f2d09979bc1
-ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
+ms.openlocfilehash: 5da68417aa52f1d14340c8c8a46f4943ffd2d223
+ms.sourcegitcommit: ed2a98b6fb5b432fa99c6cefa5ce52965dc25759
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "45093467"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "47819530"
 ---
-# <a name="handle-and-return-errors-from-your-custom-function-preview"></a>处理和返回自定义函数中的错误（预览）
+# <a name="handle-and-return-errors-from-your-custom-function"></a>处理并返回自定义函数中的错误
 
 > [!NOTE]
-> 本文中所述的功能目前处于预览阶段，可能会发生更改。 暂不支持在生产环境中使用。 你将需要加入[Office 预览体验成员](https://insider.office.com/join)计划，以试用预览版功能。  试用 "预览" 功能的一个不错的方法是使用 Microsoft 365 订阅。 如果你还没有 Microsoft 365 订阅，则可以通过加入[microsoft 365 开发人员计划](https://developer.microsoft.com/office/dev-program)获取免费的90天 renewable microsoft 365 订阅。
+> 本文中所述的功能目前处于预览阶段，可能会发生更改。 暂不支持在生产环境中使用。 你将需要加入 [Office 预览体验成员](https://insider.office.com/join) 计划，以试用预览版功能。  试用 "预览" 功能的一个不错的方法是使用 Microsoft 365 订阅。 如果你还没有 Microsoft 365 订阅，则可以通过加入 [microsoft 365 开发人员计划](https://developer.microsoft.com/office/dev-program)获取免费的90天 renewable microsoft 365 订阅。
 
 如果自定义函数运行时出现错误，则返回一个错误以通知用户。 如果您有特定参数要求（如仅正数），请测试参数并在它们不正确时引发错误。 还可以使用 `try`-`catch` 块来捕获自定义函数运行时发生的任何错误。
 

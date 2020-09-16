@@ -3,12 +3,12 @@ ms.date: 04/29/2020
 description: 使用 Excel 中的自定义函数请求、流式处理和取消流式处理工作簿的外部数据
 title: 使用自定义函数接收和处理数据
 localization_priority: Normal
-ms.openlocfilehash: c53ad94c798f787447ab353201a245cd4f20d463
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: cd9a3eb3456cfd32d55d3caa6ccc36f2e05ed004
+ms.sourcegitcommit: ed2a98b6fb5b432fa99c6cefa5ce52965dc25759
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44610459"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "47819509"
 ---
 # <a name="receive-and-handle-data-with-custom-functions"></a>使用自定义函数接收和处理数据
 
@@ -29,7 +29,7 @@ ms.locfileid: "44610459"
 
 在下面的代码示例中， `webRequest` 函数将进入假设的 Contoso "Space Of 人数" API，用于跟踪当前国际空间站上的用户数。 该函数返回一个 JavaScript Promise 并使用 fetch 从 API 请求信息。 生成的数据被转换成 JSON，而 `names` 属性则被转换成一个字符串，用于解析 Promise。
 
-在开发自己的函数时，可能需要在相应 Web 请求没有及时完成时执行某个操作，或者需要考虑[批处理多个 API 请求](./custom-functions-batching.md)。
+在开发自己的函数时，可能需要在相应 Web 请求没有及时完成时执行某个操作，或者需要考虑[批处理多个 API 请求](custom-functions-batching.md)。
 
 ```JS
 /**
@@ -145,7 +145,7 @@ Excel 会在以下情况下取消函数的执行：
 
 ### <a name="using-an-invocation-parameter"></a>使用调用参数
 
-默认情况下，`invocation` 参数是任何自定义函数的最后一个参数。 `invocation`参数提供有关单元格（如其地址和内容）的上下文，并允许您使用 `setResult` 和 `onCanceled` 方法。 这些方法可定义在函数流式传输 (`setResult`) 或被取消 (`onCanceled`) 时它所执行的操作。
+默认情况下，`invocation` 参数是任何自定义函数的最后一个参数。 `invocation`参数提供有关单元格 (的上下文，如其地址和内容) ，并允许您使用 `setResult` 和 `onCanceled` 方法。 这些方法可定义在函数流式传输 (`setResult`) 或被取消 (`onCanceled`) 时它所执行的操作。
 
 如果使用的是 TypeScript，则调用处理程序必须为类型 [`CustomFunctions.StreamingInvocation`](/javascript/api/custom-functions-runtime/customfunctions.streaminginvocation) 或 [`CancelableInvocation`](/javascript/api/custom-functions-runtime/customfunctions.cancelableinvocation) 。
 

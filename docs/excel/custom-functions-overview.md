@@ -5,12 +5,12 @@ title: 在 Excel 中创建自定义函数
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: 2ea2d70b0a404c15ed9b349020b76356c70cd6de
-ms.sourcegitcommit: 3efa932b70035dde922929d207896e1a6007f620
+ms.openlocfilehash: 731e8d99a36cfef7d125838c67efcdd7a77b4bb1
+ms.sourcegitcommit: ed2a98b6fb5b432fa99c6cefa5ce52965dc25759
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/15/2020
-ms.locfileid: "46757371"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "47819558"
 ---
 # <a name="create-custom-functions-in-excel"></a>在 Excel 中创建自定义函数
 
@@ -76,7 +76,7 @@ function add(first, second){
 - 使用自定义函数清单特有的 `<ExtensionPoint>` 和 `<Resources>` 元素。 这些元素包含有关 JavaScript、JSON 和 HTML 文件的位置的信息。
 - 指定要用于自定义函数的运行时。 除非你对另一运行时有特殊需求，否则建议始终使用共享运行时，因为共享运行时允许在函数和任务窗格之间共享数据。 请注意，使用共享运行时意味着加载项将使用 Internet Explorer 11，而不是 Microsoft Edge。
 
-如果你使用 Yo Office 生成器来创建文件，则建议将你的清单调整为使用共享运行时，因为这不是这些文件的默认设置。 若要更改清单，请按照[将 Excel 加载项配置为使用共享 JavaScript 运行时](./configure-your-add-in-to-use-a-shared-runtime.md)中的说明进行操作。
+如果你使用 Yo Office 生成器来创建文件，则建议将你的清单调整为使用共享运行时，因为这不是这些文件的默认设置。 若要更改清单，请按照[将 Excel 加载项配置为使用共享 JavaScript 运行时](configure-your-add-in-to-use-a-shared-runtime.md)中的说明进行操作。
 
 若要从示例加载项查看完整的工作清单，请参阅[此 Github 存储库](https://github.com/OfficeDev/PnP-OfficeAddins/blob/master/Samples/excel-shared-runtime-global-state/manifest.xml)。
 

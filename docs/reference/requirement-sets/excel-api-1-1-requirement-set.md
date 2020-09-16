@@ -1,15 +1,15 @@
 ---
 title: Excel JavaScript API 要求集1。1
-description: 有关 ExcelApi 1.1 要求集的详细信息
+description: 有关 ExcelApi 1.1 要求集的详细信息。
 ms.date: 07/26/2019
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: 815b90b18135be22632c39a9824f862149852a84
-ms.sourcegitcommit: 83f9a2fdff81ca421cd23feea103b9b60895cab4
+ms.openlocfilehash: 02ff07e24c2b001b4addf85069af41f33d870fb1
+ms.sourcegitcommit: ed2a98b6fb5b432fa99c6cefa5ce52965dc25759
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/11/2020
-ms.locfileid: "47430917"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "47819733"
 ---
 # <a name="excel-javascript-api-requirement-set-11"></a>Excel JavaScript API 要求集1。1
 
@@ -242,4 +242,4 @@ Excel JavaScript API 1.1 是首版 API。 它是 Excel 2016 支持的唯一特�
 ## <a name="see-also"></a>另请参阅
 
 - [Excel JavaScript API 参考文档](/javascript/api/excel?view=excel-js-1.1&preserve-view=true)
-- [Excel JavaScript API 要求集](./excel-api-requirement-sets.md)
+- [Excel JavaScript API 要求集](excel-api-requirement-sets.md)

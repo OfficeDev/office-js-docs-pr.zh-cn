@@ -3,12 +3,12 @@ title: 使用 Excel JavaScript API 处理工作簿
 description: 说明如何使用 Excel JavaScript API 对工作簿或应用程序级别的功能执行常见任务的代码示例。
 ms.date: 08/24/2020
 localization_priority: Normal
-ms.openlocfilehash: 1da664b5ebbc8bd44b1c4e558a48997291e8967e
-ms.sourcegitcommit: c6308cf245ac1bc66a876eaa0a7bb4a2492991ac
+ms.openlocfilehash: f0af6cc889a110406d987664575a6f3d1b30aa7b
+ms.sourcegitcommit: ed2a98b6fb5b432fa99c6cefa5ce52965dc25759
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "47408696"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "47819502"
 ---
 # <a name="work-with-workbooks-using-the-excel-javascript-api"></a>使用 Excel JavaScript API 处理工作簿
 
@@ -171,10 +171,7 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
-#### <a name="worksheet-level-custom-properties-preview"></a> (预览的工作表级自定义属性) 
-
-> [!NOTE]
-> 工作表级自定义属性当前处于预览阶段。 [!INCLUDE [Information about using preview Excel APIs](../includes/using-excel-preview-apis.md)]
+#### <a name="worksheet-level-custom-properties"></a>工作表级自定义属性
 
 此外，还可以在工作表级别设置自定义属性。 这些属性与文档级自定义属性相似，不同之处在于可以在不同的工作表中重复相同的键。 下面的示例演示如何使用当前工作表上的值 "Alpha" 创建名为 **WorksheetGroup** 的自定义属性，然后检索该属性。
 

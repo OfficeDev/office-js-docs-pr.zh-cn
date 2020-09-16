@@ -1,15 +1,15 @@
 ---
 title: Excel JavaScript API 要求集1。6
-description: 有关 ExcelApi 1.6 要求集的详细信息
+description: 有关 ExcelApi 1.6 要求集的详细信息。
 ms.date: 07/26/2019
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: ea54b825c3d5eff71a3355c3d313feb355d3c892
-ms.sourcegitcommit: 83f9a2fdff81ca421cd23feea103b9b60895cab4
+ms.openlocfilehash: 88127336ad35bd498fb2a2102f8ca84928c3bdaf
+ms.sourcegitcommit: ed2a98b6fb5b432fa99c6cefa5ce52965dc25759
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/11/2020
-ms.locfileid: "47430840"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "47819810"
 ---
 # <a name="whats-new-in-excel-javascript-api-16"></a>Excel JavaScript API 1.6 的最近更新
 
@@ -150,4 +150,4 @@ ms.locfileid: "47430840"
 ## <a name="see-also"></a>另请参阅
 
 - [Excel JavaScript API 参考文档](/javascript/api/excel?view=excel-js-1.6&preserve-view=true)
-- [Excel JavaScript API 要求集](./excel-api-requirement-sets.md)
+- [Excel JavaScript API 要求集](excel-api-requirement-sets.md)

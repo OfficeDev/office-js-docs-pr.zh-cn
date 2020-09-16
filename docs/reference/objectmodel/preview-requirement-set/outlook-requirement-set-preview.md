@@ -1,14 +1,14 @@
 ---
 title: Outlook 外接程序 API 预览要求集
 description: 当前在 Outlook 外接程序的预览中的功能和 Api。
-ms.date: 09/02/2020
+ms.date: 09/14/2020
 localization_priority: Normal
-ms.openlocfilehash: 24cad394f0f3ffb95a05a81ccb38ee4aa72a3797
-ms.sourcegitcommit: 83f9a2fdff81ca421cd23feea103b9b60895cab4
+ms.openlocfilehash: c5663946a12eddf1f076a8656a6daecae9186919
+ms.sourcegitcommit: ed2a98b6fb5b432fa99c6cefa5ce52965dc25759
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/11/2020
-ms.locfileid: "47431064"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "47819831"
 ---
 # <a name="outlook-add-in-api-preview-requirement-set"></a>Outlook 外接程序 API 预览要求集
 
@@ -307,20 +307,6 @@ Office JavaScript API 的 Outlook 外接程序 API 子集包括可以在 Outlook
 添加了一个新属性以在撰写模式下管理项目的会话数据。
 
 **适用于**： Windows (上的 Outlook 连接到 Microsoft 365 订阅) 
-
-<br>
-
----
-
----
-
-### <a name="single-sign-on-sso"></a>单一登录 (SSO)
-
-#### <a name="officeruntimeauthgetaccesstoken"></a>[OfficeRuntime.auth.getAccessToken](../../../develop/sso-in-office-add-ins.md#sso-api-reference)
-
-添加了对 `getAccessToken` 的访问，使外接程序[能够访问](../../../outlook/authenticate-a-user-with-an-sso-token.md) Microsoft Graph API 的访问令牌。
-
-**适用于**： Outlook on Windows (连接到 microsoft 365 订阅) ，Mac 上的 outlook (连接到 microsoft 365 订阅) ，outlook 网页版 (新式) ，outlook 网页版 (经典) 
 
 ## <a name="see-also"></a>另请参阅
 
