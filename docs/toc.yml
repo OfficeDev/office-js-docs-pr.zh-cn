@@ -544,6 +544,9 @@
             - name: ExcelApi 仅联机要求集
               href: reference/requirement-sets/excel-api-online-requirement-set.md
               displayName: Excel
+            - name: ExcelApi 1.12 要求集
+              href: reference/requirement-sets/excel-api-1-12-requirement-set.md
+              displayName: Excel
             - name: ExcelApi 1.11 要求集
               href: reference/requirement-sets/excel-api-1-11-requirement-set.md
               displayName: Excel
