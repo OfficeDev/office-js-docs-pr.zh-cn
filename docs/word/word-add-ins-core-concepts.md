@@ -1,72 +1,50 @@
 ---
-title: Word JavaScript API 基本编程概念
-description: 使用 Word JavaScript API 生成适用于 Word 的加载项。
-ms.date: 07/28/2020
+title: Office 加载项中的 Word JavaScript 对象模型
+description: 了解特定于 Word 的 JavaScript 对象模型中最重要的类。
+ms.date: 09/04/2020
 localization_priority: Priority
-ms.openlocfilehash: 1e7a90d4be378ed9b2c1f30ebebd4a0beec45a11
-ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
+ms.openlocfilehash: 7424ee83bde0c19a574233c64811ecbb55763d93
+ms.sourcegitcommit: 0844ca7589ad3a6b0432fe126ca4e0ac9dbb80ce
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "47293091"
+ms.lasthandoff: 09/18/2020
+ms.locfileid: "47963835"
 ---
-# <a name="fundamental-programming-concepts-with-the-word-javascript-api"></a><span data-ttu-id="9857e-103">Word JavaScript API 基本编程概念</span><span class="sxs-lookup"><span data-stu-id="9857e-103">Fundamental programming concepts with the Word JavaScript API</span></span>
+# <a name="word-javascript-object-model-in-office-add-ins"></a><span data-ttu-id="8b5ac-103">Office 加载项中的 Word JavaScript 对象模型</span><span class="sxs-lookup"><span data-stu-id="8b5ac-103">Word JavaScript object model in Office Add-ins</span></span>
 
-<span data-ttu-id="9857e-104">本文介绍使用 [Word JavaScript API](../reference/overview/word-add-ins-reference-overview.md) 生成适用于 Word 2016 或更高版本的加载项的基本概念。</span><span class="sxs-lookup"><span data-stu-id="9857e-104">This article describes concepts that are fundamental to using the [Word JavaScript API](../reference/overview/word-add-ins-reference-overview.md) to build add-ins for Word 2016 or later.</span></span>
+<span data-ttu-id="8b5ac-104">本文介绍使用 [Word JavaScript API](../reference/overview/word-add-ins-reference-overview.md) 生成加载项的基本概念。它介绍了使用 API 的基本核心概念。</span><span class="sxs-lookup"><span data-stu-id="8b5ac-104">This article describes concepts that are fundamental to using the [Word JavaScript API](../reference/overview/word-add-ins-reference-overview.md) to build add-ins. It introduces core concepts that are fundamental to using the API.</span></span>
 
-## <a name="referencing-officejs"></a><span data-ttu-id="9857e-105">引用 Office.js</span><span class="sxs-lookup"><span data-stu-id="9857e-105">Referencing Office.js</span></span>
+> [!IMPORTANT]
+> <span data-ttu-id="8b5ac-105">请参阅[使用特定于应用程序的 API 模型](../develop/application-specific-api-model.md)，以了解 Word API 的异步性质以及它们如何与文档协同工作。</span><span class="sxs-lookup"><span data-stu-id="8b5ac-105">See [Using the application-specific API model](../develop/application-specific-api-model.md) to learn about the asynchronous nature of the Word APIs and how they work with the document.</span></span>
 
-<span data-ttu-id="9857e-106">可以从以下位置引用 Office.js：</span><span class="sxs-lookup"><span data-stu-id="9857e-106">You can reference Office.js from the following locations:</span></span>
+## <a name="officejs-apis-for-word"></a><span data-ttu-id="8b5ac-106">适用于 Word 的 Office.js API</span><span class="sxs-lookup"><span data-stu-id="8b5ac-106">Office.js APIs for Word</span></span>
 
-- <span data-ttu-id="9857e-107">`https://appsforoffice.microsoft.com/lib/1/hosted/office.js` - 将此资源用于生产外接程序。</span><span class="sxs-lookup"><span data-stu-id="9857e-107">`https://appsforoffice.microsoft.com/lib/1/hosted/office.js` - use this resource for production add-ins.</span></span>
+<span data-ttu-id="8b5ac-107">Word 加载项通过使用 Office JavaScript API 与 Excel 中的对象进行交互，JavaScript API包括两个 JavaScript 对象模型：</span><span class="sxs-lookup"><span data-stu-id="8b5ac-107">A Word add-in interacts with objects in Excel by using the Office JavaScript API, which includes two JavaScript object models:</span></span>
 
-- <span data-ttu-id="9857e-108">`https://appsforoffice.microsoft.com/lib/beta/hosted/office.js` - 通过此资源试用预览版功能。</span><span class="sxs-lookup"><span data-stu-id="9857e-108">`https://appsforoffice.microsoft.com/lib/beta/hosted/office.js` - use this resource to try out preview features.</span></span>
+* <span data-ttu-id="8b5ac-108">**Word JavaScript API**：[Word JavaScript API](../reference/overview/word-add-ins-reference-overview.md) 提供了强类型的对象，可用于访问文档、范围、表格、列表、格式等。</span><span class="sxs-lookup"><span data-stu-id="8b5ac-108">**Word JavaScript API**: The [Word JavaScript API](../reference/overview/word-add-ins-reference-overview.md) provides strongly-typed objects that you can use to access the document, ranges, tables, lists, formatting, and more.</span></span>
 
-## <a name="word-javascript-api-requirement-sets"></a><span data-ttu-id="9857e-109">Word JavaScript API 要求集</span><span class="sxs-lookup"><span data-stu-id="9857e-109">Word JavaScript API requirement sets</span></span>
+* <span data-ttu-id="8b5ac-109">**通用 API**：[通用 API](/javascript/api/office) 可用于访问在多种类型的 Office 应用程序中都很常见的 UI、对话框和客户端设置等功能。</span><span class="sxs-lookup"><span data-stu-id="8b5ac-109">**Common APIs**: The [Common API](/javascript/api/office) can be used to access features such as UI, dialogs, and client settings that are common across multiple types of Office applications.</span></span>
 
-<span data-ttu-id="9857e-110">要求集是指各组已命名的 API 成员。</span><span class="sxs-lookup"><span data-stu-id="9857e-110">Requirement sets are named groups of API members.</span></span> <span data-ttu-id="9857e-111">Office 加载项使用清单中指定的要求集或执行运行时检查，以确定 Office 应用程序是否支持加载项所需的 API。</span><span class="sxs-lookup"><span data-stu-id="9857e-111">Office Add-ins use requirement sets specified in the manifest or use a runtime check to determine whether an Office application supports APIs that an add-in needs.</span></span> <span data-ttu-id="9857e-112">有关 Word JavaScript API 要求集的详细信息，请参阅 [Word JavaScript API 要求集](../reference/requirement-sets/word-api-requirement-sets.md)。</span><span class="sxs-lookup"><span data-stu-id="9857e-112">For detailed information about Word JavaScript API requirement sets, see [Word JavaScript API requirement sets](../reference/requirement-sets/word-api-requirement-sets.md).</span></span>
+<span data-ttu-id="8b5ac-110">你可能会使用 Word JavaScript API 开发面向 Word 的加载项中的大部分功能，同时还可以使用通用 API 中的对象。</span><span class="sxs-lookup"><span data-stu-id="8b5ac-110">While you'll likely use the Word JavaScript API to develop the majority of functionality in add-ins that target Word, you'll also use objects in the Common API.</span></span> <span data-ttu-id="8b5ac-111">例如：</span><span class="sxs-lookup"><span data-stu-id="8b5ac-111">For example:</span></span>
 
-## <a name="running-word-add-ins"></a><span data-ttu-id="9857e-113">运行 Word 加载项</span><span class="sxs-lookup"><span data-stu-id="9857e-113">Running Word add-ins</span></span>
+* <span data-ttu-id="8b5ac-112">[Context](/javascript/api/office/office.context)：`Context` 对象表示加载项的运行时环境，并提供对 API 的关键对象的访问。</span><span class="sxs-lookup"><span data-stu-id="8b5ac-112">[Context](/javascript/api/office/office.context): The `Context` object represents the runtime environment of the add-in and provides access to key objects of the API.</span></span> <span data-ttu-id="8b5ac-113">它由文档配置详细信息（如 `contentLanguage` 和 `officeTheme`）组成，并提供有关加载项的运行时环境（如 `host` 和 `platform`）的信息。</span><span class="sxs-lookup"><span data-stu-id="8b5ac-113">It consists of document configuration details such as `contentLanguage` and `officeTheme` and also provides information about the add-in's runtime environment such as `host` and `platform`.</span></span> <span data-ttu-id="8b5ac-114">此外，它还提供了 `requirements.isSetSupported()` 方法，可用于检查运行加载项的 Excel 应用程序是否支持指定的要求集。</span><span class="sxs-lookup"><span data-stu-id="8b5ac-114">Additionally, it provides the `requirements.isSetSupported()` method, which you can use to check whether a specified requirement set is supported by the Excel application where the add-in is running.</span></span>
+* <span data-ttu-id="8b5ac-115">[Document](/javascript/api/office/office.document)：`Document` 对象提供 `getFileAsync()` 方法，用于下载运行加载项的 Word 文件。</span><span class="sxs-lookup"><span data-stu-id="8b5ac-115">[Document](/javascript/api/office/office.document): The `Document` object provides the `getFileAsync()` method, which you can use to download the Word file where the add-in is running.</span></span>
 
-<span data-ttu-id="9857e-114">若要运行加载项，请使用 `Office.initialize` 事件处理程序。</span><span class="sxs-lookup"><span data-stu-id="9857e-114">To run your add-in, use an `Office.initialize` event handler.</span></span> <span data-ttu-id="9857e-115">若要详细了解如何初始化加载项，请参阅[了解 API](../develop/understanding-the-javascript-api-for-office.md)。</span><span class="sxs-lookup"><span data-stu-id="9857e-115">For more information about add-in initialization, see [Understanding the API](../develop/understanding-the-javascript-api-for-office.md).</span></span>
+![Word JS API 和通用 API 之间差异的图像](../images/word-js-api-common-api.png)
 
-<span data-ttu-id="9857e-116">面向 Word 2016 或更高版本的加载项可以使用特定于 Word 的 API。</span><span class="sxs-lookup"><span data-stu-id="9857e-116">Add-ins that target Word 2016 or later can use the Word-specific APIs.</span></span> <span data-ttu-id="9857e-117">它们将 Word 交互逻辑作为函数传递到 `Word.run()` 方法中。</span><span class="sxs-lookup"><span data-stu-id="9857e-117">They pass the Word-interaction logic as a function into the `Word.run()` method.</span></span> <span data-ttu-id="9857e-118">请参阅[使用特定于应用程序的 API 模型](../develop/application-specific-api-model.md)，了解如何与此编程模型中的 Word 文档进行交互。</span><span class="sxs-lookup"><span data-stu-id="9857e-118">See [Using the application-specific API model](../develop/application-specific-api-model.md) to learn about how to interact with the Word document in this programming model.</span></span>
+## <a name="word-specific-object-model"></a><span data-ttu-id="8b5ac-117">特定于 Word 的对象模型</span><span class="sxs-lookup"><span data-stu-id="8b5ac-117">Word-specific object model</span></span>
 
-<span data-ttu-id="9857e-119">以下示例显示如何使用 `Word.run()` 方法初始化和运行 Word 加载项。</span><span class="sxs-lookup"><span data-stu-id="9857e-119">The following example shows how to initialize and run a Word add-in by using the `Word.run()` method.</span></span>
+<span data-ttu-id="8b5ac-118">若要了解 Word API，则必须了解文档的各个组件之间如何相互关联。</span><span class="sxs-lookup"><span data-stu-id="8b5ac-118">To understand the Word APIs, you must understand how the components of a document are related to one another.</span></span>
 
-```js
-(function () {
-    "use strict";
+* <span data-ttu-id="8b5ac-119">**Document** 包含 **Section** 以及设置和自定义 XML 部件等文档级实体。</span><span class="sxs-lookup"><span data-stu-id="8b5ac-119">The **Document** contains the **Section**s, and document-level entities such as settings and custom XML parts.</span></span>
+* <span data-ttu-id="8b5ac-120">**Section** 包含 **Body**。</span><span class="sxs-lookup"><span data-stu-id="8b5ac-120">A **Section** contains a **Body**.</span></span>
+* <span data-ttu-id="8b5ac-121">通过 **Body** 可以访问 **Paragraph**、**ContentControl** 和 **Range** 等对象。</span><span class="sxs-lookup"><span data-stu-id="8b5ac-121">A **Body** gives access to **Paragraph**s, **ContentControl**s, and **Range** objects, among others.</span></span>
+* <span data-ttu-id="8b5ac-122">**Range** 表示连续的内容区域，包括文本、空白区域、**Table** 和图像。</span><span class="sxs-lookup"><span data-stu-id="8b5ac-122">A **Range** represents a contiguous area of content, including text, white space, **Table**s, and images.</span></span> <span data-ttu-id="8b5ac-123">此外，它还包含大部分文本操作方法。</span><span class="sxs-lookup"><span data-stu-id="8b5ac-123">It also contains most of the text manipulation methods.</span></span>
+* <span data-ttu-id="8b5ac-124">**List** 表示带标号或项目符号的列表中的文本。</span><span class="sxs-lookup"><span data-stu-id="8b5ac-124">A **List** represents text in a numbered or bulleted list.</span></span>
 
-    // The initialize event handler must be run on each page to initialize Office JS.
-    // You can add optional custom initialization code that will run after OfficeJS
-    // has initialized.
-    Office.initialize = function (reason) {
-        // The reason object tells how the add-in was initialized. The values can be:
-        // inserted - the add-in was inserted to an open document.
-        // documentOpened - the add-in was already inserted in to the document and the document was opened.
+## <a name="see-also"></a><span data-ttu-id="8b5ac-125">另请参阅</span><span class="sxs-lookup"><span data-stu-id="8b5ac-125">See also</span></span>
 
-        // Checks for the DOM to load using the jQuery ready function.
-        $(document).ready(function () {
-            // Set your optional initialization code.
-            // You can also load saved settings from the Office object.
-        });
-    };
-
-    // Run a batch operation against the Word JavaScript API object model.
-    // Use the context argument to get access to the Word document.
-    Word.run(function (context) {
-
-        // Create a proxy object for the document.
-        var thisDocument = context.document;
-        // ...
-    })
-})();
-```
-
-## <a name="see-also"></a><span data-ttu-id="9857e-120">另请参阅</span><span class="sxs-lookup"><span data-stu-id="9857e-120">See also</span></span>
-
-- [<span data-ttu-id="9857e-121">Word JavaScript API 概述</span><span class="sxs-lookup"><span data-stu-id="9857e-121">Word JavaScript API overview</span></span>](../reference/overview/word-add-ins-reference-overview.md)
-- [<span data-ttu-id="9857e-122">生成首个 Word 加载项</span><span class="sxs-lookup"><span data-stu-id="9857e-122">Build your first Word add-in</span></span>](../quickstarts/word-quickstart.md)
-- [<span data-ttu-id="9857e-123">Word 加载项教程</span><span class="sxs-lookup"><span data-stu-id="9857e-123">Word add-in tutorial</span></span>](../tutorials/word-tutorial.md)
-- [<span data-ttu-id="9857e-124">Word JavaScript API 参考</span><span class="sxs-lookup"><span data-stu-id="9857e-124">Word JavaScript API reference</span></span>](/javascript/api/word)
+- [<span data-ttu-id="8b5ac-126">Word JavaScript API 概述</span><span class="sxs-lookup"><span data-stu-id="8b5ac-126">Word JavaScript API overview</span></span>](../reference/overview/word-add-ins-reference-overview.md)
+- [<span data-ttu-id="8b5ac-127">生成首个 Word 加载项</span><span class="sxs-lookup"><span data-stu-id="8b5ac-127">Build your first Word add-in</span></span>](../quickstarts/word-quickstart.md)
+- [<span data-ttu-id="8b5ac-128">Word 加载项教程</span><span class="sxs-lookup"><span data-stu-id="8b5ac-128">Word add-in tutorial</span></span>](../tutorials/word-tutorial.md)
+- [<span data-ttu-id="8b5ac-129">Word JavaScript API 参考</span><span class="sxs-lookup"><span data-stu-id="8b5ac-129">Word JavaScript API reference</span></span>](/javascript/api/word)
