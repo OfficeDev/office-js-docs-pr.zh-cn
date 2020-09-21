@@ -1,19 +1,19 @@
 ---
 title: Office 通用 API 要求集
 description: 了解有关 Office 通用 API 要求集的详细信息。
-ms.date: 07/07/2020
+ms.date: 09/17/2020
 ms.prod: non-product-specific
 localization_priority: Normal
-ms.openlocfilehash: f9929cb2f3de6499145540e12d1d96c55b24b1aa
-ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
+ms.openlocfilehash: d5fd33a2c44cb85e8279a970d4d7443783f049ff
+ms.sourcegitcommit: 2479812e677d1a7337765fe8f1c8345061d4091a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "47293518"
+ms.lasthandoff: 09/19/2020
+ms.locfileid: "48135219"
 ---
 # <a name="office-common-api-requirement-sets"></a>Office 通用 API 要求集
 
-要求集是指各组已命名的 API 成员。 Office 外接程序使用清单中指定的要求集或使用运行时检查来确定 Office 应用程序是否支持加载项所需的 Api。 有关详细信息，请参阅 [Office 版本和要求集](../../develop/office-versions-and-requirement-sets.md)。
+要求集是指已命名的 API 成员组。Office 加载项使用清单中指定的要求集或执行运行时检查，以确定 Office 应用程序是否支持加载项所需的 API。有关详细信息，请参阅 [Office 版本和要求集](../../develop/office-versions-and-requirement-sets.md)。
 
 > [!TIP]
 > 是否要查找 *特定于应用程序* 的 API 要求集？ 请参阅下列 API 要求集：
@@ -152,6 +152,14 @@ ms.locfileid: "47293518"
 
 ---
 
+### <a name="openbrowserwindowapi"></a>OpenBrowserWindowApi
+
+|**Office 主机**|**要求集内的方法**|
+|:-----|:-----|
+| 请参阅 [打开浏览器窗口 API 要求集](open-browser-window-api-requirement-sets.md)。 | OpenBrowserWindow 的用户 |
+
+---
+
 ### <a name="partialtablebindings"></a>PartialTableBindings
 
 |**Office 应用程序**|**要求集内的方法**|
@@ -267,4 +275,4 @@ Office JavaScript API 中的以下方法不是要求集的一部分。 如果加
 
 - [Office 版本和要求集](../../develop/office-versions-and-requirement-sets.md)
 - [指定 Office 应用程序和 API 要求](../../develop/specify-office-hosts-and-api-requirements.md)
-- [Office 外接程序 XML 清单](../../develop/add-in-manifests.md)
+- [Office 加载项 XML 清单](../../develop/add-in-manifests.md)

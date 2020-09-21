@@ -1,16 +1,16 @@
 ---
-ms.date: 05/17/2020
+ms.date: 08/13/2020
 description: 了解如何在同一 JavaScript 运行时中运行自定义函数、功能区按钮和任务窗格代码，以便在加载项中协调方案。
-title: 在共享 JavaScript 运行时中运行外接程序代码
+title: 在共享 JavaScript 运行时中运行加载项代码
 localization_priority: Priority
-ms.openlocfilehash: e179d8cdff06b397c9998a6a18a506a0a6df1b42
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
-ms.translationtype: MT
+ms.openlocfilehash: 04932bcf292686fd9d0abf2ff99c19f062f21456
+ms.sourcegitcommit: ed2a98b6fb5b432fa99c6cefa5ce52965dc25759
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44609225"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "47819544"
 ---
-# <a name="overview-run-your-add-in-code-in-a-shared-javascript-runtimes"></a>概述：在共享 JavaScript 运行时中运行外接程序代码
+# <a name="overview-run-your-add-in-code-in-a-shared-javascript-runtimes"></a>概述：在共享 JavaScript 运行时中运行加载项代码
 
 [!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
@@ -26,17 +26,17 @@ ms.locfileid: "44609225"
 - 打开文档后，加载项即可运行代码。
 - 关闭任务窗格后，加载项可以继续运行代码。
 
-当使用任务窗格在共享运行时中运行自定义函数时，它将在不同平台上的浏览器实例中运行，如 [Office 加载项使用的浏览器](../concepts/browsers-used-by-office-web-add-ins.md)中所述。此外，Excel 加载项在功能区上显示的任何按钮都将在同一共享运行时中运行。 下图显示了自定义函数、功能区 UI 和任务窗格代码如何在同一 JavaScript 运行时中运行。
+当使用任务窗格在共享运行时中运行自定义函数时，你的加载项将在 Microsoft Internet Explorer 11 浏览器实例中运行，如 [Office 加载项使用的浏览器](../concepts/browsers-used-by-office-web-add-ins.md)中所述。此外，Excel 加载项在功能区上显示的任何按钮都将在同一共享运行时中运行。 下图显示了自定义函数、功能区 UI 和任务窗格代码如何在同一 JavaScript 运行时中运行。
 
-![在包含 Excel 中的功能区按钮和任务窗格的共享运行时中运行的自定义函数](../images/custom-functions-in-browser-runtime.png)
+![使用 Excel 中的功能区按钮和任务窗格在共享运行时中运行的自定义函数](../images/custom-functions-in-browser-runtime.png)
 
 ## <a name="set-up-a-shared-runtime"></a>设置共享运行时
 
-请参阅[配置共享运行时文章](./configure-your-add-in-to-use-a-shared-runtime.md)，了解如何将自定义函数设置为使用共享运行时。
+请参阅[配置共享运行时文章](configure-your-add-in-to-use-a-shared-runtime.md)，以了解如何设置自定义函数以使用共享运行时。
 
 ### <a name="debugging"></a>调试
 
-使用共享运行时时，目前不能使用 Visual Studio Code 在 Windows 版 Excel 中调试自定义函数。 而是需要使用开发人员工具。 有关详细信息，请参阅[使用 Windows 10 上的开发人员工具调试加载项](../testing/debug-add-ins-using-f12-developer-tools-on-windows-10.md)。
+使用共享运行时时，目前不能使用 Visual Studio Code 在 Windows 版 Excel 中调试自定义函数。 你需要改为使用开发人员工具。 有关详细信息，请参阅[使用 Windows 10 上的开发人员工具调试加载项](../testing/debug-add-ins-using-f12-developer-tools-on-windows-10.md)。
 
 ## <a name="give-us-feedback"></a>向我们提供反馈
 
@@ -44,5 +44,5 @@ ms.locfileid: "44609225"
 
 ## <a name="see-also"></a>另请参阅
 
-- [教程：在 Excel 自定义函数和任务窗格之间共享数据和事件](../tutorials/share-data-and-events-between-custom-functions-and-the-task-pane-tutorial.md)
-- [从自定义函数调用 Excel Api](call-excel-apis-from-custom-function.md)
+- [教程：Microsoft Excel自定义函数和任务窗格之间共享数据和事件](../tutorials/share-data-and-events-between-custom-functions-and-the-task-pane-tutorial.md)
+- [从自定义函数中调用 Excel API](call-excel-apis-from-custom-function.md)

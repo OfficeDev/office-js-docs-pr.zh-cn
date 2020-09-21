@@ -1,28 +1,28 @@
 ---
 title: Outlook 加载项的隐私、权限和安全性
 description: 了解如何管理 Outlook 加载项中的隐私、权限和安全性。
-ms.date: 08/18/2020
+ms.date: 09/14/2020
 localization_priority: Priority
-ms.openlocfilehash: 8a95330059de39506a8f9ece6bdd10246b6c212d
-ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
+ms.openlocfilehash: 3bad5cc3080d67cdfab8639d9140b9bfa3e25559
+ms.sourcegitcommit: 6e6de48f746416ec68b2cf4c298253986486fbfd
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "47294295"
+ms.lasthandoff: 09/14/2020
+ms.locfileid: "47651942"
 ---
 # <a name="privacy-permissions-and-security-for-outlook-add-ins"></a>Outlook 外接程序的隐私、权限和安全性
 
 最终用户、开发人员和管理员可以使用 Outlook 外接程序的安全模型的分层权限级别来控制隐私和性能。
 
-本文介绍了 Outlook 加载项可以请求的可能权限，并从以下几个角度审视安全模型：
+本文介绍了 Outlook 加载项可以请求的可能权限，并从以下几个角度审视安全模型。
 
 - **AppSource**：加载项完整性
 
 - **最终用户**：隐私和性能问题
 
-- **开发人员**：权限选择和资源使用限制。
+- **开发人员**：权限选择和资源使用限制
 
-- **管理员**：设置性能阈值的权限。
+- **管理员**：设置性能阈值的权限
 
 ## <a name="permissions-model"></a>权限模型
 
@@ -49,26 +49,36 @@ ms.locfileid: "47294295"
 
 ## <a name="appsource-add-in-integrity"></a>AppSource：加载项完整性
 
-[AppSource](https://appsource.microsoft.com) 托管可由最终用户和管理员安装的加载项。 AppSource 强制执行以下措施来维护这些 Outlook 加载项的完整性：
+[AppSource](https://appsource.microsoft.com) 托管可由最终用户和管理员安装的加载项。 AppSource 强制执行以下措施来维护这些 Outlook 加载项的完整性。
 
 - 要求加载项的主机服务器始终使用安全套接字层 (SSL) 进行通信。
 
-- 要求开发人员在提交加载项时提供身份证明、合约协议和适合的隐私策略。 
+- 要求开发人员在提交加载项时提供身份证明、合约协议和适合的隐私策略。
 
 - 以只读模式存档加载项。
 
 - 支持针对可用加载项的用户审阅系统以推广自我管理的社区。
 
+## <a name="optional-connected-experiences"></a>可选连接体验
+
+最终用户和 IT 管理员可在 Office 桌面和移动客户端中关闭[可选的已连接体验](/deployoffice/privacy/optional-connected-experiences)。 对于 Outlook 外接程序，禁用**可选连接体验的影响**设置取决于客户端，但通常意味着不允许使用用户安装的加载项或访问 Office 应用商店。 由组织的 IT 管理员通过[集中部署来部署的某些 Microsoft 加载项被视为必要的、关键的或业务关键型的加载项，将仍然可用](../publish/centralized-deployment.md)。
+
+- Windows、Mac：**“获取加载项”** 按钮不会显示，因此用户无法再管理其加载项或访问 Office 应用商店。
+- Android、iOS：**“获取外接程序”** 对话框仅显示管理员部署的加载项。
+- 浏览器：加载项的可用性和对应用商店的访问不受影响，因此用户可以继续[管理其加载项](https://support.microsoft.com/office/8f2ce816-5df4-44a5-958c-f7f9d6dabdce)（包括由管理员部署的加载项）。
+
+有关常规加载项行为，请参阅 [Office 加载项的隐私和安全性](../concepts/privacy-and-security.md#optional-connected-experiences)。
+
 ## <a name="end-users-privacy-and-performance-concerns"></a>最终用户：隐私和性能问题
 
-安全模型通过下列方式解决最终用户的安全、隐私和性能问题：
+安全模型通过下列方式解决最终用户的安全、隐私和性能问题。
 
 - 受 Outlook 信息权限管理 (IRM) 保护的最终用户邮件不与 Outlook 外接程序交互。
 
   > [!IMPORTANT]
   > - 加载项在与 Microsoft 365 订阅相关联的 Outlook 电子签名邮件上激活。 在Windows上，这个支持是通过8711.1000版本中引入的。
   >
-  > - 现在，Windows 版 Outlook 从内部版本 13120.1000 开始可以在受 IRM 保护的项目上激活加载项。 有关处于预览阶段的此功能的详细信息，请参阅[在受信息权限管理 (IRM) 保护的项目上激活加载项](../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md#add-in-activation-on-items-protected-by-information-rights-management-irm)。
+  > - 现在，Windows 版 Outlook 从内部版本 13229.10000 开始可以在受 IRM 保护的项目上激活加载项。 有关处于预览阶段的此功能的详细信息，请参阅[在受信息权限管理 (IRM) 保护的项目上激活加载项](../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md#add-in-activation-on-items-protected-by-information-rights-management-irm)。
 
 - 从 AppSource 安装加载项之前，最终用户能够查看加载项可以对其数据进行的访问和采取的操作，且必须明确确认后才能继续操作。 未经用户或管理员手动验证，Outlook 外接程序不会自动推送到客户端计算机。
 
@@ -82,7 +92,7 @@ ms.locfileid: "47294295"
 
 - 通过托管 Office 外接程序的服务器传送的数据始终根据安全套接字层 (SSL) 协议进行加密。
 
-- 仅适用于 Outlook 富客户端：Outlook 富客户端监视已安装 Outlook 外接程序的性能，实施管治控制，以及禁用在以下方面超过限制的 Outlook 外接程序：
+- 仅适用于 Outlook 富客户端：Outlook 富客户端监视已安装 Outlook 外接程序的性能，实施管治控制，以及禁用在以下方面超过限制的 Outlook 外接程序。
 
   - 激活响应时间
 
@@ -102,7 +112,7 @@ ms.locfileid: "47294295"
 
 ### <a name="tiered-permissions-increases-transparency"></a>多层权限将增加透明度
 
-开发人员应按照多层权限模型提供透明度，并解决用户有关哪些加载项可以处理其数据和邮箱的问题，间接促进加载项采用：
+开发人员应按照多层权限模型提供透明度，并解决用户有关哪些加载项可以处理其数据和邮箱的问题，间接促进加载项采用。
 
 - 开发人员根据 Outlook 外接程序应激活的方式、Outlook 外接程序读取或写入项目特定属性的需求，或者创建和发送项目的需求来针对 Outlook 外接程序请求适当级别的权限。
 
@@ -135,7 +145,7 @@ ms.locfileid: "47294295"
 
 - 如果 Outlook 加载项需要向撰写的项目的属性（如收件人姓名、电子邮件地址、正文和主题）写入，或需要添加或删除项目附件，那么开发人员应请求“**读/写项目**”权限。
 
-- 仅在 Outlook 外接程序需要使用 [mailbox.makeEWSRequestAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md#methods) 方法执行下列一个或多个操作时，开发人员才请求“读/写邮箱”权限：
+- 仅在 Outlook 外接程序需要使用 [mailbox.makeEWSRequestAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md#methods) 方法执行下列一个或多个操作时，开发人员才请求 **“读/写邮箱”** 权限。
 
   - 读取或写入邮箱中项目的属性。
   - 创建、读取、写入或发送邮箱中的项目。
@@ -147,11 +157,11 @@ ms.locfileid: "47294295"
 
 ### <a name="other-measures-to-promote-user-security"></a>提高用户安全性的其他措施
 
-开发人员还应该注意并规划以下内容：
+开发人员还应该注意并规划以下内容。
 
 - 开发人员无法在加载项中使用 ActiveX 控件，因为它们不受支持。
 
-- 开发人员应在将 Outlook 加载项提交到 AppSource 时执行以下操作：
+- 开发人员应在将 Outlook 加载项提交到 AppSource 时执行以下操作。
 
   - 生成扩展验证 (EV) SSL 证书作为身份证明。
 
@@ -163,7 +173,7 @@ ms.locfileid: "47294295"
 
 ## <a name="administrators-privileges"></a>管理员：权限
 
-安全模型向管理员提供以下权限和责任：
+安全模型向管理员提供以下权限和责任。
 
 - 可以阻止最终用户安装任何 Outlook 加载项，包括来自 AppSource 的加载项。
 
@@ -174,5 +184,6 @@ ms.locfileid: "47294295"
 ## <a name="see-also"></a>另请参阅
 
 - [Office 加载项的隐私和安全性](../concepts/privacy-and-security.md)
+- [Microsoft 365 应用的隐私控制](/deployoffice/privacy/overview-privacy-controls)
 - [Outlook 外接程序 API](apis.md)
 - [Outlook 外接程序的激活和 JavaScript API 限制](limits-for-activation-and-javascript-api-for-outlook-add-ins.md)

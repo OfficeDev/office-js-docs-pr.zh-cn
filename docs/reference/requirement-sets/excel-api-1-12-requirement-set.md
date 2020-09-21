@@ -1,15 +1,15 @@
 ---
 title: Excel JavaScript API 要求集1.12
 description: 有关 ExcelApi 1.12 要求集的详细信息。
-ms.date: 09/15/2020
+ms.date: 09/16/2020
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: a88c511e90fe48e1a9997d19cb4a2851cb718f6b
-ms.sourcegitcommit: ed2a98b6fb5b432fa99c6cefa5ce52965dc25759
+ms.openlocfilehash: 2f2fb04c914e26aacbd8815a1d173c8af9c09342
+ms.sourcegitcommit: 0844ca7589ad3a6b0432fe126ca4e0ac9dbb80ce
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/16/2020
-ms.locfileid: "47819839"
+ms.lasthandoff: 09/18/2020
+ms.locfileid: "47963820"
 ---
 # <a name="whats-new-in-excel-javascript-api-112"></a>Excel JavaScript API 1.12 中的新增功能
 
@@ -79,7 +79,6 @@ ms.locfileid: "47819839"
 ||[lowerBound](/javascript/api/excel/excel.pivotlabelfilter#lowerbound)|筛选条件之间的范围的下限。|
 ||[substring](/javascript/api/excel/excel.pivotlabelfilter#substring)|用于 `BeginsWith` 、 `EndsWith` 和筛选条件的子字符串 `Contains` 。|
 ||[upperBound](/javascript/api/excel/excel.pivotlabelfilter#upperbound)|筛选条件之间的范围的上限。|
-|[PivotLayout](/javascript/api/excel/excel.pivotlayout)|[pivotStyle](/javascript/api/excel/excel.pivotlayout#pivotstyle)|应用于数据透视表的样式。|
 |[PivotManualFilter](/javascript/api/excel/excel.pivotmanualfilter)|[selectedItems](/javascript/api/excel/excel.pivotmanualfilter#selecteditems)|要手动筛选的选定项的列表。 这些项必须是所选字段中现有和有效的项。|
 |[PivotTable](/javascript/api/excel/excel.pivottable)|[allowMultipleFiltersPerField](/javascript/api/excel/excel.pivottable#allowmultiplefiltersperfield)|指定数据透视表是否允许对表中给定的透视字段上的多个 PivotFilters 进行应用。|
 |[PivotTableScopedCollection](/javascript/api/excel/excel.pivottablescopedcollection)|[getCount()](/javascript/api/excel/excel.pivottablescopedcollection#getcount--)|获取集合中的数据透视表的数目。|
@@ -107,7 +106,6 @@ ms.locfileid: "47819839"
 |[RangeAreasCollection](/javascript/api/excel/excel.rangeareascollection)|[getCount()](/javascript/api/excel/excel.rangeareascollection#getcount--)|获取此集合中的 RangeAreas 对象的数目。|
 ||[getItemAt(index: number)](/javascript/api/excel/excel.rangeareascollection#getitemat-index-)|根据集合中的位置返回 RangeAreas 对象。|
 ||[items](/javascript/api/excel/excel.rangeareascollection#items)|获取此集合中已加载的子项。|
-|[Slicer](/javascript/api/excel/excel.slicer)|[slicerStyle](/javascript/api/excel/excel.slicer#slicerstyle)|应用于切片器的样式。|
 |[WorkbookRangeAreas](/javascript/api/excel/excel.workbookrangeareas)|[getRangeAreasBySheet (项： string) ](/javascript/api/excel/excel.workbookrangeareas#getrangeareasbysheet-key-)|`RangeAreas`基于集合中的工作表 id 或名称返回对象。|
 ||[getRangeAreasOrNullObjectBySheet (项： string) ](/javascript/api/excel/excel.workbookrangeareas#getrangeareasornullobjectbysheet-key-)|`RangeAreas`基于集合中的工作表名称或 id 返回对象。 如果没有 Worksheet 对象，将返回 NULL 对象。|
 ||[地址](/javascript/api/excel/excel.workbookrangeareas#addresses)|返回 A1 样式的地址数组。 Address 值将包含单元格每个矩形块的工作表名称 (例如，"Sheet1！A1： B4、Sheet1！D1： D4 ") 。 只读。|

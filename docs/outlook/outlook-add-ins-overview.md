@@ -1,15 +1,15 @@
 ---
 title: Outlook 加载项概述
 description: Outlook 加载项由第三方使用基于 Web 的平台集成到 Outlook 中。
-ms.date: 08/18/2020
+ms.date: 09/14/2020
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: 006b19af1f7c9186e9247a3b45a3c8ac109c446a
-ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
+ms.openlocfilehash: 09f410ccbddb4cffadc700036a4da3c45d2fb6e3
+ms.sourcegitcommit: ed2a98b6fb5b432fa99c6cefa5ce52965dc25759
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "47294316"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "47819565"
 ---
 # <a name="outlook-add-ins-overview"></a>Outlook 加载项概述
 
@@ -41,10 +41,7 @@ Outlook 加载项不同于 COM 或 VSTO 的加载项，后者为特定于 Window
 
     ![在卡片中显示上下文相关应用程序](../images/outlook-detected-entity-card.png)
 
-> [!NOTE]
-> [已弃用自定义窗格](https://developer.microsoft.com/outlook/blogs/make-your-add-ins-available-in-the-office-ribbon/)，因此，请确保使用的是受支持的扩展点。
-
-## <a name="mailbox-items-available-to-add-ins"></a>外接程序可用的邮箱项目
+## <a name="mailbox-items-available-to-add-ins"></a>加载项可用的邮箱项目
 
 在撰写或阅读时，Outlook 外接程序对邮件或约会可用，但对其他项目类型不可用。如果撰写或阅读窗体中的当前邮件项目为以下项之一，则 Outlook 不会激活邮件外接程序：
 
@@ -53,7 +50,7 @@ Outlook 加载项不同于 COM 或 VSTO 的加载项，后者为特定于 Window
   > [!IMPORTANT]
   > - 加载项在与 Microsoft 365 订阅相关联的 Outlook 电子签名邮件上激活。 在Windows上，这个支持是通过8711.1000版本中引入的。
   >
-  > - 现在，Windows 版 Outlook 从内部版本 13120.1000 开始可以在受 IRM 保护的项目上激活加载项。 有关处于预览阶段的此功能的详细信息，请参阅[在受信息权限管理 (IRM) 保护的项目上激活加载项](../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md#add-in-activation-on-items-protected-by-information-rights-management-irm)。
+  > - 现在，Windows 版 Outlook 从内部版本 13229.10000 开始可以在受 IRM 保护的项目上激活加载项。 有关处于预览阶段的此功能的详细信息，请参阅[在受信息权限管理 (IRM) 保护的项目上激活加载项](../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md#add-in-activation-on-items-protected-by-information-rights-management-irm)。
 
 - 具有邮件类别 IPM.Report.* 的送达报告或通知，包括送达和未送达报告 (NDR)，以及已读、未读和延迟通知。
 

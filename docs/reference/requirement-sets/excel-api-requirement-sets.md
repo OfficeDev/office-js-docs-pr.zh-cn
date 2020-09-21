@@ -1,15 +1,15 @@
 ---
 title: Excel JavaScript API 要求集
 description: 针对 Excel 内部版本的 Office 加载项要求集信息。
-ms.date: 07/10/2020
+ms.date: 09/15/2020
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: aa2eb78063d3ae63efa725e13892e24596ebfceb
-ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
+ms.openlocfilehash: 3c3057dd27b571e9c4faa09cfc7415667d1c612b
+ms.sourcegitcommit: ed2a98b6fb5b432fa99c6cefa5ce52965dc25759
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "47294246"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "47819796"
 ---
 # <a name="excel-javascript-api-requirement-sets"></a>Excel JavaScript API 要求集
 
@@ -27,7 +27,8 @@ Excel 加载项可在多个 Office 版本中运行，包括 Windows 版 Office 2
 |  要求集  |  Windows 版 Office<br>（关联至 Microsoft 365 订阅）  |  iPad 版 Office<br>（关联至 Microsoft 365 订阅）  |  Mac 版 Office<br>（关联至 Microsoft 365 订阅）  | Office 网页版 |
 |:-----|-----|:-----|:-----|:-----|:-----|
 | [预览](excel-preview-apis.md)  | 请使用最新的 Office 版本来试用预览 API（你可能需要加入 [Office 预览体验成员计划](https://insider.office.com)） |
-| [ExcelApiOnline](excel-api-online-requirement-set.md) | 不适用 | 不适用 | 不适用 | 最新（请参阅[要求集页面](./excel-api-online-requirement-set.md)） |
+| [ExcelApiOnline](excel-api-online-requirement-set.md) | 不适用 | 不适用 | 不适用 | 最新（请参阅[要求集页面](excel-api-online-requirement-set.md)） |
+| [ExcelApi 1.12](excel-api-1-12-requirement-set.md) | 版本 2008（内部版本 13127.20408）或更高版本 | 16.40 或更高版本 | 16.40 或更高版本 | 2020 年 9 月 |
 | [ExcelApi 1.11](excel-api-1-11-requirement-set.md) | 版本 2002（内部版本 12527.20470）或更高版本 | 16.35 或更高版本 | 16.33 或更高版本 | 2020 年 5 月 |
 | [ExcelApi 1.10](excel-api-1-10-requirement-set.md) | 版本 1907（内部版本 11929.20306）或更高版本 | 16.0 或更高版本 | 16.30 或更高版本 | 2019 年 10 月 |
 | [ExcelApi 1.9](excel-api-1-9-requirement-set.md)  | 版本 1903 (内部版本 11425.20204) 或更高版本 | 16.0 或更高版本 | 16.24 或更高版本 | 2019 年 5 月 |
@@ -52,10 +53,41 @@ Excel 加载项可在多个 Office 版本中运行，包括 Windows 版 Office 2
 
 [!INCLUDE [Links to get Office versions and how to find Office client version](../../includes/links-get-office-versions-builds.md)]
 
+## <a name="how-to-use-excel-requirement-sets-at-runtime-and-in-the-manifest"></a>如何在运行时和清单中使用 Excel 要求集
+
+> [!NOTE]
+> 本节假定你熟悉 [Office 版本和要求集](../../develop/office-versions-and-requirement-sets.md)和[指定 Office 应用程序和 API 要求集](../../develop/specify-office-hosts-and-api-requirements.md)处的要求集概述。
+
+要求集是指各组已命名的 API 成员。 Office 加载项可以执行运行时检查或使用清单中指定的要求集确定 Office 应用程序是否支持加载项所需的 API。
+
+### <a name="checking-for-requirement-set-support-at-runtime"></a>在运行时检查要求集支持
+
+以下代码示例显示如何确定运行加载项的 Office 应用程序是否支持指定的 API 要求集。
+
+```js
+if (Office.context.requirements.isSetSupported('ExcelApi', '1.3')) {
+  /// perform actions
+}
+else {
+  /// provide alternate flow/logic
+}
+```
+
+### <a name="defining-requirement-set-support-in-the-manifest"></a>在清单中定义要求集支持
+
+可以在加载项清单中使用[要求元素](../manifest/requirements.md)指定加载项要求激活的最小要求集和/或 API 方法。 如果 Office 应用程序或平台不支持清单的 `Requirements` 元素中指定的要求集或 API 方法，则加载项将不会在该应用程序或平台中运行，也不会出现在“**我的加载项**”中显示的加载项列表中。如果你的加载项需要特定要求集以实现完整功能，但是即使在不支持该要求集的平台上也可以为用户提供值，则建议在运行时按照上述方式检查要求支持，而不是在清单中定义要求集支持。
+
+以下代码示例显示加载项清单中的 `Requirements` 元素，该元素指定应在支持 ExcelApi 要求集版本 1.3 或更高版本的所有 Office 客户端应用程序中加载该加载项。
+
+```xml
+<Requirements>
+   <Sets DefaultMinVersion="1.3">
+      <Set Name="ExcelApi" MinVersion="1.3"/>
+   </Sets>
+</Requirements>
+```
+
 ## <a name="see-also"></a>另请参阅
 
 - [Excel JavaScript API 参考文档](/javascript/api/excel)
-- [Office 版本和要求集](../../develop/office-versions-and-requirement-sets.md)
-- [指定 Office 应用程序和 API 要求](../../develop/specify-office-hosts-and-api-requirements.md)
 - [Office 加载项 XML 清单](../../develop/add-in-manifests.md)
-- [Office Online Server 概述](/officeonlineserver/office-online-server-overview)

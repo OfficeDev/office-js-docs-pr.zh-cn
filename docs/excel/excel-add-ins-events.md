@@ -3,12 +3,12 @@ title: 使用 Excel JavaScript API 处理事件
 description: Excel JavaScript 对象的事件列表。 其中包括有关使用事件处理程序和关联模式的信息。
 ms.date: 09/15/2020
 localization_priority: Normal
-ms.openlocfilehash: 5a1b0a3a33dc5f1830710eeec7e8dbdaac842a2f
-ms.sourcegitcommit: ed2a98b6fb5b432fa99c6cefa5ce52965dc25759
+ms.openlocfilehash: 12e4f0a7ebb9c50bf6874106ef711ca3207cae46
+ms.sourcegitcommit: 2479812e677d1a7337765fe8f1c8345061d4091a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/16/2020
-ms.locfileid: "47819537"
+ms.lasthandoff: 09/19/2020
+ms.locfileid: "48135212"
 ---
 # <a name="work-with-events-using-the-excel-javascript-api"></a>使用 Excel JavaScript API 处理事件
 
@@ -21,7 +21,7 @@ ms.locfileid: "47819537"
 | 事件 | 说明 | 支持的对象 |
 |:---------------|:-------------|:-----------|
 | `onActivated` | 激活对象时发生。 | [**Chart**](/javascript/api/excel/excel.chart#onactivated)、[**ChartCollection**](/javascript/api/excel/excel.chartcollection#onactivated)、[**Shape**](/javascript/api/excel/excel.shape#onactivated)、[**Worksheet**](/javascript/api/excel/excel.worksheet#onactivated)、[**WorksheetCollection**](/javascript/api/excel/excel.worksheetcollection#onactivated) |
-| `onAdded` | 当向集合中添加对象时发生。 | [**ChartCollection**](/javascript/api/excel/excel.chartcollection#onadded)、 [**CommentCollection**](/javascript/api/excel/excel.commentcollection#onadded)[**TableCollection**](/javascript/api/excel/excel.tablecollection#onadded)、 [**WorksheetCollection**](/javascript/api/excel/excel.worksheetcollection#onadded) |
+| `onAdded` | 当向集合中添加对象时发生。 | [**ChartCollection**](/javascript/api/excel/excel.chartcollection#onadded)、 [**CommentCollection**](/javascript/api/excel/excel.commentcollection#onadded)、 [**TableCollection**](/javascript/api/excel/excel.tablecollection#onadded)、 [**WorksheetCollection**](/javascript/api/excel/excel.worksheetcollection#onadded) |
 | `onAutoSaveSettingChanged` | 在工作簿上更改 `autoSave` 设置时发生。 | [**Workbook**](/javascript/api/excel/excel.workbook#onautosavesettingchanged) |
 | `onCalculated` | 工作表完成计算（或集合的所有工作表都已完成）时发生。 | [**Worksheet**](/javascript/api/excel/excel.worksheet#oncalculated)、[**WorksheetCollection**](/javascript/api/excel/excel.worksheetcollection#oncalculated) |
 | `onChanged` | 当单个单元格的数据或批注的数据发生更改时发生。 | [**CommentCollection**](/javascript/api/excel/excel.commentcollection#onchanged)、 [**Table**](/javascript/api/excel/excel.table#onchanged)、 [**TableCollection**](/javascript/api/excel/excel.tablecollection#onchanged)、 [**工作表**](/javascript/api/excel/excel.worksheet#onchanged)、 [**WorksheetCollection**](/javascript/api/excel/excel.worksheetcollection#onchanged) |
