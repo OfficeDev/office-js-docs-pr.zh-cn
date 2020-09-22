@@ -1,78 +1,40 @@
 ---
 title: Outlook 外接程序 API 预览要求集
 description: 当前在 Outlook 外接程序的预览中的功能和 Api。
-ms.date: 09/14/2020
+ms.date: 09/21/2020
 localization_priority: Normal
-ms.openlocfilehash: c5663946a12eddf1f076a8656a6daecae9186919
-ms.sourcegitcommit: ed2a98b6fb5b432fa99c6cefa5ce52965dc25759
+ms.openlocfilehash: f7c9c7c2e60a77c30e3957a0c759d0f20b22e86a
+ms.sourcegitcommit: 4a03d8b3f676ee2d91114813cb81bce5da3c8d6b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/16/2020
-ms.locfileid: "47819831"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "48175540"
 ---
-# <a name="outlook-add-in-api-preview-requirement-set"></a><span data-ttu-id="486ca-103">Outlook 外接程序 API 预览要求集</span><span class="sxs-lookup"><span data-stu-id="486ca-103">Outlook add-in API Preview requirement set</span></span>
+# <a name="outlook-add-in-api-preview-requirement-set"></a><span data-ttu-id="d500f-103">Outlook 外接程序 API 预览要求集</span><span class="sxs-lookup"><span data-stu-id="d500f-103">Outlook add-in API Preview requirement set</span></span>
 
-<span data-ttu-id="486ca-104">Office JavaScript API 的 Outlook 外接程序 API 子集包括可以在 Outlook 外接程序中使用的对象、方法、属性和事件。</span><span class="sxs-lookup"><span data-stu-id="486ca-104">The Outlook add-in API subset of the Office JavaScript API includes objects, methods, properties, and events that you can use in an Outlook add-in.</span></span>
+<span data-ttu-id="d500f-104">Office JavaScript API 的 Outlook 外接程序 API 子集包括可以在 Outlook 外接程序中使用的对象、方法、属性和事件。</span><span class="sxs-lookup"><span data-stu-id="d500f-104">The Outlook add-in API subset of the Office JavaScript API includes objects, methods, properties, and events that you can use in an Outlook add-in.</span></span>
 
 > [!IMPORTANT]
-> <span data-ttu-id="486ca-105">本文档适用于**预览**[要求集](../../requirement-sets/outlook-api-requirement-sets.md)。</span><span class="sxs-lookup"><span data-stu-id="486ca-105">This documentation is for a **preview** [requirement set](../../requirement-sets/outlook-api-requirement-sets.md).</span></span> <span data-ttu-id="486ca-106">此要求集尚未完全实现，客户端不会准确报告对它的支持。</span><span class="sxs-lookup"><span data-stu-id="486ca-106">This requirement set is not fully implemented yet, and clients will not accurately report support for it.</span></span> <span data-ttu-id="486ca-107">不应在外接程序清单中指定此要求集。</span><span class="sxs-lookup"><span data-stu-id="486ca-107">You should not specify this requirement set in your add-in manifest.</span></span>
+> <span data-ttu-id="d500f-105">本文档适用于**预览**[要求集](../../requirement-sets/outlook-api-requirement-sets.md)。</span><span class="sxs-lookup"><span data-stu-id="d500f-105">This documentation is for a **preview** [requirement set](../../requirement-sets/outlook-api-requirement-sets.md).</span></span> <span data-ttu-id="d500f-106">此要求集尚未完全实现，客户端不会准确报告对它的支持。</span><span class="sxs-lookup"><span data-stu-id="d500f-106">This requirement set is not fully implemented yet, and clients will not accurately report support for it.</span></span> <span data-ttu-id="d500f-107">不应在外接程序清单中指定此要求集。</span><span class="sxs-lookup"><span data-stu-id="d500f-107">You should not specify this requirement set in your add-in manifest.</span></span>
 
 [!INCLUDE [Information about using preview APIs](../../../includes/using-preview-apis-host.md)]
 
 > [!TIP]
-> <span data-ttu-id="486ca-108">您可以通过 [在 Microsoft 365 租户上配置目标版本](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide&preserve-view=true#set-up-the-release-option-in-the-admin-center)来预览 Web 上 Outlook 中的功能。</span><span class="sxs-lookup"><span data-stu-id="486ca-108">You may be able to preview features in Outlook on the web by [configuring targeted release on your Microsoft 365 tenant](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide&preserve-view=true#set-up-the-release-option-in-the-admin-center).</span></span> <span data-ttu-id="486ca-109">此页面上的 "配置预览访问权限" 对适用的功能进行了说明。</span><span class="sxs-lookup"><span data-stu-id="486ca-109">"Configure preview access" is noted on this page for applicable features.</span></span>
+> <span data-ttu-id="d500f-108">您可以通过 [在 Microsoft 365 租户上配置目标版本](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide&preserve-view=true#set-up-the-release-option-in-the-admin-center)来预览 Web 上 Outlook 中的功能。</span><span class="sxs-lookup"><span data-stu-id="d500f-108">You may be able to preview features in Outlook on the web by [configuring targeted release on your Microsoft 365 tenant](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide&preserve-view=true#set-up-the-release-option-in-the-admin-center).</span></span> <span data-ttu-id="d500f-109">此页面上的 "配置预览访问权限" 对适用的功能进行了说明。</span><span class="sxs-lookup"><span data-stu-id="d500f-109">"Configure preview access" is noted on this page for applicable features.</span></span>
 >
-> <span data-ttu-id="486ca-110">对于其他功能，你可以通过填写和提交 [此表单](https://aka.ms/OWAPreview)，使用 Microsoft 365 帐户请求对网站上的 Outlook 的预览位的访问权限。</span><span class="sxs-lookup"><span data-stu-id="486ca-110">For other features, you may be able to request access to preview bits for Outlook on the web using your Microsoft 365 account by completing and submitting [this form](https://aka.ms/OWAPreview).</span></span> <span data-ttu-id="486ca-111">这些功能上记录了 "请求预览访问"。</span><span class="sxs-lookup"><span data-stu-id="486ca-111">"Request preview access" is noted on those features.</span></span>
+> <span data-ttu-id="d500f-110">对于其他功能，你可以通过填写和提交 [此表单](https://aka.ms/OWAPreview)，使用 Microsoft 365 帐户请求对网站上的 Outlook 的预览位的访问权限。</span><span class="sxs-lookup"><span data-stu-id="d500f-110">For other features, you may be able to request access to preview bits for Outlook on the web using your Microsoft 365 account by completing and submitting [this form](https://aka.ms/OWAPreview).</span></span> <span data-ttu-id="d500f-111">这些功能上记录了 "请求预览访问"。</span><span class="sxs-lookup"><span data-stu-id="d500f-111">"Request preview access" is noted on those features.</span></span>
 
-<span data-ttu-id="486ca-112">预览要求集包括[要求集 1.8](../requirement-set-1.8/outlook-requirement-set-1.8.md) 的所有功能。</span><span class="sxs-lookup"><span data-stu-id="486ca-112">The Preview Requirement set includes all of the features of [Requirement set 1.8](../requirement-set-1.8/outlook-requirement-set-1.8.md).</span></span>
+<span data-ttu-id="d500f-112">预览要求集包括[要求集 1.8](../requirement-set-1.8/outlook-requirement-set-1.8.md) 的所有功能。</span><span class="sxs-lookup"><span data-stu-id="d500f-112">The Preview Requirement set includes all of the features of [Requirement set 1.8](../requirement-set-1.8/outlook-requirement-set-1.8.md).</span></span>
 
-## <a name="features-in-preview"></a><span data-ttu-id="486ca-113">预览阶段的功能</span><span class="sxs-lookup"><span data-stu-id="486ca-113">Features in preview</span></span>
+## <a name="features-in-preview"></a><span data-ttu-id="d500f-113">预览阶段的功能</span><span class="sxs-lookup"><span data-stu-id="d500f-113">Features in preview</span></span>
 
-<span data-ttu-id="486ca-114">以下是预览版中的功能。</span><span class="sxs-lookup"><span data-stu-id="486ca-114">The following features are in preview.</span></span>
+<span data-ttu-id="d500f-114">以下是预览版中的功能。</span><span class="sxs-lookup"><span data-stu-id="d500f-114">The following features are in preview.</span></span>
 
-### <a name="add-in-activation-on-items-protected-by-information-rights-management-irm"></a><span data-ttu-id="486ca-115">对受信息权限管理 (IRM) 保护的项的外接程序激活</span><span class="sxs-lookup"><span data-stu-id="486ca-115">Add-in activation on items protected by Information Rights Management (IRM)</span></span>
+### <a name="add-in-activation-on-items-protected-by-information-rights-management-irm"></a><span data-ttu-id="d500f-115">对受信息权限管理 (IRM) 保护的项的外接程序激活</span><span class="sxs-lookup"><span data-stu-id="d500f-115">Add-in activation on items protected by Information Rights Management (IRM)</span></span>
 
-<span data-ttu-id="486ca-116">现在，外接程序可以在受 IRM 保护的项上激活。</span><span class="sxs-lookup"><span data-stu-id="486ca-116">Add-ins can now activate on IRM-protected items.</span></span> <span data-ttu-id="486ca-117">若要启用此功能，租户管理员需要 `OBJMODEL` 通过在 Office 中设置 " **允许编程访问** " 自定义策略选项来启用使用权限。</span><span class="sxs-lookup"><span data-stu-id="486ca-117">To turn on this capability, a tenant administrator needs to enable the `OBJMODEL` usage right by setting the **Allow programmatic access** custom policy option in Office.</span></span> <span data-ttu-id="486ca-118">有关详细信息，请参阅 [使用权限和说明](/azure/information-protection/configure-usage-rights#usage-rights-and-descriptions) 。</span><span class="sxs-lookup"><span data-stu-id="486ca-118">See [Usage rights and descriptions](/azure/information-protection/configure-usage-rights#usage-rights-and-descriptions) for more information.</span></span>
+<span data-ttu-id="d500f-116">现在，外接程序可以在受 IRM 保护的项上激活。</span><span class="sxs-lookup"><span data-stu-id="d500f-116">Add-ins can now activate on IRM-protected items.</span></span> <span data-ttu-id="d500f-117">若要启用此功能，租户管理员需要 `OBJMODEL` 通过在 Office 中设置 " **允许编程访问** " 自定义策略选项来启用使用权限。</span><span class="sxs-lookup"><span data-stu-id="d500f-117">To turn on this capability, a tenant administrator needs to enable the `OBJMODEL` usage right by setting the **Allow programmatic access** custom policy option in Office.</span></span> <span data-ttu-id="d500f-118">有关详细信息，请参阅 [使用权限和说明](/azure/information-protection/configure-usage-rights#usage-rights-and-descriptions) 。</span><span class="sxs-lookup"><span data-stu-id="d500f-118">See [Usage rights and descriptions](/azure/information-protection/configure-usage-rights#usage-rights-and-descriptions) for more information.</span></span>
 
-<span data-ttu-id="486ca-119">**适用于**： Windows 中的 Outlook，从内部版本 13229.10000 (连接到 Microsoft 365 订阅) </span><span class="sxs-lookup"><span data-stu-id="486ca-119">**Available in**: Outlook on Windows, starting with build 13229.10000 (connected to a Microsoft 365 subscription)</span></span>
-
-<br>
-
----
-
----
-
-### <a name="additional-calendar-properties"></a><span data-ttu-id="486ca-120">其他日历属性</span><span class="sxs-lookup"><span data-stu-id="486ca-120">Additional calendar properties</span></span>
-
-#### <a name="isalldayevent"></a>[<span data-ttu-id="486ca-121">IsAllDayEvent</span><span class="sxs-lookup"><span data-stu-id="486ca-121">IsAllDayEvent</span></span>](/javascript/api/outlook/office.isalldayevent?view=outlook-js-preview&preserve-view=true)
-
-<span data-ttu-id="486ca-122">在撰写模式下添加了一个代表约会全天事件属性的新对象。</span><span class="sxs-lookup"><span data-stu-id="486ca-122">Added a new object that represents the all-day event property of an appointment in Compose mode.</span></span>
-
-<span data-ttu-id="486ca-123">**适用于**： Windows (上的 Outlook 连接到 Microsoft 365 订阅) </span><span class="sxs-lookup"><span data-stu-id="486ca-123">**Available in**: Outlook on Windows (connected to a Microsoft 365 subscription)</span></span>
-
-#### <a name="sensitivity"></a>[<span data-ttu-id="486ca-124">Sensitivity</span><span class="sxs-lookup"><span data-stu-id="486ca-124">Sensitivity</span></span>](/javascript/api/outlook/office.sensitivity?view=outlook-js-preview&preserve-view=true)
-
-<span data-ttu-id="486ca-125">添加了一个新对象，该对象表示在撰写模式下约会的敏感度。</span><span class="sxs-lookup"><span data-stu-id="486ca-125">Added a new object that represents the sensitivity of an appointment in Compose mode.</span></span>
-
-<span data-ttu-id="486ca-126">**适用于**： Windows (上的 Outlook 连接到 Microsoft 365 订阅) </span><span class="sxs-lookup"><span data-stu-id="486ca-126">**Available in**: Outlook on Windows (connected to a Microsoft 365 subscription)</span></span>
-
-#### <a name="officecontextmailboxitemisalldayevent"></a>[<span data-ttu-id="486ca-127">IsAllDayEvent 的 Office。</span><span class="sxs-lookup"><span data-stu-id="486ca-127">Office.context.mailbox.item.isAllDayEvent</span></span>](office.context.mailbox.item.md#properties)
-
-<span data-ttu-id="486ca-128">添加了一个新属性，该属性表示约会是否为全天事件。</span><span class="sxs-lookup"><span data-stu-id="486ca-128">Added a new property that represents if an appointment is an all-day event.</span></span>
-
-<span data-ttu-id="486ca-129">**适用于**： Windows (上的 Outlook 连接到 Microsoft 365 订阅) </span><span class="sxs-lookup"><span data-stu-id="486ca-129">**Available in**: Outlook on Windows (connected to a Microsoft 365 subscription)</span></span>
-
-#### <a name="officecontextmailboxitemsensitivity"></a>[<span data-ttu-id="486ca-130">"Context"。项目敏感度</span><span class="sxs-lookup"><span data-stu-id="486ca-130">Office.context.mailbox.item.sensitivity</span></span>](office.context.mailbox.item.md#properties)
-
-<span data-ttu-id="486ca-131">添加了一个表示约会敏感度的新属性。</span><span class="sxs-lookup"><span data-stu-id="486ca-131">Added a new property that represents the sensitivity of an appointment.</span></span>
-
-<span data-ttu-id="486ca-132">**适用于**： Windows (上的 Outlook 连接到 Microsoft 365 订阅) </span><span class="sxs-lookup"><span data-stu-id="486ca-132">**Available in**: Outlook on Windows (connected to a Microsoft 365 subscription)</span></span>
-
-#### <a name="officemailboxenumsappointmentsensitivitytype"></a>[<span data-ttu-id="486ca-133">MailboxEnums. AppointmentSensitivityType</span><span class="sxs-lookup"><span data-stu-id="486ca-133">Office.MailboxEnums.AppointmentSensitivityType</span></span>](/javascript/api/outlook/office.mailboxenums.appointmentsensitivitytype?view=outlook-js-preview&preserve-view=true)
-
-<span data-ttu-id="486ca-134">添加了一个 `AppointmentSensitivityType` 代表约会上可用的敏感度选项的新枚举。</span><span class="sxs-lookup"><span data-stu-id="486ca-134">Added a new enum `AppointmentSensitivityType` that represents the sensitivity options available on an appointment.</span></span>
-
-<span data-ttu-id="486ca-135">**适用于**： Windows (上的 Outlook 连接到 Microsoft 365 订阅) </span><span class="sxs-lookup"><span data-stu-id="486ca-135">**Available in**: Outlook on Windows (connected to a Microsoft 365 subscription)</span></span>
+<span data-ttu-id="d500f-119">**适用于**： Windows 中的 Outlook，从内部版本 13229.10000 (连接到 Microsoft 365 订阅) </span><span class="sxs-lookup"><span data-stu-id="d500f-119">**Available in**: Outlook on Windows, starting with build 13229.10000 (connected to a Microsoft 365 subscription)</span></span>
 
 <br>
 
@@ -80,65 +42,37 @@ ms.locfileid: "47819831"
 
 ---
 
-### <a name="append-on-send"></a><span data-ttu-id="486ca-136">发送时附加</span><span class="sxs-lookup"><span data-stu-id="486ca-136">Append on send</span></span>
+### <a name="additional-calendar-properties"></a><span data-ttu-id="d500f-120">其他日历属性</span><span class="sxs-lookup"><span data-stu-id="d500f-120">Additional calendar properties</span></span>
 
-<span data-ttu-id="486ca-137">若要了解如何使用 "发送时追加" 功能，请参阅在 [Outlook 加载项中实施 "在发送时实现附加](../../../outlook/append-on-send.md)"。</span><span class="sxs-lookup"><span data-stu-id="486ca-137">To learn about using the append-on-send feature, see [Implement append on send in your Outlook add-in](../../../outlook/append-on-send.md).</span></span>
+#### <a name="isalldayevent"></a>[<span data-ttu-id="d500f-121">IsAllDayEvent</span><span class="sxs-lookup"><span data-stu-id="d500f-121">IsAllDayEvent</span></span>](/javascript/api/outlook/office.isalldayevent?view=outlook-js-preview&preserve-view=true)
 
-#### <a name="officecontextmailboxitembodyappendonsendasync"></a>[<span data-ttu-id="486ca-138">AppendOnSendAsync 的 "."</span><span class="sxs-lookup"><span data-stu-id="486ca-138">Office.context.mailbox.item.body.appendOnSendAsync</span></span>](/javascript/api/outlook/office.body?view=outlook-js-preview&preserve-view=true#appendonsendasync-data--options--callback-)
+<span data-ttu-id="d500f-122">在撰写模式下添加了一个代表约会全天事件属性的新对象。</span><span class="sxs-lookup"><span data-stu-id="d500f-122">Added a new object that represents the all-day event property of an appointment in Compose mode.</span></span>
 
-<span data-ttu-id="486ca-139">向对象添加了一个新函数 `Body` ，该函数在撰写模式下将数据追加到项正文的末尾。</span><span class="sxs-lookup"><span data-stu-id="486ca-139">Added a new function to the `Body` object that appends data to the end of the item body in Compose mode.</span></span>
+<span data-ttu-id="d500f-123">**适用于**： Windows (上的 Outlook 连接到 Microsoft 365 订阅) </span><span class="sxs-lookup"><span data-stu-id="d500f-123">**Available in**: Outlook on Windows (connected to a Microsoft 365 subscription)</span></span>
 
-<span data-ttu-id="486ca-140">**适用于**： Windows (上的 outlook 连接到 Microsoft 365 订阅) ，outlook 网页版 (新式中， [配置预览访问](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide&preserve-view=true#set-up-the-release-option-in-the-admin-center)) </span><span class="sxs-lookup"><span data-stu-id="486ca-140">**Available in**: Outlook on Windows (connected to a Microsoft 365 subscription), Outlook on the web (modern, [Configure preview access](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide&preserve-view=true#set-up-the-release-option-in-the-admin-center))</span></span>
+#### <a name="sensitivity"></a>[<span data-ttu-id="d500f-124">Sensitivity</span><span class="sxs-lookup"><span data-stu-id="d500f-124">Sensitivity</span></span>](/javascript/api/outlook/office.sensitivity?view=outlook-js-preview&preserve-view=true)
 
-#### <a name="extendedpermissions"></a>[<span data-ttu-id="486ca-141">ExtendedPermissions</span><span class="sxs-lookup"><span data-stu-id="486ca-141">ExtendedPermissions</span></span>](../../manifest/extendedpermissions.md)
+<span data-ttu-id="d500f-125">添加了一个新对象，该对象表示在撰写模式下约会的敏感度。</span><span class="sxs-lookup"><span data-stu-id="d500f-125">Added a new object that represents the sensitivity of an appointment in Compose mode.</span></span>
 
-<span data-ttu-id="486ca-142">向清单添加了一个新元素，其中 `AppendOnSend` 扩展权限必须包含在扩展权限的集合中。</span><span class="sxs-lookup"><span data-stu-id="486ca-142">Added a new element to the manifest where the `AppendOnSend` extended permission must be included in the collection of extended permissions.</span></span>
+<span data-ttu-id="d500f-126">**适用于**： Windows (上的 Outlook 连接到 Microsoft 365 订阅) </span><span class="sxs-lookup"><span data-stu-id="d500f-126">**Available in**: Outlook on Windows (connected to a Microsoft 365 subscription)</span></span>
 
-<span data-ttu-id="486ca-143">**适用于**： Windows (上的 outlook 连接到 Microsoft 365 订阅) ，outlook 网页版 (新式中， [配置预览访问](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide&preserve-view=true#set-up-the-release-option-in-the-admin-center)) </span><span class="sxs-lookup"><span data-stu-id="486ca-143">**Available in**: Outlook on Windows (connected to a Microsoft 365 subscription), Outlook on the web (modern, [Configure preview access](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide&preserve-view=true#set-up-the-release-option-in-the-admin-center))</span></span>
+#### <a name="officecontextmailboxitemisalldayevent"></a>[<span data-ttu-id="d500f-127">IsAllDayEvent 的 Office。</span><span class="sxs-lookup"><span data-stu-id="d500f-127">Office.context.mailbox.item.isAllDayEvent</span></span>](office.context.mailbox.item.md#properties)
 
-<br>
+<span data-ttu-id="d500f-128">添加了一个新属性，该属性表示约会是否为全天事件。</span><span class="sxs-lookup"><span data-stu-id="d500f-128">Added a new property that represents if an appointment is an all-day event.</span></span>
 
----
+<span data-ttu-id="d500f-129">**适用于**： Windows (上的 Outlook 连接到 Microsoft 365 订阅) </span><span class="sxs-lookup"><span data-stu-id="d500f-129">**Available in**: Outlook on Windows (connected to a Microsoft 365 subscription)</span></span>
 
----
+#### <a name="officecontextmailboxitemsensitivity"></a>[<span data-ttu-id="d500f-130">"Context"。项目敏感度</span><span class="sxs-lookup"><span data-stu-id="d500f-130">Office.context.mailbox.item.sensitivity</span></span>](office.context.mailbox.item.md#properties)
 
-### <a name="async-versions-of-display-apis"></a><span data-ttu-id="486ca-144">Api 的异步版本 `display`</span><span class="sxs-lookup"><span data-stu-id="486ca-144">Async versions of `display` APIs</span></span>
+<span data-ttu-id="d500f-131">添加了一个表示约会敏感度的新属性。</span><span class="sxs-lookup"><span data-stu-id="d500f-131">Added a new property that represents the sensitivity of an appointment.</span></span>
 
-#### <a name="officecontextmailboxdisplayappointmentformasync"></a>[<span data-ttu-id="486ca-145">DisplayAppointmentFormAsync 的</span><span class="sxs-lookup"><span data-stu-id="486ca-145">Office.context.mailbox.displayAppointmentFormAsync</span></span>](/javascript/api/outlook/office.mailbox?view=outlook-js-preview&preserve-view=true#displayappointmentformasync-itemid--options--callback-)
+<span data-ttu-id="d500f-132">**适用于**： Windows (上的 Outlook 连接到 Microsoft 365 订阅) </span><span class="sxs-lookup"><span data-stu-id="d500f-132">**Available in**: Outlook on Windows (connected to a Microsoft 365 subscription)</span></span>
 
-<span data-ttu-id="486ca-146">向显示现有约会的对象添加了新函数 `Mailbox` 。</span><span class="sxs-lookup"><span data-stu-id="486ca-146">Added a new function to the `Mailbox` object that displays an existing appointment.</span></span> <span data-ttu-id="486ca-147">这是方法的异步版本 `displayAppointmentForm` 。</span><span class="sxs-lookup"><span data-stu-id="486ca-147">This is the async version of the `displayAppointmentForm` method.</span></span>
+#### <a name="officemailboxenumsappointmentsensitivitytype"></a>[<span data-ttu-id="d500f-133">MailboxEnums. AppointmentSensitivityType</span><span class="sxs-lookup"><span data-stu-id="d500f-133">Office.MailboxEnums.AppointmentSensitivityType</span></span>](/javascript/api/outlook/office.mailboxenums.appointmentsensitivitytype?view=outlook-js-preview&preserve-view=true)
 
-<span data-ttu-id="486ca-148">**适用于**： Windows (上的 outlook 连接到 Microsoft 365 订阅) ，outlook 网页版 (新式) </span><span class="sxs-lookup"><span data-stu-id="486ca-148">**Available in**: Outlook on Windows (connected to a Microsoft 365 subscription), Outlook on the web (modern)</span></span>
+<span data-ttu-id="d500f-134">添加了一个 `AppointmentSensitivityType` 代表约会上可用的敏感度选项的新枚举。</span><span class="sxs-lookup"><span data-stu-id="d500f-134">Added a new enum `AppointmentSensitivityType` that represents the sensitivity options available on an appointment.</span></span>
 
-#### <a name="officecontextmailboxdisplaymessageformasync"></a>[<span data-ttu-id="486ca-149">DisplayMessageFormAsync 的</span><span class="sxs-lookup"><span data-stu-id="486ca-149">Office.context.mailbox.displayMessageFormAsync</span></span>](/javascript/api/outlook/office.mailbox?view=outlook-js-preview&preserve-view=true#displaymessageformasync-itemid--options--callback-)
-
-<span data-ttu-id="486ca-150">向显示现有邮件的对象添加了新函数 `Mailbox` 。</span><span class="sxs-lookup"><span data-stu-id="486ca-150">Added a new function to the `Mailbox` object that displays an existing message.</span></span> <span data-ttu-id="486ca-151">这是方法的异步版本 `displayMessageForm` 。</span><span class="sxs-lookup"><span data-stu-id="486ca-151">This is the async version of the `displayMessageForm` method.</span></span>
-
-<span data-ttu-id="486ca-152">**适用于**： Windows (上的 outlook 连接到 Microsoft 365 订阅) ，outlook 网页版 (新式) </span><span class="sxs-lookup"><span data-stu-id="486ca-152">**Available in**: Outlook on Windows (connected to a Microsoft 365 subscription), Outlook on the web (modern)</span></span>
-
-#### <a name="officecontextmailboxdisplaynewappointmentformasync"></a>[<span data-ttu-id="486ca-153">DisplayNewAppointmentFormAsync 的</span><span class="sxs-lookup"><span data-stu-id="486ca-153">Office.context.mailbox.displayNewAppointmentFormAsync</span></span>](/javascript/api/outlook/office.mailbox?view=outlook-js-preview&preserve-view=true#displaynewappointmentformasync-parameters--options--callback-)
-
-<span data-ttu-id="486ca-154">向 `Mailbox` 显示新约会窗体的对象添加了一个新函数。</span><span class="sxs-lookup"><span data-stu-id="486ca-154">Added a new function to the `Mailbox` object that displays a new appointment form.</span></span> <span data-ttu-id="486ca-155">这是方法的异步版本 `displayNewAppointmentForm` 。</span><span class="sxs-lookup"><span data-stu-id="486ca-155">This is the async version of the `displayNewAppointmentForm` method.</span></span>
-
-<span data-ttu-id="486ca-156">**适用于**： Windows (上的 outlook 连接到 Microsoft 365 订阅) ，outlook 网页版 (新式) </span><span class="sxs-lookup"><span data-stu-id="486ca-156">**Available in**: Outlook on Windows (connected to a Microsoft 365 subscription), Outlook on the web (modern)</span></span>
-
-#### <a name="officecontextmailboxdisplaynewmessageformasync"></a>[<span data-ttu-id="486ca-157">DisplayNewMessageFormAsync 的</span><span class="sxs-lookup"><span data-stu-id="486ca-157">Office.context.mailbox.displayNewMessageFormAsync</span></span>](/javascript/api/outlook/office.mailbox?view=outlook-js-preview&preserve-view=true#displaynewmessageformasync-parameters--options--callback-)
-
-<span data-ttu-id="486ca-158">向 `Mailbox` 显示新邮件窗体的对象添加了一个新函数。</span><span class="sxs-lookup"><span data-stu-id="486ca-158">Added a new function to the `Mailbox` object that displays a new message form.</span></span> <span data-ttu-id="486ca-159">这是方法的异步版本 `displayNewMessageForm` 。</span><span class="sxs-lookup"><span data-stu-id="486ca-159">This is the async version of the `displayNewMessageForm` method.</span></span>
-
-<span data-ttu-id="486ca-160">**适用于**： Windows (上的 outlook 连接到 Microsoft 365 订阅) ，outlook 网页版 (新式) </span><span class="sxs-lookup"><span data-stu-id="486ca-160">**Available in**: Outlook on Windows (connected to a Microsoft 365 subscription), Outlook on the web (modern)</span></span>
-
-#### <a name="officecontextmailboxitemdisplayreplyallformasync"></a>[<span data-ttu-id="486ca-161">DisplayReplyAllFormAsync 的 Office。</span><span class="sxs-lookup"><span data-stu-id="486ca-161">Office.context.mailbox.item.displayReplyAllFormAsync</span></span>](office.context.mailbox.item.md#methods)
-
-<span data-ttu-id="486ca-162">向 `Item` 在阅读模式下显示 "全部答复" 窗体的对象添加了一个新函数。</span><span class="sxs-lookup"><span data-stu-id="486ca-162">Added a new function to the `Item` object that displays the "Reply all" form in Read mode.</span></span> <span data-ttu-id="486ca-163">这是方法的异步版本 `displayReplyAllForm` 。</span><span class="sxs-lookup"><span data-stu-id="486ca-163">This is the async version of the `displayReplyAllForm` method.</span></span>
-
-<span data-ttu-id="486ca-164">**适用于**： Windows (上的 outlook 连接到 Microsoft 365 订阅) ，outlook 网页版 (新式) </span><span class="sxs-lookup"><span data-stu-id="486ca-164">**Available in**: Outlook on Windows (connected to a Microsoft 365 subscription), Outlook on the web (modern)</span></span>
-
-#### <a name="officecontextmailboxitemdisplayreplyformasync"></a>[<span data-ttu-id="486ca-165">DisplayReplyFormAsync 的 Office。</span><span class="sxs-lookup"><span data-stu-id="486ca-165">Office.context.mailbox.item.displayReplyFormAsync</span></span>](office.context.mailbox.item.md#methods)
-
-<span data-ttu-id="486ca-166">向 `Item` 在阅读模式下显示 "答复" 窗体的对象添加了一个新函数。</span><span class="sxs-lookup"><span data-stu-id="486ca-166">Added a new function to the `Item` object that displays the "Reply" form in Read mode.</span></span> <span data-ttu-id="486ca-167">这是方法的异步版本 `displayReplyForm` 。</span><span class="sxs-lookup"><span data-stu-id="486ca-167">This is the async version of the `displayReplyForm` method.</span></span>
-
-<span data-ttu-id="486ca-168">**适用于**： Windows (上的 outlook 连接到 Microsoft 365 订阅) ，outlook 网页版 (新式) </span><span class="sxs-lookup"><span data-stu-id="486ca-168">**Available in**: Outlook on Windows (connected to a Microsoft 365 subscription), Outlook on the web (modern)</span></span>
+<span data-ttu-id="d500f-135">**适用于**： Windows (上的 Outlook 连接到 Microsoft 365 订阅) </span><span class="sxs-lookup"><span data-stu-id="d500f-135">**Available in**: Outlook on Windows (connected to a Microsoft 365 subscription)</span></span>
 
 <br>
 
@@ -146,27 +80,21 @@ ms.locfileid: "47819831"
 
 ---
 
-### <a name="event-based-activation"></a><span data-ttu-id="486ca-169">基于事件的激活</span><span class="sxs-lookup"><span data-stu-id="486ca-169">Event-based activation</span></span>
+### <a name="append-on-send"></a><span data-ttu-id="d500f-136">发送时附加</span><span class="sxs-lookup"><span data-stu-id="d500f-136">Append on send</span></span>
 
-<span data-ttu-id="486ca-170">添加了对 Outlook 外接程序中基于事件的激活功能的支持。若要了解详细信息，请参阅 [配置 Outlook 外接程序以进行基于事件的激活](../../../outlook/autolaunch.md) 。</span><span class="sxs-lookup"><span data-stu-id="486ca-170">Added support for event-based activation functionality in Outlook add-ins. See [Configure your Outlook add-in for event-based activation](../../../outlook/autolaunch.md) to learn more.</span></span>
+<span data-ttu-id="d500f-137">若要了解如何使用 "发送时追加" 功能，请参阅在 [Outlook 加载项中实施 "在发送时实现附加](../../../outlook/append-on-send.md)"。</span><span class="sxs-lookup"><span data-stu-id="d500f-137">To learn about using the append-on-send feature, see [Implement append on send in your Outlook add-in](../../../outlook/append-on-send.md).</span></span>
 
-#### <a name="launchevent-extension-point"></a>[<span data-ttu-id="486ca-171">LaunchEvent 扩展点</span><span class="sxs-lookup"><span data-stu-id="486ca-171">LaunchEvent extension point</span></span>](../../manifest/extensionpoint.md#launchevent-preview)
+#### <a name="officecontextmailboxitembodyappendonsendasync"></a>[<span data-ttu-id="d500f-138">AppendOnSendAsync 的 "."</span><span class="sxs-lookup"><span data-stu-id="d500f-138">Office.context.mailbox.item.body.appendOnSendAsync</span></span>](/javascript/api/outlook/office.body?view=outlook-js-preview&preserve-view=true#appendonsendasync-data--options--callback-)
 
-<span data-ttu-id="486ca-172">`LaunchEvent`向清单添加了扩展点支持。</span><span class="sxs-lookup"><span data-stu-id="486ca-172">Added `LaunchEvent` extension point support to manifest.</span></span> <span data-ttu-id="486ca-173">它配置基于事件的激活功能。</span><span class="sxs-lookup"><span data-stu-id="486ca-173">It configures event-based activation functionality.</span></span>
+<span data-ttu-id="d500f-139">向对象添加了一个新函数 `Body` ，该函数在撰写模式下将数据追加到项正文的末尾。</span><span class="sxs-lookup"><span data-stu-id="d500f-139">Added a new function to the `Body` object that appends data to the end of the item body in Compose mode.</span></span>
 
-<span data-ttu-id="486ca-174">**中的可用**： Outlook 网页版 (新式的 [请求预览访问](https://aka.ms/OWAPreview)) </span><span class="sxs-lookup"><span data-stu-id="486ca-174">**Available in**: Outlook on the web (modern, [Request preview access](https://aka.ms/OWAPreview))</span></span>
+<span data-ttu-id="d500f-140">**适用于**： Windows (上的 outlook 连接到 Microsoft 365 订阅) ，outlook 网页版 (新式中， [配置预览访问](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide&preserve-view=true#set-up-the-release-option-in-the-admin-center)) </span><span class="sxs-lookup"><span data-stu-id="d500f-140">**Available in**: Outlook on Windows (connected to a Microsoft 365 subscription), Outlook on the web (modern, [Configure preview access](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide&preserve-view=true#set-up-the-release-option-in-the-admin-center))</span></span>
 
-#### <a name="launchevents-manifest-element"></a>[<span data-ttu-id="486ca-175">LaunchEvents 清单元素</span><span class="sxs-lookup"><span data-stu-id="486ca-175">LaunchEvents manifest element</span></span>](../../manifest/launchevents.md)
+#### <a name="extendedpermissions"></a>[<span data-ttu-id="d500f-141">ExtendedPermissions</span><span class="sxs-lookup"><span data-stu-id="d500f-141">ExtendedPermissions</span></span>](../../manifest/extendedpermissions.md)
 
-<span data-ttu-id="486ca-176">`LaunchEvents`向清单添加了元素。</span><span class="sxs-lookup"><span data-stu-id="486ca-176">Added `LaunchEvents` element to manifest.</span></span> <span data-ttu-id="486ca-177">它支持配置基于事件的激活功能。</span><span class="sxs-lookup"><span data-stu-id="486ca-177">It supports configuring event-based activation functionality.</span></span>
+<span data-ttu-id="d500f-142">向清单添加了一个新元素，其中 `AppendOnSend` 扩展权限必须包含在扩展权限的集合中。</span><span class="sxs-lookup"><span data-stu-id="d500f-142">Added a new element to the manifest where the `AppendOnSend` extended permission must be included in the collection of extended permissions.</span></span>
 
-<span data-ttu-id="486ca-178">**中的可用**： Outlook 网页版 (新式的 [请求预览访问](https://aka.ms/OWAPreview)) </span><span class="sxs-lookup"><span data-stu-id="486ca-178">**Available in**: Outlook on the web (modern, [Request preview access](https://aka.ms/OWAPreview))</span></span>
-
-#### <a name="runtimes-manifest-element"></a>[<span data-ttu-id="486ca-179">运行时清单元素</span><span class="sxs-lookup"><span data-stu-id="486ca-179">Runtimes manifest element</span></span>](../../manifest/runtimes.md)
-
-<span data-ttu-id="486ca-180">向清单元素添加了 Outlook 支持 `Runtimes` 。</span><span class="sxs-lookup"><span data-stu-id="486ca-180">Added Outlook support to the `Runtimes` manifest element.</span></span> <span data-ttu-id="486ca-181">它引用了基于事件的激活功能所需的 HTML 和 JavaScript 文件。</span><span class="sxs-lookup"><span data-stu-id="486ca-181">It references the HTML and JavaScript files needed for event-based activation functionality.</span></span>
-
-<span data-ttu-id="486ca-182">**中的可用**： Outlook 网页版 (新式的 [请求预览访问](https://aka.ms/OWAPreview)) </span><span class="sxs-lookup"><span data-stu-id="486ca-182">**Available in**: Outlook on the web (modern, [Request preview access](https://aka.ms/OWAPreview))</span></span>
+<span data-ttu-id="d500f-143">**适用于**： Windows (上的 outlook 连接到 Microsoft 365 订阅) ，outlook 网页版 (新式中， [配置预览访问](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide&preserve-view=true#set-up-the-release-option-in-the-admin-center)) </span><span class="sxs-lookup"><span data-stu-id="d500f-143">**Available in**: Outlook on Windows (connected to a Microsoft 365 subscription), Outlook on the web (modern, [Configure preview access](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide&preserve-view=true#set-up-the-release-option-in-the-admin-center))</span></span>
 
 <br>
 
@@ -174,65 +102,43 @@ ms.locfileid: "47819831"
 
 ---
 
-### <a name="get-all-custom-properties"></a><span data-ttu-id="486ca-183">获取所有自定义属性</span><span class="sxs-lookup"><span data-stu-id="486ca-183">Get all custom properties</span></span>
+### <a name="async-versions-of-display-apis"></a><span data-ttu-id="d500f-144">Api 的异步版本 `display`</span><span class="sxs-lookup"><span data-stu-id="d500f-144">Async versions of `display` APIs</span></span>
 
-#### <a name="custompropertiesgetall"></a>[<span data-ttu-id="486ca-184">CustomProperties。 getAll</span><span class="sxs-lookup"><span data-stu-id="486ca-184">CustomProperties.getAll</span></span>](/javascript/api/outlook/office.customproperties?view=outlook-js-preview&preserve-view=true#getall--)
+#### <a name="officecontextmailboxdisplayappointmentformasync"></a>[<span data-ttu-id="d500f-145">DisplayAppointmentFormAsync 的</span><span class="sxs-lookup"><span data-stu-id="d500f-145">Office.context.mailbox.displayAppointmentFormAsync</span></span>](/javascript/api/outlook/office.mailbox?view=outlook-js-preview&preserve-view=true#displayappointmentformasync-itemid--options--callback-)
 
-<span data-ttu-id="486ca-185">向 `CustomProperties` 获取所有自定义属性的对象添加了新函数。</span><span class="sxs-lookup"><span data-stu-id="486ca-185">Added a new function to the `CustomProperties` object that gets all custom properties.</span></span>
+<span data-ttu-id="d500f-146">向显示现有约会的对象添加了新函数 `Mailbox` 。</span><span class="sxs-lookup"><span data-stu-id="d500f-146">Added a new function to the `Mailbox` object that displays an existing appointment.</span></span> <span data-ttu-id="d500f-147">这是方法的异步版本 `displayAppointmentForm` 。</span><span class="sxs-lookup"><span data-stu-id="d500f-147">This is the async version of the `displayAppointmentForm` method.</span></span>
 
-<span data-ttu-id="486ca-186">**适用于**： Windows (上的 outlook 连接到 Microsoft 365 订阅) ，outlook (网页版) ，Mac 上的 outlook (已连接到 microsoft 365 订阅) ，Outlook 在 Android 上，Outlook 在 iOS 上</span><span class="sxs-lookup"><span data-stu-id="486ca-186">**Available in**: Outlook on Windows (connected to a Microsoft 365 subscription), Outlook on the web (modern), Outlook on Mac (connected to a Microsoft 365 subscription), Outlook on Android, Outlook on iOS</span></span>
+<span data-ttu-id="d500f-148">**适用于**： Windows (上的 outlook 连接到 Microsoft 365 订阅) ，outlook 网页版 (新式) </span><span class="sxs-lookup"><span data-stu-id="d500f-148">**Available in**: Outlook on Windows (connected to a Microsoft 365 subscription), Outlook on the web (modern)</span></span>
 
-<br>
+#### <a name="officecontextmailboxdisplaymessageformasync"></a>[<span data-ttu-id="d500f-149">DisplayMessageFormAsync 的</span><span class="sxs-lookup"><span data-stu-id="d500f-149">Office.context.mailbox.displayMessageFormAsync</span></span>](/javascript/api/outlook/office.mailbox?view=outlook-js-preview&preserve-view=true#displaymessageformasync-itemid--options--callback-)
 
----
+<span data-ttu-id="d500f-150">向显示现有邮件的对象添加了新函数 `Mailbox` 。</span><span class="sxs-lookup"><span data-stu-id="d500f-150">Added a new function to the `Mailbox` object that displays an existing message.</span></span> <span data-ttu-id="d500f-151">这是方法的异步版本 `displayMessageForm` 。</span><span class="sxs-lookup"><span data-stu-id="d500f-151">This is the async version of the `displayMessageForm` method.</span></span>
 
----
+<span data-ttu-id="d500f-152">**适用于**： Windows (上的 outlook 连接到 Microsoft 365 订阅) ，outlook 网页版 (新式) </span><span class="sxs-lookup"><span data-stu-id="d500f-152">**Available in**: Outlook on Windows (connected to a Microsoft 365 subscription), Outlook on the web (modern)</span></span>
 
-### <a name="integration-with-actionable-messages"></a><span data-ttu-id="486ca-187">与可操作邮件集成</span><span class="sxs-lookup"><span data-stu-id="486ca-187">Integration with actionable messages</span></span>
+#### <a name="officecontextmailboxdisplaynewappointmentformasync"></a>[<span data-ttu-id="d500f-153">DisplayNewAppointmentFormAsync 的</span><span class="sxs-lookup"><span data-stu-id="d500f-153">Office.context.mailbox.displayNewAppointmentFormAsync</span></span>](/javascript/api/outlook/office.mailbox?view=outlook-js-preview&preserve-view=true#displaynewappointmentformasync-parameters--options--callback-)
 
-#### <a name="officecontextmailboxitemgetinitializationcontextasync"></a>[<span data-ttu-id="486ca-188">Office.context.mailbox.item.getInitializationContextAsync</span><span class="sxs-lookup"><span data-stu-id="486ca-188">Office.context.mailbox.item.getInitializationContextAsync</span></span>](office.context.mailbox.item.md#methods)
+<span data-ttu-id="d500f-154">向 `Mailbox` 显示新约会窗体的对象添加了一个新函数。</span><span class="sxs-lookup"><span data-stu-id="d500f-154">Added a new function to the `Mailbox` object that displays a new appointment form.</span></span> <span data-ttu-id="d500f-155">这是方法的异步版本 `displayNewAppointmentForm` 。</span><span class="sxs-lookup"><span data-stu-id="d500f-155">This is the async version of the `displayNewAppointmentForm` method.</span></span>
 
-<span data-ttu-id="486ca-189">新增了一个函数，当外接程序[由可操作邮件激活时](/outlook/actionable-messages/invoke-add-in-from-actionable-message)，返回传递的初始化数据。</span><span class="sxs-lookup"><span data-stu-id="486ca-189">Added a new function that returns initialization data passed when the add-in is [activated by an actionable message](/outlook/actionable-messages/invoke-add-in-from-actionable-message).</span></span>
+<span data-ttu-id="d500f-156">**适用于**： Windows (上的 outlook 连接到 Microsoft 365 订阅) ，outlook 网页版 (新式) </span><span class="sxs-lookup"><span data-stu-id="d500f-156">**Available in**: Outlook on Windows (connected to a Microsoft 365 subscription), Outlook on the web (modern)</span></span>
 
-<span data-ttu-id="486ca-190">**适用于**： Windows (上的 outlook 连接到 Microsoft 365 订阅) ，outlook 网页版 (经典) </span><span class="sxs-lookup"><span data-stu-id="486ca-190">**Available in**: Outlook on Windows (connected to a Microsoft 365 subscription), Outlook on the web (classic)</span></span>
+#### <a name="officecontextmailboxdisplaynewmessageformasync"></a>[<span data-ttu-id="d500f-157">DisplayNewMessageFormAsync 的</span><span class="sxs-lookup"><span data-stu-id="d500f-157">Office.context.mailbox.displayNewMessageFormAsync</span></span>](/javascript/api/outlook/office.mailbox?view=outlook-js-preview&preserve-view=true#displaynewmessageformasync-parameters--options--callback-)
 
-<br>
+<span data-ttu-id="d500f-158">向 `Mailbox` 显示新邮件窗体的对象添加了一个新函数。</span><span class="sxs-lookup"><span data-stu-id="d500f-158">Added a new function to the `Mailbox` object that displays a new message form.</span></span> <span data-ttu-id="d500f-159">这是方法的异步版本 `displayNewMessageForm` 。</span><span class="sxs-lookup"><span data-stu-id="d500f-159">This is the async version of the `displayNewMessageForm` method.</span></span>
 
----
+<span data-ttu-id="d500f-160">**适用于**： Windows (上的 outlook 连接到 Microsoft 365 订阅) ，outlook 网页版 (新式) </span><span class="sxs-lookup"><span data-stu-id="d500f-160">**Available in**: Outlook on Windows (connected to a Microsoft 365 subscription), Outlook on the web (modern)</span></span>
 
----
+#### <a name="officecontextmailboxitemdisplayreplyallformasync"></a>[<span data-ttu-id="d500f-161">DisplayReplyAllFormAsync 的 Office。</span><span class="sxs-lookup"><span data-stu-id="d500f-161">Office.context.mailbox.item.displayReplyAllFormAsync</span></span>](office.context.mailbox.item.md#methods)
 
-### <a name="mail-signature"></a><span data-ttu-id="486ca-191">邮件签名</span><span class="sxs-lookup"><span data-stu-id="486ca-191">Mail signature</span></span>
+<span data-ttu-id="d500f-162">向 `Item` 在阅读模式下显示 "全部答复" 窗体的对象添加了一个新函数。</span><span class="sxs-lookup"><span data-stu-id="d500f-162">Added a new function to the `Item` object that displays the "Reply all" form in Read mode.</span></span> <span data-ttu-id="d500f-163">这是方法的异步版本 `displayReplyAllForm` 。</span><span class="sxs-lookup"><span data-stu-id="d500f-163">This is the async version of the `displayReplyAllForm` method.</span></span>
 
-#### <a name="officecontextmailboxitembodysetsignatureasync"></a>[<span data-ttu-id="486ca-192">SetSignatureAsync 的 "."</span><span class="sxs-lookup"><span data-stu-id="486ca-192">Office.context.mailbox.item.body.setSignatureAsync</span></span>](/javascript/api/outlook/office.body?view=outlook-js-preview&preserve-view=true#setsignatureasync-data--options--callback-)
+<span data-ttu-id="d500f-164">**适用于**： Windows (上的 outlook 连接到 Microsoft 365 订阅) ，outlook 网页版 (新式) </span><span class="sxs-lookup"><span data-stu-id="d500f-164">**Available in**: Outlook on Windows (connected to a Microsoft 365 subscription), Outlook on the web (modern)</span></span>
 
-<span data-ttu-id="486ca-193">向对象添加了一个新函数 `Body` ，该函数在撰写模式下添加或替换项目正文中的签名。</span><span class="sxs-lookup"><span data-stu-id="486ca-193">Added a new function to the `Body` object that adds or replaces the signature in the item body in Compose mode.</span></span>
+#### <a name="officecontextmailboxitemdisplayreplyformasync"></a>[<span data-ttu-id="d500f-165">DisplayReplyFormAsync 的 Office。</span><span class="sxs-lookup"><span data-stu-id="d500f-165">Office.context.mailbox.item.displayReplyFormAsync</span></span>](office.context.mailbox.item.md#methods)
 
-<span data-ttu-id="486ca-194">**适用于**： Windows (上的 outlook 连接到 Microsoft 365 订阅) ，outlook 网页版 (新式中， [配置预览访问](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide&preserve-view=true#set-up-the-release-option-in-the-admin-center)) </span><span class="sxs-lookup"><span data-stu-id="486ca-194">**Available in**: Outlook on Windows (connected to a Microsoft 365 subscription), Outlook on the web (modern, [Configure preview access](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide&preserve-view=true#set-up-the-release-option-in-the-admin-center))</span></span>
+<span data-ttu-id="d500f-166">向 `Item` 在阅读模式下显示 "答复" 窗体的对象添加了一个新函数。</span><span class="sxs-lookup"><span data-stu-id="d500f-166">Added a new function to the `Item` object that displays the "Reply" form in Read mode.</span></span> <span data-ttu-id="d500f-167">这是方法的异步版本 `displayReplyForm` 。</span><span class="sxs-lookup"><span data-stu-id="d500f-167">This is the async version of the `displayReplyForm` method.</span></span>
 
-#### <a name="officecontextmailboxitemdisableclientsignatureasync"></a>[<span data-ttu-id="486ca-195">DisableClientSignatureAsync 的 Office。</span><span class="sxs-lookup"><span data-stu-id="486ca-195">Office.context.mailbox.item.disableClientSignatureAsync</span></span>](office.context.mailbox.item.md#methods)
-
-<span data-ttu-id="486ca-196">添加了一个新函数，用于在撰写模式下禁用发送邮箱的客户端签名。</span><span class="sxs-lookup"><span data-stu-id="486ca-196">Added a new function that disables the client signature for the sending mailbox in Compose mode.</span></span>
-
-<span data-ttu-id="486ca-197">**适用于**： Windows (上的 outlook 连接到 Microsoft 365 订阅) ，outlook 网页版 (新式中， [配置预览访问](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide&preserve-view=true#set-up-the-release-option-in-the-admin-center)) </span><span class="sxs-lookup"><span data-stu-id="486ca-197">**Available in**: Outlook on Windows (connected to a Microsoft 365 subscription), Outlook on the web (modern, [Configure preview access](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide&preserve-view=true#set-up-the-release-option-in-the-admin-center))</span></span>
-
-#### <a name="officecontextmailboxitemgetcomposetypeasync"></a>[<span data-ttu-id="486ca-198">GetComposeTypeAsync 的 Office。</span><span class="sxs-lookup"><span data-stu-id="486ca-198">Office.context.mailbox.item.getComposeTypeAsync</span></span>](/javascript/api/outlook/office.messagecompose?view=outlook-js-preview&preserve-view=true#getcomposetypeasync-options--callback-)
-
-<span data-ttu-id="486ca-199">添加了一个新函数，用于在撰写模式下获取邮件的撰写类型。</span><span class="sxs-lookup"><span data-stu-id="486ca-199">Added a new function that gets the compose type of a message in Compose mode.</span></span>
-
-<span data-ttu-id="486ca-200">**适用于**： Windows (上的 outlook 连接到 Microsoft 365 订阅) ，outlook 网页版 (新式中， [配置预览访问](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide&preserve-view=true#set-up-the-release-option-in-the-admin-center)) </span><span class="sxs-lookup"><span data-stu-id="486ca-200">**Available in**: Outlook on Windows (connected to a Microsoft 365 subscription), Outlook on the web (modern, [Configure preview access](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide&preserve-view=true#set-up-the-release-option-in-the-admin-center))</span></span>
-
-#### <a name="officecontextmailboxitemisclientsignatureenabledasync"></a>[<span data-ttu-id="486ca-201">IsClientSignatureEnabledAsync 的 Office。</span><span class="sxs-lookup"><span data-stu-id="486ca-201">Office.context.mailbox.item.isClientSignatureEnabledAsync</span></span>](office.context.mailbox.item.md#methods)
-
-<span data-ttu-id="486ca-202">添加了一个新函数，用于检查在撰写模式下是否在项目上启用了客户端签名。</span><span class="sxs-lookup"><span data-stu-id="486ca-202">Added a new function that checks if the client signature is enabled on the item in Compose mode.</span></span>
-
-<span data-ttu-id="486ca-203">**适用于**： Windows (上的 outlook 连接到 Microsoft 365 订阅) ，outlook 网页版 (新式中， [配置预览访问](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide&preserve-view=true#set-up-the-release-option-in-the-admin-center)) </span><span class="sxs-lookup"><span data-stu-id="486ca-203">**Available in**: Outlook on Windows (connected to a Microsoft 365 subscription), Outlook on the web (modern, [Configure preview access](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide&preserve-view=true#set-up-the-release-option-in-the-admin-center))</span></span>
-
-#### <a name="officemailboxenumscomposetype"></a>[<span data-ttu-id="486ca-204">MailboxEnums. ComposeType</span><span class="sxs-lookup"><span data-stu-id="486ca-204">Office.MailboxEnums.ComposeType</span></span>](/javascript/api/outlook/office.mailboxenums.composetype?view=outlook-js-preview&preserve-view=true)
-
-<span data-ttu-id="486ca-205">添加了一个新枚举，该枚举 `ComposeType` 在撰写模式中可用。</span><span class="sxs-lookup"><span data-stu-id="486ca-205">Added a new enum `ComposeType` available in Compose mode.</span></span>
-
-<span data-ttu-id="486ca-206">**适用于**： Windows (上的 outlook 连接到 Microsoft 365 订阅) ，outlook 网页版 (新式中， [配置预览访问](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide&preserve-view=true#set-up-the-release-option-in-the-admin-center)) </span><span class="sxs-lookup"><span data-stu-id="486ca-206">**Available in**: Outlook on Windows (connected to a Microsoft 365 subscription), Outlook on the web (modern, [Configure preview access](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide&preserve-view=true#set-up-the-release-option-in-the-admin-center))</span></span>
+<span data-ttu-id="d500f-168">**适用于**： Windows (上的 outlook 连接到 Microsoft 365 订阅) ，outlook 网页版 (新式) </span><span class="sxs-lookup"><span data-stu-id="d500f-168">**Available in**: Outlook on Windows (connected to a Microsoft 365 subscription), Outlook on the web (modern)</span></span>
 
 <br>
 
@@ -240,33 +146,27 @@ ms.locfileid: "47819831"
 
 ---
 
-### <a name="notification-messages-with-actions"></a><span data-ttu-id="486ca-207">包含操作的通知邮件</span><span class="sxs-lookup"><span data-stu-id="486ca-207">Notification messages with actions</span></span>
+### <a name="event-based-activation"></a><span data-ttu-id="d500f-169">基于事件的激活</span><span class="sxs-lookup"><span data-stu-id="d500f-169">Event-based activation</span></span>
 
-<span data-ttu-id="486ca-208">通过此功能，您的外接程序可以在默认 **取消** 操作之外包含具有自定义操作的通知消息。</span><span class="sxs-lookup"><span data-stu-id="486ca-208">This feature allows your add-in to include a notification message with a custom action besides the default **Dismiss** action.</span></span>
+<span data-ttu-id="d500f-170">添加了对 Outlook 外接程序中基于事件的激活功能的支持。若要了解详细信息，请参阅 [配置 Outlook 外接程序以进行基于事件的激活](../../../outlook/autolaunch.md) 。</span><span class="sxs-lookup"><span data-stu-id="d500f-170">Added support for event-based activation functionality in Outlook add-ins. See [Configure your Outlook add-in for event-based activation](../../../outlook/autolaunch.md) to learn more.</span></span>
 
-#### <a name="officenotificationmessagedetailsactions"></a>[<span data-ttu-id="486ca-209">NotificationMessageDetails</span><span class="sxs-lookup"><span data-stu-id="486ca-209">Office.NotificationMessageDetails.actions</span></span>](/javascript/api/outlook/office.notificationmessagedetails#actions)
+#### <a name="launchevent-extension-point"></a>[<span data-ttu-id="d500f-171">LaunchEvent 扩展点</span><span class="sxs-lookup"><span data-stu-id="d500f-171">LaunchEvent extension point</span></span>](../../manifest/extensionpoint.md#launchevent-preview)
 
-<span data-ttu-id="486ca-210">添加了一个新属性，您可以 `InsightMessage` 使用自定义操作添加通知。</span><span class="sxs-lookup"><span data-stu-id="486ca-210">Added a new property that enables you to add an `InsightMessage` notification with a custom action.</span></span>
+<span data-ttu-id="d500f-172">`LaunchEvent`向清单添加了扩展点支持。</span><span class="sxs-lookup"><span data-stu-id="d500f-172">Added `LaunchEvent` extension point support to manifest.</span></span> <span data-ttu-id="d500f-173">它配置基于事件的激活功能。</span><span class="sxs-lookup"><span data-stu-id="d500f-173">It configures event-based activation functionality.</span></span>
 
-<span data-ttu-id="486ca-211">**适用于**： Windows (上的 outlook 连接到 Microsoft 365 订阅) ，outlook 网页版 (新式) </span><span class="sxs-lookup"><span data-stu-id="486ca-211">**Available in**: Outlook on Windows (connected to a Microsoft 365 subscription), Outlook on the web (modern)</span></span>
+<span data-ttu-id="d500f-174">**中的可用**： Outlook 网页版 (新式， [配置预览访问](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide&preserve-view=true#set-up-the-release-option-in-the-admin-center)) </span><span class="sxs-lookup"><span data-stu-id="d500f-174">**Available in**: Outlook on the web (modern, [Configure preview access](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide&preserve-view=true#set-up-the-release-option-in-the-admin-center))</span></span>
 
-#### <a name="officenotificationmessageaction"></a>[<span data-ttu-id="486ca-212">NotificationMessageAction</span><span class="sxs-lookup"><span data-stu-id="486ca-212">Office.NotificationMessageAction</span></span>](/javascript/api/outlook/office.notificationmessageaction)
+#### <a name="launchevents-manifest-element"></a>[<span data-ttu-id="d500f-175">LaunchEvents 清单元素</span><span class="sxs-lookup"><span data-stu-id="d500f-175">LaunchEvents manifest element</span></span>](../../manifest/launchevents.md)
 
-<span data-ttu-id="486ca-213">添加了一个新对象，可在其中为通知定义自定义操作 `InsightMessage` 。</span><span class="sxs-lookup"><span data-stu-id="486ca-213">Added a new object where you define a custom action for your `InsightMessage` notification.</span></span>
+<span data-ttu-id="d500f-176">`LaunchEvents`向清单添加了元素。</span><span class="sxs-lookup"><span data-stu-id="d500f-176">Added `LaunchEvents` element to manifest.</span></span> <span data-ttu-id="d500f-177">它支持配置基于事件的激活功能。</span><span class="sxs-lookup"><span data-stu-id="d500f-177">It supports configuring event-based activation functionality.</span></span>
 
-<span data-ttu-id="486ca-214">**适用于**： Windows (上的 outlook 连接到 Microsoft 365 订阅) ，outlook 网页版 (新式) </span><span class="sxs-lookup"><span data-stu-id="486ca-214">**Available in**: Outlook on Windows (connected to a Microsoft 365 subscription), Outlook on the web (modern)</span></span>
+<span data-ttu-id="d500f-178">**中的可用**： Outlook 网页版 (新式， [配置预览访问](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide&preserve-view=true#set-up-the-release-option-in-the-admin-center)) </span><span class="sxs-lookup"><span data-stu-id="d500f-178">**Available in**: Outlook on the web (modern, [Configure preview access](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide&preserve-view=true#set-up-the-release-option-in-the-admin-center))</span></span>
 
-#### <a name="officemailboxenumsactiontype"></a>[<span data-ttu-id="486ca-215">MailboxEnums</span><span class="sxs-lookup"><span data-stu-id="486ca-215">Office.MailboxEnums.ActionType</span></span>](/javascript/api/outlook/office.mailboxenums.actiontype)
+#### <a name="runtimes-manifest-element"></a>[<span data-ttu-id="d500f-179">运行时清单元素</span><span class="sxs-lookup"><span data-stu-id="d500f-179">Runtimes manifest element</span></span>](../../manifest/runtimes.md)
 
-<span data-ttu-id="486ca-216">添加了新枚举 `ActionType` 。</span><span class="sxs-lookup"><span data-stu-id="486ca-216">Added a new enum `ActionType`.</span></span>
+<span data-ttu-id="d500f-180">向清单元素添加了 Outlook 支持 `Runtimes` 。</span><span class="sxs-lookup"><span data-stu-id="d500f-180">Added Outlook support to the `Runtimes` manifest element.</span></span> <span data-ttu-id="d500f-181">它引用了基于事件的激活功能所需的 HTML 和 JavaScript 文件。</span><span class="sxs-lookup"><span data-stu-id="d500f-181">It references the HTML and JavaScript files needed for event-based activation functionality.</span></span>
 
-<span data-ttu-id="486ca-217">**适用于**： Windows (上的 outlook 连接到 Microsoft 365 订阅) ，outlook 网页版 (新式) </span><span class="sxs-lookup"><span data-stu-id="486ca-217">**Available in**: Outlook on Windows (connected to a Microsoft 365 subscription), Outlook on the web (modern)</span></span>
-
-#### <a name="officemailboxenumsitemnotificationmessagetypeinsightmessage"></a>[<span data-ttu-id="486ca-218">ItemNotificationMessageType InsightMessage</span><span class="sxs-lookup"><span data-stu-id="486ca-218">Office.MailboxEnums.ItemNotificationMessageType.InsightMessage</span></span>](/javascript/api/outlook/office.mailboxenums.itemnotificationmessagetype)
-
-<span data-ttu-id="486ca-219">向枚举添加了新类型 `InsightMessage` `ItemNotificationMessageType` 。</span><span class="sxs-lookup"><span data-stu-id="486ca-219">Added a new type `InsightMessage` to the `ItemNotificationMessageType` enum.</span></span>
-
-<span data-ttu-id="486ca-220">**适用于**： Windows (上的 outlook 连接到 Microsoft 365 订阅) ，outlook 网页版 (新式) </span><span class="sxs-lookup"><span data-stu-id="486ca-220">**Available in**: Outlook on Windows (connected to a Microsoft 365 subscription), Outlook on the web (modern)</span></span>
+<span data-ttu-id="d500f-182">**中的可用**： Outlook 网页版 (新式， [配置预览访问](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide&preserve-view=true#set-up-the-release-option-in-the-admin-center)) </span><span class="sxs-lookup"><span data-stu-id="d500f-182">**Available in**: Outlook on the web (modern, [Configure preview access](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide&preserve-view=true#set-up-the-release-option-in-the-admin-center))</span></span>
 
 <br>
 
@@ -274,19 +174,13 @@ ms.locfileid: "47819831"
 
 ---
 
-### <a name="office-theme"></a><span data-ttu-id="486ca-221">Office 主题</span><span class="sxs-lookup"><span data-stu-id="486ca-221">Office theme</span></span>
+### <a name="get-all-custom-properties"></a><span data-ttu-id="d500f-183">获取所有自定义属性</span><span class="sxs-lookup"><span data-stu-id="d500f-183">Get all custom properties</span></span>
 
-#### <a name="officecontextofficetheme"></a>[<span data-ttu-id="486ca-222">Office.context.officeTheme</span><span class="sxs-lookup"><span data-stu-id="486ca-222">Office.context.officeTheme</span></span>](/javascript/api/office/office.context#officetheme)
+#### <a name="custompropertiesgetall"></a>[<span data-ttu-id="d500f-184">CustomProperties。 getAll</span><span class="sxs-lookup"><span data-stu-id="d500f-184">CustomProperties.getAll</span></span>](/javascript/api/outlook/office.customproperties?view=outlook-js-preview&preserve-view=true#getall--)
 
-<span data-ttu-id="486ca-223">增加了获取 Office 主题的功能。</span><span class="sxs-lookup"><span data-stu-id="486ca-223">Added ability to get Office theme.</span></span>
+<span data-ttu-id="d500f-185">向 `CustomProperties` 获取所有自定义属性的对象添加了新函数。</span><span class="sxs-lookup"><span data-stu-id="d500f-185">Added a new function to the `CustomProperties` object that gets all custom properties.</span></span>
 
-<span data-ttu-id="486ca-224">**适用于**： Windows (上的 Outlook 连接到 Microsoft 365 订阅) </span><span class="sxs-lookup"><span data-stu-id="486ca-224">**Available in**: Outlook on Windows (connected to a Microsoft 365 subscription)</span></span>
-
-#### <a name="officeeventtypeofficethemechanged"></a>[<span data-ttu-id="486ca-225">Office.EventType.OfficeThemeChanged</span><span class="sxs-lookup"><span data-stu-id="486ca-225">Office.EventType.OfficeThemeChanged</span></span>](/javascript/api/office/office.eventtype)
-
-<span data-ttu-id="486ca-226">向 `Mailbox` 中添加了 `OfficeThemeChanged` 事件。</span><span class="sxs-lookup"><span data-stu-id="486ca-226">Added `OfficeThemeChanged` event to `Mailbox`.</span></span>
-
-<span data-ttu-id="486ca-227">**适用于**： Windows (上的 Outlook 连接到 Microsoft 365 订阅) </span><span class="sxs-lookup"><span data-stu-id="486ca-227">**Available in**: Outlook on Windows (connected to a Microsoft 365 subscription)</span></span>
+<span data-ttu-id="d500f-186">**适用于**： Windows (上的 outlook 连接到 Microsoft 365 订阅) ，outlook (网页版) ，Mac 上的 outlook (已连接到 microsoft 365 订阅) ，Outlook 在 Android 上，Outlook 在 iOS 上</span><span class="sxs-lookup"><span data-stu-id="d500f-186">**Available in**: Outlook on Windows (connected to a Microsoft 365 subscription), Outlook on the web (modern), Outlook on Mac (connected to a Microsoft 365 subscription), Outlook on Android, Outlook on iOS</span></span>
 
 <br>
 
@@ -294,23 +188,129 @@ ms.locfileid: "47819831"
 
 ---
 
-### <a name="session-data"></a><span data-ttu-id="486ca-228">会话数据</span><span class="sxs-lookup"><span data-stu-id="486ca-228">Session data</span></span>
+### <a name="integration-with-actionable-messages"></a><span data-ttu-id="d500f-187">与可操作邮件集成</span><span class="sxs-lookup"><span data-stu-id="d500f-187">Integration with actionable messages</span></span>
 
-#### <a name="officesessiondata"></a>[<span data-ttu-id="486ca-229">SessionData</span><span class="sxs-lookup"><span data-stu-id="486ca-229">Office.SessionData</span></span>](/javascript/api/outlook/office.sessiondata)
+#### <a name="officecontextmailboxitemgetinitializationcontextasync"></a>[<span data-ttu-id="d500f-188">Office.context.mailbox.item.getInitializationContextAsync</span><span class="sxs-lookup"><span data-stu-id="d500f-188">Office.context.mailbox.item.getInitializationContextAsync</span></span>](office.context.mailbox.item.md#methods)
 
-<span data-ttu-id="486ca-230">添加了一个代表项目的会话数据的新对象。</span><span class="sxs-lookup"><span data-stu-id="486ca-230">Added a new object that represents the session data of an item.</span></span>
+<span data-ttu-id="d500f-189">新增了一个函数，当外接程序[由可操作邮件激活时](/outlook/actionable-messages/invoke-add-in-from-actionable-message)，返回传递的初始化数据。</span><span class="sxs-lookup"><span data-stu-id="d500f-189">Added a new function that returns initialization data passed when the add-in is [activated by an actionable message](/outlook/actionable-messages/invoke-add-in-from-actionable-message).</span></span>
 
-<span data-ttu-id="486ca-231">**适用于**： Windows (上的 Outlook 连接到 Microsoft 365 订阅) </span><span class="sxs-lookup"><span data-stu-id="486ca-231">**Available in**: Outlook on Windows (connected to a Microsoft 365 subscription)</span></span>
+<span data-ttu-id="d500f-190">**适用于**： Windows (上的 outlook 连接到 Microsoft 365 订阅) ，outlook 网页版 (经典) </span><span class="sxs-lookup"><span data-stu-id="d500f-190">**Available in**: Outlook on Windows (connected to a Microsoft 365 subscription), Outlook on the web (classic)</span></span>
 
-#### <a name="officecontextmailboxitemsessiondata"></a>[<span data-ttu-id="486ca-232">SessionData 的 Office。</span><span class="sxs-lookup"><span data-stu-id="486ca-232">Office.context.mailbox.item.sessionData</span></span>](office.context.mailbox.item.md#properties)
+<br>
 
-<span data-ttu-id="486ca-233">添加了一个新属性以在撰写模式下管理项目的会话数据。</span><span class="sxs-lookup"><span data-stu-id="486ca-233">Added a new property to manage the session data of an item in Compose mode.</span></span>
+---
 
-<span data-ttu-id="486ca-234">**适用于**： Windows (上的 Outlook 连接到 Microsoft 365 订阅) </span><span class="sxs-lookup"><span data-stu-id="486ca-234">**Available in**: Outlook on Windows (connected to a Microsoft 365 subscription)</span></span>
+---
 
-## <a name="see-also"></a><span data-ttu-id="486ca-235">另请参阅</span><span class="sxs-lookup"><span data-stu-id="486ca-235">See also</span></span>
+### <a name="mail-signature"></a><span data-ttu-id="d500f-191">邮件签名</span><span class="sxs-lookup"><span data-stu-id="d500f-191">Mail signature</span></span>
 
-- [<span data-ttu-id="486ca-236">Outlook 加载项</span><span class="sxs-lookup"><span data-stu-id="486ca-236">Outlook add-ins</span></span>](../../../outlook/outlook-add-ins-overview.md)
-- [<span data-ttu-id="486ca-237">Outlook 外接程序代码示例</span><span class="sxs-lookup"><span data-stu-id="486ca-237">Outlook add-in code samples</span></span>](https://developer.microsoft.com/outlook/gallery/?filterBy=Outlook,Samples,Add-ins)
-- [<span data-ttu-id="486ca-238">入门</span><span class="sxs-lookup"><span data-stu-id="486ca-238">Get started</span></span>](../../../quickstarts/outlook-quickstart.md)
-- [<span data-ttu-id="486ca-239">要求集和支持的客户端</span><span class="sxs-lookup"><span data-stu-id="486ca-239">Requirement sets and supported clients</span></span>](../../requirement-sets/outlook-api-requirement-sets.md)
+#### <a name="officecontextmailboxitembodysetsignatureasync"></a>[<span data-ttu-id="d500f-192">SetSignatureAsync 的 "."</span><span class="sxs-lookup"><span data-stu-id="d500f-192">Office.context.mailbox.item.body.setSignatureAsync</span></span>](/javascript/api/outlook/office.body?view=outlook-js-preview&preserve-view=true#setsignatureasync-data--options--callback-)
+
+<span data-ttu-id="d500f-193">向对象添加了一个新函数 `Body` ，该函数在撰写模式下添加或替换项目正文中的签名。</span><span class="sxs-lookup"><span data-stu-id="d500f-193">Added a new function to the `Body` object that adds or replaces the signature in the item body in Compose mode.</span></span>
+
+<span data-ttu-id="d500f-194">**适用于**： Windows (上的 outlook 连接到 Microsoft 365 订阅) ，outlook 网页版 (新式中， [配置预览访问](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide&preserve-view=true#set-up-the-release-option-in-the-admin-center)) </span><span class="sxs-lookup"><span data-stu-id="d500f-194">**Available in**: Outlook on Windows (connected to a Microsoft 365 subscription), Outlook on the web (modern, [Configure preview access](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide&preserve-view=true#set-up-the-release-option-in-the-admin-center))</span></span>
+
+#### <a name="officecontextmailboxitemdisableclientsignatureasync"></a>[<span data-ttu-id="d500f-195">DisableClientSignatureAsync 的 Office。</span><span class="sxs-lookup"><span data-stu-id="d500f-195">Office.context.mailbox.item.disableClientSignatureAsync</span></span>](office.context.mailbox.item.md#methods)
+
+<span data-ttu-id="d500f-196">添加了一个新函数，用于在撰写模式下禁用发送邮箱的客户端签名。</span><span class="sxs-lookup"><span data-stu-id="d500f-196">Added a new function that disables the client signature for the sending mailbox in Compose mode.</span></span>
+
+<span data-ttu-id="d500f-197">**适用于**： Windows (上的 outlook 连接到 Microsoft 365 订阅) ，outlook 网页版 (新式中， [配置预览访问](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide&preserve-view=true#set-up-the-release-option-in-the-admin-center)) </span><span class="sxs-lookup"><span data-stu-id="d500f-197">**Available in**: Outlook on Windows (connected to a Microsoft 365 subscription), Outlook on the web (modern, [Configure preview access](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide&preserve-view=true#set-up-the-release-option-in-the-admin-center))</span></span>
+
+#### <a name="officecontextmailboxitemgetcomposetypeasync"></a>[<span data-ttu-id="d500f-198">GetComposeTypeAsync 的 Office。</span><span class="sxs-lookup"><span data-stu-id="d500f-198">Office.context.mailbox.item.getComposeTypeAsync</span></span>](/javascript/api/outlook/office.messagecompose?view=outlook-js-preview&preserve-view=true#getcomposetypeasync-options--callback-)
+
+<span data-ttu-id="d500f-199">添加了一个新函数，用于在撰写模式下获取邮件的撰写类型。</span><span class="sxs-lookup"><span data-stu-id="d500f-199">Added a new function that gets the compose type of a message in Compose mode.</span></span>
+
+<span data-ttu-id="d500f-200">**适用于**： Windows (上的 outlook 连接到 Microsoft 365 订阅) ，outlook 网页版 (新式中， [配置预览访问](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide&preserve-view=true#set-up-the-release-option-in-the-admin-center)) </span><span class="sxs-lookup"><span data-stu-id="d500f-200">**Available in**: Outlook on Windows (connected to a Microsoft 365 subscription), Outlook on the web (modern, [Configure preview access](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide&preserve-view=true#set-up-the-release-option-in-the-admin-center))</span></span>
+
+#### <a name="officecontextmailboxitemisclientsignatureenabledasync"></a>[<span data-ttu-id="d500f-201">IsClientSignatureEnabledAsync 的 Office。</span><span class="sxs-lookup"><span data-stu-id="d500f-201">Office.context.mailbox.item.isClientSignatureEnabledAsync</span></span>](office.context.mailbox.item.md#methods)
+
+<span data-ttu-id="d500f-202">添加了一个新函数，用于检查在撰写模式下是否在项目上启用了客户端签名。</span><span class="sxs-lookup"><span data-stu-id="d500f-202">Added a new function that checks if the client signature is enabled on the item in Compose mode.</span></span>
+
+<span data-ttu-id="d500f-203">**适用于**： Windows (上的 outlook 连接到 Microsoft 365 订阅) ，outlook 网页版 (新式中， [配置预览访问](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide&preserve-view=true#set-up-the-release-option-in-the-admin-center)) </span><span class="sxs-lookup"><span data-stu-id="d500f-203">**Available in**: Outlook on Windows (connected to a Microsoft 365 subscription), Outlook on the web (modern, [Configure preview access](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide&preserve-view=true#set-up-the-release-option-in-the-admin-center))</span></span>
+
+#### <a name="officemailboxenumscomposetype"></a>[<span data-ttu-id="d500f-204">MailboxEnums. ComposeType</span><span class="sxs-lookup"><span data-stu-id="d500f-204">Office.MailboxEnums.ComposeType</span></span>](/javascript/api/outlook/office.mailboxenums.composetype?view=outlook-js-preview&preserve-view=true)
+
+<span data-ttu-id="d500f-205">添加了一个新枚举，该枚举 `ComposeType` 在撰写模式中可用。</span><span class="sxs-lookup"><span data-stu-id="d500f-205">Added a new enum `ComposeType` available in Compose mode.</span></span>
+
+<span data-ttu-id="d500f-206">**适用于**： Windows (上的 outlook 连接到 Microsoft 365 订阅) ，outlook 网页版 (新式中， [配置预览访问](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide&preserve-view=true#set-up-the-release-option-in-the-admin-center)) </span><span class="sxs-lookup"><span data-stu-id="d500f-206">**Available in**: Outlook on Windows (connected to a Microsoft 365 subscription), Outlook on the web (modern, [Configure preview access](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide&preserve-view=true#set-up-the-release-option-in-the-admin-center))</span></span>
+
+<br>
+
+---
+
+---
+
+### <a name="notification-messages-with-actions"></a><span data-ttu-id="d500f-207">包含操作的通知邮件</span><span class="sxs-lookup"><span data-stu-id="d500f-207">Notification messages with actions</span></span>
+
+<span data-ttu-id="d500f-208">通过此功能，您的外接程序可以在默认 **取消** 操作之外包含具有自定义操作的通知消息。</span><span class="sxs-lookup"><span data-stu-id="d500f-208">This feature allows your add-in to include a notification message with a custom action besides the default **Dismiss** action.</span></span>
+
+#### <a name="officenotificationmessagedetailsactions"></a>[<span data-ttu-id="d500f-209">NotificationMessageDetails</span><span class="sxs-lookup"><span data-stu-id="d500f-209">Office.NotificationMessageDetails.actions</span></span>](/javascript/api/outlook/office.notificationmessagedetails#actions)
+
+<span data-ttu-id="d500f-210">添加了一个新属性，您可以 `InsightMessage` 使用自定义操作添加通知。</span><span class="sxs-lookup"><span data-stu-id="d500f-210">Added a new property that enables you to add an `InsightMessage` notification with a custom action.</span></span>
+
+<span data-ttu-id="d500f-211">**适用于**： Windows (上的 outlook 连接到 Microsoft 365 订阅) ，outlook 网页版 (新式) </span><span class="sxs-lookup"><span data-stu-id="d500f-211">**Available in**: Outlook on Windows (connected to a Microsoft 365 subscription), Outlook on the web (modern)</span></span>
+
+#### <a name="officenotificationmessageaction"></a>[<span data-ttu-id="d500f-212">NotificationMessageAction</span><span class="sxs-lookup"><span data-stu-id="d500f-212">Office.NotificationMessageAction</span></span>](/javascript/api/outlook/office.notificationmessageaction)
+
+<span data-ttu-id="d500f-213">添加了一个新对象，可在其中为通知定义自定义操作 `InsightMessage` 。</span><span class="sxs-lookup"><span data-stu-id="d500f-213">Added a new object where you define a custom action for your `InsightMessage` notification.</span></span>
+
+<span data-ttu-id="d500f-214">**适用于**： Windows (上的 outlook 连接到 Microsoft 365 订阅) ，outlook 网页版 (新式) </span><span class="sxs-lookup"><span data-stu-id="d500f-214">**Available in**: Outlook on Windows (connected to a Microsoft 365 subscription), Outlook on the web (modern)</span></span>
+
+#### <a name="officemailboxenumsactiontype"></a>[<span data-ttu-id="d500f-215">MailboxEnums</span><span class="sxs-lookup"><span data-stu-id="d500f-215">Office.MailboxEnums.ActionType</span></span>](/javascript/api/outlook/office.mailboxenums.actiontype)
+
+<span data-ttu-id="d500f-216">添加了新枚举 `ActionType` 。</span><span class="sxs-lookup"><span data-stu-id="d500f-216">Added a new enum `ActionType`.</span></span>
+
+<span data-ttu-id="d500f-217">**适用于**： Windows (上的 outlook 连接到 Microsoft 365 订阅) ，outlook 网页版 (新式) </span><span class="sxs-lookup"><span data-stu-id="d500f-217">**Available in**: Outlook on Windows (connected to a Microsoft 365 subscription), Outlook on the web (modern)</span></span>
+
+#### <a name="officemailboxenumsitemnotificationmessagetypeinsightmessage"></a>[<span data-ttu-id="d500f-218">ItemNotificationMessageType InsightMessage</span><span class="sxs-lookup"><span data-stu-id="d500f-218">Office.MailboxEnums.ItemNotificationMessageType.InsightMessage</span></span>](/javascript/api/outlook/office.mailboxenums.itemnotificationmessagetype)
+
+<span data-ttu-id="d500f-219">向枚举添加了新类型 `InsightMessage` `ItemNotificationMessageType` 。</span><span class="sxs-lookup"><span data-stu-id="d500f-219">Added a new type `InsightMessage` to the `ItemNotificationMessageType` enum.</span></span>
+
+<span data-ttu-id="d500f-220">**适用于**： Windows (上的 outlook 连接到 Microsoft 365 订阅) ，outlook 网页版 (新式) </span><span class="sxs-lookup"><span data-stu-id="d500f-220">**Available in**: Outlook on Windows (connected to a Microsoft 365 subscription), Outlook on the web (modern)</span></span>
+
+<br>
+
+---
+
+---
+
+### <a name="office-theme"></a><span data-ttu-id="d500f-221">Office 主题</span><span class="sxs-lookup"><span data-stu-id="d500f-221">Office theme</span></span>
+
+#### <a name="officecontextofficetheme"></a>[<span data-ttu-id="d500f-222">Office.context.officeTheme</span><span class="sxs-lookup"><span data-stu-id="d500f-222">Office.context.officeTheme</span></span>](/javascript/api/office/office.context#officetheme)
+
+<span data-ttu-id="d500f-223">增加了获取 Office 主题的功能。</span><span class="sxs-lookup"><span data-stu-id="d500f-223">Added ability to get Office theme.</span></span>
+
+<span data-ttu-id="d500f-224">**适用于**： Windows (上的 Outlook 连接到 Microsoft 365 订阅) </span><span class="sxs-lookup"><span data-stu-id="d500f-224">**Available in**: Outlook on Windows (connected to a Microsoft 365 subscription)</span></span>
+
+#### <a name="officeeventtypeofficethemechanged"></a>[<span data-ttu-id="d500f-225">Office.EventType.OfficeThemeChanged</span><span class="sxs-lookup"><span data-stu-id="d500f-225">Office.EventType.OfficeThemeChanged</span></span>](/javascript/api/office/office.eventtype)
+
+<span data-ttu-id="d500f-226">向 `Mailbox` 中添加了 `OfficeThemeChanged` 事件。</span><span class="sxs-lookup"><span data-stu-id="d500f-226">Added `OfficeThemeChanged` event to `Mailbox`.</span></span>
+
+<span data-ttu-id="d500f-227">**适用于**： Windows (上的 Outlook 连接到 Microsoft 365 订阅) </span><span class="sxs-lookup"><span data-stu-id="d500f-227">**Available in**: Outlook on Windows (connected to a Microsoft 365 subscription)</span></span>
+
+<br>
+
+---
+
+---
+
+### <a name="session-data"></a><span data-ttu-id="d500f-228">会话数据</span><span class="sxs-lookup"><span data-stu-id="d500f-228">Session data</span></span>
+
+#### <a name="officesessiondata"></a>[<span data-ttu-id="d500f-229">SessionData</span><span class="sxs-lookup"><span data-stu-id="d500f-229">Office.SessionData</span></span>](/javascript/api/outlook/office.sessiondata)
+
+<span data-ttu-id="d500f-230">添加了一个代表项目的会话数据的新对象。</span><span class="sxs-lookup"><span data-stu-id="d500f-230">Added a new object that represents the session data of an item.</span></span>
+
+<span data-ttu-id="d500f-231">**适用于**： Windows (上的 Outlook 连接到 Microsoft 365 订阅) </span><span class="sxs-lookup"><span data-stu-id="d500f-231">**Available in**: Outlook on Windows (connected to a Microsoft 365 subscription)</span></span>
+
+#### <a name="officecontextmailboxitemsessiondata"></a>[<span data-ttu-id="d500f-232">SessionData 的 Office。</span><span class="sxs-lookup"><span data-stu-id="d500f-232">Office.context.mailbox.item.sessionData</span></span>](office.context.mailbox.item.md#properties)
+
+<span data-ttu-id="d500f-233">添加了一个新属性以在撰写模式下管理项目的会话数据。</span><span class="sxs-lookup"><span data-stu-id="d500f-233">Added a new property to manage the session data of an item in Compose mode.</span></span>
+
+<span data-ttu-id="d500f-234">**适用于**： Windows (上的 Outlook 连接到 Microsoft 365 订阅) </span><span class="sxs-lookup"><span data-stu-id="d500f-234">**Available in**: Outlook on Windows (connected to a Microsoft 365 subscription)</span></span>
+
+## <a name="see-also"></a><span data-ttu-id="d500f-235">另请参阅</span><span class="sxs-lookup"><span data-stu-id="d500f-235">See also</span></span>
+
+- [<span data-ttu-id="d500f-236">Outlook 加载项</span><span class="sxs-lookup"><span data-stu-id="d500f-236">Outlook add-ins</span></span>](../../../outlook/outlook-add-ins-overview.md)
+- [<span data-ttu-id="d500f-237">Outlook 外接程序代码示例</span><span class="sxs-lookup"><span data-stu-id="d500f-237">Outlook add-in code samples</span></span>](https://developer.microsoft.com/outlook/gallery/?filterBy=Outlook,Samples,Add-ins)
+- [<span data-ttu-id="d500f-238">入门</span><span class="sxs-lookup"><span data-stu-id="d500f-238">Get started</span></span>](../../../quickstarts/outlook-quickstart.md)
+- [<span data-ttu-id="d500f-239">要求集和支持的客户端</span><span class="sxs-lookup"><span data-stu-id="d500f-239">Requirement sets and supported clients</span></span>](../../requirement-sets/outlook-api-requirement-sets.md)
