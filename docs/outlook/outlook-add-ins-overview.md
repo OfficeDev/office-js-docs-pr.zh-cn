@@ -1,15 +1,15 @@
 ---
 title: Outlook 加载项概述
 description: Outlook 加载项由第三方使用基于 Web 的平台集成到 Outlook 中。
-ms.date: 09/14/2020
+ms.date: 09/18/2020
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: 09f410ccbddb4cffadc700036a4da3c45d2fb6e3
-ms.sourcegitcommit: ed2a98b6fb5b432fa99c6cefa5ce52965dc25759
+ms.openlocfilehash: 351ebe3d99c4b321dcbb1b7c71ee72023db2eb02
+ms.sourcegitcommit: 2479812e677d1a7337765fe8f1c8345061d4091a
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/16/2020
-ms.locfileid: "47819565"
+ms.lasthandoff: 09/19/2020
+ms.locfileid: "48135226"
 ---
 # <a name="outlook-add-ins-overview"></a>Outlook 加载项概述
 
@@ -41,9 +41,9 @@ Outlook 加载项不同于 COM 或 VSTO 的加载项，后者为特定于 Window
 
     ![在卡片中显示上下文相关应用程序](../images/outlook-detected-entity-card.png)
 
-## <a name="mailbox-items-available-to-add-ins"></a>加载项可用的邮箱项目
+## <a name="mailbox-items-available-to-add-ins"></a>外接程序可用的邮箱项目
 
-在撰写或阅读时，Outlook 外接程序对邮件或约会可用，但对其他项目类型不可用。如果撰写或阅读窗体中的当前邮件项目为以下项之一，则 Outlook 不会激活邮件外接程序：
+当用户正在撰写或阅读邮件或约会，而不是其他项目类型时，Outlook 加载项会激活。 但是，如果撰写或阅读窗体中的当前邮件项目为以下项之一，则 Outlook *不会*激活邮件加载项：
 
 - 使用信息权限管理 (IRM) 进行保护，或使用其他保护方式进行加密。数字签名邮件便是其中一个例子，因为数字签名依赖于这些机制之一。
 

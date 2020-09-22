@@ -321,6 +321,8 @@
               href: reference/requirement-sets/image-coercion-requirement-sets.md
             - name: Office 通用 API 要求集
               href: reference/requirement-sets/office-add-in-requirement-sets.md
+            - name: 打开浏览器窗口要求集
+              href: reference/requirement-sets/open-browser-window-api-requirement-sets.md
             - name: 功能区 API 要求集
               href: reference/requirement-sets/ribbon-api-requirement-sets.md
             - name: 共享运行时要求集
@@ -1143,6 +1145,9 @@
           displayName: Word
 - name: 模式和做法
   items:
+    - name: 在 Excel 中打开
+      href: excel/pnp-open-in-excel.md
+      displayName: Excel
     - name: 批处理自定义函数远程调用
       href: excel/custom-functions-batching.md
       displayName: 'Excel, Custom Functions'
