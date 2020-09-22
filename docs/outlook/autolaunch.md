@@ -2,14 +2,14 @@
 title: '配置 Outlook 外接程序以进行基于事件的激活 (预览) '
 description: 了解如何配置 Outlook 外接程序以进行基于事件的激活。
 ms.topic: article
-ms.date: 09/09/2020
+ms.date: 09/21/2020
 localization_priority: Normal
-ms.openlocfilehash: 69f14748a898c2c963c9d049b2c40c28f3aec725
-ms.sourcegitcommit: 83f9a2fdff81ca421cd23feea103b9b60895cab4
+ms.openlocfilehash: 1ddf5cd17934df261ef0002f38d92ed0dc40ca00
+ms.sourcegitcommit: 4a03d8b3f676ee2d91114813cb81bce5da3c8d6b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/11/2020
-ms.locfileid: "47431246"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "48175547"
 ---
 # <a name="configure-your-outlook-add-in-for-event-based-activation-preview"></a>配置 Outlook 外接程序以进行基于事件的激活 (预览) 
 
@@ -35,7 +35,7 @@ ms.locfileid: "47431246"
 若要预览此功能：
 
 - 参考 CDN (上的 **beta** 库 https://appsforoffice.microsoft.com/lib/beta/hosted/office.js) 。 在 CDN 和[jquery.typescript.definitelytyped](https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/master/types/office-js-preview/index.d.ts)中找到 TypeScript 编译和智能感知的[类型定义文件](https://appsforoffice.microsoft.com/lib/beta/hosted/office.d.ts)。 您可以使用安装这些类型 `npm install --save-dev @types/office-js-preview` 。
-- 通过完成并提交 [此请求表单](https://aka.ms/OWAPreview)，请求使用 Microsoft 365 帐户对在 web 上的 Outlook 的预览位进行访问。 我们将在你的租户准备就绪时通知你。
+- [在 Microsoft 365 租户上配置目标版本](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide&preserve-view=true#set-up-the-release-option-in-the-admin-center)。
 
 ## <a name="set-up-your-environment"></a>设置环境
 

@@ -4,12 +4,12 @@ description: 指定哪些 Office 平台和生成支持 openBrowserWindow API。
 ms.date: 09/16/2020
 ms.prod: non-product-specific
 localization_priority: Normal
-ms.openlocfilehash: 8f6966f5bdcecd9c55a20f2d640d066906c1b6a3
-ms.sourcegitcommit: 2479812e677d1a7337765fe8f1c8345061d4091a
+ms.openlocfilehash: 8bc26525bf64ed87d46d85cd1248f79696d67f2b
+ms.sourcegitcommit: 4a03d8b3f676ee2d91114813cb81bce5da3c8d6b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/19/2020
-ms.locfileid: "48135234"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "48175505"
 ---
 # <a name="open-browser-window-api-requirement-sets"></a>打开浏览器窗口 API 要求集
 
@@ -36,7 +36,7 @@ Office 外接程序在多个 Office 版本中运行。 下表列出了 OpenBrows
 
 ## <a name="openbrowserwindowapi-11"></a>OpenBrowserWindowApi 1。1
 
-OpenBrowserWindowApi 1.1 是 API 的第一个版本。 有关 API 的详细信息，请参阅 " [Office. ui](/javascript/api/office/office.context.ui) 参考" 主题。
+OpenBrowserWindowApi 1.1 是 API 的第一个版本。 有关 API 的详细信息，请参阅 " [Office. ui](/javascript/api/office/office.context#ui) 参考" 主题。
 
 ## <a name="see-also"></a>另请参阅
 

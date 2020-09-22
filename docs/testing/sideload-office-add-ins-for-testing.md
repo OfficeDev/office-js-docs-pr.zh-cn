@@ -1,14 +1,14 @@
 ---
 title: 在 Office 网页版中旁加载 Office 加载项进行测试
 description: 通过旁加载在 Office 上测试 Office 外接程序（网址为）。
-ms.date: 07/10/2020
+ms.date: 09/21/2020
 localization_priority: Normal
-ms.openlocfilehash: 2f9a0d058fc972316da964dd5af03b5733dc7b60
-ms.sourcegitcommit: 472b81642e9eb5fb2a55cd98a7b0826d37eb7f73
+ms.openlocfilehash: 709461d19fbf4602db3ba5bd9c40f495d0dbbd52
+ms.sourcegitcommit: 4a03d8b3f676ee2d91114813cb81bce5da3c8d6b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/17/2020
-ms.locfileid: "45159288"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "48175533"
 ---
 # <a name="sideload-office-add-ins-in-office-on-the-web-for-testing"></a>在 Office 网页版中旁加载 Office 加载项进行测试
 
@@ -29,9 +29,9 @@ ms.locfileid: "45159288"
 
 2. 在 **"立即开始使用在线应用程序**" 中，选择 " **Excel**"、" **Word**" 或 " **PowerPoint**";，然后打开一个新文档。
 
-3. 打开功能区上的 "**插入**" 选项卡，然后在 "**外接程序**" 部分中，选择 " **Office 外接程序**"。
+3. 打开功能区上的 " **插入** " 选项卡，然后在 " **外接程序** " 部分中，选择 " **Office 外接程序**"。
 
-4. 在 " **Office 外接程序**" 对话框中，选择 "**我的外**接程序" 选项卡，选择 "**管理我的外接**程序"，然后**上传我的外接程序**。
+4. 在 " **Office 外接程序** " 对话框中，选择 " **我的外** 接程序" 选项卡，选择 " **管理我的外接**程序"，然后 **上传我的外接程序**。
 
     ![“Office 加载项”对话框，右上方有“管理我的加载项”下拉列表，其中有下拉选项“上传我的加载项”](../images/office-add-ins-my-account.png)
 
@@ -42,13 +42,7 @@ ms.locfileid: "45159288"
 6. 验证是否已安装外接程序。例如，如果它是一个外接程序命令，它应显示在功能区或上下文菜单上。如果它是一个任务窗格外接程序，则应显示窗格。
 
 > [!NOTE]
->若要使用 Microsoft Edge 测试 Office 加载项，需要执行两个配置步骤： 
->
-> - 在 Windows 命令提示符下，运行以下行：`CheckNetIsolation LoopbackExempt -a -n="Microsoft.MicrosoftEdge_8wekyb3d8bbwe"`
->
-> - 在 Microsoft Edge 搜索栏中输入 "**about： flags**" 以调出 "开发人员设置" 选项。  选中 "**允许 localhost 环回**" 选项，然后重新启动 Microsoft Edge。
-
->    ![Microsoft Edge 的“允许使用 localhost 环回”选项（该复选框已选中）。](../images/allow-localhost-loopback.png)
+> 若要使用 Microsoft Edge 测试 Office 外接程序，需要执行其他配置步骤。 在 Windows 命令提示符下，运行以下行：`npx office-addin-dev-settings appcontainer EdgeWebView --loopback --yes`
 
 ## <a name="sideload-an-office-add-in-in-office-365"></a>在 Office 365 上旁加载 Office 加载项
 
@@ -76,4 +70,4 @@ ms.locfileid: "45159288"
 
 ## <a name="remove-a-sideloaded-add-in"></a>删除旁加载加载项
 
-您可以通过清除浏览器的缓存来删除以前的旁加载外接程序。 此外，如果您对外接程序清单进行了更改（例如，更新了图标或加载项命令的文本的文件名），您可能需要清除缓存，然后使用更新的清单重新旁加载该外接程序。 执行此操作后，Office 将按照更新清单中所述的方式呈现该加载项。
+您可以通过清除浏览器的缓存来删除以前的旁加载外接程序。 此外，如果您对外接程序的清单进行了更改 (例如，更新) 的加载项命令的图标或文本的文件名，则可能需要清除缓存，然后使用更新的清单重新旁加载加载项。 执行此操作后，Office 将按照更新清单中所述的方式呈现该加载项。
