@@ -1,14 +1,14 @@
 ---
 title: Outlook 加载项的 Onsend 功能
 description: 提供了一种处理项目或阻止用户进行特定操作的方法，并允许加载项在发送时设置某些属性。
-ms.date: 08/13/2020
+ms.date: 09/22/2020
 localization_priority: Normal
-ms.openlocfilehash: b0c33cda6a03ea7a67ca2eae2bd31416b0794df0
-ms.sourcegitcommit: 83f9a2fdff81ca421cd23feea103b9b60895cab4
+ms.openlocfilehash: e6f01825cf570dde147e9dd89022a986929f4e4d
+ms.sourcegitcommit: fd110305c2be8660ab8a47c1da3e3969bd1ede86
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/11/2020
-ms.locfileid: "47431050"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "48214601"
 ---
 # <a name="on-send-feature-for-outlook-add-ins"></a>Outlook 加载项的 Onsend 功能
 
@@ -25,7 +25,7 @@ on-send 功能是由事件类型 `ItemSend` 触发的，无 UI。
 
 下表显示了用于 "发送" 功能的受支持的客户端/服务器组合。 不支持排除的组合。
 
-| Client | Exchange Online | Exchange 2016 本地<br> (累积更新6或更高版本)  | Exchange 2019 本地<br> (累积更新1或更高版本)  |
+| 客户端 | Exchange Online | Exchange 2016 本地<br> (累积更新6或更高版本)  | Exchange 2019 本地<br> (累积更新1或更高版本)  |
 |---|:---:|:---:|:---:|
 |Windows：<br>版本 1910 (内部版本 12130.20272) 或更高版本|是|是|是|
 |Mac<br>生成16.30 或更高版本|是|否|否|
@@ -33,7 +33,7 @@ on-send 功能是由事件类型 `ItemSend` 触发的，无 UI。
 |Web 浏览器：<br>经典 Outlook UI|不适用|是|是|
 
 > [!NOTE]
-> 按发送功能已发布在要求集1.8 中 (有关详细信息) ，请参阅 [当前服务器和客户端支持](../reference/requirement-sets/outlook-api-requirement-sets.md#requirement-sets-supported-by-exchange-servers-and-outlook-clients) 。
+> 按发送功能正式发布在要求集1.8 中 (请参阅 [当前服务器和客户端支持](../reference/requirement-sets/outlook-api-requirement-sets.md#requirement-sets-supported-by-exchange-servers-and-outlook-clients) ，了解详细信息) 。 但是，请注意，该功能的支持列表是要求集的超集。
 
 > [!IMPORTANT]
 > [AppSource](https://appsource.microsoft.com)中不允许使用 "发送时" 功能的外接程序。
@@ -352,9 +352,9 @@ Get-OWAMailboxPolicy OWAOnSendAddinAllUserPolicy | Set-OWAMailboxPolicy –OnSen
 
 |方案|邮箱 1 Onsend 功能|邮箱 2 Onsend 功能|Outlook Web 会话（经典）|结果|是否支持？|
 |:------------|:------------|:--------------------------|:---------|:-------------|:-------------|
-|1 |已启用|已启用|新会话|邮箱 1 无法从邮箱 2 发送邮件或会议项目。|目前尚不支持。可以使用方案 3 作为一种解决办法。|
+|1|已启用|已启用|新会话|邮箱 1 无法从邮箱 2 发送邮件或会议项目。|目前尚不支持。可以使用方案 3 作为一种解决办法。|
 |2 |已禁用|已启用|新会话|邮箱 1 无法从邮箱 2 发送邮件或会议项目。|目前尚不支持。可以使用方案 3 作为一种解决办法。|
-|3 |已启用|已启用|同一个会话|分配给邮箱 1 的 Onsend 加载项运行 Onsend。|支持。|
+|第三章|已启用|已启用|同一个会话|分配给邮箱 1 的 Onsend 加载项运行 Onsend。|支持。|
 |4 |已启用|已禁用|新会话|未运行 Onsend 加载项；邮件或会议项目已发送。|支持。|
 
 #### <a name="web-browser-modern-outlook-windows-mac"></a>Web 浏览器（新式 Outlook）、Windows、Mac
@@ -367,7 +367,7 @@ Get-OWAMailboxPolicy OWAOnSendAddinAllUserPolicy | Set-OWAMailboxPolicy –OnSen
 
 |方案|邮箱 1 Onsend 策略|是否启用了 Onsend 加载项？|邮箱 1 操作|结果|是否支持？|
 |:------------|:-------------------------|:-------------------|:---------|:----------|:-------------|
-|1 |已启用|是|邮箱 1 撰写发送到组 1 的新邮件或会议。|发送期间，Onsend 加载项运行。|是|
+|1|已启用|是|邮箱 1 撰写发送到组 1 的新邮件或会议。|发送期间，Onsend 加载项运行。|是|
 |2 |已启用|是|邮箱 1 在 Outlook 网页版组 1 的组窗口中撰写发送到组 1 的新邮件或会议。|Onsend 加载项不会在发送期间运行。|目前尚不支持。 可以使用方案 1 作为一种解决办法。|
 
 ### <a name="user-mailbox-with-on-send-add-in-featurepolicy-enabled-add-ins-that-support-on-send-are-installed-and-enabled-and-offline-mode-is-enabled"></a>用户邮箱启用了 Onsend 加载项功能/策略，并且安装并启用了支持 Onsend 的加载项，启用了脱机模式

@@ -1,14 +1,14 @@
 ---
 title: Outlook 加载项的激活规则
 description: 如果用户正在读取或撰写的邮件或约会符合加载项的激活规则，则 Outlook 将激活某些类型的加载项。
-ms.date: 12/10/2019
+ms.date: 09/22/2020
 localization_priority: Normal
-ms.openlocfilehash: 7a3ed48f77146a25725d46b3e06296cb0eb5616a
-ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
+ms.openlocfilehash: cdcdfbf3961ad9f627ba00f7366f49c77bba435d
+ms.sourcegitcommit: fd110305c2be8660ab8a47c1da3e3969bd1ede86
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "47294050"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "48214594"
 ---
 # <a name="activation-rules-for-contextual-outlook-add-ins"></a>上下文 Outlook 加载项的激活规则
 
@@ -141,7 +141,7 @@ ms.locfileid: "47294050"
 下面的示例显示了一个 `ItemHasRegularExpressionMatch` 在所选项目的正文包含 "apple"、"banana" 或 "coconut" （忽略大小写）时激活外接程序。
 
 ```xml
-<Rule xsi:type="ItemHasRegularExpressionMatch" RegExName="fruits" RegExValue="apple|banana|coconut" pPropertyName="BodyAsPlaintext" IgnoreCase="true" />
+<Rule xsi:type="ItemHasRegularExpressionMatch" RegExName="fruits" RegExValue="apple|banana|coconut" PropertyName="BodyAsPlaintext" IgnoreCase="true" />
 ```
 
 有关使用规则的详细信息 `ItemHasRegularExpressionMatch` ，请参阅 [使用正则表达式激活规则显示 Outlook 外接程序](use-regular-expressions-to-show-an-outlook-add-in.md)。
