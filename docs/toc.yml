@@ -1145,6 +1145,8 @@
           displayName: Word
 - name: 模式和做法
   items:
+    - name: 概述
+      href: overview/patterns-and-practices-overview.md
     - name: 在 Excel 中打开
       href: excel/pnp-open-in-excel.md
       displayName: Excel
