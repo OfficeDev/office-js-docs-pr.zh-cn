@@ -1,14 +1,14 @@
 ---
-ms.date: 09/21/2020
+ms.date: 09/23/2020
 description: '处理和返回自定义函数中类似 #NULL! 自定义函数中。'
 title: 处理并返回自定义函数中的错误
 localization_priority: Normal
-ms.openlocfilehash: 58c2ab432a4525f660e2d89735fd3add6e76fa7f
-ms.sourcegitcommit: 4a03d8b3f676ee2d91114813cb81bce5da3c8d6b
+ms.openlocfilehash: b3d3b325649a0775d3375c9f5285bba7cde0aa16
+ms.sourcegitcommit: 09e1d8ff14b3c09a3eb11c91432c224a539181a4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "48175526"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "48268542"
 ---
 # <a name="handle-and-return-errors-from-your-custom-function"></a>处理并返回自定义函数中的错误
 
@@ -38,9 +38,9 @@ function getCity(zipCode: string): string {
 [Customfunctions.js](/javascript/api/custom-functions-runtime/customfunctions.error)对象用于将错误返回回单元格。 创建对象时，通过选择下列枚举值之一来指定要使用的错误 `ErrorCode` 。
 
 
-|ErrorCode 枚举值  |Excel 单元格值  |含义  |
+|ErrorCode 枚举值  |Excel 单元格值  |Description  |
 |---------------|---------|---------|
-|`divisionByZero` | `#DIV/0`  | 请注意，JavaScript 允许除以零，因此你需要仔细编写一个错误处理程序来检测这种情况。 |
+|`divisionByZero` | `#DIV/0`  | 函数试图被零除。 |
 |`invalidName`    | `#NAME?`  | 函数名称中有拼写错误。 请注意，此错误被支持为自定义函数输入错误，而不是作为自定义函数输出错误。 | 
 |`invalidNumber`  | `#NUM!`   | 公式中的数字有问题。 |
 |`invalidReference` | `#REF!` | 函数引用了无效的单元格。 请注意，此错误被支持为自定义函数输入错误，而不是作为自定义函数输出错误。|

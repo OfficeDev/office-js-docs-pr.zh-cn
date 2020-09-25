@@ -1,14 +1,14 @@
 ---
 title: 在 Office 网页版中旁加载 Office 加载项进行测试
 description: 通过旁加载在 Office 上测试 Office 外接程序（网址为）。
-ms.date: 09/21/2020
+ms.date: 09/24/2020
 localization_priority: Normal
-ms.openlocfilehash: 709461d19fbf4602db3ba5bd9c40f495d0dbbd52
-ms.sourcegitcommit: 4a03d8b3f676ee2d91114813cb81bce5da3c8d6b
+ms.openlocfilehash: 91f23200a2c393eb5c79f615765df52f205ac6e1
+ms.sourcegitcommit: 09e1d8ff14b3c09a3eb11c91432c224a539181a4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "48175533"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "48268563"
 ---
 # <a name="sideload-office-add-ins-in-office-on-the-web-for-testing"></a>在 Office 网页版中旁加载 Office 加载项进行测试
 
@@ -42,7 +42,7 @@ ms.locfileid: "48175533"
 6. 验证是否已安装外接程序。例如，如果它是一个外接程序命令，它应显示在功能区或上下文菜单上。如果它是一个任务窗格外接程序，则应显示窗格。
 
 > [!NOTE]
-> 若要使用 Microsoft Edge 测试 Office 外接程序，需要执行其他配置步骤。 在 Windows 命令提示符下，运行以下行：`npx office-addin-dev-settings appcontainer EdgeWebView --loopback --yes`
+> 若要使用原始 Web 视图 (EdgeHTML) 在 Microsoft Edge 中测试 Office 加载项，需要执行其他配置步骤。 在 Windows 命令提示符下，运行以下行： `npx office-addin-dev-settings appcontainer EdgeWebView --loopback --yes` 。 当 Office 使用基于 Chromium 的边缘 WebView2 时，这不是必需的。 有关详细信息，请参阅 [Office 加载项使用的浏览器](../concepts/browsers-used-by-office-web-add-ins.md)。
 
 ## <a name="sideload-an-office-add-in-in-office-365"></a>在 Office 365 上旁加载 Office 加载项
 

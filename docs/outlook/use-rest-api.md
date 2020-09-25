@@ -1,14 +1,14 @@
 ---
 title: 从 Outlook 加载项使用 Outlook REST API
 description: 了解如何从 Outlook 加载项使用 Outlook REST API 获得访问令牌。
-ms.date: 10/31/2019
+ms.date: 09/18/2020
 localization_priority: Normal
-ms.openlocfilehash: 7cd26c26e277d7d5fe93664494eb84b4e94bcc47
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 067934f18b02d5106b58a7ec2a0de11a6ea35581
+ms.sourcegitcommit: 09e1d8ff14b3c09a3eb11c91432c224a539181a4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44611615"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "48268549"
 ---
 # <a name="use-the-outlook-rest-apis-from-an-outlook-add-in"></a>从 Outlook 加载项使用 Outlook REST API
 
@@ -82,6 +82,9 @@ var restHost = Office.context.mailbox.restUrl;
 ## <a name="call-the-api"></a>调用 API
 
 有访问令牌、项 ID 和 REST API URL 后，加载项可以将这些信息传递到调用 REST API 的后端服务，也可以使用 AJAX 直接调用 API。 下面的示例展示了如何调用 Outlook 邮件 REST API 来获取当前消息。
+
+> [!IMPORTANT]
+> 对于内部部署 Exchange 部署，使用 AJAX 或类似库的客户端请求将会失败，因为该服务器安装程序不支持 CORS。
 
 ```js
 function getCurrentItem(accessToken) {
