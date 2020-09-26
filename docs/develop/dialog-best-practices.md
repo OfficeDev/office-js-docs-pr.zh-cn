@@ -1,14 +1,14 @@
 ---
 title: Office 对话框 API 最佳做法和规则
 description: 提供 Office 对话框 API 的规则和最佳做法，如单页面应用程序 (SPA) 的最佳实践
-ms.date: 01/29/2020
+ms.date: 09/24/2020
 localization_priority: Normal
-ms.openlocfilehash: 5e0854137b27d8b8ae33fff8943421cc0c488abe
-ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
+ms.openlocfilehash: 5c80b18f7eb6448de23c692683b7c991b9d95ef5
+ms.sourcegitcommit: b47318a24a50443b0579e05e178b3bb5433c372f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "47292755"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "48279507"
 ---
 # <a name="best-practices-and-rules-for-the-office-dialog-api"></a>Office 对话框 API 最佳做法和规则
 
@@ -51,7 +51,7 @@ ms.locfileid: "47292755"
 
 ### <a name="do-not-use-the-_host_info-value"></a>不使用 \_ 主机 \_ 信息值
 
-Office 会自动向传递给 `_host_info` 的 URL 添加查询参数 `displayDialogAsync`。 将其追加到自定义查询参数（如果有）后面。 它不会追加到对话框导航到的任何后续 Url 中。 Microsoft 可能会更改此值的内容或将其全部删除，因此您的代码不应读取它。 相同的值会被添加到对话框的会话存储中。 同样，*代码不得对此值执行读取和写入操作*。
+Office 会自动向传递给 `_host_info` 的 URL 添加查询参数 `displayDialogAsync`。 将其追加到自定义查询参数（如果有）后面。 它不会追加到对话框导航到的任何后续 Url 中。 Microsoft 可能会更改此值的内容或将其全部删除，因此您的代码不应读取它。 将相同的值添加到对话框的 "会话存储 (即 [sessionStorage](https://developer.mozilla.org/docs/Web/API/Window/sessionStorage) 属性) 。 同样，*代码不得对此值执行读取和写入操作*。
 
 ### <a name="best-practices-for-using-the-office-dialog-api-in-an-spa"></a>在 SPA 中使用 Office 对话框 API 的最佳实践
 
@@ -62,7 +62,7 @@ Office 会自动向传递给 `_host_info` 的 URL 添加查询参数 `displayDia
 
 #### <a name="problems-with-spas-and-the-office-dialog-api"></a>Spa 和 Office 对话框 API 存在的问题
 
-Office 对话框位于具有其自己的 JavaScript 引擎实例的新窗口中，因此它拥有完整的执行上下文。 如果传递路由，基本页面及其所有初始化和引导代码将在此新上下文中再次运行，并且所有变量在对话框中都设置为其初始值。 因此，此技术会在 box 窗口中下载并启动应用程序的第二个实例，这部分将导致 SPA 的目的不是一个。 此外，更改对话框窗口中的变量的代码不会更改相同变量的任务窗格版本。 同样，对话框窗口具有自己的会话存储，该存储无法从任务窗格中的代码访问。 对话框和主页面在上面 `displayDialogAsync` 称为与您的服务器的两个不同的客户端。  (有关主机页面的提示的提示，请参阅 [从主机页面打开对话框](dialog-api-in-office-add-ins.md#open-a-dialog-box-from-a-host-page)。 ) 
+Office 对话框位于具有其自己的 JavaScript 引擎实例的新窗口中，因此它拥有完整的执行上下文。 如果传递路由，基本页面及其所有初始化和引导代码将在此新上下文中再次运行，并且所有变量在对话框中都设置为其初始值。 因此，此技术会在 box 窗口中下载并启动应用程序的第二个实例，这部分将导致 SPA 的目的不是一个。 此外，更改对话框窗口中的变量的代码不会更改相同变量的任务窗格版本。 同样，对话框窗口有其自己的会话存储 ([sessionStorage](https://developer.mozilla.org/docs/Web/API/Window/sessionStorage) 属性) ，该属性不能从任务窗格中的代码访问。 对话框和主页面在上面 `displayDialogAsync` 称为与您的服务器的两个不同的客户端。  (有关主机页面的提示的提示，请参阅 [从主机页面打开对话框](dialog-api-in-office-add-ins.md#open-a-dialog-box-from-a-host-page)。 ) 
 
 因此，如果您将路由传递给 `displayDialogAsync` 方法，则不会真正有 spa; 您有 *两个相同 spa 的实例*。 此外，任务窗格实例中的很多代码永远不会在该实例中使用，并且对话框实例中的大部分代码也不会在该实例中使用。 这相当于相同捆绑包中拥有两个 SPA。
 

@@ -1,14 +1,14 @@
 ---
-ms.date: 05/06/2020
+ms.date: 09/25/2020
 description: 使用 JSDoc 标记动态创建自定义函数 JSON 元数据。
 title: 为自定义函数自动生成 JSON 元数据
 localization_priority: Normal
-ms.openlocfilehash: 8138e738188e50d2a1369c359fbca3e1574db32f
-ms.sourcegitcommit: ed2a98b6fb5b432fa99c6cefa5ce52965dc25759
+ms.openlocfilehash: 995f323b24efdc1964e6e9643f6dad8a999a6d39
+ms.sourcegitcommit: b47318a24a50443b0579e05e178b3bb5433c372f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/16/2020
-ms.locfileid: "47819516"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "48279503"
 ---
 # <a name="autogenerate-json-metadata-for-custom-functions"></a>为自定义函数自动生成 JSON 元数据
 
@@ -38,7 +38,9 @@ ms.locfileid: "47819516"
 
 
 ## <a name="jsdoc-tags"></a>JSDoc 标记
-Excel 自定义函数支持以下 JSDoc 标记：
+
+Excel 自定义函数支持以下 JSDoc 标记。
+
 * [@cancelable](#cancelable)
 * [@customfunction](#customfunction) id name
 * [@helpurl](#helpurl) url
@@ -50,7 +52,7 @@ Excel 自定义函数支持以下 JSDoc 标记：
 
 ---
 ### <a name="cancelable"></a>@cancelable
-<a id="cancelable"/>
+<a id="cancelable"></a>
 
 指示在取消函数时，自定义函数执行操作。
 
@@ -62,7 +64,7 @@ Excel 自定义函数支持以下 JSDoc 标记：
 
 ---
 ### <a name="customfunction"></a>@customfunction
-<a id="customfunction"/>
+<a id="customfunction"></a>
 
 语法：@customfunction _id_ _name_
 
@@ -131,7 +133,7 @@ Excel 自定义函数支持以下 JSDoc 标记：
 
 ---
 ### <a name="helpurl"></a>@helpurl
-<a id="helpurl"/>
+<a id="helpurl"></a>
 
 语法：@helpurl _url_
 
@@ -150,7 +152,7 @@ Excel 自定义函数支持以下 JSDoc 标记：
 
 ---
 ### <a name="param"></a>@param
-<a id="param"/>
+<a id="param"></a>
 
 #### <a name="javascript"></a>JavaScript
 
@@ -161,6 +163,7 @@ JavaScript 语法：@param {type} name _description_
 * `description` 为函数参数提供显示在 Excel 中的说明。 它是可选的。
 
 若要将自定义函数参数表示为可选，请执行以下操作：
+
 * 为参数名称加上方括号。 例如：`@param {string} [text] Optional text`。
 
 > [!NOTE]
@@ -189,6 +192,7 @@ TypeScript 语法：@param name _description_
 有关可能使用的函数参数类型的详细信息，请参阅[类型](#types)部分。
 
 若要将自定义函数参数表示为可选，请执行以下操作之一：
+
 * 使用可选参数。 例如：`function f(text?: string)`
 * 为该参数提供默认值。 例如：`function f(text: string = "abc")`
 
@@ -214,7 +218,7 @@ function add(first: number, second: number): number {
 
 ---
 ### <a name="requiresaddress"></a>@requiresAddress
-<a id="requiresAddress"/>
+<a id="requiresAddress"></a>
 
 表示应提供计算函数所在的单元格的地址。
 
@@ -222,7 +226,7 @@ function add(first: number, second: number): number {
 
 ---
 ### <a name="returns"></a>@returns
-<a id="returns"/>
+<a id="returns"></a>
 
 语法：@returns {_type_}
 
@@ -247,7 +251,7 @@ function add(first: number, second: number): number {
 
 ---
 ### <a name="streaming"></a>@streaming
-<a id="streaming"/>
+<a id="streaming"></a>
 
 用于表示自定义函数是一个流式处理函数。 
 
@@ -262,7 +266,7 @@ function add(first: number, second: number): number {
 
 ---
 ### <a name="volatile"></a>@volatile
-<a id="volatile"/>
+<a id="volatile"></a>
 
 可变函数是指其结果不断变化的函数，即使不采用任何参数或参数未发生更改都是如此。 Excel 在每次完成计算后，都会重新计算包含可变函数和所有依赖项的单元格。 因此，过于依赖可变函数会使重新计算时间变慢，请谨慎使用。
 
@@ -272,7 +276,7 @@ function add(first: number, second: number): number {
 
 ```js
 /**
- * Simulates rolling a 6-sided dice.
+ * Simulates rolling a 6-sided die.
  * @customfunction
  * @volatile
  */
@@ -310,6 +314,7 @@ function roll6sided(): number {
 任何其他类型都将被视为错误。
 
 ## <a name="next-steps"></a>后续步骤
+
 了解[自定义函数的命名约定](custom-functions-naming.md)。 或者，了解如何[本地化函数](custom-functions-localize.md)，这需要你[手动编写 JSON 文件](custom-functions-json.md)。
 
 ## <a name="see-also"></a>另请参阅
