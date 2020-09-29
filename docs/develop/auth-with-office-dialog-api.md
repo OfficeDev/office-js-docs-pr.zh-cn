@@ -1,14 +1,14 @@
 ---
 title: 使用 Office 对话框 API 进行身份验证和授权
 description: 了解如何使用 Office 对话框 API 使用户能够登录到 Google、Facebook、Microsoft 365 以及受 Microsoft 标识平台保护的其他服务。
-ms.date: 07/07/2020
+ms.date: 09/24/2020
 localization_priority: Priority
-ms.openlocfilehash: 22242b3e54a63b76a44f8e610be2194a1fc5f00b
-ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
+ms.openlocfilehash: bc0d092dad105cbdff09a5826632baa6fd4f7021
+ms.sourcegitcommit: b47318a24a50443b0579e05e178b3bb5433c372f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "47293343"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "48279488"
 ---
 # <a name="authenticate-and-authorize-with-the-office-dialog-api"></a>使用 Office 对话框 API 进行身份验证和授权
 
@@ -23,7 +23,7 @@ ms.locfileid: "47293343"
 - 它是完全独立于任务窗格的浏览器实例，这意味着：
   - 它拥有自己的 JavaScript 运行时环境和窗口对象及全局变量。
   - 没有与任务窗格共享的执行环境。
-  - 它不与任务窗格共享同一会话存储。
+  - 它没有与任务窗格共享相同的会话存储（[Window.sessionStorage](https://developer.mozilla.org/docs/Web/API/Window/sessionStorage) 属性）。
 - 对话框中打开的第一个页面必须与任务窗格位于同一域中，包括协议、子域和端口（如果有）。
 - 该对话框可通过使用 [messageParent](/javascript/api/office/office.ui#messageparent-message-) 方法将信息发送回任务窗格，但此方法只能从与任务窗格位于同一域（包括协议、子域和端口）的页面中调用。
 
