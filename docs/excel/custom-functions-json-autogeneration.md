@@ -3,12 +3,12 @@ ms.date: 09/25/2020
 description: 使用 JSDoc 标记动态创建自定义函数 JSON 元数据。
 title: 为自定义函数自动生成 JSON 元数据
 localization_priority: Normal
-ms.openlocfilehash: 995f323b24efdc1964e6e9643f6dad8a999a6d39
-ms.sourcegitcommit: b47318a24a50443b0579e05e178b3bb5433c372f
+ms.openlocfilehash: 151dc7c97b2a98743906b7e0a920fdc1eff62e7f
+ms.sourcegitcommit: 42202d7e2ac24dffa77cf937f5697a1cd79ee790
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "48279503"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "48308535"
 ---
 # <a name="autogenerate-json-metadata-for-custom-functions"></a>为自定义函数自动生成 JSON 元数据
 
@@ -51,8 +51,9 @@ Excel 自定义函数支持以下 JSDoc 标记。
 * [@volatile](#volatile)
 
 ---
-### <a name="cancelable"></a>@cancelable
 <a id="cancelable"></a>
+
+### <a name="cancelable"></a>@cancelable
 
 指示在取消函数时，自定义函数执行操作。
 
@@ -63,8 +64,9 @@ Excel 自定义函数支持以下 JSDoc 标记。
 函数不能同时具有 `@cancelable` 和 `@streaming` 标记。
 
 ---
-### <a name="customfunction"></a>@customfunction
 <a id="customfunction"></a>
+
+### <a name="customfunction"></a>@customfunction
 
 语法：@customfunction _id_ _name_
 
@@ -132,8 +134,9 @@ Excel 自定义函数支持以下 JSDoc 标记。
 ```
 
 ---
-### <a name="helpurl"></a>@helpurl
 <a id="helpurl"></a>
+
+### <a name="helpurl"></a>@helpurl
 
 语法：@helpurl _url_
 
@@ -151,8 +154,9 @@ Excel 自定义函数支持以下 JSDoc 标记。
 ```
 
 ---
-### <a name="param"></a>@param
 <a id="param"></a>
+
+### <a name="param"></a>@param
 
 #### <a name="javascript"></a>JavaScript
 
@@ -217,16 +221,18 @@ function add(first: number, second: number): number {
 ```
 
 ---
-### <a name="requiresaddress"></a>@requiresAddress
 <a id="requiresAddress"></a>
+
+### <a name="requiresaddress"></a>@requiresAddress
 
 表示应提供计算函数所在的单元格的地址。
 
 最后一个函数参数的类型必须是 `CustomFunctions.Invocation` 或派生类型。 调用函数时，`address` 属性将包含地址。
 
 ---
-### <a name="returns"></a>@returns
 <a id="returns"></a>
+
+### <a name="returns"></a>@returns
 
 语法：@returns {_type_}
 
@@ -250,8 +256,9 @@ function add(first: number, second: number): number {
 ```
 
 ---
-### <a name="streaming"></a>@streaming
 <a id="streaming"></a>
+
+### <a name="streaming"></a>@streaming
 
 用于表示自定义函数是一个流式处理函数。 
 
@@ -265,8 +272,9 @@ function add(first: number, second: number): number {
 流式处理函数不能标记为 [@volatile](#volatile)。
 
 ---
-### <a name="volatile"></a>@volatile
 <a id="volatile"></a>
+
+### <a name="volatile"></a>@volatile
 
 可变函数是指其结果不断变化的函数，即使不采用任何参数或参数未发生更改都是如此。 Excel 在每次完成计算后，都会重新计算包含可变函数和所有依赖项的单元格。 因此，过于依赖可变函数会使重新计算时间变慢，请谨慎使用。
 

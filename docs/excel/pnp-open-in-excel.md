@@ -3,12 +3,12 @@ title: 从网页中打开 Excel 并嵌入 Office 外接程序
 description: 从网页中打开 Excel 并嵌入 Office 外接程序。
 ms.date: 09/15/2020
 localization_priority: Normal
-ms.openlocfilehash: 49df253c714f3ad84d2523b87e7df894b9027355
-ms.sourcegitcommit: ea03e4ea2e8537d5f6d52477816209f6c1a6579c
+ms.openlocfilehash: 00846ca5ca05e65fd75629f5aad0e4fb3d947ab1
+ms.sourcegitcommit: 42202d7e2ac24dffa77cf937f5697a1cd79ee790
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "48166917"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "48308542"
 ---
 # <a name="open-excel-from-your-web-page-and-embed-your-office-add-in"></a>从网页中打开 Excel 并嵌入 Office 外接程序
 
@@ -27,7 +27,7 @@ ms.locfileid: "48166917"
 1. 将示例代码从  https://github.com/OfficeDev/Office-OOXML-EmbedAddin/archive/master.zip 您的计算机上的文件夹中提取出来。
 2. 若要生成并运行示例，请按照自述文件的 " **使用项目"** 部分中的步骤操作。
 3. 运行示例时，它将显示一个类似于以下屏幕截图的网页。 使用网页创建一个在打开时包含脚本实验室的新 Excel 文档。
-:::image type="content" source="../images/embed-script-lab-sample-ui.png" alt-text="嵌入脚本实验室示例显示用于选择 Excel 文件并将脚本实验室外接程序嵌入到其中的网页的屏幕截图。":::
+:::image type="content" source="../images/embed-script-lab-sample-ui.png" alt-text="网页上的 Excel 按钮的图像使用外接程序打开新的 Excel 文档，并将其置于嵌入式和自动打开状态。":::
 
 ### <a name="how-the-sample-works"></a>示例的工作原理
 
@@ -72,13 +72,7 @@ We.WebExtensionStoreReference webExtensionStoreReference1 = new We.WebExtensionS
 
 ## <a name="use-the-fluent-ui"></a>使用熟知的 UI
 
-:::image type="content" source="../images/fluent-ui-wxp.png" alt-text="适用于 Word、Excel 和 PowerPoint 的熟知 UI 图标。":::
-
-最佳做法是使用熟知的 UI 来帮助用户在 Microsoft 产品之间进行转换。 应始终使用 Office 图标来指示将从您的网页启动哪个 Office 应用程序。 让我们修改示例代码，以使用 Excel 图标指示它启动 Excel 应用程序。
-
-1. 打开 Visual Studio 中的示例。
-1. 打开 " **主页 .aspx** " 页面。
-1. 查找以下代码，它是表单上的 "下载" 按钮：
+:::image type="content" source="../images/fluent-ui-wxp.png" alt-text="网页上的 Excel 按钮的图像使用外接程序打开新的 Excel 文档，并将其置于嵌入式和自动打开状态。" 按钮：
     ```html
     <asp:Button ID="btnDownload" runat="server" Text="Download" OnClick="btnDownload_Click" /> 
     ```
@@ -186,16 +180,9 @@ OOXML SDK 基于 .NET。 如果您的 web 应用程序不是 .NET，则需要查
 
 您可以将 OOXML 代码放在 Azure 函数中，以将 .NET 代码与 web 应用程序的其余部分分开。 然后，调用 Azure 函数 (从 Web 应用程序生成 Excel 文档) 。 有关 Azure 函数的详细信息，请参阅 [Azure 函数简介](https://docs.microsoft.com/azure/azure-functions/functions-overview)。
 
-### <a name="simplify-authentication"></a>简化身份验证
+### <a name="use-single-sign-on"></a>使用单一登录
 
-通常情况下，在 web 应用程序中工作时，将对客户进行身份验证并登录。 一种最佳做法是允许他们在打开文档时保持登录状态，这样他们就无需再次登录即可使用 Office 外接程序。 处理此问题的一种良好方式是将生存期为的身份验证令牌传递给加载项。
-
-1. 使用 OOXML SDK 将身份验证令牌另存为文档中的自定义属性。
-1. 当加载项启动时，从文档中读取标记。
-1. 然后，外接程序可以连接到您的服务，而无需从客户进行任何其他身份验证步骤。
-
-> [!WARNING]
-> 在文档中嵌入身份验证令牌会带来安全风险，在未经授权的用户可以获取令牌的情况下。 我们建议使用生存期较短的身份验证令牌。 当外接程序使用短寿命令牌时，它应立即请求未保存在文档中的新的身份验证令牌。
+为了简化身份验证，我们建议你的外接程序实现单一登录。 有关详细信息，请参阅 [为 Office 加载项启用单一登录](../develop/sso-in-office-add-ins.md)
 
 ## <a name="see-also"></a>另请参阅
 
