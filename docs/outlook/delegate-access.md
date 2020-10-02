@@ -1,14 +1,14 @@
 ---
 title: 在 Outlook 加载项中启用代理访问方案
 description: 简要介绍了代理访问权限，并讨论了如何配置加载项支持。
-ms.date: 09/03/2020
+ms.date: 09/30/2020
 localization_priority: Normal
-ms.openlocfilehash: 68b912d35f68cbf1177dd0b809994840092330a9
-ms.sourcegitcommit: 83f9a2fdff81ca421cd23feea103b9b60895cab4
+ms.openlocfilehash: 68e9c8003f8d223a591283fd1a73f0a38bd3c8a4
+ms.sourcegitcommit: 6c3a04acde57832feeaaa599148f93af7e3e36ea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/11/2020
-ms.locfileid: "47430980"
+ms.lasthandoff: 10/02/2020
+ms.locfileid: "48336417"
 ---
 # <a name="enable-delegate-access-scenarios-in-an-outlook-add-in"></a>在 Outlook 加载项中启用代理访问方案
 
@@ -23,7 +23,7 @@ ms.locfileid: "47430980"
 
 下表介绍了 Office JavaScript API 支持的代理权限。
 
-|权限|值|Description|
+|权限|值|说明|
 |---|---:|---|
 |阅读|1 (000001) |可以读取项目。|
 |写入|2 (000010) |可以创建项目。|
@@ -83,9 +83,6 @@ ms.locfileid: "47430980"
 
 可以通过调用 [getSharedPropertiesAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods) 方法，在撰写或阅读模式下获取项目的共享属性。 这将返回一个 [SharedProperties](/javascript/api/outlook/office.sharedproperties) 对象，该对象当前提供代理的权限、所有者的电子邮件地址、REST API 的基 URL 和目标邮箱。
 
-> [!IMPORTANT]
-> 在委托方案中，外接程序可以使用 REST 而不是 EWS，并且必须将外接程序的权限设置为，以 `ReadWriteMailbox` 启用对所有者邮箱的 rest 访问。
-
 下面的示例展示了如何获取邮件或约会的共享属性、检查代理是否具有 **写入** 权限，以及如何发出 REST 调用。
 
 ```js
@@ -139,6 +136,46 @@ function performOperation() {
 
 > [!TIP]
 > 作为代理，您可以使用 REST [获取附加到 outlook 项目或组文章的 outlook 邮件的内容](/graph/outlook-get-mime-message#get-mime-content-of-an-outlook-message-attached-to-an-outlook-item-or-group-post)。
+
+## <a name="handle-calling-rest-on-shared-and-non-shared-items"></a>处理共享和非共享项上的呼叫 REST
+
+如果要对某个项目调用 REST 操作（无论该项目是否共享），则可以使用 `getSharedPropertiesAsync` API 来确定该项目是否已共享。 之后，可以使用相应的对象构造该操作的 REST URL。
+
+```js
+if (item.getSharedPropertiesAsync) {
+  // In Windows, Mac, and the web client, this indicates a shared item so use SharedProperties properties to construct the REST URL.
+  // Add-ins don't activate on shared items in mobile so no need to handle.
+
+  // Perform operation for shared item.
+} else {
+  // In general, this is not a shared item, so construct the REST URL using info from the Call REST APIs article:
+  // https://docs.microsoft.com/office/dev/add-ins/outlook/use-rest-api
+
+  // Perform operation for non-shared item.
+}
+```
+
+## <a name="limitations"></a>限制
+
+根据你的外接程序的方案，在处理委派情况时需要考虑以下几个限制。
+
+### <a name="rest-and-ews"></a>REST 和 EWS
+
+您的外接程序可以使用 REST 而不是 EWS，并且必须将外接程序的权限设置为，以 `ReadWriteMailbox` 启用对所有者邮箱的 rest 访问。
+
+### <a name="message-compose-mode"></a>邮件撰写模式
+
+在邮件撰写模式下，在 web 或 Windows 上的 Outlook 中不支持 [getSharedPropertiesAsync](/javascript/api/outlook/office.messagecompose#getsharedpropertiesasync-options--callback-) ，除非满足以下条件。
+
+1. 所有者至少与委派共享一个邮箱文件夹。
+1. 代理将邮件草稿共享到共享文件夹中。
+
+    示例：
+
+    - 代理答复或转发共享文件夹中的电子邮件。
+    - 代理保存草稿邮件，然后将其从其自己的 " **草稿** " 文件夹移动到共享文件夹。 委派从共享文件夹打开草稿，然后继续撰写。
+
+邮件发送后，通常会在代理的 " **已发送邮件** " 文件夹中找到。
 
 ## <a name="see-also"></a>另请参阅
 
