@@ -1,14 +1,14 @@
 ---
 title: Office 加载项的隐私和安全
 description: 了解 Office 外接程序平台的隐私和安全方面。
-ms.date: 09/14/2020
+ms.date: 10/06/2020
 localization_priority: Normal
-ms.openlocfilehash: 4e17463ee7293c74d905238904baef1344a6e6b3
-ms.sourcegitcommit: 7f25a4a15c91e173c11c2cea03bfb605d4d5a98d
+ms.openlocfilehash: 58380145add425b90a2ab2c9011db3c7709973b6
+ms.sourcegitcommit: d7fd52260eb6971ab82009c835b5a752dc696af4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/14/2020
-ms.locfileid: "47652578"
+ms.lasthandoff: 10/07/2020
+ms.locfileid: "48370519"
 ---
 # <a name="privacy-and-security-for-office-add-ins"></a>Office 加载项的隐私和安全
 
@@ -69,13 +69,11 @@ Office 外接程序运行时管理进程间通信、JavaScript API 调用和事�
 
 - 要求开发人员在提交加载项时提供身份证明、合约协议和适合的隐私策略。
 
-- 确保加载项的源在只读模式下可访问。
-
 - 支持针对可用加载项的用户审阅系统以推广自我管理的社区。
 
 ## <a name="optional-connected-experiences"></a>可选连接体验
 
-最终用户和 IT 管理员可以关闭 Office 桌面和移动客户端 [中的可选连接体验](/deployoffice/privacy/optional-connected-experiences) 。 对于 Office 外接程序，禁用 **可选连接体验** 设置的影响是用户无法再通过这些客户端访问外接程序或 Office 应用商店。 但是，某些被认为是必要的或业务关键型的 Microsoft 加载项，并且由组织的 IT 管理员通过 [集中部署](../publish/centralized-deployment.md) 部署的外接程序仍将可用。 此外，外接程序和存储在 Outlook 网页版中仍然可用，而不考虑设置的状态。
+最终用户和 IT 管理员可在 Office 桌面和移动客户端中关闭[可选的已连接体验](/deployoffice/privacy/optional-connected-experiences)。 对于 Office 外接程序，禁用 **可选连接体验** 设置的影响是用户无法再通过这些客户端访问外接程序或 Office 应用商店。 但是，某些被认为是必要的或业务关键型的 Microsoft 加载项，并且由组织的 IT 管理员通过 [集中部署](../publish/centralized-deployment.md) 部署的外接程序仍将可用。 此外，外接程序和存储在 Outlook 网页版中仍然可用，而不考虑设置的状态。
 
 有关特定于 Outlook 的行为的详细信息，请参阅 [outlook 外接程序的隐私、权限和安全性](../outlook/privacy-and-security.md#optional-connected-experiences)。
 
@@ -275,4 +273,4 @@ Office 设置的管理和执行由组策略设置完成。 这些操作可通过
 - [同源策略第 1 部分：不准偷看](/archive/blogs/ieinternals/same-origin-policy-part-1-no-peeking)
 - [针对 JavaScript 的同源策略](https://developer.mozilla.org/docs/Web/Security/Same-origin_policy)
 - [IE 保护模式](https://support.microsoft.com/help/2761180/apps-for-office-don-t-start-if-you-disable-protected-mode-for-the-restricted-sites-zone-in-internet-explorer)
-- [适用于 Microsoft 365 应用的隐私控制](/deployoffice/privacy/overview-privacy-controls)
+- [Microsoft 365 应用的隐私控制](/deployoffice/privacy/overview-privacy-controls)
