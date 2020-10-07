@@ -1,14 +1,14 @@
 ---
 title: 加载项命令的基本概念
 description: 了解如何将自定义功能区按钮和菜单项添加到 Office 作为 Office 加载项的一部分。
-ms.date: 07/10/2020
+ms.date: 10/03/2020
 localization_priority: Priority
-ms.openlocfilehash: 13db2191d9691a699c5976b812e1ca6d8f3bf1ae
-ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
+ms.openlocfilehash: eea1983d8c45d13ca48594c108e2992a1bec0d02
+ms.sourcegitcommit: d7fd52260eb6971ab82009c835b5a752dc696af4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "47293350"
+ms.lasthandoff: 10/07/2020
+ms.locfileid: "48370505"
 ---
 # <a name="add-in-commands-for-excel-powerpoint-and-word"></a>Excel、PowerPoint 和 Word 的加载项命令
 
@@ -52,12 +52,12 @@ ms.locfileid: "47293350"
 - ShowTaskpane - 显示一个或多个在其中加载自定义 HTML 页的窗格。
 - ExecuteFunction - 加载一个不可见的 HTML 页，然后在其中执行一个 JavaScript 函数。若要在你的函数（例如错误、进度或其他输入）中显示 UI，你可以使用 [displayDialog](/javascript/api/office/office.ui) API。  
 
-### <a name="default-enabled-or-disabled-status-preview"></a>默认启用或禁用状态（预览版）
+### <a name="default-enabled-or-disabled-status"></a>默认启用或禁用状态
 
 可指定在加载项启动时是启用还是禁用该命令，并以编程方式更改设置。
 
 > [!NOTE]
-> 此功能处于预览状态，并非在所有 Office 应用程序或方案中均受支持。 有关详细信息，请参阅[启用和禁用加载项命令](disable-add-in-commands.md)。
+> 此功能并未在所有 Office 应用程序或方案中受支持。 有关详细信息，请参阅[启用和禁用加载项命令](disable-add-in-commands.md)。
 
 ## <a name="supported-platforms"></a>支持的平台
 
