@@ -1,14 +1,14 @@
 ---
 title: Outlook 加载项的隐私、权限和安全性
 description: 了解如何管理 Outlook 加载项中的隐私、权限和安全性。
-ms.date: 09/14/2020
+ms.date: 10/05/2020
 localization_priority: Priority
-ms.openlocfilehash: 3bad5cc3080d67cdfab8639d9140b9bfa3e25559
-ms.sourcegitcommit: 6e6de48f746416ec68b2cf4c298253986486fbfd
+ms.openlocfilehash: 93eee06659b6452e6dd0961837715be5557e6c2c
+ms.sourcegitcommit: d7fd52260eb6971ab82009c835b5a752dc696af4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/14/2020
-ms.locfileid: "47651942"
+ms.lasthandoff: 10/07/2020
+ms.locfileid: "48370512"
 ---
 # <a name="privacy-permissions-and-security-for-outlook-add-ins"></a>Outlook 外接程序的隐私、权限和安全性
 
@@ -61,11 +61,14 @@ ms.locfileid: "47651942"
 
 ## <a name="optional-connected-experiences"></a>可选连接体验
 
-最终用户和 IT 管理员可在 Office 桌面和移动客户端中关闭[可选的已连接体验](/deployoffice/privacy/optional-connected-experiences)。 对于 Outlook 外接程序，禁用**可选连接体验的影响**设置取决于客户端，但通常意味着不允许使用用户安装的加载项或访问 Office 应用商店。 由组织的 IT 管理员通过[集中部署来部署的某些 Microsoft 加载项被视为必要的、关键的或业务关键型的加载项，将仍然可用](../publish/centralized-deployment.md)。
+最终用户和 IT 管理员可在 Office 桌面和移动客户端中关闭[可选的已连接体验](/deployoffice/privacy/optional-connected-experiences)。 对于 Outlook 加载项，禁用**可选连接体验的影响**设置取决于客户端，但通常意味着不允许使用用户安装的加载项或访问 Office 应用商店。 由组织的 IT 管理员通过[集中部署来部署的某些 Microsoft 加载项被视为必要的、关键的或业务关键型的加载项，将仍然可用](../publish/centralized-deployment.md)。
 
-- Windows、Mac：**“获取加载项”** 按钮不会显示，因此用户无法再管理其加载项或访问 Office 应用商店。
+- Windows\*、Mac：“**获取加载项**”按钮不会显示，因此用户无法再管理其加载项或访问 Office 应用商店。
 - Android、iOS：**“获取外接程序”** 对话框仅显示管理员部署的加载项。
 - 浏览器：加载项的可用性和对应用商店的访问不受影响，因此用户可以继续[管理其加载项](https://support.microsoft.com/office/8f2ce816-5df4-44a5-958c-f7f9d6dabdce)（包括由管理员部署的加载项）。
+
+  > [!NOTE]
+  > \* 对于 Windows，版本 2009（内部版本 13127.20296）提供了对此体验/行为的支持。 如需了解你的版本的更多详情，请参阅 [Microsoft 365](/officeupdates/update-history-office365-proplus-by-date) 的更新历史记录页，以及如何[查找 Office 客户端版本和更新频道](https://support.microsoft.com/office/932788b8-a3ce-44bf-bb09-e334518b8b19)。
 
 有关常规加载项行为，请参阅 [Office 加载项的隐私和安全性](../concepts/privacy-and-security.md#optional-connected-experiences)。
 

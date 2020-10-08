@@ -1,15 +1,15 @@
 ---
 title: 教程：生成邮件撰写 Outlook 外接程序
 description: 在本教程中，你将生成一个可将 GitHub gist 插入到新邮件正文中的 Outlook 外接程序。
-ms.date: 08/24/2020
+ms.date: 10/02/2020
 ms.prod: outlook
 localization_priority: Priority
-ms.openlocfilehash: 6b4dabd803f304270fd7926a4d02e2cb485bb526
-ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
+ms.openlocfilehash: 78a3d2c8d3d44ceb98b0eb0964ea487bcb019aec
+ms.sourcegitcommit: d7fd52260eb6971ab82009c835b5a752dc696af4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "47293392"
+ms.lasthandoff: 10/07/2020
+ms.locfileid: "48370533"
 ---
 # <a name="tutorial-build-a-message-compose-outlook-add-in"></a>教程：生成邮件撰写 Outlook 外接程序
 
@@ -103,7 +103,7 @@ ms.locfileid: "47293392"
 
     - **选择项目类型** - `Office Add-in Task Pane project`
 
-    - **选择脚本类型** - `Javascript`
+    - **选择脚本类型** - `JavaScript`
 
     - **要如何命名加载项?** - `Git the gist`
 
@@ -157,16 +157,13 @@ ms.locfileid: "47293392"
 在继续之前，让我们测试生成器创建的基本外接程序，以确认项目已正确设置。
 
 > [!NOTE]
-> Office 加载项应使用 HTTPS，而不是 HTTP（即便是在开发时也是如此）。 如果系统在运行以下命令后提示你安装证书，请接受提示以安装 Yeoman 生成器提供的证书。
+> Office 加载项应使用 HTTPS，而不是 HTTP（即便是在开发时也是如此）。 如果系统在运行以下命令后提示你安装证书，请接受提示以安装 Yeoman 生成器提供的证书。 你可能还必须以管理员身份运行命令提示符或终端才能进行更改。
 
 1. 在项目的根目录中运行以下命令。 运行此命令时，本地 Web 服务器将启动（如果尚未运行）。
 
     ```command&nbsp;line
-    npm start
+    npm run dev-server
     ```
-
-    > [!IMPORTANT]
-    > 如果出现“不支持旁加载”错误，可将其忽略并继续。
 
 1. 请按照[旁加载 Outlook 外接程序以供测试](../outlook/sideload-outlook-add-ins-for-testing.md)中的说明，旁加载位于项目根目录中的 **manifest.xml** 文件。
 
@@ -539,21 +536,51 @@ ul {
       dialog: "./src/settings/dialog.js"
     },
     ```
-  
-2. 在 `config` 对象中找到 `plugins` 数组并将这两个新对象添加到该数组末尾。
+
+1. 在 `config` 对象中找到 `plugins` 数组。 在 `new CopyWebpackPlugin` 对象的 `patterns` 数组中，添加一个新条目在`taskpane.css`条目后。
+
+    ```js
+    {
+      to: "dialog.css",
+      from: "./src/settings/dialog.css"
+    },
+    ```
+
+    完成此操作之后，`new CopyWebpackPlugin` 对象将与此类似：
+
+    ```js
+      new CopyWebpackPlugin({
+        patterns: [
+        {
+          to: "taskpane.css",
+          from: "./src/taskpane/taskpane.css"
+        },
+        {
+          to: "dialog.css",
+          from: "./src/settings/dialog.css"
+        },
+        {
+          to: "[name]." + buildType + ".[ext]",
+          from: "manifest*.xml",
+          transform(content) {
+            if (dev) {
+              return content;
+            } else {
+              return content.toString().replace(new RegExp(urlDev, "g"), urlProd);
+            }
+          }
+        }
+      ]}),
+    ```
+
+1. 在 `config` 对象中找到 `plugins` 数组，并将这个新对象添加到该数组的末尾。
 
     ```js
     new HtmlWebpackPlugin({
       filename: "dialog.html",
       template: "./src/settings/dialog.html",
       chunks: ["polyfill", "dialog"]
-    }),
-    new CopyWebpackPlugin([
-      {
-        to: "dialog.css",
-        from: "./src/settings/dialog.css"
-      }
-    ])
+    })
     ```
 
     完成此操作之后，新的 `plugins` 数组将与此类似：
@@ -564,14 +591,30 @@ ul {
       new HtmlWebpackPlugin({
         filename: "taskpane.html",
         template: "./src/taskpane/taskpane.html",
-        chunks: ['polyfill', 'taskpane']
+        chunks: ["polyfill", "taskpane"]
       }),
-      new CopyWebpackPlugin([
-      {
-        to: "taskpane.css",
-        from: "./src/taskpane/taskpane.css"
-      }
-      ]),
+      new CopyWebpackPlugin({
+        patterns: [
+        {
+          to: "taskpane.css",
+          from: "./src/taskpane/taskpane.css"
+        },
+        {
+          to: "dialog.css",
+          from: "./src/settings/dialog.css"
+        },
+        {
+          to: "[name]." + buildType + ".[ext]",
+          from: "manifest*.xml",
+          transform(content) {
+            if (dev) {
+              return content;
+            } else {
+              return content.toString().replace(new RegExp(urlDev, "g"), urlProd);
+            }
+          }
+        }
+      ]}),
       new HtmlWebpackPlugin({
         filename: "commands.html",
         template: "./src/commands/commands.html",
@@ -580,33 +623,24 @@ ul {
       new HtmlWebpackPlugin({
         filename: "dialog.html",
         template: "./src/settings/dialog.html",
-        chunks: ['polyfill', 'dialog']
-      }),
-      new CopyWebpackPlugin([
-      {
-        to: "dialog.css",
-        from: "./src/settings/dialog.css"
-      }
-      ])
+        chunks: ["polyfill", "dialog"]
+      })
     ],
     ```
 
-3. 如果 Web 服务器正在运行，请关闭节点命令窗口。
+1. 如果 Web 服务器正在运行，请关闭节点命令窗口。
 
-4. 运行以下命令以重建项目。
+1. 运行以下命令以重建项目。
 
     ```command&nbsp;line
     npm run build
     ```
 
-5. 运行以下命令以启动 Web 服务器。
+1. 运行以下命令以启动 Web 服务器。
 
     ```command&nbsp;line
-    npm start
+    npm run dev-server
     ```
-
-    > [!IMPORTANT]
-    > 如果出现“不支持旁加载”错误，可将其忽略并继续。
 
 ### <a name="fetch-data-from-github"></a>从 GitHub 提取数据
 
@@ -906,10 +940,7 @@ function buildBodyContent(gist, callback) {
 
 ### <a name="test-the-button"></a>测试按钮
 
-请保存所有更改并从命令提示符运行 `npm start`（如果服务器尚未处于运行状态）。 然后完成以下步骤以测试“**插入默认 gist**”按钮。
-
-> [!IMPORTANT]
-> 如果出现“不支持旁加载”错误，可将其忽略并继续。
+请保存所有更改并从命令提示符运行 `npm run dev-server`（如果服务器尚未处于运行状态）。 然后完成以下步骤以测试“**插入默认 gist**”按钮。
 
 1. 打开 Outlook 并撰写一封新邮件。
 
@@ -1270,10 +1301,7 @@ ul {
 
 ### <a name="test-the-button"></a>测试按钮
 
-请保存所有更改并从命令提示符运行 `npm start`（如果服务器尚未处于运行状态）。 然后完成以下步骤以测试“**插入 gist**”按钮。
-
-> [!IMPORTANT]
-> 如果出现“不支持旁加载”错误，可将其忽略并继续。
+请保存所有更改并从命令提示符运行 `npm run dev-server`（如果服务器尚未处于运行状态）。 然后完成以下步骤以测试“**插入 gist**”按钮。
 
 1. 打开 Outlook 并撰写一封新邮件。
 
