@@ -1,14 +1,14 @@
 ---
 title: Outlook 加载项的隐私、权限和安全性
 description: 了解如何管理 Outlook 加载项中的隐私、权限和安全性。
-ms.date: 10/05/2020
+ms.date: 10/07/2020
 localization_priority: Priority
-ms.openlocfilehash: 93eee06659b6452e6dd0961837715be5557e6c2c
-ms.sourcegitcommit: d7fd52260eb6971ab82009c835b5a752dc696af4
+ms.openlocfilehash: aa30b4c9aff9a07761d06ae538d56a01f2c30e0d
+ms.sourcegitcommit: 4bfef315102bd5b4333ff9aeaa6537cffb5bca9e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/07/2020
-ms.locfileid: "48370512"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "48398414"
 ---
 # <a name="privacy-permissions-and-security-for-outlook-add-ins"></a>Outlook 外接程序的隐私、权限和安全性
 
@@ -68,7 +68,7 @@ ms.locfileid: "48370512"
 - 浏览器：加载项的可用性和对应用商店的访问不受影响，因此用户可以继续[管理其加载项](https://support.microsoft.com/office/8f2ce816-5df4-44a5-958c-f7f9d6dabdce)（包括由管理员部署的加载项）。
 
   > [!NOTE]
-  > \* 对于 Windows，版本 2009（内部版本 13127.20296）提供了对此体验/行为的支持。 如需了解你的版本的更多详情，请参阅 [Microsoft 365](/officeupdates/update-history-office365-proplus-by-date) 的更新历史记录页，以及如何[查找 Office 客户端版本和更新频道](https://support.microsoft.com/office/932788b8-a3ce-44bf-bb09-e334518b8b19)。
+  > \* 对于 Windows，版本 2008（内部版本 13127.20296）提供了对此体验/行为的支持。 如需了解你的版本的更多详情，请参阅 [Microsoft 365](/officeupdates/update-history-office365-proplus-by-date) 的更新历史记录页，以及如何[查找 Office 客户端版本和更新频道](https://support.microsoft.com/office/932788b8-a3ce-44bf-bb09-e334518b8b19)。
 
 有关常规加载项行为，请参阅 [Office 加载项的隐私和安全性](../concepts/privacy-and-security.md#optional-connected-experiences)。
 
