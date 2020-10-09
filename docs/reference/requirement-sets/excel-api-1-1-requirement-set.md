@@ -127,7 +127,7 @@ Excel JavaScript API 1.1 是首版 API。 它是 Excel 2016 支持的唯一特�
 ||[visible](/javascript/api/excel/excel.nameditem#visible)|指定对象是否可见。|
 |[NamedItemCollection](/javascript/api/excel/excel.nameditemcollection)|[getItem(name: string)](/javascript/api/excel/excel.nameditemcollection#getitem-name-)|使用其名称获取 NamedItem 对象。|
 ||[items](/javascript/api/excel/excel.nameditemcollection#items)|获取此集合中已加载的子项。|
-|[区域](/javascript/api/excel/excel.range)|[clear(applyTo?: Excel.ClearApplyTo)](/javascript/api/excel/excel.range#clear-applyto-)|清除区域值、格式、填充、边框等。|
+|[Range](/javascript/api/excel/excel.range)|[clear(applyTo?: Excel.ClearApplyTo)](/javascript/api/excel/excel.range#clear-applyto-)|清除区域值、格式、填充、边框等。|
 ||[删除 (shift： DeleteShiftDirection) ](/javascript/api/excel/excel.range#delete-shift-)|删除与区域相关的单元格。|
 ||[formulas](/javascript/api/excel/excel.range#formulas)|表示采用 A1 表示法的公式。|
 ||[formulasLocal](/javascript/api/excel/excel.range#formulaslocal)|表示采用 A1 样式表示法的公式，使用用户的语言和数字格式区域设置。例如，英语中的公式 "=SUM(A1, 1.5)" 在德语中将变为 "=SUMME(A1; 1,5)"。|
