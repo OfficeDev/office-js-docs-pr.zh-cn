@@ -1,14 +1,14 @@
 ---
 title: 使用 Excel JavaScript API 处理注释
 description: 有关使用 Api 添加、删除和编辑注释和注释线程的信息。
-ms.date: 03/17/2020
+ms.date: 10/09/2020
 localization_priority: Normal
-ms.openlocfilehash: f0be13cc666ed4b6b5b3cfac59f299c872139f4c
-ms.sourcegitcommit: c6308cf245ac1bc66a876eaa0a7bb4a2492991ac
+ms.openlocfilehash: 85312cbd92aa6c9d0f82fd167e8a372c2eff8c85
+ms.sourcegitcommit: b50eebd303adcc22eb86e65756ce7e9a82f41a57
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "47408570"
+ms.lasthandoff: 10/14/2020
+ms.locfileid: "48456550"
 ---
 # <a name="work-with-comments-using-the-excel-javascript-api"></a>使用 Excel JavaScript API 处理注释
 
@@ -202,8 +202,123 @@ Excel.run(function (context) {
 });
 ```
 
+## <a name="comment-events"></a>注释事件
+
+您的外接程序可以侦听注释的添加、更改和删除。 [批注事件](/javascript/api/excel/excel.commentcollection#event-details) 发生在 `CommentCollection` 对象上。 若要侦听注释事件，请注册 `onAdded` 、 `onChanged` 或 `onDeleted` 注释事件处理程序。 当检测到注释事件时，请使用此事件处理程序检索有关添加的、已更改或已删除的注释的数据。 该 `onChanged` 事件还处理注释添加、更改和删除。 
+
+每个注释事件仅在同时执行多个添加、更改或删除时触发一次。 所有 [CommentAddedEventArgs](/javascript/api/excel/excel.commentaddedeventargs)、 [CommentChangedEventArgs](/javascript/api/excel/excel.commentchangedeventarg)和 [CommentDeletedEventArgs](/javascript/api/excel/excel.commentdeletedeventargs) 对象都包含注释 id 的数组，用于将事件操作映射回注释集合。
+
+若要详细了解如何注册事件处理程序、处理事件和删除事件处理程序，请参阅使用 [Excel JAVASCRIPT API 文章处理事件](excel-add-ins-events.md) 。 
+
+### <a name="comment-addition-events"></a>注释添加事件 
+向 `onAdded` 注释集合中添加一个或多个新注释时，将触发该事件。 将答复添加到注释线程中时， *不* 会触发此事件 (请参阅 [注释更改事件](#comment-change-events) 以了解有关注释答复事件) 。
+
+下面的示例展示了如何注册 `onAdded` 事件处理程序，然后使用该 `CommentAddedEventArgs` 对象来检索 `commentDetails` 添加的注释的数组。
+
+> [!NOTE]
+> 此示例仅在添加单个批注时才起作用。 
+
+```js
+Excel.run(function (context) {
+    var comments = context.workbook.worksheets.getActiveWorksheet().comments;
+
+    // Register the onAdded comment event handler.
+    comments.onAdded.add(commentAdded);
+
+    return context.sync();
+});
+
+function commentAdded() {
+    Excel.run(function (context) {
+        // Retrieve the added comment using the comment ID.
+        // Note: This method assumes only a single comment is added at a time. 
+        var addedComment = context.workbook.comments.getItem(event.commentDetails[0].commentId);
+
+        // Load the added comment's data.
+        addedComment.load(["content", "authorName"]);
+
+        return context.sync().then(function () {
+            // Print out the added comment's data.
+            console.log(`A comment was added. ID: ${event.commentDetails[0].commentId}. Comment content:${addedComment.content}. Comment author:${addedComment.authorName}`);
+            return context.sync();
+        });            
+    });
+}
+```
+
+### <a name="comment-change-events"></a>批注更改事件 
+`onChanged`在下列情况下，会触发注释事件。
+
+- 更新注释的内容。
+- 解析注释线程。
+- 重新打开注释线程。
+- 将答复添加到注释线程中。
+- 在注释线程中更新答复。
+- 在注释线程中删除答复。
+
+下面的示例展示了如何注册 `onChanged` 事件处理程序，然后使用该 `CommentChangedEventArgs` 对象来检索 `commentDetails` 已更改注释的数组。
+
+> [!NOTE]
+> 此示例仅在更改单个批注时才起作用。 
+
+```js
+Excel.run(function (context) {
+    var comments = context.workbook.worksheets.getActiveWorksheet().comments;
+
+    // Register the onChanged comment event handler.
+    comments.onChanged.add(commentChanged);
+
+    return context.sync();
+});    
+
+function commentChanged() {
+    Excel.run(function (context) {
+        // Retrieve the changed comment using the comment ID.
+        // Note: This method assumes only a single comment is changed at a time. 
+        var changedComment = context.workbook.comments.getItem(event.commentDetails[0].commentId);
+
+        // Load the changed comment's data.
+        changedComment.load(["content", "authorName"]);
+
+        return context.sync().then(function () {
+            // Print out the changed comment's data.
+            console.log(`A comment was changed. ID: ${event.commentDetails[0].commentId}`. Updated comment content: ${changedComment.content}`. Comment author: ${changedComment.authorName}`);
+            return context.sync();
+        });
+    });
+}
+```
+
+### <a name="comment-deletion-events"></a>注释删除事件
+`onDeleted`从注释集合中删除注释时将触发该事件。 删除注释后，其元数据将不再可用。 如果外接程序管理各个注释，则 [CommentDeletedEventArgs](/javascript/api/excel/excel.commentdeletedeventargs) 对象提供注释 id。
+
+下面的示例展示了如何注册 `onDeleted` 事件处理程序，然后使用该 `CommentDeletedEventArgs` 对象来检索 `commentDetails` 已删除注释的数组。
+
+> [!NOTE]
+> 此示例仅在删除单个批注时才起作用。 
+
+```js
+Excel.run(function (context) {
+    var comments = context.workbook.worksheets.getActiveWorksheet().comments;
+
+    // Register the onDeleted comment event handler.
+    comments.onDeleted.add(commentDeleted);
+
+    return context.sync();
+});
+
+function commentDeleted() {
+    Excel.run(function (context) {
+        // Print out the deleted comment's ID.
+        // Note: This method assumes only a single comment is deleted at a time. 
+        console.log(`A comment was deleted. ID: ${event.commentDetails[0].commentId}`);
+    });
+}
+```
+
 ## <a name="see-also"></a>另请参阅
 
 - [Office 外接程序中的 Excel JavaScript 对象模型](excel-add-ins-core-concepts.md)
 - [使用 Excel JavaScript API 处理工作簿](excel-add-ins-workbooks.md)
+- [使用 Excel JavaScript API 处理事件](excel-add-ins-events.md)
 - [在 Excel 中插入批注和备注](https://support.office.com/article/insert-comments-and-notes-in-excel-bdcc9f5d-38e2-45b4-9a92-0b2b5c7bf6f8)
