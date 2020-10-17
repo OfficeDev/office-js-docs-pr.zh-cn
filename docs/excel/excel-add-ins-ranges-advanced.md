@@ -1,14 +1,14 @@
 ---
 title: 使用 Excel JavaScript API 对区域执行操作（高级）
 description: 高级的 range 对象函数和方案，如特殊单元格、删除重复项以及使用日期。
-ms.date: 08/26/2020
+ms.date: 10/13/2020
 localization_priority: Normal
-ms.openlocfilehash: 485fb34c11774045308c6ed9053d01097cdc3f5b
-ms.sourcegitcommit: ed2a98b6fb5b432fa99c6cefa5ce52965dc25759
+ms.openlocfilehash: 144012177e0e070149f6cef825c63392a468773d
+ms.sourcegitcommit: 6fa29989dfaec4dfa0f8df3fe5fb038d7afbae30
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/16/2020
-ms.locfileid: "47819572"
+ms.lasthandoff: 10/16/2020
+ms.locfileid: "48487885"
 ---
 # <a name="work-with-ranges-using-the-excel-javascript-api-advanced"></a>使用 Excel JavaScript API 对区域执行操作（高级）
 
@@ -354,6 +354,45 @@ Excel.run(function (context) {
 ```
 
 您还可以使用 getSpillParent 方法，在给定单元格 [内](/javascript/api/excel/excel.range#getspillparent--) 查找负责 spilling 的单元格。 请注意， `getSpillParent` 仅当 range 对象为单个单元格时才起作用。 `getSpillParent`对包含多个单元格的区域进行调用将导致 (引发错误，或返回) 的 null 范围 `Range.getSpillParentOrNullObject` 。
+
+## <a name="get-formula-precedents"></a>获取公式引用单元格
+
+Excel 公式通常指其他单元格。 当单元格向公式提供数据时，它被称为公式 "引用单元格"。 若要了解有关与单元格之间的关系相关的 Excel 功能的详细信息，请参阅 [显示公式和单元格之间的关系](https://support.microsoft.com/office/display-the-relationships-between-formulas-and-cells-a59bef2b-3701-46bf-8ff1-d3518771d507) 一文。 
+
+使用 [getDirectPrecedents](/javascript/api/excel/excel.range#getdirectprecedents--)，外接程序可以找到公式的直接引用单元格。 `Range.getDirectPrecedents` 返回一个 `WorkbookRangeAreas` 对象。 此对象包含工作簿中所有引用单元格的地址。 `RangeAreas`对于每个包含至少一个公式引用单元格的工作表，它都有一个单独的对象。 有关使用对象的详细信息，请参阅 [在 Excel 加载项中同时处理多个区域](excel-add-ins-multiple-ranges.md) `RangeAreas` 。
+
+在 Excel UI 中，" **追踪引用** 单元格" 按钮将向选定的公式中的引用单元格绘制一个箭头。 与 Excel UI 按钮不同， `getDirectPrecedents` 方法不绘制箭头。 
+
+> [!IMPORTANT]
+> 该 `getDirectPrecedents` 方法不能跨工作簿检索引用单元格。 
+
+下面的示例获取活动区域的直接引用单元格，然后将这些单元格引用单元格的背景色更改为黄色。 
+
+> [!NOTE]
+> 活动区域必须包含引用同一工作簿中其他单元格的公式，突出显示才能正常工作。 
+
+```js
+Excel.run(function (context) {
+    // Precedents are cells that provide data to the selected formula.
+    var range = context.workbook.getActiveCell();
+    var directPrecedents = range.getDirectPrecedents();
+    range.load("address");
+    directPrecedents.areas.load("address");
+    
+    return context.sync()
+        .then(function () {
+            console.log(`Direct precedent cells of ${range.address}:`);
+
+            // Use the direct precedents API to loop through precedents of the active cell.
+            for (var i = 0; i < directPrecedents.areas.items.length; i++) {
+              // Highlight and print out the address of each precedent cell.
+              directPrecedents.areas.items[i].format.fill.color = "Yellow";
+              console.log(`  ${directPrecedents.areas.items[i].address}`);
+            }
+        })
+        .then(context.sync);
+}).catch(errorHandlerFunction);
+```
 
 ## <a name="see-also"></a>另请参阅
 
