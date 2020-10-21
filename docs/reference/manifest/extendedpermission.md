@@ -1,27 +1,27 @@
 ---
 title: 清单文件中的 ExtendedPermission 元素
 description: 定义外接程序访问关联的 API 或功能所需的扩展权限。
-ms.date: 03/05/2020
+ms.date: 10/15/2020
 localization_priority: Normal
-ms.openlocfilehash: 138acafb359e2b6e386b34fde7201b1b2c4b3177
-ms.sourcegitcommit: 83f9a2fdff81ca421cd23feea103b9b60895cab4
+ms.openlocfilehash: 996cac59c44220d05165c7be6ae7c3d79d853271
+ms.sourcegitcommit: 4e7c74ad67ea8bf6b47d65b2fde54a967090f65b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/11/2020
-ms.locfileid: "47430924"
+ms.lasthandoff: 10/20/2020
+ms.locfileid: "48626398"
 ---
 # <a name="extendedpermission-element"></a>`ExtendedPermission` 网元
 
 定义外接程序访问关联的 API 或功能所需的扩展权限。 `ExtendedPermission`元素是[ExtendedPermissions](extendedpermissions.md)的子元素。
 
 > [!IMPORTANT]
-> 此元素仅适用于针对 Exchange Online 的 [Outlook 外接程序预览要求集](../objectmodel/preview-requirement-set/outlook-requirement-set-preview.md) 。 使用此元素的外接程序无法发布到 AppSource 或通过集中部署进行部署。
+> 对此元素的支持是在要求集1.9 中引入的。 请查看支持此要求集的[客户端和平台](../../reference/requirement-sets/outlook-api-requirement-sets.md#requirement-sets-supported-by-exchange-servers-and-outlook-clients)。
 
 ## <a name="available-extended-permissions"></a>可用扩展权限
 
 以下是可用的值。
 
-|可用值|Description|Hosts|
+|可用值|说明|Hosts|
 |---|---|---|
 |`AppendOnSend`|声明外接程序使用的是 [appendOnSendAsync](/javascript/api/outlook/office.body?view=outlook-js-preview&preserve-view=true#appendonsendasync-data--options--callback-) API。|Outlook|
 

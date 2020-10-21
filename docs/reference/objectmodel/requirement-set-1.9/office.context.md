@@ -1,20 +1,20 @@
 ---
-title: Office. context-预览要求集
-description: 使用邮箱 API preview 要求集的 Outlook 外接程序可用的 Context 对象成员。
+title: Office。上下文要求集1。9
+description: 使用邮箱 API 要求集1.9 的 Outlook 外接程序可用的 Office 对象成员。
 ms.date: 10/14/2020
 localization_priority: Normal
-ms.openlocfilehash: 8286434d2cbfc11cf0d16f8bd014b4760f0337ff
+ms.openlocfilehash: 6b2657d1e608bd1820d3814d9a6bfab67681824c
 ms.sourcegitcommit: 4e7c74ad67ea8bf6b47d65b2fde54a967090f65b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 10/20/2020
-ms.locfileid: "48626405"
+ms.locfileid: "48628054"
 ---
-# <a name="context-mailbox-preview-requirement-set"></a> (邮箱预览要求集的上下文) 
+# <a name="context-mailbox-requirement-set-19"></a> (邮箱要求集1.9 的上下文) 
 
 ### <a name="officecontext"></a>[Office](office.md).context
 
-在所有 Office 应用中，上下文提供外接程序使用的共享接口。 此列表仅记录 Outlook 外接程序使用的那些接口。有关 "context" 命名空间的完整列表，请参阅 [通用 API 中的 "office. context reference](/javascript/api/office/office.context?view=outlook-js-preview&preserve-view=true)"。
+在所有 Office 应用中，上下文提供外接程序使用的共享接口。 此列表仅记录 Outlook 外接程序使用的那些接口。有关 "context" 命名空间的完整列表，请参阅 [通用 API 中的 "office. context reference](/javascript/api/office/office.context?view=outlook-js-1.9&preserve-view=true)"。
 
 ##### <a name="requirements"></a>要求
 
@@ -27,23 +27,22 @@ ms.locfileid: "48626405"
 
 | 属性 | 型号 | 返回类型 | 最小值<br>要求集 |
 |---|---|---|:---:|
-| [认证](#auth-auth) | 撰写<br>读取 | [Auth](/javascript/api/office/office.auth?view=outlook-js-preview&preserve-view=true) | [IdentityAPI 1。3](../../requirement-sets/identity-api-requirement-sets.md) |
+| [认证](#auth-auth) | 撰写<br>读取 | [Auth](/javascript/api/office/office.auth?view=outlook-js-1.9&preserve-view=true) | [IdentityAPI 1。3](../../requirement-sets/identity-api-requirement-sets.md) |
 | [contentLanguage](#contentlanguage-string) | 撰写<br>读取 | String | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| [过程](#diagnostics-contextinformation) | 撰写<br>读取 | [ContextInformation](/javascript/api/office/office.contextinformation?view=outlook-js-preview&preserve-view=true) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [过程](#diagnostics-contextinformation) | 撰写<br>读取 | [ContextInformation](/javascript/api/office/office.contextinformation?view=outlook-js-1.9&preserve-view=true) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 | [displayLanguage](#displaylanguage-string) | 撰写<br>读取 | String | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| [host](#host-hosttype) | 撰写<br>读取 | [HostType](/javascript/api/office/office.hosttype?view=outlook-js-preview&preserve-view=true) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| [mailbox](office.context.mailbox.md) | 撰写<br>读取 | [邮箱](/javascript/api/outlook/office.mailbox?view=outlook-js-preview&preserve-view=true) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| [officeTheme](#officetheme-officetheme) | 撰写<br>读取 | [OfficeTheme](/javascript/api/office/office.officetheme?view=outlook-js-preview&preserve-view=true) | [预览](../preview-requirement-set/outlook-requirement-set-preview.md) |
-| [平台](#platform-platformtype) | 撰写<br>读取 | [PlatformType](/javascript/api/office/office.platformtype?view=outlook-js-preview&preserve-view=true) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| [满足](#requirements-requirementsetsupport) | 撰写<br>读取 | [RequirementSetSupport](/javascript/api/office/office.requirementsetsupport?view=outlook-js-preview&preserve-view=true) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| [roamingSettings](#roamingsettings-roamingsettings) | 撰写<br>读取 | [RoamingSettings](/javascript/api/outlook/office.roamingsettings?view=outlook-js-preview&preserve-view=true) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| [ui](#ui-ui) | 撰写<br>读取 | [UI](/javascript/api/office/office.ui?view=outlook-js-preview&preserve-view=true) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [host](#host-hosttype) | 撰写<br>读取 | [HostType](/javascript/api/office/office.hosttype?view=outlook-js-1.9&preserve-view=true) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [mailbox](office.context.mailbox.md) | 撰写<br>读取 | [邮箱](/javascript/api/outlook/office.mailbox?view=outlook-js-1.9&preserve-view=true) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [平台](#platform-platformtype) | 撰写<br>读取 | [PlatformType](/javascript/api/office/office.platformtype?view=outlook-js-1.9&preserve-view=true) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [满足](#requirements-requirementsetsupport) | 撰写<br>读取 | [RequirementSetSupport](/javascript/api/office/office.requirementsetsupport?view=outlook-js-1.9&preserve-view=true) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [roamingSettings](#roamingsettings-roamingsettings) | 撰写<br>读取 | [RoamingSettings](/javascript/api/outlook/office.roamingsettings?view=outlook-js-1.9&preserve-view=true) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [ui](#ui-ui) | 撰写<br>读取 | [UI](/javascript/api/office/office.ui?view=outlook-js-1.9&preserve-view=true) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 
 ## <a name="property-details"></a>属性详细信息
 
 #### <a name="auth-auth"></a>auth： [auth](/javascript/api/office/office.auth)
 
-通过提供允许 Office 应用程序获取对加载项 web 应用程序的访问令牌的方法，支持 [单一登录 (SSO) ](../../../outlook/authenticate-a-user-with-an-sso-token.md) 。 这也使加载项能够间接访问已登录用户的 Microsoft Graph 数据，而不需要用户第二次登录。
+通过提供允许 Office 应用程序获取对加载项 web 应用程序的访问令牌的方法，支持 [单一登录 (SSO) ](../../../outlook/authenticate-a-user-with-an-sso-token.md) 。 这也使加载项能够间接访问已登录用户的 Microsoft Graph 数据，而不需要用户第二次登录。 请参阅 [IdentityAPI 1.3 要求集](../../requirement-sets/identity-api-requirement-sets.md)。
 
 ##### <a name="type"></a>类型
 
@@ -53,7 +52,7 @@ ms.locfileid: "48626405"
 
 |要求| 值|
 |---|---|
-|[最低版本的邮箱要求集](../../requirement-sets/outlook-api-requirement-sets.md)| 预览|
+|[最低版本的邮箱要求集](../../requirement-sets/outlook-api-requirement-sets.md)| 无|
 |[适用的 Outlook 模式](../../../outlook/outlook-add-ins-overview.md#extension-points)| 撰写或阅读|
 
 ##### <a name="example"></a>示例
@@ -205,55 +204,6 @@ function write(message){
 
 ```js
 console.log(JSON.stringify(Office.context.host));
-```
-
-<br>
-
----
----
-
-#### <a name="officetheme-officetheme"></a>officeTheme： [officeTheme](/javascript/api/office/office.officetheme)
-
-提供了访问 Office 主题颜色的属性。
-
-> [!NOTE]
-> 此成员仅在 Windows 中的 Outlook 中受支持。
-
-使用 Office 主题颜色，您可以将加载项的配色方案与用户选择的当前 Office 主题进行协调，以供用户使用 **office > Office 帐户 > Office 主题 UI**，该用户在所有 Office 客户端应用程序中应用。 使用 Office 主题颜色适用于邮件和任务窗格外接程序。
-
-##### <a name="type"></a>类型
-
-*   [OfficeTheme](/javascript/api/office/office.officetheme)
-
-##### <a name="properties"></a>属性：
-
-|名称| 类型| 说明|
-|---|---|---|
-|`bodyBackgroundColor`| String|获取十六进制三原色形式的 Office 主题正文背景色。|
-|`bodyForegroundColor`| String|获取十六进制三原色形式的 Office 主题正文前景色。|
-|`controlBackgroundColor`| 字符串|获取十六进制三原色形式的 Office 主题控制背景色。|
-|`controlForegroundColor`| 字符串|获取十六进制三原色形式的 Office 主题正文控制颜色。|
-
-##### <a name="requirements"></a>要求
-
-|要求| 值|
-|---|---|
-|[最低版本的邮箱要求集](../../requirement-sets/outlook-api-requirement-sets.md)| 预览|
-|[适用的 Outlook 模式](../../../outlook/outlook-add-ins-overview.md#extension-points)| 撰写或阅读|
-
-##### <a name="example"></a>示例
-
-```js
-function applyOfficeTheme(){
-  // Get office theme colors.
-  var bodyBackgroundColor = Office.context.officeTheme.bodyBackgroundColor;
-  var bodyForegroundColor = Office.context.officeTheme.bodyForegroundColor;
-  var controlBackgroundColor = Office.context.officeTheme.controlBackgroundColor
-  var controlForegroundColor = Office.context.officeTheme.controlForegroundColor;
-
-  // Apply body background color to a CSS class.
-  $('.body').css('background-color', bodyBackgroundColor);
-}
 ```
 
 <br>

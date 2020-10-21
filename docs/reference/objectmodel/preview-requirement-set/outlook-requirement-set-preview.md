@@ -1,14 +1,14 @@
 ---
 title: Outlook 外接程序 API 预览要求集
 description: 当前在 Outlook 外接程序的预览中的功能和 Api。
-ms.date: 09/21/2020
+ms.date: 10/14/2020
 localization_priority: Normal
-ms.openlocfilehash: f7c9c7c2e60a77c30e3957a0c759d0f20b22e86a
-ms.sourcegitcommit: 4a03d8b3f676ee2d91114813cb81bce5da3c8d6b
+ms.openlocfilehash: d91105e0cfbb97dc1a239e40b1c81adc4e76988b
+ms.sourcegitcommit: 4e7c74ad67ea8bf6b47d65b2fde54a967090f65b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "48175540"
+ms.lasthandoff: 10/20/2020
+ms.locfileid: "48626594"
 ---
 # <a name="outlook-add-in-api-preview-requirement-set"></a>Outlook 外接程序 API 预览要求集
 
@@ -24,7 +24,7 @@ Office JavaScript API 的 Outlook 外接程序 API 子集包括可以在 Outlook
 >
 > 对于其他功能，你可以通过填写和提交 [此表单](https://aka.ms/OWAPreview)，使用 Microsoft 365 帐户请求对网站上的 Outlook 的预览位的访问权限。 这些功能上记录了 "请求预览访问"。
 
-预览要求集包括[要求集 1.8](../requirement-set-1.8/outlook-requirement-set-1.8.md) 的所有功能。
+预览要求集包括 [要求集 1.9](../requirement-set-1.9/outlook-requirement-set-1.9.md)的所有功能。
 
 ## <a name="features-in-preview"></a>预览阶段的功能
 
@@ -80,72 +80,6 @@ Office JavaScript API 的 Outlook 外接程序 API 子集包括可以在 Outlook
 
 ---
 
-### <a name="append-on-send"></a>发送时附加
-
-若要了解如何使用 "发送时追加" 功能，请参阅在 [Outlook 加载项中实施 "在发送时实现附加](../../../outlook/append-on-send.md)"。
-
-#### <a name="officecontextmailboxitembodyappendonsendasync"></a>[AppendOnSendAsync 的 "."](/javascript/api/outlook/office.body?view=outlook-js-preview&preserve-view=true#appendonsendasync-data--options--callback-)
-
-向对象添加了一个新函数 `Body` ，该函数在撰写模式下将数据追加到项正文的末尾。
-
-**适用于**： Windows (上的 outlook 连接到 Microsoft 365 订阅) ，outlook 网页版 (新式中， [配置预览访问](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide&preserve-view=true#set-up-the-release-option-in-the-admin-center)) 
-
-#### <a name="extendedpermissions"></a>[ExtendedPermissions](../../manifest/extendedpermissions.md)
-
-向清单添加了一个新元素，其中 `AppendOnSend` 扩展权限必须包含在扩展权限的集合中。
-
-**适用于**： Windows (上的 outlook 连接到 Microsoft 365 订阅) ，outlook 网页版 (新式中， [配置预览访问](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide&preserve-view=true#set-up-the-release-option-in-the-admin-center)) 
-
-<br>
-
----
-
----
-
-### <a name="async-versions-of-display-apis"></a>Api 的异步版本 `display`
-
-#### <a name="officecontextmailboxdisplayappointmentformasync"></a>[DisplayAppointmentFormAsync 的](/javascript/api/outlook/office.mailbox?view=outlook-js-preview&preserve-view=true#displayappointmentformasync-itemid--options--callback-)
-
-向显示现有约会的对象添加了新函数 `Mailbox` 。 这是方法的异步版本 `displayAppointmentForm` 。
-
-**适用于**： Windows (上的 outlook 连接到 Microsoft 365 订阅) ，outlook 网页版 (新式) 
-
-#### <a name="officecontextmailboxdisplaymessageformasync"></a>[DisplayMessageFormAsync 的](/javascript/api/outlook/office.mailbox?view=outlook-js-preview&preserve-view=true#displaymessageformasync-itemid--options--callback-)
-
-向显示现有邮件的对象添加了新函数 `Mailbox` 。 这是方法的异步版本 `displayMessageForm` 。
-
-**适用于**： Windows (上的 outlook 连接到 Microsoft 365 订阅) ，outlook 网页版 (新式) 
-
-#### <a name="officecontextmailboxdisplaynewappointmentformasync"></a>[DisplayNewAppointmentFormAsync 的](/javascript/api/outlook/office.mailbox?view=outlook-js-preview&preserve-view=true#displaynewappointmentformasync-parameters--options--callback-)
-
-向 `Mailbox` 显示新约会窗体的对象添加了一个新函数。 这是方法的异步版本 `displayNewAppointmentForm` 。
-
-**适用于**： Windows (上的 outlook 连接到 Microsoft 365 订阅) ，outlook 网页版 (新式) 
-
-#### <a name="officecontextmailboxdisplaynewmessageformasync"></a>[DisplayNewMessageFormAsync 的](/javascript/api/outlook/office.mailbox?view=outlook-js-preview&preserve-view=true#displaynewmessageformasync-parameters--options--callback-)
-
-向 `Mailbox` 显示新邮件窗体的对象添加了一个新函数。 这是方法的异步版本 `displayNewMessageForm` 。
-
-**适用于**： Windows (上的 outlook 连接到 Microsoft 365 订阅) ，outlook 网页版 (新式) 
-
-#### <a name="officecontextmailboxitemdisplayreplyallformasync"></a>[DisplayReplyAllFormAsync 的 Office。](office.context.mailbox.item.md#methods)
-
-向 `Item` 在阅读模式下显示 "全部答复" 窗体的对象添加了一个新函数。 这是方法的异步版本 `displayReplyAllForm` 。
-
-**适用于**： Windows (上的 outlook 连接到 Microsoft 365 订阅) ，outlook 网页版 (新式) 
-
-#### <a name="officecontextmailboxitemdisplayreplyformasync"></a>[DisplayReplyFormAsync 的 Office。](office.context.mailbox.item.md#methods)
-
-向 `Item` 在阅读模式下显示 "答复" 窗体的对象添加了一个新函数。 这是方法的异步版本 `displayReplyForm` 。
-
-**适用于**： Windows (上的 outlook 连接到 Microsoft 365 订阅) ，outlook 网页版 (新式) 
-
-<br>
-
----
-
----
-
 ### <a name="event-based-activation"></a>基于事件的激活
 
 添加了对 Outlook 外接程序中基于事件的激活功能的支持。若要了解详细信息，请参阅 [配置 Outlook 外接程序以进行基于事件的激活](../../../outlook/autolaunch.md) 。
@@ -167,20 +101,6 @@ Office JavaScript API 的 Outlook 外接程序 API 子集包括可以在 Outlook
 向清单元素添加了 Outlook 支持 `Runtimes` 。 它引用了基于事件的激活功能所需的 HTML 和 JavaScript 文件。
 
 **中的可用**： Outlook 网页版 (新式， [配置预览访问](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide&preserve-view=true#set-up-the-release-option-in-the-admin-center)) 
-
-<br>
-
----
-
----
-
-### <a name="get-all-custom-properties"></a>获取所有自定义属性
-
-#### <a name="custompropertiesgetall"></a>[CustomProperties。 getAll](/javascript/api/outlook/office.customproperties?view=outlook-js-preview&preserve-view=true#getall--)
-
-向 `CustomProperties` 获取所有自定义属性的对象添加了新函数。
-
-**适用于**： Windows (上的 outlook 连接到 Microsoft 365 订阅) ，outlook (网页版) ，Mac 上的 outlook (已连接到 microsoft 365 订阅) ，Outlook 在 Android 上，Outlook 在 iOS 上
 
 <br>
 

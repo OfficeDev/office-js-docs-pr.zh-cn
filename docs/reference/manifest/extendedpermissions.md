@@ -1,29 +1,29 @@
 ---
 title: 清单文件中的 ExtendedPermissions 元素
 description: 定义加载项访问关联的 Api 或功能所需的扩展权限的集合。
-ms.date: 03/05/2020
+ms.date: 10/15/2020
 localization_priority: Normal
-ms.openlocfilehash: cf59d13d794f8f303da6cc0ca39066584bc3f56c
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 1e3aa16c160613d34ef2c4f9c25bc2ffe4970816
+ms.sourcegitcommit: 4e7c74ad67ea8bf6b47d65b2fde54a967090f65b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44611531"
+ms.lasthandoff: 10/20/2020
+ms.locfileid: "48626440"
 ---
 # <a name="extendedpermissions-element"></a>ExtendedPermissions 元素
 
 定义加载项访问关联的 Api 或功能所需的扩展权限的集合。 `ExtendedPermissions`元素是[VersionOverrides](versionoverrides.md)的子元素。
 
 > [!IMPORTANT]
-> 此元素仅适用于针对 Exchange Online 的[Outlook 外接程序预览要求集](../objectmodel/preview-requirement-set/outlook-requirement-set-preview.md)。 使用此元素的外接程序无法发布到 AppSource 或通过集中部署进行部署。
+> 对此元素的支持是在要求集1.9 中引入的。 请查看支持此要求集的[客户端和平台](../../reference/requirement-sets/outlook-api-requirement-sets.md#requirement-sets-supported-by-exchange-servers-and-outlook-clients)。
 
 ## <a name="child-elements"></a>子元素
 
-|  元素 |  必需  |  Description  |
+|  元素 |  必需  |  说明  |
 |:-----|:-----:|:-----|
 |  [ExtendedPermission](extendedpermission.md)    |  否   | 定义外接程序访问关联的 API 或功能所需的扩展权限。 |
 
-## <a name="extendedpermissions-example"></a>`ExtendedPermissions`示例
+## <a name="extendedpermissions-example"></a>`ExtendedPermissions` 示例
 
 以下是元素的示例 `ExtendedPermissions` 。
 

@@ -3,12 +3,12 @@ title: 使用 Excel JavaScript API 处理注释
 description: 有关使用 Api 添加、删除和编辑注释和注释线程的信息。
 ms.date: 10/09/2020
 localization_priority: Normal
-ms.openlocfilehash: 85312cbd92aa6c9d0f82fd167e8a372c2eff8c85
-ms.sourcegitcommit: b50eebd303adcc22eb86e65756ce7e9a82f41a57
+ms.openlocfilehash: 00f7dd22fb2148902152197521098482071e5284
+ms.sourcegitcommit: 4e7c74ad67ea8bf6b47d65b2fde54a967090f65b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/14/2020
-ms.locfileid: "48456550"
+ms.lasthandoff: 10/20/2020
+ms.locfileid: "48626419"
 ---
 # <a name="work-with-comments-using-the-excel-javascript-api"></a>使用 Excel JavaScript API 处理注释
 
@@ -206,7 +206,7 @@ Excel.run(function (context) {
 
 您的外接程序可以侦听注释的添加、更改和删除。 [批注事件](/javascript/api/excel/excel.commentcollection#event-details) 发生在 `CommentCollection` 对象上。 若要侦听注释事件，请注册 `onAdded` 、 `onChanged` 或 `onDeleted` 注释事件处理程序。 当检测到注释事件时，请使用此事件处理程序检索有关添加的、已更改或已删除的注释的数据。 该 `onChanged` 事件还处理注释添加、更改和删除。 
 
-每个注释事件仅在同时执行多个添加、更改或删除时触发一次。 所有 [CommentAddedEventArgs](/javascript/api/excel/excel.commentaddedeventargs)、 [CommentChangedEventArgs](/javascript/api/excel/excel.commentchangedeventarg)和 [CommentDeletedEventArgs](/javascript/api/excel/excel.commentdeletedeventargs) 对象都包含注释 id 的数组，用于将事件操作映射回注释集合。
+每个注释事件仅在同时执行多个添加、更改或删除时触发一次。 所有 [CommentAddedEventArgs](/javascript/api/excel/excel.commentaddedeventargs)、 [CommentChangedEventArgs](/javascript/api/excel/excel.commentchangedeventargs)和 [CommentDeletedEventArgs](/javascript/api/excel/excel.commentdeletedeventargs) 对象都包含注释 id 的数组，用于将事件操作映射回注释集合。
 
 若要详细了解如何注册事件处理程序、处理事件和删除事件处理程序，请参阅使用 [Excel JAVASCRIPT API 文章处理事件](excel-add-ins-events.md) 。 
 

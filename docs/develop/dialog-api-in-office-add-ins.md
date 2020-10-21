@@ -1,14 +1,14 @@
 ---
 title: 在 Office 加载项中使用 Office 对话框 API
 description: 了解在 Office 加载项中创建对话框的基础知识
-ms.date: 08/20/2020
+ms.date: 10/14/2020
 localization_priority: Normal
-ms.openlocfilehash: 9d333c12d629232ece39bc30948318fbcafa3aa0
-ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
+ms.openlocfilehash: 5220d4876d0a8de9c731d2879f0bcb5e669066cd
+ms.sourcegitcommit: 4e7c74ad67ea8bf6b47d65b2fde54a967090f65b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "47292789"
+ms.lasthandoff: 10/20/2020
+ms.locfileid: "48626461"
 ---
 # <a name="use-the-office-dialog-api-in-office-add-ins"></a>在 Office 加载项中使用 Office 对话框 API
 
@@ -214,9 +214,6 @@ function processMessage(arg) {
 ## <a name="pass-information-to-the-dialog-box"></a>向对话框传递信息
 
 您的外接程序可以使用[messageChild](/javascript/api/office/office.dialog#messagechild-message-)将邮件从[主机页面](dialog-api-in-office-add-ins.md#open-a-dialog-box-from-a-host-page)发送到对话框。
-
-> [!NOTE]
-> 仅 Excel、PowerPoint 和 Word 支持这些对话框 Api。 对 Outlook 的支持正在开发中。
 
 ### <a name="use-messagechild-from-the-host-page"></a>`messageChild()`从主机页使用
 

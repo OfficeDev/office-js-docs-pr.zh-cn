@@ -1,14 +1,14 @@
 ---
 title: 在 Outlook 的 Mac 版中比较 Outlook 加载项支持
 description: 了解 Mac 上的 Outlook 中的加载项支持如何与其他 Outlook 客户端进行比较。
-ms.date: 09/08/2020
+ms.date: 10/20/2020
 localization_priority: Normal
-ms.openlocfilehash: d251d5c0f60e133d0d60d32a658b8f55a24ecc18
-ms.sourcegitcommit: c6308cf245ac1bc66a876eaa0a7bb4a2492991ac
+ms.openlocfilehash: f63c27611115e7bc262b43118ec749b0cbbe8416
+ms.sourcegitcommit: 4e7c74ad67ea8bf6b47d65b2fde54a967090f65b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "47408724"
+ms.lasthandoff: 10/20/2020
+ms.locfileid: "48626433"
 ---
 # <a name="compare-outlook-add-in-support-in-outlook-on-mac-with-other-outlook-clients"></a>将 Mac 上 outlook 加载项支持与其他 Outlook 客户端进行比较
 
@@ -33,9 +33,10 @@ ms.locfileid: "47408724"
 
 Outlook 外接程序现在在新的 Mac UI （最高为要求集1.7）中受支持。 但是，尚 **不** 支持以下要求集和功能。
 
-1. API 要求集1。8
+1. API 要求集1.8 和1。9
 1. 上下文加载项
 1. 发送时
+1. 撰写窗口弹出窗口
 1. 共享文件夹支持
 1. `saveAsync` 撰写会议时
 
