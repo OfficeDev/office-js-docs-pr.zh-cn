@@ -1,16 +1,16 @@
 ---
-ms.date: 08/13/2020
+ms.date: 10/14/2020
 description: 为 Office 加载项创建 Excel 自定义函数。
 title: 在 Excel 中创建自定义函数
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: 731e8d99a36cfef7d125838c67efcdd7a77b4bb1
-ms.sourcegitcommit: ed2a98b6fb5b432fa99c6cefa5ce52965dc25759
+ms.openlocfilehash: 466050a5323f0f02fb886c763f5a2a594a9e2233
+ms.sourcegitcommit: 42e6cfe51d99d4f3f05a3245829d764b28c46bbb
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/16/2020
-ms.locfileid: "47819558"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "48741111"
 ---
 # <a name="create-custom-functions-in-excel"></a>在 Excel 中创建自定义函数
 
@@ -99,6 +99,7 @@ function add(first, second){
 另一个尝试自定义函数的简单方法就是使用[脚本实验室](https://appsource.microsoft.com/product/office/WA104380862?src=office&corrid=1ada79ac-6392-438d-bb16-fce6994a2a7e&omexanonuid=f7b03101-ec22-4270-a274-bcf16c762039&referralurl=https%3a%2f%2fgithub.com%2fofficedev%2fscript-lab)，这是一个允许您在 Excel 中试验自定义函数的加载项。 可以尝试创建自己的自定义函数或使用提供的示例。
 
 ## <a name="see-also"></a>另请参阅 
+* [了解 Microsoft 365 开发人员计划](https://developer.microsoft.com/microsoft-365/dev-program)
 * [自定义函数要求](custom-functions-requirement-sets.md)
 * [命名准则](custom-functions-naming.md)
 * [让自定义函数与 XLL 用户定义的函数兼容](make-custom-functions-compatible-with-xll-udf.md)

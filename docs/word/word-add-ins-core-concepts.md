@@ -1,14 +1,14 @@
 ---
 title: Office 加载项中的 Word JavaScript 对象模型
 description: 了解特定于 Word 的 JavaScript 对象模型中最重要的类。
-ms.date: 09/04/2020
+ms.date: 10/14/2020
 localization_priority: Priority
-ms.openlocfilehash: 7424ee83bde0c19a574233c64811ecbb55763d93
-ms.sourcegitcommit: 0844ca7589ad3a6b0432fe126ca4e0ac9dbb80ce
+ms.openlocfilehash: c85c56987ef5de7c087064ac668f137326089642
+ms.sourcegitcommit: 42e6cfe51d99d4f3f05a3245829d764b28c46bbb
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/18/2020
-ms.locfileid: "47963835"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "48740866"
 ---
 # <a name="word-javascript-object-model-in-office-add-ins"></a>Office 加载项中的 Word JavaScript 对象模型
 
@@ -48,3 +48,4 @@ Word 加载项通过使用 Office JavaScript API 与 Excel 中的对象进行交
 - [生成首个 Word 加载项](../quickstarts/word-quickstart.md)
 - [Word 加载项教程](../tutorials/word-tutorial.md)
 - [Word JavaScript API 参考](/javascript/api/word)
+- [了解 Microsoft 365 开发人员计划](https://developer.microsoft.com/microsoft-365/dev-program)

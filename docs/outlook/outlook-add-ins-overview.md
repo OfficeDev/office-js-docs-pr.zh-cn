@@ -1,15 +1,15 @@
 ---
 title: Outlook 加载项概述
 description: Outlook 加载项由第三方使用基于 Web 的平台集成到 Outlook 中。
-ms.date: 09/18/2020
+ms.date: 10/14/2020
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: 351ebe3d99c4b321dcbb1b7c71ee72023db2eb02
-ms.sourcegitcommit: 2479812e677d1a7337765fe8f1c8345061d4091a
+ms.openlocfilehash: 802ea8ef55fd97e938ce945fe934d2584eea836f
+ms.sourcegitcommit: 42e6cfe51d99d4f3f05a3245829d764b28c46bbb
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/19/2020
-ms.locfileid: "48135226"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "48741139"
 ---
 # <a name="outlook-add-ins-overview"></a>Outlook 加载项概述
 
@@ -80,7 +80,7 @@ Windows 版 Outlook 2013 或更高版本、Mac 版 Outlook 2016 或更高版本�
 
 
 ## <a name="see-also"></a>另请参阅
-
+- [了解 Microsoft 365 开发人员计划](https://developer.microsoft.com/microsoft-365/dev-program)
 - [Office 加载项开发最佳做法](../concepts/add-in-development-best-practices.md)
 - [Office 加载项的设计准则](../design/add-in-design.md)
 - [许可 Office 和 SharePoint 加载项](/office/dev/store/license-your-add-ins)
