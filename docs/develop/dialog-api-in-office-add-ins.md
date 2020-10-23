@@ -1,21 +1,21 @@
 ---
 title: 在 Office 加载项中使用 Office 对话框 API
-description: 了解在 Office 加载项中创建对话框的基础知识
-ms.date: 10/14/2020
+description: 了解在 Office 外接程序中创建对话框的基础知识。
+ms.date: 10/21/2020
 localization_priority: Normal
-ms.openlocfilehash: 5220d4876d0a8de9c731d2879f0bcb5e669066cd
-ms.sourcegitcommit: 4e7c74ad67ea8bf6b47d65b2fde54a967090f65b
+ms.openlocfilehash: 1aa7a306402885f37d1cf07010eb43958407bf0f
+ms.sourcegitcommit: 42e6cfe51d99d4f3f05a3245829d764b28c46bbb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/20/2020
-ms.locfileid: "48626461"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "48741083"
 ---
 # <a name="use-the-office-dialog-api-in-office-add-ins"></a>在 Office 加载项中使用 Office 对话框 API
 
 可以在 Office 加载项中使用 [Office 对话框 API](/javascript/api/office/office.ui) 打开对话框。 本文提供了有关如何在 Office 加载项中使用对话框 API 的指南。
 
 > [!NOTE]
-> 若要了解对话框 API 目前的受支持情况，请参阅[对话框 API 要求集](../reference/requirement-sets/dialog-api-requirement-sets.md)。目前，Word、Excel、PowerPoint 和 Outlook 支持对话框 API。
+> 若要了解对话框 API 目前的受支持情况，请参阅[对话框 API 要求集](../reference/requirement-sets/dialog-api-requirement-sets.md)。 Excel、PowerPoint 和 Word 目前支持对话框 API。 有关各种邮箱要求集的 Outlook 支持包括 &mdash; ：有关更多详细信息，请参阅 API 参考。
 
 对话框 API 的主要应用场景是为 Google、Facebook 或 Microsoft Graph 等资源启用身份验证。 有关详细信息，请在熟悉本文*之后*，参阅[使用 Office 对话框 API 进行身份验证](auth-with-office-dialog-api.md)。
 
@@ -86,7 +86,7 @@ Office.context.ui.displayDialogAsync('https://myDomain/myDialog.html', {height: 
 对话框无法与任务窗格中的主机页进行通信，除非：
 
 - 对话框中的当前页面与主机页在同一个域中。
-- 在页面中加载 Office JavaScript API 库。 (与使用 Office JavaScript API 库的任何页面一样，页面的脚本必须为属性分配方法 `Office.initialize` ，尽管它可以是空方法。有关详细信息，请参阅 [初始化 Office 外接程序](initialize-add-in.md)。 ) 
+- 在页面中加载 Office JavaScript API 库。  (与使用 Office JavaScript API 库的任何页面一样，页面的脚本必须为属性分配方法 `Office.initialize` ，尽管它可以是空方法。 有关详细信息，请参阅 [初始化 Office 外接程序](initialize-add-in.md)。 ) 
 
 对话框中的代码使用 [messageParent](/javascript/api/office/office.ui#messageparent-message-) 函数，向主机页发送布尔值或字符串消息。 字符串可以是单词、句子、XML blob、字符串化 JSON 或其他任何能够序列化成字符串的内容。 示例如下：
 
@@ -220,18 +220,18 @@ function processMessage(arg) {
 调用 Office 对话框 API 打开对话框时，将返回 [dialog](/javascript/api/office/office.dialog) 对象。 应将其分配给具有大于 [displayDialogAsync](/javascript/api/office/office.ui#displaydialogasync-startaddress--callback-) 方法的作用域的变量，因为该对象将被其他方法引用。 示例如下：
 
 ```javascript
-var dialog;
+var dialog;
 Office.context.ui.displayDialogAsync('https://myDomain/myDialog.html',
-    function (asyncResult) {
-        dialog = asyncResult.value;
-        dialog.addEventHandler(Office.EventType.DialogMessageReceived, processMessage);
-    }
+    function (asyncResult) {
+        dialog = asyncResult.value;
+        dialog.addEventHandler(Office.EventType.DialogMessageReceived, processMessage);
+    }
 );
 
-function processMessage(arg) {
+function processMessage(arg) {
     dialog.close();
 
-  // message processing code goes here;
+  // message processing code goes here;
 
 }
 ```
@@ -241,13 +241,13 @@ function processMessage(arg) {
 假设对话框的 UI 与当前活动的工作表相关，并且该工作表相对于其他工作表的位置。 在下面的示例中， `sheetPropertiesChanged` 将 Excel 工作表属性发送到对话框。 在这种情况下，当前工作表名为 "我的工作表"，并且它是工作簿中的第二个工作表。 数据封装在对象和字符串化中，以便可以将其传递给 `messageChild` 。
 
 ```javascript
-function sheetPropertiesChanged() {
-    var messageToDialog = JSON.stringify({
-                               name: "My Sheet",
-                               position: 2
+function sheetPropertiesChanged() {
+    var messageToDialog = JSON.stringify({
+                               name: "My Sheet",
+                               position: 2
                            });
 
-    dialog.messageChild(messageToDialog);
+    dialog.messageChild(messageToDialog);
 }
 ```
 
@@ -257,19 +257,19 @@ function sheetPropertiesChanged() {
 
 ```javascript
 Office.onReady()
-    .then(function() {
-        Office.context.ui.addHandlerAsync(
+    .then(function() {
+        Office.context.ui.addHandlerAsync(
             Office.EventType.DialogParentMessageReceived,
             onMessageFromParent);
-    });
+    });
 ```
 
 然后，定义该 `onMessageFromParent` 处理程序。 下面的代码将继续上一节中的示例。 请注意，Office 会将参数传递给处理程序，并确保 `message` argument 对象的属性包含主机页中的字符串。 在此示例中，邮件被 reconverted 到对象，jQuery 用于将对话框的顶部标题设置为与新工作表名称相匹配。
 
 ```javascript
-function onMessageFromParent(event) {
-    var messageFromParent = JSON.parse(event.message);
-    $('h1').text(messageFromParent.name);
+function onMessageFromParent(event) {
+    var messageFromParent = JSON.parse(event.message);
+    $('h1').text(messageFromParent.name);
 }
 ```
 
@@ -277,17 +277,17 @@ function onMessageFromParent(event) {
 
 ```javascript
 Office.onReady()
-    .then(function() {
-        Office.context.ui.addHandlerAsync(
-            Office.EventType.DialogParentMessageReceived,
-            onMessageFromParent,
+    .then(function() {
+        Office.context.ui.addHandlerAsync(
+            Office.EventType.DialogParentMessageReceived,
+            onMessageFromParent,
             onRegisterMessageComplete);
-    });
+    });
 
-function onRegisterMessageComplete(asyncResult) {
-    if (asyncResult.status !== Office.AsyncResultStatus.Succeeded) {
-        reportError(asyncResult.error.message);
-    }
+function onRegisterMessageComplete(asyncResult) {
+    if (asyncResult.status !== Office.AsyncResultStatus.Succeeded) {
+        reportError(asyncResult.error.message);
+    }
 }
 ```
 

@@ -1,16 +1,16 @@
 ---
-title: 错误处理
+title: 使用 Excel JavaScript API 处理错误
 description: 了解有关 Excel JavaScript API 错误处理逻辑，以解决运行时错误。
-ms.date: 06/25/2020
+ms.date: 10/22/2020
 localization_priority: Normal
-ms.openlocfilehash: cb06ab890fc10afd327bde0eb708ff97fabbcdca
-ms.sourcegitcommit: 83f9a2fdff81ca421cd23feea103b9b60895cab4
+ms.openlocfilehash: a3b1bbfa7daba1b856bce35aa075d5b625bd9769
+ms.sourcegitcommit: 42e6cfe51d99d4f3f05a3245829d764b28c46bbb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/11/2020
-ms.locfileid: "47430553"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "48740817"
 ---
-# <a name="error-handling"></a>错误处理
+# <a name="error-handling-with-the-excel-javascript-api"></a>使用 Excel JavaScript API 处理错误
 
 使用 Excel JavaScript API 生成加载项时，请务必加入错误处理逻辑，以便解决运行时错误。 鉴于 API 的异步特性，这样做非常关键。
 
@@ -51,12 +51,15 @@ Excel.run(function (context) {
 
 下表是 API 可能返回的错误列表。
 
-|error.code | error.message |
+|错误代码 | 错误消息 |
 |:----------|:--------------|
 |`AccessDenied` |无法执行所请求的操作。|
 |`ActivityLimitReached`|已达到活动限制。|
 |`ApiNotAvailable`|请求的 API 不可用。|
+|`ApiNotFound`|找不到您尝试使用的 API。 它可能在较新版本的 Excel 中可用。 有关详细信息，请参阅 [Excel JAVASCRIPT API 要求集](../reference/requirement-sets/excel-api-requirement-sets.md) 一文。|
+|`BadPassword`|你提供的密码不正确。|
 |`Conflict`|由于冲突，无法处理请求。|
+|`ContentLengthRequired`|`Content-length`缺少 HTTP 标头。|
 |`GeneralException`|处理请求时出现内部错误。|
 |`InsertDeleteConflict`|尝试的插入或删除操作导致冲突。|
 |`InvalidArgument` |自变量无效、缺少或格式不正确。|
@@ -67,8 +70,12 @@ Excel.run(function (context) {
 |`InvalidSelection`|当前选定内容对于此操作无效。|
 |`ItemAlreadyExists`|所创建的资源已存在。|
 |`ItemNotFound` |所请求的资源不存在。|
-|`NotImplemented`  |所请求的功能未实现。|
+|`NonBlankCellOffSheet`|插入新单元格的请求无法完成，因为它会将非空单元格推送到工作表的末尾。 这些非空单元格可能显示为空，但具有空值、部分格式或公式。 删除足够多的行或列，为要插入的内容留出空间，然后重试。|
+|`NotImplemented`|所请求的功能未实现。|
+|`RangeExceedsLimit`|区域中的单元格计数已超过支持的最大数量。 有关详细信息，请参阅 [Office 外接程序的资源限制和性能优化一](../concepts/resource-limits-and-performance-optimization.md#excel-add-ins) 文。|
 |`RequestAborted`|请求在运行时已中止。|
+|`RequestPayloadSizeLimitExceeded`|请求负载大小已超出限制。 有关详细信息，请参阅 [Office 外接程序的资源限制和性能优化一](../concepts/resource-limits-and-performance-optimization.md#excel-add-ins) 文。 <br><br>此错误仅发生在 web 上的 Excel 中。|
+|`ResponsePayloadSizeLimitExceeded`|响应负载大小已超出限制。 有关详细信息，请参阅 [Office 外接程序的资源限制和性能优化一](../concepts/resource-limits-and-performance-optimization.md#excel-add-ins) 文。  <br><br>此错误仅发生在 web 上的 Excel 中。|
 |`ServiceNotAvailable`|服务不可用。|
 |`Unauthenticated` |所需的身份验证信息缺少或无效。|
 |`UnsupportedOperation`|不支持正在尝试的操作。|

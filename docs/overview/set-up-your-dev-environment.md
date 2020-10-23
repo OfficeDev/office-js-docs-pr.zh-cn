@@ -1,14 +1,14 @@
 ---
 title: 设置开发环境
-description: 设置开发人员环境以生成 Office 外接程序
-ms.date: 07/07/2020
+description: 设置开发人员环境以生成 Office 外接程序。
+ms.date: 10/14/2020
 localization_priority: Normal
-ms.openlocfilehash: 5e7d91d81ef3d124e9582e74151626b9fd65991a
-ms.sourcegitcommit: 604361e55dee45c7a5d34c2fa6937693c154fc24
+ms.openlocfilehash: 644194d7d0da479b13ac09d7e830af53e9a9838e
+ms.sourcegitcommit: 42e6cfe51d99d4f3f05a3245829d764b28c46bbb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/03/2020
-ms.locfileid: "47363693"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "48740831"
 ---
 # <a name="set-up-your-development-environment"></a>设置开发环境
 
@@ -71,9 +71,9 @@ npm -v
 
 ## <a name="see-also"></a>另请参阅
 
-- [开发 Office 外接程序](../develop/develop-overview.md)
 - [Office 加载项的核心概念](../overview/core-concepts-office-add-ins.md)
 - [开发 Office 加载项](../develop/develop-overview.md)
 - [设计 Office 加载项](../design/add-in-design.md)
 - [测试和调试 Office 加载项](../testing/test-debug-office-add-ins.md)
 - [发布 Office 加载项](../publish/publish.md)
+- [了解 Microsoft 365 开发人员计划](https://developer.microsoft.com/microsoft-365/dev-program)
