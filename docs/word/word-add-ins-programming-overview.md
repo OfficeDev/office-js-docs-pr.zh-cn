@@ -1,16 +1,16 @@
 ---
 title: Word 加载项概述
-description: 了解 Word 加载项的基本知识
-ms.date: 07/28/2020
+description: 了解 Word 加载项的基本知识。
+ms.date: 10/14/2020
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: b531ec5c2a5fa1e3e9366f703a57e815a5711b5a
-ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
+ms.openlocfilehash: d0dae515df3d8fb3ec1bcb12f553b21b341552ad
+ms.sourcegitcommit: 42e6cfe51d99d4f3f05a3245829d764b28c46bbb
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "47293070"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "48740845"
 ---
 # <a name="word-add-ins-overview"></a>Word 加载项概述
 
@@ -83,6 +83,7 @@ Word.run(function (context) {
 
 ## <a name="see-also"></a>另请参阅
 
-* [构建 Office 加载项](../overview/office-add-ins-fundamentals.md)
+* [开发 Office 加载项](../develop/develop-overview.md)
+* [了解 Microsoft 365 开发人员计划](https://developer.microsoft.com/microsoft-365/dev-program)
 * [Office 加载项平台概述](../overview/office-add-ins.md)
 * [Word JavaScript API 参考](../reference/overview/word-add-ins-reference-overview.md)

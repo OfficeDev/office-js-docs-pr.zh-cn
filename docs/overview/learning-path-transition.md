@@ -1,15 +1,15 @@
 ---
 title: VSTO 加载项开发人员指南
 description: 资深 VSTO 加载项开发人员了解 Office Web 加载项资源的建议路径。
-ms.date: 05/10/2020
+ms.date: 10/14/2020
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: 959fb23ef86f37f46425d9b7ede7f7f60f6baf3a
-ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
+ms.openlocfilehash: 1dca15a4d286e3bfa5b7ba4a502bb9161bf3257f
+ms.sourcegitcommit: 42e6cfe51d99d4f3f05a3245829d764b28c46bbb
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "47292438"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "48741062"
 ---
 # <a name="vsto-add-in-developers-guide"></a>VSTO 加载项开发人员指南
 
@@ -33,7 +33,7 @@ ms.locfileid: "47292438"
 我们知道你渴望开始编码，但是在打开 IDE 或代码编辑器之前，你应该先阅读一些有关 Office 加载项的信息。
 
 - [Office 加载项平台概述](office-add-ins.md)：了解什么是 Office Web 加载项以及它们与扩展 Office（如 VSTO 加载项）的旧方法有何区别。
-- [构建 Office 加载项](office-add-ins-fundamentals.md)：概述 Office 加载项的开发和生命周期，包括工具、创建加载项 UI 以及使用 JavaScript API 与 Office 文档进行交互。
+- [开发 Office 加载项](../develop/develop-overview.md)：概述 Office 加载项的开发和生命周期，包括工具、创建加载项 UI 以及使用 JavaScript API 与 Office 文档进行交互。
 
 这些文章中有许多链接，但是如果你正在过渡至 Office Web 加载项的初学者，我们建议你在阅读完后返回此处并继续下一部分。
 
@@ -86,3 +86,4 @@ ms.locfileid: "47292438"
   - [测试和调试 Office 加载项](../testing/test-debug-office-add-ins.md)
   - [部署和发布 Office 加载项](../publish/publish.md)
   - [资源](../resources/resources-links-help.md)
+  - [了解 Microsoft 365 开发人员计划](https://developer.microsoft.com/microsoft-365/dev-program)

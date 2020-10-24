@@ -1,16 +1,16 @@
 ---
 title: Project 任务窗格加载项
 description: 了解 Project 任务窗格加载项。
-ms.date: 09/26/2019
+ms.date: 10/14/2019
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: 1e471c53e39af8764840716d59a4d26719d3ac0a
-ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
+ms.openlocfilehash: 1925e83f3c740172a22da3f2f03bf589785b9b46
+ms.sourcegitcommit: 42e6cfe51d99d4f3f05a3245829d764b28c46bbb
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "47292403"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "48740824"
 ---
 # <a name="task-pane-add-ins-for-project"></a>Project 任务窗格加载项
 
@@ -195,7 +195,8 @@ Project 加载项方案包括以下几种：
 ## <a name="see-also"></a>另请参阅
 
 - [Office 加载项平台概述](../overview/office-add-ins.md)
-- [构建 Office 加载项](../overview/office-add-ins-fundamentals.md)
+- [了解 Microsoft 365 开发人员计划](https://developer.microsoft.com/microsoft-365/dev-program)
+- [开发 Office 加载项](../develop/develop-overview.md)
 - [使用文本编辑器创建首个 Project 2013 任务窗格加载项](create-your-first-task-pane-add-in-for-project-by-using-a-text-editor.md)
 - [创建将 REST 与本地 Project Server OData 服务结合使用的 Project 加载项](create-a-project-add-in-that-uses-rest-with-an-on-premises-odata-service.md)
 - [Project 2013 SDK 下载](https://www.microsoft.com/download/details.aspx?id=30435%20)

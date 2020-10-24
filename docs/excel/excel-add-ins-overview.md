@@ -1,16 +1,16 @@
 ---
 title: Excel 加载项概述
 description: 使用 Excel 加载项，可以跨多个平台（包括 Windows、Mac、iPad 和浏览器）扩展 Excel 应用程序功能。
-ms.date: 07/05/2019
+ms.date: 10/14/2020
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: 9c6f86bd5e50d97e395517d8a4887fac3554f867
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 6ecb702649a3cef0f3c3acb8432d3f8d3db65115
+ms.sourcegitcommit: 42e6cfe51d99d4f3f05a3245829d764b28c46bbb
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44609760"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "48740852"
 ---
 # <a name="excel-add-ins-overview"></a>Excel 加载项概述
 
@@ -122,6 +122,7 @@ Excel 加载项通过使用 [Office JavaScript API](../reference/javascript-api-
 ## <a name="see-also"></a>另请参阅
 
 - [Office 加载项平台概述](../overview/office-add-ins.md)
-- [构建 Office 加载项](../overview/office-add-ins-fundamentals.md)
-- [Excel JavaScript API 基本编程概念](excel-add-ins-core-concepts.md)
+- [了解 Microsoft 365 开发人员计划](https://developer.microsoft.com/microsoft-365/dev-program)
+- [开发 Office 加载项](../develop/develop-overview.md)
+- [Excel 加载项中的 Word JavaScript 对象模型](excel-add-ins-core-concepts.md)
 - [Excel JavaScript API 参考](../reference/overview/excel-add-ins-reference-overview.md)

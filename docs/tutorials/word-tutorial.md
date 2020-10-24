@@ -1,15 +1,15 @@
 ---
 title: Word 加载项教程
 description: 本教程将介绍如何生成 Word 加载项，用于插入（和替换）文本区域、段落、图像、HTML、表格和内容控件。 此外，还将介绍如何设置文本格式，以及如何插入（和替换）内容控件中的内容。
-ms.date: 07/07/2020
+ms.date: 10/14/2020
 ms.prod: word
 localization_priority: Priority
-ms.openlocfilehash: 03960f5de7e99ba4ffa52be5cd4f7fc896942b76
-ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
+ms.openlocfilehash: f7397ef74890fb1a2ab89a044e919c863655999f
+ms.sourcegitcommit: 42e6cfe51d99d4f3f05a3245829d764b28c46bbb
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "47294218"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "48741132"
 ---
 # <a name="tutorial-create-a-word-task-pane-add-in"></a>教程：创建 Word 任务窗格加载项
 
@@ -529,7 +529,7 @@ function insertTextIntoRange() {
         //        been queued.
     ```
 
-8. 将 `TODO3` 替换为下面的代码。 这一新段落将说明，新文本***不***属于原始选定区域。 原始区域中的文本仍与用户选择它时一样。
+8. 将 `TODO3` 替换为下面的代码。 这一新段落将说明，新文本**_不_*_ 属于原始选定区域。 原始区域中的文本仍与用户选择它时一样。
 
     ```js
     doc.body.insertParagraph("Current text of original range: " + originalRange.text, "End");
@@ -543,9 +543,9 @@ function insertTextIntoRange() {
 
 ### <a name="replace-the-text-of-a-range"></a>替换区域文本
 
-1. 打开 ./src/taskpane/taskpane.html**** 文件。
+1. 打开文件 _*./src/taskpane/taskpane.html**。
 
-2. 找到 `<button>` 按钮的 `insert-text-outside-range` 元素，并在该行后添加下列标记： 
+2. 定位 `<button>` 按钮的 `insert-text-outside-range` 元素，并在行后添加下列标记： 
 
     ```html
     <button class="ms-Button" id="replace-text">Change Quantity Term</button><br/><br/>
@@ -945,5 +945,5 @@ function insertTextIntoRange() {
 ## <a name="see-also"></a>另请参阅
 
 * [Office 加载项平台概述](../overview/office-add-ins.md)
-* [构建 Office 加载项](../overview/office-add-ins-fundamentals.md)
 * [开发 Office 加载项](../develop/develop-overview.md)
+

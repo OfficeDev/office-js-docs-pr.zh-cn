@@ -1,16 +1,16 @@
 ---
 title: PowerPoint 加载项
 description: 了解如何使用 PowerPoint 加载项跨平台（包括 Windows、iPad、Mac 和浏览器）生成极具吸引力的解决方案，从而有效展示演示文稿。
-ms.date: 06/29/2020
+ms.date: 10/14/2020
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: 314b441f3d4b6d2188ed630fe2b254aec42a86bc
-ms.sourcegitcommit: 065bf4f8e0d26194cee9689f7126702b391340cc
+ms.openlocfilehash: 476f8f34bc47d85842d5b31f8a0298bf2d5d7b18
+ms.sourcegitcommit: 42e6cfe51d99d4f3f05a3245829d764b28c46bbb
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "45006449"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "48740838"
 ---
 # <a name="powerpoint-add-ins"></a>PowerPoint 加载项
 
@@ -193,7 +193,8 @@ reader.readAsDataURL(myFile.files[0]);
 
 ## <a name="see-also"></a>另请参阅
 
-- [构建 Office 加载项](../overview/office-add-ins-fundamentals.md)
+- [开发 Office 加载项](../develop/develop-overview.md)
+- [了解 Microsoft 365 开发人员计划](https://developer.microsoft.com/microsoft-365/dev-program)
 - [PowerPoint 代码示例](https://developer.microsoft.com/office/gallery/?filterBy=Samples,PowerPoint)
 - [如何每文档保存内容和任务窗格加载项的加载项状态和设置](../develop/persisting-add-in-state-and-settings.md#how-to-save-add-in-state-and-settings-per-document-for-content-and-task-pane-add-ins)
 - [对文档或电子表格中的活动选择执行数据读取和写入操作](../develop/read-and-write-data-to-the-active-selection-in-a-document-or-spreadsheet.md)

@@ -1,16 +1,16 @@
 ---
 title: Office 加载项平台概述 | Microsoft Docs
 description: 使用熟悉的 Web 技术，例如 HTML、CSS 和 JavaScript 来扩展 Word、Excel、PowerPoint、OneNote、Project 和 Outlook，并与其进行交互。
-ms.date: 02/13/2020
+ms.date: 10/14/2020
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: 9a504a81bb15e36f937328e2f7cbb674f416842d
-ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
+ms.openlocfilehash: cc3248427a8399532d62ca4bffc20f31c48f0aa4
+ms.sourcegitcommit: 42e6cfe51d99d4f3f05a3245829d764b28c46bbb
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "47292410"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "48741048"
 ---
 # <a name="office-add-ins-platform-overview"></a>Office 加载项平台概述
 
@@ -50,7 +50,7 @@ Office 外接程序包括两个基本组件：XML 清单文件和你自己的 We
 
 - 外接程序的显示名称、说明、ID、版本和默认区域设置。
 
-- 如何将外接程序与 Office 集成。  
+- 如何将外接程序与 Office 集成。  
 
 - 外接程序的权限级别和数据访问要求。
 
@@ -69,26 +69,26 @@ Office 加载项可以在 Office 客户端应用程序中执行下列操作：
 -  扩展功能（任何 Office 应用程序）
 
 -  创建新的对象（Excel 或 PowerPoint）
- 
+ 
 ### <a name="extend-office-functionality"></a>扩展 Office 功能
 
-可以通过以下方式向 Office 应用程序添加新功能：  
+可以通过以下方式向 Office 应用程序添加新功能：  
 
 -  自定义功能区按钮和菜单命令（统称为“外接程序命令”）
 
 -  可插入的任务窗格
 
-自定义 UI 和任务窗格在外接程序清单中进行指定。  
+自定义 UI 和任务窗格在外接程序清单中进行指定。  
 
-#### <a name="custom-buttons-and-menu-commands"></a>自定义按钮和菜单命令  
+#### <a name="custom-buttons-and-menu-commands"></a>自定义按钮和菜单命令  
 
-可以向 Office 网页版和 Windows 版 Office 中的功能区添加自定义功能区按钮和菜单项。这样一来，用户可以直接从 Office 应用程序访问加载项。命令按钮可以启动不同的操作，如显示包含自定义 HTML 的任务窗格或执行 JavaScript 函数。  
+可以向 Office 网页版和 Windows 版 Office 中的功能区添加自定义功能区按钮和菜单项。这样一来，用户可以直接从 Office 应用程序访问加载项。命令按钮可以启动不同的操作，如显示包含自定义 HTML 的任务窗格或执行 JavaScript 函数。  
 
 *图 3. 功能区中的加载项命令*
 
 ![自定义按钮和菜单命令](../images/about-addins-addincommands.png)
 
-#### <a name="task-panes"></a>任务窗格  
+#### <a name="task-panes"></a>任务窗格  
 
 除了通过加载项命令以外，用户还可以使用任务窗格与解决方案进行交互。不支持加载项命令的客户端（Office 2013 和 iPad 版 Office）以任务窗格的形式运行加载项。用户通过“插入”**** 选项卡上的“我的加载项”**** 按钮，启动任务窗格加载项。
 
@@ -98,7 +98,7 @@ Office 加载项可以在 Office 客户端应用程序中执行下列操作：
 
 ### <a name="extend-outlook-functionality"></a>扩展 Outlook 功能
 
-Outlook 加载项可扩展 Office 应用功能区，还可以在查看或撰写 Outlook 项目时在其旁边的上下文中显示。当用户查看接收的项目或回复或创建新项目时，它们可以与电子邮件、会议请求、会议响应、会议取消或约会一起使用。 
+Outlook 加载项可扩展 Office 应用功能区，还可以在查看或撰写 Outlook 项目时在其旁边的上下文中显示。当用户查看接收的项目或回复或创建新项目时，它们可以与电子邮件、会议请求、会议响应、会议取消或约会一起使用。 
 
 Outlook 加载项可以访问邮件项目中的上下文信息（如地址或跟踪 ID），然后使用此类数据来访问服务器和 Web 服务上的其他信息，以打造极具吸引力的用户体验。在大多数情况下，Outlook 加载项无需修改即可在 Outlook 应用程序上运行，以在桌面、Web 以及平板电脑和移动设备上提供无缝体验。
 
@@ -118,13 +118,13 @@ Office JavaScript API 包含的对象和成员适用于生成加载项，并与 
 
 ## <a name="next-steps"></a>后续步骤
 
-有关开发 Office 加载项的更多详细介绍，请参阅[构建 Office 加载项](../overview/office-add-ins-fundamentals.md)。
+有关开发 Office 加载项的更多详细介绍，请参阅[开发 Office 加载项](../develop/develop-overview.md)。
 
 ## <a name="see-also"></a>另请参阅
 
-- [构建 Office 加载项](../overview/office-add-ins-fundamentals.md)
 - [Office 加载项的核心概念](../overview/core-concepts-office-add-ins.md)
 - [开发 Office 加载项](../develop/develop-overview.md)
 - [设计 Office 加载项](../design/add-in-design.md)
 - [测试和调试 Office 加载项](../testing/test-debug-office-add-ins.md)
 - [发布 Office 加载项](../publish/publish.md)
+- [了解 Microsoft 365 开发人员计划](https://developer.microsoft.com/microsoft-365/dev-program)

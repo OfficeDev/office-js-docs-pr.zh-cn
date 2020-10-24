@@ -1,16 +1,16 @@
 ---
 title: 使用 Script Lab 探索 Office JavaScript API
 description: 使用 Script Lab 探索 Office JS API 和原型功能。
-ms.date: 06/10/2020
+ms.date: 10/14/2020
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: ab2d086551dbfa5063615f505d8cb8aa5a210b7a
-ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
+ms.openlocfilehash: 8fef3d0df73ab84cc17b2e6ff3c8fe436bf6e789
+ms.sourcegitcommit: 42e6cfe51d99d4f3f05a3245829d764b28c46bbb
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "45094132"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "48741076"
 ---
 # <a name="explore-office-javascript-api-using-script-lab"></a>使用 Script Lab 探索 Office JavaScript API
 
@@ -85,4 +85,6 @@ Script Lab 提供许多功能，可帮助你探索 Office JavaScript API 和原�
 - [获取适用于 Outlook 的 Script Lab](https://appsource.microsoft.com/product/office/wa200001603)
 - [详细了解 Script Lab](https://github.com/OfficeDev/script-lab#script-lab-a-microsoft-garage-project)
 - [加入 Microsoft 365 开发人员计划](https://developer.microsoft.com/office/dev-program)
-- [构建 Office 加载项](../overview/office-add-ins-fundamentals.md)
+- [开发 Office 加载项](../develop/develop-overview.md)
+- [了解 Microsoft 365 开发人员计划](https://developer.microsoft.com/microsoft-365/dev-program)
+

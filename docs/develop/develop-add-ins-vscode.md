@@ -1,14 +1,14 @@
 ---
 title: 使用 Visual Studio Code 开发 Office 加载项
-description: 如何使用 Visual Studio Code 开发 Office 加载项
-ms.date: 01/16/2020
+description: 如何使用 Visual Studio Code 开发 Office 加载项。
+ms.date: 10/14/2020
 localization_priority: Priority
-ms.openlocfilehash: 4e4d979e8a3174a4e772534255d2f9719338a4f3
-ms.sourcegitcommit: 19312a54f47a17988ffa86359218a504713f9f09
+ms.openlocfilehash: 7bd12f6d6e4aff6e8a80f9e9c2e5042b726eca0c
+ms.sourcegitcommit: 42e6cfe51d99d4f3f05a3245829d764b28c46bbb
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/10/2020
-ms.locfileid: "44679267"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "48741097"
 ---
 # <a name="develop-office-add-ins-with-visual-studio-code"></a>使用 Visual Studio Code 开发 Office 加载项
 
@@ -48,7 +48,6 @@ Yeoman 生成器会创建一个功能受限的基本加载项。 你可通过在
 
 ## <a name="see-also"></a>另请参阅
 
-- [构建 Office 加载项](../overview/office-add-ins-fundamentals.md)
 - [Office 加载项的核心概念](../overview/core-concepts-office-add-ins.md)
 - [开发 Office 加载项](../develop/develop-overview.md)
 - [设计 Office 加载项](../design/add-in-design.md)
