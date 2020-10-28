@@ -1,15 +1,15 @@
 ---
 title: Excel JavaScript 预览 API
 description: 有关即将推出的 Excel JavaScript Api 的详细信息。
-ms.date: 09/15/2020
+ms.date: 10/26/2020
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: 9ddc1405d4bc13087780e8950b36d9b3b4b04069
-ms.sourcegitcommit: ed2a98b6fb5b432fa99c6cefa5ce52965dc25759
+ms.openlocfilehash: a1cb3afb28f69ff5b0c0bd03bfae9877dda91906
+ms.sourcegitcommit: a4e09546fd59579439025aca9cc58474b5ae7676
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/16/2020
-ms.locfileid: "47819789"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "48774738"
 ---
 # <a name="excel-javascript-preview-apis"></a>Excel JavaScript 预览 API
 
@@ -26,7 +26,7 @@ ms.locfileid: "47819789"
 
 ## <a name="api-list"></a>API 列表
 
-下表列出了当前预览中的 Excel JavaScript Api。 若要查看所有 Excel JavaScript Api 的完整列表 (包括预览 Api 和之前发布的 Api) ，请参阅 [所有 Excel Javascript api](/javascript/api/excel?view=excel-js-preview&preserve-view=true)。
+下表列出了当前预览中的 Excel JavaScript Api。 有关所有 Excel JavaScript Api 的完整列表 (包括预览 Api 和以前发布的 Api) ，请参阅 [所有 Excel Javascript api](/javascript/api/excel?view=excel-js-preview&preserve-view=true)。
 
 | Class | 域 | 说明 |
 |:---|:---|:---|
@@ -70,7 +70,7 @@ ms.locfileid: "47819789"
 ||[setStyle (样式： string \| PivotTableStyle \| BuiltInPivotTableStyle) ](/javascript/api/excel/excel.pivotlayout#setstyle-style-)|设置应用于数据透视表的样式。|
 ||[showFieldHeaders](/javascript/api/excel/excel.pivotlayout#showfieldheaders)|指定数据透视表是否显示字段标题 (字段标题和筛选下拉) 。|
 |[PivotTable](/javascript/api/excel/excel.pivottable)|[refreshOnOpen](/javascript/api/excel/excel.pivottable#refreshonopen)|指定在工作簿打开时是否刷新数据透视表。 与 UI 中的 "加载时刷新" 设置相对应。|
-|[区域](/javascript/api/excel/excel.range)|[getMergedAreas ( # B1 ](/javascript/api/excel/excel.range#getmergedareas--)|返回一个 `RangeAreas` 对象，表示此范围中的合并区域。 请注意，如果此范围中的合并区域计数超过512，API 将无法返回结果。|
+|[Range](/javascript/api/excel/excel.range)|[getMergedAreas ( # B1 ](/javascript/api/excel/excel.range#getmergedareas--)|返回一个 `RangeAreas` 对象，表示此范围中的合并区域。 请注意，如果此范围中的合并区域计数超过512，API 将无法返回结果。|
 ||[getPrecedents ( # B1 ](/javascript/api/excel/excel.range#getprecedents--)|返回一个 `WorkbookRangeAreas` 对象，表示包含同一工作表或多个工作表中的单元格的所有引用单元格的区域。|
 |[RefreshModeChangedEventArgs](/javascript/api/excel/excel.refreshmodechangedeventargs)|[Microsoft.sharepoint.linq.refreshmode](/javascript/api/excel/excel.refreshmodechangedeventargs#refreshmode)|链接的数据类型刷新模式。|
 ||[serviceId](/javascript/api/excel/excel.refreshmodechangedeventargs#serviceid)|已更改其刷新模式的对象的唯一 id。|
