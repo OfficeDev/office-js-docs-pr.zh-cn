@@ -1056,8 +1056,13 @@
           href: reference/overview/powerpoint-add-ins-reference-overview.md
           displayName: PowerPoint
         - name: API 要求集
-          href: reference/requirement-sets/powerpoint-api-requirement-sets.md
-          displayName: PowerPoint
+          items:
+            - name: 概述
+              href: reference/requirement-sets/powerpoint-api-requirement-sets.md
+              displayName: PowerPoint
+            - name: PowerPoint 预览 API
+              href: reference/requirement-sets/powerpoint-preview-apis.md
+              displayName: PowerPoint
         - name: API 参考
           href: reference/powerpoint-api-reference.md
           displayName: PowerPoint
