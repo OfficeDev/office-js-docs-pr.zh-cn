@@ -1,15 +1,15 @@
 ---
 title: PowerPoint JavaScript API 要求集
 description: 了解有关 PowerPoint JavaScript API 要求集的详细信息。
-ms.date: 07/10/2020
+ms.date: 10/26/2020
 ms.prod: powerpoint
 localization_priority: Priority
-ms.openlocfilehash: b2b5d4b7b5a0677812f227b6a32683c35bbf1662
-ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
+ms.openlocfilehash: cf9ab510e4b35a140c77ee958279cb85a2189fa2
+ms.sourcegitcommit: a4e09546fd59579439025aca9cc58474b5ae7676
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "47293504"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "48774725"
 ---
 # <a name="powerpoint-javascript-api-requirement-sets"></a>PowerPoint JavaScript API 要求集
 
@@ -19,6 +19,7 @@ ms.locfileid: "47293504"
 
 |  要求集  |  Windows 版 Office<br>（关联至 Microsoft 365 订阅）  |  iPad 版 Office<br>（关联至 Microsoft 365 订阅）  |  Mac 版 Office<br>（关联至 Microsoft 365 订阅）  | Office 网页版 |
 |:-----|-----|:-----|:-----|:-----|:-----|
+| [预览](powerpoint-preview-apis.md)  | 请使用最新的 Office 版本来试用预览 API（你可能需要加入 [Office 预览体验成员计划](https://insider.office.com)）。 |
 | PowerPointApi 1.1 | 版本 1810（内部版本 11001.20074）或更高版本 | 2.17 或更高版本 | 16.19 或更高版本 | 2018 年 10 月 |
 
 ## <a name="office-versions-and-build-numbers"></a>Office 版本和内部版本号
@@ -29,26 +30,32 @@ ms.locfileid: "47293504"
 
 ## <a name="powerpoint-javascript-api-11"></a>PowerPoint JavaScript API 1.1
 
-PowerPoint JavaScript API 1.1 包含用于创建新演示文稿的单一 API。 有关该 API 的详细信息，请参阅[适用于 PowerPoint 的 JavaScript API](../../powerpoint/powerpoint-add-ins.md)。
+PowerPoint JavaScript API 1.1 包含[用于创建新演示文稿的单一 API](/javascript/api/powerpoint#powerpoint-createpresentation-base64file-)。 有关 API 的详细信息，请参阅[创建演示文稿](../../powerpoint/powerpoint-add-ins.md#create-a-presentation)。
 
-## <a name="runtime-requirement-support-check"></a>运行时要求支持检查
+## <a name="how-to-use-powerpoint-requirement-sets-at-runtime-and-in-the-manifest"></a>如何在运行时和清单中使用 PowerPoint 要求集
 
-在运行时，加载项可以执行下列检查，确定特定应用程序是否支持 API 要求集。
+> [!NOTE]
+> 本节假定你熟悉 [Office 版本和要求集](../../develop/office-versions-and-requirement-sets.md)和[指定 Office 应用程序和 API 要求集](../../develop/specify-office-hosts-and-api-requirements.md)处的要求集概述。
+
+要求集是指各组已命名的 API 成员。 Office 加载项可以执行运行时检查或使用清单中指定的要求集确定 Office 应用程序是否支持加载项所需的 API。
+
+### <a name="checking-for-requirement-set-support-at-runtime"></a>在运行时检查要求集支持
+
+以下代码示例显示如何确定运行加载项的 Office 应用程序是否支持指定的 API 要求集。
 
 ```js
 if (Office.context.requirements.isSetSupported('PowerPointApi', '1.1')) {
   // Perform actions.
-}
-else {
+} else {
   // Provide alternate flow/logic.
 }
 ```
 
-## <a name="manifest-based-requirement-support-check"></a>基于清单的要求支持检查
+### <a name="defining-requirement-set-support-in-the-manifest"></a>在清单中定义要求集支持
 
-使用加载项清单中的 `Requirements` 元素指定加载项必须使用的关键要求集或 API 成员。 如果 Office 应用程序或平台不支持 `Requirements` 元素中指定的要求集或 API 成员，则加载项将无法在该应用程序或平台上运行，并且不会显示在“我的加载项”中。
+可以在加载项清单中使用[要求元素](../manifest/requirements.md)指定加载项要求激活的最小要求集和/或 API 方法。 如果 Office 应用程序或平台不支持清单的 `Requirements` 元素中指定的要求集或 API 方法，则加载项将不会在该应用程序或平台中运行，也不会出现在“ **我的加载项** ”中显示的加载项列表中。如果你的加载项需要特定要求集以实现完整功能，但是即使在不支持该要求集的平台上也可以为用户提供值，则建议在运行时按照上述方式检查要求支持，而不是在清单中定义要求集支持。
 
-下面的代码示例展示了加载所有支持第 1.1 版 OneNoteApi 要求集的 Office 客户端应用程序的加载项。
+以下代码示例显示加载项清单中的 `Requirements` 元素，该元素指定应在支持 PowerPointApi 要求集版本 1.1 或更高版本的所有 Office 客户端应用程序中加载该加载项。
 
 ```xml
 <Requirements>
@@ -66,5 +73,5 @@ else {
 
 - [PowerPoint JavaScript API 参考文档](/javascript/api/powerpoint)
 - [Office 版本和要求集](../../develop/office-versions-and-requirement-sets.md)
-- [指定 Office 应用程序和 API 要求集](../../develop/specify-office-hosts-and-api-requirements.md)
+- [指定 Office 应用程序和 API 要求](../../develop/specify-office-hosts-and-api-requirements.md)
 - [Office 加载项 XML 清单](../../develop/add-in-manifests.md)
