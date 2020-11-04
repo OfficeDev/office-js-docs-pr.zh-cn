@@ -4,12 +4,12 @@ title: 将 Excel 加载项配置为共享浏览器运行时
 ms.prod: excel
 description: 将 Excel 加载项配置为共享浏览器运行时并在同一运行时中运行功能区、任务窗格和自定义函数代码。
 localization_priority: Priority
-ms.openlocfilehash: 08e4155b7f79101f8a61b323c623b5cb6b86decf
-ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
+ms.openlocfilehash: 3f980ffc3ed78a4adf8c1b2cb565feb0f7c51c2f
+ms.sourcegitcommit: 6ade8891ad947094d305fc146bb4deb703093ca6
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "47292634"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "48906020"
 ---
 # <a name="configure-your-excel-add-in-to-use-a-shared-javascript-runtime"></a>将 Excel 加载项配置为使用共享 JavaScript 运行时
 
@@ -23,7 +23,7 @@ ms.locfileid: "47292634"
 
 如果要启动新项目，请按照以下步骤使用 Yeoman 生成器创建 Excel 加载项项目。 运行下面的命令，使用下面的答案回答提示问题：
 
-```command line
+```command line
 yo office
 ```
 
@@ -39,9 +39,9 @@ yo office
 
 对于新项目或现有项目，请按照以下步骤将其配置为使用共享运行时。
 
-1. 启动 Visual Studio Code 并打开“**我的 Office 加载项**”项目。
+1. 启动 Visual Studio Code 并打开“ **我的 Office 加载项** ”项目。
 2. 打开 **manifest.xml** 文件。
-3. 找到 `<VersionOverrides>` 部分并添加以下 `<Runtimes>` 部分。 生存期需要**较长**，以便在关闭任务窗格时自定义函数仍可正常工作。 resid 是 `ContosoAddin.Url`，它在后面的资源部分中引用字符串。 可使用所需的任何 resid 值，但它应匹配加载项元素中其他元素的 resid。
+3. 找到 `<VersionOverrides>` 部分并添加以下 `<Runtimes>` 部分。 生存期需要 **较长** ，以便在关闭任务窗格时自定义函数仍可正常工作。 resid 是 `ContosoAddin.Url`，它在后面的资源部分中引用字符串。 可使用所需的任何 resid 值，但它应匹配加载项元素中其他元素的 resid。
 
    ```xml
    <VersionOverrides xmlns="http://schemas.microsoft.com/office/taskpaneappversionoverrides" xsi:type="VersionOverridesV1_0">
@@ -53,7 +53,7 @@ yo office
        <AllFormFactors>
    ```
 
-4. 在 `<Page>` 元素中，将源位置从 **Functions.Page.Url** 更改为 **ContosoAddin.Url**。 此 resid 匹配 `<Runtime>` resid 元素。 请注意，如果你没有自定义函数，则不会有**页面**条目，可跳过此步骤。
+4. 在 `<Page>` 元素中，将源位置从 **Functions.Page.Url** 更改为 **ContosoAddin.Url** 。 此 resid 匹配 `<Runtime>` resid 元素。 请注意，如果你没有自定义函数，则不会有 **页面** 条目，可跳过此步骤。
 
    ```xml
    <AllFormFactors>
@@ -64,7 +64,7 @@ yo office
    ...
    ```
 
-5. 在 `<DesktopFormFactor>` 部分中，将 **FunctionFile** 从 **Commands.Url** 更改为使用 **ContosoAddin.Url**。 请注意，如果你没有操作命令，则不会有 **FunctionFile** 条目，可跳过此步骤。
+5. 在 `<DesktopFormFactor>` 部分中，将 **FunctionFile** 从 **Commands.Url** 更改为使用 **ContosoAddin.Url** 。 请注意，如果你没有操作命令，则不会有 **FunctionFile** 条目，可跳过此步骤。
 
    ```xml
    <DesktopFormFactor>
@@ -74,7 +74,7 @@ yo office
    <FunctionFile resid="ContosoAddin.Url"/>
    ```
 
-6. 在 `<Action>` 部分中，将源位置从 **Taskpane.Url** 更改为 **ContosoAddin.Url**。 请注意，如果你没有任务窗格，则不会有 **ShowTaskpane** 操作，可跳过此步骤。
+6. 在 `<Action>` 部分中，将源位置从 **Taskpane.Url** 更改为 **ContosoAddin.Url** 。 请注意，如果你没有任务窗格，则不会有 **ShowTaskpane** 操作，可跳过此步骤。
 
    ```xml
    <Action xsi:type="ShowTaskpane">
@@ -83,7 +83,7 @@ yo office
    </Action>
    ```
 
-7. 为 **ContosoAddin.Url** 添加新的 **Url id**，它指向 **taskpane.html**。
+7. 为 **ContosoAddin.Url** 添加新的 **Url id** ，它指向 **taskpane.html** 。
 
    ```xml
    <bt:Urls>
@@ -106,13 +106,13 @@ yo office
    > new HtmlWebpackPlugin({
    >     filename: "taskpane.html",
    >     template: "./src/taskpane/taskpane.html",
-   >     chunks: ["polyfill", "taskpane", “functions”]
+   >     chunks: ["polyfill", "taskpane", "functions"]
    > }),
    >```
 
 9. 保存更改并重新生成项目。
 
-   ```command line
+   ```command line
    npm run build
    ```
 

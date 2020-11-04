@@ -1,15 +1,15 @@
 ---
 title: 使用 Yeoman 生成器创建使用 SSO 的 Office 加载项
 description: 使用 Yeoman 生成器生成使用单一登录的 Node.js Office 加载项。
-ms.date: 07/30/2020
+ms.date: 11/03/2020
 ms.prod: non-product-specific
 localization_priority: Priority
-ms.openlocfilehash: abc3c0ca7fb5068bf2964e4809970fb2ea86d5bf
-ms.sourcegitcommit: 8fdd7369bfd97a273e222a0404e337ba2b8807b0
+ms.openlocfilehash: 3524b149b10a37e8143b20e704e1f58e2ad10074
+ms.sourcegitcommit: 6ade8891ad947094d305fc146bb4deb703093ca6
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "46573229"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "48906034"
 ---
 # <a name="use-the-yeoman-generator-to-create-an-office-add-in-that-uses-single-sign-on"></a>使用 Yeoman 生成器创建使用单一登录的 Node.js Office 加载项
 
@@ -101,15 +101,15 @@ Yeoman 生成器简化了 SSO 加载项的创建流程，能够自动执行在 A
     npm start
     ```
 
-2. 在运行上一个命令时打开的 Office 客户端应用程序（如 Excel、Word 或 PowerPoint）中，确保登录的用户与在[上一节](#configure-sso)第 3 步中配置 SSO 时用于连接至 Azure 的 Microsoft 365 管理员帐户是同一 Microsoft 365 组织的成员。 执行此操作，将为成功进行 SSO 建立了相应的条件。 
+2. 在运行上一个命令时打开的 Office 客户端应用程序（如 Excel、Word 或 PowerPoint）中，确保登录的用户与在[上一节](#configure-sso)第 3 步中配置 SSO 时用于连接至 Azure 的 Microsoft 365 管理员帐户是同一 Microsoft 365 组织的成员。 执行此操作，将为成功进行 SSO 建立了相应的条件。
 
-3. 在 Office 客户端应用程序中，依次选择的“**开始**”选项卡和功能区中的“**显示任务窗格**”按钮，以打开加载项任务窗格。 下图显示 Excel 中的该按钮。
+3. 在 Office 客户端应用程序中，依次选择的“ **开始** ”选项卡和功能区中的“ **显示任务窗格** ”按钮，以打开加载项任务窗格。 下图显示 Excel 中的该按钮。
 
     ![Excel 加载项按钮](../images/excel-quickstart-addin-3b.png)
 
-4. 在任务窗格底部，选择 “**获取我的用户配置文件信息**”按钮以开始 SSO 流程。 
+4. 在任务窗格底部，选择 “ **获取我的用户配置文件信息** ”按钮以开始 SSO 流程。
 
-5. 如果对话框窗口显示代表加载项请求权限，则表示 你的方案不支持 SSO，并且加载项已退回至替代的用户身份验证方法。 当租户管理员未授予使用加载项访问 Microsoft Graph 的许可，或者用户未使用有效的 Microsoft 帐户或 Microsoft 365 教育版或工作帐户登录 Office 时，则可能会出现这种情况。 选择对话框窗口中的“**接受**”按钮以继续。
+5. 如果对话框窗口显示代表加载项请求权限，则表示 你的方案不支持 SSO，并且加载项已退回至替代的用户身份验证方法。 当租户管理员未授予使用加载项访问 Microsoft Graph 的许可，或者用户未使用有效的 Microsoft 帐户或 Microsoft 365 教育版或工作帐户登录 Office 时，则可能会出现这种情况。 选择对话框窗口中的“ **接受** ”按钮以继续。
 
     ![权限请求对话框](../images/sso-permissions-request.png)
 
@@ -127,30 +127,30 @@ Yeoman 生成器简化了 SSO 加载项的创建流程，能够自动执行在 A
 1. SSO 配置过程完成后，运行以下命令生成项目并启动本地 Web 服务器。
 
     > [!NOTE]
-    > Office 加载项应使用 HTTPS，而不是 HTTP（即便是在开发时也是如此）。 如果系统在运行以下命令后提示你安装证书，请接受提示以安装 Yeoman 生成器提供的证书。
+    > Office 加载项应使用 HTTPS，而不是 HTTP（即便是在开发时也是如此）。 如果系统在运行以下命令后提示你安装证书，请接受提示以安装 Yeoman 生成器提供的证书。 你可能还必须以管理员身份运行命令提示符或终端才能进行更改。
 
     ```command&nbsp;line
     npm start
     ```
 
-2. 按照[旁加载 Outlook 加载项以供测试](../outlook/sideload-outlook-add-ins-for-testing.md)中的说明操作，旁加载加载项。 确保用于登录 Outlook 的用户与在[上一节](#configure-sso)第 3 步中配置 SSO 时用于连接至 Azure 的 Microsoft 365 管理员帐户是同一 Microsoft 365 组织的成员。 执行此操作，将为成功进行 SSO 建立了相应的条件。 
+2. 按照[旁加载 Outlook 加载项以供测试](../outlook/sideload-outlook-add-ins-for-testing.md)中的说明操作，旁加载加载项。 确保用于登录 Outlook 的用户与在[上一节](#configure-sso)第 3 步中配置 SSO 时用于连接至 Azure 的 Microsoft 365 管理员帐户是同一 Microsoft 365 组织的成员。 执行此操作，将为成功进行 SSO 建立了相应的条件。
 
 3. 在 Outlook 中，撰写一封新邮件。
 
-4. 在“邮件撰写”窗口中，选择功能区中的“显示任务窗格”**** 按钮，以打开加载项任务窗格。
+4. 在“邮件撰写”窗口中，选择功能区中的“显示任务窗格”按钮，以打开加载项任务窗格。
 
     ![Outlook 加载项按钮](../images/outlook-sso-ribbon-button.png)
 
-5. 在任务窗格底部，选择“获取我的用户配置文件信息”**** 按钮以开始 SSO 流程。 
+5. 在任务窗格底部，选择“获取我的用户配置文件信息”按钮以开始 SSO 流程。
 
-6. 如果对话框窗口显示代表加载项请求权限，则表示 你的方案不支持 SSO，并且加载项已退回至替代的用户身份验证方法。 当租户管理员未授予使用加载项访问 Microsoft Graph 的许可，或者用户未使用有效的 Microsoft 帐户或 Microsoft 365 教育版或工作帐户登录 Office 时，则可能会出现这种情况。 选择对话框窗口中的“**接受**”按钮以继续。
+6. 如果对话框窗口显示代表加载项请求权限，则表示 你的方案不支持 SSO，并且加载项已退回至替代的用户身份验证方法。 当租户管理员未授予使用加载项访问 Microsoft Graph 的许可，或者用户未使用有效的 Microsoft 帐户或 Microsoft 365 教育版或工作帐户登录 Office 时，则可能会出现这种情况。 选择对话框窗口中的“ **接受** ”按钮以继续。
 
     ![权限请求对话框](../images/sso-permissions-request.png)
 
     > [!NOTE]
     > 用户接受此权限请求后，以后将不会再收到提示。
 
-7. 加载项检索已登录用户的配置文件信息并写入至电子邮件的正文中。 
+7. 加载项检索已登录用户的配置文件信息并写入至电子邮件的正文中。
 
     ![Outlook 邮件中的用户配置文件信息](../images/sso-user-profile-info-outlook.png)
 
