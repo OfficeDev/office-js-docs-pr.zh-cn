@@ -1,18 +1,23 @@
 ---
 title: Office 客户端应用程序和平台的 Office 加载项可用性
 description: Excel、OneNote、Outlook、PowerPoint、Project 和 Word 支持的要求集。
-ms.date: 10/14/2020
+ms.date: 11/02/2020
 localization_priority: Priority
-ms.openlocfilehash: 587a89f948aff37e6c8c1bf699fc10a915867788
-ms.sourcegitcommit: a4e09546fd59579439025aca9cc58474b5ae7676
+ms.openlocfilehash: 9ac3dffdee742f0cf74005847bb731f83b7aab2b
+ms.sourcegitcommit: 6ade8891ad947094d305fc146bb4deb703093ca6
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "48774710"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "48906027"
 ---
 # <a name="office-client-application-and-platform-availability-for-office-add-ins"></a>Office 客户端应用程序和平台的 Office 加载项可用性
 
 为了能够按预期运行，Office 加载项可能会依赖特定的 Office 应用程序、要求集、API 成员或 API 版本。下表列出了每个 Office 应用程序目前所支持的平台、扩展点、API 要求集和通用 API。
+
+<br>
+
+|<a href="#excel"><img src="../images/index/logo-excel.svg" alt="Excel" width="48" /><br><span>Excel</span></a>|<a href="#onenote"><img src="../images/index/logo-onenote.svg" alt="OneNote" width="48" /><br><span>OneNote</span></a>|<a href="#outlook"><img src="../images/index/logo-outlook.svg" alt="Outlook" width="48" /><br><span>Outlook</span></a>|<a href="#powerpoint"><img src="../images/index/logo-powerpoint.svg" alt="PowerPoint" width="48" /><br><span>PowerPoint</span></a>|<a href="#project"><img src="../images/index/logo-project-server.svg" alt="Project" width="48" /><br><span>Project</span></a>|<a href="#word"><img src="../images/index/logo-word.svg" alt="Word" width="48" /><br><span>Word</span></a>|
+|:---:|:---:|:---:|:---:|:---:|:---:|
 
 > [!NOTE]
 > 通过 MSI 安装的初始 Office 2016 版本只包含 ExcelApi 1.1、WordApi 1.1 和通用 API 要求集。 有关各种 Office 版本更新历史记录的更多信息，请查看[另请参阅](#see-also)部分。
