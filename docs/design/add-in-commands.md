@@ -57,7 +57,7 @@ ms.locfileid: "48370505"
 可指定在加载项启动时是启用还是禁用该命令，并以编程方式更改设置。
 
 > [!NOTE]
-> 此功能并未在所有 Office 应用程序或方案中受支持。 有关详细信息，请参阅[启用和禁用加载项命令](disable-add-in-commands.md)。
+> 此功能并非在所有 Office 应用程序或方案中受到支持。 有关详细信息，请参阅[启用和禁用加载项命令](disable-add-in-commands.md)。
 
 ## <a name="supported-platforms"></a>支持的平台
 
