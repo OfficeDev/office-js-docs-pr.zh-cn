@@ -207,6 +207,8 @@
                       href: develop/dialog-video.md
                 - name: 任务窗格
                   href: design/task-pane-add-ins.md
+            - name: 键盘快捷方式
+              href: design/keyboard-shortcuts.md
             - name: 本地化
               href: develop/localization.md
             - name: 资源
@@ -359,6 +361,8 @@
               href: reference/manifest/equivalentaddin.md
             - name: EquivalentAddins
               href: reference/manifest/equivalentaddins.md
+            - name: ExtendedOverrides
+              href: reference/manifest/extendedoverrides.md
             - name: ExtendedPermission
               href: reference/manifest/extendedpermission.md
             - name: ExtendedPermissions
@@ -423,6 +427,10 @@
               href: reference/manifest/targetdialect.md
             - name: TargetDialects
               href: reference/manifest/targetdialects.md
+            - name: 令牌
+              href: reference/manifest/tokens.md
+            - name: 令牌
+              href: reference/manifest/token.md
             - name: 类型
               href: reference/manifest/type.md
             - name: 版本
