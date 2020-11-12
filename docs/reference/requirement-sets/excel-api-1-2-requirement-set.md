@@ -1,15 +1,15 @@
 ---
 title: Excel JavaScript API 要求集1。2
 description: 有关 ExcelApi 1.2 要求集的详细信息。
-ms.date: 07/26/2019
+ms.date: 11/09/2020
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: b0d49bf02ba459e037c31d76145a2f7dc8c8c821
-ms.sourcegitcommit: ed2a98b6fb5b432fa99c6cefa5ce52965dc25759
+ms.openlocfilehash: d81604112a61e2a624387a51b8140f13cecf5430
+ms.sourcegitcommit: ca66ff7462bfdf4ed7ae04f43d1388c24de63bf9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/16/2020
-ms.locfileid: "47819677"
+ms.lasthandoff: 11/11/2020
+ms.locfileid: "48996499"
 ---
 # <a name="whats-new-in-excel-javascript-api-12"></a>Excel JavaScript API 1.2 的最近更新
 
@@ -23,14 +23,14 @@ ExcelApi 1.2 增加了对表筛选和对内置 Excel 函数的访问支持。
 |:---|:---|:---|
 |[Binding](/javascript/api/excel/excel.binding)|[onDataChanged](/javascript/api/excel/excel.binding#ondatachanged)|当绑定内的数据或格式变化时发生。|
 ||[onSelectionChanged](/javascript/api/excel/excel.binding#onselectionchanged)|当绑定中的所选内容更改时发生。|
-|[BindingDataChangedEventArgs](/javascript/api/excel/excel.bindingdatachangedeventargs)|[binding](/javascript/api/excel/excel.bindingdatachangedeventargs#binding)|获取表示引发了 DataChanged 事件的绑定的 Binding 对象。|
-|[BindingSelectionChangedEventArgs](/javascript/api/excel/excel.bindingselectionchangedeventargs)|[binding](/javascript/api/excel/excel.bindingselectionchangedeventargs#binding)|获取表示引发了 SelectionChanged 事件的绑定的 Binding 对象。|
+|[BindingDataChangedEventArgs](/javascript/api/excel/excel.bindingdatachangedeventargs)|[binding](/javascript/api/excel/excel.bindingdatachangedeventargs#binding)|获取一个临时 `Binding` 对象，该对象包含 `Binding` 引发事件的对象的 ID。|
+|[BindingSelectionChangedEventArgs](/javascript/api/excel/excel.bindingselectionchangedeventargs)|[binding](/javascript/api/excel/excel.bindingselectionchangedeventargs#binding)|获取一个临时 `Binding` 对象，该对象包含 `Binding` 引发事件的对象的 ID。|
 ||[columnCount](/javascript/api/excel/excel.bindingselectionchangedeventargs#columncount)|获取选择的列数。|
 ||[rowCount](/javascript/api/excel/excel.bindingselectionchangedeventargs#rowcount)|获取选择的行数。|
 ||[startColumn](/javascript/api/excel/excel.bindingselectionchangedeventargs#startcolumn)|获取所选内容第一列的索引（从零开始）。|
 ||[startRow](/javascript/api/excel/excel.bindingselectionchangedeventargs#startrow)|获取选择的第一行的索引（基于零）。|
 |[Chart](/javascript/api/excel/excel.chart)|[getImage (width？： number，height？： number，fittingMode？： ImageFittingMode) ](/javascript/api/excel/excel.chart#getimage-width--height--fittingmode-)|通过缩放图表以适应指定的尺寸，将图表呈现为 base64 编码的图像。|
-||[worksheet](/javascript/api/excel/excel.chart#worksheet)|包含当前 chart 的 worksheet 对象。 只读。|
+||[worksheet](/javascript/api/excel/excel.chart#worksheet)|包含当前 chart 的 worksheet 对象。|
 |[筛选器](/javascript/api/excel/excel.filter)|[应用 (条件： FilterCriteria) ](/javascript/api/excel/excel.filter#apply-criteria-)|在给定列中应用给定的筛选条件。|
 ||[applyBottomItemsFilter(count: number)](/javascript/api/excel/excel.filter#applybottomitemsfilter-count-)|将“Bottom Item”筛选器应用于列，获取给定数量的元素。|
 ||[applyBottomPercentFilter(percent: number)](/javascript/api/excel/excel.filter#applybottompercentfilter-percent-)|将“Bottom Percent”筛选器应用于列，获取给定百分比的元素。|
@@ -43,17 +43,17 @@ ExcelApi 1.2 增加了对表筛选和对内置 Excel 函数的访问支持。
 ||[applyTopPercentFilter(percent: number)](/javascript/api/excel/excel.filter#applytoppercentfilter-percent-)|将“Top Percent”筛选器应用于列，以获取给定比例的元素。|
 ||[applyValuesFilter (值： Array<string \| FilterDatetime>) ](/javascript/api/excel/excel.filter#applyvaluesfilter-values-)|将“Values”筛选器应用于列，获取给定值。|
 ||[clear()](/javascript/api/excel/excel.filter#clear--)|清除给定列上的 filter。|
-||[criteria](/javascript/api/excel/excel.filter#criteria)|给定列上当前应用的筛选器。 只读。|
-|[FilterCriteria](/javascript/api/excel/excel.filtercriteria)|[color](/javascript/api/excel/excel.filtercriteria#color)|用于筛选单元格的 HTML 颜色字符串。 与“cellColor”和“fontColor”筛选一起使用。|
-||[criterion1](/javascript/api/excel/excel.filtercriteria#criterion1)|第一个条件用于筛选数据。 在“自定义”筛选中用作运算符。|
-||[criterion2](/javascript/api/excel/excel.filtercriteria#criterion2)|第二个条件用于筛选数据。 在“自定义”筛选中仅用作运算符。|
-||[dynamicCriteria](/javascript/api/excel/excel.filtercriteria#dynamiccriteria)|Excel.DynamicFilterCriteria 集中的动态条件将应用于此列。 与“动态”筛选一起使用。|
+||[criteria](/javascript/api/excel/excel.filter#criteria)|给定列上当前应用的筛选器。|
+|[FilterCriteria](/javascript/api/excel/excel.filtercriteria)|[color](/javascript/api/excel/excel.filtercriteria#color)|用于筛选单元格的 HTML 颜色字符串。|
+||[criterion1](/javascript/api/excel/excel.filtercriteria#criterion1)|第一个条件用于筛选数据。|
+||[criterion2](/javascript/api/excel/excel.filtercriteria#criterion2)|第二个条件用于筛选数据。|
+||[dynamicCriteria](/javascript/api/excel/excel.filtercriteria#dynamiccriteria)|Excel.DynamicFilterCriteria 集中的动态条件将应用于此列。|
 ||[筛选](/javascript/api/excel/excel.filtercriteria#filteron)|筛选器使用的属性，用于确定是否应将值保持为可见时。|
-||[icon](/javascript/api/excel/excel.filtercriteria#icon)|用于筛选单元格的图标。 与“图标”筛选一起使用。|
+||[icon](/javascript/api/excel/excel.filtercriteria#icon)|用于筛选单元格的图标。|
 ||[operator](/javascript/api/excel/excel.filtercriteria#operator)|使用“自定义”筛选时，用于组合条件 1 和 2 的运算符。|
 ||[values](/javascript/api/excel/excel.filtercriteria#values)|一组用于“values”筛选器的值。|
 |[FilterDatetime](/javascript/api/excel/excel.filterdatetime)|[date](/javascript/api/excel/excel.filterdatetime#date)|用于筛选数据的采用 ISO8601 格式的日期。|
-||[specificity](/javascript/api/excel/excel.filterdatetime#specificity)|用于保留数据的日期的具体程度。 例如，如果日期是 2005-04-02 并且将特殊性设置为“月”，则筛选操作将保留包含 2009 年 4 月日期的所有行。|
+||[specificity](/javascript/api/excel/excel.filterdatetime#specificity)|用于保留数据的日期的具体程度。|
 |[FiveArrowsGraySet](/javascript/api/excel/excel.fivearrowsgrayset)|[grayDownArrow](/javascript/api/excel/excel.fivearrowsgrayset#graydownarrow)||
 ||[grayDownInclineArrow](/javascript/api/excel/excel.fivearrowsgrayset#graydowninclinearrow)||
 ||[graySideArrow](/javascript/api/excel/excel.fivearrowsgrayset#graysidearrow)||
@@ -79,8 +79,8 @@ ExcelApi 1.2 增加了对表筛选和对内置 Excel 函数的访问支持。
 ||[oneBar](/javascript/api/excel/excel.fiveratingset#onebar)||
 ||[threeBars](/javascript/api/excel/excel.fiveratingset#threebars)||
 ||[twoBars](/javascript/api/excel/excel.fiveratingset#twobars)||
-|[FormatProtection](/javascript/api/excel/excel.formatprotection)|[formulaHidden](/javascript/api/excel/excel.formatprotection#formulahidden)|表示 Excel 是否隐藏区域中的单元格公式。指示整个区域不具有统一公式隐藏设置的空值。|
-||[locked](/javascript/api/excel/excel.formatprotection#locked)|指示 Excel 是否将对象中的单元格锁定。 指示整个区域不具有统一锁定设置的空值。|
+|[FormatProtection](/javascript/api/excel/excel.formatprotection)|[formulaHidden](/javascript/api/excel/excel.formatprotection#formulahidden)|指定 Excel 是否隐藏区域中单元格的公式。|
+||[locked](/javascript/api/excel/excel.formatprotection#locked)|指定 Excel 是否锁定对象中的单元格。|
 |[FourArrowsGraySet](/javascript/api/excel/excel.fourarrowsgrayset)|[grayDownArrow](/javascript/api/excel/excel.fourarrowsgrayset#graydownarrow)||
 ||[grayDownInclineArrow](/javascript/api/excel/excel.fourarrowsgrayset#graydowninclinearrow)||
 ||[grayUpArrow](/javascript/api/excel/excel.fourarrowsgrayset#grayuparrow)||
@@ -101,12 +101,12 @@ ExcelApi 1.2 增加了对表筛选和对内置 Excel 函数的访问支持。
 ||[greenCircle](/javascript/api/excel/excel.fourtrafficlightsset#greencircle)||
 ||[redCircleWithBorder](/javascript/api/excel/excel.fourtrafficlightsset#redcirclewithborder)||
 ||[yellowCircle](/javascript/api/excel/excel.fourtrafficlightsset#yellowcircle)||
-|[FunctionResult](/javascript/api/excel/excel.functionresult)|[error](/javascript/api/excel/excel.functionresult#error)|错误值 (，如 "#DIV/0" ) 表示错误。 如果未设置错误字符串，则函数成功，并将其结果写入值字段。 该错误始终位于英语区域设置中。|
-||[value](/javascript/api/excel/excel.functionresult#value)|函数计算的值。 仅当未发生错误时，才会填充 "值" 字段 (即，不) 设置 Error 属性。|
+|[FunctionResult](/javascript/api/excel/excel.functionresult)|[error](/javascript/api/excel/excel.functionresult#error)|错误值 (，如 "#DIV/0" ) 表示错误。|
+||[value](/javascript/api/excel/excel.functionresult#value)|函数计算的值。|
 |[Functions](/javascript/api/excel/excel.functions)|[ (的 abs 数字：数字 \| excel. \| \| FunctionResult) 的 RangeReference <any>](/javascript/api/excel/excel.functions#abs-number-)|返回一个数的绝对值，即不带其正负号的数字。|
 ||[accrInt (问题： number \| string \| boolean \| Excel. \| RangeReference \| FunctionResult <any> ，firstInterest： number \| string boolean。 RangeReference，FunctionResult \| \| \| \| <any> ，结算： number \| string boolean Excel. RangeReference excel. FunctionResult \| \| \| \| <any> ，rate： number \| string \| 布尔值 \| RangeReference。 \| \| FunctionResult <any> ，par： number \| string \| 布尔值 \| 。 \| \| FunctionResult <any> ，frequency： number string boolean。 RangeReference excel. FunctionResult \| \| \| \| \| <any> ，basis？： number \| string \| boolean \| excel \| \| <any> \| \| \| \| \| <any> . RangeReference。 FunctionResult excel. calcMethod 的 boolean excel. RangeReference excel. FunctionResult) ](/javascript/api/excel/excel.functions#accrint-issue--firstinterest--settlement--rate--par--frequency--basis--calcmethod-)|返回定期付息有价证券的应计利息。|
 ||[accrIntM (问题： number \| string \| Boolean。 \| \| RangeReference \| FunctionResult <any> ，结算： number \| String \| 布尔值 \| 。 \| RangeReference \| Excel. FunctionResult <any> ，rate： number string boolean excel. RangeReference \| excel \| \| \| \| <any> \| \| \| \| \| <any> \| \| \| \| \| <any> . FunctionResult，par： number string boolean excel. RangeReference excel. FunctionResult，basis？： number string boolean excel. RangeReference excel. FunctionResult 的 excel.) ](/javascript/api/excel/excel.functions#accrintm-issue--settlement--rate--par--basis-)|返回到期一次性付息有价证券的应计利息。|
-||[acos (号码：对 excel \| RangeReference。 \| \| FunctionResult <any>) ](/javascript/api/excel/excel.functions#acos-number-)|返回一个数的反余弦值，以弧度为单位，范围为0到 Pi。 反余弦值是其余弦值为数字的角度。|
+||[acos (号码：对 excel \| RangeReference。 \| \| FunctionResult <any>) ](/javascript/api/excel/excel.functions#acos-number-)|返回一个数的反余弦值，以弧度为单位，范围为0到 Pi。|
 ||[acosh (号码：对 excel \| RangeReference。 \| \| FunctionResult <any>) ](/javascript/api/excel/excel.functions#acosh-number-)|返回数字的反双曲余弦值。|
 ||[acot (号码：对 excel \| RangeReference。 \| \| FunctionResult <any>) ](/javascript/api/excel/excel.functions#acot-number-)|返回一个数字的 arccotangent，以弧度为单位，范围为0到 Pi。|
 ||[acoth (号码：对 excel \| RangeReference。 \| \| FunctionResult <any>) ](/javascript/api/excel/excel.functions#acoth-number-)|返回一个数的反双曲余切。|
@@ -114,16 +114,16 @@ ExcelApi 1.2 增加了对表筛选和对内置 Excel 函数的访问支持。
 ||[amorLinc (成本：数字 \| 字符串 \| 布尔值 \| Excel. \| RangeReference \| FunctionResult <any> ，datePurchased： number \| String \| boolean \| excel. \| RangeReference excel. \| FunctionResult <any> ，firstPeriod： number \| string \| boolean \| Excel. \| RangeReference \| FunctionResult <any> ，抢救： number \| string \| 布尔值 \| 。 \| RangeReference excel. \| FunctionResult <any> ，句点： number \| string \| boolean excel. RangeReference excel. FunctionResult \| \| \| <any> ，rate： number \| string boolean \| \| excel \| \| <any> \| \| \| \| \| <any> . RangeReference excel. FunctionResult excel. RangeReference excel. FunctionResult) 。 excel. 的 excel. ](/javascript/api/excel/excel.functions#amorlinc-cost--datepurchased--firstperiod--salvage--period--rate--basis-)|返回每个记帐期的资产的按比例线性折旧。|
 ||[和 ( .。。值： Array<布尔 excel. \| \| \| FunctionResult <any>> RangeReference) ](/javascript/api/excel/excel.functions#and-values-)|检查所有参数是否均为 TRUE，如果所有参数均为 TRUE，则返回 TRUE。|
 ||[阿拉伯语 (文字： string \| \| RangeReference \| FunctionResult <any>) ](/javascript/api/excel/excel.functions#arabic-text-)|将罗马数字转换为阿拉伯语。|
-||[区域 (参考： RangeReference) 的 excel. \| \| FunctionResult <any>](/javascript/api/excel/excel.functions#areas-reference-)|返回引用中的区域数。 区域是连续的单元格区域或单个单元格。|
-||[asc (text： string \| \| RangeReference \| FunctionResult <any>) ](/javascript/api/excel/excel.functions#asc-text-)|将全角 (双字节) 字符更改为半角 (单字节) 字符。 将双字节字符集用于 (DBCS) 。|
+||[区域 (参考： RangeReference) 的 excel. \| \| FunctionResult <any>](/javascript/api/excel/excel.functions#areas-reference-)|返回引用中的区域数。|
+||[asc (text： string \| \| RangeReference \| FunctionResult <any>) ](/javascript/api/excel/excel.functions#asc-text-)|将全角 (双字节) 字符更改为半角 (单字节) 字符。|
 ||[asin (号码：对 excel \| RangeReference。 \| \| FunctionResult <any>) ](/javascript/api/excel/excel.functions#asin-number-)|返回以弧度表示的数字的反正弦值，其范围为-Pi/2 至 Pi/2。|
 ||[asinh (号码：对 excel \| RangeReference。 \| \| FunctionResult <any>) ](/javascript/api/excel/excel.functions#asinh-number-)|返回数字的反双曲正弦值。|
 ||[atan (号码：对 excel \| RangeReference。 \| \| FunctionResult <any>) ](/javascript/api/excel/excel.functions#atan-number-)|返回以弧度表示的数字的反正切值，范围-Pi/2 到 Pi/2。|
 ||[atan2 (xNum：号码 excel. \| \| \| FunctionResult <any> 、yNum： number \| \| \| <any> excel. RangeReference excel. FunctionResult) ](/javascript/api/excel/excel.functions#atan2-xnum--ynum-)|返回指定的 x 和 y 坐标的反正切值，单位为-Pi 和 Pi 之间的弧度（不含-Pi）。|
 ||[atanh (号码：对 excel \| RangeReference。 \| \| FunctionResult <any>) ](/javascript/api/excel/excel.functions#atanh-number-)|返回数字的反双曲正切值。|
-||[aveDev ( .。。值： Array<数字 excel \| . \| \| FunctionResult> RangeReference <any>) ](/javascript/api/excel/excel.functions#avedev-values-)|返回多个数据点与其平均值的绝对偏差的平均值。 参数可以是数字，也可以是包含数字的名称、数组或引用。|
+||[aveDev ( .。。值： Array<数字 excel \| . \| \| FunctionResult> RangeReference <any>) ](/javascript/api/excel/excel.functions#avedev-values-)|返回多个数据点与其平均值的绝对偏差的平均值。|
 ||[平均 ( .。。值： Array<数字 excel \| . \| \| FunctionResult> RangeReference <any>) ](/javascript/api/excel/excel.functions#average-values-)|返回其参数的 (算术平均值的平均值) ，可以是数字，也可以是包含数字的名称、数组或引用。|
-||[averageA ( .。。值： Array<数字 excel \| . \| \| FunctionResult> RangeReference <any>) ](/javascript/api/excel/excel.functions#averagea-values-)|返回其参数的平均值 (算术) 平均值，将参数中的 text 和 FALSE 计算为 0;TRUE 的计算结果为1。 参数可以是数字、名称、数组或引用。|
+||[averageA ( .。。值： Array<数字 excel \| . \| \| FunctionResult> RangeReference <any>) ](/javascript/api/excel/excel.functions#averagea-values-)|返回其参数的平均值 (算术) 平均值，将参数中的 text 和 FALSE 计算为 0;TRUE 的计算结果为1。|
 ||[averageIf (range： \| RangeReference。 \| FunctionResult <any> ，criteria： number \| string \| boolean excel. FunctionResult \| \| \| <any> ，AverageRange？： excel \| \| <any> . RangeReference excel. FunctionResult RangeReference。) ](/javascript/api/excel/excel.functions#averageif-range--criteria--averagerange-)|查找由给定条件或条件指定的单元格的平均 (算术平均值) 。|
 ||[averageIfs (averageRange： Excel. \| RangeReference \| FunctionResult <any> .。。值： Array<excel. \| \| FunctionResult <any> \| number \| string \| boolean>) ](/javascript/api/excel/excel.functions#averageifs-averagerange--values-)|查找由一组给定条件或条件指定的单元格的平均 (算术平均值) 。|
 ||[bahtText (号码：对 excel \| RangeReference。 \| \| FunctionResult <any>) ](/javascript/api/excel/excel.functions#bahttext-number-)|将数字转换为 (泰铢) 的文本。|
@@ -189,7 +189,7 @@ ExcelApi 1.2 增加了对表筛选和对内置 Excel 函数的访问支持。
 ||[结束日期 (结束日期： string \| number \| Excel. \| \| FunctionResult <any> ，起始日期： String \| number excel RangeReference。 \| \| \| FunctionResult <any>) ](/javascript/api/excel/excel.functions#days-enddate--startdate-)|返回两个日期之间的天数。|
 ||[days360 (开始日期： number excel. \| \| RangeReference。 \| FunctionResult <any> ，结束日期： Number excel. \| \| RangeReference \| FunctionResult <any> ，method？：布尔型 \| excel \| \| <any> . RangeReference excel. FunctionResult) ](/javascript/api/excel/excel.functions#days360-startdate--enddate--method-)|返回两个日期之间的天数，以360年为 (12 30-日月) 。|
 ||[db (成本： number excel \| . \| RangeReference \| FunctionResult <any> ，抢救： number excel. \| \| \| FunctionResult <any> ，life： number excel.，life： number excel. RangeReference \| ，period \| \| ： <any> \| \| \| <any> \| \| \| <any> number excel. FunctionResult，period： number excel. RangeReference excel. FunctionResult，month： number excel. RangeReference) ](/javascript/api/excel/excel.functions#db-cost--salvage--life--period--month-)|使用固定余额递减法返回指定周期内某项资产的折旧值。|
-||[dbcs (文本： string FunctionResult 的 RangeReference 的 excel. \| \| \| <any>) ](/javascript/api/excel/excel.functions#dbcs-text-)|将字符字符串中的半角 (单字节) 字符更改为全角 (双字节) 字符。 将双字节字符集用于 (DBCS) 。|
+||[dbcs (文本： string FunctionResult 的 RangeReference 的 excel. \| \| \| <any>) ](/javascript/api/excel/excel.functions#dbcs-text-)|将字符字符串中的半角 (单字节) 字符更改为全角 (双字节) 字符。|
 ||[dcount (database： \| RangeReference \| FunctionResult <any> ，field： number \| string \| excel. \| \| FunctionResult <any> ，criteria： string \| excel. RangeReference excel. FunctionResult) 的情况下 \| \| <any> 进行 excel。 ](/javascript/api/excel/excel.functions#dcount-database--field--criteria-)|计算数据库中与您指定的条件相匹配的字段中包含数字的单元格 (列) 记录。|
 ||[dcountA (database： \| RangeReference \| FunctionResult <any> ，field： number \| string \| Excel. \| RangeReference \| excel. FunctionResult <any> ，criteria： string excel. RangeReference \|) 的 \| \| <any> excel. FunctionResult excel. ](/javascript/api/excel/excel.functions#dcounta-database--field--criteria-)|计算数据库中与指定条件相匹配的字段中的非空单元格 (列) 的记录。|
 ||[ddb (成本： number excel \| . \| RangeReference \| FunctionResult <any> ，抢救： number excel. \| \| \| FunctionResult <any> ，life： number excel.，life： number excel. RangeReference \| \| \| <any> ，period： \| \| \| <any> \| \| \| <any> number excel. FunctionResult，period： number excel. RangeReference，period： number excel. FunctionResult 的 excel. RangeReference) ](/javascript/api/excel/excel.functions#ddb-cost--salvage--life--period--factor-)|使用双倍余额递减法或其他指定方法返回某项资产在指定周期内的折旧值。|
@@ -224,18 +224,18 @@ ExcelApi 1.2 增加了对表筛选和对内置 Excel 函数的访问支持。
 ||[erf_Precise (X： number \| string \| boolean \| Excel. \| RangeReference \| FunctionResult <any>) ](/javascript/api/excel/excel.functions#erf-precise-x-)|返回错误函数。|
 ||[error_Type (errorVal： string \| number \| boolean \| Excel. \| RangeReference \| FunctionResult <any>) ](/javascript/api/excel/excel.functions#error-type-errorval-)|返回一个与错误值相匹配的数字。|
 ||[偶数 (号码：将 excel \| RangeReference。 \| \| FunctionResult <any>) ](/javascript/api/excel/excel.functions#even-number-)|将正数值向上和负数向下舍入到最接近的偶数整数。|
-||[exact (text1： string \| \| RangeReference \| FunctionResult <any> ，文本2： String \| excel. \| RangeReference \| FunctionResult！ <any>) ](/javascript/api/excel/excel.functions#exact-text1--text2-)|检查两个文本字符串是否完全相同，并返回 TRUE 或 FALSE。 EXACT 是否区分大小写。|
+||[exact (text1： string \| \| RangeReference \| FunctionResult <any> ，文本2： String \| excel. \| RangeReference \| FunctionResult！ <any>) ](/javascript/api/excel/excel.functions#exact-text1--text2-)|检查两个文本字符串是否完全相同，并返回 TRUE 或 FALSE。|
 ||[exp (号：数字 \| excel. \| \| FunctionResult) 的 RangeReference <any>](/javascript/api/excel/excel.functions#exp-number-)|返回 e 的加上给定数字的次幂。|
 ||[expon_Dist (x： number excel \| \| RangeReference \| FunctionResult <any> ，lambda： number excel. \| \| \| FunctionResult <any> ，cumulative： boolean excel. RangeReference，cumulative \| excel \| \| <any> . FunctionResult) ](/javascript/api/excel/excel.functions#expon-dist-x--lambda--cumulative-)|返回指数分布。|
 ||[f_Dist (x： number excel. \| \| RangeReference \| FunctionResult <any> ，degFreedom1： number excel. \| \| RangeReference excel. FunctionResult、degFreedom2： number excel。 RangeReference excel. FunctionResult excel. RangeReference \| <any> \| \| \| <any> ，累积： boolean excel. FunctionResult \| \| \| excel. <any>) ](/javascript/api/excel/excel.functions#f-dist-x--degfreedom1--degfreedom2--cumulative-)|返回两个数据集的多元化) 的 (左尾) F 概率分布 (程度。|
 ||[f_Dist_RT (x： RangeReference RangeReference。 \| \| \| FunctionResult <any> ，degFreedom1： number excel. \| \| \| excel. FunctionResult <any> ，degFreedom2： number \| \| \| <any> excel. RangeReference excel. FunctionResult) ](/javascript/api/excel/excel.functions#f-dist-rt-x--degfreedom1--degfreedom2-)|返回两个数据集的多元化) 的 (右尾) F 概率分布 (程度。|
 ||[f_Inv (概率： number excel \| RangeReference。 \| \| FunctionResult <any> ，degFreedom1： number excel. RangeReference excel. \| \| \| FunctionResult <any> ，degFreedom2： number \| \| \| <any> excel. RangeReference excel. FunctionResult) ](/javascript/api/excel/excel.functions#f-inv-probability--degfreedom1--degfreedom2-)|返回 (左尾) F 概率分布的反函数：如果 p = F. DIST (x,... ) ，则为 (,... p ) = x。|
 ||[f_Inv_RT (概率： number excel \| RangeReference。 \| \| FunctionResult <any> ，degFreedom1： number excel. RangeReference excel. \| \| \| FunctionResult <any> ，degFreedom2： number \| \| \| <any> excel. RangeReference excel. FunctionResult) ](/javascript/api/excel/excel.functions#f-inv-rt-probability--degfreedom1--degfreedom2-)|返回 (右尾) F 概率分布的反函数：如果 p = f.。RT (x,... ) ，然后是 "INV"。RT (p,... ) = x。|
-||[事实 (号码：对 excel 进行数字 \| \| RangeReference。 \| FunctionResult <any>) ](/javascript/api/excel/excel.functions#fact-number-)|返回一个数的阶乘，等于 1*2*3 *...* 多种.|
+||[事实 (号码：对 excel 进行数字 \| \| RangeReference。 \| FunctionResult <any>) ](/javascript/api/excel/excel.functions#fact-number-)|返回一个数的阶乘，等于 1 *2* 3 *...* 多种.|
 ||[factDouble (号码：数字 \| 字符串 \| 布尔值 \| excel. \| RangeReference excel. \| FunctionResult <any>) ](/javascript/api/excel/excel.functions#factdouble-number-)|返回数字的双倍阶乘。|
 ||[false ( # B1 ](/javascript/api/excel/excel.functions#false--)|返回逻辑值 FALSE。|
-||[查找 (findText： string \| \| RangeReference。 \| FunctionResult <any> ，withinText： string excel. RangeReference \| \| ，FunctionResult \| <any> ？： number \| \| \| <any> excel. startNum excel. RangeReference FunctionResult。) ](/javascript/api/excel/excel.functions#find-findtext--withintext--startnum-)|返回另一个文本字符串中一个文本字符串的起始位置。 查找区分大小写。|
-||[findB (findText： string \| excel. \| \| FunctionResult <any> ，withinText： string excel. RangeReference \| ，FunctionResult \| \| <any> ？： number \| \| \| <any> excel. startNum excel. RangeReference) 。 FunctionResult ](/javascript/api/excel/excel.functions#findb-findtext--withintext--startnum-)|在另一个文本字符串中查找一个文本字符串的起始位置。 FINDB 区分大小写。 将双字节字符集用于 (DBCS) 。|
+||[查找 (findText： string \| \| RangeReference。 \| FunctionResult <any> ，withinText： string excel. RangeReference \| \| ，FunctionResult \| <any> ？： number \| \| \| <any> excel. startNum excel. RangeReference FunctionResult。) ](/javascript/api/excel/excel.functions#find-findtext--withintext--startnum-)|返回另一个文本字符串中一个文本字符串的起始位置。|
+||[findB (findText： string \| excel. \| \| FunctionResult <any> ，withinText： string excel. RangeReference \| ，FunctionResult \| \| <any> ？： number \| \| \| <any> excel. startNum excel. RangeReference) 。 FunctionResult ](/javascript/api/excel/excel.functions#findb-findtext--withintext--startnum-)|在另一个文本字符串中查找一个文本字符串的起始位置。|
 ||[fisher (x： RangeReference FunctionResult 的数字 excel. \| \| \| <any>) ](/javascript/api/excel/excel.functions#fisher-x-)|返回 Fisher 转换。|
 ||[fisherInv (y： number excel. \| \| RangeReference \| FunctionResult <any>) ](/javascript/api/excel/excel.functions#fisherinv-y-)|返回 Fisher 转换的反函数：如果 y = FISHER (x) ，则 FISHERINV (y) = x。|
 ||[固定 (号码： RangeReference excel. \| \| \| FunctionResult <any> ，小数位数？： number excel. \| \| \| FunctionResult <any> ，noCommas？：布尔值 \| excel. \| RangeReference \| excel <any> . FunctionResult) 。 ](/javascript/api/excel/excel.functions#fixed-number--decimals--nocommas-)|将数字舍入到指定的小数位数，并以包含或不带逗号的文本的形式返回结果。|
@@ -305,28 +305,28 @@ ExcelApi 1.2 增加了对表筛选和对内置 Excel 函数的访问支持。
 ||[ispmt (速率： number excel. \| \| RangeReference \| FunctionResult <any> ，per： number excel. \| \| RangeReference \| excel. FunctionResult <any> ，nper： number excel \| \| \| <any> \| \| \| <any> . RangeReference excel. FunctionResult，pv： number excel. RangeReference excel. FunctionResult) ](/javascript/api/excel/excel.functions#ispmt-rate--per--nper--pv-)|返回特定投资期内支付的利息。|
 ||[isref (值： Excel. Range \| number \| String \| \| RangeReference \| FunctionResult <any>) ](/javascript/api/excel/excel.functions#isref-value-)|检查值是否为引用，并返回 TRUE 或 FALSE。|
 ||[kurt ( .。。值： Array<数字 excel \| . \| \| FunctionResult> RangeReference <any>) ](/javascript/api/excel/excel.functions#kurt-values-)|返回一组数据的峰值。|
-||[大型 (数组：数字 \| excel. \| \| FunctionResult <any> ，k： Number excel. FunctionResult RangeReference。 \| \| \| <any>) ](/javascript/api/excel/excel.functions#large-array--k-)|返回数据集中第 k 个最大值。 例如，第五个最大的数字。|
+||[大型 (数组：数字 \| excel. \| \| FunctionResult <any> ，k： Number excel. FunctionResult RangeReference。 \| \| \| <any>) ](/javascript/api/excel/excel.functions#large-array--k-)|返回数据集中第 k 个最大值。|
 ||[lcm ( .。。值： Array<编号 \| 字符串 \| Excel. \| \| \| FunctionResult> 的 RangeReference <any>) 的 excel。 ](/javascript/api/excel/excel.functions#lcm-values-)|返回最小公倍数。|
 ||[left (text： string \| \| RangeReference \| FunctionResult <any> ，numChars？： number excel. \| \| RangeReference \| excel. FunctionResult <any>) ](/javascript/api/excel/excel.functions#left-text--numchars-)|返回文本字符串开头的指定数量的字符。|
-||[leftb (text： string \| \| RangeReference \| FunctionResult <any> ，numBytes？： number excel. RangeReference \| excel. \| \| FunctionResult <any>) ](/javascript/api/excel/excel.functions#leftb-text--numbytes-)|返回文本字符串开头的指定数量的字符。 将双字节字符集用于 (DBCS) 。|
+||[leftb (text： string \| \| RangeReference \| FunctionResult <any> ，numBytes？： number excel. RangeReference \| excel. \| \| FunctionResult <any>) ](/javascript/api/excel/excel.functions#leftb-text--numbytes-)|返回文本字符串开头的指定数量的字符。|
 ||[len (文本： string \| \| RangeReference \| FunctionResult <any>) ](/javascript/api/excel/excel.functions#len-text-)|返回文本字符串中的字符数。|
-||[lenb (文本： string \| \| RangeReference \| FunctionResult <any>) ](/javascript/api/excel/excel.functions#lenb-text-)|返回文本字符串中的字符数。 将双字节字符集用于 (DBCS) 。|
+||[lenb (文本： string \| \| RangeReference \| FunctionResult <any>) ](/javascript/api/excel/excel.functions#lenb-text-)|返回文本字符串中的字符数。|
 ||[ln (号：对 excel 进行编号。 \| \| \| FunctionResult <any>) RangeReference ](/javascript/api/excel/excel.functions#ln-number-)|返回数字的自然对数。|
 ||[日志 (号码：数字 \| excel. \| \| FunctionResult <any> ，RangeReference，base？： number excel. \| \| \| FunctionResult <any>) ](/javascript/api/excel/excel.functions#log-number--base-)|按所指定的底数，返回一个数的对数。|
 ||[log10 (号码：对 excel \| RangeReference。 \| \| FunctionResult <any>) ](/javascript/api/excel/excel.functions#log10-number-)|返回以 10 为底的对数。|
 ||[logNorm_Dist (x： number excel. \| \| RangeReference \| FunctionResult <any> ，mean： number excel. FunctionResult，standardDev： number excel。 RangeReference excel. FunctionResult \| \| \| <any> \| \| \| <any> ，cumulative： boolean excel. RangeReference \| excel. FunctionResult 的 \| \| 。 <any>) ](/javascript/api/excel/excel.functions#lognorm-dist-x--mean--standarddev--cumulative-)|返回 x 的对数分布，其中 ln (x) 通常随参数表示和 Standard_dev 一起分发。|
 ||[logNorm_Inv (概率： number excel \| RangeReference。 \| \| FunctionResult <any> ，mean： number \| excel. \| \| FunctionResult <any> ，standardDev： number \| \| \| <any> excel. RangeReference excel. FunctionResult： number excel.) ](/javascript/api/excel/excel.functions#lognorm-inv-probability--mean--standarddev-)|返回 x 的对数累积分布函数的反函数，其中 ln (x) 通常使用参数均值和 Standard_dev 进行分布。|
-||[lookup (lookupValue： number \| string \| boolean \| Excel. \| RangeReference \| FunctionResult <any> ，lookupVector：： excel. RangeReference \| ，FunctionResult \| <any> ？： \| \| <any> excel. resultVector excel. RangeReference) ](/javascript/api/excel/excel.functions#lookup-lookupvalue--lookupvector--resultvector-)|从单行或单列区域或从一个数组中查找值。 提供用于向后兼容性。|
+||[lookup (lookupValue： number \| string \| boolean \| Excel. \| RangeReference \| FunctionResult <any> ，lookupVector：： excel. RangeReference \| ，FunctionResult \| <any> ？： \| \| <any> excel. resultVector excel. RangeReference) ](/javascript/api/excel/excel.functions#lookup-lookupvalue--lookupvector--resultvector-)|从单行或单列区域或从一个数组中查找值。|
 ||[较低的 (文本： string \| \| RangeReference \| <any>) 的 excel. FunctionResult ](/javascript/api/excel/excel.functions#lower-text-)|将文本字符串中的所有字母转换为小写形式。|
 ||[匹配 (lookupValue： number \| string \| boolean \| excel. \| RangeReference \| <any> lookupArray： number excel.： number excel. RangeReference \| ，FunctionResult \| \| <any> ？： number \| \| \| <any> excel. matchType excel. RangeReference) ](/javascript/api/excel/excel.functions#match-lookupvalue--lookuparray--matchtype-)|返回在指定方式下与指定数值匹配的数组中元素的相应位置。|
-||[最大 ( .。。值： Array<数字 excel \| . \| \| FunctionResult> RangeReference <any>) ](/javascript/api/excel/excel.functions#max-values-)|返回一组值中的最大值。 忽略逻辑值和文本。|
-||[maxA ( .。。值： Array<数字 excel \| . \| \| FunctionResult> RangeReference <any>) ](/javascript/api/excel/excel.functions#maxa-values-)|返回一组值中的最大值。 不忽略逻辑值和文本。|
+||[最大 ( .。。值： Array<数字 excel \| . \| \| FunctionResult> RangeReference <any>) ](/javascript/api/excel/excel.functions#max-values-)|返回一组值中的最大值。|
+||[maxA ( .。。值： Array<数字 excel \| . \| \| FunctionResult> RangeReference <any>) ](/javascript/api/excel/excel.functions#maxa-values-)|返回一组值中的最大值。|
 ||[mduration (结算： number \| string \| Boolean \| \| RangeReference \| FunctionResult <any> ，到期日期：数字 \| 字符串 \| 布尔值 \| RangeReference。 \| \| FunctionResult <any> ，赠券： number \| String \| 布尔值 \| 。 \| \| FunctionResult <any> ，yld： number \| string boolean excel. RangeReference excel. FunctionResult \| \| \| \| <any> ，frequency： number \| string boolean \| \| excel \| \| <any> \| \| \| \| \| <any> . RangeReference。 FunctionResult excel. RangeReference 的布尔值。 FunctionResult excel. 的 excel.) ](/javascript/api/excel/excel.functions#mduration-settlement--maturity--coupon--yld--frequency--basis-)|返回 Macauley 的已修改持续时间，其假定值为 $100 的有价证券。|
 ||[中间 ( .。。值： Array<数字 excel \| . \| \| FunctionResult> RangeReference <any>) ](/javascript/api/excel/excel.functions#median-values-)|返回中值，或指定的编号集中的数字。|
 ||[mid (text： string \| \| RangeReference。 \| FunctionResult <any> ，startNum： number excel. RangeReference excel. \| \| \| FunctionResult <any> ，numChars： number \| \| \| <any> excel. RangeReference excel. FunctionResult) ](/javascript/api/excel/excel.functions#mid-text--startnum--numchars-)|在给定起始位置和长度的情况下，返回文本字符串中间的字符。|
-||[midb (text： string \| \| RangeReference \| FunctionResult <any> ，startNum： number excel.： number excel. RangeReference \| ，FunctionResult \| \| <any> ： number \| \| \| <any> excel. numBytes excel. RangeReference) ](/javascript/api/excel/excel.functions#midb-text--startnum--numbytes-)|在给定起始位置和长度的情况下，返回文本字符串中间的字符。 将双字节字符集用于 (DBCS) 。|
-||[最小 ( .。。值： Array<数字 excel \| . \| \| FunctionResult> RangeReference <any>) ](/javascript/api/excel/excel.functions#min-values-)|返回一组值中的最小值。 忽略逻辑值和文本。|
-||[minA ( .。。值： Array<数字 excel \| . \| \| FunctionResult> RangeReference <any>) ](/javascript/api/excel/excel.functions#mina-values-)|返回一组值中的最小值。 不忽略逻辑值和文本。|
+||[midb (text： string \| \| RangeReference \| FunctionResult <any> ，startNum： number excel.： number excel. RangeReference \| ，FunctionResult \| \| <any> ： number \| \| \| <any> excel. numBytes excel. RangeReference) ](/javascript/api/excel/excel.functions#midb-text--startnum--numbytes-)|在给定起始位置和长度的情况下，返回文本字符串中间的字符。|
+||[最小 ( .。。值： Array<数字 excel \| . \| \| FunctionResult> RangeReference <any>) ](/javascript/api/excel/excel.functions#min-values-)|返回一组值中的最小值。|
+||[minA ( .。。值： Array<数字 excel \| . \| \| FunctionResult> RangeReference <any>) ](/javascript/api/excel/excel.functions#mina-values-)|返回一组值中的最小值。|
 ||[minute (serialNumber： number excel. \| \| RangeReference \| excel. FunctionResult <any>) ](/javascript/api/excel/excel.functions#minute-serialnumber-)|返回分钟，是介于0到59之间的数字。|
 ||[ (值的 mirr： \| RangeReference \| FunctionResult <any> ，financeRate： Number excel. RangeReference excel. \| \| \| FunctionResult <any> ，reinvestRate： number \| \| \| <any> excel. RangeReference excel. FunctionResult) ](/javascript/api/excel/excel.functions#mirr-values--financerate--reinvestrate-)|返回一系列定期现金流的内部收益率，同时考虑投资成本和现金利率利息。|
 ||[mod (号码：对 excel 进行 \| \| RangeReference。 \| FunctionResult <any> ，约数： number excel. \| \| \| FunctionResult <any>) ](/javascript/api/excel/excel.functions#mod-number--divisor-)|返回一个数除以一个除数后所得的余数。|
@@ -356,7 +356,7 @@ ExcelApi 1.2 增加了对表筛选和对内置 Excel 函数的访问支持。
 ||[oddFYield (结算： number \| string \| Boolean \| 。 \| RangeReference \| FunctionResult <any> ，成熟度： number \| String \| 布尔值。 \| \| RangeReference \| excel. FunctionResult <any> ，issue：数字 \| string boolean excel. RangeReference excel. FunctionResult，firstCoupon： number string boolean Excel. RangeReference excel. FunctionResult， \| \| \| \| <any> \| \| \| \| \| <any> rate： number \| string \| 布尔值 \| RangeReference。 \| \| FunctionResult <any> ，pr： number \| string boolean。 \| \| \| \| FunctionResult <any> ，兑换： number \| string \| boolean excel. RangeReference excel. FunctionResult \| \| \| <any> ，frequency： number string boolean excel. RangeReference excel. FunctionResult， \| \| \| \| \| <any> basis？： number \| string \| boolean \| excel \| \| <any> . RangeReference excel. FunctionResult 的 excel.) ](/javascript/api/excel/excel.functions#oddfyield-settlement--maturity--issue--firstcoupon--rate--pr--redemption--frequency--basis-)|返回第一期为奇数的有价证券的收益率。|
 ||[oddLPrice (结算： number \| string \| Boolean。 \| \| RangeReference \| FunctionResult <any> ，成熟度： number \| String \| boolean。 \| \| RangeReference \| excel. FunctionResult <any> 、lastInterest： number \| string boolean Excel. RangeReference excel. FunctionResult \| \| \| \| <any> ，rate： Number \| string \| 布尔值 \| RangeReference。 \| \| FunctionResult <any> ，yld： number \| string \| 布尔值 \| 。 \| RangeReference excel. \| FunctionResult <any> ，兑换： number \| string \| boolean \| excel. \| RangeReference excel. FunctionResult \| <any> ，frequency： number \| string \| boolean \| excel \| \| <any> \| \| \| \| \| <any> . RangeReference excel. FunctionResult excel. RangeReference excel. FunctionResult excel. 的 excel.) ](/javascript/api/excel/excel.functions#oddlprice-settlement--maturity--lastinterest--rate--yld--redemption--frequency--basis-)|返回与前一期为奇数的有价证券的每 $100 的价格值。|
 ||[oddLYield (结算： number \| string \| Boolean。 \| \| RangeReference \| FunctionResult <any> ，成熟度： number \| String \| boolean。 \| \| RangeReference \| excel. FunctionResult <any> 、lastInterest： number \| string boolean Excel. RangeReference excel. FunctionResult \| \| \| \| <any> ，rate： number \| string \| 布尔值 \| RangeReference。 \| \| FunctionResult <any> ，pr： number \| string boolean。 \| \| \| \| FunctionResult <any> ，兑换： number \| string \| boolean excel. RangeReference excel. FunctionResult \| \| \| <any> ，frequency： number string boolean excel. RangeReference excel. FunctionResult， \| \| \| \| \| <any> basis？： number \| string \| boolean \| excel \| \| <any> . RangeReference excel. FunctionResult 的 excel.) ](/javascript/api/excel/excel.functions#oddlyield-settlement--maturity--lastinterest--rate--pr--redemption--frequency--basis-)|返回最后一期为奇数的有价证券的收益率。|
-||[或 ( .。。值： Array<布尔 excel. \| \| \| FunctionResult <any>> RangeReference) ](/javascript/api/excel/excel.functions#or-values-)|检查是否有任何参数为 TRUE，并返回 TRUE 或 FALSE。 仅当所有参数均为 FALSE 时，才返回 FALSE。|
+||[或 ( .。。值： Array<布尔 excel. \| \| \| FunctionResult <any>> RangeReference) ](/javascript/api/excel/excel.functions#or-values-)|检查是否有任何参数为 TRUE，并返回 TRUE 或 FALSE。|
 ||[pduration (速率： number excel. \| \| RangeReference \| FunctionResult <any> ，pv： number excel. \| RangeReference excel. FunctionResult \| \| <any> ，fv： number \| \| \| <any> excel. RangeReference excel. FunctionResult) ](/javascript/api/excel/excel.functions#pduration-rate--pv--fv-)|返回投资达到指定值所需的周期数。|
 ||[percentRank_Exc (数组： number excel. \| \| RangeReference \| FunctionResult <any> ，x： number excel. \| \| \| FunctionResult <any> ，有意义？： number excel. \| \| RangeReference \| excel <any> . FunctionResult。) ](/javascript/api/excel/excel.functions#percentrank-exc-array--x--significance-)|以数据集的 (0 到1的独占) 的百分比形式返回数据集中的值的排名。|
 ||[percentRank_Inc (数组： number excel. \| \| RangeReference \| FunctionResult <any> ，x： number excel. \| \| \| FunctionResult <any> ，有意义？： number excel. \| \| RangeReference \| excel <any> . FunctionResult。) ](/javascript/api/excel/excel.functions#percentrank-inc-array--x--significance-)|以数据集的百分比形式返回数据集中的值的排名，即数据集的百分比 (0 到1，包含) 。|
@@ -384,13 +384,13 @@ ExcelApi 1.2 增加了对表筛选和对内置 Excel 函数的访问支持。
 ||[randBetween (底端：数字 \| 字符串 \| 布尔值。 \| \| RangeReference \| FunctionResult <any> ，top： number \| String \| boolean \| excel. \| RangeReference \| excel. FunctionResult <any>) ](/javascript/api/excel/excel.functions#randbetween-bottom--top-)|返回指定的数字之间的随机数字。|
 ||[rank_Avg (号码： RangeReference excel. \| \| \| FunctionResult <any> ，Ref： excel. \| \| FunctionResult <any> ，order？：布尔型 \| \| \| <any> excel. RangeReference excel. FunctionResult 的 excel.) ](/javascript/api/excel/excel.functions#rank-avg-number--ref--order-)|返回数字列表中数字的排位：其相对于列表中的其他值的大小;如果不止一个值具有相同的秩，则返回平均排名。|
 ||[rank_Eq (号码： RangeReference excel. \| \| \| FunctionResult <any> ，Ref： excel. \| \| FunctionResult <any> ，order？：布尔型 \| \| \| <any> excel. RangeReference excel. FunctionResult 的 excel.) ](/javascript/api/excel/excel.functions#rank-eq-number--ref--order-)|返回数字列表中数字的排位：其相对于列表中的其他值的大小;如果多个值具有相同的秩，则返回该集合的最高排名。|
-||[rate (nper： number \| Excel。 \| RangeReference \| excel. FunctionResult <any> ，pmt： number \| excel. \| \| FunctionResult <any> ，pv： number \| excel. RangeReference excel. FunctionResult \| \| ，fv？： number excel. RangeReference，fv？ <any> ： number \| \| \| <any> \| \| \| <any> \| \| \| <any> excel. FunctionResult，type？： number excel. RangeReference，number？： number excel. FunctionResult excel. RangeReference，guess？： number excel. FunctionResult excel.) ](/javascript/api/excel/excel.functions#rate-nper--pmt--pv--fv--type--guess-)|返回贷款或投资在每个期间的利率。 例如，对每年6% 的季度付款使用 6%/4。|
+||[rate (nper： number \| Excel。 \| RangeReference \| excel. FunctionResult <any> ，pmt： number \| excel. \| \| FunctionResult <any> ，pv： number \| excel. RangeReference excel. FunctionResult \| \| ，fv？： number excel. RangeReference，fv？ <any> ： number \| \| \| <any> \| \| \| <any> \| \| \| <any> excel. FunctionResult，type？： number excel. RangeReference，number？： number excel. FunctionResult excel. RangeReference，guess？： number excel. FunctionResult excel.) ](/javascript/api/excel/excel.functions#rate-nper--pmt--pv--fv--type--guess-)|返回贷款或投资在每个期间的利率。|
 ||[收到 (结算：号码 \| 字符串 \| 布尔值 \| RangeReference。 \| \| FunctionResult <any> ，成熟度： number \| string \| 布尔值 \| 。 \| \| FunctionResult <any> ，投资： number \| string boolean excel. RangeReference excel. FunctionResult \| \| \| \| <any> ，折扣： \| \| \| \| \| <any> \| \| \| \| \| <any> number string boolean excel. RangeReference excel. FunctionResult 的 excel. RangeReference excel. FunctionResult 的内容。的数字字符串布尔值。 excel.) ](/javascript/api/excel/excel.functions#received-settlement--maturity--investment--discount--basis-)|返回完全投资型债券到期收回的金额。|
 ||[replace (oldText： string \| excel. \| RangeReference \| FunctionResult <any> ，startNum： number excel. RangeReference，FunctionResult \| \| ： number excel. numChars \| <any> ，RangeReference： number \| \| \| <any> \| \| \| <any> excel. FunctionResult excel. newText RangeReference： string excel. FunctionResult excel.) ](/javascript/api/excel/excel.functions#replace-oldtext--startnum--numchars--newtext-)|用不同的文本字符串替换文本字符串的一部分。|
-||[replaceB (oldText： string \| excel. \| \| FunctionResult <any> ，startNum： number excel. RangeReference： number excel. FunctionResult \| \| ，numBytes \| <any> ： number \| \| \| <any> \| \| \| <any> excel. RangeReference excel. FunctionResult，newText： string excel. RangeReference excel. FunctionResult) ](/javascript/api/excel/excel.functions#replaceb-oldtext--startnum--numbytes--newtext-)|用不同的文本字符串替换文本字符串的一部分。 将双字节字符集用于 (DBCS) 。|
-||[rept (text： string \| \| RangeReference \| FunctionResult <any> ，numberTimes： number excel. RangeReference \| excel. \| \| FunctionResult <any>) ](/javascript/api/excel/excel.functions#rept-text--numbertimes-)|按照给定的次数重复显示文本。 可以通过函数 REPT 来不断地重复显示某一文本字符串，对单元格进行填充。|
+||[replaceB (oldText： string \| excel. \| \| FunctionResult <any> ，startNum： number excel. RangeReference： number excel. FunctionResult \| \| ，numBytes \| <any> ： number \| \| \| <any> \| \| \| <any> excel. RangeReference excel. FunctionResult，newText： string excel. RangeReference excel. FunctionResult) ](/javascript/api/excel/excel.functions#replaceb-oldtext--startnum--numbytes--newtext-)|用不同的文本字符串替换文本字符串的一部分。|
+||[rept (text： string \| \| RangeReference \| FunctionResult <any> ，numberTimes： number excel. RangeReference \| excel. \| \| FunctionResult <any>) ](/javascript/api/excel/excel.functions#rept-text--numbertimes-)|按照给定的次数重复显示文本。|
 ||[right (text： string \| \| RangeReference \| FunctionResult <any> ，numChars？： number excel. \| \| RangeReference \| excel. FunctionResult <any>) ](/javascript/api/excel/excel.functions#right-text--numchars-)|返回文本字符串末尾的指定数量的字符。|
-||[rightb (text： string \| \| RangeReference \| FunctionResult <any> ，numBytes？： number excel. RangeReference \| excel. \| \| FunctionResult <any>) ](/javascript/api/excel/excel.functions#rightb-text--numbytes-)|返回文本字符串末尾的指定数量的字符。 将双字节字符集用于 (DBCS) 。|
+||[rightb (text： string \| \| RangeReference \| FunctionResult <any> ，numBytes？： number excel. RangeReference \| excel. \| \| FunctionResult <any>) ](/javascript/api/excel/excel.functions#rightb-text--numbytes-)|返回文本字符串末尾的指定数量的字符。|
 ||[罗马 (号码：对 excel \| \| RangeReference \| FunctionResult <any> ，form？： Boolean \| 数字 \| excel. FunctionResult 的 \| RangeReference excel. \| <any>) ](/javascript/api/excel/excel.functions#roman-number--form-)|将阿拉伯数字转换为文本形式的罗马数字。|
 ||[舍入 (号：将 excel \| \| RangeReference。 \| FunctionResult <any> ，numDigits： number excel. \| \| RangeReference excel. \| FunctionResult <any>) ](/javascript/api/excel/excel.functions#round-number--numdigits-)|将数字舍入到指定位数。|
 ||[roundDown (号码：对 excel 进行编号。 \| \| RangeReference \| FunctionResult <any> ，numDigits： number \| \| \| <any> excel. RangeReference excel. FunctionResult) ](/javascript/api/excel/excel.functions#rounddown-number--numdigits-)|将数字向零的方向向下舍入。|
@@ -409,11 +409,11 @@ ExcelApi 1.2 增加了对表筛选和对内置 Excel 函数的访问支持。
 ||[倾斜 ( .。。值： Array<数字 excel \| . \| \| FunctionResult> RangeReference <any>) ](/javascript/api/excel/excel.functions#skew-values-)|返回分布的偏斜度：根据其平均值的分布不对称程度的特征。|
 ||[skew_p ( .。。值： Array<数字 excel \| . \| \| FunctionResult> RangeReference <any>) ](/javascript/api/excel/excel.functions#skew-p-values-)|基于总体，返回分布的偏斜度：一种与其平均值有关的分布不对称程度的特性。|
 ||[sln (成本： number excel. \| \| \| FunctionResult，RangeReference： Number excel. <any> \| \| \| FunctionResult <any> ，life： number Excel. \| RangeReference excel. FunctionResult \| \|) 。 <any>](/javascript/api/excel/excel.functions#sln-cost--salvage--life-)|返回某项资产一个周期的直线折旧值。|
-||[小 (数组：数字 \| excel. \| \| FunctionResult <any> ，k： number Excel. \| FunctionResult \| \| <any>) ](/javascript/api/excel/excel.functions#small-array--k-)|返回数据集中第 k 个最小值。 例如，第五个最小的数字。|
+||[小 (数组：数字 \| excel. \| \| FunctionResult <any> ，k： number Excel. \| FunctionResult \| \| <any>) ](/javascript/api/excel/excel.functions#small-array--k-)|返回数据集中第 k 个最小值。|
 ||[sqrt (号码：对 excel 进行数字 \| \| RangeReference。 \| FunctionResult <any>) ](/javascript/api/excel/excel.functions#sqrt-number-)|返回数字的平方根。|
 ||[sqrtPi (号码：数字 \| 字符串 \| 布尔值 \| excel. \| RangeReference excel. \| FunctionResult <any>) ](/javascript/api/excel/excel.functions#sqrtpi-number-)|返回 (number * Pi) 的平方根。|
-||[stDevA ( .。。值： Array<数字 excel \| . \| \| FunctionResult> RangeReference <any>) ](/javascript/api/excel/excel.functions#stdeva-values-)|根据样本（包括逻辑值和文本）估计标准偏差。 文本和逻辑值 FALSE 的值为 0;逻辑值 TRUE 的值为1。|
-||[stDevPA ( .。。值： Array<数字 excel \| . \| \| FunctionResult> RangeReference <any>) ](/javascript/api/excel/excel.functions#stdevpa-values-)|基于整个样本总体计算标准偏差，包括逻辑值和文本。 文本和逻辑值 FALSE 的值为 0;逻辑值 TRUE 的值为1。|
+||[stDevA ( .。。值： Array<数字 excel \| . \| \| FunctionResult> RangeReference <any>) ](/javascript/api/excel/excel.functions#stdeva-values-)|根据样本（包括逻辑值和文本）估计标准偏差。|
+||[stDevPA ( .。。值： Array<数字 excel \| . \| \| FunctionResult> RangeReference <any>) ](/javascript/api/excel/excel.functions#stdevpa-values-)|基于整个样本总体计算标准偏差，包括逻辑值和文本。|
 ||[stDev_P ( .。。值： Array<数字 excel \| . \| \| FunctionResult> RangeReference <any>) ](/javascript/api/excel/excel.functions#stdev-p-values-)|根据作为参数给定的整个样本总体计算标准偏差 (忽略) 的逻辑值和文本。|
 ||[stDev_S ( .。。值： Array<数字 excel \| . \| \| FunctionResult> RangeReference <any>) ](/javascript/api/excel/excel.functions#stdev-s-values-)|估算样本) 中的逻辑值和文本，基于样本 (的标准偏差。|
 ||[标准化 (x： RangeReference excel. \| \| \| FunctionResult <any> ，mean： number \| excel. \| \| FunctionResult <any> ，standardDev： number \| \| \| <any> excel. RangeReference excel. FunctionResult： number excel.) ](/javascript/api/excel/excel.functions#standardize-x--mean--standarddev-)|从平均值和标准偏差的分布中返回一个规范化的值。|
@@ -422,11 +422,11 @@ ExcelApi 1.2 增加了对表筛选和对内置 Excel 函数的访问支持。
 ||[sum ( .。。值： Array<数字 excel \| . \| \| FunctionResult> RangeReference <any>) ](/javascript/api/excel/excel.functions#sum-values-)|对某单元格区域中的所有数字求和。|
 ||[sumIf (range： \| RangeReference。 \| FunctionResult <any> ，criteria： number \| String \| boolean \| excel. \| \| FunctionResult <any> ，sumRange？： excel. \| RangeReference \| excel <any> . FunctionResult。) ](/javascript/api/excel/excel.functions#sumif-range--criteria--sumrange-)|添加由给定条件或条件指定的单元格。|
 ||[sumIfs (sumRange： Excel. \| RangeReference \| FunctionResult <any> .。。值： Array<excel. \| \| FunctionResult <any> \| number \| string \| boolean>) ](/javascript/api/excel/excel.functions#sumifs-sumrange--values-)|添加由一组给定条件或条件指定的单元格。|
-||[sumSq ( .。。值： Array<数字 excel \| . \| \| FunctionResult> RangeReference <any>) ](/javascript/api/excel/excel.functions#sumsq-values-)|返回参数的平方之和。 参数可以是数字、数组、名称或对包含数字的单元格的引用。|
+||[sumSq ( .。。值： Array<数字 excel \| . \| \| FunctionResult> RangeReference <any>) ](/javascript/api/excel/excel.functions#sumsq-values-)|返回参数的平方之和。|
 ||[syd (成本： number excel. \| \| RangeReference \| FunctionResult <any> ，抢救： number excel. \| \| RangeReference \| excel. FunctionResult， <any> life： number \| \| \| <any> \| \| \| <any> excel. RangeReference excel. FunctionResult，per： number excel. RangeReference excel. FunctionResult) ](/javascript/api/excel/excel.functions#syd-cost--salvage--life--per-)|返回某项资产按年限总和折旧法计算的指定期间的折旧值。|
 ||[t (值：数字 \| 字符串 \| 布尔 \| excel. \| \| FunctionResult) 的 RangeReference <any>](/javascript/api/excel/excel.functions#t-value-)|检查值是否为文本，如果是文本，则返回文本; 如果不是，则返回双引号 (空文本) 。|
 ||[t_Dist (x： RangeReference RangeReference。 \| \| \| FunctionResult <any> ，degFreedom： number excel. excel. \| \| \| FunctionResult <any> 、cumulative： boolean \| excel \| \| <any> . RangeReference excel. FunctionResult) ](/javascript/api/excel/excel.functions#t-dist-x--degfreedom--cumulative-)|返回左尾学生的 t 分布。|
-||[t_Dist_2T (x： number \| \| RangeReference \| FunctionResult <any> ，degFreedom： number excel. \| \| RangeReference \| excel. FunctionResult <any>) ](/javascript/api/excel/excel.functions#t-dist-rt-x--degfreedom-)|返回双尾学生 t 分布。|
+||[t_Dist_2T (x： number \| \| RangeReference \| FunctionResult <any> ，degFreedom： number excel. \| \| RangeReference \| excel. FunctionResult <any>) ](/javascript/api/excel/excel.functions#t-dist-2t-x--degfreedom-)|返回双尾学生 t 分布。|
 ||[t_Dist_RT (x： number \| \| RangeReference \| FunctionResult <any> ，degFreedom： number excel. \| \| RangeReference \| excel. FunctionResult <any>) ](/javascript/api/excel/excel.functions#t-dist-rt-x--degfreedom-)|返回右尾学生的 t 分布。|
 ||[t_Inv (概率： number excel \| RangeReference。 \| \| FunctionResult <any> ，degFreedom： number excel. \| \| RangeReference \| excel. FunctionResult <any>) ](/javascript/api/excel/excel.functions#t-inv-probability--degfreedom-)|返回学生 t 分布的左尾倒角。|
 ||[t_Inv_2T (概率： number excel \| RangeReference。 \| \| FunctionResult <any> ，degFreedom： number excel. \| \| RangeReference \| excel. FunctionResult <any>) ](/javascript/api/excel/excel.functions#t-inv-2t-probability--degfreedom-)|返回学生 t 分布的双尾逆。|
@@ -437,7 +437,7 @@ ExcelApi 1.2 增加了对表筛选和对内置 Excel 函数的访问支持。
 ||[tbillYield (结算： number \| string \| Boolean。 \| \| RangeReference \| FunctionResult <any> ，成熟度： number String boolean。 RangeReference excel. \| \| \| \| \| FunctionResult <any> ，pr： number \| string \| boolean \| excel \| \| <any> . RangeReference excel. FunctionResult) ](/javascript/api/excel/excel.functions#tbillyield-settlement--maturity--pr-)|返回国库券的收益率。|
 ||[text (value： number \| string \| Boolean \| \| RangeReference \| FunctionResult <any> ，formatText： String \| excel. \| RangeReference \| excel. FunctionResult <any>) ](/javascript/api/excel/excel.functions#text-value--formattext-)|将数值转换为按指定数字格式表示的文本。|
 ||[time (小时：数字 \| excel. \| \| FunctionResult <any> ，Minute： Number excel RangeReference。 \| \| \| FunctionResult <any> ，second： number excel. \| \| RangeReference \| excel <any> . FunctionResult 的) ](/javascript/api/excel/excel.functions#time-hour--minute--second-)|将以数字形式给定的小时、分钟和秒转换为 Excel 序列号，并将其格式设置为时间格式。|
-||[timevalue (timeText： string \| number \| Excel. \| RangeReference \| excel. FunctionResult <any>) ](/javascript/api/excel/excel.functions#timevalue-timetext-)|将文本时间转换为 Excel 序列号，一段时间为 0 (12:00:00 AM) 到 0.999988426 (11:59:59 PM) 之间的数字。 在输入公式后将数字设置为时间格式。|
+||[timevalue (timeText： string \| number \| Excel. \| RangeReference \| excel. FunctionResult <any>) ](/javascript/api/excel/excel.functions#timevalue-timetext-)|将文本时间转换为 Excel 序列号，一段时间为 0 (12:00:00 AM) 到 0.999988426 (11:59:59 PM) 之间的数字。|
 ||[今天 ( # B1 ](/javascript/api/excel/excel.functions#today--)|返回日期格式的当前日期。|
 ||[trim (text： string \| \| RangeReference \| FunctionResult <any>) ](/javascript/api/excel/excel.functions#trim-text-)|删除文本字符串中除单词之间的单个空格之外的所有空格。|
 ||[trimMean (array： number excel. \| \| RangeReference \| FunctionResult <any> ，百分比： number excel. \| \| RangeReference \| excel. FunctionResult <any>) ](/javascript/api/excel/excel.functions#trimmean-array--percent-)|返回一组数据值的内部部分的平均值。|
@@ -449,12 +449,12 @@ ExcelApi 1.2 增加了对表筛选和对内置 Excel 函数的访问支持。
 ||[较高 (文本： string \| \| RangeReference \| <any>) 的 excel. FunctionResult ](/javascript/api/excel/excel.functions#upper-text-)|将文本字符串转换为全部大写字母。|
 ||[usdollar (号码：将 excel \| RangeReference。 \| \| FunctionResult <any> ，十进制数？： number excel. \| \| RangeReference \| excel. FunctionResult <any>) ](/javascript/api/excel/excel.functions#usdollar-number--decimals-)|使用货币格式将数字转换为文本。|
 ||[value (text： string \| boolean \| number Excel. \| \| \| FunctionResult <any>) ](/javascript/api/excel/excel.functions#value-text-)|将代表数字的文本字符串转换为数字。|
-||[varA ( .。。值： Array<数字 excel \| . \| \| FunctionResult> RangeReference <any>) ](/javascript/api/excel/excel.functions#vara-values-)|估算基于样本的方差，包括逻辑值和文本。 文本和逻辑值 FALSE 的值为 0;逻辑值 TRUE 的值为1。|
-||[varPA ( .。。值： Array<数字 excel \| . \| \| FunctionResult> RangeReference <any>) ](/javascript/api/excel/excel.functions#varpa-values-)|基于整个样本总体计算方差，包括逻辑值和文本。 文本和逻辑值 FALSE 的值为 0;逻辑值 TRUE 的值为1。|
+||[varA ( .。。值： Array<数字 excel \| . \| \| FunctionResult> RangeReference <any>) ](/javascript/api/excel/excel.functions#vara-values-)|估算基于样本的方差，包括逻辑值和文本。|
+||[varPA ( .。。值： Array<数字 excel \| . \| \| FunctionResult> RangeReference <any>) ](/javascript/api/excel/excel.functions#varpa-values-)|基于整个样本总体计算方差，包括逻辑值和文本。|
 ||[var_P ( .。。值： Array<数字 excel \| . \| \| FunctionResult> RangeReference <any>) ](/javascript/api/excel/excel.functions#var-p-values-)|计算基于整个总体 (的方差将忽略总体) 中的逻辑值和文本。|
 ||[var_S ( .。。值： Array<数字 excel \| . \| \| FunctionResult> RangeReference <any>) ](/javascript/api/excel/excel.functions#var-s-values-)|估算样本) 中的 (的逻辑值和文本，基于样本的方差估算。|
 ||[vdb (成本：数字 excel. \| \| RangeReference \| FunctionResult <any> ，抢救： number \| Excel。 \| RangeReference \| excel. FunctionResult <any> ，life： number \| Excel. \| \| FunctionResult，startPeriod： number excel. <any> RangeReference \| \| \| <any> \| \| \| <any> \| \| \| <any> \| \| \| <any> excel. FunctionResult，endPeriod： number excel. RangeReference，FunctionResult： number excel. RangeReference： number excel. FunctionResult，number？： number excel. noSwitch excel. RangeReference，FunctionResult？： boolean excel. excel.) ](/javascript/api/excel/excel.functions#vdb-cost--salvage--life--startperiod--endperiod--factor--noswitch-)|使用双倍余额递减法或其他指定的方法，返回指定的任何期间内（包括部分期间）的资产折旧值。|
-||[vlookup (lookupValue： number \| string \| boolean \| Excel. \| RangeReference FunctionResult，tableArray： excel. RangeReference，FunctionResult： excel. colIndexNum，RangeReference： excel. FunctionResult \| ： rangeLookup，RangeReference <any> \| \| \| <any> \| \| \| <any> ？：布尔型 \| excel \| \| <any> . FunctionResult excel.) ](/javascript/api/excel/excel.functions#vlookup-lookupvalue--tablearray--colindexnum--rangelookup-)|在表中最左边的列中查找值，然后从指定列的同一行中返回一个值。 默认情况下，必须按升序对表进行排序。|
+||[vlookup (lookupValue： number \| string \| boolean \| Excel. \| RangeReference FunctionResult，tableArray： excel. RangeReference，FunctionResult： excel. colIndexNum，RangeReference： excel. FunctionResult \| ： rangeLookup，RangeReference <any> \| \| \| <any> \| \| \| <any> ？：布尔型 \| excel \| \| <any> . FunctionResult excel.) ](/javascript/api/excel/excel.functions#vlookup-lookupvalue--tablearray--colindexnum--rangelookup-)|在表中最左边的列中查找值，然后从指定列的同一行中返回一个值。|
 ||[weekNum (serialNumber：数字 \| string \| 布尔值 \| excel. \| \| FunctionResult <any> ，returnType？： number \| string \| boolean \| excel \| \| <any> . RangeReference excel. FunctionResult) ](/javascript/api/excel/excel.functions#weeknum-serialnumber--returntype-)|返回一年中的周数。|
 ||[工作日 (serialNumber： number excel. \| \| RangeReference \| FunctionResult <any> ，returnType？： number excel. \| \| RangeReference \| excel. FunctionResult <any>) ](/javascript/api/excel/excel.functions#weekday-serialnumber--returntype-)|返回一个介于1到7之间的数字，用于标识日期的一周中的某一天。|
 ||[weibull_Dist (x： number excel. \| \| RangeReference \| FunctionResult <any> ，alpha： number excel. FunctionResult，beta： number excel。 RangeReference excel. FunctionResult \| \| \| <any> \| \| \| <any> 、cumulative： boolean excel. RangeReference \| excel. FunctionResult 的 excel \| \| . <any>) ](/javascript/api/excel/excel.functions#weibull-dist-x--alpha--beta--cumulative-)|返回韦伯分布。|
@@ -466,10 +466,10 @@ ExcelApi 1.2 增加了对表筛选和对内置 Excel 函数的访问支持。
 ||[年 (serialNumber： number excel. \| \| RangeReference \| FunctionResult <any>) ](/javascript/api/excel/excel.functions#year-serialnumber-)|返回日期的年份，为 1900-9999 范围内的整数。|
 ||[yearFrac (开始日期：数字 \| 字符串 \| 布尔值 \| 。 \| RangeReference \| FunctionResult <any> ，结束日期：数字 \| string \| boolean excel. RangeReference excel. FunctionResult \| \| \| <any> ，basis？： number \| string \| boolean \| excel \| \| <any> . RangeReference excel. FunctionResult) ](/javascript/api/excel/excel.functions#yearfrac-startdate--enddate--basis-)|返回表示 start_date 和 end_date 之间的整天数的年分式。|
 ||[产量 (结算： number \| string \| boolean \| \| RangeReference。 \| FunctionResult <any> ，成熟： Number \| String \| boolean \| excel. \| RangeReference FunctionResult。 \| <any> ，rate： number \| String \| 布尔值 \| RangeReference。 \| \| FunctionResult <any> ，pr： number \| string boolean。 \| \| \| \| FunctionResult <any> ，兑换： number \| string \| boolean excel. RangeReference excel. FunctionResult \| \| \| <any> ，frequency： number string boolean excel. RangeReference excel. FunctionResult， \| \| \| \| \| <any> basis？： number \| string \| boolean \| excel \| \| <any> . RangeReference excel. FunctionResult 的 excel.) ](/javascript/api/excel/excel.functions#yield-settlement--maturity--rate--pr--redemption--frequency--basis-)|返回定期支付利息的债券的收益率。|
-||[yieldDisc (结算： number \| string \| Boolean \| 。 \| RangeReference \| FunctionResult <any> ，成熟度： Number \| string \| 布尔值 \| 。 \| RangeReference \| Excel. FunctionResult <any> ，pr： number \| string \| boolean \| excel. \| RangeReference excel. FunctionResult \| <any> ，兑换： number \| string \| boolean \| excel \| \| <any> \| \| \| \| \| <any> . RangeReference excel. FunctionResult 的 excel. RangeReference excel. FunctionResult 的 excel. excel.) ](/javascript/api/excel/excel.functions#yielddisc-settlement--maturity--pr--redemption--basis-)|返回已贴现债券的年收益。 例如，国库券。|
+||[yieldDisc (结算： number \| string \| Boolean \| 。 \| RangeReference \| FunctionResult <any> ，成熟度： Number \| string \| 布尔值 \| 。 \| RangeReference \| Excel. FunctionResult <any> ，pr： number \| string \| boolean \| excel. \| RangeReference excel. FunctionResult \| <any> ，兑换： number \| string \| boolean \| excel \| \| <any> \| \| \| \| \| <any> . RangeReference excel. FunctionResult 的 excel. RangeReference excel. FunctionResult 的 excel. excel.) ](/javascript/api/excel/excel.functions#yielddisc-settlement--maturity--pr--redemption--basis-)|返回已贴现债券的年收益。|
 ||[yieldMat (结算： number \| string \| Boolean \| \| RangeReference \| FunctionResult <any> ，到期日期：数字 \| 字符串 \| 布尔值 \| RangeReference。 \| \| FunctionResult <any> ，问题：数字 \| 字符串 \| 布尔值 \| 。 \| \| FunctionResult <any> ，rate： number \| string boolean excel. RangeReference excel. FunctionResult，pr： number string \| \| \| \| boolean <any> \| \| \| \| \| <any> \| \| \| \| \| <any> excel。 RangeReference excel. FunctionResult，： number string boolean excel。 RangeReference excel. FunctionResult excel. 的 excel.) ](/javascript/api/excel/excel.functions#yieldmat-settlement--maturity--issue--rate--pr--basis-)|返回到期付息的债券的年收益。|
 ||[z_Test (数组： number excel. \| \| RangeReference \| FunctionResult <any> ，x： number excel. \| \| \| FunctionResult <any> ，sigma？： number excel. \| RangeReference excel. FunctionResult \| \| <any>) 。 ](/javascript/api/excel/excel.functions#z-test-array--x--sigma-)|返回 z 检验的单尾 P 值。|
-|[Icon](/javascript/api/excel/excel.icon)|[index](/javascript/api/excel/excel.icon#index)|表示 icon 在给定集中的索引。|
+|[Icon](/javascript/api/excel/excel.icon)|[index](/javascript/api/excel/excel.icon#index)|指定给定集合中的图标的索引。|
 |[IconCollections](/javascript/api/excel/excel.iconcollections)|[fiveArrows](/javascript/api/excel/excel.iconcollections#fivearrows)||
 ||[fiveArrowsGray](/javascript/api/excel/excel.iconcollections#fivearrowsgray)||
 ||[fiveBoxes](/javascript/api/excel/excel.iconcollections#fiveboxes)|[Api set： ExcelApi 1.2]|
@@ -490,44 +490,44 @@ ExcelApi 1.2 增加了对表筛选和对内置 Excel 函数的访问支持。
 ||[threeTrafficLights1](/javascript/api/excel/excel.iconcollections#threetrafficlights1)||
 ||[threeTrafficLights2](/javascript/api/excel/excel.iconcollections#threetrafficlights2)||
 ||[threeTriangles](/javascript/api/excel/excel.iconcollections#threetriangles)||
-|[区域](/javascript/api/excel/excel.range)|[columnHidden](/javascript/api/excel/excel.range#columnhidden)|表示当前区域中的所有列是否隐藏。|
+|[Range](/javascript/api/excel/excel.range)|[columnHidden](/javascript/api/excel/excel.range#columnhidden)|表示当前区域中的所有列是否隐藏。|
 ||[formulasR1C1](/javascript/api/excel/excel.range#formulasr1c1)|表示采用 R1C1 样式表示法的公式。|
 ||[getColumnsAfter (count？： number) ](/javascript/api/excel/excel.range#getcolumnsafter-count-)|获取当前范围对象右侧的一定数量的列。|
 ||[getColumnsBefore (count？： number) ](/javascript/api/excel/excel.range#getcolumnsbefore-count-)|获取当前范围对象左侧的一定数量的列。|
 ||[getResizedRange(deltaRows: number, deltaColumns: number)](/javascript/api/excel/excel.range#getresizedrange-deltarows--deltacolumns-)|获取与当前范围对象类似的范围对象，但其右下角可通过一定数量的行和列进行展开（或合拢）。|
 ||[getRowsAbove (count？： number) ](/javascript/api/excel/excel.range#getrowsabove-count-)|获取当前范围对象上方的一定数量的行。|
 ||[getRowsBelow (count？： number) ](/javascript/api/excel/excel.range#getrowsbelow-count-)|获取当前范围对象下方的一定数量的行。|
-||[getUsedRange (valuesOnly？： boolean) ](/javascript/api/excel/excel.range#getusedrange-valuesonly-)|返回指定 Range 对象的所用区域。如果区域内没有使用单元格，此函数将引发 ItemNotFound 错误。|
+||[getUsedRange (valuesOnly？： boolean) ](/javascript/api/excel/excel.range#getusedrange-valuesonly-)|返回指定 range 对象的所用区域。|
 ||[跨 (合并？： boolean) ](/javascript/api/excel/excel.range#merge-across-)|将范围单元格合并到工作表的一个区域内。|
-||[hidden](/javascript/api/excel/excel.range#hidden)|表示当前区域中的所有单元格是否隐藏。 只读。|
-||[sort](/javascript/api/excel/excel.range#sort)|表示当前 range 的区域排序。 只读。|
+||[hidden](/javascript/api/excel/excel.range#hidden)|表示当前区域中的所有单元格是否隐藏。|
+||[sort](/javascript/api/excel/excel.range#sort)|表示当前 range 的区域排序。|
 ||[rowHidden](/javascript/api/excel/excel.range#rowhidden)|表示当前区域中的所有行是否隐藏。|
 ||[unmerge()](/javascript/api/excel/excel.range#unmerge--)|将范围单元格取消合并为各个单元格。|
 |[RangeFormat](/javascript/api/excel/excel.rangeformat)|[autofitColumns ( # B1 ](/javascript/api/excel/excel.rangeformat#autofitcolumns--)|根据列中的当前数据，更改当前区域的列宽以达到最佳宽度。|
 ||[autofitRows ( # B1 ](/javascript/api/excel/excel.rangeformat#autofitrows--)|根据列中的当前数据，更改当前范围的行高以达到最佳高度。|
-||[columnWidth](/javascript/api/excel/excel.rangeformat#columnwidth)|获取或设置区域内的所有列的宽度。 如果列宽不统一，则返回 NULL。|
-||[protection](/javascript/api/excel/excel.rangeformat#protection)|返回某一区域的格式 protection 对象。 只读。|
-||[rowHeight](/javascript/api/excel/excel.rangeformat#rowheight)|获取或设置区域中所有行的高度。 如果行高不一致，则将返回 null。|
-|[RangeReference](/javascript/api/excel/excel.rangereference)|[address](/javascript/api/excel/excel.rangereference#address)|获取或设置区域的地址。例如，"SheetName！A1： B5 '。|
+||[columnWidth](/javascript/api/excel/excel.rangeformat#columnwidth)|指定区域中所有 colums 的宽度。|
+||[protection](/javascript/api/excel/excel.rangeformat#protection)|返回某一区域的格式 protection 对象。|
+||[rowHeight](/javascript/api/excel/excel.rangeformat#rowheight)|区域中所有行的高度。|
+|[RangeReference](/javascript/api/excel/excel.rangereference)|[address](/javascript/api/excel/excel.rangereference#address)|区域的地址;例如，"SheetName！A1： B5 '。|
 |[RangeSort](/javascript/api/excel/excel.rangesort)|[应用 (字段： SortField []、matchCase？： boolean、hasHeaders？： boolean、方向？： SortOrientation、method？：？： Excel. SortMethod) ](/javascript/api/excel/excel.rangesort#apply-fields--matchcase--hasheaders--orientation--method-)|执行排序操作。|
 |[SelectionChangedEventArgs](/javascript/api/excel/excel.selectionchangedeventargs)|[工作簿](/javascript/api/excel/excel.selectionchangedeventargs#workbook)|获取引发了 SelectionChanged 事件的 Workbook 对象。|
-|[SortField](/javascript/api/excel/excel.sortfield)|[ascending](/javascript/api/excel/excel.sortfield#ascending)|表示是否执行升序排序。|
-||[color](/javascript/api/excel/excel.sortfield#color)|表示按字体或单元格颜色进行排序时，条件的目标颜色。|
+|[SortField](/javascript/api/excel/excel.sortfield)|[ascending](/javascript/api/excel/excel.sortfield#ascending)|指定是否以升序方式进行排序。|
+||[color](/javascript/api/excel/excel.sortfield#color)|指定在对字体或单元格颜色进行排序时，作为条件目标的颜色。|
 ||[dataOption](/javascript/api/excel/excel.sortfield#dataoption)|表示此字段的其他排序选项。|
-||[icon](/javascript/api/excel/excel.sortfield#icon)|表示对单元格图标进行排序时，条件的目标图标。|
-||[key](/javascript/api/excel/excel.sortfield#key)|表示条件所在的列（或行，具体取决于排序方向）。表示与第一列（或行）的偏移量。|
-||[sortOn](/javascript/api/excel/excel.sortfield#sorton)|表示此条件的排序类型。|
+||[icon](/javascript/api/excel/excel.sortfield#icon)|指定当排序在单元格的图标上时作为条件目标的图标。|
+||[key](/javascript/api/excel/excel.sortfield#key)|指定 (或行的列，具体取决于条件所在) 的排序方向。|
+||[sortOn](/javascript/api/excel/excel.sortfield#sorton)|指定此条件的排序类型。|
 |[Table](/javascript/api/excel/excel.table)|[clearFilters()](/javascript/api/excel/excel.table#clearfilters--)|清除当前应用于表的所有筛选器。|
-||[convertToRange ( # B1 ](/javascript/api/excel/excel.table#converttorange--)|将表转换为普通单元格区域。 保留所有数据。|
-||[sort](/javascript/api/excel/excel.table#sort)|表示表的排序。 只读。|
-||[worksheet](/javascript/api/excel/excel.table#worksheet)|包含当前表格的工作表。 只读。|
+||[convertToRange ( # B1 ](/javascript/api/excel/excel.table#converttorange--)|将表转换为普通单元格区域。|
+||[sort](/javascript/api/excel/excel.table#sort)|表示表的排序。|
+||[worksheet](/javascript/api/excel/excel.table#worksheet)|包含当前表格的工作表。|
 ||[reapplyFilters ( # B1 ](/javascript/api/excel/excel.table#reapplyfilters--)|重新应用当前表上的所有筛选器。|
-|[TableColumn](/javascript/api/excel/excel.tablecolumn)|[filter](/javascript/api/excel/excel.tablecolumn#filter)|检索应用于列的筛选器。 只读。|
+|[TableColumn](/javascript/api/excel/excel.tablecolumn)|[filter](/javascript/api/excel/excel.tablecolumn#filter)|检索应用于列的筛选器。|
 |[TableSort](/javascript/api/excel/excel.tablesort)|[应用 (字段： SortField []、matchCase？： boolean、method？： SortMethod) ](/javascript/api/excel/excel.tablesort#apply-fields--matchcase--method-)|执行排序操作。|
-||[clear()](/javascript/api/excel/excel.tablesort#clear--)|清除表上的当前排序。尽管这不能修改表的排序，但它会清除标题按钮的状态。|
-||[fields](/javascript/api/excel/excel.tablesort#fields)|表示最后一次对表排序所使用的当前条件。 只读。|
-||[matchCase](/javascript/api/excel/excel.tablesort#matchcase)|表示最后一次对表进行排序时大小写是否有影响。 只读。|
-||[method](/javascript/api/excel/excel.tablesort#method)|表示最后一次对表排序所使用的中文字符排序方法。 只读。|
+||[clear()](/javascript/api/excel/excel.tablesort#clear--)|清除表上的当前排序。|
+||[fields](/javascript/api/excel/excel.tablesort#fields)|指定用于最后对表进行排序的当前条件。|
+||[matchCase](/javascript/api/excel/excel.tablesort#matchcase)|指定大小写是否影响表的最后一个排序。|
+||[method](/javascript/api/excel/excel.tablesort#method)|表示最后一次对表排序所使用的中文字符排序方法。|
 ||[reapply()](/javascript/api/excel/excel.tablesort#reapply--)|对 table 重新应用当前的排序参数。|
 |[ThreeArrowsGraySet](/javascript/api/excel/excel.threearrowsgrayset)|[grayDownArrow](/javascript/api/excel/excel.threearrowsgrayset#graydownarrow)||
 ||[graySideArrow](/javascript/api/excel/excel.threearrowsgrayset#graysidearrow)||
@@ -559,13 +559,13 @@ ExcelApi 1.2 增加了对表筛选和对内置 Excel 函数的访问支持。
 |[ThreeTrianglesSet](/javascript/api/excel/excel.threetrianglesset)|[greenUpTriangle](/javascript/api/excel/excel.threetrianglesset#greenuptriangle)||
 ||[redDownTriangle](/javascript/api/excel/excel.threetrianglesset#reddowntriangle)||
 ||[yellowDash](/javascript/api/excel/excel.threetrianglesset#yellowdash)||
-|[Workbook](/javascript/api/excel/excel.workbook)|[作用](/javascript/api/excel/excel.workbook#functions)|代表可用于计算的工作表函数的集合。 只读。|
+|[Workbook](/javascript/api/excel/excel.workbook)|[作用](/javascript/api/excel/excel.workbook#functions)|代表可用于计算的工作表函数的集合。|
 ||[onSelectionChanged](/javascript/api/excel/excel.workbook#onselectionchanged)|文档中的选择更改时发生。|
-|[Worksheet](/javascript/api/excel/excel.worksheet)|[getUsedRange (valuesOnly？： boolean) ](/javascript/api/excel/excel.worksheet#getusedrange-valuesonly-)|使用的区域是包含分配了值或格式化的任何单元格的最小区域。 如果整个工作表为空，则此函数将返回左上角的单元格 (即它将 *不* 会引发错误) 。|
-||[protection](/javascript/api/excel/excel.worksheet#protection)|返回表工作表的工作表保护对象。 只读。|
-|[WorksheetProtection](/javascript/api/excel/excel.worksheetprotection)|[保护 (选项？： WorksheetProtectionOptions，password？： string) ](/javascript/api/excel/excel.worksheetprotection#protect-options--password-)|保护 worksheet。 如果工作表已受到保护，则失败。|
-||[options](/javascript/api/excel/excel.worksheetprotection#options)|工作表保护选项。 只读。|
-||[受保护](/javascript/api/excel/excel.worksheetprotection#protected)|表示该工作表是否受保护。 只读。|
+|[Worksheet](/javascript/api/excel/excel.worksheet)|[getUsedRange (valuesOnly？： boolean) ](/javascript/api/excel/excel.worksheet#getusedrange-valuesonly-)|使用的区域是包含分配了值或格式化的任何单元格的最小区域。|
+||[protection](/javascript/api/excel/excel.worksheet#protection)|返回表工作表的工作表保护对象。|
+|[WorksheetProtection](/javascript/api/excel/excel.worksheetprotection)|[保护 (选项？： WorksheetProtectionOptions，password？： string) ](/javascript/api/excel/excel.worksheetprotection#protect-options--password-)|保护 worksheet。|
+||[options](/javascript/api/excel/excel.worksheetprotection#options)|指定工作表的保护选项。|
+||[受保护](/javascript/api/excel/excel.worksheetprotection#protected)|指定工作表是否受保护。|
 |[WorksheetProtectionOptions](/javascript/api/excel/excel.worksheetprotectionoptions)|[allowAutoFilter](/javascript/api/excel/excel.worksheetprotectionoptions#allowautofilter)|表示允许使用自动筛选功能的工作表保护选项。|
 ||[allowDeleteColumns](/javascript/api/excel/excel.worksheetprotectionoptions#allowdeletecolumns)|表示允许删除列的工作表保护选项。|
 ||[allowDeleteRows](/javascript/api/excel/excel.worksheetprotectionoptions#allowdeleterows)|表示允许删除行的工作表保护选项。|

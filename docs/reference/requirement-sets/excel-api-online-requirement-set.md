@@ -1,15 +1,15 @@
 ---
 title: Excel JavaScript API 仅联机要求集
 description: 有关 ExcelApiOnline 要求集的详细信息。
-ms.date: 09/15/2020
+ms.date: 11/09/2020
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: 29f5826ba2adbf18b79033b83254b046210015fe
-ms.sourcegitcommit: ed2a98b6fb5b432fa99c6cefa5ce52965dc25759
+ms.openlocfilehash: 16c96f413424d5fc85a21419fb72cf6580c1ac18
+ms.sourcegitcommit: ca66ff7462bfdf4ed7ae04f43d1388c24de63bf9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/16/2020
-ms.locfileid: "47819803"
+ms.lasthandoff: 11/11/2020
+ms.locfileid: "48996527"
 ---
 # <a name="excel-javascript-api-online-only-requirement-set"></a>Excel JavaScript API 仅联机要求集
 
@@ -40,7 +40,9 @@ if (Office.context.requirements.isSetSupported("ExcelApiOnline", "1.1")) {
 
 ## <a name="api-list"></a>API 列表
 
-要求集中当前没有任何 Api `ExcelApiOnline` 。 之前属于此集合的所有 Api 都已进行了分级要求集的分级，并可在所有平台上使用。
+| Class | 域 | 说明 |
+|:---|:---|:---|
+|[Range](/javascript/api/excel/excel.range)|[getMergedAreas ( # B1 ](/javascript/api/excel/excel.range#getmergedareas--)|返回一个 RangeAreas 对象，该对象代表此区域中的合并区域。|
 
 ## <a name="see-also"></a>另请参阅
 

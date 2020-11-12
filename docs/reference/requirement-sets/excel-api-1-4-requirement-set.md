@@ -1,15 +1,15 @@
 ---
 title: Excel JavaScript API 要求集1。4
 description: 有关 ExcelApi 1.4 要求集的详细信息。
-ms.date: 07/28/2020
+ms.date: 11/09/2020
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: ed6a9329ae5c0c5839abf5d97a0c67a44783a579
-ms.sourcegitcommit: ed2a98b6fb5b432fa99c6cefa5ce52965dc25759
+ms.openlocfilehash: 17e915eea2cddffc8c48735e5c9f628fffb4d072
+ms.sourcegitcommit: ca66ff7462bfdf4ed7ae04f43d1388c24de63bf9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/16/2020
-ms.locfileid: "47819761"
+ms.lasthandoff: 11/11/2020
+ms.locfileid: "48996464"
 ---
 # <a name="whats-new-in-excel-javascript-api-14"></a>Excel JavaScript API 1.4 的最近更新
 
@@ -53,46 +53,46 @@ worksheet.getItemOrNullObject("itemName")
 | Class | 域 | 说明 |
 |:---|:---|:---|
 |[BindingCollection](/javascript/api/excel/excel.bindingcollection)|[getCount()](/javascript/api/excel/excel.bindingcollection#getcount--)|获取集合中的绑定数量。|
-||[getItemOrNullObject(id: string)](/javascript/api/excel/excel.bindingcollection#getitemornullobject-id-)|按 ID 获取 Binding 对象。 如果没有 Binding 对象，将返回 NULL 对象。|
+||[getItemOrNullObject(id: string)](/javascript/api/excel/excel.bindingcollection#getitemornullobject-id-)|按 ID 获取绑定对象。|
 |[ChartCollection](/javascript/api/excel/excel.chartcollection)|[getCount()](/javascript/api/excel/excel.chartcollection#getcount--)|返回工作表中的图表数。|
-||[getItemOrNullObject(name: string)](/javascript/api/excel/excel.chartcollection#getitemornullobject-name-)|使用图表名称获取图表。 如果存在多个名称相同的图表，将返回第一个图表。|
+||[getItemOrNullObject(name: string)](/javascript/api/excel/excel.chartcollection#getitemornullobject-name-)|使用图表名称获取图表。|
 |[ChartPointsCollection](/javascript/api/excel/excel.chartpointscollection)|[getCount()](/javascript/api/excel/excel.chartpointscollection#getcount--)|返回系列中的图表点数。|
 |[ChartSeriesCollection](/javascript/api/excel/excel.chartseriescollection)|[getCount()](/javascript/api/excel/excel.chartseriescollection#getcount--)|返回集合中的系列数量。|
-|[NamedItem](/javascript/api/excel/excel.nameditem)|[comment](/javascript/api/excel/excel.nameditem#comment)|表示与此名称相关联的注释。|
+|[NamedItem](/javascript/api/excel/excel.nameditem)|[comment](/javascript/api/excel/excel.nameditem#comment)|指定与此名称关联的注释。|
 ||[delete()](/javascript/api/excel/excel.nameditem#delete--)|删除给定的名称。|
-||[getRangeOrNullObject()](/javascript/api/excel/excel.nameditem#getrangeornullobject--)|返回与名称相关联的 Range 对象。 如果已命名项的类型不是 Range，将返回 NULL 对象。|
-||[scope](/javascript/api/excel/excel.nameditem#scope)|指明是否将 name 限定到工作簿或特定工作表。 可能的值为：工作表、工作簿。 只读。|
-||[worksheet](/javascript/api/excel/excel.nameditem#worksheet)|返回已命名项限定到的工作表。 如果项目的作用域改为工作簿，则会引发错误。|
-||[worksheetOrNullObject](/javascript/api/excel/excel.nameditem#worksheetornullobject)|返回已命名项限定到的工作表。 如果项改为限定到工作簿，将返回 NULL 对象。|
+||[getRangeOrNullObject()](/javascript/api/excel/excel.nameditem#getrangeornullobject--)|返回与名称相关的 range 对象。|
+||[scope](/javascript/api/excel/excel.nameditem#scope)|指定名称的范围是工作簿还是特定工作表。|
+||[worksheet](/javascript/api/excel/excel.nameditem#worksheet)|返回已命名项限定到的工作表。|
+||[worksheetOrNullObject](/javascript/api/excel/excel.nameditem#worksheetornullobject)|返回已命名项限定到的工作表。|
 |[NamedItemCollection](/javascript/api/excel/excel.nameditemcollection)|[添加 (名称： string，reference： Range \| string，comment？： string) ](/javascript/api/excel/excel.nameditemcollection#add-name--reference--comment-)|将新名称添加到给定范围的集合。|
 ||[addFormulaLocal (名称： string，formula： string，comment？： string) ](/javascript/api/excel/excel.nameditemcollection#addformulalocal-name--formula--comment-)|使用用户的公式区域设置，将新名称添加到给定范围的集合。|
 ||[getCount()](/javascript/api/excel/excel.nameditemcollection#getcount--)|获取集合中已命名项的数量。|
-||[getItemOrNullObject(name: string)](/javascript/api/excel/excel.nameditemcollection#getitemornullobject-name-)|使用其名称获取 NamedItem 对象。 如果没有 NamedItem 对象，将返回 NULL 对象。|
+||[getItemOrNullObject(name: string)](/javascript/api/excel/excel.nameditemcollection#getitemornullobject-name-)|使用其名称获取 NamedItem 对象。|
 |[PivotTableCollection](/javascript/api/excel/excel.pivottablecollection)|[getCount()](/javascript/api/excel/excel.pivottablecollection#getcount--)|获取集合中的数据透视表的数量。|
-||[getItemOrNullObject(name: string)](/javascript/api/excel/excel.pivottablecollection#getitemornullobject-name-)|按 PivotTable 对象的名称获取此对象。 如果没有 PivotTable 对象，将返回 NULL 对象。|
-|[区域](/javascript/api/excel/excel.range)|[getIntersectionOrNullObject (anotherRange： Range \| string) ](/javascript/api/excel/excel.range#getintersectionornullobject-anotherrange-)|获取表示指定区域的矩形交集的 range 对象。 如果找不到任何交集，则此方法返回空对象。|
-||[getUsedRangeOrNullObject (valuesOnly？： boolean) ](/javascript/api/excel/excel.range#getusedrangeornullobject-valuesonly-)|返回指定 Range 对象的所用区域。如果区域内没有使用单元格，此函数将返回 NULL 对象。|
+||[getItemOrNullObject(name: string)](/javascript/api/excel/excel.pivottablecollection#getitemornullobject-name-)|按名称获取 PivotTable 对象。|
+|[Range](/javascript/api/excel/excel.range)|[getIntersectionOrNullObject (anotherRange： Range \| string) ](/javascript/api/excel/excel.range#getintersectionornullobject-anotherrange-)|获取表示指定区域的矩形交集的 range 对象。|
+||[getUsedRangeOrNullObject (valuesOnly？： boolean) ](/javascript/api/excel/excel.range#getusedrangeornullobject-valuesonly-)|返回指定 range 对象的所用区域。|
 |[RangeViewCollection](/javascript/api/excel/excel.rangeviewcollection)|[getCount()](/javascript/api/excel/excel.rangeviewcollection#getcount--)|获取集合中 RangeView 对象的数量。|
 |[设置](/javascript/api/excel/excel.setting)|[delete()](/javascript/api/excel/excel.setting#delete--)|删除 Setting 对象。|
-||[key](/javascript/api/excel/excel.setting#key)|返回表示 setting 对象的 ID 的键。 只读。|
+||[key](/javascript/api/excel/excel.setting#key)|表示设置的 id 的键。|
 ||[value](/javascript/api/excel/excel.setting#value)|表示为此设置存储的值。|
 |[SettingCollection](/javascript/api/excel/excel.settingcollection)|[add (key： string，value： string \| number \| boolean \| Date \| Array <any> \| any) ](/javascript/api/excel/excel.settingcollection#add-key--value-)|设置指定的 Setting 对象，或将其添加到工作簿中。|
 ||[getCount()](/javascript/api/excel/excel.settingcollection#getcount--)|获取集合中的 Setting 对象的数量。|
 ||[getItem(key: string)](/javascript/api/excel/excel.settingcollection#getitem-key-)|按键获取 Setting 项。|
-||[getItemOrNullObject(key: string)](/javascript/api/excel/excel.settingcollection#getitemornullobject-key-)|按键获取 Setting 项。 如果没有 Setting 项，将返回 NULL 对象。|
+||[getItemOrNullObject(key: string)](/javascript/api/excel/excel.settingcollection#getitemornullobject-key-)|按键获取 Setting 项。|
 ||[items](/javascript/api/excel/excel.settingcollection#items)|获取此集合中已加载的子项。|
 ||[onSettingsChanged](/javascript/api/excel/excel.settingcollection#onsettingschanged)|当文档中的设置变化时发生。|
 |[SettingsChangedEventArgs](/javascript/api/excel/excel.settingschangedeventargs)|[设置](/javascript/api/excel/excel.settingschangedeventargs#settings)|获取表示引发了 SettingsChanged 事件的 binding 的 setting 对象。|
 |[TableCollection](/javascript/api/excel/excel.tablecollection)|[getCount()](/javascript/api/excel/excel.tablecollection#getcount--)|获取集合中的表数量。|
-||[getItemOrNullObject(key: string)](/javascript/api/excel/excel.tablecollection#getitemornullobject-key-)|按名称或 ID 获取表。 如果没有表，将返回 NULL 对象。|
+||[getItemOrNullObject(key: string)](/javascript/api/excel/excel.tablecollection#getitemornullobject-key-)|按名称或 ID 获取表。|
 |[TableColumnCollection](/javascript/api/excel/excel.tablecolumncollection)|[getCount()](/javascript/api/excel/excel.tablecolumncollection#getcount--)|获取表中的列数。|
-||[getItemOrNullObject (项：数字 \| 字符串) ](/javascript/api/excel/excel.tablecolumncollection#getitemornullobject-key-)|按名称或 ID 获取 column 对象。 如果没有 column 对象，将返回 NULL 对象。|
+||[getItemOrNullObject (项：数字 \| 字符串) ](/javascript/api/excel/excel.tablecolumncollection#getitemornullobject-key-)|按名称或 ID 获取 column 对象。|
 |[TableRowCollection](/javascript/api/excel/excel.tablerowcollection)|[getCount()](/javascript/api/excel/excel.tablerowcollection#getcount--)|获取表格中的行数。|
-|[Workbook](/javascript/api/excel/excel.workbook)|[设置](/javascript/api/excel/excel.workbook#settings)|表示一组与 workbook 相关联的 setting 对象。 只读。|
-|[Worksheet](/javascript/api/excel/excel.worksheet)|[getUsedRangeOrNullObject (valuesOnly？： boolean) ](/javascript/api/excel/excel.worksheet#getusedrangeornullobject-valuesonly-)|使用的区域是包含分配了值或格式的任意单元格的最小区域。如果整个工作表为空，此函数将返回 NULL 对象。|
-||[names](/javascript/api/excel/excel.worksheet#names)|一组范围限定到当前工作表的名称。 只读。|
+|[Workbook](/javascript/api/excel/excel.workbook)|[设置](/javascript/api/excel/excel.workbook#settings)|表示一组与 workbook 相关联的 setting 对象。|
+|[Worksheet](/javascript/api/excel/excel.worksheet)|[getUsedRangeOrNullObject (valuesOnly？： boolean) ](/javascript/api/excel/excel.worksheet#getusedrangeornullobject-valuesonly-)|使用的区域是包含分配了值或格式化的任何单元格的最小区域。|
+||[名称](/javascript/api/excel/excel.worksheet#names)|一组范围限定到当前工作表的名称。|
 |[WorksheetCollection](/javascript/api/excel/excel.worksheetcollection)|[getCount (visibleOnly？： boolean) ](/javascript/api/excel/excel.worksheetcollection#getcount-visibleonly-)|获取集合中的工作表数量。|
-||[getItemOrNullObject(key: string)](/javascript/api/excel/excel.worksheetcollection#getitemornullobject-key-)|按 Worksheet 对象的名称或 ID 获取此对象。 如果没有 Worksheet 对象，将返回 NULL 对象。|
+||[getItemOrNullObject(key: string)](/javascript/api/excel/excel.worksheetcollection#getitemornullobject-key-)|按 Worksheet 对象的名称或 ID 获取此对象。|
 
 ## <a name="see-also"></a>另请参阅
 

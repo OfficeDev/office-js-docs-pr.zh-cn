@@ -1,20 +1,20 @@
 ---
 title: Outlook 加载项中的身份验证选项
 description: Outlook 加载项 根据特定场景提供了多种不同的身份验证方法。
-ms.date: 08/20/2020
+ms.date: 11/10/2020
 localization_priority: Priority
-ms.openlocfilehash: 2f0fd2eae9bedf67b279c2b68a61ebed001d963c
-ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
+ms.openlocfilehash: 54584483b7d4fd75e3f2d6c3188465333e9f58d5
+ms.sourcegitcommit: ca66ff7462bfdf4ed7ae04f43d1388c24de63bf9
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "47293966"
+ms.lasthandoff: 11/11/2020
+ms.locfileid: "48996394"
 ---
 # <a name="authentication-options-in-outlook-add-ins"></a>Outlook 加载项中的身份验证选项
 
 Outlook 加载项可以访问 Internet 上任意位置的信息，无论是托管加载项的服务器、内部网络，还是云中的其他位置。 如果相应信息受保护，加载项需要能够验证用户身份。 Outlook 加载项 根据特定场景提供了多种不同的身份验证方法。
 
-## <a name="single-sign-on-access-token-preview"></a>单一登录访问令牌（预览）
+## <a name="single-sign-on-access-token"></a>单一登录访问令牌
 
 单一登录访问令牌为你的加载项提供了进行身份验证和获取访问令牌以调用 [Microsoft Graph API](/graph/overview) 的无缝方法。 由于不需要用户输入其凭据，此功能可以减少摩擦。
 
