@@ -1,16 +1,16 @@
 ---
-ms.date: 10/22/2020
+ms.date: 11/06/2020
 description: 在 Excel 中定义自定义函数的 JSON 元数据，并将您的函数 ID 和 name 属性相关联。
-title: 在 Excel 中创建自定义函数的 JSON 元数据
+title: 在 Excel 中手动创建自定义函数的 JSON 元数据
 localization_priority: Normal
-ms.openlocfilehash: c676abc3115082fa861a4650b11869009f168e7f
-ms.sourcegitcommit: a4e09546fd59579439025aca9cc58474b5ae7676
+ms.openlocfilehash: adbcbb9d2705a38b1ed9ff5cdffa6162b9d93a9c
+ms.sourcegitcommit: 5bfd1e9956485c140179dfcc9d210c4c5a49a789
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "48774745"
+ms.lasthandoff: 11/13/2020
+ms.locfileid: "49071639"
 ---
-# <a name="create-json-metadata-for-custom-functions"></a>创建自定义函数的 JSON 元数据
+# <a name="manually-create-json-metadata-for-custom-functions"></a>手动创建自定义函数的 JSON 元数据
 
 如 " [自定义函数概述](custom-functions-overview.md) " 一文中所述，自定义函数项目必须包括 JSON 元数据文件和 (JavaScript 或 TypeScript) 文件中的脚本，以注册函数，使其可供使用。 自定义函数在用户首次运行外接程序且在所有工作簿中对同一用户可用时注册。
 
@@ -18,7 +18,7 @@ ms.locfileid: "48774745"
 
 我们建议在可能的情况（而不是创建您自己的 JSON 文件）中使用 JSON 自动生成。 自动生成不容易出现用户错误，并且 `yo office` 搭建文件已包含此文件。 有关 JSDoc 标记和 JSON 自动生成进程的详细信息，请参阅自动 [生成 json 元数据的自定义函数](custom-functions-json-autogeneration.md)。
 
-不过，您可以从头开始创建自定义函数项目，但它需要您执行以下操作：
+不过，您可以从头开始创建自定义函数项目。 此过程要求您执行以下操作：
 
 - 编写 JSON 文件。
 - 检查您的清单文件是否已连接到您的 JSON 文件。
@@ -144,7 +144,7 @@ ms.locfileid: "48774745"
 
 | 属性      | 数据类型 | 必需 | 说明                                                                                                                                                                      |
 | :------------ | :-------- | :------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `description` | string    | 否       | 最终用户在 Excel 中看到的函数的说明。 例如， **将摄氏度值转换为华氏度** 。                                                            |
+| `description` | 字符串    | 否       | 最终用户在 Excel 中看到的函数的说明。 例如， **将摄氏度值转换为华氏度** 。                                                            |
 | `helpUrl`     | string    | 否       | 提供有关函数的信息的 URL。 （它显示在任务窗格中。）例如，`http://contoso.com/help/convertcelsiustofahrenheit.html`。                      |
 | `id`          | string    | 是      | 函数的唯一 ID。 此 ID 只能包含字母数字字符和句点，设置后不应更改。                                            |
 | `name`        | string    | 是      | 最终用户在 Excel 中看到的函数的名称。 在 Excel 中，此函数名称将以 XML 清单文件中指定的自定义函数命名空间为前缀。 |
@@ -169,7 +169,7 @@ ms.locfileid: "48774745"
 
 |  属性  |  数据类型  |  必需  |  说明  |
 |:-----|:-----|:-----|:-----|
-|  `description`  |  string  |  否 |  参数的说明。 这将显示在 Excel 的 IntelliSense 中。  |
+|  `description`  |  字符串  |  否 |  参数的说明。 这将显示在 Excel 的 IntelliSense 中。  |
 |  `dimensionality`  |  string  |  否  |  必须是 **标量** （非数组值）或 **矩阵** （二维数组）。  |
 |  `name`  |  string  |  是  |  参数的名称。 此名称显示在 Excel 的 IntelliSense 中。  |
 |  `type`  |  string  |  否  |  参数的数据类型。 可以是 **boolean** 、 **number** 、 **string** 或 **any** ，允许使用前三种类型中的任何一种。 如果未指定此属性，则数据类型默认为 **any** 。 |
@@ -182,7 +182,7 @@ ms.locfileid: "48774745"
 
 | 属性         | 数据类型 | 必需 | 说明                                                                          |
 | :--------------- | :-------- | :------- | :----------------------------------------------------------------------------------- |
-| `dimensionality` | string    | 否       | 必须是 **标量** （非数组值）或 **矩阵** （二维数组）。 |
+| `dimensionality` | 字符串    | 否       | 必须是 **标量** （非数组值）或 **矩阵** （二维数组）。 |
 
 ## <a name="associating-function-names-with-json-metadata"></a>将函数名称与 JSON 元数据相关联
 

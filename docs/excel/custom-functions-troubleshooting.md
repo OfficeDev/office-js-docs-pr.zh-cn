@@ -1,14 +1,14 @@
 ---
-ms.date: 04/29/2020
+ms.date: 11/06/2020
 description: 解决 Excel 自定义函数的常见问题。
 title: 自定义函数疑难解答
 localization_priority: Normal
-ms.openlocfilehash: 3ee18eabd19be56eece465da880fae7af1c12f3d
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: fb187c443f02df92f9d489d4c6463f76d072a5e5
+ms.sourcegitcommit: 5bfd1e9956485c140179dfcc9d210c4c5a49a789
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44609795"
+ms.lasthandoff: 11/13/2020
+ms.locfileid: "49071660"
 ---
 # <a name="troubleshoot-custom-functions"></a>自定义函数疑难解答
 
@@ -45,7 +45,7 @@ Excel 有许多内置错误消息，如果存在计算错误，系统会将向�
 
 ### <a name="runtime-logging-reports-typeerror-network-request-failed-on-excel-on-windows"></a>Windows 版 Excel 上的运行时日志记录报告“TypeError:网络请求失败”
 
-如果在调用 localhost 服务器时在[运行时日志](custom-functions-troubleshooting.md#enable-runtime-logging)中看到错误“TypeError:网络请求失败”，必须启用本地环回异常。 若要详细了解如何执行此操作，请参阅[这篇 Microsoft 支持文章](https://support.microsoft.com/help/4490419/local-loopback-exemption-does-not-work)中的*选项 #2*。
+如果在调用 localhost 服务器时在[运行时日志](custom-functions-troubleshooting.md#enable-runtime-logging)中看到错误“TypeError:网络请求失败”，必须启用本地环回异常。 若要详细了解如何执行此操作，请参阅 [这篇 Microsoft 支持文章](https://support.microsoft.com/help/4490419/local-loopback-exemption-does-not-work)中的 *选项 #2* 。
 
 ### <a name="ensure-promises-return"></a>确保返回 promise
 
@@ -76,7 +76,7 @@ function add(first, second) {
 CustomFunctions.associate("ADD", add);
 ```
 
-有关此过程的更多信息，请参阅[将函数名称与 JSON 元数据相关联](../excel/custom-functions-json.md#associating-function-names-with-json-metadata)。
+有关此过程的详细信息，请参阅将 [函数名称与 JSON 元数据相关联](../excel/custom-functions-json.md#associating-function-names-with-json-metadata)。
 
 ## <a name="reporting-feedback"></a>报告反馈
 
@@ -84,7 +84,7 @@ CustomFunctions.associate("ADD", add);
 
 ### <a name="in-excel-on-windows-or-mac"></a>在 Wndows 或 Mac 上的 Excel 中
 
-如果使用 Windows 版 Excel 或 Mac 版 Excel，可以直接从 Excel 向 Office 扩展性团队报告反馈。 为此，请选择“文件”->“反馈”->“发送哭脸”****。 发送哭脸将提供必要的日志，以帮助我们了解你遇到的问题。
+如果使用 Windows 版 Excel 或 Mac 版 Excel，可以直接从 Excel 向 Office 扩展性团队报告反馈。 为此，请选择“文件”->“反馈”->“发送哭脸”。 发送哭脸将提供必要的日志，以帮助我们了解你遇到的问题。
 
 ### <a name="in-github"></a>在 Github 中
 
@@ -95,5 +95,5 @@ CustomFunctions.associate("ADD", add);
 
 ## <a name="see-also"></a>另请参阅
 
-* [自定义函数元数据自动生成](custom-functions-json-autogeneration.md)
+* [为自定义函数自动生成 JSON 元数据](custom-functions-json-autogeneration.md)
 * [在 Excel 中创建自定义函数](custom-functions-overview.md)

@@ -1,14 +1,14 @@
 ---
 title: 在 Outlook 加载项中添加和删除附件
 description: 您可以使用各种附件 Api 来管理附加到用户正在撰写的项目的文件或 Outlook 项目。
-ms.date: 10/31/2019
+ms.date: 11/11/2020
 localization_priority: Normal
-ms.openlocfilehash: d162ae4c0fa8059376a3c55463080e38679d9a01
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 6f146b3efc3234313191d93af05d9c0d35111829
+ms.sourcegitcommit: 5bfd1e9956485c140179dfcc9d210c4c5a49a789
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44611671"
+ms.lasthandoff: 11/13/2020
+ms.locfileid: "49071702"
 ---
 # <a name="manage-an-items-attachments-in-a-compose-form-in-outlook"></a>在 Outlook 的撰写窗体中管理项目的附件
 
@@ -118,9 +118,14 @@ function addItemAttachment(itemId) {
 
 ## <a name="get-attachments"></a>获取附件
 
-您可以使用[getAttachmentsAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods)方法来获取正在撰写的邮件或约会的附件。
+在撰写模式下获取附件的 Api 可从 [要求集 1.8](../reference/objectmodel/requirement-set-1.8/outlook-requirement-set-1.8.md)获取。
 
-若要获取附件的内容，可以使用[getAttachmentContentAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods)方法。 [AttachmentContentFormat](/javascript/api/outlook/office.mailboxenums.attachmentcontentformat)枚举中列出了受支持的格式。
+- [getAttachmentsAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods)
+- [getAttachmentContentAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods)
+
+您可以使用 [getAttachmentsAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods) 方法来获取正在撰写的邮件或约会的附件。
+
+若要获取附件的内容，可以使用 [getAttachmentContentAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods) 方法。 [AttachmentContentFormat](/javascript/api/outlook/office.mailboxenums.attachmentcontentformat)枚举中列出了受支持的格式。
 
 应通过使用 output parameter 对象提供用于检查状态和任何错误的回调方法 `AsyncResult` 。 您还可以使用 optional 参数将任何其他参数传递给回调方法 `asyncContext` 。
 

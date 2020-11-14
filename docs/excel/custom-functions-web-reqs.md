@@ -1,14 +1,14 @@
 ---
-ms.date: 04/29/2020
+ms.date: 11/06/2020
 description: 使用 Excel 中的自定义函数请求、流式处理和取消流式处理工作簿的外部数据
 title: 使用自定义函数接收和处理数据
 localization_priority: Normal
-ms.openlocfilehash: cd9a3eb3456cfd32d55d3caa6ccc36f2e05ed004
-ms.sourcegitcommit: ed2a98b6fb5b432fa99c6cefa5ce52965dc25759
+ms.openlocfilehash: a5faa4fd8af2b41a3d79ac1c978a4c550592b27e
+ms.sourcegitcommit: 5bfd1e9956485c140179dfcc9d210c4c5a49a789
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/16/2020
-ms.locfileid: "47819509"
+ms.lasthandoff: 11/13/2020
+ms.locfileid: "49071667"
 ---
 # <a name="receive-and-handle-data-with-custom-functions"></a>使用自定义函数接收和处理数据
 
@@ -141,7 +141,7 @@ Excel 会在以下情况下取消函数的执行：
 
 你还可以考虑设置默认流式处理值，以在发出请求但你处于脱机状态时处理案例。
 
-请注意，还有一类函数被称为可取消函数，它们与流式处理函数_无_关。 仅可取消可返回一个值的异步自定义函数。 可取消函数允许在请求中间终止 Web 请求，它使用 [`CancelableInvocation`](/javascript/api/custom-functions-runtime/customfunctions.cancelableinvocation) 来决定取消时需要采取的操作。 使用标记 `@cancelable` 声明可取消函数。
+请注意，还有一类函数被称为可取消函数，它们与流式处理函数 _无_ 关。 仅可取消可返回一个值的异步自定义函数。 可取消函数允许在请求中间终止 Web 请求，它使用 [`CancelableInvocation`](/javascript/api/custom-functions-runtime/customfunctions.cancelableinvocation) 来决定取消时需要采取的操作。 使用标记 `@cancelable` 声明可取消函数。
 
 ### <a name="using-an-invocation-parameter"></a>使用调用参数
 
@@ -178,6 +178,6 @@ ws.onerror(error){
 
 - [函数中的可变值](custom-functions-volatile.md)
 - [创建自定义函数的 JSON 元数据](custom-functions-json-autogeneration.md)
-- [自定义函数元数据](custom-functions-json.md)
+- [手动创建自定义函数的 JSON 元数据](custom-functions-json.md)
 - [在 Excel 中创建自定义函数](custom-functions-overview.md)
 - [Excel 自定义函数教程](../tutorials/excel-tutorial-create-custom-functions.md)

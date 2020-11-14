@@ -1,16 +1,16 @@
 ---
-ms.date: 05/17/2020
+ms.date: 11/06/2020
 description: 了解 Excel 自定义函数名称的要求并避免常见命名缺陷。
 title: Excel 中自定义函数的命名准则
 localization_priority: Normal
-ms.openlocfilehash: ac0d824f49d359e574a0dc5caae8ef2f903dd4a1
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: eefd703c63311934435657bf9e6159662f908a95
+ms.sourcegitcommit: 5bfd1e9956485c140179dfcc9d210c4c5a49a789
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44609287"
+ms.lasthandoff: 11/13/2020
+ms.locfileid: "49071611"
 ---
-# <a name="naming-guidelines"></a>命名准则
+# <a name="custom-functions-naming-guidelines"></a>自定义函数命名准则
 
 `id` `name` 在 JSON 元数据文件中，自定义函数由和属性标识。
 
@@ -29,19 +29,19 @@ ms.locfileid: "44609287"
 
 - 这两个函数都 `name` `id` 必须以字母开头，并且最小限制为三个字符。
 
-Excel 使用大写字母作为内置函数名称（例如 `SUM` ）。 将大写字母用作自定义函数 `name` 和 `id` 最佳实践。
+Excel 使用大写字母作为内置函数名称 (如 `SUM`) 。 将大写字母用作自定义函数 `name` 和 `id` 最佳实践。
 
 函数 `name` 不应如下所示：
 
 - A1 到 XFD1048576 之间的任何单元格，或从 R1C1 到 R1048576C16384 之间的任何单元格。
 
-- 任何 Excel 4.0 宏函数（例如 `RUN` ， `ECHO` ）。  有关这些函数的完整列表，请参阅[此 Excel 宏函数参考文档](https://d13ot9o61jdzpp.cloudfront.net/files/Excel%204.0%20Macro%20Functions%20Reference.pdf)。
+- 任何 Excel 4.0 宏函数 (例如 `RUN` ， `ECHO`) 。  有关这些函数的完整列表，请参阅 [此 Excel 宏函数参考文档](https://d13ot9o61jdzpp.cloudfront.net/files/Excel%204.0%20Macro%20Functions%20Reference.pdf)。
 
 ## <a name="naming-conflicts"></a>命名冲突
 
 如果您的函数与 `name` 已存在的外接程序中的函数相同 `name` ，则 **#REF！** 错误将出现在工作簿中。
 
-若要修复命名冲突，请更改 `name` 外接程序中的，然后再次尝试该函数。 此外，还可以使用冲突的名称卸载加载项。 或者，如果要在不同的环境中测试外接程序，请尝试使用不同的命名空间来区分您的函数（如 `NAMESPACE_NAMEOFFUNCTION` ）。
+若要修复命名冲突，请更改 `name` 外接程序中的，然后再次尝试该函数。 此外，还可以使用冲突的名称卸载加载项。 或者，如果要在不同的环境中测试外接程序，请尝试使用不同的命名空间来区分函数 (如 `NAMESPACE_NAMEOFFUNCTION`) 。
 
 ## <a name="best-practices"></a>最佳做法
 
@@ -57,12 +57,12 @@ Excel 使用大写字母作为内置函数名称（例如 `SUM` ）。 将大写
 
 您可以使用单独的 JSON 文件本地化不同语言的函数名称，并在外接程序清单文件中重写值。 避免为您的函数 `id` 提供 `name` 另一种语言的内置 Excel 函数，因为这可能会与本地化函数发生冲突。
 
-有关本地化的完整信息，请参阅[本地化自定义函数](custom-functions-localize.md)
+有关本地化的完整信息，请参阅 [本地化自定义函数](custom-functions-localize.md)
 
 ## <a name="next-steps"></a>后续步骤
-了解[错误处理最佳实践](custom-functions-errors.md)。
+了解 [错误处理最佳实践](custom-functions-errors.md)。
 
 ## <a name="see-also"></a>另请参阅
 
-* [自定义函数元数据](custom-functions-json.md)
+* [手动创建自定义函数的 JSON 元数据](custom-functions-json.md)
 * [Excel 自定义函数教程](../tutorials/excel-tutorial-create-custom-functions.md)

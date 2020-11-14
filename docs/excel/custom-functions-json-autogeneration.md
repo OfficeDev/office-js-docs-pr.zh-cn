@@ -1,18 +1,18 @@
 ---
-ms.date: 09/25/2020
+ms.date: 11/06/2020
 description: 使用 JSDoc 标记动态创建自定义函数 JSON 元数据。
 title: 为自定义函数自动生成 JSON 元数据
 localization_priority: Normal
-ms.openlocfilehash: 151dc7c97b2a98743906b7e0a920fdc1eff62e7f
-ms.sourcegitcommit: 42202d7e2ac24dffa77cf937f5697a1cd79ee790
+ms.openlocfilehash: 23ad0466c157b6dbb9d5fd5fbecf3fd5fe479752
+ms.sourcegitcommit: 5bfd1e9956485c140179dfcc9d210c4c5a49a789
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "48308535"
+ms.lasthandoff: 11/13/2020
+ms.locfileid: "49071646"
 ---
 # <a name="autogenerate-json-metadata-for-custom-functions"></a>为自定义函数自动生成 JSON 元数据
 
-在使用 JavaScript 或 TypeScript 编写 Excel 自定义函数时，使用 [JSDoc 标记](https://jsdoc.app/)提供有关自定义函数的额外信息。 然后在生成时使用 JSDoc 标记创建 [JSON 元数据文件](custom-functions-json.md)。 使用 JSDoc 标记使您免除手动编辑 JSON 元数据文件的工作。
+在使用 JavaScript 或 TypeScript 编写 Excel 自定义函数时，使用 [JSDoc 标记](https://jsdoc.app/)提供有关自定义函数的额外信息。 然后在生成时使用 JSDoc 标记创建 JSON 元数据文件。 使用 JSDoc 标记可节省 [手动编辑 JSON 元数据文件](custom-functions-json.md)的工作量。
 
 [!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
@@ -24,7 +24,7 @@ ms.locfileid: "48308535"
 
 当用户需要帮助来了解自定义函数的功能时，将向用户显示用作帮助文本的说明。 说明不需要任何特定标记。 只需在 JSDoc 注释中输入简短的文本说明即可。 一般来说，说明位于 JSDoc 注释部分的开头，但无论位于何处，它都有用。
 
-若要查看内置函数说明的示例，请打开 Excel，转到“**公式**”选项卡，然后选择“**插入函数**”。 然后，你可以浏览所有函数说明，还可以查看列出的自定义函数。
+若要查看内置函数说明的示例，请打开 Excel，转到“ **公式** ”选项卡，然后选择“ **插入函数** ”。 然后，你可以浏览所有函数说明，还可以查看列出的自定义函数。
 
 在以下示例中，短语“计算球体的体积” 就是自定义函数的相关说明。
 
@@ -234,7 +234,7 @@ function add(first: number, second: number): number {
 
 ### <a name="returns"></a>@returns
 
-语法：@returns {_type_}
+语法：@returns { _type_ }
 
 提供返回值的类型。
 
@@ -327,5 +327,5 @@ function roll6sided(): number {
 
 ## <a name="see-also"></a>另请参阅
 
-* [自定义函数元数据](custom-functions-json.md)
+* [手动创建自定义函数的 JSON 元数据](custom-functions-json.md)
 * [在 Excel 中创建自定义函数](custom-functions-overview.md)

@@ -1,14 +1,14 @@
 ---
-ms.date: 04/29/2020
+ms.date: 11/06/2020
 description: 了解如何在自定义函数中使用不同的参数，例如 Excel 范围、可选参数、调用上下文等。
 title: Excel 自定义函数的选项
 localization_priority: Normal
-ms.openlocfilehash: ee193ed68ef59bfd9068bc43cd30721d6bb7b86a
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 0a803a4d41354530584b25d2bf9df944af430909
+ms.sourcegitcommit: 5bfd1e9956485c140179dfcc9d210c4c5a49a789
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44609273"
+ms.lasthandoff: 11/13/2020
+ms.locfileid: "49071618"
 ---
 # <a name="custom-functions-parameter-options"></a>自定义函数参数选项
 
@@ -178,7 +178,7 @@ function ADD(operands: number[][][]): number {
 
 ### <a name="repeating-single-value-parameter"></a>重复单个值参数
 
-一个重复的单值参数允许传递多个单个值。 例如，用户可以输入 ADD （1，B2，3）。 下面的示例演示如何声明单个值参数。
+一个重复的单值参数允许传递多个单个值。 例如，用户可以输入 ADD (1，B2，3) 。 下面的示例演示如何声明单个值参数。
 
 ```JS
 /**
@@ -197,7 +197,7 @@ function addSingleValue(singleValue) {
 
 ### <a name="single-range-parameter"></a>单个范围参数
 
-从技术上讲，单个 range 参数不是重复参数，但此处包含此参数，这是因为声明与重复参数非常相似。 它向用户显示为 "添加" （A2： B3），其中单个范围是从 Excel 中传递的。 下面的示例展示了如何声明一个 range 参数。
+从技术上讲，单个 range 参数不是重复参数，但此处包含此参数，这是因为声明与重复参数非常相似。 在从 Excel 中传递单个范围的情况下，会向用户显示 "添加 (A2： B3) "。 下面的示例展示了如何声明一个 range 参数。
 
 ```JS
 /**
@@ -217,11 +217,11 @@ function addSingleRange(singleRange) {
 
 ### <a name="repeating-range-parameter"></a>重复区域参数
 
-重复区域参数允许传递多个区域或数字。 例如，用户可以输入 ADD （5，B2，C3，8，E5： E8）。 重复区域通常是使用类型为三维矩阵的类型指定的 `number[][][]` 。 有关示例，请参阅为重复参数列出的主示例（#repeating 参数）。
+重复区域参数允许传递多个区域或数字。 例如，用户可以输入 ADD (5，B2，C3，8，E5： E8) 。 重复区域通常是使用类型为三维矩阵的类型指定的 `number[][][]` 。 有关示例，请参阅为重复参数列出的主要示例 ( # # 重复参数) 。
 
 
 ### <a name="declaring-repeating-parameters"></a>声明重复参数
-在 Typescript 中，指示参数是多维的。 例如， `ADD(values: number[])` 将指示一维数组， `ADD(values:number[][])` 指示二维数组，依此类推。
+在 Typescript 中，指示参数是多维的。 例如，  `ADD(values: number[])` 将指示一维数组， `ADD(values:number[][])` 指示二维数组，依此类推。
 
 在 JavaScript 中，对于二维数组使用 `@param values {number[]}` 一维数组，对 `@param <name> {number[][]}` 更多维度使用。
 
@@ -229,7 +229,7 @@ function addSingleRange(singleRange) {
 
 ## <a name="invocation-parameter"></a>调用参数
 
-每个自定义函数自动传递一个 `invocation` 参数作为最后一个参数。 此参数可用于检索其他上下文，如调用单元格的地址。 也可以用于向 Excel 发送信息，例如用于[取消函数](custom-functions-web-reqs.md#make-a-streaming-function)的函数处理程序。 即使不声明参数，您的自定义函数也有此参数。 在 Excel 中，用户不会看到此参数。 如果要 `invocation` 在自定义函数中使用，则将其声明为最后一个参数。
+每个自定义函数自动传递一个 `invocation` 参数作为最后一个参数。 此参数可用于检索其他上下文，如调用单元格的地址。 也可以用于向 Excel 发送信息，例如用于 [取消函数](custom-functions-web-reqs.md#make-a-streaming-function)的函数处理程序。 即使不声明参数，您的自定义函数也有此参数。 在 Excel 中，用户不会看到此参数。 如果要 `invocation` 在自定义函数中使用，则将其声明为最后一个参数。
 
 在下面的代码示例中，将 `invocation` 显式声明上下文以供参考。
 
@@ -248,12 +248,12 @@ function add(first, second, invocation) {
 
 ## <a name="next-steps"></a>后续步骤
 
-了解如何[在自定义函数中使用可变值](custom-functions-volatile.md)。
+了解如何 [在自定义函数中使用可变值](custom-functions-volatile.md)。
 
 ## <a name="see-also"></a>另请参阅
 
 * [使用自定义函数接收和处理数据](custom-functions-web-reqs.md)
-* [自定义函数元数据](custom-functions-json.md)
 * [为自定义函数自动生成 JSON 元数据](custom-functions-json-autogeneration.md)
+* [手动创建自定义函数的 JSON 元数据](custom-functions-json.md)
 * [在 Excel 中创建自定义函数](custom-functions-overview.md)
 * [Excel 自定义函数教程](../tutorials/excel-tutorial-create-custom-functions.md)
