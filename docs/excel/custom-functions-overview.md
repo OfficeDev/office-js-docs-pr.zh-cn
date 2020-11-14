@@ -1,16 +1,16 @@
 ---
-ms.date: 10/14/2020
+ms.date: 11/06/2020
 description: 为 Office 加载项创建 Excel 自定义函数。
 title: 在 Excel 中创建自定义函数
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: 466050a5323f0f02fb886c763f5a2a594a9e2233
-ms.sourcegitcommit: 42e6cfe51d99d4f3f05a3245829d764b28c46bbb
+ms.openlocfilehash: d20c2368f3cb79dc8cd43e93c4b5ecbc9603129a
+ms.sourcegitcommit: 5bfd1e9956485c140179dfcc9d210c4c5a49a789
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "48741111"
+ms.lasthandoff: 11/13/2020
+ms.locfileid: "49071674"
 ---
 # <a name="create-custom-functions-in-excel"></a>在 Excel 中创建自定义函数
 
@@ -50,7 +50,7 @@ function sphereVolume(radius) {
 
 ### <a name="script-file"></a>脚本文件
 
-脚本文件 (**./src/functions/functions.js** or **./src/functions/functions.ts**) 包含定义自定义函数的代码以及定义函数的注释。
+脚本文件 ( **./src/functions/functions.js** or **./src/functions/functions.ts** ) 包含定义自定义函数的代码以及定义函数的注释。
 
 以下代码定义 `add` 自定义函数。 代码注释用于生成描述 Excel 自定义函数的 JSON 元数据。 首先声明所需的 `@customfunction` 注释，指示这是一个自定义函数。 接下来，声明两个参数 `first` 和 `second`，然后是它们的 `description` 属性。 最后提供了 `returns` 描述。 要详细了解自定义函数需要哪些注释，请参阅[为自定义函数创建 JSON 元数据](custom-functions-json-autogeneration.md)。
 
@@ -70,7 +70,7 @@ function add(first, second){
 
 ### <a name="manifest-file"></a>清单文件
 
-用于定义自定义函数的加载项的 XML 清单文件（Yo Office 生成器创建的项目中的 **./manifest.xml**）会执行以下操作：
+用于定义自定义函数的加载项的 XML 清单文件（Yo Office 生成器创建的项目中的 **./manifest.xml** ）会执行以下操作：
 
 - 定义自定义函数的命名空间。 命名空间追加在你的自定义函数之前，可帮助客户将你的函数标识为加载项的一部分。
 - 使用自定义函数清单特有的 `<ExtensionPoint>` 和 `<Resources>` 元素。 这些元素包含有关 JavaScript、JSON 和 HTML 文件的位置的信息。
@@ -100,6 +100,6 @@ function add(first, second){
 
 ## <a name="see-also"></a>另请参阅 
 * [了解 Microsoft 365 开发人员计划](https://developer.microsoft.com/microsoft-365/dev-program)
-* [自定义函数要求](custom-functions-requirement-sets.md)
-* [命名准则](custom-functions-naming.md)
+* [自定义函数要求集](custom-functions-requirement-sets.md)
+* [自定义函数命名准则](custom-functions-naming.md)
 * [让自定义函数与 XLL 用户定义的函数兼容](make-custom-functions-compatible-with-xll-udf.md)
