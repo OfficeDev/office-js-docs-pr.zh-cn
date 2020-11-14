@@ -3,46 +3,46 @@ ms.date: 08/13/2020
 description: 了解如何在同一 JavaScript 运行时中运行自定义函数、功能区按钮和任务窗格代码，以便在加载项中协调方案。
 title: 在共享 JavaScript 运行时中运行加载项代码
 localization_priority: Priority
-ms.openlocfilehash: 04932bcf292686fd9d0abf2ff99c19f062f21456
-ms.sourcegitcommit: ed2a98b6fb5b432fa99c6cefa5ce52965dc25759
+ms.openlocfilehash: 70d13372dbe3ef40d527c781d0fd55dc0b1eb7ed
+ms.sourcegitcommit: 5bfd1e9956485c140179dfcc9d210c4c5a49a789
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/16/2020
-ms.locfileid: "47819544"
+ms.lasthandoff: 11/13/2020
+ms.locfileid: "49071625"
 ---
-# <a name="overview-run-your-add-in-code-in-a-shared-javascript-runtimes"></a><span data-ttu-id="8b98e-103">概述：在共享 JavaScript 运行时中运行加载项代码</span><span class="sxs-lookup"><span data-stu-id="8b98e-103">Overview: Run your add-in code in a shared JavaScript runtimes</span></span>
+# <a name="overview-run-your-add-in-code-in-a-shared-javascript-runtime"></a><span data-ttu-id="80f69-103">概述：在共享 JavaScript 运行时中运行加载项代码</span><span class="sxs-lookup"><span data-stu-id="80f69-103">Overview: Run your add-in code in a shared JavaScript runtime</span></span>
 
 [!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
-<span data-ttu-id="8b98e-104">运行 Windows 版 Excel 或 Mac 版 Excel 时，加载项将在单独的 JavaScript 运行时环境中运行功能区按钮、自定义函数和任务窗格的代码。</span><span class="sxs-lookup"><span data-stu-id="8b98e-104">When running Excel on Windows or Mac, your add-in will run code for ribbon buttons, custom functions, and the task pane in separate JavaScript runtime environments.</span></span> <span data-ttu-id="8b98e-105">这会产生一些局限性，例如无法轻松共享全局数据，也不能通过自定义函数访问所有 CORS 功能。</span><span class="sxs-lookup"><span data-stu-id="8b98e-105">This creates limitations such as not being able to easily share global data, and not being able to access all CORS functionality from a custom function.</span></span>
+<span data-ttu-id="80f69-104">运行 Windows 版 Excel 或 Mac 版 Excel 时，加载项将在单独的 JavaScript 运行时环境中运行功能区按钮、自定义函数和任务窗格的代码。</span><span class="sxs-lookup"><span data-stu-id="80f69-104">When running Excel on Windows or Mac, your add-in will run code for ribbon buttons, custom functions, and the task pane in separate JavaScript runtime environments.</span></span> <span data-ttu-id="80f69-105">这会产生一些局限性，例如无法轻松共享全局数据，也不能通过自定义函数访问所有 CORS 功能。</span><span class="sxs-lookup"><span data-stu-id="80f69-105">This creates limitations such as not being able to easily share global data, and not being able to access all CORS functionality from a custom function.</span></span>
 
-<span data-ttu-id="8b98e-106">但是，你可以将 Excel 加载项配置为在同一 JavaScript 运行时（也称为共享运行时）中共享代码。</span><span class="sxs-lookup"><span data-stu-id="8b98e-106">However, you can configure your Excel add-in to share code in the same JavaScript runtime (also referred to as a shared runtime).</span></span> <span data-ttu-id="8b98e-107">这可在加载项中实现更好的协调，并且可从加载项的所有部分访问任务窗格 DOM 和 CORS。</span><span class="sxs-lookup"><span data-stu-id="8b98e-107">This enables better coordination across your add-in and access to the task pane DOM and CORS from all parts of your add-in.</span></span>
+<span data-ttu-id="80f69-106">但是，你可以将 Excel 加载项配置为在同一 JavaScript 运行时（也称为共享运行时）中共享代码。</span><span class="sxs-lookup"><span data-stu-id="80f69-106">However, you can configure your Excel add-in to share code in the same JavaScript runtime (also referred to as a shared runtime).</span></span> <span data-ttu-id="80f69-107">这可在加载项中实现更好的协调，并且可从加载项的所有部分访问任务窗格 DOM 和 CORS。</span><span class="sxs-lookup"><span data-stu-id="80f69-107">This enables better coordination across your add-in and access to the task pane DOM and CORS from all parts of your add-in.</span></span>
 
-<span data-ttu-id="8b98e-108">配置共享运行时可实现以下方案：</span><span class="sxs-lookup"><span data-stu-id="8b98e-108">Configuring a shared runtime enables the following scenarios:</span></span>
+<span data-ttu-id="80f69-108">配置共享运行时可实现以下方案：</span><span class="sxs-lookup"><span data-stu-id="80f69-108">Configuring a shared runtime enables the following scenarios:</span></span>
 
-- <span data-ttu-id="8b98e-109">加载项将具有可供功能区、任务窗格和自定义函数访问的共享 DOM。</span><span class="sxs-lookup"><span data-stu-id="8b98e-109">Your add-in will have a shared DOM that the ribbon, task pane, and custom functions can all access.</span></span>
-- <span data-ttu-id="8b98e-110">自定义函数将具有完整的 CORS 支持。</span><span class="sxs-lookup"><span data-stu-id="8b98e-110">Your custom functions will have full CORS support.</span></span>
-- <span data-ttu-id="8b98e-111">自定义函数可调用 Office.js API 以读取电子表格文档数据。</span><span class="sxs-lookup"><span data-stu-id="8b98e-111">Your custom functions can call Office.js APIs to read spreadsheet document data.</span></span>
-- <span data-ttu-id="8b98e-112">打开文档后，加载项即可运行代码。</span><span class="sxs-lookup"><span data-stu-id="8b98e-112">Your add-in can run code as soon as the document is opened.</span></span>
-- <span data-ttu-id="8b98e-113">关闭任务窗格后，加载项可以继续运行代码。</span><span class="sxs-lookup"><span data-stu-id="8b98e-113">Your add-in can continue running code after the task pane is closed.</span></span>
+- <span data-ttu-id="80f69-109">加载项将具有可供功能区、任务窗格和自定义函数访问的共享 DOM。</span><span class="sxs-lookup"><span data-stu-id="80f69-109">Your add-in will have a shared DOM that the ribbon, task pane, and custom functions can all access.</span></span>
+- <span data-ttu-id="80f69-110">自定义函数将具有完整的 CORS 支持。</span><span class="sxs-lookup"><span data-stu-id="80f69-110">Your custom functions will have full CORS support.</span></span>
+- <span data-ttu-id="80f69-111">自定义函数可调用 Office.js API 以读取电子表格文档数据。</span><span class="sxs-lookup"><span data-stu-id="80f69-111">Your custom functions can call Office.js APIs to read spreadsheet document data.</span></span>
+- <span data-ttu-id="80f69-112">打开文档后，加载项即可运行代码。</span><span class="sxs-lookup"><span data-stu-id="80f69-112">Your add-in can run code as soon as the document is opened.</span></span>
+- <span data-ttu-id="80f69-113">关闭任务窗格后，加载项可以继续运行代码。</span><span class="sxs-lookup"><span data-stu-id="80f69-113">Your add-in can continue running code after the task pane is closed.</span></span>
 
-<span data-ttu-id="8b98e-114">当使用任务窗格在共享运行时中运行自定义函数时，你的加载项将在 Microsoft Internet Explorer 11 浏览器实例中运行，如 [Office 加载项使用的浏览器](../concepts/browsers-used-by-office-web-add-ins.md)中所述。此外，Excel 加载项在功能区上显示的任何按钮都将在同一共享运行时中运行。</span><span class="sxs-lookup"><span data-stu-id="8b98e-114">When you run custom functions in a shared runtime with the task pane, your add-in will run in a Microsoft Internet Explorer 11 browser instance, as explained in [Browsers used by Office Add-ins](../concepts/browsers-used-by-office-web-add-ins.md). Additionally, any buttons that your Excel add-in displays on the ribbon will run in the same shared runtime.</span></span> <span data-ttu-id="8b98e-115">下图显示了自定义函数、功能区 UI 和任务窗格代码如何在同一 JavaScript 运行时中运行。</span><span class="sxs-lookup"><span data-stu-id="8b98e-115">The following image shows how custom functions, the ribbon UI, and the task pane code will all run in the same JavaScript runtime.</span></span>
+<span data-ttu-id="80f69-114">当使用任务窗格在共享运行时中运行自定义函数时，你的加载项将在 Microsoft Internet Explorer 11 浏览器实例中运行，如 [Office 加载项使用的浏览器](../concepts/browsers-used-by-office-web-add-ins.md)中所述。此外，Excel 加载项在功能区上显示的任何按钮都将在同一共享运行时中运行。</span><span class="sxs-lookup"><span data-stu-id="80f69-114">When you run custom functions in a shared runtime with the task pane, your add-in will run in a Microsoft Internet Explorer 11 browser instance, as explained in [Browsers used by Office Add-ins](../concepts/browsers-used-by-office-web-add-ins.md). Additionally, any buttons that your Excel add-in displays on the ribbon will run in the same shared runtime.</span></span> <span data-ttu-id="80f69-115">下图显示了自定义函数、功能区 UI 和任务窗格代码如何在同一 JavaScript 运行时中运行。</span><span class="sxs-lookup"><span data-stu-id="80f69-115">The following image shows how custom functions, the ribbon UI, and the task pane code will all run in the same JavaScript runtime.</span></span>
 
 ![使用 Excel 中的功能区按钮和任务窗格在共享运行时中运行的自定义函数](../images/custom-functions-in-browser-runtime.png)
 
-## <a name="set-up-a-shared-runtime"></a><span data-ttu-id="8b98e-117">设置共享运行时</span><span class="sxs-lookup"><span data-stu-id="8b98e-117">Set up a shared runtime</span></span>
+## <a name="set-up-a-shared-runtime"></a><span data-ttu-id="80f69-117">设置共享运行时</span><span class="sxs-lookup"><span data-stu-id="80f69-117">Set up a shared runtime</span></span>
 
-<span data-ttu-id="8b98e-118">请参阅[配置共享运行时文章](configure-your-add-in-to-use-a-shared-runtime.md)，以了解如何设置自定义函数以使用共享运行时。</span><span class="sxs-lookup"><span data-stu-id="8b98e-118">See the [configuring a shared runtime article](configure-your-add-in-to-use-a-shared-runtime.md) to learn how to set up your custom functions to use a shared runtime.</span></span>
+<span data-ttu-id="80f69-118">请参阅[配置共享运行时文章](configure-your-add-in-to-use-a-shared-runtime.md)，以了解如何设置自定义函数以使用共享运行时。</span><span class="sxs-lookup"><span data-stu-id="80f69-118">See the [configuring a shared runtime article](configure-your-add-in-to-use-a-shared-runtime.md) to learn how to set up your custom functions to use a shared runtime.</span></span>
 
-### <a name="debugging"></a><span data-ttu-id="8b98e-119">调试</span><span class="sxs-lookup"><span data-stu-id="8b98e-119">Debugging</span></span>
+### <a name="debugging"></a><span data-ttu-id="80f69-119">调试</span><span class="sxs-lookup"><span data-stu-id="80f69-119">Debugging</span></span>
 
-<span data-ttu-id="8b98e-120">使用共享运行时时，目前不能使用 Visual Studio Code 在 Windows 版 Excel 中调试自定义函数。</span><span class="sxs-lookup"><span data-stu-id="8b98e-120">When using a shared runtime, you can't use Visual Studio Code to debug custom functions in Excel on Windows at this time.</span></span> <span data-ttu-id="8b98e-121">你需要改为使用开发人员工具。</span><span class="sxs-lookup"><span data-stu-id="8b98e-121">You'll need to use developer tools instead.</span></span> <span data-ttu-id="8b98e-122">有关详细信息，请参阅[使用 Windows 10 上的开发人员工具调试加载项](../testing/debug-add-ins-using-f12-developer-tools-on-windows-10.md)。</span><span class="sxs-lookup"><span data-stu-id="8b98e-122">For more information, see [Debug add-ins using developer tools on Windows 10](../testing/debug-add-ins-using-f12-developer-tools-on-windows-10.md).</span></span>
+<span data-ttu-id="80f69-120">使用共享运行时时，目前不能使用 Visual Studio Code 在 Windows 版 Excel 中调试自定义函数。</span><span class="sxs-lookup"><span data-stu-id="80f69-120">When using a shared runtime, you can't use Visual Studio Code to debug custom functions in Excel on Windows at this time.</span></span> <span data-ttu-id="80f69-121">你需要改为使用开发人员工具。</span><span class="sxs-lookup"><span data-stu-id="80f69-121">You'll need to use developer tools instead.</span></span> <span data-ttu-id="80f69-122">有关详细信息，请参阅[使用 Windows 10 上的开发人员工具调试加载项](../testing/debug-add-ins-using-f12-developer-tools-on-windows-10.md)。</span><span class="sxs-lookup"><span data-stu-id="80f69-122">For more information, see [Debug add-ins using developer tools on Windows 10](../testing/debug-add-ins-using-f12-developer-tools-on-windows-10.md).</span></span>
 
-## <a name="give-us-feedback"></a><span data-ttu-id="8b98e-123">向我们提供反馈</span><span class="sxs-lookup"><span data-stu-id="8b98e-123">Give us feedback</span></span>
+## <a name="give-us-feedback"></a><span data-ttu-id="80f69-123">向我们提供反馈</span><span class="sxs-lookup"><span data-stu-id="80f69-123">Give us feedback</span></span>
 
-<span data-ttu-id="8b98e-124">我们非常乐意听取有关此功能的反馈。</span><span class="sxs-lookup"><span data-stu-id="8b98e-124">We'd love to hear your feedback on this feature.</span></span> <span data-ttu-id="8b98e-125">如果你发现此功能存在任何 bug、问题或具有相关请求，请通过在 [office-js repo](https://github.com/OfficeDev/office-js) 中创建 GitHub 问题来告诉我们。</span><span class="sxs-lookup"><span data-stu-id="8b98e-125">If you find any bugs, issues, or have requests on this feature, please let us know by creating a GitHub issue in the [office-js repo](https://github.com/OfficeDev/office-js).</span></span>
+<span data-ttu-id="80f69-124">我们非常乐意听取有关此功能的反馈。</span><span class="sxs-lookup"><span data-stu-id="80f69-124">We'd love to hear your feedback on this feature.</span></span> <span data-ttu-id="80f69-125">如果你发现此功能存在任何 bug、问题或具有相关请求，请通过在 [office-js repo](https://github.com/OfficeDev/office-js) 中创建 GitHub 问题来告诉我们。</span><span class="sxs-lookup"><span data-stu-id="80f69-125">If you find any bugs, issues, or have requests on this feature, please let us know by creating a GitHub issue in the [office-js repo](https://github.com/OfficeDev/office-js).</span></span>
 
-## <a name="see-also"></a><span data-ttu-id="8b98e-126">另请参阅</span><span class="sxs-lookup"><span data-stu-id="8b98e-126">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="80f69-126">另请参阅</span><span class="sxs-lookup"><span data-stu-id="80f69-126">See also</span></span>
 
-- [<span data-ttu-id="8b98e-127">教程：Microsoft Excel自定义函数和任务窗格之间共享数据和事件</span><span class="sxs-lookup"><span data-stu-id="8b98e-127">Tutorial: Share data and events between Excel custom functions and the task pane</span></span>](../tutorials/share-data-and-events-between-custom-functions-and-the-task-pane-tutorial.md)
-- [<span data-ttu-id="8b98e-128">从自定义函数中调用 Excel API</span><span class="sxs-lookup"><span data-stu-id="8b98e-128">Call Excel APIs from your custom function</span></span>](call-excel-apis-from-custom-function.md)
+- [<span data-ttu-id="80f69-127">教程：Microsoft Excel自定义函数和任务窗格之间共享数据和事件</span><span class="sxs-lookup"><span data-stu-id="80f69-127">Tutorial: Share data and events between Excel custom functions and the task pane</span></span>](../tutorials/share-data-and-events-between-custom-functions-and-the-task-pane-tutorial.md)
+- [<span data-ttu-id="80f69-128">从自定义函数中调用 Excel API</span><span class="sxs-lookup"><span data-stu-id="80f69-128">Call Excel APIs from your custom function</span></span>](call-excel-apis-from-custom-function.md)
