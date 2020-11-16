@@ -672,20 +672,34 @@
         - name: 概述
           href: excel/custom-functions-overview.md
           displayName: 'Excel, Custom Functions'
-        - name: Excel 自定义函数入门
-          href: quickstarts/excel-custom-functions-quickstart-redirect.md
+        - name: CustomFunctionsRuntime API 要求集
+          href: excel/custom-functions-requirement-sets.md
           displayName: 'Excel, Custom Functions'
-        - name: 自定义函数教程
-          href: tutorials/excel-tutorial-create-custom-functions.md
+        - name: 教程
+          items:
+            - name: 生成首个自定义函数加载项
+              href: quickstarts/excel-custom-functions-quickstart-redirect.md
+              displayName: 'Excel, Custom Functions'
+            - name: 自定义函数教程
+              href: tutorials/excel-tutorial-create-custom-functions.md
+              displayName: 'Excel, Custom Functions'
+            - name: 共享自定义函数数据及任务窗格教程
+              href: tutorials/share-data-and-events-between-custom-functions-and-the-task-pane-tutorial.md
+              displayName: 'Excel, Custom Functions'
+        - name: 命名准则
+          href: excel/custom-functions-naming.md
           displayName: 'Excel, Custom Functions'
-        - name: 共享自定义函数数据及任务窗格教程
-          href: tutorials/share-data-and-events-between-custom-functions-and-the-task-pane-tutorial.md
-          displayName: 'Excel, Custom Functions'
-        - name: 从自定义函数中调用 Excel API
-          href: excel/call-excel-apis-from-custom-function.md
+        - name: 参数选项
+          href: excel/custom-functions-parameter-options.md
           displayName: 'Excel, Custom Functions'
         - name: 错误处理
           href: excel/custom-functions-errors.md
+          displayName: 'Excel, Custom Functions'
+        - name: 自动生成 JSON 元数据
+          href: excel/custom-functions-json-autogeneration.md
+          displayName: 'Excel, Custom Functions'
+        - name: 调用 Excel JS API
+          href: excel/call-excel-apis-from-custom-function.md
           displayName: 'Excel, Custom Functions'
         - name: 标识等效的 XLL
           href: excel/make-custom-functions-compatible-with-xll-udf.md
@@ -693,29 +707,14 @@
         - name: 本地化
           href: excel/custom-functions-localize.md
           displayName: 'Excel, Custom Functions'
-        - name: 元数据
+        - name: 手动创建 JSON 元数据
           href: excel/custom-functions-json.md
-          displayName: 'Excel, Custom Functions'
-        - name: 元数据生成
-          href: excel/custom-functions-json-autogeneration.md
-          displayName: 'Excel, Custom Functions'
-        - name: 命名准则
-          href: excel/custom-functions-naming.md
-          displayName: 'Excel, Custom Functions'
-        - name: 参数选项
-          href: excel/custom-functions-parameter-options.md
-          displayName: 'Excel, Custom Functions'
-        - name: 要求集
-          href: excel/custom-functions-requirement-sets.md
           displayName: 'Excel, Custom Functions'
         - name: 返回动态数组
           href: excel/custom-functions-dynamic-arrays.md
           displayName: 'Excel, Custom Functions'
         - name: 共享运行时
           href: excel/custom-functions-shared-overview.md
-          displayName: 'Excel, Custom Functions'
-        - name: 故障排除
-          href: excel/custom-functions-troubleshooting.md
           displayName: 'Excel, Custom Functions'
         - name: 无 UI 的自定义函数
           items:
@@ -733,6 +732,9 @@
           displayName: 'Excel, Custom Functions'
         - name: Web 请求
           href: excel/custom-functions-web-reqs.md
+          displayName: 'Excel, Custom Functions'
+        - name: 疑难解答
+          href: excel/custom-functions-troubleshooting.md
           displayName: 'Excel, Custom Functions'
 - name: OneNote
   items:
