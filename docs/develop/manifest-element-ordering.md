@@ -1,18 +1,18 @@
 ---
 title: 如何查找清单元素的正确顺序
 description: 了解如何查找在父元素中放置子元素的正确顺序。
-ms.date: 01/10/2020
+ms.date: 11/01/2020
 localization_priority: Normal
-ms.openlocfilehash: 8798031410e6d71fd6d9f3f08f89a4c6f78f4692
-ms.sourcegitcommit: ca66ff7462bfdf4ed7ae04f43d1388c24de63bf9
+ms.openlocfilehash: 35ed1b87162b84ff13cafc2084ce9ca1b1666235
+ms.sourcegitcommit: 3189c4bd62dbe5950b19f28ac2c1314b6d304dca
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/11/2020
-ms.locfileid: "48996380"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "49087922"
 ---
 # <a name="how-to-find-the-proper-order-of-manifest-elements"></a>如何查找清单元素的正确顺序
 
-Office 外接程序清单中的 XML 元素必须位于正确父元素下， *且* 在父元素下以特定的相对顺序存在。
+Office 外接程序清单中的 XML 元素必须位于正确父元素下，*且* 在父元素下以特定的相对顺序存在。
 
 所需的排序在 [Schemas](/openspecs/office_file_formats/ms-owemxml/c6a06390-34b8-4b42-82eb-b28be12494a8) 文件夹的 XSD 文件中指定。 XSD 文件分类存放在对应任务窗格、内容和邮件三类外接程序的子文件夹中。
 
@@ -209,7 +209,7 @@ Office 外接程序清单中的 XML 元素必须位于正确父元素下， *且
                                     <Title>
                                     <FunctionName>
                     <CustomTab>
-                        <Group>
+                        <Group> (can be below <ControlGroup>)
                             <Label>
                             <Icon>
                                 <Image>
@@ -237,7 +237,9 @@ Office 外接程序清单中的 XML 元素必须位于正确父元素下， *且
                                         <SourceLocation>
                                         <Title>
                                         <FunctionName>
+                        <ControlGroup> (can be above <Group>)
                         <Label>
+                        <InsertAfter> (or <InsertBefore>)
                     <OfficeMenu>
                         <Control>
                             <Label>
