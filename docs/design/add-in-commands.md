@@ -1,14 +1,14 @@
 ---
 title: 加载项命令的基本概念
 description: 了解如何将自定义功能区按钮和菜单项添加到 Office 作为 Office 加载项的一部分。
-ms.date: 10/03/2020
+ms.date: 11/01/2020
 localization_priority: Priority
-ms.openlocfilehash: eea1983d8c45d13ca48594c108e2992a1bec0d02
-ms.sourcegitcommit: d7fd52260eb6971ab82009c835b5a752dc696af4
+ms.openlocfilehash: 3d7d99f05e9b02712a4f416b891d3be38875525b
+ms.sourcegitcommit: 3189c4bd62dbe5950b19f28ac2c1314b6d304dca
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/07/2020
-ms.locfileid: "48370505"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "49087964"
 ---
 # <a name="add-in-commands-for-excel-powerpoint-and-word"></a>Excel、PowerPoint 和 Word 的加载项命令
 
@@ -59,9 +59,24 @@ ms.locfileid: "48370505"
 > [!NOTE]
 > 此功能并非在所有 Office 应用程序或方案中受到支持。 有关详细信息，请参阅[启用和禁用加载项命令](disable-add-in-commands.md)。
 
+### <a name="position-on-the-ribbon-preview"></a>功能区上的位置（预览）
+
+可以指定自定义选项卡在 Office 应用程序功能区上的显示位置，例如“在“主页”选项卡右侧”。
+
+> [!NOTE]
+> 并非所有 Office 应用程序或方案均支持此功能。 有关详细信息，请参阅[在功能区上定位自定义选项卡](custom-tab-placement.md)。
+
+### <a name="integration-of-built-in-office-buttons-preview"></a>内置 Office 按钮集成（预览）
+
+可将内置的 Office 功能区按钮插入到自定义命令组和自定义功能区选项卡中。
+
+> [!NOTE]
+> 并非所有 Office 应用程序或方案均支持此功能。 有关详细信息，请参阅[将内置 Office 按钮集成到自定义选项卡中](built-in-button-integration.md)。
+
+
 ## <a name="supported-platforms"></a>支持的平台
 
-目前，以下平台支持加载项命令。
+目前，以下平台支持加载项命令，但先前[命令功能](#command-capabilities)的小节中指定的限制除外。
 
 - Windows 版 Office（内部版本 16.0.6769 及更高版本，关联至 Microsoft 365 订阅）
 - Windows 版 Office 2019
@@ -88,6 +103,8 @@ ms.locfileid: "48370505"
     - 如果你拥有 6 个以上的顶级命令命令，将命令放置在自定义选项卡上。
     - 对组进行命名以与外接程序的名称相匹配。如果你拥有多个组，则基于对应组中的命令提供的功能为每个组命名。
     - 请勿添加不必要的按钮，这样会增加加载项占用的空间。
+    - 请勿要将“自定义”选项卡置于“主页”选项卡左侧，也不要在打开文档时默认将其放在焦点上，除非加载项是用户与文档进行交互的主要方式。 过分强调加载项的不便，并惹恼用户和管理员。
+    - 如果加载项是用户与文档进行交互的主要方式，而且你具有自定义的功能区选项卡，请考虑将用户经常需要的 Office 功能按钮集成到该选项卡中。
 
      > [!NOTE]
      > 占用过多空间的加载项可能无法通过 [AppSource 验证](/legal/marketplace/certification-policies)。
