@@ -3,16 +3,16 @@ title: 在 Visual Studio 中调试 Office 加载项
 description: 使用 Visual Studio 在 Windows 上的 Office 桌面客户端中调试 Office 加载项
 ms.date: 12/31/2019
 localization_priority: Normal
-ms.openlocfilehash: 7c49e3019c22af0b5d44a382b33187e5d2de4ceb
-ms.sourcegitcommit: 83f9a2fdff81ca421cd23feea103b9b60895cab4
+ms.openlocfilehash: 1de4ead92cb26ba68663d9473ad26c40a3c83459
+ms.sourcegitcommit: ceb8dd66f3fb9c963fce8446c2f6c65ead56fbc1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/11/2020
-ms.locfileid: "47430476"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "49131883"
 ---
 # <a name="debug-office-add-ins-in-visual-studio"></a>在 Visual Studio 中调试 Office 加载项
 
-本文介绍如何使用 Visual Studio 2019 在 Windows 上的 Office 桌面客户端中调试 Office 加载项。 如果使用的是 Visual Studio 的其他版本，操作步骤可能略有不同。 
+本文介绍如何使用 Visual Studio 2019 在 Windows 上的 Office 桌面客户端中调试 Office 加载项。 如果使用的是 Visual Studio 的其他版本，操作步骤可能略有不同。
 
 > [!NOTE]
 > 无法使用 Visual Studio 在 Office 网页版或 Mac 版 Office 中调试加载项。 若要了解如何在这些平台上进行调试，请参阅[在 Office 网页版中调试 Office 加载项](../testing/debug-add-ins-in-office-online.md)或[在 Mac 上调试 Office 加载项](../testing/debug-office-add-ins-on-ipad-and-mac.md)。
@@ -39,9 +39,9 @@ ms.locfileid: "47430476"
 
 下表介绍了外接程序项目的属性。
 
-|**属性**|**说明**|
+|属性|说明|
 |:-----|:-----|
-|**启动操作**|指定外接程序的调试模式。 目前，Office 外接程序项目仅支持 **Office 桌面客户端**模式。|
+|**启动操作**|指定外接程序的调试模式。 目前，Office 外接程序项目仅支持 **Office 桌面客户端** 模式。|
 |**启动文档**<br/>（仅限 Excel、PowerPoint 和 Word 外接程序）|指定要在启动项目时打开的文档。|
 |**Web 项目**|指定与外接程序关联的 Web 项目的名称。|
 |**电子邮件地址**<br/>（仅限 Outlook 外接程序）|指定你想在 Exchange Server 或 Exchange Online 中用来测试 Outlook 外接程序的用户帐户的电子邮件地址。|
@@ -53,7 +53,7 @@ ms.locfileid: "47430476"
 |**项目文件夹**|项目文件的位置。|
 
 > [!NOTE]
-> 对于 Outlook 外接程序，你可以选择在“**属性**”窗口中为一个或多个 *Outlook 外接程序*属性指定值，但这样做并不是必须的。
+> 对于 Outlook 外接程序，你可以选择在“**属性**”窗口中为一个或多个 *Outlook 外接程序* 属性指定值，但这样做并不是必须的。
 
 ### <a name="web-application-project-properties"></a>Web 应用程序项目属性
 
@@ -65,7 +65,7 @@ ms.locfileid: "47430476"
 
 下表介绍了与 Office 外接程序项目最相关的 Web 应用程序项目的属性。
 
-|**属性**|**说明**|
+|属性|说明|
 |:-----|:-----|
 |**SSL 已启用**|指定是否在站点上启用 SSL。 对于 Office 外接程序项目，此属性应设置为 **True**。|
 |**SSL URL**|指定站点的安全 HTTPS URL。 只读。|
@@ -109,7 +109,7 @@ ms.locfileid: "47430476"
 4. 如果这是你已部署到本地 IIS Web 服务器的第一个加载项项目，系统可能会提示你将自签名证书安装到当前用户的受信任的根证书存储中。 若要使 IIS Express 正确显示加载项内容，这是必需的操作。
 
 > [!NOTE]
-> 在 Windows 10 上运行时，最新版本的 Office 可能会使用较新的 Web 控件来显示加载项内容。 如果是这种情况，Visual Studio 可能会提示你添加本地网络环回豁免。 对于 Office 客户端应用程序中的 web 控件，要能够访问部署到本地 IIS web 服务器的网站，这是必需的。 还可以在 Visual Studio 中的“工具” > “选项” > “Office 工具(Web)” > “Web 加载项调试”下随时更改此设置****************。
+> 在 Windows 10 上运行时，最新版本的 Office 可能会使用较新的 Web 控件来显示加载项内容。 如果是这种情况，Visual Studio 可能会提示你添加本地网络环回豁免。 对于 Office 客户端应用程序中的 web 控件，要能够访问部署到本地 IIS web 服务器的网站，这是必需的。 还可以在 Visual Studio 中的“工具” > “选项” > “Office 工具(Web)” > “Web 加载项调试”下随时更改此设置。
 
 接下来，Visual Studio 会执行以下操作：
 
@@ -119,7 +119,7 @@ ms.locfileid: "47430476"
 
 3. 打开 Office 应用程序。
 
-当您构建项目时，Visual Studio 不会在“输出”**** 窗口中显示验证错误。 Visual Studio 报告“**错误列表**”窗口中出现的错误和警告。 通过在代码和文本编辑器中显示不同颜色的波浪下划线（称为波浪线），Visual Studio 还报告验证错误。 通过这些标志，你可以得知 Visual Studio 在你的代码中检测到的问题。 有关如何启用或禁用验证的详细信息，请参阅[选项、文本编辑器、JavaScript、IntelliSense](/visualstudio/ide/reference/options-text-editor-javascript-intellisense?view=vs-2019&preserve-view=true)。
+当您构建项目时，Visual Studio 不会在“输出”窗口中显示验证错误。 Visual Studio 报告“**错误列表**”窗口中出现的错误和警告。 通过在代码和文本编辑器中显示不同颜色的波浪下划线（称为波浪线），Visual Studio 还报告验证错误。 通过这些标志，你可以得知 Visual Studio 在你的代码中检测到的问题。 有关如何启用或禁用验证的详细信息，请参阅[选项、文本编辑器、JavaScript、IntelliSense](/visualstudio/ide/reference/options-text-editor-javascript-intellisense?view=vs-2019&preserve-view=true)。
 
 要查看项目中 XML 清单文件的验证规则，请参阅 [Office 外接程序 XML 清单](../develop/add-in-manifests.md)。
 
@@ -129,7 +129,7 @@ ms.locfileid: "47430476"
 
 1. 在 Excel、PowerPoint 或 Word 中，选择“**插入**”选项卡，然后选择“**我的外接程序**”右侧的向下箭头。
 
-    ![Windows 版 Excel 的“插入”功能区及突出显示的“我的加载项”箭头](../images/excel-cf-register-add-in-1b.png)
+    ![显示 "我的外接程序" 箭头突出显示 Windows Excel 中的 "插入功能区" 的屏幕截图](../images/excel-cf-register-add-in-1b.png)
 
 2. 在可用外接程序列表中，找到“**开发人员外接程序**”部分并选择你的外接程序进行注册。
 
@@ -139,7 +139,7 @@ ms.locfileid: "47430476"
 
 5. 在 Visual Studio 中命中断点时，根据需要逐步执行代码。
 
-您可以更改代码并在外接程序中查看这些更改的效果，而无需关闭 Office 应用程序并重新启动项目。 在保存对代码所做的更改后，只需在 Office 应用程序中重新加载加载项即可。 例如，通过选择任务窗格的右上角来激活[个性菜单](../design/task-pane-add-ins.md#personality-menu)，然后选择“**重新加载**”，便可重新加载任务窗格外接程序。
+您可以更改代码并在外接程序中查看这些更改的效果，而无需关闭 Office 应用程序并重新启动项目。 在保存对代码所做的更改后，只需在 Office 应用程序中重新加载加载项即可。 例如，通过选择任务窗格的右上角来激活 [个性菜单](../design/task-pane-add-ins.md#personality-menu)，然后选择“**重新加载**”，便可重新加载任务窗格外接程序。
 
 ## <a name="debug-the-code-for-an-outlook-add-in"></a>调试 Outlook 外接程序的代码
 

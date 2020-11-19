@@ -3,16 +3,16 @@ title: Office 外接程序的全新样式图标准则
 description: 获取有关在 Office 外接程序中使用全新样式图标图标的指南。
 ms.date: 12/09/2019
 localization_priority: Normal
-ms.openlocfilehash: 7f29de70712448e9ee7458db864fb40746412153
-ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
+ms.openlocfilehash: d6acd2b0b17be7b00f14d63c73714c6dc83d45b7
+ms.sourcegitcommit: ceb8dd66f3fb9c963fce8446c2f6c65ead56fbc1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "45093929"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "49132205"
 ---
 # <a name="fresh-style-icon-guidelines-for-office-add-ins"></a>Office 外接程序的全新样式图标准则
 
-Office 2013 + (非订阅) 版本的 Office 使用 Microsoft 的插图的全新样式。 如果您希望图标符合 Microsoft 365 的 Monoline 样式，请参阅[Office 加载项的 Monoline 样式图标准则](add-in-icons-monoline.md)。
+Office 2013 + (非订阅) 版本的 Office 使用 Microsoft 的插图的全新样式。 如果您希望图标符合 Microsoft 365 的 Monoline 样式，请参阅 [Office 加载项的 Monoline 样式图标准则](add-in-icons-monoline.md)。
 
 ## <a name="office-fresh-visual-style"></a>Office 全新视觉样式
 
@@ -47,7 +47,7 @@ Office 桌面图标是位图图像。 根据用户的 DPI 设置和触摸模式�
 
 确保根据每个尺寸重新绘制你的图标，而非将其缩小。
 
-![显示调整图标大小而非缩小图标的建议的图示](../images/icon-resizing.png)
+![针对每个大小重绘图标而不是收缩图标的建议的说明。 例如，您可能需要在小图标中使用较少的元素，而不是只向下扩展较大的图像。](../images/icon-resizing.png)
 
 <!--
 The following table shows the icon sizes that render for different modes at different DPI settings.
@@ -78,18 +78,18 @@ The following table lists the locations for certain icon sizes.
 
 ## <a name="icon-anatomy-and-layout"></a>图标分析和布局
 
-Office 图标通常是由具有操作和概念修饰符的基本元素构成的。 操作修饰符表示诸如添加、打开、新建或关闭等的概念。概念修饰符表示图标的状态、更改或说明。
+Office 图标通常由具有重叠操作和概念修饰符的 base 元素组成。 操作修饰符表示诸如添加、打开、新建或关闭等的概念。 概念修饰符表示图标的状态、更改或说明。
 
 若要创建与 Office UI 相符的命令，请遵循基本元素和修饰符的布局准则。这将确保命令看起来具有专业性，且客户将信任你的外接程序。如果出现未按这些准则进行操作的情况，则这些操作应该是有意为之。
 
 以下图像显示 Office 图标中的基本元素和修饰符的布局。
 
-![显示处于中间位置的图标基本元素的图像，其中修饰符位于右下方，操作修饰符位于左上方](../images/icon-layouts.png)
+![图中显示一个图标基元素，其右下方有一个修饰符以及左上方的一个操作修饰符](../images/icon-layouts.png)
 
 - 将基本元素置于像素框架的中间位置，并在其周围填充空白。
 - 将操作修饰符置于左上方。
 - 将概念修饰符置于右下方。
-- 限制图标中的元素数。在 32 像素中，将修饰符数限制为最多两个。在 16 像素中，将修饰符数限制为一个。
+- 限制图标中的元素数。 在32像素处，将修饰符的数量限制为最多两个。 在16像素处，将修饰符的数目限制为1。
 
 ### <a name="base-element-padding"></a>基准元素填充
 
@@ -97,18 +97,18 @@ Office 图标通常是由具有操作和概念修饰符的基本元素构成的�
 
 ### <a name="modifiers"></a>修饰符
 
-所有修饰符在每个元素间都应具有 1 像素的透明切割区，包括背景。元素不应直接重叠。在规则和边缘之间创建空白空间。修饰符在大小上可能略有不同，但会将这些尺寸作为起点使用。
+所有修饰符在每个元素（包括背景）之间应具有 1 px 透明的裁剪。 元素不应直接重叠。 在规则和边缘之间创建空白空间。 修饰符在大小上可能略有不同，但会将这些尺寸作为起点使用。
 
-|**图标大小**|**在基本元素周围填充**|**修饰符大小**|
+|图标大小|在基本元素周围填充|修饰符大小|
 |:---|:---|:---|
-|16px|0|9px|
-|20px|1px|10px|
-|24px|1px|12px|
-|32px|2px|14px|
-|40px|2px|20px|
-|48px|3px|22px|
-|64px|5px|29px|
-|80px|5px|38px|
+|16 px|0|9 px|
+|20 像素|1px|10 像素|
+|24 像素|1px|12 px|
+|32 px|2px|14 像素|
+|40 像素|2px|20 像素|
+|48 像素|3px|22 px|
+|64 px|5px|29像素|
+|80 px|5px|38 px|
 
 ## <a name="icon-colors"></a>图标颜色
 
@@ -117,32 +117,32 @@ Office 图标通常是由具有操作和概念修饰符的基本元素构成的�
 
 Office 图标具有一个有限的调色板。使用下表中列出的颜色确保与 Office UI 无缝集成。对颜色使用应用以下准则：
 
-- 使用颜色传达图标含义，而非只是用作修饰。图标颜色应突出显示或强调操作、状态或明确区分标记的元素。 
+- 使用颜色传达图标含义，而非只是用作修饰。图标颜色应突出显示或强调操作、状态或明确区分标记的元素。
 - 如有可能，除灰色外仅使用其他一种颜色。将附加颜色限制为最多两种。
-- 所有图标大小中的颜色应具有一致的外观。Office 图标针对不同的图标大小具有略微不同的调色板。16 像素和更小的图标稍暗，而与 32 像素和更大的图标相比更亮。除了这些细微的调整以外，颜色的差别体现在大小上。
+- 所有图标大小中的颜色应具有一致的外观。 Office 图标针对不同的图标大小具有略微不同的调色板。 16 px 和较小图标略微加深，比32像素和更大图标更加鲜明。 除了这些细微的调整以外，颜色的差别体现在大小上。
 
-|**颜色名称**|**RGB**|**十六进制**|**颜色**|**类别**|
+|颜色名称|RGB|十六进制|颜色|类别|
 |:---|:---|:---|:---|:---|
-|文本灰色 (80)|80、80、80|#505050| ![文本灰色 80 彩色图像](../images/color-text-gray-80.png) |文本|
-|文本灰色 (95)|95、95、95|#5F5F5F| ![文本灰色 95 彩色图像](../images/color-text-gray-95.png) |文本|
-|文本灰色 (105)|105、105、105|#696969| ![文本灰色 105 彩色图像](../images/color-text-gray-105.png) |文本|
-|深灰色 32|128、128、128|#808080| ![深灰色 32 彩色图像](../images/color-dark-gray-32.png) |32 及以上|
-|中灰色 32|158、158、158|#9E9E9E| ![中灰色 32 彩色图像](../images/color-medium-gray-32.png) |32 及以上|
-|浅灰色所有|179、179、179|#B3B3B3| ![浅灰色所有彩色图像](../images/color-light-gray-all.png) |所有大小|
-|深灰色 16|114、114、114|#727272| ![深灰色 16 彩色图像](../images/color-dark-gray-16.png) |16 及以下|
-|中灰色 16|144、144、144|#909090| ![中灰色 16 彩色图像](../images/color-medium-gray-16.png) |16 及以下|
-|蓝色 32|77、130、184|#4d82B8| ![蓝色 32 彩色图像](../images/color-blue-32.png) |32 及以上|
-|蓝色 16|74、125、177|#4A7DB1| ![蓝色 16 彩色图像](../images/color-blue-16.png) |16 及以下|
-|黄色所有|234、194、130|#EAC282| ![黄色所有彩色图像](../images/color-yellow-all.png) |所有大小|
-|橙色 32|231、142、70|#E78E46| ![橙色 32 彩色图像](../images/color-orange-32.png) |32 及以上|
-|橙色 16|227、142、70|#E3751C| ![橙色 16 彩色图像](../images/color-orange-16.png) |16 及以下|
-|粉色所有|230、132、151|#E68497| ![粉色所有彩色图像](../images/color-pink-all.png) |所有大小|
-|绿色 32|118、167、151|#76A797| ![绿色 32 彩色图像](../images/color-green-32.png) |32 及以上|
-|绿色 16|104、164、144|#68A490| ![绿色 16 彩色图像](../images/color-green-16.png) |16 及以下|
-|红色 32|216、99、68|#D86344| ![红色 32 彩色图像](../images/color-red-32.png) |32 及以上|
-|红色 16|214、85、50|#D65532| ![红色 16 彩色图像](../images/color-red-16.png) |16 及以下|
-|紫色 32|152、104、185|#9868B9| ![紫色 32 彩色图像](../images/color-purple-32.png) |32 及以上|
-|紫色 16|137、89、171|#8959AB| ![紫色 16 彩色图像](../images/color-purple-16.png) |16 及以下|
+|文本灰色 (80)|80、80、80|#505050| ![灰色80文本颜色](../images/color-text-gray-80.png) |文本|
+|文本灰色 (95)|95、95、95|#5F5F5F| ![灰色95文本颜色](../images/color-text-gray-95.png) |文本|
+|文本灰色 (105)|105、105、105|#696969| ![灰色105文本颜色](../images/color-text-gray-105.png) |文本|
+|深灰色 32|128、128、128|#808080| ![32像素的深灰色和更大的颜色](../images/color-dark-gray-32.png) |32 px 及更高版本|
+|中灰色 32|158、158、158|#9E9E9E| ![中等灰色的32像素和更大的颜色](../images/color-medium-gray-32.png) |32 px 及更高版本|
+|浅灰色所有|179、179、179|#B3B3B3| ![适用于所有图像大小的浅灰色颜色](../images/color-light-gray-all.png) |所有大小|
+|深灰色 16|114、114、114|#727272| ![16像素的深灰色和更小的颜色](../images/color-dark-gray-16.png) |16 px 和以下|
+|中灰色 16|144、144、144|#909090| ![适用于 16 px 和更小的中等灰颜色](../images/color-medium-gray-16.png) |16 及以下|
+|蓝色 32|77、130、184|#4d82B8| ![32像素的蓝色和更大的颜色](../images/color-blue-32.png) |32 px 及更高版本|
+|蓝色 16|74、125、177|#4A7DB1| ![16像素的蓝色和更小的颜色](../images/color-blue-16.png) |16 px 和以下|
+|黄色所有|234、194、130|#EAC282| ![所有图像大小的黄色颜色](../images/color-yellow-all.png) |所有大小|
+|橙色 32|231、142、70|#E78E46| ![32像素的橙色和更大的颜色](../images/color-orange-32.png) |32 px 及更高版本|
+|橙色 16|227、142、70|#E3751C| ![16像素的橙色和更小的颜色](../images/color-orange-16.png) |16 px 和以下|
+|粉色所有|230、132、151|#E68497| ![所有图像大小为粉红色的颜色](../images/color-pink-all.png) |所有大小|
+|绿色 32|118、167、151|#76A797| ![32像素的绿色和更大的颜色](../images/color-green-32.png) |32 px 及更高版本|
+|绿色 16|104、164、144|#68A490| ![16像素的绿色和更小的颜色](../images/color-green-16.png) |16 px 和以下|
+|红色 32|216、99、68|#D86344| ![32像素的红色和更大的颜色](../images/color-red-32.png) |32 px 及更高版本|
+|红色 16|214、85、50|#D65532| ![16像素的红色和更小的颜色](../images/color-red-16.png) |16 px 和以下|
+|紫色 32|152、104、185|#9868B9| ![32像素的紫色和更大的颜色](../images/color-purple-32.png) |32 px 及更高版本|
+|紫色 16|137、89、171|#8959AB| ![16 px 和更小的紫色颜色](../images/color-purple-16.png) |16 px 和以下|
 
 ## <a name="icons-in-high-contrast-modes"></a>高对比度模式下的图标
 

@@ -3,12 +3,12 @@ title: 在 Office 加载项中使用 Office 对话框 API
 description: 了解在 Office 外接程序中创建对话框的基础知识。
 ms.date: 10/21/2020
 localization_priority: Normal
-ms.openlocfilehash: 1aa7a306402885f37d1cf07010eb43958407bf0f
-ms.sourcegitcommit: 42e6cfe51d99d4f3f05a3245829d764b28c46bbb
+ms.openlocfilehash: 56c12aa5b15f8f79273923402c5a5bfa92a2dde8
+ms.sourcegitcommit: ceb8dd66f3fb9c963fce8446c2f6c65ead56fbc1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "48741083"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "49131757"
 ---
 # <a name="use-the-office-dialog-api-in-office-add-ins"></a>在 Office 加载项中使用 Office 对话框 API
 
@@ -17,7 +17,7 @@ ms.locfileid: "48741083"
 > [!NOTE]
 > 若要了解对话框 API 目前的受支持情况，请参阅[对话框 API 要求集](../reference/requirement-sets/dialog-api-requirement-sets.md)。 Excel、PowerPoint 和 Word 目前支持对话框 API。 有关各种邮箱要求集的 Outlook 支持包括 &mdash; ：有关更多详细信息，请参阅 API 参考。
 
-对话框 API 的主要应用场景是为 Google、Facebook 或 Microsoft Graph 等资源启用身份验证。 有关详细信息，请在熟悉本文*之后*，参阅[使用 Office 对话框 API 进行身份验证](auth-with-office-dialog-api.md)。
+对话框 API 的主要应用场景是为 Google、Facebook 或 Microsoft Graph 等资源启用身份验证。 有关详细信息，请在熟悉本文 *之后*，参阅 [使用 Office 对话框 API 进行身份验证](auth-with-office-dialog-api.md)。
 
 不妨通过任务窗格/内容加载项/[加载项命令](../design/add-in-commands.md)打开对话框，以便执行下列操作：
 
@@ -30,7 +30,7 @@ ms.locfileid: "48741083"
 
 下图展示了对话框示例。
 
-![外接程序命令](../images/auth-o-dialog-open.png)
+![显示在 Word 前面显示有3个登录选项的对话框的屏幕截图](../images/auth-o-dialog-open.png)
 
 请注意，对话框总是在屏幕的中心打开。 用户可以移动并重设对话框的大小。 窗口为 *是非*--用户可以继续与 Office 应用程序中的文档和任务窗格中的页面进行交互（如果有的话）。
 
@@ -47,7 +47,7 @@ Office.context.ui.displayDialogAsync('https://myAddinDomain/myDialog.html');
 ```
 
 > [!NOTE]
-> - URL 使用 HTTP**S** 协议。 对话框中加载的所有页面都必须要遵循此要求，而不仅仅是加载的第一个页面。
+> - URL 使用 HTTP **S** 协议。 对话框中加载的所有页面都必须要遵循此要求，而不仅仅是加载的第一个页面。
 > - 对话框域与宿主页的域相同，宿主页可以是任务窗格中的页面，也可以是加载项命令的[函数文件](../reference/manifest/functionfile.md)。 这要求：传递到 `displayDialogAsync` 方法的页面、控制器方法或其他资源必须与主机页位于相同的域。
 
 > [!IMPORTANT]
@@ -79,7 +79,7 @@ Office.context.ui.displayDialogAsync('https://myDomain/myDialog.html', {height: 
 默认值为 `false`，与完全省略此属性时相同。 如果加载项没有在 Office 网页版中运行，`displayInIframe` 将被忽略。
 
 > [!NOTE]
-> 如果对话框始终重定向到无法在 iframe 中打开的页面，**不**得使用 `displayInIframe: true`。 例如，不能在 iframe 中打开许多常用 web 服务（如 Google 和 Microsoft 帐户）的 "登录" 页面。
+> 如果对话框始终重定向到无法在 iframe 中打开的页面，**不** 得使用 `displayInIframe: true`。 例如，不能在 iframe 中打开许多常用 web 服务（如 Google 和 Microsoft 帐户）的 "登录" 页面。
 
 ## <a name="send-information-from-the-dialog-box-to-the-host-page"></a>将信息从对话框发送到主机页
 
@@ -98,9 +98,8 @@ if (loginSuccess) {
 
 > [!IMPORTANT]
 > - `messageParent` 函数只能在与主机页位于同一域（包括协议和端口）的页面上调用。
-> - `messageParent`函数*只*是可在对话框中调用的两个 Office JS api 之一。 
+> - `messageParent`函数 *只* 是可在对话框中调用的两个 Office JS api 之一。
 > - 可以在对话框中调用的其他 JS API 为 `Office.context.requirements.isSetSupported` 。 有关它的信息，请参阅 [指定 Office 应用程序和 API 要求](specify-office-hosts-and-api-requirements.md)。 但是，在该对话框中，Outlook 2016 1-time purchase (中不支持此 API，即 MSI 版本) 。
-
 
 在下一个示例中，`googleProfile` 是用户 Google 配置文件的字符串化版本。
 

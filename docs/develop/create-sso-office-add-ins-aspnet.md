@@ -3,12 +3,12 @@ title: 创建使用单一登录的 ASP.NET Office 加载项
 description: 有关如何使用 ASP.NET 后端创建 (或转换) Office 加载项的分步指南，请使用单一登录 (SSO) 。
 ms.date: 07/30/2020
 localization_priority: Normal
-ms.openlocfilehash: a72cef54083499cbf1f772dd7258a1cac1fd42c6
-ms.sourcegitcommit: 6e6de48f746416ec68b2cf4c298253986486fbfd
+ms.openlocfilehash: 553477e3045aa6482688ad4fd2489f50d5f2b98d
+ms.sourcegitcommit: ceb8dd66f3fb9c963fce8446c2f6c65ead56fbc1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/14/2020
-ms.locfileid: "47651949"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "49131946"
 ---
 # <a name="create-an-aspnet-office-add-in-that-uses-single-sign-on"></a>创建使用单一登录的 ASP.NET Office 加载项
 
@@ -38,68 +38,67 @@ ms.locfileid: "47651949"
 > 示例项目有两个版本：
 >
 > * **Before** 文件夹是初学者项目。未直接连接到 SSO 或授权的外接程序的 UI 和其他方面已经完成。本文后续章节将引导你完成此过程。
-> * 如果完成了本文中的过程，该示例的**已完成**版本会与所生成的加载项类似，只不过完成的项目具有对本文文本冗余的代码注释。 若要使用已完成的版本，请按照本文中的说明进行操作即可，但需要将“Before”替换为“Complete”，并跳过**编写客户端代码**和**编写服务器端代码**部分。
-
+> * 如果完成了本文中的过程，该示例的 **已完成** 版本会与所生成的加载项类似，只不过完成的项目具有对本文文本冗余的代码注释。 若要使用已完成的版本，请按照本文中的说明进行操作即可，但需要将“Before”替换为“Complete”，并跳过 **编写客户端代码** 和 **编写服务器端代码** 部分。
 
 ## <a name="register-the-add-in-with-azure-ad-v20-endpoint"></a>向 Azure AD v2.0 终结点注册加载项。
 
 1. 导航到“Azure 门户 - 应用注册”[](https://go.microsoft.com/fwlink/?linkid=2083908)页面以注册你的应用。
 
-1. 使用 ***管理员*** 凭据登录到 Microsoft 365 租赁。 例如，MyName@contoso.onmicrosoft.com。
+1. 使用 **_admin_* _ 凭据登录 Microsoft 365 租赁。 例如，MyName@contoso.onmicrosoft.com。
 
-1. 选择“新注册”****。 在“注册应用”**** 页上，按如下方式设置值。
+1. 选择 _ * 新注册 * *。 在“注册应用”页上，按如下方式设置值。
 
-    * 将“名称”**** 设置为“`Office-Add-in-ASPNET-SSO`”。
-    * 将“**受支持的帐户类型**”设置为“**任何组织目录中的帐户和个人 Microsoft 帐户(任何 Azure AD 目录 - 多租户)**”（例如，Skype、Xbox）。 （如果希望加载项仅可供注册该加载项的租户中的用户使用，则可以选择“**仅限此组织目录中的帐户...**”，但需要执行一些额外的设置步骤。 请参阅下面的**单租户设置**。）
+    * 将“名称”设置为“`Office-Add-in-ASPNET-SSO`”。
+    * 将“**受支持的帐户类型**”设置为“**任何组织目录中的帐户和个人 Microsoft 帐户(任何 Azure AD 目录 - 多租户)**”（例如，Skype、Xbox）。 （如果希望加载项仅可供注册该加载项的租户中的用户使用，则可以选择“**仅限此组织目录中的帐户...**”，但需要执行一些额外的设置步骤。 请参阅下面的 **单租户设置**。）
     * 在“**重定向 URI**”部分，确保在下拉列表中选择“**Web**”，然后将 URI 设置为 ` https://localhost:44355/AzureADAuth/Authorize`。
     * 选择“**注册**”。
 
-1. 在 Office 外接程序的 **ASPNET-SSO** 页面上，复制并保存 **应用程序 (客户端) id** 和 **目录 (租户) ID**的值。 你将在后面的过程中使用它们。
+1. 在 Office 外接程序的 **ASPNET-SSO** 页面上，复制并保存 **应用程序 (客户端) id** 和 **目录 (租户) ID** 的值。 你将在后面的过程中使用它们。
 
     > [!NOTE]
     > 此 **应用程序 (客户端) ID** 是 "受众" 值，当其他应用程序（如 Office 客户端应用程序 (例如，PowerPoint、Word、Excel) ）寻求对应用程序的授权访问时。 当它反过来寻求 Microsoft Graph 的授权访问权限时，它同时也是应用程序的“客户端 ID”。
 
 1. 在“**管理**”下，选择“**证书和密码**”。 选择“**新客户端密码**”按钮。 输入“**描述**”的值，然后选择适当的“**到期**”选项，并选择“**添加**”。 在继续操作前，*立即复制客户端密码值并使用应用程序 ID 保存它*，因为在后面的过程中，将需要用到它。
 
-1. 在“**管理**”下，选择“**公开 API**”。 选择“**设置**”链接以在窗体“api://$App ID GUID$”中生成应用 ID URI，其中 $App ID GUID$ 是**应用程序（客户端）ID**。 在 `//` 后面和 GUID 前面插入 `localhost:44355/`（请注意结尾附加的正斜杠“/”）。 整个 ID 的格式应为 `api://localhost:44355/$App ID GUID$`；例如 `api://localhost:44355/c6c1f32b-5e55-4997-881a-753cc1d563b7`。
+1. 在“**管理**”下，选择“**公开 API**”。 选择“**设置**”链接以在窗体“api://$App ID GUID$”中生成应用 ID URI，其中 $App ID GUID$ 是 **应用程序（客户端）ID**。 在 `//` 后面和 GUID 前面插入 `localhost:44355/`（请注意结尾附加的正斜杠“/”）。 整个 ID 的格式应为 `api://localhost:44355/$App ID GUID$`；例如 `api://localhost:44355/c6c1f32b-5e55-4997-881a-753cc1d563b7`。
 
 1. 在对话框中选择“**保存**”。
 
-1. 选择“**添加一个作用域**”按钮。 在打开的面板中，输入 `access_as_user` 作为**作用域**名称。
+1. 选择“**添加一个作用域**”按钮。 在打开的面板中，输入 `access_as_user` 作为 **作用域** 名称。
 
-1. 将“谁能同意?”**** 设置为“管理员和用户”****。
+1. 将“谁能同意?”设置为“管理员和用户”。
 
 1. 填写用于配置管理员和用户同意提示的字段，其中包含适用于该范围的值， `access_as_user` 使 Office 客户端应用程序能够使用与当前用户相同的权限来使用您的外接程序的 Web api。 建议：
 
-    - **管理员许可标题**：Office 可以充当用户。
-    - **管理员许可描述**：使 Office 能够借助与当前用户相同的权限调用加载项的 Web API。
-    - **用户许可标题**：Office 可以充当你。
-    - **管理员许可描述**：使 Office 能够借助与你相同的权限调用加载项的 Web API。
+    * **管理员许可标题**：Office 可以充当用户。
+    * **管理员许可描述**：使 Office 能够借助与当前用户相同的权限调用加载项的 Web API。
+    * **用户许可标题**：Office 可以充当你。
+    * **管理员许可描述**：使 Office 能够借助与你相同的权限调用加载项的 Web API。
 
 1. 确保将“**状态**”设置为“**已启用**”。
 
 1. 选择“**添加作用域**”。
 
     > [!NOTE]
-    > 显示在文本字段正下方的**作用域**名称的域部分应自动与你先前设置的“应用 ID URI”匹配，并将 `/access_as_user` 附加到末尾；例如，`api://localhost:6789/c6c1f32b-5e55-4997-881a-753cc1d563b7/access_as_user`。
+    > 显示在文本字段正下方的 **作用域** 名称的域部分应自动与你先前设置的“应用 ID URI”匹配，并将 `/access_as_user` 附加到末尾；例如，`api://localhost:6789/c6c1f32b-5e55-4997-881a-753cc1d563b7/access_as_user`。
 
-1. 在“授权客户端应用程序”**** 部分中，确定要授权给加载项 Web 应用程序的应用程序。 下面每个 ID 都需要进行预授权。
+1. 在“授权客户端应用程序”部分中，确定要授权给加载项 Web 应用程序的应用程序。 下面每个 ID 都需要进行预授权。
 
-    - `d3590ed6-52b3-4102-aeff-aad2292ab01c` (Microsoft Office)
-    - `ea5a67f6-b6f3-4338-b240-c655ddc3cc8e` (Microsoft Office)
-    - `57fb890c-0dab-4253-a5e0-7188c88b2bb4`（Office 网页版）
-    - `08e18876-6177-487e-b8b5-cf950c1e598c`（Office 网页版）
-    - `bc59ab01-8403-45c6-8796-ac3ef710b3e3`（Outlook 网页版）
+    * `d3590ed6-52b3-4102-aeff-aad2292ab01c` (Microsoft Office)
+    * `ea5a67f6-b6f3-4338-b240-c655ddc3cc8e` (Microsoft Office)
+    * `57fb890c-0dab-4253-a5e0-7188c88b2bb4`（Office 网页版）
+    * `08e18876-6177-487e-b8b5-cf950c1e598c`（Office 网页版）
+    * `bc59ab01-8403-45c6-8796-ac3ef710b3e3`（Outlook 网页版）
 
     对于每个 ID，执行以下步骤：
 
     a. 选择“**添加客户端应用程序**”按钮，然后在打开的面板中，将“客户端 ID”设置为相应的 GUID 并勾选 `api://localhost:44355/$App ID GUID$/access_as_user` 框。
 
-    b. 选择“添加应用程序”****。
+    b. 选择“添加应用程序”。
 
-1. 在“**管理**”下，选择“**API 权限**”，然后选择“**添加权限**”。 在打开的面板上，选择 **Microsoft Graph**，然后选择“委派权限”****。
+1. 在“**管理**”下，选择“**API 权限**”，然后选择“**添加权限**”。 在打开的面板上，选择 **Microsoft Graph**，然后选择“委派权限”。
 
-1. 使用“选择权限”**** 搜索框来搜索加载项需要的权限。 选择以下选项。 外接程序本身实际上只需要第一项;但是， `profile` Office 应用程序需要该权限才能获取加载项 web 应用程序的令牌。 （该加载项实际上仅需要 Files.Read.All 和 profile。 但必须请求其他两个，因为 MSAL.NET 库需要它们。）
+1. 使用“选择权限”搜索框来搜索加载项需要的权限。 选择以下选项。 外接程序本身实际上只需要第一项;但是， `profile` Office 应用程序需要该权限才能获取加载项 web 应用程序的令牌。 （该加载项实际上仅需要 Files.Read.All 和 profile。 但必须请求其他两个，因为 MSAL.NET 库需要它们。）
 
     * Files.Read.All
     * offline_access
@@ -114,11 +113,11 @@ ms.locfileid: "47651949"
 1. 在同一页面上，选择“**为[租户名称]授予管理员许可**”按钮，然后在显示的确认中选择“**接受**”。
 
     > [!NOTE]
-    > 选择“**为[租户名称]授予管理员许可**后，可能会看到一条横幅消息，要求你在几分钟后再次尝试，以便能够构建许可提示。 如果是这样，你可以开始下一节中的工作，***但不要忘记返回门户，然后按此按钮***！
+    > 选择“**为[租户名称]授予管理员许可** 后，可能会看到一条横幅消息，要求你在几分钟后再次尝试，以便能够构建许可提示。 如果是这样，你可以在下一节中开始工作，**_但不要忘记返回门户并按此按钮_* _！
 
 ## <a name="configure-the-solution"></a>配置解决方案
 
-1. 在 **Before** 文件夹的根部，打开 **Visual Studio** 中的解决方案 (.sln) 文件。 右键单击“**解决方案资源管理器**”最上面的节点（即“解决方案”节点，而非任何项目节点），然后选择“**设置启动项目**”。
+1. 在 _ *Before** 文件夹的根目录中，在 **Visual Studio** 中打开解决方案 ( .sln) 文件。 右键单击“**解决方案资源管理器**”最上面的节点（即“解决方案”节点，而非任何项目节点），然后选择“**设置启动项目**”。
 
 1. 在“**通用属性**”下，选择“**启动项目**”，然后选择“**多个启动项目**”。 确保两个项目的“**操作**”均设置为“**启动**”，并且以“...WebAPI”结尾的项目排在前面。 关闭该对话框。
 
@@ -146,10 +145,10 @@ ms.locfileid: "47651949"
     </WebApplicationInfo>
     ```
 
-1. 将标记中的*两处*占位符“$application_GUID here$”均替换为在注册加载项时复制的应用程序 ID。 由于 ID 并不包含“$”符号，因此请勿添加它们。 这与在 web.config 中对 ClientID 和 Audience 所使用的 ID 相同。
+1. 将标记中的 *两处* 占位符“$application_GUID here$”均替换为在注册加载项时复制的应用程序 ID。 由于 ID 并不包含“$”符号，因此请勿添加它们。 这与在 web.config 中对 ClientID 和 Audience 所使用的 ID 相同。
 
   > [!NOTE]
-  > **资源**值是注册加载项时设置的**应用程序 ID URI**。 仅在通过 AppSource 销售加载项时，才使用**作用域**部分生成许可对话框。
+  > **资源** 值是注册加载项时设置的 **应用程序 ID URI**。 仅在通过 AppSource 销售加载项时，才使用 **作用域** 部分生成许可对话框。
 
 1. 保存并关闭此文件。
 
@@ -395,9 +394,9 @@ ms.locfileid: "47651949"
 
 1. 保存并关闭此文件。
 
-1. 右键单击“App_Start”**** 文件夹，并依次选择“添加”>“类”****。
+1. 右键单击“App_Start”文件夹，并依次选择“添加”>“类”。
 
-1. 在“添加新项”**** 对话框中，命名文件“Startup.Auth.cs”****，再单击“添加”****。
+1. 在“添加新项”对话框中，命名文件“Startup.Auth.cs”，再单击“添加”。
 
 1. 将新文件中的命名空间名称缩短为 `Office_Add_in_ASPNET_SSO_WebAPI`。
 
@@ -572,9 +571,9 @@ ms.locfileid: "47651949"
 1. 将 `TODO 3b` 替换为下面的代码。 关于此代码，请注意以下几点：
 
     * 如果 Azure AD 调用包含至少一个作用域（权限）未获得用户和租户管理员的许可（或许可被撤消），则 Azure AD 将返回“400 错误请求”和错误 `AADSTS65001`。 MSAL 抛出包含此信息的 **MsalUiRequiredException**。
-    *  如果 Azure AD 调用包含至少一个 Azure AD 无法识别的作用域，则 AAD 将返回“400 错误请求”和错误 `AADSTS70011`。 MSAL 抛出包含此信息的 **MsalUiRequiredException**。
-    *  其中包含完整说明，因为 70011 也会在其他情况下返回，只有在它表示存在无效范围时，才需要在此加载项中处理它。
-    *  **MsalUiRequiredException** 对象传递给 `SendErrorToClient`。这样可确保 HTTP 响应中有包含错误消息的 **ExceptionMessage** 属性。
+    * 如果 Azure AD 调用包含至少一个 Azure AD 无法识别的作用域，则 AAD 将返回“400 错误请求”和错误 `AADSTS70011`。 MSAL 抛出包含此信息的 **MsalUiRequiredException**。
+    * 其中包含完整说明，因为 70011 也会在其他情况下返回，只有在它表示存在无效范围时，才需要在此加载项中处理它。
+    * **MsalUiRequiredException** 对象传递给 `SendErrorToClient`。这样可确保 HTTP 响应中有包含错误消息的 **ExceptionMessage** 属性。
 
     ```csharp
     if ((e.Message.StartsWith("AADSTS65001")) || (e.Message.StartsWith("AADSTS70011: The provided value for the input parameter 'scope' is not valid.")))

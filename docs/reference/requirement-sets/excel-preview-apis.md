@@ -1,15 +1,15 @@
 ---
 title: Excel JavaScript 预览 API
 description: 有关即将推出的 Excel JavaScript Api 的详细信息。
-ms.date: 11/09/2020
+ms.date: 11/17/2020
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: 7617ef03d7ef6b0ef6dcd1dbe12e88b58e1228fe
-ms.sourcegitcommit: ca66ff7462bfdf4ed7ae04f43d1388c24de63bf9
+ms.openlocfilehash: 083741d35d3e881c2e46b186c4e93591bf7f4834
+ms.sourcegitcommit: ceb8dd66f3fb9c963fce8446c2f6c65ead56fbc1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/11/2020
-ms.locfileid: "48996541"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "49131764"
 ---
 # <a name="excel-javascript-preview-apis"></a>Excel JavaScript 预览 API
 
@@ -23,6 +23,7 @@ ms.locfileid: "48996541"
 |:--- |:--- |:--- |
 | 链接的数据类型 | 为从外部源连接到 Excel 的数据类型添加支持。 | [LinkedDataType](/javascript/api/excel/excel.linkeddatatype)|
 | 命名工作表视图 | 提供对每个用户的工作表视图的编程控制。 | [NamedSheetView](/javascript/api/excel/excel.namedsheetview) |
+| 任务 | 将注释转换为分配给用户的任务。 | [任务](/javascript/api/excel/excel.task) |
 
 ## <a name="api-list"></a>API 列表
 
@@ -30,6 +31,12 @@ ms.locfileid: "48996541"
 
 | Class | 域 | 说明 |
 |:---|:---|:---|
+|[Comment](/javascript/api/excel/excel.comment)|[assignTask (电子邮件： string) ](/javascript/api/excel/excel.comment#assigntask-email-)|将附加到注释的任务作为唯一的受理人分配给给定用户。|
+||[getTask ( # B1 ](/javascript/api/excel/excel.comment#gettask--)|获取与此注释相关联的任务。|
+||[getTaskOrNullObject ( # B1 ](/javascript/api/excel/excel.comment#gettaskornullobject--)|获取与此注释相关联的任务。|
+|[CommentReply](/javascript/api/excel/excel.commentreply)|[assignTask (电子邮件： string) ](/javascript/api/excel/excel.commentreply#assigntask-email-)|将附加到注释的任务作为唯一的受理人分配给给定用户。|
+||[getTask ( # B1 ](/javascript/api/excel/excel.commentreply#gettask--)|获取与此注释相关联的任务。|
+||[getTaskOrNullObject ( # B1 ](/javascript/api/excel/excel.commentreply#gettaskornullobject--)|获取与此注释相关联的任务。|
 |[LinkedDataType](/javascript/api/excel/excel.linkeddatatype)|[dataProvider](/javascript/api/excel/excel.linkeddatatype#dataprovider)|链接数据类型的数据提供程序的名称。|
 ||[lastRefreshed](/javascript/api/excel/excel.linkeddatatype#lastrefreshed)|上次刷新链接数据类型时，自工作簿打开时的本地时区日期和时间。|
 ||[name](/javascript/api/excel/excel.linkeddatatype#name)|链接的数据类型的名称。|
@@ -93,11 +100,61 @@ ms.locfileid: "48996541"
 |[TableFilteredEventArgs](/javascript/api/excel/excel.tablefilteredeventargs)|[tableId](/javascript/api/excel/excel.tablefilteredeventargs#tableid)|获取应用了筛选器的表的 id。|
 ||[type](/javascript/api/excel/excel.tablefilteredeventargs#type)|获取事件的类型。|
 ||[worksheetId](/javascript/api/excel/excel.tablefilteredeventargs#worksheetid)|获取包含表的工作表的 id。|
+|[任务](/javascript/api/excel/excel.task)|[addAssignee (电子邮件： string) ](/javascript/api/excel/excel.task#addassignee-email-)|向任务中添加一个受理人。|
+||[applyChanges (taskChanges： TaskChanges) ](/javascript/api/excel/excel.task#applychanges-taskchanges-)|对任务应用给定的更改。|
+||[代理人](/javascript/api/excel/excel.task#assignees)|获取向其分配任务的用户。|
+||[comment](/javascript/api/excel/excel.task#comment)|获取与该任务相关联的注释。|
+||[dueDate](/javascript/api/excel/excel.task#duedate)|获取任务的截止日期和时间。|
+||[historyRecords](/javascript/api/excel/excel.task#historyrecords)|获取任务的历史记录。|
+||[id](/javascript/api/excel/excel.task#id)|获取任务的 id。|
+||[percentComplete](/javascript/api/excel/excel.task#percentcomplete)|获取任务的完成百分比。|
+||[priority](/javascript/api/excel/excel.task#priority)|获取任务的优先级。|
+||[startDate](/javascript/api/excel/excel.task#startdate)|获取任务应开始的日期和时间。|
+||[title](/javascript/api/excel/excel.task#title)|获取任务的标题。|
+||[removeAllAssignees ( # B1 ](/javascript/api/excel/excel.task#removeallassignees--)|从任务中删除所有的工作负责人。|
+||[removeAssignee (电子邮件： string) ](/javascript/api/excel/excel.task#removeassignee-email-)|从任务中删除受理人。|
+||[setPercentComplete (百分比： number) ](/javascript/api/excel/excel.task#setpercentcomplete-percentcomplete-)|更改任务的完成。|
+||[setPriority (优先级： number) ](/javascript/api/excel/excel.task#setpriority-priority-)|更改任务的优先级。|
+||[setStartDateAndDueDate (开始日期、dueDate： Date) ](/javascript/api/excel/excel.task#setstartdateandduedate-startdate--duedate-)|更改任务的开始日期和截止日期。|
+||[setTitle (标题： string) ](/javascript/api/excel/excel.task#settitle-title-)|更改任务的标题。|
+|[TaskChanges](/javascript/api/excel/excel.taskchanges)|[dueDate](/javascript/api/excel/excel.taskchanges#duedate)|在 UTC 时区中为任务设置新的截止日期。|
+||[emailsToAssign](/javascript/api/excel/excel.taskchanges#emailstoassign)|设置要分配给任务的用户的电子邮件地址。|
+||[emailsToUnassign](/javascript/api/excel/excel.taskchanges#emailstounassign)|设置要从任务中取消分配的用户的电子邮件地址。|
+||[percentComplete](/javascript/api/excel/excel.taskchanges#percentcomplete)|为任务设置新的完成百分比。|
+||[priority](/javascript/api/excel/excel.taskchanges#priority)|为任务设置新的优先级。|
+||[removeAllPreviousAssignees](/javascript/api/excel/excel.taskchanges#removeallpreviousassignees)|设置更改是否应从任务中删除所有以前的工作负责人。|
+||[startDate](/javascript/api/excel/excel.taskchanges#startdate)|在 UTC 时区中为任务设置新的开始日期。|
+||[title](/javascript/api/excel/excel.taskchanges#title)|为任务设置新的标题。|
+|[TaskCollection](/javascript/api/excel/excel.taskcollection)|[getCount()](/javascript/api/excel/excel.taskcollection#getcount--)|获取集合中的任务数。|
+||[getItem(key: string)](/javascript/api/excel/excel.taskcollection#getitem-key-)|使用其 id 获取任务。|
+||[getItemAt(index: number)](/javascript/api/excel/excel.taskcollection#getitemat-index-)|按其在集合中的索引获取任务。|
+||[getItemOrNullObject(key: string)](/javascript/api/excel/excel.taskcollection#getitemornullobject-key-)|使用其 id 获取任务。|
+||[items](/javascript/api/excel/excel.taskcollection#items)|获取此集合中已加载的子项。|
+|[TaskHistoryRecord](/javascript/api/excel/excel.taskhistoryrecord)|[anchorId](/javascript/api/excel/excel.taskhistoryrecord#anchorid)|表示任务所锚定到的对象的 ID (例如，commentId 附加到注释) 的任务。|
+||[负责人](/javascript/api/excel/excel.taskhistoryrecord#assignee)|表示分配给 "分配" 历史记录类型的任务的用户，或从 "取消分配" 历史记录类型的任务中取消分配的用户。|
+||[attributionUser](/javascript/api/excel/excel.taskhistoryrecord#attributionuser)|代表创建或更改任务的用户。|
+||[dueDate](/javascript/api/excel/excel.taskhistoryrecord#duedate)|代表任务的截止日期。|
+||[historyRecordCreatedDate](/javascript/api/excel/excel.taskhistoryrecord#historyrecordcreateddate)|表示任务历史记录的创建日期。|
+||[id](/javascript/api/excel/excel.taskhistoryrecord#id)|历史记录的 ID。|
+||[percentComplete](/javascript/api/excel/excel.taskhistoryrecord#percentcomplete)|表示任务的完成百分比。|
+||[priority](/javascript/api/excel/excel.taskhistoryrecord#priority)|表示任务的优先级。|
+||[startDate](/javascript/api/excel/excel.taskhistoryrecord#startdate)|表示任务的开始日期。|
+||[title](/javascript/api/excel/excel.taskhistoryrecord#title)|代表任务的标题。|
+||[type](/javascript/api/excel/excel.taskhistoryrecord#type)|代表任务历史记录的类型。|
+||[undoHistoryId](/javascript/api/excel/excel.taskhistoryrecord#undohistoryid)|表示为 "Undo" 历史记录类型撤消的 TaskHistoryRecord.id 属性。|
+|[TaskHistoryRecordCollection](/javascript/api/excel/excel.taskhistoryrecordcollection)|[getCount()](/javascript/api/excel/excel.taskhistoryrecordcollection#getcount--)|获取该任务的集合中的历史记录数。|
+||[getItemAt(index: number)](/javascript/api/excel/excel.taskhistoryrecordcollection#getitemat-index-)|使用其在集合中的索引获取任务历史记录记录。|
+||[items](/javascript/api/excel/excel.taskhistoryrecordcollection#items)|获取此集合中已加载的子项。|
+|[用户](/javascript/api/excel/excel.user)|[displayName](/javascript/api/excel/excel.user#displayname)|表示用户的显示名称。|
+||[email](/javascript/api/excel/excel.user#email)|表示用户的电子邮件地址。|
+||[uid](/javascript/api/excel/excel.user#uid)|表示用户的唯一 ID。|
 |[Workbook](/javascript/api/excel/excel.workbook)|[linkedDataTypes](/javascript/api/excel/excel.workbook#linkeddatatypes)|返回属于工作簿的链接数据类型的集合。|
+||[诸如](/javascript/api/excel/excel.workbook#tasks)|返回工作簿中存在的任务的集合。|
 ||[showPivotFieldList](/javascript/api/excel/excel.workbook#showpivotfieldlist)|指定是否在工作簿级别显示数据透视表的 "字段列表" 窗格。|
 ||[use1904DateSystem](/javascript/api/excel/excel.workbook#use1904datesystem)|如果工作簿使用 1904 日期系统，则为 True。|
 |[Worksheet](/javascript/api/excel/excel.worksheet)|[namedSheetViews](/javascript/api/excel/excel.worksheet#namedsheetviews)|返回工作表视图的集合，这些视图显示在工作表中。|
 ||[onFiltered](/javascript/api/excel/excel.worksheet#onfiltered)|在特定工作表上应用筛选器时发生。|
+||[诸如](/javascript/api/excel/excel.worksheet#tasks)|返回工作表中存在的任务的集合。|
 |[WorksheetCollection](/javascript/api/excel/excel.worksheetcollection)|[addFromBase64(base64File: string, sheetNamesToInsert?: string[], positionType?: Excel.WorksheetPositionType, relativeTo?: Worksheet \| string)](/javascript/api/excel/excel.worksheetcollection#addfrombase64-base64file--sheetnamestoinsert--positiontype--relativeto-)|将工作簿的指定工作表插入当前工作簿。|
 ||[onFiltered](/javascript/api/excel/excel.worksheetcollection#onfiltered)|在工作簿中应用任何工作表的筛选器时发生。|
 |[WorksheetFilteredEventArgs](/javascript/api/excel/excel.worksheetfilteredeventargs)|[type](/javascript/api/excel/excel.worksheetfilteredeventargs#type)|获取事件的类型。|

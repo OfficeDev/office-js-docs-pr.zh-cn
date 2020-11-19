@@ -3,24 +3,24 @@ title: Office 加载项中的对话框
 description: 了解 Office 外接程序中的对话框的可视化设计的最佳实践。
 ms.date: 03/19/2019
 localization_priority: Normal
-ms.openlocfilehash: eed59d85190460bc7cac2ddd6a36fa87d935361d
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: ab8ca2e768c63a53b05ed2d9ef459050455231fb
+ms.sourcegitcommit: ceb8dd66f3fb9c963fce8446c2f6c65ead56fbc1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44608535"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "49132051"
 ---
 # <a name="dialog-boxes-in-office-add-ins"></a>Office 加载项中的对话框
- 
+
 对话框是浮动在活动的 Office 应用程序窗口之上的界面。你可以使用对话框为无法直接在任务窗格中打开的任务（例如登录页）提供额外的屏幕空间，或请求确认用户进行的操作，或显示如果局限在任务窗格中可能过小的视频。
 
 *图 1：对话框典型布局*
 
-![显示对话框典型布局的示例图像](../images/overview-with-app-dialog.png)
+![Office 应用程序中显示的对话框的典型布局](../images/overview-with-app-dialog.png)
 
 ## <a name="best-practices"></a>最佳做法
 
-|**允许事项**|**禁止事项**|
+|允许事项|禁止事项|
 |:-----|:--------|
 |<ul><li>包括包含外接程序名称以及当前任务的描述性标题。</li></ul>|<ul><li>请勿在标题中追加公司名称。</li></ul>|
 ||<ul><li>除非方案需要，否则请勿打开对话框。</li></ul>|

@@ -3,12 +3,12 @@ title: Office 加载项开发最佳做法
 description: 在开发以创建 Office 外接程序时应用最佳实践。
 ms.date: 10/14/2020
 localization_priority: Normal
-ms.openlocfilehash: 8ce0482e108e7b8774442a2b0669a0e76bb401f9
-ms.sourcegitcommit: 42e6cfe51d99d4f3f05a3245829d764b28c46bbb
+ms.openlocfilehash: 17393d921129efcfb74eed3dd168633c2f58291b
+ms.sourcegitcommit: ceb8dd66f3fb9c963fce8446c2f6c65ead56fbc1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "48740859"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "49132177"
 ---
 # <a name="best-practices-for-developing-office-add-ins"></a>Office 加载项开发最佳做法
 
@@ -19,13 +19,12 @@ ms.locfileid: "48740859"
 ## <a name="provide-clear-value"></a>提供明确值
 
 - 创建可帮助用户快速、高效地完成任务的外接程序。专注于对 Office 应用程序有用的方案。例如：
- - 使核心创作任务更快、更简单，且中断更少。
- - 在 Office 内启用新方案。
- - 在 Office 应用程序中嵌入补充服务。
- - 改善 Office 体验来提高工作效率。
+  - 使核心创作任务更快、更简单，且中断更少。
+  - 在 Office 内启用新方案。
+  - 在 Office 应用程序中嵌入补充服务。
+  - 改善 Office 体验来提高工作效率。
 - 通过[创建极具吸引力的首次运行体验](#create-an-engaging-first-run-experience)，确保用户能够快速明确加载项的价值。
 - 创建[有效的 AppSource 一览](/office/dev/store/create-effective-office-store-listings)。在标题和说明中明确介绍加载项的优势。请勿依赖品牌来传达加载项的用途。
-
 
 ## <a name="create-an-engaging-first-run-experience"></a>创建极具吸引力的首次运行体验
 
@@ -37,11 +36,11 @@ ms.locfileid: "48740859"
 
 - 提供用以指导用户的教学 UI，并使您的 UI 富有个性化。
 
-   ![显示没有入门步骤的外接程序旁边具有入门步骤的外接程序任务窗格的屏幕截图](../images/contoso-part-catalog-do-dont.png)
+  ![显示 "Do" 和 "不" 比较的屏幕截图。 "Do" 示例显示一个外接程序，其中包含用户单击即可开始使用的按钮。 "无" 示例显示外接程序，没有任何介绍性步骤或按钮。](../images/contoso-part-catalog-do-dont.png)
 
 - 如果内容外接程序绑定到用户文档中的数据，请将那些用于向用户显示要使用的数据格式的示例数据或模板包含在内。
 
-   ![显示没有数据的内容外接程序旁边具有数据的内容外接程序的屏幕截图](../images/add-in-title.png)
+  ![显示 "Do" 和 "不" 比较的屏幕截图。 "Do" 示例显示一个外接程序，其中包含用户可通过单击来插入示例数据的按钮。 "无" 示例显示不带示例数据或按钮的加载项。](../images/add-in-title.png)
 
 - 提供[免费试用版](/office/dev/store/decide-on-a-pricing-model)。如果加载项需要订阅，请让某些功能无需订阅也可使用。
 
@@ -100,7 +99,7 @@ ms.locfileid: "48740859"
 
 - 确保所有用户交互响应时长都在一秒内。
 
--  为长时间运行的操作提供加载指示器。
+- 为长时间运行的操作提供加载指示器。
 
 - 将 CDN 用于主机图像、资源和公用库。尽可能地从一个位置进行加载。
 
@@ -108,7 +107,7 @@ ms.locfileid: "48740859"
 
 - 如果操作执行需要一段时间才能完成，请向用户提供反馈。请注意下表中列出的阈值。有关详细信息，请参阅 [Office 加载项的资源限制和性能优化](../concepts/resource-limits-and-performance-optimization.md)。
 
-  |**交互类**|**目标**|**上限**|**人类感知**|
+  |交互类|Target|上界|人的感觉|
   |:-----|:-----|:-----|:-----|
   |即时|<=50 毫秒|100 毫秒|没有明显的延迟。|
   |快速|50-100 毫秒|200 毫秒|最小限度的明显延迟。不需要反馈。|

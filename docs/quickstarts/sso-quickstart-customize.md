@@ -4,12 +4,12 @@ description: 了解如何自定义使用 Yeoman 生成器创建的启用 SSO 的
 ms.date: 09/09/2020
 ms.prod: non-product-specific
 localization_priority: Normal
-ms.openlocfilehash: 45c069cbcc861fa5881b7e69cdd789071d398926
-ms.sourcegitcommit: 83f9a2fdff81ca421cd23feea103b9b60895cab4
+ms.openlocfilehash: cc13d813e6d46296f5557d4e3374fa67aa51bc65
+ms.sourcegitcommit: ceb8dd66f3fb9c963fce8446c2f6c65ead56fbc1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/11/2020
-ms.locfileid: "47430994"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "49132331"
 ---
 # <a name="customize-your-nodejs-sso-enabled-add-in"></a>自定义启用了 Node.js SSO 的加载项
 
@@ -20,11 +20,11 @@ ms.locfileid: "47430994"
 
 ## <a name="prerequisites"></a>先决条件
 
-* 按照 [SSO 快速入门](sso-quickstart.md)中的说明创建的 Office 外接程序。
+- 按照 [SSO 快速入门](sso-quickstart.md)中的说明创建的 Office 外接程序。
 
-* 在 Microsoft 365 订阅中至少存储在 OneDrive for Business 上的一些文件和文件夹。
+- 在 Microsoft 365 订阅中至少存储在 OneDrive for Business 上的一些文件和文件夹。
 
-* [Node.js](https://nodejs.org)（最新[LTS](https://nodejs.org/about/releases) 版本）。
+- [Node.js](https://nodejs.org)（最新[LTS](https://nodejs.org/about/releases) 版本）。
 
 [!include[additional prerequisites](../includes/sso-tutorial-prereqs.md)]
 
@@ -33,7 +33,7 @@ ms.locfileid: "47430994"
 首先，先快速查看您先前 [使用 Yeoman 生成器创建](sso-quickstart.md)的外接程序项目。
 
 > [!NOTE]
-> 在本文引用使用 **.js**文件扩展名的脚本文件的地方，如果您的项目是使用 TypeScript 创建的，则假定为 ts 文件扩展名 **。**
+> 在本文引用使用 **.js** 文件扩展名的脚本文件的地方，如果您的项目是使用 TypeScript 创建的，则假定为 ts 文件扩展名 **。**
 
 [!include[project structure for an SSO-enabled add-in created with the Yeoman generator](../includes/sso-yeoman-project-structure.md)]
 
@@ -51,7 +51,7 @@ ms.locfileid: "47430994"
     > [!TIP]
     > 为此，可以在 Azure 主页上选择 " **应用注册** " 磁贴，或使用主页上的 "搜索" 框查找并选择 " **应用注册**"。
 
-3. 在 " **应用程序注册** " 页上，选择您在快速启动过程中创建的应用程序。 
+3. 在 " **应用程序注册** " 页上，选择您在快速启动过程中创建的应用程序。
     > [!TIP]
     > 应用程序的 **显示名称** 将与您在使用 Yeoman 生成器创建项目时指定的外接程序名称相匹配。
 
@@ -85,7 +85,7 @@ ms.locfileid: "47430994"
 
 - 更新引用 Microsoft Graph URL、参数和必需的访问作用域的代码。
 
-- 更新定义任务窗格 UI 的代码，以准确描述新功能。 
+- 更新定义任务窗格 UI 的代码，以准确描述新功能。
 
 - 更新解析来自 Microsoft Graph 的响应的代码，并将其写入文档或消息。
 
@@ -119,7 +119,7 @@ ms.locfileid: "47430994"
     };
     ```
 
-4. 在 **/src/taskpane/taskpane.html**中，查找元素 `<section class="ms-firstrun-instructionstep__header">` 并更新该元素中的文本，以描述外接程序的新功能。
+4. 在 **/src/taskpane/taskpane.html** 中，查找元素 `<section class="ms-firstrun-instructionstep__header">` 并更新该元素中的文本，以描述外接程序的新功能。
 
     ```html
     <section class="ms-firstrun-instructionstep__header">
@@ -129,7 +129,7 @@ ms.locfileid: "47430994"
     </section>
     ```
 
-5. 在 **/src/taskpane/taskpane.html**中，查找并将字符串的这两个匹配项替换 `Get My User Profile Information` 为字符串 `Read my OneDrive for Business` 。
+5. 在 **/src/taskpane/taskpane.html** 中，查找并将字符串的这两个匹配项替换 `Get My User Profile Information` 为字符串 `Read my OneDrive for Business` 。
 
     ```html
     <li class="ms-ListItem">
@@ -146,7 +146,7 @@ ms.locfileid: "47430994"
     </p>
     ```
 
-6. 在 **/src/taskpane/taskpane.html**中，查找并将字符串替换 `Your user profile information will be displayed in the document.` 为字符串 `The names of the top 10 files and folders in your OneDrive for Business will be displayed in the document or message.` 。
+6. 在 **/src/taskpane/taskpane.html** 中，查找并将字符串替换 `Your user profile information will be displayed in the document.` 为字符串 `The names of the top 10 files and folders in your OneDrive for Business will be displayed in the document or message.` 。
 
     ```html
     <li class="ms-ListItem">
@@ -168,7 +168,7 @@ ms.locfileid: "47430994"
 
 ### <a name="changes-required-for-an-excel-add-in-javascript"></a> (JavaScript) 的 Excel 外接程序所需的更改
 
-如果外接程序是使用 JavaScript 创建的 Excel 外接程序，请在 **/src/helpers/documentHelper.js**中进行以下更改：
+如果外接程序是使用 JavaScript 创建的 Excel 外接程序，请在 **/src/helpers/documentHelper.js** 中进行以下更改：
 
 1. 查找 `writeDataToOfficeDocument` 函数并将其替换为以下函数：
 
@@ -256,7 +256,7 @@ export function writeDataToOfficeDocument(result: Object): Promise<any> {
         data.push(innerArray);
       }
     }
-    
+
     const rangeAddress = `B5:B${5 + (data.length - 1)}`;
     const range = sheet.getRange(rangeAddress);
     range.values = data;
@@ -271,7 +271,7 @@ export function writeDataToOfficeDocument(result: Object): Promise<any> {
 
 ### <a name="changes-required-for-an-outlook-add-in-javascript"></a> (JavaScript) 的 Outlook 外接程序所需的更改
 
-如果你的外接程序是使用 JavaScript 创建的 Outlook 外接程序，请在 **/src/helpers/documentHelper.js**中进行以下更改：
+如果你的外接程序是使用 JavaScript 创建的 Outlook 外接程序，请在 **/src/helpers/documentHelper.js** 中进行以下更改：
 
 1. 查找 `writeDataToOfficeDocument` 函数并将其替换为以下函数：
 
@@ -355,7 +355,7 @@ export function writeDataToOfficeDocument(result: Object): void {
     for (let i = 0; i < data.length; i++) {
         objectNames += data[i] + "<br/>";
     }
-    
+
     Office.context.mailbox.item.body.setSelectedDataAsync(objectNames, { coercionType: Office.CoercionType.Html });
 }
 ```
@@ -364,7 +364,7 @@ export function writeDataToOfficeDocument(result: Object): void {
 
 ### <a name="changes-required-for-a-powerpoint-add-in-javascript"></a> (JavaScript) 的 PowerPoint 加载项所需的更改
 
-如果你的外接程序是使用 JavaScript 创建的 PowerPoint 加载项，请在 **/src/helpers/documentHelper.js**中进行以下更改：
+如果你的外接程序是使用 JavaScript 创建的 PowerPoint 加载项，请在 **/src/helpers/documentHelper.js** 中进行以下更改：
 
 1. 查找 `writeDataToOfficeDocument` 函数并将其替换为以下函数：
 
@@ -467,7 +467,7 @@ export function writeDataToOfficeDocument(result: Object): void {
 
 ### <a name="changes-required-for-a-word-add-in-javascript"></a> (JavaScript) 的 Word 外接程序所需的更改
 
-如果你的外接程序是使用 JavaScript 创建的 Word 外接程序，请在 **/src/helpers/documentHelper.js**中进行以下更改：
+如果你的外接程序是使用 JavaScript 创建的 Word 外接程序，请在 **/src/helpers/documentHelper.js** 中进行以下更改：
 
 1. 查找 `writeDataToOfficeDocument` 函数并将其替换为以下函数：
 
@@ -586,20 +586,20 @@ export function writeDataToOfficeDocument(result: Object): Promise<any> {
 
 3. 在 Office 客户端应用程序中，依次选择的“**开始**”选项卡和功能区中的“**显示任务窗格**”按钮，以打开加载项任务窗格。 下图显示 Excel 中的该按钮。
 
-    ![Excel 加载项按钮](../images/excel-quickstart-addin-3b.png)
+    ![显示 Excel 功能区中突出显示的外接端按钮的屏幕截图](../images/excel-quickstart-addin-3b.png)
 
-4. 在任务窗格底部，选择 " **读取我的 OneDrive For business** " 按钮以启动 SSO 过程。 
+4. 在任务窗格底部，选择 " **读取我的 OneDrive For business** " 按钮以启动 SSO 过程。
 
 5. 如果对话框窗口显示代表加载项请求权限，则表示 你的方案不支持 SSO，并且加载项已退回至替代的用户身份验证方法。 当租户管理员未授予使用加载项访问 Microsoft Graph 的许可，或者用户未使用有效的 Microsoft 帐户或 Microsoft 365 教育版或工作帐户登录 Office 时，则可能会出现这种情况。 选择对话框窗口中的“**接受**”按钮以继续。
 
-    ![权限请求对话框](../images/sso-permissions-request.png)
+    ![显示 "接受" 按钮突出显示的请求权限对话框的屏幕截图](../images/sso-permissions-request.png)
 
     > [!NOTE]
     > 用户接受此权限请求后，以后将不会再收到提示。
 
 6. 加载项读取已登录用户的 OneDrive for Business 中的数据，并将前10个文件和文件夹的名称写入文档中。 下图显示了写入 Excel 工作表的文件和文件夹名称的示例。
 
-    ![Excel 工作表中的 OneDrive for Business 信息](../images/sso-onedrive-info-excel.png)
+    ![显示 Excel 工作表中的 OneDrive for Business 信息的屏幕截图](../images/sso-onedrive-info-excel.png)
 
 ### <a name="outlook"></a>Outlook
 
@@ -608,32 +608,32 @@ export function writeDataToOfficeDocument(result: Object): Promise<any> {
 1. 在项目的根文件夹中，运行以下命令以生成项目并启动本地 web 服务器。
 
     > [!NOTE]
-    > Office 加载项应使用 HTTPS，而不是 HTTP（即便是在开发时也是如此）。 如果系统在运行以下命令后提示你安装证书，请接受提示以安装 Yeoman 生成器提供的证书。 您可能还需要以管理员身份运行命令提示符或终端以进行所做的更改。
+    > Office 加载项应使用 HTTPS，而不是 HTTP（即便是在开发时也是如此）。 如果系统在运行以下命令后提示你安装证书，请接受提示以安装 Yeoman 生成器提供的证书。 你可能还必须以管理员身份运行命令提示符或终端才能进行更改。
 
     ```command&nbsp;line
     npm run dev-server
     ```
 
-2. 按照[旁加载 Outlook 加载项以供测试](/outlook/add-ins/sideload-outlook-add-ins-for-testing)中的说明操作，旁加载加载项。 确保您登录到 Outlook 时使用的是与 Azure 在为应用程序 [配置 SSO](sso-quickstart.md#configure-sso) 时使用的 microsoft 365 管理员帐户相同的 microsoft 365 组织的成员。 执行此操作，将为成功进行 SSO 建立了相应的条件。 
+2. 按照[旁加载 Outlook 加载项以供测试](/outlook/add-ins/sideload-outlook-add-ins-for-testing)中的说明操作，旁加载加载项。 确保您登录到 Outlook 时使用的是与 Azure 在为应用程序 [配置 SSO](sso-quickstart.md#configure-sso) 时使用的 microsoft 365 管理员帐户相同的 microsoft 365 组织的成员。 执行此操作，将为成功进行 SSO 建立了相应的条件。
 
 3. 在 Outlook 中，撰写一封新邮件。
 
-4. 在“邮件撰写”窗口中，选择功能区中的“显示任务窗格”**** 按钮，以打开加载项任务窗格。
+4. 在“邮件撰写”窗口中，选择功能区中的“显示任务窗格”按钮，以打开加载项任务窗格。
 
-    ![Outlook 加载项按钮](../images/outlook-sso-ribbon-button.png)
+    ![显示 Outlook 撰写邮件窗口中突出显示的外接功能区按钮的屏幕截图](../images/outlook-sso-ribbon-button.png)
 
-5. 在任务窗格底部，选择 " **读取我的 OneDrive For business** " 按钮以启动 SSO 过程。 
+5. 在任务窗格底部，选择 " **读取我的 OneDrive For business** " 按钮以启动 SSO 过程。
 
 6. 如果对话框窗口显示代表加载项请求权限，则表示 你的方案不支持 SSO，并且加载项已退回至替代的用户身份验证方法。 当租户管理员未授予使用加载项访问 Microsoft Graph 的许可，或者用户未使用有效的 Microsoft 帐户或 Microsoft 365 教育版或工作帐户登录 Office 时，则可能会出现这种情况。 选择对话框窗口中的“**接受**”按钮以继续。
 
-    ![权限请求对话框](../images/sso-permissions-request.png)
+    ![突出显示 "接受" 按钮时请求的对话框屏幕截图](../images/sso-permissions-request.png)
 
     > [!NOTE]
     > 用户接受此权限请求后，以后将不会再收到提示。
 
 7. 加载项读取已登录用户的 OneDrive for Business 中的数据，并将前10个文件和文件夹的名称写入电子邮件的正文中。
 
-    ![Outlook 邮件中的 OneDrive for Business 信息](../images/sso-onedrive-info-outlook.png)
+    ![显示 Outlook 撰写邮件窗口中的 OneDrive for Business 信息的屏幕截图](../images/sso-onedrive-info-outlook.png)
 
 ## <a name="next-steps"></a>后续步骤
 

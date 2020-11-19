@@ -1,14 +1,14 @@
 ---
 title: 通过 Microsoft 365 管理中心使用集中部署发布 Office 外接程序
 description: 了解如何使用集中部署来部署内部加载项以及 Isv 提供的外接程序。
-ms.date: 07/07/2020
+ms.date: 11/17/2020
 localization_priority: Normal
-ms.openlocfilehash: e3f0bca5605d48d7b6c2ead49591546561dadffe
-ms.sourcegitcommit: 4a03d8b3f676ee2d91114813cb81bce5da3c8d6b
+ms.openlocfilehash: e0657f1b6d1b7dc3e61398b1237d1546261613e8
+ms.sourcegitcommit: ceb8dd66f3fb9c963fce8446c2f6c65ead56fbc1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "48175554"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "49132310"
 ---
 # <a name="publish-office-add-ins-using-centralized-deployment-via-the-microsoft-365-admin-center"></a>通过 Microsoft 365 管理中心使用集中部署发布 Office 外接程序
 
@@ -57,10 +57,10 @@ Microsoft 365 管理中心目前支持以下方案。
 7. 在“**集中部署**”页面上，选择以下选项之一：
 
     - **我想从 Office 应用商店添加加载项。**
-    - **我在此设备上具有清单文件 (.xml)。** 对于此选项，请选择“浏览”**** 以找到想要使用的清单文件 (.xml)。
+    - **我在此设备上具有清单文件 (.xml)。** 对于此选项，请选择“浏览”以找到想要使用的清单文件 (.xml)。
     - **我具有清单文件的 URL。** 对于此选项，请在提供的字段中键入清单的 URL。
 
-    ![Microsoft 365 管理中心中的新加载项对话框](../images/new-add-in.png)
+    ![Microsoft 365 管理中心中的新 Add-In 对话框](../images/new-add-in.png)
 
 8. 如果选择了此选项以从 Office 应用商店添加某个加载项，请选择该加载项。 可以通过“**为你推荐**”、“**评级**”或“**名称**”类别，查看可用的加载项。 仅能从 Office 应用商店添加免费加载项。 目前不支持添加付费加载项。
 
@@ -116,11 +116,11 @@ Microsoft 365 管理中心目前支持以下方案。
 
 如果通过集中部署发布 Office 加载项，则在该加载项的 Web 应用程序中实现对该 Web 应用程序所做的更改后，将自动向所有用户提供相应的更改。 对加载项的 [XML 清单文件](../develop/add-in-manifests.md)所做的更改（例如，更新加载项的图标、文本或加载项命令）以以下方式实现：
 
-- **业务线外接程序**：如果管理员在通过 Microsoft 365 管理中心实施集中化部署时显式上载了清单文件，则管理员必须上载包含所需更改的新清单文件。 上传更新后的清单文件后，加载项就会在下次相关 Office 应用启动时更新。
+- **业务线外接程序**：如果管理员显式上传清单文件 (来自其设备或通过指向通过 Microsoft 365 管理中心实施集中部署时指向的 URL) ，则管理员必须上载包含所需更改的新清单文件。 上传更新后的清单文件后，加载项就会在下次相关 Office 应用启动时更新。
 
   > [!NOTE]
   > 管理员无需删除 LOB 加载项即可进行更新。 在 "外接程序" 部分中，管理员只需选择 LOB 外接程序，然后按右下角的 " **更新外接程序"** 按钮，即可调用此功能。
-  > 
+  >
   > ![屏幕截图显示了 Microsoft 365 管理中心中的更新外接端对话框](../images/update-add-in-admin-center.png)
 
 - **Office 应用商店外接程序**：如果管理员通过 Microsoft 365 管理中心实施集中部署时从 Office 应用商店中选择了外接程序，并且 Office 应用商店中的外接程序更新，则外接程序将在以后通过集中部署进行更新。 加载项会在下次相关 Office 应用启动时更新。
@@ -129,7 +129,7 @@ Microsoft 365 管理中心目前支持以下方案。
 
 通过集中部署发布加载项后，最终用户可以在加载项支持的任何平台上开始使用它。
 
-如果外接程序支持外接程序命令，则这些命令将出现在为其部署外接程序的所有用户的 Office 应用程序功能区上。 在以下的示例中，**搜索引文**命令将显示在**引文**加载项的功能区上。
+如果外接程序支持外接程序命令，则这些命令将出现在为其部署外接程序的所有用户的 Office 应用程序功能区上。 在以下的示例中，**搜索引文** 命令将显示在 **引文** 加载项的功能区上。
 
 ![屏幕截图显示在引文加载项中突出显示 "搜索引文" 命令的 Office 应用程序功能区部分](../images/search-citation.png)
 

@@ -3,12 +3,12 @@ title: 使用 SSO 对 Microsoft Graph 授权
 description: 了解 Office 外接程序的用户可以如何使用单一登录 (SSO) 从 Microsoft Graph 获取数据。
 ms.date: 07/30/2020
 localization_priority: Normal
-ms.openlocfilehash: 68440a347e11d909f0ebd4d4d29892711646da5e
-ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
+ms.openlocfilehash: e87c86b5302bde8122485b837759fa327251c656
+ms.sourcegitcommit: ceb8dd66f3fb9c963fce8446c2f6c65ead56fbc1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "47292902"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "49131911"
 ---
 # <a name="authorize-to-microsoft-graph-with-sso"></a>使用 SSO 对 Microsoft Graph 授权
 
@@ -17,7 +17,6 @@ ms.locfileid: "47292902"
 > [!NOTE]
 > 目前，Word、Excel、Outlook 和 PowerPoint 支持单一登录 API。 若要详细了解目前支持单一登录 API 的平台，请参阅 [IdentityAPI 要求集](/office/dev/add-ins/reference/requirement-sets/identity-api-requirement-sets)。
 > 如果使用的是 Outlook 加载项，请务必为 Office 365 租赁启用新式验证。 若要了解如何这样做，请参阅 [Exchange Online：如何为租户启用新式验证](https://social.technet.microsoft.com/wiki/contents/articles/32711.exchange-online-how-to-enable-your-tenant-for-modern-authentication.aspx)。
-
 
 ## <a name="add-in-architecture-for-sso-and-microsoft-graph"></a>SSO 和 Microsoft Graph 的加载项体系结构
 
@@ -29,16 +28,16 @@ ms.locfileid: "47292902"
 
 下图展示了 Microsoft Graph 登录和访问流程的工作原理。
 
-![显示 SSO 流程的关系图](../images/sso-access-to-microsoft-graph.png)
+![显示 SSO 过程的关系图](../images/sso-access-to-microsoft-graph.png)
 
-1. 在加载项中，JavaScript 调用新的 Office.js API [getAccessToken](/javascript/api/office-runtime/officeruntime.auth#getaccesstoken-options-)。 这将告知 Office 客户端应用程序获取外接程序的访问令牌。 （以下称为**启动访问令牌**，因为在该过程的后期它将会被替换为另一个令牌。 有关已解码启动访问令牌的示例，请参阅[示例访问令牌](sso-in-office-add-ins.md#example-access-token)。）
-2. 如果用户未登录，Office 客户端应用程序将打开一个弹出窗口，供用户登录。
+1. 在加载项中，JavaScript 调用新的 Office.js API [getAccessToken](/javascript/api/office-runtime/officeruntime.auth#getaccesstoken-options-)。 该操作告诉 Office 客户端应用程序获取加载项的访问令牌。 （以下称为 **启动访问令牌**，因为在该过程的后期它将会被替换为另一个令牌。 有关已解码启动访问令牌的示例，请参阅[示例访问令牌](sso-in-office-add-ins.md#example-access-token)。）
+2. 如果用户未登录，Office 客户端应用程序会打开弹出窗口，以供用户登录。
 3. 如果当前用户是首次使用加载项，则会看到同意提示。
 4. Office 客户端应用程序从当前用户的 Azure AD v2.0 终结点请求 **启动访问令牌** 。
 5. Azure AD 将引导令牌发送到 Office 客户端应用程序。
 6. Office 客户端应用程序将 **引导访问令牌** 作为调用返回的 result 对象的一部分发送到外接程序 `getAccessToken` 。
-7. 加载项中的 JavaScript 向 Web API（与加载项托管在同一完全限定的域中）发出 HTTP 请求，并添加**启动访问令牌**作为授权证明。
-8. 服务器端代码验证传入的**启动访问令牌**。
+7. 加载项中的 JavaScript 向 Web API（与加载项托管在同一完全限定的域中）发出 HTTP 请求，并添加 **启动访问令牌** 作为授权证明。
+8. 服务器端代码验证传入的 **启动访问令牌**。
 9. 服务器端代码使用 "代表" 流 (在 [OAuth2 令牌交换](https://tools.ietf.org/html/draft-ietf-oauth-token-exchange-02) 和 [守护程序或服务器应用程序上定义到 web API Azure 方案](/azure/active-directory/develop/active-directory-authentication-scenarios)) ，以获取 Exchange 中的 Microsoft Graph 访问令牌，以获取对启动访问令牌的 Exchange。
 10. Azure AD 将 Microsoft Graph 访问令牌（如果加载项请求获取 *offline_access* 权限，则同时返回刷新令牌）返回给加载项。
 11. 服务器端代码缓存 Microsoft Graph 访问令牌。
@@ -77,4 +76,4 @@ ms.locfileid: "47292902"
 最佳做法是，始终传递 `forMSGraphAccess` 给 `getAccessToken` 您的外接程序将在 AppSource 中分发，并需要 Microsoft Graph 作用域。
 
 > [!TIP]
-> 如果开发使用 SSO 的 Outlook 外接程序并旁加载它进行测试，则即使已*always* `forMSGraphAccess` `getAccessToken` 授予管理员同意，Office 也始终会返回错误13012。 因此，在 `forMSGraphAccess` 开发 Outlook 外接程序 **时** ，应注释掉该选项。 在部署生产时，请务必取消对该选项的注释。 仅当您在 Outlook 中进行旁加载时，才会发生虚假13012。
+> 如果开发使用 SSO 的 Outlook 外接程序并旁加载它进行测试，则即使已 *always* `forMSGraphAccess` `getAccessToken` 授予管理员同意，Office 也始终会返回错误13012。 因此，在 `forMSGraphAccess` 开发 Outlook 外接程序 **时** ，应注释掉该选项。 在部署生产时，请务必取消对该选项的注释。 仅当您在 Outlook 中进行旁加载时，才会发生虚假13012。

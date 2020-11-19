@@ -3,12 +3,12 @@ title: 在清单中创建 Excel、PowerPoint 和 Word 加载项命令
 description: 在清单中使用 VersionOverrides 定义 Excel、PowerPoint 和 Word 的外接程序命令。使用外接命令创建 UI 元素、添加按钮或列表并执行操作。
 ms.date: 05/27/2020
 localization_priority: Normal
-ms.openlocfilehash: 1b86aa6c7b7303740ee03f20e28e63fd921dbbf5
-ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
+ms.openlocfilehash: 9257e7ba840db31149ae606c7f2c072c433140ad
+ms.sourcegitcommit: ceb8dd66f3fb9c963fce8446c2f6c65ead56fbc1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "47292895"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "49131917"
 ---
 # <a name="create-add-in-commands-in-your-manifest-for-excel-powerpoint-and-word"></a>在清单中创建 Excel、PowerPoint 和 Word 加载项命令
 
@@ -29,7 +29,9 @@ ms.locfileid: "47292895"
 > [!NOTE]
 > Outlook 中也支持加载项命令。 有关详细信息，请参阅 [适用于 Outlook 的外接程序命令](../outlook/add-in-commands-for-outlook.md)
 
-下图是对清单中的加载项命令元素的概述。 ![清单中的加载项命令元素概述](../images/version-overrides.png)
+下图是对清单中的加载项命令元素的概述。
+
+![清单中的外接命令元素的概述。 此处的顶级节点与子主机和资源 VersionOverrides。 在 "主机" 下，DesktopFormFactor。 在 "DesktopFormFactor" 下，FunctionFile 和 ExtensionPoint。 在 "ExtensionPoint" 下的 "CustomTab" 或 "OfficeTab 和 Office" 菜单。 在 "CustomTab" 或 "Office" 选项卡上进行分组，然后执行 Control 操作。 在 "Office 菜单" 下，执行控制操作。 在 "Resources (child of VersionOverrides) 为 Images、Url、ShortStrings 和 LongStrings。](../images/version-overrides.png)
 
 ## <a name="step-1-start-from-a-sample"></a>第 1 步：从示例入手
 
@@ -37,7 +39,7 @@ ms.locfileid: "47292895"
 
 ## <a name="step-2-create-a-task-pane-add-in"></a>第 2 步：创建任务窗格加载项
 
-若要开始使用加载项命令，必须先创建任务窗格加载项，再按照本文所述来修改加载项清单。无法对内容加载项使用加载项命令。若要更新现有清单，必须将相应 **XML 命名空间**和 **VersionOverrides** 元素添加到清单中（如[第 3 步：添加 VersionOverrides 元素](#step-3-add-versionoverrides-element)所述）。
+若要开始使用加载项命令，必须先创建任务窗格加载项，然后按本文所述修改加载项的清单。 不能将外接程序命令与内容外接程序一起使用。如果要更新现有清单，则必须添加相应的 **XML 命名空间** ，并将 **VersionOverrides** 元素添加到清单中（如 [步骤3： add VersionOverrides 元素](#step-3-add-versionoverrides-element)中所述）。
 
 以下示例显示了 Office 2013 外接程序的清单。此清单中没有任何外接程序命令，因为没有 **VersionOverrides** 元素。Office 2013 不支持外接程序命令，但是通过将 **VersionOverrides** 添加到此清单，外接程序可同时在 Office 2013 和 Office 2016 中运行。在 Office 2013 中，外接程序不会显示外接程序命令，并且使用 **SourceLocation** 的值运行外接程序作为单一任务窗格外接程序。在 Office 2016 中，如果未包含 **VersionOverrides** 元素，则使用 **SourceLocation** 运行外接程序。但是，如果包含了 **VersionOverrides**，外接程序将只显示外接程序命令，并且不会将外接程序显示为单一任务窗格外接程序。
   
@@ -74,19 +76,19 @@ ms.locfileid: "47292895"
 
 **VersionOverrides** 元素是包含外接程序命令定义的根元素。**VersionOverrides** 是清单中 **OfficeApp** 元素的子元素。下表列出了 **VersionOverrides** 元素的属性。
 
-|**属性**|**说明**|
+|属性|说明|
 |:-----|:-----|
 |**xmlns** <br/> | 必需。 架构位置必须是 `http://schemas.microsoft.com/office/taskpaneappversionoverrides`。 <br/> |
 |**xsi:type** <br/> |必需。架构版本。本文中所述的版本为"VersionOverridesV1_0"。  <br/> |
 
 下表标识了 **VersionOverrides** 的子元素。
   
-|**元素**|**说明**|
+|元素|说明|
 |:-----|:-----|
 |**说明** <br/> |可选。描述外接程序。此子级 **Description** 元素替代清单中父级部分中的旧 **Description** 元素。此 **Description** 元素的 **resid** 属性将设置为 **String** 元素的 **id**。**String** 元素包含 **Description** 的文本。 <br/> |
 |**Requirements** <br/> |可选。 指定外接程序要求的最低要求集和 Office.js 的版本。 此子级 **Requirements** 元素替代清单中父级部分中的 **Requirements** 元素。 有关详细信息，请参阅 [指定 Office 应用程序和 API 要求](../develop/specify-office-hosts-and-api-requirements.md)。  <br/> |
 |**Hosts** <br/> |必需。 指定 Office 应用程序的集合。 子级 **Hosts** 元素替代清单中父级部分中的 **Hosts** 元素。 必须包含已设置为“Workbook”或“Document”的 **xsi:type** 属性 <br/> |
-|**Resources** <br/> |定义其他清单元素引用的资源集合（字符串、URL 和图像）。例如，**Description** 元素的值引用了 **Resources** 中的子元素。**Resources** 元素将在本文后续部分中的[步骤 7：添加 Resources 元素](#step-7-add-the-resources-element)中进行介绍。 <br/> |
+|**Resources** <br/> |定义其他清单元素引用的资源集合（字符串、URL 和图像）。例如，**Description** 元素的值引用了 **Resources** 中的子元素。**Resources** 元素将在本文后续部分中的 [步骤 7：添加 Resources 元素](#step-7-add-the-resources-element)中进行介绍。 <br/> |
 
 下面的示例演示如何使用 **VersionOverrides** 元素及其子元素。
 
@@ -116,7 +118,7 @@ ms.locfileid: "47292895"
 
 ## <a name="step-4-add-hosts-host-and-desktopformfactor-elements"></a>步骤 4：添加 Hosts、Host 和 DesktopFormFactor 元素
 
-“Hosts”**** 元素包含一个或多个“Host”**** 元素。 **Host**元素指定特定的 Office 应用程序。 **Host**元素包含子元素，这些子元素指定在将外接程序安装在该 Office 应用程序中后要显示的外接程序命令。 若要在两个或更多不同的 Office 应用程序中显示相同的外接程序命令，必须复制每个 **主机**中的子元素。
+“Hosts”元素包含一个或多个“Host”元素。 **Host** 元素指定特定的 Office 应用程序。 **Host** 元素包含子元素，这些子元素指定在将外接程序安装在该 Office 应用程序中后要显示的外接程序命令。 若要在两个或更多不同的 Office 应用程序中显示相同的外接程序命令，必须复制每个 **主机** 中的子元素。
 
 **DesktopFormFactor** 元素指定在 Office 网页版（浏览器版）和 Windows 版 Office 中运行的加载项的设置。
 
@@ -162,7 +164,7 @@ ms.locfileid: "47292895"
 > [!IMPORTANT]
 > 请确保 JavaScript 代码调用了 `Office.initialize`。
 
-**FunctionFile** 元素引用的 HTML 文件中的 JavaScript 必须调用 `Office.initialize`。**FunctionName** 元素（请参阅[按钮控件](../reference/manifest/control.md#button-control)查看相关说明）使用 **FunctionFile** 中的函数。
+**FunctionFile** 元素引用的 HTML 文件中的 JavaScript 必须调用 `Office.initialize`。**FunctionName** 元素（请参阅 [按钮控件](../reference/manifest/control.md#button-control)查看相关说明）使用 **FunctionFile** 中的函数。
 
 下面的代码展示了如何实现 **FunctionName** 使用的函数。
 
@@ -210,7 +212,7 @@ ms.locfileid: "47292895"
 下面的示例演示如何将 **ExtensionPoint** 元素与 **PrimaryCommandSurface** 和 **ContextMenu** 属性值配合使用，以及应彼此配合使用的子元素。
 
 > [!IMPORTANT]
-> 对于包含 ID 属性的元素，请务必提供唯一 ID。建议将公司名称与 ID 结合使用。例如，请使用以下格式：`<CustomTab id="mycompanyname.mygroupname">`。 
+> 对于包含 ID 属性的元素，请务必提供唯一 ID。建议将公司名称与 ID 结合使用。例如，请使用以下格式：`<CustomTab id="mycompanyname.mygroupname">`。
   
 ```xml
 <ExtensionPoint xsi:type="PrimaryCommandSurface">
@@ -244,16 +246,16 @@ ms.locfileid: "47292895"
 </ExtensionPoint>
 ```
 
-|**元素**|**说明**|
+|元素|说明|
 |:-----|:-----|
 |**CustomTab** <br/> |如果想要（使用 **PrimaryCommandSurface**）向功能区添加自定义选项卡，则为必需项。如果使用 **CustomTab** 元素，则不能使用 **OfficeTab** 元素。**id** 属性是必需的。 <br/> |
 |**OfficeTab** <br/> |如果要使用 **PrimaryCommandSurface**) 扩展默认的 Office 应用功能区选项卡 (，则为必需。 如果使用 **OfficeTab** 元素，则不能使用 **CustomTab** 元素。 <br/> 有关 **id** 属性使用的更多 tab 值，请参阅 [默认 Office 应用功能区选项卡的 tab 值](../reference/manifest/officetab.md)。  <br/> |
-|**OfficeMenu** <br/> | 如果要（使用 **ContextMenu**）将外接程序命令添加到默认上下文菜单中，则为必需项。**id** 属性必须设置为： <br/> 当用户选定文本，然后右键单击所选文本时，适用于 Excel 或 Word 的 **ContextMenuText**显示上下文菜单上的项。<br/> 适用于 Excel 的 **ContextMenuCell**。当用户右键单击电子表格中的某个单元格时显示上下文菜单上的项。 <br/> |
+|**OfficeMenu** <br/> | 如果要（使用 **ContextMenu**）将外接程序命令添加到默认上下文菜单中，则为必需项。**id** 属性必须设置为： <br/> 当用户选定文本，然后右键单击所选文本时，适用于 Excel 或 Word 的 **ContextMenuText** 显示上下文菜单上的项。<br/> 适用于 Excel 的 **ContextMenuCell**。当用户右键单击电子表格中的某个单元格时显示上下文菜单上的项。 <br/> |
 |**Group** <br/> |选项卡上的一组用户界面扩展点。一组可以有多达六个控件。**id** 属性是必需的。它是一个最多为 125 个字符的字符串。 <br/> |
 |**Label** <br/> |必需。组标签。**resid** 属性必须设置为 **String** 元素的 **id** 属性的值。**String** 元素是 **ShortStrings** 元素的子元素，而 ShortStrings 元素是 **Resources** 元素的子元素。 <br/> |
 |**Icon** <br/> |必需。指定将在小型设备上使用或在显示过多按钮的情况下使用的组图标。**resid** 属性必须设置为 **Image** 元素的 **id** 属性的值。**Image** 元素是 **Images** 元素的子元素，而 Images 元素是 **Resources** 元素的子元素。**size** 属性给出图像的大小（以像素为单位）。要求三种图像大小：16、32 和 80。也同样支持五种可选大小：20、24、40、48 和 64。 <br/> |
-|**Tooltip** <br/> |可选。组的工具提示**resid** 属性必须设置为 **String** 元素的 **id** 属性的值。**String** 元素是 **LongStrings** 元素的子元素，而 LongStrings 元素是 **Resources** 元素的子元素。 <br/> |
-|**Control** <br/> |每个组都要求至少有一个控件。**Control** 元素可以是 **Button**，也可以是 **Menu**。使用 **Menu** 可指定按钮控件的下拉列表。目前仅支持按钮和菜单。请参阅[按钮控件](../reference/manifest/control.md#button-control)和[菜单控件](../reference/manifest/control.md#menu-dropdown-button-controls)部分，了解详细信息。<br/>**注意：** 建议一次添加一个 **Control** 元素及相关 **Resources** 子元素，以便于进行故障排除。          |
+|**Tooltip** <br/> |可选。组的工具提示 **resid** 属性必须设置为 **String** 元素的 **id** 属性的值。**String** 元素是 **LongStrings** 元素的子元素，而 LongStrings 元素是 **Resources** 元素的子元素。 <br/> |
+|**Control** <br/> |每个组都要求至少有一个控件。**Control** 元素可以是 **Button**，也可以是 **Menu**。使用 **Menu** 可指定按钮控件的下拉列表。目前仅支持按钮和菜单。请参阅 [按钮控件](../reference/manifest/control.md#button-control)和 [菜单控件](../reference/manifest/control.md#menu-dropdown-button-controls)部分，了解详细信息。<br/>**注意：** 建议一次添加一个 **Control** 元素及相关 **Resources** 子元素，以便于进行故障排除。          |
 
 ### <a name="button-controls"></a>按钮控件
 
@@ -301,7 +303,7 @@ ms.locfileid: "47292895"
 </Control>
 ```
 
-|**元素**|**说明**|
+|元素|说明|
 |:-----|:-----|
 |**Label** <br/> |必需。按钮文本。**resid** 属性必须设置为 **String** 元素的 **id** 属性的值。**String** 元素是 **ShortStrings** 元素的子元素，而 ShortStrings 元素是 **Resources** 元素的子元素。 <br/> |
 |**Tooltip** <br/> |可选。按钮的工具提示。**resid** 属性必须设置为 **String** 元素的 **id** 属性的值。**String** 元素是 **LongStrings** 元素的子元素，而 LongStrings 元素是 **Resources** 元素的子元素。 <br/> |
@@ -372,13 +374,13 @@ ms.locfileid: "47292895"
 </Control>
 ```
 
-|**元素**|**说明**|
+|元素|说明|
 |:-----|:-----|
 |**Label** <br/> |必需。根菜单项的文本。**resid** 属性必须设置为 **String** 元素的 **id** 属性的值。**String** 元素是 **ShortStrings** 元素的子元素，而 ShortStrings 元素是 **Resources** 元素的子元素。 <br/> |
 |**Tooltip** <br/> |可选。菜单的工具提示。**resid** 属性必须设置为 **String** 元素的 **id** 属性的值。**String** 元素是 **LongStrings** 元素的子元素，而 LongStrings 元素是 **Resources** 元素的子元素。 <br/> |
 |**SuperTip** <br/> | 必需。菜单的 SuperTip，定义如下： <br/> **标题** <br/>  必需。supertip 的文本。必须将“resid”属性设置为 String 元素的 id 属性值。String 元素是 ShortStrings 元素的子元素，而  元素是“Resources”元素的子元素。 <br/> **说明** <br/>  必需。supertip 的说明。必须将“resid”属性设置为 String 元素的 id 属性值。String 元素是 LongStrings 元素的子元素，而  元素是“Resources”元素的子元素。 <br/> |
 |**Icon** <br/> | 必需。包含菜单的 **Image** 元素。图像文件必须为 .png 格式。 <br/> **Image** <br/>  菜单的图像。**resid** 属性必须设置为 **Image** 元素的 **id** 属性的值。**Image** 元素是 **Images** 元素的子元素，而 Images 元素是 **Resources** 元素的子元素。**size** 属性指示图像的大小（以像素为单位）。要求三种图像大小（以像素为单位）：16、32 和 80。也同样支持五种可选大小（以像素为单位）：20、24、40、48 和 64。 <br/> |
-|**Items** <br/> |必需。包含每个子菜单项的 **Item** 元素。每个 **Item** 元素包含的子元素均与[按钮控件](../reference/manifest/control.md#button-control)相同。  <br/> |
+|**Items** <br/> |必需。包含每个子菜单项的 **Item** 元素。每个 **Item** 元素包含的子元素均与 [按钮控件](../reference/manifest/control.md#button-control)相同。  <br/> |
 
 ## <a name="step-7-add-the-resources-element"></a>步骤 7：添加 Resources 元素
 
@@ -417,7 +419,7 @@ ms.locfileid: "47292895"
 </Resources>
 ```
 
-|**Resource**|**说明**|
+|资源|说明|
 |:-----|:-----|
 |**Images**/ **Image** <br/> | 提供图像文件的 HTTPS URL。每个图像必须定义三个必需的图像大小： <br/>  16×16 <br/>  32×32 <br/>  80×80 <br/>  也支持下面的图像大小，但不是必需： <br/>  20×20 <br/>  24×24 <br/>  40×40 <br/>  48×48 <br/>  64×64 <br/> |
 |**Urls**/ **Url** <br/> |提供 HTTPS URL 位置。URL 最多可为 2048 个字符。  <br/> |
@@ -431,7 +433,7 @@ ms.locfileid: "47292895"
 
 在 Excel 和 Word 中，可以使用默认 Office UI 选项卡，在功能区上添加加载项命令。下表列出了可用于 **OfficeTab** 元素的 **id** 属性的值。这些 Tab 值区分大小写。
 
-|**Office 客户端应用程序**|**Tab 值**|
+|Office 客户端应用程序|Tab 值|
 |:-----|:-----|
 |Excel  <br/> |**TabHome**         **TabInsert**         **TabPageLayoutExcel**         **TabFormulas**         **TabData**         **TabReview**         **TabView**         **TabDeveloper**         **TabAddIns**         **TabPrintPreview**         **TabBackgroundRemoval** <br/> |
 |Word  <br/> |**TabHome**         **TabInsert**         **TabWordDesign**         **TabPageLayoutWord**         **TabReferences**         **TabMailings**         **TabReviewWord**         **TabView**         **TabDeveloper**         **TabAddIns**         **TabBlogPost**         **TabBlogInsert**         **TabPrintPreview**         **TabOutlining**         **TabConflicts**         **TabBackgroundRemoval**         **TabBroadcastPresentation** <br/> |

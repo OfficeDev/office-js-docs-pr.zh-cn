@@ -3,12 +3,12 @@ title: Office 外接程序中的自定义键盘快捷方式
 description: 了解如何将自定义键盘快捷方式（也称为键组合）添加到 Office 外接程序。
 ms.date: 11/09/2020
 localization_priority: Normal
-ms.openlocfilehash: f95c26067203a4ec2659aa6a632403c96ed81674
-ms.sourcegitcommit: ca66ff7462bfdf4ed7ae04f43d1388c24de63bf9
+ms.openlocfilehash: 40009dd92787b7c220bb8cfc741cffb2e4b68a9e
+ms.sourcegitcommit: ceb8dd66f3fb9c963fce8446c2f6c65ead56fbc1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/11/2020
-ms.locfileid: "48996677"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "49132037"
 ---
 # <a name="add-custom-keyboard-shortcuts-to-your-office-add-ins-preview"></a>将自定义键盘快捷方式添加到 Office 外接 (预览) 
 
@@ -81,7 +81,7 @@ ms.locfileid: "48996677"
     }
     ```
 
-    有关 JSON 对象的详细信息，请参阅 [构造 action 对象](#constructing-the-action-objects) 和 [构造快捷方式对象](#constructing-the-shortcut-objects)。 快捷键 JSON 的完整架构位于 [extended-manifest.schema.js](https://developer.microsoft.com/en-us/json-schemas/office-js/extended-manifest.schema.json)。
+    有关 JSON 对象的详细信息，请参阅 [构造 action 对象](#constructing-the-action-objects) 和 [构造快捷方式对象](#constructing-the-shortcut-objects)。 快捷键 JSON 的完整架构位于 [extended-manifest.schema.js](https://developer.microsoft.com/json-schemas/office-js/extended-manifest.schema.json)。  (注意：指向架构的链接可能在预览周期中的早期阶段无法运行。 ) 
 
     > [!NOTE]
     > 在本文中，您可以使用 "控制" 代替 "CTRL"。
@@ -103,7 +103,7 @@ ms.locfileid: "48996677"
     ```
 
 1. 若要继续本示例，请使用 `'SHOWTASKPANE'` 作为第一个参数。
-1. 对于函数的主体，请使用 [showTaskpane](/javascript/api/office/office.addin.md#showastaskpane--) 方法打开外接程序的任务窗格。 完成后，代码应类似于以下内容：
+1. 对于函数的主体，请使用 [showTaskpane](/javascript/api/office/office.addin#showastaskpane--) 方法打开外接程序的任务窗格。 完成后，代码应类似于以下内容：
 
     ```javascript
     Office.actions.associate('SHOWTASKPANE', function () {
@@ -117,7 +117,7 @@ ms.locfileid: "48996677"
     });
     ```
 
-1. 添加第二个函数调用， `Office.actions.associate` 以将 `HIDETASKPANE` 操作映射到一个调用了 [.addin](/javascript/api/office/office.addin.md#hide--)的函数。 示例如下：
+1. 添加第二个函数调用， `Office.actions.associate` 以将 `HIDETASKPANE` 操作映射到一个调用了 [.addin](/javascript/api/office/office.addin#hide--)的函数。 示例如下：
 
     ```javascript
     Office.actions.associate('HIDETASKPANE', function () {
@@ -161,7 +161,7 @@ ms.locfileid: "48996677"
     ]
 ```
 
-快捷键 JSON 的完整架构位于 [extended-manifest.schema.js](https://developer.microsoft.com/en-us/json-schemas/office-js/extended-manifest.schema.json)。
+快捷键 JSON 的完整架构位于 [extended-manifest.schema.js](https://developer.microsoft.com/json-schemas/office-js/extended-manifest.schema.json)。  (注意：指向架构的链接可能在预览周期中的早期阶段无法运行。 ) 
 
 ### <a name="constructing-the-shortcut-objects"></a>构造快捷方式对象
 
@@ -195,10 +195,10 @@ ms.locfileid: "48996677"
     ]
 ```
 
-快捷键 JSON 的完整架构位于 [extended-manifest.schema.js](https://developer.microsoft.com/en-us/json-schemas/office-js/extended-manifest.schema.json)。
+快捷键 JSON 的完整架构位于 [extended-manifest.schema.js](https://developer.microsoft.com/json-schemas/office-js/extended-manifest.schema.json)。  (注意：指向架构的链接可能在预览周期中的早期阶段无法运行。 ) 
 
 > [!NOTE]
-> 快捷键提示（也称为连续键快捷方式，例如，用于选择填充颜色的 Excel 快捷方式 **Alt + h，h** ）在 Office 加载项中不受支持。
+> 快捷键提示（也称为连续键快捷方式，例如，用于选择填充颜色的 Excel 快捷方式 **Alt + h，h**）在 Office 加载项中不受支持。
 
 ### <a name="using-shortcuts-when-the-focus-is-in-the-task-pane"></a>当焦点在任务窗格中时使用快捷方式
 
@@ -210,7 +210,7 @@ ms.locfileid: "48996677"
 
 目前，如果两个或更多个加载项注册了相同的键盘快捷方式，但您可以最大限度地减少与 Excel 的冲突，请使用以下这些好的做法：
 
-- 在外接程序中仅使用具有以下模式的键盘快捷方式： * *Ctrl + Shift + Alt +* x * * *，其中 *x* 是另一个键。
+- 在外接程序中仅使用具有以下模式的键盘快捷方式： **Ctrl + Shift + Alt +* x * * *，其中 *x* 是另一个键。
 - 如果需要更多键盘快捷方式，请查看 [Excel 键盘快捷方式列表](https://support.microsoft.com/office/keyboard-shortcuts-in-excel-1798d9d5-842a-42b8-9c99-9b7213f0040f)，并避免在外接程序中使用其中任何一个。
 
 ## <a name="browser-shortcuts-that-cannot-be-overridden"></a>无法覆盖的浏览器快捷方式

@@ -3,19 +3,18 @@ title: Office 加载项的数据可视化样式指南
 description: 了解如何在 Office 外接程序中可视化数据的一些良好实践。
 ms.date: 01/14/2019
 localization_priority: Normal
-ms.openlocfilehash: d03bbb471c3e538aade2f5308bbfa9220c93615b
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: f3fa2a6cc5a9d27135ad4290eded838dfaecb7d6
+ms.sourcegitcommit: ceb8dd66f3fb9c963fce8446c2f6c65ead56fbc1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44608549"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "49132072"
 ---
 # <a name="data-visualization-style-guidelines-for-office-add-ins"></a>Office 加载项的数据可视化样式指南
 
 良好的数据可视化效果可帮助用户找到数据见解。他们可以使用这些见解来讲述具有说服力的故事。本文提供了准则，以帮助你在适用于 Excel 和其他 Office 应用的外接程序中设计有效的数据可视化。
 
-我们建议使用 [Office UI Fabric](https://developer.microsoft.com/fabric) 来创建数据可视化的镶边。Office UI Fabric 包含可与 Office 外观无缝集成的样式和组件。 
-
+我们建议使用 [Office UI Fabric](https://developer.microsoft.com/fabric) 来创建数据可视化的镶边。Office UI Fabric 包含可与 Office 外观无缝集成的样式和组件。
 <!--The following figure shows a data visualization in an add-in that uses Fabric.
 
 ![Image of a data visualization with Fabric elements applied**](../images/fabric-data-visualization.png) 
@@ -26,7 +25,7 @@ ms.locfileid: "44608549"
 
 数据可视化共享常规框架和常见的可视化和交互元素，包括标题、标签和数据图形，如下图所示。
 
-![包含标题、坐标轴、图例和标记的绘图区的折线图的图像](../images/excel-charts-visualization.png)
+![带有标题、坐标轴、图例和标记的绘图区的折线图](../images/excel-charts-visualization.png)
 
 ### <a name="chart-titles"></a>图表标题
 
@@ -41,7 +40,7 @@ ms.locfileid: "44608549"
 
 请确保轴标签颜色足够深，以便可以清楚地阅读，并且具有足够的文本和背景色对比度。请确保颜色不要过深，避免比数据墨迹更加突出。
 
-浅灰色轴标签效果最佳。 如果使用的是 Fabric，请参阅[中性色调色板](https://developer.microsoft.com/fabric#/styles/colors)。
+浅灰色轴标签效果最佳。 如果使用的是 Fabric，请参阅 [中性色调色板](https://developer.microsoft.com/fabric#/styles/colors)。
 
 ### <a name="data-ink"></a>数据墨迹
 
@@ -61,11 +60,11 @@ ms.locfileid: "44608549"
 
 要准确读取图表，通常网格线是必不可少的，但应显示为辅助可视元素，用于增强数据墨迹效果，但不会影响数据显示。确保静态网格线较细且颜色较淡，除非专门将其设计用于高对比度的情况。还可以使用交互作用创建在用户与图表交互时上下文中显示的动态、实时网格线。
 
-浅灰色网格线效果最佳。 如果使用的是 Fabric，请参阅[中性色调色板](https://developer.microsoft.com/fabric#/styles/colors)。
+浅灰色网格线效果最佳。 如果使用的是 Fabric，请参阅 [中性色调色板](https://developer.microsoft.com/fabric#/styles/colors)。
 
 下图显示了带有网格线的数据可视化。
 
-![带有网格线的数据可视化的图像](../images/data-visualization.png)
+![带网格线的折线图的数据可视化](../images/data-visualization.png)
 
 ### <a name="legends"></a>图例
 
@@ -118,7 +117,7 @@ Office Design 团队创建了以下设计原则集，我们可在为 Office 产�
 
 创建因果关系感知。在暂存动画时：
 
-- 一次暂存一个。 
+- 一次暂存一个。
 - 在更改数据墨迹前，将更改暂存到轴中。
 - 如果对象以相同的速度朝相同的方向移动，那么可以暂存对象并将其制作成动画组。
 - 在只有 4-5 个对象的组中暂存数据元素。查看器很难独立跟踪数量超过 4-5 个的对象。
@@ -127,7 +126,7 @@ Office Design 团队创建了以下设计原则集，我们可在为 Office 产�
 
 - 动画可帮助用户理解对数据的更改，提供上下文，并作为非语言注释层发挥作用。
 - 动作应发生在可视化效果具有含义的坐标空间中。
-- 为视觉对象定制动画。 
+- 为视觉对象定制动画。
 - 避免不必要的动画效果。
 
 随数据运动。
@@ -141,7 +140,7 @@ Office Design 团队创建了以下设计原则集，我们可在为 Office 产�
 - 确保所有交互式元素（如按钮或选择列表）均可通过键盘访问。
 - 将辅助功能事件发送到屏幕阅读器，以通知焦点更改、工具提示等。
 
-## <a name="see-also"></a>另请参阅 
+## <a name="see-also"></a>另请参阅
 
 - [构建数据可视化效果的五个最佳库](https://www.fastcompany.com/3029760/the-five-best-libraries-for-building-data-vizualizations)
 - [定量信息的视觉显示](https://www.edwardtufte.com/tufte/books_vdqi)

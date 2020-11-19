@@ -3,12 +3,12 @@ title: Office 加载项的隐私和安全
 description: 了解 Office 外接程序平台的隐私和安全方面。
 ms.date: 10/06/2020
 localization_priority: Normal
-ms.openlocfilehash: 58380145add425b90a2ab2c9011db3c7709973b6
-ms.sourcegitcommit: d7fd52260eb6971ab82009c835b5a752dc696af4
+ms.openlocfilehash: e7b301c6bbc28cdcb00d178d52b1c916a5e645a9
+ms.sourcegitcommit: ceb8dd66f3fb9c963fce8446c2f6c65ead56fbc1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/07/2020
-ms.locfileid: "48370519"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "49132170"
 ---
 # <a name="privacy-and-security-for-office-add-ins"></a>Office 加载项的隐私和安全
 
@@ -32,7 +32,7 @@ Office 外接程序受到外接程序运行时环境、多层权限模型和性�
 
 此外，还可以调控 Office 外接程序使用的内存、CPU 和网络资源，以确保维持良好的性能和可靠性。
 
-以下各节简要介绍运行时体系结构如何支持在基于 Windows 的设备上的 Office 客户端、OS X Mac 设备以及 Web 浏览器中运行加载项。
+以下各节简要介绍运行时体系结构如何支持在基于 Windows 的设备上的 Office 客户端、Mac OS X 设备和 web 浏览器中运行外接程序。
 
 ### <a name="clients-on-windows-and-os-x-devices"></a>Windows 和 OS X 设备上的客户端
 
@@ -42,24 +42,23 @@ Office 外接程序受到外接程序运行时环境、多层权限模型和性�
 
 *图 1.基于 Windows 的台式机和平板电脑客户端中的 Office 外接程序运行时环境*
 
-![富客户端基础结构](../images/dk2-agave-overview-02.png)
+![显示富客户端基础结构的关系图](../images/dk2-agave-overview-02.png)
 
-如下图所示，在 OS X Mac 台式机上，加载项网页托管在沙盒 WebKit 运行时主机进程内部，这有助于提供类似级别的安全和性能保护。
+如下图所示，在 Mac OS X 桌面上，外接程序网页托管在沙盒 WebKit 运行时主机进程中，这有助于提供类似级别的安全和性能保护。
 
-*图 2：OS X Mac 客户端中的 Office 加载项运行时环境*
+*图2。Mac OS X 客户端中的 Office 外接程序运行时环境*
 
-![OS X Mac 上的 Office 相关应用程序运行时环境](../images/dk2-agave-overview-mac-02.png)
+![显示 Mac OS X 上的 Office 运行时环境应用程序的图表](../images/dk2-agave-overview-mac-02.png)
 
 Office 外接程序运行时管理进程间通信、JavaScript API 调用和事件到本机调用和事件的转换以及 UI 远程处理支持，从而使加载项能够呈现在文档内、任务窗格中或电子邮件、会议请求或约会旁边。
 
 ### <a name="web-clients"></a>Web 客户端
 
-在受支持的 Web 客户端中，Office 外接程序承载在使用 HTML5**沙盒**属性运行的**iframe**中。 不允许使用 ActiveX 组件或导航 Web 客户端主页。 通过集成适用于 Office 的 JavaScript API 在 Web 客户端中实现 Office 外接程序支持。 同理，对于桌面客户端应用程序，JavaScript API 管理加载项生命周期和加载项与 Web 客户端间的互操作性。 这种互操作性通过特殊的跨框架发布消息通信基础结构实现。 桌面客户端上使用的同一 JavaScript 库 (Office.js) 可用来与 Web 客户端交互。 下图显示了支持在浏览器中运行的 Office 中的外接程序的基础结构，以及相关组件 (web 客户端、 **iframe**、Office 外接程序运行时以及支持它们所需的适用于 office) 的 JavaScript API。
-
+在受支持的 web 客户端中，Office 外接程序承载在使用 HTML5 **沙盒** 属性运行的 **iframe** 中。 不允许使用 ActiveX 组件或导航 Web 客户端主页。 通过集成适用于 Office 的 JavaScript API 在 Web 客户端中实现 Office 外接程序支持。 同理，对于桌面客户端应用程序，JavaScript API 管理加载项生命周期和加载项与 Web 客户端间的互操作性。 这种互操作性通过特殊的跨框架发布消息通信基础结构实现。 桌面客户端上使用的同一 JavaScript 库 (Office.js) 可用来与 Web 客户端交互。 下图显示了支持在浏览器中运行的 Office 中的外接程序的基础结构，以及相关组件 (web 客户端、 **iframe**、Office 外接程序运行时以及支持它们所需的适用于 office) 的 JavaScript API。
 
 *图 3：支持 Office Web 客户端中 Office 加载项的基础结构*
 
-![Web 客户端基础结构](../images/dk2-agave-overview-03.png)
+![显示 web 客户端基础结构的图表](../images/dk2-agave-overview-03.png)
 
 ## <a name="add-in-integrity-in-appsource"></a>AppSource 中的加载项完整性
 
@@ -95,7 +94,7 @@ Office 加载项是使用浏览器控件或 **iframe** 中运行的 Web 技术�
 
 - 在共享一个文档时，用户也会共享已插入该文档或与该文档关联的加载项。 如果用户打开的文档中包含用户以前尚未使用的外接程序，则 Office 客户端应用程序将提示用户授予在文档中运行外接程序的权限。 在组织环境中，Office 客户端应用程序还会在文档来自外部源时提示用户。
 
-- 用户可启用或禁用对 AppSource 的访问。 对于内容和任务窗格外接程序，用户可以管理从主机 Office 客户端上的**信任中心**访问受信任的加载项和目录 (从**文件**  >  **选项**"  >  **信任中心**  >  **信任中心" 设置**  >  **受信任的外接程序目录**) 。 对于 Outlook 外接程序，使用可以通过选择 "**管理外接程序**" 按钮来管理外接程序：在 Windows 中的 outlook 中，选择 "**文件**  >  **管理外接程序**"。在 Mac 上的 Outlook 中，选择外接程序栏上的 "**管理外接程序**" 按钮。 在 Outlook 网页版中，依次选择“**设置**”菜单（齿轮图标）>“**管理加载项**”。管理员还可以[通过使用组策略](/previous-versions/office/office-2013-resource-kit/jj219429(v=office.15)#using-group-policy-to-manage-how-users-can-install-and-use-apps-for-office)来管理此访问。
+- 用户可启用或禁用对 AppSource 的访问。 对于内容和任务窗格外接程序，用户可以管理从主机 Office 客户端上的 **信任中心** 访问受信任的加载项和目录 (从 **文件**  >  **选项**"  >  **信任中心**  >  **信任中心" 设置**  >  **受信任的外接程序目录**) 。 对于 Outlook 外接程序，使用可以通过选择 "**管理外接程序**" 按钮来管理外接程序：在 Windows 中的 outlook 中，选择 "**文件**  >  **管理外接程序**"。在 Mac 上的 Outlook 中，选择外接程序栏上的 "**管理外接程序**" 按钮。 在 Outlook 网页版中，依次选择“**设置**”菜单（齿轮图标）>“**管理加载项**”。管理员还可以 [通过使用组策略](/previous-versions/office/office-2013-resource-kit/jj219429(v=office.15)#using-group-policy-to-manage-how-users-can-install-and-use-apps-for-office)来管理此访问。
 
 - 外接程序平台的设计通过以下方式为最终用户提供安全性和性能。
 
@@ -156,7 +155,7 @@ Outlook 外接程序通过特定的资源使用率监视提供额外安全和性
 
 由于 Office 外接程序是在 web 浏览器控件中运行的网页，因此它们必须遵循浏览器强制实施的相同源策略。 默认情况下，一个域中的网页不能向承载它的另一个域发出 [XmlHttpRequest](https://www.w3.org/TR/XMLHttpRequest/) web 服务调用。
 
-解决此限制的一种方法是使用 JSON/P--通过包含包含**src**属性的**脚本**标记（指向其他域中承载的某个脚本）来提供 web 服务的代理。 你可以编程方式创建 **script** 标记，动态创建 **src** 属性所指向的 URL，并通过 URI 查询参数将参数传递到 URL。 Web 服务提供程序在特定的 URL 位置创建和托管 JavaScript 代码，并根据 URI 查询参数返回不同的脚本。 这些脚本然后在插入位置执行并按照预期的方式工作。
+解决此限制的一种方法是使用 JSON/P--通过包含包含 **src** 属性的 **脚本** 标记（指向其他域中承载的某个脚本）来提供 web 服务的代理。 你可以编程方式创建 **script** 标记，动态创建 **src** 属性所指向的 URL，并通过 URI 查询参数将参数传递到 URL。 Web 服务提供程序在特定的 URL 位置创建和托管 JavaScript 代码，并根据 URI 查询参数返回不同的脚本。 这些脚本然后在插入位置执行并按照预期的方式工作。
 
 以下是 Outlook 外接程序示例中的 JSON/P 的示例。 
 
@@ -180,16 +179,15 @@ Exchange 和 SharePoint 提供了客户端代理以实现跨域访问。通常�
 
 恶意用户可能会通过文档或加载项中的字段输入恶意脚本，以此来攻击加载项源。 开发人员应处理用户输入以避免在其域中执行恶意用户的 JavaScript。 以下是处理文档或邮件中的用户输入或通过外接程序中的字段执行的一些有用的做法。
 
-
 - 根据需要使用 [innerText](https://developer.mozilla.org/docs/Web/API/Element/innerHTML) 和 [textContent](https://developer.mozilla.org/docs/Web/API/Node/innerText) 属性，而非 DOM 属性 [innerHTML](https://developer.mozilla.org/docs/DOM/Node.textContent)。 对于 Internet Explorer 和 Firefox 跨浏览器支持，请执行以下操作。
 
     ```js
      var text = x.innerText || x.textContent
     ```
 
-    有关 **innerText** 和 **textContent**之间的差异的信息，请参阅 [textContent](https://developer.mozilla.org/docs/DOM/Node.textContent)。 有关常见浏览器间 DOM 兼容性的详细信息，请参阅 [W3C DOM 兼容性 - HTML](https://www.quirksmode.org/dom/w3c_html.html#t07)。
+    有关 **innerText** 和 **textContent** 之间的差异的信息，请参阅 [textContent](https://developer.mozilla.org/docs/DOM/Node.textContent)。 有关常见浏览器间 DOM 兼容性的详细信息，请参阅 [W3C DOM 兼容性 - HTML](https://www.quirksmode.org/dom/w3c_html.html#t07)。
 
-- 如果必须使用 **innerHTML**，则在将用户的输入传递到 **innerHTML**之前，请确保该用户的输入不包含恶意内容。 有关如何安全使用 **innerHTML** 的详细信息和示例，请参阅 [innerHTML](https://developer.mozilla.org/docs/Web/API/Element/innerHTML) 属性。
+- 如果必须使用 **innerHTML**，则在将用户的输入传递到 **innerHTML** 之前，请确保该用户的输入不包含恶意内容。 有关如何安全使用 **innerHTML** 的详细信息和示例，请参阅 [innerHTML](https://developer.mozilla.org/docs/Web/API/Element/innerHTML) 属性。
 
 - 如果要使用 jQuery，请使用 [.text()](https://api.jquery.com/text/) 方法，而非 [.html()](https://api.jquery.com/html/) 方法。
 
@@ -227,11 +225,11 @@ Exchange 和 SharePoint 提供了客户端代理以实现跨域访问。通常�
 
 - 内容和任务窗格加载项使用浏览器默认使用的相同 SSL 设置，并允许大部分内容仅通过 SSL 传送。Outlook 加载项要求所有内容都通过 SSL 传送。开发人员必须在加载项清单的 **SourceLocation** 元素中指定使用 HTTPS 的 URL，以标识加载项的 HTML 文件位置。
 
-    若要确保外接程序无法使用 HTTP 传递内容，在测试外接程序时，开发人员应确保在 **"控制面板**" 中的 " **Internet 选项**" 中选择了以下设置，并且测试方案中不会显示任何安全警告。
+  若要确保外接程序无法使用 HTTP 传递内容，在测试外接程序时，开发人员应确保在 **"控制面板**" 中的 " **Internet 选项**" 中选择了以下设置，并且测试方案中不会显示任何安全警告。
 
-    - 确保针对“Internet”**** 区域的安全设置“显示混合内容”**** 设置为“提示”****。 若要执行此操作，请在 " **Internet 选项**" 中选择以下选项：在 " **安全** " 选项卡上，选择 " **internet** 区域"，选择 " **自定义级别**"，滚动查找 " **显示混合内容**"，然后选择 " **提示** " （如果尚未选中）。
+  - 确保针对“Internet”区域的安全设置“显示混合内容”设置为“提示”。 若要执行此操作，请在 " **Internet 选项**" 中选择以下选项：在 " **安全** " 选项卡上，选择 " **internet** 区域"，选择 " **自定义级别**"，滚动查找 " **显示混合内容**"，然后选择 " **提示** " （如果尚未选中）。
 
-    - 确保在“Internet 选项”**** 对话框的“高级”**** 选项卡中，选中了“在安全和非安全模式之间转换时发出警告”****。
+  - 确保在“Internet 选项”对话框的“高级”选项卡中，选中了“在安全和非安全模式之间转换时发出警告”。
 
 - 为了确保加载项不使用过多的 CPU 内核或内存资源且不导致客户端计算机上出现任何拒绝服务的情况，加载项平台建立了资源使用率限制。作为测试的一部分，开发人员应验证加载项平台是否遵循了资源使用率限制。
 

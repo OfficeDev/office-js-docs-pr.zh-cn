@@ -3,18 +3,18 @@ title: 在 Office 加载项中使用 Office UI Fabric React
 description: 了解如何在 Office 加载项中使用 Office UI Fabric React。
 ms.date: 09/09/2020
 localization_priority: Normal
-ms.openlocfilehash: 1d1e89d51c4e5efa0ead1b1716e0f1014a63e85f
-ms.sourcegitcommit: 83f9a2fdff81ca421cd23feea103b9b60895cab4
+ms.openlocfilehash: c1671fdd2ea616398f9c57f76898a6cc96daf502
+ms.sourcegitcommit: ceb8dd66f3fb9c963fce8446c2f6c65ead56fbc1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/11/2020
-ms.locfileid: "47430581"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "49131981"
 ---
 # <a name="use-office-ui-fabric-react-in-office-add-ins"></a>在 Office 加载项中使用 Office UI Fabric React
 
 Office UI Fabric 是用于生成 Office 和 Office 365 用户体验的 JavaScript 前端框架。如果使用 React 生成外接程序，请考虑使用 Fabric React 来创建用户体验。Fabric 提供了多个可在外接程序中使用的基于 React 的 UX 组件，如按钮或复选框。
 
-本文介绍如何创建使用 React 构建的加载项, 并使用 Fabric React 组件。 
+本文介绍如何创建使用 React 构建的加载项, 并使用 Fabric React 组件。
 
 > [!NOTE]
 > [Fabric Core](office-ui-fabric.md#use-fabric-core-icons-fonts-colors)是 Fabric React 附带的，这意味着在完成本文中的步骤后，你的加载项也有权访问 Fabric Core。
@@ -36,7 +36,7 @@ Office UI Fabric 是用于生成 Office 和 Office 365 用户体验的 JavaScrip
 - **要如何命名加载项?** `My Office Add-in`
 - **要支持哪一个 Office 客户端应用程序?** `Word`
 
-![Yeoman 生成器](../images/yo-office-word-react.png)
+![在命令行界面中显示 Yeoman 生成器的提示和答案的屏幕截图](../images/yo-office-word-react.png)
 
 完成此向导后，生成器会创建项目，并安装支持的 Node 组件。
 
@@ -53,7 +53,7 @@ Office UI Fabric 是用于生成 Office 和 Office 365 用户体验的 JavaScrip
 2. 完成以下步骤，以启动本地 Web 服务器并旁加载你的加载项。
 
     > [!NOTE]
-    > Office 加载项应使用 HTTPS，而不是 HTTP（即便是在开发时也是如此）。 如果系统在运行以下命令之一后提示你安装证书，请接受提示以安装 Yeoman 生成器提供的证书。 您可能还需要以管理员身份运行命令提示符或终端以进行所做的更改。
+    > Office 加载项应使用 HTTPS，而不是 HTTP（即便是在开发时也是如此）。 如果系统在运行以下命令之一后提示你安装证书，请接受提示以安装 Yeoman 生成器提供的证书。 你可能还必须以管理员身份运行命令提示符或终端才能进行更改。
 
     > [!TIP]
     > 如果在 Mac 上测试加载项，请先运行以下命令，然后再继续。 运行此命令时，本地 Web 服务器将启动。
@@ -78,14 +78,13 @@ Office UI Fabric 是用于生成 Office 和 Office 365 用户体验的 JavaScrip
 
 3. 在 Word 中，依次选择“**开始**”选项卡和功能区中的“**显示任务窗格**”按钮，以打开加载项任务窗格。 请注意任务窗格底部的“默认文本”和 "**运行**" 按钮。 在本演练的其余部分中, 你将通过创建使用来自 Fabric React 的 UX 组件的 React 组件来重新定义此文本和按钮。
 
-    ![Word 应用程序的屏幕截图，任务窗格中突出显示了 "显示任务窗格" 功能区按钮以及“运行……”按钮和前面的文本](../images/word-task-pane-yo-default.png)
-
+    ![显示 Word 应用程序的屏幕截图，其中突出显示了 "显示任务窗格" 功能区按钮，在任务窗格中突出显示了 "运行" 按钮和紧邻文本](../images/word-task-pane-yo-default.png)
 
 ## <a name="create-a-react-component-that-uses-fabric-react"></a>创建使用 Fabric React 的 React 组件
 
 此时, 你已经创建了一个使用 React 构建的非常基本的任务窗格加载项。 接下来，完成以下步骤，在加载项项目中创建新的 React 组件 (`ButtonPrimaryExample`)。 该组件使用 Fabric React 的`Label`和`PrimaryButton`组件。
 
-1. 打开 Yeoman 生成器创建的项目文件夹，并转到**src\taskpane\components**。
+1. 打开 Yeoman 生成器创建的项目文件夹，并转到 **src\taskpane\components**。
 2. 在该文件夹中，创建一个名为“**Button.tsx**”的新文件。
 3. 在 **Button.tsx** 中，输入以下代码以定义`ButtonPrimaryExample`组件。
 
@@ -136,7 +135,7 @@ export class ButtonPrimaryExample extends React.Component<IButtonProps, {}> {
 
 通过打开 **src\components\App.tsx** 并完成下列步骤，将组件 `ButtonPrimaryExample` 添加到加载项：
 
-1. 添加下面导入语句，以`ButtonPrimaryExample`从**Button.tsx**中引用。
+1. 添加下面导入语句，以`ButtonPrimaryExample`从 **Button.tsx** 中引用。
 
     ```typescript
     import {ButtonPrimaryExample} from './Button';
@@ -165,15 +164,15 @@ export class ButtonPrimaryExample extends React.Component<IButtonProps, {}> {
     }
     ```
 
-  4. 将所做的更改保存到**App.tsx**。
+4. 将所做的更改保存到 **App.tsx**。
 
 ## <a name="see-the-result"></a>查看结果
 
-在 Word 中, 当你保存对**App.tsx**的更改时，加载项任务窗格会自动更新。 任务窗格底部的默认文本和按钮现在显示由该`ButtonPrimaryExample`组件定义的 UI。 选择**插入文本……** 按钮将文本插入到文档中。
+在 Word 中, 当你保存对 **App.tsx** 的更改时，加载项任务窗格会自动更新。 任务窗格底部的默认文本和按钮现在显示由该`ButtonPrimaryExample`组件定义的 UI。 选择 **插入文本……** 按钮将文本插入到文档中。
 
-![Word 应用程序的屏幕截图，突出显示 "插入文本……" 按钮和前面的文本](../images/word-task-pane-with-react-component.png)
+![显示包含 "插入文本 ..." 的 Word 应用程序的屏幕截图按钮和紧接在文本前面突出显示](../images/word-task-pane-with-react-component.png)
 
-恭喜，您已使用 React 和 Office UI Fabric React 成功创建了任务窗格加载项！ 
+恭喜，您已使用 React 和 Office UI Fabric React 成功创建了任务窗格加载项！
 
 ## <a name="see-also"></a>另请参阅
 

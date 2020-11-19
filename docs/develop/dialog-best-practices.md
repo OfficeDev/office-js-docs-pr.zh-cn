@@ -3,12 +3,12 @@ title: Office 对话框 API 最佳做法和规则
 description: 提供 Office 对话框 API 的规则和最佳做法，如单页面应用程序 (SPA) 的最佳实践
 ms.date: 09/24/2020
 localization_priority: Normal
-ms.openlocfilehash: 5c80b18f7eb6448de23c692683b7c991b9d95ef5
-ms.sourcegitcommit: b47318a24a50443b0579e05e178b3bb5433c372f
+ms.openlocfilehash: ffd609175276dc648805469847288fd2ff4f825c
+ms.sourcegitcommit: ceb8dd66f3fb9c963fce8446c2f6c65ead56fbc1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "48279507"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "49131785"
 ---
 # <a name="best-practices-and-rules-for-the-office-dialog-api"></a>Office 对话框 API 最佳做法和规则
 
@@ -43,7 +43,7 @@ ms.locfileid: "48279507"
 
 在使用 web 上的 Office 时尝试显示对话框可能会导致浏览器的弹出窗口阻止器阻止对话框。 网站上的 Office 具有一项功能，可使您的外接程序的对话框成为浏览器的弹出窗口阻止程序的例外。 当代码调用方法时 `displayDialogAsync` ，网站上的 Office 将打开一个类似于以下的提示。
 
-![外接程序可以生成的提示，以避免在浏览器中弹出窗口阻止程序。](../images/dialog-prompt-before-open.png)
+![屏幕截图显示了加载项可以生成以避免在浏览器弹出窗口阻止程序中的简短说明和 "允许" 和 "忽略" 按钮的提示](../images/dialog-prompt-before-open.png)
 
 如果用户选择 " **允许**"，则会打开 "Office" 对话框。 如果用户选择 " **忽略**"，则会关闭提示，并且 Office 对话框不会打开。 相反，该 `displayDialogAsync` 方法将返回错误12009。 您的代码应捕获此错误，并提供不需要对话框的备用体验，或向用户显示一条消息，提示外接程序要求其允许对话框。  (有关12009的详细信息，请参阅 [displayDialogAsync 中的错误](dialog-handle-errors-events.md#errors-from-displaydialogasync)。 ) 
 
