@@ -4,23 +4,24 @@ description: 本教程将介绍如何生成 Word 加载项，用于插入（和�
 ms.date: 10/14/2020
 ms.prod: word
 localization_priority: Priority
-ms.openlocfilehash: f7397ef74890fb1a2ab89a044e919c863655999f
-ms.sourcegitcommit: 42e6cfe51d99d4f3f05a3245829d764b28c46bbb
+ms.openlocfilehash: 3f76ca75e07a5d071d1824b1ea96542f1014c9d1
+ms.sourcegitcommit: ceb8dd66f3fb9c963fce8446c2f6c65ead56fbc1
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "48741132"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "49131828"
 ---
 # <a name="tutorial-create-a-word-task-pane-add-in"></a>教程：创建 Word 任务窗格加载项
 
 在本教程中，将创建 Word 任务窗格加载项，该加载项将：
 
 > [!div class="checklist"]
-> * 插入文本区域
-> * 设置文本格式
-> * 替换文本并在各个位置插入文本
-> * 插入图像、HTML 和表格
-> * 创建和更新内容控件 
+>
+> - 插入文本区域
+> - 设置文本格式
+> - 替换文本并在各个位置插入文本
+> - 插入图像、HTML 和表格
+> - 创建和更新内容控件
 
 > [!TIP]
 > 如果已完成了[创建首个 Word 任务窗格加载项](../quickstarts/word-quickstart.md)快速入门，并希望使用该项目作为本教程的起点，请直接转到[插入文本区域](#insert-a-range-of-text)以开始此教程。
@@ -38,7 +39,7 @@ ms.locfileid: "48741132"
 - **要如何命名加载项?** `My Office Add-in`
 - **要支持哪一个 Office 客户端应用程序?** `Word`
 
-![有关 Yeoman 生成器提示和回答的屏幕截图](../images/yo-office-word.png)
+![显示命令行界面中 Yeoman 生成器的提示和回答的屏幕截图](../images/yo-office-word.png)
 
 完成此向导后，生成器会创建项目，并安装支持的 Node 组件。
 
@@ -52,7 +53,7 @@ ms.locfileid: "48741132"
 
 1. 在代码编辑器中打开项目。
 
-2. 打开 ./src/taskpane/taskpane.html**** 文件。 此文件含有任务窗格的 HTML 标记。
+2. 打开 ./src/taskpane/taskpane.html 文件。 此文件含有任务窗格的 HTML 标记。
 
 3. 找到 `<main>` 元素并删除在开始 `<main>` 标记后和关闭 `</main>` 标记前出现的所有行。
 
@@ -91,7 +92,7 @@ ms.locfileid: "48741132"
 
    - `context.sync` 方法将所有已排入队列的命令都发送到 Word 以供执行。
 
-   - `Word.run` 后跟 `catch` 块。 这是应始终遵循的最佳做法。 
+   - `Word.run` 后跟 `catch` 块。 这是应始终遵循的最佳做法。
 
     ```js
     function insertParagraph() {
@@ -152,17 +153,17 @@ ms.locfileid: "48741132"
 
         若要使用加载项，请在 Word 网页版中打开新的文档，并按照[在 Office 网页版中旁加载 Office 加载项](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-in-office-on-the-web)中的说明操作，以旁加载你的加载项。
 
-2. 在 Word 中，依次选择“开始”**** 选项卡和功能区中的“显示任务窗格”**** 按钮，以打开加载项任务窗格。
+2. 在 Word 中，依次选择“**开始**”选项卡和功能区中的“**显示任务窗格**”按钮，以打开加载项任务窗格。
 
-    ![突出显示了“显示任务窗格”按钮的 Word 应用程序屏幕截图](../images/word-quickstart-addin-2b.png)
+    ![显示 Word 中突出显示的“显示任务窗格”按钮的屏幕截图](../images/word-quickstart-addin-2b.png)
 
-3. 在任务窗格中，选择“插入段落”**** 按钮。
+3. 在任务窗格中，选择“**插入段落**”按钮。
 
 4. 在段落中进行一些更改。
 
-5. 再次选择“插入段落”**** 按钮。 观察新段落是否位于上一段落之上，因为 `insertParagraph` 方法要在文档正文的“开头”插入内容。
+5. 再次选择“插入段落”按钮。 观察新段落是否位于上一段落之上，因为 `insertParagraph` 方法要在文档正文的“开头”插入内容。
 
-    ![Word 教程 - 插入段落](../images/word-tutorial-insert-paragraph-2.png)
+    ![显示外接程序中“插入段落”按钮的屏幕截图](../images/word-tutorial-insert-paragraph-2.png)
 
 ## <a name="format-text"></a>设置文本格式
 
@@ -170,7 +171,7 @@ ms.locfileid: "48741132"
 
 ### <a name="apply-a-built-in-style-to-text"></a>向文本应用嵌入样式
 
-1. 打开 ./src/taskpane/taskpane.html**** 文件。
+1. 打开 ./src/taskpane/taskpane.html 文件。
 
 2. 找到 `<button>` 按钮的 `insert-paragraph` 元素，并在该行后添加下列标记：
 
@@ -178,7 +179,7 @@ ms.locfileid: "48741132"
     <button class="ms-Button" id="apply-style">Apply Style</button><br/><br/>
     ```
 
-3. 打开 ./src/taskpane/taskpane.js**** 文件。
+3. 打开 ./src/taskpane/taskpane.js 文件。
 
 4. 在 `Office.onReady` 方法调用中，找到用于将单击处理程序分配到 `insert-paragraph` 按钮的行，并在该行后添加以下代码：
 
@@ -191,7 +192,7 @@ ms.locfileid: "48741132"
     ```js
     function applyStyle() {
         Word.run(function (context) {
-            
+
             // TODO1: Queue commands to style text.
 
             return context.sync();
@@ -203,26 +204,26 @@ ms.locfileid: "48741132"
             }
         });
     }
-    ``` 
+    ```
 
 6. 在 `applyStyle()` 函数中，将 `TODO1` 替换为以下代码。 请注意，此代码向段落应用样式，但也可以向文本区域应用样式。
 
     ```js
     var firstParagraph = context.document.body.paragraphs.getFirst();
     firstParagraph.styleBuiltIn = Word.Style.intenseReference;
-    ``` 
+    ```
 
 ### <a name="apply-a-custom-style-to-text"></a>向文本应用自定义样式
 
-1. 打开 ./src/taskpane/taskpane.html**** 文件。
+1. 打开 ./src/taskpane/taskpane.html 文件。
 
-2. 找到 `<button>` 按钮的 `apply-style` 元素，并在该行后添加下列标记： 
+2. 找到 `<button>` 按钮的 `apply-style` 元素，并在该行后添加下列标记：
 
     ```html
     <button class="ms-Button" id="apply-custom-style">Apply Custom Style</button><br/><br/>
     ```
 
-3. 打开 ./src/taskpane/taskpane.js**** 文件。
+3. 打开 ./src/taskpane/taskpane.js 文件。
 
 4. 在 `Office.onReady` 方法调用中，找到用于将单击处理程序分配到 `apply-style` 按钮的行，并在该行后添加以下代码：
 
@@ -235,7 +236,7 @@ ms.locfileid: "48741132"
     ```js
     function applyCustomStyle() {
         Word.run(function (context) {
-            
+
             // TODO1: Queue commands to apply the custom style.
 
             return context.sync();
@@ -247,28 +248,28 @@ ms.locfileid: "48741132"
             }
         });
     }
-    ``` 
+    ```
 
-6. 在 `applyCustomStyle()` 函数中，将 `TODO1` 替换为以下代码。 请注意，此代码应用的自定义样式尚不存在。 将在[测试加载项](#test-the-add-in-1)步骤中创建 **MyCustomStyle** 样式。
+6. 在 `applyCustomStyle()` 函数中，将 `TODO1` 替换为以下代码。 请注意，此代码应用的自定义样式尚不存在。 将在 [测试加载项](#test-the-add-in-1)步骤中创建 **MyCustomStyle** 样式。
 
     ```js
     var lastParagraph = context.document.body.paragraphs.getLast();
     lastParagraph.style = "MyCustomStyle";
-    ``` 
+    ```
 
 7. 验证是否已保存了对项目所做的所有更改。
 
 ### <a name="change-the-font-of-text"></a>更改文本字体
 
-1. 打开 ./src/taskpane/taskpane.html**** 文件。
+1. 打开 ./src/taskpane/taskpane.html 文件。
 
-2. 找到 `<button>` 按钮的 `apply-custom-style` 元素，并在该行后添加下列标记： 
+2. 找到 `<button>` 按钮的 `apply-custom-style` 元素，并在该行后添加下列标记：
 
     ```html
     <button class="ms-Button" id="change-font">Change Font</button><br/><br/>
     ```
 
-3. 打开 ./src/taskpane/taskpane.js**** 文件。
+3. 打开 ./src/taskpane/taskpane.js 文件。
 
 4. 在 `Office.onReady` 方法调用中，找到用于将单击处理程序分配到 `apply-custom-style` 按钮的行，并在该行后添加以下代码：
 
@@ -281,7 +282,7 @@ ms.locfileid: "48741132"
     ```js
     function changeFont() {
         Word.run(function (context) {
-            
+
             // TODO1: Queue commands to apply a different font.
 
             return context.sync();
@@ -293,7 +294,7 @@ ms.locfileid: "48741132"
             }
         });
     }
-    ``` 
+    ```
 
 6. 在 `changeFont()` 函数中，将 `TODO1` 替换为以下代码。 请注意，此代码使用链接到 `Paragraph.getNext` 方法的 `ParagraphCollection.getFirst` 方法，获取对第二个段落的引用。
 
@@ -304,7 +305,7 @@ ms.locfileid: "48741132"
             bold: true,
             size: 18
         });
-    ``` 
+    ```
 
 7. 验证是否已保存了对项目所做的所有更改。
 
@@ -312,9 +313,9 @@ ms.locfileid: "48741132"
 
 1. [!include[Start server and sideload add-in instructions](../includes/tutorial-word-start-server.md)]
 
-2. 如果加载项任务窗格已在 Word 中打开，请转到“开始”**** 选项卡并选择功能区中的“显示任务窗格”**** 按钮以打开它。
+2. 如果加载项任务窗格已在 Word 中打开，请转到“开始”选项卡并选择功能区中的“显示任务窗格”按钮以打开它。
 
-3. 请确保文档中至少有三个段落。 可以选择“插入段落”**** 按钮三次。 仔细检查文档末尾是否没有空白段落。若有，请删除它。**
+3. 请确保文档中至少有三个段落。 可以选择“插入段落”按钮三次。 仔细检查文档末尾是否没有空白段落。若有，请删除它。
 
 4. 在 Word 中，创建[自定义样式](https://support.office.com/article/customize-or-create-new-styles-d38d6e47-f6fc-48eb-a607-1eb120dec563)“MyCustomStyle”。 其中可以包含所需的任何格式。
 
@@ -324,7 +325,7 @@ ms.locfileid: "48741132"
 
 7. 选择 **“更改字体”** 按钮。 第二个段落的字体更改为 18 磅的粗体 Courier New。
 
-    ![Word 教程 - 应用样式和字体](../images/word-tutorial-apply-styles-and-font-2.png)
+    ![显示为加载项按钮“应用样式”、“应用自定义样式”和“更改字体”应用了定义的样式和字体的结果屏幕截图](../images/word-tutorial-apply-styles-and-font-2.png)
 
 ## <a name="replace-text-and-insert-text"></a>替换文本和插入文本
 
@@ -332,21 +333,22 @@ ms.locfileid: "48741132"
 
 ### <a name="add-text-inside-a-range"></a>在区域内添加文本
 
-1. 打开 ./src/taskpane/taskpane.html**** 文件。
+1. 打开 ./src/taskpane/taskpane.html 文件。
 
-2. 找到 `<button>` 按钮的 `change-font` 元素，并在该行后添加下列标记： 
+2. 找到 `<button>` 按钮的 `change-font` 元素，并在该行后添加下列标记：
 
     ```html
     <button class="ms-Button" id="insert-text-into-range">Insert Abbreviation</button><br/><br/>
     ```
 
-3. 打开 ./src/taskpane/taskpane.js**** 文件。
+3. 打开 ./src/taskpane/taskpane.js 文件。
 
 4. 在 `Office.onReady` 方法调用中，找到用于将单击处理程序分配到 `change-font` 按钮的行，并在该行后添加以下代码：
 
     ```js
     document.getElementById("insert-text-into-range").onclick = insertTextIntoRange;
     ```
+
 5. 将以下函数添加到文件末端：
 
     ```js
@@ -370,7 +372,7 @@ ms.locfileid: "48741132"
             }
         });
     }
-    ``` 
+    ```
 
 6. 在 `insertTextIntoRange()` 函数中，将 `TODO1` 替换为以下代码。 注意：
 
@@ -378,7 +380,7 @@ ms.locfileid: "48741132"
 
    - `Range.insertText` 方法的第一个参数是要插入到 `Range` 对象的字符串。
 
-   - 第二个参数指定了应在区域中的什么位置插入其他文本。 除了“End”外，其他可用选项包括“Start”、“Before”、“After”和“Replace”。 
+   - 第二个参数指定了应在区域中的什么位置插入其他文本。 除了“End”外，其他可用选项包括“Start”、“Before”、“After”和“Replace”。
 
    - “End”和“After”的区别在于，“End”在现有区域末尾插入新文本，而“After”则是新建包含字符串的区域，并在现有区域后面插入新区域。 同样，“Start”是在现有区域的开头位置插入文本，而“Before”插入的是新区域。 “Replace”将现有区域文本替换为第一个参数中的字符串。
 
@@ -398,7 +400,7 @@ ms.locfileid: "48741132"
 
 ### <a name="add-code-to-fetch-document-properties-into-the-task-panes-script-objects"></a>添加代码以将文档属性提取到任务窗格的脚本对象
 
-在本系列教程前面的所有函数中，都是将命令排入队列，以对 Office 文档执行写入** 操作。 每个函数结束时都会调用 `context.sync()` 方法，从而将排入队列的命令发送到文档，以供执行。 不过，在上一步中添加的代码调用的是 `originalRange.text` 属性，这与之前编写的函数明显不同，因为 `originalRange` 对象只是任务窗格脚本中的代理对象。 由于它并不了解文档中区域的实际文本，因此它的 `text` 属性无法有实值。 有必要先从文档中提取区域的文本值，再用它设置 `originalRange.text` 的值。 只有这样才能调用 `originalRange.text`，而又不会导致异常抛出。 此提取过程分为三步：
+在本系列教程前面的所有函数中，都是将命令排入队列，以对 Office 文档执行写入操作。 每个函数结束时都会调用 `context.sync()` 方法，从而将排入队列的命令发送到文档，以供执行。 不过，在上一步中添加的代码调用的是 `originalRange.text` 属性，这与之前编写的函数明显不同，因为 `originalRange` 对象只是任务窗格脚本中的代理对象。 由于它并不了解文档中区域的实际文本，因此它的 `text` 属性无法有实值。 有必要先从文档中提取区域的文本值，再用它设置 `originalRange.text` 的值。 只有这样才能调用 `originalRange.text`，而又不会导致异常抛出。 此提取过程分为三步：
 
    1. 将命令排入队列，以加载（即提取）代码需要读取的属性。
 
@@ -406,7 +408,7 @@ ms.locfileid: "48741132"
 
    3. 由于 `sync` 是异步方法，因此请先确保它已完成，然后代码才能调用已提取的属性。
 
-只要代码需要从 Office 文档*读取*信息，就必须完成这些步骤。
+只要代码需要从 Office 文档 *读取* 信息，就必须完成这些步骤。
 
 1. 在 `insertTextIntoRange()` 函数中，将 `TODO2` 替换为以下代码。
   
@@ -463,15 +465,15 @@ function insertTextIntoRange() {
 
 ### <a name="add-text-between-ranges"></a>在区域间添加文本
 
-1. 打开 ./src/taskpane/taskpane.html**** 文件。
+1. 打开 ./src/taskpane/taskpane.html 文件。
 
-2. 找到 `<button>` 按钮的 `insert-text-into-range` 元素，并在该行后添加下列标记： 
+2. 找到 `<button>` 按钮的 `insert-text-into-range` 元素，并在该行后添加下列标记：
 
     ```html
     <button class="ms-Button" id="insert-text-outside-range">Add Version Info</button><br/><br/>
     ```
 
-3. 打开 ./src/taskpane/taskpane.js**** 文件。
+3. 打开 ./src/taskpane/taskpane.js 文件。
 
 4. 在 `Office.onReady` 方法调用中，找到用于将单击处理程序分配到 `insert-text-into-range` 按钮的行，并在该行后添加以下代码：
 
@@ -529,7 +531,7 @@ function insertTextIntoRange() {
         //        been queued.
     ```
 
-8. 将 `TODO3` 替换为下面的代码。 这一新段落将说明，新文本**_不_*_ 属于原始选定区域。 原始区域中的文本仍与用户选择它时一样。
+8. 将 `TODO3` 替换为下面的代码。 这一新段落将说明，新文本**_不_* _ 属于原始选定区域。 原始区域中的文本仍与用户选择它时一样。
 
     ```js
     doc.body.insertParagraph("Current text of original range: " + originalRange.text, "End");
@@ -545,13 +547,13 @@ function insertTextIntoRange() {
 
 1. 打开文件 _*./src/taskpane/taskpane.html**。
 
-2. 定位 `<button>` 按钮的 `insert-text-outside-range` 元素，并在行后添加下列标记： 
+2. 定位 `<button>` 按钮的 `insert-text-outside-range` 元素，并在行后添加下列标记：
 
     ```html
     <button class="ms-Button" id="replace-text">Change Quantity Term</button><br/><br/>
     ```
 
-3. 打开 ./src/taskpane/taskpane.js**** 文件。
+3. 打开 ./src/taskpane/taskpane.js 文件。
 
 4. 在 `Office.onReady` 方法调用中，找到用于将单击处理程序分配到 `insert-text-outside-range` 按钮的行，并在该行后添加以下代码：
 
@@ -592,15 +594,15 @@ function insertTextIntoRange() {
 
 1. [!include[Start server and sideload add-in instructions](../includes/tutorial-word-start-server.md)]
 
-2. 如果加载项任务窗格已在 Word 中打开，请转到“开始”**** 选项卡并选择功能区中的“显示任务窗格”**** 按钮以打开它。
+2. 如果加载项任务窗格已在 Word 中打开，请转到“开始”选项卡并选择功能区中的“显示任务窗格”按钮以打开它。
 
-3. 在任务窗格中，选择“插入段落”**** 按钮，以确保文档开头有一个段落。
+3. 在任务窗格中，选择“插入段落”按钮，以确保文档开头有一个段落。
 
-4. 在文档中，选择短语“即点即用”。 请注意不要包含选定区域前的空格和其后的逗号。**
+4. 在文档中，选择短语“即点即用”。 请注意不要包含选定区域前的空格和其后的逗号。
 
 5. 选择 **“插入缩写”** 按钮。 观察“(C2R)”是否已添加。 此外，还请观察，文档底部是否添加了包含整个扩展文本的新段落，因为新字符串已添加到现有区域中。
 
-6. 在文档中，选择短语“Office 365”。 请注意不要包含选定区域前后的空格。**
+6. 在文档中，选择短语“Office 365”。 请注意不要包含选定区域前后的空格。
 
 7. 选择 **“添加版本信息”** 按钮。 观察是否已在“Office 2016”和“Office 365”之间插入“Office 2019”。 此外，还请观察，文档底部是否添加了仅包含最初选定文本的新段落，因为新字符串已变成新区域，而不是添加到原始区域中。
 
@@ -608,7 +610,7 @@ function insertTextIntoRange() {
 
 9. 选择 **“更改数量术语”** 按钮。 观察选定文本是否替换为“多个”。
 
-    ![Word 教程 - 添加和替换文本](../images/word-tutorial-text-replace-2.png)
+    ![屏幕截图显示选择外接程序按钮的结果“插入缩写”、“添加版本信息”和“更改数量术语”](../images/word-tutorial-text-replace-2.png)
 
 ## <a name="insert-images-html-and-tables"></a>插入图像、HTML 和表格
 
@@ -616,11 +618,11 @@ function insertTextIntoRange() {
 
 ### <a name="define-an-image"></a>定义图像
 
-完成以下步骤，定义要在本教程的下一部分插入到文档中的图像。 
+完成以下步骤，定义要在本教程的下一部分插入到文档中的图像。
 
-1. 在项目的根目录中，创建一个名为 base64Image.js**** 的新文件。
+1. 在项目的根目录中，创建一个名为 base64Image.js 的新文件。
 
-2. 打开文件 base64Image.js**** 并添加以下代码，以指定表示图像的 base64 编码字符串。
+2. 打开文件 base64Image.js 并添加以下代码，以指定表示图像的 base64 编码字符串。
 
     ```js
     export const base64Image =
@@ -629,17 +631,17 @@ function insertTextIntoRange() {
 
 ### <a name="insert-an-image"></a>插入图像
 
-1. 打开 ./src/taskpane/taskpane.html**** 文件。
+1. 打开 ./src/taskpane/taskpane.html 文件。
 
-2. 找到 `<button>` 按钮的 `replace-text` 元素，并在该行后添加下列标记： 
+2. 找到 `<button>` 按钮的 `replace-text` 元素，并在该行后添加下列标记：
 
     ```html
     <button class="ms-Button" id="insert-image">Insert Image</button><br/><br/>
     ```
 
-3. 打开 ./src/taskpane/taskpane.js**** 文件。
+3. 打开 ./src/taskpane/taskpane.js 文件。
 
-4. 在文件顶部附近找到 `Office.onReady` 方法调用，然后在该行的前一行添加以下代码。 此代码将导入你先前在文件 /base64Image.js**** 中定义的变量。
+4. 在文件顶部附近找到 `Office.onReady` 方法调用，然后在该行的前一行添加以下代码。 此代码将导入你先前在文件 /base64Image.js 中定义的变量。
 
     ```js
     import { base64Image } from "../../base64Image";
@@ -678,21 +680,22 @@ function insertTextIntoRange() {
 
 ### <a name="insert-html"></a>插入 HTML
 
-1. 打开 ./src/taskpane/taskpane.html**** 文件。
+1. 打开 ./src/taskpane/taskpane.html 文件。
 
-2. 找到 `<button>` 按钮的 `insert-image` 元素，并在该行后添加下列标记： 
+2. 找到 `<button>` 按钮的 `insert-image` 元素，并在该行后添加下列标记：
 
     ```html
     <button class="ms-Button" id="insert-html">Insert HTML</button><br/><br/>
     ```
 
-3. 打开 ./src/taskpane/taskpane.js**** 文件。
+3. 打开 ./src/taskpane/taskpane.js 文件。
 
 4. 在 `Office.onReady` 方法调用中，找到用于将单击处理程序分配到 `insert-image` 按钮的行，并在该行后添加以下代码：
 
     ```js
     document.getElementById("insert-html").onclick = insertHTML;
     ```
+
 5. 将以下函数添加到文件末端：
 
     ```js
@@ -725,15 +728,15 @@ function insertTextIntoRange() {
 
 ### <a name="insert-a-table"></a>插入表格
 
-1. 打开 ./src/taskpane/taskpane.html**** 文件。
+1. 打开 ./src/taskpane/taskpane.html 文件。
 
-2. 找到 `<button>` 按钮的 `insert-html` 元素，并在该行后添加下列标记： 
+2. 找到 `<button>` 按钮的 `insert-html` 元素，并在该行后添加下列标记：
 
     ```html
     <button class="ms-Button" id="insert-table">Insert Table</button><br/><br/>
     ```
 
-3. 打开 ./src/taskpane/taskpane.js**** 文件。
+3. 打开 ./src/taskpane/taskpane.js 文件。
 
 4. 在 `Office.onReady` 方法调用中，找到用于将单击处理程序分配到 `insert-html` 按钮的行，并在该行后添加以下代码：
 
@@ -794,17 +797,17 @@ function insertTextIntoRange() {
 
 1. [!include[Start server and sideload add-in instructions](../includes/tutorial-word-start-server.md)]
 
-2. 如果加载项任务窗格已在 Word 中打开，请转到“开始”**** 选项卡并选择功能区中的“显示任务窗格”**** 按钮以打开它。
+2. 如果加载项任务窗格已在 Word 中打开，请转到“开始”选项卡并选择功能区中的“显示任务窗格”按钮以打开它。
 
-3. 在任务窗格中，至少选择“插入段落”**** 按钮三次，以确保文档中有多个段落。
+3. 在任务窗格中，至少选择“插入段落”按钮三次，以确保文档中有多个段落。
 
-4. 选择“插入图像”**** 按钮，观察图像是否插入在文档末尾。
+4. 选择“插入图像”按钮，观察图像是否插入在文档末尾。
 
-5. 选择“插入 HTML”**** 按钮，观察是否在文档末尾插入了两个段落，第一个段落使用 Verdana 字体。
+5. 选择“插入 HTML”按钮，观察是否在文档末尾插入了两个段落，第一个段落使用 Verdana 字体。
 
-6. 选择“插入表格”**** 按钮，观察是否在第二个段落后面插入了表格。
+6. 选择“**插入表格**”按钮，观察是否在第二个段落后面插入了表格。
 
-    ![Word 教程 - 插入图像、HTML 和表格](../images/word-tutorial-insert-image-html-table-2.png)
+    ![显示选择加载项按钮“插入图像”、“插入 HTML”和“插入表”结果的屏幕截图](../images/word-tutorial-insert-image-html-table-2.png)
 
 ## <a name="create-and-update-content-controls"></a>创建和更新内容控件
 
@@ -817,21 +820,22 @@ function insertTextIntoRange() {
 
 ### <a name="create-a-content-control"></a>创建内容控件
 
-1. 打开 ./src/taskpane/taskpane.html**** 文件。
+1. 打开 ./src/taskpane/taskpane.html 文件。
 
-2. 找到 `<button>` 按钮的 `insert-table` 元素，并在该行后添加下列标记： 
+2. 找到 `<button>` 按钮的 `insert-table` 元素，并在该行后添加下列标记：
 
     ```html
     <button class="ms-Button" id="create-content-control">Create Content Control</button><br/><br/>
     ```
 
-3. 打开 ./src/taskpane/taskpane.js**** 文件。
+3. 打开 ./src/taskpane/taskpane.js 文件。
 
 4. 在 `Office.onReady` 方法调用中，找到用于将单击处理程序分配到 `insert-table` 按钮的行，并在该行后添加以下代码：
 
     ```js
     document.getElementById("create-content-control").onclick = createContentControl;
     ```
+
 5. 将以下函数添加到文件末端：
 
     ```js
@@ -874,15 +878,15 @@ function insertTextIntoRange() {
 
 ### <a name="replace-the-content-of-the-content-control"></a>替换内容控件的内容
 
-1. 打开 ./src/taskpane/taskpane.html**** 文件。
+1. 打开 ./src/taskpane/taskpane.html 文件。
 
-2. 找到 `<button>` 按钮的 `create-content-control` 元素，并在该行后添加下列标记： 
+2. 找到 `<button>` 按钮的 `create-content-control` 元素，并在该行后添加下列标记：
 
     ```html
     <button class="ms-Button" id="replace-content-in-control">Rename Service</button><br/><br/>
     ```
 
-3. 打开 ./src/taskpane/taskpane.js**** 文件。
+3. 打开 ./src/taskpane/taskpane.js 文件。
 
 4. 在 `Office.onReady` 方法调用中，找到用于将单击处理程序分配到 `create-content-control` 按钮的行，并在该行后添加以下代码：
 
@@ -925,15 +929,15 @@ function insertTextIntoRange() {
 
 1. [!include[Start server and sideload add-in instructions](../includes/tutorial-word-start-server.md)]
 
-2. 如果加载项任务窗格已在 Word 中打开，请转到“开始”**** 选项卡并选择功能区中的“显示任务窗格”**** 按钮以打开它。
+2. 如果加载项任务窗格已在 Word 中打开，请转到“开始”选项卡并选择功能区中的“显示任务窗格”按钮以打开它。
 
-3. 在任务窗格中，选择“插入段落”**** 按钮，以确保文档顶部有包含“Office 365”的段落。
+3. 在任务窗格中，选择“插入段落”按钮，以确保文档顶部有包含“Office 365”的段落。
 
-4. 在文档中，选择文本“Office 365”，然后选择“创建内容控件”**** 按钮。 观察此短语是否包装在标签为“服务名称”的标记中。
+4. 在文档中，选择文本“Office 365”，然后选择“创建内容控件”按钮。 观察此短语是否包装在标签为“服务名称”的标记中。
 
-7. 选择“重命名服务”**** 按钮，并观察内容控件的文本是否变成“Fabrikam Online Productivity Suite”。
+5. 选择“**重命名服务**”按钮，并观察内容控件的文本是否变成“Fabrikam Online Productivity Suite”。
 
-    ![Word 教程 - 创建内容控件并更改其文本](../images/word-tutorial-content-control-2.png)
+    ![显示选择外接程序按钮“创建内容控制”和“重命名服务”的结果屏幕截图](../images/word-tutorial-content-control-2.png)
 
 ## <a name="next-steps"></a>后续步骤
 
@@ -944,6 +948,5 @@ function insertTextIntoRange() {
 
 ## <a name="see-also"></a>另请参阅
 
-* [Office 加载项平台概述](../overview/office-add-ins.md)
-* [开发 Office 加载项](../develop/develop-overview.md)
-
+- [Office 加载项平台概述](../overview/office-add-ins.md)
+- [开发 Office 加载项](../develop/develop-overview.md)

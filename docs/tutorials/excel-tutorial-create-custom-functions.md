@@ -1,15 +1,15 @@
 ---
 title: Excel 自定义函数教程
 description: 在本教程中，你将创建一个 Excel 外接程序，其中包含可执行计算、请求 Web 数据或流式传输 Web 数据的自定义函数。
-ms.date: 07/10/2020
+ms.date: 11/09/2020
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: 9ca4177024276a676fed76746da4ecf81121fc3b
-ms.sourcegitcommit: 472b81642e9eb5fb2a55cd98a7b0826d37eb7f73
+ms.openlocfilehash: e45bea36b8826912a38838429d83990293fc47db
+ms.sourcegitcommit: ceb8dd66f3fb9c963fce8446c2f6c65ead56fbc1
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/17/2020
-ms.locfileid: "45159141"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "49131792"
 ---
 # <a name="tutorial-create-custom-functions-in-excel"></a>教程：在 Excel 中创建自定义函数
 
@@ -38,7 +38,7 @@ ms.locfileid: "45159141"
     * **选择脚本类型:** `JavaScript`
     * **要如何命名加载项?** `starcount`
 
-    ![自定义函数的 Office 外接程序提示的 Yeoman 生成器](../images/starcountPrompt.png)
+    ![Yeoman Office 外接程序生成器命令行界面提示自定义函数项目的屏幕截图](../images/starcountPrompt.png)
     
     Yeoman 生成器将创建项目文件并安装支持的 Node 组件。
 
@@ -81,13 +81,13 @@ npm run start:web
 
 1. 在 Excel 中，选择“**插入**”选项卡，然后选择“**加载项**”。
 
-   ![Excel 网页版中的“插入”功能区，突出显示“我的加载项”图标](../images/excel-cf-online-register-add-in-1.png)
+   ![Excel 网页版中插入功能区的屏幕截图，突出显示“我的加载项”按钮](../images/excel-cf-online-register-add-in-1.png)
    
-2. 选择“管理我的加载项”****，然后选择“上载我的加载项”****。
+2. 选择“**管理我的加载项**”，然后选择“**上载我的加载项**”。
 
-3. 选择“浏览...”****，并导航到 Yeoman 生成器创建的项目的根目录。
+3. 选择“浏览...”，并导航到 Yeoman 生成器创建的项目的根目录。
 
-4. 依次选择文件“manifest.xml”****，“打开”****，然后选择“上载”****。
+4. 依次选择文件“manifest.xml”，“打开”，然后选择“上载”。
 
 --- 
     
@@ -149,21 +149,21 @@ npm run start:web
 
 1. 关闭 Excel，然后重新打开 Excel。
 
-2. 在 Excel 中，选择“**插入**”选项卡，然后选择位于“**我的加载项**”右侧的向下箭头。![Windows 版 Excel 中的“插入”功能区，突出显示“我的加载项”箭头](../images/select-insert.png)
+2. 在 Excel 中，选择“**插入**”选项卡，然后选择位于“**我的加载项**”右侧的向下箭头。![Windows 版 Excel 中“插入”功能区的屏幕截图，突出显示“我的加载项”下箭头](../images/select-insert.png)
 
 3. 在可用加载项列表中，找到“**开发人员加载项**”部分并选择“**starcount**”加载项进行注册。
-    ![Windows 版 Excel 中的“插入”功能区，在“我的加载项”列表中突出显示“Excel 自定义函数”加载项](../images/list-starcount.png)
+    ![Windows 版 Excel 中的“插入”功能区屏幕截图，在“我的加载项”列表中突出显示“Excel 自定义函数”加载项](../images/list-starcount.png)
 
 
 # <a name="excel-on-the-web"></a>[Excel 网页版](#tab/excel-online)
 
-1. 在 Excel 中，选择“**插入**”选项卡，然后选择“**加载项**”。![Excel 网页版中的“插入”功能区，突出显示“我的加载项”图标](../images/excel-cf-online-register-add-in-1.png)
+1. 在 Excel 中，选择“**插入**”选项卡，然后选择“**加载项**”。![Excel 网页版中“插入”功能区的屏幕截图，突出显示“我的加载项”按钮](../images/excel-cf-online-register-add-in-1.png)
 
-2. 选择“管理我的加载项”****，然后选择“上载我的加载项”****。
+2. 选择“**管理我的加载项**”，然后选择“**上载我的加载项**”。
 
-3. 选择“浏览...”****，并导航到 Yeoman 生成器创建的项目的根目录。
+3. 选择“浏览...”，并导航到 Yeoman 生成器创建的项目的根目录。
 
-4. 依次选择文件“manifest.xml”****，“打开”****，然后选择“上载”****。
+4. 依次选择文件“manifest.xml”，“打开”，然后选择“上载”。
 
 ---
 
@@ -217,20 +217,20 @@ function clock(invocation) {
 
 1. 关闭 Excel，然后重新打开 Excel。
 
-2. 在 Excel 中，选择“**插入**”选项卡，然后选择位于“**我的加载项**”右侧的向下箭头。![Windows 版 Excel 中的“插入”功能区，突出显示“我的加载项”箭头](../images/select-insert.png)
+2. 在 Excel 中，选择“**插入**”选项卡，然后选择位于“**我的加载项**”右侧的向下箭头。![Windows 版 Excel 中“插入”功能区的屏幕截图，突出显示“我的加载项”下箭头](../images/select-insert.png)
 
 3. 在可用加载项列表中，找到“**开发人员加载项**”部分并选择“**starcount**”加载项进行注册。
-    ![Windows 版 Excel 中的“插入”功能区，在“我的加载项”列表中突出显示“Excel 自定义函数”加载项](../images/list-starcount.png)
+    ![Windows 版 Excel 中的“插入”功能区屏幕截图，在“我的加载项”列表中突出显示“Excel 自定义函数”加载项](../images/list-starcount.png)
 
 # <a name="excel-on-the-web"></a>[Excel 网页版](#tab/excel-online)
 
-1. 在 Excel 中，选择“**插入**”选项卡，然后选择“**加载项**”。![Excel 网页版中的“插入”功能区，突出显示“我的加载项”图标](../images/excel-cf-online-register-add-in-1.png)
+1. 在 Excel 中，选择“**插入**”选项卡，然后选择“**加载项**”。![Excel 网页版中“插入”功能区的屏幕截图，突出显示“我的加载项”按钮](../images/excel-cf-online-register-add-in-1.png)
 
-2. 选择“管理我的加载项”****，然后选择“上载我的加载项”****。
+2. 选择“**管理我的加载项**”，然后选择“**上载我的加载项**”。
 
-3. 选择“浏览...”****，并导航到 Yeoman 生成器创建的项目的根目录。
+3. 选择“浏览...”，并导航到 Yeoman 生成器创建的项目的根目录。
 
-4. 依次选择文件“manifest.xml”****，“打开”****，然后选择“上载”****。
+4. 依次选择文件“manifest.xml”，“打开”，然后选择“上载”。
 
 --- 
 
