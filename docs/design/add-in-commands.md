@@ -3,12 +3,12 @@ title: 加载项命令的基本概念
 description: 了解如何将自定义功能区按钮和菜单项添加到 Office 作为 Office 加载项的一部分。
 ms.date: 11/01/2020
 localization_priority: Priority
-ms.openlocfilehash: 3d7d99f05e9b02712a4f416b891d3be38875525b
-ms.sourcegitcommit: 3189c4bd62dbe5950b19f28ac2c1314b6d304dca
+ms.openlocfilehash: b2f63e3a7d0e112b698b4913590d81c2015970d2
+ms.sourcegitcommit: ceb8dd66f3fb9c963fce8446c2f6c65ead56fbc1
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "49087964"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "49132156"
 ---
 # <a name="add-in-commands-for-excel-powerpoint-and-word"></a>Excel、PowerPoint 和 Word 的加载项命令
 
@@ -20,15 +20,15 @@ ms.locfileid: "49087964"
 > SharePoint 目录不支持加载项命令。可以通过[集中部署](../publish/centralized-deployment.md)或 [AppSource](/office/dev/store/submit-to-appsource-via-partner-center) 部署加载项命令，也可以使用[旁加载](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)部署加载项命令以供测试。
 
 > [!IMPORTANT]
-> Outlook 中也支持加载项命令。 有关详细信息，请参阅[适用于 Outlook 的加载项命令](../outlook/add-in-commands-for-outlook.md)。
+> Outlook 中也支持加载项命令。有关详细信息，请参阅 [适用于 Outlook 的外接程序命令](../outlook/add-in-commands-for-outlook.md)。
 
 *图 1：在 Excel Desktop 中运行命令的加载项*
 
-![Excel 中的加载项命令屏幕截图](../images/add-in-commands-1.png)
+![显示 Excel 功能区中突出显示的加载项命令屏幕截图](../images/add-in-commands-1.png)
 
 *图 2：在 Excel 网页版中运行命令的加载项*
 
-![Excel 网页版中加载项命令的屏幕截图](../images/add-in-commands-2.png)
+![显示 Excel 网页版中加载项命令的屏幕截图](../images/add-in-commands-2.png)
 
 ## <a name="command-capabilities"></a>命令功能
 
@@ -57,21 +57,21 @@ ms.locfileid: "49087964"
 可指定在加载项启动时是启用还是禁用该命令，并以编程方式更改设置。
 
 > [!NOTE]
-> 此功能并非在所有 Office 应用程序或方案中受到支持。 有关详细信息，请参阅[启用和禁用加载项命令](disable-add-in-commands.md)。
+> 并非所有 Office 应用程序或方案均支持此功能。有关详细信息，请参阅[启用和禁用加载项命令](disable-add-in-commands.md)。
 
 ### <a name="position-on-the-ribbon-preview"></a>功能区上的位置（预览）
 
 可以指定自定义选项卡在 Office 应用程序功能区上的显示位置，例如“在“主页”选项卡右侧”。
 
 > [!NOTE]
-> 并非所有 Office 应用程序或方案均支持此功能。 有关详细信息，请参阅[在功能区上定位自定义选项卡](custom-tab-placement.md)。
+> 并非所有 Office 应用程序或方案均支持此功能。有关详细信息，请参阅[在功能区上定位自定义选项卡](custom-tab-placement.md)。
 
 ### <a name="integration-of-built-in-office-buttons-preview"></a>内置 Office 按钮集成（预览）
 
 可将内置的 Office 功能区按钮插入到自定义命令组和自定义功能区选项卡中。
 
 > [!NOTE]
-> 并非所有 Office 应用程序或方案均支持此功能。 有关详细信息，请参阅[将内置 Office 按钮集成到自定义选项卡中](built-in-button-integration.md)。
+> 并非所有 Office 应用程序或方案均支持此功能。有关详细信息，请参阅[将内置 Office 按钮集成到自定义选项卡中](built-in-button-integration.md)。
 
 
 ## <a name="supported-platforms"></a>支持的平台
@@ -89,7 +89,7 @@ ms.locfileid: "49087964"
 
 ## <a name="debugging"></a>调试
 
-必须在 Office 网页版中运行加载项命令，才能调试命令。 有关详细信息，请参阅[在 Office 网页版中调试加载项](../testing/debug-add-ins-in-office-online.md)。
+必须在 Office 网页版中运行加载项命令，才能调试命令。有关详细信息，请参阅[在 Office 网页版中调试加载项](../testing/debug-add-ins-in-office-online.md)。
 
 ## <a name="best-practices"></a>最佳做法
 
@@ -98,24 +98,23 @@ ms.locfileid: "49087964"
 - 使用命令来表示会给用户带来明确具体结果的特定操作。不要在单个按钮中组合多个操作。
 - 提供使您的外接程序中的常见任务执行效率更高的具体操作。尽量减少完成一个操作的步骤。
 - 关于命令在 Office 应用功能区中的位置：
-    - 将命令放置在现有的选项卡（插入、审阅等）上，如果提供的功能适合那个位置。例如，如果外接程序允许用户插入媒体，则将组添加到“插入”选项卡。请注意，并非所有选项卡都在所有的 Office 版本之间可用。有关详细信息，请参阅 [Office 外接程序 XML 清单](../develop/add-in-manifests.md)。
-    - 如果此功能不适合其他选项卡，且顶级命令少于 6 个，请将命令置于“开始”选项卡中。此外，如果加载项需要跨 Office 版本（如 Office 网页版或 Office 桌面版）运行，且并非所有版本都有相应选项卡（例如，Office 网页版中没有“设计”选项卡），也可以将命令添加到“开始”选项卡中。  
-    - 如果你拥有 6 个以上的顶级命令命令，将命令放置在自定义选项卡上。
-    - 对组进行命名以与外接程序的名称相匹配。如果你拥有多个组，则基于对应组中的命令提供的功能为每个组命名。
-    - 请勿添加不必要的按钮，这样会增加加载项占用的空间。
-    - 请勿要将“自定义”选项卡置于“主页”选项卡左侧，也不要在打开文档时默认将其放在焦点上，除非加载项是用户与文档进行交互的主要方式。 过分强调加载项的不便，并惹恼用户和管理员。
-    - 如果加载项是用户与文档进行交互的主要方式，而且你具有自定义的功能区选项卡，请考虑将用户经常需要的 Office 功能按钮集成到该选项卡中。
+  - 将命令放置在现有的选项卡（插入、审阅等）上，如果提供的功能适合那个位置。例如，如果外接程序允许用户插入媒体，则将组添加到“插入”选项卡。请注意，并非所有选项卡都在所有的 Office 版本之间可用。有关详细信息，请参阅 [Office 外接程序 XML 清单](../develop/add-in-manifests.md)。
+  - 如果此功能不适合其他选项卡，且顶级命令少于 6 个，请将命令置于“开始”选项卡中。此外，如果加载项需要跨 Office 版本（如 Office 网页版或 Office 桌面版）运行，且并非所有版本都有相应选项卡（例如，Office 网页版中没有“设计”选项卡），也可以将命令添加到“开始”选项卡中。  
+  - 如果你拥有 6 个以上的顶级命令命令，将命令放置在自定义选项卡上。
+  - 对组进行命名以与外接程序的名称相匹配。如果你拥有多个组，则基于对应组中的命令提供的功能为每个组命名。
+  - 请勿添加不必要的按钮，这样会增加加载项占用的空间。
+  - 请勿要将“自定义”选项卡置于“主页”选项卡左侧，也不要在打开文档时默认将其放在焦点上，除非加载项是用户与文档进行交互的主要方式。过分强调加载项的不便，并惹恼用户和管理员。
+  - 如果加载项是用户与文档进行交互的主要方式，而且你具有自定义的功能区选项卡，请考虑将用户经常需要的 Office 功能按钮集成到该选项卡中。
 
-     > [!NOTE]
-     > 占用过多空间的加载项可能无法通过 [AppSource 验证](/legal/marketplace/certification-policies)。
+  > [!NOTE]
+  > 占用过多空间的加载项可能无法通过 [AppSource 验证](/legal/marketplace/certification-policies)。
 
 - 对于所有图标，请遵循[图标设计准则](add-in-icons.md)。
-- 提供也可以在不支持命令的 Office 应用程序上运行的加载项版本。 单个加载项清单可以在命令感知型（带有命令）和非命令感知（作为任务窗格）型应用程序中工作。
+- 提供也可以在不支持命令的 Office 应用程序上运行的加载项版本。单个加载项清单可以在命令感知型（带有命令）和非命令感知（作为任务窗格）型应用程序中工作。
 
    *图 3. Office 2013 中的任务窗格加载项，以及 Office 2016 中使用加载项命令的相同加载项*
 
-   ![显示 Office 2013 中的任务窗格加载项，以及 Office 2016 中使用加载项命令的相同加载项的屏幕截图](../images/office-task-pane-add-ins.png)
-
+   ![比较 Office 2013 中的任务窗格加载项和 Office 2016 中使用加载项命令的相同加载项的屏幕截图。 在 2013 版本中，任务窗格必须包含所有命令，而在 2016 版本中，命令可以位于功能区中。](../images/office-task-pane-add-ins.png)
 
 ## <a name="next-steps"></a>后续步骤
 

@@ -1,21 +1,21 @@
 ---
 title: 生成首个 Excel 任务窗格加载项
 description: 了解如何使用 Office JS API 生成简单的 Excel 任务窗格加载项。
-ms.date: 10/14/2020
+ms.date: 11/09/2020
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: a4c2dd7d475458439436dc7499d5f26f2c8eafb0
-ms.sourcegitcommit: 42e6cfe51d99d4f3f05a3245829d764b28c46bbb
+ms.openlocfilehash: 627c8ce235a69e6da4a15c7064a2937b1fed5d05
+ms.sourcegitcommit: ceb8dd66f3fb9c963fce8446c2f6c65ead56fbc1
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "48741174"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "49132366"
 ---
 # <a name="build-an-excel-task-pane-add-in"></a>生成 Excel 任务窗格加载项
 
 本文将逐步介绍如何生成 Excel 任务窗格加载项。
 
-## <a name="create-the-add-in"></a>创建加载项 
+## <a name="create-the-add-in"></a>创建加载项
 
 [!include[Choose your editor](../includes/quickstart-choose-editor.md)]
 # <a name="yeoman-generator"></a>[Yeoman 生成器](#tab/yeomangenerator)
@@ -36,7 +36,7 @@ ms.locfileid: "48741174"
 - **要如何命名加载项?** `My Office Add-in`
 - **要支持哪一个 Office 客户端应用程序?** `Excel`
 
-![Yeoman 生成器](../images/yo-office-excel.png)
+![Yeoman Office 外接程序生成器命令行界面的屏幕截图](../images/yo-office-excel.png)
 
 完成此向导后，生成器会创建项目，并安装支持的 Node 组件。
 
@@ -58,13 +58,13 @@ ms.locfileid: "48741174"
 
 3. 在 Excel 中，依次选择的“**开始**”选项卡和功能区中的“**显示任务窗格**”按钮，以打开加载项任务窗格。
 
-    ![Excel 加载项按钮](../images/excel-quickstart-addin-3b.png)
+    ![显示突出显示“显示任务窗格”按钮 的 Excel 主页菜单屏幕截图](../images/excel-quickstart-addin-3b.png)
 
 4. 选择工作表中的任何一系列单元格。
 
 5. 在任务窗格的底部，选择“**运行**”链接，价格选定范围的颜色设为黄色。
 
-    ![带“运行”按钮的 Excel 加载项](../images/excel-quickstart-addin-3c.png)
+    ![Excel 的屏幕截图，其中“加载项”任务窗格处于打开状态，并且“加载项”任务窗格中突出显示“运行”按钮](../images/excel-quickstart-addin-3c.png)
 
 ### <a name="next-steps"></a>后续步骤
 
@@ -84,9 +84,9 @@ ms.locfileid: "48741174"
 
 3. 对项目命名，然后选择“**创建**”。
 
-4. 在“创建 Office 加载项”**** 对话框窗口中，选择“将新功能添加到 Excel”****，再选择“完成”**** 以创建项目。
+4. 在“创建 Office 加载项”对话框窗口中，选择“将新功能添加到 Excel”，再选择“完成”以创建项目。
 
-5. 此时，Visual Studio 创建解决方案，且它的两个项目显示在“解决方案资源管理器”**** 中。**Home.html** 文件在 Visual Studio 中打开。
+5. 此时，Visual Studio 创建解决方案，且它的两个项目显示在“解决方案资源管理器”中。**Home.html** 文件在 Visual Studio 中打开。
 
 ### <a name="explore-the-visual-studio-solution"></a>探索 Visual Studio 解决方案
 
@@ -180,9 +180,9 @@ ms.locfileid: "48741174"
 
 2. `ProviderName` 元素具有占位符值。 将其替换为你的姓名。
 
-3. `DisplayName` 元素的 `DefaultValue` 属性有占位符。 将它替换为“My Office Add-in”****。
+3. `DisplayName` 元素的 `DefaultValue` 属性有占位符。 将它替换为“My Office Add-in”。
 
-4. `Description` 元素的 `DefaultValue` 属性有占位符。 将它替换为“A task pane add-in for Excel”****。
+4. `Description` 元素的 `DefaultValue` 属性有占位符。 将它替换为“A task pane add-in for Excel”。
 
 5. 保存文件。
 
@@ -198,17 +198,17 @@ ms.locfileid: "48741174"
 
 ### <a name="try-it-out"></a>试用
 
-1. 使用 Visual Studio 时，测试新建的 Excel 加载项，具体方法为按 **F5** 或选择“开始”**** 按钮来启动 Excel，功能区中显示“显示任务窗格”**** 加载项按钮。 加载项本地托管在 IIS 上。 如果系统要求你信任证书，请信任证书，这样此加载项才能连接到它的 Office 应用程序。
+1. 使用 Visual Studio 时，测试新建的 Excel 加载项，具体方法为按 **F5** 或选择“开始”按钮来启动 Excel，功能区中显示“显示任务窗格”加载项按钮。 加载项本地托管在 IIS 上。 如果系统要求你信任证书，请信任证书，这样此加载项才能连接到它的 Office 应用程序。
 
 2. 在 Excel 中，依次选择的“**开始**”选项卡和功能区中的“**显示任务窗格**”按钮，以打开加载项任务窗格。
 
-    ![Excel 加载项“显示任务窗格”按钮](../images/excel-quickstart-addin-2a.png)
+    ![Excel 主页菜单的屏幕截图，突出显示“显示任务窗格”按钮](../images/excel-quickstart-addin-2a.png)
 
 3. 选择工作表中的任何一系列单元格。
 
 4. 在任务窗格中，选择“**设置颜色**”按钮，将选定区域的颜色设置为绿色。
 
-    ![Excel 加载项](../images/excel-quickstart-addin-2c.png)
+    ![Excel 屏幕截图，其中加载项任务窗格打开](../images/excel-quickstart-addin-2c.png)
 
 [!include[Console tool note](../includes/console-tool-note.md)]
 

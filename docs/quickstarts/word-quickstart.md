@@ -4,12 +4,12 @@ description: 了解如何使用 Office JS API 生成简单的 Word 任务窗格�
 ms.date: 10/14/2020
 ms.prod: word
 localization_priority: Priority
-ms.openlocfilehash: 85f617ffa24f77faa5e9d810f2b9eda50ddd83ab
-ms.sourcegitcommit: 42e6cfe51d99d4f3f05a3245829d764b28c46bbb
+ms.openlocfilehash: fe82515e0a2839ccb8669d1c590364049126d9de
+ms.sourcegitcommit: ceb8dd66f3fb9c963fce8446c2f6c65ead56fbc1
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "48741146"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "49132324"
 ---
 # <a name="build-your-first-word-task-pane-add-in"></a>生成首个 Word 任务窗格加载项
 
@@ -39,7 +39,7 @@ _适用于：Windows 版 Word 2016 或更高版本、iPad 版 Word 和 Mac 版 W
 - **要如何命名加载项?** `My Office Add-in`
 - **要支持哪一个 Office 客户端应用程序?** `Word`
 
-![有关 Yeoman 生成器提示和回答的屏幕截图](../images/yo-office-word.png)
+![显示命令行界面中 Yeoman 生成器的提示和回答的屏幕截图](../images/yo-office-word.png)
 
 完成此向导后，生成器会创建项目，并安装支持的 Node 组件。
 
@@ -85,7 +85,7 @@ _适用于：Windows 版 Word 2016 或更高版本、iPad 版 Word 和 Mac 版 W
 
 3. 在 Word 中，打开新的文档，依次选择“**主页**”选项卡和功能区中的“**显示任务窗格**”按钮，以打开加载项任务窗格。
 
-    ![突出显示了“显示任务窗格”按钮的 Word 应用程序屏幕截图](../images/word-quickstart-addin-2b.png)
+    ![显示突出显示“显示任务窗格”按钮的 Word 应用程序屏幕截图](../images/word-quickstart-addin-2b.png)
 
 4. 在任务窗格底部，选择“**运行**”链接，以将文本“Hello World”以蓝色字体添加到文档中。
 
@@ -103,14 +103,13 @@ _适用于：Windows 版 Word 2016 或更高版本、iPad 版 Word 和 Mac 版 W
 
 ### <a name="create-the-add-in-project"></a>创建加载项项目
 
-
 1. 在 Visual Studio 中，选择“**新建项目**”。
 
-2. 使用搜索框，输入**外接程序**。 选择“**Word Web 外接程序**”，然后选择“**下一步**”。
+2. 使用搜索框，输入 **外接程序**。 选择“**Word Web 外接程序**”，然后选择“**下一步**”。
 
 3. 对项目命名，然后选择“**创建**”。
 
-4. 此时，Visual Studio 创建解决方案，且它的两个项目显示在“解决方案资源管理器”**** 中。**Home.html** 文件在 Visual Studio 中打开。
+4. 此时，Visual Studio 创建解决方案，且它的两个项目显示在“解决方案资源管理器”中。**Home.html** 文件在 Visual Studio 中打开。
 
 ### <a name="explore-the-visual-studio-solution"></a>探索 Visual Studio 解决方案
 
@@ -255,7 +254,7 @@ _适用于：Windows 版 Word 2016 或更高版本、iPad 版 Word 和 Mac 版 W
         top: 0;
         left: 0;
         width: 100%;
-        height: 80px; 
+        height: 80px;
         overflow: hidden;
     }
 
@@ -280,9 +279,9 @@ _适用于：Windows 版 Word 2016 或更高版本、iPad 版 Word 和 Mac 版 W
 
 2. `ProviderName` 元素具有占位符值。 将其替换为你的姓名。
 
-3. `DisplayName` 元素的 `DefaultValue` 属性有占位符。 将它替换为“My Office Add-in”****。
+3. `DisplayName` 元素的 `DefaultValue` 属性有占位符。 将它替换为“My Office Add-in”。
 
-4. `Description` 元素的 `DefaultValue` 属性有占位符。 将它替换为“A task pane add-in for Word”****。
+4. `Description` 元素的 `DefaultValue` 属性有占位符。 将它替换为“A task pane add-in for Word”。
 
 5. 保存文件。
 
@@ -298,11 +297,11 @@ _适用于：Windows 版 Word 2016 或更高版本、iPad 版 Word 和 Mac 版 W
 
 ### <a name="try-it-out"></a>试用
 
-1. 使用 Visual Studio 的同时，按 **F5** 或选择“开始”**** 按钮启动 Word，以测试新建的 Word 加载项，功能区中显示有“显示任务窗格”**** 加载项按钮。加载项本地托管在 IIS 上。
+1. 使用 Visual Studio 的同时，按 **F5** 或选择“开始”按钮启动 Word，以测试新建的 Word 加载项，功能区中显示有“显示任务窗格”加载项按钮。加载项本地托管在 IIS 上。
 
-2. 在 Word 中，依次选择“开始”**** 选项卡和功能区中的“显示任务窗格”**** 按钮，以打开加载项任务窗格。 （如果使用的是 Office 的一次性购买版本，而不是 Microsoft 365 版本，那么自定义按钮不受支持。 相反，任务窗格将立即打开。）
+2. 在 Word 中，依次选择“开始”选项卡和功能区中的“显示任务窗格”按钮，以打开加载项任务窗格。 （如果使用的是 Office 的一次性购买版本，而不是 Microsoft 365 版本，那么自定义按钮不受支持。 相反，任务窗格将立即打开。）
 
-    ![突出显示了“显示任务窗格”按钮的 Word 应用屏幕截图](../images/word-quickstart-addin-0.png)
+    ![突出显示了“显示任务窗格”按钮的 Word 应用程序屏幕截图](../images/word-quickstart-addin-0.png)
 
 3. 选择任务窗格中的任意按钮，将样本文字添加到文档。
 
@@ -318,9 +317,9 @@ _适用于：Windows 版 Word 2016 或更高版本、iPad 版 Word 和 Mac 版 W
 
 ## <a name="see-also"></a>另请参阅
 
-* [Office 加载项平台概述](../overview/office-add-ins.md)
-* [开发 Office 加载项](../develop/develop-overview.md)
-* [Word 加载项概述](../word/word-add-ins-programming-overview.md)
-* 
+- [Office 加载项平台概述](../overview/office-add-ins.md)
+- [开发 Office 加载项](../develop/develop-overview.md)
+- [Word 加载项概述](../word/word-add-ins-programming-overview.md)
+- 
   [Word 加载项代码示例](https://developer.microsoft.com/en-us/office/gallery/?filterBy=Samples,Word)
-* [Word JavaScript API 参考](../reference/overview/word-add-ins-reference-overview.md)
+- [Word JavaScript API 参考](../reference/overview/word-add-ins-reference-overview.md)

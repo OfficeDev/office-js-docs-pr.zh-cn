@@ -4,18 +4,18 @@ description: 了解如何使用 Office JS API 生成简单的 PowerPoint 任务�
 ms.date: 10/14/2020
 ms.prod: powerpoint
 localization_priority: Priority
-ms.openlocfilehash: e2720ce1c894f2692e797c5c1ae76c09fb3d5d72
-ms.sourcegitcommit: 42e6cfe51d99d4f3f05a3245829d764b28c46bbb
+ms.openlocfilehash: 47ca14b4dd8ab67ffc20551b1e13ca62cc75ee34
+ms.sourcegitcommit: ceb8dd66f3fb9c963fce8446c2f6c65ead56fbc1
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "48741195"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "49132359"
 ---
 # <a name="build-your-first-powerpoint-task-pane-add-in"></a>生成首个 PowerPoint 任务加载项
 
 本文将逐步介绍如何生成 PowerPoint 任务窗格加载项。
 
-## <a name="create-the-add-in"></a>创建加载项 
+## <a name="create-the-add-in"></a>创建加载项
 
 [!include[Choose your editor](../includes/quickstart-choose-editor.md)]
 
@@ -37,7 +37,7 @@ ms.locfileid: "48741195"
 - **要如何命名加载项?** `My Office Add-in`
 - **要支持哪一个 Office 客户端应用程序?** `PowerPoint`
 
-![有关 Yeoman 生成器提示和回答的屏幕截图](../images/yo-office-powerpoint.png)
+![显示命令行界面中 Yeoman 生成器的提示和回答的屏幕截图](../images/yo-office-powerpoint.png)
 
 完成此向导后，生成器会创建项目，并安装支持的 Node 组件。
 
@@ -81,9 +81,9 @@ ms.locfileid: "48741195"
 
         若要使用加载项，请在 PowerPoint 网页版中打开新的文档，并按照[在 Office 网页版中旁加载 Office 加载项](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-in-office-on-the-web)中的说明操作，以旁加载你的加载项。
 
-3. 在 PowerPoint 中，插入新的空白幻灯片，再依次选择“主页”**** 选项卡和功能区中的“显示任务窗格”**** 按钮，以打开加载项任务窗格。
+3. 在 PowerPoint 中，插入新的空白幻灯片，再依次选择“**主页**”选项卡和功能区中的“**显示任务窗格**”按钮，以打开加载项任务窗格。
 
-    ![突出显示了“显示任务窗格”按钮的 PowerPoint 屏幕截图](../images/powerpoint_quickstart_addin_1c.png)
+    ![突出显示“显示任务窗格”按钮的 PowerPoint 屏幕截图](../images/powerpoint_quickstart_addin_1c.png)
 
 4. 在任务窗格底部，选择“**运行**”链接，以将文字“Hello World”插入到当前幻灯片中。
 
@@ -103,14 +103,14 @@ ms.locfileid: "48741195"
 
 1. 在 Visual Studio 中，选择“**新建项目**”。
 
-2. 使用搜索框，输入**外接程序**。 选择“**PowerPoint 外接程序**”，然后选择“**下一步**”。
+2. 使用搜索框，输入 **外接程序**。 选择“**PowerPoint 外接程序**”，然后选择“**下一步**”。
 
 3. 对项目命名，然后选择“**创建**”。
 
-4. 在“创建 Office 加载项”**** 对话框窗口中，选择“将新功能添加到 PowerPoint”****，再选择“完成”**** 以创建项目。
+4. 在“创建 Office 加载项”对话框窗口中，选择“将新功能添加到 PowerPoint”，再选择“完成”以创建项目。
 
-5. 此时，Visual Studio 创建解决方案，且它的两个项目显示在“解决方案资源管理器”**** 中。**Home.html** 文件在 Visual Studio 中打开。
-    
+5. 此时，Visual Studio 创建解决方案，且它的两个项目显示在“解决方案资源管理器”中。**Home.html** 文件在 Visual Studio 中打开。
+
 ### <a name="explore-the-visual-studio-solution"></a>探索 Visual Studio 解决方案
 
 [!include[Description of Visual Studio projects](../includes/quickstart-vs-solution.md)]
@@ -118,7 +118,7 @@ ms.locfileid: "48741195"
 ### <a name="update-the-code"></a>更新代码
 
 1. **Home.html** 指定在加载项的任务窗格中呈现的 HTML。 在 **Home.html** 中，将 `<body>` 元素替换为以下标记，并保存文件。
- 
+
     ```html
     <body class="ms-font-m ms-welcome">
         <div id="content-header">
@@ -220,9 +220,9 @@ ms.locfileid: "48741195"
 
 2. `ProviderName` 元素具有占位符值。 将其替换为你的姓名。
 
-3. `DisplayName` 元素的 `DefaultValue` 属性有占位符。 将它替换为“My Office Add-in”****。
+3. `DisplayName` 元素的 `DefaultValue` 属性有占位符。 将它替换为“My Office Add-in”。
 
-4. `Description` 元素的 `DefaultValue` 属性有占位符。 将它替换为“A task pane add-in for PowerPoint”****。
+4. `Description` 元素的 `DefaultValue` 属性有占位符。 将它替换为“A task pane add-in for PowerPoint”。
 
 5. 保存文件。
 
@@ -238,17 +238,17 @@ ms.locfileid: "48741195"
 
 ### <a name="try-it-out"></a>试用
 
-1. 使用 Visual Studio 的同时，按 **F5** 或选择“开始”**** 按钮启动 PowerPoint，以测试新建的 PowerPoint 加载项，功能区中显示有“显示任务窗格”**** 加载项按钮。加载项本地托管在 IIS 上。
+1. 使用 Visual Studio 的同时，按 **F5** 或选择“开始”按钮启动 PowerPoint，以测试新建的 PowerPoint 加载项，功能区中显示有“显示任务窗格”加载项按钮。加载项本地托管在 IIS 上。
 
-2. 在 PowerPoint 中，插入新的空白幻灯片，再依次选择“主页”**** 选项卡和功能区中的“显示任务窗格”**** 按钮，以打开加载项任务窗格。
+2. 在 PowerPoint 中，插入新的空白幻灯片，再依次选择“**主页**”选项卡和功能区中的“**显示任务窗格**”按钮，以打开加载项任务窗格。
 
     ![突出显示了“显示任务窗格”功能区按钮的 PowerPoint 屏幕截图](../images/powerpoint_quickstart_addin_1.png)
 
-3. 在任务窗格中，选择“插入图像”**** 按钮，以便将图像添加到选定幻灯片。
+3. 在任务窗格中，选择“**插入图像**”按钮，以便将图像添加到选定幻灯片。
 
     ![幻灯片上显示有狗图像的 PowerPoint 屏幕截图](../images/powerpoint_quickstart_addin_2.png)
 
-4. 在任务窗格中，选择“插入文本”**** 按钮，以便将文本添加到选定幻灯片。
+4. 在任务窗格中，选择“**插入文本**”按钮，以便将文本添加到选定幻灯片。
 
     ![幻灯片上显示有狗图像和文本“Hello World”的 PowerPoint 屏幕截图](../images/powerpoint_quickstart_addin_3.png)
 
@@ -262,5 +262,5 @@ ms.locfileid: "48741195"
 
 ## <a name="see-also"></a>另请参阅
 
-* [Office 加载项平台概述](../overview/office-add-ins.md)
-* [开发 Office 加载项](../develop/develop-overview.md)
+- [Office 加载项平台概述](../overview/office-add-ins.md)
+- [开发 Office 加载项](../develop/develop-overview.md)

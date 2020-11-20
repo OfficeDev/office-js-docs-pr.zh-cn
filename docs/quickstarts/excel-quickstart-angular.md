@@ -1,15 +1,15 @@
 ---
 title: 使用 Angular 生成 Excel 任务窗格加载项
 description: 了解如何使用 Office JS API 和 Angular 生成简单的 Excel 任务窗格加载项。
-ms.date: 10/14/2020
+ms.date: 11/09/2020
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: 602b17dae29dfc43ab6b37648c3ad2f7fcfe86af
-ms.sourcegitcommit: 42e6cfe51d99d4f3f05a3245829d764b28c46bbb
+ms.openlocfilehash: 5898d9bd3072e829c35afac90348cb844f96011c
+ms.sourcegitcommit: ceb8dd66f3fb9c963fce8446c2f6c65ead56fbc1
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "48741181"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "49132317"
 ---
 # <a name="build-an-excel-task-pane-add-in-using-angular"></a>使用 Angular 生成 Excel 任务窗格加载项
 
@@ -29,7 +29,7 @@ ms.locfileid: "48741181"
 - **要如何命名加载项?** `My Office Add-in`
 - **要支持哪一个 Office 客户端应用程序?** `Excel`
 
-![Yeoman 生成器](../images/yo-office-excel-angular-2.png)
+![项目类型设置为“Angular 框架” 的 Yeoman Office 外接程序生成器命令行界面屏幕截图](../images/yo-office-excel-angular-2.png)
 
 完成此向导后，生成器会创建项目，并安装支持的 Node 组件。
 
@@ -56,13 +56,13 @@ ms.locfileid: "48741181"
 
 3. 在 Excel 中，依次选择的“**开始**”选项卡和功能区中的“**显示任务窗格**”按钮，以打开加载项任务窗格。
 
-    ![Excel 加载项按钮](../images/excel-quickstart-addin-3b.png)
+    ![Excel 主页菜单的屏幕截图，突出显示“显示任务窗格”按钮](../images/excel-quickstart-addin-3b.png)
 
 4. 选择工作表中的任何一系列单元格。
 
 5. 在任务窗格的底部，选择“**运行**”链接，价格选定范围的颜色设为黄色。
 
-    ![Excel 加载项](../images/excel-quickstart-addin-3c.png)
+    ![Excel 的屏幕截图，其中“加载项”任务窗格处于打开状态，并且“加载项”任务窗格中突出显示“运行”按钮](../images/excel-quickstart-addin-3c.png)
 
 ## <a name="next-steps"></a>后续步骤
 

@@ -1,15 +1,15 @@
 ---
 title: 教程：生成邮件撰写 Outlook 外接程序
 description: 在本教程中，你将生成一个可将 GitHub gist 插入到新邮件正文中的 Outlook 外接程序。
-ms.date: 10/02/2020
+ms.date: 11/12/2020
 ms.prod: outlook
 localization_priority: Priority
-ms.openlocfilehash: 78a3d2c8d3d44ceb98b0eb0964ea487bcb019aec
-ms.sourcegitcommit: d7fd52260eb6971ab82009c835b5a752dc696af4
+ms.openlocfilehash: 8c962fb5772ed906fe6096a7e039d0be31a26c77
+ms.sourcegitcommit: ceb8dd66f3fb9c963fce8446c2f6c65ead56fbc1
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/07/2020
-ms.locfileid: "48370533"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "49132380"
 ---
 # <a name="tutorial-build-a-message-compose-outlook-add-in"></a>教程：生成邮件撰写 Outlook 外接程序
 
@@ -18,11 +18,12 @@ ms.locfileid: "48370533"
 在本教程中，你将：
 
 > [!div class="checklist"]
-> * 创建 Outlook 外接程序项目
-> * 定义将在“撰写邮件”窗口中呈现的按钮
-> * 实现从用户处收集信息并从外部服务提取数据的首次运行体验
-> * 实现可调用函数的无 UI 按钮
-> * 实现将内容插入到邮件正文中的任务窗格
+>
+> - 创建 Outlook 外接程序项目
+> - 定义将在“撰写邮件”窗口中呈现的按钮
+> - 实现从用户处收集信息并从外部服务提取数据的首次运行体验
+> - 实现可调用函数的无 UI 按钮
+> - 实现将内容插入到邮件正文中的任务窗格
 
 ## <a name="prerequisites"></a>先决条件
 
@@ -43,7 +44,7 @@ ms.locfileid: "48370533"
 
 ## <a name="setup"></a>设置
 
-你将在本教程中创建的外接程序将从用户的 GitHub 帐户读取 [gist](https://gist.github.com)，并将所选 gist 添加到邮件正文中。 完成以下步骤以创建两个新 gist，你可以使用它们来测试你要生成的外接程序。
+你将在本教程中创建的外接程序将从用户的 GitHub 帐户读取 [gist](https://gist.github.com)，并将所选 gist 添加到邮件正文中。完成以下步骤以创建两个新 gist，你可以使用它们来测试你要生成的外接程序。
 
 1. [登录 GitHub](https://github.com/login)。
 
@@ -109,8 +110,8 @@ ms.locfileid: "48370533"
 
     - **要支持哪一个 Office 客户端应用程序?** - `Outlook`
 
-    ![有关 Yeoman 生成器提示和回答的屏幕截图](../images/yeoman-prompts-2.png)
-    
+    ![显示命令行界面中 Yeoman 生成器的提示和回答的屏幕截图](../images/yeoman-prompts-2.png)
+
     完成此向导后，生成器会创建项目，并安装支持的 Node 组件。
 
     [!include[Yeoman generator next steps](../includes/yo-office-next-steps.md)]
@@ -135,7 +136,7 @@ ms.locfileid: "48370533"
 
 ### <a name="update-the-manifest"></a>更新清单
 
-外接程序的清单控制外接程序在 Outlook 中的显示方式。 它定义外接程序在外接程序列表中的显示方式和功能区上显示的按钮，并设置外接程序使用的 HTML 和 JavaScript 文件的 URL。
+加载项的清单控制其在 Outlook 中的显示方式。它定义加载项在加载项列表中的显示方式和功能区上显示的按钮，并设置加载项使用的 HTML 和 JavaScript 文件的 URL。
 
 #### <a name="specify-basic-information"></a>指定基本信息
 
@@ -146,6 +147,7 @@ ms.locfileid: "48370533"
     ```xml
     <ProviderName>Contoso</ProviderName>
     ```
+
 1. 找到 `Description` 元素，将默认值替换为外接程序程序的说明，然后保存文件。
 
     ```xml
@@ -157,23 +159,23 @@ ms.locfileid: "48370533"
 在继续之前，让我们测试生成器创建的基本外接程序，以确认项目已正确设置。
 
 > [!NOTE]
-> Office 加载项应使用 HTTPS，而不是 HTTP（即便是在开发时也是如此）。 如果系统在运行以下命令后提示你安装证书，请接受提示以安装 Yeoman 生成器提供的证书。 你可能还必须以管理员身份运行命令提示符或终端才能进行更改。
+> Office 加载项应使用 HTTPS，而不是 HTTP（即便是在开发时也是如此）。如果系统在运行以下命令后提示你安装证书，请接受提示以安装 Yeoman 生成器提供的证书。你可能还必须以管理员身份运行命令提示符或终端才能进行更改。
 
-1. 在项目的根目录中运行以下命令。 运行此命令时，本地 Web 服务器将启动（如果尚未运行）。
+1. 在项目的根目录中运行以下命令。运行此命令时，本地 Web 服务器将启动（如果尚未运行）。
 
     ```command&nbsp;line
     npm run dev-server
     ```
 
-1. 请按照[旁加载 Outlook 外接程序以供测试](../outlook/sideload-outlook-add-ins-for-testing.md)中的说明，旁加载位于项目根目录中的 **manifest.xml** 文件。
+1. 请按照 [旁加载 Outlook 外接程序以供测试](../outlook/sideload-outlook-add-ins-for-testing.md)中的说明，旁加载位于项目根目录中的 **manifest.xml** 文件。
 
-1. 在 Outlook 中，打开现有邮件，然后选择“**显示任务窗格**”按钮。 如果所有内容都已正确设置，则任务窗格将打开并呈现外接程序的欢迎页。
+1. 在 Outlook 中，打开现有邮件，然后选择“**显示任务窗格**”按钮。如果所有内容都已正确设置，则任务窗格将打开并呈现外接程序的欢迎页。
 
-    ![示例添加的按钮和任务窗格的屏幕截图](../images/button-and-pane.png)
+    ![“任务窗格”按钮的屏幕截图，和示例添加的对 Gist 执行 Git 处理任务窗格](../images/button-and-pane.png)
 
 ## <a name="define-buttons"></a>定义按钮
 
-至此，已经验证基本外接程序可正常运行，你可以对其进行自定义以添加更多功能。 默认情况下，清单仅定义“读取邮件”窗口的按钮。 让我们更新清单以从“读取邮件”窗口中删除按钮，并为“撰写邮件”窗口定义两个新按钮：
+至此，已经验证基本外接程序可正常运行，你可以对其进行自定义以添加更多功能。默认情况下，清单仅定义“读取邮件”窗口的按钮。让我们更新清单以从“读取邮件”窗口中删除按钮，并为“撰写邮件”窗口定义两个新按钮：
 
 - **插入 gist**：用于打开任务窗格的按钮
 
@@ -181,11 +183,11 @@ ms.locfileid: "48370533"
 
 ### <a name="remove-the-messagereadcommandsurface-extension-point"></a>删除 MessageReadCommandSurface 扩展点
 
-打开 **manifest.xml** 文件，并找到具有类型 `MessageReadCommandSurface` 的 `ExtensionPoint` 元素。 删除此 `ExtensionPoint` 元素（包括其结束标记）以从“读取邮件”窗口删除按钮。
+打开 **manifest.xml** 文件，并找到具有类型 `MessageReadCommandSurface` 的 `ExtensionPoint` 元素。删除此 `ExtensionPoint` 元素（包括其结束标记）以从“读取邮件”窗口删除按钮。
 
 ### <a name="add-the-messagecomposecommandsurface-extension-point"></a>添加 MessageReadCommandSurface 扩展点
 
-在清单中查找显示为 `</DesktopFormFactor>` 的行。 紧靠此行前面，插入以下 XML 标记。 关于此标记，请注意以下几点：
+在清单中查找显示为 `</DesktopFormFactor>` 的行。紧靠此行前面，插入以下 XML 标记。关于此标记，请注意以下几点：
 
 - 类型为 `xsi:type="MessageComposeCommandSurface"` 的 `ExtensionPoint` 指示你已将按钮定义为添加到“邮件撰写”窗口。
 
@@ -240,7 +242,7 @@ ms.locfileid: "48370533"
 
 ### <a name="update-resources-in-the-manifest"></a>更新清单中的资源
 
-前面的代码引用了需要在清单生效前定义的标签、工具提示和 URL。 你将在清单的 `Resources` 部分指定此信息。
+前面的代码引用了需要在清单生效前定义的标签、工具提示和 URL。你将在清单的 `Resources` 部分指定此信息。
 
 1. 在清单文件中找到 `Resources` 元素并删除整个元素（包括其结束标记）。
 
@@ -277,21 +279,19 @@ ms.locfileid: "48370533"
 
 由于你之前已通过文件安装了此外接程序，因此必需重新安装它才能使清单更改生效。
 
-1. 按照[旁加载 Outlook 外接程序以供测试](../outlook/sideload-outlook-add-ins-for-testing.md)中的说明，找到“**我的外接程序**”对话框底部的“**自定义外接程序**”部分。
-
-1. 选择“**Git the gist**”条目旁边的“**...**”按钮，然后选择“**删除**”。
+1. 按照说明从 [侧面加载的外接程序](../outlook/sideload-outlook-add-ins-for-testing.md#remove-a-sideloaded-add-in)中删除 **对 Gist 执行 Git 处理**。
 
 1. 关闭“**我的外接程序**”窗口。
 
 1. 自定义按钮应从功能区中立即消失。
 
-1. 按照[旁加载 Outlook 外接程序以供测试](../outlook/sideload-outlook-add-ins-for-testing.md)中的说明，使用更新的 **manifest.xml** 文件重新安装外接程序。
+1. 按照 [旁加载 Outlook 外接程序以供测试](../outlook/sideload-outlook-add-ins-for-testing.md)中的说明，使用更新的 **manifest.xml** 文件重新安装外接程序。
 
 重新安装外接程序后，可以通过在“邮件撰写”窗口中检查“**插入 gist**”和“**插入默认 gist**”命令来验证是否已成功安装。 请注意，即使你选择了其中任何一项，系统也不会执行任何操作，因为你尚未完成生成此外接程序的操作。
 
 - 如果是在 Windows 版 Outlook 2016 或更高版本中运行此外接程序，则应在“邮件撰写”窗口的功能区中看到两个新按钮：“**插入 gist**”和“**插入默认 gist**”。
 
-    ![突出显示外接程序按钮的 Windows 版 Outlook 功能区屏幕截图](../images/add-in-buttons-in-windows.png)
+    ![Windows 版 Outlook 中突出显示加载项按钮的功能区溢出菜单的屏幕截图](../images/add-in-buttons-in-windows.png)
 
 - 如果在 Outlook 网页版中运行此外接程序，则应该会在“邮件撰写”窗口的底部看到一个新按钮。 选择该按钮可查看选项“**插入 gist**”和“**插入默认 gist**”。
 
@@ -944,11 +944,11 @@ function buildBodyContent(gist, callback) {
 
 1. 打开 Outlook 并撰写一封新邮件。
 
-1. 在“撰写邮件”窗口中，选择“**插入默认 gist**”。 系统将提示你配置外接程序。
+1. 在“撰写邮件”窗口中，选择“**插入默认 gist**”。 您应该会看到对话框，您可以在其中配置外接程序，从提示设置 GitHub 用户名开始。
 
-    ![外接程序提示进行配置的屏幕截图](../images/addin-prompt-configure.png)
+    ![配置外接程序的对话框提示屏幕截图](../images/addin-prompt-configure.png)
 
-1. 在设置对话框中，输入你的 GitHub 用户名，然后选择“**选项卡**”或单击对话框中的其他位置以调用 `change` 事件，该事件应加载 gist 列表。 选择一个 gist 作为默认设置，然后选择“**完成**”。
+1. 在设置对话框中，输入你的 GitHub 用户名，然后选择“**选项卡**”或单击对话框中的其他位置以调用 `change` 事件，该事件应加载公用 gist 列表。 选择一个 gist 作为默认设置，然后选择“**完成**”。
 
     ![外接程序设置对话框的屏幕截图](../images/addin-settings.png)
 
@@ -1309,7 +1309,7 @@ ul {
 
 1. 在任务窗格中，选择 **Hello World Html** gist 并选择“**插入**”以将该 gist 插入到邮件正文中。
 
-![外接程序任务窗格的屏幕截图](../images/addin-taskpane.png)
+![外接程序任务窗格和消息正文中显示的选定 gist 内容的屏幕截图](../images/addin-taskpane.png)
 
 ## <a name="next-steps"></a>后续步骤
 

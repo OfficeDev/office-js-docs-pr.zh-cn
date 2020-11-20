@@ -3,12 +3,12 @@ title: 开发 Office 加载项
 description: Office 加载项开发简介。
 ms.date: 10/14/2020
 localization_priority: Priority
-ms.openlocfilehash: 4f65284730e1211b0628139b7f22c55deb7a6fec
-ms.sourcegitcommit: 42e6cfe51d99d4f3f05a3245829d764b28c46bbb
+ms.openlocfilehash: c0a4ebbae234c9ac1da3b0765a04e31f956ef617
+ms.sourcegitcommit: ceb8dd66f3fb9c963fce8446c2f6c65ead56fbc1
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "48741090"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "49131890"
 ---
 # <a name="develop-office-add-ins"></a>开发 Office 加载项
 
@@ -87,7 +87,7 @@ Script Lab 是一款加载项，在 Excel 或 Word 等 Office 程序中工作时
 
 下面时长一分钟的视频展示了 Script Lab 的实际运行情况。
 
-[![展示 Script Lab 在 Excel、Word 和 PowerPoint 中运行的预览视频。](../images/screenshot-wide-youtube.png 'Script Lab 预览视频')](https://aka.ms/scriptlabvideo)
+[![显示 Script Lab 在 Excel、Word 和 PowerPoint 中运行的短视频](../images/screenshot-wide-youtube.png 'Script Lab 预览视频')](https://aka.ms/scriptlabvideo)
 
 有关 Script Lab 的详细信息，请参阅[使用 Script Lab 了解 Office JavaScript API](../overview/explore-with-script-lab.md)。
 
@@ -101,7 +101,7 @@ Office 加载项可使用加载项命令和 HTML 容器（如任务窗格、内�
 
 下图显示功能区中有一个加载项命令、文档右侧有一个任务窗格，且文档上方有一个对话框或内容加载项。
 
-![显示 Office 文档中的功能区内加载项命令、任务窗格和对话框的图像](../images/add-in-ui-elements.png)
+![显示 Office 文档中的功能区内加载项命令、任务窗格、对话框/内容加载项的图表](../images/add-in-ui-elements.png)
 
 要详细了解如何扩展 Office UI 和设计加载项的 UX，请参阅 [Office 加载项的 Office UI 元素](../design/interface-elements.md)。
 

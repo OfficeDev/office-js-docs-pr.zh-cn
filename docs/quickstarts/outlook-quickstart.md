@@ -4,12 +4,12 @@ description: 了解如何使用 Office JS API 生成简单的 Outlook 任务窗�
 ms.date: 09/22/2020
 ms.prod: outlook
 localization_priority: Priority
-ms.openlocfilehash: f4a3827b630ccee7cd8cef6222bfe6bac82f8ba2
-ms.sourcegitcommit: fd110305c2be8660ab8a47c1da3e3969bd1ede86
+ms.openlocfilehash: c9db8d0d69829a474867e210ea491b1872b8c100
+ms.sourcegitcommit: ceb8dd66f3fb9c963fce8446c2f6c65ead56fbc1
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/23/2020
-ms.locfileid: "48214608"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "49132268"
 ---
 # <a name="build-your-first-outlook-add-in"></a>生成首个 Outlook 加载项
 
@@ -48,8 +48,8 @@ ms.locfileid: "48214608"
 
     - **要支持哪一个 Office 客户端应用程序?** - `Outlook`
 
-    ![有关 Yeoman 生成器提示和回答的屏幕截图](../images/yo-office-outlook.png)
-    
+    ![显示命令行界面中 Yeoman 生成器的提示和回答的屏幕截图](../images/yo-office-outlook.png)
+
     完成此向导后，生成器会创建项目，并安装支持的 Node 组件。
 
     [!include[Yeoman generator next steps](../includes/yo-office-next-steps.md)]
@@ -62,7 +62,7 @@ ms.locfileid: "48214608"
 
 ### <a name="explore-the-project"></a>浏览项目
 
-使用 Yeoman 生成器创建的加载项项目包含适合于基础任务窗格加载项的示例代码。 
+使用 Yeoman 生成器创建的加载项项目包含适合于基础任务窗格加载项的示例代码。
 
 - 项目根目录中的 **./manifest.xml** 文件定义加载项的设置和功能。
 - **./src/taskpane/taskpane.html** 文件包含组成任务窗格的 HTML。
@@ -110,14 +110,14 @@ ms.locfileid: "48214608"
 
 1. 选择“**主页**”选项卡（或“**邮件**”选项卡，如果在新窗口中打开了邮件），然后选择功能区的“**显示任务窗格**”按钮以打开加载项任务窗格。
 
-    ![Outlook 中邮件窗口的屏幕截图，突出显示了加载项按钮](../images/quick-start-button-1.png)
+    ![显示 Outlook 中突出显示“加载项”功能区按钮的消息窗口屏幕截图](../images/quick-start-button-1.png)
 
     > [!NOTE]
     > 如果在任务窗格中收到错误“我们无法从本地主机打开此加载项”，请按照[疑难解答文章中](/office/troubleshoot/office-suite-issues/cannot-open-add-in-from-localhost)中所述步骤进行操作。
 
 1. 滚动至任务窗格的底部并选择“**运行**”链接，将邮件主题写入任务窗格。
 
-    ![加载项任务窗格截屏，高亮显示运行链接](../images/quick-start-task-pane-2.png)
+    ![显示突出显示“运行”链接的外接程序的任务窗格屏幕截图](../images/quick-start-task-pane-2.png)
 
     ![加载项任务窗格的屏幕截图，其中显示邮件主题](../images/quick-start-task-pane-3.png)
 
@@ -129,10 +129,10 @@ ms.locfileid: "48214608"
 
 ### <a name="prerequisites"></a>先决条件
 
-- 安装了 **Office/SharePoint 开发**工作负载的 [Visual Studio 2019](https://www.visualstudio.com/vs/)
+- 安装了 **Office/SharePoint 开发** 工作负载的 [Visual Studio 2019](https://www.visualstudio.com/vs/)
 
     > [!NOTE]
-    > 如果之前已安装 Visual Studio 2019，请[使用 Visual Studio 安装程序](/visualstudio/install/modify-visual-studio)，以确保安装 **Office/SharePoint 开发**工作负载。
+    > 如果之前已安装 Visual Studio 2019，请 [使用 Visual Studio 安装程序](/visualstudio/install/modify-visual-studio)，以确保安装 **Office/SharePoint 开发** 工作负载。
 
 - Office 365
 
@@ -141,13 +141,13 @@ ms.locfileid: "48214608"
 
 ### <a name="create-the-add-in-project"></a>创建加载项项目
 
-1. 在 Visual Studio 菜单栏中，依次选择“文件”**** > “新建”**** > “项目”****。
+1. 在 Visual Studio 菜单栏中，依次选择“文件” > “新建” > “项目”。
 
-1. 在“Visual C#”**** 或“Visual Basic”**** 下的项目类型列表中，展开“Office/SharePoint”****，选择“加载项”****，然后选择“Outlook Web 加载项”**** 作为项目类型。
+1. 在“Visual C#”或“Visual Basic”下的项目类型列表中，展开“Office/SharePoint”，选择“加载项”，然后选择“Outlook Web 加载项”作为项目类型。
 
-1. 命名此项目，再选择“确定”****。
+1. 命名此项目，再选择“确定”。
 
-1. 此时，Visual Studio 创建解决方案，且它的两个项目显示在“解决方案资源管理器”**** 中。 **MessageRead.html** 文件在 Visual Studio 中打开。
+1. 此时，Visual Studio 创建解决方案，且它的两个项目显示在“解决方案资源管理器”中。 **MessageRead.html** 文件在 Visual Studio 中打开。
 
 ### <a name="explore-the-visual-studio-solution"></a>浏览 Visual Studio 解决方案
 
@@ -196,7 +196,7 @@ ms.locfileid: "48214608"
     </body>
     ```
 
-1. 打开 Web 应用项目的根文件夹中的文件“MessageRead.js”****。 此文件指定的是加载项脚本。 将整个内容替换为以下代码，并保存文件。
+1. 打开 Web 应用项目的根文件夹中的文件“MessageRead.js”。 此文件指定的是加载项脚本。 将整个内容替换为以下代码，并保存文件。
 
     ```js
     'use strict';
@@ -221,7 +221,7 @@ ms.locfileid: "48214608"
     })();
     ```
 
-1. 打开 Web 应用项目的根文件夹中的文件“MessageRead.css”****。 此文件指定的是加载项自定义样式。 将整个内容替换为以下代码，并保存文件。
+1. 打开 Web 应用项目的根文件夹中的文件“MessageRead.css”。 此文件指定的是加载项自定义样式。 将整个内容替换为以下代码，并保存文件。
 
     ```CSS
     html,
@@ -265,9 +265,9 @@ ms.locfileid: "48214608"
 
 ### <a name="try-it-out"></a>试用
 
-1. 在 Visual Studio 中，按 F5 或选择“开始”**** 按钮测试新建的 Outlook 加载项。 加载项本地托管在 IIS 上。
+1. 在 Visual Studio 中，按 F5 或选择“开始”按钮测试新建的 Outlook 加载项。 加载项本地托管在 IIS 上。
 
-1. 在“连接到 Exchange 电子邮件帐户”**** 对话框中，输入你的 [Microsoft 帐户](https://account.microsoft.com/account)的电子邮件地址和密码，然后选择“连接”****。 如果 Outlook.com 登录页是在浏览器中打开，请使用先前输入的相同凭据登录电子邮件帐户。
+1. 在“连接到 Exchange 电子邮件帐户”对话框中，输入你的 [Microsoft 帐户](https://account.microsoft.com/account)的电子邮件地址和密码，然后选择“连接”。 如果 Outlook.com 登录页是在浏览器中打开，请使用先前输入的相同凭据登录电子邮件帐户。
 
     > [!NOTE]
     > 如果“**连接到 Exchange 电子邮件帐户**”对话框重复提示你登录，则可能已对你 Microsoft 365 租户上的帐户禁用基本身份验证。 若要测试此加载项，请改用 [Microsoft 帐户](https://account.microsoft.com/account)登录。

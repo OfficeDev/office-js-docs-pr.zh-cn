@@ -1,15 +1,15 @@
 ---
-ms.date: 07/10/2020
+ms.date: 11/09/2020
 description: 在 Excel 中开发自定义函数快速入门指南。
 title: 自定义函数快速入门
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: adf420618ff744a409c6fc61af9b854f786055c0
-ms.sourcegitcommit: 472b81642e9eb5fb2a55cd98a7b0826d37eb7f73
+ms.openlocfilehash: ae8176b030e7542b22c62998311fd598f2191ffd
+ms.sourcegitcommit: ceb8dd66f3fb9c963fce8446c2f6c65ead56fbc1
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/17/2020
-ms.locfileid: "45159442"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "49132352"
 ---
 # <a name="get-started-developing-excel-custom-functions"></a>开始开发 Excel 自定义函数
 
@@ -36,7 +36,7 @@ ms.locfileid: "45159442"
     - **选择脚本类型:** `JavaScript`
     - **要如何命名加载项?** `starcount`
 
-    ![自定义函数的 Office 外接程序提示的 Yeoman 生成器](../images/starcountPrompt.png)
+    ![Yeoman Office 外接程序生成器命令行界面提示自定义函数项目的屏幕截图](../images/starcountPrompt.png)
 
     Yeoman 生成器将创建项目文件并安装支持的 Node 组件。
 
@@ -77,13 +77,13 @@ npm run start:web
 
 1. 在 Excel 中，选择“**插入**”选项卡，然后选择“**加载项**”。
 
-   ![Excel 网页版中的“插入”功能区，突出显示“我的加载项”图标](../images/excel-cf-online-register-add-in-1.png)
+   ![Excel 网页版中插入功能区的屏幕截图，突出显示“我的加载项”按钮](../images/excel-cf-online-register-add-in-1.png)
    
-2. 选择“管理我的加载项”****，然后选择“上载我的加载项”****。
+2. 选择“**管理我的加载项**”，然后选择“**上载我的加载项**”。
 
-3. 选择“浏览...”****，并导航到 Yeoman 生成器创建的项目的根目录。
+3. 选择“浏览...”，并导航到 Yeoman 生成器创建的项目的根目录。
 
-4. 依次选择文件“manifest.xml”****，“打开”****，然后选择“上载”****。
+4. 依次选择文件“manifest.xml”，“打开”，然后选择“上载”。
 
 ---
 

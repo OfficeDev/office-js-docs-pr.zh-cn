@@ -1,15 +1,15 @@
 ---
 title: 使用 Vue 生成 Excel 任务窗格加载项
 description: 了解如何使用 Office JS API 和 Vue 生成简单的 Excel 任务窗格加载项。
-ms.date: 10/14/2020
+ms.date: 11/09/2020
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: aff6271fa4d602141807b33ff96637957818c466
-ms.sourcegitcommit: 42e6cfe51d99d4f3f05a3245829d764b28c46bbb
+ms.openlocfilehash: 61fa374f9c1f628c50b12b6495afba2d89d02840
+ms.sourcegitcommit: ceb8dd66f3fb9c963fce8446c2f6c65ead56fbc1
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "48741167"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "49132345"
 ---
 # <a name="build-an-excel-task-pane-add-in-using-vue"></a>使用 Vue 生成 Excel 任务窗格加载项
 
@@ -61,12 +61,12 @@ vue create my-add-in
     - **要如何命名加载项?** `My Office Add-in`
     - **要支持哪一个 Office 客户端应用程序?** `Excel`
 
-    ![Yeoman 生成器](../images/yo-office-manifest-only-vue.png)
+    ![项目类型设置为“仅清单” 的 Yeoman Office 外接程序生成器命令行界面屏幕截图](../images/yo-office-manifest-only-vue.png)
 
 完成向导后，会创建一个 `My Office Add-in` 文件夹，其中包含一个 `manifest.xml` 文件。 你将在本快速入门结束时使用该清单旁加载和测试你的加载项。
 
 > [!TIP]
-> 创建加载项项目后，可忽略 Yeoman 生成器提供的*后续步骤*指南。 本文中的分步说明提供了完成本教程所需的全部指南。
+> 创建加载项项目后，可忽略 Yeoman 生成器提供的 *后续步骤* 指南。 本文中的分步说明提供了完成本教程所需的全部指南。
 
 ## <a name="secure-the-app"></a>保护应用
 
@@ -208,13 +208,13 @@ vue create my-add-in
 
 2. 在 Excel 中，依次选择的“**开始**”选项卡和功能区中的“**显示任务窗格**”按钮，以打开加载项任务窗格。
 
-   ![Excel 加载项按钮](../images/excel-quickstart-addin-2a.png)
+   ![Excel 主页菜单的屏幕截图，突出显示“显示任务窗格”按钮](../images/excel-quickstart-addin-2a.png)
 
 3. 选择工作表中的任何一系列单元格。
 
 4. 在任务窗格中，选择“**设置颜色**”按钮，将选定区域的颜色设置为绿色。
 
-   ![Excel 加载项](../images/excel-quickstart-addin-2c.png)
+   ![Excel 屏幕截图，其中加载项任务窗格打开](../images/excel-quickstart-addin-2c.png)
 
 ## <a name="next-steps"></a>后续步骤
 

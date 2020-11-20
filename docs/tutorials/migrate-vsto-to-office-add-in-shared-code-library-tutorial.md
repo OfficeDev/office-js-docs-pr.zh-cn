@@ -4,12 +4,12 @@ ms.prod: non-product-specific
 description: 有关如何在 VSTO 加载项与 Office 加载项之间共享代码的教程。
 title: 教程：使用共享代码库在 VSTO 加载项与 Office 加载项之间共享代码
 localization_priority: Priority
-ms.openlocfilehash: 5be0b3c1064da43c8d5225c372ab65b4839f09fb
-ms.sourcegitcommit: 472b81642e9eb5fb2a55cd98a7b0826d37eb7f73
+ms.openlocfilehash: 761820dece1d5b8322de38863e10ad2f536445b9
+ms.sourcegitcommit: ceb8dd66f3fb9c963fce8446c2f6c65ead56fbc1
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/17/2020
-ms.locfileid: "45159106"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "49131743"
 ---
 # <a name="tutorial-share-code-between-both-a-vsto-add-in-and-an-office-add-in-with-a-shared-code-library"></a>教程：使用共享代码库在 VSTO 加载项与 Office 加载项之间共享代码
 
@@ -44,7 +44,7 @@ Office 加载项使用 HTML、JavaScript 和其他 Web 技术来构建所有平�
     - ASP.NET 和 Web 开发
     - .NET Core 跨平台开发。
     - Office/SharePoint 开发
-    - 以下**各个**组件。
+    - 以下 **各个** 组件。
         - Visual Studio Tools for Office (VSTO)。
         - .NET Core 3.0 Runtime。
 
@@ -61,16 +61,16 @@ Office 加载项使用 HTML、JavaScript 和其他 Web 技术来构建所有平�
 > 该示例使用 C#，但你可以将本教程中的方法应用于采用任何 .NET 语言编写的 VSTO 加载项。
 
 1. 将 [Office 加载项的 VSTO 加载项共享库](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Samples/VSTO-shared-code-migration) PnP 解决方案下载到计算机上的工作文件夹。
-2. 启动 Visual Studio 2019 并打开 **/start/Cell-Analyzer.sln** 解决方案。
-3. 在“**调试**”菜单中，选择“**开始调试**”。
-3. 在“**解决方案资源管理器**”中，右键单击“**单元格分析器**”项目，然后选择“**属性**”。
-4. 在属性中选择“**签名**”类别。
-5. 选择“**为 ClickOnce 清单签名**”，然后选择“**创建测试证书**”。
-6. 在“**创建测试证书**”对话框中，输入并确认密码。 然后选择“**确定**”。
+1. 启动 Visual Studio 2019 并打开 **/start/Cell-Analyzer.sln** 解决方案。
+1. 在“**调试**”菜单中，选择“**开始调试**”。
+1. 在“**解决方案资源管理器**”中，右键单击“**单元格分析器**”项目，然后选择“**属性**”。
+1. 在属性中选择“**签名**”类别。
+1. 选择“**为 ClickOnce 清单签名**”，然后选择“**创建测试证书**”。
+1. 在“**创建测试证书**”对话框中，输入并确认密码。 然后选择“**确定**”。
 
-该加载项是 Excel 的自定义任务窗格。 你可以选择包含文本的任何单元格，然后选择“**显示 Unicode**”按钮。 该加载项将列出文本中的每个字符及其相应 Unicode 编号。
+该加载项是 Excel 的自定义任务窗格。 你可以选择包含文本的任何单元格，然后选择“**显示 unicode**”按钮。 在“**结果**”部分中，该加载项将列出文本中的每个字符及其相应 Unicode 编号。
 
-![Excel 中运行的单元格分析器 VSTO 加载项的屏幕截图](../images/pnp-cell-analyzer-vsto-add-in.png)
+![在 Excel 中运行的 Cell Analyzer VSTO 加载项的屏幕截图，带有“显示 unicode”按钮和空结果部分](../images/pnp-cell-analyzer-vsto-add-in.png)
 
 ## <a name="analyze-types-of-code-in-the-vsto-add-in"></a>分析 VSTO 加载项中的代码类型
 
@@ -91,10 +91,10 @@ UI 代码与用户进行交互。 在 VSTO 中，UI 代码可通过 Windows 窗�
 让我们看一看 VSTO 加载项。 在以下代码中，每个部分标识为 DOCUMENT、UI 或 ALGORITHM 代码。
 
 ```csharp
-// *** UI CODE ***
+// **_ UI CODE _*_
 private void btnUnicode_Click(object sender, EventArgs e)
 {
-    // *** DOCUMENT CODE ***
+    // _*_ DOCUMENT CODE _*_
     Microsoft.Office.Interop.Excel.Range rangeCell;
     rangeCell = Globals.ThisAddIn.Application.ActiveCell;
 
@@ -105,7 +105,7 @@ private void btnUnicode_Click(object sender, EventArgs e)
         cellValue = rangeCell.Value.ToString();
     }
 
-    // *** ALGORITHM CODE ***
+    // _*_ ALGORITHM CODE _*_
     //convert string to Unicode listing
     string result = "";
     foreach (char c in cellValue)
@@ -114,8 +114,8 @@ private void btnUnicode_Click(object sender, EventArgs e)
 
         result += $"{c}: {unicode}\r\n";
     }
-    
-    // *** UI CODE ***
+
+    // _*_ UI CODE _*_
     //Output the result
     txtResult.Text = result;
 }
@@ -124,7 +124,7 @@ private void btnUnicode_Click(object sender, EventArgs e)
 使用此方法就会发现，可以将一个代码段共享到 Office 加载项。 需要将以下代码重构到单独的类库中。
 
 ```csharp
-// *** ALGORITHM CODE ***
+// _*_ ALGORITHM CODE _*_
 //convert string to Unicode listing
 string result = "";
 foreach (char c in cellValue)
@@ -139,7 +139,7 @@ foreach (char c in cellValue)
 
 在 Visual Studio 中，VSTO 加载项会创建为 .NET 项目，因此为简单起见，我们将尽可能重用 .NET。 下一种方法是创建类库，然后将共享代码重构到该类库中。
 
-1. 如果尚未启动 Visual Studio 2019 并打开 **\start\Cell-Analyzer.sln** 解决方案，请执行此操作。
+1. 如果尚未启动 Visual Studio 2019 并打开_ *\start\Cell-Analyzer.sln** 解决方案，请执行此操作。
 2. 右键单击“**解决方案资源管理器**”中的解决方案，并选择 **“添加”>“新建项目”**。
 3. 在“**添加新项目**”对话框中，选择“**类库(.NET Framework)**”，然后选择“**下一步**”。
     > [!NOTE]
@@ -177,7 +177,7 @@ public class CellOperations
 2. 选择“**CellAnalyzerSharedLibrary**”，然后选择“**确定**”。
 3. 在“**解决方案资源管理器**”中，展开“**单元格分析器**”项目，右键单击“**CellAnalyzerPane.cs**”文件，然后选择“**查看代码**”。
 4. 在 `btnUnicode_Click` 方法中，删除以下代码行。
-    
+
     ```csharp
     //Convert to Unicode listing
     string result = "";
@@ -187,14 +187,14 @@ public class CellOperations
       result += $"{c}: {unicode}\r\n";
     }
     ```
-    
+
 5. 将 `//Output the result` 注释下的代码行更新为如下代码：
-    
+
     ```csharp
     //Output the result
     txtResult.Text = CellAnalyzerSharedLibrary.CellOperations.GetUnicodeFromText(cellValue);
     ```
-    
+
 6. 在“**调试**”菜单中，选择“**开始调试**”。 自定义任务窗格应按预期运行。 在单元格中输入一些文本，然后进行测试，以确定可以用加载项将其转换为 Unicode 列表。
 
 ## <a name="create-a-rest-api-wrapper"></a>创建 REST API 包装器
@@ -216,7 +216,7 @@ VSTO 加载项可以直接使用共享类库，因为它们都是 .NET 项目。
 11. 在“**添加新搭建基架的项目**”对话框中，选择“**API 控制器 - 空**”，然后选择“**添加**”。
 12. 在“**添加空的 API 控制器**”对话框中，将该控制器命名为“**AnalyzeUnicodeController**”，然后选择“**添加**”。
 13. 打开“**AnalyzeUnicodeController.cs**”文件，然后将以下代码作为方法添加到 `AnalyzeUnicodeController` 类。
-    
+
     ```csharp
     [HttpGet]
     public ActionResult<string> AnalyzeUnicode(string value)
@@ -228,7 +228,7 @@ VSTO 加载项可以直接使用共享类库，因为它们都是 .NET 项目。
       return CellAnalyzerSharedLibrary.CellOperations.GetUnicodeFromText(value);
     }
     ```
-    
+
 14. 右键单击“**CellAnalyzerRESTAPI**”项目，然后选择“**设为启动项目**”。
 15. 在“**调试**”菜单中，选择“**开始调试**”。
 16. 随后将启动浏览器。 输入以下 URL 以测试 REST API 是否正在运行：`https://localhost:<ssl port number>/api/analyzeunicode?value=test`。 你可以重用 Visual Studio 启动的浏览器中的 URL 的端口号。 应该会看到返回一个字符串，其含有每个字符的 Unicode 值。
@@ -257,6 +257,7 @@ VSTO 加载项可以直接使用共享类库，因为它们都是 .NET 项目。
 5. 在“**选择加载项类型**”对话框中，选择“**将新功能添加到 Excel**”，然后选择“**完成**”。
 
 随后将创建两个项目：
+
 - **CellAnalyzerOfficeAddin** - 此项目将配置用于描述此加载项的清单 XML 文件，以便 Office 可正确将其加载。 其中包含此加载项的 ID、名称、描述和其他信息。
 - **CellAnalyzerOfficeAddinWeb** - 此项目包含用于加载项的 Web 资源，如 HTML、CSS 和脚本。 此外，还配置 IIS Express 实例，从而将你的加载项托管为 Web 应用程序。
 
@@ -264,15 +265,15 @@ VSTO 加载项可以直接使用共享类库，因为它们都是 .NET 项目。
 
 1. 在“**解决方案资源管理器**”中，展开“**CellAnalyzerOfficeAddinWeb**”项目。
 2. 打开 **Home. html** 文件，然后将 `<body>` 的内容替换为以下 HTML。
-    
+
     ```html
     <button id="btnShowUnicode" onclick="showUnicode()">Show Unicode</button>
     <p>Result:</p>
     <div id="txtResult"></div>
     ```
-    
-3. 打开 **Home.js** 文件并将全部内容替换为以下代码。 
-    
+
+3. 打开 **Home.js** 文件并将全部内容替换为以下代码。
+
     ```js
     (function () {
       "use strict";
@@ -282,7 +283,7 @@ VSTO 加载项可以直接使用共享类库，因为它们都是 .NET 项目。
         });
       };
     })();
-    
+
     function showUnicode() {
       Excel.run(function (ctx) {
         const range = ctx.workbook.getSelectedRange();
@@ -304,8 +305,8 @@ VSTO 加载项可以直接使用共享类库，因为它们都是 .NET 项目。
       });
     }
     ```
-    
-4. 在上面的代码中，输入你先前从 **launchSettings json** 文件保存的**sslPort** 号。
+
+4. 在上面的代码中，输入你先前从 **launchSettings json** 文件保存的 **sslPort** 号。
 
 在上面的代码中将处理返回的字符串，以便将回车换行替换为 `<br>` HTML 标记。 偶尔在某些情况下，可能需要在 Office 加载项侧调整 VSTO 加载项中对 .NET 完全适用的返回值，才能使该返回值符合预期。 在此情况下，REST API 和共享类库仅关注返回字符串。 `showUnicode()` 方法负责正确设置返回值的格式以便显示。
 
@@ -318,7 +319,7 @@ Office.js 库要求对传出调用执行 CORS，例如 REST API 服务器的 `aj
 3. 在属性窗口中，复制“**SSL URL**”的值，然后将其保存到某个位置。 这是你需要通过 CORS 允许的 URL。
 4. 在“**CellAnalyzerRESTAPI**”项目中，打开 **Startup.cs** 文件。
 5. 将以下代码添加到 `ConfigureServices` 方法上方。 请务必替换先前为 `builder.WithOrigins` 调用复制的 URL SSL。
-    
+
     ```csharp
     services.AddCors(options =>
     {
@@ -331,18 +332,18 @@ Office.js 库要求对传出调用执行 CORS，例如 REST API 服务器的 `aj
       });
     });
     ```
-    
+
     > [!NOTE]
     > 在 `builder.WithOrigins`方法中使用 URL 时，请保留末尾的 `/`。 例如，它应该类似于 `https://localhost:44000`。 否则，在运行时将出现 CORS 错误。
-    
+
 6. 将下列字段添加到 `Startup` 类：
-    
+
     ```csharp
     readonly string MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
     ```
-    
+
 7. 将以下代码添加到 `configure` 方法中的 `app.UseEndpoints` 代码行之前。
-    
+
     ```csharp
     app.UseCors(MyAllowSpecificOrigins);
     ```
@@ -386,7 +387,7 @@ public class Startup
         {
             app.UseDeveloperExceptionPage();
         }
-            
+
         app.UseHttpsRedirection();
 
         app.UseRouting();
@@ -408,11 +409,11 @@ public class Startup
 1. 在“**解决方案资源管理器**”中，右键单击顶层节点“**解决方案‘单元格分析器’**”，然后选择“**设置启动项目**”。
 2. 在“**解决方案‘单元格分析器’属性页**”对话框中，选择“**多个启动项目**”。
 3. 为以下每个项目，将“**操作**”属性设置为“**启动**”。
-    
+
     - CellAnalyzerRESTAPI
     - CellAnalyzerOfficeAddin
     - CellAnalyzerOfficeAddinWeb
-    
+
 4. 选择“**确定**”。
 5. 从“**调试**”菜单中选择“**开始调试**”。
 
@@ -436,17 +437,19 @@ Excel 将运行并旁加载 Office 加载项。 可通过以下方式测试 loca
 最后一步是更新 Office 加载项中的代码，从而使用 Azure 应用服务，而不是 localhost。
 
 1. 在“**解决方案资源管理器**”中，展开“**CellAnalyzerOfficeAddinWeb**”项目，然后打开“**Home.js**”文件。
-2. 将 `url` 常量更改为使用你的 Azure 应用服务的 URL，如以下代码行所示。 将 `<myappservice>` 替换成你为新应用服务创建的唯一名称。
+1. 将 `url` 常量更改为使用你的 Azure 应用服务的 URL，如以下代码行所示。 将 `<myappservice>` 替换成你为新应用服务创建的唯一名称。
+
     ```JavaScript
     const url = "https://<myappservice>.azurewebsites.net/api/analyzeunicode?value=" + range.values[0][0];
     ```
-3. 在“**解决方案资源管理器**”中，右键单击顶层节点“**解决方案‘单元格分析器’**”，然后选择“**设置启动项目**”。
-4. 在“**解决方案‘单元格分析器’属性页**”对话框中，选择“**多个启动项目**”。
-5. 为以下每个项目启用“**启动**”操作：
+
+1. 在“**解决方案资源管理器**”中，右键单击顶层节点“**解决方案‘单元格分析器’**”，然后选择“**设置启动项目**”。
+1. 在“**解决方案‘单元格分析器’属性页**”对话框中，选择“**多个启动项目**”。
+1. 为以下每个项目启用“**启动**”操作：
     - CellAnalyzerOfficeAddinWeb
     - CellAnalyzerOfficeAddin
-6. 选择“**确定**”。
-7. 从“**调试**”菜单中选择“**开始调试**”。
+1. 选择“**确定**”。
+1. 从“**调试**”菜单中选择“**开始调试**”。
 
 Excel 将运行并旁加载 Office 加载项。 若要测试应用服务是否正常运行，请将文本值输入单元格，然后在 Office 加载项中选择“**显示 Unicode**”。 它应该会调用该服务并显示文本字符的 Unicode 值。
 

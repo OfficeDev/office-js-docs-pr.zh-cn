@@ -4,12 +4,12 @@ description: 了解如何使用 Office JS API 生成简单的 OneNote 任务窗�
 ms.date: 10/14/2020
 ms.prod: onenote
 localization_priority: Priority
-ms.openlocfilehash: 0e4022b9f2b91b03cb260f2d56fc3bac2a0ddaae
-ms.sourcegitcommit: 42e6cfe51d99d4f3f05a3245829d764b28c46bbb
+ms.openlocfilehash: de0729a483057a61be3793e299995aa05d287441
+ms.sourcegitcommit: ceb8dd66f3fb9c963fce8446c2f6c65ead56fbc1
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "48741160"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "49132289"
 ---
 # <a name="build-your-first-onenote-task-pane-add-in"></a>生成首个 OneNote 任务窗格加载项
 
@@ -29,7 +29,7 @@ ms.locfileid: "48741160"
 - **要如何命名加载项?** `My Office Add-in`
 - **要支持哪一个 Office 客户端应用程序?** `OneNote`
 
-![有关 Yeoman 生成器提示和回答的屏幕截图](../images/yo-office-onenote.png)
+![显示命令行界面中 Yeoman 生成器的提示和回答的屏幕截图](../images/yo-office-onenote.png)
 
 完成此向导后，生成器会创建项目，并安装支持的 Node 组件。
 
@@ -37,7 +37,7 @@ ms.locfileid: "48741160"
 
 ## <a name="explore-the-project"></a>浏览项目
 
-使用 Yeoman 生成器创建的加载项项目包含适合于基础任务窗格加载项的示例代码。 
+使用 Yeoman 生成器创建的加载项项目包含适合于基础任务窗格加载项的示例代码。
 
 - 项目根目录中的 **./manifest.xml** 文件定义加载项的设置和功能。
 - **./src/taskpane/taskpane.html** 文件包含组成任务窗格的 HTML。
@@ -98,23 +98,23 @@ try {
 
 3. 在 [OneNote 网页版](https://www.onenote.com/notebooks)中，打开笔记本并新建页面。
 
-4. 依次选择“插入”>“Office 加载项”****，打开“Office 加载项”对话框。
+4. 依次选择“插入”>“Office 加载项”，打开“Office 加载项”对话框。
 
-    - 如果使用使用者帐户登录，请依次选择“我的加载项”**** 选项卡和“上传我的加载项”****。
+    - 如果使用使用者帐户登录，请依次选择“我的加载项”选项卡和“上传我的加载项”。
 
-    - 如果使用工作或教育帐户登录，请依次选择“**我的组织**”选项卡和“**上传我的加载项**”。 
+    - 如果使用工作或教育帐户登录，请依次选择“**我的组织**”选项卡和“**上传我的加载项**”。
 
     下图展示了使用者笔记本的“**我的加载项**”选项卡。
 
-    <img alt="The Office Add-ins dialog showing the MY ADD-INS tab" src="../images/onenote-office-add-ins-dialog.png" width="500">
+    <img alt="Screenshot of the Office Add-ins dialog showing the MY ADD-INS tab" src="../images/onenote-office-add-ins-dialog.png" width="500">
 
-5. 在“**上传加载项**”对话框中，转到项目文件夹中的 manifest.xml，然后选择“**上传**”。 
+5. 在“**上传加载项**”对话框中，转到项目文件夹中的 manifest.xml，然后选择“**上传**”。
 
 6. 在“**开始**”选项卡上，选择位于功能区的“**显示任务窗格**”按钮。 该加载项窗格在 OneNote 页旁的 iFrame 中打开。
 
 7. 在任务窗格底部，选择“**运行**”链接以设置页面标题并在页面正文中添加大纲。
 
-    ![通过此演练生成的 OneNote 加载项](../images/onenote-first-add-in-4.png)
+    ![显示根据本演练生成的加载项的屏幕截图：在 OneNote 中显示任务窗格功能区按钮和任务窗格](../images/onenote-first-add-in-4.png)
 
 ## <a name="next-steps"></a>后续步骤
 
@@ -125,9 +125,8 @@ try {
 
 ## <a name="see-also"></a>另请参阅
 
-* [Office 加载项平台概述](../overview/office-add-ins.md)
-* [开发 Office 加载项](../develop/develop-overview.md)
+- [Office 加载项平台概述](../overview/office-add-ins.md)
+- [开发 Office 加载项](../develop/develop-overview.md)
 - [OneNote JavaScript API 编程概述](../onenote/onenote-add-ins-programming-overview.md)
 - [OneNote JavaScript API 参考](../reference/overview/onenote-add-ins-javascript-reference.md)
 - [Rubric Grader 示例](https://github.com/OfficeDev/OneNote-Add-in-Rubric-Grader)
-
