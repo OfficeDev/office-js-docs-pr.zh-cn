@@ -4,12 +4,12 @@ description: 了解如何使用 Office JS API 生成简单的 Project 任务窗�
 ms.date: 10/14/2020
 ms.prod: project
 localization_priority: Priority
-ms.openlocfilehash: ba6d6d0917e43311370188b46a7c2d26b8c916ae
-ms.sourcegitcommit: 42e6cfe51d99d4f3f05a3245829d764b28c46bbb
+ms.openlocfilehash: a7f9b00a9f2782e014f1060d59505d7e876a969e
+ms.sourcegitcommit: ceb8dd66f3fb9c963fce8446c2f6c65ead56fbc1
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "48741188"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "49132254"
 ---
 # <a name="build-your-first-project-task-pane-add-in"></a>生成首个 Project 任务窗格加载项
 
@@ -31,7 +31,7 @@ ms.locfileid: "48741188"
 - **要如何命名加载项?** `My Office Add-in`
 - **要支持哪一个 Office 客户端应用程序?** `Project`
 
-![有关 Yeoman 生成器提示和回答的屏幕截图](../images/yo-office-project.png)
+![显示命令行界面中 Yeoman 生成器的提示和回答的屏幕截图](../images/yo-office-project.png)
 
 完成此向导后，生成器会创建项目，并安装支持的 Node 组件。
 
@@ -39,7 +39,7 @@ ms.locfileid: "48741188"
 
 ## <a name="explore-the-project"></a>浏览项目
 
-使用 Yeoman 生成器创建的加载项项目包含适合于基础任务窗格加载项的示例代码。 
+使用 Yeoman 生成器创建的加载项项目包含适合于基础任务窗格加载项的示例代码。
 
 - 项目根目录中的 **./manifest.xml** 文件定义加载项的设置和功能。
 - **./src/taskpane/taskpane.html** 文件包含组成任务窗格的 HTML。

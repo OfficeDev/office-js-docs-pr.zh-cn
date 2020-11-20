@@ -4,12 +4,12 @@ description: 学习如何在Microsoft Excel中的自定义函数和任务窗格�
 ms.date: 08/13/2020
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: 02cd2269965019efb4b9ac9851103924e6c5cc2c
-ms.sourcegitcommit: ed2a98b6fb5b432fa99c6cefa5ce52965dc25759
+ms.openlocfilehash: 0def8178a06231a866bbb87573f936314ac064f1
+ms.sourcegitcommit: ceb8dd66f3fb9c963fce8446c2f6c65ead56fbc1
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/16/2020
-ms.locfileid: "47819628"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "49131778"
 ---
 # <a name="tutorial-share-data-and-events-between-excel-custom-functions-and-the-task-pane"></a>教程：Microsoft Excel自定义函数和任务窗格之间共享数据和事件
 
@@ -23,15 +23,15 @@ ms.locfileid: "47819628"
 
 使用 Yeoman 生成器创建 Excel 加载项项目。 运行下面的命令，使用下面的答案回答提示问题：
 
-```command line
+```command line
 yo office
 ```
 
 - 选择项目类型： **Excel 自定义函数加载项项目**
 - 选择脚本类型： **JavaScript**
-- 你想要如何命名加载项？ **我的 Office 加载项**
+- 要如何命名加载项？ **我的 Office 加载项**
 
-![回答 Office 中的提示问题以创建加载项项目的屏幕截图。](../images/yo-office-excel-project.png)
+![显示命令行界面中 Yeoman 生成器的提示和回答的屏幕截图](../images/yo-office-excel-project.png)
 
 完成此向导后，生成器会创建项目，并安装支持的 Node 组件。
 
@@ -39,7 +39,7 @@ yo office
 
 1. 启动 Visual Studio Code 并打开“**我的 Office 加载项**”项目。
 2. 打开 **manifest.xml** 文件。
-3. 找到 `<VersionOverrides>` 部分并添加以下 `<Runtimes>` 部分。 生存期需要**较长**，以便在关闭任务窗格时自定义函数仍可正常工作。
+3. 找到 `<VersionOverrides>` 部分并添加以下 `<Runtimes>` 部分。 生存期需要 **较长**，以便在关闭任务窗格时自定义函数仍可正常工作。
 
    ```xml
    <VersionOverrides xmlns="http://schemas.microsoft.com/office/taskpaneappversionoverrides" xsi:type="VersionOverridesV1_0">
@@ -96,7 +96,7 @@ yo office
 
 8. 保存更改并重新生成项目。
 
-   ```command line
+   ```command line
    npm run build
    ```
 
@@ -200,7 +200,7 @@ yo office
 5. 保存文件。
 6. 生成项目
 
-   ```command line
+   ```command line
    npm run build
    ```
 
@@ -208,7 +208,7 @@ yo office
 
 - 使用以下命令启动项目。
 
-  ```command line
+  ```command line
   npm run start
   ```
 
