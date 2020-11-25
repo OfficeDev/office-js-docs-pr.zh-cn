@@ -2,14 +2,14 @@
 title: '配置 Outlook 外接程序以进行基于事件的激活 (预览) '
 description: 了解如何配置 Outlook 外接程序以进行基于事件的激活。
 ms.topic: article
-ms.date: 09/21/2020
+ms.date: 11/24/2020
 localization_priority: Normal
-ms.openlocfilehash: 1ddf5cd17934df261ef0002f38d92ed0dc40ca00
-ms.sourcegitcommit: 4a03d8b3f676ee2d91114813cb81bce5da3c8d6b
+ms.openlocfilehash: d7ba4a0fb87ec51db56892f4eb3002ae5b7fa6ec
+ms.sourcegitcommit: f4fa1a0187466ea136009d1fe48ec67e4312c934
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "48175547"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "49408839"
 ---
 # <a name="configure-your-outlook-add-in-for-event-based-activation-preview"></a>配置 Outlook 外接程序以进行基于事件的激活 (预览) 
 
@@ -188,7 +188,7 @@ Windows 上的 outlook 使用 JavaScript 文件，而 web 上的 Outlook 使用�
 
 ## <a name="try-it-out"></a>试用
 
-1. 在项目的根目录中运行以下命令。 运行此命令时，本地 Web 服务器将启动（如果尚未运行）。
+1. 在项目的根目录中运行以下命令。运行此命令时，本地 Web 服务器将启动（如果尚未运行）。
 
     ```command&nbsp;line
     npm run dev-server
@@ -219,6 +219,7 @@ Windows 上的 outlook 使用 JavaScript 文件，而 web 上的 Outlook 使用�
   - `displayDialogAsync`
   - `messageParent`
 - 在 `Office.context.auth` ：
+  - `getAccessToken`
   - `getAccessTokenAsync`
 
 ## <a name="see-also"></a>另请参阅
