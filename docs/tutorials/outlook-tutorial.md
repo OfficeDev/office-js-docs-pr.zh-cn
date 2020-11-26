@@ -1,15 +1,15 @@
 ---
 title: 教程：生成邮件撰写 Outlook 外接程序
 description: 在本教程中，你将生成一个可将 GitHub gist 插入到新邮件正文中的 Outlook 外接程序。
-ms.date: 11/12/2020
+ms.date: 11/20/2020
 ms.prod: outlook
 localization_priority: Priority
-ms.openlocfilehash: 8c962fb5772ed906fe6096a7e039d0be31a26c77
-ms.sourcegitcommit: ceb8dd66f3fb9c963fce8446c2f6c65ead56fbc1
+ms.openlocfilehash: af42c13905fa793818c5dfb833fa9e7827c8a4c6
+ms.sourcegitcommit: f4fa1a0187466ea136009d1fe48ec67e4312c934
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "49132380"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "49408853"
 ---
 # <a name="tutorial-build-a-message-compose-outlook-add-in"></a>教程：生成邮件撰写 Outlook 外接程序
 
@@ -29,7 +29,7 @@ ms.locfileid: "49132380"
 
 - [Node.js](https://nodejs.org/)（最新的 [LTS](https://nodejs.org/about/releases) 版本）
 
-- 最新版本的 [Yeoman](https://github.com/yeoman/yo) 和[适用于 Office 外接程序的 Yeoman 生成器](https://github.com/OfficeDev/generator-office)。若要全局安装这些工具，请从命令提示符处运行以下命令：
+- 最新版本的 [Yeoman](https://github.com/yeoman/yo) 和[适用于 Office 加载项的 Yeoman 生成器](https://github.com/OfficeDev/generator-office)。若要全局安装这些工具，请从命令提示符处运行以下命令。
 
     ```command&nbsp;line
     npm install -g yo generator-office
@@ -54,7 +54,7 @@ ms.locfileid: "49132380"
 
     - 在 **Filename including extension...** 字段中，输入 **test.md**。
 
-    - 将以下 Markdown 添加到多行文本框：
+    - 将以下 Markdown 添加到多行文本框。
 
         ```markdown
         # Hello World
@@ -78,7 +78,7 @@ ms.locfileid: "49132380"
 
     - 在 **Filename including extension...** 字段中，输入 **test.html**。
 
-    - 将以下 Markdown 添加到多行文本框：
+    - 将以下 Markdown 添加到多行文本框。
 
         ```HTML
         <html>
@@ -122,13 +122,13 @@ ms.locfileid: "49132380"
     cd "Git the gist"
     ```
 
-1. 此加载项将使用以下库：
+1. 此加载项将使用以下库。
 
     - 用于将 Markdown 转换成 HTML 的 [Showdown](https://github.com/showdownjs/showdown) 库
     - 用于生成相关 URL 的 [URI.js](https://github.com/medialize/URI.js) 库。
     - 用于简化 DOM 交互的 [jquery](https://jquery.com/) 库。
 
-     若要为你的项目安装这些工具，请在项目的根目录中运行以下命令：
+     若要为你的项目安装这些工具，请在项目的根目录中运行以下命令。
 
     ```command&nbsp;line
     npm install showdown urijs jquery --save
@@ -140,7 +140,7 @@ ms.locfileid: "49132380"
 
 #### <a name="specify-basic-information"></a>指定基本信息
 
-请在 **manifest.xml** 文件中进行以下更新，以指定有关该外接程序的一些基本信息：
+请在 **manifest.xml** 文件中进行以下更新，以指定有关该加载项的一些基本信息。
 
 1. 找到 `ProviderName` 元素并将默认值替换为你的公司名称。
 
@@ -187,9 +187,9 @@ ms.locfileid: "49132380"
 
 ### <a name="add-the-messagecomposecommandsurface-extension-point"></a>添加 MessageReadCommandSurface 扩展点
 
-在清单中查找显示为 `</DesktopFormFactor>` 的行。紧靠此行前面，插入以下 XML 标记。关于此标记，请注意以下几点：
+在清单中查找显示为 `</DesktopFormFactor>` 的行。紧靠此行前面，插入以下 XML 标记。关于此标记，请注意以下几点。
 
-- 类型为 `xsi:type="MessageComposeCommandSurface"` 的 `ExtensionPoint` 指示你已将按钮定义为添加到“邮件撰写”窗口。
+- 类型为 `xsi:type="MessageComposeCommandSurface"` 的 `ExtensionPoint` 指示你将按钮定义为添加到“邮件撰写”窗口。
 
 - 通过使用类型为 `id="TabDefault"` 的 `OfficeTab` 元素，表明想要将按钮添加到功能区上的默认选项卡。
 
@@ -246,7 +246,7 @@ ms.locfileid: "49132380"
 
 1. 在清单文件中找到 `Resources` 元素并删除整个元素（包括其结束标记）。
 
-1. 在相同的位置，添加以下标记以替换你刚刚删除的 `Resources` 元素：
+1. 在相同的位置，添加以下标记以替换你刚刚删除的 `Resources` 元素。
 
     ```xml
     <Resources>
@@ -285,25 +285,25 @@ ms.locfileid: "49132380"
 
 1. 自定义按钮应从功能区中立即消失。
 
-1. 按照 [旁加载 Outlook 外接程序以供测试](../outlook/sideload-outlook-add-ins-for-testing.md)中的说明，使用更新的 **manifest.xml** 文件重新安装外接程序。
+1. 按照 [旁加载 Outlook 加载项测试](../outlook/sideload-outlook-add-ins-for-testing.md)中的说明，使用更新的 **manifest.xml** 文件重新安装加载项。
 
-重新安装外接程序后，可以通过在“邮件撰写”窗口中检查“**插入 gist**”和“**插入默认 gist**”命令来验证是否已成功安装。 请注意，即使你选择了其中任何一项，系统也不会执行任何操作，因为你尚未完成生成此外接程序的操作。
+重现安装加载项后，可在“邮件撰写”窗口中检查 **Insert gist** 和 **Insert default gist** 命令来验证是否已成功安装该加载项。请注意，如果选择上述项目中的任意一项，系统不会执行任何操作，因为你尚未完成生成此加载项的操作。
 
-- 如果是在 Windows 版 Outlook 2016 或更高版本中运行此外接程序，则应在“邮件撰写”窗口的功能区中看到两个新按钮：“**插入 gist**”和“**插入默认 gist**”。
+- 如果是在 Windows 版 Outlook 2016 或更高版本中运行此外接程序，则应在“邮件撰写”窗口的功能区中看到两个新按钮：**插入 gist** 和 **插入默认 gist**。
 
-    ![Windows 版 Outlook 中突出显示加载项按钮的功能区溢出菜单的屏幕截图](../images/add-in-buttons-in-windows.png)
+    ![Windows 版 Outlook 中突出显示加载项按钮的功能区溢出菜单屏幕截图](../images/add-in-buttons-in-windows.png)
 
-- 如果在 Outlook 网页版中运行此外接程序，则应该会在“邮件撰写”窗口的底部看到一个新按钮。 选择该按钮可查看选项“**插入 gist**”和“**插入默认 gist**”。
+- 如果在 Outlook 网页版中运行此加载项，你会在“邮件撰写”窗口底部看到一个新按钮。选择该按钮，则会看到 **插入 gist** 和 **插入默认 gist** 两个选项。
 
     ![突出显示加载项按钮和弹出菜单的 Outlook 网页版邮件撰写窗体屏幕截图](../images/add-in-buttons-in-owa.png)
 
 ## <a name="implement-a-first-run-experience"></a>实现首次运行体验
 
-此外接程序需要能够从用户的 GitHub 帐户中读取 gist，并确定用户选择哪一个作为默认 gist。 为了实现这些目标，外接程序必须提示用户提供其 GitHub 用户名，并从其现有 gist 集合中选择默认 gist。 完成本节中的步骤可实现首次运行体验，该体验将显示用于从用户处收集此信息的对话框。
+此加载项需要能够从用户的 Github 账户读取 gist，并标识用户选择了哪个作为默认 gist。为实现这些目的，加载项必须提示用户提供其 Github 用户名，并从现有 gist 集合中选择默认 gist。完成本节步骤以实现首次运行体验，该体验将显示一个对话框，用来收集用户的这一信息。
 
-### <a name="collect-data-from-the-user"></a>从用户处收集数据
+### <a name="collect-data-from-the-user"></a>收集用户数据
 
-我们先来为对话框本身创建 UI。 在 **./src** 文件夹中，创建名为 **settings** 的新子文件夹。 在 **./src/settings** 文件夹中，创建一个名为 **dialog.html** 的文件，并添加以下标记来定义一个非常基本的表单，其中包含 GitHub 用户名的文本输入和将通过 JavaScript 填充的 gist 的空列表。
+我们首先创建对话框自身的 UI。在 **./src** 文件夹中，创建一个名为 **settings** 的新子文件夹。在 **./src/settings** 文件夹中，创建一个名为 **dialog.html** 的文件，并添加以下标记定义一个非常基本的窗体，其中包含针对 Github 用户名的文本输入和通过 JavaScript 填充的 Gist 空列表。
 
 ```html
 <!DOCTYPE html>
@@ -412,7 +412,7 @@ ul {
 }
 ```
 
-现在你已经定义了对话框 UI，可以编写使其实际执行某些操作的代码。 在 **./src/settings** 文件夹中创建一个名为 **dialog.js** 的文件，并添加以下代码。 请注意，此代码将使用 jQuery 注册事件，并使用 `messageParent` 函数将用户的选择发送回调用方。
+现在，你已定义对话框 UI，可以编写使其真正执行操作的代码。在 **./src/settings** 文件夹中创建一个名为 **dialog.js** 的文件并添加以下代码。请注意，该代码使用jQuery 注册事件，并使用 `messageParent` 函数将用户的选择发回调用方。
 
 ```js
 (function(){
@@ -537,7 +537,7 @@ ul {
     },
     ```
 
-1. 在 `config` 对象中找到 `plugins` 数组。 在 `new CopyWebpackPlugin` 对象的 `patterns` 数组中，添加一个新条目在`taskpane.css`条目后。
+1. 在`config` 对象中找到 `plugins` 数组。在`new CopyWebpackPlugin` 对象的 `patterns`数组中，在 `taskpane.css` 项之后添加一个新项。
 
     ```js
     {
@@ -644,9 +644,9 @@ ul {
 
 ### <a name="fetch-data-from-github"></a>从 GitHub 提取数据
 
-你刚刚创建的 **dialog.js** 文件指定外接程序应在 `change` 事件触发时为 GitHub 用户名字段加载 gist。 若要从 GitHub 检索用户的 gist，需使用 [GitHub Gists API](https://developer.github.com/v3/gists/)。
+你刚刚创建的 **dialog.js** 文件置顶加载项应在 `change` 事件触发时为 GitHub 用户名字段加载 gist。若要从 Github中检索用户的 gist，将会使用 [GitHub Gists API](https://developer.github.com/v3/gists/)。
 
-在 **./src** 文件夹中，创建名为 **helpers** 的新子文件夹。 在 **./src/helpers** 文件夹中，创建一个名为 **gist-api.js** 的文件，并添加以下代码以从 GitHub 检索用户的 gist，并生成 gist 列表。
+在 **./src** 文件夹中，创建一个名为 **helpers** 的新子文件夹。在 **./src/helpers** 文件夹中，创建一个名为 **gist-api.js** 的文件，并添加以下代码以从 Github 检索用户的 gist，并生成 gist 列表。
 
 ```js
 function getUserGists(user, callback) {
@@ -717,19 +717,19 @@ function buildFileList(files) {
 ```
 
 > [!NOTE]
-> 你可能已经注意到，没有按钮可以调用设置对话框。 相反，当用户选择“**插入默认 gist**”按钮或“**插入 gist**”按钮时，外接程序将检查自身是否已完成配置。 如果尚未配置外接程序，则设置对话框将提示用户先进行配置，然后再继续。
+> 你可能注意到没有按钮可用于调用“设置”对话框。用户选择 **Insert default gist** 按钮或 **Insert gist** 按钮时，加载项将检查其是否已进行配置。如果加载项尚未配置则在继续之前，“设置”对话框将提示用户进行配置。
 
 ## <a name="implement-a-ui-less-button"></a>实现无 UI 按钮
 
-此外接程序的“**插入默认 gist**”按钮是一个无 UI 按钮，它将调用 JavaScript 函数，而不是像许多外接程序按钮一样打开任务窗格。 当用户选择“**插入默认 gist**”按钮时，相应的 JavaScript 函数将检查是否已配置外接程序。
+此加载项的 **Insert default gist** 按钮是一个无 UI 按钮，用于调用 JavaScript 函数，而不是像多数加载项按钮一样打开任务窗格。当用户选择 **Insert default gist** 按钮，相应的 JavaScript 函数将检查是否已经配置该加载项。
 
-- 如果已经配置了外接程序，则该函数将加载用户已选择作为默认设置的 gist 的内容，并将其插入到邮件正文中。
+- 如果该加载项已经配置，则该函数将加载用户已选择作为默认设置的 gist 的内容，并将其插入到邮件正文中。
 
 - 如果尚未配置外接程序，则设置对话框将提示用户提供所需信息。
 
 ### <a name="update-the-function-file-html"></a>更新函数文件 (HTML)
 
-无 UI 按钮调用的函数必须都在对应的外形规格清单的 `FunctionFile` 元素指定的文件中进行定义。 此外接程序的清单指定 `https://localhost:3000/commands.html` 作为函数文件。
+无 UI 调用的函数必须在相应外形规格清单中 `FunctionFile` 元素指定的文件中定义。该加载项的清单指定 `https://localhost:3000/commands.html` 为函数文件。
 
 打开文件 **./src/commands/commands.html** 并使用以下标记替换全部内容。
 
@@ -761,7 +761,7 @@ function buildFileList(files) {
 
 ### <a name="update-the-function-file-javascript"></a>更新函数文件 (JavaScript)
 
-打开文件 **./src/commands/commands.js** 并使用以下代码替换全部内容。 请注意，如果 `insertDefaultGist` 函数确定外接程序尚未完成配置，则该函数会将 `?warn=1` 参数添加到对话框 URL。 执行此操作可使设置对话框呈现在.**./settings/dialog.html** 中定义的消息栏，告诉用户他们看到此对话框的原因。
+打开 **./src/commands/commands.js** 文件并用以下代码替换全部内容。请注意，如果`insertDefaultGist` 函数确定加载项尚未配置，函数会将 `?warn=1` 参数添加到对话框 URL。执行这一操作会使“设置”对话框显示 **./settings/dialog.html** 所定义的消息栏，告诉用户看到此对话框的原因。
 
 ```js
 var config;
@@ -823,8 +823,8 @@ function insertDefaultGist(event) {
 
     Office.context.ui.displayDialogAsync(url, dialogOptions, function(result) {
       settingsDialog = result.value;
-      settingsDialog.addEventHandler(Microsoft.Office.WebExtension.EventType.DialogMessageReceived, receiveMessage);
-      settingsDialog.addEventHandler(Microsoft.Office.WebExtension.EventType.DialogEventReceived, dialogClosed);
+      settingsDialog.addEventHandler(Office.EventType.DialogMessageReceived, receiveMessage);
+      settingsDialog.addEventHandler(Office.EventType.DialogEventReceived, dialogClosed);
     });
   }
 }
@@ -860,7 +860,7 @@ g.insertDefaultGist = insertDefaultGist;
 
 ### <a name="create-a-file-to-manage-configuration-settings"></a>创建文件以管理配置设置
 
-HTML 函数文件引用一个名为 **addin-config.js** 的文件，该文件尚不存在。 在 **./src/helpers** 文件夹中创建一个名为 **addin-config.js** 的文件，并添加以下代码。 此代码使用 [RoamingSettings 对象](/javascript/api/outlook/office.RoamingSettings)来获取和设置配置值。
+HTML 函数文件引用了名为 **addin-config.js** 的文件，但该文件尚不存在。在 **./src/helpers** 文件夹中创建一个名为 **addin-config.js** 的文件并添加以下代码。该代码使用 [RoamingSettings object](/javascript/api/outlook/office.RoamingSettings) 来获取并设置配置值。
 
 ```js
 function getConfig() {
@@ -882,9 +882,9 @@ function setConfig(config, callback) {
 
 ### <a name="create-new-functions-to-process-gists"></a>创建新函数来处理 gist
 
-接下来，打开 **./src/helpers/gist-api.js** 文件并添加以下函数。 请注意以下事项：
+接下来，打开 **./src/helpers/gist-api.js** 文件并添加以下函数。注意，以下：
 
-- 如果 gist 包含 HTML，则外接程序将按原样将 HTML 插入到邮件正文中。
+- 如果 gist 包含 HTML，则加载项将按原样将 HTML 插入到邮件正文中。
 
 - 如果 gist 包含 Markdown，则外接程序将使用 [Showdown](https://github.com/showdownjs/showdown) 库将 Markdown 转换为 HTML，然后将生成的 HTML 插入到邮件正文中。
 
@@ -940,30 +940,30 @@ function buildBodyContent(gist, callback) {
 
 ### <a name="test-the-button"></a>测试按钮
 
-请保存所有更改并从命令提示符运行 `npm run dev-server`（如果服务器尚未处于运行状态）。 然后完成以下步骤以测试“**插入默认 gist**”按钮。
+如果服务器尚未运行，保存全部更改并从命令提示符运行 `npm run dev-server`。然后完成以下步骤，测试 **Insert default gist** 按钮。
 
 1. 打开 Outlook 并撰写一封新邮件。
 
-1. 在“撰写邮件”窗口中，选择“**插入默认 gist**”。 您应该会看到对话框，您可以在其中配置外接程序，从提示设置 GitHub 用户名开始。
+1. 在“邮件撰写”窗口中，选择 **Insert default gist** 按钮。你应该看到对话框，可在其中配置加载项，配置操作从根据提示设置 Github 用户名开始。
 
-    ![配置外接程序的对话框提示屏幕截图](../images/addin-prompt-configure.png)
+    ![配置加载项的对话框提示屏幕截图](../images/addin-prompt-configure.png)
 
-1. 在设置对话框中，输入你的 GitHub 用户名，然后选择“**选项卡**”或单击对话框中的其他位置以调用 `change` 事件，该事件应加载公用 gist 列表。 选择一个 gist 作为默认设置，然后选择“**完成**”。
+1. 在“设置”对话框中，输入你的 GitHub 用户名，然后选择 **Tab** 或点击对话中其他位置，以调用 `change` 事件加载你的公用 gist 列表。选择一个 gist 作为默认值，然后选择 **Done**。
 
-    ![外接程序设置对话框的屏幕截图](../images/addin-settings.png)
+    ![加载项设置对话框的屏幕截图](../images/addin-settings.png)
 
-1. 重新选择“**插入默认 gist**”按钮。 此时应看到插入到电子邮件正文中的 gist 的内容。
+1. 再次选择 **Insert default gist** 按钮，你会看到插入到邮件正文的 gist 的内容。
 
    > [!NOTE]
-   > Windows 版 Outlook：若要获取最新设置，可能需要关闭并重新打开“撰写邮件”窗口。
+   > Windows 版 Outlook：若要获取最新设置，可能需要关闭并重新打开“邮件撰写”窗口。
 
 ## <a name="implement-a-task-pane"></a>实现任务窗格
 
-此外接程序的“**插入 gist**”按钮将打开任务窗格并显示用户的 gist。 然后，用户可以选择要插入到邮件正文中的其中一个 gist。 如果用户尚未配置外接程序，系统将提示他们进行配置。
+此加载项的 **Insert gist** 按钮会打开一个任务窗格，并显示用户的 gist。然后用户可以选择一个 gist 插入到邮件正文中。如果用户尚未配置加载项，系统将提示用户进行配置。
 
-### <a name="specify-the-html-for-the-task-pane"></a>为任务窗格创建 HTML
+### <a name="specify-the-html-for-the-task-pane"></a>为任务窗格指定 HTML
 
-在创建的项目中，任务窗格 HTML 已在文件 **./src/taskpane/taskpane.html** 中指定。 打开该文件并将全部内容替换为以下标记。
+在已创建的项目中，任务窗格 HTML 由文件 **./src/taskpane/taskpane.html** 指定。打开该文件，用以下标记替换全部内容。
 
 ```html
 <!DOCTYPE html>
@@ -1025,9 +1025,9 @@ function buildBodyContent(gist, callback) {
 </html>
 ```
 
-### <a name="specify-the-css-for-the-task-pane"></a>为任务窗格创建 CSS
+### <a name="specify-the-css-for-the-task-pane"></a>为任务窗格指定 CSS
 
-在创建的项目中，任务窗格 CSS 已在文件 **./src/taskpane/taskpane.css** 中指定。 打开该文件并将全部内容替换为以下代码。
+在已创建的项目中，任务窗格 CSS 由文件 **./src/taskpane/taskpane.css** 指定。打开该文件，用以下代码替换全部内容。
 
 ```css
 /* Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See full license in root of repo. */
@@ -1187,7 +1187,7 @@ ul {
 
 ### <a name="specify-the-javascript-for-the-task-pane"></a>为任务窗格指定 JavaScript
 
-在创建的项目中，任务窗格 JavaScript 已在文件 **./src/taskpane/taskpane.js** 中指定。 打开该文件并将全部内容替换为以下代码。
+在已创建的项目中，任务窗格 JavaScript 由文件 **./src/taskpane/taskpane.js** 指定。打开该文件，用以下代码替换全部内容。
 
 ```js
 (function(){
@@ -1249,8 +1249,8 @@ ul {
 
         Office.context.ui.displayDialogAsync(url, dialogOptions, function(result) {
           settingsDialog = result.value;
-          settingsDialog.addEventHandler(Microsoft.Office.WebExtension.EventType.DialogMessageReceived, receiveMessage);
-          settingsDialog.addEventHandler(Microsoft.Office.WebExtension.EventType.DialogEventReceived, dialogClosed);
+          settingsDialog.addEventHandler(Office.EventType.DialogMessageReceived, receiveMessage);
+          settingsDialog.addEventHandler(Office.EventType.DialogEventReceived, dialogClosed);
         });
       })
     });
@@ -1272,9 +1272,9 @@ ul {
   }
 
   function onGistSelected() {
+    $('#insert-button').removeAttr('disabled');
     $('.ms-ListItem').removeClass('is-selected').removeAttr('checked');
     $(this).children('.ms-ListItem').addClass('is-selected').attr('checked', 'checked');
-    $('#insert-button').removeAttr('disabled');
   }
 
   function showError(error) {
@@ -1301,19 +1301,19 @@ ul {
 
 ### <a name="test-the-button"></a>测试按钮
 
-请保存所有更改并从命令提示符运行 `npm run dev-server`（如果服务器尚未处于运行状态）。 然后完成以下步骤以测试“**插入 gist**”按钮。
+如果服务器尚未运行，保存全部更改并从命令提示符运行 `npm run dev-server`。然后完成以下步骤，以测试 **Insert gist** 按钮。
 
 1. 打开 Outlook 并撰写一封新邮件。
 
-1. 在“撰写邮件”窗口中，选择“**插入 gist**”按钮。 你应该看到，撰写表单的右侧将打开一个任务窗格。
+1. 在“邮件撰写”窗口中，选择 **Insert gist** 按钮，你会看到窗体右侧的任务窗格处于打开状态。
 
-1. 在任务窗格中，选择 **Hello World Html** gist 并选择“**插入**”以将该 gist 插入到邮件正文中。
+1. 在任务窗格中，选择 **Hello World Html** gist 并选择“**Insert**”以将该 gist 插入到邮件正文中。
 
 ![外接程序任务窗格和消息正文中显示的选定 gist 内容的屏幕截图](../images/addin-taskpane.png)
 
 ## <a name="next-steps"></a>后续步骤
 
-在本教程中，你创建了一个可以用于在邮件撰写模式下将内容插入到邮件正文中的 Outlook 外接程序。 若要了解有关开发 Outlook 外接程序的详细信息，请继续阅读以下文章：
+在本向导中，你已经创建了一个 Outlook 加载项，可以在邮件撰写模式下将内容插入到邮件正文中。若要了解 Outlook 加载项的发展，请继续阅读以下文章。
 
 > [!div class="nextstepaction"]
-> [Outlook 外接程序 API](../outlook/apis.md)
+> [Outlook 加载项 API](../outlook/apis.md)
