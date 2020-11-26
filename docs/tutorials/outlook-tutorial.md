@@ -1,60 +1,60 @@
 ---
 title: 教程：生成邮件撰写 Outlook 外接程序
 description: 在本教程中，你将生成一个可将 GitHub gist 插入到新邮件正文中的 Outlook 外接程序。
-ms.date: 11/12/2020
+ms.date: 11/20/2020
 ms.prod: outlook
 localization_priority: Priority
-ms.openlocfilehash: 8c962fb5772ed906fe6096a7e039d0be31a26c77
-ms.sourcegitcommit: ceb8dd66f3fb9c963fce8446c2f6c65ead56fbc1
+ms.openlocfilehash: af42c13905fa793818c5dfb833fa9e7827c8a4c6
+ms.sourcegitcommit: f4fa1a0187466ea136009d1fe48ec67e4312c934
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "49132380"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "49408853"
 ---
-# <a name="tutorial-build-a-message-compose-outlook-add-in"></a><span data-ttu-id="d5f90-103">教程：生成邮件撰写 Outlook 外接程序</span><span class="sxs-lookup"><span data-stu-id="d5f90-103">Tutorial: Build a message compose Outlook add-in</span></span>
+# <a name="tutorial-build-a-message-compose-outlook-add-in"></a><span data-ttu-id="173a1-103">教程：生成邮件撰写 Outlook 外接程序</span><span class="sxs-lookup"><span data-stu-id="173a1-103">Tutorial: Build a message compose Outlook add-in</span></span>
 
-<span data-ttu-id="d5f90-104">本教程将教你如何生成一个可用于在邮件撰写模式下将内容插入到邮件正文中的 Outlook 外接程序。</span><span class="sxs-lookup"><span data-stu-id="d5f90-104">This tutorial teaches you how to build an Outlook add-in that can be used in message compose mode to insert content into the body of a message.</span></span>
+<span data-ttu-id="173a1-104">本教程将教你如何生成一个可用于在邮件撰写模式下将内容插入到邮件正文中的 Outlook 外接程序。</span><span class="sxs-lookup"><span data-stu-id="173a1-104">This tutorial teaches you how to build an Outlook add-in that can be used in message compose mode to insert content into the body of a message.</span></span>
 
-<span data-ttu-id="d5f90-105">在本教程中，你将：</span><span class="sxs-lookup"><span data-stu-id="d5f90-105">In this tutorial, you will:</span></span>
+<span data-ttu-id="173a1-105">在本教程中，你将：</span><span class="sxs-lookup"><span data-stu-id="173a1-105">In this tutorial, you will:</span></span>
 
 > [!div class="checklist"]
 >
-> - <span data-ttu-id="d5f90-106">创建 Outlook 外接程序项目</span><span class="sxs-lookup"><span data-stu-id="d5f90-106">Create an Outlook add-in project</span></span>
-> - <span data-ttu-id="d5f90-107">定义将在“撰写邮件”窗口中呈现的按钮</span><span class="sxs-lookup"><span data-stu-id="d5f90-107">Define buttons that will render in the compose message window</span></span>
-> - <span data-ttu-id="d5f90-108">实现从用户处收集信息并从外部服务提取数据的首次运行体验</span><span class="sxs-lookup"><span data-stu-id="d5f90-108">Implement a first-run experience that collects information from the user and fetches data from an external service</span></span>
-> - <span data-ttu-id="d5f90-109">实现可调用函数的无 UI 按钮</span><span class="sxs-lookup"><span data-stu-id="d5f90-109">Implement a UI-less button that invokes a function</span></span>
-> - <span data-ttu-id="d5f90-110">实现将内容插入到邮件正文中的任务窗格</span><span class="sxs-lookup"><span data-stu-id="d5f90-110">Implement a task pane that inserts content into the body of a message</span></span>
+> - <span data-ttu-id="173a1-106">创建 Outlook 外接程序项目</span><span class="sxs-lookup"><span data-stu-id="173a1-106">Create an Outlook add-in project</span></span>
+> - <span data-ttu-id="173a1-107">定义将在“撰写邮件”窗口中呈现的按钮</span><span class="sxs-lookup"><span data-stu-id="173a1-107">Define buttons that will render in the compose message window</span></span>
+> - <span data-ttu-id="173a1-108">实现从用户处收集信息并从外部服务提取数据的首次运行体验</span><span class="sxs-lookup"><span data-stu-id="173a1-108">Implement a first-run experience that collects information from the user and fetches data from an external service</span></span>
+> - <span data-ttu-id="173a1-109">实现可调用函数的无 UI 按钮</span><span class="sxs-lookup"><span data-stu-id="173a1-109">Implement a UI-less button that invokes a function</span></span>
+> - <span data-ttu-id="173a1-110">实现将内容插入到邮件正文中的任务窗格</span><span class="sxs-lookup"><span data-stu-id="173a1-110">Implement a task pane that inserts content into the body of a message</span></span>
 
-## <a name="prerequisites"></a><span data-ttu-id="d5f90-111">先决条件</span><span class="sxs-lookup"><span data-stu-id="d5f90-111">Prerequisites</span></span>
+## <a name="prerequisites"></a><span data-ttu-id="173a1-111">先决条件</span><span class="sxs-lookup"><span data-stu-id="173a1-111">Prerequisites</span></span>
 
-- <span data-ttu-id="d5f90-112">[Node.js](https://nodejs.org/)（最新的 [LTS](https://nodejs.org/about/releases) 版本）</span><span class="sxs-lookup"><span data-stu-id="d5f90-112">[Node.js](https://nodejs.org/) (the latest [LTS](https://nodejs.org/about/releases) version)</span></span>
+- <span data-ttu-id="173a1-112">[Node.js](https://nodejs.org/)（最新的 [LTS](https://nodejs.org/about/releases) 版本）</span><span class="sxs-lookup"><span data-stu-id="173a1-112">[Node.js](https://nodejs.org/) (the latest [LTS](https://nodejs.org/about/releases) version)</span></span>
 
-- <span data-ttu-id="d5f90-113">最新版本的 [Yeoman](https://github.com/yeoman/yo) 和[适用于 Office 外接程序的 Yeoman 生成器](https://github.com/OfficeDev/generator-office)。若要全局安装这些工具，请从命令提示符处运行以下命令：</span><span class="sxs-lookup"><span data-stu-id="d5f90-113">The latest version of [Yeoman](https://github.com/yeoman/yo) and the [Yeoman generator for Office Add-ins](https://github.com/OfficeDev/generator-office). To install these tools globally, run the following command via the command prompt:</span></span>
+- <span data-ttu-id="173a1-113">最新版本的 [Yeoman](https://github.com/yeoman/yo) 和[适用于 Office 加载项的 Yeoman 生成器](https://github.com/OfficeDev/generator-office)。若要全局安装这些工具，请从命令提示符处运行以下命令。</span><span class="sxs-lookup"><span data-stu-id="173a1-113">The latest version of [Yeoman](https://github.com/yeoman/yo) and the [Yeoman generator for Office Add-ins](https://github.com/OfficeDev/generator-office). To install these tools globally, run the following command via the command prompt.</span></span>
 
     ```command&nbsp;line
     npm install -g yo generator-office
     ```
 
     > [!NOTE]
-    > <span data-ttu-id="d5f90-114">即便先前已安装了 Yeoman 生成器，我们还是建议你通过 npm 将包更新为最新版本。</span><span class="sxs-lookup"><span data-stu-id="d5f90-114">Even if you've previously installed the Yeoman generator, we recommend you update your package to the latest version from npm.</span></span>
+    > <span data-ttu-id="173a1-114">即便先前已安装了 Yeoman 生成器，我们还是建议你通过 npm 将包更新为最新版本。</span><span class="sxs-lookup"><span data-stu-id="173a1-114">Even if you've previously installed the Yeoman generator, we recommend you update your package to the latest version from npm.</span></span>
 
-- <span data-ttu-id="d5f90-115">Windows 版 Outlook 2016 或更高版本（关联至 Microsoft 365 帐户）或 Outlook 网页版</span><span class="sxs-lookup"><span data-stu-id="d5f90-115">Outlook 2016 or later on Windows (connected to a Microsoft 365 account) or Outlook on the web</span></span>
+- <span data-ttu-id="173a1-115">Windows 版 Outlook 2016 或更高版本（关联至 Microsoft 365 帐户）或 Outlook 网页版</span><span class="sxs-lookup"><span data-stu-id="173a1-115">Outlook 2016 or later on Windows (connected to a Microsoft 365 account) or Outlook on the web</span></span>
 
-- <span data-ttu-id="d5f90-116">一个 [GitHub](https://www.github.com) 帐户</span><span class="sxs-lookup"><span data-stu-id="d5f90-116">A [GitHub](https://www.github.com) account</span></span>
+- <span data-ttu-id="173a1-116">一个 [GitHub](https://www.github.com) 帐户</span><span class="sxs-lookup"><span data-stu-id="173a1-116">A [GitHub](https://www.github.com) account</span></span>
 
-## <a name="setup"></a><span data-ttu-id="d5f90-117">设置</span><span class="sxs-lookup"><span data-stu-id="d5f90-117">Setup</span></span>
+## <a name="setup"></a><span data-ttu-id="173a1-117">设置</span><span class="sxs-lookup"><span data-stu-id="173a1-117">Setup</span></span>
 
-<span data-ttu-id="d5f90-p101">你将在本教程中创建的外接程序将从用户的 GitHub 帐户读取 [gist](https://gist.github.com)，并将所选 gist 添加到邮件正文中。完成以下步骤以创建两个新 gist，你可以使用它们来测试你要生成的外接程序。</span><span class="sxs-lookup"><span data-stu-id="d5f90-p101">The add-in that you'll create in this tutorial will read [gists](https://gist.github.com) from the user's GitHub account and add the selected gist to the body of a message. Complete the following steps to create two new gists that you can use to test the add-in you're going to build.</span></span>
+<span data-ttu-id="173a1-p101">你将在本教程中创建的外接程序将从用户的 GitHub 帐户读取 [gist](https://gist.github.com)，并将所选 gist 添加到邮件正文中。完成以下步骤以创建两个新 gist，你可以使用它们来测试你要生成的外接程序。</span><span class="sxs-lookup"><span data-stu-id="173a1-p101">The add-in that you'll create in this tutorial will read [gists](https://gist.github.com) from the user's GitHub account and add the selected gist to the body of a message. Complete the following steps to create two new gists that you can use to test the add-in you're going to build.</span></span>
 
-1. <span data-ttu-id="d5f90-120">[登录 GitHub](https://github.com/login)。</span><span class="sxs-lookup"><span data-stu-id="d5f90-120">[Login to GitHub](https://github.com/login).</span></span>
+1. <span data-ttu-id="173a1-120">[登录 GitHub](https://github.com/login)。</span><span class="sxs-lookup"><span data-stu-id="173a1-120">[Login to GitHub](https://github.com/login).</span></span>
 
-1. <span data-ttu-id="d5f90-121">[创建一个新 gist](https://gist.github.com)。</span><span class="sxs-lookup"><span data-stu-id="d5f90-121">[Create a new gist](https://gist.github.com).</span></span>
+1. <span data-ttu-id="173a1-121">[创建一个新 gist](https://gist.github.com)。</span><span class="sxs-lookup"><span data-stu-id="173a1-121">[Create a new gist](https://gist.github.com).</span></span>
 
-    - <span data-ttu-id="d5f90-122">在 **Gist description...** 字段中，输入 **Hello World Markdown**。</span><span class="sxs-lookup"><span data-stu-id="d5f90-122">In the **Gist description...** field, enter **Hello World Markdown**.</span></span>
+    - <span data-ttu-id="173a1-122">在 **Gist description...** 字段中，输入 **Hello World Markdown**。</span><span class="sxs-lookup"><span data-stu-id="173a1-122">In the **Gist description...** field, enter **Hello World Markdown**.</span></span>
 
-    - <span data-ttu-id="d5f90-123">在 **Filename including extension...** 字段中，输入 **test.md**。</span><span class="sxs-lookup"><span data-stu-id="d5f90-123">In the **Filename including extension...** field, enter **test.md**.</span></span>
+    - <span data-ttu-id="173a1-123">在 **Filename including extension...** 字段中，输入 **test.md**。</span><span class="sxs-lookup"><span data-stu-id="173a1-123">In the **Filename including extension...** field, enter **test.md**.</span></span>
 
-    - <span data-ttu-id="d5f90-124">将以下 Markdown 添加到多行文本框：</span><span class="sxs-lookup"><span data-stu-id="d5f90-124">Add the following markdown to the multiline textbox:</span></span>
+    - <span data-ttu-id="173a1-124">将以下 Markdown 添加到多行文本框。</span><span class="sxs-lookup"><span data-stu-id="173a1-124">Add the following markdown to the multiline textbox.</span></span>
 
         ```markdown
         # Hello World
@@ -70,15 +70,15 @@ ms.locfileid: "49132380"
           ```
         ```
 
-    - <span data-ttu-id="d5f90-125">选择“**创建公用 gist**”按钮。</span><span class="sxs-lookup"><span data-stu-id="d5f90-125">Select the **Create public gist** button.</span></span>
+    - <span data-ttu-id="173a1-125">选择“**创建公用 gist**”按钮。</span><span class="sxs-lookup"><span data-stu-id="173a1-125">Select the **Create public gist** button.</span></span>
 
-1. <span data-ttu-id="d5f90-126">[创建另一个新 gist](https://gist.github.com)。</span><span class="sxs-lookup"><span data-stu-id="d5f90-126">[Create another new gist](https://gist.github.com).</span></span>
+1. <span data-ttu-id="173a1-126">[创建另一个新 gist](https://gist.github.com)。</span><span class="sxs-lookup"><span data-stu-id="173a1-126">[Create another new gist](https://gist.github.com).</span></span>
 
-    - <span data-ttu-id="d5f90-127">在 **Gist description...** 字段中，输入 **Hello World Html**。</span><span class="sxs-lookup"><span data-stu-id="d5f90-127">In the **Gist description...** field, enter **Hello World Html**.</span></span>
+    - <span data-ttu-id="173a1-127">在 **Gist description...** 字段中，输入 **Hello World Html**。</span><span class="sxs-lookup"><span data-stu-id="173a1-127">In the **Gist description...** field, enter **Hello World Html**.</span></span>
 
-    - <span data-ttu-id="d5f90-128">在 **Filename including extension...** 字段中，输入 **test.html**。</span><span class="sxs-lookup"><span data-stu-id="d5f90-128">In the **Filename including extension...** field, enter **test.html**.</span></span>
+    - <span data-ttu-id="173a1-128">在 **Filename including extension...** 字段中，输入 **test.html**。</span><span class="sxs-lookup"><span data-stu-id="173a1-128">In the **Filename including extension...** field, enter **test.html**.</span></span>
 
-    - <span data-ttu-id="d5f90-129">将以下 Markdown 添加到多行文本框：</span><span class="sxs-lookup"><span data-stu-id="d5f90-129">Add the following markdown to the multiline textbox:</span></span>
+    - <span data-ttu-id="173a1-129">将以下 Markdown 添加到多行文本框。</span><span class="sxs-lookup"><span data-stu-id="173a1-129">Add the following markdown to the multiline textbox.</span></span>
 
         ```HTML
         <html>
@@ -96,108 +96,108 @@ ms.locfileid: "49132380"
         </html>
         ```
 
-    - <span data-ttu-id="d5f90-130">选择“**创建公用 gist**”按钮。</span><span class="sxs-lookup"><span data-stu-id="d5f90-130">Select the **Create public gist** button.</span></span>
+    - <span data-ttu-id="173a1-130">选择“**创建公用 gist**”按钮。</span><span class="sxs-lookup"><span data-stu-id="173a1-130">Select the **Create public gist** button.</span></span>
 
-## <a name="create-an-outlook-add-in-project"></a><span data-ttu-id="d5f90-131">创建 Outlook 外接程序项目</span><span class="sxs-lookup"><span data-stu-id="d5f90-131">Create an Outlook add-in project</span></span>
+## <a name="create-an-outlook-add-in-project"></a><span data-ttu-id="173a1-131">创建 Outlook 外接程序项目</span><span class="sxs-lookup"><span data-stu-id="173a1-131">Create an Outlook add-in project</span></span>
 
 1. [!include[Yeoman generator create project guidance](../includes/yo-office-command-guidance.md)]
 
-    - <span data-ttu-id="d5f90-132">**选择项目类型** - `Office Add-in Task Pane project`</span><span class="sxs-lookup"><span data-stu-id="d5f90-132">**Choose a project type** - `Office Add-in Task Pane project`</span></span>
+    - <span data-ttu-id="173a1-132">**选择项目类型** - `Office Add-in Task Pane project`</span><span class="sxs-lookup"><span data-stu-id="173a1-132">**Choose a project type** - `Office Add-in Task Pane project`</span></span>
 
-    - <span data-ttu-id="d5f90-133">**选择脚本类型** - `JavaScript`</span><span class="sxs-lookup"><span data-stu-id="d5f90-133">**Choose a script type** - `JavaScript`</span></span>
+    - <span data-ttu-id="173a1-133">**选择脚本类型** - `JavaScript`</span><span class="sxs-lookup"><span data-stu-id="173a1-133">**Choose a script type** - `JavaScript`</span></span>
 
-    - <span data-ttu-id="d5f90-134">**要如何命名加载项?**</span><span class="sxs-lookup"><span data-stu-id="d5f90-134">**What do you want to name your add-in?**</span></span> - `Git the gist`
+    - <span data-ttu-id="173a1-134">**要如何命名加载项?**</span><span class="sxs-lookup"><span data-stu-id="173a1-134">**What do you want to name your add-in?**</span></span> - `Git the gist`
 
-    - <span data-ttu-id="d5f90-135">**要支持哪一个 Office 客户端应用程序?**</span><span class="sxs-lookup"><span data-stu-id="d5f90-135">**Which Office client application would you like to support?**</span></span> - `Outlook`
+    - <span data-ttu-id="173a1-135">**要支持哪一个 Office 客户端应用程序?**</span><span class="sxs-lookup"><span data-stu-id="173a1-135">**Which Office client application would you like to support?**</span></span> - `Outlook`
 
     ![显示命令行界面中 Yeoman 生成器的提示和回答的屏幕截图](../images/yeoman-prompts-2.png)
 
-    <span data-ttu-id="d5f90-137">完成此向导后，生成器会创建项目，并安装支持的 Node 组件。</span><span class="sxs-lookup"><span data-stu-id="d5f90-137">After you complete the wizard, the generator will create the project and install supporting Node components.</span></span>
+    <span data-ttu-id="173a1-137">完成此向导后，生成器会创建项目，并安装支持的 Node 组件。</span><span class="sxs-lookup"><span data-stu-id="173a1-137">After you complete the wizard, the generator will create the project and install supporting Node components.</span></span>
 
     [!include[Yeoman generator next steps](../includes/yo-office-next-steps.md)]
 
-1. <span data-ttu-id="d5f90-138">导航到项目的根目录。</span><span class="sxs-lookup"><span data-stu-id="d5f90-138">Navigate to the root directory of the project.</span></span>
+1. <span data-ttu-id="173a1-138">导航到项目的根目录。</span><span class="sxs-lookup"><span data-stu-id="173a1-138">Navigate to the root directory of the project.</span></span>
 
     ```command&nbsp;line
     cd "Git the gist"
     ```
 
-1. <span data-ttu-id="d5f90-139">此加载项将使用以下库：</span><span class="sxs-lookup"><span data-stu-id="d5f90-139">This add-in will use the following libraries:</span></span>
+1. <span data-ttu-id="173a1-139">此加载项将使用以下库。</span><span class="sxs-lookup"><span data-stu-id="173a1-139">This add-in will use the following libraries.</span></span>
 
-    - <span data-ttu-id="d5f90-140">用于将 Markdown 转换成 HTML 的 [Showdown](https://github.com/showdownjs/showdown) 库</span><span class="sxs-lookup"><span data-stu-id="d5f90-140">[Showdown](https://github.com/showdownjs/showdown) library to convert Markdown to HTML</span></span>
-    - <span data-ttu-id="d5f90-141">用于生成相关 URL 的 [URI.js](https://github.com/medialize/URI.js) 库。</span><span class="sxs-lookup"><span data-stu-id="d5f90-141">[URI.js](https://github.com/medialize/URI.js) library to build relative URLs.</span></span>
-    - <span data-ttu-id="d5f90-142">用于简化 DOM 交互的 [jquery](https://jquery.com/) 库。</span><span class="sxs-lookup"><span data-stu-id="d5f90-142">[jquery](https://jquery.com/) library to simplify DOM interactions.</span></span>
+    - <span data-ttu-id="173a1-140">用于将 Markdown 转换成 HTML 的 [Showdown](https://github.com/showdownjs/showdown) 库</span><span class="sxs-lookup"><span data-stu-id="173a1-140">[Showdown](https://github.com/showdownjs/showdown) library to convert Markdown to HTML</span></span>
+    - <span data-ttu-id="173a1-141">用于生成相关 URL 的 [URI.js](https://github.com/medialize/URI.js) 库。</span><span class="sxs-lookup"><span data-stu-id="173a1-141">[URI.js](https://github.com/medialize/URI.js) library to build relative URLs.</span></span>
+    - <span data-ttu-id="173a1-142">用于简化 DOM 交互的 [jquery](https://jquery.com/) 库。</span><span class="sxs-lookup"><span data-stu-id="173a1-142">[jquery](https://jquery.com/) library to simplify DOM interactions.</span></span>
 
-     <span data-ttu-id="d5f90-143">若要为你的项目安装这些工具，请在项目的根目录中运行以下命令：</span><span class="sxs-lookup"><span data-stu-id="d5f90-143">To install these tools for your project, run the following command in the root directory of the project:</span></span>
+     <span data-ttu-id="173a1-143">若要为你的项目安装这些工具，请在项目的根目录中运行以下命令。</span><span class="sxs-lookup"><span data-stu-id="173a1-143">To install these tools for your project, run the following command in the root directory of the project.</span></span>
 
     ```command&nbsp;line
     npm install showdown urijs jquery --save
     ```
 
-### <a name="update-the-manifest"></a><span data-ttu-id="d5f90-144">更新清单</span><span class="sxs-lookup"><span data-stu-id="d5f90-144">Update the manifest</span></span>
+### <a name="update-the-manifest"></a><span data-ttu-id="173a1-144">更新清单</span><span class="sxs-lookup"><span data-stu-id="173a1-144">Update the manifest</span></span>
 
-<span data-ttu-id="d5f90-p102">加载项的清单控制其在 Outlook 中的显示方式。它定义加载项在加载项列表中的显示方式和功能区上显示的按钮，并设置加载项使用的 HTML 和 JavaScript 文件的 URL。</span><span class="sxs-lookup"><span data-stu-id="d5f90-p102">The manifest for an add-in controls how it appears in Outlook. It defines the way the add-in appears in the add-in list and the buttons that appear on the ribbon, and it sets the URLs for the HTML and JavaScript files used by the add-in.</span></span>
+<span data-ttu-id="173a1-p102">加载项的清单控制其在 Outlook 中的显示方式。它定义加载项在加载项列表中的显示方式和功能区上显示的按钮，并设置加载项使用的 HTML 和 JavaScript 文件的 URL。</span><span class="sxs-lookup"><span data-stu-id="173a1-p102">The manifest for an add-in controls how it appears in Outlook. It defines the way the add-in appears in the add-in list and the buttons that appear on the ribbon, and it sets the URLs for the HTML and JavaScript files used by the add-in.</span></span>
 
-#### <a name="specify-basic-information"></a><span data-ttu-id="d5f90-147">指定基本信息</span><span class="sxs-lookup"><span data-stu-id="d5f90-147">Specify basic information</span></span>
+#### <a name="specify-basic-information"></a><span data-ttu-id="173a1-147">指定基本信息</span><span class="sxs-lookup"><span data-stu-id="173a1-147">Specify basic information</span></span>
 
-<span data-ttu-id="d5f90-148">请在 **manifest.xml** 文件中进行以下更新，以指定有关该外接程序的一些基本信息：</span><span class="sxs-lookup"><span data-stu-id="d5f90-148">Make the following updates in the **manifest.xml** file to specify some basic information about the add-in:</span></span>
+<span data-ttu-id="173a1-148">请在 **manifest.xml** 文件中进行以下更新，以指定有关该加载项的一些基本信息。</span><span class="sxs-lookup"><span data-stu-id="173a1-148">Make the following updates in the **manifest.xml** file to specify some basic information about the add-in.</span></span>
 
-1. <span data-ttu-id="d5f90-149">找到 `ProviderName` 元素并将默认值替换为你的公司名称。</span><span class="sxs-lookup"><span data-stu-id="d5f90-149">Locate the `ProviderName` element and replace the default value with your company name.</span></span>
+1. <span data-ttu-id="173a1-149">找到 `ProviderName` 元素并将默认值替换为你的公司名称。</span><span class="sxs-lookup"><span data-stu-id="173a1-149">Locate the `ProviderName` element and replace the default value with your company name.</span></span>
 
     ```xml
     <ProviderName>Contoso</ProviderName>
     ```
 
-1. <span data-ttu-id="d5f90-150">找到 `Description` 元素，将默认值替换为外接程序程序的说明，然后保存文件。</span><span class="sxs-lookup"><span data-stu-id="d5f90-150">Locate the `Description` element, replace the default value with a description of the add-in, and save the file.</span></span>
+1. <span data-ttu-id="173a1-150">找到 `Description` 元素，将默认值替换为外接程序程序的说明，然后保存文件。</span><span class="sxs-lookup"><span data-stu-id="173a1-150">Locate the `Description` element, replace the default value with a description of the add-in, and save the file.</span></span>
 
     ```xml
     <Description DefaultValue="Allows users to access their GitHub gists."/>
     ```
 
-#### <a name="test-the-generated-add-in"></a><span data-ttu-id="d5f90-151">测试生成的外接程序</span><span class="sxs-lookup"><span data-stu-id="d5f90-151">Test the generated add-in</span></span>
+#### <a name="test-the-generated-add-in"></a><span data-ttu-id="173a1-151">测试生成的外接程序</span><span class="sxs-lookup"><span data-stu-id="173a1-151">Test the generated add-in</span></span>
 
-<span data-ttu-id="d5f90-152">在继续之前，让我们测试生成器创建的基本外接程序，以确认项目已正确设置。</span><span class="sxs-lookup"><span data-stu-id="d5f90-152">Before going any further, let's test the basic add-in that the generator created to confirm that the project is set up correctly.</span></span>
+<span data-ttu-id="173a1-152">在继续之前，让我们测试生成器创建的基本外接程序，以确认项目已正确设置。</span><span class="sxs-lookup"><span data-stu-id="173a1-152">Before going any further, let's test the basic add-in that the generator created to confirm that the project is set up correctly.</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="d5f90-p103">Office 加载项应使用 HTTPS，而不是 HTTP（即便是在开发时也是如此）。如果系统在运行以下命令后提示你安装证书，请接受提示以安装 Yeoman 生成器提供的证书。你可能还必须以管理员身份运行命令提示符或终端才能进行更改。</span><span class="sxs-lookup"><span data-stu-id="d5f90-p103">Office Add-ins should use HTTPS, not HTTP, even when you are developing. If you are prompted to install a certificate after you run the following command, accept the prompt to install the certificate that the Yeoman generator provides. You may also have to run your command prompt or terminal as an administrator for the changes to be made.</span></span>
+> <span data-ttu-id="173a1-p103">Office 加载项应使用 HTTPS，而不是 HTTP（即便是在开发时也是如此）。如果系统在运行以下命令后提示你安装证书，请接受提示以安装 Yeoman 生成器提供的证书。你可能还必须以管理员身份运行命令提示符或终端才能进行更改。</span><span class="sxs-lookup"><span data-stu-id="173a1-p103">Office Add-ins should use HTTPS, not HTTP, even when you are developing. If you are prompted to install a certificate after you run the following command, accept the prompt to install the certificate that the Yeoman generator provides. You may also have to run your command prompt or terminal as an administrator for the changes to be made.</span></span>
 
-1. <span data-ttu-id="d5f90-p104">在项目的根目录中运行以下命令。运行此命令时，本地 Web 服务器将启动（如果尚未运行）。</span><span class="sxs-lookup"><span data-stu-id="d5f90-p104">Run the following command in the root directory of your project. When you run this command, the local web server will start (if it's not already running).</span></span>
+1. <span data-ttu-id="173a1-p104">在项目的根目录中运行以下命令。运行此命令时，本地 Web 服务器将启动（如果尚未运行）。</span><span class="sxs-lookup"><span data-stu-id="173a1-p104">Run the following command in the root directory of your project. When you run this command, the local web server will start (if it's not already running).</span></span>
 
     ```command&nbsp;line
     npm run dev-server
     ```
 
-1. <span data-ttu-id="d5f90-158">请按照 [旁加载 Outlook 外接程序以供测试](../outlook/sideload-outlook-add-ins-for-testing.md)中的说明，旁加载位于项目根目录中的 **manifest.xml** 文件。</span><span class="sxs-lookup"><span data-stu-id="d5f90-158">Follow the instructions in [Sideload Outlook add-ins for testing](../outlook/sideload-outlook-add-ins-for-testing.md) to sideload the **manifest.xml** file that's located in the root directory of the project.</span></span>
+1. <span data-ttu-id="173a1-158">请按照 [旁加载 Outlook 外接程序以供测试](../outlook/sideload-outlook-add-ins-for-testing.md)中的说明，旁加载位于项目根目录中的 **manifest.xml** 文件。</span><span class="sxs-lookup"><span data-stu-id="173a1-158">Follow the instructions in [Sideload Outlook add-ins for testing](../outlook/sideload-outlook-add-ins-for-testing.md) to sideload the **manifest.xml** file that's located in the root directory of the project.</span></span>
 
-1. <span data-ttu-id="d5f90-p105">在 Outlook 中，打开现有邮件，然后选择“**显示任务窗格**”按钮。如果所有内容都已正确设置，则任务窗格将打开并呈现外接程序的欢迎页。</span><span class="sxs-lookup"><span data-stu-id="d5f90-p105">In Outlook, open an existing message and select the **Show Taskpane** button. If everything's been set up correctly, the task pane will open and render the add-in's welcome page.</span></span>
+1. <span data-ttu-id="173a1-p105">在 Outlook 中，打开现有邮件，然后选择“**显示任务窗格**”按钮。如果所有内容都已正确设置，则任务窗格将打开并呈现外接程序的欢迎页。</span><span class="sxs-lookup"><span data-stu-id="173a1-p105">In Outlook, open an existing message and select the **Show Taskpane** button. If everything's been set up correctly, the task pane will open and render the add-in's welcome page.</span></span>
 
     ![“任务窗格”按钮的屏幕截图，和示例添加的对 Gist 执行 Git 处理任务窗格](../images/button-and-pane.png)
 
-## <a name="define-buttons"></a><span data-ttu-id="d5f90-162">定义按钮</span><span class="sxs-lookup"><span data-stu-id="d5f90-162">Define buttons</span></span>
+## <a name="define-buttons"></a><span data-ttu-id="173a1-162">定义按钮</span><span class="sxs-lookup"><span data-stu-id="173a1-162">Define buttons</span></span>
 
-<span data-ttu-id="d5f90-p106">至此，已经验证基本外接程序可正常运行，你可以对其进行自定义以添加更多功能。默认情况下，清单仅定义“读取邮件”窗口的按钮。让我们更新清单以从“读取邮件”窗口中删除按钮，并为“撰写邮件”窗口定义两个新按钮：</span><span class="sxs-lookup"><span data-stu-id="d5f90-p106">Now that you've verified the base add-in works, you can customize it to add more functionality. By default, the manifest only defines buttons for the read message window. Let's update the manifest to remove the buttons from the read message window and define two new buttons for the compose message window:</span></span>
+<span data-ttu-id="173a1-p106">至此，已经验证基本外接程序可正常运行，你可以对其进行自定义以添加更多功能。默认情况下，清单仅定义“读取邮件”窗口的按钮。让我们更新清单以从“读取邮件”窗口中删除按钮，并为“撰写邮件”窗口定义两个新按钮：</span><span class="sxs-lookup"><span data-stu-id="173a1-p106">Now that you've verified the base add-in works, you can customize it to add more functionality. By default, the manifest only defines buttons for the read message window. Let's update the manifest to remove the buttons from the read message window and define two new buttons for the compose message window:</span></span>
 
-- <span data-ttu-id="d5f90-166">**插入 gist**：用于打开任务窗格的按钮</span><span class="sxs-lookup"><span data-stu-id="d5f90-166">**Insert gist**: a button that opens a task pane</span></span>
+- <span data-ttu-id="173a1-166">**插入 gist**：用于打开任务窗格的按钮</span><span class="sxs-lookup"><span data-stu-id="173a1-166">**Insert gist**: a button that opens a task pane</span></span>
 
-- <span data-ttu-id="d5f90-167">**插入默认 gist**：用于调用函数的按钮</span><span class="sxs-lookup"><span data-stu-id="d5f90-167">**Insert default gist**: a button that invokes a function</span></span>
+- <span data-ttu-id="173a1-167">**插入默认 gist**：用于调用函数的按钮</span><span class="sxs-lookup"><span data-stu-id="173a1-167">**Insert default gist**: a button that invokes a function</span></span>
 
-### <a name="remove-the-messagereadcommandsurface-extension-point"></a><span data-ttu-id="d5f90-168">删除 MessageReadCommandSurface 扩展点</span><span class="sxs-lookup"><span data-stu-id="d5f90-168">Remove the MessageReadCommandSurface extension point</span></span>
+### <a name="remove-the-messagereadcommandsurface-extension-point"></a><span data-ttu-id="173a1-168">删除 MessageReadCommandSurface 扩展点</span><span class="sxs-lookup"><span data-stu-id="173a1-168">Remove the MessageReadCommandSurface extension point</span></span>
 
-<span data-ttu-id="d5f90-p107">打开 **manifest.xml** 文件，并找到具有类型 `MessageReadCommandSurface` 的 `ExtensionPoint` 元素。删除此 `ExtensionPoint` 元素（包括其结束标记）以从“读取邮件”窗口删除按钮。</span><span class="sxs-lookup"><span data-stu-id="d5f90-p107">Open the **manifest.xml** file and locate the `ExtensionPoint` element with type `MessageReadCommandSurface`. Delete this `ExtensionPoint` element (including its closing tag) to remove the buttons from the read message window.</span></span>
+<span data-ttu-id="173a1-p107">打开 **manifest.xml** 文件，并找到具有类型 `MessageReadCommandSurface` 的 `ExtensionPoint` 元素。删除此 `ExtensionPoint` 元素（包括其结束标记）以从“读取邮件”窗口删除按钮。</span><span class="sxs-lookup"><span data-stu-id="173a1-p107">Open the **manifest.xml** file and locate the `ExtensionPoint` element with type `MessageReadCommandSurface`. Delete this `ExtensionPoint` element (including its closing tag) to remove the buttons from the read message window.</span></span>
 
-### <a name="add-the-messagecomposecommandsurface-extension-point"></a><span data-ttu-id="d5f90-171">添加 MessageReadCommandSurface 扩展点</span><span class="sxs-lookup"><span data-stu-id="d5f90-171">Add the MessageComposeCommandSurface extension point</span></span>
+### <a name="add-the-messagecomposecommandsurface-extension-point"></a><span data-ttu-id="173a1-171">添加 MessageReadCommandSurface 扩展点</span><span class="sxs-lookup"><span data-stu-id="173a1-171">Add the MessageComposeCommandSurface extension point</span></span>
 
-<span data-ttu-id="d5f90-p108">在清单中查找显示为 `</DesktopFormFactor>` 的行。紧靠此行前面，插入以下 XML 标记。关于此标记，请注意以下几点：</span><span class="sxs-lookup"><span data-stu-id="d5f90-p108">Locate the line in the manifest that reads `</DesktopFormFactor>`. Immediately before this line, insert the following XML markup. Note the following about this markup:</span></span>
+<span data-ttu-id="173a1-p108">在清单中查找显示为 `</DesktopFormFactor>` 的行。紧靠此行前面，插入以下 XML 标记。关于此标记，请注意以下几点。</span><span class="sxs-lookup"><span data-stu-id="173a1-p108">Locate the line in the manifest that reads `</DesktopFormFactor>`. Immediately before this line, insert the following XML markup. Note the following about this markup.</span></span>
 
-- <span data-ttu-id="d5f90-175">类型为 `xsi:type="MessageComposeCommandSurface"` 的 `ExtensionPoint` 指示你已将按钮定义为添加到“邮件撰写”窗口。</span><span class="sxs-lookup"><span data-stu-id="d5f90-175">The `ExtensionPoint` with `xsi:type="MessageComposeCommandSurface"` indicates that you're defining buttons to add to the compose message window.</span></span>
+- <span data-ttu-id="173a1-175">类型为 `xsi:type="MessageComposeCommandSurface"` 的 `ExtensionPoint` 指示你将按钮定义为添加到“邮件撰写”窗口。</span><span class="sxs-lookup"><span data-stu-id="173a1-175">The `ExtensionPoint` with `xsi:type="MessageComposeCommandSurface"` indicates that you're defining buttons to add to the compose message window.</span></span>
 
-- <span data-ttu-id="d5f90-176">通过使用类型为 `id="TabDefault"` 的 `OfficeTab` 元素，表明想要将按钮添加到功能区上的默认选项卡。</span><span class="sxs-lookup"><span data-stu-id="d5f90-176">By using an `OfficeTab` element with `id="TabDefault"`, you're indicating you want to add the buttons to the default tab on the ribbon.</span></span>
+- <span data-ttu-id="173a1-176">通过使用类型为 `id="TabDefault"` 的 `OfficeTab` 元素，表明想要将按钮添加到功能区上的默认选项卡。</span><span class="sxs-lookup"><span data-stu-id="173a1-176">By using an `OfficeTab` element with `id="TabDefault"`, you're indicating you want to add the buttons to the default tab on the ribbon.</span></span>
 
-- <span data-ttu-id="d5f90-177">`Group` 元素使用 `groupLabel` 资源设置的标签定义新按钮的分组。</span><span class="sxs-lookup"><span data-stu-id="d5f90-177">The `Group` element defines the grouping for the new buttons, with a label set by the `groupLabel` resource.</span></span>
+- <span data-ttu-id="173a1-177">`Group` 元素使用 `groupLabel` 资源设置的标签定义新按钮的分组。</span><span class="sxs-lookup"><span data-stu-id="173a1-177">The `Group` element defines the grouping for the new buttons, with a label set by the `groupLabel` resource.</span></span>
 
-- <span data-ttu-id="d5f90-178">第一个 `Control` 元素包含类型为 `xsi:type="ShowTaskPane"` 的 `Action` 元素，因此此按钮将打开任务窗格。</span><span class="sxs-lookup"><span data-stu-id="d5f90-178">The first `Control` element contains an `Action` element with `xsi:type="ShowTaskPane"`, so this button opens a task pane.</span></span>
+- <span data-ttu-id="173a1-178">第一个 `Control` 元素包含类型为 `xsi:type="ShowTaskPane"` 的 `Action` 元素，因此此按钮将打开任务窗格。</span><span class="sxs-lookup"><span data-stu-id="173a1-178">The first `Control` element contains an `Action` element with `xsi:type="ShowTaskPane"`, so this button opens a task pane.</span></span>
 
-- <span data-ttu-id="d5f90-179">第二个 `Control` 元素包含类型为 `xsi:type="ExecuteFunction"` 的 `Action` 元素，因此此按钮将调用函数文件中包含的 JavaScript 函数。</span><span class="sxs-lookup"><span data-stu-id="d5f90-179">The second `Control` element contains an `Action` element with `xsi:type="ExecuteFunction"`, so this button invokes a JavaScript function contained in the function file.</span></span>
+- <span data-ttu-id="173a1-179">第二个 `Control` 元素包含类型为 `xsi:type="ExecuteFunction"` 的 `Action` 元素，因此此按钮将调用函数文件中包含的 JavaScript 函数。</span><span class="sxs-lookup"><span data-stu-id="173a1-179">The second `Control` element contains an `Action` element with `xsi:type="ExecuteFunction"`, so this button invokes a JavaScript function contained in the function file.</span></span>
 
 ```xml
 <!-- Message Compose -->
@@ -240,13 +240,13 @@ ms.locfileid: "49132380"
 </ExtensionPoint>
 ```
 
-### <a name="update-resources-in-the-manifest"></a><span data-ttu-id="d5f90-180">更新清单中的资源</span><span class="sxs-lookup"><span data-stu-id="d5f90-180">Update resources in the manifest</span></span>
+### <a name="update-resources-in-the-manifest"></a><span data-ttu-id="173a1-180">更新清单中的资源</span><span class="sxs-lookup"><span data-stu-id="173a1-180">Update resources in the manifest</span></span>
 
-<span data-ttu-id="d5f90-p109">前面的代码引用了需要在清单生效前定义的标签、工具提示和 URL。你将在清单的 `Resources` 部分指定此信息。</span><span class="sxs-lookup"><span data-stu-id="d5f90-p109">The previous code references labels, tooltips, and URLs that you need to define before the manifest will be valid. You'll specify this information in the `Resources` section of the manifest.</span></span>
+<span data-ttu-id="173a1-p109">前面的代码引用了需要在清单生效前定义的标签、工具提示和 URL。你将在清单的 `Resources` 部分指定此信息。</span><span class="sxs-lookup"><span data-stu-id="173a1-p109">The previous code references labels, tooltips, and URLs that you need to define before the manifest will be valid. You'll specify this information in the `Resources` section of the manifest.</span></span>
 
-1. <span data-ttu-id="d5f90-183">在清单文件中找到 `Resources` 元素并删除整个元素（包括其结束标记）。</span><span class="sxs-lookup"><span data-stu-id="d5f90-183">Locate the `Resources` element in the manifest file and delete the entire element (including its closing tag).</span></span>
+1. <span data-ttu-id="173a1-183">在清单文件中找到 `Resources` 元素并删除整个元素（包括其结束标记）。</span><span class="sxs-lookup"><span data-stu-id="173a1-183">Locate the `Resources` element in the manifest file and delete the entire element (including its closing tag).</span></span>
 
-1. <span data-ttu-id="d5f90-184">在相同的位置，添加以下标记以替换你刚刚删除的 `Resources` 元素：</span><span class="sxs-lookup"><span data-stu-id="d5f90-184">In that same location, add the following markup to replace the `Resources` element you just removed:</span></span>
+1. <span data-ttu-id="173a1-184">在相同的位置，添加以下标记以替换你刚刚删除的 `Resources` 元素。</span><span class="sxs-lookup"><span data-stu-id="173a1-184">In that same location, add the following markup to replace the `Resources` element you just removed.</span></span>
 
     ```xml
     <Resources>
@@ -273,37 +273,37 @@ ms.locfileid: "49132380"
     </Resources>
     ```
 
-1. <span data-ttu-id="d5f90-185">将更改保存到清单。</span><span class="sxs-lookup"><span data-stu-id="d5f90-185">Save your changes to the manifest.</span></span>
+1. <span data-ttu-id="173a1-185">将更改保存到清单。</span><span class="sxs-lookup"><span data-stu-id="173a1-185">Save your changes to the manifest.</span></span>
 
-### <a name="reinstall-the-add-in"></a><span data-ttu-id="d5f90-186">重新安装外接程序</span><span class="sxs-lookup"><span data-stu-id="d5f90-186">Reinstall the add-in</span></span>
+### <a name="reinstall-the-add-in"></a><span data-ttu-id="173a1-186">重新安装外接程序</span><span class="sxs-lookup"><span data-stu-id="173a1-186">Reinstall the add-in</span></span>
 
-<span data-ttu-id="d5f90-187">由于你之前已通过文件安装了此外接程序，因此必需重新安装它才能使清单更改生效。</span><span class="sxs-lookup"><span data-stu-id="d5f90-187">Since you previously installed the add-in from a file, you must reinstall it in order for the manifest changes to take effect.</span></span>
+<span data-ttu-id="173a1-187">由于你之前已通过文件安装了此外接程序，因此必需重新安装它才能使清单更改生效。</span><span class="sxs-lookup"><span data-stu-id="173a1-187">Since you previously installed the add-in from a file, you must reinstall it in order for the manifest changes to take effect.</span></span>
 
-1. <span data-ttu-id="d5f90-188">按照说明从 [侧面加载的外接程序](../outlook/sideload-outlook-add-ins-for-testing.md#remove-a-sideloaded-add-in)中删除 **对 Gist 执行 Git 处理**。</span><span class="sxs-lookup"><span data-stu-id="d5f90-188">Follow the instructions to remove **Git the gist** from [sideloaded add-ins](../outlook/sideload-outlook-add-ins-for-testing.md#remove-a-sideloaded-add-in).</span></span>
+1. <span data-ttu-id="173a1-188">按照说明从 [侧面加载的外接程序](../outlook/sideload-outlook-add-ins-for-testing.md#remove-a-sideloaded-add-in)中删除 **对 Gist 执行 Git 处理**。</span><span class="sxs-lookup"><span data-stu-id="173a1-188">Follow the instructions to remove **Git the gist** from [sideloaded add-ins](../outlook/sideload-outlook-add-ins-for-testing.md#remove-a-sideloaded-add-in).</span></span>
 
-1. <span data-ttu-id="d5f90-189">关闭“**我的外接程序**”窗口。</span><span class="sxs-lookup"><span data-stu-id="d5f90-189">Close the **My add-ins** window.</span></span>
+1. <span data-ttu-id="173a1-189">关闭“**我的外接程序**”窗口。</span><span class="sxs-lookup"><span data-stu-id="173a1-189">Close the **My add-ins** window.</span></span>
 
-1. <span data-ttu-id="d5f90-190">自定义按钮应从功能区中立即消失。</span><span class="sxs-lookup"><span data-stu-id="d5f90-190">The custom button should disappear from the ribbon momentarily.</span></span>
+1. <span data-ttu-id="173a1-190">自定义按钮应从功能区中立即消失。</span><span class="sxs-lookup"><span data-stu-id="173a1-190">The custom button should disappear from the ribbon momentarily.</span></span>
 
-1. <span data-ttu-id="d5f90-191">按照 [旁加载 Outlook 外接程序以供测试](../outlook/sideload-outlook-add-ins-for-testing.md)中的说明，使用更新的 **manifest.xml** 文件重新安装外接程序。</span><span class="sxs-lookup"><span data-stu-id="d5f90-191">Follow the instructions in [Sideload Outlook add-ins for testing](../outlook/sideload-outlook-add-ins-for-testing.md) to reinstall the add-in using the updated **manifest.xml** file.</span></span>
+1. <span data-ttu-id="173a1-191">按照 [旁加载 Outlook 加载项测试](../outlook/sideload-outlook-add-ins-for-testing.md)中的说明，使用更新的 **manifest.xml** 文件重新安装加载项。</span><span class="sxs-lookup"><span data-stu-id="173a1-191">Follow the instructions in [Sideload Outlook add-ins for testing](../outlook/sideload-outlook-add-ins-for-testing.md) to reinstall the add-in using the updated **manifest.xml** file.</span></span>
 
-<span data-ttu-id="d5f90-192">重新安装外接程序后，可以通过在“邮件撰写”窗口中检查“**插入 gist**”和“**插入默认 gist**”命令来验证是否已成功安装。</span><span class="sxs-lookup"><span data-stu-id="d5f90-192">After you've reinstalled the add-in, you can verify that it installed successfully by checking for the commands **Insert gist** and **Insert default gist** in a compose message window.</span></span> <span data-ttu-id="d5f90-193">请注意，即使你选择了其中任何一项，系统也不会执行任何操作，因为你尚未完成生成此外接程序的操作。</span><span class="sxs-lookup"><span data-stu-id="d5f90-193">Note that nothing will happen if you select either of these items, because you haven't yet finished building this add-in.</span></span>
+<span data-ttu-id="173a1-p110">重现安装加载项后，可在“邮件撰写”窗口中检查 **Insert gist** 和 **Insert default gist** 命令来验证是否已成功安装该加载项。请注意，如果选择上述项目中的任意一项，系统不会执行任何操作，因为你尚未完成生成此加载项的操作。</span><span class="sxs-lookup"><span data-stu-id="173a1-p110">After you've reinstalled the add-in, you can verify that it installed successfully by checking for the commands **Insert gist** and **Insert default gist** in a compose message window. Note that nothing will happen if you select either of these items, because you haven't yet finished building this add-in.</span></span>
 
-- <span data-ttu-id="d5f90-194">如果是在 Windows 版 Outlook 2016 或更高版本中运行此外接程序，则应在“邮件撰写”窗口的功能区中看到两个新按钮：“**插入 gist**”和“**插入默认 gist**”。</span><span class="sxs-lookup"><span data-stu-id="d5f90-194">If you're running this add-in in Outlook 2016 or later on Windows, you should see two new buttons in the ribbon of the compose message window: **Insert gist** and **Insert default gist**.</span></span>
+- <span data-ttu-id="173a1-194">如果是在 Windows 版 Outlook 2016 或更高版本中运行此外接程序，则应在“邮件撰写”窗口的功能区中看到两个新按钮：**插入 gist** 和 **插入默认 gist**。</span><span class="sxs-lookup"><span data-stu-id="173a1-194">If you're running this add-in in Outlook 2016 or later on Windows, you should see two new buttons in the ribbon of the compose message window: **Insert gist** and **Insert default gist**.</span></span>
 
-    ![Windows 版 Outlook 中突出显示加载项按钮的功能区溢出菜单的屏幕截图](../images/add-in-buttons-in-windows.png)
+    ![Windows 版 Outlook 中突出显示加载项按钮的功能区溢出菜单屏幕截图](../images/add-in-buttons-in-windows.png)
 
-- <span data-ttu-id="d5f90-196">如果在 Outlook 网页版中运行此外接程序，则应该会在“邮件撰写”窗口的底部看到一个新按钮。</span><span class="sxs-lookup"><span data-stu-id="d5f90-196">If you're running this add-in in Outlook on the web, you should see a new button at the bottom of the compose message window.</span></span> <span data-ttu-id="d5f90-197">选择该按钮可查看选项“**插入 gist**”和“**插入默认 gist**”。</span><span class="sxs-lookup"><span data-stu-id="d5f90-197">Select that button to see the options **Insert gist** and **Insert default gist**.</span></span>
+- <span data-ttu-id="173a1-p111">如果在 Outlook 网页版中运行此加载项，你会在“邮件撰写”窗口底部看到一个新按钮。选择该按钮，则会看到 **插入 gist** 和 **插入默认 gist** 两个选项。</span><span class="sxs-lookup"><span data-stu-id="173a1-p111">If you're running this add-in in Outlook on the web, you should see a new button at the bottom of the compose message window. Select that button to see the options **Insert gist** and **Insert default gist**.</span></span>
 
     ![突出显示加载项按钮和弹出菜单的 Outlook 网页版邮件撰写窗体屏幕截图](../images/add-in-buttons-in-owa.png)
 
-## <a name="implement-a-first-run-experience"></a><span data-ttu-id="d5f90-199">实现首次运行体验</span><span class="sxs-lookup"><span data-stu-id="d5f90-199">Implement a first-run experience</span></span>
+## <a name="implement-a-first-run-experience"></a><span data-ttu-id="173a1-199">实现首次运行体验</span><span class="sxs-lookup"><span data-stu-id="173a1-199">Implement a first-run experience</span></span>
 
-<span data-ttu-id="d5f90-200">此外接程序需要能够从用户的 GitHub 帐户中读取 gist，并确定用户选择哪一个作为默认 gist。</span><span class="sxs-lookup"><span data-stu-id="d5f90-200">This add-in needs to be able to read gists from the user's GitHub account and identify which one the user has chosen as the default gist.</span></span> <span data-ttu-id="d5f90-201">为了实现这些目标，外接程序必须提示用户提供其 GitHub 用户名，并从其现有 gist 集合中选择默认 gist。</span><span class="sxs-lookup"><span data-stu-id="d5f90-201">In order to achieve these goals, the add-in must prompt the user to provide their GitHub username and choose a default gist from their collection of existing gists.</span></span> <span data-ttu-id="d5f90-202">完成本节中的步骤可实现首次运行体验，该体验将显示用于从用户处收集此信息的对话框。</span><span class="sxs-lookup"><span data-stu-id="d5f90-202">Complete the steps in this section to implement a first-run experience that will display a dialog to collect this information from the user.</span></span>
+<span data-ttu-id="173a1-p112">此加载项需要能够从用户的 Github 账户读取 gist，并标识用户选择了哪个作为默认 gist。为实现这些目的，加载项必须提示用户提供其 Github 用户名，并从现有 gist 集合中选择默认 gist。完成本节步骤以实现首次运行体验，该体验将显示一个对话框，用来收集用户的这一信息。</span><span class="sxs-lookup"><span data-stu-id="173a1-p112">This add-in needs to be able to read gists from the user's GitHub account and identify which one the user has chosen as the default gist. In order to achieve these goals, the add-in must prompt the user to provide their GitHub username and choose a default gist from their collection of existing gists. Complete the steps in this section to implement a first-run experience that will display a dialog to collect this information from the user.</span></span>
 
-### <a name="collect-data-from-the-user"></a><span data-ttu-id="d5f90-203">从用户处收集数据</span><span class="sxs-lookup"><span data-stu-id="d5f90-203">Collect data from the user</span></span>
+### <a name="collect-data-from-the-user"></a><span data-ttu-id="173a1-203">收集用户数据</span><span class="sxs-lookup"><span data-stu-id="173a1-203">Collect data from the user</span></span>
 
-<span data-ttu-id="d5f90-204">我们先来为对话框本身创建 UI。</span><span class="sxs-lookup"><span data-stu-id="d5f90-204">Let's start by creating the UI for the dialog itself.</span></span> <span data-ttu-id="d5f90-205">在 **./src** 文件夹中，创建名为 **settings** 的新子文件夹。</span><span class="sxs-lookup"><span data-stu-id="d5f90-205">Within the **./src** folder, create a new subfolder named **settings**.</span></span> <span data-ttu-id="d5f90-206">在 **./src/settings** 文件夹中，创建一个名为 **dialog.html** 的文件，并添加以下标记来定义一个非常基本的表单，其中包含 GitHub 用户名的文本输入和将通过 JavaScript 填充的 gist 的空列表。</span><span class="sxs-lookup"><span data-stu-id="d5f90-206">In the **./src/settings** folder, create a file named **dialog.html**, and add the following markup to define a very basic form with a text input for a GitHub username and an empty list for gists that'll be populated via JavaScript.</span></span>
+<span data-ttu-id="173a1-p113">我们首先创建对话框自身的 UI。在 **./src** 文件夹中，创建一个名为 **settings** 的新子文件夹。在 **./src/settings** 文件夹中，创建一个名为 **dialog.html** 的文件，并添加以下标记定义一个非常基本的窗体，其中包含针对 Github 用户名的文本输入和通过 JavaScript 填充的 Gist 空列表。</span><span class="sxs-lookup"><span data-stu-id="173a1-p113">Let's start by creating the UI for the dialog itself. Within the **./src** folder, create a new subfolder named **settings**. In the **./src/settings** folder, create a file named **dialog.html**, and add the following markup to define a very basic form with a text input for a GitHub username and an empty list for gists that'll be populated via JavaScript.</span></span>
 
 ```html
 <!DOCTYPE html>
@@ -377,7 +377,7 @@ ms.locfileid: "49132380"
 </html>
 ```
 
-<span data-ttu-id="d5f90-207">接下来，在 **./src/settings** 文件夹中创建一个名为 **dialog.css** 的文件，并添加以下代码以指定 **dialog.html** 使用的样式。</span><span class="sxs-lookup"><span data-stu-id="d5f90-207">Next, create a file in the **./src/settings** folder named **dialog.css**, and add the following code to specify the styles that are used by **dialog.html**.</span></span>
+<span data-ttu-id="173a1-207">接下来，在 **./src/settings** 文件夹中创建一个名为 **dialog.css** 的文件，并添加以下代码以指定 **dialog.html** 使用的样式。</span><span class="sxs-lookup"><span data-stu-id="173a1-207">Next, create a file in the **./src/settings** folder named **dialog.css**, and add the following code to specify the styles that are used by **dialog.html**.</span></span>
 
 ```CSS
 section {
@@ -412,7 +412,7 @@ ul {
 }
 ```
 
-<span data-ttu-id="d5f90-208">现在你已经定义了对话框 UI，可以编写使其实际执行某些操作的代码。</span><span class="sxs-lookup"><span data-stu-id="d5f90-208">Now that you've defined the dialog UI, you can write the code that makes it actually do something.</span></span> <span data-ttu-id="d5f90-209">在 **./src/settings** 文件夹中创建一个名为 **dialog.js** 的文件，并添加以下代码。</span><span class="sxs-lookup"><span data-stu-id="d5f90-209">Create a file in the **./src/settings** folder named **dialog.js** and add the following code.</span></span> <span data-ttu-id="d5f90-210">请注意，此代码将使用 jQuery 注册事件，并使用 `messageParent` 函数将用户的选择发送回调用方。</span><span class="sxs-lookup"><span data-stu-id="d5f90-210">Note that this code uses jQuery to register events and uses the `messageParent` function to send the user's choices back to the caller.</span></span>
+<span data-ttu-id="173a1-p114">现在，你已定义对话框 UI，可以编写使其真正执行操作的代码。在 **./src/settings** 文件夹中创建一个名为 **dialog.js** 的文件并添加以下代码。请注意，该代码使用jQuery 注册事件，并使用 `messageParent` 函数将用户的选择发回调用方。</span><span class="sxs-lookup"><span data-stu-id="173a1-p114">Now that you've defined the dialog UI, you can write the code that makes it actually do something. Create a file in the **./src/settings** folder named **dialog.js** and add the following code. Note that this code uses jQuery to register events and uses the `messageParent` function to send the user's choices back to the caller.</span></span>
 
 ```js
 (function(){
@@ -516,17 +516,17 @@ ul {
 })();
 ```
 
-#### <a name="update-webpack-config-settings"></a><span data-ttu-id="d5f90-211">更新 webpack 配置设置</span><span class="sxs-lookup"><span data-stu-id="d5f90-211">Update webpack config settings</span></span>
+#### <a name="update-webpack-config-settings"></a><span data-ttu-id="173a1-211">更新 webpack 配置设置</span><span class="sxs-lookup"><span data-stu-id="173a1-211">Update webpack config settings</span></span>
 
-<span data-ttu-id="d5f90-212">最后，打开项目根目录中的 **webpack.config.js** 文件，并完成以下步骤。</span><span class="sxs-lookup"><span data-stu-id="d5f90-212">Finally, open the file **webpack.config.js** file in the root directory of the project and complete the following steps.</span></span>
+<span data-ttu-id="173a1-212">最后，打开项目根目录中的 **webpack.config.js** 文件，并完成以下步骤。</span><span class="sxs-lookup"><span data-stu-id="173a1-212">Finally, open the file **webpack.config.js** file in the root directory of the project and complete the following steps.</span></span>
 
-1. <span data-ttu-id="d5f90-213">在 `config` 对象内找到 `entry` 对象并为 `dialog` 添加新条目。</span><span class="sxs-lookup"><span data-stu-id="d5f90-213">Locate the `entry` object within the `config` object and add a new entry for `dialog`.</span></span>
+1. <span data-ttu-id="173a1-213">在 `config` 对象内找到 `entry` 对象并为 `dialog` 添加新条目。</span><span class="sxs-lookup"><span data-stu-id="173a1-213">Locate the `entry` object within the `config` object and add a new entry for `dialog`.</span></span>
 
     ```js
     dialog: "./src/settings/dialog.js"
     ```
 
-    <span data-ttu-id="d5f90-214">完成此操作之后，新的 `entry` 对象将与此类似：</span><span class="sxs-lookup"><span data-stu-id="d5f90-214">After you've done this, the new `entry` object will look like this:</span></span>
+    <span data-ttu-id="173a1-214">完成此操作之后，新的 `entry` 对象将与此类似：</span><span class="sxs-lookup"><span data-stu-id="173a1-214">After you've done this, the new `entry` object will look like this:</span></span>
 
     ```js
     entry: {
@@ -537,7 +537,7 @@ ul {
     },
     ```
 
-1. <span data-ttu-id="d5f90-215">在 `config` 对象中找到 `plugins` 数组。</span><span class="sxs-lookup"><span data-stu-id="d5f90-215">Locate the `plugins` array within the `config` object.</span></span> <span data-ttu-id="d5f90-216">在 `new CopyWebpackPlugin` 对象的 `patterns` 数组中，添加一个新条目在`taskpane.css`条目后。</span><span class="sxs-lookup"><span data-stu-id="d5f90-216">In the `patterns` array of the `new CopyWebpackPlugin` object, add a new entry after the `taskpane.css` entry.</span></span>
+1. <span data-ttu-id="173a1-p115">在`config` 对象中找到 `plugins` 数组。在`new CopyWebpackPlugin` 对象的 `patterns`数组中，在 `taskpane.css` 项之后添加一个新项。</span><span class="sxs-lookup"><span data-stu-id="173a1-p115">Locate the `plugins` array within the `config` object. In the `patterns` array of the `new CopyWebpackPlugin` object, add a new entry after the `taskpane.css` entry.</span></span>
 
     ```js
     {
@@ -546,7 +546,7 @@ ul {
     },
     ```
 
-    <span data-ttu-id="d5f90-217">完成此操作之后，`new CopyWebpackPlugin` 对象将与此类似：</span><span class="sxs-lookup"><span data-stu-id="d5f90-217">After you've done this, the `new CopyWebpackPlugin` object will look like this:</span></span>
+    <span data-ttu-id="173a1-217">完成此操作之后，`new CopyWebpackPlugin` 对象将与此类似：</span><span class="sxs-lookup"><span data-stu-id="173a1-217">After you've done this, the `new CopyWebpackPlugin` object will look like this:</span></span>
 
     ```js
       new CopyWebpackPlugin({
@@ -573,7 +573,7 @@ ul {
       ]}),
     ```
 
-1. <span data-ttu-id="d5f90-218">在 `config` 对象中找到 `plugins` 数组，并将这个新对象添加到该数组的末尾。</span><span class="sxs-lookup"><span data-stu-id="d5f90-218">Locate the `plugins` array within the `config` object and add this new object to the end of that array.</span></span>
+1. <span data-ttu-id="173a1-218">在 `config` 对象中找到 `plugins` 数组，并将这个新对象添加到该数组的末尾。</span><span class="sxs-lookup"><span data-stu-id="173a1-218">Locate the `plugins` array within the `config` object and add this new object to the end of that array.</span></span>
 
     ```js
     new HtmlWebpackPlugin({
@@ -583,7 +583,7 @@ ul {
     })
     ```
 
-    <span data-ttu-id="d5f90-219">完成此操作之后，新的 `plugins` 数组将与此类似：</span><span class="sxs-lookup"><span data-stu-id="d5f90-219">After you've done this, the new `plugins` array will look like this:</span></span>
+    <span data-ttu-id="173a1-219">完成此操作之后，新的 `plugins` 数组将与此类似：</span><span class="sxs-lookup"><span data-stu-id="173a1-219">After you've done this, the new `plugins` array will look like this:</span></span>
 
     ```js
     plugins: [
@@ -628,25 +628,25 @@ ul {
     ],
     ```
 
-1. <span data-ttu-id="d5f90-220">如果 Web 服务器正在运行，请关闭节点命令窗口。</span><span class="sxs-lookup"><span data-stu-id="d5f90-220">If the web server is running, close the node command window.</span></span>
+1. <span data-ttu-id="173a1-220">如果 Web 服务器正在运行，请关闭节点命令窗口。</span><span class="sxs-lookup"><span data-stu-id="173a1-220">If the web server is running, close the node command window.</span></span>
 
-1. <span data-ttu-id="d5f90-221">运行以下命令以重建项目。</span><span class="sxs-lookup"><span data-stu-id="d5f90-221">Run the following command to rebuild the project.</span></span>
+1. <span data-ttu-id="173a1-221">运行以下命令以重建项目。</span><span class="sxs-lookup"><span data-stu-id="173a1-221">Run the following command to rebuild the project.</span></span>
 
     ```command&nbsp;line
     npm run build
     ```
 
-1. <span data-ttu-id="d5f90-222">运行以下命令以启动 Web 服务器。</span><span class="sxs-lookup"><span data-stu-id="d5f90-222">Run the following command to start the web server.</span></span>
+1. <span data-ttu-id="173a1-222">运行以下命令以启动 Web 服务器。</span><span class="sxs-lookup"><span data-stu-id="173a1-222">Run the following command to start the web server.</span></span>
 
     ```command&nbsp;line
     npm run dev-server
     ```
 
-### <a name="fetch-data-from-github"></a><span data-ttu-id="d5f90-223">从 GitHub 提取数据</span><span class="sxs-lookup"><span data-stu-id="d5f90-223">Fetch data from GitHub</span></span>
+### <a name="fetch-data-from-github"></a><span data-ttu-id="173a1-223">从 GitHub 提取数据</span><span class="sxs-lookup"><span data-stu-id="173a1-223">Fetch data from GitHub</span></span>
 
-<span data-ttu-id="d5f90-224">你刚刚创建的 **dialog.js** 文件指定外接程序应在 `change` 事件触发时为 GitHub 用户名字段加载 gist。</span><span class="sxs-lookup"><span data-stu-id="d5f90-224">The **dialog.js** file you just created specifies that the add-in should load gists when the `change` event fires for the GitHub username field.</span></span> <span data-ttu-id="d5f90-225">若要从 GitHub 检索用户的 gist，需使用 [GitHub Gists API](https://developer.github.com/v3/gists/)。</span><span class="sxs-lookup"><span data-stu-id="d5f90-225">To retrieve the user's gists from GitHub, you'll use the [GitHub Gists API](https://developer.github.com/v3/gists/).</span></span>
+<span data-ttu-id="173a1-p116">你刚刚创建的 **dialog.js** 文件置顶加载项应在 `change` 事件触发时为 GitHub 用户名字段加载 gist。若要从 Github中检索用户的 gist，将会使用 [GitHub Gists API](https://developer.github.com/v3/gists/)。</span><span class="sxs-lookup"><span data-stu-id="173a1-p116">The **dialog.js** file you just created specifies that the add-in should load gists when the `change` event fires for the GitHub username field. To retrieve the user's gists from GitHub, you'll use the [GitHub Gists API](https://developer.github.com/v3/gists/).</span></span>
 
-<span data-ttu-id="d5f90-226">在 **./src** 文件夹中，创建名为 **helpers** 的新子文件夹。</span><span class="sxs-lookup"><span data-stu-id="d5f90-226">Within the **./src** folder, create a new subfolder named **helpers**.</span></span> <span data-ttu-id="d5f90-227">在 **./src/helpers** 文件夹中，创建一个名为 **gist-api.js** 的文件，并添加以下代码以从 GitHub 检索用户的 gist，并生成 gist 列表。</span><span class="sxs-lookup"><span data-stu-id="d5f90-227">In the **./src/helpers** folder, create a file named **gist-api.js**, and add the following code to retrieve the user's gists from GitHub and build the list of gists.</span></span>
+<span data-ttu-id="173a1-p117">在 **./src** 文件夹中，创建一个名为 **helpers** 的新子文件夹。在 **./src/helpers** 文件夹中，创建一个名为 **gist-api.js** 的文件，并添加以下代码以从 Github 检索用户的 gist，并生成 gist 列表。</span><span class="sxs-lookup"><span data-stu-id="173a1-p117">Within the **./src** folder, create a new subfolder named **helpers**. In the **./src/helpers** folder, create a file named **gist-api.js**, and add the following code to retrieve the user's gists from GitHub and build the list of gists.</span></span>
 
 ```js
 function getUserGists(user, callback) {
@@ -717,21 +717,21 @@ function buildFileList(files) {
 ```
 
 > [!NOTE]
-> <span data-ttu-id="d5f90-228">你可能已经注意到，没有按钮可以调用设置对话框。</span><span class="sxs-lookup"><span data-stu-id="d5f90-228">You may have noticed that there's no button to invoke the settings dialog.</span></span> <span data-ttu-id="d5f90-229">相反，当用户选择“**插入默认 gist**”按钮或“**插入 gist**”按钮时，外接程序将检查自身是否已完成配置。</span><span class="sxs-lookup"><span data-stu-id="d5f90-229">Instead, the add-in will check whether it has been configured when the user selects either the **Insert default gist** button or the **Insert gist** button.</span></span> <span data-ttu-id="d5f90-230">如果尚未配置外接程序，则设置对话框将提示用户先进行配置，然后再继续。</span><span class="sxs-lookup"><span data-stu-id="d5f90-230">If the add-in has not yet been configured, the settings dialog will prompt the user to configure before proceeding.</span></span>
+> <span data-ttu-id="173a1-p118">你可能注意到没有按钮可用于调用“设置”对话框。用户选择 **Insert default gist** 按钮或 **Insert gist** 按钮时，加载项将检查其是否已进行配置。如果加载项尚未配置则在继续之前，“设置”对话框将提示用户进行配置。</span><span class="sxs-lookup"><span data-stu-id="173a1-p118">You may have noticed that there's no button to invoke the settings dialog. Instead, the add-in will check whether it has been configured when the user selects either the **Insert default gist** button or the **Insert gist** button. If the add-in has not yet been configured, the settings dialog will prompt the user to configure before proceeding.</span></span>
 
-## <a name="implement-a-ui-less-button"></a><span data-ttu-id="d5f90-231">实现无 UI 按钮</span><span class="sxs-lookup"><span data-stu-id="d5f90-231">Implement a UI-less button</span></span>
+## <a name="implement-a-ui-less-button"></a><span data-ttu-id="173a1-231">实现无 UI 按钮</span><span class="sxs-lookup"><span data-stu-id="173a1-231">Implement a UI-less button</span></span>
 
-<span data-ttu-id="d5f90-232">此外接程序的“**插入默认 gist**”按钮是一个无 UI 按钮，它将调用 JavaScript 函数，而不是像许多外接程序按钮一样打开任务窗格。</span><span class="sxs-lookup"><span data-stu-id="d5f90-232">This add-in's **Insert default gist** button is a UI-less button that will invoke a JavaScript function, rather than open a task pane like many add-in buttons do.</span></span> <span data-ttu-id="d5f90-233">当用户选择“**插入默认 gist**”按钮时，相应的 JavaScript 函数将检查是否已配置外接程序。</span><span class="sxs-lookup"><span data-stu-id="d5f90-233">When the user selects the **Insert default gist** button, the corresponding JavaScript function will check whether the add-in has been configured.</span></span>
+<span data-ttu-id="173a1-p119">此加载项的 **Insert default gist** 按钮是一个无 UI 按钮，用于调用 JavaScript 函数，而不是像多数加载项按钮一样打开任务窗格。当用户选择 **Insert default gist** 按钮，相应的 JavaScript 函数将检查是否已经配置该加载项。</span><span class="sxs-lookup"><span data-stu-id="173a1-p119">This add-in's **Insert default gist** button is a UI-less button that will invoke a JavaScript function, rather than open a task pane like many add-in buttons do. When the user selects the **Insert default gist** button, the corresponding JavaScript function will check whether the add-in has been configured.</span></span>
 
-- <span data-ttu-id="d5f90-234">如果已经配置了外接程序，则该函数将加载用户已选择作为默认设置的 gist 的内容，并将其插入到邮件正文中。</span><span class="sxs-lookup"><span data-stu-id="d5f90-234">If the add-in has already been configured, the function will load the content of the gist that the user has selected as the default and insert it into the body of the message.</span></span>
+- <span data-ttu-id="173a1-234">如果该加载项已经配置，则该函数将加载用户已选择作为默认设置的 gist 的内容，并将其插入到邮件正文中。</span><span class="sxs-lookup"><span data-stu-id="173a1-234">If the add-in has already been configured, the function will load the content of the gist that the user has selected as the default and insert it into the body of the message.</span></span>
 
-- <span data-ttu-id="d5f90-235">如果尚未配置外接程序，则设置对话框将提示用户提供所需信息。</span><span class="sxs-lookup"><span data-stu-id="d5f90-235">If the add-in hasn't yet been configured, then the settings dialog will prompt the user to provide the required information.</span></span>
+- <span data-ttu-id="173a1-235">如果尚未配置外接程序，则设置对话框将提示用户提供所需信息。</span><span class="sxs-lookup"><span data-stu-id="173a1-235">If the add-in hasn't yet been configured, then the settings dialog will prompt the user to provide the required information.</span></span>
 
-### <a name="update-the-function-file-html"></a><span data-ttu-id="d5f90-236">更新函数文件 (HTML)</span><span class="sxs-lookup"><span data-stu-id="d5f90-236">Update the function file (HTML)</span></span>
+### <a name="update-the-function-file-html"></a><span data-ttu-id="173a1-236">更新函数文件 (HTML)</span><span class="sxs-lookup"><span data-stu-id="173a1-236">Update the function file (HTML)</span></span>
 
-<span data-ttu-id="d5f90-237">无 UI 按钮调用的函数必须都在对应的外形规格清单的 `FunctionFile` 元素指定的文件中进行定义。</span><span class="sxs-lookup"><span data-stu-id="d5f90-237">A function that's invoked by a UI-less button must be defined in the file that's specified by the `FunctionFile` element in the manifest for the corresponding form factor.</span></span> <span data-ttu-id="d5f90-238">此外接程序的清单指定 `https://localhost:3000/commands.html` 作为函数文件。</span><span class="sxs-lookup"><span data-stu-id="d5f90-238">This add-in's manifest specifies `https://localhost:3000/commands.html` as the function file.</span></span>
+<span data-ttu-id="173a1-p120">无 UI 调用的函数必须在相应外形规格清单中 `FunctionFile` 元素指定的文件中定义。该加载项的清单指定 `https://localhost:3000/commands.html` 为函数文件。</span><span class="sxs-lookup"><span data-stu-id="173a1-p120">A function that's invoked by a UI-less button must be defined in the file that's specified by the `FunctionFile` element in the manifest for the corresponding form factor. This add-in's manifest specifies `https://localhost:3000/commands.html` as the function file.</span></span>
 
-<span data-ttu-id="d5f90-239">打开文件 **./src/commands/commands.html** 并使用以下标记替换全部内容。</span><span class="sxs-lookup"><span data-stu-id="d5f90-239">Open the file **./src/commands/commands.html** and replace the entire contents with the following markup.</span></span>
+<span data-ttu-id="173a1-239">打开文件 **./src/commands/commands.html** 并使用以下标记替换全部内容。</span><span class="sxs-lookup"><span data-stu-id="173a1-239">Open the file **./src/commands/commands.html** and replace the entire contents with the following markup.</span></span>
 
 ```html
 <!DOCTYPE html>
@@ -759,9 +759,9 @@ function buildFileList(files) {
 </html>
 ```
 
-### <a name="update-the-function-file-javascript"></a><span data-ttu-id="d5f90-240">更新函数文件 (JavaScript)</span><span class="sxs-lookup"><span data-stu-id="d5f90-240">Update the function file (JavaScript)</span></span>
+### <a name="update-the-function-file-javascript"></a><span data-ttu-id="173a1-240">更新函数文件 (JavaScript)</span><span class="sxs-lookup"><span data-stu-id="173a1-240">Update the function file (JavaScript)</span></span>
 
-<span data-ttu-id="d5f90-241">打开文件 **./src/commands/commands.js** 并使用以下代码替换全部内容。</span><span class="sxs-lookup"><span data-stu-id="d5f90-241">Open the file **./src/commands/commands.js** and replace the entire contents with the following code.</span></span> <span data-ttu-id="d5f90-242">请注意，如果 `insertDefaultGist` 函数确定外接程序尚未完成配置，则该函数会将 `?warn=1` 参数添加到对话框 URL。</span><span class="sxs-lookup"><span data-stu-id="d5f90-242">Note that if the `insertDefaultGist` function determines the add-in has not yet been configured, it adds the `?warn=1` parameter to the dialog URL.</span></span> <span data-ttu-id="d5f90-243">执行此操作可使设置对话框呈现在.**./settings/dialog.html** 中定义的消息栏，告诉用户他们看到此对话框的原因。</span><span class="sxs-lookup"><span data-stu-id="d5f90-243">Doing so makes the settings dialog render the message bar that's defined in **./settings/dialog.html**, to tell the user why they're seeing the dialog.</span></span>
+<span data-ttu-id="173a1-p121">打开 **./src/commands/commands.js** 文件并用以下代码替换全部内容。请注意，如果`insertDefaultGist` 函数确定加载项尚未配置，函数会将 `?warn=1` 参数添加到对话框 URL。执行这一操作会使“设置”对话框显示 **./settings/dialog.html** 所定义的消息栏，告诉用户看到此对话框的原因。</span><span class="sxs-lookup"><span data-stu-id="173a1-p121">Open the file **./src/commands/commands.js** and replace the entire contents with the following code. Note that if the `insertDefaultGist` function determines the add-in has not yet been configured, it adds the `?warn=1` parameter to the dialog URL. Doing so makes the settings dialog render the message bar that's defined in **./settings/dialog.html**, to tell the user why they're seeing the dialog.</span></span>
 
 ```js
 var config;
@@ -823,8 +823,8 @@ function insertDefaultGist(event) {
 
     Office.context.ui.displayDialogAsync(url, dialogOptions, function(result) {
       settingsDialog = result.value;
-      settingsDialog.addEventHandler(Microsoft.Office.WebExtension.EventType.DialogMessageReceived, receiveMessage);
-      settingsDialog.addEventHandler(Microsoft.Office.WebExtension.EventType.DialogEventReceived, dialogClosed);
+      settingsDialog.addEventHandler(Office.EventType.DialogMessageReceived, receiveMessage);
+      settingsDialog.addEventHandler(Office.EventType.DialogEventReceived, dialogClosed);
     });
   }
 }
@@ -858,9 +858,9 @@ var g = getGlobal();
 g.insertDefaultGist = insertDefaultGist;
 ```
 
-### <a name="create-a-file-to-manage-configuration-settings"></a><span data-ttu-id="d5f90-244">创建文件以管理配置设置</span><span class="sxs-lookup"><span data-stu-id="d5f90-244">Create a file to manage configuration settings</span></span>
+### <a name="create-a-file-to-manage-configuration-settings"></a><span data-ttu-id="173a1-244">创建文件以管理配置设置</span><span class="sxs-lookup"><span data-stu-id="173a1-244">Create a file to manage configuration settings</span></span>
 
-<span data-ttu-id="d5f90-245">HTML 函数文件引用一个名为 **addin-config.js** 的文件，该文件尚不存在。</span><span class="sxs-lookup"><span data-stu-id="d5f90-245">The HTML function file references a file named **addin-config.js**, which doesn't yet exist.</span></span> <span data-ttu-id="d5f90-246">在 **./src/helpers** 文件夹中创建一个名为 **addin-config.js** 的文件，并添加以下代码。</span><span class="sxs-lookup"><span data-stu-id="d5f90-246">Create a file named **addin-config.js** in the **./src/helpers** folder and add the following code.</span></span> <span data-ttu-id="d5f90-247">此代码使用 [RoamingSettings 对象](/javascript/api/outlook/office.RoamingSettings)来获取和设置配置值。</span><span class="sxs-lookup"><span data-stu-id="d5f90-247">This code uses the [RoamingSettings object](/javascript/api/outlook/office.RoamingSettings) to get and set configuration values.</span></span>
+<span data-ttu-id="173a1-p122">HTML 函数文件引用了名为 **addin-config.js** 的文件，但该文件尚不存在。在 **./src/helpers** 文件夹中创建一个名为 **addin-config.js** 的文件并添加以下代码。该代码使用 [RoamingSettings object](/javascript/api/outlook/office.RoamingSettings) 来获取并设置配置值。</span><span class="sxs-lookup"><span data-stu-id="173a1-p122">The HTML function file references a file named **addin-config.js**, which doesn't yet exist. Create a file named **addin-config.js** in the **./src/helpers** folder and add the following code. This code uses the [RoamingSettings object](/javascript/api/outlook/office.RoamingSettings) to get and set configuration values.</span></span>
 
 ```js
 function getConfig() {
@@ -880,15 +880,15 @@ function setConfig(config, callback) {
 }
 ```
 
-### <a name="create-new-functions-to-process-gists"></a><span data-ttu-id="d5f90-248">创建新函数来处理 gist</span><span class="sxs-lookup"><span data-stu-id="d5f90-248">Create new functions to process gists</span></span>
+### <a name="create-new-functions-to-process-gists"></a><span data-ttu-id="173a1-248">创建新函数来处理 gist</span><span class="sxs-lookup"><span data-stu-id="173a1-248">Create new functions to process gists</span></span>
 
-<span data-ttu-id="d5f90-249">接下来，打开 **./src/helpers/gist-api.js** 文件并添加以下函数。</span><span class="sxs-lookup"><span data-stu-id="d5f90-249">Next, open the **./src/helpers/gist-api.js** file and add the following functions.</span></span> <span data-ttu-id="d5f90-250">请注意以下事项：</span><span class="sxs-lookup"><span data-stu-id="d5f90-250">Note the following:</span></span>
+<span data-ttu-id="173a1-p123">接下来，打开 **./src/helpers/gist-api.js** 文件并添加以下函数。注意，以下：</span><span class="sxs-lookup"><span data-stu-id="173a1-p123">Next, open the **./src/helpers/gist-api.js** file and add the following functions. Note the following:</span></span>
 
-- <span data-ttu-id="d5f90-251">如果 gist 包含 HTML，则外接程序将按原样将 HTML 插入到邮件正文中。</span><span class="sxs-lookup"><span data-stu-id="d5f90-251">If the gist contains HTML, the add-in will insert the HTML as-is into the body of the message.</span></span>
+- <span data-ttu-id="173a1-251">如果 gist 包含 HTML，则加载项将按原样将 HTML 插入到邮件正文中。</span><span class="sxs-lookup"><span data-stu-id="173a1-251">If the gist contains HTML, the add-in will insert the HTML as-is into the body of the message.</span></span>
 
-- <span data-ttu-id="d5f90-252">如果 gist 包含 Markdown，则外接程序将使用 [Showdown](https://github.com/showdownjs/showdown) 库将 Markdown 转换为 HTML，然后将生成的 HTML 插入到邮件正文中。</span><span class="sxs-lookup"><span data-stu-id="d5f90-252">If the gist contains Markdown, the add-in will use the [Showdown](https://github.com/showdownjs/showdown) library to convert the Markdown to HTML, and will then insert the resulting HTML into the body of the message.</span></span>
+- <span data-ttu-id="173a1-252">如果 gist 包含 Markdown，则外接程序将使用 [Showdown](https://github.com/showdownjs/showdown) 库将 Markdown 转换为 HTML，然后将生成的 HTML 插入到邮件正文中。</span><span class="sxs-lookup"><span data-stu-id="173a1-252">If the gist contains Markdown, the add-in will use the [Showdown](https://github.com/showdownjs/showdown) library to convert the Markdown to HTML, and will then insert the resulting HTML into the body of the message.</span></span>
 
-- <span data-ttu-id="d5f90-253">如果 gist 包含 HTML 或 Markdown 以外的任何内容，则外接程序会将其作为代码片段插入到邮件正文中。</span><span class="sxs-lookup"><span data-stu-id="d5f90-253">If the gist contains anything other than HTML or Markdown, the add-in will insert it into the body of the message as a code snippet.</span></span>
+- <span data-ttu-id="173a1-253">如果 gist 包含 HTML 或 Markdown 以外的任何内容，则外接程序会将其作为代码片段插入到邮件正文中。</span><span class="sxs-lookup"><span data-stu-id="173a1-253">If the gist contains anything other than HTML or Markdown, the add-in will insert it into the body of the message as a code snippet.</span></span>
 
 ```js
 function getGist(gistId, callback) {
@@ -938,32 +938,32 @@ function buildBodyContent(gist, callback) {
 }
 ```
 
-### <a name="test-the-button"></a><span data-ttu-id="d5f90-254">测试按钮</span><span class="sxs-lookup"><span data-stu-id="d5f90-254">Test the button</span></span>
+### <a name="test-the-button"></a><span data-ttu-id="173a1-254">测试按钮</span><span class="sxs-lookup"><span data-stu-id="173a1-254">Test the button</span></span>
 
-<span data-ttu-id="d5f90-255">请保存所有更改并从命令提示符运行 `npm run dev-server`（如果服务器尚未处于运行状态）。</span><span class="sxs-lookup"><span data-stu-id="d5f90-255">Save all of your changes and run `npm run dev-server` from the command prompt, if the server isn't already running.</span></span> <span data-ttu-id="d5f90-256">然后完成以下步骤以测试“**插入默认 gist**”按钮。</span><span class="sxs-lookup"><span data-stu-id="d5f90-256">Then complete the following steps to test the **Insert default gist** button.</span></span>
+<span data-ttu-id="173a1-p124">如果服务器尚未运行，保存全部更改并从命令提示符运行 `npm run dev-server`。然后完成以下步骤，测试 **Insert default gist** 按钮。</span><span class="sxs-lookup"><span data-stu-id="173a1-p124">Save all of your changes and run `npm run dev-server` from the command prompt, if the server isn't already running. Then complete the following steps to test the **Insert default gist** button.</span></span>
 
-1. <span data-ttu-id="d5f90-257">打开 Outlook 并撰写一封新邮件。</span><span class="sxs-lookup"><span data-stu-id="d5f90-257">Open Outlook and compose a new message.</span></span>
+1. <span data-ttu-id="173a1-257">打开 Outlook 并撰写一封新邮件。</span><span class="sxs-lookup"><span data-stu-id="173a1-257">Open Outlook and compose a new message.</span></span>
 
-1. <span data-ttu-id="d5f90-258">在“撰写邮件”窗口中，选择“**插入默认 gist**”。</span><span class="sxs-lookup"><span data-stu-id="d5f90-258">In the compose message window, select the **Insert default gist** button.</span></span> <span data-ttu-id="d5f90-259">您应该会看到对话框，您可以在其中配置外接程序，从提示设置 GitHub 用户名开始。</span><span class="sxs-lookup"><span data-stu-id="d5f90-259">You should see a dialog where you can configure the add-in, starting with the prompt to set your GitHub username.</span></span>
+1. <span data-ttu-id="173a1-p125">在“邮件撰写”窗口中，选择 **Insert default gist** 按钮。你应该看到对话框，可在其中配置加载项，配置操作从根据提示设置 Github 用户名开始。</span><span class="sxs-lookup"><span data-stu-id="173a1-p125">In the compose message window, select the **Insert default gist** button. You should see a dialog where you can configure the add-in, starting with the prompt to set your GitHub username.</span></span>
 
-    ![配置外接程序的对话框提示屏幕截图](../images/addin-prompt-configure.png)
+    ![配置加载项的对话框提示屏幕截图](../images/addin-prompt-configure.png)
 
-1. <span data-ttu-id="d5f90-261">在设置对话框中，输入你的 GitHub 用户名，然后选择“**选项卡**”或单击对话框中的其他位置以调用 `change` 事件，该事件应加载公用 gist 列表。</span><span class="sxs-lookup"><span data-stu-id="d5f90-261">In the settings dialog, enter your GitHub username and then either **Tab** or click elsewhere in the dialog to invoke the `change` event, which should load your list of public gists.</span></span> <span data-ttu-id="d5f90-262">选择一个 gist 作为默认设置，然后选择“**完成**”。</span><span class="sxs-lookup"><span data-stu-id="d5f90-262">Select a gist to be the default, and select **Done**.</span></span>
+1. <span data-ttu-id="173a1-p126">在“设置”对话框中，输入你的 GitHub 用户名，然后选择 **Tab** 或点击对话中其他位置，以调用 `change` 事件加载你的公用 gist 列表。选择一个 gist 作为默认值，然后选择 **Done**。</span><span class="sxs-lookup"><span data-stu-id="173a1-p126">In the settings dialog, enter your GitHub username and then either **Tab** or click elsewhere in the dialog to invoke the `change` event, which should load your list of public gists. Select a gist to be the default, and select **Done**.</span></span>
 
-    ![外接程序设置对话框的屏幕截图](../images/addin-settings.png)
+    ![加载项设置对话框的屏幕截图](../images/addin-settings.png)
 
-1. <span data-ttu-id="d5f90-264">重新选择“**插入默认 gist**”按钮。</span><span class="sxs-lookup"><span data-stu-id="d5f90-264">Select the **Insert default gist** button again.</span></span> <span data-ttu-id="d5f90-265">此时应看到插入到电子邮件正文中的 gist 的内容。</span><span class="sxs-lookup"><span data-stu-id="d5f90-265">This time, you should see the contents of the gist inserted into the body of the email.</span></span>
+1. <span data-ttu-id="173a1-p127">再次选择 **Insert default gist** 按钮，你会看到插入到邮件正文的 gist 的内容。</span><span class="sxs-lookup"><span data-stu-id="173a1-p127">Select the **Insert default gist** button again. This time, you should see the contents of the gist inserted into the body of the email.</span></span>
 
    > [!NOTE]
-   > <span data-ttu-id="d5f90-266">Windows 版 Outlook：若要获取最新设置，可能需要关闭并重新打开“撰写邮件”窗口。</span><span class="sxs-lookup"><span data-stu-id="d5f90-266">Outlook on Windows: To pick up the latest settings, you may need to close and reopen the compose message window.</span></span>
+   > <span data-ttu-id="173a1-266">Windows 版 Outlook：若要获取最新设置，可能需要关闭并重新打开“邮件撰写”窗口。</span><span class="sxs-lookup"><span data-stu-id="173a1-266">Outlook on Windows: To pick up the latest settings, you may need to close and reopen the compose message window.</span></span>
 
-## <a name="implement-a-task-pane"></a><span data-ttu-id="d5f90-267">实现任务窗格</span><span class="sxs-lookup"><span data-stu-id="d5f90-267">Implement a task pane</span></span>
+## <a name="implement-a-task-pane"></a><span data-ttu-id="173a1-267">实现任务窗格</span><span class="sxs-lookup"><span data-stu-id="173a1-267">Implement a task pane</span></span>
 
-<span data-ttu-id="d5f90-268">此外接程序的“**插入 gist**”按钮将打开任务窗格并显示用户的 gist。</span><span class="sxs-lookup"><span data-stu-id="d5f90-268">This add-in's **Insert gist** button will open a task pane and display the user's gists.</span></span> <span data-ttu-id="d5f90-269">然后，用户可以选择要插入到邮件正文中的其中一个 gist。</span><span class="sxs-lookup"><span data-stu-id="d5f90-269">The user can then select one of the gists to insert into the body of the message.</span></span> <span data-ttu-id="d5f90-270">如果用户尚未配置外接程序，系统将提示他们进行配置。</span><span class="sxs-lookup"><span data-stu-id="d5f90-270">If the user has not yet configured the add-in, they will be prompted to do so.</span></span>
+<span data-ttu-id="173a1-p128">此加载项的 **Insert gist** 按钮会打开一个任务窗格，并显示用户的 gist。然后用户可以选择一个 gist 插入到邮件正文中。如果用户尚未配置加载项，系统将提示用户进行配置。</span><span class="sxs-lookup"><span data-stu-id="173a1-p128">This add-in's **Insert gist** button will open a task pane and display the user's gists. The user can then select one of the gists to insert into the body of the message. If the user has not yet configured the add-in, they will be prompted to do so.</span></span>
 
-### <a name="specify-the-html-for-the-task-pane"></a><span data-ttu-id="d5f90-271">为任务窗格创建 HTML</span><span class="sxs-lookup"><span data-stu-id="d5f90-271">Specify the HTML for the task pane</span></span>
+### <a name="specify-the-html-for-the-task-pane"></a><span data-ttu-id="173a1-271">为任务窗格指定 HTML</span><span class="sxs-lookup"><span data-stu-id="173a1-271">Specify the HTML for the task pane</span></span>
 
-<span data-ttu-id="d5f90-272">在创建的项目中，任务窗格 HTML 已在文件 **./src/taskpane/taskpane.html** 中指定。</span><span class="sxs-lookup"><span data-stu-id="d5f90-272">In the project that you've created, the task pane HTML is specified in the file **./src/taskpane/taskpane.html**.</span></span> <span data-ttu-id="d5f90-273">打开该文件并将全部内容替换为以下标记。</span><span class="sxs-lookup"><span data-stu-id="d5f90-273">Open that file and replace the entire contents with the following markup.</span></span>
+<span data-ttu-id="173a1-p129">在已创建的项目中，任务窗格 HTML 由文件 **./src/taskpane/taskpane.html** 指定。打开该文件，用以下标记替换全部内容。</span><span class="sxs-lookup"><span data-stu-id="173a1-p129">In the project that you've created, the task pane HTML is specified in the file **./src/taskpane/taskpane.html**. Open that file and replace the entire contents with the following markup.</span></span>
 
 ```html
 <!DOCTYPE html>
@@ -1025,9 +1025,9 @@ function buildBodyContent(gist, callback) {
 </html>
 ```
 
-### <a name="specify-the-css-for-the-task-pane"></a><span data-ttu-id="d5f90-274">为任务窗格创建 CSS</span><span class="sxs-lookup"><span data-stu-id="d5f90-274">Specify the CSS for the task pane</span></span>
+### <a name="specify-the-css-for-the-task-pane"></a><span data-ttu-id="173a1-274">为任务窗格指定 CSS</span><span class="sxs-lookup"><span data-stu-id="173a1-274">Specify the CSS for the task pane</span></span>
 
-<span data-ttu-id="d5f90-275">在创建的项目中，任务窗格 CSS 已在文件 **./src/taskpane/taskpane.css** 中指定。</span><span class="sxs-lookup"><span data-stu-id="d5f90-275">In the project that you've created, the task pane CSS is specified in the file **./src/taskpane/taskpane.css**.</span></span> <span data-ttu-id="d5f90-276">打开该文件并将全部内容替换为以下代码。</span><span class="sxs-lookup"><span data-stu-id="d5f90-276">Open that file and replace the entire contents with the following code.</span></span>
+<span data-ttu-id="173a1-p130">在已创建的项目中，任务窗格 CSS 由文件 **./src/taskpane/taskpane.css** 指定。打开该文件，用以下代码替换全部内容。</span><span class="sxs-lookup"><span data-stu-id="173a1-p130">In the project that you've created, the task pane CSS is specified in the file **./src/taskpane/taskpane.css**. Open that file and replace the entire contents with the following code.</span></span>
 
 ```css
 /* Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See full license in root of repo. */
@@ -1185,9 +1185,9 @@ ul {
           background: transparent; }
 ```
 
-### <a name="specify-the-javascript-for-the-task-pane"></a><span data-ttu-id="d5f90-277">为任务窗格指定 JavaScript</span><span class="sxs-lookup"><span data-stu-id="d5f90-277">Specify the JavaScript for the task pane</span></span>
+### <a name="specify-the-javascript-for-the-task-pane"></a><span data-ttu-id="173a1-277">为任务窗格指定 JavaScript</span><span class="sxs-lookup"><span data-stu-id="173a1-277">Specify the JavaScript for the task pane</span></span>
 
-<span data-ttu-id="d5f90-278">在创建的项目中，任务窗格 JavaScript 已在文件 **./src/taskpane/taskpane.js** 中指定。</span><span class="sxs-lookup"><span data-stu-id="d5f90-278">In the project that you've created, the task pane JavaScript is specified in the file **./src/taskpane/taskpane.js**.</span></span> <span data-ttu-id="d5f90-279">打开该文件并将全部内容替换为以下代码。</span><span class="sxs-lookup"><span data-stu-id="d5f90-279">Open that file and replace the entire contents with the following code.</span></span>
+<span data-ttu-id="173a1-p131">在已创建的项目中，任务窗格 JavaScript 由文件 **./src/taskpane/taskpane.js** 指定。打开该文件，用以下代码替换全部内容。</span><span class="sxs-lookup"><span data-stu-id="173a1-p131">In the project that you've created, the task pane JavaScript is specified in the file **./src/taskpane/taskpane.js**. Open that file and replace the entire contents with the following code.</span></span>
 
 ```js
 (function(){
@@ -1249,8 +1249,8 @@ ul {
 
         Office.context.ui.displayDialogAsync(url, dialogOptions, function(result) {
           settingsDialog = result.value;
-          settingsDialog.addEventHandler(Microsoft.Office.WebExtension.EventType.DialogMessageReceived, receiveMessage);
-          settingsDialog.addEventHandler(Microsoft.Office.WebExtension.EventType.DialogEventReceived, dialogClosed);
+          settingsDialog.addEventHandler(Office.EventType.DialogMessageReceived, receiveMessage);
+          settingsDialog.addEventHandler(Office.EventType.DialogEventReceived, dialogClosed);
         });
       })
     });
@@ -1272,9 +1272,9 @@ ul {
   }
 
   function onGistSelected() {
+    $('#insert-button').removeAttr('disabled');
     $('.ms-ListItem').removeClass('is-selected').removeAttr('checked');
     $(this).children('.ms-ListItem').addClass('is-selected').attr('checked', 'checked');
-    $('#insert-button').removeAttr('disabled');
   }
 
   function showError(error) {
@@ -1299,21 +1299,21 @@ ul {
 })();
 ```
 
-### <a name="test-the-button"></a><span data-ttu-id="d5f90-280">测试按钮</span><span class="sxs-lookup"><span data-stu-id="d5f90-280">Test the button</span></span>
+### <a name="test-the-button"></a><span data-ttu-id="173a1-280">测试按钮</span><span class="sxs-lookup"><span data-stu-id="173a1-280">Test the button</span></span>
 
-<span data-ttu-id="d5f90-281">请保存所有更改并从命令提示符运行 `npm run dev-server`（如果服务器尚未处于运行状态）。</span><span class="sxs-lookup"><span data-stu-id="d5f90-281">Save all of your changes and run `npm run dev-server` from the command prompt, if the server isn't already running.</span></span> <span data-ttu-id="d5f90-282">然后完成以下步骤以测试“**插入 gist**”按钮。</span><span class="sxs-lookup"><span data-stu-id="d5f90-282">Then complete the following steps to test the **Insert gist** button.</span></span>
+<span data-ttu-id="173a1-p132">如果服务器尚未运行，保存全部更改并从命令提示符运行 `npm run dev-server`。然后完成以下步骤，以测试 **Insert gist** 按钮。</span><span class="sxs-lookup"><span data-stu-id="173a1-p132">Save all of your changes and run `npm run dev-server` from the command prompt, if the server isn't already running. Then complete the following steps to test the **Insert gist** button.</span></span>
 
-1. <span data-ttu-id="d5f90-283">打开 Outlook 并撰写一封新邮件。</span><span class="sxs-lookup"><span data-stu-id="d5f90-283">Open Outlook and compose a new message.</span></span>
+1. <span data-ttu-id="173a1-283">打开 Outlook 并撰写一封新邮件。</span><span class="sxs-lookup"><span data-stu-id="173a1-283">Open Outlook and compose a new message.</span></span>
 
-1. <span data-ttu-id="d5f90-284">在“撰写邮件”窗口中，选择“**插入 gist**”按钮。</span><span class="sxs-lookup"><span data-stu-id="d5f90-284">In the compose message window, select the **Insert gist** button.</span></span> <span data-ttu-id="d5f90-285">你应该看到，撰写表单的右侧将打开一个任务窗格。</span><span class="sxs-lookup"><span data-stu-id="d5f90-285">You should see a task pane open to the right of the compose form.</span></span>
+1. <span data-ttu-id="173a1-p133">在“邮件撰写”窗口中，选择 **Insert gist** 按钮，你会看到窗体右侧的任务窗格处于打开状态。</span><span class="sxs-lookup"><span data-stu-id="173a1-p133">In the compose message window, select the **Insert gist** button. You should see a task pane open to the right of the compose form.</span></span>
 
-1. <span data-ttu-id="d5f90-286">在任务窗格中，选择 **Hello World Html** gist 并选择“**插入**”以将该 gist 插入到邮件正文中。</span><span class="sxs-lookup"><span data-stu-id="d5f90-286">In the task pane, select the **Hello World Html** gist and select **Insert** to insert that gist into the body of the message.</span></span>
+1. <span data-ttu-id="173a1-286">在任务窗格中，选择 **Hello World Html** gist 并选择“**Insert**”以将该 gist 插入到邮件正文中。</span><span class="sxs-lookup"><span data-stu-id="173a1-286">In the task pane, select the **Hello World Html** gist and select **Insert** to insert that gist into the body of the message.</span></span>
 
 ![外接程序任务窗格和消息正文中显示的选定 gist 内容的屏幕截图](../images/addin-taskpane.png)
 
-## <a name="next-steps"></a><span data-ttu-id="d5f90-288">后续步骤</span><span class="sxs-lookup"><span data-stu-id="d5f90-288">Next steps</span></span>
+## <a name="next-steps"></a><span data-ttu-id="173a1-288">后续步骤</span><span class="sxs-lookup"><span data-stu-id="173a1-288">Next steps</span></span>
 
-<span data-ttu-id="d5f90-289">在本教程中，你创建了一个可以用于在邮件撰写模式下将内容插入到邮件正文中的 Outlook 外接程序。</span><span class="sxs-lookup"><span data-stu-id="d5f90-289">In this tutorial, you've created an Outlook add-in that can be used in message compose mode to insert content into the body of a message.</span></span> <span data-ttu-id="d5f90-290">若要了解有关开发 Outlook 外接程序的详细信息，请继续阅读以下文章：</span><span class="sxs-lookup"><span data-stu-id="d5f90-290">To learn more about developing Outlook add-ins, continue to the following article:</span></span>
+<span data-ttu-id="173a1-p134">在本向导中，你已经创建了一个 Outlook 加载项，可以在邮件撰写模式下将内容插入到邮件正文中。若要了解 Outlook 加载项的发展，请继续阅读以下文章。</span><span class="sxs-lookup"><span data-stu-id="173a1-p134">In this tutorial, you've created an Outlook add-in that can be used in message compose mode to insert content into the body of a message. To learn more about developing Outlook add-ins, continue to the following article.</span></span>
 
 > [!div class="nextstepaction"]
-> [<span data-ttu-id="d5f90-291">Outlook 外接程序 API</span><span class="sxs-lookup"><span data-stu-id="d5f90-291">Outlook add-in APIs</span></span>](../outlook/apis.md)
+> [<span data-ttu-id="173a1-291">Outlook 加载项 API</span><span class="sxs-lookup"><span data-stu-id="173a1-291">Outlook add-in APIs</span></span>](../outlook/apis.md)
