@@ -1,14 +1,14 @@
 ---
 title: 启用和禁用加载项命令
 description: 了解如何更改 Office Web 加载项中的自定义功能区按钮和菜单项的启用或禁用状态。
-ms.date: 11/07/2020
+ms.date: 11/20/2020
 localization_priority: Normal
-ms.openlocfilehash: 7a9994ae25285c876236879e65861ee3cc59f7e5
-ms.sourcegitcommit: ca66ff7462bfdf4ed7ae04f43d1388c24de63bf9
+ms.openlocfilehash: 4e519d97d703f6983c72c9b8c4f4865814d80bba
+ms.sourcegitcommit: 6619e07cdfa68f9fa985febd5f03caf7aee57d5e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/11/2020
-ms.locfileid: "48996387"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "49505462"
 ---
 # <a name="enable-and-disable-add-in-commands"></a>启用和禁用加载项命令
 
@@ -48,7 +48,7 @@ ms.locfileid: "48996387"
 
 ## <a name="set-the-default-state-to-disabled"></a>将默认状态设置为“已禁用”
 
-默认情况下，当 Office 应用程序启动时，将启用任何加载项命令。 如果要在 Office 应用程序启动时禁用自定义按钮或菜单项，请在清单中指定它。 只需在控件的声明中的 [Action](../reference/manifest/action.md) 元素的 *下方* （不在内部）之后立即添加 [Enabled](../reference/manifest/enabled.md)元素（值为 `false`）即可。 下面显示了基本结构：
+默认情况下，当 Office 应用程序启动时，将启用任何加载项命令。 如果要在 Office 应用程序启动时禁用自定义按钮或菜单项，请在清单中指定它。 只需在控件的声明中的 [Action](../reference/manifest/action.md) 元素的 *下方*（不在内部）之后立即添加 [Enabled](../reference/manifest/enabled.md)元素（值为 `false`）即可。 下面显示了基本结构：
 
 ```xml
 <OfficeApp ...>
@@ -143,6 +143,10 @@ function enableChartFormat() {
 ```
 
 第四步是定义 `disableChartFormat` 处理程序。 除了将按钮对象的 **enabled** 属性设置为 `false` 之外，其他操作与 `enableChartFormat` 相同。
+
+### <a name="toggle-tab-visibility-and-the-enabled-status-of-a-button-at-the-same-time"></a>同时切换选项卡可见性和按钮的启用状态
+
+**RequestUpdate** 方法还用于切换自定义上下文选项卡的可见性。有关此代码和示例代码的详细信息，请参阅 [Enable And Disable 外接程序命令](contextual-tabs.md#toggle-tab-visibility-and-the-enabled-status-of-a-button-at-the-same-time)。
 
 ## <a name="best-practice-test-for-control-status-errors"></a>最佳做法：测试控件状态错误
 
