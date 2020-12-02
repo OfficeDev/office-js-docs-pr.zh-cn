@@ -1,14 +1,14 @@
 ---
 title: Outlook 加载项的 Onsend 功能
 description: 提供了一种处理项目或阻止用户进行特定操作的方法，并允许加载项在发送时设置某些属性。
-ms.date: 09/22/2020
+ms.date: 11/25/2020
 localization_priority: Normal
-ms.openlocfilehash: e6f01825cf570dde147e9dd89022a986929f4e4d
-ms.sourcegitcommit: fd110305c2be8660ab8a47c1da3e3969bd1ede86
+ms.openlocfilehash: 1d2c82e5a44509257b82f9c871e57730b1e98f26
+ms.sourcegitcommit: c2fd7f982f3da748ef6be5c3a7434d859f8b46b9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/23/2020
-ms.locfileid: "48214601"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "49530932"
 ---
 # <a name="on-send-feature-for-outlook-add-ins"></a>Outlook 加载项的 Onsend 功能
 
@@ -25,7 +25,7 @@ on-send 功能是由事件类型 `ItemSend` 触发的，无 UI。
 
 下表显示了用于 "发送" 功能的受支持的客户端/服务器组合。 不支持排除的组合。
 
-| 客户端 | Exchange Online | Exchange 2016 本地<br> (累积更新6或更高版本)  | Exchange 2019 本地<br> (累积更新1或更高版本)  |
+| Client | Exchange Online | Exchange 2016 本地<br> (累积更新6或更高版本)  | Exchange 2019 本地<br> (累积更新1或更高版本)  |
 |---|:---:|:---:|:---:|
 |Windows：<br>版本 1910 (内部版本 12130.20272) 或更高版本|是|是|是|
 |Mac<br>生成16.30 或更高版本|是|否|否|
@@ -48,6 +48,9 @@ on-send 功能是由事件类型 `ItemSend` 触发的，无 UI。
 
 当触发 send 事件时，将在 Outlook 中对客户端进行验证，并且外接程序在超时之前最长可达5分钟。如果验证失败，将阻止发送项目，并在信息栏中显示一条错误消息，提示用户执行操作。
 
+> [!NOTE]
+> 在 web 上的 Outlook 中，当在 "Outlook 浏览器" 选项卡中撰写的邮件中触发了 "发送时" 功能时，项目将被弹出到自己的浏览器窗口或选项卡中，以便完成验证和其他处理。
+
 以下屏幕截图显示了通知发件人添加主题的信息栏。
 
 <br/>
@@ -68,11 +71,11 @@ on-send 功能是由事件类型 `ItemSend` 触发的，无 UI。
 
 Onsend 功能目前具有以下限制。
 
-- 如果您调用正文， (preview) **的追加-发送**功能 &ndash; [。AppendOnSendAsync](/javascript/api/outlook/office.body?view=outlook-js-preview&preserve-view=true#appendonsendasync-data--options--callback-)在发送处理程序中，返回一个错误。
+- 如果调用 body，则 **发送时附加** 功能 &ndash; [。AppendOnSendAsync](/javascript/api/outlook/office.body?view=outlook-js-1.9&preserve-view=true#appendonsendasync-data--options--callback-)在发送处理程序中，返回一个错误。
 - **AppSource** &ndash; 无法在 [AppSource](https://appsource.microsoft.com) 中发布使用 Onsend 功能的 Outlook 加载项，因为它们将无法通过 AppSource 验证。 使用 Onsend 功能的加载项应由管理员部署。
 - **清单**&ndash; - 每个加载项仅支持一个 `ItemSend` 事件。 如果清单中有两个或多个 `ItemSend` 事件，则该清单将无法通过验证。
 - **性能** &ndash; 多次往返到托管加载项的 Web 服务器可能会影响加载项的性能。创建需要多个基于邮件或会议操作的加载项时，请考虑性能影响。
-- **稍后发送**（仅适用于 Mac）&ndash; 如果有 Onsend 加载项，**稍后发送**功能将不可用。
+- **稍后发送**（仅适用于 Mac）&ndash; 如果有 Onsend 加载项，**稍后发送** 功能将不可用。
 
 ### <a name="mailbox-typemode-limitations"></a>邮箱类型/模式限制
 
@@ -288,7 +291,7 @@ Get-OWAMailboxPolicy OWAOnSendAddinAllUserPolicy | Set-OWAMailboxPolicy –OnSen
 
 对于安装了使用 Onsend 功能的 Windows 版 Outlook 加载项的任何用户，系统会为其运行该加载项。 但是，如果用户需要运行该加载项来满足合规性标准，则必须在每台适用的计算机上将组策略“**无法加载 Web 扩展时禁用发送**”设置为“**已启用**”。
 
-若要设置邮箱策略，管理员可以下载[管理模板工具](https://www.microsoft.com/download/details.aspx?id=49030)，然后通过运行本地组策略编辑器 **(gpedit.msc)** 访问最新的管理模板。
+若要设置邮箱策略，管理员可以下载 [管理模板工具](https://www.microsoft.com/download/details.aspx?id=49030)，然后通过运行本地组策略编辑器 **(gpedit.msc)** 访问最新的管理模板。
 
 #### <a name="what-the-policy-does"></a>策略的用途
 
@@ -353,7 +356,7 @@ Get-OWAMailboxPolicy OWAOnSendAddinAllUserPolicy | Set-OWAMailboxPolicy –OnSen
 |方案|邮箱 1 Onsend 功能|邮箱 2 Onsend 功能|Outlook Web 会话（经典）|结果|是否支持？|
 |:------------|:------------|:--------------------------|:---------|:-------------|:-------------|
 |1|已启用|已启用|新会话|邮箱 1 无法从邮箱 2 发送邮件或会议项目。|目前尚不支持。可以使用方案 3 作为一种解决办法。|
-|2 |已禁用|已启用|新会话|邮箱 1 无法从邮箱 2 发送邮件或会议项目。|目前尚不支持。可以使用方案 3 作为一种解决办法。|
+|双面|已禁用|已启用|新会话|邮箱 1 无法从邮箱 2 发送邮件或会议项目。|目前尚不支持。可以使用方案 3 作为一种解决办法。|
 |第三章|已启用|已启用|同一个会话|分配给邮箱 1 的 Onsend 加载项运行 Onsend。|支持。|
 |4 |已启用|已禁用|新会话|未运行 Onsend 加载项；邮件或会议项目已发送。|支持。|
 
@@ -368,7 +371,7 @@ Get-OWAMailboxPolicy OWAOnSendAddinAllUserPolicy | Set-OWAMailboxPolicy –OnSen
 |方案|邮箱 1 Onsend 策略|是否启用了 Onsend 加载项？|邮箱 1 操作|结果|是否支持？|
 |:------------|:-------------------------|:-------------------|:---------|:----------|:-------------|
 |1|已启用|是|邮箱 1 撰写发送到组 1 的新邮件或会议。|发送期间，Onsend 加载项运行。|是|
-|2 |已启用|是|邮箱 1 在 Outlook 网页版组 1 的组窗口中撰写发送到组 1 的新邮件或会议。|Onsend 加载项不会在发送期间运行。|目前尚不支持。 可以使用方案 1 作为一种解决办法。|
+|双面|已启用|是|邮箱 1 在 Outlook 网页版组 1 的组窗口中撰写发送到组 1 的新邮件或会议。|Onsend 加载项不会在发送期间运行。|目前尚不支持。 可以使用方案 1 作为一种解决办法。|
 
 ### <a name="user-mailbox-with-on-send-add-in-featurepolicy-enabled-add-ins-that-support-on-send-are-installed-and-enabled-and-offline-mode-is-enabled"></a>用户邮箱启用了 Onsend 加载项功能/策略，并且安装并启用了支持 Onsend 的加载项，启用了脱机模式
 

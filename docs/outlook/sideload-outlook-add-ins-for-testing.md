@@ -1,14 +1,14 @@
 ---
 title: 旁加载 Outlook 外接程序进行测试
 description: 利用旁加载来安装 Outlook 外接程序以供测试，无需先将其置于外接程序目录中。
-ms.date: 07/09/2020
+ms.date: 12/01/2020
 localization_priority: Normal
-ms.openlocfilehash: 9b44b988ddd6552d5f7d14088a0b6f3ae1e410ed
-ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
+ms.openlocfilehash: dea2125ccd64eba2e3f1695c8ca1111a710321a4
+ms.sourcegitcommit: c2fd7f982f3da748ef6be5c3a7434d859f8b46b9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "45093880"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "49530925"
 ---
 # <a name="sideload-outlook-add-ins-for-testing"></a>旁加载 Outlook 外接程序进行测试
 
@@ -57,7 +57,7 @@ ms.locfileid: "45093880"
 
     ![Outlook 网页版屏幕截图（指向“管理外接程序”选项）](../images/outlook-sideload-web-manage-integrations.png)
 
-1. 在“管理加载项”**** 页中，选择“加载项”****，然后选择“我的加载项”****。
+1. 在“管理加载项”页中，选择“加载项”，然后选择“我的加载项”。
 
     ![Outlook 网页版应用商店对话框（已选中“我的外接程序”）](../images/outlook-sideload-store-select-add-ins.png)
 
@@ -75,16 +75,22 @@ ms.locfileid: "45093880"
 
 1. 选择功能区上的“**获取外接程序**”按钮。
 
-    ![Outlook 2016 功能区（指向“应用商店”按钮）](../images/outlook-sideload-desktop-store.png)
+    ![Outlook 2016 功能区指向 "获取外接程序" 按钮](../images/outlook-sideload-desktop-store.png)
 
-    > [!NOTE]
-    > 如果没有在使用的 Outlook 版本中看到“**获取外接程序**”按钮，请改为选择功能区上的“**应用商店**”按钮。
+    > [!IMPORTANT]
+    > 如果您在您的 Outlook 版本中看不到 " **获取外接程序** " 按钮，请选择：
+    >
+    > - 功能区上的 "**存储**" 按钮（如果有）。
+    >
+    >   OR
+    >
+    > - **文件**"菜单上，选择"**信息**"选项卡上的"**管理外接程序**"按钮，以在 Outlook 网页中打开"**外** 接程序 "对话框。<br>您可以在 [Outlook 网页](#sideload-an-add-in-in-outlook-on-the-web)版本的旁加载中查看有关上一节中的 web 体验的详细信息。
 
-1. 选择“**外接程序**”，然后选择“**我的外接程序**”。
+1. 如果对话框顶部附近有选项卡，请确保选择了 " **外接程序** " 选项卡。 选择 **"我的外接程序"**。
 
     ![Outlook 2016 应用商店对话框（已选中“我的外接程序”）](../images/outlook-sideload-store-select-add-ins.png)
 
-1. 在对话框底部找到“自定义加载项”**** 部分。 选择“添加自定义加载项”**** 链接，然后选择“从文件添加”****。
+1. 在对话框底部找到“自定义加载项”部分。 选择“添加自定义加载项”链接，然后选择“从文件添加”。
 
     ![“应用商店”屏幕截图（指向“从文件添加”选项）](../images/outlook-sideload-desktop-add-from-file.png)
 
@@ -94,10 +100,10 @@ ms.locfileid: "45093880"
 
 1. 在 Windows 上打开 Outlook 2013。
 
-1. 选择 "**文件**" 菜单，然后选择 "**信息**" 选项卡上的 "**管理外接程序**" 按钮。 Outlook 将打开浏览器。
+1. 选择 "**文件**" 菜单，然后选择 "**信息**" 选项卡上的 "**管理外接程序**" 按钮。Outlook 将在浏览器中打开 web 版本。
 
-1. 按照您的 Outlook 网页版上的[旁加载中的加载](#sideload-an-add-in-in-outlook-on-the-web)项中的步骤，在 web 上的 outlook 的 "web" 部分中执行。
+1. 按照您的 Outlook 网页版上的 [旁加载中的加载](#sideload-an-add-in-in-outlook-on-the-web) 项中的步骤，在 web 上的 outlook 的 "web" 部分中执行。
 
 ## <a name="remove-a-sideloaded-add-in"></a>删除旁加载加载项
 
-若要从 Outlook 中删除旁加载外接程序，请使用本文中前面所述的步骤，在列出已安装加载项的对话框的 "**自定义外接程序**" 部分中查找该外接程序。选择外接程序的省略号 (`...`) ，然后选择 "**删除**" 以删除该特定外接程序。
+若要从 Outlook 中删除旁加载外接程序，请使用本文中前面所述的步骤，在列出已安装加载项的对话框的 " **自定义外接程序** " 部分中查找该外接程序。选择外接程序的省略号 (`...`) ，然后选择 " **删除** " 以删除该特定外接程序。
