@@ -1,15 +1,15 @@
 ---
 title: Excel JavaScript API 要求集1.10
 description: 有关 ExcelApi 1.10 要求集的详细信息。
-ms.date: 11/09/2020
+ms.date: 11/19/2020
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: b7bfd8038883dc527721d648b2b75d7187886f49
-ms.sourcegitcommit: ca66ff7462bfdf4ed7ae04f43d1388c24de63bf9
+ms.openlocfilehash: 951835a040b767bc9cf802be4d3bb0790b49fc06
+ms.sourcegitcommit: fecad2afa7938d7178456c11ba52b558224813b4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/11/2020
-ms.locfileid: "48996240"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "49603783"
 ---
 # <a name="whats-new-in-excel-javascript-api-110"></a>Excel JavaScript API 1.10 中的新增功能
 
@@ -19,7 +19,7 @@ ExcelApi 1.10 引入了主要功能，如注释、大纲和切片器。 它还�
 |:--- |:--- |:--- |
 | [备注](../../excel/excel-add-ins-comments.md) | 添加、编辑和删除备注。 | [Comment](/javascript/api/excel/excel.comment)、[CommentCollection](/javascript/api/excel/excel.commentcollection) |
 | [分级](../../excel/excel-add-ins-ranges-advanced.md#group-data-for-an-outline) | 将行和列分组为窗体可折叠大纲。 | [区域](/javascript/api/excel/excel.range)、 [工作表](/javascript/api/excel/excel.worksheet) |
-| [Slicers](../../excel/excel-add-ins-pivottables.md#slicers) | 在表格和数据透视表中插入和配置切片器。 | [Slicer](/javascript/api/excel/excel.slicer) |
+| [Slicers](../../excel/excel-add-ins-pivottables.md#filter-with-slicers) | 在表格和数据透视表中插入和配置切片器。 | [Slicer](/javascript/api/excel/excel.slicer) |
 | [更多工作表事件](../../excel/excel-add-ins-events.md) | 侦听工作表中的 "单击" 和 "排序" 事件。 | [工作表 (事件) ](/javascript/api/excel/excel.worksheet#events) |
 
 ## <a name="api-list"></a>API 列表

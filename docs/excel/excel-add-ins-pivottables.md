@@ -1,14 +1,14 @@
 ---
 title: 使用 Excel JavaScript API 处理数据透视表
 description: 使用 Excel JavaScript API 创建数据透视表并与其组件进行交互。
-ms.date: 04/20/2020
+ms.date: 12/07/2020
 localization_priority: Normal
-ms.openlocfilehash: f1a692f493fc945f114270b69b2ce2004588b731
-ms.sourcegitcommit: c6308cf245ac1bc66a876eaa0a7bb4a2492991ac
+ms.openlocfilehash: 0a1fefa6a855ab9ee1ccd71fd0dc60f282d2944b
+ms.sourcegitcommit: fecad2afa7938d7178456c11ba52b558224813b4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "47408521"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "49603797"
 ---
 # <a name="work-with-pivottables-using-the-excel-javascript-api"></a>使用 Excel JavaScript API 处理数据透视表
 
@@ -28,6 +28,7 @@ ms.locfileid: "47408521"
 - [数据透视表](/javascript/api/excel/excel.pivottable)包含具有多个[PivotHierarchies](/javascript/api/excel/excel.pivothierarchy)的[PivotHierarchyCollection](/javascript/api/excel/excel.pivothierarchycollection) 。
 - 可以将这些 [PivotHierarchies](/javascript/api/excel/excel.pivothierarchy) 添加到特定的层次结构集合，以定义数据透视表透视数据的方式 (如 [以下部分](#hierarchies) 所述) 。
 - [PivotHierarchy](/javascript/api/excel/excel.pivothierarchy)包含一个仅具有一个[透视字段](/javascript/api/excel/excel.pivotfield)的[PivotFieldCollection](/javascript/api/excel/excel.pivotfieldcollection) 。 如果设计扩展以包含 OLAP 数据透视表，则可能会发生更改。
+- 只要字段的[PivotHierarchy](/javascript/api/excel/excel.pivothierarchy)分配给层次结构类别，则可以应用一个或多个[PivotFilters](/javascript/api/excel/excel.pivotfilters)的[透视](/javascript/api/excel/excel.pivotfield)字段。 
 - [透视字段](/javascript/api/excel/excel.pivotfield)包含具有多个[PivotItems](/javascript/api/excel/excel.pivotitem)的[PivotItemCollection](/javascript/api/excel/excel.pivotitemcollection) 。
 - [数据透视表](/javascript/api/excel/excel.pivottable)包含一个[PivotLayout](/javascript/api/excel/excel.pivotlayout) ，用于定义在工作表中显示[透视字段](/javascript/api/excel/excel.pivotfield)和[PivotItems](/javascript/api/excel/excel.pivotitem)的位置。
 
@@ -35,19 +36,19 @@ ms.locfileid: "47408521"
 
 ![来自不同服务器场的不同类型的水果销售的集合。](../images/excel-pivots-raw-data.png)
 
-此水果可使用的销售数据将用于制作数据透视表。 每个列（例如 " **类型**"）是 `PivotHierarchy` 。 " **类型** " 层次结构包含 " **类型** " 字段。 " **类型** " 字段包含 **苹果**、 **Kiwi**、 **柠檬**、 **酸**橙色和 **橙色**的项。
+此水果可使用的销售数据将用于制作数据透视表。 每个列（例如 " **类型**"）是 `PivotHierarchy` 。 " **类型** " 层次结构包含 " **类型** " 字段。 " **类型** " 字段包含 **苹果**、 **Kiwi**、 **柠檬**、 **酸** 橙色和 **橙色** 的项。
 
 ### <a name="hierarchies"></a>Hierarchies
 
 数据透视表基于四种层次结构类别进行组织： [行](/javascript/api/excel/excel.rowcolumnpivothierarchy)、 [列](/javascript/api/excel/excel.rowcolumnpivothierarchy)、 [数据](/javascript/api/excel/excel.datapivothierarchy)和 [筛选器](/javascript/api/excel/excel.filterpivothierarchy)。
 
-前面显示的服务器场数据具有五个层次**结构：服务器场、****类型**、**分类**、**服务器场中销售的 Crates**和**Crates 销售批发**。 每个层次结构只能存在于四个类别之一中。 如果 **Type** 添加到列层次结构，则它不能也在行、数据或筛选器层次结构中。 如果 **类型** 随后添加到行层次结构中，则会将其从列层次结构中删除。 无论是通过 Excel UI 还是 Excel JavaScript Api 执行层次结构分配，此行为都相同。
+前面显示的服务器场数据具有五个层次 **结构：服务器场、****类型**、**分类**、**服务器场中销售的 Crates** 和 **Crates 销售批发**。 每个层次结构只能存在于四个类别之一中。 如果 **Type** 添加到列层次结构，则它不能也在行、数据或筛选器层次结构中。 如果 **类型** 随后添加到行层次结构中，则会将其从列层次结构中删除。 无论是通过 Excel UI 还是 Excel JavaScript Api 执行层次结构分配，此行为都相同。
 
 行和列层次结构定义数据的分组方式。 例如， **服务器场** 的行层次结构将把来自同一个服务器场的所有数据集组合在一起。 在行和列层次结构之间进行选择，以定义数据透视表的方向。
 
 数据层次结构是要根据行和列层次结构聚合的值。 具有 **服务器场** 的行层次结构和 **Crates** 的数据层次结构的数据透视表显示每个服务器场的所有不同 fruits 的默认) 的总计 (。
 
-筛选器层次结构基于该筛选类型中的值包括或排除数据透视表中的数据。 选定类型为 "**有机**" 的**分类**筛选器层次结构仅显示用于随机水果的数据。
+筛选器层次结构基于该筛选类型中的值包括或排除数据透视表中的数据。 选定类型为 "**有机**" 的 **分类** 筛选器层次结构仅显示用于随机水果的数据。
 
 下面是数据透视表旁边的服务器场数据。 数据透视表使用 **服务器场** 和 **类型** 作为行层次结构， **Crates 在服务器场** 和 **Crates** 售出销售批发作为数据 (层次结构，并将其作为) 的默认聚合函数的数据层次结构，并将 **分类** 用作包含 **随机** 选择的) 的筛选器层次结构 (。
 
@@ -183,7 +184,7 @@ Excel.run(function (context) {
 
 布局定义了数据透视表在工作表中的显示方式。 这意味着 `PivotLayout` 对象控制用于数据透视表元素的区域。 使用由布局提供的区域来获取由数据透视表收集和聚合的数据。 尤其是，使用 `PivotLayout.getDataBodyRange` 可访问数据透视表所生成的内容。
 
-下面的代码演示了如何通过布局来获取数据透视表数据的最后一行， (在**服务器场中售出的 Crates 总和**和) 的早期示例中的**Crates 售出的批发**列的**总和总计。** 然后，将这些值汇总到一起，以得到最终总计，在单元格 **E30** 中显示在数据透视表) 外部 (。
+下面的代码演示了如何通过布局来获取数据透视表数据的最后一行， (在 **服务器场中售出的 Crates 总和** 和) 的早期示例中的 **Crates 售出的批发** 列的 **总和总计。** 然后，将这些值汇总到一起，以得到最终总计，在单元格 **E30** 中显示在数据透视表) 外部 (。
 
 ```js
 Excel.run(function (context) {
@@ -226,7 +227,140 @@ Excel.run(function (context) {
 });
 ```
 
-## <a name="slicers"></a>切片器
+## <a name="filter-a-pivottable"></a>筛选数据透视表
+
+用于筛选数据透视表数据的主要方法是使用 PivotFilters。 切片器提供了一个替代、不灵活的筛选方法。 
+
+[PivotFilters](/javascript/api/excel/excel.pivotfilters) 根据数据透视表的四个 [层次结构类别](#hierarchies) (筛选器、列、行和值) 筛选数据。 有四种类型的 PivotFilters，允许基于日历日期的筛选、字符串分析、编号比较和基于自定义输入的筛选。 
+
+[切片](/javascript/api/excel/excel.slicer) 器可应用于数据透视表和常规 Excel 表。 当应用于数据透视表时，切片器功能类似于 [PivotManualFilter](#pivotmanualfilter) ，并允许基于自定义输入的筛选。 与 PivotFilters 不同，切片器具有 [EXCEL UI 组件](https://support.office.com/article/Use-slicers-to-filter-data-249f966b-a9d5-4b0f-b31a-12651785d29d)。 使用 `Slicer` 类，您可以创建此 UI 组件，管理筛选并控制其可视外观。 
+
+### <a name="filter-with-pivotfilters"></a>使用 PivotFilters 进行筛选
+
+[PivotFilters](/javascript/api/excel/excel.pivotfilters) 允许您基于四个 [层次结构类别](#hierarchies) (筛选器、列、行和值来筛选数据透视表数据) 。 在数据透视表对象模型中， `PivotFilters` 应用于 [透视字段](/javascript/api/excel/excel.pivotfield)，每个都 `PivotField` 可以有一个或多个分配 `PivotFilters` 。 若要将 PivotFilters 应用于透视字段，则必须将字段的相应 [PivotHierarchy](/javascript/api/excel/excel.pivothierarchy) 分配给层次结构类别。 
+
+#### <a name="types-of-pivotfilters"></a>PivotFilters 的类型
+
+| 筛选器类型 | 筛选器用途 | Excel JavaScript API 参考 |
+|:--- |:--- |:--- |
+| DateFilter | 基于日历日期的筛选。 | [PivotDateFilter](/javascript/api/excel/excel.pivotdatefilter) |
+| LabelFilter | 文本比较筛选。 | [PivotLabelFilter](/javascript/api/excel/excel.pivotlabelfilter) |
+| ManualFilter | 自定义输入筛选。 | [PivotManualFilter](/javascript/api/excel/excel.pivotmanualfilter) |
+| ValueFilter | 数字比较筛选。 | [PivotValueFilter](/javascript/api/excel/excel.pivotvaluefilter) |
+
+#### <a name="create-a-pivotfilter"></a>创建 PivotFilter
+
+若要使用 Pivot * 筛选器 (（如 PivotDateFilter) ）筛选数据透视表数据，请将筛选器应用于 [透视字段](/javascript/api/excel/excel.pivotfield)。 下面四个代码示例演示如何使用四种类型的 PivotFilters 中的每一种。 
+
+##### <a name="pivotdatefilter"></a>PivotDateFilter
+
+第一个代码示例将 [PivotDateFilter](/javascript/api/excel/excel.pivotdatefilter) 应用于 **日期更新后** 的透视字段，隐藏 **2020-08-01** 之前的所有数据。 
+
+> [!IMPORTANT] 
+> 数据透视表 * 筛选器不能应用于透视字段，除非该字段的 PivotHierarchy 分配给层次结构类别。 在下面的代码示例中， `dateHierarchy` 必须将添加到数据透视表的类别中， `rowHierarchies` 然后才能将其用于筛选。
+
+```js
+Excel.run(function (context) {
+    // Get the PivotTable and the date hierarchy.
+    var pivotTable = context.workbook.worksheets.getActiveWorksheet().pivotTables.getItem("Farm Sales");
+    var dateHierarchy = pivotTable.rowHierarchies.getItemOrNullObject("Date Updated");
+    
+    return context.sync().then(function () {
+        // PivotFilters can only be applied to PivotHierarchies that are being used for pivoting.
+        // If it's not already there, add "Date Updated" to the hierarchies.
+        if (dateHierarchy.isNullObject) {
+          dateHierarchy = pivotTable.rowHierarchies.add(pivotTable.hierarchies.getItem("Date Updated"));
+        }
+
+        // Apply a date filter to filter out anything logged before August.
+        var filterField = dateHierarchy.fields.getItem("Date Updated");
+        var dateFilter = {
+          condition: Excel.DateFilterCondition.afterOrEqualTo,
+          comparator: {
+            date: "2020-08-01",
+            specificity: Excel.FilterDatetimeSpecificity.month
+          }
+        };
+        filterField.applyFilter({ dateFilter: dateFilter });
+        
+        return context.sync();
+    });
+});
+```
+
+> [!NOTE]
+> 下面的三个代码段仅显示特定于筛选器的摘录，而不显示完整的 `Excel.run` 调用。
+
+##### <a name="pivotlabelfilter"></a>PivotLabelFilter
+
+第二个代码段演示如何将 [PivotLabelFilter](/javascript/api/excel/excel.pivotlabelfilter) 应用于透视字段 **类型** ，使用 `LabelFilterCondition.beginsWith` 属性排除以字母 **L** 开头的标签。 
+
+```js
+    // Get the "Type" field.
+    var filterField = pivotTable.hierarchies.getItem("Type").fields.getItem("Type");
+
+    // Filter out any types that start with "L" ("Lemons" and "Limes" in this case).
+    var filter: Excel.PivotLabelFilter = {
+      condition: Excel.LabelFilterCondition.beginsWith,
+      substring: "L",
+      exclusive: true
+    };
+
+    // Apply the label filter to the field.
+    filterField.applyFilter({ labelFilter: filter });
+```
+
+##### <a name="pivotmanualfilter"></a>PivotManualFilter
+
+第三个代码段将带有 [PivotManualFilter](/javascript/api/excel/excel.pivotmanualfilter) 的手动筛选器应用于 " **分类** " 字段，筛选出不包含分类 **随机** 的数据。 
+
+```js
+    // Apply a manual filter to include only a specific PivotItem (the string "Organic").
+    var filterField = classHierarchy.fields.getItem("Classification");
+    var manualFilter = { selectedItems: ["Organic"] };
+    filterField.applyFilter({ manualFilter: manualFilter });
+```
+
+##### <a name="pivotvaluefilter"></a>PivotValueFilter
+
+若要比较数字，请将值筛选器与 [PivotValueFilter](/javascript/api/excel/excel.pivotvaluefilter)一起使用，如最后的代码段所示。 将 `PivotValueFilter` **服务器场** 中的数据与 **Crates** 的数据透视表中的数据进行比较，其中仅包含其 Crates 的总和超过值 **500** 的服务器场。 
+
+```js
+    // Get the "Farm" field.
+    var filterField = pivotTable.hierarchies.getItem("Farm").fields.getItem("Farm");
+    
+    // Filter to only include rows with more than 500 wholesale crates sold.
+    var filter: Excel.PivotValueFilter = {
+      condition: Excel.ValueFilterCondition.greaterThan,
+      comparator: 500,
+      value: "Sum of Crates Sold Wholesale"
+    };
+    
+    // Apply the value filter to the field.
+    filterField.applyFilter({ valueFilter: filter });
+```
+
+#### <a name="remove-pivotfilters"></a>删除 PivotFilters
+
+若要删除所有 PivotFilters，请将 `clearAllFilters` 方法应用于每个透视字段，如下面的代码示例所示。 
+
+```js
+Excel.run(function (context) {
+    // Get the PivotTable.
+    var pivotTable = context.workbook.worksheets.getActiveWorksheet().pivotTables.getItem("Farm Sales");
+    pivotTable.hierarchies.load("name");
+    
+    return context.sync().then(function () {
+        // Clear the filters on each PivotField.
+        pivotTable.hierarchies.items.forEach(function (hierarchy) {
+          hierarchy.fields.getItem(hierarchy.name).clearAllFilters();
+        });
+        return context.sync();
+    });
+});
+```
+
+### <a name="filter-with-slicers"></a>使用切片器进行筛选
 
 [切片](/javascript/api/excel/excel.slicer) 器允许从 Excel 数据透视表或表中筛选数据。 切片器使用指定的列或透视字段中的值筛选相应的行。 这些值存储为中的 [SlicerItem](/javascript/api/excel/excel.sliceritem) 对象 `Slicer` 。 你的外接程序可以调整这些筛选器，因为用户可以 [通过 EXCEL UI](https://support.office.com/article/Use-slicers-to-filter-data-249f966b-a9d5-4b0f-b31a-12651785d29d))  (。 切片器位于绘图层中的工作表的顶部，如以下屏幕截图所示。
 
@@ -235,7 +369,7 @@ Excel.run(function (context) {
 > [!NOTE]
 > 本节中介绍的技术重点介绍如何使用连接到数据透视表的切片器。 同样的技术也适用于使用连接到表的切片器。
 
-### <a name="create-a-slicer"></a>创建切片器
+#### <a name="create-a-slicer"></a>创建切片器
 
 您可以使用方法或方法在工作簿或工作表中创建切片器 `Workbook.slicers.add` `Worksheet.slicers.add` 。 这样做会将切片器添加[SlicerCollection](/javascript/api/excel/excel.slicercollection)到指定 `Workbook` 对象或对象的 SlicerCollection `Worksheet` 。 该 `SlicerCollection.add` 方法具有三个参数：
 
@@ -257,14 +391,14 @@ Excel.run(function (context) {
 });
 ```
 
-### <a name="filter-items-with-a-slicer"></a>使用切片器筛选项目
+#### <a name="filter-items-with-a-slicer"></a>使用切片器筛选项目
 
 切片器使用中的项筛选数据透视表 `sourceField` 。 该 `Slicer.selectItems` 方法将设置切片器中保留的项。 这些项作为 a 传递给方法 `string[]` ，表示项的键。 包含这些项目的任何行仍保留在数据透视表的聚合中。 随后调用 `selectItems` 将列表设置为在这些调用中指定的键。
 
 > [!NOTE]
 > 如果 `Slicer.selectItems` 向传递的项不在数据源中，则 `InvalidArgument` 会引发错误。 可以通过属性来验证内容 `Slicer.slicerItems` ，这是 [SlicerItemCollection](/javascript/api/excel/excel.sliceritemcollection)。
 
-下面的代码示例显示为切片器选择了三个项目： **柠檬**、 **酸橙色**和 **橙色**。
+下面的代码示例显示为切片器选择了三个项目： **柠檬**、 **酸橙色** 和 **橙色**。
 
 ```js
 Excel.run(function (context) {
@@ -285,9 +419,9 @@ Excel.run(function (context) {
 });
 ```
 
-### <a name="style-and-format-a-slicer"></a>为切片器设置样式和格式
+#### <a name="style-and-format-a-slicer"></a>为切片器设置样式和格式
 
-您的外接可以通过属性调整切片器的显示设置 `Slicer` 。 下面的代码示例将样式设置为 **SlicerStyleLight6**，将切片器顶部的文本设置为 **水果类型**，将切片器放置在绘图层上 ** (395，15) ** 的位置，并将切片器的大小设置为 **135x150** 像素。
+您的外接可以通过属性调整切片器的显示设置 `Slicer` 。 下面的代码示例将样式设置为 **SlicerStyleLight6**，将切片器顶部的文本设置为 **水果类型**，将切片器放置在绘图层上 **(395，15)** 的位置，并将切片器的大小设置为 **135x150** 像素。
 
 ```js
 Excel.run(function (context) {
@@ -302,7 +436,7 @@ Excel.run(function (context) {
 });
 ```
 
-### <a name="delete-a-slicer"></a>删除切片器
+#### <a name="delete-a-slicer"></a>删除切片器
 
 若要删除切片器，请调用 `Slicer.delete` 方法。 下面的代码示例从当前工作表中删除第一个切片器。
 
@@ -372,8 +506,8 @@ Excel.run(function (context) {
 
 上面的示例将计算设置为相对于单个行层次结构的字段的列。 当计算与单个项目相关时，请使用 `baseItem` 属性。
 
-下面的示例演示了 `differenceFrom` 计算。 它显示场中相对于 **服务器场**中的销售数据层次结构条目的不同之处。
-`baseField`是**服务器场**，因此我们看到其他服务器场之间的差异，以及每种类型的类似水果的细目 (**类型**也是此示例中的行层次结构) 。
+下面的示例演示了 `differenceFrom` 计算。 它显示场中相对于 **服务器场** 中的销售数据层次结构条目的不同之处。
+`baseField`是 **服务器场**，因此我们看到其他服务器场之间的差异，以及每种类型的类似水果的细目 (**类型** 也是此示例中的行层次结构) 。
 
 ![显示 "一群" 和其他 "服务器场" 之间的水果销售差异的数据透视表。 这显示了服务器场的总水果销售和水果类型销售的差异。 如果 "服务器场" 未销售特定类型的水果，则显示 "#N/A"。](../images/excel-pivots-showas-differencefrom.png)
 
