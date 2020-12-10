@@ -1083,6 +1083,9 @@ items:
           - name: API 参考
             href: reference/powerpoint-api-reference.md
             displayName: PowerPoint
+          - name: 在演示文稿中插入和删除幻灯片
+            href: powerpoint/insert-slides-into-presentation.md
+            displayName: PowerPoint
           - name: 通过加载项获取整个文档
             href: powerpoint/get-the-whole-document-from-an-add-in-for-powerpoint.md
             displayName: PowerPoint
