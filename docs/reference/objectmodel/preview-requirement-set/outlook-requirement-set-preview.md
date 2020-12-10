@@ -3,19 +3,19 @@ title: Outlook 外接程序 API 预览要求集
 description: 当前在 Outlook 外接程序的预览中的功能和 Api。
 ms.date: 10/14/2020
 localization_priority: Normal
-ms.openlocfilehash: d91105e0cfbb97dc1a239e40b1c81adc4e76988b
-ms.sourcegitcommit: 4e7c74ad67ea8bf6b47d65b2fde54a967090f65b
+ms.openlocfilehash: 2f83f81dcf7aa7ab0e3a48fff4279c1e08ba6286
+ms.sourcegitcommit: cba180ae712d88d8d9ec417b4d1c7112cd8fdd17
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/20/2020
-ms.locfileid: "48626594"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "49612748"
 ---
 # <a name="outlook-add-in-api-preview-requirement-set"></a>Outlook 外接程序 API 预览要求集
 
 Office JavaScript API 的 Outlook 外接程序 API 子集包括可以在 Outlook 外接程序中使用的对象、方法、属性和事件。
 
 > [!IMPORTANT]
-> 本文档适用于**预览**[要求集](../../requirement-sets/outlook-api-requirement-sets.md)。 此要求集尚未完全实现，客户端不会准确报告对它的支持。 不应在外接程序清单中指定此要求集。
+> 本文档适用于 **预览**[要求集](../../requirement-sets/outlook-api-requirement-sets.md)。 此要求集尚未完全实现，客户端不会准确报告对它的支持。 不应在外接程序清单中指定此要求集。
 
 [!INCLUDE [Information about using preview APIs](../../../includes/using-preview-apis-host.md)]
 
@@ -114,7 +114,7 @@ Office JavaScript API 的 Outlook 外接程序 API 子集包括可以在 Outlook
 
 新增了一个函数，当外接程序[由可操作邮件激活时](/outlook/actionable-messages/invoke-add-in-from-actionable-message)，返回传递的初始化数据。
 
-**适用于**： Windows (上的 outlook 连接到 Microsoft 365 订阅) ，outlook 网页版 (经典) 
+**适用于**： Windows (上的 outlook 连接到 Microsoft 365 订阅) ，outlook 网页版 (新式) 
 
 <br>
 
@@ -162,7 +162,7 @@ Office JavaScript API 的 Outlook 外接程序 API 子集包括可以在 Outlook
 
 ### <a name="notification-messages-with-actions"></a>包含操作的通知邮件
 
-通过此功能，您的外接程序可以在默认 **取消** 操作之外包含具有自定义操作的通知消息。
+通过此功能，您的外接程序可以在默认 **取消** 操作之外包含具有自定义操作的通知消息。 在新式 Outlook 网页版中，此功能仅适用于撰写模式。
 
 #### <a name="officenotificationmessagedetailsactions"></a>[NotificationMessageDetails](/javascript/api/outlook/office.notificationmessagedetails#actions)
 

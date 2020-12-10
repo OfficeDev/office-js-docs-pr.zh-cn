@@ -3,12 +3,12 @@ title: 在 Office 外接程序中创建自定义上下文选项卡
 description: 了解如何将自定义上下文选项卡添加到 Office 外接程序。
 ms.date: 11/20/2020
 localization_priority: Normal
-ms.openlocfilehash: 49a773aca0651b88c972c24a4cde0aa1e300d5e7
-ms.sourcegitcommit: 6619e07cdfa68f9fa985febd5f03caf7aee57d5e
+ms.openlocfilehash: d8617c7dd8748d15393c0e38c527062e5894e791
+ms.sourcegitcommit: cba180ae712d88d8d9ec417b4d1c7112cd8fdd17
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "49505552"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "49612734"
 ---
 # <a name="create-custom-contextual-tabs-in-office-add-ins-preview"></a>在 Office 外接程序中创建自定义上下文选项卡 (预览) 
 
@@ -117,7 +117,7 @@ ms.locfileid: "49505552"
     - 该 `id` 属性在选项卡中的所有组中必须是唯一的。使用简短的描述性 ID。
     - `label`是用户友好的字符串，用作组的标签。
     - 该 `icon` 属性的值是对象的数组，这些对象指定根据功能区和 Office 应用程序窗口的大小，组将在功能区上所具有的图标。
-    - 该 `controls` 属性的值是指定组中的按钮和其他控件的对象的数组。 组中必须至少有一个和 *不超过6个*。
+    - 该 `controls` 属性的值是指定组中的按钮和菜单的对象的数组。 组中必须至少有一个和 *不超过6个*。
 
     > [!IMPORTANT]
     > *"整个" 选项卡上的总控件数不能超过20。* 例如，可以有3个组，每个组具有6个控件，第四组具有2个控件，但您不能有4个组，每个组都有6个控件。  
@@ -135,7 +135,7 @@ ms.locfileid: "49505552"
     }
     ```
 
-1. 每个组都必须有至少两个大小的图标： 32x32 px 和 80x80 px。 （可选）还可以具有16x16、20x20、24x24、40x40、48x48 和64x64 大小的图标。 Office 根据功能区和 Office 应用程序窗口的大小决定要使用哪个图标。 将以下对象添加到图标数组中。  (如果窗口和功能区大小足以满足组中的至少一个 *控件* 的显示，则不会显示任何组图标。 有关示例，请查看 Word 功能区上的 **样式** 组，将其缩小并展开 word 窗口。有关此标记的 ) ，请注意：
+1. 每个组都必须有至少两个大小的图标： 32x32 px 和 80x80 px。 （可选）还可以具有 16x16 px、20x20 px、24x24 px、40x40 px、48x48 px 和 64x64 px 大小的图标。 Office 根据功能区和 Office 应用程序窗口的大小决定要使用哪个图标。 将以下对象添加到图标数组中。  (如果窗口和功能区大小足以满足组中的至少一个 *控件* 的显示，则不会显示任何组图标。 有关示例，请查看 Word 功能区上的 **样式** 组，将其缩小并展开 word 窗口。有关此标记的 ) ，请注意：
 
     - 这两个属性都是必需的。
     - 该 `size` 属性的度量单位为像素。 图标始终为方形，因此该数字同时为高度和宽度。
@@ -193,7 +193,7 @@ ms.locfileid: "49505552"
 下面是 JSON blob 的完整示例：
 
 ```json
-'{
+`{
   "actions": [
     {
       "id": "executeWriteData",
@@ -246,7 +246,7 @@ ms.locfileid: "49505552"
       ]
     }
   ]
-}'
+}`
 ```
 
 ## <a name="register-the-contextual-tab-with-office-with-requestcreatecontrols"></a>使用 requestCreateControls 注册带有 Office 的上下文选项卡
@@ -260,7 +260,7 @@ ms.locfileid: "49505552"
 
 ```javascript
 Office.onReady(async () => {
-    const contextualTabJSON = ' ... '; // Assign the JSON string such as the one at the end of the preceding section.
+    const contextualTabJSON = ` ... `; // Assign the JSON string such as the one at the end of the preceding section.
     const contextualTab = JSON.parse(contextualTabJSON);
     await Office.ribbon.requestCreateControls(contextualTab);
 });
@@ -289,10 +289,10 @@ Office.onReady(async () => {
 });
 ```
 
-接下来，定义处理程序。 下面是一个简单的示例 `showDataTab` ，但请参阅本文稍后部分的 [错误处理](#error-handling) ，以获取更强大的函数版本。 关于此代码，请注意以下几点：
+接下来，定义处理程序。 下面是一个简单的示例 `showDataTab` ，但请参阅本文稍后的 [处理 HostRestartNeeded 错误](#handling-the-hostrestartneeded-error) ，以获取更强健的函数版本。 关于此代码，请注意以下几点：
 
 - Office 控制何时更新功能区的状态。 [RequestUpdate](/javascript/api/office/office.ribbon?view=common-js&preserve-view=true#requestupdate-input-)方法对要更新的请求进行排队。 该方法将在 `Promise` 对象排队请求（而不是功能区实际更新）时立即解析该对象。
-- 方法的参数 `requestUpdate` 是一个 [RibbonUpdaterData](/javascript/api/office/office.ribbonupdaterdata)对象，该对象 (1) 按它的 ID 指定选项 *exactly as specified in the JSON* 卡的 (ID。) 指定选项卡的可见性。
+- 方法的参数 `requestUpdate` 是一个[RibbonUpdaterData](/javascript/api/office/office.ribbonupdaterdata)对象，该对象 (1) 按它的 ID 指定选项卡的 (ID。) 指定选项卡的可见性。
 - 如果有多个自定义上下文选项卡应在相同上下文中可见，则只需向该数组中添加其他选项卡对象 `tabs` 。
 
 ```javascript
@@ -363,7 +363,59 @@ function myContextChanges() {
 }
 ```
 
-## <a name="error-handling"></a>错误处理
+## <a name="localizing-the-json-blob"></a>本地化 JSON blob
+
+传递到的 JSON blob 的 `requestCreateControls` 本地化方式与自定义核心选项卡的清单标记的本地化方式相同 ([从清单) 的控件本地化中](../develop/localization.md#control-localization-from-the-manifest) 进行了说明。 相反，本地化必须在运行时对每个区域设置使用不同的 JSON blob。 建议使用对 `switch` [displayLanguage](/javascript/api/office/office.context#displayLanguage) 属性进行测试的语句。 示例如下：
+
+```javascript
+function GetContextualTabsJsonSupportedLocale () {
+    var displayLanguage = Office.context.displayLanguage;
+
+        switch (displayLanguage) {
+            case 'en-US':
+                return `{
+                    "actions": [
+                        // actions omitted
+                     ],
+                    "tabs": [
+                        {
+                          "id": "CtxTab1",
+                          "label": "Data",
+                          "groups": [
+                              // groups omitted
+                          ]
+                        }
+                    ]
+                }`;
+
+            case 'fr-FR':
+                return `{
+                    "actions": [
+                        // actions omitted 
+                    ],
+                    "tabs": [
+                        {
+                          "id": "CtxTab1",
+                          "label": "Données",
+                          "groups": [
+                              // groups omitted
+                          ]
+                       }
+                    ]
+               }`;
+
+            // Other cases omitted
+       }
+}
+```
+
+然后，代码调用函数以获取传递给的本地化 blob `requestCreateControls` ，如下面的示例所示：
+
+```javascript
+var contextualTabJSON = GetContextualTabsJsonSupportedLocale();
+```
+
+## <a name="handling-the-hostrestartneeded-error"></a>处理 HostRestartNeeded 错误
 
 在某些情况下，Office 无法更新功能区，并将返回错误。 例如，如果升级了加载项，并且升级后的加载项具有一组不同的自定义加载项命令，则必须关闭并重新打开 Office 应用程序。 在此之前，`requestUpdate` 方法将返回错误 `HostRestartNeeded`。 以下是如何处理此错误的示例。 在此示例中，`reportError` 方法向用户显示错误。
 
