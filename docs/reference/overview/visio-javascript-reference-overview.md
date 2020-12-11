@@ -1,24 +1,25 @@
 ---
 title: Visio JavaScript API 概述
 description: Visio JavaScript API 概述
-ms.date: 06/20/2019
+ms.date: 06/03/2020
 ms.prod: visio
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: 5a544d93c1a41f6c913381ee8d67d375646b2883
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: 9d0abb5ddc93419f5acd38a8c0134941e15be48b
+ms.sourcegitcommit: fecad2afa7938d7178456c11ba52b558224813b4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42717528"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "49603790"
 ---
 # <a name="visio-javascript-api-overview"></a>Visio JavaScript API 概述
 
-可以使用 Visio JavaScript API 在 SharePoint Online 中嵌入 Visio 图表。 嵌入的 Visio 图表是存储在 SharePoint 文档库并在 SharePoint 页面上显示的图表。 若要嵌入 Visio 图表，请在 HTML `<iframe>` 元素中显示它。 然后，可以使用 Visio JavaScript API 以程序化方式处理嵌入的图表。
+可以使用 Visio JavaScript API 在 SharePoint Online 的 *经典* SharePoint 页面中嵌入 Visio 图表。 （此拓展性功能在本地 SharePoint 或 SharePoint 框架页面上不支持。）
+
+嵌入的 Visio 图表是存储在 SharePoint 文档库并在 SharePoint 页面上显示的图表。 若要嵌入 Visio 图表，请在 HTML `<iframe>` 元素中显示它。 然后，可以使用 Visio JavaScript API 以程序化方式处理嵌入的图表。
 
 ![SharePoint 页面上 iframe 中的 Visio 图表，以及脚本编辑器 Web 部件](../images/visio-api-block-diagram.png)
-
 
 可以使用 Visio JavaScript API 执行以下操作：
 
@@ -67,7 +68,7 @@ function hideToolbars() {
 
 ## <a name="proxy-objects"></a>代理对象
 
-在外接程序中声明和使用的 Visio JavaScript 对象是 Visio 文档中真实对象的代理对象。对代理对象执行的所有操作都不会在 Visio 中实现；在同步文档状态前，Visio 文档的状态不会在代理对象中实现。运行 `context.sync()` 时将同步文档状态。
+在嵌入会话中声明和使用的 Visio JavaScript 对象是 Visio 文档中真实对象的代理对象。 对代理对象执行的所有操作都不会在 Visio 中实现；在同步文档状态前，Visio 文档的状态不会在代理对象中实现。 运行 `context.sync()` 时将同步文档状态。
 
 例如，本地 JavaScript 对象 getActivePage 声明为引用选定页面。 这可用于将属性和调用方法的设置操作排入队列。 对此类对象执行的操作不会实现，除非运行 `sync()` 方法。
 
@@ -77,11 +78,11 @@ var activePage = context.document.getActivePage();
 
 ## <a name="sync"></a>sync()
 
-`sync()` 方法通过执行在上下文中排队的指令以及检索用于你代码中的已加载 Office 对象的属性，在 JavaScript 代理对象和 Visio 中的真实对象之间同步状态。 此方法返回一个将在同步完成时实现的承诺。 
+`sync()` 方法通过执行在上下文中排队的指令以及检索用于你代码中的已加载 Office 对象的属性，在 JavaScript 代理对象和 Visio 中的真实对象之间同步状态。 此方法返回一个将在同步完成时实现的承诺。
 
 ## <a name="load"></a>load()
 
-`load()` 方法用于填充在外接程序 JavaScript 层中创建的代理对象。尝试检索对象（如文档）时，将首先在 JavaScript 层中创建一个本地代理对象。此类对象可用于将属性和调用方法的设置操作排入队列。不过，若要读取对象属性或关系，必须先调用 `load()` 和 `sync()` 方法。load() 方法获取在调用 `sync()` 方法时需要加载的属性和关系。
+`load()` 方法用于填充在 JavaScript 层中创建的代理对象。 尝试检索对象（如文档）时，将首先在 JavaScript 层中创建一个本地代理对象。 此类对象可用于将属性和调用方法的设置操作排入队列。 但是，要读取对象属性或关系，则需首先调用 `load()` 和 `sync()` 方法。 load() 方法包括在调用 `sync()` 方法时需加载的属性和关系。
 
 下面的示例展示了 `load()` 方法的语法。
 
@@ -91,7 +92,7 @@ object.load(string: properties); //or object.load(array: properties); //or objec
 
 1. **properties** 列出了要加载的属性名称，指定为逗号分隔的字符串或名称数组。 有关详细信息，请参阅每个对象下的 `.load()` 方法。
 
-2. **loadOption** 指定的对象描述了选择、展开、置顶和跳过选项。有关详细信息，请参阅对象加载[选项](/javascript/api/office/officeextension.loadoption)。
+2. **loadOption** 指定的对象描述了选择、展开、置顶和跳过选项。有关详细信息，请参阅对象加载 [选项](/javascript/api/office/officeextension.loadoption)。
 
 ## <a name="example-printing-all-shapes-text-in-active-page"></a>示例：打印活动页中的所有形状文本
 
