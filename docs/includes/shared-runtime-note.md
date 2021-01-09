@@ -1,2 +1,2 @@
 >[!NOTE]
-> 除非您有特定的原因需要使用无 UI 的函数，否则建议对 [共享运行时](../excel/configure-your-add-in-to-use-a-shared-runtime.md)使用自定义函数。 另请注意，使用共享运行时意味着外接程序将使用 Internet Explorer 11，而不考虑 Windows 或 Microsoft 365 版本。 有关详细信息，请参阅 [运行时](../reference/manifest/runtimes.md)。
+> 除非你有使用无 UI 函数的特定原因，否则我们建议将自定义函数与共享 [运行时一同使用](../develop/configure-your-add-in-to-use-a-shared-runtime.md)。 另请注意，使用共享运行时意味着你的外接程序将使用 Internet Explorer 11，而不考虑 Windows 或 Microsoft 365 版本。 有关详细信息，请参阅[运行时](../reference/manifest/runtimes.md)。

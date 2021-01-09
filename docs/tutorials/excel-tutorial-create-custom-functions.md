@@ -4,12 +4,12 @@ description: 在本教程中，你将创建一个 Excel 外接程序，其中包
 ms.date: 11/09/2020
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: e45bea36b8826912a38838429d83990293fc47db
-ms.sourcegitcommit: ceb8dd66f3fb9c963fce8446c2f6c65ead56fbc1
+ms.openlocfilehash: cec05135297bb2aa23c3c936a2481b69ed13891a
+ms.sourcegitcommit: 545888b08f57bb1babb05ccfd83b2b3286bdad5c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "49131792"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "49789203"
 ---
 # <a name="tutorial-create-custom-functions-in-excel"></a>教程：在 Excel 中创建自定义函数
 
@@ -83,7 +83,7 @@ npm run start:web
 
    ![Excel 网页版中插入功能区的屏幕截图，突出显示“我的加载项”按钮](../images/excel-cf-online-register-add-in-1.png)
    
-2. 选择“**管理我的加载项**”，然后选择“**上载我的加载项**”。
+2. 选择“管理我的加载项”，然后选择“上载我的加载项”。
 
 3. 选择“浏览...”，并导航到 Yeoman 生成器创建的项目的根目录。
 
@@ -159,7 +159,7 @@ npm run start:web
 
 1. 在 Excel 中，选择“**插入**”选项卡，然后选择“**加载项**”。![Excel 网页版中“插入”功能区的屏幕截图，突出显示“我的加载项”按钮](../images/excel-cf-online-register-add-in-1.png)
 
-2. 选择“**管理我的加载项**”，然后选择“**上载我的加载项**”。
+2. 选择“管理我的加载项”，然后选择“上载我的加载项”。
 
 3. 选择“浏览...”，并导航到 Yeoman 生成器创建的项目的根目录。
 
@@ -226,7 +226,7 @@ function clock(invocation) {
 
 1. 在 Excel 中，选择“**插入**”选项卡，然后选择“**加载项**”。![Excel 网页版中“插入”功能区的屏幕截图，突出显示“我的加载项”按钮](../images/excel-cf-online-register-add-in-1.png)
 
-2. 选择“**管理我的加载项**”，然后选择“**上载我的加载项**”。
+2. 选择“管理我的加载项”，然后选择“上载我的加载项”。
 
 3. 选择“浏览...”，并导航到 Yeoman 生成器创建的项目的根目录。
 
@@ -243,4 +243,4 @@ function clock(invocation) {
 恭喜！ 你已经创建新的自定义函数项目，试用了预生成的函数，创建了从 Web 请求数据的自定义函数，并创建了流式传输数据的自定义函数。 接下来，你可以将项目修改为使用共享运行时，使函数更容易与任务窗格交互。 按照以下文章中的步骤操作：
 
 > [!div class="nextstepaction"]
-> [配置加载项以使用共享运行时](../excel/configure-your-add-in-to-use-a-shared-runtime.md)
+> [配置加载项以使用共享运行时](../develop/configure-your-add-in-to-use-a-shared-runtime.md)

@@ -1,27 +1,27 @@
 ---
-title: 清单文件中的运行时
-description: Runtime 元素将您的外接程序配置为对其各个组件使用共享的 JavaScript 运行时，例如，功能区、任务窗格、自定义函数。
+title: 清单文件中运行时
+description: 运行时元素将加载项配置为将共享的 JavaScript 运行时用于其各种组件，例如功能区、任务窗格、自定义函数。
 ms.date: 05/29/2020
 localization_priority: Normal
-ms.openlocfilehash: 9e6e13f83db363fb5485c8d8defbc381c80e32d6
-ms.sourcegitcommit: 472b81642e9eb5fb2a55cd98a7b0826d37eb7f73
+ms.openlocfilehash: 3cabfacc665ccf6c0e4e796cb0e1fbc70c770ee3
+ms.sourcegitcommit: 545888b08f57bb1babb05ccfd83b2b3286bdad5c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/17/2020
-ms.locfileid: "45159365"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "49789182"
 ---
-# <a name="runtime-element-preview"></a>Runtime 元素（预览）
+# <a name="runtime-element-preview"></a>运行时元素 (预览) 
 
-将您的外接程序配置为使用共享的 JavaScript 运行时，以便在同一运行时中运行各种组件。 元素的子 [`<Runtimes>`](runtimes.md) 元素。
+将加载项配置为使用共享的 JavaScript 运行时，以便各种组件都在同一运行时中运行。 元素的 [`<Runtimes>`](runtimes.md) 子元素。
 
-在 Excel 中，此元素使功能区、任务窗格和自定义函数能够使用相同的运行时。 有关详细信息，请参阅[Configure Excel 外接程序以使用共享的 JavaScript 运行时](../../excel/configure-your-add-in-to-use-a-shared-runtime.md)。
+在 Excel 中，此元素使功能区、任务窗格和自定义函数能够使用相同的运行时。 有关详细信息，请参阅配置 [Excel 加载项以使用共享的 JavaScript 运行时](../../develop/configure-your-add-in-to-use-a-shared-runtime.md)。
 
-在 Outlook 中，此元素启用基于事件的加载项激活。 有关详细信息，请参阅[Configure Outlook 外接程序以进行基于事件的激活](../../outlook/autolaunch.md)。
+在 Outlook 中，此元素启用基于事件的外接程序激活。 有关详细信息，请参阅配置 [Outlook 外接程序进行基于事件的激活](../../outlook/autolaunch.md)。
 
-**外接类型：** 任务窗格、邮件
+**加载项类型：** 任务窗格、邮件
 
 > [!IMPORTANT]
-> **Outlook**：基于事件的激活当前[处于预览阶段](../../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md)，仅适用于 web 上的 outlook。 有关详细信息，请参阅[如何预览基于事件的激活功能](../../outlook/autolaunch.md#how-to-preview-the-event-based-activation-feature)。
+> **Outlook：** 基于事件的激活目前处于 [预览阶段，](../../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md) 仅在 Outlook 网页版中可用。 有关详细信息，请参阅 [如何预览基于事件的激活功能](../../outlook/autolaunch.md#how-to-preview-the-event-based-activation-feature)。
 
 ## <a name="syntax"></a>语法
 
@@ -39,8 +39,8 @@ ms.locfileid: "45159365"
 
 |  属性  |  必需  |  说明  |
 |:-----|:-----|:-----|
-|  **resid**  |  是  | 指定您的外接程序的 HTML 页面的 URL 位置。 `resid`必须与 `id` `Url` 元素中元素的属性相匹配 `Resources` 。 |
-|  **lifetime**  |  否  | 的默认值 `lifetime` 是 `short` ，不需要指定。 Outlook 外接程序仅使用 `short` 值。 如果要在 Excel 外接程序中使用共享运行时，请将值显式设置为 `long` 。 |
+|  **resid**  |  是  | 指定外接程序的 HTML 页面的 URL 位置。 `resid`不能超过 32 个字符，并且必须与元素 `id` `Url` 中的元素属性 `Resources` 匹配。 |
+|  **lifetime**  |  否  | 默认值是 `lifetime` `short` ，不需要指定。 Outlook 外接程序仅使用 `short` 该值。 如果要在 Excel 加载项中使用共享运行时，请显式将值设置为 `long` 。 |
 
 ## <a name="see-also"></a>另请参阅
 

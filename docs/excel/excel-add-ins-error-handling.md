@@ -1,21 +1,21 @@
 ---
-title: 使用 Excel JavaScript API 处理错误
-description: 了解有关 Excel JavaScript API 错误处理逻辑，以解决运行时错误。
-ms.date: 10/22/2020
+title: Excel JavaScript API 的错误处理
+description: 了解 Excel JavaScript API 错误处理逻辑，以考虑运行时错误。
+ms.date: 01/06/2021
 localization_priority: Normal
-ms.openlocfilehash: a3b1bbfa7daba1b856bce35aa075d5b625bd9769
-ms.sourcegitcommit: 42e6cfe51d99d4f3f05a3245829d764b28c46bbb
+ms.openlocfilehash: fd863e9783336ba9121312ba06aae03330d57562
+ms.sourcegitcommit: 545888b08f57bb1babb05ccfd83b2b3286bdad5c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "48740817"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "49789119"
 ---
-# <a name="error-handling-with-the-excel-javascript-api"></a>使用 Excel JavaScript API 处理错误
+# <a name="error-handling-with-the-excel-javascript-api"></a>Excel JavaScript API 的错误处理
 
 使用 Excel JavaScript API 生成加载项时，请务必加入错误处理逻辑，以便解决运行时错误。 鉴于 API 的异步特性，这样做非常关键。
 
 > [!NOTE]
-> 有关 `sync()` Excel JAVASCRIPT API 的方法和异步特性的详细信息，请参阅 [Office 外接程序中的 Excel JavaScript 对象模型](excel-add-ins-core-concepts.md)。
+> 有关 Excel JavaScript API 的方法和异步特性详细信息，请参阅 Office 加载项中的 `sync()` [Excel JavaScript 对象模型](excel-add-ins-core-concepts.md)。
 
 ## <a name="best-practices"></a>最佳做法
 
@@ -45,7 +45,7 @@ Excel.run(function (context) {
 - **debugInfo**：出现此信息时，错误消息的 `debugInfo` 属性将提供其他信息，帮助理解错误根本原因。
 
 > [!NOTE]
-> 如果使用 `console.log()` 将错误消息打印到控制台，那么这些消息只会在服务器上可见。 最终用户将不会在加载项任务窗格中或 Office 应用程序中的任何位置看到这些错误消息。
+> 如果使用 `console.log()` 将错误消息打印到控制台，那么这些消息只会在服务器上可见。 最终用户不会在加载项任务窗格或 Office 应用程序中的任意位置看到这些错误消息。
 
 ## <a name="error-messages"></a>错误消息
 
@@ -56,11 +56,12 @@ Excel.run(function (context) {
 |`AccessDenied` |无法执行所请求的操作。|
 |`ActivityLimitReached`|已达到活动限制。|
 |`ApiNotAvailable`|请求的 API 不可用。|
-|`ApiNotFound`|找不到您尝试使用的 API。 它可能在较新版本的 Excel 中可用。 有关详细信息，请参阅 [Excel JAVASCRIPT API 要求集](../reference/requirement-sets/excel-api-requirement-sets.md) 一文。|
+|`ApiNotFound`|找不到您尝试使用的 API。 它可能在较新版本的 Excel 中可用。 有关详细信息， [请参阅 Excel JavaScript API](../reference/requirement-sets/excel-api-requirement-sets.md) 要求集文章。|
 |`BadPassword`|你提供的密码不正确。|
 |`Conflict`|由于冲突，无法处理请求。|
 |`ContentLengthRequired`|`Content-length`缺少 HTTP 标头。|
 |`GeneralException`|处理请求时出现内部错误。|
+|`InactiveWorkbook`|操作失败，因为多个工作簿已打开，并且此 API 调用的工作簿失去焦点。|
 |`InsertDeleteConflict`|尝试的插入或删除操作导致冲突。|
 |`InvalidArgument` |自变量无效、缺少或格式不正确。|
 |`InvalidBinding`  |由于之前的更新，此对象绑定不再有效。|
@@ -70,18 +71,18 @@ Excel.run(function (context) {
 |`InvalidSelection`|当前选定内容对于此操作无效。|
 |`ItemAlreadyExists`|所创建的资源已存在。|
 |`ItemNotFound` |所请求的资源不存在。|
-|`NonBlankCellOffSheet`|插入新单元格的请求无法完成，因为它会将非空单元格推送到工作表的末尾。 这些非空单元格可能显示为空，但具有空值、部分格式或公式。 删除足够多的行或列，为要插入的内容留出空间，然后重试。|
+|`NonBlankCellOffSheet`|无法完成插入新单元格的请求，因为它会将非空单元格推送到工作表末尾。 这些非空单元格可能显示为空白，但具有空值、某些格式或公式。 删除足够的行或列，为要插入的行或列提供空间，然后重试。|
 |`NotImplemented`|所请求的功能未实现。|
-|`RangeExceedsLimit`|区域中的单元格计数已超过支持的最大数量。 有关详细信息，请参阅 [Office 外接程序的资源限制和性能优化一](../concepts/resource-limits-and-performance-optimization.md#excel-add-ins) 文。|
+|`RangeExceedsLimit`|该范围中的单元格计数已超出支持的最大数。 有关详细信息 [，请参阅 Office](../concepts/resource-limits-and-performance-optimization.md#excel-add-ins) 外接程序的资源限制和性能优化文章。|
 |`RequestAborted`|请求在运行时已中止。|
-|`RequestPayloadSizeLimitExceeded`|请求负载大小已超出限制。 有关详细信息，请参阅 [Office 外接程序的资源限制和性能优化一](../concepts/resource-limits-and-performance-optimization.md#excel-add-ins) 文。 <br><br>此错误仅发生在 web 上的 Excel 中。|
-|`ResponsePayloadSizeLimitExceeded`|响应负载大小已超出限制。 有关详细信息，请参阅 [Office 外接程序的资源限制和性能优化一](../concepts/resource-limits-and-performance-optimization.md#excel-add-ins) 文。  <br><br>此错误仅发生在 web 上的 Excel 中。|
+|`RequestPayloadSizeLimitExceeded`|请求有效负载大小已超出限制。 有关详细信息 [，请参阅 Office](../concepts/resource-limits-and-performance-optimization.md#excel-add-ins) 外接程序的资源限制和性能优化文章。 <br><br>此错误仅在 Excel 网页中发生。|
+|`ResponsePayloadSizeLimitExceeded`|响应有效负载大小已超出限制。 有关详细信息 [，请参阅 Office](../concepts/resource-limits-and-performance-optimization.md#excel-add-ins) 外接程序的资源限制和性能优化文章。  <br><br>此错误仅在 Excel 网页中发生。|
 |`ServiceNotAvailable`|服务不可用。|
 |`Unauthenticated` |所需的身份验证信息缺少或无效。|
 |`UnsupportedOperation`|不支持正在尝试的操作。|
-|`UnsupportedSheet`|此工作表类型不支持此操作，因为它是宏或图表工作表。|
+|`UnsupportedSheet`|此工作表类型不支持此操作，因为它为宏或图表工作表。|
 
 ## <a name="see-also"></a>另请参阅
 
-- [Office 外接程序中的 Excel JavaScript 对象模型](excel-add-ins-core-concepts.md)
+- [Excel 加载项中的 Word JavaScript 对象模型](excel-add-ins-core-concepts.md)
 - [OfficeExtension.Error 对象（Excel JavaScript API）](/javascript/api/office/officeextension.error?view=excel-js-preview&preserve-view=true)

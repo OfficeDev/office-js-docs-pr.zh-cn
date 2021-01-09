@@ -5,12 +5,12 @@ title: 在 Excel 中创建自定义函数
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: d20c2368f3cb79dc8cd43e93c4b5ecbc9603129a
-ms.sourcegitcommit: 5bfd1e9956485c140179dfcc9d210c4c5a49a789
+ms.openlocfilehash: 052c90f81af79d420c60783f8dfc6b256e8da370
+ms.sourcegitcommit: 545888b08f57bb1babb05ccfd83b2b3286bdad5c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/13/2020
-ms.locfileid: "49071674"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "49789126"
 ---
 # <a name="create-custom-functions-in-excel"></a>在 Excel 中创建自定义函数
 
@@ -50,7 +50,7 @@ function sphereVolume(radius) {
 
 ### <a name="script-file"></a>脚本文件
 
-脚本文件 ( **./src/functions/functions.js** or **./src/functions/functions.ts** ) 包含定义自定义函数的代码以及定义函数的注释。
+脚本文件 (**./src/functions/functions.js** or **./src/functions/functions.ts**) 包含定义自定义函数的代码以及定义函数的注释。
 
 以下代码定义 `add` 自定义函数。 代码注释用于生成描述 Excel 自定义函数的 JSON 元数据。 首先声明所需的 `@customfunction` 注释，指示这是一个自定义函数。 接下来，声明两个参数 `first` 和 `second`，然后是它们的 `description` 属性。 最后提供了 `returns` 描述。 要详细了解自定义函数需要哪些注释，请参阅[为自定义函数创建 JSON 元数据](custom-functions-json-autogeneration.md)。
 
@@ -70,13 +70,13 @@ function add(first, second){
 
 ### <a name="manifest-file"></a>清单文件
 
-用于定义自定义函数的加载项的 XML 清单文件（Yo Office 生成器创建的项目中的 **./manifest.xml** ）会执行以下操作：
+用于定义自定义函数的加载项的 XML 清单文件（Yo Office 生成器创建的项目中的 **./manifest.xml**）会执行以下操作：
 
 - 定义自定义函数的命名空间。 命名空间追加在你的自定义函数之前，可帮助客户将你的函数标识为加载项的一部分。
 - 使用自定义函数清单特有的 `<ExtensionPoint>` 和 `<Resources>` 元素。 这些元素包含有关 JavaScript、JSON 和 HTML 文件的位置的信息。
 - 指定要用于自定义函数的运行时。 除非你对另一运行时有特殊需求，否则建议始终使用共享运行时，因为共享运行时允许在函数和任务窗格之间共享数据。 请注意，使用共享运行时意味着加载项将使用 Internet Explorer 11，而不是 Microsoft Edge。
 
-如果你使用 Yo Office 生成器来创建文件，则建议将你的清单调整为使用共享运行时，因为这不是这些文件的默认设置。 若要更改清单，请按照[将 Excel 加载项配置为使用共享 JavaScript 运行时](configure-your-add-in-to-use-a-shared-runtime.md)中的说明进行操作。
+如果你使用 Yo Office 生成器来创建文件，则建议将你的清单调整为使用共享运行时，因为这不是这些文件的默认设置。 若要更改清单，请按照[将 Excel 加载项配置为使用共享 JavaScript 运行时](../develop/configure-your-add-in-to-use-a-shared-runtime.md)中的说明进行操作。
 
 若要从示例加载项查看完整的工作清单，请参阅[此 Github 存储库](https://github.com/OfficeDev/PnP-OfficeAddins/blob/master/Samples/excel-shared-runtime-global-state/manifest.xml)。
 
