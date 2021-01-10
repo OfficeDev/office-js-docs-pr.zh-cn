@@ -89,6 +89,10 @@ items:
               - name: 随文档自动打开任务窗格
                 href: develop/automatically-open-a-task-pane-with-a-document.md
                 displayName: manifest
+              - name: 配置加载项以使用共享运行时
+                href: develop/configure-your-add-in-to-use-a-shared-runtime.md
+              - name: 在打开的文件上运行代码
+                href: develop/run-code-on-document-open.md
           - name: 清单
             items:
               - name: 概述
@@ -216,6 +220,8 @@ items:
                     href: design/task-pane-add-ins.md
               - name: 键盘快捷方式
                 href: design/keyboard-shortcuts.md
+              - name: 在任务窗格中显示或隐藏 Office 加载项
+                href: develop/show-hide-add-in.md
               - name: 本地化
                 href: develop/localization.md
               - name: 资源
@@ -623,9 +629,6 @@ items:
           - name: 范围的条件格式
             href: excel/excel-add-ins-conditional-formatting.md
             displayName: Excel
-          - name: 配置加载项以使用共享运行时
-            href: excel/configure-your-add-in-to-use-a-shared-runtime.md
-            displayName: Excel
           - name: 数据有效性
             href: excel/excel-add-ins-data-validation.md
             displayName: Excel
@@ -653,14 +656,8 @@ items:
           - name: 区域（高级）
             href: excel/excel-add-ins-ranges-advanced.md
             displayName: Excel
-          - name: 在打开的文件上运行代码
-            href: excel/run-code-on-document-open.md
-            displayName: Excel
           - name: 形状
             href: excel/excel-add-ins-shapes.md
-            displayName: Excel
-          - name: 在共享运行时中显示或隐藏 Office 加载项
-            href: excel/show-hide-add-in.md
             displayName: Excel
           - name: 表格
             href: excel/excel-add-ins-tables.md
@@ -719,9 +716,6 @@ items:
             displayName: 'Excel, Custom Functions'
           - name: 返回动态数组
             href: excel/custom-functions-dynamic-arrays.md
-            displayName: 'Excel, Custom Functions'
-          - name: 共享运行时
-            href: excel/custom-functions-shared-overview.md
             displayName: 'Excel, Custom Functions'
           - name: 无 UI 的自定义函数
             items:
