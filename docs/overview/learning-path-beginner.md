@@ -4,12 +4,12 @@ description: 通过 Office 加载项的学习资源为初学者提供指导的�
 ms.date: 10/14/2020
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: a51ffc437c9d1946b886d1e665836dd6d76f52d2
-ms.sourcegitcommit: 42e6cfe51d99d4f3f05a3245829d764b28c46bbb
+ms.openlocfilehash: 9d4d3a6b7211474e3278273b94f1cb3a12535404
+ms.sourcegitcommit: d28392721958555d6edea48cea000470bd27fcf7
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "48741069"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "49839689"
 ---
 # <a name="beginners-guide"></a>初学者指南
 
@@ -45,7 +45,7 @@ ms.locfileid: "48741069"
 
 ## <a name="step-4-understand-the-javascript-library"></a>步骤 4：了解 JavaScript 库
 
-首先，通过来自 Microsoft Learn 的本教程大致了解 Office JavaScript 库：[了解 Office JavaScript API](https://docs.microsoft.com/learn/modules/understand-office-javascript-apis/index)。
+首先，通过来自 Microsoft Learn 的本教程大致了解 Office JavaScript 库：[了解 Office JavaScript API](/learn/modules/understand-office-javascript-apis/index)。
 
 然后，使用我们的 [Script Lab 工具](explore-with-script-lab.md)（一种用于运行和探索 API 的沙箱）来探索 Office JavaScript API。
 

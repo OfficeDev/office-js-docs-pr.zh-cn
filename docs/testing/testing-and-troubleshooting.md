@@ -1,14 +1,14 @@
 ---
 title: 排查 Office 加载项中的用户错误
-description: 了解如何解决 Office 外接程序中的用户错误。
+description: 了解如何排查 Office 加载项中的用户错误。
 ms.date: 09/08/2020
 localization_priority: Normal
-ms.openlocfilehash: 878295a4a6237860c349efb04a6684ab527b7e4f
-ms.sourcegitcommit: c6308cf245ac1bc66a876eaa0a7bb4a2492991ac
+ms.openlocfilehash: e1cb5e0bb8005f04425a5ad9c7e807d10f054e35
+ms.sourcegitcommit: d28392721958555d6edea48cea000470bd27fcf7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "47408829"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "49840089"
 ---
 # <a name="troubleshoot-user-errors-with-office-add-ins"></a>排查 Office 加载项中的用户错误
 
@@ -26,7 +26,7 @@ ms.locfileid: "47408829"
 |:-----|:-----|
 |应用错误：无法访问目录|验证防火墙设置。“目录”是指 AppSource。此消息表明用户无法访问 AppSource。|
 |应用错误：无法启动此应用。若要忽略此问题，请关闭这个对话框。若要重试，请单击“重启”。|确认已安装最新的 Office 更新，或下载 [Office 2013 更新](https://support.microsoft.com/kb/2986156/)。|
-|错误：对象不 支持此属性或方法 "defineProperty"|确认 Internet Explorer 不是在兼容模式下运行。 转到“工具”>“兼容性视图设置”****。|
+|错误：对象不 支持此属性或方法 "defineProperty"|确认 Internet Explorer 不是在兼容模式下运行。 转到“工具”>“兼容性视图设置”。|
 |很抱歉，我们无法加载 该应用程序，因为您的浏览器 版本不受支持。 单击此处查看 支持的浏览器版本的列表。|确保浏览器支持 HTML5 本地存储，或重置您的 Internet Explorer 设置。有关受支持的浏览器的信息，请参阅 [运行 Office 加载项的要求](../concepts/requirements-for-running-office-add-ins.md)。|
 
 ## <a name="when-installing-an-add-in-you-see-error-loading-add-in-in-the-status-bar"></a>安装加载项时，状态栏中会显示“加载加载项时出错”
@@ -43,11 +43,11 @@ ms.locfileid: "47408829"
 如果在 Windows 上运行并[使用 Internet Explorer](../concepts/browsers-used-by-office-web-add-ins.md) 的 Outlook 加载项不能正常工作，请尝试在 Internet Explorer 中启用脚本调试。 
 
 
-- 转到 Tools > **Internet Options**  >  **Advanced**"。
+- 转到"工具> Internet **选项**  >  **高级"。**
     
-- 在“浏览”**** 下，取消选中“禁用脚本调试 (Internet Explorer)”**** 和“禁用脚本调试 (其他)”****。
+- 在“浏览”下，取消选中“禁用脚本调试 (Internet Explorer)”和“禁用脚本调试 (其他)”。
     
-我们建议您仅在解决问题时取消选中这些设置。如果您将其保持未选中状态，您在浏览时将会收到提示。解决此问题后，再次选中“禁用脚本调试 (Internet Explorer)”**** 和“禁用脚本调试 (其他)”****。
+我们建议您仅在解决问题时取消选中这些设置。如果您将其保持未选中状态，您在浏览时将会收到提示。解决此问题后，再次选中“禁用脚本调试 (Internet Explorer)”和“禁用脚本调试 (其他)”。
 
 
 ## <a name="add-in-doesnt-activate-in-office-2013"></a>外接程序在 Office 2013 中无法激活
@@ -69,7 +69,7 @@ ms.locfileid: "47408829"
 
 “浏览器中的安全设置阻止创建对话框。请尝试使用其他浏览器，或者配置浏览器，使地址栏中显示的 [URL] 和域处于同一安全区域。”
 
-![对话框错误消息的屏幕截图](http://i.imgur.com/3mqmlgE.png)
+![对话框错误消息的屏幕截图](../images/dialog-prevented.png)
 
 |**受影响的浏览器**|**受影响的平台**|
 |:--------------------|:---------------------|
@@ -95,5 +95,4 @@ Office.context.ui.displayDialogAsync(startAddress, {displayInIFrame:true}, callb
 
 ## <a name="see-also"></a>另请参阅
 
-- [解决 Office 外接程序的开发错误](troubleshoot-development-errors.md)
-
+- [Office 加载项开发错误疑难解答](troubleshoot-development-errors.md)

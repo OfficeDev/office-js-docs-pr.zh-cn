@@ -3,12 +3,12 @@ title: 从 Outlook 加载项使用 Exchange Web 服务 (EWS)
 description: 提供的示例显示 Outlook 加载项如何通过 Exchange Web 服务请求信息。
 ms.date: 04/28/2020
 localization_priority: Normal
-ms.openlocfilehash: f9cf2a41ce5da325ae17812e89d9d8ecd315e573
-ms.sourcegitcommit: 83f9a2fdff81ca421cd23feea103b9b60895cab4
+ms.openlocfilehash: b86040f513f4bd368e964270ba3e94184022938f
+ms.sourcegitcommit: d28392721958555d6edea48cea000470bd27fcf7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/11/2020
-ms.locfileid: "47430987"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "49839696"
 ---
 # <a name="call-web-services-from-an-outlook-add-in"></a>从 Outlook 加载项调用 Web 服务
 
@@ -33,7 +33,7 @@ ms.locfileid: "47430987"
 
 EWS 服务支持 Exchange 服务器中的不同操作；例如复制、查找、更新或发送项目的项目级操作，以及创建、获取或更新文件夹的文件夹级操作。若要执行 EWS 操作，请创建一个执行该操作的 XML SOAP 请求。当操作完成时，你将获得包含该操作相关数据的 XML SOAP 响应。EWS SOAP 请求和响应遵循 Messages.xsd 文件中定义的架构。正如其他 EWS 架构文件一样，Message.xsd 文件位于托管 EWS 的 IIS 虚拟目录中。
 
-若要使用 `makeEwsRequestAsync` 方法启动 EWS 操作，请提供以下内容：
+若要使用 `makeEwsRequestAsync` 该方法启动 EWS 操作，请提供以下内容：
 
 - 针对该 EWS 操作的 SOAP 请求的 XML，作为  _data_ 形参的实参
 
@@ -41,7 +41,7 @@ EWS 服务支持 Exchange 服务器中的不同操作；例如复制、查找、
 
 - 该回调方法的任何可选输入数据（作为  _userContext_ 实参）
 
-当 EWS SOAP 请求完成时，Outlook 将使用一个参数（即 [AsyncResult](/javascript/api/office/office.asyncresult) 对象）调用回调方法。回调方法可以访问对象的两个属性 `AsyncResult` ：该 `value` 属性包含 EWS 操作的 XML SOAP 响应，也可以是 `asyncContext` 包含作为参数传递的任何数据的属性（可选） `userContext` 。通常情况下，回调方法会将 SOAP 响应中的 XML 解析为获取任何相关信息，并相应地处理这些信息。
+EWS SOAP 请求完成后，Outlook 会使用一个参数（ [即 AsyncResult](/javascript/api/office/office.asyncresult) 对象）调用回调方法。回调方法可以访问对象的两个属性：一个属性包含 EWS 操作 XML SOAP 响应;另一个属性（可选）包含作为参数传递的任何 `AsyncResult` `value` `asyncContext` `userContext` 数据。通常，回调方法随后会分析 SOAP 响应中的 XML，获取任何相关信息，并相应地处理该信息。
 
 
 ## <a name="tips-for-parsing-ews-responses"></a>解析 EWS 响应的提示
@@ -49,9 +49,9 @@ EWS 服务支持 Exchange 服务器中的不同操作；例如复制、查找、
 分析 EWS 操作的 SOAP 响应时，请注意下列与浏览器相关的问题：
 
 
-- 使用 DOM 方法时，请指定标记名称的前缀 `getElementsByTagName` ，以包含对 Internet Explorer 的支持。
+- 使用 DOM 方法时指定标记名称的前缀，以包含对 `getElementsByTagName` Internet Explorer。
 
-  `getElementsByTagName` 的行为有所不同，具体取决于浏览器类型。例如，EWS 响应可包含以下 XML (的格式设置和缩写) 的显示目的：
+  `getElementsByTagName` 根据浏览器类型，其行为会有所不同。例如，EWS 响应可以包含以下 XML (格式和缩写以用于显示) ：
 
    ```XML
         <t:ExtendedProperty><t:ExtendedFieldURI PropertySetId="00000000-0000-0000-0000-000000000000" 
@@ -62,7 +62,7 @@ EWS 服务支持 Exchange 服务器中的不同操作；例如复制、查找、
         }</t:Value></t:ExtendedProperty>
    ```
 
-   如下所示的代码将在类似于浏览器的浏览器上运行，以获取由标记括起来的 XML `ExtendedProperty` ：
+   如下所示的代码将在 Chrome 等浏览器上运行，以将 XML 包含在标记 `ExtendedProperty` 中：
 
    ```js
         var mailbox = Office.context.mailbox;
@@ -82,22 +82,22 @@ EWS 服务支持 Exchange 服务器中的不同操作；例如复制、查找、
             });
    ```
 
-- 使用 DOM 属性 `textContent` 获取 EWS 响应中标记的内容，如下所示：
+- 使用 DOM 属性获取 EWS 响应中标记的内容 `textContent` ，如下所示：
 
    ```js
       content = $.parseJSON(value.textContent);
    ```
 
-   `innerHTML`对于 EWS 响应中的某些标记，其他属性（例如，可能无法在 Internet Explorer 上工作）。
+   其他属性（ `innerHTML` 例如，可能Internet Explorer EWS 响应中的某些标记使用。
 
 
 ## <a name="example"></a>示例
 
-下面的示例调用 `makeEwsRequestAsync` 以使用 [GetItem](/exchange/client-developer/web-service-reference/getitem-operation) 操作来获取项目的主题。此示例包括以下三个函数：
+以下示例调用 `makeEwsRequestAsync` [GetItem](/exchange/client-developer/web-service-reference/getitem-operation) 操作获取项目的主题。此示例包括以下三个函数：
 
--  `getSubjectRequest`&ndash;采用项 ID 作为输入，并返回 SOAP 请求的 XML，以调用 `GetItem` 指定的项。
+-  `getSubjectRequest`&ndash;将项目 ID 作为输入，并返回 SOAP 请求的 XML，以 `GetItem` 调用指定项。
 
--  `sendRequest`&ndash;调用 `getSubjectRequest` 以获取对选定项的 soap 请求，然后将 soap 请求和回调方法传递给，以 `callback` `makeEwsRequestAsync` 获取指定项的主题。
+-  `sendRequest`&ndash;调用以获取选定项目的 SOAP 请求，然后传递 SOAP 请求和回调方法，获取指定 `getSubjectRequest` `callback` `makeEwsRequestAsync` 项目的主题。
 
 -  `callback` &ndash; 处理包含有关指定项目的任何主题和其他信息的 SOAP 响应。
 
@@ -148,13 +148,13 @@ function callback(asyncResult)  {
 
 ## <a name="ews-operations-that-add-ins-support"></a>外接程序支持的 EWS 操作
 
-Outlook 外接程序可以通过方法访问 EWS 中可用的部分操作 `makeEwsRequestAsync` 。如果您不熟悉 EWS 操作，以及如何使用 `makeEwsRequestAsync` 方法访问操作，请首先从 SOAP 请求示例中自定义 _数据_ 参数。
+Outlook 外接程序可以通过该方法访问 EWS 中可用的操作 `makeEwsRequestAsync` 子集。如果您不熟悉 EWS 操作以及如何使用此方法访问操作，请从 SOAP 请求示例开始自定义 `makeEwsRequestAsync` _数据_ 参数。
 
-下面介绍了如何使用 `makeEwsRequestAsync` 方法：
+下面介绍了如何使用 `makeEwsRequestAsync` 该方法：
 
 1. 在 XML 中，用适当值替换所有项目 ID 和相关 EWS 操作属性。
 
-2. 将 SOAP 请求作为的  _data_ 参数的参数包括在内 `makeEwsRequestAsync` 。
+2. 包含 SOAP 请求作为数据  _参数_ `makeEwsRequestAsync` 的参数 。
 
 3. 指定回调方法和调用 `makeEwsRequestAsync` 。
 
@@ -194,12 +194,12 @@ Outlook 外接程序可以通过方法访问 EWS 中可用的部分操作 `makeE
 
 ## <a name="authentication-and-permission-considerations-for-makeewsrequestasync"></a>makeEwsRequestAsync 的身份验证和权限注意事项
 
-使用此方法时 `makeEwsRequestAsync` ，将使用当前用户的电子邮件帐户凭据对请求进行身份验证。 该 `makeEwsRequestAsync` 方法为您管理凭据，因此您无需向您的请求提供身份验证凭据。
+使用该方法时，将使用当前用户的电子邮件帐户凭据对请求 `makeEwsRequestAsync` 进行身份验证。 `makeEwsRequestAsync`此方法可管理您的凭据，这样您就不需要随请求一起提供身份验证凭据。
 
 > [!NOTE]
-> 服务器管理员必须使用 [set-webservicesvirtualdirectory](/powershell/module/exchange/client-access-servers/New-WebServicesVirtualDirectory?view=exchange-ps&preserve-view=true) 或 [Set-webservicesvirtualdirectory](/powershell/module/exchange/client-access-servers/Set-WebServicesVirtualDirectory?view=exchange-ps&preserve-view=true) Cmdlet 在客户端访问服务器 EWS 目录上将 _OAuthAuthentication_ 参数设置为 **true** ，才能使该 `makeEwsRequestAsync` 方法能够发出 EWS 请求。
+> 服务器管理员必须使用 [New-WebServicesVirtualDirectory](/powershell/module/exchange/client-access-servers/New-WebServicesVirtualDirectory?view=exchange-ps&preserve-view=true) 或 [Set-WebServicesVirtualDirectory](/powershell/module/exchange/client-access-servers/Set-WebServicesVirtualDirectory?view=exchange-ps&preserve-view=true) cmdlet 在客户端访问服务器 EWS 目录上将 _OAuthAuthentication_ 参数设置为 **true，** 以便启用该方法以提出 `makeEwsRequestAsync` EWS 请求。
 
-您的外接程序必须 `ReadWriteMailbox` 在其外接程序清单中指定要使用方法的权限 `makeEwsRequestAsync` 。 有关使用权限的信息 `ReadWriteMailbox` ，请参阅[了解 Outlook 加载项权限](understanding-outlook-add-in-permissions.md)中的[ReadWriteMailbox 权限](understanding-outlook-add-in-permissions.md#readwritemailbox-permission)一节。
+外接程序必须在其外接程序清单中指定 `ReadWriteMailbox` 权限才能使用此方法 `makeEwsRequestAsync` 。 有关使用权限的信息，请参阅"了解 Outlook 外接程序权限"中的 `ReadWriteMailbox` ["ReadWriteMailbox](understanding-outlook-add-in-permissions.md#readwritemailbox-permission) [权限"部分](understanding-outlook-add-in-permissions.md)。
 
 ## <a name="see-also"></a>另请参阅
 
@@ -210,5 +210,5 @@ Outlook 外接程序可以通过方法访问 EWS 中可用的部分操作 `makeE
 
 请参阅下文，了解如何使用 ASP.NET Web API 为外接程序创建后端服务：
 
-- [使用 ASP.NET Web API 为 Office 外接程序创建 Web 服务](https://blogs.msdn.microsoft.com/officeapps/2013/06/10/create-a-web-service-for-an-app-for-office-using-the-asp-net-web-api/)
+- [使用 ASP.NET Web API 为 Office 外接程序创建 Web 服务](/archive/blogs/officeapps/create-a-web-service-for-an-app-for-office-using-the-asp-net-web-api)
 - [使用 ASP.NET Web API 构建 HTTP 服务的基础知识](https://www.asp.net/web-api)

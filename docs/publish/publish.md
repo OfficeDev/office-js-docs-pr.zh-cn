@@ -3,12 +3,12 @@ title: 部署和发布 Office 加载项
 description: 部署 Office 加载项以进行测试或分发给用户的方法和选项。
 ms.date: 06/02/2020
 localization_priority: Priority
-ms.openlocfilehash: 7792b2196b686f36b81869ce81a3e3b87659f1c2
-ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
+ms.openlocfilehash: 8a3de7ae6f507ac21dce89d13417e87d5c89a428
+ms.sourcegitcommit: d28392721958555d6edea48cea000470bd27fcf7
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "47292391"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "49839682"
 ---
 # <a name="deploy-and-publish-office-add-ins"></a>部署和发布 Office 加载项
 
@@ -76,7 +76,7 @@ Outlook 外接程序部署需要以下内容：
 - Microsoft 365、Exchange Online 或 Exchange Server 2013 或更高版本
 - Outlook 2013 或更高版本
 
-若要将加载项分配给租户，请使用 Exchange 管理中心通过文件或 URL 直接上传清单，或从 AppSource 添加加载项。若要将加载项分配给单个用户，必须使用 Exchange PowerShell。有关详细信息，请参阅 TechNet 上的[为组织安装或删除 Outlook 加载项](https://technet.microsoft.com/library/jj943752(v=exchg.150).aspx)。
+若要将加载项分配给租户，请使用 Exchange 管理中心通过文件或 URL 直接上传清单，或从 AppSource 添加加载项。若要将加载项分配给单个用户，必须使用 Exchange PowerShell。有关详细信息，请参阅 TechNet 上的[为组织安装或删除 Outlook 加载项](/exchange/clients-and-mobile-in-exchange-online/add-ins-for-outlook/install-or-remove-outlook-add-ins)。
 
 ## <a name="see-also"></a>另请参阅
 

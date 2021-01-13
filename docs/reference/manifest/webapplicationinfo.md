@@ -1,24 +1,24 @@
 ---
 title: 清单文件中的 WebApplicationInfo 元素
-description: Office 外接程序清单的 WebApplicationInfo 元素的参考文档 (XML) 文件。
+description: Office 外接程序清单的 WebApplicationInfo 元素参考文档 (XML) 文件。
 ms.date: 07/30/2020
 localization_priority: Normal
-ms.openlocfilehash: 8644529d82204cb9fbc07c6fe9f8a35b60a512c8
-ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
+ms.openlocfilehash: abbb4b97047fda378da71963f3f522fae4d72ccc
+ms.sourcegitcommit: d28392721958555d6edea48cea000470bd27fcf7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "47293805"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "49839703"
 ---
 # <a name="webapplicationinfo-element"></a>WebApplicationInfo 元素
 
 支持 Office 外接程序中的单一登录 (SSO)。此元素包含外接程序中的信息，如下所示：
 
-- Office 客户端应用程序可能需要其权限的 OAuth 2.0 *资源* 。
+- Office 客户端应用程序可能需要权限的OAuth 2.0 资源。
 - OAuth 2.0 *客户端*，可能需要访问 Microsoft Graph 的权限。
 
 > [!NOTE]
-> 目前，Word、Excel、Outlook 和 PowerPoint 支持单一登录 API。 若要详细了解目前支持单一登录 API 的平台，请参阅 [IdentityAPI 要求集](/office/dev/add-ins/reference/requirement-sets/identity-api-requirement-sets)。 如果使用的是 Outlook 加载项，请务必为 Office 365 租赁启用新式验证。 要了解如何执行此操作，请参阅 [Exchange Online：如何为租户启用新式验证](https://social.technet.microsoft.com/wiki/contents/articles/32711.exchange-online-how-to-enable-your-tenant-for-modern-authentication.aspx)。
+> Word、Excel、Outlook 和 PowerPoint 目前支持单一登录 API。 若要详细了解目前支持单一登录 API 的平台，请参阅 [IdentityAPI 要求集](../requirement-sets/identity-api-requirement-sets.md)。 如果使用的是 Outlook 加载项，请务必为 Office 365 租赁启用新式验证。 要了解如何执行此操作，请参阅 [Exchange Online：如何为租户启用新式验证](https://social.technet.microsoft.com/wiki/contents/articles/32711.exchange-online-how-to-enable-your-tenant-for-modern-authentication.aspx)。
 
 **WebApplicationInfo** 是清单中的 [VersionOverrides](versionoverrides.md) 元素的子元素。  
 
@@ -26,11 +26,11 @@ ms.locfileid: "47293805"
 
 |  元素 |  必需  |  说明  |
 |:-----|:-----|:-----|
-|  **Id**    |  是   |  在 Azure Active Directory v2.0 终结点中注册的加载项关联服务的**应用程序 ID**。|
-|  **MsaId**    |  否   |  在 msm.live.com 中注册的用于 MSA 的外接程序 web 应用程序的客户端 ID。|
-|  **Resource**  |  是   |  指定在 Azure Active Directory v2.0 终结点中注册的加载项的**应用程序 ID URI**。|
-|  [Scopes](scopes.md)                |  是  |  指定外接程序对资源所需的权限，如 Microsoft Graph。  |
-|  [授权](authorizations.md)  |  否   | 指定加载项的 web 应用程序需要对其进行授权的外部资源以及所需的权限。|
+|  **Id**    |  是   |  在 Azure Active Directory v2.0 终结点中注册的加载项关联服务的 **应用程序 ID**。|
+|  **MsaId**    |  否   |  加载项 Web 应用程序的 MSA 客户端 ID，如 msm.live.com 中注册。|
+|  **Resource**  |  是   |  指定在 Azure Active Directory v2.0 终结点中注册的加载项的 **应用程序 ID URI**。|
+|  [Scopes](scopes.md)                |  是  |  指定加载项对资源（如 Microsoft Graph）所需的权限。  |
+|  [授权](authorizations.md)  |  否   | 指定加载项的 Web 应用程序需要授权的外部资源和所需的权限。|
 
 ## <a name="webapplicationinfo-example"></a>WebApplicationInfo 示例
 

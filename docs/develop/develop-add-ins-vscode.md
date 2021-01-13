@@ -3,12 +3,12 @@ title: 使用 Visual Studio Code 开发 Office 加载项
 description: 如何使用 Visual Studio Code 开发 Office 加载项。
 ms.date: 10/14/2020
 localization_priority: Priority
-ms.openlocfilehash: 7bd12f6d6e4aff6e8a80f9e9c2e5042b726eca0c
-ms.sourcegitcommit: 42e6cfe51d99d4f3f05a3245829d764b28c46bbb
+ms.openlocfilehash: 3f2a95e8ba08fa91b5f10707459ea87ab6c857e3
+ms.sourcegitcommit: d28392721958555d6edea48cea000470bd27fcf7
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "48741097"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "49839948"
 ---
 # <a name="develop-office-add-ins-with-visual-studio-code"></a>使用 Visual Studio Code 开发 Office 加载项
 
@@ -27,7 +27,7 @@ ms.locfileid: "48741097"
 
 如果你正在将 VS Code 用作集成开发环境 (IDE)，则应使用[适用于 Office 加载项的 Yeoman 生成器](https://github.com/OfficeDev/generator-office)来创建 Office 加载项项目。Yeoman 生成器会创建一个 Node.js 项目，它可通过 VS Code 或任何其他编辑器进行管理。 
 
-要使用 Yeoman 生成器创建 Office 加载项，请按照 [5 分钟快速入门](/office/dev/add-ins/)中与你要创建的加载项类型相对应的说明进行操作。
+要使用 Yeoman 生成器创建 Office 加载项，请按照 [5 分钟快速入门](../index.yml)中与你要创建的加载项类型相对应的说明进行操作。
 
 ## <a name="develop-the-add-in-using-vs-code"></a>使用 VS Code 开发加载项
 
@@ -36,7 +36,7 @@ ms.locfileid: "48741097"
 > [!TIP]
 > 在 Windows 上，可通过命令行导航到项目的根目录，然后输入 `code .`在 VS Code 中打开该文件夹。 在 Mac 上，需要先[将 `code` 命令添加到路径中](https://code.visualstudio.com/docs/setup/mac#_launching-from-the-command-line)，然后才可使用该命令在 VS Code 中打开项目文件夹。
 
-Yeoman 生成器会创建一个功能受限的基本加载项。 你可通过在 VS Code 中编辑[清单](add-in-manifests.md)HTML、JavaScript/TypeScript 和 CSS 文件，自定义该加载项。 要简要了解 Yeoman 生成器创建的加载项项目中的项目结构和文件，请查看 [5 分钟快速入门](/office/dev/add-ins/)中与你创建的加载项类型相对应的 Yeoman 生成器指南。
+Yeoman 生成器会创建一个功能受限的基本加载项。 你可通过在 VS Code 中编辑[清单](add-in-manifests.md)HTML、JavaScript/TypeScript 和 CSS 文件，自定义该加载项。 要简要了解 Yeoman 生成器创建的加载项项目中的项目结构和文件，请查看 [5 分钟快速入门](../index.yml)中与你创建的加载项类型相对应的 Yeoman 生成器指南。
 
 ## <a name="test-and-debug-the-add-in"></a>测试和调试加载项
 

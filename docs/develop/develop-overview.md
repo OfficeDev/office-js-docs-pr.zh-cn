@@ -3,12 +3,12 @@ title: 开发 Office 加载项
 description: Office 加载项开发简介。
 ms.date: 10/14/2020
 localization_priority: Priority
-ms.openlocfilehash: c0a4ebbae234c9ac1da3b0765a04e31f956ef617
-ms.sourcegitcommit: ceb8dd66f3fb9c963fce8446c2f6c65ead56fbc1
+ms.openlocfilehash: 02ef856d17a82f9e63a555bae09d53d91e6ccc9c
+ms.sourcegitcommit: d28392721958555d6edea48cea000470bd27fcf7
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "49131890"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "49839941"
 ---
 # <a name="develop-office-add-ins"></a>开发 Office 加载项
 
@@ -111,7 +111,7 @@ Office 加载项可使用加载项命令和 HTML 容器（如任务窗格、内�
 
 ### <a name="create-an-office-add-in"></a>创建 Office 加载项
 
-可完成 [5 分钟快速入门](/office/dev/add-ins/)，快速创建适合 Excel、OneNote、Outlook、PowerPoint、Project 或 Word 的基本加载项。 如果你之前已完成快速入门，并且想要创建更复杂一些的加载项，请尝试本[教程](/office/dev/add-ins/)。
+可完成 [5 分钟快速入门](../index.yml)，快速创建适合 Excel、OneNote、Outlook、PowerPoint、Project 或 Word 的基本加载项。 如果你之前已完成快速入门，并且想要创建更复杂一些的加载项，请尝试本[教程](../index.yml)。
 
 ### <a name="learn-more"></a>了解详细信息
 

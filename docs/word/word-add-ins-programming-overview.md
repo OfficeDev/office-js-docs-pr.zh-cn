@@ -5,12 +5,12 @@ ms.date: 10/14/2020
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: d0dae515df3d8fb3ec1bcb12f553b21b341552ad
-ms.sourcegitcommit: 42e6cfe51d99d4f3f05a3245829d764b28c46bbb
+ms.openlocfilehash: 2dba67cabaf11d6e10560ba3dbe5babde3ed0c92
+ms.sourcegitcommit: d28392721958555d6edea48cea000470bd27fcf7
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "48740845"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "49840004"
 ---
 # <a name="word-add-ins-overview"></a>Word 加载项概述
 
@@ -75,7 +75,7 @@ Word.run(function (context) {
 
 ## <a name="next-steps"></a>后续步骤
 
-准备好创建首个 Word 加载项了吗？请参阅[构建首个 Word 加载项](word-add-ins.md)。请使用[加载项清单](../develop/add-in-manifests.md)描述加载项的托管位置和显示方式，并定义权限和其他信息。
+准备好创建首个 Word 加载项了吗？请参阅[构建首个 Word 加载项](../quickstarts/word-quickstart.md)。请使用[加载项清单](../develop/add-in-manifests.md)描述加载项的托管位置和显示方式，并定义权限和其他信息。
 
 若要了解如何设计世界一流的 Word 外接程序来为用户打造具有吸引力的体验，请参阅[设计指南](../design/add-in-design.md)和[最佳实践](../concepts/add-in-development-best-practices.md)。
 

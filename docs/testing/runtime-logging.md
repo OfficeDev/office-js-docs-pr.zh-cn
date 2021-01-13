@@ -3,19 +3,19 @@ title: 使用运行时日志记录功能调试加载项
 description: 了解如何使用运行时日志记录功能调试加载项。
 ms.date: 09/23/2020
 localization_priority: Normal
-ms.openlocfilehash: 6ba3c4cf4d94007cd0dc96480a7805f507d358c2
-ms.sourcegitcommit: 42202d7e2ac24dffa77cf937f5697a1cd79ee790
+ms.openlocfilehash: 5dcaa224726965447fe971780ca7f2d218fce753
+ms.sourcegitcommit: d28392721958555d6edea48cea000470bd27fcf7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "48308528"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "49840068"
 ---
 # <a name="debug-your-add-in-with-runtime-logging"></a>使用运行时日志记录功能调试加载项
 
 可以使用运行时日志记录调试加载项的清单以及多个安装错误。 此功能可以帮助你标识并修复清单中未被 XSD 架构验证检测到的问题，例如资源 ID 间的不匹配等。 运行时日志记录对于调试执行加载项命令的加载项和 Excel 自定义功能尤其有用。
 
 > [!NOTE]
-> 运行时日志记录功能当前可用于 Office 2016 或更高版本在桌面上。
+> 运行时日志记录功能当前适用于桌面版 Office 2016 或更高版本。
 
 > [!IMPORTANT]
 > 运行时日志记录影响性能。 请仅在需要调试外接程序清单中的问题时启用此功能。
@@ -61,9 +61,9 @@ ms.locfileid: "48308528"
 2. 在 `HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\WEF\Developer\` 下添加 `RuntimeLogging` 注册表项。
 
     > [!NOTE]
-    > 如果 `Developer` (文件夹中尚不存在) 的项 `HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\WEF\` ，请完成以下步骤以创建它。
+    > 如果 `Developer` (文件夹) 不存在，请 `HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\WEF\` 完成以下步骤以创建它。
     >
-    > 1. 右键单击 **WEF** 密钥（文件夹），然后选择**新建** > **密钥**。
+    > 1. 右键单击 **WEF** 密钥（文件夹），然后选择 **新建** > **密钥**。
     > 1. 将新密钥命名为 **Developer**。
 
 3. 将 **RuntimeLogging** 项的默认值设置为你想要在其中写入日志的文件的完整路径。 有关示例，请参阅 [EnableRuntimeLogging.zip](https://github.com/OfficeDev/Office-Add-in-Commands-Samples/raw/master/Tools/RuntimeLogging/EnableRuntimeLogging.zip)。
@@ -73,13 +73,13 @@ ms.locfileid: "48308528"
 
 注册表应如下图所示。 若要禁用此功能，请从注册表中删除 `RuntimeLogging`。
 
-![包含 RuntimeLogging 注册表项的注册表编辑器屏幕截图](http://i.imgur.com/Sa9TyI6.png)
+![包含 RuntimeLogging 注册表项的注册表编辑器屏幕截图](../images/runtime-logging-registry.png)
 
 ## <a name="runtime-logging-on-mac"></a>Mac 上的运行时日志记录
 
 1. 确保运行的是 Office 2016 桌面版 **16.27** (19071500) 或更高版本。
 
-2. 打开**终端**并使用 `defaults` 命令设置运行时日志记录首选项：
+2. 打开 **终端** 并使用 `defaults` 命令设置运行时日志记录首选项：
 
     ```command&nbsp;line
     defaults write <bundle id> CEFRuntimeLoggingFile -string <file_name>
@@ -87,7 +87,7 @@ ms.locfileid: "48308528"
 
     `<bundle id>` 确定了主机要对哪些运行时日志记录。 `<file_name>` 是要将日志写入的文本文件的名称。
 
-    设置 `<bundle id>` 为以下值之一，以便为相应的应用程序启用运行时日志记录：
+    设置为 `<bundle id>` 以下值之一以启用相应应用程序的运行时日志记录：
 
     - `com.microsoft.Word`
     - `com.microsoft.Excel`
@@ -128,10 +128,6 @@ defaults delete com.microsoft.Word CEFRuntimeLoggingFile
 2. 如果没有任何变化，且看不到加载项（加载项对话框中没有显示），请打开日志文件。
 
 3. 在日志文件中搜索你的外接程序 ID（已在清单中定义）。在日志文件中，此 ID 标有 `SolutionId`。
-
-在以下示例中，日志文件标识指向某个不存在的资源文件的控件。对于此示例，修复方法则是更正清单中的输入错误或添加丢失的资源。
-
-![带有指定未找到的资源 ID 的条目的日志文件屏幕截图](http://i.imgur.com/f8bouLA.png)
 
 ## <a name="known-issues-with-runtime-logging"></a>运行时日志记录已知问题
 

@@ -3,12 +3,12 @@ title: Outlook 加载项的 Onsend 功能
 description: 提供了一种处理项目或阻止用户进行特定操作的方法，并允许加载项在发送时设置某些属性。
 ms.date: 01/08/2021
 localization_priority: Normal
-ms.openlocfilehash: c10774287aa34cdc193d72c22487a40fabb9479e
-ms.sourcegitcommit: 545888b08f57bb1babb05ccfd83b2b3286bdad5c
+ms.openlocfilehash: 8fc0f0d9f0664c3a4ba1c343306d779106b27862
+ms.sourcegitcommit: d28392721958555d6edea48cea000470bd27fcf7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/08/2021
-ms.locfileid: "49789196"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "49839738"
 ---
 # <a name="on-send-feature-for-outlook-add-ins"></a>Outlook 加载项的 Onsend 功能
 
@@ -477,7 +477,7 @@ Onsend API 需要 `VersionOverrides v1_1`。 以下显示如何在清单中添�
 > [!NOTE]
 > 有关详细信息，请参阅：
 > - [Outlook 外接程序清单](manifests.md)
-> - [Office 加载项 XML 清单](../overview/add-in-manifests.md)
+> - [Office 加载项 XML 清单](../develop/add-in-manifests.md)
 
 
 ### <a name="event-and-item-objects-and-bodygetasync-and-bodysetasync-methods"></a>`Event` 和 `item` 对象以及 `body.getAsync` 和 `body.setAsync` 方法

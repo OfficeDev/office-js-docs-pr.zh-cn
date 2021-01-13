@@ -1,36 +1,36 @@
 ---
 title: 在 Visual Studio 中将 Office 加载项项目转换为使用 TypeScript
-description: 了解如何将 Visual Studio 中的 Office 外接程序项目转换为使用 TypeScript。
+description: 了解如何将 Office 加载项项目转换为Visual Studio TypeScript。
 ms.date: 09/01/2020
 localization_priority: Normal
-ms.openlocfilehash: e05861e3fef79f87afc820eb62b2a52aaa953f31
-ms.sourcegitcommit: 83f9a2fdff81ca421cd23feea103b9b60895cab4
+ms.openlocfilehash: 2134727a6065a1236dca313721d7721657e9a677
+ms.sourcegitcommit: d28392721958555d6edea48cea000470bd27fcf7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/11/2020
-ms.locfileid: "47430483"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "49839962"
 ---
 # <a name="convert-an-office-add-in-project-in-visual-studio-to-typescript"></a>在 Visual Studio 中将 Office 加载项项目转换为使用 TypeScript
 
 可以使用 Visual Studio 中的 Office 加载项模板，创建使用 JavaScript 的加载项，再将加载项项目转换为使用 TypeScript。 本文介绍了 Excel 加载项的此转换过程。 可以按照相同的过程操作，在 Visual Studio 中将其他类型的 Office 外接程序项目从 JavaScript 转换为 TypeScript。
 
 > [!IMPORTANT]
-> 本文介绍了必要的 *最少* 步骤，以确保在按 F5 时，代码将转换到 JavaScript，然后再旁加载自动加入 Office。 但是，代码并不是非常 "TypeScripty"。 例如，使用 `var` 关键字而不是 `let` 使用指定的类型声明变量来声明变量。 若要充分利用 TypeScript 的强类型，请考虑对代码进行进一步更改。 
+> 本文介绍了确保按F5 时代码将转换为 JavaScript（然后自动旁加载到 Office）所需的最少步骤。 但是，代码不是"TypeScripty"。 例如，变量是使用关键字而不是关键字声明 `var` 的， `let` 并且它们不是使用指定类型声明的。 若要充分利用 TypeScript 的强键入，请考虑进一步更改代码。 
 
 > [!NOTE]
-> 若不想使用 Visual Studio 创建 Office 加载项 TypeScript 项目，请按照任何 [5 分钟快速入门](/office/dev/add-ins/)的“Yeoman 生成器”部分中的说明操作，并在[适用于 Office 外接程序的 Yeoman 生成器](https://github.com/OfficeDev/generator-office)显示提示时选择 `TypeScript`。
+> 若不想使用 Visual Studio 创建 Office 加载项 TypeScript 项目，请按照任何 [5 分钟快速入门](../index.yml)的“Yeoman 生成器”部分中的说明操作，并在[适用于 Office 外接程序的 Yeoman 生成器](https://github.com/OfficeDev/generator-office)显示提示时选择 `TypeScript`。
 
 ## <a name="prerequisites"></a>先决条件
 
-- 安装了 **Office/SharePoint 开发**工作负载的 [Visual Studio 2019](https://www.visualstudio.com/vs/)
+- 安装了 **Office/SharePoint 开发** 工作负载的 [Visual Studio 2019](https://www.visualstudio.com/vs/)
 
     > [!TIP]
-    > 如果之前已安装 Visual Studio 2019，请[使用 Visual Studio 安装程序](/visualstudio/install/modify-visual-studio)，以确保安装 **Office/SharePoint 开发**工作负载。 如果尚未安装此工作负载，请使用 Visual Studio 安装程序进行[安装](/visualstudio/install/modify-visual-studio?view=vs-2019&preserve-view=true#modify-workloads)。
+    > 如果之前已安装 Visual Studio 2019，请 [使用 Visual Studio 安装程序](/visualstudio/install/modify-visual-studio)，以确保安装 **Office/SharePoint 开发** 工作负载。 如果尚未安装此工作负载，请使用 Visual Studio 安装程序进行[安装](/visualstudio/install/modify-visual-studio?view=vs-2019&preserve-view=true#modify-workloads)。
 
 - TypeScript SDK 版本 2.3 或更高版本（适用于 Visual Studio 2019）
 
     > [!TIP]
-    > 在 [Visual Studio 安装程序](/visualstudio/install/modify-visual-studio)中，选择“单个组件”**** 选项卡，然后向下滚动到“SDK、库和框架”**** 部分。 在该部分中，确保至少选择一个“TypeScript SDK”**** 组件（版本 2.3 或更高版本）。 如果一个“TypeScript SDK”**** 组件都没有选择，则选择最新可用版本的 SDK，然后选择“修改”**** 按钮以[安装该单个组件](/visualstudio/install/modify-visual-studio?view=vs-2019&preserve-view=true#modify-individual-components)。 
+    > 在 [Visual Studio 安装程序](/visualstudio/install/modify-visual-studio)中，选择“单个组件”选项卡，然后向下滚动到“SDK、库和框架”部分。 在该部分中，确保至少选择一个“TypeScript SDK”组件（版本 2.3 或更高版本）。 如果一个“TypeScript SDK”组件都没有选择，则选择最新可用版本的 SDK，然后选择“修改”按钮以[安装该单个组件](/visualstudio/install/modify-visual-studio?view=vs-2019&preserve-view=true#modify-individual-components)。 
 
 - Excel 2016 或更高版本
 
@@ -42,9 +42,9 @@ ms.locfileid: "47430483"
 
 3. 对项目命名，然后选择“**创建**”。
 
-4. 在“创建 Office 加载项”**** 对话框窗口中，选择“将新功能添加到 Excel”****，再选择“完成”**** 以创建项目。
+4. 在“创建 Office 加载项”对话框窗口中，选择“将新功能添加到 Excel”，再选择“完成”以创建项目。
 
-5. 此时，Visual Studio 创建解决方案，且它的两个项目显示在“解决方案资源管理器”**** 中。**Home.html** 文件在 Visual Studio 中打开。
+5. 此时，Visual Studio 创建解决方案，且它的两个项目显示在“解决方案资源管理器”中。**Home.html** 文件在 Visual Studio 中打开。
 
 ## <a name="convert-the-add-in-project-to-typescript"></a>将加载项项目转换为使用 TypeScript
 
@@ -56,12 +56,12 @@ ms.locfileid: "47430483"
 
 4. 从“**工具**”选项卡中，选择“**NuGet 程序包管理器**”，然后选择“**管理解决方案的 NuGet 程序包...**”。
 
-5. 选择 " **浏览** " 选项卡，输入 **jquery。Jquery.typescript.definitelytyped**。 安装此包，或更新它（如果已安装）。 这将确保您的项目中包含 jQuery TypeScript 定义。 JQuery 的包显示在由 Visual Studio 生成的文件中，称为 " **packages.config**"。
+5. 选中 **"浏览"** 选项卡后，输入 **jquery。TypeScript.DefinitelyTyped**。 安装此程序包，或更新程序包（如果已安装）。 这将确保 jQuery TypeScript 定义包含在项目中。 jQuery 的包显示在由 Visual Studio 生成的文件中 **，称为** packages.config。
 
     > [!NOTE]
     > 在 TypeScript 项目中，可以混合使用 TypeScript 和 JavaScript 文件，项目都可以进行编译。这是因为 TypeScript 是键入的 JavaScript 超集，可以编译 JavaScript。
 
-6. 在 **Home.ts**中，找到 `Office.initialize = function (reason) {` 行并在其后面紧接着添加一行以填充全局 `window.Promise`，如下所示：
+6. 在 **Home.ts** 中，找到 `Office.initialize = function (reason) {` 行并在其后面紧接着添加一行以填充全局 `window.Promise`，如下所示：
 
     ```TypeScript
     Office.initialize = function (reason) {
@@ -95,13 +95,13 @@ ms.locfileid: "47430483"
 
 ## <a name="run-the-converted-add-in-project"></a>运行转换后的外接程序项目
 
-1. 在 Visual Studio 中，按 **F5** 或选择“开始”**** 按钮以启动 Excel，功能区中显示有“显示任务窗格”**** 加载项按钮。加载项本地托管在 IIS 上。
+1. 在 Visual Studio 中，按 **F5** 或选择“开始”按钮以启动 Excel，功能区中显示有“显示任务窗格”加载项按钮。加载项本地托管在 IIS 上。
 
 2. 在 Excel 中，依次选择的“**开始**”选项卡和功能区中的“**显示任务窗格**”按钮，以打开加载项任务窗格。
 
 3. 在工作表中，选择九个包含数字的单元格。
 
-4. 按任务窗格上的“突出显示”**** 按钮，以突出显示选定范围内所含数字最大的单元格。
+4. 按任务窗格上的“突出显示”按钮，以突出显示选定范围内所含数字最大的单元格。
 
 ## <a name="homets-code-file"></a>Home.ts 代码文件
 

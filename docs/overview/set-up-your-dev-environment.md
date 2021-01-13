@@ -1,49 +1,49 @@
 ---
 title: 设置开发环境
-description: 设置开发人员环境以生成 Office 外接程序。
+description: 设置开发人员环境以生成 Office 加载项。
 ms.date: 10/14/2020
 localization_priority: Normal
-ms.openlocfilehash: 644194d7d0da479b13ac09d7e830af53e9a9838e
-ms.sourcegitcommit: 42e6cfe51d99d4f3f05a3245829d764b28c46bbb
+ms.openlocfilehash: eddf8bdf7b20a54667e6f8eb38bdace801ea1813
+ms.sourcegitcommit: d28392721958555d6edea48cea000470bd27fcf7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "48740831"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "49839710"
 ---
 # <a name="set-up-your-development-environment"></a>设置开发环境
 
-本指南可帮助您设置工具，以便您可以按照快速入门或教程创建 Office 加载项。 你将需要安装以下列表中的工具。 如果已安装了这些安装，则可以开始快速启动，例如此 Excel 会对 [快速启动做出反应](../quickstarts/excel-quickstart-react.md)。
+本指南可帮助你设置工具，以便你可以按照我们的快速入门或教程创建 Office 外接程序。 你需要从下面的列表中安装工具。 如果已安装这些组件，则已准备好开始快速入门，例如 [此 Excel React 快速入门](../quickstarts/excel-quickstart-react.md)。
 
 - Node.js
 - npm
 - 包含 Office 订阅版本的 Microsoft 365 帐户
-- 您选择的代码编辑器
+- 你选择的代码编辑器
 
-本指南假定您知道如何使用命令行工具。 
+本指南假定您了解如何使用命令行工具。 
 
 ## <a name="install-nodejs"></a>安装 Node.js
 
-Node.js 是开发新式 Office 外接程序所需的 JavaScript 运行时。
+Node.js JavaScript 运行时，你需要开发新式 Office 加载项。
 
-通过 [从网站下载最新的推荐版本](https://nodejs.org)来安装 Node.js。 按照操作系统的安装说明进行操作。
+通过Node.js下载最新建议版本 [来安装此应用](https://nodejs.org)。 按照操作系统的安装说明进行操作。
 
 ## <a name="install-npm"></a>安装 npm
 
-npm 是一个开放源代码软件注册表，可从中下载用于开发 Office 外接程序的程序包。
+npm 是一个开源软件注册表，可从中下载用于开发 Office 外接程序的程序包。
 
-若要安装 npm，请在命令行中运行以下命令：
+若要安装 npm，请运行命令行中的以下命令：
 
 ```command&nbsp;line
     npm install npm -g
 ```
 
-若要检查是否已安装了 npm 并查看已安装的版本，请在命令行中运行以下命令：
+若要检查是否已安装 npm 并查看已安装的版本，请在命令行中运行以下命令：
 
 ```command&nbsp;line
 npm -v
 ```
 
-您可能希望使用节点版本管理器，以允许在多个版本的 Node.js 和 npm 之间进行切换，但这并不是绝对必要的。 有关如何执行此操作的详细信息， [请参阅 npm 的说明](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm)。
+你可能希望使用节点版本管理器来允许你在多个版本的 Node.js 和 npm 之间切换，但这不是严格必需的。 有关如何执行此操作的详细信息，请参阅 [npm 的说明](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm)。
 
 ## <a name="get-office-365"></a>获取 Office 365
 
@@ -59,11 +59,11 @@ npm -v
 
 ## <a name="next-steps"></a>后续步骤
 
-尝试创建您自己的外接程序，或使用脚本实验室来尝试内置的示例。
+请尝试创建自己的外接程序或使用 Script Lab 试用内置示例。
 
 ### <a name="create-an-office-add-in"></a>创建 Office 加载项
 
-可完成 [5 分钟快速入门](/office/dev/add-ins/)，快速创建适合 Excel、OneNote、Outlook、PowerPoint、Project 或 Word 的基本加载项。 如果你之前已完成快速入门，并且想要创建更复杂一些的加载项，请尝试本[教程](/office/dev/add-ins/)。
+可完成 [5 分钟快速入门](../index.yml)，快速创建适合 Excel、OneNote、Outlook、PowerPoint、Project 或 Word 的基本加载项。 如果你之前已完成快速入门，并且想要创建更复杂一些的加载项，请尝试本[教程](../index.yml)。
 
 ### <a name="explore-the-apis-with-script-lab"></a>使用 Script Lab 了解 API
 
