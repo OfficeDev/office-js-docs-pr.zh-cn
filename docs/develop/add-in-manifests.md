@@ -3,12 +3,12 @@ title: Office 加载项 XML 清单
 description: 获取 Office 加载项清单及其用途概述。
 ms.date: 03/18/2020
 localization_priority: Priority
-ms.openlocfilehash: 495638ee70630c5330e800419076463273bd2491
-ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
+ms.openlocfilehash: e664893445ed6d9ee9a7adf23f3b3b189df8634e
+ms.sourcegitcommit: d28392721958555d6edea48cea000470bd27fcf7
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "47293352"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "49839997"
 ---
 # <a name="office-add-ins-xml-manifest"></a>Office 加载项 XML 清单
 
@@ -103,7 +103,7 @@ _\*\* 仅通过 AppSource 分发的加载项才需要 SupportUrl。_
 
 所有图像 URI（如用于[外接程序命令][]的 URI）都必须支持缓存。 托管图像的服务器不得在 HTTP 响应中返回指定 `no-cache`、`no-store` 或类似选项的 `Cache-Control` 标头。
 
-所有 URL（如 [SourceLocation](../reference/manifest/sourcelocation.md) 元素中指定的源文件位置）都应**受 SSL 保护 (HTTPS)**。 [!include[HTTPS guidance](../includes/https-guidance.md)]
+所有 URL（如 [SourceLocation](../reference/manifest/sourcelocation.md) 元素中指定的源文件位置）都应 **受 SSL 保护 (HTTPS)**。 [!include[HTTPS guidance](../includes/https-guidance.md)]
 
 ## <a name="best-practices-for-submitting-to-appsource"></a>关于提交到 AppSource 的最佳做法
 
@@ -123,7 +123,7 @@ _\*\* 仅通过 AppSource 分发的加载项才需要 SupportUrl。_
 > 该行为有两个例外情况：
 >
 > - 它仅适用于外接程序的根窗格。 如果外接程序页面中嵌入有 iframe，则可以将该 iframe 定向到任何 URL，不论它是否列在 **AppDomains** 中，即使在桌面版 Office 中也是如此。
-> - 使用 [displayDialogAsync](/javascript/api/office/office.ui?view=common-js#displaydialogasync-startaddress--options--callback-) API 打开对话框时，传递到方法的 URL 必须与外接程序位于相同的域，但是之后对话框可以定向到任意 URL，无论其是否列入 **AppDomains** 甚至桌面 Office 中。
+> - 使用 [displayDialogAsync](/javascript/api/office/office.ui?view=common-js&preserve-view=true#displaydialogasync-startaddress--options--callback-) API 打开对话框时，传递到方法的 URL 必须与外接程序位于相同的域，但是之后对话框可以定向到任意 URL，无论其是否列入 **AppDomains** 甚至桌面 Office 中。
 
 以下 XML 清单示例在 **SourceLocation** 元素中指定的 `https://www.contoso.com` 域中托管其外接程序页面。 它还指定 **AppDomains** 元素列表内 [AppDomain](../reference/manifest/appdomain.md) 元素中的 `https://www.northwindtraders.com` 域。 如果加载项转到 `www.northwindtraders.com` 域中的页面，此页面会在加载项窗格中打开，即使是在 Office 桌面版中，也不例外。
 
@@ -328,7 +328,7 @@ _\*\* 仅通过 AppSource 分发的加载项才需要 SupportUrl。_
         <bt:Image id="Contoso.TaskpaneButton.Icon16" DefaultValue="https://myCDN/Images/Button16x16.png" />
         <bt:Image id="Contoso.TaskpaneButton.Icon32" DefaultValue="https://myCDN/Images/Button32x32.png" />
         <bt:Image id="Contoso.TaskpaneButton.Icon80" DefaultValue="https://myCDN/Images/Button80x80.png" />
-        <bt:Image id="Contoso.FunctionButton.Icon" DefaultValue="https://i.imgur.com/qDujiX0.png" />
+        <bt:Image id="Contoso.FunctionButton.Icon" DefaultValue="https://myCDN/Images/ButtonFunction.png" />
       </bt:Images>
       <bt:Urls>
         <bt:Url id="Contoso.FunctionFile.Url" DefaultValue="https://commandsimple.azurewebsites.net/FunctionFile.html" />
