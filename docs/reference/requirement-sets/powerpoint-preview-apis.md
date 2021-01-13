@@ -1,48 +1,20 @@
 ---
-title: PowerPoint JavaScript 预览 Api
-description: 有关即将推出的 PowerPoint JavaScript Api 的详细信息。
-ms.date: 11/09/2020
+title: PowerPoint JavaScript 预览 API
+description: 有关即将推出的 PowerPoint JavaScript API 的详细信息。
+ms.date: 01/08/2021
 ms.prod: powerpoint
 localization_priority: Normal
-ms.openlocfilehash: b53b6638b16b2028342003b9a77aa59e7406d5f3
-ms.sourcegitcommit: ca66ff7462bfdf4ed7ae04f43d1388c24de63bf9
+ms.openlocfilehash: de3e24bc4666d48f2907f7e78af6783bdc452377
+ms.sourcegitcommit: d28392721958555d6edea48cea000470bd27fcf7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/11/2020
-ms.locfileid: "48996520"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "49840093"
 ---
-# <a name="powerpoint-javascript-preview-apis"></a><span data-ttu-id="f2e7f-103">PowerPoint JavaScript 预览 Api</span><span class="sxs-lookup"><span data-stu-id="f2e7f-103">PowerPoint JavaScript preview APIs</span></span>
+# <a name="powerpoint-javascript-preview-apis"></a><span data-ttu-id="458b3-103">PowerPoint JavaScript 预览 API</span><span class="sxs-lookup"><span data-stu-id="458b3-103">PowerPoint JavaScript preview APIs</span></span>
 
-<span data-ttu-id="f2e7f-104">新的 PowerPoint JavaScript Api 是在 "预览" 中首次引入的，并在进行了充分的测试并获得用户反馈之后成为特定的编号要求集的一部分。</span><span class="sxs-lookup"><span data-stu-id="f2e7f-104">New PowerPoint JavaScript APIs are first introduced in "preview" and later become part of a specific, numbered requirement set after sufficient testing occurs and user feedback is acquired.</span></span>
-
-<span data-ttu-id="f2e7f-105">第一个表提供了 API 的简明摘要，而后续表提供了详细列表。</span><span class="sxs-lookup"><span data-stu-id="f2e7f-105">The first table provides a concise summary of the APIs, while the subsequent table gives a detailed list.</span></span>
+<span data-ttu-id="458b3-104">新的 PowerPoint JavaScript API 首先在"预览"中引入，之后在经过充分测试并获取用户反馈后成为特定编号要求集的一部分。</span><span class="sxs-lookup"><span data-stu-id="458b3-104">New PowerPoint JavaScript APIs are first introduced in "preview" and later become part of a specific, numbered requirement set after sufficient testing occurs and user feedback is acquired.</span></span>
 
 [!INCLUDE [Information about using preview APIs](../../includes/using-preview-apis-host.md)]
 
-| <span data-ttu-id="f2e7f-106">功能区域</span><span class="sxs-lookup"><span data-stu-id="f2e7f-106">Feature area</span></span> | <span data-ttu-id="f2e7f-107">说明</span><span class="sxs-lookup"><span data-stu-id="f2e7f-107">Description</span></span> | <span data-ttu-id="f2e7f-108">相关对象</span><span class="sxs-lookup"><span data-stu-id="f2e7f-108">Relevant objects</span></span> |
-|:--- |:--- |:--- |
-| <span data-ttu-id="f2e7f-109">插入和删除幻灯片</span><span class="sxs-lookup"><span data-stu-id="f2e7f-109">Insert and Delete Slides</span></span> | <span data-ttu-id="f2e7f-110">允许将现有幻灯片从另一个演示文稿插入当前演示文稿，以及删除 sildes 的功能。</span><span class="sxs-lookup"><span data-stu-id="f2e7f-110">Allows the insertion of existing slides into the current presentation from another presentation, as well as the ability to delete sildes.</span></span> | <span data-ttu-id="f2e7f-111">[幻灯片. 删除](/javascript/api/powerpoint/powerpoint.slide#delete--)、 [insertSlidesFromBase64](/javascript/api/powerpoint/powerpoint.presentation#insertslidesfrombase64-base64file--options-)</span><span class="sxs-lookup"><span data-stu-id="f2e7f-111">[Slide.delete](/javascript/api/powerpoint/powerpoint.slide#delete--), [Presentation.insertSlidesFromBase64](/javascript/api/powerpoint/powerpoint.presentation#insertslidesfrombase64-base64file--options-)</span></span>|
-
-## <a name="api-list"></a><span data-ttu-id="f2e7f-112">API 列表</span><span class="sxs-lookup"><span data-stu-id="f2e7f-112">API list</span></span>
-
-<span data-ttu-id="f2e7f-113">下表列出了当前预览中的 PowerPoint JavaScript Api。</span><span class="sxs-lookup"><span data-stu-id="f2e7f-113">The following table lists the PowerPoint JavaScript APIs currently in preview.</span></span> <span data-ttu-id="f2e7f-114">有关所有 PowerPoint JavaScript Api 的完整列表 (包括预览 Api 和以前发布的 Api) ，请参阅 [所有 Powerpoint Javascript api](/javascript/api/powerpoint?view=powerpoint-js-preview&preserve-view=true)。</span><span class="sxs-lookup"><span data-stu-id="f2e7f-114">For a complete list of all PowerPoint JavaScript APIs (including preview APIs and previously released APIs), see [all PowerPoint JavaScript APIs](/javascript/api/powerpoint?view=powerpoint-js-preview&preserve-view=true).</span></span>
-
-| <span data-ttu-id="f2e7f-115">Class</span><span class="sxs-lookup"><span data-stu-id="f2e7f-115">Class</span></span> | <span data-ttu-id="f2e7f-116">域</span><span class="sxs-lookup"><span data-stu-id="f2e7f-116">Fields</span></span> | <span data-ttu-id="f2e7f-117">说明</span><span class="sxs-lookup"><span data-stu-id="f2e7f-117">Description</span></span> |
-|:---|:---|:---|
-|[<span data-ttu-id="f2e7f-118">InsertSlideOptions</span><span class="sxs-lookup"><span data-stu-id="f2e7f-118">InsertSlideOptions</span></span>](/javascript/api/powerpoint/powerpoint.insertslideoptions)|[<span data-ttu-id="f2e7f-119">编排</span><span class="sxs-lookup"><span data-stu-id="f2e7f-119">formatting</span></span>](/javascript/api/powerpoint/powerpoint.insertslideoptions#formatting)|<span data-ttu-id="f2e7f-120">指定在幻灯片插入过程中要使用的格式。</span><span class="sxs-lookup"><span data-stu-id="f2e7f-120">Specifies which formatting to use during slide insertion.</span></span>|
-||[<span data-ttu-id="f2e7f-121">sourceSlideIds</span><span class="sxs-lookup"><span data-stu-id="f2e7f-121">sourceSlideIds</span></span>](/javascript/api/powerpoint/powerpoint.insertslideoptions#sourceslideids)|<span data-ttu-id="f2e7f-122">指定将插入到当前演示文稿中的源演示文稿中的幻灯片。</span><span class="sxs-lookup"><span data-stu-id="f2e7f-122">Specifies the slides from the source presentation that will be inserted into the current presentation.</span></span>|
-||[<span data-ttu-id="f2e7f-123">targetSlideId</span><span class="sxs-lookup"><span data-stu-id="f2e7f-123">targetSlideId</span></span>](/javascript/api/powerpoint/powerpoint.insertslideoptions#targetslideid)|<span data-ttu-id="f2e7f-124">指定将在演示文稿中插入新幻灯片的位置。</span><span class="sxs-lookup"><span data-stu-id="f2e7f-124">Specifies where in the presentation the new slides will be inserted.</span></span>|
-|[<span data-ttu-id="f2e7f-125">Presentation</span><span class="sxs-lookup"><span data-stu-id="f2e7f-125">Presentation</span></span>](/javascript/api/powerpoint/powerpoint.presentation)|[<span data-ttu-id="f2e7f-126">insertSlidesFromBase64 (base64File： string，options？： InsertSlideOptions) </span><span class="sxs-lookup"><span data-stu-id="f2e7f-126">insertSlidesFromBase64(base64File: string, options?: PowerPoint.InsertSlideOptions)</span></span>](/javascript/api/powerpoint/powerpoint.presentation#insertslidesfrombase64-base64file--options-)|<span data-ttu-id="f2e7f-127">将演示文稿中指定的幻灯片插入到当前演示文稿中。</span><span class="sxs-lookup"><span data-stu-id="f2e7f-127">Inserts the specified slides from a presentation into the current presentation.</span></span>|
-||[<span data-ttu-id="f2e7f-128">页面</span><span class="sxs-lookup"><span data-stu-id="f2e7f-128">slides</span></span>](/javascript/api/powerpoint/powerpoint.presentation#slides)|<span data-ttu-id="f2e7f-129">返回演示文稿中的幻灯片的已排序集合。</span><span class="sxs-lookup"><span data-stu-id="f2e7f-129">Returns an ordered collection of slides in the presentation.</span></span>|
-|[<span data-ttu-id="f2e7f-130">Slide</span><span class="sxs-lookup"><span data-stu-id="f2e7f-130">Slide</span></span>](/javascript/api/powerpoint/powerpoint.slide)|[<span data-ttu-id="f2e7f-131">delete()</span><span class="sxs-lookup"><span data-stu-id="f2e7f-131">delete()</span></span>](/javascript/api/powerpoint/powerpoint.slide#delete--)|<span data-ttu-id="f2e7f-132">删除演示文稿中的幻灯片。</span><span class="sxs-lookup"><span data-stu-id="f2e7f-132">Deletes the slide from the presentation.</span></span>|
-||[<span data-ttu-id="f2e7f-133">id</span><span class="sxs-lookup"><span data-stu-id="f2e7f-133">id</span></span>](/javascript/api/powerpoint/powerpoint.slide#id)|<span data-ttu-id="f2e7f-134">获取幻灯片的唯一 ID。</span><span class="sxs-lookup"><span data-stu-id="f2e7f-134">Gets the unique ID of the slide.</span></span>|
-|[<span data-ttu-id="f2e7f-135">SlideCollection</span><span class="sxs-lookup"><span data-stu-id="f2e7f-135">SlideCollection</span></span>](/javascript/api/powerpoint/powerpoint.slidecollection)|[<span data-ttu-id="f2e7f-136">getCount()</span><span class="sxs-lookup"><span data-stu-id="f2e7f-136">getCount()</span></span>](/javascript/api/powerpoint/powerpoint.slidecollection#getcount--)|<span data-ttu-id="f2e7f-137">获取集合中的幻灯片数。</span><span class="sxs-lookup"><span data-stu-id="f2e7f-137">Gets the number of slides in the collection.</span></span>|
-||[<span data-ttu-id="f2e7f-138">getItem(key: string)</span><span class="sxs-lookup"><span data-stu-id="f2e7f-138">getItem(key: string)</span></span>](/javascript/api/powerpoint/powerpoint.slidecollection#getitem-key-)|<span data-ttu-id="f2e7f-139">使用其唯一 ID 获取幻灯片。</span><span class="sxs-lookup"><span data-stu-id="f2e7f-139">Gets a slide using its unique ID.</span></span>|
-||[<span data-ttu-id="f2e7f-140">getItemAt(index: number)</span><span class="sxs-lookup"><span data-stu-id="f2e7f-140">getItemAt(index: number)</span></span>](/javascript/api/powerpoint/powerpoint.slidecollection#getitemat-index-)|<span data-ttu-id="f2e7f-141">使用集合中的从零开始的索引获取幻灯片。</span><span class="sxs-lookup"><span data-stu-id="f2e7f-141">Gets a slide using its zero-based index in the collection.</span></span>|
-||[<span data-ttu-id="f2e7f-142">getItemOrNullObject(id: string)</span><span class="sxs-lookup"><span data-stu-id="f2e7f-142">getItemOrNullObject(id: string)</span></span>](/javascript/api/powerpoint/powerpoint.slidecollection#getitemornullobject-id-)|<span data-ttu-id="f2e7f-143">使用其唯一 ID 获取幻灯片。</span><span class="sxs-lookup"><span data-stu-id="f2e7f-143">Gets a slide using its unique ID.</span></span>|
-||[<span data-ttu-id="f2e7f-144">items</span><span class="sxs-lookup"><span data-stu-id="f2e7f-144">items</span></span>](/javascript/api/powerpoint/powerpoint.slidecollection#items)|<span data-ttu-id="f2e7f-145">获取此集合中已加载的子项。</span><span class="sxs-lookup"><span data-stu-id="f2e7f-145">Gets the loaded child items in this collection.</span></span>|
-
-## <a name="see-also"></a><span data-ttu-id="f2e7f-146">另请参阅</span><span class="sxs-lookup"><span data-stu-id="f2e7f-146">See also</span></span>
-
-- [<span data-ttu-id="f2e7f-147">PowerPoint JavaScript API 参考文档</span><span class="sxs-lookup"><span data-stu-id="f2e7f-147">PowerPoint JavaScript API Reference Documentation</span></span>](/javascript/api/powerpoint?view=powerpoint-js-preview&preserve-view=true)
-- [<span data-ttu-id="f2e7f-148">PowerPoint JavaScript API 要求集</span><span class="sxs-lookup"><span data-stu-id="f2e7f-148">PowerPoint JavaScript API requirement sets</span></span>](powerpoint-api-requirement-sets.md)
+<span data-ttu-id="458b3-105">目前预览版中没有任何 API。</span><span class="sxs-lookup"><span data-stu-id="458b3-105">There are currently no APIs in preview.</span></span>
