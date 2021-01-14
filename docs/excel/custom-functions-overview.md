@@ -1,16 +1,16 @@
 ---
-ms.date: 11/06/2020
+ms.date: 01/08/2020
 description: 为 Office 加载项创建 Excel 自定义函数。
 title: 在 Excel 中创建自定义函数
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: 052c90f81af79d420c60783f8dfc6b256e8da370
-ms.sourcegitcommit: 545888b08f57bb1babb05ccfd83b2b3286bdad5c
+ms.openlocfilehash: 97037f201a237cdc6dae551552a0a1609a58b34c
+ms.sourcegitcommit: d28392721958555d6edea48cea000470bd27fcf7
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/08/2021
-ms.locfileid: "49789126"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "49839871"
 ---
 # <a name="create-custom-functions-in-excel"></a>在 Excel 中创建自定义函数
 
@@ -35,8 +35,8 @@ function sphereVolume(radius) {
 }
 ```
 
-> [!NOTE]
-> 本文后面的[已知问题](#known-issues)部分指定自定义函数的当前限制。
+> [!TIP]
+> 如果自定义函数加载项将使用任务窗格或功能区按钮，除了运行自定义函数代码之外，还需要设置共享的 JavaScript 运行时。 查看 [将 Office 加载项配置为使用共享 JavaScript 运行时](../develop/configure-your-add-in-to-use-a-shared-runtime.md) 以了解更多信息。
 
 ## <a name="how-a-custom-function-is-defined-in-code"></a>如何在代码中定义自定义函数
 
@@ -88,10 +88,6 @@ function add(first, second){
 
 若要详细了解共同创作，请参阅[关于 Excel 中的共同创作](/office/vba/excel/concepts/about-coauthoring-in-excel)。
 
-## <a name="known-issues"></a>已知问题
-
-在 [Excel 自定义功能 GitHub 存储库](https://github.com/OfficeDev/Excel-Custom-Functions/issues)上查看已知问题。
-
 ## <a name="next-steps"></a>后续步骤
 
 想要试用自定义函数？ 检查简单的[自定义函数入门](../quickstarts/excel-custom-functions-quickstart.md)或更深入的[自定义函数教程](../tutorials/excel-tutorial-create-custom-functions.md)（如果还没有）。
@@ -103,3 +99,4 @@ function add(first, second){
 * [自定义函数要求集](custom-functions-requirement-sets.md)
 * [自定义函数命名准则](custom-functions-naming.md)
 * [让自定义函数与 XLL 用户定义的函数兼容](make-custom-functions-compatible-with-xll-udf.md)
+* [将 Office 加载项配置为使用共享 JavaScript 运行时](../develop/configure-your-add-in-to-use-a-shared-runtime.md)
