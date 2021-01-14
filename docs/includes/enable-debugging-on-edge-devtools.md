@@ -1,5 +1,5 @@
 如果加载项正在 Microsoft Edge 中运行，则无 UI 的代码将无法默认附加到调试程序。
-无 UI 的代码是指当任务窗格不可见时运行的任何代码，例如加载项命令。 要启用调试，需要运行以下 [Windows PowerShell](https://docs.microsoft.com/powershell/scripting/getting-started/getting-started-with-windows-powershell) 命令。
+无 UI 的代码是指当任务窗格不可见时运行的任何代码，例如加载项命令。 要启用调试，需要运行以下 [Windows PowerShell](/powershell/scripting/getting-started/getting-started-with-windows-powershell) 命令。
 
 1. 请运行以下命令，获取有关 **Microsoft.Win32WebViewHost** 应用包的信息。
     
