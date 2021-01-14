@@ -1,14 +1,14 @@
 ---
 title: Outlook 外接程序清单
 description: 该清单介绍 Outlook 外接程序如何跨 Outlook 客户端进行集成；其中包括一个示例。
-ms.date: 10/31/2019
+ms.date: 05/27/2020
 localization_priority: Priority
-ms.openlocfilehash: f4d60919db15c4f470ecccac634abee94973bb6c
-ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
+ms.openlocfilehash: 0135db8b6ff2b9fbcb3b6370979d8013aa21155a
+ms.sourcegitcommit: d28392721958555d6edea48cea000470bd27fcf7
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "42324938"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "49839822"
 ---
 # <a name="outlook-add-in-manifests"></a>Outlook 外接程序清单
 
@@ -274,9 +274,11 @@ Outlook 外接程序清单的根元素是 **OfficeApp**。此元素还声明默�
 
 ## <a name="versionoverrides"></a>VersionOverrides
 
-**VersionOverrides** 元素是加载项命令信息的位置。若要详细了解此元素，请参阅[在清单中定义加载项命令](../develop/define-add-in-commands.md)。
+**VersionOverrides** 元素是 [外接程序命令](add-in-commands-for-outlook.md)信息的位置。
 
 此元素也是外接程序为[移动外接程序](add-mobile-support.md)定义支持所使用的元素。
+
+有关此元素的讨论，请参阅[在清单中创建 Excel、PowerPoint 和 Word 加载项命令](../develop/create-addin-commands.md)。
 
 ## <a name="localization"></a>本地化
 
@@ -324,7 +326,7 @@ Outlook 加载项指定如下所示的 **Hosts** 元素。
 </OfficeApp>
 ```
 
-这与 **VersionOverrides** 元素中的 **Hosts** 元素有所不同，后者将在[在清单中定义加载项命令](../develop/define-add-in-commands.md)中进行讨论。
+这与 **VersionOverrides** 元素中的 **Hosts** 元素有所不同，后者将在 [在清单中为 Excel、PowerPoint 和 Word 创建加载项命令](../develop/create-addin-commands.md)中进行讨论。
 
 ## <a name="requirements"></a>Requirements
 
@@ -384,7 +386,7 @@ Outlook 加载项指定如下所示的 **Hosts** 元素。
 
 ## <a name="permissions"></a>权限
 
-**Permissions** 元素包含外接程序所需的权限。通常情况下，应指定外接程序所需的最低权限，具体视计划要使用的确切方法而定。例如，如果在撰写窗体中激活的邮件外接程序对 [item.requiredAttendees](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties) 等项属性只执行读取操作，而不执行写入操作，也不调用 [mailbox.makeEwsRequestAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md#methods) 访问任何 Exchange Web 服务操作，应指定 **ReadItem** 权限。若要详细了解可用权限，请参阅[了解 Outlook 外接程序权限](understanding-outlook-add-in-permissions.md)。
+**Permissions** 元素包含外接程序所需的权限。通常情况下，应指定外接程序所需的最低权限，具体视计划要使用的确切方法而定。例如，如果在撰写窗体中激活的邮件外接程序对 [item.requiredAttendees](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties) 等项属性只执行读取操作，而不执行写入操作，也不调用 [mailbox.makeEwsRequestAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md#methods) 访问任何 Exchange Web 服务操作，应指定 **ReadItem** 权限。若要详细了解可用权限，请参阅 [了解 Outlook 外接程序权限](understanding-outlook-add-in-permissions.md)。
 
 **邮件外接程序的 4 层权限模型**
 
@@ -420,7 +422,7 @@ Outlook 加载项指定如下所示的 **Hosts** 元素。
 
 ## <a name="next-steps-add-in-commands"></a>后续步骤：外接程序命令
 
-定义基本清单后， [为外接程序定义外接程序命令](../develop/define-add-in-commands.md)。外接程序命令代表功能区中的按钮，因此用户可以一种简单、直观的方式激活您的外接程序。有关详细信息，请参阅 [用于 Outlook 的外接程序命令](add-in-commands-for-outlook.md)。
+定义基本清单后， 为外接程序定义外接程序命令。 外接程序命令代表功能区中的按钮，因此用户可以一种简单、直观的方式激活您的外接程序。 有关详细信息，请参阅 [用于 Outlook 的外接程序命令](add-in-commands-for-outlook.md)。
 
 有关定义外接程序命令的示例外接程序，请参阅 [command-demo](https://github.com/OfficeDev/outlook-add-in-command-demo)。
 

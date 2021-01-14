@@ -1,15 +1,15 @@
 ---
 title: PowerPoint JavaScript API 要求集
 description: 了解有关 PowerPoint JavaScript API 要求集的详细信息。
-ms.date: 10/26/2020
+ms.date: 01/08/2021
 ms.prod: powerpoint
 localization_priority: Priority
-ms.openlocfilehash: cf9ab510e4b35a140c77ee958279cb85a2189fa2
-ms.sourcegitcommit: a4e09546fd59579439025aca9cc58474b5ae7676
+ms.openlocfilehash: 63f11f1810b38471a27766843f512da193394838
+ms.sourcegitcommit: d28392721958555d6edea48cea000470bd27fcf7
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "48774725"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "49840081"
 ---
 # <a name="powerpoint-javascript-api-requirement-sets"></a>PowerPoint JavaScript API 要求集
 
@@ -19,8 +19,8 @@ ms.locfileid: "48774725"
 
 |  要求集  |  Windows 版 Office<br>（关联至 Microsoft 365 订阅）  |  iPad 版 Office<br>（关联至 Microsoft 365 订阅）  |  Mac 版 Office<br>（关联至 Microsoft 365 订阅）  | Office 网页版 |
 |:-----|-----|:-----|:-----|:-----|:-----|
-| [预览](powerpoint-preview-apis.md)  | 请使用最新的 Office 版本来试用预览 API（你可能需要加入 [Office 预览体验成员计划](https://insider.office.com)）。 |
-| PowerPointApi 1.1 | 版本 1810（内部版本 11001.20074）或更高版本 | 2.17 或更高版本 | 16.19 或更高版本 | 2018 年 10 月 |
+| [PowerPointApi 1.2](powerpoint-api-1-2-requirement-set.md)  | 版本 2011（内部版本 13426.20184）或更高版本| 尚不可以<br>支持 | 16.43 或更高版本 | 2020 年 10 月 |
+| [PowerPointApi 1.1](powerpoint-api-1-1-requirement-set.md) | 版本 1810（内部版本 11001.20074）或更高版本 | 2.17 或更高版本 | 16.19 或更高版本 | 2018 年 10 月 |
 
 ## <a name="office-versions-and-build-numbers"></a>Office 版本和内部版本号
 
@@ -31,6 +31,10 @@ ms.locfileid: "48774725"
 ## <a name="powerpoint-javascript-api-11"></a>PowerPoint JavaScript API 1.1
 
 PowerPoint JavaScript API 1.1 包含[用于创建新演示文稿的单一 API](/javascript/api/powerpoint#powerpoint-createpresentation-base64file-)。 有关 API 的详细信息，请参阅[创建演示文稿](../../powerpoint/powerpoint-add-ins.md#create-a-presentation)。
+
+## <a name="powerpoint-javascript-api-12"></a>PowerPoint JavaScript API 1.2
+
+PowerPoint JavaScript API 1.2 增加了对将其他 PowerPoint 演示文稿中的幻灯片插入当前演示文稿以及删除幻灯片的支持. 有关 API 的详细信息，请参阅[在 PowerPoint 演示文稿中插入和删除幻灯片](../../powerpoint/insert-slides-into-presentation.md)。
 
 ## <a name="how-to-use-powerpoint-requirement-sets-at-runtime-and-in-the-manifest"></a>如何在运行时和清单中使用 PowerPoint 要求集
 
@@ -53,7 +57,7 @@ if (Office.context.requirements.isSetSupported('PowerPointApi', '1.1')) {
 
 ### <a name="defining-requirement-set-support-in-the-manifest"></a>在清单中定义要求集支持
 
-可以在加载项清单中使用[要求元素](../manifest/requirements.md)指定加载项要求激活的最小要求集和/或 API 方法。 如果 Office 应用程序或平台不支持清单的 `Requirements` 元素中指定的要求集或 API 方法，则加载项将不会在该应用程序或平台中运行，也不会出现在“ **我的加载项** ”中显示的加载项列表中。如果你的加载项需要特定要求集以实现完整功能，但是即使在不支持该要求集的平台上也可以为用户提供值，则建议在运行时按照上述方式检查要求支持，而不是在清单中定义要求集支持。
+可以在加载项清单中使用[要求元素](../manifest/requirements.md)指定加载项要求激活的最小要求集和/或 API 方法。 如果 Office 应用程序或平台不支持清单的 `Requirements` 元素中指定的要求集或 API 方法，则加载项将不会在该应用程序或平台中运行，也不会出现在“**我的加载项**”中显示的加载项列表中。如果你的加载项需要特定要求集以实现完整功能，但是即使在不支持该要求集的平台上也可以为用户提供值，则建议在运行时按照上述方式检查要求支持，而不是在清单中定义要求集支持。
 
 以下代码示例显示加载项清单中的 `Requirements` 元素，该元素指定应在支持 PowerPointApi 要求集版本 1.1 或更高版本的所有 Office 客户端应用程序中加载该加载项。
 

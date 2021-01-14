@@ -1,14 +1,14 @@
 ---
-ms.date: 12/09/2020
+ms.date: 12/21/2020
 description: 了解如何在自定义函数内使用不同的参数，如 Excel 范围、可选参数、调用上下文等。
 title: Excel 自定义函数的选项
 localization_priority: Normal
-ms.openlocfilehash: 9f43955324c148a0af030fb796b82f6d72f429c5
-ms.sourcegitcommit: b300e63a96019bdcf5d9f856497694dbd24bfb11
+ms.openlocfilehash: 312046551236e96e67de6f63f3e3511aba6f50ce
+ms.sourcegitcommit: 48b9c3b63668b2a53ce73f92ce124ca07c5ca68c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2020
-ms.locfileid: "49624664"
+ms.lasthandoff: 12/28/2020
+ms.locfileid: "49735527"
 ---
 # <a name="custom-functions-parameter-options"></a>自定义函数参数选项
 
@@ -172,7 +172,7 @@ function ADD(operands: number[][][]): number {
 }
 ```
 
-此函数显示在 `=CONTOSO.ADD([operands], [operands]...)` Excel 工作簿中。
+此函数 `=CONTOSO.ADD([operands], [operands]...)` 显示在 Excel 工作簿中。
 
 <img alt="The ADD custom function being entered into cell of an Excel worksheet" src="../images/operands.png" />
 
@@ -229,22 +229,64 @@ function addSingleRange(singleRange) {
 
 ## <a name="invocation-parameter"></a>调用参数
 
-每个自定义函数都会自动将参数 `invocation` 作为最后一个参数传递。 此参数可用于检索其他上下文，例如调用单元格的地址。 或者，它可用于将信息发送到 Excel，例如用于取消 [函数的函数处理程序](custom-functions-web-reqs.md#make-a-streaming-function)。 即使未声明任何参数，自定义函数也具有此参数。 Excel 中的用户不会显示此参数。 如果要在自定义 `invocation` 函数中使用它，请声明为最后一个参数。
+每个自定义函数都会自动将一个参数作为最后一个输入参数传递，即使该参数 `invocation` 未显式声明。 此 `invocation` 参数对应于 [调用](/javascript/api/custom-functions-runtime/customfunctions.invocation) 对象。 该对象可用于检索其他上下文，例如调用自定义函数的单元格 `Invocation` 的地址。 若要访问 `Invocation` 该对象，必须在自定义函数中声明 `invocation` 为最后一个参数。 
 
-在下面的代码示例中，为引用显式 `invocation` 声明上下文。
+> [!NOTE]
+> 此 `invocation` 参数不会显示为 Excel 中用户的自定义函数参数。
+
+以下示例演示如何使用参数返回调用自定义函数的单元格 `invocation` 的地址。 此示例使用 [对象的地址](/javascript/api/custom-functions-runtime/customfunctions.invocation#address) `Invocation` 属性。 若要访问 `Invocation` 该对象，首先在 `CustomFunctions.Invocation` JSDoc 中声明为参数。 接下来， `@requiresAddress` 在 JSDoc 中声明以 `address` 访问对象 `Invocation` 的属性。 最后，在函数中检索并返回 `address` 属性。 
 
 ```js
 /**
- * Add two numbers.
+ * Return the address of the cell that invoked the custom function. 
  * @customfunction
- * @param {number} first First number.
- * @param {number} second Second number.
- * @returns {number} The sum of the two (or optionally three) numbers.
+ * @param {number} first First parameter.
+ * @param {number} second Second parameter.
+ * @param {CustomFunctions.Invocation} invocation Invocation object. 
+ * @requiresAddress 
  */
-function add(first, second, invocation) {
-  return first + second;
+function getAddress(first, second, invocation) {
+  var address = invocation.address;
+  return address;
 }
 ```
+
+在 Excel 中，调用对象属性的自定义函数将返回调用该函数的单元格中采用格式 `address` `Invocation` `SheetName!RelativeCellAddress` 的绝对地址。 例如，如果输入参数位于单元格 F6 中 **名为"价格** "的工作表上，则返回的参数地址值将为 `Prices!F6` 。 
+
+该 `invocation` 参数还可用于将信息发送到 Excel。 有关详细信息 [，请参阅"创建流](custom-functions-web-reqs.md#make-a-streaming-function) 式处理函数"。
+
+## <a name="detect-the-address-of-a-parameter"></a>检测参数的地址
+
+结合调用 [参数，](#invocation-parameter)可以使用 [调用](/javascript/api/custom-functions-runtime/customfunctions.invocation) 对象检索自定义函数输入参数的地址。 调用时，对象的 [parameterAddresses](/javascript/api/custom-functions-runtime/customfunctions.invocation#parameterAddresses) 属性允许函数返回所有输入 `Invocation` 参数的地址。 
+
+这适用于输入数据类型可能有所不同的情况。 输入参数的地址可用于检查输入值的数量格式。 然后，如有必要，可以在输入之前调整数字格式。 输入参数的地址还可用于检测输入值是否具有与后续计算相关的任何相关属性。 
+
+>[!IMPORTANT]
+> 该属性 `parameterAddresses` 当前仅适用于 [手动创建的 JSON 元数据](custom-functions-json.md)。 若要返回参数地址，对象必须将属性设置为 `options` `requiresParameterAddresses` ，并且 `true` `result` 该对象必须将属性设置为 `dimensionality` `matrix` 。
+
+以下自定义函数采用三个输入参数，检索每个参数的对象属性， `parameterAddresses` `Invocation` 然后返回地址。 
+
+```js
+/**
+ * Return the address of three parameters. 
+ * @customfunction
+ * @param {string} firstParameter First parameter.
+ * @param {string} secondParameter Second parameter.
+ * @param {string} thirdParameter Third parameter
+ * @param {CustomFunctions.Invocation} invocation Invocation object. 
+ * @requiresParameterAddresses
+ */
+function getParameterAddresses(firstParameter, secondParameter, thirdParameter, invocation) {
+  var addresses = [
+    [invocation.parameterAddresses[0]],
+    [invocation.parameterAddresses[1]],
+    [invocation.parameterAddresses[2]]
+  ];
+  return addresses;
+}
+```
+
+调用该属性的自定义函数运行时，将按照调用函数的单元格中的格式返回参数 `parameterAddresses` `SheetName!RelativeCellAddress` 地址。 例如，如果输入参数位于单元格 D8 中 **名为"成本** "的工作表上，则返回的参数地址值将为 `Costs!D8` 。 如果自定义函数具有多个参数并返回多个参数地址，则返回的地址将溢出多个单元格，从调用该函数的单元格垂直排列。 
 
 ## <a name="next-steps"></a>后续步骤
 
