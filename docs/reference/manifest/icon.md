@@ -3,32 +3,32 @@ title: 清单文件中的 Icon 元素
 description: 定义“按钮”或“菜单”控件的 Image 元素。
 ms.date: 10/09/2018
 localization_priority: Normal
-ms.openlocfilehash: dcf6de189477ad7dbe52b0f1122177441cd262d8
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: ff16e6c0fbbf6d1c54508b4460ed3e02e899db03
+ms.sourcegitcommit: 2f75a37de349251bc0e0fc402c5ae6dc5c3b8b08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44611797"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "49771331"
 ---
-# <a name="icon-element"></a><span data-ttu-id="66d36-103">Icon 元素</span><span class="sxs-lookup"><span data-stu-id="66d36-103">Icon element</span></span>
+# <a name="icon-element"></a><span data-ttu-id="9b130-103">Icon 元素</span><span class="sxs-lookup"><span data-stu-id="9b130-103">Icon element</span></span>
 
-<span data-ttu-id="66d36-104">定义“[按钮](control.md#button-control)”或“[菜单](control.md#menu-dropdown-button-controls)”控件的 **Image** 元素。</span><span class="sxs-lookup"><span data-stu-id="66d36-104">Defines **Image** elements for [Button](control.md#button-control) or [Menu](control.md#menu-dropdown-button-controls) controls.</span></span>
+<span data-ttu-id="9b130-104">定义“[按钮](control.md#button-control)”或“[菜单](control.md#menu-dropdown-button-controls)”控件的 **Image** 元素。</span><span class="sxs-lookup"><span data-stu-id="9b130-104">Defines **Image** elements for [Button](control.md#button-control) or [Menu](control.md#menu-dropdown-button-controls) controls.</span></span>
 
-## <a name="attributes"></a><span data-ttu-id="66d36-105">属性</span><span class="sxs-lookup"><span data-stu-id="66d36-105">Attributes</span></span>
+## <a name="attributes"></a><span data-ttu-id="9b130-105">属性</span><span class="sxs-lookup"><span data-stu-id="9b130-105">Attributes</span></span>
 
-|  <span data-ttu-id="66d36-106">属性</span><span class="sxs-lookup"><span data-stu-id="66d36-106">Attribute</span></span>  |  <span data-ttu-id="66d36-107">必需</span><span class="sxs-lookup"><span data-stu-id="66d36-107">Required</span></span>  |  <span data-ttu-id="66d36-108">说明</span><span class="sxs-lookup"><span data-stu-id="66d36-108">Description</span></span>  |
+|  <span data-ttu-id="9b130-106">属性</span><span class="sxs-lookup"><span data-stu-id="9b130-106">Attribute</span></span>  |  <span data-ttu-id="9b130-107">必需</span><span class="sxs-lookup"><span data-stu-id="9b130-107">Required</span></span>  |  <span data-ttu-id="9b130-108">说明</span><span class="sxs-lookup"><span data-stu-id="9b130-108">Description</span></span>  |
 |:-----|:-----|:-----|
-|  <span data-ttu-id="66d36-109">**xsi:type**</span><span class="sxs-lookup"><span data-stu-id="66d36-109">**xsi:type**</span></span>  |  <span data-ttu-id="66d36-110">否</span><span class="sxs-lookup"><span data-stu-id="66d36-110">No</span></span>  | <span data-ttu-id="66d36-p101">正在定义的图标类型。这仅适用于移动外形规格中的图标。[MobileFormFactor](mobileformfactor.md) 元素中所包含的 **Icon** 元素必须将此属性设置为 `bt:MobileIconList`。</span><span class="sxs-lookup"><span data-stu-id="66d36-p101">The type of icon being defined. This is only applicable to icons in mobile form factors. **Icon** elements contained within a [MobileFormFactor](mobileformfactor.md) element must have this attribute set to `bt:MobileIconList`.</span></span> |
+|  <span data-ttu-id="9b130-109">**xsi:type**</span><span class="sxs-lookup"><span data-stu-id="9b130-109">**xsi:type**</span></span>  |  <span data-ttu-id="9b130-110">否</span><span class="sxs-lookup"><span data-stu-id="9b130-110">No</span></span>  | <span data-ttu-id="9b130-p101">正在定义的图标类型。这仅适用于移动外形规格中的图标。[MobileFormFactor](mobileformfactor.md) 元素中所包含的 **Icon** 元素必须将此属性设置为 `bt:MobileIconList`。</span><span class="sxs-lookup"><span data-stu-id="9b130-p101">The type of icon being defined. This is only applicable to icons in mobile form factors. **Icon** elements contained within a [MobileFormFactor](mobileformfactor.md) element must have this attribute set to `bt:MobileIconList`.</span></span> |
 
-## <a name="child-elements"></a><span data-ttu-id="66d36-114">子元素</span><span class="sxs-lookup"><span data-stu-id="66d36-114">Child elements</span></span>
+## <a name="child-elements"></a><span data-ttu-id="9b130-114">子元素</span><span class="sxs-lookup"><span data-stu-id="9b130-114">Child elements</span></span>
 
-|  <span data-ttu-id="66d36-115">元素</span><span class="sxs-lookup"><span data-stu-id="66d36-115">Element</span></span> |  <span data-ttu-id="66d36-116">必需</span><span class="sxs-lookup"><span data-stu-id="66d36-116">Required</span></span>  |  <span data-ttu-id="66d36-117">Description</span><span class="sxs-lookup"><span data-stu-id="66d36-117">Description</span></span>  |
+|  <span data-ttu-id="9b130-115">元素</span><span class="sxs-lookup"><span data-stu-id="9b130-115">Element</span></span> |  <span data-ttu-id="9b130-116">必需</span><span class="sxs-lookup"><span data-stu-id="9b130-116">Required</span></span>  |  <span data-ttu-id="9b130-117">说明</span><span class="sxs-lookup"><span data-stu-id="9b130-117">Description</span></span>  |
 |:-----|:-----|:-----|
-|  [<span data-ttu-id="66d36-118">Image</span><span class="sxs-lookup"><span data-stu-id="66d36-118">Image</span></span>](#image)        | <span data-ttu-id="66d36-119">是</span><span class="sxs-lookup"><span data-stu-id="66d36-119">Yes</span></span> |   <span data-ttu-id="66d36-120">要使用的图像的 resid</span><span class="sxs-lookup"><span data-stu-id="66d36-120">resid of an image to use</span></span>         |
+|  [<span data-ttu-id="9b130-118">Image</span><span class="sxs-lookup"><span data-stu-id="9b130-118">Image</span></span>](#image)        | <span data-ttu-id="9b130-119">是</span><span class="sxs-lookup"><span data-stu-id="9b130-119">Yes</span></span> |   <span data-ttu-id="9b130-120">要使用的图像的 resid</span><span class="sxs-lookup"><span data-stu-id="9b130-120">resid of an image to use</span></span>         |
 
-### <a name="image"></a><span data-ttu-id="66d36-121">图像</span><span class="sxs-lookup"><span data-stu-id="66d36-121">Image</span></span>
+### <a name="image"></a><span data-ttu-id="9b130-121">图像</span><span class="sxs-lookup"><span data-stu-id="9b130-121">Image</span></span>
 
-<span data-ttu-id="66d36-122">按钮的图像。</span><span class="sxs-lookup"><span data-stu-id="66d36-122">An image for the button.</span></span> <span data-ttu-id="66d36-123">**resid** 属性必须设置为 **Images** 元素（位于 [Resources](resources.md) 元素）中 **Image** 元素的 **id** 属性的值。</span><span class="sxs-lookup"><span data-stu-id="66d36-123">The **resid** attribute must be set to the value of the **id** attribute of an **Image** element in the **Images** element in the [Resources](resources.md) element.</span></span> <span data-ttu-id="66d36-124">The **size** attribute indicates the size in pixels of the image.</span><span class="sxs-lookup"><span data-stu-id="66d36-124">The **size** attribute indicates the size in pixels of the image.</span></span> <span data-ttu-id="66d36-125">需要三个图像大小（16、32和80像素），而支持五个其他大小（20、24、40、48和64像素）。 |</span><span class="sxs-lookup"><span data-stu-id="66d36-125">Three image sizes are required (16, 32, and 80 pixels) while five other sizes are supported (20, 24, 40, 48, and 64 pixels).|</span></span>
+<span data-ttu-id="9b130-122">按钮的图像。</span><span class="sxs-lookup"><span data-stu-id="9b130-122">An image for the button.</span></span> <span data-ttu-id="9b130-123">**resid** 属性不能超过 32 个字符，必须设置为 Resources 元素中 Images 元素中 **Image** 元素的 **id**[属性值。](resources.md)</span><span class="sxs-lookup"><span data-stu-id="9b130-123">The **resid** attribute can be no more than 32 characters and must be set to the value of the **id** attribute of an **Image** element in the **Images** element in the [Resources](resources.md) element.</span></span> <span data-ttu-id="9b130-124">The **size** attribute indicates the size in pixels of the image.</span><span class="sxs-lookup"><span data-stu-id="9b130-124">The **size** attribute indicates the size in pixels of the image.</span></span> <span data-ttu-id="9b130-125">需要三种图像大小 (16、32 和 80 像素) 而支持五种其他大小 (20、24、40、48 和 64 像素) 。|</span><span class="sxs-lookup"><span data-stu-id="9b130-125">Three image sizes are required (16, 32, and 80 pixels) while five other sizes are supported (20, 24, 40, 48, and 64 pixels).|</span></span>
 
 ```xml
 <Icon>
@@ -38,9 +38,9 @@ ms.locfileid: "44611797"
 </Icon>
 ```
 
-## <a name="additional-requirements-for-mobile-form-factors"></a><span data-ttu-id="66d36-126">移动外形规格的其他要求</span><span class="sxs-lookup"><span data-stu-id="66d36-126">Additional requirements for mobile form factors</span></span>
+## <a name="additional-requirements-for-mobile-form-factors"></a><span data-ttu-id="9b130-126">移动外形规格的其他要求</span><span class="sxs-lookup"><span data-stu-id="9b130-126">Additional requirements for mobile form factors</span></span>
 
-<span data-ttu-id="66d36-p103">当父 **Icon** 元素是 [MobileFormFactor](mobileformfactor.md) 元素的后代时，所要求的最小大小会略有不同。清单必须至少提供 25、32 和 48 像素大小。所提供的每个大小必须出现三次，并将 `scale` 属性设置为 `1`、`2` 或 `3`。</span><span class="sxs-lookup"><span data-stu-id="66d36-p103">When the parent **Icon** element is a descendant of a [MobileFormFactor](mobileformfactor.md) element, the minimum required sizes are slightly different. The manifest must minimally provide 25, 32, and 48 pixel sizes. Each size provided must appear three times, with a `scale` attribute set to `1`, `2`, or `3`.</span></span>
+<span data-ttu-id="9b130-p103">当父 **Icon** 元素是 [MobileFormFactor](mobileformfactor.md) 元素的后代时，所要求的最小大小会略有不同。清单必须至少提供 25、32 和 48 像素大小。所提供的每个大小必须出现三次，并将 `scale` 属性设置为 `1`、`2` 或 `3`。</span><span class="sxs-lookup"><span data-stu-id="9b130-p103">When the parent **Icon** element is a descendant of a [MobileFormFactor](mobileformfactor.md) element, the minimum required sizes are slightly different. The manifest must minimally provide 25, 32, and 48 pixel sizes. Each size provided must appear three times, with a `scale` attribute set to `1`, `2`, or `3`.</span></span>
 
 ```xml
 <Icon xsi:type="bt:MobileIconList">
