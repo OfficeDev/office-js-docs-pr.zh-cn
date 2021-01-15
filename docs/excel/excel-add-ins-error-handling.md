@@ -1,14 +1,14 @@
 ---
 title: Excel JavaScript API 的错误处理
 description: 了解 Excel JavaScript API 错误处理逻辑，以考虑运行时错误。
-ms.date: 01/06/2021
+ms.date: 01/13/2021
 localization_priority: Normal
-ms.openlocfilehash: fd863e9783336ba9121312ba06aae03330d57562
-ms.sourcegitcommit: 545888b08f57bb1babb05ccfd83b2b3286bdad5c
+ms.openlocfilehash: 813755a70f3662354dbfa958531da563680521c4
+ms.sourcegitcommit: 6a378d2a3679757c5014808ae9da8ababbfe8b16
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/08/2021
-ms.locfileid: "49789119"
+ms.lasthandoff: 01/15/2021
+ms.locfileid: "49870642"
 ---
 # <a name="error-handling-with-the-excel-javascript-api"></a>Excel JavaScript API 的错误处理
 
@@ -82,7 +82,11 @@ Excel.run(function (context) {
 |`UnsupportedOperation`|不支持正在尝试的操作。|
 |`UnsupportedSheet`|此工作表类型不支持此操作，因为它为宏或图表工作表。|
 
+> [!NOTE]
+> 上表列出了在使用 Excel JavaScript API 时可能遇到的错误消息。 如果你使用通用 API 而不是特定于应用程序的 Excel JavaScript API，请参阅 [Office 通用 API 错误](../reference/javascript-api-for-office-error-codes.md) 代码以了解相关的错误消息。
+
 ## <a name="see-also"></a>另请参阅
 
 - [Excel 加载项中的 Word JavaScript 对象模型](excel-add-ins-core-concepts.md)
 - [OfficeExtension.Error 对象（Excel JavaScript API）](/javascript/api/office/officeextension.error?view=excel-js-preview&preserve-view=true)
+- [Office 通用 API 错误代码](../reference/javascript-api-for-office-error-codes.md)

@@ -1,18 +1,18 @@
 ---
-title: 在 Office 外接程序中创建自定义上下文选项卡
+title: 在 Office 加载项中创建自定义上下文选项卡
 description: 了解如何将自定义上下文选项卡添加到 Office 外接程序。
-ms.date: 11/20/2020
+ms.date: 01/11/2021
 localization_priority: Normal
-ms.openlocfilehash: 3939e3338c734e1d6400dc261b59e35de63e5779
-ms.sourcegitcommit: 545888b08f57bb1babb05ccfd83b2b3286bdad5c
+ms.openlocfilehash: 12286ef675a938e4abd8dd3caa90cd97586cb6d7
+ms.sourcegitcommit: 6a378d2a3679757c5014808ae9da8ababbfe8b16
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/08/2021
-ms.locfileid: "49789133"
+ms.lasthandoff: 01/15/2021
+ms.locfileid: "49870635"
 ---
-# <a name="create-custom-contextual-tabs-in-office-add-ins-preview"></a>在 Office 外接程序中创建自定义上下文选项卡 (预览) 
+# <a name="create-custom-contextual-tabs-in-office-add-ins-preview"></a>在 Office 加载项中创建自定义上下文选项卡（预览）
 
-上下文选项卡是 Office 功能区中的隐藏选项卡控件，当 Office 文档中发生指定事件时，选项卡行中会显示该选项卡控件。 例如 **，选择表** 时显示在 Excel 功能区上的"表设计"选项卡。 您可以通过创建更改可见性的事件处理程序，在 Office 外接程序中包括自定义上下文选项卡并指定它们何时可见或隐藏。  (，自定义上下文选项卡不会响应焦点更改。) 
+上下文选项卡是 Office 功能区中的隐藏选项卡控件，在 Office 文档中发生指定事件时显示在选项卡行中。 例如 **，选择表** 时显示在 Excel 功能区上的"表设计"选项卡。 您可以通过创建更改可见性的事件处理程序，在 Office 外接程序中包括自定义上下文选项卡并指定它们何时可见或隐藏。  (，自定义上下文选项卡不会响应焦点更改。) 
 
 > [!NOTE]
 > 本文假定你熟悉以下文档。 如果你最近未使用加载项命令（自定义菜单项和功能区按钮），请查看该文档。
@@ -20,7 +20,7 @@ ms.locfileid: "49789133"
 > - [加载项命令的基本概念](add-in-commands.md)
 
 > [!IMPORTANT]
-> 自定义上下文选项卡为预览版。 请在开发或测试环境中试验它们，但不要将其添加到生产外接程序。
+> 自定义上下文选项卡为预览。 请在开发或测试环境中试验它们，但不要将其添加到生产外接程序。
 >
 > 自定义上下文选项卡当前仅在 Excel 上受支持，并且仅在以下平台和内部版本上受支持：
 >
@@ -45,7 +45,7 @@ ms.locfileid: "49789133"
 
 以下是在加载项中添加自定义上下文选项卡的主要步骤：
 
-1. 配置外接程序以使用共享运行时。
+1. 将外接程序配置为使用共享运行时。
 1. 定义选项卡及其上出现的组和控件。
 1. 向 Office 注册上下文选项卡。
 1. 指定选项卡可见时的情况。
@@ -64,7 +64,7 @@ ms.locfileid: "49789133"
 我们将分步构造上下文选项卡 JSON blob 的示例。  (上下文选项卡 JSON 的完整架构位于 [dynamic-ribbon.schema.js上](https://developer.microsoft.com/json-schemas/office-js/dynamic-ribbon.schema.json)。 此链接在上下文选项卡的早期预览阶段可能无法运行。 如果链接不工作，您可以在 .) 上的草稿 [dynamic-ribbon.schema.js](https://github.com/OfficeDev/testing-assets/tree/master/jsonschema/dynamic-ribbon.schema.json)找到架构的最新草稿（如果您使用 Visual Studio Code，您可以使用此文件获取 IntelliSense 并验证 JSON。 有关详细信息，请参阅编辑 [JSON 和Visual Studio代码 - JSON 架构和设置](https://code.visualstudio.com/docs/languages/json#_json-schemas-and-settings)。
 
 
-1. 首先创建一个包含名为 和 的两个数组属性的 JSON `actions` 字符串 `tabs` 。 该数组是上下文选项卡上的控件可以执行的所有函数 `actions` 的规范。数组 `tabs` 定义一个或多个上下文选项卡，最多 *10 个*。
+1. 首先创建一个 JSON 字符串，该字符串具有名为 和 的两个 `actions` 数组属性 `tabs` 。 该数组是上下文选项卡上的控件可以执行的所有函数 `actions` 的规范。数组 `tabs` 定义一个或多个上下文选项卡，最多 *10 个*。
 
     ```json
     '{
@@ -77,11 +77,11 @@ ms.locfileid: "49789133"
     }'
     ```
 
-1. 此上下文选项卡的简单示例将只有一个按钮，因此只有一个操作。 将以下内容添加为数组的唯一 `actions` 成员。 关于此标记，请注意：
+1. 上下文选项卡的这个简单示例将只有一个按钮，因此只有一个操作。 将以下内容添加为数组的唯一 `actions` 成员。 关于此标记，请注意：
 
     - 和 `id` `type` 属性是必需的。
     - 其值 `type` 可以是"ExecuteFunction"或"ShowTaskpane"。
-    - 该属性 `functionName` 仅在值为 时 `type` 使用 `ExecuteFunction` 。 它是 FunctionFile 中定义的函数的名称。 有关 FunctionFile 详细信息，请参阅 [外接程序命令的基本概念](add-in-commands.md)。
+    - 该属性 `functionName` 仅在值为 `type` `ExecuteFunction` 时使用。 它是 FunctionFile 中定义的函数的名称。 有关 FunctionFile 详细信息，请参阅 [外接程序命令的基本概念](add-in-commands.md)。
     - 在稍后的步骤中，您将此操作映射到上下文选项卡上的按钮。
 
     ```json
@@ -96,7 +96,7 @@ ms.locfileid: "49789133"
 
     - `id` 属性是必需的。 使用外接程序中所有上下文选项卡中唯一的简短描述性 ID。
     - `label` 属性是必需的。 它是一个用户友好字符串，用作上下文选项卡的标签。
-    - `groups` 属性是必需的。 它定义将显示在选项卡上的控件组。它必须至少有一个成员，且 *不超过 20 个*。  (自定义上下文选项卡上可以具有的控件数量也具有一些限制，这也会限制你拥有多少个组。 有关详细信息，请参阅下一步。) 
+    - `groups` 属性是必需的。 它定义将在选项卡上出现的控件组。它必须至少有一个成员，且 *不超过 20 个*。  (自定义上下文选项卡上可以具有的控件数量也具有一些限制，这也会限制你拥有多少个组。 有关详细信息，请参阅下一步。) 
 
     > [!NOTE]
     > Tab 对象还可以具有一个可选属性，该属性指定在加载项启动时选项卡是否立即 `visible` 可见。 由于上下文选项卡通常是隐藏的，直到用户事件触发其可见性 (例如用户在文档中选择某种类型的实体) ，该属性默认为不存在时 `visible` `false` 。 在稍后的部分中，我们将展示如何设置该属性 `true` 以响应事件。
@@ -104,7 +104,7 @@ ms.locfileid: "49789133"
     ```json
     {
       "id": "CtxTab1",
-      "label": "Data",
+      "label": "Contoso Data",
       "groups": [
 
       ]
@@ -114,8 +114,8 @@ ms.locfileid: "49789133"
 1. 在简单的正在进行的示例中，上下文选项卡只有一个组。 将以下内容添加为数组的唯一 `groups` 成员。 关于此标记，请注意：
 
     - 所有属性都是必需的。
-    - 该属性 `id` 在选项卡的所有组中必须是唯一的。请使用简短的描述性 ID。
-    - `label`这是一个用户友好字符串，用作组的标签。
+    - 该属性在选项卡的所有组中必须是唯一的。 `id` 请使用简短的描述性 ID。
+    - 这是 `label` 一个用户友好字符串，用作组的标签。
     - 该属性的值是一组对象，这些对象根据功能区的大小和 Office 应用程序窗口指定组将在功能区上具有 `icon` 的图标。
     - `controls`该属性的值是指定组中按钮和菜单的对象数组。 组中必须至少有一个且 *不超过 6 个*。
 
@@ -164,7 +164,7 @@ ms.locfileid: "49789133"
     - `label` 是用作按钮标签的用户友好字符串。
     - `superTip` 表示工具提示的丰富形式。 和 `title` `description` 属性都是必需的。
     - `icon` 指定按钮的图标。 前面有关组图标的备注也适用于此处。
-    - `enabled` (可选) 指定在上下文选项卡启动时是否启用按钮。 如果不存在，则默认值为 `true` 。 
+    - `enabled` (可选) 指定在上下文选项卡启动时是否启用按钮。 如果不存在，则默认为 `true` 。 
 
     ```json
     {
@@ -204,7 +204,7 @@ ms.locfileid: "49789133"
   "tabs": [
     {
       "id": "CtxTab1",
-      "label": "Data",
+      "label": "Contoso Data",
       "groups": [
         {
           "id": "CustomGroup111",
@@ -254,7 +254,7 @@ ms.locfileid: "49789133"
 上下文选项卡通过调用[Office.ribbon.requestCreateControls 方法注册到 Office。](/javascript/api/office/office.ribbon?view=common-js&preserve-view=true#requestCreateControls_tabDefinition_) 这通常在分配给方法的函数中完成， `Office.initialize` 或随方法 `Office.onReady` 一起完成。 有关这些方法和初始化外接程序的更多信息，请参阅["初始化 Office 外接程序"。](../develop/initialize-add-in.md) 但是，可以在初始化后随时调用该方法。
 
 > [!IMPORTANT]
-> `requestCreateControls`该方法只能在加载项的给定会话中调用一次。 如果再次调用它，将引发错误。
+> `requestCreateControls`该方法只能在加载项的给定会话中调用一次。 如果再次调用错误，将引发错误。
 
 示例如下。 请注意，必须先使用该方法将 JSON 字符串转换为 JavaScript 对象，然后才能将其 `JSON.parse` 传递给 JavaScript 函数。
 
@@ -268,13 +268,13 @@ Office.onReady(async () => {
 
 ## <a name="specify-the-contexts-when-the-tab-will-be-visible-with-requestupdate"></a>使用 requestUpdate 指定选项卡何时可见
 
-通常，当用户启动的事件更改加载项上下文时，应显示自定义上下文选项卡。 请考虑一种方案，在激活 Excel 工作簿的默认工作表上的图表 (且仅在激活该选项卡时) 可见。
+通常，当用户启动的事件更改加载项上下文时，应显示自定义上下文选项卡。 考虑在激活 Excel 工作簿的默认工作表上的图表 (且仅在激活时，选项卡) 可见。
 
 首先分配处理程序。 此方法中通常完成此操作，如以下示例所示，该示例将 (步骤) 中创建的处理程序分配给工作表中所有图表的和 `Office.onReady` `onActivated` `onDeactivated` 事件。
 
 ```javascript
 Office.onReady(async () => {
-    const contextualTabJSON = ' ... '; // Assign the JSON string.
+    const contextualTabJSON = ` ... `; // Assign the JSON string.
     const contextualTab = JSON.parse(contextualTabJSON);
     await Office.ribbon.requestCreateControls(contextualTab);
 
@@ -313,15 +313,15 @@ Office JavaScript 库还提供了多个 (类型的) ，以便更轻松地构造 
 
 ```typescript
 const showDataTab = async () => {
-    const myContextualTab: Tab = {id: "CtxTab1", visible: true};
-    const ribbonUpdater: RibbonUpdaterData = { tabs: [ myContextualTab ]};
+    const myContextualTab: Office.Tab = {id: "CtxTab1", visible: true};
+    const ribbonUpdater: Office.RibbonUpdaterData = { tabs: [ myContextualTab ]};
     await Office.ribbon.requestUpdate(ribbonUpdater);
 }
 ```
 
 ### <a name="toggle-tab-visibility-and-the-enabled-status-of-a-button-at-the-same-time"></a>同时切换选项卡可见性和按钮的启用状态
 
-该方法还用于在自定义上下文选项卡或自定义核心选项卡上切换自定义按钮的启用 `requestUpdate` 或禁用状态。有关此内容的详细信息，请参阅["启用和禁用外接程序命令"。](disable-add-in-commands.md) 在某些情况下，你可能希望同时更改选项卡的可见性和按钮的启用状态。 可以通过一次调用来执行此操作 `requestUpdate` 。 下面是一个示例，在使上下文选项卡可见的同时启用核心选项卡上的按钮。
+该方法还用于切换自定义上下文选项卡或自定义核心选项卡上自定义按钮的启用 `requestUpdate` 或禁用状态。有关此内容的详细信息，请参阅["启用和禁用外接程序命令"。](disable-add-in-commands.md) 在某些情况下，你可能希望同时更改选项卡的可见性和按钮的启用状态。 可以通过单个调用来此操作 `requestUpdate` 。 下面是一个示例，在使上下文选项卡可见的同时启用核心选项卡上的按钮。
 
 ```javascript
 function myContextChanges() {
@@ -333,13 +333,20 @@ function myContextChanges() {
             },
             {
                 id: "OfficeAppTab1",
-                controls: [
-                {
-                    id: "MyButton",
-                    enabled: true
-                }
+                groups: [
+                    {
+                        id: "CustomGroup111",
+                        controls: [
+                            {
+                                id: "MyButton",
+                                enabled: true
+                            }
+                        ]
+                    }
+                ]
             ]}
-        ]});
+        ]
+    });
 }
 ```
 
@@ -352,14 +359,20 @@ function myContextChanges() {
             {
                 id: "CtxTab1",
                 visible: true,
-                controls: [
+                groups: [
                     {
-                        id: "MyButton",
-                        enabled: true
-                    }
-                ]
+                        id: "CustomGroup111",
+                        controls: [
+                            {
+                                id: "MyButton",
+                                enabled: true
+                           }
+                       ]
+                   }
+               ]
             }
-        ]});
+        ]
+    });
 }
 ```
 
@@ -380,7 +393,7 @@ function GetContextualTabsJsonSupportedLocale () {
                     "tabs": [
                         {
                           "id": "CtxTab1",
-                          "label": "Data",
+                          "label": "Contoso Data",
                           "groups": [
                               // groups omitted
                           ]
@@ -396,7 +409,7 @@ function GetContextualTabsJsonSupportedLocale () {
                     "tabs": [
                         {
                           "id": "CtxTab1",
-                          "label": "Données",
+                          "label": "Contoso Données",
                           "groups": [
                               // groups omitted
                           ]
