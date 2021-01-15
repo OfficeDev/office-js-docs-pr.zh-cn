@@ -1,18 +1,18 @@
 ---
-ms.date: 11/06/2020
+ms.date: 12/22/2020
 description: 使用 JSDoc 标记动态创建自定义函数 JSON 元数据。
 title: 为自定义函数自动生成 JSON 元数据
 localization_priority: Normal
-ms.openlocfilehash: 23ad0466c157b6dbb9d5fd5fbecf3fd5fe479752
-ms.sourcegitcommit: 5bfd1e9956485c140179dfcc9d210c4c5a49a789
+ms.openlocfilehash: 4f7553646f51518fd4c5ed6c66081f910ec813a1
+ms.sourcegitcommit: 48b9c3b63668b2a53ce73f92ce124ca07c5ca68c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/13/2020
-ms.locfileid: "49071646"
+ms.lasthandoff: 12/28/2020
+ms.locfileid: "49735555"
 ---
 # <a name="autogenerate-json-metadata-for-custom-functions"></a>为自定义函数自动生成 JSON 元数据
 
-在使用 JavaScript 或 TypeScript 编写 Excel 自定义函数时，使用 [JSDoc 标记](https://jsdoc.app/)提供有关自定义函数的额外信息。 然后在生成时使用 JSDoc 标记创建 JSON 元数据文件。 使用 JSDoc 标记可节省 [手动编辑 JSON 元数据文件](custom-functions-json.md)的工作量。
+在使用 JavaScript 或 TypeScript 编写 Excel 自定义函数时，使用 [JSDoc 标记](https://jsdoc.app/)提供有关自定义函数的额外信息。 然后在生成时使用 JSDoc 标记创建 JSON 元数据文件。 使用 JSDoc 标记可节省手动编辑 [JSON 元数据文件的工作](custom-functions-json.md)。
 
 [!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
@@ -24,7 +24,7 @@ ms.locfileid: "49071646"
 
 当用户需要帮助来了解自定义函数的功能时，将向用户显示用作帮助文本的说明。 说明不需要任何特定标记。 只需在 JSDoc 注释中输入简短的文本说明即可。 一般来说，说明位于 JSDoc 注释部分的开头，但无论位于何处，它都有用。
 
-若要查看内置函数说明的示例，请打开 Excel，转到“ **公式** ”选项卡，然后选择“ **插入函数** ”。 然后，你可以浏览所有函数说明，还可以查看列出的自定义函数。
+若要查看内置函数说明的示例，请打开 Excel，转到“**公式**”选项卡，然后选择“**插入函数**”。 然后，你可以浏览所有函数说明，还可以查看列出的自定义函数。
 
 在以下示例中，短语“计算球体的体积” 就是自定义函数的相关说明。
 
@@ -39,7 +39,7 @@ ms.locfileid: "49071646"
 
 ## <a name="jsdoc-tags"></a>JSDoc 标记
 
-Excel 自定义函数支持以下 JSDoc 标记。
+以下 JSDoc 标记在 Excel 自定义函数中受支持。
 
 * [@cancelable](#cancelable)
 * [@customfunction](#customfunction) id name
@@ -55,24 +55,23 @@ Excel 自定义函数支持以下 JSDoc 标记。
 
 ### <a name="cancelable"></a>@cancelable
 
-指示在取消函数时，自定义函数执行操作。
+指示自定义函数在取消函数时执行一个操作。
 
-最后一个函数参数的类型必须是 `CustomFunctions.CancelableInvocation`。 函数可以向属性分配函数 `oncanceled` ，以在取消函数时表示结果。
+最后一个函数参数的类型必须是 `CustomFunctions.CancelableInvocation`。 该函数可以将一个函数 `oncanceled` 分配给该属性，以指示取消函数时的结果。
 
 如果最后一个函数参数的类型为 `CustomFunctions.CancelableInvocation`，则即使标记不存在，也会被视为 `@cancelable`。
 
 函数不能同时具有 `@cancelable` 和 `@streaming` 标记。
 
----
 <a id="customfunction"></a>
 
 ### <a name="customfunction"></a>@customfunction
 
 语法：@customfunction _id_ _name_
 
-此标记指示 JavaScript/TypeScript 函数是 Excel 自定义函数。 需要创建自定义函数的元数据。
+此标记指示 JavaScript/TypeScript 函数是 Excel 自定义函数。 需要为自定义函数创建元数据。
 
-下面显示了此标记的一个示例。
+下面显示了此标记的示例。
 
 ```js
 /**
@@ -84,7 +83,7 @@ Excel 自定义函数支持以下 JSDoc 标记。
 
 #### <a name="id"></a>id
 
-`id`标识自定义函数。
+标识 `id` 自定义函数。
 
 * 如果未提供 `id`，请将 JavaScript/TypeScript 函数名称转换为大写并删除禁用字符。
 * `id` 对于所有自定义函数必须是唯一的。
@@ -121,7 +120,7 @@ Excel 自定义函数支持以下 JSDoc 标记。
 
 ### <a name="description"></a>说明
 
-在 Excel 中，用户在进入函数并指定函数所执行的操作时，会向用户显示相关说明。 说明不需要任何特定标记。 通过在 JSDoc 注释中添加一个短语来描述函数的功能，为自定义函数添加说明。 默认情况下，JSDoc 注释部分中未标记的任何文本都是该函数的说明。
+Excel 中的用户在输入函数时会显示说明，并指定函数的功能。 说明不需要任何特定标记。 通过在 JSDoc 注释中添加一个短语来描述函数的功能，为自定义函数添加说明。 默认情况下，JSDoc 注释部分中未标记的任何文本都是该函数的说明。
 
 在以下示例中，短语“对两个数字求和的函数”是 id 属性为 `ADD` 的自定义函数的相关说明。
 
@@ -133,7 +132,6 @@ Excel 自定义函数支持以下 JSDoc 标记。
  */
 ```
 
----
 <a id="helpurl"></a>
 
 ### <a name="helpurl"></a>@helpurl
@@ -142,7 +140,7 @@ Excel 自定义函数支持以下 JSDoc 标记。
 
 提供的 _url_ 显示在 Excel 中。
 
-在下面的示例中， `helpurl` 为 `www.contoso.com/weatherhelp` 。
+在下面的示例中，为 `helpurl` `www.contoso.com/weatherhelp` 。
 
 ```js
 /**
@@ -153,7 +151,6 @@ Excel 自定义函数支持以下 JSDoc 标记。
  */
 ```
 
----
 <a id="param"></a>
 
 ### <a name="param"></a>@param
@@ -162,9 +159,9 @@ Excel 自定义函数支持以下 JSDoc 标记。
 
 JavaScript 语法：@param {type} name _description_
 
-* `{type}` 指定大括号中的类型信息。 有关可能使用的类型的详细信息，请参阅[类型](#types)部分。 如果未指定任何类型，则 `any` 将使用默认类型。
-* `name` 指定应用 @param 标记的参数。 它是必需的。
-* `description` 为函数参数提供显示在 Excel 中的说明。 它是可选的。
+* `{type}` 指定大括号中的类型信息。 有关可能使用的类型的详细信息，请参阅[类型](#types)部分。 如果未指定类型，则使用 `any` 默认类型。
+* `name` 指定应用@param参数。 这是必需的。
+* `description` 为函数参数提供显示在 Excel 中的说明。 可选。
 
 若要将自定义函数参数表示为可选，请执行以下操作：
 
@@ -173,7 +170,7 @@ JavaScript 语法：@param {type} name _description_
 > [!NOTE]
 > 可选参数的默认值为 `null`。
 
-下面的示例演示添加两个或三个数字的 ADD 函数，第三个数字作为可选参数。
+以下示例显示添加两个或三个数字的 ADD 函数，第三个数字作为可选参数。
 
 ```js
 /**
@@ -190,8 +187,8 @@ JavaScript 语法：@param {type} name _description_
 
 TypeScript 语法：@param name _description_
 
-* `name` 指定应用 @param 标记的参数。 它是必需的。
-* `description` 为函数参数提供显示在 Excel 中的说明。 它是可选的。
+* `name` 指定应用@param参数。 这是必需的。
+* `description` 为函数参数提供显示在 Excel 中的说明。 可选。
 
 有关可能使用的函数参数类型的详细信息，请参阅[类型](#types)部分。
 
@@ -220,7 +217,6 @@ function add(first: number, second: number): number {
 }
 ```
 
----
 <a id="requiresAddress"></a>
 
 ### <a name="requiresaddress"></a>@requiresAddress
@@ -229,12 +225,28 @@ function add(first: number, second: number): number {
 
 最后一个函数参数的类型必须是 `CustomFunctions.Invocation` 或派生类型。 调用函数时，`address` 属性将包含地址。
 
----
+以下示例演示如何将参数与参数结合使用以返回调用自定义函数 `invocation` `@requiresAddress` 的单元格的地址。 有关详细信息 [，请参阅调用](custom-functions-parameter-options.md#invocation-parameter) 参数。
+
+```js
+/**
+ * Return the address of the cell that invoked the custom function. 
+ * @customfunction
+ * @param {number} first First parameter.
+ * @param {number} second Second parameter.
+ * @param {CustomFunctions.Invocation} invocation Invocation object. 
+ * @requiresAddress 
+ */
+function getAddress(first, second, invocation) {
+  var address = invocation.address;
+  return address;
+}
+```
+
 <a id="returns"></a>
 
 ### <a name="returns"></a>@returns
 
-语法：@returns { _type_ }
+语法：@returns {_type_}
 
 提供返回值的类型。
 
@@ -255,23 +267,21 @@ function add(first: number, second: number): number {
 }
 ```
 
----
 <a id="streaming"></a>
 
 ### <a name="streaming"></a>@streaming
 
 用于表示自定义函数是一个流式处理函数。 
 
-最后一个参数的类型为 `CustomFunctions.StreamingInvocation<ResultType>` 。
-函数将返回 `void` 。
+最后一个参数的类型 `CustomFunctions.StreamingInvocation<ResultType>` 。
+该函数返回 `void` 。
 
-流式处理函数不直接返回值，而是 `setResult(result: ResultType)` 使用最后一个参数调用。
+流式处理函数不会直接返回值，而是使用 `setResult(result: ResultType)` 最后一个参数调用。
 
 由流式处理函数引发的异常将被忽略。 `setResult()` 可能称为“错误”，以指示错误结果。 有关流式处理函数的示例和更多信息，请参阅[生成流式处理函数](custom-functions-web-reqs.md#make-a-streaming-function)。
 
 流式处理函数不能标记为 [@volatile](#volatile)。
 
----
 <a id="volatile"></a>
 
 ### <a name="volatile"></a>@volatile
@@ -315,7 +325,7 @@ function roll6sided(): number {
 
 ### <a name="promise"></a>Promise
 
-函数可以返回一个承诺，该承诺可在解决承诺时提供值。 如果承诺被拒绝，则会引发错误。
+函数可以返回 Promise，在解析承诺时提供值。 如果承诺被拒绝，它将引发错误。
 
 ### <a name="other-types"></a>其他类型
 
@@ -327,5 +337,5 @@ function roll6sided(): number {
 
 ## <a name="see-also"></a>另请参阅
 
-* [手动创建自定义函数的 JSON 元数据](custom-functions-json.md)
+* [手动为自定义函数创建 JSON 元数据](custom-functions-json.md)
 * [在 Excel 中创建自定义函数](custom-functions-overview.md)

@@ -1,14 +1,14 @@
 ---
 title: 清单文件中的 VersionOverrides 元素
-description: Office 外接程序清单的 VersionOverrides 元素的参考文档 (XML) 文件。
+description: Office 外接程序清单的 VersionOverrides 元素参考文档 (XML) 文件。
 ms.date: 03/05/2020
 localization_priority: Normal
-ms.openlocfilehash: a744772c01c57c41a9dc20ee0accea5f070c3ff3
-ms.sourcegitcommit: ed2a98b6fb5b432fa99c6cefa5ce52965dc25759
+ms.openlocfilehash: 772eaa416909d24f8035ed3e1445d1e4f06a244e
+ms.sourcegitcommit: 2f75a37de349251bc0e0fc402c5ae6dc5c3b8b08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/16/2020
-ms.locfileid: "47819824"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "49771303"
 ---
 # <a name="versionoverrides-element"></a>VersionOverrides 元素
 
@@ -18,18 +18,18 @@ ms.locfileid: "47819824"
 
 |  属性  |  必需  |  说明  |
 |:-----|:-----|:-----|
-|  **xmlns**       |  是  |  VersionOverrides 架构命名空间。 根据此 `<VersionOverrides>` 元素的 **xsi： type** 值和父元素的 **xsi： type** 值，允许的值会有所不同 `<OfficeApp>` 。 请参阅下面的 [命名空间值](#namespace-values) 。|
+|  **xmlns**       |  是  |  VersionOverrides 架构命名空间。 允许的值因此 `<VersionOverrides>` 元素 **的 xsi：type** 值和 **父元素的 xsi：type** `<OfficeApp>` 值而异。 请参阅 [下面的命名空间](#namespace-values) 值。|
 |  **xsi:type**  |  是  | 架构版本。目前的唯一有效值为 `VersionOverridesV1_0` 和 `VersionOverridesV1_1`。 |
 
 ### <a name="namespace-values"></a>命名空间值
 
-下面列出了 **xmlns** 值所需的值，具体取决于父元素的 **xsi： type** 值 `<OfficeApp>` 。
+下面列出了 **xmlns** 值的必需值，具体取决于 **父元素的 xsi：type** `<OfficeApp>` 值。
 
-- **TaskPaneApp** 仅支持 VersionOverrides 的1.0 版，而 **xmlns** 应为 `http://schemas.microsoft.com/office/taskpaneappversionoverrides` 。
-- **ContentApp** 仅支持 VersionOverrides 的1.0 版，而 **xmlns** 应为 `http://schemas.microsoft.com/office/contentappversionoverrides` 。
-- **MailApp**支持 VersionOverrides 的版本1.0 和1.1，因此根据此**xmlns** `<VersionOverrides>` 元素的**xsi： type**值，xmlns 的值会有所不同：
-    - 当 **xsi： type** 为时 `VersionOverridesV1_0` ， **xmlns** 必须为 `http://schemas.microsoft.com/office/mailappversionoverrides` 。
-    - 当 **xsi： type** 为时 `VersionOverridesV1_1` ， **xmlns** 必须为 `http://schemas.microsoft.com/office/mailappversionoverrides/1.1` 。
+- **TaskPaneApp** 仅支持 VersionOverrides 版本 1.0，xmlns 应为 `http://schemas.microsoft.com/office/taskpaneappversionoverrides` 。
+- **ContentApp** 仅支持 VersionOverrides 版本 1.0，xmlns 应为 `http://schemas.microsoft.com/office/contentappversionoverrides` 。
+- **MailApp** 支持 VersionOverrides 版本 1.0 和 1.1，因此 **xmlns** 的值因此元素 `<VersionOverrides>` 的 **xsi：type** 值而异：
+    - 当 **xsi：type** 为 `VersionOverridesV1_0` 时 **，xmlns** 必须为 `http://schemas.microsoft.com/office/mailappversionoverrides` 。
+    - 当 **xsi：type** 为 `VersionOverridesV1_1` 时 **，xmlns** 必须为 `http://schemas.microsoft.com/office/mailappversionoverrides/1.1` 。
 
 > [!NOTE]
 > 目前，只有 Outlook 2016 或更高版本支持 VersionOverrides v1.1 架构和 `VersionOverridesV1_1` 类型。
@@ -38,18 +38,18 @@ ms.locfileid: "47819824"
 
 |  元素 |  必需  |  说明  |
 |:-----|:-----|:-----|
-|  **说明**    |  否   |  描述外接程序。这会替代清单中任何父级部分中的 `Description` 元素。说明文本包含在 **Rescources** 元素中的 [LongString](resources.md) 元素的子元素中。`resid` 元素的 **** 属性被设置为包含文本的 `id` 元素的 `String` 属性的值。|
+|  **说明**    |  否   |  描述外接程序。 这会替代清单中任何父级部分中的 `Description` 元素。 说明文本包含在 **Rescources** 元素中的 [LongString](resources.md) 元素的子元素中。 `resid` **Description** 元素的属性不能超过 32 个字符，并设置为包含文本 `id` `String` 的元素的属性值。|
 |  **Requirements**  |  否   |  指定外接程序要求的最低要求集和 Office.js 的版本。这会替代清单中父级部分中的 `Requirements` 元素。|
-|  [Hosts](hosts.md)                |  是  |  指定 Office 应用程序的集合。 "子主机" 元素将覆盖清单父部分中的 Hosts 元素。  |
+|  [Hosts](hosts.md)                |  是  |  指定 Office 应用程序的集合。 子 Hosts 元素替代清单的父部分中的 Hosts 元素。  |
 |  [Resources](resources.md)    |  是  | 定义其他清单元素引用的资源集合（字符串、URL 和图像）。|
-|  [EquivalentAddins](equivalentaddins.md)    |  否  | 指定与 web 外接程序等效的本机 (COM/XLL) 外接程序。 如果安装了等效的本机加载项，则不会激活 web 外接程序。|
+|  [EquivalentAddins](equivalentaddins.md)    |  否  | 指定与 web (等效) COM/XLL 加载项的本机属性。 如果安装了等效的本机加载项，则不激活 Web 加载项。|
 |  **VersionOverrides**    |  否  | 在新版架构下定义外接程序命令。有关详细信息，请参阅[实现多个版本](#implementing-multiple-versions)。 |
-|  [WebApplicationInfo](webapplicationinfo.md)    |  否  | 指定有关使用安全令牌颁发者（如 Azure Active Directory v2.0）的加载项注册的详细信息。 |
-|  [ExtendedPermissions](extendedpermissions.md) |  否  |  指定扩展权限的集合。<br><br>**重要说明**：由于 [appendOnSendAsync](/javascript/api/outlook/office.body?view=outlook-js-preview&preserve-view=true#appendonsendasync-data--options--callback-) API 当前处于预览阶段，因此使用元素的外接程序 `ExtendedPermissions` 不能发布到 AppSource，也不能通过集中部署进行部署。 |
+|  [WebApplicationInfo](webapplicationinfo.md)    |  否  | 指定有关向安全令牌颁发者（如 Azure Active Directory V2.0）注册加载项的详细信息。 |
+|  [ExtendedPermissions](extendedpermissions.md) |  否  |  指定扩展权限的集合。<br><br>**重要** 提示：由于 [Office.Body.appendOnSendAsync](/javascript/api/outlook/office.body?view=outlook-js-preview&preserve-view=true#appendonsendasync-data--options--callback-) API 当前处于预览阶段，因此使用元素的加载项无法发布到 AppSource 或通过集中部署 `ExtendedPermissions` 进行部署。 |
 
 ### <a name="versionoverrides-example"></a>VersionOverrides 示例
 
-下面是典型元素的一个示例 `<VersionOverrides>` ，其中包括一些不需要但通常使用的子元素。
+下面是一个典型元素的示例，其中包括一些不需要但 `<VersionOverrides>` 通常使用的子元素。
 
 ```xml
 <OfficeApp ... xsi:type="MailApp">

@@ -1,14 +1,14 @@
 ---
 title: 清单文件中的 Supertip 元素
-description: Supertip 元素定义了一个丰富的工具提示（标题和说明）。
+description: Supertip 元素定义一个丰富的工具提示 (标题和说明) 。
 ms.date: 05/07/2019
 localization_priority: Normal
-ms.openlocfilehash: 8061c9dcd7903db0f1265084498d6c86654e1dfa
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 5e8b3850d99f6791726b1b2f0545c5fb4b52c554
+ms.sourcegitcommit: 2f75a37de349251bc0e0fc402c5ae6dc5c3b8b08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44608717"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "49771296"
 ---
 # <a name="supertip"></a>Supertip
 
@@ -16,21 +16,21 @@ ms.locfileid: "44608717"
 
 ## <a name="child-elements"></a>子元素
 
-|  元素 |  必需  |  Description  |
+|  元素 |  必需  |  说明  |
 |:-----|:-----|:-----|
 | [标题](#title) | 是 | supertip 的文本。 |
-| [说明](#description) | 是 | supertip 的说明。<br>**注意**：（Outlook）仅支持 Windows 和 Mac 客户端。 |
+| [说明](#description) | 是 | supertip 的说明。<br>**注意**： (Outlook) 仅支持 Windows 和 Mac 客户端。 |
 
-### <a name="title"></a>Title
+### <a name="title"></a>标题
 
-必填。 SuperTip 的文本。 **Resid**属性必须设置为[Resources](resources.md)元素中的**ShortStrings**元素中**String**元素的**id**属性的值。
+必需。 supertip 的文本。 **resid** 属性的长度不能超过 32 个字符，必须设置为 Resources 元素 **中 ShortStrings** 元素 **中 String** 元素的 **id** [属性值。](resources.md)
 
 ### <a name="description"></a>说明
 
-必需。 SuperTip 的描述。 **Resid**属性必须设置为[Resources](resources.md)元素中的**LongStrings**元素中**String**元素的**id**属性的值。
+必需。 supertip 的说明。 **resid** 属性的长度不能超过 32 个字符，必须设置为 Resources 元素 **中 LongStrings** 元素 **中 String** 元素的 **id** [属性值。](resources.md)
 
 > [!NOTE]
-> 对于 Outlook，只有 Windows 和 Mac 客户端支持**Description**元素。
+> 对于 Outlook，只有 Windows 和 Mac 客户端支持 **Description** 元素。
 
 ## <a name="example"></a>示例
 

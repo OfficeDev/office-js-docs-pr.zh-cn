@@ -3,12 +3,12 @@ title: 清单文件中的 Icon 元素
 description: 定义“按钮”或“菜单”控件的 Image 元素。
 ms.date: 10/09/2018
 localization_priority: Normal
-ms.openlocfilehash: dcf6de189477ad7dbe52b0f1122177441cd262d8
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: ff16e6c0fbbf6d1c54508b4460ed3e02e899db03
+ms.sourcegitcommit: 2f75a37de349251bc0e0fc402c5ae6dc5c3b8b08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44611797"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "49771331"
 ---
 # <a name="icon-element"></a>Icon 元素
 
@@ -22,13 +22,13 @@ ms.locfileid: "44611797"
 
 ## <a name="child-elements"></a>子元素
 
-|  元素 |  必需  |  Description  |
+|  元素 |  必需  |  说明  |
 |:-----|:-----|:-----|
 |  [Image](#image)        | 是 |   要使用的图像的 resid         |
 
 ### <a name="image"></a>图像
 
-按钮的图像。 **resid** 属性必须设置为 **Images** 元素（位于 [Resources](resources.md) 元素）中 **Image** 元素的 **id** 属性的值。 The **size** attribute indicates the size in pixels of the image. 需要三个图像大小（16、32和80像素），而支持五个其他大小（20、24、40、48和64像素）。 |
+按钮的图像。 **resid** 属性不能超过 32 个字符，必须设置为 Resources 元素中 Images 元素中 **Image** 元素的 **id**[属性值。](resources.md) The **size** attribute indicates the size in pixels of the image. 需要三种图像大小 (16、32 和 80 像素) 而支持五种其他大小 (20、24、40、48 和 64 像素) 。|
 
 ```xml
 <Icon>

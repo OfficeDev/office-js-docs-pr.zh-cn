@@ -1,18 +1,18 @@
 ---
-title: 清单文件中的 Group 元素
-description: 定义选项卡中的一组 UI 控件。
+title: 清单文件中 Group 元素
+description: 在选项卡中定义一组 UI 控件。
 ms.date: 11/01/2020
 localization_priority: Normal
-ms.openlocfilehash: 6ee8d499767eccb95b4fdf9ceb91dd2cd12bce95
-ms.sourcegitcommit: 3189c4bd62dbe5950b19f28ac2c1314b6d304dca
+ms.openlocfilehash: 3872ece926cc399ed2b30d4dabaacfb741e060ab
+ms.sourcegitcommit: 2f75a37de349251bc0e0fc402c5ae6dc5c3b8b08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "49087943"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "49771395"
 ---
 # <a name="group-element"></a>Group 元素
 
-定义选项卡中的一组 UI 控件。在自定义选项卡上，加载项可以创建多个组。 外接程序限定到一个自定义选项卡。
+在选项卡中定义一组 UI 控件。在自定义选项卡上，加载项可以创建多个组。 外接程序限定到一个自定义选项卡。
 
 ## <a name="attributes"></a>属性
 
@@ -30,20 +30,20 @@ ms.locfileid: "49087943"
 |:-----|:-----|:-----|
 |  [Label](#label)      | 是 |  CustomTab 或组的标签。  |
 |  [Icon](icon.md)      | 是 |  组的图像。  |
-|  [Control](#control)    | 否 |  表示控件对象。 可以是零个或多个。  |
-|  [OfficeControl](#officecontrol)  | 否 | 表示内置 Office 控件之一。 可以是零个或多个。 |
+|  [Control](#control)    | 否 |  代表一个 Control 对象。 可以是零个或多个。  |
+|  [OfficeControl](#officecontrol)  | 否 | 表示其中一个内置的 Office 控件。 可以是零个或多个。 |
 
 ### <a name="label"></a>标签
 
-必需。 组的标签。 **Resid** 属性必须设置为 [Resources](resources.md)元素中的 **ShortStrings** 元素中 **String** 元素的 **id** 属性的值。
+必需。 组的标签。 **resid** 属性的长度不能超过 32 个字符，必须设置为 Resources 元素 **中 ShortStrings** 元素 **中 String** 元素的 **id** [属性值。](resources.md)
 
 ### <a name="icon"></a>Icon
 
-必需。 如果某个选项卡包含大量组，并且该程序窗口已调整大小，则会改为显示指定的图像。
+必需。 如果选项卡包含大量组，并且程序窗口调整了大小，则可能会改为显示指定的图像。
 
-### <a name="control"></a>控制
+### <a name="control"></a>控件
 
-可选，但如果不存在，则必须至少有一个 **OfficeControl**。 有关受支持的控件类型的详细信息，请参阅 [Control](control.md) 元素。 在清单中， **Control** 和 **OfficeControl** 的顺序是可互换的，如果存在多个元素，则可以是混合的，但所有元素都必须位于 **Icon** 元素的下面。
+可选，但如果不存在，则必须至少有一 **个 OfficeControl**。 有关支持的控件类型的详细信息，请参阅 [Control](control.md) 元素。 清单中的 **Control** 和 **OfficeControl** 顺序是可互换的，如果有多个元素，它们可以相互交集，但所有元素都必须位于 **Icon** 元素下方。
 
 ```xml
 <Group id="msgreadCustomTab.grp1">
@@ -62,7 +62,7 @@ ms.locfileid: "49087943"
 
 ### <a name="officecontrol"></a>OfficeControl
 
-可选，但如果不存在，则必须至少有一个 **控件**。 在带元素的组中包含一个或多个内置 Office 控件 `<OfficeControl>` 。 `id`属性指定内置 Office 控件的 ID。 若要查找控件的 ID，请参阅 [查找控件和控件组的 id](../../design/built-in-button-integration.md#find-the-ids-of-controls-and-control-groups)。 在清单中， **Control** 和 **OfficeControl** 的顺序是可互换的，如果存在多个元素，则可以是混合的，但所有元素都必须位于 **Icon** 元素的下面。
+可选，但如果不存在，则必须至少有一个 **控件**。 在包含元素的组中包括一个或多个内置 Office `<OfficeControl>` 控件。 `id`该属性指定内置 Office 控件的 ID。 若要查找控件的 ID，请参阅["查找控件和控件组的 ID"。](../../design/built-in-button-integration.md#find-the-ids-of-controls-and-control-groups) 清单中的 **Control** 和 **OfficeControl** 顺序是可互换的，如果有多个元素，它们可以相互交集，但所有元素都必须位于 **Icon** 元素下方。
 
 ```xml
 <Group id="msgreadCustomTab.grp1">

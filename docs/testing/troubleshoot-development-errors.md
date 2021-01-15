@@ -1,16 +1,16 @@
 ---
-title: 解决 Office 外接程序的开发错误
+title: Office 加载项开发错误疑难解答
 description: 了解如何解决 Office 外接程序中的开发错误。
-ms.date: 09/08/2020
+ms.date: 01/04/2021
 localization_priority: Normal
-ms.openlocfilehash: 5801146165446352ec806f6f832e9976f96467ac
-ms.sourcegitcommit: c6308cf245ac1bc66a876eaa0a7bb4a2492991ac
+ms.openlocfilehash: 48216230db4bf90ca53ef10d98786877bd3905c2
+ms.sourcegitcommit: 2f75a37de349251bc0e0fc402c5ae6dc5c3b8b08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "47409386"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "49771422"
 ---
-# <a name="troubleshoot-development-errors-with-office-add-ins"></a>解决 Office 外接程序的开发错误
+# <a name="troubleshoot-development-errors-with-office-add-ins"></a>Office 加载项开发错误疑难解答
 
 ## <a name="add-in-doesnt-load-in-task-pane-or-other-issues-with-the-add-in-manifest"></a>外接程序无法在任务窗格中加载，或外接程序清单存在其他问题
 
@@ -22,7 +22,7 @@ ms.locfileid: "47409386"
 
 #### <a name="for-windows"></a>对于 Windows：
 
-删除该文件夹的内容 `%LOCALAPPDATA%\Microsoft\Office\16.0\Wef\` ，并删除该文件夹的内容 `%userprofile%\AppData\Local\Packages\Microsoft.Win32WebViewHost_cw5n1h2txyewy\AC\#!123\INetCache\` （如果存在）。
+删除文件夹的内容， `%LOCALAPPDATA%\Microsoft\Office\16.0\Wef\` 并删除文件夹的内容（ `%userprofile%\AppData\Local\Packages\Microsoft.Win32WebViewHost_cw5n1h2txyewy\AC\#!123\INetCache\` 如果存在）。
 
 #### <a name="for-mac"></a>对于 Mac：
 
@@ -56,22 +56,33 @@ ms.locfileid: "47409386"
 del /s /f /q %LOCALAPPDATA%\Packages\Microsoft.Win32WebViewHost_cw5n1h2txyewy\AC\#!123\INetCache\
 ```
 
-## <a name="changes-made-to-property-values-dont-happen-and-there-is-no-error-message"></a>对属性值所做的更改不会发生，也不会出现错误消息
+## <a name="changes-made-to-property-values-dont-happen-and-there-is-no-error-message"></a>对属性值所做的更改不会发生，并且没有错误消息
 
-检查属性的参考文档，以查看该属性是否为只读。 此外，Office JS 的 [TypeScript 定义](../develop/referencing-the-javascript-api-for-office-library-from-its-cdn.md) 指定哪些对象属性是只读的。 如果尝试设置只读属性，写入操作将无提示地失败，且不会引发错误。 下面的示例错误地尝试设置只读属性 [Chart.id](/javascript/api/excel/excel.chart#id)。另请参阅 [一些属性不能直接设置](../develop/application-specific-api-model.md#some-properties-cannot-be-set-directly)。
+查看属性的参考文档，以查看其是否为只读。 此外，Office JS [的 TypeScript 定义](../develop/referencing-the-javascript-api-for-office-library-from-its-cdn.md) 指定哪些对象属性是只读的。 如果尝试设置只读属性，写入操作将失败，无提示，不会引发任何错误。 以下示例错误地尝试将只读属性设置为 [Chart.id。](/javascript/api/excel/excel.chart#id)另请参阅 [某些属性无法直接设置](../develop/application-specific-api-model.md#some-properties-cannot-be-set-directly)。
 
 ```js
 // This will do nothing, since `id` is a read-only property.
 myChart.id = "5";
 ```
 
-## <a name="add-in-doesnt-work-on-edge-but-it-works-on-other-browsers"></a>外接不在边缘上，而是在其他浏览器上运行
+## <a name="getting-error-this-add-in-is-no-longer-available"></a>收到错误："此外接程序不再可用"
 
-请参阅 [Microsoft Edge 问题故障排除](../concepts/browsers-used-by-office-web-add-ins.md#troubleshooting-microsoft-edge-issues)。
+以下是导致此错误的一些原因。 如果发现其他原因，请使用页面底部的反馈工具告诉我们。
+
+- 如果使用 Visual Studio，则旁加载可能有问题。 关闭 Office 主机的所有实例Visual Studio。 重新启动Visual Studio并再次尝试按 F5。
+- 外接程序的清单已从其部署位置（如集中部署、SharePoint 目录或网络共享）中删除。
+- 清单 [中 ID](../reference/manifest/id.md) 元素的值已直接在已部署的副本中更改。 如果出于任何原因需要更改此 ID，请首先从 Office 主机中删除外接程序，然后将原始清单替换为已更改的清单。 许多用户需要清除 Office 缓存以删除原始缓存的所有跟踪。 请参阅本文前面部分对外接程序命令 [（包括功能区按钮](#changes-to-add-in-commands-including-ribbon-buttons-and-menu-items-do-not-take-effect) 和菜单项）的更改不会生效。
+- 加载项清单的清单在清单的"资源"部分的任何位置未定义，或者其使用位置和定义位置之间的拼写不匹配。 `resid` [](../reference/manifest/resources.md) `resid` `<Resources>`
+- 清单 `resid` 中的某位置有一个超过 32 个字符的属性。 属性和节中相应资源的属性不能超过 `resid` `id` `<Resources>` 32 个字符。
+- 加载项具有自定义外接程序命令，但您尝试在不支持这些命令的平台上运行该命令。 有关详细信息，请参阅 [外接程序命令要求集](../reference/requirement-sets/add-in-commands-requirement-sets.md)。
+
+## <a name="add-in-doesnt-work-on-edge-but-it-works-on-other-browsers"></a>加载项在 Edge 上不起作用，但它适用于其他浏览器
+
+请参阅 [Microsoft Edge 问题疑难解答](../concepts/browsers-used-by-office-web-add-ins.md#troubleshooting-microsoft-edge-issues)。
 
 ## <a name="excel-add-in-throws-errors-but-not-consistently"></a>Excel 加载项引发错误，但不一致
 
-有关可能的原因，请参阅 [Excel 加载项疑难解答](../excel/excel-add-ins-troubleshooting.md) 。
+有关 [可能的原因，请参阅 Excel](../excel/excel-add-ins-troubleshooting.md) 加载项疑难解答。
 
 ## <a name="see-also"></a>另请参阅
 

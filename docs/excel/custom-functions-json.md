@@ -1,41 +1,41 @@
 ---
-ms.date: 11/06/2020
-description: 在 Excel 中定义自定义函数的 JSON 元数据，并将您的函数 ID 和 name 属性相关联。
-title: 在 Excel 中手动创建自定义函数的 JSON 元数据
+ms.date: 12/22/2020
+description: 在 Excel 中为自定义函数定义 JSON 元数据，并关联函数 ID 和名称属性。
+title: 在 Excel 中为自定义函数手动创建 JSON 元数据
 localization_priority: Normal
-ms.openlocfilehash: adbcbb9d2705a38b1ed9ff5cdffa6162b9d93a9c
-ms.sourcegitcommit: 5bfd1e9956485c140179dfcc9d210c4c5a49a789
+ms.openlocfilehash: 80a71c640caacbd865b0dd253f03258a64c9b1bf
+ms.sourcegitcommit: 48b9c3b63668b2a53ce73f92ce124ca07c5ca68c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/13/2020
-ms.locfileid: "49071639"
+ms.lasthandoff: 12/28/2020
+ms.locfileid: "49735548"
 ---
-# <a name="manually-create-json-metadata-for-custom-functions"></a>手动创建自定义函数的 JSON 元数据
+# <a name="manually-create-json-metadata-for-custom-functions"></a>手动为自定义函数创建 JSON 元数据
 
-如 " [自定义函数概述](custom-functions-overview.md) " 一文中所述，自定义函数项目必须包括 JSON 元数据文件和 (JavaScript 或 TypeScript) 文件中的脚本，以注册函数，使其可供使用。 自定义函数在用户首次运行外接程序且在所有工作簿中对同一用户可用时注册。
+如自定义函数概述[](custom-functions-overview.md)文章中所述，自定义函数项目必须同时包括 JSON 元数据文件和脚本 (JavaScript 或 TypeScript) 文件以注册函数，使其可供使用。 自定义函数在用户首次运行外接程序时注册，之后，自定义函数可供所有工作簿中的同一用户使用。
 
 [!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
-我们建议在可能的情况（而不是创建您自己的 JSON 文件）中使用 JSON 自动生成。 自动生成不容易出现用户错误，并且 `yo office` 搭建文件已包含此文件。 有关 JSDoc 标记和 JSON 自动生成进程的详细信息，请参阅自动 [生成 json 元数据的自定义函数](custom-functions-json-autogeneration.md)。
+我们建议尽可能使用 JSON 自动生成，而不是创建自己的 JSON 文件。 自动生成不太容易出现用户错误，基架文件 `yo office` 已包含此错误。 有关 JSDoc 标记和 JSON 自动生成过程的信息，请参阅自动生成 [自定义函数的 JSON 元数据](custom-functions-json-autogeneration.md)。
 
-不过，您可以从头开始创建自定义函数项目。 此过程要求您执行以下操作：
+但是，你可以从头开始创建自定义函数项目。 此过程需要您：
 
 - 编写 JSON 文件。
-- 检查您的清单文件是否已连接到您的 JSON 文件。
-- `id`在脚本文件中关联函数和 `name` 属性，以便注册您的函数。
+- 检查清单文件是否连接到 JSON 文件。
+- 在脚本 `id` 文件中关联函数和属性 `name` ，以便注册函数。
 
-下图说明了使用 `yo office` 搭建文件和从草稿写入 JSON 之间的差异。
+下图说明了使用基架文件和从头开始编写 `yo office` JSON 之间的差异。
 
-![使用 Yo 办公室和编写自己的 JSON 的差异的图像](../images/custom-functions-json.png)
+![使用 Yo Office 和编写自己的 JSON 之间的差异的图像](../images/custom-functions-json.png)
 
 > [!NOTE]
-> 请记住，如果不使用生成器，请将清单连接到您创建的 JSON 文件，并通过 `<Resources>` XML 清单文件中的节 `yo office` 。
+> 请记住，如果不使用生成器，请通过 XML 清单文件中部分将清单连接到创建的 JSON `<Resources>` `yo office` 文件。
 
 ## <a name="authoring-metadata-and-connecting-to-the-manifest"></a>创作元数据并连接到清单
 
-在项目中创建一个 JSON 文件，并提供有关函数中的函数的所有详细信息，如函数的参数。 有关函数属性的完整列表，请参阅 [以下元数据示例](#json-metadata-example) 和 [元数据参考](#metadata-reference) 。
+在项目中创建 JSON 文件，并提供函数的所有详细信息，如函数的参数。 有关[函数属性的完整](#json-metadata-example)[列表，](#metadata-reference)请参阅以下元数据示例和元数据引用。
 
-请确保您的 XML 清单文件引用了节中的 JSON 文件 `<Resources>` ，如下例所示。
+确保 XML 清单文件引用该节中的 JSON 文件， `<Resources>` 如以下示例所示。
 
 ```json
 <Resources>
@@ -134,7 +134,7 @@ ms.locfileid: "49071639"
 ```
 
 > [!NOTE]
-> [OfficeDev/Excel 自定义函数](https://github.com/OfficeDev/Excel-Custom-Functions/blob/77760adb1dcc53469183049bea08196734dbc114/config/customfunctions.json)GitHub 存储库的提交历史记录中提供了完整的示例 JSON 文件。 随着项目已调整为自动生成 JSON，手写 JSON 的完整示例仅在项目的早期版本中可用。
+> [OfficeDev/Excel-Custom-Functions](https://github.com/OfficeDev/Excel-Custom-Functions/blob/77760adb1dcc53469183049bea08196734dbc114/config/customfunctions.json) GitHub 存储库的提交历史记录中提供了完整的 JSON 文件示例。 由于项目已调整为自动生成 JSON，因此手写 JSON 的完整示例仅在项目的早期版本中可用。
 
 ## <a name="metadata-reference"></a>元数据参考
 
@@ -144,12 +144,12 @@ ms.locfileid: "49071639"
 
 | 属性      | 数据类型 | 必需 | 说明                                                                                                                                                                      |
 | :------------ | :-------- | :------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `description` | 字符串    | 否       | 最终用户在 Excel 中看到的函数的说明。 例如， **将摄氏度值转换为华氏度** 。                                                            |
+| `description` | string    | 否       | 最终用户在 Excel 中看到的函数的说明。 例如，**将摄氏度值转换为华氏度**。                                                            |
 | `helpUrl`     | string    | 否       | 提供有关函数的信息的 URL。 （它显示在任务窗格中。）例如，`http://contoso.com/help/convertcelsiustofahrenheit.html`。                      |
 | `id`          | string    | 是      | 函数的唯一 ID。 此 ID 只能包含字母数字字符和句点，设置后不应更改。                                            |
-| `name`        | string    | 是      | 最终用户在 Excel 中看到的函数的名称。 在 Excel 中，此函数名称将以 XML 清单文件中指定的自定义函数命名空间为前缀。 |
+| `name`        | string    | 是      | 最终用户在 Excel 中看到的函数的名称。 在 Excel 中，此函数名称以 XML 清单文件中指定的自定义函数命名空间作为前缀。 |
 | `options`     | object    | 否       | 使用户能够自定义 Excel 执行函数的方式和时间。 有关详细信息，请参阅[选项](#options)。                                                          |
-| `parameters`  | array     | 是      | 定义函数的输入参数的数组。 有关详细信息，请参阅 [参数](#parameters) 。                                                                             |
+| `parameters`  | array     | 是      | 定义函数的输入参数的数组。 有关详细信息 [，](#parameters) 请参阅参数。                                                                             |
 | `result`      | object    | 是      | 定义函数返回的信息类型的对象。 有关详细信息，请参阅[结果](#result)。                                                                 |
 
 ### <a name="options"></a>options
@@ -158,10 +158,11 @@ ms.locfileid: "49071639"
 
 | 属性          | 数据类型 | 必需                               | 说明 |
 | :---------------- | :-------- | :------------------------------------- | :---------- |
-| `cancelable`      | boolean   | 否<br/><br/>默认值为 `false`。  | 如果为 `true`，则每次用户执行具有取消函数效果的操作时，Excel 都会调用 `CancelableInvocation` 处理程序；例如，手动触发重新计算或编辑函数引用的单元格。 可取消函数通常仅用于返回单个结果的异步函数，并需要处理对数据请求的取消操作。 函数不能同时为流式处理和可取消。 有关详细信息，请参阅 [Make a 流式处理函数](custom-functions-web-reqs.md#make-a-streaming-function)结尾附近的注释。 |
-| `requiresAddress` | boolean   | 否 <br/><br/>默认值为 `false`。 | 如果为 `true` ，则自定义函数可以访问调用自定义函数的单元格的地址。 若要获取调用自定义函数的单元格的地址，请在自定义函数中使用 context。 不能将自定义函数同时设置为流式处理和 requiresAddress。 使用此选项时，"调用" 参数必须是在 options 中传递的最后一个参数。 |
-| `stream`          | boolean   | 否<br/><br/>默认值为 `false`。  | 如果为 `true`，即使只调用一次，该函数也可能会重复输出到单元格。 此选项对于快速变化的数据源（如股票价格）非常有用。 函数不应存在 `return` 语句。 相反，结果值将作为 `StreamingInvocation.setResult` 回调方法的参数传递。 有关详细信息，请参阅[流式处理函数](custom-functions-web-reqs.md#make-a-streaming-function)。 |
-| `volatile`        | boolean   | 否 <br/><br/>默认值为 `false`。 | 如果 `true` 为，则函数会在 Excel 重新计算时重新计算，而不是仅在公式的依赖值发生更改时进行重新计算。 函数不能同时为流式处理和可变。 如果 `stream` 和 `volatile` 属性同时设置为 `true`，则将忽略可变选项。 |
+| `cancelable`      | boolean   | 否<br/><br/>默认值为 `false`。  | 如果为 `true`，则每次用户执行具有取消函数效果的操作时，Excel 都会调用 `CancelableInvocation` 处理程序；例如，手动触发重新计算或编辑函数引用的单元格。 可取消函数通常仅用于返回单个结果且需要处理数据请求取消的异步函数。 函数不能同时使用和 `stream` `cancelable` 属性。 |
+| `requiresAddress` | boolean   | 否 <br/><br/>默认值为 `false`。 | 如果 `true` ，自定义函数可以访问调用它的单元格的地址。 `address`调用参数[的属性包含](custom-functions-parameter-options.md#invocation-parameter)调用自定义函数的单元格的地址。 函数不能同时使用和 `stream` `requiresAddress` 属性。 |
+| `requiresParameterAddresses` | boolean   | 否 <br/><br/>默认值为 `false`。 | 如果 `true` ，自定义函数可以访问函数的输入参数的地址。 此属性必须与结果对象的属性结合使用，并且 `dimensionality` [](#result) `dimensionality` 必须设置为 `matrix` 。 有关详细信息 [，请参阅"检测参数的地址](custom-functions-parameter-options.md#detect-the-address-of-a-parameter) "。 |
+| `stream`          | boolean   | 否<br/><br/>默认值为 `false`。  | 如果为 `true`，即使只调用一次，该函数也可能会重复输出到单元格。 此选项对于快速变化的数据源（如股票价格）非常有用。 函数不应存在 `return` 语句。 相反，结果值将作为 `StreamingInvocation.setResult` 回调方法的参数传递。 有关详细信息，请参阅"[创建流式处理函数"。](custom-functions-web-reqs.md#make-a-streaming-function) |
+| `volatile`        | boolean   | 否 <br/><br/>默认值为 `false`。 | 如果为 ，函数将每次 Excel 重新计算时重新计算，而不是仅在公式的 `true` 从属值发生更改时重新计算。 函数不能同时使用和 `stream` `volatile` 属性。 如果将 `stream` and `volatile` 属性都设置为 `true` ，则可变属性将被忽略。 |
 
 ### <a name="parameters"></a>参数
 
@@ -169,12 +170,12 @@ ms.locfileid: "49071639"
 
 |  属性  |  数据类型  |  必需  |  说明  |
 |:-----|:-----|:-----|:-----|
-|  `description`  |  字符串  |  否 |  参数的说明。 这将显示在 Excel 的 IntelliSense 中。  |
-|  `dimensionality`  |  string  |  否  |  必须是 **标量** （非数组值）或 **矩阵** （二维数组）。  |
-|  `name`  |  string  |  是  |  参数的名称。 此名称显示在 Excel 的 IntelliSense 中。  |
-|  `type`  |  string  |  否  |  参数的数据类型。 可以是 **boolean** 、 **number** 、 **string** 或 **any** ，允许使用前三种类型中的任何一种。 如果未指定此属性，则数据类型默认为 **any** 。 |
+|  `description`  |  string  |  否 |  参数的说明。 这将显示在 Excel IntelliSense。  |
+|  `dimensionality`  |  string  |  否  |  必须 (一个非数组值) 或 (一 `scalar` `matrix` 个二维数组) 。  |
+|  `name`  |  string  |  是  |  参数的名称。 此名称显示在 Excel IntelliSense。  |
+|  `type`  |  string  |  否  |  参数的数据类型。 可以是 `boolean` 、、或 ，它允许您使用前三种类型 `number` `string` `any` 中的任意一种。 如果未指定此属性，则数据类型默认值 `any` 。 |
 |  `optional`  | boolean | 否 | 如果为 `true`，则参数是可选的。 |
-|`repeating`| boolean | 否 | 如果 `true` 为，则参数将从指定的数组中填充。 请注意，根据定义，所有重复参数均被视为可选参数。  |
+|`repeating`| boolean | 否 | If `true` ，参数从指定的数组填充。 请注意，根据定义，所有重复参数都被视为可选参数。  |
 
 ### <a name="result"></a>结果
 
@@ -182,11 +183,12 @@ ms.locfileid: "49071639"
 
 | 属性         | 数据类型 | 必需 | 说明                                                                          |
 | :--------------- | :-------- | :------- | :----------------------------------------------------------------------------------- |
-| `dimensionality` | 字符串    | 否       | 必须是 **标量** （非数组值）或 **矩阵** （二维数组）。 |
+| `dimensionality` | string    | 否       | 必须是 (数组值，) 二维 (`scalar` `matrix` 数组值) 。 |
+| `type` | string    | 否       | 结果数据类型。 可以是 `boolean` `number` `string` 、、或 (，它允许您使用前 `any` 三种类型中的任意) 。 如果未指定此属性，则数据类型默认值 `any` 。 |
 
 ## <a name="associating-function-names-with-json-metadata"></a>将函数名称与 JSON 元数据相关联
 
-若要使函数正常工作，需要将函数的 `id` 属性与 JavaScript 实现相关联。 请确保存在关联，否则将无法注册该函数，也无法在 Excel 中使用它。 下面的代码示例演示如何使用方法进行关联 `CustomFunctions.associate()` 。 该示例定义了自定义函数 `add`，并将其与 JSON 元数据文件中的对象关联，其中 `id` 属性的值为 **ADD** 。
+若要使函数正常工作，需要将函数 `id` 的属性与 JavaScript 实现关联。 请确保存在关联，否则函数将不会注册且在 Excel 中不可使用。 下面的代码示例演示如何使用该方法进行 `CustomFunctions.associate()` 关联。 该示例定义了自定义函数 `add`，并将其与 JSON 元数据文件中的对象关联，其中 `id` 属性的值为 **ADD**。
 
 ```js
 /**
@@ -203,7 +205,7 @@ function add(first, second) {
 CustomFunctions.associate("ADD", add);
 ```
 
-下面的 JSON 显示了与上一个自定义函数 JavaScript 代码相关联的 JSON 元数据。
+以下 JSON 显示与以前的自定义函数 JavaScript 代码关联的 JSON 元数据。
 
 ```json
 {
@@ -240,9 +242,9 @@ CustomFunctions.associate("ADD", add);
 
 - 在将 JSON 元数据文件中的 `id` 属性的值与相应的 JavaScript 函数名称关联后，请勿再更改该值。 你可以通过更新 JSON 元数据文件中的 `name` 属性来更改最终用户在 Excel 中看到的函数名称，但绝不能更改已确定的 `id` 属性的值。
 
-- 在 JavaScript 文件中，使用每个函数的后面指定自定义函数关联 `CustomFunctions.associate` 。
+- 在 JavaScript 文件中，在每个函数之后指定 `CustomFunctions.associate` 自定义函数关联。
 
-下面的示例显示了与前面的 JavaScript 代码示例中定义的函数相对应的 JSON 元数据。 `id`和 `name` 属性值以大写形式表示，这是描述自定义函数的最佳做法。 仅当您手动准备自己的 JSON 文件，而不是使用自动生成时，才需要添加此 JSON。 有关自动生成的详细信息，请参阅自动 [生成 JSON 元数据的自定义函数](custom-functions-json-autogeneration.md)。
+以下示例显示对应于前面 JavaScript 代码示例中定义的函数的 JSON 元数据。 和 `id` 属性值为大写，这是描述自定义函数 `name` 时的最佳操作。 只有在手动准备自己的 JSON 文件而不是使用自动生成时，才需要添加此 JSON。 有关自动生成的信息，请参阅自动生成 [自定义函数的 JSON 元数据](custom-functions-json-autogeneration.md)。
 
 ```json
 {
@@ -264,7 +266,7 @@ CustomFunctions.associate("ADD", add);
 
 ## <a name="next-steps"></a>后续步骤
 
-了解 [有关命名函数](custom-functions-naming.md) 或了解如何使用前面所述的手写 JSON 方法对 [函数进行本地化](custom-functions-localize.md) 的最佳做法。
+了解[命名函数的](custom-functions-naming.md)最佳实践，或了解如何使用前面描述的手写[](custom-functions-localize.md)JSON 方法本地化函数。
 
 ## <a name="see-also"></a>另请参阅
 
