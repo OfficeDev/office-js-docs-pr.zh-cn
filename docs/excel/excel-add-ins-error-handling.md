@@ -1,14 +1,14 @@
 ---
 title: Excel JavaScript API 的错误处理
 description: 了解 Excel JavaScript API 错误处理逻辑，以考虑运行时错误。
-ms.date: 01/13/2021
+ms.date: 01/15/2021
 localization_priority: Normal
-ms.openlocfilehash: 813755a70f3662354dbfa958531da563680521c4
-ms.sourcegitcommit: 6a378d2a3679757c5014808ae9da8ababbfe8b16
+ms.openlocfilehash: 00aa1ae1c8ed39b21146d86090df912a8804c8b3
+ms.sourcegitcommit: 4fc5829d66cdd52f110d9a59dd7317b520807cbe
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/15/2021
-ms.locfileid: "49870642"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "49908904"
 ---
 # <a name="error-handling-with-the-excel-javascript-api"></a>Excel JavaScript API 的错误处理
 
@@ -71,7 +71,7 @@ Excel.run(function (context) {
 |`InvalidSelection`|当前选定内容对于此操作无效。|
 |`ItemAlreadyExists`|所创建的资源已存在。|
 |`ItemNotFound` |所请求的资源不存在。|
-|`NonBlankCellOffSheet`|无法完成插入新单元格的请求，因为它会将非空单元格推送到工作表末尾。 这些非空单元格可能显示为空白，但具有空值、某些格式或公式。 删除足够的行或列，为要插入的行或列提供空间，然后重试。|
+|`NonBlankCellOffSheet`|Microsoft Excel 无法插入新单元格，因为它会将非空单元格推送到工作表末尾。 这些非空单元格可能显示为空白，但具有空值、某些格式或公式。 删除足够的行或列，为要插入的行或列提供空间，然后重试。|
 |`NotImplemented`|所请求的功能未实现。|
 |`RangeExceedsLimit`|该范围中的单元格计数已超出支持的最大数。 有关详细信息 [，请参阅 Office](../concepts/resource-limits-and-performance-optimization.md#excel-add-ins) 外接程序的资源限制和性能优化文章。|
 |`RequestAborted`|请求在运行时已中止。|
@@ -80,7 +80,7 @@ Excel.run(function (context) {
 |`ServiceNotAvailable`|服务不可用。|
 |`Unauthenticated` |所需的身份验证信息缺少或无效。|
 |`UnsupportedOperation`|不支持正在尝试的操作。|
-|`UnsupportedSheet`|此工作表类型不支持此操作，因为它为宏或图表工作表。|
+|`UnsupportedSheet`|此工作表类型不支持此操作，因为它是宏或图表工作表。|
 
 > [!NOTE]
 > 上表列出了在使用 Excel JavaScript API 时可能遇到的错误消息。 如果你使用通用 API 而不是特定于应用程序的 Excel JavaScript API，请参阅 [Office 通用 API 错误](../reference/javascript-api-for-office-error-codes.md) 代码以了解相关的错误消息。
@@ -89,4 +89,4 @@ Excel.run(function (context) {
 
 - [Excel 加载项中的 Word JavaScript 对象模型](excel-add-ins-core-concepts.md)
 - [OfficeExtension.Error 对象（Excel JavaScript API）](/javascript/api/office/officeextension.error?view=excel-js-preview&preserve-view=true)
-- [Office 通用 API 错误代码](../reference/javascript-api-for-office-error-codes.md)
+- [Office 常用 API 错误代码](../reference/javascript-api-for-office-error-codes.md)
