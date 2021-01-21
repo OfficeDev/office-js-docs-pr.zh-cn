@@ -1,14 +1,14 @@
 ---
 title: Office 加载项使用的浏览器
 description: 指定操作系统和 Office 版本如何确定 Office 加载项使用的浏览器。
-ms.date: 01/04/2021
+ms.date: 01/20/2021
 localization_priority: Normal
-ms.openlocfilehash: 0bd231cc870322dd6f756defd14e4d67a69478b4
-ms.sourcegitcommit: 2f75a37de349251bc0e0fc402c5ae6dc5c3b8b08
+ms.openlocfilehash: c540eece3b74bb043cc8f4921c7c774511b5a60a
+ms.sourcegitcommit: 54d141cefb7bdc5f16330747d0ec8e8e2bd03e93
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "49771247"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "49916459"
 ---
 # <a name="browsers-used-by-office-add-ins"></a>Office 加载项使用的浏览器
 
@@ -31,9 +31,9 @@ Office 外接程序是 Web 应用程序，在 Office 网页版中运行时，使
 |Windows 7 | Microsoft 365| 无关紧要 | Internet Explorer 11|
 |Windows 8.1、<br>Windows 10 版本。 &nbsp; < &nbsp;1903| Microsoft 365 | 否| Internet Explorer 11|
 |Windows 10 版本。 &nbsp; >= &nbsp;1903 | Microsoft 365 ver. &nbsp; < &nbsp;16.0.11629<sup>1</sup>| 无关紧要|Internet Explorer 11|
-|Windows 10 版本。 &nbsp; >= &nbsp;1903 | Microsoft 365 ver. &nbsp; >= &nbsp;16.0.11629 &nbsp; _和_ &nbsp; < &nbsp; 16.0.13530.20316 <sup>1</sup>| 无关紧要|具有原始 WebView 的 Microsoft Edge<sup>2、3</sup> (EdgeHTML) |
-|Windows 10 版本。 &nbsp; >= &nbsp;1903 | Microsoft 365 ver. &nbsp; >= &nbsp;16.0.13530.20316<sup>1</sup>| 否 |具有原始 WebView 的 Microsoft Edge<sup>2、3</sup> (EdgeHTML) |
-|Windows 8.1<br>Windows 10| Microsoft 365 ver. &nbsp; >= &nbsp;16.0.13530.20316<sup>1</sup>| 是<sup>4</sup>|  Microsoft Edge<sup>2、3</sup> 和 WebView2 (基于 Chromium)  |
+|Windows 10 版本。 &nbsp; >= &nbsp;1903 | Microsoft 365 ver. &nbsp; >= &nbsp;16.0.11629 &nbsp; _和_ &nbsp; < &nbsp; 16.0.13530.20424 <sup>1</sup>| 无关紧要|具有原始 WebView 的 Microsoft Edge<sup>2、3</sup> (EdgeHTML) |
+|Windows 10 版本。 &nbsp; >= &nbsp;1903 | Microsoft 365 ver. &nbsp; >= &nbsp;16.0.13530.20424<sup>1</sup>| 否 |具有原始 WebView 的 Microsoft Edge<sup>2、3</sup> (EdgeHTML) |
+|Windows 8.1<br>Windows 10| Microsoft 365 ver. &nbsp; >= &nbsp;16.0.13530.20424<sup>1</sup>| 是<sup>4</sup>|  Microsoft Edge<sup>2、3</sup> 和 WebView2 (基于 Chromium)  |
 
 <sup>1</sup> 请参阅 [更新历史记录页](/officeupdates/update-history-office365-proplus-by-date) 以及如何查找 [Office 客户端版本](https://support.office.com/article/What-version-of-Office-am-I-using-932788b8-a3ce-44bf-bb09-e334518b8b19) 和更新通道，了解更多详细信息。
 
@@ -48,7 +48,7 @@ Office 外接程序是 Web 应用程序，在 Office 网页版中运行时，使
 > Internet Explorer 11 不支持高于 ES5 的 JavaScript 版本。 如果任何加载项用户具有使用 Internet Explorer 11 的平台，那么要使用 ECMAScript 2015 或更高版本的语法和功能，有两个选项：
 >
 > - 在 ECMAScript 2015 (也称为 ES6) 或更高版本的 JavaScript 中编写代码，或在 TypeScript 中编写代码，然后使用编译器（如 [#A0 或](https://babeljs.io/) [tsc）](https://www.typescriptlang.org/index.html)将代码编译为 ES5 JavaScript。
-> - 在 ECMAScript 2015 或更高版本的 JavaScript[](https://wikipedia.org/wiki/Polyfill_(programming))中编写，但也加载填充库（如[core-js）](https://github.com/zloirock/core-js)以允许 IE 运行代码。
+> - 在 ECMAScript 2015 或更高版本的 JavaScript 中编写，但也加载一 [个填充](https://wikipedia.org/wiki/Polyfill_(programming)) 库（如 [core-js）](https://github.com/zloirock/core-js) 以允许 IE 运行代码。
 >
 > 此外，Internet Explorer 11 不支持媒体、录制和位置等部分 HTML5 功能。
 
