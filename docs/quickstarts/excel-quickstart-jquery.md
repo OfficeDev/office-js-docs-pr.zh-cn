@@ -1,15 +1,15 @@
 ---
 title: 生成首个 Excel 任务窗格加载项
 description: 了解如何使用 Office JS API 生成简单的 Excel 任务窗格加载项。
-ms.date: 11/09/2020
+ms.date: 1/19/2021
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: 627c8ce235a69e6da4a15c7064a2937b1fed5d05
-ms.sourcegitcommit: ceb8dd66f3fb9c963fce8446c2f6c65ead56fbc1
+ms.openlocfilehash: 6f8bfea30cba8de818ab5a587c47786c57035b76
+ms.sourcegitcommit: 54d141cefb7bdc5f16330747d0ec8e8e2bd03e93
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "49132366"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "49916466"
 ---
 # <a name="build-an-excel-task-pane-add-in"></a>生成 Excel 任务窗格加载项
 
@@ -82,7 +82,7 @@ ms.locfileid: "49132366"
 
 2. 使用搜索框，输入“**加载项**”。 选择“**Excel Web 加载项**”，然后选择“**下一步**”。
 
-3. 对项目命名，然后选择“**创建**”。
+3. 命名项目为 **ExcelWebAddIn1** 并选择“**创建**”。
 
 4. 在“创建 Office 加载项”对话框窗口中，选择“将新功能添加到 Excel”，再选择“完成”以创建项目。
 
@@ -176,7 +176,7 @@ ms.locfileid: "49132366"
 
 ### <a name="update-the-manifest"></a>更新清单
 
-1. 打开加载项项目中的 XML 清单文件。 此文件定义的是加载项设置和功能。
+1. 在 **解决方案资源管理器** 中，转到 **ExcelWebAddIn1** 加载项项目并打开 **ExcelWebAddIn1Manifest** 目录。 此目录包含清单文件，即 **ExcelWebAddIn1.xml**。 此文件定义了加载项设置和功能。 请参阅上一节 [探索Visual Studio 解决方案](#explore-the-visual-studio-solution) ，详细了解由 Visual Studio 解决方案创建的两个项目。 
 
 2. `ProviderName` 元素具有占位符值。 将其替换为你的姓名。
 
