@@ -1,15 +1,15 @@
 ---
 title: 生成首个 Outlook 加载项
 description: 了解如何使用 Office JS API 生成简单的 Outlook 任务窗格加载项。
-ms.date: 09/22/2020
+ms.date: 01/22/2021
 ms.prod: outlook
 localization_priority: Priority
-ms.openlocfilehash: c9db8d0d69829a474867e210ea491b1872b8c100
-ms.sourcegitcommit: ceb8dd66f3fb9c963fce8446c2f6c65ead56fbc1
+ms.openlocfilehash: ae14416cd7fbcfeca10e4ace25997395fc9b44c1
+ms.sourcegitcommit: 6c5716d92312887e3d944bf12d9985560109b3c0
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "49132268"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "49944333"
 ---
 # <a name="build-your-first-outlook-add-in"></a>生成首个 Outlook 加载项
 
@@ -42,13 +42,13 @@ ms.locfileid: "49132268"
 
     - **选择项目类型** - `Office Add-in Task Pane project`
 
-    - **选择脚本类型** - `Javascript`
+    - **选择脚本类型** - `JavaScript`
 
     - **要如何命名加载项?** - `My Office Add-in`
 
     - **要支持哪一个 Office 客户端应用程序?** - `Outlook`
 
-    ![显示命令行界面中 Yeoman 生成器的提示和回答的屏幕截图](../images/yo-office-outlook.png)
+    ![显示命令行界面中 Yeoman 生成器的提示和回答的屏幕截图](../images/yo-office-outlook-1.png)
 
     完成此向导后，生成器会创建项目，并安装支持的 Node 组件。
 
