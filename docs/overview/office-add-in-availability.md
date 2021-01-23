@@ -1,14 +1,14 @@
 ---
 title: Office 客户端应用程序和平台的 Office 加载项可用性
 description: Excel、OneNote、Outlook、PowerPoint、Project 和 Word 支持的要求集。
-ms.date: 01/19/2021
+ms.date: 01/22/2021
 localization_priority: Priority
-ms.openlocfilehash: e4adb8f4349b6712d009f2920ee567dbb781e3b9
-ms.sourcegitcommit: 4fc5829d66cdd52f110d9a59dd7317b520807cbe
+ms.openlocfilehash: 1abb20ef2e215655ef395a03e8da083673118042
+ms.sourcegitcommit: 6c5716d92312887e3d944bf12d9985560109b3c0
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/20/2021
-ms.locfileid: "49908919"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "49944324"
 ---
 # <a name="office-client-application-and-platform-availability-for-office-add-ins"></a>Office 客户端应用程序和平台的 Office 加载项可用性
 
@@ -580,7 +580,7 @@ ms.locfileid: "49908919"
     <td>Android 版 Office<br>（关联至 Microsoft 365 订阅）</td>
     <td>
       - <a href="/office/dev/add-ins/reference/manifest/extensionpoint#mobilemessagereadcommandsurface">邮件阅读</a><br>
-      - <a href="/office/dev/add-ins/reference/manifest/extensionpoint#mobileonlinemeetingcommandsurface-preview">约会组织者（撰写）：联机会议</a> （预览）<br>
+      - <a href="/office/dev/add-ins/reference/manifest/extensionpoint#mobileonlinemeetingcommandsurface">约会组织者（撰写）：联机会议</a><br>
       - <a href="/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">加载项命令</a>
     </td>
     <td>
