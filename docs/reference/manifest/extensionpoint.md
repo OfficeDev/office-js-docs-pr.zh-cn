@@ -1,14 +1,14 @@
 ---
 title: 清单文件中的 ExtensionPoint 元件
 description: 定义 Office UI 中加载项公开功能的位置。
-ms.date: 05/18/2020
+ms.date: 01/22/2021
 localization_priority: Normal
-ms.openlocfilehash: d4d3a7cbb34f3fc5ed03a8e084e516b5e5803ad8
-ms.sourcegitcommit: 2f75a37de349251bc0e0fc402c5ae6dc5c3b8b08
+ms.openlocfilehash: 96bf3a6835b1a0ab6e5aa85a837515a3071e5610
+ms.sourcegitcommit: 6c5716d92312887e3d944bf12d9985560109b3c0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "49771317"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "49944303"
 ---
 # <a name="extensionpoint-element"></a>ExtensionPoint 元素
 
@@ -92,7 +92,7 @@ ms.locfileid: "49771317"
 - [AppointmentAttendeeCommandSurface](#appointmentattendeecommandsurface)
 - [Module](#module)（仅能在 [DesktopFormFactor](desktopformfactor.md) 中使用。）
 - [MobileMessageReadCommandSurface](#mobilemessagereadcommandsurface)
-- [MobileOnlineMeetingCommandSurface](#mobileonlinemeetingcommandsurface-preview)
+- [MobileOnlineMeetingCommandSurface](#mobileonlinemeetingcommandsurface)
 - [LaunchEvent](#launchevent-preview)
 - [Events](#events)
 - [DetectedEntity](#detectedentity)
@@ -259,12 +259,12 @@ ms.locfileid: "49771317"
 </ExtensionPoint>
 ```
 
-### <a name="mobileonlinemeetingcommandsurface-preview"></a>MobileOnlineMeetingCommandSurface (预览) 
-
-> [!NOTE]
-> 此扩展点仅在具有 Microsoft [](../objectmodel/preview-requirement-set/outlook-requirement-set-preview.md) 365 订阅的 Android 预览版中受支持。
+### <a name="mobileonlinemeetingcommandsurface"></a>MobileOnlineMeetingCommandSurface
 
 此扩展点在移动外形设置中约会的命令图面中设置与模式适当的切换。 会议组织者可以创建联机会议。 与会者随后可以加入联机会议。 若要了解有关此方案的信息，请参阅联机会议提供程序文章的"创建 [Outlook](../../outlook/online-meeting.md) 移动外接程序"。
+
+> [!NOTE]
+> 此扩展点仅在具有 Microsoft 365 订阅的 Android 上受支持。
 
 #### <a name="child-elements"></a>子元素
 
@@ -307,7 +307,7 @@ ms.locfileid: "49771317"
 > [!NOTE]
 > 此扩展点仅在具有 Microsoft [](../objectmodel/preview-requirement-set/outlook-requirement-set-preview.md) 365 订阅的 Outlook 网页版预览版中受支持。
 
-此扩展点使加载项能够基于桌面设备类型中的受支持事件进行激活。 目前，唯一受支持的事件是 `OnNewMessageCompose` 和 `OnNewAppointmentOrganizer` 。 若要了解有关此方案的信息，请参阅"为基于事件的激活文章配置[Outlook 外接程序"。](../../outlook/autolaunch.md)
+此扩展点使加载项能够基于桌面设备类型中的受支持事件进行激活。 目前，唯一受支持的事件是 `OnNewMessageCompose` `OnNewAppointmentOrganizer` 和 。 若要了解有关此方案的信息，请参阅"为基于事件的激活文章配置[Outlook 外接程序"。](../../outlook/autolaunch.md)
 
 #### <a name="child-elements"></a>子元素
 

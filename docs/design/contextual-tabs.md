@@ -3,12 +3,12 @@ title: 在 Office 外接程序中创建自定义上下文选项卡
 description: 了解如何将自定义上下文选项卡添加到 Office 外接程序。
 ms.date: 01/20/2021
 localization_priority: Normal
-ms.openlocfilehash: 7c9593c98bf7cc7f4e270037768be1e2de06aeb3
-ms.sourcegitcommit: 1d33ea6dd3a55fd3bc9af48737ad6d7369d30cd8
+ms.openlocfilehash: d9258b962c2cfa6aa7e3686087ed8a2e31a7d651
+ms.sourcegitcommit: 6c5716d92312887e3d944bf12d9985560109b3c0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/22/2021
-ms.locfileid: "49934343"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "49944310"
 ---
 # <a name="create-custom-contextual-tabs-in-office-add-ins-preview"></a>在 Office 加载项中创建自定义上下文选项卡（预览）
 
@@ -20,14 +20,14 @@ ms.locfileid: "49934343"
 > - [加载项命令的基本概念](add-in-commands.md)
 
 > [!IMPORTANT]
-> 自定义上下文选项卡为预览。 请在开发或测试环境中试验它们，但不要将其添加到生产外接程序。
+> 自定义上下文选项卡为预览版。 请在开发或测试环境中试验它们，但不要将其添加到生产外接程序。
 >
 > 自定义上下文选项卡当前仅在 Excel 上受支持，并且仅在以下平台和内部版本上受支持：
 >
 > - 仅适用于 Windows (Microsoft 365 上的 Excel，而不是永久许可证) ：版本 2011 (内部版本 13426.20274) 。 你的 Microsoft 365 订阅可能需要位于当前频道 [ (预览版) ](https://insider.office.com/join/windows) 以前称为"每月频道 (定向) "或"预览体验成员慢"。
 
 > [!NOTE]
-> 自定义上下文选项卡仅适用于支持以下要求集的平台。 有关要求集以及如何使用它们，请参阅"指定 Office 应用程序和 API 要求["。](../develop/specify-office-hosts-and-api-requirements.md)
+> 自定义上下文选项卡仅适用于支持以下要求集的平台。 有关要求集以及如何使用它们，请参阅"指定 Office 应用程序和[API 要求"。](../develop/specify-office-hosts-and-api-requirements.md)
 >
 > - [SharedRuntime 1.1](../reference/requirement-sets/shared-runtime-requirement-sets.md)
 
@@ -37,7 +37,7 @@ ms.locfileid: "49934343"
 
 - 当自定义上下文选项卡可见时，它将显示在功能区的右端。
 - 如果加载项中的一个或多个内置上下文选项卡和一个或多个自定义上下文选项卡同时可见，则自定义上下文选项卡始终位于所有内置上下文选项卡的右侧。
-- 如果您的外接程序具有多个上下文选项卡，并且存在多个可见上下文，则它们按照在外接程序中定义的顺序显示。  (方向与 Office 语言的方向相同;也就是说，使用从左到右的语言从左到右，但从右到左使用从右到左的语言。) 请参阅"定义选项卡上出现的组和控件[](#define-the-groups-and-controls-that-appear-on-the-tab)"，详细了解如何定义组和控件。
+- 如果您的外接程序具有多个上下文选项卡，并且存在多个可见上下文，则它们按照在外接程序中定义的顺序显示。  (方向与 Office 语言的方向相同;也就是说，使用从左到右的语言从左到右，但从右到左使用从右到左的语言。) 请参阅"定义选项卡上出现的组和控件[](#define-the-groups-and-controls-that-appear-on-the-tab)"，详细了解如何定义它们。
 - 如果多个加载项具有特定上下文中可见的上下文选项卡，则它们按加载项的启动顺序显示。
 - 自定义 *上下文* 选项卡与自定义核心选项卡不同，不会永久添加到 Office 应用程序的功能区。 它们仅存在于运行加载项的 Office 文档中。
 
@@ -45,14 +45,14 @@ ms.locfileid: "49934343"
 
 以下是在加载项中添加自定义上下文选项卡的主要步骤：
 
-1. 将外接程序配置为使用共享运行时。
+1. 配置外接程序以使用共享运行时。
 1. 定义选项卡及其上出现的组和控件。
 1. 向 Office 注册上下文选项卡。
 1. 指定选项卡可见时的情况。
 
-## <a name="configure-the-add-in-to-use-a-shared-runtime"></a>配置外接程序以使用共享运行时
+## <a name="configure-the-add-in-to-use-a-shared-runtime"></a>配置加载项以使用共享运行时
 
-添加自定义上下文选项卡要求加载项使用共享运行时。 有关详细信息，请参阅 [配置外接程序以使用共享运行时](../develop/configure-your-add-in-to-use-a-shared-runtime.md)。
+添加自定义上下文选项卡需要加载项使用共享运行时。 有关详细信息，请参阅 [配置外接程序以使用共享运行时](../develop/configure-your-add-in-to-use-a-shared-runtime.md)。
 
 ## <a name="define-the-groups-and-controls-that-appear-on-the-tab"></a>定义显示在选项卡上的组和控件
 
@@ -61,10 +61,10 @@ ms.locfileid: "49934343"
 > [!NOTE]
 > JSON blob 的属性和子属性 (和键名称) 的结构大致与清单 XML 中 [CustomTab](../reference/manifest/customtab.md) 元素及其后代元素的结构平行。
 
-我们将分步构造上下文选项卡 JSON blob 的示例。  (上下文选项卡 JSON 的完整架构位于dynamic-ribbon.schema.js[ 上](https://developer.microsoft.com/json-schemas/office-js/dynamic-ribbon.schema.json)。 此链接在上下文选项卡的早期预览阶段可能无法运行。 如果链接不工作，您可以在 .) 上的草稿 [dynamic-ribbon.schema.js](https://github.com/OfficeDev/testing-assets/tree/master/jsonschema/dynamic-ribbon.schema.json)找到架构的最新草稿（如果您使用 Visual Studio Code，您可以使用此文件获取 IntelliSense 并验证 JSON。 有关详细信息，请参阅编辑 [JSON 和Visual Studio代码 - JSON 架构和设置](https://code.visualstudio.com/docs/languages/json#_json-schemas-and-settings)。
+我们将分步构造上下文选项卡 JSON blob 的示例。  (上下文选项卡 JSON 的完整架构位于dynamic-ribbon.schema.js[ 上](https://developer.microsoft.com/json-schemas/office-js/dynamic-ribbon.schema.json)。 此链接在上下文选项卡的预览阶段可能未运行。 如果链接不工作，您可以在 .) 上的草稿 [dynamic-ribbon.schema.js](https://github.com/OfficeDev/testing-assets/tree/master/jsonschema/dynamic-ribbon/1.0/dynamic-ribbon.schema.json)找到架构的最新草稿（如果您使用 Visual Studio Code，您可以使用此文件获取 IntelliSense 并验证 JSON。 有关详细信息，请参阅编辑 [JSON 和Visual Studio代码 - JSON 架构和设置](https://code.visualstudio.com/docs/languages/json#_json-schemas-and-settings)。
 
 
-1. 首先创建一个 JSON 字符串，该字符串具有名为 和 的两个 `actions` 数组属性 `tabs` 。 该数组是上下文选项卡上的控件可以执行的所有函数 `actions` 的规范。数组 `tabs` 定义一个或多个上下文选项卡，最多 *20 个*。
+1. 首先创建一个包含名为 和 的两个数组属性的 JSON `actions` 字符串 `tabs` 。 该数组是上下文选项卡上的控件可以执行的所有函数 `actions` 的规范。数组 `tabs` 定义一个或多个上下文选项卡，最多 *20 个*。
 
     ```json
     '{
@@ -114,8 +114,8 @@ ms.locfileid: "49934343"
 1. 在简单的正在进行的示例中，上下文选项卡只有一个组。 将以下内容添加为数组的唯一 `groups` 成员。 关于此标记，请注意：
 
     - 所有属性都是必需的。
-    - 该属性 `id` 在选项卡的所有组中必须是唯一的。请使用简短的描述性 ID。
-    - `label`这是一个用户友好字符串，用作组的标签。
+    - 该属性在选项卡的所有组中必须是唯一的。 `id` 请使用简短的描述性 ID。
+    - 这是 `label` 一个用户友好字符串，用作组的标签。
     - 该属性的值是一组对象，这些对象根据功能区的大小和 Office 应用程序窗口指定组将在功能区上具有 `icon` 的图标。
     - `controls`该属性的值是指定组中按钮和菜单的对象数组。 必须至少有一个。
 
@@ -164,7 +164,7 @@ ms.locfileid: "49934343"
     - `label` 是用作按钮标签的用户友好字符串。
     - `superTip` 表示工具提示的丰富形式。 和 `title` `description` 属性都是必需的。
     - `icon` 指定按钮的图标。 前面有关组图标的备注也适用于此处。
-    - `enabled` (可选) 指定在上下文选项卡启动时是否启用按钮。 如果不存在，则默认值为 `true` 。 
+    - `enabled` (可选) 指定在上下文选项卡启动时是否启用按钮。 如果不存在，则默认为 `true` 。 
 
     ```json
     {
@@ -251,7 +251,7 @@ ms.locfileid: "49934343"
 
 ## <a name="register-the-contextual-tab-with-office-with-requestcreatecontrols"></a>使用 requestCreateControls 向 Office 注册上下文选项卡
 
-上下文选项卡通过调用[Office.ribbon.requestCreateControls 方法注册到 Office。](/javascript/api/office/office.ribbon?view=common-js&preserve-view=true#requestCreateControls_tabDefinition_) 这通常在分配给方法的函数中完成， `Office.initialize` 或随方法 `Office.onReady` 一起完成。 有关这些方法和初始化外接程序的更多信息，请参阅["初始化 Office 外接程序"。](../develop/initialize-add-in.md) 但是，可以在初始化后随时调用该方法。
+上下文选项卡通过调用[Office.ribbon.requestCreateControls 方法注册到 Office。](/javascript/api/office/office.ribbon?view=common-js&preserve-view=true#requestCreateControls_tabDefinition_) 这通常在分配给该方法的函数中完成， `Office.initialize` 或随方法 `Office.onReady` 一起完成。 有关这些方法和初始化外接程序的更多信息，请参阅["初始化 Office 外接程序"。](../develop/initialize-add-in.md) 但是，可以在初始化后随时调用该方法。
 
 > [!IMPORTANT]
 > `requestCreateControls`该方法只能在加载项的给定会话中调用一次。 如果再次调用错误，将引发错误。
@@ -292,7 +292,7 @@ Office.onReady(async () => {
 接下来，定义处理程序。 下面是一个简单示例，但请参阅本文稍后介绍的"处理 `showDataTab` [HostRestartNeeded](#handling-the-hostrestartneeded-error) 错误"，了解函数的更可靠版本。 关于此代码，请注意以下几点：
 
 - Office 控制何时更新功能区的状态。 [Office.ribbon.requestUpdate](/javascript/api/office/office.ribbon?view=common-js&preserve-view=true#requestupdate-input-)方法将更新请求排成队列。 一旦将请求排入队列，该方法将解析该对象，而不是功能 `Promise` 区实际更新时。
-- 该方法的参数是 `requestUpdate` [RibbonUpdaterData](/javascript/api/office/office.ribbonupdaterdata) 对象， (1) 按 *其 ID* 指定选项卡，而 (2) 指定选项卡的可见性。
+- 该方法的参数是 `requestUpdate` [RibbonUpdaterData](/javascript/api/office/office.ribbonupdaterdata) 对象， (1) 按其 ID 指定 *选项卡* ，而 (2) 指定选项卡的可见性。
 - 如果多个自定义上下文选项卡应在同一上下文中可见，只需向数组添加其他 `tabs` 选项卡对象。
 
 ```javascript
@@ -321,7 +321,7 @@ const showDataTab = async () => {
 
 ### <a name="toggle-tab-visibility-and-the-enabled-status-of-a-button-at-the-same-time"></a>同时切换选项卡可见性和按钮的启用状态
 
-该方法还用于切换自定义上下文选项卡或自定义核心选项卡上自定义按钮的启用 `requestUpdate` 或禁用状态。有关此内容的详细信息，请参阅["启用和禁用外接程序命令"。](disable-add-in-commands.md) 在某些情况下，你可能希望同时更改选项卡的可见性和按钮的启用状态。 可以通过一次调用来执行此操作 `requestUpdate` 。 下面是一个示例，在使上下文选项卡可见的同时启用核心选项卡上的按钮。
+该方法还用于在自定义上下文选项卡或自定义核心选项卡上切换自定义按钮的启用 `requestUpdate` 或禁用状态。有关此内容的详细信息，请参阅["启用和禁用外接程序命令"。](disable-add-in-commands.md) 在某些情况下，你可能希望同时更改选项卡的可见性和按钮的启用状态。 可以通过单个调用来此操作 `requestUpdate` 。 下面是一个示例，在使上下文选项卡可见的同时启用核心选项卡上的按钮。
 
 ```javascript
 function myContextChanges() {
