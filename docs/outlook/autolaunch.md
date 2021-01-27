@@ -2,14 +2,14 @@
 title: '为 Outlook 外接程序配置基于事件的激活和 (预览) '
 description: 了解如何为基于事件的激活配置 Outlook 外接程序。
 ms.topic: article
-ms.date: 01/06/2021
+ms.date: 01/25/2021
 localization_priority: Normal
-ms.openlocfilehash: d6893733af52bba7917531b2e8d5a442ce3dcd77
-ms.sourcegitcommit: d28392721958555d6edea48cea000470bd27fcf7
+ms.openlocfilehash: 4790de491b84cfba3b64bfb6c176e7bf1ff42ec7
+ms.sourcegitcommit: adbc9d59ffa5efdff5afa9115e0990544f2246ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/13/2021
-ms.locfileid: "49839829"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "49990503"
 ---
 # <a name="configure-your-outlook-add-in-for-event-based-activation-preview"></a>为 Outlook 外接程序配置基于事件的激活和 (预览) 
 
@@ -21,7 +21,7 @@ ms.locfileid: "49839829"
   > [!IMPORTANT]
   > 在编辑 **项目** （例如草稿或现有约会）时，此功能不会激活。
 
-在此演练结束时，您将具有一个在新建邮件时运行的外接程序。
+在此演练结束时，您将拥有一个在新建邮件时运行的外接程序。
 
 > [!IMPORTANT]
 > 此功能仅在具有 Microsoft [](../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md) 365 订阅的 Outlook 网页版中受预览支持。 请参阅 [本文中](#how-to-preview-the-event-based-activation-feature) 如何预览基于事件的激活功能，了解更多详细信息。
@@ -35,7 +35,7 @@ ms.locfileid: "49839829"
 预览此功能：
 
 - 引用 **CDN** 版本上的 beta https://appsforoffice.microsoft.com/lib/beta/hosted/office.js) (。 TypeScript [编译和](https://appsforoffice.microsoft.com/lib/beta/hosted/office.d.ts) 编译的类型IntelliSense CDN 和 [DefinitelyTyped 找到](https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/master/types/office-js-preview/index.d.ts)。 可以安装这些类型 `npm install --save-dev @types/office-js-preview` 。
-- [在 Microsoft 365 租户](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide&preserve-view=true#set-up-the-release-option-in-the-admin-center)上配置定向发布。
+- [在 Microsoft 365 租户上配置定向发布](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide&preserve-view=true#set-up-the-release-option-in-the-admin-center)。
 
 ## <a name="set-up-your-environment"></a>设置环境
 
@@ -49,7 +49,7 @@ ms.locfileid: "49839829"
 
 1. 打开 **manifest.xml** 根目录下的文件。
 
-1. 选择整个 `<VersionOverrides>` 节点 (包括打开和关闭) 并将其替换为以下 XML。
+1. 选择整个 `<VersionOverrides>` 节点 (包括打开和关闭标记) 并将其替换为以下 XML。
 
 ```XML
 <VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides" xsi:type="VersionOverridesV1_0">
@@ -150,7 +150,7 @@ ms.locfileid: "49839829"
 </VersionOverrides>
 ```
 
-Windows 上的 Outlook 使用 JavaScript 文件，而 Web 上的 Outlook 使用引用同一 JavaScript 文件的 HTML 文件。 您必须在清单中提供对这两个文件的引用，因为 Outlook 平台最终确定是使用基于 Outlook 客户端的 HTML 还是 JavaScript。 因此，若要配置事件处理，请提供 HTML 在元素中的位置，然后在其子元素中提供 HTML 内附或引用 `Runtime` `Override` 的 JavaScript 文件的位置。
+Windows 上的 Outlook 使用 JavaScript 文件，而 Web 上的 Outlook 使用引用同一 JavaScript 文件的 HTML 文件。 您必须在清单中提供对这两个文件的引用，因为 Outlook 平台最终决定是使用 HTML 还是基于 Outlook 客户端的 JavaScript。 因此，若要配置事件处理，请提供 HTML 在元素中的位置，然后在其子元素中提供 HTML 内附或引用 `Runtime` `Override` 的 JavaScript 文件的位置。
 
 > [!TIP]
 > 若要了解有关 Outlook 外接程序清单的更多信息，请参阅 [Outlook 外接程序清单](manifests.md)。
@@ -213,7 +213,7 @@ Windows 上的 Outlook 使用 JavaScript 文件，而 Web 上的 Outlook 使用�
 
 ## <a name="event-based-activation-behavior-and-limitations"></a>基于事件的激活行为和限制
 
-基于事件激活的外接程序设计为短时间运行，最多 330 秒。 我们建议你让加载项调用该方法，以表明它 `event.completed` 已完成处理启动事件。 当用户关闭撰写窗口时，外接程序也会结束。
+基于事件激活的外接程序设计为短时间运行，最多 300 秒。 我们建议你让加载项调用该方法，以表明它 `event.completed` 已完成处理启动事件。 当用户关闭撰写窗口时，外接程序也会结束。
 
 如果用户有多个订阅同一事件的加载项，Outlook 平台将按特定顺序启动外接程序。 目前，只能主动运行五个基于事件的加载项。 任何其他加载项将推送到队列，然后随着之前处于活动状态的加载项完成或停用而运行。
 
