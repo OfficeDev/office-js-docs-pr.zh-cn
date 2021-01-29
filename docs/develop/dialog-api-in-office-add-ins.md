@@ -1,21 +1,21 @@
 ---
 title: 在 Office 加载项中使用 Office 对话框 API
-description: 了解在 Office 外接程序中创建对话框的基础知识。
-ms.date: 10/21/2020
+description: 了解在 Office 加载项中创建对话框的基础知识。
+ms.date: 01/28/2021
 localization_priority: Normal
-ms.openlocfilehash: 56c12aa5b15f8f79273923402c5a5bfa92a2dde8
-ms.sourcegitcommit: ceb8dd66f3fb9c963fce8446c2f6c65ead56fbc1
+ms.openlocfilehash: bece18d6b861db97c1f4b455e8ab4ff9ce83a5a8
+ms.sourcegitcommit: 3123b9819c5225ee45a5312f64be79e46cbd0e3c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "49131757"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "50043881"
 ---
 # <a name="use-the-office-dialog-api-in-office-add-ins"></a>在 Office 加载项中使用 Office 对话框 API
 
 可以在 Office 加载项中使用 [Office 对话框 API](/javascript/api/office/office.ui) 打开对话框。 本文提供了有关如何在 Office 加载项中使用对话框 API 的指南。
 
 > [!NOTE]
-> 若要了解对话框 API 目前的受支持情况，请参阅[对话框 API 要求集](../reference/requirement-sets/dialog-api-requirement-sets.md)。 Excel、PowerPoint 和 Word 目前支持对话框 API。 有关各种邮箱要求集的 Outlook 支持包括 &mdash; ：有关更多详细信息，请参阅 API 参考。
+> 若要了解对话框 API 目前的受支持情况，请参阅[对话框 API 要求集](../reference/requirement-sets/dialog-api-requirement-sets.md)。 Excel、PowerPoint 和 Word 当前支持对话框 API。 各种邮箱要求集都包含 Outlook 支持， &mdash; 有关详细信息，请参阅 API 参考。
 
 对话框 API 的主要应用场景是为 Google、Facebook 或 Microsoft Graph 等资源启用身份验证。 有关详细信息，请在熟悉本文 *之后*，参阅 [使用 Office 对话框 API 进行身份验证](auth-with-office-dialog-api.md)。
 
@@ -26,13 +26,13 @@ ms.locfileid: "49131757"
 - 托管在任务窗格中显得太小的视频。
 
 > [!NOTE]
-> 由于不赞成重叠 UI 元素，因此除非应用场景需要，否则请勿从任务窗格打开对话框。 考虑如何使用任务窗格区域时，请注意任务窗格中可以有选项卡。 有关示例，请参阅 [Excel 加载项 JavaScript SalesTracker](https://github.com/OfficeDev/Excel-Add-in-JavaScript-SalesTracker) 样本。
+> 由于不赞成重叠 UI 元素，因此除非应用场景需要，否则请勿从任务窗格打开对话框。 考虑如何使用任务窗格区域时，请注意任务窗格中可以有选项卡。 有关选项卡式任务窗格的示例，请参阅 [Excel 外接程序 JavaScript SalesTracker](https://github.com/OfficeDev/Excel-Add-in-JavaScript-SalesTracker) 示例。
 
 下图展示了对话框示例。
 
-![显示在 Word 前面显示有3个登录选项的对话框的屏幕截图](../images/auth-o-dialog-open.png)
+![Screenshot showing dialog with 3 sign-in options displayed in front of Word](../images/auth-o-dialog-open.png)
 
-请注意，对话框总是在屏幕的中心打开。 用户可以移动并重设对话框的大小。 窗口为 *是非*--用户可以继续与 Office 应用程序中的文档和任务窗格中的页面进行交互（如果有的话）。
+请注意，对话框总是在屏幕的中心打开。 用户可以移动并重设对话框的大小。 该窗口 *是非* 模式的 ，用户可以继续与 Office 应用程序中的文档和任务窗格中的页面（如果有）进行交互。
 
 ## <a name="open-a-dialog-box-from-a-host-page"></a>从主机页面打开对话框
 
@@ -61,7 +61,7 @@ Office.context.ui.displayDialogAsync('https://myAddinDomain/myDialog.html');
 Office.context.ui.displayDialogAsync('https://myDomain/myDialog.html', {height: 30, width: 20});
 ```
 
-有关实现这一点的样本加载项，请参阅 [Office 加载项 Dialog API 示例](https://github.com/OfficeDev/Office-Add-in-Dialog-API-Simple-Example)。
+有关实现这一点的样本加载项，请参阅 [Office 加载项 Dialog API 示例](https://github.com/OfficeDev/Office-Add-in-Dialog-API-Simple-Example)。 有关使用示例的更多 `displayDialogAsync` 示例，请参阅 [示例](#samples)。
 
 将两个值均设置为 100% 可有效提供全屏体验。（有效最大值为 99.5%，窗口仍可移动和调整大小。）
 
@@ -79,14 +79,14 @@ Office.context.ui.displayDialogAsync('https://myDomain/myDialog.html', {height: 
 默认值为 `false`，与完全省略此属性时相同。 如果加载项没有在 Office 网页版中运行，`displayInIframe` 将被忽略。
 
 > [!NOTE]
-> 如果对话框始终重定向到无法在 iframe 中打开的页面，**不** 得使用 `displayInIframe: true`。 例如，不能在 iframe 中打开许多常用 web 服务（如 Google 和 Microsoft 帐户）的 "登录" 页面。
+> 如果对话框始终重定向到无法在 iframe 中打开的页面，**不** 得使用 `displayInIframe: true`。 例如，许多热门 Web 服务的登录页面（如 Google 和 Microsoft 帐户）无法在 iframe 中打开。
 
 ## <a name="send-information-from-the-dialog-box-to-the-host-page"></a>将信息从对话框发送到主机页
 
 对话框无法与任务窗格中的主机页进行通信，除非：
 
 - 对话框中的当前页面与主机页在同一个域中。
-- 在页面中加载 Office JavaScript API 库。  (与使用 Office JavaScript API 库的任何页面一样，页面的脚本必须为属性分配方法 `Office.initialize` ，尽管它可以是空方法。 有关详细信息，请参阅 [初始化 Office 外接程序](initialize-add-in.md)。 ) 
+- Office JavaScript API 库将加载到页面中。  (与使用 Office JavaScript API 库的任何页面一样，页面的脚本必须为属性分配方法，尽管它可以是 `Office.initialize` 一个空方法。 有关详细信息，请参阅 ["初始化 Office 外接程序](initialize-add-in.md).) 
 
 对话框中的代码使用 [messageParent](/javascript/api/office/office.ui#messageparent-message-) 函数，向主机页发送布尔值或字符串消息。 字符串可以是单词、句子、XML blob、字符串化 JSON 或其他任何能够序列化成字符串的内容。 示例如下：
 
@@ -98,8 +98,8 @@ if (loginSuccess) {
 
 > [!IMPORTANT]
 > - `messageParent` 函数只能在与主机页位于同一域（包括协议和端口）的页面上调用。
-> - `messageParent`函数 *只* 是可在对话框中调用的两个 Office JS api 之一。
-> - 可以在对话框中调用的其他 JS API 为 `Office.context.requirements.isSetSupported` 。 有关它的信息，请参阅 [指定 Office 应用程序和 API 要求](specify-office-hosts-and-api-requirements.md)。 但是，在该对话框中，Outlook 2016 1-time purchase (中不支持此 API，即 MSI 版本) 。
+> - 该 `messageParent` 函数是 *对话框中唯一* 可以调用的两个 Office JS API 之一。
+> - 可以在对话框中调用的其他 JS API 是 `Office.context.requirements.isSetSupported` 。 有关它的信息，请参阅 [指定 Office 应用程序和 API 要求](specify-office-hosts-and-api-requirements.md)。 但是，在对话框中，此 API 在 Outlook 2016 一次购买 (即 MSI 版本) 。
 
 在下一个示例中，`googleProfile` 是用户 Google 配置文件的字符串化版本。
 
@@ -137,7 +137,7 @@ function processMessage(arg) {
 ```
 
 > [!NOTE]
-> - Office 将 `arg` 对象传递给处理程序。 它的 `message` 属性是对话框中的 `messageParent` 调用发送的布尔值或字符串。 在此示例中，它是用户配置文件从 Microsoft 帐户或 Google 等服务的字符串化表示形式，因此它将被反序列化为使用的对象 `JSON.parse` 。
+> - Office 将 `arg` 对象传递给处理程序。 它的 `message` 属性是对话框中的 `messageParent` 调用发送的布尔值或字符串。 本示例中，它是 Microsoft 帐户或 Google 等服务中用户配置文件的字符串化表示形式，因此它将反初始化回具有 `JSON.parse` 的对象。
 > - 未显示 `showUserName` 实现。它可能在任务窗格上显示定制的欢迎消息。
 
 在用户完成与对话框的交互后，消息处理程序应关闭对话框，如下面的示例所示。
@@ -170,7 +170,7 @@ function processMessage(arg) {
 
 ### <a name="conditional-messaging"></a>条件消息
 
-由于可以从对话框发送多个 `messageParent` 调用，但在主机页中只有一个 `DialogMessageReceived` 事件处理程序，因此处理程序必须使用条件逻辑来区分不同的消息。 例如，如果对话框提示用户登录到标识提供程序（如 Microsoft 帐户或 Google），则它会将用户的配置文件作为邮件发送。 如果身份验证失败，对话框会将错误消息发送到主机页，如下面的示例所示：
+由于可以从对话框发送多个 `messageParent` 调用，但在主机页中只有一个 `DialogMessageReceived` 事件处理程序，因此处理程序必须使用条件逻辑来区分不同的消息。 例如，如果对话框提示用户登录标识提供程序（如 Microsoft 帐户或 Google），则它会以邮件身份发送用户配置文件。 如果身份验证失败，对话框会将错误消息发送到主机页，如下面的示例所示：
 
 ```js
 if (loginSuccess) {
@@ -212,11 +212,11 @@ function processMessage(arg) {
 
 ## <a name="pass-information-to-the-dialog-box"></a>向对话框传递信息
 
-您的外接程序可以使用[messageChild](/javascript/api/office/office.dialog#messagechild-message-)将邮件从[主机页面](dialog-api-in-office-add-ins.md#open-a-dialog-box-from-a-host-page)发送到对话框。
+加载项可以使用[Dialog.messageChild](/javascript/api/office/office.dialog#messagechild-message-)[](dialog-api-in-office-add-ins.md#open-a-dialog-box-from-a-host-page)将消息从主机页发送到对话框。
 
-### <a name="use-messagechild-from-the-host-page"></a>`messageChild()`从主机页使用
+### <a name="use-messagechild-from-the-host-page"></a>从 `messageChild()` 主机页使用
 
-调用 Office 对话框 API 打开对话框时，将返回 [dialog](/javascript/api/office/office.dialog) 对象。 应将其分配给具有大于 [displayDialogAsync](/javascript/api/office/office.ui#displaydialogasync-startaddress--callback-) 方法的作用域的变量，因为该对象将被其他方法引用。 示例如下：
+调用 Office 对话框 API 打开对话框时，将 [返回 Dialog](/javascript/api/office/office.dialog) 对象。 应将其分配给范围大于 [displayDialogAsync](/javascript/api/office/office.ui#displaydialogasync-startaddress--callback-) 方法的变量，因为该对象将被其他方法引用。 示例如下：
 
 ```javascript
 var dialog;
@@ -235,9 +235,9 @@ function processMessage(arg) {
 }
 ```
 
-此 `Dialog` 对象具有一个 [messageChild](/javascript/api/office/office.dialog#messagechild-message-) 方法，该方法将任何字符串（包括字符串化数据）发送到对话框。 这 `DialogParentMessageReceived` 将在对话框中引发事件。 您的代码应处理此事件，如下一节中所示。
+此 `Dialog` 对象具有 [一个 messageChild](/javascript/api/office/office.dialog#messagechild-message-) 方法，该方法将任何字符串（包括字符串化数据）发送到对话框。 这将在 `DialogParentMessageReceived` 对话框中引发事件。 代码应处理此事件，如下一节所示。
 
-假设对话框的 UI 与当前活动的工作表相关，并且该工作表相对于其他工作表的位置。 在下面的示例中， `sheetPropertiesChanged` 将 Excel 工作表属性发送到对话框。 在这种情况下，当前工作表名为 "我的工作表"，并且它是工作簿中的第二个工作表。 数据封装在对象和字符串化中，以便可以将其传递给 `messageChild` 。
+请考虑对话框的 UI 与当前活动工作表以及该工作表相对于其他工作表的位置相关的方案。 在下面的示例中， `sheetPropertiesChanged` 将 Excel 工作表属性发送到对话框。 在这种情况下，当前工作表名为"My Sheet"，它是工作簿中的第二个工作表。 数据封装在对象中并经过字符串化，以便可以传递给 `messageChild` 。
 
 ```javascript
 function sheetPropertiesChanged() {
@@ -250,9 +250,9 @@ function sheetPropertiesChanged() {
 }
 ```
 
-### <a name="handle-dialogparentmessagereceived-in-the-dialog-box"></a>在对话框中处理 DialogParentMessageReceived
+### <a name="handle-dialogparentmessagereceived-in-the-dialog-box"></a>处理对话框中的 DialogParentMessageReceived
 
-在对话框的 JavaScript 中， `DialogParentMessageReceived` 使用 [addHandlerAsync](/javascript/api/office/office.ui#addhandlerasync-eventtype--handler--options--callback-) 方法为事件注册处理程序。 通常在 [onReady 或 Office.initialize 方法](initialize-add-in.md)中执行此操作，如下所示。  (更强健的示例如下所示。 ) 
+在对话框的 JavaScript 中，使用 `DialogParentMessageReceived` [UI.addHandlerAsync](/javascript/api/office/office.ui#addhandlerasync-eventtype--handler--options--callback-) 方法注册事件的处理程序。 这通常在 [Office.onReady 或 Office.initialize](initialize-add-in.md)方法中完成，如下所示。  (.) 
 
 ```javascript
 Office.onReady()
@@ -263,7 +263,7 @@ Office.onReady()
     });
 ```
 
-然后，定义该 `onMessageFromParent` 处理程序。 下面的代码将继续上一节中的示例。 请注意，Office 会将参数传递给处理程序，并确保 `message` argument 对象的属性包含主机页中的字符串。 在此示例中，邮件被 reconverted 到对象，jQuery 用于将对话框的顶部标题设置为与新工作表名称相匹配。
+然后，定义 `onMessageFromParent` 处理程序。 下面的代码继续上一节中的示例。 请注意，Office 将参数传递给处理程序，并且参数对象 `message` 的属性包含主机页中的字符串。 本示例中，将消息重新转换到对象，jQuery 用于设置对话框的顶部标题，以匹配新的工作表名称。
 
 ```javascript
 function onMessageFromParent(event) {
@@ -272,7 +272,7 @@ function onMessageFromParent(event) {
 }
 ```
 
-最佳做法是验证是否正确注册了处理程序。 为此，可以将回调传递给 `addHandlerAsync` 方法。 注册处理程序的尝试完成时，将运行此过程。 如果未成功注册处理程序，请使用该处理程序记录或显示错误。 示例如下。 请注意，这 `reportError` 是未在此处定义的函数，它会记录或显示错误。
+最佳做法是验证处理程序是否正确注册。 为此，可以将回调传递给 `addHandlerAsync` 方法。 此操作在注册处理程序的尝试完成时运行。 如果处理程序未成功注册，请使用处理程序记录或显示错误。 示例如下。 请注意 `reportError` ，这是一个记录或显示错误的函数，未在此处定义。
 
 ```javascript
 Office.onReady()
@@ -290,15 +290,15 @@ function onRegisterMessageComplete(asyncResult) {
 }
 ```
 
-### <a name="conditional-messaging-from-parent-page-to-dialog-box"></a>"将父页的条件消息传递到" 对话框
+### <a name="conditional-messaging-from-parent-page-to-dialog-box"></a>从父页面到对话框的条件消息
 
-由于可以 `messageChild` 从主机页进行多次调用，但在该事件的对话框中只有一个处理程序 `DialogParentMessageReceived` ，因此处理程序必须使用条件逻辑来区分不同的消息。 您可以按照与 [条件消息](#conditional-messaging)中所述的方式将消息发送到主机页时，精确地与构造条件消息传递的方式完全并行。
+由于可以从主机页进行多次调用，但在事件的对话框中只有一个处理程序，因此处理程序必须使用条件逻辑来区分 `messageChild` `DialogParentMessageReceived` 不同的消息。 您可以以与对话框向主机页面发送邮件时构造条件消息的方式完全一样的方式完成此操作，如条件消息 [中所述](#conditional-messaging)。
 
 > [!NOTE]
-> 在某些情况下， `messageChild` 可能不支持作为 [DialogApi 1.2 要求集](../reference/requirement-sets/dialog-api-requirement-sets.md)的一部分的 API。 以 [其他方式将邮件从其主机页传递到对话框，以其他方式](parent-to-dialog.md)对 "父对话" 对话消息进行描述。
+> 在某些情况下 `messageChild` ，API（属于 [DialogApi 1.2](../reference/requirement-sets/dialog-api-requirement-sets.md)要求集）可能不受支持。 一些用于父到对话框消息传递的替代方法被描述为将邮件从其主机页传递到 [对话框的替代方法](parent-to-dialog.md)。
 
 > [!IMPORTANT]
-> 不能在外接程序清单的部分中指定 [DialogApi 1.2 要求集](../reference/requirement-sets/dialog-api-requirement-sets.md) `<Requirements>` 。 您必须在运行时使用 [isSetSupported](specify-office-hosts-and-api-requirements.md#use-runtime-checks-in-your-javascript-code) 方法检查是否支持 DialogApi 1.2。 对清单要求的支持正在开发中。
+> 无法在加载项清单的部分中指定 [DialogApi 1.2](../reference/requirement-sets/dialog-api-requirement-sets.md) 要求 `<Requirements>` 集。 你将必须在运行时使用 [isSetSupported](specify-office-hosts-and-api-requirements.md#use-runtime-checks-in-your-javascript-code) 方法检查对 DialogApi 1.2 的支持。 对清单要求的支持正在开发中。
 
 ## <a name="closing-the-dialog-box"></a>关闭对话框
 
@@ -346,3 +346,34 @@ function processMessage(arg) {
 ## <a name="next-steps"></a>后续步骤
 
 在“[Office 对话框 API 最佳做法和规则](dialog-best-practices.md)”中了解 Office 对话框 API 的陷阱和最佳做法。
+
+## <a name="samples"></a>示例
+
+以下所有示例均使用 `displayDialogAsync` 。 一些服务器基于 NodeJS，另一些ASP.NET/IIS-based服务器，但无论加载项的服务器端如何实现，使用此方法的逻辑都是相同的。
+
+**基础知识：**
+
+- [Office 外接程序对话框 API 示例](https://github.com/OfficeDev/Office-Add-in-Dialog-API-Simple-Example)
+- [培训内容/生成外接程序 (示例) ](https://github.com/OfficeDev/TrainingContent/tree/2db14a16774e1539a3eebae7dada4798142b8493/OfficeAddin)
+
+**更复杂的示例：**
+
+- [Office 加载项 Microsoft Graph ASPNET](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Samples/auth/Office-Add-in-Microsoft-Graph-ASPNET)
+- [Office 加载项 Microsoft Graph React](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Samples/auth/Office-Add-in-Microsoft-Graph-React)
+- [Office 加载项 NodeJS SSO](https://github.com/OfficeDev/Office-Add-in-NodeJS-SSO)
+- [Office 外接程序 ASPNET SSO](https://github.com/OfficeDev/Office-Add-in-ASPNET-SSO)
+- [Office 外接程序 SAAS 盈利示例](https://github.com/OfficeDev/office-add-in-saas-monetization-sample)
+- [Outlook 外接程序 Microsoft Graph ASPNET](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Samples/auth/Outlook-Add-in-Microsoft-Graph-ASPNET)
+- [Outlook 外接程序 SSO](https://github.com/OfficeDev/Outlook-Add-in-SSO)
+- [Outlook 外接程序令牌查看器](https://github.com/OfficeDev/Outlook-Add-In-Token-Viewer)
+- [Outlook 外接程序可操作邮件](https://github.com/OfficeDev/Outlook-Add-In-Actionable-Message)
+- [Outlook 外接程序共享到 OneDrive](https://github.com/OfficeDev/Outlook-Add-in-Sharing-to-OneDrive)
+- [PowerPoint 加载项 Microsoft Graph ASPNET 插入图](https://github.com/OfficeDev/PowerPoint-Add-in-Microsoft-Graph-ASPNET-InsertChart)
+- [Excel 共享运行时方案](https://github.com/OfficeDev/PnP-OfficeAddins/tree/900b5769bca9bbcff79d6cd6106d9fcc55c70d5a/Samples/excel-shared-runtime-scenario)
+- [Excel 外接程序 ASPNET QuickBooks](https://github.com/OfficeDev/Excel-Add-in-ASPNET-QuickBooks)
+- [Word 外接程序 JS 修订](https://github.com/OfficeDev/Word-Add-in-JS-Redact)
+- [Word 外接程序 JS SpecKit](https://github.com/OfficeDev/Word-Add-in-JS-SpecKit)
+- [Word 外接程序 AngularJS 客户端 OAuth](https://github.com/OfficeDev/Word-Add-in-AngularJS-Client-OAuth)
+- [Office 外接程序 Auth0](https://github.com/OfficeDev/Office-Add-in-Auth0)
+- [Office 外接程序OAuth.io](https://github.com/OfficeDev/Office-Add-in-OAuth.io)
+- [Office 外接程序 UX 设计模式代码](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code)

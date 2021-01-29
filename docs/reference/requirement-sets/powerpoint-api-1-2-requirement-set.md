@@ -1,15 +1,15 @@
 ---
 title: PowerPoint JavaScript API 要求集 1.2
 description: 有关 PowerPointApi 1.2 要求集的详细信息。
-ms.date: 01/08/2021
+ms.date: 01/27/2021
 ms.prod: powerpoint
 localization_priority: Normal
-ms.openlocfilehash: 0f6d1e766de81fef5d071152f6116ab56613ec9d
-ms.sourcegitcommit: d28392721958555d6edea48cea000470bd27fcf7
+ms.openlocfilehash: 0aa82b8edc6aab65ebcce7c6bfcb50471c9e38e9
+ms.sourcegitcommit: 3123b9819c5225ee45a5312f64be79e46cbd0e3c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/13/2021
-ms.locfileid: "49841525"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "50043874"
 ---
 # <a name="whats-new-in-powerpoint-javascript-api-12"></a>PowerPoint JavaScript API 1.2 的新增功能
 
@@ -19,7 +19,7 @@ PowerPointApi 1.2 增加了对将另一个演示文稿中的幻灯片插入当�
 
 | 功能区域 | 说明 | 相关对象 |
 |:--- |:--- |:--- |
-| 插入和删除幻灯片 | 允许将现有幻灯片从另一个演示文稿插入当前演示文稿，以及删除幻灯片的能力。 | [Slide.delete](/javascript/api/powerpoint/powerpoint.slide#delete--)， [Presentation.insertSlidesFromBase64](/javascript/api/powerpoint/powerpoint.presentation#insertslidesfrombase64-base64file--options-)|
+| [插入和删除幻灯片](../../powerpoint/insert-slides-into-presentation.md) | 允许将现有幻灯片从另一个演示文稿插入当前演示文稿，以及删除幻灯片的能力。 | [Slide.delete](/javascript/api/powerpoint/powerpoint.slide#delete--)， [Presentation.insertSlidesFromBase64](/javascript/api/powerpoint/powerpoint.presentation#insertslidesfrombase64-base64file--options-)|
 
 ## <a name="api-list"></a>API 列表
 
