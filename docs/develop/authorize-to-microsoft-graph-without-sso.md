@@ -3,20 +3,20 @@ title: 在不使用 SSO 的情况下对 Microsoft Graph 授权
 description: 了解如何在不使用 SSO 的情况下对 Microsoft Graph 授权
 ms.date: 01/29/2020
 localization_priority: Normal
-ms.openlocfilehash: 99f515a038952e1eaae828c49de99d0bbd0d5bfb
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 99d300d0155ba9a117efda5d31ef068a41eb86a9
+ms.sourcegitcommit: 8546889a759590c3798ce56e311d9e46f0171413
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44608409"
+ms.lasthandoff: 02/04/2021
+ms.locfileid: "50104831"
 ---
 # <a name="authorize-to-microsoft-graph-without-sso"></a>在不使用 SSO 的情况下对 Microsoft Graph 授权
 
-你的加载项可通过从 Azure Active Directory (AAD) 获取 Graph 的访问令牌，获得 Microsoft Graph 数据的授权。 可同在任何其他 Web 应用程序中一样，使用授权代码流或隐式流执行此操作，但存在一个例外：AAD 禁止其登录页在 iframe 中打开。 当 Office 加载项在 *Office 网页版*中运行时，任务窗格是一个 iFrame。 这意味着将需要在通过 Office 对话框 API 打开的对话框中打开 AAD 登录屏幕。 这将影响你使用身份验证和授权帮助程序库的方式。 有关详细信息，请参阅[使用 Office 对话框 API 进行身份验证](auth-with-office-dialog-api.md)。
+加载项可以通过从 Azure Active Directory 和 Azure AD (获取 Microsoft Graph) 。 像在其他 Web 应用程序中一样使用授权代码流或隐式流，但有一个例外：Azure AD 不允许其登录页在 iframe 中打开。 当 Office 加载项在 *Office 网页版* 中运行时，任务窗格是一个 iFrame。 这意味着你需要在通过 Office 对话框 API 打开的对话框中打开 Azure AD 登录屏幕。 这将影响你使用身份验证和授权帮助程序库的方式。 有关详细信息，请参阅[使用 Office 对话框 API 进行身份验证](auth-with-office-dialog-api.md)。
 
-有关使用 AAD 设置身份验证的信息，请先参阅[Microsoft 标识平台 (v2.0) 概览](/azure/active-directory/develop/v2-overview)，其中可找到此文档集中的教程和指南以及相关示例的链接。 另外可能需要调整示例中的代码以在 Office 对话框中运行, 以考虑该 Office 对话框在与任务窗格不同的进程中运行的情况。
+有关使用 Azure AD 进行身份验证编程的信息，请从 Microsoft 标识平台 [ (v2.0) 概述](/azure/active-directory/develop/v2-overview)开始，你将在文档中找到该文档集的教程和指南，以及指向相关示例的链接。 另外可能需要调整示例中的代码以在 Office 对话框中运行, 以考虑该 Office 对话框在与任务窗格不同的进程中运行的情况。
 
-代码获取 Microsoft Graph 的访问令牌后，可将访问令牌从对话框传递到任务窗格，或将令牌存储在数据库中, 并向任务窗格发出通知，表明该令牌可用。 （有关详细信息，请参阅 [Office 对话框 API 的身份验证](auth-with-office-dialog-api.md)）任务窗格中的代码请求从 Microsoft Graph 中获得数据, 并将令牌包含在这些请求中。 有关调用 Microsoft Graph 和 Microsoft Graph SDK 的详细信息，请参阅[Microsoft Graph 文档](/graph/)。
+代码获取 Microsoft Graph 的访问令牌后，它会将访问令牌从对话框传递给任务窗格，或者将令牌存储在数据库中并指示任务窗格该令牌可用。  (Office 对话框 [API](auth-with-office-dialog-api.md) 进行身份验证了解详细信息。) 窗格中的代码从 Microsoft Graph 请求数据，并包括这些请求中的令牌。 有关调用 Microsoft Graph 和 Microsoft Graph SDK 的信息，请参阅 [Microsoft Graph 文档](/graph/)。
 
 ## <a name="recommended-libraries-and-samples"></a>推荐的库和示例
 

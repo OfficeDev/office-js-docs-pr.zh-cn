@@ -1,14 +1,14 @@
 ---
 title: 清单文件中的 ExtensionPoint 元件
 description: 定义 Office UI 中加载项公开功能的位置。
-ms.date: 01/22/2021
+ms.date: 02/01/2021
 localization_priority: Normal
-ms.openlocfilehash: 96bf3a6835b1a0ab6e5aa85a837515a3071e5610
-ms.sourcegitcommit: 6c5716d92312887e3d944bf12d9985560109b3c0
+ms.openlocfilehash: 7bf64b3a49228ade65350f9d730e68ec71401c60
+ms.sourcegitcommit: 8546889a759590c3798ce56e311d9e46f0171413
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/23/2021
-ms.locfileid: "49944303"
+ms.lasthandoff: 02/04/2021
+ms.locfileid: "50104817"
 ---
 # <a name="extensionpoint-element"></a>ExtensionPoint 元素
 
@@ -78,9 +78,9 @@ ms.locfileid: "49944303"
 |**OfficeMenu**|如果要（使用 **ContextMenu**）将外接程序命令添加到默认上下文菜单中，则为必需项。**id** 属性必须设置为： <br/> 适用于 Excel 或 Word 的 - **ContextMenuText** 当用户选定文本，然后右键单击所选定的文本时显示上下文菜单上的项。 <br/> 适用于 Excel 的 - **ContextMenuCell** 当用户右键单击电子表格中的某个单元格时显示上下文菜单上的项。|
 |**Group**|选项卡上的一组用户界面扩展点。一组可以有多达六个控件。**id** 属性是必需的。它是一个最多为 125 个字符的字符串。 |
 |**Label**|必需。 组的标签。 **resid** 属性的长度不能超过 32 个字符，必须设置为 **String** 元素的 **id** 属性值。 **String** 元素是 **ShortStrings** 元素的子元素，而 ShortStrings 元素是 **Resources** 元素的子元素。|
-|**Icon**|必需。 指定将在小型设备上使用或在显示过多按钮的情况下使用的组图标。 **resid** 属性不能超过 32 个字符，必须设置为 **Image** 元素 **的 id** 属性值。 **Image** 元素是 **Images** 元素的子元素，而 Images 元素是 **Resources** 元素的子元素。 **size** 属性给出图像的大小（以像素为单位）。 要求三种图像大小：16、32 和 80。 也同样支持五种可选大小：20、24、40、48 和 64。|
+|**Icon**|必需。 指定将在小型设备上使用或在显示过多按钮的情况下使用的组图标。 **resid** 属性不能超过 32 个字符，必须设置为 **Image** 元素 **的 id** 属性的值。 **Image** 元素是 **Images** 元素的子元素，而 Images 元素是 **Resources** 元素的子元素。 **size** 属性给出图像的大小（以像素为单位）。 要求三种图像大小：16、32 和 80。 也同样支持五种可选大小：20、24、40、48 和 64。|
 |**Tooltip**|Optional. The tooltip of the group. **resid** 属性的长度不能超过 32 个字符，必须设置为 **String** 元素的 **id** 属性值。 The **String** element is a child element of the **LongStrings** element, which is a child element of the **Resources** element.|
-|**Control**|每个组需要至少一个控件。 控件 **元素** 可以是按钮 **或****菜单**。 使用 **菜单** 指定按钮控件的下拉列表。 目前，仅支持“按钮”和“菜单”。 请参阅[按钮控件](control.md#button-control)和[菜单控件](control.md#menu-dropdown-button-controls)各节了解详细信息。<br/>**注意：**  为了简化疑难解答，我们建议一次添加 **一** 个 Control 元素和相关 **Resources** 子元素。|
+|**Control**|每个组需要至少一个控件。 控件 **元素** 可以是按钮 **或****菜单**。 使用 **菜单** 指定按钮控件的下拉列表。 目前，仅支持“按钮”和“菜单”。 请参阅[按钮控件](control.md#button-control)和[菜单控件](control.md#menu-dropdown-button-controls)各节了解详细信息。<br/>**注意：**  为了简化疑难解答，我们建议一次添加 **一个 Control** 元素和相关 **Resources** 子元素。|
 |**Script**|使用自定义函数定义和注册代码链接到 JavaScript 文件。 在开发者预览版中不使用此元素。 实际上，HTML 页负责加载所有 JavaScript 文件。|
 |**Page**|链接到自定义函数的 HTML 页。|
 
@@ -261,7 +261,7 @@ ms.locfileid: "49944303"
 
 ### <a name="mobileonlinemeetingcommandsurface"></a>MobileOnlineMeetingCommandSurface
 
-此扩展点在移动外形设置中约会的命令图面中设置与模式适当的切换。 会议组织者可以创建联机会议。 与会者随后可以加入联机会议。 若要了解有关此方案的信息，请参阅联机会议提供程序文章的"创建 [Outlook](../../outlook/online-meeting.md) 移动外接程序"。
+此扩展点将适用于模式的切换置于移动外形设置中约会的命令图面中。 会议组织者可以创建联机会议。 与会者随后可以加入联机会议。 若要了解有关此方案的信息，请参阅联机会议提供程序文章的"创建 [Outlook](../../outlook/online-meeting.md) 移动外接程序"。
 
 > [!NOTE]
 > 此扩展点仅在具有 Microsoft 365 订阅的 Android 上受支持。
@@ -305,9 +305,9 @@ ms.locfileid: "49944303"
 ### <a name="launchevent-preview"></a>LaunchEvent (预览) 
 
 > [!NOTE]
-> 此扩展点仅在具有 Microsoft [](../objectmodel/preview-requirement-set/outlook-requirement-set-preview.md) 365 订阅的 Outlook 网页版预览版中受支持。
+> 此扩展点仅在 Outlook [网页版](../objectmodel/preview-requirement-set/outlook-requirement-set-preview.md) 和具有 Microsoft 365 订阅的 Windows 预览版中受支持。
 
-此扩展点使加载项能够基于桌面设备类型中的受支持事件进行激活。 目前，唯一受支持的事件是 `OnNewMessageCompose` `OnNewAppointmentOrganizer` 和 。 若要了解有关此方案的信息，请参阅"为基于事件的激活文章配置[Outlook 外接程序"。](../../outlook/autolaunch.md)
+通过此扩展点，加载项可以基于桌面设备类型中的受支持事件进行激活。 目前，唯一受支持的事件是 `OnNewMessageCompose` `OnNewAppointmentOrganizer` 和 。 若要了解有关此方案的信息，请参阅"为基于事件的激活文章配置[Outlook 外接程序"。](../../outlook/autolaunch.md)
 
 #### <a name="child-elements"></a>子元素
 
