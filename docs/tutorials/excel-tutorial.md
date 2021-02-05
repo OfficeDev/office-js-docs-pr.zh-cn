@@ -1,15 +1,15 @@
 ---
 title: Excel 加载项教程
 description: 在本教程中，你将学习如何构建一个 Excel 外接程序，用于创建、填充、筛选和排序表格、创建图表、冻结表格标题、保护工作表并打开对话框。
-ms.date: 11/09/2020
+ms.date: 02/03/2021
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: c11b253d8cc55ce4bac8a44bde1ddf7baa91f89e
-ms.sourcegitcommit: 2f75a37de349251bc0e0fc402c5ae6dc5c3b8b08
+ms.openlocfilehash: 5b2660ef27ebc457d2d7602b716baf03e4b93cf3
+ms.sourcegitcommit: 8546889a759590c3798ce56e311d9e46f0171413
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "49771366"
+ms.lasthandoff: 02/04/2021
+ms.locfileid: "50104866"
 ---
 # <a name="tutorial-create-an-excel-task-pane-add-in"></a>教程：创建 Excel 任务窗格加载项
 
@@ -396,7 +396,7 @@ ms.locfileid: "49771366"
    - 第三个参数确定是按行方向还是按列方向绘制表格中的一系列数据点。 选项 `auto` 指示 Excel 确定最佳方法。
 
     ```js
-    var chart = currentWorksheet.charts.add('ColumnClustered', dataRange, 'auto');
+    var chart = currentWorksheet.charts.add('ColumnClustered', dataRange, 'Auto');
     ```
 
 8. 在 `createChart()` 函数中，将 `TODO3` 替换为以下代码。 此代码的大部分内容非常直观明了。 注意：
@@ -408,11 +408,11 @@ ms.locfileid: "49771366"
     ```js
     chart.setPosition("A15", "F30");
     chart.title.text = "Expenses";
-    chart.legend.position = "right"
+    chart.legend.position = "Right";
     chart.legend.format.fill.setSolidColor("white");
     chart.dataLabels.format.font.size = 15;
     chart.dataLabels.format.font.color = "black";
-    chart.series.getItemAt(0).name = 'Value in &euro;';
+    chart.series.getItemAt(0).name = 'Value in \u20AC';
     ```
 
 9. 验证是否已保存了对项目所做的所有更改。
