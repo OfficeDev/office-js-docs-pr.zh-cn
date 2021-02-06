@@ -606,7 +606,7 @@ items:
                 href: reference/requirement-sets/excel-api-1-1-requirement-set.md
                 displayName: Excel
           - name: API 参考
-            href: /javascript/api/excel?view=excel-js-preview
+            href: reference/excel-api-reference.md
             displayName: Excel
           - name: Excel 对象模型
             href: excel/excel-add-ins-core-concepts.md
@@ -757,7 +757,7 @@ items:
             href: reference/requirement-sets/onenote-api-requirement-sets.md
             displayName: OneNote
           - name: API 参考
-            href: /javascript/api/onenote?view=onenote-js-1.1
+            href: reference/onenote-api-reference.md
             displayName: OneNote
           - name: 使用 OneNote 页内容
             href: onenote/onenote-add-ins-page-content.md
@@ -801,7 +801,7 @@ items:
                   - name: Office.context.mailbox.item
                     href: reference/objectmodel/preview-requirement-set/Office.context.mailbox.item.md
                   - name: Outlook 预览 API 参考
-                    href: /javascript/api/outlook?view=outlook-js-preview
+                    href: reference/outlook-api-reference-preview.md
               - name: 要求集 1.9
                 items:
                   - name: 概述
@@ -815,7 +815,7 @@ items:
                   - name: Office.context.mailbox.item
                     href: reference/objectmodel/requirement-set-1.9/Office.context.mailbox.item.md
                   - name: Outlook 1.9 API 参考
-                    href: /javascript/api/outlook?view=outlook-js-1.9
+                    href: reference/outlook-api-reference-1-9.md
               - name: 要求集 1.8
                 items:
                   - name: 概述
@@ -829,7 +829,7 @@ items:
                   - name: Office.context.mailbox.item
                     href: reference/objectmodel/requirement-set-1.8/Office.context.mailbox.item.md
                   - name: Outlook 1.8 API 参考
-                    href: /javascript/api/outlook?view=outlook-js-1.8
+                    href: reference/outlook-api-reference-1-8.md
               - name: 要求集 1.7
                 items:
                   - name: 概述
@@ -843,7 +843,7 @@ items:
                   - name: Office.context.mailbox.item
                     href: reference/objectmodel/requirement-set-1.7/Office.context.mailbox.item.md
                   - name: Outlook 1.7 API 参考
-                    href: /javascript/api/outlook?view=outlook-js-1.7
+                    href: reference/outlook-api-reference-1-7.md
               - name: 要求集 1.6
                 items:
                   - name: 概述
@@ -857,7 +857,7 @@ items:
                   - name: Office.context.mailbox.item
                     href: reference/objectmodel/requirement-set-1.6/Office.context.mailbox.item.md
                   - name: Outlook 1.6 API 参考
-                    href: /javascript/api/outlook?view=outlook-js-1.6
+                    href: reference/outlook-api-reference-1-6.md
               - name: 要求集 1.5
                 items:
                   - name: 概述
@@ -871,7 +871,7 @@ items:
                   - name: Office.context.mailbox.item
                     href: reference/objectmodel/requirement-set-1.5/Office.context.mailbox.item.md
                   - name: Outlook 1.5 API 参考
-                    href: /javascript/api/outlook?view=outlook-js-1.5
+                    href: reference/outlook-api-reference-1-5.md
               - name: 要求集 1.4
                 items:
                   - name: 概述
@@ -885,7 +885,7 @@ items:
                   - name: Office.context.mailbox.item
                     href: reference/objectmodel/requirement-set-1.4/Office.context.mailbox.item.md
                   - name: Outlook 1.4 API 参考
-                    href: /javascript/api/outlook?view=outlook-js-1.4
+                    href: reference/outlook-api-reference-1-4.md
               - name: 要求集 1.3
                 items:
                   - name: 概述
@@ -899,7 +899,7 @@ items:
                   - name: Office.context.mailbox.item
                     href: reference/objectmodel/requirement-set-1.3/Office.context.mailbox.item.md
                   - name: Outlook 1.3 API 参考
-                    href: /javascript/api/outlook?view=outlook-js-1.3
+                    href: reference/outlook-api-reference-1-3.md
               - name: 要求集 1.2
                 items:
                   - name: 概述
@@ -913,7 +913,7 @@ items:
                   - name: Office.context.mailbox.item
                     href: reference/objectmodel/requirement-set-1.2/Office.context.mailbox.item.md
                   - name: Outlook 1.2 API 参考
-                    href: /javascript/api/outlook?view=outlook-js-1.2
+                    href: reference/outlook-api-reference-1-2.md
               - name: 要求集 1.1
                 items:
                   - name: 概述
@@ -927,9 +927,9 @@ items:
                   - name: Office.context.mailbox.item
                     href: reference/objectmodel/requirement-set-1.1/Office.context.mailbox.item.md
                   - name: Outlook 1.1 API 参考
-                    href: /javascript/api/outlook?view=outlook-js-1.1
+                    href: reference/outlook-api-reference-1-1.md
           - name: API 参考 - 最新版本
-            href: /javascript/api/outlook?view=outlook-js-1.9
+            href: reference/outlook-api-reference-1-9.md
             displayName: Outlook
       - name: 概念
         items:
@@ -1081,7 +1081,7 @@ items:
                 href: reference/requirement-sets/powerpoint-api-1-1-requirement-set.md
                 displayName: PowerPoint
           - name: API 参考
-            href: /javascript/api/powerpoint?view=powerpoint-js-1.1
+            href: reference/powerpoint-api-reference.md
             displayName: PowerPoint
           - name: 在演示文稿中插入和删除幻灯片
             href: powerpoint/insert-slides-into-presentation.md
@@ -1123,7 +1123,7 @@ items:
         href: reference/overview/visio-javascript-reference-overview.md
         displayName: Visio
       - name: API 参考
-        href: /javascript/api/visio?view=visio-js-1.1
+        href: reference/visio-api-reference.md
         displayName: Visio
   - name: Word
     items:
@@ -1162,7 +1162,7 @@ items:
                 href: reference/requirement-sets/word-api-1-1-requirement-set.md
                 displayName: Word
           - name: API 参考
-            href: /javascript/api/word?view=word-js-preview
+            href: reference/word-api-reference.md
             displayName: Word
           - name: Word 对象模型
             href: word/word-add-ins-core-concepts.md
