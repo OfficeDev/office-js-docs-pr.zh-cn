@@ -1,16 +1,16 @@
 ---
-title: Office 通用 API 错误代码
+title: Office 常用 API 错误代码
 description: 本文记录在使用 Office 通用 API 时可能遇到的错误消息。
-ms.date: 01/13/2021
+ms.date: 02/09/2021
 localization_priority: Normal
-ms.openlocfilehash: c7d13c0be2cc9a86effd512e0ce88dcc2c004f6b
-ms.sourcegitcommit: 6a378d2a3679757c5014808ae9da8ababbfe8b16
+ms.openlocfilehash: f34e1922c105b11b1f8be803ee1708c229951937
+ms.sourcegitcommit: 4805454f7fc6c64368a35d014e24075faf3e7557
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/15/2021
-ms.locfileid: "49870663"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "50173939"
 ---
-# <a name="office-common-api-error-codes"></a>Office 通用 API 错误代码
+# <a name="office-common-api-error-codes"></a>Office 常用 API 错误代码
 
 本文记录在使用通用 API 模型时可能遇到的错误消息。 这些错误代码不适用于特定于应用程序的 API，例如 Excel JavaScript API 或 Word JavaScript API。
 
@@ -81,7 +81,7 @@ ms.locfileid: "49870663"
 |8021|超出范围|列索引值超出允许的范围。请使用一个小于列数的正值（大于等于 0）。|列索引大于表格最大列索引或小于 0。|
 |8022|超出范围|值超出允许的范围。|格式中的某些值超出支持的范围。|
 |9016|权限被拒绝|权限被拒绝|访问被拒绝。|
-|9021|保存错误|尝试在服务器上保存项目时发生连接错误。|无法保存该项目。 在联机模式下，这可能是由于服务器连接错误。|
+|9021|保存错误|尝试在服务器上保存项目时发生连接错误。|无法保存该项目。 这可能是由于在 Outlook 桌面版中使用联机模式时出现服务器连接错误，或者由于尝试重新保存从 Exchange 服务器中删除的草稿项目。|
 |9022|不同存储错误中的邮件|无法检索 EWS ID，因为邮件保存在另一个存储中。|无法检索当前邮件的 EWS ID，因为邮件可能已被移动或发送邮箱可能已更改。|
 |9041|网络错误|用户不再连接到网络。 请检查网络连接并重试。|用户不再具有网络或 Internet 访问权限。|
 |9043|不支持附件类型|不支持附件类型。|API 不支持附件类型。 例如，如果附件是格式文本格式的嵌入图像，或者它是电子邮件或日历项目类型（如联系人或任务项目） (，则会引发此错误 `item.getAttachmentContentAsync`) 。|

@@ -1,14 +1,14 @@
 ---
-ms.date: 12/21/2020
+ms.date: 02/04/2021
 description: 了解如何在自定义函数内使用不同的参数，如 Excel 范围、可选参数、调用上下文等。
 title: Excel 自定义函数的选项
 localization_priority: Normal
-ms.openlocfilehash: 312046551236e96e67de6f63f3e3511aba6f50ce
-ms.sourcegitcommit: 48b9c3b63668b2a53ce73f92ce124ca07c5ca68c
+ms.openlocfilehash: afe6947b1a1b9022a0284535b9ab1d68c9777c14
+ms.sourcegitcommit: 4805454f7fc6c64368a35d014e24075faf3e7557
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/28/2020
-ms.locfileid: "49735527"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "50173904"
 ---
 # <a name="custom-functions-parameter-options"></a>自定义函数参数选项
 
@@ -63,7 +63,7 @@ function add(first: number, second: number, third?: number): number {
 > [!NOTE]
 > 当未指定可选参数的值时，Excel 会为其分配值 `null` 。 这意味着 TypeScript 中的默认初始化参数将不能正常工作。 请勿使用语法， `function add(first:number, second:number, third=0):number` 因为它不会初始化 `third` 为 0。 请改为使用 TypeScript 语法，如上一示例所示。
 
-定义包含一个或多个可选参数的函数时，请指定可选参数为空时会发生什么情况。 在以下示例中，`zipCode` 和 `dayOfWeek` 都是 `getWeatherReport` 函数的可选参数。 如果 `zipCode` 参数为空，则默认值设置为 `98052` 。 如果 `dayOfWeek` 参数为空，则设置为星期三。
+定义包含一个或多个可选参数的函数时，指定可选参数为空时会发生什么情况。 在以下示例中，`zipCode` 和 `dayOfWeek` 都是 `getWeatherReport` 函数的可选参数。 如果 `zipCode` 参数为空，则默认值设置为 `98052` 。 如果 `dayOfWeek` 参数为空，则设置为星期三。
 
 #### <a name="javascript"></a>[JavaScript](#tab/javascript)
 
@@ -172,7 +172,7 @@ function ADD(operands: number[][][]): number {
 }
 ```
 
-此函数 `=CONTOSO.ADD([operands], [operands]...)` 显示在 Excel 工作簿中。
+此函数显示在 `=CONTOSO.ADD([operands], [operands]...)` Excel 工作簿中。
 
 <img alt="The ADD custom function being entered into cell of an Excel worksheet" src="../images/operands.png" />
 
@@ -229,12 +229,12 @@ function addSingleRange(singleRange) {
 
 ## <a name="invocation-parameter"></a>调用参数
 
-每个自定义函数都会自动将一个参数作为最后一个输入参数传递，即使该参数 `invocation` 未显式声明。 此 `invocation` 参数对应于 [调用](/javascript/api/custom-functions-runtime/customfunctions.invocation) 对象。 该对象可用于检索其他上下文，例如调用自定义函数的单元格 `Invocation` 的地址。 若要访问 `Invocation` 该对象，必须在自定义函数中声明 `invocation` 为最后一个参数。 
+每个自定义函数都会自动将一个参数作为最后一个输入参数传递，即使该参数 `invocation` 未显式声明。 此 `invocation` 参数对应于 [调用](/javascript/api/custom-functions-runtime/customfunctions.invocation) 对象。 该对象可用于检索其他上下文，例如调用自定义函数的单元格 `Invocation` 的地址。 若要访问 `Invocation` 对象，必须在自定义函数中声明 `invocation` 为最后一个参数。 
 
 > [!NOTE]
 > 此 `invocation` 参数不会显示为 Excel 中用户的自定义函数参数。
 
-以下示例演示如何使用参数返回调用自定义函数的单元格 `invocation` 的地址。 此示例使用 [对象的地址](/javascript/api/custom-functions-runtime/customfunctions.invocation#address) `Invocation` 属性。 若要访问 `Invocation` 该对象，首先在 `CustomFunctions.Invocation` JSDoc 中声明为参数。 接下来， `@requiresAddress` 在 JSDoc 中声明以 `address` 访问对象 `Invocation` 的属性。 最后，在函数中检索并返回 `address` 属性。 
+以下示例演示如何使用参数返回调用自定义函数的单元格 `invocation` 的地址。 此示例使用 [对象的地址](/javascript/api/custom-functions-runtime/customfunctions.invocation#address) `Invocation` 属性。 若要访问 `Invocation` 该对象，请首先在 `CustomFunctions.Invocation` JSDoc 中声明为参数。 接下来， `@requiresAddress` 在 JSDoc 中声明以 `address` 访问对象 `Invocation` 的属性。 最后，在函数中检索并返回 `address` 属性。 
 
 ```js
 /**
@@ -251,7 +251,7 @@ function getAddress(first, second, invocation) {
 }
 ```
 
-在 Excel 中，调用对象属性的自定义函数将返回调用该函数的单元格中采用格式 `address` `Invocation` `SheetName!RelativeCellAddress` 的绝对地址。 例如，如果输入参数位于单元格 F6 中 **名为"价格** "的工作表上，则返回的参数地址值将为 `Prices!F6` 。 
+在 Excel 中，调用对象属性的自定义函数将返回调用该函数的单元格中采用格式 `address` `Invocation` `SheetName!RelativeCellAddress` 的绝对地址。 例如，如果输入参数位于单元格 F6 中名为 **"价格** "的工作表上，则返回的参数地址值将为 `Prices!F6` 。 
 
 该 `invocation` 参数还可用于将信息发送到 Excel。 有关详细信息 [，请参阅"创建流](custom-functions-web-reqs.md#make-a-streaming-function) 式处理函数"。
 
@@ -261,8 +261,8 @@ function getAddress(first, second, invocation) {
 
 这适用于输入数据类型可能有所不同的情况。 输入参数的地址可用于检查输入值的数量格式。 然后，如有必要，可以在输入之前调整数字格式。 输入参数的地址还可用于检测输入值是否具有与后续计算相关的任何相关属性。 
 
->[!IMPORTANT]
-> 该属性 `parameterAddresses` 当前仅适用于 [手动创建的 JSON 元数据](custom-functions-json.md)。 若要返回参数地址，对象必须将属性设置为 `options` `requiresParameterAddresses` ，并且 `true` `result` 该对象必须将属性设置为 `dimensionality` `matrix` 。
+>[!NOTE]
+> 如果正在处理手动创建的 [JSON](custom-functions-json.md) 元数据以返回参数地址，而不是 Yo Office 生成器，则对象必须将属性设置为 ，并且该对象必须将属性设置为 `options` `requiresParameterAddresses` `true` `result` `dimensionality` `matrix` 。
 
 以下自定义函数采用三个输入参数，检索每个参数的对象属性， `parameterAddresses` `Invocation` 然后返回地址。 
 
@@ -286,7 +286,7 @@ function getParameterAddresses(firstParameter, secondParameter, thirdParameter, 
 }
 ```
 
-调用该属性的自定义函数运行时，将按照调用函数的单元格中的格式返回参数 `parameterAddresses` `SheetName!RelativeCellAddress` 地址。 例如，如果输入参数位于单元格 D8 中 **名为"成本** "的工作表上，则返回的参数地址值将为 `Costs!D8` 。 如果自定义函数具有多个参数并返回多个参数地址，则返回的地址将溢出多个单元格，从调用该函数的单元格垂直排列。 
+调用该属性的自定义函数运行时，将按照调用函数的单元格中的格式 `parameterAddresses` 返回参数 `SheetName!RelativeCellAddress` 地址。 例如，如果输入参数位于单元格 D8 中 **名为"成本** "的工作表上，则返回的参数地址值将为 `Costs!D8` 。 如果自定义函数具有多个参数并返回多个参数地址，则返回的地址将溢出多个单元格，从调用该函数的单元格垂直排列。 
 
 ## <a name="next-steps"></a>后续步骤
 

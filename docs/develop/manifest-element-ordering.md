@@ -1,14 +1,14 @@
 ---
 title: 如何查找清单元素的正确顺序
 description: 了解如何查找在父元素中放置子元素的正确顺序。
-ms.date: 11/01/2020
+ms.date: 01/29/2021
 localization_priority: Normal
-ms.openlocfilehash: 35ed1b87162b84ff13cafc2084ce9ca1b1666235
-ms.sourcegitcommit: 3189c4bd62dbe5950b19f28ac2c1314b6d304dca
+ms.openlocfilehash: 2ee80167a76861209e814dc6c272720feb3a9cf1
+ms.sourcegitcommit: 4805454f7fc6c64368a35d014e24075faf3e7557
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "49087922"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "50173911"
 ---
 # <a name="how-to-find-the-proper-order-of-manifest-elements"></a>如何查找清单元素的正确顺序
 
@@ -19,12 +19,12 @@ Office 外接程序清单中的 XML 元素必须位于正确父元素下，*且*
 例如，在 `<OfficeApp>` 元素中，`<Id>`、`<Version>`、`<ProviderName>` 必须按此顺序出现。 如果添加了 `<AlternateId>` 元素，则其必须位于 `<Id>` 和 `<Version>` 元素之间。 如果任何元素的顺序出错，清单将无效并且你的外接程序将无法加载。
 
 > [!NOTE]
-> [Office 外接程序指令清单中的验证](../testing/troubleshoot-manifest.md#validate-your-manifest-with-office-addin-manifest)器在元素的顺序不正确时使用相同的错误消息，与元素位于错误父项下时相同。 该错误消息会提示子元素不是父元素的有效子级。 如果出现此类错误，而子元素的参考文档却指示它对父级 *是* 有效的，则问题很可能是子级的放置顺序出现了错误。
+> 当元素顺序有误时 [，office-addin-manifest](../testing/troubleshoot-manifest.md#validate-your-manifest-with-office-addin-manifest) 中的验证程序会使用相同的错误消息，因为元素位于错误的父元素下。 该错误消息会提示子元素不是父元素的有效子级。 如果出现此类错误，而子元素的参考文档却指示它对父级 *是* 有效的，则问题很可能是子级的放置顺序出现了错误。
 
-以下各节按它们必须出现的顺序显示清单元素。 取决于 `type` 元素的属性 `<OfficeApp>` 是 `TaskPaneApp` 、 `ContentApp` 还是，也 `MailApp` 有不同之处。 为了防止这些部分变得过于复杂，高度复杂的 `<VersionOverrides>` 元素将分解为单独的部分。
+以下各节按清单元素的显示顺序显示这些元素。 根据元素的属性是 、还是不同， `type` `<OfficeApp>` 存在 `TaskPaneApp` `ContentApp` 差异 `MailApp` 。 若要阻止这些部分变得过于不工作，将高度复杂的元素分为 `<VersionOverrides>` 单独的部分。
 
 > [!Note]
-> 并不是所有显示的元素都是必需的。 如果 `minOccurs` 某个元素的值在 [架构](/openspecs/office_file_formats/ms-owemxml/4e112d0a-c8ab-46a6-8a6c-2a1c1d1299e3)中为 **0** ，则该元素是可选的。
+> 并非所有显示的元素都是强制性的。 如果在 `minOccurs` 架构中某个元素的值为 **0，** 则此元素是可选的。 [](/openspecs/office_file_formats/ms-owemxml/4e112d0a-c8ab-46a6-8a6c-2a1c1d1299e3)
 
 ## <a name="basic-task-pane-add-in-element-ordering"></a>基本任务窗格加载项元素排序
 
@@ -67,9 +67,9 @@ Office 外接程序清单中的 XML 元素必须位于正确父元素下，*且*
     <ExtendedOverrides>
 ```
 
-\*有关 VersionOverrides 的子元素的排序，请参阅 [VersionOverrides 内的任务窗格加载项元素排序](#task-pane-add-in-element-ordering-within-versionoverrides) 。
+\*有关 [VersionOverrides 的子元素的排序，请参阅 VersionOverrides](#task-pane-add-in-element-ordering-within-versionoverrides) 中的任务窗格加载项元素排序。
 
-## <a name="basic-mail-add-in-element-ordering"></a>基本邮件加载项元素排序
+## <a name="basic-mail-add-in-element-ordering"></a>基本邮件外接程序元素排序
 
 ```xml
 <OfficeApp xsi:type="MailApp">
@@ -110,7 +110,7 @@ Office 外接程序清单中的 XML 元素必须位于正确父元素下，*且*
     <VersionOverrides>*
 ```
 
-\*有关 VersionOverrides 的子元素排序，请参阅[VersionOverrides. 1.0 中的邮件外接程序元素排序](#mail-add-in-element-ordering-within-versionoverrides-ver-10)和[VersionOverrides Ver 中的邮件加载项元素排序1.1。](#mail-add-in-element-ordering-within-versionoverrides-ver-11)
+\*有关 VersionOverrides 的子元素排序，请参阅 [VersionOverrides Ver. 1.0](#mail-add-in-element-ordering-within-versionoverrides-ver-10) 中的 Mail 加载项元素排序和 [VersionOverrides Ver. 1.1](#mail-add-in-element-ordering-within-versionoverrides-ver-11) 中的邮件外接程序元素排序。
 
 ## <a name="basic-content-add-in-element-ordering"></a>基本内容加载项元素排序
 
@@ -149,7 +149,7 @@ Office 外接程序清单中的 XML 元素必须位于正确父元素下，*且*
     <VersionOverrides>*
 ```
 
-\*有关 VersionOverrides 的子元素的排序，请参阅 [VersionOverrides 内的内容加载项元素排序](#content-add-in-element-ordering-within-versionoverrides) 。
+\*有关 [VersionOverrides 的子元素的排序，请参阅 VersionOverrides](#content-add-in-element-ordering-within-versionoverrides) 中的内容加载项元素排序。
 
 ## <a name="task-pane-add-in-element-ordering-within-versionoverrides"></a>VersionOverrides 中的任务窗格加载项元素排序
 
@@ -209,34 +209,38 @@ Office 外接程序清单中的 XML 元素必须位于正确父元素下，*且*
                                     <Title>
                                     <FunctionName>
                     <CustomTab>
+                        <OverriddenByRibbonApi>
                         <Group> (can be below <ControlGroup>)
+                            <OverriddenByRibbonApi>
                             <Label>
                             <Icon>
                                 <Image>
                             <Control>
-                            <Label>
-                            <Supertip>
-                                <Title>
-                                <Description>
-                            <Icon>
-                                <Image>  
-                            <Action>
-                                <TaskpaneId>
-                                <SourceLocation>
-                                <Title>
-                                <FunctionName>
-                            <Enabled>
-                            <Items>
-                                <Item>
-                                    <Label>
-                                    <Supertip>
-                                        <Title>
-                                        <Description>
-                                    <Action>
-                                        <TaskpaneId>
-                                        <SourceLocation>
-                                        <Title>
-                                        <FunctionName>
+                                <OverriddenByRibbonApi>
+                                <Label>
+                                <Supertip>
+                                    <Title>
+                                    <Description>
+                                <Icon>
+                                    <Image>  
+                                <Action>
+                                    <TaskpaneId>
+                                    <SourceLocation>
+                                    <Title>
+                                    <FunctionName>
+                                <Enabled>
+                                <Items>
+                                    <Item>
+                                        <OverriddenByRibbonApi>
+                                        <Label>
+                                        <Supertip>
+                                            <Title>
+                                            <Description>
+                                        <Action>
+                                            <TaskpaneId>
+                                            <SourceLocation>
+                                            <Title>
+                                            <FunctionName>
                         <ControlGroup> (can be above <Group>)
                         <Label>
                         <InsertAfter> (or <InsertBefore>)
@@ -297,7 +301,7 @@ Office 外接程序清单中的 XML 元素必须位于正确父元素下，*且*
                 <Type>
 ```
 
-## <a name="mail-add-in-element-ordering-within-versionoverrides-ver-10"></a>VersionOverrides Ver 中的邮件加载项元素排序。 1.0
+## <a name="mail-add-in-element-ordering-within-versionoverrides-ver-10"></a>VersionOverrides Ver 中的邮件外接程序元素排序。 1.0
 
 ```xml
 <VersionOverrides>
@@ -391,9 +395,9 @@ Office 外接程序清单中的 XML 元素必须位于正确父元素下，*且*
     <VersionOverrides>*
 ```
 
-\* 具有 `type` 值 `VersionOverridesV1_1` （而不是）的 VersionOverrides `VersionOverridesV1_0` 可以嵌套在外部 VersionOverrides 的末尾。 有关中的元素排序，请参阅 [VersionOverrides 1.1 Ver 中的邮件加载项元素排序](#mail-add-in-element-ordering-within-versionoverrides-ver-11) `VersionOverridesV1_1` 。
+\* 具有值而不是值的 VersionOverrides 可以嵌套在 `type` `VersionOverridesV1_1` 外部 `VersionOverridesV1_0` VersionOverrides 的末尾。 有关 [中元素的排序，请参阅 VersionOverrides Ver. 1.1](#mail-add-in-element-ordering-within-versionoverrides-ver-11) 中的 Mail 加载项元素排序 `VersionOverridesV1_1` 。
 
-## <a name="mail-add-in-element-ordering-within-versionoverrides-ver-11"></a>VersionOverrides Ver 中的邮件加载项元素排序。 1.1
+## <a name="mail-add-in-element-ordering-within-versionoverrides-ver-11"></a>VersionOverrides Ver 中的邮件外接程序元素排序。 1.1
 
 ```xml
 <VersionOverrides>
@@ -508,4 +512,5 @@ Office 外接程序清单中的 XML 元素必须位于正确父元素下，*且*
 
 ## <a name="see-also"></a>另请参阅
 
-- [Office 外接程序清单的架构参考 (v1.1)](../develop/add-in-manifests.md)
+- [对 v1.1 (Office 外接程序清单) ](../develop/add-in-manifests.md)
+- [官方架构定义](/openspecs/office_file_formats/ms-owemxml/c6a06390-34b8-4b42-82eb-b28be12494a8)

@@ -1,14 +1,14 @@
 ---
 title: 清单文件中的 Control 元素
 description: 定义执行操作或启动任务窗格的 JavaScript 函数。
-ms.date: 01/10/2020
+ms.date: 01/29/2021
 localization_priority: Normal
-ms.openlocfilehash: 820ef39ba2b4ac296e5f5d598d5f45cc2ded701d
-ms.sourcegitcommit: 2f75a37de349251bc0e0fc402c5ae6dc5c3b8b08
+ms.openlocfilehash: 737902bef52edeb70e2c5760df5bb589b624271b
+ms.sourcegitcommit: 4805454f7fc6c64368a35d014e24075faf3e7557
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "49771373"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "50173981"
 ---
 # <a name="control-element"></a>Control 元素
 
@@ -37,6 +37,7 @@ ms.locfileid: "49771373"
 |  [Icon](icon.md)      | 是 |  按钮的图像。         |
 |  [Action](action.md)    | 是 |  指定要执行的操作。  |
 |  [Enabled](enabled.md)    | 否 |  指定加载项启动时是否启用控件。  |
+|  [OverriddenByRibbonApi](overriddenbyribbonapi.md)      | 否 |  指定该按钮是否应该显示在支持自定义上下文选项卡的应用程序和平台组合上。 如果使用，则它必须是第 *一个* 子元素。 |
 
 ### <a name="executefunction-button-example"></a>ExecuteFunction 按钮示例
 
@@ -44,6 +45,7 @@ ms.locfileid: "49771373"
 
 ```xml
 <Control xsi:type="Button" id="msgReadFunctionButton">
+  <OverriddenByRibbonApi>true</OverriddenByRibbonApi>
   <Label resid="funcReadButtonLabel" />
   <Supertip>
     <Title resid="funcReadSuperTipTitle" />
@@ -153,12 +155,14 @@ ms.locfileid: "49771373"
 |  **ToolTip**    |否|按钮的工具提示。 **resid** 属性的长度不能超过 32 个字符，必须设置为 **String** 元素的 **id** 属性值。 **String** 元素是 **LongStrings** 元素的子元素，而 LongStrings 元素是 [Resources](resources.md) 元素的子元素。|        
 |  [Supertip](supertip.md)  | 是 |  此按钮的 supertip。    |
 |  [Icon](icon.md)      | 是 |  按钮的图像。         |
-|  **Items**     | 是 |  菜单中显示的按钮的集合。 包含每个子菜单项的 **Item** 元素。 每个 **Item** 元素均包含 [按钮控件](#button-control)的子元素。|
+|  **Items**     | 是 |  菜单中显示的按钮的集合。 包含每个子菜单项的 **Item** 元素。 每个 **Item** 元素均包含 [按钮控件](#button-control) 的子元素。|
+|  [OverriddenByRibbonApi](overriddenbyribbonapi.md)      | 否 |  指定菜单是否应该显示在支持自定义上下文选项卡的应用程序和平台组合上。 如果使用，则它必须是第 *一个* 子元素。 |
 
 ### <a name="menu-control-examples"></a>菜单控件示例
 
 ```xml
 <Control xsi:type="Menu" id="TestMenu2">
+  <OverriddenByRibbonApi>true</OverriddenByRibbonApi>
   <Label resid="residLabel3" />
   <Tooltip resid="residToolTip" />
   <Supertip>
@@ -221,6 +225,7 @@ ms.locfileid: "49771373"
   </Icon>
   <Items>
     <Item id="msgReadMenuItem1">
+      <OverriddenByRibbonApi>true</OverriddenByRibbonApi>
       <Label resid="menuItem1ReadLabel" />
       <Supertip>
         <Title resid="menuItem1ReadLabel" />

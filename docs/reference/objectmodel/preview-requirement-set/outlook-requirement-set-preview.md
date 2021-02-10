@@ -1,14 +1,14 @@
 ---
 title: Outlook 外接程序 API 预览要求集
 description: Outlook 外接程序当前处于预览阶段的功能和 API。
-ms.date: 02/02/2021
+ms.date: 02/05/2021
 localization_priority: Normal
-ms.openlocfilehash: 39dd1221f4dea9674c89cdaad20024ce408f8db3
-ms.sourcegitcommit: 8546889a759590c3798ce56e311d9e46f0171413
+ms.openlocfilehash: 92ba3510af0c8b9ebdf9ca4368c889b821a9cb3b
+ms.sourcegitcommit: 4805454f7fc6c64368a35d014e24075faf3e7557
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/04/2021
-ms.locfileid: "50104838"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "50173953"
 ---
 # <a name="outlook-add-in-api-preview-requirement-set"></a>Outlook 外接程序 API 预览要求集
 
@@ -220,13 +220,13 @@ Office JavaScript API 的 Outlook 外接程序 API 子集包括可在 Outlook �
 
 添加了一个新对象，该对象代表项目的会话数据。
 
-**适用于：** 连接到 Microsoft 365 (Windows 版 Outlook) 
+**适用于：Windows** 版 Outlook (连接到 Microsoft 365 订阅) 、Outlook 网页版 (新式) 
 
 #### <a name="officecontextmailboxitemsessiondata"></a>[Office.context.mailbox.item.sessionData](office.context.mailbox.item.md#properties)
 
 添加了一个新属性，用于管理撰写模式下项目的会话数据。
 
-**适用于：** 连接到 Microsoft 365 (Windows 版 Outlook) 
+**适用于：Windows** 版 Outlook (连接到 Microsoft 365 订阅) 、Outlook 网页版 (新式) 
 
 ## <a name="see-also"></a>另请参阅
 
