@@ -4,12 +4,12 @@ description: 通过 Office 加载项的学习资源为初学者提供指导的�
 ms.date: 10/14/2020
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: 9d4d3a6b7211474e3278273b94f1cb3a12535404
-ms.sourcegitcommit: d28392721958555d6edea48cea000470bd27fcf7
+ms.openlocfilehash: 154d7b5e1a9e135ea583ae6b1afa4ac9e95e9c69
+ms.sourcegitcommit: fefc279b85e37463413b6b0e84c880d9ed5d7ac3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/13/2021
-ms.locfileid: "49839689"
+ms.lasthandoff: 02/12/2021
+ms.locfileid: "50234224"
 ---
 # <a name="beginners-guide"></a>初学者指南
 
@@ -28,7 +28,7 @@ ms.locfileid: "49839689"
 我们知道你渴望开始编码，但是在打开 IDE 或代码编辑器之前，你应该先阅读一些有关 Office 加载项的信息。
 
 - [Office 加载项平台概述](office-add-ins.md)：了解什么是 Office Web 加载项以及它们与扩展 Office（如 VSTO 加载项）的旧方法有何区别。
-- [开发 Office 加载项](../develop/develop-overview.md)：概述 Office 加载项的开发和生命周期，包括工具、创建加载项 UI 以及使用 JavaScript API 与 Office 文档进行交互。
+- [开发 Office 加载项](../develop/develop-overview.md)：获取 Office 加载项的开发和生命周期概述，包括工具、创建加载项 UI 以及使用 JavaScript API 与 Office 文档交互。
 
 这些文章中有许多链接，但是如果你是 Office 加载项的初学者，我们建议你在阅读完后返回此处并继续下一部分。
 

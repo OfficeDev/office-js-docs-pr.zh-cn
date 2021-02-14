@@ -1,16 +1,16 @@
 ---
-title: 通过 Microsoft 365 管理中心使用集中部署发布 Office 外接程序
-description: 了解如何使用集中部署来部署内部外接程序以及 ISV 提供的外接程序。
-ms.date: 01/12/2021
+title: 通过 Microsoft 365 管理中心使用集中部署发布 Office 加载项
+description: 了解如何使用集中部署部署内部外接程序以及 ISV 提供的外接程序。
+ms.date: 02/09/2021
 localization_priority: Normal
-ms.openlocfilehash: c1f36d1ad640adbecdd3338200e742e76831a67a
-ms.sourcegitcommit: d28392721958555d6edea48cea000470bd27fcf7
+ms.openlocfilehash: 479c80e2898f4c875f0c108fc6ab40fe54a4de1a
+ms.sourcegitcommit: fefc279b85e37463413b6b0e84c880d9ed5d7ac3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/13/2021
-ms.locfileid: "49839752"
+ms.lasthandoff: 02/12/2021
+ms.locfileid: "50234203"
 ---
-# <a name="publish-office-add-ins-using-centralized-deployment-via-the-microsoft-365-admin-center"></a>通过 Microsoft 365 管理中心使用集中部署发布 Office 外接程序
+# <a name="publish-office-add-ins-using-centralized-deployment-via-the-microsoft-365-admin-center"></a>通过 Microsoft 365 管理中心使用集中部署发布 Office 加载项
 
 Microsoft 365 管理中心使管理员能够轻松地将 Office 加载项部署到其组织内的用户和组。 通过管理中心部署加载项后，用户可立即在其 Office 应用程序中使用此加载项，而无需进行客户端配置。 可以通过集中部署来部署内部加载项以及 ISV 提供的加载项。
 
@@ -28,7 +28,7 @@ Microsoft 365 管理中心当前支持以下方案。
 建议 Microsoft 365 管理员使用集中部署在组织中部署 Office 加载项，但组织必须满足使用集中部署的所有要求。 若要了解如何确定组织能否使用集中部署，请参阅"确定外接程序的集中部署是否适用于[Microsoft 365 组织"。](/office365/admin/manage/centralized-deployment-of-add-ins)
 
 > [!NOTE]
-> 在未连接到 Microsoft 365 或部署面向 Office 2013 的 SharePoint 加载项或 Office 加载项本地环境中，请使用 [SharePoint 应用程序目录](publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md)。 若要部署 COM/VSTO 加载项，请使用 ClickOnce 或 Windows Installer，如[部署 Office 解决方案](/visualstudio/vsto/deploying-an-office-solution)中所述。
+> 在未连接到 Microsoft 365 或部署面向 Office 2013 的 SharePoint 加载项或 Office 加载项的本地环境中，请使用 [SharePoint 应用程序目录](publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md)。 若要部署 COM/VSTO 加载项，请使用 ClickOnce 或 Windows Installer，如[部署 Office 解决方案](/visualstudio/vsto/deploying-an-office-solution)中所述。
 
 ## <a name="recommended-approach-for-deploying-office-add-ins"></a>部署 Office 加载项的推荐方法
 
@@ -60,7 +60,7 @@ Microsoft 365 管理中心当前支持以下方案。
     - **我在此设备上具有清单文件 (.xml)。** 对于此选项，请选择“浏览”以找到想要使用的清单文件 (.xml)。
     - **我具有清单文件的 URL。** 对于此选项，请在提供的字段中键入清单的 URL。
 
-    ![Microsoft 365 Add-In中的"新建"对话框](../images/new-add-in.png)
+    ![Microsoft 365 Add-In中的"新建管理员"对话框](../images/new-add-in.png)
 
 8. 如果选择了此选项以从 Office 应用商店添加某个加载项，请选择该加载项。 可以通过“**为你推荐**”、“**评级**”或“**名称**”类别，查看可用的加载项。 仅能从 Office 应用商店添加免费加载项。 目前不支持添加付费加载项。
 
@@ -73,14 +73,14 @@ Microsoft 365 管理中心当前支持以下方案。
 
     ![Microsoft 365 管理中心中选定的外接程序页面](../images/selected-add-in-admin-center.png)
 
-10. 在"**分配用户"** 页上，选择"**每个人****"、"特定用户/组"** 或"**仅我"。** 使用“搜索”框查找要向其部署加载项的用户和组。 对于 Outlook 外接程序，还可以选择部署方法 **"** 固定"、"**可用**"或"**可选"。**
+10. 在"**分配用户"** 页上，选择"**任何人****"、"特定用户/组"** 或 **"仅我"。** 使用“搜索”框查找要向其部署加载项的用户和组。 对于 Outlook 外接程序，还可以选择部署方法 **"** 固定"、"可用"或 **"可选"。**
 
     ![在 Microsoft 365 管理中心中管理有权访问和部署方法的用户](../images/manage-users-deployment-admin-center.png)
 
     > [!NOTE]
-    > 利用 [SSO ](../develop/sso-in-office-add-ins.md) (单一登录) 将提示管理员同意加载项清单中列出的范围。  如果跨多个加载项使用同一支持服务 (则同一 Azure 应用 ID 用于不同外接程序) 中的 SSO，将提示每个外接程序的范围征得每个部署的同意。 此页面还将显示加载项所需的权限列表。
+    > 利用 [SSO ](../develop/sso-in-office-add-ins.md) (单一登录) 将提示管理员同意外接程序清单中列出的范围。  如果跨多个加载项使用相同的支持服务 (则同一 Azure 应用 ID 用于不同外接程序) 中的 SSO，将提示每个外接程序的范围，以征得每个部署的同意。 此页面还将显示加载项所需的权限列表。
 
-11. 完成后，选择"部署 **"。** 此过程可能最多用时 3 分钟。 然后，按“**下一步**”完成演练。 现在，可以看到此加载项与其他应用一起显示在 Office 365 中。
+11. 完成后，选择"部署 **"。** 此过程可能最多用时 3 分钟。 然后，按“**下一步**”完成演练。 现在，你将看到加载项和其他 Office 应用。
 
     > [!NOTE]
     > 当管理员 **选择"部署**"时，将给予所有用户同意。
@@ -98,7 +98,7 @@ Microsoft 365 管理中心当前支持以下方案。
 
 - **用户**：如果将加载项分配给单个用户，则每次要将其分配给其他用户时，都需要更新此加载项的集中部署设置。 同样，每次要删除某个用户对该加载项的访问权限时，都需要更新该加载项的集中部署设置。
 
-- **组**：如果将加载项分配给组，则会自动为被添加到此组的用户分配此加载项。 同样，当将某个用户从组中删除时，此用户将自动失去对此加载项的访问权限。 在任一情况下，无需 Microsoft 365 管理员执行任何其他操作。
+- **组**：如果将加载项分配给组，则会自动为被添加到此组的用户分配此加载项。 同样，当将某个用户从组中删除时，此用户将自动失去对此加载项的访问权限。 在任一情况下，Microsoft 365 管理员无需执行任何其他操作。
 
 一般情况下，为了便于维护，我们建议尽可能使用组来分配加载项。 但是，在想要将加载项的访问权限限制在极少数用户的情况下，将加载项分配给特定用户的做法可能更为实用。
 
@@ -114,16 +114,16 @@ Microsoft 365 管理中心当前支持以下方案。
 
 ## <a name="updating-office-add-ins-that-are-published-via-centralized-deployment"></a>更新通过集中部署发布的 Office 加载项
 
-通过集中部署发布 Office 外接程序后，在 Web 应用程序中实现这些更改后，对加载项 Web 应用程序进行的任何更改将自动提供给所有用户。 对外接程序 [的 XML](../develop/add-in-manifests.md) 清单文件所做的更改（例如，更新加载项的图标、文本或外接程序命令）发生如下：
+通过集中部署发布 Office 外接程序后，在 Web 应用程序中实现这些更改后，对外接程序 Web 应用程序进行的任何更改将自动提供给所有用户。 对外接程序 [的 XML](../develop/add-in-manifests.md) 清单文件所做的更改（例如，更新加载项的图标、文本或外接程序命令）发生如下：
 
 - 业务线外接程序：如果管理员在通过 Microsoft 365 管理中心实现集中部署时，通过设备或通过指向 URL) 显式上载清单文件 (，则管理员必须上载包含所需更改的新清单文件。 上传更新后的清单文件后，加载项就会在下次相关 Office 应用启动时更新。
 
   > [!NOTE]
-  > 管理员无需删除 LOB 加载项来进行更新。 在"加载项"部分，管理员只需选择 LOB 加载项，然后按右下角的"更新外接程序"按钮即可调用此功能。
+  > 管理员无需删除 LOB 加载项来进行更新。 在"加载项"部分中，管理员只需按右下角的"更新外接程序"按钮即可选择 LOB 加载项并调用此功能。
   >
   > ![Screenshot shows the Update add-in dialog in Microsoft 365 admin center](../images/update-add-in-admin-center.png)
 
-- **Office 应用商店** 外接程序：如果管理员在通过 Microsoft 365 管理中心实施集中部署时从 Office 应用商店选择了外接程序，并且 Office 应用商店中的外接程序更新，加载项稍后会通过集中部署进行更新。 可能需要 24 小时，应用商店外接程序更新才能针对所有最终用户流动。 在此持续时间后，下一次为这些用户重新启动相关 Office 应用程序时，外接程序将更新。 用户还可以通过选择"插入选项卡加载项管理托管选项卡点击刷新"来触发手动刷新，获取最新的应用商店  >    >    >  **外接程序版本**。
+- **Office 应用商店** 外接程序：如果管理员在通过 Microsoft 365 管理中心实施集中部署时从 Office 应用商店选择了外接程序，并且 Office 应用商店中的外接程序更新，则稍后加载项将通过集中部署进行更新。 所有最终用户的应用商店外接程序更新最多可能需要 24 小时。 在此持续时间后，下一次为这些用户重新启动相关 Office 应用程序时，加载项将更新。 用户还可以通过选择"插入选项卡加载项管理托管选项卡点击刷新"来触发手动刷新，获取最新的应用商店  >    >    >  **外接程序版本**。
 
 ## <a name="end-user-experience-with-add-ins"></a>加载项最终用户体验
 
@@ -151,4 +151,4 @@ Microsoft 365 管理中心当前支持以下方案。
 
 ## <a name="see-also"></a>另请参阅
 
-- [确定加载项集中部署是否适用于 Microsoft 365 组织](/office365/admin/manage/centralized-deployment-of-add-ins)
+- [确定外接程序的集中部署是否适用于 Microsoft 365 组织](/office365/admin/manage/centralized-deployment-of-add-ins)

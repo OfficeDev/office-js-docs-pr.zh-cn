@@ -1,14 +1,14 @@
 ---
 title: 创建适用于撰写窗体的 Outlook 加载项
 description: 了解有关适用于撰写窗体的 Outlook 加载项的方案和功能。
-ms.date: 04/15/2019
+ms.date: 02/09/2021
 localization_priority: Priority
-ms.openlocfilehash: e8c12c6705bf466f12a8f16eb7f6024678a0d468
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 9156f2e1393c27eea359a6b63da47bc24a8a6828
+ms.sourcegitcommit: fefc279b85e37463413b6b0e84c880d9ed5d7ac3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44608962"
+ms.lasthandoff: 02/12/2021
+ms.locfileid: "50234252"
 ---
 # <a name="create-outlook-add-ins-for-compose-forms"></a>创建适用于撰写窗体的 Outlook 加载项
 
@@ -23,13 +23,13 @@ ms.locfileid: "44608962"
 
 - 在单独的撰写窗体中撰写内嵌响应邮件或答复邮件。
 
-- 编辑会议请求或会议项目答复（“接受”****、“暂定”**** 或“拒绝”****）。
+- 编辑会议请求或会议项目答复（“接受”、“暂定”或“拒绝”）。
 
 - 建议新的会议项目时间。
 
 - 转发或答复会议请求或会议项目。
 
-在每个撰写方案中，显示由加载项定义的任何加载项命令按钮。 对于未执行加载项命令的较旧加载项，用户可以选择功能区中的“Office 加载项”**** 打开加载项选择窗格，然后选择并启动撰写加载项。 下图显示了撰写窗体中的加载项命令。
+在每个撰写方案中，显示由加载项定义的任何加载项命令按钮。 对于未执行加载项命令的较旧加载项，用户可以选择功能区中的“Office 加载项”打开加载项选择窗格，然后选择并启动撰写加载项。 下图显示了撰写窗体中的加载项命令。
 
 ![显示 Outlook 撰写窗体，其中包含外接程序命令。](../images/compose-form-commands.png)
 
@@ -56,4 +56,4 @@ ms.locfileid: "44608962"
 
 ## <a name="see-also"></a>另请参阅
 
-- [适用于 Office 365 的 Outlook 加载项入门](../quickstarts/outlook-quickstart.md)
+- [适用于 Office 的 Outlook 加载项入门](../quickstarts/outlook-quickstart.md)

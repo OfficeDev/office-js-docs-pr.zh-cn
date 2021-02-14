@@ -1,102 +1,118 @@
-### YamlMime:Landing
+### YamlMime:Hub
 title: Office 加载项文档
-summary: 使用 Office 外接程序平台构建可扩展 Office 应用程序并与 Office 文档中的内容和 Outlook 邮件和日历项目中的内容进行交互的解决方案。 使用 Office 外接程序，您可以使用熟悉的 web 技术（如 HTML、CSS 和 JavaScript）来构建可在 web、Windows、Mac、Android 和 iOS 上运行的 Office 解决方案。
+summary: 使用 Office 外接程序平台构建解决方案，以扩展 Office 应用程序并与 Office 文档以及 Outlook 邮件和日历项中的内容进行交互。 借助 Office 外接程序，可以使用熟悉的 Web 技术（如 HTML、CSS 和 JavaScript）生成可在 Office 网页版、Windows、Mac 版和移动版中运行的解决方案。
+brand: office
 metadata:
   title: Office 加载项文档
   description: 了解如何构建 Office 外接程序。
-  ms.prod: non-product-specific
-  ms.topic: landing-page
+  services: service
+  ms.service: service
+  ms.topic: hub-page
   author: o365devx
   ms.author: o365devx
-  ms.date: 07/31/2020
-  ms.openlocfilehash: 993ef1e5671e42b1b6d5e6316d61d51a794be62e
-  ms.sourcegitcommit: 604361e55dee45c7a5d34c2fa6937693c154fc24
+  ms.date: 02/12/2021
+  ms.openlocfilehash: 848727c2b49c2ab8609fe07b98d25c307acb0315
+  ms.sourcegitcommit: ccc0a86d099ab4f5ef3d482e4ae447c3f9b818a3
   ms.translationtype: MT
   ms.contentlocale: zh-CN
-  ms.lasthandoff: 09/03/2020
-  ms.locfileid: "47363714"
-landingContent:
-- title: 关于 Office 加载项
-  linkLists:
-  - linkListType: concept
+  ms.lasthandoff: 02/14/2021
+  ms.locfileid: "50238055"
+highlightedContent:
+  items:
+  - itemType: overview
+    title: Office 加载项平台概述
+    url: overview/office-add-ins.md
+  - itemType: quickstart
+    title: 在 5 分钟内设置 Excel 加载项
+    url: quickstarts/excel-quickstart-jquery.md
+  - itemType: learn
+    title: Microsoft Learn： Introduction to Office client customization with add-ins
+    url: /learn/modules/intro-office-add-ins
+  - itemType: learn
+    title: Microsoft Learn：使用 Office 加载项扩展 Office 客户端
+    url: /learn/paths/m365-office-add-in-associate
+  - itemType: whats-new
+    title: Microsoft 365 开发人员博客
+    url: https://developer.microsoft.com/office/blogs/technology/add-ins
+  - itemType: how-to-guide
+    title: Office 外接程序初学者指南
+    url: overview/learning-path-beginner.md
+  - itemType: reference
+    title: Office JavaScript API 参考文档
+    url: /javascript/api/overview
+  - itemType: sample
+    title: GitHub：Office 加载项的模式和做法
+    url: https://github.com/OfficeDev/PnP-OfficeAddins
+conceptualContent:
+  title: 开发人员旅程
+  summary: ''
+  items:
+  - title: 浏览
     links:
-    - text: Office 加载项平台概述
-      url: overview/office-add-ins.md
-  - linkListType: learn
+    - url: overview/learning-path-beginner.md
+      itemType: get-started
+      text: Office 加载项入门
+    - url: overview/explore-with-script-lab.md
+      itemType: sample
+      text: 使用 Script Lab 进行测试和试验
+    - url: quickstarts/outlook-quickstart.md
+      itemType: quickstart
+      text: 在 5 分钟内设置 Outlook 外接程序
+    - url: quickstarts/powerpoint-quickstart.md
+      itemType: quickstart
+      text: 在 5 分钟内设置 PowerPoint 加载项
+  - title: 内部版本
     links:
-    - text: 使用外接程序自定义 Office 客户端简介
-      url: /learn/modules/intro-office-add-ins/
-    - text: 使用 Office 外接程序扩展 Office 客户端
-      url: /learn/paths/m365-office-add-in-associate/
-  - linkListType: overview
+    - url: tutorials/excel-tutorial.md
+      itemType: tutorial
+      text: 开发完整的 Excel 加载项
+    - url: tutorials/outlook-tutorial.md
+      itemType: tutorial
+      text: 发现 Outlook 外接程序教程
+    - url: overview/patterns-and-practices-overview.md
+      itemType: sample
+      text: 使用常见模式和做法
+    - url: /javascript/api/overview
+      itemType: reference
+      text: 阅读 API 参考文档
+  - title: 测试和调试
     links:
-    - text: Excel 加载项文档
-      url: excel/index.yml
-    - text: OneNote 加载项文档
-      url: onenote/index.yml
-    - text: Outlook 加载项文档
-      url: outlook/index.yml
-    - text: PowerPoint 加载项文档
-      url: powerpoint/index.yml
-    - text: Project 加载项文档
-      url: project/index.yml
-    - text: Word 加载项文档
-      url: word/index.yml
-- title: 入门
-  linkLists:
-  - linkListType: get-started
+    - url: testing/test-debug-office-add-ins.md
+      itemType: overview
+      text: 查看调试概述
+    - url: testing/testing-and-troubleshooting.md
+      itemType: concept
+      text: 排查用户错误
+    - url: testing/troubleshoot-manifest.md
+      itemType: architecture
+      text: 验证加载项清单
+  - title: 部署
     links:
-    - text: Office 加载项入门
-      url: overview/learning-path-beginner.md
-    - text: 使用 Script Lab 探索 Office JavaScript API
-      url: overview/explore-with-script-lab.md
-  - linkListType: quickstart
+    - url: publish/publish.md
+      itemType: deploy
+      text: 探索部署选项
+    - url: publish/centralized-deployment.md
+      itemType: deploy
+      text: 了解集中部署
+  - title: 发布
     links:
-    - text: Excel 加载项快速入门
-      url: quickstarts/excel-quickstart-jquery.md
-    - text: Excel 自定义函数快速入门
-      url: quickstarts/excel-custom-functions-quickstart.md
-    - text: OneNote 加载项快速入门
-      url: quickstarts/onenote-quickstart.md
-    - text: Outlook 加载项快速入门
-      url: quickstarts/outlook-quickstart.md
-    - text: PowerPoint 加载项快速入门
-      url: quickstarts/powerpoint-quickstart.md
-    - text: Project 加载项快速入门
-      url: quickstarts/project-quickstart.md
-    - text: Word 加载项快速入门
-      url: quickstarts/word-quickstart.md
-    - text: 单一登录 (SSO) 快速入门
-      url: quickstarts/sso-quickstart.md
-- title: 教程
-  linkLists:
-  - linkListType: tutorial
+    - url: /office/dev/store
+      itemType: overview
+      text: 验证 Office 加载项
+    - url: /office/dev/store/add-in-submission-guide
+      itemType: how-to-guide
+      text: 查看 Microsoft 365 应用商店提交指南
+  - title: 参与
     links:
-    - text: Excel 加载项教程
-      url: tutorials/excel-tutorial.md
-    - text: Excel 自定义函数教程
-      url: tutorials/excel-tutorial-create-custom-functions.md
-    - text: Outlook 加载项教程
-      url: tutorials/outlook-tutorial.md
-    - text: PowerPoint 加载项教程
-      url: tutorials/powerpoint-tutorial.md
-    - text: Word 加载项教程
-      url: tutorials/word-tutorial.md
-- title: 资源
-  linkLists:
-  - linkListType: reference
-    links:
-    - text: 提问
-      url: https://stackoverflow.com/questions/tagged/office-js
-    - text: 报告问题
-      url: https://github.com/officedev/office-js/issues
-    - text: 请求功能
-      url: https://officespdev.uservoice.com/
-    - text: COM 或 VSTO 外接程序文档
-      url: /office/client-developer/office-client-development
-    - text: Office 外接程序 PnP 示例存储库
-      url: https://github.com/OfficeDev/PnP-OfficeAddins
-    - text: Office 外接程序博客
-      url: https://developer.microsoft.com/office/gallery/?filterBy=Add-ins,Blog%20Posts
-    - text: 其他资源
-      url: resources/resources-links-help.md
+    - url: https://developer.microsoft.com/office
+      itemType: whats-new
+      text: 加入开发人员计划
+    - url: https://officespdev.uservoice.com
+      itemType: architecture
+      text: 请求功能
+    - url: https://stackoverflow.com/questions/tagged/office-js
+      itemType: reference
+      text: 在 Stack Overflow 上Office.js问题
+    - url: https://github.com/OfficeDev/office-js/issues
+      itemType: reference
+      text: 报告 Bug 或问题

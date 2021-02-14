@@ -3,16 +3,16 @@ title: 清单文件中运行时
 description: Runtimes 元素指定加载项的运行时。
 ms.date: 02/01/2021
 localization_priority: Normal
-ms.openlocfilehash: 74bb2b432f46d5876601052003e20ff843e13b06
-ms.sourcegitcommit: 8546889a759590c3798ce56e311d9e46f0171413
+ms.openlocfilehash: fd672e2592b2e9bfdf7abb0d293b93202d4ad210
+ms.sourcegitcommit: ccc0a86d099ab4f5ef3d482e4ae447c3f9b818a3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/04/2021
-ms.locfileid: "50104824"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "50237964"
 ---
 # <a name="runtimes-element"></a>Runtimes 元素
 
-指定加载项的运行时。 元素的 [`<Host>`](host.md) 子元素。
+指定加载项的运行时。 元素的 [`<Host>`](host.md) 子级。
 
 > [!NOTE]
 > When running in Office on Windows， your add-in uses the Internet Explorer 11 browser.

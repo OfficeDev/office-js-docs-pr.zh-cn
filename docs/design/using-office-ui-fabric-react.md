@@ -1,18 +1,18 @@
 ---
 title: 在 Office 加载项中使用 Office UI Fabric React
 description: 了解如何在 Office 加载项中使用 Office UI Fabric React。
-ms.date: 09/09/2020
+ms.date: 02/09/2021
 localization_priority: Normal
-ms.openlocfilehash: c1671fdd2ea616398f9c57f76898a6cc96daf502
-ms.sourcegitcommit: ceb8dd66f3fb9c963fce8446c2f6c65ead56fbc1
+ms.openlocfilehash: f8f61d1b094fa71b8a400a6a6d9ea3029c53b051
+ms.sourcegitcommit: ccc0a86d099ab4f5ef3d482e4ae447c3f9b818a3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "49131981"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "50237726"
 ---
 # <a name="use-office-ui-fabric-react-in-office-add-ins"></a>在 Office 加载项中使用 Office UI Fabric React
 
-Office UI Fabric 是用于生成 Office 和 Office 365 用户体验的 JavaScript 前端框架。如果使用 React 生成外接程序，请考虑使用 Fabric React 来创建用户体验。Fabric 提供了多个可在外接程序中使用的基于 React 的 UX 组件，如按钮或复选框。
+Office UI Fabric 是一个 JavaScript 前端框架，用于构建 Office 用户体验。如果使用 React 生成加载项，请考虑使用 Fabric React 创建用户体验。Fabric 提供了多个可在加载项中使用的基于 React 的 UX 组件，如按钮或复选框。
 
 本文介绍如何创建使用 React 构建的加载项, 并使用 Fabric React 组件。
 
@@ -36,7 +36,7 @@ Office UI Fabric 是用于生成 Office 和 Office 365 用户体验的 JavaScrip
 - **要如何命名加载项?** `My Office Add-in`
 - **要支持哪一个 Office 客户端应用程序?** `Word`
 
-![在命令行界面中显示 Yeoman 生成器的提示和答案的屏幕截图](../images/yo-office-word-react.png)
+![显示命令行界面中 Yeoman 生成器的提示和回答的屏幕截图](../images/yo-office-word-react.png)
 
 完成此向导后，生成器会创建项目，并安装支持的 Node 组件。
 
@@ -78,7 +78,7 @@ Office UI Fabric 是用于生成 Office 和 Office 365 用户体验的 JavaScrip
 
 3. 在 Word 中，依次选择“**开始**”选项卡和功能区中的“**显示任务窗格**”按钮，以打开加载项任务窗格。 请注意任务窗格底部的“默认文本”和 "**运行**" 按钮。 在本演练的其余部分中, 你将通过创建使用来自 Fabric React 的 UX 组件的 React 组件来重新定义此文本和按钮。
 
-    ![显示 Word 应用程序的屏幕截图，其中突出显示了 "显示任务窗格" 功能区按钮，在任务窗格中突出显示了 "运行" 按钮和紧邻文本](../images/word-task-pane-yo-default.png)
+    ![Screenshot showing the Word application with the Show Taskpane ribbon button highlighted and the Run button and immediately preceding text highlighted in the task pane](../images/word-task-pane-yo-default.png)
 
 ## <a name="create-a-react-component-that-uses-fabric-react"></a>创建使用 Fabric React 的 React 组件
 
@@ -170,7 +170,7 @@ export class ButtonPrimaryExample extends React.Component<IButtonProps, {}> {
 
 在 Word 中, 当你保存对 **App.tsx** 的更改时，加载项任务窗格会自动更新。 任务窗格底部的默认文本和按钮现在显示由该`ButtonPrimaryExample`组件定义的 UI。 选择 **插入文本……** 按钮将文本插入到文档中。
 
-![显示包含 "插入文本 ..." 的 Word 应用程序的屏幕截图按钮和紧接在文本前面突出显示](../images/word-task-pane-with-react-component.png)
+![显示具有"插入文本..."的 Word 应用程序的屏幕截图按钮和紧接前面的突出显示文本](../images/word-task-pane-with-react-component.png)
 
 恭喜，您已使用 React 和 Office UI Fabric React 成功创建了任务窗格加载项！
 
