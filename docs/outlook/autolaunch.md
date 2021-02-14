@@ -2,14 +2,14 @@
 title: '为 Outlook 外接程序配置基于事件的激活 (预览) '
 description: 了解如何配置 Outlook 外接程序进行基于事件的激活。
 ms.topic: article
-ms.date: 02/03/2021
+ms.date: 02/12/2021
 localization_priority: Normal
-ms.openlocfilehash: d9108b4debea5e59503f3c935a537e5fafde00c8
-ms.sourcegitcommit: fefc279b85e37463413b6b0e84c880d9ed5d7ac3
+ms.openlocfilehash: 6c1bf36e57b5ce796b61f88724ee60ed6fb95ed3
+ms.sourcegitcommit: ccc0a86d099ab4f5ef3d482e4ae447c3f9b818a3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/12/2021
-ms.locfileid: "50234273"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "50238041"
 ---
 # <a name="configure-your-outlook-add-in-for-event-based-activation-preview"></a>为 Outlook 外接程序配置基于事件的激活 (预览) 
 
@@ -24,7 +24,7 @@ ms.locfileid: "50234273"
 在此演练结束时，您将拥有一个在新建邮件时运行的外接程序。
 
 > [!IMPORTANT]
-> 此功能仅在 Outlook [网页版](../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md) 和具有 Microsoft 365 订阅的 Windows 中受支持预览。 有关详细信息 [，请参阅](#how-to-preview-the-event-based-activation-feature) 本文中如何预览基于事件的激活功能。
+> 此功能仅在 Outlook [网页版](../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md) 和具有 Microsoft 365 订阅的 Windows 上受支持预览。 有关详细信息 [，请参阅](#how-to-preview-the-event-based-activation-feature) 本文中如何预览基于事件的激活功能。
 >
 > 由于预览功能可能会随时更改，恕不另行通知，因此不应将其用于生产外接程序。
 
@@ -214,7 +214,7 @@ Windows 上的 Outlook 使用 JavaScript 文件，而 Web 上的 Outlook 使用�
 
 ## <a name="try-it-out"></a>试用
 
-1. 在项目的根目录中运行以下命令。 运行此命令时，如果本地 Web (尚未运行，) 将旁加载您的外接程序。
+1. 在项目的根目录中运行以下命令。 如果运行此命令，本地 Web 服务器将启动（如果尚未运行），并将旁加载加载项。
 
     ```command&nbsp;line
     npm start
@@ -238,17 +238,19 @@ Windows 上的 Outlook 使用 JavaScript 文件，而 Web 上的 Outlook 使用�
 
 某些Office.js更改或更改 UI 的 API 不允许来自基于事件的加载项。以下是阻止的 API：
 
+- 在 `Office.context.auth` ：
+  - `getAccessToken`
+  - `getAccessTokenAsync`
 - 在 `Office.context.mailbox` ：
   - `displayAppointmentForm`
   - `displayMessageForm`
   - `displayNewAppointmentForm`
   - `displayNewMessageForm`
+- 在 `Office.context.mailbox.item` ：
+  - `close`
 - 在 `Office.context.ui` ：
   - `displayDialogAsync`
   - `messageParent`
-- 在 `Office.context.auth` ：
-  - `getAccessToken`
-  - `getAccessTokenAsync`
 
 ## <a name="see-also"></a>另请参阅
 
