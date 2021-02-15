@@ -1202,7 +1202,7 @@ items:
     items:
       - name: VSTO 加载项开发人员指南
         href: overview/learning-path-transition.md
-      - name: 分享 VSTO 加载项代码至 Office 加载项
+      - name: 将 VSTO 加载项中的代码共享到 Office 加载项
         href: tutorials/migrate-vsto-to-office-add-in-shared-code-library-tutorial.md
       - name: 确认 Office 加载项与已有的COM 加载项兼容
         href: develop/make-office-add-in-compatible-with-existing-com-add-in.md
