@@ -5,12 +5,12 @@ ms.date: 10/14/2020
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: cc3248427a8399532d62ca4bffc20f31c48f0aa4
-ms.sourcegitcommit: 42e6cfe51d99d4f3f05a3245829d764b28c46bbb
+ms.openlocfilehash: 7460ca65313480cc4518bdfb30447dc83288debe
+ms.sourcegitcommit: ccc0a86d099ab4f5ef3d482e4ae447c3f9b818a3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "48741048"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "50237761"
 ---
 # <a name="office-add-ins-platform-overview"></a>Office 加载项平台概述
 
@@ -90,7 +90,7 @@ Office 加载项可以在 Office 客户端应用程序中执行下列操作：
 
 #### <a name="task-panes"></a>任务窗格  
 
-除了通过加载项命令以外，用户还可以使用任务窗格与解决方案进行交互。不支持加载项命令的客户端（Office 2013 和 iPad 版 Office）以任务窗格的形式运行加载项。用户通过“插入”**** 选项卡上的“我的加载项”**** 按钮，启动任务窗格加载项。
+除了通过加载项命令以外，用户还可以使用任务窗格与解决方案进行交互。不支持加载项命令的客户端（Office 2013 和 iPad 版 Office）以任务窗格的形式运行加载项。用户通过“插入”选项卡上的“我的加载项”按钮，启动任务窗格加载项。
 
 *图 4：任务窗格*
 

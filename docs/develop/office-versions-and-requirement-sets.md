@@ -1,14 +1,14 @@
 ---
 title: Office 版本和要求集
-description: 使用 JavaScript API 支持的 Office.js 平台
-ms.date: 07/07/2020
+description: 使用 JavaScript API 支持的 Office.js 平台。
+ms.date: 02/09/2021
 localization_priority: Priority
-ms.openlocfilehash: 14b88402b1ee563d992b6f37f95be4fa7f337388
-ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
+ms.openlocfilehash: 2fd1393271d50be66dd2bbc2bb8cbb251ae6efbc
+ms.sourcegitcommit: ccc0a86d099ab4f5ef3d482e4ae447c3f9b818a3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "47293210"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "50237663"
 ---
 # <a name="office-versions-and-requirement-sets"></a>Office 版本和要求集
 
@@ -62,4 +62,4 @@ Office JavaScript API 库 (Office.js) 包含当前可用的所有要求集。 �
 - [指定 Office 应用程序和 API 要求集](../develop/specify-office-hosts-and-api-requirements.md)
 - [安装最新版 Office](../develop/install-latest-office-version.md)
 - [Microsoft 365 应用版更新频道概述](/deployoffice/overview-of-update-channels-for-office-365-proplus)
-- [通过 Office 365 充分利用 Office](https://products.office.com/compare-all-microsoft-office-products?tab=2)
+- [利用 Microsoft 365 和 Microsoft Teams 重塑生产力](https://products.office.com/compare-all-microsoft-office-products?tab=2)

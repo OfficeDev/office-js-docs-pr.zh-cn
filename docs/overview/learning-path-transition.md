@@ -4,12 +4,12 @@ description: 资深 VSTO 加载项开发人员了解 Office Web 加载项资源�
 ms.date: 10/14/2020
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: 1dca15a4d286e3bfa5b7ba4a502bb9161bf3257f
-ms.sourcegitcommit: 42e6cfe51d99d4f3f05a3245829d764b28c46bbb
+ms.openlocfilehash: 6da72dbdc5dc25d222cc7c2a269d905d9271ce15
+ms.sourcegitcommit: ccc0a86d099ab4f5ef3d482e4ae447c3f9b818a3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "48741062"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "50238013"
 ---
 # <a name="vsto-add-in-developers-guide"></a>VSTO 加载项开发人员指南
 
@@ -33,7 +33,7 @@ ms.locfileid: "48741062"
 我们知道你渴望开始编码，但是在打开 IDE 或代码编辑器之前，你应该先阅读一些有关 Office 加载项的信息。
 
 - [Office 加载项平台概述](office-add-ins.md)：了解什么是 Office Web 加载项以及它们与扩展 Office（如 VSTO 加载项）的旧方法有何区别。
-- [开发 Office 加载项](../develop/develop-overview.md)：概述 Office 加载项的开发和生命周期，包括工具、创建加载项 UI 以及使用 JavaScript API 与 Office 文档进行交互。
+- [开发 Office 加载项](../develop/develop-overview.md)：获取 Office 加载项的开发和生命周期概述，包括工具、创建加载项 UI 以及使用 JavaScript API 与 Office 文档交互。
 
 这些文章中有许多链接，但是如果你正在过渡至 Office Web 加载项的初学者，我们建议你在阅读完后返回此处并继续下一部分。
 
@@ -64,7 +64,7 @@ ms.locfileid: "48741062"
 
 ## <a name="step-6-for-vsto-developers-only-reuse-your-vsto-code"></a>步骤 6（仅适用于 VSTO 开发人员）：重复使用 VSTO 代码
 
-可以在 Office Web 加载项中重复使用某些 VSTO 加载项代码，方法是将其移到服务器上 Web 应用程序的后端，然后将其作为 Web API 供 JavaScript 或 TypeScript 使用。 有关指南，参见[教程：使用共享代码库在 VSTO 加载项与 Office 加载项之间共享代码](../tutorials/migrate-vsto-to-office-add-in-shared-code-library-tutorial.md)。
+可以在 Office Web 加载项中重复使用某些 VSTO 加载项代码，方法是将其移到服务器上 Web 应用程序的后端，然后将其作为 Web API 供 JavaScript 或 TypeScript 使用。 有关指南，参见 [教程：使用共享代码库在 VSTO 加载项与 Office 加载项之间共享代码](../tutorials/migrate-vsto-to-office-add-in-shared-code-library-tutorial.md)。
 
 ## <a name="next-steps"></a>后续步骤
 
