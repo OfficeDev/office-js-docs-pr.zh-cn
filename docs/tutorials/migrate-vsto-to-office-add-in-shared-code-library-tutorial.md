@@ -1,15 +1,15 @@
 ---
-ms.date: 07/07/2020
+ms.date: 02/09/2021
 ms.prod: non-product-specific
 description: 有关如何在 VSTO 加载项与 Office 加载项之间共享代码的教程。
 title: 教程：使用共享代码库在 VSTO 加载项与 Office 加载项之间共享代码
 localization_priority: Priority
-ms.openlocfilehash: 761820dece1d5b8322de38863e10ad2f536445b9
-ms.sourcegitcommit: ceb8dd66f3fb9c963fce8446c2f6c65ead56fbc1
+ms.openlocfilehash: 1645cdcc3c799ec09e98ae69dd4abd6e38b11880
+ms.sourcegitcommit: ccc0a86d099ab4f5ef3d482e4ae447c3f9b818a3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "49131743"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "50238090"
 ---
 # <a name="tutorial-share-code-between-both-a-vsto-add-in-and-an-office-add-in-with-a-shared-code-library"></a>教程：使用共享代码库在 VSTO 加载项与 Office 加载项之间共享代码
 
@@ -17,7 +17,7 @@ Visual Studio Tools for Office (VSTO) 加载项非常适合用于扩展 Office�
 
 Office 加载项使用 HTML、JavaScript 和其他 Web 技术来构建所有平台上的 Office 解决方案。 一种好方法是将现有 VSTO 加载项迁移到 Office 加载项，使你的解决方案在所有平台中可用。
 
-你可能想要同时保留具有相同功能的 VSTO 加载项和新 Office 加载项。 这样就能继续为 Windows 版 Office 中使用 VSTO 加载项的客户提供服务。 此外，还能为所有平台的客户提供相同的 Office 加载项功能。 你还可以[使 Office 加载项与现有 VSTO 加载项兼容](../develop/make-office-add-in-compatible-with-existing-com-add-in.md)。
+你可能想要同时保留具有相同功能的 VSTO 加载项和新 Office 加载项。 这样就能继续为 Windows 版 Office 中使用 VSTO 加载项的客户提供服务。 此外，还能为所有平台的客户提供相同的 Office 加载项功能。 你还可以 [使 Office 加载项与现有 VSTO 加载项兼容](../develop/make-office-add-in-compatible-with-existing-com-add-in.md)。
 
 但是，最好避免为 Office 加载项重写 VSTO 加载项的所有代码。 本教程介绍如何使用这两个加载项的共享代码库来避免重写代码。
 
@@ -50,7 +50,7 @@ Office 加载项使用 HTML、JavaScript 和其他 Web 技术来构建所有平�
 
 还需要：
 
-- Microsoft 365 帐户。 你可以加入 [Microsoft 365 开发人员计划](https://aka.ms/devprogramsignup)，获取为期 1 年的免费 Office 365 订阅服务。
+- Microsoft 365 帐户。 你可以加入 [Microsoft 365 开发人员计划](https://aka.ms/devprogramsignup)，获取可续订 90 天的 Microsoft 365 订阅，其中包括 Office 应用。
 - Microsoft Azure 租户。 可以从 [Microsoft Azure](https://account.windowsazure.com/SignUp) 获得试用订阅。
 
 ## <a name="the-cell-analyzer-vsto-add-in"></a>单元格分析器 VSTO 加载项
@@ -91,10 +91,10 @@ UI 代码与用户进行交互。 在 VSTO 中，UI 代码可通过 Windows 窗�
 让我们看一看 VSTO 加载项。 在以下代码中，每个部分标识为 DOCUMENT、UI 或 ALGORITHM 代码。
 
 ```csharp
-// **_ UI CODE _*_
+// *** UI CODE ***
 private void btnUnicode_Click(object sender, EventArgs e)
 {
-    // _*_ DOCUMENT CODE _*_
+    // *** DOCUMENT CODE ***
     Microsoft.Office.Interop.Excel.Range rangeCell;
     rangeCell = Globals.ThisAddIn.Application.ActiveCell;
 
@@ -105,7 +105,7 @@ private void btnUnicode_Click(object sender, EventArgs e)
         cellValue = rangeCell.Value.ToString();
     }
 
-    // _*_ ALGORITHM CODE _*_
+    // *** ALGORITHM CODE ***
     //convert string to Unicode listing
     string result = "";
     foreach (char c in cellValue)
@@ -115,16 +115,16 @@ private void btnUnicode_Click(object sender, EventArgs e)
         result += $"{c}: {unicode}\r\n";
     }
 
-    // _*_ UI CODE _*_
+    // *** UI CODE ***
     //Output the result
     txtResult.Text = result;
 }
 ```
 
-使用此方法就会发现，可以将一个代码段共享到 Office 加载项。 需要将以下代码重构到单独的类库中。
+使用此方法就会发现，可以将一节代码共享到 Office 加载项。 需要将以下代码重构到单独的类库中。
 
 ```csharp
-// _*_ ALGORITHM CODE _*_
+// *** ALGORITHM CODE ***
 //convert string to Unicode listing
 string result = "";
 foreach (char c in cellValue)
@@ -139,7 +139,7 @@ foreach (char c in cellValue)
 
 在 Visual Studio 中，VSTO 加载项会创建为 .NET 项目，因此为简单起见，我们将尽可能重用 .NET。 下一种方法是创建类库，然后将共享代码重构到该类库中。
 
-1. 如果尚未启动 Visual Studio 2019 并打开_ *\start\Cell-Analyzer.sln** 解决方案，请执行此操作。
+1. 如果尚未启动 Visual Studio 2019 并打开 **\start\Cell-Analyzer.sln** 解决方案，请执行此操作。
 2. 右键单击“**解决方案资源管理器**”中的解决方案，并选择 **“添加”>“新建项目”**。
 3. 在“**添加新项目**”对话框中，选择“**类库(.NET Framework)**”，然后选择“**下一步**”。
     > [!NOTE]
@@ -455,4 +455,4 @@ Excel 将运行并旁加载 Office 加载项。 若要测试应用服务是否�
 
 ## <a name="conclusion"></a>总结
 
-在本教程中，你学习了如何创建与原始 VSTO 加载项共享代码的 Office 加载项。 学习了如何维护 Windows 上 Office 的 VSTO 代码以及其他平台上 Office 的 Office 加载项。 你将 VSTO C# 代码重构到共享库中，并将其部署到 Azure 应用服务。 你创建了使用共享库的 Office 加载项，因此无需用 JavaScript 重写代码。
+在本教程中，你学习了如何创建与原始 VSTO 加载项共享代码的 Office 加载项。 学习了如何维护 Windows 版 Office 的 VSTO 代码以及其他平台上的 Office 的 Office 加载项。 你将 VSTO C# 代码重构到共享库中，并将其部署到 Azure 应用服务。 你创建了使用共享库的 Office 加载项，因此无需用 JavaScript 重写代码。

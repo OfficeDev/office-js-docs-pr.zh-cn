@@ -1,15 +1,15 @@
 ---
 title: Word 加载项教程
 description: 本教程将介绍如何生成 Word 加载项，用于插入（和替换）文本区域、段落、图像、HTML、表格和内容控件。 此外，还将介绍如何设置文本格式，以及如何插入（和替换）内容控件中的内容。
-ms.date: 10/14/2020
+ms.date: 02/09/2021
 ms.prod: word
 localization_priority: Priority
-ms.openlocfilehash: 3f76ca75e07a5d071d1824b1ea96542f1014c9d1
-ms.sourcegitcommit: ceb8dd66f3fb9c963fce8446c2f6c65ead56fbc1
+ms.openlocfilehash: 735526c1ac85ba67d45d8a9c0b14da271e52796a
+ms.sourcegitcommit: ccc0a86d099ab4f5ef3d482e4ae447c3f9b818a3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "49131828"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "50238104"
 ---
 # <a name="tutorial-create-a-word-task-pane-add-in"></a>教程：创建 Word 任务窗格加载项
 
@@ -153,11 +153,11 @@ ms.locfileid: "49131828"
 
         若要使用加载项，请在 Word 网页版中打开新的文档，并按照[在 Office 网页版中旁加载 Office 加载项](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-in-office-on-the-web)中的说明操作，以旁加载你的加载项。
 
-2. 在 Word 中，依次选择“**开始**”选项卡和功能区中的“**显示任务窗格**”按钮，以打开加载项任务窗格。
+2. 在 Word 中，依次选择“开始”选项卡和功能区中的“显示任务窗格”按钮，以打开加载项任务窗格。
 
     ![显示 Word 中突出显示的“显示任务窗格”按钮的屏幕截图](../images/word-quickstart-addin-2b.png)
 
-3. 在任务窗格中，选择“**插入段落**”按钮。
+3. 在任务窗格中，选择“插入段落”按钮。
 
 4. 在段落中进行一些更改。
 
@@ -505,7 +505,7 @@ function insertTextIntoRange() {
 
 6. 在 `insertTextBeforeRange()` 函数中，将 `TODO1` 替换为以下代码。 注意：
 
-   - 此方法用于在文本为“Office 365”的区域前添加文本为“Office 2019”的区域。 它做了一个简化假设，即存在字符串，且用户已选择它。
+   - 此方法用于在文本为“Microsoft 365”的区域前添加文本为“Office 2019”的区域。它做了一个简化假设，即存在字符串，且用户已选择它。
 
    - `Range.insertText` 方法的第一个参数是要添加的字符串。
 
@@ -531,7 +531,7 @@ function insertTextIntoRange() {
         //        been queued.
     ```
 
-8. 将 `TODO3` 替换为下面的代码。 这一新段落将说明，新文本**_不_* _ 属于原始选定区域。 原始区域中的文本仍与用户选择它时一样。
+8. 将 `TODO3` 替换为下面的代码。 这一新段落将说明，新文本 ***不*** 属于原始选定区域。 原始区域中的文本仍与用户选择它时一样。
 
     ```js
     doc.body.insertParagraph("Current text of original range: " + originalRange.text, "End");
@@ -545,9 +545,9 @@ function insertTextIntoRange() {
 
 ### <a name="replace-the-text-of-a-range"></a>替换区域文本
 
-1. 打开文件 _*./src/taskpane/taskpane.html**。
+1. 打开 ./src/taskpane/taskpane.html 文件。
 
-2. 定位 `<button>` 按钮的 `insert-text-outside-range` 元素，并在行后添加下列标记：
+2. 找到 `<button>` 按钮的 `insert-text-outside-range` 元素，并在该行后添加下列标记：
 
     ```html
     <button class="ms-Button" id="replace-text">Change Quantity Term</button><br/><br/>
@@ -602,9 +602,9 @@ function insertTextIntoRange() {
 
 5. 选择 **“插入缩写”** 按钮。 观察“(C2R)”是否已添加。 此外，还请观察，文档底部是否添加了包含整个扩展文本的新段落，因为新字符串已添加到现有区域中。
 
-6. 在文档中，选择短语“Office 365”。 请注意不要包含选定区域前后的空格。
+6. 在文档中，选择短语“Microsoft 365”。 请注意不要包含选定区域前后的空格。
 
-7. 选择 **“添加版本信息”** 按钮。 观察是否已在“Office 2016”和“Office 365”之间插入“Office 2019”。 此外，还请观察，文档底部是否添加了仅包含最初选定文本的新段落，因为新字符串已变成新区域，而不是添加到原始区域中。
+7. 选择“**添加版本信息**” 按钮。观察是否已在“Office 2016”和“Microsoft 365”之间插入“Office 2019”。此外，还请观察，文档底部是否添加了仅包含最初选定文本的新段落，因为新字符串已变成新区域，而不是添加到原始区域中。
 
 8. 在文档中，选择“几个”一词。 *请注意，不要在选定区域的前后添加空格。*
 
@@ -805,7 +805,7 @@ function insertTextIntoRange() {
 
 5. 选择“插入 HTML”按钮，观察是否在文档末尾插入了两个段落，第一个段落使用 Verdana 字体。
 
-6. 选择“**插入表格**”按钮，观察是否在第二个段落后面插入了表格。
+6. 选择“插入表格”按钮，观察是否在第二个段落后面插入了表格。
 
     ![显示选择加载项按钮“插入图像”、“插入 HTML”和“插入表”结果的屏幕截图](../images/word-tutorial-insert-image-html-table-2.png)
 
@@ -857,7 +857,7 @@ function insertTextIntoRange() {
 
 6. 在 `createContentControl()` 函数中，将 `TODO1` 替换为以下代码。 注意：
 
-   - 此代码用于在内容控件中包装短语“Office 365”。 它做了一个简化假设，即存在字符串，且用户已选择它。
+   - 此代码旨在将短语“Microsoft 365”包装到内容控件中。它做了一个简化假设，即存在字符串，且用户已选择它。
 
    - `ContentControl.title` 属性指定内容控件的可见标题。
 
@@ -931,11 +931,11 @@ function insertTextIntoRange() {
 
 2. 如果加载项任务窗格已在 Word 中打开，请转到“开始”选项卡并选择功能区中的“显示任务窗格”按钮以打开它。
 
-3. 在任务窗格中，选择“插入段落”按钮，以确保文档顶部有包含“Office 365”的段落。
+3. 在任务窗格中，选择“**插入段落**”按钮，以确保文档顶部有包含“Microsoft 365”的段落。
 
-4. 在文档中，选择文本“Office 365”，然后选择“创建内容控件”按钮。 观察此短语是否包装在标签为“服务名称”的标记中。
+4. 在文档中，选择文本“Microsoft 365”，然后选择“**创建内容控件**”按钮。 观察此短语是否包装在标签为“服务名称”的标记中。
 
-5. 选择“**重命名服务**”按钮，并观察内容控件的文本是否变成“Fabrikam Online Productivity Suite”。
+5. 选择“重命名服务”按钮，并观察内容控件的文本是否变成“Fabrikam Online Productivity Suite”。
 
     ![显示选择外接程序按钮“创建内容控制”和“重命名服务”的结果屏幕截图](../images/word-tutorial-content-control-2.png)
 
