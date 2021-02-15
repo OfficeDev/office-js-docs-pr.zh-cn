@@ -3,12 +3,12 @@ title: 为 Office 加载项启用单一登录
 description: 了解如何使用常用的 Microsoft 个人、工作或教育帐户来为 Office 加载项启用单一登录。
 ms.date: 07/30/2020
 localization_priority: Priority
-ms.openlocfilehash: ec4fc9f91f3cbc9f8882ed491c7c5bc68be346ed
-ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
+ms.openlocfilehash: 104a64fa5a761e06711e9c5f850bba0267830809
+ms.sourcegitcommit: ccc0a86d099ab4f5ef3d482e4ae447c3f9b818a3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "47293196"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "50237817"
 ---
 # <a name="enable-single-sign-on-for-office-add-ins"></a>为 Office 加载项启用单一登录
 
@@ -21,7 +21,9 @@ ms.locfileid: "47293196"
 
 如果使用的是 **Outlook** 加载项，请务必为 Microsoft 365 租赁启用新式验证。 若要了解如何执行此操作，请参阅 [Exchange Online: How to enable your tenant for modern authentication](https://social.technet.microsoft.com/wiki/contents/articles/32711.exchange-online-how-to-enable-your-tenant-for-modern-authentication.aspx)（如何为租户启用新式体验）。
 
-*不应*依赖 SSO 作为加载项的唯一身份验证方法。 应实现备用身份验证系统，在某些错误情况下，加载项可以返回到该系统。 可以使用包含用户表和身份验证的系统，也可以利用其中某个社交登录提供者。 有关如何使用 Office 加载项执行此操作的详细信息，请参阅 [Authorize external services in your Office Add-in](auth-external-add-ins.md)（对 Office 加载项中的外部服务授权）。 对于 *Outlook*，建议使用回退系统。 有关详细信息，请参阅[应用场景：在 Outlook 外接程序中对服务实现单一登录](../outlook/implement-sso-in-outlook-add-in.md)。 有关使用 Azure Active Directory 作为回退系统的示例，请参阅 [Office 加载项 NodeJS SSO](https://github.com/OfficeDev/Office-Add-in-NodeJS-SSO) 和 [Office 加载项 ASP.NET SSO](https://github.com/OfficeDev/Office-Add-in-ASPNET-SSO)。
+*不应* 依赖 SSO 作为加载项的唯一身份验证方法。 应实现备用身份验证系统，在某些错误情况下，加载项可以返回到该系统。 可以使用包含用户表和身份验证的系统，也可以利用其中某个社交登录提供者。 有关如何使用 Office 插件进行此操作的详细信息，请参见[授权 Office 加载项中的外部服务](auth-external-add-ins.md)。 对于 *Outlook*，建议使用回退系统。 有关详细信息，请参阅[应用场景：在 Outlook 外接程序中对服务实现单一登录](../outlook/implement-sso-in-outlook-add-in.md)。 有关使用 Azure Active Directory 作为回退系统的示例，请参阅 [Office 加载项 NodeJS SSO](https://github.com/OfficeDev/Office-Add-in-NodeJS-SSO) 和 [Office 加载项 ASP.NET SSO](https://github.com/OfficeDev/Office-Add-in-ASPNET-SSO)。
+
+
 
 ## <a name="how-sso-works-at-runtime"></a>运行时 SSO 的工作方式
 
@@ -32,7 +34,7 @@ ms.locfileid: "47293196"
 1. 在加载项中，JavaScript 调用新的 Office.js API [getAccessToken](/javascript/api/office-runtime/officeruntime.auth#getaccesstoken-options-)。 该操作告诉 Office 客户端应用程序获取加载项的访问令牌。 请参阅[示例访问令牌](#example-access-token)。
 2. 如果用户未登录，Office 客户端应用程序会打开弹出窗口，以供用户登录。
 3. 如果当前用户是首次使用加载项，则会看到同意提示。
-4. Office 客户端应用程序从当前用户的 Azure AD v2.0 终结点请求获取**加载项令牌**。
+4. Office 客户端应用程序从当前用户的 Azure AD v2.0 终结点请求获取 **加载项令牌**。
 5. Azure AD 将加载项令牌发送给 Office 客户端应用程序。
 6. Office 客户端应用程序在 `getAccessToken` 调用返回的结果对象中，将“**加载项令牌**”发送给加载项。
 7. 加载项中的 JavaScript 可以解析令牌并提取所需信息，如用户的电子邮件地址。
@@ -53,7 +55,7 @@ ms.locfileid: "47293196"
 在 Azure v2.0 终结点的注册门户注册外接程序。该流程用时 5-10 分钟，包括以下任务：
 
 * 获取加载项的客户端 ID 和机密。
-* 指定加载项访问 AAD v 所需的权限。 2.0 端点（可选 Microsoft Graph）。 始终需要“profile”权限。
+* 指定加载项访问 AAD v 所需的权限。 2.0 端点（可选 Microsoft Graph）。 始终需要“配置文件”和“openid”权限。
 * 授予 Office 客户端应用程序信任加载项。
 * 将 Office 客户端应用程序预授权给具有 *access_as_user* 默认权限的加载项。
 
@@ -65,9 +67,9 @@ ms.locfileid: "47293196"
 
 * **WebApplicationInfo** - 下列元素的父元素。
 * **ID** - 加载项的客户端 ID。这是在注册加载项时获得的应用程序 ID。 请参阅[向 Azure AD v2.0 端点注册使用 SSO 的 Office 加载项](register-sso-add-in-aad-v2.md)。
-* **Resource** - 加载项 URL。 这是在 AAD 中注册加载项时使用的相同 URI（包括 `api:` 协议）。 此 URI 的域部分应与加载项清单的 `<Resources>` 部分中的 URL 中使用的域（包括任何子域）匹配。
+* **Resource** - 加载项 URL。 这是在 AAD 中注册加载项时使用的相同 URI（包括 `api:` 协议）。 这个 URI 的域名部分必须与加载项的清单 `<Resources>` 中的 URL 中使用的域名（包括任何子域名）相匹配，并且 URI 必须以`<Id>`中的客户端 ID 结束。
 * **Scopes** - 一个或多个“**Scope**”元素的父元素。
-* **Scope** - 指定加载项访问 AAD 所需的权限。 如果加载项无法访问 Microsoft Graph，则始终需要 `profile` 权限，并且它可能是唯一需要的权限。 如果可以访问，则还需要“**Scope**”元素来获取所需的 Microsoft Graph 权限（如 `User.Read``Mail.Read`）。 在代码中用于访问 Microsoft Graph 的库可能需要其他权限。 例如，用于 .NET 的 Microsoft 身份验证库 (MSAL) 需要 `offline_access` 权限。 有关详细信息，请参阅[向 Office 加载项中的 Microsoft Graph 授权](authorize-to-microsoft-graph.md)。
+* **Scope** - 指定加载项访问 AAD 所需的权限。 如果加载项不访问 Microsoft Graph，则始终需要`profile` 和 `openID` 权限，并且可能是唯一需要的权限。 如果可以访问，则还需要“**Scope**”元素来获取所需的 Microsoft Graph 权限（如 `User.Read``Mail.Read`）。 在代码中用于访问 Microsoft Graph 的库可能需要其他权限。 例如，用于 .NET 的 Microsoft 身份验证库 (MSAL) 需要 `offline_access` 权限。 有关详细信息，请参阅[向 Office 加载项中的 Microsoft Graph 授权](authorize-to-microsoft-graph.md)。
 
 对于除 Outlook 之外的 Office 应用程序，请将此标记添加到 `<VersionOverrides ... xsi:type="VersionOverridesV1_0">` 部分的末尾。对于 Outlook，请将此标记添加到 `<VersionOverrides ... xsi:type="VersionOverridesV1_1">` 部分的末尾。
 
@@ -78,12 +80,15 @@ ms.locfileid: "47293196"
     <Id>5661fed9-f33d-4e95-b6cf-624a34a2f51d</Id>
     <Resource>api://addin.contoso.com/5661fed9-f33d-4e95-b6cf-624a34a2f51d</Resource>
     <Scopes>
+        <Scope>openid</Scope>
         <Scope>user.read</Scope>
         <Scope>files.read</Scope>
         <Scope>profile</Scope>
     </Scopes>
 </WebApplicationInfo>
 ```
+> [!NOTE]
+> 如果不符合SSO清单中的格式要求，将导致AppSource拒绝加载项，直到它符合所需格式。
 
 ### <a name="add-client-side-code"></a>添加客户端代码
 
@@ -141,9 +146,9 @@ $.ajax({
 
 #### <a name="when-to-call-the-method"></a>何时调用方法
 
-如果因当前没有用户登录 Office 而无法使用加载项，则应*在加载项启动时*调用 `getAccessToken`，并在 `getAccessToken` 的 `options` 参数中传递 `allowSignInPrompt: true`。 例如：`OfficeRuntime.auth.getAccessToken( { allowSignInPrompt: true });`
+如果因当前没有用户登录 Office 而无法使用加载项，则应 *在加载项启动时* 调用 `getAccessToken`，并在 `getAccessToken` 的 `options` 参数中传递 `allowSignInPrompt: true`。 例如：`OfficeRuntime.auth.getAccessToken( { allowSignInPrompt: true });`
 
-如果加载项具有一些无需用户登录的功能，那么*当用户执行需要用户登录的操作时*，请调用 `getAccessToken`。 `getAccessToken` 的冗余调用不会导致性能严重下降，因为 Office 缓存并重用启动没有过期的令牌，无需每次调用 AAD v。 `getAccessToken` 都重新调用 AAD V 2.0 端点。 因此，可以将 `getAccessToken` 调用添加到所有在需要令牌时启动操作的函数和处理程序。
+如果加载项具有一些无需用户登录的功能，那么 *当用户执行需要用户登录的操作时*，请调用 `getAccessToken`。 `getAccessToken` 的冗余调用不会导致性能严重下降，因为 Office 缓存并重用启动没有过期的令牌，无需每次调用 AAD v。 `getAccessToken` 都重新调用 AAD V 2.0 端点。 因此，可以将 `getAccessToken` 调用添加到所有在需要令牌时启动操作的函数和处理程序。
 
 ### <a name="add-server-side-code"></a>添加服务器端代码
 
@@ -154,7 +159,7 @@ $.ajax({
 
     * 通过调用 Azure AD v2.0 端点启动“代表”流，该端点包括访问令牌、关于用户的一些元数据以及加载项的凭据（其 ID 和机密）。 在此上下文中，访问令牌称为启动令牌。
     * 使用新的令牌从 Microsoft Graph 获取数据。
-    * 或者，在启动流之前，验证访问令牌（请参阅下文**验证访问令牌**）。
+    * 或者，在启动流之前，验证访问令牌（请参阅下文 **验证访问令牌**）。
     * 或者，在代表流完成后，缓存从流返回的新访问令牌，以便在对 Microsoft Graph 的其他调用中重复使用它，直到过期为止。
 
  如需深入了解如何获得对用户的 Microsoft Graph 数据的授权访问，请参阅[向 Office 加载项中的 Microsoft Graph 授权](authorize-to-microsoft-graph.md)。
