@@ -1,14 +1,14 @@
 ---
 title: 清单文件中的 ExtensionPoint 元件
 description: 定义 Office UI 中加载项公开功能的位置。
-ms.date: 02/01/2021
+ms.date: 02/12/2021
 localization_priority: Normal
-ms.openlocfilehash: 20e1f58070d61b02a1c2c2fcefc4ce2b0ad94979
-ms.sourcegitcommit: ccc0a86d099ab4f5ef3d482e4ae447c3f9b818a3
+ms.openlocfilehash: 920f02cdaad47fa773695da4bc51e5b6c0a1fa6d
+ms.sourcegitcommit: 1cdf5728102424a46998e1527508b4e7f9f74a4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "50237705"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "50270719"
 ---
 # <a name="extensionpoint-element"></a>ExtensionPoint 元素
 
@@ -264,7 +264,7 @@ ms.locfileid: "50237705"
 此扩展点将适合模式的切换置于移动外形系数中约会的命令图面中。 会议组织者可以创建联机会议。 与会者随后可以加入联机会议。 若要了解有关此方案的信息，请参阅联机会议提供商文章的"创建 [Outlook](../../outlook/online-meeting.md) 移动外接程序"一文。
 
 > [!NOTE]
-> 此扩展点仅在具有 Microsoft 365 订阅的 Android 上受支持。
+> 此扩展点仅在具有 Microsoft 365 订阅的 Android 和 iOS 上受支持。
 
 #### <a name="child-elements"></a>子元素
 
