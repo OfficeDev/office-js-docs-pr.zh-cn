@@ -4,12 +4,12 @@ description: 了解如何配置 Outlook 外接程序进行基于事件的激活�
 ms.topic: article
 ms.date: 02/12/2021
 localization_priority: Normal
-ms.openlocfilehash: 6c1bf36e57b5ce796b61f88724ee60ed6fb95ed3
-ms.sourcegitcommit: ccc0a86d099ab4f5ef3d482e4ae447c3f9b818a3
+ms.openlocfilehash: a3e2167adec824934d1bc20d0e6613f9057e5c70
+ms.sourcegitcommit: 7cd501d0fdbbd4636bd08647b638dd5ca4c7c630
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "50238041"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "50282994"
 ---
 # <a name="configure-your-outlook-add-in-for-event-based-activation-preview"></a>为 Outlook 外接程序配置基于事件的激活 (预览) 
 
@@ -51,7 +51,7 @@ ms.locfileid: "50238041"
 
 1. 打开 **manifest.xml** 根目录下的文件。
 
-1. 选择整个 `<VersionOverrides>` 节点 (包括打开和关闭标记) 并将其替换为以下 XML。
+1. 选择整个节点 (包括打开和关闭) `<VersionOverrides>` 并将其替换为以下 XML，然后保存更改。
 
 ```XML
 <VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides" xsi:type="VersionOverridesV1_0">
@@ -193,14 +193,14 @@ Windows 上的 Outlook 使用 JavaScript 文件，而 Web 上的 Outlook 使用�
     }
     ```
 
-1. 若要使用由 Office 加载项的 Yeoman 生成器生成的此项目在 **Outlook** 网页 Outlook 中运行的函数，在文件末尾添加以下语句。
+1. 若要使用由 Office 外接程序的 Yeoman 生成器生成的此项目在 **Outlook** 网页 Outlook 中运行的函数，在文件末尾添加以下语句。
 
     ```js
     g.onMessageComposeHandler = onMessageComposeHandler;
     g.onAppointmentComposeHandler = onAppointmentComposeHandler;
     ```
 
-1. 若要使函数在 Windows 上的 **Outlook 中运行**，在文件末尾添加以下 JavaScript 代码。
+1. 若要在 Windows 上的 **Outlook 中** 运行函数，在文件末尾添加以下 JavaScript 代码。
 
     ```js
     if (Office.actions) {
@@ -211,6 +211,8 @@ Windows 上的 Outlook 使用 JavaScript 文件，而 Web 上的 Outlook 使用�
     ```
 
     **注意**：检查 `Office.actions` 以确保 Web 上的 Outlook 忽略这些语句。
+
+1. 保存所做的更改。
 
 ## <a name="try-it-out"></a>试用
 
@@ -228,9 +230,13 @@ Windows 上的 Outlook 使用 JavaScript 文件，而 Web 上的 Outlook 使用�
 
     ![Windows 上的 Outlook 中邮件窗口的屏幕截图，撰写时主题已设置](../images/outlook-win-autolaunch.png)
 
+## <a name="debug"></a>Debug
+
+当你实现自己的功能时，你可能需要调试代码。 有关如何调试基于事件的外接程序激活的指南，请参阅"调试基于事件的[Outlook 外接程序"。](debug-autolaunch.md)
+
 ## <a name="event-based-activation-behavior-and-limitations"></a>基于事件的激活行为和限制
 
-基于事件激活的外接程序应尽可能短运行、轻型和非高空。 若要指示加载项已完成对启动事件的处理，建议让加载项调用 `event.completed` 该方法。 如果未进行该调用，加载项将在大约 300 秒（运行基于事件的加载项所允许的最大时间长度）内退出。当用户关闭撰写窗口时，加载项也会结束。
+基于事件激活的加载项应尽可能短运行、轻型和非高空。 若要指示加载项已完成对启动事件的处理，建议让加载项调用 `event.completed` 该方法。 如果未进行该调用，加载项将在大约 300 秒（运行基于事件的加载项所允许的最大时间长度）内退出。当用户关闭撰写窗口时，加载项也会结束。
 
 如果用户有多个订阅同一事件的加载项，则 Outlook 平台将启动外接程序，而没有任何特定顺序。 目前，只能主动运行五个基于事件的加载项。 任何其他加载项将推送到队列，然后随着之前处于活动状态的加载项完成或停用而运行。
 
@@ -238,20 +244,21 @@ Windows 上的 Outlook 使用 JavaScript 文件，而 Web 上的 Outlook 使用�
 
 某些Office.js更改或更改 UI 的 API 不允许来自基于事件的加载项。以下是阻止的 API：
 
-- 在 `Office.context.auth` ：
+- 下 `Office.context.auth` ：
   - `getAccessToken`
   - `getAccessTokenAsync`
-- 在 `Office.context.mailbox` ：
+- 下 `Office.context.mailbox` ：
   - `displayAppointmentForm`
   - `displayMessageForm`
   - `displayNewAppointmentForm`
   - `displayNewMessageForm`
-- 在 `Office.context.mailbox.item` ：
+- 下 `Office.context.mailbox.item` ：
   - `close`
-- 在 `Office.context.ui` ：
+- 下 `Office.context.ui` ：
   - `displayDialogAsync`
   - `messageParent`
 
 ## <a name="see-also"></a>另请参阅
 
-[Outlook 加载项清单](manifests.md)
+[Outlook 外接程序清单](manifests.md) 
+[如何调试基于事件的加载项](debug-autolaunch.md)
