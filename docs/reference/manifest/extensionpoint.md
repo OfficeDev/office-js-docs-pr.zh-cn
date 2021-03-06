@@ -3,12 +3,12 @@ title: 清单文件中的 ExtensionPoint 元件
 description: 定义 Office UI 中加载项公开功能的位置。
 ms.date: 02/12/2021
 localization_priority: Normal
-ms.openlocfilehash: 920f02cdaad47fa773695da4bc51e5b6c0a1fa6d
-ms.sourcegitcommit: 1cdf5728102424a46998e1527508b4e7f9f74a4c
+ms.openlocfilehash: e5b638969730be47c30c98d4fc231e58d492ac36
+ms.sourcegitcommit: e7009c565b18c607fe0868db2e26e250ad308dce
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "50270719"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "50505463"
 ---
 # <a name="extensionpoint-element"></a>ExtensionPoint 元素
 
@@ -80,7 +80,7 @@ ms.locfileid: "50270719"
 |**Label**|必需。 组的标签。 **resid** 属性的长度不能超过 32 个字符，必须设置为 **String** 元素的 **id** 属性值。 **String** 元素是 **ShortStrings** 元素的子元素，而 ShortStrings 元素是 **Resources** 元素的子元素。|
 |**Icon**|必需。 指定将在小型设备上使用或在显示过多按钮的情况下使用的组图标。 **resid** 属性不能超过 32 个字符，必须设置为 **Image** 元素 **的 id** 属性的值。 **Image** 元素是 **Images** 元素的子元素，而 Images 元素是 **Resources** 元素的子元素。 **size** 属性给出图像的大小（以像素为单位）。 要求三种图像大小：16、32 和 80。 也同样支持五种可选大小：20、24、40、48 和 64。|
 |**Tooltip**|Optional. The tooltip of the group. **resid** 属性的长度不能超过 32 个字符，必须设置为 **String** 元素的 **id** 属性值。 The **String** element is a child element of the **LongStrings** element, which is a child element of the **Resources** element.|
-|**Control**|每个组需要至少一个控件。 控件 **元素** 可以是按钮 **或****菜单**。 使用 **菜单** 指定按钮控件的下拉列表。 目前，仅支持“按钮”和“菜单”。 请参阅[按钮控件](control.md#button-control)和[菜单控件](control.md#menu-dropdown-button-controls)各节了解详细信息。<br/>**注意：**  为了简化疑难解答，我们建议一次添加 **一** 个 Control 元素和相关 **Resources** 子元素。|
+|**Control**|每个组需要至少一个控件。 控件 **元素** 可以是按钮或 **菜单**。  使用 **菜单** 指定按钮控件的下拉列表。 目前，仅支持“按钮”和“菜单”。 请参阅[按钮控件](control.md#button-control)和[菜单控件](control.md#menu-dropdown-button-controls)各节了解详细信息。<br/>**注意：**  为了简化疑难解答，我们建议一次添加 **一** 个 Control 元素和相关 **Resources** 子元素。|
 |**Script**|使用自定义函数定义和注册代码链接到 JavaScript 文件。 在开发者预览版中不使用此元素。 实际上，HTML 页负责加载所有 JavaScript 文件。|
 |**Page**|链接到自定义函数的 HTML 页。|
 
@@ -225,6 +225,9 @@ ms.locfileid: "50270719"
 
 此扩展点将按钮置于模块扩展的功能区上。
 
+> [!IMPORTANT]
+> 注册 [邮箱](../objectmodel/preview-requirement-set/office.context.mailbox.md#events) 和 [项目](../objectmodel/preview-requirement-set/office.context.mailbox.item.md#events) 事件不适用于此扩展点。
+
 #### <a name="child-elements"></a>子元素
 
 |  元素 |  说明  |
@@ -265,6 +268,8 @@ ms.locfileid: "50270719"
 
 > [!NOTE]
 > 此扩展点仅在具有 Microsoft 365 订阅的 Android 和 iOS 上受支持。
+>
+> 注册 [邮箱](../objectmodel/preview-requirement-set/office.context.mailbox.md#events) 和 [项目](../objectmodel/preview-requirement-set/office.context.mailbox.item.md#events) 事件不适用于此扩展点。
 
 #### <a name="child-elements"></a>子元素
 
@@ -309,6 +314,9 @@ ms.locfileid: "50270719"
 
 此扩展点使加载项能够基于桌面外形中的受支持事件进行激活。 目前，唯一受支持的事件是 `OnNewMessageCompose` `OnNewAppointmentOrganizer` 和 。 若要了解有关此方案的信息，请参阅"为 Outlook 外接程序配置基于 [事件的激活"](../../outlook/autolaunch.md) 一文。
 
+> [!IMPORTANT]
+> 注册 [邮箱](../objectmodel/preview-requirement-set/office.context.mailbox.md#events) 和 [项目](../objectmodel/preview-requirement-set/office.context.mailbox.item.md#events) 事件不适用于此扩展点。
+
 #### <a name="child-elements"></a>子元素
 
 |  元素 |  说明  |
@@ -333,6 +341,9 @@ ms.locfileid: "50270719"
 
 此扩展点添加了指定事件的事件处理程序。 有关使用此扩展点的信息，请参阅 Outlook 外接程序的 [Onss ons 功能](../../outlook/outlook-on-send-addins.md)。
 
+> [!IMPORTANT]
+> 注册 [邮箱](../objectmodel/preview-requirement-set/office.context.mailbox.md#events) 和 [项目](../objectmodel/preview-requirement-set/office.context.mailbox.item.md#events) 事件不适用于此扩展点。
+
 | 元素 | 说明  |
 |:-----|:-----|
 |  [Event](event.md) |  指定事件和事件处理程序函数。  |
@@ -349,6 +360,9 @@ ms.locfileid: "50270719"
 
 此扩展点在指定实体类型上添加上下文外接程序激活。
 
+> [!IMPORTANT]
+> 注册 [邮箱](../objectmodel/preview-requirement-set/office.context.mailbox.md#events) 和 [项目](../objectmodel/preview-requirement-set/office.context.mailbox.item.md#events) 事件不适用于此扩展点。
+
 包含 [VersionOverrides](versionoverrides.md) 元素的 `xsi:type` 属性值必须为 `VersionOverridesV1_1`。
 
 > [!NOTE]
@@ -362,7 +376,7 @@ ms.locfileid: "50270719"
 
 #### <a name="label"></a>标签
 
-必需。 组的标签。 **resid** 属性的长度不能超过 32 个字符，并且必须设置为 Resources 元素 **中 ShortStrings** 元素中 **String** 元素 **的** id [属性值。](resources.md)
+必需。 组的标签。 **resid** 属性不能超过 32 个字符，并且必须设置为 Resources 元素 **中 ShortStrings** 元素中 **String** 元素 **的 id** [属性值。](resources.md)
 
 #### <a name="highlight-requirements"></a>突出显示要求
 

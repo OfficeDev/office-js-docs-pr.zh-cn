@@ -1,27 +1,27 @@
 ---
 title: 清单文件中的 Override 元素
-description: Override 元素使您能够根据指定的条件指定设置的值。
+description: Override 元素使您能够根据指定条件指定设置的值。
 ms.date: 11/06/2020
 localization_priority: Normal
-ms.openlocfilehash: 2c66503f9f95155a096b1b6fb23332eed8422da6
-ms.sourcegitcommit: ca66ff7462bfdf4ed7ae04f43d1388c24de63bf9
+ms.openlocfilehash: d2146cc1f44e829bc78076c8093b2ebf791dc722
+ms.sourcegitcommit: e7009c565b18c607fe0868db2e26e250ad308dce
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/11/2020
-ms.locfileid: "48996310"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "50505337"
 ---
 # <a name="override-element"></a>Override 元素
 
-提供一种方法，用于根据指定的条件重写清单设置的值。 有两种条件：
+提供一种根据指定条件替代清单设置的值的方法。 有两种类型的条件：
 
-- 不同于默认的 Office 区域设置。
-- 要求集支持的模式与默认模式不同。
+- 不同于默认值的 Office 区域设置。
+- 与默认模式不同的要求集支持模式。
 
-有两种类型的 `<Override>` 元素，一个用于区域设置重写（称为 **LocaleTokenOverride** ），另一个用于要求集重写（称为 " **RequirementTokenOverride** "）。 但没有 `type` 该元素的参数 `<Override>` 。 区别由父元素和父元素的类型确定。 `<Override>`元素中的元素， `<Token>` 其 `xsi:type` `RequirementToken` 类型必须为 **RequirementTokenOverride** 。 `<Override>`任何其他父元素中或类型元素内的元素 `<Override>` `LocaleToken` 都必须为 **LocaleTokenOverride** 类型。 以下各节分别介绍了每种类型。
+有两种类型的元素，一种用于区域设置重写，称为 `<Override>` **LocaleTokenOverride，** 另一种用于要求集替代，称为 **RequirementTokenOverride。** 但元素 `type` 没有 `<Override>` 参数。 差异由父元素和父元素的类型确定。 元素 `<Override>` 位于其类型为 `<Token>` `xsi:type` `RequirementToken` **RequirementTokenOverride** 的元素内。 任何其他 `<Override>` 父元素内或类型元素内的元素必须为 `<Override>` `LocaleToken` **LocaleTokenOverride 类型**。 以下各节分别介绍了每种类型。 有关当此元素是元素的子级时使用此元素的信息，请参阅"处理清单 `<Token>` [的扩展重写"。](../../develop/extended-overrides.md)
 
-## <a name="override-element-of-type-localetokenoverride"></a>LocaleTokenOverride 类型的重写元素
+## <a name="override-element-of-type-localetokenoverride"></a>LocaleTokenOverride 类型的 Override 元素
 
-`<Override>`元素表示条件，可读取为 "If ..."然后 ... "语句. 如果 `<Override>` 元素的类型为 **LocaleTokenOverride** ，则该 `Locale` 属性为条件， `Value` 属性随后会随后。 例如，以下是 "如果 Office 区域设置为 fr-fr"，则显示名称为 "Lecteur vidéo"。
+元素 `<Override>` 表示条件，并可以读取为"If ...then ..."语句。 如果 `<Override>` 元素的类型为 **LocaleTokenOverride，** 则该属性为 `Locale` 条件，而 `Value` 该属性是结果。 例如，下面的内容为"如果 Office 区域设置为 fr-fr，则显示名称为"Lecteur vidéo"。
 
 ```xml
 <DisplayName DefaultValue="Video player">
@@ -92,9 +92,9 @@ ms.locfileid: "48996310"
 - [Office 外接程序的本地化](../../develop/localization.md)
 - [键盘快捷方式](../../design/keyboard-shortcuts.md)
 
-## <a name="override-element-of-type-requirementtokenoverride"></a>RequirementTokenOverride 类型的重写元素
+## <a name="override-element-of-type-requirementtokenoverride"></a>RequirementTokenOverride 类型的 Override 元素
 
-`<Override>`元素表示条件，可读取为 "If ..."然后 ... "语句. 如果 `<Override>` 元素的类型为 **RequirementTokenOverride** ，则该子 `<Requirements>` 元素表示条件， `Value` 属性随后会随后。 例如，以下中的第一个 `<Override>` 是 "如果当前平台支持 FeatureOne 版本 1.7"，然后使用字符串 "oldAddinVersion" 替换 `${token.requirements}` 祖父 (的 URL 中的标记， `<ExtendedOverrides>` 而不是默认字符串 "upgrade" ) "。"
+元素 `<Override>` 表示条件，并可以读取为"If ...then ..."语句。 如果 `<Override>` 元素的类型 **为 RequirementTokenOverride，** 则子元素表示条件，而 `<Requirements>` `Value` 该属性是结果。 例如，下面的第一个内容是"如果当前平台支持 `<Override>` FeatureOne 版本 1.7，则使用字符串"oldAddinVersion"代替 (的 URL 中的令牌，而不是默认字符串 `${token.requirements}` `<ExtendedOverrides>` "upgrade") "。
 
 ```xml
 <ExtendedOverrides Url="http://contoso.com/addinmetadata/${token.requirements}/extended-manifest-overrides.json">
@@ -146,7 +146,7 @@ ms.locfileid: "48996310"
 
 |属性|类型|必需|说明|
 |:-----|:-----|:-----|:-----|
-|值|字符串|必需|满足条件时的祖父令牌的值。|
+|值|字符串|必需|满足条件时令牌的值。|
 
 ### <a name="example"></a>示例
 

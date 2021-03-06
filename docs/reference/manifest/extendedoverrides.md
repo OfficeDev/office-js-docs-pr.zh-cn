@@ -1,18 +1,18 @@
 ---
-title: 清单文件中的 ExtendedOverrides 元素
-description: 指定清单的 JSON 格式扩展名的 Url。
-ms.date: 11/06/2020
+title: 清单文件中 ExtendedOverrides 元素
+description: 指定清单的 JSON 格式扩展的 URL。
+ms.date: 02/23/2021
 localization_priority: Normal
-ms.openlocfilehash: 76491af34d1caf0ec266826df97a5363e336b85d
-ms.sourcegitcommit: ca66ff7462bfdf4ed7ae04f43d1388c24de63bf9
+ms.openlocfilehash: f433c9c5604f3fae35580ba20780ea6fe91401c7
+ms.sourcegitcommit: e7009c565b18c607fe0868db2e26e250ad308dce
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/11/2020
-ms.locfileid: "48996676"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "50505470"
 ---
 # <a name="extendedoverrides-element"></a>ExtendedOverrides 元素
 
-指定用于扩展清单的 JSON 格式文件的完整 Url。
+指定扩展清单的 JSON 格式文件的完整 URL。 有关使用此元素及其后代元素的详细信息，请参阅使用清单 [的扩展重写](../../develop/extended-overrides.md)。
 
 **外接程序类型：** 任务窗格
 
@@ -30,16 +30,27 @@ ms.locfileid: "48996676"
 
 |元素|内容|邮件|任务窗格|
 |:-----|:-----|:-----|:-----|
-|[等级](tokens.md)|||x|
+|[令牌](tokens.md)|||x|
 
 ## <a name="attributes"></a>属性
 
 |属性|说明|
 |:-----|:-----|
-|Url (必需的) | 扩展替代 JSON 文件的完整 URL。 这可以是使用 [令牌](tokens.md) 元素所定义的令牌的 URL 模板。|
-|ResourcesUrl (可选)  | 为属性中指定的文件提供补充资源（如本地化字符串）的文件的完整 URL `Url` 。 这可以是使用 [令牌](tokens.md) 元素所定义的令牌的 URL 模板。|
+|Url (必需) | 扩展的 URL 将覆盖 JSON 文件。 将来，此值可能是使用 [Tokens](tokens.md) 元素定义的令牌的 URL 模板。 请参阅 [示例](#examples)。|
+|ResourcesUrl (可选)  | 为属性中指定的文件提供补充资源（如本地化字符串）的文件的完整 `Url` URL。 这可能是使用 [Tokens](tokens.md) 元素定义的令牌的 URL 模板。|
 
-## <a name="example"></a>示例
+## <a name="examples"></a>示例
+
+```XML
+<OfficeApp ...>
+  <!-- other elements omitted -->
+  <ExtendedOverrides Url="http://contoso.com/addinmetadata/extended-manifest-overrides.json"
+                     ResourceUrl="https://contoso.com/addin/my-resources.json">
+  </ExtendedOverrides>
+</OfficeApp>
+```
+
+将来，此值可能是使用 [Tokens](tokens.md) 元素定义的令牌的 URL 模板。 示例如下。
 
 ```XML
 <OfficeApp ...>

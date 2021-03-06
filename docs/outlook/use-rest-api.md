@@ -1,18 +1,21 @@
 ---
 title: 从 Outlook 加载项使用 Outlook REST API
 description: 了解如何从 Outlook 加载项使用 Outlook REST API 获得访问令牌。
-ms.date: 09/18/2020
+ms.date: 02/26/2021
 localization_priority: Normal
-ms.openlocfilehash: 067934f18b02d5106b58a7ec2a0de11a6ea35581
-ms.sourcegitcommit: 09e1d8ff14b3c09a3eb11c91432c224a539181a4
+ms.openlocfilehash: c0df1df4fdbda22768562892874e09bbeb760473
+ms.sourcegitcommit: e7009c565b18c607fe0868db2e26e250ad308dce
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "48268549"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "50505484"
 ---
 # <a name="use-the-outlook-rest-apis-from-an-outlook-add-in"></a>从 Outlook 加载项使用 Outlook REST API
 
-[Office.context.mailbox.item](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md) 命名空间提供访问许多邮件和约会的公用字段的权限。但是，在某些方案中，外接程序可能需要访问命名空间未公开的数据。例如，外接程序可能依赖于外部应用设置的自定义属性，或需要搜索用户邮箱中来自同一发件人的邮件。在这些方案中，[Outlook REST API](/outlook/rest/index) 是推荐的检索信息的方法。
+[Office.context.mailbox.item](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md) 命名空间提供访问许多邮件和约会的公用字段的权限。但是，在某些方案中，外接程序可能需要访问命名空间未公开的数据。例如，外接程序可能依赖于外部应用设置的自定义属性，或需要搜索用户邮箱中来自同一发件人的邮件。在这些方案中，[Outlook REST API](/outlook/rest) 是推荐的检索信息的方法。
+
+> [!NOTE]
+> 还可以通过 [Microsoft Graph 访问 Outlook REST API](/outlook/rest#outlook-rest-api-via-microsoft-graph)，但存在一些关键差异。 有关详细信息，请参阅[比较 Microsoft Graph 和 Outlook](/outlook/rest/compare-graph)。
 
 ## <a name="get-an-access-token"></a>获取访问令牌
 
@@ -84,7 +87,7 @@ var restHost = Office.context.mailbox.restUrl;
 有访问令牌、项 ID 和 REST API URL 后，加载项可以将这些信息传递到调用 REST API 的后端服务，也可以使用 AJAX 直接调用 API。 下面的示例展示了如何调用 Outlook 邮件 REST API 来获取当前消息。
 
 > [!IMPORTANT]
-> 对于内部部署 Exchange 部署，使用 AJAX 或类似库的客户端请求将会失败，因为该服务器安装程序不支持 CORS。
+> 对于本地 Exchange 部署，使用 AJAX 或类似库的客户端请求将失败，因为 CORS 在服务器设置中不受支持。
 
 ```js
 function getCurrentItem(accessToken) {

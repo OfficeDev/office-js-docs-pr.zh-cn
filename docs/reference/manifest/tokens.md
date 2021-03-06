@@ -1,18 +1,18 @@
 ---
-title: 清单文件中的标记元素
-description: 指定可与清单中的 URL 模板一起使用的标记或通配符。
+title: 清单文件中 Tokens 元素
+description: 指定可用于清单中的 URL 模板的标记或通配符。
 ms.date: 11/06/2020
 localization_priority: Normal
-ms.openlocfilehash: a50de7c2c3e8ebeb9425c1677a94bbcc62281d3b
-ms.sourcegitcommit: ca66ff7462bfdf4ed7ae04f43d1388c24de63bf9
+ms.openlocfilehash: 8680b985068c44e93f601a2b24e2f28899eb483d
+ms.sourcegitcommit: e7009c565b18c607fe0868db2e26e250ad308dce
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/11/2020
-ms.locfileid: "48996673"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "50505323"
 ---
-# <a name="tokens-element"></a>标记元素
+# <a name="tokens-element"></a>Tokens 元素
 
-定义可在模板 Url 中使用的标记。
+定义可以在模板 URL 中使用的令牌。 有关使用此元素的信息，请参阅使用清单 [的扩展重写](../../develop/extended-overrides.md)。
 
 **外接程序类型：** 任务窗格
 

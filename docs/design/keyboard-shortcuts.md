@@ -1,18 +1,18 @@
 ---
 title: Office 加载项中的自定义键盘快捷方式
 description: 了解如何将自定义键盘快捷方式（也称为组合键）添加到 Office 外接程序。
-ms.date: 12/17/2020
+ms.date: 02/02/2021
 localization_priority: Normal
-ms.openlocfilehash: 7374c23bacad031024edc7b84da951a8e91fc175
-ms.sourcegitcommit: ccc0a86d099ab4f5ef3d482e4ae447c3f9b818a3
+ms.openlocfilehash: c767c6d5bc23f0a44422452839cd8bdf87bd8715
+ms.sourcegitcommit: e7009c565b18c607fe0868db2e26e250ad308dce
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "50237684"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "50505197"
 ---
 # <a name="add-custom-keyboard-shortcuts-to-your-office-add-ins-preview"></a>向 Office 外接程序添加自定义键盘快捷方式 (预览) 
 
-键盘快捷方式（也称为组合键）使加载项的用户能够更高效地工作，并且它们通过提供鼠标的替代项为残障用户提供外接程序的辅助功能。
+键盘快捷方式（也称为组合键）使加载项的用户能够更高效地工作，并且它们通过提供鼠标的替代项为残障用户改进外接程序的辅助功能。
 
 [!include[Keyboard shortcut prerequisites](../includes/keyboard-shortcuts-prerequisites.md)]
 
@@ -137,10 +137,10 @@ ms.locfileid: "50237684"
 
 ### <a name="constructing-the-action-objects"></a>构造操作对象
 
-指定对象数组中的对象时， `action` 请使用以下shortcuts.js：
+当指定对象数组中的对象时， `action` 请使用以下shortcuts.js：
 
-- 属性名称 `id` 且 `name` 是必需的。
-- 该属性 `id` 用于唯一标识使用键盘快捷方式调用的操作。
+- 属性名称 `id` 是 `name` 必需属性。
+- `id`该属性用于唯一标识使用键盘快捷方式调用的操作。
 - 该属性 `name` 必须是描述操作的用户友好字符串。 它必须是字符 A - Z、a - z、0 - 9 以及标点符号"-"、"_"和"+"的组合。
 - 属性是可选的。 当前仅 `ExecuteFunction` 支持类型。
 
@@ -174,7 +174,7 @@ ms.locfileid: "50237684"
 - 对于 Mac，我们还支持 COMMAND 修饰符键。
 - 对于 Mac，ALT 映射到 OPTION 键。 对于 Windows，COMMAND 映射到 Ctrl 键。
 - 当两个字符链接到标准键盘中的同一物理键时，它们是属性中的同义词;例如，Alt+a 和 Alt+A 是同一快捷方式 `default` ，Ctrl+- 和 Ctrl+ 也是，因为"-"和"_"是同一物理键。 \_
-- "+"字符指示两侧的键同时按下。
+- "+"字符指示同时按下其任一侧的键。
 
 示例如下：
 
@@ -202,7 +202,7 @@ ms.locfileid: "50237684"
 
 ### <a name="using-shortcuts-when-the-focus-is-in-the-task-pane"></a>当焦点位于任务窗格中时，使用快捷方式
 
-目前，只有当用户的焦点位于工作表中时，才能调用 Office 加载项的键盘快捷方式。 当用户的焦点位于 Office UI (（如任务窗格) ）时，不会忽略任何加载项的快捷方式。 作为一种解决方法，加载项可以定义键盘处理程序，当用户的焦点位于加载项 UI 内时，可以调用某些操作。
+目前，只有当用户的焦点位于工作表中时，才能调用 Office 外接程序的键盘快捷方式。 当用户的焦点位于 Office UI (（如任务窗格) ）时，不会忽略任何加载项的快捷方式。 作为一种解决方法，加载项可以定义键盘处理程序，当用户的焦点位于加载项 UI 内时，可以调用某些操作。
 
 ## <a name="using-key-combinations-that-are-already-used-by-office-or-another-add-in"></a>使用 Office 或其他外接程序已使用的键组合
 
@@ -224,6 +224,11 @@ ms.locfileid: "50237684"
 - Ctrl+W
 - Ctrl+PgUp/PgDn
 
+## <a name="localize-the-keyboard-shortcuts-json"></a>本地化键盘快捷方式 JSON
+
+如果加载项支持多个区域设置，则需要本地化 `name` 操作对象的属性。 此外，如果外接程序支持的任何区域设置具有字母或不同的书写系统，因此使用不同的键盘，则您可能还需要本地化快捷方式。 若要了解如何本地化键盘快捷方式 JSON，请参阅 [本地化扩展替代](../develop/localization.md#localize-extended-overrides)。
+
 ## <a name="next-steps"></a>后续步骤
 
 - 请参阅示例外接程序[excel-keyboard-shortcuts。](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Samples/excel-keyboard-shortcuts)
+- 获取在 Work 中处理扩展覆盖 [和清单的扩展覆盖的概述](../develop/extended-overrides.md)。

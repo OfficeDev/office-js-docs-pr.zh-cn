@@ -1,18 +1,18 @@
 ---
-title: 清单文件中的 Token 元素
-description: 指定可与清单中的 URL 模板一起使用的令牌或通配符。
+title: 清单文件中标记元素
+description: 指定可用于清单中的 URL 模板的令牌或通配符。
 ms.date: 11/06/2020
 localization_priority: Normal
-ms.openlocfilehash: 5e26af44c566ab09ac81c8194e1ae7d85aaac327
-ms.sourcegitcommit: ca66ff7462bfdf4ed7ae04f43d1388c24de63bf9
+ms.openlocfilehash: 48078f8211a8fd3f0e3f9d7c3f3aabd1d31b0a6d
+ms.sourcegitcommit: e7009c565b18c607fe0868db2e26e250ad308dce
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/11/2020
-ms.locfileid: "48996675"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "50505365"
 ---
 # <a name="token-element"></a>Token 元素
 
-定义单个 URL 标记。
+定义单个 URL 令牌。 有关使用此元素的信息，请参阅使用清单 [的扩展重写](../../develop/extended-overrides.md)。
 
 **外接程序类型：** 任务窗格
 
@@ -24,7 +24,7 @@ ms.locfileid: "48996675"
 
 ## <a name="contained-in"></a>包含于
 
-[等级](tokens.md)
+[令牌](tokens.md)
 
 ## <a name="can-contain"></a>可以包含
 
@@ -36,9 +36,9 @@ ms.locfileid: "48996675"
 
 |属性|说明|
 |:-----|:-----|
-|DefaultValue|此令牌的默认值（如果任何子元素中没有匹配的条件） `<Override>` 。|
-|名称|令牌名称。 此名称是用户定义的。 令牌的类型由 type 属性决定。|
-|xsi:type|定义令牌的种类。 此属性应设置为以下其中一个：  `"RequirementsToken"` 、或  `"LocaleToken"` 。|
+|DefaultValue|如果任何子元素中没有任何条件匹配，则此令牌 `<Override>` 的默认值。|
+|名称|令牌名称。 此名称是用户定义的。 令牌的类型由类型属性决定。|
+|xsi:type|定义令牌类型。 此属性应设置为： 或 `"RequirementsToken"` 。 `"LocaleToken"`|
 
 ## <a name="example"></a>示例
 
