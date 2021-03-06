@@ -1,27 +1,27 @@
 ---
 title: 清单文件中的 Override 元素
-description: Override 元素使您能够根据指定的条件指定设置的值。
+description: Override 元素使您能够根据指定条件指定设置的值。
 ms.date: 11/06/2020
 localization_priority: Normal
-ms.openlocfilehash: 2c66503f9f95155a096b1b6fb23332eed8422da6
-ms.sourcegitcommit: ca66ff7462bfdf4ed7ae04f43d1388c24de63bf9
+ms.openlocfilehash: d2146cc1f44e829bc78076c8093b2ebf791dc722
+ms.sourcegitcommit: e7009c565b18c607fe0868db2e26e250ad308dce
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/11/2020
-ms.locfileid: "48996310"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "50505337"
 ---
-# <a name="override-element"></a><span data-ttu-id="62824-103">Override 元素</span><span class="sxs-lookup"><span data-stu-id="62824-103">Override element</span></span>
+# <a name="override-element"></a><span data-ttu-id="15cdc-103">Override 元素</span><span class="sxs-lookup"><span data-stu-id="15cdc-103">Override element</span></span>
 
-<span data-ttu-id="62824-104">提供一种方法，用于根据指定的条件重写清单设置的值。</span><span class="sxs-lookup"><span data-stu-id="62824-104">Provides a way to override the value of a manifest setting depending on a specified condition.</span></span> <span data-ttu-id="62824-105">有两种条件：</span><span class="sxs-lookup"><span data-stu-id="62824-105">There are two kinds of conditions:</span></span>
+<span data-ttu-id="15cdc-104">提供一种根据指定条件替代清单设置的值的方法。</span><span class="sxs-lookup"><span data-stu-id="15cdc-104">Provides a way to override the value of a manifest setting depending on a specified condition.</span></span> <span data-ttu-id="15cdc-105">有两种类型的条件：</span><span class="sxs-lookup"><span data-stu-id="15cdc-105">There are two kinds of conditions:</span></span>
 
-- <span data-ttu-id="62824-106">不同于默认的 Office 区域设置。</span><span class="sxs-lookup"><span data-stu-id="62824-106">An Office locale that is different from the default.</span></span>
-- <span data-ttu-id="62824-107">要求集支持的模式与默认模式不同。</span><span class="sxs-lookup"><span data-stu-id="62824-107">A pattern of requirement set support that is different from the default pattern.</span></span>
+- <span data-ttu-id="15cdc-106">不同于默认值的 Office 区域设置。</span><span class="sxs-lookup"><span data-stu-id="15cdc-106">An Office locale that is different from the default.</span></span>
+- <span data-ttu-id="15cdc-107">与默认模式不同的要求集支持模式。</span><span class="sxs-lookup"><span data-stu-id="15cdc-107">A pattern of requirement set support that is different from the default pattern.</span></span>
 
-<span data-ttu-id="62824-108">有两种类型的 `<Override>` 元素，一个用于区域设置重写（称为 **LocaleTokenOverride** ），另一个用于要求集重写（称为 " **RequirementTokenOverride** "）。</span><span class="sxs-lookup"><span data-stu-id="62824-108">There are two types of `<Override>` elements, one is for locale overrides, called **LocaleTokenOverride** , and the other for requirement set overrides, called **RequirementTokenOverride**.</span></span> <span data-ttu-id="62824-109">但没有 `type` 该元素的参数 `<Override>` 。</span><span class="sxs-lookup"><span data-stu-id="62824-109">But there is no `type` parameter for the `<Override>` element.</span></span> <span data-ttu-id="62824-110">区别由父元素和父元素的类型确定。</span><span class="sxs-lookup"><span data-stu-id="62824-110">The difference is determined by the parent element and the parent element's type.</span></span> <span data-ttu-id="62824-111">`<Override>`元素中的元素， `<Token>` 其 `xsi:type` `RequirementToken` 类型必须为 **RequirementTokenOverride** 。</span><span class="sxs-lookup"><span data-stu-id="62824-111">An `<Override>` element that is inside of a `<Token>` element whose `xsi:type` is `RequirementToken`, must be of type **RequirementTokenOverride**.</span></span> <span data-ttu-id="62824-112">`<Override>`任何其他父元素中或类型元素内的元素 `<Override>` `LocaleToken` 都必须为 **LocaleTokenOverride** 类型。</span><span class="sxs-lookup"><span data-stu-id="62824-112">An `<Override>` element inside any other parent element, or inside an `<Override>` element of type `LocaleToken`, must be of type **LocaleTokenOverride**.</span></span> <span data-ttu-id="62824-113">以下各节分别介绍了每种类型。</span><span class="sxs-lookup"><span data-stu-id="62824-113">Each type is described in separate sections below.</span></span>
+<span data-ttu-id="15cdc-108">有两种类型的元素，一种用于区域设置重写，称为 `<Override>` **LocaleTokenOverride，** 另一种用于要求集替代，称为 **RequirementTokenOverride。**</span><span class="sxs-lookup"><span data-stu-id="15cdc-108">There are two types of `<Override>` elements, one is for locale overrides, called **LocaleTokenOverride**, and the other for requirement set overrides, called **RequirementTokenOverride**.</span></span> <span data-ttu-id="15cdc-109">但元素 `type` 没有 `<Override>` 参数。</span><span class="sxs-lookup"><span data-stu-id="15cdc-109">But there is no `type` parameter for the `<Override>` element.</span></span> <span data-ttu-id="15cdc-110">差异由父元素和父元素的类型确定。</span><span class="sxs-lookup"><span data-stu-id="15cdc-110">The difference is determined by the parent element and the parent element's type.</span></span> <span data-ttu-id="15cdc-111">元素 `<Override>` 位于其类型为 `<Token>` `xsi:type` `RequirementToken` **RequirementTokenOverride** 的元素内。</span><span class="sxs-lookup"><span data-stu-id="15cdc-111">An `<Override>` element that is inside of a `<Token>` element whose `xsi:type` is `RequirementToken`, must be of type **RequirementTokenOverride**.</span></span> <span data-ttu-id="15cdc-112">任何其他 `<Override>` 父元素内或类型元素内的元素必须为 `<Override>` `LocaleToken` **LocaleTokenOverride 类型**。</span><span class="sxs-lookup"><span data-stu-id="15cdc-112">An `<Override>` element inside any other parent element, or inside an `<Override>` element of type `LocaleToken`, must be of type **LocaleTokenOverride**.</span></span> <span data-ttu-id="15cdc-113">以下各节分别介绍了每种类型。</span><span class="sxs-lookup"><span data-stu-id="15cdc-113">Each type is described in separate sections below.</span></span> <span data-ttu-id="15cdc-114">有关当此元素是元素的子级时使用此元素的信息，请参阅"处理清单 `<Token>` [的扩展重写"。](../../develop/extended-overrides.md)</span><span class="sxs-lookup"><span data-stu-id="15cdc-114">For more information about the use of this element when it is a child of a `<Token>` element, see [Work with extended overrides of the manifest](../../develop/extended-overrides.md).</span></span>
 
-## <a name="override-element-of-type-localetokenoverride"></a><span data-ttu-id="62824-114">LocaleTokenOverride 类型的重写元素</span><span class="sxs-lookup"><span data-stu-id="62824-114">Override element of type LocaleTokenOverride</span></span>
+## <a name="override-element-of-type-localetokenoverride"></a><span data-ttu-id="15cdc-115">LocaleTokenOverride 类型的 Override 元素</span><span class="sxs-lookup"><span data-stu-id="15cdc-115">Override element of type LocaleTokenOverride</span></span>
 
-<span data-ttu-id="62824-115">`<Override>`元素表示条件，可读取为 "If ..."然后 ... "语句.</span><span class="sxs-lookup"><span data-stu-id="62824-115">An `<Override>` element expresses a conditional and can be read as an "If ... then ..." statement.</span></span> <span data-ttu-id="62824-116">如果 `<Override>` 元素的类型为 **LocaleTokenOverride** ，则该 `Locale` 属性为条件， `Value` 属性随后会随后。</span><span class="sxs-lookup"><span data-stu-id="62824-116">If the `<Override>` element is of type **LocaleTokenOverride** , then the `Locale` attribute is the condition, and the `Value` attribute is the consequent.</span></span> <span data-ttu-id="62824-117">例如，以下是 "如果 Office 区域设置为 fr-fr"，则显示名称为 "Lecteur vidéo"。</span><span class="sxs-lookup"><span data-stu-id="62824-117">For example, the following is read "If the Office locale setting is fr-fr, then the display name is 'Lecteur vidéo'."</span></span>
+<span data-ttu-id="15cdc-116">元素 `<Override>` 表示条件，并可以读取为"If ...then ..."语句。</span><span class="sxs-lookup"><span data-stu-id="15cdc-116">An `<Override>` element expresses a conditional and can be read as an "If ... then ..." statement.</span></span> <span data-ttu-id="15cdc-117">如果 `<Override>` 元素的类型为 **LocaleTokenOverride，** 则该属性为 `Locale` 条件，而 `Value` 该属性是结果。</span><span class="sxs-lookup"><span data-stu-id="15cdc-117">If the `<Override>` element is of type **LocaleTokenOverride**, then the `Locale` attribute is the condition, and the `Value` attribute is the consequent.</span></span> <span data-ttu-id="15cdc-118">例如，下面的内容为"如果 Office 区域设置为 fr-fr，则显示名称为"Lecteur vidéo"。</span><span class="sxs-lookup"><span data-stu-id="15cdc-118">For example, the following is read "If the Office locale setting is fr-fr, then the display name is 'Lecteur vidéo'."</span></span>
 
 ```xml
 <DisplayName DefaultValue="Video player">
@@ -29,38 +29,38 @@ ms.locfileid: "48996310"
 </DisplayName>
 ```
 
-<span data-ttu-id="62824-118">**加载项类型：** 内容、任务窗格和邮件</span><span class="sxs-lookup"><span data-stu-id="62824-118">**Add-in type:** Content, Task pane, Mail</span></span>
+<span data-ttu-id="15cdc-119">**加载项类型：** 内容、任务窗格和邮件</span><span class="sxs-lookup"><span data-stu-id="15cdc-119">**Add-in type:** Content, Task pane, Mail</span></span>
 
-### <a name="syntax"></a><span data-ttu-id="62824-119">语法</span><span class="sxs-lookup"><span data-stu-id="62824-119">Syntax</span></span>
+### <a name="syntax"></a><span data-ttu-id="15cdc-120">语法</span><span class="sxs-lookup"><span data-stu-id="15cdc-120">Syntax</span></span>
 
 ```XML
 <Override Locale="string" Value="string"></Override>
 ```
 
-### <a name="contained-in"></a><span data-ttu-id="62824-120">包含于</span><span class="sxs-lookup"><span data-stu-id="62824-120">Contained in</span></span>
+### <a name="contained-in"></a><span data-ttu-id="15cdc-121">包含于</span><span class="sxs-lookup"><span data-stu-id="15cdc-121">Contained in</span></span>
 
-|<span data-ttu-id="62824-121">元素</span><span class="sxs-lookup"><span data-stu-id="62824-121">Element</span></span>|
+|<span data-ttu-id="15cdc-122">元素</span><span class="sxs-lookup"><span data-stu-id="15cdc-122">Element</span></span>|
 |:-----|
-|[<span data-ttu-id="62824-122">CitationText</span><span class="sxs-lookup"><span data-stu-id="62824-122">CitationText</span></span>](citationtext.md)|
-|[<span data-ttu-id="62824-123">说明</span><span class="sxs-lookup"><span data-stu-id="62824-123">Description</span></span>](description.md)|
-|[<span data-ttu-id="62824-124">DictionaryName</span><span class="sxs-lookup"><span data-stu-id="62824-124">DictionaryName</span></span>](dictionaryname.md)|
-|[<span data-ttu-id="62824-125">DictionaryHomePage</span><span class="sxs-lookup"><span data-stu-id="62824-125">DictionaryHomePage</span></span>](dictionaryhomepage.md)|
-|[<span data-ttu-id="62824-126">DisplayName</span><span class="sxs-lookup"><span data-stu-id="62824-126">DisplayName</span></span>](displayname.md)|
-|[<span data-ttu-id="62824-127">HighResolutionIconUrl</span><span class="sxs-lookup"><span data-stu-id="62824-127">HighResolutionIconUrl</span></span>](highresolutioniconurl.md)|
-|[<span data-ttu-id="62824-128">IconUrl</span><span class="sxs-lookup"><span data-stu-id="62824-128">IconUrl</span></span>](iconurl.md)|
-|[<span data-ttu-id="62824-129">QueryUri</span><span class="sxs-lookup"><span data-stu-id="62824-129">QueryUri</span></span>](queryuri.md)|
-|[<span data-ttu-id="62824-130">SourceLocation</span><span class="sxs-lookup"><span data-stu-id="62824-130">SourceLocation</span></span>](sourcelocation.md)|
-|[<span data-ttu-id="62824-131">SupportUrl</span><span class="sxs-lookup"><span data-stu-id="62824-131">SupportUrl</span></span>](supporturl.md)|
-|[<span data-ttu-id="62824-132">标记</span><span class="sxs-lookup"><span data-stu-id="62824-132">Token</span></span>](token.md)|
+|[<span data-ttu-id="15cdc-123">CitationText</span><span class="sxs-lookup"><span data-stu-id="15cdc-123">CitationText</span></span>](citationtext.md)|
+|[<span data-ttu-id="15cdc-124">说明</span><span class="sxs-lookup"><span data-stu-id="15cdc-124">Description</span></span>](description.md)|
+|[<span data-ttu-id="15cdc-125">DictionaryName</span><span class="sxs-lookup"><span data-stu-id="15cdc-125">DictionaryName</span></span>](dictionaryname.md)|
+|[<span data-ttu-id="15cdc-126">DictionaryHomePage</span><span class="sxs-lookup"><span data-stu-id="15cdc-126">DictionaryHomePage</span></span>](dictionaryhomepage.md)|
+|[<span data-ttu-id="15cdc-127">DisplayName</span><span class="sxs-lookup"><span data-stu-id="15cdc-127">DisplayName</span></span>](displayname.md)|
+|[<span data-ttu-id="15cdc-128">HighResolutionIconUrl</span><span class="sxs-lookup"><span data-stu-id="15cdc-128">HighResolutionIconUrl</span></span>](highresolutioniconurl.md)|
+|[<span data-ttu-id="15cdc-129">IconUrl</span><span class="sxs-lookup"><span data-stu-id="15cdc-129">IconUrl</span></span>](iconurl.md)|
+|[<span data-ttu-id="15cdc-130">QueryUri</span><span class="sxs-lookup"><span data-stu-id="15cdc-130">QueryUri</span></span>](queryuri.md)|
+|[<span data-ttu-id="15cdc-131">SourceLocation</span><span class="sxs-lookup"><span data-stu-id="15cdc-131">SourceLocation</span></span>](sourcelocation.md)|
+|[<span data-ttu-id="15cdc-132">SupportUrl</span><span class="sxs-lookup"><span data-stu-id="15cdc-132">SupportUrl</span></span>](supporturl.md)|
+|[<span data-ttu-id="15cdc-133">标记</span><span class="sxs-lookup"><span data-stu-id="15cdc-133">Token</span></span>](token.md)|
 
-### <a name="attributes"></a><span data-ttu-id="62824-133">属性</span><span class="sxs-lookup"><span data-stu-id="62824-133">Attributes</span></span>
+### <a name="attributes"></a><span data-ttu-id="15cdc-134">属性</span><span class="sxs-lookup"><span data-stu-id="15cdc-134">Attributes</span></span>
 
-|<span data-ttu-id="62824-134">属性</span><span class="sxs-lookup"><span data-stu-id="62824-134">Attribute</span></span>|<span data-ttu-id="62824-135">类型</span><span class="sxs-lookup"><span data-stu-id="62824-135">Type</span></span>|<span data-ttu-id="62824-136">必需</span><span class="sxs-lookup"><span data-stu-id="62824-136">Required</span></span>|<span data-ttu-id="62824-137">说明</span><span class="sxs-lookup"><span data-stu-id="62824-137">Description</span></span>|
+|<span data-ttu-id="15cdc-135">属性</span><span class="sxs-lookup"><span data-stu-id="15cdc-135">Attribute</span></span>|<span data-ttu-id="15cdc-136">类型</span><span class="sxs-lookup"><span data-stu-id="15cdc-136">Type</span></span>|<span data-ttu-id="15cdc-137">必需</span><span class="sxs-lookup"><span data-stu-id="15cdc-137">Required</span></span>|<span data-ttu-id="15cdc-138">说明</span><span class="sxs-lookup"><span data-stu-id="15cdc-138">Description</span></span>|
 |:-----|:-----|:-----|:-----|
-|<span data-ttu-id="62824-138">区域设置</span><span class="sxs-lookup"><span data-stu-id="62824-138">Locale</span></span>|<span data-ttu-id="62824-139">字符串</span><span class="sxs-lookup"><span data-stu-id="62824-139">string</span></span>|<span data-ttu-id="62824-140">必需</span><span class="sxs-lookup"><span data-stu-id="62824-140">required</span></span>|<span data-ttu-id="62824-141">为此替代项指定区域设置的区域性名称，采用 BCP 47 语言标记格式，例如 `"en-US"`。</span><span class="sxs-lookup"><span data-stu-id="62824-141">Specifies the culture name of the locale for this override in the BCP 47 language tag format, such as  `"en-US"`.</span></span>|
-|<span data-ttu-id="62824-142">值</span><span class="sxs-lookup"><span data-stu-id="62824-142">Value</span></span>|<span data-ttu-id="62824-143">字符串</span><span class="sxs-lookup"><span data-stu-id="62824-143">string</span></span>|<span data-ttu-id="62824-144">必需</span><span class="sxs-lookup"><span data-stu-id="62824-144">required</span></span>|<span data-ttu-id="62824-145">指定表示为指定区域设置的设置的值。</span><span class="sxs-lookup"><span data-stu-id="62824-145">Specifies value of the setting expressed for the specified locale.</span></span>|
+|<span data-ttu-id="15cdc-139">区域设置</span><span class="sxs-lookup"><span data-stu-id="15cdc-139">Locale</span></span>|<span data-ttu-id="15cdc-140">字符串</span><span class="sxs-lookup"><span data-stu-id="15cdc-140">string</span></span>|<span data-ttu-id="15cdc-141">必需</span><span class="sxs-lookup"><span data-stu-id="15cdc-141">required</span></span>|<span data-ttu-id="15cdc-142">为此替代项指定区域设置的区域性名称，采用 BCP 47 语言标记格式，例如 `"en-US"`。</span><span class="sxs-lookup"><span data-stu-id="15cdc-142">Specifies the culture name of the locale for this override in the BCP 47 language tag format, such as  `"en-US"`.</span></span>|
+|<span data-ttu-id="15cdc-143">值</span><span class="sxs-lookup"><span data-stu-id="15cdc-143">Value</span></span>|<span data-ttu-id="15cdc-144">字符串</span><span class="sxs-lookup"><span data-stu-id="15cdc-144">string</span></span>|<span data-ttu-id="15cdc-145">必需</span><span class="sxs-lookup"><span data-stu-id="15cdc-145">required</span></span>|<span data-ttu-id="15cdc-146">指定表示为指定区域设置的设置的值。</span><span class="sxs-lookup"><span data-stu-id="15cdc-146">Specifies value of the setting expressed for the specified locale.</span></span>|
 
-### <a name="examples"></a><span data-ttu-id="62824-146">示例</span><span class="sxs-lookup"><span data-stu-id="62824-146">Examples</span></span>
+### <a name="examples"></a><span data-ttu-id="15cdc-147">示例</span><span class="sxs-lookup"><span data-stu-id="15cdc-147">Examples</span></span>
 
 ```xml
 <DisplayName DefaultValue="Video player">
@@ -87,14 +87,14 @@ ms.locfileid: "48996310"
   </ExtendedOverrides>
 ```
 
-### <a name="see-also"></a><span data-ttu-id="62824-147">另请参阅</span><span class="sxs-lookup"><span data-stu-id="62824-147">See also</span></span>
+### <a name="see-also"></a><span data-ttu-id="15cdc-148">另请参阅</span><span class="sxs-lookup"><span data-stu-id="15cdc-148">See also</span></span>
 
-- [<span data-ttu-id="62824-148">Office 外接程序的本地化</span><span class="sxs-lookup"><span data-stu-id="62824-148">Localization for Office Add-ins</span></span>](../../develop/localization.md)
-- [<span data-ttu-id="62824-149">键盘快捷方式</span><span class="sxs-lookup"><span data-stu-id="62824-149">Keyboard shortcuts</span></span>](../../design/keyboard-shortcuts.md)
+- [<span data-ttu-id="15cdc-149">Office 外接程序的本地化</span><span class="sxs-lookup"><span data-stu-id="15cdc-149">Localization for Office Add-ins</span></span>](../../develop/localization.md)
+- [<span data-ttu-id="15cdc-150">键盘快捷方式</span><span class="sxs-lookup"><span data-stu-id="15cdc-150">Keyboard shortcuts</span></span>](../../design/keyboard-shortcuts.md)
 
-## <a name="override-element-of-type-requirementtokenoverride"></a><span data-ttu-id="62824-150">RequirementTokenOverride 类型的重写元素</span><span class="sxs-lookup"><span data-stu-id="62824-150">Override element of type RequirementTokenOverride</span></span>
+## <a name="override-element-of-type-requirementtokenoverride"></a><span data-ttu-id="15cdc-151">RequirementTokenOverride 类型的 Override 元素</span><span class="sxs-lookup"><span data-stu-id="15cdc-151">Override element of type RequirementTokenOverride</span></span>
 
-<span data-ttu-id="62824-151">`<Override>`元素表示条件，可读取为 "If ..."然后 ... "语句.</span><span class="sxs-lookup"><span data-stu-id="62824-151">An `<Override>` element expresses a conditional and can be read as an "If ... then ..." statement.</span></span> <span data-ttu-id="62824-152">如果 `<Override>` 元素的类型为 **RequirementTokenOverride** ，则该子 `<Requirements>` 元素表示条件， `Value` 属性随后会随后。</span><span class="sxs-lookup"><span data-stu-id="62824-152">If the `<Override>` element is of type **RequirementTokenOverride** , then the child `<Requirements>` element expresses the condition, and the `Value` attribute is the consequent.</span></span> <span data-ttu-id="62824-153">例如，以下中的第一个 `<Override>` 是 "如果当前平台支持 FeatureOne 版本 1.7"，然后使用字符串 "oldAddinVersion" 替换 `${token.requirements}` 祖父 (的 URL 中的标记， `<ExtendedOverrides>` 而不是默认字符串 "upgrade" ) "。"</span><span class="sxs-lookup"><span data-stu-id="62824-153">For example, the first `<Override>` in the following is read "If the current platform supports FeatureOne version 1.7, then use string 'oldAddinVersion' in place of the `${token.requirements}` token in the URL of the grandparent `<ExtendedOverrides>` (instead of the default string 'upgrade')."</span></span>
+<span data-ttu-id="15cdc-152">元素 `<Override>` 表示条件，并可以读取为"If ...then ..."语句。</span><span class="sxs-lookup"><span data-stu-id="15cdc-152">An `<Override>` element expresses a conditional and can be read as an "If ... then ..." statement.</span></span> <span data-ttu-id="15cdc-153">如果 `<Override>` 元素的类型 **为 RequirementTokenOverride，** 则子元素表示条件，而 `<Requirements>` `Value` 该属性是结果。</span><span class="sxs-lookup"><span data-stu-id="15cdc-153">If the `<Override>` element is of type **RequirementTokenOverride**, then the child `<Requirements>` element expresses the condition, and the `Value` attribute is the consequent.</span></span> <span data-ttu-id="15cdc-154">例如，下面的第一个内容是"如果当前平台支持 `<Override>` FeatureOne 版本 1.7，则使用字符串"oldAddinVersion"代替 (的 URL 中的令牌，而不是默认字符串 `${token.requirements}` `<ExtendedOverrides>` "upgrade") "。</span><span class="sxs-lookup"><span data-stu-id="15cdc-154">For example, the first `<Override>` in the following is read "If the current platform supports FeatureOne version 1.7, then use string 'oldAddinVersion' in place of the `${token.requirements}` token in the URL of the grandparent `<ExtendedOverrides>` (instead of the default string 'upgrade')."</span></span>
 
 ```xml
 <ExtendedOverrides Url="http://contoso.com/addinmetadata/${token.requirements}/extended-manifest-overrides.json">
@@ -122,33 +122,33 @@ ms.locfileid: "48996310"
 </ExtendedOverrides>
 ```
 
-<span data-ttu-id="62824-154">**外接程序类型：** 任务窗格</span><span class="sxs-lookup"><span data-stu-id="62824-154">**Add-in type:** Task pane</span></span>
+<span data-ttu-id="15cdc-155">**外接程序类型：** 任务窗格</span><span class="sxs-lookup"><span data-stu-id="15cdc-155">**Add-in type:** Task pane</span></span>
 
-### <a name="syntax"></a><span data-ttu-id="62824-155">语法</span><span class="sxs-lookup"><span data-stu-id="62824-155">Syntax</span></span>
+### <a name="syntax"></a><span data-ttu-id="15cdc-156">语法</span><span class="sxs-lookup"><span data-stu-id="15cdc-156">Syntax</span></span>
 
 ```XML
 <Override Value="string" />
 ```
 
-### <a name="contained-in"></a><span data-ttu-id="62824-156">包含于</span><span class="sxs-lookup"><span data-stu-id="62824-156">Contained in</span></span>
+### <a name="contained-in"></a><span data-ttu-id="15cdc-157">包含于</span><span class="sxs-lookup"><span data-stu-id="15cdc-157">Contained in</span></span>
 
-|<span data-ttu-id="62824-157">元素</span><span class="sxs-lookup"><span data-stu-id="62824-157">Element</span></span>|
+|<span data-ttu-id="15cdc-158">元素</span><span class="sxs-lookup"><span data-stu-id="15cdc-158">Element</span></span>|
 |:-----|
-|[<span data-ttu-id="62824-158">标记</span><span class="sxs-lookup"><span data-stu-id="62824-158">Token</span></span>](token.md)|
+|[<span data-ttu-id="15cdc-159">标记</span><span class="sxs-lookup"><span data-stu-id="15cdc-159">Token</span></span>](token.md)|
 
-### <a name="must-contain"></a><span data-ttu-id="62824-159">必须包含</span><span class="sxs-lookup"><span data-stu-id="62824-159">Must contain</span></span>
+### <a name="must-contain"></a><span data-ttu-id="15cdc-160">必须包含</span><span class="sxs-lookup"><span data-stu-id="15cdc-160">Must contain</span></span>
 
-|<span data-ttu-id="62824-160">元素</span><span class="sxs-lookup"><span data-stu-id="62824-160">Element</span></span>|<span data-ttu-id="62824-161">内容</span><span class="sxs-lookup"><span data-stu-id="62824-161">Content</span></span>|<span data-ttu-id="62824-162">邮件</span><span class="sxs-lookup"><span data-stu-id="62824-162">Mail</span></span>|<span data-ttu-id="62824-163">任务窗格</span><span class="sxs-lookup"><span data-stu-id="62824-163">TaskPane</span></span>|
+|<span data-ttu-id="15cdc-161">元素</span><span class="sxs-lookup"><span data-stu-id="15cdc-161">Element</span></span>|<span data-ttu-id="15cdc-162">内容</span><span class="sxs-lookup"><span data-stu-id="15cdc-162">Content</span></span>|<span data-ttu-id="15cdc-163">邮件</span><span class="sxs-lookup"><span data-stu-id="15cdc-163">Mail</span></span>|<span data-ttu-id="15cdc-164">任务窗格</span><span class="sxs-lookup"><span data-stu-id="15cdc-164">TaskPane</span></span>|
 |:-----|:-----|:-----|:-----|
-|[<span data-ttu-id="62824-164">Requirements</span><span class="sxs-lookup"><span data-stu-id="62824-164">Requirements</span></span>](requirements.md)|||<span data-ttu-id="62824-165">x</span><span class="sxs-lookup"><span data-stu-id="62824-165">x</span></span>|
+|[<span data-ttu-id="15cdc-165">Requirements</span><span class="sxs-lookup"><span data-stu-id="15cdc-165">Requirements</span></span>](requirements.md)|||<span data-ttu-id="15cdc-166">x</span><span class="sxs-lookup"><span data-stu-id="15cdc-166">x</span></span>|
 
-### <a name="attributes"></a><span data-ttu-id="62824-166">属性</span><span class="sxs-lookup"><span data-stu-id="62824-166">Attributes</span></span>
+### <a name="attributes"></a><span data-ttu-id="15cdc-167">属性</span><span class="sxs-lookup"><span data-stu-id="15cdc-167">Attributes</span></span>
 
-|<span data-ttu-id="62824-167">属性</span><span class="sxs-lookup"><span data-stu-id="62824-167">Attribute</span></span>|<span data-ttu-id="62824-168">类型</span><span class="sxs-lookup"><span data-stu-id="62824-168">Type</span></span>|<span data-ttu-id="62824-169">必需</span><span class="sxs-lookup"><span data-stu-id="62824-169">Required</span></span>|<span data-ttu-id="62824-170">说明</span><span class="sxs-lookup"><span data-stu-id="62824-170">Description</span></span>|
+|<span data-ttu-id="15cdc-168">属性</span><span class="sxs-lookup"><span data-stu-id="15cdc-168">Attribute</span></span>|<span data-ttu-id="15cdc-169">类型</span><span class="sxs-lookup"><span data-stu-id="15cdc-169">Type</span></span>|<span data-ttu-id="15cdc-170">必需</span><span class="sxs-lookup"><span data-stu-id="15cdc-170">Required</span></span>|<span data-ttu-id="15cdc-171">说明</span><span class="sxs-lookup"><span data-stu-id="15cdc-171">Description</span></span>|
 |:-----|:-----|:-----|:-----|
-|<span data-ttu-id="62824-171">值</span><span class="sxs-lookup"><span data-stu-id="62824-171">Value</span></span>|<span data-ttu-id="62824-172">字符串</span><span class="sxs-lookup"><span data-stu-id="62824-172">string</span></span>|<span data-ttu-id="62824-173">必需</span><span class="sxs-lookup"><span data-stu-id="62824-173">required</span></span>|<span data-ttu-id="62824-174">满足条件时的祖父令牌的值。</span><span class="sxs-lookup"><span data-stu-id="62824-174">Value of the grandparent token when the condition is satisfied.</span></span>|
+|<span data-ttu-id="15cdc-172">值</span><span class="sxs-lookup"><span data-stu-id="15cdc-172">Value</span></span>|<span data-ttu-id="15cdc-173">字符串</span><span class="sxs-lookup"><span data-stu-id="15cdc-173">string</span></span>|<span data-ttu-id="15cdc-174">必需</span><span class="sxs-lookup"><span data-stu-id="15cdc-174">required</span></span>|<span data-ttu-id="15cdc-175">满足条件时令牌的值。</span><span class="sxs-lookup"><span data-stu-id="15cdc-175">Value of the grandparent token when the condition is satisfied.</span></span>|
 
-### <a name="example"></a><span data-ttu-id="62824-175">示例</span><span class="sxs-lookup"><span data-stu-id="62824-175">Example</span></span>
+### <a name="example"></a><span data-ttu-id="15cdc-176">示例</span><span class="sxs-lookup"><span data-stu-id="15cdc-176">Example</span></span>
 
 ```xml
 <ExtendedOverrides Url="http://contoso.com/addinmetadata/${token.requirements}/extended-manifest-overrides.json">
@@ -184,8 +184,8 @@ ms.locfileid: "48996310"
 </ExtendedOverrides>
 ```
 
-### <a name="see-also"></a><span data-ttu-id="62824-176">另请参阅</span><span class="sxs-lookup"><span data-stu-id="62824-176">See also</span></span>
+### <a name="see-also"></a><span data-ttu-id="15cdc-177">另请参阅</span><span class="sxs-lookup"><span data-stu-id="15cdc-177">See also</span></span>
 
-- [<span data-ttu-id="62824-177">Office 版本和要求集</span><span class="sxs-lookup"><span data-stu-id="62824-177">Office versions and requirement sets</span></span>](../../develop/office-versions-and-requirement-sets.md)
-- [<span data-ttu-id="62824-178">在清单中设置 Requirements 元素</span><span class="sxs-lookup"><span data-stu-id="62824-178">Set the Requirements element in the manifest</span></span>](../../develop/specify-office-hosts-and-api-requirements.md#set-the-requirements-element-in-the-manifest)
-- [<span data-ttu-id="62824-179">键盘快捷方式</span><span class="sxs-lookup"><span data-stu-id="62824-179">Keyboard shortcuts</span></span>](../../design/keyboard-shortcuts.md)
+- [<span data-ttu-id="15cdc-178">Office 版本和要求集</span><span class="sxs-lookup"><span data-stu-id="15cdc-178">Office versions and requirement sets</span></span>](../../develop/office-versions-and-requirement-sets.md)
+- [<span data-ttu-id="15cdc-179">在清单中设置 Requirements 元素</span><span class="sxs-lookup"><span data-stu-id="15cdc-179">Set the Requirements element in the manifest</span></span>](../../develop/specify-office-hosts-and-api-requirements.md#set-the-requirements-element-in-the-manifest)
+- [<span data-ttu-id="15cdc-180">键盘快捷方式</span><span class="sxs-lookup"><span data-stu-id="15cdc-180">Keyboard shortcuts</span></span>](../../design/keyboard-shortcuts.md)
