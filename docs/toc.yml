@@ -97,6 +97,8 @@ items:
             items:
               - name: 概述
                 href: develop/add-in-manifests.md
+              - name: 扩展替代项
+                href: develop/extended-overrides.md
               - name: 查找清单元素的正确顺序
                 href: develop/manifest-element-ordering.md
               - name: 更新 API 和清单版本
