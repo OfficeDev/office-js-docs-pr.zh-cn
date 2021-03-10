@@ -4,12 +4,12 @@ description: 在本教程中，你将学习如何构建一个 Excel 外接程序
 ms.date: 02/03/2021
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: 5b2660ef27ebc457d2d7602b716baf03e4b93cf3
-ms.sourcegitcommit: 8546889a759590c3798ce56e311d9e46f0171413
+ms.openlocfilehash: 0fa22b7b91f041c95abad9981dd89e620cf9af1c
+ms.sourcegitcommit: d153f6d4c3e01d63ed24aa1349be16fa8ad51218
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/04/2021
-ms.locfileid: "50104866"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "50613932"
 ---
 # <a name="tutorial-create-an-excel-task-pane-add-in"></a>教程：创建 Excel 任务窗格加载项
 
@@ -36,7 +36,7 @@ ms.locfileid: "50104866"
 [!include[Yeoman generator create project guidance](../includes/yo-office-command-guidance.md)]
 
 - **选择项目类型:** `Office Add-in Task Pane project`
-- **选择脚本类型:** `Javascript`
+- **选择脚本类型:** `JavaScript`
 - **要如何命名加载项?** `My Office Add-in`
 - **要支持哪一个 Office 客户端应用程序?** `Excel`
 
