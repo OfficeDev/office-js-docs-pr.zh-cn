@@ -1,26 +1,26 @@
 ---
-ms.date: 02/04/2021
-description: 了解如何在自定义函数内使用不同的参数，如 Excel 范围、可选参数、调用上下文等。
+ms.date: 03/08/2021
+description: 了解如何在自定义函数中使用不同的参数，如 Excel 范围、可选参数、调用上下文等。
 title: Excel 自定义函数的选项
 localization_priority: Normal
-ms.openlocfilehash: afe6947b1a1b9022a0284535b9ab1d68c9777c14
-ms.sourcegitcommit: 4805454f7fc6c64368a35d014e24075faf3e7557
+ms.openlocfilehash: a168853eeb6a81cf3d0054cb3628b609ec283af7
+ms.sourcegitcommit: d153f6d4c3e01d63ed24aa1349be16fa8ad51218
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "50173904"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "50613925"
 ---
-# <a name="custom-functions-parameter-options"></a><span data-ttu-id="eedf2-103">自定义函数参数选项</span><span class="sxs-lookup"><span data-stu-id="eedf2-103">Custom functions parameter options</span></span>
+# <a name="custom-functions-parameter-options"></a><span data-ttu-id="c12e5-103">自定义函数参数选项</span><span class="sxs-lookup"><span data-stu-id="c12e5-103">Custom functions parameter options</span></span>
 
-<span data-ttu-id="eedf2-104">自定义函数可配置许多不同的参数选项。</span><span class="sxs-lookup"><span data-stu-id="eedf2-104">Custom functions are configurable with many different parameter options.</span></span>
+<span data-ttu-id="c12e5-104">自定义函数可配置许多不同的参数选项。</span><span class="sxs-lookup"><span data-stu-id="c12e5-104">Custom functions are configurable with many different parameter options.</span></span>
 
 [!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
-## <a name="optional-parameters"></a><span data-ttu-id="eedf2-105">可选参数</span><span class="sxs-lookup"><span data-stu-id="eedf2-105">Optional parameters</span></span>
+## <a name="optional-parameters"></a><span data-ttu-id="c12e5-105">可选参数</span><span class="sxs-lookup"><span data-stu-id="c12e5-105">Optional parameters</span></span>
 
-<span data-ttu-id="eedf2-106">当用户在 Excel 中调用函数时，可选参数将显示在括号中。</span><span class="sxs-lookup"><span data-stu-id="eedf2-106">When a user invokes a function in Excel, optional parameters appear in brackets.</span></span> <span data-ttu-id="eedf2-107">在下面的示例中，add 函数可以选择添加第三个数字。</span><span class="sxs-lookup"><span data-stu-id="eedf2-107">In the following sample, the add function can optionally add a third number.</span></span> <span data-ttu-id="eedf2-108">此函数在 `=CONTOSO.ADD(first, second, [third])` Excel 中显示。</span><span class="sxs-lookup"><span data-stu-id="eedf2-108">This function appears as `=CONTOSO.ADD(first, second, [third])` in Excel.</span></span>
+<span data-ttu-id="c12e5-106">当用户在 Excel 中调用函数时，可选参数将显示在括号中。</span><span class="sxs-lookup"><span data-stu-id="c12e5-106">When a user invokes a function in Excel, optional parameters appear in brackets.</span></span> <span data-ttu-id="c12e5-107">在下面的示例中，添加函数可以选择添加第三个数字。</span><span class="sxs-lookup"><span data-stu-id="c12e5-107">In the following sample, the add function can optionally add a third number.</span></span> <span data-ttu-id="c12e5-108">此函数在 `=CONTOSO.ADD(first, second, [third])` Excel 中显示。</span><span class="sxs-lookup"><span data-stu-id="c12e5-108">This function appears as `=CONTOSO.ADD(first, second, [third])` in Excel.</span></span>
 
-#### <a name="javascript"></a>[<span data-ttu-id="eedf2-109">JavaScript</span><span class="sxs-lookup"><span data-stu-id="eedf2-109">JavaScript</span></span>](#tab/javascript)
+#### <a name="javascript"></a>[<span data-ttu-id="c12e5-109">JavaScript</span><span class="sxs-lookup"><span data-stu-id="c12e5-109">JavaScript</span></span>](#tab/javascript)
 
 ```js
 /**
@@ -39,7 +39,7 @@ function add(first, second, third) {
 }
 ```
 
-#### <a name="typescript"></a>[<span data-ttu-id="eedf2-110">TypeScript</span><span class="sxs-lookup"><span data-stu-id="eedf2-110">TypeScript</span></span>](#tab/typescript)
+#### <a name="typescript"></a>[<span data-ttu-id="c12e5-110">TypeScript</span><span class="sxs-lookup"><span data-stu-id="c12e5-110">TypeScript</span></span>](#tab/typescript)
 
 ```typescript
 /**
@@ -61,11 +61,11 @@ function add(first: number, second: number, third?: number): number {
 ---
 
 > [!NOTE]
-> <span data-ttu-id="eedf2-111">当未指定可选参数的值时，Excel 会为其分配值 `null` 。</span><span class="sxs-lookup"><span data-stu-id="eedf2-111">When no value is specified for an optional parameter, Excel assigns it the value `null`.</span></span> <span data-ttu-id="eedf2-112">这意味着 TypeScript 中的默认初始化参数将不能正常工作。</span><span class="sxs-lookup"><span data-stu-id="eedf2-112">This means default-initialized parameters in TypeScript will not work as expected.</span></span> <span data-ttu-id="eedf2-113">请勿使用语法， `function add(first:number, second:number, third=0):number` 因为它不会初始化 `third` 为 0。</span><span class="sxs-lookup"><span data-stu-id="eedf2-113">Don't use the syntax `function add(first:number, second:number, third=0):number` because it will not initialize `third` to 0.</span></span> <span data-ttu-id="eedf2-114">请改为使用 TypeScript 语法，如上一示例所示。</span><span class="sxs-lookup"><span data-stu-id="eedf2-114">Instead use the TypeScript syntax as shown in the previous example.</span></span>
+> <span data-ttu-id="c12e5-111">当未指定可选参数的值时，Excel 会为其分配值 `null` 。</span><span class="sxs-lookup"><span data-stu-id="c12e5-111">When no value is specified for an optional parameter, Excel assigns it the value `null`.</span></span> <span data-ttu-id="c12e5-112">这意味着 TypeScript 中的默认初始化参数将不能正常工作。</span><span class="sxs-lookup"><span data-stu-id="c12e5-112">This means default-initialized parameters in TypeScript will not work as expected.</span></span> <span data-ttu-id="c12e5-113">请勿使用语法， `function add(first:number, second:number, third=0):number` 因为它不会初始化 `third` 为 0。</span><span class="sxs-lookup"><span data-stu-id="c12e5-113">Don't use the syntax `function add(first:number, second:number, third=0):number` because it will not initialize `third` to 0.</span></span> <span data-ttu-id="c12e5-114">请改为使用 TypeScript 语法，如上一示例所示。</span><span class="sxs-lookup"><span data-stu-id="c12e5-114">Instead use the TypeScript syntax as shown in the previous example.</span></span>
 
-<span data-ttu-id="eedf2-115">定义包含一个或多个可选参数的函数时，指定可选参数为空时会发生什么情况。</span><span class="sxs-lookup"><span data-stu-id="eedf2-115">When you define a function that contains one or more optional parameters, specify what happens when the optional parameters are null.</span></span> <span data-ttu-id="eedf2-116">在以下示例中，`zipCode` 和 `dayOfWeek` 都是 `getWeatherReport` 函数的可选参数。</span><span class="sxs-lookup"><span data-stu-id="eedf2-116">In the following example, `zipCode` and `dayOfWeek` are both optional parameters for the `getWeatherReport` function.</span></span> <span data-ttu-id="eedf2-117">如果 `zipCode` 参数为空，则默认值设置为 `98052` 。</span><span class="sxs-lookup"><span data-stu-id="eedf2-117">If the `zipCode` parameter is null, the default value is set to `98052`.</span></span> <span data-ttu-id="eedf2-118">如果 `dayOfWeek` 参数为空，则设置为星期三。</span><span class="sxs-lookup"><span data-stu-id="eedf2-118">If the `dayOfWeek` parameter is null, it's set to Wednesday.</span></span>
+<span data-ttu-id="c12e5-115">定义包含一个或多个可选参数的函数时，指定可选参数为 null 时会发生什么情况。</span><span class="sxs-lookup"><span data-stu-id="c12e5-115">When you define a function that contains one or more optional parameters, specify what happens when the optional parameters are null.</span></span> <span data-ttu-id="c12e5-116">在以下示例中，`zipCode` 和 `dayOfWeek` 都是 `getWeatherReport` 函数的可选参数。</span><span class="sxs-lookup"><span data-stu-id="c12e5-116">In the following example, `zipCode` and `dayOfWeek` are both optional parameters for the `getWeatherReport` function.</span></span> <span data-ttu-id="c12e5-117">如果 `zipCode` 参数为 null，则默认值设置为 `98052` 。</span><span class="sxs-lookup"><span data-stu-id="c12e5-117">If the `zipCode` parameter is null, the default value is set to `98052`.</span></span> <span data-ttu-id="c12e5-118">如果 `dayOfWeek` 参数为 null，则设置为星期三。</span><span class="sxs-lookup"><span data-stu-id="c12e5-118">If the `dayOfWeek` parameter is null, it's set to Wednesday.</span></span>
 
-#### <a name="javascript"></a>[<span data-ttu-id="eedf2-119">JavaScript</span><span class="sxs-lookup"><span data-stu-id="eedf2-119">JavaScript</span></span>](#tab/javascript)
+#### <a name="javascript"></a>[<span data-ttu-id="c12e5-119">JavaScript</span><span class="sxs-lookup"><span data-stu-id="c12e5-119">JavaScript</span></span>](#tab/javascript)
 
 ```js
 /**
@@ -89,7 +89,7 @@ function getWeatherReport(zipCode, dayOfWeek) {
 }
 ```
 
-#### <a name="typescript"></a>[<span data-ttu-id="eedf2-120">TypeScript</span><span class="sxs-lookup"><span data-stu-id="eedf2-120">TypeScript</span></span>](#tab/typescript)
+#### <a name="typescript"></a>[<span data-ttu-id="c12e5-120">TypeScript</span><span class="sxs-lookup"><span data-stu-id="c12e5-120">TypeScript</span></span>](#tab/typescript)
 
 ```typescript
 /**
@@ -115,11 +115,11 @@ function getWeatherReport(zipCode?: number, dayOfWeek?: string): string {
 
 ---
 
-## <a name="range-parameters"></a><span data-ttu-id="eedf2-121">Range 参数</span><span class="sxs-lookup"><span data-stu-id="eedf2-121">Range parameters</span></span>
+## <a name="range-parameters"></a><span data-ttu-id="c12e5-121">Range 参数</span><span class="sxs-lookup"><span data-stu-id="c12e5-121">Range parameters</span></span>
 
-<span data-ttu-id="eedf2-122">自定义函数可能会接受单元格数据区域作为输入参数。</span><span class="sxs-lookup"><span data-stu-id="eedf2-122">Your custom function may accept a range of cell data as an input parameter.</span></span> <span data-ttu-id="eedf2-123">函数还可以返回一系列数据。</span><span class="sxs-lookup"><span data-stu-id="eedf2-123">A function can also return a range of data.</span></span> <span data-ttu-id="eedf2-124">Excel 将单元格数据区域作为二维数组传递。</span><span class="sxs-lookup"><span data-stu-id="eedf2-124">Excel will pass a range of cell data as a two-dimensional array.</span></span>
+<span data-ttu-id="c12e5-122">自定义函数可能会接受单元格数据区域作为输入参数。</span><span class="sxs-lookup"><span data-stu-id="c12e5-122">Your custom function may accept a range of cell data as an input parameter.</span></span> <span data-ttu-id="c12e5-123">函数还可以返回一系列数据。</span><span class="sxs-lookup"><span data-stu-id="c12e5-123">A function can also return a range of data.</span></span> <span data-ttu-id="c12e5-124">Excel 将单元格数据区域作为二维数组传递。</span><span class="sxs-lookup"><span data-stu-id="c12e5-124">Excel will pass a range of cell data as a two-dimensional array.</span></span>
 
-<span data-ttu-id="eedf2-125">例如，假设函数从 Excel 中存储的数字区域返回第二个最高值。</span><span class="sxs-lookup"><span data-stu-id="eedf2-125">For example, suppose that your function returns the second highest value from a range of numbers stored in Excel.</span></span> <span data-ttu-id="eedf2-126">以下函数接受参数，JSDOC 语法在此函数的 JSON 元数据中设置参数 `values` `number[][]` `dimensionality` `matrix` 的属性。</span><span class="sxs-lookup"><span data-stu-id="eedf2-126">The following function accepts the parameter `values`, and the JSDOC syntax `number[][]` sets the parameter's `dimensionality` property to `matrix` in the JSON metadata for this function.</span></span> 
+<span data-ttu-id="c12e5-125">例如，假设函数从 Excel 中存储的数字区域返回第二个最高值。</span><span class="sxs-lookup"><span data-stu-id="c12e5-125">For example, suppose that your function returns the second highest value from a range of numbers stored in Excel.</span></span> <span data-ttu-id="c12e5-126">以下函数接受参数，JSDOC 语法在此函数的 JSON 元数据中设置参数 `values` `number[][]` `dimensionality` `matrix` 的属性。</span><span class="sxs-lookup"><span data-stu-id="c12e5-126">The following function accepts the parameter `values`, and the JSDOC syntax `number[][]` sets the parameter's `dimensionality` property to `matrix` in the JSON metadata for this function.</span></span> 
 
 ```js
 /**
@@ -144,11 +144,11 @@ function secondHighest(values) {
 }
 ```
 
-## <a name="repeating-parameters"></a><span data-ttu-id="eedf2-127">重复参数</span><span class="sxs-lookup"><span data-stu-id="eedf2-127">Repeating parameters</span></span>
+## <a name="repeating-parameters"></a><span data-ttu-id="c12e5-127">重复参数</span><span class="sxs-lookup"><span data-stu-id="c12e5-127">Repeating parameters</span></span>
 
-<span data-ttu-id="eedf2-128">重复参数允许用户向函数输入一系列可选参数。</span><span class="sxs-lookup"><span data-stu-id="eedf2-128">A repeating parameter allows a user to enter a series of optional arguments to a function.</span></span> <span data-ttu-id="eedf2-129">调用函数时，值在参数的数组中提供。</span><span class="sxs-lookup"><span data-stu-id="eedf2-129">When the function is called, the values are provided in an array for the parameter.</span></span> <span data-ttu-id="eedf2-130">如果参数名称以数字结尾，则每个参数的编号将递增，如 `ADD(number1, [number2], [number3],…)` 。</span><span class="sxs-lookup"><span data-stu-id="eedf2-130">If the parameter name ends with a number, each argument's number will increase incrementally, such as `ADD(number1, [number2], [number3],…)`.</span></span> <span data-ttu-id="eedf2-131">这符合用于内置 Excel 函数的约定。</span><span class="sxs-lookup"><span data-stu-id="eedf2-131">This matches the convention used for built-in Excel functions.</span></span>
+<span data-ttu-id="c12e5-128">重复参数允许用户向函数输入一系列可选参数。</span><span class="sxs-lookup"><span data-stu-id="c12e5-128">A repeating parameter allows a user to enter a series of optional arguments to a function.</span></span> <span data-ttu-id="c12e5-129">调用函数时，值在参数的数组中提供。</span><span class="sxs-lookup"><span data-stu-id="c12e5-129">When the function is called, the values are provided in an array for the parameter.</span></span> <span data-ttu-id="c12e5-130">如果参数名称以数字结尾，则每个参数的编号将递增，例如 `ADD(number1, [number2], [number3],…)` 。</span><span class="sxs-lookup"><span data-stu-id="c12e5-130">If the parameter name ends with a number, each argument's number will increase incrementally, such as `ADD(number1, [number2], [number3],…)`.</span></span> <span data-ttu-id="c12e5-131">这符合用于内置 Excel 函数的约定。</span><span class="sxs-lookup"><span data-stu-id="c12e5-131">This matches the convention used for built-in Excel functions.</span></span>
 
-<span data-ttu-id="eedf2-132">以下函数对数字、单元格地址以及区域（如果输入）总计。</span><span class="sxs-lookup"><span data-stu-id="eedf2-132">The following function sums the total of numbers, cell addresses, as well as ranges, if entered.</span></span>
+<span data-ttu-id="c12e5-132">如果输入，以下函数将汇总数字、单元格地址以及区域总数。</span><span class="sxs-lookup"><span data-stu-id="c12e5-132">The following function sums the total of numbers, cell addresses, as well as ranges, if entered.</span></span>
 
 ```TS
 /**
@@ -172,13 +172,13 @@ function ADD(operands: number[][][]): number {
 }
 ```
 
-<span data-ttu-id="eedf2-133">此函数显示在 `=CONTOSO.ADD([operands], [operands]...)` Excel 工作簿中。</span><span class="sxs-lookup"><span data-stu-id="eedf2-133">This function shows `=CONTOSO.ADD([operands], [operands]...)` in the Excel workbook.</span></span>
+<span data-ttu-id="c12e5-133">此函数显示在 `=CONTOSO.ADD([operands], [operands]...)` Excel 工作簿中。</span><span class="sxs-lookup"><span data-stu-id="c12e5-133">This function shows `=CONTOSO.ADD([operands], [operands]...)` in the Excel workbook.</span></span>
 
 <img alt="The ADD custom function being entered into cell of an Excel worksheet" src="../images/operands.png" />
 
-### <a name="repeating-single-value-parameter"></a><span data-ttu-id="eedf2-134">重复单个值参数</span><span class="sxs-lookup"><span data-stu-id="eedf2-134">Repeating single value parameter</span></span>
+### <a name="repeating-single-value-parameter"></a><span data-ttu-id="c12e5-134">重复单个值参数</span><span class="sxs-lookup"><span data-stu-id="c12e5-134">Repeating single value parameter</span></span>
 
-<span data-ttu-id="eedf2-135">重复的单值参数允许传递多个单个值。</span><span class="sxs-lookup"><span data-stu-id="eedf2-135">A repeating single value parameter allows multiple single values to be passed.</span></span> <span data-ttu-id="eedf2-136">例如，用户可以输入 ADD (1，B2，3) 。</span><span class="sxs-lookup"><span data-stu-id="eedf2-136">For example, the user could enter ADD(1,B2,3).</span></span> <span data-ttu-id="eedf2-137">以下示例演示如何声明单个值参数。</span><span class="sxs-lookup"><span data-stu-id="eedf2-137">The following sample shows how to declare a single value parameter.</span></span>
+<span data-ttu-id="c12e5-135">重复的单值参数允许传递多个单个值。</span><span class="sxs-lookup"><span data-stu-id="c12e5-135">A repeating single value parameter allows multiple single values to be passed.</span></span> <span data-ttu-id="c12e5-136">例如，用户可以输入 ADD (1，B2，3) 。</span><span class="sxs-lookup"><span data-stu-id="c12e5-136">For example, the user could enter ADD(1,B2,3).</span></span> <span data-ttu-id="c12e5-137">以下示例演示如何声明单个值参数。</span><span class="sxs-lookup"><span data-stu-id="c12e5-137">The following sample shows how to declare a single value parameter.</span></span>
 
 ```JS
 /**
@@ -195,9 +195,9 @@ function addSingleValue(singleValue) {
 }
 ```
 
-### <a name="single-range-parameter"></a><span data-ttu-id="eedf2-138">单个 range 参数</span><span class="sxs-lookup"><span data-stu-id="eedf2-138">Single range parameter</span></span>
+### <a name="single-range-parameter"></a><span data-ttu-id="c12e5-138">单个区域参数</span><span class="sxs-lookup"><span data-stu-id="c12e5-138">Single range parameter</span></span>
 
-<span data-ttu-id="eedf2-139">从技术上说，单个区域参数不是重复参数，但在此处包含，因为声明与重复参数非常相似。</span><span class="sxs-lookup"><span data-stu-id="eedf2-139">A single range parameter isn't technically a repeating parameter, but is included here because the declaration is very similar to repeating parameters.</span></span> <span data-ttu-id="eedf2-140">对于从 Excel 传递单个区域 (A2：B3) 用户显示为 ADD。</span><span class="sxs-lookup"><span data-stu-id="eedf2-140">It would appear to the user as ADD(A2:B3) where a single range is passed from Excel.</span></span> <span data-ttu-id="eedf2-141">以下示例演示如何声明单个 range 参数。</span><span class="sxs-lookup"><span data-stu-id="eedf2-141">The following sample shows how to declare a single range parameter.</span></span>
+<span data-ttu-id="c12e5-139">从技术上说，单个区域参数不是重复参数，但此处包含此参数，因为声明与重复参数非常相似。</span><span class="sxs-lookup"><span data-stu-id="c12e5-139">A single range parameter isn't technically a repeating parameter, but is included here because the declaration is very similar to repeating parameters.</span></span> <span data-ttu-id="c12e5-140">在从 Excel 传递单个区域 (A2：B3) 用户显示为 ADD。</span><span class="sxs-lookup"><span data-stu-id="c12e5-140">It would appear to the user as ADD(A2:B3) where a single range is passed from Excel.</span></span> <span data-ttu-id="c12e5-141">以下示例演示如何声明单个 range 参数。</span><span class="sxs-lookup"><span data-stu-id="c12e5-141">The following sample shows how to declare a single range parameter.</span></span>
 
 ```JS
 /**
@@ -215,26 +215,26 @@ function addSingleRange(singleRange) {
 }
 ```
 
-### <a name="repeating-range-parameter"></a><span data-ttu-id="eedf2-142">重复范围参数</span><span class="sxs-lookup"><span data-stu-id="eedf2-142">Repeating range parameter</span></span>
+### <a name="repeating-range-parameter"></a><span data-ttu-id="c12e5-142">重复区域参数</span><span class="sxs-lookup"><span data-stu-id="c12e5-142">Repeating range parameter</span></span>
 
-<span data-ttu-id="eedf2-143">重复范围参数允许传递多个范围或数字。</span><span class="sxs-lookup"><span data-stu-id="eedf2-143">A repeating range parameter allows multiple ranges or numbers to be passed.</span></span> <span data-ttu-id="eedf2-144">例如，用户可以输入 ADD (5，B2，C3，8，E5：E8) 。</span><span class="sxs-lookup"><span data-stu-id="eedf2-144">For example, the user could enter ADD(5,B2,C3,8,E5:E8).</span></span> <span data-ttu-id="eedf2-145">重复区域通常使用类型指定 `number[][][]` ，因为它们是三维矩阵。</span><span class="sxs-lookup"><span data-stu-id="eedf2-145">Repeating ranges are usually specified with the type `number[][][]` as they are three-dimensional matrices.</span></span> <span data-ttu-id="eedf2-146">有关示例，请参阅针对重复参数列出的主示例 (#repeating-parameters) 。</span><span class="sxs-lookup"><span data-stu-id="eedf2-146">For a sample, see the main sample listed for repeating parameters(#repeating-parameters).</span></span>
+<span data-ttu-id="c12e5-143">重复区域参数允许传递多个范围或号码。</span><span class="sxs-lookup"><span data-stu-id="c12e5-143">A repeating range parameter allows multiple ranges or numbers to be passed.</span></span> <span data-ttu-id="c12e5-144">例如，用户可以输入 ADD (5，B2，C3，8，E5：E8) 。</span><span class="sxs-lookup"><span data-stu-id="c12e5-144">For example, the user could enter ADD(5,B2,C3,8,E5:E8).</span></span> <span data-ttu-id="c12e5-145">重复区域通常使用类型指定 `number[][][]` ，因为它们是三维矩阵。</span><span class="sxs-lookup"><span data-stu-id="c12e5-145">Repeating ranges are usually specified with the type `number[][][]` as they are three-dimensional matrices.</span></span> <span data-ttu-id="c12e5-146">有关示例，请参阅针对重复参数 [列出的主示例](#repeating-parameters)。</span><span class="sxs-lookup"><span data-stu-id="c12e5-146">For a sample, see the main sample listed for [repeating parameters](#repeating-parameters).</span></span>
 
 
-### <a name="declaring-repeating-parameters"></a><span data-ttu-id="eedf2-147">声明重复参数</span><span class="sxs-lookup"><span data-stu-id="eedf2-147">Declaring repeating parameters</span></span>
-<span data-ttu-id="eedf2-148">在 Typescript 中，指示参数是多维的。</span><span class="sxs-lookup"><span data-stu-id="eedf2-148">In Typescript, indicate that the parameter is multi-dimensional.</span></span> <span data-ttu-id="eedf2-149">例如，  `ADD(values: number[])` 表示一维数组， `ADD(values:number[][])` 表示二维数组，等等。</span><span class="sxs-lookup"><span data-stu-id="eedf2-149">For example,  `ADD(values: number[])` would indicate a one-dimensional array, `ADD(values:number[][])` would indicate a two-dimensional array, and so on.</span></span>
+### <a name="declaring-repeating-parameters"></a><span data-ttu-id="c12e5-147">声明重复参数</span><span class="sxs-lookup"><span data-stu-id="c12e5-147">Declaring repeating parameters</span></span>
+<span data-ttu-id="c12e5-148">在 Typescript 中，指示参数是多维的。</span><span class="sxs-lookup"><span data-stu-id="c12e5-148">In Typescript, indicate that the parameter is multi-dimensional.</span></span> <span data-ttu-id="c12e5-149">例如，  `ADD(values: number[])` 表示一维数组， `ADD(values:number[][])` 表示二维数组，等等。</span><span class="sxs-lookup"><span data-stu-id="c12e5-149">For example,  `ADD(values: number[])` would indicate a one-dimensional array, `ADD(values:number[][])` would indicate a two-dimensional array, and so on.</span></span>
 
-<span data-ttu-id="eedf2-150">在 JavaScript 中，用于一维数组、二维数组等 `@param values {number[]}` `@param <name> {number[][]}` 用于更多维度。</span><span class="sxs-lookup"><span data-stu-id="eedf2-150">In JavaScript, use `@param values {number[]}` for one-dimensional arrays, `@param <name> {number[][]}` for two-dimensional arrays, and so on for more dimensions.</span></span>
+<span data-ttu-id="c12e5-150">在 JavaScript 中，用于一维数组、二维数组等， `@param values {number[]}` `@param <name> {number[][]}` 以了解更多维度。</span><span class="sxs-lookup"><span data-stu-id="c12e5-150">In JavaScript, use `@param values {number[]}` for one-dimensional arrays, `@param <name> {number[][]}` for two-dimensional arrays, and so on for more dimensions.</span></span>
 
-<span data-ttu-id="eedf2-151">对于手动创作的 JSON，请确保参数在 JSON 文件中指定，并检查参数 `"repeating": true` 是否标记为 `"dimensionality": matrix` 。</span><span class="sxs-lookup"><span data-stu-id="eedf2-151">For hand-authored JSON, ensure your parameter is specified as `"repeating": true` in your JSON file, as well as check that your parameters are marked as `"dimensionality": matrix`.</span></span>
+<span data-ttu-id="c12e5-151">对于手动创作的 JSON，请确保参数在 JSON 文件中指定，并检查参数 `"repeating": true` 是否标记为 `"dimensionality": matrix` 。</span><span class="sxs-lookup"><span data-stu-id="c12e5-151">For hand-authored JSON, ensure your parameter is specified as `"repeating": true` in your JSON file, as well as check that your parameters are marked as `"dimensionality": matrix`.</span></span>
 
-## <a name="invocation-parameter"></a><span data-ttu-id="eedf2-152">调用参数</span><span class="sxs-lookup"><span data-stu-id="eedf2-152">Invocation parameter</span></span>
+## <a name="invocation-parameter"></a><span data-ttu-id="c12e5-152">调用参数</span><span class="sxs-lookup"><span data-stu-id="c12e5-152">Invocation parameter</span></span>
 
-<span data-ttu-id="eedf2-153">每个自定义函数都会自动将一个参数作为最后一个输入参数传递，即使该参数 `invocation` 未显式声明。</span><span class="sxs-lookup"><span data-stu-id="eedf2-153">Every custom function is automatically passed an `invocation` argument as the last input parameter, even if it's not explicitly declared.</span></span> <span data-ttu-id="eedf2-154">此 `invocation` 参数对应于 [调用](/javascript/api/custom-functions-runtime/customfunctions.invocation) 对象。</span><span class="sxs-lookup"><span data-stu-id="eedf2-154">This `invocation` parameter corresponds to the [Invocation](/javascript/api/custom-functions-runtime/customfunctions.invocation) object.</span></span> <span data-ttu-id="eedf2-155">该对象可用于检索其他上下文，例如调用自定义函数的单元格 `Invocation` 的地址。</span><span class="sxs-lookup"><span data-stu-id="eedf2-155">The `Invocation` object can be used to retrieve additional context, such as the address of the cell that invoked your custom function.</span></span> <span data-ttu-id="eedf2-156">若要访问 `Invocation` 对象，必须在自定义函数中声明 `invocation` 为最后一个参数。</span><span class="sxs-lookup"><span data-stu-id="eedf2-156">To access the `Invocation` object, you must declare `invocation` as the last parameter in your custom function.</span></span> 
+<span data-ttu-id="c12e5-153">每个自定义函数都会自动将参数作为最后一个输入参数传递，即使该参数 `invocation` 未显式声明。</span><span class="sxs-lookup"><span data-stu-id="c12e5-153">Every custom function is automatically passed an `invocation` argument as the last input parameter, even if it's not explicitly declared.</span></span> <span data-ttu-id="c12e5-154">此 `invocation` 参数对应于 [调用](/javascript/api/custom-functions-runtime/customfunctions.invocation) 对象。</span><span class="sxs-lookup"><span data-stu-id="c12e5-154">This `invocation` parameter corresponds to the [Invocation](/javascript/api/custom-functions-runtime/customfunctions.invocation) object.</span></span> <span data-ttu-id="c12e5-155">该对象可用于检索其他上下文，例如调用自定义函数的单元格 `Invocation` 的地址。</span><span class="sxs-lookup"><span data-stu-id="c12e5-155">The `Invocation` object can be used to retrieve additional context, such as the address of the cell that invoked your custom function.</span></span> <span data-ttu-id="c12e5-156">若要访问 `Invocation` 该对象，必须在自定义 `invocation` 函数中声明为最后一个参数。</span><span class="sxs-lookup"><span data-stu-id="c12e5-156">To access the `Invocation` object, you must declare `invocation` as the last parameter in your custom function.</span></span> 
 
 > [!NOTE]
-> <span data-ttu-id="eedf2-157">此 `invocation` 参数不会显示为 Excel 中用户的自定义函数参数。</span><span class="sxs-lookup"><span data-stu-id="eedf2-157">The `invocation` parameter doesn't appear as a custom function argument for users in Excel.</span></span>
+> <span data-ttu-id="c12e5-157">`invocation`该参数不会显示为 Excel 中用户的自定义函数参数。</span><span class="sxs-lookup"><span data-stu-id="c12e5-157">The `invocation` parameter doesn't appear as a custom function argument for users in Excel.</span></span>
 
-<span data-ttu-id="eedf2-158">以下示例演示如何使用参数返回调用自定义函数的单元格 `invocation` 的地址。</span><span class="sxs-lookup"><span data-stu-id="eedf2-158">The following sample shows how to use the `invocation` parameter to return the address of the cell that invoked your custom function.</span></span> <span data-ttu-id="eedf2-159">此示例使用 [对象的地址](/javascript/api/custom-functions-runtime/customfunctions.invocation#address) `Invocation` 属性。</span><span class="sxs-lookup"><span data-stu-id="eedf2-159">This sample uses the [address](/javascript/api/custom-functions-runtime/customfunctions.invocation#address) property of the `Invocation` object.</span></span> <span data-ttu-id="eedf2-160">若要访问 `Invocation` 该对象，请首先在 `CustomFunctions.Invocation` JSDoc 中声明为参数。</span><span class="sxs-lookup"><span data-stu-id="eedf2-160">To access the `Invocation` object, first declare `CustomFunctions.Invocation` as a parameter in your JSDoc.</span></span> <span data-ttu-id="eedf2-161">接下来， `@requiresAddress` 在 JSDoc 中声明以 `address` 访问对象 `Invocation` 的属性。</span><span class="sxs-lookup"><span data-stu-id="eedf2-161">Next, declare `@requiresAddress` in your JSDoc to access the `address` property of the `Invocation` object.</span></span> <span data-ttu-id="eedf2-162">最后，在函数中检索并返回 `address` 属性。</span><span class="sxs-lookup"><span data-stu-id="eedf2-162">Finally, within the function, retrieve and then return the `address` property.</span></span> 
+<span data-ttu-id="c12e5-158">以下示例演示如何使用参数返回调用自定义函数 `invocation` 的单元格的地址。</span><span class="sxs-lookup"><span data-stu-id="c12e5-158">The following sample shows how to use the `invocation` parameter to return the address of the cell that invoked your custom function.</span></span> <span data-ttu-id="c12e5-159">此示例使用 [对象的地址](/javascript/api/custom-functions-runtime/customfunctions.invocation#address) `Invocation` 属性。</span><span class="sxs-lookup"><span data-stu-id="c12e5-159">This sample uses the [address](/javascript/api/custom-functions-runtime/customfunctions.invocation#address) property of the `Invocation` object.</span></span> <span data-ttu-id="c12e5-160">若要访问 `Invocation` 该对象，请首先在 `CustomFunctions.Invocation` JSDoc 中声明为参数。</span><span class="sxs-lookup"><span data-stu-id="c12e5-160">To access the `Invocation` object, first declare `CustomFunctions.Invocation` as a parameter in your JSDoc.</span></span> <span data-ttu-id="c12e5-161">接下来， `@requiresAddress` 在 JSDoc 中声明以 `address` 访问对象 `Invocation` 的属性。</span><span class="sxs-lookup"><span data-stu-id="c12e5-161">Next, declare `@requiresAddress` in your JSDoc to access the `address` property of the `Invocation` object.</span></span> <span data-ttu-id="c12e5-162">最后，在函数中检索并返回 `address` 该属性。</span><span class="sxs-lookup"><span data-stu-id="c12e5-162">Finally, within the function, retrieve and then return the `address` property.</span></span> 
 
 ```js
 /**
@@ -251,29 +251,30 @@ function getAddress(first, second, invocation) {
 }
 ```
 
-<span data-ttu-id="eedf2-163">在 Excel 中，调用对象属性的自定义函数将返回调用该函数的单元格中采用格式 `address` `Invocation` `SheetName!RelativeCellAddress` 的绝对地址。</span><span class="sxs-lookup"><span data-stu-id="eedf2-163">In Excel, a custom function calling the `address` property of the `Invocation` object will return the absolute address following the format `SheetName!RelativeCellAddress` in the cell that invoked the function.</span></span> <span data-ttu-id="eedf2-164">例如，如果输入参数位于单元格 F6 中名为 **"价格** "的工作表上，则返回的参数地址值将为 `Prices!F6` 。</span><span class="sxs-lookup"><span data-stu-id="eedf2-164">For example, if the input parameter is located on a sheet called **Prices** in cell F6, the returned parameter address value will be `Prices!F6`.</span></span> 
+<span data-ttu-id="c12e5-163">在 Excel 中，调用对象属性的自定义函数将返回调用该函数的单元格中采用格式 `address` `Invocation` 的绝对 `SheetName!RelativeCellAddress` 地址。</span><span class="sxs-lookup"><span data-stu-id="c12e5-163">In Excel, a custom function calling the `address` property of the `Invocation` object will return the absolute address following the format `SheetName!RelativeCellAddress` in the cell that invoked the function.</span></span> <span data-ttu-id="c12e5-164">例如，如果输入参数位于单元格 F6 中名为 **"价格** "的工作表上，则返回的参数地址值将为 `Prices!F6` 。</span><span class="sxs-lookup"><span data-stu-id="c12e5-164">For example, if the input parameter is located on a sheet called **Prices** in cell F6, the returned parameter address value will be `Prices!F6`.</span></span> 
 
-<span data-ttu-id="eedf2-165">该 `invocation` 参数还可用于将信息发送到 Excel。</span><span class="sxs-lookup"><span data-stu-id="eedf2-165">The `invocation` parameter can also be used to send information to Excel.</span></span> <span data-ttu-id="eedf2-166">有关详细信息 [，请参阅"创建流](custom-functions-web-reqs.md#make-a-streaming-function) 式处理函数"。</span><span class="sxs-lookup"><span data-stu-id="eedf2-166">See [Make a streaming function](custom-functions-web-reqs.md#make-a-streaming-function) to learn more.</span></span>
+<span data-ttu-id="c12e5-165">`invocation`该参数还可用于将信息发送到 Excel。</span><span class="sxs-lookup"><span data-stu-id="c12e5-165">The `invocation` parameter can also be used to send information to Excel.</span></span> <span data-ttu-id="c12e5-166">请参阅 ["创建流式处理函数](custom-functions-web-reqs.md#make-a-streaming-function) "以了解更多信息。</span><span class="sxs-lookup"><span data-stu-id="c12e5-166">See [Make a streaming function](custom-functions-web-reqs.md#make-a-streaming-function) to learn more.</span></span>
 
-## <a name="detect-the-address-of-a-parameter"></a><span data-ttu-id="eedf2-167">检测参数的地址</span><span class="sxs-lookup"><span data-stu-id="eedf2-167">Detect the address of a parameter</span></span>
+## <a name="detect-the-address-of-a-parameter"></a><span data-ttu-id="c12e5-167">检测参数的地址</span><span class="sxs-lookup"><span data-stu-id="c12e5-167">Detect the address of a parameter</span></span>
 
-<span data-ttu-id="eedf2-168">结合调用 [参数，](#invocation-parameter)可以使用 [调用](/javascript/api/custom-functions-runtime/customfunctions.invocation) 对象检索自定义函数输入参数的地址。</span><span class="sxs-lookup"><span data-stu-id="eedf2-168">In combination with the [invocation parameter](#invocation-parameter), you can use the [Invocation](/javascript/api/custom-functions-runtime/customfunctions.invocation) object to retrieve the address of a custom function input parameter.</span></span> <span data-ttu-id="eedf2-169">调用时，对象的 [parameterAddresses](/javascript/api/custom-functions-runtime/customfunctions.invocation#parameterAddresses) 属性允许函数返回所有输入 `Invocation` 参数的地址。</span><span class="sxs-lookup"><span data-stu-id="eedf2-169">When invoked, the [parameterAddresses](/javascript/api/custom-functions-runtime/customfunctions.invocation#parameterAddresses) property of the `Invocation` object allows a function to return the addresses of all input parameters.</span></span> 
+<span data-ttu-id="c12e5-168">与调用 [参数结合使用时](#invocation-parameter)，可以使用 [调用](/javascript/api/custom-functions-runtime/customfunctions.invocation) 对象检索自定义函数输入参数的地址。</span><span class="sxs-lookup"><span data-stu-id="c12e5-168">In combination with the [invocation parameter](#invocation-parameter), you can use the [Invocation](/javascript/api/custom-functions-runtime/customfunctions.invocation) object to retrieve the address of a custom function input parameter.</span></span> <span data-ttu-id="c12e5-169">调用时，对象的 [parameterAddresses](/javascript/api/custom-functions-runtime/customfunctions.invocation#parameterAddresses) 属性允许函数返回所有输入 `Invocation` 参数的地址。</span><span class="sxs-lookup"><span data-stu-id="c12e5-169">When invoked, the [parameterAddresses](/javascript/api/custom-functions-runtime/customfunctions.invocation#parameterAddresses) property of the `Invocation` object allows a function to return the addresses of all input parameters.</span></span> 
 
-<span data-ttu-id="eedf2-170">这适用于输入数据类型可能有所不同的情况。</span><span class="sxs-lookup"><span data-stu-id="eedf2-170">This is useful in scenarios where input data types may vary.</span></span> <span data-ttu-id="eedf2-171">输入参数的地址可用于检查输入值的数量格式。</span><span class="sxs-lookup"><span data-stu-id="eedf2-171">The address of an input parameter can be used to check the number format of the input value.</span></span> <span data-ttu-id="eedf2-172">然后，如有必要，可以在输入之前调整数字格式。</span><span class="sxs-lookup"><span data-stu-id="eedf2-172">The number format can then be adjusted prior to input, if necessary.</span></span> <span data-ttu-id="eedf2-173">输入参数的地址还可用于检测输入值是否具有与后续计算相关的任何相关属性。</span><span class="sxs-lookup"><span data-stu-id="eedf2-173">The address of an input parameter can also be used to detect whether the input value has any related properties that may be relevant to subsequent calculations.</span></span> 
+<span data-ttu-id="c12e5-170">在输入数据类型可能有所不同的情况下，这非常有用。</span><span class="sxs-lookup"><span data-stu-id="c12e5-170">This is useful in scenarios where input data types may vary.</span></span> <span data-ttu-id="c12e5-171">输入参数的地址可用于检查输入值的数量格式。</span><span class="sxs-lookup"><span data-stu-id="c12e5-171">The address of an input parameter can be used to check the number format of the input value.</span></span> <span data-ttu-id="c12e5-172">然后，如有必要，可以在输入前调整数字格式。</span><span class="sxs-lookup"><span data-stu-id="c12e5-172">The number format can then be adjusted prior to input, if necessary.</span></span> <span data-ttu-id="c12e5-173">输入参数的地址还可用于检测输入值是否具有与后续计算相关的任何相关属性。</span><span class="sxs-lookup"><span data-stu-id="c12e5-173">The address of an input parameter can also be used to detect whether the input value has any related properties that may be relevant to subsequent calculations.</span></span> 
 
 >[!NOTE]
-> <span data-ttu-id="eedf2-174">如果正在处理手动创建的 [JSON](custom-functions-json.md) 元数据以返回参数地址，而不是 Yo Office 生成器，则对象必须将属性设置为 ，并且该对象必须将属性设置为 `options` `requiresParameterAddresses` `true` `result` `dimensionality` `matrix` 。</span><span class="sxs-lookup"><span data-stu-id="eedf2-174">If you're working with [manually-created JSON metadata](custom-functions-json.md) to return parameter addresses instead of the Yo Office generator, the `options` object must have the `requiresParameterAddresses` property set to `true`, and the `result` object must have the `dimensionality` property set to `matrix`.</span></span>
+> <span data-ttu-id="c12e5-174">如果使用手动创建的 [JSON](custom-functions-json.md) 元数据来返回参数地址，而不是 Yo Office 生成器，则对象必须将属性设置为 ，并且对象必须将属性设置为 `options` `requiresParameterAddresses` `true` `result` `dimensionality` `matrix` 。</span><span class="sxs-lookup"><span data-stu-id="c12e5-174">If you're working with [manually-created JSON metadata](custom-functions-json.md) to return parameter addresses instead of the Yo Office generator, the `options` object must have the `requiresParameterAddresses` property set to `true`, and the `result` object must have the `dimensionality` property set to `matrix`.</span></span>
 
-<span data-ttu-id="eedf2-175">以下自定义函数采用三个输入参数，检索每个参数的对象属性， `parameterAddresses` `Invocation` 然后返回地址。</span><span class="sxs-lookup"><span data-stu-id="eedf2-175">The following custom function takes in three input parameters, retrieves the `parameterAddresses` property of the `Invocation` object for each parameter, and then returns the addresses.</span></span> 
+<span data-ttu-id="c12e5-175">以下自定义函数接受三个输入参数，检索每个参数的对象属性， `parameterAddresses` `Invocation` 然后返回地址。</span><span class="sxs-lookup"><span data-stu-id="c12e5-175">The following custom function takes in three input parameters, retrieves the `parameterAddresses` property of the `Invocation` object for each parameter, and then returns the addresses.</span></span> 
 
 ```js
 /**
- * Return the address of three parameters. 
+ * Return the addresses of three parameters. 
  * @customfunction
  * @param {string} firstParameter First parameter.
  * @param {string} secondParameter Second parameter.
- * @param {string} thirdParameter Third parameter
+ * @param {string} thirdParameter Third parameter.
  * @param {CustomFunctions.Invocation} invocation Invocation object. 
+ * @returns {string[][]} The addresses of the parameters, as a 2-dimensional array. 
  * @requiresParameterAddresses
  */
 function getParameterAddresses(firstParameter, secondParameter, thirdParameter, invocation) {
@@ -286,16 +287,16 @@ function getParameterAddresses(firstParameter, secondParameter, thirdParameter, 
 }
 ```
 
-<span data-ttu-id="eedf2-176">调用该属性的自定义函数运行时，将按照调用函数的单元格中的格式 `parameterAddresses` 返回参数 `SheetName!RelativeCellAddress` 地址。</span><span class="sxs-lookup"><span data-stu-id="eedf2-176">When a custom function calling the `parameterAddresses` property runs, the parameter address is returned following the format `SheetName!RelativeCellAddress` in the cell that invoked the function.</span></span> <span data-ttu-id="eedf2-177">例如，如果输入参数位于单元格 D8 中 **名为"成本** "的工作表上，则返回的参数地址值将为 `Costs!D8` 。</span><span class="sxs-lookup"><span data-stu-id="eedf2-177">For example, if the input parameter is located on a sheet called **Costs** in cell D8, the returned parameter address value will be `Costs!D8`.</span></span> <span data-ttu-id="eedf2-178">如果自定义函数具有多个参数并返回多个参数地址，则返回的地址将溢出多个单元格，从调用该函数的单元格垂直排列。</span><span class="sxs-lookup"><span data-stu-id="eedf2-178">If the custom function has multiple parameters and more than one parameter address is returned, the returned addresses will spill across multiple cells, descending vertically from the cell that invoked the function.</span></span> 
+<span data-ttu-id="c12e5-176">调用该属性的自定义函数运行时，将按照调用该函数的单元格中的格式 `parameterAddresses` `SheetName!RelativeCellAddress` 返回参数地址。</span><span class="sxs-lookup"><span data-stu-id="c12e5-176">When a custom function calling the `parameterAddresses` property runs, the parameter address is returned following the format `SheetName!RelativeCellAddress` in the cell that invoked the function.</span></span> <span data-ttu-id="c12e5-177">例如，如果输入参数位于单元格 D8 中名为 **"成本** "的工作表上，则返回的参数地址值将为 `Costs!D8` 。</span><span class="sxs-lookup"><span data-stu-id="c12e5-177">For example, if the input parameter is located on a sheet called **Costs** in cell D8, the returned parameter address value will be `Costs!D8`.</span></span> <span data-ttu-id="c12e5-178">如果自定义函数具有多个参数并返回多个参数地址，则返回的地址将溢出多个单元格，从调用该函数的单元格垂直降序排列。</span><span class="sxs-lookup"><span data-stu-id="c12e5-178">If the custom function has multiple parameters and more than one parameter address is returned, the returned addresses will spill across multiple cells, descending vertically from the cell that invoked the function.</span></span> 
 
-## <a name="next-steps"></a><span data-ttu-id="eedf2-179">后续步骤</span><span class="sxs-lookup"><span data-stu-id="eedf2-179">Next steps</span></span>
+## <a name="next-steps"></a><span data-ttu-id="c12e5-179">后续步骤</span><span class="sxs-lookup"><span data-stu-id="c12e5-179">Next steps</span></span>
 
-<span data-ttu-id="eedf2-180">了解如何在自定义 [函数中使用可变值](custom-functions-volatile.md)。</span><span class="sxs-lookup"><span data-stu-id="eedf2-180">Learn how to use [volatile values in your custom functions](custom-functions-volatile.md).</span></span>
+<span data-ttu-id="c12e5-180">了解如何在自定义 [函数中使用可变值](custom-functions-volatile.md)。</span><span class="sxs-lookup"><span data-stu-id="c12e5-180">Learn how to use [volatile values in your custom functions](custom-functions-volatile.md).</span></span>
 
-## <a name="see-also"></a><span data-ttu-id="eedf2-181">另请参阅</span><span class="sxs-lookup"><span data-stu-id="eedf2-181">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="c12e5-181">另请参阅</span><span class="sxs-lookup"><span data-stu-id="c12e5-181">See also</span></span>
 
-* [<span data-ttu-id="eedf2-182">使用自定义函数接收和处理数据</span><span class="sxs-lookup"><span data-stu-id="eedf2-182">Receive and handle data with custom functions</span></span>](custom-functions-web-reqs.md)
-* [<span data-ttu-id="eedf2-183">为自定义函数自动生成 JSON 元数据</span><span class="sxs-lookup"><span data-stu-id="eedf2-183">Autogenerate JSON metadata for custom functions</span></span>](custom-functions-json-autogeneration.md)
-* [<span data-ttu-id="eedf2-184">手动为自定义函数创建 JSON 元数据</span><span class="sxs-lookup"><span data-stu-id="eedf2-184">Manually create JSON metadata for custom functions</span></span>](custom-functions-json.md)
-* [<span data-ttu-id="eedf2-185">在 Excel 中创建自定义函数</span><span class="sxs-lookup"><span data-stu-id="eedf2-185">Create custom functions in Excel</span></span>](custom-functions-overview.md)
-* [<span data-ttu-id="eedf2-186">Excel 自定义函数教程</span><span class="sxs-lookup"><span data-stu-id="eedf2-186">Excel custom functions tutorial</span></span>](../tutorials/excel-tutorial-create-custom-functions.md)
+* [<span data-ttu-id="c12e5-182">使用自定义函数接收和处理数据</span><span class="sxs-lookup"><span data-stu-id="c12e5-182">Receive and handle data with custom functions</span></span>](custom-functions-web-reqs.md)
+* [<span data-ttu-id="c12e5-183">为自定义函数自动生成 JSON 元数据</span><span class="sxs-lookup"><span data-stu-id="c12e5-183">Autogenerate JSON metadata for custom functions</span></span>](custom-functions-json-autogeneration.md)
+* [<span data-ttu-id="c12e5-184">为自定义函数手动创建 JSON 元数据</span><span class="sxs-lookup"><span data-stu-id="c12e5-184">Manually create JSON metadata for custom functions</span></span>](custom-functions-json.md)
+* [<span data-ttu-id="c12e5-185">在 Excel 中创建自定义函数</span><span class="sxs-lookup"><span data-stu-id="c12e5-185">Create custom functions in Excel</span></span>](custom-functions-overview.md)
+* [<span data-ttu-id="c12e5-186">Excel 自定义函数教程</span><span class="sxs-lookup"><span data-stu-id="c12e5-186">Excel custom functions tutorial</span></span>](../tutorials/excel-tutorial-create-custom-functions.md)
