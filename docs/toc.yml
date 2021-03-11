@@ -706,7 +706,7 @@ items:
           - name: 自动生成 JSON 元数据
             href: excel/custom-functions-json-autogeneration.md
             displayName: 'Excel, Custom Functions'
-          - name: 调用 Excel JS API
+          - name: 调用 Excel JavaScript API
             href: excel/call-excel-apis-from-custom-function.md
             displayName: 'Excel, Custom Functions'
           - name: 标识等效的 XLL
@@ -1089,7 +1089,10 @@ items:
           - name: API 参考
             href: reference/powerpoint-api-reference.md
             displayName: PowerPoint
-          - name: 在演示文稿中插入和删除幻灯片
+          - name: 添加和删除幻灯片
+            href: powerpoint/add-slides.md
+            displayName: PowerPoint
+          - name: 插入幻灯片
             href: powerpoint/insert-slides-into-presentation.md
             displayName: PowerPoint
           - name: 通过加载项获取整个文档
