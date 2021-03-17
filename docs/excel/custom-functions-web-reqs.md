@@ -1,14 +1,14 @@
 ---
-ms.date: 11/06/2020
+ms.date: 03/15/2021
 description: 使用 Excel 中的自定义函数请求、流式处理和取消流式处理工作簿的外部数据
 title: 使用自定义函数接收和处理数据
 localization_priority: Normal
-ms.openlocfilehash: a5faa4fd8af2b41a3d79ac1c978a4c550592b27e
-ms.sourcegitcommit: 5bfd1e9956485c140179dfcc9d210c4c5a49a789
+ms.openlocfilehash: 4d960d642c3efd2f6f9745587b6cb0ef42ce0a86
+ms.sourcegitcommit: c0c61fe84f3c5de88bd7eac29120056bb1224fc8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/13/2020
-ms.locfileid: "49071667"
+ms.lasthandoff: 03/17/2021
+ms.locfileid: "50836821"
 ---
 # <a name="receive-and-handle-data-with-custom-functions"></a>使用自定义函数接收和处理数据
 
@@ -27,7 +27,7 @@ ms.locfileid: "49071667"
 
 ### <a name="fetch-example"></a>Fetch 示例
 
-在下面的代码示例中， `webRequest` 函数将进入假设的 Contoso "Space Of 人数" API，用于跟踪当前国际空间站上的用户数。 该函数返回一个 JavaScript Promise 并使用 fetch 从 API 请求信息。 生成的数据被转换成 JSON，而 `names` 属性则被转换成一个字符串，用于解析 Promise。
+在下面的代码示例中，函数将到达假设的 Contoso"空间内人员数"API，该 API 跟踪当前位于国际空间站 `webRequest` 上的用户数。 该函数返回一个 JavaScript Promise 并使用 fetch 从 API 请求信息。 生成的数据被转换成 JSON，而 `names` 属性则被转换成一个字符串，用于解析 Promise。
 
 在开发自己的函数时，可能需要在相应 Web 请求没有及时完成时执行某个操作，或者需要考虑[批处理多个 API 请求](custom-functions-batching.md)。
 
@@ -56,7 +56,7 @@ function webRequest() {
 
 ### <a name="xhr-example"></a>XHR 示例
 
-在下面的代码示例中， `getStarCount` 函数将调用 GITHUB API，以发现给定用户存储库中指定的星数。 这是一个可返回 JavaScript Promise 的异步函数。 当从 Web 调用中获取数据时，系统将对 Promise 进行解析，以将数据返回到单元格。
+在下面的代码示例中，函数调用 Github API 来发现给定给特定用户存储库 `getStarCount` 的星数。 这是一个可返回 JavaScript Promise 的异步函数。 当从 Web 调用中获取数据时，系统将对 Promise 进行解析，以将数据返回到单元格。
 
 ```TS
 /**
@@ -99,7 +99,7 @@ async function getStarCount(userName: string, repoName: string) {
 
 流式处理自定义函数使用户能够在不需要用户显式刷新数据的情况下，向重复更新的单元格输出数据。 这对于检查联机服务中的实时数据非常有用，如[自定义函数教程](../tutorials/excel-tutorial-create-custom-functions.md)中的函数。
 
-若要声明流式处理函数，您可以使用以下任一方法：
+若要声明流式处理函数，可以使用：
 
 - `@streaming`标记。
 - `CustomFunctions.StreamingInvocation`调用参数。
@@ -141,17 +141,17 @@ Excel 会在以下情况下取消函数的执行：
 
 你还可以考虑设置默认流式处理值，以在发出请求但你处于脱机状态时处理案例。
 
-请注意，还有一类函数被称为可取消函数，它们与流式处理函数 _无_ 关。 仅可取消可返回一个值的异步自定义函数。 可取消函数允许在请求中间终止 Web 请求，它使用 [`CancelableInvocation`](/javascript/api/custom-functions-runtime/customfunctions.cancelableinvocation) 来决定取消时需要采取的操作。 使用标记 `@cancelable` 声明可取消函数。
+请注意，还有一类函数被称为可取消函数，它们与流式处理函数 _无_ 关。 只有返回一个值的异步自定义函数是可取消的。 可取消函数允许在请求中间终止 Web 请求，它使用 [`CancelableInvocation`](/javascript/api/custom-functions-runtime/customfunctions.cancelableinvocation) 来决定取消时需要采取的操作。 使用标记 `@cancelable` 声明可取消函数。
 
 ### <a name="using-an-invocation-parameter"></a>使用调用参数
 
-默认情况下，`invocation` 参数是任何自定义函数的最后一个参数。 `invocation`参数提供有关单元格 (的上下文，如其地址和内容) ，并允许您使用 `setResult` 和 `onCanceled` 方法。 这些方法可定义在函数流式传输 (`setResult`) 或被取消 (`onCanceled`) 时它所执行的操作。
+默认情况下，`invocation` 参数是任何自定义函数的最后一个参数。 参数提供有关单元格 (如地址和内容) 并允许 `invocation` 你使用 `setResult` 和 `onCanceled` 方法。 这些方法可定义在函数流式传输 (`setResult`) 或被取消 (`onCanceled`) 时它所执行的操作。
 
-如果使用的是 TypeScript，则调用处理程序必须为类型 [`CustomFunctions.StreamingInvocation`](/javascript/api/custom-functions-runtime/customfunctions.streaminginvocation) 或 [`CancelableInvocation`](/javascript/api/custom-functions-runtime/customfunctions.cancelableinvocation) 。
+如果使用的是 TypeScript，则调用处理程序的类型为 [`CustomFunctions.StreamingInvocation`](/javascript/api/custom-functions-runtime/customfunctions.streaminginvocation) 或 [`CancelableInvocation`](/javascript/api/custom-functions-runtime/customfunctions.cancelableinvocation) 。
 
 ## <a name="receiving-data-via-websockets"></a>通过 WebSocket 接收数据
 
-在自定义函数内，可使用 WebSocket 来通过与服务器的持久连接交换数据。 使用 Websocket 时，您的自定义函数可以打开与服务器的连接，然后在发生特定事件时自动从服务器接收邮件，而无需显式轮询服务器以获取数据。
+在自定义函数内，可使用 WebSocket 来通过与服务器的持久连接交换数据。 通过使用 WebSockets，自定义函数可以打开与服务器的连接，然后在某些事件发生时自动从服务器接收消息，而无需显式轮询服务器获取数据。
 
 ### <a name="websockets-example"></a>WebSocket 示例
 
@@ -178,6 +178,6 @@ ws.onerror(error){
 
 - [函数中的可变值](custom-functions-volatile.md)
 - [创建自定义函数的 JSON 元数据](custom-functions-json-autogeneration.md)
-- [手动创建自定义函数的 JSON 元数据](custom-functions-json.md)
+- [手动为自定义函数创建 JSON 元数据](custom-functions-json.md)
 - [在 Excel 中创建自定义函数](custom-functions-overview.md)
 - [Excel 自定义函数教程](../tutorials/excel-tutorial-create-custom-functions.md)

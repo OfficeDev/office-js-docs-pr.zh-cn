@@ -1,18 +1,18 @@
 ---
-title: 清单文件中的 ProgId 元素
-description: ProgId 元素为 web 外接程序的任务窗格指定等效 COM 加载项的编程 ID。
-ms.date: 06/19/2019
+title: 清单文件中 ProgId 元素
+description: ProgId 元素指定 Web 加载项任务窗格的等效 COM 加载项的编程 ID。
+ms.date: 03/09/2021
 localization_priority: Normal
-ms.openlocfilehash: e27e75aa05cd4fd605094be98d1db0a2413f1f36
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 484de764dda745e93f39c16d51b9da0a65c0b337
+ms.sourcegitcommit: c0c61fe84f3c5de88bd7eac29120056bb1224fc8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44611748"
+ms.lasthandoff: 03/17/2021
+ms.locfileid: "50836877"
 ---
 # <a name="progid-element"></a>ProgId 元素
 
-为 web 外接程序的任务窗格指定等效 COM 加载项的编程标识符。
+为 Web 加载项的任务窗格指定等效 COM 加载项的编程标识符。
 
 **外接程序类型：** 任务窗格
 
@@ -24,9 +24,9 @@ ms.locfileid: "44611748"
 
 ## <a name="contained-in"></a>包含于
 
-[EquivalentAdd-in](equivalentaddin.md)
+[EquivalentAddin](equivalentaddin.md)
 
 ## <a name="see-also"></a>另请参阅
 
 - [让自定义功能与 XLL 用户定义的功能兼容](../../excel/make-custom-functions-compatible-with-xll-udf.md)
-- [使 Excel 外接程序与现有 COM 外接程序兼容](../../develop/make-office-add-in-compatible-with-existing-com-add-in.md)
+- [让 Office 加载项与现有 COM 加载项兼容](../../develop/make-office-add-in-compatible-with-existing-com-add-in.md)

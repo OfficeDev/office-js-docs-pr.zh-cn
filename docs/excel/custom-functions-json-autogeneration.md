@@ -1,18 +1,18 @@
 ---
-ms.date: 12/22/2020
+ms.date: 03/15/2021
 description: 使用 JSDoc 标记动态创建自定义函数 JSON 元数据。
 title: 为自定义函数自动生成 JSON 元数据
 localization_priority: Normal
-ms.openlocfilehash: 4f7553646f51518fd4c5ed6c66081f910ec813a1
-ms.sourcegitcommit: 48b9c3b63668b2a53ce73f92ce124ca07c5ca68c
+ms.openlocfilehash: 344239c35e38bd88bfee5338289d1c2a929ea14c
+ms.sourcegitcommit: c0c61fe84f3c5de88bd7eac29120056bb1224fc8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/28/2020
-ms.locfileid: "49735555"
+ms.lasthandoff: 03/17/2021
+ms.locfileid: "50836863"
 ---
 # <a name="autogenerate-json-metadata-for-custom-functions"></a>为自定义函数自动生成 JSON 元数据
 
-在使用 JavaScript 或 TypeScript 编写 Excel 自定义函数时，使用 [JSDoc 标记](https://jsdoc.app/)提供有关自定义函数的额外信息。 然后在生成时使用 JSDoc 标记创建 JSON 元数据文件。 使用 JSDoc 标记可节省手动编辑 [JSON 元数据文件的工作](custom-functions-json.md)。
+在使用 JavaScript 或 TypeScript 编写 Excel 自定义函数时，使用 [JSDoc 标记](https://jsdoc.app/)提供有关自定义函数的额外信息。 然后在生成时使用 JSDoc 标记创建 JSON 元数据文件。 使用 JSDoc 标记，你无需手动编辑 [JSON 元数据文件](custom-functions-json.md)。
 
 [!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
@@ -46,18 +46,18 @@ ms.locfileid: "49735555"
 * [@helpurl](#helpurl) url
 * [@param](#param) _{type}_ name description
 * [@requiresAddress](#requiresAddress)
+* [@requiresParameterAddresses](#requiresParameterAddresses)
 * [@returns](#returns) _{type}_
 * [@streaming](#streaming)
 * [@volatile](#volatile)
 
 ---
 <a id="cancelable"></a>
-
 ### <a name="cancelable"></a>@cancelable
 
-指示自定义函数在取消函数时执行一个操作。
+指示自定义函数在函数取消时执行一个操作。
 
-最后一个函数参数的类型必须是 `CustomFunctions.CancelableInvocation`。 该函数可以将一个函数 `oncanceled` 分配给该属性，以指示取消函数时的结果。
+最后一个函数参数的类型必须是 `CustomFunctions.CancelableInvocation`。 函数可以将函数分配给 `oncanceled` 属性，以在函数取消时表示结果。
 
 如果最后一个函数参数的类型为 `CustomFunctions.CancelableInvocation`，则即使标记不存在，也会被视为 `@cancelable`。
 
@@ -83,7 +83,7 @@ ms.locfileid: "49735555"
 
 #### <a name="id"></a>id
 
-标识 `id` 自定义函数。
+`id`标识自定义函数。
 
 * 如果未提供 `id`，请将 JavaScript/TypeScript 函数名称转换为大写并删除禁用字符。
 * `id` 对于所有自定义函数必须是唯一的。
@@ -133,7 +133,6 @@ Excel 中的用户在输入函数时会显示说明，并指定函数的功能�
 ```
 
 <a id="helpurl"></a>
-
 ### <a name="helpurl"></a>@helpurl
 
 语法：@helpurl _url_
@@ -152,7 +151,6 @@ Excel 中的用户在输入函数时会显示说明，并指定函数的功能�
 ```
 
 <a id="param"></a>
-
 ### <a name="param"></a>@param
 
 #### <a name="javascript"></a>JavaScript
@@ -160,7 +158,7 @@ Excel 中的用户在输入函数时会显示说明，并指定函数的功能�
 JavaScript 语法：@param {type} name _description_
 
 * `{type}` 指定大括号中的类型信息。 有关可能使用的类型的详细信息，请参阅[类型](#types)部分。 如果未指定类型，则使用 `any` 默认类型。
-* `name` 指定应用@param参数。 这是必需的。
+* `name` 指定该标记@param参数。 这是必需的。
 * `description` 为函数参数提供显示在 Excel 中的说明。 可选。
 
 若要将自定义函数参数表示为可选，请执行以下操作：
@@ -187,7 +185,7 @@ JavaScript 语法：@param {type} name _description_
 
 TypeScript 语法：@param name _description_
 
-* `name` 指定应用@param参数。 这是必需的。
+* `name` 指定该标记@param参数。 这是必需的。
 * `description` 为函数参数提供显示在 Excel 中的说明。 可选。
 
 有关可能使用的函数参数类型的详细信息，请参阅[类型](#types)部分。
@@ -223,9 +221,9 @@ function add(first: number, second: number): number {
 
 表示应提供计算函数所在的单元格的地址。
 
-最后一个函数参数的类型必须是 `CustomFunctions.Invocation` 或派生类型。 调用函数时，`address` 属性将包含地址。
+最后一个函数参数必须为 类型 `CustomFunctions.Invocation` 或派生类型，以使用 `@requiresAddress` 。 调用函数时，`address` 属性将包含地址。
 
-以下示例演示如何将参数与参数结合使用以返回调用自定义函数 `invocation` `@requiresAddress` 的单元格的地址。 有关详细信息 [，请参阅调用](custom-functions-parameter-options.md#invocation-parameter) 参数。
+以下示例演示如何将 参数与 结合使用以返回调用自定义函数 `invocation` `@requiresAddress` 的单元格的地址。 有关详细信息 [，请参阅调用](custom-functions-parameter-options.md#invocation-parameter) 参数。
 
 ```js
 /**
@@ -242,8 +240,39 @@ function getAddress(first, second, invocation) {
 }
 ```
 
-<a id="returns"></a>
+<a id="requiresParameterAddresses"></a>
+### <a name="requiresparameteraddresses"></a>@requiresParameterAddresses
 
+指示函数应返回输入参数的地址。 
+
+最后一个函数参数必须为 类型 `CustomFunctions.Invocation` 或派生类型，以使用  `@requiresParameterAddresses` 。 JSDoc 注释还必须包含一个标记，该标记指定返回 `@returns` 值是矩阵，如 `@returns {string[][]}` 或 `@returns {number[][]}` 。 有关 [其他信息，](/office/dev/add-ins/excel/custom-functions-json-autogeneration#matrix-type) 请参阅矩阵类型。 
+
+调用 函数时， `parameterAddresses` 属性将包含输入参数的地址。
+
+以下示例演示如何将 参数与 结合使用以返回三个 `invocation` `@requiresParameterAddresses` 输入参数的地址。 有关详细信息 [，请参阅检测参数](/office/dev/add-ins/excel/custom-functions-parameter-options#detect-the-address-of-a-parameter) 的地址。 
+
+```js
+/**
+ * Return the addresses of three parameters. 
+ * @customfunction
+ * @param {string} firstParameter First parameter.
+ * @param {string} secondParameter Second parameter.
+ * @param {string} thirdParameter Third parameter.
+ * @param {CustomFunctions.Invocation} invocation Invocation object. 
+ * @returns {string[][]} The addresses of the parameters, as a 2-dimensional array.
+ * @requiresParameterAddresses
+ */
+function getParameterAddresses(firstParameter, secondParameter, thirdParameter, invocation) {
+  var addresses = [
+    [invocation.parameterAddresses[0]],
+    [invocation.parameterAddresses[1]],
+    [invocation.parameterAddresses[2]]
+  ];
+  return addresses;
+}
+```
+
+<a id="returns"></a>
 ### <a name="returns"></a>@returns
 
 语法：@returns {_type_}
@@ -268,13 +297,12 @@ function add(first: number, second: number): number {
 ```
 
 <a id="streaming"></a>
-
 ### <a name="streaming"></a>@streaming
 
 用于表示自定义函数是一个流式处理函数。 
 
-最后一个参数的类型 `CustomFunctions.StreamingInvocation<ResultType>` 。
-该函数返回 `void` 。
+最后一个参数的类型为 `CustomFunctions.StreamingInvocation<ResultType>` 。
+函数返回 `void` 。
 
 流式处理函数不会直接返回值，而是使用 `setResult(result: ResultType)` 最后一个参数调用。
 
@@ -283,7 +311,6 @@ function add(first: number, second: number): number {
 流式处理函数不能标记为 [@volatile](#volatile)。
 
 <a id="volatile"></a>
-
 ### <a name="volatile"></a>@volatile
 
 可变函数是指其结果不断变化的函数，即使不采用任何参数或参数未发生更改都是如此。 Excel 在每次完成计算后，都会重新计算包含可变函数和所有依赖项的单元格。 因此，过于依赖可变函数会使重新计算时间变慢，请谨慎使用。
@@ -315,7 +342,7 @@ function roll6sided(): number {
 
 ### <a name="matrix-type"></a>矩阵类型
 
-使用二维数组类型将参数或返回值变为值的矩阵。 例如，类型 `number[][]` 表示数字的矩阵。 `string[][]` 表示字符串的矩阵。
+使用二维数组类型将参数或返回值变为值的矩阵。 例如，类型 `number[][]` 指示数字矩阵， `string[][]` 并指示字符串矩阵。
 
 ### <a name="error-type"></a>错误类型
 
@@ -325,7 +352,7 @@ function roll6sided(): number {
 
 ### <a name="promise"></a>Promise
 
-函数可以返回 Promise，在解析承诺时提供值。 如果承诺被拒绝，它将引发错误。
+自定义函数可以返回一个承诺，该承诺在承诺实现时提供值。 如果承诺被拒绝，则自定义函数将引发错误。
 
 ### <a name="other-types"></a>其他类型
 

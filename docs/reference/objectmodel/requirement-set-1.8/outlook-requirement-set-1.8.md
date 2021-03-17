@@ -1,18 +1,18 @@
 ---
 title: Outlook 加载项 API 要求集 1.8
-description: 适用于 Outlook 外接程序 API 的要求集1.8。
-ms.date: 10/14/2020
+description: Outlook 外接程序 API 的要求集 1.8。
+ms.date: 03/10/2021
 localization_priority: Normal
-ms.openlocfilehash: d175cc84aa123c6a941ea57cfe4ff2114d693d32
-ms.sourcegitcommit: 4e7c74ad67ea8bf6b47d65b2fde54a967090f65b
+ms.openlocfilehash: 9ff66bcaeecf54dde10821df1b48df6d20cb953d
+ms.sourcegitcommit: 929dcf2f415b94f42330a9035ed11a5cedad88f1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/20/2020
-ms.locfileid: "48626587"
+ms.lasthandoff: 03/16/2021
+ms.locfileid: "50830963"
 ---
 # <a name="outlook-add-in-api-requirement-set-18"></a>Outlook 加载项 API 要求集 1.8
 
-Office JavaScript API 的 Outlook 外接程序 API 子集包括可以在 Outlook 外接程序中使用的对象、方法、属性和事件。
+Office JavaScript API 的 Outlook 外接程序 API 子集包括可在 Outlook 外接程序中使用的对象、方法、属性和事件。
 
 > [!NOTE]
 > 本文档适用于最新要求集之外的[要求集](../../requirement-sets/outlook-api-requirement-sets.md)。
@@ -28,7 +28,7 @@ Office JavaScript API 的 Outlook 外接程序 API 子集包括可以在 Outlook
 ### <a name="change-log"></a>更改日志
 
 - 添加了 [AttachmentContent](/javascript/api/outlook/office.attachmentcontent?view=outlook-js-1.8&preserve-view=true)：新增了一个表示附件内容的对象。
-- 添加了 [AttachmentDetailsCompose](/javascript/api/outlook/office.attachmentdetailscompose?view=outlook-js-1.8&preserve-view=true)：添加了一个新对象，该对象代表撰写模式下的附件的详细信息。
+- 添加了 [AttachmentDetailsCompose：](/javascript/api/outlook/office.attachmentdetailscompose?view=outlook-js-1.8&preserve-view=true)添加了一个新对象，该对象表示撰写模式下的附件的详细信息。
 - 添加了 [Categories](/javascript/api/outlook/office.categories?view=outlook-js-1.8&preserve-view=true)：新增了一个表示项目类别的对象。
 - 添加了 [CategoryDetails](/javascript/api/outlook/office.categorydetails?view=outlook-js-1.8&preserve-view=true)：新增了一个表示类别详细信息（其名称以及对应的颜色）的对象。
 - 添加了 [EnhancedLocation](/javascript/api/outlook/office.enhancedlocation?view=outlook-js-1.8&preserve-view=true)：新增了一个表示约会位置集的对象。
@@ -36,7 +36,7 @@ Office JavaScript API 的 Outlook 外接程序 API 子集包括可以在 Outlook
 - 添加了 [LocationDetails](/javascript/api/outlook/office.locationdetails?view=outlook-js-1.8&preserve-view=true)：新增了一个表示位置的对象。 只读。
 - 添加了 [LocationIdentifier](/javascript/api/outlook/office.locationidentifier?view=outlook-js-1.8&preserve-view=true)：新增了一个表示位置 ID 的对象。
 - 添加了 [MasterCategories](/javascript/api/outlook/office.mastercategories?view=outlook-js-1.8&preserve-view=true)：新增了一个表示邮箱上类别主列表的对象。
-- 添加了 [SharedProperties](/javascript/api/outlook/office.sharedproperties?view=outlook-js-1.8&preserve-view=true)：新增了一个表示共享文件夹、日历或邮箱中约会或邮件项目的属性的对象。
+- 添加了 [SharedProperties：](/javascript/api/outlook/office.sharedproperties?view=outlook-js-1.8&preserve-view=true)添加了一个新对象，该对象表示共享文件夹中约会或邮件项目的属性。
 - 添加了 [SupportsSharedFolders 清单元素](../../manifest/supportssharedfolders.md)：添加了 [DesktopFormFactor](../../manifest/desktopformfactor.md) 清单元素的子元素。 它定义了是否可在代理场景中使用加载项。
 - 添加了 [Office.context.mailbox.masterCategories](office.context.mailbox.md#properties)：新增了一个表示邮箱上类别主列表的属性。
 - 添加了 [Office.context.mailbox.item.categories](office.context.mailbox.item.md#properties)：新增了一个表示项目上类别集的属性。
