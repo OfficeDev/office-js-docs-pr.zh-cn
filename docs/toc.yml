@@ -138,6 +138,8 @@ items:
                     href: develop/troubleshoot-sso-in-office-add-ins.md
               - name: 在加载项中请求获取 API 使用权限
                 href: develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md
+              - name: ITP 和第三方 Cookie
+                href: develop/itp-and-third-party-cookies.md
           - name: UI 和 UX
             items:
               - name: 概述
