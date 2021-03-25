@@ -1,15 +1,15 @@
 ---
-title: 初学者指南
+title: Office 加载项初级用户指南
 description: 通过 Office 加载项的学习资源为初学者提供指导的推荐路径。
-ms.date: 10/14/2020
+ms.date: 02/12/2021
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: 154d7b5e1a9e135ea583ae6b1afa4ac9e95e9c69
-ms.sourcegitcommit: fefc279b85e37463413b6b0e84c880d9ed5d7ac3
+ms.openlocfilehash: b71e4dfaf6f80431e114c6a9bd83d47bc06c3128
+ms.sourcegitcommit: 7482ab6bc258d98acb9ba9b35c7dd3b5cc5bed21
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/12/2021
-ms.locfileid: "50234224"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "51177983"
 ---
 # <a name="beginners-guide"></a>初学者指南
 
