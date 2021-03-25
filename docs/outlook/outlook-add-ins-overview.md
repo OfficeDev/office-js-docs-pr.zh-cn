@@ -4,12 +4,12 @@ description: Outlook 加载项由第三方使用基于 Web 的平台集成到 Ou
 ms.date: 10/14/2020
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: 802ea8ef55fd97e938ce945fe934d2584eea836f
-ms.sourcegitcommit: 42e6cfe51d99d4f3f05a3245829d764b28c46bbb
+ms.openlocfilehash: 14f3cf3ab4f647337047764f7403150237ff59cb
+ms.sourcegitcommit: 7482ab6bc258d98acb9ba9b35c7dd3b5cc5bed21
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "48741139"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "51178067"
 ---
 # <a name="outlook-add-ins-overview"></a>Outlook 加载项概述
 
@@ -43,11 +43,12 @@ Outlook 加载项不同于 COM 或 VSTO 的加载项，后者为特定于 Window
 
 ## <a name="mailbox-items-available-to-add-ins"></a>外接程序可用的邮箱项目
 
-当用户正在撰写或阅读邮件或约会，而不是其他项目类型时，Outlook 加载项会激活。 但是，如果撰写或阅读窗体中的当前邮件项目为以下项之一，则 Outlook *不会*激活邮件加载项：
+当用户正在撰写或阅读邮件或约会，而不是其他项目类型时，Outlook 加载项会激活。 但是，如果撰写或阅读窗体中的当前邮件项目为以下项之一，则 Outlook *不会* 激活邮件加载项：
 
 - 使用信息权限管理 (IRM) 进行保护，或使用其他保护方式进行加密。数字签名邮件便是其中一个例子，因为数字签名依赖于这些机制之一。
 
   > [!IMPORTANT]
+  >
   > - 加载项在与 Microsoft 365 订阅相关联的 Outlook 电子签名邮件上激活。 在Windows上，这个支持是通过8711.1000版本中引入的。
   >
   > - 现在，Windows 版 Outlook 从内部版本 13229.10000 开始可以在受 IRM 保护的项目上激活加载项。 有关处于预览阶段的此功能的详细信息，请参阅[在受信息权限管理 (IRM) 保护的项目上激活加载项](../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md#add-in-activation-on-items-protected-by-information-rights-management-irm)。

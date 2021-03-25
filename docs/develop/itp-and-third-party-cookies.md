@@ -3,12 +3,12 @@ title: 开发 Office 外接程序以使用第三方 Cookie 时与 ITP 一起使�
 description: 如何使用第三方 Cookie 时使用 ITP 和 Office 外接程序
 ms.date: 03/12/2021
 localization_priority: Normal
-ms.openlocfilehash: 48db782a8a8a179183fdd1bdfdfd55ee1c5698d4
-ms.sourcegitcommit: c0c61fe84f3c5de88bd7eac29120056bb1224fc8
+ms.openlocfilehash: e66fc25e1dc0f3a93fdf38c1d0c099d3a68459d3
+ms.sourcegitcommit: 7482ab6bc258d98acb9ba9b35c7dd3b5cc5bed21
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/17/2021
-ms.locfileid: "50836906"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "51178039"
 ---
 # <a name="develop-your-office-add-in-to-work-with-itp-when-using-third-party-cookies"></a>开发 Office 外接程序以使用第三方 Cookie 时与 ITP 一起使用
 
@@ -60,7 +60,7 @@ if (document.hasStorageAccess) {
 
 ## <a name="see-also"></a>另请参阅
 
-- [在 Safari 和其他阻止第三方 Cookie 的浏览器中处理 ITP](https://docs.microsoft.com/azure/active-directory/develop/reference-third-party-cookies-spas)
+- [在 Safari 和其他阻止第三方 Cookie 的浏览器中处理 ITP](/azure/active-directory/develop/reference-third-party-cookies-spas)
 - [WebKit 中的跟踪防护](https://webkit.org/tracking-prevention/)
 - [Chrome 的"隐私沙盒"](https://blog.chromium.org/2020/01/building-more-private-web-path-towards.html)
 - [存储访问 API 介绍](https://blogs.windows.com/msedgedev/2020/07/08/introducing-storage-access-api/)

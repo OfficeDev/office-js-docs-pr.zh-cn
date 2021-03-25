@@ -1,14 +1,14 @@
 ---
 title: Outlook 加载项的 Onsend 功能
 description: 提供了一种处理项目或阻止用户进行特定操作的方法，并允许加载项在发送时设置某些属性。
-ms.date: 03/09/2021
+ms.date: 03/17/2021
 localization_priority: Normal
-ms.openlocfilehash: 09bc44e78f202474757317b4b07bce50d6235aa1
-ms.sourcegitcommit: c0c61fe84f3c5de88bd7eac29120056bb1224fc8
+ms.openlocfilehash: 70e255601fd36a2f9101d56161846616691f5100
+ms.sourcegitcommit: 7482ab6bc258d98acb9ba9b35c7dd3b5cc5bed21
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/17/2021
-ms.locfileid: "50836898"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "51178053"
 ---
 # <a name="on-send-feature-for-outlook-add-ins"></a>Outlook 加载项的 Onsend 功能
 
@@ -306,7 +306,7 @@ Get-OWAMailboxPolicy OWAOnSendAddinAllUserPolicy | Set-OWAMailboxPolicy –OnSen
 
 #### <a name="manage-the-on-send-policy"></a>管理 Onsend 策略
 
-默认情况下，Onsend 策略处于禁用状态。 管理员可以通过确保用户的组策略设置“**无法加载 Web 扩展时禁用发送**”设置为“**已启用**”来启用 Onsend 策略。 若为用户禁用策略，管理员应将其设置为“**已禁用**”。 若要管理此策略设置，可执行下列操作。
+默认情况下，Onsend 策略处于禁用状态。 管理员可以通过确保用户的组策略设置“**无法加载 Web 扩展时禁用发送**”设置为“**已启用**”来启用 Onsend 策略。 若为用户禁用策略，管理员应将其设置为“**已禁用**”。 若要管理此策略设置，可以执行以下操作：
 
 1. 下载最新的[管理模板工具](https://www.microsoft.com/download/details.aspx?id=49030)。
 1. 打开 **gpedit.msc (本地组策略**) 。
@@ -319,7 +319,7 @@ Get-OWAMailboxPolicy OWAOnSendAddinAllUserPolicy | Set-OWAMailboxPolicy –OnSen
 
 对于安装了使用 Onsend 功能的 Mac 版 Outlook 加载项的任何用户，系统会为其运行该加载项。 但是，如果用户需要运行该加载项来满足合规性标准，则必须在每个用户的计算机上应用以下邮箱设置。 此设置或键与 CFPreferences 兼容，这意味着可以使用适用于 Mac 的企业管理软件（例如，Jamf Pro）来对其进行设置。
 
-|||
+||值|
 |:---|:---|
 |**域**|com.microsoft.outlook|
 |**键**|OnSendAddinsWaitForLoad|

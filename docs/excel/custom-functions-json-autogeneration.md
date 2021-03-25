@@ -3,12 +3,12 @@ ms.date: 03/15/2021
 description: 使用 JSDoc 标记动态创建自定义函数 JSON 元数据。
 title: 为自定义函数自动生成 JSON 元数据
 localization_priority: Normal
-ms.openlocfilehash: 344239c35e38bd88bfee5338289d1c2a929ea14c
-ms.sourcegitcommit: c0c61fe84f3c5de88bd7eac29120056bb1224fc8
+ms.openlocfilehash: e31059de78e9daedc31c9b0a8605b5352fd0ed94
+ms.sourcegitcommit: 7482ab6bc258d98acb9ba9b35c7dd3b5cc5bed21
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/17/2021
-ms.locfileid: "50836863"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "51178046"
 ---
 # <a name="autogenerate-json-metadata-for-custom-functions"></a>为自定义函数自动生成 JSON 元数据
 
@@ -245,11 +245,11 @@ function getAddress(first, second, invocation) {
 
 指示函数应返回输入参数的地址。 
 
-最后一个函数参数必须为 类型 `CustomFunctions.Invocation` 或派生类型，以使用  `@requiresParameterAddresses` 。 JSDoc 注释还必须包含一个标记，该标记指定返回 `@returns` 值是矩阵，如 `@returns {string[][]}` 或 `@returns {number[][]}` 。 有关 [其他信息，](/office/dev/add-ins/excel/custom-functions-json-autogeneration#matrix-type) 请参阅矩阵类型。 
+最后一个函数参数必须为 类型 `CustomFunctions.Invocation` 或派生类型，以使用  `@requiresParameterAddresses` 。 JSDoc 注释还必须包含一个标记，该标记指定返回 `@returns` 值是矩阵，如 `@returns {string[][]}` 或 `@returns {number[][]}` 。 有关 [其他信息，](#matrix-type) 请参阅矩阵类型。 
 
 调用 函数时， `parameterAddresses` 属性将包含输入参数的地址。
 
-以下示例演示如何将 参数与 结合使用以返回三个 `invocation` `@requiresParameterAddresses` 输入参数的地址。 有关详细信息 [，请参阅检测参数](/office/dev/add-ins/excel/custom-functions-parameter-options#detect-the-address-of-a-parameter) 的地址。 
+以下示例演示如何将 参数与 结合使用以返回三个 `invocation` `@requiresParameterAddresses` 输入参数的地址。 有关详细信息 [，请参阅检测参数](custom-functions-parameter-options.md#detect-the-address-of-a-parameter) 的地址。 
 
 ```js
 /**
