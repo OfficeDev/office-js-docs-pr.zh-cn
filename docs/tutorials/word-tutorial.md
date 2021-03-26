@@ -590,7 +590,7 @@ function insertTextIntoRange() {
 
 7. <span data-ttu-id="90fa4-288">验证是否已保存了对项目所做的所有更改。</span><span class="sxs-lookup"><span data-stu-id="90fa4-288">Verify that you've saved all of the changes you've made to the project.</span></span>
 
-### <a name="test-the-add-in"></a><span data-ttu-id="90fa4-289">测试加载项</span><span class="sxs-lookup"><span data-stu-id="90fa4-289">Test the add-in</span></span>
+### <a name="test-the-add-in-1"></a><span data-ttu-id="90fa4-289">测试加载项</span><span class="sxs-lookup"><span data-stu-id="90fa4-289">Test the add-in</span></span>
 
 1. [!include[Start server and sideload add-in instructions](../includes/tutorial-word-start-server.md)]
 
