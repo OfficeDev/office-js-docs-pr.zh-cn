@@ -254,4 +254,3 @@ else {
 * [<span data-ttu-id="60a8c-206">Excel 加载项代码示例</span><span class="sxs-lookup"><span data-stu-id="60a8c-206">Excel add-ins code samples</span></span>](https://developer.microsoft.com/office/gallery/?filterBy=Samples,Excel)
 * [<span data-ttu-id="60a8c-207">Excel JavaScript API 性能优化</span><span class="sxs-lookup"><span data-stu-id="60a8c-207">Excel JavaScript API performance optimization</span></span>](../excel/performance.md)
 * [<span data-ttu-id="60a8c-208">Excel JavaScript API 参考</span><span class="sxs-lookup"><span data-stu-id="60a8c-208">Excel JavaScript API reference</span></span>](../reference/overview/excel-add-ins-reference-overview.md)
-* [<span data-ttu-id="60a8c-209">常见的编码问题和意外的平台行为</span><span class="sxs-lookup"><span data-stu-id="60a8c-209">Common coding issues and unexpected platform behaviors</span></span>](../develop/common-coding-issues.md)
