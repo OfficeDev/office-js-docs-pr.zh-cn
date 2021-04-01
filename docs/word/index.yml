@@ -1,31 +1,31 @@
 ### YamlMime:Landing
 title: Word 加载项文档
-summary: 使用 Word 加载项，可以使用熟悉的 web 技术（如 HTML、CSS 和 JavaScript）在 Word 中构建可跨多个平台运行的解决方案，包括在 web、Windows、Mac 和 iPad 上。 了解如何构建、测试、调试和发布 Word 加载项。
+summary: 借助 Word 加载项，可以使用熟悉的 Web 技术（如 HTML、CSS 和 JavaScript）生成可在 Word 中跨多个平台（包括 Web、Windows、Mac 和 iPad）运行的解决方案。 了解如何构建、测试、调试和发布 Word 加载项。
 metadata:
   title: Word 加载项文档
   description: 用于了解 Word 加载项的资源。
   ms.prod: word
   ms.topic: landing-page
-  ms.date: 06/09/2020
+  ms.date: 03/29/2021
   localization_priority: Priority
-  ms.openlocfilehash: b9b464711f87211f4f10014c145acb2d66f327ef
-  ms.sourcegitcommit: 604361e55dee45c7a5d34c2fa6937693c154fc24
+  ms.openlocfilehash: cea0e108bcefef31c71b6499b3fa8918e7f5bae6
+  ms.sourcegitcommit: a0624ef0d847fdbd6d83f27d1f9c69daf636ac38
   ms.translationtype: MT
   ms.contentlocale: zh-CN
-  ms.lasthandoff: 09/03/2020
-  ms.locfileid: "47363742"
+  ms.lasthandoff: 03/30/2021
+  ms.locfileid: "51435240"
 landingContent:
-- title: 关于 Word 外接程序
+- title: 关于 Word 加载项
   linkLists:
   - linkListType: overview
     links:
-    - text: Word 外接程序是什么？
+    - text: 什么是 Word 加载项？
       url: word-add-ins-programming-overview.md
   - linkListType: quickstart
     links:
     - text: 生成首个 Word 加载项
       url: ../quickstarts/word-quickstart.md
-    - text: 使用脚本实验室探索 Api
+    - text: 使用 Script Lab 探索 API
       url: ../overview/explore-with-script-lab.md
   - linkListType: how-to-guide
     links:
@@ -35,7 +35,7 @@ landingContent:
       url: ../testing/test-debug-office-add-ins.md
     - text: 部署和发布 Word 加载项
       url: ../publish/publish.md
-- title: 主要 Office 外接程序概念
+- title: 关键 Office 加载项概念
   linkLists:
   - linkListType: overview
     links:
@@ -56,7 +56,7 @@ landingContent:
     - text: 提问
       url: https://stackoverflow.com/questions/tagged/office-js
     - text: 请求功能
-      url: https://officespdev.uservoice.com/
+      url: /answers/products/m365
     - text: 报告问题
       url: https://github.com/officedev/office-js/issues
     - text: Office 加载项其他资源

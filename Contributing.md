@@ -15,24 +15,24 @@
 
 * 进行小幅度的更改，[通过 GitHub 参与](#contribute-using-github)。
 * 进行大幅度的更改，或更改涉及代码，[通过 Git 参与](#contribute-using-git)。
-* 通过“GitHub 问题”举报文档缺陷。
-* 通过 [Office 开发人员平台 UserVoice](http://officespdev.uservoice.com) 网站请求查看新文档。
+* 通过访问受影响文章底部的 **"反馈**"部分，然后选择"此页面"创建 GitHub问题，报告文档 Bug。 如果不可用，请直接在 [GitHub](https://github.com/OfficeDev/office-js-docs-pr/issues)上创建新问题。
+* 请求 [GitHub 问题的新文档](https://github.com/OfficeDev/office-js-docs-pr/issues)。
 
 ## <a name="contribute-using-github"></a>通过 GitHub 参与
 
-通过 GitHub 参与此文档无需将报告复制到桌面。这是在存储库中创建拉取请求的最简单的方法。使用此方法进行不涉及代码更改的少量改动。 
+通过 GitHub 参与此文档无需将报告复制到桌面。这是在存储库中创建拉取请求的最简单的方法。使用此方法进行不涉及代码更改的少量改动。
 
 **注意**：此方法允许一次参与一篇文章。
 
-### <a name="to-contribute-using-github"></a>通过 GitHub 参与
+### <a name="to-contribute-using-github"></a>使用 GitHub 参与
 
 1. 在 GitHub 上找到想要参与的文章。
 2. 进入 GitHub 上的相应文章后，登录 GitHub（获取免费帐户[加入 GitHub](https://github.com/join)）。
-3. 选择“**铅笔图标**”（编辑项目分叉中的对应文件），然后在“**<>编辑文件**”窗口进行更改。 
+3. 选择“**铅笔图标**”（编辑项目分叉中的对应文件），然后在“**<>编辑文件**”窗口进行更改。
 4. 滚动到底部，输入说明。
 5. 依次选择“**建议文件更改**”>“**创建拉取请求**”。
 
-现已成功提交拉取请求。拉取请求通常在 10 个工作日内完成审核。 
+现已成功提交拉取请求。拉取请求通常在 10 个工作日内完成审核。
 
 
 ## <a name="contribute-using-git"></a>通过 Git 参与
@@ -44,9 +44,9 @@
 * 提供对文本的大量更改。
 * 添加新主题。
 
-### <a name="to-contribute-using-git"></a>通过 Git 参与
+### <a name="to-contribute-using-git"></a>使用 Git 参与
 
-1. 如果没有 GitHub 帐户，可通过 [GitHub](https://github.com/join) 建立帐户。 
+1. 如果没有 GitHub 帐户，可通过 [GitHub](https://github.com/join) 建立帐户。
 2. 拥有帐户后，在计算机上安装 Git。 按[安装 Git] 教程中的步骤操作。
 3. 若要通过 Git 提交拉取请求，遵循[使用 GitHub、Git 和此存储库](#use-github-git-and-this-repository)中的步骤操作。
 4. 以下人员需签署参与者许可协议：
@@ -62,14 +62,14 @@
 
 ## <a name="use-github-git-and-this-repository"></a>使用 GitHub、Git 和此存储库
 
-**注意**：此部分中的大多数信息都可以在 [GitHub 帮助]文章中找到。  如果熟悉 Git 和 GitHub，请跳至**参与和编辑内容**部分，了解此存储库的代码/内容流的具体详情。
+**注意**：此部分中的大多数信息都可以在 [GitHub 帮助]文章中找到。  如果熟悉 Git 和 GitHub，请跳至 **参与和编辑内容** 部分，了解此存储库的代码/内容流的具体详情。
 
 ### <a name="to-set-up-your-fork-of-the-repository"></a>设置存储库分支的具体步骤
 
-1.  建立 GitHub 帐户以参与此项目。如果还未进行此操作，请转至 [GitHub](https://github.com/join) 立即进行。
-2.  在计算机上安装 Git。 按[安装 Git] 教程中的步骤操作。
-3.  对此存储库创建你自己的分叉。为此，在页面顶部，选择“分叉”**** 按钮。
-4.  将自己的分叉复制到计算机上。打开 Git Bash 以完成此步骤。在命令提示符中输入：
+1. 建立 GitHub 帐户以参与此项目。如果还未进行此操作，请转至 [GitHub](https://github.com/join) 立即进行。
+2. 在计算机上安装 Git。 按[安装 Git] 教程中的步骤操作。
+3. 对此存储库创建你自己的分叉。为此，在页面顶部，选择“分叉”**** 按钮。
+4. 将自己的分叉复制到计算机上。打开 Git Bash 以完成此步骤。在命令提示符中输入：
 
         git clone https://github.com/<your user name>/<repo name>.git
 
@@ -92,7 +92,7 @@
 3. 向主存储库提交拉取请求。
 4. 删除分支。
 
-**重要说明**每个分支限制为单个概念/文章以简化工作流并降低合并冲突的机率。适用于新分支的内容包括：
+**重要说明** 每个分支限制为单个概念/文章以简化工作流并降低合并冲突的机率。适用于新分支的内容包括：
 
 * 新文章。
 * 拼写和语法编辑。
@@ -100,10 +100,10 @@
 
 #### <a name="to-create-a-new-branch"></a>新建分支
 
-1.  打开 Git Bash。
-2.  在 Git Bash 命令提示符中键入 `git pull upstream master:<new branch name>`。此操作将最新的 OfficeDev 母版分支中复制为本地新建分支。
-3.  在 Git Bash 命令提示符中键入 `git push origin <new branch name>`。此操作将对 GitHub 提示该新分支。现在将可以在 GitHub 的存储库分叉上看到新分支。
-4.  在 Git Bash 命令提示符中键入 `git checkout <new branch name>` 以转至新分支。
+1. 打开 Git Bash。
+2. 在 Git Bash 命令提示符中键入 `git pull upstream master:<new branch name>`。此操作将最新的 OfficeDev 母版分支中复制为本地新建分支。
+3. 在 Git Bash 命令提示符中键入 `git push origin <new branch name>`。此操作将对 GitHub 提示该新分支。现在将可以在 GitHub 的存储库分叉上看到新分支。
+4. 在 Git Bash 命令提示符中键入 `git checkout <new branch name>` 以转至新分支。
 
 #### <a name="add-new-content-or-edit-existing-content"></a>添加新内容或编辑现有内容
 
@@ -128,13 +128,13 @@
 
 #### <a name="to-submit-a-pull-request-to-the-main-repository"></a>向主存储库提交拉取请求
 
-1.  在 Git Bash 命令提示符中键入 `git push origin <new branch name>`。在本地存储库中，`origin` 代表从其中复制本地存储库的 GitHub 存储库。此命令将新分支的当前状态（包括上述步骤中的所有提交）推送到 GitHub 分叉。
-2.  在 GitHub 网站上，从自己的分叉中导航到新分支。
-3.  选择页面顶部的“**拉取请求**”按钮。
-4.  验证基本分支是否是 `OfficeDev/<repo name>@master` 且头分支是否是 `<your username>/<repo name>@<branch name>`。
-5.  选择“**更新提交范围**”按钮。
-6.  向拉取请求添加标题，然后说明进行的所有更改。
-7.  提交拉取请求。
+1. 在 Git Bash 命令提示符中键入 `git push origin <new branch name>`。在本地存储库中，`origin` 代表从其中复制本地存储库的 GitHub 存储库。此命令将新分支的当前状态（包括上述步骤中的所有提交）推送到 GitHub 分叉。
+2. 在 GitHub 网站上，从自己的分叉中导航到新分支。
+3. 选择页面顶部的“**拉取请求**”按钮。
+4. 验证基本分支是否是 `OfficeDev/<repo name>@master` 且头分支是否是 `<your username>/<repo name>@<branch name>`。
+5. 选择“**更新提交范围**”按钮。
+6. 向拉取请求添加标题，然后说明进行的所有更改。
+7. 提交拉取请求。
 
 其中一个网站管理员将处理你的拉取请求。你的拉取请求将出现在 OfficeDev/<repo name> 网站中的“问题”部分。接受拉取请求后，将解决此问题。
 
@@ -160,9 +160,9 @@
 
 #### <a name="to-delete-a-branch"></a>删除分支
 
-1.  在 Git Bash 命令提示符中键入 `git checkout master`。这将确保你不在即将删除的分支中（不允许在即将删除的分支中）。
-2.  然后，在命令提示符中键入 `git branch -d <branch name>`。只要分支已成功合并到上流存储库，此操作即会在计算机上将其删除。（可以使用 `–D` 标记替代此行为，但首先请确认你要这么做。）
-3.  最后，在命令提示符中键入 `git push origin :<branch name>`（冒号前有一个空格，之后没有空格）。这将删除 github 分叉中的分支。  
+1. 在 Git Bash 命令提示符中键入 `git checkout master`。这将确保你不在即将删除的分支中（不允许在即将删除的分支中）。
+2. 然后，在命令提示符中键入 `git branch -d <branch name>`。只要分支已成功合并到上流存储库，此操作即会在计算机上将其删除。（可以使用 `–D` 标记替代此行为，但首先请确认你要这么做。）
+3. 最后，在命令提示符中键入 `git push origin :<branch name>`（冒号前有一个空格，之后没有空格）。这将删除 github 分叉中的分支。  
 
 恭喜！你已成功参与此项目！
 
@@ -171,18 +171,18 @@
 ### <a name="markdown"></a>Markdown
 
 此存储库中的所有文章都使用 Markdown。 [Daring Fireball - Markdown] 中有完整介绍（并列出了所有语法）。
- 
+
 ## <a name="faq"></a>FAQ
 
 ### <a name="how-do-i-get-a-github-account"></a>如何获取 GitHub 帐户？
 
-填写[加入 GitHub](https://github.com/join) 中的表格，以开立免费 GitHub 帐户。 
+填写[加入 GitHub](https://github.com/join) 中的表格，以开立免费 GitHub 帐户。
 
-### <a name="where-do-i-get-a-contributors-license-agreement"></a>从何处获取参与者许可协议？ 
+### <a name="where-do-i-get-a-contributors-license-agreement"></a>从何处获取参与者许可协议？
 
-拉取请求请求获取此协议时，将会自动向你发送需要签署参与者许可协议 (CLA) 的通知。 
+拉取请求请求获取此协议时，将会自动向你发送需要签署参与者许可协议 (CLA) 的通知。
 
-社区成员**必须签署参与许可协议 (CLA) 才能向项目提供大量提交内容**。只需完成并提交此文档一次。请仔细查看该文档。可能要求你让你的员工签署此文档。
+社区成员 **必须签署参与许可协议 (CLA) 才能向项目提供大量提交内容**。只需完成并提交此文档一次。请仔细查看该文档。可能要求你让你的员工签署此文档。
 
 ### <a name="what-happens-with-my-contributions"></a>会如何处理我的参与内容？
 

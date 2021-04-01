@@ -6,38 +6,38 @@ metadata:
   description: 用于了解 Excel 加载项的资源。
   ms.prod: excel
   ms.topic: landing-page
-  ms.date: 06/09/2020
+  ms.date: 03/29/2021
   localization_priority: Priority
-  ms.openlocfilehash: 0d860e532431f090ad152ff3b33d8aba2ad88e24
-  ms.sourcegitcommit: 604361e55dee45c7a5d34c2fa6937693c154fc24
+  ms.openlocfilehash: 6e1b833b9f58c26e6a5ee85103d231ea75284064
+  ms.sourcegitcommit: a0624ef0d847fdbd6d83f27d1f9c69daf636ac38
   ms.translationtype: MT
   ms.contentlocale: zh-CN
-  ms.lasthandoff: 09/03/2020
-  ms.locfileid: "47363560"
+  ms.lasthandoff: 03/30/2021
+  ms.locfileid: "51435310"
 landingContent:
-- title: 关于 Excel 外接程序
+- title: 关于 Excel 加载项
   linkLists:
   - linkListType: overview
     links:
-    - text: Excel 外接程序是什么？
+    - text: 什么是 Excel 加载项？
       url: excel-add-ins-overview.md
   - linkListType: quickstart
     links:
     - text: 生成首个 Excel 加载项
       url: ../quickstarts/excel-quickstart-jquery.md
-    - text: 使用脚本实验室探索 Api
+    - text: 使用 Script Lab 探索 API
       url: ../overview/explore-with-script-lab.md
   - linkListType: how-to-guide
     links:
-    - text: 使用 Excel JavaScript API 与对象和工作簿内容交互
+    - text: 使用 Excel JavaScript API 与对象和工作簿内容进行交互
       url: ../reference/overview/excel-add-ins-reference-overview.md
-    - text: 向 Excel 中添加自定义函数
+    - text: 将自定义函数添加到 Excel
       url: custom-functions-overview.md
-    - text: 测试和调试 Excel 外接程序
+    - text: 测试和调试 Excel 加载项
       url: ../testing/test-debug-office-add-ins.md
-    - text: 部署并发布 Excel 外接程序
+    - text: 部署和发布 Excel 加载项
       url: ../publish/publish.md
-- title: 主要 Office 外接程序概念
+- title: 关键 Office 加载项概念
   linkLists:
   - linkListType: overview
     links:
@@ -58,7 +58,7 @@ landingContent:
     - text: 提问
       url: https://stackoverflow.com/questions/tagged/office-js
     - text: 请求功能
-      url: https://officespdev.uservoice.com/
+      url: /answers/products/m365
     - text: 报告问题
       url: https://github.com/officedev/office-js/issues
     - text: Office 加载项其他资源
