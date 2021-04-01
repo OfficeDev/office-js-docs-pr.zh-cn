@@ -1,6 +1,6 @@
 ### YamlMime:Hub
 title: Office 加载项文档
-summary: 使用 Office 外接程序平台构建解决方案，以扩展 Office 应用程序并与 Office 文档以及 Outlook 邮件和日历项中的内容进行交互。 借助 Office 外接程序，可以使用熟悉的 Web 技术（如 HTML、CSS 和 JavaScript）生成可在 Office 网页版、Windows、Mac 版和移动版中运行的解决方案。
+summary: 使用 Office 外接程序平台构建解决方案，以扩展 Office 应用程序并与 Office 文档、Outlook 邮件和日历项中的内容进行交互。 借助 Office 加载项，可以使用熟悉的 Web 技术（如 HTML、CSS 和 JavaScript）生成可在 Office 网页版、Windows、Mac 和移动版中运行的解决方案。
 brand: office
 metadata:
   title: Office 加载项文档
@@ -10,13 +10,13 @@ metadata:
   ms.topic: hub-page
   author: o365devx
   ms.author: o365devx
-  ms.date: 02/12/2021
-  ms.openlocfilehash: 848727c2b49c2ab8609fe07b98d25c307acb0315
-  ms.sourcegitcommit: ccc0a86d099ab4f5ef3d482e4ae447c3f9b818a3
+  ms.date: 03/29/2021
+  ms.openlocfilehash: 1b6dc17b648a283cdca57051a049f7247cc151c8
+  ms.sourcegitcommit: a0624ef0d847fdbd6d83f27d1f9c69daf636ac38
   ms.translationtype: MT
   ms.contentlocale: zh-CN
-  ms.lasthandoff: 02/14/2021
-  ms.locfileid: "50238055"
+  ms.lasthandoff: 03/30/2021
+  ms.locfileid: "51435247"
 highlightedContent:
   items:
   - itemType: overview
@@ -29,22 +29,22 @@ highlightedContent:
     title: Microsoft Learn： Introduction to Office client customization with add-ins
     url: /learn/modules/intro-office-add-ins
   - itemType: learn
-    title: Microsoft Learn：使用 Office 加载项扩展 Office 客户端
+    title: Microsoft Learn：使用 Office 外接程序扩展 Office 客户端
     url: /learn/paths/m365-office-add-in-associate
   - itemType: whats-new
     title: Microsoft 365 开发人员博客
     url: https://developer.microsoft.com/office/blogs/technology/add-ins
   - itemType: how-to-guide
-    title: Office 外接程序初学者指南
+    title: Office 加载项初学者指南
     url: overview/learning-path-beginner.md
   - itemType: reference
     title: Office JavaScript API 参考文档
     url: /javascript/api/overview
   - itemType: sample
-    title: GitHub：Office 加载项的模式和做法
+    title: GitHub：Office 外接程序的模式和做法
     url: https://github.com/OfficeDev/PnP-OfficeAddins
 conceptualContent:
-  title: 开发人员旅程
+  title: 你的开发人员旅程
   summary: ''
   items:
   - title: 浏览
@@ -60,7 +60,7 @@ conceptualContent:
       text: 在 5 分钟内设置 Outlook 外接程序
     - url: quickstarts/powerpoint-quickstart.md
       itemType: quickstart
-      text: 在 5 分钟内设置 PowerPoint 加载项
+      text: 在 5 分钟内设置 PowerPoint 外接程序
   - title: 内部版本
     links:
     - url: tutorials/excel-tutorial.md
@@ -107,12 +107,12 @@ conceptualContent:
     - url: https://developer.microsoft.com/office
       itemType: whats-new
       text: 加入开发人员计划
-    - url: https://officespdev.uservoice.com
+    - url: /answers/products/m365
       itemType: architecture
       text: 请求功能
     - url: https://stackoverflow.com/questions/tagged/office-js
       itemType: reference
-      text: 在 Stack Overflow 上Office.js问题
+      text: 在 Stack Overflow 上Office.js有关应用的问题
     - url: https://github.com/OfficeDev/office-js/issues
       itemType: reference
       text: 报告 Bug 或问题

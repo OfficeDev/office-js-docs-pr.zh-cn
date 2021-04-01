@@ -6,20 +6,20 @@ metadata:
   description: 用于了解 Project 加载项的资源。
   ms.prod: project
   ms.topic: landing-page
-  ms.date: 06/08/2020
+  ms.date: 03/29/2021
   localization_priority: Priority
-  ms.openlocfilehash: 06234275e8344b2de01a65d5821a7420d6c7aba8
-  ms.sourcegitcommit: 604361e55dee45c7a5d34c2fa6937693c154fc24
+  ms.openlocfilehash: 0803558dbf4e8e9edbd2d43f273bbbe40216849e
+  ms.sourcegitcommit: a0624ef0d847fdbd6d83f27d1f9c69daf636ac38
   ms.translationtype: MT
   ms.contentlocale: zh-CN
-  ms.lasthandoff: 09/03/2020
-  ms.locfileid: "47364036"
+  ms.lasthandoff: 03/30/2021
+  ms.locfileid: "51435289"
 landingContent:
-- title: 关于项目外接程序
+- title: 关于 Project 加载项
   linkLists:
   - linkListType: overview
     links:
-    - text: 什么是 Project 外接程序？
+    - text: 什么是 Project 加载项？
       url: project-add-ins.md
     - text: 适用于 Project 的 JavaScript API
       url: ../reference/overview/project-add-ins-reference-overview.md
@@ -29,11 +29,11 @@ landingContent:
       url: ../quickstarts/project-quickstart.md
   - linkListType: how-to-guide
     links:
-    - text: 测试和调试项目外接程序
+    - text: 测试和调试 Project 加载项
       url: ../testing/test-debug-office-add-ins.md
-    - text: 部署和发布项目外接程序
+    - text: 部署和发布 Project 加载项
       url: ../publish/publish.md
-- title: 主要 Office 外接程序概念
+- title: 关键 Office 加载项概念
   linkLists:
   - linkListType: overview
     links:
@@ -54,7 +54,7 @@ landingContent:
     - text: 提问
       url: https://stackoverflow.com/questions/tagged/office-js
     - text: 请求功能
-      url: https://officespdev.uservoice.com/
+      url: /answers/products/m365
     - text: 报告问题
       url: https://github.com/officedev/office-js/issues
     - text: Office 加载项其他资源
