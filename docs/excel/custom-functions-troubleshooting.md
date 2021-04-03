@@ -1,14 +1,14 @@
 ---
-ms.date: 01/08/2020
+ms.date: 03/30/2021
 description: Excel 自定义函数的常见问题疑难解答。
 title: 自定义函数疑难解答
 localization_priority: Normal
-ms.openlocfilehash: d9f912b1cd98b04c6d0e207c79491313dc794719
-ms.sourcegitcommit: d28392721958555d6edea48cea000470bd27fcf7
+ms.openlocfilehash: e79b2f8ee8abccda2b34821761bab65592a90218
+ms.sourcegitcommit: 074526a6dca8381dbdabf2705474c5ae6753b829
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/13/2021
-ms.locfileid: "49839836"
+ms.lasthandoff: 04/02/2021
+ms.locfileid: "51506138"
 ---
 # <a name="troubleshoot-custom-functions"></a>自定义函数疑难解答
 
@@ -39,9 +39,9 @@ Excel 有许多内置错误消息，如果存在计算错误，系统会将向�
 
 ## <a name="common-problems-and-solutions"></a>常见问题和解决方案
 
-### <a name="cant-open-add-in-from-localhost-use-a-local-loopback-exception"></a>无法从 localhost 打开加载项：使用本地环回异常
+### <a name="cant-open-add-in-from-localhost-use-a-local-loopback-exemption"></a>无法从 localhost 打开外接程序：使用本地环回豁免
 
-如果看到错误“我们无法从 localhost 打开此加载项”，则需要启用本地环回异常。 有关如何执行此操作的详细信息，请参阅[此 Microsoft 支持文章](https://support.microsoft.com/help/4490419/local-loopback-exemption-does-not-work)。
+如果看到错误"无法从 localhost 打开此外接程序"，则需要启用本地环回豁免。 有关如何执行此操作的详细信息，请参阅[此 Microsoft 支持文章](/office/troubleshoot/office-suite-issues/cannot-open-add-in-from-localhost)。
 
 ### <a name="runtime-logging-reports-typeerror-network-request-failed-on-excel-on-windows"></a>Windows 版 Excel 上的运行时日志记录报告“TypeError:网络请求失败”
 
@@ -76,11 +76,11 @@ function add(first, second) {
 CustomFunctions.associate("ADD", add);
 ```
 
-有关此过程详细信息，请参阅["将函数名称与 JSON 元数据关联"。](../excel/custom-functions-json.md#associating-function-names-with-json-metadata)
+有关此过程详细信息，请参阅将函数名称与 [JSON 元数据相关联](../excel/custom-functions-json.md#associating-function-names-with-json-metadata)。
 
 ## <a name="known-issues"></a>已知问题
 
-在 Excel 自定义函数 GitHub 存储库中跟踪 [并报告已知问题](https://github.com/OfficeDev/Excel-Custom-Functions/issues)。
+已知问题在 Excel 自定义函数 [GitHub 存储库中进行跟踪并报告](https://github.com/OfficeDev/Excel-Custom-Functions/issues)。
 
 ## <a name="reporting-feedback"></a>报告反馈
 

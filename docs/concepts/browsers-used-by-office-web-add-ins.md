@@ -3,12 +3,12 @@ title: Office 加载项使用的浏览器
 description: 指定操作系统和 Office 版本如何确定 Office 加载项使用的浏览器。
 ms.date: 03/24/2021
 localization_priority: Normal
-ms.openlocfilehash: 4dc9e6a49aa54583f6c10f6b94653038a6798ea2
-ms.sourcegitcommit: 5ad32261f80e7ab371aba032d9024ad1275c23f9
+ms.openlocfilehash: b9f4d07122779a893bd10e8d28b4f1b329125630
+ms.sourcegitcommit: 074526a6dca8381dbdabf2705474c5ae6753b829
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/26/2021
-ms.locfileid: "51221365"
+ms.lasthandoff: 04/02/2021
+ms.locfileid: "51506131"
 ---
 # <a name="browsers-used-by-office-add-ins"></a>Office 加载项使用的浏览器
 
@@ -33,13 +33,13 @@ Office 外接程序是 Web 应用程序，在 Office 网页版中运行时，使
 |Windows 10 版本。 &nbsp; >= &nbsp;1903 | Microsoft 365 版本 &nbsp; < &nbsp;16.0.11629<sup>1</sup>| 无关紧要|Internet Explorer 11|
 |Windows 10 版本。 &nbsp; >= &nbsp;1903 | Microsoft 365 版本 &nbsp; >= &nbsp;16.0.11629 &nbsp; _和_ &nbsp; < &nbsp; 16.0.13530.20424 <sup>1</sup>| 无关紧要|具有原始 WebView 的 Microsoft Edge 2 和<sup>3</sup> (EdgeHTML) |
 |Windows 10 版本。 &nbsp; >= &nbsp;1903 | Microsoft 365 版本 &nbsp; >= &nbsp;16.0.13530.20424<sup>1</sup>| 否 |具有原始 WebView 的 Microsoft Edge 2 和<sup>3</sup> (EdgeHTML) |
-|Windows 8.1<br>Windows 10| Microsoft 365 版本 &nbsp; >= &nbsp;16.0.13530.20424<sup>1</sup>| 是<sup>4</sup>|  Microsoft Edge<sup>2 和</sup> WebView2 的 3 (基于 Chromium)  |
+|Windows 8.1<br>Windows 10| Microsoft 365 版本 &nbsp; >= &nbsp;16.0.13530.20424<sup>1</sup>| 是<sup>4</sup>|  具有 WebView2 的 Microsoft Edge<sup>2</sup> (基于 Chromium)  |
 
 <sup>1</sup> 有关更多详细信息 [，请参阅更新](/officeupdates/update-history-office365-proplus-by-date) 历史记录页面以及如何查找 [Office](https://support.office.com/article/What-version-of-Office-am-I-using-932788b8-a3ce-44bf-bb09-e334518b8b19) 客户端版本和更新通道。
 
 <sup>2</sup> 使用 Microsoft Edge 时，Windows 10 讲述 (有时称为"屏幕阅读器") 读取任务窗格中打开的页面 `<title>` 中的标记。 如果使用的是 Internet Explorer 11，则Narrator 将会读取任务窗格的标题栏，它来自加载项清单中的 `<DisplayName>` 值。
 
-<sup>3</sup> 如果你的外接程序在清单中包含 元素，它将使用 Internet Explorer 11，而不考虑 Windows 或 `Runtimes` Microsoft 365 版本。 有关详细信息，请参阅[运行时](../reference/manifest/runtimes.md)。
+<sup>3</sup> 如果外接程序在清单中包含 元素，则它将不将 Microsoft Edge 与 EdgeHTML (`<Runtimes>` Microsoft Edge) 。 如果满足将 Microsoft Edge 与 WebView2 (基于 Chromium) 的条件，则外接程序会使用该浏览器。 否则，它将使用 Internet Explorer 11，而不考虑 Windows 或 Microsoft 365 版本。 有关详细信息，请参阅[运行时](../reference/manifest/runtimes.md)。
 
 <sup>4</sup> 除了安装 Microsoft Edge 之外，还必须安装可嵌入的 WebView2 控件，以便 Office 可以嵌入它。 若要安装它，请参阅 [Microsoft Edge WebView2/嵌入 Web 内容...使用 Microsoft Edge WebView2](https://developer.microsoft.com/microsoft-edge/webview2/)。
 
