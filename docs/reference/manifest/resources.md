@@ -1,14 +1,14 @@
 ---
 title: 清单文件中的 Resources 元素
 description: Resources 元素包含用于 VersionOverrides 节点的图标、字符串和 URL。
-ms.date: 10/09/2018
+ms.date: 03/30/2021
 localization_priority: Normal
-ms.openlocfilehash: 0a528b05904ef65c3643aaebb9149eb2091e2287
-ms.sourcegitcommit: cc6886b47c84ac37a3c957ff85dd0ed526ca5e43
+ms.openlocfilehash: bdf73420345ca4d054438bfba5217254e6682e6d
+ms.sourcegitcommit: 0bff0411d8cfefd4bb00c189643358e6fb1df95e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/12/2020
-ms.locfileid: "46641268"
+ms.lasthandoff: 04/07/2021
+ms.locfileid: "51604615"
 ---
 # <a name="resources-element"></a>Resources 元素
 
@@ -18,7 +18,7 @@ ms.locfileid: "46641268"
 
 ## <a name="child-elements"></a>子元素
 
-|  元素 |  类型  |  说明  |
+|  元素 |  类型  |  Description  |
 |:-----|:-----|:-----|
 |  [Images](#images)            |  image   |  提供指向图标图像的 HTTPS URL。 |
 |  **Urls**                |  url     |  提供 HTTPS URL 位置。一个 URL 最多可包含 2048 个字符。 |
@@ -29,7 +29,8 @@ ms.locfileid: "46641268"
 > 必须对 **Image** 和 **Url** 元素中的所有 URL 使用安全套接字层 (SSL)。
 
 ### <a name="images"></a>图像
-每个图标必须具有三个**Images**元素，三个强制大小的元素分别为：
+
+每个图标必须具有三 **个 Images** 元素，三个强制大小各一个元素：
 
 - 16x16
 - 32x32
@@ -44,7 +45,9 @@ ms.locfileid: "46641268"
 - 64x64
 
 > [!IMPORTANT]
-> Outlook 需要缓存图像资源的能力，以提高性能。 为此，托管图像资源的服务器不能向响应头添加任何 CACHE-CONTROL 指令。 这将导致 Outlook 自动替代泛型或默认图像。
+>
+> - 如果此图像是加载项的代表图标，请参阅在 [AppSource](/office/dev/store/create-effective-office-store-listings#create-an-icon-for-your-add-in) 和 Office 内创建有效列表，了解大小和其他要求。
+> - Outlook 需要缓存图像资源的能力，以提高性能。 为此，托管图像资源的服务器不能向响应头添加任何 CACHE-CONTROL 指令。 这将导致 Outlook 自动替代泛型或默认图像。
 
 ## <a name="resources-examples"></a>资源示例
 

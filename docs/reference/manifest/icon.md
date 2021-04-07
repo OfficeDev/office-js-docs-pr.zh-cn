@@ -1,14 +1,14 @@
 ---
 title: 清单文件中的 Icon 元素
 description: 定义“按钮”或“菜单”控件的 Image 元素。
-ms.date: 10/09/2018
+ms.date: 03/30/2021
 localization_priority: Normal
-ms.openlocfilehash: d2986d6d0325f425d5a66d010fff003c67356862
-ms.sourcegitcommit: 5ad32261f80e7ab371aba032d9024ad1275c23f9
+ms.openlocfilehash: 1adfbcd154091fcae49966f0c1f7d0b9cc968ed3
+ms.sourcegitcommit: 0bff0411d8cfefd4bb00c189643358e6fb1df95e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/26/2021
-ms.locfileid: "51221358"
+ms.lasthandoff: 04/07/2021
+ms.locfileid: "51604622"
 ---
 # <a name="icon-element"></a>Icon 元素
 
@@ -22,7 +22,7 @@ ms.locfileid: "51221358"
 
 ## <a name="child-elements"></a>子元素
 
-|  元素 |  必需  |  说明  |
+|  元素 |  必需  |  Description  |
 |:-----|:-----|:-----|
 |  [Image](#image)        | 是 |   要使用的图像的 resid         |
 
@@ -37,6 +37,9 @@ ms.locfileid: "51221358"
   <bt:Image size="80" resid="blue-icon-80" />
 </Icon>
 ```
+
+> [!IMPORTANT]
+> 如果此图像是加载项的代表图标，请参阅在 [AppSource](/office/dev/store/create-effective-office-store-listings#create-an-icon-for-your-add-in) 和 Office 内创建有效列表，了解大小和其他要求。
 
 ## <a name="additional-requirements-for-mobile-form-factors"></a>移动外形规格的其他要求
 

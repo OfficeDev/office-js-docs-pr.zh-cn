@@ -1,18 +1,18 @@
 ---
 title: 使用 Excel JavaScript API 处理工作簿
-description: 说明如何使用 Excel JavaScript API 对工作簿或应用程序级别的功能执行常见任务的代码示例。
-ms.date: 08/24/2020
+description: 显示如何使用 Excel JavaScript API 对工作簿或应用程序级别功能执行常见任务的代码示例。
+ms.date: 04/05/2021
 localization_priority: Normal
-ms.openlocfilehash: f0af6cc889a110406d987664575a6f3d1b30aa7b
-ms.sourcegitcommit: ed2a98b6fb5b432fa99c6cefa5ce52965dc25759
+ms.openlocfilehash: f2b359cf101dd5743549a2170a870cecf7fd2758
+ms.sourcegitcommit: 0bff0411d8cfefd4bb00c189643358e6fb1df95e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/16/2020
-ms.locfileid: "47819502"
+ms.lasthandoff: 04/07/2021
+ms.locfileid: "51604650"
 ---
 # <a name="work-with-workbooks-using-the-excel-javascript-api"></a>使用 Excel JavaScript API 处理工作簿
 
-本文提供了代码示例，介绍如何使用 Excel JavaScript API 对工作簿执行常见任务。 有关该对象支持的属性和方法的完整列表 `Workbook` ，请参阅 [ (适用于 Excel 的 JavaScript API) 的工作簿对象 ](/javascript/api/excel/excel.workbook)。 此外，本文还介绍了通过 [Application](/javascript/api/excel/excel.application) 对象执行的工作簿级别的操作。
+本文提供了代码示例，介绍如何使用 Excel JavaScript API 对工作簿执行常见任务。 有关对象支持的属性和方法的完整列表，请参阅 `Workbook` Workbook Object [ (JavaScript API for Excel) ](/javascript/api/excel/excel.workbook)。 此外，本文还介绍了通过 [Application](/javascript/api/excel/excel.application) 对象执行的工作簿级别的操作。
 
 Workbook 对象是加载项与 Excel 交互的入口点。 它用于维护工作表、表、数据透视表等的集合，通过这些集合可以访问并更改 Excel 数据。 加载项可以通过 [WorksheetCollection](/javascript/api/excel/excel.worksheetcollection) 对象访问单个工作表内的所有工作簿数据。 具体来说，加载项可以借助它添加工作表、在工作表间导航并向工作表分配处理程序。 [使用 Excel JavaScript API 处理工作表](excel-add-ins-worksheets.md)一文介绍了如何访问并编辑工作表。
 
@@ -51,7 +51,7 @@ Excel.createWorkbook();
 
 此外，`createWorkbook` 方法还可以创建现有工作簿的副本。 此方法接受 .xlsx 文件的 base64 编码字符串表示形式作为可选参数。 若字符串参数为有效的 .xlsx 文件，则生成的工作簿为该文件的副本。
 
-可以使用 [文件切片](/javascript/api/office/office.document#getfileasync-filetype--options--callback-)以 base64 编码的字符串形式获取外接程序的当前工作簿。 可以使用 [FileReader](https://developer.mozilla.org/docs/Web/API/FileReader) 类将文件转换为所需的 base64 编码字符串，如以下示例所示。
+可以使用文件切片 将加载项的当前工作簿作为 base64 编码的 [字符串获取](/javascript/api/office/office.document#getfileasync-filetype--options--callback-)。 可以使用 [FileReader](https://developer.mozilla.org/docs/Web/API/FileReader) 类将文件转换为所需的 base64 编码字符串，如以下示例所示。
 
 ```js
 var myFile = document.getElementById("file");
@@ -75,15 +75,19 @@ reader.readAsDataURL(myFile.files[0]);
 ### <a name="insert-a-copy-of-an-existing-workbook-into-the-current-one-preview"></a>将现有工作簿副本插入到当前工作簿中（预览版）
 
 > [!NOTE]
-> `WorksheetCollection.addFromBase64` 方法当前仅在公共预览版中可用，并且仅适用于 Windows 和 Mac 上的 Office。 [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
+> `Workbook.insertWorksheetsFromBase64`方法当前仅适用于公共预览版。 [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
+> 
 
-上一示例显示从现有工作簿创建的新工作簿。 此外，还可以将所有或部分现有工作簿复制到当前与加载项关联的工作簿中。 工作簿的 [WorksheetCollection](/javascript/api/excel/excel.worksheetcollection) 可通过 `addFromBase64` 方法将目标工作簿的工作表副本插入到其本身。 其他工作簿文件将作为 base64 编码字符串传递，如 `Excel.createWorkbook` 调用一样。
+上一示例显示从现有工作簿创建的新工作簿。 此外，还可以将所有或部分现有工作簿复制到当前与加载项关联的工作簿中。 [Workbook](/javascript/api/excel/excel.workbook)具有将目标工作簿的工作表 `insertWorksheetsFromBase64` 副本插入自身的方法。 另一个工作簿的文件作为 base64 编码的字符串传递，就像调用 `Excel.createWorkbook` 一样。 
 
 ```TypeScript
-addFromBase64(base64File: string, sheetNamesToInsert?: string[], positionType?: Excel.WorksheetPositionType, relativeTo?: Worksheet | string): OfficeExtension.ClientResult<string[]>;
+insertWorksheetsFromBase64(base64File: string, options?: Excel.InsertWorksheetOptions): OfficeExtension.ClientResult<string[]>;
 ```
 
-在以下示例中，工作簿的工作表将插入到当前工作簿的活动工作表之后。 请注意，将为 `sheetNamesToInsert?: string[]` 参数传递 `null`。 这意味着将插入所有工作表。
+下面的示例在当前工作簿中插入另一个工作簿。 新工作表插入到活动工作表之后。 请注意， `[]` 作为 [InsertWorksheetOptions](/javascript/api/excel/excel.insertworksheetoptions)属性的参数 `sheetNamesToInsert` 传递。 这意味着现有工作簿的所有工作表都插入到当前工作簿中。
+
+> [!IMPORTANT]
+> Windows、Mac 和 Web 上的 Excel 支持 `insertWorksheetsFromBase64` 该方法。 iOS 不支持它。 此外，在 Excel 网页 Excel 中，此方法不支持包含数据透视表、图表、注释或 Slicer 元素的源工作表。 如果存在这些对象， `insertWorksheetsFromBase64` 则该方法在 Excel `UnsupportedFeature` 网页中返回错误。 
 
 ```js
 var myFile = document.getElementById("file");
@@ -91,22 +95,26 @@ var reader = new FileReader();
 
 reader.onload = (event) => {
     Excel.run((context) => {
-        // strip off the metadata before the base64-encoded string
-        var startIndex = reader.result.toString().indexOf("base64,");
-        var workbookContents = reader.result.toString().substr(startIndex + 7);
-
-        var sheets = context.workbook.worksheets;
-        sheets.addFromBase64(
-            workbookContents,
-            null, // get all the worksheets
-            Excel.WorksheetPositionType.after, // insert them after the worksheet specified by the next parameter
-            sheets.getActiveWorksheet() // insert them after the active worksheet
-        );
-        return context.sync();
+        // Remove the metadata before the base64-encoded string.
+        const startIndex = reader.result.toString().indexOf("base64,");
+        const workbookContents = reader.result.toString().substr(startIndex + 7);
+            
+        // Retrieve the workbook.
+        const workbook = context.workbook;
+            
+        // Set up the insert options. 
+        var options = { 
+            sheetNamesToInsert: [], // Insert all the worksheets from the source workbook.
+            positionType: Excel.WorksheetPositionType.after, // Insert after the `relativeTo` sheet.
+            relativeTo: "Sheet1" }; // The sheet relative to which the other worksheets will be inserted. Used with `positionType`.
+            
+         // Insert the workbook. 
+         workbook.insertWorksheetsFromBase64(workbookContents, options);
+         return context.sync();
     });
 };
 
-// read in the file as a data URL so we can parse the base64-encoded string
+// Read in the file as a data URL so we can parse the base64-encoded string.
 reader.readAsDataURL(myFile.files[0]);
 ```
 
@@ -129,14 +137,14 @@ Excel.run(function (context) {
 
 `protect` 方法接受一个可选字符串参数。 此字符串表示用户要绕过保护并更改工作簿结构所需的密码。
 
-此外，还可以在工作表级别设置保护，来防止不希望发生的数据编辑。 有关详细信息，请参阅[使用 Excel JavaScript API 处理工作表](excel-add-ins-worksheets.md#data-protection)一文的“数据保护”部分。****
+此外，还可以在工作表级别设置保护，来防止不希望发生的数据编辑。 有关详细信息，请参阅[使用 Excel JavaScript API 处理工作表](excel-add-ins-worksheets.md#data-protection)一文的“数据保护”部分。
 
 > [!NOTE]
 > 有关 Excel 中工作簿保护的详细信息，请参阅[保护工作簿](https://support.office.com/article/Protect-a-workbook-7E365A4D-3E89-4616-84CA-1931257C1517)一文。
 
 ## <a name="access-document-properties"></a>访问文档属性
 
-Workbook 对象可以访问 Office 文件元数据，即[文档属性](https://support.office.com/article/View-or-change-the-properties-for-an-Office-file-21D604C2-481E-4379-8E54-1DD4622C6B75)。 Workbook 对象的 `properties` 属性是一个包含这些元数据值的 [DocumentProperties](/javascript/api/excel/excel.documentproperties) 对象。 下面的示例演示如何设置 `author` 属性。
+Workbook 对象可以访问 Office 文件元数据，即[文档属性](https://support.office.com/article/View-or-change-the-properties-for-an-Office-file-21D604C2-481E-4379-8E54-1DD4622C6B75)。 Workbook 对象的 `properties` 属性是一个包含这些元数据值的 [DocumentProperties](/javascript/api/excel/excel.documentproperties) 对象。 以下示例演示如何设置 `author` 属性。
 
 ```js
 Excel.run(function (context) {
@@ -148,7 +156,7 @@ Excel.run(function (context) {
 
 ### <a name="custom-properties"></a>自定义属性
 
-此外，还可以定义自定义属性。 DocumentProperties 对象保护 `custom` 属性，它表示用户定义的属性的键值对集合。 下列示例演示如何创建名称为“Introduction”且值为“Hello”的自定义属性，以及如何检索它。****
+此外，还可以定义自定义属性。 DocumentProperties 对象保护 `custom` 属性，它表示用户定义的属性的键值对集合。 下列示例演示如何创建名称为“Introduction”且值为“Hello”的自定义属性，以及如何检索它。
 
 ```js
 Excel.run(function (context) {
@@ -171,9 +179,9 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
-#### <a name="worksheet-level-custom-properties"></a>工作表级自定义属性
+#### <a name="worksheet-level-custom-properties"></a>工作表级别的自定义属性
 
-此外，还可以在工作表级别设置自定义属性。 这些属性与文档级自定义属性相似，不同之处在于可以在不同的工作表中重复相同的键。 下面的示例演示如何使用当前工作表上的值 "Alpha" 创建名为 **WorksheetGroup** 的自定义属性，然后检索该属性。
+还可以在工作表级别设置自定义属性。 这些属性类似于文档级别的自定义属性，不同工作表之间可以重复相同的键。 以下示例演示如何在当前工作表上创建名为 **WorksheetGroup** 的自定义属性，其值为"Alpha"，然后进行检索。
 
 ```js
 Excel.run(function (context) {
@@ -220,15 +228,15 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
-## <a name="access-application-culture-settings"></a>Access 应用程序的区域性设置
+## <a name="access-application-culture-settings"></a>访问应用程序区域性设置
 
-工作簿具有可影响特定数据显示方式的语言和区域性设置。 当您的外接程序的用户在不同语言和区域性中共享工作簿时，这些设置可以帮助本地化数据。 您的外接程序可以使用字符串分析根据系统区域性设置本地化数字、日期和时间的格式，这样每个用户都可以看到自己的区域性格式的数据。
+工作簿具有影响特定数据的显示方式的语言和区域性设置。 当外接程序的用户跨不同语言和文化共享工作簿时，这些设置可帮助本地化数据。 您的外接程序可以使用字符串分析来基于系统区域性设置本地化数字、日期和时间的格式，以便每个用户都可以查看其区域性格式的数据。
 
-`Application.cultureInfo` 将系统区域性设置定义为 [CultureInfo](/javascript/api/excel/excel.cultureinfo) 对象。 这包含数字小数分隔符或日期格式等设置。
+`Application.cultureInfo` 将系统区域性设置定义为 [CultureInfo](/javascript/api/excel/excel.cultureinfo) 对象。 这包括数字小数分隔符或日期格式等设置。
 
-某些区域性设置可以 [通过 EXCEL UI 进行更改](https://support.office.com/article/Change-the-character-used-to-separate-thousands-or-decimals-c093b545-71cb-4903-b205-aebb9837bd1e)。 系统设置将保留在对象中 `CultureInfo` 。 任何本地更改都将保留为 [应用程序](/javascript/api/excel/excel.application)级属性，例如 `Application.decimalSeparator` 。
+某些区域性设置可以通过 [Excel UI 进行更改](https://support.office.com/article/Change-the-character-used-to-separate-thousands-or-decimals-c093b545-71cb-4903-b205-aebb9837bd1e)。 系统设置保留在 对象 `CultureInfo` 中。 任何本地更改都保留为 [应用程序](/javascript/api/excel/excel.application)级属性，例如 `Application.decimalSeparator` 。
 
-下面的示例将数字字符串的十进制分隔符字符从 "，" 更改为系统设置所用的字符。
+以下示例将数字字符串的十进制分隔符字符从""更改为系统设置所使用的字符。
 
 ```js
 // This will convert a number like "14,37" to "14.37"
@@ -358,6 +366,6 @@ context.workbook.close(Excel.CloseBehavior.save);
 
 ## <a name="see-also"></a>另请参阅
 
-- [Office 外接程序中的 Excel JavaScript 对象模型](excel-add-ins-core-concepts.md)
+- [Excel 加载项中的 Word JavaScript 对象模型](excel-add-ins-core-concepts.md)
 - [使用 Excel JavaScript API 处理工作表](excel-add-ins-worksheets.md)
 - [使用 Excel JavaScript API 处理特定范围](excel-add-ins-ranges.md)

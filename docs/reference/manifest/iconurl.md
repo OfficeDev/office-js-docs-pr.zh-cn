@@ -1,14 +1,14 @@
 ---
 title: 清单文件中的 IconUrl 元素
-description: IconUrl 元素指定代表用户插入 UX 和 Office 应用商店中的 Office 外接程序的图像的 URL。
-ms.date: 06/20/2019
+description: IconUrl 元素指定表示插入 UX 和 Office 应用商店中的 Office 外接程序的图像的 URL。
+ms.date: 03/30/2021
 localization_priority: Normal
-ms.openlocfilehash: 27001f4109b2dcf93ac71d0a931bb6b4a2b38f2f
-ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
+ms.openlocfilehash: 68a449b40f6084d26140d59fec61967e163196df
+ms.sourcegitcommit: 0bff0411d8cfefd4bb00c189643358e6fb1df95e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "47292277"
+ms.lasthandoff: 04/07/2021
+ms.locfileid: "51604636"
 ---
 # <a name="iconurl-element"></a>IconUrl 元素
 
@@ -28,14 +28,14 @@ ms.locfileid: "47292277"
 
 ## <a name="attributes"></a>属性
 
-|属性|类型|必需|说明|
+|属性|类型|必需|Description|
 |:-----|:-----|:-----|:-----|
 |DefaultValue|字符串|必需|指定该设置的默认值，表示为 [DefaultLocale](defaultlocale.md) 元素中指定的区域设置。|
 
 ## <a name="remarks"></a>注解
 
-对于邮件外接程序，该图标将显示在 "**文件**  >  **管理外接程序**" ui (Outlook) 或**设置**"  >  (outlook 网页版) 中**管理外接程序**ui。 For a content or task pane add-in, the icon is displayed in the **Insert** > **Add-ins** UI. 对于所有外接程序类型，如果您将外接程序发布到 AppSource，则还会在 [AppSource](https://appsource.microsoft.com)中使用该图标。
+对于邮件外接程序，图标显示在"文件管理外接程序"UI  (Outlook) 或"设置""管理外接程序  >    >  "UI (Outlook 网页) 。 For a content or task pane add-in, the icon is displayed in the **Insert** > **Add-ins** UI. 对于所有加载项类型，如果你将加载项发布到 [AppSource，](https://appsource.microsoft.com)图标也会在 AppSource 中使用。
 
-图像必须采用下列任一文件格式进行保存：GIF、JPG、PNG、EXIF、BMP 或 TIFF。 对于内容和任务窗格应用程序，指定的图像必须是 32 x 32 像素。 对于邮件应用程序，推荐的图像分辨率是 64 x 64 像素。 此外，还应指定一个图标，以便与使用 [HighResolutionIconUrl](highresolutioniconurl.md) 元素在高 DPI 屏幕上运行的 Office 客户端应用程序一起使用。 有关详细信息，请参阅[在 AppSource 和 Office 中创建有效的应用一览](/office/dev/store/create-effective-office-store-listings#create-a-consistent-visual-identity)中的_为你的应用创建一致的视觉标识_部分。
+图像必须采用下列任一文件格式进行保存：GIF、JPG、PNG、EXIF、BMP 或 TIFF。 对于内容和任务窗格应用程序，指定的图像必须是 32 x 32 像素。 对于邮件应用程序，图像分辨率必须为 64 x 64 像素。 还应指定一个图标，以用于使用 [HighResolutionIconUrl](highresolutioniconurl.md) 元素在高 DPI 屏幕上运行的 Office 客户端应用程序。 有关详细信息，请参阅 [在 AppSource 和 Office 中创建有效的应用一览](/office/dev/store/create-effective-office-store-listings#create-a-consistent-visual-identity)中的 _为你的应用创建一致的视觉标识_ 部分。
 
-`IconUrl`当前不支持在运行时更改元素的值。
+当前不支持 `IconUrl` 在运行时更改 元素的值。

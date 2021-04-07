@@ -1,14 +1,14 @@
 ---
 title: Office 外接程序的新鲜样式图标指南
-description: 获取有关在 Office 外接程序中使用"全新样式"图标的指南。
-ms.date: 03/24/2021
+description: 有关在 Office 外接程序中使用新鲜样式图标的指南。
+ms.date: 03/30/2021
 localization_priority: Normal
-ms.openlocfilehash: b26146ed86be221a829f32ef2062df5c1ae0b2b2
-ms.sourcegitcommit: 5ad32261f80e7ab371aba032d9024ad1275c23f9
+ms.openlocfilehash: cc891593ec9518d256047cfa172553cc41d3e12e
+ms.sourcegitcommit: 0bff0411d8cfefd4bb00c189643358e6fb1df95e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/26/2021
-ms.locfileid: "51221415"
+ms.lasthandoff: 04/07/2021
+ms.locfileid: "51604664"
 ---
 # <a name="fresh-style-icon-guidelines-for-office-add-ins"></a>Office 外接程序的新鲜样式图标指南
 
@@ -44,6 +44,9 @@ Office 桌面图标是位图图像。 根据用户的 DPI 设置和触摸模式�
 - 48 像素
 - 64 像素（建议，最适用于 Mac）
 - 80 像素（必需）
+
+> [!IMPORTANT]
+> 有关作为加载项代表图标的图像，请参阅在 [AppSource](/office/dev/store/create-effective-office-store-listings#create-an-icon-for-your-add-in) 和 Office 内创建有效列表，了解大小和其他要求。
 
 确保根据每个尺寸重新绘制你的图标，而非将其缩小。
 
@@ -94,7 +97,7 @@ Office 图标具有一个有限的调色板。使用下表中列出的颜色确�
 - 如有可能，除灰色外仅使用其他一种颜色。将附加颜色限制为最多两种。
 - 所有图标大小中的颜色应具有一致的外观。 Office 图标针对不同的图标大小具有略微不同的调色板。 16 像素和较小的图标比 32 像素和更大的图标略暗且更亮。 除了这些细微的调整以外，颜色的差别体现在大小上。
 
-|颜色名称|RGB|十六进制|颜色|类别|
+|颜色名称|RGB|十六进制|颜色|Category|
 |:---|:---|:---|:---|:---|
 |文本灰色 (80)|80、80、80|#505050| ![文本为灰色 80 颜色](../images/color-text-gray-80.png) |文本|
 |文本灰色 (95)|95、95、95|#5F5F5F| ![文本为灰色 95](../images/color-text-gray-95.png) |文本|

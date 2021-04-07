@@ -3,12 +3,12 @@ title: Office 加载项使用的浏览器
 description: 指定操作系统和 Office 版本如何确定 Office 加载项使用的浏览器。
 ms.date: 03/24/2021
 localization_priority: Normal
-ms.openlocfilehash: b9f4d07122779a893bd10e8d28b4f1b329125630
-ms.sourcegitcommit: 074526a6dca8381dbdabf2705474c5ae6753b829
+ms.openlocfilehash: 489367231e1ed48e0bee6f0a32ccc47a8b39aed9
+ms.sourcegitcommit: 0bff0411d8cfefd4bb00c189643358e6fb1df95e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/02/2021
-ms.locfileid: "51506131"
+ms.lasthandoff: 04/07/2021
+ms.locfileid: "51604629"
 ---
 # <a name="browsers-used-by-office-add-ins"></a>Office 加载项使用的浏览器
 
@@ -50,7 +50,7 @@ Office 外接程序是 Web 应用程序，在 Office 网页版中运行时，使
 > Internet Explorer 11 不支持高于 ES5 的 JavaScript 版本。 如果任何外接程序的用户具有使用 Internet Explorer 11 的平台，则要使用 ECMAScript 2015 或更高版本的语法和功能，有两个选项：
 >
 > - 在 ECMAScript 2015 (（也称为 ES6) 或更高版本 JavaScript）中编写代码，或在 TypeScript 中编写代码，然后使用编译器（如 [#A0](https://babeljs.io/) 或 [tsc）](https://www.typescriptlang.org/index.html)将代码编译为 ES5 JavaScript。
-> - 在 ECMAScript 2015 或更高版本的 JavaScript[](https://wikipedia.org/wiki/Polyfill_(programming))中编写，但也加载填充库（如[core-js，](https://github.com/zloirock/core-js)它使 IE 能够运行代码）。
+> - 在 ECMAScript 2015 或更高版本的 JavaScript[](https://en.wikipedia.org/wiki/Polyfill_(programming))中编写，但也加载填充库（如[core-js，](https://github.com/zloirock/core-js)它使 IE 能够运行代码）。
 >
 > 此外，Internet Explorer 11 不支持媒体、录制和位置等部分 HTML5 功能。
 
@@ -58,7 +58,7 @@ Office 外接程序是 Web 应用程序，在 Office 网页版中运行时，使
 
 ### <a name="service-workers-are-not-working"></a>服务工作人员未工作
 
-使用原始 [Microsoft Edge WebView](/microsoft-edge/hosting/webview) 时，Office 外接程序不支持服务工作人员。 它们受基于 [Chromium 的边缘 WebView2 的支持](/microsoft-edge/hosting/webview2)。
+使用原始 Microsoft Edge WebView [EdgeHTML](https://en.wikipedia.org/wiki/EdgeHTML)时，Office 外接程序不支持服务工作人员。 它们受基于 [Chromium 的边缘 WebView2 的支持](/microsoft-edge/hosting/webview2)。
 
 ### <a name="scroll-bar-does-not-appear-in-task-pane"></a>任务窗格中不显示滚动条
 
