@@ -1,14 +1,14 @@
 ---
 title: 使用 Excel JavaScript API 处理工作表
-description: 演示如何使用 Excel JavaScript API 对工作表执行常见任务的代码示例。
+description: 显示如何使用 Excel JavaScript API 对工作表执行常见任务的代码示例。
 ms.date: 03/24/2020
 localization_priority: Normal
-ms.openlocfilehash: 0720715a38ff81196433d207148c63ffcd475003
-ms.sourcegitcommit: c6308cf245ac1bc66a876eaa0a7bb4a2492991ac
+ms.openlocfilehash: 7ff1593ca66926de7ae3397defba7efbe97b1695
+ms.sourcegitcommit: 54fef33bfc7d18a35b3159310bbd8b1c8312f845
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "47408647"
+ms.lasthandoff: 04/09/2021
+ms.locfileid: "51652200"
 ---
 # <a name="work-with-worksheets-using-the-excel-javascript-api"></a>使用 Excel JavaScript API 处理工作表
 
@@ -212,7 +212,7 @@ Excel.run(function (context) {
 
 ## <a name="rename-a-worksheet"></a>重命名工作表
 
-下面的代码示例将活动工作表的名称更改为**新名称**。
+下面的代码示例将活动工作表的名称更改为 **新名称**。
 
 ```js
 Excel.run(function (context) {
@@ -386,7 +386,7 @@ Excel.run(function (context) {
 
 > [!NOTE]
 > 本节介绍如何使用 `Worksheet` 对象函数查找单元格与区域。 更多区域检索信息可在特定对象文章中找到。
-> - 有关展示如何使用 `Range` 对象获取工作表中区域的示例，请参阅 [使用 Excel JavaScript API 处理区域](excel-add-ins-ranges.md)。
+> - 有关显示如何使用 对象获取工作表内区域的示例，请参阅使用 `Range` [Excel JavaScript API](excel-add-ins-ranges-get.md)获取区域。
 > - 有关展示如何从 `Table` 对象获取区域的示例，请参阅 [使用 Excel JavaScript API 处理表](excel-add-ins-tables.md)。
 > - 有关显示如何基于单元格特性进行多个子区域的较大区域搜索示例，请参阅 [使用 Excel 加载项同时处理多个区域](excel-add-ins-multiple-ranges.md)。
 
@@ -495,4 +495,4 @@ Excel.run(function (context) {
 
 ## <a name="see-also"></a>另请参阅
 
-- [Office 外接程序中的 Excel JavaScript 对象模型](excel-add-ins-core-concepts.md)
+- [Excel 加载项中的 Word JavaScript 对象模型](excel-add-ins-core-concepts.md)

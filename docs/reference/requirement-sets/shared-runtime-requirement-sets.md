@@ -1,27 +1,35 @@
 ---
 title: 共享运行时要求集
-description: 指定支持 SharedRuntime Api 的平台和 Office 应用程序。
-ms.date: 07/10/2020
+description: 指定支持 SharedRuntime API 的平台和 Office 应用程序。
+ms.date: 04/08/2021
 ms.prod: non-product-specific
 localization_priority: Normal
-ms.openlocfilehash: 872277488dd8d26241d9b445200f429aa102e26e
-ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
+ms.openlocfilehash: 8d0db6e129aaf7a4aa2967e7a1341d6db1188359
+ms.sourcegitcommit: 54fef33bfc7d18a35b3159310bbd8b1c8312f845
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "47293462"
+ms.lasthandoff: 04/09/2021
+ms.locfileid: "51652221"
 ---
 # <a name="shared-runtime-requirement-sets"></a>共享运行时要求集
 
-要求集是指各组已命名的 API 成员。 Office 外接程序使用清单中指定的要求集或使用运行时检查来确定 Office 应用程序是否支持加载项所需的 Api。 有关详细信息，请参阅 [Office 版本和要求集](../../develop/office-versions-and-requirement-sets.md)。
+要求集是指各组已命名的 API 成员。Office 加载项使用清单中指定的要求集或执行运行时检查，以确定 Office 应用程序是否支持加载项所需的 API。有关详细信息，请参阅 [Office 版本和要求集](../../develop/office-versions-and-requirement-sets.md)。
 
-运行 JavaScript 代码（例如任务窗格、从外接程序命令启动的函数文件和 Excel 自定义函数）的 Office 外接程序的各个部分可以共享单个 JavaScript 运行时。 这使所有部分都可以共享一组全局变量，共享一组已加载库，并且可以相互通信，而无需通过持久化存储传递邮件。
+运行 JavaScript 代码的 Office 外接程序的某些部分（如任务窗格、从外接程序命令启动的函数文件和 Excel 自定义函数）可以共享单个 JavaScript 运行时。 这允许所有部件共享一组全局变量、共享一组加载的库以及相互通信，而无需通过持久存储传递邮件。 有关详细信息，请参阅将 [Office 加载项配置为使用共享的 JavaScript 运行时](../../develop/configure-your-add-in-to-use-a-shared-runtime.md)。
 
-下表列出了 SharedRuntime 1.1 要求集、支持该要求集的 Office 客户端应用程序，以及 Office 应用程序的内部版本号或版本号。
+下表列出了 SharedRuntime 1.1 要求集、支持该要求集的 Office 客户端应用程序，以及 Office 应用程序内部版本或版本号。
 
-|  要求集  |  Windows 上的 Office 2013 (或更高版本) <br>（一次性购买） | Windows 版 Office<br>（关联至 Microsoft 365 订阅）   |  iPad 版 Office<br>（关联至 Microsoft 365 订阅）  |  Mac 版 Office<br>（关联至 Microsoft 365 订阅）  | Office 网页版  | Office Online Server |
+|  要求集  |  Windows 版 Office 2013 (或) 更高版本<br>（一次性购买） | Windows 版 Office<br>（关联至 Microsoft 365 订阅）   |  iPad 版 Office<br>（关联至 Microsoft 365 订阅）  |  Mac 版 Office<br>（关联至 Microsoft 365 订阅）  | Office 网页版  | Office Online Server |
 |:-----|:-----|:-----|:-----|:-----|:-----|:-----|
-| SharedRuntime 1。1  | 无 | 版本 2002 (内部版本 12527.20092) 或更高版本 | 无 | 16.35 或更高版本 | 2020 年 2 月 | 无 |
+| SharedRuntime 1.1  | 不适用 | 版本 2002 (内部版本 12527.20092) 或更高版本 | 不适用 | 16.35 或更高版本 | 2020 年 2 月 | 不适用 |
+
+> [!IMPORTANT]
+> 共享的 JavaScript 运行时要求集仅在以下平台上可用。
+>
+> - Excel 网页版、Windows 和 Mac。
+> - Windows 版 PowerPoint（内部版本 13218.10000 或更高版本）。 适用于 PowerPoint 的共享 JavaScript 运行时当前处于预览阶段并可能会发生更改。 不支持在生产环境中使用。 要获取最新版本，你需要[加入 Office 预览体验计划](https://insider.office.com/join)。 试用预览版功能的好方法是使用 Microsoft 365 订阅。 如果还没有 Microsoft 365 订阅，可以通过加入[Microsoft 365 开发人员计划](https://developer.microsoft.com/office/dev-program)获取一个订阅。
+>
+> 目前，iPad 或一次性购买版本的 Office 2019 或更早版本不支持共享 JavaScript 运行时。
 
 ## <a name="office-versions-and-build-numbers"></a>Office 版本和内部版本号
 
@@ -36,6 +44,7 @@ ms.locfileid: "47293462"
 
 ## <a name="see-also"></a>另请参阅
 
+- [将 Office 加载项配置为使用共享 JavaScript 运行时](../../develop/configure-your-add-in-to-use-a-shared-runtime.md)
 - [Office 版本和要求集](../../develop/office-versions-and-requirement-sets.md)
-- [指定 Office 应用程序和 API 要求](../../develop/specify-office-hosts-and-api-requirements.md)
-- [Office 外接程序 XML 清单](../../develop/add-in-manifests.md)
+- [指定 Office 应用程序和 API 要求集](../../develop/specify-office-hosts-and-api-requirements.md)
+- [Office 加载项 XML 清单](../../develop/add-in-manifests.md)

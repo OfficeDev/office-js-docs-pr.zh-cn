@@ -1,14 +1,15 @@
 ---
 title: 使用 Excel JavaScript API 处理工作簿
-description: 显示如何使用 Excel JavaScript API 对工作簿或应用程序级别功能执行常见任务的代码示例。
+description: 了解如何使用 Excel JavaScript API 对工作簿或应用程序级别功能执行常见任务。
 ms.date: 04/05/2021
+ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: f2b359cf101dd5743549a2170a870cecf7fd2758
-ms.sourcegitcommit: 0bff0411d8cfefd4bb00c189643358e6fb1df95e
+ms.openlocfilehash: 2fe11aaba45dae1f0cd1375e28226ecd959950fe
+ms.sourcegitcommit: 54fef33bfc7d18a35b3159310bbd8b1c8312f845
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/07/2021
-ms.locfileid: "51604650"
+ms.lasthandoff: 04/09/2021
+ms.locfileid: "51650826"
 ---
 # <a name="work-with-workbooks-using-the-excel-javascript-api"></a>使用 Excel JavaScript API 处理工作簿
 
@@ -368,4 +369,3 @@ context.workbook.close(Excel.CloseBehavior.save);
 
 - [Excel 加载项中的 Word JavaScript 对象模型](excel-add-ins-core-concepts.md)
 - [使用 Excel JavaScript API 处理工作表](excel-add-ins-worksheets.md)
-- [使用 Excel JavaScript API 处理特定范围](excel-add-ins-ranges.md)

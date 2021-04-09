@@ -1,30 +1,25 @@
 ---
 title: 清单文件中运行时
-description: Runtimes 元素指定加载项的运行时。
-ms.date: 02/01/2021
+description: Runtimes 元素指定外接程序的运行时。
+ms.date: 04/08/2021
 localization_priority: Normal
-ms.openlocfilehash: fd672e2592b2e9bfdf7abb0d293b93202d4ad210
-ms.sourcegitcommit: ccc0a86d099ab4f5ef3d482e4ae447c3f9b818a3
+ms.openlocfilehash: a5cd05a0890615375bf3466caf70d22f9912d951
+ms.sourcegitcommit: 54fef33bfc7d18a35b3159310bbd8b1c8312f845
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "50237964"
+ms.lasthandoff: 04/09/2021
+ms.locfileid: "51652230"
 ---
 # <a name="runtimes-element"></a>Runtimes 元素
 
-指定加载项的运行时。 元素的 [`<Host>`](host.md) 子级。
+指定外接程序的运行时。 元素的 [`<Host>`](host.md) 子元素。
 
 > [!NOTE]
 > When running in Office on Windows， your add-in uses the Internet Explorer 11 browser.
 
-在 Excel 中，此元素使功能区、任务窗格和自定义函数能够使用相同的运行时。 有关详细信息，请参阅配置 [Excel 加载项以使用共享的 JavaScript 运行时](../../develop/configure-your-add-in-to-use-a-shared-runtime.md)。
+**外接程序类型：** 任务窗格、邮件
 
-在 Outlook 中，此元素启用基于事件的外接程序激活。 有关详细信息，请参阅配置 [Outlook 外接程序进行基于事件的激活](../../outlook/autolaunch.md)。
-
-**加载项类型：** 任务窗格、邮件
-
-> [!IMPORTANT]
-> **Outlook：** 基于事件的激活功能目前处于预览阶段 [](../../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md)，仅在 Outlook 网页版和 Windows 版中可用。 有关详细信息，请参阅 [如何预览基于事件的激活功能](../../outlook/autolaunch.md#how-to-preview-the-event-based-activation-feature)。
+[!include[Runtimes support](../../includes/runtimes-note.md)]
 
 ## <a name="syntax"></a>语法
 
@@ -47,3 +42,5 @@ ms.locfileid: "50237964"
 ## <a name="see-also"></a>另请参阅
 
 - [运行时](runtime.md)
+- [将 Office 加载项配置为使用共享 JavaScript 运行时](../../develop/configure-your-add-in-to-use-a-shared-runtime.md)
+- [配置 Outlook 外接程序进行基于事件的激活](../../outlook/autolaunch.md)

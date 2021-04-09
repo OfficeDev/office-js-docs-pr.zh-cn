@@ -1,14 +1,14 @@
 ---
 title: 通过 Excel JavaScript API 将条件格式应用于范围
-description: 本文涵盖了 Excel JavaScript 外接程序上下文中的条件格式。
-ms.date: 07/28/2020
+description: 了解 Excel JavaScript 加载项上下文中的条件格式。
+ms.date: 04/01/2021
 localization_priority: Normal
-ms.openlocfilehash: 04a1b18c47d76d44201ea222eac305bb8d438b58
-ms.sourcegitcommit: c6308cf245ac1bc66a876eaa0a7bb4a2492991ac
+ms.openlocfilehash: 5736923ac3c4623342d9a77bd58d5682a551a2a6
+ms.sourcegitcommit: 54fef33bfc7d18a35b3159310bbd8b1c8312f845
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "47408591"
+ms.lasthandoff: 04/09/2021
+ms.locfileid: "51650910"
 ---
 # <a name="apply-conditional-formatting-to-excel-ranges"></a>将条件格式应用于特定 Excel 范围
 
@@ -33,7 +33,7 @@ Excel JavaScript 库提供了用于将条件格式应用于工作表中的特定
 -    `topBottom`
 
 > [!NOTE]
-> 每个格式属性都有相应的 `*OrNullObject` 变体。 有关此模式的详细信息，请参阅[ \* OrNullObject 方法](../develop/application-specific-api-model.md#ornullobject-methods-and-properties)一节。
+> 每个格式属性都有相应的 `*OrNullObject` 变体。 在[ \* OrNullObject](../develop/application-specific-api-model.md#ornullobject-methods-and-properties)方法部分了解有关该模式的内容。
 
 仅可为 ConditionalFormat 对象设置一种格式类型。 该格式类型由 `type` 属性确定，该属性是 [ConditionalFormatType](/javascript/api/excel/excel.conditionalformattype) 枚举值。 `type` 是在向某一范围添加条件格式时设置的。
 
@@ -110,7 +110,7 @@ await context.sync();
 自定义条件格式根据任意复杂度的公式将用户定义的格式应用于单元格。 [ConditionalFormatRule](/javascript/api/excel/excel.conditionalformatrule) 对象允许使用不同表示法定义公式：
 
 -    `formula` - 标准表示法。
--    `formulaLocal` -根据用户的语言进行本地化。
+-    `formulaLocal` - 基于用户语言进行本地化。
 -    `formulaR1C1` - R1C1 样式表示法。
 
 在下面的示例中，将数值大于其左侧单元格数值的单元格的字体颜色设置成了绿色。
@@ -133,7 +133,7 @@ await context.sync();
 ```
 ### <a name="data-bar"></a>[数据栏](/javascript/api/excel/excel.databarconditionalformat)
 
-数据栏条件格式可将数据栏添加到单元格。 默认情况下，相应范围内的最小和最大值形成数据栏的边界和比例大小。 `DataBarConditionalFormat`对象具有几个属性来控制条形图的外观。 
+数据栏条件格式可将数据栏添加到单元格。 默认情况下，相应范围内的最小和最大值形成数据栏的边界和比例大小。 `DataBarConditionalFormat`对象具有多个属性来控制条形图的外观。 
 
 下面的示例对相应范围应用了从左到右填充的数据栏格式。
 
@@ -157,7 +157,7 @@ await context.sync();
 
 下面的示例展示了应用于相应范围的三元素图标集。
 
-![包含绿色上三角形的值范围为1000以上的值的范围、700和1000之间值的黄色线以及较低值之间的红色下三角形。](../images/excel-conditional-format-iconset.png)
+![值超过 1000 的绿色向上三角形区域，值介于 700 和 1000 之间的黄色线，值较低的红色向下三角形。](../images/excel-conditional-format-iconset.png)
 
 ```typescript
 const sheet = context.workbook.worksheets.getItem("Sample");
@@ -198,7 +198,7 @@ await context.sync();
 
 预设条件格式会基于所选标准规则将用户定义的格式应用于相应范围。 这些规则由 [ConditionalPresetCriteriaRule](/javascript/api/excel/excel.conditionalpresetcriteriarule) 中的 [ConditionalFormatPresetCriterion](/javascript/api/excel/excel.ConditionalFormatPresetCriterion) 定义。 
 
-下面的示例在某个单元格的值与该范围的平均值之上至少有一个标准偏差的地方为白色着色。
+下面的示例将字体颜色为白色，只要单元格的值至少比区域平均值高一个标准偏差。
 
 ![一个带白色字体单元格的范围，其中白色字体单元格中的值高于平均值至少一个标准偏差。](../images/excel-conditional-format-preset.png)
 
@@ -222,7 +222,7 @@ await context.sync();
 
 文本比较条件格式将字符串比较作为条件。 `rule` 属性是一个 [ConditionalTextComparisonRule](/javascript/api/excel/excel.conditionaltextcomparisonrule)，用于定义要与单元格进行比较的字符串，以及用于指定比较类型的运算符。 
 
-当单元格的文本包含 "延迟" 时，下面的示例将字体颜色设置为红色。
+当单元格的文本包含"Delayed"时，以下示例将字体颜色格式化为红色。
 
 ![一个将包含“Delayed”的单元格设置为红色的范围。](../images/excel-conditional-format-text.png)
 
@@ -336,8 +336,7 @@ await context.sync();
 
 ## <a name="see-also"></a>另请参阅
 
-- [Office 外接程序中的 Excel JavaScript 对象模型](../excel/excel-add-ins-core-concepts.md)
-- [使用 Excel JavaScript API 处理特定范围](../excel/excel-add-ins-ranges.md)
+- [Excel 加载项中的 Word JavaScript 对象模型](../excel/excel-add-ins-core-concepts.md)
 - [ConditionalFormat 对象（适用于 Excel 的 JavaScript API）](/javascript/api/excel/excel.conditionalformat)
 - [添加、更改或清除条件格式](https://support.office.com/article/add-change-or-clear-conditional-formats-8a1cc355-b113-41b7-a483-58460332a1af)
 - [将公式用于条件格式](https://support.office.com/article/Use-formulas-with-conditional-formatting-FED60DFA-1D3F-4E13-9ECB-F1951FF89D7F)

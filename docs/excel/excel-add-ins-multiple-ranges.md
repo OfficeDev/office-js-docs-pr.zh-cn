@@ -1,14 +1,14 @@
 ---
 title: 同时在 Excel 加载项中处理多个区域
-description: 了解 Excel JavaScript 库如何使加载项能够同时在多个区域上执行操作和设置属性。
-ms.date: 04/30/2019
+description: 了解 Excel JavaScript 库如何允许加载项同时在多个区域上执行操作和设置属性。
+ms.date: 04/01/2021
 localization_priority: Normal
-ms.openlocfilehash: 6a508d8481d9851c7f7ae98ec959fcec9663972c
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 2999cd26d3258cf310766fbd590805535cd644f9
+ms.sourcegitcommit: 54fef33bfc7d18a35b3159310bbd8b1c8312f845
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44609767"
+ms.lasthandoff: 04/09/2021
+ms.locfileid: "51650889"
 ---
 # <a name="work-with-multiple-ranges-simultaneously-in-excel-add-ins"></a>同时在 Excel 加载项中处理多个区域
 
@@ -16,7 +16,7 @@ Excel JavaScript 库允许你使用加载项同时在多个区域上执行操作
 
 ## <a name="rangeareas"></a>RangeAreas
 
-一组（可能是不连续的）区域由一个[RangeAreas](/javascript/api/excel/excel.rangeareas)对象表示。 它具有与 `Range` 类型类似的属性和方法（许多具有相同或相似的名称），但已对以下对象进行了调整：
+一组 (区域可能不连续) 范围由 [RangeAreas](/javascript/api/excel/excel.rangeareas) 对象表示。 它具有与 `Range` 类型类似的属性和方法（许多具有相同或相似的名称），但已对以下对象进行了调整：
 
 - 属性和 Setter 及 Getter 行为的数据类型。
 - 方法参数和方法行为的数据类型。
@@ -49,7 +49,7 @@ Excel JavaScript 库允许你使用加载项同时在多个区域上执行操作
 - `style`
 - `worksheet`
 
-##### <a name="methods"></a>Methods
+##### <a name="methods"></a>方法
 
 - `calculate()`
 - `clear()`
@@ -60,12 +60,12 @@ Excel JavaScript 库允许你使用加载项同时在多个区域上执行操作
 - `getEntireRow()`
 - `getIntersection()`
 - `getIntersectionOrNullObject()`
-- `getOffsetRange()`（ `getOffsetRangeAreas` 在对象上命名 `RangeAreas` ）
+- `getOffsetRange()` (对象 `getOffsetRangeAreas` 对象 `RangeAreas` 上命名) 
 - `getSpecialCells()`
 - `getSpecialCellsOrNullObject()`
 - `getTables()`
-- `getUsedRange()`（ `getUsedRangeAreas` 在对象上命名 `RangeAreas` ）
-- `getUsedRangeOrNullObject()`（ `getUsedRangeAreasOrNullObject` 在对象上命名 `RangeAreas` ）
+- `getUsedRange()` (对象 `getUsedRangeAreas` 对象 `RangeAreas` 上命名) 
+- `getUsedRangeOrNullObject()` (对象 `getUsedRangeAreasOrNullObject` 对象 `RangeAreas` 上命名) 
 - `load()`
 - `set()`
 - `setDirty()`
@@ -94,7 +94,7 @@ Excel JavaScript 库允许你使用加载项同时在多个区域上执行操作
 > 你不能直接将其他区域添加到 `RangeAreas` 对象。 例如，`RangeAreas.areas` 中的集合不具有 `add` 方法。
 
 > [!WARNING]
-> 不要尝试直接添加或删除 `RangeAreas.areas.items` 数组的成员。 这将导致代码中出现不需要的行为。 例如，可能会将其他 `Range` 对象推送到数组上，但这样做会导致错误，因为 `RangeAreas` 属性和方法将表现为如同新项目并不存在一样。 例如，`areaCount` 属性不包含通过这种方法推送的区域，并且如果 `index` 大于 `areasCount-1`，则 `RangeAreas.getItemAt(index)` 将引发错误。 同样，删除 `RangeAreas.areas.items` 数组中的 `Range` 对象（通过获取对它的引用并调用其 `Range.delete` 方法）也会导致错误：尽管 `Range` 对象*已被*删除，但父 `RangeAreas` 对象的属性和方法将表现为或尝试表现为如同它仍然存在一样。 例如，如果你的代码调用 `RangeAreas.calculate`，Office 将尝试计算区域，但这会引发错误，因为区域对象并不存在。
+> 不要尝试直接添加或删除 `RangeAreas.areas.items` 数组的成员。 这将导致代码中出现不需要的行为。 例如，可能会将其他 `Range` 对象推送到数组上，但这样做会导致错误，因为 `RangeAreas` 属性和方法将表现为如同新项目并不存在一样。 例如，`areaCount` 属性不包含通过这种方法推送的区域，并且如果 `index` 大于 `areasCount-1`，则 `RangeAreas.getItemAt(index)` 将引发错误。 同样，删除 `RangeAreas.areas.items` 数组中的 `Range` 对象（通过获取对它的引用并调用其 `Range.delete` 方法）也会导致错误：尽管 `Range` 对象 *已被* 删除，但父 `RangeAreas` 对象的属性和方法将表现为或尝试表现为如同它仍然存在一样。 例如，如果你的代码调用 `RangeAreas.calculate`，Office 将尝试计算区域，但这会引发错误，因为区域对象并不存在。
 
 ## <a name="set-properties-on-multiple-ranges"></a>在多个区域设置属性
 
@@ -119,7 +119,7 @@ Excel.run(function (context) {
 
 ## <a name="get-special-cells-from-multiple-ranges"></a>从多个区域获取特殊单元格
 
-`RangeAreas` 对象上的 `getSpecialCells` 和 `getSpecialCellsOrNullObject` 方法与 `Range` 对象上的同名方法工作原理类似。 这些方法从 `RangeAreas.areas` 集合中所有区域返回包含指定特征的单元格。 请参阅 [查找区域内特殊单元格](excel-add-ins-ranges-advanced.md#find-special-cells-within-a-range) 部分了解特殊单元格更多详细信息。
+`RangeAreas` 对象上的 `getSpecialCells` 和 `getSpecialCellsOrNullObject` 方法与 `Range` 对象上的同名方法工作原理类似。 这些方法从 `RangeAreas.areas` 集合中所有区域返回包含指定特征的单元格。 有关特殊单元格的更多详细信息，请参阅 [查找区域内的特殊单元格](excel-add-ins-ranges-special-cells.md)。
 
 调用 `RangeAreas` 对象上的 `getSpecialCells` 或 `getSpecialCellsOrNullObject` 方法时：
 
@@ -128,7 +128,7 @@ Excel.run(function (context) {
 
 ## <a name="read-properties-of-rangeareas"></a>读取 RangeAreas 的属性
 
-读取 `RangeAreas` 的属性值时须小心操作，因为对于 `RangeAreas` 内的不同区域，给定的属性可能具有不同的值。 一般规则是，如果*可以*返回一致的值，则系统会返回该值。 例如，在以下代码中，RGB 粉色代码 (`#FFC0CB`) 和 `true` 将记录到控制台，因为 `RangeAreas` 对象中的两个区域都具有粉色填充，并且都是整列。
+读取 `RangeAreas` 的属性值时须小心操作，因为对于 `RangeAreas` 内的不同区域，给定的属性可能具有不同的值。 一般规则是，如果 *可以* 返回一致的值，则系统会返回该值。 例如，在以下代码中，RGB 粉色代码 (`#FFC0CB`) 和 `true` 将记录到控制台，因为 `RangeAreas` 对象中的两个区域都具有粉色填充，并且都是整列。
 
 ```js
 Excel.run(function (context) {
@@ -180,5 +180,4 @@ Excel.run(function (context) {
 ## <a name="see-also"></a>另请参阅
 
 - [Excel JavaScript API 基本编程概念](../reference/overview/excel-add-ins-reference-overview.md)
-- [使用 Excel JavaScript API 对区域执行操作（基本）](excel-add-ins-ranges.md)
-- [使用 Excel JavaScript API 对区域执行操作（高级）](excel-add-ins-ranges-advanced.md)
+- [使用 Excel JavaScript API 读取或写入较大区域](excel-add-ins-ranges-large.md)
