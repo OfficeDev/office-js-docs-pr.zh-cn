@@ -1,14 +1,14 @@
 ---
 title: Outlook 加载项的隐私、权限和安全性
 description: 了解如何管理 Outlook 加载项中的隐私、权限和安全性。
-ms.date: 10/07/2020
+ms.date: 04/07/2021
 localization_priority: Priority
-ms.openlocfilehash: aa30b4c9aff9a07761d06ae538d56a01f2c30e0d
-ms.sourcegitcommit: 4bfef315102bd5b4333ff9aeaa6537cffb5bca9e
+ms.openlocfilehash: 4df59aaffa01be97ecf2b6349cdc6f6aca91ef07
+ms.sourcegitcommit: 54fef33bfc7d18a35b3159310bbd8b1c8312f845
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "48398414"
+ms.lasthandoff: 04/09/2021
+ms.locfileid: "51650833"
 ---
 # <a name="privacy-permissions-and-security-for-outlook-add-ins"></a>Outlook 外接程序的隐私、权限和安全性
 
@@ -39,7 +39,7 @@ ms.locfileid: "48398414"
 |读/写项目|ReadWriteItem|
 |读/写邮箱|ReadWriteMailbox|
 
-四个级别的权限具有累积性：**读/写邮箱**权限包括**读/写项**权限、**读取项**权限和**受限**权限；**读/写项**权限包括**读取项**权限和**受限**权限；**读取项**权限包括**受限**权限。
+四个级别的权限具有累积性：**读/写邮箱** 权限包括 **读/写项** 权限、**读取项** 权限和 **受限** 权限；**读/写项** 权限包括 **读取项** 权限和 **受限** 权限；**读取项** 权限包括 **受限** 权限。
 
 下图显示了四个级别的权限并说明了每一层提供给最终用户、开发人员和管理员的功能。 有关这些权限的详细信息，请参阅 [最终用户：隐私和性能问题](#end-users-privacy-and-performance-concerns)、[开发人员：权限选择和资源使用限制](#developers-permission-choices-and-resource-usage-limits) 和[了解 Outlook 加载项权限](understanding-outlook-add-in-permissions.md)。
 
@@ -61,7 +61,7 @@ ms.locfileid: "48398414"
 
 ## <a name="optional-connected-experiences"></a>可选连接体验
 
-最终用户和 IT 管理员可在 Office 桌面和移动客户端中关闭[可选的已连接体验](/deployoffice/privacy/optional-connected-experiences)。 对于 Outlook 加载项，禁用**可选连接体验的影响**设置取决于客户端，但通常意味着不允许使用用户安装的加载项或访问 Office 应用商店。 由组织的 IT 管理员通过[集中部署来部署的某些 Microsoft 加载项被视为必要的、关键的或业务关键型的加载项，将仍然可用](../publish/centralized-deployment.md)。
+最终用户和 IT 管理员可在 Office 桌面和移动客户端中关闭[可选的已连接体验](/deployoffice/privacy/optional-connected-experiences)。 对于 Outlook 加载项，禁用 **可选连接体验的影响** 设置取决于客户端，但通常意味着不允许使用用户安装的加载项或访问 Office 应用商店。 通过[集中部署](../publish/centralized-deployment.md)由组织的 IT 管理员部署的加载项仍然可用。
 
 - Windows\*、Mac：“**获取加载项**”按钮不会显示，因此用户无法再管理其加载项或访问 Office 应用商店。
 - Android、iOS：**“获取外接程序”** 对话框仅显示管理员部署的加载项。
@@ -124,7 +124,7 @@ ms.locfileid: "48398414"
   > [!NOTE]
   > 请注意，从清单架构 v1.1 开始就提供 **ReadWriteItem** 权限。
 
-  下面的示例请求**读取项**权限。
+  下面的示例请求 **读取项** 权限。
 
   ```XML
     <Permissions>ReadItem</Permissions>
