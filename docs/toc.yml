@@ -623,6 +623,9 @@ items:
           - name: 调用内置函数
             href: excel/excel-add-ins-worksheet-functions.md
             displayName: Excel
+          - name: 单元格
+            href: excel/excel-add-ins-cells.md
+            displayName: Excel
           - name: 图表
             href: excel/excel-add-ins-charts.md
             displayName: Excel
@@ -632,14 +635,8 @@ items:
           - name: 备注
             href: excel/excel-add-ins-comments.md
             displayName: Excel
-          - name: 范围的条件格式
-            href: excel/excel-add-ins-conditional-formatting.md
-            displayName: Excel
           - name: 数据有效性
             href: excel/excel-add-ins-data-validation.md
-            displayName: Excel
-          - name: 编辑单元格时延迟执行
-            href: excel/excel-add-ins-delay-in-cell-edit.md
             displayName: Excel
           - name: 错误处理
             href: excel/excel-add-ins-error-handling.md
@@ -647,21 +644,71 @@ items:
           - name: 活动
             href: excel/excel-add-ins-events.md
             displayName: Excel
-          - name: 多个区域
-            href: excel/excel-add-ins-multiple-ranges.md
-            displayName: Excel
           - name: 性能优化
             href: excel/performance.md
             displayName: Excel
           - name: 数据透视表
             href: excel/excel-add-ins-pivottables.md
             displayName: Excel
-          - name: 区域（基本）
-            href: excel/excel-add-ins-ranges.md
-            displayName: Excel
-          - name: 区域（高级）
-            href: excel/excel-add-ins-ranges-advanced.md
-            displayName: Excel
+          - name: 区域与单元格
+            items:
+              - name: 获取区域
+                href: excel/excel-add-ins-ranges-get.md
+                displayName: Excel
+              - name: 插入多个单元格
+                href: excel/excel-add-ins-ranges-insert.md
+                displayName: Excel
+              - name: 清除或删除单元格区域
+                href: excel/excel-add-ins-ranges-clear-delete.md
+                displayName: Excel
+              - name: 设置或获取所选区域
+                href: excel/excel-add-ins-ranges-set-get.md
+                displayName: Excel
+              - name: 设置或获取值、文本或公式
+                href: excel/excel-add-ins-ranges-set-get-values.md
+                displayName: Excel
+              - name: 设置区域格式
+                href: excel/excel-add-ins-ranges-set-format.md
+                displayName: Excel
+              - name: 范围的条件格式
+                href: excel/excel-add-ins-conditional-formatting.md
+                displayName: Excel
+              - name: 读取或写入无限区域
+                href: excel/excel-add-ins-ranges-unbounded.md
+                displayName: Excel
+              - name: 读取或写入较大区域
+                href: excel/excel-add-ins-ranges-large.md
+                displayName: Excel
+              - name: 使用字符串匹配查找单元格
+                href: excel/excel-add-ins-ranges-string-match.md
+                displayName: Excel
+              - name: 使用 Moment-MSDate 插件处理日期
+                href: excel/excel-add-ins-ranges-dates.md
+                displayName: Excel
+              - name: 查找区域内的特殊单元格
+                href: excel/excel-add-ins-ranges-special-cells.md
+                displayName: Excel
+              - name: 剪切、复制和粘贴
+                href: excel/excel-add-ins-ranges-cut-copy-paste.md
+                displayName: Excel
+              - name: 删除重复项
+                href: excel/excel-add-ins-ranges-remove-duplicates.md
+                displayName: Excel
+              - name: 对分级显示的数据进行分组
+                href: excel/excel-add-ins-ranges-group.md
+                displayName: Excel
+              - name: 处理动态数组和洒水
+                href: excel/excel-add-ins-ranges-dynamic-arrays.md
+                displayName: Excel
+              - name: 获取公式引用单元格
+                href: excel/excel-add-ins-ranges-precedents.md
+                displayName: Excel
+              - name: 编辑单元格时延迟执行
+                href: excel/excel-add-ins-delay-in-cell-edit.md
+                displayName: Excel
+              - name: 使用多个区域
+                href: excel/excel-add-ins-multiple-ranges.md
+                displayName: Excel
           - name: 形状
             href: excel/excel-add-ins-shapes.md
             displayName: Excel
