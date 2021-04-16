@@ -1,14 +1,14 @@
 ---
 title: Office 加载项其他资源
 description: 有关 Office 加载项主题的有用资源
-ms.date: 03/29/2021
+ms.date: 04/14/2021
 localization_priority: Normal
-ms.openlocfilehash: 97059d27dc95e3d31a6ef8c72b59434c55fcf7ce
-ms.sourcegitcommit: a0624ef0d847fdbd6d83f27d1f9c69daf636ac38
+ms.openlocfilehash: de774386acca2825734ac50096b83d562df0263b
+ms.sourcegitcommit: 094caf086c2696e78fbdfdc6030cb0c89d32b585
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "51435317"
+ms.lasthandoff: 04/16/2021
+ms.locfileid: "51862321"
 ---
 # <a name="office-add-ins-additional-resources"></a>Office 加载项其他资源
 
@@ -18,7 +18,7 @@ ms.locfileid: "51435317"
 |-----------------|------------|
 |**Office JavaScript API 问题** | 使用 `office-js` 标记将 API 问题发布到 [Stack Overflow](https://stackoverflow.com/questions/tagged/office-js)，如果你的问题与 Outlook 加载项有关，则还需要包含 `outlook-web-addins` 标记。请注意，Stack Overflow 具有一些准则，例如要求提供描述性标题、完整简明的问题陈述以及用于重现问题的充足详细信息。 功能请求或过于宽泛的问题属于离题；新用户应访问 [Stack Overflow 帮助中心](https://stackoverflow.com/help/how-to-ask)，了解详细信息。|
 |**Office JavaScript API 问题**| 如果你遇到 Office JavaScript API 问题（错误），请将问题提交到 <a href="https://github.com/officedev/office-js/issues" target="_blank">OfficeDev/office-js</a> GitHub 存储库。|
-|**Office JavaScript API 功能请求**| 若要提交 Office JavaScript API 的功能请求，请使用[Q-&A site 上的 Microsoft 365。](/answers/products/m365)|
+|**Office JavaScript API 功能请求**| 若要提交 Office JavaScript API 的功能请求，请将你的想法张贴到 [Microsoft 365 开发人员平台技术社区](https://techcommunity.microsoft.com/t5/microsoft-365-developer-platform/idb-p/Microsoft365DeveloperPlatform)。|
 |**文档问题**| 如果遇到文档 (错误) ，请将问题提交到 <a href="https://github.com/officedev/office-js-docs-pr/issues" target="_blank">OfficeDev/office-js-docs-pr</a> GitHub 存储库。|
 |**文档更新**| 若要自己更改文档，请选择文章上的"编辑"链接，然后提交拉取请求到<a href="https://github.com/officedev/office-js-docs-pr" target="_blank">OfficeDev/office-js-docs-pr</a> GitHub 存储库。|
 |**Script Lab**| 如果你想要浏览 Office JavaScript API 或试用预览 API，可以在 Excel、Outlook、PowerPoint 和 Word 中使用 Script Lab。 若要了解详细信息，请参阅[使用 Script Lab 探索 Office JavaScript API](../overview/explore-with-script-lab.md)。 |

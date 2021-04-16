@@ -25,7 +25,7 @@
 
 - 若要询问有关使用 Office.js API 的问题，请向 Stack Overflow 发布问题，并标记"office-js"标记 http://stackoverflow.com/questions/tagged/office-js) (。
 - 若要报告 Office.js API 或平台的问题，请创建 OfficeDev/office-js 存储库 (中的问题，产品团队监视成员会监视客户报告 https://github.com/OfficeDev/office-js) 的问题。
-- 若要提交 Office.js API 或平台的功能请求，在问题&A 上的 [Microsoft 365](https://docs.microsoft.com/answers/products/m365)下发布你的想法，或者如果功能请求已存在，请为它添加投票。
+- 若要提交适用于 Office.js API 或平台的功能请求，请向 [Microsoft 365](https://techcommunity.microsoft.com/t5/microsoft-365-developer-platform/idb-p/Microsoft365DeveloperPlatform)开发人员平台技术社区发布你的想法，或者如果功能请求已存在，请为它添加投票。
 
 ## <a name="join-the-microsoft-365-developer-program"></a>加入 Microsoft 365 开发人员计划
 

@@ -1,18 +1,18 @@
 ---
-ms.date: 07/10/2020
+ms.date: 04/09/2021
 description: 了解如何调试不使用任务窗格的 Excel 自定义函数。
 title: 无 UI 自定义函数调试
 localization_priority: Normal
-ms.openlocfilehash: 00065a465a22f83891dfb207943102b079e96a0f
-ms.sourcegitcommit: 7482ab6bc258d98acb9ba9b35c7dd3b5cc5bed21
+ms.openlocfilehash: 5b27ca44dbb891c2e1f4ae86175595dc902b74ba
+ms.sourcegitcommit: 094caf086c2696e78fbdfdc6030cb0c89d32b585
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/24/2021
-ms.locfileid: "51178074"
+ms.lasthandoff: 04/16/2021
+ms.locfileid: "51862335"
 ---
 # <a name="ui-less-custom-functions-debugging"></a>无 UI 自定义函数调试
 
-调试不使用任务窗格或其他用户界面元素的自定义函数 (无 UI 自定义函数) 可通过多种方法完成，具体取决于你使用的平台。
+本文仅讨论不使用任务窗格或其他用户界面元素的自定义函数的调试 (无 UI 自定义函数) 。 
 
 [!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
@@ -33,7 +33,9 @@ ms.locfileid: "51178074"
 
 ## <a name="requirements"></a>要求
 
-在开始调试之前，应该使用 Office 加载项 [的 Yeoman](https://github.com/OfficeDev/generator-office) 生成器创建自定义函数项目。 有关如何创建自定义函数项目的指南，请参阅 [自定义函数教程](../tutorials/excel-tutorial-create-custom-functions.md)。
+此调试过程 **仅适用于不使用** 任务窗格或其他 UI 元素的无 UI 自定义函数。 可以按照在 [Excel](../tutorials/excel-tutorial-create-custom-functions.md) 中创建自定义函数教程中的步骤创建无 UI 自定义函数，然后删除由适用于 Office 外接程序的 [Yeoman](https://www.npmjs.com/package/generator-office)生成器安装的所有任务窗格和 UI 元素。
+
+请注意，此调试过程与使用共享运行时 的自定义函数 [项目不兼容](../develop/configure-your-add-in-to-use-a-shared-runtime.md)。
 
 ## <a name="use-the-vs-code-debugger-for-excel-desktop"></a>使用适用于 Excel Desktop 的 VS 代码调试程序
 
