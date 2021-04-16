@@ -37,7 +37,7 @@ ms.locfileid: "51652188"
 
 1. 启动 Visual Studio Code 并打开你生成的 Excel 或 PowerPoint 加载项项目。
 1. 打开 **manifest.xml** 文件。
-1. 如果你生成 Excel 加载项，请更新“要求”部分，以使用[共享运行时](../reference/requirement-sets/shared-runtime-requirement-sets.md)代替自定义函数运行时。 XML 应该如下所示。
+1. 如果生成 Excel 加载项，请更新“要求”部分，以使用[共享运行时](../reference/requirement-sets/shared-runtime-requirement-sets.md)，而不是自定义函数运行时。 XML 应该如下所示。
 
     ```xml
     <Requirements>

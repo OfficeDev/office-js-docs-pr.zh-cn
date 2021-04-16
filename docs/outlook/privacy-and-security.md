@@ -61,9 +61,9 @@ ms.locfileid: "51650833"
 
 ## <a name="optional-connected-experiences"></a>可选连接体验
 
-最终用户和 IT 管理员可在 Office 桌面和移动客户端中关闭[可选的已连接体验](/deployoffice/privacy/optional-connected-experiences)。 对于 Outlook 加载项，禁用 **可选连接体验的影响** 设置取决于客户端，但通常意味着不允许使用用户安装的加载项或访问 Office 应用商店。 通过[集中部署](../publish/centralized-deployment.md)由组织的 IT 管理员部署的加载项仍然可用。
+最终用户和 IT 管理员可在 Office 桌面和移动客户端中关闭[可选的已连接体验](/deployoffice/privacy/optional-connected-experiences)。 对于 Outlook 加载项，禁用 **可选的连接体验** 设置的影响由客户端决定，但通常这意味着将不允许使用用户安装的加载项或访问 Office 应用商店。 组织的 IT 管理员通过[集中部署](../publish/centralized-deployment.md)而部署的加载项仍然可用。
 
-- Windows\*、Mac：“**获取加载项**”按钮不会显示，因此用户无法再管理其加载项或访问 Office 应用商店。
+- Windows\*、Mac：**获取加载项** 按钮不会显示，因此用户不能再管理其加载项或访问 Office 应用商店。
 - Android、iOS：**“获取外接程序”** 对话框仅显示管理员部署的加载项。
 - 浏览器：加载项的可用性和对应用商店的访问不受影响，因此用户可以继续[管理其加载项](https://support.microsoft.com/office/8f2ce816-5df4-44a5-958c-f7f9d6dabdce)（包括由管理员部署的加载项）。
 

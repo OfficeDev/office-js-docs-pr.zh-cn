@@ -1,2 +1,2 @@
 > [!NOTE]
-> The Excel JavaScript API 没有“Cell”对象或类。 相反，Excel JavaScript API 将所有 Excel 单元格定义为 `Range` 对象。 Excel UI 中的单个单元格转换为 Excel JavaScript API 中具有一个单元格的 `Range` 对象。 单个 `Range` 对象也可以包含多个连续的单元格。 若要了解详细信息，请参阅[使用 Excel JavaScript API 处理单元格](/office/dev/add-ins/excel/excel-add-ins-cells)。
+> The Excel JavaScript API 没有“Cell”对象或类。 相反，Excel JavaScript API 将所有 Excel 单元格定义为 `Range` 对象。 Excel UI 中的单个单元格转换为 Excel JavaScript API 中包含一个单元格的 `Range` 对象。 单个 `Range` 对象也可以包含多个连续的单元格。 若要了解详细信息，请参阅[使用 Excel JavaScript API 处理单元格](/office/dev/add-ins/excel/excel-add-ins-cells)。

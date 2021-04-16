@@ -1,6 +1,6 @@
 ---
-title: Excel 加载项中的 Word JavaScript 对象模型
-description: 了解 Excel JavaScript API 中的关键对象类型，以及如何使用它们为 Excel 构建外接程序。
+title: Excel 加载项中的 Excel JavaScript 对象模型
+description: 了解 Excel JavaScript API 中的关键对象类型，以及如何使用它们为 Excel 构建加载项。
 ms.date: 04/05/2021
 ms.prod: excel
 localization_priority: Priority
@@ -11,7 +11,7 @@ ms.contentlocale: zh-CN
 ms.lasthandoff: 04/09/2021
 ms.locfileid: "51650898"
 ---
-# <a name="excel-javascript-object-model-in-office-add-ins"></a>Excel 加载项中的 Word JavaScript 对象模型
+# <a name="excel-javascript-object-model-in-office-add-ins"></a>Excel 加载项中的 Excel JavaScript 对象模型
 
 本文介绍了如何使用 [Excel JavaScript API](../reference/overview/excel-add-ins-reference-overview.md) 生成 Excel 2016 或更高版本的加载项。 它引入了一些核心概念，这些概念是使用 API 的基础，并为执行特定任务提供指导，如读取或写入较大区域、更新区域内的所有单元格等等。
 
@@ -40,7 +40,7 @@ Excel 加载项通过使用适 Office JavaScript API 与 Excel 中的对象进�
 若要了解 Excel API，则必须了解工作簿的各个组件之间如何相互关联。
 
 * 一个 **Workbook** 包含一个或多个 **Worksheet**。
-* **Worksheet** 包含单个工作表中存在的那些数据对象的集合，并通过 **Range** 对象访问单元格。
+* **Worksheet** 包含出现在单个工作表中的那些数据对象的集合，并通过 **Range** 对象访问单元格。
 * **Range** 代表一组连续的单元格。
 * **Range** 用于创建和放置 **Table**、**Chart** 和 **Shape** 以及其他数据可视化或组织对象。
 * **Workbook** 包含整个 **Workbook** 的某些数据对象（例如，**Table**）的集合。

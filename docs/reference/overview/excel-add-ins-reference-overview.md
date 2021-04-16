@@ -21,7 +21,7 @@ Excel 加载项通过使用 Office JavaScript API 与 Excel 中的对象进行�
 
 文档的本部分着重介绍了 Excel JavaScript API，它可用于开发面向 Excel 网页版或 Excel 2016 或更高版本的加载项中的大部分功能。 有关通用 API 的信息，请参阅[常见 JavaScript API 对象模型](../../develop/office-javascript-api-object-model.md)。
 
-## <a name="learn-object-model-concepts"></a>学习对象模型概念
+## <a name="learn-object-model-concepts"></a>了解对象模型概念
 
 有关重要对象模型概念的信息，请参见 [Office 加载项中的 Excel JavaScript 对象模型](../../excel/excel-add-ins-core-concepts.md)。
 
@@ -29,7 +29,7 @@ Excel 加载项通过使用 Office JavaScript API 与 Excel 中的对象进行�
 
 ## <a name="learn-api-capabilities"></a>了解 API 功能
 
-每个主要的 Excel API 功能都有一篇或多篇文章，探讨该功能的作用以及相关的对象模型。
+针对每个主要的 Excel API 功能都有一篇或多篇文章，用于探讨该功能的作用以及相关的对象模型。
 
 * [图表](../../excel/excel-add-ins-charts.md)
 * [备注](../../excel/excel-add-ins-comments.md)
@@ -38,8 +38,8 @@ Excel 加载项通过使用 Office JavaScript API 与 Excel 中的对象进行�
 * [数据验证](../../excel/excel-add-ins-data-validation.md)
 * [事件](../../excel/excel-add-ins-events.md)
 * [数据透视表](../../excel/excel-add-ins-pivottables.md)
-* [范围](../../excel/excel-add-ins-ranges-get.md)和[单元格](../../excel/excel-add-ins-cells.md)
-* [RangeAreas（多个范围）](../../excel/excel-add-ins-multiple-ranges.md)
+* [区域](../../excel/excel-add-ins-ranges-get.md)与[单元格](../../excel/excel-add-ins-cells.md)
+* [RangeAreas（多个区域）](../../excel/excel-add-ins-multiple-ranges.md)
 * [性状](../../excel/excel-add-ins-shapes.md)
 * [表格](../../excel/excel-add-ins-tables.md)
 * [工作簿和应用程序级 API](../../excel/excel-add-ins-workbooks.md)
