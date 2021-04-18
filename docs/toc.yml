@@ -1147,6 +1147,9 @@ items:
           - name: 通过加载项获取整个文档
             href: powerpoint/get-the-whole-document-from-an-add-in-for-powerpoint.md
             displayName: PowerPoint
+          - name: 为演示文稿、幻灯片和形状使用自定义标记
+            href: powerpoint/tagging-presentations-slides-shapes.md
+            displayName: PowerPoint
           - name: 在 PowerPoint 加载项中使用文档主题
             href: powerpoint/use-document-themes-in-your-powerpoint-add-ins.md
             displayName: PowerPoint
