@@ -1,15 +1,15 @@
 ---
 title: Excel JavaScript 预览 API
 description: 有关即将推出的 Excel JavaScript API 的详细信息。
-ms.date: 04/02/2021
+ms.date: 04/16/2021
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: e4e0066830d10ad3b466d33b5a59d31efe4b9777
-ms.sourcegitcommit: 0bff0411d8cfefd4bb00c189643358e6fb1df95e
+ms.openlocfilehash: 004d73bfd6faa74acd8abe2592684e21f13058ad
+ms.sourcegitcommit: da8ad214406f2e1cd80982af8a13090e76187dbd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/07/2021
-ms.locfileid: "51604657"
+ms.lasthandoff: 04/21/2021
+ms.locfileid: "51917105"
 ---
 # <a name="excel-javascript-preview-apis"></a>Excel JavaScript 预览 API
 
@@ -88,7 +88,11 @@ ms.locfileid: "51604657"
 ||[clear()](/javascript/api/excel/excel.identitycollection#clear--)|从集合中删除所有的用户标识。|
 ||[getCount()](/javascript/api/excel/excel.identitycollection#getcount--)|获取集合中项的数目。|
 ||[getItemAt(index: number)](/javascript/api/excel/excel.identitycollection#getitemat-index-)|使用文档在集合中的索引获取文档用户标识。|
+||[items](/javascript/api/excel/excel.identitycollection#items)|获取此集合中已加载的子项。|
 ||[删除 (：标识) ](/javascript/api/excel/excel.identitycollection#remove-assignee-)|从集合中删除用户标识。|
+|[IdentityEntity](/javascript/api/excel/excel.identityentity)|[displayName](/javascript/api/excel/excel.identityentity#displayname)|表示用户的显示名称。|
+||[email](/javascript/api/excel/excel.identityentity#email)|表示用户的电子邮件地址。|
+||[id](/javascript/api/excel/excel.identityentity#id)|表示用户的唯一 ID。|
 |[InsertWorksheetOptions](/javascript/api/excel/excel.insertworksheetoptions)|[positionType](/javascript/api/excel/excel.insertworksheetoptions#positiontype)|新工作表的当前工作簿中的插入位置。|
 ||[relativeTo](/javascript/api/excel/excel.insertworksheetoptions#relativeto)|引用参数的当前工作簿中的 `WorksheetPositionType` 工作表。|
 ||[sheetNamesToInsert](/javascript/api/excel/excel.insertworksheetoptions#sheetnamestoinsert)|要插入的单个工作表的名称。|
@@ -123,7 +127,7 @@ ms.locfileid: "51604657"
 ||[showFieldHeaders](/javascript/api/excel/excel.pivotlayout#showfieldheaders)|指定数据透视表是否显示字段标题 (字段标题和筛选器下拉列表) 。|
 |[PivotTable](/javascript/api/excel/excel.pivottable)|[refreshOnOpen](/javascript/api/excel/excel.pivottable#refreshonopen)|指定工作簿打开时数据透视表是否刷新。|
 |[PivotTableScopedCollection](/javascript/api/excel/excel.pivottablescopedcollection)|[getFirstOrNullObject () ](/javascript/api/excel/excel.pivottablescopedcollection#getfirstornullobject--)|获取集合中的第一个数据透视表。|
-|[Range](/javascript/api/excel/excel.range)|[getDependents () ](/javascript/api/excel/excel.range#getdependents--)|返回一个对象，该对象表示包含同一工作表或多个工作表中单元格的所有 `WorkbookRangeAreas` 从属单元格的范围。|
+|[区域](/javascript/api/excel/excel.range)|[getDependents () ](/javascript/api/excel/excel.range#getdependents--)|返回一个对象，该对象表示包含同一工作表或多个工作表中单元格的所有 `WorkbookRangeAreas` 从属单元格的范围。|
 ||[getDirectDependents () ](/javascript/api/excel/excel.range#getdirectdependents--)|返回一个对象，该对象表示包含同一工作表或多个工作表中单元格的所有直接从属 `WorkbookRangeAreas` 单元格的范围。|
 ||[getMergedAreasOrNullObject () ](/javascript/api/excel/excel.range#getmergedareasornullobject--)|返回一个 RangeAreas 对象，该对象代表此范围中的合并区域。|
 ||[getPrecedents () ](/javascript/api/excel/excel.range#getprecedents--)|返回一个对象，该对象代表包含同一工作表或多个工作表中单元格的所有引用 `WorkbookRangeAreas` 单元格的范围。|
@@ -162,6 +166,7 @@ ms.locfileid: "51604657"
 ||[onFormulaChanged](/javascript/api/excel/excel.worksheet#onformulachanged)|在此工作表中更改一个或多个公式时发生。|
 ||[tabId](/javascript/api/excel/excel.worksheet#tabid)|返回一个值，该值代表可通过 Open Office XML 读取的此工作表。|
 ||[任务](/javascript/api/excel/excel.worksheet#tasks)|返回工作表中的任务集合。|
+|[WorksheetChangedEventArgs](/javascript/api/excel/excel.worksheetchangedeventargs)|[triggerSource](/javascript/api/excel/excel.worksheetchangedeventargs#triggersource)|表示事件的触发源。|
 |[WorksheetCollection](/javascript/api/excel/excel.worksheetcollection)|[addFromBase64(base64File: string, sheetNamesToInsert?: string[], positionType?: Excel.WorksheetPositionType, relativeTo?: Worksheet \| string)](/javascript/api/excel/excel.worksheetcollection#addfrombase64-base64file--sheetnamestoinsert--positiontype--relativeto-)|将工作簿的指定工作表插入当前工作簿。|
 ||[onFiltered](/javascript/api/excel/excel.worksheetcollection#onfiltered)|在工作簿中应用任何工作表的筛选器时发生。|
 ||[onFormulaChanged](/javascript/api/excel/excel.worksheetcollection#onformulachanged)|在此集合的任何工作表中更改一个或多个公式时发生。|

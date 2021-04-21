@@ -3,12 +3,12 @@ title: 开发 Office 外接程序以使用第三方 Cookie 时与 ITP 一起使�
 description: 如何使用第三方 Cookie 时使用 ITP 和 Office 外接程序
 ms.date: 03/12/2021
 localization_priority: Normal
-ms.openlocfilehash: e66fc25e1dc0f3a93fdf38c1d0c099d3a68459d3
-ms.sourcegitcommit: 7482ab6bc258d98acb9ba9b35c7dd3b5cc5bed21
+ms.openlocfilehash: 468147e923bb27638e45879104db75b99d014986
+ms.sourcegitcommit: da8ad214406f2e1cd80982af8a13090e76187dbd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/24/2021
-ms.locfileid: "51178039"
+ms.lasthandoff: 04/21/2021
+ms.locfileid: "51917091"
 ---
 # <a name="develop-your-office-add-in-to-work-with-itp-when-using-third-party-cookies"></a>开发 Office 外接程序以使用第三方 Cookie 时与 ITP 一起使用
 
@@ -54,9 +54,9 @@ if (document.hasStorageAccess) {
 
 第三方 Cookie 是在 iframe 中加载的 Cookie，其中域不同于顶级框架。 ITP 可能会影响复杂的身份验证方案，其中弹出对话框用于输入凭据，然后外接程序 iframe 需要 Cookie 访问才能完成身份验证流。 ITP 还可能会影响静默身份验证方案，其中您之前曾使用弹出对话框进行身份验证，但外接程序的后续使用会尝试通过隐藏的 iframe 进行身份验证。
 
-在 Mac 上开发 Office 外接程序时，对第三方 Cookie 的访问将被 MacOS Big Sur SDK 阻止。 这是因为默认情况下，在 Safari 浏览器中启用 WebKit ITP，并且 WKWebview 会阻止所有第三方 Cookie。 Mac 版本 16.44 或更高版本上的 Office 与 MacOS 大 Sur SDK 集成。
+在 Mac 上开发 Office 外接程序时，对第三方 Cookie 的访问将被 MacOS Big Sur SDK 阻止。 这是因为默认情况下，在 Safari 浏览器中启用 WKWebView ITP，并且 WKWebView 会阻止所有第三方 Cookie。 Mac 版本 16.44 或更高版本上的 Office 与 MacOS 大 Sur SDK 集成。
 
-在 Safari 浏览器中，最终用户可以切换首选项隐私下的"阻止 **跨** 网站跟踪"复选框  >  以关闭 ITP。 但是，无法为嵌入的 WebKit2 控件关闭 ITP。
+在 Safari 浏览器中，最终用户可以切换首选项隐私下的"阻止 **跨** 网站跟踪"复选框  >  以关闭 ITP。 但是，无法为嵌入的 WKWebView 控件关闭 ITP。
 
 ## <a name="see-also"></a>另请参阅
 
