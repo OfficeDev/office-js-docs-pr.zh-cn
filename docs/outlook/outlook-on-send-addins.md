@@ -1,14 +1,14 @@
 ---
 title: Outlook 加载项的 Onsend 功能
 description: 提供了一种处理项目或阻止用户进行特定操作的方法，并允许加载项在发送时设置某些属性。
-ms.date: 03/17/2021
+ms.date: 04/20/2021
 localization_priority: Normal
-ms.openlocfilehash: 70e255601fd36a2f9101d56161846616691f5100
-ms.sourcegitcommit: 7482ab6bc258d98acb9ba9b35c7dd3b5cc5bed21
+ms.openlocfilehash: 126323527d74553aa7fd7e0c8cf1e5e5d89471ff
+ms.sourcegitcommit: 691fa338029c9cbd9a7194d163f390c3321a0cd8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/24/2021
-ms.locfileid: "51178053"
+ms.lasthandoff: 04/23/2021
+ms.locfileid: "51959178"
 ---
 # <a name="on-send-feature-for-outlook-add-ins"></a>Outlook 加载项的 Onsend 功能
 
@@ -23,12 +23,13 @@ on-send 功能是由事件类型 `ItemSend` 触发的，无 UI。
 
 ## <a name="supported-clients-and-platforms"></a>支持的客户端和平台
 
-下表显示了 Ons onss 功能支持的客户端-服务器组合。 不支持排除的组合。
+下表显示了 Onss ons ons 功能支持的客户端-服务器组合，包括所需的最低累积更新（如果适用）。 不支持排除的组合。
 
-| Client | Exchange Online | Exchange 2016 内部部署<br> (累积更新 6 或更高版本)  | 本地 Exchange 2019<br> (累积更新 1 或更高版本)  |
+| 客户端 | Exchange Online | Exchange 2016 内部部署<br> (累积更新 6 或更高版本)  | 本地 Exchange 2019<br> (累积更新 1 或更高版本)  |
 |---|:---:|:---:|:---:|
 |Windows：<br>版本 1910 (内部版本 12130.20272) 或更高版本|是|是|是|
-|Mac：<br>内部版本 16.30 或更高版本|是|否|否|
+|Mac：<br>内部版本 16.30 到 16.46|是|否|否|
+|Mac：<br>内部版本 16.47 或更高版本|是|是|是|
 |Web 浏览器：<br>新式 Outlook UI|是|不适用|不适用|
 |Web 浏览器：<br>经典 Outlook UI|不适用|是|是|
 
