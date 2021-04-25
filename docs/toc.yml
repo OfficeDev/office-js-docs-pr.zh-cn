@@ -1257,6 +1257,8 @@ items:
         href: develop/authentication-pnp.md
       - name: 在 Office 解决方案中处理高 DPI 和 DPI 缩放
         href: /office/client-developer/ddpi/handle-high-dpi-and-dpi-scaling-in-your-office-solution
+      - name: Office 加载项社区通话
+        href: overview/office-add-ins-community-call.md
   - name: VSTO 和 COM 转换资源
     items:
       - name: VSTO 加载项开发人员指南
