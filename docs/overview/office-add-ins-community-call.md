@@ -3,12 +3,12 @@ title: Microsoft Office外接程序社区通话
 description: 每月Microsoft Office外接程序社区通话日程安排和资源
 ms.date: 04/20/2021
 localization_priority: Normal
-ms.openlocfilehash: bad2ad176d0a843f5d03ec58b3db365a02ecbbe1
-ms.sourcegitcommit: 691fa338029c9cbd9a7194d163f390c3321a0cd8
+ms.openlocfilehash: fbd2acdd7b6153829473dd0ea29290d02e6f8c84
+ms.sourcegitcommit: 78fb861afe7d7c3ee7fe3186150b3fed20994222
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2021
-ms.locfileid: "51959292"
+ms.lasthandoff: 04/26/2021
+ms.locfileid: "52024316"
 ---
 # <a name="microsoft-office-add-ins-community-call"></a>Microsoft Office外接程序社区通话
 
@@ -23,7 +23,7 @@ The Microsoft Office Add-ins community call is a monthly call where you can lear
 - [Office 外接程序社区通话 - 2020 年 11 月 11 日](https://developer.microsoft.com/office/blogs/office-add-ins-community-call-november-11-2020/)
 - [Office 外接程序社区通话 - 2020 年 10 月 14 日](https://developer.microsoft.com/office/blogs/office-add-ins-community-call-october-14-2020%E2%80%AF/)
 - [Office 外接程序社区通话 - 2020 年 9 月 9 日](https://developer.microsoft.com/office/blogs/office-add-ins-community-call-september-9-2020/)
-- [Office 外接程序社区通话 - 2020 年 8 月 12 日](https://developer.microsoft.com/office/blogs/office-add-ins-community-call-august-12-2020%e2%80%af)
+- [Office 外接程序社区通话 - 2020 年 8 月 12 日](https://developer.microsoft.com/office/blogs/office-add-ins-community-call-august-12-2020%E2%80%AF/)
 - [Office 外接程序社区通话 - 2020 年 7 月 8 日](https://developer.microsoft.com/office/blogs/office-add-ins-community-call-july-8-2020/)
 - [Office 外接程序社区通话 - 2020 年 6 月 10 日](https://developer.microsoft.com/office/blogs/office-add-ins-community-call-june-10-2020/)
 

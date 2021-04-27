@@ -1,14 +1,14 @@
 ---
 title: 使用 Excel JavaScript API 处理事件
-description: Excel JavaScript 对象的事件列表。 其中包括有关使用事件处理程序和关联模式的信息。
-ms.date: 09/15/2020
+description: Excel JavaScript 对象的事件列表。 这包括有关使用事件处理程序和相关模式的信息。
+ms.date: 04/23/2021
 localization_priority: Normal
-ms.openlocfilehash: 12e4f0a7ebb9c50bf6874106ef711ca3207cae46
-ms.sourcegitcommit: 2479812e677d1a7337765fe8f1c8345061d4091a
+ms.openlocfilehash: 7c4a00736ef7a39e6d34153b113f1f274a2d3708
+ms.sourcegitcommit: 78fb861afe7d7c3ee7fe3186150b3fed20994222
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/19/2020
-ms.locfileid: "48135212"
+ms.lasthandoff: 04/26/2021
+ms.locfileid: "52024309"
 ---
 # <a name="work-with-events-using-the-excel-javascript-api"></a>使用 Excel JavaScript API 处理事件
 
@@ -21,17 +21,17 @@ ms.locfileid: "48135212"
 | 事件 | 说明 | 支持的对象 |
 |:---------------|:-------------|:-----------|
 | `onActivated` | 激活对象时发生。 | [**Chart**](/javascript/api/excel/excel.chart#onactivated)、[**ChartCollection**](/javascript/api/excel/excel.chartcollection#onactivated)、[**Shape**](/javascript/api/excel/excel.shape#onactivated)、[**Worksheet**](/javascript/api/excel/excel.worksheet#onactivated)、[**WorksheetCollection**](/javascript/api/excel/excel.worksheetcollection#onactivated) |
-| `onAdded` | 当向集合中添加对象时发生。 | [**ChartCollection**](/javascript/api/excel/excel.chartcollection#onadded)、 [**CommentCollection**](/javascript/api/excel/excel.commentcollection#onadded)、 [**TableCollection**](/javascript/api/excel/excel.tablecollection#onadded)、 [**WorksheetCollection**](/javascript/api/excel/excel.worksheetcollection#onadded) |
+| `onAdded` | 当向集合中添加对象时发生。 | [](/javascript/api/excel/excel.chartcollection#onadded)ChartCollection、CommentCollection、TableCollection、WorksheetCollection [](/javascript/api/excel/excel.commentcollection#onadded) [](/javascript/api/excel/excel.tablecollection#onadded) [](/javascript/api/excel/excel.worksheetcollection#onadded) |
 | `onAutoSaveSettingChanged` | 在工作簿上更改 `autoSave` 设置时发生。 | [**Workbook**](/javascript/api/excel/excel.workbook#onautosavesettingchanged) |
 | `onCalculated` | 工作表完成计算（或集合的所有工作表都已完成）时发生。 | [**Worksheet**](/javascript/api/excel/excel.worksheet#oncalculated)、[**WorksheetCollection**](/javascript/api/excel/excel.worksheetcollection#oncalculated) |
-| `onChanged` | 当单个单元格的数据或批注的数据发生更改时发生。 | [**CommentCollection**](/javascript/api/excel/excel.commentcollection#onchanged)、 [**Table**](/javascript/api/excel/excel.table#onchanged)、 [**TableCollection**](/javascript/api/excel/excel.tablecollection#onchanged)、 [**工作表**](/javascript/api/excel/excel.worksheet#onchanged)、 [**WorksheetCollection**](/javascript/api/excel/excel.worksheetcollection#onchanged) |
+| `onChanged` | 在单个单元格或批注的数据发生更改时发生。 | [](/javascript/api/excel/excel.worksheet#onchanged)CommentCollection、Table、TableCollection、Worksheet、WorksheetCollection [](/javascript/api/excel/excel.commentcollection#onchanged) [](/javascript/api/excel/excel.table#onchanged) [](/javascript/api/excel/excel.tablecollection#onchanged) [](/javascript/api/excel/excel.worksheetcollection#onchanged) |
 | `onColumnSorted` | 在已对一个或多个列进行排序时发生。 这是从左到右排序操作的结果。 | [**Worksheet**](/javascript/api/excel/excel.worksheet#oncolumnsorted)、[**WorksheetCollection**](/javascript/api/excel/excel.worksheetcollection#oncolumnsorted) |
 | `onDataChanged` | 当绑定内的数据或格式变化时发生。 | [**Binding**](/javascript/api/excel/excel.binding#ondatachanged) |
 | `onDeactivated` | 停用对象时发生。 | [**Chart**](/javascript/api/excel/excel.chart#ondeactivated)、[**ChartCollection**](/javascript/api/excel/excel.chartcollection#ondeactivated)、[**Shape**](/javascript/api/excel/excel.shape#ondeactivated)、[**Worksheet**](/javascript/api/excel/excel.worksheet#ondeactivated)、[**WorksheetCollection**](/javascript/api/excel/excel.worksheetcollection#ondeactivated) |
-| `onDeleted` | 当从集合中删除对象时发生。 | [**ChartCollection**](/javascript/api/excel/excel.chartcollection#ondeleted)、 [**CommentCollection**](/javascript/api/excel/excel.commentcollection#ondeleted)、 [**TableCollection**](/javascript/api/excel/excel.tablecollection#ondeleted)、 [**WorksheetCollection**](/javascript/api/excel/excel.worksheetcollection#ondeleted) |
+| `onDeleted` | 当从集合中删除对象时发生。 | [](/javascript/api/excel/excel.chartcollection#ondeleted)ChartCollection、CommentCollection、TableCollection、WorksheetCollection [](/javascript/api/excel/excel.commentcollection#ondeleted) [](/javascript/api/excel/excel.tablecollection#ondeleted) [](/javascript/api/excel/excel.worksheetcollection#ondeleted) |
 | `onFormatChanged` | 在工作表上的格式变化时发生。 | [**Worksheet**](/javascript/api/excel/excel.worksheet#onformatchanged)、[**WorksheetCollection**](/javascript/api/excel/excel.worksheetcollection#onformatchanged) |
 | `onRowSorted` | 在已对一个或多个行进行排序时发生。 这是从上到下排序操作的结果。 | [**Worksheet**](/javascript/api/excel/excel.worksheet#onrowsorted)、[**WorksheetCollection**](/javascript/api/excel/excel.worksheetcollection#onrowsorted) |
-| `onSelectionChanged` | 当活动单元格或选定范围更改时发生。 | [**Binding**](/javascript/api/excel/excel.binding#onselectionchanged)、 [**Table**](/javascript/api/excel/excel.table#onselectionchanged)、 [**工作簿**](/javascript/api/excel/excel.workbook#onselectionchanged)、 [**工作表**](/javascript/api/excel/excel.worksheet#onselectionchanged)、 [**WorksheetCollection**](/javascript/api/excel/excel.worksheetcollection#onselectionchanged) |
+| `onSelectionChanged` | 当活动单元格或选定范围更改时发生。 | [](/javascript/api/excel/excel.binding#onselectionchanged) [](/javascript/api/excel/excel.table#onselectionchanged)Binding、Table、Workbook、Worksheet、WorksheetCollection [](/javascript/api/excel/excel.workbook#onselectionchanged) [](/javascript/api/excel/excel.worksheet#onselectionchanged) [](/javascript/api/excel/excel.worksheetcollection#onselectionchanged) |
 | `onRowHiddenChanged` | 在特定工作表上的行隐藏状态更改时发生。 | [**Worksheet**](/javascript/api/excel/excel.worksheet#onrowhiddenchanged)、[**WorksheetCollection**](/javascript/api/excel/excel.worksheetcollection#onrowhiddenchanged) |
 | `onSettingsChanged` | 当文档中的设置变化时发生。 | [**SettingCollection**](/javascript/api/excel/excel.settingcollection#onsettingschanged) |
 | `onSingleClicked` | 在工作表中进行左键单击/点击操作时发生。 | [**Worksheet**](/javascript/api/excel/excel.worksheet#onsingleclicked)、[**WorksheetCollection**](/javascript/api/excel/excel.worksheetcollection#onsingleclicked) |
@@ -64,11 +64,11 @@ Excel 工作簿内的事件可以通过下列方式触发：
 
 ### <a name="events-and-coauthoring"></a>事件和共同创作
 
-借助[共同创作功能](co-authoring-in-excel-add-ins.md)，多个人可以共同协作，同时编辑同一个 Excel 工作簿。对于可由共同创作者触发的事件（如 `onChanged`），相应的 **Event** 对象会包含 **source** 属性，以指示事件是由当前用户在本地触发 (`event.source = Local`)，还是由远程共同创作者触发 (`event.source = Remote`)。
+借助 [共同创作功能](co-authoring-in-excel-add-ins.md)，多个人可以共同协作，同时编辑同一个 Excel 工作簿。对于可由共同创作者触发的事件（如 `onChanged`），相应的 **Event** 对象会包含 **source** 属性，以指示事件是由当前用户在本地触发 (`event.source = Local`)，还是由远程共同创作者触发 (`event.source = Remote`)。
 
 ## <a name="register-an-event-handler"></a>注册事件处理程序
 
-下面的代码示例为 `onChanged` 工作表中的 **** 事件注册事件处理程序。 此代码指定 `handleDataChange` 函数应在工作表中的数据有变化时运行。
+下面的代码示例为 `onChanged` 工作表中的  事件注册事件处理程序。 此代码指定 `handleChange` 函数应在工作表中的数据有变化时运行。
 
 ```js
 Excel.run(function (context) {
@@ -102,7 +102,7 @@ function handleChange(event)
 
 ## <a name="remove-an-event-handler"></a>删除事件处理程序
 
-下面的代码示例为 **Sample** 工作表中的 `onSelectionChanged` 事件注册事件处理程序，并将 `handleSelectionChange` 函数定义为在事件发生时运行。 它还定义了随后可以调用的 `remove()` 函数，以删除相应事件处理程序。 请注意， `RequestContext` 需要使用来创建事件处理程序才能将其删除。 
+下面的代码示例为 **Sample** 工作表中的 `onSelectionChanged` 事件注册事件处理程序，并将 `handleSelectionChange` 函数定义为在事件发生时运行。 它还定义了随后可以调用的 `remove()` 函数，以删除相应事件处理程序。 请注意， `RequestContext` 用于创建事件处理程序的 需要删除它。 
 
 ```js
 var eventResult;
@@ -168,4 +168,4 @@ Excel.run(function (context) {
 
 ## <a name="see-also"></a>另请参阅
 
-- [Office 外接程序中的 Excel JavaScript 对象模型](excel-add-ins-core-concepts.md)
+- [Excel 加载项中的 Word JavaScript 对象模型](excel-add-ins-core-concepts.md)

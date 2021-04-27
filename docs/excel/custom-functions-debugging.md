@@ -1,14 +1,14 @@
 ---
-ms.date: 04/09/2021
+ms.date: 04/12/2021
 description: 了解如何调试不使用任务窗格的 Excel 自定义函数。
 title: 无 UI 自定义函数调试
 localization_priority: Normal
-ms.openlocfilehash: 5b27ca44dbb891c2e1f4ae86175595dc902b74ba
-ms.sourcegitcommit: 094caf086c2696e78fbdfdc6030cb0c89d32b585
+ms.openlocfilehash: c6954af4638ae416c789af339d35187467e37b7f
+ms.sourcegitcommit: 78fb861afe7d7c3ee7fe3186150b3fed20994222
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/16/2021
-ms.locfileid: "51862335"
+ms.lasthandoff: 04/26/2021
+ms.locfileid: "52024323"
 ---
 # <a name="ui-less-custom-functions-debugging"></a>无 UI 自定义函数调试
 
@@ -53,7 +53,7 @@ ms.locfileid: "51862335"
 ### <a name="start-the-vs-code-debugger"></a>启动 VS 代码调试程序
 
 4. Choose **View > Run** or enter **Ctrl+Shift+D** to switch to debug view.
-5. From the Run drop-down menu， choose **Excel Desktop (Edge Chromium)**.
+5. From the Run drop-down menu， choose **Excel Desktop (Custom Functions)**.
 6. 选择 **F5** (，或者从 **>开始调试** "菜单中选择") 开始调试"。 新的 Excel 工作簿将在外接程序已旁加载且可供使用时打开。
 
 ### <a name="start-debugging"></a>开始调试
