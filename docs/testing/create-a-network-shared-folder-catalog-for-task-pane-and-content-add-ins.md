@@ -1,24 +1,24 @@
 ---
-title: 旁加载 Office 加载项以从网络共享进行测试
-description: 了解如何旁加载 Office 外接程序以从网络共享进行测试
+title: 从Office旁加载外接程序以进行测试
+description: 了解如何旁加载Office外接程序以从网络共享进行测试
 ms.date: 06/02/2020
 localization_priority: Normal
-ms.openlocfilehash: 7e584b5543d988ed51f932254d48981d51afa0fc
-ms.sourcegitcommit: ccc0a86d099ab4f5ef3d482e4ae447c3f9b818a3
+ms.openlocfilehash: 79ab14ca34530c870d3be4cc962a7e3df358e9bc
+ms.sourcegitcommit: 6057afc1776e1667b231d2e9809d261d372151f6
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "50237971"
+ms.lasthandoff: 04/30/2021
+ms.locfileid: "52100276"
 ---
-# <a name="sideload-office-add-ins-for-testing-from-a-network-share"></a>旁加载 Office 加载项以从网络共享进行测试
+# <a name="sideload-office-add-ins-for-testing-from-a-network-share"></a>从Office旁加载外接程序以进行测试
 
-可以在 Windows 上的 Office 客户端中测试 Office 外接程序，具体方法为将清单发布到网络文件共享 (以下) 。 此部署选项用于完成本地主机上的开发和测试，并且希望从非本地服务器或云帐户测试外接程序。
+可以通过将 Office清单发布到网络文件共享Windows在 Office 客户端中测试 (外接程序，具体) 。 此部署选项用于完成对 localhost 的开发和测试，并且希望从非本地服务器或云帐户测试外接程序。
 
 > [!IMPORTANT]
-> 生产外接程序不支持按网络共享进行部署。此方法具有以下限制：
+> 生产加载项不支持通过网络共享进行部署。此方法具有以下限制：
 > 
-> - 加载项只能安装在 Windows 计算机上。
-> - 如果外接程序的新版本更改功能区，每个用户必须重新安装外接程序。
+> - 加载项只能安装在Windows计算机上。
+> - 如果加载项的新版本更改功能区，每个用户必须重新安装加载项。
 
 
 > [!NOTE]
@@ -74,7 +74,7 @@ ms.locfileid: "50237971"
 
     ![已选择目录的“信任中心”对话框](../images/sideload-windows-trust-center-dialog.png)
 
-8. 选择 **"确定** "按钮以关闭 **"选项** "对话框窗口。
+8. 选择" **确定"** 按钮以关闭 **"选项** "对话框窗口。
 
 9. 关闭并重新打开 Office 应用程序，以使更改生效。
 
@@ -120,15 +120,18 @@ ms.locfileid: "50237971"
     > [!IMPORTANT]
     > [!include[HTTPS guidance](../includes/https-guidance.md)]
 
+    > [!NOTE]
+    > 对于Visual Studio，请使用 文件夹中的项目所构建的 `{projectfolder}\bin\Debug\OfficeAppManifests` 清单。
+
 2. 在 Excel、Word 或 PowerPoint 中，选择功能区上“**插入**”选项卡中的“**我的加载项**”。 在 Project 中，选择功能区“**Project**”选项卡上的“**我的加载项**”。
 
 3. 在“**Office 外接程序**”对话框的顶部，选择“**共享文件夹**”。
 
 4. 选择加载项的名称，然后选择“**添加**”以插入加载项。
 
-## <a name="remove-a-sideloaded-add-in"></a>删除旁加载的加载项
+## <a name="remove-a-sideloaded-add-in"></a>删除旁加载的外接程序
 
-可以通过清除您计算机的 Office 缓存来删除以前旁加载的外接程序。 有关如何在 Windows 上清除缓存的详细信息，请参阅"清除 Office 缓存 ["一文](clear-cache.md#clear-the-office-cache-on-windows)。
+可以通过清除计算机上以前旁加载的Office缓存来删除。 有关在缓存上清除Windows的详细信息，请参阅清除缓存[Office。](clear-cache.md#clear-the-office-cache-on-windows)
 
 ## <a name="see-also"></a>另请参阅
 
