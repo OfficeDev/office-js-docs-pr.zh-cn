@@ -1,15 +1,15 @@
 ---
 title: Outlook JavaScript API 要求集
 description: 了解有关 Outlook JavaScript API 要求集的详细信息。
-ms.date: 02/08/2021
+ms.date: 04/29/2021
 ms.prod: outlook
 localization_priority: Priority
-ms.openlocfilehash: d3a9255ccba922ecaef5aafe8407e98d4ab2fc33
-ms.sourcegitcommit: fefc279b85e37463413b6b0e84c880d9ed5d7ac3
+ms.openlocfilehash: 691c0ad3ba97d79103e06bc7c0832eb8327b817a
+ms.sourcegitcommit: 6057afc1776e1667b231d2e9809d261d372151f6
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/12/2021
-ms.locfileid: "50234140"
+ms.lasthandoff: 04/30/2021
+ms.locfileid: "52100290"
 ---
 # <a name="outlook-javascript-api-requirement-sets"></a>Outlook JavaScript API 要求集
 
@@ -36,7 +36,7 @@ Outlook 外接程序通过在其清单中使用 Requirements 元素来声明所�
 
 ## <a name="using-apis-from-later-requirement-sets"></a>使用更高版本要求集中的 API
 
-设置要求集不会限制外接程序可使用的可用 API。 例如，如果加载项指定要求集“Mailbox 1.1”，但它在支持版本“Mailbox 1.3”的 Outlook 客户端中运行，则该加载项从要求集“Mailbox 1.3”使用 API。
+设置要求集不会限制外接程序可使用的可用 API。例如，如果外接程序指定要求集“邮箱 1.1”，但它在支持“邮箱 1.3”的 Outlook 客户端中运行，则外接程序可以使用要求集“邮箱 1.3”中的 API。
 
 若要使用较新的 API，开发人员可执行以下操作来检查特定应用程序是否支持相应的要求集：
 
@@ -97,7 +97,7 @@ if (item.somePropertyOrFunction !== undefined) {
 || 2016 一次性购买 | [1.1](../objectmodel/requirement-set-1.1/outlook-requirement-set-1.1.md)、[1.2](../objectmodel/requirement-set-1.2/outlook-requirement-set-1.2.md)、[1.3](../objectmodel/requirement-set-1.3/outlook-requirement-set-1.3.md)、[1.4](../objectmodel/requirement-set-1.4/outlook-requirement-set-1.4.md)<sup>3</sup> |
 || 2013 一次性购买 | [1.1](../objectmodel/requirement-set-1.1/outlook-requirement-set-1.1.md)、[1.2](../objectmodel/requirement-set-1.2/outlook-requirement-set-1.2.md)、[1.3](../objectmodel/requirement-set-1.3/outlook-requirement-set-1.3.md)<sup>3</sup>、[1.4](../objectmodel/requirement-set-1.4/outlook-requirement-set-1.4.md)<sup>3</sup> |
 | Mac | 当前 UI<br>（关联至 Microsoft 365 订阅） | [1.1](../objectmodel/requirement-set-1.1/outlook-requirement-set-1.1.md)、[1.2](../objectmodel/requirement-set-1.2/outlook-requirement-set-1.2.md)、[1.3](../objectmodel/requirement-set-1.3/outlook-requirement-set-1.3.md)、[1.4](../objectmodel/requirement-set-1.4/outlook-requirement-set-1.4.md)、[1.5](../objectmodel/requirement-set-1.5/outlook-requirement-set-1.5.md)、[1.6](../objectmodel/requirement-set-1.6/outlook-requirement-set-1.6.md)、[1.7](../objectmodel/requirement-set-1.7/outlook-requirement-set-1.7.md)、[1.8](../objectmodel/requirement-set-1.8/outlook-requirement-set-1.8.md)<br>[IdentityAPI 1.3](../requirement-sets/identity-api-requirement-sets.md)<sup>2</sup> |
-|| 新建 UI（预览版）<sup>4</sup><br>（关联至 Microsoft 365 订阅） | [1.1](../objectmodel/requirement-set-1.1/outlook-requirement-set-1.1.md)、[1.2](../objectmodel/requirement-set-1.2/outlook-requirement-set-1.2.md)、[1.3](../objectmodel/requirement-set-1.3/outlook-requirement-set-1.3.md)、[1.4](../objectmodel/requirement-set-1.4/outlook-requirement-set-1.4.md)、[1.5](../objectmodel/requirement-set-1.5/outlook-requirement-set-1.5.md)、[1.6](../objectmodel/requirement-set-1.6/outlook-requirement-set-1.6.md)、[1.7](../objectmodel/requirement-set-1.7/outlook-requirement-set-1.7.md) |
+|| 新建 UI（预览版）<sup>4</sup><br>（关联至 Microsoft 365 订阅） | [1.1](../objectmodel/requirement-set-1.1/outlook-requirement-set-1.1.md)、[1.2](../objectmodel/requirement-set-1.2/outlook-requirement-set-1.2.md)、[1.3](../objectmodel/requirement-set-1.3/outlook-requirement-set-1.3.md)、[1.4](../objectmodel/requirement-set-1.4/outlook-requirement-set-1.4.md)、[1.5](../objectmodel/requirement-set-1.5/outlook-requirement-set-1.5.md)、[1.6](../objectmodel/requirement-set-1.6/outlook-requirement-set-1.6.md)、[1.7](../objectmodel/requirement-set-1.7/outlook-requirement-set-1.7.md)、[1.8](../objectmodel/requirement-set-1.8/outlook-requirement-set-1.8.md) |
 || 2019 一次性购买 | [1.1](../objectmodel/requirement-set-1.1/outlook-requirement-set-1.1.md)、[1.2](../objectmodel/requirement-set-1.2/outlook-requirement-set-1.2.md)、[1.3](../objectmodel/requirement-set-1.3/outlook-requirement-set-1.3.md)、[1.4](../objectmodel/requirement-set-1.4/outlook-requirement-set-1.4.md)、[1.5](../objectmodel/requirement-set-1.5/outlook-requirement-set-1.5.md)、[1.6](../objectmodel/requirement-set-1.6/outlook-requirement-set-1.6.md) |
 || 2016 一次性购买 | [1.1](../objectmodel/requirement-set-1.1/outlook-requirement-set-1.1.md)、[1.2](../objectmodel/requirement-set-1.2/outlook-requirement-set-1.2.md)、[1.3](../objectmodel/requirement-set-1.3/outlook-requirement-set-1.3.md)、[1.4](../objectmodel/requirement-set-1.4/outlook-requirement-set-1.4.md)、[1.5](../objectmodel/requirement-set-1.5/outlook-requirement-set-1.5.md)、[1.6](../objectmodel/requirement-set-1.6/outlook-requirement-set-1.6.md) |
 | iOS | Microsoft 365 订阅 | [1.1](../objectmodel/requirement-set-1.1/outlook-requirement-set-1.1.md)、[1.2](../objectmodel/requirement-set-1.2/outlook-requirement-set-1.2.md)、[1.3](../objectmodel/requirement-set-1.3/outlook-requirement-set-1.3.md)、[1.4](../objectmodel/requirement-set-1.4/outlook-requirement-set-1.4.md)、[1.5](../objectmodel/requirement-set-1.5/outlook-requirement-set-1.5.md)<sup>5</sup> |
