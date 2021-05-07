@@ -1,22 +1,22 @@
 ---
 title: Office 通用 API 要求集
-description: 了解有关 Office 通用 API 要求集的详细信息。
-ms.date: 09/17/2020
+description: 详细了解通用 API Office集。
+ms.date: 04/28/2021
 ms.prod: non-product-specific
 localization_priority: Normal
-ms.openlocfilehash: d5fd33a2c44cb85e8279a970d4d7443783f049ff
-ms.sourcegitcommit: 2479812e677d1a7337765fe8f1c8345061d4091a
+ms.openlocfilehash: 959f03bf41496c1506087c2851efad336cdec676
+ms.sourcegitcommit: 8fbc7c7eb47875bf022e402b13858695a8536ec5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/19/2020
-ms.locfileid: "48135219"
+ms.lasthandoff: 05/06/2021
+ms.locfileid: "52253345"
 ---
 # <a name="office-common-api-requirement-sets"></a>Office 通用 API 要求集
 
-要求集是指已命名的 API 成员组。Office 加载项使用清单中指定的要求集或执行运行时检查，以确定 Office 应用程序是否支持加载项所需的 API。有关详细信息，请参阅 [Office 版本和要求集](../../develop/office-versions-and-requirement-sets.md)。
+要求集是指各组已命名的 API 成员。Office 加载项使用清单中指定的要求集或执行运行时检查，以确定 Office 应用程序是否支持加载项所需的 API。有关详细信息，请参阅 [Office 版本和要求集](../../develop/office-versions-and-requirement-sets.md)。
 
 > [!TIP]
-> 是否要查找 *特定于应用程序* 的 API 要求集？ 请参阅下列 API 要求集：
+> 正在查找 *特定于应用程序的* API 要求集？ 请参阅下列 API 要求集：
 >
 > - [Excel JavaScript API 要求集](excel-api-requirement-sets.md) (ExcelApi)
 > - [Word JavaScript API 要求集](word-api-requirement-sets.md) (WordApi)
@@ -29,10 +29,10 @@ ms.locfileid: "48135219"
 
 ## <a name="common-api-requirement-sets"></a>通用 API 要求集
 
-以下各节列出了常见的 API 要求集、每个集合中的方法以及支持该要求集的 Office 客户端应用程序。 除非另行指定，否则这些 API 要求集都是第 1.1 版。
+以下各节列出了通用 API 要求集、每个集内的方法，以及支持Office集的客户端应用程序。 除非另行指定，否则这些 API 要求集都是第 1.1 版。
 
 > [!TIP]
-> 需要有关 Office 应用程序和版本支持加载项和要求集的信息？ [有关 Office 加载项，请参阅 office 客户端应用程序和平台可用性](../../overview/office-add-in-availability.md)。
+> 需要有关外接程序和要求集在应用程序与版本Office的信息？ 请参阅[Office外接程序的客户端应用程序和Office可用性](../../overview/office-add-in-availability.md)。
 
 ### <a name="activeview"></a>ActiveView
 
@@ -60,7 +60,7 @@ ms.locfileid: "48135219"
 
 |**Office 应用程序**|**要求集内的方法**|
 |:-----|:-----|
-| Excel 2016 及更高版本的 Windows<br>Excel 网页版<br>Excel 2016 及更高版本 Mac<br>Windows 版 PowerPoint<br>PowerPoint 网页版<br>iPad 版 PowerPoint<br>Mac 版 PowerPoint<br>Windows 版 Word 2013 及更高版本<br>Mac 版 Word 2016 及更高版本<br>Word 网页版<br>iPad 版 Word|支持使用 Document.getFileAsync 方法时输出作为字节数组 (Office.FileType.Compressed) 的 Office Open XML (OOXML) 格式<br>。|
+| Excel 2016及更高版本Windows<br>Excel 网页版<br>Excel 2016 Mac 及更高版本<br>Windows 版 PowerPoint<br>PowerPoint 网页版<br>iPad 版 PowerPoint<br>Mac 版 PowerPoint<br>Windows 版 Word 2013 及更高版本<br>Mac 版 Word 2016 及更高版本<br>Word 网页版<br>iPad 版 Word|支持使用 Document.getFileAsync 方法时输出作为字节数组 (Office.FileType.Compressed) 的 Office Open XML (OOXML) 格式<br>。|
 
 ---
 
@@ -156,7 +156,7 @@ ms.locfileid: "48135219"
 
 |**Office 主机**|**要求集内的方法**|
 |:-----|:-----|
-| 请参阅 [打开浏览器窗口 API 要求集](open-browser-window-api-requirement-sets.md)。 | OpenBrowserWindow 的用户 |
+| 请参阅 [打开浏览器窗口 API 要求集](open-browser-window-api-requirement-sets.md)。 | Office.context.ui.openBrowserWindow |
 
 ---
 
@@ -172,7 +172,7 @@ ms.locfileid: "48135219"
 
 |**Office 应用程序**|**要求集内的方法**|
 |:-----|:-----|
-| Windows 版 Excel<br>Excel 网页版<br>Mac 版 Excel<br>Windows 版 PowerPoint<br>PowerPoint 网页版<br>iPad 版 PowerPoint<br>Mac 版 PowerPoint<br>Windows 版 Word 2013 及更高版本<br>Mac 版 Word 2016 及更高版本<br>Word 网页版<br>iPad 版 Word|支持使用 Document.getFileAsync 方法时输出 PDF 格式 (Office.FileType.Pdf)<br>。|
+| Windows 版 Excel<br>Excel 网页版<br>Mac 版 Excel<br>Windows 版 PowerPoint<br>PowerPoint 网页版<br>iPad 版 PowerPoint<br>Mac 版 PowerPoint<br>Windows 版 Word 2013 及更高版本<br>Mac 版 Word 2016 及更高版本<br>Word 网页版|支持使用 Document.getFileAsync 方法时输出 PDF 格式 (Office.FileType.Pdf)<br>。|
 
 ---
 
@@ -180,11 +180,11 @@ ms.locfileid: "48135219"
 
 |**Office 应用程序**|**要求集内的方法**|
 |:-----|:-----|
-| 请参阅 [功能区 API 要求集](ribbon-api-requirement-sets.md)。 | RequestUpdate |
+| 请参阅 [功能区 API 要求集](ribbon-api-requirement-sets.md)。 | Office.ribbon.requestUpdate |
 
 ---
 
-### <a name="selection"></a>Selection
+### <a name="selection"></a>选择
 
 |**Office 应用程序**|**要求集内的方法**|
 |:-----|:-----|
@@ -204,7 +204,7 @@ ms.locfileid: "48135219"
 
 |**Office 应用程序**|**要求集内的方法**|
 |:-----|:-----|
-| 请参阅 [共享运行时要求集](shared-runtime-requirement-sets.md)。 | GetStartupBehavior<br>.Addin： hide<br>OnVisibilityModeChanged<br>SetStartupBehavior<br>ShowAsTaskpane<br> |
+| 请参阅 [共享运行时要求集](shared-runtime-requirement-sets.md)。 | Office.addin.getStartupBehavior<br>Office.addin.hide<br>Office.addin.onVisibilityModeChanged<br>Office.addin.setStartupBehavior<br>Office.addin.showAsTaskpane<br> |
 
 ---
 
@@ -250,9 +250,9 @@ ms.locfileid: "48135219"
 
 ## <a name="methods-that-arent-part-of-a-requirement-set"></a>不作为要求集一部分的方法
 
-Office JavaScript API 中的以下方法不是要求集的一部分。 如果加载项需要这些方法的任意一个，请使用加载项清单中的 **Methods** 和 **Method** 元素以声明需要这些方法，或使用 `if` 语句执行运行时检查。 有关详细信息，请参阅 [指定 Office 应用程序和 API 要求](../../develop/specify-office-hosts-and-api-requirements.md)。
+Office JavaScript API 中的以下方法不是要求集的一部分。 如果加载项需要这些方法的任意一个，请使用加载项清单中的 **Methods** 和 **Method** 元素以声明需要这些方法，或使用 `if` 语句执行运行时检查。 有关详细信息，请参阅指定Office[应用程序和 API 要求](../../develop/specify-office-hosts-and-api-requirements.md)。
 
-|**方法名称**|**Office 应用程序支持**|
+|**方法名称**|**Office应用程序支持**|
 |:-----|:-----|
 |Bindings.addFromPromptAsync|Access Web 应用、Windows 版 Excel、Excel 网页版、iPad 版 Excel 和 Mac 版 Excel|
 |Document.getFilePropertiesAsync|Windows 版 Excel、Excel 网页版、iPad 版 Excel、Mac 版 Excel、Windows 版 PowerPoint、PowerPoint 网页版、iPad 版 PowerPoint、Mac 版 PowerPoint、Windows 版 Word、Word 网页版、iPad 版 Word 和 Mac 版 Word|
@@ -274,5 +274,5 @@ Office JavaScript API 中的以下方法不是要求集的一部分。 如果加
 ## <a name="see-also"></a>另请参阅
 
 - [Office 版本和要求集](../../develop/office-versions-and-requirement-sets.md)
-- [指定 Office 应用程序和 API 要求](../../develop/specify-office-hosts-and-api-requirements.md)
+- [指定 Office 应用程序和 API 要求集](../../develop/specify-office-hosts-and-api-requirements.md)
 - [Office 加载项 XML 清单](../../develop/add-in-manifests.md)

@@ -2,37 +2,41 @@
 title: '配置Outlook加载项进行基于事件的激活和 (预览) '
 description: 了解如何配置Outlook加载项进行基于事件的激活。
 ms.topic: article
-ms.date: 04/29/2021
+ms.date: 05/04/2021
 localization_priority: Normal
-ms.openlocfilehash: 45f9ff16b3aca0a1fb8f3a8ee3d9ffa8e0f33ea2
-ms.sourcegitcommit: 6057afc1776e1667b231d2e9809d261d372151f6
+ms.openlocfilehash: 0052f08e9c6a3903f4adb48efca3ff29a6d21467
+ms.sourcegitcommit: 8fbc7c7eb47875bf022e402b13858695a8536ec5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/30/2021
-ms.locfileid: "52100297"
+ms.lasthandoff: 05/06/2021
+ms.locfileid: "52253318"
 ---
 # <a name="configure-your-outlook-add-in-for-event-based-activation-preview"></a>配置Outlook加载项进行基于事件的激活和 (预览) 
 
-如果没有基于事件的激活功能，用户必须显式启动外接程序才能完成其任务。 此功能使加载项能够运行基于特定事件的任务，尤其是适用于每个项目的操作。 还可以与任务窗格和无 UI 功能集成。 目前，支持以下事件。
-
-|事件|说明|
-|---|---|
-|`OnNewMessageCompose`|撰写新邮件时 (包括答复、全部答复和转发) ，但不包括编辑时，例如草稿。|
-|`OnNewAppointmentOrganizer`|创建新约会但不编辑现有约会时。|
-|`OnMessageAttachmentsChanged`|在撰写邮件时添加或删除附件。|
-|`OnAppointmentAttachmentsChanged`|在撰写约会时添加或删除附件。|
-|`OnMessageRecipientsChanged`|在撰写邮件时添加或删除收件人。|
-|`OnAppointmentAttendeesChanged`|在撰写约会时添加或删除与会者。|
-|`OnAppointmentTimeChanged`|在撰写约会时更改日期/时间。|
-|`OnAppointmentRecurrenceChanged`|在撰写约会时添加、更改或删除定期详细信息。 如果日期/时间发生更改， `OnAppointmentTimeChanged` 也会触发该事件。|
-|`OnInfoBarDismissClicked`|在撰写邮件或约会项目时关闭通知。 仅通知添加了通知的外接程序。|
+如果没有基于事件的激活功能，用户必须显式启动外接程序才能完成其任务。 此功能使加载项能够运行基于特定事件的任务，尤其是适用于每个项目的操作。 还可以与任务窗格和无 UI 功能集成。
 
 在此演练结束时，您将具有一个加载项，只要创建一个新建项目并设置主题，就会运行该加载项。
 
 > [!IMPORTANT]
-> 此功能仅支持在[Web](../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md)上的 Outlook 和具有 Microsoft 365 订阅的 Windows 预览。 有关详细信息 [，请参阅本文](#how-to-preview-the-event-based-activation-feature) 中的如何预览基于事件的激活功能。
+> 此功能仅支持在[Web](../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md)上的 Outlook 和具有 Microsoft 365 订阅的 Windows 预览。 有关详细信息，请参阅本文中的如何预览基于 [事件的](#how-to-preview-the-event-based-activation-feature) 激活功能。
 >
 > 由于预览功能可能会随时更改，恕不另行通知，因此不应在生产外接程序中使用。
+
+## <a name="supported-events"></a>支持的事件
+
+目前，支持以下事件。
+
+|事件|说明|客户端|
+|---|---|---|
+|`OnNewMessageCompose`|撰写新邮件时 (包括答复、全部答复和转发) ，但不包括编辑时，例如草稿。|Windows、Web|
+|`OnNewAppointmentOrganizer`|创建新约会但不编辑现有约会时。|Windows、Web|
+|`OnMessageAttachmentsChanged`|在撰写邮件时添加或删除附件。|Windows|
+|`OnAppointmentAttachmentsChanged`|在撰写约会时添加或删除附件。|Windows|
+|`OnMessageRecipientsChanged`|在撰写邮件时添加或删除收件人。|Windows|
+|`OnAppointmentAttendeesChanged`|在撰写约会时添加或删除与会者。|Windows|
+|`OnAppointmentTimeChanged`|在撰写约会时更改日期/时间。|Windows|
+|`OnAppointmentRecurrenceChanged`|在撰写约会时添加、更改或删除定期详细信息。 如果日期/时间发生更改， `OnAppointmentTimeChanged` 也会触发该事件。|Windows|
+|`OnInfoBarDismissClicked`|在撰写邮件或约会项目时关闭通知。 仅通知添加了通知的外接程序。|Windows|
 
 ## <a name="how-to-preview-the-event-based-activation-feature"></a>如何预览基于事件的激活功能
 
@@ -43,7 +47,11 @@ ms.locfileid: "52100297"
 - For Outlook on the web：
   - [在租户 上配置Microsoft 365版本](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide&preserve-view=true#set-up-the-release-option-in-the-admin-center)。
   - 在 上 **引用** beta https://appsforoffice.microsoft.com/lib/beta/hosted/office.js) CDN (。 TypeScript[编译和](https://appsforoffice.microsoft.com/lib/beta/hosted/office.d.ts)定义的类型IntelliSense位于 CDN[和 DefinitelyTyped 中](https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/master/types/office-js-preview/index.d.ts)。 可以使用 安装这些类型 `npm install --save-dev @types/office-js-preview` 。
-- For Outlook on Windows： the minimum required build is 16.0.13729.20000. 加入[Office 预览体验计划](https://insider.office.com)，以访问 Office beta 版本。
+- 有关Outlook Windows：
+  - 最低要求版本为 16.0.14026.20000。 加入[Office 预览体验计划](https://insider.office.com)，以访问 Office beta 版本。
+  - 配置注册表：
+    1. 创建注册表项 `HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\Outlook\Options\WebExt\Developer` 。
+    1. 添加一个名为 的 `EnableBetaAPIsInJavaScript` 条目，将值设置为 `1` 。
 
 ## <a name="set-up-your-environment"></a>设置环境
 
@@ -279,5 +287,5 @@ Outlook Windows使用 JavaScript 文件，Outlook Web 上的开发人员使用�
 
 ## <a name="see-also"></a>另请参阅
 
-[Outlook加载项清单](manifests.md) 
-[如何调试基于事件的外接程序](debug-autolaunch.md)
+- [Outlook 加载项清单](manifests.md)
+- [如何调试基于事件的外接程序](debug-autolaunch.md)

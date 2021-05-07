@@ -1,18 +1,18 @@
 ---
 title: Office 加载项中的 Office UI Fabric
-description: 大致了解如何在 Office 外接程序中使用 Office UI Fabric 组件。
-ms.date: 2/09/2021
+description: 大致了解如何在加载项Office UI Fabric加载项Office组件。
+ms.date: 05/03/2021
 localization_priority: Normal
-ms.openlocfilehash: 9799d98d795486203e4bcc23bffc043c2ead6e28
-ms.sourcegitcommit: ccc0a86d099ab4f5ef3d482e4ae447c3f9b818a3
+ms.openlocfilehash: 20f926913335197a65ac24e4ec30ed0106b81bae
+ms.sourcegitcommit: 8fbc7c7eb47875bf022e402b13858695a8536ec5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "50237677"
+ms.lasthandoff: 05/06/2021
+ms.locfileid: "52253366"
 ---
 # <a name="office-ui-fabric-in-office-add-ins"></a>Office 加载项中的 Office UI Fabric
 
-Office UI Fabric 是一个 JavaScript 前端框架，用于构建 Office 用户体验。 Fabric 提供了以视觉对象为中心的组件，可在 Office 外接程序中进行扩展、返工和使用。 由于 Fabric 使用的是 Office 设计语言，因此 Fabric 的用户体验组件看起来像是 Office 的自然扩展。
+Office UI Fabric是一个 JavaScript 前端框架，用于生成适用于Office。 Fabric 提供了以视觉对象为中心的组件，可在 Office 外接程序中进行扩展、返工和使用。 由于 Fabric 使用的是 Office 设计语言，因此 Fabric 的用户体验组件看起来像是 Office 的自然扩展。
 
 若要生成外接程序，我们建议使用 Office UI Fabric 生成用户体验。使用 Office UI Fabric 是可选的。
 
@@ -44,9 +44,9 @@ Fabric Core 包含设计语言的基本元素，如图标、颜色、类型和�
 
 ## <a name="use-fabric-components"></a>使用 Fabric 组件
 
-Fabric 提供可用于生成外接程序的各种 UX 组件。 我们预计所有结构组件都将不会由单个外接程序使用。 确定适用于您的方案和用户体验的最佳组件 (例如，可能很难在任务窗格窗格中正确显示 [痕迹](https://developer.microsoft.com/fabric#/components/breadcrumb) 导航) 。
+Fabric 提供了各种可用于生成外接程序的 UX 组件。 我们预计单个外接程序不会使用所有结构组件。 确定适用于您的方案和用户体验的最佳组件 (例如，可能很难在任务窗格中正确显示痕迹导航) 。 [](https://developer.microsoft.com/fabric#/components/breadcrumb)
 
-下面列出了建议在外接程序中使用的常见 [Fabric React UX](https://developer.microsoft.com/fluentui#/controls/web) 组件：
+以下是我们建议在外接程序React Fabric 和[UX](https://developer.microsoft.com/fluentui#/controls/web)组件的常见列表：
 
 - [按钮](https://developer.microsoft.com/fabric#/components/button)
 - [复选框](https://developer.microsoft.com/fabric#/components/checkbox)
@@ -63,4 +63,3 @@ Fabric 提供可用于生成外接程序的各种 UX 组件。 我们预计所�
 |**框架**|**示例**|
 |:------------|:----------|
 |**React**|[在 Office 外接程序中使用 Office UI Fabric React](using-office-ui-fabric-react.md )|
-|**Angular**| [考虑使用 Angular 2 组件包装 Fabric 组件](../develop/add-ins-with-angular2.md#consider-wrapping-fabric-components-with-angular-components)|
