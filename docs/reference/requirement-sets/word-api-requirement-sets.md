@@ -1,15 +1,15 @@
 ---
 title: Word JavaScript API 要求集
 description: 针对 Word 内部版本的 Office 加载项要求集信息。
-ms.date: 07/10/2020
+ms.date: 05/05/2021
 ms.prod: word
 localization_priority: Priority
-ms.openlocfilehash: 23db807df0c47aaab4c579d17e4fbd28bb809fed
-ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
+ms.openlocfilehash: 816bb49c165d41e5a29b71bb8df422c353087bab
+ms.sourcegitcommit: 132f5082f5bf9500dad0a2eaf89d924c823e575d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "47293434"
+ms.lasthandoff: 05/07/2021
+ms.locfileid: "52266094"
 ---
 # <a name="word-javascript-api-requirement-sets"></a>Word JavaScript API 要求集
 
@@ -17,10 +17,10 @@ ms.locfileid: "47293434"
 
 ## <a name="requirement-set-availability"></a>要求集可用性
 
-Word 加载项可在多个 Office 版本中运行，包括 Windows 版 Office 2016 或更高版本、Office 网页版、iPad 版 Office 和 Mac 版 Office。 下表列出了 Word 要求集、支持该要求集的 Office 客户端应用程序，以及这些应用程序的内部版本或版本号。
+Word 加载项可跨多个版本的 Office 运行，包括 Windows 上的 Office 2016 或更高版本，以及 Office 网页版、iPad 和 Mac 版。下表列出了 Word 要求集、支持该要求集的 Office 客户端应用程序，以及这些应用程序的内部版本或版本号。
 
 > [!NOTE]
-> 若要在任何编号的要求集中使用 API，你应该引用 CDN 上的**生产**库：https://appsforoffice.microsoft.com/lib/1/hosted/office.js。
+> 要在任何编号的需求集中使用API，您应该引用CDN上的 **生产** 库： https://appsforoffice.microsoft.com/lib/1/hosted/office.js。
 >
 > 有关使用预览 API 的信息，请参阅 [Excel JavaScript 预览 API](word-preview-apis.md) 一文。
 
@@ -32,7 +32,7 @@ Word 加载项可在多个 Office 版本中运行，包括 Windows 版 Office 20
 | [WordApi 1.1](word-api-1-1-requirement-set.md) | 版本 1509（内部版本 4266.1001）或更高版本| 2016 年 1 月，1.18 或更高版本 | 2016 年 1 月，15.19 或更高版本| 2016 年 9 月 |
 
 > [!NOTE]
-> 永久版本的 Office 支持要求集如下：
+> 非订阅版本的 Office 支持如下所示的要求集：
 >
 > - Office 2019 支持 ExcelApi 1.3 及更低版本。
 > - Office 2016 仅支持 ExcelApi 1.1 要求集。
@@ -47,5 +47,5 @@ Word 加载项可在多个 Office 版本中运行，包括 Windows 版 Office 20
 
 - [Word JavaScript API 参考文档](/javascript/api/word)
 - [Office 版本和要求集](../../develop/office-versions-and-requirement-sets.md)
-- [指定 Office 应用程序和 API 要求](../../develop/specify-office-hosts-and-api-requirements.md)
+- [指定 Office 应用程序和 API 要求集](../../develop/specify-office-hosts-and-api-requirements.md)
 - [Office 加载项 XML 清单](../../develop/add-in-manifests.md)
