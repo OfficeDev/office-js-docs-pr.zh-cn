@@ -1,14 +1,14 @@
 ---
 title: 适用于 Office 外接程序的 UX 设计模式
-description: 获取适用于 Office 加载项的 UI 设计模式的概述，包括导航、身份验证、首次运行和品牌打造的模式。
-ms.date: 03/19/2019
+description: 大致了解加载项的 UI 设计Office，包括导航、身份验证、首次运行和品牌打造模式。
+ms.date: 05/12/2021
 localization_priority: Normal
-ms.openlocfilehash: d7201cd91dbfd019a7b045a7f63c1c86a74b9142
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 8544b56b85a25d522c95546b42a78fe01a3c2586
+ms.sourcegitcommit: 30f6c620380075e3459cac748ca0c656427b384d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44608458"
+ms.lasthandoff: 05/12/2021
+ms.locfileid: "52330106"
 ---
 # <a name="ux-design-patterns-for-office-add-ins"></a>适用于 Office 外接程序的 UX 设计模式
 
@@ -16,15 +16,15 @@ ms.locfileid: "44608458"
 
 我们的 UX 模式由组件组成。 组件是帮助客户与软件或服务元素进行交互的控件。 按钮、导航、和菜单是常见组件的示例，通常具有一致的样式和行为。
 
-Office UI Fabric 呈现外观和行为类似于 Office 部件的组件。 利用 Fabric 来轻松与 Office 集成。 如果外接程序有自己预先存在的组件语言，则不需要为支持 Fabric 而放弃它。 与 Office 集成的同时寻找保留该语言的机会。 想办法改变风格元素、消除冲突或采用可避免用户混淆的样式和行为。
+[Fluent UI React组件](using-office-ui-fabric-react.md)的外观和行为与 Office 的一部分类似，Office UI Fabric [JS 的中性框架组件一样](fabric-core.md)。 利用任一组组件与Office。 或者，如果您的外接程序具有自己的预先不存在的组件语言，则无需放弃它。 与 Office 集成的同时寻找保留该语言的机会。 想办法改变风格元素、消除冲突或采用可避免用户混淆的样式和行为。
 
-提供的模式是基于常见客户方案和用户体验研究的最佳做法解决方案。 它们旨在提供设计和开发外接程序的快速切入点，以及提供在 Microsoft 和品牌元素之间实现平衡的指导。 提供整洁的新式用户体验，并在 Microsoft Fabric 设计语言的设计元素与合作伙伴的独特品牌标识之间保持平衡，可能有助于提高外接程序的用户保留率和采用率。
+提供的模式是基于常见客户方案和用户体验研究的最佳做法解决方案。 它们旨在提供设计和开发外接程序的快速入口点，以及指导在 Microsoft 品牌元素和您自己的元素之间实现平衡。 提供干净、现代用户体验，在 Microsoft Fluent UI 设计语言中的设计元素与合作伙伴的独特品牌标识之间实现平衡，这可帮助提高外接程序的用户保留率和采用率。
 
 使用 UX 模式模板来实现以下目的：
 
 * 将解决方案应用于常见的客户方案。
 * 应用设计最佳实践。
-* 纳入“[Office UI Fabric](https://developer.microsoft.com/fabric#/get-started)”组件和样式。
+* 合并 [Fluent UI](https://developer.microsoft.com/fluentui#/get-started) 组件和样式。
 * 构建以可视方式与默认 Office UI 集成的外接程序。
 * 形成 UX 概念并将其可视化。
 
@@ -45,6 +45,6 @@ Office UI Fabric 呈现外观和行为类似于 Office 部件的组件。 利用
 ## <a name="see-also"></a>另请参阅
 
 * [设计工具包](design-toolkits.md)
-* [Office UI Fabric](https://developer.microsoft.com/fabric)
-* [开发 Office 外接程序的最佳做法](../concepts/add-in-development-best-practices.md)
-* [Fabric React 使用入门](../design/using-office-ui-fabric-react.md)
+* [Fluent UI](https://developer.microsoft.com/fluentui#)
+* [Office 加载项开发最佳做法](../concepts/add-in-development-best-practices.md)
+* [Fluent UI React外接程序Office中的用户界面](using-office-ui-fabric-react.md)

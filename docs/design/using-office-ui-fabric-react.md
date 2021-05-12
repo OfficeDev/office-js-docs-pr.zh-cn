@@ -1,23 +1,23 @@
 ---
-title: 在 Office 加载项中使用 Office UI Fabric React
-description: 了解如何在 Office 加载项中使用 Office UI Fabric React。
-ms.date: 02/09/2021
+title: Fluent UI React外接程序Office中的用户界面
+description: 了解如何在外接程序React Fluent UI Office。
+ms.date: 05/12/2021
 localization_priority: Normal
-ms.openlocfilehash: f8f61d1b094fa71b8a400a6a6d9ea3029c53b051
-ms.sourcegitcommit: ccc0a86d099ab4f5ef3d482e4ae447c3f9b818a3
+ms.openlocfilehash: cb7f04c21a52a2e4a3f271abc56aa325dd2b02fd
+ms.sourcegitcommit: 30f6c620380075e3459cac748ca0c656427b384d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "50237726"
+ms.lasthandoff: 05/12/2021
+ms.locfileid: "52330139"
 ---
-# <a name="use-office-ui-fabric-react-in-office-add-ins"></a>在 Office 加载项中使用 Office UI Fabric React
+# <a name="use-fluent-ui-react-in-office-add-ins"></a>在加载项React Fluent UI Office
 
-Office UI Fabric 是一个 JavaScript 前端框架，用于构建 Office 用户体验。如果使用 React 生成加载项，请考虑使用 Fabric React 创建用户体验。Fabric 提供了多个可在加载项中使用的基于 React 的 UX 组件，如按钮或复选框。
-
-本文介绍如何创建使用 React 构建的加载项, 并使用 Fabric React 组件。
+Fluent UI React 是官方开源 JavaScript 前端框架，旨在构建无缝适用于各种 Microsoft 产品（包括 Office）的体验。 它提供可靠的、最新的、可访问的React组件，这些组件使用 CSS-in-JS 进行高度自定义。
 
 > [!NOTE]
-> [Fabric Core](office-ui-fabric.md#use-fabric-core-icons-fonts-colors)是 Fabric React 附带的，这意味着在完成本文中的步骤后，你的加载项也有权访问 Fabric Core。
+> 本文介绍 Fluent UI React在加载项上下文中Office使用。但它还用于各种应用Microsoft 365扩展。 有关详细信息，请参阅[Fluent UI React](https://developer.microsoft.com/fluentui#/get-started/web#fluent-ui-react)和开源存储库 Fluent UI [Web。](https://github.com/microsoft/fluentui)
+
+本文介绍如何创建使用应用程序构建的外接程序，React Fluent UI React组件。
 
 ## <a name="create-an-add-in-project"></a>创建加载项项目
 
@@ -76,13 +76,13 @@ Office UI Fabric 是一个 JavaScript 前端框架，用于构建 Office 用户�
 
         若要使用加载项，请在 Word 网页版中打开新的文档，并按照[在 Office 网页版中旁加载 Office 加载项](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-in-office-on-the-web)中的说明操作，以旁加载你的加载项。
 
-3. 在 Word 中，依次选择“**开始**”选项卡和功能区中的“**显示任务窗格**”按钮，以打开加载项任务窗格。 请注意任务窗格底部的“默认文本”和 "**运行**" 按钮。 在本演练的其余部分中, 你将通过创建使用来自 Fabric React 的 UX 组件的 React 组件来重新定义此文本和按钮。
+3. 若要打开加载项任务窗格，在"开始 **"选项卡上** ，选择" **显示任务窗格"** 按钮。 请注意任务窗格底部的“默认文本”和 "**运行**" 按钮。 在此演练的其余部分中，你将通过创建使用 Fluent UI React 中的 UX 组件的 React 组件来重新定义此文本和React。
 
     ![Screenshot showing the Word application with the Show Taskpane ribbon button highlighted and the Run button and immediately preceding text highlighted in the task pane](../images/word-task-pane-yo-default.png)
 
-## <a name="create-a-react-component-that-uses-fabric-react"></a>创建使用 Fabric React 的 React 组件
+## <a name="create-a-react-component-that-uses-fluent-ui-react"></a>创建使用 Fluent UI React的 React
 
-此时, 你已经创建了一个使用 React 构建的非常基本的任务窗格加载项。 接下来，完成以下步骤，在加载项项目中创建新的 React 组件 (`ButtonPrimaryExample`)。 该组件使用 Fabric React 的`Label`和`PrimaryButton`组件。
+此时, 你已经创建了一个使用 React 构建的非常基本的任务窗格加载项。 接下来，完成以下步骤，在加载项项目中创建新的 React 组件 (`ButtonPrimaryExample`)。 该组件使用 `Label` Fluent UI 元素中的 和 `PrimaryButton` React。
 
 1. 打开 Yeoman 生成器创建的项目文件夹，并转到 **src\taskpane\components**。
 2. 在该文件夹中，创建一个名为“**Button.tsx**”的新文件。
@@ -102,7 +102,7 @@ export class ButtonPrimaryExample extends React.Component<IButtonProps, {}> {
     // In the click event, write text to the document.
     await Word.run(async (context) => {
       let body = context.document.body;
-      body.insertParagraph('Hello Office UI Fabric React!', Word.InsertLocation.end);
+      body.insertParagraph('Hello Fluent UI React!', Word.InsertLocation.end);
       await context.sync();
     });
   }
@@ -126,10 +126,10 @@ export class ButtonPrimaryExample extends React.Component<IButtonProps, {}> {
 此代码将执行以下操作：
 
 - 引用使用 `import * as React from 'react';` 的 React 库。
-- 参考用于创建 `ButtonPrimaryExample` 的 Fabric 组件（`PrimaryButton`、`IButtonProps`、`Label`）。
+- 引用 Fluent UI React、 (`PrimaryButton` 、) 用于创建 `IButtonProps` `Label` 的组件 `ButtonPrimaryExample` 。
 - 声明新的 `ButtonPrimaryExample` 组件使用 `export class ButtonPrimaryExample extends React.Component`。
 - 声明 `insertText` 将处理按钮 `onClick` 事件的函数。
-- 定义 `render` 函数中 React 组件的 UI。 HTML 标记使用 Fabric Reac 中的组件 `Label` 和 `PrimaryButton`，并指定当 `onClick` 事件触发时，`insertText` 函数将运行。
+- 定义 `render` 函数中 React 组件的 UI。 HTML 标记使用 Fluent UI 元素中的 和 React并指定当事件触发时 `Label` `PrimaryButton` `onClick` `insertText` ，函数将运行。
 
 ## <a name="add-the-react-component-to-your-add-in"></a>将 React 组件添加到加载项
 
@@ -170,13 +170,12 @@ export class ButtonPrimaryExample extends React.Component<IButtonProps, {}> {
 
 在 Word 中, 当你保存对 **App.tsx** 的更改时，加载项任务窗格会自动更新。 任务窗格底部的默认文本和按钮现在显示由该`ButtonPrimaryExample`组件定义的 UI。 选择 **插入文本……** 按钮将文本插入到文档中。
 
-![显示具有"插入文本..."的 Word 应用程序的屏幕截图按钮和紧接前面的突出显示文本](../images/word-task-pane-with-react-component.png)
+![显示具有"插入文本..."的 Word 应用程序的屏幕截图按钮和紧接突出显示的文本](../images/word-task-pane-with-react-component.png)
 
-恭喜，您已使用 React 和 Office UI Fabric React 成功创建了任务窗格加载项！
+恭喜！你已成功使用 React 和 Fluent UI 加载项创建React！
 
 ## <a name="see-also"></a>另请参阅
 
-- [Office 加载项中的 Office UI Fabric](office-ui-fabric.md)
-- [Office UI Fabric React](https://developer.microsoft.com/fabric)
+- [Word 外接程序 GettingStartedFabricReact](https://github.com/OfficeDev/Word-Add-in-GettingStartedFabricReact)
+- [Office外接程序中的 Fabric Core](fabric-core.md)
 - [适用于 Office 加载项的 UX 设计模式](ux-design-pattern-templates.md)
-- [Fabric React 代码示例入门](https://github.com/OfficeDev/Word-Add-in-GettingStartedFabricReact)
