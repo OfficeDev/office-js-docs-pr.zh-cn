@@ -1,15 +1,15 @@
 ---
 title: 功能区 API 要求集
-description: 指定支持动态功能区 API 的 Office 平台和内部版本。
-ms.date: 11/07/2020
+description: 指定哪些Office和内部版本支持动态功能区 API。
+ms.date: 05/12/2021
 ms.prod: non-product-specific
 localization_priority: Normal
-ms.openlocfilehash: 91c909755779d122fba8d77dc246784f6a0dd1a3
-ms.sourcegitcommit: d28392721958555d6edea48cea000470bd27fcf7
+ms.openlocfilehash: a608eff12fb21d7a4a6beb195749141bd473aa1c
+ms.sourcegitcommit: 30f6c620380075e3459cac748ca0c656427b384d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/13/2021
-ms.locfileid: "49839983"
+ms.lasthandoff: 05/12/2021
+ms.locfileid: "52330183"
 ---
 # <a name="ribbon-api-requirement-sets"></a>功能区 API 要求集
 
@@ -17,17 +17,18 @@ ms.locfileid: "49839983"
 
 功能区 API 集支持以编程方式控制自定义外接程序命令 (，即自定义功能区按钮和菜单项) 和禁用。
 
-Office 外接程序在多个 Office 版本中运行。 下表列出了功能区 API 要求集、支持该要求集的 Office 客户端应用程序，以及 Office 应用程序内部版本或版本号。
+Office 外接程序在多个 Office 版本中运行。 下表列出了功能区 API 要求集、Office要求集的客户端应用程序，以及功能区 API 要求集Office版本号。
 
-|  要求集  | Windows 版 Office 2013<br>（一次性购买） | Windows 版 Office 2016 或更高版本<br>（一次性购买）   | Windows 版 Office\*<br>（关联至 Microsoft 365 订阅） |  iPad 版 Office<br>（关联至 Microsoft 365 订阅）  |  Mac 版 Office\*<br>（关联至 Microsoft 365 订阅）  | Office 网页版\*  |  Office Online Server  |
+|  要求集  | Windows 版 Office 2013<br>（一次性购买） | Office 2016 或更高版本Windows<br>（一次性购买）   | Windows 版 Office\*<br>（关联至 Microsoft 365 订阅） |  iPad 版 Office<br>（关联至 Microsoft 365 订阅）  |  Mac 版 Office\*<br>（关联至 Microsoft 365 订阅）  | Office 网页版\*  |  Office Online Server  |
 |:-----|-----|:-----|:-----|:-----|:-----|:-----|:-----|
-| RibbonApi 1.1  | 不适用 | 不适用 | 请参阅支持<br>部分如下 | 无 | 16.38 | 2020 年 11 月 | 无|
+| RibbonApi 1.1  | 不适用 | 不适用 | 请参阅支持<br>部分如下 | 不适用 | 16.38 | 2020 年 11 月 | 不适用|
+| RibbonApi 1.2  | 不适用 | 不适用 | 2102 (内部版本 13801.20294)  | 不适用 | 即将推出 | 2021 年 5 月 | 不适用|
 
-> **&#42;** 功能区 API 仅在 Excel 上受支持，并且需要 Microsoft 365 订阅。
+> **&#42;** 功能区 API 仅在 Excel并且需要一个Microsoft 365订阅。
 
-## <a name="office-on-windows-subscription-support"></a>Windows 版 Office (订阅) 支持
+## <a name="support-for-version-11-on-office-on-windows-subscription"></a>支持版本 1.1（Office订阅Windows (版本) 
 
-要求集在消费者频道版本 2006 (版本 13001.20498 或) 。 对于 Windows 版 Office，2020 Semi-Annual 2020 年 7 月 14 日版和每月企业频道版本也支持此功能。 每个频道支持的最低版本如下：  
+1.1 版本的 RibbonApi 要求集在消费者频道版本 2006 (版本 13001.20498 或) 。 For Office on Windows the feature is also supported in the Semi-Annual Channel and Monthly Enterprise Channel builds available july 14， 2020 or later. 每个频道支持的最低版本如下所示：  
 
 |频道 | 版本 | 内部版本|
 |:-----|:-----|:-----|
@@ -40,14 +41,10 @@ Office 外接程序在多个 Office 版本中运行。 下表列出了功能区 
 
 若要详细了解版本、内部版本号和 Office Online Server，请参阅：
 
-- [Microsoft 365 客户端更新频道版本的版本号和内部版本号](https://support.office.com/article/version-and-build-numbers-of-update-channel-releases-ae942449-1fca-4484-898b-a933ea23def7)
+- [适用于客户端的更新频道版本的版本号Microsoft 365版本号](https://support.office.com/article/version-and-build-numbers-of-update-channel-releases-ae942449-1fca-4484-898b-a933ea23def7)
 - [使用的是哪一版 Office？](https://support.office.com/article/What-version-of-Office-am-I-using-932788b8-a3ce-44bf-bb09-e334518b8b19)
-- [在哪里可以找到 Microsoft 365 客户端应用程序的版本号和内部版本号](https://support.office.com/article/version-and-build-numbers-of-update-channel-releases-ae942449-1fca-4484-898b-a933ea23def7)
+- [在哪里可以找到客户端应用程序的版本号Microsoft 365版本号](https://support.office.com/article/version-and-build-numbers-of-update-channel-releases-ae942449-1fca-4484-898b-a933ea23def7)
 - [Office Online Server 概述](/officeonlineserver/office-online-server-overview)
-
-> [!NOTE]
-> **由于清单中尚不支持 RibbonApi 1.1** 要求集，因此无法在清单的部分中指定 `<Requirements>` 它。
-
 
 ## <a name="office-common-api-requirement-sets"></a>Office 通用 API 要求集
 
@@ -55,10 +52,17 @@ Office 外接程序在多个 Office 版本中运行。 下表列出了功能区 
 
 ## <a name="ribbon-api-11"></a>功能区 API 1.1
 
-功能区 API 1.1 是 API 的第一个版本。 有关 API 的详细信息，请参阅 [Office.ribbon ](/javascript/api/office/office.ribbon) 参考主题。
+功能区 API 1.1 是首版 API。 有关 API 的详细信息，请参阅[Office.ribbon](/javascript/api/office/office.ribbon)参考主题。
+
+## <a name="ribbon-api-12"></a>功能区 API 1.2
+
+功能区 API 1.2 增加了对上下文选项卡的支持。 更多信息，请参见[在Office插件中创建自定义上下文选项卡](../../design/contextual-tabs.md)。
+
+> [!NOTE]
+> **由于清单中尚不支持 RibbonApi 1.2** 要求集，因此不应在清单的部分中指定 `<Requirements>` 它。
 
 ## <a name="see-also"></a>另请参阅
 
 - [Office 版本和要求集](../../develop/office-versions-and-requirement-sets.md)
-- [指定 Office 应用程序和 API 要求](../../develop/specify-office-hosts-and-api-requirements.md)
+- [指定 Office 应用程序和 API 要求集](../../develop/specify-office-hosts-and-api-requirements.md)
 - [Office 加载项 XML 清单](../../develop/add-in-manifests.md)

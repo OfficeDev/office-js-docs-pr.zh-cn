@@ -1,22 +1,22 @@
 ---
-title: Office 外接程序的新鲜样式图标指南
-description: 有关在 Office 外接程序中使用新鲜样式图标的指南。
-ms.date: 03/30/2021
+title: 适用于外接程序的Office样式图标指南
+description: 有关在外接程序中Office样式图标的指南。
+ms.date: 05/12/2021
 localization_priority: Normal
-ms.openlocfilehash: cc891593ec9518d256047cfa172553cc41d3e12e
-ms.sourcegitcommit: 0bff0411d8cfefd4bb00c189643358e6fb1df95e
+ms.openlocfilehash: acf800824833d23bd6bfeff6872786f6c8c0e4b5
+ms.sourcegitcommit: 30f6c620380075e3459cac748ca0c656427b384d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/07/2021
-ms.locfileid: "51604664"
+ms.lasthandoff: 05/12/2021
+ms.locfileid: "52330043"
 ---
-# <a name="fresh-style-icon-guidelines-for-office-add-ins"></a>Office 外接程序的新鲜样式图标指南
+# <a name="fresh-style-icon-guidelines-for-office-add-ins"></a>适用于外接程序的Office样式图标指南
 
-Office 2013 (非订阅) Office 版本使用 Microsoft 的"全新"样式图标。 如果更希望图标与 Microsoft 365 的单声道样式匹配，请参阅 Office 加载项的单声道样式 [图标指南](add-in-icons-monoline.md)。
+2013 Office 2013 (非订阅) 版本Office Microsoft 的"全新"样式图标。 如果你希望图标与单声道样式匹配Microsoft 365，请参阅适用于加载项的单Office[图标指南](add-in-icons-monoline.md)。
 
-## <a name="office-fresh-visual-style"></a>Office 全新外观样式
+## <a name="office-fresh-visual-style"></a>Office全新的视觉样式
 
-"新鲜度"图标仅包含基本的通信元素。 包括透视、渐变和光源的非必需元素均被删除。 简化后的图标可支持对命令和控件的快速解析。 请遵循此样式以最适合 Office 非订阅客户端。
+"新鲜度"图标仅包含基本的通信元素。 包括透视、渐变和光源的非必需元素均被删除。 简化后的图标可支持对命令和控件的快速解析。 请遵循此样式，以最适合Office订阅客户端。
 
 ## <a name="best-practices"></a>最佳实践
 
@@ -25,10 +25,10 @@ Office 2013 (非订阅) Office 版本使用 Microsoft 的"全新"样式图标。
 |允许事项|禁止事项|
 |:---|:---|
 |使视觉对象简洁明了，重点关注通信的关键元素。| 不要使用使图标显得杂乱的项目。|
-|使用 Office 图标语言来表示行为或概念。|不要对 Office 应用功能区或上下文菜单中的外接程序命令重新使用 Office UI Fabric 字形。 Fabric 图标风格不同，不能匹配。|
+|使用 Office 图标语言来表示行为或概念。|请勿对功能区或上下文菜单中的外接程序命令Office 应用 Fabric Core 字形。 Fabric Core 图标在风格上有所不同，不会匹配。|
 |将画笔等公用 Office 视觉隐喻重用于格式或用于查找的放大镜。|不要对不同的命令重复使用视觉隐喻。 对不同的行为和概念使用同一图标可能会引起混淆。 |
 |重绘图标，使其更大或更小。 请花时间重绘切割区、角和圆边，以最大化线条的清晰度。 |切勿通过缩小或扩大尺寸来调整图标大小。 这可能会导致视觉对象质量不佳和操作不清晰。 对于较大尺寸的复杂图标，如果不是通过重绘来使其变小，则可能会降低清晰度。 |
-|为辅助功能使用白色填充。图标中的大部分对象都需使用白色背景，以使其在 Office UI 主题中以及高对比度模式下清晰可辨。  |避免依赖徽标或品牌传达外接程序命令应起到的作用。 品牌标志在较小的图标尺寸上和应用很多修饰符后并非总具有识别性。 品牌标记通常与 Office 应用程序功能区图标样式冲突，并且可能会在饱和的环境中吸引用户的注意力。 |
+|为辅助功能使用白色填充。图标中的大部分对象都需使用白色背景，以使其在 Office UI 主题中以及高对比度模式下清晰可辨。  |避免依赖徽标或品牌传达外接程序命令应起到的作用。 品牌标志在较小的图标尺寸上和应用很多修饰符后并非总具有识别性。 品牌标记通常与Office 应用图标样式冲突，并且可能会吸引用户关注在饱和的环境中。 |
 |使用具有透明背景的 PNG 格式。 ||
 |避免在图标中使用可本地化的内容，包括印刷字符、段落标记指示和问号。 ||
 
@@ -46,7 +46,7 @@ Office 桌面图标是位图图像。 根据用户的 DPI 设置和触摸模式�
 - 80 像素（必需）
 
 > [!IMPORTANT]
-> 有关作为加载项代表图标的图像，请参阅在 [AppSource](/office/dev/store/create-effective-office-store-listings#create-an-icon-for-your-add-in) 和 Office 内创建有效列表，了解大小和其他要求。
+> 对于作为加载项代表性图标的图像，请参阅在[AppSource](/office/dev/store/create-effective-office-store-listings#create-an-icon-for-your-add-in)和 Office内创建有效列表，了解大小和其他要求。
 
 确保根据每个尺寸重新绘制你的图标，而非将其缩小。
 
@@ -54,7 +54,7 @@ Office 桌面图标是位图图像。 根据用户的 DPI 设置和触摸模式�
 
 ## <a name="icon-anatomy-and-layout"></a>图标分析和布局
 
-Office 图标通常由具有操作和概念修饰符的基元素组成。 操作修饰符表示诸如添加、打开、新建或关闭等的概念。 概念修饰符表示图标的状态、更改或说明。
+Office图标通常由具有操作和概念修饰符的基元素组成。 操作修饰符表示诸如添加、打开、新建或关闭等的概念。 概念修饰符表示图标的状态、更改或说明。
 
 若要创建与 Office UI 相符的命令，请遵循基本元素和修饰符的布局准则。这将确保命令看起来具有专业性，且客户将信任你的外接程序。如果出现未按这些准则进行操作的情况，则这些操作应该是有意为之。
 
@@ -89,7 +89,7 @@ Office 图标通常由具有操作和概念修饰符的基元素组成。 操�
 ## <a name="icon-colors"></a>图标颜色
 
 > [!NOTE]
-> 这些颜色指南适用于[外接程序命令](add-in-commands.md)中使用的功能区图标。 这些图标不使用 Microsoft UI Fabric 呈现，调色板与 [Microsoft UI Fabric | 颜色 | 共享](https://fluentfabric.azurewebsites.net/#/color/shared)中描述的调色板不同。
+> 这些颜色指南适用于[外接程序命令](add-in-commands.md)中使用的功能区图标。 这些图标不是使用 Fluent UI 呈现的，并且调色板不同于 Microsoft UI Fabric | [颜色|共享](https://fluentfabric.azurewebsites.net/#/color/shared)。
 
 Office 图标具有一个有限的调色板。使用下表中列出的颜色确保与 Office UI 无缝集成。对颜色使用应用以下准则：
 
@@ -97,7 +97,7 @@ Office 图标具有一个有限的调色板。使用下表中列出的颜色确�
 - 如有可能，除灰色外仅使用其他一种颜色。将附加颜色限制为最多两种。
 - 所有图标大小中的颜色应具有一致的外观。 Office 图标针对不同的图标大小具有略微不同的调色板。 16 像素和较小的图标比 32 像素和更大的图标略暗且更亮。 除了这些细微的调整以外，颜色的差别体现在大小上。
 
-|颜色名称|RGB|十六进制|颜色|Category|
+|颜色名称|RGB|十六进制|颜色|类别|
 |:---|:---|:---|:---|:---|
 |文本灰色 (80)|80、80、80|#505050| ![文本为灰色 80 颜色](../images/color-text-gray-80.png) |文本|
 |文本灰色 (95)|95、95、95|#5F5F5F| ![文本为灰色 95](../images/color-text-gray-95.png) |文本|

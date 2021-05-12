@@ -1,14 +1,14 @@
 ---
 title: 内容 Office 加载项
 description: 内容加载项是指可以直接嵌入 Excel 或 PowerPoint 文档的图面，用户可以通过它访问界面控件，运行代码以修改文档或显示数据源中的数据。
-ms.date: 07/07/2020
+ms.date: 05/12/2021
 localization_priority: Normal
-ms.openlocfilehash: cf4ea46b4b924683756063bb36c3f2ea2b8c6764
-ms.sourcegitcommit: ceb8dd66f3fb9c963fce8446c2f6c65ead56fbc1
+ms.openlocfilehash: 89c8c7eb96d6b1cf6484133b52acbe7d0ccb5298
+ms.sourcegitcommit: 30f6c620380075e3459cac748ca0c656427b384d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "49132079"
+ms.lasthandoff: 05/12/2021
+ms.locfileid: "52329994"
 ---
 # <a name="content-office-add-ins"></a>内容 Office 加载项
 
@@ -16,7 +16,7 @@ ms.locfileid: "49132079"
 
 *图 1. 内容加载项的典型布局*
 
-![Office 应用程序中的内容外接程序的典型布局](../images/overview-with-app-content.png)
+![应用程序内容外接程序的典型布局Office应用程序](../images/overview-with-app-content.png)
 
 ## <a name="best-practices"></a>最佳做法
 
@@ -25,7 +25,7 @@ ms.locfileid: "49132079"
 
 ## <a name="variants"></a>变量
 
-Excel 和 PowerPoint 在 Office desktop 中的内容外接程序大小，Microsoft 365 是用户指定的。
+用户指定桌面Excel PowerPoint Office外接程序Microsoft 365外接程序大小。
 
 ## <a name="personality-menu"></a>“个性”菜单
 
@@ -35,13 +35,13 @@ Excel 和 PowerPoint 在 Office desktop 中的内容外接程序大小，Microso
 
 *图 2：Windows 上的个性菜单*
 
-![Windows 桌面上的 12x32-像素特征菜单](../images/personality-menu-win.png)
+![桌面版 12x32 像素Windows菜单](../images/personality-menu-win.png)
 
 对于 Mac，“个性”菜单尺寸为 26x26 像素，但是从右侧浮动 8 个像素，再从顶部浮动 6 个像素，能将占用空间增加至 34x32 像素，如下所示。
 
 *图 3：Mac 上的个性菜单*
 
-![Mac 桌面上的34x32 的 "像素个性" 菜单](../images/personality-menu-mac.png)
+![Mac 桌面上的 34x32 像素个性菜单](../images/personality-menu-mac.png)
 
 ## <a name="implementation"></a>实现
 
@@ -49,13 +49,13 @@ Excel 和 PowerPoint 在 Office desktop 中的内容外接程序大小，Microso
 
 ## <a name="support-considerations"></a>支持注意事项
 
-- 检查 Office 加载项是否适用 [于特定的 office 应用程序或平台](../overview/office-add-in-availability.md)。
+- 检查你的加载项Office应用程序或平台的特定Office[工作](../overview/office-add-in-availability.md)。
 - 一些内容加载项可能会要求用户“信任”加载项对 Excel 或 PowerPoint 执行读取和写入操作。 可以在加载项清单中声明要拥有的[权限级别](../develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md)。  
 - Office 2013 版本及更高版本中的 Excel 和 PowerPoint 支持内容加载项。 如果在不支持 Office Web 加载项的 Office 版本中打开加载项，加载项会显示为图像。
 
 ## <a name="see-also"></a>另请参阅
 
-- [Office 客户端应用程序和平台的 Office 加载项可用性](../overview/office-add-in-availability.md)
-- [Office 加载项中的 Office UI Fabric](../design/office-ui-fabric.md)
+- [Office 客户端应用程序和 Office 加载项的平台可用性](../overview/office-add-in-availability.md)
+- [Office外接程序中的 Fabric Core](fabric-core.md)
 - [适用于 Office 加载项的 UX 设计模式](../design/ux-design-pattern-templates.md)
 - [在加载项中请求获取 API 使用权限](../develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md)

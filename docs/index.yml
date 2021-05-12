@@ -1,6 +1,6 @@
 ### YamlMime:Hub
 title: Office 加载项文档
-summary: 使用 Office 外接程序平台构建解决方案，以扩展 Office 应用程序并与 Office 文档、Outlook 邮件和日历项中的内容进行交互。 借助 Office 加载项，可以使用熟悉的 Web 技术（如 HTML、CSS 和 JavaScript）生成可在 Office 网页版、Windows、Mac 和移动版中运行的解决方案。
+summary: 使用 Office 外接程序平台构建解决方案，以扩展 Office 应用程序并与 Office 文档以及 Outlook 邮件和日历项中的内容进行交互。 借助 Office 加载项，可以使用熟悉的 Web 技术（如 HTML、CSS 和 JavaScript）生成可在 Office web 版、Windows、Mac 和移动中运行的解决方案。
 brand: office
 metadata:
   title: Office 加载项文档
@@ -10,109 +10,103 @@ metadata:
   ms.topic: hub-page
   author: o365devx
   ms.author: o365devx
-  ms.date: 03/29/2021
-  ms.openlocfilehash: 1b6dc17b648a283cdca57051a049f7247cc151c8
-  ms.sourcegitcommit: a0624ef0d847fdbd6d83f27d1f9c69daf636ac38
-  ms.translationtype: MT
-  ms.contentlocale: zh-CN
-  ms.lasthandoff: 03/30/2021
-  ms.locfileid: "51435247"
+  ms.date: 05/10/2021
 highlightedContent:
   items:
-  - itemType: overview
-    title: Office 加载项平台概述
-    url: overview/office-add-ins.md
-  - itemType: quickstart
-    title: 在 5 分钟内设置 Excel 加载项
-    url: quickstarts/excel-quickstart-jquery.md
-  - itemType: learn
-    title: Microsoft Learn： Introduction to Office client customization with add-ins
-    url: /learn/modules/intro-office-add-ins
-  - itemType: learn
-    title: Microsoft Learn：使用 Office 外接程序扩展 Office 客户端
-    url: /learn/paths/m365-office-add-in-associate
-  - itemType: whats-new
-    title: Microsoft 365 开发人员博客
-    url: https://developer.microsoft.com/office/blogs/technology/add-ins
-  - itemType: how-to-guide
-    title: Office 加载项初学者指南
-    url: overview/learning-path-beginner.md
-  - itemType: reference
-    title: Office JavaScript API 参考文档
-    url: /javascript/api/overview
-  - itemType: sample
-    title: GitHub：Office 外接程序的模式和做法
-    url: https://github.com/OfficeDev/PnP-OfficeAddins
+    - itemType: overview
+      title: Office 加载项平台概述
+      url: overview/office-add-ins.md
+    - itemType: quickstart
+      title: 在 5 Excel设置外接程序
+      url: quickstarts/excel-quickstart-jquery.md
+    - itemType: learn
+      title: Microsoft Learn：Office加载项自定义客户端简介
+      url: /learn/modules/intro-office-add-ins
+    - itemType: learn
+      title: Microsoft Learn： Extend Office clients with Office Add-ins
+      url: /learn/paths/m365-office-add-in-associate
+    - itemType: whats-new
+      title: Microsoft 365开发人员博客
+      url: 'https://developer.microsoft.com/office/blogs/technology/office-add-ins'
+    - itemType: how-to-guide
+      title: Office加载项初学者指南
+      url: overview/learning-path-beginner.md
+    - itemType: reference
+      title: Office JavaScript API 参考文档
+      url: /javascript/api/overview
+    - itemType: sample
+      title: GitHub：加载项Office和做法
+      url: 'https://github.com/OfficeDev/PnP-OfficeAddins'
 conceptualContent:
   title: 你的开发人员旅程
   summary: ''
   items:
-  - title: 浏览
-    links:
-    - url: overview/learning-path-beginner.md
-      itemType: get-started
-      text: Office 加载项入门
-    - url: overview/explore-with-script-lab.md
-      itemType: sample
-      text: 使用 Script Lab 进行测试和试验
-    - url: quickstarts/outlook-quickstart.md
-      itemType: quickstart
-      text: 在 5 分钟内设置 Outlook 外接程序
-    - url: quickstarts/powerpoint-quickstart.md
-      itemType: quickstart
-      text: 在 5 分钟内设置 PowerPoint 外接程序
-  - title: 内部版本
-    links:
-    - url: tutorials/excel-tutorial.md
-      itemType: tutorial
-      text: 开发完整的 Excel 加载项
-    - url: tutorials/outlook-tutorial.md
-      itemType: tutorial
-      text: 发现 Outlook 外接程序教程
-    - url: overview/patterns-and-practices-overview.md
-      itemType: sample
-      text: 使用常见模式和做法
-    - url: /javascript/api/overview
-      itemType: reference
-      text: 阅读 API 参考文档
-  - title: 测试和调试
-    links:
-    - url: testing/test-debug-office-add-ins.md
-      itemType: overview
-      text: 查看调试概述
-    - url: testing/testing-and-troubleshooting.md
-      itemType: concept
-      text: 排查用户错误
-    - url: testing/troubleshoot-manifest.md
-      itemType: architecture
-      text: 验证加载项清单
-  - title: 部署
-    links:
-    - url: publish/publish.md
-      itemType: deploy
-      text: 探索部署选项
-    - url: publish/centralized-deployment.md
-      itemType: deploy
-      text: 了解集中部署
-  - title: 发布
-    links:
-    - url: /office/dev/store
-      itemType: overview
-      text: 验证 Office 加载项
-    - url: /office/dev/store/add-in-submission-guide
-      itemType: how-to-guide
-      text: 查看 Microsoft 365 应用商店提交指南
-  - title: 参与
-    links:
-    - url: https://developer.microsoft.com/office
-      itemType: whats-new
-      text: 加入开发人员计划
-    - url: /answers/products/m365
-      itemType: architecture
-      text: 请求功能
-    - url: https://stackoverflow.com/questions/tagged/office-js
-      itemType: reference
-      text: 在 Stack Overflow 上Office.js有关应用的问题
-    - url: https://github.com/OfficeDev/office-js/issues
-      itemType: reference
-      text: 报告 Bug 或问题
+    - title: 浏览
+      links:
+        - url: overview/learning-path-beginner.md
+          itemType: get-started
+          text: Office 加载项入门
+        - url: overview/explore-with-script-lab.md
+          itemType: sample
+          text: 测试并试验Script Lab
+        - url: quickstarts/outlook-quickstart.md
+          itemType: quickstart
+          text: 在 5 Outlook设置外接程序
+        - url: quickstarts/powerpoint-quickstart.md
+          itemType: quickstart
+          text: 在 5 PowerPoint设置外接程序
+    - title: 内部版本
+      links:
+        - url: tutorials/excel-tutorial.md
+          itemType: tutorial
+          text: 开发Excel加载项
+        - url: tutorials/outlook-tutorial.md
+          itemType: tutorial
+          text: 发现Outlook加载项教程
+        - url: overview/patterns-and-practices-overview.md
+          itemType: sample
+          text: 使用常见模式和做法
+        - url: /javascript/api/overview
+          itemType: reference
+          text: 阅读 API 参考文档
+    - title: 测试和调试
+      links:
+        - url: testing/test-debug-office-add-ins.md
+          itemType: overview
+          text: 查看调试概述
+        - url: testing/testing-and-troubleshooting.md
+          itemType: concept
+          text: 排查用户错误
+        - url: testing/troubleshoot-manifest.md
+          itemType: architecture
+          text: 验证加载项清单
+    - title: 部署
+      links:
+        - url: publish/publish.md
+          itemType: deploy
+          text: 探索部署选项
+        - url: publish/centralized-deployment.md
+          itemType: deploy
+          text: 了解集中部署
+    - title: 发布
+      links:
+        - url: /office/dev/store
+          itemType: overview
+          text: 验证Office加载项
+        - url: /office/dev/store/add-in-submission-guide
+          itemType: how-to-guide
+          text: 查看Microsoft 365应用商店提交指南
+    - title: 参与
+      links:
+        - url: 'https://developer.microsoft.com/office'
+          itemType: whats-new
+          text: 加入开发人员计划
+        - url: /answers/products/m365
+          itemType: architecture
+          text: 请求功能
+        - url: 'https://stackoverflow.com/questions/tagged/office-js'
+          itemType: reference
+          text: 在 Stack Overflow 上Office.js有关应用的问题
+        - url: 'https://github.com/OfficeDev/office-js/issues'
+          itemType: reference
+          text: 报告 Bug 或问题

@@ -1,31 +1,26 @@
 ---
 title: Office 加载项的数据可视化样式指南
-description: 了解如何在 Office 外接程序中可视化数据的一些良好实践。
-ms.date: 01/14/2019
+description: 获取有关如何在加载项中可视化数据Office一些好的做法。
+ms.date: 05/12/2021
 localization_priority: Normal
-ms.openlocfilehash: f3fa2a6cc5a9d27135ad4290eded838dfaecb7d6
-ms.sourcegitcommit: ceb8dd66f3fb9c963fce8446c2f6c65ead56fbc1
+ms.openlocfilehash: ac32d7f284850fc8daef1fb1588940844123550f
+ms.sourcegitcommit: 30f6c620380075e3459cac748ca0c656427b384d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "49132072"
+ms.lasthandoff: 05/12/2021
+ms.locfileid: "52330176"
 ---
 # <a name="data-visualization-style-guidelines-for-office-add-ins"></a>Office 加载项的数据可视化样式指南
 
 良好的数据可视化效果可帮助用户找到数据见解。他们可以使用这些见解来讲述具有说服力的故事。本文提供了准则，以帮助你在适用于 Excel 和其他 Office 应用的外接程序中设计有效的数据可视化。
 
-我们建议使用 [Office UI Fabric](https://developer.microsoft.com/fabric) 来创建数据可视化的镶边。Office UI Fabric 包含可与 Office 外观无缝集成的样式和组件。
-<!--The following figure shows a data visualization in an add-in that uses Fabric.
-
-![Image of a data visualization with Fabric elements applied**](../images/fabric-data-visualization.png) 
-
--->
+建议使用 [Fluent UI](../design/add-in-design.md) 为数据可视化创建部件版式。 Fluent UI 包括样式和组件，这些样式和组件与Office外观无缝集成。
 
 ## <a name="data-visualization-elements"></a>数据可视化元素
 
-数据可视化共享常规框架和常见的可视化和交互元素，包括标题、标签和数据图形，如下图所示。
+数据可视化共享常规框架和常见的视觉和交互式元素，包括标题、标签和数据绘图，如下图所示。
 
-![带有标题、坐标轴、图例和标记的绘图区的折线图](../images/excel-charts-visualization.png)
+![带标题、坐标轴、图例和绘图区标签的线形图](../images/excel-charts-visualization.png)
 
 ### <a name="chart-titles"></a>图表标题
 
@@ -33,14 +28,14 @@ ms.locfileid: "49132072"
 
 - 使图表标题便于阅读。设定其位置以创建相对于其余图表的清晰视觉对象层次结构。
 - 一般情况下，使用句子大写（大写第一个字词）。若要创建对比度或强化层次结构，可以全部使用大写，但应谨慎使用全部大写。
-- 纳入 [Office UI Fabric 类型校正](https://developer.microsoft.com/fabric#/styles/typography)使图表与使用 Segoe 的 Office UI 保持一致。你还可以使用不同的字样来区分图表内容和 UI。
+- 合并[Fluent UI 类型渐变](https://developer.microsoft.com/fluentui#/styles/web/typography)，使图表与使用 Segoe 的 Office UI 保持一致。 你还可以使用不同的字样来区分图表内容和 UI。
 - 使用带有大型计数器的 sans-serif 字样。
 
 ### <a name="axis-labels"></a>轴标签
 
 请确保轴标签颜色足够深，以便可以清楚地阅读，并且具有足够的文本和背景色对比度。请确保颜色不要过深，避免比数据墨迹更加突出。
 
-浅灰色轴标签效果最佳。 如果使用的是 Fabric，请参阅 [中性色调色板](https://developer.microsoft.com/fabric#/styles/colors)。
+浅灰色轴标签效果最佳。 如果你使用的是 Fluent UI，请参阅中性 [颜色调色板](https://developer.microsoft.com/fluentui#/styles/web/colors/neutrals)。
 
 ### <a name="data-ink"></a>数据墨迹
 
@@ -60,11 +55,11 @@ ms.locfileid: "49132072"
 
 要准确读取图表，通常网格线是必不可少的，但应显示为辅助可视元素，用于增强数据墨迹效果，但不会影响数据显示。确保静态网格线较细且颜色较淡，除非专门将其设计用于高对比度的情况。还可以使用交互作用创建在用户与图表交互时上下文中显示的动态、实时网格线。
 
-浅灰色网格线效果最佳。 如果使用的是 Fabric，请参阅 [中性色调色板](https://developer.microsoft.com/fabric#/styles/colors)。
+浅灰色网格线效果最佳。 如果你使用的是 Fluent UI，请参阅中性 [颜色调色板](https://developer.microsoft.com/fluentui#/styles/web/colors/neutrals)。
 
 下图显示了带有网格线的数据可视化。
 
-![带网格线的折线图的数据可视化](../images/data-visualization.png)
+![使用网格线的数据可视化线形图](../images/data-visualization.png)
 
 ### <a name="legends"></a>图例
 
