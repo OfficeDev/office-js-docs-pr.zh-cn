@@ -1,15 +1,15 @@
 ---
 title: Excel 加载项教程
 description: 在本教程中，你将学习如何构建一个 Excel 外接程序，用于创建、填充、筛选和排序表格、创建图表、冻结表格标题、保护工作表并打开对话框。
-ms.date: 02/03/2021
+ms.date: 05/12/2021
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: 0fa22b7b91f041c95abad9981dd89e620cf9af1c
-ms.sourcegitcommit: d153f6d4c3e01d63ed24aa1349be16fa8ad51218
+ms.openlocfilehash: 4eee9910c394238d4ce90cc629366b030f791144
+ms.sourcegitcommit: 30f6c620380075e3459cac748ca0c656427b384d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/10/2021
-ms.locfileid: "50613932"
+ms.lasthandoff: 05/12/2021
+ms.locfileid: "52330015"
 ---
 # <a name="tutorial-create-an-excel-task-pane-add-in"></a>教程：创建 Excel 任务窗格加载项
 
@@ -54,7 +54,7 @@ ms.locfileid: "50613932"
 
 1. 在代码编辑器中打开项目。
 
-2. 打开 ./src/taskpane/taskpane.html 文件。  此文件含有任务窗格的 HTML 标记。
+2. 打开 **./src/taskpane/taskpane.html** 文件。  此文件含有任务窗格的 HTML 标记。
 
 3. 找到 `<main>` 元素并删除在开始 `<main>` 标记后和关闭 `</main>` 标记前出现的所有行。
 
@@ -207,26 +207,26 @@ ms.locfileid: "50613932"
 
     ![Excel 的屏幕截图，显示带有“创建表格”按钮的加载项任务窗格，以及工作表中填充了“日期”、“商家”、“类别”和“金额”数据的表格](../images/excel-tutorial-create-table-2.png)
 
-## <a name="filter-and-sort-a-table"></a>筛选和排序表格
+## <a name="filter-and-sort-a-table&quot;></a>筛选和排序表格
 
 本教程的这一步是，筛选并排序之前创建的表。
 
-### <a name="filter-the-table"></a>筛选表格
+### <a name=&quot;filter-the-table&quot;></a>筛选表格
 
 1. 打开 **./src/taskpane/taskpane.html** 文件。
 
-2. 找到 `<button>` 按钮的 `create-table` 元素，并在该行后添加下列标记：
+2. 定位 `<button>` 按钮的 `create-table` 元素，并在行后添加下列标记：
 
     ```html
-    <button class="ms-Button" id="filter-table">Filter Table</button><br/><br/>
+    <button class=&quot;ms-Button&quot; id=&quot;filter-table&quot;>Filter Table</button><br/><br/>
     ```
 
-3. 打开 ./src/taskpane/taskpane.js 文件。
+3. 打开 **./src/taskpane/taskpane.js** 文件。
 
 4. 在 `Office.onReady` 方法调用中，找到用于将单击处理程序分配到 `create-table` 按钮的行，并在该行后添加以下代码：
 
     ```js
-    document.getElementById("filter-table").onclick = filterTable;
+    document.getElementById(&quot;filter-table").onclick = filterTable;
     ```
 
 5. 将以下函数添加到文件末端：
@@ -266,13 +266,13 @@ ms.locfileid: "50613932"
 
 1. 打开 **./src/taskpane/taskpane.html** 文件。
 
-2. 找到 `<button>` 按钮的 `filter-table` 元素，并在该行后添加下列标记：
+2. 定位 `<button>` 按钮的 `filter-table` 元素，并在行后添加下列标记：
 
     ```html
     <button class="ms-Button" id="sort-table">Sort Table</button><br/><br/>
     ```
 
-3. 打开 ./src/taskpane/taskpane.js 文件。
+3. 打开 **./src/taskpane/taskpane.js** 文件。
 
 4. 在 `Office.onReady` 方法调用中，找到用于将单击处理程序分配到 `filter-table` 按钮的行，并在该行后添加以下代码：
 
@@ -334,26 +334,26 @@ ms.locfileid: "50613932"
 
     ![Excel 的屏幕截图，其中“加载项”任务窗格中显示“筛选表”和“排序表”按钮](../images/excel-tutorial-filter-and-sort-table-2.png)
 
-## <a name="create-a-chart"></a>创建图表
+## <a name="create-a-chart&quot;></a>创建图表
 
 本教程的这一步是，使用先前创建的表中的数据创建图表，再设置图表格式。
 
-### <a name="chart-a-chart-using-table-data"></a>使用表格数据绘制图表
+### <a name=&quot;chart-a-chart-using-table-data&quot;></a>使用表格数据绘制图表
 
 1. 打开 **./src/taskpane/taskpane.html** 文件。
 
-2. 找到 `<button>` 按钮的 `sort-table` 元素，并在该行后添加下列标记： 
+2. 定位 `<button>` 按钮的 `sort-table` 元素，并在行后添加下列标记： 
 
     ```html
-    <button class="ms-Button" id="create-chart">Create Chart</button><br/><br/>
+    <button class=&quot;ms-Button&quot; id=&quot;create-chart&quot;>Create Chart</button><br/><br/>
     ```
 
-3. 打开 ./src/taskpane/taskpane.js 文件。
+3. 打开 **./src/taskpane/taskpane.js** 文件。
 
 4. 在 `Office.onReady` 方法调用中，找到用于将单击处理程序分配到 `sort-table` 按钮的行，并在该行后添加以下代码：
 
     ```js
-    document.getElementById("create-chart").onclick = createChart;
+    document.getElementById(&quot;create-chart").onclick = createChart;
     ```
 
 5. 将以下函数添加到文件末端：
@@ -393,7 +393,7 @@ ms.locfileid: "50613932"
 
    - 第二个参数指定要在图表中添加的数据的范围。
 
-   - 第三个参数确定是按行方向还是按列方向绘制表格中的一系列数据点。 选项 `auto` 指示 Excel 确定最佳方法。
+   - 第三个参数确定按行方向还是按列方向绘制表格中的一系列数据点。选项 `auto` 指示 Excel 确定最佳方法。
 
     ```js
     var chart = currentWorksheet.charts.add('ColumnClustered', dataRange, 'Auto');
@@ -429,26 +429,26 @@ ms.locfileid: "50613932"
 
     ![Excel 的屏幕截图，在“加载项”任务窗格中显示“创建图表”按钮，工作表中显示杂货和教育费用数据的图表](../images/excel-tutorial-create-chart-2.png)
 
-## <a name="freeze-a-table-header"></a>冻结表格标题
+## <a name="freeze-a-table-header&quot;></a>冻结表格标题
 
 如果表格很长，导致用户必须滚动才能看到一些行，那么标题行可能会在滚动时不可见。 本教程的这一步是，冻结以前创建的表格的标题行，让它在用户向下滚动工作表时依然可见。
 
-### <a name="freeze-the-tables-header-row"></a>冻结表格的标题行
+### <a name=&quot;freeze-the-tables-header-row&quot;></a>冻结表格的标题行
 
 1. 打开 **./src/taskpane/taskpane.html** 文件。
 
-2. 找到 `<button>` 按钮的 `create-chart` 元素，并在该行后添加下列标记：
+2. 定位 `<button>` 按钮的 `create-chart` 元素，并在行后添加下列标记：
 
     ```html
-    <button class="ms-Button" id="freeze-header">Freeze Header</button><br/><br/>
+    <button class=&quot;ms-Button&quot; id=&quot;freeze-header&quot;>Freeze Header</button><br/><br/>
     ```
 
-3. 打开 ./src/taskpane/taskpane.js 文件。
+3. 打开 **./src/taskpane/taskpane.js** 文件。
 
 4. 在 `Office.onReady` 方法调用中，找到用于将单击处理程序分配到 `create-chart` 按钮的行，并在该行后添加以下代码：
 
     ```js
-    document.getElementById("freeze-header").onclick = freezeHeader;
+    document.getElementById(&quot;freeze-header").onclick = freezeHeader;
     ```
 
 5. 将以下函数添加到文件末端：
@@ -474,7 +474,7 @@ ms.locfileid: "50613932"
 
    - `Worksheet.freezePanes` 集合是工作表中的一组窗格，在工作表滚动时就地固定或冻结。
 
-   - `freezeRows` 方法需要使用要就地固定的行数（自顶部算起）作为参数。 传递 `1` 以就地固定第一行。
+   - `freezeRows` 方法需要使用要就地固定的行数（自顶部算起）作为参数。传递 `1` 可以就地固定第一行。
 
     ```js
     var currentWorksheet = context.workbook.worksheets.getActiveWorksheet();
@@ -724,7 +724,7 @@ ms.locfileid: "50613932"
 
 1. 关闭包括 Excel 在内的所有 Office 应用。
 
-2. 通过删除缓存文件夹的内容（所有文件和子文件夹）来删除 Office 缓存。 这对于从客户端应用程序中完全清除旧版本的外接程序是必需的。
+2. 通过删除缓存文件夹内容（全部文件和子文件夹）删除 Office 缓存。若要完全清楚客户端应用程序中的旧版加载项，必须执行此项操作。
 
     - 对于 Windows：`%LOCALAPPDATA%\Microsoft\Office\16.0\Wef\`。
 
@@ -773,7 +773,7 @@ ms.locfileid: "50613932"
 
 2. 在 **./src/dialogs** 文件夹中，新建文件“**popup.html**”。
 
-3. 将下面的标记添加到 **popup.html** 中。 注意：
+3. 将以下标记添加到 **popup.html** 中。注意：
 
    - 此页面包含可供用户输入用户名的 `<input>` 字段，并包含将此名称发送到将在其中显示的任务窗格的按钮。
 
@@ -789,7 +789,7 @@ ms.locfileid: "50613932"
             <meta charset="UTF-8">
             <meta name="viewport" content="width=device-width, initial-scale=1">
 
-            <!-- For more information on Office UI Fabric, visit https://developer.microsoft.com/fabric. -->
+            <!-- For more information on Fluent UI, visit https://developer.microsoft.com/fluentui. -->
             <link rel="stylesheet" href="https://static2.sharepointonline.com/files/fabric/office-ui-fabric-core/9.6.1/css/fabric.min.css"/>
 
             <script type="text/javascript" src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js"></script>

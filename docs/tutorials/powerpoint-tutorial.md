@@ -1,15 +1,15 @@
 ---
 title: PowerPoint 加载项教程
 description: 在本教程中，将生成 PowerPoint 加载项，用于插入图像、插入文本、获取幻灯片元数据，以及在幻灯片之间导航。
-ms.date: 02/09/2021
+ms.date: 05/12/2021
 ms.prod: powerpoint
 localization_priority: Priority
-ms.openlocfilehash: 35359f58831ebd4b8874247378a09e9da97e4d69
-ms.sourcegitcommit: ccc0a86d099ab4f5ef3d482e4ae447c3f9b818a3
+ms.openlocfilehash: dcc833111520c106844fa0b2adf620cb83b31c31
+ms.sourcegitcommit: 30f6c620380075e3459cac748ca0c656427b384d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "50238076"
+ms.lasthandoff: 05/12/2021
+ms.locfileid: "52330036"
 ---
 # <a name="tutorial-create-a-powerpoint-task-pane-add-in"></a>教程：创建 PowerPoint 任务窗格加载项
 
@@ -243,7 +243,7 @@ ms.locfileid: "50238076"
 
 1. 在 **Home.html** 文件中，将 `TODO2` 替换为以下标记，以将页眉部分和标题添加到任务窗格。 注意：
 
-    - 以 `ms-` 开头的样式由 [Office UI Fabric](../design/office-ui-fabric.md) 进行定义，后者是用于生成 Office 用户体验的 JavaScript 前端框架。**Home.html** 文件包含对 Fabric 样式表的引用。
+    - 以 `ms-` 开头的样式由 [Office 加载项中的Fabric Core](../design/fabric-core.md) 定义，它是用于生成 Office 用户体验的 JavaScript 前端框架。 **Home.html** 文件包含对 Fabric 样式表的引用。
 
     ```html
     <div id="content-header">
