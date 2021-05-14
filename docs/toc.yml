@@ -144,6 +144,10 @@ items:
             items:
               - name: 概述
                 href: design/add-in-design.md
+              - name: Office 加载项中的 Fluent UI React
+                href: design/using-office-ui-fabric-react.md
+              - name: Office 加载项中的 Fabric Core
+                href: design/fabric-core.md
               - name: 准则
                 items:
                   - name: 辅助功能
@@ -186,6 +190,8 @@ items:
                         href: design/first-run-experience-patterns.md
                       - name: 导航
                         href: design/navigation-patterns.md
+              - name: 设计工具包
+                href: design/design-toolkits.md
               - name: 界面元素
                 items:
                   - name: 概述
@@ -228,14 +234,6 @@ items:
                 href: develop/show-hide-add-in.md
               - name: 本地化
                 href: develop/localization.md
-              - name: 资源
-                items:
-                  - name: 设计工具包
-                    href: design/design-toolkits.md
-                  - name: Fabric React 使用入门
-                    href: design/using-office-ui-fabric-react.md
-                  - name: Office UI Fabric
-                    href: design/office-ui-fabric.md
           - name: 框架和 IDE
             items:
               - name: 使用 Angular 开发加载项
