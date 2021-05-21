@@ -33,6 +33,7 @@
         "outlook-js-1.7",
         "outlook-js-1.8",
         "outlook-js-1.9",
+        "outlook-js-1.10",
         "powerpoint-js-preview",
         "powerpoint-js-1.1",
         "powerpoint-js-1.2",
@@ -59,14 +60,19 @@
       }
     }
   ],
-  "notification_subscribers": ["mor-oitac-eng@moravia.com"],
+  "notification_subscribers": [
+    "mor-oitac-eng@moravia.com"
+  ],
   "sync_notification_subscribers": [],
-  "branches_to_filter": ["live","master-sxs"],
+  "branches_to_filter": [
+    "live",
+    "master-sxs"
+  ],
   "git_repository_url_open_to_public_contributors": "https://github.com/OfficeDev/office-js-docs-pr",
   "git_repository_branch_open_to_public_contributors": "master",
   "continue_with_document_error": true,
   "skip_source_output_uploading": false,
-  "need_preview_pull_request": false,
+  "need_preview_pull_request": true,
   "contribution_branch_mappings": {},
   "dependent_repositories": [
     {
