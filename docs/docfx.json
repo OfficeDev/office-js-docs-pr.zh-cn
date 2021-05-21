@@ -34,7 +34,9 @@
     "externalReference": [],
     "globalMetadata": {
       "uhfHeaderId": "MSDocsHeader-Dev_Office",
-      "searchScope": ["Office Add-ins"],
+      "searchScope": [
+        "Office Add-ins"
+      ],
       "breadcrumb_path": "/office/dev/add-ins/breadcrumb/toc.json",
       "feedback_system": "None",
       "feedback_github_repo": "OfficeDev/office-js-docs-pr",
