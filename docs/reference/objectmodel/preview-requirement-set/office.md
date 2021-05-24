@@ -1,14 +1,14 @@
 ---
 title: Office 命名空间 - 预览要求集
-description: 使用邮箱 API preview 要求集的 Outlook 外接程序可用的 Office 命名空间成员。
-ms.date: 03/18/2020
+description: Office使用邮箱 API 预览要求集Outlook外接程序可用的命名空间成员。
+ms.date: 05/17/2021
 localization_priority: Normal
-ms.openlocfilehash: 1e0f932106df462c7cd172327082992f6e4d9a58
-ms.sourcegitcommit: 83f9a2fdff81ca421cd23feea103b9b60895cab4
+ms.openlocfilehash: 72e2300dd50ff01e26417efaca92906049358fc0
+ms.sourcegitcommit: 0d9fcdc2aeb160ff475fbe817425279267c7ff31
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/11/2020
-ms.locfileid: "47431120"
+ms.lasthandoff: 05/21/2021
+ms.locfileid: "52590881"
 ---
 # <a name="office-mailbox-preview-requirement-set"></a>Office (邮箱预览要求集) 
 
@@ -21,28 +21,28 @@ ms.locfileid: "47431120"
 |[最低版本的邮箱要求集](../../requirement-sets/outlook-api-requirement-sets.md)| 1.1|
 |[适用的 Outlook 模式](../../../outlook/outlook-add-ins-overview.md#extension-points)| 撰写或阅读|
 
-##### <a name="properties"></a>属性
+## <a name="properties"></a>属性
 
-| 属性 | 型号 | 返回类型 | 最小值<br>要求集 |
+| 属性 | 模式 | 返回类型 | 最小值<br>要求集 |
 |---|---|---|:---:|
 | [context](office.context.md) | 撰写<br>阅读 | [Context](/javascript/api/office/office.context?view=outlook-js-preview&preserve-view=true) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 
-##### <a name="enumerations"></a>枚举
+## <a name="enumerations"></a>枚举
 
-| 枚举 | 型号 | 返回类型 | 最小值<br>要求集 |
+| 枚举 | 模式 | 返回类型 | 最小值<br>要求集 |
 |---|---|---|:---:|
-| [AsyncResultStatus](#asyncresultstatus-string) | 撰写<br>阅读 | String | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| [CoercionType](#coerciontype-string) | 撰写<br>阅读 | String | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| [EventType](#eventtype-string) | 撰写<br>阅读 | String | [1.5](../requirement-set-1.5/outlook-requirement-set-1.5.md) |
-| [SourceProperty](#sourceproperty-string) | 撰写<br>阅读 | String | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [AsyncResultStatus](#asyncresultstatus-string) | 撰写<br>阅读 | 字符串 | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [CoercionType](#coerciontype-string) | 撰写<br>阅读 | 字符串 | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [EventType](#eventtype-string) | 撰写<br>阅读 | 字符串 | [1.5](../requirement-set-1.5/outlook-requirement-set-1.5.md) |
+| [SourceProperty](#sourceproperty-string) | 撰写<br>阅读 | 字符串 | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 
-### <a name="namespaces"></a>命名空间
+## <a name="namespaces"></a>命名空间
 
-[MailboxEnums](/javascript/api/outlook/office.mailboxenums.attachmentcontentformat?view=outlook-js-preview&preserve-view=true)：包含许多特定于 Outlook 的枚举，例如、、、、、 `ItemType` `EntityType` `AttachmentType` `RecipientType` `ResponseType` 和 `ItemNotificationMessageType` 。
+[MailboxEnums：](/javascript/api/outlook/office.mailboxenums.attachmentcontentformat?view=outlook-js-preview&preserve-view=true)包括许多Outlook枚举，例如、 `ItemType` `EntityType` 和 `AttachmentType` `RecipientType` `ResponseType` `ItemNotificationMessageType` 。
 
 ## <a name="enumeration-details"></a>枚举详细信息
 
-#### <a name="asyncresultstatus-string"></a>AsyncResultStatus： String
+#### <a name="asyncresultstatus-string"></a>AsyncResultStatus：String
 
 指定异步调用的结果。
 
@@ -50,11 +50,11 @@ ms.locfileid: "47431120"
 
 *   String
 
-##### <a name="properties"></a>属性：
+##### <a name="properties"></a>属性
 
-|名称| 类型| 说明|
+|名称| 类型| 描述|
 |---|---|---|
-|`Succeeded`| String|调用成功。|
+|`Succeeded`| 字符串|调用成功。|
 |`Failed`| 字符串|调用失败。|
 
 ##### <a name="requirements"></a>Requirements
@@ -69,7 +69,7 @@ ms.locfileid: "47431120"
 ---
 ---
 
-#### <a name="coerciontype-string"></a>CoercionType： String
+#### <a name="coerciontype-string"></a>CoercionType：String
 
 指定如何强制由调用方法返回或设置的数据。
 
@@ -77,11 +77,11 @@ ms.locfileid: "47431120"
 
 *   String
 
-##### <a name="properties"></a>属性：
+##### <a name="properties"></a>属性
 
-|名称| 类型| 说明|
+|名称| 类型| 描述|
 |---|---|---|
-|`Html`| String|请求以 HTML 格式返回的数据。|
+|`Html`| 字符串|请求以 HTML 格式返回的数据。|
 |`Text`| 字符串|请求以文本格式返回的数据。|
 
 ##### <a name="requirements"></a>Requirements
@@ -96,7 +96,7 @@ ms.locfileid: "47431120"
 ---
 ---
 
-#### <a name="eventtype-string"></a>事件类型： String
+#### <a name="eventtype-string"></a>EventType：String
 
 指定与事件处理程序相关联的事件。
 
@@ -104,13 +104,13 @@ ms.locfileid: "47431120"
 
 *   String
 
-##### <a name="properties"></a>属性：
+##### <a name="properties"></a>属性
 
-| 名称 | 类型 | Description | 最低要求集 |
+| 名称 | 类型 | 描述 | 最低要求集 |
 |---|---|---|:---:|
 |`AppointmentTimeChanged`| 字符串 | 所选的约会或系列的日期或时间已更改。 | 1.7 |
 |`AttachmentsChanged`| 字符串 | 已将附件添加到项目或已从项目删除附件。 | 1.8 |
-|`EnhancedLocationsChanged`| String | 所选约会的位置已更改。 | 1.8 |
+|`EnhancedLocationsChanged`| 字符串 | 所选约会的位置已更改。 | 1.8 |
 |`ItemChanged`| 字符串 | 在任务窗格固定时，将选择不同的 Outlook 项进行查看。 | 1.5 |
 |`OfficeThemeChanged`| 字符串 | 邮箱上的 Office 主题已更改。 | 预览 |
 |`RecipientsChanged`| 字符串 | 选定项目或约会位置的收件人列表已更改。 | 1.7 |
@@ -128,7 +128,7 @@ ms.locfileid: "47431120"
 ---
 ---
 
-#### <a name="sourceproperty-string"></a>SourceProperty： String
+#### <a name="sourceproperty-string"></a>SourceProperty：String
 
 指定由调用方法返回的数据源。
 
@@ -136,11 +136,11 @@ ms.locfileid: "47431120"
 
 *   String
 
-##### <a name="properties"></a>属性：
+##### <a name="properties"></a>属性
 
-|名称| 类型| 说明|
+|名称| 类型| 描述|
 |---|---|---|
-|`Body`| String|数据源来自邮件的正文。|
+|`Body`| 字符串|数据源来自邮件的正文。|
 |`Subject`| String|数据源来自邮件的主题。|
 
 ##### <a name="requirements"></a>Requirements

@@ -1,20 +1,20 @@
 ---
-title: Office.context - 要求集 1.7
-description: Office。适用于使用邮箱 API Outlook集 1.7 的外接程序的上下文对象成员。
-ms.date: 12/03/2020
+title: Office.context - 要求集 1.10
+description: Office。适用于使用邮箱 API Outlook集 1.10 的加载项的上下文对象成员。
+ms.date: 05/11/2021
 localization_priority: Normal
-ms.openlocfilehash: b3dc2442ab418682ac46ad0e1992d561eca98f33
+ms.openlocfilehash: cb189dc3b7b51357dee8ac83bc61795b3ec47ae5
 ms.sourcegitcommit: 0d9fcdc2aeb160ff475fbe817425279267c7ff31
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 05/21/2021
-ms.locfileid: "52590818"
+ms.locfileid: "52592030"
 ---
-# <a name="context-mailbox-requirement-set-17"></a>context (Mailbox requirement set 1.7) 
+# <a name="context-mailbox-requirement-set-110"></a>context (Mailbox requirement set 1.10) 
 
 ### <a name="officecontext"></a>[Office](office.md).context
 
-Office.context 提供了外接程序在所有应用程序中使用的共享Office接口。 此列表仅记录外接程序Outlook接口。有关 Office.context 命名空间的完整列表，请参阅通用 API 中的[Office.context 引用](/javascript/api/office/office.context?view=outlook-js-1.7&preserve-view=true)。
+Office.context 提供了外接程序在所有应用程序中使用的共享Office接口。 此列表仅记录外接程序Outlook接口。有关 Office.context 命名空间的完整列表，请参阅通用 API 中的[Office.context 引用](/javascript/api/office/office.context?view=outlook-js-1.10&preserve-view=true)。
 
 ##### <a name="requirements"></a>Requirements
 
@@ -27,17 +27,51 @@ Office.context 提供了外接程序在所有应用程序中使用的共享Offic
 
 | 属性 | 模式 | 返回类型 | 最小值<br>要求集 |
 |---|---|---|:---:|
+| [auth](#auth-auth) | 撰写<br>阅读 | [Auth](/javascript/api/office/office.auth?view=outlook-js-1.10&preserve-view=true) | [IdentityAPI 1.3](../../requirement-sets/identity-api-requirement-sets.md) |
 | [contentLanguage](#contentlanguage-string) | 撰写<br>阅读 | 字符串 | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| [diagnostics](#diagnostics-contextinformation) | 撰写<br>阅读 | [ContextInformation](/javascript/api/office/office.contextinformation?view=outlook-js-1.7&preserve-view=true) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [diagnostics](#diagnostics-contextinformation) | 撰写<br>阅读 | [ContextInformation](/javascript/api/office/office.contextinformation?view=outlook-js-1.10&preserve-view=true) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 | [displayLanguage](#displaylanguage-string) | 撰写<br>阅读 | 字符串 | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| [host](#host-hosttype) | 撰写<br>阅读 | [HostType](/javascript/api/office/office.hosttype?view=outlook-js-1.7&preserve-view=true) | [1.5](../requirement-set-1.5/outlook-requirement-set-1.5.md) |
-| [mailbox](office.context.mailbox.md) | 撰写<br>阅读 | [邮箱](/javascript/api/outlook/office.mailbox?view=outlook-js-1.7&preserve-view=true) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| [平台](#platform-platformtype) | 撰写<br>阅读 | [PlatformType](/javascript/api/office/office.platformtype?view=outlook-js-1.7&preserve-view=true) | [1.5](../requirement-set-1.5/outlook-requirement-set-1.5.md) |
-| [requirements](#requirements-requirementsetsupport) | 撰写<br>阅读 | [RequirementSetSupport](/javascript/api/office/office.requirementsetsupport?view=outlook-js-1.7&preserve-view=true) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| [roamingSettings](#roamingsettings-roamingsettings) | 撰写<br>阅读 | [RoamingSettings](/javascript/api/outlook/office.roamingsettings?view=outlook-js-1.7&preserve-view=true) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| [ui](#ui-ui) | 撰写<br>阅读 | [UI](/javascript/api/office/office.ui?view=outlook-js-1.7&preserve-view=true) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [host](#host-hosttype) | 撰写<br>阅读 | [HostType](/javascript/api/office/office.hosttype?view=outlook-js-1.10&preserve-view=true) | [1.5](../requirement-set-1.5/outlook-requirement-set-1.5.md) |
+| [mailbox](office.context.mailbox.md) | 撰写<br>阅读 | [邮箱](/javascript/api/outlook/office.mailbox?view=outlook-js-1.10&preserve-view=true) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [平台](#platform-platformtype) | 撰写<br>阅读 | [PlatformType](/javascript/api/office/office.platformtype?view=outlook-js-1.10&preserve-view=true) | [1.5](../requirement-set-1.5/outlook-requirement-set-1.5.md) |
+| [requirements](#requirements-requirementsetsupport) | 撰写<br>阅读 | [RequirementSetSupport](/javascript/api/office/office.requirementsetsupport?view=outlook-js-1.10&preserve-view=true) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [roamingSettings](#roamingsettings-roamingsettings) | 撰写<br>阅读 | [RoamingSettings](/javascript/api/outlook/office.roamingsettings?view=outlook-js-1.10&preserve-view=true) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [ui](#ui-ui) | 撰写<br>阅读 | [UI](/javascript/api/office/office.ui?view=outlook-js-1.10&preserve-view=true) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 
 ## <a name="property-details"></a>属性详细信息
+
+#### <a name="auth-auth"></a>身份验证 [：Auth](/javascript/api/office/office.auth)
+
+通过提供允许 Office 应用程序获取对外接程序 Web 应用程序的访问令牌的方法 ([SSO](../../../outlook/authenticate-a-user-with-an-sso-token.md)) 支持单一登录。 这也使加载项能够间接访问已登录用户的 Microsoft Graph 数据，而不需要用户第二次登录。
+
+##### <a name="type"></a>类型
+
+*   [Auth](/javascript/api/office/office.auth)
+
+##### <a name="requirements"></a>Requirements
+
+|要求| 值|
+|---|---|
+|[最低版本的邮箱要求集](../../requirement-sets/outlook-api-requirement-sets.md)| 1.10|
+|[适用的 Outlook 模式](../../../outlook/outlook-add-ins-overview.md#extension-points)| 撰写或阅读|
+
+##### <a name="example"></a>示例
+
+```js
+Office.context.auth.getAccessTokenAsync(function(result) {
+    if (result.status === "succeeded") {
+        var token = result.value;
+        // ...
+    } else {
+        console.log("Error obtaining token", result.error);
+    }
+});
+```
+
+<br>
+
+---
+---
 
 #### <a name="contentlanguage-string"></a>contentLanguage： String
 

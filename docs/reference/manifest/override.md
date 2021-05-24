@@ -1,27 +1,32 @@
 ---
 title: 清单文件中的 Override 元素
 description: Override 元素使您能够根据指定条件指定设置的值。
-ms.date: 11/06/2020
+ms.date: 05/19/2021
 localization_priority: Normal
-ms.openlocfilehash: d2146cc1f44e829bc78076c8093b2ebf791dc722
-ms.sourcegitcommit: e7009c565b18c607fe0868db2e26e250ad308dce
+ms.openlocfilehash: cd270fa19750810238b42c26c2abc35a61c1bac8
+ms.sourcegitcommit: 0d9fcdc2aeb160ff475fbe817425279267c7ff31
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/05/2021
-ms.locfileid: "50505337"
+ms.lasthandoff: 05/21/2021
+ms.locfileid: "52590902"
 ---
 # <a name="override-element"></a>Override 元素
 
-提供一种根据指定条件替代清单设置的值的方法。 有两种类型的条件：
+提供一种根据指定条件替代清单设置的值的方法。 有三种类型的条件：
 
-- 不同于默认值的 Office 区域设置。
-- 与默认模式不同的要求集支持模式。
+- 与Office区域设置不同的区域设置，称为 `LocaleToken` **LocaleTokenOverride**。
+- 与默认模式不同的要求集支持模式，称为 `RequirementToken` **RequirementTokenOverride**。
+- 源不同于默认的 ，称为 `Runtime` **RuntimeOverride**。
 
-有两种类型的元素，一种用于区域设置重写，称为 `<Override>` **LocaleTokenOverride，** 另一种用于要求集替代，称为 **RequirementTokenOverride。** 但元素 `type` 没有 `<Override>` 参数。 差异由父元素和父元素的类型确定。 元素 `<Override>` 位于其类型为 `<Token>` `xsi:type` `RequirementToken` **RequirementTokenOverride** 的元素内。 任何其他 `<Override>` 父元素内或类型元素内的元素必须为 `<Override>` `LocaleToken` **LocaleTokenOverride 类型**。 以下各节分别介绍了每种类型。 有关当此元素是元素的子级时使用此元素的信息，请参阅"处理清单 `<Token>` [的扩展重写"。](../../develop/extended-overrides.md)
+`<Override>`元素内的元素必须为 `<Runtime>` **RuntimeOverride 类型**。
 
-## <a name="override-element-of-type-localetokenoverride"></a>LocaleTokenOverride 类型的 Override 元素
+元素 `overrideType` 没有 `<Override>` 属性。 差异由父元素和父元素的类型确定。 元素位于 其 为 的元素内，其类型 `<Override>` `<Token>` 必须为 `xsi:type` `RequirementToken` **RequirementTokenOverride**。 任何其他 `<Override>` 父元素内或类型元素内的元素必须为 `<Override>` `LocaleToken` **LocaleTokenOverride 类型**。 有关当此元素是元素的子元素时该元素的使用详细信息，请参阅使用清单 `<Token>` [的扩展替代](../../develop/extended-overrides.md)。
 
-元素 `<Override>` 表示条件，并可以读取为"If ...then ..."语句。 如果 `<Override>` 元素的类型为 **LocaleTokenOverride，** 则该属性为 `Locale` 条件，而 `Value` 该属性是结果。 例如，下面的内容为"如果 Office 区域设置为 fr-fr，则显示名称为"Lecteur vidéo"。
+每种类型在本文稍后的单独部分中介绍。
+
+## <a name="override-element-for-localetoken"></a>的 Override 元素 `LocaleToken`
+
+元素 `<Override>` 表示条件，可读为"If ...then ..."语句。 如果 `<Override>` 元素的类型为 **LocaleTokenOverride**，则属性为条件 `Locale` ， `Value` 而 属性为结果。 例如，以下为"如果 Office区域设置是 fr-fr，则显示名称是"Lecteur vidéo"。
 
 ```xml
 <DisplayName DefaultValue="Video player">
@@ -92,9 +97,9 @@ ms.locfileid: "50505337"
 - [Office 外接程序的本地化](../../develop/localization.md)
 - [键盘快捷方式](../../design/keyboard-shortcuts.md)
 
-## <a name="override-element-of-type-requirementtokenoverride"></a>RequirementTokenOverride 类型的 Override 元素
+## <a name="override-element-for-requirementtoken"></a>的 Override 元素 `RequirementToken`
 
-元素 `<Override>` 表示条件，并可以读取为"If ...then ..."语句。 如果 `<Override>` 元素的类型 **为 RequirementTokenOverride，** 则子元素表示条件，而 `<Requirements>` `Value` 该属性是结果。 例如，下面的第一个内容是"如果当前平台支持 `<Override>` FeatureOne 版本 1.7，则使用字符串"oldAddinVersion"代替 (的 URL 中的令牌，而不是默认字符串 `${token.requirements}` `<ExtendedOverrides>` "upgrade") "。
+元素 `<Override>` 表示条件，可读为"If ...then ..."语句。 如果 `<Override>` 元素的类型为 **RequirementTokenOverride**，则子元素表示条件，而 `<Requirements>` `Value` 属性是结果。 例如，下面的第一个代码为"如果当前平台支持 `<Override>` FeatureOne 版本 1.7，则使用字符串'oldAddinVersion'代替 (而不是默认字符串 `${token.requirements}` `<ExtendedOverrides>` "upgrade") 。"
 
 ```xml
 <ExtendedOverrides Url="http://contoso.com/addinmetadata/${token.requirements}/extended-manifest-overrides.json">
@@ -189,3 +194,54 @@ ms.locfileid: "50505337"
 - [Office 版本和要求集](../../develop/office-versions-and-requirement-sets.md)
 - [在清单中设置 Requirements 元素](../../develop/specify-office-hosts-and-api-requirements.md#set-the-requirements-element-in-the-manifest)
 - [键盘快捷方式](../../design/keyboard-shortcuts.md)
+
+## <a name="override-element-for-runtime"></a>的 Override 元素 `Runtime`
+
+> [!IMPORTANT]
+> 邮箱要求集 [1.10](../../reference/objectmodel/requirement-set-1.10/outlook-requirement-set-1.10.md) 中引入了对此元素的支持，该功能具有基于 [事件的激活功能](../../outlook/autolaunch.md)。 请查看支持此要求集的[客户端和平台](../../reference/requirement-sets/outlook-api-requirement-sets.md#requirement-sets-supported-by-exchange-servers-and-outlook-clients)。
+
+元素 `<Override>` 表示条件，可读为"If ...then ..."语句。 如果 `<Override>` 元素的类型为 **RuntimeOverride**，则 属性为 `type` 条件， `resid` 属性为结果。 例如，以下代码为"如果类型为'javascript'，则 `resid` 为'JSRuntime.Url'"。Outlook桌面需要此元素用于[LaunchEvent 扩展点](../../reference/manifest/extensionpoint.md#launchevent)处理程序。
+
+```xml
+<Runtime resid="WebViewRuntime.Url">
+  <Override type="javascript" resid="JSRuntime.Url"/>
+</Runtime>
+```
+
+**外接程序类型：** 邮件
+
+### <a name="syntax"></a>语法
+
+```XML
+<Override type="javascript" resid="JSRuntime.Url"/>
+```
+
+### <a name="contained-in"></a>包含于
+
+- [运行时](runtime.md)
+
+### <a name="attributes"></a>属性
+
+|属性|类型|必需|说明|
+|:-----|:-----|:-----|:-----|
+|**类型**|string|是|指定此替代的语言。 目前， `"javascript"` 是唯一受支持的选项。|
+|**resid**|string|是|指定 JavaScript 文件的 URL 位置，该文件应替代在父 [Runtime](runtime.md) 元素 中定义的默认 HTML 的 URL 位置 `resid` 。 `resid`不能超过 32 个字符，并且必须与 元素中的 `id` `Url` 元素的 属性 `Resources` 匹配。|
+
+### <a name="examples"></a>示例
+
+```xml
+<!-- Event-based activation happens in a lightweight runtime.-->
+<Runtimes>
+  <!-- HTML file including reference to or inline JavaScript event handlers.
+  This is used by Outlook on the web. -->
+  <Runtime resid="WebViewRuntime.Url">
+    <!-- JavaScript file containing event handlers. This is used by Outlook Desktop. -->
+    <Override type="javascript" resid="JSRuntime.Url"/>
+  </Runtime>
+</Runtimes>
+```
+
+### <a name="see-also"></a>另请参阅
+
+- [运行时](runtime.md)
+- [配置Outlook加载项进行基于事件的激活](../../outlook/autolaunch.md)

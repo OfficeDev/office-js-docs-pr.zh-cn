@@ -3,12 +3,12 @@ title: 在加载项中Office上下文选项卡
 description: 了解如何将自定义上下文选项卡添加到Office外接程序。
 ms.date: 05/12/2021
 localization_priority: Normal
-ms.openlocfilehash: 980beb24a3d384ecf21da44db288272a1ab1b0e3
-ms.sourcegitcommit: 30f6c620380075e3459cac748ca0c656427b384d
+ms.openlocfilehash: d03ac2c01c03353f3e2d1b54ba20616d7b42d93f
+ms.sourcegitcommit: 693d364616b42eea66977eef47530adabc51a40f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/12/2021
-ms.locfileid: "52330169"
+ms.lasthandoff: 05/19/2021
+ms.locfileid: "52555204"
 ---
 # <a name="create-custom-contextual-tabs-in-office-add-ins"></a>在加载项中Office上下文选项卡
 
@@ -63,7 +63,7 @@ ms.locfileid: "52330169"
 > [!NOTE]
 > JSON blob 的属性和子属性 (和键名称) 的结构大致与清单 XML 中 [CustomTab](../reference/manifest/customtab.md) 元素及其后代元素的结构平行。
 
-我们将分步构造上下文选项卡 JSON blob 的示例。  (上下文选项卡 JSON 的完整架构位于[上的dynamic-ribbon.schema.js。](https://developer.microsoft.com/json-schemas/office-js/dynamic-ribbon.schema.json) 对于上下文选项卡，此链接在预览阶段可能未运行。 如果链接未正常工作，您可以在 .) 上的草稿[dynamic-ribbon.schema.js](https://github.com/OfficeDev/testing-assets/tree/master/jsonschema/dynamic-ribbon/1.0/dynamic-ribbon.schema.json)找到架构的最新草稿。如果您在 Visual Studio Code 中工作，可以使用此文件获取 IntelliSense 并验证 JSON。 有关详细信息，请参阅使用[JSON 架构Visual Studio Code JSON 编辑 JSON。](https://code.visualstudio.com/docs/languages/json#_json-schemas-and-settings)
+我们将分步构造上下文选项卡 JSON blob 的示例。 上下文选项卡 JSON 的完整架构位于[上的dynamic-ribbon.schema.js。](https://developer.microsoft.com/json-schemas/office-js/dynamic-ribbon.schema.json) 如果你使用 Visual Studio Code，可以使用此文件获取IntelliSense并验证 JSON。 有关详细信息，请参阅使用[JSON 架构Visual Studio Code JSON 编辑 JSON。](https://code.visualstudio.com/docs/languages/json#_json-schemas-and-settings)
 
 
 1. 首先，创建包含名为 和 的两个数组属性的 JSON `actions` 字符串 `tabs` 。 `actions`数组是上下文选项卡上的控件可以执行的所有函数的规范。数组 `tabs` 定义一个或多个上下文选项卡，*最多 20 个*。

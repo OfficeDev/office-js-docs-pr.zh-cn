@@ -1,29 +1,29 @@
 ---
 title: Outlook 外接程序 API 要求集 1.3
-description: 作为邮箱 API 1.3 的一部分引入的 Outlook 外接程序和 Office JavaScript Api 的功能和 Api。
-ms.date: 12/17/2019
+description: 作为邮箱 API 1.3 Outlook外接程序和 Office JavaScript API 引入的功能和 API。
+ms.date: 05/17/2021
 localization_priority: Normal
-ms.openlocfilehash: bf7dc9e3977df626241cdafdebd8d4b4e473d494
-ms.sourcegitcommit: 83f9a2fdff81ca421cd23feea103b9b60895cab4
+ms.openlocfilehash: 03d1a3d74dfad9aa2db0a39f3318d41ef5ab7af6
+ms.sourcegitcommit: 0d9fcdc2aeb160ff475fbe817425279267c7ff31
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/11/2020
-ms.locfileid: "47430966"
+ms.lasthandoff: 05/21/2021
+ms.locfileid: "52591035"
 ---
 # <a name="outlook-add-in-api-requirement-set-13"></a>Outlook 外接程序 API 要求集 1.3
 
-Office JavaScript API 的 Outlook 外接程序 API 子集包括可以在 Outlook 外接程序中使用的对象、方法、属性和事件。
+Outlook JavaScript API 的 Office 外接程序 API 子集包括可在 Outlook 外接程序中使用的对象、方法、属性和事件。
 
 > [!NOTE]
 > 本文档适用于最新要求集之外的[要求集](../../requirement-sets/outlook-api-requirement-sets.md)。
 
 ## <a name="whats-new-in-13"></a>1.3 中的新增功能有哪些？
 
-要求集 1.3 包括[要求集 1.2](../requirement-set-1.2/outlook-requirement-set-1.2.md) 的所有功能。它添加了下列功能。
+要求集 1.3 包括要求集 [1.2 的所有功能](../requirement-set-1.2/outlook-requirement-set-1.2.md)。 它添加了下列功能。
 
 - 添加了对[外接程序命令](../../../outlook/add-in-commands-for-outlook.md)的支持。
 - 添加了保存或关闭正在撰写的项目的功能。
-- 增强的 [Body](/javascript/api/outlook/office.body?view=outlook-js-1.3&preserve-view=true) 对象，允许外接程序获取或设置整个正文。
+- 增强 [的 Body](/javascript/api/outlook/office.body?view=outlook-js-1.3&preserve-view=true) 对象，允许外接程序获取或设置整个正文。
 - 添加了在 EWS 和 REST 格式之间转换 ID 的转换方法。
 - 添加了将通知邮件添加到项目的信息栏中的功能。
 

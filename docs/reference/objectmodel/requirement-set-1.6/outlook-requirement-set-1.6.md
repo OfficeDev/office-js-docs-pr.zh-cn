@@ -1,25 +1,25 @@
 ---
 title: Outlook 外接程序 API 要求集 1.6
-description: 作为邮箱 API 1.6 的一部分引入的 Outlook 外接程序和 Office JavaScript Api 的功能和 Api。
-ms.date: 02/19/2020
+description: 作为邮箱 API 1.6 Outlook外接程序和 Office JavaScript API 引入的功能和 API。
+ms.date: 05/17/2021
 localization_priority: Normal
-ms.openlocfilehash: adcfcb49a76fd3f0df2c2c3acfc6e1861a02f3b1
-ms.sourcegitcommit: 83f9a2fdff81ca421cd23feea103b9b60895cab4
+ms.openlocfilehash: cdb39eae387035f386a59b4640448b0bef25031e
+ms.sourcegitcommit: 0d9fcdc2aeb160ff475fbe817425279267c7ff31
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/11/2020
-ms.locfileid: "47431449"
+ms.lasthandoff: 05/21/2021
+ms.locfileid: "52590993"
 ---
 # <a name="outlook-add-in-api-requirement-set-16"></a>Outlook 外接程序 API 要求集 1.6
 
-Office JavaScript API 的 Outlook 外接程序 API 子集包括可以在 Outlook 外接程序中使用的对象、方法、属性和事件。
+Outlook JavaScript API 的 Office 外接程序 API 子集包括可在 Outlook 外接程序中使用的对象、方法、属性和事件。
 
 > [!NOTE]
 > 本文档适用于最新要求集之外的[要求集](../../requirement-sets/outlook-api-requirement-sets.md)。
 
 ## <a name="whats-new-in-16"></a>1.6 中的新增功能有哪些？
 
-要求集 1.6 包括[要求集 1.5](../requirement-set-1.5/outlook-requirement-set-1.5.md) 的所有功能。 它还添加了下列功能。
+要求集 1.6 包括要求集 [1.5 的所有功能](../requirement-set-1.5/outlook-requirement-set-1.5.md)。 它还添加了下列功能。
 
 - 为上下文外接程序添加了新 API，以获取用户选择用于激活外接程序的实体或 RegEx 匹配项。
 - 添加了新 API，用于打开新邮件窗体。

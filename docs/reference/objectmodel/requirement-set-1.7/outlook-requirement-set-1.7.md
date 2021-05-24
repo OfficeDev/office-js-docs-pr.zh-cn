@@ -1,25 +1,25 @@
 ---
 title: Outlook 外接程序 API 要求集 1.7
-description: 'Outlook 加载项 API 概述 (要求集 1.7) '
-ms.date: 12/17/2019
+description: '加载项 API Outlook要求集 1.7 (概述) '
+ms.date: 05/17/2021
 localization_priority: Normal
-ms.openlocfilehash: f8dc9fe097b56d3e940a5d7d945c5ccc50e07077
-ms.sourcegitcommit: 83f9a2fdff81ca421cd23feea103b9b60895cab4
+ms.openlocfilehash: 6130cdadb63c7c3093b869950832e7a68358ea81
+ms.sourcegitcommit: 0d9fcdc2aeb160ff475fbe817425279267c7ff31
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/11/2020
-ms.locfileid: "47431386"
+ms.lasthandoff: 05/21/2021
+ms.locfileid: "52590811"
 ---
 # <a name="outlook-add-in-api-requirement-set-17"></a>Outlook 外接程序 API 要求集 1.7
 
-Office JavaScript API 的 Outlook 外接程序 API 子集包括可以在 Outlook 外接程序中使用的对象、方法、属性和事件。
+Outlook JavaScript API 的 Office 外接程序 API 子集包括可在 Outlook 外接程序中使用的对象、方法、属性和事件。
 
 > [!NOTE]
 > 本文档适用于最新要求集之外的[要求集](../../requirement-sets/outlook-api-requirement-sets.md)。
 
 ## <a name="whats-new-in-17"></a>1.7 中的新增功能有哪些？
 
-要求集 1.7 包括[要求集 1.6](../requirement-set-1.6/outlook-requirement-set-1.6.md) 的所有功能。 它还添加了下列功能。
+要求集 1.7 包括要求集 [1.6 的所有功能](../requirement-set-1.6/outlook-requirement-set-1.6.md)。 它还添加了下列功能。
 
 - 添加了有关会议请求型消息和约会的定期模式的新 API。
 - 修改了 item.from 属性，使其亦可用于撰写模式。

@@ -1,23 +1,20 @@
 ---
-title: 清单文件中的 LaunchEvent （预览）
-description: LaunchEvent 元素将你的外接程序配置为根据受支持的事件进行激活。
-ms.date: 05/15/2020
+title: 清单文件中 LaunchEvent
+description: LaunchEvent 元素将外接程序配置为基于支持的事件激活。
+ms.date: 05/12/2021
 localization_priority: Normal
-ms.openlocfilehash: 4874b9f4c14e3a999f41ec3fa20a15393b031ea6
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: c866a085ed6b7a33c8d7bf02d25e6ec748629e07
+ms.sourcegitcommit: 0d9fcdc2aeb160ff475fbe817425279267c7ff31
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44611776"
+ms.lasthandoff: 05/21/2021
+ms.locfileid: "52591077"
 ---
-# <a name="launchevent-element-preview"></a>LaunchEvent 元素（预览）
+# <a name="launchevent-element"></a>LaunchEvent 元素
 
-将你的外接程序配置为根据受支持的事件进行激活。 元素的子 [`<LaunchEvents>`](launchevents.md) 元素。 有关详细信息，请参阅[Configure Outlook 外接程序以进行基于事件的激活](../../outlook/autolaunch.md)。
+将加载项配置为基于支持的事件进行激活。 元素的 [`<LaunchEvents>`](launchevents.md) 子元素。 有关详细信息，请参阅[Configure your Outlook add-in for event-based activation](../../outlook/autolaunch.md)。
 
 **外接程序类型：** 邮件
-
-> [!IMPORTANT]
-> 基于事件的激活当前[处于预览阶段](../../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md)，仅在 Outlook 网页版中可用。 有关详细信息，请参阅[如何预览基于事件的激活功能](../../outlook/autolaunch.md#how-to-preview-the-event-based-activation-feature)。
 
 ## <a name="syntax"></a>语法
 
@@ -40,8 +37,8 @@ ms.locfileid: "44611776"
 
 |  属性  |  必需  |  说明  |
 |:-----|:-----|:-----|
-|  **类型**  |  是  | 指定受支持的事件类型。 可用的类型有 `OnNewMessageCompose` 和 `OnNewAppointmentOrganizer` 。 |
-|  **FunctionName**  |  是  | 指定用于处理属性中指定的事件的 JavaScript 函数的名称 `Type` 。 |
+|  **类型**  |  是  | 指定支持的事件类型。 有关受支持的类型集，请参阅[配置Outlook加载项进行基于事件的激活](../../outlook/autolaunch.md#supported-events)。 |
+|  **FunctionName**  |  是  | 指定要处理属性中指定的事件的 JavaScript 函数 `Type` 的名称。 |
 
 ## <a name="see-also"></a>另请参阅
 

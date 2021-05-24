@@ -1,37 +1,37 @@
 ---
 title: Office.context - 要求集 1.1
-description: 使用邮箱 API 要求集1.1 的 Outlook 外接程序可用的 Office 对象成员。
+description: Office。使用邮箱 API 要求集 1.1 Outlook外接程序可用的上下文对象成员。
 ms.date: 12/02/2020
 localization_priority: Normal
-ms.openlocfilehash: 4f0fa4094477125f4d07fd6ddb4ac2c3c08a5d70
-ms.sourcegitcommit: 1737026df569b62957d38b62c0b16caee4f0cdfe
+ms.openlocfilehash: 41273bfc5362a9d5572e38b8e80b81041f5aa312
+ms.sourcegitcommit: 0d9fcdc2aeb160ff475fbe817425279267c7ff31
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/04/2020
-ms.locfileid: "49570749"
+ms.lasthandoff: 05/21/2021
+ms.locfileid: "52590874"
 ---
-# <a name="context-mailbox-requirement-set-11"></a> (邮箱要求集1.1 的上下文) 
+# <a name="context-mailbox-requirement-set-11"></a>context (Mailbox requirement set 1.1) 
 
 ### <a name="officecontext"></a>[Office](office.md).context
 
-在所有 Office 应用中，上下文提供外接程序使用的共享接口。 此列表仅记录 Outlook 外接程序使用的那些接口。有关 "context" 命名空间的完整列表，请参阅 [通用 API 中的 "office. context reference](/javascript/api/office/office.context?view=outlook-js-1.1&preserve-view=true)"。
+Office.context 提供了外接程序在所有应用程序中使用的共享Office接口。 此列表仅记录外接程序Outlook接口。有关 Office.context 命名空间的完整列表，请参阅通用 API 中的[Office.context 引用](/javascript/api/office/office.context?view=outlook-js-1.1&preserve-view=true)。
 
-##### <a name="requirements"></a>要求
+##### <a name="requirements"></a>Requirements
 
 |要求| 值|
 |---|---|
 |[最低版本的邮箱要求集](../../requirement-sets/outlook-api-requirement-sets.md)| 1.1|
 |[适用的 Outlook 模式](../../../outlook/outlook-add-ins-overview.md#extension-points)| 撰写或阅读|
 
-##### <a name="properties"></a>属性
+## <a name="properties"></a>属性
 
-| 属性 | 型号 | 返回类型 | 最小值<br>要求集 |
+| 属性 | 模式 | 返回类型 | 最小值<br>要求集 |
 |---|---|---|:---:|
-| [contentLanguage](#contentlanguage-string) | 撰写<br>阅读 | String | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| [过程](#diagnostics-contextinformation) | 撰写<br>阅读 | [ContextInformation](/javascript/api/office/office.contextinformation?view=outlook-js-1.1&preserve-view=true) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| [displayLanguage](#displaylanguage-string) | 撰写<br>阅读 | String | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [contentLanguage](#contentlanguage-string) | 撰写<br>阅读 | 字符串 | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [diagnostics](#diagnostics-contextinformation) | 撰写<br>阅读 | [ContextInformation](/javascript/api/office/office.contextinformation?view=outlook-js-1.1&preserve-view=true) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [displayLanguage](#displaylanguage-string) | 撰写<br>阅读 | 字符串 | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 | [mailbox](office.context.mailbox.md) | 撰写<br>阅读 | [邮箱](/javascript/api/outlook/office.mailbox?view=outlook-js-1.1&preserve-view=true) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| [满足](#requirements-requirementsetsupport) | 撰写<br>阅读 | [RequirementSetSupport](/javascript/api/office/office.requirementsetsupport?view=outlook-js-1.1&preserve-view=true) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [requirements](#requirements-requirementsetsupport) | 撰写<br>阅读 | [RequirementSetSupport](/javascript/api/office/office.requirementsetsupport?view=outlook-js-1.1&preserve-view=true) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 | [roamingSettings](#roamingsettings-roamingsettings) | 撰写<br>阅读 | [RoamingSettings](/javascript/api/outlook/office.roamingsettings?view=outlook-js-1.1&preserve-view=true) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 | [ui](#ui-ui) | 撰写<br>阅读 | [UI](/javascript/api/office/office.ui?view=outlook-js-1.1&preserve-view=true) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 
@@ -39,9 +39,9 @@ ms.locfileid: "49570749"
 
 #### <a name="contentlanguage-string"></a>contentLanguage： String
 
-获取用户指定的用于编辑项目的区域设置 (语言) 。
+获取用户 (编辑) 的语言区域设置。
 
-此 `contentLanguage` 值反映了使用 Office 客户端应用程序中的 "**文件 > 选项" > 语言** 指定的当前 **编辑语言** 设置。
+该值 `contentLanguage` 反映当前在客户端 **应用程序中** 由 File **> Options > Language** 指定的Office设置。
 
 ##### <a name="type"></a>类型
 
@@ -80,15 +80,15 @@ function write(message){
 ---
 ---
 
-#### <a name="diagnostics-contextinformation"></a>诊断： [ContextInformation](/javascript/api/office/office.contextinformation)
+#### <a name="diagnostics-contextinformation"></a>diagnostics： [ContextInformation](/javascript/api/office/office.contextinformation)
 
-获取有关加载项在其中运行的环境的信息。
+获取加载项运行环境的信息。
 
 ##### <a name="type"></a>类型
 
 *   [ContextInformation](/javascript/api/office/office.contextinformation)
 
-##### <a name="requirements"></a>要求
+##### <a name="requirements"></a>Requirements
 
 |要求| 值|
 |---|---|
@@ -109,11 +109,11 @@ console.log("Platform: " + contextInfo.platform);
 ---
 ---
 
-#### <a name="displaylanguage-string"></a>displayLanguage： String
+#### <a name="displaylanguage-string"></a>displayLanguage：String
 
-获取用户为 Office 客户端应用程序的 UI 指定的 RFC 1766 语言标记格式中 (语言) 的区域设置。
+获取区域设置 (语言) RFC 1766 语言标记格式，该标记格式由用户为 Office 客户端应用程序的 UI 指定。
 
-此 `displayLanguage` 值反映了使用 Office 客户端应用程序中的 **File > Options > 语言** 指定的当前 **显示语言** 设置。
+该值反映当前显示语言设置，该设置由 > `displayLanguage` **客户端** 应用程序中>选项Office语言。 
 
 ##### <a name="type"></a>类型
 
@@ -152,15 +152,15 @@ function write(message){
 ---
 ---
 
-#### <a name="requirements-requirementsetsupport"></a>要求： [RequirementSetSupport](/javascript/api/office/office.requirementsetsupport)
+#### <a name="requirements-requirementsetsupport"></a>requirements： [RequirementSetSupport](/javascript/api/office/office.requirementsetsupport)
 
-提供用于确定当前应用程序和平台支持哪些要求集的方法。
+提供用于确定当前应用程序和平台上支持哪些要求集的方法。
 
 ##### <a name="type"></a>类型
 
 *   [RequirementSetSupport](/javascript/api/office/office.requirementsetsupport)
 
-##### <a name="requirements"></a>要求
+##### <a name="requirements"></a>Requirements
 
 |要求| 值|
 |---|---|
@@ -178,17 +178,17 @@ console.log(JSON.stringify(Office.context.requirements.isSetSupported("mailbox",
 ---
 ---
 
-#### <a name="roamingsettings-roamingsettings"></a>roamingSettings： [roamingSettings](/javascript/api/outlook/office.roamingsettings)
+#### <a name="roamingsettings-roamingsettings"></a>[roamingSettings：RoamingSettings](/javascript/api/outlook/office.roamingsettings)
 
 获取一个对象，它表示保存到用户邮箱的邮件外接程序的自定义设置或状态。
 
-该 `RoamingSettings` 对象使您可以存储和访问存储在用户邮箱中的邮件外接程序的数据，以便该外接程序从用于访问该邮箱的任何 Outlook 客户端运行时都可使用该加载项。
+该对象允许您存储和访问存储在用户邮箱中的邮件外接程序的数据，以便该外接程序从用于访问该邮箱的任何 Outlook 客户端运行时可供该外接程序使用 `RoamingSettings` 。
 
 ##### <a name="type"></a>类型
 
 *   [RoamingSettings](/javascript/api/outlook/office.RoamingSettings)
 
-##### <a name="requirements"></a>要求
+##### <a name="requirements"></a>Requirements
 
 |要求| 值|
 |---|---|
@@ -201,15 +201,15 @@ console.log(JSON.stringify(Office.context.requirements.isSetSupported("mailbox",
 ---
 ---
 
-#### <a name="ui-ui"></a>ui： [ui](/javascript/api/office/office.ui)
+#### <a name="ui-ui"></a>[ui：UI](/javascript/api/office/office.ui)
 
-提供可用于在 Office 外接程序中创建和操作 UI 组件（如对话框）的对象和方法。
+提供可用于在加载项中创建和操作 UI 组件（如对话框）Office方法。
 
 ##### <a name="type"></a>类型
 
 *   [UI](/javascript/api/office/office.ui)
 
-##### <a name="requirements"></a>要求
+##### <a name="requirements"></a>Requirements
 
 |要求| 值|
 |---|---|

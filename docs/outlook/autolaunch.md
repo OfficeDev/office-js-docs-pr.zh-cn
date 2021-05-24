@@ -1,26 +1,24 @@
 ---
-title: '配置Outlook加载项进行基于事件的激活和 (预览) '
+title: 配置Outlook加载项进行基于事件的激活
 description: 了解如何配置Outlook加载项进行基于事件的激活。
 ms.topic: article
-ms.date: 05/04/2021
+ms.date: 05/20/2021
 localization_priority: Normal
-ms.openlocfilehash: 0052f08e9c6a3903f4adb48efca3ff29a6d21467
-ms.sourcegitcommit: 8fbc7c7eb47875bf022e402b13858695a8536ec5
+ms.openlocfilehash: a0d0b27c9b49132024c78577a4432d85542cf76f
+ms.sourcegitcommit: 0d9fcdc2aeb160ff475fbe817425279267c7ff31
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/06/2021
-ms.locfileid: "52253318"
+ms.lasthandoff: 05/21/2021
+ms.locfileid: "52590503"
 ---
-# <a name="configure-your-outlook-add-in-for-event-based-activation-preview"></a>配置Outlook加载项进行基于事件的激活和 (预览) 
+# <a name="configure-your-outlook-add-in-for-event-based-activation"></a>配置Outlook加载项进行基于事件的激活
 
 如果没有基于事件的激活功能，用户必须显式启动外接程序才能完成其任务。 此功能使加载项能够运行基于特定事件的任务，尤其是适用于每个项目的操作。 还可以与任务窗格和无 UI 功能集成。
 
 在此演练结束时，您将具有一个加载项，只要创建一个新建项目并设置主题，就会运行该加载项。
 
-> [!IMPORTANT]
-> 此功能仅支持在[Web](../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md)上的 Outlook 和具有 Microsoft 365 订阅的 Windows 预览。 有关详细信息，请参阅本文中的如何预览基于 [事件的](#how-to-preview-the-event-based-activation-feature) 激活功能。
->
-> 由于预览功能可能会随时更改，恕不另行通知，因此不应在生产外接程序中使用。
+> [!NOTE]
+> 要求集 [1.10](../reference/objectmodel/requirement-set-1.10/outlook-requirement-set-1.10.md)中引入了对此功能的支持。 请查看支持此要求集的[客户端和平台](../reference/requirement-sets/outlook-api-requirement-sets.md#requirement-sets-supported-by-exchange-servers-and-outlook-clients)。
 
 ## <a name="supported-events"></a>支持的事件
 
@@ -30,17 +28,22 @@ ms.locfileid: "52253318"
 |---|---|---|
 |`OnNewMessageCompose`|撰写新邮件时 (包括答复、全部答复和转发) ，但不包括编辑时，例如草稿。|Windows、Web|
 |`OnNewAppointmentOrganizer`|创建新约会但不编辑现有约会时。|Windows、Web|
-|`OnMessageAttachmentsChanged`|在撰写邮件时添加或删除附件。|Windows|
-|`OnAppointmentAttachmentsChanged`|在撰写约会时添加或删除附件。|Windows|
-|`OnMessageRecipientsChanged`|在撰写邮件时添加或删除收件人。|Windows|
-|`OnAppointmentAttendeesChanged`|在撰写约会时添加或删除与会者。|Windows|
-|`OnAppointmentTimeChanged`|在撰写约会时更改日期/时间。|Windows|
-|`OnAppointmentRecurrenceChanged`|在撰写约会时添加、更改或删除定期详细信息。 如果日期/时间发生更改， `OnAppointmentTimeChanged` 也会触发该事件。|Windows|
-|`OnInfoBarDismissClicked`|在撰写邮件或约会项目时关闭通知。 仅通知添加了通知的外接程序。|Windows|
+|`OnMessageAttachmentsChanged`\*|在撰写邮件时添加或删除附件。|Windows|
+|`OnAppointmentAttachmentsChanged`\*|在撰写约会时添加或删除附件。|Windows|
+|`OnMessageRecipientsChanged`\*|在撰写邮件时添加或删除收件人。|Windows|
+|`OnAppointmentAttendeesChanged`\*|在撰写约会时添加或删除与会者。|Windows|
+|`OnAppointmentTimeChanged`\*|在撰写约会时更改日期/时间。|Windows|
+|`OnAppointmentRecurrenceChanged`\*|在撰写约会时添加、更改或删除定期详细信息。 如果日期/时间发生更改， `OnAppointmentTimeChanged` 也会触发该事件。|Windows|
+|`OnInfoBarDismissClicked`\*|在撰写邮件或约会项目时关闭通知。 仅通知添加了通知的外接程序。|Windows|
 
-## <a name="how-to-preview-the-event-based-activation-feature"></a>如何预览基于事件的激活功能
+> [!IMPORTANT]
+> \*此事件仅支持[在具有](../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md)Outlook 订阅Windows预览Microsoft 365此事件。 有关详细信息，请参阅 [本文中的](#how-to-preview) 如何预览。
+>
+> 由于预览功能可能会随时更改，恕不另行通知，因此不应在生产外接程序中使用。
 
-我们邀请你试用基于事件的激活功能！ 请告诉我们你的方案，以及我们如何通过反馈提供反馈GitHub (请参阅此页面末尾的反馈部分) 。 
+## <a name="how-to-preview"></a>如何预览
+
+我们邀请你试用新事件！ 请告诉我们你的方案，以及我们如何通过反馈提供反馈GitHub (请参阅此页面末尾的反馈部分) 。 
 
 预览此功能：
 
@@ -49,9 +52,11 @@ ms.locfileid: "52253318"
   - 在 上 **引用** beta https://appsforoffice.microsoft.com/lib/beta/hosted/office.js) CDN (。 TypeScript[编译和](https://appsforoffice.microsoft.com/lib/beta/hosted/office.d.ts)定义的类型IntelliSense位于 CDN[和 DefinitelyTyped 中](https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/master/types/office-js-preview/index.d.ts)。 可以使用 安装这些类型 `npm install --save-dev @types/office-js-preview` 。
 - 有关Outlook Windows：
   - 最低要求版本为 16.0.14026.20000。 加入[Office 预览体验计划](https://insider.office.com)，以访问 Office beta 版本。
-  - 配置注册表：
+  - 配置注册表。 Outlook包括 Office.js 的生产和 beta 版本的本地副本，而不是从 CDN。 默认情况下，将引用 API 的本地生产副本。 若要切换到 JavaScript API 的本地 beta Outlook，需要添加此注册表项，否则可能无法找到 beta API。
     1. 创建注册表项 `HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\Outlook\Options\WebExt\Developer` 。
-    1. 添加一个名为 的 `EnableBetaAPIsInJavaScript` 条目，将值设置为 `1` 。
+    1. 添加一个名为 的 `EnableBetaAPIsInJavaScript` 条目，将值设置为 `1` 。 下图显示注册表应该呈现的状态。
+
+        ![具有 EnableBetaAPIsInJavaScript 注册表项值的注册表编辑器的屏幕截图](../images/outlook-beta-registry-key.png)
 
 ## <a name="set-up-your-environment"></a>设置环境
 
@@ -59,7 +64,7 @@ ms.locfileid: "52253318"
 
 ## <a name="configure-the-manifest"></a>配置清单
 
-若要启用加载项的基于事件的激活，必须在清单节点中配置 [Runtimes](../reference/manifest/runtimes.md) 元素和 [LaunchEvent](../reference/manifest/extensionpoint.md#launchevent-preview) `VersionOverridesV1_1` 扩展点。 目前， `DesktopFormFactor` 是唯一受支持的外形类型。
+若要启用加载项的基于事件的激活，必须在清单节点中配置 [Runtimes](../reference/manifest/runtimes.md) 元素和 [LaunchEvent](../reference/manifest/extensionpoint.md#launchevent) `VersionOverridesV1_1` 扩展点。 目前， `DesktopFormFactor` 是唯一受支持的外形类型。
 
 1. 在代码编辑器中，打开快速启动项目。
 
@@ -131,8 +136,17 @@ ms.locfileid: "52253318"
           <!-- Enable launching the add-in on the included events. -->
           <ExtensionPoint xsi:type="LaunchEvent">
             <LaunchEvents>
+              <!-- Events supported on the web and on Windows. -->
               <LaunchEvent Type="OnNewMessageCompose" FunctionName="onMessageComposeHandler"/>
               <LaunchEvent Type="OnNewAppointmentOrganizer" FunctionName="onAppointmentComposeHandler"/>
+              <!-- Events supported only on Windows. -->
+              <LaunchEvent Type="OnMessageAttachmentsChanged" FunctionName="onMessageAttachmentsChangedHandler" />
+              <LaunchEvent Type="OnAppointmentAttachmentsChanged" FunctionName="onAppointmentAttachmentsChangedHandler" />
+              <LaunchEvent Type="OnMessageRecipientsChanged" FunctionName="onMessageRecipientsChangedHandler" />
+              <LaunchEvent Type="OnAppointmentAttendeesChanged" FunctionName="onAppointmentAttendeesChangedHandler" />
+              <LaunchEvent Type="OnAppointmentTimeChanged" FunctionName="onAppointmentTimeChangedHandler" />
+              <LaunchEvent Type="OnAppointmentRecurrenceChanged" FunctionName="onAppointmentRecurrenceChangedHandler" />
+              <LaunchEvent Type="OnInfoBarDismissClicked" FunctionName="onInfobarDismissClickedHandler" />
             </LaunchEvents>
             <!-- Identifies the runtime to be used (also referenced by the Runtime element). -->
             <SourceLocation resid="WebViewRuntime.Url"/>
@@ -207,26 +221,18 @@ Outlook Windows使用 JavaScript 文件，Outlook Web 上的开发人员使用�
     }
     ```
 
-1. 若要使用 Yeo  Office man Outlook加载项的 Yeoman 生成器生成的此项目在 Web 上运行的函数，在文件末尾添加以下语句。
+1. 在文件末尾添加以下 JavaScript 代码。
 
     ```js
-    g.onMessageComposeHandler = onMessageComposeHandler;
-    g.onAppointmentComposeHandler = onAppointmentComposeHandler;
+    // 1st parameter: FunctionName of LaunchEvent in the manifest; 2nd parameter: Its implementation in this .js file.
+    Office.actions.associate("onMessageComposeHandler", onMessageComposeHandler);
+    Office.actions.associate("onAppointmentComposeHandler", onAppointmentComposeHandler);
     ```
-
-1. 若要使函数在 Outlook **中** Windows，在文件末尾添加以下 JavaScript 代码。
-
-    ```js
-    if (Office.actions) {
-      // 1st parameter: FunctionName of LaunchEvent in the manifest; 2nd parameter: Its implementation in this .js file.
-      Office.actions.associate("onMessageComposeHandler", onMessageComposeHandler);
-      Office.actions.associate("onAppointmentComposeHandler", onAppointmentComposeHandler);
-    }
-    ```
-
-    **注意**：检查 `Office.actions` 以确保Outlook忽略这些语句。
 
 1. 保存所做的更改。
+
+> [!IMPORTANT]
+> Windows：目前，在执行基于事件的激活的处理的 JavaScript 文件中不支持导入。
 
 ## <a name="try-it-out"></a>试用
 
@@ -235,6 +241,9 @@ Outlook Windows使用 JavaScript 文件，Outlook Web 上的开发人员使用�
     ```command&nbsp;line
     npm start
     ```
+
+    > [!NOTE]
+    > 如果加载项未自动旁加载，请按照旁加载[Outlook](../outlook/sideload-outlook-add-ins-for-testing.md#sideload-manually)加载项进行测试中的说明，在加载项中手动旁加载Outlook。
 
 1. 在 Outlook 网页版中，创建新邮件。
 
@@ -245,32 +254,54 @@ Outlook Windows使用 JavaScript 文件，Outlook Web 上的开发人员使用�
     ![撰写时主题集Outlook Windows中邮件窗口的屏幕截图](../images/outlook-win-autolaunch.png)
 
     > [!NOTE]
-    > 如果看到错误"无法从 localhost 打开此外接程序"，则需要启用环回豁免。
+    > 如果您从 localhost 运行您的外接程序，并且看到错误"很抱歉，我们无法访问 *{your-add-in-name-here}*。 请确保具有网络连接。 如果问题继续，请稍后重试。"，你可能需要启用环回豁免。
     >
     > 1. 关闭 Outlook。
-    > 2. 打开 **任务管理器** ， **并确保msoadfs.exe进程** 未运行。
-    > 3. 运行以下命令。
+    > 1. 打开 **任务管理器** ， **并确保msoadfsb.exe进程** 未运行。
+    > 1. 运行以下命令。
     >
-    >     ```command&nbsp;line
-    >     call %SystemRoot%\System32\CheckNetIsolation.exe LoopbackExempt -a -n=1_http___localhost_300004ACA5EC-D79A-43EA-AB47-E50E47DD96FC
-    >     ```
+    >    ```command&nbsp;line
+    >    call %SystemRoot%\System32\CheckNetIsolation.exe LoopbackExempt -a -n=1_http___localhost_300004ACA5EC-D79A-43EA-AB47-E50E47DD96FC
+    >    ```
     >
-    > 4. 重新启动 Outlook。
+    > 1. 重新启动 Outlook。
 
 ## <a name="debug"></a>Debug
 
-当你实现自己的功能时，你可能需要调试代码。 有关如何调试基于事件的外接程序激活的指南，请参阅调试基于事件Outlook[外接程序](debug-autolaunch.md)。
+在外接程序中对启动事件处理进行更改时，应注意：
+
+- 如果更新了清单 [，请删除加载项，](sideload-outlook-add-ins-for-testing.md#remove-a-sideloaded-add-in) 然后再次旁加载它。
+- 如果对清单外的文件进行了更改，请关闭并重新打开Outlook，Windows或刷新在 web 上Outlook浏览器选项卡。
+
+实现自己的功能时，可能需要调试代码。 有关如何调试基于事件的外接程序激活的指南，请参阅调试基于事件Outlook[外接程序](debug-autolaunch.md)。
+
+运行时日志记录还可用于 Windows。 有关详细信息，请参阅使用运行时 [日志记录调试加载项](../testing/runtime-logging.md#runtime-logging-on-windows)。
+
+## <a name="deploy-to-users"></a>部署到用户
+
+通过管理中心上传清单，可以部署Microsoft 365加载项。 在管理门户中，展开设置窗格中的"集成应用"部分，然后选择"**集成应用"。** 在"**集成应用"** 页上，选择 **"Upload应用"** 操作。
+
+![管理中心上"集成应用"Microsoft 365的屏幕截图，包括Upload自定义应用操作](../images/outlook-deploy-event-based-add-ins.png)
+
+AppSource 和客户端存储：即将推出部署基于事件的加载项或更新现有加载项以包含基于事件的激活功能的功能。
+
+> [!IMPORTANT]
+> 基于事件的外接程序仅限于管理员托管的部署。 目前，用户无法从 AppSource 或客户端应用商店获取基于事件的加载项。
 
 ## <a name="event-based-activation-behavior-and-limitations"></a>基于事件的激活行为和限制
 
-基于事件激活的加载项应尽量短运行、轻量且非轻量。 若要表示加载项已完成处理启动事件，建议让加载项调用 `event.completed` 方法。 如果未进行该调用，外接程序将在大约 300 秒（运行基于事件的外接程序所允许的最大时间长度）内退出。当用户关闭撰写窗口时，外接程序也将结束。
+加载项启动事件处理程序应尽量短运行、轻量且无影响。 激活后，外接程序将在大约 300 秒（运行基于事件的外接程序所允许的最大时间长度）内退出。若要指示加载项已完成对启动事件的处理，我们建议让关联的处理程序调用 `event.completed` 方法。  (请注意，语句后包含的代码不能保证运行。) 每次触发外接程序处理的事件时，外接程序将重新激活并运行关联的事件处理程序，超时窗口将重置。 `event.completed` 外接程序在时间结束后结束，或者用户关闭撰写窗口或发送项目。
 
-如果用户有多个订阅了同一事件的加载项，Outlook平台将按特定顺序启动加载项。 目前，只能主动运行五个基于事件的加载项。 任何其他外接程序将推送到队列，然后随着之前处于活动状态的外接程序完成或停用而运行。
+如果用户有多个订阅了同一事件的加载项，Outlook平台将按特定顺序启动加载项。 目前，只能主动运行五个基于事件的加载项。
 
 用户可以切换或导航离开外接程序开始运行的当前邮件项目。 启动的加载项将在后台完成其操作。
 
+JavaScript 文件中不支持导入，在 JavaScript 文件中，您可以在 Windows 客户端中执行基于事件的激活。
+
 某些Office.js更改或更改 UI 的 API 不允许来自基于事件的外接程序。以下是阻止的 API：
 
+- 在 `OfficeRuntime.auth` 下：
+  - `getAccessToken` (Windows仅) 
 - 在 `Office.context.auth` 下：
   - `getAccessToken`
   - `getAccessTokenAsync`

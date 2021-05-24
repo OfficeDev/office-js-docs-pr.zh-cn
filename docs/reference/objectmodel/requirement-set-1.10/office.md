@@ -1,16 +1,16 @@
 ---
-title: Office命名空间 - 要求集 1.1
-description: Office邮箱 API 要求集 1.1 Outlook外接程序可用的命名空间成员。
+title: Office命名空间 - 要求集 1.10
+description: Office邮箱 API 要求集 1.10 Outlook外接程序可用的命名空间成员。
 ms.date: 05/17/2021
 localization_priority: Normal
-ms.openlocfilehash: 8bec8d3e28c81f0fb0f7aa09cc7c6b43a9b76086
+ms.openlocfilehash: e7b7ab9127ebf8ce9b7394d348144fe63b47de6c
 ms.sourcegitcommit: 0d9fcdc2aeb160ff475fbe817425279267c7ff31
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 05/21/2021
-ms.locfileid: "52591049"
+ms.locfileid: "52592029"
 ---
-# <a name="office-mailbox-requirement-set-11"></a>Office (邮箱要求集 1.1) 
+# <a name="office-mailbox-requirement-set-110"></a>Office (邮箱要求集 1.10) 
 
 该 Office 命名空间提供所有 Office 应用中的加载项所使用的共享接口。此列表仅记录 Outlook 加载项所使用的接口。有关 Office 命名空间的完整列表，请参阅[公用 API](/javascript/api/office)。
 
@@ -25,7 +25,7 @@ ms.locfileid: "52591049"
 
 | 属性 | 模式 | 返回类型 | 最小值<br>要求集 |
 |---|---|---|:---:|
-| [context](office.context.md) | 撰写<br>阅读 | [Context](/javascript/api/office/office.context?view=outlook-js-1.1&preserve-view=true) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [context](office.context.md) | 撰写<br>阅读 | [Context](/javascript/api/office/office.context?view=outlook-js-1.10&preserve-view=true) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 
 ## <a name="enumerations"></a>枚举
 
@@ -33,11 +33,12 @@ ms.locfileid: "52591049"
 |---|---|---|:---:|
 | [AsyncResultStatus](#asyncresultstatus-string) | 撰写<br>阅读 | 字符串 | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 | [CoercionType](#coerciontype-string) | 撰写<br>阅读 | 字符串 | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [EventType](#eventtype-string) | 撰写<br>阅读 | 字符串 | [1.5](../requirement-set-1.5/outlook-requirement-set-1.5.md) |
 | [SourceProperty](#sourceproperty-string) | 撰写<br>阅读 | 字符串 | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 
 ## <a name="namespaces"></a>命名空间
 
-[MailboxEnums：](/javascript/api/outlook/office.mailboxenums.attachmentcontentformat?view=outlook-js-1.1&preserve-view=true)包括许多Outlook枚举，例如、 `ItemType` `EntityType` 和 `AttachmentType` `RecipientType` `ResponseType` `ItemNotificationMessageType` 。
+[MailboxEnums：](/javascript/api/outlook/office.mailboxenums.attachmentcontentformat?view=outlook-js-1.10&preserve-view=true)包括许多Outlook枚举，例如、 `ItemType` `EntityType` 和 `AttachmentType` `RecipientType` `ResponseType` `ItemNotificationMessageType` 。
 
 ## <a name="enumeration-details"></a>枚举详细信息
 
@@ -88,6 +89,38 @@ ms.locfileid: "52591049"
 |要求| 值|
 |---|---|
 |[最低版本的邮箱要求集](../../requirement-sets/outlook-api-requirement-sets.md)| 1.1|
+|[适用的 Outlook 模式](../../../outlook/outlook-add-ins-overview.md#extension-points)| 撰写或阅读|
+
+<br>
+
+---
+---
+
+#### <a name="eventtype-string"></a>EventType：String
+
+指定与事件处理程序相关联的事件。
+
+##### <a name="type"></a>类型
+
+*   String
+
+##### <a name="properties"></a>属性
+
+| 名称 | 类型 | 描述 | 最低要求集 |
+|---|---|---|:---:|
+|`AppointmentTimeChanged`| 字符串 | 所选的约会或系列的日期或时间已更改。 | 1.7 |
+|`AttachmentsChanged`| 字符串 | 已将附件添加到项目或已从项目删除附件。 | 1.8 |
+|`EnhancedLocationsChanged`| 字符串 | 所选约会的位置已更改。 | 1.8 |
+|`ItemChanged`| 字符串 | 在任务窗格固定时，将选择不同的 Outlook 项进行查看。 | 1.5 |
+|`OfficeThemeChanged`| 字符串 | 邮箱上的 Office 主题已更改。 | 1.10 |
+|`RecipientsChanged`| 字符串 | 选定项目或约会位置的收件人列表已更改。 | 1.7 |
+|`RecurrenceChanged`| 字符串 | 选定系列的定期模式已更改。 | 1.7 |
+
+##### <a name="requirements"></a>Requirements
+
+|要求| 值|
+|---|---|
+|[最低版本的邮箱要求集](../../requirement-sets/outlook-api-requirement-sets.md)| 1.5 |
 |[适用的 Outlook 模式](../../../outlook/outlook-add-ins-overview.md#extension-points)| 撰写或阅读|
 
 <br>

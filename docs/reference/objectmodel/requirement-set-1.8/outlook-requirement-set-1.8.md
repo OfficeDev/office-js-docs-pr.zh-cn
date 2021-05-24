@@ -1,25 +1,25 @@
 ---
 title: Outlook 加载项 API 要求集 1.8
-description: Outlook 外接程序 API 的要求集 1.8。
-ms.date: 03/10/2021
+description: 加载项 API 要求集 1.8 Outlook 1.8。
+ms.date: 05/17/2021
 localization_priority: Normal
-ms.openlocfilehash: 9ff66bcaeecf54dde10821df1b48df6d20cb953d
-ms.sourcegitcommit: 929dcf2f415b94f42330a9035ed11a5cedad88f1
+ms.openlocfilehash: 333bfd43ba488949f9eead0058da2e7a1b99a25f
+ms.sourcegitcommit: 0d9fcdc2aeb160ff475fbe817425279267c7ff31
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/16/2021
-ms.locfileid: "50830963"
+ms.lasthandoff: 05/21/2021
+ms.locfileid: "52590958"
 ---
 # <a name="outlook-add-in-api-requirement-set-18"></a>Outlook 加载项 API 要求集 1.8
 
-Office JavaScript API 的 Outlook 外接程序 API 子集包括可在 Outlook 外接程序中使用的对象、方法、属性和事件。
+Outlook JavaScript API 的 Office 外接程序 API 子集包括可在 Outlook 外接程序中使用的对象、方法、属性和事件。
 
 > [!NOTE]
 > 本文档适用于最新要求集之外的[要求集](../../requirement-sets/outlook-api-requirement-sets.md)。
 
 ## <a name="whats-new-in-18"></a>1.8 中有哪些新增功能？
 
-要求集 1.8 包括[要求集 1.7](../requirement-set-1.7/outlook-requirement-set-1.7.md) 的所有功能。 它还添加了下列功能。
+要求集 1.8 包括要求集 [1.7 的所有功能](../requirement-set-1.7/outlook-requirement-set-1.7.md)。 它还添加了下列功能。
 
 - 添加了用于附件、类别、代理访问、增强位置、Internet 标头和发送时阻止功能的新 API。
 - 向 Event.completed 添加了可选的 `options` 参数。
