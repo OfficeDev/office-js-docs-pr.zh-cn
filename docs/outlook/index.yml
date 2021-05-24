@@ -1,6 +1,6 @@
 ### YamlMime:Landing
 title: Outlook 加载项文档
-summary: 借助 Outlook 外接程序，您可以使用熟悉的 Web 技术（如 HTML、CSS 和 JavaScript）构建可在 Outlook 中跨多个平台（包括 Web、Windows、Mac 和 iOS）运行的解决方案。 了解如何构建、测试、调试和发布 Outlook 加载项。
+summary: 借助 Outlook 加载项，可以使用熟悉的 Web 技术（如 HTML、CSS 和 JavaScript）构建可在 Outlook 中跨多个平台（包括 Web、Windows、Mac 和 iOS）运行的解决方案。 了解如何构建、测试、调试和发布 Outlook 加载项。
 metadata:
   title: Outlook 加载项文档
   description: 用于了解 Outlook 加载项的资源。
@@ -8,18 +8,18 @@ metadata:
   ms.topic: landing-page
   ms.date: 03/29/2021
   localization_priority: Priority
-  ms.openlocfilehash: 0270157672cc3756485af1daf2cc088fc5f3cb4f
-  ms.sourcegitcommit: a0624ef0d847fdbd6d83f27d1f9c69daf636ac38
+  ms.openlocfilehash: 22a4d97562287d7c4ef60208e87cc1c42f7ddf68
+  ms.sourcegitcommit: 693d364616b42eea66977eef47530adabc51a40f
   ms.translationtype: MT
   ms.contentlocale: zh-CN
-  ms.lasthandoff: 03/30/2021
-  ms.locfileid: "51435233"
+  ms.lasthandoff: 05/19/2021
+  ms.locfileid: "52555288"
 landingContent:
-- title: 关于 Outlook 外接程序
+- title: 关于Outlook加载项
   linkLists:
   - linkListType: overview
     links:
-    - text: 什么是 Outlook 外接程序？
+    - text: 什么是Outlook加载项？
       url: outlook-add-ins-overview.md
   - linkListType: quickstart
     links:
@@ -31,11 +31,11 @@ landingContent:
     links:
     - text: 使用 Outlook JavaScript API 与对象交互
       url: apis.md
-    - text: 测试和调试 Outlook 外接程序
+    - text: 测试和调试Outlook加载项
       url: ../testing/test-debug-office-add-ins.md
-    - text: 部署和发布 Outlook 外接程序
+    - text: 部署和发布Outlook加载项
       url: ../publish/publish.md
-- title: 关键 Office 加载项概念
+- title: 关键Office加载项概念
   linkLists:
   - linkListType: overview
     links:
@@ -54,9 +54,9 @@ landingContent:
   - linkListType: reference
     links:
     - text: 提问
-      url: https://stackoverflow.com/questions/tagged/office-js
+      url: /answers/topics/office-addins-dev.html
     - text: 请求功能
-      url: /answers/products/m365
+      url: https://techcommunity.microsoft.com/t5/microsoft-365-developer-platform/idb-p/Microsoft365DeveloperPlatform
     - text: 报告问题
       url: https://github.com/officedev/office-js/issues
     - text: Office 加载项其他资源

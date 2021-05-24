@@ -8,18 +8,18 @@ metadata:
   ms.topic: landing-page
   ms.date: 03/29/2021
   localization_priority: Priority
-  ms.openlocfilehash: 047b49ece238efac495da5a74e1699e2ccdcfea5
-  ms.sourcegitcommit: a0624ef0d847fdbd6d83f27d1f9c69daf636ac38
+  ms.openlocfilehash: 4fdc2e9da42cdaa7aafe954383c1c1c48bb404ce
+  ms.sourcegitcommit: 693d364616b42eea66977eef47530adabc51a40f
   ms.translationtype: MT
   ms.contentlocale: zh-CN
-  ms.lasthandoff: 03/30/2021
-  ms.locfileid: "51435296"
+  ms.lasthandoff: 05/19/2021
+  ms.locfileid: "52555169"
 landingContent:
-- title: 关于 PowerPoint 加载项
+- title: 关于PowerPoint加载项
   linkLists:
   - linkListType: overview
     links:
-    - text: 什么是 PowerPoint 加载项？
+    - text: 什么是PowerPoint加载项？
       url: powerpoint-add-ins.md
     - text: 适用于 PowerPoint 的 JavaScript API
       url: ../reference/overview/powerpoint-add-ins-reference-overview.md
@@ -31,11 +31,11 @@ landingContent:
       url: ../overview/explore-with-script-lab.md
   - linkListType: how-to-guide
     links:
-    - text: 测试和调试 PowerPoint 加载项
+    - text: 测试和调试PowerPoint加载项
       url: ../testing/test-debug-office-add-ins.md
-    - text: 部署和发布 PowerPoint 加载项
+    - text: 部署和PowerPoint加载项
       url: ../publish/publish.md
-- title: 关键 Office 加载项概念
+- title: 关键Office加载项概念
   linkLists:
   - linkListType: overview
     links:
@@ -54,9 +54,9 @@ landingContent:
   - linkListType: reference
     links:
     - text: 提问
-      url: https://stackoverflow.com/questions/tagged/office-js
+      url: /answers/topics/office-addins-dev.html
     - text: 请求功能
-      url: /answers/products/m365
+      url: https://techcommunity.microsoft.com/t5/microsoft-365-developer-platform/idb-p/Microsoft365DeveloperPlatform
     - text: 报告问题
       url: https://github.com/officedev/office-js/issues
     - text: Office 加载项其他资源

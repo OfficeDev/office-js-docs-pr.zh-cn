@@ -285,7 +285,7 @@ items:
             displayName: 'uninstall, sideload'
           - name: 使用运行时日志记录功能进行调试
             href: testing/runtime-logging.md
-          - name: "适用于 Visual\_Studio\_Code 的调试器扩展"
+          - name: 适用于 Visual Studio Code 的调试器扩展
             href: testing/debug-with-vs-extension.md
           - name: 性能
             items:
@@ -839,7 +839,7 @@ items:
               - name: 概述
                 href: reference/requirement-sets/outlook-api-requirement-sets.md
                 displayName: Outlook
-              - name: 预览要求集
+              - name: 邮箱预览要求集
                 items:
                   - name: 概述
                     href: reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md
@@ -853,7 +853,21 @@ items:
                     href: reference/objectmodel/preview-requirement-set/Office.context.mailbox.item.md
                   - name: Outlook 预览 API 参考
                     href: reference/outlook-api-reference-preview.md
-              - name: 要求集 1.9
+              - name: 邮箱要求集 1.10
+                items:
+                  - name: 概述
+                    href: reference/objectmodel/requirement-set-1.10/outlook-requirement-set-1.10.md
+                  - name: Office
+                    href: reference/objectmodel/requirement-set-1.10/office.md
+                  - name: Office.context
+                    href: reference/objectmodel/requirement-set-1.10/Office.context.md
+                  - name: Office.context.mailbox
+                    href: reference/objectmodel/requirement-set-1.10/Office.context.mailbox.md
+                  - name: Office.context.mailbox.item
+                    href: reference/objectmodel/requirement-set-1.10/Office.context.mailbox.item.md
+                  - name: Outlook 1.10 API 参考
+                    href: reference/outlook-api-reference-1-10.md
+              - name: 邮箱要求集 1.9
                 items:
                   - name: 概述
                     href: reference/objectmodel/requirement-set-1.9/outlook-requirement-set-1.9.md
@@ -867,7 +881,7 @@ items:
                     href: reference/objectmodel/requirement-set-1.9/Office.context.mailbox.item.md
                   - name: Outlook 1.9 API 参考
                     href: reference/outlook-api-reference-1-9.md
-              - name: 要求集 1.8
+              - name: 邮箱要求集 1.8
                 items:
                   - name: 概述
                     href: reference/objectmodel/requirement-set-1.8/outlook-requirement-set-1.8.md
@@ -881,7 +895,7 @@ items:
                     href: reference/objectmodel/requirement-set-1.8/Office.context.mailbox.item.md
                   - name: Outlook 1.8 API 参考
                     href: reference/outlook-api-reference-1-8.md
-              - name: 要求集 1.7
+              - name: 邮箱要求集 1.7
                 items:
                   - name: 概述
                     href: reference/objectmodel/requirement-set-1.7/outlook-requirement-set-1.7.md
@@ -895,7 +909,7 @@ items:
                     href: reference/objectmodel/requirement-set-1.7/Office.context.mailbox.item.md
                   - name: Outlook 1.7 API 参考
                     href: reference/outlook-api-reference-1-7.md
-              - name: 要求集 1.6
+              - name: 邮箱要求集 1.6
                 items:
                   - name: 概述
                     href: reference/objectmodel/requirement-set-1.6/outlook-requirement-set-1.6.md
@@ -909,7 +923,7 @@ items:
                     href: reference/objectmodel/requirement-set-1.6/Office.context.mailbox.item.md
                   - name: Outlook 1.6 API 参考
                     href: reference/outlook-api-reference-1-6.md
-              - name: 要求集 1.5
+              - name: 邮箱要求集 1.5
                 items:
                   - name: 概述
                     href: reference/objectmodel/requirement-set-1.5/outlook-requirement-set-1.5.md
@@ -923,7 +937,7 @@ items:
                     href: reference/objectmodel/requirement-set-1.5/Office.context.mailbox.item.md
                   - name: Outlook 1.5 API 参考
                     href: reference/outlook-api-reference-1-5.md
-              - name: 要求集 1.4
+              - name: 邮箱要求集 1.4
                 items:
                   - name: 概述
                     href: reference/objectmodel/requirement-set-1.4/outlook-requirement-set-1.4.md
@@ -937,7 +951,7 @@ items:
                     href: reference/objectmodel/requirement-set-1.4/Office.context.mailbox.item.md
                   - name: Outlook 1.4 API 参考
                     href: reference/outlook-api-reference-1-4.md
-              - name: 要求集 1.3
+              - name: 邮箱要求集 1.3
                 items:
                   - name: 概述
                     href: reference/objectmodel/requirement-set-1.3/outlook-requirement-set-1.3.md
@@ -951,7 +965,7 @@ items:
                     href: reference/objectmodel/requirement-set-1.3/Office.context.mailbox.item.md
                   - name: Outlook 1.3 API 参考
                     href: reference/outlook-api-reference-1-3.md
-              - name: 要求集 1.2
+              - name: 邮箱要求集 1.2
                 items:
                   - name: 概述
                     href: reference/objectmodel/requirement-set-1.2/outlook-requirement-set-1.2.md
@@ -965,7 +979,7 @@ items:
                     href: reference/objectmodel/requirement-set-1.2/Office.context.mailbox.item.md
                   - name: Outlook 1.2 API 参考
                     href: reference/outlook-api-reference-1-2.md
-              - name: 要求集 1.1
+              - name: 邮箱要求集 1.1
                 items:
                   - name: 概述
                     href: reference/objectmodel/requirement-set-1.1/outlook-requirement-set-1.1.md
@@ -980,7 +994,7 @@ items:
                   - name: Outlook 1.1 API 参考
                     href: reference/outlook-api-reference-1-1.md
           - name: API 参考 - 最新版本
-            href: reference/outlook-api-reference-1-9.md
+            href: reference/outlook-api-reference-1-10.md
             displayName: Outlook
       - name: 概念
         items:
