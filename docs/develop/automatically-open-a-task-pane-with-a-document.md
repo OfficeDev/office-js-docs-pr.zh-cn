@@ -1,18 +1,18 @@
 ---
 title: 随文档自动打开任务窗格
-description: 了解如何将 Office 外接程序配置为在文档打开时自动打开。
-ms.date: 07/07/2020
+description: 了解如何配置Office打开文档时自动打开的加载项。
+ms.date: 05/24/2021
 localization_priority: Normal
-ms.openlocfilehash: 9c9d64594f98cc45c56b3251bf6750457bd5a37c
-ms.sourcegitcommit: d28392721958555d6edea48cea000470bd27fcf7
+ms.openlocfilehash: c8e5f25019084439bf4ecade1602d5fc87b9d49e
+ms.sourcegitcommit: ecb24e32b32deb3e43daecd8d534e140460e0328
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/13/2021
-ms.locfileid: "49839955"
+ms.lasthandoff: 05/25/2021
+ms.locfileid: "52639954"
 ---
 # <a name="automatically-open-a-task-pane-with-a-document"></a>随文档自动打开任务窗格
 
-可以通过向 Office 应用程序功能区添加按钮，在 Office 外接程序中使用外接程序命令来扩展 Office UI。 当用户单击命令按钮时，会执行一个操作，如打开任务窗格。
+可以在加载项中添加按钮，在 Office 功能区中添加按钮，Office UI 扩展Office 应用 UI。 当用户单击命令按钮时，会执行一个操作，如打开任务窗格。
 
 某些情况下，需要在文档打开时自动打开一个任务窗格，而无需进行显式用户交互。 可以使用 Addincommand 1.1 要求集中引入的 AutoOpen 任务窗格功能，以在情况需要时自动打开一个任务窗格。
 
@@ -40,8 +40,8 @@ ms.locfileid: "49839955"
   - 当文档需要外接程序才能正常工作时。例如，包括由外接程序定期刷新的股票值的电子表格。外接程序应在电子表格打开时自动打开，以保持值处于最新状态。
   - 当用户很可能始终将外接程序与某个特定文档一同使用时。例如，可帮助用户通过从后台系统中获取信息来填写或更改文档中数据的外接程序。
 - 允许用户打开或关闭 Autoopen 功能。用户可以选择 UI 中包含的一个选项来停止自动打开外接程序任务窗格。  
-- 使用要求集检测确定 Autoopen 功能是否可用，如果不可用，则提供回退行为。
-- 不要使用 Autoopen 功能来人为地增加外接程序的使用率。 如果外接程序无法自动打开某些文档，则此功能可能会令用户厌烦。
+- 使用要求集检测确定 AutoOpen 功能是否可用，并提供回退行为（如果不可用）。
+- 不要使用 Autoopen 功能来人为地增加外接程序的使用率。 如果外接程序对某些文档自动打开没有意义，此功能可能会令用户生厌。
 
     > [!NOTE]
     > 如果 Microsoft 检测到滥用 AutoOpen 功能，加载项可能会从 AppSource 下架。
@@ -118,7 +118,7 @@ Office.context.document.settings.saveAsync();
 |:---------------|:---------------|:---------------|:---------------|
 |OMEX (AppSource)|加载项的 AppSource 资产 ID（请参阅“注意”）|AppSource 的区域设置；例如，“en-us”。|AppSource 目录中的版本（请参阅“注意”）|
 |FileSystem（网络共享）|外接程序清单中外接程序的 GUID。|网络共享路径。例如，“\\\\MyComputer\\MySharedFolder”。|外接程序清单中的版本。|
-|EXCatalog（通过 Exchange 服务器部署） |外接程序清单中外接程序的 GUID。|“EXCatalog”。 EXCatalog 行是一行，用于 Microsoft 365 管理中心内使用集中部署的加载项。|外接程序清单中的版本。
+|EXCatalog（通过 Exchange 服务器部署） |外接程序清单中外接程序的 GUID。|“EXCatalog”。 EXCatalog 行是一行，用于管理中心内使用集中部署的Microsoft 365行。|外接程序清单中的版本。
 |Registry（系统注册表）|外接程序清单中外接程序的 GUID。|“developer”|加载项清单中的版本。|
 
 > [!NOTE]
@@ -143,11 +143,11 @@ Office.context.document.settings.saveAsync();
 > [!NOTE]
 > 若要将加载项与文档一起分发，以便提示用户进行安装，必须将“visibility”属性设置为 1。只能通过 Open XML 执行此操作。
 
-编写 XML 的一个简单方法是首先运行外接程序并[标记客户端上的文档](#tag-the-document-on-the-client-side)以写入值，然后保存该文档并检查生成的 XML。Office 将检测并提供适当的属性值。还可以使用 [Open XML SDK 2.5 Productivity Tool](https://www.microsoft.com/download/details.aspx?id=30425) 工具生成 C# 代码以编程方式添加基于生成的 XML 的标记。
+编写 XML 的一种简单方法就是先运行加载项，在客户端[](#tag-the-document-on-the-client-side)上标记文档以写入值，然后保存文档并检查生成的 XML。Office将检测并提供相应的属性值。 您还可以使用 Open [XML SDK Productivity Tool](https://www.nuget.org/packages/Open-XML-SDK) 生成C#代码，以编程方式添加基于生成的 XML 的标记。
 
 ## <a name="test-and-verify-opening-task-panes"></a>对打开任务窗格进行测试和验证
 
-可以通过 Microsoft 365 管理中心部署将自动使用集中部署打开任务窗格的外接程序的测试版本。 以下示例演示如何使用 EXCatalog 应用商店版本从集中部署目录插入外接程序。
+可以通过管理中心部署将自动使用集中部署打开任务窗格的Microsoft 365版本。 以下示例演示如何使用 EXCatalog 应用商店版本从集中部署目录插入外接程序。
 
 ```xml
 <we:webextension xmlns:we="http://schemas.microsoft.com/office/webextensions/webextension/2010/11" id="{52811C31-4593-43B8-A697-EB873422D156}">
@@ -159,9 +159,9 @@ Office.context.document.settings.saveAsync();
 </we:webextension>
 ```
 
-可以使用 Microsoft 365 订阅测试上一个示例，以试用集中部署并验证加载项是否按预期工作。 如果你还没有 Microsoft 365 订阅，可以通过加入 Microsoft 365 开发人员计划获得为期 90 天的免费可续订 [Microsoft 365 订阅](https://developer.microsoft.com/office/dev-program)。
+您可以使用您的 Microsoft 365 订阅测试上一个示例，以尝试集中部署并验证您的外接程序是否按预期工作。 如果你还没有 Microsoft 365 订阅，可以通过加入 Microsoft 365 开发人员计划获取为期 90 天的免费可续订[Microsoft 365 订阅](https://developer.microsoft.com/office/dev-program)。
 
 ## <a name="see-also"></a>另请参阅
 
 有关演示如何使用 AutoOpen 功能的示例，请参阅 [Office 外接程序命令示例](https://github.com/OfficeDev/Office-Add-in-Commands-Samples/tree/master/AutoOpenTaskpane)。
-[加入 Microsoft 365 开发人员计划](/office/developer-program/office-365-developer-program)。
+[加入Microsoft 365开发人员计划](/office/developer-program/office-365-developer-program)。

@@ -3,24 +3,24 @@ title: 获取 Outlook 加载项中的附件
 description: 加载项可使用附件 API 将与附件相关的信息发送至远程服务。
 ms.date: 01/14/2021
 localization_priority: Normal
-ms.openlocfilehash: 386ed16281066eaf38112a905cbd4eae634898f2
-ms.sourcegitcommit: 6a378d2a3679757c5014808ae9da8ababbfe8b16
+ms.openlocfilehash: db59ce44d2ed6f120503701479b705f13727130b
+ms.sourcegitcommit: ecb24e32b32deb3e43daecd8d534e140460e0328
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/15/2021
-ms.locfileid: "49870649"
+ms.lasthandoff: 05/25/2021
+ms.locfileid: "52639961"
 ---
 # <a name="get-attachments-of-an-outlook-item-from-the-server"></a>从服务器获取 Outlook 项的附件
 
-可以通过多种方式获取 Outlook 项目的附件，但具体使用哪个选项取决于你的方案。
+可以通过几种方法获取Outlook项的附件，但具体使用哪个选项取决于你的方案。
 
 1. 将附件信息发送到远程服务。
 
-    加载项可以使用附件 API 将有关附件的信息发送到远程服务。 然后，该服务可以直接联系 Exchange 服务器来检索附件。
+    外接程序可以使用附件 API 将有关附件的信息发送到远程服务。 然后，该服务可以直接联系 Exchange 服务器来检索附件。
 
 1. 使用要求集 1.8 中提供的 [getAttachmentContentAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods) API。 支持的格式 [：AttachmentContentFormat](/javascript/api/outlook/office.mailboxenums.attachmentcontentformat)。
 
-    如果 EWS/REST 不可用 (例如，由于 Exchange server) 的管理员配置，或者您的外接程序希望直接在 HTML 或 JavaScript 中使用 base64 内容，则此 API 可能很方便。 此外，该 API 在撰写方案中可用，其中附件可能尚未同步到 Exchange;请参阅在 Outlook 中的撰写窗体中管理项目的附件以了解 `getAttachmentContentAsync` 更多信息。 [](add-and-remove-attachments-to-an-item-in-a-compose-form.md)
+    如果 EWS/REST (例如，由于 Exchange 服务器) 的管理员配置，或者您的外接程序希望直接在 HTML 或 JavaScript 中使用 base64 内容，则此 API 可能很方便。 此外，该 API 在撰写方案中可用，其中附件可能尚未同步到 Exchange;有关详细信息，请参阅在 Outlook 中的撰写窗体中管理 `getAttachmentContentAsync` [项目的](add-and-remove-attachments-to-an-item-in-a-compose-form.md)附件。
 
 本文详细介绍了第一个选项。 若要将附件信息发送到远程服务，请使用以下属性和函数。
 
@@ -32,7 +32,7 @@ ms.locfileid: "49870649"
 
 ## <a name="using-the-attachments-api"></a>使用附件 API
 
-若要使用附件 API 从 Exchange 邮箱获取附件，请执行以下步骤。
+若要使用附件 API 从邮箱Exchange附件，请执行以下步骤。
 
 1. 当用户查看包含附件的邮件或约会时显示外接程序。
 
@@ -152,7 +152,7 @@ namespace AttachmentsSample
 
 ### <a name="use-the-ews-managed-api-to-get-the-attachments"></a>使用 EWS 托管 API 来获取附件
 
-如果使用远程服务中的 [EWS 托管 API](https://go.microsoft.com/fwlink/?LinkID=255472)，则可以使用 [GetAttachments](/exchange/client-developer/exchange-web-services/how-to-get-attachments-by-using-ews-in-exchange) 方法构建、发送和接收 EWS SOAP 请求以获取附件。我们建议您使用 EWS 托管 API，因为它所需的代码行数较少，并可提供用于调用 EWS 的更为直观的界面。以下代码发出一个检索所有附件的请求，并返回已处理附件的数目和名称。
+如果使用远程服务中的 [EWS 托管 API](/exchange/client-developer/web-service-reference/ews-managed-api-reference-for-exchange)，则可以使用 [GetAttachments](/exchange/client-developer/exchange-web-services/how-to-get-attachments-by-using-ews-in-exchange) 方法构建、发送和接收 EWS SOAP 请求以获取附件。我们建议您使用 EWS 托管 API，因为它所需的代码行数较少，并可提供用于调用 EWS 的更为直观的界面。以下代码发出一个检索所有附件的请求，并返回已处理附件的数目和名称。
 
 ```cs
 private AttachmentSampleServiceResponse GetAtttachmentsFromExchangeServerUsingEWSManagedApi(AttachmentSampleServiceRequest request)
@@ -420,4 +420,4 @@ private string ProcessXmlResponse(XElement responseEnvelope)
 - [创建适用于阅读窗体的 Outlook 加载项](read-scenario.md)
 - [在 Exchange 中浏览 EWS 托管 API、EWS 和 Web 服务](/exchange/client-developer/exchange-web-services/explore-the-ews-managed-api-ews-and-web-services-in-exchange)
 - [EWS 托管 API 客户端应用程序入门](/exchange/client-developer/exchange-web-services/get-started-with-ews-managed-api-client-applications)
-- [Outlook 外接程序 SSO](https://github.com/OfficeDev/Outlook-Add-in-SSO)
+- [Outlook外接程序 SSO](https://github.com/OfficeDev/Outlook-Add-in-SSO)
