@@ -2,14 +2,14 @@
 title: 配置Outlook加载项进行基于事件的激活
 description: 了解如何配置Outlook加载项进行基于事件的激活。
 ms.topic: article
-ms.date: 05/20/2021
+ms.date: 05/26/2021
 localization_priority: Normal
-ms.openlocfilehash: a0d0b27c9b49132024c78577a4432d85542cf76f
-ms.sourcegitcommit: 0d9fcdc2aeb160ff475fbe817425279267c7ff31
+ms.openlocfilehash: debf6db16adc8e0bc923142da1e85629b8a1daa8
+ms.sourcegitcommit: a42ae8b804f944061c87bbd9d9f67990e4cf5e36
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/21/2021
-ms.locfileid: "52590503"
+ms.lasthandoff: 05/28/2021
+ms.locfileid: "52697195"
 ---
 # <a name="configure-your-outlook-add-in-for-event-based-activation"></a>配置Outlook加载项进行基于事件的激活
 
@@ -22,22 +22,22 @@ ms.locfileid: "52590503"
 
 ## <a name="supported-events"></a>支持的事件
 
-目前，支持以下事件。
+目前，Web 和 Web 上支持以下Windows。
 
-|事件|说明|客户端|
-|---|---|---|
-|`OnNewMessageCompose`|撰写新邮件时 (包括答复、全部答复和转发) ，但不包括编辑时，例如草稿。|Windows、Web|
-|`OnNewAppointmentOrganizer`|创建新约会但不编辑现有约会时。|Windows、Web|
-|`OnMessageAttachmentsChanged`\*|在撰写邮件时添加或删除附件。|Windows|
-|`OnAppointmentAttachmentsChanged`\*|在撰写约会时添加或删除附件。|Windows|
-|`OnMessageRecipientsChanged`\*|在撰写邮件时添加或删除收件人。|Windows|
-|`OnAppointmentAttendeesChanged`\*|在撰写约会时添加或删除与会者。|Windows|
-|`OnAppointmentTimeChanged`\*|在撰写约会时更改日期/时间。|Windows|
-|`OnAppointmentRecurrenceChanged`\*|在撰写约会时添加、更改或删除定期详细信息。 如果日期/时间发生更改， `OnAppointmentTimeChanged` 也会触发该事件。|Windows|
-|`OnInfoBarDismissClicked`\*|在撰写邮件或约会项目时关闭通知。 仅通知添加了通知的外接程序。|Windows|
+|事件|说明|
+|---|---|
+|`OnNewMessageCompose`|撰写新邮件时 (包括答复、全部答复和转发) ，但不包括编辑时，例如草稿。|
+|`OnNewAppointmentOrganizer`|创建新约会但不编辑现有约会时。|
+|`OnMessageAttachmentsChanged`\*|在撰写邮件时添加或删除附件。|
+|`OnAppointmentAttachmentsChanged`\*|在撰写约会时添加或删除附件。|
+|`OnMessageRecipientsChanged`\*|在撰写邮件时添加或删除收件人。|
+|`OnAppointmentAttendeesChanged`\*|在撰写约会时添加或删除与会者。|
+|`OnAppointmentTimeChanged`\*|在撰写约会时更改日期/时间。|
+|`OnAppointmentRecurrenceChanged`\*|在撰写约会时添加、更改或删除定期详细信息。 如果日期/时间发生更改， `OnAppointmentTimeChanged` 也会触发该事件。|
+|`OnInfoBarDismissClicked`\*|在撰写邮件或约会项目时关闭通知。 仅通知添加了通知的外接程序。|
 
 > [!IMPORTANT]
-> \*此事件仅支持[在具有](../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md)Outlook 订阅Windows预览Microsoft 365此事件。 有关详细信息，请参阅 [本文中的](#how-to-preview) 如何预览。
+> \*此事件仅在使用 Outlook[](../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md)订阅的 Outlook 和 Windows 中Microsoft 365受支持。 有关详细信息，请参阅 [本文中的](#how-to-preview) 如何预览。
 >
 > 由于预览功能可能会随时更改，恕不另行通知，因此不应在生产外接程序中使用。
 
@@ -136,10 +136,8 @@ ms.locfileid: "52590503"
           <!-- Enable launching the add-in on the included events. -->
           <ExtensionPoint xsi:type="LaunchEvent">
             <LaunchEvents>
-              <!-- Events supported on the web and on Windows. -->
               <LaunchEvent Type="OnNewMessageCompose" FunctionName="onMessageComposeHandler"/>
               <LaunchEvent Type="OnNewAppointmentOrganizer" FunctionName="onAppointmentComposeHandler"/>
-              <!-- Events supported only on Windows. -->
               <LaunchEvent Type="OnMessageAttachmentsChanged" FunctionName="onMessageAttachmentsChangedHandler" />
               <LaunchEvent Type="OnAppointmentAttachmentsChanged" FunctionName="onAppointmentAttachmentsChangedHandler" />
               <LaunchEvent Type="OnMessageRecipientsChanged" FunctionName="onMessageRecipientsChangedHandler" />
@@ -320,3 +318,4 @@ JavaScript 文件中不支持导入，在 JavaScript 文件中，您可以在 Wi
 
 - [Outlook 加载项清单](manifests.md)
 - [如何调试基于事件的外接程序](debug-autolaunch.md)
+- PnP 示例[：Outlook基于事件的激活设置签名](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/outlook-set-signature)
