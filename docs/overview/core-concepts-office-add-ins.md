@@ -1,22 +1,22 @@
 ---
 layout: LandingPage
 ms.topic: landing-page
-title: Office 加载项的核心概念
-description: 更多了解 Office 加载项平台。
-ms.date: 07/30/2020
+title: 开发生命周期概述
+description: 了解计划、开发、测试和发布生命周期事件。
+ms.date: 05/25/2021
 localization_priority: Priority
-ms.openlocfilehash: f17171886133a7241838d089051b23394c38f8ee
-ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
+ms.openlocfilehash: 4bd1e7e005c5905528196a547ba96ff786f8dbac
+ms.sourcegitcommit: a42ae8b804f944061c87bbd9d9f67990e4cf5e36
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "47292489"
+ms.lasthandoff: 05/28/2021
+ms.locfileid: "52697188"
 ---
-# <a name="core-concepts"></a>核心概念
+# <a name="development-lifecycle-overview"></a>开发生命周期概述
 
 所有 Office 加载项均基于 Office 加载项平台构建。 它们共享一个可实现某些功能的公共框架。 这意味着，无论是要为 Excel、Outlook 还是其他 Office 应用程序创建加载项，都可以实现对话框、加载项命令、任务窗格和单一登录 (SSO) 等功能。
 
-无论构建任何加载项，你都需要了解 Office 应用程序和平台可用性、Office JavaScript API 编程模式、如何在清单文件中指定加载项的设置和功能、如何测试、调试和发布加载项等重要概念。 你将在本文档的**核心概念**部分找到这些信息。 在浏览与所构建的加载项（例如 [Excel](../excel/index.yml)）相对应的应用程序特定文档之前，请先查看本文档。
+无论构建任何加载项，你都需要了解 Office 应用程序和平台可用性、Office JavaScript API 编程模式、如何在清单文件中指定加载项的设置和功能、如何测试、调试和发布加载项等重要概念。 查看下表中列出的文档。 这能让你为与所构建的加载项（例如 [Excel](../excel/index.yml)）相对应的应用程序特定文档打好基础。
 
 |               |               |
 | ------------- | ------------- |
