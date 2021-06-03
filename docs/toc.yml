@@ -54,6 +54,9 @@ items:
           - name: 安装最新版 Office
             href: develop/install-latest-office-version.md
             displayName: 'Excel, Word, OneNote, Project, PowerPoint, Outlook'
+          - name: 支持 Internet Explorer 11
+            href: develop/support-ie-11.md
+            displayName: 'Excel, Word, OneNote, Project, PowerPoint, Outlook'
       - name: 开发
         items:
           - name: 概述
