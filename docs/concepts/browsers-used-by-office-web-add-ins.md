@@ -1,50 +1,47 @@
 ---
 title: Office 加载项使用的浏览器
 description: 指定操作系统和 Office 版本如何确定 Office 加载项使用的浏览器。
-ms.date: 03/24/2021
+ms.date: 05/19/2021
 localization_priority: Normal
-ms.openlocfilehash: 489367231e1ed48e0bee6f0a32ccc47a8b39aed9
-ms.sourcegitcommit: 0bff0411d8cfefd4bb00c189643358e6fb1df95e
+ms.openlocfilehash: 07788c655d5c30527ac815ba2f3235cf504641f3
+ms.sourcegitcommit: 0d3bf72f8ddd1b287bf95f832b7ecb9d9fa62a24
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/07/2021
-ms.locfileid: "51604629"
+ms.lasthandoff: 06/02/2021
+ms.locfileid: "52727904"
 ---
 # <a name="browsers-used-by-office-add-ins"></a>Office 加载项使用的浏览器
 
-Office 外接程序是 Web 应用程序，在 Office 网页版中运行时，使用 iFrame 显示，在 Office 中对桌面客户端和移动客户端使用嵌入式浏览器控件。 加载项还需要使用 JavaScript 引擎来运行 JavaScript。 嵌入的浏览器和引擎都由用户计算机上安装的浏览器提供。
+Office外接程序是 Web 应用程序，在 Office web 版 中运行时，使用 iFrame 显示，Office和移动客户端使用嵌入式浏览器控件。 加载项还需要使用 JavaScript 引擎来运行 JavaScript。 嵌入的浏览器和引擎都由用户计算机上安装的浏览器提供。
 
 要使用的浏览器取决于：
 
 - 计算机的操作系统。
-- 加载项是在 Office 网页版、Microsoft 365 版还是非订阅版 Office 2013 或更高版本中运行。
+- 外接程序是在 2013 Office web 版、Microsoft 365或非订阅Office中运行。
 
 下表显示在不同平台和操作系统中使用的浏览器。
 
-|操作系统|Office 版本|Edge WebView2 (基于 Chromium) ？|浏览器|
+|操作系统|Office 版本|安装了基于 (Chromium WebView2) Edge WebView2？|浏览器|
 |:-----|:-----|:-----|:-----|:-----|:-----|:-----|
 |任意|Office 网页版|不适用|在其中打开 Office 的浏览器。|
 |Mac|任意|不适用|Safari|
 |iOS|任意|不适用|Safari|
 |Android|任意|不适用|Chrome|
-|Windows 7、8.1、10 | 非订阅 Office 2013 或更高版本|无关紧要|Internet Explorer 11|
+|Windows 7、8.1、10 | 2013 Office更高版本的非订阅订阅|无关紧要|Internet Explorer 11|
 |Windows 7 | Microsoft 365| 无关紧要 | Internet Explorer 11|
-|Windows 8.1，<br>Windows 10 版本。 &nbsp; < &nbsp;1903| Microsoft 365 | 否| Internet Explorer 11|
-|Windows 10 版本。 &nbsp; >= &nbsp;1903 | Microsoft 365 版本 &nbsp; < &nbsp;16.0.11629<sup>1</sup>| 无关紧要|Internet Explorer 11|
-|Windows 10 版本。 &nbsp; >= &nbsp;1903 | Microsoft 365 版本 &nbsp; >= &nbsp;16.0.11629 &nbsp; _和_ &nbsp; < &nbsp; 16.0.13530.20424 <sup>1</sup>| 无关紧要|具有原始 WebView 的 Microsoft Edge 2 和<sup>3</sup> (EdgeHTML) |
-|Windows 10 版本。 &nbsp; >= &nbsp;1903 | Microsoft 365 版本 &nbsp; >= &nbsp;16.0.13530.20424<sup>1</sup>| 否 |具有原始 WebView 的 Microsoft Edge 2 和<sup>3</sup> (EdgeHTML) |
-|Windows 8.1<br>Windows 10| Microsoft 365 版本 &nbsp; >= &nbsp;16.0.13530.20424<sup>1</sup>| 是<sup>4</sup>|  具有 WebView2 的 Microsoft Edge<sup>2</sup> (基于 Chromium)  |
+|Windows 8.1、<br>Windows 10 ver. &nbsp; < &nbsp;1903| Microsoft 365 | 否| Internet Explorer 11|
+|Windows 10 ver. &nbsp; >= &nbsp;1903 | Microsoft 365 ver. &nbsp; < &nbsp;16.0.11629<sup>1</sup>| 无关紧要|Internet Explorer 11|
+|Windows 10 ver. &nbsp; >= &nbsp;1903 | Microsoft 365 ver. &nbsp; >= &nbsp;16.0.11629 &nbsp; _和_ &nbsp; < &nbsp; 16.0.13530.20424 <sup>1</sup>| 无关紧要|Microsoft Edge<sup>2，3</sup>包含原始 WebView (EdgeHTML) |
+|Windows 10 ver. &nbsp; >= &nbsp;1903 | Microsoft 365 ver. &nbsp; >= &nbsp;16.0.13530.20424<sup>1</sup>| 否 |Microsoft Edge<sup>2，3</sup>包含原始 WebView (EdgeHTML) |
+|Windows 8.1<br>Windows 10| Microsoft 365 ver. &nbsp; >= &nbsp;16.0.13530.20424<sup>1</sup>| 是<sup>4</sup>|  Microsoft Edge<sup>2</sup>与基于 WebView2 (Chromium 2)  |
 
-<sup>1</sup> 有关更多详细信息 [，请参阅更新](/officeupdates/update-history-office365-proplus-by-date) 历史记录页面以及如何查找 [Office](https://support.office.com/article/What-version-of-Office-am-I-using-932788b8-a3ce-44bf-bb09-e334518b8b19) 客户端版本和更新通道。
+<sup>1</sup>有关更多详细信息[，请参阅更新历史记录页](/officeupdates/update-history-office365-proplus-by-date)Office[客户端版本和更新](https://support.office.com/article/What-version-of-Office-am-I-using-932788b8-a3ce-44bf-bb09-e334518b8b19)通道。
 
-<sup>2</sup> 使用 Microsoft Edge 时，Windows 10 讲述 (有时称为"屏幕阅读器") 读取任务窗格中打开的页面 `<title>` 中的标记。 如果使用的是 Internet Explorer 11，则Narrator 将会读取任务窗格的标题栏，它来自加载项清单中的 `<DisplayName>` 值。
+<sup>2</sup> Microsoft Edge时，Windows 10 讲述人 (有时称为"屏幕阅读器") 在任务窗格中打开 `<title>` 的页面中读取标记。 如果使用的是 Internet Explorer 11，则Narrator 将会读取任务窗格的标题栏，它来自加载项清单中的 `<DisplayName>` 值。
 
-<sup>3</sup> 如果外接程序在清单中包含 元素，则它将不将 Microsoft Edge 与 EdgeHTML (`<Runtimes>` Microsoft Edge) 。 如果满足将 Microsoft Edge 与 WebView2 (基于 Chromium) 的条件，则外接程序会使用该浏览器。 否则，它将使用 Internet Explorer 11，而不考虑 Windows 或 Microsoft 365 版本。 有关详细信息，请参阅[运行时](../reference/manifest/runtimes.md)。
+<sup>3</sup>如果外接程序在清单中包含 元素，则它将Microsoft Edge EdgeHTML (`<Runtimes>` WebView) 。 如果满足使用基于 WebView2 Microsoft Edge webView (Chromium 2) 的条件，则外接程序使用该浏览器。 否则，它将使用 Internet Explorer 11，而不考虑Windows或Microsoft 365版本。 有关详细信息，请参阅[运行时](../reference/manifest/runtimes.md)。
 
-<sup>4</sup> 除了安装 Microsoft Edge 之外，还必须安装可嵌入的 WebView2 控件，以便 Office 可以嵌入它。 若要安装它，请参阅 [Microsoft Edge WebView2/嵌入 Web 内容...使用 Microsoft Edge WebView2](https://developer.microsoft.com/microsoft-edge/webview2/)。
-
-
-
+<sup>4</sup>除了安装可嵌入的 WebView2 控件之外，还必须安装Microsoft Edge，以便Office嵌入它。 若要安装它，请参阅[Microsoft Edge WebView2/ 嵌入 Web 内容...使用 Microsoft Edge WebView2](https://developer.microsoft.com/microsoft-edge/webview2/)。
 
 > [!IMPORTANT]
 > Internet Explorer 11 不支持高于 ES5 的 JavaScript 版本。 如果任何外接程序的用户具有使用 Internet Explorer 11 的平台，则要使用 ECMAScript 2015 或更高版本的语法和功能，有两个选项：
@@ -52,13 +49,15 @@ Office 外接程序是 Web 应用程序，在 Office 网页版中运行时，使
 > - 在 ECMAScript 2015 (（也称为 ES6) 或更高版本 JavaScript）中编写代码，或在 TypeScript 中编写代码，然后使用编译器（如 [#A0](https://babeljs.io/) 或 [tsc）](https://www.typescriptlang.org/index.html)将代码编译为 ES5 JavaScript。
 > - 在 ECMAScript 2015 或更高版本的 JavaScript[](https://en.wikipedia.org/wiki/Polyfill_(programming))中编写，但也加载填充库（如[core-js，](https://github.com/zloirock/core-js)它使 IE 能够运行代码）。
 >
+> 有关这些选项的详细信息，请参阅 Support [Internet Explorer 11](../develop/support-ie-11.md)。
+>
 > 此外，Internet Explorer 11 不支持媒体、录制和位置等部分 HTML5 功能。
 
-## <a name="troubleshooting-microsoft-edge-issues"></a>Microsoft Edge 问题疑难解答
+## <a name="troubleshooting-microsoft-edge-issues"></a>疑难Microsoft Edge疑难解答
 
 ### <a name="service-workers-are-not-working"></a>服务工作人员未工作
 
-使用原始 Microsoft Edge WebView [EdgeHTML](https://en.wikipedia.org/wiki/EdgeHTML)时，Office 外接程序不支持服务工作人员。 它们受基于 [Chromium 的边缘 WebView2 的支持](/microsoft-edge/hosting/webview2)。
+Office使用原始 WebView Microsoft Edge [EdgeHTML](https://en.wikipedia.org/wiki/EdgeHTML)时，外接程序不支持服务工作人员。 它们受基于 Chromium [Edge WebView2 的支持](/microsoft-edge/hosting/webview2)。
 
 ### <a name="scroll-bar-does-not-appear-in-task-pane"></a>任务窗格中不显示滚动条
 
@@ -74,7 +73,7 @@ Office 外接程序是 Web 应用程序，在 Office 网页版中运行时，使
 
 ### <a name="get-errors-trying-to-download-a-pdf-file"></a>尝试下载 PDF 文件时出错
 
-当 Edge 为浏览器时，不支持在外接程序中直接将 blob 下载为 PDF 文件。 解决方法是创建一个简单的 Web 应用程序，将 blob 下载为 PDF 文件。 在外接程序中，调用 `Office.context.ui.openBrowserWindow(url)` 方法并传递 Web 应用程序的 URL。 这将在 Office 外部的浏览器窗口中打开 Web 应用程序。
+当 Edge 为浏览器时，不支持在外接程序中直接将 blob 下载为 PDF 文件。 解决方法是创建一个简单的 Web 应用程序，将 blob 下载为 PDF 文件。 在外接程序中，调用 `Office.context.ui.openBrowserWindow(url)` 方法并传递 Web 应用程序的 URL。 这将在 Web 应用程序外部的浏览器窗口中Office。
 
 ## <a name="see-also"></a>另请参阅
 

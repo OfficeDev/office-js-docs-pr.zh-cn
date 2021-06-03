@@ -1,55 +1,64 @@
 ---
-ms.date: 05/16/2020
-description: 使用 Internet Explorer 11 测试 Office 外接程序。
 title: Internet Explorer 11 测试
+description: 在 Office 11 上测试Internet Explorer加载项。
+ms.date: 05/19/2021
 localization_priority: Normal
-ms.openlocfilehash: 1d6852d08308088a020e86ce7f5ab9cfdb9ab978
-ms.sourcegitcommit: 065bf4f8e0d26194cee9689f7126702b391340cc
+ms.openlocfilehash: de256ee8b0633f18d3188c5bbfae52cb24ff2c35
+ms.sourcegitcommit: 0d3bf72f8ddd1b287bf95f832b7ecb9d9fa62a24
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "45006435"
+ms.lasthandoff: 06/02/2021
+ms.locfileid: "52727932"
 ---
-# <a name="test-your-office-add-in-using-internet-explorer-11"></a>使用 Internet Explorer 11 测试 Office 外接程序
+# <a name="test-your-office-add-in-on-internet-explorer-11"></a>在 Office 11 上测试Internet Explorer加载项
 
-根据你的外接程序的规范，你可能会计划支持较早版本的 Windows 和 Office，这需要在 Internet Explorer 11 上进行测试。 在将外接程序提交到 AppSource 时，通常需要执行此过程。 您可以使用以下命令行工具从外接程序使用的更新式运行时切换到 Internet Explorer 11 运行时进行此测试。
+如果计划通过 AppSource 销售加载项或计划支持较旧版本的 Windows 和 Office，加载项必须在基于 Internet Explorer 11 (IE11) 的可嵌入浏览器控件中运行。 可以使用命令行从外接程序使用的更现代运行时切换到 Internet Explorer 11 运行时进行此测试。 有关哪些版本的 Windows 和 Office使用 Internet Explorer 11 Web 视图控件的信息，请参阅 Office [Add-ins](../concepts/browsers-used-by-office-web-add-ins.md)使用的浏览器。
 
-## <a name="pre-requisites"></a>先决条件
+> [!IMPORTANT]
+> Internet Explorer 11 不支持高于 ES5 的 JavaScript 版本。 如果要使用 ECMAScript 2015 或更高版本的语法和功能，有两个选项：
+>
+> - 在 ECMAScript 2015 (（也称为 ES6) 或更高版本 JavaScript）中编写代码，或在 TypeScript 中编写代码，然后使用编译器（如 [#A0](https://babeljs.io/) 或 [tsc）](https://www.typescriptlang.org/index.html)将代码编译为 ES5 JavaScript。
+> - 在 ECMAScript 2015 或更高版本的 JavaScript[](https://en.wikipedia.org/wiki/Polyfill_(programming))中编写，但也加载填充库（如[core-js，](https://github.com/zloirock/core-js)它使 IE 能够运行代码）。
+>
+> 有关这些选项的详细信息，请参阅 Support [Internet Explorer 11](../develop/support-ie-11.md)。
+>
+> 此外，Internet Explorer 11 不支持媒体、录制和位置等部分 HTML5 功能。
+
+> [!NOTE]
+> 若要在 Internet Explorer 11 浏览器上测试外接程序，Office web 版中Internet Explorer并[旁加载外接程序](create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)。
+
+## <a name="prerequisites"></a>先决条件
 
 - [Node.js](https://nodejs.org/)（最新的 [LTS](https://nodejs.org/about/releases) 版本）
-- 一个代码编辑器。 建议[Visual Studio Code](https://code.visualstudio.com/)
-- [是 Office 预览体验计划的一部分](https://insider.office.com)
 
-这些说明假定您先设置了 "Yo Office 生成器" 项目。 如果你之前未执行此操作，请考虑阅读快速启动，例如， [Excel 外接程序](../quickstarts/excel-quickstart-jquery.md)。
+这些说明假定你之前已经设置了 Yo Office生成器项目。 如果之前尚未这样做，请考虑阅读快速入门，例如适用于Excel[入门](../quickstarts/excel-quickstart-jquery.md)。
 
-## <a name="using-ie11-tooling"></a>使用 IE11 工具
+## <a name="switching-to-the-internet-explorer-11-webview"></a>切换到 Internet Explorer 11 Webview
 
-1. 创建 "Yo Office 生成器" 项目。 无论选择哪种类型的项目，此工具都将适用于所有项目类型。
+1. 创建 Yo Office生成器项目。 选择哪种项目并不重要，此工具将用于所有项目类型。
 
-> !便笺如果您有一个现有项目，并且想要添加此工具而不创建新项目，请跳过此步骤并移动到下一步。 
+    > [!NOTE]
+    > 如果您有一个现有项目，并且想要在不创建新项目的情况下添加此工具，请跳过此步骤并移至下一步。 
 
-2. 在新项目的根文件夹中，在命令行中运行以下命令：
+1. 在项目的根文件夹中，在命令行中运行以下命令。 此示例假定项目的清单文件位于根中。 如果不是，请指定清单文件的相对路径。 您应该在命令行中看到一条消息，指出 Web 视图类型现在设置为 IE。
 
-```command&nbsp;line
-npx office-addin-dev-settings webview manifest.xml ie
-```
-您应该会在命令行中看到一条注释，web 视图类型现在设置为 IE。
+    ```command&nbsp;line
+    npx office-addin-dev-settings webview manifest.xml ie
+    ```
 
-> !尖不必使用此工具，但应帮助调试与 Internet Explorer 11 运行时相关的大多数问题。 为实现全面的可靠性，应使用安装了 Windows 7 和 Office 2013 副本的计算机进行测试。
+> [!TIP]
+> 虽然不需要使用此命令，但它应有助于调试与 11 运行时Internet Explorer大多数问题。 为提供完整的稳定性，应测试使用具有 Windows 7、8.1 和 10 的各种版本以及不同版本的 Office 的计算机。 有关详细信息，请参阅Office[外接程序](../concepts/browsers-used-by-office-web-add-ins.md)使用的浏览器和如何还原到早期版本[Office。](https://support.microsoft.com/topic/how-to-revert-to-an-earlier-version-of-office-2bd5c457-a917-d57e-35a1-f709e3dda841)
 
-## <a name="command-settings"></a>命令设置
+### <a name="command-options"></a>命令选项
 
-如果您有一个不同的清单路径，请在命令中指定此路径，如下所示：
+该命令 `office-addin-dev-settings webview` 还可以将多个运行时用作参数：
 
-`npx office-addin-dev-settings webview [path to your manifest] ie`
-
-该 `office-addin-dev-settings webview` 命令还可以采用若干个运行时作为参数：
-
-- 限于
-- 距
--  默认值
+- ie
+- edge
+- default
 
 ## <a name="see-also"></a>另请参阅
+
 * [测试和调试 Office 加载项](test-debug-office-add-ins.md)
 * [旁加载 Office 外接程序进行测试](create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)
 * [使用 Windows 10 上的开发人员工具调试加载项](debug-add-ins-using-f12-developer-tools-on-windows-10.md)
