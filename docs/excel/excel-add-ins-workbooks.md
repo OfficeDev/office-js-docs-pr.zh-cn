@@ -1,19 +1,19 @@
 ---
 title: 使用 Excel JavaScript API 处理工作簿
-description: 了解如何使用 Excel JavaScript API 对工作簿或应用程序级别功能执行常见任务。
-ms.date: 04/05/2021
+description: 了解如何使用 JavaScript API 对工作簿或应用程序级别功能执行Excel任务。
+ms.date: 06/01/2021
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: 2fe11aaba45dae1f0cd1375e28226ecd959950fe
-ms.sourcegitcommit: 54fef33bfc7d18a35b3159310bbd8b1c8312f845
+ms.openlocfilehash: 638384a1e08af182db042638c655d8d74354c637
+ms.sourcegitcommit: ba4fb7087b9841d38bb46a99a63e88df49514a4d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2021
-ms.locfileid: "51650826"
+ms.lasthandoff: 06/05/2021
+ms.locfileid: "52779346"
 ---
 # <a name="work-with-workbooks-using-the-excel-javascript-api"></a>使用 Excel JavaScript API 处理工作簿
 
-本文提供了代码示例，介绍如何使用 Excel JavaScript API 对工作簿执行常见任务。 有关对象支持的属性和方法的完整列表，请参阅 `Workbook` Workbook Object [ (JavaScript API for Excel) ](/javascript/api/excel/excel.workbook)。 此外，本文还介绍了通过 [Application](/javascript/api/excel/excel.application) 对象执行的工作簿级别的操作。
+本文提供了代码示例，介绍如何使用 Excel JavaScript API 对工作簿执行常见任务。 有关对象支持的属性和方法的完整列表，请参阅 `Workbook` Workbook Object [ (JavaScript API for Excel) 。 ](/javascript/api/excel/excel.workbook) 此外，本文还介绍了通过 [Application](/javascript/api/excel/excel.application) 对象执行的工作簿级别的操作。
 
 Workbook 对象是加载项与 Excel 交互的入口点。 它用于维护工作表、表、数据透视表等的集合，通过这些集合可以访问并更改 Excel 数据。 加载项可以通过 [WorksheetCollection](/javascript/api/excel/excel.worksheetcollection) 对象访问单个工作表内的所有工作簿数据。 具体来说，加载项可以借助它添加工作表、在工作表间导航并向工作表分配处理程序。 [使用 Excel JavaScript API 处理工作表](excel-add-ins-worksheets.md)一文介绍了如何访问并编辑工作表。
 
@@ -55,21 +55,22 @@ Excel.createWorkbook();
 可以使用文件切片 将加载项的当前工作簿作为 base64 编码的 [字符串获取](/javascript/api/office/office.document#getfileasync-filetype--options--callback-)。 可以使用 [FileReader](https://developer.mozilla.org/docs/Web/API/FileReader) 类将文件转换为所需的 base64 编码字符串，如以下示例所示。
 
 ```js
+// Retrieve the external workbook file and set up a `FileReader` object. 
 var myFile = document.getElementById("file");
 var reader = new FileReader();
 
 reader.onload = (function (event) {
     Excel.run(function (context) {
-        // strip off the metadata before the base64-encoded string
+        // Remove the metadata before the base64-encoded string.
         var startIndex = reader.result.toString().indexOf("base64,");
-        var workbookContents = reader.result.toString().substr(startIndex + 7);
+        var externalWorkbook = reader.result.toString().substr(startIndex + 7);
 
-        Excel.createWorkbook(workbookContents);
+        Excel.createWorkbook(externalWorkbook);
         return context.sync();
     }).catch(errorHandlerFunction);
 });
 
-// read in the file as a data URL so we can parse the base64-encoded string
+// Read the file as a data URL so we can parse the base64-encoded string.
 reader.readAsDataURL(myFile.files[0]);
 ```
 
@@ -85,37 +86,39 @@ reader.readAsDataURL(myFile.files[0]);
 insertWorksheetsFromBase64(base64File: string, options?: Excel.InsertWorksheetOptions): OfficeExtension.ClientResult<string[]>;
 ```
 
-下面的示例在当前工作簿中插入另一个工作簿。 新工作表插入到活动工作表之后。 请注意， `[]` 作为 [InsertWorksheetOptions](/javascript/api/excel/excel.insertworksheetoptions)属性的参数 `sheetNamesToInsert` 传递。 这意味着现有工作簿的所有工作表都插入到当前工作簿中。
-
 > [!IMPORTANT]
-> Windows、Mac 和 Web 上的 Excel 支持 `insertWorksheetsFromBase64` 该方法。 iOS 不支持它。 此外，在 Excel 网页 Excel 中，此方法不支持包含数据透视表、图表、注释或 Slicer 元素的源工作表。 如果存在这些对象， `insertWorksheetsFromBase64` 则该方法在 Excel `UnsupportedFeature` 网页中返回错误。 
+> 此方法 `insertWorksheetsFromBase64` 在 Excel、Windows 和 Web 上受支持。 iOS 不支持它。 此外，Excel web 版此方法不支持包含数据透视表、图表、注释或 Slicer 元素的源工作表。 如果存在这些对象， `insertWorksheetsFromBase64` 该方法将返回 `UnsupportedFeature` Excel web 版。 
+
+下面的代码示例演示如何将另一个工作簿中的工作表插入当前工作簿。 此代码示例首先处理包含对象的工作簿文件并提取 base64 编码的字符串，然后将此 base64 编码的字符串插入 [`FileReader`](https://developer.mozilla.org/docs/Web/API/FileReader) 当前工作簿中。 新工作表插入到工作表 **Sheet1** 之后。 请注意， `[]` 作为 [InsertWorksheetOptions.sheetNamesToInsert](/javascript/api/excel/excel.insertworksheetoptions#sheetNamesToInsert) 属性的参数传递。 这意味着目标工作簿的所有工作表都插入到当前工作簿中。
 
 ```js
+// Retrieve the external workbook file and set up a `FileReader` object. 
 var myFile = document.getElementById("file");
 var reader = new FileReader();
 
 reader.onload = (event) => {
     Excel.run((context) => {
         // Remove the metadata before the base64-encoded string.
-        const startIndex = reader.result.toString().indexOf("base64,");
-        const workbookContents = reader.result.toString().substr(startIndex + 7);
+        var startIndex = reader.result.toString().indexOf("base64,");
+        var externalWorkbook = reader.result.toString().substr(startIndex + 7);
             
-        // Retrieve the workbook.
-        const workbook = context.workbook;
+        // Retrieve the current workbook.
+        var workbook = context.workbook;
             
         // Set up the insert options. 
         var options = { 
             sheetNamesToInsert: [], // Insert all the worksheets from the source workbook.
             positionType: Excel.WorksheetPositionType.after, // Insert after the `relativeTo` sheet.
-            relativeTo: "Sheet1" }; // The sheet relative to which the other worksheets will be inserted. Used with `positionType`.
+            relativeTo: "Sheet1" // The sheet relative to which the other worksheets will be inserted. Used with `positionType`.
+        }; 
             
-         // Insert the workbook. 
-         workbook.insertWorksheetsFromBase64(workbookContents, options);
+         // Insert the new worksheets into the current workbook.
+         workbook.insertWorksheetsFromBase64(externalWorkbook, options);
          return context.sync();
     });
 };
 
-// Read in the file as a data URL so we can parse the base64-encoded string.
+// Read the file as a data URL so we can parse the base64-encoded string.
 reader.readAsDataURL(myFile.files[0]);
 ```
 
@@ -235,7 +238,7 @@ Excel.run(function (context) {
 
 `Application.cultureInfo` 将系统区域性设置定义为 [CultureInfo](/javascript/api/excel/excel.cultureinfo) 对象。 这包括数字小数分隔符或日期格式等设置。
 
-某些区域性设置可以通过 [Excel UI 进行更改](https://support.office.com/article/Change-the-character-used-to-separate-thousands-or-decimals-c093b545-71cb-4903-b205-aebb9837bd1e)。 系统设置保留在 对象 `CultureInfo` 中。 任何本地更改都保留为 [应用程序](/javascript/api/excel/excel.application)级属性，例如 `Application.decimalSeparator` 。
+某些区域性设置可以通过自定义[UI Excel更改](https://support.office.com/article/Change-the-character-used-to-separate-thousands-or-decimals-c093b545-71cb-4903-b205-aebb9837bd1e)。 系统设置保留在 对象 `CultureInfo` 中。 任何本地更改都保留为 [应用程序](/javascript/api/excel/excel.application)级属性，例如 `Application.decimalSeparator` 。
 
 以下示例将数字字符串的十进制分隔符字符从""更改为系统设置所使用的字符。
 

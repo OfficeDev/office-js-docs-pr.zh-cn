@@ -4,12 +4,12 @@ description: 在本教程中，你将学习如何构建一个 Excel 外接程序
 ms.date: 05/12/2021
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: 4eee9910c394238d4ce90cc629366b030f791144
-ms.sourcegitcommit: 30f6c620380075e3459cac748ca0c656427b384d
+ms.openlocfilehash: f23cbf86288590722649ce28639d15b34f3e14f1
+ms.sourcegitcommit: 0d3bf72f8ddd1b287bf95f832b7ecb9d9fa62a24
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/12/2021
-ms.locfileid: "52330015"
+ms.lasthandoff: 06/02/2021
+ms.locfileid: "52727939"
 ---
 # <a name="tutorial-create-an-excel-task-pane-add-in"></a>教程：创建 Excel 任务窗格加载项
 
@@ -74,7 +74,7 @@ ms.locfileid: "52330015"
 
 7. 在 `Office.onReady` 方法调用中，找到行 `if (info.host === Office.HostType.Excel) {` 并紧接着行添加下列代码。 注意：
 
-    - 此代码的第一部分用于确定用户的 Excel 版本是否支持包含本系列教程将使用的所有 API 的 Excel.js 版本。 在生产加载项中，若要隐藏或禁用调用不受支持的 API 的 UI，请使用条件块的主体。 这样一来，用户仍可以使用 Excel 版本支持的加载项部分。
+    - 此代码的第一部分确定用户的 Excel 版本是否支持某一版本的 Excel.js，其中包含此系列教程所使用全部 API。在生产性加载项中，使用条件块的文本块隐藏或启用调用不受支持的 API 的UI。这将使用户仍然能够使用其版本 Excel 所支持加载项的某些部分。
 
     - 此代码的第二部分为 `create-table` 按钮添加了事件处理程序。
 
@@ -759,7 +759,7 @@ ms.locfileid: "52330015"
 
     ![突出显示并启用“切换工作表保护”按钮的 Excel 功能区屏幕截图。 大多数其他按钮显示为灰色并已禁用。](../images/excel-tutorial-ribbon-with-protection-on-2.png)
 
-6. 选择要更改其内容的单元格。 Excel 将显示一条错误消息，指示工作表受保护。
+6. 选择要更改其内容的单元格。Excel 将显示一条错误信息，说明工作表处于受保护状态。
 
 7. 再次选择“**切换工作表保护**”按钮，此时控件重新启用，可以再次更改单元格值。
 
@@ -826,13 +826,13 @@ ms.locfileid: "52330015"
     }());
     ```
 
-6. 将 `TODO1` 替换为下列代码。 将在下一步中创建 `sendStringToParentPage` 函数。
+6. 使用以下代码替换 `TODO1`。你将在下一步中创建 `sendStringToParentPage` 函数。
 
     ```js
     document.getElementById("ok-button").onclick = sendStringToParentPage;
     ```
 
-7. 将 `TODO2` 替换为以下代码。 `messageParent` 方法将它的参数传递到父页面（在此示例中，为任务窗格中的页面）。 参数可以是布尔值或字符串，其中包含可串行化为字符串的任何内容（如 XML 或 JSON）。
+7. 将 `TODO2` 替换为以下代码。 `messageParent` 方法将它的参数传递到父页面（在此示例中，为任务窗格中的页面）。 参数必须是字符串，其中包括任何可以序列化为字符串的内容（例如 XML 或 JSON），或者任何可以转换为字符串的类型。
 
     ```js
     function sendStringToParentPage() {
@@ -936,7 +936,7 @@ ms.locfileid: "52330015"
     document.getElementById("open-dialog").onclick = openDialog;
     ```
 
-6. 添加下列声明至文件结尾。 此变量用于保留父页面执行上下文中的对象，以用作对话框页面执行上下文的中间对象。
+6. 添加下列声明至文件结尾。此变量用于保留父页面执行文本中的对象，以用作对话框页面执行文本的中间对象。
 
     ```js
     var dialog = null;
@@ -1003,7 +1003,7 @@ ms.locfileid: "52330015"
 
 3. 选择任务窗格中的“打开对话框”按钮。
 
-4. 对话框打开后，拖动它并重设大小。 请注意，你可以与工作表进行交互并按任务窗格上的其他按钮，但无法从同一任务窗格页面启动第二个对话框。
+4. 对话框打开时，拖动它并调整其大小。请注意，可与工作表进行交互，然后按任务窗格中的其他按钮，但无法从同一任务窗格页面中启动第二个对话框。
 
 5. 在对话框中，输入名称并选择“**确定**”。 此时，用户名显示在任务窗格上，且对话框关闭。
 

@@ -3,12 +3,12 @@ title: 使用 Office 对话框 API 进行身份验证和授权
 description: 了解如何使用 Office 对话框 API 使用户能够登录到 Google、Facebook、Microsoft 365 以及受 Microsoft 标识平台保护的其他服务。
 ms.date: 09/24/2020
 localization_priority: Priority
-ms.openlocfilehash: 1d7bb4fc6828ffeb339fc6ff053d8ba99c73f582
-ms.sourcegitcommit: ccc0a86d099ab4f5ef3d482e4ae447c3f9b818a3
+ms.openlocfilehash: 4fa0c6aaf93792da03ac5957ed3ed904728d7529
+ms.sourcegitcommit: 0d3bf72f8ddd1b287bf95f832b7ecb9d9fa62a24
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "50237873"
+ms.lasthandoff: 06/02/2021
+ms.locfileid: "52727918"
 ---
 # <a name="authenticate-and-authorize-with-the-office-dialog-api"></a>使用 Office 对话框 API 进行身份验证和授权
 
@@ -50,14 +50,14 @@ ms.locfileid: "50237873"
 
 #### <a name="authorization-of-the-add-in-to-an-external-resource"></a>加载项中对外部资源的授权
 
-在现代网络中，用户和 Web 应用程序是安全主体。 应用程序拥有自己的身份以及对联机资源（如 Microsoft 365、Google Plus、Facebook 或 LinkedIn）的权限。 在部署前，需要先向资源提供程序注册应用程序。 注册内容包括：
+在现代网络中，用户和 Web 应用程序是安全主体。应用程序拥有自己的身份以及对联机资源（如 Microsoft 365、Google Plus、Facebook 或 LinkedIn）拥有相应权限。在部署前，需要先向资源提供程序注册应用程序。注册内容包括：
 
 - 应用程序访所需的权限的列表。
 - 当应用访问服务时，资源服务应向其返回访问令牌的 URL。  
 
 如果用户在应用中调用访问资源服务中用户数据的函数，系统会先提示用户登录相应服务，再提示用户向应用授予访问用户资源所需的权限。然后，服务将登录窗口重定向到先前注册的 URL，并传递访问令牌。应用使用访问令牌访问用户资源。
 
-可以使用 Office 对话框 API 来管理此过程，具体方法是使用与用户登录流程类似的流程。 唯一区别在于：
+可以使用 Office 对话框 API 来管理此过程，具体方法是使用与用户登录流程类似的流程。唯一的区别是：
 
 - 如果用户先前未向应用程序授予所需的权限，则登录后会在对话框中看到这样做的提示。
 - 对话框窗口使用 `messageParent` 发送字符串化访问令牌，或将访问令牌存储在主机窗口可以检索到的位置（并使用 `messageParent` 告知主机窗口令牌可用），从而将访问令牌发送到主机窗口。 令牌具有时间限制，但在持续期间，主机窗口可以使用它直接访问用户资源，而无需进一步提示。
@@ -83,7 +83,7 @@ Office 对话框和任务窗格在不同的浏览器、JavaScript 运行时实�
 
 通常情况下，与身份验证相关的库有一种方法，该方法既能够以交互方式获取令牌，也会创建方法返回的“身份验证上下文”对象。 令牌是对象的一个属性（可能是私有属性，并且无法直接从代码中访问）。 该对象具有从资源中获取数据的方法。 这些方法将令牌包括在其对资源提供程序（例如 Google、Microsoft Graph、Facebook 等）进行的 HTTP 请求中。
 
-这些身份验证上下文对象和创建它们的方法在 Office 加载项中不可用。由于登录发生在 Office 对话框的浏览器实例中，因此必须在该处创建对象。 但对资源的数据调用位于任务窗格浏览器实例中，因此无法将对象从一个实例获取到另一个实例。 例如，你无法通过 `messageParent` 传递对象，因为 `messageParent` 只能传递字符串或布尔值。 无法可靠地将包含方法的 JavaScript 对象字符串化。
+这些身份验证上下文对象和创建它们的方法在 Office 加载项中不可用。由于登录发生在 Office 对话框的浏览器实例中，因此必须在该处创建对象。 但对资源的数据调用位于任务窗格浏览器实例中，因此无法将对象从一个实例获取到另一个实例。 例如，你无法通过 `messageParent` 传递对象，因为 `messageParent` 只能传递字符串值。 无法可靠地将包含方法的 JavaScript 对象字符串化。
 
 ### <a name="how-you-can-use-libraries-with-the-office-dialog-api"></a>如何将库与 Office 对话框 API 结合使用
 
