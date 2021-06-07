@@ -701,8 +701,8 @@ items:
               - name: 处理动态数组和洒水
                 href: excel/excel-add-ins-ranges-dynamic-arrays.md
                 displayName: Excel
-              - name: 获取公式引用单元格
-                href: excel/excel-add-ins-ranges-precedents.md
+              - name: 公式引用单元格和从属单元格
+                href: excel/excel-add-ins-ranges-precedents-dependents.md
                 displayName: Excel
               - name: 编辑单元格时延迟执行
                 href: excel/excel-add-ins-delay-in-cell-edit.md
