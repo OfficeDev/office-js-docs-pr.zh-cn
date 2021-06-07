@@ -1,14 +1,14 @@
 ---
 title: 使用 Excel JavaScript API 处理工作表
-description: 显示如何使用 Excel JavaScript API 对工作表执行常见任务的代码示例。
-ms.date: 03/24/2020
+description: 显示如何使用 JavaScript API 对工作表执行常见Excel示例。
+ms.date: 06/03/2021
 localization_priority: Normal
-ms.openlocfilehash: 7ff1593ca66926de7ae3397defba7efbe97b1695
-ms.sourcegitcommit: 54fef33bfc7d18a35b3159310bbd8b1c8312f845
+ms.openlocfilehash: eeec79f1474857ec72f00a269cb1cb81e55b2ca9
+ms.sourcegitcommit: 17b5a076375bc5dc3f91d3602daeb7535d67745d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2021
-ms.locfileid: "51652200"
+ms.lasthandoff: 06/06/2021
+ms.locfileid: "52783510"
 ---
 # <a name="work-with-worksheets-using-the-excel-javascript-api"></a>使用 Excel JavaScript API 处理工作表
 
@@ -318,6 +318,53 @@ function onWorksheetChanged(eventArgs) {
 }
 ```
 
+## <a name="detect-formula-changes-preview"></a>检测预览 (公式) 
+
+> [!NOTE]
+> 事件 `Worksheet.onFormulaChanged` 当前仅适用于公共预览版。 [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
+> 
+
+加载项可以跟踪对工作表中的公式所做的更改。 当工作表连接到外部数据库时，这很有用。 当工作表中的公式发生更改时，此方案中的事件将触发外部数据库中的相应更新。
+
+若要检测对公式的更改， [请](excel-add-ins-events.md#register-an-event-handler) 为工作表的 [onFormulaChanged](/javascript/api/excel/excel.worksheet#onFormulaChanged) 事件注册事件处理程序。 事件的事件处理程序 `onFormulaChanged` 在事件触发时接收 [WorksheetFormulaChangedEventArgs](/javascript/api/excel/excel.worksheetformulachangedeventargs) 对象。
+
+> [!IMPORTANT]
+> `onFormulaChanged`该事件检测公式本身何时更改，而不是由公式计算产生的数据值。
+
+下面的代码示例演示如何注册事件处理程序，使用 对象检索已更改公式的 `onFormulaChanged` `WorksheetFormulaChangedEventArgs` [formulaDetails](/javascript/api/excel/excel.worksheetformulachangedeventargs#formulaDetails) 数组，然后使用 [FormulaChangedEventDetail](/javascript/api/excel/excel.formulachangedeventdetail) 属性打印有关已更改公式的详细信息。
+
+> [!NOTE]
+> 此代码示例仅在更改单个公式时有效。
+
+```js
+Excel.run(function (context) {
+    // Retrieve the worksheet named "Sample".
+    var sheet = context.workbook.worksheets.getItem("Sample");
+
+    // Register the formula changed event handler for this worksheet.
+    sheet.onFormulaChanged.add(formulaChangeHandler);
+
+    return context.sync();
+});
+
+function formulaChangeHandler(event) {
+    Excel.run(function (context) {
+        // Retrieve details about the formula change event.
+        // Note: This method assumes only a single formula is changed at a time. 
+        var cellAddress = event.formulaDetails[0].cellAddress;
+        var previousFormula = event.formulaDetails[0].previousFormula;
+        var source = event.source;
+    
+        // Print out the change event details.
+        console.log(
+          `The formula in cell ${cellAddress} changed. 
+          The previous formula was: ${previousFormula}. 
+          The source of the change was: ${source}.`
+        );         
+    });
+}
+```
+
 ## <a name="handle-sorting-events"></a>处理排序事件
 
 `onColumnSorted` 和 `onRowSorted` 事件表示工作表数据已排序。 这些事件连接到各 `Worksheet` 对象和工作簿的 `WorkbookCollection` 无论是通过编程排序还是通过 Excel 用户界面手动执行排序，它们都会触发。
@@ -386,7 +433,7 @@ Excel.run(function (context) {
 
 > [!NOTE]
 > 本节介绍如何使用 `Worksheet` 对象函数查找单元格与区域。 更多区域检索信息可在特定对象文章中找到。
-> - 有关显示如何使用 对象获取工作表内区域的示例，请参阅使用 `Range` [Excel JavaScript API](excel-add-ins-ranges-get.md)获取区域。
+> - 有关显示如何使用 对象获取工作表中的区域的示例，请参阅使用 `Range` [JavaScript API](excel-add-ins-ranges-get.md)获取Excel区域。
 > - 有关展示如何从 `Table` 对象获取区域的示例，请参阅 [使用 Excel JavaScript API 处理表](excel-add-ins-tables.md)。
 > - 有关显示如何基于单元格特性进行多个子区域的较大区域搜索示例，请参阅 [使用 Excel 加载项同时处理多个区域](excel-add-ins-multiple-ranges.md)。
 

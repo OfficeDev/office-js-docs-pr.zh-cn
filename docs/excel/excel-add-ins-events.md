@@ -1,14 +1,14 @@
 ---
 title: 使用 Excel JavaScript API 处理事件
-description: Excel JavaScript 对象的事件列表。 这包括有关使用事件处理程序和相关模式的信息。
-ms.date: 04/23/2021
+description: JavaScript 对象Excel列表。 这包括有关使用事件处理程序和相关模式的信息。
+ms.date: 06/02/2021
 localization_priority: Normal
-ms.openlocfilehash: 7c4a00736ef7a39e6d34153b113f1f274a2d3708
-ms.sourcegitcommit: 78fb861afe7d7c3ee7fe3186150b3fed20994222
+ms.openlocfilehash: 50d9c4c2a15a955f0a96c70464fa0165625ea6f8
+ms.sourcegitcommit: 17b5a076375bc5dc3f91d3602daeb7535d67745d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/26/2021
-ms.locfileid: "52024309"
+ms.lasthandoff: 06/06/2021
+ms.locfileid: "52783503"
 ---
 # <a name="work-with-events-using-the-excel-javascript-api"></a>使用 Excel JavaScript API 处理事件
 
@@ -44,6 +44,7 @@ ms.locfileid: "52024309"
 | 事件 | 说明 | 支持的对象 |
 |:---------------|:-------------|:-----------|
 | `onFiltered` | 当将筛选器应用于对象时发生。 | [**Table**](/javascript/api/excel/excel.table#onfiltered)、[**TableCollection**](/javascript/api/excel/excel.tablecollection#onfiltered)、[**Worksheet**](/javascript/api/excel/excel.worksheet#onfiltered)、[**WorksheetCollection**](/javascript/api/excel/excel.worksheetcollection#onfiltered) |
+| `onFormulaChanged` | 更改公式时发生。 | [**Worksheet**](/javascript/api/excel/excel.worksheet#onFormulaChanged)、[**WorksheetCollection**](/javascript/api/excel/excel.worksheetcollection#onFormulaChanged) |
 
 ### <a name="event-triggers"></a>事件触发器
 
