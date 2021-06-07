@@ -33,6 +33,7 @@
     "overwrite": [],
     "externalReference": [],
     "globalMetadata": {
+      "ocv-translation-feedback": true,
       "uhfHeaderId": "MSDocsHeader-Dev_Office",
       "searchScope": ["Office Add-ins"],
       "breadcrumb_path": "/office/dev/add-ins/breadcrumb/toc.json",
