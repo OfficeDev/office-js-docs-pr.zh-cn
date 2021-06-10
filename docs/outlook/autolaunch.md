@@ -2,14 +2,14 @@
 title: 配置Outlook加载项进行基于事件的激活
 description: 了解如何配置Outlook加载项进行基于事件的激活。
 ms.topic: article
-ms.date: 05/26/2021
+ms.date: 06/08/2021
 localization_priority: Normal
-ms.openlocfilehash: debf6db16adc8e0bc923142da1e85629b8a1daa8
-ms.sourcegitcommit: a42ae8b804f944061c87bbd9d9f67990e4cf5e36
+ms.openlocfilehash: d9bfee1825bcdf175cc263888700b539024ee717
+ms.sourcegitcommit: 5a151d4df81e5640363774406d0f329d6a0d3db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2021
-ms.locfileid: "52697195"
+ms.lasthandoff: 06/09/2021
+ms.locfileid: "52853953"
 ---
 # <a name="configure-your-outlook-add-in-for-event-based-activation"></a>配置Outlook加载项进行基于事件的激活
 
@@ -24,28 +24,26 @@ ms.locfileid: "52697195"
 
 目前，Web 和 Web 上支持以下Windows。
 
-|事件|说明|
-|---|---|
-|`OnNewMessageCompose`|撰写新邮件时 (包括答复、全部答复和转发) ，但不包括编辑时，例如草稿。|
-|`OnNewAppointmentOrganizer`|创建新约会但不编辑现有约会时。|
-|`OnMessageAttachmentsChanged`\*|在撰写邮件时添加或删除附件。|
-|`OnAppointmentAttachmentsChanged`\*|在撰写约会时添加或删除附件。|
-|`OnMessageRecipientsChanged`\*|在撰写邮件时添加或删除收件人。|
-|`OnAppointmentAttendeesChanged`\*|在撰写约会时添加或删除与会者。|
-|`OnAppointmentTimeChanged`\*|在撰写约会时更改日期/时间。|
-|`OnAppointmentRecurrenceChanged`\*|在撰写约会时添加、更改或删除定期详细信息。 如果日期/时间发生更改， `OnAppointmentTimeChanged` 也会触发该事件。|
-|`OnInfoBarDismissClicked`\*|在撰写邮件或约会项目时关闭通知。 仅通知添加了通知的外接程序。|
+|事件|说明|最小值<br>要求集|
+|---|---|---|
+|`OnNewMessageCompose`|撰写新邮件时 (包括答复、全部答复和转发) ，但不包括编辑时，例如草稿。|1.10|
+|`OnNewAppointmentOrganizer`|创建新约会但不编辑现有约会时。|1.10|
+|`OnMessageAttachmentsChanged`|在撰写邮件时添加或删除附件。|预览|
+|`OnAppointmentAttachmentsChanged`|在撰写约会时添加或删除附件。|预览|
+|`OnMessageRecipientsChanged`|在撰写邮件时添加或删除收件人。|预览|
+|`OnAppointmentAttendeesChanged`|在撰写约会时添加或删除与会者。|预览|
+|`OnAppointmentTimeChanged`|在撰写约会时更改日期/时间。|预览|
+|`OnAppointmentRecurrenceChanged`|在撰写约会时添加、更改或删除定期详细信息。 如果日期/时间发生更改， `OnAppointmentTimeChanged` 也会触发该事件。|预览|
+|`OnInfoBarDismissClicked`|在撰写邮件或约会项目时关闭通知。 仅通知添加了通知的外接程序。|预览|
 
 > [!IMPORTANT]
-> \*此事件仅在使用 Outlook[](../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md)订阅的 Outlook 和 Windows 中Microsoft 365受支持。 有关详细信息，请参阅 [本文中的](#how-to-preview) 如何预览。
->
-> 由于预览功能可能会随时更改，恕不另行通知，因此不应在生产外接程序中使用。
+> 仍在预览中的事件仅在 web 和 Microsoft 365 Outlook 中的 Windows 订阅中Windows。 有关详细信息，请参阅 [本文中的](#how-to-preview) 如何预览。 预览事件不应在生产外接程序中使用。
 
-## <a name="how-to-preview"></a>如何预览
+### <a name="how-to-preview"></a>如何预览
 
-我们邀请你试用新事件！ 请告诉我们你的方案，以及我们如何通过反馈提供反馈GitHub (请参阅此页面末尾的反馈部分) 。 
+我们邀请你立即预览一下事件！ 请告诉我们你的方案，以及我们如何通过反馈提供反馈GitHub (请参阅此页面末尾的反馈部分) 。 
 
-预览此功能：
+预览这些事件：
 
 - For Outlook on the web：
   - [在租户 上配置Microsoft 365版本](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide&preserve-view=true#set-up-the-release-option-in-the-admin-center)。

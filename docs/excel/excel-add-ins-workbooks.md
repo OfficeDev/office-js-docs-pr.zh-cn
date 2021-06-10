@@ -1,15 +1,15 @@
 ---
 title: 使用 Excel JavaScript API 处理工作簿
 description: 了解如何使用 JavaScript API 对工作簿或应用程序级别功能执行Excel任务。
-ms.date: 06/01/2021
+ms.date: 06/07/2021
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: 638384a1e08af182db042638c655d8d74354c637
-ms.sourcegitcommit: ba4fb7087b9841d38bb46a99a63e88df49514a4d
+ms.openlocfilehash: 48ceb882a7beea3fa3ca08216f3ee1dd82ba4fa9
+ms.sourcegitcommit: 5a151d4df81e5640363774406d0f329d6a0d3db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/05/2021
-ms.locfileid: "52779346"
+ms.lasthandoff: 06/09/2021
+ms.locfileid: "52853981"
 ---
 # <a name="work-with-workbooks-using-the-excel-javascript-api"></a>使用 Excel JavaScript API 处理工作簿
 
@@ -341,6 +341,46 @@ Excel.run(async (context) => {
 
 ```js
 context.application.suspendApiCalculationUntilNextSync();
+```
+
+## <a name="detect-workbook-activation-preview"></a>检测工作簿激活 (预览) 
+
+> [!NOTE]
+> 事件 `Workbook.onActivated` 当前仅适用于公共预览版。 [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
+> 
+
+加载项可以检测工作簿激活时间。 当用户 *将焦点切换到* 另一个工作簿、另一个应用程序或将 (切换到 web 浏览器Excel web 版) 另一个选项卡时，工作簿将变为非活动状态。 当用户将 *焦点返回到* 工作簿时，将激活工作簿。 工作簿激活可以触发加载项中的回调函数，如刷新工作簿数据。
+
+若要检测工作簿何时激活，请为[工作簿的 onActivated](/javascript/api/excel/excel.workbook#onActivated)事件注册事件处理程序。 [](excel-add-ins-events.md#register-an-event-handler) 事件的事件处理程序 `onActivated` 在事件触发时接收 [WorkbookActivatedEventArgs](/javascript/api/excel/excel.workbookactivatedeventargs) 对象。
+
+> [!IMPORTANT]
+> `onActivated`该事件不会检测工作簿何时打开。 此事件仅检测用户何时将焦点切换回已打开的工作簿。
+
+下面的代码示例演示如何注册 `onActivated` 事件处理程序和设置回调函数。
+
+```js
+Excel.run(function (context) {
+    // Retrieve the workbook.
+    var workbook = context.workbook;
+
+    // Register the workbook activated event handler.
+    workbook.onActivated.add(workbookActivated);
+
+    return context.sync();
+});
+
+function workbookActivated(event) {
+    Excel.run(function (context) {
+        // Retrieve the workbook and load the name.
+        var workbook = context.workbook;
+        workbook.load("name");
+        
+        return context.sync().then(function () {
+            // Callback function for when the workbook is activated.
+            console.log(`The workbook ${workbook.name} was activated.`);
+        });
+    });
+}
 ```
 
 ## <a name="save-the-workbook"></a>保存工作簿

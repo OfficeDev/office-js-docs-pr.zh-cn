@@ -1,14 +1,14 @@
 ---
 title: Outlook外接程序 API 预览要求集
 description: 当前处于预览阶段的功能和 API Outlook外接程序。
-ms.date: 05/17/2021
+ms.date: 06/08/2021
 localization_priority: Normal
-ms.openlocfilehash: 98bf56c169967ad7c994d1793afa8678d31f6892
-ms.sourcegitcommit: 0d9fcdc2aeb160ff475fbe817425279267c7ff31
+ms.openlocfilehash: c7ca92e6a30f3109baff5721ae4e9930ef23dc56
+ms.sourcegitcommit: 5a151d4df81e5640363774406d0f329d6a0d3db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/21/2021
-ms.locfileid: "52591056"
+ms.lasthandoff: 06/09/2021
+ms.locfileid: "52854009"
 ---
 # <a name="outlook-add-in-api-preview-requirement-set"></a>Outlook外接程序 API 预览要求集
 
@@ -73,6 +73,18 @@ Outlook JavaScript API 的 Office 外接程序 API 子集包括可在 Outlook �
 新增了表示约会 `AppointmentSensitivityType` 可用的敏感度选项的枚举。
 
 **在**：Outlook Windows (订阅Microsoft 365上) 
+
+<br>
+
+---
+
+---
+
+### <a name="event-based-activation"></a>基于事件的激活
+
+此功能在要求集 [1.10 中发布](../requirement-set-1.10/outlook-requirement-set-1.10.md)。 不过，其他事件现在预览版中可用。 若要了解更多信息，请参阅 [支持的事件](../../../outlook/autolaunch.md#supported-events)。
+
+**适用于**：Outlook Windows (连接到 Microsoft 365 订阅) ，Outlook web (新式) 
 
 <br>
 
