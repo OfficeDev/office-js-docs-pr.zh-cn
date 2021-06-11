@@ -1,15 +1,15 @@
 ---
 title: 生成首个 Project 任务窗格加载项
 description: 了解如何使用 Office JS API 生成简单的 Project 任务窗格加载项。
-ms.date: 10/14/2020
+ms.date: 06/07/2021
 ms.prod: project
 localization_priority: Priority
-ms.openlocfilehash: a7f9b00a9f2782e014f1060d59505d7e876a969e
-ms.sourcegitcommit: ceb8dd66f3fb9c963fce8446c2f6c65ead56fbc1
+ms.openlocfilehash: eed545d6ebf2b705d8d8963a76a0ac3bca2e13f4
+ms.sourcegitcommit: 5a151d4df81e5640363774406d0f329d6a0d3db8
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "49132254"
+ms.lasthandoff: 06/09/2021
+ms.locfileid: "52853988"
 ---
 # <a name="build-your-first-project-task-pane-add-in"></a>生成首个 Project 任务窗格加载项
 
@@ -104,7 +104,7 @@ Office.context.document.getSelectedTaskAsync(
     在项目的根目录中运行以下命令。 运行此命令时，本地 Web 服务器将启动。
 
     ```command&nbsp;line
-    npm run dev server
+    npm run dev-server
     ```
 
 3. 在 Project 中，创建一个简单的项目计划。
@@ -119,7 +119,7 @@ Office.context.document.getSelectedTaskAsync(
 
 ## <a name="next-steps"></a>后续步骤
 
-恭喜！已成功创建 Project 任务窗格加载项！ 接下来，请详细了解 Project 加载项功能，并探索常见方案。
+恭喜！已成功创建 Project 加载项！接下来，请详细了解 Project 加载项功能，并探索常见方案。
 
 > [!div class="nextstepaction"]
 > [Project 加载项](../project/project-add-ins.md)
