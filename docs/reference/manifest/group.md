@@ -1,18 +1,18 @@
 ---
 title: 清单文件中 Group 元素
 description: 在选项卡中定义一组 UI 控件。
-ms.date: 01/29/2021
+ms.date: 06/08/2021
 localization_priority: Normal
-ms.openlocfilehash: 1bb3a4d65e954a54acb6e93f7c4d52e6b0845315
-ms.sourcegitcommit: 4805454f7fc6c64368a35d014e24075faf3e7557
+ms.openlocfilehash: 89ed16f7996ab06bd21e1ebaa71c959b11af2029
+ms.sourcegitcommit: ab3d38f2829e83f624bf43c49c0d267166552eec
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "50173960"
+ms.lasthandoff: 06/11/2021
+ms.locfileid: "52893510"
 ---
 # <a name="group-element"></a>Group 元素
 
-在选项卡中定义一组 UI 控件。在自定义选项卡上，加载项可以创建多个组。 外接程序限定到一个自定义选项卡。
+在选项卡中定义一组 UI 控件。在自定义选项卡上，外接程序可以创建多个组。 外接程序限定到一个自定义选项卡。
 
 ## <a name="attributes"></a>属性
 
@@ -29,22 +29,25 @@ ms.locfileid: "50173960"
 |  元素 |  必需  |  说明  |
 |:-----|:-----|:-----|
 |  [Label](#label)      | 是 |  CustomTab 或组的标签。  |
-|  [Icon](icon.md)      | 是 |  组的图像。  |
-|  [Control](#control)    | 否 |  代表一个 Control 对象。 可以是零个或多个。  |
-|  [OfficeControl](#officecontrol)  | 否 | 表示一个内置的 Office 控件。 可以是零个或多个。 |
-|  [OverriddenByRibbonApi](overriddenbyribbonapi.md)      | 否 |  指定组是否应该显示在支持自定义上下文选项卡的应用程序和平台组合上。  |
+|  [Icon](icon.md)      | 是 |  组的图像。 在加载项Outlook不支持。 |
+|  [Control](#control)    | 否 |  代表 Control 对象。 可以是零个或多个。  |
+|  [OfficeControl](#officecontrol)  | 否 | 代表内置控件之Office控件。 可以是零个或多个。 在加载项Outlook不支持。|
+|  [OverriddenByRibbonApi](overriddenbyribbonapi.md)      | 否 |  指定组是否应该显示在支持自定义上下文选项卡的应用程序和平台组合上。 在加载项Outlook不支持。 |
 
 ### <a name="label"></a>标签
 
-必需。 组的标签。 **resid** 属性的长度不能超过 32 个字符，必须设置为 Resources 元素 **中 ShortStrings** 元素 **中 String** 元素的 **id** [属性值。](resources.md)
+必需。 组的标签。 **resid** 属性的长度不能超过 32 个字符，并且必须设置为 **ShortStrings** 元素（位于 [Resources](resources.md)元素）中 **String** 元素的 **id** 属性的值。
 
 ### <a name="icon"></a>Icon
 
-必需。 如果选项卡包含大量组，并且程序窗口调整了大小，则可能会改为显示指定的图像。
+必需。 如果选项卡包含大量组，并且程序窗口已调整大小，则可能会改为显示指定的图像。
 
-### <a name="control"></a>控制
+> [!NOTE]
+> 此子元素在加载项中Outlook支持。
 
-可选，但如果不存在，则必须至少有一 **个 OfficeControl**。 有关支持的控件类型的详细信息，请参阅 [Control](control.md) 元素。 清单中的 **Control** 和 **OfficeControl** 顺序是可互换的，如果有多个元素，它们可以相互交集，但所有元素都必须位于 **Icon** 元素下方。
+### <a name="control"></a>控件
+
+可选，但如果不存在，则必须至少有一 **个 OfficeControl**。 有关受支持的控件类型的详细信息，请参阅 [Control](control.md) 元素。 清单中的 **Control** 和 **OfficeControl** 顺序是可互换的，如果有多个元素，则它们可以相互组成，但所有元素都必须位于 **Icon** 元素下面。
 
 ```xml
 <Group id="contosoCustomTab.grp1">
@@ -63,7 +66,10 @@ ms.locfileid: "50173960"
 
 ### <a name="officecontrol"></a>OfficeControl
 
-可选，但如果不存在，则必须至少有一个 **控件**。 在包含元素的组中包括一个或多个内置 Office `<OfficeControl>` 控件。 `id`该属性指定内置 Office 控件的 ID。 若要查找控件的 ID，请参阅"[查找控件和控件组的 ID"。](../../design/built-in-button-integration.md#find-the-ids-of-controls-and-control-groups) 清单中的 **Control** 和 **OfficeControl** 顺序是可互换的，如果有多个元素，它们可以相互交集，但所有元素都必须位于 **Icon** 元素下方。
+可选，但如果不存在，则必须至少有一个 **Control**。 在包含元素的组中Office一个或多个内置控件 `<OfficeControl>` 。 `id`属性指定内置控件Office ID。 若要查找控件的 ID，请参阅查找控件[和控件组的 ID。](../../design/built-in-button-integration.md#find-the-ids-of-controls-and-control-groups) 清单中的 **Control** 和 **OfficeControl** 顺序是可互换的，如果有多个元素，则它们可以相互组成，但所有元素都必须位于 **Icon** 元素下面。
+
+> [!NOTE]
+> 此子元素在加载项中Outlook支持。
 
 ```xml
 <Group id="contosoCustomTab.grp1">
@@ -83,7 +89,10 @@ ms.locfileid: "50173960"
 
 ### <a name="overriddenbyribbonapi"></a>OverriddenByRibbonApi
 
-可选 (布尔) 。 指定是否在支持API 的应用程序和平台组合上隐藏组，该 API 在运行时在功能区上安装自定义上下文选项卡。 默认值（如果不存在）为 `false` 。 如果使用 **，OverriddenByRibbonApi** 必须是 *组* 的第一 **个子级**。 有关详细信息，请参阅 [OverriddenByRibbonApi](overriddenbyribbonapi.md)。
+可选 (布尔) 。 指定是否在支持API 的应用程序和平台组合上隐藏组，该 API 在运行时在功能区上安装自定义上下文选项卡。 默认值（如果不存在）为 `false` 。 如果使用 **，OverriddenByRibbonApi** 必须是 *组* 的第一个 **子级**。 有关详细信息，请参阅 [OverriddenByRibbonApi](overriddenbyribbonapi.md)。
+
+> [!NOTE]
+> 此子元素在加载项中Outlook支持。
 
 ```xml
 <ExtensionPoint xsi:type="PrimaryCommandSurface">
