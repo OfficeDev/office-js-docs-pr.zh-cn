@@ -1,15 +1,15 @@
 ---
 title: 生成首个 Outlook 加载项
 description: 了解如何使用 Office JS API 生成简单的 Outlook 任务窗格加载项。
-ms.date: 02/09/2021
+ms.date: 06/10/2021
 ms.prod: outlook
 localization_priority: Priority
-ms.openlocfilehash: 2ba89f400feaf0664ad98f47d8c933431341466e
-ms.sourcegitcommit: fefc279b85e37463413b6b0e84c880d9ed5d7ac3
+ms.openlocfilehash: 59d04953822122a0b8c72502c2e3250da94dfd43
+ms.sourcegitcommit: ab3d38f2829e83f624bf43c49c0d267166552eec
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/12/2021
-ms.locfileid: "50234189"
+ms.lasthandoff: 06/11/2021
+ms.locfileid: "52893657"
 ---
 # <a name="build-your-first-outlook-add-in"></a>生成首个 Outlook 加载项
 
@@ -17,7 +17,7 @@ ms.locfileid: "50234189"
 
 ## <a name="create-the-add-in"></a>创建加载项
 
-可以使用[适用于 Office 加载项的 Yeoman 生成器](https://github.com/OfficeDev/generator-office)或 Visual Studio 创建 Office 加载项。 Yeoman 生成器将创建一个可通过 Visual Studio Code 或任何其他编辑器管理的 Node.js 项目，而 Visual Studio 将创建一个 Visual Studio 解决方案。  选择适合于想要使用的方法的选项卡，然后按照说明创建加载项并在本地测试。
+可以使用[适用于 Office 加载项的 Yeoman 生成器](https://github.com/OfficeDev/generator-office)或 Visual Studio 创建 Office 加载项。 Yeoman 生成器将创建一个可通过 Visual Studio Code 或任何其他编辑器管理的 Node.js 项目，而 Visual Studio 将创建一个 Visual Studio 解决方案。 选择适合于想要使用的方法的选项卡，然后按照说明创建加载项并在本地测试。
 
 # <a name="yeoman-generator"></a>[Yeoman 生成器](#tab/yeomangenerator)
 
@@ -57,10 +57,10 @@ ms.locfileid: "50234189"
 1. 导航到 Web 应用程序项目的根文件夹。
 
     ```command&nbsp;line
-    cd "My Office Add-in"
+    cd "My Office Add-in&quot;
     ```
 
-### <a name="explore-the-project"></a>浏览项目
+### <a name=&quot;explore-the-project&quot;></a>浏览项目
 
 使用 Yeoman 生成器创建的加载项项目包含适合于基础任务窗格加载项的示例代码。
 
@@ -69,16 +69,16 @@ ms.locfileid: "50234189"
 - **./src/taskpane/taskpane.css** 文件包含应用于任务窗格中的内容的 CSS。
 - **./src/taskpane/taskpane.js** 文件包含用于加快任务窗格与 Outlook 之间的交互的 Office JavaScript API 代码。
 
-### <a name="update-the-code"></a>更新代码
+### <a name=&quot;update-the-code&quot;></a>更新代码
 
 1. 在代码编辑器中，打开文件 **./src/taskpane/taskpane.html** 并将整个 `<main>` 元素（位于 `<body>` 元素中）替换为以下标记。 此新标记将添加标签，其中 **./src/taskpane/taskpane.js** 中的脚本将写入数据。
 
     ```html
-    <main id="app-body" class="ms-welcome__main" style="display: none;">
-        <h2 class="ms-font-xl"> Discover what Office Add-ins can do for you today! </h2>
-        <p><label id="item-subject"></label></p>
-        <div role="button" id="run" class="ms-welcome__action ms-Button ms-Button--hero ms-font-xl">
-            <span class="ms-Button-label">Run</span>
+    <main id=&quot;app-body&quot; class=&quot;ms-welcome__main&quot; style=&quot;display: none;&quot;>
+        <h2 class=&quot;ms-font-xl&quot;> Discover what Office Add-ins can do for you today! </h2>
+        <p><label id=&quot;item-subject&quot;></label></p>
+        <div role=&quot;button&quot; id=&quot;run&quot; class=&quot;ms-welcome__action ms-Button ms-Button--hero ms-font-xl&quot;>
+            <span class=&quot;ms-Button-label&quot;>Run</span>
         </div>
     </main>
     ```
@@ -90,7 +90,7 @@ ms.locfileid: "50234189"
     var item = Office.context.mailbox.item;
 
     // Write message property value to the task pane
-    document.getElementById("item-subject").innerHTML = "<b>Subject:</b> <br/>" + item.subject;
+    document.getElementById(&quot;item-subject").innerHTML = "<b>Subject:</b> <br/>" + item.subject;
     ```
 
 ### <a name="try-it-out"></a>试用
@@ -155,7 +155,7 @@ ms.locfileid: "50234189"
 
 |**项目**|**说明**|
 |:-----|:-----|
-|加载项项目|仅包含 XML 清单文件，内含描述加载项的所有设置。 这些设置有助于 Office 应用程序确定应在何时激活加载项，以及应在哪里显示加载项。 Visual Studio 生成了此文件的内容，以便于用户能够立即运行项目并使用外接程序。 可以通过修改 XML 文件随时更改这些设置。|
+|加载项项目|仅包含 XML 清单文件，该文件包含描述加载项的全部设置。这些设置有助于 Office 应用程序确定应何时激活加载项，以及应在何处显示加载项。Visual Studio 会为你生成此文件的内容，因此你可以直接运行相应项目并使用加载项。可以通过修改该 XML 文件随时更改这些设置。|
 |Web 应用项目|包含加载项的内容页，包括开发 Office 感知 HTML 和 JavaScript 页面所需的全部文件和文件引用。开发加载项时，Visual Studio 在本地 IIS 服务器上托管 Web 应用。准备好发布加载项后，需要将此 Web 应用项目部署到 Web 服务器。|
 
 ### <a name="update-the-code"></a>更新代码
@@ -270,7 +270,7 @@ ms.locfileid: "50234189"
 1. 在“连接到 Exchange 电子邮件帐户”对话框中，输入你的 [Microsoft 帐户](https://account.microsoft.com/account)的电子邮件地址和密码，然后选择“连接”。 如果 Outlook.com 登录页是在浏览器中打开，请使用先前输入的相同凭据登录电子邮件帐户。
 
     > [!NOTE]
-    > 如果“**连接到 Exchange 电子邮件帐户**”对话框重复提示你登录，则可能已对你 Microsoft 365 租户上的帐户禁用基本身份验证。 若要测试此加载项，请改用 [Microsoft 帐户](https://account.microsoft.com/account)登录。
+    > 如果“**连接到 Exchange 电子邮件帐户**”对话框重复提示你登录或收到未获授权错误，则 Microsoft 365 租户上的帐户可能禁用基本身份验证。 要测试此加载项，请在 Web 加载项项目属性对话框中将 **使用多重身份验证** 属性设置为 True 后再次尝试登录，或改为使用 [Microsoft 帐户](https://account.microsoft.com/account) 登录。
 
 1. 在 Outlook 网页版中，选择或打开邮件。
 
