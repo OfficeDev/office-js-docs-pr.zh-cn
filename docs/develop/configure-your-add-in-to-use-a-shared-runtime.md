@@ -1,15 +1,15 @@
 ---
-ms.date: 04/08/2021
+ms.date: 06/14/2021
 title: 将 Office 加载项配置为使用共享 JavaScript 运行时
 ms.prod: non-product-specific
 description: 将 Office 加载项配置为使用共享 JavaScript 运行时，以支持其他功能区、任务窗格和自定义函数功能。
 localization_priority: Priority
-ms.openlocfilehash: d5f0a5b6d9053f23792012f1658d213a7972b970
-ms.sourcegitcommit: 54fef33bfc7d18a35b3159310bbd8b1c8312f845
+ms.openlocfilehash: ecde9a5564761b2dd902596f09db156332b5af4f
+ms.sourcegitcommit: 4fa952f78be30d339ceda3bd957deb07056ca806
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2021
-ms.locfileid: "51652188"
+ms.lasthandoff: 06/16/2021
+ms.locfileid: "52961256"
 ---
 # <a name="configure-your-office-add-in-to-use-a-shared-javascript-runtime"></a>将 Office 加载项配置为使用共享 JavaScript 运行时
 
@@ -31,6 +31,9 @@ ms.locfileid: "51652188"
 
 生成器将创建项目并安装支持的 Node 组件。
 
+> [!NOTE]
+> 还可以使用本文中的步骤更新现有Visual Studio项目以使用共享运行时。 但是，可能需要更新清单的 XML 架构。 有关详细信息，请参阅 [排除 Office 加载项开发错误故障](../testing/troubleshoot-development-errors.md#manifest-schema-validation-errors-in-visual-studio-projects)。
+
 ## <a name="configure-the-manifest"></a>配置清单
 
 对于新项目或现有项目，请按照以下步骤将其配置为使用共享运行时。 以下步骤能确保你使用[适用于 Office 加载项的 Yeoman 生成器](https://github.com/OfficeDev/generator-office)生成你的项目。
@@ -40,11 +43,15 @@ ms.locfileid: "51652188"
 1. 如果生成 Excel 加载项，请更新“要求”部分，以使用[共享运行时](../reference/requirement-sets/shared-runtime-requirement-sets.md)，而不是自定义函数运行时。 XML 应该如下所示。
 
     ```xml
+    <Hosts>
+      <Host Name="Workbook"/>
+    </Hosts>
     <Requirements>
-    <Sets DefaultMinVersion="1.1">
-      <Set Name="SharedRuntime" MinVersion="1.1"/>
-    </Sets>
+      <Sets DefaultMinVersion="1.1">
+        <Set Name="SharedRuntime" MinVersion="1.1"/>
+      </Sets>
     </Requirements>
+    <DefaultSettings>
     ```
 
 1. 找到 `<VersionOverrides>` 部分并添加 `<Host ...>` 标记内的以下 `<Runtimes>` 部分。 生存期需要 **较长**，以便在关闭任务窗格时加载项代码仍可运行。 `resid` 值是 **Taskpane.Url**，它引用 **manifest.xml** 文件底部附近的 ` <bt:Urls>` 部分中指定的 **taskpane.html** 文件位置。
@@ -53,7 +60,6 @@ ms.locfileid: "51652188"
    <VersionOverrides ...>
      <Hosts>
        <Host ...>
-       ...
        <Runtimes>
          <Runtime resid="Taskpane.Url" lifetime="long" />
        </Runtimes>
