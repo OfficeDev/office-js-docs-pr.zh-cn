@@ -3,12 +3,12 @@ title: 使用 Visual Studio 发布加载项
 description: 如何使用 Visual Studio 2019 部署 Web 项目并打包加载项。
 ms.date: 12/02/2019
 localization_priority: Normal
-ms.openlocfilehash: 5c6b21c3712f396d382ab64fb1f756e84745962b
-ms.sourcegitcommit: 83f9a2fdff81ca421cd23feea103b9b60895cab4
+ms.openlocfilehash: 6d7f923f19c9627c099c3c7d6495e96786af2002
+ms.sourcegitcommit: 4fa952f78be30d339ceda3bd957deb07056ca806
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/11/2020
-ms.locfileid: "47431183"
+ms.lasthandoff: 06/16/2021
+ms.locfileid: "52961242"
 ---
 # <a name="publish-your-add-in-using-visual-studio"></a>使用 Visual Studio 发布加载项
 
@@ -26,7 +26,7 @@ Office 加载项包包含 XML [清单文件](../develop/add-in-manifests.md)，�
 2. 在“**选取发布目标**”窗口中，选择其中一个选项以发布到你的首选目标。 每个发布目标都要求你提供有关入门的详细信息，例如 Azure 虚拟机或文件夹位置。 指定发布位置并填写所有必需信息后，选择“**发布**”
 
     > [!NOTE]
-    > 选取发布目标将会指定你要部署到的服务器、登录服务器所需的凭据、要部署的数据库和其他部署选项。
+    > 选取发布目标可指定要部署到的服务器、登录服务器所需的凭据、要部署的数据库以及其他部署选项。
 
 3. 有关每个发布目标选项的部署步骤的详细信息，请参阅[初探 Visual Studio 中的部署](/visualstudio/deployment/deploying-applications-services-and-components?view=vs-2019&preserve-view=true)。
 

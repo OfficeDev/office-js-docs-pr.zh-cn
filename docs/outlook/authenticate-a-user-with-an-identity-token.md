@@ -3,16 +3,16 @@ title: 使用加载项中的标识令牌对用户进行身份验证
 description: 了解如何使用 Outlook 加载项提供的标识令牌对服务实施 SSO。
 ms.date: 10/31/2019
 localization_priority: Normal
-ms.openlocfilehash: 7936ec72bca0962eda999e8b0dc3a2b1c60ad7ca
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: fac68065aed491d920c573cac644e17af89892ca
+ms.sourcegitcommit: 4fa952f78be30d339ceda3bd957deb07056ca806
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44606530"
+ms.lasthandoff: 06/16/2021
+ms.locfileid: "52961270"
 ---
 # <a name="authenticate-a-user-with-an-identity-token-for-exchange"></a>使用 Exchange 的标识令牌对用户进行身份验证
 
-Exchange 用户标识令牌为加载项提供了一种以唯一的方式标识加载项用户的方法。 通过创建用户标识，可以为后端服务实现单一登录 (SSO) 身份验证方案，此方案使使用 Outlook 加载项的客户无需登录即可连接服务。 有关何时使用此令牌类型的更多详细信息，请参阅 [Exchange 用户标识令牌](authentication.md#exchange-user-identity-token)。 本文介绍了使用 Exchange 标识令牌对访问后端的用户进行身份验证的简单方法。
+Exchange 用户标识令牌为加载项提供了一种以唯一的方式标识加载项用户的方法。 通过建立用户标识，您可以为后端服务实现单一登录 (SSO) 身份验证方案，使使用 Outlook 外接程序的客户无需登录即可连接到您的服务。 有关何时使用此令牌类型的更多详细信息，请参阅 [Exchange 用户标识令牌](authentication.md#exchange-user-identity-token)。 本文介绍了使用 Exchange 标识令牌对访问后端的用户进行身份验证的简单方法。
 
 > [!IMPORTANT]
 > 这只是 SSO 实现的一个简单示例。 和以往一样，在处理标识和身份验证事宜时，一定要确保代码符合组织的安全要求。

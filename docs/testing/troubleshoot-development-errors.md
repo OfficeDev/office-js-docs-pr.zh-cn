@@ -1,16 +1,16 @@
 ---
-title: Office 加载项开发错误疑难解答
-description: 了解如何解决 Office 外接程序中的开发错误。
-ms.date: 01/04/2021
+title: 排查Office加载项的开发错误
+description: 了解如何解决加载项中的Office错误。
+ms.date: 06/11/2021
 localization_priority: Normal
-ms.openlocfilehash: 48216230db4bf90ca53ef10d98786877bd3905c2
-ms.sourcegitcommit: 2f75a37de349251bc0e0fc402c5ae6dc5c3b8b08
+ms.openlocfilehash: 7fe52ff225a2e95147e2af045b40defb162522f7
+ms.sourcegitcommit: 4fa952f78be30d339ceda3bd957deb07056ca806
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "49771422"
+ms.lasthandoff: 06/16/2021
+ms.locfileid: "52961277"
 ---
-# <a name="troubleshoot-development-errors-with-office-add-ins"></a>Office 加载项开发错误疑难解答
+# <a name="troubleshoot-development-errors-with-office-add-ins"></a>排查Office加载项的开发错误
 
 ## <a name="add-in-doesnt-load-in-task-pane-or-other-issues-with-the-add-in-manifest"></a>外接程序无法在任务窗格中加载，或外接程序清单存在其他问题
 
@@ -22,7 +22,7 @@ ms.locfileid: "49771422"
 
 #### <a name="for-windows"></a>对于 Windows：
 
-删除文件夹的内容， `%LOCALAPPDATA%\Microsoft\Office\16.0\Wef\` 并删除文件夹的内容（ `%userprofile%\AppData\Local\Packages\Microsoft.Win32WebViewHost_cw5n1h2txyewy\AC\#!123\INetCache\` 如果存在）。
+删除文件夹的内容， `%LOCALAPPDATA%\Microsoft\Office\16.0\Wef\` 并删除文件夹的内容 `%userprofile%\AppData\Local\Packages\Microsoft.Win32WebViewHost_cw5n1h2txyewy\AC\#!123\INetCache\` （如果存在）。
 
 #### <a name="for-mac"></a>对于 Mac：
 
@@ -58,7 +58,7 @@ del /s /f /q %LOCALAPPDATA%\Packages\Microsoft.Win32WebViewHost_cw5n1h2txyewy\AC
 
 ## <a name="changes-made-to-property-values-dont-happen-and-there-is-no-error-message"></a>对属性值所做的更改不会发生，并且没有错误消息
 
-查看属性的参考文档，以查看其是否为只读。 此外，Office JS [的 TypeScript 定义](../develop/referencing-the-javascript-api-for-office-library-from-its-cdn.md) 指定哪些对象属性是只读的。 如果尝试设置只读属性，写入操作将失败，无提示，不会引发任何错误。 以下示例错误地尝试将只读属性设置为 [Chart.id。](/javascript/api/excel/excel.chart#id)另请参阅 [某些属性无法直接设置](../develop/application-specific-api-model.md#some-properties-cannot-be-set-directly)。
+查看属性的参考文档，以查看其是否只读。 此外[，JS 的 TypeScript](../develop/referencing-the-javascript-api-for-office-library-from-its-cdn.md) Office指定哪些对象属性是只读的。 如果您尝试设置只读属性，写入操作将失败，无提示，不会引发错误。 以下示例错误地尝试将只读属性设置为 [Chart.id](/javascript/api/excel/excel.chart#id)。另请参阅 [某些属性不能直接设置](../develop/application-specific-api-model.md#some-properties-cannot-be-set-directly)。
 
 ```js
 // This will do nothing, since `id` is a read-only property.
@@ -69,20 +69,45 @@ myChart.id = "5";
 
 以下是导致此错误的一些原因。 如果发现其他原因，请使用页面底部的反馈工具告诉我们。
 
-- 如果使用 Visual Studio，则旁加载可能有问题。 关闭 Office 主机的所有实例Visual Studio。 重新启动Visual Studio并再次尝试按 F5。
-- 外接程序的清单已从其部署位置（如集中部署、SharePoint 目录或网络共享）中删除。
-- 清单 [中 ID](../reference/manifest/id.md) 元素的值已直接在已部署的副本中更改。 如果出于任何原因需要更改此 ID，请首先从 Office 主机中删除外接程序，然后将原始清单替换为已更改的清单。 许多用户需要清除 Office 缓存以删除原始缓存的所有跟踪。 请参阅本文前面部分对外接程序命令 [（包括功能区按钮](#changes-to-add-in-commands-including-ribbon-buttons-and-menu-items-do-not-take-effect) 和菜单项）的更改不会生效。
-- 加载项清单的清单在清单的"资源"部分的任何位置未定义，或者其使用位置和定义位置之间的拼写不匹配。 `resid` [](../reference/manifest/resources.md) `resid` `<Resources>`
+- 如果使用 Visual Studio，则旁加载可能有问题。 关闭主机和Office的所有Visual Studio。 重新启动Visual Studio并再次尝试按 F5。
+- 外接程序的清单已从其部署位置（如集中部署、SharePoint目录或网络共享）中删除。
+- 清单 [中 ID](../reference/manifest/id.md) 元素的值已在已部署的副本中直接更改。 如果出于任何原因需要更改此 ID，请首先从 Office 主机中删除外接程序，然后将原始清单替换为已更改的清单。 许多用户需要清除Office缓存以删除原始缓存的所有跟踪。 请参阅本文前面 [对外接程序命令（包括功能区按钮](#changes-to-add-in-commands-including-ribbon-buttons-and-menu-items-do-not-take-effect) 和菜单项）的更改不会生效一节。
+- 外接程序的清单有 一个 未在清单的 Resources 部分的任何位置定义的 ，或者其使用位置和在 部分中定义位置之间的拼写不匹配。 `resid` [](../reference/manifest/resources.md) `resid` `<Resources>`
 - 清单 `resid` 中的某位置有一个超过 32 个字符的属性。 属性和节中相应资源的属性不能超过 `resid` `id` `<Resources>` 32 个字符。
-- 加载项具有自定义外接程序命令，但您尝试在不支持这些命令的平台上运行该命令。 有关详细信息，请参阅 [外接程序命令要求集](../reference/requirement-sets/add-in-commands-requirement-sets.md)。
+- 加载项具有自定义加载项命令，但尝试在不支持命令的平台上运行。 有关详细信息，请参阅加载项 [命令要求集](../reference/requirement-sets/add-in-commands-requirement-sets.md)。
 
-## <a name="add-in-doesnt-work-on-edge-but-it-works-on-other-browsers"></a>加载项在 Edge 上不起作用，但它适用于其他浏览器
+## <a name="add-in-doesnt-work-on-edge-but-it-works-on-other-browsers"></a>外接程序在 Edge 上不起作用，但它适用于其他浏览器
 
-请参阅 [Microsoft Edge 问题疑难解答](../concepts/browsers-used-by-office-web-add-ins.md#troubleshooting-microsoft-edge-issues)。
+请参阅[疑难Microsoft Edge疑难解答](../concepts/browsers-used-by-office-web-add-ins.md#troubleshooting-microsoft-edge-issues)。
 
-## <a name="excel-add-in-throws-errors-but-not-consistently"></a>Excel 加载项引发错误，但不一致
+## <a name="excel-add-in-throws-errors-but-not-consistently"></a>Excel加载项抛出错误，但不一致
 
-有关 [可能的原因，请参阅 Excel](../excel/excel-add-ins-troubleshooting.md) 加载项疑难解答。
+请参阅[Excel加载项疑难](../excel/excel-add-ins-troubleshooting.md)解答了解可能的原因。
+
+## <a name="manifest-schema-validation-errors-in-visual-studio-projects"></a>清单架构验证错误Visual Studio项目中
+
+如果你使用的是需要更改清单文件的较新功能，你可能会在清单文件中收到Visual Studio。 例如，添加 元素 `<Runtimes>` 来实现共享的 JavaScript 运行时时，你可能会看到以下验证错误。
+
+**命名空间 中的元素"Host"' 在命名空间 ' 中具有无效 http://schemas.microsoft.com/office/taskpaneappversionoverrides 的子元素 http://schemas.microsoft.com/office/taskpaneappversionoverrides "Runtimes"**
+
+如果发生这种情况，你可以将 XSD 文件更新Visual Studio最新版本。 最新架构版本位于 [[MS-OWEMXML]：附录 A：完全 XML 架构](/openspecs/office_file_formats/ms-owemxml/c6a06390-34b8-4b42-82eb-b28be12494a8)。
+
+### <a name="locate-the-xsd-files"></a>找到 XSD 文件
+
+1. 在 Visual Studio 中打开项目。
+1. 在 **"解决方案资源管理器**"中，打开manifest.xml文件。 清单通常位于解决方案下的第一个项目中。
+1. 选择 **"查看**  >  **属性窗口**" (F4) 。
+1. 在" **属性窗口**"中，选择省略号" (...) "以打开 **XML 架构** 编辑器。 你可以在此处找到项目使用的所有架构文件的确切文件夹位置。
+
+### <a name="update-the-xsd-files"></a>更新 XSD 文件
+
+1. 在文本编辑器中打开要更新的 XSD 文件。 验证错误中的架构名称将关联到 XSD 文件名。 例如，打开 **TaskPaneAppVersionOverridesV1_0.xsd**。
+1. 找到更新后的架构 [，位置为 [MS-一级：XML 架构]：附录 A：完整 XML 架构](/openspecs/office_file_formats/ms-owemxml/c6a06390-34b8-4b42-82eb-b28be12494a8)。 例如，TaskPaneAppVersionOverridesV1_0位于 [taskpaneappversionoverrides Schema](/openspecs/office_file_formats/ms-owemxml/82e93ec5-de22-42a8-86e3-353c8336aa40)中。
+1. 将文本复制到文本编辑器中。
+1. 保存更新后的 XSD 文件。
+1. 重新启动Visual Studio以选取新的 XSD 文件更改。
+
+您可以对过期的其他任何架构重复上述过程。
 
 ## <a name="see-also"></a>另请参阅
 
