@@ -1,14 +1,14 @@
 ---
 title: Outlook外接程序 API 预览要求集
 description: 当前处于预览阶段的功能和 API Outlook外接程序。
-ms.date: 06/08/2021
+ms.date: 06/15/2021
 localization_priority: Normal
-ms.openlocfilehash: c7ca92e6a30f3109baff5721ae4e9930ef23dc56
-ms.sourcegitcommit: 5a151d4df81e5640363774406d0f329d6a0d3db8
+ms.openlocfilehash: f9d8afc2b4347a8fb13f8ab98a163fb63968123f
+ms.sourcegitcommit: 0bf0e076f705af29193abe3dba98cbfcce17b24f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2021
-ms.locfileid: "52854009"
+ms.lasthandoff: 06/18/2021
+ms.locfileid: "53007760"
 ---
 # <a name="outlook-add-in-api-preview-requirement-set"></a>Outlook外接程序 API 预览要求集
 
@@ -20,9 +20,9 @@ Outlook JavaScript API 的 Office 外接程序 API 子集包括可在 Outlook �
 [!INCLUDE [Information about using preview APIs](../../../includes/using-preview-apis-host.md)]
 
 > [!TIP]
-> 你可能能够通过在 Outlook 租户上配置目标版本来预览 Microsoft 365[功能](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide&preserve-view=true#set-up-the-release-option-in-the-admin-center)。 此页面中会针对适用的功能说明"配置预览访问"。
+> 你或许能够通过在 Outlook 网页版 租户上配置定向发布来预览 Microsoft 365[功能](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide&preserve-view=true#set-up-the-release-option-in-the-admin-center)。 此页面中会针对适用的功能说明"配置预览访问"。
 >
-> 对于其他功能，你可能能够通过完成和提交此表单，请求访问 Outlook 网页版预览位（使用 Microsoft 365[帐户](https://aka.ms/OWAPreview)）。 这些功能中会指出"请求预览访问"。
+> 对于其他功能，您可能能够通过完成和提交此表单Outlook 网页版请求访问 Microsoft 365 预览[位](https://aka.ms/OWAPreview)。 这些功能中会指出"请求预览访问"。
 
 预览要求集包含要求集 [1.10 的所有功能](../requirement-set-1.10/outlook-requirement-set-1.10.md)。
 
@@ -82,9 +82,9 @@ Outlook JavaScript API 的 Office 外接程序 API 子集包括可在 Outlook �
 
 ### <a name="event-based-activation"></a>基于事件的激活
 
-此功能在要求集 [1.10 中发布](../requirement-set-1.10/outlook-requirement-set-1.10.md)。 不过，其他事件现在预览版中可用。 若要了解更多信息，请参阅 [支持的事件](../../../outlook/autolaunch.md#supported-events)。
+此功能在要求集 [1.10 中发布](../requirement-set-1.10/outlook-requirement-set-1.10.md)。 不过，其他事件现在预览版中可用。 若要了解详情，请参阅 [支持的事件](../../../outlook/autolaunch.md#supported-events)。
 
-**适用于**：Outlook Windows (连接到 Microsoft 365 订阅) ，Outlook web (新式) 
+**适用于**：Outlook Windows (连接到 Microsoft 365 订阅) ，Outlook 网页版 (新式) 
 
 <br>
 
@@ -98,7 +98,7 @@ Outlook JavaScript API 的 Office 外接程序 API 子集包括可在 Outlook �
 
 新增了一个函数，当外接程序[由可操作邮件激活时](/outlook/actionable-messages/invoke-add-in-from-actionable-message)，返回传递的初始化数据。
 
-**适用于**：Outlook Windows (连接到 Microsoft 365 订阅) ，Outlook web (新式) 
+**适用于**：Outlook Windows (连接到 Microsoft 365 订阅) ，Outlook 网页版 (新式) 
 
 <br>
 
@@ -132,13 +132,25 @@ Outlook JavaScript API 的 Office 外接程序 API 子集包括可在 Outlook �
 
 添加了一个新对象，该对象表示项目的会话数据。
 
-**适用于**：Outlook Windows (连接到 Microsoft 365 订阅) ，Outlook web (新式) 
+**适用于**：Outlook Windows (连接到 Microsoft 365 订阅) ，Outlook 网页版 (新式) 
 
 #### <a name="officecontextmailboxitemsessiondata"></a>[Office.context.mailbox.item.sessionData](office.context.mailbox.item.md#properties)
 
 添加了一个新属性，用于管理撰写模式下项目的会话数据。
 
-**适用于**：Outlook Windows (连接到 Microsoft 365 订阅) ，Outlook web (新式) 
+**适用于**：Outlook Windows (连接到 Microsoft 365 订阅) ，Outlook 网页版 (新式) 
+
+<br>
+
+---
+
+---
+
+### <a name="shared-mailboxes"></a>共享邮箱
+
+共享文件夹的功能支持 (，即委派访问权限) 要求集 [1.8 中发布](../requirement-set-1.8/outlook-requirement-set-1.8.md)。 但是，现在预览版中提供了对共享邮箱的支持。 若要了解详情，请参阅启用 [共享文件夹和共享邮箱方案](../../../outlook/delegate-access.md)。
+
+**适用于**：Outlook Windows (连接到 Microsoft 365 订阅) ，Outlook 网页版 (新式) 
 
 ## <a name="see-also"></a>另请参阅
 

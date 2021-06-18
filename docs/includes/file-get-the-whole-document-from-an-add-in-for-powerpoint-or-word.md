@@ -6,11 +6,11 @@
 
 - 在共享网络文件夹或 Web 服务器上，您需要以下文件：
 
-    - HTML 文件 (GetDoc_App.html) ，其中包含用户界面以及指向 JavaScript 文件 (包括 office.js 和应用程序特定的 .js 文件) 以及级联样式表 (CSS) 文件的链接。
+  - HTML 文件 (GetDoc_App.html) ，其中包含用户界面以及指向 JavaScript 文件 (包括 office.js 和应用程序特定的 .js 文件) 以及级联样式表 (CSS) 文件的链接。
 
-    - 要包含外接程序编程逻辑的 JavaScript 文件 (GetDoc_App.js)。
+  - 要包含外接程序编程逻辑的 JavaScript 文件 (GetDoc_App.js)。
 
-    - 一个要包含外接程序的样式和格式的 CSS 文件 (Program.css)。
+  - 一个要包含外接程序的样式和格式的 CSS 文件 (Program.css)。
 
 - 共享网络文件夹或外接程序目录中提供的外接程序的 XML 清单文件 (GetDoc_App.xml)。该清单文件必须指向前面提到的 HTML 文件的位置。
 
@@ -18,7 +18,7 @@
 
 ### <a name="core-concepts-to-know-for-creating-a-task-pane-add-in"></a>创建任务窗格加载项需要了解的核心概念
 
-在开始创建 PowerPoint 或 Word 的此外接程序之前，您应知道如何构建 Office 外接程序和使用 HTTP 请求。本文不讨论如何解码 Web 服务器上 HTTP 请求中 Base64 编码的文本。 
+在开始创建 PowerPoint 或 Word 的此外接程序之前，您应知道如何构建 Office 外接程序和使用 HTTP 请求。本文不讨论如何解码 Web 服务器上 HTTP 请求中 Base64 编码的文本。
 
 ## <a name="create-the-manifest-for-the-add-in"></a>为外接程序创建清单
 
@@ -89,7 +89,7 @@ PowerPoint 外接程序的 XML 清单文件提供有关外接程序的重要信�
 2. 使用 UTF-8 编码将文件以 GetDoc_App.html 形式保存到网络位置或 Web 服务器。
 
     > [!NOTE]
-    > 请确保加载项的 **head** 标记包含 **script** 标记，其中包含 office.js 文件的有效链接。 
+    > 请确保加载项的 **head** 标记包含 **script** 标记，其中包含 office.js 文件的有效链接。
 
     我们将使用一些 CSS 为外接程序提供一个简洁、现代且具专业水准的外观。使用以下 CSS 可定义外接程序的样式。
 
@@ -144,7 +144,7 @@ Office.initialize = function (reason) {
 // Create a function for writing to the status div.
 function updateStatus(message) {
     var statusInfo = $('#status');
-    statusInfo.innerHTML += message + "<br/>";
+    statusInfo[0].innerHTML += message + "<br/>";
 }
 ```
 
