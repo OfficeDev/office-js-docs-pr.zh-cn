@@ -1,15 +1,15 @@
 ---
 title: 使用 Vue 生成 Excel 任务窗格加载项
 description: 了解如何使用 Office JS API 和 Vue 生成简单的 Excel 任务窗格加载项。
-ms.date: 11/09/2020
+ms.date: 06/16/2021
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: 61fa374f9c1f628c50b12b6495afba2d89d02840
-ms.sourcegitcommit: ceb8dd66f3fb9c963fce8446c2f6c65ead56fbc1
+ms.openlocfilehash: cd709910c9e69478c953c03b5e17d5512e875d91
+ms.sourcegitcommit: 0bf0e076f705af29193abe3dba98cbfcce17b24f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "49132345"
+ms.lasthandoff: 06/18/2021
+ms.locfileid: "53007816"
 ---
 # <a name="build-an-excel-task-pane-add-in-using-vue"></a>使用 Vue 生成 Excel 任务窗格加载项
 
@@ -34,7 +34,7 @@ ms.locfileid: "49132345"
 vue create my-add-in
 ```
 
-然后，选择 `default` 预设项。 如果系统提示你使用 Yarn 或 NPM 作为包，可任选其一。
+然后选择“Vue 3”的 `Default` 预设（如果愿意，可以选择使用“Vue 2”）。
 
 ## <a name="generate-the-manifest-file"></a>生成清单文件
 
@@ -107,16 +107,12 @@ vue create my-add-in
 2. 打开 `src/main.js`，将内容替换为以下代码：
 
    ```js
-   import Vue from 'vue';
-   import App from './App.vue';
+   import { createApp } from 'vue'
+   import App from './App.vue'
 
-   Vue.config.productionTip = false;
-
-   window.Office.initialize = () => {
-     new Vue({
-       render: h => h(App)
-     }).$mount('#app');
-   };
+   window.Office.onReady(() => {
+       createApp(App).mount('#app');
+   });
    ```
 
 3. 打开 `src/App.vue`，将文件内容替换为以下代码：
@@ -218,7 +214,7 @@ vue create my-add-in
 
 ## <a name="next-steps"></a>后续步骤
 
-祝贺，你已使用 Vue 成功创建了 Excel 任务窗格加载项！ 接下来，请详细了解 Excel 加载项功能，并跟着 Excel 加载项教程一起操作，生成更复杂的加载项。
+恭喜！已使用 Vue 成功创建 Excel 任务窗格！接下来，请详细了解 Excel 加载项功能，并跟着 Excel 加载项教程一起操作，以生成更复杂的加载项。
 
 > [!div class="nextstepaction"]
 > [Excel 加载项教程](../tutorials/excel-tutorial.md)

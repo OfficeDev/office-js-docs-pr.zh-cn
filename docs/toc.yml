@@ -1021,8 +1021,9 @@ items:
             href: outlook/autolaunch.md
           - name: 可固定任务窗格
             href: outlook/pinnable-taskpane.md
-          - name: 委托访问
+          - name: 共享文件夹和共享邮箱
             href: outlook/delegate-access.md
+            displayName: delegate access
           - name: 清单
             items:
               - name: Outlook 外接程序清单

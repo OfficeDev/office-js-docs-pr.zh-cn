@@ -1,27 +1,27 @@
 ---
 title: Outlook 加载项概述
 description: Outlook 加载项由第三方使用基于 Web 的平台集成到 Outlook 中。
-ms.date: 10/14/2020
+ms.date: 06/15/2021
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: 14f3cf3ab4f647337047764f7403150237ff59cb
-ms.sourcegitcommit: 7482ab6bc258d98acb9ba9b35c7dd3b5cc5bed21
+ms.openlocfilehash: f0c1dbdd1cf9909310b629188d4f3d3d5de6b6bb
+ms.sourcegitcommit: 0bf0e076f705af29193abe3dba98cbfcce17b24f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/24/2021
-ms.locfileid: "51178067"
+ms.lasthandoff: 06/18/2021
+ms.locfileid: "53007809"
 ---
 # <a name="outlook-add-ins-overview"></a>Outlook 加载项概述
 
-Outlook 加载项由第三方使用基于 Web 的平台集成到 Outlook 中。 Outlook 加载项有三个主要方面：
+Outlook 加载项是由第三方通过使用基于 Web 的平台构建到 Outlook 中的集成。Outlook 加载项具有三个关键方面：
 
 - 相同的加载项和业务逻辑可跨桌面（Windows 版和 Mac 版 Outlook）、Web（Microsoft 365 和 Outlook.com）和移动平台使用。
 - Outlook 外接程序包括一个清单，其中介绍了如何将外接程序集成到 Outlook（例如，按钮或任务窗格）中，以及构成外接程序 UI 和业务逻辑的 JavaScript/HTML 代码。
 - 最终用户或管理员可以从 [AppSource](https://appsource.microsoft.com) 获取 Outlook 加载项，也可以进行[旁加载](sideload-outlook-add-ins-for-testing.md)。
 
-Outlook 加载项不同于 COM 或 VSTO 的加载项，后者为特定于 Windows 版 Outlook的较旧集成。 Outlook 加载项与 COM 加载项不同，它在用户的设备或 Outlook 客户端上没有通过物理方式安装任何代码。 对于 Outlook 加载项，Outlook 读取清单，挂钩 UI 中的指定控件，然后加载 JavaScript 和 HTML。 Web 组件都在沙盒浏览器的上下文中运行。
+Outlook 外接程序与 COM 或 VSTO 外接程序（特定于在 Windows 上运行的 Outlook 的较早集成项）不同。与 COM 外接程序不同的是，Outlook 外接程序不具有任何实际安装到用户设备或 Outlook 客户端的代码。对于 Outlook 外接程序，Outlook 读取清单并挂钩在 UI 中指定的控件，然后加载 JavaScript 和 HTML。web 部件全部在沙盒的浏览器的上下文中执行。
 
-支持加载项的 Outlook 项目包括电子邮件、会议请求、响应和取消及约会。 每个 Outlook 加载项均定义其可用的上下文，包括项目类型以及用户是在阅读还是撰写项目。
+支持加载项的 Outlook 项目包括电子邮件、会议请求、响应和取消及约会。每个 Outlook 加载项均定义其可用的上下文，包括项目类型以及用户是在阅读还是撰写项目。
 
 [!INCLUDE [publish policies note](../includes/note-publish-policies.md)]
 
@@ -51,17 +51,18 @@ Outlook 加载项不同于 COM 或 VSTO 的加载项，后者为特定于 Window
   >
   > - 加载项在与 Microsoft 365 订阅相关联的 Outlook 电子签名邮件上激活。 在Windows上，这个支持是通过8711.1000版本中引入的。
   >
-  > - 现在，Windows 版 Outlook 从内部版本 13229.10000 开始可以在受 IRM 保护的项目上激活加载项。 有关处于预览阶段的此功能的详细信息，请参阅[在受信息权限管理 (IRM) 保护的项目上激活加载项](../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md#add-in-activation-on-items-protected-by-information-rights-management-irm)。
+  > - 现在，Windows 版 Outlook 从内部版本 13229.10000 开始可以在受 IRM 保护的项目上激活加载项。 有关处于预览阶段的此功能的详细信息，请参阅 [在受信息权限管理 (IRM) 保护的项目上激活加载项](../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md#add-in-activation-on-items-protected-by-information-rights-management-irm)。
 
 - 具有邮件类别 IPM.Report.* 的送达报告或通知，包括送达和未送达报告 (NDR)，以及已读、未读和延迟通知。
-
-- 草稿（没有为其分配发件人），或位于 Outlook 草稿文件夹中。
 
 - 属于其他邮件的附件的 .msg 或 .eml 文件。
 
 - 从文件系统打开的 .msg 或 .eml 文件。
 
-- 在共享邮箱、其他用户的邮箱、存档邮箱或公用文件夹中。
+- 在 [组邮箱](/microsoft-365/admin/create-groups/compare-groups?view=o365-worldwide&preserve-view=true#shared-mailboxes) 中、在共享邮箱 \* 中、在其他用户的邮箱 \* 中、在存档邮箱中或在公用文件夹中。
+
+  > [!IMPORTANT]
+  > [要求集 1.8](../reference/objectmodel/requirement-set-1.8/outlook-requirement-set-1.8.md)中引入了 \* 对委托访问方案的支持（例如，从其他用户的邮箱共享的文件夹）。 共享邮箱支持现已提供预览版。 要了解详细信息，请参阅 [启用共享文件夹和共享邮箱方案](delegate-access.md)。
 
 - 使用自定义窗体。
 
@@ -71,16 +72,15 @@ Outlook 加载项不同于 COM 或 VSTO 的加载项，后者为特定于 Window
 
 Windows 版 Outlook 2013 或更高版本、Mac 版 Outlook 2016 或更高版本、适用于本地 Exchange 2013 和更高版本的 Outlook 网页版、iOS 版 Outlook、Android 版 Outlook 及 Outlook 网页版和 Outlook.com 支持 Outlook 加载项。 并非所有[客户端](../reference/requirement-sets/outlook-api-requirement-sets.md#requirement-sets-supported-by-exchange-servers-and-outlook-clients)都同时支持全部最新功能。 请参阅有关这些功能的文章和 API 参考，了解它们可能在哪些应用程序中受支持或不受支持。
 
-
 ## <a name="get-started-building-outlook-add-ins"></a>开始构建 Outlook 外接程序
 
-若要开始生成 Outlook 加载项，请尝试执行以下操作。
+要开始生成 Outlook 加载项，请尝试执行以下操作：
 
 - [快速入门](../quickstarts/outlook-quickstart.md) - 生成简单的任务窗格。
 - [教程](../tutorials/outlook-tutorial.md) - 了解如何创建将 GitHub Gist 插入新邮件的加载项。
 
-
 ## <a name="see-also"></a>另请参阅
+
 - [了解 Microsoft 365 开发人员计划](https://developer.microsoft.com/microsoft-365/dev-program)
 - [Office 加载项开发最佳做法](../concepts/add-in-development-best-practices.md)
 - [Office 加载项的设计准则](../design/add-in-design.md)
