@@ -1,45 +1,45 @@
 ---
 title: Office 加载项的 Office UI 元素
-description: 获取 Office 外接程序中不同种类的 UI 元素的概述。
+description: 大致了解加载项中不同类型的 UI Office。
 ms.date: 12/24/2019
 localization_priority: Normal
-ms.openlocfilehash: 3e5ff84cb0d8417d6fab5ec6a39575ce7ff74e23
-ms.sourcegitcommit: ceb8dd66f3fb9c963fce8446c2f6c65ead56fbc1
+ms.openlocfilehash: 5d0a1576d850f2291c28e6bb39554cbb0403f50b
+ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "49132044"
+ms.lasthandoff: 06/23/2021
+ms.locfileid: "53076327"
 ---
-# <a name="office-ui-elements-for-office-add-ins"></a><span data-ttu-id="a961d-103">Office 加载项的 Office UI 元素</span><span class="sxs-lookup"><span data-stu-id="a961d-103">Office UI elements for Office Add-ins</span></span>
+# <a name="office-ui-elements-for-office-add-ins"></a><span data-ttu-id="cef7c-103">Office 加载项的 Office UI 元素</span><span class="sxs-lookup"><span data-stu-id="cef7c-103">Office UI elements for Office Add-ins</span></span>
 
-<span data-ttu-id="a961d-p101">可以使用几种类型的 UI 元素来扩展 Office UI，包括外接程序命令和 HTML 容器。这些 UI 元素类似于 Office 的自然扩展，并且跨平台工作。可以将基于 Web 的自定义代码插入上述任一元素。</span><span class="sxs-lookup"><span data-stu-id="a961d-p101">You can use several types of UI elements to extend the Office UI, including add-in commands and HTML containers. These UI elements look like a natural extension of Office and work across platforms. You can insert your custom web-based code into any of these elements.</span></span>
+<span data-ttu-id="cef7c-p101">可以使用几种类型的 UI 元素来扩展 Office UI，包括外接程序命令和 HTML 容器。这些 UI 元素类似于 Office 的自然扩展，并且跨平台工作。可以将基于 Web 的自定义代码插入上述任一元素。</span><span class="sxs-lookup"><span data-stu-id="cef7c-p101">You can use several types of UI elements to extend the Office UI, including add-in commands and HTML containers. These UI elements look like a natural extension of Office and work across platforms. You can insert your custom web-based code into any of these elements.</span></span>
 
-<span data-ttu-id="a961d-107">下图显示了可以创建的 Office UI 元素的类型。</span><span class="sxs-lookup"><span data-stu-id="a961d-107">The following image shows the types of Office UI elements that you can create.</span></span>
+<span data-ttu-id="cef7c-107">下图显示了可以创建的 Office UI 元素的类型。</span><span class="sxs-lookup"><span data-stu-id="cef7c-107">The following image shows the types of Office UI elements that you can create.</span></span>
 
-![显示 Office 文档中的功能区、任务窗格和对话框/内容外接程序中的外接程序命令的关系图](../images/add-in-ui-elements.png)
+![显示功能区中的外接程序命令、任务窗格以及文档文档中的对话框/内容外接程序的Office图表。](../images/add-in-ui-elements.png)
 
-## <a name="add-in-commands"></a><span data-ttu-id="a961d-109">加载项命令</span><span class="sxs-lookup"><span data-stu-id="a961d-109">Add-in commands</span></span>
+## <a name="add-in-commands"></a><span data-ttu-id="cef7c-109">加载项命令</span><span class="sxs-lookup"><span data-stu-id="cef7c-109">Add-in commands</span></span>
 
-<span data-ttu-id="a961d-110">使用 [外接程序命令](add-in-commands.md) 将入口点添加到你的外接程序中的 Office 应用功能区。</span><span class="sxs-lookup"><span data-stu-id="a961d-110">Use [add-in commands](add-in-commands.md) to add entry points to your add-in to the Office app ribbon.</span></span> <span data-ttu-id="a961d-111">命令通过运行 JavaScript 代码，或启动 HTML 容器开始在外接程序中操作。</span><span class="sxs-lookup"><span data-stu-id="a961d-111">Commands start actions in your add-in either by running JavaScript code, or by launching an HTML container.</span></span> <span data-ttu-id="a961d-112">可以创建以下两种类型的外接程序命令。</span><span class="sxs-lookup"><span data-stu-id="a961d-112">You can create two types of add-in commands.</span></span>
+<span data-ttu-id="cef7c-110">[使用外接程序命令](add-in-commands.md)将加载项的入口点添加到加载项Office 应用功能区。</span><span class="sxs-lookup"><span data-stu-id="cef7c-110">Use [add-in commands](add-in-commands.md) to add entry points to your add-in to the Office app ribbon.</span></span> <span data-ttu-id="cef7c-111">命令通过运行 JavaScript 代码，或启动 HTML 容器开始在外接程序中操作。</span><span class="sxs-lookup"><span data-stu-id="cef7c-111">Commands start actions in your add-in either by running JavaScript code, or by launching an HTML container.</span></span> <span data-ttu-id="cef7c-112">可以创建以下两种类型的外接程序命令。</span><span class="sxs-lookup"><span data-stu-id="cef7c-112">You can create two types of add-in commands.</span></span>
 
-|<span data-ttu-id="a961d-113">命令类型</span><span class="sxs-lookup"><span data-stu-id="a961d-113">Command type</span></span>|<span data-ttu-id="a961d-114">Description</span><span class="sxs-lookup"><span data-stu-id="a961d-114">Description</span></span>|
+|<span data-ttu-id="cef7c-113">命令类型</span><span class="sxs-lookup"><span data-stu-id="cef7c-113">Command type</span></span>|<span data-ttu-id="cef7c-114">说明</span><span class="sxs-lookup"><span data-stu-id="cef7c-114">Description</span></span>|
 |:---------------|:--------------|
-|<span data-ttu-id="a961d-115">功能区按钮、菜单和选项卡</span><span class="sxs-lookup"><span data-stu-id="a961d-115">Ribbon buttons, menus, and tabs</span></span>|<span data-ttu-id="a961d-p103">用于在 Office 的默认功能区中添加自定义按钮、菜单（下拉列表）或选项卡。使用 Office 中的按钮和菜单触发某一操作。使用选项卡对按钮和菜单进行分组和整理。</span><span class="sxs-lookup"><span data-stu-id="a961d-p103">Use to add custom buttons, menus (dropdowns), or tabs to the default ribbon in Office. Use Buttons and menus to trigger an action in Office. Use tabs to group and organize buttons and menus.</span></span>|
-|<span data-ttu-id="a961d-119">上下文菜单</span><span class="sxs-lookup"><span data-stu-id="a961d-119">Context menus</span></span>| <span data-ttu-id="a961d-p104">用于扩展默认上下文菜单。当用户用鼠标右键单击 Office 文档中的文本或 Excel 中的表时，将显示上下文菜单。</span><span class="sxs-lookup"><span data-stu-id="a961d-p104">Use to extend the default context menu. Context menus are displayed when users right-click text in an Office document or a table in Excel.</span></span>|
+|<span data-ttu-id="cef7c-115">功能区按钮、菜单和选项卡</span><span class="sxs-lookup"><span data-stu-id="cef7c-115">Ribbon buttons, menus, and tabs</span></span>|<span data-ttu-id="cef7c-p103">用于在 Office 的默认功能区中添加自定义按钮、菜单（下拉列表）或选项卡。使用 Office 中的按钮和菜单触发某一操作。使用选项卡对按钮和菜单进行分组和整理。</span><span class="sxs-lookup"><span data-stu-id="cef7c-p103">Use to add custom buttons, menus (dropdowns), or tabs to the default ribbon in Office. Use Buttons and menus to trigger an action in Office. Use tabs to group and organize buttons and menus.</span></span>|
+|<span data-ttu-id="cef7c-119">上下文菜单</span><span class="sxs-lookup"><span data-stu-id="cef7c-119">Context menus</span></span>| <span data-ttu-id="cef7c-p104">用于扩展默认上下文菜单。当用户用鼠标右键单击 Office 文档中的文本或 Excel 中的表时，将显示上下文菜单。</span><span class="sxs-lookup"><span data-stu-id="cef7c-p104">Use to extend the default context menu. Context menus are displayed when users right-click text in an Office document or a table in Excel.</span></span>|
 
-## <a name="html-containers"></a><span data-ttu-id="a961d-122">HTML 容器</span><span class="sxs-lookup"><span data-stu-id="a961d-122">HTML containers</span></span>
+## <a name="html-containers"></a><span data-ttu-id="cef7c-122">HTML 容器</span><span class="sxs-lookup"><span data-stu-id="cef7c-122">HTML containers</span></span>
 
-<span data-ttu-id="a961d-p105">使用 HTML 容器在 Office 客户端中嵌入基于 HTML 的 UI 代码。然后，这些网页可以引用 Office JavaScript API 以与文档中的内容进行交互。可以创建三种类型的 HTML 容器。</span><span class="sxs-lookup"><span data-stu-id="a961d-p105">Use HTML containers to embed HTML-based UI code within Office clients. These web pages can then reference the Office JavaScript API to interact with content in the document. You can create three types of HTML containers.</span></span>
+<span data-ttu-id="cef7c-p105">使用 HTML 容器在 Office 客户端中嵌入基于 HTML 的 UI 代码。然后，这些网页可以引用 Office JavaScript API 以与文档中的内容进行交互。可以创建三种类型的 HTML 容器。</span><span class="sxs-lookup"><span data-stu-id="cef7c-p105">Use HTML containers to embed HTML-based UI code within Office clients. These web pages can then reference the Office JavaScript API to interact with content in the document. You can create three types of HTML containers.</span></span>
 
-|<span data-ttu-id="a961d-126">HTML 容器</span><span class="sxs-lookup"><span data-stu-id="a961d-126">HTML container</span></span>|<span data-ttu-id="a961d-127">Description</span><span class="sxs-lookup"><span data-stu-id="a961d-127">Description</span></span>|
+|<span data-ttu-id="cef7c-126">HTML 容器</span><span class="sxs-lookup"><span data-stu-id="cef7c-126">HTML container</span></span>|<span data-ttu-id="cef7c-127">说明</span><span class="sxs-lookup"><span data-stu-id="cef7c-127">Description</span></span>|
 |:-----------------|:--------------|
-|[<span data-ttu-id="a961d-128">任务窗格</span><span class="sxs-lookup"><span data-stu-id="a961d-128">Task panes</span></span>](task-pane-add-ins.md)|<span data-ttu-id="a961d-p106">在 Office 文档右侧窗格中显示自定义 UI。使用任务窗格以便用户与 Office 文档并行的外接程序进行交互。</span><span class="sxs-lookup"><span data-stu-id="a961d-p106">Display custom UI in the right pane of the Office document. Use task panes to allow users to interact with your add-in side-by-side with the Office document.</span></span>|
-|[<span data-ttu-id="a961d-131">内容加载项</span><span class="sxs-lookup"><span data-stu-id="a961d-131">Content add-ins</span></span>](content-add-ins.md)|<span data-ttu-id="a961d-p107">显示 Office 文档内嵌入的自定义 UI。使用内容外接程序以便用户直接与 Office 文档中的外接程序进行交互。例如，你可能想要显示外部内容，如其他来源的视频或数据可视化。</span><span class="sxs-lookup"><span data-stu-id="a961d-p107">Display custom UI embedded within Office documents. Use content add-ins to allow users to interact with your add-in directly within the Office document. For example, you might want to show external content such as videos or data visualizations from other sources.</span></span> |
-|[<span data-ttu-id="a961d-135">对话框</span><span class="sxs-lookup"><span data-stu-id="a961d-135">Dialog boxes</span></span>](dialog-boxes.md)|<span data-ttu-id="a961d-p108">在覆盖 Office 文档的对话框中显示自定义 UI。对需要焦点和更多空间的交互，但不需要与文档进行并行交互的交互使用对话框。</span><span class="sxs-lookup"><span data-stu-id="a961d-p108">Display custom UI in a dialog box that overlays the Office document. Use a dialog box for interactions that require focus and more real estate, and do not require a side-by-side interaction with the document.</span></span>|
+|[<span data-ttu-id="cef7c-128">任务窗格</span><span class="sxs-lookup"><span data-stu-id="cef7c-128">Task panes</span></span>](task-pane-add-ins.md)|<span data-ttu-id="cef7c-p106">在 Office 文档右侧窗格中显示自定义 UI。使用任务窗格以便用户与 Office 文档并行的外接程序进行交互。</span><span class="sxs-lookup"><span data-stu-id="cef7c-p106">Display custom UI in the right pane of the Office document. Use task panes to allow users to interact with your add-in side-by-side with the Office document.</span></span>|
+|[<span data-ttu-id="cef7c-131">内容加载项</span><span class="sxs-lookup"><span data-stu-id="cef7c-131">Content add-ins</span></span>](content-add-ins.md)|<span data-ttu-id="cef7c-p107">显示 Office 文档内嵌入的自定义 UI。使用内容外接程序以便用户直接与 Office 文档中的外接程序进行交互。例如，你可能想要显示外部内容，如其他来源的视频或数据可视化。</span><span class="sxs-lookup"><span data-stu-id="cef7c-p107">Display custom UI embedded within Office documents. Use content add-ins to allow users to interact with your add-in directly within the Office document. For example, you might want to show external content such as videos or data visualizations from other sources.</span></span> |
+|[<span data-ttu-id="cef7c-135">对话框</span><span class="sxs-lookup"><span data-stu-id="cef7c-135">Dialog boxes</span></span>](dialog-boxes.md)|<span data-ttu-id="cef7c-p108">在覆盖 Office 文档的对话框中显示自定义 UI。对需要焦点和更多空间的交互，但不需要与文档进行并行交互的交互使用对话框。</span><span class="sxs-lookup"><span data-stu-id="cef7c-p108">Display custom UI in a dialog box that overlays the Office document. Use a dialog box for interactions that require focus and more real estate, and do not require a side-by-side interaction with the document.</span></span>|
 
-## <a name="see-also"></a><span data-ttu-id="a961d-138">另请参阅</span><span class="sxs-lookup"><span data-stu-id="a961d-138">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="cef7c-138">另请参阅</span><span class="sxs-lookup"><span data-stu-id="cef7c-138">See also</span></span>
 
-- [<span data-ttu-id="a961d-139">Excel、Word 和 PowerPoint 加载项命令</span><span class="sxs-lookup"><span data-stu-id="a961d-139">Add-in commands for Excel, Word, and PowerPoint</span></span>](add-in-commands.md)
-- [<span data-ttu-id="a961d-140">任务窗格</span><span class="sxs-lookup"><span data-stu-id="a961d-140">Task panes</span></span>](task-pane-add-ins.md)
-- [<span data-ttu-id="a961d-141">内容外接程序</span><span class="sxs-lookup"><span data-stu-id="a961d-141">Content add-ins</span></span>](content-add-ins.md)
-- [<span data-ttu-id="a961d-142">对话框</span><span class="sxs-lookup"><span data-stu-id="a961d-142">Dialog boxes</span></span>](dialog-boxes.md)
+- [<span data-ttu-id="cef7c-139">Excel、Word 和 PowerPoint 加载项命令</span><span class="sxs-lookup"><span data-stu-id="cef7c-139">Add-in commands for Excel, Word, and PowerPoint</span></span>](add-in-commands.md)
+- [<span data-ttu-id="cef7c-140">任务窗格</span><span class="sxs-lookup"><span data-stu-id="cef7c-140">Task panes</span></span>](task-pane-add-ins.md)
+- [<span data-ttu-id="cef7c-141">内容外接程序</span><span class="sxs-lookup"><span data-stu-id="cef7c-141">Content add-ins</span></span>](content-add-ins.md)
+- [<span data-ttu-id="cef7c-142">对话框</span><span class="sxs-lookup"><span data-stu-id="cef7c-142">Dialog boxes</span></span>](dialog-boxes.md)
