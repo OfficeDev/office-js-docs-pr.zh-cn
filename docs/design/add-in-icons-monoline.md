@@ -1,30 +1,30 @@
 ---
-title: Office 外接程序的单声道样式图标指南
-description: 有关在 Office 外接程序中使用单声道样式图标的指南。
+title: 单声道样式图标指南Office加载项
+description: 在加载项中使用单Office图标的指南。
 ms.date: 03/30/2021
 localization_priority: Normal
-ms.openlocfilehash: b74b89b2d622a6166fa111ef92bd8b2fffe79f8a
-ms.sourcegitcommit: 0bff0411d8cfefd4bb00c189643358e6fb1df95e
+ms.openlocfilehash: b576cdf8d1816fa052bfdc30fac0950baf95700d
+ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/07/2021
-ms.locfileid: "51604671"
+ms.lasthandoff: 06/23/2021
+ms.locfileid: "53076495"
 ---
-# <a name="monoline-style-icon-guidelines-for-office-add-ins"></a>Office 外接程序的单声道样式图标指南
+# <a name="monoline-style-icon-guidelines-for-office-add-ins"></a>单声道样式图标指南Office加载项
 
-单声道样式图标在 Office 应用中使用。 如果您希望您的图标与非订阅 Office 2013+的新鲜样式匹配，请参阅 Office 外接程序的新鲜样式 [图标指南](add-in-icons-fresh.md)。
+单声道样式图标用于Office应用中。 如果你希望你的图标与非订阅 Office 2013+ 的新鲜样式匹配，请参阅适用于 Office 外接程序的新鲜样式[图标指南](add-in-icons-fresh.md)。
 
-## <a name="office-monoline-visual-style"></a>Office 单声道视觉样式
+## <a name="office-monoline-visual-style"></a>Office单声道视觉样式
 
 Monoline 样式的目标是具有一致、清晰且可访问的图标，以通过简单的视觉效果传达操作和功能，确保图标可供所有用户访问，并且具有与 Windows 中其他位置使用的样式一致的样式。
 
-以下指南适用于第三方开发人员，他们希望为功能创建图标，这些图标与已有的 Office 产品图标一致。
+以下指南适用于第三方开发人员，他们希望为功能创建图标，这些图标与产品中已有的图标Office一致。
 
 ### <a name="design-principles"></a>设计原则
 
 - 简单、干净、清晰。
 - 仅包含必要的元素。
-- 受 Windows 图标样式启发。
+- 受图标Windows启发。
 - 可供所有用户访问。
 
 #### <a name="conveying-meaning"></a>传达含义
@@ -61,13 +61,13 @@ Monoline 样式的目标是具有一致、清晰且可访问的图标，以通�
 **16 像素、20 像素、24 像素、32 像素、40 像素、48 像素、64 像素、80 像素、96 像素**
 
 > [!IMPORTANT]
-> 有关作为加载项代表图标的图像，请参阅在 [AppSource](/office/dev/store/create-effective-office-store-listings#create-an-icon-for-your-add-in) 和 Office 内创建有效列表，了解大小和其他要求。
+> 对于作为加载项代表性图标的图像，请参阅在[AppSource](/office/dev/store/create-effective-office-store-listings#create-an-icon-for-your-add-in)和 Office内创建有效列表，了解大小和其他要求。
 
 ### <a name="layout"></a>布局
 
 下面是一个包含修饰符的图标布局示例。
 
-![右下角具有修饰符的图标关系图](../images/monolineicon1.png)  ![包含添加网格背景的相同图标的图示，以及基本、修饰符、填充和剪切的标注](../images/monolineicon2.png)
+![右下角具有修饰符的图标关系图。](../images/monolineicon1.png)  ![包含网格背景的相同图标的图示，以及基本、修饰符、填充和剪切的标注。](../images/monolineicon2.png)
 
 #### <a name="elements"></a>元素
 
@@ -75,7 +75,7 @@ Monoline 样式的目标是具有一致、清晰且可访问的图标，以通�
 
 - **修饰符** 覆盖基本元素的任何元素;即，通常表示操作或状态的修饰符。 它通过充当添加、更改或描述符来修改基本元素。
 
-![包含已调用基本和修饰符区域网格的关系图](../images/monolineicon3.png)
+![已调用基本和修饰符区域网格的关系图。](../images/monolineicon3.png)
 
 ### <a name="construction"></a>建造
 
@@ -83,15 +83,15 @@ Monoline 样式的目标是具有一致、清晰且可访问的图标，以通�
 
 基元素放置在填充内图标的中心。 如果无法完全居中放置，则基数应位于右上方。 在下面的示例中，图标完全居中。
 
-![显示完全居中的图标的关系图](../images/monolineicon4.png)
+![显示完全居中的图标的图表。](../images/monolineicon4.png)
 
 在下面的示例中，图标在左侧出错。
 
-![显示左错误 1 像素的图标的图表](../images/monolineicon5.png)
+![显示左错误 1 像素的图标的图表。](../images/monolineicon5.png)
 
 修饰符几乎总是放置在图标画布的右下角。 在极少数情况下，修饰符放置在不同的角。 例如，如果修改器无法识别右下角的基元素，请考虑将其放在左上角。
 
-![显示四个图标的图示，其中修饰符位于右下角，一个图标的修饰符位于左上角](../images/monolineicon6.png)
+![此图显示四个图标，其中修饰符位于右下角，一个图标的修饰符位于左上角。](../images/monolineicon6.png)
 
 #### <a name="padding"></a>Padding
 
@@ -99,7 +99,7 @@ Monoline 样式的目标是具有一致、清晰且可访问的图标，以通�
 
 |**16px**|**20px**|**24px**|**32px**|**40px**|**48px**|**64px**|**80px**|**96px**|
 |:---|:---|:---|:---|:---|:---|:---|:---|:---|
-|![具有 0px 填充的 16 像素图标](../images/monolineicon7.png)|![具有 1px 填充的 20 像素图标](../images/monolineicon8.png)|![具有 1px 填充的 24 像素图标](../images/monolineicon9.png)|![具有 2px 填充的 32 像素图标](../images/monolineicon10.png)|![具有 2px 填充的 40 像素图标](../images/monolineicon11.png)|![具有 3px 填充的 48 像素图标](../images/monolineicon12.png)|![具有 4px 填充的 64 像素图标](../images/monolineicon13.png)|![具有 5px 填充的 80 像素图标](../images/monolineicon14.png)|![具有 6px 填充的 96 像素图标](../images/monolineicon15.png)|
+|![具有 0px 填充的 16 像素图标。](../images/monolineicon7.png)|![具有 1px 填充的 20 像素图标。](../images/monolineicon8.png)|![具有 1px 填充的 24 像素图标。](../images/monolineicon9.png)|![具有 2px 填充的 32 像素图标。](../images/monolineicon10.png)|![具有 2px 填充的 40 像素图标。](../images/monolineicon11.png)|![具有 3px 填充的 48 像素图标。](../images/monolineicon12.png)|![具有 4px 填充的 64 像素图标。](../images/monolineicon13.png)|![具有 5px 填充的 80 像素图标。](../images/monolineicon14.png)|![具有 6px 填充的 96 像素图标。](../images/monolineicon15.png)|
 
 #### <a name="line-weights"></a>线条粗细
 
@@ -108,7 +108,7 @@ Monoline 样式的目标是具有一致、清晰且可访问的图标，以通�
 |图标大小：|16px|20px|24px|32px|40px|48px|64px|80px|96px|
 |:---|:---|:---|:---|:---|:---|:---|:---|:---|:---|
 |**线条粗细：**|1px|1px|1px|1px|2px|2px|2px|2px|3px|
-|**示例图标：**|![16 像素图标](../images/monolineicon16.png)|![20 像素图标](../images/monolineicon17.png)|![24 像素图标](../images/monolineicon18.png)|![32 像素图标](../images/monolineicon19.png)|![40 像素图标](../images/monolineicon20.png)|![48 像素图标](../images/monolineicon21.png)|![64 像素图标](../images/monolineicon22.png)|![80 像素图标](../images/monolineicon23.png)|![96 像素图标](../images/monolineicon24.png)|
+|**示例图标：**|![16 像素图标。](../images/monolineicon16.png)|![20 像素图标。](../images/monolineicon17.png)|![24 像素图标。](../images/monolineicon18.png)|![32 像素图标。](../images/monolineicon19.png)|![40 像素图标。](../images/monolineicon20.png)|![48 像素图标。](../images/monolineicon21.png)|![64 像素图标。](../images/monolineicon22.png)|![80 像素图标。](../images/monolineicon23.png)|![96 像素图标。](../images/monolineicon24.png)|
 
 #### <a name="cutouts"></a>剪切
 
@@ -116,7 +116,7 @@ Monoline 样式的目标是具有一致、清晰且可访问的图标，以通�
 
 间隙的大小应该与用于该大小的线粗细的宽度相同。 如果制作 16 像素的图标，间隙宽度为 1px，如果是 48 像素的图标，间隙应为 2px。 以下示例显示一个 32 像素的图标，该图标的修饰符和基础基底之间的间隙为 1px。
 
-![修饰符和基础基之间的间隙为 1px 的 32 像素图标](../images/monolineicon25.png)
+![32 像素图标，修饰符和基础基底之间的间隙为 1px。](../images/monolineicon25.png)
 
 在某些情况下，如果修饰符有对角或曲线边缘且标准间隙未提供足够的分离，则间隙可能会增加 1/2 像素。 这很可能只影响线条粗细为 1px 的图标：16 像素、20 像素、24 像素和 32 像素。
 
@@ -124,11 +124,11 @@ Monoline 样式的目标是具有一致、清晰且可访问的图标，以通�
 
 Monoline 图标集内大多数图标都需要背景填充。 但是，在某些情况下，对象自然没有填充，因此不应应用填充。 以下图标具有白色填充。
 
-![使用白色填充编译五个图标](../images/monolineicon26.png)
+![使用白色填充编译五个图标。](../images/monolineicon26.png)
 
 以下图标没有填充。  (包括齿轮图标，以显示中洞未填充。) 
 
-![五个无填充图标的编译](../images/monolineicon27.png)
+![五个无填充图标的编译。](../images/monolineicon27.png)
 
 ##### <a name="best-practices-for-fills"></a>填充最佳做法
 
@@ -152,9 +152,9 @@ Monoline 图标集内大多数图标都需要背景填充。 但是，在某些�
 
 #### <a name="palette"></a>调色板
 
-![单色灰色的四种底纹：独立或大纲的深灰色、大纲或内容的中灰色、背景填充的浅灰色和浅灰色的填充](../images/monoline-grayshades.png)
+![单色灰色的四种底纹：独立或大纲的深灰色、大纲或内容的中灰色、背景填充的浅灰色和浅灰色的填充。](../images/monoline-grayshades.png)
 
-![单行调色板包括独立、大纲和填充的蓝色、绿色、黄色、红色和紫色底纹](../images/monoline-colors.png)
+![单声道的调色板包括独立、大纲和填充的蓝色、绿色、黄色、红色和紫色的阴影。](../images/monoline-colors.png)
 
 #### <a name="how-to-use-color"></a>如何使用颜色
 
@@ -166,7 +166,7 @@ Monoline 图标集内大多数图标都需要背景填充。 但是，在某些�
 
 以下是使用颜色的示例。
 
-![编译具有边框或填充颜色或两者同时具有颜色的三个图标](../images/monolineicon28.png)
+![编译具有边框或填充颜色或两者均具有颜色的三个图标。](../images/monolineicon28.png)
 
 最常见情况是让元素将深灰色独立版与背景填充一同使用。
 
@@ -179,19 +179,19 @@ Monoline 图标集内大多数图标都需要背景填充。 但是，在某些�
 
 颜色应该用于传达图标的含义，而不是用于修饰。 它 **应突出显示给用户** 的操作。 将修饰符添加到具有颜色的基本元素时，基元素通常转换为深灰色和背景填充，以便修饰符可以是颜色元素，如以下示例，将"X"修饰符添加到下一组最左侧图标的图片基础中。
 
-![使用颜色的五个图标的编译](../images/monolineicon29.png)
+![使用颜色的五个图标的编译。](../images/monolineicon29.png)
 
 除了上面提到的"轮廓"和"填充"外，你应当将图标限制为一种其他颜色。 但是，如果它对于其隐喻至关重要，可以使用更多颜色，但除了灰色外，还有两种其他颜色。 在极少数情况下，当需要更多颜色时，会存在例外情况。 以下是仅使用一种颜色的图标的很好示例。
 
-  ![编译五个图标，每个图标使用一种颜色](../images/monolineicon30.png)
+  ![编译五个图标，每个图标使用一种颜色。](../images/monolineicon30.png)
 
 但以下图标使用的颜色过多。
 
-  ![编译五个图标，每个图标都使用多个颜色](../images/monolineicon31.png)
+  ![编译五个图标，每个图标都使用多个颜色。](../images/monolineicon31.png)
 
 对 **内部"** 内容"使用中灰色，如电子表格图标中的网格线。 当内容需要显示控件的行为时，会使用其他内部颜色。
 
-![使用中灰色内部元素编译五个图标](../images/monolineicon32.png)
+![使用中灰色内部元素编译五个图标。](../images/monolineicon32.png)
 
 #### <a name="text-lines"></a>文本行
 
@@ -199,13 +199,13 @@ Monoline 图标集内大多数图标都需要背景填充。 但是，在某些�
 
 ### <a name="text"></a>文本
 
-避免在图标中使用文本字符。 由于 Office 产品已全球使用，因此我们希望尽可能将图标保持中性语言。
+避免在图标中使用文本字符。 由于Office产品已全球使用，我们希望尽可能使图标保持中性语言。
 
 ## <a name="production"></a>生产
 
 ### <a name="icon-file-format"></a>图标文件格式
 
-最终图标应另存为 .png 图像文件。 将 PNG 格式与透明背景一同使用，并且具有 32 位深度。
+最终图标应另存为.png文件。 将 PNG 格式与透明背景一同使用，并且具有 32 位深度。
 
 ## <a name="see-also"></a>另请参阅
 

@@ -1,14 +1,14 @@
 ---
 title: 创建使用单一登录的 ASP.NET Office 加载项
 description: 如何创建 (或将 Office 后端的 ASP.NET Office) 外接程序转换为使用单一登录 (SSO) 的分步指南。
-ms.date: 03/11/2021
+ms.date: 06/15/2021
 localization_priority: Normal
-ms.openlocfilehash: 36616e3388f9768c90a957ea19b47d4ec7e45de2
-ms.sourcegitcommit: 4fa952f78be30d339ceda3bd957deb07056ca806
+ms.openlocfilehash: 35e4dcef6d99d5bd3ca204b08a017679684ec2ba
+ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/16/2021
-ms.locfileid: "52961228"
+ms.lasthandoff: 06/23/2021
+ms.locfileid: "53076453"
 ---
 # <a name="create-an-aspnet-office-add-in-that-uses-single-sign-on"></a>创建使用单一登录的 ASP.NET Office 加载项
 
@@ -53,12 +53,12 @@ ms.locfileid: "52961228"
     * 在“**重定向 URI**”部分，确保在下拉列表中选择“**Web**”，然后将 URI 设置为 ` https://localhost:44355/AzureADAuth/Authorize`。
     * 选择“**注册**”。
 
-1. 在 **Office-Add-in-ASPNET-SSO** 页面上，复制并保存 **Application (client) ID** 和 **Directory (tenant) ID 的值**。 你将在后面的过程中使用它们。
+1. 在 **Office-Add-in-ASPNET-SSO** 页面上，复制并保存 Application (客户端的值) **ID。** 你将在稍后的过程需要它。
 
     > [!NOTE]
     > 当其他应用程序（如 Office 客户端应用程序 (例如 PowerPoint、Word、Excel) ）寻求应用程序的授权访问权限时，此应用程序客户端) ID 是"受众"值。 **(** 当它反过来寻求 Microsoft Graph 的授权访问权限时，它同时也是应用程序的“客户端 ID”。
 
-1. 在“**管理**”下，选择“**证书和密码**”。 选择“**新客户端密码**”按钮。 输入“**描述**”的值，然后选择适当的“**到期**”选项，并选择“**添加**”。 在继续操作前，*立即复制客户端密码值并使用应用程序 ID 保存它*，因为在后面的过程中，将需要用到它。
+1. 在“**管理**”下，选择“**证书和密码**”。 选择“**新客户端密码**”按钮。 输入“**描述**”的值，然后选择适当的“**到期**”选项，并选择“**添加**”。 *复制客户端密码值 (* 密码 ID) ，然后使用应用程序 ID 将其保存，然后再继续，因为稍后过程中将需要它。
 
 1. 在“**管理**”下，选择“**公开 API**”。 选择“**设置**”链接以在窗体“api://$App ID GUID$”中生成应用 ID URI，其中 $App ID GUID$ 是 **应用程序（客户端）ID**。 在 `//` 后面和 GUID 前面插入 `localhost:44355/`（请注意结尾附加的正斜杠“/”）。 整个 ID 的格式应为 `api://localhost:44355/$App ID GUID$`；例如 `api://localhost:44355/c6c1f32b-5e55-4997-881a-753cc1d563b7`。
 
@@ -98,11 +98,9 @@ ms.locfileid: "52961228"
 
 1. 在“**管理**”下，选择“**API 权限**”，然后选择“**添加权限**”。 在打开的面板上，选择 **Microsoft Graph**，然后选择“委派权限”。
 
-1. 使用“选择权限”搜索框来搜索加载项需要的权限。 选择以下选项。 外接程序本身确实只需要第一项;但 `profile` 应用程序需要权限Office才能获取外接程序 Web 应用程序的令牌。 （该加载项实际上仅需要 Files.Read.All 和 profile。 但必须请求其他两个，因为 MSAL.NET 库需要它们。）
+1. 使用“选择权限”搜索框来搜索加载项需要的权限。 选择以下选项。 外接程序本身确实只需要第一项;但 `profile` 应用程序需要权限Office才能获取外接程序 Web 应用程序的令牌。
 
     * Files.Read.All
-    * offline_access
-    * openid
     * profile
 
     > [!NOTE]
@@ -138,8 +136,6 @@ ms.locfileid: "52961228"
       <Resource>api://localhost:44355/$application_GUID here$</Resource>
       <Scopes>
           <Scope>Files.Read.All</Scope>
-          <Scope>offline_access</Scope>
-          <Scope>openid</Scope>
           <Scope>profile</Scope>
       </Scopes>
     </WebApplicationInfo>
@@ -147,8 +143,8 @@ ms.locfileid: "52961228"
 
 1. 将标记中的 *两处* 占位符“$application_GUID here$”均替换为在注册加载项时复制的应用程序 ID。 由于 ID 并不包含“$”符号，因此请勿添加它们。 这与在 web.config 中对 ClientID 和 Audience 所使用的 ID 相同。
 
-  > [!NOTE]
-  > **资源** 值是注册加载项时设置的 **应用程序 ID URI**。 仅在通过 AppSource 销售加载项时，才使用 **作用域** 部分生成许可对话框。
+    > [!NOTE]
+    > **资源** 值是注册加载项时设置的 **应用程序 ID URI**。 仅在通过 AppSource 销售加载项时，才使用 **作用域** 部分生成许可对话框。
 
 1. 保存并关闭此文件。
 
@@ -482,7 +478,7 @@ ms.locfileid: "52961228"
 
 1. 在声明 `ValuesController` 的代码行的正上方，添加属性 `[Authorize]`。这可确保只要调用控制器方法时，加载项就会运行在上一过程中配置的授权过程。只有拥有对加载项的有效访问令牌，调用方才能调用控制器的方法。
 
-1. 将下列方法添加到 `ValuesController`。 请注意，返回值是 `Task<HttpResponseMessage>`（而不是 `Task<IEnumerable<string>>`），这对于 `GET api/values` 方法而言更为常见。 由于 OAuth 授权逻辑必须在控制器中，而不是 ASP.NET 筛选器中，所以这是一种副作用。 该逻辑中的一些错误条件要求将 HTTP 响应对象发送到加载项的客户端。
+1. 将下列方法添加到 `ValuesController`。 请注意，返回值是 `Task<HttpResponseMessage>`（而不是 `Task<IEnumerable<string>>`），这对于 `GET api/values` 方法而言更为常见。 这是 OAuth 授权逻辑必须位于控制器中而不是在 ASP.NET 筛选器的副作用。 该逻辑中的一些错误条件要求将 HTTP 响应对象发送到加载项的客户端。
 
     ```csharp
     // GET api/values
@@ -491,7 +487,7 @@ ms.locfileid: "52961228"
         // TODO 1: Validate the scopes of the bootstrap token.
 
         // TODO 2: Assemble all the information that is needed to get a
-        //        token for Microsoft Graph using the on-behalf-of flow.
+        //         token for Microsoft Graph using the on-behalf-of flow.
 
         // TODO 3: Get the access token for Microsoft Graph.
 
@@ -515,7 +511,7 @@ ms.locfileid: "52961228"
     * 外接程序不再扮演资源用户或 (访问群体) 用户Office访问群体的角色。 现在它本身就是一个需要访问 Microsoft Graph 的客户端。 是 MSAL“客户端上下文”对象。
     * 从 MSAL.NET 3.x.x 开始，`bootstrapContext` 仅仅是启动令牌本身。
     * Authority 来自 web.config。它可能是“common”字符串，而对于单租户加载项，则是一个 GUID。
-    * MSAL 要求 `openid`、`offline_access` 作用域能够发挥作用，但如果代码过多地发出请求，则会抛出错误。 如果你的代码请求 ，它还会引发错误，这仅在 Office 客户端应用程序获取到外接程序的 Web 应用程序的令牌时 `profile` 真正使用。 因此，只会显式请求获取 `Files.Read.All`。
+    * 如果代码请求 ，MSAL 将引发错误，这仅在 Office 客户端应用程序获取到外接程序 Web 应用程序的令牌时 `profile` 真正使用。 因此，只会显式请求获取 `Files.Read.All`。
 
     ```csharp
     string bootstrapContext = ClaimsPrincipal.Current.Identities.First().BootstrapContext.ToString();
@@ -582,7 +578,7 @@ ms.locfileid: "52961228"
     }
     ```
 
-1. 将 `TODO 3c` 替换为以下代码，以处理所有其他 **MsalServiceException**。 正如前文所述，
+1. 将 `TODO 3c` 替换为以下代码，以处理所有其他 **MsalServiceException**。
 
     ```csharp
     else
@@ -606,11 +602,29 @@ ms.locfileid: "52961228"
 1. 在“**解决方案资源管理器**”中，选择“**Office-Add-in-ASPNET-SSO**”项目节点（而不是顶部的解决方案节点，也不是名称以“WebAPI”结尾的项目）。
 1. 在“**属性**”窗格中，打开“**启动文档**”下拉列表，然后选择三个选项之一（“Excel”、“Word”或“PowerPoint”）。
 
-    ![选择所需的Office客户端应用程序：Excel、PowerPoint 或 Word](../images/SelectHost.JPG)
+    ![选择所需的客户端Office应用程序：Excel、PowerPoint 或 Word。](../images/SelectHost.JPG)
 
 1. 按 F5。
 1. 在 Office 应用程序的“**主页**”功能区上，选择“**SSO ASP.NET**”组中的“**显示加载项**”以打开任务窗格加载项。
 1. 单击“**获取 OneDrive 文件名**”按钮。 如果使用 Microsoft 365 教育版 或工作帐户或 Microsoft 帐户登录 Office 并且 SSO 按预期工作，OneDrive for Business 中的前 10 个文件和文件夹名称将显示在任务窗格中。 如果您未登录，或者您位于不支持 SSO 的方案中，或者 SSO 因任何原因无法工作，系统将提示您登录。 登录后，将显示文件和文件夹名称。
+
+### <a name="testing-the-fallback-path"></a>测试回退路径
+
+若要测试回退授权路径，请通过以下步骤强制 SSO 路径失败。
+
+1. 将以下代码添加到 HomeES6.js 文件的方法 `getDataWithToken` 顶部。
+
+    ```javascript
+    function MockSSOError(code) {
+        this.code = code;
+    }
+    ```
+
+1. 然后，将以下行添加到同一方法中 块的顶部，即 调用 `try` 的正上方 `getAccessToken` 。
+
+    ```javascript
+    throw new MockSSOError("13003");
+    ```
 
 ## <a name="updating-the-add-in-when-you-go-to-staging-and-production"></a>转到暂存和生产时更新外接程序
 

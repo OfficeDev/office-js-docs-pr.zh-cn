@@ -1,30 +1,30 @@
 ---
 ms.date: 01/14/2020
-description: 了解如何实现易失性和脱机流式处理自定义函数。
+description: 了解如何实现可变和脱机流式处理自定义函数。
 title: 函数中的可变值
 localization_priority: Normal
-ms.openlocfilehash: 0f530e9d67894ebbc13c8b8a13e6219571c96ff1
-ms.sourcegitcommit: 5bfd1e9956485c140179dfcc9d210c4c5a49a789
+ms.openlocfilehash: f441ef4fb7f90add5318546e3ccf4cc8bc60a8cf
+ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/13/2020
-ms.locfileid: "49071631"
+ms.lasthandoff: 06/23/2021
+ms.locfileid: "53075885"
 ---
 # <a name="volatile-values-in-functions"></a>函数中的可变值
 
-可变函数是值在每次计算单元格时更改的函数。 即使函数的所有参数都不变，该值也可以更改。 每当 Excel 重新计算时，这些函数即会重新计算。 例如，假设某个单元格调用函数 `NOW`。 每当调用 `NOW` 时，它将自动返回当前的日期和时间。
+可变函数是每次计算单元格时值更改的函数。 即使函数的参数都未更改，值也可以更改。 每当 Excel 重新计算时，这些函数即会重新计算。 例如，假设某个单元格调用函数 `NOW`。 每当调用 `NOW` 时，它将自动返回当前的日期和时间。
 
 [!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
 Excel 包含多个内置可变函数，例如 `RAND` 和 `TODAY`。 有关 Excel 可变函数的完整列表，请参阅[可变函数和非可变函数](/office/client-developer/excel/excel-recalculation#volatile-and-non-volatile-functions)。
 
-利用自定义函数，您可以创建自己的可变函数，这在处理日期、时间、随机编号和建模时可能很有用。 例如， [Monte Carlo 模拟](https://en.wikipedia.org/wiki/Monte_Carlo_method) 要求生成随机输入以确定最佳解决方案。
+自定义函数允许您创建自己的可变函数，在处理日期、时间、随机数字和建模时，这些函数可能很有用。 例如， [为确定最佳解决方案，将要求](https://en.wikipedia.org/wiki/Monte_Carlo_method) 生成随机输入。
 
-如果选择自动生成 JSON 文件，则使用 JSDoc 注释标记声明一个可变函数 `@volatile` 。 有关自动生成的详细信息，请参阅自动 [生成自定义函数的 JSON 元数据](custom-functions-json-autogeneration.md)。
+如果选择自动生成 JSON 文件，请声明具有 JSDoc 注释标记的可变函数 `@volatile` 。 有关自动生成的信息，请参阅自动生成 [自定义函数的 JSON 元数据](custom-functions-json-autogeneration.md)。
 
-可变自定义函数的示例如下所示，模拟掷出六个侧骰子的情况。
+以下是一个可变自定义函数的示例，该函数模拟滚动六面切纸。
 
-![显示自定义函数的 gif，该函数返回随机值以模拟掷出的六边骰子](../images/six-sided-die.gif)
+![显示返回随机值的自定义函数的 GIF，用于模拟滚动六面切纸。](../images/six-sided-die.gif)
 
 ```JS
 /**
@@ -38,9 +38,9 @@ function roll6sided() {
 ```
 
 ## <a name="next-steps"></a>后续步骤
-* 了解 [自定义函数参数选项](custom-functions-parameter-options.md)。
+* 了解自定义 [函数参数选项](custom-functions-parameter-options.md)。
 
 ## <a name="see-also"></a>另请参阅
 
-* [手动创建自定义函数的 JSON 元数据](custom-functions-json.md)
+* [手动为自定义函数创建 JSON 元数据](custom-functions-json.md)
 * [在 Excel 中创建自定义函数](custom-functions-overview.md)

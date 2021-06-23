@@ -5,12 +5,12 @@ title: 开发生命周期概述
 description: 了解计划、开发、测试和发布生命周期事件。
 ms.date: 05/25/2021
 localization_priority: Priority
-ms.openlocfilehash: 4bd1e7e005c5905528196a547ba96ff786f8dbac
-ms.sourcegitcommit: a42ae8b804f944061c87bbd9d9f67990e4cf5e36
+ms.openlocfilehash: 37a31e57fe15504937e9ece42a4b0dea8328fa24
+ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2021
-ms.locfileid: "52697188"
+ms.lasthandoff: 06/23/2021
+ms.locfileid: "53076670"
 ---
 # <a name="development-lifecycle-overview"></a>开发生命周期概述
 
@@ -20,8 +20,8 @@ ms.locfileid: "52697188"
 
 |               |               |
 | ------------- | ------------- |
-| ![最佳做法](../images/i_best-practices_small.svg) | **计划**<br>[了解 Office 加载项的最佳做法和系统要求。](../concepts/add-in-development-best-practices.md) |
-| ![代码块](../images/i_code-blocks_small.svg) | **开发**<br>[了解开发 Office 加载项的 API 和模式。](../develop/develop-overview.md) |
-| ![建议的测试](../images/i_recommended-testing_small.svg) | **测试和调试**<br>[了解如何测试和调试 Office 加载项。](../testing/test-debug-office-add-ins.md) |
-| ![部署](../images/i_deploy_small.svg) | **发布**<br>[了解如何部署和发布 Office 加载项。](../publish/publish.md) |
-| ![参考](../images/i_reference_small.svg) | **参考**<br>[查看 Office JavaScript API、加载项清单、错误代码列表等参考文档。](../reference/javascript-api-for-office.md) |
+| :::image type="icon" source="../images/i_best-practices_small.svg"::: | **计划**<br>[了解 Office 加载项的最佳做法和系统要求。](../concepts/add-in-development-best-practices.md) |
+| :::image type="icon" source="../images/i_code-blocks_small.svg"::: | **开发**<br>[了解开发 Office 加载项的 API 和模式。](../develop/develop-overview.md) |
+| :::image type="icon" source="../images/i_recommended-testing_small.svg"::: | **测试和调试**<br>[了解如何测试和调试 Office 加载项。](../testing/test-debug-office-add-ins.md) |
+| :::image type="icon" source="../images/i_deploy_small.svg"::: | **发布**<br>[了解如何部署和发布 Office 加载项。](../publish/publish.md) |
+| :::image type="icon" source="../images/i_reference_small.svg"::: | **参考**<br>[查看 Office JavaScript API、加载项清单、错误代码列表等参考文档。](../reference/javascript-api-for-office.md) |

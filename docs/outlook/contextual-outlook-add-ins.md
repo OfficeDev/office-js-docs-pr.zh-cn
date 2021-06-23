@@ -3,12 +3,12 @@ title: 上下文 Outlook 加载项
 description: 无需离开邮件本身即可启用与邮件相关的任务，以此带来更便捷、更丰富的用户体验。
 ms.date: 04/09/2020
 localization_priority: Normal
-ms.openlocfilehash: c2cfbc1019048bb02186521c2cb81ed832934a8d
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: c9a01e05fa5bb0a0932da50b096fa2cb71cf3b34
+ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44608955"
+ms.lasthandoff: 06/23/2021
+ms.locfileid: "53076775"
 ---
 # <a name="contextual-outlook-add-ins"></a>上下文 Outlook 加载项
 
@@ -64,7 +64,7 @@ ms.locfileid: "44608955"
 
 **含有突出显示实体（地址）的文本示例**
 
-![在电子邮件中显示突出显示的实体](../images/outlook-detected-entity-highlight.png)
+![在电子邮件中显示突出显示的实体。](../images/outlook-detected-entity-highlight.png)
     
 当邮件中含有多个实体或上下文外接程序时，用户交互规则如下所示：
 
@@ -78,7 +78,7 @@ ms.locfileid: "44608955"
 
 **显示在卡片中的外接程序示例**
 
-![在卡片中显示上下文相关应用程序](../images/outlook-detected-entity-card.png)
+![在卡片中显示上下文应用。](../images/outlook-detected-entity-card.png)
 
 若要关闭卡片并结束该外接程序，用户可单击该卡片外的任意位置。
 

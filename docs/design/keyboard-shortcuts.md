@@ -3,12 +3,12 @@ title: 加载项中的Office快捷方式
 description: 了解如何将自定义键盘快捷方式（也称为组合键）Office加载项。
 ms.date: 06/02/2021
 localization_priority: Normal
-ms.openlocfilehash: c419731eec5c4707b04dd1e1e07d62aa3b0458a8
-ms.sourcegitcommit: ba4fb7087b9841d38bb46a99a63e88df49514a4d
+ms.openlocfilehash: f550190aa6cc68824b97dc3b592e92db50adcaac
+ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/05/2021
-ms.locfileid: "52779339"
+ms.lasthandoff: 06/23/2021
+ms.locfileid: "53076313"
 ---
 # <a name="add-custom-keyboard-shortcuts-to-your-office-add-ins"></a>将自定义键盘快捷方式添加到Office加载项
 
@@ -207,11 +207,11 @@ ms.locfileid: "52779339"
 
 如果发生冲突，用户将在第一次尝试使用冲突的键盘快捷方式时看到一个对话框，请注意，此对话框中显示的动作名称是文件中 action 对象中的 属性。 `name` `shortcuts.json`
 
-![插图显示具有单个快捷方式的两个不同操作的冲突模式](../images/add-in-shortcut-conflict-modal.png)
+![插图显示具有单个快捷方式的两个不同操作的冲突模式。](../images/add-in-shortcut-conflict-modal.png)
 
 用户可以选择键盘快捷方式将执行的操作。 做出选择后，保存首选项，供将来使用同一快捷方式。 快捷方式首选项按用户、平台保存。 如果用户希望更改其首选项，他们可以从"告诉我"搜索框中调用"重置Office外接程序快捷方式首选项"命令。  调用命令可清除用户的所有加载项快捷方式首选项，并且用户下次尝试使用冲突快捷方式时，会再次看到冲突对话框提示：
 
-![显示外接程序快捷方式首选项Excel重置Office中的"告诉我"搜索框](../images/add-in-reset-shortcuts-action.png)
+!["告诉我"搜索框显示在Excel快捷方式首选项Office重置操作。](../images/add-in-reset-shortcuts-action.png)
 
 为了获得最佳用户体验，我们建议您尽量减少与以下Excel冲突：
 

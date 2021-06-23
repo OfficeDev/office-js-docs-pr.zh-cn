@@ -3,12 +3,12 @@ title: 在 Visual Studio 中调试 Office 加载项
 description: 使用 Visual Studio 在 Windows 上的 Office 桌面客户端中调试 Office 加载项
 ms.date: 12/31/2019
 localization_priority: Normal
-ms.openlocfilehash: 2466c314345d1bf6dbfa38bc6f6508b4386fa633
-ms.sourcegitcommit: 4fa952f78be30d339ceda3bd957deb07056ca806
+ms.openlocfilehash: d325c25e6a9fe219334a6e2503718603f9e85c9c
+ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/16/2021
-ms.locfileid: "52961207"
+ms.lasthandoff: 06/23/2021
+ms.locfileid: "53076523"
 ---
 # <a name="debug-office-add-ins-in-visual-studio"></a>在 Visual Studio 中调试 Office 加载项
 
@@ -129,7 +129,7 @@ ms.locfileid: "52961207"
 
 1. 在 Excel、PowerPoint 或 Word 中，选择“**插入**”选项卡，然后选择“**我的外接程序**”右侧的向下箭头。
 
-    ![Screenshot showing Insert ribbon in Excel on Windows with the My Add-ins arrow highlighted](../images/excel-cf-register-add-in-1b.png)
+    ![Screenshot showing Insert ribbon in Excel on Windows with the My Add-ins arrow highlighted.](../images/excel-cf-register-add-in-1b.png)
 
 2. 在可用外接程序列表中，找到“**开发人员外接程序**”部分并选择你的外接程序进行注册。
 

@@ -1,18 +1,18 @@
 ---
 title: Office 外接程序的品牌模式设计准则
-description: 了解如何在保持与 Office 的可视化设计兼容的同时品牌化 Office 外接程序。
+description: 了解如何打造外接程序Office品牌，同时与外接程序的可视化设计保持Office。
 ms.date: 06/26/2018
 localization_priority: Normal
-ms.openlocfilehash: 9571b2771767a60f715ac7f3bc83a501907039d9
-ms.sourcegitcommit: ceb8dd66f3fb9c963fce8446c2f6c65ead56fbc1
+ms.openlocfilehash: b42d3a722e4f8805e8c03d2e1a5db528a66f1202
+ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "49132086"
+ms.lasthandoff: 06/23/2021
+ms.locfileid: "53076369"
 ---
 # <a name="branding-patterns"></a>品牌模式
 
-这些模式为你的外接程序用户提供品牌知名度和上下文。
+这些模式为您的外接程序用户提供品牌可见性和上下文。
 
 ## <a name="best-practices"></a>最佳做法
 
@@ -30,10 +30,10 @@ ms.locfileid: "49132086"
 
 品牌栏是页脚中的一个区域，其中包含品牌名称和徽标。 此外，它还可以用作品牌网站和可选访问位置的链接。
 
-![在 Office 桌面应用程序的加载项任务窗格中显示的品牌栏](../images/add-in-brand-bar.png)
+![桌面应用程序的外接程序任务窗格中显示的品牌Office栏。](../images/add-in-brand-bar.png)
 
 ## <a name="splash-screen"></a>初始屏幕
 
 使用此屏幕在外接程序正在加载或转换 UI 状态时显示你的品牌。
 
-![在 Office 桌面应用程序的加载项任务窗格中显示的启动屏幕的品牌](../images/add-in-splash-screen.png)
+![品牌初始屏幕显示在桌面应用程序外接程序任务窗格中Office屏幕。](../images/add-in-splash-screen.png)

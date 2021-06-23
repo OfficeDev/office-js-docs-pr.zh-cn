@@ -4,12 +4,12 @@ description: 了解如何配置Outlook加载项进行基于事件的激活。
 ms.topic: article
 ms.date: 06/08/2021
 localization_priority: Normal
-ms.openlocfilehash: d9bfee1825bcdf175cc263888700b539024ee717
-ms.sourcegitcommit: 5a151d4df81e5640363774406d0f329d6a0d3db8
+ms.openlocfilehash: 07790ee84693596f4873bc04d53c1e76c3825b4d
+ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2021
-ms.locfileid: "52853953"
+ms.lasthandoff: 06/23/2021
+ms.locfileid: "53076789"
 ---
 # <a name="configure-your-outlook-add-in-for-event-based-activation"></a>配置Outlook加载项进行基于事件的激活
 
@@ -37,7 +37,7 @@ ms.locfileid: "52853953"
 |`OnInfoBarDismissClicked`|在撰写邮件或约会项目时关闭通知。 仅通知添加了通知的外接程序。|预览|
 
 > [!IMPORTANT]
-> 仍在预览中的事件仅在 web 和 Microsoft 365 Outlook 中的 Windows 订阅中Windows。 有关详细信息，请参阅 [本文中的](#how-to-preview) 如何预览。 预览事件不应在生产外接程序中使用。
+> 仍在预览中的事件仅适用于 Microsoft 365 订阅Outlook 网页版和 Windows。 有关详细信息，请参阅 [本文中的](#how-to-preview) 如何预览。 预览事件不应在生产外接程序中使用。
 
 ### <a name="how-to-preview"></a>如何预览
 
@@ -45,16 +45,16 @@ ms.locfileid: "52853953"
 
 预览这些事件：
 
-- For Outlook on the web：
+- 例如Outlook 网页版：
   - [在租户 上配置Microsoft 365版本](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide&preserve-view=true#set-up-the-release-option-in-the-admin-center)。
-  - 在 上 **引用** beta https://appsforoffice.microsoft.com/lib/beta/hosted/office.js) CDN (。 TypeScript[编译和](https://appsforoffice.microsoft.com/lib/beta/hosted/office.d.ts)定义的类型IntelliSense位于 CDN[和 DefinitelyTyped 中](https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/master/types/office-js-preview/index.d.ts)。 可以使用 安装这些类型 `npm install --save-dev @types/office-js-preview` 。
+  - 在 上 **引用** beta https://appsforoffice.microsoft.com/lib/beta/hosted/office.js) CDN (。 TypeScript[编译和](https://appsforoffice.microsoft.com/lib/beta/hosted/office.d.ts)定义类型定义IntelliSense位于 CDN[和 DefinitelyTyped 中](https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/master/types/office-js-preview/index.d.ts)。 可以使用 安装这些类型 `npm install --save-dev @types/office-js-preview` 。
 - 有关Outlook Windows：
   - 最低要求版本为 16.0.14026.20000。 加入[Office 预览体验计划](https://insider.office.com)，以访问 Office beta 版本。
   - 配置注册表。 Outlook包括 Office.js 的生产和 beta 版本的本地副本，而不是从 CDN。 默认情况下，将引用 API 的本地生产副本。 若要切换到 JavaScript API 的本地 beta Outlook，需要添加此注册表项，否则可能无法找到 beta API。
     1. 创建注册表项 `HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\Outlook\Options\WebExt\Developer` 。
     1. 添加一个名为 的 `EnableBetaAPIsInJavaScript` 条目，将值设置为 `1` 。 下图显示注册表应该呈现的状态。
 
-        ![具有 EnableBetaAPIsInJavaScript 注册表项值的注册表编辑器的屏幕截图](../images/outlook-beta-registry-key.png)
+        ![具有 EnableBetaAPIsInJavaScript 注册表项值的注册表编辑器的屏幕截图。](../images/outlook-beta-registry-key.png)
 
 ## <a name="set-up-your-environment"></a>设置环境
 
@@ -177,7 +177,7 @@ ms.locfileid: "52853953"
 </VersionOverrides>
 ```
 
-Outlook Windows使用 JavaScript 文件，Outlook Web 上的开发人员使用可以引用同一 JavaScript 文件的 HTML 文件。 你必须在清单的节点中提供对这两个文件的引用，因为 Outlook 平台最终确定是使用 HTML 还是基于 Outlook `Resources` 客户端的 JavaScript。 因此，若要配置事件处理，请提供 HTML 在 元素中的位置，然后在其子元素中提供 JavaScript 文件内附或 HTML `Runtime` `Override` 引用的位置。
+Outlook Windows使用 JavaScript 文件，Outlook 网页版使用可引用同一 JavaScript 文件的 HTML 文件。 你必须在清单的节点中提供对这两个文件的引用，因为 Outlook 平台最终确定是使用 HTML 还是基于 Outlook `Resources` 客户端的 JavaScript。 因此，若要配置事件处理，请提供 HTML 在 元素中的位置，然后在其子元素中提供 JavaScript 文件内附或 HTML `Runtime` `Override` 引用的位置。
 
 > [!TIP]
 > 若要了解有关加载项清单Outlook，请参阅Outlook[加载项清单](manifests.md)。
@@ -243,11 +243,11 @@ Outlook Windows使用 JavaScript 文件，Outlook Web 上的开发人员使用�
 
 1. 在 Outlook 网页版中，创建新邮件。
 
-    ![在撰写时设置主题Outlook网页中的邮件窗口屏幕截图](../images/outlook-web-autolaunch-1.png)
+    ![撰写时主题设置Outlook 网页版窗口中邮件窗口的屏幕截图。](../images/outlook-web-autolaunch-1.png)
 
 1. 在Outlook中Windows新建一封邮件。
 
-    ![撰写时主题集Outlook Windows中邮件窗口的屏幕截图](../images/outlook-win-autolaunch.png)
+    ![撰写时主题集Outlook Windows窗口中的消息窗口屏幕截图。](../images/outlook-win-autolaunch.png)
 
     > [!NOTE]
     > 如果您从 localhost 运行您的外接程序，并且看到错误"很抱歉，我们无法访问 *{your-add-in-name-here}*。 请确保具有网络连接。 如果问题继续，请稍后重试。"，你可能需要启用环回豁免。
@@ -267,7 +267,7 @@ Outlook Windows使用 JavaScript 文件，Outlook Web 上的开发人员使用�
 在外接程序中对启动事件处理进行更改时，应注意：
 
 - 如果更新了清单 [，请删除加载项，](sideload-outlook-add-ins-for-testing.md#remove-a-sideloaded-add-in) 然后再次旁加载它。
-- 如果对清单外的文件进行了更改，请关闭并重新打开Outlook，Windows或刷新在 web 上Outlook浏览器选项卡。
+- 如果对清单外的文件进行了更改，请关闭并重新打开Outlook或Windows浏览器选项卡以Outlook 网页版。
 
 实现自己的功能时，可能需要调试代码。 有关如何调试基于事件的外接程序激活的指南，请参阅调试基于事件Outlook[外接程序](debug-autolaunch.md)。
 
@@ -275,9 +275,9 @@ Outlook Windows使用 JavaScript 文件，Outlook Web 上的开发人员使用�
 
 ## <a name="deploy-to-users"></a>部署到用户
 
-通过管理中心上传清单，可以部署Microsoft 365加载项。 在管理门户中，展开设置窗格中的"集成应用"部分，然后选择"**集成应用"。** 在"**集成应用"** 页上，选择 **"Upload应用"** 操作。
+可以通过在加载项中上传清单来部署基于事件的Microsoft 365 管理中心。 在管理门户中，展开设置窗格中的"集成应用"部分，然后选择"**集成应用"。** 在"**集成应用"** 页上，选择 **"Upload应用"** 操作。
 
-![管理中心上"集成应用"Microsoft 365的屏幕截图，包括Upload自定义应用操作](../images/outlook-deploy-event-based-add-ins.png)
+![页面上"集成应用"页面的屏幕截图Microsoft 365 管理中心自定义Upload操作。](../images/outlook-deploy-event-based-add-ins.png)
 
 AppSource 和客户端存储：即将推出部署基于事件的加载项或更新现有加载项以包含基于事件的激活功能的功能。
 

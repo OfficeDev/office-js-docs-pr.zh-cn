@@ -1,19 +1,19 @@
 ---
-title: 使用 Excel JavaScript API 设置和获取区域值、文本或公式
-description: 了解如何使用 Excel JavaScript API 设置和获取区域值、文本或公式。
+title: 使用 JavaScript API 设置和获取区域Excel文本或公式
+description: 了解如何使用 JavaScript API Excel和获取区域值、文本或公式。
 ms.date: 04/02/2021
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: ad6e58c6e9fe3246d23d6ef1dd298fc6c18167a2
-ms.sourcegitcommit: 54fef33bfc7d18a35b3159310bbd8b1c8312f845
+ms.openlocfilehash: 5d9d1bf3b248585bf27ac591754cfa4eb4dd0fbc
+ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2021
-ms.locfileid: "51652793"
+ms.lasthandoff: 06/23/2021
+ms.locfileid: "53075745"
 ---
-# <a name="set-and-get-range-values-text-or-formulas-using-the-excel-javascript-api"></a>使用 Excel JavaScript API 设置和获取区域值、文本或公式
+# <a name="set-and-get-range-values-text-or-formulas-using-the-excel-javascript-api"></a>使用 JavaScript API 设置和获取区域Excel文本或公式
 
-本文提供的代码示例使用 Excel JavaScript API 设置和获取区域值、文本或公式。 有关对象支持的属性和方法的完整列表，请参阅 `Range` [Excel.Range 类](/javascript/api/excel/excel.range)。
+本文提供使用 JavaScript API 设置和获取区域值、文本或公式Excel示例。 有关对象支持的属性和方法的完整列表，请参阅 `Range` [Excel。Range 类](/javascript/api/excel/excel.range)。
 
 [!include[Excel cells and ranges note](../includes/note-excel-cells-and-ranges.md)]
 
@@ -39,11 +39,11 @@ Excel.run(function (context) {
 
 #### <a name="data-before-cell-value-is-updated"></a>更新单元格值之前的数据
 
-![Excel 中更新单元格值之前的数据](../images/excel-ranges-set-start.png)
+![更新Excel之前的数据。](../images/excel-ranges-set-start.png)
 
 #### <a name="data-after-cell-value-is-updated"></a>更新单元格值之后的数据
 
-![Excel 中更新单元格值之后的数据](../images/excel-ranges-set-cell-value.png)
+![单元格值Excel之后，数据将返回数据。](../images/excel-ranges-set-cell-value.png)
 
 ### <a name="set-values-for-a-range-of-cells"></a>设置多个单元格的值
 
@@ -67,11 +67,11 @@ Excel.run(function (context) {
 
 #### <a name="data-before-cell-values-are-updated"></a>更新多个单元格值之前的数据
 
-![Excel 中更新多个单元格值之前的数据](../images/excel-ranges-set-start.png)
+![更新Excel值之前的数据。](../images/excel-ranges-set-start.png)
 
 #### <a name="data-after-cell-values-are-updated"></a>更新多个单元格值之后的数据
 
-![Excel 中更新多个单元格值之后的数据](../images/excel-ranges-set-cell-values.png)
+![单元格值Excel之后的数据。](../images/excel-ranges-set-cell-values.png)
 
 ### <a name="set-formula-for-a-single-cell"></a>设置单个单元格的公式
 
@@ -91,11 +91,11 @@ Excel.run(function (context) {
 
 #### <a name="data-before-cell-formula-is-set"></a>设置单元格公式之前的数据
 
-![Excel 中设置单元格公式之前的数据](../images/excel-ranges-start-set-formula.png)
+![设置Excel之前的数据。](../images/excel-ranges-start-set-formula.png)
 
 #### <a name="data-after-cell-formula-is-set"></a>设置单元格公式之后的数据
 
-![Excel 中设置单元格公式之后的数据](../images/excel-ranges-set-formula.png)
+![设置单元格Excel之后的数据。](../images/excel-ranges-set-formula.png)
 
 ### <a name="set-formulas-for-a-range-of-cells"></a>设置多个单元格的公式
 
@@ -122,11 +122,11 @@ Excel.run(function (context) {
 
 #### <a name="data-before-cell-formulas-are-set"></a>设置多个单元格公式之前的数据
 
-![Excel 中设置多个单元格公式之前的数据](../images/excel-ranges-start-set-formula.png)
+![设置Excel之前的数据。](../images/excel-ranges-start-set-formula.png)
 
 #### <a name="data-after-cell-formulas-are-set"></a>设置多个单元格公式之后的数据
 
-![Excel 中设置多个单元格公式之后的数据](../images/excel-ranges-set-formulas.png)
+![设置Excel之后的数据。](../images/excel-ranges-set-formulas.png)
 
 ## <a name="get-values-text-or-formulas"></a>获取值、文本或公式
 
@@ -151,7 +151,7 @@ Excel.run(function (context) {
 
 #### <a name="data-in-range-values-in-column-e-are-a-result-of-formulas"></a>区域中的数据（E 列中的值为公式的结果）
 
-![Excel 中设置多个单元格公式之后的数据](../images/excel-ranges-set-formulas.png)
+![设置Excel之后的数据。](../images/excel-ranges-set-formulas.png)
 
 #### <a name="rangevalues-as-logged-to-the-console-by-the-code-sample-above"></a>range.values（通过上面的代码示例记录到控制台）
 
@@ -209,7 +209,7 @@ Excel.run(function (context) {
 
 #### <a name="data-in-range-values-in-column-e-are-a-result-of-formulas"></a>区域中的数据（E 列中的值为公式的结果）
 
-![Excel 中设置多个单元格公式之后的数据](../images/excel-ranges-set-formulas.png)
+![设置Excel之后的数据。](../images/excel-ranges-set-formulas.png)
 
 #### <a name="rangetext-as-logged-to-the-console-by-the-code-sample-above"></a>range.text（通过上面的代码示例记录到控制台）
 
@@ -267,7 +267,7 @@ Excel.run(function (context) {
 
 #### <a name="data-in-range-values-in-column-e-are-a-result-of-formulas"></a>区域中的数据（E 列中的值为公式的结果）
 
-![Excel 中设置多个单元格公式之后的数据](../images/excel-ranges-set-formulas.png)
+![设置Excel之后的数据。](../images/excel-ranges-set-formulas.png)
 
 #### <a name="rangeformulas-as-logged-to-the-console-by-the-code-sample-above"></a>range.formulas（通过上面的代码示例记录到控制台）
 
@@ -309,6 +309,6 @@ Excel.run(function (context) {
 ## <a name="see-also"></a>另请参阅
 
 - [Excel 加载项中的 Word JavaScript 对象模型](excel-add-ins-core-concepts.md)
-- [使用 Excel JavaScript API 处理单元格](excel-add-ins-cells.md)
-- [使用 Excel JavaScript API 设置和获取区域](excel-add-ins-ranges-set-get.md)
-- [使用 Excel JavaScript API 设置区域格式](excel-add-ins-ranges-set-format.md)
+- [使用 JavaScript API Excel单元格](excel-add-ins-cells.md)
+- [使用 JavaScript API Excel和获取范围](excel-add-ins-ranges-set-get.md)
+- [使用 JavaScript API Excel区域格式](excel-add-ins-ranges-set-format.md)

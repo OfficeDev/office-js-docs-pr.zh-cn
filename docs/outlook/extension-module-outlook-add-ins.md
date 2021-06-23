@@ -3,12 +3,12 @@ title: 模块扩展 Outlook 加载项
 description: 可以创建在 Outlook 中运行的应用程序，以便用户无需退出 Outlook 即可轻松地访问业务信息和工作效率工具。
 ms.date: 05/27/2020
 localization_priority: Normal
-ms.openlocfilehash: ba25a10e0f6e8c8b3b14df7e98ff200e00717136
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 3a02e93375f1c0872790d050382a14bc2c324cef
+ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44611643"
+ms.lasthandoff: 06/23/2021
+ms.locfileid: "53077083"
 ---
 # <a name="module-extension-outlook-add-ins"></a>模块扩展 Outlook 加载项
 
@@ -27,13 +27,13 @@ ms.locfileid: "44611643"
 
 ![当一个模块扩展在 Outlook 中加载时，显示展开的导航栏。](../images/outlook-module-navigationbar-one.png)
 
-在加载多个加载项时，会显示**加载项**一词。单击其中任何一个即可打开扩展的用户界面。
+在加载多个加载项时，会显示 **加载项** 一词。单击其中任何一个即可打开扩展的用户界面。
 
 ![当多个模块扩展在 Outlook 中加载时，显示展开的导航栏。](../images/outlook-module-navigationbar-more.png)
 
 在单击扩展时，Outlook 会将内置模块替换为自定义模块，以便用户可以与该加载项进行交互。 你可以使用外接程序中 Outlook JavaScript API 的所有功能，可以在与外接程序内容交互的 Outlook 功能区中创建命令按钮。 以下屏幕截图显示集成在 Outlook 导航栏中的加载项，并拥有将更新该加载项内容的功能区命令。
 
-![显示模块扩展的用户界面](../images/outlook-module-extension.png)
+![显示模块扩展的用户界面。](../images/outlook-module-extension.png)
 
 ## <a name="example"></a>示例
 

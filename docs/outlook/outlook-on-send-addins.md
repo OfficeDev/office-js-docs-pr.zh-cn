@@ -3,12 +3,12 @@ title: Outlook 加载项的 Onsend 功能
 description: 提供了一种处理项目或阻止用户进行特定操作的方法，并允许加载项在发送时设置某些属性。
 ms.date: 06/15/2021
 localization_priority: Normal
-ms.openlocfilehash: a731ee6c44c8559f6448e0f4705652dc14c42d74
-ms.sourcegitcommit: 0bf0e076f705af29193abe3dba98cbfcce17b24f
+ms.openlocfilehash: 9c56160fdfeb2df2e78ee8a9db8750841d043d87
+ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2021
-ms.locfileid: "53007802"
+ms.lasthandoff: 06/23/2021
+ms.locfileid: "53077034"
 ---
 # <a name="on-send-feature-for-outlook-add-ins"></a>Outlook 加载项的 Onsend 功能
 
@@ -56,7 +56,7 @@ on-send 功能是由事件类型 `ItemSend` 触发的，无 UI。
 
 <br/>
 
-![屏幕截图显示一个错误消息，提示用户输入缺失的主题行](../images/block-on-send-subject-cc-inforbar.png)
+![屏幕截图显示一条错误消息，提示用户输入缺失的主题行。](../images/block-on-send-subject-cc-inforbar.png)
 
 <br/>
 
@@ -66,7 +66,7 @@ on-send 功能是由事件类型 `ItemSend` 触发的，无 UI。
 
 <br/>
 
-![屏幕截图显示一条错误消息，告诉用户已找到禁止使用的词语](../images/block-on-send-body.png)
+![Screenshot showing an error message telling the user that blocked words were found.](../images/block-on-send-body.png)
 
 ## <a name="limitations"></a>限制
 

@@ -1,14 +1,14 @@
 ---
 title: 创建字典任务窗格加载项
-description: 了解如何创建字典任务窗格加载项
+description: 了解如何创建字典任务窗格外接程序
 ms.date: 09/26/2019
 localization_priority: Normal
-ms.openlocfilehash: b3859b9557b5b74d9c4e487937df69c99b1ba7d1
-ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
+ms.openlocfilehash: 2d79a40511d28cdf5d11c33435703009b1793dc2
+ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "47294204"
+ms.lasthandoff: 06/23/2021
+ms.locfileid: "53077223"
 ---
 # <a name="create-a-dictionary-task-pane-add-in"></a>创建字典任务窗格加载项
 
@@ -21,29 +21,29 @@ ms.locfileid: "47294204"
 
 *图 1：显示选定字词的定义的字典加载项*
 
-![显示定义的字典应用](../images/dictionary-agave-01.jpg)
+![显示定义的字典应用。](../images/dictionary-agave-01.jpg)
 
-您需要确定在字典外接程序的 HTML UI 中单击 " **查看更多** " 链接，以在任务窗格中显示更多信息，还是打开一个单独的浏览器窗口，以在所选单词或短语的完整网页上显示。
-图 2 显示“定义”**** 上下文菜单命令，允许用户快速启动已安装的字典。 图 3 至 5 显示了 Office 用户界面中使用字典 XML 服务提供 Word 2013 定义的位置。
+由你来决定是单击字典外接程序的 HTML  UI 中的"查看更多"链接在任务窗格中显示更多信息，还是打开单独的浏览器窗口来显示选定单词或短语的完整网页。
+图 2 显示“定义”上下文菜单命令，允许用户快速启动已安装的字典。 图 3 至 5 显示了 Office 用户界面中使用字典 XML 服务提供 Word 2013 定义的位置。
 
 *图 2.定义上下文菜单中的命令*
 
-![定义上下文菜单](../images/dictionary-agave-02.jpg)
+![定义上下文菜单。](../images/dictionary-agave-02.jpg)
 
 
 *图 3.“拼写”和“语法”窗格中的定义*
 
-![“拼写”和“语法”窗格中的定义](../images/dictionary-agave-03.jpg)
+!["拼写和语法"窗格中的定义。](../images/dictionary-agave-03.jpg)
 
 
 *图 4.“同义词库”窗格中的定义*
 
-![“同义词库”窗格中的定义](../images/dictionary-agave-04.jpg)
+![同义词库窗格中的定义。](../images/dictionary-agave-04.jpg)
 
 
 *图 5.“阅读模式”中的定义*
 
-![“阅读模式”中的定义](../images/dictionary-agave-05.jpg)
+![阅读模式下的定义。](../images/dictionary-agave-05.jpg)
 
 若要创建可提供字典查找的任务窗格外接程序，需创建两个主要组件： 
 
@@ -54,38 +54,38 @@ ms.locfileid: "47294204"
     
 以下各节提供了有关如何创建这些组件的示例。
 
-## <a name="creating-a-dictionary-xml-web-service"></a>创建字典 XML Web 服务
+## <a name="creating-a-dictionary-xml-web-service&quot;></a>创建字典 XML Web 服务
 
 
 XML Web 服务必须将对 Web 服务的查询作为符合 OfficeDefinitions XML 架构的 XML 返回。以下两节介绍了 OfficeDefinitions XML 架构，并提供有关如何对返回该 XML 格式查询的 XML Web 服务编码的示例。
 
 
-### <a name="officedefinitions-xml-schema"></a>OfficeDefinitions XML 架构
+### <a name=&quot;officedefinitions-xml-schema&quot;></a>OfficeDefinitions XML 架构
 
 以下代码显示用于 OfficeDefinitions XML 架构的 XSD。
 
 
 ```XML
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?>
 <xs:schema
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xmlns:xs="https://www.w3.org/2001/XMLSchema"
-  targetNamespace="http://schemas.microsoft.com/NLG/2011/OfficeDefinitions"
-  xmlns="http://schemas.microsoft.com/NLG/2011/OfficeDefinitions">
-  <xs:element name="Result">
+  xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
+  xmlns:xs=&quot;https://www.w3.org/2001/XMLSchema&quot;
+  targetNamespace=&quot;http://schemas.microsoft.com/NLG/2011/OfficeDefinitions&quot;
+  xmlns=&quot;http://schemas.microsoft.com/NLG/2011/OfficeDefinitions&quot;>
+  <xs:element name=&quot;Result&quot;>
     <xs:complexType>
       <xs:sequence>
-        <xs:element name="SeeMoreURL" type="xs:anyURI"/>
-        <xs:element name="Definitions" type="DefinitionListType"/>
+        <xs:element name=&quot;SeeMoreURL&quot; type=&quot;xs:anyURI&quot;/>
+        <xs:element name=&quot;Definitions&quot; type=&quot;DefinitionListType&quot;/>
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:complexType name="DefinitionListType">
+  <xs:complexType name=&quot;DefinitionListType&quot;>
     <xs:sequence>
-      <xs:element name="Definition" maxOccurs="3">
+      <xs:element name=&quot;Definition&quot; maxOccurs=&quot;3&quot;>
         <xs:simpleType>
-          <xs:restriction base="xs:normalizedString">
-            <xs:maxLength value="400"/>
+          <xs:restriction base=&quot;xs:normalizedString&quot;>
+            <xs:maxLength value=&quot;400&quot;/>
           </xs:restriction>
         </xs:simpleType>
       </xs:element>
@@ -94,13 +94,13 @@ XML Web 服务必须将对 Web 服务的查询作为符合 OfficeDefinitions XML
 </xs:schema>
 ```
 
-返回的符合 OfficeDefinitions 架构的 XML 包含一个根 `Result` 元素，其中包含一个 `Definitions` 从零到三 `Definition` 个子元素的元素，其中每个子元素都包含长度不超过400个字符的定义。 此外，还必须在元素中提供字典网站上的完整页面的 URL `SeeMoreURL` 。 以下示例演示返回的符合 OfficeDefinitions 架构的 XML 的结构。
+返回的符合 OfficeDefinitions 架构的 XML 包含一个根元素，其中包含一个从零到三个子元素的元素，每个子元素包含长度不超过 `Result` `Definitions` `Definition` 400 个字符的定义。 此外，必须在 元素中提供字典网站上完整页面的 `SeeMoreURL` URL。 以下示例演示返回的符合 OfficeDefinitions 架构的 XML 的结构。
 
 ```XML
-<?xml version="1.0" encoding="utf-8"?>
-<Result xmlns="http://schemas.microsoft.com/NLG/2011/OfficeDefinitions">
-  <SeeMoreURL xmlns="">www.bing.com/dictionary/search?q=example</SeeMoreURL>
-  <Definitions xmlns="">
+<?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?>
+<Result xmlns=&quot;http://schemas.microsoft.com/NLG/2011/OfficeDefinitions&quot;>
+  <SeeMoreURL xmlns=&quot;&quot;>www.bing.com/dictionary/search?q=example</SeeMoreURL>
+  <Definitions xmlns=&quot;&quot;>
     <Definition>Definition1</Definition>
     <Definition>Definition2</Definition>
     <Definition>Definition3</Definition>
@@ -110,7 +110,7 @@ XML Web 服务必须将对 Web 服务的查询作为符合 OfficeDefinitions XML
 ```
 
 
-### <a name="sample-dictionary-xml-web-service"></a>示例字典 XML Web 服务
+### <a name=&quot;sample-dictionary-xml-web-service&quot;></a>示例字典 XML Web 服务
 
 以下 C# 代码提供了一个有关如何为 XML Web 服务编写代码的简单示例，该服务以 OfficeDefinitions XML 格式返回字典查询的结果。
 
@@ -129,7 +129,7 @@ using System.Net;
 /// <summary>
 /// Summary description for _Default
 /// </summary>
-[WebService(Namespace = "http://tempuri.org/")]
+[WebService(Namespace = &quot;http://tempuri.org/")]
 [WebServiceBinding(ConformsTo = WsiProfiles.BasicProfile1_1)]
 // To allow this web service to be called from script, using ASP.NET AJAX, uncomment the following line. 
 // [System.Web.Script.Services.ScriptService]
@@ -258,7 +258,7 @@ public class WebService : System.Web.Services.WebService {
 </OfficeApp>
 ```
 
-`Dictionary`以下各节介绍了特定于创建字典外接程序清单文件的元素及其子元素。 有关清单文件中的其他元素的信息，请参阅 [Office 外接程序 XML 清单](../develop/add-in-manifests.md)。
+以下各节介绍了特定于创建字典加载项清单文件的 元素 `Dictionary` 及其子元素。 有关清单文件中的其他元素的信息，请参阅 [Office 外接程序 XML 清单](../develop/add-in-manifests.md)。
 
 
 ### <a name="dictionary-element"></a>Dictionary 元素
@@ -276,7 +276,7 @@ public class WebService : System.Web.Services.WebService {
 
  **备注**
 
-`Dictionary`创建字典加载项时，会将元素及其子元素添加到任务窗格加载项的清单中。
+当您创建字典外接程序时，元素及其子元素将添加到任务窗格 `Dictionary` 外接程序的清单中。
 
 
 #### <a name="targetdialects-element"></a>TargetDialects 元素
@@ -294,7 +294,7 @@ public class WebService : System.Web.Services.WebService {
 
  **备注**
 
-`TargetDialects`元素及其子元素指定字典包含的一组区域语言。 例如，如果字典同时适用于西班牙语（墨西哥）和西班牙语（秘鲁），但不适用于西班牙语（西班牙），可以在此元素中进行指定。 请勿在此清单中指定多种语言（例如，西班牙语和英语）。 请将各种语言发布为单独的字典。
+元素 `TargetDialects` 及其子元素指定字典包含的区域语言集。 例如，如果字典同时适用于西班牙语（墨西哥）和西班牙语（秘鲁），但不适用于西班牙语（西班牙），可以在此元素中进行指定。 请勿在此清单中指定多种语言（例如，西班牙语和英语）。 请将各种语言发布为单独的字典。
 
  **示例**
 
@@ -377,7 +377,7 @@ public class WebService : System.Web.Services.WebService {
 
 此元素指定将在从 Web 服务返回的内容之下的行中显示的引文文本的开头（例如，“Results by:”或“Powered by:”）。
 
-对于此元素，您可以使用元素指定其他区域设置的值 `Override` 。 例如，如果用户正在运行 Office 的西班牙语 SKU，但使用的是英语字典，则允许引文行读取“Resultados por: Bing”，而不是“Results by: Bing”。 有关如何指定其他区域设置的值的详细信息，请参阅 [Office 外接程序 XML 清单](../develop/add-in-manifests.md)中的“为不同区域设置提供设置”一节。
+对于此元素，可以使用 元素指定其他区域设置 `Override` 的值。 例如，如果用户正在运行 Office 的西班牙语 SKU，但使用的是英语字典，则允许引文行读取“Resultados por: Bing”，而不是“Results by: Bing”。 有关如何指定其他区域设置的值的详细信息，请参阅 [Office 外接程序 XML 清单](../develop/add-in-manifests.md)中的“为不同区域设置提供设置”一节。
 
  **示例**
 
@@ -518,7 +518,7 @@ a:hover, a:active
 
 *图 6.演示词典 UI*
 
-![演示字典 UI](../images/dictionary-agave-06.jpg)
+![演示字典 UI。](../images/dictionary-agave-06.jpg)
 
 
 ### <a name="writing-the-javascript-implementation"></a>编写 JavaScript 实现
@@ -526,16 +526,16 @@ a:hover, a:active
 
 以下示例显示 Dictionary.js 文件中的 JavaScript 实现（该文件从外接程序的 HTML 页面调用，以提供演示字典外接程序的编程逻辑）。 该脚本重新使用以前介绍的 XML Web 服务。 脚本作为示例 Web 服务被置于同一目录中时将从该服务获取定义。 它可以通过修改文件顶部的 `xmlServiceURL` 变量来使用符合 XML Web 服务的公用 OfficeDefinitions，然后将拼音的 Bing API 键替换为正确注册的键。
 
-Office JavaScript API 的主要成员 ( # A0) ，从该实现中调用，如下所示：
+从此实现Office JavaScript API (Office.js) 的主要成员如下：
 
 
-- 对象的 [initialize](/javascript/api/office) 事件 `Office` ，在初始化外接程序上下文时引发，并提供对表示加载项与之交互的文档的 [document](/javascript/api/office/office.document) 对象实例的访问。
+- 对象的[initialize](/javascript/api/office)事件，在初始化外接程序上下文时引发，并提供对 Document 对象实例的访问权限，该对象实例表示外接程序与之 `Office` 交互的文档。 [](/javascript/api/office/office.document)
     
-- 对象的 [addHandlerAsync](/javascript/api/office/office.document#addhandlerasync-eventtype--handler--options--callback-) 方法，该方法 `Document` 在函数中调用， `initialize` 以添加文档的 [SelectionChanged](/javascript/api/office/office.documentselectionchangedeventargs) 事件的事件处理程序，以侦听用户选择更改。
+- [对象的 addHandlerAsync](/javascript/api/office/office.document#addhandlerasync-eventtype--handler--options--callback-)方法，在 函数中调用，为文档的 SelectionChanged 事件添加事件处理程序以 `Document` `initialize` 侦听用户选择更改。 [](/javascript/api/office/office.documentselectionchangedeventargs)
     
-- 对象的 [getSelectedDataAsync](/javascript/api/office/office.document#getselecteddataasync-coerciontype--options--callback-) 方法 `Document` ，该方法在 `tryUpdatingSelectedWord()` `SelectionChanged` 引发事件处理程序以获取用户选择的单词或短语时，将其强制转换为纯文本，然后执行 `selectedTextCallback` 异步回调函数，在函数中调用该方法。
+- 对象的 [getSelectedDataAsync](/javascript/api/office/office.document#getselecteddataasync-coerciontype--options--callback-) 方法，当引发事件处理程序以获取用户选择的单词或短语时，在 函数中调用该方法，将其强制转换为 `Document` `tryUpdatingSelectedWord()` `SelectionChanged` 纯 `selectedTextCallback` 文本，然后执行异步回调函数。
     
-- 当  `selectTextCallback` 作为方法的 _callback_ 参数传递的异步回调函数 `getSelectedDataAsync` 执行时，它将在回调返回时获取所选文本的值。 它从回调的 _selectedText_ 参数中获取该值，该参数的类型为 [AsyncResult](/javascript/api/office/office.asyncresult)) 通过使用返回的对象的 [value](/javascript/api/office/office.asyncresult#status) 属性 (`AsyncResult` 。
+- 当作为方法的 callback 参数传递的异步回调函数执行时，它将在回调返回时 `selectTextCallback` 获取所选 `getSelectedDataAsync` 文本的值。 它从回调的 _selectedText_ 参数 (，该参数的类型为 [AsyncResult](/javascript/api/office/office.asyncresult)) 返回对象的 [value](/javascript/api/office/office.asyncresult#status) `AsyncResult` 属性。
     
 - `selectedTextCallback` 函数中剩余的代码查询定义的 XML Web 服务。它还调入 Microsoft Translator API，以提供具有所选字词拼音的 .wav 文件的 URL。
     
@@ -619,4 +619,3 @@ function errorHandler(jqXHR, textStatus, errorThrown) {
 }
 
 ```
-

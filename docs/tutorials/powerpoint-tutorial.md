@@ -4,12 +4,12 @@ description: 在本教程中，将生成 PowerPoint 加载项，用于插入图�
 ms.date: 05/12/2021
 ms.prod: powerpoint
 localization_priority: Priority
-ms.openlocfilehash: dcc833111520c106844fa0b2adf620cb83b31c31
-ms.sourcegitcommit: 30f6c620380075e3459cac748ca0c656427b384d
+ms.openlocfilehash: 6742ecd8ab7d579f90186b4fa73adfccca45b467
+ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/12/2021
-ms.locfileid: "52330036"
+ms.lasthandoff: 06/23/2021
+ms.locfileid: "53076474"
 ---
 # <a name="tutorial-create-a-powerpoint-task-pane-add-in"></a>教程：创建 PowerPoint 任务窗格加载项
 
@@ -112,7 +112,7 @@ ms.locfileid: "52330036"
 
 1. 使用解决方案资源管理器，将 **Controllers** 新文件夹添加到 **HelloWorldWeb** 项目。
 
-    ![Visual Studio 解决方案资源管理器窗口的屏幕截图，显示在 HelloWorldWeb 项目中突出显示的“Controllers”文件夹](../images/powerpoint-tutorial-solution-explorer-controllers.png)
+    ![Visual Studio 解决方案资源管理器窗口的屏幕截图，显示在 HelloWorldWeb 项目中突出显示的 Controllers 文件夹。](../images/powerpoint-tutorial-solution-explorer-controllers.png)
 
 2. 右键单击“Controllers”文件夹，并依次选择“添加”>“新基架项...”。
 
@@ -223,13 +223,13 @@ ms.locfileid: "52330036"
 
 1. 使用 Visual Studio 的同时，按 **F5** 或选择“开始”按钮启动 PowerPoint，以测试新建的 PowerPoint 加载项，功能区中显示有“显示任务窗格”加载项按钮。加载项本地托管在 IIS 上。
 
-    ![显示在 Visual Studio 中突出显示的“开始”按钮的屏幕截图](../images/powerpoint-tutorial-start.png)
+    ![显示在 Visual Studio 中突出显示的“开始”按钮的屏幕截图。](../images/powerpoint-tutorial-start.png)
 
-2. 在 PowerPoint 中，选择功能区中的“显示任务窗格”按钮，以打开加载项任务窗格。
+2. 在 PowerPoint 中，选择功能区中的“**显示任务窗格**”按钮，以打开加载项任务窗格。
 
     ![屏幕截图显示 PowerPoint 中主功能区上突出显示的“显示任务窗格”按钮](../images/powerpoint-tutorial-show-taskpane-button.png)
 
-3. 在任务窗格中，选择“插入图像”按钮，将一天中的必应照片添加到当前幻灯片。
+3. 在任务窗格中，选择“**插入图像**”按钮，将一天中的必应照片添加到当前幻灯片。
 
     ![突出显示“插入图像”按钮的 PowerPoint 加载项屏幕截图](../images/powerpoint-tutorial-insert-image-button.png)
 
@@ -261,19 +261,19 @@ ms.locfileid: "52330036"
 
 1. 使用 Visual Studio 的同时，按 **F5** 或选择“开始”按钮启动 PowerPoint，以测试 PowerPoint 加载项，功能区中显示有“显示任务窗格”加载项按钮。 加载项本地托管在 IIS 上。
 
-    ![显示在 Visual Studio 中突出显示的“开始”按钮的屏幕截图](../images/powerpoint-tutorial-start.png)
+    ![显示在 Visual Studio 中突出显示的“开始”按钮的屏幕截图。](../images/powerpoint-tutorial-start.png)
 
-2. 在 PowerPoint 中，选择功能区中的“显示任务窗格”按钮，以打开加载项任务窗格。
+2. 在 PowerPoint 中，选择功能区中的“**显示任务窗格**”按钮，以打开加载项任务窗格。
 
-    ![屏幕截图显示 PowerPoint 主功能区上突出显示的“显示任务窗格”按钮](../images/powerpoint-tutorial-show-taskpane-button.png)
+    ![显示 PowerPoint 主功能区上突出显示的“显示任务窗格”按钮的屏幕截图。](../images/powerpoint-tutorial-show-taskpane-button.png)
 
 3. 请注意，任务窗格现在包含页眉部分和标题，并且不再包含页脚部分。
 
-    ![带有“插入图像”按钮的 PowerPoint 加载项的屏幕截图](../images/powerpoint-tutorial-new-task-pane-ui.png)
+    ![带有“插入图像”按钮的 PowerPoint 加载项的屏幕截图。](../images/powerpoint-tutorial-new-task-pane-ui.png)
 
 4. 在 Visual Studio 中，按 **Shift + F5** 或选择“停止”按钮，以停止加载项。 PowerPoint 在加载项停止时自动关闭。
 
-    ![显示在 Visual Studio 中突出显示的“停止”按钮的屏幕截图](../images/powerpoint-tutorial-stop.png)
+    ![显示在 Visual Studio 中突出显示的“停止”按钮的屏幕截图。](../images/powerpoint-tutorial-stop.png)
 
 ## <a name="insert-text"></a>插入文本
 
@@ -313,23 +313,23 @@ ms.locfileid: "52330036"
 
 1. 使用 Visual Studio 的同时，按 **F5** 或选择“开始”按钮启动 PowerPoint，以测试加载项，功能区中显示有“显示任务窗格”加载项按钮。 加载项本地托管在 IIS 上。
 
-    ![在 Visual Studio 中突出显示的“开始”按钮的屏幕截图](../images/powerpoint-tutorial-start.png)
+    ![在 Visual Studio 中突出显示的“开始”按钮的屏幕截图。](../images/powerpoint-tutorial-start.png)
 
-2. 在 PowerPoint 中，选择功能区中的“显示任务窗格”按钮，以打开加载项任务窗格。
+2. 在 PowerPoint 中，选择功能区中的“**显示任务窗格**”按钮，以打开加载项任务窗格。
 
-    ![突出显示 PowerPoint 中主功能区上的“显示任务窗格”按钮的屏幕截图](../images/powerpoint-tutorial-show-taskpane-button.png)
+    ![突出显示 PowerPoint 中主功能区上的“显示任务窗格”按钮的屏幕截图。](../images/powerpoint-tutorial-show-taskpane-button.png)
 
 3. 在任务窗格中，选择“插入图像”按钮，将一天中的必应照片添加到当前幻灯片，再为包含标题文本框的幻灯片选择一种设计。
 
-    ![突出显示当前幻灯片，并在加载项中突出显示“插入图像”按钮的 PowerPoint 屏幕截图](../images/powerpoint-tutorial-insert-image-slide-design.png)
+    ![突出显示当前幻灯片，并在加载项中突出显示“插入图像”按钮的 PowerPoint 屏幕截图。](../images/powerpoint-tutorial-insert-image-slide-design.png)
 
 4. 将光标置于标题幻灯片上的文本框中，再选择任务窗格中的“插入文本”按钮，向幻灯片添加文本。
 
-    ![在加载项中突出显示“插入文本”按钮的 PowerPoint 屏幕截图](../images/powerpoint-tutorial-insert-text.png)
+    ![在加载项中突出显示“插入文本”按钮的 PowerPoint 屏幕截图。](../images/powerpoint-tutorial-insert-text.png)
 
 5. 在 Visual Studio 中，按 **Shift + F5** 或选择“停止”按钮，以停止加载项。 PowerPoint 在加载项停止时自动关闭。
 
-    ![在 Visual Studio 中突出显示的“停止”按钮的屏幕截图](../images/powerpoint-tutorial-stop.png)
+    ![在 Visual Studio 中突出显示的“停止”按钮的屏幕截图。](../images/powerpoint-tutorial-stop.png)
 
 ## <a name="get-slide-metadata"></a>获取幻灯片元数据
 
@@ -372,19 +372,19 @@ ms.locfileid: "52330036"
 
 1. 使用 Visual Studio 的同时，按 **F5** 或选择“开始”按钮启动 PowerPoint，以测试加载项，功能区中显示有“显示任务窗格”加载项按钮。 加载项本地托管在 IIS 上。
 
-    ![在 Visual Studio 中突出显示“开始”按钮的屏幕截图](../images/powerpoint-tutorial-start.png)
+    ![在 Visual Studio 中突出显示“开始”按钮的屏幕截图。](../images/powerpoint-tutorial-start.png)
 
-2. 在 PowerPoint 中，选择功能区中的“显示任务窗格”按钮，以打开加载项任务窗格。
+2. 在 PowerPoint 中，选择功能区中的“**显示任务窗格**”按钮，以打开加载项任务窗格。
 
-    ![突出显示 PowerPoint 主功能区上的“显示任务窗格”按钮的屏幕截图](../images/powerpoint-tutorial-show-taskpane-button.png)
+    ![突出显示 PowerPoint 主功能区上的“显示任务窗格”按钮的屏幕截图。](../images/powerpoint-tutorial-show-taskpane-button.png)
 
 3. 在任务窗格中，选择“获取幻灯片元数据”按钮，以获取选定幻灯片的元数据。 此时，幻灯片元数据写入到任务窗格底部的弹出对话框窗口。 在此示例中，JSON 元数据中的 `slides` 数组包含一个对象，用于指定选定幻灯片的 `id`、`title` 和 `index`。 如果在检索幻灯片元数据时选择了多张幻灯片，JSON 元数据中的 `slides` 数组会对每张选定幻灯片都包含一个对象。
 
-    ![加载项中突出显示“获取幻灯片元数据”按钮的 PowerPoint 屏幕截图](../images/powerpoint-tutorial-get-slide-metadata.png)
+    ![突出显示加载项中“获取幻灯片元数据”按钮的 PowerPoint 屏幕截图。](../images/powerpoint-tutorial-get-slide-metadata.png)
 
 4. 在 Visual Studio 中，按 **Shift + F5** 或选择“停止”按钮，以停止加载项。 PowerPoint 在加载项停止时自动关闭。
 
-    ![在 Visual Studio 中突出显示“停止”按钮的屏幕截图](../images/powerpoint-tutorial-stop.png)
+    ![突出显示 Visual Studio 中“停止”按钮的屏幕截图。](../images/powerpoint-tutorial-stop.png)
 
 ## <a name="navigate-between-slides"></a>在幻灯片之间导航
 
@@ -472,33 +472,33 @@ ms.locfileid: "52330036"
 
 1. 使用 Visual Studio 的同时，按 **F5** 或选择“开始”按钮启动 PowerPoint，以测试加载项，功能区中显示有“显示任务窗格”加载项按钮。 加载项本地托管在 IIS 上。
 
-    ![显示 Visual Studio 工具栏上突出显示“开始”按钮的屏幕截图](../images/powerpoint-tutorial-start.png)
+    ![显示 Visual Studio 工具栏上突出显示“开始”按钮的屏幕截图。](../images/powerpoint-tutorial-start.png)
 
-2. 在 PowerPoint 中，选择功能区中的“显示任务窗格”按钮，以打开加载项任务窗格。
+2. 在 PowerPoint 中，选择功能区中的“**显示任务窗格**”按钮，以打开加载项任务窗格。
 
-    ![显示 PowerPoint 中主功能区上突出显示“显示任务窗格”按钮的屏幕截图](../images/powerpoint-tutorial-show-taskpane-button.png)
+    ![显示 PowerPoint 中主功能区上突出显示“显示任务窗格”按钮的屏幕截图。](../images/powerpoint-tutorial-show-taskpane-button.png)
 
 3. 使用“开始”选项卡功能区中的“新建幻灯片”按钮，将两张新幻灯片添加到文档中。
 
 4. 在任务窗格中，选择 **“前往第一张幻灯片”** 按钮。 此时，选择并显示文档中的第一张幻灯片。
 
-    ![在加载项中突出显示“转到第一张幻灯片”按钮的 PowerPoint 屏幕截图](../images/powerpoint-tutorial-go-to-first-slide.png)
+    ![在加载项中突出显示“转到第一张幻灯片”按钮的 PowerPoint 屏幕截图。](../images/powerpoint-tutorial-go-to-first-slide.png)
 
 5. 在任务窗格中，选择 **“前往下一张幻灯片”** 按钮。 此时，选择并显示文档中的下一张幻灯片。
 
-    ![加载项中突出显示“转到下一张幻灯片”按钮的 PowerPoint 屏幕截图](../images/powerpoint-tutorial-go-to-next-slide.png)
+    ![加载项中突出显示“转到下一张幻灯片”按钮的 PowerPoint 屏幕截图。](../images/powerpoint-tutorial-go-to-next-slide.png)
 
 6. 在任务窗格中，选择 **“前往上一张幻灯片”** 按钮。 此时，选择并显示文档中的上一张幻灯片。
 
-    ![在加载项中突出显示“转到上一张幻灯片”按钮的 PowerPoint 屏幕截图](../images/powerpoint-tutorial-go-to-previous-slide.png)
+    ![在加载项中突出显示“转到上一张幻灯片”按钮的 PowerPoint 屏幕截图。](../images/powerpoint-tutorial-go-to-previous-slide.png)
 
 7. 在任务窗格中，选择 **“前往最后一张幻灯片”** 按钮。 此时，选择并显示文档中的最后一张幻灯片。
 
-    ![加载项中突出显示“转到最后一张幻灯片”按钮的 PowerPoint 屏幕截图](../images/powerpoint-tutorial-go-to-last-slide.png)
+    ![加载项中突出显示“转到最后一张幻灯片”按钮的 PowerPoint 屏幕截图。](../images/powerpoint-tutorial-go-to-last-slide.png)
 
 8. 在 Visual Studio 中，按 **Shift + F5** 或选择“停止”按钮，以停止加载项。 PowerPoint 在加载项停止时自动关闭。
 
-    ![显示 Visual Studio 工具栏上突出显示“停止”按钮的屏幕截图](../images/powerpoint-tutorial-stop.png)
+    ![显示 Visual Studio 工具栏上突出显示“停止”按钮的屏幕截图。](../images/powerpoint-tutorial-stop.png)
 
 ## <a name="next-steps"></a>后续步骤
 

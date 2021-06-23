@@ -1,25 +1,25 @@
 ---
-title: 使用 Excel JavaScript API 剪切、复制和粘贴区域
-description: 了解如何使用 Excel JavaScript API 剪切、复制和粘贴区域。
+title: 使用 JavaScript API Excel、复制和粘贴区域
+description: 了解如何使用 JavaScript API 剪切、复制和粘贴Excel区域。
 ms.date: 04/02/2021
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: 8cf92ef148c24613674930140cec762c9cd8c4a4
-ms.sourcegitcommit: 54fef33bfc7d18a35b3159310bbd8b1c8312f845
+ms.openlocfilehash: 2112702110b72e0020ed72090ce495abb3ff5366
+ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2021
-ms.locfileid: "51652812"
+ms.lasthandoff: 06/23/2021
+ms.locfileid: "53075822"
 ---
-# <a name="cut-copy-and-paste-ranges-using-the-excel-javascript-api"></a>使用 Excel JavaScript API 剪切、复制和粘贴区域
+# <a name="cut-copy-and-paste-ranges-using-the-excel-javascript-api"></a>使用 JavaScript API Excel、复制和粘贴区域
 
-本文提供使用 Excel JavaScript API 剪切、复制和粘贴区域的代码示例。 有关对象支持的属性和方法的完整列表，请参阅 `Range` [Excel.Range 类](/javascript/api/excel/excel.range)。
+本文提供使用 JavaScript API 剪切、复制和粘贴区域Excel示例。 有关对象支持的属性和方法的完整列表，请参阅 `Range` [Excel。Range 类](/javascript/api/excel/excel.range)。
 
 [!include[Excel cells and ranges note](../includes/note-excel-cells-and-ranges.md)]
 
 ## <a name="copy-and-paste"></a>Copy and paste
 
-[Range.copyFrom](/javascript/api/excel/excel.range#copyfrom-sourcerange--copytype--skipblanks--transpose-)方法复制 Excel UI的 **复制** 和粘贴操作。 目标为 `Range` 所 `copyFrom` 调用的对象。 将要复制的源作为一个范围或一个表示范围的字符串地址进行传递。
+[Range.copyFrom](/javascript/api/excel/excel.range#copyfrom-sourcerange--copytype--skipblanks--transpose-)方法复制该 **UI** **的** 复制Excel粘贴操作。 目标为 `Range` 所 `copyFrom` 调用的对象。 将要复制的源作为一个范围或一个表示范围的字符串地址进行传递。
 
 以下代码示例将数据从“A1:E1”复制到“G1”开始的范围（粘贴到“G1:K1”结束）。
 
@@ -72,11 +72,11 @@ Excel.run(function (context) {
 
 ### <a name="data-before-range-is-copied-and-pasted"></a>复制和粘贴区域之前的数据
 
-![Excel 中运行区域复制方法之前的数据](../images/excel-range-copyfrom-skipblanks-before.png)
+![区域Excel方法运行之前的数据。](../images/excel-range-copyfrom-skipblanks-before.png)
 
 ### <a name="data-after-range-is-copied-and-pasted"></a>复制和粘贴区域之后的数据
 
-![Excel 中运行区域复制方法后的数据](../images/excel-range-copyfrom-skipblanks-after.png)
+![区域Excel复制方法之后的数据。](../images/excel-range-copyfrom-skipblanks-after.png)
 
 ## <a name="cut-and-paste-move-cells"></a>剪切并粘贴 (单元格) 移动
 
@@ -98,6 +98,6 @@ Excel.run(function (context) {
 ## <a name="see-also"></a>另请参阅
 
 - [Excel 加载项中的 Word JavaScript 对象模型](excel-add-ins-core-concepts.md)
-- [使用 Excel JavaScript API 处理单元格](excel-add-ins-cells.md)
-- [使用 Excel JavaScript API 删除重复项](excel-add-ins-ranges-remove-duplicates.md)
+- [使用 JavaScript API Excel单元格](excel-add-ins-cells.md)
+- [使用 JavaScript API Excel重复项](excel-add-ins-ranges-remove-duplicates.md)
 - [ 同时在 Excel 加载项中处理多个区域 ](excel-add-ins-multiple-ranges.md)

@@ -1,19 +1,19 @@
 ---
-title: 使用 Excel JavaScript API 删除重复项
-description: 了解如何使用 Excel JavaScript API 删除重复项。
+title: 使用 JavaScript API Excel重复项
+description: 了解如何使用 JavaScript API Excel删除重复项。
 ms.date: 04/02/2021
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: 0a2a076398e15d1b3b9db963a85703782056c91e
-ms.sourcegitcommit: 54fef33bfc7d18a35b3159310bbd8b1c8312f845
+ms.openlocfilehash: 859214d36bdf66a284304ba1d5f7f2d642b718cb
+ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2021
-ms.locfileid: "51652795"
+ms.lasthandoff: 06/23/2021
+ms.locfileid: "53075766"
 ---
-# <a name="remove-duplicates-using-the-excel-javascript-api"></a>使用 Excel JavaScript API 删除重复项
+# <a name="remove-duplicates-using-the-excel-javascript-api"></a>使用 JavaScript API Excel重复项
 
-本文提供了一个代码示例，该示例使用 Excel JavaScript API 删除一个范围中的重复条目。 有关对象支持的属性和方法的完整列表，请参阅 `Range` [Excel.Range 类](/javascript/api/excel/excel.range)。
+本文提供了一个代码示例，该示例使用 JavaScript API 删除Excel条目。 有关对象支持的属性和方法的完整列表，请参阅 `Range` [Excel。Range 类](/javascript/api/excel/excel.range)。
 
 ## <a name="remove-rows-with-duplicate-entries"></a>删除条目重复的行
 
@@ -45,15 +45,15 @@ Excel.run(function (context) {
 
 ### <a name="data-before-duplicate-entries-are-removed"></a>删除重复条目之前的数据
 
-![Excel 中运行区域删除重复项方法之前的数据](../images/excel-ranges-remove-duplicates-before.png)
+![区域Excel重复项方法之前的数据。](../images/excel-ranges-remove-duplicates-before.png)
 
 ### <a name="data-after-duplicate-entries-are-removed"></a>删除重复条目后的数据
 
-![Excel 中运行区域删除重复项方法后的数据](../images/excel-ranges-remove-duplicates-after.png)
+![区域Excel重复项方法运行后的数据。](../images/excel-ranges-remove-duplicates-after.png)
 
 ## <a name="see-also"></a>另请参阅
 
 - [Excel 加载项中的 Word JavaScript 对象模型](excel-add-ins-core-concepts.md)
-- [使用 Excel JavaScript API 处理单元格](excel-add-ins-cells.md)
-- [使用 Excel JavaScript API 剪切、复制和粘贴区域](excel-add-ins-ranges-cut-copy-paste.md)
+- [使用 JavaScript API Excel单元格](excel-add-ins-cells.md)
+- [使用 JavaScript API Excel、复制和粘贴区域](excel-add-ins-ranges-cut-copy-paste.md)
 - [ 同时在 Excel 加载项中处理多个区域 ](excel-add-ins-multiple-ranges.md)

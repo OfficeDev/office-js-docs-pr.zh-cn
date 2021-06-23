@@ -4,12 +4,12 @@ description: 了解如何使用 JavaScript API Excel引用单元格和依赖项�
 ms.date: 06/03/2021
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: 78fa4fb070ede85d139425a9d59ba1224785a605
-ms.sourcegitcommit: 17b5a076375bc5dc3f91d3602daeb7535d67745d
+ms.openlocfilehash: 6021e383f02ca0de15210638b991dfe8b109ab63
+ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/06/2021
-ms.locfileid: "52783518"
+ms.lasthandoff: 06/23/2021
+ms.locfileid: "53075794"
 ---
 # <a name="get-formula-precedents-and-dependents-using-the-excel-javascript-api"></a>使用 JavaScript API 获取公式引用Excel依赖项
 
@@ -25,7 +25,7 @@ Excel公式通常引用其他单元格。 这些跨单元格引用称为"引用�
 
 以下屏幕截图显示了在"跟踪引用单元格"UI 中选择"追踪引用Excel的结果。  此按钮绘制从引用单元格到选定单元格的箭头。 选定的单元格 **E3** 包含公式"=C3 * D3"，因此 **C3** 和 **D3 都是** 引用单元格。 与 Excel UI 按钮不同， `getDirectPrecedents` 该方法不绘制箭头。
 
-![箭头跟踪活动 UI 中的引用单元格Excel单元格](../images/excel-ranges-trace-precedents.png)
+![箭头跟踪活动 UI 中的引用单元格Excel单元格。](../images/excel-ranges-trace-precedents.png)
 
 > [!IMPORTANT]
 > `getDirectPrecedents`方法无法跨工作簿检索引用单元格。
@@ -64,7 +64,7 @@ Excel.run(function (context) {
 
 以下屏幕截图显示了在自定义 UI 中选择"跟踪从属 **项**"Excel的结果。 此按钮绘制从从属单元格到选定单元格的箭头。 选定的单元格 **D3** 将单元格 **E3** 作为从属单元格。 **E3** 包含公式"=C3 * D3"。 与 Excel UI 按钮不同， `getDirectDependents` 该方法不绘制箭头。
 
-![箭头跟踪 UI 中的Excel单元格](../images/excel-ranges-trace-dependents.png)
+![箭头跟踪 UI 中的Excel单元格。](../images/excel-ranges-trace-dependents.png)
 
 > [!IMPORTANT]
 > `getDirectDependents`方法无法跨工作簿检索从属单元格。

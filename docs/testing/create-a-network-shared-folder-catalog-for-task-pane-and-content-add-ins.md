@@ -3,12 +3,12 @@ title: 从Office旁加载外接程序以进行测试
 description: 了解如何旁加载Office外接程序以从网络共享进行测试
 ms.date: 06/02/2020
 localization_priority: Normal
-ms.openlocfilehash: 79ab14ca34530c870d3be4cc962a7e3df358e9bc
-ms.sourcegitcommit: 6057afc1776e1667b231d2e9809d261d372151f6
+ms.openlocfilehash: ec3780146135a4a8a04c6518971605c65ddb0c6d
+ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/30/2021
-ms.locfileid: "52100276"
+ms.lasthandoff: 06/23/2021
+ms.locfileid: "53077146"
 ---
 # <a name="sideload-office-add-ins-for-testing-from-a-network-share"></a>从Office旁加载外接程序以进行测试
 
@@ -42,13 +42,13 @@ ms.locfileid: "52100276"
 
 3. 在“**属性**”对话框窗口中，打开“**共享**”选项卡，然后选择“**共享**”按钮。
 
-    ![已突出显示“共享”选项卡和“共享”按钮的文件夹“属性”对话框](../images/sideload-windows-properties-dialog.png)
+    ![突出显示"共享"选项卡和"共享"按钮的文件夹属性对话框。](../images/sideload-windows-properties-dialog.png)
 
 4. 在 **网络访问** 对话框窗口中，添加你自己以及要与其共享加载项的任何其他用户和/或组。 你至少需要对该文件夹的 **读/写** 权限。 选择要与其共享的人员后，请选择“**共享**”按钮。
 
 5. 当你看到确认 **你的文件夹已共享** 的消息时，请记下紧跟文件夹名称显示的完整网络路径。 （当你 [将共享文件夹指定为受信任的目录](#specify-the-shared-folder-as-a-trusted-catalog)时，你需要将此值输入为 **目录UR**，如本文下一节所述。）选择“**完成**”按钮以关闭“**网络访问**”对话框窗口。
 
-   ![已突出显示共享路径的“网络访问”对话框](../images/sideload-windows-network-access-dialog.png)
+   ![突出显示共享路径的网络访问对话框。](../images/sideload-windows-network-access-dialog.png)
 
 6. 选择“**关闭**”按钮以关闭“**属性**”对话框窗口。
 
@@ -66,13 +66,13 @@ ms.locfileid: "52100276"
 
 5. 在“**目录 Url**”框中，输入你之前 [共享](#share-a-folder)的文件夹的完整网络路径。 如果在共享文件夹时未能记下文件夹的完整网络路径，则可以从文件夹的“**属性**”对话框窗口中获取它，如以下屏幕截图所示。
 
-    ![已突出显示“共享”选项卡和网络路径的文件夹“属性”对话框](../images/sideload-windows-properties-dialog-2.png)
+    ![突出显示"共享"选项卡和网络路径的文件夹属性对话框。](../images/sideload-windows-properties-dialog-2.png)
 
 6. 在“**目录 Url**”框中输入文件夹的完整网络路径后，选择“**添加目录**”按钮。
 
 7. 选中新添加项目的“**在菜单中显示**”复选框，然后选择“**确定**”按钮以关闭“**信任中心**”对话框窗口。 
 
-    ![已选择目录的“信任中心”对话框](../images/sideload-windows-trust-center-dialog.png)
+    ![已选择目录的信任中心对话框。](../images/sideload-windows-trust-center-dialog.png)
 
 8. 选择" **确定"** 按钮以关闭 **"选项** "对话框窗口。
 
@@ -96,7 +96,7 @@ ms.locfileid: "52100276"
 
 4. 将 `Url` 值替换为你之前[共享](#share-a-folder)的文件夹的完整网络路径。 （请注意，URL 中的所有 `\` 字符都必须成双出现。）如果在共享文件夹时未能记下文件夹的完整网络路径，则可从文件夹的“**属性**”对话框窗口中获取它，如以下屏幕截图所示。
 
-    ![已突出显示“共享”选项卡和网络路径的文件夹“属性”对话框](../images/sideload-windows-properties-dialog-2.png)
+    ![突出显示"共享"选项卡和网络路径的文件夹属性对话框。](../images/sideload-windows-properties-dialog-2.png)
 
 5. 文件现应如下所示。 将其保存。
 

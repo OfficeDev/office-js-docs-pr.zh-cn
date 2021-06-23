@@ -1,19 +1,19 @@
 ---
-title: 使用 Excel JavaScript API 清除或删除区域
-description: 了解如何使用 Excel JavaScript API 清除或删除区域。
+title: 使用 JavaScript API 清除或删除Excel区域
+description: 了解如何使用 JavaScript API 清除或删除Excel区域。
 ms.date: 04/02/2021
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: 7e030c6b5ba7ba6e6c54e9be0524cd93c2516bcb
-ms.sourcegitcommit: 54fef33bfc7d18a35b3159310bbd8b1c8312f845
+ms.openlocfilehash: a1bd99db3aa9af3903552d9cefc6ec6d21701136
+ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2021
-ms.locfileid: "51652870"
+ms.lasthandoff: 06/23/2021
+ms.locfileid: "53075829"
 ---
-# <a name="clear-or-delete-ranges-using-the-excel-javascript-api"></a>使用 Excel JavaScript API 清除或删除区域
+# <a name="clear-or-delete-ranges-using-the-excel-javascript-api"></a>使用 JavaScript API 清除或删除Excel区域
 
-本文提供的代码示例使用 Excel JavaScript API 清除和删除区域。 有关对象支持的属性和方法的完整 `Range` 列表，请参阅 [Excel.Range 类](/javascript/api/excel/excel.range)。
+本文提供的代码示例使用 JavaScript API 清除和删除Excel区域。 有关对象支持的属性和方法的完整 `Range` 列表，请参阅[Excel。Range 类](/javascript/api/excel/excel.range)。
 
 [!include[Excel cells and ranges note](../includes/note-excel-cells-and-ranges.md)]
 
@@ -34,11 +34,11 @@ Excel.run(function (context) {
 
 ### <a name="data-before-range-is-cleared"></a>清除区域之前的数据
 
-![Excel 中清除区域之前的数据](../images/excel-ranges-start.png)
+![清除Excel之前的数据。](../images/excel-ranges-start.png)
 
 ### <a name="data-after-range-is-cleared"></a>清除区域之后的数据
 
-![Excel 中清除区域之后的数据](../images/excel-ranges-after-clear.png)
+![清除区域Excel中数据。](../images/excel-ranges-after-clear.png)
 
 ## <a name="delete-a-range-of-cells"></a>删除多个单元格
 
@@ -57,15 +57,15 @@ Excel.run(function (context) {
 
 ### <a name="data-before-range-is-deleted"></a>删除区域之前的数据
 
-![Excel 中删除区域之前的数据](../images/excel-ranges-start.png)
+![删除Excel之前的数据。](../images/excel-ranges-start.png)
 
 ### <a name="data-after-range-is-deleted"></a>删除区域之后的数据
 
-![Excel 中删除区域之后的数据](../images/excel-ranges-after-delete.png)
+![删除Excel区域之后的数据。](../images/excel-ranges-after-delete.png)
 
 
 ## <a name="see-also"></a>另请参阅
 
-- [使用 Excel JavaScript API 处理单元格](excel-add-ins-cells.md)
-- [使用 Excel JavaScript API 设置和获取区域](excel-add-ins-ranges-set-get.md)
+- [使用 JavaScript API Excel单元格](excel-add-ins-cells.md)
+- [使用 JavaScript API Excel和获取范围](excel-add-ins-ranges-set-get.md)
 - [Excel 加载项中的 Word JavaScript 对象模型](excel-add-ins-core-concepts.md)

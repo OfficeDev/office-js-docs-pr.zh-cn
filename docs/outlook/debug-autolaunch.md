@@ -4,12 +4,12 @@ description: 了解如何调试Outlook基于事件的激活的加载项。
 ms.topic: article
 ms.date: 05/14/2021
 localization_priority: Normal
-ms.openlocfilehash: d7621a7407db3b8e773d1534beb6c881f7b48558
-ms.sourcegitcommit: 693d364616b42eea66977eef47530adabc51a40f
+ms.openlocfilehash: 8cabbb669d9b46e047efa7e79ae4225c1fc22689
+ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/19/2021
-ms.locfileid: "52555267"
+ms.lasthandoff: 06/23/2021
+ms.locfileid: "53077090"
 ---
 # <a name="debug-your-event-based-outlook-add-in-preview"></a>调试基于事件Outlook加载项 (预览) 
 
@@ -52,7 +52,7 @@ ms.locfileid: "52555267"
 1. 如果Outlook桌面 (桌面Outlook，请启动桌面) 。
 1. 撰写新邮件或约会。 应看到以下对话框。 *不要* 与对话框进行交互。
 
-    ![调试基于事件的处理程序对话框的屏幕截图](../images/outlook-win-autolaunch-debug-dialog.png)
+    ![调试基于事件的处理程序对话框的屏幕截图。](../images/outlook-win-autolaunch-debug-dialog.png)
 
 ## <a name="configure-visual-studio-code"></a>配置Visual Studio Code
 
@@ -81,15 +81,15 @@ ms.locfileid: "52555267"
 ### <a name="other"></a>其他
 
 1. 在桌面 **文件夹中创建一** (调试文件夹) 。 
-1. 打开Visual Studio Code。
+1. 打开 Visual Studio 代码。
 1. 转到"**文件**  >  **""打开** 文件夹"，导航到刚创建的文件夹，然后选择"**选择文件夹"。**
 1. 在活动栏上，选择"调试" (Ctrl+Shift+D) 。
 
-    ![活动栏上的"调试"图标的屏幕截图](../images/vs-code-debug.png)
+    ![活动栏上的"调试"图标的屏幕截图。](../images/vs-code-debug.png)
 
 1. 选择" **创建launch.js文件"** 链接。
 
-    ![在文件上创建launch.js链接的屏幕截图Visual Studio Code](../images/vs-code-create-launch.json.png)
+    ![Screenshot of link to create a launch.json file in Visual Studio Code.](../images/vs-code-create-launch.json.png)
 
 1. 在" **选择环境** "下拉列表中，选择" **边缘： 启动** "以创建launch.js文件。
 1. 将以下摘录添加到配置列表中。 保存所做的更改。
@@ -121,7 +121,7 @@ ms.locfileid: "52555267"
 1. 将断点bundle.js调试器停止的位置。
 1. 在 **"调试**"下拉列表中，选择名称 **"Direct Debugging"，** 然后选择"运行 **"。**
 
-    ![Screenshot of selecting Direct Debugging from configuration options in the Visual Studio Code Debug dropdown](../images/outlook-win-autolaunch-debug-vsc.png)
+    ![Screenshot of selecting Direct Debugging from configuration options in the Visual Studio Code Debug dropdown.](../images/outlook-win-autolaunch-debug-vsc.png)
 
 ## <a name="debug"></a>Debug
 

@@ -1,16 +1,24 @@
 ---
-title: 支持Internet Explorer 11
+title: 支持 Internet Explorer 11
 description: 了解如何在外接程序Internet Explorer 11 和 ES5 Javascript。
-ms.date: 05/19/2021
+ms.date: 06/18/2021
 localization_priority: Normal
-ms.openlocfilehash: 21d712ce214c23b41740b5407bd106e23af33643
-ms.sourcegitcommit: 0d3bf72f8ddd1b287bf95f832b7ecb9d9fa62a24
+ms.openlocfilehash: 3677b12d265cb70d2c048e91fc32ff5f9619908b
+ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/02/2021
-ms.locfileid: "52727962"
+ms.lasthandoff: 06/23/2021
+ms.locfileid: "53075906"
 ---
-# <a name="support-internet-explorer-11"></a>支持Internet Explorer 11
+# <a name="support-internet-explorer-11"></a>支持 Internet Explorer 11
+
+> [!IMPORTANT]
+> **Internet Explorer外接程序Office中使用的内容**
+>
+> Microsoft 将终止对Internet Explorer的支持，但这不会显著Office外接程序。平台和 Office 版本（包括 Office 2019 的所有一次购买版本）的一些组合将继续使用 Internet Explorer 11 随附的 Webview 控件来托管外接程序，如[Office](../concepts/browsers-used-by-office-web-add-ins.md)外接程序使用的浏览器所说明。此外，提交到[AppSource](/office/dev/store/submit-to-appsource-via-partner-center)的加载项Internet Explorer支持这些组合，因此也支持这些组合。 有两 *个变化* ：
+>
+> - AppSource 不再使用作为浏览器Office web 版Internet Explorer加载项。 但 AppSource 仍测试使用 Office *版本的平台* 和桌面Internet Explorer。
+> - 2021 Script Lab，Internet Explorer工具将停止工作。 [](../overview/explore-with-script-lab.md)
 
 Office外接程序是 Web 应用程序，当在 IFrame 上运行时，这些应用程序Office web 版。 Office加载项在 Mac 上的 Office 或 Windows Office内运行时，使用嵌入式浏览器控件显示。 嵌入式浏览器控件由操作系统或用户计算机上安装的浏览器提供。
 

@@ -3,12 +3,12 @@ title: 指定 Office 主机和 API 要求
 description: 了解如何指定Office的应用程序和 API 要求，使加载项按预期工作。
 ms.date: 05/04/2021
 localization_priority: Normal
-ms.openlocfilehash: 07f2505dcfb16bf7000dca01a6d600aac9a63fa0
-ms.sourcegitcommit: 8fbc7c7eb47875bf022e402b13858695a8536ec5
+ms.openlocfilehash: dad4a562c523291d7af3c975c89111fab410220c
+ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/06/2021
-ms.locfileid: "52253352"
+ms.lasthandoff: 06/23/2021
+ms.locfileid: "53075962"
 ---
 # <a name="specify-office-applications-and-api-requirements"></a>指定 Office 应用程序和 API 要求
 
@@ -58,7 +58,7 @@ ms.locfileid: "52253352"
 
 当你指定Office或 API 要求时，有几个因素需要考虑。 下图显示了如何确定要在外接程序中使用的技术。
 
-![指定应用程序或 API 要求时，为Office选择最佳选项](../images/options-for-office-hosts.png)
+![指定应用程序或 API 要求时，选择Office最佳选项。](../images/options-for-office-hosts.png)
 
 - 如果外接程序在一个Office中运行，请设置 `Hosts` 清单中的 元素。 有关详细信息，请参阅 [设置 Hosts 元素](#set-the-hosts-element)。
 
@@ -84,14 +84,14 @@ ms.locfileid: "52253352"
 |:--------------|:-----------------------------------------------|:-----------------------|
 | 数据库      | Access Web App                                | 任务窗格              |
 | 文档      | Word web 版、Windows、Mac、iPad            | 任务窗格              |
-| 邮箱       | Outlook Web、Windows、Mac、Android、iOS | 邮件                   |
+| 邮箱       | Outlook 网页版、Windows、Mac、Android、iOS | 邮件                   |
 | 笔记本      | OneNote 网页版                             | 任务窗格、内容     |
 | 演示文稿  | PowerPoint web 版、Windows、Mac、iPad      | 任务窗格、内容     |
 | 项目       | Windows 版 Project                             | 任务窗格              |
 | 工作簿      | Excel web 版、Windows、Mac、iPad           | 任务窗格、内容     |
 
 > [!NOTE]
-> `Name`属性指定Office加载项的客户端应用程序。 Office应用程序在不同的平台上受支持，并且运行在桌面、Web 浏览器、平板电脑和移动设备上。 不能指定用于运行外接程序的平台。 例如，如果指定 ，Outlook Web 和 Windows `Mailbox` 都可用于运行外接程序。
+> `Name`属性指定Office加载项的客户端应用程序。 Office应用程序在不同的平台上受支持，并且运行在桌面、Web 浏览器、平板电脑和移动设备上。 不能指定用于运行外接程序的平台。 例如，如果指定 ，Outlook 网页版 和 `Mailbox` Windows 都可用于运行外接程序。
 
 > [!IMPORTANT]
 > 我们不建议在 SharePoint 中创建和使用 Access Web 应用和数据库。 作为一种替代方法，我们建议你使用 [Microsoft PowerApps](https://powerapps.microsoft.com/) 生成适用于 Web 和移动设备的无代码业务解决方案。

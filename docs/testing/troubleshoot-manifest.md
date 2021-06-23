@@ -1,14 +1,14 @@
 ---
 title: 验证 Office 加载项的清单
-description: 了解如何使用 XML 架构和其他工具验证 Office 外接程序的清单。
+description: 了解如何使用 XML 架构和其他工具Office加载项的清单。
 ms.date: 09/18/2020
 localization_priority: Normal
-ms.openlocfilehash: 3b2ad6f89635a76828524e928c8a766840a708d5
-ms.sourcegitcommit: 2479812e677d1a7337765fe8f1c8345061d4091a
+ms.openlocfilehash: 8ac543719011339b3f22a6fb77f01c0e9ed6d930
+ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/19/2020
-ms.locfileid: "48135205"
+ms.lasthandoff: 06/23/2021
+ms.locfileid: "53075535"
 ---
 # <a name="validate-an-office-add-ins-manifest"></a>验证 Office 加载项的清单
 
@@ -25,7 +25,7 @@ ms.locfileid: "48135205"
 npm run validate
 ```
 
-![动画 gif 显示 Yo Office 验证程序（在命令行处运行并生成显示“验证已通过”的结果）。](../images/yo-office-validator.gif)
+![动态 GIF，显示 Yo Office验证程序在命令行中运行并生成显示"验证通过"的结果。](../images/yo-office-validator.gif)
 
 > [!NOTE]
 > 若要访问此功能，必须使用[适用于 Office 加载项的 Yeoman 生成器](https://www.npmjs.com/package/generator-office)版本 1.1.17 或更高版本创建加载项项目。
@@ -36,20 +36,20 @@ npm run validate
 
 1. 安装 [Node.js](https://nodejs.org/download/)。
 
-2. 打开命令提示符，并使用以下命令安装验证程序。
+2. 打开命令提示符，然后使用以下命令安装验证程序。
 
     ```command&nbsp;line
     npm install -g office-addin-manifest
     ```
 
-3. *在项目的根目录中*运行以下命令。
+3. 在项目的 *根目录中运行以下命令*。
 
     ```command&nbsp;line
     npm run validate
     ```
 
     > [!NOTE]
-    > 如果此命令不可用或不工作，请运行以下命令，以强制使用最新版本的 office 外接程序清单工具 (替换 `MANIFEST_FILE` 为清单文件) 的名称：
+    > 如果此命令不可用或无法工作，请改为运行以下命令以强制使用最新版本的 office-addin-manifest 工具 (将 替换为清单文件 `MANIFEST_FILE` 名称) ：
     >
     > ```command&nbsp;line
     > npx --ignore-existing office-addin-manifest validate MANIFEST_FILE
@@ -57,7 +57,7 @@ npm run validate
 
 ## <a name="validate-your-manifest-against-the-xml-schema"></a>根据 XML 架构验证清单
 
-可以根据 [XML 架构定义 (XSD)](/openspecs/office_file_formats/ms-owemxml/c6a06390-34b8-4b42-82eb-b28be12494a8) 文件来验证清单文件。 这将有助于确保清单文件采用正确架构（包括所使用的元素的所有命名空间）。 如果从其他示例清单中复制了元素，请仔细检查是否还**添加了相应命名空间**。 若要执行此验证，可以使用 XML 架构验证工具。
+可以根据 [XML 架构定义 (XSD)](/openspecs/office_file_formats/ms-owemxml/c6a06390-34b8-4b42-82eb-b28be12494a8) 文件来验证清单文件。 这将有助于确保清单文件采用正确架构（包括所使用的元素的所有命名空间）。 如果从其他示例清单中复制了元素，请仔细检查是否还 **添加了相应命名空间**。 若要执行此验证，可以使用 XML 架构验证工具。
 
 ### <a name="to-use-a-command-line-xml-schema-validation-tool-to-validate-your-manifest"></a>使用命令行 XML 架构验证工具验证清单的具体步骤
 

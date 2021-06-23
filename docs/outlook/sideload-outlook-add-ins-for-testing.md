@@ -3,12 +3,12 @@ title: 旁加载 Outlook 外接程序进行测试
 description: 利用旁加载来安装 Outlook 外接程序以供测试，无需先将其置于外接程序目录中。
 ms.date: 05/13/2021
 localization_priority: Normal
-ms.openlocfilehash: 9d0fb246f6522c745658a09fce6934ee44d5079a
-ms.sourcegitcommit: 693d364616b42eea66977eef47530adabc51a40f
+ms.openlocfilehash: 47eb5da19f858b6e30339acc59da24a818fc0959
+ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/19/2021
-ms.locfileid: "52555190"
+ms.lasthandoff: 06/23/2021
+ms.locfileid: "53077027"
 ---
 # <a name="sideload-outlook-add-ins-for-testing"></a>旁加载 Outlook 外接程序进行测试
 
@@ -25,7 +25,7 @@ ms.locfileid: "52555190"
     > [!IMPORTANT]
     > 如果清单包含错误或清单路径无效，您将收到错误消息。
 
-1. 如果清单中不包含任何错误且路径有效，外接程序现在将旁加载，并可在桌面和 web Outlook使用。 它还将安装在所有受支持的设备上。
+1. 如果清单中不包含任何错误且路径有效，外接程序现在将进行旁加载，并且可在桌面和 Outlook 网页版。 它还将安装在所有受支持的设备上。
 
 ## <a name="sideload-manually"></a>手动旁加载
 
@@ -33,20 +33,20 @@ ms.locfileid: "52555190"
 
 ### <a name="outlook-on-the-web"></a>Outlook 网页版
 
-在 Web 上旁加载加载项Outlook取决于使用的是新版还是经典版。
+在加载项中旁加载加载项Outlook 网页版取决于使用的是新版还是经典版。
 
 - 如果邮箱工具栏类似于下图，请参阅[在全新 Outlook 网页版中旁加载外接程序](#new-outlook-on-the-web)。
 
-    ![全新 Outlook 网页版工具栏的部分屏幕截图](../images/outlook-on-the-web-new-toolbar.png)
+    ![新工具栏的部分Outlook 网页版屏幕截图。](../images/outlook-on-the-web-new-toolbar.png)
 
 - 如果邮箱工具栏类似于下图，请参阅[在经典 Outlook 网页版中旁加载外接程序](#classic-outlook-on-the-web)。
 
-    ![经典 Outlook 网页版工具栏的部分屏幕截图](../images/outlook-on-the-web-classic-toolbar.png)
+    ![经典工具栏的部分Outlook 网页版屏幕截图。](../images/outlook-on-the-web-classic-toolbar.png)
 
 > [!NOTE]
 > 如果你的组织在邮箱工具栏中添加了自己的徽标，则你看到的界面可能会与前面的图像略有不同。
 
-### <a name="new-outlook-on-the-web"></a>Outlook Web 上的新网站
+### <a name="new-outlook-on-the-web"></a>新增Outlook 网页版
 
 1. 转到 [Outlook 网页版](https://outlook.office.com)。
 
@@ -54,33 +54,33 @@ ms.locfileid: "52555190"
 
 1. 从新邮件的底部选择 **...**，然后从出现的菜单中选择“**获取外接程序**”。
 
-    ![全新 Outlook 网页版中的邮件撰写窗口（突出显示了“获取外接程序”选项）](../images/outlook-on-the-web-new-get-add-ins.png)
+    ![新外接程序中的邮件撰写Outlook 网页版突出显示了"获取外接程序"选项。](../images/outlook-on-the-web-new-get-add-ins.png)
 
 1. 在“**Outlook 外接程序**”对话框中，选择“**我的外接程序**”。
 
-    ![全新 Outlook 网页版中的“Outlook 外接程序”对话框（已选中“我的外接程序”）](../images/outlook-on-the-web-new-my-add-ins.png)
+    ![新外接程序Outlook对话框中，Outlook 网页版"我的外接程序"。](../images/outlook-on-the-web-new-my-add-ins.png)
 
 1. 在对话框底部找到“**自定义外接程序**”部分。 选择“**添加自定义外接程序**”链接，然后选择“**从文件添加**”。
 
-    ![指向“从文件添加”选项的“管理外接程序”屏幕截图](../images/outlook-sideload-desktop-add-from-file.png)
+    ![指向"从文件添加"选项的"管理外接程序"屏幕截图。](../images/outlook-sideload-desktop-add-from-file.png)
 
 1. 找到您的自定义外接程序清单文件并进行安装。在安装过程中接受所有提示。
 
-### <a name="classic-outlook-on-the-web"></a>经典Outlook网页
+### <a name="classic-outlook-on-the-web"></a>经典Outlook 网页版
 
 1. 转到 [Outlook 网页版](https://outlook.office.com)。
 
 1. 选择右上部分的齿轮图标，然后选择“**管理外接程序**”。
 
-    ![Outlook 网页版屏幕截图（指向“管理外接程序”选项）](../images/outlook-sideload-web-manage-integrations.png)
+    ![Outlook 网页版"管理外接程序"选项的屏幕截图。](../images/outlook-sideload-web-manage-integrations.png)
 
 1. 在“管理加载项”页中，选择“加载项”，然后选择“我的加载项”。
 
-    ![Outlook 网页版应用商店对话框（已选中“我的外接程序”）](../images/outlook-sideload-store-select-add-ins.png)
+    ![Outlook 网页版"我的加载项"的"应用商店"对话框。](../images/outlook-sideload-store-select-add-ins.png)
 
 1. 在对话框底部找到“**自定义外接程序**”部分。 选择“**添加自定义外接程序**”链接，然后选择“**从文件添加**”。
 
-    ![指向“从文件添加”选项的“管理外接程序”屏幕截图](../images/outlook-sideload-desktop-add-from-file.png)
+    ![指向"从文件添加"选项的"管理外接程序"屏幕截图。](../images/outlook-sideload-desktop-add-from-file.png)
 
 1. 找到您的自定义外接程序清单文件并进行安装。在安装过程中接受所有提示。
 
@@ -92,24 +92,24 @@ ms.locfileid: "52555190"
 
 1. 选择功能区上的“**获取外接程序**”按钮。
 
-    ![Outlook 2016"获取外接程序"按钮的自定义功能区](../images/outlook-sideload-desktop-store.png)
+    ![Outlook 2016"获取外接程序"按钮的自定义功能区。](../images/outlook-sideload-desktop-store.png)
 
     > [!IMPORTANT]
     > 如果在加载项版本中看不到"获取加载项"按钮，Outlook：
     >
     > - **功能** 区上的"存储"按钮（如果可用）。
     >
-    >   OR
+    >   或
     >
-    > - **"** 文件"菜单，然后选择"信息"选项卡上的"管理外接程序"按钮，以在Web 上的Outlook打开"外接程序"对话框。 <br>有关 Web 体验的更多内容，请参阅上一部分在 Web 上的 Outlook[旁加载外接程序](#outlook-on-the-web)。
+    > - **"** 文件"菜单 **，然后选择"** 信息"选项卡上的"管理外接程序"按钮，以打开"加载项"Outlook 网页版。<br>有关 Web 体验的更多内容，请参阅上一部分在加载项中旁[加载Outlook 网页版。](#outlook-on-the-web)
 
 1. 如果对话框顶部附近有选项卡，请确保已选中" **加载项** "选项卡。 选择 **"我的外接程序"。**
 
-    ![Outlook 2016 应用商店对话框（已选中“我的外接程序”）](../images/outlook-sideload-store-select-add-ins.png)
+    ![Outlook 2016"我的加载项"的"应用商店"对话框。](../images/outlook-sideload-store-select-add-ins.png)
 
 1. 在对话框底部找到“自定义加载项”部分。 选择“添加自定义加载项”链接，然后选择“从文件添加”。
 
-    ![“应用商店”屏幕截图（指向“从文件添加”选项）](../images/outlook-sideload-desktop-add-from-file.png)
+    ![指向"从文件添加"选项的应用商店屏幕截图。](../images/outlook-sideload-desktop-add-from-file.png)
 
 1. 找到您的自定义外接程序清单文件并进行安装。在安装过程中接受所有提示。
 
@@ -119,7 +119,7 @@ ms.locfileid: "52555190"
 
 1. 选择 **"文件**"菜单，然后选择"信息"选项卡上的"管理外接程序"按钮。Outlook浏览器中打开 Web 版本。
 
-1. 按照"在 Web 上旁加载外接程序[Outlook"部分](#outlook-on-the-web)的步骤，具体步骤Outlook Web 上的外接程序版本。
+1. 按照"在加载项中[](#outlook-on-the-web)旁加载加载项Outlook 网页版中的步骤操作，具体步骤Outlook 网页版。
 
 ## <a name="remove-a-sideloaded-add-in"></a>删除旁加载的外接程序
 

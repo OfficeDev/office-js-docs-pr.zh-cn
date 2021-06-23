@@ -1,14 +1,14 @@
 ---
 title: Office 加载项使用的浏览器
 description: 指定操作系统和 Office 版本如何确定 Office 加载项使用的浏览器。
-ms.date: 05/19/2021
+ms.date: 06/18/2021
 localization_priority: Normal
-ms.openlocfilehash: 07788c655d5c30527ac815ba2f3235cf504641f3
-ms.sourcegitcommit: 0d3bf72f8ddd1b287bf95f832b7ecb9d9fa62a24
+ms.openlocfilehash: 6347bbe6b02befeabf0fcd6f04545f6d543871c8
+ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/02/2021
-ms.locfileid: "52727904"
+ms.lasthandoff: 06/23/2021
+ms.locfileid: "53076180"
 ---
 # <a name="browsers-used-by-office-add-ins"></a>Office 加载项使用的浏览器
 
@@ -18,6 +18,14 @@ Office外接程序是 Web 应用程序，在 Office web 版 中运行时，使�
 
 - 计算机的操作系统。
 - 外接程序是在 2013 Office web 版、Microsoft 365或非订阅Office中运行。
+
+> [!IMPORTANT]
+> **Internet Explorer外接程序Office中使用的内容**
+>
+> Microsoft 将终止对Internet Explorer的支持，但这不会显著Office外接程序。平台和 Office 版本（包括自 Office 2019 起的所有一次购买版本）的一些组合将继续使用 Internet Explorer 11 随附的 Webview 控件来托管外接程序，如本文所说明。 此外，提交到 [AppSource](/office/dev/store/submit-to-appsource-via-partner-center)的加载项Internet Explorer支持这些组合，因此也支持这些组合。 有两 *个变化* ：
+>
+> - AppSource 不再使用作为浏览器Office web 版Internet Explorer加载项。 但 AppSource 仍测试使用 Office *版本的平台* 和桌面Internet Explorer。
+> - 2021 Script Lab，Internet Explorer工具将停止工作。 [](../overview/explore-with-script-lab.md)
 
 下表显示在不同平台和操作系统中使用的浏览器。
 
@@ -37,7 +45,7 @@ Office外接程序是 Web 应用程序，在 Office web 版 中运行时，使�
 
 <sup>1</sup>有关更多详细信息[，请参阅更新历史记录页](/officeupdates/update-history-office365-proplus-by-date)Office[客户端版本和更新](https://support.office.com/article/What-version-of-Office-am-I-using-932788b8-a3ce-44bf-bb09-e334518b8b19)通道。
 
-<sup>2</sup> Microsoft Edge时，Windows 10 讲述人 (有时称为"屏幕阅读器") 在任务窗格中打开 `<title>` 的页面中读取标记。 如果使用的是 Internet Explorer 11，则Narrator 将会读取任务窗格的标题栏，它来自加载项清单中的 `<DisplayName>` 值。
+<sup>2</sup> Microsoft Edge时，Windows 10讲述人 (有时称为"屏幕阅读器") 读取任务窗格中打开的页面 `<title>` 中的标记。 如果使用的是 Internet Explorer 11，则Narrator 将会读取任务窗格的标题栏，它来自加载项清单中的 `<DisplayName>` 值。
 
 <sup>3</sup>如果外接程序在清单中包含 元素，则它将Microsoft Edge EdgeHTML (`<Runtimes>` WebView) 。 如果满足使用基于 WebView2 Microsoft Edge webView (Chromium 2) 的条件，则外接程序使用该浏览器。 否则，它将使用 Internet Explorer 11，而不考虑Windows或Microsoft 365版本。 有关详细信息，请参阅[运行时](../reference/manifest/runtimes.md)。
 

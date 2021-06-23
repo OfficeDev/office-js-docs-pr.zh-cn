@@ -1,25 +1,25 @@
 ---
 title: 使用 Excel JavaScript API 调用内置 Excel 工作表函数
-description: 了解如何调用内置 Excel 工作表函数 `VLOOKUP` ，例如和 `SUM` 使用 EXCEL JavaScript API。
+description: 了解如何在 JavaScript API 等Excel调用内置函数，Excel `VLOOKUP` `SUM` JavaScript API。
 ms.date: 12/19/2019
 localization_priority: Normal
-ms.openlocfilehash: 3dd7ae24e27b3a3147265a0bcf539ae23af03fc3
-ms.sourcegitcommit: c6308cf245ac1bc66a876eaa0a7bb4a2492991ac
+ms.openlocfilehash: a72fe01341295fccfee168132d8a252cd22a8332
+ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "47408682"
+ms.lasthandoff: 06/23/2021
+ms.locfileid: "53075710"
 ---
 # <a name="call-built-in-excel-worksheet-functions"></a>调用内置 Excel 工作表函数
 
 本文介绍了如何使用 Excel JavaScript API 调用内置 Excel 工作表函数（如 `VLOOKUP` 和 `SUM`）。 其中还收录了可以使用 Excel JavaScript API 调用的内置 Excel 工作表函数的完整列表。
 
 > [!NOTE]
-> 若要了解如何使用 Excel JavaScript API 在 Excel 中创建*自定义函数*，请参阅[在 Excel 中创建自定义函数](custom-functions-overview.md)。
+> 若要了解如何使用 Excel JavaScript API 在 Excel 中创建 *自定义函数*，请参阅 [在 Excel 中创建自定义函数](custom-functions-overview.md)。
 
 ## <a name="calling-a-worksheet-function"></a>创建工作表函数
 
-下面的代码片段展示了如何调用工作表函数，其中 `sampleFunction()` 是占位符，应将它替换为要调用的函数名称和函数需要使用的输入参数。 `value` `FunctionResult` 工作表函数返回的对象的属性包含指定函数的结果。 如以下示例所示，您必须具有该 `load` `value` 对象的属性， `FunctionResult` 然后才能阅读该对象。 在此示例中，函数结果被直接写入控制台。
+下面的代码片段展示了如何调用工作表函数，其中 `sampleFunction()` 是占位符，应将它替换为要调用的函数名称和函数需要使用的输入参数。 `value`工作表函数返回的对象的属性包含 `FunctionResult` 指定函数的结果。 如以下示例所示，您 `load` `value` 必须先使用 对象的 属性 `FunctionResult` ，然后才能读取该对象。 在此示例中，函数结果被直接写入控制台。
 
 ```js
 var functionResult = context.workbook.functions.sampleFunction();
@@ -37,7 +37,7 @@ return context.sync()
 
 下图展示了 Excel 工作表中的表格，其中包含三个月内各种工具的销售数据。 表格中的每个数字均表示具体工具在特定月份中的销售件数。 接下来的两个示例展示了如何向此类数据应用内置工作表函数。
 
-![锤子、扳手和锯子的 11 月、12 月和 1 月销售数据的 Excel 屏幕截图](../images/worksheet-functions-chaining-results.jpg)
+![在 11 月、12 月和 1 月Excel（一月、六月、五月、六月）中销售数据的屏幕截图。](../images/worksheet-functions-chaining-results.jpg)
 
 ## <a name="example-1-single-function"></a>示例 1：单函数
 
@@ -126,7 +126,7 @@ Excel.run(function (context) {
 | <a href="https://support.office.com/article/BITOR-function-f6ead5c8-5b98-4c9e-9053-8ad5234919b2" target="_blank">BITOR 函数</a> | 返回 2 个数字的按位“或” |
 | <a href="https://support.office.com/article/BITRSHIFT-function-274d6996-f42c-4743-abdb-4ff95351222c" target="_blank">BITRSHIFT 函数</a> | 返回按照 shift_amount 位数右移后得到的数值 |
 | <a href="https://support.office.com/article/BITXOR-function-c81306a1-03f9-4e89-85ac-b86c3cba10e4" target="_blank">BITXOR Function</a> | 返回两个数字的按位“异或”值 |
-| <a href="https://support.microsoft.com/office/80f95d2f-b499-4eee-9f16-f795a8e306c8" target="_blank">向上.数学、ECMA_CEILING 函数</a> | 将数值向上舍入为最接近的整数或最接近的基数的倍数 |
+| <a href="https://support.microsoft.com/office/80f95d2f-b499-4eee-9f16-f795a8e306c8" target="_blank">CEILING。MATH、ECMA_CEILING 函数</a> | 将数值向上舍入为最接近的整数或最接近的基数的倍数 |
 | <a href="https://support.office.com/article/CEILINGPRECISE-function-f366a774-527a-4c92-ba49-af0a196e66cb" target="_blank">CEILING.PRECISE 函数</a> | 将数值四舍五入到最接近的整数或最接近的基数的倍数。不论数字是否带有符号，都将数字向上舍入。 |
 | <a href="https://support.office.com/article/CHAR-function-bbd249c8-b36e-4a91-8017-1c133f9b837a" target="_blank">CHAR 函数</a> | 返回由代码数字指定的字符 |
 | <a href="https://support.office.com/article/CHISQDIST-function-8486b05e-5c05-4942-a9ea-f6b341518732" target="_blank">CHISQ.DIST 函数</a> | 返回累积 beta 分布的概率密度函数 |
@@ -185,7 +185,7 @@ Excel.run(function (context) {
 | <a href="https://support.office.com/article/DISC-function-71fce9f3-3f05-4acf-a5a3-eac6ef4daa53" target="_blank">DISC 函数</a> | 返回债券的贴现率 |
 | <a href="https://support.microsoft.com/office/f4e8209d-8958-4c3d-a1ee-6351665d41c2" target="_blank">DMAX 函数</a> | 返回所选数据库条目中的最大值 |
 | <a href="https://support.microsoft.com/office/4ae6f1d9-1f26-40f1-a783-6dc3680192a3" target="_blank">DMIN 函数</a> | 返回所选数据库条目中的最小值 |
-| <a href="https://support.microsoft.com/office/a6cd05d9-9740-4ad3-a469-8109d18ff611" target="_blank">美元、USDOLLAR 函数</a> | 使用 $（美元）货币格式将数字转换为文本 |
+| <a href="https://support.microsoft.com/office/a6cd05d9-9740-4ad3-a469-8109d18ff611" target="_blank">DOLLAR、USDOLLAR 函数</a> | 使用 $（美元）货币格式将数字转换为文本 |
 | <a href="https://support.office.com/article/DOLLARDE-function-db85aab0-1677-428a-9dfd-a38476693427" target="_blank">DOLLARDE 函数</a> | 将以分数表示的货币值转换为以小数表示的货币值 |
 | <a href="https://support.office.com/article/DOLLARFR-function-0835d163-3023-4a33-9824-3042c5d4f495" target="_blank">DOLLARFR 函数</a> | 将以小数表示的货币值转换为以分数表示的货币值 |
 | <a href="https://support.office.com/article/DPRODUCT-function-4f96b13e-d49c-47a7-b769-22f6d017cb31" target="_blank">DPRODUCT 函数</a> | 将与数据库中的条件匹配的记录的特定字段中的值相乘 |
@@ -445,6 +445,6 @@ Excel.run(function (context) {
 
 ## <a name="see-also"></a>另请参阅
 
-- [Office 外接程序中的 Excel JavaScript 对象模型](excel-add-ins-core-concepts.md)
-- [函数类 (适用于 Excel 的 JavaScript API) ](/javascript/api/excel/excel.functions)
-- [工作簿函数对象 (适用于 Excel 的 JavaScript API) ](/javascript/api/excel/excel.workbook#functions)
+- [Excel 加载项中的 Word JavaScript 对象模型](excel-add-ins-core-concepts.md)
+- [Functions 类 (JavaScript API for Excel) ](/javascript/api/excel/excel.functions)
+- [工作簿函数对象 (JavaScript API for Excel) ](/javascript/api/excel/excel.workbook#functions)

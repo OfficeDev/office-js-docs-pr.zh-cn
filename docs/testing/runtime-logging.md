@@ -3,22 +3,22 @@ title: 使用运行时日志记录功能调试加载项
 description: 了解如何使用运行时日志记录功能调试加载项。
 ms.date: 09/23/2020
 localization_priority: Normal
-ms.openlocfilehash: 5dcaa224726965447fe971780ca7f2d218fce753
-ms.sourcegitcommit: d28392721958555d6edea48cea000470bd27fcf7
+ms.openlocfilehash: 3e9a78e6a2f82eca612712f54ac8a700e6d02701
+ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/13/2021
-ms.locfileid: "49840068"
+ms.lasthandoff: 06/23/2021
+ms.locfileid: "53076411"
 ---
 # <a name="debug-your-add-in-with-runtime-logging"></a>使用运行时日志记录功能调试加载项
 
 可以使用运行时日志记录调试加载项的清单以及多个安装错误。 此功能可以帮助你标识并修复清单中未被 XSD 架构验证检测到的问题，例如资源 ID 间的不匹配等。 运行时日志记录对于调试执行加载项命令的加载项和 Excel 自定义功能尤其有用。
 
 > [!NOTE]
-> 运行时日志记录功能当前适用于桌面版 Office 2016 或更高版本。
+> 运行时日志记录功能当前适用于桌面Office 2016 或更高版本。
 
 > [!IMPORTANT]
-> 运行时日志记录影响性能。 请仅在需要调试外接程序清单中的问题时启用此功能。
+> 运行时日志记录功能影响性能。仅在需要调试加载项清单问题时，才启用此功能。
 
 ## <a name="use-runtime-logging-from-the-command-line"></a>使用命令行中的运行时日志
 
@@ -60,11 +60,8 @@ ms.locfileid: "49840068"
 
 2. 在 `HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\WEF\Developer\` 下添加 `RuntimeLogging` 注册表项。
 
-    > [!NOTE]
-    > 如果 `Developer` (文件夹) 不存在，请 `HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\WEF\` 完成以下步骤以创建它。
-    >
-    > 1. 右键单击 **WEF** 密钥（文件夹），然后选择 **新建** > **密钥**。
-    > 1. 将新密钥命名为 **Developer**。
+    [!include[Developer registry key](../includes/developer-registry-key.md)]
+
 
 3. 将 **RuntimeLogging** 项的默认值设置为你想要在其中写入日志的文件的完整路径。 有关示例，请参阅 [EnableRuntimeLogging.zip](https://github.com/OfficeDev/Office-Add-in-Commands-Samples/raw/master/Tools/RuntimeLogging/EnableRuntimeLogging.zip)。
 
@@ -73,7 +70,7 @@ ms.locfileid: "49840068"
 
 注册表应如下图所示。 若要禁用此功能，请从注册表中删除 `RuntimeLogging`。
 
-![包含 RuntimeLogging 注册表项的注册表编辑器屏幕截图](../images/runtime-logging-registry.png)
+![具有 RuntimeLogging 注册表项的注册表编辑器的屏幕截图。](../images/runtime-logging-registry.png)
 
 ## <a name="runtime-logging-on-mac"></a>Mac 上的运行时日志记录
 

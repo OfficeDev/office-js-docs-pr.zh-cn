@@ -1,23 +1,23 @@
 ---
 title: 使用 Excel JavaScript API 处理图表
-description: 使用 Excel JavaScript API 演示图表任务的代码示例。
+description: 演示使用 JavaScript API 的图表Excel示例。
 ms.date: 07/17/2019
 localization_priority: Normal
-ms.openlocfilehash: 3cd5008e4a71001607911ffd89da26d8b31d9377
-ms.sourcegitcommit: c6308cf245ac1bc66a876eaa0a7bb4a2492991ac
+ms.openlocfilehash: e164384f70e644637d8928a124415ff007c8b475
+ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "47408584"
+ms.lasthandoff: 06/23/2021
+ms.locfileid: "53075892"
 ---
 # <a name="work-with-charts-using-the-excel-javascript-api"></a>使用 Excel JavaScript API 处理图表
 
 本文提供了代码示例，介绍如何使用 Excel JavaScript API 对图表执行常见任务。
-有关和对象支持的属性和方法的完整 `Chart` 列表 `ChartCollection` ，请参阅 [Chart Object (适用于 EXCEL 的 javascript Api) ](/javascript/api/excel/excel.chart) 和 [chart Collection 对象 (适用于 excel) 的 javascript api ](/javascript/api/excel/excel.chartcollection)。
+有关 和 对象支持的属性和方法的完整列表，请参阅 `Chart` `ChartCollection` Chart [Object (JavaScript API for Excel) ](/javascript/api/excel/excel.chart)和[Chart Collection Object (JavaScript API for Excel) 。 ](/javascript/api/excel/excel.chartcollection)
 
 ## <a name="create-a-chart"></a>创建图表
 
-下面的代码示例在名为 **Sample** 的工作表中创建一个图表。 该图表是基于区域 **A1:B13** 的数据的**折线**图。
+下面的代码示例在名为 **Sample** 的工作表中创建一个图表。 该图表是基于区域 **A1:B13** 的数据的 **折线** 图。
 
 ```js
 Excel.run(function (context) {
@@ -37,12 +37,12 @@ Excel.run(function (context) {
 
 **新建折线图**
 
-![Excel 中的新折线图](../images/excel-charts-create-line.png)
+![Excel 中的新Excel。](../images/excel-charts-create-line.png)
 
 
 ## <a name="add-a-data-series-to-a-chart"></a>向图表添加数据系列
 
-下面的代码示例向工作表中的第一个图表添加数据系列。 新的数据系列对应于“2016 年”**** 列，并以区域 **D2:D5** 中的数据为依据。
+下面的代码示例向工作表中的第一个图表添加数据系列。 新的数据系列对应于“2016 年”列，并以区域 **D2:D5** 中的数据为依据。
 
 ```js
 Excel.run(function (context) {
@@ -59,15 +59,15 @@ Excel.run(function (context) {
 
 **添加 2016 数据系列之前的图表**
 
-![Excel 中添加 2016 数据系列之前的图表](../images/excel-charts-data-series-before.png)
+![添加 2016 Excel系列之前的数据系列中的图表。](../images/excel-charts-data-series-before.png)
 
 **添加 2016 数据系列之后的图表**
 
-![Excel 中添加 2016 数据系列之后的图表](../images/excel-charts-data-series-after.png)
+![添加 2016 Excel系列之后的数据系列中的图表。](../images/excel-charts-data-series-after.png)
 
 ## <a name="set-chart-title"></a>设置图表标题
 
-下面的代码示例将工作表中的第一个图表标题设置为**年度销售数据**。
+下面的代码示例将工作表中的第一个图表标题设置为 **年度销售数据**。
 
 ```js
 Excel.run(function (context) {
@@ -82,7 +82,7 @@ Excel.run(function (context) {
 
 **设置标题后的图表**
 
-![Excel 中带标题的图表](../images/excel-charts-title-set.png)
+![包含标题的图表Excel。](../images/excel-charts-title-set.png)
 
 ## <a name="set-properties-of-an-axis-in-a-chart"></a>在图表中设置轴属性
 
@@ -90,7 +90,7 @@ Excel.run(function (context) {
 
 ### <a name="set-axis-title"></a>设置轴标题
 
-下面的代码示例将工作表中第一个图表的分类轴标题设置为**产品**。
+下面的代码示例将工作表中第一个图表的分类轴标题设置为 **产品**。
 
 ```js
 Excel.run(function (context) {
@@ -105,11 +105,11 @@ Excel.run(function (context) {
 
 **设置分类轴标题后的图表**
 
-![Excel 中带轴标题的图表](../images/excel-charts-axis-title-set.png)
+![图表中带坐标轴标题Excel。](../images/excel-charts-axis-title-set.png)
 
 ### <a name="set-axis-display-unit"></a>设置轴的显示单位
 
-下面的代码示例将工作表中首个图表的数值轴显示单位设置为“百”****。
+下面的代码示例将工作表中首个图表的数值轴显示单位设置为“百”。
 
 ```js
 Excel.run(function (context) {
@@ -124,11 +124,11 @@ Excel.run(function (context) {
 
 **设置数值轴显示单位后的图表**
 
-![Excel 中带轴显示单位的图表](../images/excel-charts-axis-display-unit-set.png)
+![图表，其轴显示单位以Excel。](../images/excel-charts-axis-display-unit-set.png)
 
 ## <a name="set-visibility-of-gridlines-in-a-chart"></a>在图表中设置网格线的可见性
 
-以下代码示例隐藏工作表中第一个图表数值轴的主要网格线。 您可以通过将设置为来显示图表的数值轴的主要网格线 `chart.axes.valueAxis.majorGridlines.visible` `true` 。
+以下代码示例隐藏工作表中第一个图表数值轴的主要网格线。 可以通过将 设置为 来显示图表数值轴的主要网格 `chart.axes.valueAxis.majorGridlines.visible` 线 `true` 。
 
 ```js
 Excel.run(function (context) {
@@ -143,7 +143,7 @@ Excel.run(function (context) {
 
 **隐藏了网格线的图表**
 
-![Excel 中隐藏了网格线的图表](../images/excel-charts-gridlines-removed.png)
+![图表中隐藏有网格线的Excel。](../images/excel-charts-gridlines-removed.png)
 
 ## <a name="chart-trendlines"></a>图表趋势线
 
@@ -165,11 +165,11 @@ Excel.run(function (context) {
 
 **带移动均线的图表**
 
-![Excel 中带移动均线的图表](../images/excel-charts-create-trendline.png)
+![图表，其移动平均趋势线以Excel。](../images/excel-charts-create-trendline.png)
 
 ### <a name="update-a-trendline"></a>更新趋势线
 
-下面的代码示例将 `Linear` 在名为 **sample**的工作表中第一个图表的第一个系列的趋势线设置为类型。
+下面的代码示例将设置趋势线以键入名为 Sample 的工作表中第一个 `Linear` 图表的第一 **个系列**。
 
 ```js
 Excel.run(function (context) {
@@ -186,7 +186,7 @@ Excel.run(function (context) {
 
 **带线性趋势线的图表**
 
-![Excel 中带线性趋势线的图表](../images/excel-charts-trendline-linear.png)
+![图表中带线性趋势线的Excel。](../images/excel-charts-trendline-linear.png)
 
 ## <a name="export-a-chart-as-an-image"></a>将图表导出为图像
 
@@ -211,10 +211,10 @@ getImage(width?: number, height?: number, fittingMode?: Excel.ImageFittingMode):
 
 这些参数决定图像的大小。 图像始终按比例缩放。 宽度和高度参数在缩放图像上设置上限或下限。 `ImageFittingMode` 具有三个值和以下行为：
 
-- `Fill`：图像的最小高度或宽度为指定的高度或宽度 (在) 缩放图像时先达到的高度或宽度。 这是未指定调整模式时的默认行为。
-- `Fit`：图像的最大高度或宽度为指定的高度或宽度 (在) 缩放图像时先达到的高度或宽度。
-- `FitAndCenter`：图像的最大高度或宽度为指定的高度或宽度 (在) 缩放图像时先达到的高度或宽度。 生成的图像相对于另一个维度居中。
+- `Fill`：图像的最小高度或宽度是指定的高度或宽度 (缩放图像缩放时首先达到) 。 这是未指定调整模式时的默认行为。
+- `Fit`：图像的最大高度或宽度是指定的高度或宽度 (缩放图像缩放时首先到达) 。
+- `FitAndCenter`：图像的最大高度或宽度是指定的高度或宽度 (缩放图像缩放时首先到达) 。 生成的图像相对于另一个维度居中。
 
 ## <a name="see-also"></a>另请参阅
 
-- [Office 外接程序中的 Excel JavaScript 对象模型](excel-add-ins-core-concepts.md)
+- [Excel 加载项中的 Word JavaScript 对象模型](excel-add-ins-core-concepts.md)

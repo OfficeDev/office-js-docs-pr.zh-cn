@@ -1,14 +1,14 @@
 ---
 title: Office 加载项的隐私和安全
-description: 了解 Office 外接程序平台的隐私和安全性方面。
+description: 了解加载项平台的隐私Office安全方面。
 ms.date: 03/19/2021
 localization_priority: Normal
-ms.openlocfilehash: da7b21bedacdc9ff12dfbce328b66a2e6ec75925
-ms.sourcegitcommit: 7482ab6bc258d98acb9ba9b35c7dd3b5cc5bed21
+ms.openlocfilehash: de33e0031a8deef8632cb82baaf3ac9aa2e95c90
+ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/24/2021
-ms.locfileid: "51178088"
+ms.lasthandoff: 06/23/2021
+ms.locfileid: "53076187"
 ---
 # <a name="privacy-and-security-for-office-add-ins"></a>Office 加载项的隐私和安全
 
@@ -16,13 +16,13 @@ ms.locfileid: "51178088"
 
 Office 外接程序受到外接程序运行时环境、多层权限模型和性能调控器的保护。 此框架通过以下方式保护用户体验。
 
-- 管理对 Office 客户端应用程序的 UI 框架的访问。
+- 管理Office客户端应用程序的 UI 框架的访问权限。
 
-- 仅允许间接访问 Office 客户端应用程序的 UI 线程。
+- 仅允许间接Office客户端应用程序的 UI 线程。
 
 - 不允许模式交互-例如，不允许调用 JavaScript 、 和 函数， `alert` `confirm` `prompt` 因为它们是模式交互。
 
-此外，运行时框架还提供以下好处，以确保 Office 外接程序不会损害用户环境。
+此外，运行时框架还提供以下好处，以确保Office加载项不会损害用户环境。
 
 - 隔离运行加载项的进程。
 
@@ -42,23 +42,23 @@ Office 外接程序受到外接程序运行时环境、多层权限模型和性�
 
 *图 1.基于 Windows 的台式机和平板电脑客户端中的 Office 外接程序运行时环境*
 
-![显示富客户端基础结构的关系图](../images/dk2-agave-overview-02.png)
+![显示富客户端基础结构的图表。](../images/dk2-agave-overview-02.png)
 
 如下图所示，在 Mac OS X 桌面上，外接程序网页托管在沙盒 WebKit 运行时主机进程内，这有助于提供类似级别的安全和性能保护。
 
-*图 2.Mac OS X 客户端中的 Office 外接程序运行时环境*
+*图 2.OfficeMac OS X 客户端中的外接程序运行时环境*
 
-![显示 Mac OS X 上 Office 运行时环境的应用的关系图](../images/dk2-agave-overview-mac-02.png)
+![显示 Mac OS X Office运行时环境的应用的关系图。](../images/dk2-agave-overview-mac-02.png)
 
 Office 外接程序运行时管理进程间通信、JavaScript API 调用和事件到本机调用和事件的转换以及 UI 远程处理支持，从而使加载项能够呈现在文档内、任务窗格中或电子邮件、会议请求或约会旁边。
 
 ### <a name="web-clients"></a>Web 客户端
 
-在支持的 Web 客户端中，Office 外接程序托管在使用 **HTML5** 沙盒属性运行的 **iframe** 中。 不允许使用 ActiveX 组件或导航 Web 客户端主页。 通过集成适用于 Office 的 JavaScript API 在 Web 客户端中实现 Office 外接程序支持。 同理，对于桌面客户端应用程序，JavaScript API 管理加载项生命周期和加载项与 Web 客户端间的互操作性。 这种互操作性通过特殊的跨框架发布消息通信基础结构实现。 桌面客户端上使用的同一 JavaScript 库 (Office.js) 可用来与 Web 客户端交互。 下图显示了支持在浏览器中运行的 Office 中的外接程序的基础结构，以及支持这些外接程序所需的相关组件 (Web 客户端 **、iframe、Office** 外接程序运行时和适用于 Office) 的 JavaScript API。
+在支持的 Web 客户端Office外接程序托管在使用 **HTML5** 沙盒属性运行的 **iframe** 中。 不允许使用 ActiveX 组件或导航 Web 客户端主页。 通过集成适用于 Office 的 JavaScript API 在 Web 客户端中实现 Office 外接程序支持。 同理，对于桌面客户端应用程序，JavaScript API 管理加载项生命周期和加载项与 Web 客户端间的互操作性。 这种互操作性通过特殊的跨框架发布消息通信基础结构实现。 桌面客户端上使用的同一 JavaScript 库 (Office.js) 可用来与 Web 客户端交互。 下图显示了支持在浏览器中运行的 Office 中的外接程序的基础结构，以及支持 Office) 所需的相关组件 (Web 客户端 **、iframe、Office** 外接程序运行时和适用于 Office) 的 JavaScript API。
 
 *图 3：支持 Office Web 客户端中 Office 加载项的基础结构*
 
-![显示 Web 客户端基础结构的图表](../images/dk2-agave-overview-03.png)
+![显示 Web 客户端基础结构的图表。](../images/dk2-agave-overview-03.png)
 
 ## <a name="add-in-integrity-in-appsource"></a>AppSource 中的加载项完整性
 
@@ -72,11 +72,11 @@ Office 外接程序运行时管理进程间通信、JavaScript API 调用和事�
 
 ## <a name="optional-connected-experiences"></a>可选连接体验
 
-最终用户和 IT 管理员可在 Office 桌面和移动客户端中关闭[可选的已连接体验](/deployoffice/privacy/optional-connected-experiences)。 对于 Office 外接程序，禁用"可选连接体验"设置的影响是用户无法再通过这些客户端访问外接程序或 Office 应用商店。 但是，某些被视为必需或业务关键型的 Microsoft 加载项，以及组织的 IT 管理员通过集中部署部署的 [加载项仍将可用](../publish/centralized-deployment.md) 。 此外，无论设置的状态如何，加载项和应用商店在 Web 上的 Outlook 中仍然可用。
+最终用户和 IT 管理员可在 Office 桌面和移动客户端中关闭[可选的已连接体验](/deployoffice/privacy/optional-connected-experiences)。 对于Office外接程序，禁用"可选连接体验"设置的影响是用户无法再通过这些客户端访问外接程序或 Office Store。 但是，某些被视为必需或业务关键型的 Microsoft 加载项，以及组织的 IT 管理员通过集中部署部署的 [加载项仍将可用](../publish/centralized-deployment.md) 。 此外，无论设置的状态如何，加载项和应用商店Outlook 网页版都可用。
 
-有关特定于 Outlook 的行为，请参阅 [Outlook 外接程序的隐私、权限和安全性](../outlook/privacy-and-security.md#optional-connected-experiences)。
+有关特定Outlook，请参阅隐私、权限和安全性[Outlook外接程序](../outlook/privacy-and-security.md#optional-connected-experiences)。
 
-请注意，如果 IT 管理员禁止在 [Office](/deployoffice/privacy/manage-privacy-controls#policy-setting-for-most-connected-experiences)中使用连接体验，则对加载项的影响与仅关闭可选连接体验的效果相同。
+请注意，如果 IT 管理员禁止在[](/deployoffice/privacy/manage-privacy-controls#policy-setting-for-most-connected-experiences)Office 中使用连接体验，则对外接程序的影响与仅关闭可选连接体验的效果相同。
 
 ## <a name="addressing-end-users-privacy-concerns"></a>解决最终用户的隐私问题
 
@@ -87,7 +87,7 @@ Office 外接程序运行时管理进程间通信、JavaScript API 调用和事�
 Office 加载项是使用浏览器控件或 **iframe** 中运行的 Web 技术而生成。因此，使用加载项与转到 Internet 或 Intranet 上的网站类似。加载项可以位于组织外部（如果从 AppSource 获取加载项的话），也可以位于组织内部（如果从 Exchange Server 加载项目录、SharePoint 应用目录或组织网络上的文件共享获取加载项的话）。加载项对网络的访问权限受限，大部分加载项都可以对活动文档或邮件项执行读取或写入操作。在用户或管理员安装或启动加载项前，加载项平台就施加了特定约束。不过，与任何扩展性模型一样，用户在启动未知加载项之前应非常谨慎。
 
 > [!NOTE]
-> 用户首次加载外接程序时可能会看到信任域的安全提示。 如果加载项的域主机位于本地 Exchange 或 Office Online Server 的域之外，将会发生这种情况。
+> 用户首次加载外接程序时可能会看到信任域的安全提示。 如果加载项的域主机位于本地或本地 Exchange域之外，Office Online Server。
 
 外接程序平台通过以下方式解决最终用户的隐私问题。
 
@@ -95,13 +95,13 @@ Office 加载项是使用浏览器控件或 **iframe** 中运行的 Web 技术�
 
 - 安装 AppSource 中的加载项前，用户可以查看相应加载项的隐私策略和要求。此外，与用户邮箱进行交互的 Outlook 加载项还指明了所需的特定权限；用户可以在安装 Outlook 加载项前，先查看使用条款、请求的权限和隐私策略。
 
-- 在共享一个文档时，用户也会共享已插入该文档或与该文档关联的加载项。 如果用户打开的文档包含用户以前没有使用过的外接程序，则 Office 客户端应用程序会提示用户授予外接程序在文档中运行的权限。 在组织环境中，如果文档来自外部源，Office 客户端应用程序还会提示用户。
+- 在共享一个文档时，用户也会共享已插入该文档或与该文档关联的加载项。 如果用户打开包含用户以前没有使用过的加载项的文档，Office 客户端应用程序会提示用户授予加载项在文档中运行的权限。 在组织环境中，Office客户端应用程序还会在文档来自外部源时提示用户。
 
-- 用户可启用或禁用对 AppSource 的访问。 对于内容和任务窗格外接程序，用户从主机 Office 客户端 (从文件选项信任中心信任中心设置"受信任的外接程序目录") 打开的信任中心管理对受信任外接程序  >    >    >    >  和目录的访问权限。 对于 Outlook 外接程序，使用 可以通过选择"管理外接程序"按钮来管理外接程序：在 Windows 上的 Outlook 中，选择"文件""管理  >  **外接程序"。** 在 Mac 上的 Outlook 中 **，选择外接程序** 栏上的"管理外接程序"按钮。 在 Outlook 网页版中，依次选择“**设置**”菜单（齿轮图标）>“**管理加载项**”。管理员还可以 [通过使用组策略](/previous-versions/office/office-2013-resource-kit/jj219429(v=office.15)#using-group-policy-to-manage-how-users-can-install-and-use-apps-for-office)来管理此访问。
+- 用户可启用或禁用对 AppSource 的访问。 对于内容和任务窗格外接程序，用户从从文件选项信任中心信任中心  >    >    >  **设置**  >  受信任外接程序目录) 打开的主机 Office 客户端 (上的信任中心管理对受信任外接程序和目录的访问。 对于Outlook外接程序，使用 可以通过选择"管理外接程序"按钮来管理外接程序：在 Windows上的 Outlook 中，选择"文件""管理  >  **外接程序"。** In Outlook on Mac， choose the **Manage Add-ins** button on the add-in bar. 在 Outlook 网页版中，依次选择“**设置**”菜单（齿轮图标）>“**管理加载项**”。管理员还可以 [通过使用组策略](/previous-versions/office/office-2013-resource-kit/jj219429(v=office.15)#using-group-policy-to-manage-how-users-can-install-and-use-apps-for-office)来管理此访问。
 
 - 外接程序平台的设计通过以下方式为最终用户提供了安全和性能。
 
-  - Office 外接程序在 Web 浏览器控件中运行，该控件托管在独立于 Office 客户端应用程序的外接程序运行时环境中。 此设计提供与客户端应用程序的安全和性能隔离。
+  - 一Office外接程序在 Web 浏览器控件中运行，该控件托管在独立于 Office 客户端应用程序的外接程序运行时环境中。 此设计提供与客户端应用程序的安全和性能隔离。
 
   - 在 Web 浏览器控件中运行可允许加载项完成在浏览器中运行的常规网页可执行的所有操作，但同时将限制加载项遵守针对域隔离和安全区域的同源策略。
 
@@ -109,7 +109,7 @@ Outlook 外接程序通过特定的资源使用率监视提供额外安全和性
 
 ### <a name="developer-guidelines-to-handle-pii"></a>开发人员处理 PII 的准则
 
-下面列出了作为 Office 加载项开发人员的一些特定 PII 保护准则。
+下面列出了作为加载项开发人员的一些特定 PII Office准则。
 
 - [Settings](/javascript/api/office/office.settings) 对象旨在保存内容加载项或任务窗格加载项的会话之间的加载项设置和状态数据，但不会在 **Settings** 对象中存储密码和其他敏感 PII。最终用户无法查看 **Settings** 对象中的数据，但该数据存储为文档的易于访问的文件格式的一部分。你应该限制加载项对 PII 的使用，并将加载项所需的任何 PII 存储在将加载项作为用户保护的资源托管的服务器上。
 
@@ -129,7 +129,7 @@ Outlook 外接程序通过特定的资源使用率监视提供额外安全和性
 
 最佳做法是应该基于“_最小特权_”原则请求权限。即应该请求外接程序正常运行所需的 API 的最小子集的访问权限。例如，如果外接程序只需要读取其功能的用户文档中的数据，则应仅请求“**ReadDocument**”权限。（但是，请注意如果请求权限不足，则会导致外接程序平台阻止外接程序使用部分 API 并将生成运行时错误。）
 
-您可以在外接程序清单中指定权限，如本节下面的示例所示，最终用户可以在首次决定安装或激活外接程序之前查看请求的外接程序的权限级别。 此外，请求 **ReadWriteMailbox** 权限的 Outlook 外接程序需要显式管理员权限才能安装。
+您可以在外接程序清单中指定权限，如本节下面的示例所示，最终用户可以在首次决定安装或激活外接程序之前查看请求的外接程序的权限级别。 此外，Outlook **ReadWriteMailbox** 权限的外接程序需要显式管理员权限才能安装。
 
 以下示例演示任务窗格外接程序如何在其清单 **中指定 ReadDocument** 权限。 为重点关注权限，清单中的其他元素将不显示。
 
@@ -148,7 +148,7 @@ Outlook 外接程序通过特定的资源使用率监视提供额外安全和性
 
 有关任务窗格和内容加载项的权限的详细信息，请参阅[在加载项中请求获取 API 使用权限](../develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md)。
 
-有关 Outlook 外接程序的权限详细信息，请参阅下列主题。
+有关加载项权限Outlook，请参阅以下主题。
 
 - [Outlook 外接程序的隐私、权限和安全性](../outlook/privacy-and-security.md)
 
@@ -156,7 +156,7 @@ Outlook 外接程序通过特定的资源使用率监视提供额外安全和性
 
 ### <a name="same-origin-policy"></a>同源策略
 
-由于 Office 外接程序是运行在 Web 浏览器控件中的网页，因此它们必须遵循浏览器强制实施的同源策略。 默认情况下，一个域中的网页无法对托管该网页的其他域进行 [XmlHttpRequest](https://www.w3.org/TR/XMLHttpRequest/) Web 服务调用。
+由于Office外接程序是运行在 Web 浏览器控件中的网页，因此它们必须遵循浏览器强制实施的同源策略。 默认情况下，一个域中的网页无法对托管该网页的其他域进行 [XmlHttpRequest](https://www.w3.org/TR/XMLHttpRequest/) Web 服务调用。
 
 克服此限制的一个方法就是使用 JSON/P --通过包含一个脚本标记（其 **src** 属性指向另一个域中承载的一些脚本）为 Web 服务提供代理。 你可以编程方式创建 **script** 标记，动态创建 **src** 属性所指向的 URL，并通过 URI 查询参数将参数传递到 URL。 Web 服务提供程序在特定的 URL 位置创建和托管 JavaScript 代码，并根据 URI 查询参数返回不同的脚本。 这些脚本然后在插入位置执行并按照预期的方式工作。
 
@@ -202,7 +202,7 @@ Exchange 和 SharePoint 提供了客户端代理以实现跨域访问。通常�
 
 ### <a name="tips-to-prevent-clickjacking"></a>防止“点击劫持”的提示
 
-由于使用 Office 客户端应用程序在浏览器中运行时，Office 外接程序呈现在 iframe 中，因此使用以下提示来最大程度地降低点击劫持（[](https://en.wikipedia.org/wiki/Clickjacking)黑客用来欺骗用户泄露机密信息的技术）的风险。
+由于Office在包含 Office 客户端应用程序的浏览器中运行时，外接程序呈现在 iframe 中，因此请使用以下提示来最大程度地降低点击劫持（黑客用来欺骗用户泄露机密信息[](https://en.wikipedia.org/wiki/Clickjacking)的技术）的风险。
 
 首先，确定您的加载项可以执行的敏感操作。其中包括未授权的用户可能恶意使用的任何操作，如启动金融交易或发布敏感数据。例如，您的加载项可能让用户将款项发送到用户定义的接收人。
 

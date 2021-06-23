@@ -4,12 +4,12 @@ description: Outlook 加载项由第三方使用基于 Web 的平台集成到 Ou
 ms.date: 06/15/2021
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: f0c1dbdd1cf9909310b629188d4f3d3d5de6b6bb
-ms.sourcegitcommit: 0bf0e076f705af29193abe3dba98cbfcce17b24f
+ms.openlocfilehash: 3fb6c47d0dc2b41ecf657ea4d453c2ffcb8a8902
+ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2021
-ms.locfileid: "53007809"
+ms.lasthandoff: 06/23/2021
+ms.locfileid: "53076754"
 ---
 # <a name="outlook-add-ins-overview"></a>Outlook 加载项概述
 
@@ -33,13 +33,13 @@ Outlook 外接程序与 COM 或 VSTO 外接程序（特定于在 Windows 上运�
 
     **功能区上具有命令按钮的加载项**
 
-    ![加载项命令无 UI 形状](../images/uiless-command-shape.png)
+    ![加载项命令无 UI 形状。](../images/uiless-command-shape.png)
 
 - 加载项可以在邮件和约会中中断与正则表达式匹配项或检测实体的链接。 有关详细信息，请参阅 [上下文 Outlook 加载项](contextual-outlook-add-ins.md)。
 
     **用于突出显示的实体（地址）的上下文相关加载项**
 
-    ![在卡片中显示上下文相关应用程序](../images/outlook-detected-entity-card.png)
+    ![在卡片中显示上下文相关应用。](../images/outlook-detected-entity-card.png)
 
 ## <a name="mailbox-items-available-to-add-ins"></a>外接程序可用的邮箱项目
 

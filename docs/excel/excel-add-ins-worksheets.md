@@ -3,12 +3,12 @@ title: 使用 Excel JavaScript API 处理工作表
 description: 显示如何使用 JavaScript API 对工作表执行常见Excel示例。
 ms.date: 06/03/2021
 localization_priority: Normal
-ms.openlocfilehash: eeec79f1474857ec72f00a269cb1cb81e55b2ca9
-ms.sourcegitcommit: 17b5a076375bc5dc3f91d3602daeb7535d67745d
+ms.openlocfilehash: 9e181ec800eccb938fa152bb28772b11961c7a40
+ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/06/2021
-ms.locfileid: "52783510"
+ms.lasthandoff: 06/23/2021
+ms.locfileid: "53075549"
 ---
 # <a name="work-with-worksheets-using-the-excel-javascript-api"></a>使用 Excel JavaScript API 处理工作表
 
@@ -376,7 +376,7 @@ function formulaChangeHandler(event) {
 
 下图显示了排序事件的 `address` 属性返回的范围。 首先是排序前的示例数据：
 
-![排序前 Excel 中的表格数据](../images/excel-sort-event-before.png)
+![排序前Excel表中的数据。](../images/excel-sort-event-before.png)
 
 如果对“**Q1**”（“**B**”中的值）执行从上到下排序，则 `WorksheetRowSortedEventArgs.address` 返回以下突出显示的行：
 

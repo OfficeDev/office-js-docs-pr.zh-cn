@@ -1,14 +1,14 @@
 ---
 title: Office 外接程序的身份验证设计准则
 ms.date: 02/09/2021
-description: 了解如何在 Office 外接程序中直观设计登录或注册页面。
+description: 了解如何在加载项中直观地设计登录Office注册页。
 localization_priority: Normal
-ms.openlocfilehash: 755399c619094941957fef4496f98f5f526ebd70
-ms.sourcegitcommit: ccc0a86d099ab4f5ef3d482e4ae447c3f9b818a3
+ms.openlocfilehash: bc047e6b001b7a491aa8117ba1b5901716ca1555
+ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "50237733"
+ms.lasthandoff: 06/23/2021
+ms.locfileid: "53076383"
 ---
 # <a name="authentication-patterns"></a>身份验证模式
 
@@ -23,25 +23,25 @@ ms.locfileid: "50237733"
 |使用清晰的按钮标签来描述“登录”或“创建帐户”等特定任务。 |使用模糊的按钮标签，如“提交”或“入门”来指导用户完成身份验证流程。|
 |使用对话框将用户的注意力集中在身份验证表单上。 |使用初次运行体验和身份验证表单塞满任务窗格。|
 |在流程中寻找细处的效率，如自动对焦输入框。 |为交互添加如要求用户单击表单域等不必要的步骤。|
-|为用户提供注销和重新进行身份验证的方法。 |强制用户卸载以切换标识。|
+|为用户提供一种注销和重新进行身份验证的方法。 |强制用户卸载以切换标识。|
 
 ## <a name="authentication-flow"></a>身份验证流
 
 1. 首先运行 Placemat - 将登录按钮设置为加载项初次运行体验中的明确号召性用语。
 
-    ![Screenshot showing an add-in task pane in an Office application](../images/add-in-fre-value-placemat.png)
+    ![Screenshot showing an add-in task pane in an Office application.](../images/add-in-fre-value-placemat.png)
 
 1. 标识提供者选项对话框 - 显示明确的标识提供者列表，包括用户名和密码表单（如适用）。 身份验证对话框处于打开状态时，加载项 UI 可能会被阻止。
 
-    ![Screenshot showing the Identity Provider Choices dialog in an Office application](../images/add-in-auth-choices-dialog.png)
+    ![Screenshot showing the Identity Provider Choices dialog in an Office application.](../images/add-in-auth-choices-dialog.png)
 
-1. 身份提供程序登录 - 身份提供程序将拥有其自己的 UI。 Microsoft Azure Active Directory 允许自定义登录和访问面板页面，以与服务保持一致的外观。 [了解更多信息](/azure/active-directory/fundamentals/customize-branding)。
+1. 身份提供程序登录 - 身份提供程序将拥有其自己的 UI。 Microsoft Azure Active Directory允许自定义登录和访问面板页面，以与服务保持一致的外观。 [了解更多信息](/azure/active-directory/fundamentals/customize-branding)。
 
-    ![Screenshot showing the Identity Provider Sign-in dialog in an Office application](../images/add-in-auth-identity-sign-in.png)
+    ![Screenshot showing the Identity Provider Sign-in dialog in an Office application.](../images/add-in-auth-identity-sign-in.png)
 
 1. 进度 - 表示设置和 UI 加载时的进度。
 
-    ![Screenshot showing a dialog with a progress indicator in an Office application](../images/add-in-auth-modal-interstitial.png)
+    ![Screenshot showing a dialog with a progress indicator in an Office application.](../images/add-in-auth-modal-interstitial.png)
 
 > [!NOTE]
 > 使用 Microsoft 的标识服务时，你将有机会使用可定制的浅色和深色主题的品牌登录按钮。 了解详细信息。
@@ -49,20 +49,20 @@ ms.locfileid: "50237733"
 ## <a name="single-sign-on-authentication-flow"></a>单Sign-On身份验证流
 
 > [!NOTE]
-> Word、Excel、Outlook 和 PowerPoint 目前支持单一登录 API。 有关单一登录支持的信息，请参阅 [IdentityAPI 要求集](../reference/requirement-sets/identity-api-requirement-sets.md)。 如果使用的是 Outlook 加载项，请务必为 Microsoft 365 租赁启用新式验证。 若要了解如何这样做，请参阅 [Exchange Online：如何为租户启用新式验证](https://social.technet.microsoft.com/wiki/contents/articles/32711.exchange-online-how-to-enable-your-tenant-for-modern-authentication.aspx)。
+> Word、Excel、Outlook 和 PowerPoint 目前支持单一登录 API。 有关单一登录支持的信息，请参阅 [IdentityAPI 要求集](../reference/requirement-sets/identity-api-requirement-sets.md)。 如果使用的是 Outlook 加载项，请务必为 Microsoft 365 租赁启用新式验证。 若要了解如何执行此操作，请参阅 [Exchange Online: How to enable your tenant for modern authentication](https://social.technet.microsoft.com/wiki/contents/articles/32711.exchange-online-how-to-enable-your-tenant-for-modern-authentication.aspx)（如何为租户启用新式体验）。
 
-使用单一登录实现更流畅的最终用户体验。 Office 中的用户标识 (Microsoft 帐户或 Microsoft 365 标识) 登录加载项。 因此，用户仅登录一次。 这样便使你的客户更容易上手，体验更为顺畅。
+使用单一登录实现更流畅的最终用户体验。 Microsoft 帐户或 Office (中的用户标识Microsoft 365) 登录外接程序。 因此，用户只能登录一次。 这样便使你的客户更容易上手，体验更为顺畅。
 
-1. 在安装加载项时，用户将看到与以下类似的同意窗口：
+1. 在安装外接程序时，用户将看到类似于以下内容的同意窗口：
 
-    ![Screenshot showing the consent window in an Office application when an add-in is installed](../images/add-in-auth-SSO-consent-dialog.png)
+    ![Screenshot showing the consent window in an Office application when an add-in is installed.](../images/add-in-auth-SSO-consent-dialog.png)
 
     > [!NOTE]
     > 加载项发布服务器将控制同意窗口中包含的徽标、字符串和权限范围。 这一 UI 由 Microsoft 预配置。
 
 1. 加载项将在用户同意后加载。 它可以提取并显示任何必要的用户自定义信息。
 
-    ![Screenshot showing an Office application with add-in buttons displayed in the ribbon](../images/add-in-ribbon.png)
+    ![Screenshot showing an Office application with add-in buttons displayed in the ribbon.](../images/add-in-ribbon.png)
 
 ## <a name="see-also"></a>另请参阅
 

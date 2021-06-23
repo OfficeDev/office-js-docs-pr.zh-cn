@@ -1,19 +1,19 @@
 ---
-title: 使用 Excel JavaScript API 插入区域
-description: 了解如何使用 Excel JavaScript API 插入单元格区域。
+title: 使用 JavaScript API Excel区域
+description: 了解如何使用 JavaScript API 插入Excel单元格。
 ms.date: 04/02/2021
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: 401a08dd10b3775012738ab9c80ec6ab367555ec
-ms.sourcegitcommit: 54fef33bfc7d18a35b3159310bbd8b1c8312f845
+ms.openlocfilehash: 0571e7d6140f5023008654a1e74d7abf6b3cab0a
+ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2021
-ms.locfileid: "51652798"
+ms.lasthandoff: 06/23/2021
+ms.locfileid: "53075780"
 ---
-# <a name="insert-a-range-of-cells-using-the-excel-javascript-api"></a>使用 Excel JavaScript API 插入单元格区域
+# <a name="insert-a-range-of-cells-using-the-excel-javascript-api"></a>使用 JavaScript API 插入Excel单元格
 
-本文提供了一个代码示例，该示例使用 Excel JavaScript API 插入一系列单元格。 有关对象支持的属性和方法的完整列表，请参阅 `Range` [Excel.Range 类](/javascript/api/excel/excel.range)。
+本文提供了一个代码示例，该示例使用 JavaScript API 插入Excel单元格。 有关对象支持的属性和方法的完整列表， `Range` 请参阅[Excel。Range 类](/javascript/api/excel/excel.range)。
 
 [!include[Excel cells and ranges note](../includes/note-excel-cells-and-ranges.md)]
 
@@ -34,14 +34,14 @@ Excel.run(function (context) {
 
 ### <a name="data-before-range-is-inserted"></a>插入区域之前的数据
 
-![Excel 中插入区域之前的数据](../images/excel-ranges-start.png)
+![插入Excel之前数据。](../images/excel-ranges-start.png)
 
 ### <a name="data-after-range-is-inserted"></a>插入区域之后的数据
 
-![Excel 中插入区域之后的数据](../images/excel-ranges-after-insert.png)
+![插入Excel后数据。](../images/excel-ranges-after-insert.png)
 
 ## <a name="see-also"></a>另请参阅
 
 - [Excel 加载项中的 Word JavaScript 对象模型](excel-add-ins-core-concepts.md)
-- [使用 Excel JavaScript API 处理单元格](excel-add-ins-cells.md)
-- [使用 Excel JavaScript API 清除或删除区域](excel-add-ins-ranges-clear-delete.md)
+- [使用 JavaScript API Excel单元格](excel-add-ins-cells.md)
+- [使用 JavaScript API 清除或删除Excel区域](excel-add-ins-ranges-clear-delete.md)

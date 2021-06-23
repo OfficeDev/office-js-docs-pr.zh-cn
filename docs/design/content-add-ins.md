@@ -3,12 +3,12 @@ title: 内容 Office 加载项
 description: 内容加载项是指可以直接嵌入 Excel 或 PowerPoint 文档的图面，用户可以通过它访问界面控件，运行代码以修改文档或显示数据源中的数据。
 ms.date: 05/12/2021
 localization_priority: Normal
-ms.openlocfilehash: 89c8c7eb96d6b1cf6484133b52acbe7d0ccb5298
-ms.sourcegitcommit: 30f6c620380075e3459cac748ca0c656427b384d
+ms.openlocfilehash: 9f7ccd4cfaed5132debb7017caaf3b9da733850d
+ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/12/2021
-ms.locfileid: "52329994"
+ms.lasthandoff: 06/23/2021
+ms.locfileid: "53076355"
 ---
 # <a name="content-office-add-ins"></a>内容 Office 加载项
 
@@ -16,7 +16,7 @@ ms.locfileid: "52329994"
 
 *图 1. 内容加载项的典型布局*
 
-![应用程序内容外接程序的典型布局Office应用程序](../images/overview-with-app-content.png)
+![应用程序内容加载项的典型布局Office布局。](../images/overview-with-app-content.png)
 
 ## <a name="best-practices"></a>最佳做法
 
@@ -35,13 +35,13 @@ ms.locfileid: "52329994"
 
 *图 2：Windows 上的个性菜单*
 
-![桌面版 12x32 像素Windows菜单](../images/personality-menu-win.png)
+![桌面上的 12x32 像素Windows菜单。](../images/personality-menu-win.png)
 
 对于 Mac，“个性”菜单尺寸为 26x26 像素，但是从右侧浮动 8 个像素，再从顶部浮动 6 个像素，能将占用空间增加至 34x32 像素，如下所示。
 
 *图 3：Mac 上的个性菜单*
 
-![Mac 桌面上的 34x32 像素个性菜单](../images/personality-menu-mac.png)
+![Mac 桌面上的 34x32 像素个性菜单。](../images/personality-menu-mac.png)
 
 ## <a name="implementation"></a>实现
 
@@ -56,6 +56,6 @@ ms.locfileid: "52329994"
 ## <a name="see-also"></a>另请参阅
 
 - [Office 客户端应用程序和 Office 加载项的平台可用性](../overview/office-add-in-availability.md)
-- [Office外接程序中的 Fabric Core](fabric-core.md)
+- [Office 加载项中的 Fabric Core](fabric-core.md)
 - [适用于 Office 加载项的 UX 设计模式](../design/ux-design-pattern-templates.md)
 - [在加载项中请求获取 API 使用权限](../develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md)

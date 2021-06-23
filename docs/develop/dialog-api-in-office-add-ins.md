@@ -3,12 +3,12 @@ title: 在 Office 加载项中使用 Office 对话框 API
 description: 了解在加载项中Office的基础知识。
 ms.date: 01/28/2021
 localization_priority: Normal
-ms.openlocfilehash: acb26255778a57d89b6654e7bf6e3fdc71b67d8d
-ms.sourcegitcommit: 0d3bf72f8ddd1b287bf95f832b7ecb9d9fa62a24
+ms.openlocfilehash: 210b12f826e0d0d360163ee7663d6afca740a24d
+ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/02/2021
-ms.locfileid: "52727911"
+ms.lasthandoff: 06/23/2021
+ms.locfileid: "53076102"
 ---
 # <a name="use-the-office-dialog-api-in-office-add-ins"></a>在 Office 加载项中使用 Office 对话框 API
 
@@ -30,7 +30,7 @@ ms.locfileid: "52727911"
 
 下图展示了对话框示例。
 
-![Screenshot showing dialog with 3 sign-in options displayed in front of Word](../images/auth-o-dialog-open.png)
+![Screenshot showing dialog with 3 sign-in options displayed in front of Word.](../images/auth-o-dialog-open.png)
 
 请注意，对话框总是在屏幕的中心打开。 用户可以移动并重设对话框的大小。 该窗口 *是非* 模式窗口 ，用户可以继续与 Office 应用程序中的文档以及任务窗格中的页面（如果有）进行交互。
 

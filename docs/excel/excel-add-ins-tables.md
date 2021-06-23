@@ -3,12 +3,12 @@ title: 使用 Excel JavaScript API 处理表格
 description: 显示如何使用 JavaScript API 对表执行常见Excel示例。
 ms.date: 06/07/2021
 localization_priority: Normal
-ms.openlocfilehash: a44a99e0ddc612342b292fd6e9d203799cde7b53
-ms.sourcegitcommit: 5a151d4df81e5640363774406d0f329d6a0d3db8
+ms.openlocfilehash: 480eda98c1828d11de7c3aa227468ebc408dae2c
+ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2021
-ms.locfileid: "52853996"
+ms.lasthandoff: 06/23/2021
+ms.locfileid: "53075801"
 ---
 # <a name="work-with-tables-using-the-excel-javascript-api"></a>使用 Excel JavaScript API 处理表格
 
@@ -52,7 +52,7 @@ Excel.run(function (context) {
 
 **新建表**
 
-![Excel 中的新表](../images/excel-tables-create.png)
+![Excel 中的新表。](../images/excel-tables-create.png)
 
 ## <a name="add-rows-to-a-table"></a>向表添加行
 
@@ -90,7 +90,7 @@ Excel.run(function (context) {
 
 **包含新行的表**
 
-![Excel 中包含新行的表](../images/excel-tables-add-rows.png)
+![包含新行的Excel。](../images/excel-tables-add-rows.png)
 
 ## <a name="add-a-column-to-a-table"></a>向表添加列
 
@@ -130,7 +130,7 @@ Excel.run(function (context) {
 
 **包含新列的表**
 
-![Excel 中包含新列的表](../images/excel-tables-add-column.png)
+![包含新列的表Excel。](../images/excel-tables-add-column.png)
 
 ### <a name="add-a-column-that-contains-formulas"></a>添加包含公式的列
 
@@ -163,7 +163,7 @@ Excel.run(function (context) {
 
 **包含新的计算列的表**
 
-![Excel 中包含新的计算列的表](../images/excel-tables-add-calculated-column.png)
+![包含新计算列的表Excel。](../images/excel-tables-add-calculated-column.png)
 
 ## <a name="resize-a-table-online-only"></a>调整表格大小 (仅联机) 
 
@@ -190,7 +190,7 @@ Excel.run(function (context) {
 
 **调整大小后的表格** 
 
-![包含多个空行的Excel](../images/excel-tables-resize.png)
+![表中有多个空行的Excel。](../images/excel-tables-resize.png)
 
 ## <a name="update-column-name"></a>更新列名称
 
@@ -219,7 +219,7 @@ Excel.run(function (context) {
 
 **包含新列名称的表格**
 
-![Excel 中包含新的列名称的表](../images/excel-tables-update-column-name.png)
+![包含新列名称的表Excel。](../images/excel-tables-update-column-name.png)
 
 ## <a name="get-data-from-a-table"></a>从表中获取数据
 
@@ -265,7 +265,7 @@ Excel.run(function (context) {
 
 **表和数据输出**
 
-![Excel 中的表数据](../images/excel-tables-get-data.png)
+![数据表中的Excel。](../images/excel-tables-get-data.png)
 
 ## <a name="detect-data-changes"></a>检测数据更改
 
@@ -313,7 +313,7 @@ Excel.run(function (context) {
 
 **按金额排序的表数据（降序）**
 
-![排序表中的Excel](../images/excel-tables-sort.png)
+![排序表中的Excel。](../images/excel-tables-sort.png)
 
 在工作表中对数据进行排序时，会触发事件通知。 要详细了解有关排序的事件以及加载项如何注册事件处理程序来响应此类事件，请参阅[处理排序事件](excel-add-ins-worksheets.md#handle-sorting-events)。
 
@@ -347,7 +347,7 @@ Excel.run(function (context) {
 
 **将筛选器应用于类别和金额的表数据**
 
-![Excel 中经过筛选的表数据](../images/excel-tables-filters-apply.png)
+![在数据表中筛选的Excel。](../images/excel-tables-filters-apply.png)
 
 ## <a name="clear-table-filters"></a>清除表筛选器
 
@@ -366,7 +366,7 @@ Excel.run(function (context) {
 
 **没有应用任何筛选器的表数据**
 
-![Excel 中未经筛选的表数据](../images/excel-tables-filters-clear.png)
+![表中未筛选的表Excel。](../images/excel-tables-filters-clear.png)
 
 ## <a name="get-the-visible-range-from-a-filtered-table"></a>从筛选表中获取可见区域
 
@@ -433,7 +433,7 @@ Excel.run(function (context) {
 
 **应用格式设置的表**
 
-![Excel 中应用了格式设置的表](../images/excel-tables-formatting-after.png)
+![表格格式应用于Excel。](../images/excel-tables-formatting-after.png)
 
 ## <a name="convert-a-range-to-a-table"></a>将区域转换为表
 
@@ -473,11 +473,11 @@ Excel.run(function (context) {
 
 **内的数据（在区域转换为表之前）**
 
-![Excel 中区域内的数据](../images/excel-ranges.png)
+![Excel 中Excel。](../images/excel-ranges.png)
 
 **表中的数据（在区域转换为表之后）**
 
-![Excel 中表的数据](../images/excel-tables-from-range.png)
+![数据表中的Excel。](../images/excel-tables-from-range.png)
 
 ## <a name="import-json-data-into-a-table"></a>将 JSON 数据导入表
 
@@ -524,7 +524,7 @@ Excel.run(function (context) {
 
 **新建表**
 
-![导入的 JSON 数据的新表Excel](../images/excel-tables-create-from-json.png)
+![导入的 JSON 数据的新表Excel。](../images/excel-tables-create-from-json.png)
 
 ## <a name="see-also"></a>另请参阅
 

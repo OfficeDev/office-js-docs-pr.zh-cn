@@ -1,14 +1,14 @@
 ---
 title: 排查 Office 加载项中的用户错误
-description: 了解如何排查 Office 加载项中的用户错误。
+description: 了解如何解决加载项中的Office错误。
 ms.date: 09/08/2020
 localization_priority: Normal
-ms.openlocfilehash: e1cb5e0bb8005f04425a5ad9c7e807d10f054e35
-ms.sourcegitcommit: d28392721958555d6edea48cea000470bd27fcf7
+ms.openlocfilehash: 7762c81744aa484ee5c958e6c647c4ea7893efc9
+ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/13/2021
-ms.locfileid: "49840089"
+ms.lasthandoff: 06/23/2021
+ms.locfileid: "53077202"
 ---
 # <a name="troubleshoot-user-errors-with-office-add-ins"></a>排查 Office 加载项中的用户错误
 
@@ -43,7 +43,7 @@ ms.locfileid: "49840089"
 如果在 Windows 上运行并[使用 Internet Explorer](../concepts/browsers-used-by-office-web-add-ins.md) 的 Outlook 加载项不能正常工作，请尝试在 Internet Explorer 中启用脚本调试。 
 
 
-- 转到"工具> Internet **选项**  >  **高级"。**
+- 转到工具> **Internet 选项**  >  **高级**。
     
 - 在“浏览”下，取消选中“禁用脚本调试 (Internet Explorer)”和“禁用脚本调试 (其他)”。
     
@@ -69,7 +69,7 @@ ms.locfileid: "49840089"
 
 “浏览器中的安全设置阻止创建对话框。请尝试使用其他浏览器，或者配置浏览器，使地址栏中显示的 [URL] 和域处于同一安全区域。”
 
-![对话框错误消息的屏幕截图](../images/dialog-prevented.png)
+![对话框错误消息的屏幕截图。](../images/dialog-prevented.png)
 
 |**受影响的浏览器**|**受影响的平台**|
 |:--------------------|:---------------------|
@@ -95,4 +95,4 @@ Office.context.ui.displayDialogAsync(startAddress, {displayInIFrame:true}, callb
 
 ## <a name="see-also"></a>另请参阅
 
-- [Office 加载项开发错误疑难解答](troubleshoot-development-errors.md)
+- [排查Office加载项的开发错误](troubleshoot-development-errors.md)

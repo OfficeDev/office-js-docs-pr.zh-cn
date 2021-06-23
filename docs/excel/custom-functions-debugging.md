@@ -1,14 +1,14 @@
 ---
 ms.date: 04/12/2021
-description: 了解如何调试不使用任务窗格的 Excel 自定义函数。
+description: 了解如何调试不使用Excel窗格的自定义函数。
 title: 无 UI 自定义函数调试
 localization_priority: Normal
-ms.openlocfilehash: c6954af4638ae416c789af339d35187467e37b7f
-ms.sourcegitcommit: 78fb861afe7d7c3ee7fe3186150b3fed20994222
+ms.openlocfilehash: a692f376cb5c874fa4d510d3459469d803e643f7
+ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/26/2021
-ms.locfileid: "52024323"
+ms.lasthandoff: 06/23/2021
+ms.locfileid: "53075934"
 ---
 # <a name="ui-less-custom-functions-debugging"></a>无 UI 自定义函数调试
 
@@ -18,106 +18,106 @@ ms.locfileid: "52024323"
 
 [!include[Shared runtime note](../includes/shared-runtime-note.md)]
 
-在 Windows 上：
-- [Excel Desktop and Visual Studio Code (VS Code) debugger](#use-the-vs-code-debugger-for-excel-desktop)
-- [Excel 网页和 VS 代码调试程序](#use-the-vs-code-debugger-for-excel-in-microsoft-edge)
-- [Excel 网页和浏览器工具](#use-the-browser-developer-tools-to-debug-custom-functions-in-excel-on-the-web)
+在Windows：
+- [Excel桌面和Visual Studio Code (VS Code) 调试器](#use-the-vs-code-debugger-for-excel-desktop)
+- [Excel web 版调试VS Code和调试器](#use-the-vs-code-debugger-for-excel-in-microsoft-edge)
+- [Excel web 版和浏览器工具](#use-the-browser-developer-tools-to-debug-custom-functions-in-excel-on-the-web)
 - [命令行](#use-the-command-line-tools-to-debug)
 
 在 Mac 上：
-- [Excel 网页和浏览器工具](#use-the-browser-developer-tools-to-debug-custom-functions-in-excel-on-the-web)
+- [Excel web 版和浏览器工具](#use-the-browser-developer-tools-to-debug-custom-functions-in-excel-on-the-web)
 - [命令行](#use-the-command-line-tools-to-debug)
 
 > [!NOTE]
-> 为简单起见，本文介绍在使用 Visual Studio 代码编辑、运行任务的情况下进行调试，在某些情况下，还使用调试视图。 如果使用的是其他编辑器或命令行工具，请参阅本文末尾的命令行说明[](#commands-for-building-and-running-your-add-in)。
+> 为简单起见，本文介绍在使用 Visual Studio Code编辑、运行任务的情况下进行调试，在某些情况下，还使用调试视图。 如果使用的是其他编辑器或命令行工具，请参阅本文末尾的命令行说明[](#commands-for-building-and-running-your-add-in)。
 
-## <a name="requirements"></a>要求
+## <a name="requirements"></a>Requirements
 
-此调试过程 **仅适用于不使用** 任务窗格或其他 UI 元素的无 UI 自定义函数。 可以按照在 [Excel](../tutorials/excel-tutorial-create-custom-functions.md) 中创建自定义函数教程中的步骤创建无 UI 自定义函数，然后删除由适用于 Office 外接程序的 [Yeoman](https://www.npmjs.com/package/generator-office)生成器安装的所有任务窗格和 UI 元素。
+此调试过程 **仅适用于不使用** 任务窗格或其他 UI 元素的无 UI 自定义函数。 可以按照在 Excel 中创建自定义函数教程中的步骤创建无 UI 自定义函数，然后删除由适用于[Office](../tutorials/excel-tutorial-create-custom-functions.md)加载项的[Yeoman](https://www.npmjs.com/package/generator-office)生成器安装的所有任务窗格和 UI 元素。
 
 请注意，此调试过程与使用共享运行时 的自定义函数 [项目不兼容](../develop/configure-your-add-in-to-use-a-shared-runtime.md)。
 
-## <a name="use-the-vs-code-debugger-for-excel-desktop"></a>使用适用于 Excel Desktop 的 VS 代码调试程序
+## <a name="use-the-vs-code-debugger-for-excel-desktop"></a>使用 VS Code 桌面版Excel调试程序
 
-您可以使用 VS Code 在桌面上的 Office Excel 中调试无 UI 自定义函数。
+可以使用 VS Code调试桌面上的 Office Excel UI 无 UI 自定义函数。
 
 > [!NOTE]
-> 适用于 Mac 的桌面调试不可用，但可以使用浏览器工具和命令行来调试 [Excel 网页](#use-the-command-line-tools-to-debug) 版) 。
+> 适用于 Mac 的桌面调试不可用，但可以使用浏览器工具和命令行[](#use-the-command-line-tools-to-debug)来调试Excel web 版) 。
 
-### <a name="run-your-add-in-from-vs-code"></a>从 VS Code 运行加载项
+### <a name="run-your-add-in-from-vs-code"></a>从应用程序运行VS Code
 
-1. 在 VS Code 中打开自定义函数根项目 [文件夹](https://code.visualstudio.com/)。
+1. 在 中打开自定义函数根项目[VS Code。](https://code.visualstudio.com/)
 2. 选择 **"终端>运行任务**"，然后键入或选择"**监视"。** 这将监视并重新生成任何文件更改。
 3. 选择 **"终端>运行任务**"，然后键入或选择 **"开发人员服务器"。**
 
-### <a name="start-the-vs-code-debugger"></a>启动 VS 代码调试程序
+### <a name="start-the-vs-code-debugger"></a>启动VS Code调试器
 
 4. Choose **View > Run** or enter **Ctrl+Shift+D** to switch to debug view.
 5. From the Run drop-down menu， choose **Excel Desktop (Custom Functions)**.
-6. 选择 **F5** (，或者从 **>开始调试** "菜单中选择") 开始调试"。 新的 Excel 工作簿将在外接程序已旁加载且可供使用时打开。
+6. 选择 **F5** (，或者从 **>开始调试** "菜单中选择") 开始调试"。 新Excel工作簿将打开，同时加载项已旁加载并可供使用。
 
 ### <a name="start-debugging"></a>开始调试
 
-1. 在 VS Code 中，打开源代码脚本文件 (functions.js **或 functions.ts**) 。
+1. 在VS Code中，打开源代码脚本文件 (functions.js **或 functions.ts**) 。 
 2. [在自定义函数](https://code.visualstudio.com/Docs/editor/debugging#_breakpoints) 源代码中设置断点。
-3. 在 Excel 工作簿中，输入使用自定义函数的公式。
+3. 在Excel工作簿中，输入使用自定义函数的公式。
 
-此时，将在设置断点的代码行上停止执行。 现在，你可以逐步调试代码、设置监视以及使用所需的任何 VS 代码调试功能。
+此时，将在设置断点的代码行上停止执行。 现在，你可以逐步调试代码、设置监视以及使用VS Code调试功能。
 
-## <a name="use-the-vs-code-debugger-for-excel-in-microsoft-edge"></a>在 Microsoft Edge 中为 Excel 使用 VS 代码调试程序
+## <a name="use-the-vs-code-debugger-for-excel-in-microsoft-edge"></a>在 VS Code 中Excel调试Microsoft Edge
 
-您可以使用 VS Code 在 Microsoft Edge 浏览器的 Excel 中调试无 UI 自定义函数。 若要将 VS Code 与 Microsoft Edge 一同使用，必须安装 [Debugger for Microsoft Edge](https://marketplace.visualstudio.com/items?itemName=msjsdiag.debugger-for-edge) 扩展。
+可以使用VS Code在浏览器上的 Excel 调试无 UI Microsoft Edge函数。 若要将 VS Code 与 Microsoft Edge 一起使用，必须安装适用于 Microsoft Edge 扩展[的调试](https://marketplace.visualstudio.com/items?itemName=msjsdiag.debugger-for-edge)程序。
 
-### <a name="run-your-add-in-from-vs-code"></a>从 VS Code 运行加载项
+### <a name="run-your-add-in-from-vs-code"></a>从应用程序运行VS Code
 
-1. 在 VS Code 中打开自定义函数根项目 [文件夹](https://code.visualstudio.com/)。
+1. 在 中打开自定义函数根项目[VS Code。](https://code.visualstudio.com/)
 2. 选择 **"终端>运行任务**"，然后键入或选择"**监视"。** 这将监视并重新生成任何文件更改。
 3. 选择 **"终端>运行任务**"，然后键入或选择 **"开发人员服务器"。**
 
-### <a name="start-the-vs-code-debugger"></a>启动 VS 代码调试程序
+### <a name="start-the-vs-code-debugger"></a>启动VS Code调试器
 
 4. Choose **View > Run** or enter **Ctrl+Shift+D** to switch to debug view.
 5. 从"调试"选项中，选择 **"Office Online (Edge Chromium) "。**
-6. 在 Microsoft Edge 浏览器中打开 Excel 并创建新的工作簿。
+6. 在Excel中打开Microsoft Edge新建工作簿。
 7. 在 **功能** 区中选择"共享"，并复制此新工作簿的 URL 链接。
 8. 选择 **F5** (**或从>** 开始调试"菜单中选择") 开始调试"。 将出现一个提示，询问文档的 URL。
 9. 粘贴工作簿的 URL，然后按 Enter。
 
 ### <a name="sideload-your-add-in"></a>旁加载加载项
 
-1. 选择功能 **区** 上的"插入"选项卡，在 **"外接程序"** 部分，选择 **"Office 外接程序"。**
-2. 在 **"Office 外接程序"** 对话框中，选择 **"我的** 外接程序"选项卡，选择"管理 **我的** 外接程序"，然后选择"**上载我的外接程序"。**
+1. 选择功能 **区** 上的"插入"选项卡，在"外接程序"部分，选择"Office **外接程序"。**
+2. 在 **"Office** 外接程序"对话框中，选择"**我的** 外接程序"选项卡，选择"管理 **我的** 外接程序"，Upload"**我的外接程序"。**
     
-    ![“Office 加载项”对话框，右上方有“管理我的加载项”下拉列表，其中有下拉选项“上传我的加载项”](../images/office-add-ins-my-account.png)
+    ![the Office Add-ins dialog with a drop-down in the upper right reading "Manage my add-ins" and a drop-down below it with the option "Upload My Add-in".](../images/office-add-ins-my-account.png)
 
-3. **浏览** 到外接程序清单文件， **然后选择上载**。
+3. **浏览** 到外接程序清单文件，然后选择 **"Upload"。**
     
     ![带浏览、上载和取消按钮的上载外接程序对话框。](../images/upload-add-in.png)
 
 
 ### <a name="set-breakpoints"></a>设置断点
-1. 在 VS Code 中，打开源代码脚本文件 (functions.js **或 functions.ts**) 。
+1. 在VS Code中，打开源代码脚本文件 (functions.js **或 functions.ts**) 。 
 2. [在自定义函数](https://code.visualstudio.com/Docs/editor/debugging#_breakpoints) 源代码中设置断点。
-3. 在 Excel 工作簿中，输入使用自定义函数的公式。
+3. 在Excel工作簿中，输入使用自定义函数的公式。
 
-## <a name="use-the-browser-developer-tools-to-debug-custom-functions-in-excel-on-the-web"></a>使用浏览器开发人员工具调试 Excel 网页版中的自定义函数
+## <a name="use-the-browser-developer-tools-to-debug-custom-functions-in-excel-on-the-web"></a>使用浏览器开发人员工具在浏览器中调试自定义Excel web 版
 
-可以使用浏览器开发人员工具在 Excel 网页版中调试无 UI 自定义函数。 以下步骤适用于 Windows 和 macOS。
+可以使用浏览器开发人员工具在浏览器中调试无 UI Excel web 版。 以下步骤适用于 Windows 和 macOS。
 
-### <a name="run-your-add-in-from-visual-studio-code"></a>从代码运行Visual Studio加载项
+### <a name="run-your-add-in-from-visual-studio-code"></a>从应用程序运行Visual Studio Code
 
-1. 打开自定义函数根项目文件夹，Visual Studio [代码 ](https://code.visualstudio.com/) (VS Code) 。
+1. 在 中打开自定义函数根项目[Visual Studio Code (VS Code) 。 ](https://code.visualstudio.com/)
 2. 选择 **"终端>运行任务**"，然后键入或选择"**监视"。** 这将监视并重新生成任何文件更改。
 3. 选择 **"终端>运行任务**"，然后键入或选择 **"开发人员服务器"。**
 
 ### <a name="sideload-your-add-in"></a>旁加载加载项
 
-1. 在[Web 上打开 Office。](https://office.live.com/)
-2. 打开一个新的 Excel 工作簿。
-3. 打开功能 **区** 上的"插入"选项卡，在"**外接程序**"部分，选择 **"Office 外接程序"。**
-4. 在 **"Office 外接程序"** 对话框中，选择 **"我的** 外接程序"选项卡，选择"管理 **我的** 外接程序"，然后选择"**上载我的外接程序"。**
+1. 打开[Office web 版](https://office.live.com/)。
+2. 打开一个新的Excel工作簿。
+3. 打开功能 **区** 上的"插入"选项卡，在"外接程序"部分，选择"Office **外接程序"。**
+4. 在 **"Office** 外接程序"对话框中，选择"**我的** 外接程序"选项卡，选择"管理 **我的** 外接程序"，Upload"**我的外接程序"。**
     
-    ![“Office 加载项”对话框，右上方有“管理我的加载项”下拉列表，其中有下拉选项“上传我的加载项”](../images/office-add-ins-my-account.png)
+    ![the Office Add-ins dialog with a drop-down in the upper right reading "Manage my add-ins" and a drop-down below it with the option "Upload My Add-in".](../images/office-add-ins-my-account.png)
 
 5. **转到** 加载项清单文件，再选择“上传”。
     
@@ -132,30 +132,30 @@ ms.locfileid: "52024323"
 2. 在开发人员工具中，使用 **Cmd+P** 或 **Ctrl+P** (functions.js或 **functions.ts**) 。
 3. [在自定义函数](https://code.visualstudio.com/Docs/editor/debugging#_breakpoints) 源代码中设置断点。 
 
-如果需要更改代码，可以在 VS Code 中编辑并保存更改。 刷新浏览器以查看已加载的更改。
+如果需要更改代码，可以在 VS Code并保存更改。 刷新浏览器以查看已加载的更改。
 
 ## <a name="use-the-command-line-tools-to-debug"></a>使用命令行工具进行调试
 
-如果不使用 VS Code，可以使用命令行命令 (Bash 或 PowerShell) 运行外接程序。 你需要使用浏览器开发人员工具在 Excel 网页版中调试代码。 不能使用命令行调试桌面版 Excel。
+如果未使用 VS Code，可以使用命令行 (如 Bash 或 PowerShell) 运行外接程序。 你将需要使用浏览器开发人员工具在 Excel web 版 中调试代码。 不能使用命令行调试桌面Excel版本。
 
 1. 从命令行运行 `npm run watch` 以观察代码发生更改时并重新生成代码。
 2. 打开第二个命令行窗口 (运行 watch.) 
 
-3. 如果要在桌面版 Excel 中启动加载项，请运行以下命令
+3. 如果要在桌面版本的外接程序中启动Excel，请运行以下命令
     
     `npm run start:desktop`
     
-    或者，如果你想要在 Excel 网页中启动加载项，请运行以下命令
+    或者，如果你想要在加载项中启动Excel web 版运行以下命令
     
     `npm run start:web`
     
-    对于 Excel 网页应用，还需要旁加载加载项。 按照旁加载 [加载项中的步骤](#sideload-your-add-in) 旁加载加载项。 然后继续下一部分以开始调试。
+    例如Excel web 版你还需要旁加载你的外接程序。 按照旁加载 [加载项中的步骤](#sideload-your-add-in) 旁加载加载项。 然后继续下一部分以开始调试。
     
 4. 在浏览器中打开开发人员工具。 对于 Chrome 和大多数浏览器 F12，将打开开发人员工具。
 5. 在开发人员工具中，打开源代码脚本文件 (functions.js **或 functions.ts**) 。  自定义函数代码可能位于文件的末尾附近。
 6. 在自定义函数源代码中，通过选择一行代码来应用断点。
 
-如果需要更改代码，可以在该代码中进行Visual Studio并保存更改。 刷新浏览器以查看已加载的更改。
+如果需要更改代码，可以在 Visual Studio并保存更改。 刷新浏览器以查看已加载的更改。
 
 ### <a name="commands-for-building-and-running-your-add-in"></a>用于生成和运行加载项的命令
 
@@ -166,9 +166,9 @@ ms.locfileid: "52024323"
 - `npm run dev-server`：运行用于开发的 Web 服务器
 
 可以使用以下任务在桌面或联机上开始调试。
-- `npm run start:desktop`：在桌面上启动 Excel 并旁加载外接程序。
-- `npm run start:web`：在 Web 上启动 Excel 并旁加载外接程序。
-- `npm run stop`：停止 Excel 和调试。
+- `npm run start:desktop`：Excel启动加载项，并旁加载加载项。
+- `npm run start:web`：Excel web 版加载项并旁加载。
+- `npm run stop`：停止Excel调试。
 
 ## <a name="next-steps"></a>后续步骤
 了解 [无 UI 自定义函数的身份验证做法](custom-functions-authentication.md)。

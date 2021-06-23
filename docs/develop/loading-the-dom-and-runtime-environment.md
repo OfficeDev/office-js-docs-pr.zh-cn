@@ -1,14 +1,14 @@
 ---
 title: 加载 DOM 和运行时环境
-description: 加载 DOM 和 Office 外接程序运行时环境。
+description: 加载 DOM Office加载项运行时环境。
 ms.date: 04/20/2021
 localization_priority: Normal
-ms.openlocfilehash: 5a215bf5a81dd291e72ed9e396c156d9ea7c6db0
-ms.sourcegitcommit: 691fa338029c9cbd9a7194d163f390c3321a0cd8
+ms.openlocfilehash: e66e6d5e30f5305dce35157280210a371ee3896f
+ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2021
-ms.locfileid: "51959164"
+ms.lasthandoff: 06/23/2021
+ms.locfileid: "53076011"
 ---
 # <a name="loading-the-dom-and-runtime-environment"></a>加载 DOM 和运行时环境
 
@@ -18,21 +18,21 @@ ms.locfileid: "51959164"
 
 下图显示了在 Excel、PowerPoint、Project 或 Word 中启动内容或任务窗格加载项所涉及的事件流。
 
-![启动内容/任务窗格外接程序时的事件流](../images/office15-app-sdk-loading-dom-agave-runtime.png)
+![Flow内容或任务窗格外接程序时的事件数。](../images/office15-app-sdk-loading-dom-agave-runtime.png)
 
 启动内容/任务窗格外接程序时，将发生以下事件：
 
 1. 用户打开已包含加载项的文档，或在文档中插入加载项。
 
-2. Office 客户端应用程序从 AppSource、SharePoint 上的应用程序目录或源自的共享文件夹目录读取加载项的 XML 清单。
+2. 客户端Office应用程序从 AppSource、SharePoint 上的应用程序目录或源自的共享文件夹目录读取加载项的 XML 清单。
 
-3. Office 客户端应用程序在浏览器控件中打开加载项的 HTML 页面。
+3. 客户端Office应用程序在浏览器控件中打开加载项的 HTML 页面。
 
     后面的两个步骤第 4 步和第 5 步以异步方式并行发生。因此，您的加载项代码必须在继续之前确保 DOM 和加载项运行时环境已加载完。
 
 4. 浏览器控件加载 DOM 和 HTML 正文，并调用事件的事件 `window.onload` 处理程序。
 
-5. Office 客户端应用程序加载运行时环境，该环境从内容分发网络 (CDN) 服务器下载和缓存 Office JavaScript API 库文件，然后为[Office](/javascript/api/office)对象的[initialize](/javascript/api/office#office-initialize-reason-)事件调用外接程序的事件处理程序（如果已为其分配处理程序）。 此时它还会检查是否有任何回调（或链接 `then()` 函数）已传递（或链接）到 `Office.onReady` 处理程序。 有关 和 之间的区别详细信息， `Office.initialize` `Office.onReady` 请参阅 [初始化外接程序](initialize-add-in.md)。
+5. Office 客户端应用程序加载运行时环境，该环境从内容分发网络 (CDN) 服务器下载并缓存 Office JavaScript API 库文件，然后为[Office](/javascript/api/office)对象的[initialize](/javascript/api/office#office-initialize-reason-)事件调用外接程序的事件处理程序（如果已为其分配处理程序）。 此时它还会检查是否有任何回调（或链接 `then()` 函数）已传递（或链接）到 `Office.onReady` 处理程序。 有关 和 之间的区别详细信息， `Office.initialize` `Office.onReady` 请参阅 [初始化外接程序](initialize-add-in.md)。
 
 6. 当 DOM 和 HTML 正文加载完毕并且加载项完成初始化后，加载项的主函数就可以继续进行。
 
@@ -41,7 +41,7 @@ ms.locfileid: "51959164"
 
 下图显示了启动在台式机、平板电脑或智能手机上运行的 Outlook 外接程序所涉及的事件流。
 
-![启动 Outlook 外接程序时的事件流](../images/outlook15-loading-dom-agave-runtime.png)
+![Flow加载项时Outlook事件数。](../images/outlook15-loading-dom-agave-runtime.png)
 
 启动 Outlook 外接程序时，将发生以下事件：
 

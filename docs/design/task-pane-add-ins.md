@@ -3,12 +3,12 @@ title: Office 加载项中的任务窗格
 description: 任务窗格允许用户访问界面控件，此类控件运行代码以修改文档或电子邮件，或显示数据源中的数据。
 ms.date: 05/12/2021
 localization_priority: Normal
-ms.openlocfilehash: d235d6c437ee124441389e68b54fc6ab8cde8dae
-ms.sourcegitcommit: 30f6c620380075e3459cac748ca0c656427b384d
+ms.openlocfilehash: cd8d9386fa9f154d611926add12e21f545e36351
+ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/12/2021
-ms.locfileid: "52330148"
+ms.lasthandoff: 06/23/2021
+ms.locfileid: "53076302"
 ---
 # <a name="task-panes-in-office-add-ins"></a>Office 加载项中的任务窗格
 
@@ -16,7 +16,7 @@ ms.locfileid: "52330148"
 
 *图 1：典型任务窗格布局*
 
-![插图显示典型的任务窗格布局，顶部有节选项卡，公司徽标和公司名称位于左下角，而设置图标位于右下角](../images/overview-with-app-task-pane.png)
+![插图显示典型的任务窗格布局，顶部有节选项卡，公司徽标和公司名称位于左下角，而设置图标位于右下角。](../images/overview-with-app-task-pane.png)
 
 ## <a name="best-practices"></a>最佳做法
 
@@ -33,7 +33,7 @@ ms.locfileid: "52330148"
 
 *图 2：Office 2016 桌面任务窗格尺寸*
 
-![以 1366x768 分辨率显示桌面任务窗格大小的图表](../images/office-2016-taskpane-sizes.png)
+![以 1366x768 分辨率显示桌面任务窗格大小的图表。](../images/office-2016-taskpane-sizes.png)
 
 - Excel - 320x455 像素
 - PowerPoint - 320x531 像素
@@ -44,7 +44,7 @@ ms.locfileid: "52330148"
 
 *图 3.Office任务窗格大小*
 
-![以 1366x768 分辨率显示任务窗格大小的图表](../images/office-365-taskpane-sizes.png)
+![以 1366x768 分辨率显示任务窗格大小的图表。](../images/office-365-taskpane-sizes.png)
 
 - Excel - 350x378 像素
 - PowerPoint - 348x391 像素
@@ -59,13 +59,13 @@ ms.locfileid: "52330148"
 
 *图 4：Windows 上的个性菜单*
 
-![显示桌面上个性菜单的Windows图](../images/personality-menu-win.png)
+![显示桌面上个性菜单的Windows图。](../images/personality-menu-win.png)
 
 对于 Mac，“个性”菜单尺寸为 26x26 像素，但是从右侧浮动 8 个像素，再从顶部浮动 6 个像素，能将空间增加至 34x32 像素，如下所示。
 
 *图 5：Mac 上的个性菜单*
 
-![显示 Mac 桌面上个性菜单的关系图](../images/personality-menu-mac.png)
+![显示 Mac 桌面上个性菜单的图表。](../images/personality-menu-mac.png)
 
 ## <a name="implementation"></a>实现
 
@@ -73,5 +73,5 @@ ms.locfileid: "52330148"
 
 ## <a name="see-also"></a>另请参阅
 
-- [Office外接程序中的 Fabric Core](fabric-core.md)
+- [Office 加载项中的 Fabric Core](fabric-core.md)
 - [适用于 Office 加载项的 UX 设计模式](../design/ux-design-pattern-templates.md)

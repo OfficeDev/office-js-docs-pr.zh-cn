@@ -1,14 +1,14 @@
 ---
 title: Office 加载项中的对话框
-description: 了解 Office 外接程序中的对话框的可视化设计的最佳实践。
+description: 了解在加载项中可视化设计对话框Office最佳实践。
 ms.date: 03/19/2019
 localization_priority: Normal
-ms.openlocfilehash: ab8ca2e768c63a53b05ed2d9ef459050455231fb
-ms.sourcegitcommit: ceb8dd66f3fb9c963fce8446c2f6c65ead56fbc1
+ms.openlocfilehash: d674b747effa57b8a75b79f98f5ff78ccc8a92a4
+ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "49132051"
+ms.lasthandoff: 06/23/2021
+ms.locfileid: "53076334"
 ---
 # <a name="dialog-boxes-in-office-add-ins"></a>Office 加载项中的对话框
 
@@ -16,7 +16,7 @@ ms.locfileid: "49132051"
 
 *图 1：对话框典型布局*
 
-![Office 应用程序中显示的对话框的典型布局](../images/overview-with-app-dialog.png)
+![应用程序中显示的对话框的典型Office布局。](../images/overview-with-app-dialog.png)
 
 ## <a name="best-practices"></a>最佳做法
 

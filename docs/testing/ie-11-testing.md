@@ -1,16 +1,24 @@
 ---
 title: Internet Explorer 11 测试
 description: 在 Office 11 上测试Internet Explorer加载项。
-ms.date: 05/19/2021
+ms.date: 06/18/2021
 localization_priority: Normal
-ms.openlocfilehash: de256ee8b0633f18d3188c5bbfae52cb24ff2c35
-ms.sourcegitcommit: 0d3bf72f8ddd1b287bf95f832b7ecb9d9fa62a24
+ms.openlocfilehash: fa9550884a24feffdd750171f3a7e08648f9432f
+ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/02/2021
-ms.locfileid: "52727932"
+ms.lasthandoff: 06/23/2021
+ms.locfileid: "53076404"
 ---
 # <a name="test-your-office-add-in-on-internet-explorer-11"></a>在 Office 11 上测试Internet Explorer加载项
+
+> [!IMPORTANT]
+> **Internet Explorer外接程序Office中使用的内容**
+>
+> Microsoft 将终止对Internet Explorer的支持，但这不会显著Office外接程序。平台和 Office 版本（包括 Office 2019 的所有一次购买版本）的一些组合将继续使用 Internet Explorer 11 随附的 Webview 控件来托管外接程序，如[Office](../concepts/browsers-used-by-office-web-add-ins.md)外接程序使用的浏览器所说明。此外，提交到[AppSource](/office/dev/store/submit-to-appsource-via-partner-center)的加载项Internet Explorer支持这些组合，因此也支持这些组合。 有两 *个变化* ：
+>
+> - AppSource 不再使用作为浏览器Office web 版Internet Explorer加载项。 但 AppSource 仍测试使用 Office *版本的平台* 和桌面Internet Explorer。
+> - 2021 Script Lab，Internet Explorer工具将停止工作。 [](../overview/explore-with-script-lab.md)
 
 如果计划通过 AppSource 销售加载项或计划支持较旧版本的 Windows 和 Office，加载项必须在基于 Internet Explorer 11 (IE11) 的可嵌入浏览器控件中运行。 可以使用命令行从外接程序使用的更现代运行时切换到 Internet Explorer 11 运行时进行此测试。 有关哪些版本的 Windows 和 Office使用 Internet Explorer 11 Web 视图控件的信息，请参阅 Office [Add-ins](../concepts/browsers-used-by-office-web-add-ins.md)使用的浏览器。
 

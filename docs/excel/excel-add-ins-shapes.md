@@ -1,41 +1,41 @@
 ---
-title: 使用 Excel JavaScript API 处理形状
-description: 了解 Excel 如何将形状定义为位于 Excel 绘图层上的任何对象。
+title: 使用 JavaScript API Excel形状
+description: 了解如何Excel形状定义为位于绘图层上的任何Excel。
 ms.date: 01/14/2020
 localization_priority: Normal
-ms.openlocfilehash: 7b9a4dba02e28187eeb0f932e245489ca61fcbcc
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 936def11a5d597b68cc59a58b041c4f30ff46a38
+ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44609739"
+ms.lasthandoff: 06/23/2021
+ms.locfileid: "53075759"
 ---
-# <a name="work-with-shapes-using-the-excel-javascript-api"></a>使用 Excel JavaScript API 处理形状
+# <a name="work-with-shapes-using-the-excel-javascript-api"></a>使用 JavaScript API Excel形状
 
-Excel 将形状定义为位于 Excel 绘图层的任何对象。 这意味着单元格之外的任何内容都是形状。 本文介绍如何将几何图形形状、线条和图像与[Shape](/javascript/api/excel/excel.shape)和[ShapeCollection](/javascript/api/excel/excel.shapecollection) api 结合使用。 [图表](/javascript/api/excel/excel.chart)在其自己的文章中介绍，使用[Excel JavaScript API 处理图表](excel-add-ins-charts.md)。
+Excel形状定义为位于绘图层上的任何Excel。 这意味着单元格之外任何内容都是形状。 本文介绍如何将几何形状、线条和图像与 [Shape](/javascript/api/excel/excel.shape) 和 [ShapeCollection](/javascript/api/excel/excel.shapecollection) API 结合使用。 [图](/javascript/api/excel/excel.chart)在其自己的文章使用[JavaScript API](excel-add-ins-charts.md)处理图表Excel介绍。
 
-下图显示了构成温度计的形状。
-![作为 Excel 形状进行的温度计的图像](../images/excel-shapes.png)
+下图显示了形成温度计的形状。
+![作为温度计的形状Excel的图像。](../images/excel-shapes.png)
 
 ## <a name="create-shapes"></a>创建形状
 
-形状是通过工作表的形状集合（）创建和存储的 `Worksheet.shapes` 。 `ShapeCollection`有几种 `.add*` 方法可以实现此目的。 在将所有形状添加到集合中时，都会为它们生成名称和 Id。 它们分别是 `name` 和 `id` 属性。 `name`可通过外接程序进行设置以便使用方法轻松检索 `ShapeCollection.getItem(name)` 。
+形状通过工作表的形状集合创建并存储在 `Worksheet.shapes` () 。 `ShapeCollection` 为此 `.add*` ，有几个方法。 所有形状在添加到集合时都有为它们生成的名称和 ID。 它们分别为 `name` 和 `id` 属性。 `name` 可通过外接程序设置 ，以使用 方法轻松 `ShapeCollection.getItem(name)` 检索。
 
-使用关联的方法添加以下类型的形状：
+使用关联方法添加以下类型的形状：
 
-| 型号 | Add 方法 | 签名 |
+| 形状 | Add 方法 | 签名 |
 |-------|------------|-----------|
 | 几何形状 | [addGeometricShape](/javascript/api/excel/excel.shapecollection#addgeometricshape-geometricshapetype-) | `addGeometricShape(geometricShapeType: Excel.GeometricShapeType): Excel.Shape` |
-| 图像（JPEG 或 PNG） | [addImage](/javascript/api/excel/excel.shapecollection#addimage-base64imagestring-) | `addImage(base64ImageString: string): Excel.Shape` |
+| 图像 (JPEG 或 PNG)  | [addImage](/javascript/api/excel/excel.shapecollection#addimage-base64imagestring-) | `addImage(base64ImageString: string): Excel.Shape` |
 | 折线图 | [addLine](/javascript/api/excel/excel.shapecollection#addline-startleft--starttop--endleft--endtop--connectortype-) | `addLine(startLeft: number, startTop: number, endLeft: number, endTop: number, connectorType?: Excel.ConnectorType): Excel.Shape` |
 | SVG | [addSvg](/javascript/api/excel/excel.shapecollection#addsvg-xml-) | `addSvg(xml: string): Excel.Shape` |
 | 文本框 | [addTextBox](/javascript/api/excel/excel.shapecollection#addtextbox-text-) | `addTextBox(text?: string): Excel.Shape` |
 
 ### <a name="geometric-shapes"></a>几何形状
 
-将使用创建一个几何形状 `ShapeCollection.addGeometricShape` 。 该方法采用[GeometricShapeType](/javascript/api/excel/excel.geometricshapetype)枚举作为参数。
+使用 创建几何形状 `ShapeCollection.addGeometricShape` 。 该方法采用 [GeometricShapeType](/javascript/api/excel/excel.geometricshapetype) 枚举作为参数。
 
-下面的代码示例创建一个名为 **"** 150x150" 的像素矩形，该矩形在工作表的顶部和左侧位置为100像素。
+下面的代码示例创建一个名为 **"Square"** 的 150x150 像素矩形，该矩形从工作表的顶部和左侧放置 100 像素。
 
 ```js
 // This sample creates a rectangle positioned 100 pixels from the top and left sides
@@ -54,9 +54,9 @@ Excel.run(function (context) {
 
 ### <a name="images"></a>图像
 
-JPEG、PNG 和 SVG 图像可以作为形状插入到工作表中。 该 `ShapeCollection.addImage` 方法采用 base64 编码的字符串作为参数。 这是字符串形式的 JPEG 或 PNG 图像。 `ShapeCollection.addSvg`也采用字符串，但此参数是用于定义图形的 XML。
+JPEG、PNG 和 SVG 图像可以作为形状插入到工作表中。 `ShapeCollection.addImage`方法将 base64 编码的字符串作为参数。 这是字符串形式的 JPEG 或 PNG 图像。 `ShapeCollection.addSvg` 即使此参数是定义图形的 XML，也采用字符串。
 
-下面的代码示例显示了[FileReader](https://developer.mozilla.org/docs/Web/API/FileReader)作为字符串加载的图像文件。 字符串中包含元数据 "base64"，在创建形状之前将其删除。
+下面的代码示例演示 [FileReader](https://developer.mozilla.org/docs/Web/API/FileReader) 作为字符串加载的图像文件。 该字符串具有元数据"base64"，该元数据在形状创建之前被删除。
 
 ```js
 // This sample creates an image as a Shape object in the worksheet.
@@ -80,7 +80,7 @@ reader.readAsDataURL(myFile.files[0]);
 
 ### <a name="lines"></a>Lines
 
-将使用创建的行 `ShapeCollection.addLine` 。 该方法需要线条的起始点和结束点的左边距和上边距。 它还采用[ConnectorType](/javascript/api/excel/excel.connectortype)枚举来指定行在终结点之间的 contorts 方式。 下面的代码示例在工作表上创建一条直线。
+使用 创建行 `ShapeCollection.addLine` 。 该方法需要线条起点和终点的左边距和上边距。 它还需要 [一个 ConnectorType](/javascript/api/excel/excel.connectortype) 枚举来指定终结点之间的直线连接。 下面的代码示例在工作表上创建一条直线。
 
 ```js
 // This sample creates a straight line from [200,50] to [300,150] on the worksheet
@@ -92,9 +92,9 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
-可以将线条连接到其他 Shape 对象。 `connectBeginShape`和 `connectEndShape` 方法将行的开头和结尾附加到指定连接点处的形状。 这些点的位置因形状而异，但 `Shape.connectionSiteCount` 可用于确保外接程序不会连接到超出边界的点。 使用和方法将线条与任何附加的形状断开连接 `disconnectBeginShape` `disconnectEndShape` 。
+线条可以连接到其他 Shape 对象。 和 `connectBeginShape` `connectEndShape` 方法将线条的开头和结尾附加到指定连接点处的形状。 这些点的位置因形状而异，但 可用于确保您的外接程序不会连接到外部 `Shape.connectionSiteCount` 的点。 线条使用 和 方法断开与任何附加 `disconnectBeginShape` `disconnectEndShape` 形状的连接。
 
-下面的代码示例将 **"MyLine"** 行连接到名为 **"LeftShape"** 和 **"RightShape"** 的两个形状。
+下面的代码示例将 **"MyLine"** 行连接到名为 **"LeftShape"** 和 **"RightShape"的两个形状**。
 
 ```js
 // This sample connects a line between two shapes at connection points '0' and '3'.
@@ -107,18 +107,18 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
-## <a name="move-and-resize-shapes"></a>移动形状并调整其大小
+## <a name="move-and-resize-shapes"></a>移动形状并调整形状大小
 
-形状位于工作表的顶部。 它们的位置由 `left` 和属性定义 `top` 。 这些操作充当工作表各自边缘的边距，[0，0] 为左上角。 这些值既可以直接设置，也可以使用 and 方法从当前位置进行调整 `incrementLeft` `incrementTop` 。 从默认位置旋转的形状也是通过这种方式建立的， `rotation` 属性是绝对量和 `incrementRotation` 调整现有旋转的方法。
+形状位于工作表的顶部。 它们的位置由 和 `left` `top` 属性定义。 它们充当工作表各自边缘的边距，[0， 0] 为左上角。 可以使用 和 方法直接设置它们，也可以从当前位置 `incrementLeft` `incrementTop` 进行调整。 此外，还通过此方式建立形状相对于默认位置的旋转量，该属性为绝对量，而方法用于调整现有 `rotation` `incrementRotation` 旋转量。
 
-相对于其他形状的形状的深度由该属性定义 `zorderPosition` 。 这是使用方法进行设置的 `setZOrder` ，该方法采用[ShapeZOrder](/javascript/api/excel/excel.shapezorder)。 `setZOrder`调整当前形状相对于其他形状的排序。
+形状相对于其他形状的深度由 属性 `zorderPosition` 定义。 这是使用 方法 `setZOrder` 设置的，该方法采用 [ShapeZOrder](/javascript/api/excel/excel.shapezorder)。 `setZOrder` 调整当前形状相对于其他形状的排序。
 
-您的外接程序有几个用于更改形状的高度和宽度的选项。 设置 `height` 或属性将 `width` 更改指定的维度，而不更改其他维度。 `scaleHeight`和 `scaleWidth` 调整相对于当前或原始尺寸的形状各自的尺寸（基于提供的[ShapeScaleType](/javascript/api/excel/excel.shapescaletype)的值）。 可选的[ShapeScaleFrom](/javascript/api/excel/excel.shapescalefrom)参数指定形状的缩放位置（左上角、中间或右下角）。 如果该 `lockAspectRatio` 属性为**true**，则缩放方法还会通过调整其他尺寸来保持形状的当前纵横比。
+外接程序具有多个选项，用于更改形状的高度和宽度。 如果设置 `height` 或 `width` 属性，则更改指定维度而不更改其他维度。 和 `scaleHeight` `scaleWidth` 根据所提供的 [ShapeScaleType](/javascript/api/excel/excel.shapescaletype) 属性的值调整形状相对于当前大小或原始 (调整形状) 。 可选的 [ShapeScaleFrom](/javascript/api/excel/excel.shapescalefrom) 参数指定形状缩放位置 (左上角、中间或右下角缩放) 。 如果 `lockAspectRatio` 该属性为 **true，** 则缩放方法通过同时调整其他尺寸来保持形状的当前纵横比。
 
 > [!NOTE]
-> 对和属性的直接更改 `height` `width` 仅影响该属性，而不考虑 `lockAspectRatio` 属性的值。
+> 对 和 `height` `width` 属性的直接更改仅影响该属性，而 `lockAspectRatio` 不管属性值如何。
 
-下面的代码示例显示了缩放到其原始大小为1.25 倍且旋转30度的形状。
+下面的代码示例显示一个形状，其缩放比例为其原始大小的 1.25 倍，并旋转 30 度。
 
 ```js
 // In this sample, the shape "Octagon" is rotated 30 degrees clockwise
@@ -138,9 +138,9 @@ Excel.run(function (context) {
 
 ## <a name="text-in-shapes"></a>形状中的文本
 
-几何形状可以包含文本。 形状具有 `textFrame` 类型为[TextFrame](/javascript/api/excel/excel.textframe)的属性。 `TextFrame`对象管理文本显示选项（如边距和文本溢出）。 `TextFrame.textRange`是一个带有 "文本内容" 和 "字体" 设置的[TextRange](/javascript/api/excel/excel.textrange)对象。
+几何形状可以包含文本。 形状具有 `textFrame` [TextFrame 类型的属性](/javascript/api/excel/excel.textframe)。 对象 `TextFrame` 管理文本显示选项 (如边距和文本溢出) 。 `TextFrame.textRange` 是文本内容和字体设置的 [TextRange](/javascript/api/excel/excel.textrange) 对象。
 
-下面的代码示例创建一个名为 "Wave" 的几何形状，其中包含文本 "Shape Text"。 它还调整形状和文本颜色，并将文本的水平对齐方式设置为居中。
+下面的代码示例创建一个名为"Wave"的几何形状，其文本为"Shape Text"。 它还调整形状和文本颜色，以及将文本的水平对齐方式设置到中心。
 
 ```js
 // This sample creates a light-blue wave shape and adds the purple text "Shape text" to the center.
@@ -160,9 +160,9 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
-`addTextBox` `ShapeCollection` 创建 `GeometricShape` `Rectangle` 具有白色背景和黑色文本的类型的方法。 这与 Excel 的 "**插入**" 选项卡上的 "**文本框**" 按钮所创建的内容相同。 `addTextBox`采用字符串参数设置的文本 `TextRange` 。
+`addTextBox`方法创建 `ShapeCollection` 具有 `GeometricShape` 白色 `Rectangle` 背景和黑色文本的 类型。 这与"插入"选项卡 **Excel"** 文本框"按钮 **所创建** 的内容相同。 `addTextBox`采用字符串参数来设置 的文本 `TextRange` 。
 
-下面的代码示例演示如何创建带有文本 "Hello！" 的文本框。
+下面的代码示例演示了如何创建文本为"Hello！"的文本框。
 
 ```js
 // This sample creates a text box with the text "Hello!" and sizes it appropriately.
@@ -180,9 +180,9 @@ Excel.run(function (context) {
 
 ## <a name="shape-groups"></a>形状组
 
-可以将形状组合在一起。 这样一来，用户可以将它们视为定位、调整大小和其他相关任务的单个实体。 [ShapeGroup](/javascript/api/excel/excel.shapegroup)是一种类型的 `Shape` ，因此加载项将该组视为单个形状。
+形状可以组合在一起。 这允许用户将它们视为用于定位、调整大小和其他相关任务的单个实体。 [ShapeGroup](/javascript/api/excel/excel.shapegroup)是 的一种类型，因此加载项将组 `Shape` 视为单个形状。
 
-下面的代码示例演示组合在一起的三个形状。 后续代码示例显示了形状组被移至右侧50像素。
+下面的代码示例显示了组合在一起的三个形状。 后续代码示例显示形状组向右移动 50 像素。
 
 ```js
 // This sample takes three previously-created shapes ("Square", "Pentagon", and "Octagon")
@@ -210,11 +210,11 @@ Excel.run(function (context) {
 ```
 
 > [!IMPORTANT]
-> 组中的单个形状是通过属性引用的 `ShapeGroup.shapes` ，该属性的类型为[GroupShapeCollection](/javascript/api/excel/excel.GroupShapeCollection)。 分组后，将无法再通过工作表的形状集合访问它们。 例如，如果您的工作表中有三个形状，并且它们都组合在一起，则工作表的 `shapes.getCount` 方法将返回一个计数为1。
+> 组内的单个形状通过属性引用，该属性的类型 `ShapeGroup.shapes` 为 [GroupShapeCollection](/javascript/api/excel/excel.GroupShapeCollection)。 分组后，无法再通过工作表的形状集合访问它们。 例如，如果工作表有三个形状，并且它们全部组合在一起，则工作表 `shapes.getCount` 的方法将返回计数 1。
 
 ## <a name="export-shapes-as-images"></a>将形状导出为图像
 
-任何 `Shape` 对象都可以转换为图像。 [GetAsImage](/javascript/api/excel/excel.shape#getasimage-format-)返回 base64 编码的字符串。 图像的格式被指定为传递给的[PictureFormat](/javascript/api/excel/excel.pictureformat)枚举 `getAsImage` 。
+任何 `Shape` 对象都可以转换为图像。 [Shape.getAsImage](/javascript/api/excel/excel.shape#getasimage-format-) 返回 base64 编码的字符串。 图像的格式指定为传递给 的 [PictureFormat](/javascript/api/excel/excel.pictureformat) 枚举 `getAsImage` 。
 
 ```js
 Excel.run(function (context) {
@@ -231,9 +231,9 @@ Excel.run(function (context) {
 
 ## <a name="delete-shapes"></a>删除形状
 
-使用对象的方法从工作表中删除形状 `Shape` `delete` 。 无需任何其他元数据。
+使用对象的方法从工作表 `Shape` 中删除 `delete` 形状。 无需其他元数据。
 
-下面的代码示例从**MyWorksheet**中删除所有形状。
+下面的代码示例从 **MyWorksheet 中删除所有形状**。
 
 ```js
 // This deletes all the shapes from "MyWorksheet".

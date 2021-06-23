@@ -1,18 +1,18 @@
 ---
 title: 在 PowerPoint 加载项中使用文档主题
-description: 了解如何以可视方式调整字体和颜色等主题，以应用于演示文稿、文档、工作表和电子邮件。
+description: 了解如何在视觉上协调应用于演示文稿、文档、工作表和电子邮件的主题，如字体和颜色。
 ms.date: 10/14/2019
 localization_priority: Normal
-ms.openlocfilehash: a07b56cda012c34d2f92cb8a0da9e6594b30188b
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 337e3e235b49944e36dc6e9cdabaa3f036d8c7e1
+ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44611924"
+ms.lasthandoff: 06/23/2021
+ms.locfileid: "53076985"
 ---
 # <a name="use-document-themes-in-your-powerpoint-add-ins"></a>在 PowerPoint 加载项中使用文档主题
 
-[Office 主题](https://support.office.com/article/create-your-own-theme-in-powerpoint-83e68627-2c17-454a-9fd8-62deb81951a6)在某种程度上包括一组视觉协调的字体和颜色，可应用于演示文稿、文档、工作表和电子邮件。若要在 PowerPoint 中应用或自定义演示文稿的主题，请使用功能区上“设计”**** 选项卡中的“主题”**** 和“变量”**** 组。虽然 PowerPoint 向新空白演示文稿分配默认的“Office 主题”****，但也可以选择“设计”**** 选项卡上的其他主题、从 Office.com 下载其他主题，或创建并自定义自己的主题。
+[Office 主题](https://support.office.com/article/create-your-own-theme-in-powerpoint-83e68627-2c17-454a-9fd8-62deb81951a6)在某种程度上包括一组视觉协调的字体和颜色，可应用于演示文稿、文档、工作表和电子邮件。若要在 PowerPoint 中应用或自定义演示文稿的主题，请使用功能区上“设计”选项卡中的“主题”和“变量”组。虽然 PowerPoint 向新空白演示文稿分配默认的“Office 主题”，但也可以选择“设计”选项卡上的其他主题、从 Office.com 下载其他主题，或创建并自定义自己的主题。
 
 使用 OfficeThemes.css，有助于以两种方式设计与 PowerPoint 相协调的加载项：
 
@@ -24,29 +24,29 @@ ms.locfileid: "44611924"
 
 每个 Office 文档主题定义了 12 种颜色。通过颜色选取器在演示文稿中设置字体、背景和其他颜色设置时，可以使用其中 10 种颜色。
 
-![调色板](../images/office15-app-color-palette.png)
+![调色板。](../images/office15-app-color-palette.png)
 
-若要在 PowerPoint 中查看或自定义一组完整的12种主题颜色，请在 "**设计**" 选项卡上的 "**变体**" 组中，单击 "**更多**" 下拉框，然后选择 "**颜色**  >  **自定义颜色**" 以显示 "新建**主题颜色**" 对话框。
+若要查看或自定义 PowerPoint 中的全部 12 种主题颜色，请在"设计"选项卡上的"变量"组中，单击"更多"下拉列表，然后选择"颜色自定义颜色"以显示"新建  >  **主题** 颜色"对话框。
 
-![“新建主题颜色”对话框](../images/office15-app-create-new-theme-colors.png)
+![新建主题颜色对话框。](../images/office15-app-create-new-theme-colors.png)
 
 前四种颜色适用于文本和背景。使用浅色创建的文本始终在深色背景上清晰显示，使用深色创建的文本始终在浅色背景上清晰显示。接下来六种颜色是个性色，始终在四种潜在背景色上可见。最后两种颜色适用于超链接和已访问过的超链接。
 
 ### <a name="document-theme-fonts"></a>文档主题字体
 
-每个 Office 文档主题还定义两种字体 -- 一种用于标题，另一种用于正文文本。 PowerPoint 使用这些字体来构造自动文本样式。 此外，文本和“艺术字”**** 的“快速样式”**** 库使用这些相同的主题字体。 使用字体选取器选择字体时，这两种字体就是最靠上的两个选项。
+每个 Office 文档主题还定义两种字体 -- 一种用于标题，另一种用于正文文本。 PowerPoint 使用这些字体来构造自动文本样式。 此外，文本和“艺术字”的“快速样式”库使用这些相同的主题字体。 使用字体选取器选择字体时，这两种字体就是最靠上的两个选项。
 
-![字体选取器](../images/office15-app-font-picker.png)
+![字体选取器。](../images/office15-app-font-picker.png)
 
-若要在 PowerPoint 中查看或自定义主题字体，请在 "**设计**" 选项卡上的 "**变体**" 组中，单击 "**更多**" 下拉框，然后选择 "**字体**  >  **自定义字体**" 以显示 "**新建主题字体**" 对话框。
+若要在 PowerPoint 中查看或自定义主题字体，请在"设计"选项卡上的"变量"组中，单击"更多"下拉列表，然后选择"字体自定义字体"以显示"新建  >  **主题** 字体"对话框。
 
-![“新建主题字体”对话框](../images/office15-app-create-new-theme-fonts.png)
+![新建主题字体对话框。](../images/office15-app-create-new-theme-fonts.png)
 
 ### <a name="office-ui-theme-fonts-and-colors"></a>Office UI 主题字体和颜色
 
-Office also lets you choose between several predefined themes that specify some of the colors and fonts used in the UI of all Office applications. 若要执行此操作，请使用 "**文件**  >  **帐户**" "  >  **office 主题**" 下拉（来自任何 Office 应用程序）。
+Office also lets you choose between several predefined themes that specify some of the colors and fonts used in the UI of all Office applications. 为此，请使用"**文件帐户Office** 主题"下拉列表 (应用程序Office  >    >  文件) 。
 
-![Office 主题下拉菜单](../images/office15-app-office-theme-picker.png)
+![Office主题下拉列表。](../images/office15-app-office-theme-picker.png)
 
 OfficeThemes.css 包含您可在 PowerPoint 任务窗格加载项中使用的类，以便它们使用这些相同的字体和颜色。这可使您设计与内置任务窗格外观一致的任务窗格加载项。
 
@@ -61,11 +61,11 @@ OfficeThemes.css 包含您可在 PowerPoint 任务窗格加载项中使用的类
 #### <a name="to-add-officethemescss-to-your-visual-studio-project"></a>将 OfficeThemes.css 添加到 Visual Studio 项目中的具体步骤
 
 > [!NOTE]
-> 此过程中的步骤仅适用于 Visual Studio 2015。 如果使用的是 Visual Studio 2019，则会自动为您创建的任何新 PowerPoint 外接程序项目创建 OfficeThemes 文件。
+> 此过程中的步骤仅适用于 Visual Studio 2015。 如果您使用的是 Visual Studio 2019，则会自动为创建的任何新的 PowerPoint 外接程序项目创建 OfficeThemes.css 文件。
 
-1. 在“解决方案资源管理器”**** 中，右键单击 _**project_name**_**Web** 项目中的“内容”**** 文件夹，选择“添加”****，然后选择“样式表”****。
+1. 在“解决方案资源管理器”中，右键单击 _**project_name**_**Web** 项目中的“内容”文件夹，选择“添加”，然后选择“样式表”。
     
-2. 将新的样式表命名为“OfficeThemes”****。
+2. 将新的样式表命名为“OfficeThemes”。
     
    > [!IMPORTANT]
    > 必须将样式表命名为 OfficeThemes，否则在用户更改主题时动态更新加载项字体和颜色的功能将无法正常运行。
@@ -149,9 +149,9 @@ OfficeThemes.css 包含您可在 PowerPoint 任务窗格加载项中使用的类
 
 3. 对项目命名，然后选择“**创建**”。
 
-3. 在“创建 Office 加载项”**** 对话框窗口中，选择“将新功能添加到 PowerPoint”****，再选择“完成”**** 以创建项目。
+3. 在“创建 Office 加载项”对话框窗口中，选择“将新功能添加到 PowerPoint”，再选择“完成”以创建项目。
 
-4. 此时，Visual Studio 创建解决方案，且它的两个项目显示在“解决方案资源管理器”**** 中。**Home.html** 文件在 Visual Studio 中打开。
+4. 此时，Visual Studio 创建解决方案，且它的两个项目显示在“解决方案资源管理器”中。**Home.html** 文件在 Visual Studio 中打开。
 
 5. 在实现加载项 UI 的 HTML 页面（如默认模板中的 Home.html）中，在 `<head>` 标记内添加以下引用 OfficeThemes.css 文件的 `<link>` 标记：
     
@@ -180,18 +180,18 @@ OfficeThemes.css 包含您可在 PowerPoint 任务窗格加载项中使用的类
 </body>
 ```
 
-在运行时，在使用默认**Office 主题**的演示文稿中插入内容外接程序时，将呈现如下所示。
+在运行时，当插入到使用默认"主题"Office时，内容外接程序将如下所示呈现。
 
-![运行 Office 主题的内容应用](../images/office15-app-content-app-office-theme.png)
+![使用主题运行Office应用。](../images/office15-app-content-app-office-theme.png)
 
 如果将演示文稿更改为使用其他主题或自定义演示文稿主题，OfficeThemes.css 类指定的字体和颜色会动态更新为，与演示文稿主题的字体和颜色相对应。使用与上述相同的 HTML 示例，如果加载项插入到的演示文稿使用 **Facet** 主题，加载项如下所示。
 
-![运行 Facet 主题的内容应用](../images/office15-app-content-app-facet-theme.png)
+![使用 Facet 主题运行的内容应用。](../images/office15-app-content-app-facet-theme.png)
 
 
 ### <a name="using-officethemescss-office-ui-theme-classes-in-your-task-pane-add-ins-html-page"></a>在任务窗格加载项的 HTML 页面中使用 OfficeThemes.css Office UI 主题类
 
-除文档主题之外，用户还可以为所有 Office 应用的 Office 用户界面自定义颜色主题，具体方法是使用“文件”**** > “帐户”**** > “Office 主题”**** 下拉框。
+除文档主题之外，用户还可以为所有 Office 应用的 Office 用户界面自定义颜色主题，具体方法是使用“文件” > “帐户” > “Office 主题”下拉框。
 
 以下演示了 HTML 的简单示例，该示例在任务窗格 外接程序 中使用 OfficeTheme.css 类指定字体颜色和背景色。有关与 Office UI 主题字体和颜色对应的 OfficeThemes.css 类的详细信息，请参阅 [适用于任务窗格加载项的主题类](#theme-classes-for-task-pane-add-ins)。
 
@@ -215,15 +215,15 @@ OfficeThemes.css 包含您可在 PowerPoint 任务窗格加载项中使用的类
 
 <br/>
 
-当在 PowerPoint 中运行时，如果“文件”**** > “帐户”**** > “Office 主题”**** 设置为“白色”****，任务窗格加载项如下所示。
+当在 PowerPoint 中运行时，如果“文件” > “帐户” > “Office 主题”设置为“白色”，任务窗格加载项如下所示。
 
-![使用 Office 白色主题的任务窗格](../images/office15-app-task-pane-theme-white.png)
+![具有白色主题Office窗格。](../images/office15-app-task-pane-theme-white.png)
 
 <br/>
 
-如果将 **Office 主题**更改为**深灰色**，OfficeThemes.css 类指定的字体和颜色会动态更新，如下所示。
+如果将 **Office 主题** 更改为 **深灰色**，OfficeThemes.css 类指定的字体和颜色会动态更新，如下所示。
 
-![使用 Office 深灰色主题的任务窗格](../images/office15-app-task-pane-theme-dark-gray.png)
+![具有深灰色Office任务窗格。](../images/office15-app-task-pane-theme-dark-gray.png)
 
 <br/>
 
@@ -283,7 +283,7 @@ OfficeThemes.css 文件提供与文档主题中的 2 种字体和 12 种颜色�
 
 以下屏幕截图显示，在使用默认 Office 主题时，分配给 外接程序 文本的所有主题颜色类（两种超链接颜色除外）的示例。
 
-![默认 Office 主题颜色示例](../images/office15-app-default-office-theme-colors.png)
+![默认Office主题颜色示例。](../images/office15-app-default-office-theme-colors.png)
 
 
 ### <a name="theme-classes-for-task-pane-add-ins"></a>适用于任务窗格加载项的主题类

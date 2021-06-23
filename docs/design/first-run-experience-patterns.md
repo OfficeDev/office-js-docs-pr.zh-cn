@@ -1,14 +1,14 @@
 ---
 title: Office 外接程序的首次运行体验模式
-description: 了解在 Office 外接程序中设计首次运行体验的最佳实践。
+description: 了解在加载项中设计首次运行体验Office最佳做法。
 ms.date: 06/26/2018
 localization_priority: Normal
-ms.openlocfilehash: 00785df2cfd2f41b41917ea720c154e24b72f779
-ms.sourcegitcommit: ceb8dd66f3fb9c963fce8446c2f6c65ead56fbc1
+ms.openlocfilehash: d020a281aca10805ba8fd1176403f3788f6d716c
+ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "49132065"
+ms.lasthandoff: 06/23/2021
+ms.locfileid: "53076341"
 ---
 # <a name="first-run-experience-patterns"></a>首次运行体验模式
 
@@ -32,34 +32,34 @@ ms.locfileid: "49132065"
 
 旋转式传送让用户能够在开始使用外接程序之前浏览一系列功能或信息页面。
 
-*图1。允许用户提前或跳过轮播流的起始页*
+*图 1.允许用户前进或跳过木马流的开始页面*
 
-![图示在 Office 桌面应用程序任务窗格的首次运行体验中显示轮播的步骤1。 在此示例中，任务窗格的右上部包含一个 "Skip" 操作。](../images/add-in-FRE-step-1.png)
+![插图显示桌面应用程序任务窗格首次运行体验中的Office 1。 本示例中，任务窗格的右上方包含"Skip"操作。](../images/add-in-FRE-step-1.png)
 
-*图2。将轮播屏幕的数量最小化，以有效地传递邮件所需的屏幕数量*
+*图 2.将可播放的屏幕数最小化为仅有效传达消息所需的内容*
 
-![图示在 Office 桌面应用程序任务窗格的首次运行体验中显示轮播的步骤2。 在此示例中，任务窗格中有3个轮播屏幕。](../images/add-in-FRE-step-2.png)
+![插图显示桌面应用程序任务窗格首次运行体验中的轮Office的第 2 步。 本示例中，任务窗格中有 3 个可播放的屏幕。](../images/add-in-FRE-step-2.png)
 
-*图3。提供对操作的明确调用，以退出首次运行体验*
+*图 3.提供明确的行动号召以退出首次运行体验*
 
-![图示在 Office 桌面应用程序任务窗格的首次运行体验中显示轮播的步骤3。 在此示例中，任务窗格的第三个和最后一个屏幕显示了开始使用的按钮。](../images/add-in-FRE-step-3.png)
+![插图显示桌面应用程序任务窗格首次运行体验中的Office 3。 本示例中，任务窗格的第三个（即最后一个）屏幕显示一个开始按钮。](../images/add-in-FRE-step-3.png)
 
 ## <a name="value-placemat"></a>值占位图片
 
 值占位通过徽标占位、明确的价值主张、功能亮点或汇总和行动号召传递外接程序的价值主张。
 
-*图4。值占位图片，带有徽标、清除价值主张、功能摘要和行动要求*
+*图 4.具有徽标、清晰价值主张、功能摘要和行动号召的值位置图片*
 
-![图中显示了在 Office 桌面应用程序任务窗格的首次运行体验中占位图片的值。 在此示例中，任务窗格显示加载项徽标、加载项说明以及开始使用按钮。](../images/add-in-FRE-value.png)
+![显示桌面应用程序任务窗格首次运行体验中的Office插图。 本示例中，任务窗格显示加载项徽标、加载项说明和开始按钮。](../images/add-in-FRE-value.png)
 
 ### <a name="video-placemat"></a>视频占位图片
 
 视频占位图片可以在用户开始使用外接程序之前向其显示视频。
 
-*图5。第一次运行视频占位图片-屏幕包含视频中的静止图像和 "播放" 按钮，并清除 "操作-操作" 按钮*
+*图 5.首次运行视频放置图片 - 屏幕包含视频中的静止图像，其中包含播放按钮和清除"调用操作"按钮*
 
-![在 Office 桌面应用程序任务窗格的首次运行体验中显示视频占位图片的图示](../images/add-in-FRE-video.png)
+![插图显示桌面应用程序任务窗格首次运行体验中的Office图片。](../images/add-in-FRE-video.png)
 
-*图6。视频播放器-在对话框窗口中显示有视频的用户*
+*图 6.视频播放器 - 在对话框窗口中向用户呈现视频*
 
-![在背景中显示带有 Office 桌面应用程序和外接程序任务窗格的对话框窗口中的视频的插图](../images/add-in-FRE-video-dialog.png)
+![插图显示对话框窗口中的一个视频Office桌面应用程序和外接程序任务窗格在后台显示。](../images/add-in-FRE-video-dialog.png)

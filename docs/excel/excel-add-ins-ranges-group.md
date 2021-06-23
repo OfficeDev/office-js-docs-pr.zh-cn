@@ -1,25 +1,25 @@
 ---
-title: 使用 Excel JavaScript API 的组范围
-description: 了解如何将区域行或列组合在一起，以使用 Excel JavaScript API 创建大纲。
+title: 使用 JavaScript API Excel组范围
+description: 了解如何将一个范围的行或列组合在一起，以使用 JavaScript API Excel大纲。
 ms.date: 04/05/2021
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: 32f65cf88c23bd6368b37318d3ba20fde95b8436
-ms.sourcegitcommit: 54fef33bfc7d18a35b3159310bbd8b1c8312f845
+ms.openlocfilehash: 960a394a1467ec1fe55ff8dbf7b0a3f39fd355a5
+ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2021
-ms.locfileid: "51652799"
+ms.lasthandoff: 06/23/2021
+ms.locfileid: "53075717"
 ---
-# <a name="group-ranges-for-an-outline-using-the-excel-javascript-api"></a>使用 Excel JavaScript API 的大纲组范围
+# <a name="group-ranges-for-an-outline-using-the-excel-javascript-api"></a>使用 JavaScript API 的大纲Excel区域
 
-本文提供了一个代码示例，演示如何使用 Excel JavaScript API 对大纲区域进行分组。 有关对象支持的属性和方法的完整列表，请参阅 `Range` [Excel.Range 类](/javascript/api/excel/excel.range)。
+本文提供了一个代码示例，演示如何使用 JavaScript API 对大纲Excel分组。 有关对象支持的属性和方法的完整列表，请参阅 `Range` [Excel。Range 类](/javascript/api/excel/excel.range)。
 
 ## <a name="group-rows-or-columns-of-a-range-for-an-outline"></a>对分级显示区域行或列进行分组
 
 可以将范围的行或列组合在一起以 [创建大纲](https://support.office.com/article/Outline-group-data-in-a-worksheet-08CE98C4-0063-4D42-8AC7-8278C49E9AFF)。 可以折叠和展开这些组，以隐藏和显示相应的单元格。 这使得快速分析首行数据变得更容易。 使用 [Range.group](/javascript/api/excel/excel.range#group-groupoption-) 可创建这些大纲组。
 
-大纲可以具有层次结构，其中较小的组嵌套在较大的组下。 这允许在不同级别查看大纲。 可以通过 [Worksheet.showOutlineLevels](/javascript/api/excel/excel.worksheet#showoutlinelevels-rowlevels--columnlevels-) 方法以编程方式更改可见大纲级别。 请注意，Excel 仅支持八个级别的大纲组。
+大纲可以具有层次结构，其中较小的组嵌套在较大的组下。 这允许在不同级别查看大纲。 可以通过 [Worksheet.showOutlineLevels](/javascript/api/excel/excel.worksheet#showoutlinelevels-rowlevels--columnlevels-) 方法以编程方式更改可见大纲级别。 请注意，Excel仅支持八个级别的大纲组。
 
 下面的代码示例为行和列创建包含两个级别的组的大纲。 后续图像显示该轮廓的分组。 在代码示例中，分组的范围不包括大纲控件的行或列 (此示例的"总计") 。 组定义要折叠的项，而不是控件的行或列。
 
@@ -49,7 +49,7 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
-![具有两级、二维轮廓的范围](../images/excel-outline.png)
+![具有两级、二维轮廓的范围。](../images/excel-outline.png)
 
 ## <a name="remove-grouping-from-rows-or-columns-of-a-range"></a>从区域行或列中删除分组
 
@@ -58,5 +58,5 @@ Excel.run(function (context) {
 ## <a name="see-also"></a>另请参阅
 
 - [Excel 加载项中的 Word JavaScript 对象模型](excel-add-ins-core-concepts.md)
-- [使用 Excel JavaScript API 处理单元格](excel-add-ins-cells.md)
+- [使用 JavaScript API Excel单元格](excel-add-ins-cells.md)
 - [ 同时在 Excel 加载项中处理多个区域 ](excel-add-ins-multiple-ranges.md)

@@ -3,12 +3,12 @@ title: 使用 Windows 10 上的开发人员工具调试加载项
 description: 使用 Windows 10 上的 Microsoft Edge 开发人员工具调试加载项
 ms.date: 12/16/2019
 localization_priority: Normal
-ms.openlocfilehash: 4888ef07f214611666b1c8d8de8dc5a467ca2db1
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 41e7f2c8efb6406948c30522b56424ed7f9aa400
+ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44611230"
+ms.lasthandoff: 06/23/2021
+ms.locfileid: "53076530"
 ---
 # <a name="debug-add-ins-using-developer-tools-on-windows-10"></a>使用 Windows 10 上的开发人员工具调试加载项
 
@@ -66,7 +66,7 @@ ms.locfileid: "44611230"
     
    例如，选择 **home.html**。 
     
-   ![IEChooser 屏幕，指向圈出的加载项](../images/choose-target-to-debug.png)
+   ![IEChooser 屏幕，指向气泡外接程序。](../images/choose-target-to-debug.png)
 
 4. 在 F12 窗口中，选择你想要调试的文件。
     
@@ -76,13 +76,13 @@ ms.locfileid: "44611230"
     
    若要在 **Home.js** 中设置断点，请选择第 144 行，它位于 `textChanged` 函数中。 你将在该行左侧和“调用堆栈和断点”（右下角）窗格中的对应行左侧看到一个红点。 有关设置断点的其他方法，请参阅[使用调试器检查正在运行的 JavaScript](/previous-versions/windows/internet-explorer/ie-developer/samples/dn255007(v=vs.85))。 
     
-   ![断点位于 home.js 文件中的调试程序](../images/debugger-home-js-02.png)
+   ![断点在文件home.js调试程序。](../images/debugger-home-js-02.png)
 
 6. 运行加载项，以触发断点。
     
    在 Word 中，选择 **QR4Office** 窗格上部的 URL 文本框，然后尝试输入一些文本。 在调试器的“**调用堆栈和断点**”窗格中，你将看到该断点已触发，并显示了各种信息。 你可能需要刷新调试器以查看结果。
     
-   ![调试器，包含已触发的断点生成的结果](../images/debugger-home-js-01.png)
+   ![调试器，其结果来自触发的断点。](../images/debugger-home-js-01.png)
 
 
 ## <a name="see-also"></a>另请参阅
