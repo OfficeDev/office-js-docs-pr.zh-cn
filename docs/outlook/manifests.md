@@ -3,12 +3,12 @@ title: Outlook 外接程序清单
 description: 该清单介绍 Outlook 外接程序如何跨 Outlook 客户端进行集成；其中包括一个示例。
 ms.date: 05/27/2020
 localization_priority: Priority
-ms.openlocfilehash: 0135db8b6ff2b9fbcb3b6370979d8013aa21155a
-ms.sourcegitcommit: d28392721958555d6edea48cea000470bd27fcf7
+ms.openlocfilehash: f113a5d8f92ee80ed635283e9e5544bd4b9ce7cd
+ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/13/2021
-ms.locfileid: "49839822"
+ms.lasthandoff: 06/23/2021
+ms.locfileid: "53076768"
 ---
 # <a name="outlook-add-in-manifests"></a>Outlook 外接程序清单
 
@@ -390,7 +390,7 @@ Outlook 加载项指定如下所示的 **Hosts** 元素。
 
 **邮件外接程序的 4 层权限模型**
 
-![邮件应用程序架构 v1.1 的 4 层权限模型](../images/add-in-permission-tiers.png)
+![邮件应用架构 v1.1 的 4 层权限模型。](../images/add-in-permission-tiers.png)
 
 ```XML
 <OfficeApp>
@@ -422,7 +422,7 @@ Outlook 加载项指定如下所示的 **Hosts** 元素。
 
 ## <a name="next-steps-add-in-commands"></a>后续步骤：外接程序命令
 
-定义基本清单后， 为外接程序定义外接程序命令。 外接程序命令代表功能区中的按钮，因此用户可以一种简单、直观的方式激活您的外接程序。 有关详细信息，请参阅 [用于 Outlook 的外接程序命令](add-in-commands-for-outlook.md)。
+定义基本清单后， 为外接程序定义外接程序命令。外接程序命令代表功能区中的按钮，因此用户以一种简单、直观的方式激活外接程序。有关详细信息，请参阅[用于 Outlook 的外接程序命令](add-in-commands-for-outlook.md)。
 
 有关定义外接程序命令的示例外接程序，请参阅 [command-demo](https://github.com/OfficeDev/outlook-add-in-command-demo)。
 

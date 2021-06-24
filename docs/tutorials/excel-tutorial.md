@@ -4,12 +4,12 @@ description: 在本教程中，你将学习如何构建一个 Excel 外接程序
 ms.date: 05/12/2021
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: f23cbf86288590722649ce28639d15b34f3e14f1
-ms.sourcegitcommit: 0d3bf72f8ddd1b287bf95f832b7ecb9d9fa62a24
+ms.openlocfilehash: f169499e343d2fc7fac89f407b78717536add4fc
+ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/02/2021
-ms.locfileid: "52727939"
+ms.lasthandoff: 06/23/2021
+ms.locfileid: "53077237"
 ---
 # <a name="tutorial-create-an-excel-task-pane-add-in"></a>教程：创建 Excel 任务窗格加载项
 
@@ -40,7 +40,7 @@ ms.locfileid: "52727939"
 - **要如何命名加载项?** `My Office Add-in`
 - **要支持哪一个 Office 客户端应用程序?** `Excel`
 
-![Yeoman Office 外接程序生成器命令行界面的屏幕截图](../images/yo-office-excel.png)
+![Yeoman Office 加载项生成器命令行界面的屏幕截图。](../images/yo-office-excel.png)
 
 完成此向导后，生成器会创建项目，并安装支持的 Node 组件。
 
@@ -201,11 +201,11 @@ ms.locfileid: "52727939"
 
 2. 在 Excel 中，依次选择的“**开始**”选项卡和功能区中的“**显示任务窗格**”按钮，以打开加载项任务窗格。
 
-    ![Excel 主页菜单的屏幕截图，突出显示“显示任务窗格”按钮](../images/excel-quickstart-addin-3b.png)
+    ![Excel 主页菜单的屏幕截图，突出显示“显示任务窗格”按钮。](../images/excel-quickstart-addin-3b.png)
 
 3. 在任务窗格中，选择“**创建表**”按钮。
 
-    ![Excel 的屏幕截图，显示带有“创建表格”按钮的加载项任务窗格，以及工作表中填充了“日期”、“商家”、“类别”和“金额”数据的表格](../images/excel-tutorial-create-table-2.png)
+    ![Excel 的屏幕截图，显示带有“创建表格”按钮的加载项任务窗格，以及工作表中填充了“日期”、“商家”、“类别”和“金额”数据的表格。](../images/excel-tutorial-create-table-2.png)
 
 ## <a name="filter-and-sort-a-table&quot;></a>筛选和排序表格
 
@@ -332,7 +332,7 @@ ms.locfileid: "52727939"
 
 4. 选择“**筛选表**”按钮和“**排序表**”按钮（按顺序和倒序中的任一顺序排序皆可）。
 
-    ![Excel 的屏幕截图，其中“加载项”任务窗格中显示“筛选表”和“排序表”按钮](../images/excel-tutorial-filter-and-sort-table-2.png)
+    ![Excel 的屏幕截图，其中“加载项”任务窗格中显示“筛选表”和“排序表”按钮。](../images/excel-tutorial-filter-and-sort-table-2.png)
 
 ## <a name="create-a-chart&quot;></a>创建图表
 
@@ -427,7 +427,7 @@ ms.locfileid: "52727939"
 
 4. 选择 **“创建图表”** 按钮。 此时，图表创建完成，其中仅包含筛选出的行中的数据。 底部数据点上的标签按图表的排序顺序进行排序，即按商家名称的字母倒序排序。
 
-    ![Excel 的屏幕截图，在“加载项”任务窗格中显示“创建图表”按钮，工作表中显示杂货和教育费用数据的图表](../images/excel-tutorial-create-chart-2.png)
+    ![Excel 的屏幕截图，在“加载项”任务窗格中显示“创建图表”按钮，工作表中显示杂货和教育费用数据的图表。](../images/excel-tutorial-create-chart-2.png)
 
 ## <a name="freeze-a-table-header&quot;></a>冻结表格标题
 
@@ -497,7 +497,7 @@ ms.locfileid: "52727939"
 
 6. 尽量向下滚动工作表，直到在上面的行不可见时表格标题在顶部依然可见。
 
-    ![显示带有冻结表格标题的 Excel 工作表的屏幕截图](../images/excel-tutorial-freeze-header-2.png)
+    ![显示带有冻结表格标题的 Excel 工作表的屏幕截图。](../images/excel-tutorial-freeze-header-2.png)
 
 ## <a name="protect-a-worksheet"></a>保护工作表
 
@@ -1009,7 +1009,7 @@ ms.locfileid: "52727939"
 
 6. （可选）注释掉 `processMessage` 函数中的代码行 `dialog.close();`。 然后，重复执行此部分的步骤。 这样一来，对话框便会继续处于打开状态，可供用户更改用户名。 按右上角的“X”按钮，可手动关闭对话框。
 
-    ![Excel 的屏幕截图，在“加载项”任务窗格中显示“打开”对话框按钮，并在工作表上显示对话框](../images/excel-tutorial-dialog-open-2.png)
+    ![Excel 的屏幕截图，在“加载项”任务窗格中显示“打开”对话框按钮，并在工作表上显示对话框。](../images/excel-tutorial-dialog-open-2.png)
 
 ## <a name="next-steps"></a>后续步骤
 

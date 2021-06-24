@@ -3,12 +3,12 @@ title: Office 版本和要求集
 description: 使用 JavaScript API 支持的 Office.js 平台。
 ms.date: 02/09/2021
 localization_priority: Priority
-ms.openlocfilehash: 2fd1393271d50be66dd2bbc2bb8cbb251ae6efbc
-ms.sourcegitcommit: ccc0a86d099ab4f5ef3d482e4ae447c3f9b818a3
+ms.openlocfilehash: 65db7bf6e8670e389cfaf5e557b365d960376569
+ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "50237663"
+ms.lasthandoff: 06/23/2021
+ms.locfileid: "53075990"
 ---
 # <a name="office-versions-and-requirement-sets"></a>Office 版本和要求集
 
@@ -23,7 +23,7 @@ Office 跨多个平台运行且有许多版本，它们并非全都支持 Office
 
 若要确定使用的 Office 版本，请在 Office 应用程序中，依次选择“文件”**** 菜单和“帐户”****。 Office 版本显示在“产品信息”**** 部分中。 例如，下面的屏幕截图指明 Office 版本 1802（生成号 9026.1000）：
 
-![检查 Office 版本](../images/office-version.png)
+![检查 Office 版本。](../images/office-version.png)
 
 ## <a name="office-requirement-sets-availability"></a>Office 要求集可用性
 

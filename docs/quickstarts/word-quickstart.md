@@ -4,12 +4,12 @@ description: 了解如何使用 Office JS API 生成简单的 Word 任务窗格�
 ms.date: 10/14/2020
 ms.prod: word
 localization_priority: Priority
-ms.openlocfilehash: fe82515e0a2839ccb8669d1c590364049126d9de
-ms.sourcegitcommit: ceb8dd66f3fb9c963fce8446c2f6c65ead56fbc1
+ms.openlocfilehash: cbd10af6f1d811790e537b8d8a0ad509adae37e2
+ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "49132324"
+ms.lasthandoff: 06/23/2021
+ms.locfileid: "53076866"
 ---
 # <a name="build-your-first-word-task-pane-add-in"></a>生成首个 Word 任务窗格加载项
 
@@ -39,7 +39,7 @@ _适用于：Windows 版 Word 2016 或更高版本、iPad 版 Word 和 Mac 版 W
 - **要如何命名加载项?** `My Office Add-in`
 - **要支持哪一个 Office 客户端应用程序?** `Word`
 
-![显示命令行界面中 Yeoman 生成器的提示和回答的屏幕截图](../images/yo-office-word.png)
+![显示命令行界面中 Yeoman 生成器的提示和回答的屏幕截图。](../images/yo-office-word.png)
 
 完成此向导后，生成器会创建项目，并安装支持的 Node 组件。
 
@@ -85,11 +85,11 @@ _适用于：Windows 版 Word 2016 或更高版本、iPad 版 Word 和 Mac 版 W
 
 3. 在 Word 中，打开新的文档，依次选择“**主页**”选项卡和功能区中的“**显示任务窗格**”按钮，以打开加载项任务窗格。
 
-    ![显示突出显示“显示任务窗格”按钮的 Word 应用程序屏幕截图](../images/word-quickstart-addin-2b.png)
+    ![显示突出显示“显示任务窗格”按钮的 Word 应用程序屏幕截图。](../images/word-quickstart-addin-2b.png)
 
 4. 在任务窗格底部，选择“**运行**”链接，以将文本“Hello World”以蓝色字体添加到文档中。
 
-    ![加载了任务窗格加载项的 Word 应用程序的屏幕截图](../images/word-quickstart-addin-1c.png)
+    ![加载了任务窗格加载项的 Word 应用程序的屏幕截图。](../images/word-quickstart-addin-1c.png)
 
 ### <a name="next-steps"></a>后续步骤
 
@@ -301,11 +301,11 @@ _适用于：Windows 版 Word 2016 或更高版本、iPad 版 Word 和 Mac 版 W
 
 2. 在 Word 中，依次选择“开始”选项卡和功能区中的“显示任务窗格”按钮，以打开加载项任务窗格。 （如果使用的是 Office 的一次性购买版本，而不是 Microsoft 365 版本，那么自定义按钮不受支持。 相反，任务窗格将立即打开。）
 
-    ![突出显示了“显示任务窗格”按钮的 Word 应用程序屏幕截图](../images/word-quickstart-addin-0.png)
+    ![突出显示了“显示任务窗格”按钮的 Word 应用程序屏幕截图。](../images/word-quickstart-addin-0.png)
 
 3. 选择任务窗格中的任意按钮，将样本文字添加到文档。
 
-    ![加载了样本加载项的 Word 应用的屏幕截图](../images/word-quickstart-addin-1b.png)
+    ![加载了样本加载项的 Word 应用的屏幕截图。](../images/word-quickstart-addin-1b.png)
 
 [!include[Console tool note](../includes/console-tool-note.md)]
 

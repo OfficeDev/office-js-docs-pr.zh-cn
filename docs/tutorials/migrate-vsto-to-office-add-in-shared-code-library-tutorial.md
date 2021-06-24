@@ -4,12 +4,12 @@ ms.prod: non-product-specific
 description: 有关如何在 VSTO 加载项与 Office 加载项之间共享代码的教程。
 title: 教程：使用共享代码库在 VSTO 加载项与 Office 加载项之间共享代码
 localization_priority: Priority
-ms.openlocfilehash: 1645cdcc3c799ec09e98ae69dd4abd6e38b11880
-ms.sourcegitcommit: ccc0a86d099ab4f5ef3d482e4ae447c3f9b818a3
+ms.openlocfilehash: aaf228d1e3ce33797165b1380b43d26ceffa1d8c
+ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "50238090"
+ms.lasthandoff: 06/23/2021
+ms.locfileid: "53076123"
 ---
 # <a name="tutorial-share-code-between-both-a-vsto-add-in-and-an-office-add-in-with-a-shared-code-library"></a>教程：使用共享代码库在 VSTO 加载项与 Office 加载项之间共享代码
 
@@ -27,7 +27,7 @@ Office 加载项使用 HTML、JavaScript 和其他 Web 技术来构建所有平�
 
 下图显示了如何将共享代码库用于迁移。 通用代码将重构到新的共享代码库中。 该代码可保持其原始编写语言（例如 C# 或 VB）。 这意味着你可以创建项目引用，从而继续在现有 VSTO 加载项中使用该代码。 创建 Office 加载项时，该加载项也将使用共享代码库，即通过 REST API 对其进行调用。
 
-![使用共享代码库的 VSTO 加载项和 Office 加载项的关系图](../images/vsto-migration-shared-code-library.png)
+![使用共享代码库的 VSTO 加载项和 Office 加载项的关系图。](../images/vsto-migration-shared-code-library.png)
 
 本教程中的技能和方法：
 
@@ -70,7 +70,7 @@ Office 加载项使用 HTML、JavaScript 和其他 Web 技术来构建所有平�
 
 该加载项是 Excel 的自定义任务窗格。 你可以选择包含文本的任何单元格，然后选择“**显示 unicode**”按钮。 在“**结果**”部分中，该加载项将列出文本中的每个字符及其相应 Unicode 编号。
 
-![在 Excel 中运行的 Cell Analyzer VSTO 加载项的屏幕截图，带有“显示 unicode”按钮和空结果部分](../images/pnp-cell-analyzer-vsto-add-in.png)
+![在 Excel 中运行的 Cell Analyzer VSTO 加载项的屏幕截图，带有“显示 unicode”按钮和空结果部分。](../images/pnp-cell-analyzer-vsto-add-in.png)
 
 ## <a name="analyze-types-of-code-in-the-vsto-add-in"></a>分析 VSTO 加载项中的代码类型
 
@@ -88,7 +88,7 @@ UI 代码与用户进行交互。 在 VSTO 中，UI 代码可通过 Windows 窗�
 
 业务逻辑、算法、helper 函数和类似的代码通常构成 VSTO 加载项的核心。 此类代码独立于 UI 代码和文档代码，可用于执行分析、连接到后端服务、运行计算等。 这是可以共享的代码，因此无需用 JavaScript 重写。
 
-让我们看一看 VSTO 加载项。 在以下代码中，每个部分标识为 DOCUMENT、UI 或 ALGORITHM 代码。
+让我们看一看 VSTO 加载项。在以下代码中，每个部分标识为 DOCUMENT、UI 或 ALGORITHM 代码。
 
 ```csharp
 // *** UI CODE ***

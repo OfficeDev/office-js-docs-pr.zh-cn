@@ -4,12 +4,12 @@ description: 了解 Excel JavaScript API 中的关键对象类型，以及如何
 ms.date: 04/05/2021
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: 50833deb4d996f577db9d3e40db21f1799e7f2f7
-ms.sourcegitcommit: 54fef33bfc7d18a35b3159310bbd8b1c8312f845
+ms.openlocfilehash: 1cef1775711ebdb66d2e8f6513602906d9c5a2d2
+ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2021
-ms.locfileid: "51650898"
+ms.lasthandoff: 06/23/2021
+ms.locfileid: "53075864"
 ---
 # <a name="excel-javascript-object-model-in-office-add-ins"></a>Excel 加载项中的 Excel JavaScript 对象模型
 
@@ -26,14 +26,14 @@ Excel 加载项通过使用适 Office JavaScript API 与 Excel 中的对象进�
 
 * **通用 API**：[通用 API](/javascript/api/office) 随 Office 2013 引入，可用于访问多种类型的 Office 应用程序中常见的 UI、对话框和客户端设置等功能。
 
-你可能会使用 Excel JavaScript API 开发面向 Excel 2016 或更高版本的加载项中的大部分功能，同时还可以使用通用 API 中的对象。 例如：
+你可能会使用 Excel JavaScript API 开发面向 Excel 2016 或更高版本的加载项中的大部分功能，同时还可以使用通用 API 中的对象。例如：
 
 * [Context](/javascript/api/office/office.context)：`Context` 对象表示加载项的运行时环境，并提供对 API 关键对象的访问权限。 它由工作簿配置详细信息（如 `contentLanguage` 和 `officeTheme`）组成，并提供有关加载项的运行时环境（如 `host` 和 `platform`）的信息。 此外，它还提供了 `requirements.isSetSupported()` 方法，可用于检查运行加载项的 Excel 应用程序是否支持指定的要求集。
 * [Document](/javascript/api/office/office.document)：`Document` 对象提供 `getFileAsync()` 方法，用于下载运行加载项的 Excel 文件。
 
 下图说明了可能使用 Excel JavaScript API 或公共 API 的情况。
 
-![Excel JS API 和公共 API 之间差异的图像](../images/excel-js-api-common-api.png)
+![Excel JS API 和公共 API 之间的差异。](../images/excel-js-api-common-api.png)
 
 ## <a name="excel-specific-object-model"></a>特定于 Excel 的对象模型
 
@@ -109,7 +109,7 @@ Excel JavaScript API 可以在 Excel 中创建和设置数据结构和可视化�
 
 #### <a name="creating-a-table"></a>创建表
 
-通过使用数据填充范围创建表。 会将格式设置和表控件（如筛选器）自动应用到该范围。
+通过使用数据填充区域创建表。自动将格式设置和表格控件（如筛选器）应用到区域。
 
 以下示例使用上一个示例中的范围创建了一个表。
 

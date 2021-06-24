@@ -3,12 +3,12 @@ title: 使用 Office 对话框 API 进行身份验证和授权
 description: 了解如何使用 Office 对话框 API 使用户能够登录到 Google、Facebook、Microsoft 365 以及受 Microsoft 标识平台保护的其他服务。
 ms.date: 09/24/2020
 localization_priority: Priority
-ms.openlocfilehash: fbec924eb6f8d1941be6882dc5e1a563bd011105
-ms.sourcegitcommit: 4fa952f78be30d339ceda3bd957deb07056ca806
+ms.openlocfilehash: 669eedd3439698a37bebe2a83b3c2a8381cdb4d6
+ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/16/2021
-ms.locfileid: "52961249"
+ms.lasthandoff: 06/23/2021
+ms.locfileid: "53076229"
 ---
 # <a name="authenticate-and-authorize-with-the-office-dialog-api"></a>使用 Office 对话框 API 进行身份验证和授权
 

@@ -5,18 +5,18 @@ ms.date: 10/14/2020
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: 7460ca65313480cc4518bdfb30447dc83288debe
-ms.sourcegitcommit: ccc0a86d099ab4f5ef3d482e4ae447c3f9b818a3
+ms.openlocfilehash: 956e19a14cca1559c828265b2212c410f10b916b
+ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "50237761"
+ms.lasthandoff: 06/23/2021
+ms.locfileid: "53076656"
 ---
 # <a name="office-add-ins-platform-overview"></a>Office 加载项平台概述
 
 可以使用 Office 加载项平台来生成解决方案，用于扩展 Office 应用程序，并与 Office 文档中的内容进行交互。通过 Office 加载项，可以使用熟悉的 Web 技术（如 HTML、CSS 和 JavaScript）来扩展 Word、Excel、PowerPoint、OneNote，Project 和 Outlook，并与之交互。解决方案可以跨多个平台（包括 Windows、Mac、iPad 和浏览器）在 Office 中运行。
 
-![Office 加载项可扩展性图像](../images/addins-overview.png)
+![Office 应用程序加上嵌入式网站（外接程序）可实现无限扩展性。](../images/addins-overview.png)
 
 网页在浏览器中能执行的操作，Office 加载项差不多都能执行。使用 Office 加载项平台可以执行下列操作：
 
@@ -28,7 +28,7 @@ ms.locfileid: "50237761"
 
 COM 或 VSTO 加载项是旧 Office 集成解决方案，仅在 Windows 版 Office 上运行。与 COM 加载项不同，Office 加载项不涉及在用户设备或 Office 客户端中运行的代码。对于 Office 加载项，该应用程序（例如 Excel）会读取加载项清单，并挂钩 UI 中的加载项自定义功能区按钮和菜单命令。如果需要，它加载加载项的 JavaScript 和 HTML 代码，此代码在沙盒中的浏览器上下文范围内执行。
 
-![使用 Office 加载项的理由的图像](../images/why.png)
+![使用 Office 加载项的原因：跨平台、集中部署、通过 AppSource 轻松访问以及基于标准 Web 技术构建。](../images/why.png)
 
 相较于使用 VBA、COM 或 VSTO 生成的加载项，Office 加载项提供以下优势：
 
@@ -60,7 +60,7 @@ Office 外接程序包括两个基本组件：XML 清单文件和你自己的 We
 
 *图 2：Hello World Office 加载项的组件*
 
-![Hello World 加载项的组件](../images/about-addins-componentshelloworldoffice.png)
+![Hello World 加载项的组件。](../images/about-addins-componentshelloworldoffice.png)
 
 ## <a name="extending-and-interacting-with-office-clients"></a>扩展并与 Office 客户端交互
 
@@ -86,7 +86,7 @@ Office 加载项可以在 Office 客户端应用程序中执行下列操作：
 
 *图 3. 功能区中的加载项命令*
 
-![自定义按钮和菜单命令](../images/about-addins-addincommands.png)
+![自定义按钮和菜单命令。](../images/about-addins-addincommands.png)
 
 #### <a name="task-panes"></a>任务窗格  
 
@@ -94,7 +94,7 @@ Office 加载项可以在 Office 客户端应用程序中执行下列操作：
 
 *图 4：任务窗格*
 
-![除加载项命令之外，还可以使用任务窗格](../images/about-addins-taskpane.png)
+![除加载项命令之外，还可以使用任务窗格。](../images/about-addins-taskpane.png)
 
 ### <a name="extend-outlook-functionality"></a>扩展 Outlook 功能
 
@@ -110,7 +110,7 @@ Outlook 加载项可以访问邮件项目中的上下文信息（如地址或跟
 
 *图 5：内容加载项*
 
-![嵌入称为内容加载项的基于 Web 的对象](../images/about-addins-contentaddin.png)
+![嵌入称为内容加载项的基于 Web 的对象。](../images/about-addins-contentaddin.png)
 
 ## <a name="office-javascript-apis"></a>Office JavaScript API
 

@@ -4,12 +4,12 @@ description: 了解如何使用 Office JS API 生成简单的 Project 任务窗�
 ms.date: 06/07/2021
 ms.prod: project
 localization_priority: Priority
-ms.openlocfilehash: eed545d6ebf2b705d8d8963a76a0ac3bca2e13f4
-ms.sourcegitcommit: 5a151d4df81e5640363774406d0f329d6a0d3db8
+ms.openlocfilehash: 3589572c022e4fe3dc75cd25e5d378a3dab0c8b7
+ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2021
-ms.locfileid: "52853988"
+ms.lasthandoff: 06/23/2021
+ms.locfileid: "53076572"
 ---
 # <a name="build-your-first-project-task-pane-add-in"></a>生成首个 Project 任务窗格加载项
 
@@ -31,7 +31,7 @@ ms.locfileid: "52853988"
 - **要如何命名加载项?** `My Office Add-in`
 - **要支持哪一个 Office 客户端应用程序?** `Project`
 
-![显示命令行界面中 Yeoman 生成器的提示和回答的屏幕截图](../images/yo-office-project.png)
+![显示命令行界面中 Yeoman 生成器的提示和回答的屏幕截图。](../images/yo-office-project.png)
 
 完成此向导后，生成器会创建项目，并安装支持的 Node 组件。
 
@@ -115,7 +115,7 @@ Office.context.document.getSelectedTaskAsync(
 
 6. 在任务窗格的底部，选择“**运行**”链接以重命名所选任务并向所选任务添加备注。
 
-    ![加载了任务窗格加载项的 Project 应用程序的屏幕截图](../images/project-quickstart-addin-1.png)
+    ![加载了任务窗格加载项的 Project 应用程序的屏幕截图。](../images/project-quickstart-addin-1.png)
 
 ## <a name="next-steps"></a>后续步骤
 

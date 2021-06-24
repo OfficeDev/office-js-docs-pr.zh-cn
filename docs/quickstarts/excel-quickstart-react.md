@@ -4,12 +4,12 @@ description: 了解如何使用 Office JS API 和 React 生成简单的 Excel �
 ms.date: 11/09/2020
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: 460f6a6d58e6405a0ede909eec755d454744461b
-ms.sourcegitcommit: d28392721958555d6edea48cea000470bd27fcf7
+ms.openlocfilehash: 4cb3c56af21f11efcb97fd9fe901a2d0718ae801
+ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/13/2021
-ms.locfileid: "49839724"
+ms.lasthandoff: 06/23/2021
+ms.locfileid: "53076908"
 ---
 # <a name="build-an-excel-task-pane-add-in-using-react"></a>使用 React 生成 Excel 任务窗格加载项
 
@@ -29,7 +29,7 @@ ms.locfileid: "49839724"
 - **要如何命名加载项?** `My Office Add-in`
 - **要支持哪一个 Office 客户端应用程序?** `Excel`
 
-![项目类型设置为“React 框架” 的 Yeoman Office 外接程序生成器命令行界面屏幕截图](../images/yo-office-excel-react-2.png)
+![项目类型设置为“React 框架” 的 Yeoman Office 外接程序生成器命令行界面屏幕截图。](../images/yo-office-excel-react-2.png)
 
 完成此向导后，生成器会创建项目，并安装支持的 Node 组件。
 
@@ -56,17 +56,17 @@ ms.locfileid: "49839724"
 
 3. 在 Excel 中，依次选择的“**开始**”选项卡和功能区中的“**显示任务窗格**”按钮，以打开加载项任务窗格。
 
-    ![Excel 主页菜单的屏幕截图，突出显示“显示任务窗格”按钮](../images/excel-quickstart-addin-3b.png)
+    ![Excel 主页菜单的屏幕截图，突出显示“显示任务窗格”按钮。](../images/excel-quickstart-addin-3b.png)
 
 4. 选择工作表中的任何一系列单元格。
 
 5. 在任务窗格的底部，选择“**运行**”链接，价格选定范围的颜色设为黄色。
 
-    ![Excel 的屏幕截图，其中“加载项”任务窗格处于打开状态，并且“加载项”任务窗格中突出显示“运行”按钮](../images/excel-quickstart-addin-3c.png)
+    ![Excel 的屏幕截图，其中“加载项”任务窗格处于打开状态，并且“加载项”任务窗格中突出显示“运行”按钮。](../images/excel-quickstart-addin-3c.png)
 
 ## <a name="next-steps"></a>后续步骤
 
-祝贺，你已使用 React 成功创建了 Excel 任务窗格加载项！ 接下来，请详细了解 Excel 加载项功能，并跟着 Excel 加载项教程一起操作，生成更复杂的加载项。
+恭喜！你已使用 React 成功创建 Excel 任务窗格加载项！接下来，请详细了解 Excel 加载项功能，并跟着 Excel 加载项教程一起操作，以生成更复杂的加载项。
 
 > [!div class="nextstepaction"]
 > [Excel 加载项教程](../tutorials/excel-tutorial.md)

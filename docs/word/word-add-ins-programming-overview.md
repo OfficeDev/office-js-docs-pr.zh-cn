@@ -5,12 +5,12 @@ ms.date: 10/14/2020
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: 2dba67cabaf11d6e10560ba3dbe5babde3ed0c92
-ms.sourcegitcommit: d28392721958555d6edea48cea000470bd27fcf7
+ms.openlocfilehash: c4abde797ac25b049e3d77acad59f7e2263005aa
+ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/13/2021
-ms.locfileid: "49840004"
+ms.lasthandoff: 06/23/2021
+ms.locfileid: "53075542"
 ---
 # <a name="word-add-ins-overview"></a>Word 加载项概述
 
@@ -24,7 +24,7 @@ Word 外接程序是 [Office 外接程序平台](../overview/office-add-ins.md)�
 
 *图 1：在 Word 的任务窗格中运行的加载项*
 
-![在 Word 的任务窗格中运行的外接程序](../images/word-add-in-show-host-client.png)
+![在 Word 的任务窗格中运行的加载项。](../images/word-add-in-show-host-client.png)
 
 Word 外接程序 (1) 可以将请求发送到 Word 文档 (2) 可以使用 JavaScript 来访问段落对象和更新、删除或移动段落。例如，下面的代码演示如何将一个新句子附加到该段落。
 
@@ -57,7 +57,7 @@ Word.run(function (context) {
 
 第二组是 [Word JavaScript API](/javascript/api/word)。这是与 Word 2016 年一起引入的[应用程序特定 API 模型](../develop/application-specific-api-model.md)。它是强类型对象模型，可用于创建面向 Mac 版和 Windows 版 Word 2016 的 Word 加载项。此对象模型使用承诺模式，并提供对特定于 Word 的对象（如[正文](/javascript/api/word/word.body)、[内容控件](/javascript/api/word/word.contentcontrol)、[内联图片](/javascript/api/word/word.inlinepicture)和[段落](/javascript/api/word/word.paragraph)）的访问权限。Word JavaScript API 包括 TypeScript 定义和 vsdoc 文件，这样，你便可以在 IDE 中获得代码提示。
 
-目前，所有 Word 客户端均支持共享的 Office JavaScript API，大多数客户端支持 Word JavaScript API。 有关受支持的客户端的详细信息，请参阅 [Office 客户端应用程序和 Office 加载项的平台可用性](../overview/office-add-in-availability.md)。
+目前，所有 Word 客户端均支持共享 Office  JavaScript API，大多数客户端支持 Word JavaScript API。有关受支持的客户端的详细信息，请参阅[ Office 客户端应用程序和 Office 加载项的平台可用性](../overview/office-add-in-availability.md)。
 
 我们建议从 Word JavaScript API 开始，因为对象模型更易于使用。如果需要执行以下操作，请使用 Word JavaScript API：
 

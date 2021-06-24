@@ -3,18 +3,18 @@ title: 清除 Office 缓存
 description: 了解如何清除计算机上的 Office 缓存。
 ms.date: 05/22/2020
 localization_priority: Priority
-ms.openlocfilehash: 2b7cda61ee0fe1af99ed726d060d59bbe9e99fa7
-ms.sourcegitcommit: 3123b9819c5225ee45a5312f64be79e46cbd0e3c
+ms.openlocfilehash: db83a215a2f36d7250ad333f3fd1f7401a5cc1cc
+ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/29/2021
-ms.locfileid: "50043902"
+ms.lasthandoff: 06/23/2021
+ms.locfileid: "53077186"
 ---
 # <a name="clear-the-office-cache"></a>清除 Office 缓存
 
 你可以通过清除计算机上的 Office 缓存来删除以前在 Windows、Mac 或 iOS 上旁加载的加载项。
 
-此外，如果你对加载项的清单进行了更改（例如，更新图标的文件名或加载项命令的文本），则应清除 Office 缓存，然后使用更新后的清单重新旁加载此加载项。 执行此操作后，Office 将按照更新清单中所述的方式呈现该加载项。
+此外，如果你对加载项的清单进行了更改（例如，更新图标的文件名或加载项命令的文本），则应清除 Office 缓存，然后使用更新后的清单重新旁加载此加载项。执行此操作后，Office 将按照更新清单中所述的方式呈现该加载项。
 
 ## <a name="clear-the-office-cache-on-windows"></a>清除 Windows 上的 Office 缓存
 
@@ -52,11 +52,11 @@ ms.locfileid: "50043902"
 
 6. 在新窗口的“**网络**”选项卡上，选择“**清除缓存**”按钮。
 
-    ![Microsoft Edge 开发工具屏幕截图，其中突出显示了“清除缓存”按钮](../images/edge-devtools-clear-cache.png)
+    ![Microsoft Edge 开发工具屏幕截图，其中突出显示了“清除缓存”按钮。](../images/edge-devtools-clear-cache.png)
 
 7. 如果完成这些步骤后未获得想要的结果，还可以选择“**始终从服务器中刷新**”按钮。
 
-    ![Microsoft Edge 开发工具屏幕截图，其中突出显示了“始终从服务器中刷新”按钮](../images/edge-devtools-refresh-from-server.png)
+    ![Microsoft Edge 开发工具屏幕截图，其中突出显示了“始终从服务器中刷新”按钮。](../images/edge-devtools-refresh-from-server.png)
 
 ## <a name="clear-the-office-cache-on-mac"></a>清除 Mac 上的 Office 缓存
 

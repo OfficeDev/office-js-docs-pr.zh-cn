@@ -3,12 +3,12 @@ title: 开发 Office 加载项
 description: Office 加载项开发简介。
 ms.date: 10/14/2020
 localization_priority: Priority
-ms.openlocfilehash: 0d19ec8203e7141b6667713786d790eb0a12bba2
-ms.sourcegitcommit: ccc0a86d099ab4f5ef3d482e4ae447c3f9b818a3
+ms.openlocfilehash: 03a693e29f5aa52156a2ebfc7b6ed782323bb2b7
+ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "50237887"
+ms.lasthandoff: 06/23/2021
+ms.locfileid: "53076116"
 ---
 # <a name="develop-office-add-ins"></a>开发 Office 加载项
 
@@ -49,7 +49,7 @@ Office 加载项由两部分组成：
 
 - Web 应用程序，它定义了加载项组件的 UI 和功能，例如任务窗格、内容加载项和对话框。
 
-Web 应用程序使用 Office JavaScript API 来与其中在运行加载项的 Office 文档中的内容进行交互。 你的加载项还可执行 Web 应用程序通常可实现的其他操作，例如调用外部 Web 服务和简化用户身份验证等等。
+这些 Web 应用程序可使用 Office JavaScript API 来与其中正在运行加载项的 Office 文档中的内容进行交互。你的加载项还可执行 Web 应用程序通常可实现的其他操作，例如调用外部 Web 服务和简化用户身份验证等等。
 
 ### <a name="defining-an-add-ins-settings-and-capabilities"></a>定义加载项的设置和功能
 
@@ -87,7 +87,7 @@ Script Lab 是一款加载项，在 Excel 或 Word 等 Office 程序中工作时
 
 下面时长一分钟的视频展示了 Script Lab 的实际运行情况。
 
-[![显示 Script Lab 在 Excel、Word 和 PowerPoint 中运行的短视频](../images/screenshot-wide-youtube.png 'Script Lab 预览视频')](https://aka.ms/scriptlabvideo)
+[![显示 Script Lab 在 Excel、Word 和 PowerPoint 中运行的短视频。](../images/screenshot-wide-youtube.png 'Script Lab 预览视频。')](https://aka.ms/scriptlabvideo)
 
 有关 Script Lab 的详细信息，请参阅[使用 Script Lab 了解 Office JavaScript API](../overview/explore-with-script-lab.md)。
 
@@ -101,13 +101,13 @@ Office 加载项可使用加载项命令和 HTML 容器（如任务窗格、内�
 
 下图显示功能区中有一个加载项命令、文档右侧有一个任务窗格，且文档上方有一个对话框或内容加载项。
 
-![显示 Office 文档中的功能区内加载项命令、任务窗格、对话框/内容加载项的图表](../images/add-in-ui-elements.png)
+![显示 Office 文档中的功能区内加载项命令、任务窗格、对话框/内容加载项的图表。](../images/add-in-ui-elements.png)
 
 要详细了解如何扩展 Office UI 和设计加载项的 UX，请参阅 [Office 加载项的 Office UI 元素](../design/interface-elements.md)。
 
 ## <a name="next-steps"></a>后续步骤
 
-本文概述了创建 Office 加载项的不同方法、介绍了外接程序扩展 Office UI 的方法，描述了 API 集,介绍了 Script Lab（一种用来了解 Office JavaScript API 和建立加载项功能原型的宝贵工具）。 现在，你了解这一介绍性信息，请考虑沿着以下学习路径继续你的 Office 加载项之旅。
+本文概述了创建 Office 加载项的不同方法、介绍了加载项扩展 Office UI 的方法，描述了 API 集,介绍了 Script Lab（一种用来于了解 Office JavaScript API 和建立加载项功能原型的宝贵工具）。现在，你了解这一介绍性信息，请考虑沿着以下学习路径继续你的 Office 加载项之旅。
 
 ### <a name="create-an-office-add-in"></a>创建 Office 加载项
 

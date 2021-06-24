@@ -3,19 +3,19 @@ title: 为 Office 加载项启用单一登录
 description: 了解如何使用常用的 Microsoft 个人、工作或教育帐户来为 Office 加载项启用单一登录。
 ms.date: 07/30/2020
 localization_priority: Priority
-ms.openlocfilehash: 104a64fa5a761e06711e9c5f850bba0267830809
-ms.sourcegitcommit: ccc0a86d099ab4f5ef3d482e4ae447c3f9b818a3
+ms.openlocfilehash: e9f671b4177d123b83ffeaaea7e1f05a4d0df5b7
+ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "50237817"
+ms.lasthandoff: 06/23/2021
+ms.locfileid: "53075955"
 ---
 # <a name="enable-single-sign-on-for-office-add-ins"></a>为 Office 加载项启用单一登录
 
 
 用户可以使用自己的个人 Microsoft 帐户或 Microsoft 365 教育或工作帐户，登录 Office（在线、移动和桌面平台）。 可以利用此功能并使用单一登录 (SSO) 授权用户访问加载项（用户无需再次登录）。
 
-![显示加载项登录过程的图像](../images/sso-for-office-addins.png)
+![显示加载项登录过程的图像。](../images/sso-for-office-addins.png)
 
 ## <a name="requirements-and-best-practices"></a>要求和最佳做法
 
@@ -29,7 +29,7 @@ ms.locfileid: "50237817"
 
 以下关系图显示了 SSO 流程的工作方式。
 
-![显示 SSO 流程的关系图](../images/sso-overview-diagram.png)
+![显示 SSO 流程的关系图。](../images/sso-overview-diagram.png)
 
 1. 在加载项中，JavaScript 调用新的 Office.js API [getAccessToken](/javascript/api/office-runtime/officeruntime.auth#getaccesstoken-options-)。 该操作告诉 Office 客户端应用程序获取加载项的访问令牌。 请参阅[示例访问令牌](#example-access-token)。
 2. 如果用户未登录，Office 客户端应用程序会打开弹出窗口，以供用户登录。
@@ -42,7 +42,7 @@ ms.locfileid: "50237817"
 
 ## <a name="develop-an-sso-add-in"></a>开发 SSO 加载项
 
-此部分介绍了创建启用 SSO 的 Office 加载项所需完成的任务。 其中介绍的这些任务与语言和框架无关。 有关详细的演练，请参阅：
+此部分介绍了创建启用 SSO 的 Office 加载项所需完成的任务。 其中介绍的这些任务与语言和框架无关。 有关详细演练的示例，请参阅：
 
 * [创建使用单一登录的 Node.js Office 加载项](create-sso-office-add-ins-nodejs.md)
 * [创建使用单一登录的 ASP.NET Office 加载项](create-sso-office-add-ins-aspnet.md)
@@ -152,12 +152,12 @@ $.ajax({
 
 ### <a name="add-server-side-code"></a>添加服务器端代码
 
-大多数情况下，如果加载项没有将访问令牌传递到服务器端并在其中使用它，那么获取访问令牌的意义就不大。 加载项可以执行的一些服务器端任务：
+大多数情况下，如果加载项没有将访问令牌传递到服务器端并在其中使用它，那么获取访问令牌的意义就不大。
 
 * 创建一种或多种 Web API 方法（例如，一种在托管数据库中查找用户首选项的方法），使用有关从令牌中提取的用户的信息。 （请参阅下文“**使用 SSO 令牌作为标识**”。）可以使用一些库简化需要编写的代码，具体视语言和框架而定。
 * 获取 Microsoft Graph 数据。 服务器端代码应执行以下操作：
 
-    * 通过调用 Azure AD v2.0 端点启动“代表”流，该端点包括访问令牌、关于用户的一些元数据以及加载项的凭据（其 ID 和机密）。 在此上下文中，访问令牌称为启动令牌。
+    * 通过调用 Azure AD v2.0 终结点启动“代表”流，该终结点包括访问令牌、关于用户的一些元数据以及加载项的凭据（其 ID 和机密）。在此上下文中，访问令牌称为启动令牌。
     * 使用新的令牌从 Microsoft Graph 获取数据。
     * 或者，在启动流之前，验证访问令牌（请参阅下文 **验证访问令牌**）。
     * 或者，在代表流完成后，缓存从流返回的新访问令牌，以便在对 Microsoft Graph 的其他调用中重复使用它，直到过期为止。
@@ -180,7 +180,7 @@ Web API 收到访问令牌后，可以在使用该令牌前对其进行验证。
 
 #### <a name="using-the-sso-token-as-an-identity"></a>将 SSO 令牌用作标识
 
-如果加载项需要验证用户标识，则 SSO 令牌包含的信息可用于创建此标识。 令牌中的以下声明与标识相关。
+如果加载项需要验证用户标识，则 SSO 令牌包含的信息可用于创建此标识。令牌中的以下声明与标识相关。
 
 - `name` - 用户的显示名称。
 - `preferred_username` - 用户的电子邮件地址。

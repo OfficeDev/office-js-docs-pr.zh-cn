@@ -4,12 +4,12 @@ description: 在 Excel 中开发自定义函数快速入门指南。
 title: 自定义函数快速入门
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: ae8176b030e7542b22c62998311fd598f2191ffd
-ms.sourcegitcommit: ceb8dd66f3fb9c963fce8446c2f6c65ead56fbc1
+ms.openlocfilehash: 0b0e42149e771978026db3eb84594bd172d09459
+ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "49132352"
+ms.lasthandoff: 06/23/2021
+ms.locfileid: "53076628"
 ---
 # <a name="get-started-developing-excel-custom-functions"></a>开始开发 Excel 自定义函数
 
@@ -36,11 +36,11 @@ ms.locfileid: "49132352"
     - **选择脚本类型:** `JavaScript`
     - **要如何命名加载项?** `starcount`
 
-    ![Yeoman Office 外接程序生成器命令行界面提示自定义函数项目的屏幕截图](../images/starcountPrompt.png)
+    ![Yeoman Office 加载项生成器命令行界面提示自定义函数项目的屏幕截图。](../images/starcountPrompt.png)
 
     Yeoman 生成器将创建项目文件并安装支持的 Node 组件。
 
-2. Yeoman 生成器将在命令行中为你提供有关如何处理项目的说明，但请忽略它们并继续按照我们的说明进行操作。 导航到项目的根文件夹。
+2. Yeoman 生成器将在命令行中为你提供有关如何处理项目的说明，但请忽略它们并继续按照我们的说明进行操作。导航到项目的根文件夹。
 
     ```command&nbsp;line
     cd starcount
@@ -77,9 +77,9 @@ npm run start:web
 
 1. 在 Excel 中，选择“**插入**”选项卡，然后选择“**加载项**”。
 
-   ![Excel 网页版中插入功能区的屏幕截图，突出显示“我的加载项”按钮](../images/excel-cf-online-register-add-in-1.png)
+   ![Excel 网页版中插入功能区的屏幕截图，突出显示“我的加载项”按钮。](../images/excel-cf-online-register-add-in-1.png)
    
-2. 选择“**管理我的加载项**”，然后选择“**上载我的加载项**”。
+2. 选择“管理我的加载项”，然后选择“上载我的加载项”。
 
 3. 选择“浏览...”，并导航到 Yeoman 生成器创建的项目的根目录。
 

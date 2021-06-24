@@ -3,16 +3,16 @@ title: 创建适用于撰写窗体的 Outlook 加载项
 description: 了解有关适用于撰写窗体的 Outlook 加载项的方案和功能。
 ms.date: 02/09/2021
 localization_priority: Priority
-ms.openlocfilehash: 9156f2e1393c27eea359a6b63da47bc24a8a6828
-ms.sourcegitcommit: fefc279b85e37463413b6b0e84c880d9ed5d7ac3
+ms.openlocfilehash: b4863bd2f64aa2076a250d34c7ec6bed3dbc1c0a
+ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/12/2021
-ms.locfileid: "50234252"
+ms.lasthandoff: 06/23/2021
+ms.locfileid: "53077097"
 ---
 # <a name="create-outlook-add-ins-for-compose-forms"></a>创建适用于撰写窗体的 Outlook 加载项
 
-从用于 Office 加载项清单的架构版本 1.1 和 Office.js 的版本 1.1 开始，可以创建撰写加载项，这是在撰写窗体中激活的 Outlook 加载项。 与读取加载项（用户查看邮件或约会时，以阅读模式激活的 Outlook 加载项）相反，在以下用户应用场景中可以使用撰写加载项：
+从 Office 外接程序清单的版本 1.1 的架构和 office.js v1.1 开始，可以创建撰写外接程序（即在撰写窗体中激活的 Outlook 外接程序）。与阅读外接程序（用户查看邮件或约会时在阅读模式中激活的 Outlook 外接程序）相反，撰写外接程序在以下用户方案中可用：
 
 - 在撰写窗体中撰写新的邮件、会议请求或约会。
 
@@ -29,13 +29,13 @@ ms.locfileid: "50234252"
 
 - 转发或答复会议请求或会议项目。
 
-在每个撰写方案中，显示由加载项定义的任何加载项命令按钮。 对于未执行加载项命令的较旧加载项，用户可以选择功能区中的“Office 加载项”打开加载项选择窗格，然后选择并启动撰写加载项。 下图显示了撰写窗体中的加载项命令。
+在每个撰写方案中，显示由外接程序定义的任何外接程序命令按钮。对于未执行外接程序命令的较旧外接程序，用户可以选择功能区中的“**Office 外接程序**”打开外接程序选择窗格，然后选择并启动撰写外接程序。下图显示了撰写窗体中的外接程序命令。
 
 ![显示 Outlook 撰写窗体，其中包含外接程序命令。](../images/compose-form-commands.png)
 
 下图显示了外接程序选择窗格，该窗格由两个不实施外接程序命令的撰写外接程序组成，当用户在 Outlook 中撰写内嵌答复时将激活这两个撰写外接程序。
 
-![为编写项目激活的模板邮件应用程序](../images/templates-app-selection.png)
+![为撰写项目激活的模板邮件应用。](../images/templates-app-selection.png)
 
 ## <a name="types-of-add-ins-available-in-compose-mode"></a>撰写模式下可用的外接程序的类型
 

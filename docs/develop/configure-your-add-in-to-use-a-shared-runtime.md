@@ -4,12 +4,12 @@ title: 将 Office 加载项配置为使用共享 JavaScript 运行时
 ms.prod: non-product-specific
 description: 将 Office 加载项配置为使用共享 JavaScript 运行时，以支持其他功能区、任务窗格和自定义函数功能。
 localization_priority: Priority
-ms.openlocfilehash: ecde9a5564761b2dd902596f09db156332b5af4f
-ms.sourcegitcommit: 4fa952f78be30d339ceda3bd957deb07056ca806
+ms.openlocfilehash: 9874d0fef2dc4966f106d1d88e4e897469300c0b
+ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/16/2021
-ms.locfileid: "52961256"
+ms.lasthandoff: 06/23/2021
+ms.locfileid: "53076215"
 ---
 # <a name="configure-your-office-add-in-to-use-a-shared-javascript-runtime"></a>将 Office 加载项配置为使用共享 JavaScript 运行时
 
@@ -218,7 +218,7 @@ ms.locfileid: "52961256"
 
 对于 Windows 版 Office，共享运行时需要 Microsoft Internet Explorer 11 浏览器实例，如 [Office 加载项使用的浏览器](../concepts/browsers-used-by-office-web-add-ins.md)中所述。此外，加载项在功能区上显示的任何按钮都将在同一共享运行时中运行。 下图显示了自定义函数、功能区 UI 和任务窗格代码如何在同一 JavaScript 运行时中运行。
 
-![Excel 中自定义函数、任务窗格和功能区按钮均在共享 IE 浏览器运行时中运行的图表](../images/custom-functions-in-browser-runtime.png)
+![Excel 中自定义函数、任务窗格和功能区按钮均在共享 IE 浏览器运行时中运行的图表。](../images/custom-functions-in-browser-runtime.png)
 
 ### <a name="debugging"></a>调试
 

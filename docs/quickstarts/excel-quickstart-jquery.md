@@ -4,12 +4,12 @@ description: 了解如何使用 Office JS API 生成简单的 Excel 任务窗格
 ms.date: 1/19/2021
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: 6f8bfea30cba8de818ab5a587c47786c57035b76
-ms.sourcegitcommit: 54d141cefb7bdc5f16330747d0ec8e8e2bd03e93
+ms.openlocfilehash: 09abf03c5e345c61a4e98226930d79120c95949b
+ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/21/2021
-ms.locfileid: "49916466"
+ms.lasthandoff: 06/23/2021
+ms.locfileid: "53076635"
 ---
 # <a name="build-an-excel-task-pane-add-in"></a>生成 Excel 任务窗格加载项
 
@@ -58,17 +58,17 @@ ms.locfileid: "49916466"
 
 3. 在 Excel 中，依次选择的“**开始**”选项卡和功能区中的“**显示任务窗格**”按钮，以打开加载项任务窗格。
 
-    ![显示突出显示“显示任务窗格”按钮 的 Excel 主页菜单屏幕截图](../images/excel-quickstart-addin-3b.png)
+    ![显示突出显示“显示任务窗格”按钮的 Excel 主页菜单屏幕截图。](../images/excel-quickstart-addin-3b.png)
 
 4. 选择工作表中的任何一系列单元格。
 
 5. 在任务窗格的底部，选择“**运行**”链接，价格选定范围的颜色设为黄色。
 
-    ![Excel 的屏幕截图，其中“加载项”任务窗格处于打开状态，并且“加载项”任务窗格中突出显示“运行”按钮](../images/excel-quickstart-addin-3c.png)
+    ![Excel 的屏幕截图，其中“加载项”任务窗格处于打开状态，并且“加载项”任务窗格中突出显示“运行”按钮。](../images/excel-quickstart-addin-3c.png)
 
 ### <a name="next-steps"></a>后续步骤
 
-恭喜，你已成功创建 Excel 任务窗格加载项！ 接下来，请详细了解 Excel 加载项功能，并跟着 [Excel 加载项教程](../tutorials/excel-tutorial.md)一起操作，生成更复杂的加载项。
+恭喜！已成功创建 Excel 任务窗格加载项！接下来，请详细了解 Excel 加载项功能，并跟着[ Excel ](../tutorials/excel-tutorial.md)加载项教程一起操作，以生成更复杂的加载项。
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/visualstudio)
 
@@ -202,13 +202,13 @@ ms.locfileid: "49916466"
 
 2. 在 Excel 中，依次选择的“**开始**”选项卡和功能区中的“**显示任务窗格**”按钮，以打开加载项任务窗格。
 
-    ![Excel 主页菜单的屏幕截图，突出显示“显示任务窗格”按钮](../images/excel-quickstart-addin-2a.png)
+    ![Excel 主页菜单的屏幕截图，其中突出显示“显示任务窗格”按钮。](../images/excel-quickstart-addin-2a.png)
 
 3. 选择工作表中的任何一系列单元格。
 
 4. 在任务窗格中，选择“**设置颜色**”按钮，将选定区域的颜色设置为绿色。
 
-    ![Excel 屏幕截图，其中加载项任务窗格打开](../images/excel-quickstart-addin-2c.png)
+    ![Excel 屏幕截图，其中加载项任务窗格打开。](../images/excel-quickstart-addin-2c.png)
 
 [!include[Console tool note](../includes/console-tool-note.md)]
 

@@ -6,12 +6,12 @@ ms.prod: visio
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: 9d0abb5ddc93419f5acd38a8c0134941e15be48b
-ms.sourcegitcommit: fecad2afa7938d7178456c11ba52b558224813b4
+ms.openlocfilehash: 7f706d8f566a747468c4c8d676bd54882bb2a6bf
+ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "49603790"
+ms.lasthandoff: 06/23/2021
+ms.locfileid: "53076439"
 ---
 # <a name="visio-javascript-api-overview"></a>Visio JavaScript API 概述
 
@@ -19,7 +19,7 @@ ms.locfileid: "49603790"
 
 嵌入的 Visio 图表是存储在 SharePoint 文档库并在 SharePoint 页面上显示的图表。 若要嵌入 Visio 图表，请在 HTML `<iframe>` 元素中显示它。 然后，可以使用 Visio JavaScript API 以程序化方式处理嵌入的图表。
 
-![SharePoint 页面上 iframe 中的 Visio 图表，以及脚本编辑器 Web 部件](../images/visio-api-block-diagram.png)
+![SharePoint 页面上 iframe 中的 Visio 图表，以及脚本编辑器 Web 部件。](../images/visio-api-block-diagram.png)
 
 可以使用 Visio JavaScript API 执行以下操作：
 
@@ -30,12 +30,12 @@ ms.locfileid: "49603790"
 
 本文介绍了如何通过结合使用 Visio JavaScript API 和 Visio 网页版来生成 SharePoint Online 解决方案。具体介绍了有关使用 API（如 `EmbeddedSession`、`RequestContext`、JavaScript 代理对象、`sync()`、`Visio.run()` 和 `load()` 方法）的基本概念。下面这些代码示例展示了如何应用这些概念。
 
-## <a name="embeddedsession"></a>EmbeddedSession
+## <a name="embeddedsession&quot;></a>EmbeddedSession
 
 EmbeddedSession 对象在浏览器中初始化开发人员框架和 Visio 框架之间的通信。
 
 ```js
-var session = new OfficeExtension.EmbeddedSession(url, { id: "embed-iframe",container: document.getElementById("iframeHost") });
+var session = new OfficeExtension.EmbeddedSession(url, { id: &quot;embed-iframe&quot;,container: document.getElementById(&quot;iframeHost") });
 session.init().then(function () {
     window.console.log("Session successfully initialized");
 });
@@ -49,7 +49,7 @@ session.init().then(function () {
 
 ## <a name="requestcontext"></a>RequestContext
 
-RequestContext 对象可方便对 Visio 应用程序提出请求。 由于开发人员框架和 Visio Web 客户端在两个不同的 iframe 中运行，因此 RequestContext 对象（下一个示例中的上下文）必须能够从开发人员框架访问 Visio 和相关对象（如页面和形状）。
+RequestContext 对象可方便对 Visio 应用程序提出请求。由于开发人员框架和 Visio Web 客户端在两个不同的 iframe 中运行，因此 RequestContext 对象（下一个示例中的上下文）必须能够从开发人员框架访问 Visio 和相关对象（如页面和形状）。
 
 ```js
 function hideToolbars() {
@@ -199,7 +199,7 @@ function getSelectedShapeText() {
 
 完成此操作之后，只需使用你想要使用的 Visio 图表的 URL。 只需将 Visio 图表上传到 SharePoint Online 并在 Visio 网页版将其打开。 在这里打开嵌入对话框，然后使用以上示例中的嵌入 URL。
 
-![复制嵌入对话框中的 Visio 文件 URL](../images/Visio-embed-url.png)
+![复制嵌入对话框中的 Visio 文件 URL。](../images/Visio-embed-url.png)
 
 如果在编辑模式下使用 Visio 网页版，请通过依次选择“**文件**” > “**共享**” > “**嵌入**”来打开嵌入对话框。 如果在视图模式下使用 Visio 网页版，请通过选择“...”和“**嵌入**”来打开嵌入对话框。
 

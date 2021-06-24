@@ -5,12 +5,12 @@ ms.date: 10/14/2020
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: 6ecb702649a3cef0f3c3acb8432d3f8d3db65115
-ms.sourcegitcommit: 42e6cfe51d99d4f3f05a3245829d764b28c46bbb
+ms.openlocfilehash: 37ce824817f07949435fd21fa4545a5c787e7105
+ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "48740852"
+ms.lasthandoff: 06/23/2021
+ms.locfileid: "53075857"
 ---
 # <a name="excel-add-ins-overview"></a>Excel 加载项概述
 
@@ -63,7 +63,7 @@ Web 应用程序可以托管在任何 Web 服务器上，并且可以使用客�
 
 **加载项命令**
 
-![Excel 中的加载项命令](../images/excel-add-in-commands-script-lab.png)
+![Excel 中的加载项命令。](../images/excel-add-in-commands-script-lab.png)
 
 有关命令功能、受支持的平台和开发加载项命令第最佳做法的详细信息，请参阅[适用于 Excel、Word 和 Powerpoint 的加载项命令](../design/add-in-commands.md)。
 
@@ -73,7 +73,7 @@ Web 应用程序可以托管在任何 Web 服务器上，并且可以使用客�
 
 **任务窗格**
 
-![Excel 中的任务窗格加载项](../images/excel-add-in-task-pane-insights.png)
+![Excel 中的任务窗格加载项。](../images/excel-add-in-task-pane-insights.png)
 
 有关任务窗格的详细信息，请参阅 [Office 加载项中的任务窗格](../design/task-pane-add-ins.md)。有关在 Excel 中实现任务窗格的示例，请参阅 [Excel 加载项 JS WoodGrove Expense Trends](https://github.com/OfficeDev/Excel-Add-in-WoodGrove-Expense-Trends)。
 
@@ -93,7 +93,7 @@ Web 应用程序可以托管在任何 Web 服务器上，并且可以使用客�
 
 **对话框**
 
-![Excel 中的加载项对话框](../images/excel-add-in-dialog-choose-number.png)
+![Excel 中的加载项对话框。](../images/excel-add-in-dialog-choose-number.png)
 
 有关对话框和对话框 API 的详细信息，请参阅 [Office 加载项中的对话框](../design/dialog-boxes.md)和[在 Office 加载项中使用对话框 API](../develop/dialog-api-in-office-add-ins.md)。
 
@@ -103,7 +103,7 @@ Web 应用程序可以托管在任何 Web 服务器上，并且可以使用客�
 
 **内容加载项**
 
-![Excel 中的内容加载项](../images/excel-add-in-content-map.png)
+![Excel 中的内容加载项。](../images/excel-add-in-content-map.png)
 
 有关内容加载项的详细信息，请参阅 [Office 内容加载项](../design/content-add-ins.md)。有关在 Excel 中实现内容加载项的示例，请参阅 GitHub 中的 [ Excel 内容加载项 Humongous Insurance](https://github.com/OfficeDev/Excel-Content-Add-in-Humongous-Insurance)。
 

@@ -4,12 +4,12 @@ description: 在本教程中，你将创建一个 Excel 外接程序，其中包
 ms.date: 11/09/2020
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: cec05135297bb2aa23c3c936a2481b69ed13891a
-ms.sourcegitcommit: 545888b08f57bb1babb05ccfd83b2b3286bdad5c
+ms.openlocfilehash: 50855deac928f9610ebc80aa52858259106a109c
+ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/08/2021
-ms.locfileid: "49789203"
+ms.lasthandoff: 06/23/2021
+ms.locfileid: "53076208"
 ---
 # <a name="tutorial-create-custom-functions-in-excel"></a>教程：在 Excel 中创建自定义函数
 
@@ -38,7 +38,7 @@ ms.locfileid: "49789203"
     * **选择脚本类型:** `JavaScript`
     * **要如何命名加载项?** `starcount`
 
-    ![Yeoman Office 外接程序生成器命令行界面提示自定义函数项目的屏幕截图](../images/starcountPrompt.png)
+    ![Yeoman Office 外接程序生成器命令行界面提示自定义函数项目的屏幕截图。](../images/starcountPrompt.png)
     
     Yeoman 生成器将创建项目文件并安装支持的 Node 组件。
 
@@ -81,7 +81,7 @@ npm run start:web
 
 1. 在 Excel 中，选择“**插入**”选项卡，然后选择“**加载项**”。
 
-   ![Excel 网页版中插入功能区的屏幕截图，突出显示“我的加载项”按钮](../images/excel-cf-online-register-add-in-1.png)
+   ![Excel 网页版中插入功能区的屏幕截图，突出显示“我的加载项”按钮。](../images/excel-cf-online-register-add-in-1.png)
    
 2. 选择“管理我的加载项”，然后选择“上载我的加载项”。
 
@@ -149,15 +149,15 @@ npm run start:web
 
 1. 关闭 Excel，然后重新打开 Excel。
 
-2. 在 Excel 中，选择“**插入**”选项卡，然后选择位于“**我的加载项**”右侧的向下箭头。![Windows 版 Excel 中“插入”功能区的屏幕截图，突出显示“我的加载项”下箭头](../images/select-insert.png)
+2. 在 Excel 中，选择“**插入**”选项卡，然后选择位于“**我的加载项**”右侧的向下箭头。![ Windows 版 Excel 中“插入”功能区的屏幕截图，突出显示“我的加载项”下箭头。](../images/select-insert.png)
 
 3. 在可用加载项列表中，找到“**开发人员加载项**”部分并选择“**starcount**”加载项进行注册。
-    ![Windows 版 Excel 中的“插入”功能区屏幕截图，在“我的加载项”列表中突出显示“Excel 自定义函数”加载项](../images/list-starcount.png)
+    ![ Windows 版 Excel 中的“插入”功能区屏幕截图，在“我的加载项”列表中突出显示“Excel 自定义函数”加载项。](../images/list-starcount.png)
 
 
 # <a name="excel-on-the-web"></a>[Excel 网页版](#tab/excel-online)
 
-1. 在 Excel 中，选择“**插入**”选项卡，然后选择“**加载项**”。![Excel 网页版中“插入”功能区的屏幕截图，突出显示“我的加载项”按钮](../images/excel-cf-online-register-add-in-1.png)
+1. 在 Excel 中，选择“**插入**”选项卡，然后选择“**加载项**”。![ Excel 网页版中“插入”功能区的屏幕截图，突出显示“我的加载项”按钮。](../images/excel-cf-online-register-add-in-1.png)
 
 2. 选择“管理我的加载项”，然后选择“上载我的加载项”。
 
@@ -167,8 +167,8 @@ npm run start:web
 
 ---
 
-<ol start="5">
-<li> 尝试使用新函数。 在单元格 <strong>B1</strong> 中，键入文本 <strong>=CONTOSO.GETSTARCOUNT("OfficeDev", "Excel-Custom-Functions")</strong>，然后按 Enter。 你会看到，单元格 <strong>B1</strong> 中的结果便是 [Excel-Custom-Functions Github 存储库](https://github.com/OfficeDev/Excel-Custom-Functions)所获得的星星的当前数目。</li>
+<ol start="5&quot;>
+<li> 尝试使用新函数。 在单元格 <strong>B1</strong> 中，键入文本 <strong>=CONTOSO.GETSTARCOUNT(&quot;OfficeDev&quot;, &quot;Excel-Custom-Functions")</strong>，然后按 Enter。 你会看到，单元格 <strong>B1</strong> 中的结果便是 [Excel-Custom-Functions Github 存储库](https://github.com/OfficeDev/Excel-Custom-Functions)所获得的星星的当前数目。</li>
 </ol>
 
 ## <a name="create-a-streaming-asynchronous-custom-function"></a>创建流式处理异步自定义函数
@@ -217,14 +217,14 @@ function clock(invocation) {
 
 1. 关闭 Excel，然后重新打开 Excel。
 
-2. 在 Excel 中，选择“**插入**”选项卡，然后选择位于“**我的加载项**”右侧的向下箭头。![Windows 版 Excel 中“插入”功能区的屏幕截图，突出显示“我的加载项”下箭头](../images/select-insert.png)
+2. 在 Excel 中，选择“**插入**”选项卡，然后选择位于“**我的加载项**”右侧的向下箭头。![ Windows 版 Excel 中“插入”功能区的屏幕截图，突出显示“我的加载项”下箭头。](../images/select-insert.png)
 
 3. 在可用加载项列表中，找到“**开发人员加载项**”部分并选择“**starcount**”加载项进行注册。
-    ![Windows 版 Excel 中的“插入”功能区屏幕截图，在“我的加载项”列表中突出显示“Excel 自定义函数”加载项](../images/list-starcount.png)
+    ![ Windows 版 Excel 中的“插入”功能区屏幕截图，在“我的加载项”列表中突出显示“Excel 自定义函数”加载项。](../images/list-starcount.png)
 
 # <a name="excel-on-the-web"></a>[Excel 网页版](#tab/excel-online)
 
-1. 在 Excel 中，选择“**插入**”选项卡，然后选择“**加载项**”。![Excel 网页版中“插入”功能区的屏幕截图，突出显示“我的加载项”按钮](../images/excel-cf-online-register-add-in-1.png)
+1. 在 Excel 中，选择“**插入**”选项卡，然后选择“**加载项**”。![ Excel 网页版中“插入”功能区的屏幕截图，突出显示“我的加载项”按钮。](../images/excel-cf-online-register-add-in-1.png)
 
 2. 选择“管理我的加载项”，然后选择“上载我的加载项”。
 

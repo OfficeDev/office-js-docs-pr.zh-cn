@@ -4,12 +4,12 @@ description: 在本教程中，你将生成一个可将 GitHub gist 插入到新
 ms.date: 05/12/2021
 ms.prod: outlook
 localization_priority: Priority
-ms.openlocfilehash: 1114c7b106cdc6d66e370b9d168ac87fda068a24
-ms.sourcegitcommit: 30f6c620380075e3459cac748ca0c656427b384d
+ms.openlocfilehash: 4939d6a57cd7aaf529d8507ba535e32a55eeb237
+ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/12/2021
-ms.locfileid: "52329924"
+ms.lasthandoff: 06/23/2021
+ms.locfileid: "53076130"
 ---
 # <a name="tutorial-build-a-message-compose-outlook-add-in"></a>教程：生成邮件撰写 Outlook 外接程序
 
@@ -110,7 +110,7 @@ ms.locfileid: "52329924"
 
     - **要支持哪一个 Office 客户端应用程序?** - `Outlook`
 
-    ![显示命令行界面中 Yeoman 生成器的提示和回答的屏幕截图](../images/yeoman-prompts-2.png)
+    ![显示命令行界面中 Yeoman 生成器的提示和回答的屏幕截图。](../images/yeoman-prompts-2.png)
 
     完成此向导后，生成器会创建项目，并安装支持的 Node 组件。
 
@@ -169,7 +169,7 @@ ms.locfileid: "52329924"
 
 1. 在 Outlook 中，打开现有邮件，然后选择“**显示任务窗格**”按钮。 如果所有内容都已正确设置，则任务窗格将打开并呈现外接程序的欢迎页。
 
-    ![“任务窗格”按钮的屏幕截图，和示例添加的对 Gist 执行 Git 处理任务窗格](../images/button-and-pane.png)
+    ![“显示任务窗格”按钮和示例添加的对 Gist 执行 Git 处理任务窗格的屏幕截图。](../images/button-and-pane.png)
 
 ## <a name="define-buttons"></a>定义按钮
 
@@ -289,11 +289,11 @@ ms.locfileid: "52329924"
 
 - 如果是在 Windows 版 Outlook 2016 或更高版本中运行此外接程序，则应在“邮件撰写”窗口的功能区中看到两个新按钮：“**插入 gist**”和“**插入默认 gist**”。
 
-    ![Windows 版 Outlook 中突出显示加载项按钮的功能区溢出菜单的屏幕截图](../images/add-in-buttons-in-windows.png)
+    ![Windows 版 Outlook 中突出显示加载项按钮的功能区溢出菜单的屏幕截图。](../images/add-in-buttons-in-windows.png)
 
 - 如果在 Outlook 网页版中运行此外接程序，则应该会在“邮件撰写”窗口的底部看到一个新按钮。 选择该按钮可查看选项“**插入 gist**”和“**插入默认 gist**”。
 
-    ![突出显示加载项按钮和弹出菜单的 Outlook 网页版邮件撰写窗体屏幕截图](../images/add-in-buttons-in-owa.png)
+    ![突出显示加载项按钮和弹出菜单的 Outlook 网页版邮件撰写窗体屏幕截图。](../images/add-in-buttons-in-owa.png)
 
 ## <a name="implement-a-first-run-experience"></a>实现首次运行体验
 
@@ -944,11 +944,11 @@ function buildBodyContent(gist, callback) {
 
 1. 在“撰写邮件”窗口中，选择“**插入默认 gist**”。 您应该会看到对话框，您可以在其中配置外接程序，从提示设置 GitHub 用户名开始。
 
-    ![配置外接程序的对话框提示屏幕截图](../images/addin-prompt-configure.png)
+    ![配置外接程序的对话框提示屏幕截图。](../images/addin-prompt-configure.png)
 
 1. 在设置对话框中，输入你的 GitHub 用户名，然后选择“**选项卡**”或单击对话框中的其他位置以调用 `change` 事件，该事件应加载公用 gist 列表。 选择一个 gist 作为默认设置，然后选择“**完成**”。
 
-    ![外接程序设置对话框的屏幕截图](../images/addin-settings.png)
+    ![外接程序设置对话框的屏幕截图。](../images/addin-settings.png)
 
 1. 重新选择“**插入默认 gist**”按钮。 此时应看到插入到电子邮件正文中的 gist 的内容。
 
@@ -1307,7 +1307,7 @@ ul {
 
 1. 在任务窗格中，选择 **Hello World Html** gist 并选择“**插入**”以将该 gist 插入到邮件正文中。
 
-![外接程序任务窗格和消息正文中显示的选定 gist 内容的屏幕截图](../images/addin-taskpane.png)
+![外接程序任务窗格和消息正文中显示的选定 gist 内容的屏幕截图。](../images/addin-taskpane.png)
 
 ## <a name="next-steps"></a>后续步骤
 
