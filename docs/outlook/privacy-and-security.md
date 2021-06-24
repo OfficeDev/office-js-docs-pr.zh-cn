@@ -3,12 +3,12 @@ title: Outlook 加载项的隐私、权限和安全性
 description: 了解如何管理 Outlook 加载项中的隐私、权限和安全性。
 ms.date: 04/07/2021
 localization_priority: Priority
-ms.openlocfilehash: 4df59aaffa01be97ecf2b6349cdc6f6aca91ef07
-ms.sourcegitcommit: 54fef33bfc7d18a35b3159310bbd8b1c8312f845
+ms.openlocfilehash: 1c8c5420593b31f403cf8f5fa28659fc130db402
+ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2021
-ms.locfileid: "51650833"
+ms.lasthandoff: 06/23/2021
+ms.locfileid: "53076992"
 ---
 # <a name="privacy-permissions-and-security-for-outlook-add-ins"></a>Outlook 外接程序的隐私、权限和安全性
 
@@ -83,7 +83,7 @@ ms.locfileid: "51650833"
   >
   > - 现在，Windows 版 Outlook 从内部版本 13229.10000 开始可以在受 IRM 保护的项目上激活加载项。 有关处于预览阶段的此功能的详细信息，请参阅[在受信息权限管理 (IRM) 保护的项目上激活加载项](../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md#add-in-activation-on-items-protected-by-information-rights-management-irm)。
 
-- 从 AppSource 安装加载项之前，最终用户能够查看加载项可以对其数据进行的访问和采取的操作，且必须明确确认后才能继续操作。 未经用户或管理员手动验证，Outlook 外接程序不会自动推送到客户端计算机。
+- 从 AppSource 安装外接程序之前，最终用户能够查看外接程序可以对其数据进行的访问和采取的操作，且必须明确确认后才能继续操作。未经用户或管理员手动验证，Outlook 外接程序不会自动推送到客户端计算机。
 
 - 授予“受限”权限可允许 Outlook 外接程序仅具有对当前项目的有限访问权限。授予“读取项目”权限可允许 Outlook 外接程序仅访问当前项目上的个人识别信息，例如发件人和收件人姓名以及电子邮件地址。
 
@@ -130,7 +130,7 @@ ms.locfileid: "51650833"
     <Permissions>ReadItem</Permissions>
   ```
 
-- 如果 Outlook 加载项激活特定类型的 Outlook 项目（约会或邮件）或存在于项目主题或正文中的特定提取的实体（电话号码、地址、URL），开发人员可以请求“**受限**”权限。 例如，如果在当前邮件的主题或正文中找到一个或多个实体（共三个）- 电话号码、邮寄地址或 URL，以下规则将激活 Outlook 外接程序。
+- 如果针对特定类型的 Outlook 项目（约会或邮件）或者项目主题或正文中显示的特定已提取实体（电话号码、地址、URL）激活 Outlook 外接程序，那么开发人员可以请求 **“受限”** 权限。例如，如果在当前邮件的主题或正文中发现三种实体（电话号码、通信地址或 URL）中的一个或多个，那么以下规则会激活 Outlook 外接程序。
 
   ```XML
     <Permissions>Restricted</Permissions>
@@ -144,7 +144,7 @@ ms.locfileid: "51650833"
     </Rule>
   ```
 
-- 如果 Outlook 加载项需要读取当前项目的属性而非默认提取实体的属性，或者需要通过当前项目上的加载项写入自定义属性集，但无需读写其他项目或在用户的邮箱中创建或发送邮件，则开发人员应请求“**读取项目**”权限。 例如，如果 Outlook 外接程序需要寻找项目主体或正文中的会议建议、任务建议、电子邮件地址或联系人姓名等实体，或者需要使用一个正则表达式来激活，则开发人员应请求“**读取项目**”权限。
+- 如果 Outlook 外接程序需要读取当前项目的属性而非默认提取实体的属性，或者需要通过当前项目上的外接程序写入自定义属性集，但无需读写其他项目或在用户的邮箱中创建或发送邮件，则开发人员应请求“**读取项目**”权限。例如，如果 Outlook 外接程序需要寻找项目主体或正文中的会议建议、任务建议、电子邮件地址或联系人姓名等实体，或者需要使用一个正则表达式来激活，则开发人员应请求“**读取项目**”权限。
 
 - 如果 Outlook 加载项需要向撰写的项目的属性（如收件人姓名、电子邮件地址、正文和主题）写入，或需要添加或删除项目附件，那么开发人员应请求“**读/写项目**”权限。
 
