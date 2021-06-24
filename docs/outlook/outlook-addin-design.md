@@ -3,12 +3,12 @@ title: Outlook 外接程序设计
 description: 可帮助你设计和构建引人入胜的外接程序的准则，通过遵循这些准则，你可以将自己的最佳的应用引入到 Windows、Web、iOS、Mac 和 Android 上的 Outlook 中。
 ms.date: 06/24/2019
 localization_priority: Priority
-ms.openlocfilehash: ed2ffe1b46ba4673dea531450a0452afa8de11c5
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: a669d2cf0a98ffa0ca7b7dfc3fcc5b71d291a0e0
+ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44606523"
+ms.lasthandoff: 06/23/2021
+ms.locfileid: "53077132"
 ---
 # <a name="outlook-add-in-design-guidelines"></a>Outlook 外接程序设计准则
 
@@ -40,7 +40,7 @@ ms.locfileid: "44606523"
 
 4. **明智地进行品牌打造**
 
-   我们非常重视品牌打造，同时我们知道向用户提供唯一体验至关重要。 但是我们认为确保加载项成功的最佳方式是生成巧妙整合品牌元素的直观体验，而非显示重复或突兀的品牌元素，它们只会分散用户无阻碍进入系统的注意力。 
+   我们非常重视品牌打造，同时我们知道向用户提供唯一体验至关重要。但是我们认为确保外接程序成功的最佳方式是生成巧妙整合品牌元素的直观体验，而非显示重复或突兀的品牌元素，它们只会分散用户无阻碍进入系统的注意力。 
     
    有效地整合品牌的良好方式是使用品牌颜色、图标和声音（假定这些与首选的平台模式或辅助功能要求不冲突）。 努力将重点集中在内容和任务完成方面，而非品牌关注。 
     
@@ -58,9 +58,9 @@ ms.locfileid: "44606523"
 
 典型的外接程序由下列组件组成。
 
-![iOS 上的任务窗格的基本 UX 模式关系图](../images/outlook-mobile-design-overview.png)
+![iOS 上的任务窗格的基本 UX 模式关系图。](../images/outlook-mobile-design-overview.png)
 
-![Android 上的任务窗格的基本 UX 模式关系图](../images/outlook-mobile-design-overview-android.jpg)
+![Android 上的任务窗格的基本 UX 模式关系图。](../images/outlook-mobile-design-overview-android.jpg)
 
 ### <a name="loading"></a>加载
 
@@ -72,20 +72,20 @@ ms.locfileid: "44606523"
 
 **Android 上的加载页示例**
 
-![Android 上的进度栏和活动指示器示例](../images/outlook-mobile-design-loading-android.jpg)
+![Android 上的进度栏和活动指示器示例。](../images/outlook-mobile-design-loading-android.jpg)
 
 
 ### <a name="sign-insign-up"></a>登录/注册
 
 使登录（和注册）流程简单易用。
 
-**iOS 上的登录和注册页示例**
+**iOS 上的登录和注册示例页**
 
-![iOS 上的登录和注册页示例](../images/outlook-mobile-design-signin.png)
+![iOS 上的登录和注册页示例。](../images/outlook-mobile-design-signin.png)
 
 **Android 上的登录页示例**
 
-![Android 上的登录页示例](../images/outlook-mobile-design-signin-android.png)
+![Android 上的登录页示例。](../images/outlook-mobile-design-signin-android.png)
 
 ### <a name="brand-bar"></a>品牌栏
 
@@ -93,17 +93,17 @@ ms.locfileid: "44606523"
 
 **iOS 上的品牌打造示例**
 
-![iOS 上的品牌栏示例](../images/outlook-mobile-design-branding.png)
+![iOS 上的品牌栏示例。](../images/outlook-mobile-design-branding.png)
 
 **Android 上的品牌打造示例**
 
-![Android 上的品牌栏示例](../images/outlook-mobile-design-branding-android.png)
+![Android 上的品牌栏示例。](../images/outlook-mobile-design-branding-android.png)
 
 ### <a name="margins"></a>边距
 
 移动电话边距每侧应设置为 15px（屏幕的 8%），与 Outlook iOS 一致；每侧应设置为 16px 以与 Outlook Android 一致。
 
-![iOS 上的边距示例](../images/outlook-mobile-design-margins.png)
+![iOS 上的边距示例。](../images/outlook-mobile-design-margins.png)
 
 ### <a name="typography"></a>版式
 
@@ -111,17 +111,17 @@ ms.locfileid: "44606523"
 
 **iOS 上的版式**
 
-![适用于 iOS 的版式示例](../images/outlook-mobile-design-typography.png)
+![适用于 iOS 的版式示例。](../images/outlook-mobile-design-typography.png)
 
 **Android 上的版式**
 
-![适用于 Android 的版式示例](../images/outlook-mobile-design-typography-android.png)
+![适用于 Android 的版式示例。](../images/outlook-mobile-design-typography-android.png)
 
 ### <a name="color-palette"></a>调色板
 
 颜色使用在 Outlook iOS 中比较微妙。我们要求颜色使用本地化到操作和错误状态，以保证一致，仅品牌栏使用唯一的颜色。
 
-![适用于 iOS 的调色板](../images/outlook-mobile-design-color-palette.png)
+![适用于 iOS 的调色板。](../images/outlook-mobile-design-color-palette.png)
 
 ### <a name="cells"></a>单元格
 
@@ -129,25 +129,25 @@ ms.locfileid: "44606523"
 
 **iOS 上的单元格示例**
 
-![适用于 iOS 的单元格类型](../images/outlook-mobile-design-cell-types.png)
+![适用于 iOS 的单元格类型。](../images/outlook-mobile-design-cell-types.png)
 * * *
-![适用于 iOS 的单元格“待办事项”](../images/outlook-mobile-design-cell-dos.png)
+![适用于 iOS 的单元格“待办事项”。](../images/outlook-mobile-design-cell-dos.png)
 * * *
-![适用于 iOS 的单元格“禁止事项”](../images/outlook-mobile-design-cell-donts.png)
+![适用于 iOS 的单元格“禁止事项”。](../images/outlook-mobile-design-cell-donts.png)
 * * *
-![适用于 iOS 的单元格和输入](../images/outlook-mobile-design-cell-input.png)
+![适用于 iOS 的单元格和输入。](../images/outlook-mobile-design-cell-input.png)
 
 **Android 上的单元格示例**
 
-![适用于 Android 的单元格类型](../images/outlook-mobile-design-cell-type-android.png)
+![适用于 Android 的单元格类型。](../images/outlook-mobile-design-cell-type-android.png)
 * * *
-![适用于 Android 的单元格“待办事项”](../images/outlook-mobile-design-cell-dos-android.png)
+![适用于 Android 的单元格“待办事项”。](../images/outlook-mobile-design-cell-dos-android.png)
 * * *
-![适用于 Android 的单元格“禁止事项”](../images/outlook-mobile-design-cell-donts-android.png)
+![适用于 Android 的单元格“禁止事项”。](../images/outlook-mobile-design-cell-donts-android.png)
 * * *
-![适用于 Android 的单元格和输入第 1 部分](../images/outlook-mobile-design-cell-input-1-android.png)
+![适用于 Android 的单元格和输入第 1 部分。](../images/outlook-mobile-design-cell-input-1-android.png)
 
-![适用于 Android 的单元格和输入第 2 部分](../images/outlook-mobile-design-cell-input-2-android.png)
+![适用于 Android 的单元格和输入第 2 部分。](../images/outlook-mobile-design-cell-input-2-android.png)
 
 ### <a name="actions"></a>操作
 
@@ -155,15 +155,15 @@ ms.locfileid: "44606523"
 
 **iOS 上的操作示例**
 
-![iOS 中的操作和单元格](../images/outlook-mobile-design-action-cells.png)
+![iOS 中的操作和单元格。](../images/outlook-mobile-design-action-cells.png)
 * * *
-![适用于 iOS 的操作“待办事项”](../images/outlook-mobile-design-action-dos.png)
+![适用于 iOS 的操作“待办事项”。](../images/outlook-mobile-design-action-dos.png)
 
 **Android 上的操作示例**
 
-![Android 中的操作和单元格](../images/outlook-mobile-design-action-cells-android.png)
+![Android 中的操作和单元格。](../images/outlook-mobile-design-action-cells-android.png)
 * * *
-![适用于 Android 的操作“待办事项”](../images/outlook-mobile-design-action-dos-android.png)
+![适用于 Android 的操作“待办事项”。](../images/outlook-mobile-design-action-dos-android.png)
 
 ### <a name="buttons"></a>按钮
 
@@ -171,11 +171,11 @@ ms.locfileid: "44606523"
 
 **iOS 上的按钮示例**
 
-![适用于 iOS 的按钮示例](../images/outlook-mobile-design-buttons.png)
+![适用于 iOS 的按钮示例。](../images/outlook-mobile-design-buttons.png)
 
 **Android 上的按钮示例**
 
-![适用于 Android 的按钮示例](../images/outlook-mobile-design-buttons-android.png)
+![适用于 Android 的按钮示例。](../images/outlook-mobile-design-buttons-android.png)
 
 ### <a name="tabs"></a>选项卡
 
@@ -183,11 +183,11 @@ ms.locfileid: "44606523"
 
 **iOS 上的选项卡示例**
 
-![适用于 iOS 的选项卡示例](../images/outlook-mobile-design-tabs.png)
+![适用于 iOS 的选项卡示例。](../images/outlook-mobile-design-tabs.png)
 
 **Android 上的选项卡示例**
 
-![适用于 Android 的选项卡示例](../images/outlook-mobile-design-tabs-android.png)
+![适用于 Android 的选项卡示例。](../images/outlook-mobile-design-tabs-android.png)
 
 ### <a name="icons"></a>图标
 
@@ -195,11 +195,11 @@ ms.locfileid: "44606523"
 
 **iOS 上的图标示例**
 
-![适用于 iOS 的图标示例](../images/outlook-mobile-design-icons.png)
+![适用于 iOS 的图标示例。](../images/outlook-mobile-design-icons.png)
 
 **Android 上的图标示例**
 
-![适用于 Android 的图标示例](../images/outlook-mobile-design-icons-android.jpg)
+![适用于 Android 的图标示例。](../images/outlook-mobile-design-icons-android.jpg)
 
 ## <a name="end-to-end-examples"></a>端到端示例
 
@@ -212,44 +212,44 @@ ms.locfileid: "44606523"
 
 **iOS 上的 GIPHY 示例**
 
-![适用于 iOS 上的 GIPHY 加载项的端到端设计](../images/outlook-mobile-design-giphy.png)
+![适用于 iOS 上的 GIPHY 加载项的端到端设计。](../images/outlook-mobile-design-giphy.png)
 
 **Android 上的 GIPHY 示例**
 
-![适用于 Android 上的 GIPHY 加载项的端到端设计](../images/outlook-mobile-design-giphy-android.png)
+![适用于 Android 上的 GIPHY 加载项的端到端设计。](../images/outlook-mobile-design-giphy-android.png)
 
 ### <a name="nimble"></a>Nimble
 
 **iOS 上的 Nimble 示例**
 
-![适用于 iOS 上的 Nimble 加载项的端到端设计](../images/outlook-mobile-design-nimble.png)
+![适用于 iOS 上的 Nimble 加载项的端到端设计。](../images/outlook-mobile-design-nimble.png)
 
 **Android 上的 Nimble 示例**
 
-![适用于 Android 上的 Nimble 加载项的端到端设计](../images/outlook-mobile-design-nimble-android.png)
+![适用于 Android 上的 Nimble 加载项的端到端设计。](../images/outlook-mobile-design-nimble-android.png)
 
 ### <a name="trello"></a>Trello
 
 **iOS 上的 Trello 示例**
 
-![适用于 iOS 上的 Trello 加载项的端到端设计第 1 部分](../images/outlook-mobile-design-trello-1.png)
+![适用于 iOS 上的 Trello 加载项的端到端设计第 1 部分。](../images/outlook-mobile-design-trello-1.png)
 * * *
-![适用于 iOS 上的 Trello 加载项的端到端设计第 2 部分](../images/outlook-mobile-design-trello-2.png)
+![适用于 iOS 上的 Trello 加载项的端到端设计第 2 部分。](../images/outlook-mobile-design-trello-2.png)
 * * *
-![适用于 iOS 上的 Trello 加载项的端到端设计第 3 部分](../images/outlook-mobile-design-trello-3.png)
+![适用于 iOS 上的 Trello 加载项的端到端设计第 3 部分。](../images/outlook-mobile-design-trello-3.png)
 
 **Android 上的 Trello 示例**
 
-![适用于 Android 上的 Trello 加载项的端到端设计第 1 部分](../images/outlook-mobile-design-trello-1-android.png)
+![适用于 Android 上的 Trello 加载项的端到端设计第 1 部分。](../images/outlook-mobile-design-trello-1-android.png)
 * * *
-![适用于 Android 上的 Trello 加载项的端到端设计第 2 部分](../images/outlook-mobile-design-trello-2-android.png)
+![适用于 Android 上的 Trello 加载项的端到端设计第 2 部分。](../images/outlook-mobile-design-trello-2-android.png)
 
 ### <a name="dynamics-crm"></a>Dynamics CRM
 
 **iOS 上的 Dynamics CRM 示例**
 
-![适用于 iOS 上的 Dynamics CRM 加载项的端到端设计](../images/outlook-mobile-design-crm.png)
+![适用于 iOS 上的 Dynamics CRM 加载项的端到端设计。](../images/outlook-mobile-design-crm.png)
 
 **Android 上的 Dynamics CRM 示例**
 
-![适用于 Android 上的 Dynamics CRM 加载项的端到端设计](../images/outlook-mobile-design-crm-android.png)
+![适用于 Android 上的 Dynamics CRM 加载项的端到端设计。](../images/outlook-mobile-design-crm-android.png)

@@ -1,14 +1,14 @@
 ---
 title: Outlook 加载项中的身份验证选项
 description: Outlook 加载项 根据特定场景提供了多种不同的身份验证方法。
-ms.date: 02/09/2021
+ms.date: 06/22/2021
 localization_priority: Priority
-ms.openlocfilehash: b53647c8a38051096ef59e7b784f8a00964aa73f
-ms.sourcegitcommit: fefc279b85e37463413b6b0e84c880d9ed5d7ac3
+ms.openlocfilehash: 108dc918fcea956b8349d4e2c53c0e8dd06cbeca
+ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/12/2021
-ms.locfileid: "50234280"
+ms.lasthandoff: 06/23/2021
+ms.locfileid: "53077104"
 ---
 # <a name="authentication-options-in-outlook-add-ins"></a>Outlook 加载项中的身份验证选项
 
@@ -20,7 +20,7 @@ Outlook 加载项可以访问 Internet 上任意位置的信息，无论是托�
 
 > [!NOTE]
 > 目前，Word、Excel、Outlook 和 PowerPoint 支持单一登录 API。 若要详细了解目前支持单一登录 API 的平台，请参阅 [IdentityAPI 要求集](../reference/requirement-sets/identity-api-requirement-sets.md)。
-> 如果使用的是 Outlook 加载项，请务必为 Microsoft 365 租赁启用新式验证。 若要了解如何这样做，请参阅 [Exchange Online：如何为租户启用新式验证](https://social.technet.microsoft.com/wiki/contents/articles/32711.exchange-online-how-to-enable-your-tenant-for-modern-authentication.aspx)。
+> 如果使用的是 Outlook 加载项，请务必为 Microsoft 365 租赁启用新式验证。 若要了解如何执行此操作，请参阅 [Exchange Online: How to enable your tenant for modern authentication](https://social.technet.microsoft.com/wiki/contents/articles/32711.exchange-online-how-to-enable-your-tenant-for-modern-authentication.aspx)（如何为租户启用新式体验）。
 
 如果加载项符合以下情况，请考虑使用 SSO 访问令牌：
 
@@ -48,7 +48,7 @@ Exchange 用户标识令牌为加载项提供了一种创建用户标识的方�
 
 - 当加载项主要由 Exchange 本地用户使用时。
 - 当加载项需要访问你控制的非 Microsoft 服务时。
-- 作为回退身份验证（和对 Microsoft Graph 的授权），当加载项在不支持 SSO 的 Office 版本上运行时。
+- 当加载项在不支持 SSO 的 Office 版本上运行时，要回退身份验证。
 
 加载项可以调用 [getUserIdentityTokenAsync](/javascript/api/outlook/office.mailbox#getuseridentitytokenasync-callback--usercontext-) 以获取 Exchange 用户标识令牌。 有关使用这些令牌的详细信息，请参阅[使用 Exchange 标识令牌对用户进行身份验证](authenticate-a-user-with-an-identity-token.md)。
 

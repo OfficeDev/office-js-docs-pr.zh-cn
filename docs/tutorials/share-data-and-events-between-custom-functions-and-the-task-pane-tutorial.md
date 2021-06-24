@@ -4,12 +4,12 @@ description: 学习如何在Microsoft Excel中的自定义函数和任务窗格�
 ms.date: 08/13/2020
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: 0def8178a06231a866bbb87573f936314ac064f1
-ms.sourcegitcommit: ceb8dd66f3fb9c963fce8446c2f6c65ead56fbc1
+ms.openlocfilehash: 22839da7299e906246e784213895e7df75f504c7
+ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "49131778"
+ms.lasthandoff: 06/23/2021
+ms.locfileid: "53076824"
 ---
 # <a name="tutorial-share-data-and-events-between-excel-custom-functions-and-the-task-pane"></a>教程：Microsoft Excel自定义函数和任务窗格之间共享数据和事件
 
@@ -29,9 +29,9 @@ yo office
 
 - 选择项目类型： **Excel 自定义函数加载项项目**
 - 选择脚本类型： **JavaScript**
-- 要如何命名加载项？ **我的 Office 加载项**
+- 你想要如何命名加载项？ **我的 Office 加载项**
 
-![显示命令行界面中 Yeoman 生成器的提示和回答的屏幕截图](../images/yo-office-excel-project.png)
+![显示命令行界面中 Yeoman 生成器的提示和回答的屏幕截图。](../images/yo-office-excel-project.png)
 
 完成此向导后，生成器会创建项目，并安装支持的 Node 组件。
 

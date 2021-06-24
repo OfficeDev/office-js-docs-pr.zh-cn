@@ -3,12 +3,12 @@ title: 创建适用于阅读窗体的 Outlook 加载项
 description: 阅读加载项是在 Outlook 中的阅读窗格或阅读检查器中激活的 Outlook 加载项。
 ms.date: 03/19/2021
 localization_priority: Priority
-ms.openlocfilehash: 495b4d947ec965481859c3262d3b67b93f57a5c0
-ms.sourcegitcommit: 7482ab6bc258d98acb9ba9b35c7dd3b5cc5bed21
+ms.openlocfilehash: f84c0d5252f2cf728397965d9414df2ee5070444
+ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/24/2021
-ms.locfileid: "51177997"
+ms.lasthandoff: 06/23/2021
+ms.locfileid: "53076691"
 ---
 # <a name="create-outlook-add-ins-for-read-forms"></a>创建适用于阅读窗体的 Outlook 加载项
 
@@ -30,7 +30,7 @@ ms.locfileid: "51177997"
 
 **加载项窗格，展示了包含地址的选定 Outlook 邮件的必应地图加载项的实际效果**
 
-![Outlook 中的 Bing 地图邮件应用程序](../images/outlook-detected-entity-card.png)
+![Outlook 中的 Bing 地图邮件应用。](../images/outlook-detected-entity-card.png)
 
 ## <a name="types-of-add-ins-available-in-read-mode"></a>阅读模式下可用的外接程序的类型
 

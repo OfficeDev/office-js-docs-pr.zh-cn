@@ -5,16 +5,16 @@ ms.date: 10/14/2020
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: e71535dce7892889a13e4546d8dd388f568ab5c4
-ms.sourcegitcommit: 42e6cfe51d99d4f3f05a3245829d764b28c46bbb
+ms.openlocfilehash: ada302e971eac9dd3deb626e422fdf054315ea1a
+ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "48741118"
+ms.lasthandoff: 06/23/2021
+ms.locfileid: "53077111"
 ---
 # <a name="onenote-javascript-api-programming-overview"></a>OneNote JavaScript API 编程概述
 
-OneNote 引入了适用于 OneNote 网页版加载项的 JavaScript API。 可以创建任务窗格加载项、内容加载项，以及与 OneNote 对象交互并连接到 Web 服务或其他基于 Web 的资源的加载项命令。
+OneNote 介绍了适用于 OneNote 加载项网页版的 JavaScript API。你可以创建任务窗格加载项、内容加载项、与 OneNote 对象交互并连接至 Web 服务或其他基于 Web 资源的加载项命令。
 
 [!INCLUDE [publish policies note](../includes/note-publish-policies.md)]
 
@@ -24,18 +24,18 @@ OneNote 引入了适用于 OneNote 网页版加载项的 JavaScript API。 可�
 
 - 包含网页和所有相应 JavaScript、CSS 或其他文件的 **Web 应用程序**。 这些文件托管在 Web 服务器或 Web 托管服务上，例如 Microsoft Azure。 在 OneNote 网页版中，Web 应用程序在浏览器控件或 iframe 中显示。
 
-- **XML 清单**指定外接程序网页的 URL 和适用于外接程序的任何访问要求、设置和功能。此文件存储在客户端上。OneNote 外接程序使用与其他 Office 外接程序相同的 [清单](../develop/add-in-manifests.md)格式。
+- **XML 清单** 指定外接程序网页的 URL 和适用于外接程序的任何访问要求、设置和功能。此文件存储在客户端上。OneNote 外接程序使用与其他 Office 外接程序相同的 [清单](../develop/add-in-manifests.md)格式。
 
 ### <a name="office-add-in--manifest--webpage"></a>Office 加载项 = 清单 + 网页
 
-![Office 加载项包含清单和网页](../images/onenote-add-in.png)
+![Office 加载项包含清单和网页。](../images/onenote-add-in.png)
 
 ## <a name="using-the-javascript-api"></a>使用 JavaScript API
 
 加载项使用 Office 应用程序的运行时上下文以访问 JavaScript API。API 有两层：
 
-- 用于执行 OneNote 专属操作的**应用程序特定 API**，可通过 `Application` 对象访问。
-- 跨 Office 应用程序分享的**通用 API**，通过 `Document` 对象访问。
+- 用于执行 OneNote 专属操作的 **应用程序特定 API**，可通过 `Application` 对象访问。
+- 跨 Office 应用程序分享的 **通用 API**，通过 `Document` 对象访问。
 
 ### <a name="accessing-the-application-specific-api-through-the-application-object"></a>通过 *Application* 对象访问应用程序特定 API。
 
@@ -131,7 +131,7 @@ OneNote 加载项仅支持以下通用 API：
 ## <a name="onenote-object-model-diagram"></a>OneNote 对象模型图 
 下图表示了 OneNote JavaScript API 中当前可用的内容。
 
-  ![OneNote 对象模型图](../images/onenote-om.png)
+  ![OneNote 对象模型图。](../images/onenote-om.png)
 
 ## <a name="see-also"></a>另请参阅
 

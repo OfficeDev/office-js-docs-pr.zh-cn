@@ -1,16 +1,16 @@
 ---
 title: 使用 Script Lab 探索 Office JavaScript API
 description: 使用 Script Lab 探索 Office JS API 和原型功能。
-ms.date: 10/14/2020
+ms.date: 06/18/2021
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: 8fef3d0df73ab84cc17b2e6ff3c8fe436bf6e789
-ms.sourcegitcommit: 42e6cfe51d99d4f3f05a3245829d764b28c46bbb
+ms.openlocfilehash: 7f4b67dd2369181e5d7b2b92496c8259ffd5c120
+ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "48741076"
+ms.lasthandoff: 06/23/2021
+ms.locfileid: "53077006"
 ---
 # <a name="explore-office-javascript-api-using-script-lab"></a>使用 Script Lab 探索 Office JavaScript API
 
@@ -20,9 +20,9 @@ ms.locfileid: "48741076"
 
 Script Lab 是一款面向具有以下需求的用户的工具：希望了解如何在 Excel、Outlook、Word 和 PowerPoint 中开发使用 Office JavaScript API 的 Office 加载项。 它提供 IntelliSense，让你可以看到可用的内容；并且它是基于 Monaco 框架构建的（Visual Studio Code 也使用该框架）。 通过 Script Lab，可访问示例库以快速试用各项功能，也由示例开始编写自己的代码。 甚至可以通过 Script Lab 试用预览 API。
 
-听起来还不错吧？ 观看以下片长一分钟的视频，在操作中了解 Script Lab。
+到目前为止听起来不错？观看以下片长一分钟的视频，在操作中了解 Script Lab。
 
-[![展示 Script Lab 在 Excel、Word 和 PowerPoint 中运行的预览视频。](../images/screenshot-wide-youtube.png 'Script Lab 预览视频')](https://aka.ms/scriptlabvideo)
+[![展示 Script Lab 在 Excel、Word 和 PowerPoint 中运行的预览视频。](../images/screenshot-wide-youtube.png 'Script Lab 预览视频。')](https://aka.ms/scriptlabvideo)
 
 ## <a name="key-features"></a>关键功能
 
@@ -32,7 +32,7 @@ Script Lab 提供许多功能，可帮助你探索 Office JavaScript API 和原�
 
 通过一系列展示如何使用 API 完成任务的内置示例快速入门。 可以运行示例来立即查看任务窗格或文档中的结果，检查示例来了解 API 的工作原理，甚至可以使用示例来构建自己的加载项的原型。
 
-![示例](../images/script-lab-samples.jpg)
+![示例。](../images/script-lab-samples.jpg)
 
 ### <a name="code-and-style"></a>代码和样式
 
@@ -45,29 +45,32 @@ Script Lab 提供许多功能，可帮助你探索 Office JavaScript API 和原�
 
 默认情况下，在 Script Lab 中打开的代码段将保存到浏览器缓存中。 若要永久保存代码段，可将其导出到 [GitHub gist](https://gist.github.com)。 可创建机密 gist 来保存自己专用的代码段，或创建公用 gist 以便与他人共享。
 
-![共享选项](../images/script-lab-share.jpg)
+![共享选项。](../images/script-lab-share.jpg)
 
 ### <a name="import-snippets"></a>导入代码段
 
 可通过指定存用于储代码段 YAML 的公共 [GitHub gist](https://gist.github.com) URL，或通过在代码段的完整 YAML 中粘贴，将代码段导入到 Script Lab。 当其他人通过发布到 GitHub gist 或提供 YAML 来与你共享其代码段时，此功能可能很有用。
 
-![导入代码段选项](../images/script-lab-import-snippet.jpg)
+![导入代码段选项。](../images/script-lab-import-snippet.jpg)
 
 ## <a name="supported-clients"></a>支持的客户端
 
 以下客户端上的 Excel、Word 和 PowerPoint 支持 Script Lab。
 
-- Windows 上的 Office 2013 或更高版本
+- Microsoft 365 Office 订阅
 - Mac 上的 Office 2016 或更高版本
 - Office 网页版
 
 适用于 Outlook 的 Script Lab 在以下客户端上可用。
 
-- Windows 版 Outlook 2013 或更高版本
+- Microsoft 365 Office 订阅
 - Mac 版 Outlook 2016 或更高版本
 - 使用 Chrome、Microsoft Edge 或 Safari 浏览器时的 Outlook 网页版
 
 有关适用于 Outlook 的 Script Lab 的更多详细信息，请参阅相关[博客文章](https://developer.microsoft.com/outlook/blogs/script-lab-now-supports-outlook/)。
+
+> [!IMPORTANT]
+> 在 2021 年某个时间，Script Lab 将停止处理使用 Internet Explorer 托管加载项的平台和 Office 版本组合。这包括通过 Office 2019 一次性购买的 Office 版本，以及一些旧版本的 Microsoft 365（订阅）Office。 （有关详细信息，请参阅[ Office 加载项使用的浏览器](../concepts/browsers-used-by-office-web-add-ins.md)。）需要其他平台和版本组合来浏览和测试使用 Script Lab 的 Office JavaScript 库 API。 但这些 API 的行为在 Internet Explorer 中并无不同，因此这不是 Script Lab 的一个弱点。 请注意，提交到 [AppSource](/office/dev/store/submit-to-appsource-via-partner-center) 的 Office 加载项必须支持使用 Internet Explorer 托管加载项的平台和版本组合。
 
 ## <a name="next-steps"></a>后续步骤
 
@@ -87,4 +90,3 @@ Script Lab 提供许多功能，可帮助你探索 Office JavaScript API 和原�
 - [加入 Microsoft 365 开发人员计划](https://developer.microsoft.com/office/dev-program)
 - [开发 Office 加载项](../develop/develop-overview.md)
 - [了解 Microsoft 365 开发人员计划](https://developer.microsoft.com/microsoft-365/dev-program)
-
