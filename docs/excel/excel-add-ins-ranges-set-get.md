@@ -1,19 +1,19 @@
 ---
 title: 使用 JavaScript API 设置并Excel区域
-description: 了解如何使用 javaScript API Excel JavaScript API 设置和获取Excel范围。
-ms.date: 04/02/2021
+description: 了解如何使用 Excel JavaScript API 设置和获取选定区域Excel JavaScript API。
+ms.date: 06/22/2021
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: 0bd4a4f4bcf40e7899ee429cdc631a43ba176077
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: 9e4c31f165b39d45fac342cb85577ef737105472
+ms.sourcegitcommit: ebb4a22a0bdeb5623c72b9494ebbce3909d0c90c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53075773"
+ms.lasthandoff: 06/25/2021
+ms.locfileid: "53126720"
 ---
-# <a name="set-and-get-ranges-using-the-excel-javascript-api"></a>使用 JavaScript API Excel和获取范围
+# <a name="set-and-get-the-selected-range-using-the-excel-javascript-api"></a>使用 JavaScript API 设置并Excel区域
 
-本文提供了使用 JavaScript API 设置和获取区域Excel示例。 有关对象支持的属性和方法的完整列表，请参阅 `Range` [Excel。Range 类](/javascript/api/excel/excel.range)。
+本文提供了使用 JavaScript API 设置和获取选定区域Excel示例。 有关对象支持的属性和方法的完整列表，请参阅 `Range` [Excel。Range 类](/javascript/api/excel/excel.range)。
 
 [!include[Excel cells and ranges note](../includes/note-excel-cells-and-ranges.md)]
 
@@ -51,6 +51,95 @@ Excel.run(function (context) {
         });
 }).catch(errorHandlerFunction);
 ```
+
+## <a name="select-the-edge-of-a-used-range-online-only"></a>选择已使用区域的边缘 (仅联机) 
+
+> [!NOTE]
+> 和 `Range.getRangeEdge` `Range.getExtendedRange` 方法当前仅在 ExcelApiOnline 1.1 中可用。 若要了解更多信息，请参阅[Excel JavaScript API 仅联机要求集](../reference/requirement-sets/excel-api-online-requirement-set.md)。
+
+[Range.getRangeEdge](/javascript/api/excel/excel.range#getRangeEdge_direction__activeCell_)和[Range.getExtendedRange](/javascript/api/excel/excel.range#getExtendedRange_directionString__activeCell_)方法允许外接程序复制键盘选择快捷方式的行为，并基于当前所选区域选择已用区域的边缘。 若要了解有关已用区域有关详细信息，请参阅 [获取已用区域](excel-add-ins-ranges-get.md#get-used-range)。
+
+在下面的屏幕截图中，使用的范围是每个单元格中具有值的表 **C5：F12**。 此表外部的空单元格位于已用区域之外。
+
+![包含来自 C5：F12 的数据的Excel。](../images/excel-ranges-used-range.png)
+
+### <a name="select-the-cell-at-the-edge-of-the-current-used-range"></a>选择当前使用区域边缘的单元格
+
+下面的代码示例演示如何使用 方法按向上方向选择当前使用区域最远边缘 `Range.getRangeEdge` 的单元格。 此操作与选择范围时使用 Ctrl+向上箭头键键盘快捷方式的结果匹配。
+
+```js
+Excel.run(function (context) {
+    // Get the selected range.
+    var range = context.workbook.getSelectedRange();
+
+    // Specify the direction with the `KeyboardDirection` enum.
+    var direction = Excel.KeyboardDirection.up;
+
+    // Get the active cell in the workbook.
+    var activeCell = context.workbook.getActiveCell();
+
+    // Get the top-most cell of the current used range.
+    // This method acts like the Ctrl+Up arrow key keyboard shortcut while a range is selected.
+    var rangeEdge = range.getRangeEdge(
+      direction,
+      activeCell
+    );
+    rangeEdge.select();
+
+    return context.sync();
+}).catch(errorHandlerFunction);
+```
+
+#### <a name="before-selecting-the-cell-at-the-edge-of-the-used-range"></a>选择已用区域边缘的单元格之前
+
+以下屏幕截图显示了已用区域以及已用区域内的选定区域。 使用的范围是一个表，其数据位于 **C5：F12。** 在此表中，选择区域 **D8：E9。** 此选择 *是运行 方法* 之前的状态 `Range.getRangeEdge` 。
+
+![包含来自 C5：F12 的数据的Excel。 选择区域 D8：E9。](../images/excel-ranges-used-range-d8-e9.png)
+
+#### <a name="after-selecting-the-cell-at-the-edge-of-the-used-range"></a>选择已用区域边缘的单元格后
+
+以下屏幕截图显示与上一屏幕截图相同的表，包含 **C5：F12 范围的数据**。 在此表中，选择了区域 **D5。** 此选择 *位于状态* 之后，运行方法以在向上方向选择已用区域边缘 `Range.getRangeEdge` 的单元格。
+
+![包含来自 C5：F12 的数据的Excel。 选定区域 D5。](../images/excel-ranges-used-range-d5.png)
+
+### <a name="select-all-cells-from-current-range-to-furthest-edge-of-used-range"></a>选择从当前区域到已用区域最远边缘的所有单元格
+
+下面的代码示例演示如何使用 方法按向下方向选择从当前所选区域到已用区域最远边缘 `Range.getExtendedRange` 的所有单元格。 此操作与选中区域时使用 Ctrl+Shift+向下箭头键键盘快捷方式的结果匹配。
+
+```js
+Excel.run(function (context) {
+    // Get the selected range.
+    var range = context.workbook.getSelectedRange();
+
+    // Specify the direction with the `KeyboardDirection` enum.
+    var direction = Excel.KeyboardDirection.down;
+
+    // Get the active cell in the workbook.
+    var activeCell = context.workbook.getActiveCell();
+
+    // Get all the cells from the currently selected range to the bottom-most edge of the used range.
+    // This method acts like the Ctrl+Shift+Down arrow key keyboard shortcut while a range is selected.
+    var extendedRange = range.getExtendedRange(
+      direction,
+      activeCell
+    );
+    extendedRange.select();
+
+    return context.sync();
+}).catch(errorHandlerFunction);
+```
+
+#### <a name="before-selecting-all-the-cells-from-the-current-range-to-the-edge-of-the-used-range"></a>选择当前区域到已用区域边缘的所有单元格之前
+
+以下屏幕截图显示了已用区域以及已用区域内的选定区域。 使用的范围是一个表，其数据位于 **C5：F12。** 在此表中，选择区域 **D8：E9。** 此选择 *是运行 方法* 之前的状态 `Range.getExtendedRange` 。
+
+![包含来自 C5：F12 的数据的Excel。 选择区域 D8：E9。](../images/excel-ranges-used-range-d8-e9.png)
+
+#### <a name="after-selecting-all-the-cells-from-the-current-range-to-the-edge-of-the-used-range"></a>选择从当前区域到已用区域边缘的所有单元格后
+
+以下屏幕截图显示与上一屏幕截图相同的表，包含 **C5：F12 范围的数据**。 在此表中，选择了区域 **D8：E12。** 在运行 *该方法以* 从当前区域到已用区域的边缘沿向下方向选择所有单元格之后，此选择处于 `Range.getExtendedRange` 之后状态。
+
+![包含来自 C5：F12 的数据的Excel。 选择区域 D8：E12。](../images/excel-ranges-used-range-d8-e12.png)
 
 ## <a name="see-also"></a>另请参阅
 
