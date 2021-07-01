@@ -3,12 +3,12 @@ ms.date: 07/10/2019
 description: 将自定义函数集体进行批处理，以减少对远程服务的网络调用。
 title: 对远程服务的自定义函数调用进行批处理
 localization_priority: Normal
-ms.openlocfilehash: ffafd8fee0beea2776bb7b0a0b79839e43876cc1
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 2ad9532fab26ff3ec8289a8892d518ab2570c6d6
+ms.sourcegitcommit: d372de1a25dbad983fa9872c6af19a916f63f317
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44609655"
+ms.lasthandoff: 06/30/2021
+ms.locfileid: "53204995"
 ---
 # <a name="batching-custom-function-calls-for-a-remote-service"></a>对远程服务的自定义函数调用进行批处理
 
@@ -22,7 +22,7 @@ ms.locfileid: "44609655"
 
 你可以按照本文操作，将代码示例粘贴到自己的项目中。 例如，可以使用 [Yo Office 生成器](https://github.com/OfficeDev/generator-office)为 TypeScript 创建一个新的自定义函数项目，然后将本文中的所有代码添加到该项目中。 然后，可以运行代码并尝试执行。
 
-此外，还可以在[自定义函数批处理模式](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Excel-custom-functions/Batching)处下载或查看完整的示例项目。 如果要在进一步阅读之前查看完整代码，请查看[脚本文件](https://github.com/OfficeDev/PnP-OfficeAddins/blob/master/Excel-custom-functions/Batching/src/functions/functions.ts)。
+此外，还可以在[自定义函数批处理模式](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Excel-custom-functions/Batching)处下载或查看完整的示例项目。 如果要在进一步阅读之前查看完整代码，请查看[脚本文件](https://github.com/OfficeDev/PnP-OfficeAddins/blob/main/Excel-custom-functions/Batching/src/functions/functions.js)。
 
 ## <a name="create-the-batching-pattern-in-this-article"></a>创建本文中所述的批处理模式
 
@@ -38,7 +38,7 @@ ms.locfileid: "44609655"
 
 自定义函数通过调用远程服务来执行运算并计算其所需的结果。 这为它们提供了一种将每个请求的运算存储到批处理中的方法。 稍后，你将看到如何创建 `_pushOperation` 函数来批处理这些运算。 首先，看看下面的代码示例，以了解如何从自定义函数调用 `_pushOperation`。
 
-在下面的代码中，自定义函数执行除法，但实际计算依赖于远程服务。 它调用 `_pushOperation`，从而将该运算与其他运算一起批处理到远程服务。 它将该运算命名为“div2”****。 你可以为运算使用任何所需的命名方案，只要远程服务也使用相同的方案即可（稍后将对远程服务方面进行详细介绍）。 此外，还将传递远程服务运行该运算所需的参数。
+在下面的代码中，自定义函数执行除法，但实际计算依赖于远程服务。 它调用 `_pushOperation`，从而将该运算与其他运算一起批处理到远程服务。 它将该运算命名为“div2”。 你可以为运算使用任何所需的命名方案，只要远程服务也使用相同的方案即可（稍后将对远程服务方面进行详细介绍）。 此外，还将传递远程服务运行该运算所需的参数。
 
 ### <a name="add-the-div2-custom-function-to-functionsts"></a>将 div2 自定义函数添加到 functions.ts
 

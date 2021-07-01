@@ -1,14 +1,14 @@
 ---
 title: Outlook 加载项的 Onsend 功能
 description: 提供了一种处理项目或阻止用户进行特定操作的方法，并允许加载项在发送时设置某些属性。
-ms.date: 06/15/2021
+ms.date: 06/16/2021
 localization_priority: Normal
-ms.openlocfilehash: 9c56160fdfeb2df2e78ee8a9db8750841d043d87
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: 0723edafeefba7e423e15b912ce1628dfd299e93
+ms.sourcegitcommit: d372de1a25dbad983fa9872c6af19a916f63f317
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53077034"
+ms.lasthandoff: 06/30/2021
+ms.locfileid: "53205009"
 ---
 # <a name="on-send-feature-for-outlook-add-ins"></a>Outlook 加载项的 Onsend 功能
 
@@ -28,7 +28,6 @@ on-send 功能是由事件类型 `ItemSend` 触发的，无 UI。
 | 客户端 | Exchange Online | Exchange 2016 本地部署<br> (累积更新 6 或更高版本)  | Exchange 2019 本地部署<br> (累积更新 1 或更高版本)  |
 |---|:---:|:---:|:---:|
 |Windows：<br>版本 1910 (内部版本 12130.20272) 或更高版本|是|是|是|
-|Mac：<br>内部版本 16.30 到 16.46|是|否|否|
 |Mac：<br>内部版本 16.47 或更高版本|是|是|是|
 |Web 浏览器：<br>新式 Outlook UI|是|不适用|不适用|
 |Web 浏览器：<br>经典Outlook UI|不适用|是|是|
@@ -351,9 +350,9 @@ Get-OWAMailboxPolicy OWAOnSendAddinAllUserPolicy | Set-OWAMailboxPolicy –OnSen
 
 |方案|邮箱 1 Onsend 功能|邮箱 2 Onsend 功能|Outlook Web 会话（经典）|结果|是否支持？|
 |:------------|:------------|:--------------------------|:---------|:-------------|:-------------|
-|1|已启用|已启用|新会话|邮箱 1 无法从邮箱 2 发送邮件或会议项目。|目前尚不支持。可以使用方案 3 作为一种解决办法。|
-|2|已禁用|已启用|新会话|邮箱 1 无法从邮箱 2 发送邮件或会议项目。|目前尚不支持。可以使用方案 3 作为一种解决办法。|
-|3|已启用|已启用|同一个会话|分配给邮箱 1 的 Onsend 加载项运行 Onsend。|支持。|
+|1 |已启用|已启用|新会话|邮箱 1 无法从邮箱 2 发送邮件或会议项目。|目前尚不支持。可以使用方案 3 作为一种解决办法。|
+|2 |已禁用|已启用|新会话|邮箱 1 无法从邮箱 2 发送邮件或会议项目。|目前尚不支持。可以使用方案 3 作为一种解决办法。|
+|3 |已启用|已启用|同一个会话|分配给邮箱 1 的 Onsend 加载项运行 Onsend。|支持。|
 |4 |已启用|已禁用|新会话|未运行 Onsend 加载项；邮件或会议项目已发送。|支持。|
 
 #### <a name="web-browser-modern-outlook-windows-mac"></a>Web 浏览器（新式 Outlook）、Windows、Mac
