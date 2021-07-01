@@ -8,12 +8,12 @@ metadata:
   ms.topic: landing-page
   ms.date: 03/29/2021
   localization_priority: Priority
-  ms.openlocfilehash: 0bff5d74874ddc499a216d38e7b418f9cdf6a08c
-  ms.sourcegitcommit: a0624ef0d847fdbd6d83f27d1f9c69daf636ac38
+  ms.openlocfilehash: 1cde5e60d2c476078754fae5285101df5995c406
+  ms.sourcegitcommit: d372de1a25dbad983fa9872c6af19a916f63f317
   ms.translationtype: MT
   ms.contentlocale: zh-CN
-  ms.lasthandoff: 03/30/2021
-  ms.locfileid: "51435254"
+  ms.lasthandoff: 06/30/2021
+  ms.locfileid: "53204988"
 landingContent:
 - title: 关于Visio JavaScript API
   linkLists:
@@ -34,9 +34,9 @@ landingContent:
   - linkListType: reference
     links:
     - text: 提问
-      url: https://stackoverflow.com/questions/tagged/office-js
+      url: /answers/topics/office-addins-dev.html
     - text: 请求功能
-      url: /answers/products/m365
+      url: https://techcommunity.microsoft.com/t5/microsoft-365-developer-platform/idb-p/Microsoft365DeveloperPlatform
     - text: 报告问题
       url: https://github.com/officedev/office-js/issues
     - text: Office 加载项其他资源
