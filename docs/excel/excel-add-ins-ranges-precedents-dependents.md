@@ -1,15 +1,15 @@
 ---
 title: 使用 JavaScript API 处理公式引用Excel依赖项
 description: 了解如何使用 JavaScript API Excel引用单元格和依赖项。
-ms.date: 06/03/2021
+ms.date: 07/02/2021
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: 6021e383f02ca0de15210638b991dfe8b109ab63
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: bf92400af00df42ac245b9a2d3ff5e72512b5722
+ms.sourcegitcommit: aa73ec6367eaf74399fbf8d6b7776d77895e9982
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53075794"
+ms.lasthandoff: 07/03/2021
+ms.locfileid: "53290773"
 ---
 # <a name="get-formula-precedents-and-dependents-using-the-excel-javascript-api"></a>使用 JavaScript API 获取公式引用Excel依赖项
 
@@ -54,11 +54,7 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
-## <a name="get-the-direct-dependents-of-a-formula-preview"></a>获取公式的直接依赖项 (预览) 
-
-> [!NOTE]
-> `Range.getDirectDependents`方法当前仅适用于公共预览版。 [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
-> 
+## <a name="get-the-direct-dependents-of-a-formula"></a>获取公式的直接依赖项
 
 使用 [Range.getDirectDependents 查找公式的直接从属单元格](/javascript/api/excel/excel.range#getDirectDependents__)。 与 `Range.getDirectPrecedents` 类似 `Range.getDirectDependents` ，也返回 `WorkbookRangeAreas` 对象。 此对象包含工作簿中所有直接依赖项的地址。 对于每个包含至少一个依赖公式的工作表，它都有 `RangeAreas` 一个单独的对象。 有关使用对象的信息，请参阅在加载项中同时Excel `RangeAreas` [多个区域](excel-add-ins-multiple-ranges.md)。
 

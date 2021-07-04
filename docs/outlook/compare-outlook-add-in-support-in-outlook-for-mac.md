@@ -1,14 +1,14 @@
 ---
 title: 比较Outlook Mac 上 Outlook 中的外接程序支持
 description: 了解 Mac 上外接程序支持与其他 Outlook 客户端Outlook比较。
-ms.date: 05/20/2021
+ms.date: 07/01/2021
 localization_priority: Normal
-ms.openlocfilehash: 963577f7e5286137a2735d4c067e4391588117b9
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: c9cd1e8d438ba820e588a26c6a78ac6e70bc89c8
+ms.sourcegitcommit: d01d6db7050ac2dfc6d4135e1fd1974137f7a6f7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53076782"
+ms.lasthandoff: 07/02/2021
+ms.locfileid: "53275579"
 ---
 # <a name="compare-outlook-add-in-support-in-outlook-on-mac-with-other-outlook-clients"></a>比较Outlook Mac 上的 Outlook 与其他 Outlook 客户端中的外接程序支持
 
@@ -34,8 +34,6 @@ ms.locfileid: "53076782"
 Outlook Mac UI 预览版支持新版 Mac UI (预览) 到要求集 1.8。 但是，尚不支持以下 **要求集** 和功能。
 
 - API 要求集 1.9 和 1.10
-- "撰写"窗口弹出
-- `saveAsync` 撰写会议时
 
 我们鼓励你预览Outlook Mac UI（版本 16.38.506 中提供）上的版本。 若要详细了解如何试用，请参阅 Outlook for Mac - Insider Fast 内部版本[发行说明](https://support.microsoft.com/office/d6347358-5613-433e-a49e-a9a0e8e0462a)。
 

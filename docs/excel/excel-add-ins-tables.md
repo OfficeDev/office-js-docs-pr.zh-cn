@@ -1,14 +1,14 @@
 ---
 title: 使用 Excel JavaScript API 处理表格
 description: 显示如何使用 JavaScript API 对表执行常见Excel示例。
-ms.date: 06/07/2021
+ms.date: 07/02/2021
 localization_priority: Normal
-ms.openlocfilehash: 480eda98c1828d11de7c3aa227468ebc408dae2c
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: 931a035b5e46a77afe2f56fecb0cd7ef6d134570
+ms.sourcegitcommit: aa73ec6367eaf74399fbf8d6b7776d77895e9982
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53075801"
+ms.lasthandoff: 07/03/2021
+ms.locfileid: "53290787"
 ---
 # <a name="work-with-tables-using-the-excel-javascript-api"></a>使用 Excel JavaScript API 处理表格
 
@@ -165,10 +165,7 @@ Excel.run(function (context) {
 
 ![包含新计算列的表Excel。](../images/excel-tables-add-calculated-column.png)
 
-## <a name="resize-a-table-online-only"></a>调整表格大小 (仅联机) 
-
-> [!NOTE]
-> `Table.resize`该方法当前仅在 ExcelApiOnline 1.1 中可用。 若要了解更多信息，请参阅[Excel JavaScript API 仅联机要求集](../reference/requirement-sets/excel-api-online-requirement-set.md)。
+## <a name="resize-a-table"></a>调整表格大小
 
 加载项可以调整表格大小，而无需向表格添加数据或更改单元格值。 若要调整表格的大小，请使用 [Table.resize](/javascript/api/excel/excel.table#resize_newRange_) 方法。 下面的代码示例演示如何调整表的大小。 此代码示例使用本文前面创建表格部分 [](#create-a-table)中的 **ExpensesTable，** 将表的新范围设置 **为 A1：D20**。
 

@@ -4,12 +4,12 @@ description: 了解如何使用 JavaScript API 对工作簿或应用程序级别
 ms.date: 06/07/2021
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: 48ceb882a7beea3fa3ca08216f3ee1dd82ba4fa9
-ms.sourcegitcommit: 5a151d4df81e5640363774406d0f329d6a0d3db8
+ms.openlocfilehash: 6a32ad5e50e23868d0c079697411366f3f68af17
+ms.sourcegitcommit: aa73ec6367eaf74399fbf8d6b7776d77895e9982
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2021
-ms.locfileid: "52853981"
+ms.lasthandoff: 07/03/2021
+ms.locfileid: "53290752"
 ---
 # <a name="work-with-workbooks-using-the-excel-javascript-api"></a>使用 Excel JavaScript API 处理工作簿
 
@@ -74,11 +74,7 @@ reader.onload = (function (event) {
 reader.readAsDataURL(myFile.files[0]);
 ```
 
-### <a name="insert-a-copy-of-an-existing-workbook-into-the-current-one-preview"></a>将现有工作簿副本插入到当前工作簿中（预览版）
-
-> [!NOTE]
-> `Workbook.insertWorksheetsFromBase64`方法当前仅适用于公共预览版。 [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
-> 
+### <a name="insert-a-copy-of-an-existing-workbook-into-the-current-one"></a>将现有工作簿副本插入到当前工作簿中
 
 上一示例显示从现有工作簿创建的新工作簿。 此外，还可以将所有或部分现有工作簿复制到当前与加载项关联的工作簿中。 [Workbook](/javascript/api/excel/excel.workbook)具有将目标工作簿的工作表 `insertWorksheetsFromBase64` 副本插入自身的方法。 另一个工作簿的文件作为 base64 编码的字符串传递，就像调用 `Excel.createWorkbook` 一样。 
 
@@ -343,11 +339,7 @@ Excel.run(async (context) => {
 context.application.suspendApiCalculationUntilNextSync();
 ```
 
-## <a name="detect-workbook-activation-preview"></a>检测工作簿激活 (预览) 
-
-> [!NOTE]
-> 事件 `Workbook.onActivated` 当前仅适用于公共预览版。 [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
-> 
+## <a name="detect-workbook-activation"></a>检测工作簿激活
 
 加载项可以检测工作簿激活时间。 当用户 *将焦点切换到* 另一个工作簿、另一个应用程序或将 (切换到 web 浏览器Excel web 版) 另一个选项卡时，工作簿将变为非活动状态。 当用户将 *焦点返回到* 工作簿时，将激活工作簿。 工作簿激活可以触发加载项中的回调函数，如刷新工作簿数据。
 

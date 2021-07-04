@@ -1,15 +1,15 @@
 ---
 title: 使用 JavaScript API 设置并Excel区域
 description: 了解如何使用 Excel JavaScript API 设置和获取选定区域Excel JavaScript API。
-ms.date: 06/22/2021
+ms.date: 07/02/2021
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: 9e4c31f165b39d45fac342cb85577ef737105472
-ms.sourcegitcommit: ebb4a22a0bdeb5623c72b9494ebbce3909d0c90c
+ms.openlocfilehash: 623ba5c1b9e76151d4a2c4b169e655236b37e8c8
+ms.sourcegitcommit: aa73ec6367eaf74399fbf8d6b7776d77895e9982
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2021
-ms.locfileid: "53126720"
+ms.lasthandoff: 07/03/2021
+ms.locfileid: "53290780"
 ---
 # <a name="set-and-get-the-selected-range-using-the-excel-javascript-api"></a>使用 JavaScript API 设置并Excel区域
 
@@ -52,10 +52,7 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
-## <a name="select-the-edge-of-a-used-range-online-only"></a>选择已使用区域的边缘 (仅联机) 
-
-> [!NOTE]
-> 和 `Range.getRangeEdge` `Range.getExtendedRange` 方法当前仅在 ExcelApiOnline 1.1 中可用。 若要了解更多信息，请参阅[Excel JavaScript API 仅联机要求集](../reference/requirement-sets/excel-api-online-requirement-set.md)。
+## <a name="select-the-edge-of-a-used-range"></a>选择已用区域的边缘
 
 [Range.getRangeEdge](/javascript/api/excel/excel.range#getRangeEdge_direction__activeCell_)和[Range.getExtendedRange](/javascript/api/excel/excel.range#getExtendedRange_directionString__activeCell_)方法允许外接程序复制键盘选择快捷方式的行为，并基于当前所选区域选择已用区域的边缘。 若要了解有关已用区域有关详细信息，请参阅 [获取已用区域](excel-add-ins-ranges-get.md#get-used-range)。
 

@@ -1,15 +1,15 @@
 ---
 title: Excel JavaScript 预览 API
-description: 有关即将推出的 Excel JavaScript API 的详细信息。
-ms.date: 04/16/2021
+description: 有关即将推出的 JavaScript Excel的详细信息。
+ms.date: 07/02/2021
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: 004d73bfd6faa74acd8abe2592684e21f13058ad
-ms.sourcegitcommit: da8ad214406f2e1cd80982af8a13090e76187dbd
+ms.openlocfilehash: 39d526f194e1d9e818b8513058d2b414e0bf9673
+ms.sourcegitcommit: aa73ec6367eaf74399fbf8d6b7776d77895e9982
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/21/2021
-ms.locfileid: "51917105"
+ms.lasthandoff: 07/03/2021
+ms.locfileid: "53290794"
 ---
 # <a name="excel-javascript-preview-apis"></a>Excel JavaScript 预览 API
 
@@ -22,18 +22,20 @@ ms.locfileid: "51917105"
 | 功能区域 | 说明 | 相关对象 |
 |:--- |:--- |:--- |
 | 记录任务 | 将注释转换为分配给用户的任务。 | [DocumentTask](/javascript/api/excel/excel.documenttask) |
-| 公式已更改事件 | 跟踪对公式的更改，包括导致更改的事件的源和类型。 | [Worksheet.onFormulaChanged](/javascript/api/excel/excel.worksheet#onFormulaChanged)|
-| 链接的数据类型 | 添加对从外部源连接到 Excel 的数据类型的支持。 | [LinkedDataType](/javascript/api/excel/excel.linkeddatatype)|
-| PivotTable PivotLayout | PivotLayout 类的扩展，包括对替换文字和空单元格管理的新支持。 | [PivotLayout](/javascript/api/excel/excel.pivotlayout) |
+| 身份 | 管理用户标识，包括显示名称和电子邮件地址。 | [](/javascript/api/excel/excel.identity) [Identity、IdentityCollection、IdentityEntity](/javascript/api/excel/excel.identitycollection) [](/javascript/api/excel/excel.identityentity) |
+| 链接的数据类型 | 添加对从外部源连接到Excel类型的支持。 | [LinkedDataType](/javascript/api/excel/excel.linkeddatatype)|
+| 链接的工作簿 | 管理工作簿之间的链接，包括对刷新和断开工作簿链接的支持。 | [LinkedWorkbook](/javascript/api/excel/excel.linkedworkbook) [、LinkedWorkbookCollection](/javascript/api/excel/excel.linkedworkbookcollection) |
 | 表样式 | 提供对字体、边框、填充颜色以及表格样式的其他方面的控制。 | [表](/javascript/api/excel/excel.table)、[数据透视表](/javascript/api/excel/excel.pivottable)[、切片器](/javascript/api/excel/excel.slicer) |
 
 ## <a name="api-list"></a>API 列表
 
-下表列出了当前处于预览中的 Excel JavaScript API。 有关所有 Excel JavaScript API 的完整列表 (预览 API 和以前发布的 API) ，请参阅[所有 Excel JavaScript API。](/javascript/api/excel?view=excel-js-preview&preserve-view=true)
+下表列出了当前预览Excel JavaScript API 的列表。 有关所有 JavaScript EXCEL的完整列表 (包括预览 API 和以前发布的 API) ，请参阅所有 Excel [JavaScript API。](/javascript/api/excel?view=excel-js-preview&preserve-view=true)
 
 | 类 | 域 | 说明 |
 |:---|:---|:---|
 |[AutoFilter](/javascript/api/excel/excel.autofilter)|[clearColumnCriteria (columnIndex： number) ](/javascript/api/excel/excel.autofilter#clearcolumncriteria-columnindex-)|清除自动筛选器的筛选条件。|
+|[ChangeDirectionState](/javascript/api/excel/excel.changedirectionstate)|[deleteShiftDirection](/javascript/api/excel/excel.changedirectionstate#deleteshiftdirection)|代表在 (单元格时剩余单元格) 移动的方向，例如向上或向左移动。|
+||[insertShiftDirection](/javascript/api/excel/excel.changedirectionstate#insertshiftdirection)|代表插入 (单元格时现有单元格) 向右或向下移动的方向。|
 |[Comment](/javascript/api/excel/excel.comment)|[assignTask (：Identity) ](/javascript/api/excel/excel.comment#assigntask-assignee-)|将附加到注释的任务作为委派者分配给给定用户。|
 ||[getTask () ](/javascript/api/excel/excel.comment#gettask--)|获取与此注释关联的任务。|
 ||[getTaskOrNullObject () ](/javascript/api/excel/excel.comment#gettaskornullobject--)|获取与此注释关联的任务。|
@@ -66,7 +68,7 @@ ms.locfileid: "51917105"
 ||[priority](/javascript/api/excel/excel.documenttaskchange#priority)|表示任务的优先级。|
 ||[startDateTime](/javascript/api/excel/excel.documenttaskchange#startdatetime)|表示任务的开始日期和时间，以 UTC 时区表示。|
 ||[title](/javascript/api/excel/excel.documenttaskchange#title)|表示任务的标题。|
-||[类型](/javascript/api/excel/excel.documenttaskchange#type)|表示任务更改记录的操作类型。|
+||[type](/javascript/api/excel/excel.documenttaskchange#type)|表示任务更改记录的操作类型。|
 ||[undoHistoryId](/javascript/api/excel/excel.documenttaskchange#undohistoryid)|表示 `DocumentTaskChange.id` 对更改记录类型撤消 `undo` 的属性。|
 |[DocumentTaskChangeCollection](/javascript/api/excel/excel.documenttaskchangecollection)|[getCount()](/javascript/api/excel/excel.documenttaskchangecollection#getcount--)|获取任务集合中的更改记录数。|
 ||[getItemAt(index: number)](/javascript/api/excel/excel.documenttaskchangecollection#getitemat-index-)|使用任务更改记录在集合中的索引获取该记录。|
@@ -78,8 +80,6 @@ ms.locfileid: "51917105"
 ||[items](/javascript/api/excel/excel.documenttaskcollection#items)|获取此集合中已加载的子项。|
 |[DocumentTaskSchedule](/javascript/api/excel/excel.documenttaskschedule)|[dueDateTime](/javascript/api/excel/excel.documenttaskschedule#duedatetime)|获取任务到期的日期和时间。|
 ||[startDateTime](/javascript/api/excel/excel.documenttaskschedule#startdatetime)|获取任务应开始的日期和时间。|
-|[FormulaChangedEventDetail](/javascript/api/excel/excel.formulachangedeventdetail)|[cellAddress](/javascript/api/excel/excel.formulachangedeventdetail#celladdress)|包含已更改公式的单元格的地址。|
-||[previousFormula](/javascript/api/excel/excel.formulachangedeventdetail#previousformula)|表示上一个公式，在更改之前。|
 |[GroupShapeCollection](/javascript/api/excel/excel.groupshapecollection)|[getItemOrNullObject(key: string)](/javascript/api/excel/excel.groupshapecollection#getitemornullobject-key-)|使用形状的名称或 ID 获取形状。|
 |[标识](/javascript/api/excel/excel.identity)|[displayName](/javascript/api/excel/excel.identity#displayname)|表示用户的显示名称。|
 ||[email](/javascript/api/excel/excel.identity#email)|表示用户的电子邮件地址。|
@@ -93,9 +93,6 @@ ms.locfileid: "51917105"
 |[IdentityEntity](/javascript/api/excel/excel.identityentity)|[displayName](/javascript/api/excel/excel.identityentity#displayname)|表示用户的显示名称。|
 ||[email](/javascript/api/excel/excel.identityentity#email)|表示用户的电子邮件地址。|
 ||[id](/javascript/api/excel/excel.identityentity#id)|表示用户的唯一 ID。|
-|[InsertWorksheetOptions](/javascript/api/excel/excel.insertworksheetoptions)|[positionType](/javascript/api/excel/excel.insertworksheetoptions#positiontype)|新工作表的当前工作簿中的插入位置。|
-||[relativeTo](/javascript/api/excel/excel.insertworksheetoptions#relativeto)|引用参数的当前工作簿中的 `WorksheetPositionType` 工作表。|
-||[sheetNamesToInsert](/javascript/api/excel/excel.insertworksheetoptions#sheetnamestoinsert)|要插入的单个工作表的名称。|
 |[LinkedDataType](/javascript/api/excel/excel.linkeddatatype)|[dataProvider](/javascript/api/excel/excel.linkeddatatype#dataprovider)|链接数据提供程序的数据提供程序数据类型。|
 ||[lastRefreshed](/javascript/api/excel/excel.linkeddatatype#lastrefreshed)|自上次刷新链接工作簿时打开工作簿以来的本地数据类型日期和时间。|
 ||[name](/javascript/api/excel/excel.linkeddatatype#name)|链接对象数据类型。|
@@ -104,7 +101,7 @@ ms.locfileid: "51917105"
 ||[服务 Id](/javascript/api/excel/excel.linkeddatatype#serviceid)|链接对象的唯一数据类型。|
 ||[supportedRefreshModes](/javascript/api/excel/excel.linkeddatatype#supportedrefreshmodes)|返回一个数组，该数组包含链接对象支持的所有数据类型。|
 ||[requestRefresh () ](/javascript/api/excel/excel.linkeddatatype#requestrefresh--)|请求刷新链接数据类型。|
-||[requestSetRefreshMode (refreshMode：Excel.LinkedDataTypeRefreshMode) ](/javascript/api/excel/excel.linkeddatatype#requestsetrefreshmode-refreshmode-)|请求更改此链接的刷新数据类型。|
+||[requestSetRefreshMode (refreshMode： Excel。LinkedDataTypeRefreshMode) ](/javascript/api/excel/excel.linkeddatatype#requestsetrefreshmode-refreshmode-)|请求更改此链接的刷新数据类型。|
 |[LinkedDataTypeAddedEventArgs](/javascript/api/excel/excel.linkeddatatypeaddedeventargs)|[服务 Id](/javascript/api/excel/excel.linkeddatatypeaddedeventargs#serviceid)|新链接对象的唯一 ID 数据类型。|
 ||[source](/javascript/api/excel/excel.linkeddatatypeaddedeventargs#source)|获取事件源。|
 ||[type](/javascript/api/excel/excel.linkeddatatypeaddedeventargs#type)|获取事件的类型。|
@@ -114,22 +111,21 @@ ms.locfileid: "51917105"
 ||[getItemOrNullObject (键：number) ](/javascript/api/excel/excel.linkeddatatypecollection#getitemornullobject-key-)|按 ID 数据类型链接的标识符。|
 ||[items](/javascript/api/excel/excel.linkeddatatypecollection#items)|获取此集合中已加载的子项。|
 ||[requestRefreshAll () ](/javascript/api/excel/excel.linkeddatatypecollection#requestrefreshall--)|请求刷新集合中所有链接的数据类型。|
+|[LinkedWorkbook](/javascript/api/excel/excel.linkedworkbook)|[breakLinks () ](/javascript/api/excel/excel.linkedworkbook#breaklinks--)|请求断开指向链接工作簿的链接。|
+||[id](/javascript/api/excel/excel.linkedworkbook#id)|指向链接工作簿的原始 URL。|
+||[refresh()](/javascript/api/excel/excel.linkedworkbook#refresh--)|请求刷新从链接工作簿检索到的数据。|
+|[LinkedWorkbookCollection](/javascript/api/excel/excel.linkedworkbookcollection)|[breakAllLinks () ](/javascript/api/excel/excel.linkedworkbookcollection#breakalllinks--)|断开指向链接工作簿的所有链接。|
+||[getItem(key: string)](/javascript/api/excel/excel.linkedworkbookcollection#getitem-key-)|按 URL 获取链接工作簿的信息。|
+||[getItemOrNullObject(key: string)](/javascript/api/excel/excel.linkedworkbookcollection#getitemornullobject-key-)|按 URL 获取链接工作簿的信息。|
+||[items](/javascript/api/excel/excel.linkedworkbookcollection#items)|获取此集合中已加载的子项。|
+||[refreshAll () ](/javascript/api/excel/excel.linkedworkbookcollection#refreshall--)|请求刷新所有工作簿链接。|
+||[workbookLinksRefreshMode](/javascript/api/excel/excel.linkedworkbookcollection#workbooklinksrefreshmode)|表示工作簿链接的更新模式。|
 |[NamedSheetViewCollection](/javascript/api/excel/excel.namedsheetviewcollection)|[getItemOrNullObject(key: string)](/javascript/api/excel/excel.namedsheetviewcollection#getitemornullobject-key-)|使用工作表视图的名称获取工作表视图。|
-|[PivotLayout](/javascript/api/excel/excel.pivotlayout)|[altTextDescription](/javascript/api/excel/excel.pivotlayout#alttextdescription)|数据透视表的替换文字说明。|
-||[altTextTitle](/javascript/api/excel/excel.pivotlayout#alttexttitle)|数据透视表的替换文字标题。|
-||[displayBlankLineAfterEachItem (显示：boolean) ](/javascript/api/excel/excel.pivotlayout#displayblanklineaftereachitem-display-)|设置是否在每一项后显示一个空行。|
-||[emptyCellText](/javascript/api/excel/excel.pivotlayout#emptycelltext)|如果 为 ，则自动填充到数据透视表中任何空单元格中的文本 `fillEmptyCells == true` 。|
-||[fillEmptyCells](/javascript/api/excel/excel.pivotlayout#fillemptycells)|指定是否应该使用 填充数据透视表中的空单元格 `emptyCellText` 。|
-||[getCell(dataHierarchy: DataPivotHierarchy \| string, rowItems: Array<PivotItem \| string>, columnItems: Array<PivotItem \| string>)](/javascript/api/excel/excel.pivotlayout#getcell-datahierarchy--rowitems--columnitems-)|根据数据层次结构以及各自层次结构的行和列项，获取数据透视表中的唯一单元格。|
+|[PivotLayout](/javascript/api/excel/excel.pivotlayout)|[getCell(dataHierarchy: DataPivotHierarchy \| string, rowItems: Array<PivotItem \| string>, columnItems: Array<PivotItem \| string>)](/javascript/api/excel/excel.pivotlayout#getcell-datahierarchy--rowitems--columnitems-)|根据数据层次结构以及各自层次结构的行和列项，获取数据透视表中的唯一单元格。|
 ||[pivotStyle](/javascript/api/excel/excel.pivotlayout#pivotstyle)|应用于数据透视表的样式。|
-||[repeatAllItemLabels (repeatLabels：boolean) ](/javascript/api/excel/excel.pivotlayout#repeatallitemlabels-repeatlabels-)|设置数据透视表中所有字段的"重复所有项目标签"设置。|
 ||[setStyle (样式：string \| PivotTableStyle \| BuiltInPivotTableStyle) ](/javascript/api/excel/excel.pivotlayout#setstyle-style-)|设置应用于数据透视表的样式。|
-||[showFieldHeaders](/javascript/api/excel/excel.pivotlayout#showfieldheaders)|指定数据透视表是否显示字段标题 (字段标题和筛选器下拉列表) 。|
-|[PivotTable](/javascript/api/excel/excel.pivottable)|[refreshOnOpen](/javascript/api/excel/excel.pivottable#refreshonopen)|指定工作簿打开时数据透视表是否刷新。|
 |[PivotTableScopedCollection](/javascript/api/excel/excel.pivottablescopedcollection)|[getFirstOrNullObject () ](/javascript/api/excel/excel.pivottablescopedcollection#getfirstornullobject--)|获取集合中的第一个数据透视表。|
-|[区域](/javascript/api/excel/excel.range)|[getDependents () ](/javascript/api/excel/excel.range#getdependents--)|返回一个对象，该对象表示包含同一工作表或多个工作表中单元格的所有 `WorkbookRangeAreas` 从属单元格的范围。|
-||[getDirectDependents () ](/javascript/api/excel/excel.range#getdirectdependents--)|返回一个对象，该对象表示包含同一工作表或多个工作表中单元格的所有直接从属 `WorkbookRangeAreas` 单元格的范围。|
-||[getMergedAreasOrNullObject () ](/javascript/api/excel/excel.range#getmergedareasornullobject--)|返回一个 RangeAreas 对象，该对象代表此范围中的合并区域。|
+|[Range](/javascript/api/excel/excel.range)|[getDependents () ](/javascript/api/excel/excel.range#getdependents--)|返回一个对象，该对象表示包含同一工作表或多个工作表中单元格的所有 `WorkbookRangeAreas` 从属单元格的范围。|
 ||[getPrecedents () ](/javascript/api/excel/excel.range#getprecedents--)|返回一个对象，该对象代表包含同一工作表或多个工作表中单元格的所有引用 `WorkbookRangeAreas` 单元格的范围。|
 |[RefreshModeChangedEventArgs](/javascript/api/excel/excel.refreshmodechangedeventargs)|[refreshMode](/javascript/api/excel/excel.refreshmodechangedeventargs#refreshmode)|链接的数据类型刷新模式。|
 ||[服务 Id](/javascript/api/excel/excel.refreshmodechangedeventargs#serviceid)|刷新模式已更改的对象的唯一 ID。|
@@ -155,27 +151,26 @@ ms.locfileid: "51917105"
 ||[type](/javascript/api/excel/excel.tablefilteredeventargs#type)|获取事件的类型。|
 ||[worksheetId](/javascript/api/excel/excel.tablefilteredeventargs#worksheetid)|获取包含表格的工作表的 ID。|
 |[TableScopedCollection](/javascript/api/excel/excel.tablescopedcollection)|[getItemOrNullObject(key: string)](/javascript/api/excel/excel.tablescopedcollection#getitemornullobject-key-)|按名称或 ID 获取表。|
-|[Workbook](/javascript/api/excel/excel.workbook)|[insertWorksheetsFromBase64 (base64File： string， options？： Excel.InsertWorksheetOptions) ](/javascript/api/excel/excel.workbook#insertworksheetsfrombase64-base64file--options-)|将源工作簿中的指定工作表插入到当前工作簿中。|
-||[linkedDataTypes](/javascript/api/excel/excel.workbook#linkeddatatypes)|返回属于工作簿的链接数据类型的集合。|
-||[onActivated](/javascript/api/excel/excel.workbook#onactivated)|在激活工作簿时发生。|
+|[Workbook](/javascript/api/excel/excel.workbook)|[linkedDataTypes](/javascript/api/excel/excel.workbook#linkeddatatypes)|返回属于工作簿的链接数据类型的集合。|
+||[linkedWorkbooks](/javascript/api/excel/excel.workbook#linkedworkbooks)|返回链接工作簿的集合。|
 ||[任务](/javascript/api/excel/excel.workbook#tasks)|返回工作簿中的任务集合。|
 ||[showPivotFieldList](/javascript/api/excel/excel.workbook#showpivotfieldlist)|指定是否在工作簿级别显示数据透视表的字段列表窗格。|
 ||[use1904DateSystem](/javascript/api/excel/excel.workbook#use1904datesystem)|如果工作簿使用 1904 日期系统，则为 True。|
-|[WorkbookActivatedEventArgs](/javascript/api/excel/excel.workbookactivatedeventargs)|[type](/javascript/api/excel/excel.workbookactivatedeventargs#type)|获取事件的类型。|
 |[Worksheet](/javascript/api/excel/excel.worksheet)|[onFiltered](/javascript/api/excel/excel.worksheet#onfiltered)|在将筛选器应用于特定工作表时发生。|
-||[onFormulaChanged](/javascript/api/excel/excel.worksheet#onformulachanged)|在此工作表中更改一个或多个公式时发生。|
-||[tabId](/javascript/api/excel/excel.worksheet#tabid)|返回一个值，该值代表可通过 Open Office XML 读取的此工作表。|
+||[onProtectionChanged](/javascript/api/excel/excel.worksheet#onprotectionchanged)|工作表保护状态更改时发生。|
+||[tabId](/javascript/api/excel/excel.worksheet#tabid)|返回一个值，该值代表此工作表，该工作表可通过 Open Office XML 读取。|
 ||[任务](/javascript/api/excel/excel.worksheet#tasks)|返回工作表中的任务集合。|
-|[WorksheetChangedEventArgs](/javascript/api/excel/excel.worksheetchangedeventargs)|[triggerSource](/javascript/api/excel/excel.worksheetchangedeventargs#triggersource)|表示事件的触发源。|
+|[WorksheetChangedEventArgs](/javascript/api/excel/excel.worksheetchangedeventargs)|[changeDirectionState](/javascript/api/excel/excel.worksheetchangedeventargs#changedirectionstate)|表示工作表中单元格在删除或插入时移动的方向的变化。|
+||[triggerSource](/javascript/api/excel/excel.worksheetchangedeventargs#triggersource)|表示事件的触发源。|
 |[WorksheetCollection](/javascript/api/excel/excel.worksheetcollection)|[addFromBase64(base64File: string, sheetNamesToInsert?: string[], positionType?: Excel.WorksheetPositionType, relativeTo?: Worksheet \| string)](/javascript/api/excel/excel.worksheetcollection#addfrombase64-base64file--sheetnamestoinsert--positiontype--relativeto-)|将工作簿的指定工作表插入当前工作簿。|
 ||[onFiltered](/javascript/api/excel/excel.worksheetcollection#onfiltered)|在工作簿中应用任何工作表的筛选器时发生。|
-||[onFormulaChanged](/javascript/api/excel/excel.worksheetcollection#onformulachanged)|在此集合的任何工作表中更改一个或多个公式时发生。|
+||[onProtectionChanged](/javascript/api/excel/excel.worksheetcollection#onprotectionchanged)|工作表保护状态更改时发生。|
 |[WorksheetFilteredEventArgs](/javascript/api/excel/excel.worksheetfilteredeventargs)|[type](/javascript/api/excel/excel.worksheetfilteredeventargs#type)|获取事件的类型。|
 ||[worksheetId](/javascript/api/excel/excel.worksheetfilteredeventargs#worksheetid)|获取应用筛选器的工作表的 ID。|
-|[WorksheetFormulaChangedEventArgs](/javascript/api/excel/excel.worksheetformulachangedeventargs)|[formulaDetails](/javascript/api/excel/excel.worksheetformulachangedeventargs#formuladetails)|获取对象 `FormulaChangedEventDetail` 数组，其中包含有关所有已更改公式的详细信息。|
-||[source](/javascript/api/excel/excel.worksheetformulachangedeventargs#source)|事件的源。|
-||[type](/javascript/api/excel/excel.worksheetformulachangedeventargs#type)|获取事件的类型。|
-||[worksheetId](/javascript/api/excel/excel.worksheetformulachangedeventargs#worksheetid)|获取公式发生更改的工作表的 ID。|
+|[WorksheetProtectionChangedEventArgs](/javascript/api/excel/excel.worksheetprotectionchangedeventargs)|[isProtected](/javascript/api/excel/excel.worksheetprotectionchangedeventargs#isprotected)|获取工作表的当前保护状态。|
+||[source](/javascript/api/excel/excel.worksheetprotectionchangedeventargs#source)|事件的源。|
+||[type](/javascript/api/excel/excel.worksheetprotectionchangedeventargs#type)|获取事件的类型。|
+||[worksheetId](/javascript/api/excel/excel.worksheetprotectionchangedeventargs#worksheetid)|获取其中保护状态发生更改的工作表的 ID。|
 
 ## <a name="see-also"></a>另请参阅
 

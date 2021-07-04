@@ -1,14 +1,14 @@
 ---
 title: 在加载项中启用共享文件夹Outlook邮箱方案
 description: 讨论如何为共享文件夹配置外接程序支持 (。例如， 委派访问) 和共享邮箱。
-ms.date: 06/17/2021
+ms.date: 07/02/2021
 localization_priority: Normal
-ms.openlocfilehash: 5d7fb712b8f814184c2a444c32416d35fb1da49c
-ms.sourcegitcommit: 0bf0e076f705af29193abe3dba98cbfcce17b24f
+ms.openlocfilehash: 70578f2c78a9dd88efc9ba70d5599a13e121df53
+ms.sourcegitcommit: aa73ec6367eaf74399fbf8d6b7776d77895e9982
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2021
-ms.locfileid: "53007767"
+ms.lasthandoff: 07/03/2021
+ms.locfileid: "53290710"
 ---
 # <a name="enable-shared-folders-and-shared-mailbox-scenarios-in-an-outlook-add-in"></a>在加载项中启用共享文件夹Outlook邮箱方案
 
@@ -61,7 +61,7 @@ Exchange管理员可创建和管理共享邮箱，供多组用户访问。 目�
 
 |权限|值|说明|
 |---|---:|---|
-|读取|1 (0000001) |可读取项目。|
+|阅读|1 (0000001) |可读取项目。|
 |写入|2 (000010) |可以创建项目。|
 |DeleteOwn|4 (000100) |只能删除他们创建的项。|
 |DeleteAll|8 (001000) |可以删除任何项目。|
@@ -216,6 +216,10 @@ b. **共享邮箱**
 ### <a name="rest-and-ews"></a>REST 和 EWS
 
 您的外接程序可以使用 REST，并且外接程序的权限必须设置为，才能启用对所有者邮箱或共享邮箱的 `ReadWriteMailbox` REST 访问（如果适用）。 不支持 EWS。
+
+### <a name="user-or-shared-mailbox-hidden-from-an-address-list"></a>从地址列表中隐藏的用户或共享邮箱
+
+如果管理员从地址列表（如全局地址列表 (GAL) ）隐藏用户或共享邮箱地址，则邮箱报告中打开的受影响的邮件项目为 `Office.context.mailbox.item` null。 例如，如果用户在共享邮箱中打开一个从 GAL 中隐藏的邮件项目，则代表该 `Office.context.mailbox.item` 邮件项目为空。
 
 ## <a name="see-also"></a>另请参阅
 
