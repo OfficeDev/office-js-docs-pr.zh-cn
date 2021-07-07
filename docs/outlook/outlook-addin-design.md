@@ -1,14 +1,14 @@
 ---
 title: Outlook 外接程序设计
 description: 可帮助你设计和构建引人入胜的外接程序的准则，通过遵循这些准则，你可以将自己的最佳的应用引入到 Windows、Web、iOS、Mac 和 Android 上的 Outlook 中。
-ms.date: 06/24/2019
+ms.date: 07/05/2021
 localization_priority: Priority
-ms.openlocfilehash: a669d2cf0a98ffa0ca7b7dfc3fcc5b71d291a0e0
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: 35ff407fae14654b3b6aa3d543e30524d4a1a5d0
+ms.sourcegitcommit: 488b26b29c7534e3bbc862b688ed2319cc028f71
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53077132"
+ms.lasthandoff: 07/07/2021
+ms.locfileid: "53315153"
 ---
 # <a name="outlook-add-in-design-guidelines"></a>Outlook 外接程序设计准则
 
@@ -30,19 +30,19 @@ ms.locfileid: "53077132"
 
    应使用正在运行 Outlook 的平台上的本机模式设计外接程序。若要实现这一点，务必尊重并实现各个平台规定的交互和外观准则。Outlook 具有自己的准则，同样也必须考虑这些准则。设计良好的外接程序将恰当地融合体验、平台和 Outlook。
 
-   这就是说，加载项在 iOS 版 Outlook 与在 Android 版 Outlook 上运行时的外观必须不同。我们建议不妨使用 [Framework7](https://framework7.io/) 作为样式设置选项。
+   这就是说，加载项在 iOS 版 Outlook 与在 Android 版 Outlook 上运行时的外观必须不同。我们建议不妨使用 [Fluent UI](https://developer.microsoft.com/fluentui#/) 作为样式设置选项。
 
 3. **确保使用体验令人满意，并正确设置详细信息**
 
    人们喜欢使用实用且外观吸引人的产品。在已仔细考虑每个交互和外观细节的情况下精心构建体验有助于确保加载项成功。完成任务的必要步骤必须清楚并相互关联。理想情况下，操作不应超过一次或两次单击。 
    
-   尽量不要使用户脱离上下文来完成操作。 用户应可以轻松进入和退出加载项并可轻松返回至用户之前正在执行的操作。 不应对加载项花费大量的时间，它主要用于增强核心功能。 如果处理得当，加载项将有助于实现使用户更高效的目标。
+   请尽量不要让用户脱离上下文来完成操作。用户应能够轻松地进出加载项，并返回到之前执行的任何操作。加载项不是要在其中花费大量时间的目标&mdash;，而是增强我们的核心功能。如果操作正确，你的加载项将帮助我们实现提高人员工作效率的目标。
 
 4. **明智地进行品牌打造**
 
    我们非常重视品牌打造，同时我们知道向用户提供唯一体验至关重要。但是我们认为确保外接程序成功的最佳方式是生成巧妙整合品牌元素的直观体验，而非显示重复或突兀的品牌元素，它们只会分散用户无阻碍进入系统的注意力。 
     
-   有效地整合品牌的良好方式是使用品牌颜色、图标和声音（假定这些与首选的平台模式或辅助功能要求不冲突）。 努力将重点集中在内容和任务完成方面，而非品牌关注。 
+   以有意义的方式整合品牌的一个好方法是使用品牌颜色、图标和语音&mdash;，假定这些与首选平台模式或辅助功能要求不存在冲突。请努力保持对内容和任务完成的关注，而不是品牌关注。 
     
    > [!NOTE]
    >  iOS 或 Android 上的加载项中不应显示广告。
