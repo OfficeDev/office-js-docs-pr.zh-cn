@@ -33,12 +33,12 @@
     "overwrite": [],
     "externalReference": [],
     "globalMetadata": {
-      "ocv-translation-feedback": true,
       "uhfHeaderId": "MSDocsHeader-Dev_Office",
-      "searchScope": ["Office Add-ins"],
+      "searchScope": [
+        "Office Add-ins"
+      ],
       "breadcrumb_path": "/office/dev/add-ins/breadcrumb/toc.json",
       "feedback_system": "None",
-      "hide_comments": true,
       "feedback_github_repo": "OfficeDev/office-js-docs-pr",
       "feedback_product_url": "/answers/products/m365",
       "extendBreadcrumb": true,
@@ -47,7 +47,8 @@
       "author": "o365devx",
       "ms.topic": "conceptual",
       "ms.technology": "add-ins",
-      "titleSuffix": "Office Add-ins"
+      "titleSuffix": "Office Add-ins",
+      "hide_comments": true
     },
     "fileMetadata": {
       "feedback_system": {
