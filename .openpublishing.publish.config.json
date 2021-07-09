@@ -21,6 +21,7 @@
         "excel-js-1.10",
         "excel-js-1.11",
         "excel-js-1.12",
+        "excel-js-1.13",
         "excel-js-online",
         "onenote-js-1.1",
         "outlook-js-preview",
@@ -61,7 +62,8 @@
     }
   ],
   "notification_subscribers": [
-  "mor-oitac-eng@moravia.com"],
+    "mor-oitac-eng@moravia.com"
+  ],
   "branches_to_filter": [
     "live-sxs",
     "master-sxs"
@@ -70,7 +72,7 @@
   "git_repository_branch_open_to_public_contributors": "master",
   "continue_with_document_error": true,
   "skip_source_output_uploading": false,
-  "need_preview_pull_request": false,
+  "need_preview_pull_request": true,
   "contribution_branch_mappings": {},
   "dependent_repositories": [
     {
