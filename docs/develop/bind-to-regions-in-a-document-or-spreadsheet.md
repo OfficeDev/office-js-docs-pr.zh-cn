@@ -3,16 +3,16 @@ title: 绑定到文档或电子表格中的区域
 description: 了解如何使用绑定以确保通过标识符一致地访问文档或电子表格的特定区域或元素。
 ms.date: 06/20/2019
 localization_priority: Normal
-ms.openlocfilehash: f57124a22bcc859b4fba1795faa64140cab947d9
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: c9a658653c562de446f3b8e5f1ea192ddfcf3b21
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53076467"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53349999"
 ---
 # <a name="bind-to-regions-in-a-document-or-spreadsheet"></a>绑定到文档或电子表格中的区域
 
-基于绑定的数据访问使内容和任务窗格加载项能够通过与绑定相关联的标识符一致地访问文档或电子表格的特定区域。加载项首先需要通过调用将文档的某一部分与唯一标识符相关联的以下某个方法来建立绑定：[addFromPromptAsync]、[addFromSelectionAsync] 或 [addFromNamedItemAsync]。建立绑定后，加载项可以使用提供的标识符访问文档或电子表格的关联区域中包含的数据。创建绑定可为加载项提供以下值：
+基于绑定的数据访问使内容和任务窗格加载项能够通过与绑定相关联的标识符一致地访问文档或电子表格的特定区域。 加载项首先需要通过调用将文档的某一部分与唯一标识符相关联的以下某个方法来建立绑定：[addFromPromptAsync]、[addFromSelectionAsync] 或 [addFromNamedItemAsync]。 建立绑定后，加载项可以使用提供的标识符访问文档或电子表格的关联区域中包含的数据。 创建绑定可为外接程序提供以下值。
 
 - 允许访问跨支持的 Office 应用程序的通用数据结构，例如：表、区域或文本（一系列连续字符）。
 - 允许读/写操作，而不需要用户做出选择。

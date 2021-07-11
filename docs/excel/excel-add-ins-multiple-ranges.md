@@ -1,14 +1,14 @@
 ---
 title: 同时在 Excel 加载项中处理多个区域
-description: 了解 Excel JavaScript 库如何允许加载项同时在多个区域上执行操作和设置属性。
+description: 了解 Excel JavaScript 库如何使外接程序能够同时在多个区域上执行操作和设置属性。
 ms.date: 04/01/2021
 localization_priority: Normal
-ms.openlocfilehash: 2999cd26d3258cf310766fbd590805535cd644f9
-ms.sourcegitcommit: 54fef33bfc7d18a35b3159310bbd8b1c8312f845
+ms.openlocfilehash: 729b687b14beaeb74b329974bcca48dfd78bc11e
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2021
-ms.locfileid: "51650889"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53349495"
 ---
 # <a name="work-with-multiple-ranges-simultaneously-in-excel-add-ins"></a>同时在 Excel 加载项中处理多个区域
 
@@ -75,7 +75,7 @@ Excel JavaScript 库允许你使用加载项同时在多个区域上执行操作
 
 ### <a name="rangearea-specific-properties-and-methods"></a>特定于 RangeArea 的属性和方法
 
-`RangeAreas` 类型具有一些未包含在 `Range` 对象中的属性和方法。 以下是其中的一部分：
+`RangeAreas` 类型具有一些未包含在 `Range` 对象中的属性和方法。 下面选定了一些选项。
 
 - `areas`：一种 `RangeCollection` 对象，它包含由 `RangeAreas` 对象表示的所有区域。 `RangeCollection` 也是新对象，与其他 Excel 集合对象类似。 它具有 `items` 属性，它是一组表示区域的 `Range` 对象。
 - `areaCount`：`RangeAreas` 中的区域总数。
@@ -128,7 +128,7 @@ Excel.run(function (context) {
 
 ## <a name="read-properties-of-rangeareas"></a>读取 RangeAreas 的属性
 
-读取 `RangeAreas` 的属性值时须小心操作，因为对于 `RangeAreas` 内的不同区域，给定的属性可能具有不同的值。 一般规则是，如果 *可以* 返回一致的值，则系统会返回该值。 例如，在以下代码中，RGB 粉色代码 (`#FFC0CB`) 和 `true` 将记录到控制台，因为 `RangeAreas` 对象中的两个区域都具有粉色填充，并且都是整列。
+读取 `RangeAreas` 的属性值时须小心操作，因为对于 `RangeAreas` 内的不同区域，给定的属性可能具有不同的值。 一般规则是，如果 *可以* 返回一致的值，则系统会返回该值。 例如，在下面的代码中，用于粉色 () 的 RGB 代码会记录到控制台，因为 对象中的两个范围都有粉色填充，两者都是整列 `#FFC0CB` `true` `RangeAreas` 。
 
 ```js
 Excel.run(function (context) {
@@ -180,4 +180,4 @@ Excel.run(function (context) {
 ## <a name="see-also"></a>另请参阅
 
 - [Excel JavaScript API 基本编程概念](../reference/overview/excel-add-ins-reference-overview.md)
-- [使用 Excel JavaScript API 读取或写入较大区域](excel-add-ins-ranges-large.md)
+- [使用 JavaScript API 读取或写入Excel区域](excel-add-ins-ranges-large.md)

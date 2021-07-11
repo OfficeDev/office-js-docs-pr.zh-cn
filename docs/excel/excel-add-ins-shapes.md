@@ -3,12 +3,12 @@ title: 使用 JavaScript API Excel形状
 description: 了解如何Excel形状定义为位于绘图层上的任何Excel。
 ms.date: 01/14/2020
 localization_priority: Normal
-ms.openlocfilehash: 936def11a5d597b68cc59a58b041c4f30ff46a38
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: eeb6a1f76c839e4b550662b28b717bfd1bcca4e8
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53075759"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53349446"
 ---
 # <a name="work-with-shapes-using-the-excel-javascript-api"></a>使用 JavaScript API Excel形状
 
@@ -21,7 +21,7 @@ Excel形状定义为位于绘图层上的任何Excel。 这意味着单元格之
 
 形状通过工作表的形状集合创建并存储在 `Worksheet.shapes` () 。 `ShapeCollection` 为此 `.add*` ，有几个方法。 所有形状在添加到集合时都有为它们生成的名称和 ID。 它们分别为 `name` 和 `id` 属性。 `name` 可通过外接程序设置 ，以使用 方法轻松 `ShapeCollection.getItem(name)` 检索。
 
-使用关联方法添加以下类型的形状：
+以下类型的形状是使用关联方法添加的。
 
 | 形状 | Add 方法 | 签名 |
 |-------|------------|-----------|

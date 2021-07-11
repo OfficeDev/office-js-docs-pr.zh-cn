@@ -4,12 +4,12 @@ description: 了解 Excel JavaScript API 中的关键对象类型，以及如何
 ms.date: 04/05/2021
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: 1cef1775711ebdb66d2e8f6513602906d9c5a2d2
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: 6c88dc84796d9fd898bee880035ed964ab6cd7c8
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53075864"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53349558"
 ---
 # <a name="excel-javascript-object-model-in-office-add-ins"></a>Excel 加载项中的 Excel JavaScript 对象模型
 
@@ -97,7 +97,7 @@ Excel.run(function (context) {
 });
 ```
 
-此示例将在当前工作表中创建以下数据：
+此示例将在当前工作表中创建以下数据。
 
 ![显示值行、公式列和格式化标题的销售记录。](../images/excel-overview-range-sample.png)
 
@@ -121,7 +121,7 @@ Excel.run(function (context) {
 });
 ```
 
-在包含之前数据的工作表上使用此示例代码将创建下表：
+在包含之前数据的工作表上使用此示例代码将创建下表。
 
 ![使用之前的销售记录制成的表。](../images/excel-overview-table-sample.png)
 
@@ -142,7 +142,7 @@ Excel.run(function (context) {
 });
 ```
 
-在工作表上使用上一个表运行此示例将创建以下图表：
+在工作表上使用上一个表运行此示例将创建以下图表。
 
 ![一个柱形图，显示上一个销售记录中三个项目的数量。](../images/excel-overview-chart-sample.png)
 

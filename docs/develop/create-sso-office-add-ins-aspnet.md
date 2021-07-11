@@ -3,12 +3,12 @@ title: 创建使用单一登录的 ASP.NET Office 加载项
 description: 如何创建 (或将 Office 后端的 ASP.NET Office) 外接程序转换为使用单一登录 (SSO) 的分步指南。
 ms.date: 06/15/2021
 localization_priority: Normal
-ms.openlocfilehash: 35e4dcef6d99d5bd3ca204b08a017679684ec2ba
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: c5c23445b6a4fec5f4be620ce9a4878f3aa69922
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53076453"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53349971"
 ---
 # <a name="create-an-aspnet-office-add-in-that-uses-single-sign-on"></a>创建使用单一登录的 ASP.NET Office 加载项
 
@@ -128,7 +128,7 @@ ms.locfileid: "53076453"
 
 1. 如果在注册该加载项时，“**受支持的帐户类型**”未选择“仅限此组织目录中的帐户”，请保存并关闭 web.config。否则，请保存，但将其保持打开状态。
 
-1. 仍在"解决方案资源管理器"中，选择 **Office-Add-in-ASPNET-SSO** 项目，打开外接程序清单文件"Office-Add-in-ASPNET-SSO.xml"，然后滚动到文件底部。 在结尾的 `</VersionOverrides>` 标记的正上方有以下标记：
+1. 仍在"解决方案资源管理器"中，选择 **Office-Add-in-ASPNET-SSO** 项目，打开外接程序清单文件"Office-Add-in-ASPNET-SSO.xml"，然后滚动到文件底部。 在结束 `</VersionOverrides>` 标记的正上方，你将找到以下标记。
 
     ```xml
     <WebApplicationInfo>
@@ -168,7 +168,7 @@ ms.locfileid: "53076453"
     * `logErrors` 方法，用于记录最终用户不应看到的控制台错误。
     * 一些代码实现了加载项在 SSO 不受支持或有错误的情况下使用的回退授权系统。
 
-1. 在向 `Office.initialize` 分配函数下方，添加下列代码。关于此代码，请注意以下几点：
+1. 在针对 `Office.initialize` 的分配下面，添加下面的代码。 对于此代码，请注意以下事项。
 
     * 加载项中的错误处理有时会自动尝试使用一组不同的选项，重新获取访问令牌。 计数器变量 `retryGetAccessToken` 用于确保用户不会重复循环失败的尝试来获取令牌。
     * `getGraphData` 函数通过 ES6 `async` 关键字进行定义。 使用 ES6 语法可以使 Office 加载项中的 SSO API 更易于使用。 此文件是该解决方案中唯一会使用 Internet Explorer 不支持的语法的文件。 我们在文件名中放入“ES6”作为提醒用途。 该解决方案使用 tsc 转译器将此文件转译为 ES5，以便在 Office 为 UI 使用 Internet Explorer 时可运行加载项。 （请查看项目根目录中的 tsconfig.json 文件。）

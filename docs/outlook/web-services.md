@@ -3,12 +3,12 @@ title: 从 Outlook 加载项使用 Exchange Web 服务 (EWS)
 description: 提供的示例显示 Outlook 加载项如何通过 Exchange Web 服务请求信息。
 ms.date: 04/28/2020
 localization_priority: Normal
-ms.openlocfilehash: 16d20ca30f2860b8103257860a8619c1d51d8523
-ms.sourcegitcommit: 5a151d4df81e5640363774406d0f329d6a0d3db8
+ms.openlocfilehash: 63c969355c9bae5dab6ef8603a9f3d61d8e82eec
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2021
-ms.locfileid: "52853960"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53348452"
 ---
 # <a name="call-web-services-from-an-outlook-add-in"></a>从 Outlook 加载项调用 Web 服务
 
@@ -46,12 +46,12 @@ EWS SOAP 请求完成后，Outlook 将使用一个实参（是一个 [AsyncResul
 
 ## <a name="tips-for-parsing-ews-responses"></a>解析 EWS 响应的提示
 
-分析 EWS 操作的 SOAP 响应时，请注意下列与浏览器相关的问题：
+分析 EWS 操作中的 SOAP 响应时，请注意以下与浏览器相关的问题。
 
 
 - 使用 DOM 方法时指定标记名称的前缀，以 `getElementsByTagName` 包含对Internet Explorer。
 
-  `getElementsByTagName` 根据浏览器类型，其行为会有所不同。 例如，EWS 响应可以包含以下 XML (格式和缩写，以便显示) ：
+  `getElementsByTagName` 根据浏览器类型，其行为会有所不同。 例如，EWS 响应可以包含以下 XML (格式和缩写，以便显示) 。
 
    ```XML
         <t:ExtendedProperty><t:ExtendedFieldURI PropertySetId="00000000-0000-0000-0000-000000000000" 
@@ -62,7 +62,7 @@ EWS SOAP 请求完成后，Outlook 将使用一个实参（是一个 [AsyncResul
         }</t:Value></t:ExtendedProperty>
    ```
 
-   如下文所示，代码将在 Chrome 等浏览器上运行，以将 XML 包含在标记 `ExtendedProperty` 中：
+   如下文所示，代码将在 Chrome 等浏览器上运行，以将 XML 包含在标记 `ExtendedProperty` 中。
 
    ```js
         var mailbox = Office.context.mailbox;
@@ -72,7 +72,7 @@ EWS SOAP 请求完成后，Outlook 将使用一个实参（是一个 [AsyncResul
             });
    ```
 
-   在 Internet Explorer 上，必须包含标记名称的 `t:` 前缀，如下所示：
+   在Internet Explorer，必须包含 `t:` 标记名称的前缀，如下所示。
 
    ```js
         var mailbox = Office.context.mailbox;
@@ -82,7 +82,7 @@ EWS SOAP 请求完成后，Outlook 将使用一个实参（是一个 [AsyncResul
             });
    ```
 
-- 使用 DOM 属性获取 EWS 响应中标记 `textContent` 的内容，如下所示：
+- 使用 DOM 属性获取 EWS 响应中标记 `textContent` 的内容，如下所示。
 
    ```js
       content = $.parseJSON(value.textContent);
@@ -93,13 +93,13 @@ EWS SOAP 请求完成后，Outlook 将使用一个实参（是一个 [AsyncResul
 
 ## <a name="example"></a>示例
 
-下面的示例调用 `makeEwsRequestAsync` 使用 [GetItem](/exchange/client-developer/web-service-reference/getitem-operation) 操作获取项目的主题。 此示例包括以下三个函数：
+下面的示例调用 `makeEwsRequestAsync` 使用 [GetItem](/exchange/client-developer/web-service-reference/getitem-operation) 操作获取项目的主题。 此示例包括以下三个函数。
 
--  `getSubjectRequest`&ndash;将项目 ID 作为输入，并返回 SOAP 请求的 XML，以 `GetItem` 调用指定项。
+- `getSubjectRequest`&ndash;将项目 ID 作为输入，并返回 SOAP 请求的 XML，以 `GetItem` 调用指定项。
 
--  `sendRequest`调用 获取选定项目的 SOAP 请求，然后传递 SOAP 请求和回调方法 ，获取指定 &ndash;  `getSubjectRequest` `callback` `makeEwsRequestAsync` 项目的主题。
+- `sendRequest`调用 获取选定项目的 SOAP 请求，然后传递 SOAP 请求和回调方法 ，获取指定 &ndash;  `getSubjectRequest` `callback` `makeEwsRequestAsync` 项目的主题。
 
--  `callback` &ndash; 处理包含有关指定项目的任何主题和其他信息的 SOAP 响应。
+- `callback` &ndash; 处理包含有关指定项目的任何主题和其他信息的 SOAP 响应。
 
 
 ```js
@@ -150,17 +150,17 @@ function callback(asyncResult)  {
 
 Outlook外接程序可以通过 方法访问 EWS 中可用的操作 `makeEwsRequestAsync` 子集。 如果您不熟悉 EWS 操作以及如何使用 方法访问操作，请从 SOAP 请求示例开始自定义 `makeEwsRequestAsync` _数据_ 参数。
 
-下面介绍了如何使用 `makeEwsRequestAsync` 方法：
+下面介绍了如何使用 `makeEwsRequestAsync` 方法。
 
 1. 在 XML 中，用适当值替换所有项目 ID 和相关 EWS 操作属性。
 
-2. 将 SOAP 请求作为 的  _data 参数_ 的参数包含 `makeEwsRequestAsync` 。
+1. 将 SOAP 请求作为 的  _data 参数_ 的参数包含 `makeEwsRequestAsync` 。
 
-3. 指定回调方法并调用 `makeEwsRequestAsync` 。
+1. 指定回调方法并调用 `makeEwsRequestAsync` 。
 
-4. 在回调方法中，验证 SOAP 响应中操作的结果。
+1. 在回调方法中，验证 SOAP 响应中操作的结果。
 
-5. 根据需要使用 EWS 操作的结果。
+1. 根据需要使用 EWS 操作的结果。
 
 下表列出了外接程序支持的 EWS 操作。若要查看 SOAP 请求和响应的示例，请选择各操作对应的链接。有关 EWS 操作的详细信息，请参阅 [在交换 EWS 操作](/exchange/client-developer/web-service-reference/ews-operations-in-exchange)。
 
@@ -208,7 +208,7 @@ Outlook外接程序可以通过 方法访问 EWS 中可用的操作 `makeEwsRequ
 - [Exchange 的 EWS 引用](/exchange/client-developer/web-service-reference/ews-reference-for-exchange)
 - [Outlook 和 Exchange 中的 EWS 的邮件应用程序](/exchange/client-developer/exchange-web-services/mail-apps-for-outlook-and-ews-in-exchange)
 
-请参阅下文，了解如何使用 ASP.NET Web API 为外接程序创建后端服务：
+请参阅以下内容，以使用 ASP.NET Web API 为外接程序创建后端 ASP.NET Web API。
 
 - [使用 ASP.NET Web API 为 Office 外接程序创建 Web 服务](/archive/blogs/officeapps/create-a-web-service-for-an-app-for-office-using-the-asp-net-web-api)
 - [使用 ASP.NET Web API 构建 HTTP 服务的基础知识](https://dotnet.microsoft.com/apps/aspnet/apis)

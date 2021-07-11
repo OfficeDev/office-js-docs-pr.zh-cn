@@ -3,12 +3,12 @@ title: 使用 Excel JavaScript API 处理图表
 description: 演示使用 JavaScript API 的图表Excel示例。
 ms.date: 07/17/2019
 localization_priority: Normal
-ms.openlocfilehash: e164384f70e644637d8928a124415ff007c8b475
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: a7199aae31e917b0609a47cc69b5e52279d43b24
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53075892"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53349572"
 ---
 # <a name="work-with-charts-using-the-excel-javascript-api"></a>使用 Excel JavaScript API 处理图表
 
@@ -209,7 +209,7 @@ Excel.run(function (ctx) {
 getImage(width?: number, height?: number, fittingMode?: Excel.ImageFittingMode): OfficeExtension.ClientResult<string>;
 ```
 
-这些参数决定图像的大小。 图像始终按比例缩放。 宽度和高度参数在缩放图像上设置上限或下限。 `ImageFittingMode` 具有三个值和以下行为：
+这些参数决定图像的大小。 图像始终按比例缩放。 宽度和高度参数在缩放图像上设置上限或下限。 `ImageFittingMode` 具有以下行为的三个值。
 
 - `Fill`：图像的最小高度或宽度是指定的高度或宽度 (缩放图像缩放时首先达到) 。 这是未指定调整模式时的默认行为。
 - `Fit`：图像的最大高度或宽度是指定的高度或宽度 (缩放图像缩放时首先到达) 。

@@ -3,16 +3,16 @@ title: 使用正则表达式激活规则显示加载项
 description: 了解如何为 Outlook 上下文加载项使用正则表达式激活规则。
 ms.date: 07/28/2020
 localization_priority: Normal
-ms.openlocfilehash: 4a5507b410ed729f76c3efa0119e87c6a6dbc71a
-ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
+ms.openlocfilehash: d334ba6b2e0f044fc8d876cd6edd218743ccb390
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "47292473"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53348851"
 ---
 # <a name="use-regular-expression-activation-rules-to-show-an-outlook-add-in"></a>使用正则表达式激活规则显示 Outlook 外接程序
 
-可以将正则表达式规则指定为在邮件的特定字段中找到匹配项时激活[上下文外接程序](contextual-outlook-add-ins.md)。 上下文外接程序仅在阅读模式下激活，Outlook 不会在用户撰写某个项目时激活上下文外接程序。 还有一些其他方案，Outlook 不会在其中激活外接程序，例如，经过数字签名的项目。 有关详细信息，请参阅 [Outlook 外接程序的激活规则](activation-rules.md)。
+可以将正则表达式规则指定为在邮件的特定字段中找到匹配项时激活[上下文外接程序](contextual-outlook-add-ins.md)。 上下文外接程序仅在阅读模式下激活，Outlook 不会在用户撰写某个项目时激活上下文外接程序。 还有其他一些情况Outlook激活外接程序，例如，数字签名项目。 有关详细信息，请参阅 [Outlook 外接程序的激活规则](activation-rules.md)。
 
 你可以将正则表达式指定为外接程序 XML 清单中的 [ItemHasRegularExpressionMatch](../reference/manifest/rule.md#itemhasregularexpressionmatch-rule) 规则或 [ItemHasKnownEntity](../reference/manifest/rule.md#itemhasknownentity-rule) 规则的一部分。 在 [DetectedEntity](../reference/manifest/extensionpoint.md#detectedentity) 扩展点中指定了这些规则。
 
@@ -44,7 +44,7 @@ Outlook 基于客户端计算机上浏览器所使用的 JavaScript 解释器的
 
 ### <a name="best-practices-for-using-regular-expressions-in-rules"></a>在规则中使用正则表达式的最佳做法
 
-在使用正则表达式时应特别注意以下几点：
+在使用正则表达式时，请特别注意以下几点。
 
 - 如果在项目的正文中指定 `ItemHasRegularExpressionMatch` 规则，则正则表达式应进一步筛选正文，不应尝试返回该项目的整个正文。 使用正则表达式（如 `.*`）来尝试获取项目的整个正文并不总是返回预期的结果。
 - 一个浏览器上返回的纯文本正文与另一个浏览器上返回的纯文本正文可能略有不同。 如果使用含有 `BodyAsPlaintext` 的 `ItemHasRegularExpressionMatch` 规则作为 `PropertyName` 属性，请在你的外接程序支持的所有浏览器上测试正则表达式。
@@ -53,7 +53,7 @@ Outlook 基于客户端计算机上浏览器所使用的 JavaScript 解释器的
 
 - Outlook 富客户端与 Outlook 网页版或 Outlook Mobile 之间的项目的 HTML 正文略有不同。 请仔细定义正则表达式。
 
-- 根据要应用正则表达式的 Outlook 客户端、设备类型或属性，在将正则表达式设计为激活规则时，应注意的每个客户端都有其他最佳做法和限制。有关详细信息，请参阅适用于 [激活的限制和适用于 Outlook 外接程序的 JAVASCRIPT API](limits-for-activation-and-javascript-api-for-outlook-add-ins.md) 。
+- 根据 Outlook 客户端、设备类型或要应用正则表达式的属性，在设计正则表达式作为激活规则时，您应该了解每个客户端的其他最佳实践和限制。 有关详细信息，请参阅 [Outlook 外接程序的激活和 JavaScript API 的限制](limits-for-activation-and-javascript-api-for-outlook-add-ins.md)。
 
 ### <a name="examples"></a>示例
 
@@ -97,7 +97,7 @@ Outlook 基于客户端计算机上浏览器所使用的 JavaScript 解释器的
 `ItemHasKnownEntity` 规则根据所选项目的主题或正文中是否存在实体来激活外接程序。 [EntityType](/javascript/api/outlook/office.mailboxenums.entitytype) 类型定义受支持的实体。 在 `ItemHasKnownEntity` 规则中应用正则表达式，可为基于实体（例如，一组特定的 URL，或含有某个区号的电话号码）的值子集进行的激活提供便利。
 
 > [!NOTE]
-> Outlook 只能提取用英语编写的实体字符串，无论清单中指定的默认区域设置如何。 仅邮件支持 `MeetingSuggestion` 实体类型；约会不支持该类型。 你无法从“已发送邮件”**** 文件夹的邮件中提取实体，也不能使用 `ItemHasKnownEntity` 规则来激活“已发送邮件”**** 文件夹中邮件的外接程序。
+> Outlook 只能提取用英语编写的实体字符串，无论清单中指定的默认区域设置如何。 仅邮件支持 `MeetingSuggestion` 实体类型；约会不支持该类型。 你无法从“已发送邮件”文件夹的邮件中提取实体，也不能使用 `ItemHasKnownEntity` 规则来激活“已发送邮件”文件夹中邮件的外接程序。
 
 `ItemHasKnownEntity` 规则支持下表中的属性。 请注意，尽管在 `ItemHasKnownEntity` 规则中指定正则表达式是可选项，如果选择使用正则表达式作为实体筛选器，则必须同时指定 `RegExFilter` 和 `FilterName` 属性。
 
@@ -124,7 +124,7 @@ Outlook 基于客户端计算机上浏览器所使用的 JavaScript 解释器的
 
 ## <a name="using-regular-expression-results-in-code"></a>在代码中使用正则表达式结果
 
-你可以通过在当前项目中使用以下方法来获取正则表达式的匹配项：
+可以通过对当前项使用下列方法获取正则表达式的匹配项。
 
 - [getRegExMatches](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods) 为在外接程序的 `ItemHasRegularExpressionMatch` 和 `ItemHasKnownEntity` 规则中指定的所有正则表达式返回当前项目中的匹配项。
 

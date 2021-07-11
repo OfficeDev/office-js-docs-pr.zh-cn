@@ -3,12 +3,12 @@ title: 排查Office加载项的开发错误
 description: 了解如何解决加载项中的Office错误。
 ms.date: 06/11/2021
 localization_priority: Normal
-ms.openlocfilehash: 7fe52ff225a2e95147e2af045b40defb162522f7
-ms.sourcegitcommit: 4fa952f78be30d339ceda3bd957deb07056ca806
+ms.openlocfilehash: 8f0ceaf13041fa27c4e9e279646e979f132913b3
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/16/2021
-ms.locfileid: "52961277"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53349273"
 ---
 # <a name="troubleshoot-development-errors-with-office-add-ins"></a>排查Office加载项的开发错误
 
@@ -29,11 +29,12 @@ ms.locfileid: "52961277"
 [!include[additional cache folders on Mac](../includes/mac-cache-folders.md)]
 
 #### <a name="for-ios"></a>对于 iOS：
+
 在加载项中通过 JavaScript 调用 `window.location.reload(true)`，以强制重载。也可以重新安装 Office。
 
 ## <a name="changes-to-static-files-such-as-javascript-html-and-css-do-not-take-effect"></a>对静态文件（例如 JavaScript、HTML 和 CSS）的更改未生效
 
-浏览器可能正在缓存这些文件。 若要阻止此操作，请在开发时关闭客户端缓存。 详细信息取决于你所使用的服务器类型。 在大多数情况下，它涉及将某些标头添加到 HTTP 响应。 我们建议使用以下设置：
+浏览器可能正在缓存这些文件。 若要阻止此操作，请在开发时关闭客户端缓存。 详细信息取决于你所使用的服务器类型。 在大多数情况下，它涉及将某些标头添加到 HTTP 响应。 建议设置以下集合。
 
 - Cache-Control：“private、no-cache、no-store”
 - Pragma：“no-cache”

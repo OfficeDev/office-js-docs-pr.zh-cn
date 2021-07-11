@@ -3,12 +3,12 @@ ms.date: 07/10/2019
 description: 将自定义函数集体进行批处理，以减少对远程服务的网络调用。
 title: 对远程服务的自定义函数调用进行批处理
 localization_priority: Normal
-ms.openlocfilehash: 2ad9532fab26ff3ec8289a8892d518ab2570c6d6
-ms.sourcegitcommit: d372de1a25dbad983fa9872c6af19a916f63f317
+ms.openlocfilehash: 0729e06df5f6e26f9726e1de0dcdaac0f101b18d
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/30/2021
-ms.locfileid: "53204995"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53349649"
 ---
 # <a name="batching-custom-function-calls-for-a-remote-service"></a>对远程服务的自定义函数调用进行批处理
 
@@ -152,7 +152,7 @@ function _makeRemoteRequest() {
 
 ### <a name="modify-_makeremoterequest-for-your-own-solution"></a>根据自己的解决方案修改 `_makeRemoteRequest`
 
-`_makeRemoteRequest` 函数调用 `_fetchFromRemoteService`，正如稍后将会看到的，后者只是一个表示远程服务的模拟。 这使得研究和运行本文中的代码更加容易。 但是，如果要将此代码用于实际的远程服务，则应进行以下更改：
+`_makeRemoteRequest` 函数调用 `_fetchFromRemoteService`，正如稍后将会看到的，后者只是一个表示远程服务的模拟。 这使得研究和运行本文中的代码更加容易。 但是，当您希望将此代码用于实际远程服务时，应进行以下更改。
 
 - 决定如何通过网络将批处理运算序列化。 例如，你可能希望将数组放入 JSON 主体中。
 - 你不需要调用 `_fetchFromRemoteService`，而是需要对传递批量运算的远程服务进行实际的网络调用。
@@ -206,7 +206,7 @@ function pause(ms: number) {
 
 ### <a name="modify-_fetchfromremoteservice-for-your-live-remote-service"></a>根据自己的实时远程服务修改 `_fetchFromRemoteService`
 
-若要修改 `_fetchFromRemoteService` 以便在实时远程服务中运行，请进行以下更改：
+若要修改 `_fetchFromRemoteService` 函数以在实时远程服务中运行，请进行以下更改。
 
 - 根据服务器平台（Node.js 或其他平台），将客户端网络调用映射到此函数。
 - 删除作为模拟的一部分来模拟网络延迟的 `pause` 函数。

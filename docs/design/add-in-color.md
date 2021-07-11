@@ -3,12 +3,12 @@ title: Office 外接程序的颜色准则
 description: 了解如何在加载项的 UI Office颜色。
 ms.date: 05/12/2021
 localization_priority: Normal
-ms.openlocfilehash: 04d93010cfd4c3359e2c87ef224487b00a218318
-ms.sourcegitcommit: 30f6c620380075e3459cac748ca0c656427b384d
+ms.openlocfilehash: 8a1fc8103ae945afdcaea45e5a9b2dd0954f893f
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/12/2021
-ms.locfileid: "52330064"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53349194"
 ---
 # <a name="color"></a>颜色
 
@@ -21,10 +21,11 @@ ms.locfileid: "52330064"
 Office 应用程序使客户能够通过应用 Office UI 主题个性化设置其界面。 客户可以在四个 UI 主题中进行选择来改变背景样式以及 Word、PowerPoint、Excel 和 Office 套件中其他应用程序的按钮。 若要使加载项感觉自己就像是个性化Office，请使用我们"Theming"API。 例如，任务窗格背景颜色在某些主题中切换到深灰色。 我们的主题 API 允许你照做并调整前景文本，以确保[辅助功能](../design/accessibility-guidelines.md)。
 
 > [!NOTE]
+>
 > - 对于邮件和任务窗格外接程序，请使用 [Context.officeTheme](/javascript/api/office/office.context) 元素匹配 Office 应用程序的主题。 此 API 当前在 Office 2016 或更高版本中可用。
-> - 对于 PowerPoint 内容加载项，请参阅[在 PowerPoint 加载项中使用 Office 主题](../powerpoint/use-document-themes-in-your-powerpoint-add-ins.md)。
+> - 对于 PowerPoint 内容外接程序，请参阅[在 PowerPoint 外接程序中使用 Office 主题](../powerpoint/use-document-themes-in-your-powerpoint-add-ins.md)。
 
-将下列一般原则应用于颜色：
+应用以下颜色一般准则。
 
 - 尽量少使用颜色来显示层次结构和强调品牌。
 - 过度使用单个应用于交互式和非交互式元素的个性色可能会导致混乱。例如，避免将相同颜色用于导航菜单中的选定和未选定项。

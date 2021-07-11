@@ -1,35 +1,35 @@
 ---
-title: 将邮件从其主页面传递到对话框的替代方法
-description: 了解在 messageChild 方法不受支持时要使用的解决方法。
+title: 将邮件从主机页传递到对话框的替代方法
+description: 了解在 messageChild 方法不受支持时使用的解决方法。
 ms.date: 09/24/2020
 localization_priority: Normal
-ms.openlocfilehash: 8f44f7f5c145b58d13e7387d01e28fd349a512fc
-ms.sourcegitcommit: b47318a24a50443b0579e05e178b3bb5433c372f
+ms.openlocfilehash: 8da6bc3e1231bc6296a16fa153dc0e4ba1bd102b
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "48279484"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53349775"
 ---
-# <a name="alternative-ways-of-passing-messages-to-a-dialog-box-from-its-host-page"></a>将邮件从其主页面传递到对话框的替代方法
+# <a name="alternative-ways-of-passing-messages-to-a-dialog-box-from-its-host-page"></a>将邮件从主机页传递到对话框的替代方法
 
-将来自父页面的数据和邮件传递到子对话框的建议方法是 `messageChild` 使用方法，如在 [office 外接程序中使用 OFFICE 对话框 API](dialog-api-in-office-add-ins.md#pass-information-to-the-dialog-box)中所述。如果外接程序在不支持 [DialogApi 1.2 要求集](../reference/requirement-sets/dialog-api-requirement-sets.md)的平台或主机上运行，则可以通过两种其他方式将信息传递到该对话框：
+将数据和消息从父页面传递到子对话框的建议方法是使用 方法，如在 Office 加载项中使用 Office 对话框 `messageChild` [API 中所述](dialog-api-in-office-add-ins.md#pass-information-to-the-dialog-box)。如果加载项运行在不支持[DialogApi 1.2](../reference/requirement-sets/dialog-api-requirement-sets.md)要求集的平台或主机上，有两种其他方法可以将信息传递到对话框：
 
 - 向传递给 `displayDialogAsync` 的 URL 添加查询参数。
-- 将信息存储在主机窗口和对话框都可访问的位置。 这两个窗口不共享一个公用会话存储 ([sessionStorage](https://developer.mozilla.org/docs/Web/API/Window/sessionStorage) 属性) ，但 *如果它们具有相同的域* (包括端口号（如果) 有），则它们共享一个公用的 [本地存储](https://www.w3schools.com/html/html5_webstorage.asp)。\*
+- 将信息存储在主机窗口和对话框都可访问的位置。 这两个窗口不共享 [Window.sessionStorage](https://developer.mozilla.org/docs/Web/API/Window/sessionStorage))  (的常见会话存储，但如果它们具有相同的域 *(包括* 端口号，如果有) ，则它们共享一个公共 [本地 存储](https://www.w3schools.com/html/html5_webstorage.asp)。\*
 
 
 > [!NOTE]
-> \*有一个 bug 将影响你的令牌处理策略。 如果加载项正使用 Safari 或 Microsoft 浏览器在 **Office 网页版**上运行，则对话框和任务窗格不共享同一本地存储，因此该存储无法用于在它们之间通信。
+> \*有一个 bug 将影响你的令牌处理策略。 如果加载项正使用 Safari 或 Microsoft 浏览器在 **Office 网页版** 上运行，则对话框和任务窗格不共享同一本地存储，因此该存储无法用于在它们之间通信。
 
 ## <a name="use-local-storage"></a>使用本地存储
 
-若要使用本地存储，请 `setItem` `window.localStorage` 先在主机页中调用对象的方法，然后再 `displayDialogAsync` 调用，如以下示例所示：
+若要使用本地存储，在调用前调用主机页中的 对象的 方法 `setItem` `window.localStorage` `displayDialogAsync` ，如以下示例所示。
 
 ```js
 localStorage.setItem("clientID", "15963ac5-314f-4d9b-b5a1-ccb2f1aea248");
 ```
 
-对话框框中的代码会在需要时读取项，如以下示例所示：
+对话框中的代码会根据需要读取项目，如以下示例所示。
 
 ```js
 var clientID = localStorage.getItem("clientID");
@@ -39,7 +39,7 @@ var clientID = localStorage.getItem("clientID");
 
 ## <a name="use-query-parameters"></a>使用查询参数
 
-下面的示例展示了如何使用查询参数传递数据：
+下面的示例展示了如何使用查询参数传递数据。
 
 ```js
 Office.context.ui.displayDialogAsync('https://myAddinDomain/myDialog.html?clientID=15963ac5-314f-4d9b-b5a1-ccb2f1aea248');
@@ -50,4 +50,4 @@ Office.context.ui.displayDialogAsync('https://myAddinDomain/myDialog.html?client
 对话框中的代码可以分析 URL，并读取参数值。
 
 > [!IMPORTANT]
-> Office 会自动向传递给 `_host_info` 的 URL 添加查询参数 `displayDialogAsync`。 （附加在自定义查询参数（若有）后面，不会附加到对话框导航到的任何后续 URL。 ）Microsoft 可能会更改此值的内容，或者将来会将其全部删除，因此代码不得读取此值。 将相同的值添加到对话框的 "会话存储" ([sessionStorage](https://developer.mozilla.org/docs/Web/API/Window/sessionStorage) 属性) 。 同样，*代码不得对此值执行读取和写入操作*。
+> Office 会自动向传递给 `_host_info` 的 URL 添加查询参数 `displayDialogAsync`。 （附加在自定义查询参数（若有）后面，不会附加到对话框导航到的任何后续 URL。 ）Microsoft 可能会更改此值的内容，或者将来会将其全部删除，因此代码不得读取此值。 相同的值将添加到对话框的会话存储 ([Window.sessionStorage](https://developer.mozilla.org/docs/Web/API/Window/sessionStorage)) 。 同样，*代码不得对此值执行读取和写入操作*。

@@ -3,12 +3,12 @@ title: 确认 Office 加载项与已有的COM 加载项兼容
 description: 启用你的Office加载项和等效 COM 加载项之间的兼容性。
 ms.date: 03/09/2021
 localization_priority: Normal
-ms.openlocfilehash: e2ab1bb1eda548ff8e0923b8fbccfa9e007a6a0c
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: c475189ec19cbb0de1a070f6c529db3c59a093d8
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53075997"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53349803"
 ---
 # <a name="make-your-office-add-in-compatible-with-an-existing-com-add-in"></a>确认 Office 加载项与已有的COM 加载项兼容
 
@@ -70,7 +70,7 @@ ms.locfileid: "53075997"
 
 ## <a name="equivalent-behavior-for-users"></a>用户的等效行为
 
-如果指定了等效[COM](#specify-an-equivalent-com-add-in)加载项，Windows 上的 Office 将不会显示 Office 加载项的用户界面 (UI) 如果安装了等效的 COM 加载项。 Office仅隐藏加载项的功能Office按钮，不会阻止安装。 因此Office外接程序仍将显示在 UI 中的以下位置：
+如果指定了等效[COM](#specify-an-equivalent-com-add-in)加载项，Windows 上的 Office 将不会显示 Office 加载项的用户界面 (UI) 如果安装了等效的 COM 加载项。 Office仅隐藏加载项的功能Office按钮，不会阻止安装。 因此Office外接程序仍将显示在 UI 内的以下位置。
 
 - 在 **"我的外接程序"下**
 - 作为功能区管理器中的条目， (Excel、Word 和 PowerPoint仅) 

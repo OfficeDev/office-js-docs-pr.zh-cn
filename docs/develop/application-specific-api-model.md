@@ -3,12 +3,12 @@ title: 使用应用程序专用 API 模型
 description: 了解 Excel、OneNote 和 Word 加载项基于承诺的 API 模型。
 ms.date: 09/08/2020
 localization_priority: Normal
-ms.openlocfilehash: fb25201174dcd97b40ccf6be69b238951103db07
-ms.sourcegitcommit: c6308cf245ac1bc66a876eaa0a7bb4a2492991ac
-ms.translationtype: HT
+ms.openlocfilehash: 5cf1d088dfa883e5df9eaba25e395857cfce9f5c
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "47408598"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53350062"
 ---
 # <a name="using-the-application-specific-api-model"></a>使用应用程序专用 API 模型
 
@@ -169,7 +169,7 @@ someRange.load("format/font/name")
 如果在不 `load()` 参数的情况下调用对象（或集合）上的标量方法，将加载该对象或集合对象的所有标量属性。 加载不需要的数据会降低加载项的加载速度。 应始终显式指定要加载的属性。
 
 > [!IMPORTANT]
-> 无参数 `load` 语句返回的数据量可能超过该服务的大小限制。 为了降低较旧加载项的风险，`load` 不会在明确请求它们之前返回某些属性。 此类加载操作中排除了以下属性：
+> 无参数 `load` 语句返回的数据量可能超过该服务的大小限制。 为了降低较旧加载项的风险，`load` 不会在明确请求它们之前返回某些属性。 以下属性从此类加载操作中排除。
 >
 > * `Excel.Range.numberFormatCategories`
 

@@ -3,12 +3,12 @@ title: 在 Visual Studio 中调试 Office 加载项
 description: 使用 Visual Studio 在 Windows 上的 Office 桌面客户端中调试 Office 加载项
 ms.date: 12/31/2019
 localization_priority: Normal
-ms.openlocfilehash: d325c25e6a9fe219334a6e2503718603f9e85c9c
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: 2b260ab83c513419cb32bbe3f02900e3fc4f4b41
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53076523"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53349936"
 ---
 # <a name="debug-office-add-ins-in-visual-studio"></a>在 Visual Studio 中调试 Office 加载项
 
@@ -98,7 +98,7 @@ ms.locfileid: "53076523"
 > [!NOTE]
 > 启动 Outlook 外接程序项目时，系统会提示你输入登录凭据。 如果系统要求你重复登录或收到未经授权错误，则对于你的租户上的帐户，可能会Microsoft 365基本身份验证。 在这种情况下，请尝试使用 Microsoft 帐户。 可能还需要在“Outlook Web 加载项”项目属性对话框中将属性“使用多重身份验证”设置为 True。
 
-当 Visual Studio 生成项目时，它执行以下任务：
+生成Visual Studio时，它将执行以下任务。
 
 1. 创建 XML 清单文件的副本并将其添加到 `_ProjectName_\bin\Debug\OfficeAppManifests` 目录。 托管Office的应用程序在您启动外接程序并调试外接程序时Visual Studio此副本。
 

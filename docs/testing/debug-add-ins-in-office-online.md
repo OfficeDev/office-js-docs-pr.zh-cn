@@ -3,12 +3,12 @@ title: 在 Office 网页版中调试加载项
 description: 如何使用 Office 网页版来测试和调试加载项。
 ms.date: 07/07/2020
 localization_priority: Normal
-ms.openlocfilehash: f7ef3fa3d6389629e28b428b9bdbe3b128896b1f
-ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
+ms.openlocfilehash: 1ec844af555ab55d7592a9d764c6173ea9780016
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "45094489"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53350180"
 ---
 # <a name="debug-add-ins-in-office-on-the-web"></a>在 Office 网页版中调试加载项
 
@@ -18,12 +18,12 @@ ms.locfileid: "45094489"
 
 首先，请执行以下操作：
 
-- 获取 Microsoft 365 开发人员帐户（如果还没有）或有权访问 SharePoint 网站。
+- 如果Microsoft 365或有权访问网站，请获取一个开发人员SharePoint帐户。
 
   > [!NOTE]
-  > 若要获取免费的90天 renewable Microsoft 365 开发人员订阅，请加入我们的[microsoft 365 开发人员计划](https://developer.microsoft.com/office/dev-program)。有关如何加入 Microsoft 365 开发人员计划和配置订阅的分步说明，请参阅[Microsoft 365 开发人员计划文档](/office/developer-program/office-365-developer-program)。
+  > 若要获取为期 90 天的免费可续订Microsoft 365订阅，请加入我们的 Microsoft 365[开发人员计划](https://developer.microsoft.com/office/dev-program)。 有关如何[Microsoft 365](/office/developer-program/office-365-developer-program)开发人员计划并配置订阅的分步说明，请参阅 Microsoft 365 开发人员计划文档。
 
-- 在 SharePoint Online 上设置应用程序目录。应用程序目录是 SharePoint Online 中的专用网站集，它托管 Office 外接程序的文档库。如果你有自己的 SharePoint 网站，则可以设置应用程序目录文档库。有关详细信息，请参阅[将任务窗格和内容外接程序发布到 SharePoint 上的应用程序目录](../publish/publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md)。
+- 在 SharePoint Online 上设置应用程序目录。 应用程序目录是 SharePoint Online 中的专用网站集，Office外接程序的文档库。如果你有自己的网站SharePoint，可以设置应用程序目录文档库。 有关详细信息，请参阅上的将任务窗格和内容加载项发布到[应用程序SharePoint。](../publish/publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md)
 
 
 ## <a name="debug-your-add-in-from-excel-or-word-on-the-web"></a>在 Excel 网页版或 Word 网页版中调试加载项
@@ -35,7 +35,7 @@ ms.locfileid: "45094489"
     > [!NOTE]
     > 建议使用 [Yeoman 生成器](https://github.com/OfficeDev/generator-office)创建和托管加载项。
 
-2. 在[加载项清单文件](../develop/add-in-manifests.md)中，将 **SourceLocation** 元素值更新为包括绝对 URI，而不是相对 URI。例如：
+2. 在 [加载项清单文件](../develop/add-in-manifests.md)中，将 **SourceLocation** 元素值更新为包括绝对 URI，而不是相对 URI。例如：
 
     ```xml
     <SourceLocation DefaultValue="https://localhost:44300/App/Home/Home.html" />
@@ -43,15 +43,15 @@ ms.locfileid: "45094489"
 
 3. 将清单上传到 SharePoint 上应用程序目录中的 Office 加载项文档库。
 
-4. 从 Microsoft 365 中的应用启动器启动 Excel 或 Word，然后打开一个新文档。
+4. 从Excel启动Word web 版启动器启动Microsoft 365，然后打开一个新文档。
 
-5. 在“插入”选项卡上选择“我的外接程序”**** 或“Office 外接程序”**** 以插入您的外接程序并在应用程序中进行测试。
+5. 在“插入”选项卡上选择“我的外接程序”或“Office 外接程序”以插入您的外接程序并在应用程序中进行测试。
 
 6. 使用常用浏览器工具调试器调试加载项。
 
 ## <a name="potential-issues"></a>潜在问题
 
-下面介绍了一些在调试过程中可能会遇到的问题：
+以下是在调试时可能会遇到的一些问题。
 
 - 你看到的一些 JavaScript 错误可能源自 Office 网页版。
 

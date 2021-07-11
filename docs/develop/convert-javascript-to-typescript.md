@@ -1,21 +1,21 @@
 ---
 title: 在 Visual Studio 中将 Office 加载项项目转换为使用 TypeScript
-description: 了解如何将 Office 加载项项目转换为Visual Studio TypeScript。
+description: 了解如何在 Office 中转换加载项Visual Studio TypeScript。
 ms.date: 09/01/2020
 localization_priority: Normal
-ms.openlocfilehash: 2134727a6065a1236dca313721d7721657e9a677
-ms.sourcegitcommit: d28392721958555d6edea48cea000470bd27fcf7
+ms.openlocfilehash: 2932c94052735436ce1357966832528679e6900d
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/13/2021
-ms.locfileid: "49839962"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53349978"
 ---
 # <a name="convert-an-office-add-in-project-in-visual-studio-to-typescript"></a>在 Visual Studio 中将 Office 加载项项目转换为使用 TypeScript
 
 可以使用 Visual Studio 中的 Office 加载项模板，创建使用 JavaScript 的加载项，再将加载项项目转换为使用 TypeScript。 本文介绍了 Excel 加载项的此转换过程。 可以按照相同的过程操作，在 Visual Studio 中将其他类型的 Office 外接程序项目从 JavaScript 转换为 TypeScript。
 
 > [!IMPORTANT]
-> 本文介绍了确保按F5 时代码将转换为 JavaScript（然后自动旁加载到 Office）所需的最少步骤。 但是，代码不是"TypeScripty"。 例如，变量是使用关键字而不是关键字声明 `var` 的， `let` 并且它们不是使用指定类型声明的。 若要充分利用 TypeScript 的强键入，请考虑进一步更改代码。 
+> 本文介绍了 *确保按* F5 时代码将转换为 JavaScript 所需的最少步骤，JavaScript 随后会自动旁加载至Office。 但是，代码不是非常"TypeScripty"。 例如，变量是使用关键字声明的，而不是使用指定类型 `var` `let` 声明的。 若要充分利用 TypeScript 的强键入，请考虑对代码进行进一步更改。 
 
 > [!NOTE]
 > 若不想使用 Visual Studio 创建 Office 加载项 TypeScript 项目，请按照任何 [5 分钟快速入门](../index.yml)的“Yeoman 生成器”部分中的说明操作，并在[适用于 Office 外接程序的 Yeoman 生成器](https://github.com/OfficeDev/generator-office)显示提示时选择 `TypeScript`。
@@ -56,7 +56,7 @@ ms.locfileid: "49839962"
 
 4. 从“**工具**”选项卡中，选择“**NuGet 程序包管理器**”，然后选择“**管理解决方案的 NuGet 程序包...**”。
 
-5. 选中 **"浏览"** 选项卡后，输入 **jquery。TypeScript.DefinitelyTyped**。 安装此程序包，或更新程序包（如果已安装）。 这将确保 jQuery TypeScript 定义包含在项目中。 jQuery 的包显示在由 Visual Studio 生成的文件中 **，称为** packages.config。
+5. 选中" **浏览"** 选项卡后，输入 **jquery。TypeScript.DefinitelyTyped**。 安装此程序包，或更新（如果已安装）。 这将确保在项目中包括 jQuery TypeScript 定义。 jQuery 包显示在由 Visual Studio 生成的文件中，称为 **packages.config。**
 
     > [!NOTE]
     > 在 TypeScript 项目中，可以混合使用 TypeScript 和 JavaScript 文件，项目都可以进行编译。这是因为 TypeScript 是键入的 JavaScript 超集，可以编译 JavaScript。
@@ -65,12 +65,12 @@ ms.locfileid: "49839962"
 
     ```TypeScript
     Office.initialize = function (reason) {
-        // add the following line
+        // Add the following line.
         (window as any).Promise = OfficeExtension.Promise;
         ...
     ```
 
-7. 在 **Home.ts** 中，找到 `displaySelectedCells` 函数，将整个函数替换为以下代码，然后保存文件：
+7. 在 **Home.ts** 中，找到 函数，将整个 `displaySelectedCells` 函数替换为以下代码，然后保存文件。
 
     ```TypeScript
     function displaySelectedCells() {

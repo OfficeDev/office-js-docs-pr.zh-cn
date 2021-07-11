@@ -3,12 +3,12 @@ title: 加载项命令的基本概念
 description: 了解如何将自定义功能区按钮和菜单项添加到 Office 作为 Office 加载项的一部分。
 ms.date: 01/29/2021
 localization_priority: Priority
-ms.openlocfilehash: 922148130aa5384050813155819d2db4c75fe284
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: 1f34a6335949a4cbd2a0f58cdefa12426414770e
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53076137"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53349180"
 ---
 # <a name="add-in-commands-for-excel-powerpoint-and-word"></a>Excel、PowerPoint 和 Word 的加载项命令
 
@@ -99,7 +99,7 @@ ms.locfileid: "53076137"
 
 ## <a name="best-practices"></a>最佳做法
 
-在开发外接程序命令时应用下面的最佳做法：
+在开发外接程序命令时应用下面的最佳做法。
 
 - 使用命令来表示会给用户带来明确具体结果的特定操作。不要在单个按钮中组合多个操作。
 - 提供使您的外接程序中的常见任务执行效率更高的具体操作。尽量减少完成一个操作的步骤。

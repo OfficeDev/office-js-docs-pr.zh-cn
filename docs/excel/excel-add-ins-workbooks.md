@@ -4,12 +4,12 @@ description: 了解如何使用 JavaScript API 对工作簿或应用程序级别
 ms.date: 06/07/2021
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: 6a32ad5e50e23868d0c079697411366f3f68af17
-ms.sourcegitcommit: aa73ec6367eaf74399fbf8d6b7776d77895e9982
+ms.openlocfilehash: 78cdf57ce6ecce3e9e3e40188b3325cdf15ab265
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/03/2021
-ms.locfileid: "53290752"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53349425"
 ---
 # <a name="work-with-workbooks-using-the-excel-javascript-api"></a>使用 Excel JavaScript API 处理工作簿
 
@@ -314,7 +314,7 @@ Excel.run(async (context) => {
 
 ### <a name="set-calculation-mode"></a>设置计算模式
 
-默认情况下，当引用的单元格发生更改时，Excel 会重新计算公式结果。 调整此计算行为可以改进加载项的性能。 Application 对象包含一个 `CalculationMode` 类型的 `calculationMode` 属性。 可以将此属性设置为下列值：
+默认情况下，当引用的单元格发生更改时，Excel 会重新计算公式结果。 调整此计算行为可以改进加载项的性能。 Application 对象包含一个 `CalculationMode` 类型的 `calculationMode` 属性。 可以设置为以下值。
 
 - `automatic`：默认的重新计算行为，每当相关数据发生更改时 Excel 都会计算新的公式结果。
 - `automaticExceptTables`：与 `automatic` 相同，但会忽略对表中值的任何更改。
@@ -322,7 +322,7 @@ Excel.run(async (context) => {
 
 ### <a name="set-calculation-type"></a>设置计算类型
 
-[Application](/javascript/api/excel/excel.application) 对象提供了一个用于强制立即进行重新计算的方法。 `Application.calculate(calculationType)` 将基于指定的 `calculationType` 启动手动重新计算。 可以指定下列值：
+[Application](/javascript/api/excel/excel.application) 对象提供了一个用于强制立即进行重新计算的方法。 `Application.calculate(calculationType)` 将基于指定的 `calculationType` 启动手动重新计算。 可指定以下值。
 
 - `full`：重新计算所有打开的工作簿中的所有公式，无论它们自上次重新计算后是否发生了更改。
 - `fullRebuild`：检查从属的公式，然后重新计算所有打开的工作簿中的所有公式，无论它们自上次重新计算后是否发生了更改。
@@ -377,7 +377,7 @@ function workbookActivated(event) {
 
 ## <a name="save-the-workbook"></a>保存工作簿
 
-`Workbook.save` 会将工作簿保存到永久存储区。 `save` 方法采用单个可选 `saveBehavior` 参数，该参数可为以下值之一：
+`Workbook.save` 会将工作簿保存到永久存储区。 `save`方法采用一个可选 `saveBehavior` 参数，该参数可以是下列值之一。
 
 - `Excel.SaveBehavior.save`（默认）：保存文件，但不提示用户指示文件名和保存位置。 如果之前未保存文件，则文件保存到默认位置。 如果之前保存过文件，则保存到之前的位置。
 - `Excel.SaveBehavior.prompt`：如果之前未保存文件，则将提示用户指示文件名和保存位置。 如果之前已保存文件，则保存到之前的位置且不提示用户。
@@ -391,7 +391,7 @@ context.workbook.save(Excel.SaveBehavior.prompt);
 
 ## <a name="close-the-workbook"></a>关闭工作簿
 
-`Workbook.close` 会关闭工作簿，一并关闭与该工作簿关联的加载项（Excel 应用程序仍保持打开状态）。 `close` 方法采用单个可选 `closeBehavior` 参数，该参数可为以下值之一：
+`Workbook.close` 会关闭工作簿，一并关闭与该工作簿关联的加载项（Excel 应用程序仍保持打开状态）。 `close`方法采用一个可选 `closeBehavior` 参数，该参数可以是下列值之一。
 
 - `Excel.CloseBehavior.save`（默认）：在关闭前保存文件。 如果之前未保存文件，则将提示用户指示文件名和保存位置。
 - `Excel.CloseBehavior.skipSave`：立即关闭文件但不保存。 所有未保存的更改均将丢失。

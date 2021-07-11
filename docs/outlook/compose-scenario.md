@@ -3,21 +3,21 @@ title: 创建适用于撰写窗体的 Outlook 加载项
 description: 了解有关适用于撰写窗体的 Outlook 加载项的方案和功能。
 ms.date: 02/09/2021
 localization_priority: Priority
-ms.openlocfilehash: b4863bd2f64aa2076a250d34c7ec6bed3dbc1c0a
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: 59ccebafbb3991ff3edb241596f44b5939d73693
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53077097"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53348529"
 ---
 # <a name="create-outlook-add-ins-for-compose-forms"></a>创建适用于撰写窗体的 Outlook 加载项
 
-从 Office 外接程序清单的版本 1.1 的架构和 office.js v1.1 开始，可以创建撰写外接程序（即在撰写窗体中激活的 Outlook 外接程序）。与阅读外接程序（用户查看邮件或约会时在阅读模式中激活的 Outlook 外接程序）相反，撰写外接程序在以下用户方案中可用：
+从 Office 外接程序清单的版本 1.1 的架构和 office.js v1.1 开始，可以创建撰写外接程序（即在撰写窗体中激活的 Outlook 外接程序）。与阅读外接程序（用户查看邮件或约会时在阅读模式中激活的 Outlook 外接程序）相反，撰写外接程序在以下用户方案中可用。
 
 - 在撰写窗体中撰写新的邮件、会议请求或约会。
 
 - 查看或编辑现有约会或用户是组织者的会议项目。
-    
+
    > [!NOTE]
    > 如果用户使用的是 Outlook 2013 和 Exchange 2013 的 RTM 版本，在查看由用户组织的会议项目时，用户可以发现读取加载项是可用的。 从 Office 2013 SP1 版本开始进行了更改，在同一方案中，只有撰写外接程序能够激活并可用。
 

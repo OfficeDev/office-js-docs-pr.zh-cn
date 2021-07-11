@@ -3,12 +3,12 @@ title: 适用于 Visual Studio Code 的 Microsoft Office 加载项调试器扩�
 description: 使用Visual Studio Code调试Microsoft Office调试器中的扩展Office调试外接程序。
 ms.date: 02/01/2021
 localization_priority: Normal
-ms.openlocfilehash: 264a5d43a8b4f0faf7d6216664d30d7c8b64cccc
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: 3daedb48bdec5a17dfc220f049a8e2cdc86ac398
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53077118"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53349285"
 ---
 # <a name="microsoft-office-add-in-debugger-extension-for-visual-studio-code"></a>适用于 Visual Studio Code 的 Microsoft Office 加载项调试器扩展
 
@@ -31,60 +31,60 @@ Microsoft Office外接程序调试器扩展 for Visual Studio Code 允许你使�
 
 1. 如果需要创建加载项项目，请使用[Yo Office生成器创建一个](../quickstarts/excel-quickstart-jquery.md?tabs=yeomangenerator)。 按照命令行中的提示设置项目。 可以选择任何语言或项目类型以满足你的需求。
 
-> [!NOTE]
-> 如果已有项目，请跳过步骤 1 并移至步骤 2。
+    > [!NOTE]
+    > 如果已有项目，请跳过步骤 1 并移至步骤 2。
 
-2. 以管理员角色打开命令提示符。
+1. 以管理员角色打开命令提示符。
    ![命令提示符选项，包括"以管理员Windows 10。](../images/run-as-administrator-vs-code.jpg)
 
-3. 导航到项目目录。
+1. 导航到项目目录。
 
-4. 运行以下命令以管理员Visual Studio Code打开项目。
+1. 运行以下命令以管理员Visual Studio Code打开项目。
 
-```command&nbsp;line
-code .
-```
+    ```command&nbsp;line
+    code .
+    ```
 
-打开Visual Studio Code后，手动导航到项目文件夹。
+  打开Visual Studio Code后，手动导航到项目文件夹。
 
-> [!TIP]
-> 若要以Visual Studio Code方式打开文件，请选择"以管理员方式运行"选项，Visual Studio Code中搜索后打开Windows。
+  > [!TIP]
+  > 若要以Visual Studio Code方式打开文件，请选择"以管理员方式运行"选项，Visual Studio Code中搜索后打开Windows。
 
-5. 在 VS 代码中，选择 **CTRL + SHIFT + X** 打开扩展栏。 搜索"Microsoft Office加载项调试器"扩展并安装它。
+1. 在 VS 代码中，选择 **CTRL + SHIFT + X** 打开扩展栏。 搜索"Microsoft Office加载项调试器"扩展并安装它。
 
-6. 在你的项目 .vscode 文件夹中打开 **launch.json** 文件。 将以下代码添加到 `configurations` 部分：
+1. 在你的项目 .vscode 文件夹中打开 **launch.json** 文件。 将以下代码添加到 `configurations` 部分。
 
-```JSON
-{
-  "type": "office-addin",
-  "request": "attach",
-  "name": "Attach to Office Add-ins",
-  "port": 9222,
-  "trace": "verbose",
-  "url": "https://localhost:3000/taskpane.html?_host_Info=HOST$Win32$16.01$en-US$$$$0",
-  "webRoot": "${workspaceFolder}",
-  "timeout": 45000
-}
-```
+    ```JSON
+    {
+      "type": "office-addin",
+      "request": "attach",
+      "name": "Attach to Office Add-ins",
+      "port": 9222,
+      "trace": "verbose",
+      "url": "https://localhost:3000/taskpane.html?_host_Info=HOST$Win32$16.01$en-US$$$$0",
+      "webRoot": "${workspaceFolder}",
+      "timeout": 45000
+    }
+    ```
 
-7. 在刚刚复制的 JSON 部分中，找到"url"部分。 在此 URL 中，您需要将大写的 HOST 文本替换为托管您的外接程序Office应用程序。 例如，如果Office外接程序用于 Excel，则 URL 值将是 https://localhost:3000/taskpane.html?_host_Info= <strong>"Excel</strong>$Win 32$16.01$en-US$ \$ \$ \$ 0"。
+1. 在刚刚复制的 JSON 部分中，找到"url"部分。 在此 URL 中，您需要将大写的 HOST 文本替换为托管您的外接程序Office应用程序。 例如，如果Office外接程序用于 Excel，则 URL 值将是 https://localhost:3000/taskpane.html?_host_Info= <strong>"Excel</strong>$Win 32$16.01$en-US$ \$ \$ \$ 0"。
 
-8. 打开命令提示符，并确保位于项目的根文件夹。 运行命令 `npm start` 以启动开发服务器。 当加载项在客户端Office时，打开任务窗格。
+1. 打开命令提示符，并确保位于项目的根文件夹。 运行命令 `npm start` 以启动开发服务器。 当加载项在客户端Office时，打开任务窗格。
 
-9. 返回到"Visual Studio Code并选择"查看 **>调试"** 或输入 **Ctrl + Shift + D** 以切换到调试视图。
+1. 返回到"Visual Studio Code并选择"查看 **>调试"** 或输入 **Ctrl + Shift + D** 以切换到调试视图。
 
-10. 从"调试"选项中，选择"**附加到Office加载项"。** 从 **菜单中选择 F5** 或 **>** 调试 -开始调试"开始调试。
+1. 从"调试"选项中，选择"**附加到Office加载项"。** 从 **菜单中选择 F5** 或 **>** 调试 -开始调试"开始调试。
 
-11. 在项目的任务窗格文件中设置断点。 通过将鼠标悬停在代码行Visual Studio Code并选择出现的红色圆圈，可以在代码中设置断点。
+1. 在项目的任务窗格文件中设置断点。 通过将鼠标悬停在代码行Visual Studio Code并选择出现的红色圆圈，可以在代码中设置断点。
 
-![在代码行中出现红色圆圈Visual Studio Code。](../images/set-breakpoint.jpg)
+    ![在代码行中出现红色圆圈Visual Studio Code。](../images/set-breakpoint.jpg)
 
-12. 运行加载项。 你将看到已命中的断点，并且你可以检查本地变量。
+1. 运行加载项。 你将看到已命中的断点，并且你可以检查本地变量。
 
 ## <a name="see-also"></a>另请参阅
 
-* [测试和调试 Office 加载项](test-debug-office-add-ins.md)
+- [测试和调试 Office 加载项](test-debug-office-add-ins.md)
 
-* [使用 Windows 10 上的开发人员工具调试加载项](debug-add-ins-using-f12-developer-tools-on-windows-10.md)
+- [使用 Windows 10 上的开发人员工具调试加载项](debug-add-ins-using-f12-developer-tools-on-windows-10.md)
 
-* [使用 Windows 上的 Microsoft Edge WebView2 （基于 Chromium）调试加载项](debug-desktop-using-edge-chromium.md)
+- [使用 Windows 上的 Microsoft Edge WebView2 （基于 Chromium）调试加载项](debug-desktop-using-edge-chromium.md)

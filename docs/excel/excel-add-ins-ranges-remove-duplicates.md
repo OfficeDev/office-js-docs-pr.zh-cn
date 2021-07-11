@@ -4,12 +4,12 @@ description: 了解如何使用 JavaScript API Excel删除重复项。
 ms.date: 04/02/2021
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: 859214d36bdf66a284304ba1d5f7f2d642b718cb
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: e3c1ddf45f50e87ccc77044b1425e6f021756f60
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53075766"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53349481"
 ---
 # <a name="remove-duplicates-using-the-excel-javascript-api"></a>使用 JavaScript API Excel重复项
 
@@ -21,7 +21,7 @@ ms.locfileid: "53075766"
 
 `removeDuplicates` 使用 `number[]` 来表示已执行重复项检查的列索引。 此数组从零开始并且与区域而不是与工作表相关。 该方法还采用一个布尔参数，该参数指定第一行是否是标题。 如果为 **true**，则在考虑重复项时将忽略顶行。 该方法返回一个对象，该对象指定删除的行数和剩余 `removeDuplicates` `RemoveDuplicatesResult` 的唯一行数。
 
-使用区域的方法 `removeDuplicates` 时，请记住以下事项：
+使用区域的方法 `removeDuplicates` 时，请牢记以下事项。
 
 - `removeDuplicates` 会考虑单元格值，而不是函数结果。 如果两个不同的函数具有相同的求值结果，则不会将单元格值视为重复项。
 - `removeDuplicates` 不会忽略空单元格。 空单元格的值与任何其他值具有相同的处理方式。 这意味着区域内所含的空行将包含在 `RemoveDuplicatesResult` 中。

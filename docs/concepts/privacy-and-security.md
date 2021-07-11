@@ -3,12 +3,12 @@ title: Office 加载项的隐私和安全
 description: 了解加载项平台的隐私Office安全方面。
 ms.date: 03/19/2021
 localization_priority: Normal
-ms.openlocfilehash: de33e0031a8deef8632cb82baaf3ac9aa2e95c90
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: fd2fbecf8af8b0e76073735ba21c140214948363
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53076187"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53349152"
 ---
 # <a name="privacy-and-security-for-office-add-ins"></a>Office 加载项的隐私和安全
 
@@ -160,7 +160,7 @@ Outlook 外接程序通过特定的资源使用率监视提供额外安全和性
 
 克服此限制的一个方法就是使用 JSON/P --通过包含一个脚本标记（其 **src** 属性指向另一个域中承载的一些脚本）为 Web 服务提供代理。 你可以编程方式创建 **script** 标记，动态创建 **src** 属性所指向的 URL，并通过 URI 查询参数将参数传递到 URL。 Web 服务提供程序在特定的 URL 位置创建和托管 JavaScript 代码，并根据 URI 查询参数返回不同的脚本。 这些脚本然后在插入位置执行并按照预期的方式工作。
 
-以下是 Outlook 外接程序示例中的 JSON/P 的示例。 
+以下是 Outlook 外接程序示例中的 JSON/P 的示例。
 
 ```js
 // Dynamically create an HTML SCRIPT element that obtains the details for the specified video.
@@ -194,7 +194,7 @@ Exchange 和 SharePoint 提供了客户端代理以实现跨域访问。通常�
 
 - 如果要使用 jQuery，请使用 [.text()](https://api.jquery.com/text/) 方法，而非 [.html()](https://api.jquery.com/html/) 方法。
 
-- 使用 [toStaticHTML](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference) 方法可在将用户输入传递到 **innerHTML** 之前删除用户输入中的所有动态 HTML 元素和属性。
+- 使用 [toStaticHTML](https://developer.mozilla.org/docs/Web/HTML/Reference) 方法可在将用户输入传递到 **innerHTML** 之前删除用户输入中的所有动态 HTML 元素和属性。
 
 - 使用 [encodeURIComponent](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/encodeuricomponent) 或 [encodeURI](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/encodeuri) 函数可对应为来自用户输入或包含用户输入的 URL 的文本进行编码。
 

@@ -3,12 +3,12 @@ title: 验证 Office 加载项的清单
 description: 了解如何使用 XML 架构和其他工具Office加载项的清单。
 ms.date: 09/18/2020
 localization_priority: Normal
-ms.openlocfilehash: 8ac543719011339b3f22a6fb77f01c0e9ed6d930
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: 66127652a9abd00a3d1cb2e92a8a780b0c029327
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53075535"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53348620"
 ---
 # <a name="validate-an-office-add-ins-manifest"></a>验证 Office 加载项的清单
 
@@ -19,7 +19,7 @@ ms.locfileid: "53075535"
 
 ## <a name="validate-your-manifest-with-the-yeoman-generator-for-office-add-ins"></a>使用适用于 Office 加载项的 Yeoman 生成器来验证清单
 
-如果你使用了[适用于 Office 加载项的 Yeoman 生成器](https://www.npmjs.com/package/generator-office)来创建加载项，则也可以使用它来验证项目的清单文件。 在项目的根目录中运行以下命令：
+如果你使用了[适用于 Office 加载项的 Yeoman 生成器](https://www.npmjs.com/package/generator-office)来创建加载项，则也可以使用它来验证项目的清单文件。 在项目的根目录中运行以下命令。
 
 ```command&nbsp;line
 npm run validate
@@ -36,20 +36,20 @@ npm run validate
 
 1. 安装 [Node.js](https://nodejs.org/download/)。
 
-2. 打开命令提示符，然后使用以下命令安装验证程序。
+1. 打开命令提示符，然后使用以下命令安装验证程序。
 
     ```command&nbsp;line
     npm install -g office-addin-manifest
     ```
 
-3. 在项目的 *根目录中运行以下命令*。
+1. 在项目的 *根目录中运行以下命令*。
 
     ```command&nbsp;line
     npm run validate
     ```
 
     > [!NOTE]
-    > 如果此命令不可用或无法工作，请改为运行以下命令以强制使用最新版本的 office-addin-manifest 工具 (将 替换为清单文件 `MANIFEST_FILE` 名称) ：
+    > 如果此命令不可用或无法工作，请改为运行以下命令以强制使用最新版本的 office-addin-manifest 工具 (以清单文件名称替换 `MANIFEST_FILE`) 。
     >
     > ```command&nbsp;line
     > npx --ignore-existing office-addin-manifest validate MANIFEST_FILE
@@ -63,8 +63,8 @@ npm run validate
 
 1. 安装 [tar](https://www.gnu.org/software/tar/) 和 [libxml](http://xmlsoft.org/FAQ.html)（如果尚未安装的话）。
 
-2. 运行下面的命令。将 `XSD_FILE` 替换为清单 XSD 文件路径，并将 `XML_FILE` 替换为清单 XML 文件路径。
-    
+1. 运行下面的命令。将 `XSD_FILE` 替换为清单 XSD 文件路径，并将 `XML_FILE` 替换为清单 XML 文件路径。
+
     ```command&nbsp;line
     xmllint --noout --schema XSD_FILE XML_FILE
     ```

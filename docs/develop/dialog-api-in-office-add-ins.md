@@ -3,12 +3,12 @@ title: 在 Office 加载项中使用 Office 对话框 API
 description: 了解在加载项中Office的基础知识。
 ms.date: 01/28/2021
 localization_priority: Normal
-ms.openlocfilehash: 210b12f826e0d0d360163ee7663d6afca740a24d
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: 878bdeaa6752e37f8d3c67f32b42e2a5a7b962cb
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53076102"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53349915"
 ---
 # <a name="use-the-office-dialog-api-in-office-add-ins"></a>在 Office 加载项中使用 Office 对话框 API
 
@@ -40,7 +40,7 @@ Office JavaScript API 在 [Office.context.ui 命名空间](/javascript/api/offic
 
 为了打开对话框，代码（通常是任务窗格中的一页）调用 [displayDialogAsync](/javascript/api/office/office.ui) 方法，并将要打开的资源 URL 传递到此方法。 调用方法的页面称为“主机页”。 例如在任务窗格中的 index.html 页面上使用脚本调用此方法，随后 index.html 是打开此方法对话框的主机页。
 
-对话框中打开的资源通常是页面，，但也可以是 MVC 应用中的控制器方法、路由、Web 服务方法或其他任何资源。 在本文中，“页面”或“网站”是指对话框中的资源。 下面的代码就是一个非常简单的示例：
+对话框中打开的资源通常是页面，，但也可以是 MVC 应用中的控制器方法、路由、Web 服务方法或其他任何资源。 在本文中，“页面”或“网站”是指对话框中的资源。 以下代码是一个简单示例。
 
 ```js
 Office.context.ui.displayDialogAsync('https://myAddinDomain/myDialog.html');
@@ -55,13 +55,13 @@ Office.context.ui.displayDialogAsync('https://myAddinDomain/myDialog.html');
 
 加载第一个页面（或其它资源）后，用户可使用链接或其它用户界面来导航至任何使用 HTTPS 的网站（或其他资源）。 还可以将第一个页面设计为直接重定向到另一个站点。
 
-默认情况下，对话框的高度和宽度占设备屏幕的 80%。不过，也可以设置不同的百分比，只需将配置对象传递给方法即可，如以下示例所示：
+默认情况下，对话框的高度和宽度占设备屏幕的 80%。不过，你也可以设置不同的百分比，只需将配置对象传递给方法即可，如下面的示例所示。
 
 ```js
 Office.context.ui.displayDialogAsync('https://myDomain/myDialog.html', {height: 30, width: 20});
 ```
 
-有关实现这一点的样本加载项，请参阅 [Office 加载项 Dialog API 示例](https://github.com/OfficeDev/Office-Add-in-Dialog-API-Simple-Example)。 有关使用 的更多示例 `displayDialogAsync` ，请参阅 [示例](#samples)。
+有关实现这一点的示例外接程序，请参阅 [Office 外接程序对话框 API 示例](https://github.com/OfficeDev/Office-Add-in-Dialog-API-Simple-Example)。 有关使用 的更多示例 `displayDialogAsync` ，请参阅 [示例](#samples)。
 
 将两个值均设置为 100% 可有效提供全屏体验。（有效最大值为 99.5%，窗口仍可移动和调整大小。）
 
@@ -70,7 +70,7 @@ Office.context.ui.displayDialogAsync('https://myDomain/myDialog.html', {height: 
 
 ### <a name="take-advantage-of-a-performance-option-in-office-on-the-web"></a>利用 Office 网页版中的性能选项
 
-`displayInIframe` 属性是配置对象中另一个可以传递到 `displayDialogAsync` 的属性。 如果将此属性设置为 `true`，且加载项在 Office 网页版打开的文档中运行，对话框就会以浮动 iframe（而不是独立窗口）的形式打开，从而加快对话框的打开速度。 示例如下：
+`displayInIframe` 属性是配置对象中另一个可以传递到 `displayDialogAsync` 的属性。 如果将此属性设置为 `true`，且加载项在 Office 网页版打开的文档中运行，对话框就会以浮动 iframe（而不是独立窗口）的形式打开，从而加快对话框的打开速度。 示例如下。
 
 ```js
 Office.context.ui.displayDialogAsync('https://myDomain/myDialog.html', {height: 30, width: 20, displayInIframe: true});
@@ -88,7 +88,7 @@ Office.context.ui.displayDialogAsync('https://myDomain/myDialog.html', {height: 
 - 对话框中的当前页面与主机页在同一个域中。
 - JavaScript API Office加载在页面中。  (与使用 JavaScript API Office的任何页面一样，页面的脚本必须为 属性分配方法，尽管它可以 `Office.initialize` 是一个空方法。 有关详细信息，请参阅[Initialize your Office Add-in](initialize-add-in.md).) 
 
-对话框中的代码使用 [messageParent](/javascript/api/office/office.ui#messageparent-message-) 函数向主机页发送字符串消息。 该字符串可以是单词、句子、XML blob、字符串化 JSON 或其他任何可以序列化为字符串或转换为字符串的字符串。 示例如下：
+对话框中的代码使用 [messageParent](/javascript/api/office/office.ui#messageparent-message-) 函数向主机页发送字符串消息。 该字符串可以是单词、句子、XML blob、字符串化 JSON 或其他任何可以序列化为字符串或转换为字符串的字符串。 示例如下。
 
 ```js
 if (loginSuccess) {
@@ -109,7 +109,7 @@ if (loginSuccess) {
 }
 ```
 
-必须将主机页配置为接收消息。为此，可以向 `displayDialogAsync` 的原始调用添加回调参数。回调向 `DialogMessageReceived` 事件分配处理程序。示例如下：
+必须将主机页配置为接收消息。 为此，可以向 `displayDialogAsync` 的原始调用添加回调参数。 回叫会为 `DialogMessageReceived` 事件分配处理程序。 示例如下。
 
 ```js
 var dialog;
@@ -127,7 +127,7 @@ Office.context.ui.displayDialogAsync('https://myDomain/myDialog.html', {height: 
 > - `processMessage` 是用于处理事件的函数。可以根据需要任意命名。
 > - `dialog` 变量的声明范围比回调更广，因为 `processMessage` 中也会引用此变量。
 
-下面展示了 `DialogMessageReceived` 事件处理程序的简单示例：
+下面是一个非常简单的示例，展示了 `DialogMessageReceived` 事件的处理程序。
 
 ```js
 function processMessage(arg) {
@@ -155,7 +155,7 @@ function processMessage(arg) {
 
 有关使用这些技术的示例加载项，请参阅 [Office 加载项对话框 API 示例](https://github.com/OfficeDev/Office-Add-in-Dialog-API-Simple-Example)。
 
-如果加载项在收到消息后需要打开任务窗格的其他页面，可以使用 `window.location.replace` 方法（或 `window.location.href`）作为处理程序的最后一行。示例如下：
+如果外接程序在收到消息后需要打开任务窗格的其他页面，可以使用 `window.location.replace` 方法（或 `window.location.href`）作为处理程序的最后一行。示例如下。
 
 ```js
 function processMessage(arg) {
@@ -170,7 +170,7 @@ function processMessage(arg) {
 
 ### <a name="conditional-messaging"></a>条件消息
 
-由于可以从对话框发送多个 `messageParent` 调用，但在主机页中只有一个 `DialogMessageReceived` 事件处理程序，因此处理程序必须使用条件逻辑来区分不同的消息。 例如，如果对话框提示用户登录标识提供程序（如 Microsoft 帐户或 Google），则它会以消息身份发送用户配置文件。 如果身份验证失败，对话框会将错误消息发送到主机页，如下面的示例所示：
+由于可以从对话框发送多个 `messageParent` 调用，但在主机页中只有一个 `DialogMessageReceived` 事件处理程序，因此处理程序必须使用条件逻辑来区分不同的消息。 例如，如果对话框提示用户登录标识提供程序（如 Microsoft 帐户或 Google），则它会以消息身份发送用户配置文件。 如果身份验证失败，对话框将向主机页发送错误信息，如以下示例所示。
 
 ```js
 if (loginSuccess) {
@@ -216,7 +216,7 @@ function processMessage(arg) {
 
 ### <a name="use-messagechild-from-the-host-page"></a>从 `messageChild()` 主机页使用
 
-调用对话框 API Office对话框时，将返回[Dialog](/javascript/api/office/office.dialog)对象。 它应分配给比 [displayDialogAsync](/javascript/api/office/office.ui#displaydialogasync-startaddress--callback-) 方法范围更大的变量，因为对象将被其他方法引用。 示例如下：
+调用对话框 API Office对话框时，将返回[Dialog](/javascript/api/office/office.dialog)对象。 它应分配给比 [displayDialogAsync](/javascript/api/office/office.ui#displaydialogasync-startaddress--callback-) 方法范围更大的变量，因为对象将被其他方法引用。 示例如下。
 
 ```javascript
 var dialog;
@@ -302,7 +302,7 @@ function onRegisterMessageComplete(asyncResult) {
 
 ## <a name="closing-the-dialog-box"></a>关闭对话框
 
-可以在对话框中实现对话框关闭按钮。为此，关闭按钮的单击事件处理程序应使用 `messageParent` 通知主机页，关闭按钮已获单击。示例如下：
+可以在对话框中实现一个用于关闭对话框的按钮。为此，该按钮的单击事件处理程序应使用 `messageParent` 通知主机页该按钮已获得单击。示例如下。
 
 ```js
 function closeButtonClick() {

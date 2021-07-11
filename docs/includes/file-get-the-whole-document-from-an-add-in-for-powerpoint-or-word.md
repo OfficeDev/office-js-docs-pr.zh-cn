@@ -2,9 +2,9 @@
 
 ## <a name="prerequisites-for-creating-an-add-in-for-powerpoint-or-word"></a>创建 PowerPoint 或 Word 外接程序的先决条件
 
-本文假定您使用文本编辑器创建 PowerPoint 或 Word 任务窗格外接程序。若要创建任务窗格外接程序，您必须创建以下文件：
+本文假定您使用文本编辑器创建 PowerPoint 或 Word 任务窗格外接程序。 若要创建任务窗格加载项，必须创建以下文件。
 
-- 在共享网络文件夹或 Web 服务器上，您需要以下文件：
+- 在共享网络文件夹或 Web 服务器上，需要以下文件。
 
   - HTML 文件 (GetDoc_App.html) ，其中包含用户界面以及指向 JavaScript 文件 (包括 office.js 和应用程序特定的 .js 文件) 以及级联样式表 (CSS) 文件的链接。
 

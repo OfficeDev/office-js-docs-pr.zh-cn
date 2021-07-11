@@ -3,28 +3,27 @@ title: 从Office旁加载外接程序以进行测试
 description: 了解如何旁加载Office外接程序以从网络共享进行测试
 ms.date: 06/02/2020
 localization_priority: Normal
-ms.openlocfilehash: ec3780146135a4a8a04c6518971605c65ddb0c6d
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: 9a44c14669bf0a8fa842e931fc1b12601f73043b
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53077146"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53348305"
 ---
 # <a name="sideload-office-add-ins-for-testing-from-a-network-share"></a>从Office旁加载外接程序以进行测试
 
 可以通过将 Office清单发布到网络文件共享Windows在 Office 客户端中测试 (外接程序，具体) 。 此部署选项用于完成对 localhost 的开发和测试，并且希望从非本地服务器或云帐户测试外接程序。
 
 > [!IMPORTANT]
-> 生产加载项不支持通过网络共享进行部署。此方法具有以下限制：
-> 
+> 生产加载项不支持通过网络共享进行部署。此方法具有以下限制。
+>
 > - 加载项只能安装在Windows计算机上。
 > - 如果加载项的新版本更改功能区，每个用户必须重新安装加载项。
-
 
 > [!NOTE]
 > 如果你的外接程序项目是使用[外接程序的 Yeoman 生成器](https://github.com/OfficeDev/generator-office)的足够使用的版本，运行 `npm start` 时将自动在 Office 桌面客户端中旁加载外接程序。
 
-本文仅适用于测试 Word、Excel、PowerPoint 和 Project 加载项，仅适用于 Windows。 如果要在其他平台上进行测试或要测试 Outlook 加载项，请参阅以下主题之一以旁加载你的加载项：
+本文仅适用于测试 Word、Excel、PowerPoint 和 Project 加载项，仅适用于 Windows。 如果要在另一个平台上进行测试或想要测试Outlook外接程序，请参阅以下主题之一以旁加载外接程序。
 
 - [在 Office 网页版中旁加载 Office 加载项进行测试](sideload-office-add-ins-for-testing.md)
 - [在 iPad 和 Mac 上旁加载 Office 外接程序进行测试](sideload-an-office-add-in-on-ipad-and-mac.md)
@@ -38,19 +37,19 @@ ms.locfileid: "53077146"
 
 1. 在想要托管外接程序的 Windows 计算机上，转到你想用作共享文件夹目录的文件夹的父文件夹或驱动器号。
 
-2. 打开要用作共享文件夹目录的文件夹的上下文菜单（右键单击该文件夹），然后选择“**属性**”。
+1. 打开要用作共享文件夹目录的文件夹的上下文菜单（右键单击该文件夹），然后选择“**属性**”。
 
-3. 在“**属性**”对话框窗口中，打开“**共享**”选项卡，然后选择“**共享**”按钮。
+1. 在“**属性**”对话框窗口中，打开“**共享**”选项卡，然后选择“**共享**”按钮。
 
     ![突出显示"共享"选项卡和"共享"按钮的文件夹属性对话框。](../images/sideload-windows-properties-dialog.png)
 
-4. 在 **网络访问** 对话框窗口中，添加你自己以及要与其共享加载项的任何其他用户和/或组。 你至少需要对该文件夹的 **读/写** 权限。 选择要与其共享的人员后，请选择“**共享**”按钮。
+1. 在 **网络访问** 对话框窗口中，添加你自己以及要与其共享加载项的任何其他用户和/或组。 你至少需要对该文件夹的 **读/写** 权限。 选择要与其共享的人员后，请选择“**共享**”按钮。
 
-5. 当你看到确认 **你的文件夹已共享** 的消息时，请记下紧跟文件夹名称显示的完整网络路径。 （当你 [将共享文件夹指定为受信任的目录](#specify-the-shared-folder-as-a-trusted-catalog)时，你需要将此值输入为 **目录UR**，如本文下一节所述。）选择“**完成**”按钮以关闭“**网络访问**”对话框窗口。
+1. 当你看到确认 **你的文件夹已共享** 的消息时，请记下紧跟文件夹名称显示的完整网络路径。 （当你 [将共享文件夹指定为受信任的目录](#specify-the-shared-folder-as-a-trusted-catalog)时，你需要将此值输入为 **目录UR**，如本文下一节所述。）选择“**完成**”按钮以关闭“**网络访问**”对话框窗口。
 
    ![突出显示共享路径的网络访问对话框。](../images/sideload-windows-network-access-dialog.png)
 
-6. 选择“**关闭**”按钮以关闭“**属性**”对话框窗口。
+1. 选择“**关闭**”按钮以关闭“**属性**”对话框窗口。
 
 ## <a name="specify-the-shared-folder-as-a-trusted-catalog"></a>将共享文件夹指定为受信任的目录
 
@@ -58,31 +57,31 @@ ms.locfileid: "53077146"
 
 1. 在 Excel、Word、PowerPoint 或 Project 中打开一个新的文档。
 
-2. 选择“文件”选项卡，然后选择“选项”。
+1. 选择“文件”选项卡，然后选择“选项”。
 
-3. 选择“**信任中心**”，然后选择“**信任中心设置**”按钮。
+1. 选择“**信任中心**”，然后选择“**信任中心设置**”按钮。
 
-4. 选择“**受信任的加载项目录**”。
+1. 选择“**受信任的加载项目录**”。
 
-5. 在“**目录 Url**”框中，输入你之前 [共享](#share-a-folder)的文件夹的完整网络路径。 如果在共享文件夹时未能记下文件夹的完整网络路径，则可以从文件夹的“**属性**”对话框窗口中获取它，如以下屏幕截图所示。
+1. 在“**目录 Url**”框中，输入你之前 [共享](#share-a-folder)的文件夹的完整网络路径。 如果在共享文件夹时未能记下文件夹的完整网络路径，则可以从文件夹的“**属性**”对话框窗口中获取它，如以下屏幕截图所示。
 
     ![突出显示"共享"选项卡和网络路径的文件夹属性对话框。](../images/sideload-windows-properties-dialog-2.png)
 
-6. 在“**目录 Url**”框中输入文件夹的完整网络路径后，选择“**添加目录**”按钮。
+1. 在“**目录 Url**”框中输入文件夹的完整网络路径后，选择“**添加目录**”按钮。
 
-7. 选中新添加项目的“**在菜单中显示**”复选框，然后选择“**确定**”按钮以关闭“**信任中心**”对话框窗口。 
+1. 选中新添加项目的“**在菜单中显示**”复选框，然后选择“**确定**”按钮以关闭“**信任中心**”对话框窗口。 
 
     ![已选择目录的信任中心对话框。](../images/sideload-windows-trust-center-dialog.png)
 
-8. 选择" **确定"** 按钮以关闭 **"选项** "对话框窗口。
+1. 选择" **确定"** 按钮以关闭 **"选项** "对话框窗口。
 
-9. 关闭并重新打开 Office 应用程序，以使更改生效。
+1. 关闭并重新打开 Office 应用程序，以使更改生效。
 
 ### <a name="configure-the-trust-with-a-registry-script"></a>使用注册表脚本配置信任
 
 1. 在文本编辑器中，创建名为 TrustNetworkShareCatalog.reg 的文件。
 
-2. 在文件中添加以下内容：
+1. 将以下内容添加到文件。
 
     ```text
     Windows Registry Editor Version 5.00
@@ -92,13 +91,14 @@ ms.locfileid: "53077146"
     "Url"="\\\\-share-\\-folder-"
     "Flags"=dword:00000001
     ```
-3. 在众多在线 GUID 生成工具中选用一个（例如 [GUID 生成器](https://guidgenerator.com/)）来生成一个随机 GUID，并在 TrustNetworkShareCatalog.reg 文件中，将 *两个位置* 的“-random-GUID-here-”字符串都替换为 GUID。 （应保留右侧 `{}` 符号）。
 
-4. 将 `Url` 值替换为你之前[共享](#share-a-folder)的文件夹的完整网络路径。 （请注意，URL 中的所有 `\` 字符都必须成双出现。）如果在共享文件夹时未能记下文件夹的完整网络路径，则可从文件夹的“**属性**”对话框窗口中获取它，如以下屏幕截图所示。
+1. 在众多在线 GUID 生成工具中选用一个（例如 [GUID 生成器](https://guidgenerator.com/)）来生成一个随机 GUID，并在 TrustNetworkShareCatalog.reg 文件中，将 *两个位置* 的“-random-GUID-here-”字符串都替换为 GUID。 （应保留右侧 `{}` 符号）。
+
+1. 将 `Url` 值替换为你之前[共享](#share-a-folder)的文件夹的完整网络路径。 （请注意，URL 中的所有 `\` 字符都必须成双出现。）如果在共享文件夹时未能记下文件夹的完整网络路径，则可从文件夹的“**属性**”对话框窗口中获取它，如以下屏幕截图所示。
 
     ![突出显示"共享"选项卡和网络路径的文件夹属性对话框。](../images/sideload-windows-properties-dialog-2.png)
 
-5. 文件现应如下所示。 将其保存。
+1. 文件现应如下所示。 将其保存。
 
     ```text
     Windows Registry Editor Version 5.00
@@ -109,9 +109,9 @@ ms.locfileid: "53077146"
     "Flags"=dword:00000001
     ```
 
-6. 关闭 *所有* Office 应用程序。
+1. 关闭 *所有* Office 应用程序。
 
-7. 如同对任何可执行文件操作一样运行 TrustNetworkShareCatalog.reg，例如双击它。
+1. 如同对任何可执行文件操作一样运行 TrustNetworkShareCatalog.reg，例如双击它。
 
 ## <a name="sideload-your-add-in"></a>旁加载加载项
 
@@ -123,11 +123,11 @@ ms.locfileid: "53077146"
     > [!NOTE]
     > 对于Visual Studio，请使用 文件夹中的项目所构建的 `{projectfolder}\bin\Debug\OfficeAppManifests` 清单。
 
-2. 在 Excel、Word 或 PowerPoint 中，选择功能区上“**插入**”选项卡中的“**我的加载项**”。 在 Project 中，选择功能区“**Project**”选项卡上的“**我的加载项**”。
+1. 在 Excel、Word 或 PowerPoint 中，选择功能区上“**插入**”选项卡中的“**我的加载项**”。 在 Project 中，选择功能区“**Project**”选项卡上的“**我的加载项**”。
 
-3. 在“**Office 外接程序**”对话框的顶部，选择“**共享文件夹**”。
+1. 在“**Office 外接程序**”对话框的顶部，选择“**共享文件夹**”。
 
-4. 选择加载项的名称，然后选择“**添加**”以插入加载项。
+1. 选择加载项的名称，然后选择“**添加**”以插入加载项。
 
 ## <a name="remove-a-sideloaded-add-in"></a>删除旁加载的外接程序
 

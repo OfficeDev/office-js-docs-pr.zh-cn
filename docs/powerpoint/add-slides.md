@@ -3,12 +3,12 @@ title: 在幻灯片中添加和删除PowerPoint
 description: 了解如何添加和删除幻灯片，并指定新幻灯片的主控母版和版式。
 ms.date: 06/02/2021
 localization_priority: Normal
-ms.openlocfilehash: 9a8613997fc52ad6a30576b38c517a9c992f0e1b
-ms.sourcegitcommit: ba4fb7087b9841d38bb46a99a63e88df49514a4d
+ms.openlocfilehash: fd1f3c805483050776cc5b71c9e7a9fb61610b07
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/05/2021
-ms.locfileid: "52779332"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53348410"
 ---
 # <a name="add-and-delete-slides-in-powerpoint"></a>在幻灯片中添加和删除PowerPoint
 
@@ -23,7 +23,7 @@ ms.locfileid: "52779332"
 
 [!INCLUDE [Information about using preview APIs](../includes/using-preview-apis-host.md)]
 
-使用 [SlideCollection.add](/javascript/api/powerpoint/powerpoint.slidecollection#add_options_) 方法添加幻灯片。 下面是一个简单的示例，其中添加了使用演示文稿的默认幻灯片母版和该母版的第一个版式的幻灯片。 方法始终将新幻灯片添加到演示文稿的末尾。 示例如下：
+使用 [SlideCollection.add](/javascript/api/powerpoint/powerpoint.slidecollection#add_options_) 方法添加幻灯片。 下面是一个简单的示例，其中添加了使用演示文稿的默认幻灯片母版和该母版的第一个版式的幻灯片。 方法始终将新幻灯片添加到演示文稿的末尾。 示例如下。
 
 ```javascript
 async function addSlide() {
@@ -37,7 +37,7 @@ async function addSlide() {
 
 ### <a name="selecting-which-slide-master-and-layout-to-use"></a>选择要使用的幻灯片母版和版式
 
-使用 [AddSlideOptions](/javascript/api/powerpoint/powerpoint.addslideoptions) 参数可控制新幻灯片使用哪个幻灯片母版以及使用母版中的哪个版式。 示例如下。 关于此代码，请注意以下几点：
+使用 [AddSlideOptions](/javascript/api/powerpoint/powerpoint.addslideoptions) 参数可控制新幻灯片使用哪个幻灯片母版以及使用母版中的哪个版式。 示例如下。 对于此代码，请注意以下事项。
 
 - 可以包括 对象的一个或两个 `AddSlideOptions` 属性。
 - 如果同时使用这两个属性，则指定的布局必须属于指定的母版，否则将引发错误。
@@ -93,7 +93,7 @@ async function addSlide() {
     }
     ```
 
-2. 在添加幻灯片的主函数的[PowerPoint.run () ](/javascript/api/powerpoint#PowerPoint_run_batch_)中调用新函数。 示例如下：
+2. 在添加幻灯片的主函数的[PowerPoint.run () ](/javascript/api/powerpoint#PowerPoint_run_batch_)中调用新函数。 示例如下。
 
     ```javascript
     async function addSlideWithMatchingLayout() {
@@ -120,7 +120,7 @@ async function addSlide() {
 
 ## <a name="delete-slides"></a>删除幻灯片
 
-通过获取对代表幻灯片的 [Slide](/javascript/api/powerpoint/powerpoint.slide) 对象的引用来删除幻灯片并调用 `Slide.delete` 方法。 下面是删除第 4 张幻灯片的示例：
+通过获取对代表幻灯片的 [Slide](/javascript/api/powerpoint/powerpoint.slide) 对象的引用来删除幻灯片并调用 `Slide.delete` 方法。 下面是删除第 4 张幻灯片的示例。
 
 ```javascript
 async function deleteSlide() {

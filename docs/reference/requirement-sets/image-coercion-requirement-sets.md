@@ -1,30 +1,30 @@
 ---
 title: 图像强制要求集
-description: 支持跨 Excel、PowerPoint 和 Word 使用 Office 加载项的图像强制要求集。
+description: 通过跨 Office、PowerPoint 和 Word 的外接程序支持图像强制要求集Excel外接程序。
 ms.date: 02/19/2021
 ms.prod: non-product-specific
 localization_priority: Normal
-ms.openlocfilehash: 52ce46a46580500f5a292bf898674d4798378319
-ms.sourcegitcommit: e7009c565b18c607fe0868db2e26e250ad308dce
+ms.openlocfilehash: 29614718378fd51013360a2a922e11f89bca14b8
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/05/2021
-ms.locfileid: "50505526"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53350216"
 ---
 # <a name="image-coercion-requirement-sets"></a>图像强制要求集
 
-要求集是指各组已命名的 API 成员。Office 加载项使用清单中指定的要求集或执行运行时检查，以确定 Office 应用程序是否支持加载项所需的 API。有关详细信息，请参阅 [Office 版本和要求集](../../develop/office-versions-and-requirement-sets.md)。
+要求集是指已命名的 API 成员组。Office 加载项使用清单中指定的要求集或执行运行时检查，以确定 Office 应用程序是否支持加载项所需的 API。有关详细信息，请参阅 [Office 版本和要求集](../../develop/office-versions-and-requirement-sets.md)。
 
 ## <a name="imagecoercion-11"></a>ImageCoercion 1.1
 
-ImageCoercion 1.1 支持在 () `Office.CoercionType.Image` 写入数据时转换为图像 [`Document.setSelectedDataAsync`](/javascript/api/office/office.document#setselecteddataasync-data--options--callback-) 图像。 支持以下应用程序：
+ImageCoercion 1.1 支持在使用 方法 () `Office.CoercionType.Image` 图像图像 [`Document.setSelectedDataAsync`](/javascript/api/office/office.document#setselecteddataasync-data--options--callback-) 转换。 支持以下应用程序。
 
-- Windows 版 Excel 2013 及更高版本
-- Mac 版 Excel 2016 及更高版本
+- Excel 2013 年 10 月及Windows
+- Excel 2016 Mac 及更高版本
 - iPad 版 Excel
 - OneNote 网页版
-- Windows 版 PowerPoint 2013 及更高版本
-- Mac 版 PowerPoint 2016 及更高版本
+- PowerPoint 2013 及更高版本Windows
+- PowerPoint 2016 Mac 及更高版本
 - PowerPoint 网页版
 - iPad 版 PowerPoint
 - Windows 版 Word 2013 及更高版本
@@ -34,15 +34,15 @@ ImageCoercion 1.1 支持在 () `Office.CoercionType.Image` 写入数据时转换
 
 ## <a name="imagecoercion-12"></a>ImageCoercion 1.2
 
-ImageCoercion 1.2 支持在 () 写入数据时转换为 SVG `Office.CoercionType.XmlSvg` [`Document.setSelectedDataAsync`](/javascript/api/office/office.document#setselecteddataasync-data--options--callback-) 格式。 支持以下应用程序：
+ImageCoercion 1.2 支持在使用 () 写入数据时转换为 SVG `Office.CoercionType.XmlSvg` [`Document.setSelectedDataAsync`](/javascript/api/office/office.document#setselecteddataasync-data--options--callback-) 格式。 支持以下应用程序。
 
-- Windows 版 Excel (Microsoft 365 订阅) 
-- Mac 版 Excel (Microsoft 365 订阅) 
-- Windows 版 PowerPoint (连接到 Microsoft 365 订阅) 
-- Mac 版 PowerPoint (Microsoft 365 订阅) 
+- Excel连接到Windows (订阅Microsoft 365时) 
+- Excel Mac (连接到 Microsoft 365 订阅) 
+- PowerPoint连接到Windows (订阅Microsoft 365时) 
+- PowerPoint Mac (连接到 Microsoft 365 订阅) 
 - PowerPoint 网页版
-- Windows 版 Word (Microsoft 365 订阅) 
-- Mac 版 Word (Microsoft 365 订阅) 
+- Word on Windows (连接到 Microsoft 365 订阅) 
+- Mac 版 Word (连接到 Microsoft 365 订阅) 
 
 ## <a name="office-common-api-requirement-sets"></a>Office 通用 API 要求集
 

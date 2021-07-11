@@ -3,12 +3,12 @@ ms.date: 04/12/2021
 description: 了解如何调试不使用Excel窗格的自定义函数。
 title: 无 UI 自定义函数调试
 localization_priority: Normal
-ms.openlocfilehash: a692f376cb5c874fa4d510d3459469d803e643f7
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: e0e2b7bf49836a9b88de9ceaa21a66a454e6f05a
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53075934"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53349642"
 ---
 # <a name="ui-less-custom-functions-debugging"></a>无 UI 自定义函数调试
 
@@ -31,7 +31,7 @@ ms.locfileid: "53075934"
 > [!NOTE]
 > 为简单起见，本文介绍在使用 Visual Studio Code编辑、运行任务的情况下进行调试，在某些情况下，还使用调试视图。 如果使用的是其他编辑器或命令行工具，请参阅本文末尾的命令行说明[](#commands-for-building-and-running-your-add-in)。
 
-## <a name="requirements"></a>Requirements
+## <a name="requirements"></a>要求
 
 此调试过程 **仅适用于不使用** 任务窗格或其他 UI 元素的无 UI 自定义函数。 可以按照在 Excel 中创建自定义函数教程中的步骤创建无 UI 自定义函数，然后删除由适用于[Office](../tutorials/excel-tutorial-create-custom-functions.md)加载项的[Yeoman](https://www.npmjs.com/package/generator-office)生成器安装的所有任务窗格和 UI 元素。
 
@@ -141,16 +141,16 @@ ms.locfileid: "53075934"
 1. 从命令行运行 `npm run watch` 以观察代码发生更改时并重新生成代码。
 2. 打开第二个命令行窗口 (运行 watch.) 
 
-3. 如果要在桌面版本的外接程序中启动Excel，请运行以下命令
-    
+3. 如果要在桌面版本的外接程序中启动 Excel，请运行以下命令。
+
     `npm run start:desktop`
-    
-    或者，如果你想要在加载项中启动Excel web 版运行以下命令
-    
+
+    或者，如果你想要在加载项中启动Excel web 版，请运行以下命令。
+
     `npm run start:web`
-    
+
     例如Excel web 版你还需要旁加载你的外接程序。 按照旁加载 [加载项中的步骤](#sideload-your-add-in) 旁加载加载项。 然后继续下一部分以开始调试。
-    
+
 4. 在浏览器中打开开发人员工具。 对于 Chrome 和大多数浏览器 F12，将打开开发人员工具。
 5. 在开发人员工具中，打开源代码脚本文件 (functions.js **或 functions.ts**) 。  自定义函数代码可能位于文件的末尾附近。
 6. 在自定义函数源代码中，通过选择一行代码来应用断点。

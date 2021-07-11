@@ -3,12 +3,12 @@ title: 单声道样式图标指南Office加载项
 description: 在加载项中使用单Office图标的指南。
 ms.date: 03/30/2021
 localization_priority: Normal
-ms.openlocfilehash: b576cdf8d1816fa052bfdc30fac0950baf95700d
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: a59574f1f49ccb8b7b6fd485d08f83e39d760a48
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53076495"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53349341"
 ---
 # <a name="monoline-style-icon-guidelines-for-office-add-ins"></a>单声道样式图标指南Office加载项
 
@@ -158,7 +158,7 @@ Monoline 图标集内大多数图标都需要背景填充。 但是，在某些�
 
 #### <a name="how-to-use-color"></a>如何使用颜色
 
-在单声道调色板中，所有颜色都有独立、大纲和填充变体。 通常，使用填充和边框构造元素。 颜色以下列模式之一应用：
+在单声道调色板中，所有颜色都有独立、大纲和填充变体。 通常，使用填充和边框构造元素。 颜色以下列模式之一应用。
 
 - 对于没有填充的对象，单独的独立颜色。
 - 边框使用"边框"颜色，填充使用"填充"颜色。

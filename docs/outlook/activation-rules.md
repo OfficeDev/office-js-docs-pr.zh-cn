@@ -3,12 +3,12 @@ title: Outlook 加载项的激活规则
 description: 如果用户正在读取或撰写的邮件或约会符合加载项的激活规则，则 Outlook 将激活某些类型的加载项。
 ms.date: 09/22/2020
 localization_priority: Normal
-ms.openlocfilehash: a5fc107c27feb5b0535727a42b4d56d21f7dcbc4
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: 24f17b7bb3da4665f3f05b23d34ba15bcc4ae729
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53076810"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53349019"
 ---
 # <a name="activation-rules-for-contextual-outlook-add-ins"></a>上下文 Outlook 加载项的激活规则
 
@@ -22,16 +22,17 @@ ms.locfileid: "53076810"
 ## <a name="specify-activation-rules-in-a-manifest"></a>在清单中指定激活规则
 
 
-若要Outlook条件激活外接程序，请通过使用下列元素之一在外接程序清单中指定 `Rule` 激活规则：
+若要Outlook条件激活外接程序，请通过使用下列元素之一在外接程序清单中指定激活 `Rule` 规则。
 
 - [Rule 元素 (MailApp complexType)](../reference/manifest/rule.md) - 指定单个规则。
 - [Rule 元素 (RuleCollection complexType)](../reference/manifest/rule.md#rulecollection) - 使用逻辑操作组合多个规则。
-    
+
 
  > [!NOTE]
  > `Rule`用于指定单个规则的元素是抽象[Rule](../reference/manifest/rule.md)复杂类型。 以下每种类型的规则扩展了此抽象 `Rule` 复杂类型。 因此当你在清单中指定单个规则时，你必须使用 [xsi:type](https://www.w3.org/TR/xmlschema-1/) 属性来进一步定义某个以下类型的规则。
  > 
- > 例如，以下规则定义了 [ItemIs](../reference/manifest/rule.md#itemis-rule) 规则：`<Rule xsi:type="ItemIs" ItemType="Message" />`
+ > 例如，以下规则定义 [ItemIs](../reference/manifest/rule.md#itemis-rule) 规则。
+ > `<Rule xsi:type="ItemIs" ItemType="Message" />`
  > 
  > `FormType`属性适用于清单 v1.1 中的激活规则，但在 `VersionOverrides` v1.0 中未定义。 因此，当在节点中使用 [ItemIs](../reference/manifest/rule.md#itemis-rule) 时，它不能 `VersionOverrides` 使用。
 
@@ -57,8 +58,8 @@ ms.locfileid: "53076810"
 
 |**Value**|**说明**|
 |:-----|:-----|
-|**约会**|在 Outlook 日历中指定一个项目。这包括已获取响应并且具有组织者和参与者的会议项目，或者没有组织者或参与者且仅为日历上的一个项目的约会。这与 Outlook 中的 IPM.Appointment 邮件类别相对应。|
-|**邮件**|指定通常在"收件箱"中收到的以下项目之一： <ul><li><p>电子邮件。这与 Outlook 中的 IPM.Note 邮件类别相对应。</p></li><li><p>会议请求、响应或取消。对应于 Outlook 中的以下邮件类别：</p><p>IPM.Schedule.Meeting.Request</p><p>IPM.Schedule.Meeting.Neg</p><p>IPM.Schedule.Meeting.Pos</p><p>IPM.Schedule.Meeting.Tent</p><p>IPM.Schedule.Meeting.Canceled</p></li></ul>|
+|**约会**|在 Outlook 日历中指定一个项目。 这包括已获取响应并且具有组织者和参与者的会议项目，或者没有组织者或参与者且仅为日历上的一个项目的约会。 这与 Outlook 中的 IPM.Appointment 邮件类别相对应。|
+|**消息**|指定通常在收件箱中收到的以下项目之一。 <ul><li><p>电子邮件。这与 Outlook 中的 IPM.Note 邮件类别相对应。</p></li><li><p>会议请求、响应或取消。 这对应于 Outlook 中的以下邮件Outlook。</p><p>IPM.Schedule.Meeting.Request</p><p>IPM.Schedule.Meeting.Neg</p><p>IPM.Schedule.Meeting.Pos</p><p>IPM.Schedule.Meeting.Tent</p><p>IPM.Schedule.Meeting.Canceled</p></li></ul>|
 
 `FormType`属性用于指定阅读 (撰写) 外接程序应激活的模式。
 
@@ -72,7 +73,7 @@ ms.locfileid: "53076810"
 
 若要详细了解邮件类，请参阅[项类型和邮件类](/office/vba/outlook/Concepts/Forms/item-types-and-message-classes)。
 
-下面的示例展示了 **ItemIs** 规则，可便于用户在阅读邮件时在 Outlook 加载项栏中看到加载项：
+下面的示例是 **一个 ItemIs** 规则，它允许用户在阅读邮件时Outlook外接程序栏中查看外接程序。
 
 ```xml
 <Rule xsi:type="ItemIs" ItemType="Message" FormType="Read" />
@@ -102,7 +103,7 @@ ms.locfileid: "53076810"
 
 在项对外接程序可用之前，服务器将对其进行检查以确定主题和正文是否包含可能为某个已知实体的任何文本。 如果找到这些实体中的任意一个，则放置在使用该项的 或 方法访问的 `getEntities` 已知 `getEntitiesByType` 实体集合中。
 
-您可以使用 在项中出现指定类型的实体时显示外接程序来 `ItemHasKnownEntity` 指定规则。 可以在规则的 属性中指定以下 `EntityType` 已知 `ItemHasKnownEntity` 实体：
+您可以使用 在项中出现指定类型的实体时显示外接程序来 `ItemHasKnownEntity` 指定规则。 可以在规则的 属性中指定以下 `EntityType` 已知 `ItemHasKnownEntity` 实体。
 
 - Address
 - Contact
@@ -111,7 +112,7 @@ ms.locfileid: "53076810"
 - PhoneNumber
 - TaskSuggestion
 - URL
-    
+
 可以选择在 属性中包括正则表达式，以便仅在存在与正则表达式匹配的实体时 `RegularExpression` 显示外接程序。 若要获取规则中指定的正则表达式的匹配项，可以将 或 方法用于当前选定的 `ItemHasKnownEntity` `getRegExMatches` `getFilteredEntitiesByName` Outlook项。
 
 以下示例显示一组元素，这些元素在邮件中出现指定的已知实体之一时 `Rule` 显示外接程序。

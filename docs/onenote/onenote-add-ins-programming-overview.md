@@ -5,12 +5,12 @@ ms.date: 10/14/2020
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: ada302e971eac9dd3deb626e422fdf054315ea1a
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: dcfeab909bfda54a4ed5b9a748e0f8a7e7d58bb9
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53077111"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53348599"
 ---
 # <a name="onenote-javascript-api-programming-overview"></a>OneNote JavaScript API 编程概述
 
@@ -22,7 +22,7 @@ OneNote 介绍了适用于 OneNote 加载项网页版的 JavaScript API。你可
 
 加载项由两个基本部分组成：
 
-- 包含网页和所有相应 JavaScript、CSS 或其他文件的 **Web 应用程序**。 这些文件托管在 Web 服务器或 Web 托管服务上，例如 Microsoft Azure。 在 OneNote 网页版中，Web 应用程序在浏览器控件或 iframe 中显示。
+- **Web 应用程序** 包含网页和任何所需的 JavaScript、CSS 或其他文件。这些文件托管在 Web 服务器或 Web 托管服务上，例如 Microsoft Azure。在 OneNote 网页版中，Web 应用程序在浏览器控件或 iframe 中显示。
 
 - **XML 清单** 指定外接程序网页的 URL 和适用于外接程序的任何访问要求、设置和功能。此文件存储在客户端上。OneNote 外接程序使用与其他 Office 外接程序相同的 [清单](../develop/add-in-manifests.md)格式。
 
@@ -115,7 +115,7 @@ function getSelectionFromPage() {
 }
 ```
 
-OneNote 加载项仅支持以下通用 API：
+OneNote 加载项仅支持以下通用 API。
 
 | API | 注释 |
 |:------|:------|
@@ -128,7 +128,7 @@ OneNote 加载项仅支持以下通用 API：
 一般情况下，需要使用通用 API 执行应用程序特定 API 不支持的操作。 要详细了解如何使用通用 API，请参阅[常见 JavaScript API 对象模型](../develop/office-javascript-api-object-model.md)。
 
 <a name="om-diagram"></a>
-## <a name="onenote-object-model-diagram"></a>OneNote 对象模型图 
+## <a name="onenote-object-model-diagram"></a>OneNote 对象模型图
 下图表示了 OneNote JavaScript API 中当前可用的内容。
 
   ![OneNote 对象模型图。](../images/onenote-om.png)

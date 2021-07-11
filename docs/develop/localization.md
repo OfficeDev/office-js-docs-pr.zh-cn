@@ -3,12 +3,12 @@ title: Office 加载项的本地化
 description: 使用 Office JavaScript API 确定区域设置，并基于 Office 应用程序区域设置显示字符串，或者根据数据区域设置解释或显示数据。
 ms.date: 02/23/2021
 localization_priority: Normal
-ms.openlocfilehash: f5d9d3cf01df8156c319b78222ed6c2d8ce09ca3
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: b49d64f2c9391539ac2d5929ebff2a4ecc08b630
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53076004"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53349824"
 ---
 # <a name="localization-for-office-add-ins"></a>Office 加载项的本地化
 
@@ -307,7 +307,7 @@ Office 外接程序的一些扩展性功能（如键盘快捷方式）使用托�
 
 1. 在“解决方案资源管理器”中，展开“WorldReadyAddIn”、“WorldReadyAddInManifest”，然后选择“WorldReadyAddIn.xml”。
 
-2. 在 WorldReadyAddInManifest.xml 中，将 [DisplayName] 和 [Description] 元素替换为以下代码块：
+2. 在WorldReadyAddInManifest.xml中，将 [DisplayName] 和 [Description] 元素替换为以下代码块。
 
     > [!NOTE]
     > 对于本示例中使用的西班牙语本地化字符串的[DisplayName] 和 [Description] 元素，您可以替换为任何其他语言的本地化字符串。

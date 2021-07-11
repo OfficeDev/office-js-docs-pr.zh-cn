@@ -3,12 +3,12 @@ title: 管理加载项的状态Outlook设置
 description: 了解如何保留加载项的加载项状态Outlook设置。
 ms.date: 05/17/2021
 localization_priority: Normal
-ms.openlocfilehash: 69c22ab912d5099c42d6c69b364465a585cba1d4
-ms.sourcegitcommit: 0d9fcdc2aeb160ff475fbe817425279267c7ff31
+ms.openlocfilehash: 8f43c7f105dc68c879f175beabcabb49715a75aa
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/21/2021
-ms.locfileid: "52592008"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53348501"
 ---
 # <a name="manage-state-and-settings-for-an-outlook-add-in"></a>管理加载项的状态Outlook设置
 
@@ -84,7 +84,7 @@ function removeAppSetting()
 var property = _customProps.get("propertyName");
 ```
 
-此示例包括以下函数：
+此示例包括以下函数。
 
 |**函数名称**|**说明**|
 |:-----|:-----|

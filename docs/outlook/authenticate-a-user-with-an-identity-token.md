@@ -3,12 +3,12 @@ title: 使用加载项中的标识令牌对用户进行身份验证
 description: 了解如何使用 Outlook 加载项提供的标识令牌对服务实施 SSO。
 ms.date: 10/31/2019
 localization_priority: Normal
-ms.openlocfilehash: fac68065aed491d920c573cac644e17af89892ca
-ms.sourcegitcommit: 4fa952f78be30d339ceda3bd957deb07056ca806
+ms.openlocfilehash: 839c3db2658ac4f16b965ee399df391ddcfd0385
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/16/2021
-ms.locfileid: "52961270"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53348536"
 ---
 # <a name="authenticate-a-user-with-an-identity-token-for-exchange"></a>使用 Exchange 的标识令牌对用户进行身份验证
 
@@ -25,7 +25,7 @@ Exchange 用户标识令牌为加载项提供了一种以唯一的方式标识�
 
 后端必须在接受令牌之前对其进行验证。 这是确保令牌是由用户的 Exchange 服务器颁发的重要步骤。 有关验证 Exchange 用户标识令牌的信息，请参阅[验证 Exchange 标识令牌](validate-an-identity-token.md)。
 
-验证并解码之后，令牌的有效负载如下所示。
+验证和解码后，令牌的有效负载如下所示：
 
 ```json
 { 

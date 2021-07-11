@@ -3,12 +3,12 @@ title: 将字符串作为 Outlook 加载项中的已知实体进行匹配
 description: 通过使用 Office JavaScript API，您可以获取与特定已知实体匹配的字符串，以进一步进行处理。
 ms.date: 04/15/2019
 localization_priority: Normal
-ms.openlocfilehash: 14faef13050572e8fb85cb8bae7226664bc65a7f
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: 8d4b78259b771d29244641d9e3ca867018b763ef
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53077076"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53348494"
 ---
 # <a name="match-strings-in-an-outlook-item-as-well-known-entities"></a>将 Outlook 项中的字符串作为已知实体进行匹配
 
@@ -54,7 +54,7 @@ ms.locfileid: "53077076"
 
 若要提取 JavaScript 代码中的实体，或根据特定已知实体的存在情况激活外接程序，请确保已在外接程序清单中请求了相应的权限。
 
-指定默认的受限权限允许外接程序提取 `Address` 、 `MeetingSuggestion` 或 `TaskSuggestion` 实体。 若要提取任何其他实体，请指定读取项目、读/写项目或读/写邮箱权限。 若要在清单中执行该操作，请使用 [Permissions](../reference/manifest/permissions.md) 元素并指定适当的权限&mdash;**Restricted**、**ReadItem**、**ReadWriteItem** 或 **ReadWriteMailbox**&mdash;如下例所示：
+指定默认的受限权限允许外接程序提取 `Address` 、 `MeetingSuggestion` 或 `TaskSuggestion` 实体。 若要提取任何其他实体，请指定读取项目、读/写项目或读/写邮箱权限。 为此，在清单中，请使用 [Permissions](../reference/manifest/permissions.md)元素并指定适当的权限 &mdash; Restricted、ReadItem、ReadWriteItem 或 **ReadWriteMailbox，** 如 &mdash; 以下示例所示。
 
 ```xml
 <Permissions>ReadItem</Permissions>
@@ -132,7 +132,7 @@ var videos = Office.context.mailbox.item.getFilteredEntitiesByName(youtube);
 
 ## <a name="tips-for-using-well-known-entities"></a>使用已知实体的提示
 
-在外接程序中使用已知实体时，应了解一些事实和限制。 只要在用户读取包含已知实体匹配项的项目时激活外接程序，无论是否使用规则，均适用 `ItemHasKnownEntity` 以下内容：
+在外接程序中使用已知实体时，应了解一些事实和限制。 只要在用户读取包含已知实体匹配项的项目时激活外接程序，无论是否使用规则，均适用 `ItemHasKnownEntity` 以下内容。
 
 
 - 仅当字符串为英文形式时，您才可以提取已知实体字符串。
@@ -147,7 +147,7 @@ var videos = Office.context.mailbox.item.getFilteredEntitiesByName(youtube);
     
 - 不能从"已发送邮件"文件夹中的邮件提取实体。
     
-此外，如果使用 [ItemHasKnownEntity](../reference/manifest/rule.md#itemhasknownentity-rule) 规则，并可能影响您希望激活外接程序的方案，则适用于以下情况：
+此外，如果使用 [ItemHasKnownEntity](../reference/manifest/rule.md#itemhasknownentity-rule) 规则，则适用以下规则，并且可能会影响预期外接程序被激活的方案。
 
 - 使用规则时，Outlook匹配仅采用英语的实体字符串，而不考虑清单中 `ItemHasKnownEntity` 指定的默认区域设置。
     

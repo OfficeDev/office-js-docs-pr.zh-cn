@@ -3,12 +3,12 @@ title: Outlook 加载项的激活和 API 使用限制
 description: 请注意某些激活和 API 使用指南，并在这些限制范围内实施加载项。
 ms.date: 06/11/2021
 localization_priority: Normal
-ms.openlocfilehash: eacdc0232202fd74fdd46a835bed6af5a760e7b1
-ms.sourcegitcommit: 0bf0e076f705af29193abe3dba98cbfcce17b24f
+ms.openlocfilehash: 60fab066dadf5c71ab37e907dd749d38f9bb4dde
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2021
-ms.locfileid: "53007774"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53348949"
 ---
 # <a name="limits-for-activation-and-javascript-api-for-outlook-add-ins"></a>Outlook 加载项的激活和 JavaScript API 限制
 
@@ -31,7 +31,7 @@ ms.locfileid: "53007774"
 
 - 如果您对所选项目的正文使用 [ItemHasKnownEntity](../reference/manifest/rule.md#itemhasknownentity-rule) 规则，预计 Outlook 富客户端将仅对正文的前 1 MB 应用规则，而不会超过此限制应用于正文的其他部分。如果正文的前 1 MB 之后存在匹配，您的外接程序将不会激活。如果您期望这成为一种可能的方案，请重新设计激活条件。
 
-- 如果在 `ItemHasKnownEntity` [或 ItemHasRegularExpressionMatch](../reference/manifest/rule.md#itemhasregularexpressionmatch-rule)规则中使用正则表达式，请注意通常适用于任何 Outlook 应用程序的以下限制和准则，以及表 1、2 和 3 中介绍的限制和准则，这些限制和准则因应用程序不同而不同：
+- 如果在 `ItemHasKnownEntity` [或 ItemHasRegularExpressionMatch](../reference/manifest/rule.md#itemhasregularexpressionmatch-rule)规则中使用正则表达式，请注意以下通常适用于任何 Outlook 应用程序的限制和准则，以及表 1、2 和 3 中介绍的限制和准则，这些限制和准则因应用程序不同而不同。
   - 外接程序的激活规则中最多可指定 5 个正则表达式。如果超出该限制，则无法安装外接程序。
   - 指定正则表达式，使方法调用在前 50 个匹配项内返回 `getRegExMatches` 预期的结果。
   - 可以在正则表达式中指定向前断言，但不支持向后 `(?<=text)` 和否定向后 `(?<!text)` 断言。

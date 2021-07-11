@@ -3,18 +3,18 @@ title: 验证 Outlook 加载项标识令牌
 description: Outlook 加载项可以向你发送 Exchange 用户标识令牌，但是在你信任此请求之前，必须验证该令牌以确保它来自预期的 Exchange 服务器。
 ms.date: 07/07/2020
 localization_priority: Normal
-ms.openlocfilehash: 6ad5f99093530528ec83cfc7a6e3a2571e0df491
-ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
+ms.openlocfilehash: ba499fa2ece03a326eabb1a48bb19e33c3feea94
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "45094104"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53348837"
 ---
 # <a name="validate-an-exchange-identity-token"></a>验证 Exchange 标识令牌
 
 Outlook 加载项可以向你发送 Exchange 用户标识令牌，但是在你信任此请求之前，必须验证该令牌以确保它来自预期的 Exchange 服务器。 Exchange 用户标识令牌均为 JSON Web 令牌 (JWT)。 [RFC 7519 JSON Web 令牌 (JWT)](https://www.rfc-editor.org/rfc/rfc7519.txt) 中介绍了验证 JWT 所需的步骤。
 
-建议使用四个步骤验证标识令牌并获取用户的唯一标识符。 首先，从 base64 URL 编码的字符串中提取 JSON Web 令牌 (JWT)。 然后，确保该令牌格式正确、它是用于 Outlook 外接程序的令牌、它未过期且你可以提取身份验证元数据文档的有效 URL。 接下来，从 Exchange 服务器中检索身份验证元数据文档并验证附加到标识令牌的签名。 最后，通过将用户的 Exchange ID 与身份验证元数据文档的 URL 连接，来计算用户的唯一标识符。
+建议使用四个步骤验证标识令牌并获取用户的唯一标识符。 首先，从 base64 URL 编码的字符串中提取 JSON Web 令牌 (JWT)。 然后，确保该令牌格式正确、它是用于 Outlook 外接程序的令牌、它未过期且你可以提取身份验证元数据文档的有效 URL。 接下来，从 Exchange 服务器中检索身份验证元数据文档并验证附加到标识令牌的签名。 最后，通过连接用户的 EXCHANGE ID 和身份验证元数据文档的 URL 来计算用户的唯一标识符。
 
 ## <a name="extract-the-json-web-token"></a>提取 JSON Web 令牌
 
@@ -32,22 +32,22 @@ Outlook 加载项可以向你发送 Exchange 用户标识令牌，但是在你�
 
 ## <a name="validate-token-contents"></a>验证令牌内容
 
-若要验证令牌内容，还应检查以下项目。
+若要验证令牌内容，应检查以下内容：
 
 - 检查标头并验证：
-    - `typ`"声明" 设置为 `JWT` 。
-    - `alg`"声明" 设置为 `RS256` 。
-    - `x5t`声明存在。
+  - `typ` 声明设置为 `JWT` 。
+  - `alg` 声明设置为 `RS256` 。
+  - `x5t` 声明存在。
 
 - 检查有效负载并验证：
-    - `amurl`中的声明 `appctx` 已设置为授权令牌签名密钥清单文件的位置。 例如， `amurl` Microsoft 365 的预期值为 https://outlook.office365.com:443/autodiscover/metadata/json/1 。 有关详细信息，请参阅下一节[验证域](#verify-the-domain)。
-    - 当前时间介于和声明中指定的时间 `nbf` 之间 `exp` 。 `nbf` 声明指定了令牌被视为有效的最早时间，而 `exp` 声明指定了令牌的失效时间。 建议将服务器之间的时钟设置差异考虑在内。
-    - `aud`声明是你的外接程序的预期 URL。
-    - `version`声明内的声明 `appctx` 已设置为 `ExIdTok.V1` 。
+  - `amurl` 中的 声明 `appctx` 设置为授权令牌签名密钥清单文件的位置。 例如，Microsoft 365值为 `amurl` https://outlook.office365.com:443/autodiscover/metadata/json/1 。 有关其他信息，请参阅下 [一部分验证](#verify-the-domain) 域。
+  - 当前时间介于 和 声明中 `nbf` 指定的 `exp` 时间之间。 `nbf` 声明指定了令牌被视为有效的最早时间，而 `exp` 声明指定了令牌的失效时间。 建议将服务器之间的时钟设置差异考虑在内。
+  - `aud` claim 是外接程序的预期 URL。
+  - `version` 声明内的 `appctx` 声明设置为 `ExIdTok.V1` 。
 
 ### <a name="verify-the-domain"></a>验证域
 
-在实现本节前面所述的验证逻辑时，您还应要求声明的域 `amurl` 与用户的自动发现域相匹配。 若要执行此操作，您需要使用或实现自动发现。 若要了解详细信息，可以从[Exchange 自动发现](/exchange/client-developer/exchange-web-services/autodiscover-for-exchange)开始。
+实现本节前面所述的验证逻辑时，还应要求声明的域与用户的自动发现 `amurl` 域匹配。 为此，你需要使用或实现自动发现。 若要了解更多信息，你可以从自动发现[开始Exchange。](/exchange/client-developer/exchange-web-services/autodiscover-for-exchange)
 
 ## <a name="validate-the-identity-token-signature"></a>验证标识令牌签名
 
@@ -102,14 +102,14 @@ Outlook 加载项可以向你发送 Exchange 用户标识令牌，但是在你�
 
 ## <a name="compute-the-unique-id-for-an-exchange-account"></a>计算 Exchange 帐户的唯一 ID
 
-您可以通过将身份验证元数据文档 URL 与帐户的 Exchange 标识符连接来创建 Exchange 帐户的唯一标识符。 如果你拥有此唯一标识符，则可以使用它为 Outlook 加载项 Web 服务创建单一登录 (SSO) 系统。 有关将此唯一标识符用于 SSO 的详细信息，请参阅[对具有 Exchange 标识令牌的用户进行身份验证](authenticate-a-user-with-an-identity-token.md)。
+可以通过将身份验证元数据文档 URL 与Exchange标识符相连接，为 Exchange 创建唯一标识符。 如果你拥有此唯一标识符，则可以使用它为 Outlook 加载项 Web 服务创建单一登录 (SSO) 系统。 有关将此唯一标识符用于 SSO 的详细信息，请参阅[对具有 Exchange 标识令牌的用户进行身份验证](authenticate-a-user-with-an-identity-token.md)。
 
 ## <a name="use-a-library-to-validate-the-token"></a>使用库验证令牌
 
-有许多库可以执行常规 JWT 解析和验证。 Microsoft 提供 `System.IdentityModel.Tokens.Jwt` 可用于验证 Exchange 用户标识令牌的库。
+有许多库可以执行常规 JWT 解析和验证。 Microsoft 提供了 `System.IdentityModel.Tokens.Jwt` 可用于验证用户标识Exchange库。
 
 > [!IMPORTANT]
-> 我们不再建议使用 Exchange Web 服务托管 API，因为 Microsoft.Exchange.WebServices.Auth.dll 现在仍然可用，但它依赖于不受支持的库（如 Microsoft.IdentityModel.Extensions.dll）。
+> 我们不再建议使用 Exchange Web 服务托管 API，因为 Microsoft.Exchange.WebServices.Auth.dll（尽管仍然可用）现已过时，并且依赖于不受支持库（如 Microsoft.IdentityModel.Extensions.dll）。
 
 ### <a name="systemidentitymodeltokensjwt"></a>System.IdentityModel.Tokens.Jwt
 

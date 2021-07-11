@@ -3,12 +3,12 @@ title: Office集中部署发布加载项Microsoft 365 管理中心
 description: 了解如何使用集中部署来部署内部外接程序以及 ISV 提供的外接程序。
 ms.date: 03/22/2021
 localization_priority: Normal
-ms.openlocfilehash: 3107fc58601683f5356594f2f79ffc5293ea266f
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: b57e21f177fe66f03985ce6baee4d9eeda75d8bd
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53076649"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53348788"
 ---
 # <a name="publish-office-add-ins-using-centralized-deployment-via-the-microsoft-365-admin-center"></a>Office集中部署发布加载项Microsoft 365 管理中心
 
@@ -32,13 +32,13 @@ ms.locfileid: "53076649"
 
 ## <a name="recommended-approach-for-deploying-office-add-ins"></a>部署 Office 加载项的推荐方法
 
-请考虑分阶段部署 Office 加载项，以确保部署顺利进行。建议使用以下计划：
+请考虑分阶段部署 Office 加载项，以确保部署顺利进行。 建议采用以下计划。
 
 1. 为一小部分的企业利益干系人和 IT 部门成员部署加载项。 如果部署成功，则转到步骤 2。
 
-2. 为企业内更多的将使用加载项的个人部署加载项。 如果部署成功，则转到步骤 3。
+1. 为企业内更多的将使用加载项的个人部署加载项。 如果部署成功，则转到步骤 3。
 
-3. 为所有将使用加载项的个人部署加载项。
+1. 为所有将使用加载项的个人部署加载项。
 
 根据目标受众的规模，可能需要在此过程中添加步骤或删除步骤。
 
@@ -46,7 +46,7 @@ ms.locfileid: "53076649"
 
 在开始之前，请确认您的组织满足使用集中部署的所有要求，如确定外接程序的集中部署是否适用于 Microsoft 365[组织中所述](/microsoft-365/admin/manage/centralized-deployment-of-add-ins)。
 
-如果组织满足所有要求，请完成以下步骤以通过集中部署发布 Office 加载项：
+如果组织满足所有要求，请完成以下步骤以通过集中Office加载项发布加载项。
 
 1. Sign in to Microsoft 365 with your work or education account.
 1. 选择左上角的应用启动器图标，然后选择“**管理员**”。
@@ -55,7 +55,7 @@ ms.locfileid: "53076649"
 1. 如果在页面顶部看到一条宣布推出新 Microsoft 365 管理中心 的消息，请选择该消息以转到管理中心预览版 (请参阅关于 Microsoft 365 管理中心[) 。](/microsoft-365/admin/admin-overview/about-the-admin-center)
 1. 在页面顶部选择“**部署加载项**”。
 1. 查看要求后，请选择“**下一步**”。
-1. 在“**集中部署**”页面上，选择以下选项之一：
+1. 在"集中部署"页上选择 **以下选项之** 一。
 
     - **我想从 Office 应用商店添加加载项。**
     - **我在此设备上具有清单文件 (.xml)。** 对于此选项，请选择“浏览”以找到想要使用的清单文件 (.xml)。
@@ -63,25 +63,25 @@ ms.locfileid: "53076649"
 
     !["新建Add-In"对话框Microsoft 365 管理中心。](../images/new-add-in.png)
 
-8. 如果选择了此选项以从 Office 应用商店添加某个加载项，请选择该加载项。 可以通过“**为你推荐**”、“**评级**”或“**名称**”类别，查看可用的加载项。 仅能从 Office 应用商店添加免费加载项。 目前不支持添加付费加载项。
+1. 如果选择了此选项以从 Office 应用商店添加某个加载项，请选择该加载项。 可以通过“**为你推荐**”、“**评级**”或“**名称**”类别，查看可用的加载项。 仅能从 Office 应用商店添加免费加载项。 目前不支持添加付费加载项。
 
     > [!NOTE]
     > 使用 Office 应用商店选项，无需干预，用户即可自动获得加载项的更新和增强功能。
 
     ![Select an add-In dialog in Microsoft 365 管理中心.](../images/select-an-add-in.png)
 
-9. 查看 **外接程序** 详细信息、隐私策略和许可条款后，选择"继续"。
+1. 查看 **外接程序** 详细信息、隐私策略和许可条款后，选择"继续"。
 
     ![已选择外接程序页面中的Microsoft 365 管理中心。](../images/selected-add-in-admin-center.png)
 
-10. 在"**分配用户"** 页上，选择"**任何人****"、"特定用户/组**"或"**仅我"。** 使用“搜索”框查找要向其部署加载项的用户和组。 For Outlook add-ins， you can also choose the deployment method **Fixed**， **Available**， or **Optional**.
+1. 在"**分配用户"** 页上，选择"**任何人****"、"特定用户/组**"或"**仅我"。** 使用“搜索”框查找要向其部署加载项的用户和组。 For Outlook add-ins， you can also choose the deployment method **Fixed**， **Available**， or **Optional**.
 
     ![管理谁在部署中具有访问权限Microsoft 365 管理中心。](../images/manage-users-deployment-admin-center.png)
 
     > [!NOTE]
     > 使用 [SSO ](../develop/sso-in-office-add-ins.md) (单一登录) 将提示管理员同意外接程序清单中列出的范围。  如果跨多个外接程序使用同一个支持服务 (则同一 Azure 应用 ID 用于不同外接程序) 中的 SSO，将提示每个外接程序的范围，以征得每个部署的同意。 此页面还将显示外接程序所需的权限列表。
 
-11. 完成后，选择"部署 **"。** 此过程可能最多用时 3 分钟。 然后，按“**下一步**”完成演练。 现在，你将看到加载项以及其他Office应用程序。
+1. 完成后，选择"部署 **"。** 此过程可能最多用时 3 分钟。 然后，按“**下一步**”完成演练。 现在，你将看到加载项以及其他Office应用程序。
 
     > [!NOTE]
     > 当管理员选择"部署 **"** 时，将给予所有用户同意。
@@ -93,7 +93,7 @@ ms.locfileid: "53076649"
 
 ## <a name="considerations-when-granting-access-to-an-add-in"></a>授予加载项的访问权限时的注意事项
 
-管理员可以将加载项分配给组织中的每个人或组织内的特定用户和/或组。 以下列表描述了每个选项的含义：
+管理员可以将加载项分配给组织中的每个人或组织内的特定用户和/或组。 以下列表描述了每个选项的含义。
 
 - **每个人**：顾名思义，此选项为租户中的每位用户分配加载项。请谨慎使用此选项，且仅应用于真正在组织中通用的加载项。
 
@@ -137,16 +137,16 @@ ms.locfileid: "53076649"
 如果加载项不支持加载项命令，用户可以通过执行以下操作将其添加到 Office 应用程序中：
 
 1. 在 Word 2016 或更高版本、Excel 2016 或更高版本，或 PowerPoint 2016 或更高版本，选择“**插入**” > “**我的加载项**”。
-2. 在加载项窗口中选择“**管理托管**”选项卡。
-3. 选择加载项，然后选择“**添加**”。
+1. 在加载项窗口中选择“**管理托管**”选项卡。
+1. 选择加载项，然后选择“**添加**”。
 
     ![屏幕截图显示 Office 应用程序的“Office 加载项”页的“管理托管”选项卡。 引文加载项显示在此选项卡上。](../images/office-add-ins-admin-managed.png)
 
 但是，对于 Outlook 2016 或更高版本，用户可以执行以下操作：
 
 1. 在 Outlook 中，选择“**开始**” > “**应用商店**”。
-2. 选择“加载项”选项卡下的“**管理员管理**”选项卡。
-3. 选择加载项，然后选择“**添加**”。
+1. 选择“加载项”选项卡下的“**管理员管理**”选项卡。
+1. 选择加载项，然后选择“**添加**”。
 
     ![屏幕截图显示了 Outlook 应用程序的“应用商店”页面的管理员管理区域。](../images/outlook-add-ins-admin-managed.png)
 

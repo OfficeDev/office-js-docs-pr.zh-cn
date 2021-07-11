@@ -3,12 +3,12 @@ title: 处理 OneNote 页面内容
 description: 了解如何使用 JavaScript API OneNote页面内容。
 ms.date: 03/19/2019
 localization_priority: Normal
-ms.openlocfilehash: 9c4744f1121bbc5e28783940a946727275b806f2
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: f506617bfdbc97e94f8fb16930dfc2a935385d5f
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53076817"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53349047"
 ---
 # <a name="work-with-onenote-page-content"></a>处理 OneNote 页面内容
 
@@ -21,7 +21,7 @@ ms.locfileid: "53076817"
 - Outline 对象包含一组 Paragraph 对象。
 - Paragraph 对象包含 RichText、Image、Table 或 Other 这些内容类型。
 
-若要创建空的 OneNote 页面，请使用下列方法之一：
+若要创建空OneNote页，请使用下列方法之一。
 
 - [Section.addPage](/javascript/api/onenote/onenote.section#addpage-title-)
 - [Page.insertPageAsSibling](/javascript/api/onenote/onenote.section#insertsectionassibling-location--title-)
@@ -36,7 +36,7 @@ OneNote 页面的内容和结构由 HTML 进行表示。只有一部分 HTML 可
 
 ## <a name="supported-html"></a>受支持的 HTML
 
-OneNote 外接程序 JavaScript API 支持使用以下 HTML 创建和更新页面内容：
+加载项OneNote JavaScript API 支持以下 HTML 来创建和更新页面内容。
 
 - `<html>`, `<body>`, `<div>`, `<span>`, `<br/>`
 - `<p>`

@@ -3,12 +3,12 @@ title: 随文档自动打开任务窗格
 description: 了解如何配置Office打开文档时自动打开的加载项。
 ms.date: 05/24/2021
 localization_priority: Normal
-ms.openlocfilehash: c8e5f25019084439bf4ecade1602d5fc87b9d49e
-ms.sourcegitcommit: ecb24e32b32deb3e43daecd8d534e140460e0328
+ms.openlocfilehash: 7801e9797de5b8f45315484a7b7a3fd5289f35a9
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/25/2021
-ms.locfileid: "52639954"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53350020"
 ---
 # <a name="automatically-open-a-task-pane-with-a-document"></a>随文档自动打开任务窗格
 
@@ -34,7 +34,7 @@ ms.locfileid: "52639954"
 
 ## <a name="best-practices"></a>最佳做法
 
-在使用 Autoopen 功能时应用下面的最佳做法：
+使用 Autoopen 功能时，请应用以下最佳做法。
 
 - 当 Autoopen 功能可帮助外接程序用户工作更高效时使用此功能，如：
   - 当文档需要外接程序才能正常工作时。例如，包括由外接程序定期刷新的股票值的电子表格。外接程序应在电子表格打开时自动打开，以保持值处于最新状态。
@@ -118,7 +118,7 @@ Office.context.document.settings.saveAsync();
 |:---------------|:---------------|:---------------|:---------------|
 |OMEX (AppSource)|加载项的 AppSource 资产 ID（请参阅“注意”）|AppSource 的区域设置；例如，“en-us”。|AppSource 目录中的版本（请参阅“注意”）|
 |FileSystem（网络共享）|外接程序清单中外接程序的 GUID。|网络共享路径。例如，“\\\\MyComputer\\MySharedFolder”。|外接程序清单中的版本。|
-|EXCatalog（通过 Exchange 服务器部署） |外接程序清单中外接程序的 GUID。|“EXCatalog”。 EXCatalog 行是一行，用于管理中心内使用集中部署的Microsoft 365行。|外接程序清单中的版本。
+|EXCatalog（通过 Exchange 服务器部署） |外接程序清单中外接程序的 GUID。|“EXCatalog”。 EXCatalog 行是一行，用于在加载项集中部署Microsoft 365 管理中心。|外接程序清单中的版本。
 |Registry（系统注册表）|外接程序清单中外接程序的 GUID。|“developer”|加载项清单中的版本。|
 
 > [!NOTE]
@@ -147,7 +147,7 @@ Office.context.document.settings.saveAsync();
 
 ## <a name="test-and-verify-opening-task-panes"></a>对打开任务窗格进行测试和验证
 
-可以通过管理中心部署将自动使用集中部署打开任务窗格的Microsoft 365版本。 以下示例演示如何使用 EXCatalog 应用商店版本从集中部署目录插入外接程序。
+您可以部署外接程序的测试版本，该版本将自动使用集中部署打开任务Microsoft 365 管理中心。 以下示例演示如何使用 EXCatalog 应用商店版本从集中部署目录插入外接程序。
 
 ```xml
 <we:webextension xmlns:we="http://schemas.microsoft.com/office/webextensions/webextension/2010/11" id="{52811C31-4593-43B8-A697-EB873422D156}">

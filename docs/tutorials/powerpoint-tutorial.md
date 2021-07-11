@@ -4,12 +4,12 @@ description: 在本教程中，将生成 PowerPoint 加载项，用于插入图�
 ms.date: 05/12/2021
 ms.prod: powerpoint
 localization_priority: Priority
-ms.openlocfilehash: 6742ecd8ab7d579f90186b4fa73adfccca45b467
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: 76d40a83155a7a26822b43dc1340e3f9ebda63da
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53076474"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53349404"
 ---
 # <a name="tutorial-create-a-powerpoint-task-pane-add-in"></a>教程：创建 PowerPoint 任务窗格加载项
 
@@ -502,7 +502,7 @@ ms.locfileid: "53076474"
 
 ## <a name="next-steps"></a>后续步骤
 
-在本教程中，你已创建 PowerPoint 加载项，用于插入图像、插入文本、获取幻灯片元数据，以及在幻灯片之间导航。 若要了解有关构建 PowerPoint 加载项的详细信息，请继续阅读以下文章：
+在本教程中，你已创建 PowerPoint 加载项，用于插入图像、插入文本、获取幻灯片元数据，以及在幻灯片之间导航。 若要了解有关构建 PowerPoint 加载项的详细信息，请继续阅读以下文章。
 
 > [!div class="nextstepaction"]
 > [PowerPoint 加载项概述](../powerpoint/powerpoint-add-ins.md)

@@ -3,16 +3,16 @@ ms.date: 03/15/2021
 description: 使用 Excel 中的自定义函数请求、流式处理和取消流式处理工作簿的外部数据
 title: 使用自定义函数接收和处理数据
 localization_priority: Normal
-ms.openlocfilehash: 61959387dc3475997581233bc220f20394e8f6fb
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: 60f09b791b13d34a4a7f307bb9677c9fcc72ee97
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53075878"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53349595"
 ---
 # <a name="receive-and-handle-data-with-custom-functions"></a>使用自定义函数接收和处理数据
 
-自定义函数增强 Excel 功能的方法之一是从工作簿以外的位置接收数据，例如 Web 或服务器（通过 WebSockets）。 你可以通过 API（如 [`Fetch`](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API)）或使用 `XmlHttpRequest` [(XHR)](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest)（一种发出与服务器交互的 HTTP 请求的标准 Web API）来请求外部数据。
+自定义函数增强 Excel 功能的方法之一是从工作簿以外的位置接收数据，例如 Web 或服务器（通过 WebSockets）。 你可以通过 API（如 [`Fetch`](https://developer.mozilla.org/docs/Web/API/Fetch_API)）或使用 `XmlHttpRequest` [(XHR)](https://developer.mozilla.org/docs/Web/API/XMLHttpRequest)（一种发出与服务器交互的 HTTP 请求的标准 Web API）来请求外部数据。
 
 [!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
@@ -104,7 +104,7 @@ async function getStarCount(userName: string, repoName: string) {
 - `@streaming`标记。
 - `CustomFunctions.StreamingInvocation`调用参数。
 
-以下代码示例是一个自定义函数，它每秒向结果添加一个数字。 关于此代码，请注意以下几点：
+以下代码示例是一个自定义函数，它每秒向结果添加一个数字。 对于此代码，请注意以下事项。
 
 - Excel 使用 `setResult` 方法自动显示每个新值。
 - 当最终用户从自动完成菜单中选择函数时，不会在 Excel 中向其显示第二个输入参数“invocation”。
@@ -133,7 +133,7 @@ function increment(incrementBy, invocation) {
 
 ## <a name="canceling-a-function"></a>取消函数
 
-Excel 会在以下情况下取消函数的执行：
+Excel在下列情况下取消函数的执行。
 
 - 用户编辑或删除引用函数的单元格。
 - 函数的参数（输入）之一发生变化。 在这种情况下，取消之后还会触发新的函数调用。

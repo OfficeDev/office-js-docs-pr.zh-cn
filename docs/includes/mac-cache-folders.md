@@ -10,7 +10,7 @@
 也可以通过删除 `~/Library/Containers/com.Microsoft.OsfWebHost/Data/` 文件夹中的内容来手动清除缓存。
 
 > [!NOTE]
-> 如果文件夹不存在，请检查是否存在以下文件夹，如果找到，请删除文件夹的内容：
+> 如果文件夹不存在，请检查是否存在以下文件夹，如果找到，请删除文件夹的内容。
 >    - `~/Library/Containers/com.microsoft.{host}/Data/Library/Caches/`，其中，`{host}` 是 Office 应用程序（例如 `Excel`）
 >    - `~/Library/Containers/com.microsoft.{host}/Data/Library/Application Support/Microsoft/Office/16.0/Wef/`，其中，`{host}` 是 Office 应用程序（例如 `Excel`）
 >    - `~/Library/Containers/com.microsoft.Office365ServiceV2/Data/Caches/com.microsoft.Office365ServiceV2/`

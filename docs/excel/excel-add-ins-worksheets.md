@@ -3,12 +3,12 @@ title: 使用 Excel JavaScript API 处理工作表
 description: 显示如何使用 JavaScript API 对工作表执行常见Excel示例。
 ms.date: 07/02/2021
 localization_priority: Normal
-ms.openlocfilehash: 0923bfe4b0880b572c4df6d0b8ed360ca46cee76
-ms.sourcegitcommit: aa73ec6367eaf74399fbf8d6b7776d77895e9982
+ms.openlocfilehash: a8a7da6ce01f8c0cc82c8ab9c764b032027f585c
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/03/2021
-ms.locfileid: "53290731"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53349411"
 ---
 # <a name="work-with-worksheets-using-the-excel-javascript-api"></a>使用 Excel JavaScript API 处理工作表
 
@@ -374,11 +374,11 @@ function formulaChangeHandler(event) {
 
 ![排序前Excel表中的数据。](../images/excel-sort-event-before.png)
 
-如果对“**Q1**”（“**B**”中的值）执行从上到下排序，则 `WorksheetRowSortedEventArgs.address` 返回以下突出显示的行：
+如果对 **"Q1&quot;** 执行从上到下排序 **(&quot;B")** 中的值，则返回以下突出显示的行 `WorksheetRowSortedEventArgs.address` 。
 
 ![从上到下排序后 Excel 中的表格数据。 已移动的行会突出显示。](../images/excel-sort-event-after-row.png)
 
-如果对原始数据中“**柑橘**”（“**4**”中的值）执行从左到右排序，则 `WorksheetColumnsSortedEventArgs.address` 返回以下突出显示的列：
+如果对 **"Quinces&quot;** 执行从左到右排序 (原始数据的 **&quot;4")** 中的值，则返回以下突出显示的列 `WorksheetColumnsSortedEventArgs.address` 。
 
 ![从左到右排序后 Excel 中的表格数据。 已移动的列会突出显示。](../images/excel-sort-event-after-column.png)
 
@@ -435,7 +435,7 @@ Excel.run(function (context) {
 
 ## <a name="filter-data"></a>筛选数据
 
-[自动筛选](/javascript/api/excel/excel.autofilter)在工作表的一个范围内应用数据筛选器。 这是通过 `Worksheet.autoFilter.apply` 创建的，它具有以下属性：
+[自动筛选](/javascript/api/excel/excel.autofilter)在工作表的一个范围内应用数据筛选器。 这是通过 `Worksheet.autoFilter.apply` 创建的，它具有以下参数。
 
 - `range`：应用筛选器的范围，指定为 `Range` 对象或字符串。
 - `columnIndex`：从零开始的列索引，根据该索引评估筛选条件。

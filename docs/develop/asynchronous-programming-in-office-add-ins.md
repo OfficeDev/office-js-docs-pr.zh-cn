@@ -3,12 +3,12 @@ title: Office 加载项中的异步编程
 description: 了解 javaScript Office如何在加载项Office异步编程。
 ms.date: 09/08/2020
 localization_priority: Normal
-ms.openlocfilehash: 42cf2d8e1b0d5185866a55152517683031da3b3d
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: ee7bac02cbf1e03754dde53a0d64a94231fdc266
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53076264"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53350069"
 ---
 # <a name="asynchronous-programming-in-office-add-ins"></a>Office 加载项中的异步编程
 
@@ -347,7 +347,7 @@ function write(message){
 
 通用 API (和 Outlook API) 不会返回[Promises](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise)。 因此，在 [异步操作](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Operators/await) 完成之前，不能使用 await 暂停执行。 如果需要行为，可以将方法调用包装在显式创建的 `await` Promise 中。 
 
-基本模式是创建一个异步方法，该方法立即返回 Promise 对象，在内部方法完成时解析 Promise 对象;如果该方法失败，则拒绝该对象。 下面是一个简单示例
+基本模式是创建一个异步方法，该方法立即返回 Promise 对象，在内部方法完成时解析 Promise 对象;如果该方法失败，则拒绝该对象。 下面展示了一个非常简单的示例。
 
 ```javascript
 function getDocumentFilePath() {

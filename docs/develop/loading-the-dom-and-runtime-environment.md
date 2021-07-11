@@ -3,12 +3,12 @@ title: 加载 DOM 和运行时环境
 description: 加载 DOM Office加载项运行时环境。
 ms.date: 04/20/2021
 localization_priority: Normal
-ms.openlocfilehash: e66e6d5e30f5305dce35157280210a371ee3896f
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: 0cfdcf3750d9c0a3dd21667729da59dbfedf61c8
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53076011"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53349838"
 ---
 # <a name="loading-the-dom-and-runtime-environment"></a>加载 DOM 和运行时环境
 
@@ -20,7 +20,7 @@ ms.locfileid: "53076011"
 
 ![Flow内容或任务窗格外接程序时的事件数。](../images/office15-app-sdk-loading-dom-agave-runtime.png)
 
-启动内容/任务窗格外接程序时，将发生以下事件：
+当内容或任务窗格外接程序启动时，将发生以下事件。
 
 1. 用户打开已包含加载项的文档，或在文档中插入加载项。
 
@@ -43,7 +43,7 @@ ms.locfileid: "53076011"
 
 ![Flow加载项时Outlook事件数。](../images/outlook15-loading-dom-agave-runtime.png)
 
-启动 Outlook 外接程序时，将发生以下事件：
+当加载项启动时，Outlook事件发生。
 
 1. 当 Outlook 启动时，Outlook 读取已为用户的电子邮件帐户安装的 Outlook 外接程序的 XML 清单。
 

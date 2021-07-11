@@ -1,18 +1,18 @@
 ---
 title: 清单文件中的 Action 元素
 description: 此元素指定在用户选择按钮或菜单控件时要执行的操作。
-ms.date: 02/12/2021
+ms.date: 06/08/2021
 localization_priority: Normal
-ms.openlocfilehash: 6be1430800dea27dbd9bf78607161d88e475c145
-ms.sourcegitcommit: e7009c565b18c607fe0868db2e26e250ad308dce
+ms.openlocfilehash: 1ec2623ad5dbb07677735b7bcb1e39612e56984c
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/05/2021
-ms.locfileid: "50505407"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53348697"
 ---
 # <a name="action-element"></a>Action 元素
 
-指定在用户选择按钮或菜单控件[时](control.md#button-control)[要执行的操作](control.md#menu-dropdown-button-controls)。
+指定在用户选择"按钮"或"菜单"控件[时](control.md#button-control)[要执行的操作](control.md#menu-dropdown-button-controls)。
 
 ## <a name="attributes"></a>属性
 
@@ -26,8 +26,8 @@ ms.locfileid: "50505407"
 |:-----|:-----|
 |  [FunctionName](#functionname) |    指定要执行的函数的名称。 |
 |  [SourceLocation](#sourcelocation) |    指定该操作的源文件位置。 |
-|  [TaskpaneId](#taskpaneid) | 指定任务窗格容器的 ID。|
-|  [Title](#title) | 指定任务窗格的自定义标题。|
+|  [TaskpaneId](#taskpaneid) | 指定任务窗格容器的 ID。 在加载项Outlook不支持。|
+|  [Title](#title) | 指定任务窗格的自定义标题。 在加载项Outlook不支持。|
 |  [SupportsPinning](#supportspinning) | 指定任务窗格支持固定，即使用户选择其他对象，任务窗格也可以继续处于打开状态。|
 
 ## <a name="xsitype"></a>xsi:type
@@ -38,7 +38,7 @@ ms.locfileid: "50505407"
 - `ShowTaskpane`
 
 > [!IMPORTANT]
-> 注册 [邮箱](../objectmodel/preview-requirement-set/office.context.mailbox.md#events) 和 [项目](../objectmodel/preview-requirement-set/office.context.mailbox.item.md#events) 事件在 **xsi：type** 为 时不可用 `ExecuteFunction` 。
+> 当 [](../objectmodel/preview-requirement-set/office.context.mailbox.md#events)**xsi：type** 为 时，注册邮箱和项目事件不可用 [](../objectmodel/preview-requirement-set/office.context.mailbox.item.md#events) `ExecuteFunction` 。
 
 ## <a name="functionname"></a>FunctionName
 
@@ -52,7 +52,7 @@ ms.locfileid: "50505407"
 
 ## <a name="sourcelocation"></a>SourceLocation
 
-**xsi：type** 为"ShowTaskpane"时所需的元素。 指定该操作的源文件位置。 **resid** 属性不能超过 32 个字符，并且必须设置为 Resources 元素 **中 Urls** 元素中 **Url** 元素 **的 id** [属性值。](resources.md)
+**xsi：type** 为"ShowTaskpane"时必需元素。 指定该操作的源文件位置。 **resid** 属性不能超过 32 个字符，并且必须设置为 **Urls** 元素（位于 [Resources](resources.md)元素）中 Url **元素** 的 **id** 属性的值。
 
 ```xml
 <Action xsi:type="ShowTaskpane">
@@ -106,7 +106,10 @@ ms.locfileid: "50505407"
 
 **xsi: type** 是“ShowTaskpane”时的可选元素。 指定此操作任务窗格的自定义标题。
 
-以下示例演示使用 **Title** 元素的操作。 请注意，不要直接将 **Title** 分配给字符串。 相反，你可以为其分配 (一) ID，该 ID 在清单的 **"资源** "部分中定义，并且不能超过 32 个字符。
+> [!NOTE]
+> 此子元素在加载项中Outlook支持。
+
+以下示例演示使用 **Title** 元素的操作。 请注意，不要直接将 **Title** 分配给字符串。 相反，你可以为其分配 (resid) ，该 ID 在清单的"资源"部分中定义，且不能超过 32 个字符。
 
 ```xml
 <Action xsi:type="ShowTaskpane">
@@ -134,10 +137,10 @@ ms.locfileid: "50505407"
 **xsi:type** 是“ShowTaskpane”时的可选元素。 包含 [VersionOverrides](versionoverrides.md) 元素的 `xsi:type` 属性值必须为 `VersionOverridesV1_1`。 添加此元素时将值设为 `true` 可以支持任务窗格固定。 这样一来，用户可以“固定”任务窗格，即使用户选择其他对象，任务窗格也可以继续处于打开状态。 有关详细信息，请参阅[在 Outlook 中实现可固定的任务窗格](../../outlook/pinnable-taskpane.md)。
 
 > [!IMPORTANT]
-> 尽管 `SupportsPinning` 元素是在要求集 [1.5](../objectmodel/requirement-set-1.5/outlook-requirement-set-1.5.md)中引入的，但它当前仅支持使用以下内容的 Microsoft 365 订阅者。
+> 尽管 `SupportsPinning` 元素是在要求集[1.5](../objectmodel/requirement-set-1.5/outlook-requirement-set-1.5.md)中引入的，但当前仅支持以下Microsoft 365订阅者：
 >
-> - Windows 版 Outlook 2016 或更高版本 (版本 7628.1000 或更高版本) 
-> - Mac 版 Outlook 2016 或 (版本 16.13.503 或更高版本) 
+> - Outlook 2016版本 7628.1000 或 Windows (更高版本) 
+> - Outlook 2016版本 16.13.503 (更高版本的 Mac 版本或更高版本) 
 > - 新式 Outlook 网页版
 
 ```xml

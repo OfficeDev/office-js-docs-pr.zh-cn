@@ -3,12 +3,12 @@ title: 创建将 REST 与本地 Project Server OData 服务结合使用的 Proje
 description: 了解如何为 Project Professional 2013 生成任务窗格外接程序，以将活动项目中的成本和工作数据与当前 Project Web App 实例中所有项目的平均值进行比较。
 ms.date: 09/26/2019
 localization_priority: Normal
-ms.openlocfilehash: 318ef4fe45fdfbca5d47cb5d3d28b43fea61059b
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: c03cd580f9f5d4da654022de811d4a060a99e52d
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53076663"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53348809"
 ---
 # <a name="create-a-project-add-in-that-uses-rest-with-an-on-premises-project-server-odata-service"></a>创建将 REST 与本地 Project Server OData 服务结合使用的 Project 加载项
 
@@ -18,7 +18,7 @@ ms.locfileid: "53076663"
 
 ## <a name="prerequisites-for-creating-a-task-pane-add-in-that-reads-project-server-reporting-data"></a>创建可读取 Project Server 报告数据的任务窗格加载项的先决条件
 
-以下是创建 Project 任务窗格加载项的先决条件，该加载项可读取 Project Web App Server 2013 本地安装中的 Project Web App 实例的 Project **ProjectData** 服务：
+以下是创建 Project 任务窗格加载项的先决条件，该加载项可读取 Project Server 2013 本地安装中 Project Web App 实例的 **ProjectData** 服务。
 
 - 确保您已在本地开发计算机上安装最新的 Service Pack 和 Windows 更新。操作系统可以是 Windows 7、Windows 8、Windows Server 2008 或 Windows Server 2012。
 
@@ -37,7 +37,7 @@ ms.locfileid: "53076663"
 
 1. 若要使浏览器直接显示来自 REST 查询的 XML 数据，请关闭源阅读视图。有关如何在 Internet Explorer 中执行此操作的信息，请参阅 [查询 Project Server 2013 报告数据的 OData 源](/previous-versions/office/project-odata/jj163048(v=office.15))中过程 1 的第 4 步。
 
-2. 使用具有以下 URL 的浏览器查询 **ProjectData** 服务 **http://ServerName ：/ProjectServerName /_api/ProjectData**。 例如，如果 Project Web App 实例是 `http://MyServer/pwa`，浏览器会显示以下结果：
+2. 使用具有以下 URL 的浏览器查询 **ProjectData** 服务 **http://ServerName ：/ProjectServerName /_api/ProjectData**。 例如，如果Project Web App实例为 `http://MyServer/pwa` ，浏览器将显示以下结果。
 
     ```xml
     <?xml version="1.0" encoding="utf-8"?>
@@ -71,7 +71,7 @@ Visual Studio Office 开发人员工具包含 Project 2013 任务窗格外接程
 
 1. 以Visual Studio 2015 运行 2015，然后选择"Project **页上的**"新建网站"。
 
-2. 在 **"新建** Project对话框中，展开"**模板****"、"Visual C#"** 和 **"Office/SharePoint"** 节点，然后选择"Office加载项"。 在.NET Framework窗格顶部的"目标框架"下拉列表中选择 **"4.5.2"，** 然后选择 **"Office 外接程序**" (查看下一张屏幕截图) 。
+2. 在 **"新建Project"** 对话框中，展开"模板"、"Visual **C#"** 和 **"Office/SharePoint"** 节点，然后选择"Office **加载项"。** 在.NET Framework窗格顶部的"目标框架"下拉列表中选择 **"4.5.2"，** 然后选择 **"Office 外接程序**" (查看下一张屏幕截图) 。
 
 3. 若要将这两个 Visual Studio 项目置于同一目录中，请选择“创建解决方案的目录”，然后浏览到所需位置。
 
@@ -115,13 +115,13 @@ Visual Studio Office 开发人员工具包含 Project 2013 任务窗格外接程
 
 4. 添加一个要在功能区“项目”选项卡上的“Office 加载项”下拉列表中显示的图标。 可以在 Visual Studio 解决方案中添加图标文件或为图标使用 URL。 
 
-下列步骤显示如何向 Visual Studio 解决方案添加图标文件：
+以下步骤显示如何将图标文件添加到Visual Studio解决方案。
 
 1. 在 **"解决方案资源管理器**"中，转到名为 Images 的文件夹。
 
 2. 若要在“Office 加载项”下拉列表中显示，该图标必须是 32 x 32 像素。 例如，安装 Project 2013 SDK，然后选择“**图像**”文件夹并添加 SDK 的以下文件：`\Samples\Apps\HelloProjectOData\HelloProjectODataWeb\Images\NewIcon.png`
 
-    也可以使用自己的 32x32 图标，或将下列图像复制到 NewIcon.png 文件中，再将此文件添加到 `HelloProjectODataWeb\Images` 文件夹中：
+    或者，使用你自己的 32 x 32 图标;或者，将以下图像复制到名为 NewIcon.png 的文件，然后将该文件添加到  `HelloProjectODataWeb\Images` 文件夹。
 
     ![HelloProjectOData 应用的图标。](../images/pj15-hello-project-data-new-icon.jpg)
 
@@ -180,7 +180,7 @@ Visual Studio Office 开发人员工具包含 Project 2013 任务窗格外接程
 
     **HelloProjectOData** 加载项还使用 SurfaceErrors.js 文件，该文件在弹出消息中显示错误。 您可以使用文本编辑器从创建适用于 [Project 2013](../project/create-your-first-task-pane-add-in-for-project-by-using-a-text-editor.md)的第一个任务窗格外接程序的"强大的编程"部分复制代码，然后在 **HelloProjectODataWeb** 项目的 **Scripts\Office** 文件夹中添加 SurfaceErrors.js 文件。
 
-    下面是 head 元素的更新的HTML 代码，以及该元素文件SurfaceErrors.js行：
+    下面是 head 元素的更新的HTML 代码，以及 SurfaceErrors.js 文件。
 
     ```HTML
     <!DOCTYPE html>
@@ -192,7 +192,7 @@ Visual Studio Office 开发人员工具包含 Project 2013 任务窗格外接程
 
     <link rel="stylesheet" type="text/css" href="../Content/Office.css" />
 
-    <!-- Add your CSS styles to the following file -->
+    <!-- Add your CSS styles to the following file. -->
     <link rel="stylesheet" type="text/css" href="../Content/App.css" />
 
     <!-- Use the CDN reference to the mini-version of jQuery when deploying your add-in. -->
@@ -206,7 +206,7 @@ Visual Studio Office 开发人员工具包含 Project 2013 任务窗格外接程
     <script src="../Scripts/Office/1.0/MicrosoftAjax.js"></script>
     <script src="../Scripts/Office/1.0/Office.js"></script>
 
-    <!-- Add your JavaScript to the following files -->
+    <!-- Add your JavaScript to the following files. -->
     <script src="../Scripts/HelloProjectOData.js"></script>
     <script src="../Scripts/SurfaceErrors.js"></script>
     </head>
@@ -543,7 +543,7 @@ HelloProjectOData.js 文件的其余部分包括两个函数：当用户选择"�
 
 ## <a name="testing-the-helloprojectodata-add-in"></a>测试 HelloProjectOData 外接程序
 
-若要使用 Visual Studio 2015 测试和调试 **HelloProjectOData** Project Professional，必须在开发计算机上安装 Project Professional 2013。 若要启用不同的测试方案，请确保您可以选择 Project 打开本地计算机文件还是与 Project Web App 连接。 例如，执行下列步骤：
+若要使用 Visual Studio 2015 测试和调试 **HelloProjectOData** Project Professional，必须在开发计算机上安装 Project Professional 2013。 若要启用不同的测试方案，请确保您可以选择 Project 打开本地计算机文件还是与 Project Web App 连接。 例如，执行以下步骤。
 
 1. 在功能区的“文件”选项卡上，选择 Backstage 视图中的“信息”选项卡，然后选择“管理帐户”。
 
@@ -581,7 +581,7 @@ HelloProjectOData.js 文件的其余部分包括两个函数：当用户选择"�
 
 6. 查看文本框中的输出。 它应显示对 **ajax** 和 **parseODataResult** 的调用中的文档路径、REST 查询、状态信息和 JSON 结果。 输出有助于了解、创建和调试 方法中的代码，如 `parseODataResult` `projCost += Number(res.d.results[i].ProjectCost);` 。
 
-    下面是一个输出示例，为清晰起见，该输出在 Project Web App 实例的三个项目中将换行符和空格添加到文本中：
+    下面是一个输出示例，为清楚起见，为清楚起见，在文本中添加了换行符和空格，用于Project Web App项目。
 
     ```json
     Document path: <>\WinProj test1
@@ -670,7 +670,7 @@ HelloProjectOData.js 文件的其余部分包括两个函数：当用户选择"�
 
         <link rel="stylesheet" type="text/css" href="../Content/Office.css" />
 
-        <!-- Add your CSS styles to the following file -->
+        <!-- Add your CSS styles to the following file. -->
         <link rel="stylesheet" type="text/css" href="../Content/App.css" />
 
         <!-- Use the CDN reference to the mini-version of jQuery when deploying your add-in. -->
@@ -684,7 +684,7 @@ HelloProjectOData.js 文件的其余部分包括两个函数：当用户选择"�
         <script src="../Scripts/Office/1.0/MicrosoftAjax.js"></script>
         <script src="../Scripts/Office/1.0/Office.js"></script>
 
-        <!-- Add your JavaScript to the following files -->
+        <!-- Add your JavaScript to the following files. -->
         <script src="../Scripts/HelloProjectOData.js"></script>
         <script src="../Scripts/SurfaceErrors.js"></script>
     </head>
@@ -1099,7 +1099,7 @@ Table styles
 
 对于 **ProjectData** 服务的其他查询，查询字符串的长度存在限制，这会影响查询从父集合到子集合中的对象所执行的步骤数。 例如， **Projects** 到 **Tasks** 到任务项的两步查询可以正常运行，但 **Projects** 到 **Tasks** 到 **Assignments** 到分配项的三步查询可能超过默认的最大 URL 长度。 有关详细信息，请参阅 [查询 Project Server 2013 报告数据的 OData 源](/previous-versions/office/project-odata/jj163048(v=office.15))。
 
-如果您修改 **HelloProjectOData** 外接程序以用于生产用途，请执行以下步骤：
+如果您修改 **HelloProjectOData** 外接程序以用于生产用途，请执行以下步骤。
 
 - 在 HelloProjectOData.html 文件中，为了提升性能，请将 office.js 引用从本地项目更改为 CDN 引用：
 

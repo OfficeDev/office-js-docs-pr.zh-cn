@@ -3,12 +3,12 @@ title: 在加载项中Office上下文选项卡
 description: 了解如何将自定义上下文选项卡添加到Office外接程序。
 ms.date: 05/12/2021
 localization_priority: Normal
-ms.openlocfilehash: d03ac2c01c03353f3e2d1b54ba20616d7b42d93f
-ms.sourcegitcommit: 693d364616b42eea66977eef47530adabc51a40f
+ms.openlocfilehash: 90db6d010fb76be027df639cc67e62a548cd784a
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/19/2021
-ms.locfileid: "52555204"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53349229"
 ---
 # <a name="create-custom-contextual-tabs-in-office-add-ins"></a>在加载项中Office上下文选项卡
 
@@ -35,7 +35,7 @@ ms.locfileid: "52555204"
 
 ## <a name="behavior-of-custom-contextual-tabs"></a>自定义上下文选项卡的行为
 
-自定义上下文选项卡的用户体验遵循内置上下文选项卡Office模式。 以下是放置自定义上下文选项卡的基本原则：
+自定义上下文选项卡的用户体验遵循内置上下文选项卡Office模式。 以下是放置自定义上下文选项卡的基本原则。
 
 - 当自定义上下文选项卡可见时，它将显示在功能区的右端。
 - 如果同时显示外接程序中的一个或多个内置上下文选项卡和一个或多个自定义上下文选项卡，则自定义上下文选项卡始终位于所有内置上下文选项卡的右侧。
@@ -45,7 +45,7 @@ ms.locfileid: "52555204"
 
 ## <a name="major-steps-for-including-a-contextual-tab-in-an-add-in"></a>在外接程序中添加上下文选项卡的主要步骤
 
-以下是在外接程序中添加自定义上下文选项卡的主要步骤：
+以下是在外接程序中添加自定义上下文选项卡的主要步骤。
 
 1. 将外接程序配置为使用共享运行时。
 1. 定义选项卡及其上出现的组和控件。
@@ -192,7 +192,7 @@ ms.locfileid: "52555204"
     }
     ```
  
-下面是 JSON blob 的完整示例：
+下面是 JSON blob 的完整示例。
 
 ```json
 `{
@@ -380,7 +380,7 @@ function myContextChanges() {
 
 ## <a name="localizing-the-json-blob"></a>本地化 JSON blob
 
-传递给 的 JSON blob 的本地化方式与自定义核心选项卡的清单标记本地化 (如从清单控件本地化) `requestCreateControls` 中所述。 [](../develop/localization.md#control-localization-from-the-manifest) 相反，本地化必须在运行时针对每个区域设置使用不同的 JSON blob。 建议您使用一个 `switch` 语句来测试[Office.context.displayLanguage](/javascript/api/office/office.context#displayLanguage)属性。 示例如下：
+传递给 的 JSON blob 的本地化方式与自定义核心选项卡的清单标记本地化 (如从清单控件本地化) `requestCreateControls` 中所述。 [](../develop/localization.md#control-localization-from-the-manifest) 相反，本地化必须在运行时针对每个区域设置使用不同的 JSON blob。 建议您使用一个 `switch` 语句来测试[Office.context.displayLanguage](/javascript/api/office/office.context#displayLanguage)属性。 示例如下。
 
 ```javascript
 function GetContextualTabsJsonSupportedLocale () {
@@ -424,7 +424,7 @@ function GetContextualTabsJsonSupportedLocale () {
 }
 ```
 
-然后，代码调用 函数，获取传递给 的本地化 `requestCreateControls` blob，如以下示例所示：
+然后，代码调用 函数，获取传递给 的本地化 `requestCreateControls` blob，如以下示例所示。
 
 ```javascript
 var contextualTabJSON = GetContextualTabsJsonSupportedLocale();

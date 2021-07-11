@@ -3,12 +3,12 @@ title: Outlook 加载项的 Onsend 功能
 description: 提供了一种处理项目或阻止用户进行特定操作的方法，并允许加载项在发送时设置某些属性。
 ms.date: 06/16/2021
 localization_priority: Normal
-ms.openlocfilehash: 0723edafeefba7e423e15b912ce1628dfd299e93
-ms.sourcegitcommit: d372de1a25dbad983fa9872c6af19a916f63f317
+ms.openlocfilehash: 80047f4c8056bafa62d467f1e69dd334d168486a
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/30/2021
-ms.locfileid: "53205009"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53348473"
 ---
 # <a name="on-send-feature-for-outlook-add-ins"></a>Outlook 加载项的 Onsend 功能
 
@@ -25,7 +25,7 @@ on-send 功能是由事件类型 `ItemSend` 触发的，无 UI。
 
 下表显示了 Onss ons ons 功能支持的客户端-服务器组合，包括所需的最低累积更新（如果适用）。 不支持排除的组合。
 
-| 客户端 | Exchange Online | Exchange 2016 本地部署<br> (累积更新 6 或更高版本)  | Exchange 2019 本地部署<br> (累积更新 1 或更高版本)  |
+| Client | Exchange Online | Exchange 2016 本地部署<br> (累积更新 6 或更高版本)  | Exchange 2019 本地部署<br> (累积更新 1 或更高版本)  |
 |---|:---:|:---:|:---:|
 |Windows：<br>版本 1910 (内部版本 12130.20272) 或更高版本|是|是|是|
 |Mac：<br>内部版本 16.47 或更高版本|是|是|是|
@@ -350,9 +350,9 @@ Get-OWAMailboxPolicy OWAOnSendAddinAllUserPolicy | Set-OWAMailboxPolicy –OnSen
 
 |方案|邮箱 1 Onsend 功能|邮箱 2 Onsend 功能|Outlook Web 会话（经典）|结果|是否支持？|
 |:------------|:------------|:--------------------------|:---------|:-------------|:-------------|
-|1 |已启用|已启用|新会话|邮箱 1 无法从邮箱 2 发送邮件或会议项目。|目前尚不支持。可以使用方案 3 作为一种解决办法。|
-|2 |已禁用|已启用|新会话|邮箱 1 无法从邮箱 2 发送邮件或会议项目。|目前尚不支持。可以使用方案 3 作为一种解决办法。|
-|3 |已启用|已启用|同一个会话|分配给邮箱 1 的 Onsend 加载项运行 Onsend。|支持。|
+|1|已启用|已启用|新会话|邮箱 1 无法从邮箱 2 发送邮件或会议项目。|目前尚不支持。可以使用方案 3 作为一种解决办法。|
+|2|已禁用|已启用|新会话|邮箱 1 无法从邮箱 2 发送邮件或会议项目。|目前尚不支持。可以使用方案 3 作为一种解决办法。|
+|3|已启用|已启用|同一个会话|分配给邮箱 1 的 Onsend 加载项运行 Onsend。|支持。|
 |4 |已启用|已禁用|新会话|未运行 Onsend 加载项；邮件或会议项目已发送。|支持。|
 
 #### <a name="web-browser-modern-outlook-windows-mac"></a>Web 浏览器（新式 Outlook）、Windows、Mac
@@ -517,7 +517,7 @@ function checkBodyOnlyOnSendCallBack(asyncResult) {
 }
 ```
 
-以下是 `addAsync` 方法的参数：
+以下是方法的参数 `addAsync` 。
 
 - `NoSend` &ndash; 一个字符串，即开发人员指定用于引用通知邮件的密钥。 可用于在以后修改此邮件。 该键不能超过 32 个字符。
 - `type` &ndash; JSON 对象参数的一个属性。 表示邮件的类型；类型对应于 [Office.MailboxEnums.ItemNotificationMessageType](/javascript/api/outlook/office.mailboxenums.itemnotificationmessagetype) 枚举的值。 可能的值是进度指示器、信息消息或错误消息。 在此示例中，`type` 是错误消息。  

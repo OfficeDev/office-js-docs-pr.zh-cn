@@ -1,21 +1,21 @@
 ---
 title: Excel JavaScript API 性能优化
-description: 使用 JavaScript API 优化 Excel 加载项性能。
+description: 使用 javaScript API Excel优化加载项性能。
 ms.date: 07/29/2020
 localization_priority: Normal
-ms.openlocfilehash: 42ab5f28717f0f7dcd06461840de692a5daf60ce
-ms.sourcegitcommit: c6308cf245ac1bc66a876eaa0a7bb4a2492991ac
+ms.openlocfilehash: 5313bb3fe25d165e49cc0508e81d58294db48798
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "47408612"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53349383"
 ---
 # <a name="performance-optimization-using-the-excel-javascript-api"></a>使用 Excel JavaScript API 优化性能
 
 有多种方法可以使用 Excel JavaScript API 执行常见任务。 你将发现不同方法之间的显著性能差异。 本文提供指导和代码示例，展示如何使用 Excel JavaScript API 来高效执行常见任务。
 
 > [!IMPORTANT]
-> 可以通过推荐使用和呼叫解决许多性能问题 `load` `sync` 。 请参阅 [Office 外接程序的资源限制和性能优化](../concepts/resource-limits-and-performance-optimization.md#performance-improvements-with-the-application-specific-apis) 一节中的 "特定于应用程序的 Api 的性能改进" 一节，以高效的方式使用应用程序特定的 api 的建议。
+> 可以通过建议的用法和调用解决许多 `load` `sync` 性能问题。 有关有效使用特定于应用程序的 API 的建议，请参阅[Office](../concepts/resource-limits-and-performance-optimization.md#performance-improvements-with-the-application-specific-apis)外接程序的资源限制和性能优化的"使用特定于应用程序的 API 的性能改进"部分。
 
 ## <a name="suspend-excel-processes-temporarily"></a>暂时挂起 Excel 进程
 
@@ -25,7 +25,7 @@ Excel 中的多个后台任务将反应来自用户和外接程序的输入。 �
 
 如果你试图在大量单元格上执行操作（例如，设置一个大范围对象的值），而且不介意在操作完成时暂停 Excel 中的计算，建议暂停计算，直到调用下一个 `context.sync()`。
 
-有关如何使用 `suspendApiCalculationUntilNextSync()` API 以便捷的方式暂停和重新激活计算的信息，请参阅[应用程序对象](/javascript/api/excel/excel.application)参考文档。 下面的代码演示了如何暂停计算：
+有关如何使用 `suspendApiCalculationUntilNextSync()` API 以便捷的方式暂停和重新激活计算的信息，请参阅[应用程序对象](/javascript/api/excel/excel.application)参考文档。 以下代码演示了如何暂时暂停计算。
 
 ```js
 Excel.run(async function(ctx) {
@@ -66,14 +66,14 @@ Excel.run(async function(ctx) {
 })
 ```
 
-请注意，只有公式计算才会被挂起。 仍将重新生成任何已更改的引用。 例如，重命名工作表仍会将公式中的任何引用更新到该工作表。
+请注意，仅暂停公式计算。 仍将重新生成任何更改的引用。 例如，重命名工作表仍将更新公式中对此工作表的任何引用。
 
 ### <a name="suspend-screen-updating"></a>暂停屏幕更新
 
 Excel 大约会在代码发生更改时显示外接程序所进行的这些更改。 对于大型迭代数据集，你无需实时在屏幕上查看此进度。 在外接程序调用 `context.sync()` 或者在 `Excel.run` 结束（隐式调用 `context.sync`）之前，`Application.suspendScreenUpdatingUntilNextSync()` 将暂停对 Excel 的可视化更新。 请注意，在下次同步之前，Excel 不会显示任何活动迹象。你的外接程序应为用户提供相关指南，以便为此延迟做好准备，或者提供一个状态栏，以演示相关活动。
 
 > [!NOTE]
-> 请勿 `suspendScreenUpdatingUntilNextSync` 反复调用 (如在循环) 中。 重复调用将导致 Excel 窗口闪烁。
+> 不要重复调用 `suspendScreenUpdatingUntilNextSync` (，如在循环) 。 重复调用将导致Excel闪烁。
 
 ### <a name="enable-and-disable-events"></a>启用和禁用事件
 
@@ -111,6 +111,6 @@ Excel.run(async (ctx) => {
 
 ## <a name="see-also"></a>另请参阅
 
-* [Office 外接程序中的 Excel JavaScript 对象模型](excel-add-ins-core-concepts.md)
+* [Excel 加载项中的 Word JavaScript 对象模型](excel-add-ins-core-concepts.md)
 * [Office 外接程序的资源限制和性能优化](../concepts/resource-limits-and-performance-optimization.md)
 * [工作表函数对象（适用于 Excel 的 JavaScript API）](/javascript/api/excel/excel.functions)

@@ -15,8 +15,8 @@
 
 * 进行小幅度的更改，[通过 GitHub 参与](#contribute-using-github)。
 * 进行大幅度的更改，或更改涉及代码，[通过 Git 参与](#contribute-using-git)。
-* 通过访问受影响文章底部的 **"反馈**"部分，然后选择"此页面"创建 GitHub问题，报告文档 Bug。 如果不可用，请直接在 [GitHub](https://github.com/OfficeDev/office-js-docs-pr/issues)上创建新问题。
-* 请求 [GitHub 问题的新文档](https://github.com/OfficeDev/office-js-docs-pr/issues)。
+* 通过访问受影响文章底部的 **"反馈**"部分来报告文档 bug，然后选择"此页面"创建GitHub问题。 如果不可用，请直接在[""GitHub"。](https://github.com/OfficeDev/office-js-docs-pr/issues)
+* 请求新文档GitHub[问题](https://github.com/OfficeDev/office-js-docs-pr/issues)。
 
 ## <a name="contribute-using-github"></a>通过 GitHub 参与
 
@@ -24,7 +24,7 @@
 
 **注意**：此方法允许一次参与一篇文章。
 
-### <a name="to-contribute-using-github"></a>使用 GitHub 参与
+### <a name="to-contribute-using-github"></a>使用 GitHub
 
 1. 在 GitHub 上找到想要参与的文章。
 2. 进入 GitHub 上的相应文章后，登录 GitHub（获取免费帐户[加入 GitHub](https://github.com/join)）。
@@ -111,7 +111,7 @@
 
 若要编辑文件，请在自己选择的编辑器中将其打开并进行修改。若要新建文件，请使用自己选择的编辑器并将新文件存储在本地存储库副本中的适当位置。执行操作期间，经常保存进行的操作。
 
-`C:\Users\<yourusername>\<repo name>` 中的文件是你在本地存储库中创建的新分支的工作副本。提交更改前，在此文件夹的任何更改都不会影响本地存储库。若要向本地存储库提交更改，在 GitBash 中键入以下命令：
+`C:\Users\<yourusername>\<repo name>` 中的文件是你在本地存储库中创建的新分支的工作副本。 提交更改前，在此文件夹的任何更改都不会影响本地存储库。 若要将更改提交到本地存储库，在 GitBash 中键入以下命令。
 
     git add .
     git commit -v -a -m "<Describe the changes made in this commit>"
@@ -142,7 +142,7 @@
 
 分支成功合并后（即已接受拉取请求），不能继续在该本地分支中操作。这会导致提交其他拉取请求时出现合并冲突。若要进行其他更新，从已成功合并的上游分支中新建本地分支，然后删除最初的本地分支。
 
-例如，如果你的本地分支 X 已成功合并到 OfficeDev/microsoft-graph-docs 母版分支，而你希望对已合并的内容进行其他更新。从 OfficeDev/microsoft-graph-docs 母版分支中新建本地分支 X2。若要实现此操作，请打开 GitBash，然后执行以下命令：
+例如，如果你的本地分支 X 已成功合并到 OfficeDev/microsoft-graph-docs 母版分支，而你希望对已合并的内容进行其他更新。 从 OfficeDev/microsoft-graph-docs 母版分支中新建本地分支 X2。 为此，请打开 GitBash 并执行以下命令。
 
     cd microsoft-graph-docs
     git pull upstream master:X2

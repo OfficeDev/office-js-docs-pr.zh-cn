@@ -3,12 +3,12 @@ title: 清单文件中的 VersionOverrides 元素
 description: Office清单的 VersionOverrides 元素参考文档 (XML) 文件。
 ms.date: 05/12/2021
 localization_priority: Normal
-ms.openlocfilehash: 0a70ded82b4603b1ac70698947a4710a4a44b5b6
-ms.sourcegitcommit: 693d364616b42eea66977eef47530adabc51a40f
+ms.openlocfilehash: 787ba8e7d90900cc72d6c5e9370d68ced0faee2f
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/19/2021
-ms.locfileid: "52555148"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53348655"
 ---
 # <a name="versionoverrides-element"></a>VersionOverrides 元素
 
@@ -78,7 +78,7 @@ ms.locfileid: "52555148"
 
 新版架构的 `VersionOverrides` 元素必须是旧版架构的 `VersionOverrides` 元素的子元素，才能实现多个版本。 `VersionOverrides` 子元素不会从父元素继承任何值。
 
-若要实现 VersionOverrides v1.0 和 v1.1 架构，清单如以下示例所示：
+若要同时实现 VersionOverrides v1.0 和 v1.1 架构，清单将类似于以下示例。
 
 ```xml
 <OfficeApp ... xsi:type="MailApp">

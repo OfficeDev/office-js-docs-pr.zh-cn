@@ -1,31 +1,31 @@
 ---
 title: 避免在循环中使用 context.sync
-description: 了解如何使用拆分循环和相关的对象模式以避免调用上下文。循环中的同步。
+description: 了解如何使用拆分循环和相关对象模式避免在循环中调用 context.sync。
 ms.date: 07/29/2020
 localization_priority: Normal
-ms.openlocfilehash: d3628400ef783035cf6a816144dbd5cfb30582ee
-ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
+ms.openlocfilehash: 64cfd5cd350746ba07e1a98986a4bd7811431475
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "47292993"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53349138"
 ---
 # <a name="avoid-using-the-contextsync-method-in-loops"></a>避免在循环中使用 context.sync
 
 > [!NOTE]
-> 本文假定您不在第一阶段使用至少使用用于 Excel、Word、OneNote 和 Visio 的四个特定于应用程序的 Office JavaScript Api 中的一个， &mdash; &mdash; 这些 api 使用批处理系统与 Office 文档进行交互。 特别是，您应该知道什么是调用 `context.sync` ，您应该知道什么是集合对象。 如果你不在这一阶段，请首先了解本文中的 "特定于应用程序" 下所链接的 [Office JAVASCRIPT API](../develop/understanding-the-javascript-api-for-office.md) 和文档。
+> 本文假定你已超出使用批处理系统与 Office 文档交互的四个特定于应用程序的 Office JavaScript API（适用于 &mdash; Excel、Word、OneNote 和 Visio）的开始阶段。 &mdash; 特别是，你应了解调用功能， `context.sync` 并且应了解集合对象是什么。 如果你未处于该阶段，请从了解[JavaScript API Office，](../develop/understanding-the-javascript-api-for-office.md)以及该文章中"特定于应用程序"下的链接文档开始。
 
-对于 Office 加载项中使用特定于 Excel、Word、OneNote 和 Visio) 的特定应用程序模型之一的编程方案 (，您的代码需要读取、写入或处理集合对象的每个成员中的某个属性。 例如，需要获取特定表列或 Word 外接程序中每个单元格的值的 Excel 加载项，需要突出显示文档中每个字符串的实例。 您需要在集合对象的属性中循环访问这些成员 `items` ; 但是，出于性能原因，您需要避免 `context.sync` 在循环的每个迭代中调用。 每次调用的 `context.sync` 是从外接端到 Office 文档的一种往返行程。 重复往返行程会影响性能，尤其是当加载项在 web 上的 Office 中运行时，由于往返行程跨 internet 进行。
+对于 Office 外接程序中对 Excel、Word、OneNote 和 Visio) 使用应用程序特定的 API 模型 (之一的一些编程方案，代码需要读取、写入或处理集合对象的每个成员中的一些属性。 例如，Excel需要获取特定表格列内每个单元格的值的加载项，或需要突出显示文档中每个字符串实例的 Word 加载项。 您需要循环访问集合对象的 属性中的成员;但出于性能原因，您需要避免在循环的每次迭代中 `items` `context.sync` 调用。 每次调用 都是从加载项到文档Office `context.sync` 行程。 重复的往返会损害性能，尤其是在外接程序运行在 Office web 版，因为往返行程通过 Internet。
 
 > [!NOTE]
-> 本文中的所有示例都使用 `for` 循环，但所述的实践适用于可循环访问数组的任何循环语句，其中包括以下内容：
+> 本文中所有示例都使用循环，但所介绍的做法适用于可以循环访问数组的任何循环语句， `for` 包括：
 >
 > - `for`
 > - `for of`
 > - `while`
 > - `do while`
 > 
-> 它们还适用于将函数传递和应用于数组中的项的任何数组方法，包括以下内容：
+> 它们还适用于函数传递给并应用于数组中的项目的任何数组方法，包括：
 >
 > - `Array.every`
 > - `Array.forEach`
@@ -39,10 +39,10 @@ ms.locfileid: "47292993"
 
 ## <a name="writing-to-the-document"></a>写入文档
 
-在最简单的情况下，只写入集合对象的成员，而不是读取其属性。 例如，下面的代码在 Word 文档中突出显示了每个 "the" 实例的黄色。
+在最简单的情况下，您只写入集合对象的成员，而不是读取它们的属性。 例如，以下代码在 Word 文档中以黄色突出显示每个"the"实例。
 
 > [!NOTE]
-> 通常情况下，最好 `context.sync` 先在应用程序方法的结束 "}" 字符前加上结尾 `run` (例如 `Excel.run` ， `Word.run` 等。 ) 。 这是因为此 `run` 方法会将 `context.sync` 作为最后一件事情的隐藏调用作为最后一件事情，并且只有在已排队的命令尚未同步的情况下。 此调用是隐藏的这一事实可能会造成混淆，因此我们通常建议您添加显式 `context.sync` 。 但是，假设本文涉及最小化的调用 `context.sync` ，则添加完全不必要的最终版本会更加容易混淆 `context.sync` 。 因此，在本文的结尾处没有未同步的命令时，我们会将其保留下来 `run` 。
+> 通常，在应用程序方法的结束"}"字符（如 、等）之前 (一个 `context.sync` `run` `Excel.run` `Word.run` 最终) 。 这是因为该方法在（并且仅在存在尚未同步的已排队命令）时执行最后一项操作时进行隐藏 `run` `context.sync` 调用。 隐藏此调用这一事实可能会令人困惑，因此，我们通常建议添加显式 `context.sync` 。 但是，鉴于本文将调用最小化，添加一个完全不必要的最终 ，实际上会更 `context.sync` 令人困惑 `context.sync` 。 因此，在本文中，当 末尾没有未同步的命令时，我们会不进行介绍 `run` 。
 
 ```javascript
 Word.run(async function (context) {
@@ -72,18 +72,18 @@ Word.run(async function (context) {
 }
 ```
 
-上面的代码花了1个完整的秒，在 Windows 中的 Word 中有一个包含200个实例 "the" 的文档。 但是，当循环 `await context.sync();` 中的行被注释掉并在循环 uncommented 后的相同行时，该操作只需 1/10 秒。 在 web 上的 Word 中 (使用边缘作为浏览器) 的情况下，在循环中进行同步所用的时间为3秒，并且在循环后的同步大约为 6/10ths，在循环后的速度约为5倍。 在包含2000实例 "the" 的文档中，通过在循环中进行同步，在 web 上的 Word 中 () 80 秒，并且在循环后的同步只需4秒，而在循环后的速度约为20倍。
+前面的代码在文档中使用 200 个实例的 Word on Windows 完成前一Windows。 但是，当在取消注释循环后将循环中的行注释掉且同一行时，该操作只需 `await context.sync();` 1/10 秒。 在Word web 版 (Edge 作为浏览器) 时，循环内同步需要 3 秒钟，在循环后同步只需 6/10 秒，大约快五倍。 在包含 2000 个""实例的文档中，在 (Word web 版) 80 秒（循环内同步）中，在循环后仅同步 4 秒，大约快 20 倍。
 
 > [!NOTE]
-> 如果同步并发运行，则需要询问是否会更快地执行同步内部循环版本，这只需 `await` 从的前面删除关键字即可完成 `context.sync()` 。 这将导致运行时启动同步，然后立即开始循环的下一个迭代，而无需等待同步完成。 但是，这并不像出于 `context.sync` 这些原因而完全移出循环之外的解决方案：
+> 值得一提的是，如果同步同时运行（只需从 的前面删除 关键字，就可以完成同步，循环内部同步版本能否更快地 `await` 执行 `context.sync()` ）。 这会使运行时启动同步，然后立即启动循环的下一次迭代，而无需等待同步完成。 但是，这不是一个比完全退出循环好的解决方案，原因 `context.sync` 如下：
 >
-> - 正如同步批处理作业中的命令已排入队列中一样，批处理作业本身在 Office 中排队，但在队列中的批处理作业不支持超过50个。 任何其他触发器错误。 因此，如果循环中的迭代数超过50个，则会有可能超出队列大小。 迭代次数越多，发生此问题的可能性就越大。 
-> - "并发" 并不同时表示。 执行多个同步操作所需的时间要比执行一个同步操作花费更长时间。
-> - 并发操作不能保证按照其启动顺序完成。 在上面的示例中，突出显示 "the" 一词的顺序无关紧要，但在某些情况下，将按顺序处理集合中的项目很重要。
+> - 与同步批处理作业中的命令排入队列一样，批处理作业本身在 Office 中排入队列，Office在队列中支持不超过 50 个批处理作业。 其他任何操作都会引发错误。 因此，如果循环中迭代次数超过 50 次，则有可能超出队列大小。 迭代次数越大，发生迭代的可能性越大。 
+> - "并发"并不意味着同时进行。 执行多个同步操作比执行一个同步操作要长。
+> - 不保证并发操作按其开始的顺序完成。 在上一示例中，"the"一词的突出显示顺序无关紧要，但在一些方案中，必须按顺序处理集合中的项目。
 
-## <a name="reading-values-from-the-document-with-the-split-loop-pattern"></a>使用拆分循环模式从文档中读取值
+## <a name="reading-values-from-the-document-with-the-split-loop-pattern"></a>使用拆分循环模式从文档读取值
 
-`context.sync`当代码必须在处理每个集合项的属性时*读取*这些集合项的属性时，避免 s 在循环中变得更具挑战性。 假设您的代码需要对 Word 文档中的所有内容控件进行迭代，并记录与每个控件关联的第一个段落的文本。 编程 instincts 可能会引导您在控件上循环，并加载 `text` 每个 (第一) 段落的属性，调用 `context.sync` 使用文档中的文本填充代理段落对象，然后将其记录下来。 示例如下。
+当代码在处理每个集合项时必须读取集合项的属性时，避免在循环内运行 `context.sync` 将更具挑战性。  假设您的代码需要对 Word 文档中的所有内容控件进行重新访问，并记录与每个控件关联的第一段的文本。 编程方法可能会引导你循环访问控件、加载每个 (第一个) 段落的属性、调用 以用文档中的文本填充代理段落对象，然后记录它 `text` `context.sync` 。 示例如下。
 
 ```javascript
 Word.run(async (context) => {
@@ -99,11 +99,11 @@ Word.run(async (context) => {
 });
 ```
 
-在这种情况下，为了避免 `context.sync` 在循环中使用，应使用一种模式来调用 **拆分循环** 模式。 我们来看看该模式的具体示例，然后再获取该模式的正式说明。 下面介绍了拆分循环模式如何应用于前面的代码段。 关于此代码，请注意以下几点：
+在此方案中，为了避免 在循环中出现 ，你应该使用我们调用拆分循环 `context.sync` **模式** 的模式。 在获得模式的正式说明之前，让我们看一个具体模式示例。 下面将说明拆分循环模式如何应用于前面的代码段。 对于此代码，请注意以下事项。
 
-- 现在有两个循环， `context.sync` 它们之间存在，因此不会出现 `context.sync` 在任何循环中。
-- 第一个循环可循环访问 collection 对象中的项目，并 `text` 像原始循环那样加载该属性，但第一个循环无法记录段落文本，因为它不再包含 `context.sync` 用于填充 `text` `paragraph` 代理对象的属性。 而是将对象添加 `paragraph` 到数组中。
-- 第二个循环可循环访问第一个循环创建的数组，并记录 `text` 每个项目的 `paragraph` 。 这是可行的，这是因为 `context.sync` 两个循环之间的属性都填充了所有 `text` 属性。
+- 现在存在两个循环 `context.sync` ，两个循环之间出现，因此两个循环中 `context.sync` 都不存在。
+- 第一个循环循环访问集合对象中的项目并加载属性，就像原始循环一样，但第一个循环无法记录段落文本，因为它不再包含 用于填充代理对象的属性的 `text` 。 `context.sync` `text` `paragraph` 相反，它会 `paragraph` 将对象添加到数组中。
+- 第二个循环循环访问由第一个循环创建的数组，并记录 `text` 每个项目的 `paragraph` 。 这是可能的，因为 两个循环之间的 填充 `context.sync` 了所有 `text` 属性。
 
 ```javascript
 Word.run(async (context) => {
@@ -125,18 +125,18 @@ Word.run(async (context) => {
 });
 ```
 
-上面的示例建议了以下过程，用于打开包含 `context.sync` 拆分循环模式的循环： 
+前面的示例建议以下过程将包含 的 循环 `context.sync` 转换为拆分循环模式。
 
 1. 将循环替换为两个循环。
-2. 创建第一个循环以对集合进行迭代，并将每个项添加到数组中，同时还加载代码需要读取的项的任何属性。 
-3. 在第一个循环之后，调用 `context.sync` 以使用任何加载的属性填充代理对象。 
-4. 执行 `context.sync` 第二个循环，以循环访问在第一个循环中创建的数组并读取加载的属性。
+2. 创建第一个循环来循环访问集合，将每个项目添加到数组中，同时加载代码需要读取的项目的任何属性。
+3. 第一个循环之后，调用 `context.sync` 以使用任何加载的属性填充代理对象。
+4. 按照 第二个循环操作，循环访问第一个循环中创建的数组并 `context.sync` 读取加载的属性。
 
-## <a name="processing-objects-in-the-document-with-the-correlated-objects-pattern"></a>使用关联对象模式处理文档中的对象
+## <a name="processing-objects-in-the-document-with-the-correlated-objects-pattern"></a>使用相关对象模式处理文档中的对象
 
-让我们考虑更复杂的情况，即处理集合中的项目需要的数据不在项目本身中。 方案假设一个 Word 加载项，该加载项对使用某些样本文字的模板创建的文档进行操作。 分散在文本中的是以下占位符字符串的一个或多个实例： "{协调器}"、"{Deputy}" 和 "{Manager}"。 加载项会将每个占位符替换为某人的姓名。 外接端的 UI 对本文并不重要。 例如，它可能有一个具有三个文本框的任务窗格，每个文本框标有一个占位符。 用户在每个文本框中输入一个名称，然后按下一个 " **替换** " 按钮。 该按钮的处理程序将创建一个将名称映射到占位符的数组，然后将每个占位符替换为分配的名称。 
+让我们考虑一个更复杂的方案，其中处理集合中的项需要不在项目本身内的数据。 方案设想一个 Word 外接程序，该外接程序对从具有一些样本文本的模板创建的文档进行操作。 分散在文本中是以下占位符字符串的一个或多个实例："{Coordinator}"、"{Coordinatory}"和"{Manager}"。 外接程序将每个占位符替换为某人的姓名。 对于本文，外接程序的 UI 不十分重要。 例如，它可以有一个包含三个文本框的任务窗格，每个文本框都标记有一个占位符。 用户在每个文本框中输入一个名称，然后 **按"替换** "按钮。 按钮的处理程序创建一个数组，该数组将名称映射到占位符，然后用分配的名称替换每个占位符。 
 
-您无需实际生成具有此 UI 的外接程序，即可试用代码。 您可以使用 [脚本实验室工具](../overview/explore-with-script-lab.md) 对重要代码进行原型。 使用以下赋值语句创建映射数组。
+你无需实际通过此 UI 生成外接程序来试验代码。 可以使用 Script Lab[工具](../overview/explore-with-script-lab.md)构建重要代码的原型。 使用以下赋值语句创建映射数组。
 
 ```javascript
 const jobMapping = [
@@ -146,7 +146,7 @@ const jobMapping = [
     ];
 ```
 
-下面的代码演示在使用内部循环时，如何将每个占位符替换为其分配的名称 `context.sync` 。
+以下代码显示如何在使用内部循环时，将每个占位符替换为其 `context.sync` 分配的名称。
 
 ```javascript
 Word.run(async (context) => {
@@ -168,7 +168,7 @@ Word.run(async (context) => {
 });
 ```
 
-在上面的代码中，有一个外部循环和一个内层循环。 其中每个都包含一个 `context.sync` 。 根据本文中的第一个代码段，您可能会发现 `context.sync` 在内部循环中，可以在 inner 循环之后直接移动到内部循环中。 但是，这仍会将代码保留为 `context.sync` (其中有两个实际上) 在外部循环中。 下面的代码演示如何 `context.sync` 从循环中删除。 我们将讨论下面的代码。
+在上一个代码中，有一个外部和一个内部循环。 其中每个都包含 `context.sync` 一个 。 根据本文中第一个代码段，你可能会看到，内循环中的 可以仅移到内部 `context.sync` 循环之后。 但是，这仍将代码保留为 `context.sync` (，其中两个) 在外部循环中。 以下代码演示如何从 `context.sync` 循环中删除。 我们将讨论以下代码。
 
 ```javascript
 Word.run(async (context) => {
@@ -202,28 +202,28 @@ Word.run(async (context) => {
 });
 ```
 
-注释代码使用拆分循环模式：
+请注意，代码使用拆分循环模式：
 
-- 前一示例中的外部循环已拆分为两个。  (第二个循环具有内部循环，这是因为代码是在一组作业 (或占位符) 在该集合中对匹配区域进行迭代。 ) 
-- `context.sync`每个重大循环之后都有一个，但在 `context.sync` 任何循环中都不存在。
-- 第二个主要循环可循环访问在第一个循环中创建的数组。
+- 上例中的外部循环已拆分为两个。  (第二个循环有一个内部循环，这是预期的，因为代码将循环遍历一组作业 (或占位符) 并且该循环将在此集合中迭代匹配的范围。) 
+- 每个主 `context.sync` 循环后都有 一个 ，但在任何 `context.sync` 循环内没有。
+- 第二个主要循环循环访问第一个循环中创建的数组。
 
-但是，在第一个循环中创建的数组 *不* 包含一个 Office 对象，因为在 [使用拆分循环模式的文档中读取值](#reading-values-from-the-document-with-the-split-loop-pattern)的节中的第一个循环。 这是因为处理 Word Range 对象所需的一些信息不在 Range 对象本身中，而是来自于 `jobMapping` 数组。
+但是，第一个循环中创建的数组并不只包含一个 Office 对象，正如第一个循环使用拆分循环模式读取文档中[的值一样](#reading-values-from-the-document-with-the-split-loop-pattern)。 这是因为处理 Word Range 对象所需的某些信息不在 Range 对象本身中，而是来自 `jobMapping` 数组。
 
-因此，在第一个循环中创建的数组中的对象是具有两个属性的自定义对象。 第一个是与特定职务匹配的单词范围的数组 (也就是说，占位符字符串) ，第二个是提供分配给该作业的人员的姓名的字符串。 这使得最终循环易于编写和易于阅读，因为处理给定区域所需的全部信息都包含在包含该范围的同一自定义对象中。 应替换_ **correlatedObject**[j]_ 的名称是同一对象的另一个属性： _ **correlatedObject**_。
+因此，第一个循环中创建的数组中的对象是具有两个属性的自定义对象。 第一个数组是匹配特定职务 (（即占位符字符串) ）的 Word 范围数组，第二个字符串提供分配给该工作的人的姓名。 这使得最后一个循环易于编写且易于阅读，因为处理给定区域所需的全部信息都包含在包含该范围的同一自定义对象中。 应替换 _**correlatedObject**.rangesMatchingJob.items[j]_ 的名称是同一对象的另一个属性 _**：correlatedObject**.personAssignedToJob_。
 
-我们称之为 " **关联对象** " 模式的拆分循环模式的这一变体。 一般来讲，第一条循环创建自定义对象的数组。 每个对象都有一个属性，其值是 Office collection 对象中的项目之一 (或) 的此类项目的数组。 自定义对象具有其他属性，每个属性都提供处理最终循环中的 Office 对象所需的信息。 请参阅 [这些模式的其他示例](#other-examples-of-these-patterns) 部分，以获取自定义关联对象具有两个以上属性的示例的链接。
+我们将此变体称为拆分循环模式 **的相关对象** 模式。 一般概念是，第一个循环创建一个自定义对象数组。 每个对象都有一个属性值，该属性是 Office 集合对象 (或此类项目数组中的) 。 自定义对象具有其他属性，每个属性都提供在最终循环中处理Office对象时所需的信息。 有关指向 [自定义关联](#other-examples-of-these-patterns) 对象具有两个以上属性的示例的链接，请参阅这些模式的其他示例一节。
 
-另一个需要注意的一点是，有时需要多个循环来创建自定义关联对象的数组。 如果您需要只读取一个 Office 集合对象的每个成员的属性来收集将用于处理另一个集合对象的信息，则会发生这种情况。  (例如，您的代码需要读取 Excel 表中所有列的标题，因为您的外接程序将基于该列的标题对某些列的单元格应用数字格式。 ) 但您始终可以在 `context.sync` 循环之间保持 s，而不是循环中的。 有关示例，请参阅 [这些模式的其他示例](#other-examples-of-these-patterns) 一节。
+另一个警告：有时，仅创建自定义关联对象的数组需要多个循环。 如果需要读取一个集合对象中每个成员的属性，Office收集将用于处理另一个集合对象的信息，则可能会发生这种情况。  (例如，您的代码需要读取 Excel 表中所有列的标题，因为您的外接程序将基于该列的标题将数字格式应用于某些列的单元格。) 但您可以始终在循环之间保留 ，而不是在循环中保留。 `context.sync` 有关示例 [，请参阅这些模式的其他](#other-examples-of-these-patterns) 示例部分。
 
 ## <a name="other-examples-of-these-patterns"></a>这些模式的其他示例
 
-- 有关使用循环的 Excel 的非常简单的示例 `Array.forEach` ，请参阅此堆栈溢出问题的接受答案： [是否可以对多个上下文进行排队。在 context 之前进行加载？](https://stackoverflow.com/questions/44459604/is-it-possible-to-queue-more-than-one-context-load-before-context-sync)
-- 有关使用 `Array.forEach` 循环但不使用语法的 Word 的简单示例 `async` / `await` ，请参阅 "接受的对此堆栈溢出问题的答案：使用[Office JavaScript API 循环访问包含内容控件的所有段落](https://stackoverflow.com/questions/58422113/iterating-over-all-paragraphs-with-content-controls-with-office-javascript-api)"。
-- 有关使用 TypeScript 编写的 Word 的示例，请参阅示例 [Word 外接程序 Angular2 样式检查器](https://github.com/OfficeDev/Word-Add-in-Angular2-StyleChecker)，尤其是文件 [word.document](https://github.com/OfficeDev/Word-Add-in-Angular2-StyleChecker/blob/master/app/services/word-document/word.document.service.ts)。 它混合了 `for` 和 `Array.forEach` 循环。
-- 对于高级 Word 示例，请将 [此 gist](https://gist.github.com/9c5a803e52480ec7f00bb3224292e0ab) 导入 [脚本实验室工具](../overview/explore-with-script-lab.md)。 有关使用 gist 的上下文，请参阅在 [替换文本后，不同步](https://stackoverflow.com/questions/48227941/document-not-in-sync-after-replace-text)"堆栈溢出问题" 文档中的 "已接受的答案"。 本示例创建一个具有三个属性的自定义关联对象类型。 它总共使用三个循环来构造相关对象的数组，以及执行最后处理的两个更多循环。 混合了 `for` 和 `Array.forEach` 循环。
-- 尽管不是严格的拆分循环或相关对象模式的示例，但还有一个演示如何将一组单元格的值转换为只使用一个的其他货币的高级 Excel 示例 `context.sync` 。 若要尝试，请打开 [脚本实验室工具](../overview/explore-with-script-lab.md) 并导航到 **货币转换器** 示例。
+- 有关使用循环Excel一个非常简单的示例，请参阅此 Stack Overflow 问题的接受答案：在 context.sync 之前，是否可能将多个 `Array.forEach` [context.load](https://stackoverflow.com/questions/44459604/is-it-possible-to-queue-more-than-one-context-load-before-context-sync)排入队列？
+- 有关使用循环且不使用语法的 Word 的简单示例，请参阅此 Stack Overflow 问题的接受答案：使用 `Array.forEach` `async` / `await` [Office JavaScript API](https://stackoverflow.com/questions/58422113/iterating-over-all-paragraphs-with-content-controls-with-office-javascript-api)遍历包含内容控件的所有段落。
+- 有关使用 TypeScript 编写的 Word 示例，请参阅示例 [Word 外接程序 Angular2](https://github.com/OfficeDev/Word-Add-in-Angular2-StyleChecker)样式检查器，尤其是文件 [word.document.service.ts](https://github.com/OfficeDev/Word-Add-in-Angular2-StyleChecker/blob/master/app/services/word-document/word.document.service.ts)。 它混合了 `for` 和 `Array.forEach` 循环。
+- 对于高级 Word 示例，将[此 gist](https://gist.github.com/9c5a803e52480ec7f00bb3224292e0ab)导入[Script Lab 工具。](../overview/explore-with-script-lab.md) 有关使用 gist 的上下文，请参阅 Stack Overflow 问题的接受答案替换文本 [后文档未同步](https://stackoverflow.com/questions/48227941/document-not-in-sync-after-replace-text)。 此示例创建一个具有三对象类型关联的自定义关联对象。 它总共使用三个循环来构造相关对象的数组，并另外使用两个循环执行最终处理。 有 和 `for` `Array.forEach` 循环的混合。
+- 尽管不严格是拆分循环或关联对象模式的示例，但还有一个高级 Excel 示例演示如何将一组单元格值转换为仅包含一个 的其他货币 `context.sync` 。 若要试用，请打开 [Script Lab 工具](../overview/explore-with-script-lab.md)并导航到 **"货币转换器"** 示例。
 
-## <a name="when-should-you-not-use-the-patterns-in-this-article"></a>何时 *应使用本文* 中的模式？
+## <a name="when-should-you-not-use-the-patterns-in-this-article"></a>何时 *不应* 使用本文中的模式？
 
-Excel 在给定的调用中无法读取超过 5 MB 的数据 `context.sync` 。 如果超过此限制，则会引发错误。  (请参阅 [资源限制和 Office 加载项的性能优化](resource-limits-and-performance-optimization.md#excel-add-ins) 的 "Excel 外接程序" 部分，了解详细信息。 ) 达到此限制非常罕见，但如果有机会在外接程序中执行此操作，则代码 *不* 应在单个循环中加载所有数据，并在循环中使用 a `context.sync` 。 但您仍应避免 `context.sync` 在集合对象上循环的每个迭代。 相反，在集合中定义项的子集，并依次对每个子集进行循环，并在 `context.sync` 循环之间进行循环。 您可以使用外部循环对此进行构造，该循环可对子集进行迭代，并 `context.sync` 在每个外部迭代中包含。
+Excel在给定调用 中读取的数据不能超过 5 `context.sync` MB。 如果超出此限制，将引发错误。  (有关详细信息，请参阅 Office 外接程序的资源限制和性能优化的["Excel](resource-limits-and-performance-optimization.md#excel-add-ins)外接程序部分"。) 接近此限制的情况很少见，但如果外接程序可能会发生这种情况，则代码不应在一个循环中加载所有数据，而是使用 执行循环 `context.sync` 。 但是，您仍应避免在集合 `context.sync` 对象的循环的每次迭代中都有 。 相反，请定义集合中项的子集，并循环遍历每个子集，在循环之间使用 `context.sync` 。 可以使用循环遍历子集的外部循环来构造此结构，并包含每个外部 `context.sync` 迭代中的 。

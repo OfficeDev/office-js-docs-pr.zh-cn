@@ -3,12 +3,12 @@ title: 适用于外接程序的Office样式图标指南
 description: 有关在外接程序中Office样式图标的指南。
 ms.date: 05/12/2021
 localization_priority: Normal
-ms.openlocfilehash: c03c0040d84c69fed1f0a9565bec3c1cabb8d0a5
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: e7a06ec25f82215a402bc5eb7fc74fa39430e227
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53076509"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53349313"
 ---
 # <a name="fresh-style-icon-guidelines-for-office-add-ins"></a>适用于外接程序的Office样式图标指南
 
@@ -34,7 +34,7 @@ ms.locfileid: "53076509"
 
 ## <a name="icon-size-recommendations-and-requirements"></a>图标大小的建议和要求
 
-Office 桌面图标是位图图像。 根据用户的 DPI 设置和触摸模式将呈现不同的大小。 包括所有八种支持的大小，可在所有受支持的解决方案和上下文中创建最佳体验。 以下是受支持的大小 - 三种是必需的：
+Office 桌面图标是位图图像。 根据用户的 DPI 设置和触摸模式将呈现不同的大小。 包括所有八种支持的大小，可在所有受支持的解决方案和上下文中创建最佳体验。 以下是受支持的大小 - 三个是必需的。
 
 - 16 像素（必需）
 - 20 像素
@@ -91,7 +91,7 @@ Office图标通常由具有操作和概念修饰符的基元素组成。 操�
 > [!NOTE]
 > 这些颜色指南适用于[外接程序命令](add-in-commands.md)中使用的功能区图标。 这些图标不会通过Fluent UI 呈现，并且调色板不同于 Microsoft UI Fabric | [颜色|共享](https://fluentfabric.azurewebsites.net/#/color/shared)。
 
-Office 图标具有一个有限的调色板。使用下表中列出的颜色确保与 Office UI 无缝集成。对颜色使用应用以下准则：
+Office 图标具有一个有限的调色板。 使用下表中列出的颜色确保与 Office UI 无缝集成。 将以下指南应用于颜色使用。
 
 - 使用颜色传达图标含义，而非只是用作修饰。图标颜色应突出显示或强调操作、状态或明确区分标记的元素。
 - 如有可能，除灰色外仅使用其他一种颜色。将附加颜色限制为最多两种。
@@ -122,7 +122,7 @@ Office 图标具有一个有限的调色板。使用下表中列出的颜色确�
 
 ## <a name="icons-in-high-contrast-modes"></a>高对比度模式下的图标
 
-Office 图标设计为在高对比度模式中完美呈现。前景元素与最大化易读性和启用重新着色的背景明显不同。在高对比度模式下，Office 会使用小于 190 的红色、绿色或蓝色值直到全黑，为任何像素的图标重新着色。其他所有像素都将是白色的。换言之，每个评估的 RGB 通道中的 0-189 值表示为黑色，而 190-255 值表示为白色。其他高对比度主题则使用相同的 190 阈值但不同的规则进行重新着色。例如，高对比度白色主题会将所有大于 190 的像素重新着色为不透明，而将所有其他像素重新着色为透明。应用下面的规则以最大化高对比度设置中的可读性。
+Office 图标设计为在高对比度模式中完美呈现。 前景元素与最大化易读性和启用重新着色的背景明显不同。 在高对比度模式下，Office 会使用小于 190 的红色、绿色或蓝色值直到全黑，为任何像素的图标重新着色。 其他所有像素都将是白色的。 换言之，每个评估的 RGB 通道中的 0-189 值表示为黑色，而 190-255 值表示为白色。 其他高对比度主题则使用相同的 190 阈值但不同的规则进行重新着色。 例如，高对比度白色主题会将所有大于 190 的像素重新着色为不透明，而将所有其他像素重新着色为透明。 应用以下指南以在高对比度设置中最大化可读性。
 
 - 旨在以 190 阈值区分前景和背景元素。
 - 遵循 Office 图标视觉样式。

@@ -3,12 +3,12 @@ title: Outlook 加载项要求
 description: 必须满足服务器和客户端的多个要求，才能正常加载和运行 Outlook 加载项。
 ms.date: 02/09/2021
 localization_priority: Priority
-ms.openlocfilehash: dd7831ce8ebd1165f920fe24775f46cd8cd7f91c
-ms.sourcegitcommit: fefc279b85e37463413b6b0e84c880d9ed5d7ac3
+ms.openlocfilehash: 6062073d44a412d67961f806677cd60701bbdb9b
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/12/2021
-ms.locfileid: "50234294"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53348592"
 ---
 # <a name="outlook-add-in-requirements"></a>Outlook 加载项要求
 
@@ -16,15 +16,15 @@ ms.locfileid: "50234294"
 
 ## <a name="client-requirements"></a>客户端要求
 
-- 客户端必须是一个受支持的 Outlook 加载项应用程序。下列客户端支持加载项：
+- 客户端必须是一个受支持的 Outlook 加载项应用程序。下列客户端支持加载项。
 
-   - Windows 版 Outlook 2013 或更高版本
-   - Mac 版 Outlook 2016 或更高版本
-   - iOS 版 Outlook
-   - Android 版 Outlook
-   - 适用于 Exchange 2016 或更高版本的 Outlook 网页版
-   - 适用于 Exchange 2013 的 Outlook 网页版
-   - Outlook.com
+  - Windows 版 Outlook 2013 或更高版本
+  - Mac 版 Outlook 2016 或更高版本
+  - iOS 版 Outlook
+  - Android 版 Outlook
+  - 适用于 Exchange 2016 或更高版本的 Outlook 网页版
+  - 适用于 Exchange 2013 的 Outlook 网页版
+  - Outlook.com
 
 - 必须使用直接连接将客户端连接到 Exchange 服务器或 Microsoft 365。配置客户端时，用户必须选择 **Exchange**、**Office** 或 **Outlook.com** 帐户类型。如果将客户端配置为使用 POP3 或 IMAP 连接，则加载项将不会加载。
 

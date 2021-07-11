@@ -4,12 +4,12 @@ description: 学习如何在Microsoft Excel中的自定义函数和任务窗格�
 ms.date: 08/13/2020
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: 22839da7299e906246e784213895e7df75f504c7
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: 402534b55c1ff186dc5123407fc470c42ee2b253
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53076824"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53350223"
 ---
 # <a name="tutorial-share-data-and-events-between-excel-custom-functions-and-the-task-pane"></a>教程：Microsoft Excel自定义函数和任务窗格之间共享数据和事件
 
@@ -21,7 +21,7 @@ ms.locfileid: "53076824"
 
 ## <a name="create-the-add-in-project"></a>创建加载项项目
 
-使用 Yeoman 生成器创建 Excel 加载项项目。 运行下面的命令，使用下面的答案回答提示问题：
+使用 Yeoman 生成器创建 Excel 加载项项目。 运行下面的命令，使用下面的答案回答提示问题。
 
 ```command line
 yo office

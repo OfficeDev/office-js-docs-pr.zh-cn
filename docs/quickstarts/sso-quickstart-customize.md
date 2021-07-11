@@ -4,12 +4,12 @@ description: 了解如何自定义使用 Yeoman 生成器创建的启用 SSO 的
 ms.date: 02/01/2021
 ms.prod: non-product-specific
 localization_priority: Normal
-ms.openlocfilehash: af83571a5ed48b3e1261ea4ccebbe25f61e75d66
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: 7ec55e849031878b0ee6c19cfd82332bee5f77a5
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53076852"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53348333"
 ---
 # <a name="customize-your-nodejs-sso-enabled-add-in"></a>自定义启用了 Node.js SSO 的加载项
 
@@ -168,9 +168,9 @@ ms.locfileid: "53076852"
 
 ### <a name="changes-required-for-an-excel-add-in-javascript"></a>使用 JavaScript Excel加载项 (更改) 
 
-如果加载项是使用 JavaScript Excel加载项，请对 **./src/helpers/documentHelper.js：**
+如果加载项是使用 JavaScript Excel加载项，请对 **./src/helpers/documentHelper.js进行以下更改**。
 
-1. 查找 `writeDataToOfficeDocument` 函数并将其替换为以下函数：
+1. 查找 `writeDataToOfficeDocument` 函数并将其替换为以下函数。
 
     ```javascript
     export function writeDataToOfficeDocument(result) {
@@ -185,7 +185,7 @@ ms.locfileid: "53076852"
     }
     ```
 
-2. 查找 `filterUserProfileInfo` 函数并将其替换为以下函数：
+2. 查找 `filterUserProfileInfo` 函数并将其替换为以下函数。
 
     ```javascript
     function filterOneDriveInfo(result) {
@@ -198,7 +198,7 @@ ms.locfileid: "53076852"
     }
     ```
 
-3. 查找 `writeDataToExcel` 函数并将其替换为以下函数：
+3. 查找 `writeDataToExcel` 函数并将其替换为以下函数。
 
     ```javascript
     function writeDataToExcel(result) {
@@ -235,7 +235,7 @@ ms.locfileid: "53076852"
 
 ### <a name="changes-required-for-an-excel-add-in-typescript"></a>使用 TypeScript Excel加载项 (更改) 
 
-如果加载项是使用 TypeScript 创建的 Excel 加载项，请打开 **./src/taskpane/taskpane.ts，** 查找 函数，并将其替换为 `writeDataToOfficeDocument` 以下函数：
+如果您的外接程序是使用 TypeScript 创建的 Excel 外接程序，请打开 **./src/taskpane/taskpane.ts，** 查找 函数，并将其替换为以下 `writeDataToOfficeDocument` 函数。
 
 ```typescript
 export function writeDataToOfficeDocument(result: Object): Promise<any> {
@@ -271,9 +271,9 @@ export function writeDataToOfficeDocument(result: Object): Promise<any> {
 
 ### <a name="changes-required-for-an-outlook-add-in-javascript"></a>使用 JavaScript Outlook加载项 (更改) 
 
-如果加载项是使用 JavaScript Outlook加载项，请对 **./src/helpers/documentHelper.js进行以下更改**：
+如果加载项是使用 JavaScript Outlook加载项，请对 **./src/helpers/documentHelper.js进行以下更改**。
 
-1. 查找 `writeDataToOfficeDocument` 函数并将其替换为以下函数：
+1. 查找 `writeDataToOfficeDocument` 函数并将其替换为以下函数。
 
     ```javascript
     export function writeDataToOfficeDocument(result) {
@@ -288,7 +288,7 @@ export function writeDataToOfficeDocument(result: Object): Promise<any> {
     }
     ```
 
-2. 查找 `filterUserProfileInfo` 函数并将其替换为以下函数：
+2. 查找 `filterUserProfileInfo` 函数并将其替换为以下函数。
 
     ```javascript
     function filterOneDriveInfo(result) {
@@ -301,7 +301,7 @@ export function writeDataToOfficeDocument(result: Object): Promise<any> {
     }
     ```
 
-3. 查找 `writeDataToOutlook` 函数并将其替换为以下函数：
+3. 查找 `writeDataToOutlook` 函数并将其替换为以下函数。
 
     ```javascript
     function writeDataToOutlook(result) {
@@ -333,7 +333,7 @@ export function writeDataToOfficeDocument(result: Object): Promise<any> {
 
 ### <a name="changes-required-for-an-outlook-add-in-typescript"></a>使用 TypeScript Outlook加载项 (更改) 
 
-如果加载项是使用 TypeScript 创建的 Outlook 加载项，请打开 **./src/taskpane/taskpane.ts，** 查找 函数，并将其替换为 `writeDataToOfficeDocument` 以下函数：
+如果加载项是使用 TypeScript 创建的 Outlook 加载项，请打开 **./src/taskpane/taskpane.ts，** 查找 函数，并将其替换为以下 `writeDataToOfficeDocument` 函数。
 
 ```typescript
 export function writeDataToOfficeDocument(result: Object): void {
@@ -364,9 +364,9 @@ export function writeDataToOfficeDocument(result: Object): void {
 
 ### <a name="changes-required-for-a-powerpoint-add-in-javascript"></a>使用 JavaScript PowerPoint加载项 (更改) 
 
-如果加载项是使用 JavaScript PowerPoint加载项，请对 **./src/helpers/documentHelper.js：**
+如果加载项是使用 JavaScript PowerPoint加载项，请对 **./src/helpers/documentHelper.js进行以下更改**。
 
-1. 查找 `writeDataToOfficeDocument` 函数并将其替换为以下函数：
+1. 查找 `writeDataToOfficeDocument` 函数并将其替换为以下函数。
 
     ```javascript
     export function writeDataToOfficeDocument(result) {
@@ -381,7 +381,7 @@ export function writeDataToOfficeDocument(result: Object): void {
     }
     ```
 
-2. 查找 `filterUserProfileInfo` 函数并将其替换为以下函数：
+2. 查找 `filterUserProfileInfo` 函数并将其替换为以下函数。
 
     ```javascript
     function filterOneDriveInfo(result) {
@@ -394,7 +394,7 @@ export function writeDataToOfficeDocument(result: Object): void {
     }
     ```
 
-3. 查找 `writeDataToPowerPoint` 函数并将其替换为以下函数：
+3. 查找 `writeDataToPowerPoint` 函数并将其替换为以下函数。
 
     ```javascript
     function writeDataToPowerPoint(result) {
@@ -432,7 +432,7 @@ export function writeDataToOfficeDocument(result: Object): void {
 
 ### <a name="changes-required-for-a-powerpoint-add-in-typescript"></a>使用 TypeScript PowerPoint加载项 (更改) 
 
-如果加载项是使用 TypeScript 创建的 PowerPoint 加载项，请打开 **./src/taskpane/taskpane.ts，** 查找 函数，并将其替换为 `writeDataToOfficeDocument` 以下函数：
+如果加载项是使用 TypeScript 创建的 PowerPoint 加载项，请打开 **./src/taskpane/taskpane.ts，** 查找 函数，并将其替换为以下 `writeDataToOfficeDocument` 函数。
 
 ```typescript
 export function writeDataToOfficeDocument(result: Object): void {
@@ -467,9 +467,9 @@ export function writeDataToOfficeDocument(result: Object): void {
 
 ### <a name="changes-required-for-a-word-add-in-javascript"></a>使用 JavaScript (Word 外接程序) 
 
-如果加载项是使用 JavaScript 创建的 Word 加载项，请对 **./src/helpers/documentHelper.js：**
+如果加载项是使用 JavaScript 创建的 Word 加载项，请对 **./src/helpers/documentHelper.js进行以下更改**。
 
-1. 查找 `writeDataToOfficeDocument` 函数并将其替换为以下函数：
+1. 查找 `writeDataToOfficeDocument` 函数并将其替换为以下函数。
 
     ```javascript
     export function writeDataToOfficeDocument(result) {
@@ -484,7 +484,7 @@ export function writeDataToOfficeDocument(result: Object): void {
     }
     ```
 
-2. 查找 `filterUserProfileInfo` 函数并将其替换为以下函数：
+2. 查找 `filterUserProfileInfo` 函数并将其替换为以下函数。
 
     ```javascript
     function filterOneDriveInfo(result) {
@@ -497,7 +497,7 @@ export function writeDataToOfficeDocument(result: Object): void {
     }
     ```
 
-3. 查找 `writeDataToWord` 函数并将其替换为以下函数：
+3. 查找 `writeDataToWord` 函数并将其替换为以下函数。
 
     ```javascript
     function writeDataToWord(result) {
@@ -533,7 +533,7 @@ export function writeDataToOfficeDocument(result: Object): void {
 
 ### <a name="changes-required-for-a-word-add-in-typescript"></a>使用 TypeScript (Word 外接程序) 
 
-如果您的外接程序是使用 TypeScript 创建的 Word 外接程序，请打开 **./src/taskpane/taskpane.ts，** 查找 函数，并将其替换为 `writeDataToOfficeDocument` 以下函数：
+如果您的外接程序是使用 TypeScript 创建的 Word 外接程序，请打开 **./src/taskpane/taskpane.ts，** 查找 函数，并将其替换为以下 `writeDataToOfficeDocument` 函数。
 
 ```typescript
 export function writeDataToOfficeDocument(result: Object): Promise<any> {
@@ -592,7 +592,7 @@ export function writeDataToOfficeDocument(result: Object): Promise<any> {
 
 5. 如果对话框窗口显示代表加载项请求权限，则表示 你的方案不支持 SSO，并且加载项已退回至替代的用户身份验证方法。 当租户管理员未授予使用加载项访问 Microsoft Graph 的许可，或者用户未使用有效的 Microsoft 帐户或 Microsoft 365 教育版或工作帐户登录 Office 时，则可能会出现这种情况。 选择对话框窗口中的“**接受**”按钮以继续。
 
-    ![显示突出显示"接受"按钮的权限请求对话框的屏幕截图。](../images/sso-permissions-request.png)
+    ![显示突出显示“接受”按钮的权限请求对话框屏幕截图。](../images/sso-permissions-request.png)
 
     > [!NOTE]
     > 用户接受此权限请求后，以后将不会再收到提示。
@@ -620,13 +620,13 @@ export function writeDataToOfficeDocument(result: Object): Promise<any> {
 
 4. 在“邮件撰写”窗口中，选择功能区中的“显示任务窗格”按钮，以打开加载项任务窗格。
 
-    ![Screenshot showing highlighted add-in ribbon button in Outlook compose message window.](../images/outlook-sso-ribbon-button.png)
+    ![。显示 Outlook 撰写邮件窗口中突出显示的加载项功能区按钮屏幕截图。](../images/outlook-sso-ribbon-button.png)
 
 5. 在任务窗格底部，选择"读取 **我的** OneDrive for Business"按钮以启动 SSO 进程。
 
 6. 如果对话框窗口显示代表加载项请求权限，则表示 你的方案不支持 SSO，并且加载项已退回至替代的用户身份验证方法。 当租户管理员未授予使用加载项访问 Microsoft Graph 的许可，或者用户未使用有效的 Microsoft 帐户或 Microsoft 365 教育版或工作帐户登录 Office 时，则可能会出现这种情况。 选择对话框窗口中的“**接受**”按钮以继续。
 
-    ![突出显示"接受"按钮的"请求的权限"对话框的屏幕截图。](../images/sso-permissions-request.png)
+    ![突出显示“接受”按钮的权限请求对话框屏幕截图。](../images/sso-permissions-request.png)
 
     > [!NOTE]
     > 用户接受此权限请求后，以后将不会再收到提示。

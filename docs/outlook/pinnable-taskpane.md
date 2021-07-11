@@ -3,12 +3,12 @@ title: 在 Outlook 外接程序中实现可固定的任务窗格
 description: 用于加载项命令的任务窗格用户体验形状会在打开的邮件或会议请求的右侧打开一个垂直任务窗格，以便用户可以在加载项 UI 中进行更详细的交互。
 ms.date: 07/07/2020
 localization_priority: Normal
-ms.openlocfilehash: 39af3a532d553835b02709301c998a78dc9958bb
-ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
+ms.openlocfilehash: 57a17a90fe565adb3ffb9d23e3b169bc83be2735
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "45093866"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53348879"
 ---
 # <a name="implement-a-pinnable-task-pane-in-outlook"></a>在 Outlook 中实现可固定的任务窗格
 
@@ -17,13 +17,15 @@ ms.locfileid: "45093866"
 不过，默认情况下，如果用户在阅读窗格中为某封邮件打开了外接程序任务窗格，然后选择新邮件，此任务窗格会自动关闭。如果频繁使用外接程序，用户可能更倾向于让此任务窗格一直处于打开状态，这样就无需在每封邮件中都重新激活外接程序了。使用可固定的任务窗格，外接程序就可以让用户如愿以偿。
 
 > [!NOTE]
-> 尽管可固定任务窗格功能是在[要求集 1.5](../reference/objectmodel/requirement-set-1.5/outlook-requirement-set-1.5.md)中引入的，但它目前仅可供 Microsoft 365 订阅者使用，如下所示。
-> - Outlook 2016 或更高版本在 Windows (内部版本或 Office 预览体验部门的用户的内部7668.2000 版本中，为延迟频道中的用户构建7900或更高版本) 
-> - Outlook 2016 或更高版本 Mac 版 (16.13.503 或更高版本) 
+> 尽管可固定的任务窗格功能是在要求集[1.5](../reference/objectmodel/requirement-set-1.5/outlook-requirement-set-1.5.md)中引入的，但它当前仅适用于以下Microsoft 365订阅者：
+>
+> - Outlook 2016当前或 Office 预览体验成员频道中用户的 Windows (内部版本 7668.2000 或更高版本，延期频道中用户的内部版本 7900.xxxx 或) 
+> - Outlook 2016 16.13.503 (或更高版本的 Mac 版本或更高版本) 
 > - 新式 Outlook 网页版
 
 > [!IMPORTANT]
-> 可固定任务窗格不能用于以下对象。
+> 可固定的任务窗格对以下内容不可用：
+>
 > - 约会/会议
 > - Outlook.com
 
@@ -34,7 +36,7 @@ ms.locfileid: "45093866"
 由于 `SupportsPinning` 元素是在 VersionOverrides v1.1 架构中进行定义，因此需为 v1.0 和 v1.1 架构包含 [VersionOverrides](../reference/manifest/versionoverrides.md) 元素。
 
 > [!NOTE]
-> 如果计划将 Outlook 加载项[发布](../publish/publish.md)到 [AppSource](https://appsource.microsoft.com)，那么在使用 **SupportsPinning** 元素时，加载项内容不得为静态，且必须清晰显示与邮箱中打开或选择的邮件相关的数据，才能通过 [AppSource 验证](/legal/marketplace/certification-policies)。
+> 如果计划将 Outlook 加载项 [发布](../publish/publish.md)到 [AppSource](https://appsource.microsoft.com)，那么在使用 **SupportsPinning** 元素时，加载项内容不得为静态，且必须清晰显示与邮箱中打开或选择的邮件相关的数据，才能通过 [AppSource 验证](/legal/marketplace/certification-policies)。
 
 ```xml
 <!-- Task pane button -->

@@ -2,14 +2,14 @@
 title: 配置Outlook加载项进行基于事件的激活
 description: 了解如何配置Outlook加载项进行基于事件的激活。
 ms.topic: article
-ms.date: 06/08/2021
+ms.date: 07/08/2021
 localization_priority: Normal
-ms.openlocfilehash: 07790ee84693596f4873bc04d53c1e76c3825b4d
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: ff1dc8da523d752d616981a570b4c83d9f1a423d
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53076789"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53349012"
 ---
 # <a name="configure-your-outlook-add-in-for-event-based-activation"></a>配置Outlook加载项进行基于事件的激活
 
@@ -254,7 +254,7 @@ Outlook Windows使用 JavaScript 文件，Outlook 网页版使用可引用同一
     >
     > 1. 关闭 Outlook。
     > 1. 打开 **任务管理器** ， **并确保msoadfsb.exe进程** 未运行。
-    > 1. 运行以下命令。
+    > 1. 运行以下命令：
     >
     >    ```command&nbsp;line
     >    call %SystemRoot%\System32\CheckNetIsolation.exe LoopbackExempt -a -n=1_http___localhost_300004ACA5EC-D79A-43EA-AB47-E50E47DD96FC
@@ -294,7 +294,7 @@ AppSource 和客户端存储：即将推出部署基于事件的加载项或更�
 
 JavaScript 文件中不支持导入，在 JavaScript 文件中，您可以在 Windows 客户端中执行基于事件的激活。
 
-某些Office.js更改或更改 UI 的 API 不允许来自基于事件的外接程序。以下是阻止的 API：
+某些Office.js更改或更改 UI 的 API 不允许来自基于事件的外接程序。以下是阻止的 API。
 
 - 在 `OfficeRuntime.auth` 下：
   - `getAccessToken` (Windows仅) 
@@ -316,4 +316,6 @@ JavaScript 文件中不支持导入，在 JavaScript 文件中，您可以在 Wi
 
 - [Outlook 加载项清单](manifests.md)
 - [如何调试基于事件的外接程序](debug-autolaunch.md)
-- PnP 示例[：Outlook基于事件的激活设置签名](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/outlook-set-signature)
+- PnP 示例：
+  - [使用Outlook基于事件的激活设置签名](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/outlook-set-signature)
+  - [使用Outlook基于事件的激活来标记外部收件人](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/outlook-tag-external)

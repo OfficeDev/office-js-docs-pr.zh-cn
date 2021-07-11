@@ -5,12 +5,12 @@ ms.date: 10/14/2020
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: 956e19a14cca1559c828265b2212c410f10b916b
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: 36b14386816e34d474266cad32ea9a0a66d681d7
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53076656"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53348858"
 ---
 # <a name="office-add-ins-platform-overview"></a>Office 加载项平台概述
 
@@ -30,7 +30,7 @@ COM 或 VSTO 加载项是旧 Office 集成解决方案，仅在 Windows 版 Offi
 
 ![使用 Office 加载项的原因：跨平台、集中部署、通过 AppSource 轻松访问以及基于标准 Web 技术构建。](../images/why.png)
 
-相较于使用 VBA、COM 或 VSTO 生成的加载项，Office 加载项提供以下优势：
+相较于使用 VBA、COM 或 VSTO 生成的加载项，Office 加载项提供以下优势。
 
 - 跨平台支持。Office 加载项在 Office 网页版、Windows 版 Office、Mac 版 Office 和 iPad 版 Office中运行。
 
@@ -64,19 +64,19 @@ Office 外接程序包括两个基本组件：XML 清单文件和你自己的 We
 
 ## <a name="extending-and-interacting-with-office-clients"></a>扩展并与 Office 客户端交互
 
-Office 加载项可以在 Office 客户端应用程序中执行下列操作：
+Office 加载项可以在 Office 客户端应用程序中执行下列操作。
 
--  扩展功能（任何 Office 应用程序）
+- 扩展功能（任何 Office 应用程序）
 
--  创建新的对象（Excel 或 PowerPoint）
+- 创建新的对象（Excel 或 PowerPoint）
  
 ### <a name="extend-office-functionality"></a>扩展 Office 功能
 
 可以通过以下方式向 Office 应用程序添加新功能：  
 
--  自定义功能区按钮和菜单命令（统称为“外接程序命令”）
+- 自定义功能区按钮和菜单命令（统称为“外接程序命令”）
 
--  可插入的任务窗格
+- 可插入的任务窗格
 
 自定义 UI 和任务窗格在外接程序清单中进行指定。  
 
@@ -98,7 +98,7 @@ Office 加载项可以在 Office 客户端应用程序中执行下列操作：
 
 ### <a name="extend-outlook-functionality"></a>扩展 Outlook 功能
 
-Outlook 加载项可扩展 Office 应用功能区，还可以在查看或撰写 Outlook 项目时在其旁边的上下文中显示。当用户查看接收的项目或回复或创建新项目时，它们可以与电子邮件、会议请求、会议响应、会议取消或约会一起使用。 
+Outlook 加载项可扩展 Office 应用功能区，还可以在查看或撰写 Outlook 项目时在其旁边的上下文中显示。当用户查看接收的项目或回复或创建新项目时，它们可以与电子邮件、会议请求、会议响应、会议取消或约会一起使用。
 
 Outlook 加载项可以访问邮件项目中的上下文信息（如地址或跟踪 ID），然后使用此类数据来访问服务器和 Web 服务上的其他信息，以打造极具吸引力的用户体验。在大多数情况下，Outlook 加载项无需修改即可在 Outlook 应用程序上运行，以在桌面、Web 以及平板电脑和移动设备上提供无缝体验。
 

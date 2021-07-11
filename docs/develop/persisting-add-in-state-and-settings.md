@@ -1,14 +1,14 @@
 ---
 title: 暂留加载项状态和设置
-description: 了解如何在浏览器控件的无状态环境中运行的 Office 外接程序 Web 应用程序中保留数据。
+description: 了解如何将数据保留Office浏览器控件的无状态环境中运行的外接程序 Web 应用程序中。
 ms.date: 03/23/2021
 localization_priority: Normal
-ms.openlocfilehash: 47f1b9a5000660f13f8bba5e747d0f5ca5e9d6a0
-ms.sourcegitcommit: 54fef33bfc7d18a35b3159310bbd8b1c8312f845
+ms.openlocfilehash: a5a54a07abfeefda39d24e635773bfd808b59c25
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2021
-ms.locfileid: "51651077"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53349768"
 ---
 # <a name="persisting-add-in-state-and-settings"></a>暂留加载项状态和设置
 
@@ -16,7 +16,7 @@ ms.locfileid: "51651077"
 
 Office 加载项实质上是在浏览器控件的无状态环境中运行的 Web 应用。因此，加载项可能需要暂留数据，以维护各个使用加载项的会话中某些操作或功能的连续性。例如，加载项可能有需要在下一次初始化时保存和重新加载的自定义设置或其他值（如用户的首选视图或默认位置）。为此，可以执行下列操作：
 
-- 使用将数据存储为以下任一数据的 Office JavaScript API 成员：
+- 使用存储数据的 Office JavaScript API 的成员：
   - 在依赖加载项类型的位置上存储的属性包中的名称-数值对。
   - 在文档中存储的自定义 XML。
 
@@ -26,21 +26,21 @@ Office 加载项实质上是在浏览器控件的无状态环境中运行的 Web
 
 本文重点介绍如何使用 Office JavaScript API 将外接程序状态保留到当前文档。 如果需要跨文档保留状态（例如，跨文档打开的任何文档跟踪用户首选项）需要使用不同的方法。 例如，您可以使用 [SSO](sso-in-office-add-ins.md#using-the-sso-token-as-an-identity) 获取用户标识，然后将用户 ID 及其设置保存到联机数据库中。
 
-## <a name="persisting-add-in-state-and-settings-with-the-office-javascript-api"></a>使用 Office JavaScript API 保留加载项状态和设置
+## <a name="persisting-add-in-state-and-settings-with-the-office-javascript-api"></a>使用 JavaScript API 保留Office状态和设置
 
-Office JavaScript API 提供了[Settings、RoamingSettings](/javascript/api/outlook/office.roamingsettings)和[CustomProperties](/javascript/api/outlook/office.customproperties)对象，用于跨会话保存外接程序状态，如下表所述。 [](/javascript/api/office/office.settings) 在所有情况下，保存的设置值仅与创建它们的外接程序 [Id](../reference/manifest/id.md) 相关联。
+JavaScript API Office提供了 设置、RoamingSettings[](/javascript/api/outlook/office.roamingsettings)和[CustomProperties](/javascript/api/outlook/office.customproperties)对象，用于跨会话保存外接程序状态，如下表所述。 [](/javascript/api/office/office.settings) 在所有情况下，保存的设置值仅与创建它们的外接程序 [Id](../reference/manifest/id.md) 相关联。
 
-|**对象**|**外接程序类型支持**|**存储位置**|**Office 应用程序支持**|
+|**对象**|**外接程序类型支持**|**存储位置**|**Office应用程序支持**|
 |:-----|:-----|:-----|:-----|
-|[Settings](/javascript/api/office/office.settings)|内容和任务窗格|加载项使用的文档、电子表格或演示文稿。 内容和任务窗格加载项设置供创建它们的加载项使用，且能从保存它们的文档访问。<br/><br/>**重要说明：** 不要使用 **Settings** 对象保存密码和其他敏感的个人身份信息 (PII)。保存的数据对最终用户不可见，但它作为文档的一部分存储，可通过直接读取文档的文件格式进行访问。您应限制加载项对 PII 的使用，并仅将加载项所需的任何 PII 存储在将加载项作为用户保护的资源托管的服务器上。|Word、Excel 或 PowerPoint<br/><br/> **注意：** Project 2013 任务窗格加载项不支持用于存储加载项状态或设置的 **Settings** API。 但是，对于在 Project (和其他 Office 客户端应用程序) 您可以使用浏览器 Cookie 或 Web 存储等技术。 有关详细信息，请参阅 [Excel-Add-in-JavaScript-PersistCustomSettings](https://github.com/OfficeDev/Excel-Add-in-JavaScript-PersistCustomSettings)。 |
-|[RoamingSettings](/javascript/api/outlook/office.roamingsettings)|Outlook|安装了加载项的用户 Exchange 服务器邮箱。 由于这些设置存储在用户的服务器邮箱中，因此它们可以随用户一起"漫游"，并且可在外接程序在任何访问该用户邮箱的受支持 Office 客户端应用程序或浏览器的上下文中运行时使用。<br/><br/> Outlook 加载项漫游设置只可供创建它们的加载项使用，且只能从安装了加载项的邮箱访问。|Outlook|
+|[Settings](/javascript/api/office/office.settings)|内容和任务窗格|加载项使用的文档、电子表格或演示文稿。 内容和任务窗格加载项设置供创建它们的加载项使用，且能从保存它们的文档访问。<br/><br/>**重要说明：** 不要使用 **Settings** 对象保存密码和其他敏感的个人身份信息 (PII)。保存的数据对最终用户不可见，但它作为文档的一部分存储，可通过直接读取文档的文件格式进行访问。您应限制加载项对 PII 的使用，并仅将加载项所需的任何 PII 存储在将加载项作为用户保护的资源托管的服务器上。|Word、Excel 或 PowerPoint<br/><br/> **注意：** Project 2013 任务窗格加载项不支持用于存储加载项状态或设置的 **Settings** API。 但是，对于在 Project (和其他 Office 客户端应用程序中运行的) 您可以使用浏览器 Cookie 或 Web 存储等技术。 有关详细信息，请参阅 [Excel-Add-in-JavaScript-PersistCustomSettings](https://github.com/OfficeDev/Excel-Add-in-JavaScript-PersistCustomSettings)。 |
+|[RoamingSettings](/javascript/api/outlook/office.roamingsettings)|Outlook|安装了加载项的用户 Exchange 服务器邮箱。 由于这些设置存储在用户的服务器邮箱中，因此它们可以随用户"漫游"，并且可在外接程序在任何访问该用户邮箱的受支持 Office 客户端应用程序或浏览器的上下文中运行时使用。<br/><br/> Outlook 加载项漫游设置只可供创建它们的加载项使用，且只能从安装了加载项的邮箱访问。|Outlook|
 |[CustomProperties](/javascript/api/outlook/office.customproperties)|Outlook|加载项使用的邮件、约会或会议请求项目。 Outlook 外接程序项目自定义属性仅供创建它们的外接程序使用，并且只能从保存它们的项目使用。|Outlook|
-|[CustomXmlParts](/javascript/api/office/office.customxmlparts)|任务窗格|加载项要使用的文档、电子表格或演示文稿。任务窗格加载项设置可供创建它们的加载项使用，且能从保存它们的文档访问。<br/><br/>**重要说明：** 请勿将密码和其他敏感的个人身份信息 (PII) 存储在自定义 XML 部分中。虽然保存的数据对最终用户不可见，但它存储为文档的一部分，可通过直接读取文档的文件格式进行访问。应限制加载项对 PII 的使用，并仅将加载项所需的任何 PII 存储在服务器上，且服务器将加载项托管为用户保护资源。|Word (Office JavaScript 通用 API) Excel (特定于应用程序的 Excel JavaScript API|
+|[CustomXmlParts](/javascript/api/office/office.customxmlparts)|任务窗格|加载项要使用的文档、电子表格或演示文稿。任务窗格加载项设置可供创建它们的加载项使用，且能从保存它们的文档访问。<br/><br/>**重要说明：** 请勿将密码和其他敏感的个人身份信息 (PII) 存储在自定义 XML 部分中。虽然保存的数据对最终用户不可见，但它存储为文档的一部分，可通过直接读取文档的文件格式进行访问。应限制加载项对 PII 的使用，并仅将加载项所需的任何 PII 存储在服务器上，且服务器将加载项托管为用户保护资源。|Word (JavaScript OFFICE JavaScript API) Excel (JavaScript API Excel JavaScript API|
 
 ## <a name="settings-data-is-managed-in-memory-at-runtime"></a>设置数据在运行时托管在内存中
 
 > [!NOTE]
-> 下面两部分是在 Office 常见 JavaScript API 上下文中介绍的设置。 特定于应用程序的 Excel JavaScript API 还提供对自定义设置的访问权限。 Excel API 和编程模式有点不一样。 有关详细信息，请参阅 [Excel SettingCollection](/javascript/api/excel/excel.settingcollection)。
+> 下面两部分是在 Office 常见 JavaScript API 上下文中介绍的设置。 特定于应用程序的应用程序Excel JavaScript API 还提供对自定义设置的访问权限。 Excel API 和编程模式有点不一样。 有关详细信息，请参阅 [Excel SettingCollection](/javascript/api/excel/excel.settingcollection)。
 
 在内部，使用 、 或 对象访问的属性包中数据存储为序列化的 JavaScript 对象表示法 `Settings` `CustomProperties` (JSON) 对象，其中包含名称/值对 `RoamingSettings` 。 每个 (键) 的名称必须为 ，并且存储的值可以是 JavaScript 、、 或 ， `string` `string` `number` `date` `object` 但不能是 **函数**。
 
@@ -54,7 +54,7 @@ Office JavaScript API 提供了[Settings、RoamingSettings](/javascript/api/outl
 }
 ```
 
-在前一个加载项会话中保存设置属性包之后，可以在加载项的当前会话中初始化加载项时或在之后的任何时间加载该设置属性包。 在会话期间，使用 与要创建的 `get` `set` (`remove` Settings、CustomProperties 或 **RoamingSettings**  ) 类型的设置相对应的对象的 、 和 方法，将设置完全托管在内存中。
+在前一个加载项会话中保存设置属性包之后，可以在加载项的当前会话中初始化加载项时或在之后的任何时间加载该设置属性包。 在会话期间，使用 对象的 、 和 方法完全在内存中管理设置，这些对象对应于要创建 `get` `set` (`remove` 设置、CustomProperties 或 **RoamingSettings** ) 的设置类型。
 
 > [!IMPORTANT]
 > 若要将加载项当前会话期间执行的任何添加、更新或删除操作保留到存储位置，必须调用用于处理此类设置的相应对象的 `saveAsync` 方法。 `get`、 `set` 和 `remove` 方法仅对设置属性包的内存副本进行操作。 如果加载项在未调用的情况下关闭，则在此会话期间对设置进行 `saveAsync` 的任何更改都将丢失。
@@ -125,9 +125,9 @@ function write(message){
 ## <a name="how-to-save-custom-xml-to-the-document"></a>如何将自定义 XML 保存到文档
 
 > [!NOTE]
-> 此部分是在 Word 中支持的 Office 常见 JavaScript API 上下文中介绍的自定义 XML 部分。 特定于应用程序的 Excel JavaScript API 还提供对自定义 XML 部件的访问权限。 Excel API 和编程模式有点不一样。 有关详细信息，请参阅 [Excel CustomXmlPart](/javascript/api/excel/excel.customxmlpart)。
+> 此部分是在 Word 中支持的 Office 常见 JavaScript API 上下文中介绍的自定义 XML 部分。 特定于应用程序的应用程序Excel JavaScript API 还提供对自定义 XML 部件的访问权限。 Excel API 和编程模式有点不一样。 有关详细信息，请参阅 [Excel CustomXmlPart](/javascript/api/excel/excel.customxmlpart)。
 
-当需要存储的信息超过文档"设置"的大小限制或具有结构化字符时，有一个额外的存储选项。 可以在 Word 的任务窗格加载项中暂留自定义 XML 标记（对于 Excel，但请参阅本节顶部的注释）。 在 Word 中，可以使用 [CustomXmlPart](/javascript/api/office/office.customxmlpart) 对象及其方法（同样，请参阅上面的 Excel 注释）。 以下代码将创建自定义 XML 部件，并在页面的 divs 中显示其 ID 及内容。 请注意，XML 字符串中必须有一个 `xmlns` 属性。
+当需要存储的信息超过文档文档大小限制或具有结构化字符设置存在附加存储选项。 可以在 Word 的任务窗格加载项中暂留自定义 XML 标记（对于 Excel，但请参阅本节顶部的注释）。 在 Word 中，可以使用 [CustomXmlPart](/javascript/api/office/office.customxmlpart) 对象及其方法（同样，请参阅上面的 Excel 注释）。 以下代码将创建自定义 XML 部件，并在页面的 divs 中显示其 ID 及内容。 请注意，XML 字符串中必须有一个 `xmlns` 属性。
 
 ```js
 function createCustomXmlPart() {
@@ -145,7 +145,7 @@ function createCustomXmlPart() {
 }
 ```
 
-若要检索自定义 XML 部分，请使用 [getByIdAsync](/javascript/api/office/office.customxmlparts#getbyidasync-id--options--callback-) 方法，但 ID 是在创建 XML 部分时生成的 GUID，因此编码时无法知道 ID 是什么。 因此，最好是在创建 XML 部分时，立即将 XML 部分的 ID 存储为设置，并为它提供容易记住的密钥。 下面的方法展示了如何执行此操作。 （不过，处理自定义设置时，请参阅本文的前面部分，以详细了解相关信息和最佳做法）。
+若要检索自定义 XML 部分，请使用 [getByIdAsync](/javascript/api/office/office.customxmlparts#getbyidasync-id--options--callback-) 方法，但 ID 是在创建 XML 部分时生成的 GUID，因此编码时无法知道 ID 是什么。 因此，最好是在创建 XML 部分时，立即将 XML 部分的 ID 存储为设置，并为它提供容易记住的密钥。 下面的方法展示了如何执行此操作。  (请参阅本文的前面部分，了解使用自定义设置时的详细信息和) 
 
  ```js
 function createCustomXmlPartAndStoreId() {
@@ -176,13 +176,13 @@ function getReviewers() {
 }
 ```
 
-## <a name="how-to-save-settings-in-an-outlook-add-in"></a>如何在 Outlook 外接程序中保存设置
+## <a name="how-to-save-settings-in-an-outlook-add-in"></a>如何在加载项中Outlook设置
 
-若要了解如何在 Outlook 加载项中保存设置，请参阅管理 Outlook 加载项 [的状态和设置](../outlook/manage-state-and-settings-outlook.md)。
+若要了解如何在加载项中保存Outlook，请参阅管理加载项的状态[Outlook设置](../outlook/manage-state-and-settings-outlook.md)。
 
 ## <a name="see-also"></a>另请参阅
 
 - [了解 Office JavaScript API](understanding-the-javascript-api-for-office.md)
 - [Outlook 加载项](../outlook/outlook-add-ins-overview.md)
-- [管理 Outlook 外接程序的状态和设置](../outlook/manage-state-and-settings-outlook.md)
+- [管理加载项的状态Outlook设置](../outlook/manage-state-and-settings-outlook.md)
 - [Excel-Add-in-JavaScript-PersistCustomSettings](https://github.com/OfficeDev/Excel-Add-in-JavaScript-PersistCustomSettings)

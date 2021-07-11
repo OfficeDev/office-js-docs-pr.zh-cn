@@ -3,18 +3,18 @@ title: 上下文 Outlook 加载项
 description: 无需离开邮件本身即可启用与邮件相关的任务，以此带来更便捷、更丰富的用户体验。
 ms.date: 04/09/2020
 localization_priority: Normal
-ms.openlocfilehash: c9a01e05fa5bb0a0932da50b096fa2cb71cf3b34
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: 7898f836e431ad4446952a0f34a24d3771e51d01
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53076775"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53348984"
 ---
 # <a name="contextual-outlook-add-ins"></a>上下文 Outlook 加载项
 
 上下文加载项是一些根据邮件或约会中的文本进行激活的 Outlook 外接程序。通过使用上下文加载项，用户无需离开邮件本身即可启动与邮件相关的任务，这会带来更便捷、更丰富的用户体验。
 
-下面是上下文外接程序的示例：
+下面是上下文外接程序的示例。
 
 - 选择地址以打开位置地图。
 - 选择会打开会议建议加载项的字符串。
@@ -30,7 +30,7 @@ ms.locfileid: "53076775"
 
 上下文外接程序的清单必须包含将 `xsi:type` 属性设置为 `DetectedEntity` 的 [ExtensionPoint](../reference/manifest/extensionpoint.md#detectedentity) 元素。 在 **ExtensionPoint** 元素中，该外接程序指定可以激活它的实体或正则表达式。 如果指定实体，则该实体可以是 [Entities](/javascript/api/outlook/office.entities) 对象中的任何属性。
 
-因此，外接程序清单必须包含类型为 **ItemHasKnownEntity** 或 **ItemHasRegularExpressionMatch** 的规则。 下面的示例展示了如何指定加载项应在检测到实体为电话号码的邮件中激活。
+因此，外接程序清单必须包含类型为 **ItemHasKnownEntity** 或 **ItemHasRegularExpressionMatch** 的规则。 以下示例演示如何指定外接程序应在检测到的实体为电话号码的邮件上激活。
 
 ```XML
 <ExtensionPoint xsi:type="DetectedEntity">
@@ -78,15 +78,15 @@ ms.locfileid: "53076775"
 
 **显示在卡片中的外接程序示例**
 
-![在卡片中显示上下文应用。](../images/outlook-detected-entity-card.png)
+![在卡片中显示上下文相关应用。](../images/outlook-detected-entity-card.png)
 
 若要关闭卡片并结束该外接程序，用户可单击该卡片外的任意位置。
 
 ## <a name="current-contextual-add-ins"></a>当前上下文外接程序
 
-默认情况下，会为使用 Outlook 外接程序的用户安装以下上下文加载项：
+默认情况下，会为使用加载项的用户安装Outlook加载项。
 
-- 必应地图 
+- 必应地图
 - 建议的会议
 
 ## <a name="see-also"></a>另请参阅

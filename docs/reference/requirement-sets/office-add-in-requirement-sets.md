@@ -4,19 +4,19 @@ description: 详细了解通用 API Office集。
 ms.date: 04/28/2021
 ms.prod: non-product-specific
 localization_priority: Normal
-ms.openlocfilehash: 959f03bf41496c1506087c2851efad336cdec676
-ms.sourcegitcommit: 8fbc7c7eb47875bf022e402b13858695a8536ec5
+ms.openlocfilehash: 4ebf00ef0be4007f6cb29fdf049f9df2152ac626
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/06/2021
-ms.locfileid: "52253345"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53350202"
 ---
 # <a name="office-common-api-requirement-sets"></a>Office 通用 API 要求集
 
-要求集是指各组已命名的 API 成员。Office 加载项使用清单中指定的要求集或执行运行时检查，以确定 Office 应用程序是否支持加载项所需的 API。有关详细信息，请参阅 [Office 版本和要求集](../../develop/office-versions-and-requirement-sets.md)。
+要求集是指已命名的 API 成员组。Office 加载项使用清单中指定的要求集或执行运行时检查，以确定 Office 应用程序是否支持加载项所需的 API。有关详细信息，请参阅 [Office 版本和要求集](../../develop/office-versions-and-requirement-sets.md)。
 
 > [!TIP]
-> 正在查找 *特定于应用程序的* API 要求集？ 请参阅下列 API 要求集：
+> 正在查找 *特定于应用程序的* API 要求集？ 请参阅以下 API 要求集。
 >
 > - [Excel JavaScript API 要求集](excel-api-requirement-sets.md) (ExcelApi)
 > - [Word JavaScript API 要求集](word-api-requirement-sets.md) (WordApi)

@@ -3,12 +3,12 @@ title: 使用 Angular 开发 Office 加载项
 description: 使用 Angular 创建一Office外接程序作为单个页面应用程序。
 ms.date: 05/03/2021
 localization_priority: Normal
-ms.openlocfilehash: 1aba8f90cc70221a42b7bebb5e34775ed369f32e
-ms.sourcegitcommit: 8fbc7c7eb47875bf022e402b13858695a8536ec5
+ms.openlocfilehash: e12f3e2d4733613fb542cf2be4e0ff6648ab8475
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/06/2021
-ms.locfileid: "52253338"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53350083"
 ---
 # <a name="develop-office-add-ins-with-angular"></a>使用 Angular 开发 Office 加载项
 
@@ -21,7 +21,7 @@ ms.locfileid: "52253338"
 
 ## <a name="install-the-typescript-type-definitions"></a>安装 TypeScript 类型定义
 
-打开Node.js窗口，在命令行中输入以下内容：
+打开Node.js窗口，在命令行中输入以下内容。
 
 ```command&nbsp;line
 npm install --save-dev @types/office-js

@@ -4,12 +4,12 @@ description: Outlook 加载项由第三方使用基于 Web 的平台集成到 Ou
 ms.date: 06/15/2021
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: 3fb6c47d0dc2b41ecf657ea4d453c2ffcb8a8902
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: 6a490e78b524e84d53461838b8a2d5a15be031bd
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53076754"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53348921"
 ---
 # <a name="outlook-add-ins-overview"></a>Outlook 加载项概述
 
@@ -27,7 +27,7 @@ Outlook 外接程序与 COM 或 VSTO 外接程序（特定于在 Windows 上运�
 
 ## <a name="extension-points"></a>扩展点
 
-扩展点是加载项与 Outlook 集成的方式。以下是执行此操作的方法：
+扩展点是加载项与 Outlook 集成的方式。以下是执行此操作的方法。
 
 - 加载项可以声明出现在所有邮件和约会的命令界面中的按钮。有关详细信息，请参阅 [用于 Outlook 的加载项命令](add-in-commands-for-outlook.md)。
 

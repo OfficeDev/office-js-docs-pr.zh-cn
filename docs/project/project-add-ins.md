@@ -5,12 +5,12 @@ ms.date: 10/14/2019
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: 7f0edd10495badd50da3fa8d4b8c9b4495df6252
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: f2f160b01971385abc22f7dce63f807e90fbe7d3
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53076950"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53348375"
 ---
 # <a name="task-pane-add-ins-for-project"></a>Project 任务窗格加载项
 
@@ -54,7 +54,7 @@ Project 加载项方案包括以下几种：
 
 若要创建加载项，可以使用简单文本编辑器创建 HTML 网页和相关的 JavaScript 文件、CSS 文件及 REST 查询。除了 HTML 页面或 Web 应用程序外，加载项还需要一个用于配置的 XML 清单文件。Project 可以使用包括指定为 **TaskPaneExtension** 的 **type** 属性的清单文件。该清单文件可供多个 Office 2013 客户端应用程序使用，你也可以创建一个 Project 2013 专用的清单文件。有关详细信息，请参阅 [Office 加载项平台概述](../overview/office-add-ins.md)中的“_开发基础知识_”一节。
 
-在安装 Project 2013 SDK 下载时，`\Samples\Apps\` 子目录包括以下示例加载项：
+在安装 Project 2013 SDK 下载时，`\Samples\Apps\` 子目录包括以下示例加载项。
 
 - **Bing 搜索：** BingSearch.XML 清单文件指向用于移动设备的 Bing 搜索页。由于 Bing Web 应用程序在 Internet 中已存在，因此 Bing 搜索加载项不使用其他源代码文件或 Project 加载项对象模型。
 
@@ -98,7 +98,7 @@ Project 加载项方案包括以下几种：
     </OfficeApp>
     ```
 
-- 下面是加载项清单中的必需元素：
+- 下面是加载项清单中的必需元素。
   - 在 **OfficeApp** 元素中，`xsi:type="TaskPaneApp"` 属性指定该加载项属于任务窗格类型。
   - **Id** 元素是 UUID，并且必须唯一。
   - **Version** 元素是加载项的版本。**ProviderName** 元素是提供加载项的公司或开发人员的名称。**DefaultLocale** 元素指定清单中字符串的默认区域设置。
@@ -190,7 +190,7 @@ Project 加载项方案包括以下几种：
 
 ## <a name="distributing-project-add-ins"></a>分发 Project 加载项
 
-可通过文件共享、SharePoint 库中的应用程序目录或 AppSource 分发加载项。 有关详细信息，请参阅[发布 Office 加载项](../publish/publish.md)。
+可通过文件共享、SharePoint 库中的应用目录或 AppSource 分发加载项。有关详细信息，请参阅[发布 Office 加载项](../publish/publish.md)。
 
 ## <a name="see-also"></a>另请参阅
 

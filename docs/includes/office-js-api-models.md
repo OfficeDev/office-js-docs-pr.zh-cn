@@ -1,6 +1,6 @@
 Office JavaScript API 包含两种不同的模型：
 
-- **应用程序特定的** API 提供了强类型对象，它可用于与特定 Office 应用程序的本机对象进行交互。 例如，可使用 Excel JavaScript API 来访问工作表、区域、表格和图表等。 应用程序特定的 API 当前可用于以下 Office 应用程序：
+- **应用程序特定的** API 提供了强类型对象，它可用于与特定 Office 应用程序的本机对象进行交互。 例如，可使用 Excel JavaScript API 来访问工作表、区域、表格和图表等。 应用程序特定的 API 当前可用于以下 Office 应用程序。
 
     - [Excel](../reference/overview/excel-add-ins-reference-overview.md)
     - [OneNote](../reference/overview/onenote-add-ins-javascript-reference.md)

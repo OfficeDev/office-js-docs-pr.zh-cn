@@ -1,14 +1,14 @@
 ---
 title: Outlook 上下文加载项激活故障排查
-description: 如果加载项未按预期激活，应考虑以下几个方面的可能原因。
+description: 外接程序未按预期激活的可能原因。
 ms.date: 09/02/2020
 localization_priority: Normal
-ms.openlocfilehash: 9d2224ddcd9049252394935ab8a6519b4fd494a9
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: d3a9abcdf1cd9db4104b389208f829f4b648c6e7
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53076684"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53348865"
 ---
 # <a name="troubleshoot-outlook-add-in-activation"></a>Outlook 加载项激活故障排查
 
@@ -18,7 +18,7 @@ Outlook上下文外接程序激活基于外接程序清单中的激活规则。 
 
 首先，确保你正在测试的用户电子邮件帐户位于至少为 Exchange 2013 的某个版本的 Exchange Server 上。如果你正在使用在Exchange 2013 之后发布的特定功能，那么请确保用户的帐户使用合适的 Exchange 版本。
 
-你可使用以下方法之一验证 Exchange 2013 的版本：
+您可以使用以下方法之一Exchange 2013 版本。
 
 - 咨询你的 Exchange Server 管理员。
 
@@ -26,7 +26,7 @@ Outlook上下文外接程序激活基于外接程序清单中的激活规则。 
 
 - 也可以使用 [Office.context.mailbox.diagnostics.hostVersion](/javascript/api/outlook/office.diagnostics#hostversion) 属性来验证版本。在 Outlook 网页版和移动设备版上，此属性会返回 Exchange Server 版本。
 
-- 如果能够在 Outlook 上测试加载项，则可使用采用 Outlook 对象模型和 Visual Basic 编辑器的以下简单调试技术：
+- If you can test the add-in on Outlook， you can use the following simple debugging technique that uses the Outlook object model and Visual Basic Editor.
 
     1. 首先，确认已对 Outlook 启用了宏。依次选择“**文件**”、“**选项**”、“**信任中心**”、“**信任中心设置**”、“**宏设置**”。确保在“信任中心”中选择了“**为所有宏提供通知**”。还应确保在 Outlook 启动过程中选择了“**启用宏**”。
 
@@ -58,7 +58,7 @@ Outlook上下文外接程序激活基于外接程序清单中的激活规则。 
 > [!NOTE]
 > 仅 Outlook 富客户端可监视资源使用状况，但如果在 Outlook 富客户端中禁用加载项，也会在 Outlook 网页版和移动设备版中禁用此加载项。
 
-使用以下方法之一，验证加载项是否已禁用：
+使用以下方法之一验证外接程序是否已禁用。
 
 - 在 Outlook 网页版中，直接登录电子邮件帐户，选择“设置”图标，然后选择“**管理加载项**”转到 Exchange 管理中心，可在此处验证管理加载项是否已启用。
 
@@ -81,7 +81,7 @@ Outlook上下文外接程序激活基于外接程序清单中的激活规则。 
 
 ## <a name="is-the-add-in-manifest-installed-properly-and-does-outlook-have-a-cached-copy"></a>加载项清单是否安装正确，Outlook 是否有已缓存副本？
 
-此方案仅适用于 Windows 版 Outlook。正常情况下，为邮箱安装 Outlook 加载项时，Exchange Server 会将加载项清单从你指示的位置复制到该 Exchange Server 上的邮箱。每次启动 Outlook 时，它都会将为该邮箱安装的所有清单读取到以下位置的临时缓存中：
+此方案仅适用于Outlook Windows。 正常情况下，为邮箱安装 Outlook 外接程序时，Exchange Server 会将外接程序清单从你指示的位置复制到该 Exchange Server 上的邮箱。 每次Outlook时，它会将为此邮箱安装的所有清单读取到以下位置的临时缓存中。
 
 ```text
 %LocalAppData%\Microsoft\Office\16.0\WEF
@@ -110,20 +110,20 @@ Outlook上下文外接程序激活基于外接程序清单中的激活规则。 
 
 1. 重新启动 Outlook 并测试 Outlook 现在是否已激活加载项。
 
-1. 如果 Outlook 无法激活加载项，则检查 Outlook 是否具有加载项清单的正确缓存副本。请查看以下路径：
+1. 如果 Outlook 无法激活外接程序，则检查 Outlook 是否具有外接程序清单的正确缓存副本。 查看以下路径。
 
     ```text
     %LocalAppData%\Microsoft\Office\16.0\WEF
     ```
 
-    可以在下列子文件夹中找到清单：
+    您可以在以下子文件夹找到清单。
 
     ```text
     \<insert your guid>\<insert base 64 hash>\Manifests\<ManifestID>_<ManifestVersion>
     ```
 
     > [!NOTE]
-    > 下面的示例展示了为用户 John 的邮箱安装的清单路径：
+    > 下面是为用户 John 的邮箱安装的清单的路径示例。
     >
     > ```text
     > C:\Users\john\appdata\Local\Microsoft\Office\16.0\WEF\{8D8445A4-80E4-4D6B-B7AC-D4E6AF594E73}\GoRshCWa7vW8+jhKmyiDhA==\Manifests\b3d7d9d5-6f57-437d-9830-94e2aaccef16_1.2
@@ -139,7 +139,7 @@ Outlook上下文外接程序激活基于外接程序清单中的激活规则。 
 
     1. 查找其事件 ID 等于 63（表示 Outlook 从 Exchange Server 下载清单）的近期事件。
 
-    1. 如果 Outlook 成功读取了清单，则记录的事件应包含以下说明：
+    1. 如果Outlook成功读取清单，则记录的事件应具有以下说明。
 
         ```text
         The Exchange web service request GetAppManifests succeeded.
@@ -147,7 +147,7 @@ Outlook上下文外接程序激活基于外接程序清单中的激活规则。 
 
         然后，跳过本节的其余部分，并考虑本节后面的其他可能原因。
 
-1. 如果看不到成功事件，请关闭 Outlook，再删除以下路径中的所有清单：
+1. 如果未看到成功事件，请关闭Outlook，并删除以下路径中的所有清单。
 
     ```text
     %LocalAppData%\Microsoft\Office\16.0\WEF\<insert your guid>\<insert base 64 hash>\Manifests\
@@ -189,7 +189,7 @@ Outlook 富客户端使用的正则表达式引擎与 Outlook 网页版和移动
 
 ## <a name="if-you-use-an-itemis-itemhasattachment-or-itemhasregularexpressionmatch-rule-have-you-verified-the-related-item-property"></a>如果使用 ItemIs、ItemHasAttachment 或 ItemHasRegularExpressionMatch 规则，是否已验证相关项属性？
 
-如果使用 **ItemHasRegularExpressionMatch** 激活规则，请验证 **PropertyName** 属性的值是否为选定项的预期值。 下面是调试相应属性的一些提示：
+如果使用 **ItemHasRegularExpressionMatch** 激活规则，请验证 **PropertyName** 属性的值是否为选定项的预期值。 以下是调试相应属性的一些提示。
 
 - 如果选定项是邮件，并且你在 **PropertyName** 属性中指定 **BodyAsHTML**，请打开该邮件，然后选择“**查看源代码**”验证该项的 HTML 形式的邮件正文。
 
@@ -237,7 +237,7 @@ Outlook 富客户端使用的正则表达式引擎与 Outlook 网页版和移动
 
 ## <a name="does-outlook-apply-all-the-regular-expressions-to-the-portion-of-the-item-body-as-you-expect"></a>是否Outlook如你预期一样将所有正则表达式应用到项目正文部分？
 
-本节适用于使用正则表达式的所有激活规则，尤其是应用于项目正文的那些规则，这些规则可能较大，需要较长时间才能对匹配项进行评估。 您应该知道，即使激活规则所依赖的项目属性具有您期望的值，Outlook也可能无法计算项目属性的整个值上的所有正则表达式。 为了提供合理的性能并控制阅读外接程序的过多资源使用率，Outlook遵循以下有关运行时处理激活规则中的正则表达式的限制：
+本节适用于使用正则表达式的所有激活规则，尤其是应用于项目正文的那些规则，这些规则可能较大，需要较长时间才能对匹配项进行评估。 您应该知道，即使激活规则所依赖的项目属性具有您期望的值，Outlook也可能无法计算项目属性的整个值上的所有正则表达式。 为了提供合理的性能并控制阅读外接程序的过多资源使用率，Outlook遵循以下有关运行时处理激活规则中的正则表达式的限制。
 
 - 评估的项目正文的大小 -- 项目正文中用于计算正则表达式Outlook部分存在限制。 这些限制取决于Outlook正文的客户端、外形和格式。 请参阅[激活限制和适用于 Outlook 外接程序的 JavaScript API](limits-for-activation-and-javascript-api-for-outlook-add-ins.md) 中表 2 中的详细信息。
 

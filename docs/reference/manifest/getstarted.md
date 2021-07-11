@@ -1,18 +1,18 @@
 ---
 title: 清单文件中的 GetStarted 元素
-description: 提供在 Word、Excel、PowerPoint 和 OneNote 中安装加载项时出现的标注使用的信息。
+description: 提供在 Word、Excel、PowerPoint 和 OneNote 中安装外接程序时出现的标注OneNote。
 ms.date: 10/09/2018
 localization_priority: Normal
-ms.openlocfilehash: 0ad6196dc45e4ea06c2b43ac5da66a560ab0b899
-ms.sourcegitcommit: 2f75a37de349251bc0e0fc402c5ae6dc5c3b8b08
+ms.openlocfilehash: a637f3f9031d9f8e09d14f17f2095ca0647c4d50
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "49771412"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53348683"
 ---
 # <a name="getstarted-element"></a>GetStarted 元素
 
-提供在 Word、Excel、PowerPoint 和 OneNote 中安装加载项时出现的标注使用的信息。 **GetStarted** 元素是 [DesktopFormFactor](desktopformfactor.md)的子元素。
+提供在 Word、Excel、PowerPoint 和 OneNote 中安装外接程序时出现的标注OneNote。 **GetStarted** 元素是 [DesktopFormFactor 的子元素](desktopformfactor.md)。
 
 ## <a name="child-elements"></a>子元素
 
@@ -24,22 +24,22 @@ ms.locfileid: "49771412"
 
 ### <a name="title"></a>标题 
 
-必需。 用于标注顶部的标题。 resid 属性引用"资源"部分 **ShortStrings** 元素中的 [](resources.md)有效 ID，并且不能超过 32 个字符。
+必需。 用于标注顶部的标题。 **resid** 属性引用"资源"部分 **ShortStrings** 元素中的 [](resources.md)有效 ID，并且不能超过 32 个字符。
 
 ### <a name="description"></a>说明
 
-必需。 标注的说明/正文内容。 resid 属性引用"资源"部分 **LongStrings** 元素中的 [](resources.md)有效 ID，并且不能超过 32 个字符。
+必需。 标注的说明/正文内容。 **resid** 属性引用"资源"部分 **LongStrings** 元素中的 [](resources.md)有效 ID，并且不能超过 32 个字符。
 
 ### <a name="learnmoreurl"></a>LearnMoreUrl
 
-必需。 指向用户可以了解你的外接程序详细信息的页面 URL。 resid 属性引用 Resources 节 **的 Urls** 元素 [](resources.md)中的有效 ID，并且不能超过 32 个字符。
+必需。 指向用户可以了解你的外接程序详细信息的页面 URL。 **resid** 属性引用 Resources 节 **的 Urls** 元素 [](resources.md)中的有效 ID，并且不能超过 32 个字符。
 
 > [!NOTE]
 > **LearnMoreUrl** 当前无法在 Word、Excel 或 PowerPoint 客户端中呈现。 我们建议为所有客户端添加此 URL，以便 URL 在可用时呈现。 
 
 ## <a name="see-also"></a>另请参阅
 
-下面的代码示例使用 **GetStarted** 元素：
+以下代码示例使用 **GetStarted** 元素。
 
 * [用于控制表和图表格式化的 Excel Web 外接程序](https://github.com/OfficeDev/Excel-Add-in-JavaScript-SalesTracker)
 * [Word 外接程序 JavaScript SpecKit](https://github.com/OfficeDev/Word-Add-in-JS-SpecKit)

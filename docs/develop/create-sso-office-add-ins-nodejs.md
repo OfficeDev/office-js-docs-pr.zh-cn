@@ -3,12 +3,12 @@ title: 创建使用单一登录的 Node.js Office 加载项
 description: 了解如何创建使用 Office 单一登录的基于 Node.js 的 Office 加载项
 ms.date: 07/30/2020
 localization_priority: Normal
-ms.openlocfilehash: 9b3600e56db138a45e1601eaf5073126e04b65c5
-ms.sourcegitcommit: 4fa952f78be30d339ceda3bd957deb07056ca806
+ms.openlocfilehash: 7b4fe01b58fcb9a8fa03b1e1d728bb1a2bf0e19c
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/16/2021
-ms.locfileid: "52961235"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53349957"
 ---
 # <a name="create-a-nodejs-office-add-in-that-uses-single-sign-on"></a>创建使用单一登录的 Node.js Office 加载项
 
@@ -129,7 +129,7 @@ ms.locfileid: "52961235"
 
 1. 在代码编辑器中打开克隆项目中的 `\Begin` 文件夹。
 
-1. 打开 `.ENV` 文件，并使用先前复制的值。 将 **CLIENT_ID** 设置为 **应用程序（客户端）ID**，并将 **CLIENT_SECRET** 设置为客户端密码。 该值 **不** 能用引号引起来。 完成后，文件应当类似于以下示例： 
+1. 打开 `.ENV` 文件，并使用先前复制的值。 将 **CLIENT_ID** 设置为 **应用程序（客户端）ID**，并将 **CLIENT_SECRET** 设置为客户端密码。 该值 **不** 能用引号引起来。 完成后，文件应当类似于以下示例：
 
     ```javascript
     CLIENT_ID=8791c036-c035-45eb-8b0b-265f43cc4824
@@ -139,7 +139,7 @@ ms.locfileid: "52961235"
 
 1. 打开 `\public\javascripts\fallbackAuthDialog.js` 文件。 在 `msalConfig` 声明中，将占位符 $application_GUID here$ 替换为在注册加载项时复制的应用程序 ID。 该值应该用引号引起来。
 
-1. 打开加载项清单文件“manifest\manifest_local.xml”，然后滚动到该文件的底部。 `</VersionOverrides>` 结束标记的正上方有以下标记：
+1. 打开加载项清单文件“manifest\manifest_local.xml”，然后滚动到该文件的底部。 在结束 `</VersionOverrides>` 标记的正上方，你将找到以下标记。
 
     ```xml
     <WebApplicationInfo>
@@ -166,7 +166,7 @@ ms.locfileid: "52961235"
     > [!NOTE]
     > 顾名思义，ssoAuthES6.js 使用 JavaScript ES6 语法，因为使用 `async` 和 `await` 可以最好地显示 SSO API 本质的简单性。 启动 localhost 服务器时，此文件将转换为 ES5 语法，以便在 Internet Explorer 11 中运行该示例。 
 
-1. 将以下代码添加到 Office.onReady 方法：
+1. 在 Office.onReady 方法下方添加以下代码。
 
     ```javascript
     async function getGraphData() {
@@ -235,7 +235,7 @@ ms.locfileid: "52961235"
     }
     ```
 
-1. 将 `TODO 5` 替换为以下代码
+1. 将 `TODO 5` 替换为以下内容：
 
     - 来自 `getAccessToken` 调用的错误将具有 `code` 属性，其错误号通常处于 13xxx 范围内。 将在后续步骤中创建 `handleClientSideErrors` 方法。
     - `showMessage` 方法在任务窗格上显示文本。
@@ -330,7 +330,7 @@ ms.locfileid: "52961235"
     }
     ```
 
-1. 在极少数情况下，Office 缓存的引导令牌在 Office 验证时未过期，但是会在到达 Azure AD 进行交换时过期。 Azure AD 将以错误 **AADSTS500133** 做出响应。 在这种情况下，加载项应仅以递归方式调用 `getGraphData`。 由于缓存的引导令牌现在已过期，Office 将从 Azure AD 获取一个新令牌。 将 `TODO 8` 替换为以下代码。 
+1. 在极少数情况下，Office 缓存的引导令牌在 Office 验证时未过期，但是会在到达 Azure AD 进行交换时过期。 Azure AD 将以错误 **AADSTS500133** 做出响应。 在这种情况下，加载项应仅以递归方式调用 `getGraphData`。 由于缓存的引导令牌现在已过期，Office 将从 Azure AD 获取一个新令牌。 因此， `TODO 8` 将 替换为以下内容：
 
     ```javascript
     if (exchangeResponse.error_description.indexOf("AADSTS500133") !== -1)
@@ -362,7 +362,7 @@ ms.locfileid: "52961235"
     }
     ```
 
-1. 将 `TODO 9` 替换为以下代码。 
+1. 将 `TODO 9` 替换为以下内容：
 
     ```javascript
     else {

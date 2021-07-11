@@ -3,12 +3,12 @@ title: 加载项中的Office快捷方式
 description: 了解如何将自定义键盘快捷方式（也称为组合键）Office加载项。
 ms.date: 06/02/2021
 localization_priority: Normal
-ms.openlocfilehash: f550190aa6cc68824b97dc3b592e92db50adcaac
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: de8ce0d89dca6745cba96ac9a5ea946d50d41de4
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53076313"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53349251"
 ---
 # <a name="add-custom-keyboard-shortcuts-to-your-office-add-ins"></a>将自定义键盘快捷方式添加到Office加载项
 
@@ -91,7 +91,7 @@ ms.locfileid: "53076313"
 ## <a name="create-a-mapping-of-actions-to-their-functions"></a>创建操作到其函数的映射
 
 1. 在项目中，打开 元素中的 HTML 页面加载的 JavaScript `<FunctionFile>` 文件。
-1. 在 JavaScript 文件中，使用[Office.actions.associate](/javascript/api/office/office.actions#associate) API 将 JSON 文件中指定的每个操作映射到 JavaScript 函数。 将以下 JavaScript 添加到文件中。 关于代码，请注意以下几点：
+1. 在 JavaScript 文件中，使用[Office.actions.associate](/javascript/api/office/office.actions#associate) API 将 JSON 文件中指定的每个操作映射到 JavaScript 函数。 将以下 JavaScript 添加到文件中。 关于代码，请注意以下几点。
 
     - 第一个参数是 JSON 文件的操作之一。
     - 第二个参数是当用户按下映射到 JSON 文件中操作的组合键时运行的函数。
@@ -117,7 +117,7 @@ ms.locfileid: "53076313"
     });
     ```
 
-1. 添加函数的第二个调用，以将操作映射到调用 `Office.actions.associate` `HIDETASKPANE` [Office.addin.hide 的函数](/javascript/api/office/office.addin#hide--)。 示例如下：
+1. 添加函数的第二个调用，以将操作映射到调用 `Office.actions.associate` `HIDETASKPANE` [Office.addin.hide 的函数](/javascript/api/office/office.addin#hide--)。 示例如下。
 
     ```javascript
     Office.actions.associate('HIDETASKPANE', function () {
@@ -137,14 +137,14 @@ ms.locfileid: "53076313"
 
 ### <a name="construct-the-action-objects"></a>构造操作对象
 
-在 上指定对象数组中的对象时 `actions` ，shortcuts.js准则：
+在上指定对象数组中的对象时 `actions` ，shortcuts.js准则。
 
 - 属性名 `id` 和 `name` 是必需的。
 - `id`属性用于唯一标识使用键盘快捷方式调用的操作。
 - `name`属性必须是描述操作的用户友好字符串。 它必须是字符 A - Z、a - z、0 - 9 和标点符号"-"、"_"和"+"的组合。
 - 属性是可选的。 当前仅 `ExecuteFunction` 支持类型。
 
-示例如下：
+示例如下。
 
 ```json
     "actions": [
@@ -165,7 +165,7 @@ ms.locfileid: "53076313"
 
 ### <a name="construct-the-shortcut-objects"></a>构造快捷方式对象
 
-在 上指定对象数组中的对象时 `shortcuts` ，shortcuts.js准则：
+在上指定对象数组中的对象时 `shortcuts` ，shortcuts.js准则。
 
 - 属性名称 `action` 、 `key` 和 `default` 是必需的。
 - 该属性的值 `action` 是一个字符串，并且必须与 action 对象 `id` 中的某个属性匹配。
@@ -177,7 +177,7 @@ ms.locfileid: "53076313"
 - 当两个字符链接到标准键盘中的同一个物理键时，它们是 属性中的同义词;例如，Alt+a 和 Alt+A 是同一快捷方式 `default` ，Ctrl+- 和 Ctrl+ 也是，因为 \_ "-"和"_"是同一个物理键。
 - "+"字符指示同时按下其任一侧的键。
 
-示例如下：
+示例如下。
 
 ```json
     "shortcuts": [
