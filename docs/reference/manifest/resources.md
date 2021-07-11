@@ -3,53 +3,53 @@ title: 清单文件中的 Resources 元素
 description: Resources 元素包含用于 VersionOverrides 节点的图标、字符串和 URL。
 ms.date: 03/30/2021
 localization_priority: Normal
-ms.openlocfilehash: bdf73420345ca4d054438bfba5217254e6682e6d
-ms.sourcegitcommit: 0bff0411d8cfefd4bb00c189643358e6fb1df95e
+ms.openlocfilehash: 1deacc0b93e19e5f646ca2dd74d6f89de562f21e
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/07/2021
-ms.locfileid: "51604615"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53348291"
 ---
-# <a name="resources-element"></a><span data-ttu-id="bbea2-103">Resources 元素</span><span class="sxs-lookup"><span data-stu-id="bbea2-103">Resources element</span></span>
+# <a name="resources-element"></a><span data-ttu-id="67e59-103">Resources 元素</span><span class="sxs-lookup"><span data-stu-id="67e59-103">Resources element</span></span>
 
-<span data-ttu-id="bbea2-p101">包含图标、字符串以及 [VersionOverrides](versionoverrides.md) 节点的 URL。清单元素通过使用资源的 **id** 来指定资源。这有助于将清单的大小保持在可管理的范围，尤其是当资源具有不同区域设置的版本时。**id** 在清单内必须是唯一的且最多可包含 32 个字符。</span><span class="sxs-lookup"><span data-stu-id="bbea2-p101">Contains icons, strings, and URLs for the [VersionOverrides](versionoverrides.md) node. A manifest element specifies a resource by using the **id** of the resource. This helps to keep the size of the manifest manageable, especially when resources have versions for different locales. An **id** must be unique within the manifest and can have a maximum of 32 characters.</span></span>
+<span data-ttu-id="67e59-p101">包含图标、字符串以及 [VersionOverrides](versionoverrides.md) 节点的 URL。清单元素通过使用资源的 **id** 来指定资源。这有助于将清单的大小保持在可管理的范围，尤其是当资源具有不同区域设置的版本时。**id** 在清单内必须是唯一的且最多可包含 32 个字符。</span><span class="sxs-lookup"><span data-stu-id="67e59-p101">Contains icons, strings, and URLs for the [VersionOverrides](versionoverrides.md) node. A manifest element specifies a resource by using the **id** of the resource. This helps to keep the size of the manifest manageable, especially when resources have versions for different locales. An **id** must be unique within the manifest and can have a maximum of 32 characters.</span></span>
 
-<span data-ttu-id="bbea2-108">每个资源可以具有一个或多个 **Override** 子元素以定义特定区域设置的不同资源。</span><span class="sxs-lookup"><span data-stu-id="bbea2-108">Each resource can have one or more **Override** child elements to define a different resource for a specific locale.</span></span>
+<span data-ttu-id="67e59-108">每个资源可以具有一个或多个 **Override** 子元素以定义特定区域设置的不同资源。</span><span class="sxs-lookup"><span data-stu-id="67e59-108">Each resource can have one or more **Override** child elements to define a different resource for a specific locale.</span></span>
 
-## <a name="child-elements"></a><span data-ttu-id="bbea2-109">子元素</span><span class="sxs-lookup"><span data-stu-id="bbea2-109">Child elements</span></span>
+## <a name="child-elements"></a><span data-ttu-id="67e59-109">子元素</span><span class="sxs-lookup"><span data-stu-id="67e59-109">Child elements</span></span>
 
-|  <span data-ttu-id="bbea2-110">元素</span><span class="sxs-lookup"><span data-stu-id="bbea2-110">Element</span></span> |  <span data-ttu-id="bbea2-111">类型</span><span class="sxs-lookup"><span data-stu-id="bbea2-111">Type</span></span>  |  <span data-ttu-id="bbea2-112">Description</span><span class="sxs-lookup"><span data-stu-id="bbea2-112">Description</span></span>  |
+|  <span data-ttu-id="67e59-110">元素</span><span class="sxs-lookup"><span data-stu-id="67e59-110">Element</span></span> |  <span data-ttu-id="67e59-111">类型</span><span class="sxs-lookup"><span data-stu-id="67e59-111">Type</span></span>  |  <span data-ttu-id="67e59-112">说明</span><span class="sxs-lookup"><span data-stu-id="67e59-112">Description</span></span>  |
 |:-----|:-----|:-----|
-|  [<span data-ttu-id="bbea2-113">Images</span><span class="sxs-lookup"><span data-stu-id="bbea2-113">Images</span></span>](#images)            |  <span data-ttu-id="bbea2-114">image</span><span class="sxs-lookup"><span data-stu-id="bbea2-114">image</span></span>   |  <span data-ttu-id="bbea2-115">提供指向图标图像的 HTTPS URL。</span><span class="sxs-lookup"><span data-stu-id="bbea2-115">Provides the HTTPS URL to an image for an icon.</span></span> |
-|  <span data-ttu-id="bbea2-116">**Urls**</span><span class="sxs-lookup"><span data-stu-id="bbea2-116">**Urls**</span></span>                |  <span data-ttu-id="bbea2-117">url</span><span class="sxs-lookup"><span data-stu-id="bbea2-117">url</span></span>     |  <span data-ttu-id="bbea2-p102">提供 HTTPS URL 位置。一个 URL 最多可包含 2048 个字符。</span><span class="sxs-lookup"><span data-stu-id="bbea2-p102">Provides an HTTPS URL location. A URL can have a maximum of 2048 characters.</span></span> |
-|  <span data-ttu-id="bbea2-120">**ShortStrings**</span><span class="sxs-lookup"><span data-stu-id="bbea2-120">**ShortStrings**</span></span> |  <span data-ttu-id="bbea2-121">string</span><span class="sxs-lookup"><span data-stu-id="bbea2-121">string</span></span>  |  <span data-ttu-id="bbea2-p103">**Label** 和 **Title** 元素的文本。每个 **String** 最多可包含 125 个字符。</span><span class="sxs-lookup"><span data-stu-id="bbea2-p103">The text for **Label** and **Title** elements. Each **String** contains a maximum of 125 characters.</span></span>|
-|  <span data-ttu-id="bbea2-124">**LongStrings**</span><span class="sxs-lookup"><span data-stu-id="bbea2-124">**LongStrings**</span></span>  |  <span data-ttu-id="bbea2-125">string</span><span class="sxs-lookup"><span data-stu-id="bbea2-125">string</span></span>  | <span data-ttu-id="bbea2-p104">**Description** 属性的文本。每个 **String** 最多可包含 250 个字符。</span><span class="sxs-lookup"><span data-stu-id="bbea2-p104">The text for **Description** attributes. Each **String** contains a maximum of 250 characters.</span></span>|
+|  [<span data-ttu-id="67e59-113">Images</span><span class="sxs-lookup"><span data-stu-id="67e59-113">Images</span></span>](#images)            |  <span data-ttu-id="67e59-114">image</span><span class="sxs-lookup"><span data-stu-id="67e59-114">image</span></span>   |  <span data-ttu-id="67e59-115">提供指向图标图像的 HTTPS URL。</span><span class="sxs-lookup"><span data-stu-id="67e59-115">Provides the HTTPS URL to an image for an icon.</span></span> |
+|  <span data-ttu-id="67e59-116">**Urls**</span><span class="sxs-lookup"><span data-stu-id="67e59-116">**Urls**</span></span>                |  <span data-ttu-id="67e59-117">url</span><span class="sxs-lookup"><span data-stu-id="67e59-117">url</span></span>     |  <span data-ttu-id="67e59-p102">提供 HTTPS URL 位置。一个 URL 最多可包含 2048 个字符。</span><span class="sxs-lookup"><span data-stu-id="67e59-p102">Provides an HTTPS URL location. A URL can have a maximum of 2048 characters.</span></span> |
+|  <span data-ttu-id="67e59-120">**ShortStrings**</span><span class="sxs-lookup"><span data-stu-id="67e59-120">**ShortStrings**</span></span> |  <span data-ttu-id="67e59-121">string</span><span class="sxs-lookup"><span data-stu-id="67e59-121">string</span></span>  |  <span data-ttu-id="67e59-p103">**Label** 和 **Title** 元素的文本。每个 **String** 最多可包含 125 个字符。</span><span class="sxs-lookup"><span data-stu-id="67e59-p103">The text for **Label** and **Title** elements. Each **String** contains a maximum of 125 characters.</span></span>|
+|  <span data-ttu-id="67e59-124">**LongStrings**</span><span class="sxs-lookup"><span data-stu-id="67e59-124">**LongStrings**</span></span>  |  <span data-ttu-id="67e59-125">string</span><span class="sxs-lookup"><span data-stu-id="67e59-125">string</span></span>  | <span data-ttu-id="67e59-p104">**Description** 属性的文本。每个 **String** 最多可包含 250 个字符。</span><span class="sxs-lookup"><span data-stu-id="67e59-p104">The text for **Description** attributes. Each **String** contains a maximum of 250 characters.</span></span>|
 
 > [!NOTE]
-> <span data-ttu-id="bbea2-128">必须对 **Image** 和 **Url** 元素中的所有 URL 使用安全套接字层 (SSL)。</span><span class="sxs-lookup"><span data-stu-id="bbea2-128">You must use Secure Sockets Layer (SSL) for all URLs in the **Image** and **Url** elements.</span></span>
+> <span data-ttu-id="67e59-128">必须对 **Image** 和 **Url** 元素中的所有 URL 使用安全套接字层 (SSL)。</span><span class="sxs-lookup"><span data-stu-id="67e59-128">You must use Secure Sockets Layer (SSL) for all URLs in the **Image** and **Url** elements.</span></span>
 
-### <a name="images"></a><span data-ttu-id="bbea2-129">图像</span><span class="sxs-lookup"><span data-stu-id="bbea2-129">Images</span></span>
+### <a name="images"></a><span data-ttu-id="67e59-129">图像</span><span class="sxs-lookup"><span data-stu-id="67e59-129">Images</span></span>
 
-<span data-ttu-id="bbea2-130">每个图标必须具有三 **个 Images** 元素，三个强制大小各一个元素：</span><span class="sxs-lookup"><span data-stu-id="bbea2-130">Each icon must have three **Images** elements, one for each of the three mandatory sizes:</span></span>
+<span data-ttu-id="67e59-130">每个图标必须具有三 **个 Images** 元素，三个强制大小各一个元素：</span><span class="sxs-lookup"><span data-stu-id="67e59-130">Each icon must have three **Images** elements, one for each of the three mandatory sizes:</span></span>
 
-- <span data-ttu-id="bbea2-131">16x16</span><span class="sxs-lookup"><span data-stu-id="bbea2-131">16x16</span></span>
-- <span data-ttu-id="bbea2-132">32x32</span><span class="sxs-lookup"><span data-stu-id="bbea2-132">32x32</span></span>
-- <span data-ttu-id="bbea2-133">80x80</span><span class="sxs-lookup"><span data-stu-id="bbea2-133">80x80</span></span>
+- <span data-ttu-id="67e59-131">16x16</span><span class="sxs-lookup"><span data-stu-id="67e59-131">16x16</span></span>
+- <span data-ttu-id="67e59-132">32x32</span><span class="sxs-lookup"><span data-stu-id="67e59-132">32x32</span></span>
+- <span data-ttu-id="67e59-133">80x80</span><span class="sxs-lookup"><span data-stu-id="67e59-133">80x80</span></span>
 
-<span data-ttu-id="bbea2-134">此外还支持以下其他大小，但并不是必需的：</span><span class="sxs-lookup"><span data-stu-id="bbea2-134">The following additional sizes are also supported, but not required:</span></span>
+<span data-ttu-id="67e59-134">以下其他大小也受支持，但不是必需的。</span><span class="sxs-lookup"><span data-stu-id="67e59-134">The following additional sizes are also supported, but not required.</span></span>
 
-- <span data-ttu-id="bbea2-135">20x20</span><span class="sxs-lookup"><span data-stu-id="bbea2-135">20x20</span></span>
-- <span data-ttu-id="bbea2-136">24x24</span><span class="sxs-lookup"><span data-stu-id="bbea2-136">24x24</span></span>
-- <span data-ttu-id="bbea2-137">40x40</span><span class="sxs-lookup"><span data-stu-id="bbea2-137">40x40</span></span>
-- <span data-ttu-id="bbea2-138">48x48</span><span class="sxs-lookup"><span data-stu-id="bbea2-138">48x48</span></span>
-- <span data-ttu-id="bbea2-139">64x64</span><span class="sxs-lookup"><span data-stu-id="bbea2-139">64x64</span></span>
+- <span data-ttu-id="67e59-135">20x20</span><span class="sxs-lookup"><span data-stu-id="67e59-135">20x20</span></span>
+- <span data-ttu-id="67e59-136">24x24</span><span class="sxs-lookup"><span data-stu-id="67e59-136">24x24</span></span>
+- <span data-ttu-id="67e59-137">40x40</span><span class="sxs-lookup"><span data-stu-id="67e59-137">40x40</span></span>
+- <span data-ttu-id="67e59-138">48x48</span><span class="sxs-lookup"><span data-stu-id="67e59-138">48x48</span></span>
+- <span data-ttu-id="67e59-139">64x64</span><span class="sxs-lookup"><span data-stu-id="67e59-139">64x64</span></span>
 
 > [!IMPORTANT]
 >
-> - <span data-ttu-id="bbea2-140">如果此图像是加载项的代表图标，请参阅在 [AppSource](/office/dev/store/create-effective-office-store-listings#create-an-icon-for-your-add-in) 和 Office 内创建有效列表，了解大小和其他要求。</span><span class="sxs-lookup"><span data-stu-id="bbea2-140">If this image is your add-in's representative icon, see [Create effective listings in AppSource and within Office](/office/dev/store/create-effective-office-store-listings#create-an-icon-for-your-add-in) for size and other requirements.</span></span>
-> - <span data-ttu-id="bbea2-141">Outlook 需要缓存图像资源的能力，以提高性能。</span><span class="sxs-lookup"><span data-stu-id="bbea2-141">Outlook requires the ability to cache image resources for performance purposes.</span></span> <span data-ttu-id="bbea2-142">为此，托管图像资源的服务器不能向响应头添加任何 CACHE-CONTROL 指令。</span><span class="sxs-lookup"><span data-stu-id="bbea2-142">For this reason, the server hosting an image resource must not add any CACHE-CONTROL directives to the response header.</span></span> <span data-ttu-id="bbea2-143">这将导致 Outlook 自动替代泛型或默认图像。</span><span class="sxs-lookup"><span data-stu-id="bbea2-143">This will result in Outlook automatically substituting a generic or default image.</span></span>
+> - <span data-ttu-id="67e59-140">如果此图像是加载项的代表图标，请参阅在[AppSource](/office/dev/store/create-effective-office-store-listings#create-an-icon-for-your-add-in)和加载项内创建有效Office大小和其他要求。</span><span class="sxs-lookup"><span data-stu-id="67e59-140">If this image is your add-in's representative icon, see [Create effective listings in AppSource and within Office](/office/dev/store/create-effective-office-store-listings#create-an-icon-for-your-add-in) for size and other requirements.</span></span>
+> - <span data-ttu-id="67e59-141">Outlook 需要缓存图像资源的能力，以提高性能。</span><span class="sxs-lookup"><span data-stu-id="67e59-141">Outlook requires the ability to cache image resources for performance purposes.</span></span> <span data-ttu-id="67e59-142">为此，托管图像资源的服务器不能向响应头添加任何 CACHE-CONTROL 指令。</span><span class="sxs-lookup"><span data-stu-id="67e59-142">For this reason, the server hosting an image resource must not add any CACHE-CONTROL directives to the response header.</span></span> <span data-ttu-id="67e59-143">这将导致 Outlook 自动替代泛型或默认图像。</span><span class="sxs-lookup"><span data-stu-id="67e59-143">This will result in Outlook automatically substituting a generic or default image.</span></span>
 
-## <a name="resources-examples"></a><span data-ttu-id="bbea2-144">资源示例</span><span class="sxs-lookup"><span data-stu-id="bbea2-144">Resources examples</span></span>
+## <a name="resources-examples"></a><span data-ttu-id="67e59-144">资源示例</span><span class="sxs-lookup"><span data-stu-id="67e59-144">Resources examples</span></span>
 
 ```XML
 <Resources>
