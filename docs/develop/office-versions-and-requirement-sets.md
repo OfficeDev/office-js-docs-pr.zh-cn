@@ -3,12 +3,12 @@ title: Office 版本和要求集
 description: 使用 JavaScript API 支持的 Office.js 平台。
 ms.date: 02/09/2021
 localization_priority: Priority
-ms.openlocfilehash: 65db7bf6e8670e389cfaf5e557b365d960376569
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: c0248164beb4fa7899ddc3925652474197b1aedf
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53075990"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53349782"
 ---
 # <a name="office-versions-and-requirement-sets"></a>Office 版本和要求集
 
@@ -21,7 +21,7 @@ Office 跨多个平台运行且有许多版本，它们并非全都支持 Office
 
 ## <a name="how-to-check-your-office-version"></a>如何检查 Office 版本
 
-若要确定使用的 Office 版本，请在 Office 应用程序中，依次选择“文件”**** 菜单和“帐户”****。 Office 版本显示在“产品信息”**** 部分中。 例如，下面的屏幕截图指明 Office 版本 1802（生成号 9026.1000）：
+若要确定使用的 Office 版本，请在 Office 应用程序中，依次选择“**文件**”菜单和“**帐户**”。Office 版本显示在“**产品信息**”部分中。例如，下面的屏幕截图指明 Office 版本 1802（生成号 9026.1000）。
 
 ![检查 Office 版本。](../images/office-version.png)
 
@@ -33,7 +33,7 @@ Office 加载项可使用 API 要求集，以确定 Office 应用程序是否支
 
 此外，通用 API 中还添加了加载项命令（功能区扩展性）和对话框启动功能（对话框 API）等其他功能。 加载项命令和对话框 API 要求集是各种 Office 应用程序共用的 API 集示例。
 
-加载项使用的要求集中的 API 只能是受运行加载项的 Office 应用程序版本支持的 API。若要确切了解适用于特定 Office 应用程序版本的要求集，请参阅以下特定于应用程序的要求集文章：
+加载项使用的要求集中的 API 只能是受运行加载项的 Office 应用程序版本支持的 API。若要确切了解适用于特定 Office 应用程序版本的要求集，请参阅以下特定于应用程序的要求集文章。
 
 - [Excel JavaScript API 要求集](../reference/requirement-sets/excel-api-requirement-sets.md) (ExcelApi)
 - [Word JavaScript API 要求集](../reference/requirement-sets/word-api-requirement-sets.md) (WordApi)
@@ -41,7 +41,7 @@ Office 加载项可使用 API 要求集，以确定 Office 应用程序是否支
 - [PowerPoint JavaScript API 要求集](../reference/requirement-sets/powerpoint-api-requirement-sets.md) (PowerPointApi)
 - [了解 Outlook API 要求集](../reference/requirement-sets/outlook-api-requirement-sets.md) (MailBox)
 
-一些要求集包含任何 Office 应用程序都能使用的 API。若要了解这些要求集，请参阅以下文章：
+一些要求集包含任何 Office 应用程序都能使用的 API。若要了解这些要求集，请参阅以下文章。
 
 - [Office 通用要求集](../reference/requirement-sets/office-add-in-requirement-sets.md)
 - [加载项命令要求集](../reference/requirement-sets/add-in-commands-requirement-sets.md)

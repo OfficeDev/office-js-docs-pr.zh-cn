@@ -3,12 +3,12 @@ title: Outlook 外接程序清单
 description: 该清单介绍 Outlook 外接程序如何跨 Outlook 客户端进行集成；其中包括一个示例。
 ms.date: 05/27/2020
 localization_priority: Priority
-ms.openlocfilehash: f113a5d8f92ee80ed635283e9e5544bd4b9ce7cd
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: 1d1f5c010586364bbbcc474cd4fcb8efa3efee1d
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53076768"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53348935"
 ---
 # <a name="outlook-add-in-manifests"></a>Outlook 外接程序清单
 
@@ -250,7 +250,7 @@ Outlook 外接程序包括两个组件：XML 外接程序清单和网页，它�
 
 ## <a name="root-element"></a>根元素
 
-Outlook 外接程序清单的根元素是 **OfficeApp**。此元素还声明默认命名空间、架构版本和外接程序类型。请将清单中的其他所有元素都置于开始标记和结束标记内。根元素示例如下：
+Outlook 外接程序清单的根元素是 **OfficeApp**。此元素还声明默认命名空间、架构版本和外接程序类型。请将清单中的其他所有元素都置于开始标记和结束标记内。根元素示例如下。
 
 
 ```XML
@@ -282,7 +282,7 @@ Outlook 外接程序清单的根元素是 **OfficeApp**。此元素还声明默�
 
 ## <a name="localization"></a>本地化
 
-加载项的某些方面需要进行本地化以适用于不同的区域设置，例如名称、介绍以及所加载的 URL。可通过指定默认值并在 **VersionOverrides** 元素内的 **Resources** 元素中进行局部替换来轻松地实现这些元素的本地化。下面介绍了如何替换图像、URL 和字符串：
+加载项的某些方面需要进行本地化以适用于不同的区域设置，例如名称、介绍以及所加载的 URL。可通过指定默认值并在 **VersionOverrides** 元素内的 **Resources** 元素中进行局部替换来轻松地实现这些元素的本地化。下面介绍了如何替换图像、URL 和字符串。
 
 
 ```XML
@@ -314,7 +314,7 @@ Outlook 外接程序清单的根元素是 **OfficeApp**。此元素还声明默�
 
 ## <a name="hosts"></a>Hosts
 
-Outlook 加载项指定如下所示的 **Hosts** 元素。
+Outlook 加载项指定如下所示的 **Hosts** 元素：
 
 ```XML
 <OfficeApp>
@@ -360,7 +360,7 @@ Outlook 加载项指定如下所示的 **Hosts** 元素。
 
 在 **SourceLocation** 元素中指定的加载项起始页的域为该上下文的默认域。在未使用 **AppDomains** 和 **AppDomain** 元素的情况下，如果加载项尝试导航到其他域，浏览器将在加载项窗格以外打开一个新窗口。要允许加载项导航到加载项窗格中的另一个域，请在加载项清单中添加 **AppDomains** 元素，并在其自己的 **AppDomain** 子元素中添加其他每个域。
 
-以下示例指定域  `https://www.contoso2.com` 作为外接程序可以在外接程序窗格内导航到的第二个域：
+以下示例指定域  `https://www.contoso2.com` 作为外接程序可以在外接程序窗格内导航到的第二个域。
 
 ```XML
 <OfficeApp>

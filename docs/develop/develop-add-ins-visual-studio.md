@@ -3,12 +3,12 @@ title: 使用 Visual Studio 开发 Office 加载项
 description: 如何使用 Visual Studio 开发 Office 加载项。
 ms.date: 10/14/2020
 localization_priority: Priority
-ms.openlocfilehash: cfa7adb3f8d19fcc5784a13291b7ad624919f2e7
-ms.sourcegitcommit: 42e6cfe51d99d4f3f05a3245829d764b28c46bbb
+ms.openlocfilehash: 5d7495709f729fb06a87ad5ca443b1712f6c3e49
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "48741104"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53349929"
 ---
 # <a name="develop-office-add-ins-with-visual-studio"></a>使用 Visual Studio 开发 Office 加载项
 
@@ -43,9 +43,9 @@ Visual Studio 会创建一个功能受限的基本加载项。 你可通过在 V
 
 ## <a name="publish-the-add-in"></a>发布加载项
 
-Office 加载项由一个 Web 应用程序和一个清单文件构成。 Web 应用程序定义加载项的用户界面和功能，清单指定 Web 应用程序的位置并定义加载项的设置和功能。
+Office 加载项 包含 Web 应用程序和清单文件。Web 应用程序定义加载项的用户界面和功能，清单指定 Web 应用程序的位置并定义加载项的设置和功能。
 
-在 Visual Studio 中开发加载项时，该加载项将在本地 Web 服务器 (`localhost`) 上运行。 如果加载项如期工作且你已准备好发布它供其他用户访问，你需要完成以下步骤：
+在 Visual Studio 中开发加载项时，该加载项将在本地 Web 服务器 (`localhost`) 上运行。 如果加载项如期工作且你已准备好发布它供其他用户访问，你需要完成以下步骤。
 
 1. 将 Web 应用程序部署到 Web 服务器或 Web 托管服务（例如 Microsoft Azure）。
 2. 更新清单以指定已部署应用程序的 URL。 

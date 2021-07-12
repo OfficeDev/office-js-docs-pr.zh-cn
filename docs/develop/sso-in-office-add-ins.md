@@ -3,17 +3,17 @@ title: 为 Office 加载项启用单一登录
 description: 了解如何使用常用的 Microsoft 个人、工作或教育帐户来为 Office 加载项启用单一登录。
 ms.date: 07/30/2020
 localization_priority: Priority
-ms.openlocfilehash: e9f671b4177d123b83ffeaaea7e1f05a4d0df5b7
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: f56b1b30d018f507e537909f1b75c37e189327a5
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53075955"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53349733"
 ---
 # <a name="enable-single-sign-on-for-office-add-ins"></a>为 Office 加载项启用单一登录
 
 
-用户可以使用自己的个人 Microsoft 帐户或 Microsoft 365 教育或工作帐户，登录 Office（在线、移动和桌面平台）。 可以利用此功能并使用单一登录 (SSO) 授权用户访问加载项（用户无需再次登录）。
+用户可以使用自己的个人 Microsoft 帐户/Microsoft 365 教育版或工作帐户，登录 Office（在线、移动和桌面平台）。可以利用这一点，使用单点登录 (SSO) 将用户授权给加载项，让用户无需登录第二次。
 
 ![显示加载项登录过程的图像。](../images/sso-for-office-addins.png)
 
@@ -44,20 +44,20 @@ ms.locfileid: "53075955"
 
 此部分介绍了创建启用 SSO 的 Office 加载项所需完成的任务。 其中介绍的这些任务与语言和框架无关。 有关详细演练的示例，请参阅：
 
-* [创建使用单一登录的 Node.js Office 加载项](create-sso-office-add-ins-nodejs.md)
-* [创建使用单一登录的 ASP.NET Office 加载项](create-sso-office-add-ins-aspnet.md)
+- [创建使用单一登录的 Node.js Office 加载项](create-sso-office-add-ins-nodejs.md)
+- [创建使用单一登录的 ASP.NET Office 加载项](create-sso-office-add-ins-aspnet.md)
 
 > [!NOTE]
 > 可使用 Yeoman 生成器创建启用了 SSO 的  Node.js Office 加载项。 Yeoman 生成器简化了启用了 SSO 的加载项创建流程，能够自动执行在 Azure 内配置所需的步骤，并生成加载项使用 SSO 所需的代码。 有关详细信息，请参阅“[单一登录（SSO）快速入门](../quickstarts/sso-quickstart.md)”。
 
 ### <a name="create-the-service-application"></a>创建服务应用程序
 
-在 Azure v2.0 终结点的注册门户注册外接程序。该流程用时 5-10 分钟，包括以下任务：
+在 Azure v2.0 终结点的注册门户注册外接程序。该流程用时 5-10 分钟，包括以下任务。
 
-* 获取加载项的客户端 ID 和机密。
-* 指定加载项访问 AAD v 所需的权限。 2.0 端点（可选 Microsoft Graph）。 始终需要“配置文件”和“openid”权限。
-* 授予 Office 客户端应用程序信任加载项。
-* 将 Office 客户端应用程序预授权给具有 *access_as_user* 默认权限的加载项。
+- 获取加载项的客户端 ID 和机密。
+- 指定加载项访问 AAD v 所需的权限。 2.0 端点（可选 Microsoft Graph）。 始终需要“配置文件”和“openid”权限。
+- 授予 Office 客户端应用程序信任加载项。
+- 将 Office 客户端应用程序预授权给具有 *access_as_user* 默认权限的加载项。
 
 有关此过程的详细信息，请参阅[向 Azure AD v2.0 端点注册使用 SSO 的 Office 加载项](register-sso-add-in-aad-v2.md)。
 
@@ -65,15 +65,15 @@ ms.locfileid: "53075955"
 
 向外接程序清单添加新标记：
 
-* **WebApplicationInfo** - 下列元素的父元素。
-* **ID** - 加载项的客户端 ID。这是在注册加载项时获得的应用程序 ID。 请参阅[向 Azure AD v2.0 端点注册使用 SSO 的 Office 加载项](register-sso-add-in-aad-v2.md)。
-* **Resource** - 加载项 URL。 这是在 AAD 中注册加载项时使用的相同 URI（包括 `api:` 协议）。 这个 URI 的域名部分必须与加载项的清单 `<Resources>` 中的 URL 中使用的域名（包括任何子域名）相匹配，并且 URI 必须以`<Id>`中的客户端 ID 结束。
-* **Scopes** - 一个或多个“**Scope**”元素的父元素。
-* **Scope** - 指定加载项访问 AAD 所需的权限。 如果加载项不访问 Microsoft Graph，则始终需要`profile` 和 `openID` 权限，并且可能是唯一需要的权限。 如果可以访问，则还需要“**Scope**”元素来获取所需的 Microsoft Graph 权限（如 `User.Read``Mail.Read`）。 在代码中用于访问 Microsoft Graph 的库可能需要其他权限。 例如，用于 .NET 的 Microsoft 身份验证库 (MSAL) 需要 `offline_access` 权限。 有关详细信息，请参阅[向 Office 加载项中的 Microsoft Graph 授权](authorize-to-microsoft-graph.md)。
+- **WebApplicationInfo** - 下列元素的父元素。
+- **ID** - 加载项的客户端 ID。这是在注册加载项时获得的应用程序 ID。 请参阅[向 Azure AD v2.0 端点注册使用 SSO 的 Office 加载项](register-sso-add-in-aad-v2.md)。
+- **Resource** - 加载项 URL。 这是在 AAD 中注册加载项时使用的相同 URI（包括 `api:` 协议）。 这个 URI 的域名部分必须与加载项的清单 `<Resources>` 中的 URL 中使用的域名（包括任何子域名）相匹配，并且 URI 必须以`<Id>`中的客户端 ID 结束。
+- **Scopes** - 一个或多个“**Scope**”元素的父元素。
+- **Scope** - 指定加载项访问 AAD 所需的权限。 如果加载项不访问 Microsoft Graph，则始终需要`profile` 和 `openID` 权限，并且可能是唯一需要的权限。 如果可以访问，则还需要“**Scope**”元素来获取所需的 Microsoft Graph 权限（如 `User.Read``Mail.Read`）。 在代码中用于访问 Microsoft Graph 的库可能需要其他权限。 例如，用于 .NET 的 Microsoft 身份验证库 (MSAL) 需要 `offline_access` 权限。 有关详细信息，请参阅[向 Office 加载项中的 Microsoft Graph 授权](authorize-to-microsoft-graph.md)。
 
 对于除 Outlook 之外的 Office 应用程序，请将此标记添加到 `<VersionOverrides ... xsi:type="VersionOverridesV1_0">` 部分的末尾。对于 Outlook，请将此标记添加到 `<VersionOverrides ... xsi:type="VersionOverridesV1_1">` 部分的末尾。
 
-下面的示例展示了标记：
+下面是一个标注示例。
 
 ```xml
 <WebApplicationInfo>
@@ -87,6 +87,7 @@ ms.locfileid: "53075955"
     </Scopes>
 </WebApplicationInfo>
 ```
+
 > [!NOTE]
 > 如果不符合SSO清单中的格式要求，将导致AppSource拒绝加载项，直到它符合所需格式。
 
@@ -94,9 +95,9 @@ ms.locfileid: "53075955"
 
 将 JavaScript 添加到加载项，以执行以下操作：
 
-* 调用 [getAccessToken](/javascript/api/office-runtime/officeruntime.auth#getaccesstoken-options-)。
+- 调用 [getAccessToken](/javascript/api/office-runtime/officeruntime.auth#getaccesstoken-options-)。
 
-* 解析访问令牌或将其传递到加载项的服务器端代码。
+- 解析访问令牌或将其传递到加载项的服务器端代码。
 
 下面是调用 `getAccessToken` 的简单示例。
 
@@ -154,13 +155,13 @@ $.ajax({
 
 大多数情况下，如果加载项没有将访问令牌传递到服务器端并在其中使用它，那么获取访问令牌的意义就不大。
 
-* 创建一种或多种 Web API 方法（例如，一种在托管数据库中查找用户首选项的方法），使用有关从令牌中提取的用户的信息。 （请参阅下文“**使用 SSO 令牌作为标识**”。）可以使用一些库简化需要编写的代码，具体视语言和框架而定。
-* 获取 Microsoft Graph 数据。 服务器端代码应执行以下操作：
+- 创建一种或多种 Web API 方法（例如，一种在托管数据库中查找用户首选项的方法），使用有关从令牌中提取的用户的信息。 （请参阅下文“**使用 SSO 令牌作为标识**”。）可以使用一些库简化需要编写的代码，具体视语言和框架而定。
+- 获取 Microsoft Graph 数据。 服务器端代码应执行以下操作：
 
-    * 通过调用 Azure AD v2.0 终结点启动“代表”流，该终结点包括访问令牌、关于用户的一些元数据以及加载项的凭据（其 ID 和机密）。在此上下文中，访问令牌称为启动令牌。
-    * 使用新的令牌从 Microsoft Graph 获取数据。
-    * 或者，在启动流之前，验证访问令牌（请参阅下文 **验证访问令牌**）。
-    * 或者，在代表流完成后，缓存从流返回的新访问令牌，以便在对 Microsoft Graph 的其他调用中重复使用它，直到过期为止。
+  - 通过调用 Azure AD v2.0 终结点启动“代表”流，该终结点包括访问令牌、关于用户的一些元数据以及加载项的凭据（其 ID 和机密）。在此上下文中，访问令牌称为启动令牌。
+  - 使用新的令牌从 Microsoft Graph 获取数据。
+  - 或者，在启动流之前，验证访问令牌（请参阅下文 **验证访问令牌**）。
+  - 或者，在代表流完成后，缓存从流返回的新访问令牌，以便在对 Microsoft Graph 的其他调用中重复使用它，直到过期为止。
 
  如需深入了解如何获得对用户的 Microsoft Graph 数据的授权访问，请参阅[向 Office 加载项中的 Microsoft Graph 授权](authorize-to-microsoft-graph.md)。
 
@@ -172,7 +173,7 @@ Web API 收到访问令牌后，可以在使用该令牌前对其进行验证。
 - 检查令牌是否由预期的颁发机构颁发
 - 检查令牌是否是针对 Web API
 
-验证令牌时，请牢记以下准则：
+验证令牌时，请牢记以下准则。
 
 - 有效的 SSO 令牌是由 Azure 颁发机构 `https://login.microsoftonline.com` 的。 令牌中的 `iss` 声明应以此值开头。
 - 令牌的 `aud` 参数将被设置为加载项注册的应用程序 ID。

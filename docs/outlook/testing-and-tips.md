@@ -3,16 +3,16 @@ title: 部署和安装 Outlook 加载项以进行测试
 description: 创建清单文件，将加载项 UI 文件部署到 Web 服务器，在邮箱中安装加载项，然后测试加载项。
 ms.date: 05/20/2020
 localization_priority: Priority
-ms.openlocfilehash: 97841f7c8112b42cee2927f238b31fe985b2e101
-ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
+ms.openlocfilehash: 86fcf82ddbb9b7e786ae905ad0c0bd864e6fbc56
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "45093859"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53348872"
 ---
 # <a name="deploy-and-install-outlook-add-ins-for-testing"></a>部署和安装 Outlook 加载项以进行测试
 
-作为开发 Outlook 外接程序的一个环节，您可能会发现自己在反复部署和安装外接程序以进行测试，这会涉及以下步骤：
+作为开发 Outlook 外接程序的一个环节，您可能会发现自己在反复部署和安装外接程序以进行测试，这会涉及以下步骤。
 
 1. 创建描述外接程序的清单文件。
 1. 将外接程序 UI 文件部署到 Web 服务器。
@@ -36,7 +36,7 @@ ms.locfileid: "45093859"
 
 ### <a name="sideload-the-add-in"></a>旁加载加载项
 
-如果邮箱位于 Exchange Online、Exchange 2013 或更高版本上，可以安装外接程序。至少必须拥有 Exchange Server 的**我的自定义应用程序**角色，才能旁加载外接程序。若要测试外接程序，或通过指定外接程序清单的 URL 或文件名来常规安装外接程序，应让 Exchange 管理员提供必要权限。
+如果邮箱位于 Exchange Online、Exchange 2013 或更高版本上，可以安装外接程序。至少必须拥有 Exchange Server 的 **我的自定义应用程序** 角色，才能旁加载外接程序。若要测试外接程序，或通过指定外接程序清单的 URL 或文件名来常规安装外接程序，应让 Exchange 管理员提供必要权限。
 
 Exchange 管理员可以运行下列 PowerShell cmdlet，向一个用户分配必要权限。在下面的示例中，`wendyri` 是用户的电子邮件别名。
 
@@ -44,7 +44,7 @@ Exchange 管理员可以运行下列 PowerShell cmdlet，向一个用户分配�
 New-ManagementRoleAssignment -Role "My Custom Apps" -User "wendyri"
 ```
 
-如有必要，管理员可以运行下列 cmdlet，向多个用户分配类似的必要权限：
+如有必要，管理员可以运行下列 cmdlet，向多个用户分配类似的必要权限。
 
 ```powershell
 $users = Get-Mailbox *$users | ForEach-Object { New-ManagementRoleAssignment -Role "My Custom Apps" -User $_.Alias}
@@ -64,7 +64,7 @@ New-App -URL:"http://<fully-qualified URL">
 
 完全限定的 URL 是为外接程序准备的外接程序清单文件的位置。
 
-可以运行下列附加 PowerShell cmdlet，管理邮箱的外接程序：
+可以运行下列附加 PowerShell cmdlet，管理邮箱的外接程序。
 
 - `Get-App` - 列出为邮箱启用的外接程序。
 - `Set-App` - 在邮箱中启用或禁用外接程序。
@@ -89,9 +89,9 @@ New-App -URL:"http://<fully-qualified URL">
 
 在访问 Outlook 网页版时，消费者和 Microsoft 365 帐户用户将看到新式 UI 版本，而不会再看到已弃用的经典版本。 但是，本地 Exchange 服务器将继续支持经典 Outlook 网页版。 因此，在验证过程中，你的提交可能会收到一条警告，指出加载项与经典 Outlook 网页版不兼容。 在这种情况下，需考虑在本地 Exchange 环境中测试加载项。 此警告不会阻止你向 AppSource 提交加载项，但如果消费者是在本地 Exchange 环境中使用 Outlook 网页版，则可能无法获得最佳的体验。
 
-为缓解此问题，我们建议你在连接到你自己的专用本地 Exchange 环境的 Outlook 网页版中对加载项进行测试。 有关详细信息，请参阅有关如何[建立 Exchange 2016 或 Exchange 2019 测试环境](/Exchange/plan-and-deploy/plan-and-deploy?view=exchserver-2019#establish-an-exchange-2016-or-exchange-2019-test-environment)的指南以及有关如何管理[Exchange 服务器中的 Outlook 网页版](/exchange/clients/outlook-on-the-web/outlook-on-the-web?view=exchserver-2019)的指南。
+为缓解此问题，我们建议你在连接到你自己的专用本地 Exchange 环境的 Outlook 网页版中对加载项进行测试。 有关详细信息，请参阅有关如何[建立 Exchange 2016 或 Exchange 2019 测试环境](/Exchange/plan-and-deploy/plan-and-deploy?view=exchserver-2019&preserve-view=true#establish-an-exchange-2016-or-exchange-2019-test-environment)的指南以及有关如何管理[Exchange 服务器中的 Outlook 网页版](/exchange/clients/outlook-on-the-web/outlook-on-the-web?view=exchserver-2019&preserve-view=true)的指南。
 
-或者，你也可以选择付费并使用托管和管理本地 Exchange 服务器的服务。 可用的选项有：
+或者，你也可以选择付费并使用托管和管理本地 Exchange 服务器的服务。有两个选项：
 
 - [Rackspace](https://www.rackspace.com/email-hosting/exchange-server)
 - [Hostway](https://hostway.com/products-services-2/hosted-microsoft-exchange/)
