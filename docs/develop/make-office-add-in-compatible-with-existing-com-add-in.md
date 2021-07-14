@@ -1,14 +1,14 @@
 ---
 title: 确认 Office 加载项与已有的COM 加载项兼容
 description: 启用你的Office加载项和等效 COM 加载项之间的兼容性。
-ms.date: 03/09/2021
+ms.date: 07/08/2021
 localization_priority: Normal
-ms.openlocfilehash: c475189ec19cbb0de1a070f6c529db3c59a093d8
-ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
+ms.openlocfilehash: 85e5d8cc06aa599862c92b59a26c744f28ca2d22
+ms.sourcegitcommit: 95fc1fc8a0dbe8fc94f0ea647836b51cc7f8601d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "53349803"
+ms.lasthandoff: 07/14/2021
+ms.locfileid: "53418683"
 ---
 # <a name="make-your-office-add-in-compatible-with-an-existing-com-add-in"></a>确认 Office 加载项与已有的COM 加载项兼容
 
@@ -17,12 +17,9 @@ ms.locfileid: "53349803"
 您可以配置 Office 外接程序，以便当用户的计算机上已安装等效 COM 加载项时，Windows 上的 Office 将运行 COM 加载项，而不是 Office 加载项。 COM 加载项称为"等效"，因为 Office 将按照安装用户计算机时在 COM 加载项和 Office 加载项之间无缝转换。
 
 > [!NOTE]
-> 连接到订阅订阅时，以下平台Microsoft 365此功能。
+> 当连接到订阅订阅时，以下平台和应用程序Microsoft 365此功能。 COM 加载项无法安装在任何其他平台上，因此在这些平台上，将忽略本文稍后讨论的清单 `EquivalentAddins` 元素。
 >
-> - Excel、Word 和 PowerPoint web 版
 > - Excel版本 1904 PowerPoint更高版本Windows (、Word 和) 
-> - Excel 13.329 PowerPoint版本 13.329 或 (Mac 上的 Word 和) 
-> - Outlook版本Windows (版本 2102 或更高版本) 
 
 ## <a name="specify-an-equivalent-com-add-in"></a>指定等效的 COM 加载项
 

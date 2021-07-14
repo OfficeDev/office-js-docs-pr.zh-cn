@@ -1,15 +1,15 @@
 ---
 title: ExcelJavaScript API 要求集 1.13
 description: 有关 ExcelApi 1.13 要求集的详细信息。
-ms.date: 07/02/2021
+ms.date: 07/09/2021
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: bfd9c23beda64565b44f16845e046fa1a2358d41
-ms.sourcegitcommit: aa73ec6367eaf74399fbf8d6b7776d77895e9982
+ms.openlocfilehash: 422cc8da19ac901de68cdfa59d7ab9670858de6f
+ms.sourcegitcommit: 95fc1fc8a0dbe8fc94f0ea647836b51cc7f8601d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/03/2021
-ms.locfileid: "53290809"
+ms.lasthandoff: 07/14/2021
+ms.locfileid: "53418697"
 ---
 # <a name="whats-new-in-excel-javascript-api-113"></a>JavaScript API 1.13 Excel的新增功能
 
@@ -17,10 +17,10 @@ ExcelApi 1.13 添加了一种方法，用于从 Base64 编码的字符串将工�
 
 | 功能区域 | 说明 | 相关对象 |
 |:--- |:--- |:--- |
-| 公式已更改事件 | 跟踪对公式的更改，包括导致更改的事件的源和类型。 | [Worksheet.onFormulaChanged](/javascript/api/excel/excel.worksheet#onFormulaChanged)|
-| 公式从属单元格 | 查找公式的直接从属单元格。 | [Range.getDirectDependents](/javascript/api/excel/excel.range#getDirectDependents__) |
-| 插入工作表 | 将另一个工作簿中的工作表作为 Base64 编码的字符串插入到当前工作簿中。 | [Workbook.insertWorksheetsFromBase64](/javascript/api/excel/excel.workbook#insertWorksheetsFromBase64_base64File__options_) |
-| PivotTable PivotLayout | PivotLayout 类的扩展，包括对替换文字和空单元格管理的新支持。 | [PivotLayout](/javascript/api/excel/excel.pivotlayout) |
+| [公式已更改事件](../../excel/excel-add-ins-worksheets.md#detect-formula-changes) | 跟踪对公式的更改，包括导致更改的事件的源和类型。 | [Worksheet.onFormulaChanged](/javascript/api/excel/excel.worksheet#onFormulaChanged)|
+| [公式从属单元格](../../excel/excel-add-ins-ranges-precedents-dependents.md#get-the-direct-dependents-of-a-formula) | 查找公式的直接从属单元格。 | [Range.getDirectDependents](/javascript/api/excel/excel.range#getDirectDependents__) |
+| [插入工作表](../../excel//excel-add-ins-workbooks.md#insert-a-copy-of-an-existing-workbook-into-the-current-one) | 将另一个工作簿中的工作表作为 Base64 编码的字符串插入到当前工作簿中。 | [Workbook.insertWorksheetsFromBase64](/javascript/api/excel/excel.workbook#insertWorksheetsFromBase64_base64File__options_) |
+| [PivotTable PivotLayout](../../excel/excel-add-ins-pivottables.md#other-pivotlayout-functions) | PivotLayout 类的扩展，包括对替换文字和空单元格管理的新支持。 | [PivotLayout](/javascript/api/excel/excel.pivotlayout) |
 
 ## <a name="api-list"></a>API 列表
 

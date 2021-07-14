@@ -4,12 +4,12 @@ description: 了解如何配置Outlook加载项进行基于事件的激活。
 ms.topic: article
 ms.date: 07/08/2021
 localization_priority: Normal
-ms.openlocfilehash: ff1dc8da523d752d616981a570b4c83d9f1a423d
-ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
+ms.openlocfilehash: ccad56343d30983e6d76c6473945d3b8bc28c8a0
+ms.sourcegitcommit: 95fc1fc8a0dbe8fc94f0ea647836b51cc7f8601d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "53349012"
+ms.lasthandoff: 07/14/2021
+ms.locfileid: "53418704"
 ---
 # <a name="configure-your-outlook-add-in-for-event-based-activation"></a>配置Outlook加载项进行基于事件的激活
 
@@ -311,6 +311,16 @@ JavaScript 文件中不支持导入，在 JavaScript 文件中，您可以在 Wi
 - 在 `Office.context.ui` 下：
   - `displayDialogAsync`
   - `messageParent`
+
+### <a name="requesting-external-data"></a>请求外部数据
+
+可以使用提取等 API 或[XmlHttpRequest (XHR) （](https://developer.mozilla.org/docs/Web/API/XMLHttpRequest)一种用于发送 HTTP 请求以与服务器交互的标准 Web API）请求外部数据。 [](https://developer.mozilla.org/docs/Web/API/Fetch_API)
+
+请注意，在生成 XmlHttpRequest 时，必须使用其他安全措施，要求使用同源[策略和简单的](https://developer.mozilla.org/docs/Web/Security/Same-origin_policy) [CORS。](https://www.w3.org/TR/cors/)
+
+简单的 CORS 实现无法使用 Cookie，并且仅支持 GET、HEAD、POST (简单) 。 简单的 CORS 接受字段名称为 `Accept`、`Accept-Language`、`Content-Language` 的简单标题。 还可以在简单 `Content-Type` CORS 中使用标头，只要内容类型为 、 或 `application/x-www-form-urlencoded` `text/plain` `multipart/form-data` 。
+
+即将提供完整的 CORS 支持。
 
 ## <a name="see-also"></a>另请参阅
 
