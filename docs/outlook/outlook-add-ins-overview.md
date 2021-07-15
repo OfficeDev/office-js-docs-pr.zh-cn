@@ -1,15 +1,15 @@
 ---
 title: Outlook 加载项概述
 description: Outlook 加载项由第三方使用基于 Web 的平台集成到 Outlook 中。
-ms.date: 06/15/2021
+ms.date: 07/13/2021
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: 6a490e78b524e84d53461838b8a2d5a15be031bd
-ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
+ms.openlocfilehash: c39928fd59379eac1552e80bbaccb54f460c8357
+ms.sourcegitcommit: 95fc1fc8a0dbe8fc94f0ea647836b51cc7f8601d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "53348921"
+ms.lasthandoff: 07/14/2021
+ms.locfileid: "53418690"
 ---
 # <a name="outlook-add-ins-overview"></a>Outlook 加载项概述
 
@@ -65,6 +65,8 @@ Outlook 外接程序与 COM 或 VSTO 外接程序（特定于在 Windows 上运�
   > [要求集 1.8](../reference/objectmodel/requirement-set-1.8/outlook-requirement-set-1.8.md)中引入了 \* 对委托访问方案的支持（例如，从其他用户的邮箱共享的文件夹）。 共享邮箱支持现已提供预览版。 要了解详细信息，请参阅 [启用共享文件夹和共享邮箱方案](delegate-access.md)。
 
 - 使用自定义窗体。
+
+- 通过[简单 MAPI](https://support.microsoft.com/topic/a3d3f856-eaf6-b6d8-3617-186c0a1123c5) 创建。 如果 Outlook 关闭时，Office 用户从 Windows 上的 Office 应用程序创建或发送电子邮件，则将使用简单 MAPI。 例如，用户在 Word 中工作时可以创建 Outlook 电子邮件，这会触发 Outlook 撰写窗口，而无需启动完整的 Outlook 应用程序。 但是，如果用户从 Word 创建电子邮件时 Outlook 已在运行，则这不属于简单 MAPI 方案，因此只要满足其他激活要求，Outlook 加载项就会在撰写窗体中工作。
 
 通常，Outlook 可以为"已发送邮件"文件夹中的项目在阅读窗体中激活加载项，基于已知实体字符串匹配激活的加载项除外。 欲了解其背后原因的详细信息，请参阅[将 Outlook 项中的字符串作为已知实体进行匹配](match-strings-in-an-item-as-well-known-entities.md)。
 
