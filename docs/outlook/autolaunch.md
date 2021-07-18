@@ -4,12 +4,12 @@ description: 了解如何配置Outlook加载项进行基于事件的激活。
 ms.topic: article
 ms.date: 07/08/2021
 localization_priority: Normal
-ms.openlocfilehash: ccad56343d30983e6d76c6473945d3b8bc28c8a0
-ms.sourcegitcommit: 95fc1fc8a0dbe8fc94f0ea647836b51cc7f8601d
+ms.openlocfilehash: 1856f78b7e6d49952d2eebf521894d6a988402a0
+ms.sourcegitcommit: 30a861ece18255e342725e31c47f01960b854532
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/14/2021
-ms.locfileid: "53418704"
+ms.lasthandoff: 07/16/2021
+ms.locfileid: "53455528"
 ---
 # <a name="configure-your-outlook-add-in-for-event-based-activation"></a>配置Outlook加载项进行基于事件的激活
 
@@ -326,6 +326,7 @@ JavaScript 文件中不支持导入，在 JavaScript 文件中，您可以在 Wi
 
 - [Outlook 加载项清单](manifests.md)
 - [如何调试基于事件的外接程序](debug-autolaunch.md)
+- [基于事件的加载项的 AppSource Outlook选项](autolaunch-store-options.md)
 - PnP 示例：
   - [使用Outlook基于事件的激活设置签名](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/outlook-set-signature)
   - [使用Outlook基于事件的激活来标记外部收件人](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/outlook-tag-external)

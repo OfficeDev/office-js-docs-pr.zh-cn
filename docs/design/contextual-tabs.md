@@ -1,18 +1,18 @@
 ---
 title: 在加载项中Office上下文选项卡
 description: 了解如何将自定义上下文选项卡添加到Office外接程序。
-ms.date: 05/12/2021
+ms.date: 07/15/2021
 localization_priority: Normal
-ms.openlocfilehash: 90db6d010fb76be027df639cc67e62a548cd784a
-ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
+ms.openlocfilehash: a8eaffe0402601ee11a063d0df5670ff208be4fd
+ms.sourcegitcommit: b20041962a7f921a8c40eb9ae55bc6992450b243
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "53349229"
+ms.lasthandoff: 07/16/2021
+ms.locfileid: "53456227"
 ---
 # <a name="create-custom-contextual-tabs-in-office-add-ins"></a>在加载项中Office上下文选项卡
 
-上下文选项卡是活动功能区中隐藏的选项卡Office，当文档文档中发生指定事件时，该选项卡Office显示。 例如 **，当选择** 表时，Excel功能区上出现的"表设计"选项卡。 可以通过创建更改可见性的事件处理程序，在外接程序Office自定义上下文选项卡并指定它们何时可见或隐藏。  (但是，自定义上下文选项卡不会响应焦点更改。) 
+上下文选项卡是活动功能区中隐藏的选项卡Office，当文档文档中发生指定事件时，该选项卡Office显示。 例如 **，当选择** 表时，Excel功能区上出现的"表设计"选项卡。 在加载项中添加自定义Office，并创建更改可见性的事件处理程序，指定它们何时可见或隐藏。  (但是，自定义上下文选项卡不会响应焦点更改。) 
 
 > [!NOTE]
 > 本文假定你熟悉以下文档。 如果你最近未使用加载项命令（自定义菜单项和功能区按钮），请查看该文档。
@@ -58,7 +58,7 @@ ms.locfileid: "53349229"
 
 ## <a name="define-the-groups-and-controls-that-appear-on-the-tab"></a>定义显示在选项卡上的组和控件
 
-与在清单中用 XML 定义的自定义核心选项卡不同，自定义上下文选项卡是在运行时使用 JSON blob 定义的。 代码将 blob 解析为 JavaScript 对象，然后将该对象传递给[Office.ribbon.requestCreateControls](/javascript/api/office/office.ribbon?view=common-js&preserve-view=true#requestCreateControls-tabDefinition-)方法。 自定义上下文选项卡仅存在于加载项当前运行的文档中。 这不同于在安装加载项时添加到 Office 应用程序功能区中的自定义核心选项卡，当打开另一个文档时，这些选项卡仍保持显示状态。 此外 `requestCreateControls` ，方法只能在外接程序的会话中运行一次。 如果再次调用它，将引发错误。
+与在清单中用 XML 定义的自定义核心选项卡不同，自定义上下文选项卡是在运行时使用 JSON blob 定义的。 代码将 blob 解析为 JavaScript 对象，然后将该对象传递给[Office.ribbon.requestCreateControls](/javascript/api/office/office.ribbon?view=common-js&preserve-view=true#requestCreateControls-tabDefinition-)方法。 自定义上下文选项卡仅存在于加载项当前运行的文档中。 这不同于在安装加载项时添加到 Office 应用程序功能区中的自定义核心选项卡，当打开另一个文档时，这些选项卡仍保持显示状态。 此外 `requestCreateControls` ，方法只能在加载项会话中运行一次。 如果再次调用它，将引发错误。
 
 > [!NOTE]
 > JSON blob 的属性和子属性 (和键名称) 的结构大致与清单 XML 中 [CustomTab](../reference/manifest/customtab.md) 元素及其后代元素的结构平行。
@@ -256,7 +256,7 @@ ms.locfileid: "53349229"
 上下文选项卡通过调用[Office.ribbon.requestCreateControls](/javascript/api/office/office.ribbon?view=common-js&preserve-view=true#requestCreateControls_tabDefinition_)方法Office注册上下文选项卡。 这通常在分配给 方法的函数中或在 方法 `Office.initialize` 中 `Office.onReady` 完成。 有关这些方法和初始化外接程序的更多信息，请参阅[Initialize your Office Add-in](../develop/initialize-add-in.md)。 但是，您可以在初始化后随时调用 该方法。
 
 > [!IMPORTANT]
-> `requestCreateControls`在外接程序的给定会话中，只能调用此方法一次。 如果再次调用，将引发错误。
+> `requestCreateControls`在加载项的给定会话中，只能调用方法一次。 如果再次调用，将引发错误。
 
 示例如下。 请注意，必须先使用 方法将 JSON 字符串转换为 JavaScript 对象，然后才能 `JSON.parse` 将其传递给 JavaScript 函数。
 
@@ -323,7 +323,7 @@ const showDataTab = async () => {
 
 ### <a name="toggle-tab-visibility-and-the-enabled-status-of-a-button-at-the-same-time"></a>切换选项卡可见性和按钮的启用状态
 
-方法还用于切换自定义上下文选项卡或自定义核心选项卡上自定义按钮的启用或 `requestUpdate` 禁用状态。有关详细信息，请参阅启用 [和禁用加载项命令](disable-add-in-commands.md)。 在某些情况下，你可能希望同时更改选项卡的可见性和按钮的启用状态。 可以使用 的单个调用来这样做 `requestUpdate` 。 下面是一个示例，其中核心选项卡上的按钮在显示上下文选项卡的同时处于启用状态。
+方法还用于切换自定义上下文选项卡或自定义核心选项卡上自定义按钮的启用或 `requestUpdate` 禁用状态。有关详细信息，请参阅启用 [和禁用加载项命令](disable-add-in-commands.md)。 在某些情况下，你可能希望同时更改选项卡的可见性和按钮的启用状态。 为此，请调用 `requestUpdate` 。 下面是一个示例，其中核心选项卡上的按钮在显示上下文选项卡的同时处于启用状态。
 
 ```javascript
 function myContextChanges() {
@@ -378,7 +378,99 @@ function myContextChanges() {
 }
 ```
 
-## <a name="localizing-the-json-blob"></a>本地化 JSON blob
+## <a name="open-a-task-pane-from-contextual-tabs"></a>从上下文选项卡打开任务窗格
+
+若要从自定义上下文选项卡上的按钮打开任务窗格，在 JSON 中创建具有 `type` 的 操作 `ShowTaskpane` 。 然后，定义一个 `actionId` 按钮，将 属性设置为 `id` 操作 。 这将打开清单中的 元素 `<Runtime>` 指定的默认任务窗格。
+
+```json
+`{
+  "actions": [
+    {
+      "id": "openChartsTaskpane",
+      "type": "ShowTaskpane",
+      "title": "Work with Charts",
+      "supportPinning": false
+    }
+  ],
+  "tabs": [
+    {
+      // some tab properties omitted
+      "groups": [
+        {
+          // some group properties omitted
+          "controls": [
+            {
+                "type": "Button",
+                "id": "CtxBt112",
+                "actionId": "openChartsTaskpane",
+                "enabled": false,
+                "label": "Open Charts Taskpane",
+                // some control properties omitted
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}`
+```
+
+若要打开不是默认任务窗格的任何任务窗格，请指定操作 `sourceLocation` 定义中的属性。 在下面的示例中，从另一个按钮打开第二个任务窗格。
+
+> [!IMPORTANT]
+>
+> - 如果 `sourceLocation` 为 操作指定了 ，则任务窗格 *不使用* 共享运行时。 它在新的 JavaScript 运行时中运行。
+> - 共享运行时不能超过一个任务窗格，因此类型操作不能超过一个，因此 `ShowTaskpane` 不能忽略 `sourceLocation` 属性。
+
+```json
+`{
+  "actions": [
+    {
+      "id": "openChartsTaskpane",
+      "type": "ShowTaskpane",
+      "title": "Work with Charts",
+      "supportPinning": false
+    },
+    {
+      "id": "openTablesTaskpane",
+      "type": "ShowTaskpane",
+      "title": "Work with Tables",
+      "supportPinning": false
+      "sourceLocation": "https://MyDomain.com/myPage.html"
+    }
+  ],
+  "tabs": [
+    {
+      // some tab properties omitted
+      "groups": [
+        {
+          // some group properties omitted
+          "controls": [
+            {
+                "type": "Button",
+                "id": "CtxBt112",
+                "actionId": "openChartsTaskpane",
+                "enabled": false,
+                "label": "Open Charts Taskpane",
+                // some control properties omitted
+            },
+            {
+                "type": "Button",
+                "id": "CtxBt113",
+                "actionId": "openTablesTaskpane",
+                "enabled": false,
+                "label": "Open Tables Taskpane",
+                // some control properties omitted
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}`
+```
+
+## <a name="localize-the-json-text"></a>本地化 JSON 文本
 
 传递给 的 JSON blob 的本地化方式与自定义核心选项卡的清单标记本地化 (如从清单控件本地化) `requestCreateControls` 中所述。 [](../develop/localization.md#control-localization-from-the-manifest) 相反，本地化必须在运行时针对每个区域设置使用不同的 JSON blob。 建议您使用一个 `switch` 语句来测试[Office.context.displayLanguage](/javascript/api/office/office.context#displayLanguage)属性。 示例如下。
 

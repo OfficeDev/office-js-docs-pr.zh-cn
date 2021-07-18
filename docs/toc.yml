@@ -1021,7 +1021,15 @@ items:
           - name: 发送时附加
             href: outlook/append-on-send.md
           - name: 基于事件的激活
-            href: outlook/autolaunch.md
+            items:
+              - name: 演练
+                href: outlook/autolaunch.md
+                displayName: event-based activation
+              - name: 调试基于事件的激活
+                href: outlook/debug-autolaunch.md
+              - name: AppSource 选项
+                href: outlook/autolaunch-store-options.md
+                displayName: event-based activation
           - name: 可固定任务窗格
             href: outlook/pinnable-taskpane.md
           - name: 共享文件夹和共享邮箱

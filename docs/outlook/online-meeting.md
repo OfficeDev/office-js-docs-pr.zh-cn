@@ -2,14 +2,14 @@
 title: 为Outlook会议提供商创建一个移动外接程序
 description: 讨论如何为联机会议Outlook设置移动外接程序。
 ms.topic: article
-ms.date: 02/12/2021
+ms.date: 07/09/2021
 localization_priority: Normal
-ms.openlocfilehash: 7f65ef7a1b87a989063b6cb23e6e608e6b3bbefc
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: f0f9b69c2b8b515df3829ca3ba0714393df79fd1
+ms.sourcegitcommit: 30a861ece18255e342725e31c47f01960b854532
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53077062"
+ms.lasthandoff: 07/16/2021
+ms.locfileid: "53455500"
 ---
 # <a name="create-an-outlook-mobile-add-in-for-an-online-meeting-provider"></a>为Outlook会议提供商创建一个移动外接程序
 
@@ -207,7 +207,7 @@ ms.locfileid: "53077062"
 
 ## <a name="testing-and-validation"></a>测试和验证
 
-按照常规指南 [测试和验证加载项](testing-and-tips.md)。 在[Android Outlook 网页版、Windows](sideload-outlook-add-ins-for-testing.md)或 Mac Outlook旁加载后，在 Android 移动设备上重新启动。  (Android 是现在唯一受支持的客户端。) 然后，在新的会议屏幕上，验证 Microsoft Teams 或 Skype 开关是否替换为你自己的。
+按照常规指南 [测试和验证加载项](testing-and-tips.md)。 在[Outlook 网页版、Windows](sideload-outlook-add-ins-for-testing.md)或 Mac 中旁加载后，Outlook Android 或 iOS 移动设备上重新启动。 然后，在新的会议屏幕上，确认 Microsoft Teams 或 Skype 开关已替换为你自己的开关。
 
 ### <a name="create-meeting-ui"></a>创建会议 UI
 
@@ -261,6 +261,7 @@ ms.locfileid: "53077062"
 - 只有管理员安装的外接程序将显示在会议撰写屏幕上，以替换默认的Teams或Skype选项。 用户安装的加载项不会激活。
 - 加载项图标应该使用十六进制代码或其他颜色格式的等效 `#919191` 项以灰 [度显示](https://convertingcolors.com/hex-color-919191.html)。
 - 在以撰写模式撰写的约会管理器中，仅 (UI) 命令。
+- 外接程序应在一分钟的超时时间内更新约会窗体中的会议详细信息。 但是，在对话框中为进行身份验证而打开的外接程序等所花的任何时间都从超时期间排除。
 
 ## <a name="see-also"></a>另请参阅
 
