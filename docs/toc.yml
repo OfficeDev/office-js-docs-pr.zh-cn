@@ -335,6 +335,8 @@ items:
                 href: reference/requirement-sets/add-in-commands-requirement-sets.md
               - name: Dialog API 要求集
                 href: reference/requirement-sets/dialog-api-requirement-sets.md
+              - name: 对话框源要求集
+                href: reference/requirement-sets/dialog-origin-requirement-sets.md
               - name: Identity API 要求集
                 href: reference/requirement-sets/identity-api-requirement-sets.md
               - name: 图像强制要求集

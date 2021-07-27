@@ -1,14 +1,14 @@
 ---
 title: Office 对话框 API 最佳做法和规则
 description: '提供适用于 SPA 应用程序的Office API 的规则和最佳做法，例如 SPA (应用程序的最佳实践) '
-ms.date: 02/09/2021
+ms.date: 07/19/2021
 localization_priority: Normal
-ms.openlocfilehash: 99129636cf722f98cef36c272f2e00e8a9321ccf
-ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
+ms.openlocfilehash: 1f5162cd4071b2b37b973cdcd16614e9f448c208
+ms.sourcegitcommit: f46e4aeb9c31f674380dd804fd72957998b3a532
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "53349908"
+ms.lasthandoff: 07/23/2021
+ms.locfileid: "53535981"
 ---
 # <a name="best-practices-and-rules-for-the-office-dialog-api"></a>Office 对话框 API 最佳做法和规则
 
@@ -27,7 +27,7 @@ ms.locfileid: "53349908"
 - 对话框中Office两个 API：
   - [messageParent](/javascript/api/office/office.ui#messageparent-message-)函数。
   - `Office.context.requirements.isSetSupported` (有关详细信息，请参阅指定 Office[应用程序和 API](specify-office-hosts-and-api-requirements.md)要求 。) 
-- [messageParent](/javascript/api/office/office.ui#messageparent-message-)函数只能从与加载项本身完全相同的域中的页面调用。
+- 通常，应该从与加载项本身完全相同的域中的页面调用 [messageParent](/javascript/api/office/office.ui#messageparent-message-) 函数，但这不是强制性的。 有关详细信息，请参阅 [跨域消息传递到主机运行时](dialog-api-in-office-add-ins.md#cross-domain-messaging-to-the-host-runtime)。
 
 ## <a name="best-practices"></a>最佳做法
 
@@ -41,9 +41,9 @@ ms.locfileid: "53349908"
 
 ### <a name="handling-pop-up-blockers-with-office-on-the-web"></a>使用 Office 网页版处理弹出窗口阻止程序
 
-尝试使用对话框时Office web 版可能会导致浏览器的弹出窗口阻止程序阻止对话框。 Office web 版一项功能，可使加载项的对话框成为浏览器弹出窗口阻止程序中的例外。 当你的代码调用 `displayDialogAsync` 方法时，Office web 版将打开类似于下面的提示：
+尝试使用对话框时Office web 版可能会导致浏览器的弹出窗口阻止程序阻止对话框。 Office web 版一项功能，可使加载项的对话框成为浏览器弹出窗口阻止程序中的例外。 当代码调用 `displayDialogAsync` 方法时，Office web 版将打开类似于下面的提示。
 
-![Screenshot showing the prompt with a brief description and Allow and Ignore buttons that an add-in can generate to avoid in-browser pop-up blockers.](../images/dialog-prompt-before-open.png)
+![Screenshot showing the prompt with a brief description and Allow and Ignore buttons that an add-in can generate to avoid in-browser pop-up blockers](../images/dialog-prompt-before-open.png)
 
 如果用户选择"允许 **"，Office** 对话框将打开。 如果用户选择"忽略 **"，** 则提示关闭，Office对话框不会打开。 相反， `displayDialogAsync` 此方法返回错误 12009。 代码应捕获此错误，并提供不需要对话框的备用体验，或者向用户显示一条消息，提示外接程序要求他们允许对话框。  (有关 12009 的详细信息，请参阅 [errors from displayDialogAsync](dialog-handle-errors-events.md#errors-from-displaydialogasync).) 
 

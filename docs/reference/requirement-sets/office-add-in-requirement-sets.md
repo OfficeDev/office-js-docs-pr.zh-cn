@@ -4,12 +4,12 @@ description: 详细了解通用 API Office集。
 ms.date: 04/28/2021
 ms.prod: non-product-specific
 localization_priority: Normal
-ms.openlocfilehash: 4ebf00ef0be4007f6cb29fdf049f9df2152ac626
-ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
+ms.openlocfilehash: 458369ad693afeedb760eda3238191c44bedc5e9
+ms.sourcegitcommit: f46e4aeb9c31f674380dd804fd72957998b3a532
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "53350202"
+ms.lasthandoff: 07/23/2021
+ms.locfileid: "53536044"
 ---
 # <a name="office-common-api-requirement-sets"></a>Office 通用 API 要求集
 
@@ -77,6 +77,14 @@ ms.locfileid: "53350202"
 |**Office 应用程序**|**要求集内的方法**|
 |:-----|:-----|
 | 请参阅 [Dialog API 要求集](dialog-api-requirement-sets.md)。 | UI.messageParent<br>UI.displayDialogAsync<br>UI.closeContainer<br>UI.Dialog |
+
+---
+
+### <a name="dialogorigin"></a>DialogOrigin
+
+|**Office 应用程序**|**要求集内的方法**|
+|:-----|:-----|
+| 请参阅 [Dialog Origin 要求集](dialog-origin-requirement-sets.md)。 | 跨域支持：<br>UI.messageParent<br>UI。Dialog.messageChild |
 
 ---
 

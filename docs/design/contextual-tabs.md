@@ -3,12 +3,12 @@ title: 在加载项中Office上下文选项卡
 description: 了解如何将自定义上下文选项卡添加到Office外接程序。
 ms.date: 07/15/2021
 localization_priority: Normal
-ms.openlocfilehash: a8eaffe0402601ee11a063d0df5670ff208be4fd
-ms.sourcegitcommit: b20041962a7f921a8c40eb9ae55bc6992450b243
+ms.openlocfilehash: bdb620c6f91e1337cbaacd2648b661bd6dcb8913
+ms.sourcegitcommit: f46e4aeb9c31f674380dd804fd72957998b3a532
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/16/2021
-ms.locfileid: "53456227"
+ms.lasthandoff: 07/23/2021
+ms.locfileid: "53535991"
 ---
 # <a name="create-custom-contextual-tabs-in-office-add-ins"></a>在加载项中Office上下文选项卡
 
@@ -18,6 +18,8 @@ ms.locfileid: "53456227"
 > 本文假定你熟悉以下文档。 如果你最近未使用加载项命令（自定义菜单项和功能区按钮），请查看该文档。
 >
 > - [加载项命令的基本概念](add-in-commands.md)
+
+[!INCLUDE [Animation of contextual tabs and enabling buttons](../includes/animation-contextual-tabs-enable-button.md)]
 
 > [!IMPORTANT]
 > 自定义上下文选项卡当前仅在以下Excel且仅在以下平台和内部版本上受支持：

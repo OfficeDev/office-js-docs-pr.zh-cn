@@ -3,12 +3,12 @@ title: Office 加载项使用的浏览器
 description: 指定操作系统和 Office 版本如何确定 Office 加载项使用的浏览器。
 ms.date: 06/18/2021
 localization_priority: Normal
-ms.openlocfilehash: 6347bbe6b02befeabf0fcd6f04545f6d543871c8
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: 2555025cdd350da433eb499faae7e70f3956725f
+ms.sourcegitcommit: f46e4aeb9c31f674380dd804fd72957998b3a532
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53076180"
+ms.lasthandoff: 07/23/2021
+ms.locfileid: "53536023"
 ---
 # <a name="browsers-used-by-office-add-ins"></a>Office 加载项使用的浏览器
 
@@ -37,10 +37,10 @@ Office外接程序是 Web 应用程序，在 Office web 版 中运行时，使�
 |Android|任意|不适用|Chrome|
 |Windows 7、8.1、10 | 2013 Office更高版本的非订阅订阅|无关紧要|Internet Explorer 11|
 |Windows 7 | Microsoft 365| 无关紧要 | Internet Explorer 11|
-|Windows 8.1、<br>Windows 10 ver. &nbsp; < &nbsp;1903| Microsoft 365 | 否| Internet Explorer 11|
+|Windows 8.1、<br>Windows 10 ver. &nbsp; < &nbsp;1903| Microsoft 365 | 不支持| Internet Explorer 11|
 |Windows 10 ver. &nbsp; >= &nbsp;1903 | Microsoft 365 ver. &nbsp; < &nbsp;16.0.11629<sup>1</sup>| 无关紧要|Internet Explorer 11|
 |Windows 10 ver. &nbsp; >= &nbsp;1903 | Microsoft 365 ver. &nbsp; >= &nbsp;16.0.11629 &nbsp; _和_ &nbsp; < &nbsp; 16.0.13530.20424 <sup>1</sup>| 无关紧要|Microsoft Edge<sup>2，3</sup>包含原始 WebView (EdgeHTML) |
-|Windows 10 ver. &nbsp; >= &nbsp;1903 | Microsoft 365 ver. &nbsp; >= &nbsp;16.0.13530.20424<sup>1</sup>| 否 |Microsoft Edge<sup>2，3</sup>包含原始 WebView (EdgeHTML) |
+|Windows 10 ver. &nbsp; >= &nbsp;1903 | Microsoft 365 ver. &nbsp; >= &nbsp;16.0.13530.20424<sup>1</sup>| 不支持 |Microsoft Edge<sup>2，3</sup>包含原始 WebView (EdgeHTML) |
 |Windows 8.1<br>Windows 10| Microsoft 365 ver. &nbsp; >= &nbsp;16.0.13530.20424<sup>1</sup>| 是<sup>4</sup>|  Microsoft Edge<sup>2</sup>与基于 WebView2 (Chromium 2)  |
 
 <sup>1</sup>有关更多详细信息[，请参阅更新历史记录页](/officeupdates/update-history-office365-proplus-by-date)Office[客户端版本和更新](https://support.office.com/article/What-version-of-Office-am-I-using-932788b8-a3ce-44bf-bb09-e334518b8b19)通道。
@@ -69,7 +69,7 @@ Office使用原始 WebView Microsoft Edge [EdgeHTML](https://en.wikipedia.org/wi
 
 ### <a name="scroll-bar-does-not-appear-in-task-pane"></a>任务窗格中不显示滚动条
 
-默认情况下，Microsoft Edge 中的滚动条是隐藏的，直到在其上悬停时。 适用于任务窗格中页面的 `<body>` 元素的 CSS 样式应包含 [-ms-overflow-style](https://developer.mozilla.org/docs/Archive/Web/CSS/-ms-overflow-style) 属性，且应将其设置为 `scrollbar`。
+默认情况下，Microsoft Edge 中的滚动条是隐藏的，直到在其上悬停时。 适用于任务窗格中页面的 `<body>` 元素的 CSS 样式应包含 [-ms-overflow-style](https://developer.mozilla.org/docs/Web/CSS/Microsoft_Extensions) 属性，且应将其设置为 `scrollbar`。
 
 ### <a name="when-debugging-with-the-microsoft-edge-devtools-the-add-in-crashes-or-reloads"></a>使用 Microsoft Edge 开发工具进行调试时，加载项会崩溃或重新加载
 
