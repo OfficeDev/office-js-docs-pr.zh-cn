@@ -1,14 +1,14 @@
 ---
 title: Office 加载项使用的浏览器
 description: 指定操作系统和 Office 版本如何确定 Office 加载项使用的浏览器。
-ms.date: 06/18/2021
+ms.date: 07/27/2021
 localization_priority: Normal
-ms.openlocfilehash: 2555025cdd350da433eb499faae7e70f3956725f
-ms.sourcegitcommit: f46e4aeb9c31f674380dd804fd72957998b3a532
+ms.openlocfilehash: 1a6d1a6b0c1443b4c90fc38042a268c40c50de4c
+ms.sourcegitcommit: 3cc8f6adee0c7c68c61a42da0d97ed5ea61be0ac
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2021
-ms.locfileid: "53536023"
+ms.lasthandoff: 07/30/2021
+ms.locfileid: "53661122"
 ---
 # <a name="browsers-used-by-office-add-ins"></a>Office 加载项使用的浏览器
 
@@ -37,10 +37,10 @@ Office外接程序是 Web 应用程序，在 Office web 版 中运行时，使�
 |Android|任意|不适用|Chrome|
 |Windows 7、8.1、10 | 2013 Office更高版本的非订阅订阅|无关紧要|Internet Explorer 11|
 |Windows 7 | Microsoft 365| 无关紧要 | Internet Explorer 11|
-|Windows 8.1、<br>Windows 10 ver. &nbsp; < &nbsp;1903| Microsoft 365 | 不支持| Internet Explorer 11|
+|Windows 8.1、<br>Windows 10 ver. &nbsp; < &nbsp;1903| Microsoft 365 | 否| Internet Explorer 11|
 |Windows 10 ver. &nbsp; >= &nbsp;1903 | Microsoft 365 ver. &nbsp; < &nbsp;16.0.11629<sup>1</sup>| 无关紧要|Internet Explorer 11|
 |Windows 10 ver. &nbsp; >= &nbsp;1903 | Microsoft 365 ver. &nbsp; >= &nbsp;16.0.11629 &nbsp; _和_ &nbsp; < &nbsp; 16.0.13530.20424 <sup>1</sup>| 无关紧要|Microsoft Edge<sup>2，3</sup>包含原始 WebView (EdgeHTML) |
-|Windows 10 ver. &nbsp; >= &nbsp;1903 | Microsoft 365 ver. &nbsp; >= &nbsp;16.0.13530.20424<sup>1</sup>| 不支持 |Microsoft Edge<sup>2，3</sup>包含原始 WebView (EdgeHTML) |
+|Windows 10 ver. &nbsp; >= &nbsp;1903 | Microsoft 365 ver. &nbsp; >= &nbsp;16.0.13530.20424<sup>1</sup>| 否 |Microsoft Edge<sup>2，3</sup>包含原始 WebView (EdgeHTML) |
 |Windows 8.1<br>Windows 10| Microsoft 365 ver. &nbsp; >= &nbsp;16.0.13530.20424<sup>1</sup>| 是<sup>4</sup>|  Microsoft Edge<sup>2</sup>与基于 WebView2 (Chromium 2)  |
 
 <sup>1</sup>有关更多详细信息[，请参阅更新历史记录页](/officeupdates/update-history-office365-proplus-by-date)Office[客户端版本和更新](https://support.office.com/article/What-version-of-Office-am-I-using-932788b8-a3ce-44bf-bb09-e334518b8b19)通道。
@@ -49,7 +49,7 @@ Office外接程序是 Web 应用程序，在 Office web 版 中运行时，使�
 
 <sup>3</sup>如果外接程序在清单中包含 元素，则它将Microsoft Edge EdgeHTML (`<Runtimes>` WebView) 。 如果满足使用基于 WebView2 Microsoft Edge webView (Chromium 2) 的条件，则外接程序使用该浏览器。 否则，它将使用 Internet Explorer 11，而不考虑Windows或Microsoft 365版本。 有关详细信息，请参阅[运行时](../reference/manifest/runtimes.md)。
 
-<sup>4</sup>除了安装可嵌入的 WebView2 控件之外，还必须安装Microsoft Edge，以便Office嵌入它。 若要安装它，请参阅[Microsoft Edge WebView2/ 嵌入 Web 内容...使用 Microsoft Edge WebView2](https://developer.microsoft.com/microsoft-edge/webview2/)。
+<sup>4</sup>必须安装可嵌入的 WebView2 控件Office嵌入它，并且它不会自动随 Edge 一起安装。 它随 Microsoft 365版本 2101 或更高版本一起安装。 如果你拥有早期版本的 Microsoft 365，请按照在 WebView2 /嵌入 Web Microsoft Edge安装[控件的说明...使用 Microsoft Edge WebView2](https://developer.microsoft.com/microsoft-edge/webview2/)。
 
 > [!IMPORTANT]
 > Internet Explorer 11 不支持高于 ES5 的 JavaScript 版本。 如果任何外接程序的用户具有使用 Internet Explorer 11 的平台，则要使用 ECMAScript 2015 或更高版本的语法和功能，有两个选项：

@@ -3,12 +3,12 @@ title: 部署和安装 Outlook 加载项以进行测试
 description: 创建清单文件，将加载项 UI 文件部署到 Web 服务器，在邮箱中安装加载项，然后测试加载项。
 ms.date: 05/20/2020
 localization_priority: Priority
-ms.openlocfilehash: 86fcf82ddbb9b7e786ae905ad0c0bd864e6fbc56
-ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
+ms.openlocfilehash: 59d758ae977c60fce36e788265081bc72b12faef
+ms.sourcegitcommit: 3cc8f6adee0c7c68c61a42da0d97ed5ea61be0ac
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "53348872"
+ms.lasthandoff: 07/30/2021
+ms.locfileid: "53661129"
 ---
 # <a name="deploy-and-install-outlook-add-ins-for-testing"></a>部署和安装 Outlook 加载项以进行测试
 
@@ -94,7 +94,7 @@ New-App -URL:"http://<fully-qualified URL">
 或者，你也可以选择付费并使用托管和管理本地 Exchange 服务器的服务。有两个选项：
 
 - [Rackspace](https://www.rackspace.com/email-hosting/exchange-server)
-- [Hostway](https://hostway.com/products-services-2/hosted-microsoft-exchange/)
+- [Hostway](https://hostway.com/microsoft-exchange/)
 
 此外，如果不想面向连接到本地 Exchange 的用户提供自己的加载项，可将加载项清单中的[要求集](../reference/requirement-sets/outlook-api-requirement-sets.md#exchange-server-support)设置为 1.6 或更高版本。 在经典 Outlook 网页版上，不会对此类加载项进行测试或验证。
 

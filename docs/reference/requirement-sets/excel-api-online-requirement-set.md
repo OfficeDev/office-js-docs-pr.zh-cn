@@ -1,15 +1,15 @@
 ---
 title: ExcelJavaScript API 仅联机要求集
 description: 有关 ExcelApiOnline 要求集的详细信息。
-ms.date: 07/01/2021
+ms.date: 07/23/2021
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: ef4831cf6a6f9be1a5413c89ae0f971bef51a9b1
-ms.sourcegitcommit: aa73ec6367eaf74399fbf8d6b7776d77895e9982
+ms.openlocfilehash: c8c0282970cd384ea0e7f47762c1e24c6af6536a
+ms.sourcegitcommit: 3cc8f6adee0c7c68c61a42da0d97ed5ea61be0ac
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/03/2021
-ms.locfileid: "53290801"
+ms.lasthandoff: 07/30/2021
+ms.locfileid: "53661269"
 ---
 # <a name="excel-javascript-api-online-only-requirement-set"></a>ExcelJavaScript API 仅联机要求集
 
@@ -50,10 +50,11 @@ API 位于跨平台要求集后，应删除或编辑 `isSetSupported` 检查。 
 
 | 类 | 域 | 说明 |
 |:---|:---|:---|
+|[AutoFilter](/javascript/api/excel/excel.autofilter)|[clearColumnCriteria (columnIndex： number) ](/javascript/api/excel/excel.autofilter#clearcolumncriteria-columnindex-)|清除自动筛选的列筛选条件。|
 |[NamedSheetView](/javascript/api/excel/excel.namedsheetview)|[activate()](/javascript/api/excel/excel.namedsheetview#activate--)|激活此工作表视图。|
 ||[delete()](/javascript/api/excel/excel.namedsheetview#delete--)|从工作表中删除工作表视图。|
 ||[duplicate (name？： string) ](/javascript/api/excel/excel.namedsheetview#duplicate-name-)|创建此工作表视图的副本。|
-||[name](/javascript/api/excel/excel.namedsheetview#name)|获取或设置工作表视图的名称。|
+||[名称](/javascript/api/excel/excel.namedsheetview#name)|获取或设置工作表视图的名称。|
 |[NamedSheetViewCollection](/javascript/api/excel/excel.namedsheetviewcollection)|[add(name: string)](/javascript/api/excel/excel.namedsheetviewcollection#add-name-)|创建具有给定名称的新工作表视图。|
 ||[enterTemporary () ](/javascript/api/excel/excel.namedsheetviewcollection#entertemporary--)|创建并激活新的临时工作表视图。|
 ||[exit () ](/javascript/api/excel/excel.namedsheetviewcollection#exit--)|退出当前活动的工作表视图。|

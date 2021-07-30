@@ -1,15 +1,15 @@
 ---
 title: Outlook 加载项概述
 description: Outlook 加载项由第三方使用基于 Web 的平台集成到 Outlook 中。
-ms.date: 07/14/2021
+ms.date: 07/16/2021
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: 0d9dd51627cd797351e4e43957375b7a493b2b57
-ms.sourcegitcommit: 30a861ece18255e342725e31c47f01960b854532
+ms.openlocfilehash: b49a3aedc88064ec4eeb7e305192319f933abc1a
+ms.sourcegitcommit: 3cc8f6adee0c7c68c61a42da0d97ed5ea61be0ac
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/16/2021
-ms.locfileid: "53455486"
+ms.lasthandoff: 07/30/2021
+ms.locfileid: "53661283"
 ---
 # <a name="outlook-add-ins-overview"></a>Outlook 加载项概述
 
@@ -69,6 +69,8 @@ Outlook 外接程序与 COM 或 VSTO 外接程序（特定于在 Windows 上运�
 - 通过[简单 MAPI](https://support.microsoft.com/topic/a3d3f856-eaf6-b6d8-3617-186c0a1123c5) 创建。 如果 Outlook 关闭时，Office 用户从 Windows 上的 Office 应用程序创建或发送电子邮件，则将使用简单 MAPI。 例如，用户在 Word 中工作时可以创建 Outlook 电子邮件，这会触发 Outlook 撰写窗口，而无需启动完整的 Outlook 应用程序。 但是，如果用户从 Word 创建电子邮件时 Outlook 已在运行，则这不属于简单 MAPI 方案，因此只要满足其他激活要求，Outlook 加载项就会在撰写窗体中工作。
 
 通常，Outlook 可以为"已发送邮件"文件夹中的项目在阅读窗体中激活加载项，基于已知实体字符串匹配激活的加载项除外。 欲了解其背后原因的详细信息，请参阅[将 Outlook 项中的字符串作为已知实体进行匹配](match-strings-in-an-item-as-well-known-entities.md)。
+
+目前，设计和实现移动客户端的加载项时还有其他注意事项。 若要了解详细信息，请参阅 [将移动支持添加到 Outlook 加载项](add-mobile-support.md#compose-mode-and-appointments)。
 
 ## <a name="supported-clients"></a>支持的客户端
 
