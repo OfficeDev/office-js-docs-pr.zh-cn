@@ -3,12 +3,12 @@ title: 加载项中的Office快捷方式
 description: 了解如何将自定义键盘快捷方式（也称为组合键）Office加载项。
 ms.date: 06/02/2021
 localization_priority: Normal
-ms.openlocfilehash: de8ce0d89dca6745cba96ac9a5ea946d50d41de4
-ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
+ms.openlocfilehash: 75a7de576368e85436b4d97a4561d609b654642e
+ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "53349251"
+ms.lasthandoff: 07/30/2021
+ms.locfileid: "53671399"
 ---
 # <a name="add-custom-keyboard-shortcuts-to-your-office-add-ins"></a>将自定义键盘快捷方式添加到Office加载项
 
@@ -103,7 +103,7 @@ ms.locfileid: "53349251"
     ```
 
 1. 若要继续此示例，请使用 `'SHOWTASKPANE'` 作为第一个参数。
-1. 对于函数的正文，使用[Office.addin.showTaskpane](/javascript/api/office/office.addin#showastaskpane--)方法打开加载项的任务窗格。 完成后，代码应如下所示：
+1. 对于函数的正文，使用[Office.addin.showTaskpane](/javascript/api/office/office.addin#showAsTaskpane__)方法打开加载项的任务窗格。 完成后，代码应如下所示：
 
     ```javascript
     Office.actions.associate('SHOWTASKPANE', function () {
@@ -117,7 +117,7 @@ ms.locfileid: "53349251"
     });
     ```
 
-1. 添加函数的第二个调用，以将操作映射到调用 `Office.actions.associate` `HIDETASKPANE` [Office.addin.hide 的函数](/javascript/api/office/office.addin#hide--)。 示例如下。
+1. 添加函数的第二个调用，以将操作映射到调用 `Office.actions.associate` `HIDETASKPANE` [Office.addin.hide 的函数](/javascript/api/office/office.addin#hide__)。 示例如下。
 
     ```javascript
     Office.actions.associate('HIDETASKPANE', function () {

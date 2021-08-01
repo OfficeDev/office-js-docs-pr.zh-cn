@@ -4,12 +4,12 @@ description: 有关 ExcelApiOnline 要求集的详细信息。
 ms.date: 07/23/2021
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: c8c0282970cd384ea0e7f47762c1e24c6af6536a
-ms.sourcegitcommit: 3cc8f6adee0c7c68c61a42da0d97ed5ea61be0ac
+ms.openlocfilehash: 8e49d2a9d655e7bc1bf21233bdaf23321d1e48d1
+ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 07/30/2021
-ms.locfileid: "53661269"
+ms.locfileid: "53671875"
 ---
 # <a name="excel-javascript-api-online-only-requirement-set"></a>ExcelJavaScript API 仅联机要求集
 
@@ -50,20 +50,20 @@ API 位于跨平台要求集后，应删除或编辑 `isSetSupported` 检查。 
 
 | 类 | 域 | 说明 |
 |:---|:---|:---|
-|[AutoFilter](/javascript/api/excel/excel.autofilter)|[clearColumnCriteria (columnIndex： number) ](/javascript/api/excel/excel.autofilter#clearcolumncriteria-columnindex-)|清除自动筛选的列筛选条件。|
-|[NamedSheetView](/javascript/api/excel/excel.namedsheetview)|[activate()](/javascript/api/excel/excel.namedsheetview#activate--)|激活此工作表视图。|
-||[delete()](/javascript/api/excel/excel.namedsheetview#delete--)|从工作表中删除工作表视图。|
-||[duplicate (name？： string) ](/javascript/api/excel/excel.namedsheetview#duplicate-name-)|创建此工作表视图的副本。|
+|[AutoFilter](/javascript/api/excel/excel.autofilter)|[clearColumnCriteria (columnIndex： number) ](/javascript/api/excel/excel.autofilter#clearColumnCriteria_columnIndex_)|清除自动筛选的列筛选条件。|
+|[NamedSheetView](/javascript/api/excel/excel.namedsheetview)|[activate()](/javascript/api/excel/excel.namedsheetview#activate__)|激活此工作表视图。|
+||[delete()](/javascript/api/excel/excel.namedsheetview#delete__)|从工作表中删除工作表视图。|
+||[duplicate (name？： string) ](/javascript/api/excel/excel.namedsheetview#duplicate_name_)|创建此工作表视图的副本。|
 ||[名称](/javascript/api/excel/excel.namedsheetview#name)|获取或设置工作表视图的名称。|
-|[NamedSheetViewCollection](/javascript/api/excel/excel.namedsheetviewcollection)|[add(name: string)](/javascript/api/excel/excel.namedsheetviewcollection#add-name-)|创建具有给定名称的新工作表视图。|
-||[enterTemporary () ](/javascript/api/excel/excel.namedsheetviewcollection#entertemporary--)|创建并激活新的临时工作表视图。|
-||[exit () ](/javascript/api/excel/excel.namedsheetviewcollection#exit--)|退出当前活动的工作表视图。|
-||[getActive () ](/javascript/api/excel/excel.namedsheetviewcollection#getactive--)|获取工作表当前的活动工作表视图。|
-||[getCount()](/javascript/api/excel/excel.namedsheetviewcollection#getcount--)|获取此工作表中的工作表视图数。|
-||[getItem(key: string)](/javascript/api/excel/excel.namedsheetviewcollection#getitem-key-)|使用工作表视图的名称获取工作表视图。|
-||[getItemAt(index: number)](/javascript/api/excel/excel.namedsheetviewcollection#getitemat-index-)|按工作表视图在集合中的索引获取工作表视图。|
+|[NamedSheetViewCollection](/javascript/api/excel/excel.namedsheetviewcollection)|[add(name: string)](/javascript/api/excel/excel.namedsheetviewcollection#add_name_)|创建具有给定名称的新工作表视图。|
+||[enterTemporary () ](/javascript/api/excel/excel.namedsheetviewcollection#enterTemporary__)|创建并激活新的临时工作表视图。|
+||[exit () ](/javascript/api/excel/excel.namedsheetviewcollection#exit__)|退出当前活动的工作表视图。|
+||[getActive () ](/javascript/api/excel/excel.namedsheetviewcollection#getActive__)|获取工作表当前的活动工作表视图。|
+||[getCount()](/javascript/api/excel/excel.namedsheetviewcollection#getCount__)|获取此工作表中的工作表视图数。|
+||[getItem(key: string)](/javascript/api/excel/excel.namedsheetviewcollection#getItem_key_)|使用工作表视图的名称获取工作表视图。|
+||[getItemAt(index: number)](/javascript/api/excel/excel.namedsheetviewcollection#getItemAt_index_)|按工作表视图在集合中的索引获取工作表视图。|
 ||[items](/javascript/api/excel/excel.namedsheetviewcollection#items)|获取此集合中已加载的子项。|
-|[Worksheet](/javascript/api/excel/excel.worksheet)|[namedSheetViews](/javascript/api/excel/excel.worksheet#namedsheetviews)|返回工作表中呈现的工作表视图的集合。|
+|[Worksheet](/javascript/api/excel/excel.worksheet)|[namedSheetViews](/javascript/api/excel/excel.worksheet#namedSheetViews)|返回工作表中呈现的工作表视图的集合。|
 
 ## <a name="see-also"></a>另请参阅
 

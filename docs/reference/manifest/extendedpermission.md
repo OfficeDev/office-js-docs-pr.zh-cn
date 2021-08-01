@@ -1,33 +1,33 @@
 ---
-title: 清单文件中的 ExtendedPermission 元素
-description: 定义外接程序访问关联的 API 或功能所需的扩展权限。
+title: 清单文件中 ExtendedPermission 元素
+description: 定义加载项访问关联 API 或功能所需的扩展权限。
 ms.date: 10/15/2020
 localization_priority: Normal
-ms.openlocfilehash: 996cac59c44220d05165c7be6ae7c3d79d853271
-ms.sourcegitcommit: 4e7c74ad67ea8bf6b47d65b2fde54a967090f65b
+ms.openlocfilehash: 37859350cfaffdc14ab91d5026d67aa0a736ac56
+ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/20/2020
-ms.locfileid: "48626398"
+ms.lasthandoff: 07/30/2021
+ms.locfileid: "53671756"
 ---
-# <a name="extendedpermission-element"></a>`ExtendedPermission` 网元
+# <a name="extendedpermission-element"></a>`ExtendedPermission` 元素
 
-定义外接程序访问关联的 API 或功能所需的扩展权限。 `ExtendedPermission`元素是[ExtendedPermissions](extendedpermissions.md)的子元素。
+定义加载项访问关联 API 或功能所需的扩展权限。 元素 `ExtendedPermission` 是 [ExtendedPermissions 的子元素](extendedpermissions.md)。
 
 > [!IMPORTANT]
-> 对此元素的支持是在要求集1.9 中引入的。 请查看支持此要求集的[客户端和平台](../../reference/requirement-sets/outlook-api-requirement-sets.md#requirement-sets-supported-by-exchange-servers-and-outlook-clients)。
+> 要求集 1.9 中引入了对此元素的支持。 请查看支持此要求集的[客户端和平台](../../reference/requirement-sets/outlook-api-requirement-sets.md#requirement-sets-supported-by-exchange-servers-and-outlook-clients)。
 
-## <a name="available-extended-permissions"></a>可用扩展权限
+## <a name="available-extended-permissions"></a>可用的扩展权限
 
-以下是可用的值。
+以下是可用值。
 
 |可用值|说明|Hosts|
 |---|---|---|
-|`AppendOnSend`|声明外接程序使用的是 [appendOnSendAsync](/javascript/api/outlook/office.body?view=outlook-js-preview&preserve-view=true#appendonsendasync-data--options--callback-) API。|Outlook|
+|`AppendOnSend`|声明外接程序正在使用[Office。Body.appendOnSendAsync](/javascript/api/outlook/office.body?view=outlook-js-preview&preserve-view=true#appendOnSendAsync_data__options__callback_) API。|Outlook|
 
 ## <a name="extendedpermission-example"></a>`ExtendedPermission` 示例
 
-以下是元素的示例 `ExtendedPermission` 。
+下面是 元素 `ExtendedPermission` 的一个示例。
 
 ```XML
 ...

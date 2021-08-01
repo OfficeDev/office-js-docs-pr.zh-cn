@@ -148,11 +148,11 @@ function updateStatus(message) {
 }
 ```
 
-When you choose the **Submit** button in the UI， the add-in calls the `sendFile` function， which contains a call to the [Document.getFileAsync](/javascript/api/office/office.document#getfileasync-filetype--options--callback-) method. `getFileAsync`方法使用异步模式，类似于 JavaScript API for Office。 It has one required parameter, _fileType_, and two optional parameters,  _options_ and _callback_.
+When you choose the **Submit** button in the UI， the add-in calls the `sendFile` function， which contains a call to the [Document.getFileAsync](/javascript/api/office/office.document#getFileAsync_fileType__options__callback_) method. `getFileAsync`方法使用异步模式，类似于 JavaScript API for Office。 It has one required parameter, _fileType_, and two optional parameters,  _options_ and _callback_.
 
 _fileType_ 参数需要 [FileType](/javascript/api/office/office.filetype)枚举中的三个常量之一 `Office.FileType.Compressed` ： ("compressed") 、Office.FileType.PDF("pdf") 或 **Office。FileType.Text** ("text") 。 [Document.getFileType](/javascript/api/office/office.document#getFileAsync_fileType__callback_)备注下列出了每个平台的当前文件类型支持。 为 _fileType_ 参数传递 **Compressed** 时，该方法通过在本地计算机上创建文件的临时副本，以 PowerPoint 2013 演示文稿文件 (.pptx) 或 `getFileAsync` Word *2013* 文档文件 (.docx) 形式返回文档。
 
-`getFileAsync`方法以 File 对象返回对[文件](/javascript/api/office/office.file)的引用。 对象 `File` 公开四个成员 [：size](/javascript/api/office/office.file#size) 属性 [、sliceCount](/javascript/api/office/office.file#slicecount) 属性 [、getSliceAsync](/javascript/api/office/office.file#getsliceasync-sliceindex--callback-) 方法和 [closeAsync](/javascript/api/office/office.file#closeasync-callback-) 方法。 `size`属性返回文件中字节数。 `sliceCount`返回本文稍后将 (的[Slice](/javascript/api/office/office.slice)对象) 文件中。
+`getFileAsync`方法以 File 对象返回对[文件](/javascript/api/office/office.file)的引用。 对象 `File` 公开四个成员 [：size](/javascript/api/office/office.file#size) 属性 [、sliceCount](/javascript/api/office/office.file#sliceCount) 属性 [、getSliceAsync](/javascript/api/office/office.file#getSliceAsync_sliceIndex__callback_) 方法和 [closeAsync](/javascript/api/office/office.file#closeAsync_callback_) 方法。 `size`属性返回文件中字节数。 `sliceCount`返回本文稍后将 (的[Slice](/javascript/api/office/office.slice)对象) 文件中。
 
 使用以下代码将 PowerPoint Word 文档作为对象获取，然后调用本地 `File` `Document.getFileAsync` 定义的 `getSlice` 函数。 请注意，对象、计数器变量和文件中切片的总数在匿名对象的调用中传递 `File` `getSlice` 。
 

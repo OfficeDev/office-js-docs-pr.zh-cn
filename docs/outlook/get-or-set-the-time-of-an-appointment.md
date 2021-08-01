@@ -3,16 +3,16 @@ title: 获取或设置 Outlook 加载项中的约会时间
 description: 了解如何在 Outlook 加载项中获取或设置约会开始和结束时间。
 ms.date: 10/31/2019
 localization_priority: Normal
-ms.openlocfilehash: 5e02523852584d4b5f1ede9bcd191b9ee16d4c24
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 883b2be75348b72ac3c6b11bf558f7ac27aa2b8d
+ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44609131"
+ms.lasthandoff: 07/30/2021
+ms.locfileid: "53671329"
 ---
 # <a name="get-or-set-the-time-when-composing-an-appointment-in-outlook"></a>在 Outlook 中撰写约会时获取或设置时间
 
-Office JavaScript API 提供了异步方法（[getAsync](/javascript/api/outlook/office.Time#getasync-options--callback-)和[setAsync](/javascript/api/outlook/office.Time#setasync-datetime--options--callback-)），以获取和设置用户正在撰写的约会的开始或结束时间。 这些异步方法仅适用于撰写外接程序。若要使用这些方法，请确保已正确设置了 Outlook 以在撰写窗体中激活加载项的加载项清单，如[创建适用于撰写窗体的 Outlook 外接程序](compose-scenario.md)中所述。
+Office JavaScript API 提供了异步方法 ([Time.getAsync](/javascript/api/outlook/office.time#getAsync_options__callback_)和[Time.setAsync](/javascript/api/outlook/office.time#setAsync_dateTime__options__callback_)) 获取和设置用户正在撰写的约会的开始时间或结束时间。 这些异步方法仅适用于撰写加载项。若要使用这些方法，请确保为 Outlook 设置相应的外接程序清单以在撰写窗体中激活外接程序，如为撰写窗体创建[Outlook](compose-scenario.md)外接程序中所述。
 
 [start](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties) 和 [end](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties) 属性对撰写和阅读窗体中的约会均适用。在阅读窗体中，您可以直接从父对象访问属性，类似于：
 
@@ -38,7 +38,7 @@ item.start.getAsync
 item.end.getAsync
 ```
 
-与 Office JavaScript API 中的大多数异步方法一样， **getAsync**和**setAsync**采用可选的输入参数。 有关指定这些可选输入参数的详细信息，请参阅 [Office 外接程序中的异步编程](../develop/asynchronous-programming-in-office-add-ins.md#passing-optional-parameters-inline)中的[向异步方法传递可选参数](../develop/asynchronous-programming-in-office-add-ins.md)。
+与 JavaScript API 中的大多数异步Office一样 **，getAsync** 和 **setAsync** 采用可选输入参数。 有关指定这些可选输入参数的详细信息，请参阅 [Office 外接程序中的异步编程](../develop/asynchronous-programming-in-office-add-ins.md#passing-optional-parameters-inline)中的[向异步方法传递可选参数](../develop/asynchronous-programming-in-office-add-ins.md)。
 
 
 ## <a name="get-the-start-or-end-time"></a>获取开始或结束时间

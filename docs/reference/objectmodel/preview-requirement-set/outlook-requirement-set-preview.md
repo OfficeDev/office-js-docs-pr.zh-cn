@@ -3,12 +3,12 @@ title: Outlook外接程序 API 预览要求集
 description: 当前处于预览阶段的功能和 API Outlook外接程序。
 ms.date: 06/15/2021
 localization_priority: Normal
-ms.openlocfilehash: f9d8afc2b4347a8fb13f8ab98a163fb63968123f
-ms.sourcegitcommit: 0bf0e076f705af29193abe3dba98cbfcce17b24f
+ms.openlocfilehash: 79ae0f200743607ee762feebd34dc0e4d192048a
+ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2021
-ms.locfileid: "53007760"
+ms.lasthandoff: 07/30/2021
+ms.locfileid: "53671910"
 ---
 # <a name="outlook-add-in-api-preview-requirement-set"></a>Outlook外接程序 API 预览要求集
 
@@ -108,7 +108,7 @@ Outlook JavaScript API 的 Office 外接程序 API 子集包括可在 Outlook �
 
 ### <a name="office-theme"></a>Office 主题
 
-#### <a name="officecontextofficetheme"></a>[Office.context.officeTheme](/javascript/api/office/office.context#officetheme)
+#### <a name="officecontextofficetheme"></a>[Office.context.officeTheme](/javascript/api/office/office.context#officeTheme)
 
 增加了获取 Office 主题的功能。
 
@@ -148,7 +148,7 @@ Outlook JavaScript API 的 Office 外接程序 API 子集包括可在 Outlook �
 
 ### <a name="shared-mailboxes"></a>共享邮箱
 
-共享文件夹的功能支持 (，即委派访问权限) 要求集 [1.8 中发布](../requirement-set-1.8/outlook-requirement-set-1.8.md)。 但是，现在预览版中提供了对共享邮箱的支持。 若要了解详情，请参阅启用 [共享文件夹和共享邮箱方案](../../../outlook/delegate-access.md)。
+共享文件夹的功能支持 (，即委派访问权限) 要求集 [1.8 中发布](../requirement-set-1.8/outlook-requirement-set-1.8.md)。 但是，现在预览版中提供了对共享邮箱的支持。 要了解详细信息，请参阅 [启用共享文件夹和共享邮箱方案](../../../outlook/delegate-access.md)。
 
 **适用于**：Outlook Windows (连接到 Microsoft 365 订阅) ，Outlook 网页版 (新式) 
 

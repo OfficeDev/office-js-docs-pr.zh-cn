@@ -1,23 +1,23 @@
 ---
-title: 使用 Excel JavaScript API 查找区域内的特殊单元格
-description: 了解如何使用 Excel JavaScript API 查找特殊单元格，例如包含公式、错误或数字的单元格。
+title: 使用 JavaScript API 查找Excel单元格
+description: 了解如何使用 JavaScript API Excel查找特殊单元格，例如包含公式、错误或数字的单元格。
 ms.date: 04/02/2021
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: 6504873bcd8ab50bd4c03fe4f54b71d0bd920c5b
-ms.sourcegitcommit: 54fef33bfc7d18a35b3159310bbd8b1c8312f845
+ms.openlocfilehash: 00bc87a350cc31eb17d579298d79bfde41d03d35
+ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2021
-ms.locfileid: "51652788"
+ms.lasthandoff: 07/30/2021
+ms.locfileid: "53671124"
 ---
-# <a name="find-special-cells-within-a-range-using-the-excel-javascript-api"></a>使用 Excel JavaScript API 查找区域内的特殊单元格
+# <a name="find-special-cells-within-a-range-using-the-excel-javascript-api"></a>使用 JavaScript API 查找Excel单元格
 
-本文提供的代码示例使用 Excel JavaScript API 查找区域内的特殊单元格。 有关对象支持的属性和方法的完整列表，请参阅 `Range` [Excel.Range 类](/javascript/api/excel/excel.range)。
+本文提供的代码示例使用 JavaScript API 查找Excel单元格。 有关对象支持的属性和方法的完整列表，请参阅 `Range` [Excel。Range 类](/javascript/api/excel/excel.range)。
 
 ## <a name="find-ranges-with-special-cells"></a>查找包含特殊单元格的范围
 
-[Range.getSpecialCells](/javascript/api/excel/excel.range#getspecialcells-celltype--cellvaluetype-)和[Range.getSpecialCellsOrNullObject](/javascript/api/excel/excel.range#getspecialcellsornullobject-celltype--cellvaluetype-)方法根据单元格的特征及其单元格的值类型查找区域。 这两种方法都返回 `RangeAreas` 对象。 以下是 TypeScript 数据类型文件中方法的签名：
+[Range.getSpecialCells](/javascript/api/excel/excel.range#getSpecialCells_cellType__cellValueType_)和[Range.getSpecialCellsOrNullObject](/javascript/api/excel/excel.range#getSpecialCellsOrNullObject_cellType__cellValueType_)方法根据单元格的特征及其单元格的值类型查找区域。 这两种方法都返回 `RangeAreas` 对象。 以下是 TypeScript 数据类型文件中方法的签名：
 
 ```typescript
 getSpecialCells(cellType: Excel.SpecialCellType, cellValueType?: Excel.SpecialCellValueType): Excel.RangeAreas;
@@ -124,6 +124,6 @@ Excel.run(function (context) {
 ## <a name="see-also"></a>另请参阅
 
 - [Excel 加载项中的 Word JavaScript 对象模型](excel-add-ins-core-concepts.md)
-- [使用 Excel JavaScript API 处理单元格](excel-add-ins-cells.md)
-- [使用 Excel JavaScript API 查找字符串](excel-add-ins-ranges-string-match.md)
+- [使用 JavaScript API Excel单元格](excel-add-ins-cells.md)
+- [使用 JavaScript API Excel字符串](excel-add-ins-ranges-string-match.md)
 - [ 同时在 Excel 加载项中处理多个区域 ](excel-add-ins-multiple-ranges.md)

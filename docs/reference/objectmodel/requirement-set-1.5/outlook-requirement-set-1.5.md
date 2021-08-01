@@ -3,12 +3,12 @@ title: Outlook 加载项 API 要求集 1.5
 description: 作为邮箱 API 1.5 Outlook外接程序和 Office JavaScript API 引入的功能和 API。
 ms.date: 05/17/2021
 localization_priority: Normal
-ms.openlocfilehash: 7d780538a77f54db6f1234a6d29a3bcdea9533b0
-ms.sourcegitcommit: 0d9fcdc2aeb160ff475fbe817425279267c7ff31
+ms.openlocfilehash: fa27cc89cbc5c1059525e862016f6c90adc48928
+ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/21/2021
-ms.locfileid: "52590839"
+ms.lasthandoff: 07/30/2021
+ms.locfileid: "53671560"
 ---
 # <a name="outlook-add-in-api-requirement-set-15"></a>Outlook 外接程序 API 要求集 1.5
 
@@ -33,7 +33,7 @@ Outlook JavaScript API 的 Office 外接程序 API 子集包括可在 Outlook �
 - 添加了 [Office.EventType](office.md#eventtype-string)：指定与事件处理程序相关联的事件，并包括对 ItemChanged 事件的支持。
 - 添加了 [Office.context.mailbox.restUrl](office.context.mailbox.md#properties)：获取此电子邮件帐户的 REST 终结点的 URL。
 - 修改了 [Office.context.mailbox.getCallbackTokenAsync](office.context.mailbox.md#methods)：添加了此方法的新版本（具有新签名） (`getCallbackTokenAsync([options], callback)`)。原始版本仍可用且未更改。
-- 添加了 [Office.context.ui.closeContainer](/javascript/api/office/office.ui#closecontainer--)。
+- 添加了 [Office.context.ui.closeContainer](/javascript/api/office/office.ui#closeContainer__)。
 - 修改了 [Office.context.mailbox.item.addFileAttachmentAsync](office.context.mailbox.item.md#methods)：`options` 字典中的新值调用 `isInline`，用于指定在邮件正文中内联使用了一个图像。
 - 修改了 [Office.context.mailbox.item.displayReplyAllForm](office.context.mailbox.item.md#methods)：`formData.attachments` 字典中的新值调用 `isInline`，用于指定在邮件正文中内联使用了一个图像。
 - 修改了 [Office.context.mailbox.item.displayReplyForm](office.context.mailbox.item.md#methods)：`formData.attachments` 字典中的新值调用 `isInline`，用于指定在邮件正文中内联使用了一个图像。

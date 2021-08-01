@@ -4,12 +4,12 @@ description: 了解如何使用 JavaScript API Excel引用单元格和依赖项�
 ms.date: 07/02/2021
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: bf92400af00df42ac245b9a2d3ff5e72512b5722
-ms.sourcegitcommit: aa73ec6367eaf74399fbf8d6b7776d77895e9982
+ms.openlocfilehash: f114cc274358216cffaa55015e09afa38fa4e959
+ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/03/2021
-ms.locfileid: "53290773"
+ms.lasthandoff: 07/30/2021
+ms.locfileid: "53671476"
 ---
 # <a name="get-formula-precedents-and-dependents-using-the-excel-javascript-api"></a>使用 JavaScript API 获取公式引用Excel依赖项
 
@@ -21,7 +21,7 @@ Excel公式通常引用其他单元格。 这些跨单元格引用称为"引用�
 
 ## <a name="get-the-direct-precedents-of-a-formula"></a>获取公式的直接引用单元格
 
-使用 [Range.getDirectPrecedents](/javascript/api/excel/excel.range#getdirectprecedents--)查找公式的直接引用单元格。 `Range.getDirectPrecedents` 返回 `WorkbookRangeAreas` 一个对象。 此对象包含工作簿中所有直接引用单元格的地址。 对于每个包含 `RangeAreas` 至少一个公式引用单元格的工作表，它都有一个单独的对象。 有关使用对象的信息，请参阅在加载项中同时Excel `RangeAreas` [多个区域](excel-add-ins-multiple-ranges.md)。
+使用 [Range.getDirectPrecedents](/javascript/api/excel/excel.range#getDirectPrecedents__)查找公式的直接引用单元格。 `Range.getDirectPrecedents` 返回 `WorkbookRangeAreas` 一个对象。 此对象包含工作簿中所有直接引用单元格的地址。 对于每个包含 `RangeAreas` 至少一个公式引用单元格的工作表，它都有一个单独的对象。 有关使用对象的信息，请参阅在加载项中同时Excel `RangeAreas` [多个区域](excel-add-ins-multiple-ranges.md)。
 
 以下屏幕截图显示了在"跟踪引用单元格"UI 中选择"追踪引用Excel的结果。  此按钮绘制从引用单元格到选定单元格的箭头。 选定的单元格 **E3** 包含公式"=C3 * D3"，因此 **C3** 和 **D3 都是** 引用单元格。 与 Excel UI 按钮不同， `getDirectPrecedents` 该方法不绘制箭头。
 

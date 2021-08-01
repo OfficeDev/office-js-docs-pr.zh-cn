@@ -3,12 +3,12 @@ title: 添加对 Outlook 外接程序的移动支持
 description: 添加对 Outlook Mobile 的支持需要更新外接程序清单，并且可能会更改移动方案的代码。
 ms.date: 07/16/2021
 localization_priority: Normal
-ms.openlocfilehash: 48cfb10d8e20df20436e836abbd58648e8e3a0a8
-ms.sourcegitcommit: 3cc8f6adee0c7c68c61a42da0d97ed5ea61be0ac
+ms.openlocfilehash: 270042d61077ae28abee79db024243bfbd5b6dc2
+ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 07/30/2021
-ms.locfileid: "53661241"
+ms.locfileid: "53671847"
 ---
 # <a name="add-support-for-add-in-commands-for-outlook-mobile"></a>添加对适用于 Outlook Mobile 的外接程序命令的支持
 
@@ -80,7 +80,7 @@ Outlook Mobile 中不支持 [Office.context.mailbox.makeEwsRequestAsync](../refe
 
 ### <a name="close-task-panes"></a>关闭任务窗格
 
-在 Outlook Mobile 中，任务窗格占据整个屏幕，并且在默认情况下需要用户将其关闭以返回到邮件。请考虑使用 [Office.context.ui.closeContainer](/javascript/api/office/office.ui#closecontainer--) 方法在方案完成时关闭任务窗格。
+在 Outlook Mobile 中，任务窗格占据整个屏幕，并且在默认情况下需要用户将其关闭以返回到邮件。请考虑使用 [Office.context.ui.closeContainer](/javascript/api/office/office.ui#closeContainer__) 方法在方案完成时关闭任务窗格。
 
 ### <a name="compose-mode-and-appointments"></a>撰写模式和约会
 

@@ -3,12 +3,12 @@ title: Office 对话框 API 最佳做法和规则
 description: '提供适用于 SPA 应用程序的Office API 的规则和最佳做法，例如 SPA (应用程序的最佳实践) '
 ms.date: 07/19/2021
 localization_priority: Normal
-ms.openlocfilehash: 1f5162cd4071b2b37b973cdcd16614e9f448c208
-ms.sourcegitcommit: f46e4aeb9c31f674380dd804fd72957998b3a532
+ms.openlocfilehash: c994625a662b2eed31f139819f4a1d7cf8418c6a
+ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2021
-ms.locfileid: "53535981"
+ms.lasthandoff: 07/30/2021
+ms.locfileid: "53671215"
 ---
 # <a name="best-practices-and-rules-for-the-office-dialog-api"></a>Office 对话框 API 最佳做法和规则
 
@@ -25,9 +25,9 @@ ms.locfileid: "53535981"
 - 传递给 [displayDialogAsync](/javascript/api/office/office.ui) 方法的 URL 必须与外接程序本身在同一域中。 它不能是子域。 但是，传递给它的页面可以重定向到另一个域中的页面。
 - 主机窗口（可以是任务窗格或外接程序命令的无 UI 函数[](../reference/manifest/functionfile.md)文件）一次只能打开一个对话框。
 - 对话框中Office两个 API：
-  - [messageParent](/javascript/api/office/office.ui#messageparent-message-)函数。
+  - [messageParent](/javascript/api/office/office.ui#messageParent_message__messageOptions_)函数。
   - `Office.context.requirements.isSetSupported` (有关详细信息，请参阅指定 Office[应用程序和 API](specify-office-hosts-and-api-requirements.md)要求 。) 
-- 通常，应该从与加载项本身完全相同的域中的页面调用 [messageParent](/javascript/api/office/office.ui#messageparent-message-) 函数，但这不是强制性的。 有关详细信息，请参阅 [跨域消息传递到主机运行时](dialog-api-in-office-add-ins.md#cross-domain-messaging-to-the-host-runtime)。
+- 通常，应该从与加载项本身完全相同的域中的页面调用 [messageParent](/javascript/api/office/office.ui#messageParent_message__messageOptions_) 函数，但这不是强制性的。 有关详细信息，请参阅 [跨域消息传递到主机运行时](dialog-api-in-office-add-ins.md#cross-domain-messaging-to-the-host-runtime)。
 
 ## <a name="best-practices"></a>最佳做法
 

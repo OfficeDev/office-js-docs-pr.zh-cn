@@ -3,12 +3,12 @@ title: 在加载项中Office上下文选项卡
 description: 了解如何将自定义上下文选项卡添加到Office外接程序。
 ms.date: 07/15/2021
 localization_priority: Normal
-ms.openlocfilehash: bdb620c6f91e1337cbaacd2648b661bd6dcb8913
-ms.sourcegitcommit: f46e4aeb9c31f674380dd804fd72957998b3a532
+ms.openlocfilehash: 8696a9a7815b39ddd0100b70f7f9eaa94b1f4a89
+ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2021
-ms.locfileid: "53535991"
+ms.lasthandoff: 07/30/2021
+ms.locfileid: "53671532"
 ---
 # <a name="create-custom-contextual-tabs-in-office-add-ins"></a>在加载项中Office上下文选项卡
 
@@ -60,7 +60,7 @@ ms.locfileid: "53535991"
 
 ## <a name="define-the-groups-and-controls-that-appear-on-the-tab"></a>定义显示在选项卡上的组和控件
 
-与在清单中用 XML 定义的自定义核心选项卡不同，自定义上下文选项卡是在运行时使用 JSON blob 定义的。 代码将 blob 解析为 JavaScript 对象，然后将该对象传递给[Office.ribbon.requestCreateControls](/javascript/api/office/office.ribbon?view=common-js&preserve-view=true#requestCreateControls-tabDefinition-)方法。 自定义上下文选项卡仅存在于加载项当前运行的文档中。 这不同于在安装加载项时添加到 Office 应用程序功能区中的自定义核心选项卡，当打开另一个文档时，这些选项卡仍保持显示状态。 此外 `requestCreateControls` ，方法只能在加载项会话中运行一次。 如果再次调用它，将引发错误。
+与在清单中用 XML 定义的自定义核心选项卡不同，自定义上下文选项卡是在运行时使用 JSON blob 定义的。 代码将 blob 解析为 JavaScript 对象，然后将该对象传递给[Office.ribbon.requestCreateControls](/javascript/api/office/office.ribbon?view=common-js&preserve-view=true#requestCreateControls_tabDefinition_)方法。 自定义上下文选项卡仅存在于加载项当前运行的文档中。 这不同于在安装加载项时添加到 Office 应用程序功能区中的自定义核心选项卡，当打开另一个文档时，这些选项卡仍保持显示状态。 此外 `requestCreateControls` ，方法只能在加载项会话中运行一次。 如果再次调用它，将引发错误。
 
 > [!NOTE]
 > JSON blob 的属性和子属性 (和键名称) 的结构大致与清单 XML 中 [CustomTab](../reference/manifest/customtab.md) 元素及其后代元素的结构平行。
@@ -295,7 +295,7 @@ Office.onReady(async () => {
 
 接下来，定义处理程序。 下面是 的一个简单示例，但请参阅本文稍后介绍的处理 `showDataTab` [HostRestartNeeded](#handle-the-hostrestartneeded-error) 错误，了解函数的更可靠版本。 关于此代码，请注意以下几点：
 
-- Office 控制何时更新功能区的状态。 the [Office.ribbon.requestUpdate](/javascript/api/office/office.ribbon?view=common-js&preserve-view=true#requestupdate-input-) method queues a request to update. 方法将在请求排入队列后（而不是功能区实际更新时） `Promise` 解析对象。
+- Office 控制何时更新功能区的状态。 the [Office.ribbon.requestUpdate](/javascript/api/office/office.ribbon?view=common-js&preserve-view=true#requestUpdate_input_) method queues a request to update. 方法将在请求排入队列后（而不是功能区实际更新时） `Promise` 解析对象。
 - 该方法的参数是 `requestUpdate` [RibbonUpdaterData](/javascript/api/office/office.ribbonupdaterdata) 对象， (1) 按照 *JSON* 中指定的 ID 指定选项卡， (2) 指定选项卡的可见性。
 - 如果你有多个自定义上下文选项卡应在同一上下文中可见，则只需向数组中添加其他选项卡 `tabs` 对象。
 

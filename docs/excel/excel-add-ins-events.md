@@ -3,12 +3,12 @@ title: 使用 Excel JavaScript API 处理事件
 description: JavaScript 对象Excel列表。 这包括有关使用事件处理程序和相关模式的信息。
 ms.date: 07/02/2021
 localization_priority: Normal
-ms.openlocfilehash: c3e1e2c1a0393316166eda6b695d04fbb9876ffd
-ms.sourcegitcommit: aa73ec6367eaf74399fbf8d6b7776d77895e9982
+ms.openlocfilehash: 596d8738b4c4953a937825e6c7294b2478ae59f7
+ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/03/2021
-ms.locfileid: "53290766"
+ms.lasthandoff: 07/30/2021
+ms.locfileid: "53671490"
 ---
 # <a name="work-with-events-using-the-excel-javascript-api"></a>使用 Excel JavaScript API 处理事件
 
@@ -20,23 +20,23 @@ ms.locfileid: "53290766"
 
 | 事件 | 说明 | 支持的对象 |
 |:---------------|:-------------|:-----------|
-| `onActivated` | 激活对象时发生。 | [**Chart**](/javascript/api/excel/excel.chart#onactivated)、[**ChartCollection**](/javascript/api/excel/excel.chartcollection#onactivated)、[**Shape**](/javascript/api/excel/excel.shape#onactivated)、[**Worksheet**](/javascript/api/excel/excel.worksheet#onactivated)、[**WorksheetCollection**](/javascript/api/excel/excel.worksheetcollection#onactivated) |
+| `onActivated` | 激活对象时发生。 | [**Chart**](/javascript/api/excel/excel.chart#onActivated)、[**ChartCollection**](/javascript/api/excel/excel.chartcollection#onActivated)、[**Shape**](/javascript/api/excel/excel.shape#onActivated)、[**Worksheet**](/javascript/api/excel/excel.worksheet#onActivated)、[**WorksheetCollection**](/javascript/api/excel/excel.worksheetcollection#onActivated) |
 | `onActivated` | 在激活工作簿时发生。 | [**Workbook**](/javascript/api/excel/excel.workbook#onActivated) |
-| `onAdded` | 当向集合中添加对象时发生。 | [](/javascript/api/excel/excel.chartcollection#onadded)ChartCollection、CommentCollection、TableCollection、WorksheetCollection [](/javascript/api/excel/excel.commentcollection#onadded) [](/javascript/api/excel/excel.tablecollection#onadded) [](/javascript/api/excel/excel.worksheetcollection#onadded) |
-| `onAutoSaveSettingChanged` | 在工作簿上更改 `autoSave` 设置时发生。 | [**Workbook**](/javascript/api/excel/excel.workbook#onautosavesettingchanged) |
-| `onCalculated` | 工作表完成计算（或集合的所有工作表都已完成）时发生。 | [**Worksheet**](/javascript/api/excel/excel.worksheet#oncalculated)、[**WorksheetCollection**](/javascript/api/excel/excel.worksheetcollection#oncalculated) |
-| `onChanged` | 在单个单元格或批注的数据发生更改时发生。 | [](/javascript/api/excel/excel.worksheet#onchanged)CommentCollection、Table、TableCollection、Worksheet、WorksheetCollection [](/javascript/api/excel/excel.commentcollection#onchanged) [](/javascript/api/excel/excel.table#onchanged) [](/javascript/api/excel/excel.tablecollection#onchanged) [](/javascript/api/excel/excel.worksheetcollection#onchanged) |
-| `onColumnSorted` | 在已对一个或多个列进行排序时发生。 这是从左到右排序操作的结果。 | [**Worksheet**](/javascript/api/excel/excel.worksheet#oncolumnsorted)、[**WorksheetCollection**](/javascript/api/excel/excel.worksheetcollection#oncolumnsorted) |
-| `onDataChanged` | 当绑定内的数据或格式变化时发生。 | [**Binding**](/javascript/api/excel/excel.binding#ondatachanged) |
-| `onDeactivated` | 停用对象时发生。 | [**Chart**](/javascript/api/excel/excel.chart#ondeactivated)、[**ChartCollection**](/javascript/api/excel/excel.chartcollection#ondeactivated)、[**Shape**](/javascript/api/excel/excel.shape#ondeactivated)、[**Worksheet**](/javascript/api/excel/excel.worksheet#ondeactivated)、[**WorksheetCollection**](/javascript/api/excel/excel.worksheetcollection#ondeactivated) |
-| `onDeleted` | 当从集合中删除对象时发生。 | [](/javascript/api/excel/excel.chartcollection#ondeleted)ChartCollection、CommentCollection、TableCollection、WorksheetCollection [](/javascript/api/excel/excel.commentcollection#ondeleted) [](/javascript/api/excel/excel.tablecollection#ondeleted) [](/javascript/api/excel/excel.worksheetcollection#ondeleted) |
-| `onFormatChanged` | 在工作表上的格式变化时发生。 | [**Worksheet**](/javascript/api/excel/excel.worksheet#onformatchanged)、[**WorksheetCollection**](/javascript/api/excel/excel.worksheetcollection#onformatchanged) |
+| `onAdded` | 当向集合中添加对象时发生。 | [](/javascript/api/excel/excel.chartcollection#onAdded)ChartCollection、CommentCollection、TableCollection、WorksheetCollection [](/javascript/api/excel/excel.commentcollection#onAdded) [](/javascript/api/excel/excel.tablecollection#onAdded) [](/javascript/api/excel/excel.worksheetcollection#onAdded) |
+| `onAutoSaveSettingChanged` | 在工作簿上更改 `autoSave` 设置时发生。 | [**Workbook**](/javascript/api/excel/excel.workbook#onAutoSaveSettingChanged) |
+| `onCalculated` | 工作表完成计算（或集合的所有工作表都已完成）时发生。 | [**Worksheet**](/javascript/api/excel/excel.worksheet#onCalculated)、[**WorksheetCollection**](/javascript/api/excel/excel.worksheetcollection#onCalculated) |
+| `onChanged` | 在单个单元格或批注的数据发生更改时发生。 | [](/javascript/api/excel/excel.worksheet#onChanged)CommentCollection、Table、TableCollection、Worksheet、WorksheetCollection [](/javascript/api/excel/excel.commentcollection#onChanged) [](/javascript/api/excel/excel.table#onChanged) [](/javascript/api/excel/excel.tablecollection#onChanged) [](/javascript/api/excel/excel.worksheetcollection#onChanged) |
+| `onColumnSorted` | 在已对一个或多个列进行排序时发生。 这是从左到右排序操作的结果。 | [**Worksheet**](/javascript/api/excel/excel.worksheet#onColumnSorted)、[**WorksheetCollection**](/javascript/api/excel/excel.worksheetcollection#onColumnSorted) |
+| `onDataChanged` | 当绑定内的数据或格式变化时发生。 | [**Binding**](/javascript/api/excel/excel.binding#onDataChanged) |
+| `onDeactivated` | 停用对象时发生。 | [**Chart**](/javascript/api/excel/excel.chart#onDeactivated)、[**ChartCollection**](/javascript/api/excel/excel.chartcollection#onDeactivated)、[**Shape**](/javascript/api/excel/excel.shape#onDeactivated)、[**Worksheet**](/javascript/api/excel/excel.worksheet#onDeactivated)、[**WorksheetCollection**](/javascript/api/excel/excel.worksheetcollection#onDeactivated) |
+| `onDeleted` | 当从集合中删除对象时发生。 | [](/javascript/api/excel/excel.chartcollection#onDeleted)ChartCollection、CommentCollection、TableCollection、WorksheetCollection [](/javascript/api/excel/excel.commentcollection#onDeleted) [](/javascript/api/excel/excel.tablecollection#onDeleted) [](/javascript/api/excel/excel.worksheetcollection#onDeleted) |
+| `onFormatChanged` | 在工作表上的格式变化时发生。 | [**Worksheet**](/javascript/api/excel/excel.worksheet#onFormatChanged)、[**WorksheetCollection**](/javascript/api/excel/excel.worksheetcollection#onFormatChanged) |
 | `onFormulaChanged` | 更改公式时发生。 | [**Worksheet**](/javascript/api/excel/excel.worksheet#onFormulaChanged)、[**WorksheetCollection**](/javascript/api/excel/excel.worksheetcollection#onFormulaChanged) |
-| `onRowSorted` | 在已对一个或多个行进行排序时发生。 这是从上到下排序操作的结果。 | [**Worksheet**](/javascript/api/excel/excel.worksheet#onrowsorted)、[**WorksheetCollection**](/javascript/api/excel/excel.worksheetcollection#onrowsorted) |
-| `onSelectionChanged` | 当活动单元格或选定范围更改时发生。 | [](/javascript/api/excel/excel.binding#onselectionchanged) [](/javascript/api/excel/excel.table#onselectionchanged)Binding、Table、Workbook、Worksheet、WorksheetCollection [](/javascript/api/excel/excel.workbook#onselectionchanged) [](/javascript/api/excel/excel.worksheet#onselectionchanged) [](/javascript/api/excel/excel.worksheetcollection#onselectionchanged) |
-| `onRowHiddenChanged` | 在特定工作表上的行隐藏状态更改时发生。 | [**Worksheet**](/javascript/api/excel/excel.worksheet#onrowhiddenchanged)、[**WorksheetCollection**](/javascript/api/excel/excel.worksheetcollection#onrowhiddenchanged) |
-| `onSettingsChanged` | 当文档中的设置变化时发生。 | [**SettingCollection**](/javascript/api/excel/excel.settingcollection#onsettingschanged) |
-| `onSingleClicked` | 在工作表中进行左键单击/点击操作时发生。 | [**Worksheet**](/javascript/api/excel/excel.worksheet#onsingleclicked)、[**WorksheetCollection**](/javascript/api/excel/excel.worksheetcollection#onsingleclicked) |
+| `onRowSorted` | 在已对一个或多个行进行排序时发生。 这是从上到下排序操作的结果。 | [**Worksheet**](/javascript/api/excel/excel.worksheet#onRowSorted)、[**WorksheetCollection**](/javascript/api/excel/excel.worksheetcollection#onRowSorted) |
+| `onSelectionChanged` | 当活动单元格或选定范围更改时发生。 | [](/javascript/api/excel/excel.binding#onSelectionChanged) [](/javascript/api/excel/excel.table#onSelectionChanged)Binding、Table、Workbook、Worksheet、WorksheetCollection [](/javascript/api/excel/excel.workbook#onSelectionChanged) [](/javascript/api/excel/excel.worksheet#onSelectionChanged) [](/javascript/api/excel/excel.worksheetcollection#onSelectionChanged) |
+| `onRowHiddenChanged` | 在特定工作表上的行隐藏状态更改时发生。 | [**Worksheet**](/javascript/api/excel/excel.worksheet#onRowHiddenChanged)、[**WorksheetCollection**](/javascript/api/excel/excel.worksheetcollection#onRowHiddenChanged) |
+| `onSettingsChanged` | 当文档中的设置变化时发生。 | [**SettingCollection**](/javascript/api/excel/excel.settingcollection#onSettingsChanged) |
+| `onSingleClicked` | 在工作表中进行左键单击/点击操作时发生。 | [**Worksheet**](/javascript/api/excel/excel.worksheet#onSingleClicked)、[**WorksheetCollection**](/javascript/api/excel/excel.worksheetcollection#onSingleClicked) |
 
 ### <a name="events-in-preview"></a>预览版中的事件
 
@@ -45,7 +45,7 @@ ms.locfileid: "53290766"
 
 | 事件 | 说明 | 支持的对象 |
 |:---------------|:-------------|:-----------|
-| `onFiltered` | 当将筛选器应用于对象时发生。 | [**Table**](/javascript/api/excel/excel.table#onfiltered)、[**TableCollection**](/javascript/api/excel/excel.tablecollection#onfiltered)、[**Worksheet**](/javascript/api/excel/excel.worksheet#onfiltered)、[**WorksheetCollection**](/javascript/api/excel/excel.worksheetcollection#onfiltered) |
+| `onFiltered` | 当将筛选器应用于对象时发生。 | [**Table**](/javascript/api/excel/excel.table#onFiltered)、[**TableCollection**](/javascript/api/excel/excel.tablecollection#onFiltered)、[**Worksheet**](/javascript/api/excel/excel.worksheet#onFiltered)、[**WorksheetCollection**](/javascript/api/excel/excel.worksheetcollection#onFiltered) |
 
 ### <a name="event-triggers"></a>事件触发器
 

@@ -3,12 +3,12 @@ title: Outlook 外接程序 API 要求集 1.3
 description: 作为邮箱 API 1.3 Outlook外接程序和 Office JavaScript API 引入的功能和 API。
 ms.date: 05/17/2021
 localization_priority: Normal
-ms.openlocfilehash: 03d1a3d74dfad9aa2db0a39f3318d41ef5ab7af6
-ms.sourcegitcommit: 0d9fcdc2aeb160ff475fbe817425279267c7ff31
+ms.openlocfilehash: 85924d181ee494a8caa5e18a5bcf53c3f116ee3e
+ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/21/2021
-ms.locfileid: "52591035"
+ms.lasthandoff: 07/30/2021
+ms.locfileid: "53671896"
 ---
 # <a name="outlook-add-in-api-requirement-set-13"></a>Outlook 外接程序 API 要求集 1.3
 
@@ -29,8 +29,8 @@ Outlook JavaScript API 的 Office 外接程序 API 子集包括可在 Outlook �
 
 ### <a name="change-log"></a>更改日志
 
-- 添加了 [Body.getAsync](/javascript/api/outlook/office.body?view=outlook-js-1.3&preserve-view=true#getasync-coerciontype--options--callback-)：使用指定格式返回当前正文。
-- 添加了 [Body.setAsync](/javascript/api/outlook/office.body?view=outlook-js-1.3&preserve-view=true#setasync-data--options--callback-)：将整个正文替换为指定文本。
+- 添加了 [Body.getAsync](/javascript/api/outlook/office.body?view=outlook-js-1.3&preserve-view=true#getAsync_coercionType__options__callback_)：使用指定格式返回当前正文。
+- 添加了 [Body.setAsync](/javascript/api/outlook/office.body?view=outlook-js-1.3&preserve-view=true#setAsync_data__options__callback_)：将整个正文替换为指定文本。
 - 添加了 [Event](/javascript/api/office/office.addincommands.event) 对象：作为参数传递到 Outlook 外接程序中的无用户界面命令函数。用来表示处理已完成。
 - 添加了 [Office.context.mailbox.item.close](office.context.mailbox.item.md#methods)：关闭正在撰写的当前项。
 - 添加了 [Office.context.mailbox.item.saveAsync](office.context.mailbox.item.md#methods)：异步保存项目。

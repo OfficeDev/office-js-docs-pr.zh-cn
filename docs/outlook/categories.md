@@ -1,32 +1,32 @@
 ---
 title: 获取和设置类别
-description: 如何管理邮箱和项目上的类别
+description: 如何管理邮箱和项目的类别
 ms.date: 01/14/2020
 localization_priority: Normal
-ms.openlocfilehash: d4589571de47218741308c01caec0166d72919d8
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: f9f46d689166983083b33fb92da78469470e4d7d
+ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44608976"
+ms.lasthandoff: 07/30/2021
+ms.locfileid: "53671840"
 ---
 # <a name="get-and-set-categories"></a>获取和设置类别
 
-在 Outlook 中，用户可以将类别应用于邮件和约会，作为组织其邮箱数据的手段。 用户定义其邮箱的颜色编码类别的主列表，然后可以将这些类别中的一个或多个类别应用于任何邮件或约会项目。 主列表中的每个[类别](/javascript/api/outlook/office.categorydetails)都由用户指定的名称和[颜色](/javascript/api/outlook/office.mailboxenums.categorycolor)表示。 您可以使用 Office JavaScript API 管理邮箱上的类别主机列表和应用于项目的类别。
+在Outlook中，用户可以将类别应用于邮件和约会，以用作组织其邮箱数据的方式。 用户定义其邮箱的颜色编码类别主列表，然后可以将这些类别的一个或多个应用于任何邮件或约会项目。 [主](/javascript/api/outlook/office.categorydetails)列表中的每个类别都由用户[指定的](/javascript/api/outlook/office.mailboxenums.categorycolor)名称和颜色表示。 可以使用 JavaScript API Office管理邮箱上的类别主列表以及应用于项目的类别。
 
 > [!NOTE]
-> 对此功能的支持是在要求集1.8 中引入的。 请查看支持此要求集的[客户端和平台](../reference/requirement-sets/outlook-api-requirement-sets.md#requirement-sets-supported-by-exchange-servers-and-outlook-clients)。
+> 要求集 1.8 中引入了对此功能的支持。 请查看支持此要求集的[客户端和平台](../reference/requirement-sets/outlook-api-requirement-sets.md#requirement-sets-supported-by-exchange-servers-and-outlook-clients)。
 
 ## <a name="manage-categories-in-the-master-list"></a>管理主列表中的类别
 
-只有邮箱上的主列表中的类别可供您应用到邮件或约会。 您可以使用 API 添加、获取和删除主类别。
+只有邮箱上主列表中的类别可以应用于邮件或约会。 可以使用 API 添加、获取和删除主类别。
 
 > [!IMPORTANT]
-> 若要将外接程序管理类别主机列表，您必须将 `Permissions` 清单中的节点设置为 `ReadWriteMailbox` 。
+> 若要使加载项管理类别主列表，必须将清单中的节点设置为 `Permissions` `ReadWriteMailbox` 。
 
-### <a name="add-master-categories"></a>添加母版类别
+### <a name="add-master-categories"></a>添加主类别
 
-下面的示例展示了如何添加名为 "Urgent！" 的类别。 通过在[masterCategories](/javascript/api/outlook/office.mailbox#mastercategories)上调用[addAsync](/javascript/api/outlook/office.mastercategories#addasync-categories--options--callback-)来指向主列表。
+以下示例演示如何添加名为"Urgent！"的类别。 对主列表调用[mailbox.masterCategories](/javascript/api/outlook/office.mailbox#masterCategories)上的[addAsync。](/javascript/api/outlook/office.mastercategories#addAsync_categories__options__callback_)
 
 ```js
 var masterCategoriesToAdd = [
@@ -47,7 +47,7 @@ Office.context.mailbox.masterCategories.addAsync(masterCategoriesToAdd, function
 
 ### <a name="get-master-categories"></a>获取主类别
 
-下面的示例演示如何通过在[masterCategories](/javascript/api/outlook/office.mailbox#mastercategories)上调用[getAsync](/javascript/api/outlook/office.mastercategories#getasync-options--callback-)来获取类别的列表。
+下面的示例演示如何通过调用[mailbox.masterCategories](/javascript/api/outlook/office.mailbox#masterCategories)上的[getAsync](/javascript/api/outlook/office.mastercategories#getAsync_options__callback_)获取类别列表。
 
 ```js
 Office.context.mailbox.masterCategories.getAsync(function (asyncResult) {
@@ -63,9 +63,9 @@ Office.context.mailbox.masterCategories.getAsync(function (asyncResult) {
 });
 ```
 
-### <a name="remove-master-categories"></a>删除母版类别
+### <a name="remove-master-categories"></a>删除主类别
 
-下面的示例展示了如何删除名为 "Urgent！" 的类别。 通过在[masterCategories](/javascript/api/outlook/office.mailbox#mastercategories)上调用[removeAsync](/javascript/api/outlook/office.mastercategories#removeasync-categories--options--callback-)的主列表。
+以下示例演示如何删除名为"Urgent！"的类别。 通过调用[mailbox.masterCategories](/javascript/api/outlook/office.mailbox#masterCategories)上的[removeAsync](/javascript/api/outlook/office.mastercategories#removeAsync_categories__options__callback_)从主列表。
 
 ```js
 var masterCategoriesToRemove = ["Urgent!"];
@@ -81,16 +81,16 @@ Office.context.mailbox.masterCategories.removeAsync(masterCategoriesToRemove, fu
 
 ## <a name="manage-categories-on-a-message-or-appointment"></a>管理邮件或约会上的类别
 
-您可以使用 API 添加、获取和删除邮件或约会项目的类别。
+可以使用 API 添加、获取和删除邮件或约会项目的类别。
 
 > [!IMPORTANT]
-> 只有邮箱上的主列表中的类别可供您应用到邮件或约会。 有关详细信息，请参阅上文[中的管理主列表中的类别](#manage-categories-in-the-master-list)一节。
+> 只有邮箱上主列表中的类别可以应用于邮件或约会。 有关详细信息，请参阅上 [一节管理主列表中的](#manage-categories-in-the-master-list) 类别。
 >
-> 在 web 上的 Outlook 中，不能使用 API 在阅读模式下管理邮件的类别。
+> 在Outlook 网页版中，你无法以阅读模式使用 API 管理邮件的类别。
 
-### <a name="add-categories-to-an-item"></a>将类别添加到项目
+### <a name="add-categories-to-an-item"></a>向项目添加类别
 
-下面的示例展示了如何应用名为 "Urgent！" 的类别。 通过调用[addAsync](/javascript/api/outlook/office.categories#addasync-categories--options--callback-)的当前项 `item.categories` 。
+以下示例演示如何应用名为"Urgent！"的类别。 调用 上的 [addAsync，将](/javascript/api/outlook/office.categories#addAsync_categories__options__callback_) 当前项 `item.categories` 添加到 。
 
 ```js
 var categoriesToAdd = ["Urgent!"];
@@ -106,7 +106,7 @@ Office.context.mailbox.item.categories.addAsync(categoriesToAdd, function (async
 
 ### <a name="get-an-items-categories"></a>获取项目的类别
 
-下面的示例演示如何通过在上调用[getAsync](/javascript/api/outlook/office.categories#getasync-options--callback-)来获取应用于当前项的类别 `item.categories` 。
+以下示例演示如何通过调用 上的 [getAsync](/javascript/api/outlook/office.categories#getAsync_options__callback_) 获取应用于当前项目的类别 `item.categories` 。
 
 ```js
 Office.context.mailbox.item.categories.getAsync(function (asyncResult) {
@@ -124,7 +124,7 @@ Office.context.mailbox.item.categories.getAsync(function (asyncResult) {
 
 ### <a name="remove-categories-from-an-item"></a>从项目中删除类别
 
-下面的示例展示了如何删除名为 "Urgent！" 的类别。 通过调用[removeAsync](/javascript/api/outlook/office.categories#removeasync-categories--options--callback-)的当前项目 `item.categories` 。
+以下示例演示如何删除名为"Urgent！"的类别。 通过调用 上的 [removeAsync](/javascript/api/outlook/office.categories#removeAsync_categories__options__callback_) 从当前项 `item.categories` 。
 
 ```js
 var categoriesToRemove = ["Urgent!"];
@@ -140,5 +140,5 @@ Office.context.mailbox.item.categories.removeAsync(categoriesToRemove, function 
 
 ## <a name="see-also"></a>另请参阅
 
-- [Outlook 权限](understanding-outlook-add-in-permissions.md)
-- [清单中的权限元素](../reference/manifest/permissions.md)
+- [Outlook权限](understanding-outlook-add-in-permissions.md)
+- [清单中的 Permissions 元素](../reference/manifest/permissions.md)

@@ -3,12 +3,12 @@ title: Outlook 加载项的 Onsend 功能
 description: 提供了一种处理项目或阻止用户进行特定操作的方法，并允许加载项在发送时设置某些属性。
 ms.date: 06/16/2021
 localization_priority: Normal
-ms.openlocfilehash: 80047f4c8056bafa62d467f1e69dd334d168486a
-ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
+ms.openlocfilehash: fa39a934c0678f2ac3f59c08b488486dd8396c6c
+ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "53348473"
+ms.lasthandoff: 07/30/2021
+ms.locfileid: "53671826"
 ---
 # <a name="on-send-feature-for-outlook-add-ins"></a>Outlook 加载项的 Onsend 功能
 
@@ -25,7 +25,7 @@ on-send 功能是由事件类型 `ItemSend` 触发的，无 UI。
 
 下表显示了 Onss ons ons 功能支持的客户端-服务器组合，包括所需的最低累积更新（如果适用）。 不支持排除的组合。
 
-| Client | Exchange Online | Exchange 2016 本地部署<br> (累积更新 6 或更高版本)  | Exchange 2019 本地部署<br> (累积更新 1 或更高版本)  |
+| 客户端 | Exchange Online | Exchange 2016 本地部署<br> (累积更新 6 或更高版本)  | Exchange 2019 本地部署<br> (累积更新 1 或更高版本)  |
 |---|:---:|:---:|:---:|
 |Windows：<br>版本 1910 (内部版本 12130.20272) 或更高版本|是|是|是|
 |Mac：<br>内部版本 16.47 或更高版本|是|是|是|
@@ -71,7 +71,7 @@ on-send 功能是由事件类型 `ItemSend` 触发的，无 UI。
 
 Onsend 功能目前具有以下限制。
 
-- **Append-on-send** 功能 &ndash; 如果调用 [body。AppendOnSendAsync](/javascript/api/outlook/office.body?view=outlook-js-1.9&preserve-view=true#appendonsendasync-data--options--callback-) 在 Onsend 处理程序中返回错误。
+- **Append-on-send** 功能 &ndash; 如果调用 [body。AppendOnSendAsync](/javascript/api/outlook/office.body?view=outlook-js-1.9&preserve-view=true#appendOnSendAsync_data__options__callback_) 在 Onsend 处理程序中返回错误。
 - **AppSource** &ndash; 无法在 [AppSource](https://appsource.microsoft.com) 中发布使用 Onsend 功能的 Outlook 加载项，因为它们将无法通过 AppSource 验证。 使用 Onsend 功能的加载项应由管理员部署。
 - **清单**&ndash; - 每个加载项仅支持一个 `ItemSend` 事件。 如果清单中有两个或多个 `ItemSend` 事件，则该清单将无法通过验证。
 - **性能** &ndash; 多次往返到托管加载项的 Web 服务器可能会影响加载项的性能。创建需要多个基于邮件或会议操作的加载项时，请考虑性能影响。
@@ -387,10 +387,10 @@ Ons ons ons an add-ins are processing an item， the user can edit the item by a
 
 在 On-send 处理程序中：
 
-1. 调用 [displayDialogAsync](/javascript/api/office/office.ui?view=outlook-js-preview&preserve-view=true#displaydialogasync-startaddress--options--callback-) 打开对话框，以便禁用鼠标单击和击键。
+1. 调用 [displayDialogAsync](/javascript/api/office/office.ui?view=outlook-js-preview&preserve-view=true#displayDialogAsync_startAddress__options__callback_) 打开对话框，以便禁用鼠标单击和击键。
 
     > [!IMPORTANT]
-    > 若要在经典 Outlook 网页版中获取此行为，应在调用的 参数中将[displayInIframe](/javascript/api/office/office.dialogoptions?view=outlook-js-preview&preserve-view=true#displayiniframe) `true` `options` `displayDialogAsync` 属性设置为 。
+    > 若要在经典 Outlook 网页版中获取此行为，应在调用的 参数中将[displayInIframe](/javascript/api/office/office.dialogoptions?view=outlook-js-preview&preserve-view=true#displayInIframe) `true` `options` `displayDialogAsync` 属性设置为 。
 
 1. 实现对项目的处理。
 1. 关闭该对话框。 此外，请处理用户关闭对话框时发生的情况。
@@ -487,7 +487,7 @@ function validateBody(event) {
 `validateBody` 函数以指定格式 (HTML) 获取当前正文，并在回调方法中传递代码想要访问的 `ItemSend` 事件对象。 除 `getAsync` 方法之外，`Body` 对象还提供了 `setAsync` 方法，可用于将正文替换为指定的文本。
 
 > [!NOTE]
-> 有关详细信息，请参阅 [Event 对象](/javascript/api/office/office.addincommands.event)和 [Body.getAsync](/javascript/api/outlook/office.Body#getasync-coerciontype--options--callback-)。
+> 有关详细信息，请参阅 [Event 对象](/javascript/api/office/office.addincommands.event)和 [Body.getAsync](/javascript/api/outlook/office.body#getAsync_coercionType__options__callback_)。
   
 
 ### <a name="notificationmessages-object-and-eventcompleted-method"></a>`NotificationMessages` 对象和 `event.completed` 方法

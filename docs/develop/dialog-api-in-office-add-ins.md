@@ -3,12 +3,12 @@ title: 在 Office 加载项中使用 Office 对话框 API
 description: 了解在加载项中Office的基础知识。
 ms.date: 07/19/2021
 localization_priority: Normal
-ms.openlocfilehash: a8f3b6425dceaccbb50a56bfb7e05aafe061967d
-ms.sourcegitcommit: f46e4aeb9c31f674380dd804fd72957998b3a532
+ms.openlocfilehash: 46fa02281c9e13241496c617cad9738a71102370
+ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2021
-ms.locfileid: "53535974"
+ms.lasthandoff: 07/30/2021
+ms.locfileid: "53671350"
 ---
 # <a name="use-the-office-dialog-api-in-office-add-ins"></a>在 Office 加载项中使用 Office 对话框 API
 
@@ -89,7 +89,7 @@ Office.context.ui.displayDialogAsync('https://myDomain/myDialog.html', {height: 
 > - 为清楚起见，在此部分中，我们将消息称为以主机页为目标，但严格来说，消息将进入任务窗格 (中的 *JavaScript* 运行时或托管函数文件) 的运行时。 [](../reference/manifest/functionfile.md) 这种区别仅在跨域邮件的情况下十分明显。 有关详细信息，请参阅 [跨域消息传递到主机运行时](#cross-domain-messaging-to-the-host-runtime)。
 > - 对话框无法与任务窗格中的主机页通信，Office JavaScript API 库加载到页面中。  (与使用 JavaScript API Office的任何页面一样，页面的脚本必须将方法分配给 `Office.initialize` 属性或调用 `Office.onReady` 。 有关详细信息，请参阅[Initialize your Office Add-in](initialize-add-in.md).) 
 
-对话框中的代码使用 [messageParent](/javascript/api/office/office.ui#messageparent-message-) 函数向主机页发送字符串消息。 该字符串可以是单词、句子、XML blob、字符串化 JSON 或其他任何可以序列化为字符串或转换为字符串的字符串。 示例如下。
+对话框中的代码使用 [messageParent](/javascript/api/office/office.ui#messageParent_message__messageOptions_) 函数向主机页发送字符串消息。 该字符串可以是单词、句子、XML blob、字符串化 JSON 或其他任何可以序列化为字符串或转换为字符串的字符串。 示例如下。
 
 ```js
 if (loginSuccess) {
@@ -250,11 +250,11 @@ Office.context.ui.messageParent("Some message", { targetOrigin: "*" });
 
 ## <a name="pass-information-to-the-dialog-box"></a>向对话框传递信息
 
-加载项可以使用[Dialog.messageChild](/javascript/api/office/office.dialog#messagechild-message-)[](dialog-api-in-office-add-ins.md#open-a-dialog-box-from-a-host-page)将消息从主机页面发送到对话框。
+加载项可以使用[Dialog.messageChild](/javascript/api/office/office.dialog#messageChild_message__messageOptions_)[](dialog-api-in-office-add-ins.md#open-a-dialog-box-from-a-host-page)将消息从主机页面发送到对话框。
 
 ### <a name="use-messagechild-from-the-host-page"></a>从 `messageChild()` 主机页使用
 
-调用对话框 API Office对话框时，将返回[Dialog](/javascript/api/office/office.dialog)对象。 它应分配给比 [displayDialogAsync](/javascript/api/office/office.ui#displaydialogasync-startaddress--callback-) 方法范围更大的变量，因为对象将被其他方法引用。 示例如下。
+调用对话框 API Office对话框时，将返回[Dialog](/javascript/api/office/office.dialog)对象。 它应分配给比 [displayDialogAsync](/javascript/api/office/office.ui#displayDialogAsync_startAddress__callback_) 方法范围更大的变量，因为对象将被其他方法引用。 示例如下。
 
 ```javascript
 var dialog;
@@ -273,7 +273,7 @@ function processMessage(arg) {
 }
 ```
 
-此 `Dialog` 对象具有 [一个 messageChild](/javascript/api/office/office.dialog#messagechild-message-) 方法，该方法将任何字符串（包括字符串化数据）发送到对话框。 这将在 `DialogParentMessageReceived` 对话框中引发事件。 代码应处理此事件，如下一节所示。
+此 `Dialog` 对象具有 [一个 messageChild](/javascript/api/office/office.dialog#messageChild_message__messageOptions_) 方法，该方法将任何字符串（包括字符串化数据）发送到对话框。 这将在 `DialogParentMessageReceived` 对话框中引发事件。 代码应处理此事件，如下一节所示。
 
 请考虑以下方案：对话框的 UI 与当前活动的工作表相关，并且该工作表相对于其他工作表的位置。 在下面的示例中， `sheetPropertiesChanged` 将Excel工作表属性发送到对话框。 在这种情况下，当前工作表名为"My Sheet"，它是工作簿中的第二个工作表。 数据封装在对象中并字符串化，以便可以传递给 `messageChild` 。
 
@@ -290,7 +290,7 @@ function sheetPropertiesChanged() {
 
 ### <a name="handle-dialogparentmessagereceived-in-the-dialog-box"></a>处理对话框中的 DialogParentMessageReceived
 
-在对话框的 JavaScript 中，使用 `DialogParentMessageReceived` [UI.addHandlerAsync](/javascript/api/office/office.ui#addhandlerasync-eventtype--handler--options--callback-) 方法为事件注册处理程序。 这通常在[Office.onReady 或 Office.initialize](initialize-add-in.md)方法中完成，如下所示。  (下面是一个更可靠的示例。) 
+在对话框的 JavaScript 中，使用 `DialogParentMessageReceived` [UI.addHandlerAsync](/javascript/api/office/office.ui#addHandlerAsync_eventType__handler__options__callback_) 方法为事件注册处理程序。 这通常在[Office.onReady 或 Office.initialize](initialize-add-in.md)方法中完成，如下所示。  (下面是一个更可靠的示例。) 
 
 ```javascript
 Office.onReady()

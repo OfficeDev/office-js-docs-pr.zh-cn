@@ -3,12 +3,12 @@ title: 向特定 Excel 范围添加数据验证
 description: 了解 Excel JavaScript API 如何允许外接程序向工作簿中的表、列、行和其他区域添加自动数据验证。
 ms.date: 03/19/2019
 localization_priority: Normal
-ms.openlocfilehash: e1f5729e6e85ff8af92968c2ad65c19e655106e2
-ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
+ms.openlocfilehash: a6a92aeae309912eff2ecebb2897a6a64a3e9966
+ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "53349523"
+ms.lasthandoff: 07/30/2021
+ms.locfileid: "53671159"
 ---
 # <a name="add-data-validation-to-excel-ranges"></a>向特定 Excel 范围添加数据验证
 
@@ -210,7 +210,7 @@ Excel.run(function (context) {
 
 ## <a name="remove-data-validation-from-a-range"></a>从某个范围删除数据验证
 
-若要从某个范围删除数据验证，请调用 [Range.dataValidation.clear()](/javascript/api/excel/excel.datavalidation#clear--) 方法。
+若要从某个范围删除数据验证，请调用 [Range.dataValidation.clear()](/javascript/api/excel/excel.datavalidation#clear__) 方法。
 
 ```js
 myrange.dataValidation.clear()

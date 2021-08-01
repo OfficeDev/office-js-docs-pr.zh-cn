@@ -3,12 +3,12 @@ title: 从 Outlook 项中提取实体字符串
 description: 了解如何从 Outlook 加载项中的某个 Outlook 项中提取实体字符串。
 ms.date: 10/31/2019
 localization_priority: Normal
-ms.openlocfilehash: 987ba7626acb95bd5090e2f2350f71ecc8701e59
-ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
+ms.openlocfilehash: d266795e3794cfa293d073dafc1ca714644faa5b
+ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "53348970"
+ms.lasthandoff: 07/30/2021
+ms.locfileid: "53671110"
 ---
 # <a name="extract-entity-strings-from-an-outlook-item"></a>从 Outlook 项中提取实体字符串
 
@@ -205,7 +205,7 @@ div#meeting_suggestions
 
 ## <a name="extracting-entities-upon-initialization"></a>初始化时提取实体
 
-[Office.initialize](/javascript/api/office#office-initialize-reason-) 事件发生时，实体外接程序调用当前项目的 [getEntities](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods) 方法。 `getEntities`方法返回全局变量 `_MyEntities` 受支持实体的实例数组。 以下为相关的 JavaScript 代码。
+[Office.initialize](/javascript/api/office#Office_initialize_reason_) 事件发生时，实体外接程序调用当前项目的 [getEntities](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods) 方法。 `getEntities`方法返回全局变量 `_MyEntities` 受支持实体的实例数组。 以下为相关的 JavaScript 代码。
 
 
 ```js
@@ -261,17 +261,17 @@ function myGetAddresses()
 当用户单击"**获取** 联系人信息"按钮时，事件处理程序从对象的 contacts 属性获取一组联系人及其信息（ `myGetContacts` 如果已提取任何 [](/javascript/api/outlook/office.entities#contacts) `_MyEntities` 联系人）。 每个提取的联系人在数组中被存储为 [Contact](/javascript/api/outlook/office.contact) 对象。 获取有关每个联系人的更多数据。 请注意，上下文确定Outlook是否可以从项目中提取电子邮件末尾的签名的联系人，或者联系人附近至少必须存在以下部分 &mdash; 信息。
 
 
-- 表示 [Contact.personName](/javascript/api/outlook/office.contact#personname) 属性中联系人名称的字符串。
+- 表示 [Contact.personName](/javascript/api/outlook/office.contact#personName) 属性中联系人名称的字符串。
 
-- 表示 [Contact.businessName](/javascript/api/outlook/office.contact#businessname) 属性中与联系人关联的公司名称的字符串。
+- 表示 [Contact.businessName](/javascript/api/outlook/office.contact#businessName) 属性中与联系人关联的公司名称的字符串。
 
-- [Contact.phoneNumbers](/javascript/api/outlook/office.contact#phonenumbers) 属性中与联系人关联的电话号码数组。每个电话号码都由一个 [PhoneNumber](/javascript/api/outlook/office.phonenumber) 对象表示。
+- [Contact.phoneNumbers](/javascript/api/outlook/office.contact#phoneNumbers) 属性中与联系人关联的电话号码数组。每个电话号码都由一个 [PhoneNumber](/javascript/api/outlook/office.phonenumber) 对象表示。
 
-- 对于电话号码数组中的每个 **PhoneNumber** 成员，表示 [PhoneNumber.phoneString](/javascript/api/outlook/office.phonenumber#phonestring) 属性中电话号码的字符串。
+- 对于电话号码数组中的每个 **PhoneNumber** 成员，表示 [PhoneNumber.phoneString](/javascript/api/outlook/office.phonenumber#phoneString) 属性中电话号码的字符串。
 
 - [Contact.urls](/javascript/api/outlook/office.contact#urls) 属性中与联系人关联的 URL 的数组。每个 URL 都表示为数组成员中的一个字符串。
 
-- [Contact.emailAddresses](/javascript/api/outlook/office.contact#emailaddresses) 属性中与联系人关联的电子邮件地址的数组。每个电子邮件地址都表示为数组成员中的一个字符串。
+- [Contact.emailAddresses](/javascript/api/outlook/office.contact#emailAddresses) 属性中与联系人关联的电子邮件地址的数组。每个电子邮件地址都表示为数组成员中的一个字符串。
 
 - [Contact.addresses](/javascript/api/outlook/office.contact#addresses) 属性中与联系人关联的通信地址的数组。每个通信地址都表示为数组成员中的一个字符串。
 
@@ -346,7 +346,7 @@ function myGetContacts()
 ## <a name="extracting-email-addresses"></a>提取电子邮件地址
 
 
-当用户单击“获取电子邮件地址”按钮时，`myGetEmailAddresses` 事件处理程序从 `_MyEntities` 对象的 [emailAddresses](/javascript/api/outlook/office.entities#emailaddresses) 属性获取一组 SMTP 电子邮件地址（如果已提取任何电子邮件地址的话）。提取的每个电子邮件地址都存储为数组中的字符串。`myGetEmailAddresses` 在 `htmlText` 中构成本地 HTML 字符串，以列出提取的电子邮件地址。下面展示了相关 JavaScript 代码。
+当用户单击“获取电子邮件地址”按钮时，`myGetEmailAddresses` 事件处理程序从 `_MyEntities` 对象的 [emailAddresses](/javascript/api/outlook/office.entities#emailAddresses) 属性获取一组 SMTP 电子邮件地址（如果已提取任何电子邮件地址的话）。提取的每个电子邮件地址都存储为数组中的字符串。`myGetEmailAddresses` 在 `htmlText` 中构成本地 HTML 字符串，以列出提取的电子邮件地址。下面展示了相关 JavaScript 代码。
 
 
 ```js
@@ -369,7 +369,7 @@ function myGetEmailAddresses() {
 ## <a name="extracting-meeting-suggestions"></a>提取会议建议
 
 
-当用户单击“获取会议建议”按钮时，`myGetMeetingSuggestions` 事件处理程序从 `_MyEntities` 对象的 [meetingSuggestions](/javascript/api/outlook/office.entities#meetingsuggestions) 属性获取一组会议建议（如果已提取任何会议建议的话）。
+当用户单击“获取会议建议”按钮时，`myGetMeetingSuggestions` 事件处理程序从 `_MyEntities` 对象的 [meetingSuggestions](/javascript/api/outlook/office.entities#meetingSuggestions) 属性获取一组会议建议（如果已提取任何会议建议的话）。
 
 
  > [!NOTE]
@@ -378,13 +378,13 @@ function myGetEmailAddresses() {
 每个提取的会议建议都存储为数组中的一个 [MeetingSuggestion](/javascript/api/outlook/office.meetingsuggestion) 对象。`myGetMeetingSuggestions` 获取有关每个会议建议的更多数据：
 
 
-- [MeetingSuggestion.meetingString](/javascript/api/outlook/office.meetingsuggestion#meetingstring) 属性中已识别为会议建议的字符串。
+- [MeetingSuggestion.meetingString](/javascript/api/outlook/office.meetingsuggestion#meetingString) 属性中已识别为会议建议的字符串。
 
 - [MeetingSuggestion.attendees](/javascript/api/outlook/office.meetingsuggestion#attendees) 属性中会议参与者的数组。每个参与者都由一个 [EmailUser](/javascript/api/outlook/office.emailuser) 对象表示。
 
-- 对于每个参与者，[EmailUser.displayName](/javascript/api/outlook/office.emailuser#displayname) 属性中的名称。
+- 对于每个参与者，[EmailUser.displayName](/javascript/api/outlook/office.emailuser#displayName) 属性中的名称。
 
-- 对于每个参与者，[EmailUser.emailAddress](/javascript/api/outlook/office.emailuser#emailaddress) 属性中的 SMTP 地址。
+- 对于每个参与者，[EmailUser.emailAddress](/javascript/api/outlook/office.emailuser#emailAddress) 属性中的 SMTP 地址。
 
 - [MeetingSuggestion.location](/javascript/api/outlook/office.meetingsuggestion#location) 属性中表示会议建议位置的字符串。
 
@@ -455,14 +455,14 @@ function myGetMeetingSuggestions() {
 ## <a name="extracting-phone-numbers"></a>提取电话号码
 
 
-当用户单击“获取电话号码”按钮时，`myGetPhoneNumbers` 事件处理程序从 `_MyEntities` 对象的 [phoneNumbers](/javascript/api/outlook/office.entities#phonenumbers) 属性获取一组电话号码（如果已提取任何电话号码的话）。提取的每个电话号码都存储为数组中的 [PhoneNumber](/javascript/api/outlook/office.phonenumber) 对象。`myGetPhoneNumbers` 获取每个电话号码的更多数据：
+当用户单击“获取电话号码”按钮时，`myGetPhoneNumbers` 事件处理程序从 `_MyEntities` 对象的 [phoneNumbers](/javascript/api/outlook/office.entities#phoneNumbers) 属性获取一组电话号码（如果已提取任何电话号码的话）。提取的每个电话号码都存储为数组中的 [PhoneNumber](/javascript/api/outlook/office.phonenumber) 对象。`myGetPhoneNumbers` 获取每个电话号码的更多数据：
 
 
 - [PhoneNumber.type](/javascript/api/outlook/office.phonenumber#type) 属性中表示电话号码种类的字符串（例如家庭电话号码）。
 
-- [PhoneNumber.phoneString](/javascript/api/outlook/office.phonenumber#phonestring) 属性中表示实际电话号码的字符串。
+- [PhoneNumber.phoneString](/javascript/api/outlook/office.phonenumber#phoneString) 属性中表示实际电话号码的字符串。
 
-- [PhoneNumber.originalPhoneString](/javascript/api/outlook/office.phonenumber#originalphonestring) 属性中最初识别为电话号码的字符串。
+- [PhoneNumber.originalPhoneString](/javascript/api/outlook/office.phonenumber#originalPhoneString) 属性中最初识别为电话号码的字符串。
 
 `myGetPhoneNumbers` 在 `htmlText` 中形成一个本地 HTML 字符串，以显示每个电话号码的数据。以下是相关的 JavaScript 代码。
 
@@ -506,16 +506,16 @@ function myGetPhoneNumbers()
 ## <a name="extracting-task-suggestions"></a>提取任务建议
 
 
-当用户单击“获取任务建议”按钮时，`myGetTaskSuggestions` 事件处理程序从 `_MyEntities` 对象的 [taskSuggestions](/javascript/api/outlook/office.entities#tasksuggestions) 属性获取一组任务建议（如果已提取任何任务建议的话）。提取每个的任务建议都存储为数组中的 [TaskSuggestion](/javascript/api/outlook/office.tasksuggestion) 对象。`myGetTaskSuggestions` 获取每个任务建议的更多数据：
+当用户单击“获取任务建议”按钮时，`myGetTaskSuggestions` 事件处理程序从 `_MyEntities` 对象的 [taskSuggestions](/javascript/api/outlook/office.entities#taskSuggestions) 属性获取一组任务建议（如果已提取任何任务建议的话）。提取每个的任务建议都存储为数组中的 [TaskSuggestion](/javascript/api/outlook/office.tasksuggestion) 对象。`myGetTaskSuggestions` 获取每个任务建议的更多数据：
 
 
-- [TaskSuggestion.taskString](/javascript/api/outlook/office.tasksuggestion#taskstring) 属性中最初识别为任务建议的字符串。
+- [TaskSuggestion.taskString](/javascript/api/outlook/office.tasksuggestion#taskString) 属性中最初识别为任务建议的字符串。
 
 - [TaskSuggestion.assignees](/javascript/api/outlook/office.tasksuggestion#assignees) 属性中任务受托人的数组。每个受托人都由一个 [EmailUser](/javascript/api/outlook/office.emailuser) 对象表示。
 
-- 对于每个受托人，[EmailUser.displayName](/javascript/api/outlook/office.emailuser#displayname) 属性中的名称。
+- 对于每个受托人，[EmailUser.displayName](/javascript/api/outlook/office.emailuser#displayName) 属性中的名称。
 
-- 对于每个受托人，[EmailUser.emailAddress](/javascript/api/outlook/office.emailuser#emailaddress) 属性中的 SMTP 地址。
+- 对于每个受托人，[EmailUser.emailAddress](/javascript/api/outlook/office.emailuser#emailAddress) 属性中的 SMTP 地址。
 
 `myGetTaskSuggestions` 在 `htmlText` 中形成一个本地 HTML 字符串，以显示每个任务建议的数据。以下为相关的 JavaScript 代码。
 

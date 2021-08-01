@@ -3,12 +3,12 @@ title: 创建字典任务窗格加载项
 description: 了解如何创建字典任务窗格外接程序
 ms.date: 09/26/2019
 localization_priority: Normal
-ms.openlocfilehash: 2d79a40511d28cdf5d11c33435703009b1793dc2
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: e8667e77416caeb041af15141cd47b9cf35e2737
+ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53077223"
+ms.lasthandoff: 07/30/2021
+ms.locfileid: "53671658"
 ---
 # <a name="create-a-dictionary-task-pane-add-in"></a>创建字典任务窗格加载项
 
@@ -531,9 +531,9 @@ a:hover, a:active
 
 - 对象的[initialize](/javascript/api/office)事件，在初始化外接程序上下文时引发，并提供对 Document 对象实例的访问权限，该对象实例表示外接程序与之 `Office` 交互的文档。 [](/javascript/api/office/office.document)
     
-- [对象的 addHandlerAsync](/javascript/api/office/office.document#addhandlerasync-eventtype--handler--options--callback-)方法，在 函数中调用，为文档的 SelectionChanged 事件添加事件处理程序以 `Document` `initialize` 侦听用户选择更改。 [](/javascript/api/office/office.documentselectionchangedeventargs)
+- [对象的 addHandlerAsync](/javascript/api/office/office.document#addHandlerAsync_eventType__handler__options__callback_)方法，在 函数中调用，为文档的 SelectionChanged 事件添加事件处理程序以 `Document` `initialize` 侦听用户选择更改。 [](/javascript/api/office/office.documentselectionchangedeventargs)
     
-- 对象的 [getSelectedDataAsync](/javascript/api/office/office.document#getselecteddataasync-coerciontype--options--callback-) 方法，当引发事件处理程序以获取用户选择的单词或短语时，在 函数中调用该方法，将其强制转换为 `Document` `tryUpdatingSelectedWord()` `SelectionChanged` 纯 `selectedTextCallback` 文本，然后执行异步回调函数。
+- 对象的 [getSelectedDataAsync](/javascript/api/office/office.document#getSelectedDataAsync_coercionType__options__callback_) 方法，当引发事件处理程序以获取用户选择的单词或短语时，在 函数中调用该方法，将其强制转换为 `Document` `tryUpdatingSelectedWord()` `SelectionChanged` 纯 `selectedTextCallback` 文本，然后执行异步回调函数。
     
 - 当作为方法的 callback 参数传递的异步回调函数执行时，它将在回调返回时 `selectTextCallback` 获取所选 `getSelectedDataAsync` 文本的值。 它从回调的 _selectedText_ 参数 (，该参数的类型为 [AsyncResult](/javascript/api/office/office.asyncresult)) 返回对象的 [value](/javascript/api/office/office.asyncresult#status) `AsyncResult` 属性。
     

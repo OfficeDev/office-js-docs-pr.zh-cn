@@ -3,12 +3,12 @@ title: Excel JavaScript API 性能优化
 description: 使用 javaScript API Excel优化加载项性能。
 ms.date: 07/29/2020
 localization_priority: Normal
-ms.openlocfilehash: 5313bb3fe25d165e49cc0508e81d58294db48798
-ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
+ms.openlocfilehash: 0379eecddf54877d863ec057a8193347fa3091f8
+ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "53349383"
+ms.lasthandoff: 07/30/2021
+ms.locfileid: "53671581"
 ---
 # <a name="performance-optimization-using-the-excel-javascript-api"></a>使用 Excel JavaScript API 优化性能
 
@@ -107,7 +107,7 @@ Excel.run(async (ctx) => {
 ```
 
 > [!NOTE]
-> 可以使用 [Table.convertToRange()](/javascript/api/excel/excel.table#converttorange--) 方法将 Table 对象转换为 Range 对象，此做法非常方便。
+> 可以使用 [Table.convertToRange()](/javascript/api/excel/excel.table#convertToRange__) 方法将 Table 对象转换为 Range 对象，此做法非常方便。
 
 ## <a name="see-also"></a>另请参阅
 

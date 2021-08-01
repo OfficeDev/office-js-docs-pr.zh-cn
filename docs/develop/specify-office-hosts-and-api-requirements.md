@@ -3,12 +3,12 @@ title: 指定 Office 主机和 API 要求
 description: 了解如何指定Office的应用程序和 API 要求，使加载项按预期工作。
 ms.date: 05/04/2021
 localization_priority: Normal
-ms.openlocfilehash: dad4a562c523291d7af3c975c89111fab410220c
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: f1382bcdba0c3bb88c1d98075fc4b14eb0ca3b07
+ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53075962"
+ms.lasthandoff: 07/30/2021
+ms.locfileid: "53671180"
 ---
 # <a name="specify-office-applications-and-api-requirements"></a>指定 Office 应用程序和 API 要求
 
@@ -135,7 +135,7 @@ ms.locfileid: "53075962"
 
 ## <a name="use-runtime-checks-in-your-javascript-code"></a>在你的 JavaScript 代码中使用运行时检查
 
-如果外接程序应用程序支持某些要求集，您可能希望在外接程序Office功能。 例如，如果你的加载项在 Word 2016 中运行，则你可能想要在现有的加载项中使用 Word JavaScript API。 若要执行此操作，你可以使用含有要求集名称的 [isSetSupported](/javascript/api/office/office.requirementsetsupport#issetsupported-name--minversion-) 方法。 `isSetSupported`确定运行外接程序Office的应用程序是否支持要求集。 如果要求集受支持，则返回 true 并运行使用该要求集的 API 成员 `isSetSupported` 的其他代码。  如果Office应用程序不支持要求集，则返回 `isSetSupported` **false，** 其他代码将不会运行。 以下代码显示与 `isSetSupported`结合使用的语法。
+如果外接程序应用程序支持某些要求集，您可能希望在外接程序Office功能。 例如，如果你的加载项在 Word 2016 中运行，则你可能想要在现有的加载项中使用 Word JavaScript API。 若要执行此操作，你可以使用含有要求集名称的 [isSetSupported](/javascript/api/office/office.requirementsetsupport#isSetSupported_name__minVersion_) 方法。 `isSetSupported`确定运行外接程序Office的应用程序是否支持要求集。 如果要求集受支持，则返回 true 并运行使用该要求集的 API 成员 `isSetSupported` 的其他代码。  如果Office应用程序不支持要求集，则返回 `isSetSupported` **false，** 其他代码将不会运行。 以下代码显示与 `isSetSupported`结合使用的语法。
 
 ```js
 if (Office.context.requirements.isSetSupported(RequirementSetName, MinimumVersion))

@@ -3,12 +3,12 @@ title: 在演示文稿中PowerPoint幻灯片
 description: 了解如何将幻灯片从一个演示文稿插入另一个演示文稿。
 ms.date: 03/07/2021
 localization_priority: Normal
-ms.openlocfilehash: 9b106e8940e7b0f19678e0467d8e900ffecd9438
-ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
+ms.openlocfilehash: d9c50b87e7ba702a2cffcef5ca94dfb0d39b1af0
+ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "53348781"
+ms.lasthandoff: 07/30/2021
+ms.locfileid: "53671763"
 ---
 # <a name="insert-slides-in-a-powerpoint-presentation"></a>在演示文稿中PowerPoint幻灯片
 
@@ -75,7 +75,7 @@ ms.locfileid: "53348781"
 
 ## <a name="insert-slides-with-insertslidesfrombase64"></a>使用 insertSlidesFromBase64 插入幻灯片
 
-加载项使用[Presentation.insertSlidesFromBase64](/javascript/api/powerpoint/powerpoint.presentation#insertslidesfrombase64-base64file--options-) PowerPoint演示文稿中的幻灯片插入当前演示文稿。 下面是一个简单示例，其中源演示文稿的所有幻灯片都插入到当前演示文稿的开头，并且插入的幻灯片保留源文件的格式。 请注意， `chosenFileBase64` 这是一个全局变量，包含 base64 编码版本的演示文稿PowerPoint文件。
+加载项使用[Presentation.insertSlidesFromBase64](/javascript/api/powerpoint/powerpoint.presentation#insertSlidesFromBase64_base64File__options_) PowerPoint演示文稿中的幻灯片插入当前演示文稿。 下面是一个简单示例，其中源演示文稿的所有幻灯片都插入到当前演示文稿的开头，并且插入的幻灯片保留源文件的格式。 请注意， `chosenFileBase64` 这是一个全局变量，包含 base64 编码版本的演示文稿PowerPoint文件。
 
 ```javascript
 async function insertAllSlides() {

@@ -3,12 +3,12 @@ title: Office 加载项中的异步编程
 description: 了解 javaScript Office如何在加载项Office异步编程。
 ms.date: 09/08/2020
 localization_priority: Normal
-ms.openlocfilehash: ee7bac02cbf1e03754dde53a0d64a94231fdc266
-ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
+ms.openlocfilehash: 1663f15d1b9f4191fc1f0c21f0532b5e23fdade6
+ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "53350069"
+ms.lasthandoff: 07/30/2021
+ms.locfileid: "53671385"
 ---
 # <a name="asynchronous-programming-in-office-add-ins"></a>Office 加载项中的异步编程
 
@@ -95,7 +95,7 @@ function write(message){
 
 例如 `addHandlerAsync` [，Binding](/javascript/api/office/office.binding) (、CustomXmlPart、Document、RoamingSettings[](/javascript/api/office/office.document)和[](/javascript/api/outlook/office.roamingsettings)设置 对象[) ](/javascript/api/office/office.settings)的方法用于向这些对象表示的项添加事件处理程序函数。 [](/javascript/api/office/office.customxmlpart) 可以从传递给任何方法的回调函数访问属性，但由于添加事件处理程序时未访问任何数据或对象，因此，如果尝试访问该属性，则该属性始终返回 `AsyncResult.value` `addHandlerAsync` `value` **undefined。**
 
-另一方面，如果调用 方法，它会将用户在文档中选择的数据返回到 `Document.getSelectedDataAsync` `AsyncResult.value` 回调中的 属性。 或者，如果调用 [Bindings.getAllAsync](/javascript/api/office/office.bindings#getallasync-options--callback-) 方法，它将返回文档中所有 `Binding` 对象的数组。 而且，如果你调用 [Bindings.getByIdAsync](/javascript/api/office/office.bindings#getbyidasync-id--options--callback-) 方法，它将返回单个 `Binding` 对象。
+另一方面，如果调用 方法，它会将用户在文档中选择的数据返回到 `Document.getSelectedDataAsync` `AsyncResult.value` 回调中的 属性。 或者，如果调用 [Bindings.getAllAsync](/javascript/api/office/office.bindings#getAllAsync_options__callback_) 方法，它将返回文档中所有 `Binding` 对象的数组。 而且，如果你调用 [Bindings.getByIdAsync](/javascript/api/office/office.bindings#getByIdAsync_id__options__callback_) 方法，它将返回单个 `Binding` 对象。
 
 有关返回到方法属性的内容的说明，请参阅该方法的参考主题的"回调值 `AsyncResult.value` `Async` "部分。 有关提供方法的所有对象的摘要，请参阅 `Async` [AsyncResult](/javascript/api/office/office.asyncresult) 对象主题底部的表。
 
@@ -119,8 +119,8 @@ JavaScript API Office两种类型的异步编程模式：
 
 以下代码示例内嵌两个异步调用。
 
-- 首先，调用 [Bindings.getByIdAsync](/javascript/api/office/office.bindings#getbyidasync-id--options--callback-) 方法，以访问名为“MyBinding”的文档中的绑定。 返回到 `AsyncResult` 该回调 `result` 的参数的对象提供对属性中指定绑定对象的 `AsyncResult.value` 访问。
-- 然后，使用第一个参数访问的绑定对象 `result` 调用 [Binding.getDataAsync](/javascript/api/office/office.binding#getdataasync-options--callback-) 方法。
+- 首先，调用 [Bindings.getByIdAsync](/javascript/api/office/office.bindings#getByIdAsync_id__options__callback_) 方法，以访问名为“MyBinding”的文档中的绑定。 返回到 `AsyncResult` 该回调 `result` 的参数的对象提供对属性中指定绑定对象的 `AsyncResult.value` 访问。
+- 然后，使用第一个参数访问的绑定对象 `result` 调用 [Binding.getDataAsync](/javascript/api/office/office.binding#getDataAsync_options__callback_) 方法。
 - 最后， `result2` 传递给该方法的回调的参数用于在 `Binding.getDataAsync` 绑定中显示数据。
 
 ```js
@@ -192,7 +192,7 @@ function write(message){
 
 在继续执行之前，承诺编程模式会立即返回表示其预期结果的承诺对象，而不是传递回调函数并等待函数返回。然而，与真正同步编程不同的是，在 Office 外接程序运行时环境完成请求之前，承诺结果的实现在后台实际上是延迟的。提供 _onError_ 处理程序来覆盖请求无法满足的情况。
 
-JavaScript API Office JavaScript API 提供了[Office.select](/javascript/api/office#office-select-expression--callback-)方法，以支持用于处理现有绑定对象的承诺模式。 返回到 方法的承诺对象仅支持可以直接从 Binding 对象访问的四种方法 `Office.select` [](/javascript/api/office/office.binding)：getDataAsync、setDataAsync、addHandlerAsync[](/javascript/api/office/office.binding#setdataasync-data--options--callback-)和[removeHandlerAsync](/javascript/api/office/office.binding#removehandlerasync-eventtype--options--callback-)。 [](/javascript/api/office/office.binding#getdataasync-options--callback-) [](/javascript/api/office/office.binding#addhandlerasync-eventtype--handler--options--callback-)
+JavaScript API Office JavaScript API 提供了[Office.select](/javascript/api/office#Office_select_expression__callback_)方法，以支持用于处理现有绑定对象的承诺模式。 返回到 方法的承诺对象仅支持可以直接从 Binding 对象访问的四种方法 `Office.select` [](/javascript/api/office/office.binding)：getDataAsync、setDataAsync、addHandlerAsync[](/javascript/api/office/office.binding#setDataAsync_data__options__callback_)和[removeHandlerAsync](/javascript/api/office/office.binding#removeHandlerAsync_eventType__options__callback_)。 [](/javascript/api/office/office.binding#getDataAsync_options__callback_) [](/javascript/api/office/office.binding#addHandlerAsync_eventType__handler__options__callback_)
 
 与绑定一起使用的承诺模式采用以下形式：
 
@@ -217,7 +217,7 @@ function write(message){
 
 对象承诺实现后，可以在链式方法调用中重复使用它，就像它是绑定一样 (加载项运行时不会异步重试实现承诺 `Binding`) 。 如果对象承诺无法实现，加载项运行时将在下次调用其异步方法之一时再次尝试访问 `Binding` 绑定对象。
 
-下面的代码示例使用 方法从集合中检索具有 " " 的绑定，然后调用 `select` `id` `cities` `Bindings` [addHandlerAsync](/javascript/api/office/office.binding#addhandlerasync-eventtype--handler--options--callback-) 方法为绑定的 [dataChanged](/javascript/api/office/office.bindingdatachangedeventargs) 事件添加事件处理程序。
+下面的代码示例使用 方法从集合中检索具有 " " 的绑定，然后调用 `select` `id` `cities` `Bindings` [addHandlerAsync](/javascript/api/office/office.binding#addHandlerAsync_eventType__handler__options__callback_) 方法为绑定的 [dataChanged](/javascript/api/office/office.bindingdatachangedeventargs) 事件添加事件处理程序。
 
 ```js
 function addBindingDataChangedEventHandler() {
@@ -244,7 +244,7 @@ function addBindingDataChangedEventHandler() {
 
 ### <a name="passing-optional-parameters-inline"></a>传递可选参数内嵌
 
-例如，用可选参数内嵌调用 [Document.setSelectedDataAsync](/javascript/api/office/office.document#setselecteddataasync-data--options--callback-) 方法的语法类似如下：
+例如，用可选参数内嵌调用 [Document.setSelectedDataAsync](/javascript/api/office/office.document#setSelectedDataAsync_data__options__callback_) 方法的语法类似如下：
 
 ```js
  Office.context.document.setSelectedDataAsync(data, {coercionType: 'coercionType', asyncContext: 'asyncContext'},callback);

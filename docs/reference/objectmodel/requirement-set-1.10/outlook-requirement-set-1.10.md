@@ -3,12 +3,12 @@ title: Outlook加载项 API 要求集 1.10
 description: 加载项 API 要求集 1.10 Outlook 1.10。
 ms.date: 05/17/2021
 localization_priority: Normal
-ms.openlocfilehash: f5fda91c4105d56dcf9d20d570e48851c8b6dfeb
-ms.sourcegitcommit: 0d9fcdc2aeb160ff475fbe817425279267c7ff31
+ms.openlocfilehash: 9e3e30590279036a08a93d8643cd56c2c73be78c
+ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/21/2021
-ms.locfileid: "52592028"
+ms.lasthandoff: 07/30/2021
+ms.locfileid: "53671259"
 ---
 # <a name="outlook-add-in-api-requirement-set-110"></a>Outlook加载项 API 要求集 1.10
 
@@ -26,9 +26,9 @@ Outlook JavaScript API 的 Office 外接程序 API 子集包括可在 Outlook �
 - 添加了 [LaunchEvent 扩展点](../../manifest/extensionpoint.md#launchevent)：添加了新的受支持的 ExtensionPoint 类型。 它配置基于事件的激活功能。
 - 添加了 [LaunchEvents manifest 元素](../../manifest/launchevents.md)：添加了一个清单元素以支持配置基于事件的激活功能。
 - 修改后的[运行时清单元素](../../manifest/runtimes.md)：添加Outlook支持。 它引用基于事件的激活功能所需的 HTML 和 JavaScript 文件。
-- 添加了[Office.context.mailbox.item.body.setSignatureAsync：](/javascript/api/outlook/office.body?view=outlook-js-1.10&preserve-view=true#setsignatureasync-data--options--callback-)向 对象添加新 `Body` 函数。 它在撰写模式下添加或替换项目正文中的签名。
+- 添加了[Office.context.mailbox.item.body.setSignatureAsync：](/javascript/api/outlook/office.body?view=outlook-js-1.10&preserve-view=true#setSignatureAsync_data__options__callback_)向 对象添加新 `Body` 函数。 它在撰写模式下添加或替换项目正文中的签名。
 - 添加了[Office.context.mailbox.item.disableClientSignatureAsync：](office.context.mailbox.item.md#methods)添加了一个新函数，该函数在撰写模式下禁用发送邮箱的客户端签名。
-- 添加了[Office.context.mailbox.item.getComposeTypeAsync：](/javascript/api/outlook/office.messagecompose?view=outlook-js-1.10&preserve-view=true#getcomposetypeasync-options--callback-)添加了一个新函数，该函数获取撰写模式下邮件的撰写类型。
+- 添加了[Office.context.mailbox.item.getComposeTypeAsync：](/javascript/api/outlook/office.messagecompose?view=outlook-js-1.10&preserve-view=true#getComposeTypeAsync_options__callback_)添加了一个新函数，该函数获取撰写模式下邮件的撰写类型。
 - 添加了[Office.context.mailbox.item.isClientSignatureEnabledAsync：](office.context.mailbox.item.md#methods)添加了一个新函数，该函数检查在撰写模式下是否对项目启用了客户端签名。
 - 添加了[Office。MailboxEnums.ActionType：](/javascript/api/outlook/office.mailboxenums.actiontype)添加新枚举。 它表示通知邮件中的自定义操作的类型。
 - 添加了[Office.MailboxEnums.ComposeType：](/javascript/api/outlook/office.mailboxenums.composetype?view=outlook-js-1.10&preserve-view=true)添加了一个在撰写模式下可用的新枚举。

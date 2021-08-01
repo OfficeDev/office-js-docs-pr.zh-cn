@@ -4,12 +4,12 @@ description: 了解如何将一个范围的行或列组合在一起，以使用 
 ms.date: 04/05/2021
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: 960a394a1467ec1fe55ff8dbf7b0a3f39fd355a5
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: 87cbe9293dd0f4a30bf0ac717d1c80a3cd514c3c
+ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53075717"
+ms.lasthandoff: 07/30/2021
+ms.locfileid: "53671138"
 ---
 # <a name="group-ranges-for-an-outline-using-the-excel-javascript-api"></a>使用 JavaScript API 的大纲Excel区域
 
@@ -17,9 +17,9 @@ ms.locfileid: "53075717"
 
 ## <a name="group-rows-or-columns-of-a-range-for-an-outline"></a>对分级显示区域行或列进行分组
 
-可以将范围的行或列组合在一起以 [创建大纲](https://support.office.com/article/Outline-group-data-in-a-worksheet-08CE98C4-0063-4D42-8AC7-8278C49E9AFF)。 可以折叠和展开这些组，以隐藏和显示相应的单元格。 这使得快速分析首行数据变得更容易。 使用 [Range.group](/javascript/api/excel/excel.range#group-groupoption-) 可创建这些大纲组。
+可以将范围的行或列组合在一起以 [创建大纲](https://support.office.com/article/Outline-group-data-in-a-worksheet-08CE98C4-0063-4D42-8AC7-8278C49E9AFF)。 可以折叠和展开这些组，以隐藏和显示相应的单元格。 这使得快速分析首行数据变得更容易。 使用 [Range.group](/javascript/api/excel/excel.range#group_groupOption_) 可创建这些大纲组。
 
-大纲可以具有层次结构，其中较小的组嵌套在较大的组下。 这允许在不同级别查看大纲。 可以通过 [Worksheet.showOutlineLevels](/javascript/api/excel/excel.worksheet#showoutlinelevels-rowlevels--columnlevels-) 方法以编程方式更改可见大纲级别。 请注意，Excel仅支持八个级别的大纲组。
+大纲可以具有层次结构，其中较小的组嵌套在较大的组下。 这允许在不同级别查看大纲。 可以通过 [Worksheet.showOutlineLevels](/javascript/api/excel/excel.worksheet#showOutlineLevels_rowLevels__columnLevels_) 方法以编程方式更改可见大纲级别。 请注意，Excel仅支持八个级别的大纲组。
 
 下面的代码示例为行和列创建包含两个级别的组的大纲。 后续图像显示该轮廓的分组。 在代码示例中，分组的范围不包括大纲控件的行或列 (此示例的"总计") 。 组定义要折叠的项，而不是控件的行或列。
 
@@ -53,7 +53,7 @@ Excel.run(function (context) {
 
 ## <a name="remove-grouping-from-rows-or-columns-of-a-range"></a>从区域行或列中删除分组
 
-若要取消行或列组的分组，请使用 [Range.ungroup](/javascript/api/excel/excel.range#ungroup-groupoption-) 方法。 这将从大纲中删除最外面的级别。 如果同一行或列类型的多个组位于指定范围内的同一级别，则所有这些组将取消分组。
+若要取消行或列组的分组，请使用 [Range.ungroup](/javascript/api/excel/excel.range#ungroup_groupOption_) 方法。 这将从大纲中删除最外面的级别。 如果同一行或列类型的多个组位于指定范围内的同一级别，则所有这些组将取消分组。
 
 ## <a name="see-also"></a>另请参阅
 

@@ -3,12 +3,12 @@ title: 常见 JavaScript API 对象模型
 description: 了解 JavaScript Office API 对象模型
 ms.date: 04/30/2020
 localization_priority: Normal
-ms.openlocfilehash: 059bffe8743b14a305b0a72a3aa161f380098e95
-ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
+ms.openlocfilehash: 513ee6070ab9b54f4ea31fc0efaea9b40bf153b1
+ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "53349796"
+ms.lasthandoff: 07/30/2021
+ms.locfileid: "53671201"
 ---
 # <a name="common-javascript-api-object-model"></a>常见 JavaScript API 对象模型
 
@@ -24,7 +24,7 @@ OfficeJavaScript API 提供对Office应用程序的基础功能的访问权限�
 
 例如，在任务窗格或内容外接程序中，可以使用 **Context** 对象的 [document](/javascript/api/office/office.context#document) 属性访问 **Document** 对象的属性和方法，以便与 Word 文档、Excel 工作表或 Project 计划的内容交互。类似地，在 Outlook 外接程序中，可以使用 **Context** 对象的 [mailbox](/javascript/api/office/office.context#mailbox) 属性访问 **Mailbox** 对象的属性和方法，以便与邮件、会议请求或约会内容交互。
 
-**Context** 对象还提供对 [contentLanguage](/javascript/api/office/office.context#contentlanguage)和 [displayLanguage](/javascript/api/office/office.context#displaylanguage)属性的访问权限，这些属性可用于确定文档或项目中使用的区域设置 (语言) ，或由 Office 应用程序使用。 [roamingSettings](/javascript/api/office/office.context#roamingsettings) 属性使你能够访问 [RoamingSettings](/javascript/api/office/office.context#roamingsettings) 对象的成员，该对象用于存储各用户邮箱的加载项特定的设置。 最后，**Context** 对象提供一个允许你的加载项启动弹出对话框的 [ui](/javascript/api/office/office.context#ui) 属性。
+**Context** 对象还提供对 [contentLanguage](/javascript/api/office/office.context#contentLanguage)和 [displayLanguage](/javascript/api/office/office.context#displayLanguage)属性的访问权限，这些属性可用于确定文档或项目中使用的区域设置 (语言) ，或由 Office 应用程序使用。 [roamingSettings](/javascript/api/office/office.context#roamingSettings) 属性使你能够访问 [RoamingSettings](/javascript/api/office/office.context#roamingSettings) 对象的成员，该对象用于存储各用户邮箱的加载项特定的设置。 最后，**Context** 对象提供一个允许你的加载项启动弹出对话框的 [ui](/javascript/api/office/office.context#ui) 属性。
 
 
 ## <a name="document-object"></a>Document 对象
@@ -104,7 +104,7 @@ OfficeJavaScript API 提供对Office应用程序的基础功能的访问权限�
 ## <a name="working-with-bindings-using-the-bindings-and-binding-objects"></a>使用 Bindings 和 Binding 对象处理绑定
 
 
-基于绑定的数据访问使内容和任务窗格加载项能够通过与绑定相关联的标识符一致地访问文档或电子表格的特定区域。 加载项首先需要通过调用将文档的某一部分与唯一标识符相关联的以下某个方法来建立绑定：[addFromPromptAsync](/javascript/api/office/office.bindings#addfrompromptasync-bindingtype--options--callback-)、[addFromSelectionAsync](/javascript/api/office/office.bindings#addfromselectionasync-bindingtype--options--callback-) 或 [addFromNamedItemAsync](/javascript/api/office/office.bindings#addfromnameditemasync-itemname--bindingtype--options--callback-)。 建立绑定后，加载项可以使用提供的标识符访问文档或电子表格的关联区域中包含的数据。 创建绑定可为外接程序提供以下值。
+基于绑定的数据访问使内容和任务窗格加载项能够通过与绑定相关联的标识符一致地访问文档或电子表格的特定区域。 加载项首先需要通过调用将文档的某一部分与唯一标识符相关联的以下某个方法来建立绑定：[addFromPromptAsync](/javascript/api/office/office.bindings#addFromPromptAsync_bindingType__options__callback_)、[addFromSelectionAsync](/javascript/api/office/office.bindings#addFromSelectionAsync_bindingType__options__callback_) 或 [addFromNamedItemAsync](/javascript/api/office/office.bindings#addFromNamedItemAsync_itemName__bindingType__options__callback_)。 建立绑定后，加载项可以使用提供的标识符访问文档或电子表格的关联区域中包含的数据。 创建绑定可为外接程序提供以下值。
 
 
 - 允许访问跨支持的 Office 应用程序的通用数据结构，例如：表、区域或文本（一系列连续字符）。
@@ -115,7 +115,7 @@ OfficeJavaScript API 提供对Office应用程序的基础功能的访问权限�
 
 建立绑定还允许您订阅仅限文档或电子表格的特定区域的数据和选择更改事件。这意味着，加载项只会收到绑定区域内发生的更改的通知，而不是收到整个文档或电子表格内的常规更改的通知。
 
-[Bindings](/javascript/api/office/office.bindings) 对象公开 [getAllAsync](/javascript/api/office/office.bindings#getallasync-options--callback-) 方法，通过该方法可以访问在文档或电子表格中建立的所有绑定的集合。 可使用 [Bindings.getBindingByIdAsync](/javascript/api/office/office.bindings#getbyidasync-id--options--callback-) 或 [Office.select](/javascript/api/office) 方法按 ID 访问单个绑定。 可以使用对象的以下方法之一建立新绑定以及删除现有绑定 `Bindings` ：addFromSelectionAsync、addFromPromptAsync、addFromNamedItemAsync[](/javascript/api/office/office.bindings#addfromnameditemasync-itemname--bindingtype--options--callback-)或[releaseByIdAsync](/javascript/api/office/office.bindings#releasebyidasync-id--options--callback-) [](/javascript/api/office/office.bindings#addfromselectionasync-bindingtype--options--callback-)。 [](/javascript/api/office/office.bindings#addfrompromptasync-bindingtype--options--callback-)
+[Bindings](/javascript/api/office/office.bindings) 对象公开 [getAllAsync](/javascript/api/office/office.bindings#getAllAsync_options__callback_) 方法，通过该方法可以访问在文档或电子表格中建立的所有绑定的集合。 可使用 [Bindings.getBindingByIdAsync](/javascript/api/office/office.bindings#getByIdAsync_id__options__callback_) 或 [Office.select](/javascript/api/office) 方法按 ID 访问单个绑定。 可以使用对象的以下方法之一建立新绑定以及删除现有绑定 `Bindings` ：addFromSelectionAsync、addFromPromptAsync、addFromNamedItemAsync[](/javascript/api/office/office.bindings#addFromNamedItemAsync_itemName__bindingType__options__callback_)或[releaseByIdAsync](/javascript/api/office/office.bindings#releaseByIdAsync_id__options__callback_) [](/javascript/api/office/office.bindings#addFromSelectionAsync_bindingType__options__callback_)。 [](/javascript/api/office/office.bindings#addFromPromptAsync_bindingType__options__callback_)
 
 使用 或 方法创建绑定时，可以使用  _bindingType_ 参数指定三种 `addFromSelectionAsync` `addFromPromptAsync` 不同类型的 `addFromNamedItemAsync` 绑定：
 
@@ -129,7 +129,7 @@ OfficeJavaScript API 提供对Office应用程序的基础功能的访问权限�
 
 <br/>
 
-使用对象的三个"add"方法之一创建绑定后，可以使用相应对象的方法处理绑定的数据和属性 `Bindings` [：MatrixBinding、TableBinding](/javascript/api/office/office.matrixbinding)或[TextBinding](/javascript/api/office/office.textbinding)。 [](/javascript/api/office/office.tablebinding) 所有这三个对象都继承对象的 [getDataAsync](/javascript/api/office/office.binding#getdataasync-options--callback-) 和 [setDataAsync](/javascript/api/office/office.binding#setdataasync-data--options--callback-) 方法，使您能够 `Binding` 与绑定数据进行交互。
+使用对象的三个"add"方法之一创建绑定后，可以使用相应对象的方法处理绑定的数据和属性 `Bindings` [：MatrixBinding、TableBinding](/javascript/api/office/office.matrixbinding)或[TextBinding](/javascript/api/office/office.textbinding)。 [](/javascript/api/office/office.tablebinding) 所有这三个对象都继承对象的 [getDataAsync](/javascript/api/office/office.binding#getDataAsync_options__callback_) 和 [setDataAsync](/javascript/api/office/office.binding#setDataAsync_data__options__callback_) 方法，使您能够 `Binding` 与绑定数据进行交互。
 
 有关演示如何使用绑定执行任务的代码示例，请参阅[绑定到文档或电子表格中的区域](bind-to-regions-in-a-document-or-spreadsheet.md)。
 
@@ -147,7 +147,7 @@ API 的 [CustomXmlParts](/javascript/api/office/office.customxmlparts) 和 [Cust
 
  **适用于：** Word 和 PowerPoint 任务窗格加载项
 
-[Document.getFileAsync](/javascript/api/office/office.document#getfileasync-filetype--options--callback-) 方法以及 [File](/javascript/api/office/office.file) 和 [Slice](/javascript/api/office/office.slice) 对象的成员可用于一次性获取整个 Word 和 PowerPoint 文档文件，所有切片（区块）的总大小上限为 4MB。有关详细信息，请参阅[通过 PowerPoint 或 Word 加载项获取整个文档](../word/get-the-whole-document-from-an-add-in-for-word.md)。
+[Document.getFileAsync](/javascript/api/office/office.document#getFileAsync_fileType__options__callback_) 方法以及 [File](/javascript/api/office/office.file) 和 [Slice](/javascript/api/office/office.slice) 对象的成员可用于一次性获取整个 Word 和 PowerPoint 文档文件，所有切片（区块）的总大小上限为 4MB。有关详细信息，请参阅[通过 PowerPoint 或 Word 加载项获取整个文档](../word/get-the-whole-document-from-an-add-in-for-word.md)。
 
 
 ## <a name="mailbox-object"></a>Mailbox 对象

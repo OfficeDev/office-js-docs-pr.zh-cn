@@ -3,12 +3,12 @@ title: 处理 OneNote 页面内容
 description: 了解如何使用 JavaScript API OneNote页面内容。
 ms.date: 03/19/2019
 localization_priority: Normal
-ms.openlocfilehash: f506617bfdbc97e94f8fb16930dfc2a935385d5f
-ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
+ms.openlocfilehash: 01aa4a65f6f1d7ae8fccf490986c10035d30b0c3
+ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "53349047"
+ms.lasthandoff: 07/30/2021
+ms.locfileid: "53671343"
 ---
 # <a name="work-with-onenote-page-content"></a>处理 OneNote 页面内容
 
@@ -23,8 +23,8 @@ ms.locfileid: "53349047"
 
 若要创建空OneNote页，请使用下列方法之一。
 
-- [Section.addPage](/javascript/api/onenote/onenote.section#addpage-title-)
-- [Page.insertPageAsSibling](/javascript/api/onenote/onenote.section#insertsectionassibling-location--title-)
+- [Section.addPage](/javascript/api/onenote/onenote.section#addPage_title_)
+- [Page.insertPageAsSibling](/javascript/api/onenote/onenote.section#insertSectionAsSibling_location__title_)
 
 然后使用以下对象中的方法处理页面内容，如 `Page.addOutline` 和 `Outline.appendHtml`。
 

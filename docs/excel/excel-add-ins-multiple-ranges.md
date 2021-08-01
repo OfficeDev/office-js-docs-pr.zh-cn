@@ -3,12 +3,12 @@ title: 同时在 Excel 加载项中处理多个区域
 description: 了解 Excel JavaScript 库如何使外接程序能够同时在多个区域上执行操作和设置属性。
 ms.date: 04/01/2021
 localization_priority: Normal
-ms.openlocfilehash: 729b687b14beaeb74b329974bcca48dfd78bc11e
-ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
+ms.openlocfilehash: 4f1661d07432d6072649cb6db7315fd39fee5b4f
+ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "53349495"
+ms.lasthandoff: 07/30/2021
+ms.locfileid: "53671152"
 ---
 # <a name="work-with-multiple-ranges-simultaneously-in-excel-add-ins"></a>同时在 Excel 加载项中处理多个区域
 
@@ -79,7 +79,7 @@ Excel JavaScript 库允许你使用加载项同时在多个区域上执行操作
 
 - `areas`：一种 `RangeCollection` 对象，它包含由 `RangeAreas` 对象表示的所有区域。 `RangeCollection` 也是新对象，与其他 Excel 集合对象类似。 它具有 `items` 属性，它是一组表示区域的 `Range` 对象。
 - `areaCount`：`RangeAreas` 中的区域总数。
-- `getOffsetRangeAreas`：与 [Range.getOffsetRange](/javascript/api/excel/excel.range#getoffsetrange-rowoffset--columnoffset-) 的作用类似，不同之处在于，前者将返回 `RangeAreas` 并且包含多个区域，每个区域都是原始 `RangeAreas` 中的区域的偏移。
+- `getOffsetRangeAreas`：与 [Range.getOffsetRange](/javascript/api/excel/excel.range#getOffsetRange_rowOffset__columnOffset_) 的作用类似，不同之处在于，前者将返回 `RangeAreas` 并且包含多个区域，每个区域都是原始 `RangeAreas` 中的区域的偏移。
 
 ## <a name="create-rangeareas"></a>创建 RangeAreas
 

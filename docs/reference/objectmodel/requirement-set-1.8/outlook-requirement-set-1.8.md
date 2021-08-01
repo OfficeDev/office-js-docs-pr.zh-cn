@@ -3,12 +3,12 @@ title: Outlook 加载项 API 要求集 1.8
 description: 加载项 API 要求集 1.8 Outlook 1.8。
 ms.date: 05/17/2021
 localization_priority: Normal
-ms.openlocfilehash: 333bfd43ba488949f9eead0058da2e7a1b99a25f
-ms.sourcegitcommit: 0d9fcdc2aeb160ff475fbe817425279267c7ff31
+ms.openlocfilehash: 31ea7af1bc2ac33df5f3d25828df3f783aae0569
+ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/21/2021
-ms.locfileid: "52590958"
+ms.lasthandoff: 07/30/2021
+ms.locfileid: "53670263"
 ---
 # <a name="outlook-add-in-api-requirement-set-18"></a>Outlook 加载项 API 要求集 1.8
 
@@ -48,7 +48,7 @@ Outlook JavaScript API 的 Office 外接程序 API 子集包括可在 Outlook �
 - 添加了 [Office。 context. getItemIdAsync](office.context.mailbox.item.md#methods)：新增了一个可获取已保存的约会或邮件项目的 ID 的方法。
 - 添加了 [Office.context.mailbox.item.getSharedPropertiesAsync](office.context.mailbox.item.md#methods)：新增了一个方法，它可获取显示约会或邮件项目的 sharedProperties 的对象。
 - 添加了 [Office.context.mailbox.item.internetHeaders](office.context.mailbox.item.md#properties)：新增了一个可显示邮件项目上的 Internet 标头的属性。 仅限撰写模式。
-- 修改了 [Event.completed](/javascript/api/office/office.addincommands.event#completed-options-)：添加了一个新的可选参数 `options`，它是具有一个有效值 `allowEvent` 的字典。 此值可用于取消执行事件。
+- 修改了 [Event.completed](/javascript/api/office/office.addincommands.event#completed_options_)：添加了一个新的可选参数 `options`，它是具有一个有效值 `allowEvent` 的字典。 此值可用于取消执行事件。
 - 添加了 [Office.MailboxEnums.AttachmentContentFormat](/javascript/api/outlook/office.mailboxenums.attachmentcontentformat?view=outlook-js-1.8&preserve-view=true)：新增了一个指定应用于附件内容的格式设置的枚举。
 - 添加了 [Office.MailboxEnums.AttachmentStatus](/javascript/api/outlook/office.mailboxenums.attachmentstatus?view=outlook-js-1.8&preserve-view=true)：新增了一个指定是添加附件还是从邮件中删除附件的枚举。
 - 添加了 [Office.MailboxEnums.CategoryColor](/javascript/api/outlook/office.mailboxenums.categorycolor?view=outlook-js-1.8&preserve-view=true)：新增了一个指定可用于与类别关联的颜色的枚举。

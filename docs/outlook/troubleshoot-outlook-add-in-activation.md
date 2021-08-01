@@ -3,12 +3,12 @@ title: Outlook 上下文加载项激活故障排查
 description: 外接程序未按预期激活的可能原因。
 ms.date: 09/02/2020
 localization_priority: Normal
-ms.openlocfilehash: d3a9abcdf1cd9db4104b389208f829f4b648c6e7
-ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
+ms.openlocfilehash: 7999bac00e2d3b1b7ecb3f58e6d70a247500982e
+ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "53348865"
+ms.lasthandoff: 07/30/2021
+ms.locfileid: "53671679"
 ---
 # <a name="troubleshoot-outlook-add-in-activation"></a>Outlook 加载项激活故障排查
 
@@ -24,7 +24,7 @@ Outlook上下文外接程序激活基于外接程序清单中的激活规则。 
 
 - 若要在 Outlook 网页版或移动设备版上测试加载项，请在脚本调试器（例如，Internet Explorer 随附的 JScript 调试器）中，查找指定脚本加载位置的 **script** 标记的 **src** 属性。路径应包含子字符串 **owa/15.0.516.x/owa2/...**，其中 **15.0.516.x** 表示 Exchange Server 版本（如 **15.0.516.2**）。
 
-- 也可以使用 [Office.context.mailbox.diagnostics.hostVersion](/javascript/api/outlook/office.diagnostics#hostversion) 属性来验证版本。在 Outlook 网页版和移动设备版上，此属性会返回 Exchange Server 版本。
+- 也可以使用 [Office.context.mailbox.diagnostics.hostVersion](/javascript/api/outlook/office.diagnostics#hostVersion) 属性来验证版本。在 Outlook 网页版和移动设备版上，此属性会返回 Exchange Server 版本。
 
 - If you can test the add-in on Outlook， you can use the following simple debugging technique that uses the Outlook object model and Visual Basic Editor.
 

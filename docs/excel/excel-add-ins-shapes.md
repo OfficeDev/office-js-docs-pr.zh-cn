@@ -3,12 +3,12 @@ title: 使用 JavaScript API Excel形状
 description: 了解如何Excel形状定义为位于绘图层上的任何Excel。
 ms.date: 01/14/2020
 localization_priority: Normal
-ms.openlocfilehash: eeb6a1f76c839e4b550662b28b717bfd1bcca4e8
-ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
+ms.openlocfilehash: 533a9cf9689bcaa5cd43635da836730a2af6ab61
+ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "53349446"
+ms.lasthandoff: 07/30/2021
+ms.locfileid: "53671469"
 ---
 # <a name="work-with-shapes-using-the-excel-javascript-api"></a>使用 JavaScript API Excel形状
 
@@ -25,11 +25,11 @@ Excel形状定义为位于绘图层上的任何Excel。 这意味着单元格之
 
 | 形状 | Add 方法 | 签名 |
 |-------|------------|-----------|
-| 几何形状 | [addGeometricShape](/javascript/api/excel/excel.shapecollection#addgeometricshape-geometricshapetype-) | `addGeometricShape(geometricShapeType: Excel.GeometricShapeType): Excel.Shape` |
-| 图像 (JPEG 或 PNG)  | [addImage](/javascript/api/excel/excel.shapecollection#addimage-base64imagestring-) | `addImage(base64ImageString: string): Excel.Shape` |
-| 折线图 | [addLine](/javascript/api/excel/excel.shapecollection#addline-startleft--starttop--endleft--endtop--connectortype-) | `addLine(startLeft: number, startTop: number, endLeft: number, endTop: number, connectorType?: Excel.ConnectorType): Excel.Shape` |
-| SVG | [addSvg](/javascript/api/excel/excel.shapecollection#addsvg-xml-) | `addSvg(xml: string): Excel.Shape` |
-| 文本框 | [addTextBox](/javascript/api/excel/excel.shapecollection#addtextbox-text-) | `addTextBox(text?: string): Excel.Shape` |
+| 几何形状 | [addGeometricShape](/javascript/api/excel/excel.shapecollection#addGeometricShape_geometricShapeType_) | `addGeometricShape(geometricShapeType: Excel.GeometricShapeType): Excel.Shape` |
+| 图像 (JPEG 或 PNG)  | [addImage](/javascript/api/excel/excel.shapecollection#addImage_base64ImageString_) | `addImage(base64ImageString: string): Excel.Shape` |
+| 折线图 | [addLine](/javascript/api/excel/excel.shapecollection#addLine_startLeft__startTop__endLeft__endTop__connectorType_) | `addLine(startLeft: number, startTop: number, endLeft: number, endTop: number, connectorType?: Excel.ConnectorType): Excel.Shape` |
+| SVG | [addSvg](/javascript/api/excel/excel.shapecollection#addSvg_xml_) | `addSvg(xml: string): Excel.Shape` |
+| 文本框 | [addTextBox](/javascript/api/excel/excel.shapecollection#addTextBox_text_) | `addTextBox(text?: string): Excel.Shape` |
 
 ### <a name="geometric-shapes"></a>几何形状
 
@@ -214,7 +214,7 @@ Excel.run(function (context) {
 
 ## <a name="export-shapes-as-images"></a>将形状导出为图像
 
-任何 `Shape` 对象都可以转换为图像。 [Shape.getAsImage](/javascript/api/excel/excel.shape#getasimage-format-) 返回 base64 编码的字符串。 图像的格式指定为传递给 的 [PictureFormat](/javascript/api/excel/excel.pictureformat) 枚举 `getAsImage` 。
+任何 `Shape` 对象都可以转换为图像。 [Shape.getAsImage](/javascript/api/excel/excel.shape#getAsImage_format_) 返回 base64 编码的字符串。 图像的格式指定为传递给 的 [PictureFormat](/javascript/api/excel/excel.pictureformat) 枚举 `getAsImage` 。
 
 ```js
 Excel.run(function (context) {

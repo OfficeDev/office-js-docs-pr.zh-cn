@@ -4,12 +4,12 @@ description: 了解如何使用 JavaScript API 对工作簿或应用程序级别
 ms.date: 06/07/2021
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: 78cdf57ce6ecce3e9e3e40188b3325cdf15ab265
-ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
+ms.openlocfilehash: b80ef801955b5d4dd229794a24ff1f97a1f38d4e
+ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "53349425"
+ms.lasthandoff: 07/30/2021
+ms.locfileid: "53671117"
 ---
 # <a name="work-with-workbooks-using-the-excel-javascript-api"></a>使用 Excel JavaScript API 处理工作簿
 
@@ -52,7 +52,7 @@ Excel.createWorkbook();
 
 此外，`createWorkbook` 方法还可以创建现有工作簿的副本。 此方法接受 .xlsx 文件的 base64 编码字符串表示形式作为可选参数。 若字符串参数为有效的 .xlsx 文件，则生成的工作簿为该文件的副本。
 
-可以使用文件切片 将加载项的当前工作簿作为 base64 编码的 [字符串获取](/javascript/api/office/office.document#getfileasync-filetype--options--callback-)。 可以使用 [FileReader](https://developer.mozilla.org/docs/Web/API/FileReader) 类将文件转换为所需的 base64 编码字符串，如以下示例所示。
+可以使用文件切片 将加载项的当前工作簿作为 base64 编码的 [字符串获取](/javascript/api/office/office.document#getFileAsync_fileType__options__callback_)。 可以使用 [FileReader](https://developer.mozilla.org/docs/Web/API/FileReader) 类将文件转换为所需的 base64 编码字符串，如以下示例所示。
 
 ```js
 // Retrieve the external workbook file and set up a `FileReader` object. 

@@ -3,12 +3,12 @@ title: Office 加载项开发最佳做法
 description: 在开发时应用最佳做法以创建Office外接程序。
 ms.date: 05/12/2021
 localization_priority: Normal
-ms.openlocfilehash: 06b7f74692edbba1bc0ecdde723c4a661e830970
-ms.sourcegitcommit: 30f6c620380075e3459cac748ca0c656427b384d
+ms.openlocfilehash: 2dd8162814115398a89dd75a0542d1d077abf006
+ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/12/2021
-ms.locfileid: "52330078"
+ms.lasthandoff: 07/30/2021
+ms.locfileid: "53671308"
 ---
 # <a name="best-practices-for-developing-office-add-ins"></a>Office 加载项开发最佳做法
 
@@ -76,7 +76,7 @@ ms.locfileid: "52330078"
 
 ### <a name="optimize-for-touch"></a>触摸优化
 
-- 使用[Context.touchEnabled](/javascript/api/office/office.context#touchenabled)属性可检测Office运行加载项的加载项应用程序是否启用了触摸。
+- 使用[Context.touchEnabled](/javascript/api/office/office.context#touchEnabled)属性可检测Office运行加载项的加载项应用程序是否启用了触摸。
 
   > [!NOTE]
   > Outlook 不支持此属性。
@@ -90,7 +90,7 @@ ms.locfileid: "52330078"
 - 使用[旁加载](../testing/sideload-an-office-add-in-on-ipad-and-mac.md)在实际设备上测试加载项。
 
 > [!NOTE]
-> 如果要将 Fluent [UI](../design/using-office-ui-fabric-react.md) React设计元素，则其中许多元素都内置在设计系统中。
+> 如果你为设计[元素Fluent UI](../design/using-office-ui-fabric-react.md) React，许多这些元素都内置在设计系统中。
 
 
 ## <a name="optimize-and-monitor-add-in-performance"></a>优化和监视加载项性能

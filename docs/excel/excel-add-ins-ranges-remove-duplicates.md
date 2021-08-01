@@ -4,12 +4,12 @@ description: 了解如何使用 JavaScript API Excel删除重复项。
 ms.date: 04/02/2021
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: e3c1ddf45f50e87ccc77044b1425e6f021756f60
-ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
+ms.openlocfilehash: 03ef1c15f214fcbd6a81d0b4f557e9816175d3b7
+ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "53349481"
+ms.lasthandoff: 07/30/2021
+ms.locfileid: "53671131"
 ---
 # <a name="remove-duplicates-using-the-excel-javascript-api"></a>使用 JavaScript API Excel重复项
 
@@ -17,7 +17,7 @@ ms.locfileid: "53349481"
 
 ## <a name="remove-rows-with-duplicate-entries"></a>删除条目重复的行
 
-[Range.removeDuplicates](/javascript/api/excel/excel.range#removeduplicates-columns--includesheader-)方法删除指定列中包含重复条目的行。 方法将浏览区域的每一行，从最低值索引到最高值索引，从 (到底部) 。 如果指定列中的值之前显示在区域中，则会删除该行。 在区域内位于已删除行下方的行将上移。 `removeDuplicates` 不影响该区域外的单元格位置。
+[Range.removeDuplicates](/javascript/api/excel/excel.range#removeDuplicates_columns__includesHeader_)方法删除指定列中包含重复条目的行。 方法将浏览区域的每一行，从最低值索引到最高值索引，从 (到底部) 。 如果指定列中的值之前显示在区域中，则会删除该行。 在区域内位于已删除行下方的行将上移。 `removeDuplicates` 不影响该区域外的单元格位置。
 
 `removeDuplicates` 使用 `number[]` 来表示已执行重复项检查的列索引。 此数组从零开始并且与区域而不是与工作表相关。 该方法还采用一个布尔参数，该参数指定第一行是否是标题。 如果为 **true**，则在考虑重复项时将忽略顶行。 该方法返回一个对象，该对象指定删除的行数和剩余 `removeDuplicates` `RemoveDuplicatesResult` 的唯一行数。
 

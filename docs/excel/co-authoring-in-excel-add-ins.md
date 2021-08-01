@@ -3,12 +3,12 @@ title: 使用 Excel 加载项共同创作
 description: 了解如何共同Excel存储在 OneDrive、OneDrive for Business 或 SharePoint Online 中的工作簿。
 ms.date: 07/23/2020
 localization_priority: Normal
-ms.openlocfilehash: d6500248c13f0cef85736b4ffbad0dc655afecd7
-ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
+ms.openlocfilehash: 6901df106f9b70bc0265d78757ec7416380fc76c
+ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "53349684"
+ms.lasthandoff: 07/30/2021
+ms.locfileid: "53671483"
 ---
 # <a name="coauthoring-in-excel-add-ins"></a>使用 Excel 加载项共同创作  
 
@@ -50,11 +50,11 @@ Excel 外接程序可以读取工作簿内容（通过隐藏工作表和设置�
 
 ## <a name="avoiding-table-row-coauthoring-conflicts"></a>避免表行共同授权冲突
 
-对 API 的调用可能导致共同授权冲突 [`TableRowCollection.add`](/javascript/api/excel/excel.tablerowcollection#add-index--values-) 是一个已知问题。 如果您预计外接程序将在其他用户编辑外接程序的工作簿时运行，我们不建议使用该 API (特别是当他们编辑表) 下的任何区域时。 以下指南应该有助于避免方法问题 (并避免触发要求用户刷新Excel的黄色 `TableRowCollection.add`) 。
+对 API 的调用可能导致共同授权冲突 [`TableRowCollection.add`](/javascript/api/excel/excel.tablerowcollection#add_index__values_) 是一个已知问题。 如果您预计外接程序将在其他用户编辑外接程序的工作簿时运行，我们不建议使用该 API (特别是当他们编辑表) 下的任何区域时。 以下指南应该有助于避免方法问题 (并避免触发要求用户刷新Excel的黄色 `TableRowCollection.add`) 。
 
-1. 使用 [`Range.values`](/javascript/api/excel/excel.range#values) ，而不是 [`TableRowCollection.add`](/javascript/api/excel/excel.tablerowcollection#add-index--values-) 。 直接 `Range` 在表下方设置值会自动扩展表。 否则，通过 API 添加表 `Table` 行会导致共同作者用户的合并冲突。
+1. 使用 [`Range.values`](/javascript/api/excel/excel.range#values) ，而不是 [`TableRowCollection.add`](/javascript/api/excel/excel.tablerowcollection#add_index__values_) 。 直接 `Range` 在表下方设置值会自动扩展表。 否则，通过 API 添加表 `Table` 行会导致共同作者用户的合并冲突。
 1. 除非 [数据验证应用于](https://support.microsoft.com/office/apply-data-validation-to-cells-29fecbcc-d1b9-42c1-9d76-eff3ce5f7249) 整个列，否则不应对表下面的单元格应用任何数据有效性规则。
-1. 如果表中有数据，加载项需要在设置范围值之前处理这些数据。 Using [`Range.insert`](/javascript/api/excel/excel.range##insert-shift-) to insert an empty row will move the data and make space for the expanding table. 否则，您面临覆盖表下方的单元格的风险。
+1. 如果表中有数据，加载项需要在设置范围值之前处理这些数据。 Using [`Range.insert`](/javascript/api/excel/excel.range#insert_shift_) to insert an empty row will move the data and make space for the expanding table. 否则，您面临覆盖表下方的单元格的风险。
 1. 您不能将空行添加到包含 的表中 `Range.values` 。 只有当数据存在于表格正下方的单元格中时，表格才自动扩展。 使用临时数据或隐藏列作为解决方法来添加空表行。
 
 ## <a name="see-also"></a>另请参阅

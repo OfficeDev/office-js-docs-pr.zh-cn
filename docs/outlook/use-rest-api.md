@@ -3,12 +3,12 @@ title: 从 Outlook 加载项使用 Outlook REST API
 description: 了解如何从 Outlook 加载项使用 Outlook REST API 获得访问令牌。
 ms.date: 07/06/2021
 localization_priority: Normal
-ms.openlocfilehash: 9f6642afcfae8efd54c4ade6165aa2a6823e3bd2
-ms.sourcegitcommit: 488b26b29c7534e3bbc862b688ed2319cc028f71
+ms.openlocfilehash: e7ed6c1c21d90ac058e2dce1eb0856aad02845aa
+ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/07/2021
-ms.locfileid: "53315146"
+ms.lasthandoff: 07/30/2021
+ms.locfileid: "53671672"
 ---
 # <a name="use-the-outlook-rest-apis-from-an-outlook-add-in"></a>从 Outlook 加载项使用 Outlook REST API
 
@@ -54,7 +54,7 @@ Office.context.mailbox.getCallbackTokenAsync({isRest: true}, function(result){
 - 在其他 Outlook 客户端中，由 `Office.context.mailbox.item.itemId` 返回的值是适用于 EWS 格式的 ID，且必须使用 [Office.context.mailbox.convertToRestId](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md#methods) 方法进行转换。
 - 请注意，还必须将附件 ID 转换为带 REST 格式的 ID，才能使用它。 必须转换 ID 的原因是，EWS ID 可能包含非 URL 安全值，这会导致 REST 问题出现。
 
-通过检查 [Office.context.mailbox.diagnostics.hostName](/javascript/api/outlook/office.diagnostics#hostname) 属性，加载项可以确定它所加载的是哪个 Outlook 客户端。
+通过检查 [Office.context.mailbox.diagnostics.hostName](/javascript/api/outlook/office.diagnostics#hostName) 属性，加载项可以确定它所加载的是哪个 Outlook 客户端。
 
 ### <a name="example"></a>示例
 

@@ -1,48 +1,48 @@
 ---
-title: 获取和设置 internet 标头
-description: 如何：在 Outlook 外接程序中获取和设置邮件的 internet 邮件头。
+title: 获取和设置 Internet 标头
+description: 如何获取和设置外接程序中邮件Outlook Internet 标头。
 ms.date: 04/28/2020
 localization_priority: Normal
-ms.openlocfilehash: a05ba86eebd8dc01c8368b61e39d1de1d90f9efa
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 9e88af7c8fa996fe3b6164ce1fc04b6d77b048f2
+ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44609081"
+ms.lasthandoff: 07/30/2021
+ms.locfileid: "53671322"
 ---
-# <a name="get-and-set-internet-headers-on-a-message-in-an-outlook-add-in"></a>在 Outlook 外接程序中获取和设置邮件的 internet 邮件头
+# <a name="get-and-set-internet-headers-on-a-message-in-an-outlook-add-in"></a>在加载项中获取和设置Outlook的 Internet 标头
 
 ## <a name="background"></a>背景
 
-Outlook 外接程序开发中的一个常见要求是，将与外接程序关联的自定义属性存储在不同的级别。 目前，自定义属性存储在项目或邮箱级别。
+加载项开发Outlook一个常见要求是，在不同级别存储与加载项关联的自定义属性。 目前，自定义属性存储在项目或邮箱级别。
 
-- 项目级别-适用于特定项目的属性，使用[CustomProperties](/javascript/api/outlook/office.customproperties)对象。 例如，存储与发送电子邮件的人员关联的客户代码。
-- 邮箱级别-对于应用于用户邮箱中的所有邮件项目的属性，使用[RoamingSettings](/javascript/api/outlook/office.roamingsettings)对象。 例如，存储用户首选项以按特定比例显示温度。
+- 项目级别 - 对于应用于特定项目的属性，请使用 [CustomProperties](/javascript/api/outlook/office.customproperties) 对象。 例如，存储与发送电子邮件的人相关联的客户代码。
+- 邮箱级别 - 对于适用于用户邮箱中所有邮件项目的属性，请使用 [RoamingSettings](/javascript/api/outlook/office.roamingsettings) 对象。 例如，存储用户的首选项以以特定刻度显示温度。
 
-在项目离开 Exchange 服务器后，这两种类型的属性都不会保留，因此电子邮件收件人无法获取项目上设置的任何属性。 因此，开发人员无法访问这些设置或其他 MIME 属性以实现更好的阅读方案。
+这两种类型的属性在项目从服务器Exchange后不会保留，因此电子邮件收件人无法获取对项目设置的任何属性。 因此，开发人员无法访问这些设置或其他 MIME 属性，从而启用更好的读取方案。
 
-虽然有一种方法可以将 internet 标头设置为 EWS 请求，但在某些情况下，不能进行 EWS 请求。 例如，在 Outlook 桌面的撰写模式下，项目 id 在  `saveAsync`   缓存模式下不会同步。
+虽然可以通过 EWS 请求设置 Internet 标头，但在某些情况下，EWS 请求不起作用。 例如，在桌面Outlook撰写模式下，项目 ID 不会在缓存模式下  `saveAsync`   同步。
 
 > [!TIP]
-> 请参阅[获取和设置 Outlook 外接程序的外接程序元数据](metadata-for-an-outlook-add-in.md)，以了解有关使用这些选项的详细信息。
+> 请参阅[Get and set add-in metadata for an Outlook in to](metadata-for-an-outlook-add-in.md) learn more about using these options.
 
 ## <a name="purpose-of-the-internet-headers-api"></a>Internet 标头 API 的用途
 
-在[要求集 1.8](../reference/objectmodel/requirement-set-1.8/outlook-requirement-set-1.8.md)中引入，internet 标头 api 使开发人员能够：
+要求 [集 1.8](../reference/objectmodel/requirement-set-1.8/outlook-requirement-set-1.8.md)中引入了 Internet 标头 API，开发人员可以：
 
-- 戳在所有客户端上保留 Exchange 后保留的电子邮件的信息。
-- 阅读有关在邮件读取应用场景中的所有客户端上的电子邮件保留后保留的电子邮件的信息。
+- 标记电子邮件在离开所有客户端后Exchange的信息。
+- 在邮件阅读方案中，阅读电子邮件离开Exchange保留的电子邮件的信息。
 - 访问电子邮件的整个 MIME 标头。
 
-![Internet 标头的图示。 Text： User 1 发送电子邮件。 当用户撰写电子邮件时，加载项管理自定义 internet 邮件头。 用户2接收电子邮件。 加载项从收到的电子邮件中获取 internet 标头，然后分析并使用自定义标头。](../images/outlook-internet-headers.png)
+![Internet 标头关系图。 文本：用户 1 发送电子邮件。 在用户撰写电子邮件时，外接程序管理自定义 Internet 标头。 用户 2 接收电子邮件。 外接程序从收到的电子邮件获取 Internet 标头，然后分析和使用自定义标头。](../images/outlook-internet-headers.png)
 
-## <a name="set-internet-headers-while-composing-a-message"></a>在撰写邮件时设置 internet 邮件头
+## <a name="set-internet-headers-while-composing-a-message"></a>在撰写邮件时设置 Internet 标头
 
-尝试使用[internetHeaders](/javascript/api/outlook/office.messagecompose#internetheaders)属性来管理在撰写模式下放置在当前邮件上的自定义 internet 邮件头。
+请尝试使用 [item.internetHeaders](/javascript/api/outlook/office.messagecompose#internetHeaders) 属性管理在撰写模式下在当前邮件上放置的自定义 Internet 标头。
 
 ### <a name="set-get-and-remove-custom-headers-example"></a>设置、获取和删除自定义标头示例
 
-下面的示例演示如何设置、获取和删除自定义标头。
+以下示例演示如何设置、获取和删除自定义标头。
 
 ```js
 // Set custom internet headers.
@@ -105,13 +105,13 @@ Selected headers: {"x-preferred-fruit":"orange","x-preferred-vegetable":"broccol
 */
 ```
 
-## <a name="get-internet-headers-while-reading-a-message"></a>在阅读邮件时获取 internet 邮件头
+## <a name="get-internet-headers-while-reading-a-message"></a>在阅读邮件时获取 Internet 标头
 
-尝试调用[getAllInternetHeadersAsync](/javascript/api/outlook/office.messageread#getallinternetheadersasync-options--callback-)以在阅读模式下获取当前邮件的 internet 邮件头。
+尝试调用 [item.getAllInternetHeadersAsync，](/javascript/api/outlook/office.messageread#getAllInternetHeadersAsync_options__callback_) 以在阅读模式下获取当前邮件的 Internet 标头。
 
-### <a name="get-sender-preferences-from-current-mime-headers-example"></a>从当前 MIME 标头获取发件人首选项示例
+### <a name="get-sender-preferences-from-current-mime-headers-example"></a>从当前 MIME 头获取发件人首选项示例
 
-根据上一节中的示例，以下代码演示如何从当前电子邮件的 MIME 标头中获取发件人的首选项。
+以下代码基于上一部分的示例，显示如何从当前电子邮件的 MIME 邮件头获取发件人的首选项。
 
 ```js
 Office.context.mailbox.item.getAllInternetHeadersAsync(getCallback);
@@ -132,16 +132,16 @@ Sender's preferred vegetable: broccoli
 ```
 
 > [!IMPORTANT]
-> 此示例适用于简单的情况。 若要获取更复杂的信息检索（例如，多实例标头或折叠的值（如[RFC 2822](https://tools.ietf.org/html/rfc2822)中所述），请尝试使用相应的 MIME 分析库。
+> 此示例适用于简单情况。 有关更复杂的信息检索 (如 [RFC 2822](https://tools.ietf.org/html/rfc2822)) 中所述的多实例标头或折叠值，请尝试使用适当的 MIME 分析库。
 
 ## <a name="recommended-practices"></a>建议的做法
 
-目前，internet 邮件头是用户邮箱的有限资源。 当配额耗尽时，您不能在该邮箱上创建更多的 internet 标头，这可能导致依赖于此的客户端的意外行为能够正常运行。
+目前，Internet 邮件头是用户邮箱上的有限资源。 当配额用尽时，你无法在此邮箱上再创建一个 Internet 标头，这可能会导致依赖此功能的客户端发生意外行为。
 
-在外接程序中创建 internet 邮件头时，请应用以下准则。
+在外接程序中创建 Internet 标头时，请应用以下准则。
 
 - 创建所需的最小标头数。
-- 名称标头，以便以后可以重复使用和更新其值。 因此，应避免以变量方式命名标头（例如，基于用户输入、时间戳等）。
+- 命名标头，以便以后可以重复使用和更新其值。 因此，避免以可变方式命名标头 (，例如，根据用户输入、时间戳等) 。
 
 ## <a name="see-also"></a>另请参阅
 

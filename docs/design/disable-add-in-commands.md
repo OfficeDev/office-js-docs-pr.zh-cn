@@ -3,12 +3,12 @@ title: 启用和禁用加载项命令
 description: 了解如何更改 Office Web 加载项中的自定义功能区按钮和菜单项的启用或禁用状态。
 ms.date: 07/15/2021
 localization_priority: Normal
-ms.openlocfilehash: d11b5c188da971f18969ff0abe9787021fad6bf1
-ms.sourcegitcommit: f46e4aeb9c31f674380dd804fd72957998b3a532
+ms.openlocfilehash: 1836d84a387afbef415dddd305adcb4eb7687552
+ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2021
-ms.locfileid: "53536009"
+ms.lasthandoff: 07/30/2021
+ms.locfileid: "53671406"
 ---
 # <a name="enable-and-disable-add-in-commands"></a>启用和禁用加载项命令
 
@@ -79,7 +79,7 @@ ms.locfileid: "53536009"
 更改加载项命令的启用状态的基本步骤如下：
 
 1. 创建 [RibbonUpdaterData](/javascript/api/office/office.ribbonupdaterdata) 对象 (1) 指定命令及其父组和选项卡，按清单中声明的其 ID;和 (2) 指定命令的启用或禁用状态。
-2. 将 **RibbonUpdaterData** 对象传递到 [Office.ribbon.requestUpdate()](/javascript/api/office/office.ribbon?view=common-js&preserve-view=true#requestupdate-input-) 方法。
+2. 将 **RibbonUpdaterData** 对象传递到 [Office.ribbon.requestUpdate()](/javascript/api/office/office.ribbon?view=common-js&preserve-view=true#requestUpdate_input_) 方法。
 
 下面展示了一个非常简单的示例。 请注意，"MyButton"、"OfficeAddinTab1"和"CustomGroup111"从清单中复制。
 

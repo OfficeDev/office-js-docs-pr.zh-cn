@@ -3,12 +3,12 @@ title: Office 加载项的资源限制和性能优化
 description: 了解加载项平台的资源Office，包括 CPU 和内存。
 ms.date: 07/29/2020
 localization_priority: Normal
-ms.openlocfilehash: d19e171bb9dc84335631ed66d153541141ce3377
-ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
+ms.openlocfilehash: 750f10880249a9c9a8720f870f4bc5ea4e576e8e
+ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "53349117"
+ms.lasthandoff: 07/30/2021
+ms.locfileid: "53671273"
 ---
 # <a name="resource-limits-and-performance-optimization-for-office-add-ins"></a>Office 加载项的资源限制和性能优化
 
@@ -126,7 +126,7 @@ Using the [application-specific API model](../develop/application-specific-api-m
 `untrack()`方法从内存中释放对象。 此方法在许多特定于应用程序的 API 代理对象上实现。 使用 对象完成加载项后调用，在使用大量代理对象时，应该会获得 `untrack()` 明显的性能优势。
 
 > [!NOTE]
-> `Range.untrack()` 是 [ClientRequestContext.trackedObjects.remove(thisRange)](/javascript/api/office/officeextension.trackedobjects#remove-object-) 的快捷方式。 任何代理对象都可以通过从上下文中的跟踪对象列表中删除它来取消跟踪。
+> `Range.untrack()` 是 [ClientRequestContext.trackedObjects.remove(thisRange)](/javascript/api/office/officeextension.trackedobjects#remove_object_) 的快捷方式。 任何代理对象都可以通过从上下文中的跟踪对象列表中删除它来取消跟踪。
 
 下面的Excel示例使用数据填充选定区域，一次填充一个单元格。 将值添加到单元格后，表示该单元格的区域将被取消跟踪。 在选定的 10,000 到 20,000 个单元格区域运行此代码，首先使用 `cell.untrack()` 行，然后取消使用。 应会注意到，使用 `cell.untrack()` 行的代码比不使用的代码运行速度要快。 此外，可能还会注意到之后的响应时间更快，因为清理步骤花费的时间更少。
 

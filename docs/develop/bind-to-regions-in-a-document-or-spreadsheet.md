@@ -3,12 +3,12 @@ title: 绑定到文档或电子表格中的区域
 description: 了解如何使用绑定以确保通过标识符一致地访问文档或电子表格的特定区域或元素。
 ms.date: 06/20/2019
 localization_priority: Normal
-ms.openlocfilehash: c9a658653c562de446f3b8e5f1ea192ddfcf3b21
-ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
+ms.openlocfilehash: 213118f6acba1ee7aaabca7b4e524b9a3f75dd49
+ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "53349999"
+ms.lasthandoff: 07/30/2021
+ms.locfileid: "53671364"
 ---
 # <a name="bind-to-regions-in-a-document-or-spreadsheet"></a>绑定到文档或电子表格中的区域
 
@@ -362,19 +362,19 @@ function removeEventHandlerFromBinding() {
 [MatrixBinding]:         /javascript/api/office/office.matrixbinding
 [TableBinding]:          /javascript/api/office/office.tablebinding
 [TextBinding]:           /javascript/api/office/office.textbinding
-[getDataAsync]:          /javascript/api/office/Office.Binding#getdataasync-options--callback-
-[setDataAsync]:          /javascript/api/office/Office.Binding#setdataasync-data--options--callback-
+[getDataAsync]:          /javascript/api/office/office.binding#getDataAsync_options__callback_
+[setDataAsync]:          /javascript/api/office/office.binding#setDataAsync_data__options__callback_
 [SelectionChanged]:      /javascript/api/office/office.bindingselectionchangedeventargs
-[addHandlerAsync]:       /javascript/api/office/Office.Binding#addhandlerasync-eventtype--handler--options--callback-
-[removeHandlerAsync]:    /javascript/api/office/Office.Binding#removehandlerasync-eventtype--options--callback-
+[addHandlerAsync]:       /javascript/api/office/office.binding#addHandlerAsync_eventType__handler__options__callback_
+[removeHandlerAsync]:    /javascript/api/office/office.binding#removeHandlerAsync_eventType__options__callback_
 
 [Bindings]:              /javascript/api/office/office.bindings
-[getByIdAsync]:          /javascript/api/office/office.bindings#getbyidasync-id--options--callback- 
-[getAllAsync]:           /javascript/api/office/office.bindings#getallasync-options--callback-
-[addFromNamedItemAsync]: /javascript/api/office/office.bindings#addfromnameditemasync-itemname--bindingtype--options--callback-
-[addFromSelectionAsync]: /javascript/api/office/office.bindings#addfromselectionasync-bindingtype--options--callback-
-[addFromPromptAsync]:    /javascript/api/office/office.bindings#addfrompromptasync-bindingtype--options--callback-
-[releaseByIdAsync]:      /javascript/api/office/office.bindings#releasebyidasync-id--options--callback-
+[getByIdAsync]:          /javascript/api/office/office.bindings#getByIdAsync_id__options__callback_
+[getAllAsync]:           /javascript/api/office/office.bindings#getAllAsync_options__callback_
+[addFromNamedItemAsync]: /javascript/api/office/office.bindings#addFromNamedItemAsync_itemName__bindingType__options__callback_
+[addFromSelectionAsync]: /javascript/api/office/office.bindings#addFromSelectionAsync_bindingType__options__callback_
+[addFromPromptAsync]:    /javascript/api/office/office.bindings#addFromPromptAsync_bindingType__options__callback_
+[releaseByIdAsync]:      /javascript/api/office/office.bindings#releaseByIdAsync_id__options__callback_
 
 [AsyncResult]:          /javascript/api/office/office.asyncresult
 [Office.BindingType]:   /javascript/api/office/office.bindingtype
