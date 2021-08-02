@@ -3,12 +3,12 @@ title: Outlook 加载项中的身份验证选项
 description: Outlook 加载项 根据特定场景提供了多种不同的身份验证方法。
 ms.date: 06/22/2021
 localization_priority: Priority
-ms.openlocfilehash: 108dc918fcea956b8349d4e2c53c0e8dd06cbeca
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: bbf8654654691fb7c62898d0d4521b3a11e15112
+ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53077104"
+ms.lasthandoff: 07/30/2021
+ms.locfileid: "53671455"
 ---
 # <a name="authentication-options-in-outlook-add-ins"></a>Outlook 加载项中的身份验证选项
 
@@ -50,7 +50,7 @@ Exchange 用户标识令牌为加载项提供了一种创建用户标识的方�
 - 当加载项需要访问你控制的非 Microsoft 服务时。
 - 当加载项在不支持 SSO 的 Office 版本上运行时，要回退身份验证。
 
-加载项可以调用 [getUserIdentityTokenAsync](/javascript/api/outlook/office.mailbox#getuseridentitytokenasync-callback--usercontext-) 以获取 Exchange 用户标识令牌。 有关使用这些令牌的详细信息，请参阅[使用 Exchange 标识令牌对用户进行身份验证](authenticate-a-user-with-an-identity-token.md)。
+加载项可以调用 [getUserIdentityTokenAsync](/javascript/api/outlook/office.mailbox#getCallbackTokenAsync_callback__userContext_) 以获取 Exchange 用户标识令牌。 有关使用这些令牌的详细信息，请参阅[使用 Exchange 标识令牌对用户进行身份验证](authenticate-a-user-with-an-identity-token.md)。
 
 ## <a name="access-tokens-obtained-via-oauth2-flows"></a>通过 OAuth2 流获取的访问令牌
 
@@ -58,7 +58,7 @@ Exchange 用户标识令牌为加载项提供了一种创建用户标识的方�
 
 - 需要访问不受你控制的第三方服务
 
-使用此方法，加载项会提示用户通过使用 [displayDialogAsync](/javascript/api/office/office.ui#displaydialogasync-startaddress--options--callback-) 方法初始化 OAuth2 流或使用 [office-js-helpers 库](https://github.com/OfficeDev/office-js-helpers) 转到 OAuth2 隐式流来登录到服务。
+使用此方法，加载项会提示用户通过使用 [displayDialogAsync](/javascript/api/office/office.ui#displayDialogAsync_startAddress__options__callback_) 方法初始化 OAuth2 流或使用 [office-js-helpers 库](https://github.com/OfficeDev/office-js-helpers) 转到 OAuth2 隐式流来登录到服务。
 
 ## <a name="callback-tokens"></a>回调令牌
 

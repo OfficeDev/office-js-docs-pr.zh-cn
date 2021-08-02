@@ -5,12 +5,12 @@ ms.date: 10/14/2020
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: dcfeab909bfda54a4ed5b9a748e0f8a7e7d58bb9
-ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
+ms.openlocfilehash: 8c0765fe2c56d23bcf7073f3e72e2138717e9e37
+ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "53348599"
+ms.lasthandoff: 07/30/2021
+ms.locfileid: "53671588"
 ---
 # <a name="onenote-javascript-api-programming-overview"></a>OneNote JavaScript API 编程概述
 
@@ -39,7 +39,7 @@ OneNote 介绍了适用于 OneNote 加载项网页版的 JavaScript API。你可
 
 ### <a name="accessing-the-application-specific-api-through-the-application-object"></a>通过 *Application* 对象访问应用程序特定 API。
 
-使用 `Application` 对象访问 OneNote 对象，如 **Notebook**、**Section** 和 **Page**。 通过应用程序特定 API，可在代理对象上运行批处理操作。 基本流程类似如下：
+使用 `Application` 对象以访问 OneNote 对象，例如 **Notebook**、**节** 和 **Page**。通过特定应用 API，可在代理对象上运行批处理操作。基本流程类似如下：
 
 1. 从上下文中获取应用程序实例。
 
@@ -96,7 +96,7 @@ function getPagesInSection() {
 
 ### <a name="accessing-the-common-api-through-the-document-object"></a>通过 *Document* 对象访问通用 API
 
-使用 `Document` 对象以访问通用 API，例如 [getSelectedDataAsync](/javascript/api/office/office.document#getselecteddataasync-coerciontype--options--callback-) 和 [setSelectedDataAsync](/javascript/api/office/office.document#setselecteddataasync-data--options--callback-) 方法。
+使用 `Document` 对象以访问通用 API，例如 [getSelectedDataAsync](/javascript/api/office/office.document#getSelectedDataAsync_coercionType__options__callback_) 和 [setSelectedDataAsync](/javascript/api/office/office.document#setSelectedDataAsync_data__options__callback_) 方法。
 
 例如：  
 
@@ -119,10 +119,10 @@ OneNote 加载项仅支持以下通用 API。
 
 | API | 注释 |
 |:------|:------|
-| [Office.context.document.getSelectedDataAsync](/javascript/api/office/office.document#getselecteddataasync-coerciontype--options--callback-) | 仅 `Office.CoercionType.Text` 和 `Office.CoercionType.Matrix` |
-| [Office.context.document.setSelectedDataAsync](/javascript/api/office/office.document#setselecteddataasync-data--options--callback-) | 仅 `Office.CoercionType.Text`、`Office.CoercionType.Image` 和 `Office.CoercionType.Html` | 
-| [var mySetting = Office.context.document.settings.get(name);](/javascript/api/office/office.settings#get-name-) | 设置仅受内容外接程序支持 | 
-| [Office.context.document.settings.set(name, value);](/javascript/api/office/office.settings#set-name--value-) | 设置仅受内容外接程序支持 | 
+| [Office.context.document.getSelectedDataAsync](/javascript/api/office/office.document#getSelectedDataAsync_coercionType__options__callback_) | 仅 `Office.CoercionType.Text` 和 `Office.CoercionType.Matrix` |
+| [Office.context.document.setSelectedDataAsync](/javascript/api/office/office.document#setSelectedDataAsync_data__options__callback_) | 仅 `Office.CoercionType.Text`、`Office.CoercionType.Image` 和 `Office.CoercionType.Html` | 
+| [var mySetting = Office.context.document.settings.get(name);](/javascript/api/office/office.settings#get_name_) | 设置仅受内容外接程序支持 | 
+| [Office.context.document.settings.set(name, value);](/javascript/api/office/office.settings#set_name__value_) | 设置仅受内容外接程序支持 | 
 | [Office.EventType.DocumentSelectionChanged](/javascript/api/office/office.documentselectionchangedeventargs) ||
 
 一般情况下，需要使用通用 API 执行应用程序特定 API 不支持的操作。 要详细了解如何使用通用 API，请参阅[常见 JavaScript API 对象模型](../develop/office-javascript-api-object-model.md)。

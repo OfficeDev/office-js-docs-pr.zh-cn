@@ -3,12 +3,12 @@ title: 为 Office 加载项启用单一登录
 description: 了解如何使用常用的 Microsoft 个人、工作或教育帐户来为 Office 加载项启用单一登录。
 ms.date: 07/30/2020
 localization_priority: Priority
-ms.openlocfilehash: f56b1b30d018f507e537909f1b75c37e189327a5
-ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
+ms.openlocfilehash: a776b434f42428cfc65b23a67f9ba6518028f677
+ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "53349733"
+ms.lasthandoff: 07/30/2021
+ms.locfileid: "53671497"
 ---
 # <a name="enable-single-sign-on-for-office-add-ins"></a>为 Office 加载项启用单一登录
 
@@ -31,7 +31,7 @@ ms.locfileid: "53349733"
 
 ![显示 SSO 流程的关系图。](../images/sso-overview-diagram.png)
 
-1. 在加载项中，JavaScript 调用新的 Office.js API [getAccessToken](/javascript/api/office-runtime/officeruntime.auth#getaccesstoken-options-)。 该操作告诉 Office 客户端应用程序获取加载项的访问令牌。 请参阅[示例访问令牌](#example-access-token)。
+1. 在加载项中，JavaScript 调用新的 Office.js API [getAccessToken](/javascript/api/office-runtime/officeruntime.auth#getAccessToken_options_)。 该操作告诉 Office 客户端应用程序获取加载项的访问令牌。 请参阅[示例访问令牌](#example-access-token)。
 2. 如果用户未登录，Office 客户端应用程序会打开弹出窗口，以供用户登录。
 3. 如果当前用户是首次使用加载项，则会看到同意提示。
 4. Office 客户端应用程序从当前用户的 Azure AD v2.0 终结点请求获取 **加载项令牌**。
@@ -95,7 +95,7 @@ ms.locfileid: "53349733"
 
 将 JavaScript 添加到加载项，以执行以下操作：
 
-- 调用 [getAccessToken](/javascript/api/office-runtime/officeruntime.auth#getaccesstoken-options-)。
+- 调用 [getAccessToken](/javascript/api/office-runtime/officeruntime.auth#getAccessToken_options_)。
 
 - 解析访问令牌或将其传递到加载项的服务器端代码。
 

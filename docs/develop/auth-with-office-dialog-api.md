@@ -3,12 +3,12 @@ title: 使用 Office 对话框 API 进行身份验证和授权
 description: 了解如何使用 Office 对话框 API 使用户能够登录到 Google、Facebook、Microsoft 365 以及受 Microsoft 标识平台保护的其他服务。
 ms.date: 07/19/2021
 localization_priority: Priority
-ms.openlocfilehash: 270a6214c9dbb268a19a1aee3e08c07da693ab87
-ms.sourcegitcommit: f46e4aeb9c31f674380dd804fd72957998b3a532
+ms.openlocfilehash: 706e4f50cea0ae15ff6b7b0f12e18821d18f768d
+ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2021
-ms.locfileid: "53536051"
+ms.lasthandoff: 07/30/2021
+ms.locfileid: "53671378"
 ---
 # <a name="authenticate-and-authorize-with-the-office-dialog-api"></a>使用 Office 对话框 API 进行身份验证和授权
 
@@ -25,7 +25,7 @@ ms.locfileid: "53536051"
   - 没有与任务窗格共享的执行环境。
   - 它没有与任务窗格共享相同的会话存储（[Window.sessionStorage](https://developer.mozilla.org/docs/Web/API/Window/sessionStorage) 属性）。
 - 对话框中打开的第一个页面必须与任务窗格位于同一域中，包括协议、子域和端口（如果有）。
-- 该对话框可以使用 [messageParent](/javascript/api/office/office.ui#messageparent-message-) 方法将信息发送回任务窗格。 （建议仅从与任务窗格托管在同一域中的页面，包括协议、子域、端口）调用此方法。 否则，调用方法和处理消息的方式会出现复杂情况。 有关详细信息，请参阅[向主机运行时跨域消息传递](dialog-api-in-office-add-ins.md#cross-domain-messaging-to-the-host-runtime)。）
+- 该对话框可以使用 [messageParent](/javascript/api/office/office.ui#messageParent_message__messageOptions_) 方法将信息发送回任务窗格。 （建议仅从与任务窗格托管在同一域中的页面，包括协议、子域、端口）调用此方法。 否则，调用方法和处理消息的方式会出现复杂情况。 有关详细信息，请参阅[向主机运行时跨域消息传递](dialog-api-in-office-add-ins.md#cross-domain-messaging-to-the-host-runtime)。）
 
 如果该对话框不是 iframe（默认为否）, 则它可以打开身份提供程序的登录页面。 如下所示，该 Office 对话框的特征对你如何使用身份验证或授权库（例如 MSAL 和护照）有一定影响。
 
