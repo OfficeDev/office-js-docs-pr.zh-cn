@@ -4,12 +4,12 @@ description: 了解有关 PowerPoint JavaScript API 要求集的详细信息。
 ms.date: 01/08/2021
 ms.prod: powerpoint
 localization_priority: Priority
-ms.openlocfilehash: 63f11f1810b38471a27766843f512da193394838
-ms.sourcegitcommit: d28392721958555d6edea48cea000470bd27fcf7
+ms.openlocfilehash: 8ab5ad7067ed29b161935cfd2716a02ca261c55b
+ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/13/2021
-ms.locfileid: "49840081"
+ms.lasthandoff: 07/30/2021
+ms.locfileid: "53671707"
 ---
 # <a name="powerpoint-javascript-api-requirement-sets"></a>PowerPoint JavaScript API 要求集
 
@@ -30,7 +30,7 @@ ms.locfileid: "49840081"
 
 ## <a name="powerpoint-javascript-api-11"></a>PowerPoint JavaScript API 1.1
 
-PowerPoint JavaScript API 1.1 包含[用于创建新演示文稿的单一 API](/javascript/api/powerpoint#powerpoint-createpresentation-base64file-)。 有关 API 的详细信息，请参阅[创建演示文稿](../../powerpoint/powerpoint-add-ins.md#create-a-presentation)。
+PowerPoint JavaScript API 1.1 包含[用于创建新演示文稿的单一 API](/javascript/api/powerpoint#PowerPoint_createPresentation_base64File_)。 有关 API 的详细信息，请参阅[创建演示文稿](../../powerpoint/powerpoint-add-ins.md#create-a-presentation)。
 
 ## <a name="powerpoint-javascript-api-12"></a>PowerPoint JavaScript API 1.2
 
@@ -41,7 +41,7 @@ PowerPoint JavaScript API 1.2 增加了对将其他 PowerPoint 演示文稿中�
 > [!NOTE]
 > 本节假定你熟悉 [Office 版本和要求集](../../develop/office-versions-and-requirement-sets.md)和[指定 Office 应用程序和 API 要求集](../../develop/specify-office-hosts-and-api-requirements.md)处的要求集概述。
 
-要求集是指各组已命名的 API 成员。 Office 加载项可以执行运行时检查或使用清单中指定的要求集确定 Office 应用程序是否支持加载项所需的 API。
+要求集以 API 成员组命名。Office 加载项可以执行运行时检查，或使用清单中指定的要求集确定某个 Office 应用程序是否支持该加载项所需的 API。
 
 ### <a name="checking-for-requirement-set-support-at-runtime"></a>在运行时检查要求集支持
 
@@ -57,7 +57,7 @@ if (Office.context.requirements.isSetSupported('PowerPointApi', '1.1')) {
 
 ### <a name="defining-requirement-set-support-in-the-manifest"></a>在清单中定义要求集支持
 
-可以在加载项清单中使用[要求元素](../manifest/requirements.md)指定加载项要求激活的最小要求集和/或 API 方法。 如果 Office 应用程序或平台不支持清单的 `Requirements` 元素中指定的要求集或 API 方法，则加载项将不会在该应用程序或平台中运行，也不会出现在“**我的加载项**”中显示的加载项列表中。如果你的加载项需要特定要求集以实现完整功能，但是即使在不支持该要求集的平台上也可以为用户提供值，则建议在运行时按照上述方式检查要求支持，而不是在清单中定义要求集支持。
+可以使用加载项清单中的 [“要求元素”](../manifest/requirements.md) 来指定的加载项需要激活的最小需求集和/或 API 方法。如果 Office 应用程序或平台不支持清单的 `Requirements` 元素中指定的要求集或 API 方法，则加载项将不会在该应用程序或平台中运行，也不会出现在 **“我的加载项”** 中显示的加载项列表中。如果加载项需要特定要求集以实现完整功能，但是即使在不支持该要求集的平台上也可以为用户提供值，则建议在运行时按照上述方式检查要求支持，而不是在清单中定义要求集支持。
 
 以下代码示例显示加载项清单中的 `Requirements` 元素，该元素指定应在支持 PowerPointApi 要求集版本 1.1 或更高版本的所有 Office 客户端应用程序中加载该加载项。
 
@@ -77,5 +77,5 @@ if (Office.context.requirements.isSetSupported('PowerPointApi', '1.1')) {
 
 - [PowerPoint JavaScript API 参考文档](/javascript/api/powerpoint)
 - [Office 版本和要求集](../../develop/office-versions-and-requirement-sets.md)
-- [指定 Office 应用程序和 API 要求](../../develop/specify-office-hosts-and-api-requirements.md)
+- [指定 Office 应用程序和 API 要求集](../../develop/specify-office-hosts-and-api-requirements.md)
 - [Office 加载项 XML 清单](../../develop/add-in-manifests.md)

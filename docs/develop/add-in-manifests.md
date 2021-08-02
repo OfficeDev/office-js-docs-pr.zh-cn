@@ -3,12 +3,12 @@ title: Office 加载项 XML 清单
 description: 获取 Office 加载项清单及其用途概述。
 ms.date: 03/18/2020
 localization_priority: Priority
-ms.openlocfilehash: e664893445ed6d9ee9a7adf23f3b3b189df8634e
-ms.sourcegitcommit: d28392721958555d6edea48cea000470bd27fcf7
+ms.openlocfilehash: 7975d05f37d0318bb016c82cc5a7428f56d7fc30
+ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/13/2021
-ms.locfileid: "49839997"
+ms.lasthandoff: 07/30/2021
+ms.locfileid: "53671392"
 ---
 # <a name="office-add-ins-xml-manifest"></a>Office 加载项 XML 清单
 
@@ -46,11 +46,11 @@ Office 外接程序的 XML 清单文件描述，当最终用户安装外接程�
 | :------------------------------------------------------------------------------------------- | :-----: | :-------: | :-----: |
 | [OfficeApp][]                                                                                |    X    |     X     |    X    |
 | [Id][]                                                                                       |    X    |     X     |    X    |
-| [Version][]                                                                                  |    X    |     X     |    X    |
+| [版本][]                                                                                  |    X    |     X     |    X    |
 | [ProviderName][]                                                                             |    X    |     X     |    X    |
 | [DefaultLocale][]                                                                            |    X    |     X     |    X    |
 | [DisplayName][]                                                                              |    X    |     X     |    X    |
-| [Description][]                                                                              |    X    |     X     |    X    |
+| [说明][]                                                                              |    X    |     X     |    X    |
 | [IconUrl][]                                                                                  |    X    |     X     |    X    |
 | [SupportUrl][]\*\*                                                                           |    X    |     X     |    X    |
 | [DefaultSettings (ContentApp)][]<br/>[DefaultSettings (TaskPaneApp)][]                       |    X    |     X     |         |
@@ -115,15 +115,15 @@ _\*\* 仅通过 AppSource 分发的加载项才需要 SupportUrl。_
 
 ## <a name="specify-domains-you-want-to-open-in-the-add-in-window"></a>指定要在外接程序窗口中打开的域
 
-在 Office 网页版中运行时，可以将任务窗格导航到任何 URL。 但在桌面平台中，如果加载项尝试转到托管起始页（如清单文件的 [SourceLocation](../reference/manifest/sourcelocation.md) 元素中所指定的）的域之外的域中的 URL，则该 URL 将在 Office 应用程序的加载项窗格外的新浏览器窗口中打开。
+当在 web 上的 Office 中运行时，任务窗格可以导航到任何 URL。但在桌面平台中，如果加载项尝试转到托管起始页（如清单文件的 [SourceLocation](../reference/manifest/sourcelocation.md) 元素中所指定的）的域之外的域中的 URL，则该 URL 将在 Office 应用程序的加载项窗格外的新浏览器窗口中打开。
 
 若要重写此（桌面版 Office）操作，请在清单文件的 [AppDomains](../reference/manifest/appdomains.md) 元素中指定的域列表中指定要在外接程序窗口中打开的每个域。 如果加载项尝试转至该列表的域中的 URL，则它将在 Office 网页版和桌面版中的任务窗口中打开。 如果它尝试转至列表之外的域中的 URL，则在桌面版 Office 中，该 URL 将在新的浏览器窗口中（外接程序窗格之外）打开。
 
 > [!NOTE]
 > 该行为有两个例外情况：
 >
-> - 它仅适用于外接程序的根窗格。 如果外接程序页面中嵌入有 iframe，则可以将该 iframe 定向到任何 URL，不论它是否列在 **AppDomains** 中，即使在桌面版 Office 中也是如此。
-> - 使用 [displayDialogAsync](/javascript/api/office/office.ui?view=common-js&preserve-view=true#displaydialogasync-startaddress--options--callback-) API 打开对话框时，传递到方法的 URL 必须与外接程序位于相同的域，但是之后对话框可以定向到任意 URL，无论其是否列入 **AppDomains** 甚至桌面 Office 中。
+> - 它仅适用于外接程序的根窗格。如果外接程序页面中嵌入有 iframe，则可以将该 iframe 定向到任何 URL，不论它是否列在 **AppDomains** 中，即使在桌面版 Office 中也是如此。
+> - 使用 [displayDialogAsync](/javascript/api/office/office.ui?view=common-js&preserve-view=true#displayDialogAsync_startAddress__options__callback_) API 打开对话框时，传递到方法的 URL 必须与外接程序位于相同的域，但是之后对话框可以定向到任意 URL，无论其是否列入 **AppDomains** 甚至桌面 Office 中。
 
 以下 XML 清单示例在 **SourceLocation** 元素中指定的 `https://www.contoso.com` 域中托管其外接程序页面。 它还指定 **AppDomains** 元素列表内 [AppDomain](../reference/manifest/appdomain.md) 元素中的 `https://www.northwindtraders.com` 域。 如果加载项转到 `www.northwindtraders.com` 域中的页面，此页面会在加载项窗格中打开，即使是在 Office 桌面版中，也不例外。
 

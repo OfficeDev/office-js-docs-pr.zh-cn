@@ -5,24 +5,24 @@ ms.date: 10/14/2020
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: 476f8f34bc47d85842d5b31f8a0298bf2d5d7b18
-ms.sourcegitcommit: 42e6cfe51d99d4f3f05a3245829d764b28c46bbb
+ms.openlocfilehash: 106f11da21d994534219399829dca37e16bd2fe5
+ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "48740838"
+ms.lasthandoff: 07/30/2021
+ms.locfileid: "53671700"
 ---
 # <a name="powerpoint-add-ins"></a>PowerPoint 加载项
 
-使用 PowerPoint 加载项，可以跨平台（包括 Windows、iPad、Mac 和浏览器）生成极具吸引力的解决方案，从而有效展示用户的演示文稿。 可以创建以下两种类型的 PowerPoint 加载项：
+可以使用 PowerPoint 外接程序为用户演示文稿构建跨平台 (包括 Windows、iPad, Mac, 以及在浏览器中) 出色解决方案。可以创建两种类型的 PowerPoint 外接程序:
 
-- 使用**内容外接程序**向演示文稿添加动态 HTML5 内容。有关示例，请参阅可用于将交互关系图从 LucidChart 插入面板的 [PowerPoint 的 LucidChart 关系图](https://appsource.microsoft.com/product/office/wa104380117)外接程序。
+- 使用 **内容外接程序** 向演示文稿添加动态 HTML5 内容。有关示例，请参阅可用于将交互关系图从 LucidChart 插入面板的 [PowerPoint 的 LucidChart 关系图](https://appsource.microsoft.com/product/office/wa104380117)外接程序。
 
-- 使用**任务窗格加载项**引入参考信息或通过服务将数据插入演示文稿。 有关示例，请参阅可用于在演示文稿中添加专业照片的 [Pexels - 免费素材图片](https://appsource.microsoft.com/product/office/wa104379997)加载项。
+- 使用 **任务窗格加载项** 引入参考信息或通过服务将数据插入演示文稿。 有关示例，请参阅可用于在演示文稿中添加专业照片的 [Pexels - 免费素材图片](https://appsource.microsoft.com/product/office/wa104379997)加载项。
 
 ## <a name="powerpoint-add-in-scenarios"></a>PowerPoint 加载项方案
 
-本文中的代码示例展示了开发 PowerPoint 加载项涉及的一些基本任务。 请注意以下几点：
+本文中的代码示例展示了开发 PowerPoint 加载项涉及的一些基本任务。请注意以下几点:
 
 - 这些示例使用 `app.showNotification` 函数来显示信息，该函数包含在 Visual Studio Office 加载项项目模板中。 如果你没打算使用 Visual Studio 开发加载项，则需要将 `showNotification` 函数替换为你自己的代码。
 
@@ -39,9 +39,9 @@ ms.locfileid: "48740838"
 
 在以下代码示例中：
 
-- `getActiveFileView` 函数将调用 [Document.getActiveViewAsync](/javascript/api/office/office.document#getactiveviewasync-options--callback-) 方法，以返回演示文稿的当前视图是“编辑”（你可在其中编辑幻灯片的任何视图，如**普通**或**大纲视图**）还是“阅读”（**幻灯片放映**或**阅读视图**）。
+- `getActiveFileView` 函数将调用 [Document.getActiveViewAsync](/javascript/api/office/office.document#getActiveViewAsync_options__callback_) 方法，以返回演示文稿的当前视图是“编辑”（你可在其中编辑幻灯片的任何视图，如 **普通** 或 **大纲视图**）还是“阅读”（**幻灯片放映** 或 **阅读视图**）。
 
-- `registerActiveViewChanged` 函数调用 [addHandlerAsync](/javascript/api/office/office.document#addhandlerasync-eventtype--handler--options--callback-) 方法，以注册 [Document.ActiveViewChanged](/javascript/api/office/office.document) 事件的处理程序。
+- `registerActiveViewChanged` 函数调用 [addHandlerAsync](/javascript/api/office/office.document#addHandlerAsync_eventType__handler__options__callback_) 方法，以注册 [Document.ActiveViewChanged](/javascript/api/office/office.document) 事件的处理程序。
 
 
 ```js
@@ -90,7 +90,7 @@ function registerActiveViewChanged() {
 
 ## <a name="navigate-to-a-particular-slide-in-the-presentation"></a>转到演示文稿中的特定幻灯片
 
-在以下代码示例中，`getSelectedRange` 函数将调用 [Document.getSelectedDataAsync](/javascript/api/office/office.document#getselecteddataasync-coerciontype--options--callback-) 方法以获取 `asyncResult.value` 返回的 JSON 对象，其中包括一个名为 `slides` 的数组。 `slides` 数组包含所选范围内的幻灯片（或当前幻灯片，如果未选择多张幻灯片）的 ID、标题和索引。 此外，它会将所选范围内的第一张幻灯片的 ID 保存为全局变量。
+在以下代码示例中，`getSelectedRange` 函数将调用 [Document.getSelectedDataAsync](/javascript/api/office/office.document#getSelectedDataAsync_coercionType__options__callback_) 方法以获取 `asyncResult.value` 返回的 JSON 对象，其中包括一个名为 `slides` 的数组。 `slides` 数组包含所选范围内的幻灯片（或当前幻灯片，如果未选择多张幻灯片）的 ID、标题和索引。 此外，它会将所选范围内的第一张幻灯片的 ID 保存为全局变量。
 
 ```js
 function getSelectedRange() {
@@ -109,7 +109,7 @@ function getSelectedRange() {
 }
 ```
 
-在以下代码示例中，`goToFirstSlide` 函数将调用 [Document.goToByIdAsync](/javascript/api/office/office.document#gotobyidasync-id--gototype--options--callback-) 方法，以导航至由之前显示的 `getSelectedRange` 函数标识的第一张幻灯片。
+在以下代码示例中，`goToFirstSlide` 函数将调用 [Document.goToByIdAsync](/javascript/api/office/office.document#goToByIdAsync_id__goToType__options__callback_) 方法，以导航至由之前显示的 `getSelectedRange` 函数标识的第一张幻灯片。
 
 ```js
 function goToFirstSlide() {
@@ -148,7 +148,7 @@ function goToSlideByIndex() {
 
 ## <a name="get-the-url-of-the-presentation"></a>获取演示文稿的 URL
 
-在以下代码实例中，`getFileUrl` 函数将调用 [Document.getFileProperties](/javascript/api/office/office.document#getfilepropertiesasync-options--callback-) 方法，以获取演示文稿文件的URL。
+在以下代码实例中，`getFileUrl` 函数将调用 [Document.getFileProperties](/javascript/api/office/office.document#getFilePropertiesAsync_options__callback_) 方法，以获取演示文稿文件的URL。
 
 ```js
 function getFileUrl() {
